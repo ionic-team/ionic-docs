@@ -1,0 +1,36 @@
+{
+  "name": "@ionic/ionic-docs",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Ionic Docs Site",
+  "scripts": {
+    "docs": "gulp",
+    "build": "gulp && stencil build --prerender",
+    "dev": "gulp && sd concurrent \"stencil build --dev --watch --prerender\" \"stencil-dev-server\" ",
+    "deploy": "npm run build && firebase deploy",
+    "serve": "stencil-dev-server",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    "@stencil/core": "0.0.5",
+    "@stencil/router": "0.0.10-0"
+  },
+  "devDependencies": {
+    "@stencil/dev-server": "0.0.17",
+    "@stencil/utils": "latest",
+    "gh-pages": "^1.0.0",
+    "gulp": "^3.9.1",
+    "gulp-markdown": "^1.2.0",
+    "highlight.js": "^9.12.0"
+  },
+  "author": "Ionic Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ionic-team/ionic-docs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ionic-team/ionic-docs"
+  },
+  "homepage": "docs.ionicframework.com"
+}
