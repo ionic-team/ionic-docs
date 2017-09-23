@@ -51,4 +51,53 @@ site-menu {
    text-decoration: none;
   }
 
+  nav {
+    & > ul.nested-menu > li > ul > li {
+      margin-bottom: 8px;
+    }
+
+    & > ul.nested-menu > li > ul > li > ul {
+      // Margin in from the icon to the label start of the heading link
+      margin-left: 27px;
+
+      & > li > a {
+        font-size: 13px;
+        color: #50565e;
+        font-weight: 500;
+
+      }
+    }
+
+    & > ul.nested-menu > li > ul > li > ul > li > ul {
+      margin-left: 15px;
+    }
+
+    & > ul#pro-nav.nested-menu > li > ul > li > a {
+      &::before {
+        background-image: url('/img/pro/sidebar-icon-sprite.png');
+        background-repeat: no-repeat;
+        background-color: transparent;
+      }
+    }
+
+    & > ul.nested-menu > li > ul > li > a {
+      &::before {
+        width: 16px;
+        height: 16px;
+        background-size: 100%;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px;
+        margin-top: -2px;
+        content: '';
+      }
+
+      margin-top: 0;
+      text-transform: none;
+      font-size: 14px;
+      font-weight: 600;
+      color: #24282e;
+      letter-spacing: 0px;
+    }
+  }
 }
