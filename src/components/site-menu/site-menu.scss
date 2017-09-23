@@ -13,7 +13,6 @@ site-menu {
   background: #f5f7f9;
 
   padding-top: 20px;
-  padding-right: 20px;
 
   border-right: 1px solid rgba(21, 30, 47, 0.05);
 
@@ -25,6 +24,7 @@ site-menu {
   nav {
     flex: 1;
     overflow-y: auto;
+    padding-right: 20px;
   }
 
   h4 {
@@ -72,9 +72,9 @@ site-menu {
       margin-left: 15px;
     }
 
-    & > ul#pro-nav.nested-menu > li > ul > li > a {
+    & > ul.nested-menu > li > ul > li > a {
       &::before {
-        background-image: url('/img/pro/sidebar-icon-sprite.png');
+        background-image: url('/assets/img/sidebar-icon-sprite.png');
         background-repeat: no-repeat;
         background-color: transparent;
       }
