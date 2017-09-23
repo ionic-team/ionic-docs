@@ -1,7 +1,4 @@
 site-menu {
-  bottom: 0;
-  background: #f5f7f9;
-  flex: 0;
   display: flex;
   z-index: 5;
   flex-direction: column;
@@ -10,7 +7,20 @@ site-menu {
   user-select: none;
   width: calc((100% - 994px) / 2 + 226px);
   min-width: 252px;
-  padding-left: calc((100% - 994px) / 2
+  padding-left: calc((100% - 994px) / 2);
+
+  height: 100%;
+  background: #f5f7f9;
+
+  padding-top: 20px;
+  padding-right: 20px;
+
+  border-right: 1px solid rgba(18,60,83,.05);
+
+  nav {
+    flex: 1;
+    overflow-y: auto;
+  }
 
   h4 {
     font-size: 16px;
