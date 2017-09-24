@@ -4,12 +4,12 @@ import { Component, Prop } from '@stencil/core';
   styleUrl: 'document-component.scss'
 })
 export class DocumentComponent {
-  @Prop() pages: string[] = [];
+  @Prop() docPath: string;
 
   render() {
     return (
       <div>
-        {this.pages.map(page => <app-marked doc={page} />)}
+        <app-marked doc={this.docPath} />
       </div>
     );
   }

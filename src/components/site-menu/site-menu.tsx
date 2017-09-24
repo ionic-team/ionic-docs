@@ -19,44 +19,44 @@ export class SiteMenu {
                   <a class="pro-intro-link">Introduction</a>
                   <ul>
                     <li>
-                      <a href="/docs/pro/basics/welcome/" class="{% if page.id == 'pro-welcome' %}active{% endif %}">Welcome</a>
+                      <stencil-route-link url="/pro/basics/welcome/">Welcome</stencil-route-link>
                     </li>
                     <li>
-                      <a href="/docs/pro/basics/getting-started/" class="{% if page.id == 'pro-getting-started' %}active{% endif %}">Installation</a>
+                      <stencil-route-link url="/pro/basics/getting-started/">Installation</stencil-route-link>
                     </li>
                     <li>
-                      <a href="/docs/pro/basics/git/" class="{% if page.id == 'pro-git' %}active{% endif %}">Git Workflow</a>
+                      <stencil-route-link url="/pro/basics/git/">Git Workflow</stencil-route-link>
                       <ul>
                         <li>
-                          <a href="/docs/pro/basics/git/#installing-git">Installing Git</a>
+                          <stencil-route-link url="/pro/basics/git/#installing-git">Installing Git</stencil-route-link>
                         </li>
                         <li>
-                          <a href="/docs/pro/basics/git/#adding-your-existing-repository">Adding Existing Repositories</a>
+                          <stencil-route-link url="/pro/basics/git/#adding-your-existing-repository">Adding Existing Repositories</stencil-route-link>
                         </li>
                         <li>
-                          <a href="/docs/pro/basics/git/#pushing-new-builds">Pushing Builds</a>
+                          <stencil-route-link url="/pro/basics/git/#pushing-new-builds">Pushing Builds</stencil-route-link>
                         </li>
                         <li>
-                          <a href="/docs/pro/basics/git/#working-with-branches">Using Branches</a>
+                          <stencil-route-link url="/pro/basics/git/#working-with-branches">Using Branches</stencil-route-link>
                         </li>
                         <li>
-                          <a href="/docs/pro/basics/git/#working-with-other-team-members">Working w/ Team Members</a>
+                          <stencil-route-link url="/pro/basics/git/#working-with-other-team-members">Working w/ Team Members</stencil-route-link>
                         </li>
                         <li>
-                          <a href="/docs/pro/basics/git/#ssh-keys">Adding SSH Keys</a>
+                          <stencil-route-link url="/pro/basics/git/#ssh-keys">Adding SSH Keys</stencil-route-link>
                         </li>
                       </ul>
                     </li>
                     <li>
-                      <a href="/docs/pro/basics/concepts/" class="{% if page.id == 'pro-concepts' %}active{% endif %}">Concepts</a>
+                      <stencil-route-link url="/pro/basics/concepts/">Concepts</stencil-route-link>
                       <ul>
-                        <li><a href="/docs/pro/basics/concepts/#channels">Channels</a></li>
-                        <li><a href="/docs/pro/basics/concepts/#builds">Builds</a></li>
-                        <li><a href="/docs/pro/basics/concepts/customizing-builds.html">Customizing Builds</a></li>
+                        <li><stencil-route-link url="/pro/basics/concepts/#channels">Channels</stencil-route-link></li>
+                        <li><stencil-route-link url="/pro/basics/concepts/#builds">Builds</stencil-route-link></li>
+                        <li><stencil-route-link url="/pro/basics/concepts/customizing-builds.html">Customizing Builds</stencil-route-link></li>
                       </ul>
                     </li>
                     <li>
-                      <a href="/docs/pro/basics/help/" class="{% if page.id == 'pro-help' %}active{% endif %}">Help and Support</a>
+                      <stencil-route-link url="/pro/basics/help/">Help and Support</stencil-route-link>
                     </li>
                   </ul>
                 </li>
@@ -64,16 +64,16 @@ export class SiteMenu {
                   <a class="pro-view-link">View</a>
                   <ul>
                     <li>
-                      <a href="/docs/pro/view/">Introduction</a>
+                      <stencil-route-link url="/pro/view/">Introduction</stencil-route-link>
                     </li>
                     <li>
-                      <a href="/docs/pro/view/#using-channels-with-ionic-view">Using Channels</a>
+                      <stencil-route-link url="/pro/view/#using-channels-with-ionic-view">Using Channels</stencil-route-link>
                     </li>
                     <li>
-                      <a href="/docs/pro/view/#sharing">Inviting Testers</a>
+                      <stencil-route-link url="/pro/view/#sharing">Inviting Testers</stencil-route-link>
                     </li>
                     <li>
-                      <a href="/docs/pro/view/#sharing">Sharing Publicly</a>
+                      <stencil-route-link url="/pro/view/#sharing">Sharing Publicly</stencil-route-link>
                     </li>
                   </ul>
                 </li>
@@ -81,16 +81,16 @@ export class SiteMenu {
                   <a class="pro-deploy-link">Deploy</a>
                   <ul>
                     <li>
-                      <a href="/docs/pro/deploy/">Introduction</a>
+                      <stencil-route-link url="/pro/deploy/">Introduction</stencil-route-link>
                     </li>
                     <li>
-                      <a href="/docs/pro/deploy/setup/#installation">Installation</a>
+                      <stencil-route-link url="/pro/deploy/setup/#installation">Installation</stencil-route-link>
                     </li>
                     <li>
-                      <a href="/docs/pro/deploy/setup/#usage">Deploying</a>
+                      <stencil-route-link url="/pro/deploy/setup/#usage">Deploying</stencil-route-link>
                     </li>
                     <li>
-                      <a href="/docs/pro/deploy/plugin-api.html">Plugin API</a>
+                      <stencil-route-link url="/pro/deploy/plugin-api.html">Plugin API</stencil-route-link>
                     </li>
                   </ul>
                 </li>
@@ -98,16 +98,16 @@ export class SiteMenu {
                   <a class="pro-package-link">Package</a>
                   <ul>
                     <li>
-                      <a href="/docs/pro/package/">Introduction</a>
+                      <stencil-route-link url="/pro/package/">Introduction</stencil-route-link>
                     </li>
                     <li>
-                      <a href="/docs/pro/package/profiles.html">Generating Credentials</a>
+                      <stencil-route-link url="/pro/package/profiles.html">Generating Credentials</stencil-route-link>
                     </li>
                     <li>
-                      <a href="/docs/pro/package/profiles.html#creating-security-profiles">Adding Credentials</a>
+                      <stencil-route-link url="/pro/package/profiles.html#creating-security-profiles">Adding Credentials</stencil-route-link>
                     </li>
                     <li>
-                      <a href="/docs/pro/package/index.html#performing-a-build">Performing Builds</a>
+                      <stencil-route-link url="/pro/package/index.html#performing-a-build">Performing Builds</stencil-route-link>
                     </li>
                   </ul>
                 </li>
@@ -115,13 +115,13 @@ export class SiteMenu {
                   <a class="pro-monitoring-link">Monitoring</a>
                   <ul>
                     <li>
-                      <a href="/docs/pro/monitoring/">Introduction</a>
+                      <stencil-route-link url="/pro/monitoring/">Introduction</stencil-route-link>
                     </li>
                     <li>
-                      <a href="/docs/pro/monitoring/#getting-started">Installation</a>
+                      <stencil-route-link url="/pro/monitoring/#getting-started">Installation</stencil-route-link>
                     </li>
                     <li>
-                      <a href="/docs/pro/monitoring/#source-maps">Adding SourceMaps</a>
+                      <stencil-route-link url="/pro/monitoring/#source-maps">Adding SourceMaps</stencil-route-link>
                     </li>
                   </ul>
                 </li>
@@ -129,22 +129,22 @@ export class SiteMenu {
                   <a class="pro-advanced-link">Advanced</a>
                   <ul>
                     <li>
-                      <a href="/docs/pro/migration/">Cloud Migration</a>
+                      <stencil-route-link url="/pro/migration/">Cloud Migration</stencil-route-link>
                       <ul>
                         <li>
-                          <a href="/docs/pro/migration/live-deploy.html">Live updates</a>
+                          <stencil-route-link url="/pro/migration/live-deploy.html">Live updates</stencil-route-link>
                         </li>
                         <li>
-                          <a href="/docs/pro/migration/package.html">Package</a>
+                          <stencil-route-link url="/pro/migration/package.html">Package</stencil-route-link>
                         </li>
                         <li>
-                          <a href="/docs/pro/migration/view.html">Ionic View Legacy</a>
+                          <stencil-route-link url="/pro/migration/view.html">Ionic View Legacy</stencil-route-link>
                         </li>
                         <li>
-                          <a href="/docs/pro/migration/push.html">Ionic Push</a>
+                          <stencil-route-link url="/pro/migration/push.html">Ionic Push</stencil-route-link>
                         </li>
                         <li>
-                          <a href="/docs/pro/migration/auth.html">Ionic Auth</a>
+                          <stencil-route-link url="/pro/migration/auth.html">Ionic Auth</stencil-route-link>
                         </li>
                       </ul>
                     </li>

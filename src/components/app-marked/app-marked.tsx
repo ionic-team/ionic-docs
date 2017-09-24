@@ -16,6 +16,7 @@ export class AppMarked {
 
   @PropDidChange('doc')
   fetchNewContent() {
+    console.log('Fetching doc', this.doc);
     return fetch(`/docs-content/${this.doc}`)
       .then(response => response.text())
       .then(data => {
@@ -26,7 +27,7 @@ export class AppMarked {
 
         const headerEl = el.querySelector('h1');
         document.title = (headerEl && headerEl.textContent + ' - Stencil') || 'Stencil';
-        
+
         // requestAnimationFrame is not available for preRendering
         // or SSR, so only run this in the browser
         if (!this.isServer) {

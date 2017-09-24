@@ -16,13 +16,11 @@ export class App {
 
               <stencil-route url="/" component="landing-page" exact={true} />
 
-              <stencil-route url="/docs/:pageName"
-                routeRender={( props: { [key: string]: any}) => {
-                  const map = {
-                    'intro': 'intro/index.html',
-                  };
+              <stencil-route url="/:docPath"
+                routeRender={( props: {[key: string]: any}) => {
+                  console.log('Route render!');
                   return (
-                    <document-component pages={[map[props.match.params.pageName]]} />
+                    <document-component docPath={props.match.params.docPath} />
                   );
                 }}
               />
