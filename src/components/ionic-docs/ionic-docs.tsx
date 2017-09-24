@@ -8,10 +8,10 @@ export class App {
   render() {
     return (
       <div class="app">
-        {/*<site-header />*/}
         <div class="wrapper">
           <site-menu />
           <site-content>
+            <content-header />
             <stencil-router>
 
               <stencil-route url="/" component="landing-page" exact={true} />
