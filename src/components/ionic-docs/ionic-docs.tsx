@@ -18,7 +18,7 @@ export class App {
 
               <stencil-route url="/:docPath"
                 routeRender={( props: {[key: string]: any}) => {
-                  console.log('Route render!');
+                  console.log('Route render!', props.match, props.match.params);
                   return (
                     <document-component docPath={props.match.params.docPath} />
                   );
