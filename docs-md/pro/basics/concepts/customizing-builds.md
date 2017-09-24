@@ -1,13 +1,3 @@
----
-layout: fluid/pro_docs_base
-category: pro-basics
-id: pro-customizing-builds
-title: Customizing Builds - Ionic Pro Documentation
-body_class: 'pro-docs'
-hide_header_search: true
-dark_header: true
----
-
 ## The Build Process
 
 The [Git Workflow](/docs/pro/basics/git/) at the core of Ionic Pro takes commits of your app code, builds them in the cloud, and then makes it possible to distribute and manage those builds through a simple Dashboard interface and CLI tools.
@@ -72,4 +62,3 @@ For example, if we commited a repository where the Ionic app was actually locate
 ```
 
 If you also require `npm install` to run at the root directory, you can change the `"install"` script to instead be `"postInstall"` which will run both.
-

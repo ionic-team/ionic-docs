@@ -1,13 +1,3 @@
----
-layout: fluid/pro_docs_base
-category: pro-advanced
-id: pro-migration
-title: Ionic View Migration - Ionic Pro Documentation
-body_class: 'pro-docs'
-hide_header_search: true
-dark_header: true
----
-
 # Migrating from Legacy Ionic View to Ionic View
 
 Ionic View now has a partner app, the Ionic DevApp, optimized specifically for local testing. This document is here to help you transition to the app that best suits your needs.

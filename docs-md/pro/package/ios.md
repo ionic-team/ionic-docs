@@ -1,13 +1,3 @@
----
-layout: fluid/pro_docs_base
-category: pro-package
-id: pro-native-builds
-title: iOS Credentials - Ionic Pro Documentation
-body_class: 'pro-docs'
-hide_header_search: true
-dark_header: true
----
-
 # iOS Certificates and Provisioning Profiles
 
 You'll need an Apple Developer account (Individual or Organization). See

@@ -7,7 +7,7 @@ import { Component } from '@stencil/core';
 export class SiteContent {
   render() {
     return (
-      <div>
+      <div class="content">
         <slot />
       </div>
     );

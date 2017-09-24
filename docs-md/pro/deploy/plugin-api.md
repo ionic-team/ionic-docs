@@ -1,13 +1,3 @@
----
-layout: fluid/pro_docs_base
-category: pro-deploy
-id: pro-live-deploy-plugin-api
-title: Deploy PLugin API - Ionic Pro Documentation
-body_class: 'pro-docs'
-hide_header_search: true
-dark_header: true
----
-
 # Deploy Plugin API
 
 When using `UPDATE_METHOD="auto"` or `UPDATE_METHOD="background"`, the plugin manages updates for you. If you'd like to manually control updates, the Ionic plugin has a number of functions available to manage the update lifecycle.

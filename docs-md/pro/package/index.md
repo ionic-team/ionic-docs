@@ -1,13 +1,3 @@
----
-layout: fluid/pro_docs_base
-category: pro-package
-id: pro-native-builds
-title: Native Binary Builds - Ionic Pro Documentation
-body_class: 'pro-docs'
-hide_header_search: true
-dark_header: true
----
-
 # Packaging Native Binaries
 
 Ionic Pro's Package feature makes it easy to build native app binaries for iOS and Android in the cloud. Perfect for automating binary builds and for developers using Windows that want to build iOS apps.

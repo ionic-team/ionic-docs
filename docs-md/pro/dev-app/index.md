@@ -1,13 +1,3 @@
----
-layout: fluid/pro_docs_base
-category: pro-devapp
-id: pro-getting-started
-title: Ionic Dev App - Ionic Pro Documentation
-body_class: 'pro-docs'
-hide_header_search: true
-dark_header: true
----
-
 # Using the Ionic Dev App
 
 The Ionic Dev App is a free app that makes it easy to run your Ionic app directly on your device.

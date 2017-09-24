@@ -1,13 +1,3 @@
----
-layout: fluid/pro_docs_base
-category: pro-advanced
-id: pro-migration-push
-title: Cloud Push Shutdown - Ionic Pro Documentation
-body_class: 'pro-docs'
-hide_header_search: true
-dark_header: true
----
-
 # Ionic Push is being Shut Down Jan 31st, 2018
 
 Ionic Push will be shut down and no longer function on January 31st, 2018. To learn more about this shutdown, please read our [blog post](http://blog.ionic.io/sunsetting-ionic-cloud-push-and-auth/).

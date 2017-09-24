@@ -1,13 +1,3 @@
----
-layout: fluid/pro_docs_base
-category: pro-basics
-id: pro-getting-started
-title: Getting Started with Ionic Pro - Ionic Pro Documentation
-body_class: 'pro-docs'
-hide_header_search: true
-dark_header: true
----
-
 # Getting Started with Ionic Pro
 
 If you're new to Ionic Pro, please read the [Welcome](/docs/pro/basics/welcome/) introduction for a quick overview of Ionic pro and instructions on creating an account.

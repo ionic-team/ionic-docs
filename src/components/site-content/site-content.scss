@@ -1,3 +1,12 @@
 site-content {
   flex: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  .content {
+    width: 776px;
+  }
+  .sub-content {
+    padding: 60px;
+  }
 }

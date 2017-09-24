@@ -1,11 +1,3 @@
----
-layout: fluid/pro_docs_base
-category: pro-basics
-id: pro-git
-title: Working with Git - Ionic Pro Documentation
-body_class: 'pro-docs'
----
-
 # Working with Git
 
 Ionic Pro uses a git-based workflow to manage updates and to push new builds through Ionic View, Live Deploy, and more. If you're familiar with how Heroku works, then you'll find Ionic Pro's git workflow similar to use.

@@ -1,13 +1,3 @@
----
-layout: fluid/pro_docs_base
-category: pro-advanced
-id: pro-migration
-title: Cloud Deploy Migration - Ionic Pro Documentation
-body_class: 'pro-docs'
-hide_header_search: true
-dark_header: true
----
-
 # Migrate from Ionic Cloud Deploy to Ionic Pro Deploy
 
 If you're moving your app from the legacy Ionic Cloud dashbaord and want to keep using Ionic Pro Deploy, here's what you need to do.

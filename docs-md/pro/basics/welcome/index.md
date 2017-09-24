@@ -1,13 +1,3 @@
----
-layout: fluid/pro_docs_base
-category: pro-basics
-id: pro-welcome
-title: Getting Started with Ionic Pro - Ionic Pro Documentation
-body_class: 'pro-docs'
-hide_header_search: true
-dark_header: true
----
-
 # Welcome to Ionic Pro
 
 Ionic Pro is a powerful set of services and features built on top of the flagship Ionic Framework that brings a totally new level of app development agility to mobile dev teams.

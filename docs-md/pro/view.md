@@ -1,14 +1,5 @@
----
-layout: fluid/pro_docs_base
-category: pro
-id: pro-view
-title: Ionic View - Ionic Pro Documentation
-body_class: 'pro-docs'
-hide_header_search: true
-dark_header: true
----
-
 ### Coming from Legacy Ionic View?
+
 Check out the [migration guide](/docs/pro/migration/view.html).
 
 # Ionic View

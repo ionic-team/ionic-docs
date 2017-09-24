@@ -1,13 +1,3 @@
----
-layout: fluid/pro_docs_base
-category: pro-basics
-id: pro-concepts
-title: Channels - Ionic Pro Documentation
-body_class: 'pro-docs'
-hide_header_search: true
-dark_header: true
----
-
 # Ionic Pro Concepts
 
 Ionic Pro is a git-based mobile app development lifecycle suite that makes it easy to build, test, and deploy mobile and web apps faster than ever before.

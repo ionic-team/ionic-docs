@@ -1,13 +1,3 @@
----
-layout: fluid/pro_docs_base
-category: pro-package
-id: pro-native-builds
-title: Keystores and Profiles - Ionic Pro Documentation
-body_class: 'pro-docs'
-hide_header_search: true
-dark_header: true
----
-
 # Keystores and Provisioning Profiles
 
 Security Profiles securely store your credentials so you can easily reference

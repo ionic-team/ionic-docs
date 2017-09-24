@@ -1,6 +1,6 @@
 exports.config = {
   bundles: [
-    { components: ['ionic-docs', 'site-header', 'lazy-iframe', 'site-menu', 'site-content'] },
+    { components: ['ionic-docs', 'lazy-iframe', 'site-menu', 'site-content', 'content-header'] },
     { components: ['app-marked'] }
   ],
   collections: [{ name: '@stencil/router' }]
