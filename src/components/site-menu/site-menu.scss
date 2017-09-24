@@ -22,6 +22,7 @@ site-menu {
   }
 
   nav {
+    padding-top: 45px;
     flex: 1;
     overflow-y: auto;
     padding-right: 20px;
@@ -52,6 +53,11 @@ site-menu {
   }
 
   nav {
+    a {
+      text-decoration: none;
+      font-size: 13px;
+      color: #50565e;
+    }
     & > ul.nested-menu > li > ul > li {
       margin-bottom: 8px;
     }
@@ -72,7 +78,10 @@ site-menu {
       margin-left: 15px;
     }
 
+    // The Main section headers
     & > ul.nested-menu > li > ul > li > a {
+      font-weight: 600;
+
       &::before {
         background-image: url('/assets/img/sidebar-icon-sprite.png');
         background-repeat: no-repeat;
@@ -81,6 +90,13 @@ site-menu {
     }
 
     & > ul.nested-menu > li > ul > li > a {
+      margin-top: 0;
+      text-transform: none;
+      font-size: 14px;
+      font-weight: 600;
+      color: #24282e;
+      letter-spacing: 0px;
+
       &::before {
         width: 16px;
         height: 16px;
@@ -100,4 +116,12 @@ site-menu {
       letter-spacing: 0px;
     }
   }
+
+  .pro-intro-link::before { background-position: 0px 0px }
+  .pro-deploy-link::before { background-position: 0px -64px }
+  .pro-package-link::before { background-position: 0px -80px }
+  .pro-monitoring-link::before { background-position: 0px -96px }
+  .pro-view-link::before { background-position: 0px -128px }
+  .pro-advanced-link::before { background-position: 0px -160px }
+
 }

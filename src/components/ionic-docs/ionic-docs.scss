@@ -1,3 +1,39 @@
+@font-face {
+  font-family: 'Avenir Next';
+  src: local("Avenir Next"), url("/assets/fonts/avenir-next/bold.woff2") format("woff2"), url("/assets/fonts/avenir-next/bold.woff") format("woff"), url("/assets/fonts/avenir-next/bold.ttf") format("ttf"), url("/assets/fonts/avenir-next/bold.eot?#iefix") format("eot");
+  font-weight: 700;
+  unicode-range: U+000-5FF; }
+
+@font-face {
+  font-family: 'Avenir Next';
+  src: local("Avenir Next"), url("/assets/fonts/avenir-next/demi.woff2") format("woff2"), url("/assets/fonts/avenir-next/demi.woff") format("woff"), url("/assets/fonts/avenir-next/demi.ttf") format("ttf"), url("/assets/fonts/avenir-next/demi.eot?#iefix") format("eot");
+  font-weight: 600;
+  unicode-range: U+000-5FF; }
+
+@font-face {
+  font-family: 'Avenir Next';
+  src: local("Avenir Next"), url("/assets/fonts/avenir-next/medium.woff2") format("woff2"), url("/assets/fonts/avenir-next/medium.woff") format("woff"), url("/assets/fonts/avenir-next/medium.ttf") format("truetype"), url("/assets/fonts/avenir-next/medium.eot?#iefix") format("eot");
+  font-weight: 500;
+  unicode-range: U+000-5FF; }
+
+@font-face {
+  font-family: 'Avenir Next';
+  src: local("Avenir Next"), url("/assets/fonts/avenir-next/regular.woff2") format("woff2"), url("/assets/fonts/avenir-next/regular.woff") format("woff"), url("/assets/fonts/avenir-next/regular.ttf") format("ttf"), url("/assets/fonts/avenir-next/regular.eot?#iefix") format("eot");
+  font-weight: 400;
+  unicode-range: U+000-5FF; }
+
+@font-face {
+  font-family: 'Avenir Next';
+  src: local("Avenir Next"), url("/assets/fonts/avenir-next/thin.woff2") format("woff2"), url("/assets/fonts/avenir-next/thin.woff") format("woff"), url("/assets/fonts/avenir-next/thin.ttf") format("ttf"), url("/assets/fonts/avenir-next/thin.eot?#iefix") format("eot");
+  font-weight: 300;
+  unicode-range: U+000-5FF; }
+
+@font-face {
+  font-family: 'Avenir Next';
+  src: local("Avenir Next"), url("/assets/fonts/avenir-next/ultralight.woff2") format("woff2"), url("/assets/fonts/avenir-next/ultralight.woff") format("woff"), url("/assets/fonts/avenir-next/ultralight.ttf") format("ttf"), url("/assets/fonts/avenir-next/ultralight.eot?#iefix") format("eot");
+  font-weight: 200;
+  unicode-range: U+000-5FF; }
+
 * {
   box-sizing: border-box;
 }
@@ -11,15 +47,7 @@
 }
 
 html, body {
-  font-family: -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Helvetica,
-    Arial,
-    sans-serif,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol";
+  font-family: "Avenir Next", "Helvetica Neue", Helvetica, sans-serif;
   height: 100%;
   width: 100%;
   padding: 0;
