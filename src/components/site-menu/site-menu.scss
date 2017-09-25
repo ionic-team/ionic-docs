@@ -16,6 +16,10 @@ site-menu {
 
   border-right: 1px solid rgba(21, 30, 47, 0.05);
 
+  .logo {
+    height: 40px;
+  }
+
   .menu-wrapper {
     display: flex;
     flex-direction: column;
