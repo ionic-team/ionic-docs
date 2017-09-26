@@ -15,14 +15,16 @@ export class MenuExpander {
 
   componentDidLoad() {
     const ul = this.el.nextElementSibling;
-    console.log('Found our ul child', ul);
+    ul.classList.add('collapsed');
     this.target = ul;
   }
 
   handleOnClick(e) {
     if(!this.target) { return; }
 
-    this.target.classList.toggle('expanded');
+    setTimeout(() => {
+      this.target.classList.toggle('collapsed');
+    })
   }
 
   render() {
