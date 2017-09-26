@@ -1,6 +1,6 @@
 ## The Build Process
 
-The [Git Workflow](/docs/pro/basics/git/) at the core of Ionic Pro takes commits of your app code, builds them in the cloud, and then makes it possible to distribute and manage those builds through a simple Dashboard interface and CLI tools.
+The [Git Workflow](/pro/basics/git/) at the core of Ionic Pro takes commits of your app code, builds them in the cloud, and then makes it possible to distribute and manage those builds through a simple Dashboard interface and CLI tools.
 
 A `Build` in Ionic Pro is triggered when running `git push ionic master` (or any other non-master branch) with new changes to your app. Each build goes through a CI system that triggers a full build of your app (we run `npm run build`), and the completed build is stored for later use through one of the core Ionic Pro services.
 

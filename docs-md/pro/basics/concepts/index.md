@@ -6,11 +6,11 @@ Ionic Pro introduces a few new concepts and gives some familiar concepts new nam
 
 ## Builds
 
-The [Git Workflow](/docs/pro/basics/git/) at the core of Ionic Pro takes commits of your app code, builds them in the cloud, and then makes it possible to distribute and manage those builds through a simple Dashboard interface and CLI tools.
+The [Git Workflow](/pro/basics/git/) at the core of Ionic Pro takes commits of your app code, builds them in the cloud, and then makes it possible to distribute and manage those builds through a simple Dashboard interface and CLI tools.
 
 A `Build` in Ionic Pro is triggered when running `git push ionic master` with new changes to your app. Each build goes through a CI system that triggers a full build of your app (much like running `npm run build`), and the completed build is stored for later use through one of the core Ionic Pro services.
 
-If you'd like to customize your builds, please see our [Customizing Builds](/docs/pro/basics/concepts/customizing-builds.html) documentation.
+If you'd like to customize your builds, please see our [Customizing Builds](/pro/basics/concepts/customizing-builds.html) documentation.
 
 ## Channels
 

@@ -18,9 +18,9 @@ Your app probably has code to check for and download updates using the `ionic-cl
 
 The Ionic Pro services which take advantage of native device features are now centralized in the `cordova-plugin-ionic` plugin.  
 
-You'll install it as part of the setup process **[here](/docs/pro/deploy/)**.
+You'll install it as part of the setup process **[here](/pro/deploy/)**.
 
-If you'd like to use custom Deploy logic, you can use the new [Deploy API](/docs/pro/deploy/plugin-api.html) after installing the plugin without an automatic setting.
+If you'd like to use custom Deploy logic, you can use the new [Deploy API](/pro/deploy/plugin-api.html) after installing the plugin without an automatic setting.
 
 ## Deploy a New Native Build to the App Stores
 

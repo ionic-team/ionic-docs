@@ -1,6 +1,6 @@
 ### Coming from Legacy Ionic View?
 
-Check out the [migration guide](/docs/pro/migration/view.html).
+Check out the [migration guide](/pro/migration/view.html).
 
 # Ionic View
 
@@ -47,7 +47,7 @@ For apps you were invited to, you can submit feedback by shaking the device whil
   <img style="width: 207px" src="/img/pro/view-feedback.png">
 </div>
 
-The app owner will be able to view submitted feedback in the Ionic Pro dashboard for that app. See the [Beta Testing docs](/docs/pro/beta-testing.html#viewing-feedback) for more details.
+The app owner will be able to view submitted feedback in the Ionic Pro dashboard for that app. See the [Beta Testing docs](/pro/beta-testing.html#viewing-feedback) for more details.
 
 ## Exiting Apps
 To exit an app you are testing, just shake the device and select "Exit".  You can also 3-finger swipe down.

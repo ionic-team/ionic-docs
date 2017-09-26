@@ -4,10 +4,10 @@ Ionic Pro is a powerful set of services and features built on top of the flagshi
 
 Ionic Pro has several core services that help you through the full app lifecycle, including
 
- * [Deploy](/docs/pro/deploy/): Update your app remotely in real-time without app store delays.
- * [View](/docs/pro/view/): Test your app with testers and get feedback immediately without complicated device and provisioning profile management.
- * [Package](/docs/pro/package/): Build app binaries in the cloud for iOS and Android.
- * [Monitoring](/docs/pro/monitoring/): Track runtime errors in production back to your original TypeScript.
+ * [Deploy](/pro/deploy/): Update your app remotely in real-time without app store delays.
+ * [View](/pro/view/): Test your app with testers and get feedback immediately without complicated device and provisioning profile management.
+ * [Package](/pro/package/): Build app binaries in the cloud for iOS and Android.
+ * [Monitoring](/pro/monitoring/): Track runtime errors in production back to your original TypeScript.
 
 Each one of these services is based around a simple git-based workflow that should be familiar to any app developer.
 
@@ -20,4 +20,4 @@ Ionic Pro has a free plan for development and kicking the tires, and paid plans 
 
 ## Getting Started
 
-Once your account has been created, continue to the [Installation](/docs/pro/basics/getting-started/) guide to install Pro and link your app to the service.
+Once your account has been created, continue to the [Installation](/pro/basics/getting-started/) guide to install Pro and link your app to the service.

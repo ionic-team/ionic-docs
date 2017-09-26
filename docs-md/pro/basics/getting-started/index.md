@@ -1,6 +1,6 @@
 # Getting Started with Ionic Pro
 
-If you're new to Ionic Pro, please read the [Welcome](/docs/pro/basics/welcome/) introduction for a quick overview of Ionic pro and instructions on creating an account.
+If you're new to Ionic Pro, please read the [Welcome](/pro/basics/welcome/) introduction for a quick overview of Ionic pro and instructions on creating an account.
 
 ## Install Ionic CLI
 
@@ -14,7 +14,7 @@ Note: you may need to add `sudo` to this command on Mac/Linux.
 
 ## Starting a New App
 
-<script src="https://fast.wistia.com/embed/medias/5mpnif6345.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_embed wistia_async_5mpnif6345" style="height:400px;width:640px">&nbsp;</div>
+<wistia-embed wid="5mpnif6345"></wistia-embed>
 
 If you are looking to create a brand new App to use with Ionic Pro, you can either start the process in [your dashboard](https://dashboard.ionicjs.com) or use the CLI locally. If you already have an App you'd like to link, skip this step.
 
@@ -26,7 +26,7 @@ Once the command finishes, you'll be prompted to create a new Ionic Pro app or l
 
 ## Linking an Existing app
 
-<script src="https://fast.wistia.com/embed/medias/fnfuwtyenb.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_embed wistia_async_fnfuwtyenb" style="height:400px;width:640px">&nbsp;</div>
+<wistia-embed wid="fnfuwtyenb"></wistia-embed>
 
 Already have an existing Ionic app you'd like to link? No problem. Run `ionic link` in the directory of that app to connect it to Ionic Pro:
 
@@ -44,4 +44,4 @@ If this is your first time running `ionic link` you may be prompted to perform a
 Now that you are logged into your Ionic Pro account from the CLI and have an app you'd like to use, the next
 step is to push commits to your Ionic Pro account.
 
-Follow the [Git Workflow](/docs/pro/basics/git/) to learn more about the workflow you should use while developing your App with Ionic Pro.
+Follow the [Git Workflow](/pro/basics/git/) to learn more about the workflow you should use while developing your App with Ionic Pro.

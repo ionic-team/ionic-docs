@@ -2,13 +2,13 @@
 
 Ionic View now has a partner app, the Ionic DevApp, optimized specifically for local testing. This document is here to help you transition to the app that best suits your needs.
 
-For an overview of features in Ionic View, take a look at the [Ionic View app documentation](/docs/pro/view.html).
+For an overview of features in Ionic View, take a look at the [Ionic View app documentation](/pro/view.html).
 
 <h3 id="are-you-testing-an-app-that-is-not-your-own">Are you testing an app that is not your own?</h3>
 See the instructions for [installing the latest version of Ionic View](#install-ionic-view).
 
 <h3 id="are-you-a-developer-testing-apps-from-your-ionic-pro-dashboard">Are you a developer testing apps from your Ionic Pro dashboard?</h3>
-If you're coming from the Ionic Cloud dashboard, you'll need to [migrate your apps to Ionic Pro](/docs/pro/migration/index.html) first.
+If you're coming from the Ionic Cloud dashboard, you'll need to [migrate your apps to Ionic Pro](/pro/migration/index.html) first.
 
 Next, install [the latest version of Ionic View](#install-ionic-view). Once you've installed the app, you can add Ionic Pro accounts from the Settings tab to test all apps you have access to from your Ionic Pro dashboard.
 
@@ -32,7 +32,7 @@ Download and install the latest version of Ionic View from the iOS or Android ap
 
 Rather than only loading the latest version of your app, View now has the power to control exactly who sees which versions of your code.  It's been upgraded with a host of powerful beta testing features and integrated deeply into the Ionic Pro dashboard.
 
-If you are a developer, head over to the [Beta Testing docs](/docs/pro/beta-testing.html) for more on how you can use View to streamline your testing process.
+If you are a developer, head over to the [Beta Testing docs](/pro/beta-testing.html) for more on how you can use View to streamline your testing process.
 
 ## Install Ionic DevApp
 

@@ -14,7 +14,7 @@ That should be it, git will be installed and ready to use!
 
 ## Getting Started
 
-Follow the steps at [Getting Started](/docs/pro/getting-started.html) to start a new App or link an existing App to Ionic Pro.
+Follow the steps at [Getting Started](/pro/getting-started.html) to start a new App or link an existing App to Ionic Pro.
 
 ## Adding your Existing Repository
 

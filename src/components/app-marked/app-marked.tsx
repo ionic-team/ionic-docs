@@ -20,8 +20,8 @@ export class AppMarked {
     return fetch(`/docs-content/${this.doc}`)
       .then(response => response.text())
       .then(data => {
-        console.log('App Marked returned');
         this.content = data;
+        console.log(data);
 
         const el = document.createElement('div');
         el.innerHTML = data;

@@ -2,9 +2,9 @@
 
 Ionic View makes it easy to distribute versions of your app to beta testers, clients, co-workers, and more, without dealing with the complicated device provisioning and configuration required with traditional beta testing services.
 
-Looking for a reference of Ionic View the app? Take a look at the [Ionic View app docs](/docs/pro/view/) for an overview of features in the app itself.
+Looking for a reference of Ionic View the app? Take a look at the [Ionic View app docs](/pro/view/) for an overview of features in the app itself.
 
-In order to share & test with Ionic View, you'll have to push any code up to Ionic Pro that you'd like to share with [git push ionic master](/docs/pro/git.html#pushing-new-builds).
+In order to share & test with Ionic View, you'll have to push any code up to Ionic Pro that you'd like to share with [git push ionic master](/pro/git.html#pushing-new-builds).
 
 ## Install Ionic View
 
@@ -35,7 +35,7 @@ For instance, you could set up a **Staging** Channel that you can share with you
 
 You have complete control over these Channels and what Build is set to active for them. If you push a new build to **Staging**, anyone who has been given access to that Channel will be able to see the update right in Ionic View.
 
-For more information on setting up and deploying to Channels, please see our [Channels Documentation](/docs/pro/channels.html).
+For more information on setting up and deploying to Channels, please see our [Channels Documentation](/pro/channels.html).
 
 ## Inviting Private Testers
 
@@ -47,7 +47,7 @@ These users will receive an email with a link that will automatically download I
 
 ## Sharing Publicly
 
-If you'd like to share your App publicly in Ionic View (for instance, on our Marketplace), all you have to do is set up one or more Public Channels (See [Using Public Channels](/docs/pro/channels.html#using-public-channels)).
+If you'd like to share your App publicly in Ionic View (for instance, on our Marketplace), all you have to do is set up one or more Public Channels (See [Using Public Channels](/pro/channels.html#using-public-channels)).
 
 Once your Public channels have been set up, click on the **Share App** button in the top right of your Apps dashboard and click the "Public Ionic View" tab. Copy your AppId and share it with whomever you'd like.
 
@@ -59,4 +59,4 @@ You can view feedback submitted by testers for any app from the Feedback tab in 
   <img style="width: 950px" src="/img/pro/beta-testing-feedback.png">
 </div>
 
-See the [Submitting Feedback](/docs/pro/view/#submitting-feedback) for more details.
+See the [Submitting Feedback](/pro/view/#submitting-feedback) for more details.

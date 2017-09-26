@@ -12,8 +12,8 @@ and one for production.
 We'll guide you through creating a development profile with the credentials
 that you need for the desired platform below.
 
-* [Android credentials](/docs/pro/package/android.html)
-* [iOS credentials](/docs/pro/package/ios.html)
+* [Android credentials](/pro/package/android.html)
+* [iOS credentials](/pro/package/ios.html)
 
 ## Creating Security Profiles
 

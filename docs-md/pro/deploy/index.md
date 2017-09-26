@@ -18,6 +18,6 @@ This enables you to
 
 ## Get started
 
-* [Setup and use the plugin](/docs/pro/deploy/setup/)
-* [Learn the plugin API](/docs/pro/deploy/plugin-api.html)
-* [Migrate from the legacy Cloud Dashboard](/docs/pro/migration/live-updates.html)
+* [Setup and use the plugin](/pro/deploy/setup/)
+* [Learn the plugin API](/pro/deploy/plugin-api.html)
+* [Migrate from the legacy Cloud Dashboard](/pro/migration/live-updates.html)

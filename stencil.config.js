@@ -1,7 +1,7 @@
 exports.config = {
   bundles: [
     { components: ['ionic-docs', 'lazy-iframe', 'site-menu', 'site-content', 'content-header'] },
-    { components: ['app-marked'] }
+    { components: ['app-marked', 'wistia-embed'] }
   ],
   collections: [{ name: '@stencil/router' }]
 };
