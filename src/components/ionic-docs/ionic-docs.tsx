@@ -16,9 +16,10 @@ export class App {
             <div class="sub-content">
               <stencil-router>
 
-                <stencil-route url="/" component="landing-page" exact={true} />
+                <stencil-route url="/" component="landing-page" exact={true} group="main" />
 
-                <stencil-route url="/docs/:docPath*"
+                <stencil-route url="/:docPath*"
+                  group="main"
                   routeRender={( props: {[key: string]: any}) => {
                     console.log('Route render!', props.match, props.match.params);
                     return (

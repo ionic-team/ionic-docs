@@ -11,6 +11,7 @@ export class SiteMenu {
         <stencil-route-link url="/" class="logo-link">
           <img class="logo" alt="Ionic" src="/assets/img/text-logo.png" />
         </stencil-route-link>
+        <h2 class="title">Ionic Pro Docs</h2>
         <nav>
           <ul class="nested-menu">
             <li class="active">
