@@ -20,19 +20,17 @@ export class AppMarked {
     return fetch(`/docs-content/${this.doc}`)
       .then(response => response.text())
       .then(data => {
+        console.log('App Marked returned');
         this.content = data;
 
         const el = document.createElement('div');
         el.innerHTML = data;
 
-        const headerEl = el.querySelector('h1');
-        document.title = (headerEl && headerEl.textContent + ' - Stencil') || 'Stencil';
-
         // requestAnimationFrame is not available for preRendering
         // or SSR, so only run this in the browser
         if (!this.isServer) {
           window.requestAnimationFrame(() => {
-            window.scrollTo(0, 0);
+            document.getElementById('main-content').scrollTop = 0;
           })
         }
 

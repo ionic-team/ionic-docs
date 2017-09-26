@@ -10,7 +10,7 @@ export class App {
       <div class="app">
         <div class="wrapper">
           <site-menu />
-          <site-content>
+          <site-content id="main-content">
             <content-header />
 
             <div class="sub-content">
