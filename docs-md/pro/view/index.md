@@ -25,7 +25,7 @@ If you are working with testers, the email they receive inviting them to look at
 
 <br>
 
-<script src="https://fast.wistia.com/embed/medias/za0joonedd.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_embed wistia_async_za0joonedd" style="height:400px;width:640px">&nbsp;</div>
+<wistia-embed wid="za0joonedd"></wistia-embed>
 
 ## Using Channels with Ionic View
 
@@ -43,7 +43,7 @@ Once you have a Channel set up to share, click on the **Share App** button in th
 
 These users will receive an email with a link that will automatically download Ionic View for them, and then grant them access to your App.
 
-<script src="https://fast.wistia.com/embed/medias/6uubjvj0q6.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_embed wistia_async_6uubjvj0q6" style="height:400px;width:640px">&nbsp;</div>
+<wistia-embed wid="6uubjvj0q6"></wistia-embed>
 
 ## Sharing Publicly
 

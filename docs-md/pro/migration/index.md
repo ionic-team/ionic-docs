@@ -16,7 +16,7 @@ To start using your new account, just head over to [dashboard.ionicjs.com](https
 
 ## Moving Apps to the new service
 
-<script src="https://fast.wistia.com/embed/medias/tpqpm4rmfl.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_tpqpm4rmfl videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
+<wistia-embed wid="tpqpm4rmfl"></wistia-embed>
 
 Migrating apps over to the new Ionic Pro service is a manual process and your existing channel/deploy/view data *will not* transfer over to the new system. Essentially you're creating a new app on the Pro dashboard and linking together the new products and services.
 

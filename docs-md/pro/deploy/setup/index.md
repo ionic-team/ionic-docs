@@ -8,7 +8,7 @@ The Deploy feature works with the Ionic Pro [Git Workflow](/pro/basics/git/) to 
 
 ## Installation
 
-<script src="https://fast.wistia.com/embed/medias/2702mkf530.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_embed wistia_async_2702mkf530" style="height:400px;width:640px">&nbsp;</div>
+<wistia-embed wid="2702mkf530"></wistia-embed>
 
 The Ionic Plugin manages fetching and applying remote app updates. To use Ionic Pro's Deploy feature, you must first [Set up a Channel](/pro/channels.html) to poll for updates from.
 
@@ -42,4 +42,4 @@ To push new updates to your app, first push a new build using the [Git Workflow]
 
 To get that new build live in your app using Deploy, there are two options. Either [manually deploy the build to the channel](/pro/channels.html#deploying-to-a-channel) defined in the plugin above (the "Production" channel, by default), or, if you have specified a [specific git branch channel to auto-deploy](/pro/channels.html#automating-deployment-from-a-git-branch), the Deploy plugin will auto update once the build has completed.
 
-<script src="https://fast.wistia.com/embed/medias/00mgfso2ak.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_embed wistia_async_00mgfso2ak" style="height:400px;width:640px">&nbsp;</div>
+<wistia-embed wid="00mgfso2ak"></wistia-embed>
