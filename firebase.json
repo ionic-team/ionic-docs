@@ -7,13 +7,6 @@
         "destination": "/index.html"
       }
     ],
-    "redirects": [
-      {
-        "source": "/docs/building-components",
-        "destination": "/docs/my-first-component",
-        "type": 301
-      }
-    ],
     "headers": [
       {
         "source": "sw.js",
