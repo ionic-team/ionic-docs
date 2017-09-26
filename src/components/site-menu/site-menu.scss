@@ -88,15 +88,10 @@ site-menu {
     }
 
     // The Main section headers
-    & > ul.nested-menu > li > ul > li > a {
+    & > ul.nested-menu > li > ul > li > menu-expander {
       font-weight: 600;
-
-      &::before {
-        background-image: url('/assets/img/sidebar-icon-sprite.png');
-        background-repeat: no-repeat;
-        background-color: transparent;
-      }
     }
+
 
     & > ul.nested-menu > li > ul > li > a {
       margin-top: 0;
@@ -126,11 +121,23 @@ site-menu {
     }
   }
 
-  .pro-intro-link::before { background-position: 0px 0px }
-  .pro-deploy-link::before { background-position: 0px -64px }
-  .pro-package-link::before { background-position: 0px -80px }
-  .pro-monitoring-link::before { background-position: 0px -96px }
-  .pro-view-link::before { background-position: 0px -128px }
-  .pro-advanced-link::before { background-position: 0px -160px }
+  .pro-icon {
+    display: inline-block;
+    margin-top: -2px;
+    width: 16px;
+    height: 16px;
+    background-size: 100%;
+    background-image: url('/assets/img/sidebar-icon-sprite.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+  .pro-icon-intro { background-position: 0px 0px }
+  .pro-icon-deploy { background-position: 0px -64px }
+  .pro-icon-package { background-position: 0px -80px }
+  .pro-icon-monitoring { background-position: 0px -96px }
+  .pro-icon-view { background-position: 0px -128px }
+  .pro-icon-advanced { background-position: 0px -160px }
 
 }

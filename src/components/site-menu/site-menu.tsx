@@ -17,7 +17,7 @@ export class SiteMenu {
             <li class="active">
               <ul>
                 <li>
-                  <a class="pro-intro-link">Introduction</a>
+                  <menu-expander service="intro">Introduction</menu-expander>
                   <ul>
                     <li>
                       <stencil-route-link url="/pro/basics/welcome/">Welcome</stencil-route-link>
@@ -62,7 +62,7 @@ export class SiteMenu {
                   </ul>
                 </li>
                 <li>
-                  <a class="pro-view-link">View</a>
+                  <menu-expander service="view">View</menu-expander>
                   <ul>
                     <li>
                       <stencil-route-link url="/pro/view/">Introduction</stencil-route-link>
@@ -79,7 +79,7 @@ export class SiteMenu {
                   </ul>
                 </li>
                 <li>
-                  <a class="pro-deploy-link">Deploy</a>
+                  <menu-expander service="deploy">Deploy</menu-expander>
                   <ul>
                     <li>
                       <stencil-route-link url="/pro/deploy/">Introduction</stencil-route-link>
@@ -96,7 +96,7 @@ export class SiteMenu {
                   </ul>
                 </li>
                 <li>
-                  <a class="pro-package-link">Package</a>
+                  <menu-expander service="package">Package</menu-expander>
                   <ul>
                     <li>
                       <stencil-route-link url="/pro/package/">Introduction</stencil-route-link>
@@ -113,7 +113,7 @@ export class SiteMenu {
                   </ul>
                 </li>
                 <li>
-                  <a class="pro-monitoring-link">Monitoring</a>
+                  <menu-expander service="monitoring">Monitoring</menu-expander>
                   <ul>
                     <li>
                       <stencil-route-link url="/pro/monitoring/">Introduction</stencil-route-link>
@@ -127,7 +127,7 @@ export class SiteMenu {
                   </ul>
                 </li>
                 <li>
-                  <a class="pro-advanced-link">Advanced</a>
+                  <menu-expander service="advanced">Advanced</menu-expander>
                   <ul>
                     <li>
                       <stencil-route-link url="/pro/migration/">Cloud Migration</stencil-route-link>
