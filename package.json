@@ -1,7 +1,7 @@
 {
   "name": "@ionic/ionic-docs",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Ionic Docs Site",
   "scripts": {
     "docs": "gulp",
@@ -13,11 +13,11 @@
     "stencil:generate": "node scripts/generate.js"
   },
   "dependencies": {
-    "@stencil/core": "0.0.5",
-    "@stencil/router": "0.0.16"
+    "@stencil/core": "0.0.9-1",
+    "@stencil/router": "0.0.17"
   },
   "devDependencies": {
-    "@stencil/dev-server": "0.0.17",
+    "@stencil/dev-server": "0.0.18-0",
     "@stencil/utils": "latest",
     "gh-pages": "^1.0.0",
     "gulp": "^3.9.1",
@@ -33,5 +33,5 @@
   "bugs": {
     "url": "https://github.com/ionic-team/ionic-docs"
   },
-  "homepage": "docs.ionicframework.com"
+  "homepage": "ionicframework.com/docs"
 }

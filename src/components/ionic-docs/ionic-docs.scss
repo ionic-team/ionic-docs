@@ -1,38 +1,6 @@
-@font-face {
-  font-family: 'Avenir Next';
-  src: local("Avenir Next"), url("/assets/fonts/avenir-next/bold.woff2") format("woff2"), url("/assets/fonts/avenir-next/bold.woff") format("woff"), url("/assets/fonts/avenir-next/bold.ttf") format("ttf"), url("/assets/fonts/avenir-next/bold.eot?#iefix") format("eot");
-  font-weight: 700;
-  unicode-range: U+000-5FF; }
-
-@font-face {
-  font-family: 'Avenir Next';
-  src: local("Avenir Next"), url("/assets/fonts/avenir-next/demi.woff2") format("woff2"), url("/assets/fonts/avenir-next/demi.woff") format("woff"), url("/assets/fonts/avenir-next/demi.ttf") format("ttf"), url("/assets/fonts/avenir-next/demi.eot?#iefix") format("eot");
-  font-weight: 600;
-  unicode-range: U+000-5FF; }
-
-@font-face {
-  font-family: 'Avenir Next';
-  src: local("Avenir Next"), url("/assets/fonts/avenir-next/medium.woff2") format("woff2"), url("/assets/fonts/avenir-next/medium.woff") format("woff"), url("/assets/fonts/avenir-next/medium.ttf") format("truetype"), url("/assets/fonts/avenir-next/medium.eot?#iefix") format("eot");
-  font-weight: 500;
-  unicode-range: U+000-5FF; }
-
-@font-face {
-  font-family: 'Avenir Next';
-  src: local("Avenir Next"), url("/assets/fonts/avenir-next/regular.woff2") format("woff2"), url("/assets/fonts/avenir-next/regular.woff") format("woff"), url("/assets/fonts/avenir-next/regular.ttf") format("ttf"), url("/assets/fonts/avenir-next/regular.eot?#iefix") format("eot");
-  font-weight: 400;
-  unicode-range: U+000-5FF; }
-
-@font-face {
-  font-family: 'Avenir Next';
-  src: local("Avenir Next"), url("/assets/fonts/avenir-next/thin.woff2") format("woff2"), url("/assets/fonts/avenir-next/thin.woff") format("woff"), url("/assets/fonts/avenir-next/thin.ttf") format("ttf"), url("/assets/fonts/avenir-next/thin.eot?#iefix") format("eot");
-  font-weight: 300;
-  unicode-range: U+000-5FF; }
-
-@font-face {
-  font-family: 'Avenir Next';
-  src: local("Avenir Next"), url("/assets/fonts/avenir-next/ultralight.woff2") format("woff2"), url("/assets/fonts/avenir-next/ultralight.woff") format("woff"), url("/assets/fonts/avenir-next/ultralight.ttf") format("ttf"), url("/assets/fonts/avenir-next/ultralight.eot?#iefix") format("eot");
-  font-weight: 200;
-  unicode-range: U+000-5FF; }
+@import 'src/styles/fonts';
+@import 'src/styles/typography';
+@import 'src/styles/hljs';
 
 * {
   box-sizing: border-box;
@@ -52,44 +20,6 @@ html, body {
   width: 100%;
   padding: 0;
   margin: 0;
-}
-
-h1, h2, h3, h4 {
-  color: #16161d;
-}
-
-h1 {
-  font-size: 28px;
-  font-weight: bold;
-}
-
-h1:not(:first-child) {
-  margin-top: 48px;
-}
-
-h2 {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-h2, h3 {
-  margin-top: 48px;
-  margin-bottom: 8px;
-}
-
-p, ul {
-  color: #16161d;
-  font-size: 15px;
-}
-
-a, stencil-route-link {
-  color: #4a8bfc;
-  text-decoration: none;
-}
-
-stencil-route-link:hover {
-  text-decoration: underline;
-  cursor: pointer;
 }
 
 ionic-docs {
@@ -115,35 +45,6 @@ ionic-docs {
   //justify-content: flex-start;
   //align-content: stretch;
   //align-items: flex-start;
-}
-
-pre {
-  word-break: break-all;
-  word-wrap: break-word;
-  display: block;
-  white-space: pre-wrap;
-  margin: 24px 0px 28px;
-  padding: 16px 24px;
-  border-radius: 4px;
-  color: #abb2bf;
-  // background: #282c34;
-  background-color: #16161d;
-  code {
-    font-weight: 500;
-    display: block;
-    overflow-x: auto;
-    word-wrap: normal;
-    white-space: pre;
-    box-sizing: border-box;
-    font-size: 14px;
-    line-height: 20px;
-  }
-}
-
-code {
-  font-weight: 400;
-  font-family: "Source Code Pro", monospace;
-  font-size: 14px;
 }
 
 .button {
@@ -184,63 +85,6 @@ code {
   &:hover {
     text-decoration: underline;
   }
-}
-
-.hljs-comment, .hljs-quote {
-  color: #5c6370;
-  font-style: italic;
-}
-
-.hljs-doctag, .hljs-keyword, .hljs-formula {
-  color: #c678dd;
-}
-
-.hljs-section, .hljs-name, .hljs-selector-tag, .hljs-deletion, .hljs-subst {
-  color: #e06c75;
-}
-
-.hljs-literal {
-  color: #56b6c2;
-}
-
-.hljs-string, .hljs-regexp, .hljs-addition, .hljs-attribute, .hljs-meta-string {
-  color: #98c379;
-}
-
-.hljs-built_in, .hljs-class .hljs-title {
-  color: #e6c07b;
-}
-
-.hljs-attr,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-type,
-.hljs-selector-class,
-.hljs-selector-attr,
-.hljs-selector-pseudo,
-.hljs-number {
-  color: #d19a66;
-}
-
-.hljs-symbol,
-.hljs-bullet,
-.hljs-link,
-.hljs-meta,
-.hljs-selector-id,
-.hljs-title {
-  color: #61aeee;
-}
-
-.hljs-emphasis {
-  font-style: italic;
-}
-
-.hljs-strong {
-  font-weight: bold;
-}
-
-.hljs-link {
-  text-decoration: underline;
 }
 
 @media screen and (max-width: 450px) {
