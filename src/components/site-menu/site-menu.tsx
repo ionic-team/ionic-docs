@@ -17,16 +17,16 @@ export class SiteMenu {
                 <stencil-route-link url="">What is Ionic Framework?</stencil-route-link>
               </li>
               <li>
-                <stencil-route-link url="">Basic Features</stencil-route-link>
+                <stencil-route-link url="/intro/basics">Basic Features</stencil-route-link>
               </li>
               <li>
-                <stencil-route-link url="">App Structure</stencil-route-link>
+                <stencil-route-link url="/intro/structure">App Structure</stencil-route-link>
               </li>
               <li>
-                <stencil-route-link url="">Core Concepts</stencil-route-link>
+                <stencil-route-link url="/intro/concepts">Core Concepts</stencil-route-link>
               </li>
               <li>
-                <stencil-route-link url="">Browser Support</stencil-route-link>
+                <stencil-route-link url="/intro/support">Browser Support</stencil-route-link>
               </li>
             </ul>
           </li>
@@ -34,28 +34,28 @@ export class SiteMenu {
             <menu-expander service="getting-started">Getting Started</menu-expander>
             <ul>
               <li>
-                <stencil-route-link url="">Installation</stencil-route-link>
+                <stencil-route-link url="/getting-started/installation">Installation</stencil-route-link>
               </li>
               <li>
-                <stencil-route-link url="">Starting an App</stencil-route-link>
+                <stencil-route-link url="/getting-started/starting-an-app">Starting an App</stencil-route-link>
               </li>
               <li>
-                <stencil-route-link url="">Run Your App</stencil-route-link>
+                <stencil-route-link url="/getting-started/run-your-app">Run Your App</stencil-route-link>
               </li>
               <li>
-                <stencil-route-link url="">Dev Build</stencil-route-link>
+                <stencil-route-link url="/getting-started/dev-bulid">Dev Build</stencil-route-link>
               </li>
               <li>
-                <stencil-route-link url="">Testing</stencil-route-link>
+                <stencil-route-link url="/getting-started/testing">Testing</stencil-route-link>
               </li>
               <li>
-                <stencil-route-link url="">Deploying</stencil-route-link>
+                <stencil-route-link url="/getting-started/deploying">Deploying</stencil-route-link>
               </li>
               <li>
-                <stencil-route-link url="">Relasing</stencil-route-link>
+                <stencil-route-link url="/getting-started/releasing">Releasing</stencil-route-link>
               </li>
               <li>
-                <stencil-route-link url="">Tutorial</stencil-route-link>
+                <stencil-route-link url="/getting-started/tutorial">Tutorial</stencil-route-link>
               </li>
             </ul>
           </li>

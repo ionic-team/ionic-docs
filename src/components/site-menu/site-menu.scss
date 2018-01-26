@@ -5,7 +5,6 @@ site-menu {
   @extend %site-grid-component;
   display: flex;
 
-
   nav {
     > ul > li {
       > stencil-route-link,
@@ -15,10 +14,12 @@ site-menu {
         a {
           font-weight: 600;
           color: $blackish;
+          padding: 10px 0;
+          font-size: 13px;
+          letter-spacing: -.02em;
 
           &:hover {
             color: $blue;
-            text-decoration: none;
           }
         }
       }
@@ -31,7 +32,7 @@ site-menu {
     padding: 0;
 
     ul {
-      padding-left: 15px;
+      margin: -3px 0 3px 8px;
     }
   }
 
@@ -41,16 +42,21 @@ site-menu {
   }
 
   a {
-    letter-spacing: -.02em;
+    letter-spacing: .01em;
     text-decoration: none;
-    color: #484854;
+    color: #808d9f;
     text-indent: 0;
     display: inline-block;
-    padding: 5px 0;
-    font-size: 13px;
-    font-weight: 300;
+    padding: 6px 0 7px;
+    font-size: 12px;
+    font-weight: 400;
     cursor: pointer;
     transition: .2s color ease;
+
+    &.link-active,
+    &:hover {
+      color: $blue;
+    }
   }
 
 }
