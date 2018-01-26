@@ -29,10 +29,7 @@ export class MenuExpander {
 
   render() {
     return (
-      <div onClick={this.handleOnClick.bind(this)}>
-        <div class={`pro-icon pro-icon-${this.service}`}></div>
-        <a><slot /></a>
-      </div>
+      <a onClick={this.handleOnClick.bind(this)}><slot /></a>
     )
   }
 }

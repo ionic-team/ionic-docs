@@ -1,0 +1,8 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+site-logo {
+  grid-area: site-logo;
+  @extend %site-grid-component;
+  @extend %header;
+}

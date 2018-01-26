@@ -13,8 +13,8 @@
     "stencil:generate": "node scripts/generate.js"
   },
   "dependencies": {
-    "@stencil/core": "0.0.9-1",
-    "@stencil/router": "0.0.17"
+    "@stencil/core": "0.2.2",
+    "@stencil/router": "0.0.23"
   },
   "devDependencies": {
     "@stencil/dev-server": "0.0.18-0",

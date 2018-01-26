@@ -9,7 +9,7 @@ export class DocumentComponent {
   render() {
     return (
       <div>
-        <app-marked doc={this.docPath} />
+        <app-marked doc={this.docPath ? this.docPath.substring(0, 4) : null} />
       </div>
     );
   }

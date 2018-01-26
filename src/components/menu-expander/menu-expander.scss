@@ -1,5 +1,4 @@
 menu-expander {
-    height: 28px;
 
     & + ul {
         transition: opacity cubic-bezier(0.36, 0.66, 0.04, 1) 0.3s;
@@ -9,7 +8,6 @@ menu-expander {
             transition: height cubic-bezier(0.36, 0.66, 0.04, 1) 0.3s,
             padding cubic-bezier(0.36, 0.66, 0.04, 1) 0.3s,
             opacity 0.2s;
-            height: 34px;
         }
 
         &.collapsed {
@@ -17,7 +15,7 @@ menu-expander {
 
             stencil-route-link  {
                 padding: 0;
-                height: 0 !important;
+                height: 0 ;
             }
         }
     }

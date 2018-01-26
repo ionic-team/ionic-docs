@@ -7,155 +7,114 @@ import { Component } from '@stencil/core';
 export class SiteMenu {
   render() {
     return (
-      <div class="menu-wrapper">
-        <stencil-route-link url="/" class="logo-link">
-          <img class="logo" alt="Ionic" src="/assets/img/text-logo.png" />
-        </stencil-route-link>
-        <h2 class="title">Ionic Pro Docs</h2>
-        <nav>
-          <ul class="nested-menu">
-            <li class="active">
-              <ul>
-                <li>
-                  <menu-expander service="intro">Introduction</menu-expander>
-                  <ul>
-                    <li>
-                      <stencil-route-link url="/pro/basics/welcome/">Welcome</stencil-route-link>
-                    </li>
-                    <li>
-                      <stencil-route-link url="/pro/basics/getting-started/">Installation</stencil-route-link>
-                    </li>
-                    <li>
-                      <stencil-route-link url="/pro/basics/git/">Git Workflow</stencil-route-link>
-                      <ul>
-                        <li>
-                          <stencil-route-link url="/pro/basics/git/#installing-git">Installing Git</stencil-route-link>
-                        </li>
-                        <li>
-                          <stencil-route-link url="/pro/basics/git/#adding-your-existing-repository">Adding Existing Repositories</stencil-route-link>
-                        </li>
-                        <li>
-                          <stencil-route-link url="/pro/basics/git/#pushing-new-builds">Pushing Builds</stencil-route-link>
-                        </li>
-                        <li>
-                          <stencil-route-link url="/pro/basics/git/#working-with-branches">Using Branches</stencil-route-link>
-                        </li>
-                        <li>
-                          <stencil-route-link url="/pro/basics/git/#working-with-other-team-members">Working w/ Team Members</stencil-route-link>
-                        </li>
-                        <li>
-                          <stencil-route-link url="/pro/basics/git/#ssh-keys">Adding SSH Keys</stencil-route-link>
-                        </li>
-                      </ul>
-                    </li>
-                    <li>
-                      <stencil-route-link url="/pro/basics/concepts/">Concepts</stencil-route-link>
-                      <ul>
-                        <li><stencil-route-link url="/pro/basics/concepts/#channels">Channels</stencil-route-link></li>
-                        <li><stencil-route-link url="/pro/basics/concepts/#builds">Builds</stencil-route-link></li>
-                        <li><stencil-route-link url="/pro/basics/concepts/customizing-builds.html">Customizing Builds</stencil-route-link></li>
-                      </ul>
-                    </li>
-                    <li>
-                      <stencil-route-link url="/pro/basics/help/">Help and Support</stencil-route-link>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <menu-expander service="view">View</menu-expander>
-                  <ul>
-                    <li>
-                      <stencil-route-link url="/pro/view/">Introduction</stencil-route-link>
-                    </li>
-                    <li>
-                      <stencil-route-link url="/pro/view/#using-channels-with-ionic-view">Using Channels</stencil-route-link>
-                    </li>
-                    <li>
-                      <stencil-route-link url="/pro/view/#sharing">Inviting Testers</stencil-route-link>
-                    </li>
-                    <li>
-                      <stencil-route-link url="/pro/view/#sharing">Sharing Publicly</stencil-route-link>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <menu-expander service="deploy">Deploy</menu-expander>
-                  <ul>
-                    <li>
-                      <stencil-route-link url="/pro/deploy/">Introduction</stencil-route-link>
-                    </li>
-                    <li>
-                      <stencil-route-link url="/pro/deploy/setup/#installation">Installation</stencil-route-link>
-                    </li>
-                    <li>
-                      <stencil-route-link url="/pro/deploy/setup/#usage">Deploying</stencil-route-link>
-                    </li>
-                    <li>
-                      <stencil-route-link url="/pro/deploy/plugin-api.html">Plugin API</stencil-route-link>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <menu-expander service="package">Package</menu-expander>
-                  <ul>
-                    <li>
-                      <stencil-route-link url="/pro/package/">Introduction</stencil-route-link>
-                    </li>
-                    <li>
-                      <stencil-route-link url="/pro/package/profiles.html">Generating Credentials</stencil-route-link>
-                    </li>
-                    <li>
-                      <stencil-route-link url="/pro/package/profiles.html#creating-security-profiles">Adding Credentials</stencil-route-link>
-                    </li>
-                    <li>
-                      <stencil-route-link url="/pro/package/index.html#performing-a-build">Performing Builds</stencil-route-link>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <menu-expander service="monitoring">Monitoring</menu-expander>
-                  <ul>
-                    <li>
-                      <stencil-route-link url="/pro/monitoring/">Introduction</stencil-route-link>
-                    </li>
-                    <li>
-                      <stencil-route-link url="/pro/monitoring/#getting-started">Installation</stencil-route-link>
-                    </li>
-                    <li>
-                      <stencil-route-link url="/pro/monitoring/#source-maps">Adding SourceMaps</stencil-route-link>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <menu-expander service="advanced">Advanced</menu-expander>
-                  <ul>
-                    <li>
-                      <stencil-route-link url="/pro/migration/">Cloud Migration</stencil-route-link>
-                      <ul>
-                        <li>
-                          <stencil-route-link url="/pro/migration/live-deploy.html">Live updates</stencil-route-link>
-                        </li>
-                        <li>
-                          <stencil-route-link url="/pro/migration/package.html">Package</stencil-route-link>
-                        </li>
-                        <li>
-                          <stencil-route-link url="/pro/migration/view.html">Ionic View Legacy</stencil-route-link>
-                        </li>
-                        <li>
-                          <stencil-route-link url="/pro/migration/push.html">Ionic Push</stencil-route-link>
-                        </li>
-                        <li>
-                          <stencil-route-link url="/pro/migration/auth.html">Ionic Auth</stencil-route-link>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-      </div>
+      <nav class="menu-wrapper">
+        <ul class="nested-menu">
+          <li><stencil-route-link url="/">Home</stencil-route-link></li>
+          <li class="active">
+            <menu-expander service="intro">Introduction</menu-expander>
+            <ul>
+              <li>
+                <stencil-route-link url="">What is Ionic Framework?</stencil-route-link>
+              </li>
+              <li>
+                <stencil-route-link url="">Basic Features</stencil-route-link>
+              </li>
+              <li>
+                <stencil-route-link url="">App Structure</stencil-route-link>
+              </li>
+              <li>
+                <stencil-route-link url="">Core Concepts</stencil-route-link>
+              </li>
+              <li>
+                <stencil-route-link url="">Browser Support</stencil-route-link>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <menu-expander service="getting-started">Getting Started</menu-expander>
+            <ul>
+              <li>
+                <stencil-route-link url="">Installation</stencil-route-link>
+              </li>
+              <li>
+                <stencil-route-link url="">Starting an App</stencil-route-link>
+              </li>
+              <li>
+                <stencil-route-link url="">Run Your App</stencil-route-link>
+              </li>
+              <li>
+                <stencil-route-link url="">Dev Build</stencil-route-link>
+              </li>
+              <li>
+                <stencil-route-link url="">Testing</stencil-route-link>
+              </li>
+              <li>
+                <stencil-route-link url="">Deploying</stencil-route-link>
+              </li>
+              <li>
+                <stencil-route-link url="">Relasing</stencil-route-link>
+              </li>
+              <li>
+                <stencil-route-link url="">Tutorial</stencil-route-link>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <menu-expander service="getting-started">Components</menu-expander>
+            <ul>
+              <li>
+                <stencil-route-link url=""></stencil-route-link>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <menu-expander service="getting-started">API Reference</menu-expander>
+            <ul>
+              <li>
+                <stencil-route-link url=""></stencil-route-link>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <menu-expander service="getting-started">Native APIs</menu-expander>
+            <ul>
+              <li>
+                <stencil-route-link url=""></stencil-route-link>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <menu-expander service="getting-started">Theming</menu-expander>
+            <ul>
+              <li>
+                <stencil-route-link url=""></stencil-route-link>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <menu-expander service="getting-started">Contributing</menu-expander>
+            <ul>
+              <li>
+                <stencil-route-link url=""></stencil-route-link>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <menu-expander service="getting-started">FAQ</menu-expander>
+            <ul>
+              <li>
+                <stencil-route-link url=""></stencil-route-link>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
     );
   }
 }
+
+
+
+
+
+

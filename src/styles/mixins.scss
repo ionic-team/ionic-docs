@@ -1,0 +1,20 @@
+@import 'variables';
+
+%header {
+  background: $blue;
+  color: $header-color;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  li {
+    color: $header-color;
+    margin: 0;
+  }
+}
+
+%site-grid-component {
+  padding: 23px 32px;
+}

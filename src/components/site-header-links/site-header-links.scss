@@ -1,0 +1,9 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+site-header-links {
+  grid-area: site-header-links;
+  @extend %site-grid-component;
+  @extend %header;
+  text-align: right;
+}

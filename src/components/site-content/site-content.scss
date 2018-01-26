@@ -1,12 +1,6 @@
-site-content {
-  flex: 1;
-  overflow-x: hidden;
-  overflow-y: auto;
+@import 'src/styles/mixins';
 
-  .content {
-    width: 776px;
-  }
-  .sub-content {
-    padding: 60px;
-  }
+site-content {
+  grid-area: site-content;
+  @extend %site-grid-component;
 }

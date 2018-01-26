@@ -1,143 +1,56 @@
+@import 'src/styles/mixins';
+
 site-menu {
+  grid-area: site-menu;
+  @extend %site-grid-component;
   display: flex;
-  z-index: 5;
-  flex-direction: column;
-  align-items: flex-end;
-  -webkit-user-select: none;
-  user-select: none;
-  width: calc((100% - 994px) / 2 + 275px);
-  min-width: 275px;
-  padding-left: calc((100% - 994px) / 2);
 
-  height: 100%;
-  //background: #f5f7f9;
-
-  padding-top: 20px;
-
-  border-right: 1px solid rgba(21, 30, 47, 0.05);
-
-  .logo {
-    height: 35px;
-  }
-
-  .menu-wrapper {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .title {
-    margin: 20px 0 0;
-    font-size: 18px;
-  }
 
   nav {
-    padding-top: 45px;
-    flex: 1;
-    overflow-y: auto;
-    padding-right: 20px;
+    > ul > li {
+      > stencil-route-link,
+      > menu-expander {
+        &:hover { text-decoration: none; }
+
+        a {
+          font-weight: 600;
+          color: $blackish;
+
+          &:hover {
+            color: $blue;
+            text-decoration: none;
+          }
+        }
+      }
+    }
   }
 
-  h4 {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 0;
-  }
   ul {
-    list-style-type: none;
+    list-style: none;
     margin: 0;
     padding: 0;
-    -webkit-padding-start: 0;
+
+    ul {
+      padding-left: 15px;
+    }
   }
+
   li {
     list-style: none;
     margin: 0;
+  }
+
+  a {
+    letter-spacing: -.02em;
+    text-decoration: none;
+    color: #484854;
     text-indent: 0;
-    font-size: 14px;
-    font-weight: 300;
-  }
-
-  stencil-route-link a{
-   color: #484854;
-   text-decoration: none;
-  }
-
-  nav {
-    a {
-      text-decoration: none;
-      font-size: 13px;
-      color: #50565e;
-    }
-    & > ul.nested-menu > li > ul > li {
-      margin-bottom: 8px;
-    }
-
-    & > ul.nested-menu > li > ul > li > ul {
-      // Margin in from the icon to the label start of the heading link
-      margin-left: 27px;
-
-      & > li > a {
-        font-size: 13px;
-        color: #50565e;
-        font-weight: 500;
-
-      }
-    }
-
-    & > ul.nested-menu > li > ul > li > ul > li > ul {
-      margin-left: 15px;
-    }
-
-    // The Main section headers
-    & > ul.nested-menu > li > ul > li > menu-expander {
-      font-weight: 600;
-    }
-
-
-    & > ul.nested-menu > li > ul > li > a {
-      margin-top: 0;
-      text-transform: none;
-      font-size: 14px;
-      font-weight: 600;
-      color: #24282e;
-      letter-spacing: 0px;
-
-      &::before {
-        width: 16px;
-        height: 16px;
-        background-size: 100%;
-        display: inline-block;
-        vertical-align: middle;
-        margin-right: 10px;
-        margin-top: -2px;
-        content: '';
-      }
-
-      margin-top: 0;
-      text-transform: none;
-      font-size: 14px;
-      font-weight: 600;
-      color: #24282e;
-      letter-spacing: 0px;
-    }
-  }
-
-  .pro-icon {
     display: inline-block;
-    margin-top: -2px;
-    width: 16px;
-    height: 16px;
-    background-size: 100%;
-    background-image: url('/assets/img/sidebar-icon-sprite.png');
-    background-repeat: no-repeat;
-    background-color: transparent;
-    vertical-align: middle;
-    margin-right: 5px;
+    padding: 5px 0;
+    font-size: 13px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: .2s color ease;
   }
-  .pro-icon-intro { background-position: 0px 0px }
-  .pro-icon-deploy { background-position: 0px -64px }
-  .pro-icon-package { background-position: 0px -80px }
-  .pro-icon-monitoring { background-position: 0px -96px }
-  .pro-icon-view { background-position: 0px -128px }
-  .pro-icon-advanced { background-position: 0px -160px }
 
 }

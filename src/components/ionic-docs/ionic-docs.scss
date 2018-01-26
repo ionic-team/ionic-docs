@@ -1,111 +1,15 @@
 @import 'src/styles/fonts';
 @import 'src/styles/typography';
 @import 'src/styles/hljs';
-
-* {
-  box-sizing: border-box;
-}
-
-::selection {
-  background: #e7e7f2;
-}
-
-::-moz-selection {
-  background: #e7e7f2;
-}
-
-html, body {
-  font-family: "Avenir Next", "Helvetica Neue", Helvetica, sans-serif;
-  height: 100%;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-}
+@import 'src/styles/general';
 
 ionic-docs {
-  display: block;
   width: 100%;
   height: 100%;
-}
-
-.app {
-  height: 100%;
-  width: 100%;
-  margin: auto;
-}
-
-.wrapper {
-  line-height: 32px;
-  height: 100%;
-  width: 100%;
-  min-height: 100%;
-  display: flex;
-  flex-direction: row;
-  //flex-wrap: nowrap;
-  //justify-content: flex-start;
-  //align-content: stretch;
-  //align-items: flex-start;
-}
-
-.button {
-  color: #ffffff;
-  background-color: #5850ff;
-  padding: 8px 14px;
-  border-radius: 2px;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
-.nextButton {
-  color: #ffffff;
-  background-color: #5850ff;
-  padding: 8px 14px;
-  border-radius: 2px;
-  text-decoration: none;
-  float: right;
-  margin-bottom: 10px;
-
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
-.backButton {
-  color: #ffffff;
-  background-color: #5850ff;
-  padding: 8px 14px;
-  border-radius: 2px;
-  text-decoration: none;
-  float: left;
-  margin-bottom: 10px;
-
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
-@media screen and (max-width: 450px) {
-  .wrapper {
-    padding-top: 80px;
-  }
-}
-@media screen and (max-width: 590px) {
-  .wrapper {
-    margin-right: 0;
-    margin-left: 0;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-
-    -webkit-flex-direction: column-reverse;
-    -ms-flex-direction: column-reverse;
-    flex-direction: column-reverse;
-  }
-}
-@media screen and (min-width: 590px) {
-  .wrapper {
-  }
+  display: grid;
+  grid-template-columns: minmax(200px, 3fr) 650px minmax(300px, 3fr);
+  grid-template-rows: 70px auto;
+  grid-template-areas:
+    'site-logo site-header-links site-header-links'
+    'site-menu site-content site-preview-app';
 }

@@ -38,36 +38,6 @@ declare global {
 
 
 import {
-  ContentHeader as ContentHeader
-} from './components/content-header/content-header';
-
-declare global {
-  interface HTMLContentHeaderElement extends ContentHeader, HTMLElement {
-  }
-  var HTMLContentHeaderElement: {
-    prototype: HTMLContentHeaderElement;
-    new (): HTMLContentHeaderElement;
-  };
-  interface HTMLElementTagNameMap {
-    "content-header": HTMLContentHeaderElement;
-  }
-  interface ElementTagNameMap {
-    "content-header": HTMLContentHeaderElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      "content-header": JSXElements.ContentHeaderAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface ContentHeaderAttributes extends HTMLAttributes {
-      
-    }
-  }
-}
-
-
-import {
   DocumentComponent as DocumentComponent
 } from './components/document-component/document-component';
 
@@ -249,6 +219,66 @@ declare global {
 
 
 import {
+  SiteheaderLinks as SiteHeaderLinks
+} from './components/site-header-links/site-header-links';
+
+declare global {
+  interface HTMLSiteHeaderLinksElement extends SiteHeaderLinks, HTMLElement {
+  }
+  var HTMLSiteHeaderLinksElement: {
+    prototype: HTMLSiteHeaderLinksElement;
+    new (): HTMLSiteHeaderLinksElement;
+  };
+  interface HTMLElementTagNameMap {
+    "site-header-links": HTMLSiteHeaderLinksElement;
+  }
+  interface ElementTagNameMap {
+    "site-header-links": HTMLSiteHeaderLinksElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "site-header-links": JSXElements.SiteHeaderLinksAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface SiteHeaderLinksAttributes extends HTMLAttributes {
+      
+    }
+  }
+}
+
+
+import {
+  SiteLogo as SiteLogo
+} from './components/site-logo/site-logo';
+
+declare global {
+  interface HTMLSiteLogoElement extends SiteLogo, HTMLElement {
+  }
+  var HTMLSiteLogoElement: {
+    prototype: HTMLSiteLogoElement;
+    new (): HTMLSiteLogoElement;
+  };
+  interface HTMLElementTagNameMap {
+    "site-logo": HTMLSiteLogoElement;
+  }
+  interface ElementTagNameMap {
+    "site-logo": HTMLSiteLogoElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "site-logo": JSXElements.SiteLogoAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface SiteLogoAttributes extends HTMLAttributes {
+      
+    }
+  }
+}
+
+
+import {
   SiteMenu as SiteMenu
 } from './components/site-menu/site-menu';
 
@@ -272,6 +302,36 @@ declare global {
   }
   namespace JSXElements {
     export interface SiteMenuAttributes extends HTMLAttributes {
+      
+    }
+  }
+}
+
+
+import {
+  SitePreviewApp as SitePreviewApp
+} from './components/site-preview-app/site-preview-app';
+
+declare global {
+  interface HTMLSitePreviewAppElement extends SitePreviewApp, HTMLElement {
+  }
+  var HTMLSitePreviewAppElement: {
+    prototype: HTMLSitePreviewAppElement;
+    new (): HTMLSitePreviewAppElement;
+  };
+  interface HTMLElementTagNameMap {
+    "site-preview-app": HTMLSitePreviewAppElement;
+  }
+  interface ElementTagNameMap {
+    "site-preview-app": HTMLSitePreviewAppElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "site-preview-app": JSXElements.SitePreviewAppAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface SitePreviewAppAttributes extends HTMLAttributes {
       
     }
   }
