@@ -2,7 +2,7 @@
 	<meta name="title" content="What is Ionic Framework?">
 </helmet>
 
-# What is Ionic Framework
+## What is Ionic Framework
 
 Ionic Framework is an open source (MIT) UI toolkit that enables developers to build performant, high-quality mobile apps using familiar web technologies (HTML, CSS, and JavaScript).
 
@@ -10,7 +10,7 @@ Ionic Framework is focused mainly on the look and feel, or the UI interaction, o
 
 Ionic currently requires Angular in order to work at its full potential. While you can still use the CSS portion of the framework, you’ll miss out on powerful UI interactions, gestures, animations, and other things. In the future, Ionic plans to become more agnostic in order to support a broader variety of JavaScript frameworks.
 
-## License
+### License
 
 Ionic Framework is completely free and open source, released under the permissive MIT license, which means you can use Ionic in personal or commercial projects for free. For example, MIT is the same license used by such popular projects as jQuery and Ruby on Rails.
 

@@ -12,8 +12,9 @@ menu-expander {
 
         &.collapsed {
             opacity: 0;
+            pointer-events: none;
 
-            stencil-route-link  {
+            stencil-route-link a {
                 padding: 0;
                 height: 0 ;
             }

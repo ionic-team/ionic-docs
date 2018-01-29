@@ -26,6 +26,11 @@ site-menu {
     }
   }
 
+  stencil-route-link,
+  menu-expander {
+        &:hover { text-decoration: none; }
+  }
+
   ul {
     list-style: none;
     margin: 0;
@@ -46,16 +51,17 @@ site-menu {
     text-decoration: none;
     color: #808d9f;
     text-indent: 0;
-    display: inline-block;
+    display: block;
     padding: 6px 0 7px;
     font-size: 12px;
     font-weight: 400;
     cursor: pointer;
-    transition: .2s color ease;
+    transition: .2s color ease, .2s height ease, .2s padding ease;
 
     &.link-active,
     &:hover {
       color: $blue;
+      text-decoration: none;
     }
   }
 

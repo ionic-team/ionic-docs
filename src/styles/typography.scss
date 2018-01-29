@@ -1,3 +1,5 @@
+@import 'src/styles/variables';
+
 h1, h2, h3, h4 {
   color: #16161d;
 }
@@ -7,27 +9,32 @@ h1 {
   font-weight: bold;
 }
 
-h1:not(:first-child) {
-  margin-top: 48px;
-}
-
 h2 {
   font-size: 20px;
   font-weight: bold;
+  margin-top: 48px;
+  margin-bottom: .9em;
 }
 
-h2, h3 {
-  margin-top: 48px;
-  margin-bottom: 8px;
+h3 {
+  margin-top: 4em;
+  font-size: 15px;
+  letter-spacing: -.02em;
+  margin-bottom: 1.3em;
 }
 
 p, ul {
   color: #16161d;
-  font-size: 15px;
+  font-size: 13px;
+  letter-spacing: -.026em;
+  line-height: 2.2em;
+  margin-bottom: 2.16em;
+  font-weight: 500;
 }
 
-a, stencil-route-link {
-  color: #4a8bfc;
+a,
+stencil-route-link {
+  color: $blue;
   text-decoration: none;
 }
 
@@ -47,6 +54,7 @@ pre {
   color: #abb2bf;
   // background: #282c34;
   background-color: #16161d;
+
   code {
     font-weight: 500;
     display: block;
