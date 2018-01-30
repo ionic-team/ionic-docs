@@ -3,6 +3,7 @@
 %header {
   background: $blue;
   color: $header-color;
+  position: sticky;
 
   h1,
   h2,
@@ -17,4 +18,6 @@
 
 %site-grid-component {
   padding: 23px 32px;
+  max-height: 100%;
+  overflow: scroll;
 }

@@ -1,23 +1,20 @@
 menu-expander {
+  & + ul {
 
-    & + ul {
-        transition: opacity cubic-bezier(0.36, 0.66, 0.04, 1) 0.3s;
-
-        stencil-route-link {
-            display: block;
-            transition: height cubic-bezier(0.36, 0.66, 0.04, 1) 0.3s,
-            padding cubic-bezier(0.36, 0.66, 0.04, 1) 0.3s,
-            opacity 0.2s;
-        }
-
-        &.collapsed {
-            opacity: 0;
-            pointer-events: none;
-
-            stencil-route-link a {
-                padding: 0;
-                height: 0 ;
-            }
-        }
+    stencil-route-link {
+      display: block;
+      transition:
+        height cubic-bezier(0.36, 0.66, 0.04, 1) 0.2s,
+        opacity cubic-bezier(0.36, 0.66, 0.04, 1) 0.2s;
     }
+
+    &:not(.expanded) {
+      pointer-events: none;
+
+      stencil-route-link {
+        opacity: 0;
+        height: 0;
+      }
+    }
+  }
 }

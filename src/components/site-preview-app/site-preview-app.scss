@@ -2,7 +2,7 @@
 @import 'src/styles/mixins';
 
 site-preview-app {
-  grid-area: site-preview-app;
   @extend %site-grid-component;
+  flex: 1 0 200px;
   justify-self: end;
 }

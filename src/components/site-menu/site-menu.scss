@@ -1,9 +1,12 @@
 @import 'src/styles/mixins';
 
 site-menu {
-  grid-area: site-menu;
   @extend %site-grid-component;
-  display: flex;
+  width: 256px;
+  position: fixed;
+  top: 70px;
+  bottom: 0;
+  left: 0;
 
   nav {
     > ul > li {
@@ -15,7 +18,7 @@ site-menu {
           font-weight: 600;
           color: $blackish;
           padding: 4px 0;
-          font-size: 13px;
+          font-size: 14px;
           letter-spacing: -.02em;
 
           &:hover {
@@ -29,6 +32,10 @@ site-menu {
   stencil-route-link,
   menu-expander {
         &:hover { text-decoration: none; }
+  }
+
+  menu-expander + ul stencil-route-link {
+    height: 28px;
   }
 
   ul {
@@ -52,9 +59,9 @@ site-menu {
     text-indent: 0;
     display: block;
     padding: 0;
-    letter-spacing: 0;
-    font-size: 12px;
-    font-weight: 400;
+    letter-spacing: -.02em;
+    font-size: 13px;
+    font-weight: 500;
     cursor: pointer;
     transition: .2s color ease, .2s height ease, .2s padding ease;
 

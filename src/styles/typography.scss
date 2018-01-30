@@ -1,11 +1,11 @@
 @import 'src/styles/variables';
 
 h1, h2, h3, h4 {
-  color: #16161d;
+  color: #24272c;
 }
 
 h1 {
-  font-size: 28px;
+  font-size: 32px;
   font-weight: bold;
 }
 
@@ -18,18 +18,18 @@ h2 {
 
 h3 {
   margin-top: 4em;
-  font-size: 15px;
+  font-size: 16px;
   letter-spacing: -.025em;
   margin-bottom: 1.3em;
 }
 
 p, ul {
-  color: #16161d;
-  font-size: 13px;
-  letter-spacing: -.026em;
-  line-height: 2.2em;
+  color: #3c4b62;
+  font-size: 14px;
+  letter-spacing: -.02em;
+  line-height: 2em;
   margin-bottom: 2.16em;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 ul {

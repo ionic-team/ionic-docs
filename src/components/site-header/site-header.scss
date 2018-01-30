@@ -1,9 +1,14 @@
 @import 'src/styles/variables';
 @import 'src/styles/mixins';
 
-site-header-links {
-  grid-area: site-header-links;
+site-header {
   @extend %site-grid-component;
   @extend %header;
   text-align: right;
+  height: 70px;
+  width: 100%;
+  max-height: auto;
+  overflow: visible;
+  position: fixed;
+  top: 0;
 }

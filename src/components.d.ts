@@ -159,29 +159,29 @@ declare global {
 
 
 import {
-  SiteheaderLinks as SiteHeaderLinks
-} from './components/site-header-links/site-header-links';
+  SiteHeader as SiteHeader
+} from './components/site-header/site-header';
 
 declare global {
-  interface HTMLSiteHeaderLinksElement extends SiteHeaderLinks, HTMLElement {
+  interface HTMLSiteHeaderElement extends SiteHeader, HTMLElement {
   }
-  var HTMLSiteHeaderLinksElement: {
-    prototype: HTMLSiteHeaderLinksElement;
-    new (): HTMLSiteHeaderLinksElement;
+  var HTMLSiteHeaderElement: {
+    prototype: HTMLSiteHeaderElement;
+    new (): HTMLSiteHeaderElement;
   };
   interface HTMLElementTagNameMap {
-    "site-header-links": HTMLSiteHeaderLinksElement;
+    "site-header": HTMLSiteHeaderElement;
   }
   interface ElementTagNameMap {
-    "site-header-links": HTMLSiteHeaderLinksElement;
+    "site-header": HTMLSiteHeaderElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "site-header-links": JSXElements.SiteHeaderLinksAttributes;
+      "site-header": JSXElements.SiteHeaderAttributes;
     }
   }
   namespace JSXElements {
-    export interface SiteHeaderLinksAttributes extends HTMLAttributes {
+    export interface SiteHeaderAttributes extends HTMLAttributes {
       
     }
   }
