@@ -14,7 +14,7 @@ site-menu {
         a {
           font-weight: 600;
           color: $blackish;
-          padding: 10px 0;
+          padding: 4px 0;
           font-size: 13px;
           letter-spacing: -.02em;
 
@@ -47,12 +47,12 @@ site-menu {
   }
 
   a {
-    letter-spacing: .01em;
     text-decoration: none;
     color: #808d9f;
     text-indent: 0;
     display: block;
-    padding: 6px 0 7px;
+    padding: 0;
+    letter-spacing: 0;
     font-size: 12px;
     font-weight: 400;
     cursor: pointer;
