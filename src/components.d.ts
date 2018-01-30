@@ -38,36 +38,6 @@ declare global {
 
 
 import {
-  DocumentComponent as DocumentComponent
-} from './components/document-component/document-component';
-
-declare global {
-  interface HTMLDocumentComponentElement extends DocumentComponent, HTMLElement {
-  }
-  var HTMLDocumentComponentElement: {
-    prototype: HTMLDocumentComponentElement;
-    new (): HTMLDocumentComponentElement;
-  };
-  interface HTMLElementTagNameMap {
-    "document-component": HTMLDocumentComponentElement;
-  }
-  interface ElementTagNameMap {
-    "document-component": HTMLDocumentComponentElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      "document-component": JSXElements.DocumentComponentAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface DocumentComponentAttributes extends HTMLAttributes {
-      docPath?: string;
-    }
-  }
-}
-
-
-import {
   App as IonicDocs
 } from './components/ionic-docs/ionic-docs';
 
@@ -91,36 +61,6 @@ declare global {
   }
   namespace JSXElements {
     export interface IonicDocsAttributes extends HTMLAttributes {
-      
-    }
-  }
-}
-
-
-import {
-  LandingPage as LandingPage
-} from './components/landing-page/landing-page';
-
-declare global {
-  interface HTMLLandingPageElement extends LandingPage, HTMLElement {
-  }
-  var HTMLLandingPageElement: {
-    prototype: HTMLLandingPageElement;
-    new (): HTMLLandingPageElement;
-  };
-  interface HTMLElementTagNameMap {
-    "landing-page": HTMLLandingPageElement;
-  }
-  interface ElementTagNameMap {
-    "landing-page": HTMLLandingPageElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      "landing-page": JSXElements.LandingPageAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface LandingPageAttributes extends HTMLAttributes {
       
     }
   }

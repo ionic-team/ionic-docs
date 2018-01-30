@@ -11,33 +11,22 @@ export class App {
       <site-logo />,
       <site-header-links />,
       <site-menu />,
-
-      <site-content id="main-content">
-        <stencil-router>
-          <stencil-route url="/docs"
-                         component="landing-page"
-                         exact={true}
-                         group="main" />
-
-          <stencil-route url="/docs/:docPath"
-            group="main"
-            routeRender={( props: {[key: string]: any}) => {
-              // console.log('Route render!', props.match, props.match.params);
-              return (
-                <document-component docPath={props.match.params.docPath} />
-              );
-            }}
-          />
-          {/* <stencil-route url="/" exact={true} routeRender={
-            (props: { [key: string]: any}) => {
-              return [
-                <span>rendering /demo2</span>,
-                <stencil-router-redirect url="/docs" />
-              ];
-            }
-          }/> */}
-        </stencil-router>
-      </site-content>,
+      <stencil-router>
+        <stencil-route url={['/docs', 'docs/:docPath']}
+          group="main"
+          routeRender={( props ) => {
+            // console.log('Route render!', props.match, props.match.params);
+            const docPath = props.match.params.docPath ?
+              props.match.params.docPath.substring(0, 4) : '/';
+            return (
+              <app-marked doc={docPath} />
+            );
+          }}
+        />
+        <stencil-route url="/" exact={true} routeRender={() => {
+          return <stencil-router-redirect url="/docs" />
+        }}/>
+      </stencil-router>,
       <site-preview-app/>,
     ];
   }
