@@ -19,7 +19,7 @@ h2 {
 h3 {
   margin-top: 4em;
   font-size: 15px;
-  letter-spacing: -.02em;
+  letter-spacing: -.025em;
   margin-bottom: 1.3em;
 }
 
@@ -30,6 +30,14 @@ p, ul {
   line-height: 2.2em;
   margin-bottom: 2.16em;
   font-weight: 500;
+}
+
+ul {
+  padding: 1px 0 14px 17px;
+}
+
+li {
+  margin-bottom: 1.08em;
 }
 
 a,

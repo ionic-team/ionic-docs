@@ -21,7 +21,7 @@ export class AppMarked {
       .then(response => response.text())
       .then(data => {
         this.content = data;
-        console.log(data);
+        // console.log(data);
 
         const el = document.createElement('div');
         el.innerHTML = data;

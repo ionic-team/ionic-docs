@@ -7,7 +7,7 @@ export class LandingPage {
   render() {
     return (
         <div>
-            <app-marked doc="/pro/" />
+            <app-marked doc="/" />
         </div>
     );
   }
