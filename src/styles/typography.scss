@@ -1,7 +1,7 @@
 @import 'src/styles/variables';
 
 h1, h2, h3, h4 {
-  color: #24272c;
+  color: $darker;
 }
 
 h1 {
@@ -24,7 +24,7 @@ h3 {
 }
 
 p, ul {
-  color: #3c4b62;
+  color: $dark;
   font-size: 14px;
   letter-spacing: -.02em;
   line-height: 2em;
@@ -44,6 +44,12 @@ a,
 stencil-route-link {
   color: $blue;
   text-decoration: none;
+  font-weight: 500;
+  transition: .2s color ease;
+
+  &:hover {
+    color: lighten($blue, 8);
+  }
 }
 
 stencil-route-link:hover {
@@ -59,9 +65,9 @@ pre {
   margin: 24px 0px 28px;
   padding: 16px 24px;
   border-radius: 4px;
-  color: #abb2bf;
-  // background: #282c34;
-  background-color: #16161d;
+  color: $light-gray;
+  background-color: $blacker;
+  font-family: $font-family-code;
 
   code {
     font-weight: 500;
@@ -77,6 +83,6 @@ pre {
 
 code {
   font-weight: 400;
-  font-family: "Source Code Pro", monospace;
+  font-family: $font-family-code;
   font-size: 14px;
 }

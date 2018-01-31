@@ -22,7 +22,12 @@ site-menu {
           letter-spacing: -.02em;
 
           &:hover {
-            color: $blue;
+            color: lighten($blackish, 32);
+          }
+
+          &.link-active,
+          &:hover {
+            transform: none;
           }
         }
       }
@@ -55,7 +60,7 @@ site-menu {
 
   a {
     text-decoration: none;
-    color: #808d9f;
+    color: $gray;
     text-indent: 0;
     display: block;
     padding: 0;
@@ -63,13 +68,22 @@ site-menu {
     font-size: 13px;
     font-weight: 500;
     cursor: pointer;
-    transition: .2s color ease, .2s height ease, .2s padding ease;
+    transition:
+      .2s color ease,
+      .2s height ease,
+      .2s padding ease,
+      .2s transform ease;
 
     &.link-active,
     &:hover {
-      color: $blue;
+      color: $dark;
+      transform: translateX(1px);
       text-decoration: none;
     }
-  }
 
+    &.link-active {
+      color: $blue;
+      font-weight: 600;
+    }
+  }
 }

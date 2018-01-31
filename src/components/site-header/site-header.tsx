@@ -7,7 +7,7 @@ import { Component } from '@stencil/core';
 export class SiteHeader {
   render() {
     return [
-      <h1>header</h1>
+      <site-logo></site-logo>
 
 
 

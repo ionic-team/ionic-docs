@@ -4,11 +4,11 @@
 site-header {
   @extend %site-grid-component;
   @extend %header;
-  text-align: right;
   height: 70px;
   width: 100%;
   max-height: auto;
   overflow: visible;
   position: fixed;
   top: 0;
+  z-index: 1;
 }
