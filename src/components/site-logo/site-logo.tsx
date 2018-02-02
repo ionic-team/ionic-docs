@@ -1,16 +1,33 @@
-import { Component } from '@stencil/core';
+import { Component, State } from '@stencil/core';
 
 @Component({
   tag: 'site-logo',
   styleUrl: 'site-logo.scss'
 })
 export class SiteLogo {
+  @State() active: boolean = false;
+
+  constructor() {
+    this.toggle = this.toggle.bind(this)
+    this.clear = this.clear.bind(this)
+  }
+
+  toggle() {
+    this.active = !this.active;
+  }
+
+  clear() {
+    console.log('leaving')
+    this.active = false;
+  }
+
   render() {
+    const dropdownClass = this.active ? 'active' : '';
     return [
       <nav>
         <a href='/docs' id="site-logo"></a>
-        <a class="current">Framework</a>
-        <ul>
+        <a class="current" onClick={this.toggle}>Framework</a>
+        <ul class={dropdownClass} onMouseLeave={this.clear}>
           <li class="framework active">
             <a href="/docs">
               <strong>Framework Docs</strong>
@@ -20,10 +37,9 @@ export class SiteLogo {
           <li class="pro">
             <a href="/docs/pro">
               <strong>Pro Docs</strong>
-              <span>Integrated suite of tools &amp; servuce for shipping apps</span>
+              <span>Integrated suite of tools &amp; services for shipping apps</span>
             </a>
           </li>
-          <li class="divider"></li>
           <li class="cli sm">
             <a href="/docs/cli">
               <strong>CLI</strong>

@@ -15,10 +15,12 @@
 }
 
 site-logo {
+  font-family: $font-family-eina;
+
   .current {
     cursor: pointer;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 600;
     margin-left: 8px;
     vertical-align: 5px;
     color: $header-color;
@@ -56,12 +58,16 @@ site-logo {
     border-radius: 8px;
     position: absolute;
     list-style: none;
+    min-width: 460px;
     display: block;
-    padding: 12px 12px 20px;
-    width: 460px;
+    padding: 0;
     z-index: 1;
     top: 20px;
     box-shadow: 0 4px 16px rgba(black, .2);
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: .4s opacity ease, .4s transform;
 
     &::before {
       background: url('/assets/img/ico-nav-arrow.png') no-repeat 0 0;
@@ -73,6 +79,22 @@ site-logo {
       left: 177px;
       content: '';
     }
+
+    &::after {
+      content: '';
+      height: 10px;
+      left: 0;
+      right: 0;
+      top: -10px;
+      position: absolute;
+    }
+
+    &.active {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: all;
+      transition: .2s opacity ease, .4s transform;
+    }
   }
 
   li {
@@ -82,9 +104,25 @@ site-logo {
       color: $dark-gray;
     }
 
+    &:first-child a {
+      padding-top: 23px;
+
+      &::before,
+      &::after {
+        top: 30px;
+      }
+    }
+
+    &:last-child a,
+    &.sm:last-child a {
+      padding-bottom: 27px;
+      border-bottom-right-radius: 8px;
+      border-bottom-left-radius: 8px;
+    }
+
     a {
-      padding: 11px 0 11px 72px;
-      display: inline-block;
+      padding: 6px 12px 16px 84px;
+      display: block;
       position: relative;
 
       &::before,
@@ -95,8 +133,8 @@ site-logo {
         width: 32px;
         content: '';
         position: absolute;
-        top: 19px;
-        left: 21px;
+        top: 14px;
+        left: 32px;
         transition: .2s opacity;
       }
 
@@ -129,31 +167,52 @@ site-logo {
       &::after { background-position: 0 -288px; }
     }
 
-    &:hover a::after {
-      opacity: 1;
-    }
+    &:hover {
+      a::after {
+        opacity: 1;
+      }
 
-    &.divider {
-      padding-bottom: 15px;
-      margin-bottom: 11px;
-      border-bottom: 1px solid $whiteish;
+      strong {
+        color: $blue;
+      }
+
+      span {
+        color: $darkish;
+      }
     }
 
     strong {
       color: $blacker;
       display: block;
+      letter-spacing: 0;
+      transition: .2s color ease;
     }
 
     span {
       color: $gray;
       display: block;
       font-size: 12px;
+      font-weight: 600;
       line-height: 14px;
+      letter-spacing: .01em;
+      transition: .2s color ease;
     }
 
     &.sm {
       a {
-        padding: 8px 0 8px 72px;
+        margin-top: 10px;
+        padding: 20px 0 8px 84px;
+        background: $whiter;
+
+        &::before,
+        &::after {
+          top: 17px;
+        }
+      }
+
+      + .sm a {
+        padding-top: 8px;
+        margin-top: 0;
 
         &::before,
         &::after {
@@ -163,12 +222,35 @@ site-logo {
 
       strong {
         display: inline-block;
-        width: 83px;
+        margin-right: 16px;
       }
 
       span {
         display: inline-block;
         letter-spacing: .01em;
+        position: relative;
+        padding-right: 20px;
+
+        &::after,
+        &::before {
+          background: url('/assets/img/new-tab-icon.png') no-repeat 0 0;
+          background-size: 11px;
+          width: 11px;
+          height: 11px;
+          content: '';
+          position: absolute;
+          right: 0;
+          transition: .2s opacity ease;
+        }
+
+        &::after {
+          opacity: 0;
+          background-position: 0 -11px;
+        }
+      }
+
+      &:hover span::after {
+        opacity: 1;
       }
     }
   }
