@@ -17,7 +17,6 @@ export class SiteLogo {
   }
 
   clear() {
-    console.log('leaving')
     this.active = false;
   }
 

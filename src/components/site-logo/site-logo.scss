@@ -124,6 +124,7 @@ site-logo {
       padding: 6px 12px 16px 84px;
       display: block;
       position: relative;
+      outline: none;
 
       &::before,
       &::after {
@@ -252,6 +253,17 @@ site-logo {
       &:hover span::after {
         opacity: 1;
       }
+    }
+
+    &.active strong::after {
+      font-family: 'Ionicons';
+      display: inline-block;
+      position: absolute;
+      content: '\\f2bc';
+      font-size: 18px;
+      color: $blue;
+      right: 30px;
+      top: 33px;
     }
   }
 }

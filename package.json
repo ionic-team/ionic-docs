@@ -13,6 +13,7 @@
     "stencil:generate": "node scripts/generate.js"
   },
   "dependencies": {
+    "ionicons": "^3.0.0-alpha.3",
     "@stencil/core": "0.2.2",
     "@stencil/router": "0.0.23"
   },
