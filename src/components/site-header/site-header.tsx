@@ -7,10 +7,11 @@ import { Component } from '@stencil/core';
 export class SiteHeader {
   render() {
     return [
-      <site-logo></site-logo>
 
-
-
+      <nav>
+        <a href='/docs' id="site-logo"></a>
+        <framework-dropdown></framework-dropdown>
+      </nav>
     ]
   }
 }

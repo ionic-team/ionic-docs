@@ -38,6 +38,36 @@ declare global {
 
 
 import {
+  FrameworkDropdown as FrameworkDropdown
+} from './components/framework-dropdown/framework-dropdown';
+
+declare global {
+  interface HTMLFrameworkDropdownElement extends FrameworkDropdown, HTMLElement {
+  }
+  var HTMLFrameworkDropdownElement: {
+    prototype: HTMLFrameworkDropdownElement;
+    new (): HTMLFrameworkDropdownElement;
+  };
+  interface HTMLElementTagNameMap {
+    "framework-dropdown": HTMLFrameworkDropdownElement;
+  }
+  interface ElementTagNameMap {
+    "framework-dropdown": HTMLFrameworkDropdownElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "framework-dropdown": JSXElements.FrameworkDropdownAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface FrameworkDropdownAttributes extends HTMLAttributes {
+      
+    }
+  }
+}
+
+
+import {
   App as IonicDocs
 } from './components/ionic-docs/ionic-docs';
 
@@ -182,36 +212,6 @@ declare global {
   }
   namespace JSXElements {
     export interface SiteHeaderAttributes extends HTMLAttributes {
-      
-    }
-  }
-}
-
-
-import {
-  SiteLogo as SiteLogo
-} from './components/site-logo/site-logo';
-
-declare global {
-  interface HTMLSiteLogoElement extends SiteLogo, HTMLElement {
-  }
-  var HTMLSiteLogoElement: {
-    prototype: HTMLSiteLogoElement;
-    new (): HTMLSiteLogoElement;
-  };
-  interface HTMLElementTagNameMap {
-    "site-logo": HTMLSiteLogoElement;
-  }
-  interface ElementTagNameMap {
-    "site-logo": HTMLSiteLogoElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      "site-logo": JSXElements.SiteLogoAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface SiteLogoAttributes extends HTMLAttributes {
       
     }
   }

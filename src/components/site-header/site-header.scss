@@ -4,6 +4,8 @@
 site-header {
   @extend %site-grid-component;
   @extend %header;
+
+  font-family: $font-family-eina;
   height: 70px;
   width: 100%;
   max-height: auto;
@@ -11,4 +13,17 @@ site-header {
   position: fixed;
   top: 0;
   z-index: 1;
+
+  #site-logo {
+    background: url('/assets/img/docs-logo.png') no-repeat 0 0;
+    background-size: 72px;
+    width: 72px;
+    height: 24px;
+    display: inline-block;
+    transition: .2s opacity ease;
+
+    &:hover {
+      opacity: .9;
+    }
+  }
 }
