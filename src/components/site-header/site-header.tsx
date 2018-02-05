@@ -7,10 +7,14 @@ import { Component } from '@stencil/core';
 export class SiteHeader {
   render() {
     return [
-
       <nav>
         <a href='/docs' id="site-logo"></a>
-        <framework-dropdown></framework-dropdown>
+        <dropdown-framework></dropdown-framework>
+        <site-search></site-search>
+        <dropdown-ecosystem></dropdown-ecosystem>
+        <a href="https://github.com/ionic-team/ionic"
+           target="_blank"
+           class="github">GitHub</a>
       </nav>
     ]
   }

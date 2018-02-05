@@ -3,18 +3,19 @@
 
 
 
-framework-dropdown {
-  position: relative;
+dropdown-ecosystem {
+  // flex-grow: 1;
 
   .current {
     cursor: pointer;
-    font-size: 18px;
+    font-size: 12px;
+    line-height: 1em;
     font-weight: 600;
-    margin-left: 8px;
-    vertical-align: 5px;
+    margin-right: 27px;
     color: $header-color;
+    letter-spacing: .02em;
     display: inline-block;
-    font-family: $font-family-eina;
+    vertical-align: 0;
     transition: .2s color ease;
 
     &::after {
@@ -22,10 +23,10 @@ framework-dropdown {
       margin-left: 8px;
       display: inline-block;
       vertical-align: middle;
-      border-left: 3px solid transparent;
-	    border-right: 3px solid transparent;
-      border-top: 4px solid $header-color;
-      transform: .2s border-top-color ease;
+      border-left: 2px solid transparent;
+	    border-right: 2px solid transparent;
+      border-top: 3px solid $header-color;
+      transition: .2s border-top-color ease;
     }
 
     &:hover {
@@ -51,7 +52,8 @@ framework-dropdown {
     display: block;
     padding: 0;
     z-index: 1;
-    top: 6px;
+    top: 16px;
+    left: 0;
     box-shadow: 0 4px 16px rgba(black, .2);
     pointer-events: none;
     opacity: 0;
@@ -65,7 +67,7 @@ framework-dropdown {
       height: 8px;
       position: absolute;
       top: -8px;
-      left: 181px;
+      left: 178px;
       content: '';
     }
 

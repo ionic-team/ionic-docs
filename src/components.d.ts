@@ -38,29 +38,59 @@ declare global {
 
 
 import {
-  FrameworkDropdown as FrameworkDropdown
-} from './components/framework-dropdown/framework-dropdown';
+  DropdownFramework as DropdownEcosystem
+} from './components/dropdown-ecosystem/dropdown-ecosystem';
 
 declare global {
-  interface HTMLFrameworkDropdownElement extends FrameworkDropdown, HTMLElement {
+  interface HTMLDropdownEcosystemElement extends DropdownEcosystem, HTMLElement {
   }
-  var HTMLFrameworkDropdownElement: {
-    prototype: HTMLFrameworkDropdownElement;
-    new (): HTMLFrameworkDropdownElement;
+  var HTMLDropdownEcosystemElement: {
+    prototype: HTMLDropdownEcosystemElement;
+    new (): HTMLDropdownEcosystemElement;
   };
   interface HTMLElementTagNameMap {
-    "framework-dropdown": HTMLFrameworkDropdownElement;
+    "dropdown-ecosystem": HTMLDropdownEcosystemElement;
   }
   interface ElementTagNameMap {
-    "framework-dropdown": HTMLFrameworkDropdownElement;
+    "dropdown-ecosystem": HTMLDropdownEcosystemElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "framework-dropdown": JSXElements.FrameworkDropdownAttributes;
+      "dropdown-ecosystem": JSXElements.DropdownEcosystemAttributes;
     }
   }
   namespace JSXElements {
-    export interface FrameworkDropdownAttributes extends HTMLAttributes {
+    export interface DropdownEcosystemAttributes extends HTMLAttributes {
+      
+    }
+  }
+}
+
+
+import {
+  DropdownFramework as DropdownFramework
+} from './components/dropdown-framework/dropdown-framework';
+
+declare global {
+  interface HTMLDropdownFrameworkElement extends DropdownFramework, HTMLElement {
+  }
+  var HTMLDropdownFrameworkElement: {
+    prototype: HTMLDropdownFrameworkElement;
+    new (): HTMLDropdownFrameworkElement;
+  };
+  interface HTMLElementTagNameMap {
+    "dropdown-framework": HTMLDropdownFrameworkElement;
+  }
+  interface ElementTagNameMap {
+    "dropdown-framework": HTMLDropdownFrameworkElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "dropdown-framework": JSXElements.DropdownFrameworkAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface DropdownFrameworkAttributes extends HTMLAttributes {
       
     }
   }
@@ -272,6 +302,36 @@ declare global {
   }
   namespace JSXElements {
     export interface SitePreviewAppAttributes extends HTMLAttributes {
+      
+    }
+  }
+}
+
+
+import {
+  SiteSearch as SiteSearch
+} from './components/site-search/site-search';
+
+declare global {
+  interface HTMLSiteSearchElement extends SiteSearch, HTMLElement {
+  }
+  var HTMLSiteSearchElement: {
+    prototype: HTMLSiteSearchElement;
+    new (): HTMLSiteSearchElement;
+  };
+  interface HTMLElementTagNameMap {
+    "site-search": HTMLSiteSearchElement;
+  }
+  interface ElementTagNameMap {
+    "site-search": HTMLSiteSearchElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "site-search": JSXElements.SiteSearchAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface SiteSearchAttributes extends HTMLAttributes {
       
     }
   }

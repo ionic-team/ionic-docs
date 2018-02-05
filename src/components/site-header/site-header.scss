@@ -5,25 +5,68 @@ site-header {
   @extend %site-grid-component;
   @extend %header;
 
-  font-family: $font-family-eina;
-  height: 70px;
-  width: 100%;
-  max-height: auto;
-  overflow: visible;
-  position: fixed;
   top: 0;
   z-index: 1;
+  width: 100%;
+  position: fixed;
+  min-height: 75px;
+  max-height: auto;
+  overflow: visible;
+  padding-right: 21px;
+  font-family: $font-family-eina;
+
+  nav {
+    display: flex;
+    position: relative;
+    align-items: center;
+  }
 
   #site-logo {
     background: url('/assets/img/docs-logo.png') no-repeat 0 0;
     background-size: 72px;
     width: 72px;
     height: 24px;
+    flex-grow: 0;
     display: inline-block;
     transition: .2s opacity ease;
 
     &:hover {
       opacity: .9;
+    }
+  }
+
+  .github {
+    font-size: 13px;
+    margin-top: 1px;
+    padding-right: 16px;
+    display: inline-block;
+    letter-spacing: -.02em;
+    color: rgba(white, .7);
+    transition: .2s color ease;
+
+    &::after,
+    &::before {
+      background: url('/assets/img/new-tab-icon.png') no-repeat 0 -22px;
+      background-size: 11px;
+      width: 11px;
+      height: 11px;
+      content: '';
+      right: 0;
+      position: absolute;
+      transition: .2s opacity ease;
+    }
+
+    &:after {
+      opacity: 0;
+      background-position: 0 -33px;
+    }
+
+    &:hover {
+      color: rgba(white, 1);
+
+      &:after {
+        opacity: 1;
+      }
     }
   }
 }

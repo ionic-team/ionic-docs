@@ -4,7 +4,7 @@ exports.config = {
       components: [
         'ionic-docs',
         'app-marked',
-        'framework-dropdown',
+        'dropdown-framework',
         'site-header',
         'site-menu',
       ]

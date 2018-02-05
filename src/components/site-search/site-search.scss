@@ -1,0 +1,23 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+site-search {
+  margin-right: 34px;
+
+
+  input {
+    border: none;
+    display: block;
+    font-size: 12px;
+    min-width: 240px;
+    border-radius: 16px;
+    letter-spacing: .02em;
+    padding: 9px 10px 8px 36px;
+    background: rgba(white, .2);
+
+    &::placeholder {
+      color: rgba(white, .7);
+    }
+  }
+
+}

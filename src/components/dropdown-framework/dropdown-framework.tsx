@@ -1,10 +1,10 @@
 import { Component, State } from '@stencil/core';
 
 @Component({
-  tag: 'framework-dropdown',
-  styleUrl: 'framework-dropdown.scss'
+  tag: 'dropdown-framework',
+  styleUrl: 'dropdown-framework.scss'
 })
-export class FrameworkDropdown {
+export class DropdownFramework {
   @State() active: boolean = false;
 
   constructor() {
