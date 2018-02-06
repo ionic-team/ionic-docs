@@ -1,112 +1,43 @@
 import { Component } from '@stencil/core';
+import menuItems from './site-menu-items';
 
 @Component({
   tag: 'site-menu',
   styleUrl: 'site-menu.scss'
 })
 export class SiteMenu {
+  createMenu(items) {
+    return Object.keys(items).map(key =>
+      typeof items[key] === 'object'
+        ? this.createSubmenu(key, items[key])
+        : this.createMenuItem(key, items[key])
+    );
+  }
+
+  createMenuItem(text: string, url: string) {
+    return (
+      <li>
+        <stencil-route-link url={url}>
+          {text}
+        </stencil-route-link>
+      </li>
+    )
+  }
+
+  createSubmenu(text: string, items: Object) {
+    return (
+      <li>
+        <menu-expander>{text}</menu-expander>
+        <ul>{this.createMenu(items)}</ul>
+      </li>
+    );
+  }
+
   render() {
     return (
       <nav class="menu-wrapper">
         <ul class="nested-menu">
-          <li><stencil-route-link url="/">Home</stencil-route-link></li>
-          <li class="active">
-            <menu-expander service="intro">Introduction</menu-expander>
-            <ul>
-              <li>
-                <stencil-route-link url="">What is Ionic Framework?</stencil-route-link>
-              </li>
-              <li>
-                <stencil-route-link url="/intro/basics">Basic Features</stencil-route-link>
-              </li>
-              <li>
-                <stencil-route-link url="/intro/structure">App Structure</stencil-route-link>
-              </li>
-              <li>
-                <stencil-route-link url="/intro/concepts">Core Concepts</stencil-route-link>
-              </li>
-              <li>
-                <stencil-route-link url="/intro/support">Browser Support</stencil-route-link>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <menu-expander service="getting-started">Getting Started</menu-expander>
-            <ul>
-              <li>
-                <stencil-route-link url="/getting-started/installation">Installation</stencil-route-link>
-              </li>
-              <li>
-                <stencil-route-link url="/getting-started/starting-an-app">Starting an App</stencil-route-link>
-              </li>
-              <li>
-                <stencil-route-link url="/getting-started/run-your-app">Run Your App</stencil-route-link>
-              </li>
-              <li>
-                <stencil-route-link url="/getting-started/dev-bulid">Dev Build</stencil-route-link>
-              </li>
-              <li>
-                <stencil-route-link url="/getting-started/testing">Testing</stencil-route-link>
-              </li>
-              <li>
-                <stencil-route-link url="/getting-started/deploying">Deploying</stencil-route-link>
-              </li>
-              <li>
-                <stencil-route-link url="/getting-started/releasing">Releasing</stencil-route-link>
-              </li>
-              <li>
-                <stencil-route-link url="/getting-started/tutorial">Tutorial</stencil-route-link>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <menu-expander service="getting-started">Components</menu-expander>
-            <ul>
-              <li>
-                <stencil-route-link url=""></stencil-route-link>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <menu-expander service="getting-started">API Reference</menu-expander>
-            <ul>
-              <li>
-                <stencil-route-link url=""></stencil-route-link>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <menu-expander service="getting-started">Native APIs</menu-expander>
-            <ul>
-              <li>
-                <stencil-route-link url=""></stencil-route-link>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <menu-expander service="getting-started">Theming</menu-expander>
-            <ul>
-              <li>
-                <stencil-route-link url=""></stencil-route-link>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <menu-expander service="getting-started">Contributing</menu-expander>
-            <ul>
-              <li>
-                <stencil-route-link url=""></stencil-route-link>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <menu-expander service="getting-started">FAQ</menu-expander>
-            <ul>
-              <li>
-                <stencil-route-link url=""></stencil-route-link>
-              </li>
-            </ul>
-          </li>
+          { this.createMenu(menuItems) }
         </ul>
       </nav>
     );
