@@ -44,12 +44,12 @@ dropdown-ecosystem {
     border-radius: 8px;
     position: absolute;
     list-style: none;
-    min-width: 180px;
+    min-width: 197px;
     display: block;
-    padding: 0;
+    padding: 11px 0;
     z-index: 1;
-    top: 16px;
-    right: 0;
+    top: 24px;
+    right: 26px;
     box-shadow: 0 4px 16px rgba(black, .2);
     pointer-events: none;
     opacity: 0;
@@ -63,7 +63,7 @@ dropdown-ecosystem {
       height: 8px;
       position: absolute;
       top: -8px;
-      left: 178px;
+      right: 91px;
       content: '';
     }
 
@@ -88,10 +88,13 @@ dropdown-ecosystem {
     display: block;
 
     a {
-      padding: 6px 12px 16px 84px;
-      display: block;
-      position: relative;
+      padding: 4px 12px 4px 57px;
+      color: $gray;
       outline: none;
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      position: relative;
 
       &::before,
       &::after {
@@ -101,8 +104,8 @@ dropdown-ecosystem {
         width: 16px;
         content: '';
         position: absolute;
-        top: 14px;
-        left: 32px;
+        top: 10px;
+        left: 24px;
         transition: .2s opacity;
       }
 
