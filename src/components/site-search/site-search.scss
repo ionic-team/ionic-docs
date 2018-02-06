@@ -23,7 +23,6 @@ site-search {
     transition: .2s background-color ease;
 
     &::placeholder {
-      font-weight: 500;
       color: rgba(white, .4);
       font-family: $font-family-eina;
       transition: .2s color ease;

@@ -8,12 +8,12 @@ dropdown-ecosystem {
 
   .current {
     cursor: pointer;
-    font-size: 12px;
+    font-size: 13px;
     line-height: 1em;
     font-weight: 600;
-    margin-right: 27px;
+    margin-right: 28px;
     color: $header-color;
-    letter-spacing: .02em;
+    letter-spacing: .01em;
     display: inline-block;
     vertical-align: 0;
     transition: .2s color ease;
@@ -39,21 +39,17 @@ dropdown-ecosystem {
     }
   }
 
-  nav {
-    position: relative;
-  }
-
   ul {
     background: white;
     border-radius: 8px;
     position: absolute;
     list-style: none;
-    min-width: 460px;
+    min-width: 180px;
     display: block;
     padding: 0;
     z-index: 1;
     top: 16px;
-    left: 0;
+    right: 0;
     box-shadow: 0 4px 16px rgba(black, .2);
     pointer-events: none;
     opacity: 0;
@@ -91,26 +87,6 @@ dropdown-ecosystem {
   li {
     display: block;
 
-    &.active {
-      color: $dark-gray;
-    }
-
-    &:first-child a {
-      padding-top: 23px;
-
-      &::before,
-      &::after {
-        top: 30px;
-      }
-    }
-
-    &:last-child a,
-    &.sm:last-child a {
-      padding-bottom: 27px;
-      border-bottom-right-radius: 8px;
-      border-bottom-left-radius: 8px;
-    }
-
     a {
       padding: 6px 12px 16px 84px;
       display: block;
@@ -119,10 +95,10 @@ dropdown-ecosystem {
 
       &::before,
       &::after {
-        background: url('/assets/img/dropdown-icons.png') no-repeat 0 0;
-        background-size: 32px;
-        height: 32px;
-        width: 32px;
+        background: url('/assets/img/dropdown-ecosystem-icons.png') no-repeat 0 0;
+        background-size: 16px;
+        height: 16px;
+        width: 16px;
         content: '';
         position: absolute;
         top: 14px;
@@ -135,126 +111,39 @@ dropdown-ecosystem {
       }
     }
 
-    &.framework a::after  {
-      background-position: 0 -32px;
+    &.forum a::after  {
+      background-position: 0 -16px;
     }
 
-    &.pro a {
+    &.chat a {
+      &::before { background-position: 0 -32px; }
+      &::after { background-position: 0 -48px; }
+    }
+
+    &.blog a {
       &::before { background-position: 0 -64px; }
-      &::after { background-position: 0 -96px; }
+      &::after { background-position: 0 -80px; }
     }
 
-    &.cli a {
+    &.twitter a {
+      &::before { background-position: 0 -96px; }
+      &::after { background-position: 0 -112px; }
+    }
+
+    &.stack-overflow a {
       &::before { background-position: 0 -128px; }
-      &::after { background-position: 0 -160px; }
+      &::after { background-position: 0 -144px; }
     }
 
-    &.capacitor a {
-      &::before { background-position: 0 -192px; }
-      &::after { background-position: 0 -224px; }
-    }
-
-    &.stencil a {
-      &::before { background-position: 0 -256px; }
-      &::after { background-position: 0 -288px; }
+    &.swag a {
+      &::before { background-position: 0 -160px; }
+      &::after { background-position: 0 -176px; }
     }
 
     &:hover {
       a::after {
         opacity: 1;
       }
-
-      strong {
-        color: $blue;
-      }
-
-      span {
-        color: $darkish;
-      }
-    }
-
-    strong {
-      color: $blacker;
-      display: block;
-      letter-spacing: 0;
-      transition: .2s color ease;
-    }
-
-    span {
-      color: $gray;
-      display: block;
-      font-size: 12px;
-      font-weight: 600;
-      line-height: 14px;
-      letter-spacing: .01em;
-      transition: .2s color ease;
-    }
-
-    &.sm {
-      a {
-        margin-top: 10px;
-        padding: 20px 0 8px 84px;
-        background: $whiter;
-
-        &::before,
-        &::after {
-          top: 17px;
-        }
-      }
-
-      + .sm a {
-        padding-top: 8px;
-        margin-top: 0;
-
-        &::before,
-        &::after {
-          top: 5px;
-        }
-      }
-
-      strong {
-        display: inline-block;
-        margin-right: 16px;
-      }
-
-      span {
-        display: inline-block;
-        letter-spacing: .01em;
-        position: relative;
-        padding-right: 20px;
-
-        &::after,
-        &::before {
-          background: url('/assets/img/new-tab-icon.png') no-repeat 0 0;
-          background-size: 11px;
-          width: 11px;
-          height: 11px;
-          content: '';
-          position: absolute;
-          right: 0;
-          transition: .2s opacity ease;
-        }
-
-        &::after {
-          opacity: 0;
-          background-position: 0 -11px;
-        }
-      }
-
-      &:hover span::after {
-        opacity: 1;
-      }
-    }
-
-    &.active strong::after {
-      font-family: 'Ionicons';
-      display: inline-block;
-      position: absolute;
-      content: '\\f2bc';
-      font-size: 18px;
-      color: $blue;
-      right: 30px;
-      top: 33px;
     }
   }
 }
