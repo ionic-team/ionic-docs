@@ -1,4 +1,6 @@
 import { Component, Element, Prop, State, Watch } from '@stencil/core';
+import marked from 'marked';
+import fm from 'front-matter';
 
 @Component({
   tag: 'app-marked',
@@ -8,7 +10,9 @@ export class AppMarked {
   @Prop() doc: string;
   @Prop({ context: 'isServer' }) private isServer: boolean;
 
-  @State() content: string;
+  @State() content: object;
+
+  @State() sections: [string];
 
   @Element() el: Element;
 
@@ -20,14 +24,16 @@ export class AppMarked {
 
   fetchNewContent() {
     console.log('Fetching doc', this.doc);
-    return fetch(`/docs-content/${this.doc}`)
-      .then(response => response.text())
+    return fetch(`/docs-content/${this.doc}.md`)
+      .then(response => response.text().then(text => fm(text)))
       .then(data => {
         this.content = data;
 
-        this.el.innerHTML = '<h1>Hi there</h1>';
+        this.content['body'] = marked(this.content['body']);
 
-        this.el.innerHTML += data;
+        // this.el.innerHTML
+
+        // this.el.innerHTML += marked(this.content['body']);
 
         // requestAnimationFrame is not available for preRendering
         // or SSR, so only run this in the browser
@@ -36,13 +42,18 @@ export class AppMarked {
             document.getElementsByTagName('stencil-router')[0].scrollTop = 0;
           })
         }
-
       });
   }
 
-  /*render() {
-    return (
-      <div innerHTML={this.content}></div>
-    )
-  }*/
+  render() {
+    const attrs = this.content['attributes'];
+    const title = attrs.title ? (<h1>{attrs.title}</h1>) : null;
+    console.log(attrs);
+    const toc = attrs['hide-toc'] ? null : (<toc></toc>);
+    return [
+      title,
+      toc,
+      <main innerHTML={this.content['body']}></main>
+    ]
+  }
 }

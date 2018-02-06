@@ -1,3 +1,8 @@
+---
+title: Just hack'n
+description: Nothing to see here
+---
+
 <helmet hidden>
 	<meta name="title" content="What is Ionic Framework?">
 </helmet>

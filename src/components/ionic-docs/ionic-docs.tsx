@@ -16,7 +16,7 @@ export class App {
           routeRender={( props ) => {
             // console.log('Route render!', props.match, props.match.params);
             const docPath = props.match.params.docPath ?
-              props.match.params.docPath.substring(0, 4) : '/';
+              props.match.params.docPath.substring(0, 4) : '/index';
             return [
               <app-marked doc={docPath} />,
               <site-preview-app/>

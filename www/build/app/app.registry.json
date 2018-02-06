@@ -1,0 +1,76 @@
+{
+  "namespace": "App",
+  "fsNamespace": "app",
+  "loader": "../app.js",
+  "global": "app.global.js",
+  "core": "app.core.js",
+  "corePolyfilled": "es5-build-disabled.js",
+  "components": {
+    "app-marked": {
+      "$": "app-marked"
+    },
+    "dropdown-ecosystem": {
+      "$": "dropdown-ecosystem"
+    },
+    "dropdown-framework": {
+      "$": "app-marked"
+    },
+    "ionic-docs": {
+      "$": "app-marked"
+    },
+    "lazy-iframe": {
+      "$": "lazy-iframe"
+    },
+    "menu-expander": {
+      "$": "menu-expander"
+    },
+    "site-content": {
+      "$": "site-content"
+    },
+    "site-header": {
+      "$": "app-marked"
+    },
+    "site-menu": {
+      "$": "app-marked"
+    },
+    "site-preview-app": {
+      "$": "site-preview-app"
+    },
+    "site-search": {
+      "$": "site-search"
+    },
+    "stencil-async-content": {
+      "$": "stencil-async-content"
+    },
+    "stencil-route": {
+      "$": "stencil-async-content"
+    },
+    "stencil-route-link": {
+      "$": "stencil-async-content"
+    },
+    "stencil-route-title": {
+      "$": "stencil-async-content"
+    },
+    "stencil-router": {
+      "$": "stencil-async-content"
+    },
+    "stencil-router-redirect": {
+      "$": "stencil-async-content"
+    },
+    "test-app": {
+      "$": "test-app"
+    },
+    "test-demo-four": {
+      "$": "test-demo-four"
+    },
+    "test-demo-six": {
+      "$": "test-demo-six"
+    },
+    "test-demo-three": {
+      "$": "test-demo-three"
+    },
+    "wistia-embed": {
+      "$": "lazy-iframe"
+    }
+  }
+}

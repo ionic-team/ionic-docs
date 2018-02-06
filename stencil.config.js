@@ -12,6 +12,9 @@ exports.config = {
     { components: ['lazy-iframe', 'wistia-embed'] }
   ],
   collections: [{ name: '@stencil/router' }],
+  copy: [
+    {src: 'docs-content'}
+  ]
   // globalStyle: 'src/styles/variables.css'
 };
 
