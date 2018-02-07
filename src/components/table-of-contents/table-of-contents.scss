@@ -1,7 +1,52 @@
 @import 'src/styles/variables';
 
 table-of-contents {
-  // display: none;
+  padding-top: 17px;
+  display: block;
+
+  strong {
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 800;
+    color: $light-gray;
+  }
+
+  ul {
+    margin-top: 4px;
+    padding-left: 10px;
+  }
+
+  li {
+    margin-bottom: 0;
+    line-height: 1em;
+    list-style: none;
+  }
+
+  a {
+    padding: 4px 0;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    position: relative;
+    display: inline-block;
+    letter-spacing: -.014em;
+
+    &::before {
+      color: lighten($blue, 20);
+      content: '#';
+      position: absolute;
+      left: -10px;
+      transition: .2s color ease;
+    }
+
+    &:hover {
+      color: $blue;
+
+      &::before {
+        color: $blue;
+      }
+    }
+  }
 }
 
 main {
