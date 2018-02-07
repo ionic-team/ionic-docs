@@ -1,0 +1,32 @@
+@import 'src/styles/variables';
+
+table-of-contents {
+  // display: none;
+}
+
+main {
+  h1,
+  h2,
+  h3 {
+    a.linked {
+      color: inherit;
+      position: relative;
+
+      &::before {
+        color: lighten($blue, 20);
+        content: '#';
+        position: absolute;
+        left: -20px;
+        transition: .2s color ease;
+      }
+
+      &:hover {
+        color: $darker;
+
+        &::before {
+          color: $blue;
+        }
+      }
+    }
+  }
+}

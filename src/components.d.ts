@@ -339,6 +339,36 @@ declare global {
 
 
 import {
+  TableOfContents as TableOfContents
+} from './components/table-of-contents/table-of-contents';
+
+declare global {
+  interface HTMLTableOfContentsElement extends TableOfContents, HTMLElement {
+  }
+  var HTMLTableOfContentsElement: {
+    prototype: HTMLTableOfContentsElement;
+    new (): HTMLTableOfContentsElement;
+  };
+  interface HTMLElementTagNameMap {
+    "table-of-contents": HTMLTableOfContentsElement;
+  }
+  interface ElementTagNameMap {
+    "table-of-contents": HTMLTableOfContentsElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "table-of-contents": JSXElements.TableOfContentsAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface TableOfContentsAttributes extends HTMLAttributes {
+      
+    }
+  }
+}
+
+
+import {
   WistiaEmbed as WistiaEmbed
 } from './components/wistia-embed/wistia-embed';
 

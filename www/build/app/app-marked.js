@@ -5384,8 +5384,8 @@ class AppMarked {
     render() {
         const attrs = this.content['attributes'];
         const title = attrs.title ? (h("h1", null, attrs.title)) : null;
-        console.log(attrs);
-        const toc = attrs['hide-toc'] ? null : (h("toc", null));
+        const toc = attrs['hide-toc'] ?
+            null : (h("table-of-contents", null));
         return [
             title,
             toc,

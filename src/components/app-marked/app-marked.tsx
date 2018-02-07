@@ -48,8 +48,8 @@ export class AppMarked {
   render() {
     const attrs = this.content['attributes'];
     const title = attrs.title ? (<h1>{attrs.title}</h1>) : null;
-    console.log(attrs);
-    const toc = attrs['hide-toc'] ? null : (<toc></toc>);
+    const toc = attrs['hide-toc'] ?
+      null : (<table-of-contents></table-of-contents>);
     return [
       title,
       toc,

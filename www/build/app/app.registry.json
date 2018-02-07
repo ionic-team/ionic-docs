@@ -57,6 +57,9 @@
     "stencil-router-redirect": {
       "$": "stencil-async-content"
     },
+    "table-of-contents": {
+      "$": "table-of-contents"
+    },
     "test-app": {
       "$": "test-app"
     },
