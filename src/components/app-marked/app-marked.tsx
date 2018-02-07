@@ -31,10 +31,6 @@ export class AppMarked {
 
         this.content['body'] = marked(this.content['body']);
 
-        // this.el.innerHTML
-
-        // this.el.innerHTML += marked(this.content['body']);
-
         // requestAnimationFrame is not available for preRendering
         // or SSR, so only run this in the browser
         if (!this.isServer) {

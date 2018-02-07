@@ -7,23 +7,11 @@ import { Component, Prop, State, Element } from '@stencil/core';
 export class MenuExpander {
   @Element() el: HTMLElement;
 
+  // doesn't serve a purpose anymore but kept around for backwards compatibility
   @Prop() service: string;
 
-  @State() isExpanded: boolean = false;
-
-  target: Element;
-
-  componentWillLoad() {
-    const ul = this.el.nextElementSibling;
-    this.target = ul;
-  }
-
   handleOnClick() {
-    if(!this.target) { return; }
-
-    setTimeout(() => {
-      this.target.classList.toggle('expanded');
-    })
+    this.el.classList.toggle('expanded');
   }
 
   render() {

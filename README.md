@@ -4,6 +4,12 @@
 
 This is the home for the v4+ [Ionic Framework](https://ionicframework.com) docs.
 
+## Editors
+
+The site content is built from markdown files in `src/docs-content`. Markdown
+files created there will automatically be turned in to routes based on their
+relative place in the directory.
+
 ## Contributing
 
 Ensure you're using recent versions of `npm 5` and `node 8`.

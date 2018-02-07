@@ -19,9 +19,12 @@ export class TableOfContents {
 
     Array.from(this.headings).forEach(heading => {
       anchor.setAttribute('href', `#${heading['id']}`)
-      anchor.innerText = heading['textContent'];
+      if(heading['innerText']) {
+        anchor.innerText = heading['innerText'];
+      } else {
+        anchor.textContent = heading['textContent'];
+      }
       heading['innerHTML'] = anchor.outerHTML;
-      console.log(heading)
     });
   }
 
@@ -31,7 +34,7 @@ export class TableOfContents {
       <ul>
         {Array.from(this.headings).map(element =>
           <li>
-            <a href={`#${element['id']}`}>{element.textContent}</a>
+            <a href={`#${element['id']}`}>{element['innerText'] || element.textContent}</a>
           </li>
         )}
       </ul>
