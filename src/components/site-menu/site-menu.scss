@@ -32,6 +32,50 @@ site-menu {
         }
       }
     }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      ul {
+        margin: -3px 0 3px 8px;
+      }
+    }
+
+    li {
+      list-style: none;
+      margin: 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: $gray;
+      text-indent: 0;
+      display: block;
+      padding: 0;
+      letter-spacing: -.02em;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition:
+        .2s color ease,
+        .2s height ease,
+        .2s padding ease,
+        .2s transform ease;
+
+      &.link-active,
+      &:hover {
+        color: $dark;
+        transform: translateX(1px);
+        text-decoration: none;
+      }
+
+      &.link-active {
+        color: $blue;
+        font-weight: 600;
+      }
+    }
   }
 
   stencil-route-link,
@@ -41,49 +85,5 @@ site-menu {
 
   menu-expander + ul stencil-route-link {
     height: 28px;
-  }
-
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
-    ul {
-      margin: -3px 0 3px 8px;
-    }
-  }
-
-  li {
-    list-style: none;
-    margin: 0;
-  }
-
-  a {
-    text-decoration: none;
-    color: $gray;
-    text-indent: 0;
-    display: block;
-    padding: 0;
-    letter-spacing: -.02em;
-    font-size: 13px;
-    font-weight: 500;
-    cursor: pointer;
-    transition:
-      .2s color ease,
-      .2s height ease,
-      .2s padding ease,
-      .2s transform ease;
-
-    &.link-active,
-    &:hover {
-      color: $dark;
-      transform: translateX(1px);
-      text-decoration: none;
-    }
-
-    &.link-active {
-      color: $blue;
-      font-weight: 600;
-    }
   }
 }

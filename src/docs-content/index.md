@@ -3,10 +3,6 @@ title: Just hack'n
 description: Nothing to see here
 ---
 
-<helmet hidden>
-	<meta name="title" content="What is Ionic Framework?">
-</helmet>
-
 ## What is Ionic Framework
 
 Ionic Framework is an open source (MIT) UI toolkit that enables developers to build performant, high-quality mobile apps using familiar web technologies (HTML, CSS, and JavaScript).

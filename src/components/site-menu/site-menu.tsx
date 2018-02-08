@@ -1,4 +1,4 @@
-import { Component, State } from '@stencil/core';
+import { Component, Listen, State } from '@stencil/core';
 import menuMap from './site-menu-map';
 
 @Component({
@@ -6,7 +6,18 @@ import menuMap from './site-menu-map';
   styleUrl: 'site-menu.scss'
 })
 export class SiteMenu {
-  @State() version: string = '4.0.0';
+
+
+  @State() version: string = '4.0.1';
+
+  constructor() {
+    this.handleVersionChange = this.handleVersionChange.bind(this);
+  }
+
+  @Listen('versionSelectionChange')
+  handleVersionChange(version) {
+    this.version = version;
+  }
 
   createMenu(items) {
     return Object.keys(items).map(key => {
@@ -42,13 +53,15 @@ export class SiteMenu {
   }
 
   render() {
-    return (
+    return [
+      <dropdown-version version={this.version}>
+      </dropdown-version>,
       <nav class="menu-wrapper">
         <ul class="nested-menu">
           { this.createMenu(menuMap) }
         </ul>
       </nav>
-    );
+    ];
   }
 }
 
