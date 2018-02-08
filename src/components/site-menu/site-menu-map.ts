@@ -1,3 +1,5 @@
+import getAPIReferenceMap from './get-api-ref-map';
+
 export default {
   'Home': '/',
   'Introduction': {
@@ -18,7 +20,7 @@ export default {
     'Tutorial': '/getting-started/tutorial'
   },
   'Components': {},
-  'API Reference': {},
+  'API Reference': getAPIReferenceMap,
   'Native APIs': {},
   'Theming': {},
   'Contributing': {},
