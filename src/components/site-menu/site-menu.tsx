@@ -1,5 +1,5 @@
 import { Component, State } from '@stencil/core';
-import menuItems from './site-menu-items';
+import menuMap from './site-menu-map';
 
 @Component({
   tag: 'site-menu',
@@ -45,7 +45,7 @@ export class SiteMenu {
     return (
       <nav class="menu-wrapper">
         <ul class="nested-menu">
-          { this.createMenu(menuItems) }
+          { this.createMenu(menuMap) }
         </ul>
       </nav>
     );
