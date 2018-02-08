@@ -86,11 +86,11 @@ dropdown-version {
     display: block;
     margin-bottom: 0;
 
-    &.active {
+    &.active a {
       color: #26292e;
       background: #f6f8fc;
 
-      a::after {
+      &::after {
         font-family: 'Ionicons';
         display: inline-block;
         position: absolute;
