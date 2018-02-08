@@ -4,27 +4,21 @@
   "version": "0.0.2",
   "description": "Ionic Docs Site",
   "scripts": {
-    "build": "stencil build --prerender",
-    "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
-    "deploy": "npm run build && firebase deploy",
-    "serve": "stencil-dev-server",
     "start": "npm run dev",
-    "stencil:generate": "node scripts/generate.js"
+    "build": "stencil build --prerender",
+    "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" "
   },
   "dependencies": {
     "@stencil/core": "^0.4.0-2",
     "@stencil/router": "0.0.23",
     "express": "^4.16.2",
     "front-matter": "^2.3.0",
-    "ionicons": "^3.0.0-alpha.3"
+    "ionicons": "^3.0.0",
+    "marked": "^0.3.12"
   },
   "devDependencies": {
     "@stencil/dev-server": "0.0.18-0",
-    "@stencil/utils": "latest",
-    "gh-pages": "^1.0.0",
-    "gulp": "^3.9.1",
-    "gulp-markdown": "^1.2.0",
-    "highlight.js": "^9.12.0"
+    "@stencil/utils": "latest"
   },
   "author": "Ionic Team",
   "license": "MIT",
