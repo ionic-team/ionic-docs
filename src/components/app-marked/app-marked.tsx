@@ -1,4 +1,5 @@
 import { Component, Element, Prop, State, Watch } from '@stencil/core';
+import { Helmet } from '@stencil/helmet';
 import marked from 'marked';
 import fm from 'front-matter';
 
@@ -47,6 +48,10 @@ export class AppMarked {
     const toc = attrs['hide-toc'] ?
       null : (<table-of-contents></table-of-contents>);
     return [
+      <Helmet>
+          <title>{attrs.title}</title>
+          <meta name="description" content={attrs.description}/>
+      </Helmet>,
       title,
       toc,
       <main innerHTML={this.content['body']}></main>
