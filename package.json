@@ -12,7 +12,7 @@
     "stencil:generate": "node scripts/generate.js"
   },
   "dependencies": {
-    "@stencil/core": "0.3.0",
+    "@stencil/core": "^0.4.0-2",
     "@stencil/router": "0.0.23",
     "express": "^4.16.2",
     "front-matter": "^2.3.0",

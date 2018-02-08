@@ -1,4 +1,4 @@
-import { Component, Prop, State, Element } from '@stencil/core';
+import { Component, Prop, Element } from '@stencil/core';
 
 @Component({
   tag: 'menu-expander',

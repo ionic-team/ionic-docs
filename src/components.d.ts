@@ -7,12 +7,21 @@
 import '@stencil/router';
 
 
+declare global {
+  interface HTMLStencilElement extends HTMLElement {
+    componentOnReady(): Promise<this>;
+    componentOnReady(done: (ele?: this) => void): void;
+  }
+}
+
+
+
 import {
   AppMarked as AppMarked
 } from './components/app-marked/app-marked';
 
 declare global {
-  interface HTMLAppMarkedElement extends AppMarked, HTMLElement {
+  interface HTMLAppMarkedElement extends AppMarked, HTMLStencilElement {
   }
   var HTMLAppMarkedElement: {
     prototype: HTMLAppMarkedElement;
@@ -42,7 +51,7 @@ import {
 } from './components/dropdown-ecosystem/dropdown-ecosystem';
 
 declare global {
-  interface HTMLDropdownEcosystemElement extends DropdownEcosystem, HTMLElement {
+  interface HTMLDropdownEcosystemElement extends DropdownEcosystem, HTMLStencilElement {
   }
   var HTMLDropdownEcosystemElement: {
     prototype: HTMLDropdownEcosystemElement;
@@ -72,7 +81,7 @@ import {
 } from './components/dropdown-framework/dropdown-framework';
 
 declare global {
-  interface HTMLDropdownFrameworkElement extends DropdownFramework, HTMLElement {
+  interface HTMLDropdownFrameworkElement extends DropdownFramework, HTMLStencilElement {
   }
   var HTMLDropdownFrameworkElement: {
     prototype: HTMLDropdownFrameworkElement;
@@ -102,7 +111,7 @@ import {
 } from './components/ionic-docs/ionic-docs';
 
 declare global {
-  interface HTMLIonicDocsElement extends IonicDocs, HTMLElement {
+  interface HTMLIonicDocsElement extends IonicDocs, HTMLStencilElement {
   }
   var HTMLIonicDocsElement: {
     prototype: HTMLIonicDocsElement;
@@ -132,7 +141,7 @@ import {
 } from './components/lazy-iframe/lazy-iframe';
 
 declare global {
-  interface HTMLLazyIframeElement extends LazyIframe, HTMLElement {
+  interface HTMLLazyIframeElement extends LazyIframe, HTMLStencilElement {
   }
   var HTMLLazyIframeElement: {
     prototype: HTMLLazyIframeElement;
@@ -163,7 +172,7 @@ import {
 } from './components/menu-expander/menu-expander';
 
 declare global {
-  interface HTMLMenuExpanderElement extends MenuExpander, HTMLElement {
+  interface HTMLMenuExpanderElement extends MenuExpander, HTMLStencilElement {
   }
   var HTMLMenuExpanderElement: {
     prototype: HTMLMenuExpanderElement;
@@ -193,7 +202,7 @@ import {
 } from './components/site-content/site-content';
 
 declare global {
-  interface HTMLSiteContentElement extends SiteContent, HTMLElement {
+  interface HTMLSiteContentElement extends SiteContent, HTMLStencilElement {
   }
   var HTMLSiteContentElement: {
     prototype: HTMLSiteContentElement;
@@ -223,7 +232,7 @@ import {
 } from './components/site-header/site-header';
 
 declare global {
-  interface HTMLSiteHeaderElement extends SiteHeader, HTMLElement {
+  interface HTMLSiteHeaderElement extends SiteHeader, HTMLStencilElement {
   }
   var HTMLSiteHeaderElement: {
     prototype: HTMLSiteHeaderElement;
@@ -253,7 +262,7 @@ import {
 } from './components/site-menu/site-menu';
 
 declare global {
-  interface HTMLSiteMenuElement extends SiteMenu, HTMLElement {
+  interface HTMLSiteMenuElement extends SiteMenu, HTMLStencilElement {
   }
   var HTMLSiteMenuElement: {
     prototype: HTMLSiteMenuElement;
@@ -283,7 +292,7 @@ import {
 } from './components/site-preview-app/site-preview-app';
 
 declare global {
-  interface HTMLSitePreviewAppElement extends SitePreviewApp, HTMLElement {
+  interface HTMLSitePreviewAppElement extends SitePreviewApp, HTMLStencilElement {
   }
   var HTMLSitePreviewAppElement: {
     prototype: HTMLSitePreviewAppElement;
@@ -313,7 +322,7 @@ import {
 } from './components/site-search/site-search';
 
 declare global {
-  interface HTMLSiteSearchElement extends SiteSearch, HTMLElement {
+  interface HTMLSiteSearchElement extends SiteSearch, HTMLStencilElement {
   }
   var HTMLSiteSearchElement: {
     prototype: HTMLSiteSearchElement;
@@ -343,7 +352,7 @@ import {
 } from './components/table-of-contents/table-of-contents';
 
 declare global {
-  interface HTMLTableOfContentsElement extends TableOfContents, HTMLElement {
+  interface HTMLTableOfContentsElement extends TableOfContents, HTMLStencilElement {
   }
   var HTMLTableOfContentsElement: {
     prototype: HTMLTableOfContentsElement;
@@ -373,7 +382,7 @@ import {
 } from './components/wistia-embed/wistia-embed';
 
 declare global {
-  interface HTMLWistiaEmbedElement extends WistiaEmbed, HTMLElement {
+  interface HTMLWistiaEmbedElement extends WistiaEmbed, HTMLStencilElement {
   }
   var HTMLWistiaEmbedElement: {
     prototype: HTMLWistiaEmbedElement;
