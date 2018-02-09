@@ -50,10 +50,12 @@ dropdown-ecosystem {
     z-index: 1;
     top: 24px;
     right: 26px;
-    box-shadow: 0 4px 16px rgba(black, .2);
     pointer-events: none;
     opacity: 0;
     transform: translateY(-5px);
+    box-shadow:
+      0 4px 14px rgba(42, 58, 87, 0.12),
+      0 16px 32px rgba(42, 58, 87, 0.1);
     transition: .4s opacity ease, .4s transform;
 
     &::before {
