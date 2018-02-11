@@ -38,6 +38,10 @@ A function to be called whenever a new item is selected. Will be passed the newl
 
 A function that returns the dropdown view. It will be passed the dropdown instance.
 
+### `setInitial: Function`
+
+A function that sets the initially selected item. It will be passed the items and should return a single item.
+
 ## State
 
 ### `isOpen`

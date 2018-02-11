@@ -74,6 +74,7 @@ declare global {
       items?: any[];
       onSelect?: Function;
       renderer?: Function;
+      setInitial?: Function;
     }
   }
 }

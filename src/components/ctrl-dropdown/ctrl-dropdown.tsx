@@ -8,12 +8,14 @@ export class CtrlDropdown {
   @Element() el: HTMLElement;
   @Prop() onSelect: Function = () => null;
   @Prop() renderer: Function = () => null;
+  @Prop() setInitial: Function = items => items[0];
   @Prop() items: any[] = [];
   @Prop() autoClose: boolean = false;
   @State() isOpen = false;
   @State() selected: any;
 
   componentDidLoad() {
+    this.selected = this.setInitial(this.items);
     if (this.autoClose) {
       this.el.addEventListener('mouseleave', this.close);
     }
