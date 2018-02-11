@@ -47,6 +47,39 @@ declare global {
 
 
 import {
+  CtrlDropdown as CtrlDropdown
+} from './components/ctrl-dropdown/ctrl-dropdown';
+
+declare global {
+  interface HTMLCtrlDropdownElement extends CtrlDropdown, HTMLStencilElement {
+  }
+  var HTMLCtrlDropdownElement: {
+    prototype: HTMLCtrlDropdownElement;
+    new (): HTMLCtrlDropdownElement;
+  };
+  interface HTMLElementTagNameMap {
+    "ctrl-dropdown": HTMLCtrlDropdownElement;
+  }
+  interface ElementTagNameMap {
+    "ctrl-dropdown": HTMLCtrlDropdownElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "ctrl-dropdown": JSXElements.CtrlDropdownAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface CtrlDropdownAttributes extends HTMLAttributes {
+      autoClose?: boolean;
+      items?: any[];
+      onSelect?: Function;
+      renderer?: Function;
+    }
+  }
+}
+
+
+import {
   DropdownFramework as DropdownEcosystem
 } from './components/dropdown-ecosystem/dropdown-ecosystem';
 
