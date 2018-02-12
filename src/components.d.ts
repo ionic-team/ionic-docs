@@ -171,37 +171,6 @@ declare global {
 
 
 import {
-  LazyIframe as LazyIframe
-} from './components/lazy-iframe/lazy-iframe';
-
-declare global {
-  interface HTMLLazyIframeElement extends LazyIframe, HTMLStencilElement {
-  }
-  var HTMLLazyIframeElement: {
-    prototype: HTMLLazyIframeElement;
-    new (): HTMLLazyIframeElement;
-  };
-  interface HTMLElementTagNameMap {
-    "lazy-iframe": HTMLLazyIframeElement;
-  }
-  interface ElementTagNameMap {
-    "lazy-iframe": HTMLLazyIframeElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      "lazy-iframe": JSXElements.LazyIframeAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface LazyIframeAttributes extends HTMLAttributes {
-      src?: string;
-      title?: string;
-    }
-  }
-}
-
-
-import {
   MenuExpander as MenuExpander
 } from './components/menu-expander/menu-expander';
 
@@ -226,36 +195,6 @@ declare global {
   namespace JSXElements {
     export interface MenuExpanderAttributes extends HTMLAttributes {
       service?: string;
-    }
-  }
-}
-
-
-import {
-  SiteContent as SiteContent
-} from './components/site-content/site-content';
-
-declare global {
-  interface HTMLSiteContentElement extends SiteContent, HTMLStencilElement {
-  }
-  var HTMLSiteContentElement: {
-    prototype: HTMLSiteContentElement;
-    new (): HTMLSiteContentElement;
-  };
-  interface HTMLElementTagNameMap {
-    "site-content": HTMLSiteContentElement;
-  }
-  interface ElementTagNameMap {
-    "site-content": HTMLSiteContentElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      "site-content": JSXElements.SiteContentAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface SiteContentAttributes extends HTMLAttributes {
-      
     }
   }
 }
@@ -406,36 +345,6 @@ declare global {
   namespace JSXElements {
     export interface TableOfContentsAttributes extends HTMLAttributes {
       
-    }
-  }
-}
-
-
-import {
-  WistiaEmbed as WistiaEmbed
-} from './components/wistia-embed/wistia-embed';
-
-declare global {
-  interface HTMLWistiaEmbedElement extends WistiaEmbed, HTMLStencilElement {
-  }
-  var HTMLWistiaEmbedElement: {
-    prototype: HTMLWistiaEmbedElement;
-    new (): HTMLWistiaEmbedElement;
-  };
-  interface HTMLElementTagNameMap {
-    "wistia-embed": HTMLWistiaEmbedElement;
-  }
-  interface ElementTagNameMap {
-    "wistia-embed": HTMLWistiaEmbedElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      "wistia-embed": JSXElements.WistiaEmbedAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface WistiaEmbedAttributes extends HTMLAttributes {
-      wid?: string;
     }
   }
 }
