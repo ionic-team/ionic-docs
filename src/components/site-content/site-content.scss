@@ -1,6 +1,0 @@
-@import 'src/styles/mixins';
-
-site-content {
-  grid-area: site-content;
-  @extend %site-grid-component;
-}
