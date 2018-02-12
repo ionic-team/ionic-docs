@@ -141,36 +141,6 @@ declare global {
 
 
 import {
-  DropdownVersion as DropdownVersion
-} from './components/dropdown-version/dropdown-version';
-
-declare global {
-  interface HTMLDropdownVersionElement extends DropdownVersion, HTMLStencilElement {
-  }
-  var HTMLDropdownVersionElement: {
-    prototype: HTMLDropdownVersionElement;
-    new (): HTMLDropdownVersionElement;
-  };
-  interface HTMLElementTagNameMap {
-    "dropdown-version": HTMLDropdownVersionElement;
-  }
-  interface ElementTagNameMap {
-    "dropdown-version": HTMLDropdownVersionElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      "dropdown-version": JSXElements.DropdownVersionAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface DropdownVersionAttributes extends HTMLAttributes {
-      version?: string;
-    }
-  }
-}
-
-
-import {
   App as IonicDocs
 } from './components/ionic-docs/ionic-docs';
 

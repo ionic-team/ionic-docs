@@ -1,4 +1,4 @@
-import { Component, Listen, State } from '@stencil/core';
+import { Component, State } from '@stencil/core';
 import menuMap from './site-menu-map';
 
 @Component({
@@ -7,17 +7,7 @@ import menuMap from './site-menu-map';
 })
 export class SiteMenu {
 
-
-  @State() version: string = '4.0.1';
-
-  constructor() {
-    this.handleVersionChange = this.handleVersionChange.bind(this);
-  }
-
-  @Listen('versionSelectionChange')
-  handleVersionChange(version) {
-    this.version = version;
-  }
+  @State() version = '4.0.1';
 
   createMenu(items) {
     return Object.keys(items).map(key => {
@@ -52,10 +42,34 @@ export class SiteMenu {
     );
   }
 
+  createVersionDropdown(dropdown) {
+    return [
+      <button class="current" onClick={dropdown.toggle}>v{dropdown.selected}</button>,
+      <ul class={{ 'active': dropdown.isOpen }}>
+        {dropdown.items.map(item =>
+          <li
+            class={{ 'active': dropdown.selected === item }}
+            onClick={e => {
+              e.preventDefault();
+              dropdown.select(item);
+              dropdown.close();
+            }}>
+            <a href="#">{item}</a>
+          </li>
+        )}
+      </ul>
+    ];
+  }
+
   render() {
     return [
-      <dropdown-version version={this.version}>
-      </dropdown-version>,
+      <ctrl-dropdown
+        class="version-dropdown"
+        autoClose
+        items={['4.0.1', '3.x', '2.x', '1.x']}
+        onSelect={selected => { this.version = selected; }}
+        renderer={this.createVersionDropdown}>
+      </ctrl-dropdown>,
       <nav class="menu-wrapper">
         <ul class="nested-menu">
           { this.createMenu(menuMap) }
@@ -64,7 +78,6 @@ export class SiteMenu {
     ];
   }
 }
-
 
 
 
