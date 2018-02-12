@@ -22,7 +22,7 @@ site-header {
   }
 
   #site-logo {
-    background: url('/assets/img/docs-logo.png') no-repeat 0 0;
+    background: url('/docs/assets/img/docs-logo.png') no-repeat 0 0;
     background-size: 72px;
     width: 72px;
     height: 24px;
@@ -47,7 +47,7 @@ site-header {
 
     &::after,
     &::before {
-      background: url('/assets/img/new-tab-icon.png') no-repeat 0 -22px;
+      background: url('/docs/assets/img/new-tab-icon.png') no-repeat 0 -22px;
       background-size: 11px;
       width: 11px;
       height: 11px;

@@ -25,7 +25,7 @@ export class AppMarked {
 
   fetchNewContent() {
     console.log('Fetching doc', this.doc);
-    return fetch(`/docs-content/${this.doc}.md`)
+    return fetch(`/docs/docs-content/${this.doc}.md`)
       .then(response => response.text().then(text => fm(text)))
       .then(data => {
         this.content = data;
