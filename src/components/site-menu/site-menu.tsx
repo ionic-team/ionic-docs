@@ -1,4 +1,5 @@
 import { Component, State } from '@stencil/core';
+import VersionDropdown from './version-dropdown';
 import menuMap from './site-menu-map';
 
 @Component({
@@ -42,34 +43,11 @@ export class SiteMenu {
     );
   }
 
-  createVersionDropdown(dropdown) {
-    return [
-      <button class="current" onClick={dropdown.toggle}>v{dropdown.selected}</button>,
-      <ul class={{ 'active': dropdown.isOpen }}>
-        {dropdown.items.map(item =>
-          <li
-            class={{ 'active': dropdown.selected === item }}
-            onClick={e => {
-              e.preventDefault();
-              dropdown.select(item);
-              dropdown.close();
-            }}>
-            <a href="#">{item}</a>
-          </li>
-        )}
-      </ul>
-    ];
-  }
-
   render() {
     return [
-      <ctrl-dropdown
-        class="version-dropdown"
-        autoClose
-        items={['4.0.1', '3.x', '2.x', '1.x']}
-        onSelect={selected => { this.version = selected; }}
-        renderer={this.createVersionDropdown}>
-      </ctrl-dropdown>,
+      <VersionDropdown
+        items={[ '4.0.1', '3.x', '2.x', '1.x' ]}
+        onSelect={selected => { this.version = selected; }}/>,
       <nav class="menu-wrapper">
         <ul class="nested-menu">
           { this.createMenu(menuMap) }
