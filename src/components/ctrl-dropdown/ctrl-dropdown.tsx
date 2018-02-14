@@ -14,8 +14,11 @@ export class CtrlDropdown {
   @State() isOpen = false;
   @State() selected: any;
 
-  componentDidLoad() {
+  componentWillLoad() {
     this.selected = this.setInitial(this.items);
+  }
+
+  componentDidLoad() {
     if (this.autoClose) {
       this.el.addEventListener('mouseleave', this.close);
     }
