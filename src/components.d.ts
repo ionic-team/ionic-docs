@@ -17,36 +17,6 @@ declare global {
 
 
 import {
-  AppMarked as AppMarked
-} from './components/app-marked/app-marked';
-
-declare global {
-  interface HTMLAppMarkedElement extends AppMarked, HTMLStencilElement {
-  }
-  var HTMLAppMarkedElement: {
-    prototype: HTMLAppMarkedElement;
-    new (): HTMLAppMarkedElement;
-  };
-  interface HTMLElementTagNameMap {
-    "app-marked": HTMLAppMarkedElement;
-  }
-  interface ElementTagNameMap {
-    "app-marked": HTMLAppMarkedElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      "app-marked": JSXElements.AppMarkedAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface AppMarkedAttributes extends HTMLAttributes {
-      doc?: string;
-    }
-  }
-}
-
-
-import {
   CtrlDropdown as CtrlDropdown
 } from './components/ctrl-dropdown/ctrl-dropdown';
 
@@ -135,6 +105,36 @@ declare global {
   namespace JSXElements {
     export interface MenuExpanderAttributes extends HTMLAttributes {
       service?: string;
+    }
+  }
+}
+
+
+import {
+  AppMarked as SiteContent
+} from './components/site-content/site-content';
+
+declare global {
+  interface HTMLSiteContentElement extends SiteContent, HTMLStencilElement {
+  }
+  var HTMLSiteContentElement: {
+    prototype: HTMLSiteContentElement;
+    new (): HTMLSiteContentElement;
+  };
+  interface HTMLElementTagNameMap {
+    "site-content": HTMLSiteContentElement;
+  }
+  interface ElementTagNameMap {
+    "site-content": HTMLSiteContentElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "site-content": JSXElements.SiteContentAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface SiteContentAttributes extends HTMLAttributes {
+      doc?: string;
     }
   }
 }

@@ -26,7 +26,7 @@ stencil-router {
     display: block;
   }
 
-  app-marked {
+  site-content {
     @extend %site-grid-component;
     display: block;
     width: 650px;

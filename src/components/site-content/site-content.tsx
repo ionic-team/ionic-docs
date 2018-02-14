@@ -4,7 +4,7 @@ import marked from 'marked';
 import fm from 'front-matter';
 
 @Component({
-  tag: 'app-marked',
+  tag: 'site-content',
 })
 export class AppMarked {
 

@@ -18,7 +18,7 @@ export class App {
             const docPath = props.match.params.docPath ?
               props.match.params.docPath.substring(0, 4) : '/index';
             return [
-              <app-marked doc={docPath} />,
+              <site-content doc={docPath} />,
               <site-preview-app/>
             ];
           }}
