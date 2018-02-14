@@ -51,7 +51,37 @@ declare global {
 
 
 import {
-  App as IonicDocs
+  DocLoader as DocLoader
+} from './components/doc-loader/doc-loader';
+
+declare global {
+  interface HTMLDocLoaderElement extends DocLoader, HTMLStencilElement {
+  }
+  var HTMLDocLoaderElement: {
+    prototype: HTMLDocLoaderElement;
+    new (): HTMLDocLoaderElement;
+  };
+  interface HTMLElementTagNameMap {
+    "doc-loader": HTMLDocLoaderElement;
+  }
+  interface ElementTagNameMap {
+    "doc-loader": HTMLDocLoaderElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "doc-loader": JSXElements.DocLoaderAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface DocLoaderAttributes extends HTMLAttributes {
+      path?: string;
+    }
+  }
+}
+
+
+import {
+  IonicDocs as IonicDocs
 } from './components/ionic-docs/ionic-docs';
 
 declare global {
@@ -134,7 +164,7 @@ declare global {
   }
   namespace JSXElements {
     export interface SiteContentAttributes extends HTMLAttributes {
-      doc?: string;
+      
     }
   }
 }
