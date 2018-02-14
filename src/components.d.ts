@@ -81,36 +81,6 @@ declare global {
 
 
 import {
-  DropdownFramework as DropdownFramework
-} from './components/dropdown-framework/dropdown-framework';
-
-declare global {
-  interface HTMLDropdownFrameworkElement extends DropdownFramework, HTMLStencilElement {
-  }
-  var HTMLDropdownFrameworkElement: {
-    prototype: HTMLDropdownFrameworkElement;
-    new (): HTMLDropdownFrameworkElement;
-  };
-  interface HTMLElementTagNameMap {
-    "dropdown-framework": HTMLDropdownFrameworkElement;
-  }
-  interface ElementTagNameMap {
-    "dropdown-framework": HTMLDropdownFrameworkElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      "dropdown-framework": JSXElements.DropdownFrameworkAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface DropdownFrameworkAttributes extends HTMLAttributes {
-      
-    }
-  }
-}
-
-
-import {
   App as IonicDocs
 } from './components/ionic-docs/ionic-docs';
 

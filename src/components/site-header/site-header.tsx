@@ -1,5 +1,42 @@
 import { Component } from '@stencil/core';
 import EcosystemDropdown from './ecosystem-dropdown';
+import FrameworkDropdown from './framework-dropdown';
+
+const frameworkDropdownItems = [
+  {
+    title: 'Framework',
+    subtitle: 'The UI Toolkit for building highly performant apps',
+    url: '/docs',
+    className: 'framework'
+  },
+  {
+    title: 'Pro',
+    subtitle: 'Integrated suite of tools & services for shipping apps',
+    url: '/docs/pro',
+    className: 'pro'
+  },
+  {
+    title: 'CLI',
+    subtitle: 'Ionic command line interface tool',
+    url: '/docs/cli',
+    className: 'cli',
+    small: true
+  },
+  {
+    title: 'Capacitor',
+    subtitle: 'Cross-platform Native SDK Container',
+    url: 'https://capacitor.ionicframework.com/',
+    className: 'capacitor',
+    small: true
+  },
+  {
+    title: 'Stencil',
+    subtitle: 'Reusable web component compiler',
+    url: 'https://stenciljs.com/',
+    className: 'stencil',
+    small: true
+  }
+];
 
 const ecosystemDropdownItems = [
   {
@@ -43,7 +80,7 @@ export class SiteHeader {
     return [
       <nav>
         <a href='/docs' id="site-logo"></a>
-        <dropdown-framework></dropdown-framework>
+        <FrameworkDropdown items={frameworkDropdownItems}/>
         <site-search></site-search>
         <EcosystemDropdown items={ecosystemDropdownItems}/>
         <a href="https://github.com/ionic-team/ionic"
