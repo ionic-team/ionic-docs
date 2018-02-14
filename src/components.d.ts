@@ -111,7 +111,7 @@ declare global {
 
 
 import {
-  AppMarked as SiteContent
+  SiteContent as SiteContent
 } from './components/site-content/site-content';
 
 declare global {

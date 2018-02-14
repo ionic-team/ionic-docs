@@ -7,25 +7,19 @@ import { Component } from '@stencil/core';
 export class App {
   render() {
     return [
-      // top level grid elements are prefixed 'site-' to keep things organized
       <site-header />,
       <site-menu />,
       <stencil-router>
-        <stencil-route url={['/docs', 'docs/:docPath']}
+        <stencil-route url={['/docs/:docPath*', '/docs']}
           group="main"
-          routeRender={( props ) => {
-            // console.log('Route render!', props.match, props.match.params);
-            const docPath = props.match.params.docPath ?
-              props.match.params.docPath.substring(0, 4) : '/index';
-            return [
-              <site-content doc={docPath} />,
-              <site-preview-app/>
-            ];
-          }}
+          routeRender={({ match }) => [
+            <site-content doc={match.params.docPath ? match.params.docPath : '/index' }/>,
+            <site-preview-app/>
+          ]}
         />
-        <stencil-route url="/" exact={true} routeRender={() => {
-          return <stencil-router-redirect url="/docs" />
-        }}/>
+        <stencil-route exact url="/" routeRender={() =>
+          <stencil-router-redirect url="/docs"/>
+        }/>
       </stencil-router>,
     ];
   }

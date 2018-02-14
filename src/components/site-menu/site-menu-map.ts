@@ -1,23 +1,23 @@
 import getAPIReferenceMap from './get-api-ref-map';
 
 export default {
-  'Home': '/',
+  'Home': '/docs',
   'Introduction': {
-    'What is Ionic Framework': '/',
-    'Basic Features': '/intro/basics',
-    'App Structure': '/intro/structure',
-    'Core Concepts': '/intro/concepts',
-    'Browser Support': '/intro/support'
+    'What is Ionic Framework': '/docs/intro',
+    'Basic Features': '/docs/intro/basics',
+    'App Structure': '/docs/intro/structure',
+    'Core Concepts': '/docs/intro/concepts',
+    'Browser Support': '/docs/intro/support'
   },
   'Getting Started': {
-    'Installation': '/getting-started/installation',
-    'Starting an App': '/getting-started/starting-an-app',
-    'Run Your App': '/getting-started/run-your-app',
-    'Dev Build': '/getting-started/dev-build',
-    'Testing': '/getting-started/testing',
-    'Deploying': '/getting-started/deploying',
-    'Releasing': '/getting-started/releasing',
-    'Tutorial': '/getting-started/tutorial'
+    'Installation': '/docs/getting-started/installation',
+    'Starting an App': '/docs/getting-started/starting-an-app',
+    'Run Your App': '/docs/getting-started/run-your-app',
+    'Dev Build': '/docs/getting-started/dev-build',
+    'Testing': '/docs/getting-started/testing',
+    'Deploying': '/docs/getting-started/deploying',
+    'Releasing': '/docs/getting-started/releasing',
+    'Tutorial': '/docs/getting-started/tutorial'
   },
   'Components': {},
   'API Reference': getAPIReferenceMap,

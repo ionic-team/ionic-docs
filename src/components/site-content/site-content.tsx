@@ -1,60 +1,57 @@
 import { Component, Element, Prop, State, Watch } from '@stencil/core';
-import { Helmet } from '@stencil/helmet';
 import marked from 'marked';
-import fm from 'front-matter';
+import frontMatter from 'front-matter';
 
 @Component({
   tag: 'site-content',
 })
-export class AppMarked {
-
+export class SiteContent {
+  @Element() el: Element;
   @Prop() doc: string;
   @Prop({ context: 'isServer' }) private isServer: boolean;
-
-  @State() content: object;
-
-  @State() sections: [string];
-
-  @Element() el: Element;
+  @State() body: string;
+  @State() title: string;
 
   componentWillLoad() {
     return this.fetchNewContent();
   }
 
+  validateResponse = res => {
+    if (res.ok) return res;
+    throw new Error(res.statusText);
+  }
+
+  handleFetchError = err => {
+    this.title = null;
+    this.body = `<p>Unable to load ${this.doc}: ${err.message}</p>`;
+  }
+
   @Watch('doc')
-
   fetchNewContent() {
-    console.log('Fetching doc', this.doc);
     return fetch(`/docs/docs-content/${this.doc}.md`)
-      .then(response => response.text().then(text => fm(text)))
-      .then(data => {
-        this.content = data;
+      .then(this.validateResponse)
+      .then(res => res.text())
+      .then(text => frontMatter(text))
+      .then(({ attributes, body }) => {
+        this.title = attributes['title'];
+        this.body = marked(body);
+        this.scrollToTop();
+      })
+      .catch(this.handleFetchError);
+  }
 
-        this.content['body'] = marked(this.content['body']);
-
-        // requestAnimationFrame is not available for preRendering
-        // or SSR, so only run this in the browser
-        if (!this.isServer) {
-          window.requestAnimationFrame(() => {
-            document.getElementsByTagName('stencil-router')[0].scrollTop = 0;
-          })
-        }
+  scrollToTop() {
+    if (this.isServer) {
+      window.requestAnimationFrame(() => {
+        document.querySelector('stencil-router').scrollTop = 0;
       });
+    }
   }
 
   render() {
-    const attrs = this.content['attributes'];
-    const title = attrs.title ? (<h1>{attrs.title}</h1>) : null;
-    const toc = attrs['hide-toc'] ?
-      null : (<table-of-contents></table-of-contents>);
     return [
-      <Helmet>
-          <title>{attrs.title}</title>
-          <meta name="description" content={attrs.description}/>
-      </Helmet>,
-      title,
-      toc,
-      <main innerHTML={this.content['body']}></main>
+      this.title && <h1>{this.title}</h1>,
+      <main innerHTML={this.body}></main>
     ]
   }
 }
