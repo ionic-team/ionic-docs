@@ -1,5 +1,6 @@
 @import 'src/styles/variables';
 @import 'src/styles/mixins';
+@import './ecosystem-dropdown';
 
 site-header {
   @extend %site-grid-component;

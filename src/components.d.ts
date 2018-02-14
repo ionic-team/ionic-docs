@@ -81,36 +81,6 @@ declare global {
 
 
 import {
-  DropdownFramework as DropdownEcosystem
-} from './components/dropdown-ecosystem/dropdown-ecosystem';
-
-declare global {
-  interface HTMLDropdownEcosystemElement extends DropdownEcosystem, HTMLStencilElement {
-  }
-  var HTMLDropdownEcosystemElement: {
-    prototype: HTMLDropdownEcosystemElement;
-    new (): HTMLDropdownEcosystemElement;
-  };
-  interface HTMLElementTagNameMap {
-    "dropdown-ecosystem": HTMLDropdownEcosystemElement;
-  }
-  interface ElementTagNameMap {
-    "dropdown-ecosystem": HTMLDropdownEcosystemElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      "dropdown-ecosystem": JSXElements.DropdownEcosystemAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface DropdownEcosystemAttributes extends HTMLAttributes {
-      
-    }
-  }
-}
-
-
-import {
   DropdownFramework as DropdownFramework
 } from './components/dropdown-framework/dropdown-framework';
 
