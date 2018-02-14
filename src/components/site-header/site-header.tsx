@@ -11,9 +11,9 @@ export class SiteHeader {
     return [
       <nav>
         <a href='/docs' id="site-logo"></a>
-        <FrameworkDropdown items={frameworkDropdownItems}/>
+        <FrameworkDropdown/>
         <site-search></site-search>
-        <EcosystemDropdown items={ecosystemDropdownItems}/>
+        <EcosystemDropdown/>
         <a href="https://github.com/ionic-team/ionic"
            target="_blank"
            class="github">GitHub</a>
