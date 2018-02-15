@@ -48,31 +48,37 @@ site-header {
     letter-spacing: -.02em;
     color: rgba(white, .7);
     transition: .2s color ease;
-
-    &::after,
-    &::before {
-      background: url('/docs/assets/img/new-tab-icon.png') no-repeat 0 -22px;
-      background-size: 11px;
-      width: 11px;
-      height: 11px;
-      content: '';
-      right: 0;
-      top: 9px;
-      position: absolute;
-      transition: .2s opacity ease;
-    }
-
-    &:after {
-      opacity: 0;
-      background-position: 0 -33px;
-    }
+    position: relative;
 
     &:hover {
       color: rgba(white, 1);
-
-      &:after {
-        opacity: 1;
-      }
     }
+
+    &:hover .new-tab__box {
+      fill: #96ccff;
+    }
+
+    &:hover .new-tab__arrow {
+      fill: white;
+    }
+  }
+
+  .new-tab {
+    height: 0.9em;
+    margin-left: 0.25em;
+    width: auto;
+  }
+
+  .new-tab__box,
+  .new-tab__arrow {
+    transition: fill 0.2s ease;
+  }
+
+  .new-tab__box {
+    fill: #62a6ff;
+  }
+
+  .new-tab__arrow {
+    fill: $header-color;
   }
 }
