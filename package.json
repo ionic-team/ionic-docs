@@ -14,6 +14,7 @@
     "@stencil/router": "0.0.23",
     "express": "^4.16.2",
     "front-matter": "^2.3.0",
+    "highlight.js": "^9.12.0",
     "ionicons": "^3.0.0",
     "marked": "^0.3.12"
   },

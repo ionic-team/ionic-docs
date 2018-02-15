@@ -1,5 +1,5 @@
 import { Component, Element, Event, EventEmitter, Prop, State, Watch } from '@stencil/core';
-import marked from 'marked';
+import { renderMarkdown } from './markdown';
 import frontMatter from 'front-matter';
 
 @Component({
@@ -34,7 +34,7 @@ export class DocLoader {
       .then(text => frontMatter(text))
       .then(({ attributes, body }) => {
         this.title = attributes['title'];
-        this.body = marked(body);
+        this.body = renderMarkdown(body);
         this.docLoaded.emit();
       })
       .catch(this.handleFetchError);
