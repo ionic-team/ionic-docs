@@ -57,33 +57,3 @@ stencil-route-link:hover {
   text-decoration: underline;
   cursor: pointer;
 }
-
-pre {
-  word-break: break-all;
-  word-wrap: break-word;
-  display: block;
-  white-space: pre-wrap;
-  margin: 24px 0px 28px;
-  padding: 16px 24px;
-  border-radius: 4px;
-  color: $light-gray;
-  background-color: $blacker;
-  font-family: $font-family-code;
-
-  code {
-    font-weight: 500;
-    display: block;
-    overflow-x: auto;
-    word-wrap: normal;
-    white-space: pre;
-    box-sizing: border-box;
-    font-size: 14px;
-    line-height: 20px;
-  }
-}
-
-code {
-  font-weight: 400;
-  font-family: $font-family-code;
-  font-size: 14px;
-}
