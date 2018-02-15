@@ -3,37 +3,48 @@
 @import 'src/styles/hljs';
 @import 'src/styles/general';
 
-@import 'src/styles/mixins';
+$header-height: 75px;
 
 ionic-docs {
-  width: 100%;
-  height: 100%;
-  max-height: 100%;
-  // display: flex;
-  padding-top: 70px;
+  align-items: start;
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "menu content preview";
+  grid-template-rows: $header-height;
+  grid-template-columns: minmax(240px, 1fr) minmax(500px, 720px) minmax(300px, 1fr);
 }
 
+site-header,
+site-menu,
+site-preview-app {
+  position: sticky;
+  position: -webkit-sticky;
+}
 
-stencil-router {
-  position: fixed;
-  top: 70px;
-  bottom: 0;
-  overflow: scroll;
-  left: calc( 50% - 325px);
+site-menu,
+site-content,
+site-preview-app {
+  padding: 2rem;
+}
 
-  stencil-route {
-    width: 100%;
-    display: block;
-  }
+site-header {
+  align-self: stretch;
+  grid-area: header;
+  padding: 0 2rem;
+  top: 0;
+}
 
-  site-content {
-    @extend %site-grid-component;
-    display: block;
-    width: 650px;
-    margin-right: calc( 50vw - 325px);
-  }
+site-menu {
+  grid-area: menu;
+  top: $header-height;
+}
 
-  site-preview-app {
+site-content {
+  grid-area: content;
+}
 
-  }
+site-preview-app {
+  grid-area: preview;
+  top: $header-height;
 }

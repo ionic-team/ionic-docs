@@ -1,14 +1,7 @@
 @import 'src/styles/variables';
-@import 'src/styles/mixins';
 @import './version-dropdown';
 
 site-menu {
-  @extend %site-grid-component;
-  width: 256px;
-  position: fixed;
-  top: 70px;
-  bottom: 0;
-  left: 0;
 
   nav {
     > ul > li {

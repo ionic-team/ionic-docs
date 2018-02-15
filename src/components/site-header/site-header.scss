@@ -1,26 +1,28 @@
 @import 'src/styles/variables';
-@import 'src/styles/mixins';
 @import './ecosystem-dropdown';
 @import './framework-dropdown';
 
 site-header {
-  @extend %site-grid-component;
-  @extend %header;
-
-  top: 0;
+  background-color: $blue;
+  color: $header-color;
   z-index: 1;
-  width: 100%;
-  position: fixed;
-  min-height: 75px;
-  max-height: auto;
-  overflow: visible;
-  padding-right: 21px;
   font-family: $font-family-eina;
 
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  li {
+    color: $header-color;
+    margin: 0;
+  }
+
   nav {
-    display: flex;
-    position: relative;
     align-items: center;
+    display: flex;
+    height: 100%;
+    width: 100%;
   }
 
   #site-logo {
