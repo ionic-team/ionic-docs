@@ -1,5 +1,5 @@
 .ecosystem-dropdown {
-  // flex-grow: 1;
+  position: relative;
 
   .current {
     cursor: pointer;
@@ -44,7 +44,7 @@
     padding: 11px 0;
     z-index: 1;
     top: 24px;
-    right: 26px;
+    right: -26px;
     pointer-events: none;
     opacity: 0;
     transform: translateY(-5px);

@@ -1,5 +1,6 @@
 .framework-dropdown {
   flex-grow: 1;
+  position: relative;
 
   .current {
     cursor: pointer;
@@ -44,7 +45,7 @@
     padding: 0;
     z-index: 1;
     top: 24px;
-    left: 0;
+    left: -73px;
     opacity: 0;
     pointer-events: none;
     transform: translateY(-5px);
