@@ -26,6 +26,10 @@ The `<ctrl-dropdown>` component provides basic logic and methods for building dr
 
 Whether the dropdown should close itself on `mouseleave`.
 
+### `autoCloseDelay: number = 300`
+
+The time, in milliseconds, that the dropdown should wait to automatically close itself.
+
 ### `items: any[]`
 
 An array of items to be included in the dropdown.

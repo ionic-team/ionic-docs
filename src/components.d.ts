@@ -41,6 +41,7 @@ declare global {
   namespace JSXElements {
     export interface CtrlDropdownAttributes extends HTMLAttributes {
       autoClose?: boolean;
+      autoCloseDelay?: number;
       items?: any[];
       onSelect?: Function;
       renderer?: Function;
