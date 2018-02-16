@@ -27,7 +27,7 @@ export class SiteMenu {
   createMenuItem(text: string, url: string) {
     return (
       <li>
-        <stencil-route-link url={url}>
+        <stencil-route-link exact url={url}>
           {text}
         </stencil-route-link>
       </li>
