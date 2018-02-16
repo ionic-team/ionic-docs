@@ -1,85 +1,68 @@
 @import 'src/styles/variables';
 @import './version-dropdown';
 
-site-menu {
-
-  nav {
-    > ul > li {
-      > stencil-route-link,
-      > menu-expander {
-        &:hover { text-decoration: none; }
-
-        a {
-          font-weight: 600;
-          color: $blackish;
-          padding: 4px 0;
-          font-size: 14px;
-          letter-spacing: -.02em;
-
-          &:hover {
-            color: lighten($blackish, 16);
-          }
-
-          &.link-active,
-          &:hover {
-            transform: none;
-          }
-        }
-      }
-    }
-
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-
-      ul {
-        margin: -3px 0 3px 8px;
-      }
-    }
-
-    li {
-      list-style: none;
-      margin: 0;
-    }
-
-    a {
-      text-decoration: none;
-      color: $gray;
-      text-indent: 0;
-      display: block;
-      padding: 0;
-      letter-spacing: -.02em;
-      font-size: 13px;
-      font-weight: 500;
-      cursor: pointer;
-      transition:
-        .2s color ease,
-        .2s height ease,
-        .2s padding ease,
-        .2s transform ease;
-
-      &.link-active,
-      &:hover {
-        color: $dark;
-        transform: translateX(1px);
-        text-decoration: none;
-      }
-
-      &.link-active {
-        color: $blue;
-        font-weight: 600;
-      }
-    }
-  }
-
-  stencil-route-link,
-  menu-expander {
-        &:hover { text-decoration: none; }
-  }
-
-  menu-expander + ul stencil-route-link {
-    height: 28px;
-  }
+site-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
+site-menu li {
+  margin: 0;
+}
+
+site-menu stencil-route-link:hover {
+  text-decoration: none;
+}
+
+site-menu a {
+  color: $blackish;
+  cursor: pointer;
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -.02em;
+  padding: 4px 0;
+  text-decoration: none;
+  text-indent: 0;
+  transition:
+    .2s color ease,
+    .2s height ease,
+    .2s padding ease,
+    .2s transform ease;
+}
+
+site-menu a:hover {
+  color: lighten($blackish, 16);
+  text-decoration: none;
+}
+
+site-menu .sub-menu a {
+  color: $gray;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 0;
+}
+
+site-menu .sub-menu a:hover,
+site-menu .sub-menu .link-active {
+  transform: translateX(1px);
+}
+
+site-menu .sub-menu a:hover {
+  color: $dark;
+}
+
+site-menu .sub-menu .link-active,
+site-menu .sub-menu .link-active:hover {
+  color: $blue;
+  font-weight: 600;
+}
+
+site-menu .sub-menu {
+  margin: -3px 0 3px 8px;
+}
+
+site-menu .sub-menu stencil-route-link {
+  height: 28px;
+}

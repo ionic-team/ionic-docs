@@ -38,7 +38,7 @@ export class SiteMenu {
     return (
       <li>
         <menu-expander>{text}</menu-expander>
-        <ul>{this.createMenu(items)}</ul>
+        <ul class="sub-menu">{this.createMenu(items)}</ul>
       </li>
     );
   }
