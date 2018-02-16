@@ -45,7 +45,7 @@ site-menu .sub-menu a {
 }
 
 site-menu .sub-menu a:hover,
-site-menu .sub-menu .link-active {
+site-menu .sub-menu a.link-active {
   transform: translateX(1px);
 }
 
@@ -53,8 +53,8 @@ site-menu .sub-menu a:hover {
   color: $dark;
 }
 
-site-menu .sub-menu .link-active,
-site-menu .sub-menu .link-active:hover {
+site-menu stencil-route-link .link-active,
+site-menu stencil-route-link .link-active:hover {
   color: $blue;
   font-weight: 600;
 }
