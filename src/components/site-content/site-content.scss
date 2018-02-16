@@ -4,11 +4,12 @@
   background-color: #f5f6f9;
   border-radius: 4px;
   font-family: $font-family-code;
-  font-size: 13px;
+  font-size: 12px;
   margin: 1.5em 0;
-  overflow-x: scroll;
-  padding: 2em 2.5em;
+  overflow-x: auto;
+  padding: 2em 2em;
   position: relative;
+  -webkit-font-smoothing: initial;
 }
 
 .code-block__label {
