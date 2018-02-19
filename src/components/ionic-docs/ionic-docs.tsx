@@ -1,4 +1,5 @@
 import { Component } from '@stencil/core';
+import '@stencil/router';
 
 @Component({
   tag: 'ionic-docs',

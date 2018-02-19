@@ -9,7 +9,7 @@
     "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" "
   },
   "dependencies": {
-    "@stencil/core": "^0.5.0",
+    "@stencil/core": "^0.6.1",
     "@stencil/helmet": "^0.1.2",
     "@stencil/router": "0.0.23",
     "express": "^4.16.2",
@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@stencil/dev-server": "0.0.18",
+    "@stencil/sass": "0.0.2",
     "@stencil/utils": "latest"
   },
   "author": "Ionic Team",
