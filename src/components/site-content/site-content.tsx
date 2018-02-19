@@ -5,18 +5,17 @@ import { Component, Listen, Prop } from '@stencil/core';
 })
 export class SiteContent {
   @Prop({ context: 'isServer' }) private isServer: boolean;
-  router: Element;
 
   @Listen('docLoaded')
   scrollToTop() {
     if (!this.isServer) {
-      requestAnimationFrame(() => { this.router.scrollTop = 0; })
+      requestAnimationFrame(() => { document.documentElement.scrollTop = 0; })
     }
   }
 
   render() {
     return (
-      <stencil-router ref={node => { this.router = node; }}>
+      <stencil-router>
           <stencil-route url={['/docs/:docPath*', '/docs']} group="main" routeRender={loadMarkdownDocument}/>
           <stencil-route exact url="/" routeRender={redirectToHome}/>
       </stencil-router>
