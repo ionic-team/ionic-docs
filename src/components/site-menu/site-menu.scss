@@ -63,6 +63,18 @@ site-menu .sub-menu {
   margin: -3px 0 3px 8px;
 }
 
-site-menu .sub-menu stencil-route-link {
+site-menu .sub-menu:not(.is-expanded) {
+  pointer-events: none;
+}
+
+site-menu .sub-menu:not(.is-expanded) li {
+  height: 0;
+  opacity: 0;
+}
+
+site-menu .sub-menu li {
   height: 28px;
+  transition:
+    height cubic-bezier(0.36, 0.66, 0.04, 1) 0.2s,
+    opacity cubic-bezier(0.36, 0.66, 0.04, 1) 0.2s;
 }

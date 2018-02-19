@@ -110,36 +110,6 @@ declare global {
 
 
 import {
-  MenuExpander as MenuExpander
-} from './components/menu-expander/menu-expander';
-
-declare global {
-  interface HTMLMenuExpanderElement extends MenuExpander, HTMLStencilElement {
-  }
-  var HTMLMenuExpanderElement: {
-    prototype: HTMLMenuExpanderElement;
-    new (): HTMLMenuExpanderElement;
-  };
-  interface HTMLElementTagNameMap {
-    "menu-expander": HTMLMenuExpanderElement;
-  }
-  interface ElementTagNameMap {
-    "menu-expander": HTMLMenuExpanderElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      "menu-expander": JSXElements.MenuExpanderAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface MenuExpanderAttributes extends HTMLAttributes {
-      service?: string;
-    }
-  }
-}
-
-
-import {
   SiteContent as SiteContent
 } from './components/site-content/site-content';
 

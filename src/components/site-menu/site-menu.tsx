@@ -37,10 +37,14 @@ export class SiteMenu {
   createSubmenu(text: string, items: Object) {
     return (
       <li>
-        <menu-expander>{text}</menu-expander>
+        <a onClick={e => this.toggleSubmenu(e.target as HTMLElement)}>{text}</a>
         <ul class="sub-menu">{this.createMenu(items)}</ul>
       </li>
     );
+  }
+
+  toggleSubmenu(toggle: HTMLElement) {
+    toggle.nextElementSibling.classList.toggle('is-expanded');
   }
 
   render() {
