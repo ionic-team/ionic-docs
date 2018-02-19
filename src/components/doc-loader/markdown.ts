@@ -4,10 +4,7 @@ import hljs from 'highlight.js';
 const renderer = new marked.Renderer();
 
 renderer.code = (code: string, lang: string) => `
-  <div class="code-block">
-    <div class="code-block__label">${lang}</div>
-    <pre><code>${hljs.highlightAuto(code).value}</code></pre>
-  </div>
+  <code-block language="${lang}">${hljs.highlightAuto(code).value}</code-block>
 `;
 
 export function renderMarkdown(markdown: string): string {

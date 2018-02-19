@@ -1,8 +1,7 @@
 import { Component, Listen, Prop } from '@stencil/core';
 
 @Component({
-  tag: 'site-content',
-  styleUrl: 'site-content.scss'
+  tag: 'site-content'
 })
 export class SiteContent {
   @Prop({ context: 'isServer' }) private isServer: boolean;

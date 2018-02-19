@@ -1,8 +1,10 @@
 @import 'src/styles/variables';
+@import './highlight';
 
-.code-block {
+code-block {
   background-color: #f5f6f9;
   border-radius: 4px;
+  display: block;
   font-family: $font-family-code;
   font-size: 12px;
   margin: 1.5em 0;
@@ -12,7 +14,7 @@
   -webkit-font-smoothing: initial;
 }
 
-.code-block__label {
+code-block .label {
   color: #bdc5d1;
   font-size: 0.85em;
   font-weight: 700;
@@ -24,12 +26,12 @@
   top: 0;
 }
 
-.code-block pre,
-.code-block code {
+code-block pre,
+code-block code {
   font-family: inherit;
 }
 
-.code-block > pre {
+code-block > pre {
   line-height: 1.45;
   margin: 0;
 }
