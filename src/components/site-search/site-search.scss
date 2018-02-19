@@ -12,6 +12,9 @@ site-search {
     outline: none;
     display: block;
     font-size: 12px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     font-weight: 600;
     min-width: 240px;
     border-radius: 16px;
