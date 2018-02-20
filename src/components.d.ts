@@ -45,6 +45,36 @@ declare global {
 
 
 import {
+  CodePreview as CodePreview
+} from './components/code-preview/code-preview';
+
+declare global {
+  interface HTMLCodePreviewElement extends CodePreview, HTMLStencilElement {
+  }
+  var HTMLCodePreviewElement: {
+    prototype: HTMLCodePreviewElement;
+    new (): HTMLCodePreviewElement;
+  };
+  interface HTMLElementTagNameMap {
+    "code-preview": HTMLCodePreviewElement;
+  }
+  interface ElementTagNameMap {
+    "code-preview": HTMLCodePreviewElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "code-preview": JSXElements.CodePreviewAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface CodePreviewAttributes extends HTMLAttributes {
+      markup?: string;
+    }
+  }
+}
+
+
+import {
   CtrlDropdown as CtrlDropdown
 } from './components/ctrl-dropdown/ctrl-dropdown';
 
