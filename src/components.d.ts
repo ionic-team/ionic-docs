@@ -253,7 +253,8 @@ declare global {
   }
   namespace JSXElements {
     export interface SitePreviewAppAttributes extends HTMLAttributes {
-      
+      fixed?: boolean;
+      url?: string;
     }
   }
 }
