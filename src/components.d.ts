@@ -321,6 +321,36 @@ declare global {
 
 
 import {
+  TabGroup as TabGroup
+} from './components/tab-group/tab-group';
+
+declare global {
+  interface HTMLTabGroupElement extends TabGroup, HTMLStencilElement {
+  }
+  var HTMLTabGroupElement: {
+    prototype: HTMLTabGroupElement;
+    new (): HTMLTabGroupElement;
+  };
+  interface HTMLElementTagNameMap {
+    "tab-group": HTMLTabGroupElement;
+  }
+  interface ElementTagNameMap {
+    "tab-group": HTMLTabGroupElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "tab-group": JSXElements.TabGroupAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface TabGroupAttributes extends HTMLAttributes {
+      tabs?: string;
+    }
+  }
+}
+
+
+import {
   TableOfContents as TableOfContents
 } from './components/table-of-contents/table-of-contents';
 
