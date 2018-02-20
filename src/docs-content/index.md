@@ -61,6 +61,10 @@ export class MyClass{
 
 Some directives can take an “argument”, denoted by a colon after the directive name. For example, the v-bind directive is used to reactively update an HTML attribute:
 
+```html
+<p>Here is some HTML to preview...</p>
+```
+
 * Type: `boolean`
 * Default: `false`
 * Restrictions: This option is only available in the full build, with in-browser compilation.

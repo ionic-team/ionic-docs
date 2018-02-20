@@ -1,12 +1,22 @@
 import marked from 'marked';
 import hljs from 'highlight.js';
 
-const renderer = new marked.Renderer();
 const slugify = (text: string) => text.toLowerCase().replace(/[^\w]+/g, '-');
 
-renderer.code = (code: string, lang: string) => `
-  <code-block language="${lang}">${hljs.highlightAuto(code).value}</code-block>
+const toCodeBlock = (code: string, lang: string) =>
+  `<code-block language=${lang}>${hljs.highlightAuto(code).value}</code-block>`;
+
+const toPreviewBlock = (code: string, lang: string) => `
+  <tab-group tabs="markup preview">
+    <code-block slot="markup" language=${lang}>${hljs.highlightAuto(code).value}</code-block>
+    <code-preview slot="preview" markup="${code}"></code-preview>
+  </tab-group>
 `;
+
+const renderer = new marked.Renderer();
+
+renderer.code = (code: string, lang: string) =>
+  lang === 'html' ? toPreviewBlock(code, lang) : toCodeBlock(code, lang);
 
 renderer.heading = (text: string, level: string) => `
   <h${level}>
