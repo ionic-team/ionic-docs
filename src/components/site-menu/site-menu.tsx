@@ -27,7 +27,7 @@ export class SiteMenu {
   createMenuItem(text: string, url: string) {
     return (
       <li>
-        <stencil-route-link exact url={url}>
+        <stencil-route-link exact url={url} title={text}>
           {text}
         </stencil-route-link>
       </li>
@@ -37,7 +37,7 @@ export class SiteMenu {
   createSubmenu(text: string, items: Object) {
     return (
       <li>
-        <a onClick={e => this.toggleSubmenu(e.target as HTMLElement)}>{text}</a>
+        <a onClick={e => this.toggleSubmenu(e.target as HTMLElement)} title={text}>{text}</a>
         <ul class="sub-menu">{this.createMenu(items)}</ul>
       </li>
     );

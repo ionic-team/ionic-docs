@@ -22,14 +22,17 @@ site-menu a {
   font-size: 14px;
   font-weight: 600;
   letter-spacing: -.06em;
+  overflow: hidden;
   padding: 4px 0;
   text-decoration: none;
   text-indent: 0;
+  text-overflow: ellipsis;
   transition:
     .2s color ease,
     .2s height ease,
     .2s padding ease,
     .2s transform ease;
+  white-space: nowrap;
 }
 
 site-menu a:hover {
