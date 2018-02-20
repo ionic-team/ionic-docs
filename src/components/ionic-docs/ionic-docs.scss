@@ -11,7 +11,7 @@ ionic-docs {
     "header header header"
     "menu content preview";
   grid-template-rows: $header-height;
-  grid-template-columns: minmax(240px, 1fr) minmax(500px, 720px) minmax(300px, 1fr);
+  grid-template-columns: minmax(240px, 1fr) minmax(500px, 720px) minmax(300px, 1.55fr);
 }
 
 site-header,
@@ -24,13 +24,13 @@ site-preview-app {
 site-menu,
 site-content,
 site-preview-app {
-  padding: 2rem;
+  padding: 1.75rem 2rem;
 }
 
 site-header {
   align-self: stretch;
   grid-area: header;
-  padding: 0 1.2rem 0 2rem;
+  padding: .3rem 1.2rem 0 2rem;
   top: 0;
 }
 
@@ -40,6 +40,7 @@ site-menu {
 }
 
 site-content {
+  padding-top: 1.15rem;
   grid-area: content;
 }
 

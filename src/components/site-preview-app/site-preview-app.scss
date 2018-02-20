@@ -4,10 +4,14 @@ site-preview-app {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: auto;
+  padding-right: 0;
+  padding-top: 4px;
 
   ul {
     padding: 0;
     display: flex;
+    margin-bottom: 9px;
   }
 
   li {
@@ -17,9 +21,11 @@ site-preview-app {
     border-radius: 16px;
     letter-spacing: .1em;
     text-transform: uppercase;
-    padding: 0 8px;
-    margin: 0 8px;
+    padding: 0 9px;
+    margin: 0px 3px;
     display: block;
+    font-size: 10px;
+    line-height: 24px;
     font-weight: 700;
     cursor: pointer;
     transition:
@@ -35,8 +41,10 @@ site-preview-app {
   figure {
     height: 757px;
     width: 380px;
+    margin: 0 22px;
     position: relative;
     padding: 26px 30px 41px;
+
 
     &::before {
       background: url('/docs/assets/img/device-iphone.png') no-repeat 0 0;
