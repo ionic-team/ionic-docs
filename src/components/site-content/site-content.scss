@@ -1,0 +1,23 @@
+@import 'src/styles/variables';
+
+.linked-heading {
+  color: inherit;
+  font-weight: inherit;
+  position: relative;
+}
+
+.linked-heading:before {
+  color: lighten($blue, 20);
+  content: '#';
+  left: -20px;
+  position: absolute;
+  transition: .2s color ease;
+}
+
+.linked-heading:hover {
+  color: $darker;
+}
+
+.linked-heading:hover:before {
+  color: $blue;
+}
