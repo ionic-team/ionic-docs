@@ -3,6 +3,8 @@
 @import 'src/styles/general';
 
 $header-height: 75px;
+$breakpoint-lg: 1124px;
+$breakpoint-md: 700px;
 
 ionic-docs {
   align-items: start;
@@ -11,7 +13,16 @@ ionic-docs {
     "header header header"
     "menu content preview";
   grid-template-rows: $header-height;
-  grid-template-columns: minmax(240px, 1fr) minmax(500px, 720px) minmax(300px, 1.55fr);
+  grid-template-columns: minmax(200px, 1fr) minmax(500px, 720px) minmax(424px, 1.55fr);
+
+  @media (max-width: $breakpoint-lg)  {
+    grid-template-columns: minmax(200px, 1fr) minmax(500px, 720px) 1fr;
+  }
+
+  @media (max-width: $breakpoint-md)  {
+    // TODO: sidebar drawer
+    grid-template-columns: 1fr minmax(320px, 720px) 1fr;
+  }
 }
 
 site-header,
@@ -22,8 +33,7 @@ site-preview-app {
 }
 
 site-menu,
-site-content,
-site-preview-app {
+site-content {
   padding: 1.75rem 2rem;
 }
 
@@ -37,6 +47,12 @@ site-header {
 site-menu {
   grid-area: menu;
   top: $header-height;
+  padding-right: 0;
+
+  @media (max-width: $breakpoint-md)  {
+    // TODO: sidebar drawer
+    display: none;
+  }
 }
 
 site-content {
@@ -47,4 +63,11 @@ site-content {
 site-preview-app {
   grid-area: preview;
   top: $header-height;
+  padding: 1.75rem 0 1rem;
+
+
+  @media (max-width: $breakpoint-lg)  {
+    // TODO: preview app link
+    display: none;
+  }
 }

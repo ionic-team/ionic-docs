@@ -1,21 +1,30 @@
-import { Component, Prop, State } from '@stencil/core';
+import { Component, Listen, State } from '@stencil/core';
 
 @Component({
   tag: 'site-preview-app',
   styleUrl: 'site-preview-app.scss'
 })
 export class SitePreviewApp {
-
-  @Prop() url:string;
-  @Prop() fixed:boolean = false;
-
   @State() selected:string = 'ios';
+  @State() url:string;
+  @State() fixed:boolean = false;
+
+  @Listen('window:docLoaded')
+  onDocLoaded(e) {
+    this.url = e.detail.previewUrl
+    this.fixed = !!e.detail.previewFixed
+    console.log(this.url)
+  }
 
   select(platform) {
     this.selected = platform;
   }
 
   render() {
+    if (! this.url) {
+      return null;
+    }
+
     return [
       <ul>
         <li
@@ -26,7 +35,7 @@ export class SitePreviewApp {
           onClick={this.select.bind(this, 'android')}>Android</li>
       </ul>,
       <figure class={this.selected}>
-        <iframe src="/" frameborder="0"></iframe>
+        <iframe src={this.url} frameborder="0"></iframe>
       </figure>
     ]
   }

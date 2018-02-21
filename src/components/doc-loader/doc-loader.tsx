@@ -35,7 +35,7 @@ export class DocLoader {
       .then(({ attributes, body }) => {
         this.title = attributes['title'];
         this.body = renderMarkdown(body);
-        this.docLoaded.emit();
+        this.docLoaded.emit(attributes);
       })
       .catch(this.handleFetchError);
   }
