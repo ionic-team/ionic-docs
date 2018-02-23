@@ -6,7 +6,9 @@
   "scripts": {
     "start": "npm run dev",
     "build": "stencil build --prerender",
-    "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" "
+    "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
+    "lint": "tslint --config tslint.json --project tsconfig.json",
+    "precommit": "npm run lint"
   },
   "dependencies": {
     "@stencil/core": "^0.6.1",
@@ -21,7 +23,10 @@
   "devDependencies": {
     "@stencil/dev-server": "0.0.18",
     "@stencil/sass": "0.0.2",
-    "@stencil/utils": "latest"
+    "@stencil/utils": "latest",
+    "husky": "^0.14.3",
+    "tslint": "^5.9.1",
+    "tslint-ionic-rules": "0.0.14"
   },
   "author": "Ionic Team",
   "license": "MIT",
