@@ -14,12 +14,12 @@ export class TableOfContents {
     const selector = 'main h1, main h2, main h3';
     this.headings = this.el.parentElement.querySelectorAll(selector);
 
-    let anchor = document.createElement('a');
-    anchor.classList.add('linked')
+    const anchor = document.createElement('a');
+    anchor.classList.add('linked');
 
     Array.from(this.headings).forEach(heading => {
-      anchor.setAttribute('href', `#${heading['id']}`)
-      if(heading['innerText']) {
+      anchor.setAttribute('href', `#${heading['id']}`);
+      if (heading['innerText']) {
         anchor.innerText = heading['innerText'];
       } else {
         anchor.textContent = heading['textContent'];
@@ -38,6 +38,6 @@ export class TableOfContents {
           </li>
         )}
       </ul>
-    ]
+    ];
   }
 }

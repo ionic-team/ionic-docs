@@ -48,5 +48,5 @@ export default function EcosystemDropdown() {
         </ul>
       ]}>
     </ctrl-dropdown>
-  )
+  );
 }

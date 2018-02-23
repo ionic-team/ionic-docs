@@ -10,7 +10,7 @@ export class SiteHeader {
   render() {
     return [
       <nav>
-        <a href='/docs' id="site-logo"></a>
+        <a href="/docs" id="site-logo"></a>
         <FrameworkDropdown/>
         <site-search></site-search>
         <EcosystemDropdown/>
@@ -18,7 +18,7 @@ export class SiteHeader {
           GitHub <NewTabIcon/>
         </a>
       </nav>
-    ]
+    ];
   }
 }
 

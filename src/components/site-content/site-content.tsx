@@ -10,7 +10,7 @@ export class SiteContent {
   @Listen('docLoaded')
   scrollToTop() {
     if (!this.isServer) {
-      requestAnimationFrame(() => { document.documentElement.scrollTop = 0; })
+      requestAnimationFrame(() => { document.documentElement.scrollTop = 0; });
     }
   }
 
@@ -25,7 +25,7 @@ export class SiteContent {
 }
 
 const loadMarkdownDocument = ({ match }) =>
-  <doc-loader path={match.params.docPath ? match.params.docPath : 'index' }/>
+  <doc-loader path={match.params.docPath ? match.params.docPath : 'index' }/>;
 
 const redirectToHome = () =>
   <stencil-router-redirect url="/docs"/>;

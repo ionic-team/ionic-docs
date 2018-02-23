@@ -58,5 +58,5 @@ export default function FrameworkDropdown() {
         </ul>
       ]}>
     </ctrl-dropdown>
-  )
+  );
 }

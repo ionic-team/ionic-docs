@@ -31,7 +31,7 @@ export class SiteMenu {
           {text}
         </stencil-route-link>
       </li>
-    )
+    );
   }
 
   createSubmenu(text: string, items: Object) {

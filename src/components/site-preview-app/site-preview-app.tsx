@@ -5,15 +5,15 @@ import { Component, Listen, State } from '@stencil/core';
   styleUrl: 'site-preview-app.scss'
 })
 export class SitePreviewApp {
-  @State() selected:string = 'ios';
-  @State() url:string;
-  @State() fixed:boolean = false;
+  @State() selected = 'ios';
+  @State() url: string;
+  @State() fixed = false;
 
   @Listen('window:docLoaded')
   onDocLoaded(e) {
-    this.url = e.detail.previewUrl
-    this.fixed = !!e.detail.previewFixed
-    console.log(this.url)
+    this.url = e.detail.previewUrl;
+    this.fixed = !!e.detail.previewFixed;
+    console.log(this.url);
   }
 
   select(platform) {
@@ -28,15 +28,15 @@ export class SitePreviewApp {
     return [
       <ul>
         <li
-          class={this.selected === 'ios' ? 'active':''}
+          class={this.selected === 'ios' ? 'active' : ''}
           onClick={this.select.bind(this, 'ios')}>iOS</li>
         <li
-          class={this.selected === 'android' ? 'active':''}
+          class={this.selected === 'android' ? 'active' : ''}
           onClick={this.select.bind(this, 'android')}>Android</li>
       </ul>,
       <figure class={this.selected}>
         <iframe src={this.url} frameborder="0"></iframe>
       </figure>
-    ]
+    ];
   }
 }

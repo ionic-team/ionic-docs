@@ -12,6 +12,6 @@ export class SiteSearch {
         <i class="search-icon"></i>
       </form>
 
-    ]
+    ];
   }
 }
