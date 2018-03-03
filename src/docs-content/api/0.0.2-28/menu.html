@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Menu - Standalone</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <script src="./dist/ionic.js"></script>
+</head>
+
+<body>
+  <ion-menu side="left">
+    <ion-header>
+      <ion-toolbar color="secondary">
+        <ion-title>Left Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+        <ion-item>Open Right Menu</ion-item>
+        <ion-item>Close Menu</ion-item>
+        <ion-item>Close Menu</ion-item>
+        <ion-item>Close Menu</ion-item>
+        <ion-item>Close Menu</ion-item>
+        <ion-item>Close Menu</ion-item>
+        <ion-item>Close Menu</ion-item>
+        <ion-item>Close Menu</ion-item>
+        <ion-item>Close Menu</ion-item>
+        <ion-item>Close Menu</ion-item>
+        <ion-item>Close Menu</ion-item>
+        <ion-item>Close Menu</ion-item>
+      </ion-list>
+    </ion-content>
+
+    <ion-footer>
+      <ion-toolbar color="secondary">
+        <ion-title>Footer</ion-title>
+      </ion-toolbar>
+    </ion-footer>
+
+  </ion-menu>
+
+  <div class="ion-page" main>
+
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu - Standalone</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content padding>
+      <p>
+        <button class="e2eOpenLeftMenu" onclick="openLeft()">Open left menu</button>
+        <button onclick="openRight()">Open right menu</button>
+      </p>
+      <p>
+        <button onclick="setPush()">Set Push</button>
+        <button onclick="setOverlay()">Set Overlay</button>
+        <button onclick="setReveal()">Set Reveal</button>
+
+        <button onclick="setEnabled()">Set Swipe Enabled False</button>
+      </p>
+    </ion-content>
+  </div>
+
+  <style>
+    body {
+      margin: 0;
+    }
+
+    p > button {
+      display: block;
+      clear: both;
+      width: 100%;
+      padding: 12px 8px;
+      font-size: 1em;
+      background: #f8f8f8;
+      border: 1px solid #eee;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+  </style>
+</body>
+</html>

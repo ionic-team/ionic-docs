@@ -8,7 +8,7 @@ import menuMap from './site-menu-map';
 })
 export class SiteMenu {
 
-  @State() version = '4.0.1';
+  @State() version = '0.0.2-25';
 
   createMenu(items) {
     return Object.keys(items).map(key => {
@@ -50,7 +50,7 @@ export class SiteMenu {
   render() {
     return [
       <VersionDropdown
-        items={[ '4.0.1', '3.x', '2.x', '1.x' ]}
+        items={[ '0.0.2-25' ]}
         onSelect={selected => { this.version = selected; }}/>,
       <nav class="menu-wrapper">
         <ul class="nested-menu">
