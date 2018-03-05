@@ -4,6 +4,11 @@
 
 This is the home for the v4+ [Ionic Framework](https://ionicframework.com) docs.
 
+## Installation
+
+The API Docs use [nodegit](). This required libgcrypt to be installed, which is not installed by default in OSX.
+To run the API Docs scripts, first install libgrypt. With Homebrew, this can be done with `brew install libgcrypt`.
+
 ## Editors
 
 The site content is built from markdown files in `src/docs-content`. Markdown

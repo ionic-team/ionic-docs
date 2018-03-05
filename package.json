@@ -8,7 +8,11 @@
     "build": "stencil build --prerender",
     "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
     "lint": "tslint --config tslint.json --project tsconfig.json",
-    "precommit-bak": "npm run lint"
+    "precommit-bak": "npm run lint",
+    "build-api-scripts": "tsc -p scripts/tsconfig.json",
+    "watch-api-scripts": "tsc -p scripts/tsconfig.json --watch",
+    "update-api-docs": "node scripts/build/scripts",
+    "api-scripts-watch": "sd concurrent \"npm run watch-scripts\" \"chokidar 'scripts/build/**/*.js' -c 'npm run build-docs'\""
   },
   "dependencies": {
     "@stencil/core": "^0.6.1",
@@ -24,7 +28,11 @@
     "@stencil/dev-server": "0.0.18",
     "@stencil/sass": "0.0.2",
     "@stencil/utils": "latest",
+    "chokidar": "^2.0.2",
+    "chokidar-cli": "^1.2.0",
     "husky": "^0.14.3",
+    "nodegit": "^0.21.0",
+    "path": "^0.12.7",
     "tslint": "^5.9.1",
     "tslint-ionic-rules": "0.0.14"
   },

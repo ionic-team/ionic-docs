@@ -1,4 +1,6 @@
+ionic
 node_modules/
+scripts/build
 .DS_Store
 /dist
 /www
