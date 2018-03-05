@@ -1,8 +1,8 @@
 # Theming with CSS
-CSS based theming enabled apps to customize the colors quickly by simply loading a CSS file or changing a few CSS property values.
+CSS-based theming enables apps to customize the colors quickly by simply loading a CSS file or changing a few CSS property values.
 
 ## Color Language
-Ionic 4 break colors down into two groups application colors and the color map. The color map is an abstract collection of colors that can be used through the application, these have names like `--ion-color-primary` and `--ion-color-secondary`.
+Ionic breaks colors down into two groups: application colors and the color map. The color map is an abstract collection of colors that can be used throughout the application. These have names like `--ion-color-primary` and `--ion-color-secondary`.
 
 ### Application Colors
 Application colors are named for their usage throughout components. The following is a list of all the top level application colors.
@@ -31,13 +31,13 @@ Application colors are named for their usage throughout components. The followin
 ```
 
 ### Stepped Colors
-After exploring many applications and themes we found that most designs are never simply one background color, there are always subtle variations used to imply importance and depth throughout the design. In order to accommodate this pattern we created stepped colors. 
+After exploring many applications and themes, we found that most designs are never simply one background color. There are always subtle variations used to imply importance and depth throughout the design. In order to accommodate this pattern, we created stepped colors. 
 
 There are only two colors that are used throughout the Ionic component collection. These are `--ion-text-color` and `--ion-background-color`.
 
-Stepped colors allow for some finer color control over the look of your application. A color step is a subtle variation of a color moving towards another color. For example the color steps for `--ion-text-color` are moving towards `--ion-background-color`. Stepped colors also require a RGB list for alpha control, please refer to “**The Alpha Problem**” below
+Stepped colors allow for some finer color control over the look of your application. A color step is a subtle variation of a color moving toward another color. For example, the color steps for `--ion-text-color` are moving toward `--ion-background-color`. Stepped colors also require a RGB List for alpha control. Please refer to “**The Alpha Problem**” below.
 
-A simple example to illustrate the concept, with only 4 steps, would look like this:
+A simple example to illustrate the concept, with only four steps, would look like this:
 
 ```css
 --ion-text-color: #000000;
@@ -52,9 +52,9 @@ A simple example to illustrate the concept, with only 4 steps, would look like t
 --ion-text-color-step-1000: #ffffff;
 ```
 
-In this example you can see that background-color steps move from white to black and text-color steps are moving from black towards white. Ionic 4 uses step numbers as percentages to generate these colors. For example `--ion-text-color-step-250` is `--ion-text-color` mixed with 25% of `--ion-background-color`.
+In this example, you can see that `--ion-background-color` steps move from white to black and `--ion-text-color` steps are moving from black toward white. Ionic uses step numbers as percentages to generate these colors. For example, `--ion-text-color-step-250` is `--ion-text-color` mixed with 25% of `--ion-background-color`.
 
-Ionic 4 generates 20 steps per color resulting in the following CSS properties being available
+Ionic generates 20 steps per color resulting in the following CSS properties being available
 
 ```css
 --ion-background-color: #ffffff;
@@ -100,19 +100,19 @@ Ionic 4 generates 20 steps per color resulting in the following CSS properties b
 --ion-text-color-step-950: #f2f2f2;
 --ion-text-color-step-1000: #ffffff;
 ```
-Generally color steps are a mirror image of eachother. For example `--ion-text-color-step-750` will equal `ion-background-color-step-250`. However steps are provided for both background and text colors to allow designers to customize a specific step if need be. For example maybe a design calls for `ion-text-color-step-250` to be `pink` instead of the normal progression.
+Generally, color steps are a mirror image of each other. For example, `--ion-text-color-step-750` will equal `ion-background-color-step-250`. However, steps are provided for both background and text colors to allow designers to customize a specific step, if need be. For example, maybe a design calls for `ion-text-color-step-250` to be `pink` instead of the normal progression.
 
 
 ### The Color Map
 The Color Map is a collection of abstract colors used throughout components. Colors in this collection are also given a CSS class to make them easy to apply to components.
 
-For example to apply the primary color to a component one can simply set the component color property to primary.
+For example, to apply the primary color to a component, one can simply set the component color property to primary.
 
 ```html
 <ion-button color="primary">Primary</ion-button>
 ```
 
-The following is a list of all the top level colors in the color map. 
+The following is a list of all the top level colors in the color map: 
 
 ```css
 --ion-color-primary
@@ -126,10 +126,10 @@ The following is a list of all the top level colors in the color map.
 --ion-color-dark
 ```
 
-#### Layered Color’s
-Colors in the color map are considered layered as they are not simply a single hex value. When you apply ‘primary’ to a button not only does the button’s background color change but also it’s text, along with hover and active background colors. This is just one example of where a layered color is applied.
+#### Layered Colors
+Colors in the color map are considered layered, as they are not simply a single hex value. When you apply ‘primary’ to a button, not only does the button’s background color change, but its text, along with hover and active background colors, change as well. This is just one example of where a layered color is applied.
 
-In order to update a layered color one should set all the layers at the same time.  A layered color is made up of a base, contrast, shade and tint color. For example `--ion-color-primary` would consist of the following CSS properties.
+In order to update a layered color, one should set all the layers at the same time.  A layered color is made up of a base, contrast, shade, and tint color. For example, `--ion-color-primary` would consist of the following CSS properties:
 
 ```css
 --ion-color-primary: #488aff;
@@ -138,23 +138,27 @@ In order to update a layered color one should set all the layers at the same tim
 --ion-color-primary-tint: #5a96ff;
 ```
 
-Ionic uses the following naming convention for color map properties
+Ionic uses the following naming convention for color map properties:
+
 `--ion-color-[name]-[variation]`
 
-The reason for these layered colors comes down to CSS not supporting any color modification methods (mixing colors, tint, shading, etc), here is a general rule on how to create these.
+The reason for these layered colors comes down to CSS not supporting any color modification methods (mixing colors, tint, shading, etc.). Here is a general rule on how to create these:
 
 * base: The main color
-* contrast: A color then when applied over base would result in readable text
-* shade: A slightly darker version of base. Ionic defaults to base mixed with 12% black
-* tint: A slightly lighter version of base. Ionic defaults to base mixed with 10% white
+* contrast: A color that when applied over base would result in readable text
+* shade: A slightly darker version of base. Ionic defaults to base mixed with 12% black.
+* tint: A slightly lighter version of base. Ionic defaults to base mixed with 10% white.
 
-Color maps colors also suffer from **The Alpha Problem**, please read the section below and be sure to generate a RGB List version of your color so it can be used in alpha transformations
+Color maps colors also suffer from **The Alpha Problem**. Please read the section below and be sure to generate a RGB List version of your color so it can be used in alpha transformations.
 
 
 ### The Alpha Problem
-CSS also does not currently support granular alpha color of a color. Ofcourse we all know about rgba() but the issue here is that rgba only accepts a RGB list of color. For example you would not be able to do the following rgba(#ff0000, .5). This means that adjusting just the alpha value of a color, separate from the color itself requires a RGB list to do so. In order to solve this problem Ionic generates an RGB list stepped and color map colors. It is recommended that when changing any of these colors a RGB list is also generated to allow that color to be used with transparency.
+CSS does not currently support granular alpha color of a color. Of course, we all know about `rgba()`, but the issue here is that `rgba()` only accepts a RGB List. For example, you would not be able to do the following: rgba(#ff0000, .5). 
 
-The following is a list of all the default generated RGB List values
+This means that adjusting only the alpha value of a color, separate from the color itself, requires a RGB List to do so. In order to solve this problem, Ionic generates a RGB List stepped and color map colors. It is recommended that when changing any of these colors a RGB List is also generated to allow that color to be used with transparency.
+
+The following is a list of all the default generated RGB List values:
+
 ```css
 --ion-color-primary-rgb: 72,138,255;
 --ion-color-secondary-rgb: 50,219,100;
@@ -168,19 +172,19 @@ The following is a list of all the default generated RGB List values
 --ion-background-color-rgb:  255,255,255;
 --ion-text-color-rgb: 0,0,0;
 ```
- 
-As you can see these are the exact same color value as the none rgb version but provided in order to be used with RGBA. For example primary can now be used in the following way
+
+As you can see, these are the exact same color value as the non-RGB version but can now be used with `rbga()`. For example, primary can now be used in the following way
 
 ```css
 color: rgba(var(--ion-color-primary-rgb), --ion-alpha-low);
 ```
 
 #### Alpha Properties
-Ionic 4 provides top level alpha variables similar to how it provides colors. 
+Ionic provides top level alpha variables similar to how it provides colors. 
 
 
 ##### Application Alpha Properties
-These properties are named for the use they provide. For example disabled alpha is used on disabled items throughout the component collective. 
+These properties are named according to what they are used for. For example, disabled alpha is used on disabled items throughout the component collective. 
 
 ```css
 --ion-alpha-activated: .1;
@@ -193,7 +197,7 @@ These properties are named for the use they provide. For example disabled alpha 
 ```
 
 ##### General Alpha Properties
-These properties are abstractly named and can be used generally throughout components. It is recommended that these values remain ordered, for example the value of lowest should always be smaller then low, and so on. However this is not a hard rule and designers are able to change the alpha-lowest to any value they see fit for component that use it.
+These properties are abstractly named and can be used generally throughout components. It is recommended that these values remain ordered. For example, the value of lowest should always be smaller than low, and so on. However, this is not a hard rule, and designers are able to change the alpha-lowest to any value they see fit for component that use it.
 
 ```css
 --ion-alpha-lowest: .1;
@@ -204,9 +208,9 @@ These properties are abstractly named and can be used generally throughout compo
 ```
 
 ## Applying Styles
-Styling an application is as simply as loading a CSS file with a :root block or using javascript to change properties.
+Styling an application is as simple as loading a CSS file with a :root block or using javascript to change properties.
 
-A full theme will provide all the CSS properties used throughout the component collection. This simplified example just show how primary color would be changed via CSS
+A full theme will provide all of the CSS properties used throughout the component collection. This simplified example just shows how primary color would be changed via CSS.
 
 ```css
 :root {
@@ -218,7 +222,7 @@ A full theme will provide all the CSS properties used throughout the component c
 }
 ```
 
-Since CSS properties cascade, *that first C in CSS is oh so handy*, you can target target a specific button by class if needed
+Since CSS properties cascade, *that first C in CSS is oh so handy*, you can target a specific button by class if needed.
 
 ```css
 .my-fancy-button {
@@ -230,7 +234,7 @@ Since CSS properties cascade, *that first C in CSS is oh so handy*, you can targ
 }
 ```
 
-This can also be done via javascript using setProperty
+This can also be done via javascript using setProperty.
 
 ```js
 const el = document.querySelector('.my-fancy-button');

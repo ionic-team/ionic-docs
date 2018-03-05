@@ -5,7 +5,7 @@
   "description": "Ionic Docs Site",
   "scripts": {
     "start": "npm run dev",
-    "build": "stencil build",
+    "build": "stencil build --prerender",
     "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
     "lint": "tslint --config tslint.json --project tsconfig.json",
     "precommit-bak": "npm run lint",
@@ -15,7 +15,7 @@
     "api-scripts-watch": "sd concurrent \"npm run watch-scripts\" \"chokidar 'scripts/build/**/*.js' -c 'npm run build-docs'\""
   },
   "dependencies": {
-    "@stencil/core": "^0.6.13",
+    "@stencil/core": "^0.6.1",
     "@stencil/helmet": "^0.1.2",
     "@stencil/router": "0.0.23",
     "express": "^4.16.2",
