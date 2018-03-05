@@ -1,3 +1,5 @@
-export default (version) => ({
-  [`The API version is ${version}`]: '/'
-});
+import * as versions from './api-menu';
+
+export default (version) => {
+  return versions.data[version];
+};

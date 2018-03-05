@@ -10,18 +10,18 @@ ionic-docs {
   align-items: start;
   display: grid;
   grid-template-areas:
-    "header header header"
-    "menu content preview";
+    "header header header header header"
+    "menu . content . preview";
   grid-template-rows: $header-height;
-  grid-template-columns: minmax(200px, 1fr) minmax(500px, 720px) minmax(424px, 1.55fr);
+  grid-template-columns: 200px 1fr minmax(500px, 720px) 1fr 424px;
 
   @media (max-width: $breakpoint-lg)  {
-    grid-template-columns: minmax(200px, 1fr) minmax(500px, 720px) 1fr;
+    grid-template-columns: 200px 1fr minmax(500px, 720px) 1fr 0;
   }
 
   @media (max-width: $breakpoint-md)  {
     // TODO: sidebar drawer
-    grid-template-columns: 1fr minmax(320px, 720px) 1fr;
+    grid-template-columns: 0 0 minmax(320px, 720px) 0 0;
   }
 }
 
@@ -48,6 +48,8 @@ site-menu {
   grid-area: menu;
   top: $header-height;
   padding-right: 0;
+  height: calc(100vh - 75px);
+  overflow-y: auto;
 
   @media (max-width: $breakpoint-md)  {
     // TODO: sidebar drawer

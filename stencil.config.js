@@ -1,7 +1,6 @@
 const sass = require('@stencil/sass');
 
 exports.config = {
-  bundles: [{ name: 'code-block' }, { name: 'code-preview' }],
   plugins: [sass()],
   copy: [{ src: 'docs-content' }],
   wwwDir: 'www/docs',
