@@ -22,7 +22,11 @@ export default {
   'Components': {},
   'API Reference': getAPIReferenceMap,
   'Native APIs': {},
-  'Theming': {},
+  'Theming': {
+        'Basics': '/docs/theming/basics',
+        'Theming with CSS': '/docs/theming/theming-with-css',
+        'Theming with SASS': '/docs/theming/theming-with-sass'
+  },
   'Contributing': {},
   'FAQ': {}
 };
