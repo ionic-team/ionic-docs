@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 // import * as path from 'path';
-import * as Git from 'nodegit';
+import { Checkout, Clone, CloneOptions, Git, Repository, Tag} from 'nodegit';
 
 import * as config from './config';
 import * as utils from './utils';
@@ -8,19 +8,21 @@ import { versions } from '../src/versions';
 
 let repo = null;
 
-export async function getUpdatedRefference() {
+export async function initRepoRefference() {
   if (!fs.existsSync(config.IONIC_DIR)) {
+    const cloneOptions = new CloneOptions();
+    cloneOptions.checkoutBranch = 'core';
     console.log('Cloning Ionic. This may take a few mins...');
-    repo = await Git.Clone(config.MONOREPO_URL, 'ionic');
+    repo = await Clone(config.MONOREPO_URL, 'ionic', cloneOptions);
     console.log('Clone complete');
   } else {
 
     utils.vlog('Repo exists - Updating');
-    repo = await Git.Repository.open('ionic').then(ref => {
+    repo = await Repository.open('ionic').then(ref => {
       repo = ref;
       return repo.fetchAll();
     }).then(function() {
-      return repo.mergeBranches('master', 'origin/master');
+      return repo.mergeBranches('core', 'origin/core');
     }).then(() => {
       return repo;
     });
@@ -29,6 +31,16 @@ export async function getUpdatedRefference() {
 }
 
 export async function getVersions() {
-  const tags = await Git.Tag.list(repo);
-  console.log(versions);
+  // make sure the versions exist
+  const tags = await Tag.list(repo);
+  return tags.reduce((filtered, tag) => {
+    if (versions.indexOf(tag.replace('v', '')) !== -1) {
+      filtered.push(tag);
+    }
+    return filtered;
+  }, []);
+}
+
+export async function checkout(tag) {
+  return Checkout.tree(repo, tag);
 }

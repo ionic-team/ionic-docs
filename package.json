@@ -12,7 +12,7 @@
     "build-api-scripts": "tsc -p scripts/tsconfig.json",
     "watch-api-scripts": "tsc -p scripts/tsconfig.json --watch",
     "update-api-docs": "node scripts/build/scripts",
-    "api-scripts-watch": "sd concurrent \"npm run watch-scripts\" \"chokidar 'scripts/build/**/*.js' -c 'npm run build-docs'\""
+    "api-scripts-watch": "sd concurrent \"npm run watch-api-scripts\" \"chokidar 'scripts/build/**/*.js' -c 'npm run update-api-docs'\""
   },
   "dependencies": {
     "@stencil/core": "^0.6.1",

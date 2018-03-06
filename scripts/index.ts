@@ -1,8 +1,10 @@
 import * as fs from 'fs';
 import * as path from 'path';
+import * as Git from 'nodegit';
 // import * as glob from 'glob';
-// import * as config from './config';
+import * as config from './config';
 import * as git from './git';
+import * as npm from './npm';
 import * as utils from './utils';
 
 // const ionicAngularPackage = require(`${config.ANGULAR_SRC}/package.json`);
@@ -19,50 +21,49 @@ async function run() {
     utils.vlog('Precheck complete');
   }
 
-  const repo = await git.getUpdatedRefference();
-  console.log(repo);
+  const repo = await git.initRepoRefference();
+  utils.vlog('validating tags');
+  const versions = await git.getVersions();
+  for (let i = 0; i < versions.length; i++) {
+    const version = versions[i].replace('v', '');
+    const DOCS_DEST = path.join(config.API_DOCS_DIR, version);
+    if (fs.existsSync(DOCS_DEST)) {
+      console.log(`Skipping existing API docs for ${versions[i]}`);
+      continue;
+    }
 
-  const versions = git.getVersions();
+    console.log(`Generating API docs for ${versions[i]}`);
+    await git.checkout(versions[i]);
+    await npm.install();
+    await npm.buildAPIDocs();
+    const markdownGlob = `ionic/${config.CORE_SRC}/**/readme.md`;
+    const files = await utils.promisedGlob(markdownGlob);
 
-  // let files = await utils.promisedGlob(`${config.PATH_SRC}/**/readme.md`);
-  // const DOCS_DEST = path.join(
-  //   config.PATH_DOCS,
-  //   '/src/docs-content/api/',
-  //   version
-  // );
+    await copyFiles(files, DOCS_DEST, version);
 
-  // generateNav(
-  //   path.join(config.PATH_DOCS, '/src/components/site-menu/api-menu.ts'),
-  //   files,
-  //   version
-  // )
-
-  // // parse and copy markdown and demo files
-  // await copyFiles(files, DOCS_DEST);
+    const menuPath = 'src/components/site-menu';
+    generateNav(
+      path.join(config.PATH_DOCS, menuPath, `api-menu-${version}.ts`),
+      files,
+      version
+    );
+  }
 
   const endTime = new Date().getTime();
   console.log(`Docs copied in ${endTime - startTime}ms`);
 }
 
-// upsert the current version's components to the nav
 function generateNav(menuPath, files, version) {
-  let file = fs.readFileSync(menuPath).toString('utf8');
-  file = file.replace('export let data = ', '');
-  console.log(file);
-  const menu = JSON.parse(file);
-
   const components = {};
   for (let i = 0; i < files.length; i++) {
     const componentName = utils.filterParentDirectory(files[i]);
     components[componentName] = `/docs/api/${version}/${componentName}`;
   }
-
-  menu[version] = components;
-  const ts = `export let data = ${JSON.stringify(menu, null, '  ')}`;
+  const ts = `export let data = ${JSON.stringify(components, null, '  ')}`;
   fs.writeFileSync(menuPath, ts);
 }
 
-function copyFiles(files, dest) {
+function copyFiles(files, dest, version = 'latest') {
   utils.vlog(`Copying ${files.length} files`);
   let hasDemo = false;
 
@@ -78,7 +79,7 @@ function copyFiles(files, dest) {
       file => {
         return file.replace(
           '/dist/ionic.js',
-          './dist/ionic.js'
+          `https://unpkg.com/@ionic/core@${version}/dist/ionic.js`
         );
       }
     );
@@ -91,10 +92,10 @@ function copyFiles(files, dest) {
       file => {
         let header = '---';
         if (hasDemo) {
-          header += '\r\n' + 'demo_url: \'/docs/docs-content/api/';
-          // header += `${version}/${demoName}'`;
+          header += '\r\n';
+          header += `demo_url: '/docs/docs-content/api/${version}/${demoName}'`;
         }
-        // header += "\r\n" + '---' + "\r\n\r\n";
+        header += '\r\n' + '---' + '\r\n\r\n';
         return header + file;
       }
     );

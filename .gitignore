@@ -6,3 +6,5 @@ scripts/build
 /dist
 /www
 package-lock.json
+src/components/site-menu/api-menu-*.ts
+src/docs-content/api/

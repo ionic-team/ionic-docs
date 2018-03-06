@@ -1,3 +1,4 @@
+import { exec } from 'child_process';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as glob from 'glob';
@@ -74,13 +75,29 @@ export function filterParentDirectory(path) {
   return pathArray[pathArray.length - 2];
 }
 
-export function promisedGlob(pattern, options) {
+export function promisedGlob(pattern, options = null) {
   return new Promise((resolve) => {
     glob(pattern, options, (err, files) => {
       if (err) {
         throw new Error(err);
       }
       resolve(files);
+    });
+  });
+}
+
+export async function shell(command) {
+  return new Promise(resolve => {
+    const cp = exec(command, (err, stdout, stderr) => {
+      if (err) {
+        throw err;
+      }
+      if (stderr) {
+        vlog(stderr);
+        // throw stderr;
+      }
+      vlog(stdout);
+      resolve(stdout);
     });
   });
 }
