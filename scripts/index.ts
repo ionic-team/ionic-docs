@@ -32,7 +32,7 @@ async function run() {
       continue;
     }
 
-    console.log(`Generating API docs for ${versions[i]}`);
+    console.log(`Generating API docs for ${versions[i]}. (1-3 mins)`);
     await git.checkout(versions[i]);
     await npm.install();
     await npm.buildAPIDocs();
@@ -43,7 +43,7 @@ async function run() {
 
     const menuPath = 'src/components/site-menu';
     generateNav(
-      path.join(config.PATH_DOCS, menuPath, `api-menu-${version}.ts`),
+      path.join(config.PATH_DOCS, menuPath, `api-menu.ts`),
       files,
       version
     );
@@ -54,12 +54,19 @@ async function run() {
 }
 
 function generateNav(menuPath, files, version) {
+  let file = fs.readFileSync(menuPath).toString('utf8');
+  file = file.replace('export let apiMenu = ', '');
+
+  const menu = JSON.parse(file);
+
   const components = {};
   for (let i = 0; i < files.length; i++) {
     const componentName = utils.filterParentDirectory(files[i]);
     components[componentName] = `/docs/api/${version}/${componentName}`;
   }
-  const ts = `export let data = ${JSON.stringify(components, null, '  ')}`;
+
+  menu[version] = components;
+  const ts = `export let apiMenu = ${JSON.stringify(menu, null, '  ')}`;
   fs.writeFileSync(menuPath, ts);
 }
 

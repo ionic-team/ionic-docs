@@ -1,6 +1,7 @@
 import { Component, State } from '@stencil/core';
 import VersionDropdown from './version-dropdown';
 import menuMap from './site-menu-map';
+import { versions } from '../../versions';
 
 @Component({
   tag: 'site-menu',
@@ -8,7 +9,7 @@ import menuMap from './site-menu-map';
 })
 export class SiteMenu {
 
-  @State() version = '0.0.2-25';
+  @State() version = versions[versions.length - 1];
 
   createMenu(items) {
     return Object.keys(items).map(key => {
@@ -50,7 +51,7 @@ export class SiteMenu {
   render() {
     return [
       <VersionDropdown
-        items={[ '0.0.2-25' ]}
+        items={versions}
         onSelect={selected => { this.version = selected; }}/>,
       <nav class="menu-wrapper">
         <ul class="nested-menu">

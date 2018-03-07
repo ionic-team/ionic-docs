@@ -1,4 +1,4 @@
-import getAPIReferenceMap from './get-api-ref-map';
+import { apiMenu } from './api-menu';
 
 export default {
   'Home': '/docs',
@@ -30,3 +30,7 @@ export default {
   'Contributing': {},
   'FAQ': {}
 };
+
+function getAPIReferenceMap(version) {
+  return apiMenu[version];
+}
