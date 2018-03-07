@@ -9,7 +9,7 @@ const toCodeBlock = (code: string, lang = '') =>
 const toPreviewBlock = (code: string, lang = '') => `
   <tab-group tabs="markup preview">
     <code-block slot="markup" language="${lang}">${hljs.highlightAuto(code).value}</code-block>
-    <code-preview slot="preview" markup="${code}"></code-preview>
+    <code-preview slot="preview" markup="${escape(code)}"></code-preview>
   </tab-group>
 `;
 

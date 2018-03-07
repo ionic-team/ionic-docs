@@ -9,13 +9,13 @@ export class CodePreview {
 
   render() {
     return <iframe src={
-      `data:text/html;base64,${btoa(`
+      `data:text/html,${encodeURIComponent(`
         <!DOCTYPE html>
         <html>
           <head>
             <style>body{margin:0;}</style>
           </head>
-          <body>${this.markup}</body>
+          <body>${unescape(this.markup)}</body>
         </html>
       `)}`
     }/>;
