@@ -216,28 +216,6 @@
         display: inline-block;
         letter-spacing: .01em;
         position: relative;
-        padding-right: 20px;
-
-        &::after,
-        &::before {
-          background: url('/docs/assets/img/new-tab-icon.png') no-repeat 0 0;
-          background-size: 11px;
-          width: 11px;
-          height: 11px;
-          content: '';
-          position: absolute;
-          right: 0;
-          transition: .2s opacity ease;
-        }
-
-        &::after {
-          opacity: 0;
-          background-position: 0 -11px;
-        }
-      }
-
-      &:hover span::after {
-        opacity: 1;
       }
     }
 

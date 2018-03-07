@@ -49,10 +49,10 @@ export default function FrameworkDropdown() {
               'active': dropdown.selected === item,
               'sm': item.small
             }}>
-              <a href={item.url} onClick={e => { e.preventDefault(); dropdown.select(item); }}>
+              <uber-link href={item.url} onClick={e => { e.preventDefault(); dropdown.select(item); }}>
                 <strong>{item.title}</strong>
                 <span>{item.subtitle}</span>
-              </a>
+              </uber-link>
             </li>
           )}
         </ul>
@@ -60,3 +60,5 @@ export default function FrameworkDropdown() {
     </ctrl-dropdown>
   );
 }
+
+// svg (TODO: delete this after https://github.com/ionic-team/stencil/issues/607)

@@ -385,4 +385,37 @@ declare global {
   }
 }
 
+
+import {
+  UberLink as UberLink
+} from './components/uber-link/uber-link';
+
+declare global {
+  interface HTMLUberLinkElement extends UberLink, HTMLStencilElement {
+  }
+  var HTMLUberLinkElement: {
+    prototype: HTMLUberLinkElement;
+    new (): HTMLUberLinkElement;
+  };
+  interface HTMLElementTagNameMap {
+    "uber-link": HTMLUberLinkElement;
+  }
+  interface ElementTagNameMap {
+    "uber-link": HTMLUberLinkElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "uber-link": JSXElements.UberLinkAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface UberLinkAttributes extends HTMLAttributes {
+      external?: boolean;
+      href?: string;
+      iconVariety?: 'white' | 'blue';
+      target?: string;
+    }
+  }
+}
+
 declare global { namespace JSX { interface StencilJSX {} } }
