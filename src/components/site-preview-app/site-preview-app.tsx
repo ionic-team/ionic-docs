@@ -13,7 +13,6 @@ export class SitePreviewApp {
   onDocLoaded(e) {
     this.url = e.detail.previewUrl;
     this.fixed = !!e.detail.previewFixed;
-    console.log(this.url);
   }
 
   select(platform) {
