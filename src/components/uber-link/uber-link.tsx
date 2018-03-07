@@ -1,4 +1,5 @@
 import { Component, Prop } from '@stencil/core';
+import { isExternal } from '../../utils/url';
 
 @Component({
   tag: 'uber-link',
@@ -18,7 +19,7 @@ export class UberLink {
       return this.external;
     }
 
-    return this.href.indexOf('http://') === 0 || this.href.indexOf('https://') === 0;
+    return isExternal(this.href);
   }
 
   getTarget(): string {

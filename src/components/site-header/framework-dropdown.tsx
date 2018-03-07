@@ -1,3 +1,5 @@
+import { isExternal } from '../../utils/url';
+
 const items = [
   {
     title: 'Framework',
@@ -49,7 +51,7 @@ export default function FrameworkDropdown() {
               'active': dropdown.selected === item,
               'sm': item.small
             }}>
-              <uber-link href={item.url} onClick={e => { e.preventDefault(); dropdown.select(item); }}>
+              <uber-link href={item.url} { ...(isExternal(item.url) ? {} : { onClick: e => { e.preventDefault(); dropdown.select(item); } }) }>
                 <strong>{item.title}</strong>
                 <span>{item.subtitle}</span>
               </uber-link>
