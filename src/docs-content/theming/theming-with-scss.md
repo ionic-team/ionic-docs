@@ -1,4 +1,4 @@
-# Theming with SASS
+# Theming with Scss
 SASS based theming allows for total control over the CSS generated for all of the Ionic Components; however, this requires a build step. CSS generated will still have CSS properties in them and it is recommended that these variables are not changed to allow your applications to use other themes easily.  However, in the case of a completely custom application that requires no runtime theming, all the SASS is available for customization.
 
 ## Colors
