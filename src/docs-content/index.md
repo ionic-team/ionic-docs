@@ -1,8 +1,11 @@
 ---
-title: Ionic
+# title: Ionic
 description: Nothing to see here
 previewUrl: 'https://blog.ionicframework.com'
+hideTOC: true
 ---
+
+# Testing
 
 ## What is Ionic Framework
 

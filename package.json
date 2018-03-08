@@ -9,17 +9,22 @@
     "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
     "lint": "tslint --config tslint.json --project tsconfig.json",
     "precommit-bak": "npm run lint",
-    "build-api-scripts": "tsc -p scripts/tsconfig.json",
-    "watch-api-scripts": "tsc -p scripts/tsconfig.json --watch",
-    "update-api-docs": "node scripts/build/scripts",
-    "api-scripts-watch": "sd concurrent \"npm run watch-api-scripts\" \"chokidar 'scripts/build/**/*.js' -c 'npm run update-api-docs'\""
+    "api-docs": "node scripts/build/scripts",
+    "api-scripts-build": "tsc -p scripts/tsconfig.json",
+    "api-docs-watch": "sd concurrent \"tsc -p scripts/tsconfig.json --watch\" \"chokidar 'scripts/build/**/*.js' -c 'npm run api-docs'\"",
+    "server": "node server/build",
+    "server-build": "tsc -p scripts/tsconfig.json",
+    "server-watch": "sd concurrent \"tsc -p server/tsconfig.json --watch\" \"chokidar 'server/build/**/*.js' -c 'npm run server'\" \"npm run dev\""
   },
   "dependencies": {
-    "@stencil/core": "^0.6.1",
+    "@stencil/core": "^0.6.18",
     "@stencil/helmet": "^0.1.2",
     "@stencil/router": "0.0.23",
+    "compression": "^1.7.2",
+    "dotenv": "^5.0.1",
     "express": "^4.16.2",
     "front-matter": "^2.3.0",
+    "helmet": "^3.12.0",
     "highlight.js": "^9.12.0",
     "ionicons": "^3.0.0",
     "marked": "^0.3.12"

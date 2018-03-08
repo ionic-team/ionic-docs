@@ -30,11 +30,13 @@ export class SitePreviewApp {
           class={this.selected === 'ios' ? 'active' : ''}
           onClick={this.select.bind(this, 'ios')}>iOS</li>
         <li
-          class={this.selected === 'android' ? 'active' : ''}
-          onClick={this.select.bind(this, 'android')}>Android</li>
+          class={this.selected === 'md' ? 'active' : ''}
+          onClick={this.select.bind(this, 'md')}>Android</li>
       </ul>,
       <figure class={this.selected}>
-        <iframe src={this.url} frameborder="0"></iframe>
+        <iframe
+          src={`${this.url}?ionicplatform=${this.selected}`}
+          frameborder="0"></iframe>
       </figure>
     ];
   }
