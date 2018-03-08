@@ -100,7 +100,7 @@ function copyFiles(files, dest, version = 'latest') {
         let header = '---';
         if (hasDemo) {
           header += '\r\n';
-          header += `demo_url: '/docs/docs-content/api/${version}/${demoName}'`;
+          header += `previewUrl: '/docs/docs-content/api/${version}/${demoName}'`;
         }
         header += '\r\n' + '---' + '\r\n\r\n';
         return header + file;
