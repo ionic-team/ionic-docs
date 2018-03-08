@@ -25,7 +25,7 @@ export default {
   'Theming': {
         'Basics': '/docs/theming/basics',
         'Theming with CSS': '/docs/theming/theming-with-css',
-        'Theming with Scss': '/docs/theming/theming-with-scss'
+        'Theming with Sass': '/docs/theming/theming-with-sass'
   },
   'Contributing': {},
   'FAQ': {}

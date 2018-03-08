@@ -1,5 +1,5 @@
 # Theming Basics
-Ionic components can be themed at runtime using CSS properties. For more advanced theming, check out the **Theming with Scss** section of this guide. For a more in depth look at CSS theming, head over to the **Theming with CSS** section. To change the look of your application you can simply set any CSS properties you would like to change. Currently, Ionic's runtime theming is restricted to color changes. For layout changes you will need to dive into Scss theming. To begin, lets talk about the basic color concepts.
+Ionic components can be themed at runtime using CSS properties. For more advanced theming, check out the **Theming with Sass** section of this guide. For a more in depth look at CSS theming, head over to the **Theming with CSS** section. To change the look of your application you can simply set any CSS properties you would like to change. Currently, Ionic's runtime theming is restricted to color changes. For layout changes you will need to dive into Sass theming. To begin, lets talk about the basic color concepts.
 
 #### The Color Map
 ```
