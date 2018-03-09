@@ -1,4 +1,12 @@
-import { Component, Element, Event, EventEmitter, Prop, State, Watch } from '@stencil/core';
+import {
+  Component,
+  Element,
+  Event,
+  EventEmitter,
+  Prop,
+  State,
+  Watch
+} from '@stencil/core';
 import { renderMarkdown } from './markdown';
 import frontMatter from 'front-matter';
 
@@ -10,8 +18,9 @@ export class DocLoader {
   @Event() docLoaded: EventEmitter;
   @Prop() path: string;
   @State() body: string;
-  @State() title: string;
   @State() hideTOC: boolean;
+  @State() title: string;
+  @State() transitioning: boolean;
 
   componentWillLoad() {
     return this.fetchNewContent();
@@ -41,6 +50,8 @@ export class DocLoader {
 
   @Watch('path')
   fetchNewContent() {
+    this.hideTOC = true;
+    this.transitioning = true;
     return fetch(`/docs/docs-content/${this.path}.md`)
       .then(this.validateResponse)
       .then(res => res.text())
@@ -50,6 +61,7 @@ export class DocLoader {
         this.hideTOC = attributes['hideTOC'];
         this.body = renderMarkdown(body);
         this.docLoaded.emit(attributes);
+        this.transitioning = false;
       })
       .catch(this.handleFetchError);
   }
@@ -59,7 +71,9 @@ export class DocLoader {
     return [
       this.title && <h1>{this.title}</h1>,
       !this.hideTOC && <table-of-contents/>,
-      <main innerHTML={this.body}></main>
+      <main
+        innerHTML={this.body}
+        class={this.transitioning ? 'transitioning' : ''}></main>
     ];
   }
 }

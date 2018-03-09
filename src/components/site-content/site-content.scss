@@ -21,3 +21,17 @@
 .linked-heading:hover:before {
   color: $blue;
 }
+
+main {
+  transform-origin: center top;
+  transition: .3s transform, .3s opacity;
+}
+
+main.transitioning {
+  // transform: translateX(100%);
+  opacity: 0;
+}
+
+site-content {
+  overflow: hidden;
+}

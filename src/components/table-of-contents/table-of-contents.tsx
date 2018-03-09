@@ -1,4 +1,4 @@
-import { Component, Element, State} from '@stencil/core';
+import { Component, Element, Listen, State} from '@stencil/core';
 
 @Component({
   tag: 'table-of-contents',
@@ -10,7 +10,16 @@ export class TableOfContents {
 
   @Element() el: Element;
 
+  @Listen('window:docLoaded')
+  onDocLoaded() {
+    this.updateTOC();
+  }
+
   componentWillLoad() {
+    this.updateTOC();
+  }
+
+  updateTOC () {
     const selector = 'main h1, main h2, main h3';
     this.headings = this.el.parentElement.querySelectorAll(selector);
 
