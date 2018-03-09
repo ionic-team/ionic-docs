@@ -1,9 +1,36 @@
 @import 'src/styles/variables';
 @import './ecosystem-dropdown';
-@import './framework-dropdown';
+
+ionic-docs.section-pro {
+  site-header {
+    background-color: $section-pro-color;
+  }
+}
+
+ionic-docs.section-cli {
+  site-header {
+    background-color: $section-cli-color;
+
+    // TODO: might be able to inherit color here somehow
+    a {
+      color: $blue;
+
+      &:hover {
+        color: lighten($blue, 8);
+      }
+    }
+  }
+
+  #site-logo {
+    svg > path {
+      fill: $blue;
+    }
+  }
+}
+
 
 site-header {
-  background-color: $blue;
+  background-color: $section-framework-color;
   color: $header-color;
   z-index: 1;
   font-family: $font-family-eina;
@@ -26,13 +53,19 @@ site-header {
   }
 
   #site-logo {
-    background: url('/docs/assets/img/docs-logo.png') no-repeat 0 0;
-    background-size: 72px;
-    width: 72px;
-    height: 24px;
+    display: flex;
     flex-grow: 0;
-    display: inline-block;
-    transition: .2s opacity ease;
+
+    svg {
+      width: 72px;
+      height: 24px;
+      display: inline-block;
+      transition: .2s opacity ease;
+
+      > path {
+        fill: #fff;
+      }
+    }
 
     &:hover {
       opacity: .9;
@@ -41,7 +74,7 @@ site-header {
 
   .github a {
     font-size: 13px;
-    margin-top: 2px;
+    margin: 2px 0 0 28px;
     font-weight: 600;
     display: inline-block;
     letter-spacing: -.02em;

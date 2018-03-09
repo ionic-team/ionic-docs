@@ -12,7 +12,7 @@ export class UberLink {
 
   // uber-link props
   @Prop() external: boolean;
-  @Prop() iconVariety: 'white' | 'blue' = 'white';
+  @Prop() iconVariety: string;
 
   isExternal(): boolean {
     if (typeof this.external === 'boolean') {
@@ -36,7 +36,7 @@ export class UberLink {
 
   render() {
     return (
-      <a class={{ [`icon-variety-${this.iconVariety}`]: this.isExternal() }} href={ this.href } target={ this.getTarget() }>
+      <a class={{ [`icon-variety-${this.iconVariety || 'white'}`]: this.isExternal() }} href={ this.href } target={ this.getTarget() }>
         <slot />
         { this.isExternal() ? <svg viewBox="0 0 43 42">
           <rect class="box" y="8" width="34" height="34" rx="6"/>

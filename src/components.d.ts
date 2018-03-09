@@ -207,6 +207,66 @@ declare global {
 
 
 import {
+  EcosystemDropdown as EcosystemDropdown
+} from './components/site-header/ecosystem-dropdown';
+
+declare global {
+  interface HTMLEcosystemDropdownElement extends EcosystemDropdown, HTMLStencilElement {
+  }
+  var HTMLEcosystemDropdownElement: {
+    prototype: HTMLEcosystemDropdownElement;
+    new (): HTMLEcosystemDropdownElement;
+  };
+  interface HTMLElementTagNameMap {
+    "ecosystem-dropdown": HTMLEcosystemDropdownElement;
+  }
+  interface ElementTagNameMap {
+    "ecosystem-dropdown": HTMLEcosystemDropdownElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "ecosystem-dropdown": JSXElements.EcosystemDropdownAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface EcosystemDropdownAttributes extends HTMLAttributes {
+      
+    }
+  }
+}
+
+
+import {
+  FrameworkDropdown as FrameworkDropdown
+} from './components/site-header/framework-dropdown';
+
+declare global {
+  interface HTMLFrameworkDropdownElement extends FrameworkDropdown, HTMLStencilElement {
+  }
+  var HTMLFrameworkDropdownElement: {
+    prototype: HTMLFrameworkDropdownElement;
+    new (): HTMLFrameworkDropdownElement;
+  };
+  interface HTMLElementTagNameMap {
+    "framework-dropdown": HTMLFrameworkDropdownElement;
+  }
+  interface ElementTagNameMap {
+    "framework-dropdown": HTMLFrameworkDropdownElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "framework-dropdown": JSXElements.FrameworkDropdownAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface FrameworkDropdownAttributes extends HTMLAttributes {
+      
+    }
+  }
+}
+
+
+import {
   SiteHeader as SiteHeader
 } from './components/site-header/site-header';
 
@@ -230,7 +290,7 @@ declare global {
   }
   namespace JSXElements {
     export interface SiteHeaderAttributes extends HTMLAttributes {
-      
+      currentSection?: string;
     }
   }
 }
@@ -412,7 +472,7 @@ declare global {
     export interface UberLinkAttributes extends HTMLAttributes {
       external?: boolean;
       href?: string;
-      iconVariety?: 'white' | 'blue';
+      iconVariety?: string;
       target?: string;
     }
   }

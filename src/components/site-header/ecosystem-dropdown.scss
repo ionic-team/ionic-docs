@@ -1,4 +1,14 @@
-.ecosystem-dropdown {
+@import 'src/styles/variables';
+
+ionic-docs.section-cli {
+  ecosystem-dropdown {
+    .current:hover {
+      text-shadow: none;
+    }
+  }
+}
+
+ecosystem-dropdown {
   position: relative;
 
   .current {
@@ -6,7 +16,6 @@
     font-size: 13px;
     line-height: 1em;
     font-weight: 600;
-    margin-right: 28px;
     color: $header-color;
     letter-spacing: .01em;
     display: inline-block;
@@ -19,7 +28,7 @@
       display: inline-block;
       vertical-align: middle;
       border-left: 2px solid transparent;
-	    border-right: 2px solid transparent;
+      border-right: 2px solid transparent;
       border-top: 3px solid $header-color;
       transition: .2s border-top-color ease;
     }
@@ -60,7 +69,7 @@
       height: 8px;
       position: absolute;
       top: -8px;
-      right: 91px;
+      right: 21px;
       content: '';
     }
 

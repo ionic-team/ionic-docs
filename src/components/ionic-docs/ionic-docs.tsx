@@ -1,14 +1,26 @@
-import { Component } from '@stencil/core';
-import '@stencil/router'; // tslint:disable-line:no-import-side-effect
+import { Component, Listen, State } from '@stencil/core';
 
 @Component({
   tag: 'ionic-docs',
   styleUrl: 'ionic-docs.scss'
 })
 export class IonicDocs {
+  @State() currentSection: string = 'framework';
+
+  @Listen('docs-section-changed')
+  sectionChangedHandler(event) {
+    this.currentSection = event.detail;
+  }
+
+  hostData() {
+    return {
+      class: { [`section-${this.currentSection}`]: true },
+    };
+  }
+
   render() {
     return [
-      <site-header/>,
+      <site-header currentSection={ this.currentSection } />,
       <site-menu/>,
       <site-content/>,
       <site-preview-app/>

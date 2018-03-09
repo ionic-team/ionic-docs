@@ -1,3 +1,5 @@
+import { Component } from '@stencil/core';
+
 const items = [
   {
     text: 'Forum',
@@ -31,22 +33,28 @@ const items = [
   }
 ];
 
-export default function EcosystemDropdown() {
-  return (
-    <ctrl-dropdown
-      class="ecosystem-dropdown"
-      autoClose
-      items={items}
-      renderer={dropdown => [
-        <a class="current" onClick={dropdown.toggle}>Ecosystem</a>,
-        <ul class={{ 'active': dropdown.isOpen }}>
-          {dropdown.items.map(item => (
-            <li class={item.className}>
-              <a href={item.url} target="_blank">{item.text}</a>
-            </li>
-          ))}
-        </ul>
-      ]}>
-    </ctrl-dropdown>
-  );
+@Component({
+  tag: 'ecosystem-dropdown',
+  styleUrl: 'ecosystem-dropdown.scss',
+})
+export class EcosystemDropdown {
+  render() {
+    return (
+      <ctrl-dropdown
+        class="ecosystem-dropdown"
+        autoClose
+        items={items}
+        renderer={dropdown => [
+          <a class="current" onClick={dropdown.toggle}>Ecosystem</a>,
+          <ul class={{ 'active': dropdown.isOpen }}>
+            {dropdown.items.map(item => (
+              <li class={item.className}>
+                <a href={item.url} target="_blank">{item.text}</a>
+              </li>
+            ))}
+          </ul>
+        ]}>
+      </ctrl-dropdown>
+    );
+  }
 }
