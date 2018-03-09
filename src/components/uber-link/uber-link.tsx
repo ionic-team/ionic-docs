@@ -19,7 +19,7 @@ export class UberLink {
       return this.external;
     }
 
-    return isExternal(this.href);
+    return this.href && isExternal(this.href);
   }
 
   getTarget(): string {

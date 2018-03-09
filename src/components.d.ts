@@ -22,6 +22,36 @@ import '@stencil/router';
 
 
 import {
+  CardLink as CardLink
+} from './components/card-link/card-link';
+
+declare global {
+  interface HTMLCardLinkElement extends CardLink, HTMLStencilElement {
+  }
+  var HTMLCardLinkElement: {
+    prototype: HTMLCardLinkElement;
+    new (): HTMLCardLinkElement;
+  };
+  interface HTMLElementTagNameMap {
+    "card-link": HTMLCardLinkElement;
+  }
+  interface ElementTagNameMap {
+    "card-link": HTMLCardLinkElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "card-link": JSXElements.CardLinkAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface CardLinkAttributes extends HTMLAttributes {
+      title?: string;
+    }
+  }
+}
+
+
+import {
   CodeBlock as CodeBlock
 } from './components/code-block/code-block';
 
