@@ -1,4 +1,5 @@
 import { Component, Prop } from '@stencil/core';
+import * as constants from '../../constants';
 
 @Component({
   tag: 'site-header',
@@ -8,9 +9,9 @@ export class SiteHeader {
   @Prop() currentSection: string;
 
   renderGithubLink() {
-    if (this.currentSection === 'framework') {
+    if (this.currentSection === constants.SECTION_FRAMEWORK) {
       return <uber-link iconVariety="blue" class="github" href="https://github.com/ionic-team/ionic">Github</uber-link>;
-    } else if (this.currentSection === 'cli') {
+    } else if (this.currentSection === constants.SECTION_CLI) {
       return <uber-link class="github" href="https://github.com/ionic-team/ionic-cli">Github</uber-link>;
     }
 

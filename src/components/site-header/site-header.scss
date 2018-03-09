@@ -3,20 +3,20 @@
 
 ionic-docs.section-pro {
   site-header {
-    background-color: $section-pro-color;
+    background-color: black;
   }
 }
 
 ionic-docs.section-cli {
   site-header {
-    background-color: $section-cli-color;
+    background-color: white;
 
     // TODO: might be able to inherit color here somehow
     a {
-      color: $blue;
+      color: black;
 
       &:hover {
-        color: lighten($blue, 8);
+        color: lighten(black, 8);
       }
     }
   }
@@ -30,7 +30,7 @@ ionic-docs.section-cli {
 
 
 site-header {
-  background-color: $section-framework-color;
+  background-color: $blue;
   color: $header-color;
   z-index: 1;
   font-family: $font-family-eina;
