@@ -15,21 +15,21 @@ const items: DropdownItem[] = [
   {
     title: 'Framework',
     subtitle: 'The UI Toolkit for building highly performant apps',
-    url: '/docs',
+    url: '/',
     category: 'framework',
     className: 'framework'
   },
   {
     title: 'Pro',
     subtitle: 'Integrated suite of tools & services for shipping apps',
-    url: '/docs/pro',
+    url: '/pro',
     category: 'pro',
     className: 'pro'
   },
   {
     title: 'CLI',
     subtitle: 'Ionic command line interface tool',
-    url: '/docs/cli',
+    url: '/cli',
     category: 'cli',
     className: 'cli',
     small: true

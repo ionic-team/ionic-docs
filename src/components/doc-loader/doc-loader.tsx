@@ -52,7 +52,7 @@ export class DocLoader {
   fetchNewContent() {
     this.hideTOC = true;
     this.transitioning = true;
-    return fetch(`/docs/docs-content/${this.path}.md`)
+    return fetch(`/docs-content/${this.path}.md`)
       .then(this.validateResponse)
       .then(res => res.text())
       .then(text => this.stripTitle(frontMatter(text)))

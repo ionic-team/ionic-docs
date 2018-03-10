@@ -62,7 +62,7 @@ function generateNav(menuPath, files, version) {
   const components = {};
   for (let i = 0; i < files.length; i++) {
     const componentName = utils.filterParentDirectory(files[i]);
-    components[componentName] = `/docs/api/${version}/${componentName}`;
+    components[componentName] = `/api/${version}/${componentName}`;
   }
 
   menu[version] = components;
@@ -100,7 +100,7 @@ function copyFiles(files, dest, version = 'latest') {
         let header = '---';
         if (hasDemo) {
           header += '\r\n';
-          header += `previewUrl: '/docs/docs-content/api/${version}/${demoName}'`;
+          header += `previewUrl: '/docs-content/api/${version}/${demoName}'`;
         }
         header += '\r\n' + '---' + '\r\n\r\n';
         return header + file;

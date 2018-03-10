@@ -63,7 +63,7 @@ ecosystem-dropdown {
     transition: .4s opacity ease, .4s transform;
 
     &::before {
-      background: url('/docs/assets/img/ico-nav-arrow.png') no-repeat 0 0;
+      background: url('/assets/img/ico-nav-arrow.png') no-repeat 0 0;
       background-size: 15px;
       width: 15px;
       height: 8px;
@@ -104,7 +104,7 @@ ecosystem-dropdown {
 
       &::before,
       &::after {
-        background: url('/docs/assets/img/dropdown-ecosystem-icons.png') no-repeat 0 0;
+        background: url('/assets/img/dropdown-ecosystem-icons.png') no-repeat 0 0;
         background-size: 16px;
         height: 16px;
         width: 16px;
