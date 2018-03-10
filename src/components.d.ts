@@ -18,8 +18,6 @@ declare global {
   interface HTMLAttributes {}
 }
 
-import '@stencil/router';
-
 
 import {
   CardLink as CardLink
@@ -200,6 +198,36 @@ declare global {
   }
   namespace JSXElements {
     export interface IonicDocsAttributes extends HTMLAttributes {
+      
+    }
+  }
+}
+
+
+import {
+  NewTabIcon as NewTabIcon
+} from './components/new-tab-icon/new-tab-icon';
+
+declare global {
+  interface HTMLNewTabIconElement extends NewTabIcon, HTMLStencilElement {
+  }
+  var HTMLNewTabIconElement: {
+    prototype: HTMLNewTabIconElement;
+    new (): HTMLNewTabIconElement;
+  };
+  interface HTMLElementTagNameMap {
+    "new-tab-icon": HTMLNewTabIconElement;
+  }
+  interface ElementTagNameMap {
+    "new-tab-icon": HTMLNewTabIconElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "new-tab-icon": JSXElements.NewTabIconAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface NewTabIconAttributes extends HTMLAttributes {
       
     }
   }
@@ -471,39 +499,6 @@ declare global {
   namespace JSXElements {
     export interface TableOfContentsAttributes extends HTMLAttributes {
       
-    }
-  }
-}
-
-
-import {
-  UberLink as UberLink
-} from './components/uber-link/uber-link';
-
-declare global {
-  interface HTMLUberLinkElement extends UberLink, HTMLStencilElement {
-  }
-  var HTMLUberLinkElement: {
-    prototype: HTMLUberLinkElement;
-    new (): HTMLUberLinkElement;
-  };
-  interface HTMLElementTagNameMap {
-    "uber-link": HTMLUberLinkElement;
-  }
-  interface ElementTagNameMap {
-    "uber-link": HTMLUberLinkElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      "uber-link": JSXElements.UberLinkAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface UberLinkAttributes extends HTMLAttributes {
-      external?: boolean;
-      href?: string;
-      iconVariety?: string;
-      target?: string;
     }
   }
 }

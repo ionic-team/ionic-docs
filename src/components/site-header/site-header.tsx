@@ -10,9 +10,9 @@ export class SiteHeader {
 
   renderGithubLink() {
     if (this.currentSection === constants.SECTION_FRAMEWORK) {
-      return <uber-link iconVariety="blue" class="github" href="https://github.com/ionic-team/ionic">Github</uber-link>;
+      return <a href="https://github.com/ionic-team/ionic" class="github" target="_blank">Github<new-tab-icon class={{ 'on-blue': true }} /></a>;
     } else if (this.currentSection === constants.SECTION_CLI) {
-      return <uber-link class="github" href="https://github.com/ionic-team/ionic-cli">Github</uber-link>;
+      return <a href="https://github.com/ionic-team/ionic-cli" class="github" target="_blank">Github<new-tab-icon /></a>;
     }
 
     return null;

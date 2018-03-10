@@ -80,10 +80,11 @@ export class FrameworkDropdown {
                 'active': dropdown.selected === item,
                 'sm': item.small
               }}>
-                <uber-link href={item.url} onClick={ e => this.itemClickHandler(e, dropdown, item) }>
+                <a href={item.url} onClick={ e => this.itemClickHandler(e, dropdown, item) } target={ item.category ? '_self' : '_blank' }>
                   <strong>{item.title}</strong>
                   <span>{item.subtitle}</span>
-                </uber-link>
+                  { item.category ? null : <new-tab-icon /> }
+                </a>
               </li>
             )}
           </ul>
