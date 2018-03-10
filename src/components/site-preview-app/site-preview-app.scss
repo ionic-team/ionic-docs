@@ -47,7 +47,7 @@ site-preview-app {
 
 
     &::before {
-      background: url('/docs/assets/img/device-iphone.png') no-repeat 0 0;
+      background: url('/assets/img/device-iphone.png') no-repeat 0 0;
       background-size: 380px;
       width: 380px;
       height: 757px;
@@ -68,7 +68,7 @@ site-preview-app {
       padding: 59px 19px 110px;
 
       &::before {
-        background-image: url('/docs/assets/img/device-pixel.png');
+        background-image: url('/assets/img/device-pixel.png');
         background-size: 380px;
         height: 832px;
       }

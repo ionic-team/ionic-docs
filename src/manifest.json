@@ -1,10 +1,10 @@
 {
   "name": "Ionic Framework",
   "short_name": "Ionic",
-  "start_url": "/docs/",
+  "start_url": "/",
   "display": "standalone",
   "icons": [{
-    "src": "/docs/assets/img/icon.png",
+    "src": "/assets/img/icon.png",
     "sizes": "512x512",
     "type": "image/png"
   }],

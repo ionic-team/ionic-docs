@@ -18,7 +18,7 @@ export class SiteContent {
     return (
       <stencil-router>
           <stencil-route
-            url={['/docs/:docPath*', '/docs']}
+            url={['/:docPath*', '/']}
             group="main"
             routeRender={loadMarkdownDocument}/>
           <stencil-route exact url="/" routeRender={redirectToHome}/>
@@ -31,4 +31,4 @@ const loadMarkdownDocument = ({ match }) =>
   <doc-loader path={match.params.docPath ? match.params.docPath : 'index' }/>;
 
 const redirectToHome = () =>
-  <stencil-router-redirect url="/docs"/>;
+  <stencil-router-redirect url="/"/>;

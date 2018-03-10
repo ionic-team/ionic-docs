@@ -12,8 +12,8 @@ export default (req, res, next) => {
   // redirect entire old sections
   const parts = url.parse(req.url);
 
-  if (parts.path.indexOf('/docs/v1/cli') === 0) {
-    return res.redirect(301, '/docs/cli/');
+  if (parts.path.indexOf('/v1/cli') === 0) {
+    return res.redirect(301, '/cli/');
   }
 
   // handle redirects
