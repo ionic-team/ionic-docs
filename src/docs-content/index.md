@@ -6,27 +6,27 @@ hideTOC: true
 ---
 
 <div class="cards">
-  <card-link title="Introduction">
+  <card-link title="Introduction" hasIcon="true">
     Learn the fundamentals you need to know to start building amazing apps with
     Ionic Framework.
   </card-link>
-  <card-link title="Installation">
+  <card-link title="Installation" hasIcon="true">
     A step-by-step guide to installing and setting up your system to build Ionic
     Framework apps.
   </card-link>
-  <card-link title="UI Components">
+  <card-link title="UI Components" hasIcon="true">
     A comprehensive preview of Ionic Framework’s beautiful UI compoment library,
     ready to go.
   </card-link>
-  <card-link title="API Reference">
+  <card-link title="API Reference" hasIcon="true">
     Explore the API for information on component methods, properties, and events
     for a deeper understanding.
   </card-link>
-  <card-link title="Native APIs">
+  <card-link title="Native APIs" hasIcon="true">
     Learn to integrate native device plugins, like Bluetooth, Maps, and
     HealthKit with Ionic Capacitor.
   </card-link>
-  <card-link title="Theming">
+  <card-link title="Theming" hasIcon="true">
     Learn how to easily customize and modify your Ionic app’s visual design to
     fit your brand styles.
   </card-link>

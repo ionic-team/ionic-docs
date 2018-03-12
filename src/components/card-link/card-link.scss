@@ -1,2 +1,34 @@
 @import 'src/styles/variables';
 
+card-link {
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(black, .1);
+
+  stencil-route-link {
+    color: inherit;
+    padding: 30px 50px;
+    display: block;
+  }
+
+  &.hasIcon {
+    padding-left: 106px;
+  }
+
+  a {
+    color: inherit;
+  }
+
+
+
+  strong {
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  span {
+    color: #768090;
+    font-size: 14px;
+    line-height: 1.8em;
+  }
+}

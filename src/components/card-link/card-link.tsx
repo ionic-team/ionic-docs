@@ -9,21 +9,47 @@ export class CardLink {
   @Element() el: Element;
 
   @Prop() title: string;
+  @Prop() href: string;
+  @Prop() hasIcon = false;
 
   @Watch('title')
   updateTitle(newTitle: string, oldTitle: string) {
     if (!newTitle) {
       return;
     }
-    this.el.classList.remove(oldTitle.toLocaleLowerCase().replace(' ', '-'));
-    this.el.classList.add(newTitle.toLocaleLowerCase().replace(' ', '-'));
+
+    if (oldTitle) {
+      this.el.classList.remove(
+        'card-' + oldTitle.toLocaleLowerCase().replace(' ', '-')
+      );
+    }
+    this.el.classList.add(
+      'card-' + newTitle.toLocaleLowerCase().replace(' ', '-')
+    );
+
+  }
+
+  @Watch('hasIcon')
+  updateHasIcon(newHasIcon: boolean) {
+    if (newHasIcon) {
+      this.el.classList.add('hasIcon');
+      return;
+    }
+    this.el.classList.remove('hasIcon');
+  }
+
+  componentWillLoad() {
+    this.updateHasIcon(
+      this.el.attributes.getNamedItem('hasIcon').value ? true : false
+    );
+
+    this.updateTitle(this.el.attributes.getNamedItem('title').value, null);
   }
 
   render() {
-
-    return [
-      this.title && <strong>{this.title}</strong>,
+    return <stencil-route-link url={this.href} title={this.title}>
+      {this.title && <strong>{this.title}</strong>}
       <span><slot/></span>
-    ];
+    </stencil-route-link>;
   }
 }
