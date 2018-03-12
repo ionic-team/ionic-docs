@@ -57,6 +57,7 @@ export class DocLoader {
       .then(res => res.text())
       .then(text => this.stripTitle(frontMatter(text)))
       .then(({ attributes, body }) => {
+        attributes['path'] = this.path;
         this.title = attributes['title'];
         this.hideTOC = attributes['hideTOC'];
         this.body = renderMarkdown(body);

@@ -1,0 +1,11 @@
+.page-index {
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  card-link {
+    flex: 0 0 50%;
+    margin-bottom: 24px;
+  }
+}

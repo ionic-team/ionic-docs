@@ -9,3 +9,4 @@ package-lock.json
 src/components/site-menu/api-menu-*.ts
 src/docs-content/api/
 /null
+/stencil-stats.json
