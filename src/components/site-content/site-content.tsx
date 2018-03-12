@@ -19,7 +19,7 @@ export class SiteContent {
       <stencil-router>
           <stencil-route
             url={['/docs/:docPath*', '/docs']}
-            group="main"
+            // group="main"
             routeRender={loadMarkdownDocument}/>
           <stencil-route exact url="/" routeRender={redirectToHome}/>
       </stencil-router>

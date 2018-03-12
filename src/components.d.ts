@@ -18,6 +18,8 @@ declare global {
   interface HTMLAttributes {}
 }
 
+import '@stencil/router';
+
 
 import {
   CardLink as CardLink

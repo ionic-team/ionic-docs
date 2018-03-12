@@ -1,3 +1,5 @@
+import '@stencil/router';
+
 import { Component, Listen, State } from '@stencil/core';
 
 @Component({
@@ -5,7 +7,7 @@ import { Component, Listen, State } from '@stencil/core';
   styleUrl: 'ionic-docs.scss'
 })
 export class IonicDocs {
-  @State() currentSection: string = 'framework';
+  @State() currentSection = 'framework';
 
   @Listen('docs-section-changed')
   sectionChangedHandler(event) {

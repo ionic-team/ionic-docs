@@ -1,0 +1,607 @@
+{
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "0.6.18"
+  },
+  "app": {
+    "namespace": "App",
+    "fsNamespace": "app",
+    "components": 20,
+    "entries": 10,
+    "bundles": 10
+  },
+  "options": {
+    "generateWWW": true,
+    "generateDistribution": false,
+    "minifyJs": false,
+    "minifyCss": false,
+    "hashFileNames": false,
+    "hashedFileNameLength": 8,
+    "buildEs5": false
+  },
+  "components": [
+    {
+      "tag": "card-link",
+      "dependencies": [
+        "stencil-route-link"
+      ],
+      "dependencyOf": []
+    },
+    {
+      "tag": "code-block",
+      "dependencies": [],
+      "dependencyOf": []
+    },
+    {
+      "tag": "code-preview",
+      "dependencies": [],
+      "dependencyOf": []
+    },
+    {
+      "tag": "ctrl-dropdown",
+      "dependencies": [],
+      "dependencyOf": [
+        "ecosystem-dropdown",
+        "framework-dropdown",
+        "site-menu"
+      ]
+    },
+    {
+      "tag": "doc-loader",
+      "dependencies": [
+        "table-of-contents"
+      ],
+      "dependencyOf": []
+    },
+    {
+      "tag": "table-of-contents",
+      "dependencies": [],
+      "dependencyOf": [
+        "doc-loader"
+      ]
+    },
+    {
+      "tag": "ecosystem-dropdown",
+      "dependencies": [
+        "ctrl-dropdown"
+      ],
+      "dependencyOf": [
+        "site-header"
+      ]
+    },
+    {
+      "tag": "framework-dropdown",
+      "dependencies": [
+        "ctrl-dropdown",
+        "new-tab-icon"
+      ],
+      "dependencyOf": [
+        "site-header"
+      ]
+    },
+    {
+      "tag": "site-header",
+      "dependencies": [
+        "ecosystem-dropdown",
+        "framework-dropdown",
+        "new-tab-icon",
+        "site-search"
+      ],
+      "dependencyOf": []
+    },
+    {
+      "tag": "site-search",
+      "dependencies": [],
+      "dependencyOf": [
+        "site-header"
+      ]
+    },
+    {
+      "tag": "new-tab-icon",
+      "dependencies": [],
+      "dependencyOf": [
+        "framework-dropdown",
+        "site-header"
+      ]
+    },
+    {
+      "tag": "ionic-docs",
+      "dependencies": [
+        "site-content",
+        "site-header",
+        "site-menu",
+        "site-preview-app"
+      ],
+      "dependencyOf": []
+    },
+    {
+      "tag": "site-content",
+      "dependencies": [
+        "doc-loader",
+        "stencil-route",
+        "stencil-router",
+        "stencil-router-redirect"
+      ],
+      "dependencyOf": [
+        "ionic-docs"
+      ]
+    },
+    {
+      "tag": "site-menu",
+      "dependencies": [
+        "ctrl-dropdown",
+        "stencil-route-link"
+      ],
+      "dependencyOf": [
+        "ionic-docs"
+      ]
+    },
+    {
+      "tag": "site-preview-app",
+      "dependencies": [],
+      "dependencyOf": [
+        "ionic-docs"
+      ]
+    },
+    {
+      "tag": "stencil-route",
+      "dependencies": [],
+      "dependencyOf": [
+        "site-content"
+      ]
+    },
+    {
+      "tag": "stencil-router",
+      "dependencies": [],
+      "dependencyOf": [
+        "site-content"
+      ]
+    },
+    {
+      "tag": "stencil-router-redirect",
+      "dependencies": [],
+      "dependencyOf": [
+        "site-content"
+      ]
+    },
+    {
+      "tag": "stencil-route-link",
+      "dependencies": [],
+      "dependencyOf": [
+        "card-link",
+        "site-menu"
+      ]
+    },
+    {
+      "tag": "tab-group",
+      "dependencies": [],
+      "dependencyOf": []
+    }
+  ],
+  "entries": [
+    {
+      "entryId": "entry:card-link",
+      "components": [
+        {
+          "tag": "card-link",
+          "dependencies": [
+            "stencil-route-link"
+          ],
+          "dependencyOf": []
+        }
+      ],
+      "bundles": [
+        {
+          "fileName": "card-link.js",
+          "size": 1900,
+          "outputs": [
+            "www/docs/build/app/card-link.js"
+          ]
+        }
+      ],
+      "inputs": [
+        "dist/collection/components/card-link/card-link.js"
+      ],
+      "encapsulations": [
+        "none"
+      ]
+    },
+    {
+      "entryId": "entry:code-block",
+      "components": [
+        {
+          "tag": "code-block",
+          "dependencies": [],
+          "dependencyOf": []
+        }
+      ],
+      "bundles": [
+        {
+          "fileName": "code-block.js",
+          "size": 2214,
+          "outputs": [
+            "www/docs/build/app/code-block.js"
+          ]
+        }
+      ],
+      "inputs": [
+        "dist/collection/components/code-block/code-block.js"
+      ],
+      "encapsulations": [
+        "none"
+      ]
+    },
+    {
+      "entryId": "entry:code-preview",
+      "components": [
+        {
+          "tag": "code-preview",
+          "dependencies": [],
+          "dependencyOf": []
+        }
+      ],
+      "bundles": [
+        {
+          "fileName": "code-preview.js",
+          "size": 770,
+          "outputs": [
+            "www/docs/build/app/code-preview.js"
+          ]
+        }
+      ],
+      "inputs": [
+        "dist/collection/components/code-preview/code-preview.js"
+      ],
+      "encapsulations": [
+        "none"
+      ]
+    },
+    {
+      "entryId": "entry:ctrl-dropdown",
+      "components": [
+        {
+          "tag": "ctrl-dropdown",
+          "dependencies": [],
+          "dependencyOf": [
+            "ecosystem-dropdown",
+            "framework-dropdown",
+            "site-menu"
+          ]
+        }
+      ],
+      "bundles": [
+        {
+          "fileName": "ctrl-dropdown.js",
+          "size": 1878,
+          "outputs": [
+            "www/docs/build/app/ctrl-dropdown.js"
+          ]
+        }
+      ],
+      "inputs": [
+        "dist/collection/components/ctrl-dropdown/ctrl-dropdown.js"
+      ],
+      "encapsulations": [
+        "none"
+      ]
+    },
+    {
+      "entryId": "entry:doc-loader.table-of-contents",
+      "components": [
+        {
+          "tag": "doc-loader",
+          "dependencies": [
+            "table-of-contents"
+          ],
+          "dependencyOf": []
+        },
+        {
+          "tag": "table-of-contents",
+          "dependencies": [],
+          "dependencyOf": [
+            "doc-loader"
+          ]
+        }
+      ],
+      "bundles": [
+        {
+          "fileName": "doc-loader.js",
+          "size": 909249,
+          "outputs": [
+            "www/docs/build/app/doc-loader.js"
+          ]
+        }
+      ],
+      "inputs": [
+        "dist/collection/components/doc-loader/doc-loader.js",
+        "dist/collection/components/table-of-contents/table-of-contents.js"
+      ],
+      "encapsulations": [
+        "none"
+      ]
+    },
+    {
+      "entryId": "entry:ecosystem-dropdown.framework-dropdown.site-header.site-search",
+      "components": [
+        {
+          "tag": "ecosystem-dropdown",
+          "dependencies": [
+            "ctrl-dropdown"
+          ],
+          "dependencyOf": [
+            "site-header"
+          ]
+        },
+        {
+          "tag": "framework-dropdown",
+          "dependencies": [
+            "ctrl-dropdown",
+            "new-tab-icon"
+          ],
+          "dependencyOf": [
+            "site-header"
+          ]
+        },
+        {
+          "tag": "site-header",
+          "dependencies": [
+            "ecosystem-dropdown",
+            "framework-dropdown",
+            "new-tab-icon",
+            "site-search"
+          ],
+          "dependencyOf": []
+        },
+        {
+          "tag": "site-search",
+          "dependencies": [],
+          "dependencyOf": [
+            "site-header"
+          ]
+        }
+      ],
+      "bundles": [
+        {
+          "fileName": "ecosystem-dropdown.js",
+          "size": 22905,
+          "outputs": [
+            "www/docs/build/app/ecosystem-dropdown.js"
+          ]
+        }
+      ],
+      "inputs": [
+        "dist/collection/components/site-header/ecosystem-dropdown.js",
+        "dist/collection/components/site-header/framework-dropdown.js",
+        "dist/collection/components/site-header/site-header.js",
+        "dist/collection/components/site-search/site-search.js"
+      ],
+      "encapsulations": [
+        "none"
+      ]
+    },
+    {
+      "entryId": "entry:new-tab-icon",
+      "components": [
+        {
+          "tag": "new-tab-icon",
+          "dependencies": [],
+          "dependencyOf": [
+            "framework-dropdown",
+            "site-header"
+          ]
+        }
+      ],
+      "bundles": [
+        {
+          "fileName": "new-tab-icon.js",
+          "size": 1111,
+          "outputs": [
+            "www/docs/build/app/new-tab-icon.js"
+          ]
+        }
+      ],
+      "inputs": [
+        "dist/collection/components/new-tab-icon/new-tab-icon.js"
+      ],
+      "encapsulations": [
+        "none"
+      ]
+    },
+    {
+      "entryId": "entry:ionic-docs.site-content.site-menu.site-preview-app.stencil-route.stencil-router.stencil-router-redirect",
+      "components": [
+        {
+          "tag": "ionic-docs",
+          "dependencies": [
+            "site-content",
+            "site-header",
+            "site-menu",
+            "site-preview-app"
+          ],
+          "dependencyOf": []
+        },
+        {
+          "tag": "site-content",
+          "dependencies": [
+            "doc-loader",
+            "stencil-route",
+            "stencil-router",
+            "stencil-router-redirect"
+          ],
+          "dependencyOf": [
+            "ionic-docs"
+          ]
+        },
+        {
+          "tag": "site-menu",
+          "dependencies": [
+            "ctrl-dropdown",
+            "stencil-route-link"
+          ],
+          "dependencyOf": [
+            "ionic-docs"
+          ]
+        },
+        {
+          "tag": "site-preview-app",
+          "dependencies": [],
+          "dependencyOf": [
+            "ionic-docs"
+          ]
+        },
+        {
+          "tag": "stencil-route",
+          "dependencies": [],
+          "dependencyOf": [
+            "site-content"
+          ]
+        },
+        {
+          "tag": "stencil-router",
+          "dependencies": [],
+          "dependencyOf": [
+            "site-content"
+          ]
+        },
+        {
+          "tag": "stencil-router-redirect",
+          "dependencies": [],
+          "dependencyOf": [
+            "site-content"
+          ]
+        }
+      ],
+      "bundles": [
+        {
+          "fileName": "ionic-docs.js",
+          "size": 152039,
+          "outputs": [
+            "www/docs/build/app/ionic-docs.js"
+          ]
+        }
+      ],
+      "inputs": [
+        "dist/collection/components/ionic-docs/ionic-docs.js",
+        "dist/collection/components/site-content/site-content.js",
+        "dist/collection/components/site-menu/site-menu.js",
+        "dist/collection/components/site-preview-app/site-preview-app.js",
+        "node_modules/@stencil/router/dist/collection/components/redirect/redirect.js",
+        "node_modules/@stencil/router/dist/collection/components/route/route.js",
+        "node_modules/@stencil/router/dist/collection/components/router/router.js"
+      ],
+      "encapsulations": [
+        "none"
+      ]
+    },
+    {
+      "entryId": "entry:stencil-route-link",
+      "components": [
+        {
+          "tag": "stencil-route-link",
+          "dependencies": [],
+          "dependencyOf": [
+            "card-link",
+            "site-menu"
+          ]
+        }
+      ],
+      "bundles": [
+        {
+          "fileName": "stencil-route-link.js",
+          "size": 2968,
+          "outputs": [
+            "www/docs/build/app/stencil-route-link.js"
+          ]
+        }
+      ],
+      "inputs": [
+        "node_modules/@stencil/router/dist/collection/components/route-link/route-link.js"
+      ],
+      "encapsulations": [
+        "none"
+      ]
+    },
+    {
+      "entryId": "entry:tab-group",
+      "components": [
+        {
+          "tag": "tab-group",
+          "dependencies": [],
+          "dependencyOf": []
+        }
+      ],
+      "bundles": [
+        {
+          "fileName": "tab-group.js",
+          "size": 2277,
+          "outputs": [
+            "www/docs/build/app/tab-group.js"
+          ]
+        }
+      ],
+      "inputs": [
+        "dist/collection/components/tab-group/tab-group.js"
+      ],
+      "encapsulations": [
+        "none"
+      ]
+    }
+  ],
+  "sourceGraph": {
+    "src/components/card-link/card-link.tsx": [],
+    "src/components/code-block/code-block.tsx": [],
+    "src/components/code-preview/code-preview.tsx": [],
+    "src/components/ctrl-dropdown/ctrl-dropdown.tsx": [],
+    "src/components/doc-loader/doc-loader.tsx": [
+      "front-matter",
+      "src/components/doc-loader/markdown.ts"
+    ],
+    "src/components/doc-loader/markdown.ts": [
+      "highlight.js",
+      "marked"
+    ],
+    "src/components/ionic-docs/ionic-docs.tsx": [],
+    "src/components/new-tab-icon/new-tab-icon.tsx": [],
+    "src/components/site-content/site-content.tsx": [],
+    "src/components/site-header/ecosystem-dropdown.tsx": [],
+    "src/components/site-header/framework-dropdown.tsx": [],
+    "src/components/site-header/site-header.tsx": [
+      "src/constants.ts"
+    ],
+    "src/components/site-menu/api-menu.ts": [],
+    "src/components/site-menu/site-menu-map.ts": [
+      "src/components/site-menu/api-menu.ts"
+    ],
+    "src/components/site-menu/site-menu.tsx": [
+      "src/components/site-menu/site-menu-map.ts",
+      "src/components/site-menu/version-dropdown.tsx",
+      "src/versions.ts"
+    ],
+    "src/components/site-menu/version-dropdown.tsx": [],
+    "src/components/site-preview-app/site-preview-app.tsx": [],
+    "src/components/site-search/site-search.tsx": [],
+    "src/components/tab-group/tab-group.tsx": [],
+    "src/components/table-of-contents/table-of-contents.tsx": [],
+    "src/constants.ts": [],
+    "src/utils/url.ts": [],
+    "src/versions.ts": []
+  },
+  "collections": [
+    {
+      "name": "@stencil/router",
+      "source": "node_modules/@stencil/router",
+      "tags": [
+        "stencil-async-content",
+        "stencil-route",
+        "stencil-route-link",
+        "stencil-route-title",
+        "stencil-router",
+        "stencil-router-redirect",
+        "test-app",
+        "test-demo-four",
+        "test-demo-six",
+        "test-demo-three"
+      ]
+    }
+  ]
+}
