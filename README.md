@@ -8,7 +8,7 @@ This is the home for the v4+ [Ionic Framework](https://ionicframework.com) docs.
 
 The API Docs use [nodegit](). This required libgcrypt to be installed, which is not installed by default in OSX as of Sierra.
 
-**On OSX Siera or later** Before running `npm install`, first install libgrypt. With Homebrew, this can be done with `brew install libgcrypt`. [More info](https://github.com/nodegit/nodegit/issues/1200)
+**On OSX Siera or later** Before running any of the API scripts, first install libgrypt using Homebrew with `brew install libgcrypt` _before_ running `npm install`. Nodegit is installed as an optional dependency and will silenty fail installing if libgcrypt is not installed.
 
 ## Editors
 

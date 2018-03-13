@@ -36,10 +36,12 @@
     "chokidar": "^2.0.2",
     "chokidar-cli": "^1.2.0",
     "husky": "^0.14.3",
-    "nodegit": "^0.21.0",
     "path": "^0.12.7",
     "tslint": "^5.9.1",
     "tslint-ionic-rules": "0.0.14"
+  },
+  "optionalDependencies": {
+    "nodegit": "^0.21.0"
   },
   "author": "Ionic Team",
   "license": "MIT",
