@@ -17,11 +17,10 @@ export class SiteContent {
   render() {
     return (
       <stencil-router>
-          <stencil-route
-            url={['/docs/:docPath*', '/docs']}
-            // group="main"
-            routeRender={loadMarkdownDocument}/>
-          <stencil-route exact url="/" routeRender={redirectToHome}/>
+        <stencil-route
+          url={['/docs/:docPath*', '/docs']}
+          // group="main"
+          routeRender={loadMarkdownDocument}/>
       </stencil-router>
     );
   }
@@ -29,6 +28,3 @@ export class SiteContent {
 
 const loadMarkdownDocument = ({ match }) =>
   <doc-loader path={match.params.docPath ? match.params.docPath : 'index' }/>;
-
-const redirectToHome = () =>
-  <stencil-router-redirect url="/docs"/>;
