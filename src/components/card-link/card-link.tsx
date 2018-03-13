@@ -9,7 +9,7 @@ export class CardLink {
   @Element() el: Element;
 
   @Prop() title: string;
-  @Prop() href: string;
+  @Prop() url: string;
   @Prop() hasIcon = false;
 
   @Watch('title')
@@ -47,7 +47,7 @@ export class CardLink {
   }
 
   render() {
-    return <stencil-route-link url={this.href} title={this.title}>
+    return <stencil-route-link url={this.url} title={this.title}>
       {this.title && <strong>{this.title}</strong>}
       <span><slot/></span>
     </stencil-route-link>;

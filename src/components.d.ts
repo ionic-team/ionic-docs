@@ -46,8 +46,8 @@ declare global {
   namespace JSXElements {
     export interface CardLinkAttributes extends HTMLAttributes {
       hasIcon?: boolean;
-      href?: string;
       title?: string;
+      url?: string;
     }
   }
 }
