@@ -17,7 +17,7 @@
     "server-watch": "sd concurrent \"tsc -p server/tsconfig.json --watch\" \"chokidar 'server/build/**/*.js' -c 'npm run server'\" \"npm run dev\""
   },
   "dependencies": {
-    "@stencil/core": "^0.7.0-4",
+    "@stencil/core": "^0.6.18",
     "@stencil/helmet": "^0.1.2",
     "@stencil/router": "0.0.27",
     "compression": "^1.7.2",
