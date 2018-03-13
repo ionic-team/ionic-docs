@@ -44,37 +44,37 @@ hideTOC: true
   </card-link>
 </div>
 
-<ul>
-  <li>
-    <uber-link href="test">
+<ul class="others">
+  <li class="cli">
+    <stencil-route-link url="/docs/cli">
       <strong>Ionic CLI</strong>
       <span>
         The primary tool used during the process of developing an Ionic app.
       </span>
-    </uber-link>
+    </stencil-route-link>
   </li>
-  <li>
-    <uber-link>
+  <li class="resources">
+    <stencil-route-link url="/docs/resources">
       <strong>Resources</strong>
-      <span>Leanr official guides, videos, books, and more.</span>
-    </uber-link>
+      <span>Learn official guides, videos, books, and more.</span>
+    </stencil-route-link>
   </li>
-  <li>
-    <uber-link>
+  <li class="_ionicons">
+    <stencil-route-link url="/docs/ionicons">
       <strong>Ionicons</strong>
       <span>
         Beautifully designed icons built for us in web, iOS, Android, and
         desktop apps.
       </span>
-    </uber-link>
+    </stencil-route-link>
   </li>
-  <li>
-    <uber-link>
+  <li class="faq">
+    <stencil-route-link url="/docs/faq">
       <strong>FAQ</strong>
       <span>
         Get answers to some of the most commonly asked questions about the
         Framework.
       </span>
-    </uber-link>
+    </stencil-route-link>
   </li>
 </ul>

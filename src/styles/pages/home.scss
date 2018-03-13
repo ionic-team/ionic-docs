@@ -1,4 +1,4 @@
-.page-index {
+.page-index main {
   .cards {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -12,14 +12,14 @@
   .card-api-reference,
   .card-native-apis,
   .card-theming {
-      &::before,
-      &::after {
-        background-image: url('/docs/assets/img/home-thumbnails.png');
-        background-size: 160px;
-        width: 80px;
-        height: 156px;
-        top: calc(50% - 78px);
-      }
+    &::before,
+    &::after {
+      background-image: url('/docs/assets/img/home-thumbnails.png');
+      background-size: 160px;
+      width: 80px;
+      height: 156px;
+      top: calc(50% - 78px);
+    }
   }
 
   .card-introduction {
@@ -45,5 +45,68 @@
   .card-theming {
     &::before { background-position: 0 -780px; }
     &::after { background-position: -80px -780px; }
+  }
+
+  .others {
+    list-style: none;
+    padding: 0;
+    border-top: 1px solid #d5dae2;
+
+    li {
+      border-bottom: 1px solid #d5dae2;
+      margin-bottom: 0;
+    }
+
+    a,
+    stencil-route-link {
+      color: inherit;
+    }
+
+    a {
+      padding: 16px 8px 15px 70px;
+      position: relative;
+      display: block;
+
+      &::before,
+      &::after {
+        background: url('/docs/assets/img/home-thumbnails-sm.png') no-repeat 0 0;
+        background-size: 48px;
+        width: 48px;
+        height: 48px;
+        content: '';
+        position: absolute;
+        top: 20px;
+        left: 0;
+      }
+
+      &::after {
+        opacity: 0;
+        transition: .2s color ease;
+      }
+
+      &:hover::after {
+        opacity: 1;
+      }
+    }
+
+    .cli a {
+      &::after { background-position: 0 -48px; }
+    }
+    .resources a {
+      &::before { background-position: 0 -96px; }
+      &::after { background-position: 0 -144px; }
+    }
+    ._ionicons a {
+      &::before { background-position: 0 -192px; }
+      &::after { background-position: 0 -240px; }
+    }
+    .faq a {
+      &::before { background-position: 0 -288px; }
+      &::after { background-position: 0 -336px; }
+    }
+
+    strong {
+      display: block;
+    }
   }
 }

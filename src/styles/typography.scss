@@ -42,7 +42,7 @@ li {
 }
 
 a,
-stencil-route-link {
+stencil-route-link{
   color: $blue;
   text-decoration: none;
   font-weight: 600;
@@ -50,10 +50,10 @@ stencil-route-link {
 
   &:hover {
     color: lighten($blue, 8);
+    text-decoration: none;
   }
 }
 
 stencil-route-link:hover {
-  text-decoration: underline;
   cursor: pointer;
 }
