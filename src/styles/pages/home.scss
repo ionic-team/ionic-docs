@@ -1,11 +1,49 @@
 .page-index {
   .cards {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 19px;
   }
 
-  card-link {
-    flex: 0 0 50%;
-    margin-bottom: 24px;
+  .card-introduction,
+  .card-installation,
+  .card-ui-components,
+  .card-api-reference,
+  .card-native-apis,
+  .card-theming {
+      &::before,
+      &::after {
+        background-image: url('/docs/assets/img/home-thumbnails.png');
+        background-size: 160px;
+        width: 80px;
+        height: 156px;
+        top: calc(50% - 78px);
+      }
+  }
+
+  .card-introduction {
+    &::before { background-position: 0 0; }
+    &::after { background-position: -80px 0; }
+  }
+  .card-installation {
+    &::before { background-position: 0 -156px; }
+    &::after { background-position: -80px -156px; }
+  }
+  .card-ui-components {
+    &::before { background-position: 0 -312px; }
+    &::after { background-position: -80px -312px; }
+  }
+  .card-api-reference {
+    &::before { background-position: 0 -468px; }
+    &::after { background-position: -80px -468px; }
+  }
+  .card-native-apis {
+    &::before { background-position: 0 -624px; }
+    &::after { background-position: -80px -624px; }
+  }
+  .card-theming {
+    &::before { background-position: 0 -780px; }
+    &::after { background-position: -80px -780px; }
   }
 }
