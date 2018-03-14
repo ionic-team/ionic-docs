@@ -27,8 +27,8 @@ export class SiteMenu {
 
   createMenuItem(text: string, url: string) {
     return (
-      <li>
-        <stencil-route-link exact url={url} title={text}>
+      <li role="none">
+        <stencil-route-link exact url={url} title={text} role="menuitem">
           {text}
         </stencil-route-link>
       </li>
@@ -37,15 +37,26 @@ export class SiteMenu {
 
   createSubmenu(text: string, items: Object) {
     return (
-      <li>
-        <a onClick={e => this.toggleSubmenu(e.target as HTMLElement)} title={text}>{text}</a>
-        <ul class="sub-menu">{this.createMenu(items)}</ul>
+      <li role="none">
+        <a onClick={e => this.toggleSubmenu(e.target as HTMLElement)}
+           title={text}
+           role="menuitem"
+           aria-expanded="false">
+          {text}
+        </a>
+        <ul class="sub-menu"
+            role="menu"
+            aria-label={text}>
+          {this.createMenu(items)}
+        </ul>
       </li>
     );
   }
 
   toggleSubmenu(toggle: HTMLElement) {
-    toggle.nextElementSibling.classList.toggle('is-expanded');
+    const expanded = toggle.getAttribute('aria-expanded') !== 'true';
+    toggle.setAttribute('aria-expanded', expanded ? 'true' : 'true');
+    toggle.nextElementSibling.classList.toggle('expanded');
   }
 
   render() {
