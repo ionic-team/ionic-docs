@@ -4,14 +4,15 @@
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 20px;
     grid-row-gap: 19px;
+    padding-bottom: 32px;
   }
 
-  .card-introduction,
-  .card-installation,
-  .card-ui-components,
-  .card-api-reference,
-  .card-native-apis,
-  .card-theming {
+  .card-introduction a,
+  .card-installation a,
+  .card-ui-components a,
+  .card-api-reference a,
+  .card-native-apis a,
+  .card-theming a {
     &::before,
     &::after {
       background-image: url('/docs/assets/img/home-thumbnails.png');
@@ -22,27 +23,27 @@
     }
   }
 
-  .card-introduction {
+  .card-introduction a {
     &::before { background-position: 0 0; }
     &::after { background-position: -80px 0; }
   }
-  .card-installation {
+  .card-installation a {
     &::before { background-position: 0 -156px; }
     &::after { background-position: -80px -156px; }
   }
-  .card-ui-components {
+  .card-ui-components a {
     &::before { background-position: 0 -312px; }
     &::after { background-position: -80px -312px; }
   }
-  .card-api-reference {
+  .card-api-reference a {
     &::before { background-position: 0 -468px; }
     &::after { background-position: -80px -468px; }
   }
-  .card-native-apis {
+  .card-native-apis a {
     &::before { background-position: 0 -624px; }
     &::after { background-position: -80px -624px; }
   }
-  .card-theming {
+  .card-theming a {
     &::before { background-position: 0 -780px; }
     &::after { background-position: -80px -780px; }
   }
