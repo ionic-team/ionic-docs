@@ -1,7 +1,5 @@
 ---
-# title: Ionic
-description: Nothing to see here
-previewUrl: 'https://blog.ionicframework.com'
+title: Framework Docs
 hideTOC: true
 ---
 

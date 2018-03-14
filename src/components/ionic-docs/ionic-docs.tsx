@@ -28,6 +28,12 @@ export class IonicDocs {
     });
     classes.push(`page-${path.replace(/\//g, '-')}`);
     this.el.className = classes.join(' ').trim();
+
+    if (e.detail.previewUrl) {
+      this.el.classList.add('has-preview');
+    } else {
+      this.el.classList.remove('has-preview');
+    }
   }
 
   hostData() {

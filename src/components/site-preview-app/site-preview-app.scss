@@ -8,6 +8,10 @@ site-preview-app {
   padding-right: 0;
   padding-top: 4px;
 
+  &.hidden {
+    display: none;
+  }
+
   ul {
     padding: 0;
     display: flex;

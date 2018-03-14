@@ -14,15 +14,31 @@ ionic-docs {
     "header header header header header"
     "menu . content . preview";
   grid-template-rows: $header-height;
-  grid-template-columns: 200px 1fr minmax(500px, 720px) 1fr 424px;
+  grid-template-columns: 200px 1fr minmax(320px, 806px) 1fr 1fr;
 
   @media (max-width: $breakpoint-lg)  {
-    grid-template-columns: 200px 1fr minmax(500px, 720px) 1fr 0;
+    grid-template-columns: 200px 1fr minmax(320px, 806px) 1fr 0;
   }
 
   @media (max-width: $breakpoint-md)  {
     // TODO: sidebar drawer
     grid-template-columns: 0 0 minmax(320px, 720px) 0 0;
+  }
+
+  &.has-preview {
+    grid-template-areas:
+    "header header header header header"
+    "menu . content . preview";
+    grid-template-columns: 200px 1fr minmax(320px, 806px) 1fr 420px;
+
+    @media (max-width: $breakpoint-lg)  {
+      grid-template-columns: 200px 1fr minmax(320px, 806px) 1fr 0;
+    }
+
+    @media (max-width: $breakpoint-md)  {
+      // TODO: sidebar drawer
+      grid-template-columns: 0 0 minmax(320px, 720px) 0 0;
+    }
   }
 }
 
@@ -33,22 +49,22 @@ site-preview-app {
   position: -webkit-sticky;
 }
 
-site-menu,
-site-content {
-  padding: 1.75rem 2rem;
-}
-
 site-header {
   align-self: stretch;
   grid-area: header;
   padding: .3rem 1.2rem 0 2rem;
   top: 0;
+
+  @media (max-width: $breakpoint-md)  {
+    padding-left: 24px;
+    padding-right: 32px;
+  }
 }
 
 site-menu {
   grid-area: menu;
   top: $header-height;
-  padding-right: 0;
+  padding: 1.75rem 0 1.75rem 2rem;
   height: calc(100vh - 75px);
   overflow-y: auto;
 
@@ -59,8 +75,13 @@ site-menu {
 }
 
 site-content {
-  padding-top: 1.15rem;
+  padding: 1.15rem 2rem 1.75rem;
   grid-area: content;
+
+  @media (max-width: $breakpoint-md)  {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
 
 site-preview-app {

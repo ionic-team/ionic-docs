@@ -1,4 +1,4 @@
-import { Component, Listen, State } from '@stencil/core';
+import { Component, Element, Listen, State } from '@stencil/core';
 
 @Component({
   tag: 'site-preview-app',
@@ -9,10 +9,18 @@ export class SitePreviewApp {
   @State() url: string;
   @State() fixed = false;
 
+  @Element() el: Element;
+
   @Listen('window:docLoaded')
   onDocLoaded(e) {
     this.url = e.detail.previewUrl;
     this.fixed = !!e.detail.previewFixed;
+
+    if (!this.url) {
+      this.el.classList.add('hidden');
+    } else {
+      this.el.classList.remove('hidden');
+    }
   }
 
   select(platform) {
