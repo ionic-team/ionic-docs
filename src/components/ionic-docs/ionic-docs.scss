@@ -14,10 +14,10 @@ ionic-docs {
     "header header header header header"
     "menu . content . preview";
   grid-template-rows: $header-height;
-  grid-template-columns: 200px 1fr minmax(320px, 806px) 1fr 1fr;
+  grid-template-columns: 200px 1fr minmax(320px, 720px) 1fr 420px;
 
   @media (max-width: $breakpoint-lg)  {
-    grid-template-columns: 200px 1fr minmax(320px, 806px) 1fr 0;
+    grid-template-columns: 200px 1fr minmax(320px, 720px) 1fr 1fr;
   }
 
   @media (max-width: $breakpoint-md)  {
@@ -25,11 +25,11 @@ ionic-docs {
     grid-template-columns: 0 0 minmax(320px, 720px) 0 0;
   }
 
-  &.has-preview {
+  &.page-index {
     grid-template-areas:
     "header header header header header"
     "menu . content . preview";
-    grid-template-columns: 200px 1fr minmax(320px, 806px) 1fr 420px;
+    grid-template-columns: 200px 1fr minmax(320px, 806px) 1fr 1fr;
 
     @media (max-width: $breakpoint-lg)  {
       grid-template-columns: 200px 1fr minmax(320px, 806px) 1fr 0;
