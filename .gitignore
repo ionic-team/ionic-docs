@@ -2,6 +2,7 @@ ionic
 .idea/
 node_modules/
 scripts/build
+server/build
 .DS_Store
 /dist
 /www

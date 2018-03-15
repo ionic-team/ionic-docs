@@ -1,10 +1,12 @@
 {
   "name": "@ionic/ionic-docs",
-  "private": true,
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Ionic Docs Site",
+  "engines": {
+    "node": "8.9.4"
+  },
   "scripts": {
-    "start": "npm run dev",
+    "start": "npm run server",
     "build": "stencil build --prerender",
     "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
     "lint": "tslint --config tslint.json --project tsconfig.json",
@@ -13,11 +15,12 @@
     "api-scripts-build": "tsc -p scripts/tsconfig.json",
     "api-docs-watch": "sd concurrent \"tsc -p scripts/tsconfig.json --watch\" \"chokidar 'scripts/build/**/*.js' -c 'npm run api-docs'\"",
     "server": "node server/build",
-    "server-build": "tsc -p scripts/tsconfig.json",
-    "server-watch": "sd concurrent \"tsc -p server/tsconfig.json --watch\" \"chokidar 'server/build/**/*.js' -c 'npm run server'\" \"npm run dev\""
+    "server-build": "tsc -p server/tsconfig.json",
+    "server-watch": "sd concurrent \"tsc -p server/tsconfig.json --watch\" \"chokidar 'server/build/**/*.js' -c 'npm run server'\" \"npm run dev\"",
+    "heroku-postbuild": "npm run api-scripts-build && npm run api-docs && npm run build && npm run server-build"
   },
   "dependencies": {
-    "@stencil/core": "^0.6.18",
+    "@stencil/core": "^0.7.0-5",
     "@stencil/helmet": "^0.1.2",
     "@stencil/router": "0.0.28",
     "compression": "^1.7.2",
@@ -43,6 +46,12 @@
   "optionalDependencies": {
     "nodegit": "^0.21.0"
   },
+  "cacheDirectories": [
+    "ionic",
+    "node_modules",
+    "scripts/build",
+    "server/build"
+  ],
   "author": "Ionic Team",
   "license": "MIT",
   "repository": {
