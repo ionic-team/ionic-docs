@@ -17,7 +17,7 @@
     "server": "node server/build",
     "server-build": "tsc -p server/tsconfig.json",
     "server-watch": "sd concurrent \"tsc -p server/tsconfig.json --watch\" \"chokidar 'server/build/**/*.js' -c 'npm run server'\" \"npm run dev\"",
-    "heroku-prebuild": "apt-get install libstdc++-4.9-dev",
+    "heroku-prebuild": "apt-get update && apt-get install libstdc++-4.9-dev",
     "heroku-postbuild": "npm run api-scripts-build && npm run api-docs && npm run build && npm run server-build"
   },
   "dependencies": {
