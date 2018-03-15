@@ -1,2 +1,2 @@
-http://mirrors.kernel.org/ubuntu/pool/main/g/gcc-4.9/gcc-4.9_4.9.2-10ubuntu13_amd64.deb
-http://mirrors.kernel.org/ubuntu/pool/main/g/gcc-4.9/libstdc%2b%2b6_4.9.2-10ubuntu13_amd64.deb
+http://mirrors.edge.kernel.org/ubuntu/pool/main/g/gcc-5/libx32gcc-5-dev_5.4.0-6ubuntu1~16.04.9_amd64.deb
+http://mirrors.edge.kernel.org/ubuntu/pool/main/g/gcc-5/libstdc%2B%2B-5-dev_5.4.0-6ubuntu1~16.04.9_amd64.deb
