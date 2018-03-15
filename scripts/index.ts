@@ -24,6 +24,11 @@ async function run() {
   const repo = await git.initRepoRefference();
   utils.vlog('validating tags');
   const versions = await git.getVersions();
+
+  if (!fs.existsSync(config.API_DOCS_DIR)) {
+    fs.mkdirSync(config.API_DOCS_DIR);
+  }
+
   for (let i = 0; i < versions.length; i++) {
     const version = versions[i].replace('v', '');
     const DOCS_DEST = path.join(config.API_DOCS_DIR, version);
