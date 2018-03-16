@@ -1,6 +1,5 @@
 import '@stencil/router';
-
-import { Component, Element, Listen, State } from '@stencil/core';
+import { Component, Element, Event, EventEmitter, Listen, State } from '@stencil/core';
 
 @Component({
   tag: 'ionic-docs',
@@ -8,13 +7,8 @@ import { Component, Element, Listen, State } from '@stencil/core';
 })
 export class IonicDocs {
   @Element() el: Element;
-  // curr
+  @Event() sectionChanged: EventEmitter;
   @State() currentSection = 'framework';
-
-  @Listen('docs-section-changed')
-  sectionChangedHandler(event) {
-    this.currentSection = event.detail;
-  }
 
   @Listen('docLoaded')
   onDocLoaded({ detail }) {
@@ -22,6 +16,18 @@ export class IonicDocs {
     this.removePageClass();
     this.el.classList.add(`page-${detail.path.replace(/\//g, '-')}`);
     this.el.classList.toggle('has-preview', typeof detail.previewUrl === 'string');
+
+    const section = this.parseSection(detail.path);
+    if (section !== this.currentSection) {
+      this.currentSection = section;
+      this.sectionChanged.emit({ section });
+    }
+  }
+
+  parseSection(path) {
+    const match = /^(cli|pro)\//.exec(path);
+    const section = match && match[1] || 'framework';
+    return section;
   }
 
   removePageClass() {
