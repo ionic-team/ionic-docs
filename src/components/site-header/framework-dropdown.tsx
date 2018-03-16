@@ -52,7 +52,7 @@ const items: DropdownItem[] = [
 
 @Component({
   tag: 'framework-dropdown',
-  styleUrl: 'framework-dropdown.scss',
+  styleUrl: 'framework-dropdown.css',
 })
 export class FrameworkDropdown {
   @Event({ eventName: 'docs-section-changed' }) sectionChanged: EventEmitter;

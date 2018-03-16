@@ -1,4 +1,4 @@
-@import 'src/styles/variables';
+/* // @import 'src/styles/variables'; */
 
 site-search {
   margin-right: 34px;
@@ -26,7 +26,7 @@ site-search {
 
     &::placeholder {
       color: rgba(white, .4);
-      font-family: $font-family-eina;
+      font-family: var(--font-family-eina);
       transition: .2s color ease;
     }
 

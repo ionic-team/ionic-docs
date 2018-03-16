@@ -1,11 +1,11 @@
-@import 'src/styles/variables';
+/* @import 'src/styles/variables'; */
 @import './highlight';
 
 code-block {
   background-color: #f5f6f9;
   border-radius: 4px;
   display: block;
-  font-family: $font-family-code;
+  font-family: var(--font-family-code);
   font-size: 12px;
   margin: 1.5em 0;
   overflow-x: auto;

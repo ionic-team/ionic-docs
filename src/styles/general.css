@@ -1,3 +1,9 @@
+/* @import 'variables.css'; */
+/* @import 'fonts.css'; */
+/* @import 'typography.css';
+@import 'general.css';
+@import 'pages/index.css'; */
+
 * {
   box-sizing: border-box;
 }

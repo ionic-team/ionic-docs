@@ -1,4 +1,4 @@
-@import 'src/styles/variables';
+/* @import 'src/styles/variables'; */
 
 table-of-contents {
   padding-top: 17px;
@@ -33,7 +33,7 @@ table-of-contents {
     letter-spacing: -.02em;
 
     &::before {
-      color: lighten($blue, 20);
+      color: lighten(var(--blue), 20);
       content: '#';
       position: absolute;
       left: -10px;
@@ -41,10 +41,10 @@ table-of-contents {
     }
 
     &:hover {
-      color: $blue;
+      color: var(--blue);
 
       &::before {
-        color: $blue;
+        color: var(--blue);
       }
     }
   }
@@ -60,7 +60,7 @@ main {
       position: relative;
 
       &::before {
-        color: lighten($blue, 20);
+        color: lighten(var(--blue), 20);
         content: '#';
         position: absolute;
         left: -20px;
@@ -68,10 +68,10 @@ main {
       }
 
       &:hover {
-        color: $darker;
+        color: var(--darker);
 
         &::before {
-          color: $blue;
+          color: var(--blue);
         }
       }
     }

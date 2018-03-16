@@ -2,7 +2,7 @@ import { Component, Element, Prop, Watch } from '@stencil/core';
 
 @Component({
   tag: 'card-link',
-  styleUrl: 'card-link.scss'
+  styleUrl: 'card-link.css'
 })
 export class CardLink {
 

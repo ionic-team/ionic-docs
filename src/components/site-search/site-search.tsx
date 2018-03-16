@@ -2,7 +2,7 @@ import { Component } from '@stencil/core';
 
 @Component({
   tag: 'site-search',
-  styleUrl: 'site-search.scss'
+  styleUrl: 'site-search.css'
 })
 export class SiteSearch {
   render() {

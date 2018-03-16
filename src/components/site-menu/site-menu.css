@@ -1,4 +1,4 @@
-@import 'src/styles/variables';
+/* @import 'src/styles/variables'; */
 @import './version-dropdown';
 
 site-menu ul {
@@ -16,7 +16,7 @@ site-menu stencil-route-link:hover {
 }
 
 site-menu a {
-  color: $blackish;
+  color: var(--blackish);
   cursor: pointer;
   display: block;
   font-size: 14px;
@@ -36,12 +36,12 @@ site-menu a {
 }
 
 site-menu a:hover {
-  color: lighten($blackish, 16);
+  color: lighten(var(--blackish, 16));
   text-decoration: none;
 }
 
 site-menu .sub-menu a {
-  color: $gray;
+  color: var(--gray);
   font-size: 13px;
   font-weight: 500;
   padding: 0;
@@ -53,12 +53,12 @@ site-menu .sub-menu a.link-active {
 }
 
 site-menu .sub-menu a:hover {
-  color: $dark;
+  color: var(--dark);
 }
 
 site-menu stencil-route-link .link-active,
 site-menu stencil-route-link .link-active:hover {
-  color: $blue;
+  color: var(--blue);
   font-weight: 600;
 }
 

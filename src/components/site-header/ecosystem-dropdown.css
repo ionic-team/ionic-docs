@@ -1,4 +1,4 @@
-@import 'src/styles/variables';
+/* @import 'src/styles/variables'; */
 
 ionic-docs.section-cli {
   ecosystem-dropdown {
@@ -16,7 +16,7 @@ ecosystem-dropdown {
     font-size: 13px;
     line-height: 1em;
     font-weight: 600;
-    color: $header-color;
+    color: var(--header-color);
     letter-spacing: .01em;
     display: inline-block;
     vertical-align: 0;
@@ -29,7 +29,7 @@ ecosystem-dropdown {
       vertical-align: middle;
       border-left: 2px solid transparent;
       border-right: 2px solid transparent;
-      border-top: 3px solid $header-color;
+      border-top: 3px solid var(--header-color);
       transition: .2s border-top-color ease;
     }
 
@@ -95,7 +95,7 @@ ecosystem-dropdown {
 
     a {
       padding: 4px 12px 4px 57px;
-      color: $gray;
+      color: var(--gray);
       outline: none;
       display: block;
       font-size: 12px;

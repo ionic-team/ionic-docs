@@ -4,7 +4,7 @@ import { Component, Element, Listen, State } from '@stencil/core';
 
 @Component({
   tag: 'ionic-docs',
-  styleUrl: 'ionic-docs.scss'
+  styleUrl: 'ionic-docs.css'
 })
 export class IonicDocs {
   @Element() el: Element;

@@ -1,7 +1,17 @@
-const sass = require('@stencil/sass');
+const autoprefixer = require('autoprefixer');
+const postcss = require('@stencil/postcss');
+const precss = require('precss');
 
 exports.config = {
-  plugins: [sass()],
+  plugins: [
+    postcss({
+      plugins: [
+        precss(),
+        autoprefixer(),
+      ]
+    })
+  ],
+  globalStyle: ['src/styles/variables.css'],
   copy: [{ src: 'docs-content' }],
   outputTargets: [
     {

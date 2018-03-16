@@ -1,4 +1,4 @@
-@import 'src/styles/variables';
+/* @import 'src/styles/variables'; */
 
 site-preview-app {
   display: flex;
@@ -19,7 +19,7 @@ site-preview-app {
   }
 
   li {
-    color: $gray;
+    color: var(--gray);
     list-style: none;
     background: transparent;
     border-radius: 16px;
@@ -37,7 +37,7 @@ site-preview-app {
       .2s color ease;
 
     &.active {
-      background: $blue;
+      background: var(--blue);
       color: white;
     }
   }

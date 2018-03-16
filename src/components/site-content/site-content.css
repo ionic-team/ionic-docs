@@ -1,4 +1,4 @@
-@import 'src/styles/variables';
+/* @import 'src/styles/variables'; */
 
 .linked-heading {
   color: inherit;
@@ -7,7 +7,7 @@
 }
 
 .linked-heading:before {
-  color: lighten($blue, 20);
+  color: lighten(var(--blue), 20);
   content: '#';
   left: -20px;
   position: absolute;
@@ -15,11 +15,11 @@
 }
 
 .linked-heading:hover {
-  color: $darker;
+  color: var(--darker);
 }
 
 .linked-heading:hover:before {
-  color: $blue;
+  color: var(--blue);
 }
 
 main {

@@ -1,4 +1,4 @@
-@import 'src/styles/variables';
+/* @import 'src/styles/variables'; */
 
 framework-dropdown {
   flex-grow: 1;
@@ -10,7 +10,7 @@ framework-dropdown {
     font-weight: 600;
     margin-left: 8px;
     line-height: 1em;
-    color: $header-color;
+    color: var(--header-color);
     display: inline-block;
     letter-spacing: -.02em;
     vertical-align: text-top;
@@ -23,7 +23,7 @@ framework-dropdown {
       vertical-align: middle;
       border-left: 3px solid transparent;
 	    border-right: 3px solid transparent;
-      border-top: 4px solid $header-color;
+      border-top: 4px solid var(--header-color);
       transition: .2s border-top-color ease;
     }
 
@@ -89,7 +89,7 @@ framework-dropdown {
     display: block;
 
     &.active {
-      color: $dark-gray;
+      color: var(--dark-gray);
     }
 
     &:first-child a {
@@ -162,23 +162,23 @@ framework-dropdown {
       }
 
       strong {
-        color: $blue;
+        color: var(--blue);
       }
 
       span {
-        color: $darkish;
+        color: var(--darkish);
       }
     }
 
     strong {
-      color: $blacker;
+      color: var(--blacker);
       display: block;
       letter-spacing: 0;
       transition: .2s color ease;
     }
 
     span {
-      color: $gray;
+      color: var(--gray);
       display: block;
       font-size: 12px;
       font-weight: 600;
@@ -191,7 +191,7 @@ framework-dropdown {
       a {
         margin-top: 10px;
         padding: 20px 0 8px 84px;
-        background: $whiter;
+        background: var(--whiter);
 
         &::before,
         &::after {
@@ -227,7 +227,7 @@ framework-dropdown {
       position: absolute;
       content: '\\f2bc';
       font-size: 18px;
-      color: $blue;
+      color: var(--blue);
       right: 30px;
       top: 33px;
     }

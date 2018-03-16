@@ -1,4 +1,4 @@
-@import 'src/styles/variables';
+/* @import 'src/styles/variables'; */
 
 tab-group {
   display: block;
@@ -36,15 +36,15 @@ tab-group .tab-link {
   }
 
   &.is-selected {
-    color: $blue;
+    color: var(--blue);
   }
 
   &.is-selected:after {
-    background-color: $blue;
+    background-color: var(--blue);
   }
 
   &:hover {
-    color:$blue;
+    color:var(--blue);
   }
 }
 

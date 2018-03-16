@@ -23,7 +23,7 @@
     vertical-align: text-top;
 
     &::after {
-      border-top: 4px solid $dark-gray;
+      border-top: 4px solid var(--dark-gray);
       border-left: 3px solid transparent;
 	    border-right: 3px solid transparent;
       content: '';
@@ -94,7 +94,7 @@
         position: absolute;
         content: '\\f2bc';
         font-size: 14px;
-        color: $blue;
+        color: var(--blue);
         right: 19px;
         top: 4px;
       }

@@ -1,5 +1,5 @@
-@import 'src/styles/variables';
-@import './ecosystem-dropdown';
+/* @import './../../src/styles/variables.css'; */
+/* @import './ecosystem-dropdown.css'; */
 
 ionic-docs.section-pro {
   site-header {
@@ -11,7 +11,7 @@ ionic-docs.section-cli {
   site-header {
     background-color: white;
 
-    // TODO: might be able to inherit color here somehow
+    /* TODO: might be able to inherit color here somehow */
     a {
       color: black;
 
@@ -23,17 +23,17 @@ ionic-docs.section-cli {
 
   #site-logo {
     svg > path {
-      fill: $blue;
+      fill: var(--blue);
     }
   }
 }
 
 
 site-header {
-  background-color: $blue;
-  color: $header-color;
+  background-color: var(--blue);
+  color: var(--header-color);
   z-index: 1;
-  font-family: $font-family-eina;
+  font-family: var(--font-family-eina);
 
   h1,
   h2,
@@ -41,7 +41,7 @@ site-header {
   h4,
   p,
   li {
-    color: $header-color;
+    color: var(--header-color);
     margin: 0;
   }
 

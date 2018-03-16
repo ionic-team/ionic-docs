@@ -1,7 +1,8 @@
-@import 'src/styles/fonts';
-@import 'src/styles/typography';
-@import 'src/styles/general';
-@import 'src/styles/pages/index';
+@import '../../styles/variables.css';
+/* @import '../../styles/fonts.css'; */
+@import '../../styles/typography.css';
+@import '../../styles/general.css';
+@import '../../styles/pages/index.css';
 
 $header-height: 75px;
 $breakpoint-lg: 1124px;
@@ -21,14 +22,11 @@ ionic-docs {
   }
 
   @media (max-width: $breakpoint-md)  {
-    // TODO: sidebar drawer
+    /* TODO: sidebar drawer */
     grid-template-columns: 0 0 minmax(320px, 720px) 0 0;
   }
 
   &.page-index {
-    grid-template-areas:
-    "header header header header header"
-    "menu . content . preview";
     grid-template-columns: 200px 1fr minmax(320px, 806px) 1fr 1fr;
 
     @media (max-width: $breakpoint-lg)  {
@@ -36,7 +34,7 @@ ionic-docs {
     }
 
     @media (max-width: $breakpoint-md)  {
-      // TODO: sidebar drawer
+      /* TODO: sidebar drawer */
       grid-template-columns: 0 0 minmax(320px, 720px) 0 0;
     }
   }
@@ -69,7 +67,7 @@ site-menu {
   overflow-y: auto;
 
   @media (max-width: $breakpoint-md)  {
-    // TODO: sidebar drawer
+    /* TODO: sidebar drawer */
     display: none;
   }
 }
@@ -91,7 +89,7 @@ site-preview-app {
 
 
   @media (max-width: $breakpoint-lg)  {
-    // TODO: preview app link
+    /* TODO: preview app link */
     display: none;
   }
 }

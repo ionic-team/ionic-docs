@@ -1,7 +1,7 @@
-@import 'src/styles/variables';
+/* @import 'src/styles/variables'; */
 
 h1, h2, h3, h4 {
-  color: $blackish;
+  color: var(--blackish);
   font-weight: 700;
 }
 
@@ -26,7 +26,7 @@ h3 {
 }
 
 p, ul {
-  color: $dark;
+  color: var(--dark);
   font-size: 14px;
   letter-spacing: -.02em;
   line-height: 2em;
@@ -44,13 +44,13 @@ li {
 
 a,
 stencil-route-link{
-  color: $blue;
+  color: var(--blue);
   text-decoration: none;
   font-weight: 600;
   transition: .2s color ease;
 
   &:hover {
-    color: lighten($blue, 8);
+    color: lighten(var(--blue), 8);
     text-decoration: none;
   }
 }

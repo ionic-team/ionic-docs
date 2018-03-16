@@ -1,4 +1,4 @@
-@import 'src/styles/variables';
+/* @import 'src/styles/variables'; */
 
 new-tab-icon svg {
   height: 0.8em;
@@ -28,7 +28,7 @@ a {
     }
 
     .arrow {
-      fill: $header-color;
+      fill: var(--header-color);
     }
   }
 

@@ -2,7 +2,7 @@ import { Component, Element, Listen, State } from '@stencil/core';
 
 @Component({
   tag: 'site-preview-app',
-  styleUrl: 'site-preview-app.scss'
+  styleUrl: 'site-preview-app.css'
 })
 export class SitePreviewApp {
   @State() selected = 'ios';
