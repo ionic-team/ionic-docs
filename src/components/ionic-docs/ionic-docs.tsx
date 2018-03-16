@@ -16,24 +16,18 @@ export class IonicDocs {
     this.currentSection = event.detail;
   }
 
-  @Listen('window:docLoaded')
-  onDocLoaded(e) {
-    if (!e.detail || !e.detail['path']) {
-      return;
-    }
-    // Update the page specific class
-    const path = e.detail['path'];
-    const classes = this.el.className.split(' ').filter(function(c) {
-      return c.lastIndexOf('page-', 0) !== 0;
-    });
-    classes.push(`page-${path.replace(/\//g, '-')}`);
-    this.el.className = classes.join(' ').trim();
+  @Listen('docLoaded')
+  onDocLoaded({ detail }) {
+    if (!detail || !detail.path) return;
+    this.removePageClass();
+    this.el.classList.add(`page-${detail.path.replace(/\//g, '-')}`);
+    this.el.classList.toggle('has-preview', typeof detail.previewUrl === 'string');
+  }
 
-    if (e.detail.previewUrl) {
-      this.el.classList.add('has-preview');
-    } else {
-      this.el.classList.remove('has-preview');
-    }
+  removePageClass() {
+    this.el.className = this.el.className.split(' ')
+      .filter(str => str.indexOf('page-') !== 0)
+      .join(' ');
   }
 
   hostData() {
