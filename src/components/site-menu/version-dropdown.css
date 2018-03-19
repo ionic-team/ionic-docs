@@ -92,7 +92,7 @@
         font-family: 'Ionicons';
         display: inline-block;
         position: absolute;
-        content: '\\f2bc';
+        content: '\f2bc';
         font-size: 14px;
         color: var(--blue);
         right: 19px;
