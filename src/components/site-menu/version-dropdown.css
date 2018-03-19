@@ -4,7 +4,7 @@
 
   .current {
     background: white;
-    box-shadow: 0 1px 1px rgba(black, .06);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .06);
     border: 1px solid #e1e5ed;
     border-radius: 4px;
     cursor: pointer;
@@ -60,7 +60,7 @@
     opacity: 0;
     pointer-events: none;
     transform: translateY(-5px);
-    box-shadow: 0 4px 16px rgba(black, .2);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .2);
     transition: .4s opacity ease, .4s transform;
 
     &::after {

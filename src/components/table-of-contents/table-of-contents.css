@@ -33,7 +33,7 @@ table-of-contents {
     letter-spacing: -.02em;
 
     &::before {
-      color: lighten(var(--blue), 20);
+      color: #9ec1ff;
       content: '#';
       position: absolute;
       left: -10px;
@@ -60,7 +60,7 @@ main {
       position: relative;
 
       &::before {
-        color: lighten(var(--blue), 20);
+        color: #9ec1ff;
         content: '#';
         position: absolute;
         left: -20px;

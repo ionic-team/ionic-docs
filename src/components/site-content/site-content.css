@@ -7,7 +7,7 @@
 }
 
 .linked-heading:before {
-  color: lighten(var(--blue), 20);
+  color: #9ec1ff;
   content: '#';
   left: -20px;
   position: absolute;

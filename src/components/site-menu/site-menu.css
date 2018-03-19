@@ -36,7 +36,7 @@ site-menu a {
 }
 
 site-menu a:hover {
-  color: lighten(var(--blackish, 16));
+  color: #48505c;
   text-decoration: none;
 }
 

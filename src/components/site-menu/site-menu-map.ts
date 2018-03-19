@@ -17,7 +17,7 @@ export default {
     'Testing': '/docs/getting-started/testing',
     'Deploying': '/docs/getting-started/deploying',
     'Releasing': '/docs/getting-started/releasing',
-    'Tutorial': '/docs/getting-started/tutorial'
+    // 'Tutorial': '/docs/getting-started/tutorial'
   },
   'Components': {},
   'API Reference': getAPIReferenceMap,

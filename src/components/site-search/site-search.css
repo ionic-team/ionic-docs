@@ -19,13 +19,13 @@ site-search {
     min-width: 240px;
     border-radius: 16px;
     letter-spacing: .02em;
-    color: rgba(white, .9);
+    color: rgba(255, 255, 255, .9);
     padding: 9px 10px 8px 36px;
-    background: rgba(white, .1);
+    background: rgba(255, 255, 255, .1);
     transition: .2s background-color ease;
 
     &::placeholder {
-      color: rgba(white, .4);
+      color: rgba(255, 255, 255, .4);
       font-family: var(--font-family-eina);
       transition: .2s color ease;
     }
@@ -33,10 +33,10 @@ site-search {
     &:hover,
     &:active,
     &:focus {
-      background: rgba(white, .16);
+      background: rgba(255, 255, 255, .16);
 
       &::placeholder {
-        color: rgba(white, .5);
+        color: rgba(255, 255, 255, .5);
       }
 
       &::-webkit-search-cancel-button {
@@ -46,7 +46,7 @@ site-search {
 
     &:focus {
       &::placeholder {
-        color: rgba(white, 0);
+        color: rgba(255, 255, 255, 0);
       }
 
       + .search-icon::after {

@@ -1,4 +1,4 @@
-/* @import 'src/styles/variables'; */
+/* @import './variables'; */
 
 h1, h2, h3, h4 {
   color: var(--blackish);
@@ -50,7 +50,7 @@ stencil-route-link{
   transition: .2s color ease;
 
   &:hover {
-    color: lighten(var(--blue), 8);
+    color: #619aff;
     text-decoration: none;
   }
 }

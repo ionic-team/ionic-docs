@@ -16,7 +16,7 @@ ionic-docs.section-cli {
       color: black;
 
       &:hover {
-        color: lighten(black, 8);
+        color: #141414;
       }
     }
   }
@@ -78,12 +78,12 @@ site-header {
     font-weight: 600;
     display: inline-block;
     letter-spacing: -.02em;
-    color: rgba(white, .7);
+    color: rgba(255, 255, 255, .7);
     transition: .2s color ease;
     position: relative;
 
     &:hover {
-      color: rgba(white, 1);
+      color: rgba(255, 255, 255, 1);
     }
   }
 }
