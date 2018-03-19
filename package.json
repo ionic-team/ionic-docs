@@ -52,7 +52,8 @@
     "ionic",
     "node_modules",
     "scripts/build",
-    "server/build"
+    "server/build",
+    "src/docs-content/api"
   ],
   "author": "Ionic Team",
   "license": "MIT",
