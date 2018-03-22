@@ -35,21 +35,22 @@ declare global {
     new (): HTMLCardLinkElement;
   };
   interface HTMLElementTagNameMap {
-    "card-link": HTMLCardLinkElement;
+    'card-link': HTMLCardLinkElement;
   }
   interface ElementTagNameMap {
-    "card-link": HTMLCardLinkElement;
+    'card-link': HTMLCardLinkElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "card-link": JSXElements.CardLinkAttributes;
+      'card-link': JSXElements.CardLinkAttributes;
     }
   }
   namespace JSXElements {
     export interface CardLinkAttributes extends HTMLAttributes {
-      hasIcon?: boolean;
-      title?: string;
-      url?: string;
+      'hasIcon'?: boolean;
+      'title'?: string;
+      'url'?: string;
+      
     }
   }
 }
@@ -67,19 +68,20 @@ declare global {
     new (): HTMLCodeBlockElement;
   };
   interface HTMLElementTagNameMap {
-    "code-block": HTMLCodeBlockElement;
+    'code-block': HTMLCodeBlockElement;
   }
   interface ElementTagNameMap {
-    "code-block": HTMLCodeBlockElement;
+    'code-block': HTMLCodeBlockElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "code-block": JSXElements.CodeBlockAttributes;
+      'code-block': JSXElements.CodeBlockAttributes;
     }
   }
   namespace JSXElements {
     export interface CodeBlockAttributes extends HTMLAttributes {
-      language?: string;
+      'language'?: string;
+      
     }
   }
 }
@@ -97,19 +99,20 @@ declare global {
     new (): HTMLCodePreviewElement;
   };
   interface HTMLElementTagNameMap {
-    "code-preview": HTMLCodePreviewElement;
+    'code-preview': HTMLCodePreviewElement;
   }
   interface ElementTagNameMap {
-    "code-preview": HTMLCodePreviewElement;
+    'code-preview': HTMLCodePreviewElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "code-preview": JSXElements.CodePreviewAttributes;
+      'code-preview': JSXElements.CodePreviewAttributes;
     }
   }
   namespace JSXElements {
     export interface CodePreviewAttributes extends HTMLAttributes {
-      markup?: string;
+      'markup'?: string;
+      
     }
   }
 }
@@ -127,24 +130,25 @@ declare global {
     new (): HTMLCtrlDropdownElement;
   };
   interface HTMLElementTagNameMap {
-    "ctrl-dropdown": HTMLCtrlDropdownElement;
+    'ctrl-dropdown': HTMLCtrlDropdownElement;
   }
   interface ElementTagNameMap {
-    "ctrl-dropdown": HTMLCtrlDropdownElement;
+    'ctrl-dropdown': HTMLCtrlDropdownElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "ctrl-dropdown": JSXElements.CtrlDropdownAttributes;
+      'ctrl-dropdown': JSXElements.CtrlDropdownAttributes;
     }
   }
   namespace JSXElements {
     export interface CtrlDropdownAttributes extends HTMLAttributes {
-      autoClose?: boolean;
-      autoCloseDelay?: number;
-      items?: any[];
-      onSelect?: Function;
-      renderer?: Function;
-      setInitial?: Function;
+      'autoClose'?: boolean;
+      'autoCloseDelay'?: number;
+      'items'?: any[];
+      'onSelect'?: Function;
+      'renderer'?: Function;
+      'setInitial'?: Function;
+      
     }
   }
 }
@@ -162,19 +166,20 @@ declare global {
     new (): HTMLDocLoaderElement;
   };
   interface HTMLElementTagNameMap {
-    "doc-loader": HTMLDocLoaderElement;
+    'doc-loader': HTMLDocLoaderElement;
   }
   interface ElementTagNameMap {
-    "doc-loader": HTMLDocLoaderElement;
+    'doc-loader': HTMLDocLoaderElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "doc-loader": JSXElements.DocLoaderAttributes;
+      'doc-loader': JSXElements.DocLoaderAttributes;
     }
   }
   namespace JSXElements {
     export interface DocLoaderAttributes extends HTMLAttributes {
-      path?: string;
+      'path'?: string;
+      'onDocLoaded'?: (event: CustomEvent) => void;
     }
   }
 }
@@ -192,19 +197,20 @@ declare global {
     new (): HTMLIonicDocsElement;
   };
   interface HTMLElementTagNameMap {
-    "ionic-docs": HTMLIonicDocsElement;
+    'ionic-docs': HTMLIonicDocsElement;
   }
   interface ElementTagNameMap {
-    "ionic-docs": HTMLIonicDocsElement;
+    'ionic-docs': HTMLIonicDocsElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "ionic-docs": JSXElements.IonicDocsAttributes;
+      'ionic-docs': JSXElements.IonicDocsAttributes;
     }
   }
   namespace JSXElements {
     export interface IonicDocsAttributes extends HTMLAttributes {
       
+      'onSectionChanged'?: (event: CustomEvent) => void;
     }
   }
 }
@@ -222,18 +228,19 @@ declare global {
     new (): HTMLNewTabIconElement;
   };
   interface HTMLElementTagNameMap {
-    "new-tab-icon": HTMLNewTabIconElement;
+    'new-tab-icon': HTMLNewTabIconElement;
   }
   interface ElementTagNameMap {
-    "new-tab-icon": HTMLNewTabIconElement;
+    'new-tab-icon': HTMLNewTabIconElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "new-tab-icon": JSXElements.NewTabIconAttributes;
+      'new-tab-icon': JSXElements.NewTabIconAttributes;
     }
   }
   namespace JSXElements {
     export interface NewTabIconAttributes extends HTMLAttributes {
+      
       
     }
   }
@@ -252,18 +259,19 @@ declare global {
     new (): HTMLSiteContentElement;
   };
   interface HTMLElementTagNameMap {
-    "site-content": HTMLSiteContentElement;
+    'site-content': HTMLSiteContentElement;
   }
   interface ElementTagNameMap {
-    "site-content": HTMLSiteContentElement;
+    'site-content': HTMLSiteContentElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "site-content": JSXElements.SiteContentAttributes;
+      'site-content': JSXElements.SiteContentAttributes;
     }
   }
   namespace JSXElements {
     export interface SiteContentAttributes extends HTMLAttributes {
+      
       
     }
   }
@@ -282,18 +290,19 @@ declare global {
     new (): HTMLEcosystemDropdownElement;
   };
   interface HTMLElementTagNameMap {
-    "ecosystem-dropdown": HTMLEcosystemDropdownElement;
+    'ecosystem-dropdown': HTMLEcosystemDropdownElement;
   }
   interface ElementTagNameMap {
-    "ecosystem-dropdown": HTMLEcosystemDropdownElement;
+    'ecosystem-dropdown': HTMLEcosystemDropdownElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "ecosystem-dropdown": JSXElements.EcosystemDropdownAttributes;
+      'ecosystem-dropdown': JSXElements.EcosystemDropdownAttributes;
     }
   }
   namespace JSXElements {
     export interface EcosystemDropdownAttributes extends HTMLAttributes {
+      
       
     }
   }
@@ -312,19 +321,20 @@ declare global {
     new (): HTMLFrameworkDropdownElement;
   };
   interface HTMLElementTagNameMap {
-    "framework-dropdown": HTMLFrameworkDropdownElement;
+    'framework-dropdown': HTMLFrameworkDropdownElement;
   }
   interface ElementTagNameMap {
-    "framework-dropdown": HTMLFrameworkDropdownElement;
+    'framework-dropdown': HTMLFrameworkDropdownElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "framework-dropdown": JSXElements.FrameworkDropdownAttributes;
+      'framework-dropdown': JSXElements.FrameworkDropdownAttributes;
     }
   }
   namespace JSXElements {
     export interface FrameworkDropdownAttributes extends HTMLAttributes {
       
+      'onDocs-section-changed'?: (event: CustomEvent) => void;
     }
   }
 }
@@ -342,19 +352,20 @@ declare global {
     new (): HTMLSiteHeaderElement;
   };
   interface HTMLElementTagNameMap {
-    "site-header": HTMLSiteHeaderElement;
+    'site-header': HTMLSiteHeaderElement;
   }
   interface ElementTagNameMap {
-    "site-header": HTMLSiteHeaderElement;
+    'site-header': HTMLSiteHeaderElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "site-header": JSXElements.SiteHeaderAttributes;
+      'site-header': JSXElements.SiteHeaderAttributes;
     }
   }
   namespace JSXElements {
     export interface SiteHeaderAttributes extends HTMLAttributes {
-      currentSection?: string;
+      'currentSection'?: string;
+      
     }
   }
 }
@@ -372,18 +383,19 @@ declare global {
     new (): HTMLSiteMenuElement;
   };
   interface HTMLElementTagNameMap {
-    "site-menu": HTMLSiteMenuElement;
+    'site-menu': HTMLSiteMenuElement;
   }
   interface ElementTagNameMap {
-    "site-menu": HTMLSiteMenuElement;
+    'site-menu': HTMLSiteMenuElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "site-menu": JSXElements.SiteMenuAttributes;
+      'site-menu': JSXElements.SiteMenuAttributes;
     }
   }
   namespace JSXElements {
     export interface SiteMenuAttributes extends HTMLAttributes {
+      
       
     }
   }
@@ -402,18 +414,19 @@ declare global {
     new (): HTMLSitePreviewAppElement;
   };
   interface HTMLElementTagNameMap {
-    "site-preview-app": HTMLSitePreviewAppElement;
+    'site-preview-app': HTMLSitePreviewAppElement;
   }
   interface ElementTagNameMap {
-    "site-preview-app": HTMLSitePreviewAppElement;
+    'site-preview-app': HTMLSitePreviewAppElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "site-preview-app": JSXElements.SitePreviewAppAttributes;
+      'site-preview-app': JSXElements.SitePreviewAppAttributes;
     }
   }
   namespace JSXElements {
     export interface SitePreviewAppAttributes extends HTMLAttributes {
+      
       
     }
   }
@@ -432,18 +445,19 @@ declare global {
     new (): HTMLSiteSearchElement;
   };
   interface HTMLElementTagNameMap {
-    "site-search": HTMLSiteSearchElement;
+    'site-search': HTMLSiteSearchElement;
   }
   interface ElementTagNameMap {
-    "site-search": HTMLSiteSearchElement;
+    'site-search': HTMLSiteSearchElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "site-search": JSXElements.SiteSearchAttributes;
+      'site-search': JSXElements.SiteSearchAttributes;
     }
   }
   namespace JSXElements {
     export interface SiteSearchAttributes extends HTMLAttributes {
+      
       
     }
   }
@@ -462,19 +476,20 @@ declare global {
     new (): HTMLTabGroupElement;
   };
   interface HTMLElementTagNameMap {
-    "tab-group": HTMLTabGroupElement;
+    'tab-group': HTMLTabGroupElement;
   }
   interface ElementTagNameMap {
-    "tab-group": HTMLTabGroupElement;
+    'tab-group': HTMLTabGroupElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "tab-group": JSXElements.TabGroupAttributes;
+      'tab-group': JSXElements.TabGroupAttributes;
     }
   }
   namespace JSXElements {
     export interface TabGroupAttributes extends HTMLAttributes {
-      tabs?: string;
+      'tabs'?: string;
+      
     }
   }
 }
@@ -492,18 +507,19 @@ declare global {
     new (): HTMLTableOfContentsElement;
   };
   interface HTMLElementTagNameMap {
-    "table-of-contents": HTMLTableOfContentsElement;
+    'table-of-contents': HTMLTableOfContentsElement;
   }
   interface ElementTagNameMap {
-    "table-of-contents": HTMLTableOfContentsElement;
+    'table-of-contents': HTMLTableOfContentsElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "table-of-contents": JSXElements.TableOfContentsAttributes;
+      'table-of-contents': JSXElements.TableOfContentsAttributes;
     }
   }
   namespace JSXElements {
     export interface TableOfContentsAttributes extends HTMLAttributes {
+      
       
     }
   }

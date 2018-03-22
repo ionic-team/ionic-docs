@@ -7,6 +7,7 @@ import {
   State,
   Watch
 } from '@stencil/core';
+import { Helmet } from '@stencil/helmet';
 import { renderMarkdown } from './markdown';
 import frontMatter from 'front-matter';
 
@@ -68,8 +69,10 @@ export class DocLoader {
   }
 
   render() {
-    // console.log(this.body);
     return [
+      <Helmet>
+        <title>{this.title}</title>
+      </Helmet>,
       this.title && <h1>{this.title}</h1>,
       !this.hideTOC && <table-of-contents/>,
       <main
