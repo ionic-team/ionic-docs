@@ -11,7 +11,7 @@ let repo = null;
 export async function initRepoRefference() {
   if (!fs.existsSync(config.IONIC_DIR)) {
     const cloneOptions = new CloneOptions();
-    cloneOptions.checkoutBranch = 'core';
+    cloneOptions.checkoutBranch = 'master';
     console.log('Cloning Ionic. This may take a few mins...');
     repo = await Clone(config.MONOREPO_URL, 'ionic', cloneOptions);
     console.log('Clone complete');
@@ -22,7 +22,7 @@ export async function initRepoRefference() {
       repo = ref;
       return repo.fetchAll();
     }).then(function() {
-      return repo.mergeBranches('core', 'origin/core');
+      return repo.mergeBranches('master', 'origin/master');
     }).then(() => {
       return repo;
     });
