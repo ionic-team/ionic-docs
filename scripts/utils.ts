@@ -103,6 +103,10 @@ export async function shell(command) {
 }
 
 export function preCheck() {
+  if (!fs.existsSync(config.API_DOCS_DIR)) {
+    fs.mkdirSync(config.API_DOCS_DIR);
+  }
+
   return validateNodeVersion(process.version);
 }
 

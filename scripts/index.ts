@@ -7,8 +7,8 @@ import * as git from './git';
 import * as npm from './npm';
 import * as utils from './utils';
 
-// const ionicAngularPackage = require(`${config.ANGULAR_SRC}/package.json`);
-// const version = ionicAngularPackage.version;
+const markdownGlob = `ionic/${config.CORE_SRC}/**/readme.md`;
+const menuPath = 'src/components/site-menu';
 
 const startTime = new Date().getTime();
 
@@ -21,32 +21,31 @@ async function run() {
     utils.vlog('Precheck complete');
   }
 
+  // clone/update the git repo and get a list of all the tags
   const repo = await git.initRepoRefference();
   utils.vlog('validating tags');
   const versions = await git.getVersions();
 
-  if (!fs.existsSync(config.API_DOCS_DIR)) {
-    fs.mkdirSync(config.API_DOCS_DIR);
-  }
-
+  // generate the docs for each version
   for (let i = 0; i < versions.length; i++) {
     const version = versions[i].replace('v', '');
     const DOCS_DEST = path.join(config.API_DOCS_DIR, version);
+    // skip this version if it already exists.
+    // delete the directory in src/api/ to force a rebuild
     if (fs.existsSync(DOCS_DEST)) {
       console.log(`Skipping existing API docs for ${versions[i]}`);
       continue;
     }
 
-    console.log(`Generating API docs for ${versions[i]}. (1-3 mins)`);
+    // Generate the docs for this version
+    console.log(`Generating API docs for ${versions[i]} (1-3 mins)`);
     await git.checkout(versions[i]);
     await npm.install();
     await npm.buildAPIDocs();
-    const markdownGlob = `ionic/${config.CORE_SRC}/**/readme.md`;
     const files = await utils.promisedGlob(markdownGlob);
 
     await copyFiles(files, DOCS_DEST, version);
 
-    const menuPath = 'src/components/site-menu';
     generateNav(
       path.join(config.PATH_DOCS, menuPath, `api-menu.ts`),
       files,
@@ -86,7 +85,7 @@ function copyFiles(files, dest, version = 'latest') {
 
     // copy demo if it exists and update the ionic path
     hasDemo = utils.copyFileSync(
-      path.join(files[i].replace('/readme.md', ''), 'test/standalone/index.html'),
+      path.join(files[i].replace('/readme.md', ''), 'test/preview/index.html'),
       path.join(dest, demoName),
       file => {
         return file.replace(
