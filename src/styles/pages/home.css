@@ -82,11 +82,11 @@
 
       &::after {
         opacity: 0;
-        transition: .2s color ease;
+        transition: .2s opacity ease;
       }
 
       &:hover::after {
-        opacity: 1;
+        opacity: .5;
       }
     }
 
