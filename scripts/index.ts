@@ -12,6 +12,8 @@ const menuPath = 'src/components/site-menu';
 
 const startTime = new Date().getTime();
 
+
+// the main task of the API documentation generation process
 async function run() {
   utils.vlog('Starting CI task');
   if (!utils.preCheck()) {
@@ -57,6 +59,7 @@ async function run() {
   console.log(`Docs copied in ${endTime - startTime}ms`);
 }
 
+// Upsert the given version's navigation
 function generateNav(menuPath, files, version) {
   let file = fs.readFileSync(menuPath).toString('utf8');
   file = file.replace('export let apiMenu = ', '');
@@ -74,6 +77,7 @@ function generateNav(menuPath, files, version) {
   fs.writeFileSync(menuPath, ts);
 }
 
+// copy demos and API docs files over to docs-content/api
 function copyFiles(files, dest, version = 'latest') {
   utils.vlog(`Copying ${files.length} files`);
   let hasDemo = false;
