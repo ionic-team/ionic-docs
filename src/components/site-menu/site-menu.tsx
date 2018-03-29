@@ -1,4 +1,4 @@
-import { Component, State } from '@stencil/core';
+import { Component, Element, State } from '@stencil/core';
 import VersionDropdown from './version-dropdown';
 import menuMap from './site-menu-map';
 import { versions } from '../../versions';
@@ -9,6 +9,7 @@ import { versions } from '../../versions';
 })
 export class SiteMenu {
 
+  @Element() el: Element;
   @State() version = versions[versions.length - 1];
 
   createMenu(items) {
@@ -48,6 +49,7 @@ export class SiteMenu {
         </a>
         <ul class="sub-menu"
             role="menu"
+            aria-hidden="true"
             aria-label={text}>
           {this.createMenu(items)}
         </ul>
@@ -56,9 +58,21 @@ export class SiteMenu {
   }
 
   toggleSubmenu(toggle: HTMLElement) {
-    const expanded = toggle.getAttribute('aria-expanded') !== 'true';
-    toggle.setAttribute('aria-expanded', expanded ? 'true' : 'true');
-    toggle.nextElementSibling.classList.toggle('expanded');
+    [].forEach.call(this.el.querySelectorAll('a[aria-expanded="true"]'), el => {
+      if (el !== toggle && el.getAttribute('aria-expanded') === 'true') {
+        el.setAttribute('aria-expanded', 'false');
+        const list = el.nextElementSibling;
+        list.setAttribute('aria-hidden', 'true');
+        list.classList.remove('expanded');
+      }
+    });
+
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+
+    const currentList = toggle.nextElementSibling;
+    currentList.setAttribute('aria-hidden', expanded ? 'true' : 'false');
+    currentList.classList.toggle('expanded');
   }
 
   render() {
