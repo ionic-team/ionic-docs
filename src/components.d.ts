@@ -3,6 +3,9 @@
  * It contains typing information for all components that exist in this project
  * and imports for stencil collections that might be configured in your stencil.config.js file
  */
+
+import '@stencil/core';
+
 declare global {
   namespace JSX {
     interface Element {}
@@ -23,12 +26,11 @@ declare global {
 import '@stencil/router';
 
 
-import {
-  CardLink as CardLink
-} from './components/card-link/card-link';
-
 declare global {
-  interface HTMLCardLinkElement extends CardLink, HTMLStencilElement {
+  interface HTMLCardLinkElement extends HTMLStencilElement {
+    'hasIcon': boolean;
+    'title': string;
+    'url': string;
   }
   var HTMLCardLinkElement: {
     prototype: HTMLCardLinkElement;
@@ -50,18 +52,14 @@ declare global {
       'hasIcon'?: boolean;
       'title'?: string;
       'url'?: string;
-      
     }
   }
 }
 
 
-import {
-  CodeBlock as CodeBlock
-} from './components/code-block/code-block';
-
 declare global {
-  interface HTMLCodeBlockElement extends CodeBlock, HTMLStencilElement {
+  interface HTMLCodeBlockElement extends HTMLStencilElement {
+    'language': string;
   }
   var HTMLCodeBlockElement: {
     prototype: HTMLCodeBlockElement;
@@ -81,18 +79,14 @@ declare global {
   namespace JSXElements {
     export interface CodeBlockAttributes extends HTMLAttributes {
       'language'?: string;
-      
     }
   }
 }
 
 
-import {
-  CodePreview as CodePreview
-} from './components/code-preview/code-preview';
-
 declare global {
-  interface HTMLCodePreviewElement extends CodePreview, HTMLStencilElement {
+  interface HTMLCodePreviewElement extends HTMLStencilElement {
+    'markup': string;
   }
   var HTMLCodePreviewElement: {
     prototype: HTMLCodePreviewElement;
@@ -112,18 +106,19 @@ declare global {
   namespace JSXElements {
     export interface CodePreviewAttributes extends HTMLAttributes {
       'markup'?: string;
-      
     }
   }
 }
 
 
-import {
-  CtrlDropdown as CtrlDropdown
-} from './components/ctrl-dropdown/ctrl-dropdown';
-
 declare global {
-  interface HTMLCtrlDropdownElement extends CtrlDropdown, HTMLStencilElement {
+  interface HTMLCtrlDropdownElement extends HTMLStencilElement {
+    'autoClose': boolean;
+    'autoCloseDelay': number;
+    'items': any[];
+    'onSelect': Function;
+    'renderer': Function;
+    'setInitial': Function;
   }
   var HTMLCtrlDropdownElement: {
     prototype: HTMLCtrlDropdownElement;
@@ -148,18 +143,14 @@ declare global {
       'onSelect'?: Function;
       'renderer'?: Function;
       'setInitial'?: Function;
-      
     }
   }
 }
 
 
-import {
-  DocLoader as DocLoader
-} from './components/doc-loader/doc-loader';
-
 declare global {
-  interface HTMLDocLoaderElement extends DocLoader, HTMLStencilElement {
+  interface HTMLDocLoaderElement extends HTMLStencilElement {
+    'path': string;
   }
   var HTMLDocLoaderElement: {
     prototype: HTMLDocLoaderElement;
@@ -178,19 +169,16 @@ declare global {
   }
   namespace JSXElements {
     export interface DocLoaderAttributes extends HTMLAttributes {
-      'path'?: string;
       'onDocLoaded'?: (event: CustomEvent) => void;
+      'path'?: string;
     }
   }
 }
 
 
-import {
-  IonicDocs as IonicDocs
-} from './components/ionic-docs/ionic-docs';
-
 declare global {
-  interface HTMLIonicDocsElement extends IonicDocs, HTMLStencilElement {
+  interface HTMLIonicDocsElement extends HTMLStencilElement {
+
   }
   var HTMLIonicDocsElement: {
     prototype: HTMLIonicDocsElement;
@@ -209,19 +197,15 @@ declare global {
   }
   namespace JSXElements {
     export interface IonicDocsAttributes extends HTMLAttributes {
-      
       'onSectionChanged'?: (event: CustomEvent) => void;
     }
   }
 }
 
 
-import {
-  NewTabIcon as NewTabIcon
-} from './components/new-tab-icon/new-tab-icon';
-
 declare global {
-  interface HTMLNewTabIconElement extends NewTabIcon, HTMLStencilElement {
+  interface HTMLNewTabIconElement extends HTMLStencilElement {
+
   }
   var HTMLNewTabIconElement: {
     prototype: HTMLNewTabIconElement;
@@ -240,19 +224,15 @@ declare global {
   }
   namespace JSXElements {
     export interface NewTabIconAttributes extends HTMLAttributes {
-      
-      
+
     }
   }
 }
 
 
-import {
-  SiteContent as SiteContent
-} from './components/site-content/site-content';
-
 declare global {
-  interface HTMLSiteContentElement extends SiteContent, HTMLStencilElement {
+  interface HTMLSiteContentElement extends HTMLStencilElement {
+
   }
   var HTMLSiteContentElement: {
     prototype: HTMLSiteContentElement;
@@ -271,19 +251,15 @@ declare global {
   }
   namespace JSXElements {
     export interface SiteContentAttributes extends HTMLAttributes {
-      
-      
+
     }
   }
 }
 
 
-import {
-  EcosystemDropdown as EcosystemDropdown
-} from './components/site-header/ecosystem-dropdown';
-
 declare global {
-  interface HTMLEcosystemDropdownElement extends EcosystemDropdown, HTMLStencilElement {
+  interface HTMLEcosystemDropdownElement extends HTMLStencilElement {
+
   }
   var HTMLEcosystemDropdownElement: {
     prototype: HTMLEcosystemDropdownElement;
@@ -302,19 +278,15 @@ declare global {
   }
   namespace JSXElements {
     export interface EcosystemDropdownAttributes extends HTMLAttributes {
-      
-      
+
     }
   }
 }
 
 
-import {
-  FrameworkDropdown as FrameworkDropdown
-} from './components/site-header/framework-dropdown';
-
 declare global {
-  interface HTMLFrameworkDropdownElement extends FrameworkDropdown, HTMLStencilElement {
+  interface HTMLFrameworkDropdownElement extends HTMLStencilElement {
+
   }
   var HTMLFrameworkDropdownElement: {
     prototype: HTMLFrameworkDropdownElement;
@@ -333,19 +305,15 @@ declare global {
   }
   namespace JSXElements {
     export interface FrameworkDropdownAttributes extends HTMLAttributes {
-      
       'onDocs-section-changed'?: (event: CustomEvent) => void;
     }
   }
 }
 
 
-import {
-  SiteHeader as SiteHeader
-} from './components/site-header/site-header';
-
 declare global {
-  interface HTMLSiteHeaderElement extends SiteHeader, HTMLStencilElement {
+  interface HTMLSiteHeaderElement extends HTMLStencilElement {
+    'currentSection': string;
   }
   var HTMLSiteHeaderElement: {
     prototype: HTMLSiteHeaderElement;
@@ -365,18 +333,14 @@ declare global {
   namespace JSXElements {
     export interface SiteHeaderAttributes extends HTMLAttributes {
       'currentSection'?: string;
-      
     }
   }
 }
 
 
-import {
-  SiteMenu as SiteMenu
-} from './components/site-menu/site-menu';
-
 declare global {
-  interface HTMLSiteMenuElement extends SiteMenu, HTMLStencilElement {
+  interface HTMLSiteMenuElement extends HTMLStencilElement {
+
   }
   var HTMLSiteMenuElement: {
     prototype: HTMLSiteMenuElement;
@@ -395,19 +359,15 @@ declare global {
   }
   namespace JSXElements {
     export interface SiteMenuAttributes extends HTMLAttributes {
-      
-      
+
     }
   }
 }
 
 
-import {
-  SitePreviewApp as SitePreviewApp
-} from './components/site-preview-app/site-preview-app';
-
 declare global {
-  interface HTMLSitePreviewAppElement extends SitePreviewApp, HTMLStencilElement {
+  interface HTMLSitePreviewAppElement extends HTMLStencilElement {
+
   }
   var HTMLSitePreviewAppElement: {
     prototype: HTMLSitePreviewAppElement;
@@ -426,19 +386,15 @@ declare global {
   }
   namespace JSXElements {
     export interface SitePreviewAppAttributes extends HTMLAttributes {
-      
-      
+
     }
   }
 }
 
 
-import {
-  SiteSearch as SiteSearch
-} from './components/site-search/site-search';
-
 declare global {
-  interface HTMLSiteSearchElement extends SiteSearch, HTMLStencilElement {
+  interface HTMLSiteSearchElement extends HTMLStencilElement {
+
   }
   var HTMLSiteSearchElement: {
     prototype: HTMLSiteSearchElement;
@@ -457,19 +413,15 @@ declare global {
   }
   namespace JSXElements {
     export interface SiteSearchAttributes extends HTMLAttributes {
-      
-      
+
     }
   }
 }
 
 
-import {
-  TabGroup as TabGroup
-} from './components/tab-group/tab-group';
-
 declare global {
-  interface HTMLTabGroupElement extends TabGroup, HTMLStencilElement {
+  interface HTMLTabGroupElement extends HTMLStencilElement {
+    'tabs': string;
   }
   var HTMLTabGroupElement: {
     prototype: HTMLTabGroupElement;
@@ -489,18 +441,14 @@ declare global {
   namespace JSXElements {
     export interface TabGroupAttributes extends HTMLAttributes {
       'tabs'?: string;
-      
     }
   }
 }
 
 
-import {
-  TableOfContents as TableOfContents
-} from './components/table-of-contents/table-of-contents';
-
 declare global {
-  interface HTMLTableOfContentsElement extends TableOfContents, HTMLStencilElement {
+  interface HTMLTableOfContentsElement extends HTMLStencilElement {
+
   }
   var HTMLTableOfContentsElement: {
     prototype: HTMLTableOfContentsElement;
@@ -519,8 +467,7 @@ declare global {
   }
   namespace JSXElements {
     export interface TableOfContentsAttributes extends HTMLAttributes {
-      
-      
+
     }
   }
 }
