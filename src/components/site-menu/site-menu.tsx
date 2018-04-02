@@ -1,4 +1,4 @@
-import { Component, Element, State } from '@stencil/core';
+import { Component, State } from '@stencil/core';
 import VersionDropdown from './version-dropdown';
 import menuMap from './site-menu-map';
 import { versions } from '../../versions';
@@ -9,10 +9,10 @@ import { versions } from '../../versions';
 })
 export class SiteMenu {
 
-  @Element() el: Element;
+  @State() activeItem: string;
   @State() version = versions[versions.length - 1];
 
-  createMenu(items) {
+  createMenu(items, isTopLevel: boolean) {
     return Object.keys(items).map(key => {
       const val = items[key];
       switch (typeof val) {
@@ -21,15 +21,16 @@ export class SiteMenu {
         case 'function':
           return this.createSubmenu(key, val(this.version));
         default:
-          return this.createMenuItem(key, val);
+          return this.createMenuItem(key, val, isTopLevel);
       }
     });
   }
 
-  createMenuItem(text: string, url: string) {
+  createMenuItem(text: string, url: string, isTopLevel: boolean) {
     return (
       <li role="none">
         <stencil-route-link exact url={url}
+          onClick={ isTopLevel ? () => this.setActiveItem(text) : null }
           anchor-title={text}
           anchor-role="menuitem">
           {text}
@@ -39,40 +40,27 @@ export class SiteMenu {
   }
 
   createSubmenu(text: string, items: Object) {
+    const isActive = text === this.activeItem;
     return (
       <li role="none">
-        <a onClick={e => this.toggleSubmenu(e.target as HTMLElement)}
+        <a onClick={() => this.setActiveItem(text)}
            title={text}
            role="menuitem"
-           aria-expanded="false">
+           aria-expanded={isActive}>
           {text}
         </a>
-        <ul class="sub-menu"
+        <ul class={{ 'sub-menu': true, 'expanded': isActive }}
             role="menu"
-            aria-hidden="true"
+            aria-hidden={isActive}
             aria-label={text}>
-          {this.createMenu(items)}
+          {this.createMenu(items, false)}
         </ul>
       </li>
     );
   }
 
-  toggleSubmenu(toggle: HTMLElement) {
-    [].forEach.call(this.el.querySelectorAll('a[aria-expanded="true"]'), el => {
-      if (el !== toggle && el.getAttribute('aria-expanded') === 'true') {
-        el.setAttribute('aria-expanded', 'false');
-        const list = el.nextElementSibling;
-        list.setAttribute('aria-hidden', 'true');
-        list.classList.remove('expanded');
-      }
-    });
-
-    const expanded = toggle.getAttribute('aria-expanded') === 'true';
-    toggle.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-
-    const currentList = toggle.nextElementSibling;
-    currentList.setAttribute('aria-hidden', expanded ? 'true' : 'false');
-    currentList.classList.toggle('expanded');
+  setActiveItem(text: string) {
+    this.activeItem = this.activeItem === text ? null : text;
   }
 
   render() {
@@ -82,14 +70,9 @@ export class SiteMenu {
         onSelect={selected => { this.version = selected; }}/>,
       <nav class="menu-wrapper">
         <ul class="nested-menu">
-          { this.createMenu(menuMap) }
+          { this.createMenu(menuMap, true) }
         </ul>
       </nav>
     ];
   }
 }
-
-
-
-
-
