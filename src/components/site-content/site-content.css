@@ -1,5 +1,3 @@
-/* @import 'src/styles/variables'; */
-
 .linked-heading {
   color: inherit;
   font-weight: inherit;
@@ -20,16 +18,6 @@
 
 .linked-heading:hover:before {
   color: var(--blue);
-}
-
-main {
-  transform-origin: center top;
-  transition: .3s transform, .3s opacity;
-}
-
-main.transitioning {
-  // transform: translateX(100%);
-  opacity: 0;
 }
 
 site-content {
