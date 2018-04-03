@@ -45,23 +45,20 @@ export class DocLoader {
 
   handleNewContent = text => {
     const { attributes, body } = this.stripTitle(frontMatter(text));
-    attributes.path = this.path;
+    const { path } = this;
     this.title = attributes.title;
     this.hideTOC = attributes.hideTOC;
     this.body = renderMarkdown(body);
-    this.docLoaded.emit(attributes);
+    this.docLoaded.emit({ ...attributes, path });
   }
 
-  stripTitle = separated => {
-    let body = separated.body;
-    const attributes = separated.attributes;
-    const firstH1 = /^# (.*?)$/gm.exec(body);
-    if (firstH1 && firstH1[1]) {
-      body = body.replace(firstH1[0], '');
-      attributes['title'] = attributes['title'] ?
-        attributes['title'] : firstH1[1];
+  stripTitle = ({ attributes, body }) => {
+    const [ match, h1 ] = /^# (.*?)$/gm.exec(body);
+    if (match && h1) {
+      body = body.replace(match, '');
+      attributes.title = attributes.title || h1;
     }
-    return {body: body, attributes: attributes};
+    return { attributes, body };
   }
 
   render() {
