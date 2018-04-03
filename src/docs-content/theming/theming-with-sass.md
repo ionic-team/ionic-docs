@@ -10,8 +10,7 @@ $colors:  (
     base:          #ff0000,
     contrast:      #ffffff,
     shade:         #c60000,
-    tint:          #f71818,
-    rgb:           color-to-rgb-list(#ff0000)
+    tint:          #f71818
   )
 );
 ```
@@ -24,8 +23,7 @@ $colors:              (
     base:       #ff0000,
     contrast:   #ffffff,
     shade:      #ae0000,
-    tint:       #ff3633,
-    rgb:        color-to-rgb-list(#ff0000)
+    tint:       #ff3633
   )
 )
 ```
@@ -39,8 +37,7 @@ $colors:  (
     base:         $my-primary,
     contrast:     #ffffff,
     shade:        get-color-shade($my-primary),
-    tint:         get-color-tint($my-primary),
-    rgb:          color-to-rgb-list(#ff0000)
+    tint:         get-color-tint($my-primary)
   )
 );
 ```
@@ -53,8 +50,7 @@ $colors-md:  (
     base:          #ff0000,
     contrast:      #ffffff,
     shade:         #c60000,
-    tint:          #f71818,
-    rgb:           color-to-rgb-list(#ff0000)
+    tint:          #f71818
   )
 );
 ```

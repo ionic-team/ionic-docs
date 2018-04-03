@@ -176,35 +176,7 @@ The following is a list of all the default generated RGB List values:
 As you can see, these are the exact same color value as the non-RGB version but can now be used with `rbga()`. For example, primary can now be used in the following way
 
 ```css
-color: rgba(var(--ion-color-primary-rgb), --ion-alpha-low);
-```
-
-#### Alpha Properties
-Ionic provides top level alpha variables similar to how it provides colors. 
-
-
-##### Application Alpha Properties
-These properties are named according to what they are used for. For example, disabled alpha is used on disabled items throughout the component collective. 
-
-```css
---ion-alpha-activated: .1;
---ion-alpha-border-low: .1;
---ion-alpha-border-medium: .2;
---ion-alpha-border-high: .3;
---ion-alpha-disabled: .5;
---ion-alpha-focused: .25;
---ion-alpha-hover: .1;
-```
-
-##### General Alpha Properties
-These properties are abstractly named and can be used generally throughout components. It is recommended that these values remain ordered. For example, the value of lowest should always be smaller than low, and so on. However, this is not a hard rule, and designers are able to change the alpha-lowest to any value they see fit for component that use it.
-
-```css
---ion-alpha-lowest: .1;
---ion-alpha-low: .25;
---ion-alpha-medium: .5;
---ion-alpha-high: .8;
---ion-alpha-highest: .9;
+color: rgba(var(--ion-color-primary-rgb), .25);
 ```
 
 ## Applying Styles

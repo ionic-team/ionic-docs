@@ -66,28 +66,6 @@ Ionic provides the following application colors:
 --ion-placeholder-text-color
 ```
 
-#### Alpha Properties
-Alpha CSS Properties are used throughout components to make it easy to change the opacity of elements without having to change, or even know, the color. Ionic provides both application and abstract alpha properties.
-
-Application properties are named for their exact use. For example, `ion-alpha-disabled`; whereas abstract properties are general groups that component can connect to, like `ion-alpha-low`.
-
-Ionic provides the following alpha variables:
-
-```css
---ion-alpha-activated: .1;
---ion-alpha-border-low: .1;
---ion-alpha-border-medium: .2;
---ion-alpha-border-high: .3;
---ion-alpha-disabled: .5;
---ion-alpha-focused: .25;
---ion-alpha-hover: .1;
---ion-alpha-lowest: .1;
---ion-alpha-low: .25;
---ion-alpha-medium: .5;
---ion-alpha-high: .8;
---ion-alpha-highest: .9;
-```
-
 ## Setting CSS Properties
 The easiest way to apply application-wide properties is to load a CSS file that applies varibles to the root.
 
