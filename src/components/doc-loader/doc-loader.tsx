@@ -24,6 +24,15 @@ export class DocLoader {
     return this.fetchNewContent();
   }
 
+  @Watch('path')
+  fetchNewContent() {
+    return fetch(`/docs/docs-content/${this.path}.md`)
+      .then(this.validateResponse)
+      .then(res => res.text())
+      .then(this.handleNewContent)
+      .catch(this.handleFetchError);
+  }
+
   validateResponse = res => {
     if (res.ok) return res;
     throw new Error(res.statusText);
@@ -32,6 +41,15 @@ export class DocLoader {
   handleFetchError = err => {
     this.title = null;
     this.body = `<p>Unable to load ${this.path}: ${err.message}</p>`;
+  }
+
+  handleNewContent = text => {
+    const { attributes, body } = this.stripTitle(frontMatter(text));
+    attributes.path = this.path;
+    this.title = attributes.title;
+    this.hideTOC = attributes.hideTOC;
+    this.body = renderMarkdown(body);
+    this.docLoaded.emit(attributes);
   }
 
   stripTitle = separated => {
@@ -44,23 +62,6 @@ export class DocLoader {
         attributes['title'] : firstH1[1];
     }
     return {body: body, attributes: attributes};
-  }
-
-  @Watch('path')
-  fetchNewContent() {
-    this.hideTOC = true;
-    return fetch(`/docs/docs-content/${this.path}.md`)
-      .then(this.validateResponse)
-      .then(res => res.text())
-      .then(text => this.stripTitle(frontMatter(text)))
-      .then(({ attributes, body }) => {
-        attributes['path'] = this.path;
-        this.title = attributes['title'];
-        this.hideTOC = attributes['hideTOC'];
-        this.body = renderMarkdown(body);
-        this.docLoaded.emit(attributes);
-      })
-      .catch(this.handleFetchError);
   }
 
   render() {
