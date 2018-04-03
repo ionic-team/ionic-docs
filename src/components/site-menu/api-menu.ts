@@ -209,12 +209,9 @@ export let apiMenu = {
     "split-pane": "/docs/api/0.1.2/split-pane",
     "status-tap": "/docs/api/0.1.2/status-tap",
     "tab-button": "/docs/api/0.1.2/tab-button",
-    "tab-highlight": "/docs/api/0.1.2/tab-highlight",
     "tab": "/docs/api/0.1.2/tab",
     "tabbar": "/docs/api/0.1.2/tabbar",
     "tabs": "/docs/api/0.1.2/tabs",
-    "basic": "/docs/api/0.1.2/basic",
-    "translucent": "/docs/api/0.1.2/translucent",
     "tap-click": "/docs/api/0.1.2/tap-click",
     "text": "/docs/api/0.1.2/text",
     "textarea": "/docs/api/0.1.2/textarea",
@@ -224,7 +221,6 @@ export let apiMenu = {
     "toast": "/docs/api/0.1.2/toast",
     "toggle": "/docs/api/0.1.2/toggle",
     "toolbar": "/docs/api/0.1.2/toolbar",
-    "util": "/docs/api/0.1.2/util",
     "virtual-scroll": "/docs/api/0.1.2/virtual-scroll"
   },
   "0.1.3": {
@@ -323,12 +319,9 @@ export let apiMenu = {
     "split-pane": "/docs/api/0.1.3/split-pane",
     "status-tap": "/docs/api/0.1.3/status-tap",
     "tab-button": "/docs/api/0.1.3/tab-button",
-    "tab-highlight": "/docs/api/0.1.3/tab-highlight",
     "tab": "/docs/api/0.1.3/tab",
     "tabbar": "/docs/api/0.1.3/tabbar",
     "tabs": "/docs/api/0.1.3/tabs",
-    "basic": "/docs/api/0.1.3/basic",
-    "translucent": "/docs/api/0.1.3/translucent",
     "tap-click": "/docs/api/0.1.3/tap-click",
     "text": "/docs/api/0.1.3/text",
     "textarea": "/docs/api/0.1.3/textarea",
@@ -338,7 +331,6 @@ export let apiMenu = {
     "toast": "/docs/api/0.1.3/toast",
     "toggle": "/docs/api/0.1.3/toggle",
     "toolbar": "/docs/api/0.1.3/toolbar",
-    "util": "/docs/api/0.1.3/util",
     "virtual-scroll": "/docs/api/0.1.3/virtual-scroll"
   },
   "0.1.4-9": {
@@ -437,12 +429,9 @@ export let apiMenu = {
     "split-pane": "/docs/api/0.1.4-9/split-pane",
     "status-tap": "/docs/api/0.1.4-9/status-tap",
     "tab-button": "/docs/api/0.1.4-9/tab-button",
-    "tab-highlight": "/docs/api/0.1.4-9/tab-highlight",
     "tab": "/docs/api/0.1.4-9/tab",
     "tabbar": "/docs/api/0.1.4-9/tabbar",
     "tabs": "/docs/api/0.1.4-9/tabs",
-    "basic": "/docs/api/0.1.4-9/basic",
-    "translucent": "/docs/api/0.1.4-9/translucent",
     "tap-click": "/docs/api/0.1.4-9/tap-click",
     "text": "/docs/api/0.1.4-9/text",
     "textarea": "/docs/api/0.1.4-9/textarea",
@@ -452,7 +441,6 @@ export let apiMenu = {
     "toast": "/docs/api/0.1.4-9/toast",
     "toggle": "/docs/api/0.1.4-9/toggle",
     "toolbar": "/docs/api/0.1.4-9/toolbar",
-    "util": "/docs/api/0.1.4-9/util",
     "virtual-scroll": "/docs/api/0.1.4-9/virtual-scroll"
   }
 }

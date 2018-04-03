@@ -10,3 +10,4 @@ package-lock.json
 src/docs-content/api/
 /null
 /stencil-stats.json
+/docs.json

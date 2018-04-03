@@ -14,7 +14,7 @@ export async function install() {
 
 export async function buildAPIDocs() {
   utils.vlog('building');
-  return await utils.shell('cd ionic/core && npm run build');
+  await utils.shell('cd ionic/core && npm run build');
+  // return JSON.parse(fs.readFileSync('ionic/core/dist/docs.json', 'utf8'));
+  return JSON.parse(fs.readFileSync('docs.json', 'utf8'));
 }
-
-

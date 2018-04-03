@@ -1,14 +1,14 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import * as Git from 'nodegit';
-// import * as glob from 'glob';
 import * as config from './config';
+import * as docgen from './docgen';
 import * as git from './git';
 import * as npm from './npm';
 import * as utils from './utils';
 
-const markdownGlob = `ionic/${config.CORE_SRC}/**/readme.md`;
 const menuPath = 'src/components/site-menu';
+const menuHeader = 'export let apiMenu = ';
+const ionicComponentsDir = `${config.IONIC_DIR}/${config.CORE_SRC}/components`;
 
 const startTime = new Date().getTime();
 
@@ -43,14 +43,13 @@ async function run() {
     console.log(`Generating API docs for ${versions[i]} (1-3 mins)`);
     await git.checkout(versions[i]);
     await npm.install();
-    await npm.buildAPIDocs();
-    const files = await utils.promisedGlob(markdownGlob);
+    const APIDocs = await npm.buildAPIDocs();
 
-    await copyFiles(files, DOCS_DEST, version);
+    copyFiles(APIDocs.components, DOCS_DEST, version);
 
     generateNav(
       path.join(config.PATH_DOCS, menuPath, `api-menu.ts`),
-      files,
+      APIDocs.components,
       version
     );
   }
@@ -59,38 +58,21 @@ async function run() {
   console.log(`Docs copied in ${endTime - startTime}ms`);
 }
 
-// Upsert the given version's navigation
-function generateNav(menuPath, files, version) {
-  let file = fs.readFileSync(menuPath).toString('utf8');
-  file = file.replace('export let apiMenu = ', '');
-
-  const menu = JSON.parse(file);
-
-  const components = {};
-  for (let i = 0; i < files.length; i++) {
-    const componentName = utils.filterParentDirectory(files[i]);
-    components[componentName] = `/docs/api/${version}/${componentName}`;
-  }
-
-  menu[version] = components;
-  const ts = `export let apiMenu = ${JSON.stringify(menu, null, '  ')}`;
-  fs.writeFileSync(menuPath, ts);
-}
-
 // copy demos and API docs files over to docs-content/api
-function copyFiles(files, dest, version = 'latest') {
-  utils.vlog(`Copying ${files.length} files`);
+function copyFiles(components, dest, version = 'latest') {
+  utils.vlog(`Copying ${components.length} files`);
   let hasDemo = false;
 
-  for (let i = 0; i < files.length; i++) {
-    const componentName = utils.filterParentDirectory(files[i]);
-    const markdownName = `${componentName}.md`;
-    const demoName = `${componentName}.html`;
+  if (!fs.existsSync(dest)) {
+    fs.mkdirSync(dest);
+  }
 
+  for (let i = 0; i < components.length; i++) {
+    const componentName = components[i].tag.replace('ion-', '');
     // copy demo if it exists and update the ionic path
     hasDemo = utils.copyFileSync(
-      path.join(files[i].replace('/readme.md', ''), 'test/preview/index.html'),
-      path.join(dest, demoName),
+      path.join(ionicComponentsDir, componentName, 'test/preview/index.html'),
+      path.join(dest, `${componentName}-demo.html`),
       file => {
         return file.replace(
           '/dist/ionic.js',
@@ -100,21 +82,30 @@ function copyFiles(files, dest, version = 'latest') {
     );
 
     // copying component markdown
-    utils.vlog('Copying file: ', markdownName);
-    utils.copyFileSync(
-      files[i],
-      path.join(dest, markdownName),
-      file => {
-        let header = '---';
-        if (hasDemo) {
-          header += '\r\n';
-          header += `previewUrl: '/docs/docs-content/api/${version}/${demoName}'`;
-        }
-        header += '\r\n' + '---' + '\r\n\r\n';
-        return header + file;
-      }
+    utils.vlog('Generating page: ', componentName);
+    fs.writeFileSync(
+      path.join(dest, `${componentName}.html`),
+      docgen.getComponentHTML(components[i], hasDemo)
     );
   }
+}
+
+// Upsert the given version's navigation
+function generateNav(menuPath, components, version) {
+  let file = fs.readFileSync(menuPath).toString('utf8');
+  file = file.replace(menuHeader, '');
+
+  const menu = JSON.parse(file);
+
+  const componentsList = {};
+  for (let i = 0; i < components.length; i++) {
+    const tag = components[i].tag.replace('ion-', '');
+    componentsList[tag] = `/docs/api/${version}/${tag}`;
+  }
+
+  menu[version] = componentsList;
+  const ts = `${menuHeader}${JSON.stringify(menu, null, '  ')}`;
+  fs.writeFileSync(menuPath, ts);
 }
 
 // Invoke run() only if executed directly i.e. `node ./scripts/e2e`
