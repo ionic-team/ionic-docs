@@ -53,10 +53,11 @@ export class DocLoader {
   }
 
   stripTitle = ({ attributes, body }) => {
-    const [ match, h1 ] = /^# (.*?)$/gm.exec(body);
-    if (match && h1) {
-      body = body.replace(match, '');
-      attributes.title = attributes.title || h1;
+    const match = /^# (.*?)$/gm.exec(body);
+    if (match) {
+      const [ titleLine, title ] = match;
+      body = body.replace(titleLine, '');
+      attributes.title = attributes.title || title;
     }
     return { attributes, body };
   }
