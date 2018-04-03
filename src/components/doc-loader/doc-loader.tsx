@@ -1,6 +1,5 @@
 import {
   Component,
-  Element,
   Event,
   EventEmitter,
   Prop,
@@ -15,7 +14,6 @@ import frontMatter from 'front-matter';
   tag: 'doc-loader'
 })
 export class DocLoader {
-  @Element() el: Element;
   @Event() docLoaded: EventEmitter;
   @Prop() path: string;
   @State() body: string;
