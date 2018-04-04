@@ -5,6 +5,15 @@
     grid-column-gap: 20px;
     grid-row-gap: 19px;
     padding-bottom: 32px;
+
+    @media (max-width: 760px)  {
+      display: flex;
+      flex-wrap: wrap;
+
+      card-link {
+        margin-bottom: 20px;
+      }
+    }
   }
 
   .card-introduction a,

@@ -86,4 +86,23 @@ site-header {
       color: rgba(255, 255, 255, 1);
     }
   }
+
+  @media (max-width: 340px)  {
+    ctrl-dropdown {
+      display: none;
+    }
+  }
+
+  @media (max-width: 640px)  {
+    site-search {
+      display: none;
+    }
+  }
+
+  @media (max-width: 700px)  {
+    .github {
+      display: none;
+    }
+  }
 }
+
