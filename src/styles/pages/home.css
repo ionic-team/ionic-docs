@@ -95,7 +95,7 @@
       }
 
       &:hover::after {
-        opacity: .5;
+        opacity: 1;
       }
     }
 
