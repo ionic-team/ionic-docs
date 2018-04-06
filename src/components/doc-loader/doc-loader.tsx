@@ -7,7 +7,7 @@ import {
   Watch
 } from '@stencil/core';
 import { Helmet } from '@stencil/helmet';
-import { renderMarkdown } from './markdown';
+import { renderMarkdown } from '../../markdown';
 import frontMatter from 'front-matter';
 
 @Component({
