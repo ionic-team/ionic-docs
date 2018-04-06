@@ -42,6 +42,15 @@ li {
   margin-bottom: 1.08em;
 }
 
+code {
+  background: #f5f7fa;
+  color: #e44871;
+}
+
+pre code {
+  color: #334561;
+}
+
 a,
 stencil-route-link{
   color: var(--blue);
