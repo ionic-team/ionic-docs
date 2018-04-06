@@ -4,7 +4,7 @@
 @import '../../styles/general.css';
 @import '../../styles/pages/index.css';
 
-$header-height: 75px;
+$header-height: 64px;
 $breakpoint-lg: 1124px;
 $breakpoint-md: 700px;
 
@@ -48,9 +48,11 @@ site-preview-app {
 }
 
 site-header {
+  align-items: center;
   align-self: stretch;
   grid-area: header;
-  padding: .3rem 1.2rem 0 2rem;
+  padding-left: 2rem;
+  padding-right: 1.2rem;
   top: 0;
 
   @media (max-width: $breakpoint-md)  {
