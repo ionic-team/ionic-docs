@@ -73,7 +73,7 @@
     }
 
     a {
-      padding: 16px 8px 15px 70px;
+      padding: 16px 8px 16px 72px;
       position: relative;
       display: block;
 
@@ -116,7 +116,17 @@
     }
 
     strong {
+      color: #151c29;
       display: block;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    span {
+      color: #768090;
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: -0.01em;
     }
   }
 }
