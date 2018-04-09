@@ -2,7 +2,7 @@ import { Component, Element, Listen, State} from '@stencil/core';
 
 @Component({
   tag: 'table-of-contents',
-  styleUrl: 'table-of-contents.css'
+  styleUrl: 'table-of-contents.scss'
 })
 export class TableOfContents {
 

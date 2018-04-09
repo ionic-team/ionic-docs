@@ -1,11 +1,11 @@
-@import '../../styles/variables.css';
-@import '../../styles/fonts.css';
-@import '../../styles/typography.css';
-@import '../../styles/general.css';
-@import '../../styles/pages/index.css';
+@import '../../styles/variables.scss';
+@import '../../styles/fonts.scss';
+@import '../../styles/typography.scss';
+@import '../../styles/general.scss';
+@import '../../styles/pages/index.scss';
 
-@custom-media --breakpoint-lg (max-width: 1124px);
-@custom-media --breakpoint-md (max-width: 700px);
+$breakpoint-lg: 1124px;
+$breakpoint-md: 700px;
 
 ionic-docs {
   align-items: start;
@@ -16,11 +16,11 @@ ionic-docs {
   grid-template-rows: var(--header-height);
   grid-template-columns: 200px 1fr minmax(320px, 720px) 1fr 420px;
 
-  @media (--breakpoint-lg)  {
+  @media (max-width: $breakpoint-lg)  {
     grid-template-columns: 200px 1fr minmax(320px, 720px) 1fr 1fr;
   }
 
-  @media (--breakpoint-md)  {
+  @media (max-width: $breakpoint-md)  {
     /* TODO: sidebar drawer */
     grid-template-columns: 0 0 minmax(320px, 720px) 0 0;
   }
@@ -28,11 +28,11 @@ ionic-docs {
   &.page-index {
     grid-template-columns: 200px 1fr minmax(320px, 806px) 1fr 1fr;
 
-    @media (--breakpoint-lg)  {
+    @media (max-width: $breakpoint-lg)  {
       grid-template-columns: 200px 1fr minmax(320px, 806px) 1fr 0;
     }
 
-    @media (--breakpoint-md)  {
+    @media (max-width: $breakpoint-md)  {
       /* TODO: sidebar drawer */
       grid-template-columns: 0 0 minmax(320px, 720px) 0 0;
     }
@@ -53,7 +53,7 @@ site-header {
   padding-right: 1.2rem;
   top: 0;
 
-  @media (--breakpoint-md)  {
+  @media (max-width: $breakpoint-md)  {
     padding-left: 24px;
     padding-right: 32px;
   }
@@ -66,7 +66,7 @@ site-menu {
   height: calc(100vh - 75px);
   overflow-y: auto;
 
-  @media (--breakpoint-md)  {
+  @media (max-width: $breakpoint-md)  {
     /* TODO: sidebar drawer */
     display: none;
   }
@@ -76,7 +76,7 @@ site-content {
   padding: 1.15rem 2rem 1.75rem;
   grid-area: content;
 
-  @media (--breakpoint-md)  {
+  @media (max-width: $breakpoint-md)  {
     padding-left: 24px;
     padding-right: 24px;
   }
@@ -88,7 +88,7 @@ site-preview-app {
   padding: 1.75rem 0 1rem;
 
 
-  @media (--breakpoint-lg)  {
+  @media (max-width: $breakpoint-lg)  {
     /* TODO: preview app link */
     display: none;
   }

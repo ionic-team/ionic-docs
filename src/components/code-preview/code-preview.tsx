@@ -2,7 +2,7 @@ import { Component, Prop } from '@stencil/core';
 
 @Component({
   tag: 'code-preview',
-  styleUrl: 'code-preview.css'
+  styleUrl: 'code-preview.scss'
 })
 export class CodePreview {
   @Prop() markup = '';

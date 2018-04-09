@@ -35,7 +35,7 @@ const items = [
 
 @Component({
   tag: 'ecosystem-dropdown',
-  styleUrl: 'ecosystem-dropdown.css',
+  styleUrl: 'ecosystem-dropdown.scss'
 })
 export class EcosystemDropdown {
   render() {

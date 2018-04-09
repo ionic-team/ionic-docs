@@ -2,7 +2,7 @@ import { Component } from '@stencil/core';
 
 @Component({
   tag: 'new-tab-icon',
-  styleUrl: 'new-tab-icon.css',
+  styleUrl: 'new-tab-icon.scss'
 })
 export class NewTabIcon {
   render() {
