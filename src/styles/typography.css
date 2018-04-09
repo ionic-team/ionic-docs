@@ -11,7 +11,7 @@ h1 {
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 24px;
   padding-top: 48px;
   margin-top: -24px;
   margin-bottom: .9em;
@@ -20,7 +20,7 @@ h2 {
 h3 {
   padding-top: 4em;
   margin-top: -2em;
-  font-size: 16px;
+  font-size: 18px;
   letter-spacing: -.025em;
   margin-bottom: 1.3em;
 }
@@ -44,11 +44,23 @@ li {
 
 code {
   background: #f5f7fa;
-  color: #e44871;
+  margin: 0 2px;
+  padding: 3px 5px;
+  color: #f06332;
+  font-family: 'SF Mono', 'Roboto Mono', Menlo, monospace;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 4px;
 }
 
 pre code {
   color: #334561;
+  font-weight: 500;
+  border-radius: 0;
+  background: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1.5;
 }
 
 a,
