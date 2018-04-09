@@ -24,10 +24,8 @@
     "@stencil/core": "^0.7.18",
     "@stencil/dev-server": "0.0.18",
     "@stencil/helmet": "^0.2.3",
-    "@stencil/postcss": "0.0.3",
     "@stencil/router": "0.0.28",
     "@stencil/utils": "latest",
-    "autoprefixer": "^8.1.0",
     "chokidar": "^2.0.2",
     "chokidar-cli": "^1.2.0",
     "compression": "^1.7.2",
@@ -64,8 +62,6 @@
   },
   "homepage": "https://ionicframework.com/docs/",
   "devDependencies": {
-    "postcss-custom-media": "^6.0.0",
-    "postcss-import": "^11.1.0",
-    "postcss-nested": "^3.0.0"
+    "@stencil/sass": "0.0.3"
   }
 }

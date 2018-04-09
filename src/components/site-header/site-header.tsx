@@ -3,7 +3,7 @@ import * as constants from '../../constants';
 
 @Component({
   tag: 'site-header',
-  styleUrl: 'site-header.css'
+  styleUrl: 'site-header.scss'
 })
 export class SiteHeader {
   @Prop() currentSection: string;

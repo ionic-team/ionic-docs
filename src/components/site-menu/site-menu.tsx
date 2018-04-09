@@ -5,7 +5,7 @@ import { versions } from '../../versions';
 
 @Component({
   tag: 'site-menu',
-  styleUrl: 'site-menu.css'
+  styleUrl: 'site-menu.scss'
 })
 export class SiteMenu {
 

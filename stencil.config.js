@@ -1,21 +1,10 @@
-const postcss = require('@stencil/postcss');
-const autoprefixer = require('autoprefixer');
-const imports = require('postcss-import');
-const nesting = require('postcss-nested');
-const media = require('postcss-custom-media');
+const sass = require('@stencil/sass');
 
 exports.config = {
   plugins: [
-    postcss({
-      plugins: [
-        imports(),
-        media(),
-        nesting(),
-        autoprefixer(),
-      ]
-    })
+    sass()
   ],
-  globalStyle: ['src/styles/variables.css'],
+  globalStyle: ['src/styles/variables.scss'],
   copy: [{ src: 'docs-content' }],
   outputTargets: [
     {

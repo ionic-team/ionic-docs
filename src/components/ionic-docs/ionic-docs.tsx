@@ -3,7 +3,7 @@ import { Component, Element, Event, EventEmitter, Listen, State } from '@stencil
 
 @Component({
   tag: 'ionic-docs',
-  styleUrl: 'ionic-docs.css'
+  styleUrl: 'ionic-docs.scss'
 })
 export class IonicDocs {
   @Element() el: Element;

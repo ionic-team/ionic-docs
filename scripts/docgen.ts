@@ -35,54 +35,46 @@ function getFrontMatter(name, version, hasDemo) {
 function generatePropertyList(items) {
   if (!items.length) return '';
 
-  let str = `<h2>Properties</h2> \r\n\r\n`;
+  let str = `<h2>Properties</h2> \r\n\r\n<dl>\r\n`;
 
   for (let i = 0; i < items.length; i++) {
-    str += `<h3><code>${items[i].name}</code>`;
-    if (items[i].type) {
-      str += `<code>: <small>${items[i].type}</small></code>`;
-    }
-    str += `</h3> \r\n`;
-
+    str += `<dt>\r\n<h3>${items[i].name}</h3> \r\n`;
     if (items[i].attr) {
-      str += `<small class="attr-format"><code>${items[i].attr}</code></small>`;
+      str += `<strong>Attribute:</strong>  <code>${items[i].attr}</code>\r\n`;
     }
-    str += `<p>${items[i].docs}</p>\r\n\r\n`;
-
+    if (items[i].type) {
+      str += `<strong>Type:</strong> <code>${items[i].type}</code>\r\n`;
+    }
+    str += `</dt>\r\n`;
+    str += `<dd>${items[i].docs}</dd>\r\n\r\n`;
   }
 
-  return str + '\r\n';
+  return str + '</dl>\r\n\r\n\r\n';
 }
 
 function generateEventsTable(items) {
   if (!items.length) return '';
 
-  let str = `<h2>Events</h2> \r\n\r\n`;
-
-  str += '<table><tr><th>Name</th><th><small>Bubbles<br>Cancelable<br>';
-  str += 'Composed</small></th><th>Description</th></tr>';
+  let str = `<h2>Events</h2>\r\n\r\n<dl>`;
 
   for (let i = 0; i < items.length; i++) {
-    str += `<tr><td><code>${items[i].event}</code></td>`;
-    str += `<td style="text-align:center">${items[i].bubbles ? 'Y' : 'N'}, `;
-    str += `${items[i].cancelable ? 'Y' : 'N'}, `;
-    str += `${items[i].composed ? 'Y' : 'N'}</td>`;
-    str += `<td>${items[i].docs}</td></tr>`;
+    str += `<dt>\r\n<h3>${items[i].event}</h3></dt>\r\n`;
+    str += `<dd>${items[i].docs}</dd>\r\n\r\n`;
   }
 
-  return str + '</table>\r\n';
+  return str + '</dl>\r\n\r\n\r\n';
 }
 
 function generateMethodList(items) {
   if (!items.length) return '';
 
-  let str = `<h2>Methods</h2> \r\n\r\n`;
+  let str = `<h2>Methods</h2>\r\n<dl>\r\n\r\n`;
 
   for (let i = 0; i < items.length; i++) {
-    str += `<h3><code>${items[i].name}()</code></h3> \r\n`;
-    str += `<p>${items[i].docs}</p>\r\n\r\n`;
+    str += `<dt><h3>${items[i].name}()</h3></dt>\r\n`;
+    str += `<dd>${items[i].docs}</dd>\r\n\r\n`;
   }
 
-  return str + '\r\n';
+  return str + '</dl>\r\n\r\n\r\n';
 }
 

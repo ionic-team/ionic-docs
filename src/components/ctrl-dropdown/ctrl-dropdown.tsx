@@ -2,7 +2,7 @@ import { Component, Element, Prop, State } from '@stencil/core';
 
 @Component({
   tag: 'ctrl-dropdown',
-  styleUrl: './ctrl-dropdown.css'
+  styleUrl: './ctrl-dropdown.scss'
 })
 export class CtrlDropdown {
   @Element() el: HTMLElement;

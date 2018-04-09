@@ -2,7 +2,7 @@ import { Component, Prop } from '@stencil/core';
 
 @Component({
   tag: 'code-block',
-  styleUrl: 'code-block.css'
+  styleUrl: 'code-block.scss'
 })
 export class CodeBlock {
   @Prop() language: string;

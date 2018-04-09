@@ -2,7 +2,7 @@ import { Component, Prop, State } from '@stencil/core';
 
 @Component({
   tag: 'tab-group',
-  styleUrl: 'tab-group.css'
+  styleUrl: 'tab-group.scss'
 })
 export class TabGroup {
   @Prop() tabs: string;
