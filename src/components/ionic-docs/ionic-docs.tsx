@@ -9,6 +9,7 @@ export class IonicDocs {
   @Element() el: Element;
   @Event() sectionChanged: EventEmitter;
   @State() currentSection = 'framework';
+  @State() isMenuOpen = false;
 
   @Listen('docLoaded')
   onDocLoaded({ detail }) {
@@ -36,6 +37,10 @@ export class IonicDocs {
       .join(' ');
   }
 
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
   hostData() {
     return {
       class: { [`section-${this.currentSection}`]: true },
@@ -44,8 +49,12 @@ export class IonicDocs {
 
   render() {
     return [
-      <site-header currentSection={ this.currentSection } />,
-      <site-menu/>,
+      <site-header
+        currentSection={this.currentSection}
+        isMenuOpen={this.isMenuOpen}
+        onToggleClick={this.toggleMenu.bind(this)}/>,
+      <site-menu
+        isOpen={this.isMenuOpen}/>,
       <site-content/>,
       <site-preview-app/>
     ];

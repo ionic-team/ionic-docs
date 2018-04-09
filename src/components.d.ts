@@ -314,6 +314,8 @@ declare global {
 declare global {
   interface HTMLSiteHeaderElement extends HTMLStencilElement {
     'currentSection': string;
+    'isMenuOpen': boolean;
+    'onToggleClick': any;
   }
   var HTMLSiteHeaderElement: {
     prototype: HTMLSiteHeaderElement;
@@ -333,6 +335,8 @@ declare global {
   namespace JSXElements {
     export interface SiteHeaderAttributes extends HTMLAttributes {
       'currentSection'?: string;
+      'isMenuOpen'?: boolean;
+      'onToggleClick'?: any;
     }
   }
 }
@@ -340,7 +344,7 @@ declare global {
 
 declare global {
   interface HTMLSiteMenuElement extends HTMLStencilElement {
-
+    'isOpen': boolean;
   }
   var HTMLSiteMenuElement: {
     prototype: HTMLSiteMenuElement;
@@ -359,7 +363,7 @@ declare global {
   }
   namespace JSXElements {
     export interface SiteMenuAttributes extends HTMLAttributes {
-
+      'isOpen'?: boolean;
     }
   }
 }

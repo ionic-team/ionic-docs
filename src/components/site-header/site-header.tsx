@@ -7,6 +7,8 @@ import * as constants from '../../constants';
 })
 export class SiteHeader {
   @Prop() currentSection: string;
+  @Prop() onToggleClick = () => {};
+  @Prop() isMenuOpen: boolean;
 
   renderGithubLink() {
     if (this.currentSection === constants.SECTION_FRAMEWORK) {
@@ -21,6 +23,11 @@ export class SiteHeader {
   render() {
     return [
       <nav>
+        <button
+          onClick={this.onToggleClick}
+          class={{ 'site-nav-toggle': true, 'is-open': this.isMenuOpen }}>
+            { this.isMenuOpen.toString() }
+        </button>
         <a href="/docs" id="site-logo">
           <svg viewBox="0 0 433 144">
             <title>Ionic Docs</title>
