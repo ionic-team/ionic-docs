@@ -35,7 +35,7 @@ function getFrontMatter(name, version, hasDemo) {
 function generatePropertyList(items) {
   if (!items.length) return '';
 
-  let str = `<h2>Properties</h2> \r\n\r\n<dl>`;
+  let str = `<h2>Properties</h2> \r\n\r\n<dl>\r\n`;
 
   for (let i = 0; i < items.length; i++) {
     str += `<dt>\r\n<h3>${items[i].name}</h3> \r\n`;
@@ -45,7 +45,7 @@ function generatePropertyList(items) {
     if (items[i].type) {
       str += `<strong>Type:</strong> <code>${items[i].type}</code>\r\n`;
     }
-    str += `</dt>`;
+    str += `</dt>\r\n`;
     str += `<dd>${items[i].docs}</dd>\r\n\r\n`;
   }
 
@@ -68,7 +68,7 @@ function generateEventsTable(items) {
 function generateMethodList(items) {
   if (!items.length) return '';
 
-  let str = `<h2>Methods</h2>\r\n<dl>\r\n`;
+  let str = `<h2>Methods</h2>\r\n<dl>\r\n\r\n`;
 
   for (let i = 0; i < items.length; i++) {
     str += `<dt><h3>${items[i].name}()</h3></dt>\r\n`;
