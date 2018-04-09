@@ -36,7 +36,7 @@ async function run() {
     // delete the directory in src/api/ to force a rebuild
     if (fs.existsSync(DOCS_DEST)) {
       console.log(`Skipping existing API docs for ${versions[i]}`);
-      // continue;
+      continue;
     }
 
     // Generate the docs for this version
