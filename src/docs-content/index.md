@@ -19,20 +19,19 @@ hideTOC: true
   <card-link title="UI Components"
              hasIcon="true"
              url="/docs/components">
-    A comprehensive preview of Ionic Framework’s beautiful UI compoment library,
+    A comprehensive preview of Ionic Framework’s beautiful UI component library,
     ready to go.
   </card-link>
   <card-link title="API Reference"
              hasIcon="true"
              url="/docs/api/intro">
-    Explore the API for information on component methods, properties, and events
-    for a deeper understanding.
+    Explore the API for a deeper understanding of component methods, properties, and events.
   </card-link>
   <card-link title="Native APIs"
              hasIcon="true"
              url="/docs/native">
-    Learn to integrate native device plugins, like Bluetooth, Maps, and
-    HealthKit with Ionic Capacitor.
+    Learn to integrate and leverage native device plugins, like Bluetooth, Maps,
+    HealthKit, and more.
   </card-link>
   <card-link title="Theming"
              hasIcon="true"
