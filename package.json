@@ -40,7 +40,6 @@
     "ionicons": "^3.0.0",
     "marked": "^0.3.12",
     "path": "^0.12.7",
-    "precss": "^3.1.2",
     "tslint": "^5.9.1",
     "tslint-ionic-rules": "0.0.14"
   },
@@ -63,5 +62,10 @@
   "bugs": {
     "url": "https://github.com/ionic-team/ionic-docs"
   },
-  "homepage": "https://ionicframework.com/docs/"
+  "homepage": "https://ionicframework.com/docs/",
+  "devDependencies": {
+    "postcss-custom-media": "^6.0.0",
+    "postcss-import": "^11.1.0",
+    "postcss-nested": "^3.0.0"
+  }
 }

@@ -1,12 +1,16 @@
-const autoprefixer = require('autoprefixer');
 const postcss = require('@stencil/postcss');
-const precss = require('precss');
+const autoprefixer = require('autoprefixer');
+const imports = require('postcss-import');
+const nesting = require('postcss-nested');
+const media = require('postcss-custom-media');
 
 exports.config = {
   plugins: [
     postcss({
       plugins: [
-        precss(),
+        imports(),
+        media(),
+        nesting(),
         autoprefixer(),
       ]
     })

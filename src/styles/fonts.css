@@ -1,10 +1,3 @@
-/* $fontCDN: '/docs/assets/fonts';
-$avenir-font-path: '/docs/assets/fonts/avenir-next';
-$eina-font-path: '/docs/assets/fonts/eina'; */
-/* $ionicons-font-path: '/docs/assets/fonts/ionicons/3.0.0-alpha.3'; */
-
-/* @import "../../node_modules/ionicons/dist/css/ionicons-core.css"; */
-
 @font-face {
   font-family: 'Avenir Next';
   src: local('Avenir Next Bold'),
