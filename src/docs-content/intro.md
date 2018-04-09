@@ -9,7 +9,9 @@ hideTOC: true
 
 ## What is Ionic Framework
 
+<p class='specialParagraph' markdown='1'>
 Ionic Framework is an open source (MIT) UI toolkit that enables developers to build performant, high-quality mobile apps using familiar web technologies (HTML, CSS, and JavaScript).
+</p>
 
 Ionic Framework is focused mainly on the look and feel, or the UI interaction, of an app. This means that it’s not a replacement for PhoneGap or your favorite JavaScript framework. Instead, Ionic fits in well with these projects, in order to simplify one big part of your app development process: the front-end. Check out “Where does the Ionic Framework fit in?” to get a good understanding of Ionic’s core philosophy and goals.
 
