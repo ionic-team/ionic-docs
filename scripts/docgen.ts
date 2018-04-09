@@ -59,9 +59,6 @@ function generateEventsTable(items) {
 
   for (let i = 0; i < items.length; i++) {
     str += `<dt>\r\n<h3>${items[i].event}</h3><dt>\r\n`;
-    // str += `<td style="text-align:center">${items[i].bubbles ? 'Y' : 'N'}, `;
-    // str += `${items[i].cancelable ? 'Y' : 'N'}, `;
-    // str += `${items[i].composed ? 'Y' : 'N'}</td>`;
     str += `<dd>${items[i].docs}</dd>\r\n\r\n`;
   }
 
