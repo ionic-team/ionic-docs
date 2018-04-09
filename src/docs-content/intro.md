@@ -9,7 +9,7 @@ hideTOC: true
 
 ## What is Ionic Framework
 
-<p class='specialParagraph' markdown='1'>
+<p class='intro' markdown='1'>
 Ionic Framework is an open source (MIT) UI toolkit that enables developers to build performant, high-quality mobile apps using familiar web technologies (HTML, CSS, and JavaScript).
 </p>
 
