@@ -45,7 +45,7 @@ function generatePropertyList(items) {
     if (items[i].type) {
       str += `<strong>Type:</strong> <code>${items[i].type}</code>\r\n`;
     }
-    str += `<dt>`;
+    str += `</dt>`;
     str += `<dd>${items[i].docs}</dd>\r\n\r\n`;
   }
 
@@ -58,7 +58,7 @@ function generateEventsTable(items) {
   let str = `<h2>Events</h2>\r\n\r\n<dl>`;
 
   for (let i = 0; i < items.length; i++) {
-    str += `<dt>\r\n<h3>${items[i].event}</h3><dt>\r\n`;
+    str += `<dt>\r\n<h3>${items[i].event}</h3></dt>\r\n`;
     str += `<dd>${items[i].docs}</dd>\r\n\r\n`;
   }
 
