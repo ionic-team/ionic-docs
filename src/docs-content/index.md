@@ -19,8 +19,7 @@ hideTOC: true
   <card-link title="UI Components"
              hasIcon="true"
              url="/docs/components">
-    A comprehensive preview of Ionic Framework’s beautiful UI component library,
-    ready to go.
+    A comprehensive preview of Ionic Framework’s beautifully designed UI component library.
   </card-link>
   <card-link title="API Reference"
              hasIcon="true"

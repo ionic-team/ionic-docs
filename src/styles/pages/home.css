@@ -60,10 +60,10 @@
   .others {
     list-style: none;
     padding: 0;
-    border-top: 1px solid #d5dae2;
+    border-top: 1px solid #e5e9ef;
 
     li {
-      border-bottom: 1px solid #d5dae2;
+      border-bottom: 1px solid #e5e9ef;
       margin-bottom: 0;
     }
 
