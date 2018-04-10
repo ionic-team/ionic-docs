@@ -40,7 +40,6 @@ ionic-docs {
 }
 
 site-header,
-site-menu,
 site-preview-app {
   position: sticky;
 }
@@ -56,19 +55,6 @@ site-header {
   @media (max-width: $breakpoint-md)  {
     padding-left: 24px;
     padding-right: 32px;
-  }
-}
-
-site-menu {
-  grid-area: menu;
-  top: var(--header-height);
-  padding: 1.75rem 0 1.75rem 2rem;
-  height: calc(100vh - 75px);
-  overflow-y: auto;
-
-  @media (max-width: $breakpoint-md)  {
-    /* TODO: sidebar drawer */
-    display: none;
   }
 }
 

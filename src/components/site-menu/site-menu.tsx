@@ -1,4 +1,4 @@
-import { Component, State } from '@stencil/core';
+import { Component, Prop, State } from '@stencil/core';
 import VersionDropdown from './version-dropdown';
 import menuMap from './site-menu-map';
 import { versions } from '../../versions';
@@ -9,6 +9,8 @@ import { versions } from '../../versions';
 })
 export class SiteMenu {
 
+  @Prop() onNavigate: () => void;
+  @Prop() isOpen: boolean;
   @State() activeItem: string;
   @State() version = versions[versions.length - 1];
 
@@ -30,7 +32,7 @@ export class SiteMenu {
     return (
       <li role="none">
         <stencil-route-link exact url={url}
-          onClick={ isTopLevel ? () => this.setActiveItem(text) : null }
+          onClick={() => this.handleNavigate(text, isTopLevel)}
           anchor-title={text}
           anchor-role="menuitem">
           {text}
@@ -59,8 +61,19 @@ export class SiteMenu {
     );
   }
 
+  handleNavigate = (text, isTopLevel) => {
+    if (isTopLevel) this.setActiveItem(text);
+    this.onNavigate();
+  }
+
   setActiveItem(text: string) {
     this.activeItem = this.activeItem === text ? null : text;
+  }
+
+  hostData() {
+    return {
+      'class': { 'is-open': this.isOpen }
+    };
   }
 
   render() {
