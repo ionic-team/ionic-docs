@@ -1,6 +1,9 @@
 /* @import './variables'; */
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   color: var(--blackish);
   font-weight: 700;
 }
@@ -25,7 +28,8 @@ h3 {
   margin-bottom: 1.3em;
 }
 
-p, ul {
+p,
+ul {
   color: var(--dark);
   font-size: 14px;
   letter-spacing: -.02em;

@@ -1,11 +1,11 @@
+$breakpoint-lg: 1124px;
+$breakpoint-md: 700px;
+
 @import '../../styles/variables.scss';
 @import '../../styles/fonts.scss';
 @import '../../styles/typography.scss';
 @import '../../styles/general.scss';
 @import '../../styles/pages/index.scss';
-
-$breakpoint-lg: 1124px;
-$breakpoint-md: 700px;
 
 ionic-docs {
   align-items: start;
