@@ -16,7 +16,7 @@ export class TableOfContents {
 
   @Listen('window:docLoaded')
   onDocLoaded() {
-    setTimeout(this.updateTOC, 20);
+    setTimeout(this.updateTOC, 40);
   }
 
   componentWillLoad() {
