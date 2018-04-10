@@ -4,7 +4,9 @@ site-content {
 
 site-content.is-menu-open {
   @media (max-width: 700px) {
-    transform: translateX(100%);
+    opacity: 0.25;
+    pointer-events: none;
+    transform: translateX(70%);
   }
 }
 

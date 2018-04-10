@@ -13,12 +13,11 @@ site-menu {
     position: fixed;
     right: 100%;
     transition: transform 400ms cubic-bezier(0.190,1,0.220,1);
-    width: 100%;
+    width: 70%;
     z-index: 1;
 
     &.is-open {
-      transform: translateX(100%);
-    }
+      transform: translateX(100%); }
   }
 }
 
