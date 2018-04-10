@@ -26,11 +26,18 @@ export class SiteHeader {
         <button
           onClick={this.onToggleClick}
           class={{ 'site-nav-toggle': true, 'is-open': this.isMenuOpen }}>
-            <svg viewBox="0 0 80 54">
-              <rect width="80" height="10" rx="2"/>
-              <rect y="22" width="80" height="10" rx="2"/>
-              <rect y="44" width="80" height="10" rx="2"/>
-            </svg>
+            { this.isMenuOpen ? (
+              <svg viewBox="0 0 54 54">
+                <rect transform="rotate(45 27 27)" y="22" width="54" height="10" rx="2"/>
+                <rect transform="rotate(-45 27 27)" y="22" width="54" height="10" rx="2"/>
+              </svg>
+            ) : (
+              <svg viewBox="0 0 54 54">
+                <rect y="0" width="54" height="10" rx="2"/>
+                <rect y="22" width="54" height="10" rx="2"/>
+                <rect y="44" width="54" height="10" rx="2"/>
+              </svg>
+            )}
         </button>
         <a href="/docs" id="site-logo">
           <svg viewBox="0 0 433 144">
