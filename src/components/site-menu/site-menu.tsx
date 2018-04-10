@@ -9,6 +9,7 @@ import { versions } from '../../versions';
 })
 export class SiteMenu {
 
+  @Prop() onNavigate: () => void;
   @Prop() isOpen: boolean;
   @State() activeItem: string;
   @State() version = versions[versions.length - 1];
@@ -31,7 +32,7 @@ export class SiteMenu {
     return (
       <li role="none">
         <stencil-route-link exact url={url}
-          onClick={ isTopLevel ? () => this.setActiveItem(text) : null }
+          onClick={() => this.handleNavigate(text, isTopLevel)}
           anchor-title={text}
           anchor-role="menuitem">
           {text}
@@ -58,6 +59,11 @@ export class SiteMenu {
         </ul>
       </li>
     );
+  }
+
+  handleNavigate = (text, isTopLevel) => {
+    if (isTopLevel) this.setActiveItem(text);
+    this.onNavigate();
   }
 
   setActiveItem(text: string) {

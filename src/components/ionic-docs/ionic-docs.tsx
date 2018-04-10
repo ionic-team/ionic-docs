@@ -37,8 +37,12 @@ export class IonicDocs {
       .join(' ');
   }
 
-  toggleMenu() {
+  toggleMenu = () => {
     this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenu = () => {
+    this.isMenuOpen = false;
   }
 
   hostData() {
@@ -52,8 +56,9 @@ export class IonicDocs {
       <site-header
         currentSection={this.currentSection}
         isMenuOpen={this.isMenuOpen}
-        onToggleClick={this.toggleMenu.bind(this)}/>,
+        onToggleClick={this.toggleMenu}/>,
       <site-menu
+        onNavigate={this.closeMenu}
         isOpen={this.isMenuOpen}/>,
       <site-content/>,
       <site-preview-app/>

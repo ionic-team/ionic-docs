@@ -345,6 +345,7 @@ declare global {
 declare global {
   interface HTMLSiteMenuElement extends HTMLStencilElement {
     'isOpen': boolean;
+    'onNavigate': () => void;
   }
   var HTMLSiteMenuElement: {
     prototype: HTMLSiteMenuElement;
@@ -364,6 +365,7 @@ declare global {
   namespace JSXElements {
     export interface SiteMenuAttributes extends HTMLAttributes {
       'isOpen'?: boolean;
+      'onNavigate'?: () => void;
     }
   }
 }
