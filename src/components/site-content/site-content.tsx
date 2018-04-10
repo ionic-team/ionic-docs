@@ -5,6 +5,7 @@ import { Component, Listen, Prop } from '@stencil/core';
   styleUrl: 'site-content.scss'
 })
 export class SiteContent {
+  @Prop() onOverlayClick: () => void;
   @Prop() isMenuOpen: boolean;
   @Prop({ context: 'isServer' }) private isServer: boolean;
 
@@ -17,6 +18,7 @@ export class SiteContent {
 
   hostData() {
     return {
+      'onClick': this.isMenuOpen ? this.onOverlayClick : null,
       'class': {
         'is-menu-open': this.isMenuOpen
       }

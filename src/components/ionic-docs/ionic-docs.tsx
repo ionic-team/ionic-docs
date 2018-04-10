@@ -61,6 +61,7 @@ export class IonicDocs {
         onNavigate={this.closeMenu}
         isOpen={this.isMenuOpen}/>,
       <site-content
+        onOverlayClick={this.closeMenu}
         isMenuOpen={this.isMenuOpen}/>,
       <site-preview-app/>
     ];

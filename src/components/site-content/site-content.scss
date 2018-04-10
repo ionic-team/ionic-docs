@@ -5,8 +5,12 @@ site-content {
 site-content.is-menu-open {
   @media (max-width: 700px) {
     opacity: 0.25;
-    pointer-events: none;
     transform: translateX(70%);
+    pointer-events: all;
+
+    > * {
+      pointer-events: none;
+    }
   }
 }
 
