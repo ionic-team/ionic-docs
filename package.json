@@ -25,6 +25,7 @@
     "@stencil/dev-server": "0.0.18",
     "@stencil/helmet": "^0.2.3",
     "@stencil/router": "0.0.28",
+    "@stencil/sass": "0.0.3",
     "@stencil/utils": "latest",
     "chokidar": "^2.0.2",
     "chokidar-cli": "^1.2.0",
@@ -60,8 +61,5 @@
   "bugs": {
     "url": "https://github.com/ionic-team/ionic-docs"
   },
-  "homepage": "https://ionicframework.com/docs/",
-  "devDependencies": {
-    "@stencil/sass": "0.0.3"
-  }
+  "homepage": "https://ionicframework.com/docs/"
 }

@@ -10,9 +10,13 @@ export class TableOfContents {
 
   @Element() el: Element;
 
+  constructor() {
+    this.updateTOC = this.updateTOC.bind(this);
+  }
+
   @Listen('window:docLoaded')
   onDocLoaded() {
-    this.updateTOC();
+    setTimeout(this.updateTOC, 20);
   }
 
   componentWillLoad() {
@@ -38,13 +42,20 @@ export class TableOfContents {
     return [
       <strong>Contents</strong>,
       <ul>
-        {Array.from(this.headings).map(element =>
-          <li>
-            <a href={`#${element['id']}`}>
-              {element['innerText'] || element.textContent}
-            </a>
-          </li>
-        )}
+        {Array.from(this.headings).map(element => {
+          // don't show h3 tags in the TOC
+          if ( element['tagName'] === 'H3') {
+            return null;
+          }
+
+          return (
+            <li>
+              <a href={`#${element['id']}`}>
+                {element['innerText'] || element.textContent}
+              </a>
+            </li>
+          );
+        })}
       </ul>
     ];
   }
