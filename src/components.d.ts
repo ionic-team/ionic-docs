@@ -29,7 +29,7 @@ import '@stencil/router';
 declare global {
   interface HTMLCardLinkElement extends HTMLStencilElement {
     'hasIcon': boolean;
-    'title': string;
+    'headline': string;
     'url': string;
   }
   var HTMLCardLinkElement: {
@@ -50,7 +50,7 @@ declare global {
   namespace JSXElements {
     export interface CardLinkAttributes extends HTMLAttributes {
       'hasIcon'?: boolean;
-      'title'?: string;
+      'headline'?: string;
       'url'?: string;
     }
   }

@@ -8,7 +8,7 @@ export class CardLink {
 
   @Element() el: Element;
 
-  @Prop() title: string;
+  @Prop() headline: string;
   @Prop() url: string;
   @Prop() hasIcon = false;
 
@@ -43,12 +43,12 @@ export class CardLink {
       this.el.attributes.getNamedItem('hasIcon').value ? true : false
     );
 
-    this.updateTitle(this.el.attributes.getNamedItem('title').value, null);
+    this.updateTitle(this.el.attributes.getNamedItem('headline').value, null);
   }
 
   render() {
-    return <stencil-route-link url={this.url} title={this.title}>
-      {this.title && <strong>{this.title}</strong>}
+    return <stencil-route-link url={this.url} title={this.headline}>
+      {this.headline && <strong>{this.headline}</strong>}
       <span><slot/></span>
     </stencil-route-link>;
   }
