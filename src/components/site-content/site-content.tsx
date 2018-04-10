@@ -5,6 +5,7 @@ import { Component, Listen, Prop } from '@stencil/core';
   styleUrl: 'site-content.scss'
 })
 export class SiteContent {
+  @Prop() isMenuOpen: boolean;
   @Prop({ context: 'isServer' }) private isServer: boolean;
 
   @Listen('docLoaded')
@@ -12,6 +13,14 @@ export class SiteContent {
     if (!this.isServer) {
       requestAnimationFrame(() => { document.documentElement.scrollTop = 0; });
     }
+  }
+
+  hostData() {
+    return {
+      'class': {
+        'is-menu-open': this.isMenuOpen
+      }
+    };
   }
 
   render() {

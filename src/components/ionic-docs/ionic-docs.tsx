@@ -60,7 +60,8 @@ export class IonicDocs {
       <site-menu
         onNavigate={this.closeMenu}
         isOpen={this.isMenuOpen}/>,
-      <site-content/>,
+      <site-content
+        isMenuOpen={this.isMenuOpen}/>,
       <site-preview-app/>
     ];
   }

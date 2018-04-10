@@ -232,7 +232,7 @@ declare global {
 
 declare global {
   interface HTMLSiteContentElement extends HTMLStencilElement {
-
+    'isMenuOpen': boolean;
   }
   var HTMLSiteContentElement: {
     prototype: HTMLSiteContentElement;
@@ -251,7 +251,7 @@ declare global {
   }
   namespace JSXElements {
     export interface SiteContentAttributes extends HTMLAttributes {
-
+      'isMenuOpen'?: boolean;
     }
   }
 }

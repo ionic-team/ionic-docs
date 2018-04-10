@@ -1,3 +1,13 @@
+site-content {
+  transition: transform 400ms cubic-bezier(0.190,1,0.220,1);
+}
+
+site-content.is-menu-open {
+  @media (max-width: 700px) {
+    transform: translateX(100%);
+  }
+}
+
 .linked-heading {
   color: inherit;
   font-weight: inherit;
