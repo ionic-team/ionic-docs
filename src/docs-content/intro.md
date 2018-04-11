@@ -31,7 +31,7 @@ export class MyClass{
  constructor(public actionSheetCtrl: ActionSheetController) {}
 
  presentActionSheet() {
-   let actionSheet = this.actionSheetCtrl.create({
+   const actionSheet = this.actionSheetCtrl.create({
      title: 'Modify your album',
      buttons: [
        {
