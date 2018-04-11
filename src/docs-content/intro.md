@@ -21,7 +21,7 @@ Ionic currently requires Angular in order to work at its full potential. While y
 
 Ionic Framework is completely free and open source, released under the permissive MIT license, which means you can use Ionic in personal or commercial projects for free. For example, MIT is the same license used by such popular projects as jQuery and Ruby on Rails.
 
-This website and documentation content (found in the ionic-site repo) is licensed under the Apache 2 license.
+This website and documentation content (found in the ionic-site repository) is licensed under the Apache 2 license.
 
 ```js
 import { ActionSheetController } from 'ionic-angular'
@@ -62,7 +62,6 @@ export class MyClass{
 }
 ```
 
-
 ### Here is an H3
 
 Some directives can take an “argument”, denoted by a colon after the directive name. For example, the v-bind directive is used to reactively update an HTML attribute:
@@ -75,7 +74,7 @@ Some directives can take an “argument”, denoted by a colon after the directi
 * Default: `false`
 * Restrictions: This option is only available in the full build, with in-browser compilation.
 * Details: When set to true, will preserve and render HTML comments found in templates. The
-	default behavior is discarding them.
+  default behavior is discarding them.
 * See also: [Options / Data - data](#)
 
 ### Here is an H3
