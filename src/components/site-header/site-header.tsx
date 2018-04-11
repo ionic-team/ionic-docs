@@ -7,7 +7,9 @@ import * as constants from '../../constants';
 })
 export class SiteHeader {
   @Prop() currentSection: string;
-  @Prop() onToggleClick = () => {};
+  @Prop() onToggleClick: any = () => {
+    // placeholder
+  }
   @Prop() isMenuOpen: boolean;
 
   renderGithubLink() {
