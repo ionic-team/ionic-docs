@@ -4,9 +4,11 @@ site-content {
 
 site-content.is-menu-open {
   @media (max-width: 700px) {
+    height: calc(100vh - var(--header-height));
     opacity: 0.25;
-    transform: translateX(70%);
+    overflow-y: hidden;
     pointer-events: all;
+    transform: translateX(70%);
 
     > * {
       pointer-events: none;
