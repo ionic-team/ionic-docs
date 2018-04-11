@@ -6,33 +6,33 @@ import * as config from './config';
 import * as utils from './utils';
 import { versions } from '../src/versions';
 
-let repo = null;
+let APIrepo = null;
 
-export async function initRepoRefference() {
+export async function initAPIRepoRefference() {
   if (!fs.existsSync(config.IONIC_DIR)) {
     const cloneOptions = new CloneOptions();
     cloneOptions.checkoutBranch = 'master';
     console.log('Cloning Ionic. This may take a few mins...');
-    repo = await Clone(config.MONOREPO_URL, 'ionic', cloneOptions);
+    APIrepo = await Clone(config.MONOREPO_URL, config.IONIC_DIR, cloneOptions);
     console.log('Clone complete');
   } else {
 
     utils.vlog('Repo exists - Updating');
-    repo = await Repository.open('ionic').then(ref => {
-      repo = ref;
-      return repo.fetchAll();
+    APIrepo = await Repository.open(config.IONIC_DIR).then(ref => {
+      APIrepo = ref;
+      return APIrepo.fetchAll();
     }).then(function() {
-      return repo.mergeBranches('master', 'origin/master');
+      return APIrepo.mergeBranches('master', 'origin/master');
     }).then(() => {
-      return repo;
+      return APIrepo;
     });
   }
-  return repo;
+  return APIrepo;
 }
 
-export async function getVersions() {
+export async function getAPIVersions() {
   // make sure the versions exist
-  const tags = await Tag.list(repo);
+  const tags = await Tag.list(APIrepo);
   return tags.reduce((filtered, tag) => {
     if (versions.indexOf(tag.replace('v', '')) !== -1) {
       filtered.push(tag);
@@ -42,5 +42,5 @@ export async function getVersions() {
 }
 
 export async function checkout(tag) {
-  return Checkout.tree(repo, tag);
+  return Checkout.tree(APIrepo, tag);
 }
