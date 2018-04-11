@@ -1,27 +1,18 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import * as config from './config';
-import * as docgen from './docgen';
+import * as docgen from './apiDocgen';
 import * as git from './git';
 import * as npm from './npm';
 import * as utils from './utils';
 
 const menuPath = 'src/components/site-menu';
 const menuHeader = 'export let apiMenu = ';
-const ionicComponentsDir = `${config.IONIC_DIR}/${config.CORE_SRC}/components`;
-
-const startTime = new Date().getTime();
-
+const ionicComponentsDir = `${config.IONIC_DIR}/${config.IONIC_CORE_SRC}/components`;
 
 // the main task of the API documentation generation process
 export async function generate() {
-  utils.vlog('Starting CI task');
-  if (!utils.preCheck()) {
-    console.error('API Docs Precheck Failure. Check configs and readme.');
-    return;
-  } else {
-    utils.vlog('Precheck complete');
-  }
+  const startTime = new Date().getTime();
 
   // clone/update the git repo and get a list of all the tags
   const repo = await git.initAPIRepoRefference();
@@ -55,7 +46,7 @@ export async function generate() {
   }
 
   const endTime = new Date().getTime();
-  console.log(`Docs copied in ${endTime - startTime}ms`);
+  console.log(`Framework Docs copied in ${endTime - startTime}ms`);
 }
 
 // copy demos and API docs files over to docs-content/api

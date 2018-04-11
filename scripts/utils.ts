@@ -107,7 +107,7 @@ export function preCheck() {
     fs.mkdirSync(config.API_DOCS_DIR);
   }
 
-  return validateNodeVersion(process.version);
+  return validateNPMVersion() && validateNodeVersion(process.version);
 }
 
 // logging function that checks to see if VERBOSE mode is on
@@ -126,6 +126,34 @@ export function parseSemver(str) {
     .exec(str)
     .slice(1)
     .map(Number);
+}
+
+export async function promisedExec(command) {
+  return new Promise( (resolve, reject) => {
+    exec(command, (error, stdout, stderr) => {
+      if (error) {
+        return reject(error);
+      }
+
+      if (stderr) {
+        return reject(stderr);
+      }
+
+      resolve(stdout);
+    });
+  });
+}
+
+export async function validateNPMVersion() {
+  const npmVersion = await promisedExec('npm -v');
+  const [major, minor] = parseSemver(npmVersion);
+
+  if (major < 5 || (major === 5 && minor < 8)) {
+    throw new Error(
+      'Running the CI scripts requires NPM version 5.8 or higher.'
+    );
+  }
+  return true;
 }
 
 export function validateNodeVersion(version) {
