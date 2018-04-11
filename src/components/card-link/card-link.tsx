@@ -12,7 +12,7 @@ export class CardLink {
   @Prop() url: string;
   @Prop() hasIcon = false;
 
-  @Watch('title')
+  @Watch('headline')
   updateTitle(newTitle: string, oldTitle: string) {
     if (!newTitle) {
       return;
