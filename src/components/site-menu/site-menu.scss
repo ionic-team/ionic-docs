@@ -27,6 +27,12 @@ site-menu ul {
   padding: 0;
 }
 
+site-menu ul:not(:last-child) {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: solid 1px #e5e9ef;
+}
+
 site-menu li {
   margin: 0;
 }

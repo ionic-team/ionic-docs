@@ -1,6 +1,4 @@
-import { apiMenu } from './api-menu';
-
-export default {
+export const main = {
   'Home': '/docs',
   'Introduction': {
     'What is Ionic Framework': '/docs/intro',
@@ -20,8 +18,6 @@ export default {
     // 'Tutorial': '/docs/getting-started/tutorial'
   },
   'Components': {},
-  'API Reference': getAPIReferenceMap,
-  'Native APIs': {},
   'Theming': {
         'Basics': '/docs/theming/basics',
         'Theming with CSS': '/docs/theming/theming-with-css',
@@ -31,6 +27,7 @@ export default {
   'FAQ': {}
 };
 
-function getAPIReferenceMap(version) {
-  return apiMenu[version];
-}
+export const secondary = {
+  'API Reference': {},
+  'Native APIs': {}
+};

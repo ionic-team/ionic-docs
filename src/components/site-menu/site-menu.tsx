@@ -1,6 +1,6 @@
 import { Component, Prop, State } from '@stencil/core';
 import VersionDropdown from './version-dropdown';
-import menuMap from './site-menu-map';
+import * as menuMap from './site-menu-map';
 import { versions } from '../../versions';
 
 @Component({
@@ -82,9 +82,8 @@ export class SiteMenu {
         items={versions}
         onSelect={selected => { this.version = selected; }}/>,
       <nav>
-        <ul>
-          { this.createMenu(menuMap, true) }
-        </ul>
+        <ul>{ this.createMenu(menuMap.main, true) }</ul>
+        <ul>{ this.createMenu(menuMap.secondary, true) }</ul>
       </nav>
     ];
   }
