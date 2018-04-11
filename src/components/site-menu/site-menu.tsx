@@ -81,8 +81,8 @@ export class SiteMenu {
       <VersionDropdown
         items={versions}
         onSelect={selected => { this.version = selected; }}/>,
-      <nav class="menu-wrapper">
-        <ul class="nested-menu">
+      <nav>
+        <ul>
           { this.createMenu(menuMap, true) }
         </ul>
       </nav>
