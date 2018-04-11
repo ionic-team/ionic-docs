@@ -58,20 +58,26 @@ main {
       color: inherit;
       font-weight: inherit;
       position: relative;
+      outline: none;
 
       &::before {
-        color: #9ec1ff;
-        content: '#';
+        background-color: #9ec1ff;
+        height: 16px;
+        width: 16px;
+        content: '';
+        mask: url('/docs/assets/img/link.svg');
+        mask-size: cover;
         position: absolute;
         left: -20px;
-        transition: .2s color ease;
+        top:5px;
+        transition: .2s background-color ease;
       }
 
       &:hover {
         color: var(--darker);
 
         &::before {
-          color: var(--blue);
+          background-color: var(--blue);
         }
       }
     }

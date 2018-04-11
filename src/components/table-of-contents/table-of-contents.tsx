@@ -23,6 +23,15 @@ export class TableOfContents {
     this.updateTOC();
   }
 
+  generateID(el) {
+    let text = 'anchor-' + el['innerText'] || el.textContent;
+    text = text.toLowerCase()
+               .replace(/([a-z\xE0-\xFF])([A-Z\xC0\xDF])/g, '$1 $2')
+               .replace(/[^0-9a-zA-Z\xC0-\xFF \-]/g, '')
+               .replace(/ +/g, '-');
+    return text;
+  }
+
   updateTOC () {
     const selector = 'main h1, main h2, main h3';
     this.headings = this.el.parentElement.querySelectorAll(selector);
@@ -31,7 +40,8 @@ export class TableOfContents {
     anchor.classList.add('linked');
 
     Array.from(this.headings).forEach(heading => {
-      anchor.setAttribute('href', `#${heading['id']}`);
+      anchor.setAttribute('id', this.generateID(heading));
+      anchor.setAttribute('href', `#${this.generateID(heading)}`);
       anchor.innerHTML = heading['innerHTML'];
 
       heading['innerHTML'] = anchor.outerHTML;
@@ -50,7 +60,7 @@ export class TableOfContents {
 
           return (
             <li>
-              <a href={`#${element['id']}`}>
+              <a href={`#${this.generateID(element)}`}>
                 {element['innerText'] || element.textContent}
               </a>
             </li>

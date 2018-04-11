@@ -16,28 +16,6 @@ site-content.is-menu-open {
   }
 }
 
-.linked-heading {
-  color: inherit;
-  font-weight: inherit;
-  position: relative;
-}
-
-.linked-heading:before {
-  color: #9ec1ff;
-  content: '#';
-  left: -20px;
-  position: absolute;
-  transition: .2s color ease;
-}
-
-.linked-heading:hover {
-  color: var(--darker);
-}
-
-.linked-heading:hover:before {
-  color: var(--blue);
-}
-
 site-content {
   overflow: hidden;
 }
