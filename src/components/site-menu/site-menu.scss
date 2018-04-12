@@ -100,3 +100,10 @@ site-menu .sub-menu:not(.expanded) {
 site-menu .sub-menu li {
   height: 28px;
 }
+
+site-menu .external > li > a:after {
+  color: var(--light-gray);
+  content: "\f3d1";
+  font-family: "Ionicons";
+  margin-left: 0.5em;
+}

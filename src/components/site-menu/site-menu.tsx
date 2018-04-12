@@ -83,7 +83,7 @@ export class SiteMenu {
         onSelect={selected => { this.version = selected; }}/>,
       <nav>
         <ul>{ this.createMenu(menuMap.main, true) }</ul>
-        <ul>{ this.createMenu(menuMap.secondary, true) }</ul>
+        <ul class="external">{ this.createMenu(menuMap.secondary, true) }</ul>
       </nav>
     ];
   }
