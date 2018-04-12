@@ -317,7 +317,7 @@ declare global {
   interface HTMLSiteHeaderElement extends HTMLStencilElement {
     'currentSection': string;
     'isMenuOpen': boolean;
-    'onToggleClick': any;
+    'onToggleClick': () => void;
   }
   var HTMLSiteHeaderElement: {
     prototype: HTMLSiteHeaderElement;
@@ -338,7 +338,7 @@ declare global {
     export interface SiteHeaderAttributes extends HTMLAttributes {
       'currentSection'?: string;
       'isMenuOpen'?: boolean;
-      'onToggleClick'?: any;
+      'onToggleClick'?: () => void;
     }
   }
 }
