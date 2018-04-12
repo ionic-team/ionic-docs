@@ -19,7 +19,7 @@
     padding: 9px 10px 8px;
     position: relative;
     text-align: left;
-    transition: .2s box-shadow ease, .2s border-color ease;
+    transition: 150ms box-shadow ease, 150ms border-color ease;
     vertical-align: text-top;
 
     &::after {
@@ -33,7 +33,7 @@
       top: 14px;
       right: 11px;
       vertical-align: middle;
-      transition: .2s border-top-color ease;
+      transition: 150ms border-top-color ease;
     }
 
     &:hover {
@@ -61,7 +61,7 @@
     pointer-events: none;
     transform: translateY(-5px);
     box-shadow: 0 4px 16px rgba(0, 0, 0, .2);
-    transition: .4s opacity ease, .4s transform;
+    transition: 100ms opacity ease-out, 100ms transform ease-out;
 
     &::after {
       content: '';
@@ -76,7 +76,7 @@
       transform: translateY(0);
       opacity: 1;
       pointer-events: all;
-      transition: .2s opacity ease, .4s transform;
+      transition: 100ms opacity ease-out, 100ms transform ease-out;
     }
   }
 

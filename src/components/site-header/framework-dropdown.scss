@@ -14,7 +14,7 @@ framework-dropdown {
     display: inline-block;
     letter-spacing: -.02em;
     vertical-align: text-top;
-    transition: .2s color ease;
+    transition: 150ms color ease;
 
     &::after {
       content: '';
@@ -22,9 +22,9 @@ framework-dropdown {
       display: inline-block;
       vertical-align: middle;
       border-left: 3px solid transparent;
-	    border-right: 3px solid transparent;
+      border-right: 3px solid transparent;
       border-top: 4px solid var(--header-color);
-      transition: .2s border-top-color ease;
+      transition: 150ms border-top-color ease;
     }
 
     &:hover {
@@ -55,7 +55,7 @@ framework-dropdown {
       0 40px 80px rgba(42,58,87,.1),
       0 16px 32px rgba(42,58,87,.15),
       0 4px 14px rgba(0,0,0,.1);
-    transition: .4s opacity ease, .4s transform;
+    transition: 100ms opacity ease-out, 100ms transform ease-out;
 
     &::before {
       background: url('/docs/assets/img/ico-nav-arrow.png') no-repeat 0 0;
@@ -81,7 +81,7 @@ framework-dropdown {
       transform: translateY(0);
       opacity: 1;
       pointer-events: all;
-      transition: .2s opacity ease, .4s transform;
+      transition: 100ms opacity ease-out, 100ms transform ease-out;
     }
   }
 
@@ -124,7 +124,7 @@ framework-dropdown {
         position: absolute;
         top: 14px;
         left: 32px;
-        transition: .2s opacity;
+        transition: 150ms opacity;
       }
 
       &::after {
@@ -174,7 +174,7 @@ framework-dropdown {
       color: var(--blacker);
       display: block;
       letter-spacing: 0;
-      transition: .2s color ease;
+      transition: 150ms color ease;
     }
 
     span {
@@ -184,7 +184,7 @@ framework-dropdown {
       font-weight: 600;
       line-height: 14px;
       letter-spacing: .01em;
-      transition: .2s color ease;
+      transition: 150ms color ease;
     }
 
     &.sm {

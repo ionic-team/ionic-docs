@@ -20,7 +20,7 @@ ecosystem-dropdown {
     letter-spacing: .01em;
     display: inline-block;
     vertical-align: 0;
-    transition: .2s color ease;
+    transition: 150ms color ease;
 
     &::after {
       content: '';
@@ -30,7 +30,7 @@ ecosystem-dropdown {
       border-left: 2px solid transparent;
       border-right: 2px solid transparent;
       border-top: 3px solid var(--header-color);
-      transition: .2s border-top-color ease;
+      transition: 150ms border-top-color ease;
     }
 
     &:hover {
@@ -60,7 +60,7 @@ ecosystem-dropdown {
     box-shadow:
       0 4px 14px rgba(42, 58, 87, 0.12),
       0 16px 32px rgba(42, 58, 87, 0.1);
-    transition: .4s opacity ease, .4s transform;
+    transition: 100ms opacity ease-out, 100ms transform ease-out;
 
     &::before {
       background: url('/docs/assets/img/ico-nav-arrow.png') no-repeat 0 0;
@@ -86,7 +86,7 @@ ecosystem-dropdown {
       transform: translateY(0);
       opacity: 1;
       pointer-events: all;
-      transition: .2s opacity ease, .4s transform;
+      transition: 100ms opacity ease-out, 100ms transform ease-out;
     }
   }
 
@@ -112,7 +112,7 @@ ecosystem-dropdown {
         position: absolute;
         top: 10px;
         left: 24px;
-        transition: .2s opacity;
+        transition: 150ms opacity;
       }
 
       &::after {
