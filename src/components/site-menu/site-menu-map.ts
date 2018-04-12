@@ -1,3 +1,5 @@
+import { apiMenu } from './api-menu';
+
 export const main = {
   'Home': '/docs',
   'Introduction': {
@@ -28,6 +30,6 @@ export const main = {
 };
 
 export const secondary = {
-  'API Reference': {},
+  'API Reference': version => apiMenu[version],
   'Native APIs': {}
 };
