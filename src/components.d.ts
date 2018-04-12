@@ -27,11 +27,17 @@ import '@stencil/router';
 
 
 declare global {
-  interface HTMLCardLinkElement extends HTMLStencilElement {
-    'hasIcon': boolean;
-    'headline': string;
-    'url': string;
+
+  namespace StencilComponents {
+    interface CardLink {
+      'hasIcon': boolean;
+      'headline': string;
+      'url': string;
+    }
   }
+
+  interface HTMLCardLinkElement extends StencilComponents.CardLink, HTMLStencilElement {}
+
   var HTMLCardLinkElement: {
     prototype: HTMLCardLinkElement;
     new (): HTMLCardLinkElement;
@@ -58,9 +64,15 @@ declare global {
 
 
 declare global {
-  interface HTMLCodeBlockElement extends HTMLStencilElement {
-    'language': string;
+
+  namespace StencilComponents {
+    interface CodeBlock {
+      'language': string;
+    }
   }
+
+  interface HTMLCodeBlockElement extends StencilComponents.CodeBlock, HTMLStencilElement {}
+
   var HTMLCodeBlockElement: {
     prototype: HTMLCodeBlockElement;
     new (): HTMLCodeBlockElement;
@@ -85,9 +97,15 @@ declare global {
 
 
 declare global {
-  interface HTMLCodePreviewElement extends HTMLStencilElement {
-    'markup': string;
+
+  namespace StencilComponents {
+    interface CodePreview {
+      'markup': string;
+    }
   }
+
+  interface HTMLCodePreviewElement extends StencilComponents.CodePreview, HTMLStencilElement {}
+
   var HTMLCodePreviewElement: {
     prototype: HTMLCodePreviewElement;
     new (): HTMLCodePreviewElement;
@@ -112,14 +130,20 @@ declare global {
 
 
 declare global {
-  interface HTMLCtrlDropdownElement extends HTMLStencilElement {
-    'autoClose': boolean;
-    'autoCloseDelay': number;
-    'items': any[];
-    'onSelect': Function;
-    'renderer': Function;
-    'setInitial': Function;
+
+  namespace StencilComponents {
+    interface CtrlDropdown {
+      'autoClose': boolean;
+      'autoCloseDelay': number;
+      'items': any[];
+      'onSelect': Function;
+      'renderer': Function;
+      'setInitial': Function;
+    }
   }
+
+  interface HTMLCtrlDropdownElement extends StencilComponents.CtrlDropdown, HTMLStencilElement {}
+
   var HTMLCtrlDropdownElement: {
     prototype: HTMLCtrlDropdownElement;
     new (): HTMLCtrlDropdownElement;
@@ -149,9 +173,15 @@ declare global {
 
 
 declare global {
-  interface HTMLDocLoaderElement extends HTMLStencilElement {
-    'path': string;
+
+  namespace StencilComponents {
+    interface DocLoader {
+      'path': string;
+    }
   }
+
+  interface HTMLDocLoaderElement extends StencilComponents.DocLoader, HTMLStencilElement {}
+
   var HTMLDocLoaderElement: {
     prototype: HTMLDocLoaderElement;
     new (): HTMLDocLoaderElement;
@@ -177,9 +207,15 @@ declare global {
 
 
 declare global {
-  interface HTMLIonicDocsElement extends HTMLStencilElement {
 
+  namespace StencilComponents {
+    interface IonicDocs {
+
+    }
   }
+
+  interface HTMLIonicDocsElement extends StencilComponents.IonicDocs, HTMLStencilElement {}
+
   var HTMLIonicDocsElement: {
     prototype: HTMLIonicDocsElement;
     new (): HTMLIonicDocsElement;
@@ -204,9 +240,15 @@ declare global {
 
 
 declare global {
-  interface HTMLNewTabIconElement extends HTMLStencilElement {
 
+  namespace StencilComponents {
+    interface NewTabIcon {
+
+    }
   }
+
+  interface HTMLNewTabIconElement extends StencilComponents.NewTabIcon, HTMLStencilElement {}
+
   var HTMLNewTabIconElement: {
     prototype: HTMLNewTabIconElement;
     new (): HTMLNewTabIconElement;
@@ -231,10 +273,16 @@ declare global {
 
 
 declare global {
-  interface HTMLSiteContentElement extends HTMLStencilElement {
-    'isMenuOpen': boolean;
-    'onOverlayClick': () => void;
+
+  namespace StencilComponents {
+    interface SiteContent {
+      'isMenuOpen': boolean;
+      'onOverlayClick': () => void;
+    }
   }
+
+  interface HTMLSiteContentElement extends StencilComponents.SiteContent, HTMLStencilElement {}
+
   var HTMLSiteContentElement: {
     prototype: HTMLSiteContentElement;
     new (): HTMLSiteContentElement;
@@ -260,9 +308,15 @@ declare global {
 
 
 declare global {
-  interface HTMLEcosystemDropdownElement extends HTMLStencilElement {
 
+  namespace StencilComponents {
+    interface EcosystemDropdown {
+
+    }
   }
+
+  interface HTMLEcosystemDropdownElement extends StencilComponents.EcosystemDropdown, HTMLStencilElement {}
+
   var HTMLEcosystemDropdownElement: {
     prototype: HTMLEcosystemDropdownElement;
     new (): HTMLEcosystemDropdownElement;
@@ -287,9 +341,15 @@ declare global {
 
 
 declare global {
-  interface HTMLFrameworkDropdownElement extends HTMLStencilElement {
 
+  namespace StencilComponents {
+    interface FrameworkDropdown {
+
+    }
   }
+
+  interface HTMLFrameworkDropdownElement extends StencilComponents.FrameworkDropdown, HTMLStencilElement {}
+
   var HTMLFrameworkDropdownElement: {
     prototype: HTMLFrameworkDropdownElement;
     new (): HTMLFrameworkDropdownElement;
@@ -314,11 +374,17 @@ declare global {
 
 
 declare global {
-  interface HTMLSiteHeaderElement extends HTMLStencilElement {
-    'currentSection': string;
-    'isMenuOpen': boolean;
-    'onToggleClick': () => void;
+
+  namespace StencilComponents {
+    interface SiteHeader {
+      'currentSection': string;
+      'isMenuOpen': boolean;
+      'onToggleClick': () => void;
+    }
   }
+
+  interface HTMLSiteHeaderElement extends StencilComponents.SiteHeader, HTMLStencilElement {}
+
   var HTMLSiteHeaderElement: {
     prototype: HTMLSiteHeaderElement;
     new (): HTMLSiteHeaderElement;
@@ -345,10 +411,16 @@ declare global {
 
 
 declare global {
-  interface HTMLSiteMenuElement extends HTMLStencilElement {
-    'isOpen': boolean;
-    'onNavigate': () => void;
+
+  namespace StencilComponents {
+    interface SiteMenu {
+      'isOpen': boolean;
+      'onNavigate': () => void;
+    }
   }
+
+  interface HTMLSiteMenuElement extends StencilComponents.SiteMenu, HTMLStencilElement {}
+
   var HTMLSiteMenuElement: {
     prototype: HTMLSiteMenuElement;
     new (): HTMLSiteMenuElement;
@@ -374,9 +446,15 @@ declare global {
 
 
 declare global {
-  interface HTMLSitePreviewAppElement extends HTMLStencilElement {
 
+  namespace StencilComponents {
+    interface SitePreviewApp {
+
+    }
   }
+
+  interface HTMLSitePreviewAppElement extends StencilComponents.SitePreviewApp, HTMLStencilElement {}
+
   var HTMLSitePreviewAppElement: {
     prototype: HTMLSitePreviewAppElement;
     new (): HTMLSitePreviewAppElement;
@@ -401,9 +479,15 @@ declare global {
 
 
 declare global {
-  interface HTMLSiteSearchElement extends HTMLStencilElement {
 
+  namespace StencilComponents {
+    interface SiteSearch {
+
+    }
   }
+
+  interface HTMLSiteSearchElement extends StencilComponents.SiteSearch, HTMLStencilElement {}
+
   var HTMLSiteSearchElement: {
     prototype: HTMLSiteSearchElement;
     new (): HTMLSiteSearchElement;
@@ -428,9 +512,15 @@ declare global {
 
 
 declare global {
-  interface HTMLTabGroupElement extends HTMLStencilElement {
-    'tabs': string;
+
+  namespace StencilComponents {
+    interface TabGroup {
+      'tabs': string;
+    }
   }
+
+  interface HTMLTabGroupElement extends StencilComponents.TabGroup, HTMLStencilElement {}
+
   var HTMLTabGroupElement: {
     prototype: HTMLTabGroupElement;
     new (): HTMLTabGroupElement;
@@ -455,9 +545,15 @@ declare global {
 
 
 declare global {
-  interface HTMLTableOfContentsElement extends HTMLStencilElement {
 
+  namespace StencilComponents {
+    interface TableOfContents {
+
+    }
   }
+
+  interface HTMLTableOfContentsElement extends StencilComponents.TableOfContents, HTMLStencilElement {}
+
   var HTMLTableOfContentsElement: {
     prototype: HTMLTableOfContentsElement;
     new (): HTMLTableOfContentsElement;

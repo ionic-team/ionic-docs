@@ -21,7 +21,7 @@
     "heroku-postbuild": "npm run api-scripts-build && npm run api-docs && npm run build && npm run server-build"
   },
   "dependencies": {
-    "@stencil/core": "^0.7.18",
+    "@stencil/core": "^0.7.21",
     "@stencil/dev-server": "0.0.18",
     "@stencil/helmet": "^0.2.3",
     "@stencil/router": "0.0.28",
