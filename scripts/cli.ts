@@ -12,13 +12,22 @@ export async function generate() {
 
   const repo = await git.initCLIRepoRefference();
 
-  Object.keys(await npm.getCLIDocs()).forEach(version => {
-    const markdown = docgen.getVersionMarkup(version);
-    console.log(markdown);
+  const docs = await npm.getCLIDocs();
+  Object.keys(docs).forEach(version => {
+    writeDocs(docs[version]);
   });
-
 
   const endTime = new Date().getTime();
   console.log(`CLI Docs copied in ${endTime - startTime}ms`);
 }
 
+function writeDocs(doc) {
+  const dest = path.join(config.CLI_DOCS_DIR, doc.type);
+
+  if (!fs.existsSync(dest)) fs.mkdirSync(dest);
+
+  fs.writeFileSync(
+    path.join(dest, `commands.md`),
+    docgen.getVersionMarkup(doc)
+  );
+}

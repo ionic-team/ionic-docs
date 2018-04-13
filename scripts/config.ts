@@ -7,8 +7,8 @@ export const API_DOCS_DIR = process.env.API_DOCS_DIR || 'src/docs-content/api';
 
 export const CLI_DIR = process.env.CLI_DIR || 'sources/ionic-cli';
 export const CLI_REPO_URL = process.env.MONOREPO_URL || 'https://github.com/ionic-team/ionic-cli.git';
+export const CLI_DOCS_DIR = process.env.CLI_DOCS_DIR || 'src/docs-content/cli';
 
-export const PATH_DOCS = process.env.PATH_DOCS || '';
 export const VERBOSE = bool(process.env.VERBOSE) || false;
 
 

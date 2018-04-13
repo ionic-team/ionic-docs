@@ -42,7 +42,7 @@ hideTOC: true
 
 <ul class="others">
   <li class="cli">
-    <stencil-route-link url="/docs/cli">
+    <stencil-route-link url="/docs/cli/ionic-angular/commands">
       <strong>Ionic CLI</strong>
       <span>
         The primary tool used during the process of developing an Ionic app.

@@ -10,3 +10,5 @@ package-lock.json
 src/docs-content/api/
 /null
 /stencil-stats.json
+/src/docs-content/cli/ionic-angular/commands.md
+/src/docs-content/cli/ionic1/commands.md

@@ -39,7 +39,7 @@ export async function generate() {
     copyFiles(APIDocs.components, DOCS_DEST, version);
 
     generateNav(
-      path.join(config.PATH_DOCS, menuPath, `api-menu.ts`),
+      path.join(menuPath, `api-menu.ts`),
       APIDocs.components,
       version
     );

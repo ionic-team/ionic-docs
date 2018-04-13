@@ -33,7 +33,9 @@ export class TableOfContents {
   }
 
   updateTOC () {
-    const selector = 'main h1, main h2, main h3';
+    const selector = ['h1', 'h2', 'h3']
+      .map(tag => `main ${tag}:not([no-anchor])`)
+      .join(', ');
     this.headings = this.el.parentElement.querySelectorAll(selector);
 
     const anchor = document.createElement('a');
