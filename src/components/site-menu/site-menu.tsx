@@ -1,4 +1,5 @@
 import { Component, Prop, State } from '@stencil/core';
+import { RouterSwitch } from '@stencil/router';
 import VersionDropdown from './version-dropdown';
 import * as menuMap from './site-menu-map';
 import { versions } from '../../versions';
@@ -77,14 +78,23 @@ export class SiteMenu {
   }
 
   render() {
-    return [
-      <VersionDropdown
-        items={versions}
-        onSelect={selected => { this.version = selected; }}/>,
-      <nav>
-        <ul>{ this.createMenu(menuMap.main, true) }</ul>
-        <ul class="external">{ this.createMenu(menuMap.secondary, true) }</ul>
-      </nav>
-    ];
+    return (
+      <stencil-router>
+        <RouterSwitch>
+          <stencil-route url="/docs/api" routeRender={() => [
+            <VersionDropdown items={versions} onSelect={selected => { this.version = selected; }}/>,
+            <nav>
+              <ul>{ this.createMenu(menuMap.api, true) }</ul>
+            </nav>
+          ]}/>
+          <stencil-route url="/docs" routeRender={() => (
+            <nav>
+              <ul>{ this.createMenu(menuMap.main, true) }</ul>
+              <ul class="external">{ this.createMenu(menuMap.secondary, true) }</ul>
+            </nav>
+          )}/>
+        </RouterSwitch>
+      </stencil-router>
+    );
   }
 }

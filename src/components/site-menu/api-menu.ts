@@ -1,4 +1,4 @@
-export let apiMenu = {
+export const apiMenu = {
   "0.0.2-29": {
     "action-sheet-controller": "/docs/api/0.0.2-29/action-sheet-controller",
     "action-sheet": "/docs/api/0.0.2-29/action-sheet",
@@ -553,4 +553,4 @@ export let apiMenu = {
     "toolbar": "/docs/api/0.2.1/toolbar",
     "virtual-scroll": "/docs/api/0.2.1/virtual-scroll"
   }
-}
+};

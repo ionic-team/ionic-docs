@@ -82,7 +82,8 @@ site-menu stencil-route-link .link-active:hover {
   font-weight: 600;
 }
 
-site-menu .external > li > a:after {
+site-menu .external > li > a:after,
+site-menu .external > li > stencil-route-link:after {
   color: var(--light-gray);
   content: "\f3d1";
   font-family: "Ionicons";

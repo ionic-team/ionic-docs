@@ -30,6 +30,10 @@ export const main = {
 };
 
 export const secondary = {
-  'API Reference': version => apiMenu[version],
+  'API Reference': '/docs/api',
   'Native APIs': {}
+};
+
+export const api = {
+  'API Reference': version => apiMenu[version]
 };
