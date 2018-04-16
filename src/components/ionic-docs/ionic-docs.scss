@@ -30,8 +30,7 @@ ionic-docs {
   }
 }
 
-site-header,
-site-preview-app {
+site-header {
   position: sticky;
 }
 
@@ -56,17 +55,5 @@ site-content {
   @media (max-width: $breakpoint-md)  {
     padding-left: 24px;
     padding-right: 24px;
-  }
-}
-
-site-preview-app {
-  grid-area: preview;
-  top: var(--header-height);
-  padding: 1.75rem 0 1rem;
-
-
-  @media (max-width: $breakpoint-lg)  {
-    /* TODO: preview app link */
-    display: none;
   }
 }
