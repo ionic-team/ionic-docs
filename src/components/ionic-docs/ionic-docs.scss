@@ -29,21 +29,3 @@ ionic-docs {
     }
   }
 }
-
-site-header {
-  position: sticky;
-}
-
-site-header {
-  align-items: center;
-  align-self: stretch;
-  grid-area: header;
-  padding-left: 2rem;
-  padding-right: 1.2rem;
-  top: 0;
-
-  @media (max-width: $breakpoint-md)  {
-    padding-left: 24px;
-    padding-right: 32px;
-  }
-}

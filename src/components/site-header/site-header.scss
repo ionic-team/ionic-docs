@@ -27,10 +27,22 @@ ionic-docs.section-cli {
 
 
 site-header {
+  align-items: center;
+  align-self: stretch;
   background-color: var(--blue);
   color: var(--header-color);
-  z-index: 1;
   font-family: var(--font-family-eina);
+  grid-area: header;
+  padding-left: 2rem;
+  padding-right: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
+  @media (max-width: $breakpoint-md)  {
+    padding-left: 24px;
+    padding-right: 32px;
+  }
 
   h1,
   h2,
