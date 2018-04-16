@@ -1,9 +1,3 @@
-/* @import 'variables.css'; */
-/* @import 'fonts.css'; */
-/* @import 'typography.css';
-@import 'general.css';
-@import 'pages/index.css'; */
-
 * {
   box-sizing: border-box;
 }
@@ -25,6 +19,95 @@ body {
   width: 100%;
   padding: 0;
   margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--blackish);
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 32px;
+  letter-spacing: -.03em;
+}
+
+h2 {
+  font-size: 24px;
+  padding-top: 48px;
+  margin-top: -24px;
+  margin-bottom: .9em;
+}
+
+h3 {
+  padding-top: 4em;
+  margin-top: -2em;
+  font-size: 18px;
+  letter-spacing: -.025em;
+  margin-bottom: 1.3em;
+}
+
+p,
+ul {
+  color: var(--dark);
+  font-size: 14px;
+  letter-spacing: -.02em;
+  line-height: 2em;
+  margin-bottom: 2.16em;
+  font-weight: 400;
+}
+
+ul {
+  padding: 1px 0 14px 17px;
+}
+
+li {
+  margin-bottom: 1.08em;
+}
+
+code {
+  background: #f5f7fa;
+  margin: 0 2px;
+  padding: 3px 5px;
+  color: #f06332;
+  font-family: 'SF Mono', 'Roboto Mono', Menlo, monospace;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+pre code {
+  color: #334561;
+  font-weight: 500;
+  border-radius: 0;
+  background: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1.5;
+}
+
+a,
+stencil-route-link {
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: 500;
+  transition: .2s color ease;
+
+  &:hover {
+    color: #619aff;
+    text-decoration: none;
+  }
+}
+
+stencil-route-link:hover {
+  cursor: pointer;
+}
+
+.intro {
+  font-size: 18px;
+  color: #6e7f99;
 }
 
 main {

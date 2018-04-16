@@ -2,9 +2,13 @@ const sass = require('@stencil/sass');
 
 exports.config = {
   plugins: [
-    sass()
+    sass({
+      injectGlobalPaths:[
+        'src/styles/sass-global.scss'
+      ]
+    })
   ],
-  globalStyle: ['src/styles/variables.scss'],
+  globalStyle: ['src/styles/global.scss'],
   copy: [{ src: 'docs-content' }],
   outputTargets: [
     {
