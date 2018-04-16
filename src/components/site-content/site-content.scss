@@ -1,5 +1,12 @@
 site-content {
+  grid-area: content;
+  padding: 1.15rem 2rem 1.75rem;
   transition: transform 400ms cubic-bezier(0.190,1,0.220,1);
+
+  @media (max-width: $breakpoint-md) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
 
 site-content.is-menu-open {

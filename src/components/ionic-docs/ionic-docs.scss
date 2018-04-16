@@ -47,13 +47,3 @@ site-header {
     padding-right: 32px;
   }
 }
-
-site-content {
-  padding: 1.15rem 2rem 1.75rem;
-  grid-area: content;
-
-  @media (max-width: $breakpoint-md)  {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-}
