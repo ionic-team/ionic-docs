@@ -13,7 +13,7 @@ async function run() {
   }
 
   await apiDocs.generate();
-  // await cliDocs.generate();
+  await cliDocs.generate();
 }
 
 // Invoke run() only if executed directly i.e. `node ./scripts/e2e`

@@ -7,7 +7,7 @@ import * as npm from './npm';
 import * as utils from './utils';
 
 const menuPath = 'src/components/site-menu';
-const menuHeader = 'export let apiMenu = ';
+const menuHeader = 'export const apiMenu = ';
 const ionicComponentsDir = `${config.IONIC_DIR}/${config.IONIC_CORE_SRC}/components`;
 
 // the main task of the API documentation generation process

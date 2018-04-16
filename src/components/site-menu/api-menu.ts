@@ -553,4 +553,4 @@ export const apiMenu = {
     "toolbar": "/docs/api/0.2.1/toolbar",
     "virtual-scroll": "/docs/api/0.2.1/virtual-scroll"
   }
-};
+}

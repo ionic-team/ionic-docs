@@ -26,18 +26,17 @@ export function getVersionMarkup(doc): string {
 
     if (command.exampleCommands.length) {
       markdown += '<h3 no-anchor>Usage</h3>\r\n\r\n';
-      markdown += `<code-block language="shell">\r\n`;
-      markdown += `${command.exampleCommands.join('\r\n')}`;
+      markdown += '<code-block language="shell">\r\n';
+      markdown += command.exampleCommands.join('\r\n');
       markdown += '\r\n</code-block>\r\n\r\n';
     }
 
     if (command.summary.length) {
       markdown += '<h3 no-anchor>Description</h3>\r\n<p>';
-      markdown += `${command.description
+      markdown += command.description
         .replace(/\n\n/g, '</p>\r\n<p>')
-        .replace(/\n\\\[([2-9])/g, '<br>\r\n\\\[$1')
-      }</p>`;
-      markdown += `\r\n`;
+        .replace(/\n\\\[([2-9])/g, '<br>\r\n\\\[$1');
+      markdown += `</p>\r\n`;
     }
 
     markdown += generateOptionsList(command.options);
