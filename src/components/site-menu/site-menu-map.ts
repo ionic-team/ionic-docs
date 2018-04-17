@@ -4,8 +4,7 @@ export const main = {
   'Home': '/docs',
   'Introduction': {
     'What is Ionic Framework': '/docs/intro',
-    'Basic Features': '/docs/intro/basics',
-    'App Structure': '/docs/intro/structure',
+    'Release Notes': '/docs/release-notes',
     'Core Concepts': '/docs/intro/concepts',
     'Browser Support': '/docs/intro/support'
   },
