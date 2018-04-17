@@ -4,23 +4,91 @@ description: Nothing to see here
 previewUrl: 'https://blog.ionicframework.com'
 ---
 
-# Testing
+# What is Ionic Framework?
 
-## What is Ionic Framework
+<!-- TOC goes here -->
 
 <p class='intro' markdown='1'>
-Ionic Framework is an open source (MIT) UI toolkit that enables developers to build performant, high-quality mobile apps using familiar web technologies (HTML, CSS, and JavaScript).
+Ionic Framework is an open source UI toolkit for building performant, high-quality mobile and desktop apps using familiar web technologies (HTML, CSS, and JavaScript).
+</p>
+<p class='intro' markdown='1'>
+Ionic Framework is focused on the frontend user experience, or UI interaction of an app (controls, interactions, gestures, animations). It’s easy to learn, and integrates nicely with other libraries or frameworks, such as Angular, or can be used standalone without a frontend framework.
+</p>
+<p class='intro' markdown='1'>
+Currently, Ionic Framework has official integration with Angular, but support for <strong>Vue</strong> and <strong>React</strong> are in development. If you’d like to learn more about Ionic Framework before diving in, we [created a video](#) to walk you through the basics.
 </p>
 
-Ionic Framework is focused mainly on the look and feel, or the UI interaction, of an app. This means that it’s not a replacement for PhoneGap or your favorite JavaScript framework. Instead, Ionic fits in well with these projects, in order to simplify one big part of your app development process: the front-end. Check out “Where does the Ionic Framework fit in?” to get a good understanding of Ionic’s core philosophy and goals.
+## License
 
-Ionic currently requires Angular in order to work at its full potential. While you can still use the CSS portion of the framework, you’ll miss out on powerful UI interactions, gestures, animations, and other things. In the future, Ionic plans to become more agnostic in order to support a broader variety of JavaScript frameworks.
+Ionic Framework is completely free and open source, released under <a href="https://opensource.org/licenses/MIT" target="_blank">MIT license</a>, which means you can use it in personal or commercial projects for free. For example, MIT is the same license used by such popular projects as jQuery and Ruby on Rails. 
 
-### License
+This website and documentation content (found in the <a href="https://github.com/ionic-team/ionic-site" target="_blank">ionic-site</a> repo) is licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache 2 license</a>.
 
-Ionic Framework is completely free and open source, released under the permissive MIT license, which means you can use Ionic in personal or commercial projects for free. For example, MIT is the same license used by such popular projects as jQuery and Ruby on Rails.
 
-This website and documentation content (found in the ionic-site repository) is licensed under the Apache 2 license.
+## Ionic CLI
+
+The official [Ionic CLI](#), or Command Line Interface, is a tool that quickly scaffolds Ionic apps and provides a number of helpful commands to Ionic developers. In addition to installing and updating Ionic, the CLI comes with a built-in development server, build and debugging tools, and much more. If you are an Ionic Pro member, the CLI can be used to export code and even interact with your account programmatically.
+
+## Ionic Pro
+
+To take Ionic Framework apps even further, we also offer a commercial app platform called <a href="https://ionicframework.com/pro" target="_blank">Ionic Pro</a>. Ionic (the company) makes money by charging a subscription for Ionic Pro (among other comercial products), which <strong>is entirely optional and separate from the open source Framework.</strong> 
+
+Pro lets you monitor and track runtime errors, compile native app builds, and send live updates to your Ionic apps from a centralized dashboard. It comes with a free "Starter" plan to play around with some of these features, with an optional upgrade to paid plans for more advanced capabilities and scale.
+
+## Compatible Frameworks
+
+Ionic Framework is built to work well with other JS libraries and frameworks:
+
+### JavaScript
+
+Talk about Ionic Framework’s new support for vanilla ice cream JavaScript (no framework required).
+
+### Angular
+
+Talk about Ionic Framework's Angular integration.
+
+### Stencil
+
+Talk about Ionic Framework being used with Stencil.
+
+### Future Support
+
+Support for other frameworks, such as Vue and React, are actively being developed. To request support for others, please create an issue on our GitHub page.
+
+## Ionic Framework v4+
+
+Ionic Framework v4 is a major advance in the underlying technology and capabilities of the project, with a focus on performance, compatibility, and overall extensibility. Although v4 still integrates deeply with Angular, it’s now also framework-agnostic, meaning it can work with any other JS framework (Vue, React, Preact, etc), no framework at all, or with the help of Stencil.
+
+[Write more about what v4 is all about]
+
+## Ecosystem
+
+Ionic Framework was originally built by Ben Sperry, Adam Bradley, and Max Lynch. After releasing an alpha preview in 2013, adoption of the framework quickly grew beyond their expectations, and a core team was formed to work on it full-time.
+
+Today, Ionic Framework and its ecosystem is guided by an international community of developers and contributors who fuel its growth and adoption. Developers and companies small and large use Ionic Framework to build and ship amazing apps that run everywhere.
+
+Here are some ways to join the community:
+
+* List item
+* List item
+* List item
+* List item
+
+
+
+
+
+
+
+
+
+
+
+
+<blockquote>
+  <p>Here is a nifty little note about something important.</p>
+</blockquote>
+
 
 ```js
 import { ActionSheetController } from 'ionic-angular'
