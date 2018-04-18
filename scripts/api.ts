@@ -15,9 +15,12 @@ export async function generate() {
   const startTime = new Date().getTime();
 
   // clone/update the git repo and get a list of all the tags
-  const repo = await git.initAPIRepoRefference();
+  const repo = await git.initRepoRefference(
+    config.IONIC_DIR,
+    config.IONIC_REPO_URL
+  );
   utils.vlog('validating tags');
-  const versions = await git.getAPIVersions();
+  const versions = await git.getVersions(repo);
 
   // generate the docs for each version
   for (let i = 0; i < versions.length; i++) {
@@ -32,7 +35,7 @@ export async function generate() {
 
     // Generate the docs for this version
     console.log(`Generating API docs for ${versions[i]} (1-3 mins)`);
-    await git.checkout(versions[i]);
+    await git.checkout(repo, versions[i]);
     await npm.installAPI();
     const APIDocs = await npm.buildAPIDocs();
 

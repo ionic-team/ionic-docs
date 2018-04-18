@@ -1,5 +1,6 @@
-import * as apiDocs from './api';
-import * as cliDocs from './cli';
+import { generate  as apiDocs } from './api';
+import { generate  as cliDocs } from './cli';
+import { generate  as nativeDocs } from './native';
 import * as utils from './utils';
 
 // the main task of the API documentation generation process
@@ -12,8 +13,9 @@ async function run() {
     utils.vlog('Precheck complete');
   }
 
-  await apiDocs.generate();
-  await cliDocs.generate();
+  await apiDocs();
+  await cliDocs();
+  // await nativeDocs();
 }
 
 // Invoke run() only if executed directly i.e. `node ./scripts/e2e`

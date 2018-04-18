@@ -79,7 +79,7 @@ export function promisedGlob(pattern, options = null) {
   return new Promise((resolve) => {
     glob(pattern, options, (err, files) => {
       if (err) {
-        throw new Error(err);
+        throw err;
       }
       resolve(files);
     });

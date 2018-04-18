@@ -10,12 +10,13 @@ import * as utils from './utils';
 export async function generate() {
   const startTime = new Date().getTime();
 
-  const repo = await git.initCLIRepoRefference();
+  const repoRef = await git.initRepoRefference(
+    config.CLI_DIR,
+    config.CLI_REPO_URL
+  );
 
   const docs = await npm.getCLIDocs();
-  Object.keys(docs).forEach(version => {
-    writeDocs(docs[version]);
-  });
+  Object.keys(docs).forEach(version => writeDocs(docs[version]));
 
   const endTime = new Date().getTime();
   console.log(`CLI Docs copied in ${endTime - startTime}ms`);
