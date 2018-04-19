@@ -6,7 +6,7 @@ hideTOC: true
 <div class="cards">
   <card-link headline="Introduction"
              hasIcon="true"
-             url="/docs/intro">
+             url="/docs/intro/intro">
     Learn the fundamentals you need to know to start building amazing apps with
     Ionic Framework.
   </card-link>
