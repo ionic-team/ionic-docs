@@ -3,8 +3,8 @@ import { apiMenu } from './api-menu';
 export const main = {
   'Home': '/docs',
   'Introduction': {
-    'What is Ionic Framework': '/docs/intro',
-    'Release Notes': '/docs/release-notes',
+    'What is Ionic Framework': '/docs/intro/intro',
+    'Release Notes': '/docs/intro/release-notes',
     'Core Concepts': '/docs/intro/concepts',
     'Browser Support': '/docs/intro/support'
   },
