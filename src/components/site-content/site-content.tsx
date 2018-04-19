@@ -5,6 +5,7 @@ import { Component, Listen, Prop } from '@stencil/core';
   styleUrl: 'site-content.scss'
 })
 export class SiteContent {
+  @Prop() docPath: string;
   @Prop() onOverlayClick: () => void;
   @Prop() isMenuOpen: boolean;
   @Prop({ context: 'isServer' }) private isServer: boolean;
@@ -26,16 +27,6 @@ export class SiteContent {
   }
 
   render() {
-    return (
-      <stencil-router>
-        <stencil-route
-          url={['/docs/:docPath*', '/docs']}
-          // group="main"
-          routeRender={loadMarkdownDocument}/>
-      </stencil-router>
-    );
+    return <doc-loader path={this.docPath}/>;
   }
 }
-
-const loadMarkdownDocument = ({ match }) =>
-  <doc-loader path={match.params.docPath ? match.params.docPath : 'index' }/>;
