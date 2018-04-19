@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import * as config from './config';
-// import * as docgen from './cliDocgen';
+import * as docgen from './nativeDocgen';
 import * as git from './git';
 import * as npm from './npm';
 import * as utils from './utils';
@@ -56,15 +56,26 @@ function processPlugin(tsData) {
 
   const name = getNameFromTSChildren(tsData.children);
 
-  const pluginData = preparePluginData(
+  const plugin = preparePluginData(
     tsData,
     metaDoc[0].metadata[name],
     name
   );
 
-  if (pluginData.name === 'ActionSheet') {
-    console.log(pluginData);
+  if (plugin.name === 'AppUpdate') {
+    plugin.members.forEach(member => {
+      console.log(member);
+    });
   }
+
+  if (!fs.existsSync(config.NATIVE_DOCS_DIR)) {
+    fs.mkdirSync(config.NATIVE_DOCS_DIR);
+  }
+
+  fs.writeFileSync(
+    path.join(config.NATIVE_DOCS_DIR, `${plugin.npmName}.md`),
+    docgen.getPluginMarkup(plugin)
+  );
 }
 
 
@@ -75,12 +86,14 @@ function preparePluginData(tsData, metaData, name) {
   const metaArgs = metaData.decorators[0].arguments[0];
   return {
     name: name,
-    description: selectChild(tsChild.comment.tags, 'tag', 'description'),
+    description: selectChild(tsChild.comment.tags, 'tag', 'description').text,
     installation: metaArgs.install,
     repo: metaArgs.repo,
-    npmName: tsData.name.replace('\"', '').replace('/index', ''),
+    npmName: tsData.name.replace('\"', '').replace('/index', '').replace('"', ''),
+    cordovaName: metaArgs.plugin,
     platforms: metaArgs.platforms,
-    usage: selectChild(tsChild.comment.tags, 'tag', 'usage'),
+    usage: selectChild(tsChild.comment.tags, 'tag', 'usage') ?
+      selectChild(tsChild.comment.tags, 'tag', 'usage').text : null,
     members: getNonInheritedMembers(tsChild.children),
     interfaces: tsData.children.filter(child => child.kindString === 'Interface')
   };
@@ -98,7 +111,32 @@ function getNonInheritedMembers(members) {
   return members.filter(member => !(
     member.inheritedFrom &&
     member.inheritedFrom.name.indexOf('IonicNativePlugin') === 0
-  ));
+  )).map(member => {
+    // normalize member format
+    return {
+      name: member.name,
+      kind: member.kindString,
+      description: member.signatures && member.signatures[0].comment ?
+        member.signatures[0].comment.shortText :
+        member.comment ? member.comment.shortText : '',
+      returns: member.signatures ? {
+        description: member.signatures && member.signatures[0].comment ?
+          member.signatures[0].comment.returns : null,
+        name: member.signatures[0].type.name,
+        type: member.signatures && member.signatures[0].type.typeArguments ?
+          member.signatures[0].type.typeArguments[0].name : null
+      } : null,
+      params: member.signatures && member.signatures[0].parameters ?
+      member.signatures[0].parameters.map(param => ({
+        name: param.name,
+        description: param.type.type === 'reference' ?
+          `See ${param.type.name} table below` :
+          param.comment ? param.comment.text : null,
+        type: param.type.name,
+        optional: param.flags && !!param.flags.isOptional
+      })) : null
+    };
+  });
 }
 
 function getNameFromTSChildren(children) {
