@@ -233,7 +233,7 @@ declare global {
   }
   namespace JSXElements {
     export interface IonicDocsAttributes extends HTMLAttributes {
-      'onSectionChanged'?: (event: CustomEvent) => void;
+
     }
   }
 }
@@ -276,6 +276,7 @@ declare global {
 
   namespace StencilComponents {
     interface SiteContent {
+      'docPath': string;
       'isMenuOpen': boolean;
       'onOverlayClick': () => void;
     }
@@ -300,6 +301,7 @@ declare global {
   }
   namespace JSXElements {
     export interface SiteContentAttributes extends HTMLAttributes {
+      'docPath'?: string;
       'isMenuOpen'?: boolean;
       'onOverlayClick'?: () => void;
     }
