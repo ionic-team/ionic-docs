@@ -4,7 +4,7 @@ description: Nothing to see here
 previewUrl: 'https://blog.ionicframework.com'
 ---
 
-# Core Concepts
+# Browser Support
 
 <!-- TOC goes here -->
 

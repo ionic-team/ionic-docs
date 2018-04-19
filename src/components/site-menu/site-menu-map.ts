@@ -6,7 +6,7 @@ export const main = {
     'What is Ionic Framework': '/docs/intro/intro',
     'Release Notes': '/docs/intro/release-notes',
     'Core Concepts': '/docs/intro/concepts',
-    'Browser Support': '/docs/intro/support'
+    'Browser Support': '/docs/intro/browsers'
   },
   'Getting Started': {
     'Installation': '/docs/getting-started/installation',
