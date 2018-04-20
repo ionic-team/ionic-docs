@@ -82,8 +82,8 @@ export class SiteMenu {
           <svg viewBox="0 0 33 22"><polygon points="16.5 22 0 0 33 0"></polygon></svg>
         </a>
         <ul class={{ 'section-switcher__list': true, 'is-open': this.isSwitcherOpen }}>
-          <li><stencil-route-link url="/docs/pro">Pro</stencil-route-link></li>
-          <li><stencil-route-link url="/docs/cli">CLI</stencil-route-link></li>
+          <li><stencil-route-link url="/docs/pro" onClick={this.onNavigate}>Pro</stencil-route-link></li>
+          <li><stencil-route-link url="/docs/cli" onClick={this.onNavigate}>CLI</stencil-route-link></li>
         </ul>
       </div>,
       <nav>

@@ -12,12 +12,24 @@ site-content {
 
 site-content.is-menu-open {
   @media (max-width: 700px) {
-    opacity: 0.25;
     overflow-y: hidden;
     pointer-events: all;
 
     > * {
       pointer-events: none;
+    }
+
+    &:after {
+      background-color: var(--blue);
+      bottom: 0;
+      content: "";
+      display: block;
+      left: 0;
+      opacity: 0.1;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 1;
     }
   }
 }
