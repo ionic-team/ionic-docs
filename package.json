@@ -4,7 +4,7 @@
   "description": "Ionic Docs Site",
   "engines": {
     "node": "8.9.x",
-    "npm": "5.7.x"
+    "npm": "5.8.x"
   },
   "scripts": {
     "start": "npm run server",
