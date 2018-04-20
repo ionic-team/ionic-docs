@@ -59,7 +59,8 @@ main {
       outline: none;
 
       &::before {
-        background-color: #9ec1ff;
+        background-color: #16161d;
+        opacity: 0;
         height: 16px;
         width: 16px;
         content: '';
@@ -68,14 +69,15 @@ main {
         position: absolute;
         left: -20px;
         top:5px;
-        transition: .2s background-color ease;
+        transition: .1s all ease;
       }
 
       &:hover {
         color: var(--darker);
 
         &::before {
-          background-color: var(--blue);
+          background-color: #16161d;
+          opacity: 1;
         }
       }
     }
