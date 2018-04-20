@@ -62,9 +62,9 @@ function processPlugin(tsData) {
     name
   );
 
-  if (plugin.name === 'AppUpdate') {
-    plugin.members.forEach(member => {
-      console.log(member);
+  if (plugin.name === 'ActionSheet') {
+    plugin.interfaces.forEach(face => {
+      console.log(face);
     });
   }
 
@@ -136,6 +136,9 @@ function getNonInheritedMembers(members) {
         optional: param.flags && !!param.flags.isOptional
       })) : null
     };
+  }).sort((a, b) => {
+    if (a.name === b.name) return 0;
+    return a.name > b.name;
   });
 }
 
