@@ -1,10 +1,15 @@
 import * as fs from 'fs';
 import * as path from 'path';
+import * as util from 'util';
+
+import * as semver from 'semver';
 import * as config from './config';
 import * as docgen from './apiDocgen';
 import * as git from './git';
 import * as npm from './npm';
 import * as utils from './utils';
+
+import { versions as FRAMEWORK_VERSIONS } from '../src/versions';
 
 const menuPath = 'src/components/site-menu';
 const menuHeader = 'export const apiMenu = ';
@@ -15,36 +20,44 @@ export async function generate() {
   const startTime = new Date().getTime();
 
   // clone/update the git repo and get a list of all the tags
-  const repo = await git.initRepoRefference(
+  await git.ensureLatestMaster(
     config.IONIC_DIR,
     config.IONIC_REPO_URL
   );
   utils.vlog('validating tags');
-  const versions = await git.getVersions(repo);
+  const allVersions = await git.getVersions(config.IONIC_DIR);
+  const versions = allVersions.filter(v => {
+    for (const whitelistedVersion of FRAMEWORK_VERSIONS) {
+      if (semver.eq(v, whitelistedVersion)) {
+        return true;
+      }
+    }
+
+    return false;
+  });
 
   // generate the docs for each version
-  for (let i = 0; i < versions.length; i++) {
-    const version = versions[i].replace('v', '');
-    const DOCS_DEST = path.join(config.API_DOCS_DIR, version);
+  for (const sv of versions) {
+    const DOCS_DEST = path.join(config.API_DOCS_DIR, sv.version);
     // skip this version if it already exists.
     // delete the directory in src/api/ to force a rebuild
     if (fs.existsSync(DOCS_DEST)) {
-      console.log(`Skipping existing API docs for ${versions[i]}`);
+      console.log(`Skipping existing API docs for ${sv.version}`);
       // continue;
     }
 
     // Generate the docs for this version
-    console.log(`Generating API docs for ${versions[i]} (1-3 mins)`);
-    await git.checkout(repo, versions[i]);
+    console.log(`Generating API docs for ${sv.raw} (1-3 mins)`);
+    await git.checkout(config.IONIC_DIR, sv.raw);
     await npm.installAPI();
     const APIDocs = await npm.buildAPIDocs();
 
-    copyFiles(APIDocs.components, DOCS_DEST, version);
+    copyFiles(APIDocs.components, DOCS_DEST, sv.version);
 
     generateNav(
       path.join(menuPath, `api-menu.ts`),
       APIDocs.components,
-      version
+      sv.version
     );
   }
 

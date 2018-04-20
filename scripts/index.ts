@@ -6,7 +6,7 @@ import * as utils from './utils';
 // the main task of the API documentation generation process
 async function run() {
   utils.vlog('Starting CLI CI task');
-  if (!utils.preCheck()) {
+  if (!(await utils.preCheck())) {
     console.error('Docs Precheck Failure. Check configs and readme.');
     return;
   } else {

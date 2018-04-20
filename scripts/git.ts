@@ -1,45 +1,31 @@
 import * as fs from 'fs';
-// import * as path from 'path';
-import { Checkout, Clone, CloneOptions, Git, Repository, Tag} from 'nodegit';
+import * as semver from 'semver';
 
 import * as config from './config';
-import * as utils from './utils';
-import { versions } from '../src/versions';
+import { execp, vlog } from './utils';
 
-export async function initRepoRefference(dir, url, branch = 'origin/master') {
-  let repoRef;
+export async function ensureLatestMaster(dir: string, url: string): Promise<void> {
   if (!fs.existsSync(dir)) {
-    const cloneOptions = new CloneOptions();
-    cloneOptions.checkoutBranch = 'master';
     console.log(`Cloning repo ${url}\r\nThis may take a few mins...`);
-    repoRef = await Clone(url, dir, cloneOptions);
+    await execp(`git clone ${url} ${dir}`);
     console.log('Clone complete');
   } else {
-
-    utils.vlog('API Repo exists - Updating');
-    repoRef = await Repository.open(dir).then(ref => {
-      repoRef = ref;
-      return repoRef.fetchAll();
-    }).then(function() {
-      return repoRef.mergeBranches('master', 'origin/master');
-    }).then(() => {
-      return repoRef;
-    });
+    vlog('API Repo exists - Updating');
+    await execp('git checkout master', { cwd: dir });
+    await execp(`git pull --ff-only origin master`, { cwd: dir });
   }
-  return repoRef;
 }
 
-export async function getVersions(repoRef) {
+export async function getVersions(dir: string): Promise<semver.SemVer[]> {
   // get a list of version tags
-  const tags = await Tag.list(repoRef);
-  return tags.reduce((filtered, tag) => {
-    if (versions.indexOf(tag.replace('v', '')) !== -1) {
-      filtered.push(tag);
-    }
-    return filtered;
-  }, []);
+  const { stdout: tags } = await execp(`git tag`, { cwd: dir });
+
+  return tags
+    .split('\n')
+    .map(tag => semver.parse(tag))
+    .filter(tag => semver.valid(tag));
 }
 
-export async function checkout(repoRef, tag) {
-  return Checkout.tree(repoRef, tag);
+export async function checkout(dir: string, ref: string): Promise<void> {
+  await execp(`git checkout ${ref}`, { cwd: dir });
 }

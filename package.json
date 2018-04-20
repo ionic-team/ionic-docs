@@ -27,6 +27,8 @@
     "@stencil/router": "0.0.29-7",
     "@stencil/sass": "0.0.3",
     "@stencil/utils": "latest",
+    "@types/node": "^8.10.9",
+    "@types/semver": "^5.5.0",
     "chokidar": "^2.0.2",
     "chokidar-cli": "^1.2.0",
     "compression": "^1.7.2",
@@ -39,12 +41,10 @@
     "ionicons": "^3.0.0",
     "marked": "^0.3.12",
     "path": "^0.12.7",
+    "semver": "^5.5.0",
     "tslint": "^5.9.1",
     "tslint-ionic-rules": "0.0.14",
     "typedoc": "^0.11.1"
-  },
-  "optionalDependencies": {
-    "nodegit": "^0.21.0"
   },
   "cacheDirectories": [
     "ionic",

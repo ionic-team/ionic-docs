@@ -10,7 +10,7 @@ import * as utils from './utils';
 export async function generate() {
   const startTime = new Date().getTime();
 
-  const repoRef = await git.initRepoRefference(
+  await git.ensureLatestMaster(
     config.CLI_DIR,
     config.CLI_REPO_URL
   );

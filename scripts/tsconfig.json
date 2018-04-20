@@ -1,9 +1,7 @@
 {
   "compilerOptions": {
     "allowUnreachableCode": false,
-    "baseUrl": "./",
     "declaration": false,
-    "experimentalDecorators": true,
     "lib": [
       "es2015"
     ],
@@ -11,10 +9,9 @@
     "module": "commonjs",
     "outDir": "build",
     "target": "es2017",
-    "noUnusedLocals": false,
-    "noUnusedParameters": false
+    "pretty": true
   },
   "include": [
-    "**/*.ts",
+    "**/*.ts"
   ]
 }

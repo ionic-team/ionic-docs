@@ -1,8 +1,12 @@
-import { exec } from 'child_process';
+import { SpawnOptions, exec } from 'child_process';
 import * as fs from 'fs';
 import * as path from 'path';
-import * as glob from 'glob';
+import * as util from 'util';
+
+import * as semver from 'semver';
 import * as config from './config';
+
+export const execp = util.promisify(exec);
 
 export function copyDirectory(source, target) {
   let files = [];
@@ -75,39 +79,12 @@ export function filterParentDirectory(path) {
   return pathArray[pathArray.length - 2];
 }
 
-export function promisedGlob(pattern, options = null) {
-  return new Promise((resolve) => {
-    glob(pattern, options, (err, files) => {
-      if (err) {
-        throw err;
-      }
-      resolve(files);
-    });
-  });
-}
-
-export async function shell(command) {
-  return new Promise(resolve => {
-    const cp = exec(command, (err, stdout, stderr) => {
-      if (err) {
-        throw err;
-      }
-      if (stderr) {
-        vlog(stderr);
-        // throw stderr;
-      }
-      vlog(stdout);
-      resolve(stdout);
-    });
-  });
-}
-
-export function preCheck() {
+export async function preCheck() {
   if (!fs.existsSync(config.API_DOCS_DIR)) {
     fs.mkdirSync(config.API_DOCS_DIR);
   }
 
-  return validateNPMVersion() && validateNodeVersion(process.version);
+  return (await validateNPMVersion()) && validateNodeVersion(process.version);
 }
 
 // logging function that checks to see if VERBOSE mode is on
@@ -121,32 +98,9 @@ export function vlog(message, data = null) {
   }
 }
 
-export function parseSemver(str) {
-  return /(\d+)\.(\d+)\.(\d+)/
-    .exec(str)
-    .slice(1)
-    .map(Number);
-}
-
-export async function promisedExec(command) {
-  return new Promise( (resolve, reject) => {
-    exec(command, (error, stdout, stderr) => {
-      if (error) {
-        return reject(error);
-      }
-
-      if (stderr) {
-        return reject(stderr);
-      }
-
-      resolve(stdout);
-    });
-  });
-}
-
 export async function validateNPMVersion() {
-  const npmVersion = await promisedExec('npm -v');
-  const [major, minor] = parseSemver(npmVersion);
+  const { stdout: npmVersion } = await execp('npm -v');
+  const { major, minor } = semver.parse(npmVersion.trim());
 
   if (major < 5 || (major === 5 && minor < 8)) {
     throw new Error(
@@ -156,8 +110,8 @@ export async function validateNPMVersion() {
   return true;
 }
 
-export function validateNodeVersion(version) {
-  const [major, minor] = parseSemver(version);
+export function validateNodeVersion(version: string) {
+  const { major, minor } = semver.parse(version);
 
   if (major < 7 || (major === 7 && minor < 6)) {
     throw new Error(
