@@ -5,9 +5,12 @@ site-menu {
   height: calc(100vh - var(--header-height));
   min-width: 200px;
   overflow-y: auto;
-  padding: 1.75rem 0 1.75rem 2rem;
   position: sticky;
   top: var(--header-height);
+}
+
+site-menu nav {
+  padding: 1.75rem 0 1.75rem 2rem;
 }
 
 site-menu ul {
@@ -89,6 +92,38 @@ site-menu .external > li > stencil-route-link:after {
   content: "\f3d1";
   font-family: "Ionicons";
   margin-left: 0.5em;
+}
+
+site-menu .section-switcher {
+  border-bottom: solid 1px #e5e9ef;
+
+  @media (min-width: $breakpoint-md) {
+    display: none;
+  }
+}
+
+site-menu .section-switcher__toggle {
+  align-items: center;
+  display: flex;
+  font-size: 18px;
+  font-weight: 700;
+  height: calc(var(--header-height) - 1px);
+  justify-content: space-between;
+  padding: 0 1.5rem;
+}
+
+site-menu .section-switcher__toggle > svg {
+  fill: currentColor;
+  width: 8px;
+}
+
+site-menu .section-switcher__list {
+  display: none;
+  padding: 0 1.5rem 1.5rem;
+
+  &.is-open {
+    display: block;
+  }
 }
 
 @media (max-width: 700px) {
