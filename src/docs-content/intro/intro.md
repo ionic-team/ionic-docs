@@ -65,7 +65,9 @@ Ionic Framework v4 is a major advance in the underlying technology and capabilit
 
 Ionic Framework was originally built by <a href="#" target="_blank">Ben Sperry</a>, <a href="#" target="_blank">Adam Bradley</a>, and <a href="#" target="_blank">Max Lynch</a>. After releasing an alpha preview in 2013, adoption of the framework quickly grew beyond their expectations, and a core team was formed to work on it full-time.
 
-Today, Ionic Framework and its ecosystem is guided by an international community of developers and contributors who fuel its growth and adoption. Developers and companies small and large use Ionic Framework to build and ship amazing apps that run everywhere.
+Today, Ionic Framework is actively developed and maintained by the core team, and its ecosystem is guided by an international community of developers and contributors fueling its growth and adoption. Developers and companies small and large use Ionic Framework to build and ship amazing apps that run everywhere.
+
+###  Join Our Community
 
 Here are some ways to join the community:
 

@@ -43,13 +43,14 @@ h2 {
   padding-top: 48px;
   margin-top: -24px;
   margin-bottom: .9em;
+  letter-spacing: -0.015em;
 }
 
 h3 {
   padding-top: 40px;
   margin-top: -2em;
   font-size: 18px;
-  letter-spacing: -.025em;
+  letter-spacing: -.015em;
   margin-bottom: 0;
 }
 
@@ -57,7 +58,7 @@ p,
 ul {
   color: var(--dark);
   font-size: 14px;
-  letter-spacing: -.02em;
+  letter-spacing: -.015em;
   line-height: 2em;
   margin-bottom: 2.16em;
   font-weight: 400;
