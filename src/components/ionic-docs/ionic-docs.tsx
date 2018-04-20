@@ -27,6 +27,12 @@ export class IonicDocs {
     this.isMenuOpen = false;
   }
 
+  hostData() {
+    return {
+      'class': { 'is-menu-open': this.isMenuOpen }
+    };
+  }
+
   render() {
     return (
       <stencil-router>
@@ -37,6 +43,7 @@ export class IonicDocs {
           const pageClass = {
             'layout': true,
             'show-preview': this.showPreview,
+            'is-menu-open': this.isMenuOpen,
             [`page-${page}`]: true,
             [`section-${section}`]: true
           };

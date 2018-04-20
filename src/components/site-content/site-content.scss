@@ -2,7 +2,6 @@ site-content {
   grid-area: content;
   overflow-x: hidden;
   padding: 1.15rem 2rem 1.75rem;
-  transition: transform 400ms cubic-bezier(0.190,1,0.220,1);
 
   @media (max-width: $breakpoint-md) {
     height: calc(100vh - var(--header-height));
@@ -16,7 +15,6 @@ site-content.is-menu-open {
     opacity: 0.25;
     overflow-y: hidden;
     pointer-events: all;
-    transform: translateX(70%);
 
     > * {
       pointer-events: none;

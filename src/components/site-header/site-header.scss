@@ -40,6 +40,7 @@ site-header {
   z-index: 1;
 
   @media (max-width: $breakpoint-md)  {
+    overflow-x: hidden;
     padding-left: 24px;
     padding-right: 32px;
   }
