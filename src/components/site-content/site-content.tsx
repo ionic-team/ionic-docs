@@ -1,10 +1,11 @@
-import { Component, Listen, Prop } from '@stencil/core';
+import { Component, Element, Listen, Prop } from '@stencil/core';
 
 @Component({
   tag: 'site-content',
   styleUrl: 'site-content.scss'
 })
 export class SiteContent {
+  @Element() el;
   @Prop() docPath: string;
   @Prop() onOverlayClick: () => void;
   @Prop() isMenuOpen: boolean;
@@ -13,7 +14,10 @@ export class SiteContent {
   @Listen('docLoaded')
   scrollToTop() {
     if (!this.isServer) {
-      requestAnimationFrame(() => { document.documentElement.scrollTop = 0; });
+      requestAnimationFrame(() => {
+        document.documentElement.scrollTop = 0;
+        this.el.scrollTop = 0;
+      });
     }
   }
 
