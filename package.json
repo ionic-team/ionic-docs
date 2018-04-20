@@ -24,7 +24,7 @@
     "@stencil/core": "^0.7.24",
     "@stencil/dev-server": "0.0.18",
     "@stencil/helmet": "^0.2.3",
-    "@stencil/router": "0.0.29-7",
+    "@stencil/router": "0.0.29-10",
     "@stencil/sass": "0.0.3",
     "@stencil/utils": "latest",
     "@types/node": "^8.10.9",
