@@ -3,7 +3,7 @@
     "allowUnreachableCode": false,
     "declaration": false,
     "lib": [
-      "es2015"
+      "es2017"
     ],
     "moduleResolution": "node",
     "module": "commonjs",

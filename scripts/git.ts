@@ -11,6 +11,7 @@ export async function ensureLatestMaster(dir: string, url: string): Promise<void
     console.log('Clone complete');
   } else {
     vlog('API Repo exists - Updating');
+    await execp('git reset --hard', { cwd: dir });
     await execp('git checkout master', { cwd: dir });
     await execp(`git pull --ff-only origin master`, { cwd: dir });
   }
