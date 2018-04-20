@@ -2,6 +2,10 @@ framework-dropdown {
   flex-grow: 1;
   position: relative;
 
+  @media (max-width: $breakpoint-md) {
+    display: none;
+  }
+
   .current {
     cursor: pointer;
     font-size: 18px;

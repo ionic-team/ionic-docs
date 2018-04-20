@@ -9,6 +9,10 @@ ionic-docs.section-cli {
 ecosystem-dropdown {
   position: relative;
 
+  @media (max-width: $breakpoint-md) {
+    display: none;
+  }
+
   .current {
     cursor: pointer;
     font-size: 13px;

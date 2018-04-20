@@ -66,6 +66,13 @@ site-header {
     display: flex;
     flex-grow: 0;
 
+    @media (max-width: $breakpoint-md) {
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
     svg {
       width: 72px;
       height: 24px;
