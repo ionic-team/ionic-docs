@@ -51,7 +51,7 @@ table-of-contents {
 main {
   h1,
   h2,
-  h3 {
+  {
     a.linked {
       color: inherit;
       font-weight: inherit;
@@ -68,6 +68,37 @@ main {
         mask-size: cover;
         position: absolute;
         left: -20px;
+        top:5px;
+        transition: .1s all ease;
+      }
+
+      &:hover {
+        color: var(--darker);
+
+        &::before {
+          background-color: #16161d;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  h3 {
+    a.linked {
+      color: inherit;
+      font-weight: inherit;
+      position: relative;
+      outline: none;
+
+      &::before {
+        background-color: #16161d;
+        opacity: 0;
+        height: 12px;
+        width: 12px;
+        content: '';
+        mask: url('/docs/assets/img/link.svg');
+        mask-size: cover;
+        position: absolute;
+        left: -16px;
         top:5px;
         transition: .1s all ease;
       }

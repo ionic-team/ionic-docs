@@ -29,7 +29,7 @@ hideTOC: true
   <card-link headline="Native APIs"
              hasIcon="true"
              url="/docs/native">
-    Learn to integrate and leverage native device plugins, like Bluetooth, Maps,
+    Integrate and leverage native device plugins, like Bluetooth, Maps,
     HealthKit, and more.
   </card-link>
   <card-link headline="Theming"

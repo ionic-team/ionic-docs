@@ -176,7 +176,8 @@ framework-dropdown {
       color: var(--blacker);
       display: block;
       letter-spacing: 0;
-      transition: 150ms color ease;
+      font-weight: 600;
+      transition: 150ms all ease;
     }
 
     span {

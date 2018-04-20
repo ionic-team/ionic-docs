@@ -20,7 +20,7 @@ Currently, Ionic Framework has official integration with Angular, but support fo
 
 ## License
 
-Ionic Framework is completely free and open source, released under <a href="https://opensource.org/licenses/MIT" target="_blank">MIT license</a>, which means you can use it in personal or commercial projects for free. For example, MIT is the same license used by such popular projects as jQuery and Ruby on Rails. 
+Ionic Framework is completely a free and open source project, released under <a href="https://opensource.org/licenses/MIT" target="_blank">MIT license</a>. This means you can use it in personal or commercial projects for free. For example, MIT is the same license used by such popular projects as jQuery and Ruby on Rails. 
 
 This website and documentation content (found in the <a href="https://github.com/ionic-team/ionic-site" target="_blank">ionic-site</a> repo) is licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache 2 license</a>.
 
@@ -35,9 +35,9 @@ To take Ionic Framework apps even further, we also offer a commercial app platfo
 
 Pro lets you monitor and track runtime errors, compile native app builds, and send live updates to your Ionic apps from a centralized dashboard. It comes with a free "Starter" plan to play around with some of these features, with an optional upgrade to paid plans for more advanced capabilities and scale.
 
-## Compatible Frameworks
+##  Framework Compatibility
 
-Ionic Framework is built to work well with other JS libraries and frameworks:
+While versions 1-3 of Ionic Framework were deeply coupled to Angular, version 4 was re-architected to not only integrate with Angular, but to also work well with other JS libraries and frameworks (or even no framework).
 
 ### JavaScript
 
@@ -57,9 +57,9 @@ Support for other frameworks, such as Vue and React, are actively being develope
 
 ## Ionic Framework v4+
 
-Ionic Framework v4 is a major advance in the underlying technology and capabilities of the project, with a focus on performance, compatibility, and overall extensibility. Although v4 still integrates deeply with Angular, it’s now also framework-agnostic, meaning it can work with any other JS framework (Vue, React, Preact, etc), no framework at all, or with the help of Stencil.
+Ionic Framework v4 is a major advance in the underlying technology and capabilities of the project, with a focus on performance, compatibility, and overall extensibility. Although v4 still integrates deeply with Angular, it’s now also framework-agnostic, meaning it can work with any other JS framework (Vue, React, Preact, etc), no framework at all with the help of Stencil.
 
-[Write more about what v4 is all about]
+[Write more about what v4 is all about: Performance/startup times, size, web standards, etc.]
 
 ## Ecosystem
 
