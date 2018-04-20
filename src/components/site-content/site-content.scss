@@ -1,7 +1,9 @@
 site-content {
   grid-area: content;
+  min-height: calc(100vh - var(--header-height));
   overflow-x: hidden;
   padding: 1.15rem 2rem 1.75rem;
+  position: relative;
 
   @media (max-width: $breakpoint-md) {
     height: calc(100vh - var(--header-height));
@@ -31,5 +33,33 @@ site-content.is-menu-open {
       top: 0;
       z-index: 1;
     }
+  }
+}
+
+.loading-indicator {
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.loading-indicator > svg {
+  animation: spin 1s infinite ease;
+  fill: var(--whiteish);
+  transform-origin: 50% 50%;
+  width: 4rem;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
   }
 }
