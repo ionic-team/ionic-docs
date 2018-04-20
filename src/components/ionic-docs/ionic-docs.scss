@@ -1,13 +1,3 @@
-ionic-docs {
-  display: block;
-}
-
-ionic-docs.is-menu-open {
-  @media (max-width: $breakpoint-md) {
-    overflow-x: hidden;
-  }
-}
-
 .layout {
   --content-min: 320px;
   --content-max: 720px;
