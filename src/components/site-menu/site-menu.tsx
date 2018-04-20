@@ -10,6 +10,7 @@ export class SiteMenu {
 
   @Prop() onNavigate: () => void;
   @Prop() isOpen: boolean;
+  @State() isSwitcherOpen = false;
   @State() activeItem: string;
   @State() version = versions[versions.length - 1];
 
@@ -69,18 +70,26 @@ export class SiteMenu {
     this.activeItem = this.activeItem === text ? null : text;
   }
 
-  hostData() {
-    return {
-      'class': { 'is-open': this.isOpen }
-    };
+  toggleSwitcher = () => {
+    this.isSwitcherOpen = !this.isSwitcherOpen;
   }
 
   render() {
-    return (
+    return [
+      <div class="section-switcher">
+        <a class="section-switcher__toggle" onClick={this.toggleSwitcher}>
+          Framework
+          <svg viewBox="0 0 33 22"><polygon points="16.5 22 0 0 33 0"></polygon></svg>
+        </a>
+        <ul class={{ 'section-switcher__list': true, 'is-open': this.isSwitcherOpen }}>
+          <li><stencil-route-link url="/docs/pro" onClick={this.onNavigate}>Pro</stencil-route-link></li>
+          <li><stencil-route-link url="/docs/cli" onClick={this.onNavigate}>CLI</stencil-route-link></li>
+        </ul>
+      </div>,
       <nav>
         <ul>{ this.createMenu(menuMap.main, true) }</ul>
         <ul class="external">{ this.createMenu(menuMap.secondary, true) }</ul>
       </nav>
-    );
+    ];
   }
 }

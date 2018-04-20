@@ -104,19 +104,8 @@ site-header {
     }
   }
 
-  @media (max-width: 340px)  {
-    ctrl-dropdown {
-      display: none;
-    }
-  }
-
-  @media (max-width: 640px)  {
-    site-search {
-      display: none;
-    }
-  }
-
-  @media (max-width: 700px)  {
+  @media (max-width: $breakpoint-md)  {
+    site-search,
     .github {
       display: none;
     }
