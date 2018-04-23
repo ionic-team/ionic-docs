@@ -4,7 +4,7 @@ import * as config from './config';
 import * as docgen from './nativeDocgen';
 import * as git from './git';
 import * as npm from './npm';
-import * as utils from './utils';
+import { execp, vlog } from './utils';
 
 const distList = `${config.NATIVE_DIR}/dist/@ionic-native`;
 
@@ -12,19 +12,20 @@ const distList = `${config.NATIVE_DIR}/dist/@ionic-native`;
 export async function generate() {
   const startTime = new Date().getTime();
 
-  // const repoRef = await git.initRepoRefference(
-  //   config.NATIVE_DIR,
-  //   config.NATIVE_REPO_URL,
-  //   'origin/v5'
-  // );
+  const repoRef = await git.ensureLatestMaster(
+    config.NATIVE_DIR,
+    config.NATIVE_REPO_URL,
+    // 'v5'
+  );
 
-  // await utils.shell([
-  //   `cd ${config.NATIVE_DIR}`,
-  //   'npm i',
-  //   'npm run build',
-  // ].join(' && '));
+  vlog('installing and building');
+  await execp([
+    `cd ${config.NATIVE_DIR}`,
+    'npm i',
+    'npm run build',
+  ].join(' && '));
 
-  utils.vlog('Reading output typescript data file');
+  vlog('Reading output typescript data file');
   const typeDoc = await getTypeDoc();
 
   typeDoc.children.forEach(tsData => processPlugin(tsData));
@@ -34,12 +35,12 @@ export async function generate() {
 }
 
 async function getTypeDoc() {
-  utils.vlog('generating native docs json');
-  // await utils.shell([
-  //   `cd ${config.NATIVE_DIR} && ../../node_modules/.bin/typedoc`,
-  //   '--json dist/docs.json --mode modules',
-  //   'src/@ionic-native/plugins/*/index.ts'
-  // ].join(' '));
+  vlog('generating native docs json');
+  await execp([
+    `cd ${config.NATIVE_DIR} && ../../node_modules/.bin/typedoc`,
+    '--json dist/docs.json --mode modules',
+    'src/@ionic-native/plugins/*/index.ts'
+  ].join(' '));
 
   return JSON.parse(
     fs.readFileSync(`${config.NATIVE_DIR}/dist/docs.json`, `utf8`)
@@ -62,11 +63,11 @@ function processPlugin(tsData) {
     name
   );
 
-  if (plugin.name === 'ActionSheet') {
-    plugin.interfaces.forEach(face => {
-      console.log(face);
-    });
-  }
+  // if (plugin.name === 'ActionSheet') {
+  //   plugin.interfaces.forEach(face => {
+  //     console.log(face);
+  //   });
+  // }
 
   if (!fs.existsSync(config.NATIVE_DOCS_DIR)) {
     fs.mkdirSync(config.NATIVE_DOCS_DIR);

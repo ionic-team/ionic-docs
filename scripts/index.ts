@@ -13,9 +13,9 @@ async function run() {
     utils.vlog('Precheck complete');
   }
 
-  await apiDocs();
-  await cliDocs();
-  // await nativeDocs();
+  // await apiDocs();
+  // await cliDocs();
+  await nativeDocs();
 }
 
 // Invoke run() only if executed directly i.e. `node ./scripts/e2e`
