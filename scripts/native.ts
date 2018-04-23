@@ -7,6 +7,10 @@ import * as npm from './npm';
 import { execp, vlog } from './utils';
 
 const distList = `${config.NATIVE_DIR}/dist/@ionic-native`;
+const menuPath = 'src/components/site-menu/native-menu.ts';
+const menuHeader = 'export const nativeMenu = ';
+
+const navList = {};
 
 // the main task of the API documentation generation process
 export async function generate() {
@@ -30,6 +34,10 @@ export async function generate() {
 
   typeDoc.children.forEach(tsData => processPlugin(tsData));
 
+  // write nav
+  const ts = `${menuHeader}${JSON.stringify(navList, null, '  ')}`;
+  fs.writeFileSync(menuPath, ts);
+
   const endTime = new Date().getTime();
   console.log(`Native Docs copied in ${endTime - startTime}ms`);
 }
@@ -47,6 +55,7 @@ async function getTypeDoc() {
   );
 }
 
+// parse plugin data and write to markdown file
 function processPlugin(tsData) {
   const metaDoc = JSON.parse(
     fs.readFileSync(
@@ -73,12 +82,13 @@ function processPlugin(tsData) {
     fs.mkdirSync(config.NATIVE_DOCS_DIR);
   }
 
+  navList[plugin.prettyName] = `/docs/native/${plugin.npmName}`;
+
   fs.writeFileSync(
     path.join(config.NATIVE_DOCS_DIR, `${plugin.npmName}.md`),
     docgen.getPluginMarkup(plugin)
   );
 }
-
 
 
 function preparePluginData(tsData, metaData, name) {
@@ -87,6 +97,7 @@ function preparePluginData(tsData, metaData, name) {
   const metaArgs = metaData.decorators[0].arguments[0];
   return {
     name: name,
+    prettyName: selectChild(tsChild.comment.tags, 'tag', 'name').text || name,
     description: selectChild(tsChild.comment.tags, 'tag', 'description').text,
     installation: metaArgs.install,
     repo: metaArgs.repo,
