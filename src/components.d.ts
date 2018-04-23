@@ -63,7 +63,7 @@ declare global {
 
   namespace StencilComponents {
     interface DocsDocument {
-
+      'path': string;
     }
   }
 
@@ -86,7 +86,7 @@ declare global {
   }
   namespace JSXElements {
     export interface DocsDocumentAttributes extends HTMLAttributes {
-
+      'path'?: string;
     }
   }
 }
