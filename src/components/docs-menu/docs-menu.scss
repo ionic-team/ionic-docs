@@ -1,0 +1,10 @@
+docs-menu {
+  grid-area: menu;
+  min-width: 200px;
+}
+
+.section-switch {
+  background-color: var(--blue);
+  color: var(--header-color);
+  height: var(--header-height);
+}

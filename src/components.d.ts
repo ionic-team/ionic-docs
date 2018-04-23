@@ -29,210 +29,30 @@ import '@stencil/router';
 declare global {
 
   namespace StencilComponents {
-    interface CardLink {
-      'hasIcon': boolean;
-      'headline': string;
-      'url': string;
+    interface DocsContent {
+
     }
   }
 
-  interface HTMLCardLinkElement extends StencilComponents.CardLink, HTMLStencilElement {}
+  interface HTMLDocsContentElement extends StencilComponents.DocsContent, HTMLStencilElement {}
 
-  var HTMLCardLinkElement: {
-    prototype: HTMLCardLinkElement;
-    new (): HTMLCardLinkElement;
+  var HTMLDocsContentElement: {
+    prototype: HTMLDocsContentElement;
+    new (): HTMLDocsContentElement;
   };
   interface HTMLElementTagNameMap {
-    'card-link': HTMLCardLinkElement;
+    'docs-content': HTMLDocsContentElement;
   }
   interface ElementTagNameMap {
-    'card-link': HTMLCardLinkElement;
+    'docs-content': HTMLDocsContentElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      'card-link': JSXElements.CardLinkAttributes;
+      'docs-content': JSXElements.DocsContentAttributes;
     }
   }
   namespace JSXElements {
-    export interface CardLinkAttributes extends HTMLAttributes {
-      'hasIcon'?: boolean;
-      'headline'?: string;
-      'url'?: string;
-    }
-  }
-}
-
-
-declare global {
-
-  namespace StencilComponents {
-    interface CodeBlock {
-      'language': string;
-    }
-  }
-
-  interface HTMLCodeBlockElement extends StencilComponents.CodeBlock, HTMLStencilElement {}
-
-  var HTMLCodeBlockElement: {
-    prototype: HTMLCodeBlockElement;
-    new (): HTMLCodeBlockElement;
-  };
-  interface HTMLElementTagNameMap {
-    'code-block': HTMLCodeBlockElement;
-  }
-  interface ElementTagNameMap {
-    'code-block': HTMLCodeBlockElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'code-block': JSXElements.CodeBlockAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface CodeBlockAttributes extends HTMLAttributes {
-      'language'?: string;
-    }
-  }
-}
-
-
-declare global {
-
-  namespace StencilComponents {
-    interface CodePreview {
-      'markup': string;
-    }
-  }
-
-  interface HTMLCodePreviewElement extends StencilComponents.CodePreview, HTMLStencilElement {}
-
-  var HTMLCodePreviewElement: {
-    prototype: HTMLCodePreviewElement;
-    new (): HTMLCodePreviewElement;
-  };
-  interface HTMLElementTagNameMap {
-    'code-preview': HTMLCodePreviewElement;
-  }
-  interface ElementTagNameMap {
-    'code-preview': HTMLCodePreviewElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'code-preview': JSXElements.CodePreviewAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface CodePreviewAttributes extends HTMLAttributes {
-      'markup'?: string;
-    }
-  }
-}
-
-
-declare global {
-
-  namespace StencilComponents {
-    interface CtrlDropdown {
-      'autoClose': boolean;
-      'autoCloseDelay': number;
-      'items': any[];
-      'onSelect': Function;
-      'renderer': Function;
-      'setInitial': Function;
-    }
-  }
-
-  interface HTMLCtrlDropdownElement extends StencilComponents.CtrlDropdown, HTMLStencilElement {}
-
-  var HTMLCtrlDropdownElement: {
-    prototype: HTMLCtrlDropdownElement;
-    new (): HTMLCtrlDropdownElement;
-  };
-  interface HTMLElementTagNameMap {
-    'ctrl-dropdown': HTMLCtrlDropdownElement;
-  }
-  interface ElementTagNameMap {
-    'ctrl-dropdown': HTMLCtrlDropdownElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'ctrl-dropdown': JSXElements.CtrlDropdownAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface CtrlDropdownAttributes extends HTMLAttributes {
-      'autoClose'?: boolean;
-      'autoCloseDelay'?: number;
-      'items'?: any[];
-      'onSelect'?: Function;
-      'renderer'?: Function;
-      'setInitial'?: Function;
-    }
-  }
-}
-
-
-declare global {
-
-  namespace StencilComponents {
-    interface DocLoader {
-      'path': string;
-    }
-  }
-
-  interface HTMLDocLoaderElement extends StencilComponents.DocLoader, HTMLStencilElement {}
-
-  var HTMLDocLoaderElement: {
-    prototype: HTMLDocLoaderElement;
-    new (): HTMLDocLoaderElement;
-  };
-  interface HTMLElementTagNameMap {
-    'doc-loader': HTMLDocLoaderElement;
-  }
-  interface ElementTagNameMap {
-    'doc-loader': HTMLDocLoaderElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'doc-loader': JSXElements.DocLoaderAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface DocLoaderAttributes extends HTMLAttributes {
-      'onDocLoaded'?: (event: CustomEvent) => void;
-      'path'?: string;
-    }
-  }
-}
-
-
-declare global {
-
-  namespace StencilComponents {
-    interface IonicDocs {
-
-    }
-  }
-
-  interface HTMLIonicDocsElement extends StencilComponents.IonicDocs, HTMLStencilElement {}
-
-  var HTMLIonicDocsElement: {
-    prototype: HTMLIonicDocsElement;
-    new (): HTMLIonicDocsElement;
-  };
-  interface HTMLElementTagNameMap {
-    'ionic-docs': HTMLIonicDocsElement;
-  }
-  interface ElementTagNameMap {
-    'ionic-docs': HTMLIonicDocsElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'ionic-docs': JSXElements.IonicDocsAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface IonicDocsAttributes extends HTMLAttributes {
+    export interface DocsContentAttributes extends HTMLAttributes {
 
     }
   }
@@ -242,30 +62,30 @@ declare global {
 declare global {
 
   namespace StencilComponents {
-    interface NewTabIcon {
+    interface DocsDocument {
 
     }
   }
 
-  interface HTMLNewTabIconElement extends StencilComponents.NewTabIcon, HTMLStencilElement {}
+  interface HTMLDocsDocumentElement extends StencilComponents.DocsDocument, HTMLStencilElement {}
 
-  var HTMLNewTabIconElement: {
-    prototype: HTMLNewTabIconElement;
-    new (): HTMLNewTabIconElement;
+  var HTMLDocsDocumentElement: {
+    prototype: HTMLDocsDocumentElement;
+    new (): HTMLDocsDocumentElement;
   };
   interface HTMLElementTagNameMap {
-    'new-tab-icon': HTMLNewTabIconElement;
+    'docs-document': HTMLDocsDocumentElement;
   }
   interface ElementTagNameMap {
-    'new-tab-icon': HTMLNewTabIconElement;
+    'docs-document': HTMLDocsDocumentElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      'new-tab-icon': JSXElements.NewTabIconAttributes;
+      'docs-document': JSXElements.DocsDocumentAttributes;
     }
   }
   namespace JSXElements {
-    export interface NewTabIconAttributes extends HTMLAttributes {
+    export interface DocsDocumentAttributes extends HTMLAttributes {
 
     }
   }
@@ -275,67 +95,30 @@ declare global {
 declare global {
 
   namespace StencilComponents {
-    interface SiteContent {
-      'docPath': string;
-      'isMenuOpen': boolean;
-      'onOverlayClick': () => void;
+    interface DocsHeader {
+
     }
   }
 
-  interface HTMLSiteContentElement extends StencilComponents.SiteContent, HTMLStencilElement {}
+  interface HTMLDocsHeaderElement extends StencilComponents.DocsHeader, HTMLStencilElement {}
 
-  var HTMLSiteContentElement: {
-    prototype: HTMLSiteContentElement;
-    new (): HTMLSiteContentElement;
+  var HTMLDocsHeaderElement: {
+    prototype: HTMLDocsHeaderElement;
+    new (): HTMLDocsHeaderElement;
   };
   interface HTMLElementTagNameMap {
-    'site-content': HTMLSiteContentElement;
+    'docs-header': HTMLDocsHeaderElement;
   }
   interface ElementTagNameMap {
-    'site-content': HTMLSiteContentElement;
+    'docs-header': HTMLDocsHeaderElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      'site-content': JSXElements.SiteContentAttributes;
+      'docs-header': JSXElements.DocsHeaderAttributes;
     }
   }
   namespace JSXElements {
-    export interface SiteContentAttributes extends HTMLAttributes {
-      'docPath'?: string;
-      'isMenuOpen'?: boolean;
-      'onOverlayClick'?: () => void;
-    }
-  }
-}
-
-
-declare global {
-
-  namespace StencilComponents {
-    interface EcosystemDropdown {
-
-    }
-  }
-
-  interface HTMLEcosystemDropdownElement extends StencilComponents.EcosystemDropdown, HTMLStencilElement {}
-
-  var HTMLEcosystemDropdownElement: {
-    prototype: HTMLEcosystemDropdownElement;
-    new (): HTMLEcosystemDropdownElement;
-  };
-  interface HTMLElementTagNameMap {
-    'ecosystem-dropdown': HTMLEcosystemDropdownElement;
-  }
-  interface ElementTagNameMap {
-    'ecosystem-dropdown': HTMLEcosystemDropdownElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'ecosystem-dropdown': JSXElements.EcosystemDropdownAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface EcosystemDropdownAttributes extends HTMLAttributes {
+    export interface DocsHeaderAttributes extends HTMLAttributes {
 
     }
   }
@@ -345,133 +128,30 @@ declare global {
 declare global {
 
   namespace StencilComponents {
-    interface FrameworkDropdown {
+    interface DocsLayout {
 
     }
   }
 
-  interface HTMLFrameworkDropdownElement extends StencilComponents.FrameworkDropdown, HTMLStencilElement {}
+  interface HTMLDocsLayoutElement extends StencilComponents.DocsLayout, HTMLStencilElement {}
 
-  var HTMLFrameworkDropdownElement: {
-    prototype: HTMLFrameworkDropdownElement;
-    new (): HTMLFrameworkDropdownElement;
+  var HTMLDocsLayoutElement: {
+    prototype: HTMLDocsLayoutElement;
+    new (): HTMLDocsLayoutElement;
   };
   interface HTMLElementTagNameMap {
-    'framework-dropdown': HTMLFrameworkDropdownElement;
+    'docs-layout': HTMLDocsLayoutElement;
   }
   interface ElementTagNameMap {
-    'framework-dropdown': HTMLFrameworkDropdownElement;
+    'docs-layout': HTMLDocsLayoutElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      'framework-dropdown': JSXElements.FrameworkDropdownAttributes;
+      'docs-layout': JSXElements.DocsLayoutAttributes;
     }
   }
   namespace JSXElements {
-    export interface FrameworkDropdownAttributes extends HTMLAttributes {
-      'onDocs-section-changed'?: (event: CustomEvent) => void;
-    }
-  }
-}
-
-
-declare global {
-
-  namespace StencilComponents {
-    interface SiteHeader {
-      'currentSection': string;
-      'isMenuOpen': boolean;
-      'onToggleClick': () => void;
-    }
-  }
-
-  interface HTMLSiteHeaderElement extends StencilComponents.SiteHeader, HTMLStencilElement {}
-
-  var HTMLSiteHeaderElement: {
-    prototype: HTMLSiteHeaderElement;
-    new (): HTMLSiteHeaderElement;
-  };
-  interface HTMLElementTagNameMap {
-    'site-header': HTMLSiteHeaderElement;
-  }
-  interface ElementTagNameMap {
-    'site-header': HTMLSiteHeaderElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'site-header': JSXElements.SiteHeaderAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface SiteHeaderAttributes extends HTMLAttributes {
-      'currentSection'?: string;
-      'isMenuOpen'?: boolean;
-      'onToggleClick'?: () => void;
-    }
-  }
-}
-
-
-declare global {
-
-  namespace StencilComponents {
-    interface SiteMenu {
-      'onNavigate': () => void;
-    }
-  }
-
-  interface HTMLSiteMenuElement extends StencilComponents.SiteMenu, HTMLStencilElement {}
-
-  var HTMLSiteMenuElement: {
-    prototype: HTMLSiteMenuElement;
-    new (): HTMLSiteMenuElement;
-  };
-  interface HTMLElementTagNameMap {
-    'site-menu': HTMLSiteMenuElement;
-  }
-  interface ElementTagNameMap {
-    'site-menu': HTMLSiteMenuElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'site-menu': JSXElements.SiteMenuAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface SiteMenuAttributes extends HTMLAttributes {
-      'onNavigate'?: () => void;
-    }
-  }
-}
-
-
-declare global {
-
-  namespace StencilComponents {
-    interface SitePreviewApp {
-
-    }
-  }
-
-  interface HTMLSitePreviewAppElement extends StencilComponents.SitePreviewApp, HTMLStencilElement {}
-
-  var HTMLSitePreviewAppElement: {
-    prototype: HTMLSitePreviewAppElement;
-    new (): HTMLSitePreviewAppElement;
-  };
-  interface HTMLElementTagNameMap {
-    'site-preview-app': HTMLSitePreviewAppElement;
-  }
-  interface ElementTagNameMap {
-    'site-preview-app': HTMLSitePreviewAppElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'site-preview-app': JSXElements.SitePreviewAppAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface SitePreviewAppAttributes extends HTMLAttributes {
+    export interface DocsLayoutAttributes extends HTMLAttributes {
 
     }
   }
@@ -481,30 +161,30 @@ declare global {
 declare global {
 
   namespace StencilComponents {
-    interface SiteSearch {
+    interface DocsMenu {
 
     }
   }
 
-  interface HTMLSiteSearchElement extends StencilComponents.SiteSearch, HTMLStencilElement {}
+  interface HTMLDocsMenuElement extends StencilComponents.DocsMenu, HTMLStencilElement {}
 
-  var HTMLSiteSearchElement: {
-    prototype: HTMLSiteSearchElement;
-    new (): HTMLSiteSearchElement;
+  var HTMLDocsMenuElement: {
+    prototype: HTMLDocsMenuElement;
+    new (): HTMLDocsMenuElement;
   };
   interface HTMLElementTagNameMap {
-    'site-search': HTMLSiteSearchElement;
+    'docs-menu': HTMLDocsMenuElement;
   }
   interface ElementTagNameMap {
-    'site-search': HTMLSiteSearchElement;
+    'docs-menu': HTMLDocsMenuElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      'site-search': JSXElements.SiteSearchAttributes;
+      'docs-menu': JSXElements.DocsMenuAttributes;
     }
   }
   namespace JSXElements {
-    export interface SiteSearchAttributes extends HTMLAttributes {
+    export interface DocsMenuAttributes extends HTMLAttributes {
 
     }
   }
@@ -514,31 +194,31 @@ declare global {
 declare global {
 
   namespace StencilComponents {
-    interface TabGroup {
-      'tabs': string;
+    interface DocsPreview {
+
     }
   }
 
-  interface HTMLTabGroupElement extends StencilComponents.TabGroup, HTMLStencilElement {}
+  interface HTMLDocsPreviewElement extends StencilComponents.DocsPreview, HTMLStencilElement {}
 
-  var HTMLTabGroupElement: {
-    prototype: HTMLTabGroupElement;
-    new (): HTMLTabGroupElement;
+  var HTMLDocsPreviewElement: {
+    prototype: HTMLDocsPreviewElement;
+    new (): HTMLDocsPreviewElement;
   };
   interface HTMLElementTagNameMap {
-    'tab-group': HTMLTabGroupElement;
+    'docs-preview': HTMLDocsPreviewElement;
   }
   interface ElementTagNameMap {
-    'tab-group': HTMLTabGroupElement;
+    'docs-preview': HTMLDocsPreviewElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      'tab-group': JSXElements.TabGroupAttributes;
+      'docs-preview': JSXElements.DocsPreviewAttributes;
     }
   }
   namespace JSXElements {
-    export interface TabGroupAttributes extends HTMLAttributes {
-      'tabs'?: string;
+    export interface DocsPreviewAttributes extends HTMLAttributes {
+
     }
   }
 }
@@ -547,30 +227,30 @@ declare global {
 declare global {
 
   namespace StencilComponents {
-    interface TableOfContents {
+    interface DocsRoot {
 
     }
   }
 
-  interface HTMLTableOfContentsElement extends StencilComponents.TableOfContents, HTMLStencilElement {}
+  interface HTMLDocsRootElement extends StencilComponents.DocsRoot, HTMLStencilElement {}
 
-  var HTMLTableOfContentsElement: {
-    prototype: HTMLTableOfContentsElement;
-    new (): HTMLTableOfContentsElement;
+  var HTMLDocsRootElement: {
+    prototype: HTMLDocsRootElement;
+    new (): HTMLDocsRootElement;
   };
   interface HTMLElementTagNameMap {
-    'table-of-contents': HTMLTableOfContentsElement;
+    'docs-root': HTMLDocsRootElement;
   }
   interface ElementTagNameMap {
-    'table-of-contents': HTMLTableOfContentsElement;
+    'docs-root': HTMLDocsRootElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      'table-of-contents': JSXElements.TableOfContentsAttributes;
+      'docs-root': JSXElements.DocsRootAttributes;
     }
   }
   namespace JSXElements {
-    export interface TableOfContentsAttributes extends HTMLAttributes {
+    export interface DocsRootAttributes extends HTMLAttributes {
 
     }
   }
