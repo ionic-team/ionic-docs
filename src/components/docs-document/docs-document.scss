@@ -1,5 +1,13 @@
 docs-document {
   max-width: 720px;
+  padding: 2rem;
+}
+
+docs-document > *:first-child {
+  margin-top: 0;
+}
+
+docs-document {
 
   h1,
   h2,

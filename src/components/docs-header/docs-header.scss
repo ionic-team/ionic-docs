@@ -1,5 +1,9 @@
 docs-header {
+  align-items: center;
   background-color: var(--blue);
   color: var(--header-color);
+  display: flex;
   grid-area: header;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }

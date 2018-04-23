@@ -1,10 +1,20 @@
 docs-menu {
+  font-size: 14px;
+  font-weight: 600;
   grid-area: menu;
   min-width: 200px;
 }
 
 .section-switch {
+  align-items: center;
   background-color: var(--blue);
   color: var(--header-color);
+  display: flex;
   height: var(--header-height);
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.menu {
+  padding: 2rem;
 }
