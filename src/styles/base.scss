@@ -19,3 +19,15 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
 }
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
