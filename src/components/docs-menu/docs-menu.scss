@@ -2,6 +2,7 @@ docs-menu {
   font-size: 14px;
   font-weight: 600;
   grid-area: menu;
+  min-height: 100vh;
   min-width: 200px;
 }
 
@@ -16,5 +17,7 @@ docs-menu {
 }
 
 .menu {
+  height: calc(100% - var(--header-height));
+  overflow-y: auto;
   padding: 2rem;
 }
