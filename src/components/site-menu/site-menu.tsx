@@ -9,7 +9,6 @@ import { versions } from '../../versions';
 export class SiteMenu {
 
   @Prop() onNavigate: () => void;
-  @Prop() isOpen: boolean;
   @State() isSwitcherOpen = false;
   @State() activeItem: string;
   @State() version = versions[versions.length - 1];

@@ -49,8 +49,7 @@ export class IonicDocs {
                 isMenuOpen={this.isMenuOpen}
                 onToggleClick={this.toggleMenu}/>
               <site-menu
-                onNavigate={this.closeMenu}
-                isOpen={this.isMenuOpen}/>
+                onNavigate={this.closeMenu}/>
               <site-content
                 docPath={path}
                 onOverlayClick={this.closeMenu}

@@ -416,7 +416,6 @@ declare global {
 
   namespace StencilComponents {
     interface SiteMenu {
-      'isOpen': boolean;
       'onNavigate': () => void;
     }
   }
@@ -440,7 +439,6 @@ declare global {
   }
   namespace JSXElements {
     export interface SiteMenuAttributes extends HTMLAttributes {
-      'isOpen'?: boolean;
       'onNavigate'?: () => void;
     }
   }
