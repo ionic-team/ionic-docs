@@ -23,7 +23,6 @@ export class SiteContent {
 
   hostData() {
     return {
-      'onClick': this.isMenuOpen ? this.onOverlayClick : null,
       'class': {
         'is-menu-open': this.isMenuOpen
       }
@@ -31,6 +30,9 @@ export class SiteContent {
   }
 
   render() {
-    return <doc-loader path={this.docPath}/>;
+    return [
+      <div class="content-overlay" onClick={this.onOverlayClick}/>,
+      <doc-loader path={this.docPath}/>
+    ];
   }
 }
