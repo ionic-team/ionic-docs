@@ -1,5 +1,5 @@
 import { Component, State } from '@stencil/core';
-import menuMap from './docs-menu-map';
+import * as menuMap from './docs-menu-map';
 
 @Component({
   tag: 'docs-menu',
@@ -34,6 +34,23 @@ export class DocsMenu {
     );
   }
 
+  createOutboundItem = (text, url, onClick?) => {
+    return (
+      <li>
+        <stencil-route-link
+          class="menu__item menu__item--outbound"
+          onClick={onClick}
+          url={url}
+          exact>
+            { text }
+            <svg viewBox="0 0 16 24">
+              <path d="M3 2l10 10L3 22" stroke-width="3" fill="none" fill-rule="evenodd"/>
+            </svg>
+        </stencil-route-link>
+      </li>
+    );
+  }
+
   setActiveItem(item) {
     this.activeItem = item;
   }
@@ -43,11 +60,17 @@ export class DocsMenu {
       <div class="section-switch">Framework</div>,
       <nav class="menu">
         <ul>
-          { Object.keys(menuMap).map(key => {
-            const val = menuMap[key];
+          { Object.keys(menuMap.main).map(key => {
+            const val = menuMap.main[key];
             const onClick = () => this.setActiveItem(key);
             const renderer = typeof val === 'string' ? this.createItem : this.createSubmenu;
             return renderer(key, val, onClick);
+          })}
+        </ul>
+        <ul>
+          { Object.keys(menuMap.outbound).map(key => {
+            const onClick = () => this.setActiveItem(null);
+            return this.createOutboundItem(key, menuMap.outbound[key], onClick);
           })}
         </ul>
       </nav>

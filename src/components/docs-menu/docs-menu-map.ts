@@ -1,4 +1,4 @@
-export default {
+export const main = {
   'Home': '/docs',
   'Introduction': {
     'What is Ionic Framework': '/docs/intro/intro',
@@ -23,4 +23,9 @@ export default {
   },
   'Contributing': {},
   'FAQ': {}
+};
+
+export const outbound = {
+  'API Reference': '/docs/api',
+  'Native APIs': '/docs/native'
 };

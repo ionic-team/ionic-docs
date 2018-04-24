@@ -26,6 +26,12 @@ docs-menu {
   margin: 0.5em 0;
 }
 
+.menu > ul:not(:first-child) {
+  border-top: solid 1px var(--whiteish);
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+
 .menu a {
   display: inline-block;
   line-height: 2;
@@ -76,4 +82,12 @@ docs-menu {
 
 .menu__item--active:hover {
   color: var(--blue);
+}
+
+.menu__item--outbound svg {
+  display: inline-block;
+  margin-left: 6px;
+  stroke: var(--gray);
+  vertical-align: middle;
+  width: 6px;
 }
