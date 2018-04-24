@@ -13,3 +13,4 @@ src/docs-content/api/
 /src/docs-content/cli/ionic-angular/commands.md
 /src/docs-content/cli/ionic1/commands.md
 /src/docs-content/native
+!/src/docs-content/native/index.md
