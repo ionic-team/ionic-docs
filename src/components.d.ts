@@ -289,4 +289,37 @@ declare global {
   }
 }
 
+
+declare global {
+
+  namespace StencilComponents {
+    interface TabGroup {
+      'tabs': string;
+    }
+  }
+
+  interface HTMLTabGroupElement extends StencilComponents.TabGroup, HTMLStencilElement {}
+
+  var HTMLTabGroupElement: {
+    prototype: HTMLTabGroupElement;
+    new (): HTMLTabGroupElement;
+  };
+  interface HTMLElementTagNameMap {
+    'tab-group': HTMLTabGroupElement;
+  }
+  interface ElementTagNameMap {
+    'tab-group': HTMLTabGroupElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'tab-group': JSXElements.TabGroupAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface TabGroupAttributes extends HTMLAttributes {
+      'tabs'?: string;
+    }
+  }
+}
+
 declare global { namespace JSX { interface StencilJSX {} } }
