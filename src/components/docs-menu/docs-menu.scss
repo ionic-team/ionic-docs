@@ -26,7 +26,7 @@ docs-menu {
   margin: 0.5em 0;
 }
 
-.menu > ul:not(:first-child) {
+.menu > ul + ul {
   border-top: solid 1px var(--whiteish);
   margin-top: 1rem;
   padding-top: 1rem;
@@ -94,4 +94,17 @@ docs-menu {
 
 .menu__item--static {
   pointer-events: none;
+}
+
+.api-nav-breadcrumb {
+  color: var(--blue);
+}
+
+.api-nav-breadcrumb svg {
+  display: inline-block;
+  margin-right: 4px;
+  padding-bottom: 2px;
+  stroke: currentColor;
+  vertical-align: middle;
+  width: 8px;
 }

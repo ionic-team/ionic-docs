@@ -72,16 +72,20 @@ export class DocsMenu {
 
       case 'api':
         const api = apiMap[this.version];
-        return (
+        return [
+          <stencil-route-link class="api-nav-breadcrumb" url="/docs">
+            <svg viewBox="0 0 16 24"><path d="M13 22L3 12 13 2" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+            Docs
+          </stencil-route-link>,
           <ul>
             <li>
-              <span class="menu__item menu__item--static">API</span>
+              <span class="menu__item menu__item--static">API Reference</span>
               <ul class="menu__submenu is-open">
                 { Object.keys(api).map(key => this.createItem(key, api[key]))}
               </ul>
             </li>
           </ul>
-        );
+        ];
 
       case 'pro':
       case 'cli':
