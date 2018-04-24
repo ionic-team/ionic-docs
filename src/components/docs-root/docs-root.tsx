@@ -14,8 +14,8 @@ export class DocsRoot {
   render() {
     return (
       <stencil-router>
-        <stencil-route url={['/docs', '/docs/:document']} routeRender={props => {
-          const documentPath = props.match.document || 'index';
+        <stencil-route url={['/docs/:document', '/docs']} routeRender={props => {
+          const documentPath = props.match.params.document || 'index';
           const sectionClass = this.parseSection(documentPath);
           const pageClass = documentPath.replace(/\//g, '-');
           const layoutClass = {
