@@ -256,4 +256,37 @@ declare global {
   }
 }
 
+
+declare global {
+
+  namespace StencilComponents {
+    interface LoadingIndicator {
+
+    }
+  }
+
+  interface HTMLLoadingIndicatorElement extends StencilComponents.LoadingIndicator, HTMLStencilElement {}
+
+  var HTMLLoadingIndicatorElement: {
+    prototype: HTMLLoadingIndicatorElement;
+    new (): HTMLLoadingIndicatorElement;
+  };
+  interface HTMLElementTagNameMap {
+    'loading-indicator': HTMLLoadingIndicatorElement;
+  }
+  interface ElementTagNameMap {
+    'loading-indicator': HTMLLoadingIndicatorElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'loading-indicator': JSXElements.LoadingIndicatorAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface LoadingIndicatorAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
 declare global { namespace JSX { interface StencilJSX {} } }
