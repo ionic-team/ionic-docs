@@ -19,7 +19,7 @@ export async function generate() {
   const repoRef = await git.ensureLatestMaster(
     config.NATIVE_DIR,
     config.NATIVE_REPO_URL,
-    // 'v5'
+    'v5'
   );
 
   vlog('installing and building');
@@ -57,26 +57,8 @@ async function getTypeDoc() {
 
 // parse plugin data and write to markdown file
 function processPlugin(tsData) {
-  const metaDoc = JSON.parse(
-    fs.readFileSync(
-      `${distList}/${tsData.name.replace(/\"/g, '')}.metadata.json`,
-      'utf8'
-    )
-  );
 
-  const name = getNameFromTSChildren(tsData.children);
-
-  const plugin = preparePluginData(
-    tsData,
-    metaDoc[0].metadata[name],
-    name
-  );
-
-  // if (plugin.name === 'ActionSheet') {
-  //   plugin.interfaces.forEach(face => {
-  //     console.log(face);
-  //   });
-  // }
+  const plugin = preparePluginData(tsData);
 
   if (!fs.existsSync(config.NATIVE_DOCS_DIR)) {
     fs.mkdirSync(config.NATIVE_DOCS_DIR);
@@ -91,19 +73,45 @@ function processPlugin(tsData) {
 }
 
 
-function preparePluginData(tsData, metaData, name) {
-  // console.log(name);
-  const tsChild = selectChild(tsData.children, 'name', name);
-  const metaArgs = metaData.decorators[0].arguments[0];
+function preparePluginData(tsData) {
+
+  const tsChild = getTSChild(tsData.children);
+  const name = tsChild.name;
+
+  if (name === 'ActionSheet') {
+    const test = selectChild(tsChild.decorators, 'name', 'Plugin').arguments.config;
+  }
+
+  let metaArgs = {};
+  if (tsChild.decorators[0].arguments && tsChild.decorators[0].arguments.config) {
+    // here be dragons, this is very fragile
+    // So we can avoid an `eval()`, we convert the object syntax string to valid
+    // JSON. Unexected syntax in the refference decorator will break it.
+    // console.log(tsChild.decorators[0].arguments.config)
+    const str = tsChild.decorators[0].arguments.config
+    .replace(/\n/g, ' ')
+    .replace(/\"/g, '\\"')
+    .replace(/\'/g, '"')
+    .replace(/([\{|,])\s*(\w+):/g, '$1 "$2":')
+    .replace(/, }/g, '}')
+    ;
+    // console.log(str);
+    metaArgs = JSON.parse(str);
+
+    const test = tsChild.decorators[0].arguments.config
+      .replace(/\'/g, '"');
+    console.log(test);
+  }
+
   return {
     name: name,
     prettyName: selectChild(tsChild.comment.tags, 'tag', 'name').text || name,
     description: selectChild(tsChild.comment.tags, 'tag', 'description').text,
-    installation: metaArgs.install,
-    repo: metaArgs.repo,
+    installation: metaArgs['install'],
+    repo: metaArgs['repo'],
     npmName: tsData.name.replace('\"', '').replace('/index', '').replace('"', ''),
-    cordovaName: metaArgs.plugin,
-    platforms: metaArgs.platforms,
+    cordovaName: metaArgs['plugin'],
+    platforms: metaArgs['platforms'],
     usage: selectChild(tsChild.comment.tags, 'tag', 'usage') ?
       selectChild(tsChild.comment.tags, 'tag', 'usage').text : null,
     members: getNonInheritedMembers(tsChild.children),
@@ -154,22 +162,13 @@ function getNonInheritedMembers(members) {
   });
 }
 
-function getNameFromTSChildren(children) {
+function getTSChild(children) {
   // We know the name, because it's the class that's exported
 
   for (let i = 0; i < children.length; i++) {
     if (children[i].kindString === 'Class' && children[i].flags.isExported) {
-      return children[i].name;
+      return children[i];
     }
   }
 }
 
-function pascalify(str) {
-  return str
-    .replace(/\"/g, '')
-    .replace('/index', '')
-    .toLowerCase()
-    .split('-')
-    .map(str => (str.charAt(0).toUpperCase() + str.slice(1)))
-    .join('');
-}

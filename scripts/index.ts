@@ -13,8 +13,8 @@ async function run() {
     utils.vlog('Precheck complete');
   }
 
-  // await apiDocs();
-  // await cliDocs();
+  await apiDocs();
+  await cliDocs();
   await nativeDocs();
 }
 
