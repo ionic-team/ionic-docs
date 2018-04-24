@@ -1,6 +1,4 @@
 docs-menu {
-  font-size: 14px;
-  font-weight: 600;
   grid-area: menu;
   min-height: 100vh;
   min-width: 200px;
@@ -17,7 +15,48 @@ docs-menu {
 }
 
 .menu {
+  font-size: 14px;
+  font-weight: 600;
   height: calc(100% - var(--header-height));
   overflow-y: auto;
   padding: 2rem;
+}
+
+.menu li {
+  margin: 0.5em 0;
+}
+
+.menu__item {
+  color: var(--blackish);
+  cursor: pointer;
+  display: inline-block;
+  line-height: 2;
+  transition: all 100ms ease;
+}
+
+.menu__item:hover {
+  color: var(--darkish);
+}
+
+.menu__item--active {
+  color: var(--blue);
+}
+
+.menu__submenu {
+  margin: 4px 0 6px 8px;
+}
+
+.menu__submenu > li {
+  margin: 0.05em 0;
+}
+
+.menu__submenu .menu__item {
+  color: var(--gray);
+  font-size: 0.95em;
+  font-weight: 500;
+}
+
+.menu__submenu .menu__item:hover {
+  color: var(--darkish);
+  transform: translateX(2px);
 }
