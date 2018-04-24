@@ -42,7 +42,12 @@ docs-menu {
 }
 
 .menu__submenu {
+  display: none;
   margin: 4px 0 6px 8px;
+}
+
+.menu__submenu.is-open {
+  display: block;
 }
 
 .menu__submenu > li {
