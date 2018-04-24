@@ -28,7 +28,7 @@ hideTOC: true
   </card-link>
   <card-link headline="Native APIs"
              hasIcon="true"
-             url="/docs/native">
+             url="/docs/native/action-sheet">
     Integrate and leverage native device plugins, like Bluetooth, Maps,
     HealthKit, and more.
   </card-link>

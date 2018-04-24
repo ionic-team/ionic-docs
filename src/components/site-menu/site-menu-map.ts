@@ -19,14 +19,14 @@ export const main = {
     'Releasing': '/docs/getting-started/releasing',
     // 'Tutorial': '/docs/getting-started/tutorial'
   },
-  'Components': {},
+  // 'Components': {},
   'Theming': {
         'Basics': '/docs/theming/basics',
         'Theming with CSS': '/docs/theming/theming-with-css',
         'Theming with Sass': '/docs/theming/theming-with-sass'
   },
-  'Contributing': {},
-  'FAQ': {}
+  // 'Contributing': {},
+  // 'FAQ': {}
 };
 
 export const secondary = {

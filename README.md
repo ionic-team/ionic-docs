@@ -10,9 +10,15 @@ The site content is built from markdown files in `src/docs-content`. Markdown
 files created there will automatically be turned in to routes based on their
 relative place in the directory.
 
+Refference pages derived from source code like the API, Native, and some of the
+CLI pages are automatically created when the server starts and are not part of
+this project. To generate these pages locally, run `npm run api-scripts-build`
+to compile the scripts and `npm run api-docs` to generate them. Note, this
+command takes several minutes to run.
+
 ## Contributing
 
-Ensure you're using recent versions of `npm 5` and `node 8`.
+Ensure you're using recent versions of `npm 5.8+` and `node 8+`.
 
 Then run `npm install`, and then `npm run dev` to launch the site in development mode.
 
