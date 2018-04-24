@@ -50,6 +50,7 @@ docs-document {
 
   ul {
     padding: 1px 0 14px 17px;
+    list-style: disc;
   }
 
   li {
@@ -75,9 +76,10 @@ docs-document {
     margin: 0 2px;
     padding: 3px 5px;
     color: #f06332;
-    font-family: 'SF Mono', 'Roboto Mono', Menlo, monospace;
+    font-family: var(--font-family-code);
     font-size: 12px;
     font-weight: 600;
+    letter-spacing: 0;
     border-radius: 4px;
   }
 

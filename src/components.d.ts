@@ -66,6 +66,72 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface CodeBlock {
+      'language': string;
+    }
+  }
+
+  interface HTMLCodeBlockElement extends StencilComponents.CodeBlock, HTMLStencilElement {}
+
+  var HTMLCodeBlockElement: {
+    prototype: HTMLCodeBlockElement;
+    new (): HTMLCodeBlockElement;
+  };
+  interface HTMLElementTagNameMap {
+    'code-block': HTMLCodeBlockElement;
+  }
+  interface ElementTagNameMap {
+    'code-block': HTMLCodeBlockElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'code-block': JSXElements.CodeBlockAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface CodeBlockAttributes extends HTMLAttributes {
+      'language'?: string;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface CodePreview {
+      'markup': string;
+    }
+  }
+
+  interface HTMLCodePreviewElement extends StencilComponents.CodePreview, HTMLStencilElement {}
+
+  var HTMLCodePreviewElement: {
+    prototype: HTMLCodePreviewElement;
+    new (): HTMLCodePreviewElement;
+  };
+  interface HTMLElementTagNameMap {
+    'code-preview': HTMLCodePreviewElement;
+  }
+  interface ElementTagNameMap {
+    'code-preview': HTMLCodePreviewElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'code-preview': JSXElements.CodePreviewAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface CodePreviewAttributes extends HTMLAttributes {
+      'markup'?: string;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface CtrlDropdown {
       'autoClose': boolean;
       'autoCloseDelay': number;
