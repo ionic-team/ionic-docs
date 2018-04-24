@@ -175,6 +175,7 @@ The following is a list of all the default generated RGB List values:
 --ion-color-light-rgb: 244, 244, 244;
 --ion-color-medium-rgb: 152, 154, 162;
 --ion-color-dark-rgb: 34, 34, 34;
+
 --ion-background-color-rgb: 255, 255, 255;
 --ion-text-color-rgb: 0, 0, 0;
 ```
@@ -193,11 +194,11 @@ A full theme will provide all of the CSS properties used throughout the componen
 
 ```css
 :root {
-  --ion-primary-color: #ff0000;
-  --ion-primary-color-contrast: #ffffff;
-  --ion-primary-color-shade: #ae0000;
-  --ion-primary-color-tint: #ff3633;
-  --ion-primary-color-rgb: 255, 0, 0;
+  --ion-color-primary: #ff0000;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-shade: #ae0000;
+  --ion-color-primary-tint: #ff3633;
+  --ion-color-primary-rgb: 255, 0, 0;
 }
 ```
 
@@ -205,11 +206,11 @@ Since CSS properties cascade, _that first C in CSS is oh so handy_, you can targ
 
 ```css
 .my-fancy-button {
-  --ion-primary-color: #ff0000;
-  --ion-primary-color-contrast: #ffffff;
-  --ion-primary-color-shade: #ae0000;
-  --ion-primary-color-tint: #ff3633;
-  --ion-primary-color-rgb: 255, 0, 0;
+  --ion-color-primary: #ff0000;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-shade: #ae0000;
+  --ion-color-primary-tint: #ff3633;
+  --ion-color-primary-rgb: 255, 0, 0;
 }
 ```
 
@@ -217,9 +218,9 @@ This can also be done via javascript using setProperty.
 
 ```js
 const el = document.querySelector('.my-fancy-button');
-el.style.setProperty('--ion-primary-color', '#ff0000');
-el.style.setProperty('--ion-primary-color-contrast', '#ffffff');
-el.style.setProperty('--ion-primary-color-shade', '#ae0000');
-el.style.setProperty('--ion-primary-color-tint', '#ff3633');
-el.style.setProperty('--ion-primary-color-rgb', '255,0,0');
+el.style.setProperty('--ion-color-primary', '#ff0000');
+el.style.setProperty('--ion-color-primary-contrast', '#ffffff');
+el.style.setProperty('--ion-color-primary-shade', '#ae0000');
+el.style.setProperty('--ion-color-primary-tint', '#ff3633');
+el.style.setProperty('--ion-color-primary-rgb', '255,0,0');
 ```
