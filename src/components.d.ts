@@ -162,7 +162,7 @@ declare global {
 
   namespace StencilComponents {
     interface DocsMenu {
-
+      'section': string;
     }
   }
 
@@ -185,7 +185,7 @@ declare global {
   }
   namespace JSXElements {
     export interface DocsMenuAttributes extends HTMLAttributes {
-
+      'section'?: string;
     }
   }
 }

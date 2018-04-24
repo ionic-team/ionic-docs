@@ -1,4 +1,4 @@
-import { Component, State } from '@stencil/core';
+import { Component, Prop, State } from '@stencil/core';
 import * as menuMap from './docs-menu-map';
 
 @Component({
@@ -6,6 +6,7 @@ import * as menuMap from './docs-menu-map';
   styleUrl: 'docs-menu.scss'
 })
 export class DocsMenu {
+  @Prop() section: string;
   @State() activeItem: string;
 
   createItem = (text, url, onClick?) => {
@@ -55,25 +56,41 @@ export class DocsMenu {
     this.activeItem = item;
   }
 
+  getMenuBySection(section) {
+    switch (section) {
+
+      case 'api':
+        return (
+          <ul><li>API Reference</li></ul>
+        );
+
+      case 'pro':
+      case 'cli':
+      case 'framework':
+      default:
+        return [
+          <ul>
+            { Object.keys(menuMap.main).map(key => {
+              const val = menuMap.main[key];
+              const onClick = () => this.setActiveItem(key);
+              const renderer = typeof val === 'string' ? this.createItem : this.createSubmenu;
+              return renderer(key, val, onClick);
+            })}
+          </ul>,
+          <ul>
+            { Object.keys(menuMap.outbound).map(key => {
+              const onClick = () => this.setActiveItem(null);
+              return this.createOutboundItem(key, menuMap.outbound[key], onClick);
+            })}
+          </ul>
+        ];
+    }
+  }
+
   render() {
     return [
       <div class="section-switch">Framework</div>,
-      <nav class="menu">
-        <ul>
-          { Object.keys(menuMap.main).map(key => {
-            const val = menuMap.main[key];
-            const onClick = () => this.setActiveItem(key);
-            const renderer = typeof val === 'string' ? this.createItem : this.createSubmenu;
-            return renderer(key, val, onClick);
-          })}
-        </ul>
-        <ul>
-          { Object.keys(menuMap.outbound).map(key => {
-            const onClick = () => this.setActiveItem(null);
-            return this.createOutboundItem(key, menuMap.outbound[key], onClick);
-          })}
-        </ul>
-      </nav>
+      <nav class="menu">{ this.getMenuBySection(this.section) }</nav>
     ];
   }
 }

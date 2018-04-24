@@ -16,16 +16,16 @@ export class DocsRoot {
       <stencil-router>
         <stencil-route url={['/docs/:document*', '/docs']} routeRender={props => {
           const documentPath = props.match.params.document || 'index';
-          const sectionClass = this.parseSection(documentPath);
-          const pageClass = documentPath.replace(/\//g, '-');
+          const section = this.parseSection(documentPath);
+          const page = documentPath.replace(/\//g, '-');
           const layoutClass = {
-            [`section-${sectionClass}`]: true,
-            [`page-${pageClass}`]: true
+            [`section-${section}`]: true,
+            [`page-${page}`]: true
           };
 
           return (
             <docs-layout class={layoutClass}>
-              <docs-menu/>
+              <docs-menu section={section}/>
               <docs-header/>
               <docs-content>
                 <docs-document path={documentPath}/>
