@@ -1,6 +1,7 @@
 docs-content {
-  display: flex;
+  display: grid;
   grid-area: content;
-  justify-content: space-between;
+  grid-template-columns: 1fr minmax(var(--content-min, 320px), var(--content-max, 720px)) 2fr auto;
+  grid-template-areas: ". document . preview";
   overflow-y: auto;
 }
