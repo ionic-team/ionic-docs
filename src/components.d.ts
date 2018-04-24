@@ -29,6 +29,49 @@ import '@stencil/router';
 declare global {
 
   namespace StencilComponents {
+    interface CtrlDropdown {
+      'autoClose': boolean;
+      'autoCloseDelay': number;
+      'items': any[];
+      'onSelect': Function;
+      'renderer': Function;
+      'setInitial': Function;
+    }
+  }
+
+  interface HTMLCtrlDropdownElement extends StencilComponents.CtrlDropdown, HTMLStencilElement {}
+
+  var HTMLCtrlDropdownElement: {
+    prototype: HTMLCtrlDropdownElement;
+    new (): HTMLCtrlDropdownElement;
+  };
+  interface HTMLElementTagNameMap {
+    'ctrl-dropdown': HTMLCtrlDropdownElement;
+  }
+  interface ElementTagNameMap {
+    'ctrl-dropdown': HTMLCtrlDropdownElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'ctrl-dropdown': JSXElements.CtrlDropdownAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface CtrlDropdownAttributes extends HTMLAttributes {
+      'autoClose'?: boolean;
+      'autoCloseDelay'?: number;
+      'items'?: any[];
+      'onSelect'?: Function;
+      'renderer'?: Function;
+      'setInitial'?: Function;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface DocsContent {
 
     }
