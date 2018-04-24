@@ -29,6 +29,43 @@ import '@stencil/router';
 declare global {
 
   namespace StencilComponents {
+    interface CardLink {
+      'hasIcon': boolean;
+      'headline': string;
+      'url': string;
+    }
+  }
+
+  interface HTMLCardLinkElement extends StencilComponents.CardLink, HTMLStencilElement {}
+
+  var HTMLCardLinkElement: {
+    prototype: HTMLCardLinkElement;
+    new (): HTMLCardLinkElement;
+  };
+  interface HTMLElementTagNameMap {
+    'card-link': HTMLCardLinkElement;
+  }
+  interface ElementTagNameMap {
+    'card-link': HTMLCardLinkElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'card-link': JSXElements.CardLinkAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface CardLinkAttributes extends HTMLAttributes {
+      'hasIcon'?: boolean;
+      'headline'?: string;
+      'url'?: string;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface CtrlDropdown {
       'autoClose': boolean;
       'autoCloseDelay': number;
