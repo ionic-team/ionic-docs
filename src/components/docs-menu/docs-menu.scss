@@ -26,20 +26,19 @@ docs-menu {
   margin: 0.5em 0;
 }
 
+.menu a {
+  display: inline-block;
+  line-height: 2;
+  transition: transform 100ms ease;
+}
+
 .menu__item {
   color: var(--blackish);
   cursor: pointer;
-  display: inline-block;
-  line-height: 2;
-  transition: all 100ms ease;
 }
 
 .menu__item:hover {
   color: var(--darkish);
-}
-
-.menu__item--active {
-  color: var(--blue);
 }
 
 .menu__submenu {
@@ -58,5 +57,18 @@ docs-menu {
 
 .menu__submenu .menu__item:hover {
   color: var(--darkish);
+}
+
+.menu__item--active,
+.menu__submenu a:hover {
   transform: translateX(2px);
+}
+
+.menu__item--active {
+  color: var(--blue);
+  font-weight: 600;
+}
+
+.menu__item--active:hover {
+  color: var(--blue);
 }
