@@ -11,8 +11,8 @@ import * as utils from './utils';
 
 import { versions as FRAMEWORK_VERSIONS } from '../src/versions';
 
-const menuPath = 'src/components/site-menu';
-const menuHeader = 'export const apiMenu = ';
+const menuPath = 'src/components/docs-menu';
+const menuHeader = 'export const apiMap = ';
 const ionicComponentsDir = `${config.IONIC_DIR}/${config.IONIC_CORE_SRC}/components`;
 
 // the main task of the API documentation generation process
@@ -55,7 +55,7 @@ export async function generate() {
     copyFiles(APIDocs.components, DOCS_DEST, sv.version);
 
     generateNav(
-      path.join(menuPath, `api-menu.ts`),
+      path.join(menuPath, `docs-api-map.ts`),
       APIDocs.components,
       sv.version
     );

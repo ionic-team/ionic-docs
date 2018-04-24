@@ -1,4 +1,6 @@
 import { Component, Prop, State } from '@stencil/core';
+import { versions } from '../../versions';
+import { apiMap } from './docs-api-map';
 import * as menuMap from './docs-menu-map';
 
 @Component({
@@ -7,6 +9,7 @@ import * as menuMap from './docs-menu-map';
 })
 export class DocsMenu {
   @Prop() section: string;
+  @State() version = versions[0];
   @State() activeItem: string;
 
   createItem = (text, url, onClick?) => {
@@ -60,8 +63,16 @@ export class DocsMenu {
     switch (section) {
 
       case 'api':
+        const api = apiMap[this.version];
         return (
-          <ul><li>API Reference</li></ul>
+          <ul>
+            <li>
+              <a class="menu__item">API</a>
+              <ul class="menu__submenu is-open">
+                { Object.keys(api).map(key => this.createItem(key, api[key]))}
+              </ul>
+            </li>
+          </ul>
         );
 
       case 'pro':
