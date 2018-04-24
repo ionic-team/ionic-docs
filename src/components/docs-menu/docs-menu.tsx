@@ -59,6 +59,14 @@ export class DocsMenu {
     this.activeItem = item;
   }
 
+  toggleActiveItem(item) {
+    if (this.activeItem === item) {
+      this.activeItem = null;
+      return;
+    }
+    this.setActiveItem(item);
+  }
+
   getMenuBySection(section) {
     switch (section) {
 
@@ -67,7 +75,7 @@ export class DocsMenu {
         return (
           <ul>
             <li>
-              <a class="menu__item">API</a>
+              <span class="menu__item menu__item--static">API</span>
               <ul class="menu__submenu is-open">
                 { Object.keys(api).map(key => this.createItem(key, api[key]))}
               </ul>
@@ -83,7 +91,7 @@ export class DocsMenu {
           <ul>
             { Object.keys(menuMap.main).map(key => {
               const val = menuMap.main[key];
-              const onClick = () => this.setActiveItem(key);
+              const onClick = () => this.toggleActiveItem(key);
               const renderer = typeof val === 'string' ? this.createItem : this.createSubmenu;
               return renderer(key, val, onClick);
             })}

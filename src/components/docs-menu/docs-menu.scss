@@ -40,11 +40,11 @@ docs-menu {
 
 .menu__item {
   color: var(--blackish);
-  cursor: pointer;
 }
 
 .menu__item:hover {
   color: var(--darkish);
+  cursor: pointer;
 }
 
 .menu__submenu {
@@ -90,4 +90,8 @@ docs-menu {
   stroke: var(--gray);
   vertical-align: middle;
   width: 6px;
+}
+
+.menu__item--static {
+  pointer-events: none;
 }
