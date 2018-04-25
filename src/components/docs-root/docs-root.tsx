@@ -18,6 +18,7 @@ export class DocsRoot {
   handleDocumentLoad = (document) => {
     this.previewUrl = document.previewUrl || null;
     this.contentElement.scrollTop = 0;
+    this.isMenuOpen = false;
   }
 
   toggleMenu = () => {
