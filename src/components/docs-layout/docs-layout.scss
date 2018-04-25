@@ -4,5 +4,12 @@ docs-layout {
   grid-template-rows: var(--header-height);
   grid-template-areas: "menu header" "menu content";
   height: 100vh;
+  transition: transform 350ms cubic-bezier(0.19, 1, 0.22, 1);
   width: 100vw;
+}
+
+docs-layout.is-menu-open {
+  @media (max-width: $breakpoint-md) {
+    transform: translateX(70vw);
+  }
 }

@@ -29,6 +29,7 @@ export class DocsRoot {
           const section = this.parseSection(documentPath);
           const page = documentPath.replace(/\//g, '-');
           const layoutClass = {
+            ['is-menu-open']: this.isMenuOpen,
             [`section-${section}`]: true,
             [`page-${page}`]: true
           };
