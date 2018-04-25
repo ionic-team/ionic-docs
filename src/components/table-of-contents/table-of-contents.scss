@@ -10,7 +10,7 @@ table-of-contents {
     letter-spacing: 0.1em;
   }
 
-  ul {
+  .toc-list {
     margin-top: 4px;
     padding-left: 10px;
   }
@@ -21,7 +21,7 @@ table-of-contents {
     list-style: none;
   }
 
-  a {
+  .toc-item a {
     padding: 4px 0;
     font-size: 13px;
     font-weight: 600;

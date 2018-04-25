@@ -53,7 +53,7 @@ export class TableOfContents {
   render() {
     return [
       <strong class="toc-label">Contents</strong>,
-      <ul>
+      <ul class="toc-list">
         {Array.from(this.headings).map(element => {
           // don't show h3 tags in the TOC
           if ( element['tagName'] === 'H3') {
