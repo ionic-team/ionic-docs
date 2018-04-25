@@ -35,7 +35,7 @@ docs-menu {
 .menu a {
   display: inline-block;
   line-height: 2;
-  transition: transform 100ms ease;
+  transition: transform 200ms ease;
 }
 
 .menu__item {
@@ -70,7 +70,7 @@ docs-menu {
   color: var(--darkish);
 }
 
-.menu__item--active,
+.menu__submenu .menu__item--active,
 .menu__submenu a:hover {
   transform: translateX(2px);
 }
