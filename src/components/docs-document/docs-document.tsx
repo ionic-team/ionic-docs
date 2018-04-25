@@ -15,7 +15,7 @@ export class DocsDocument {
   @State() hideTOC: boolean;
 
   componentDidLoad() {
-    this.fetchDocument();
+    return this.fetchDocument();
   }
 
   @Watch('path')
