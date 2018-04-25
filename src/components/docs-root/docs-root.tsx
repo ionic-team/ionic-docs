@@ -5,6 +5,8 @@ import '@stencil/router';
   tag: 'docs-root'
 })
 export class DocsRoot {
+  contentElement: HTMLElement;
+
   @State() previewUrl: string;
   @State() isMenuOpen = false;
 
@@ -15,6 +17,7 @@ export class DocsRoot {
 
   handleDocumentLoad = (document) => {
     this.previewUrl = document.previewUrl || null;
+    this.contentElement.scrollTop = 0;
   }
 
   toggleMenu = () => {
@@ -38,7 +41,7 @@ export class DocsRoot {
             <docs-layout class={layoutClass}>
               <docs-menu section={section}/>
               <docs-header isMenuOpen={this.isMenuOpen} onToggleClick={this.toggleMenu}/>
-              <docs-content>
+              <docs-content ref={node => { this.contentElement = node; }}>
                 <docs-document path={documentPath} onLoaded={this.handleDocumentLoad}/>
                 <docs-preview url={this.previewUrl}/>
               </docs-content>
