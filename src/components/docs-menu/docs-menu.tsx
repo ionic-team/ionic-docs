@@ -1,4 +1,4 @@
-import { Component, Prop, State } from '@stencil/core';
+import { Component, Prop, State, Watch } from '@stencil/core';
 import { versions } from '../../versions';
 import { apiMap } from './docs-api-map';
 import * as menuMap from './docs-menu-map';
@@ -8,6 +8,7 @@ import * as menuMap from './docs-menu-map';
   styleUrl: 'docs-menu.scss'
 })
 export class DocsMenu {
+  @Prop() path: string;
   @Prop() section: string;
   @State() version = versions[0];
   @State() activeItem: string;
@@ -65,6 +66,20 @@ export class DocsMenu {
       return;
     }
     this.setActiveItem(item);
+  }
+
+  @Watch('path')
+  setActiveItemFromPath(path) {
+    const topLevelKeys = Object.keys(menuMap.main);
+    const activeKey = topLevelKeys.find(key => {
+      const items = menuMap.main[key];
+      return Object.keys(items).some(itemKey => items[itemKey] === path);
+    });
+    this.setActiveItem(activeKey);
+  }
+
+  componentDidLoad() {
+    this.setActiveItemFromPath(this.path);
   }
 
   getMenuBySection(section) {
