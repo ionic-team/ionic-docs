@@ -12,6 +12,7 @@ export class DocsDocument {
   @State() isLoading = true;
   @State() body: string;
   @State() title: string;
+  @State() hideTOC: boolean;
 
   componentDidLoad() {
     this.fetchDocument();
@@ -43,6 +44,7 @@ export class DocsDocument {
     this.isLoading = false;
     this.body = content.body;
     this.title = content.title;
+    this.hideTOC = content.hideTOC;
     this.onLoaded(content);
   }
 
@@ -67,6 +69,7 @@ export class DocsDocument {
 
     return [
       <h1>{this.title}</h1>,
+      !this.hideTOC && <table-of-contents/>,
       <main innerHTML={this.body}/>
     ];
   }
