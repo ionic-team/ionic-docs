@@ -5,3 +5,20 @@ docs-content {
   grid-template-areas: ". document . preview";
   overflow-y: auto;
 }
+
+.content-overlay {
+  background-color: #002376;
+  bottom: 0;
+  left: 0;
+  opacity: 0.1;
+  position: fixed;
+  right: 0;
+  top: var(--header-height);
+  z-index: 1;
+}
+
+@media (min-width: $breakpoint-md) {
+  .content-overlay {
+    display: none;
+  }
+}

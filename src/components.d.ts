@@ -176,7 +176,8 @@ declare global {
 
   namespace StencilComponents {
     interface DocsContent {
-
+      'onOverlayClick': () => void;
+      'showOverlay': boolean;
     }
   }
 
@@ -199,7 +200,8 @@ declare global {
   }
   namespace JSXElements {
     export interface DocsContentAttributes extends HTMLAttributes {
-
+      'onOverlayClick'?: () => void;
+      'showOverlay'?: boolean;
     }
   }
 }

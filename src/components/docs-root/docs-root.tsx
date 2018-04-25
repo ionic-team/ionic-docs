@@ -18,11 +18,15 @@ export class DocsRoot {
   handleDocumentLoad = (document) => {
     this.previewUrl = document.previewUrl || null;
     this.contentElement.scrollTop = 0;
-    this.isMenuOpen = false;
+    this.closeMenu();
   }
 
   toggleMenu = () => {
     this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenu = () => {
+    this.isMenuOpen = false;
   }
 
   render() {
@@ -42,9 +46,12 @@ export class DocsRoot {
             <docs-layout class={layoutClass}>
               <docs-menu section={section}/>
               <docs-header isMenuOpen={this.isMenuOpen} onToggleClick={this.toggleMenu}/>
-              <docs-content ref={node => { this.contentElement = node; }}>
-                <docs-document path={documentPath} onLoaded={this.handleDocumentLoad}/>
-                <docs-preview url={this.previewUrl}/>
+              <docs-content
+                ref={node => { this.contentElement = node; }}
+                onOverlayClick={this.closeMenu}
+                showOverlay={this.isMenuOpen}>
+                  <docs-document path={documentPath} onLoaded={this.handleDocumentLoad}/>
+                  <docs-preview url={this.previewUrl}/>
               </docs-content>
             </docs-layout>
           );
