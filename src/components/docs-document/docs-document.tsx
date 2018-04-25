@@ -35,6 +35,7 @@ export class DocsDocument {
   parseDocument = res => {
     return res.text()
       .then(frontMatter)
+      .then(this.stripTitle)
       .then(({ attributes, body }) => ({ ...attributes, body: renderMarkdown(body) }));
   }
 
@@ -47,6 +48,16 @@ export class DocsDocument {
 
   handleFetchError = err => {
     this.body = err.message;
+  }
+
+  stripTitle = ({ attributes, body }) => {
+    const match = /^# (.*?)$/gm.exec(body);
+    if (match) {
+      const [ titleLine, title ] = match;
+      body = body.replace(titleLine, '');
+      attributes.title = attributes.title || title;
+    }
+    return { attributes, body };
   }
 
   render() {
