@@ -15,9 +15,12 @@ body {
   color: var(--dark);
   font-family: var(--font-family-sans);
   font-size: 16px;
+  height: 100%;
   letter-spacing: -0.025em;
   line-height: 1.65;
   margin: 0;
+  overflow: hidden;
+  width: 100%;
   -webkit-font-smoothing: antialiased;
 }
 

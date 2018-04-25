@@ -108,3 +108,12 @@ docs-menu {
   vertical-align: middle;
   width: 8px;
 }
+
+@media (max-width: $breakpoint-md) {
+  docs-menu {
+    height: 100vw;
+    position: fixed;
+    right: 100%;
+    width: 70vw;
+  }
+}
