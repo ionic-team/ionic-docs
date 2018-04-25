@@ -124,8 +124,21 @@ docs-menu {
     width: 70vw;
   }
 
+  .menu {
+    font-size: 16px;
+  }
+
+  .menu__submenu {
+    margin: 8px 0 12px 8px;
+  }
+
+  .menu__submenu > li {
+    margin-bottom: 0.5em;
+  }
+
   .section-switch {
-    background-color: transparent;
+    background-color: white;
+    border-bottom: solid 1px var(--whiteish);
     color: inherit;
   }
 }
