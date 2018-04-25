@@ -209,6 +209,7 @@ declare global {
 
   namespace StencilComponents {
     interface DocsDocument {
+      'onLoaded': (document) => void;
       'path': string;
     }
   }
@@ -232,6 +233,7 @@ declare global {
   }
   namespace JSXElements {
     export interface DocsDocumentAttributes extends HTMLAttributes {
+      'onLoaded'?: (document) => void;
       'path'?: string;
     }
   }

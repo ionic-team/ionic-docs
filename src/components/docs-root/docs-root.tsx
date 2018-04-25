@@ -11,6 +11,10 @@ export class DocsRoot {
     return match && match[1] || 'framework';
   }
 
+  handleDocumentLoad = (document) => {
+    console.log(document);
+  }
+
   render() {
     return (
       <stencil-router>
@@ -28,7 +32,7 @@ export class DocsRoot {
               <docs-menu section={section}/>
               <docs-header/>
               <docs-content>
-                <docs-document path={documentPath}/>
+                <docs-document path={documentPath} onLoaded={this.handleDocumentLoad}/>
                 <docs-preview/>
               </docs-content>
             </docs-layout>

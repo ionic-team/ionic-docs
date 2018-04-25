@@ -8,6 +8,7 @@ import { renderMarkdown } from '../../markdown';
 })
 export class DocsDocument {
   @Prop() path: string;
+  @Prop() onLoaded: (document) => void;
   @State() isLoading = true;
   @State() body: string;
   @State() title: string;
@@ -41,6 +42,7 @@ export class DocsDocument {
     this.isLoading = false;
     this.body = content.body;
     this.title = content.title;
+    this.onLoaded(content);
   }
 
   handleFetchError = err => {
