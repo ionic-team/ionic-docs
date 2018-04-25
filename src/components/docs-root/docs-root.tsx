@@ -6,6 +6,7 @@ import '@stencil/router';
 })
 export class DocsRoot {
   @State() previewUrl: string;
+  @State() isMenuOpen = false;
 
   parseSection(path) {
     const match = /^(api|cli|pro)(\/.*)?/.exec(path);
@@ -14,6 +15,10 @@ export class DocsRoot {
 
   handleDocumentLoad = (document) => {
     this.previewUrl = document.previewUrl || null;
+  }
+
+  toggleMenu = () => {
+    this.isMenuOpen = !this.isMenuOpen;
   }
 
   render() {
@@ -31,7 +36,7 @@ export class DocsRoot {
           return (
             <docs-layout class={layoutClass}>
               <docs-menu section={section}/>
-              <docs-header/>
+              <docs-header isMenuOpen={this.isMenuOpen} onToggleClick={this.toggleMenu}/>
               <docs-content>
                 <docs-document path={documentPath} onLoaded={this.handleDocumentLoad}/>
                 <docs-preview url={this.previewUrl}/>

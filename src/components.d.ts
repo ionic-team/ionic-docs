@@ -244,7 +244,8 @@ declare global {
 
   namespace StencilComponents {
     interface DocsHeader {
-
+      'isMenuOpen': boolean;
+      'onToggleClick': () => void;
     }
   }
 
@@ -267,7 +268,8 @@ declare global {
   }
   namespace JSXElements {
     export interface DocsHeaderAttributes extends HTMLAttributes {
-
+      'isMenuOpen'?: boolean;
+      'onToggleClick'?: () => void;
     }
   }
 }
