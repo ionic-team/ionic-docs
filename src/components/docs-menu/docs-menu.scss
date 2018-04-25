@@ -96,6 +96,13 @@ docs-menu {
   pointer-events: none;
 }
 
+.api-version-selector {
+  background: none;
+  display: block;
+  font-size: 16px;
+  margin-bottom: 1rem;
+}
+
 .api-nav-breadcrumb {
   color: var(--blue);
 }

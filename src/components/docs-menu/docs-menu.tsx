@@ -73,6 +73,13 @@ export class DocsMenu {
       case 'api':
         const api = apiMap[this.version];
         return [
+          <select class="api-version-selector" onChange={e => {
+            this.version = (e.target as HTMLSelectElement).value;
+          }}>
+            { versions.map(version => (
+              <option value={version} selected={version === this.version}>{ version }</option>
+            ))}
+          </select>,
           <stencil-route-link class="api-nav-breadcrumb" url="/docs">
             <svg viewBox="0 0 16 24"><path d="M13 22L3 12 13 2" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
             Docs
