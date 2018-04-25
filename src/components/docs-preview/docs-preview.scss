@@ -1,4 +1,5 @@
 docs-preview {
+  align-self: start;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -6,7 +7,7 @@ docs-preview {
   margin-left: auto;
   padding: 2rem;
   position: sticky;
-  top: var(--header-height);
+  top: 0;
 
   @media (max-width: $breakpoint-lg) {
     display: none;
