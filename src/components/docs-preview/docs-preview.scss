@@ -1,4 +1,9 @@
 docs-preview {
+  display: none;
   grid-area: preview;
   padding: 2rem;
+}
+
+docs-preview.is-active {
+  display: block;
 }

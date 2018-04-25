@@ -1,10 +1,11 @@
-import { Component } from '@stencil/core';
+import { Component, State } from '@stencil/core';
 import '@stencil/router';
 
 @Component({
   tag: 'docs-root'
 })
 export class DocsRoot {
+  @State() previewUrl: string;
 
   parseSection(path) {
     const match = /^(api|cli|pro)(\/.*)?/.exec(path);
@@ -12,7 +13,7 @@ export class DocsRoot {
   }
 
   handleDocumentLoad = (document) => {
-    console.log(document);
+    this.previewUrl = document.previewUrl || null;
   }
 
   render() {
@@ -33,7 +34,7 @@ export class DocsRoot {
               <docs-header/>
               <docs-content>
                 <docs-document path={documentPath} onLoaded={this.handleDocumentLoad}/>
-                <docs-preview/>
+                <docs-preview url={this.previewUrl}/>
               </docs-content>
             </docs-layout>
           );

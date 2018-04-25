@@ -343,7 +343,7 @@ declare global {
 
   namespace StencilComponents {
     interface DocsPreview {
-
+      'url': string;
     }
   }
 
@@ -366,7 +366,7 @@ declare global {
   }
   namespace JSXElements {
     export interface DocsPreviewAttributes extends HTMLAttributes {
-
+      'url'?: string;
     }
   }
 }
