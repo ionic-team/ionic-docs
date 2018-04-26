@@ -1,17 +1,78 @@
-section-switch {
+.section-switch__selector {
   align-items: center;
   background-color: var(--blue);
   color: var(--header-color);
   display: flex;
+  font-family: var(--font-family-eina);
+  font-size: 18px;
   height: var(--header-height);
+  letter-spacing: -0.02em;
   padding-left: 2rem;
-  padding-right: 2rem;
+  padding-right: 1rem;
+}
+
+.section-switch__selector span {
+  height: 1.2em;
+}
+
+.section-switch__logo {
+  align-items: center;
+  color: white;
+  display: flex;
+  font-weight: 700;
+  margin-right: 0.3em;
+  transition: opacity 200ms ease;
+}
+
+.section-switch__logo:hover {
+  opacity: 0.9;
+}
+
+.section-switch__logo svg {
+  fill: currentColor;
+  height: auto;
+  margin-right: 0.3em;
+  width: 1.5rem;
+}
+
+.section-switch__current {
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: capitalize;
+  transition: color 150ms ease;
+}
+
+.section-switch__current:hover {
+  color: white;
+}
+
+.section-switch__current > svg {
+  fill: currentColor;
+  margin-left: 8px;
+  vertical-align: middle;
+  width: 6px;
 }
 
 @media (max-width: $breakpoint-md) {
-  section-switch {
+  .section-switch__selector {
     background-color: white;
     border-bottom: solid 1px var(--whiteish);
-    color: inherit;
+    box-shadow: 0 6px 3px rgba(0,0,0,0.01);
+    color: var(--dark);
+    padding-right: 2rem;
+  }
+
+  .section-switch__logo {
+    display: none;
+  }
+
+  .section-switch__current:hover {
+    color: var(--darker);
+  }
+
+  .section-switch__current {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
   }
 }
