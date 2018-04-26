@@ -1,0 +1,87 @@
+docs-preview {
+  align-self: start;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  grid-area: preview;
+  margin-left: auto;
+  padding: 2rem;
+  position: sticky;
+  top: 0;
+
+  @media (max-width: $breakpoint-lg) {
+    display: none;
+  }
+
+  &.hidden {
+    display: none;
+  }
+
+  ul {
+    padding: 0;
+    display: flex;
+    margin-bottom: 9px;
+  }
+
+  li {
+    color: var(--gray);
+    list-style: none;
+    background: transparent;
+    border-radius: 16px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 0 9px;
+    margin: 0px 3px;
+    display: block;
+    font-size: 10px;
+    line-height: 24px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+      .2s background ease
+      .2s color ease;
+
+    &.active {
+      background: var(--blue);
+      color: white;
+    }
+  }
+
+  figure {
+    height: 757px;
+    width: 380px;
+    margin: 0 22px;
+    position: relative;
+    padding: 26px 30px 41px;
+
+
+    &::before {
+      background: url('/docs/assets/img/device-iphone.png') no-repeat 0 0;
+      background-size: 380px;
+      width: 380px;
+      height: 757px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+      pointer-events: none;
+    }
+
+    iframe {
+      border: none;
+      width: 100%;
+      height: 100%;
+    }
+
+    &.md {
+      height: 832px;
+      padding: 59px 19px 110px;
+
+      &::before {
+        background-image: url('/docs/assets/img/device-pixel.png');
+        background-size: 380px;
+        height: 832px;
+      }
+    }
+  }
+}

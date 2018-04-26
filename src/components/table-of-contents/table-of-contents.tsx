@@ -52,8 +52,8 @@ export class TableOfContents {
 
   render() {
     return [
-      <strong>Contents</strong>,
-      <ul>
+      <strong class="toc-label">Contents</strong>,
+      <ul class="toc-list">
         {Array.from(this.headings).map(element => {
           // don't show h3 tags in the TOC
           if ( element['tagName'] === 'H3') {
@@ -61,7 +61,7 @@ export class TableOfContents {
           }
 
           return (
-            <li>
+            <li class="toc-item">
               <a href={`#${this.generateID(element)}`}>
                 {element['innerText'] || element.textContent}
               </a>

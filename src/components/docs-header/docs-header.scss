@@ -1,0 +1,40 @@
+docs-header {
+  align-items: center;
+  background-color: var(--blue);
+  color: var(--header-color);
+  display: flex;
+  grid-area: header;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+docs-header nav {
+  line-height: 1;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  display: none;
+  line-height: 0;
+  padding: 0;
+  width: 1rem;
+
+  @media (max-width: $breakpoint-md) {
+    display: block;
+  }
+}
+
+.menu-toggle:focus {
+  outline: none;
+}
+
+.menu-toggle svg {
+  fill: currentColor;
+}
+
+.menu-toggle:hover svg {
+  fill: white;
+}

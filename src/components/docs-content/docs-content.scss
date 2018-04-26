@@ -1,0 +1,24 @@
+docs-content {
+  display: grid;
+  grid-area: content;
+  grid-template-columns: 1fr minmax(var(--content-min, 320px), var(--content-max, 720px)) 2fr auto;
+  grid-template-areas: ". document . preview";
+  overflow-y: auto;
+}
+
+.content-overlay {
+  background-color: #002376;
+  bottom: 0;
+  left: 0;
+  opacity: 0.1;
+  position: fixed;
+  right: 0;
+  top: var(--header-height);
+  z-index: 1;
+}
+
+@media (min-width: $breakpoint-md) {
+  .content-overlay {
+    display: none;
+  }
+}

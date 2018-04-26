@@ -1,5 +1,6 @@
 card-link {
   display: block;
+  line-height: normal;
 
   a {
     display: block;
@@ -21,7 +22,7 @@ card-link {
     height: 100%;
   }
 
-  &.hasIcon a {
+  &.has-icon a {
     padding-left: 106px;
     position: relative;
 
@@ -35,7 +36,6 @@ card-link {
 
     &::after {
       transition: .2s opacity ease;
-      // transition-delay: .15s;
       opacity: 0;
     }
 
@@ -54,15 +54,16 @@ card-link {
     }
   }
 
-  strong {
+  .card-link__title {
     color: #151c29;
     display: block;
     font-size: 20px;
     font-weight: 600;
+    letter-spacing: normal;
     margin-bottom: 16px;
   }
 
-  span {
+  .card-link__body {
     color: #768090;
     font-size: 14px;
     font-weight: 400;

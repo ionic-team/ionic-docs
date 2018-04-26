@@ -2,7 +2,7 @@ table-of-contents {
   padding-top: 17px;
   display: block;
 
-  strong {
+  .toc-label {
     text-transform: uppercase;
     font-size: 10px;
     font-weight: 800;
@@ -10,18 +10,18 @@ table-of-contents {
     letter-spacing: 0.1em;
   }
 
-  ul {
+  .toc-list {
     margin-top: 4px;
     padding-left: 10px;
   }
 
-  li {
+  .toc-item {
     margin-bottom: 0;
     line-height: 1em;
     list-style: none;
   }
 
-  a {
+  .toc-item a {
     padding: 4px 0;
     font-size: 13px;
     font-weight: 600;
