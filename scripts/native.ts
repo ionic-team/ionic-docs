@@ -7,7 +7,7 @@ import * as npm from './npm';
 import { execp, vlog } from './utils';
 
 const distList = `${config.NATIVE_DIR}/dist/@ionic-native`;
-const menuPath = 'src/components/site-menu/native-menu.ts';
+const menuPath = 'src/components/docs-menu/native-menu.ts';
 const menuHeader = 'export const nativeMenu = ';
 
 const navList = {};
