@@ -1,0 +1,17 @@
+section-switch {
+  align-items: center;
+  background-color: var(--blue);
+  color: var(--header-color);
+  display: flex;
+  height: var(--header-height);
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+@media (max-width: $breakpoint-md) {
+  section-switch {
+    background-color: white;
+    border-bottom: solid 1px var(--whiteish);
+    color: inherit;
+  }
+}

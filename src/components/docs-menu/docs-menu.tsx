@@ -134,7 +134,7 @@ export class DocsMenu {
 
   render() {
     return [
-      <div class="section-switch">Framework</div>,
+      <section-switch section={this.section}/>,
       <nav class="menu">{ this.getMenuBySection(this.section) }</nav>
     ];
   }

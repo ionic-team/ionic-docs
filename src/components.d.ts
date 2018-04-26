@@ -447,6 +447,39 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface SectionSwitch {
+      'section': string;
+    }
+  }
+
+  interface HTMLSectionSwitchElement extends StencilComponents.SectionSwitch, HTMLStencilElement {}
+
+  var HTMLSectionSwitchElement: {
+    prototype: HTMLSectionSwitchElement;
+    new (): HTMLSectionSwitchElement;
+  };
+  interface HTMLElementTagNameMap {
+    'section-switch': HTMLSectionSwitchElement;
+  }
+  interface ElementTagNameMap {
+    'section-switch': HTMLSectionSwitchElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'section-switch': JSXElements.SectionSwitchAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface SectionSwitchAttributes extends HTMLAttributes {
+      'section'?: string;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface TabGroup {
       'tabs': string;
     }

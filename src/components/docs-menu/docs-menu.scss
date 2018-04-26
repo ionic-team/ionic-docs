@@ -4,16 +4,6 @@ docs-menu {
   min-width: 220px;
 }
 
-.section-switch {
-  align-items: center;
-  background-color: var(--blue);
-  color: var(--header-color);
-  display: flex;
-  height: var(--header-height);
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
 .menu {
   font-size: 14px;
   font-weight: 600;
@@ -135,11 +125,5 @@ docs-menu {
 
   .menu__submenu > li {
     margin-bottom: 0.35em;
-  }
-
-  .section-switch {
-    background-color: white;
-    border-bottom: solid 1px var(--whiteish);
-    color: inherit;
   }
 }
