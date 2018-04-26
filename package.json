@@ -1,6 +1,6 @@
 {
   "name": "@ionic/ionic-docs",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Ionic Docs Site",
   "engines": {
     "node": "8.9.x",
@@ -54,7 +54,7 @@
     "src/docs-content/api"
   ],
   "author": "Ionic Team",
-  "license": "MIT",
+  "license": "Apache 2",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ionic-team/ionic-docs.git"
