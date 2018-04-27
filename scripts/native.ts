@@ -97,10 +97,6 @@ function preparePluginData(tsData) {
     ;
     // console.log(str);
     metaArgs = JSON.parse(str);
-
-    const test = tsChild.decorators[0].arguments.config
-      .replace(/\'/g, '"');
-    console.log(test);
   }
 
   return {

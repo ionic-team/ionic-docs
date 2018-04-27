@@ -567,9 +567,13 @@ ionic doctor check git-not-used
 <p><br></p>
 
 <h2>ionic doctor list</h2>
-<h4>List all issue identifiers</h4>
+<h4>List all issues and their identifiers</h4>
 <h3 no-anchor>Description</h3>
-<p></p>
+<p>Issues can have various tags:
+- **treatable**: `ionic doctor treat` can attempt to fix the issue
+- **ignored**: configured not to be detected in `ionic doctor check` or `ionic doctor treat`
+- **explicit-detection**: issue is only detected explicitly with `ionic doctor check &lt;issue-id&gt;`</p>
+<p>You can flip whether an issue is ignored or not by using `ionic config set -g doctor.issues.&lt;issue-id&gt;.ignored true/false`, where `&lt;issue-id&gt;` matches an ID listed with this command.</p>
 <p><br></p>
 
 <h2>ionic doctor treat</h2>
