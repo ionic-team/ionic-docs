@@ -1,23 +1,27 @@
 export const main = {
   'Home': '/docs',
-  'Getting Started': {
+  'Introduction': {
     'What is Ionic Framework': '/docs/intro/intro',
     'Release Notes': '/docs/intro/release-notes',
     'Core Concepts': '/docs/intro/concepts',
     'Browser Support': '/docs/intro/browsers',
-    'Installation': '/docs/intro/installation',
-    'Starting an App': '/docs/intro/starting-an-app',
-    'Run Your App': '/docs/intro/run-your-app',
+  },
+  'Installation': {
+    'Windows': '/docs/installation/windows',
+    'Mac OS':  '/docs/installation/macos',
+    'Linux': '/docs/installation/linux',
   },
   'Guides': {
-    'Dev Build': '/docs/getting-started/dev-build',
-    'Testing': '/docs/getting-started/testing',
-    'Deploying': '/docs/getting-started/deploying',
-    'Releasing': '/docs/getting-started/releasing',
-    'Contributing': '/docs/getting-started',
-    'Ionic Storage': '/docs/getting-started/storage',
-    'WKWebView': '/docs/getting-started/wkwebview',
-    'Service Workers': '/docs/getting-started/service-workers'
+    'Starting an App': '/docs/guides/starting-an-app',
+    'Run Your App': '/docs/guides/run-your-app',
+    'Dev Build': '/docs/guides/dev-build',
+    'Testing': '/docs/guides/testing',
+    'Deploying': '/docs/guides/deploying',
+    'Releasing': '/docs/guides/releasing',
+    'Contributing': '/docs/guides/contributing',
+    'Ionic Storage': '/docs/guides/storage',
+    'WKWebView': '/docs/guides/wkwebview',
+    'Service Workers': '/docs/guides/service-workers'
   },
   'Components': {},
   'Theming': {

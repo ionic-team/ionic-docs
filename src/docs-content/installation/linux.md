@@ -2,6 +2,6 @@
 
 ---
 
-# Installation
+# Linux Installation
 
 TODO: add stuff here
