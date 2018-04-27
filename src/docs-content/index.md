@@ -6,13 +6,13 @@ hideTOC: true
 <div class="cards">
   <card-link headline="Introduction"
              has-icon="true"
-             url="/docs/getting-started/intro">
+             url="/docs/intro">
     Learn the fundamentals you need to know to start building amazing apps with
     Ionic Framework.
   </card-link>
   <card-link headline="Installation"
              has-icon="true"
-             url="/docs/intro/installation">
+             url="/docs/installation/windows">
     A step-by-step guide to installing and setting up your system to build Ionic
     Framework apps.
   </card-link>
