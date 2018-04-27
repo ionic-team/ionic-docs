@@ -1,6 +1,8 @@
 docs-menu {
+  display: flex;
+  flex-direction: column;
   grid-area: menu;
-  min-height: 100vh;
+  height: 100vh;
   min-width: 220px;
 }
 
@@ -109,7 +111,6 @@ docs-menu {
 
 @media (max-width: $breakpoint-md) {
   docs-menu {
-    height: 100vh;
     position: fixed;
     right: 100%;
     width: 70vw;
