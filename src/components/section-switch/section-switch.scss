@@ -1,7 +1,24 @@
-.section-switch__selector {
-  align-items: center;
+.section-switch {
   background-color: var(--blue);
   color: var(--header-color);
+  display: block;
+  position: relative;
+
+  @media (max-width: $breakpoint-md) {
+    background-color: white;
+    border-bottom: solid 1px var(--whiteish);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.01);
+    color: var(--dark);
+  }
+}
+
+
+/**
+ * Selector
+ */
+
+.section-switch__selector {
+  align-items: center;
   display: flex;
   font-family: var(--font-family-eina);
   font-size: 18px;
@@ -9,11 +26,20 @@
   letter-spacing: -0.02em;
   padding-left: 2rem;
   padding-right: 1rem;
+
+  @media (max-width: $breakpoint-md) {
+    padding-right: 2rem;
+  }
 }
 
 .section-switch__selector span {
   height: 1.2em;
 }
+
+
+/**
+ * Logo
+ */
 
 .section-switch__logo {
   align-items: center;
@@ -22,6 +48,10 @@
   font-weight: 700;
   margin-right: 0.3em;
   transition: opacity 200ms ease;
+
+  @media (max-width: $breakpoint-md) {
+    display: none;
+  }
 }
 
 .section-switch__logo:hover {
@@ -35,44 +65,56 @@
   width: 1.5rem;
 }
 
-.section-switch__current {
+
+/**
+ * Selected
+ */
+
+.section-switch__selected {
   cursor: pointer;
+  display: flex;
   font-weight: 600;
+  justify-content: space-between;
   text-transform: capitalize;
   transition: color 150ms ease;
+
+  @media (max-width: $breakpoint-md) {
+    width: 100%;
+  }
 }
 
-.section-switch__current:hover {
+.section-switch__selected:hover {
   color: white;
+
+  @media (max-width: $breakpoint-md) {
+    color: var(--dark);
+  }
 }
 
-.section-switch__current > svg {
+.section-switch__selected > svg {
   fill: currentColor;
   margin-left: 8px;
+  transform-origin: 50% 50%;
+  transition: transform 300ms ease;
   vertical-align: middle;
   width: 6px;
 }
 
-@media (max-width: $breakpoint-md) {
-  .section-switch__selector {
-    background-color: white;
-    border-bottom: solid 1px var(--whiteish);
-    box-shadow: 0 6px 3px rgba(0,0,0,0.01);
-    color: var(--dark);
-    padding-right: 2rem;
-  }
+.section-switch__selector.is-open .section-switch__selected > svg {
+  transform: rotate(180deg);
+}
 
-  .section-switch__logo {
-    display: none;
-  }
 
-  .section-switch__current:hover {
-    color: var(--darker);
-  }
+/**
+ * Panel
+ */
 
-  .section-switch__current {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
+.section-switch__panel {
+  background-color: white;
+  color: var(--dark);
+  display: none;
+}
+
+.section-switch__panel.is-open {
+  display: block;
 }
