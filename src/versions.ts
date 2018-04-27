@@ -1,3 +1,3 @@
 export const versions = [
-  '4.0.0-alpha.3'
+  '4.0.0-alpha.2'
 ];
