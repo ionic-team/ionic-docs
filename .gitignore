@@ -7,10 +7,10 @@ server/build
 /dist
 /www
 package-lock.json
-src/docs-content/api/
+src/content/api/
 /null
 /stencil-stats.json
-/src/docs-content/cli/ionic-angular/commands.md
-/src/docs-content/cli/ionic1/commands.md
-/src/docs-content/native
-!/src/docs-content/native/index.md
+/src/content/cli/ionic-angular/commands.md
+/src/content/cli/ionic1/commands.md
+/src/content/native
+!/src/content/native/index.md

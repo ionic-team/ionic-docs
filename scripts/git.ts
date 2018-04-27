@@ -19,7 +19,7 @@ export async function ensureLatestMaster(
     console.log('Clone complete');
   } else {
     console.log(dir);
-    vlog('API Repo exists - Updating');
+    vlog(`${dir} Repo exists - Updating`);
     await execp('git --git-dir=.git reset --hard', { cwd: dir });
     await execp(`git --git-dir=.git checkout ${branch}`, { cwd: dir });
     await execp(`git --git-dir=.git pull --ff-only origin ${branch}`, { cwd: dir });
