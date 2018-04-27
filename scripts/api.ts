@@ -65,7 +65,7 @@ export async function generate() {
   console.log(`Framework Docs copied in ${endTime - startTime}ms`);
 }
 
-// copy demos and API docs files over to docs-content/api
+// copy demos and API docs files over to content/api
 function copyFiles(components, dest, version = 'latest') {
   utils.vlog(`Copying ${components.length} files`);
   let hasDemo = false;

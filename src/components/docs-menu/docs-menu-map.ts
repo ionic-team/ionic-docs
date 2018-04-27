@@ -1,14 +1,14 @@
 export const main = {
   'Home': '/docs',
   'Introduction': {
-    'What is Ionic Framework': '/docs/intro/intro',
+    'What is Ionic Framework': '/docs/intro',
     'Release Notes': '/docs/intro/release-notes',
     'Core Concepts': '/docs/intro/concepts',
     'Browser Support': '/docs/intro/browsers',
   },
   'Installation': {
     'Windows': '/docs/installation/windows',
-    'Mac OS':  '/docs/installation/macos',
+    'Mac OS':  '/docs/installation/mac',
     'Linux': '/docs/installation/linux',
   },
   'Guides': {
@@ -23,7 +23,7 @@ export const main = {
     'WKWebView': '/docs/guides/wkwebview',
     'Service Workers': '/docs/guides/service-workers'
   },
-  'Components': {},
+  'Components': '/docs/components',
   'Theming': {
     'Basics': '/docs/theming/basics',
     'Theming with CSS': '/docs/theming/theming-with-css',

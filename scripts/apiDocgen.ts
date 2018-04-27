@@ -21,7 +21,7 @@ export function getComponentMarkup(
 function getFrontMatter(name, version, hasDemo) {
   let str = '---\r\n';
   if (hasDemo) {
-    str += `previewUrl: "/docs/docs-content/api/${version}/${name}-demo.html"`;
+    str += `previewUrl: "/docs/content/api/${version}/${name}-demo.html"`;
     str += '\r\n';
   }
   str += '---\r\n';

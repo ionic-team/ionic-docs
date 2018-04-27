@@ -9,7 +9,7 @@ exports.config = {
     })
   ],
   globalStyle: ['src/styles/global.scss'],
-  copy: [{ src: 'docs-content' }],
+  copy: [{ src: 'content' }],
   outputTargets: [
     {
       type: 'www',

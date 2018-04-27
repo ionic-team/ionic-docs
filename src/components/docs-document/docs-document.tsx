@@ -21,7 +21,7 @@ export class DocsDocument {
   @Watch('path')
   fetchDocument() {
     this.isLoading = true;
-    return fetch(`/docs/docs-content/${this.path}.md`)
+    return fetch(`/docs/content/${this.path}.md`)
       .then(this.validateResponse)
       .then(this.parseDocument)
       .then(this.handleNewContent)
