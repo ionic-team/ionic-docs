@@ -1,1 +1,0 @@
-# Ionic v2/3 Placeholder

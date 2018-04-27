@@ -6,13 +6,13 @@ hideTOC: true
 <div class="cards">
   <card-link headline="Introduction"
              has-icon="true"
-             url="/docs/intro/intro">
+             url="/docs/getting-started/intro">
     Learn the fundamentals you need to know to start building amazing apps with
     Ionic Framework.
   </card-link>
   <card-link headline="Installation"
              has-icon="true"
-             url="/docs/getting-started/installation">
+             url="/docs/intro/installation">
     A step-by-step guide to installing and setting up your system to build Ionic
     Framework apps.
   </card-link>
@@ -23,12 +23,12 @@ hideTOC: true
   </card-link>
   <card-link headline="API Reference"
              has-icon="true"
-             url="/docs/api/intro">
+             url="/docs/api/">
     Explore the API for a deeper understanding of component methods, properties, and events.
   </card-link>
   <card-link headline="Native APIs"
              has-icon="true"
-             url="/docs/native/action-sheet">
+             url="/docs/native/">
     Integrate and leverage native device plugins, like Bluetooth, Maps,
     HealthKit, and more.
   </card-link>
@@ -42,7 +42,7 @@ hideTOC: true
 
 <ul class="others">
   <li class="cli">
-    <stencil-route-link url="/docs/cli/ionic-angular/commands">
+    <stencil-route-link url="/docs/cli/">
       <strong>Ionic CLI</strong>
       <span>
         The primary tool used during the process of developing an Ionic app.
@@ -50,13 +50,13 @@ hideTOC: true
     </stencil-route-link>
   </li>
   <li class="resources">
-    <stencil-route-link url="/docs/resources">
+    <stencil-route-link url="/docs/developer-resources">
       <strong>Resources</strong>
       <span>Learn official guides, videos, books, and more.</span>
     </stencil-route-link>
   </li>
   <li class="_ionicons">
-    <stencil-route-link url="/docs/ionicons">
+    <stencil-route-link url="https://ionicons.com">
       <strong>Ionicons</strong>
       <span>
         Beautifully designed icons built for us in web, iOS, Android, and
