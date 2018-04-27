@@ -56,13 +56,13 @@ hideTOC: true
     </stencil-route-link>
   </li>
   <li class="_ionicons">
-    <stencil-route-link url="https://ionicons.com">
+    <a href="http://ionicons.com">
       <strong>Ionicons</strong>
       <span>
         Beautifully designed icons built for us in web, iOS, Android, and
         desktop apps.
       </span>
-    </stencil-route-link>
+    </a>
   </li>
   <li class="faq">
     <stencil-route-link url="/docs/faq">
