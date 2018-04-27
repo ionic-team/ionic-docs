@@ -4,6 +4,7 @@ docs-menu {
   grid-area: menu;
   height: 100vh;
   min-width: 220px;
+  margin-top: calc(-1 * var(--header-height));
 }
 
 .menu {
