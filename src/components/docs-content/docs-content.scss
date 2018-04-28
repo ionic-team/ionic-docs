@@ -4,6 +4,8 @@ docs-content {
   grid-template-columns: 1fr minmax(var(--content-min, 320px), var(--content-max, 720px)) 2fr auto;
   grid-template-areas: ". document . preview";
   overflow-y: auto;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 .content-overlay {
