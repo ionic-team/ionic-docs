@@ -1,5 +1,5 @@
 docs-layout {
-  display: flex;
+  display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: var(--header-height);
   grid-template-areas: "menu header" "menu content";

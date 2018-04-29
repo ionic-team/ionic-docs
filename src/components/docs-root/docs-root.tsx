@@ -42,10 +42,10 @@ export class DocsRoot {
             [`page-${page}`]: true
           };
 
-          return [
-            <docs-header isMenuOpen={this.isMenuOpen} onToggleClick={this.toggleMenu}/>,
+          return (
             <docs-layout class={layoutClass}>
               <docs-menu section={section} path={props.match.url}/>
+              <docs-header isMenuOpen={this.isMenuOpen} onToggleClick={this.toggleMenu}/>
               <docs-content
                 ref={node => { this.contentElement = node; }}
                 onOverlayClick={this.closeMenu}
@@ -54,7 +54,7 @@ export class DocsRoot {
                   <docs-preview url={this.previewUrl}/>
               </docs-content>
             </docs-layout>
-          ];
+          );
         }}/>
       </stencil-router>
     );
