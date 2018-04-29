@@ -9,6 +9,8 @@ export class SectionSwitch {
   @Prop() section: string;
 
   renderSelector(dropdown) {
+    const activeItem = dropdown.items.find(item => item.sections.includes(this.section));
+    const selected = activeItem ? activeItem.title : 'Framework';
     return (
       <div class={{ 'section-switch__selector': true, 'is-open': dropdown.isOpen }}>
         <a class="section-switch__logo" href="/docs">
@@ -16,7 +18,7 @@ export class SectionSwitch {
           <span>Docs</span>
         </a>
         <span class="section-switch__selected" onClick={dropdown.toggle}>
-          { this.section }
+          { selected }
           <svg viewBox="0 0 33 22"><polygon points="16.5 22 0 0 33 0"></polygon></svg>
         </span>
       </div>
@@ -26,11 +28,18 @@ export class SectionSwitch {
   renderPanel(dropdown) {
     return (
       <ul class={{ 'section-switch__panel': true, 'is-open': dropdown.isOpen }}>
-        <li>Framework</li>
-        <li>Pro</li>
-        <li>CLI</li>
-        <li>Stencil</li>
-        <li>Capacitor</li>
+        { dropdown.items.map(item => (
+          <li class={{
+            'section-switch__item': true,
+            'section-switch__item--outbound': item.outbound,
+            'section-switch__item--active': item.sections.includes(this.section)
+          }}>
+            { item.outbound
+              ? <a href={item.url} target="_blank" onClick={dropdown.close}>{ item.title }</a>
+              : <stencil-route-link url={item.url} onClick={dropdown.close}>{ item.title }</stencil-route-link>
+            }
+          </li>
+        ))}
       </ul>
     );
   }
@@ -40,6 +49,7 @@ export class SectionSwitch {
       <ctrl-dropdown
         class="section-switch"
         autoClose
+        items={options}
         renderer={dropdown => [
           this.renderSelector(dropdown),
           this.renderPanel(dropdown)
@@ -47,3 +57,33 @@ export class SectionSwitch {
     );
   }
 }
+
+const options = [
+  {
+    title: 'Framework',
+    url: '/docs',
+    sections: ['framework', 'api']
+  },
+  {
+    title: 'Pro',
+    url: '/docs/pro',
+    sections: ['pro']
+  },
+  {
+    title: 'CLI',
+    url: '/docs/cli',
+    sections: ['cli']
+  },
+  {
+    title: 'Stencil',
+    url: 'https://stenciljs.com',
+    sections: [],
+    outbound: true
+  },
+  {
+    title: 'Capacitor',
+    url: 'https://capacitor.ionicframework.com/',
+    sections: [],
+    outbound: true
+  }
+];

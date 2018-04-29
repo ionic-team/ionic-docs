@@ -113,6 +113,7 @@
   background-color: white;
   color: var(--dark);
   display: none;
+  padding-bottom: 1.35rem;
   z-index: 1;
 
   @media (min-width: $breakpoint-md) {
@@ -125,6 +126,7 @@
     left: 2rem;
     min-width: 460px;
     opacity: 0;
+    padding-top: 1.35rem;
     pointer-events: none;
     position: absolute;
     top: calc(100% - 10px);
@@ -139,5 +141,27 @@
     opacity: 1;
     pointer-events: all;
     transform: translateY(5px);
+  }
+}
+
+
+/**
+ * Panel items
+ */
+
+.section-switch__item {
+  color: var(--gray);
+  font-size: 18px;
+  font-weight: 500;
+  padding: 0.65rem 2rem;
+
+  &--outbound {
+    @media (max-width: $breakpoint-md) {
+      display: none;
+    }
+  }
+
+  &--active {
+    display: none;
   }
 }
