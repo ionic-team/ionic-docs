@@ -31,7 +31,7 @@ export const main = {
     'Color Generator': '/docs/theming/color-generator'
   },
   'FAQ': '/docs/faq',
-  'Developer Resources': '/docs/developer-resources'
+  'Dev Resources': '/docs/developer-resources'
 };
 
 export const outbound = {
