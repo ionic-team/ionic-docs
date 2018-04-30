@@ -422,6 +422,7 @@ declare global {
     interface DocsHeader {
       'isMenuOpen': boolean;
       'onToggleClick': () => void;
+      'section': string;
     }
   }
 
@@ -446,6 +447,7 @@ declare global {
     export interface DocsHeaderAttributes extends HTMLAttributes {
       'isMenuOpen'?: boolean;
       'onToggleClick'?: () => void;
+      'section'?: string;
     }
   }
 }

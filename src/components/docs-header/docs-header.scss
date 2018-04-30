@@ -16,6 +16,10 @@ docs-header > nav {
 
 docs-header > nav {
   width: 100%;
+
+  @media (min-width: $breakpoint-md) {
+    justify-content: flex-end;
+  }
 }
 
 .menu-toggle {
@@ -72,4 +76,45 @@ docs-header > nav {
   height: auto;
   margin-right: 0.2em;
   width: 1.5rem;
+}
+
+.github-link {
+  font-size: 13px;
+  font-weight: 600;
+  transition: color 200ms ease;
+
+  &:hover {
+    color: white;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    display: none;
+  }
+}
+
+.github-link .new-tab {
+  height: 0.8em;
+  margin-left: 0.4em;
+  width: auto;
+}
+
+.github-link .new-tab__box,
+.github-link .new-tab__arrow {
+  transition: fill 200ms ease;
+}
+
+.github-link .new-tab__box {
+  fill: #62a6ff;
+}
+
+.github-link .new-tab__arrow {
+  fill: var(--header-color);
+}
+
+.github-link:hover .new-tab__box {
+  fill: #96ccff;
+}
+
+.github-link:hover .new-tab__arrow {
+  fill: white;
 }

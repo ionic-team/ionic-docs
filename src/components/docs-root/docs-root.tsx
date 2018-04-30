@@ -45,7 +45,7 @@ export class DocsRoot {
           return (
             <docs-layout class={layoutClass}>
               <docs-menu section={section} path={props.match.url}/>
-              <docs-header isMenuOpen={this.isMenuOpen} onToggleClick={this.toggleMenu}/>
+              <docs-header section={section} isMenuOpen={this.isMenuOpen} onToggleClick={this.toggleMenu}/>
               <docs-content
                 ref={node => { this.contentElement = node; }}
                 onOverlayClick={this.closeMenu}
