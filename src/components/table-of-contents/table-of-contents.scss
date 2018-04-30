@@ -12,6 +12,7 @@ table-of-contents {
 
   .toc-list {
     margin-top: 4px;
+    padding-left: 0;
   }
 
   .toc-item {
@@ -23,7 +24,7 @@ table-of-contents {
   .toc-item a {
     padding: 4px 0;
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 16px;
     position: relative;
     display: inline-block;
