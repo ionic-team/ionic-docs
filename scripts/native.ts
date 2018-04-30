@@ -26,7 +26,7 @@ export async function generate() {
   await execp([
     `cd ${config.NATIVE_DIR}`,
     'npm i',
-    'npm run build',
+    'npm run clean && npm run build:core',
   ].join(' && '));
 
   vlog('Reading output typescript data file');
