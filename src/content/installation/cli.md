@@ -2,6 +2,6 @@
 
 ---
 
-# Linux Installation
+# CDN Installation
 
 TODO: add stuff here

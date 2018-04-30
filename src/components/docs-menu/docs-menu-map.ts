@@ -7,9 +7,10 @@ export const main = {
     'Browser Support': '/docs/intro/browsers',
   },
   'Installation': {
-    'Windows': '/docs/installation/windows',
-    'Mac OS':  '/docs/installation/mac',
-    'Linux': '/docs/installation/linux',
+    'Prerequisites': '/docs/installation/prereqs',
+    'CLI':  '/docs/installation/cli',
+    'CDN': '/docs/installation/cdn',
+    'Pro Setup': '/docs/installation/pro',
   },
   'Guides': {
     'Starting an App': '/docs/guides/starting-an-app',

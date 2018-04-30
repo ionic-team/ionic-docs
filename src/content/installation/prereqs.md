@@ -2,6 +2,6 @@
 
 ---
 
-# Mac OS Installation
+# Installation prereqs
 
 TODO: add stuff here
