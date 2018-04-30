@@ -113,9 +113,9 @@
 .section-switch__panel {
   background-color: white;
   color: var(--dark);
-  display: none;
-  padding-bottom: 1.35rem;
+  padding-bottom: 0;
   z-index: 1;
+  transition: 80ms padding-bottom;
 
   @media (min-width: $breakpoint-md) {
     border-radius: 8px;
@@ -136,13 +136,19 @@
 }
 
 .section-switch__panel.is-open {
-  display: block;
+  padding-bottom: 1.35rem;
 
   @media (min-width: $breakpoint-md) {
     opacity: 1;
     pointer-events: all;
     transform: translateY(5px);
   }
+}
+
+.section-switch__panel.is-open .section-switch__item {
+  height: 42px;
+  opacity: 1;
+  padding: 0.65rem 2rem;
 }
 
 
@@ -154,7 +160,13 @@
   color: var(--gray);
   font-size: 18px;
   font-weight: 500;
-  padding: 0.65rem 2rem;
+  opacity: 0;
+  height: 0;
+  padding: 0 2rem;
+  transition:
+    80ms height,
+    80ms opacity,
+    80ms padding;
 
   &--outbound,
   &--active {
