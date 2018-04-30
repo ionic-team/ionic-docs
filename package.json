@@ -57,7 +57,7 @@
     "src/docs-content/api"
   ],
   "author": "Ionic Team",
-  "license": "Apache 2",
+  "license": "Apache-2.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ionic-team/ionic-docs.git"
