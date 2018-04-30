@@ -15,6 +15,8 @@
   --whiteish:   #edf2f6;
   --whiter:     #f6f8fc;
 
-  --header-color: #b1d9ff;
+  --header-background: var(--blue);
+  --header-color: white;
+  --header-color-secondary: #b1d9ff;
   --header-height: 64px;
 }

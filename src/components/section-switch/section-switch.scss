@@ -1,6 +1,7 @@
 .section-switch {
-  background-color: var(--blue);
-  color: var(--header-color);
+  background-color: var(--header-background);
+  border-bottom: solid 1px var(--header-border, var(--header-background));
+  color: var(--header-color-secondary);
   display: block;
   position: relative;
 
@@ -22,7 +23,7 @@
   display: flex;
   font-family: var(--font-family-eina);
   font-size: 18px;
-  height: var(--header-height);
+  height: calc(var(--header-height) - 1px);
   letter-spacing: -0.02em;
   padding-left: 2rem;
   padding-right: 1rem;
@@ -43,7 +44,7 @@
 
 .section-switch__logo {
   align-items: center;
-  color: white;
+  color: var(--header-color);
   display: flex;
   font-weight: 700;
   margin-right: 0.3em;
@@ -84,7 +85,7 @@
 }
 
 .section-switch__selected:hover {
-  color: white;
+  color: var(--header-color);
 
   @media (max-width: $breakpoint-md) {
     color: var(--dark);

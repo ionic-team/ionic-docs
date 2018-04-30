@@ -1,6 +1,7 @@
 docs-header {
-  background-color: var(--blue);
-  color: var(--header-color);
+  background-color: var(--header-background);
+  border-bottom: solid 1px var(--header-border, var(--header-background));
+  color: var(--header-color-secondary);
   grid-area: header;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -46,12 +47,12 @@ docs-header > nav {
 }
 
 .menu-toggle:hover svg {
-  fill: white;
+  fill: var(--header-color);
 }
 
 .docs-logo {
   align-items: center;
-  color: white;
+  color: var(--header-color);
   display: flex;
   font-size: 18px;
   font-weight: 700;
@@ -84,7 +85,7 @@ docs-header > nav {
   transition: color 200ms ease;
 
   &:hover {
-    color: white;
+    color: var(--header-color);
   }
 
   @media (max-width: $breakpoint-md) {
@@ -100,21 +101,22 @@ docs-header > nav {
 
 .github-link .new-tab__box,
 .github-link .new-tab__arrow {
-  transition: fill 200ms ease;
+  transition: fill 200ms ease, opacity 200ms ease;
 }
 
 .github-link .new-tab__box {
-  fill: #62a6ff;
+  opacity: 0.25;
 }
 
+.github-link .new-tab__box,
 .github-link .new-tab__arrow {
-  fill: var(--header-color);
+  fill: var(--header-color-secondary);
 }
 
 .github-link:hover .new-tab__box {
-  fill: #96ccff;
+  opacity: 0.5;
 }
 
 .github-link:hover .new-tab__arrow {
-  fill: white;
+  fill: var(--header-color);
 }
