@@ -155,13 +155,10 @@
   font-weight: 500;
   padding: 0.65rem 2rem;
 
-  &--outbound {
+  &--outbound,
+  &--active {
     @media (max-width: $breakpoint-md) {
       display: none;
     }
-  }
-
-  &--active {
-    display: none;
   }
 }
