@@ -9,7 +9,10 @@ exports.config = {
     })
   ],
   globalStyle: ['src/styles/global.scss'],
-  copy: [{ src: 'content' }],
+  copy: [
+    { src: 'content' },
+    { src: 'components/color-gen/demo', dest: 'theming/color-gen/demo' }
+  ],
   outputTargets: [
     {
       type: 'www',

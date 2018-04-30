@@ -25,6 +25,9 @@ declare global {
 
 import '@stencil/router';
 
+import {
+  ColorVariable,
+} from './components/color-gen/color-variables';
 
 declare global {
 
@@ -124,6 +127,177 @@ declare global {
   namespace JSXElements {
     export interface CodePreviewAttributes extends HTMLAttributes {
       'markup'?: string;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface ColorGenerator {
+
+    }
+  }
+
+  interface HTMLColorGeneratorElement extends StencilComponents.ColorGenerator, HTMLStencilElement {}
+
+  var HTMLColorGeneratorElement: {
+    prototype: HTMLColorGeneratorElement;
+    new (): HTMLColorGeneratorElement;
+  };
+  interface HTMLElementTagNameMap {
+    'color-generator': HTMLColorGeneratorElement;
+  }
+  interface ElementTagNameMap {
+    'color-generator': HTMLColorGeneratorElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'color-generator': JSXElements.ColorGeneratorAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface ColorGeneratorAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface ColorGenCssText {
+      'cssText': string;
+    }
+  }
+
+  interface HTMLColorGenCssTextElement extends StencilComponents.ColorGenCssText, HTMLStencilElement {}
+
+  var HTMLColorGenCssTextElement: {
+    prototype: HTMLColorGenCssTextElement;
+    new (): HTMLColorGenCssTextElement;
+  };
+  interface HTMLElementTagNameMap {
+    'color-gen-css-text': HTMLColorGenCssTextElement;
+  }
+  interface ElementTagNameMap {
+    'color-gen-css-text': HTMLColorGenCssTextElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'color-gen-css-text': JSXElements.ColorGenCssTextAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface ColorGenCssTextAttributes extends HTMLAttributes {
+      'cssText'?: string;
+      'onCssTextChange'?: (event: CustomEvent) => void;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface ColorGenPreview {
+      'cssText': string;
+      'demoMode': string;
+    }
+  }
+
+  interface HTMLColorGenPreviewElement extends StencilComponents.ColorGenPreview, HTMLStencilElement {}
+
+  var HTMLColorGenPreviewElement: {
+    prototype: HTMLColorGenPreviewElement;
+    new (): HTMLColorGenPreviewElement;
+  };
+  interface HTMLElementTagNameMap {
+    'color-gen-preview': HTMLColorGenPreviewElement;
+  }
+  interface ElementTagNameMap {
+    'color-gen-preview': HTMLColorGenPreviewElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'color-gen-preview': JSXElements.ColorGenPreviewAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface ColorGenPreviewAttributes extends HTMLAttributes {
+      'cssText'?: string;
+      'demoMode'?: string;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface ColorGenSelectColors {
+      'colors': ColorVariable[];
+    }
+  }
+
+  interface HTMLColorGenSelectColorsElement extends StencilComponents.ColorGenSelectColors, HTMLStencilElement {}
+
+  var HTMLColorGenSelectColorsElement: {
+    prototype: HTMLColorGenSelectColorsElement;
+    new (): HTMLColorGenSelectColorsElement;
+  };
+  interface HTMLElementTagNameMap {
+    'color-gen-select-colors': HTMLColorGenSelectColorsElement;
+  }
+  interface ElementTagNameMap {
+    'color-gen-select-colors': HTMLColorGenSelectColorsElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'color-gen-select-colors': JSXElements.ColorGenSelectColorsAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface ColorGenSelectColorsAttributes extends HTMLAttributes {
+      'colors'?: ColorVariable[];
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface ColorGenVariableSelector {
+      'property': string;
+      'value': string;
+    }
+  }
+
+  interface HTMLColorGenVariableSelectorElement extends StencilComponents.ColorGenVariableSelector, HTMLStencilElement {}
+
+  var HTMLColorGenVariableSelectorElement: {
+    prototype: HTMLColorGenVariableSelectorElement;
+    new (): HTMLColorGenVariableSelectorElement;
+  };
+  interface HTMLElementTagNameMap {
+    'color-gen-variable-selector': HTMLColorGenVariableSelectorElement;
+  }
+  interface ElementTagNameMap {
+    'color-gen-variable-selector': HTMLColorGenVariableSelectorElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'color-gen-variable-selector': JSXElements.ColorGenVariableSelectorAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface ColorGenVariableSelectorAttributes extends HTMLAttributes {
+      'onColorChange'?: (event: CustomEvent) => void;
+      'property'?: string;
+      'value'?: string;
     }
   }
 }

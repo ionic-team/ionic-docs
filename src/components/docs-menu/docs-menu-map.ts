@@ -27,7 +27,8 @@ export const main = {
   'Theming': {
     'Basics': '/docs/theming/basics',
     'Theming with CSS': '/docs/theming/theming-with-css',
-    'Theming with Sass': '/docs/theming/theming-with-sass'
+    'Theming with Sass': '/docs/theming/theming-with-sass',
+    'Color Generator': '/docs/theming/color-generator'
   },
   'FAQ': '/docs/faq',
   'Developer Resources': '/docs/developer-resources'
