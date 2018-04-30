@@ -15,6 +15,6 @@
     "noUnusedParameters": false
   },
   "include": [
-    "**/*.ts",
+    "**/*.ts"
   ]
 }

@@ -19,7 +19,8 @@ exports.config = {
       dir: 'www/docs',
       baseUrl: '/docs',
     }
-  ]
+  ],
+  enableCache: false
 };
 
 exports.devServer = {

@@ -1,13 +1,15 @@
-import * as dotenv from 'dotenv';
-
+import {config as dotenv } from 'dotenv';
 import * as express        from 'express';
 import * as compress       from 'compression';
 import * as helmet         from 'helmet';
+import { join }            from 'path';
+
 import * as config         from './config';
 import * as pageNotFound   from './pageNotFound';
 import * as processRequest from './processRequest';
 
-dotenv.config({silent: true});
+
+dotenv({silent: true});
 const app = express();
 
 process.env.PWD = process.cwd();
@@ -24,6 +26,14 @@ app.enable('etag');
 app.use(express.static(process.env.PWD + '/www/', {
   etag: true
 }));
+
+app.get('/', function (req, res) {
+  res.redirect('/docs');
+});
+
+app.get(/^(.(?!.*\.png$|.*\.js))*$/, function (req, res) {
+  res.sendFile('docs/index.html', { root: join(__dirname, '../../www')});
+});
 
 // app.use(pageNotFound);
 
