@@ -1,15 +1,21 @@
 docs-header {
-  align-items: center;
   background-color: var(--blue);
   color: var(--header-color);
-  display: flex;
   grid-area: header;
   padding-left: 2rem;
   padding-right: 2rem;
+  position: relative;
 }
 
-docs-header nav {
+docs-header,
+docs-header > nav {
+  align-items: center;
+  display: flex;
   line-height: 1;
+}
+
+docs-header > nav {
+  width: 100%;
 }
 
 .menu-toggle {
@@ -37,4 +43,33 @@ docs-header nav {
 
 .menu-toggle:hover svg {
   fill: white;
+}
+
+.docs-logo {
+  align-items: center;
+  color: white;
+  display: flex;
+  font-size: 18px;
+  font-weight: 700;
+  left: 50%;
+  letter-spacing: -0.02em;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 200ms ease;
+
+  @media (min-width: $breakpoint-md) {
+    display: none;
+  }
+}
+
+.docs-logo:hover {
+  opacity: 0.9;
+}
+
+.docs-logo svg {
+  fill: currentColor;
+  height: auto;
+  margin-right: 0.2em;
+  width: 1.5rem;
 }

@@ -1,5 +1,5 @@
 import { Component, Prop } from '@stencil/core';
-import { Close, Menu } from '../../icons';
+import { Close, Ionic, Menu } from '../../icons';
 
 @Component({
   tag: 'docs-header',
@@ -17,6 +17,7 @@ export class DocsHeader {
           class="menu-toggle">
             { this.isMenuOpen ? <Close/> : <Menu/> }
         </button>
+        <a href="/docs" class="docs-logo"><Ionic/>Docs</a>
       </nav>
     );
   }
