@@ -27,3 +27,11 @@ export const NewTab = () => (
     <path class="new-tab__arrow" d="M37.078 3.268H23.617V.243h18.626v18.625h-3.026V5.407L16.13 28.494l-2.14-2.139z"/>
   </svg>
 );
+
+export const More = () => (
+  <svg viewBox="0 0 54 54">
+    <circle cx="27" cy="7" r="5"/>
+    <circle cx="27" cy="27" r="5"/>
+    <circle cx="27" cy="47" r="5"/>
+  </svg>
+);
