@@ -9,16 +9,16 @@
   "scripts": {
     "start": "npm run server",
     "build": "stencil build --prerender",
-    "dev": "npm run server-build && sd concurrent \"stencil build --dev --watch\" \"npm run server\" \"browser-sync start --config '.bs-config.js'\" ",
+    "dev": "sd concurrent \"stencil build --dev --watch\" \"npm run server\" \"browser-sync start --config '.bs-config.js'\" ",
     "lint": "tslint --config tslint.json --project tsconfig.json",
     "precommit-bak": "npm run lint",
     "api-docs": "node scripts/build/scripts",
-    "api-scripts-build": "tsc -p scripts/tsconfig.json",
     "api-docs-watch": "sd concurrent \"tsc -p scripts/tsconfig.json --watch\" \"chokidar 'scripts/build/**/*.js' -c 'npm run api-docs'\"",
+    "preapi-docs": "tsc -p scripts/tsconfig.json",
     "server": "node server/build",
-    "server-build": "tsc -p server/tsconfig.json",
     "server-watch": "sd concurrent \"tsc -p server/tsconfig.json --watch\" \"chokidar 'server/build/**/*.js' -c 'npm run server'\" \"npm run dev\"",
-    "heroku-postbuild": "npm run api-scripts-build && npm run api-docs && npm run build && npm run server-build"
+    "preserver": "tsc -p server/tsconfig.json",
+    "heroku-postbuild": "npm run api-docs && npm run build"
   },
   "dependencies": {
     "@stencil/core": "^0.8.0",
