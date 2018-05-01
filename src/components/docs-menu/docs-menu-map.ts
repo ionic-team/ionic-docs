@@ -11,6 +11,7 @@ export const main = {
     'CLI':  '/docs/installation/cli',
     'CDN': '/docs/installation/cdn',
     'Pro Setup': '/docs/installation/pro',
+    'Migration Guide': '/docs/installation/migration',
   },
   'Guides': {
     'Starting an App': '/docs/guides/starting-an-app',
@@ -32,7 +33,13 @@ export const main = {
     'Color Generator': '/docs/theming/color-generator'
   },
   'FAQ': '/docs/faq',
-  'Dev Resources': '/docs/developer-resources'
+  'Dev Resources': {
+    'Books': '/docs/developer-resources/books',
+    'Courses': '/docs/developer-resources/courses',
+    'Posts': '/docs/developer-resources/posts',
+    'Tools': '/docs/developer-resources/tools',
+    'Videos': '/docs/developer-resources/videos',
+  }
 };
 
 export const outbound = {
