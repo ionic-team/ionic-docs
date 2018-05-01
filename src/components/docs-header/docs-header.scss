@@ -1,3 +1,5 @@
+@import './ecosystem-dropdown';
+
 docs-header {
   background-color: var(--header-background);
   border-color: var(--header-border, var(--header-background));
@@ -88,6 +90,7 @@ docs-header > nav {
 .github-link {
   font-size: 13px;
   font-weight: 600;
+  margin-left: 2em;
   transition: color 200ms ease;
 
   &:hover {

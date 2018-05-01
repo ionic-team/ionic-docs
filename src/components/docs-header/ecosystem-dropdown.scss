@@ -1,0 +1,154 @@
+.ecosystem-dropdown {
+  margin-left: auto;
+  position: relative;
+}
+
+
+/**
+ * Selected
+ */
+
+.ecosystem-dropdown__selected {
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--header-color-secondary);
+  display: block;
+  transition: 150ms color ease;
+  user-select: none;
+
+  &:hover {
+    color: var(--header-color);
+    text-shadow: 0 1px 2px rgba(black, .1);
+  }
+
+  > svg {
+    display: inline-block;
+    fill: currentColor;
+    margin-left: 6px;
+    vertical-align: middle;
+    width: 4px;
+  }
+}
+
+
+/**
+ * Panel
+ */
+
+.ecosystem-dropdown__panel {
+  background: white;
+  border-radius: 8px;
+  position: absolute;
+  padding: 14px 0;
+  list-style: none;
+  min-width: 197px;
+  display: block;
+  z-index: 1;
+  top: 24px;
+  right: -26px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-5px);
+  box-shadow:
+    0 4px 14px rgba(42, 58, 87, 0.12),
+    0 16px 32px rgba(42, 58, 87, 0.1);
+  transition: 100ms opacity ease-out, 100ms transform ease-out;
+
+  &::before {
+    background: url('/docs/assets/img/ico-nav-arrow.png') no-repeat 0 0;
+    background-size: 15px;
+    width: 15px;
+    height: 8px;
+    position: absolute;
+    top: -8px;
+    right: 21px;
+    content: '';
+  }
+
+  &::after {
+    content: '';
+    height: 10px;
+    left: 0;
+    right: 0;
+    top: -10px;
+    position: absolute;
+  }
+
+  &.is-open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+    transition: 100ms opacity ease-out, 100ms transform ease-out;
+  }
+}
+
+/**
+ * Item
+ */
+
+.ecosystem-dropdown__item {
+  display: block;
+
+  a {
+    padding: 10px 12px 10px 57px;
+    color: var(--gray);
+    outline: none;
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    position: relative;
+
+    &::before,
+    &::after {
+      background: url('/docs/assets/img/dropdown-ecosystem-icons.png') no-repeat 0 0;
+      background-size: 16px;
+      height: 16px;
+      width: 16px;
+      content: '';
+      position: absolute;
+      top: 7px;
+      left: 24px;
+      transition: 150ms opacity;
+    }
+
+    &::after {
+      opacity: 0;
+    }
+  }
+
+  &.forum a::after  {
+    background-position: 0 -16px;
+  }
+
+  &.chat a {
+    &::before { background-position: 0 -32px; }
+    &::after { background-position: 0 -48px; }
+  }
+
+  &.blog a {
+    &::before { background-position: 0 -64px; }
+    &::after { background-position: 0 -80px; }
+  }
+
+  &.twitter a {
+    &::before { background-position: 0 -96px; }
+    &::after { background-position: 0 -112px; }
+  }
+
+  &.stack-overflow a {
+    &::before { background-position: 0 -128px; }
+    &::after { background-position: 0 -144px; }
+  }
+
+  &.swag a {
+    &::before { background-position: 0 -160px; }
+    &::after { background-position: 0 -176px; }
+  }
+
+  &:hover {
+    a::after {
+      opacity: 1;
+    }
+  }
+}
