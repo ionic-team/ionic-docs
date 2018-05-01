@@ -169,8 +169,8 @@ docs-document {
       h3,
       h4 {
         padding-top: 0;
-        margin-top: 0;
-        font-weight: 600;
+        margin-top: 4px;
+        font-weight: 700;
         margin-bottom: 0;
         font-size: 16px;
 
@@ -182,7 +182,7 @@ docs-document {
       strong {
         font-size: 14px;
         font-weight: 600;
-        color: #444;
+        color: #3c4b62;
 
         &::before {
           content: '';
