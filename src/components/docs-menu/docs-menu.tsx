@@ -74,6 +74,7 @@ export class DocsMenu {
     const topLevelKeys = Object.keys(menuMap.main);
     const activeKey = topLevelKeys.find(key => {
       const items = menuMap.main[key];
+      if (items === path) return true;
       return Object.keys(items).some(itemKey => items[itemKey] === path);
     });
     this.setActiveItem(activeKey);
