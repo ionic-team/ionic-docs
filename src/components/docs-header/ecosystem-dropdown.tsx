@@ -37,7 +37,7 @@ export default () => (
     autoClose
     items={items}
     renderer={dropdown => [
-      <a class="ecosystem-dropdown__selected" onClick={dropdown.toggle}>
+      <a class="ecosystem-dropdown__toggle" onClick={dropdown.toggle}>
         Ecosystem
         <svg viewBox="0 0 33 22"><polygon points="16.5 22 0 0 33 0"></polygon></svg>
       </a>,
