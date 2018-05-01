@@ -11,7 +11,7 @@ export class DocsRoot {
   @State() isMenuOpen = false;
 
   parseSection(path) {
-    const match = /^(api|cli|pro)(\/.*)?/.exec(path);
+    const match = /^(api|native|cli|pro)(\/.*)?/.exec(path);
     return match && match[1] || 'framework';
   }
 

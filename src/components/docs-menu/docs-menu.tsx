@@ -1,6 +1,7 @@
 import { Component, Prop, State, Watch } from '@stencil/core';
 import { versions } from '../../versions';
 import { apiMap } from './docs-api-map';
+import { nativeMenu } from './native-menu';
 import * as menuMap from './docs-menu-map';
 
 @Component({
@@ -95,7 +96,7 @@ export class DocsMenu {
               <option value={version} selected={version === this.version}>{ version }</option>
             ))}
           </select>,
-          <stencil-route-link class="api-nav-breadcrumb" url="/docs">
+          <stencil-route-link class="menu__breadcrumb" url="/docs">
             <svg viewBox="0 0 16 24"><path d="M13 22L3 12 13 2" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
             Docs
           </stencil-route-link>,
@@ -104,6 +105,22 @@ export class DocsMenu {
               <span class="menu__item menu__item--static">API Reference</span>
               <ul class="menu__submenu is-open">
                 { Object.keys(api).map(key => this.createItem(key, api[key]))}
+              </ul>
+            </li>
+          </ul>
+        ];
+
+      case 'native':
+        return [
+          <stencil-route-link class="menu__breadcrumb" url="/docs">
+            <svg viewBox="0 0 16 24"><path d="M13 22L3 12 13 2" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+            Docs
+          </stencil-route-link>,
+          <ul>
+            <li>
+              <span class="menu__item menu__item--static">Native APIs</span>
+              <ul class="menu__submenu is-open">
+                { Object.keys(nativeMenu).map(key => this.createItem(key, nativeMenu[key]))}
               </ul>
             </li>
           </ul>
