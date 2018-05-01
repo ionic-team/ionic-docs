@@ -29,6 +29,23 @@
     vertical-align: middle;
     width: 4px;
   }
+
+  @media (max-width: $breakpoint-md) {
+    display: none;
+  }
+}
+
+.ecosystem-dropdown__mobile-toggle {
+  display: none;
+
+  > svg {
+    fill: currentColor;
+    width: 1.25rem;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    display: block;
+  }
 }
 
 

@@ -1,3 +1,5 @@
+import { More } from '../../icons';
+
 const items = [
   {
     text: 'Forum',
@@ -40,6 +42,9 @@ export default () => (
       <a class="ecosystem-dropdown__toggle" onClick={dropdown.toggle}>
         Ecosystem
         <svg viewBox="0 0 33 22"><polygon points="16.5 22 0 0 33 0"></polygon></svg>
+      </a>,
+      <a class="ecosystem-dropdown__mobile-toggle" onClick={dropdown.toggle}>
+        <More/>
       </a>,
       <ul class={{ 'ecosystem-dropdown__panel': true, 'is-open': dropdown.isOpen }}>
         {dropdown.items.map(item => (
