@@ -123,6 +123,11 @@ docs-document {
         color: #3c4b62;
         font-weight: 500;
       }
+
+      code {
+        font-size: 16px;
+        font-weight: 500;
+      }
   }
 
   .intro a {
@@ -155,8 +160,8 @@ docs-document {
 
     dt,
     dd {
-      padding-top: 20px;
-      padding-bottom: 20px;
+      padding-top: 22px;
+      padding-bottom: 22px;
       border-bottom: 1px #eee solid;
     }
 
