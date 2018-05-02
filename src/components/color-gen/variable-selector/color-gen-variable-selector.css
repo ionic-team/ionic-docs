@@ -1,12 +1,12 @@
 
-a {
+.color-selector {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 16px;
 }
 
-.color-name {
+.color-selector__name {
   color: var(--dark);
   font-size: 14px;
   font-weight: 500;
@@ -14,7 +14,7 @@ a {
   align-items: center;
 }
 
-.color-swatch {
+.color-selector__swatch {
   display: block;
   width: 24px;
   height: 24px;
@@ -35,13 +35,13 @@ a {
   padding-left: 10px;
 }
 
-.color-input {
+.color-selector__input {
   border: 1px solid #D4D9E1;
   border-radius: 4px;
   height: 28px;
 }
 
-input[type="text"] {
+.color-selector__input input[type="text"] {
   -webkit-appearance: none;
   border: 0;
   outline: none;
@@ -51,7 +51,7 @@ input[type="text"] {
   color: var(--dark-gray);
 }
 
-input[type="color"] {
+.color-selector__input input[type="color"] {
   -webkit-appearance: none;
   border: none;
   width: 12px;
@@ -61,11 +61,11 @@ input[type="color"] {
   background: transparent;
 }
 
-input[type="color"]::-webkit-color-swatch-wrapper {
+.color-selector__input input[type="color"]::-webkit-color-swatch-wrapper {
   padding: 0;
 }
 
-input[type="color"]::-webkit-color-swatch {
+.color-selector__input input[type="color"]::-webkit-color-swatch {
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 2px;
 }

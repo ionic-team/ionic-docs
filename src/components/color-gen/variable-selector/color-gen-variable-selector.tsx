@@ -28,16 +28,16 @@ export class VariableSelector {
 
   render () {
     return [
-      <a>
-        <div class="color-name">
-          <i class="color-swatch" style={{'backgroundColor': this.value}}></i>
+      <div class="color-selector">
+        <div class="color-selector__name">
+          <i class="color-selector__swatch" style={{'backgroundColor': this.value}}></i>
           {this.name}
         </div>
-        <div class="color-input">
+        <div class="color-selector__input">
           <input type="color" value={this.value} onInput={this.onColorChange.bind(this)} tabindex="-1"/>
           <input type="text" value={this.value} onInput={this.onColorChange.bind(this)}/>
         </div>
-      </a>
+      </div>
     ];
   }
 }
