@@ -8,19 +8,19 @@ previewUrl: 'https://blog.ionicframework.com'
 
 <!-- TOC goes here -->
 
-<p class='intro' markdown='1'>
+<p class="intro" markdown="1">
 Ionic Framework is an open source UI toolkit for building performant, high-quality mobile and desktop apps using familiar web technologies (HTML, CSS, and JavaScript).
 </p>
-<p class='intro' markdown='1'>
+<p class="intro" markdown="1">
 Ionic Framework is focused on the frontend user experience, or UI interaction of an app (controls, interactions, gestures, animations). It’s easy to learn, and integrates nicely with other libraries or frameworks, such as Angular, or can be used standalone without a frontend framework.
 </p>
-<p class='intro' markdown='1'>
+<p class="intro" markdown="1">
 Currently, Ionic Framework has official integration with Angular, but support for <strong>Vue</strong> and <strong>React</strong> are in development. If you’d like to learn more about Ionic Framework before diving in, we [created a video](#) to walk you through the basics.
 </p>
 
 ## License
 
-Ionic Framework is completely a free and open source project, released under <a href="https://opensource.org/licenses/MIT" target="_blank">MIT license</a>. This means you can use it in personal or commercial projects for free. For example, MIT is the same license used by such popular projects as jQuery and Ruby on Rails. 
+Ionic Framework is completely a free and open source project, released under <a href="https://opensource.org/licenses/MIT" target="_blank">MIT license</a>. This means you can use it in personal or commercial projects for free. For example, MIT is the same license used by such popular projects as jQuery and Ruby on Rails.
 
 This website and documentation content (found in the <a href="https://github.com/ionic-team/ionic-site" target="_blank">ionic-site</a> repo) is licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache 2 license</a>.
 
@@ -31,7 +31,7 @@ The official [Ionic CLI](#), or Command Line Interface, is a tool that quickly s
 
 ## Ionic Pro
 
-To take Ionic Framework apps even further, we also offer a commercial app platform called <a href="https://ionicframework.com/pro" target="_blank">Ionic Pro</a>. Ionic (the company) makes money by charging a subscription for Ionic Pro (among other comercial products), which <strong>is entirely optional and separate from the open source Framework.</strong> 
+To take Ionic Framework apps even further, we also offer a commercial app platform called <a href="https://ionicframework.com/pro" target="_blank">Ionic Pro</a>. Ionic (the company) makes money by charging a subscription for Ionic Pro (among other comercial products), which <strong>is entirely optional and separate from the open source Framework.</strong>
 
 Pro lets you monitor and track runtime errors, compile native app builds, and send live updates to your Ionic apps from a centralized dashboard. It comes with a free "Starter" plan to play around with some of these features, with an optional upgrade to paid plans for more advanced capabilities and scale.
 
