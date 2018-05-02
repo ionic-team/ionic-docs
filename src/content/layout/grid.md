@@ -2,6 +2,6 @@
 
 ---
 
-# Storage
+# Responsive Grid
 
 TODO: add stuff here

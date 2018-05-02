@@ -2,37 +2,59 @@ export const main = {
   'Home': '/docs',
   'Introduction': {
     'What is Ionic Framework': '/docs/intro',
-    'Release Notes': '/docs/intro/release-notes',
     'Core Concepts': '/docs/intro/concepts',
     'Browser Support': '/docs/intro/browsers',
+    'Versioning': '/docs/intro/versioning',
+    'Support': '/docs/intro/support'
   },
   'Installation': {
-    'Prerequisites': '/docs/installation/prereqs',
-    'CLI':  '/docs/installation/cli',
-    'CDN': '/docs/installation/cdn',
-    'Pro Setup': '/docs/installation/pro',
+    'Environment Setup': '/docs/installation/environment',
+    'CLI Install':  '/docs/installation/cli',
+    'Packages & CDN': '/docs/installation/cdn',
     'Migration Guide': '/docs/installation/migration',
+    'Pro Setup': '/docs/installation/pro',
   },
   'Guides': {
-    'Starting an App': '/docs/guides/starting-an-app',
-    'Run Your App': '/docs/guides/run-your-app',
-    'Dev Build': '/docs/guides/dev-build',
+    'Starting': '/docs/guides/starting',
+    'Scaffolding': '/docs/guides/scaffolding',
+    'Running': '/docs/guides/running',
     'Testing': '/docs/guides/testing',
-    'Deploying': '/docs/guides/deploying',
-    'Releasing': '/docs/guides/releasing',
+    'Deploying to Web': '/docs/guides/deploying',
+    'Releasing to App Store': '/docs/guides/releasing',
     'Contributing': '/docs/guides/contributing',
-    'Ionic Storage': '/docs/guides/storage',
     'WKWebView': '/docs/guides/wkwebview',
-    'Service Workers': '/docs/guides/service-workers'
+    'Ionic Storage': '/docs/guides/storage',
+    'Desktop Support': '/docs/guides/desktop-support'
+  },
+  'Publishing': {
+    'Progressive Web App': '/docs/publishing/progressive-web-app',
+    'iOS App Store': '/docs/publishing/app-store',
+    'Android Play Store': '/docs/publishing/play-store',
+    'Electron Desktop App': '/docs/publishing/desktop-app'
   },
   'Components': '/docs/components',
+  'Layout': {
+    'Stucture': '/docs/layout/structure',
+    'Responsive Grid': '/docs/layout/grid',
+    'CSS Utilities': '/docs/layout/css-utilities',
+    'RTL Support': '/docs/layout/rtl'
+  },
   'Theming': {
     'Basics': '/docs/theming/basics',
     'Theming with CSS': '/docs/theming/theming-with-css',
     'Theming with Sass': '/docs/theming/theming-with-sass',
-    'Color Generator': '/docs/theming/color-generator'
+    'Color Generator': '/docs/theming/color-generator',
+    'Platform Styles': '/docs/theming/platform-styles',
+    'Overriding Variables': '/docs/theming/overriding'
   },
-  'FAQ': '/docs/faq',
+  'FAQ': {
+    'Glossary': '/docs/faq/glossary',
+    'Build Errors': '/docs/faq/build',
+    'Runtime Errors': '/docs/faq/runtime',
+    'Native Errors': '/docs/faq/native',
+    'Developer Tips': '/docs/faq/tips',
+    'Changelog': ''
+  },
   'Dev Resources': {
     'Books': '/docs/developer-resources/books',
     'Courses': '/docs/developer-resources/courses',

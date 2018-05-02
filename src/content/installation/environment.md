@@ -2,6 +2,6 @@
 
 ---
 
-# Third Party Libs Placeholder
+# Environment Setup
 
 TODO: add stuff here

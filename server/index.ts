@@ -31,7 +31,7 @@ app.get('/', function (req, res) {
   res.redirect('/docs');
 });
 
-app.get(/^(.(?!.*\.png$|.*\.js))*$/, function (req, res) {
+app.get(/^(.(?!.*\.md$|.*\.js))*$/, function (req, res) {
   res.sendFile('docs/index.html', { root: join(__dirname, '../../www')});
 });
 

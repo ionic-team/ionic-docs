@@ -2,6 +2,6 @@
 
 ---
 
-# Storage
+# Writing
 
 TODO: add stuff here

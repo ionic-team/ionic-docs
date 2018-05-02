@@ -2,6 +2,6 @@
 
 ---
 
-# Dev Build
+# Ionic Storage Placeholder
 
 TODO: add stuff here

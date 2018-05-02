@@ -2,6 +2,6 @@
 
 ---
 
-# Storage
+# Glossary
 
 TODO: add stuff here
