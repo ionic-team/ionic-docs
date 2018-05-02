@@ -11,8 +11,8 @@ export class VariableSelector {
   @Prop() name: string;
   @Prop() property: string;
   @Prop({ mutable: true }) value: string;
+  
   @Event() colorChange: EventEmitter;
-
   onColorChange(ev: UIEvent) {
     const input = ev.currentTarget as HTMLInputElement;
     this.value = input.value.trim();

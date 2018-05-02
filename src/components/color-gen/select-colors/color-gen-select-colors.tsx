@@ -11,13 +11,19 @@ export class ColorGenSelectColors {
 
   @Prop() colors: ColorVariable[] = [];
 
+
   render() {
-    console.log(this.colors)
+    const listItems = this.colors.map(color => {
+      return (
+        <li>
+          <color-gen-variable-selector name={color.name} property={color.property} value={color.value} />
+        </li>
+      )
+    })
+
     return (
       <ul>
-        {this.colors.map(color => {
-          return <li><color-gen-variable-selector name={color.name} property={color.property} value={color.value} /></li>;
-        })}
+        { listItems }
       </ul>
     )
   }
