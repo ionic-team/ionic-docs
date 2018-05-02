@@ -14,10 +14,10 @@ export const main = {
     'Pro Setup': '/docs/installation/pro',
   },
   'Guides': {
-    'Migration Guide': '/docs/guides/migration',
     'Starting': '/docs/guides/starting',
     'Scaffolding': '/docs/guides/scaffolding',
     'Developing': '/docs/guides/developing',
+    'Migration': '/docs/guides/migration',
     'Cross Platform': '/docs/guides/cross-platform',
     'Testing': '/docs/guides/testing',
     'Contributing': '/docs/guides/contributing',
