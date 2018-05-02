@@ -9,18 +9,19 @@ export const main = {
   },
   'Installation': {
     'Environment Setup': '/docs/installation/environment',
-    'CLI Install':  '/docs/installation/cli',
     'Packages & CDN': '/docs/installation/cdn',
     'Migration Guide': '/docs/installation/migration',
+    'CLI Install':  '/docs/installation/cli',
     'Pro Setup': '/docs/installation/pro',
   },
   'Guides': {
     'Starting': '/docs/guides/starting',
     'Scaffolding': '/docs/guides/scaffolding',
-    'Running': '/docs/guides/running',
+    'Devloping': '/docs/guides/developing',
+    'Cross Platform': '/docs/guides/cross-platform',
     'Testing': '/docs/guides/testing',
     'Contributing': '/docs/guides/contributing',
-    'WKWebView': '/docs/guides/wkwebview',
+    'Web View': '/docs/guides/webview',
     'Ionic Storage': '/docs/guides/storage',
     'Desktop Support': '/docs/guides/desktop-support'
   },
@@ -32,8 +33,10 @@ export const main = {
   },
   'CLI': {
     'Commands': '/docs/cli/commands',
+    'Configuring': '/docs/cli/configuring',
   },
   'Components': '/docs/components',
+  
   'Layout': {
     'Stucture': '/docs/layout/structure',
     'Responsive Grid': '/docs/layout/grid',
