@@ -17,7 +17,7 @@ export const main = {
   'Guides': {
     'Starting': '/docs/guides/starting',
     'Scaffolding': '/docs/guides/scaffolding',
-    'Devloping': '/docs/guides/developing',
+    'Developing': '/docs/guides/developing',
     'Cross Platform': '/docs/guides/cross-platform',
     'Testing': '/docs/guides/testing',
     'Contributing': '/docs/guides/contributing',
