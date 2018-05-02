@@ -19,8 +19,6 @@ export const main = {
     'Scaffolding': '/docs/guides/scaffolding',
     'Running': '/docs/guides/running',
     'Testing': '/docs/guides/testing',
-    'Deploying to Web': '/docs/guides/deploying',
-    'Releasing to App Store': '/docs/guides/releasing',
     'Contributing': '/docs/guides/contributing',
     'WKWebView': '/docs/guides/wkwebview',
     'Ionic Storage': '/docs/guides/storage',
