@@ -22,14 +22,17 @@ export class ColorGenSelectColors {
   }
 
   render() {
+
     const listItems = this.colors.map(color => {
+      const isOpen = (this.activeColor === color.name) ? true : false;
       return (
-        <li class={{ 'menu__item': true, 'is-open': this.activeColor === color.name }}>
+        <li class={{ 'menu__item': true, 'is-open': isOpen }}>
 
           <color-gen-variable-selector
             name={color.name}
             property={color.property}
             value={color.value}
+            isParentOpen={isOpen}
             onClick={()=>{
               this.toggleActiveColor(color.name)
             }}/>

@@ -11,6 +11,7 @@ export class VariableSelector {
   @Prop() name: string;
   @Prop() property: string;
   @Prop() editable: boolean = true;
+  @Prop() isParentOpen: boolean = false;
   @Prop({ mutable: true }) value: string;
 
   @Event() colorChange: EventEmitter;
@@ -36,7 +37,7 @@ export class VariableSelector {
         </div>
         {(this.editable)
         ?
-          <div class="color-selector__input">
+          <div class="color-selector__input" onClick={ev => { if(this.isParentOpen) ev.stopPropagation() }}>
             <input type="color" value={this.value} onInput={this.onColorChange.bind(this)} tabindex="-1"/>
             <input type="text" value={this.value} onInput={this.onColorChange.bind(this)}/>
           </div>
