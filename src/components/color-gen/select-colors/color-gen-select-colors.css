@@ -1,3 +1,9 @@
+color-gen-select-colors {
+  display: block;
+  padding-top: 20px;
+  margin-bottom: 80px;
+}
+
 .menu,
 .menu__submenu {
   margin: 0;
@@ -11,7 +17,6 @@
 .menu__item {
   position: relative;
   border-bottom: 1px solid var(--whiteish);
-  padding-right: 24px;
 }
 
 .menu__item > color-gen-variable-selector {
@@ -21,8 +26,8 @@
 .menu__item svg {
   transition: 100ms transform;
   position: absolute;
-  top: 28px;
-  right: 16px;
+  top: 24px;
+  right: 12px;
   pointer-events: none;
 }
 
@@ -44,7 +49,7 @@
 }
 
 .menu__item.is-open .menu__submenu > li {
-  height: 62px;
+  height: 54px;
   opacity: 1;
   pointer-events: all;
 }

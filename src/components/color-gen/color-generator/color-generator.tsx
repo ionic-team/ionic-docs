@@ -43,7 +43,7 @@ export class ColorGenerator {
         contrast: '-contrast',
         contrastRgb: '-contrast-rgb',
         shade: '-shade',
-        tint: '-shade',
+        tint: '-tint',
       };
       Object.keys(attrMap).forEach(key => {
         this.cssText = updateCssText(this.cssText, colorProperty + attrMap[key], genColor[key]);
