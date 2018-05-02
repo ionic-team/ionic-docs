@@ -24,34 +24,34 @@ Ionic provides a set of utility attributes that can be used on any element in or
 
 <div class="preview-row">
   <div class="preview-col" text-left>
-    <b>text-left</b><br>
+    <strong>text-left</strong><br>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.
   </div>
   <div class="preview-col" text-right>
-    <b>text-right</b><br>
+    <strong>text-right</strong><br>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.
   </div>
   <div class="preview-col" text-center>
-    <b>text-center</b><br>
+    <strong>text-center</strong><br>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.
   </div>
 </div>
 <div class="preview-row">
   <div class="preview-col" text-justify>
-    <b>text-justify</b><br>
+    <strong>text-justify</strong><br>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.
   </div>
   <div class="preview-col" text-wrap>
-    <b>text-wrap</b><br>
+    <strong>text-wrap</strong><br>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.
   </div>
   <div class="preview-col" text-nowrap>
-    <b>text-nowrap</b><br>
+    <strong>text-nowrap</strong><br>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   </div>
 </div>
 
-<i>Note: the example above is shown with custom styling.</i>
+<em>Note: the example above is shown with custom styling.</em>
 
 ```html
 <div text-left>
@@ -91,20 +91,20 @@ Ionic provides a set of utility attributes that can be used on any element in or
 
 <div class="preview-row">
   <div class="preview-col" text-uppercase>
-    <b>text-uppercase</b><br>
+    <strong>text-uppercase</strong><br>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.
   </div>
   <div class="preview-col" text-lowercase>
-    <b>text-lowercase</b><br>
+    <strong>text-lowercase</strong><br>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.
   </div>
   <div class="preview-col" text-capitalize>
-    <b>text-capitalize</b><br>
+    <strong>text-capitalize</strong><br>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.
   </div>
 </div>
 
-<i>Note: the example above is shown with custom styling.</i>
+<em>Note: the example above is shown with custom styling.</em>
 
 ```html
 <div text-uppercase>
@@ -151,24 +151,24 @@ The float CSS property specifies that an element should be placed along the left
 
 <div class="preview-row">
   <div class="preview-col" float-left>
-    <b>float-left</b><br>
+    <strong>float-left</strong><br>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.
   </div>
   <div class="preview-col" float-right>
-    <b>float-right</b><br>
+    <strong>float-right</strong><br>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.
   </div>
 </div>
 
-<i>Note: the example above is shown with custom styling.</i>
+<em>Note: the example above is shown with custom styling.</em>
 
 ```html
 <div float-left>
-  <b>float-left</b><br>
+  <strong>float-left</strong><br>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.
 </div>
 <div float-right>
-  <b>float-right</b><br>
+  <strong>float-right</strong><br>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.
 </div>
 ```
@@ -235,7 +235,7 @@ The default amount of `padding` to be applied is `16px` and is set by the `--con
   </div>
 </div>
 
-<i>Note: the example above is shown with custom styling to show the padding that gets applied in green.</i>
+<em>Note: the example above is shown with custom styling to show the padding that gets applied in green.</em>
 
 ```html
 <div padding>
@@ -310,7 +310,7 @@ The default amount of `margin` to be applied is `16px` and is set by the `--cont
   </div>
 </div>
 
-<i>Note: the example above is shown with custom styling to show the margin that gets applied in orange.</i>
+<em>Note: the example above is shown with custom styling to show the margin that gets applied in orange.</em>
 
 ```html
 <div margin>
