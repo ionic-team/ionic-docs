@@ -32,16 +32,7 @@ module.exports = {
     "port": 3333,
     "middleware": false,
     "serveStatic": [],
-    "ghostMode": {
-        "clicks": true,
-        "scroll": true,
-        "location": true,
-        "forms": {
-            "submit": true,
-            "inputs": true,
-            "toggles": true
-        }
-    },
+    "ghostMode": false,
     "logLevel": "info",
     "logPrefix": "Browsersync",
     "logConnections": false,
