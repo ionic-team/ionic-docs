@@ -7,7 +7,7 @@
 Ionic is built from the ground up to make cross platform development easy. Ionic apps can be deployed to Native Android, iOS, Progressive Web Apps and Electron, all from one codebase. There are some points to keep in mind when optimizing your app to work across these platforms.
 
 
-### Cordova Plugins
+## Cordova Plugins
 
 In a native environment, you’re bound to make calls to some sort of native API. But in a web environment, such as when your app is running as a PWA, these API calls won’t work since there’s no native bridge. There are a few way to handle this.
 
@@ -34,11 +34,11 @@ Fallback to browser based APIs
 Many native APIs that people tend to use (for example, the File API), are available in the browser these days. The APIs are always improving and catching up to native, so be sure to research them. Taking the first two points into consideration, we can create a nice experience that will adapt for the platform you’re on.
 
 
-### Desktop
+## Desktop
 
 If you are planning to deploy your app to desktop either using Electron or as a PWA it is important to ensure your app works smoothly on these larger devices.
 
-#### Layout
+### Layout
 Most people don’t even notice the layout of an app, but it can have a huge impact on experience and usability. Consider this pretty common UI pattern:
 
 ```html
@@ -97,7 +97,7 @@ There’s a lot going on here so let’s dissect it a bit:
 - If you apply a size without a breakpoint argument, it assumes the smallest break point, xs, so col-12 === col-xs-12.
 A living example of this is the example app, Ionic Conference which uses the grid for it’s speaker view.
 
-### Storage
+## Storage
 Most apps at some point will need to store some sort of data locally. Whether it’s storing some json from an XHR request, or saving an auth token, you have many different storage options that you can use. On top of this, if you’re running your app in a native environment, you can create a full SQLite database and store data there. All of these different storage mechanisms have their benefits and defects, but we shouldn’t have to worry about that.
 
 In this case, [Ionic’s Storage library](https://github.com/ionic-team/ionic-storage) is a perfect candidate for our multi-environment use case. Built on top of the well tested LocalForage library, Ionic’s storage class provides an adaptable storage mechanism that will pick the best storage solution for the current run time.
