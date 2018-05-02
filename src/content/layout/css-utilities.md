@@ -1,5 +1,5 @@
 ---
-
+disableHtmlPreviews: true
 ---
 
 # CSS Utilities

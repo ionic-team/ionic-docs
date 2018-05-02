@@ -31,7 +31,11 @@ const generateHeadingID = (inText: string) => {
   return text;
 };
 
-export function renderMarkdown(markdown: string): MarkedStruc {
+interface RenderOptions {
+  disableHtmlPreviews: boolean
+}
+
+export function renderMarkdown(markdown: string, options: RenderOptions): MarkedStruc {
   const renderer = new marked.Renderer();
   const headings: HeadingStruc[] = [];
 
@@ -50,8 +54,13 @@ export function renderMarkdown(markdown: string): MarkedStruc {
     `;
   };
 
-  renderer.code = (code: string, lang: string) =>
-    lang === 'html' ? toPreviewBlock(code, lang) : toCodeBlock(code, lang);
+  renderer.code = (code: string, lang: string) => {
+    if (lang === 'html' && options.disableHtmlPreviews !== true) {
+      return toPreviewBlock(code, lang);
+    }
+
+    return toCodeBlock(code, lang);
+  };
 
   return {
     headings,
