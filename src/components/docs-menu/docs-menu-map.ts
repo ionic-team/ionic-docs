@@ -32,6 +32,9 @@ export const main = {
     'Android Play Store': '/docs/publishing/play-store',
     'Electron Desktop App': '/docs/publishing/desktop-app'
   },
+  'CLI': {
+    'Commands': '/docs/cli/commands',
+  },
   'Components': '/docs/components',
   'Layout': {
     'Stucture': '/docs/layout/structure',
