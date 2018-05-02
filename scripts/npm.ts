@@ -25,14 +25,14 @@ export async function getCLIDocs() {
   await execp(`npm i && npm run bootstrap && npm run docs`, { cwd: config.CLI_DIR });
 
   return {
-    'ionic1': JSON.parse(
-      fs.readFileSync(`${config.CLI_DIR}/docs/ionic1.json`, `utf8`)
-    ),
-    'ionic-angular': JSON.parse(
-      fs.readFileSync(`${config.CLI_DIR}/docs/ionic-angular.json`, `utf8`)
-    ),
-    // 'angular': JSON.parse(
-    //   fs.readFileSync(`${config.CLI_DIR}/docs/angular.json`, `utf8`)
-    // )
+    // 'ionic1': JSON.parse(
+    //   fs.readFileSync(`${config.CLI_DIR}/docs/ionic1.json`, `utf8`)
+    // ),
+    // 'ionic-angular': JSON.parse(
+    //   fs.readFileSync(`${config.CLI_DIR}/docs/ionic-angular.json`, `utf8`)
+    // ),
+    'angular': JSON.parse(
+      fs.readFileSync(`${config.CLI_DIR}/docs/angular.json`, `utf8`)
+    )
   };
 }
