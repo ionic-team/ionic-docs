@@ -16,7 +16,6 @@ export class ColorGenerator {
 
   componentWillLoad() {
     this.colors = convertCssToColors(this.cssText);
-    console.log(this.colors)
   }
 
   @Event() updatePreview: EventEmitter;
@@ -31,7 +30,7 @@ export class ColorGenerator {
       this.cssText = updateCssText(this.cssText, colorProperty, colorValue);
 
     } else {
-      
+
       const colorIndex = this.colors.findIndex(o => o.property === colorProperty);
       const color = this.colors[colorIndex];
       const genColor = generateColor(color.name, colorProperty, colorValue);
