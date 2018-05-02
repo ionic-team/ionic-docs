@@ -9,7 +9,7 @@
   "scripts": {
     "start": "npm run server",
     "build": "stencil build --prerender",
-    "dev": "sd concurrent \"stencil build --dev --watch\" \"npm run server\" \"browser-sync start --config 'bs-config.js'\" ",
+    "dev": "sd concurrent \"stencil build --dev --watch\" \"npm run server\" \"browser-sync start --config bs-config.js\" ",
     "lint": "tslint --config tslint.json --project tsconfig.json",
     "precommit-bak": "npm run lint",
     "api-docs": "node scripts/build/scripts",
