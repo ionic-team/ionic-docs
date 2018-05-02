@@ -105,9 +105,7 @@ export class DocsDocument {
           {this.tocHeadings.filter(heading => heading.level < 3).map(heading => {
             return (
               <li class="toc-item">
-                <a href={`#${heading.anchorId}`}>
-                  {heading.text}
-                </a>
+                <a href={`#${heading.anchorId}`} innerHTML={heading.text}></a>
               </li>
             );
           })}
