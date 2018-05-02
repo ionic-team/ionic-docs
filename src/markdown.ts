@@ -39,7 +39,11 @@ export function renderMarkdown(markdown: string): MarkedStruc {
     const anchorId = generateHeadingID(text);
     headings.push({ text, level, anchorId });
 
-    return `<h${level} id='${anchorId}' href='#${anchorId}'>${text}</h${level}>\n`;
+    return `
+      <h${level} id="${anchorId}">
+        <a href="${anchorId}" class="linked">${text}</a>
+      </h${level}>
+    `;
   };
 
   renderer.code = (code: string, lang: string) =>
