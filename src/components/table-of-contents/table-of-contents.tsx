@@ -51,10 +51,15 @@ export class TableOfContents {
   }
 
   render() {
+    const headings = Array.from(this.headings);
+    if (!headings.length) {
+      return null;
+    }
+
     return [
       <strong class="toc-label">Contents</strong>,
       <ul class="toc-list">
-        {Array.from(this.headings).map(element => {
+        {headings.map(element => {
           // don't show h3 tags in the TOC
           if ( element['tagName'] === 'H3') {
             return null;
