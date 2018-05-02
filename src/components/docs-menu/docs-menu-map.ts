@@ -45,11 +45,10 @@ export const main = {
   },
   'Theming': {
     'Basics': '/docs/theming/basics',
-    'Theming with CSS': '/docs/theming/theming-with-css',
-    'Theming with Sass': '/docs/theming/theming-with-sass',
     'Color Generator': '/docs/theming/color-generator',
     'Platform Styles': '/docs/theming/platform-styles',
-    'Overriding Variables': '/docs/theming/overriding'
+    'CSS Variables': '/docs/theming/css-variables',
+    'Advanced': '/docs/theming/advanced'
   },
   'FAQ': {
     'Glossary': '/docs/faq/glossary',
