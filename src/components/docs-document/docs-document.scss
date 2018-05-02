@@ -24,16 +24,23 @@ docs-document {
 
   h2 {
     font-size: 24px;
-    padding-top: 48px;
+    padding-top: 64px;
     margin-top: -24px;
     margin-bottom: .9em;
     letter-spacing: -0.015em;
   }
 
   h3 {
-    padding-top: 40px;
-    margin-top: -2em;
     font-size: 18px;
+    padding-top: 48px;
+    margin-top: -2em;
+    letter-spacing: -.015em;
+    margin-bottom: 0;
+  }
+
+  h4 {
+    font-size: 16px;
+    padding-top: 20px;
     letter-spacing: -.015em;
     margin-bottom: 0;
   }

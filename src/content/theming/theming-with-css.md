@@ -1,6 +1,8 @@
 # Theming with CSS
 
+<p class='intro' markdown='1'>
 CSS-based theming enables apps to customize the colors quickly by simply loading a CSS file or changing a few CSS property values.
+</p>
 
 ## Color Language
 
@@ -131,7 +133,7 @@ The following is a list of all the top level colors in the color map:
 --ion-color-dark
 ```
 
-#### Layered Colors
+### Layered Colors
 
 Colors in the color map are considered layered, as they are not simply a single hex value. When you apply ‘primary’ to a button, not only does the button’s background color change, but its text, along with hover and active background colors, change as well. This is just one example of where a layered color is applied.
 
