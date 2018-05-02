@@ -9,12 +9,12 @@ export const main = {
   },
   'Installation': {
     'Environment Setup': '/docs/installation/environment',
-    'Packages & CDN': '/docs/installation/cdn',
-    'Migration Guide': '/docs/installation/migration',
     'CLI Install':  '/docs/installation/cli',
+    'Packages & CDN': '/docs/installation/cdn',
     'Pro Setup': '/docs/installation/pro',
   },
   'Guides': {
+    'Migration Guide': '/docs/guides/migration',
     'Starting': '/docs/guides/starting',
     'Scaffolding': '/docs/guides/scaffolding',
     'Developing': '/docs/guides/developing',
