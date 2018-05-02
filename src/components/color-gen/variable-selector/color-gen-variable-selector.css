@@ -21,6 +21,7 @@
   height: 24px;
   border-radius: 24px;
   margin-right: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .invalid {
@@ -40,6 +41,8 @@
   border: 1px solid #D4D9E1;
   border-radius: 4px;
   height: 28px;
+  display: flex;
+  align-items: center;
 }
 
 .color-selector__input input[type="text"] {
@@ -52,23 +55,25 @@
   color: var(--dark-gray);
 }
 
-.color-selector__input input[type="color"] {
-  -webkit-appearance: none;
-  border: none;
+.color-selector__color-wrap {
+  border: 1px solid rgba(0, 0, 0, 0.1);
   width: 12px;
   height: 12px;
   margin: 0 7px;
-  outline: none;
-  background: transparent;
-}
-
-.color-selector__input input[type="color"]::-webkit-color-swatch-wrapper {
-  padding: 0;
-}
-
-.color-selector__input input[type="color"]::-webkit-color-swatch {
-  border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 2px;
+  display: inline-block;
+}
+
+.color-selector__input input[type="color"] {
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+  opacity: 0;
+  width: 12px;
+  height: 12px;
+  display: block;
+  margin: 0;
+  padding: 0;
 }
 
 .color-selector__hex {

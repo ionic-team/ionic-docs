@@ -38,7 +38,9 @@ export class VariableSelector {
         {(this.editable)
         ?
           <div class="color-selector__input" onClick={ev => { if(this.isParentOpen) ev.stopPropagation() }}>
-            <input type="color" value={this.value} onInput={this.onColorChange.bind(this)} tabindex="-1"/>
+            <div class="color-selector__color-wrap" style={{'backgroundColor': this.value}}>
+              <input type="color" value={this.value} onInput={this.onColorChange.bind(this)} tabindex="-1"/>
+            </div>
             <input type="text" value={this.value} onInput={this.onColorChange.bind(this)}/>
           </div>
         :
