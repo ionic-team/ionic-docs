@@ -3,7 +3,7 @@ export const main = {
   'Introduction': {
     'What is Ionic Framework': '/docs/intro',
     'Core Concepts': '/docs/intro/concepts',
-    'Browser Support': '/docs/intro/browsers',
+    'Browser Support': '/docs/intro/browser-support',
     'Versioning': '/docs/intro/versioning',
     'Support': '/docs/intro/support'
   },
@@ -36,7 +36,7 @@ export const main = {
     'Configuring': '/docs/cli/configuring',
   },
   'Components': '/docs/components',
-  
+
   'Layout': {
     'Stucture': '/docs/layout/structure',
     'Responsive Grid': '/docs/layout/grid',
