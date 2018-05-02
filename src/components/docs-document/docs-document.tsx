@@ -61,6 +61,8 @@ export class DocsDocument {
 
   handleFetchError = err => {
     this.clearLoadingTimer();
+    this.title = '';
+    this.hideTOC = true;
     this.body = err.message;
   }
 
@@ -93,7 +95,7 @@ export class DocsDocument {
     return [
       <h1>{this.title}</h1>,
       <div class="table-of-contents">
-        {(this.tocHeadings.length > 0) ? [
+        {(this.tocHeadings.length > 0) && !this.hideTOC ? [
         <strong class="toc-label">Contents</strong>,
         <ul class="toc-list">
           {this.tocHeadings.filter(heading => heading.level < 3).map(heading => {
