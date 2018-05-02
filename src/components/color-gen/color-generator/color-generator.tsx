@@ -11,45 +11,32 @@ import { generateColor, convertCssToColors, updateCssText } from '../parse-css';
 export class ColorGenerator {
 
   @Element() el: HTMLElement;
+  @Event() updatePreview: EventEmitter;
   @State() colors: ColorVariable[] = [];
   @State() cssText = DEFAULT_CSS_TEXT;
-
-  componentWillLoad() {
-    this.colors = convertCssToColors(this.cssText);
-  }
-
-  @Event() updatePreview: EventEmitter;
 
   @Listen('colorChange')
   onColorChange(ev: any) {
     const colorProperty: string = ev.detail.property;
     const colorValue: string = ev.detail.value;
+    const colorIndex = this.colors.findIndex(o => o.property === colorProperty);
+    const color = this.colors[colorIndex];
+    const genColor = generateColor(color.name, colorProperty, colorValue);
 
-    if (colorProperty.includes('-shade') || colorProperty.includes('-tint')) {
+    this.colors[colorIndex] = genColor;
+    this.colors = [...this.colors];
 
-      this.cssText = updateCssText(this.cssText, colorProperty, colorValue);
-
-    } else {
-
-      const colorIndex = this.colors.findIndex(o => o.property === colorProperty);
-      const color = this.colors[colorIndex];
-      const genColor = generateColor(color.name, colorProperty, colorValue);
-      this.colors[colorIndex] = genColor;
-      this.colors = [...this.colors];
-
-      const attrMap = {
-        value: '',
-        valueRgb: '-rgb',
-        contrast: '-contrast',
-        contrastRgb: '-contrast-rgb',
-        shade: '-shade',
-        tint: '-tint',
-      };
-      Object.keys(attrMap).forEach(key => {
-        this.cssText = updateCssText(this.cssText, colorProperty + attrMap[key], genColor[key]);
-      });
-
-    }
+    const attrMap = {
+      value: '',
+      valueRgb: '-rgb',
+      contrast: '-contrast',
+      contrastRgb: '-contrast-rgb',
+      shade: '-shade',
+      tint: '-tint',
+    };
+    Object.keys(attrMap).forEach(key => {
+      this.cssText = updateCssText(this.cssText, colorProperty + attrMap[key], genColor[key]);
+    });
 
     this.updatePreview.emit({cssText: this.cssText});
   }
@@ -61,9 +48,12 @@ export class ColorGenerator {
     this.updatePreview.emit({cssText: this.cssText});
   }
 
+  componentWillLoad() {
+    this.colors = convertCssToColors(this.cssText);
+  }
+
   componentDidLoad () {
     this.updatePreview.emit({
-      url: '/docs/theming/color-gen/demo/index.html',
       cssText: this.cssText
     });
   }

@@ -271,6 +271,7 @@ declare global {
 
   namespace StencilComponents {
     interface ColorGenVariableSelector {
+      'editable': boolean;
       'name': string;
       'property': string;
       'value': string;
@@ -296,6 +297,7 @@ declare global {
   }
   namespace JSXElements {
     export interface ColorGenVariableSelectorAttributes extends HTMLAttributes {
+      'editable'?: boolean;
       'name'?: string;
       'onColorChange'?: (event: CustomEvent) => void;
       'property'?: string;

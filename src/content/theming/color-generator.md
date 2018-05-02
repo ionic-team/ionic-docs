@@ -1,5 +1,6 @@
 ---
 hideTOC: true
+previewUrl: '/docs/theming/color-gen/demo/index.html'
 ---
 
 # Color Generator

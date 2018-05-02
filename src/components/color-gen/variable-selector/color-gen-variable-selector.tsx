@@ -10,6 +10,7 @@ export class VariableSelector {
 
   @Prop() name: string;
   @Prop() property: string;
+  @Prop() editable: boolean = true;
   @Prop({ mutable: true }) value: string;
 
   @Event() colorChange: EventEmitter;
@@ -33,10 +34,18 @@ export class VariableSelector {
           <i class="color-selector__swatch" style={{'backgroundColor': this.value}}></i>
           {this.name}
         </div>
-        <div class="color-selector__input" onClick={ev => ev.stopPropagation()}>
-          <input type="color" value={this.value} onInput={this.onColorChange.bind(this)} tabindex="-1"/>
-          <input type="text" value={this.value} onInput={this.onColorChange.bind(this)}/>
-        </div>
+        {(this.editable)
+        ?
+          <div class="color-selector__input">
+            <input type="color" value={this.value} onInput={this.onColorChange.bind(this)} tabindex="-1"/>
+            <input type="text" value={this.value} onInput={this.onColorChange.bind(this)}/>
+          </div>
+        :
+          <div class="color-selector__hex">
+            <span>{this.value}</span>
+          </div>
+        }
+
       </div>
     ];
   }

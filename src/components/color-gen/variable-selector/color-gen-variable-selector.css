@@ -71,14 +71,15 @@
   border-radius: 2px;
 }
 
-:host(.used) section {
-  background-color: var(--variable-selector-color, rgba(255, 149, 243, 0.91));
+.color-selector__hex {
+  width: 94px;
 }
 
-:host(.used) section .property-label {
-  outline: 1px solid rgba(0, 0, 0, .5);
-}
-
-:host(.is-primary) .property-label:hover {
-  background-color: rgba(255, 75, 24, 0.16);
+.color-selector__hex span {
+  font-family: var(--font-family-code);
+  font-size: 12px;
+  background-color: var(--whiteish);
+  color: var(--dark-gray);
+  padding: 3px 5px;
+  border-radius: 2px;
 }

@@ -47,13 +47,15 @@ export class ColorGenSelectColors {
               <color-gen-variable-selector
                 name={color.name + '-shade'}
                 property={color.property + '-shade'}
-                value={color.shade} />
+                value={color.shade}
+                editable={false}/>
             </li>
             <li>
               <color-gen-variable-selector
                 name={color.name + '-tint'}
                 property={color.property + '-tint'}
-                value={color.tint} />
+                value={color.tint}
+                editable={false}/>
             </li>
           </ul>
         </li>
