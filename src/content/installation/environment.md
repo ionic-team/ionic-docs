@@ -36,3 +36,7 @@ $ git --version
 </blockquote>
 
 Building and publishing apps for [Android](https://www.android.com/) devices requires [Java](https://java.com/en/). Download JDK8 from the [download page](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
+
+## Android Studio
+
+Building and publishing apps for [Android](https://www.android.com/) devices requires [Android Studio](https://developer.android.com/studio/), which includes the Android SDK.
