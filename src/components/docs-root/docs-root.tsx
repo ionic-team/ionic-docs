@@ -10,6 +10,7 @@ export class DocsRoot {
   @State() previewUrl: string;
   @State() previewCss: string;
   @State() isMenuOpen = false;
+  @State() pageClass: string;
 
   @Listen('updatePreview')
   handleUpdatePreview(ev: any) {
@@ -24,6 +25,7 @@ export class DocsRoot {
 
   handleDocumentLoad = (document) => {
     this.previewUrl = document.previewUrl || null;
+    this.pageClass = document.pageClass;
     if (this.contentElement) {
       this.contentElement.scrollTop = 0;
     }
@@ -48,7 +50,7 @@ export class DocsRoot {
           const layoutClass = {
             ['is-menu-open']: this.isMenuOpen,
             [`section-${section}`]: true,
-            [`page-${page}`]: true
+            [`page-${this.pageClass}`]: true
           };
 
           return (
@@ -59,7 +61,7 @@ export class DocsRoot {
                 ref={node => { this.contentElement = node; }}
                 onOverlayClick={this.closeMenu}
                 showOverlay={this.isMenuOpen}>
-                  <docs-document path={documentPath} onLoaded={this.handleDocumentLoad}/>
+                  <docs-document path={documentPath} onLoaded={this.handleDocumentLoad} pageClass={page}/>
                   <docs-preview url={this.previewUrl} cssText={this.previewCss}/>
               </docs-content>
             </docs-layout>
