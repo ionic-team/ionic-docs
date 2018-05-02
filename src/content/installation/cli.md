@@ -4,6 +4,8 @@
 
 # CLI Install
 
+## Install the Ionic CLI
+
 The CLI can be installed globally with npm:
 
 ```bash
@@ -19,3 +21,28 @@ To verify the installation, run:
 ```bash
 ionic --version
 ```
+
+## Start an App
+
+Create an Ionic app using one of our pre-made app templates, or a blank one to start fresh. The most common starters are the `blank` starter, `tabs` starter, and `sidemenu` starter.
+
+![start app thumbnails](../assets/installation/start-app-thumbnails.png)
+
+Get started with the `ionic start` command:
+
+```bash
+ionic start myApp tabs
+```
+
+To learn more about starting Ionic apps, see our [Starting Guide](/docs/guides/starting).
+
+## Run an App
+
+The majority of Ionic app development is spent right in the browser using the `ionic serve` command:
+
+```bash
+cd myApp
+ionic serve
+```
+
+We recommend starting with this workflow. To develop and test apps on devices and emulators, see Deploying.
