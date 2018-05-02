@@ -115,8 +115,12 @@ docs-document {
     color: #3c4b62;
   }
 
+  img {
+    max-width: 100%;
+  }
+
   .intro {
-    font-size: 18px;
+    font-size: 16px;
     color: #6e7f99;
 
       strong {
@@ -125,8 +129,8 @@ docs-document {
       }
 
       code {
-        font-size: 16px;
-        font-weight: 500;
+        font-size: 14px;
+        font-weight: 600;
       }
   }
 

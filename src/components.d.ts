@@ -689,37 +689,4 @@ declare global {
   }
 }
 
-
-declare global {
-
-  namespace StencilComponents {
-    interface TableOfContents {
-
-    }
-  }
-
-  interface HTMLTableOfContentsElement extends StencilComponents.TableOfContents, HTMLStencilElement {}
-
-  var HTMLTableOfContentsElement: {
-    prototype: HTMLTableOfContentsElement;
-    new (): HTMLTableOfContentsElement;
-  };
-  interface HTMLElementTagNameMap {
-    'table-of-contents': HTMLTableOfContentsElement;
-  }
-  interface ElementTagNameMap {
-    'table-of-contents': HTMLTableOfContentsElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'table-of-contents': JSXElements.TableOfContentsAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface TableOfContentsAttributes extends HTMLAttributes {
-
-    }
-  }
-}
-
 declare global { namespace JSX { interface StencilJSX {} } }

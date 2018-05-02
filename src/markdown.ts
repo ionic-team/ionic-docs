@@ -1,6 +1,17 @@
 import marked from 'marked';
 import hljs from 'highlight.js';
 
+export interface HeadingStruc {
+  text: string;
+  level: number;
+  anchorId: string;
+}
+
+export interface MarkedStruc {
+  headings: HeadingStruc[];
+  body: string;
+}
+
 const toCodeBlock = (code: string, lang = '') =>
   `<code-block language="${lang}">${hljs.highlightAuto(code).value}</code-block>`;
 
@@ -11,11 +22,31 @@ const toPreviewBlock = (code: string, lang = '') => `
   </tab-group>
 `;
 
-const renderer = new marked.Renderer();
+const generateHeadingID = (inText: string) => {
+  let text = inText;
+  text = text.toLowerCase()
+             .replace(/([a-z\xE0-\xFF])([A-Z\xC0\xDF])/g, '$1 $2')
+             .replace(/[^0-9a-zA-Z\xC0-\xFF \-]/g, '')
+             .replace(/ +/g, '-');
+  return text;
+};
 
-renderer.code = (code: string, lang: string) =>
-  lang === 'html' ? toPreviewBlock(code, lang) : toCodeBlock(code, lang);
+export function renderMarkdown(markdown: string): MarkedStruc {
+  const renderer = new marked.Renderer();
+  const headings: HeadingStruc[] = [];
 
-export function renderMarkdown(markdown: string): string {
-  return marked(markdown, { renderer });
+  renderer.heading = (text: string, level: number) => {
+    const anchorId = generateHeadingID(text);
+    headings.push({ text, level, anchorId });
+
+    return `<h${level} id='${anchorId}' href='#${anchorId}'>${text}</h${level}>\n`;
+  };
+
+  renderer.code = (code: string, lang: string) =>
+    lang === 'html' ? toPreviewBlock(code, lang) : toCodeBlock(code, lang);
+
+  return {
+    headings,
+    body: marked(markdown, { renderer })
+  };
 }
