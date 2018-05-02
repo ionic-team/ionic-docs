@@ -25,20 +25,32 @@ export class ColorGenerator {
   onColorChange(ev: any) {
     const colorProperty: string = ev.detail.property;
     const colorValue: string = ev.detail.value;
-    
-    const color = this.colors.find(o => o.property === colorProperty);
-    const genColor = generateColor(color.name, colorProperty, colorValue);
-    const attrMap = {
-      value: '',
-      valueRgb: '-rgb',
-      contrast: '-contrast',
-      contrastRgb: '-contrast-rgb',
-      shade: '-shade',
-      tint: '-shade',
-    };
-    Object.keys(attrMap).forEach(key => {
-      this.cssText = updateCssText(this.cssText, colorProperty + attrMap[key], genColor[key]);
-    });
+
+    if (colorProperty.includes('-shade') || colorProperty.includes('-tint')) {
+
+      this.cssText = updateCssText(this.cssText, colorProperty, colorValue);
+
+    } else {
+      
+      const colorIndex = this.colors.findIndex(o => o.property === colorProperty);
+      const color = this.colors[colorIndex];
+      const genColor = generateColor(color.name, colorProperty, colorValue);
+      this.colors[colorIndex] = genColor;
+      this.colors = [...this.colors];
+
+      const attrMap = {
+        value: '',
+        valueRgb: '-rgb',
+        contrast: '-contrast',
+        contrastRgb: '-contrast-rgb',
+        shade: '-shade',
+        tint: '-shade',
+      };
+      Object.keys(attrMap).forEach(key => {
+        this.cssText = updateCssText(this.cssText, colorProperty + attrMap[key], genColor[key]);
+      });
+
+    }
 
     this.updatePreview.emit({cssText: this.cssText});
   }
