@@ -24,6 +24,8 @@ By making subtle design changes between the platforms, users are provided with a
 
 Traditional websites use a linear history, meaning that the user navigates to a page and can hit the back button to navigate back. An example of this is clicking around Wikipedia where the user is simply going forward and backward on the browser's linear history stack.
 
+### Push / Pop
+
 Native apps, however, commonly use "push/pop" navigation, with multiple history stacks. For example, iOS's App Store has tabs at the bottom such as "Games", "Search", "Updates", etc. Tapping each of the tabs enters into its own history stack, and tapping the "Back" button in one of these stacks means "go back in just this tab". Though it sounds pretty familiar to a traditional website, it's actually quite different and something users of native apps are already accustomed to.
 
 Ionic is able provide users the "push/pop" navigation they expect, but translate it to the web. This allows develoeprs to create the same native app experience for their users.
@@ -40,4 +42,4 @@ An amazing feature of using web technologies, which is what Ionic is built on to
 
 One of the most common use cases for Ionic is to build an app which can be downloaded from both the [App Store](https://www.apple.com/ios/app-store/) and [Play Store](https://play.google.com/). Both iOS and Android software development kits (SDKs) provide "webviews" which render any Ionic app.
 
-Projects such as [Capacitor](https://capacitor.ionicframework.com/) and [Cordova](https://cordova.apache.org/) are commonly used to give Ionic apps "native access". What this means is that developers can quickly build out an app using common web development tools, and still have access to native features such as the device's accelerometer, camera, GPS, etc. For more information please see the publishing docs for the [App Store](/docs/publishing/app-store) and [Play Store](http://ionic-docs.herokuapp.com/docs/publishing/play-store).
+Projects such as <a href="https://capacitor.ionicframework.com/" target="_blank">Capacitor</a> and [Cordova](https://cordova.apache.org/) are commonly used to give Ionic apps "native access". What this means is that developers can quickly build out an app using common web development tools, and still have access to native features such as the device's accelerometer, camera, GPS, etc. For more information please see the publishing docs for the [App Store](/docs/publishing/app-store) and [Play Store](http://ionic-docs.herokuapp.com/docs/publishing/play-store).

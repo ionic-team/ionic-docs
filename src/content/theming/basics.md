@@ -4,7 +4,7 @@
 Ionic components can be themed at runtime using CSS properties. For more advanced theming, check out the **Theming with Sass** section of this guide. For a more in depth look at CSS theming, head over to the **Theming with CSS** section. To change the look of your application you can simply set any CSS properties you would like to change. Currently, Ionic's runtime theming is restricted to color changes. For layout changes you will need to dive into Sass theming. To begin, lets talk about the basic color concepts.
 </p>
 
-### The Color Map
+## The Color Map
 
 ```
 primary
@@ -24,7 +24,7 @@ These colors can then be used by setting the color attribute of a component.
 <ion-button color="primary">Primary</ion-button>
 ```
 
-### Layered Colors
+## Layered Colors
 
 Colors from the Color Map are actually collections of colors. Each color consists of 5 separate values. For example, primary color will translate into the following CSS properties.
 
@@ -43,7 +43,7 @@ When changing the primary color, it is important to set all of the corresponding
 * Tint: Should be a slightly lighter version of the base color
 * RGB: A RGB List representation of the base color. This allows the color to have alpha levels applied.
 
-### Application Colors
+## Application Colors
 
 Ionic also provides application colors. These colors are named to match their usage. For example, `--ion-text-color` will change the primary text color used throughout the app. It is worth noting that `--ion-text-color` and `--ion-background-color` are both stepped colors and, when updating one, steps should be generated. You can read more about color steps in the "Theming with CSS" Section of this guide.
 
