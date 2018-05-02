@@ -1,4 +1,4 @@
-import { Component, State, Listen } from '@stencil/core';
+import { Component, Listen, State } from '@stencil/core';
 import '@stencil/router';
 
 @Component({
@@ -24,7 +24,9 @@ export class DocsRoot {
 
   handleDocumentLoad = (document) => {
     this.previewUrl = document.previewUrl || null;
-    this.contentElement.scrollTop = 0;
+    if (this.contentElement) {
+      this.contentElement.scrollTop = 0;
+    }
     this.closeMenu();
   }
 

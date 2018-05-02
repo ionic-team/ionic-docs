@@ -12,11 +12,10 @@ import { HeadingStruc, renderMarkdown } from '../../markdown';
 export class DocsDocument {
   @Prop() path: string;
   @Prop() onLoaded: (document) => void;
-  @State() isLoading = true;
   @State() body: string;
   @State() title: string;
   @State() hideTOC = false;
-  @State() tocHeadings: HeadingStruc[];
+  @State() tocHeadings: HeadingStruc[] = [];
 
   componentDidLoad() {
     return this.fetchDocument();
@@ -24,7 +23,6 @@ export class DocsDocument {
 
   @Watch('path')
   fetchDocument() {
-    this.isLoading = true;
     return fetch(`/docs/content/${this.path}.md`)
       .then(this.validateResponse)
       .then(this.parseDocument)
@@ -48,7 +46,6 @@ export class DocsDocument {
   }
 
   handleNewContent = content => {
-    this.isLoading = false;
     this.body = content.body;
     this.title = content.title;
     this.hideTOC = content.hideTOC;
@@ -71,10 +68,6 @@ export class DocsDocument {
   }
 
   render() {
-    if (this.isLoading) {
-      return <loading-indicator/>;
-    }
-
     return [
       <h1>{this.title}</h1>,
       <div class="table-of-contents">
