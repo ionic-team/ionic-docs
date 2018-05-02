@@ -73,7 +73,7 @@ const DEFAULT_CSS_TEXT = `
 :root {
 
   /** primary **/
-  --ion-color-primary: #3880FF;
+  --ion-color-primary: #3880ff;
   --ion-color-primary-rgb: 56,128,255;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255,255,255;
@@ -81,7 +81,7 @@ const DEFAULT_CSS_TEXT = `
   --ion-color-primary-tint: #4c8dff;
 
   /** secondary **/
-  --ion-color-secondary: #0CD1E8;
+  --ion-color-secondary: #0cd1e8;
   --ion-color-secondary-rgb: 12,209,232;
   --ion-color-secondary-contrast: #000000;
   --ion-color-secondary-contrast-rgb: 0,0,0;
@@ -89,7 +89,7 @@ const DEFAULT_CSS_TEXT = `
   --ion-color-secondary-tint: #0bb8cc;
 
   /** tertiary **/
-  --ion-color-tertiary: #7044FF;
+  --ion-color-tertiary: #7044ff;
   --ion-color-tertiary-rgb: 112,68,255;
   --ion-color-tertiary-contrast: #ffffff;
   --ion-color-tertiary-contrast-rgb: 255,255,255;
@@ -97,7 +97,7 @@ const DEFAULT_CSS_TEXT = `
   --ion-color-tertiary-tint: #7e57ff;
 
   /** success **/
-  --ion-color-success: #10DC60;
+  --ion-color-success: #10dc60;
   --ion-color-success-rgb: 16,220,96;
   --ion-color-success-contrast: #000000;
   --ion-color-success-contrast-rgb: 0,0,0;
@@ -105,7 +105,7 @@ const DEFAULT_CSS_TEXT = `
   --ion-color-success-tint: #28e070;
 
   /** warning **/
-  --ion-color-warning: #FFCE00;
+  --ion-color-warning: #ffce00;
   --ion-color-warning-rgb: 255,206,0;
   --ion-color-warning-contrast: #000000;
   --ion-color-warning-contrast-rgb: 0,0,0;
@@ -113,7 +113,7 @@ const DEFAULT_CSS_TEXT = `
   --ion-color-warning-tint: #ffd31a;
 
   /** danger **/
-  --ion-color-danger: #F04141;
+  --ion-color-danger: #f04141;
   --ion-color-danger-rgb: 245,61,61;
   --ion-color-danger-contrast: #ffffff;
   --ion-color-danger-contrast-rgb: 255,255,255;
@@ -129,7 +129,7 @@ const DEFAULT_CSS_TEXT = `
   --ion-color-dark-tint: #383a3e;
 
   /** medium **/
-  --ion-color-medium: #989AA2;
+  --ion-color-medium: #989aa2;
   --ion-color-medium-rgb: 152,154,162;
   --ion-color-medium-contrast: #000000;
   --ion-color-medium-contrast-rgb: 0,0,0;
@@ -137,7 +137,7 @@ const DEFAULT_CSS_TEXT = `
   --ion-color-medium-tint: #a2a4ab;
 
   /** light **/
-  --ion-color-light: #F4F5F8;
+  --ion-color-light: #f4f5f8;
   --ion-color-light-rgb: 244,244,244;
   --ion-color-light-contrast: #000000;
   --ion-color-light-contrast-rgb: 0,0,0;
