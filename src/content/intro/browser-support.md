@@ -4,7 +4,7 @@
 
 # Browser Support
 
-<p class='intro' markdown='1'>
+<p class="intro" markdown="1">
 Ionic's original goal was to make it easy to develop mobile apps using web technologies, such as simple HTML, CSS and JavaScript. With this core feature, Ionic is able  to work across a wide range of devices, operating systems and browsers, all while using the same codebase.
 </p>
 
