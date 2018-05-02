@@ -389,6 +389,7 @@ declare global {
 
   namespace StencilComponents {
     interface DocsDocument {
+      'isLoadingTimeout': number;
       'onLoaded': (document) => void;
       'path': string;
     }
@@ -413,6 +414,7 @@ declare global {
   }
   namespace JSXElements {
     export interface DocsDocumentAttributes extends HTMLAttributes {
+      'isLoadingTimeout'?: number;
       'onLoaded'?: (document) => void;
       'path'?: string;
     }

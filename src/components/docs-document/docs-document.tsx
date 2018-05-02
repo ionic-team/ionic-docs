@@ -12,10 +12,14 @@ import { HeadingStruc, renderMarkdown } from '../../markdown';
 export class DocsDocument {
   @Prop() path: string;
   @Prop() onLoaded: (document) => void;
+  @Prop() isLoadingTimeout = 1000;
+  @State() isLoading = false;
   @State() body: string;
   @State() title: string;
   @State() hideTOC = false;
   @State() tocHeadings: HeadingStruc[] = [];
+
+  loadingTimer = null;
 
   componentDidLoad() {
     return this.fetchDocument();
@@ -23,6 +27,7 @@ export class DocsDocument {
 
   @Watch('path')
   fetchDocument() {
+    this.setLoadingTimer();
     return fetch(`/docs/content/${this.path}.md`)
       .then(this.validateResponse)
       .then(this.parseDocument)
@@ -46,6 +51,7 @@ export class DocsDocument {
   }
 
   handleNewContent = content => {
+    this.clearLoadingTimer();
     this.body = content.body;
     this.title = content.title;
     this.hideTOC = content.hideTOC;
@@ -54,7 +60,19 @@ export class DocsDocument {
   }
 
   handleFetchError = err => {
+    this.clearLoadingTimer();
     this.body = err.message;
+  }
+
+  setLoadingTimer() {
+    this.loadingTimer = setTimeout(() => {
+      this.isLoading = true;
+    }, this.isLoadingTimeout);
+  }
+
+  clearLoadingTimer() {
+    clearTimeout(this.loadingTimer);
+    this.isLoading = false;
   }
 
   stripTitle = ({ attributes, body }) => {
@@ -68,6 +86,10 @@ export class DocsDocument {
   }
 
   render() {
+    if (this.isLoading) {
+      return <loading-indicator/>;
+    }
+
     return [
       <h1>{this.title}</h1>,
       <div class="table-of-contents">
