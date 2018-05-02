@@ -13,11 +13,11 @@ export interface MarkedStruc {
 }
 
 const toCodeBlock = (code: string, lang = '') =>
-  `<code-block language="${lang}">${hljs.highlightAuto(code).value}</code-block>`;
+  `<code-block language="${lang}">${hljs.highlightAuto(code, [lang]).value}</code-block>`;
 
 const toPreviewBlock = (code: string, lang = '') => `
   <tab-group tabs="markup preview">
-    <code-block slot="markup" language="${lang}">${hljs.highlightAuto(code).value}</code-block>
+    <code-block slot="markup" language="${lang}">${hljs.highlightAuto(code, [lang]).value}</code-block>
     <code-preview slot="preview" markup="${escape(code)}"></code-preview>
   </tab-group>
 `;
