@@ -8,9 +8,9 @@ To get started with Ionic, the only requirement is a [Node & npm](#anchor-node-n
 
 ## Node & npm
 
-Almost all tooling for modern JavaScript projects is based in [Node.js](https://nodejs.org/). The [download page](https://nodejs.org/en/download/) has prebuilt installation packages for all platforms. We recommend selecting the LTS version to ensure best compatibility.
+Almost all tooling for modern JavaScript projects is based in [Node.js](/docs/faq/glossary#node). The [download page](https://nodejs.org/en/download/) has prebuilt installation packages for all platforms. We recommend selecting the LTS version to ensure best compatibility.
 
-Node is bundled with [npm](https://www.npmjs.com/), the package manager for JavaScript.
+Node is bundled with [npm](/docs/faq/glossary#npm), the package manager for JavaScript.
 
 To verify the installation, open a new terminal window and run:
 
@@ -21,7 +21,7 @@ $ npm --version
 
 ## Git
 
-Although not required, the version control system [Git](https://git-scm.com/) is highly recommended. First, install the command-line utility from the [download page](https://git-scm.com/downloads). For a GUI client, we recommend [Github Desktop](https://desktop.github.com/).
+Although not required, the version control system [Git](/docs/faq/glossary#git) is highly recommended. First, install the command-line utility from the [download page](https://git-scm.com/downloads). For a GUI client, we recommend [Github Desktop](https://desktop.github.com/).
 
 To verify the installation, open a new terminal window and run:
 

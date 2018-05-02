@@ -2,7 +2,9 @@
 
 ---
 
-# CLI Install
+# Installing Ionic
+
+Ionic apps are created and developed primarily through the Ionic command-line utility. Before proceeding, ensure [Node.js](/docs/faq/glossary#node) and [npm](/docs/faq/glossary#npm) are installed. See [Environment Setup](/docs/installation/environment) for details.
 
 ## Install the Ionic CLI
 

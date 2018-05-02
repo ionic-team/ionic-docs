@@ -121,7 +121,7 @@
   </section>
 
   <section id="npm">
-    <h3><a href="#npm">NPM</a></h3>
+    <h3><a href="#npm">npm</a></h3>
     <p><a href="https://www.npmjs.com/">npm</a> is the package manager for <a href="#node">node</a>. It allows you to install, share, and package node modules. Ionic can be installed with npm, along with a number of its dependencies.
     </p>
   </section>
