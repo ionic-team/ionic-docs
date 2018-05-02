@@ -1,4 +1,4 @@
-import { Component, State } from '@stencil/core';
+import { Component, State, Listen } from '@stencil/core';
 import '@stencil/router';
 
 @Component({
@@ -8,7 +8,14 @@ export class DocsRoot {
   contentElement: HTMLElement;
 
   @State() previewUrl: string;
+  @State() previewCss: string;
   @State() isMenuOpen = false;
+
+  @Listen('updatePreview')
+  handleUpdatePreview(ev: any) {
+    if (ev.detail.url) this.previewUrl = ev.detail.url;
+    if (ev.detail.cssText) this.previewCss = ev.detail.cssText;
+  }
 
   parseSection(path) {
     const match = /^(api|cli|pro)(\/.*)?/.exec(path);
@@ -51,7 +58,7 @@ export class DocsRoot {
                 onOverlayClick={this.closeMenu}
                 showOverlay={this.isMenuOpen}>
                   <docs-document path={documentPath} onLoaded={this.handleDocumentLoad}/>
-                  <docs-preview url={this.previewUrl}/>
+                  <docs-preview url={this.previewUrl} cssText={this.previewCss}/>
               </docs-content>
             </docs-layout>
           );

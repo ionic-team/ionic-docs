@@ -18,8 +18,8 @@ export function convertCssToColors(cssText: string) {
 }
 
 
-function parseColorVar(colorProperty: string, cssText: string, colors: ColorVariable[]) {
-  let splt = cssText.split(colorProperty);
+function parseColorVar(colorAttr: any, cssText: string, colors: ColorVariable[]) {
+  let splt = cssText.split(colorAttr.property);
   if (splt.length < 2) {
     return;
   }
@@ -30,7 +30,8 @@ function parseColorVar(colorProperty: string, cssText: string, colors: ColorVari
   }
 
   colors.push({
-    property: colorProperty,
+    name: colorAttr.name,
+    property: colorAttr.property,
     value: splt[1].trim()
   });
 }
@@ -55,13 +56,40 @@ export function updateCssText(cssText: string, colorProperty: string, newColorVa
 
 
 const COLOR_VARS = [
-  '--ion-color-primary',
-  '--ion-color-secondary',
-  '--ion-color-tertiary',
-  '--ion-color-success',
-  '--ion-color-warning',
-  '--ion-color-danger',
-  '--ion-color-light',
-  '--ion-color-medium',
-  '--ion-color-dark',
+  {
+    name: 'Primary',
+    property:'--ion-color-primary',
+  },
+  {
+    name: 'Secondary',
+    property:'--ion-color-secondary',
+  },
+  {
+    name: 'Tertiary',
+    property:'--ion-color-tertiary',
+  },
+  {
+    name: 'Success',
+    property:'--ion-color-success',
+  },
+  {
+    name: 'Warning',
+    property:'--ion-color-warning',
+  },
+  {
+    name: 'Danger',
+    property:'--ion-color-danger',
+  },
+  {
+    name: 'Dark',
+    property:'--ion-color-dark',
+  },
+  {
+    name: 'Medium',
+    property:'--ion-color-medium',
+  },
+  {
+    name: 'Light',
+    property:'--ion-color-light',
+  }
 ];

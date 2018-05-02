@@ -3,7 +3,7 @@ div {
   box-sizing: border-box;
   width: 100%;
   height: calc(100% - 20px);
-  padding: 10px;
+  padding-top: 10px;
 }
 
 iframe {

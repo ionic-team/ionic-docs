@@ -3,6 +3,20 @@ select {
   margin: 10px 0 0 10px;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  border-bottom: 1px solid var(--whiteish);
+  list-style-type: none;
+}
+
+li:first-child {
+  border-top: 1px solid var(--whiteish);
+}
+
 section {
   margin: 10px;
 }

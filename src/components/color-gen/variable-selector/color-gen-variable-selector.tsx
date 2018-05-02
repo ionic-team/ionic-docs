@@ -8,6 +8,7 @@ import { Component, Event, EventEmitter, Prop } from '@stencil/core';
 })
 export class VariableSelector {
 
+  @Prop() name: string;
   @Prop() property: string;
   @Prop({ mutable: true }) value: string;
   @Event() colorChange: EventEmitter;
@@ -24,17 +25,16 @@ export class VariableSelector {
 
   render () {
     return [
-      <section>
-        <div class="color-square">
-          <input type="color" value={this.value} onInput={this.onColorChange.bind(this)} tabindex="-1"/>
+      <a>
+        <div class="color-name">
+          <i class="color-swatch" style={{'backgroundColor': this.value}}></i>
+          {this.name}
         </div>
-        <div class="color-value">
+        <div class="color-input">
+          <input type="color" value={this.value} onInput={this.onColorChange.bind(this)} tabindex="-1"/>
           <input type="text" value={this.value} onInput={this.onColorChange.bind(this)}/>
         </div>
-        <div class="property-label">
-          {this.property}
-        </div>
-      </section>
+      </a>
     ];
   }
 }

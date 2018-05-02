@@ -159,7 +159,7 @@ declare global {
   }
   namespace JSXElements {
     export interface ColorGeneratorAttributes extends HTMLAttributes {
-
+      'onUpdatePreview'?: (event: CustomEvent) => void;
     }
   }
 }
@@ -271,6 +271,7 @@ declare global {
 
   namespace StencilComponents {
     interface ColorGenVariableSelector {
+      'name': string;
       'property': string;
       'value': string;
     }
@@ -295,6 +296,7 @@ declare global {
   }
   namespace JSXElements {
     export interface ColorGenVariableSelectorAttributes extends HTMLAttributes {
+      'name'?: string;
       'onColorChange'?: (event: CustomEvent) => void;
       'property'?: string;
       'value'?: string;
@@ -525,6 +527,7 @@ declare global {
 
   namespace StencilComponents {
     interface DocsPreview {
+      'cssText': string;
       'url': string;
     }
   }
@@ -548,6 +551,7 @@ declare global {
   }
   namespace JSXElements {
     export interface DocsPreviewAttributes extends HTMLAttributes {
+      'cssText'?: string;
       'url'?: string;
     }
   }
