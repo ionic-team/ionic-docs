@@ -41,7 +41,7 @@ export function renderMarkdown(markdown: string): MarkedStruc {
 
     return `
       <h${level} id="${anchorId}">
-        <a href="${anchorId}" class="linked">${text}</a>
+        <a href="#${anchorId}" class="linked">${text}</a>
       </h${level}>
     `;
   };
