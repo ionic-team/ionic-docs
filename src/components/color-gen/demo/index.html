@@ -1,13 +1,24 @@
 <script src="https://unpkg.com/@ionic/core@4.0.0-alpha.3/dist/ionic.js"></script>
 
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Toolbar</ion-title>
-  </ion-toolbar>
-</ion-header>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+  }
+</style>
 
-<ion-button color="light">Button</ion-button>
-<ion-button>Button</ion-button>
-<ion-button color="secondary">Button</ion-button>
-<ion-button color="danger">Button</ion-button>
-<ion-button color="dark">Button</ion-button>
+<ion-app>
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Theme preview</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content padding>
+    <ion-button color="light">Light</ion-button>
+    <ion-button>Default</ion-button>
+    <ion-button color="secondary">Secondary</ion-button>
+    <ion-button color="danger">Danger</ion-button>
+    <ion-button color="dark">Dark</ion-button>
+  </ion-content>
+</ion-app>
