@@ -132,6 +132,16 @@ main {
     max-width: 100%;
   }
 
+  .pull-right {
+    float: right;
+    margin-left: 1em;
+  }
+
+  .pull-left {
+    float: left;
+    margin-right: 1em;
+  }
+
   .intro {
     font-size: 16px;
     color: #6e7f99;
