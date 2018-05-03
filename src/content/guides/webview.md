@@ -4,11 +4,13 @@
 
 # Web View
 
-The Web View powers web apps in native devices. Ionic maintains a [Web View plugin](https://github.com/ionic-team/cordova-plugin-ionic-webview) for apps integrated with [Cordova](/docs/faq/glossary#cordova). The plugin is provided by default when using the Ionic CLI. For apps integrated with [Capacitor](/docs/faq/glossary#capacitor), the Web View is automatically provided.
+<p class="intro" markdown="1">
+The Web View powers web apps in native devices. Ionic maintains a <a href="https://github.com/ionic-team/cordova-plugin-ionic-webview" target="_blank">Web View plugin</a> for apps integrated with [Cordova](/docs/faq/glossary#cordova). The plugin is provided by default when using the Ionic CLI. For apps integrated with [Capacitor](/docs/faq/glossary#capacitor), the Web View is automatically provided.
+</p>
 
 ## iOS
 
-For iOS devices, [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview) is the internal utility to provide a Web View shell for apps. Unfortunately, WKWebView has a few quirks.
+For iOS devices, <a href="https://developer.apple.com/documentation/webkit/wkwebview" target="_blank">WKWebView</a> is the internal utility to provide a Web View shell for apps. Unfortunately, WKWebView has a few quirks.
 
 ### File Protocol
 
