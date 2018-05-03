@@ -28,7 +28,7 @@ Traditional websites use a linear history, meaning that the user navigates to a 
 
 Native apps, however, commonly use "push/pop" navigation, with multiple history stacks. For example, iOS's App Store has tabs at the bottom such as "Games", "Search", "Updates", etc. Tapping each of the tabs enters into its own history stack, and tapping the "Back" button in one of these stacks means "go back in just this tab". Though it sounds pretty familiar to a traditional website, it's actually quite different and something users of native apps are already accustomed to.
 
-Ionic is able provide users the "push/pop" navigation they expect, but translate it to the web. This allows develoeprs to create the same native app experience for their users.
+Ionic is able to provide users the "push/pop" navigation they expect, but translate it to the web. This allows developers to create the same native app experience for their users.
 
 
 ### Routing
@@ -40,9 +40,9 @@ We recommend using the officially supported router based on the framework used, 
 
 An amazing feature of using web technologies, which is what Ionic is built on top of, is that it can be rendered in virtually any platform: desktop computers, phones, tablets, cars, refrigerators, and more! The same codebase for Ionic apps can work in many platforms because it is based on web standards and common APIs that are shared across many platforms.
 
-One of the most common use cases for Ionic is to build an app which can be downloaded from both the [App Store](https://www.apple.com/ios/app-store/) and [Play Store](https://play.google.com/). Both iOS and Android software development kits (SDKs) provide "webviews" which render any Ionic app.
+One of the most common use cases for Ionic is to build an app which can be downloaded from both the [App Store](https://www.apple.com/ios/app-store/) and [Play Store](https://play.google.com/). Both iOS and Android software development kits (SDKs) provide "[web views](/docs/guides/webview)" which render any Ionic app.
 
-Projects such as <a href="https://capacitor.ionicframework.com/" target="_blank">Capacitor</a> and [Cordova](https://cordova.apache.org/) are commonly used to give Ionic apps "native access". What this means is that developers can quickly build out an app using common web development tools, and still have access to native features such as the device's accelerometer, camera, GPS, etc. For more information please see the publishing docs for the [App Store](/docs/publishing/app-store) and [Play Store](http://ionic-docs.herokuapp.com/docs/publishing/play-store).
+Projects such as <a href="https://capacitor.ionicframework.com/" target="_blank">Capacitor</a> and <a href="https://cordova.apache.org/" target="_blank">Cordova</a> are commonly used to give Ionic apps "native access". This means developers can quickly build out an app using common web development tools, and still have access to native features such as the device's accelerometer, camera, GPS, etc. For more information please see the publishing docs for the [App Store](/docs/publishing/app-store) and [Play Store](http://ionic-docs.herokuapp.com/docs/publishing/play-store).
 
 
 ## Architecture
