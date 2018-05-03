@@ -4,7 +4,9 @@
 
 # Environment Setup
 
-To get started with Ionic, the only requirement is a [Node & npm](#anchor-node-npm) environment.
+<p class="intro" markdown="1">
+To get started with Ionic Framework, the only requirement is a [Node & npm](#anchor-node-npm) environment.
+</p>
 
 ## Node & npm
 
