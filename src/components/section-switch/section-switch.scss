@@ -11,6 +11,7 @@
     border-bottom: solid 1px var(--whiteish);
     box-shadow: 0 3px 6px rgba(0,0,0,0.01);
     color: var(--dark);
+    font-family: var(--font-family-sans);
   }
 }
 
@@ -80,6 +81,8 @@
   transition: color 150ms ease;
 
   @media (max-width: $breakpoint-md) {
+    color: var(--blacker);
+    font-weight: 700;
     width: 100%;
   }
 }
