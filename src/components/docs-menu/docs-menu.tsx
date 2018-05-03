@@ -22,6 +22,7 @@ export class DocsMenu {
           onClick={onClick}
           activeClass="menu__item--active"
           url={url}
+          strict={false}
           exact>
             { text }
         </stencil-route-link>
