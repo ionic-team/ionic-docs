@@ -9,8 +9,9 @@
 We suggest the following general process when migrating an existing application from Ionic version 2 or 3 to Ionic version 4:
 
 1. Generate a new project using one of our generic starters
-1. Copy your applicaiton's services from `src/providers` to `src/app/services`. Keep in mind that minor rxjs related changes may need to be made.
-1. Add `{providedIn: 'root'}` to each service's `@Injectable()` decorator so it does not need to be included in the `AppModule`
+1. Copy your applicaiton's services from `src/providers` to `src/app/services`
+   1. Minor rxjs related changes may need to be made
+   1. `{providedIn: 'root'}` should be added to each service's `@Injectable()` decorator so it does not need to be included in the `AppModule`
 1. Copy your application's other root level items (pipes, components, etc) keeping in mind that the directory structure changes from `src/components` to `src/app/components`, etc.
 1. Copy global Sass styling from `src/app/app.scss` to `src/global.scss`
 1. Copy the rest of the application, page by page or feature by feature, keeping the following items in mind
@@ -38,6 +39,14 @@ Be aware that pages/components/etc have moved to inside the app folder because `
 ## Changes in Package Name
 
 Another change in V4 is the actual package name of Ionic. For V4, the package name is now `@ionic/angular`. While you migrate an app, update the imports from `ionic-angular` to `@ionic/angular`.
+
+## RxJS Changes
+
+Some minor RxJS changes are required due to the change from RxJS v5.x to v6. Please see the <a href="https://github.com/ReactiveX/rxjs/blob/master/MIGRATION.md" target="_blank">RxJS Migtration Guide</a> for details.
+
+## Lifecycle Events
+
+Some of the Ionic lifecycle events are equivelent to Angular lifecycle hooks. For example, `ionViewDidLoad()` fills the same role as the Angular `OnInit` lifecycle hook (`ngOnInit()`). In such cases, use the Angular lifecycle hook.
 
 ## Navigation
 
