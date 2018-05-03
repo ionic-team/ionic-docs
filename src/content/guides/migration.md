@@ -4,6 +4,22 @@
 
 # Migration Guide
 
+## Overview
+
+We suggest the following general process when migrating an existing application from Ionic version 2 or 3 to Ionic version 4:
+
+1. Generate a new project using one of our generic starters
+1. Copy your applicaiton's services from `src/providers` to `src/app/services`. Keep in mind that minor rxjs related changes may need to be made.
+1. Add `{providedIn: 'root'}` to each service's `@Injectable()` decorator so it does not need to be included in the `AppModule`
+1. Copy your application's other root level items (pipes, components, etc) keeping in mind that the directory structure changes from `src/components` to `src/app/components`, etc.
+1. Copy global Sass styling from `src/app/app.scss` to `src/global.scss`
+1. Copy the rest of the application, page by page or feature by feature, keeping the following items in mind
+   1. Emulated Shadow DOM is turned on by default so custom Sass no longer needs to be wrapped in the page tag
+   1. Certain life-cycle hooks (such as `ionViewDidLoad()`) should be replaced by Angular's hooks (such as `ngOnInit()`)
+   1. Markup changes may be requried in the page or any any components used by the page
+
+**Note:** In many cases, using the ionic CLI to generate a new object and then copying the code also works very well. For example: `ionic g service weather` will create a shell `Weather` service and test. The code can then be copied from the older project with minor modifications as needed. This helps to ensure proper strcture is followed. This also generates shells for unit tests.
+
 ## Project structure
 
 One of the major changes between an Ionic 3 app and an Ionic 4 app is the over all project layout and structure. In V3, Ionic apps had a custom convention for how an app should be setup and what that folder structure should look like. In V4, this has been changed to follows a typical setup of each framework supported. 
