@@ -46,12 +46,18 @@ export class SectionSwitch {
   renderItem(item) {
     if (item.outbound) {
       return (
-        <a href={item.url} target="_blank" onClick={item.onClick}>{ item.title }</a>
+        <a href={item.url} target="_blank" onClick={item.onClick}>
+          <strong>{ item.title }</strong>
+          <span>{ item.subtitle }</span>
+        </a>
       );
     }
 
     return (
-      <stencil-route-link url={item.url} onClick={item.onClick}>{ item.title }</stencil-route-link>
+      <stencil-route-link url={item.url} onClick={item.onClick}>
+        <strong>{ item.title }</strong>
+        <span>{ item.subtitle }</span>
+      </stencil-route-link>
     );
   }
 
