@@ -3,6 +3,7 @@
   border-bottom: solid 1px var(--header-border, var(--header-background));
   color: var(--header-color-secondary);
   display: block;
+  font-family: var(--font-family-eina);
   position: relative;
 
   @media (max-width: $breakpoint-md) {
@@ -21,7 +22,6 @@
 .section-switch__selector {
   align-items: center;
   display: flex;
-  font-family: var(--font-family-eina);
   font-size: 18px;
   height: calc(var(--header-height) - 1px);
   letter-spacing: -0.02em;
@@ -112,7 +112,7 @@
 .section-switch__panel {
   background-color: white;
   color: var(--dark);
-  padding-bottom: 0;
+  overflow: hidden;
   z-index: 1;
   transition: 80ms padding-bottom;
 
@@ -126,7 +126,6 @@
     left: 2rem;
     min-width: 460px;
     opacity: 0;
-    padding-top: 1.35rem;
     pointer-events: none;
     position: absolute;
     top: calc(100% - 10px);
@@ -139,6 +138,7 @@
 
   @media (min-width: $breakpoint-md) {
     opacity: 1;
+    padding-bottom: 0;
     pointer-events: all;
     transform: translateY(5px);
   }
@@ -164,6 +164,10 @@
     padding: 0 2rem;
   }
 
+  &--outbound {
+    background-color: var(--whiter);
+  }
+
   &--outbound,
   &--active {
     @media (max-width: $breakpoint-md) {
@@ -178,6 +182,25 @@
 
   @media (min-width: $breakpoint-md) {
     padding: 0.5rem 2rem;
+  }
+}
+
+.section-switch__item:first-child a {
+  @media (min-width: $breakpoint-md) {
+    padding-top: 1.5rem;
+  }
+}
+
+.section-switch__item:last-child a {
+  @media (min-width: $breakpoint-md) {
+    padding-bottom: 1.5rem;
+  }
+}
+
+.section-switch__item:not(.section-switch__item--outbound) + .section-switch__item--outbound a {
+  @media (min-width: $breakpoint-md) {
+    margin-top: 1rem;
+    padding-top: 1.5rem;
   }
 }
 
@@ -197,16 +220,18 @@
     color: #131924;
     font-size: 15px;
     font-weight: 700;
-    margin-bottom: 0.35em;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.15em;
   }
 }
 
 .section-switch__subtitle {
   display: none;
+  font-size: 13px;
+  font-weight: 600;
 
   @media (min-width: $breakpoint-md) {
     display: block;
-    font-size: 13px;
   }
 }
 
