@@ -129,7 +129,6 @@ export class DocsMenu {
         ];
 
       case 'pro':
-      case 'cli':
       case 'framework':
       default:
         return [

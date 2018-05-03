@@ -92,12 +92,6 @@ const options = [
     sections: ['pro']
   },
   {
-    title: 'CLI',
-    subtitle: 'Ionic command line interface tool',
-    url: '/docs/cli',
-    sections: ['cli']
-  },
-  {
     title: 'Stencil',
     subtitle: 'Reusable web component compiler',
     url: 'https://stenciljs.com',
