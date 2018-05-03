@@ -209,3 +209,18 @@
 .section-switch__item--outbound .section-switch__title {
   margin-right: 1em;
 }
+
+.section-switch__item--outbound .new-tab {
+  fill: currentColor;
+  height: 0.8em;
+  margin-left: 0.8em;
+  width: 0.8em;
+
+  &__box {
+    opacity: 0.25;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    display: none;
+  }
+}

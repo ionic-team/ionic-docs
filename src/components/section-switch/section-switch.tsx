@@ -1,5 +1,5 @@
 import { Component, Prop } from '@stencil/core';
-import { Ionic } from '../../icons';
+import { Ionic, NewTab } from '../../icons';
 
 @Component({
   tag: 'section-switch',
@@ -48,7 +48,7 @@ export class SectionSwitch {
       return (
         <a href={item.url} target="_blank" onClick={item.onClick}>
           <strong class="section-switch__title">{ item.title }</strong>
-          <span class="section-switch__subtitle">{ item.subtitle }</span>
+          <span class="section-switch__subtitle">{ item.subtitle }<NewTab/></span>
         </a>
       );
     }
