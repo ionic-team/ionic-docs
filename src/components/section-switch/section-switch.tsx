@@ -1,5 +1,5 @@
 import { Component, Prop } from '@stencil/core';
-import { Ionic, NewTab } from '../../icons';
+import { Checkmark, Ionic, NewTab } from '../../icons';
 
 @Component({
   tag: 'section-switch',
@@ -59,6 +59,7 @@ export class SectionSwitch {
           <strong class="section-switch__title">{ item.title }</strong>
           <span class="section-switch__subtitle">{ item.subtitle }</span>
         </div>
+        { item.isActive ? <Checkmark/> : null }
       </stencil-route-link>
     );
   }

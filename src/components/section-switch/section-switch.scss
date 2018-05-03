@@ -228,3 +228,11 @@
     display: none;
   }
 }
+
+.section-switch__item--active svg {
+  align-self: center;
+  fill: var(--blue);
+  height: 2em;
+  margin-left: auto;
+  width: 2em;
+}
