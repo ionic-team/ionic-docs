@@ -75,6 +75,15 @@ h3 {
   opacity: 0;
   transform: translate3d(0,5px,0);
   z-index: 1;
+  display: flex;
+  align-items: center;
+  height: 20px;
+  padding: 0;
+}
+
+.css-text__copy-confirmation svg {
+  fill: #0ec254;
+  margin-right: -4px;
 }
 
 .show-confirmation .css-text__copy-link {
