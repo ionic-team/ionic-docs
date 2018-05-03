@@ -75,6 +75,16 @@ main {
     }
   }
 
+  figure {
+    margin: 0 0 2em;
+  }
+
+  figcaption {
+    font-size: .8em;
+    margin-top:4px;
+    font-style: italic;
+  }
+
   code {
     background: #f5f7fa;
     margin: 0 2px;
