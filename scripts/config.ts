@@ -13,7 +13,7 @@ export const NATIVE_DIR = process.env.NATIVE_DIR || 'sources/ionic-native';
 export const NATIVE_REPO_URL = process.env.NATIVE_REPO_URL || 'https://github.com/ionic-team/ionic-native.git';
 export const NATIVE_DOCS_DIR = process.env.NATIVE_DOCS_DIR || 'src/content/native';
 
-export const VERBOSE = bool(process.env.VERBOSE) || true;
+export const VERBOSE = bool(process.env.VERBOSE) || false;
 
 
 function bool(str) {

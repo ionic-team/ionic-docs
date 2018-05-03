@@ -1,5 +1,5 @@
 import * as fs from 'fs';
-import * as path from 'path';
+import { join } from 'path';
 import * as util from 'util';
 
 import * as semver from 'semver';
@@ -38,7 +38,7 @@ export async function generate() {
 
   // generate the docs for each version
   for (const sv of versions) {
-    const DOCS_DEST = path.join(config.API_DOCS_DIR, sv.version);
+    const DOCS_DEST = join(config.API_DOCS_DIR, sv.version);
     // skip this version if it already exists.
     // delete the directory in src/api/ to force a rebuild
     if (fs.existsSync(DOCS_DEST)) {
@@ -55,7 +55,7 @@ export async function generate() {
     copyFiles(APIDocs.components, DOCS_DEST, sv.version);
 
     generateNav(
-      path.join(menuPath, `docs-api-map.ts`),
+      join(menuPath, `docs-api-map.ts`),
       APIDocs.components,
       sv.version
     );
@@ -78,8 +78,8 @@ function copyFiles(components, dest, version = 'latest') {
     const componentName = components[i].tag.replace('ion-', '');
     // copy demo if it exists and update the ionic path
     hasDemo = utils.copyFileSync(
-      path.join(ionicComponentsDir, componentName, 'test/preview/index.html'),
-      path.join(dest, `${componentName}-demo.html`),
+      join(ionicComponentsDir, componentName, 'test/preview/index.html'),
+      join(dest, `${componentName}-demo.html`),
       file => {
         return file.replace(
           '/dist/ionic.js',
@@ -88,10 +88,12 @@ function copyFiles(components, dest, version = 'latest') {
       }
     );
 
+    components[i].usage = getUsage(componentName);
+
     // copying component markdown
     utils.vlog('Generating page: ', componentName);
     fs.writeFileSync(
-      path.join(dest, `${componentName}.md`),
+      join(dest, `${componentName}.md`),
       docgen.getComponentMarkup(components[i], version, hasDemo)
     );
   }
@@ -113,5 +115,20 @@ function generateNav(menuPath, components, version) {
   menu[version] = componentsList;
   const ts = `${menuHeader}${JSON.stringify(menu, null, '  ')}`;
   fs.writeFileSync(menuPath, ts);
+}
+
+function getUsage(componentName) {
+  const dir = join(ionicComponentsDir, componentName, 'usage');
+  // return empty if the usage directory doesn't exist
+  if (!fs.existsSync(dir) || !fs.lstatSync(dir).isDirectory()) {
+    return null;
+  }
+  // return an object of usage markdown files
+  const files = fs.readdirSync(dir);
+  const usage = {};
+  for (const i in files) {
+    usage[files[i].replace('.md', '')] = fs.readFileSync(join(dir, files[i]), 'utf8');
+  }
+  return usage;
 }
 
