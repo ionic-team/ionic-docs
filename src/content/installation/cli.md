@@ -10,7 +10,7 @@ Ionic apps are created and developed primarily through the Ionic command-line ut
 
 The CLI can be installed globally with npm:
 
-```bash
+```shell
 npm install -g ionic
 ```
 
@@ -20,7 +20,7 @@ npm install -g ionic
 
 To verify the installation, run:
 
-```bash
+```shell
 ionic --version
 ```
 
@@ -32,7 +32,7 @@ Create an Ionic app using one of our pre-made app templates, or a blank one to s
 
 Get started with the `ionic start` command:
 
-```bash
+```shell
 ionic start myApp tabs
 ```
 
@@ -42,7 +42,7 @@ To learn more about starting Ionic apps, see our [Starting Guide](/docs/guides/s
 
 The majority of Ionic app development is spent right in the browser using the `ionic serve` command:
 
-```bash
+```shell
 cd myApp
 ionic serve
 ```

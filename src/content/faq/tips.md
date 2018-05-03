@@ -37,7 +37,7 @@ Between this and adding the <code>?ionic:mode=ios</code> URL param, you can chec
 The iOS simulator allows you to test and debug your app before running it on an actual device. Before it can be used, we need to install
 [Xcode](https://developer.apple.com/xcode/download/), Apple's IDE. The [Ionic CLI](ionic/cli) can then be used to run the app in the current directory on the simulator:
 
-```bash
+```shell
 $ ionic cordova emulate ios -lc
 ```
 
@@ -59,7 +59,7 @@ Safari can be used to debug an Ionic app on a connected iOS device. First, we ne
 
 In addition to using DevTools to debug your app in the browser, DevTools can be used to debug a remote physical Android device, or even a Genymotion emulator running your app. First off, we will need to have [adb](http://developer.android.com/tools/help/adb.html) installed. Once installed, if your device is connected, or an Android emulator is running, you should be able to see your device listed when you run the following command:
 
-```bash
+```shell
 $ adb devices
 ```
 

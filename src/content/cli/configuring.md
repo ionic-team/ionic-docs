@@ -37,13 +37,13 @@ Proxy support is built-in to the Ionic CLI. Proxy settings can be configured via
 
 To configure proxy settings via the config file, run the following with the URL of the proxy server:
 
-```bash
+```shell
 ionic config set -g proxy http://proxy.example.com:8888
 ```
 
 To configure proxy settings via an environment variable, use one of the following:
 
-```bash
+```shell
 export HTTP_PROXY="http://proxy.example.com:8888" # also used by npm
 export HTTPS_PROXY="https://proxy.example.com:8888" # also used by npm
 export IONIC_HTTP_PROXY="http://proxy.example.com:8888"
@@ -55,13 +55,13 @@ Each CLI that you use must be configured separately to proxy network requests.
 
 #### npm
 
-```bash
+```shell
 npm config set proxy http://proxy.company.com:8888
 ```
 
 #### git
 
-```bash
+```shell
 git config --global http.proxy http://proxy.example.com:8888
 ```
 
@@ -69,7 +69,7 @@ git config --global http.proxy http://proxy.example.com:8888
 
 The Ionic CLI can be configured to use various SSL settings for HTTP requests.
 
-```bash
+```shell
 ionic config set -g ssl.cafile /path/to/cafile # file path to your CA root certificate
 ionic config set -g ssl.certfile /path/to/certfile # file path to a client certificate
 ionic config set -g ssl.keyfile /path/to/keyfile # file path to a client key file
@@ -85,7 +85,7 @@ You can express command options (normally set with `--opt=value` syntax) with en
 
 For example, the command options in `ionic cordova run ios -lc --livereload-port=1234 --address=localhost` can also be expressed with this series of environment variables:
 
-```bash
+```shell
 export IONIC_CMDOPTS_CORDOVA_RUN_LIVERELOAD=1
 export IONIC_CMDOPTS_CORDOVA_RUN_CONSOLELOGS=1
 export IONIC_CMDOPTS_CORDOVA_RUN_LIVERELOAD_PORT=1234

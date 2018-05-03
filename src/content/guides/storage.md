@@ -12,7 +12,7 @@ When `ionic/storage` detects that the context is a browser, it attempt to use In
 
 To add `ionic/storage`, run:
 
-```bash
+```shell
 npm install --save @ionic/storage
 ```
 
