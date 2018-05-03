@@ -22,11 +22,11 @@ We suggest the following general process when migrating an existing application 
 
 ## Project structure
 
-One of the major changes between an Ionic 3 app and an Ionic 4 app is the over all project layout and structure. In V3, Ionic apps had a custom convention for how an app should be setup and what that folder structure should look like. In V4, this has been changed to follows a typical setup of each framework supported. 
+One of the major changes between an Ionic 3 app and an Ionic 4 app is the over all project layout and structure. In V3, Ionic apps had a custom convention for how an app should be setup and what that folder structure should look like. In V4, this has been changed to follows a typical setup of each framework supported.
 
 For example, if an app is using Angular, that project structure will be exactly what an Angular CLI app would be. This change, while not too difficult to accommodate, helps to keep common patterns and documentation consistent.
 
-![A V4 project on the left and a V3 project on the right](../assets/guides/migration/v4-v3-project-setup.png)
+![A V4 project on the left and a V3 project on the right](../assets/img/guides/migration/v4-v3-project-setup.png)
 
 The above comparison shows an example project structure of the newer V4 layout (left). For developers with experience in a vanilla Angular project, this should feel really familiar.
 There is a `src` directory that acts as the home for the app. This includes the `index.html`, any assets, environment variables, and any app specific config files. Compared to a V3 project which is slightly different.

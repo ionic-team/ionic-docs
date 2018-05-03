@@ -28,7 +28,7 @@ ionic --version
 
 Create an Ionic app using one of our pre-made app templates, or a blank one to start fresh. The most common starters are the `blank` starter, `tabs` starter, and `sidemenu` starter.
 
-![start app thumbnails](../assets/installation/start-app-thumbnails.png)
+![start app thumbnails](../assets/img/installation/start-app-thumbnails.png)
 
 Get started with the `ionic start` command:
 

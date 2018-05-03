@@ -27,7 +27,7 @@ By default, when you view your app in the browser, Ionic will apply the iOS them
 
 >However, this will not change how the browser sees which platform you are on. To change how the browser sees which platform and device you are on, you must change the user-agent. To do this, open up Chrome DevTools, and toggle device mode on with <kbd>Ctrl+Shift+i</kbd>(<kbd>Cmd+Option+I</kbd> on Mac).
 
-![app with a different mode](../assets/faq/tips/change-device-platform.png)
+![app with a different mode](../assets/img/faq/tips/change-device-platform.png)
 
 Selecting devices from the device dropdown will change the user-agent, as well as the dimensions of the viewport.
 Between this and adding the <code>?ionic:mode=ios</code> URL param, you can check out how your app will look on a wide number of devices.

@@ -8,14 +8,14 @@ Once an app is created by the Ionic CLI, the next step is to start building out 
 
 
 <figure>
-![ionic angular project layout](../assets/guides/scaffolding/src-directory-img.png)
+![ionic angular project layout](../assets/img/guides/scaffolding/src-directory-img.png)
 <figcaption>This is based on an ionic/angular project</figcaption>
 </figure>
 
 The `src` directory has items such as the `index.html` file, configuration files for tests, an asset folder for images, and the main `app` directory for the app's code.
 
 
-![app layout](../assets/guides/scaffolding/src-directory-app-img.png)
+![app layout](../assets/img/guides/scaffolding/src-directory-app-img.png)
 
 The `app` directory has a few more directories inside of it that hold components, pages, as well as additional features like services. If more features are needed, the CLI can handle this.
 

@@ -6,7 +6,7 @@
 
 Starting a new Ionic app is incredibly simple. From the command line, run `ionic start` and the CLI will handle the rest.
 
-![ionic start prompt](../assets/guides/starting/terminal-prompt.png)
+![ionic start prompt](../assets/img/guides/starting/terminal-prompt.png)
 
 The CLI will display prompts asking for app name, template, and what project type to use. This information can be provide in the start command as well.
 
