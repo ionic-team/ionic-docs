@@ -172,6 +172,11 @@
   }
 }
 
+.section-switch__item a {
+  display: flex;
+  align-items: baseline;
+}
+
 .section-switch__panel.is-open .section-switch__item {
   @media (max-width: $breakpoint-md) {
     height: 42px;
@@ -180,7 +185,7 @@
   }
 }
 
-.section-switch__item a > strong {
+.section-switch__title {
   display: block;
   font-weight: inherit;
 
@@ -192,11 +197,15 @@
   }
 }
 
-.section-switch__item a > span {
+.section-switch__subtitle {
   display: none;
 
   @media (min-width: $breakpoint-md) {
     display: block;
     font-size: 13px;
   }
+}
+
+.section-switch__item--outbound .section-switch__title {
+  margin-right: 1em;
 }
