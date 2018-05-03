@@ -28,19 +28,30 @@ export class SectionSwitch {
   renderPanel(dropdown) {
     return (
       <ul class={{ 'section-switch__panel': true, 'is-open': dropdown.isOpen }}>
-        { dropdown.items.map(item => (
-          <li class={{
-            'section-switch__item': true,
-            'section-switch__item--outbound': item.outbound,
-            'section-switch__item--active': item.sections.includes(this.section)
-          }}>
-            { item.outbound
-              ? <a href={item.url} target="_blank" onClick={dropdown.close}>{ item.title }</a>
-              : <stencil-route-link url={item.url} onClick={dropdown.close}>{ item.title }</stencil-route-link>
-            }
-          </li>
-        ))}
+        { dropdown.items.map(item => {
+          const isActive = item.sections.includes(this.section);
+          const onClick = dropdown.close;
+          return (
+            <li class={{
+              'section-switch__item': true,
+              'section-switch__item--outbound': item.outbound,
+              'section-switch__item--active': isActive
+            }}>{ this.renderItem({ ...item, isActive, onClick }) }</li>
+          );
+        })}
       </ul>
+    );
+  }
+
+  renderItem(item) {
+    if (item.outbound) {
+      return (
+        <a href={item.url} target="_blank" onClick={item.onClick}>{ item.title }</a>
+      );
+    }
+
+    return (
+      <stencil-route-link url={item.url} onClick={item.onClick}>{ item.title }</stencil-route-link>
     );
   }
 
