@@ -11,14 +11,14 @@ export async function ensureLatestMaster(
 ): Promise<void> {
   if (!fs.existsSync(dir)) {
     console.log(`Cloning repo ${url}\r\nThis may take a few mins...`);
-    console.log(dir);
+    // console.log(dir);
     await execp(`git clone ${url} ${dir}`);
     if (branch !== 'master') {
       await checkout(dir, branch);
     }
     console.log('Clone complete');
   } else {
-    console.log(dir);
+    // console.log(dir);
     vlog(`${dir} Repo exists - Updating`);
     await execp('git --git-dir=.git reset --hard', { cwd: dir });
     await execp(`git --git-dir=.git checkout ${branch}`, { cwd: dir });
