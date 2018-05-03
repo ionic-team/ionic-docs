@@ -25,6 +25,7 @@ const toPreviewBlock = (code: string, lang = '') => `
 const generateHeadingID = (inText: string) => {
   let text = inText;
   text = text.toLowerCase()
+             .replace(/&#?[a-z0-9]+;/i, '')
              .replace(/([a-z\xE0-\xFF])([A-Z\xC0\xDF])/g, '$1 $2')
              .replace(/[^0-9a-zA-Z\xC0-\xFF \-]/g, '')
              .replace(/ +/g, '-');
