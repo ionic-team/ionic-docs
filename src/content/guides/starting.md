@@ -4,8 +4,7 @@
 
 # Starting an App
 
-
-Starting  a new Ionic app is incredibly simple. From the command line, run `ionic start` and the CLI will handle the rest!
+Starting a new Ionic app is incredibly simple. From the command line, run `ionic start` and the CLI will handle the rest.
 
 ![ionic start prompt](../assets/guides/starting/terminal-prompt.png)
 
