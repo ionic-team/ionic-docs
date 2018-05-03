@@ -43,3 +43,13 @@ An amazing feature of using web technologies, which is what Ionic is built on to
 One of the most common use cases for Ionic is to build an app which can be downloaded from both the [App Store](https://www.apple.com/ios/app-store/) and [Play Store](https://play.google.com/). Both iOS and Android software development kits (SDKs) provide "webviews" which render any Ionic app.
 
 Projects such as <a href="https://capacitor.ionicframework.com/" target="_blank">Capacitor</a> and [Cordova](https://cordova.apache.org/) are commonly used to give Ionic apps "native access". What this means is that developers can quickly build out an app using common web development tools, and still have access to native features such as the device's accelerometer, camera, GPS, etc. For more information please see the publishing docs for the [App Store](/docs/publishing/app-store) and [Play Store](http://ionic-docs.herokuapp.com/docs/publishing/play-store).
+
+
+## Architecture
+
+Talk about the overall architecture principles of Ionic apps.
+
+
+## Theming
+
+Talk about the overall theming capabilities of Ionic apps.
