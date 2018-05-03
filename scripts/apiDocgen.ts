@@ -82,9 +82,9 @@ function generateUsage(usage) {
   let str = `<h2>Usage</h2>${r}`;
   str += `<code-switcher languages="${Object.keys(usage).join(',')}">${r}`;
   for (const version in usage) {
-    str += `<div slot="${version}" markdown="1">\r\n`;
+    str += `<div slot="${version}" markdown="1">${r}`;
     str += usage[version];
-    str += `</div>${r}`;
+    str += `${r}</div>${r}`;
   }
   return str + `<code-switcher>${r}`;
 }

@@ -12,7 +12,7 @@ export interface MarkedStruc {
   body: string;
 }
 
-const toCodeBlock = (code: string, lang = '') =>
+export const toCodeBlock = (code: string, lang = '') =>
   `<code-block language="${lang}">${hljs.highlightAuto(code, [lang]).value}</code-block>`;
 
 const toPreviewBlock = (code: string, lang = '') => `
