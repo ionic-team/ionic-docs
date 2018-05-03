@@ -72,27 +72,32 @@ export class SectionSwitch {
 const options = [
   {
     title: 'Framework',
+    subtitle: 'The UI Toolkit for building highly performant apps',
     url: '/docs',
     sections: ['framework', 'api']
   },
   {
     title: 'Pro',
+    subtitle: 'Integrated suite of tools & services for shipping apps',
     url: '/docs/pro',
     sections: ['pro']
   },
   {
     title: 'CLI',
+    subtitle: 'Ionic command line interface tool',
     url: '/docs/cli',
     sections: ['cli']
   },
   {
     title: 'Stencil',
+    subtitle: 'Reusable web component compiler',
     url: 'https://stenciljs.com',
     sections: [],
     outbound: true
   },
   {
     title: 'Capacitor',
+    subtitle: 'Cross-platform Native SDK Container',
     url: 'https://capacitor.ionicframework.com/',
     sections: [],
     outbound: true
