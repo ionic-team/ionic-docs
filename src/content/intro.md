@@ -13,7 +13,7 @@ Ionic Framework is an open source UI toolkit for building performant, high-quali
 Ionic Framework is focused on the frontend user experience, or UI interaction of an app (controls, interactions, gestures, animations). It’s easy to learn, and integrates nicely with other libraries or frameworks, such as Angular, or can be used standalone without a frontend framework.
 </p>
 <p class="intro" markdown="1">
-Currently, Ionic Framework has official integration with Angular, but support for <strong>Vue</strong> and <strong>React</strong> are in development. If you’d like to learn more about Ionic Framework before diving in, we [created a video](#) to walk you through the basics.
+Currently, Ionic Framework has official integration with <a href="https://angular.io/" target="_blank">Angular</a>, but support for <strong>Vue</strong> and <strong>React</strong> are in development. If you’d like to learn more about Ionic Framework before diving in, we [created a video](#) to walk you through the basics.
 </p>
 
 ## License
