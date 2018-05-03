@@ -64,6 +64,7 @@ docs-header > nav {
   align-items: center;
   color: var(--header-color);
   display: flex;
+  font-family: var(--font-family-eina);
   font-size: 18px;
   font-weight: 700;
   left: 50%;
@@ -87,6 +88,10 @@ docs-header > nav {
   height: auto;
   margin-right: 0.2em;
   width: 1.5rem;
+}
+
+.docs-logo span {
+  height: 0.8em;
 }
 
 .github-link {

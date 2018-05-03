@@ -28,7 +28,7 @@ export class DocsHeader {
           class="menu-toggle">
             { this.isMenuOpen ? <Close/> : <Menu/> }
         </button>
-        <a href="/docs" class="docs-logo"><Ionic/>Docs</a>
+        <a href="/docs" class="docs-logo"><Ionic/><span>Docs</span></a>
         <EcosystemDropdown/>
         <a href={this.getGithubLink(this.section)} class="github-link" target="_blank">GitHub<NewTab/></a>
       </nav>
