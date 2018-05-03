@@ -8,6 +8,26 @@ CSS-based theming enables apps to customize the colors quickly by simply loading
 
 Ionic breaks colors down into two groups: application colors and the color map. The color map is an abstract collection of colors that can be used throughout the application. These have names like `--ion-color-primary` and `--ion-color-secondary`.
 
+### Layered Colors
+
+- Contrast: visible against the base color
+- Shade: a slightly darker version of the base color
+- Tint: a lighter version of the base color
+- RGB: A RGB List representation of the base color. This allows the color to have opacity applied.
+
+For example, the secondary color uses the following CSS properties:
+
+```css
+--ion-color-secondary: #0cd1e8;
+--ion-color-secondary-rgb: 12,209,232;
+--ion-color-secondary-contrast: #000000;
+--ion-color-secondary-contrast-rgb: 0,0,0;
+--ion-color-secondary-shade: #0bb8cc;
+--ion-color-secondary-tint: #0bb8cc;
+```
+
+When `secondary` is applied to a button, not only is the base color used, but the contrast color is used for the text, along with shade and tint colors for other states of the button.
+
 ### Application Colors
 
 Application colors are named for their usage throughout components. The following is a list of all the top level application colors.
