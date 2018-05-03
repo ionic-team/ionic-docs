@@ -26,6 +26,12 @@
     <p>Bundling is the process of taking an app's dependencies (code you've written plus any npm modules installed) and compiling/transpiling them down to one single file.</p>
   </section>
 
+  <section id="capacitor">
+    <a href="capacitor"><h3>Capacitor</h3></a>
+    <p><a href="https://capacitor.ionicframework.com/" target="_blank">Capacitor</a> is a cross-platform app runtime that makes it easy to build web apps that run natively on iOS, Android, Electron, and the web. It's helpful to refer to these apps "Native Progressive Web Apps" and they represent the next evolution beyond the traditional Hybrid app mentality. Capacitor was created and actively developed / supported by Ionic, the company.
+    </p>
+  </section>
+
   <section id="cli">
     <a href="#cli"><h3>CLI</h3></a>
     <p>A CLI, or command-line interface, is text-based interface for interacting with a program. The common command-line app for a Mac user is the Terminal app, and Windows users often use Command Prompt. The Ionic community often uses this term to refer to <a href="https://ionicframework.com/docs/v1/cli/" target="_blank">Ionic's CLI</a>. Ionic's CLI can be used for a number of things, such as creating production builds of an app, running the development server, and accessing <a href="/pro/" target="_blank">Ionic commercial services</a>.</p>
@@ -42,10 +48,9 @@
     <p><a href="https://cordova.apache.org" target="_blank">Apache Cordova</a> is a mobile application development framework that transforms standard HTML/CSS/JS into full-fledged native apps. It provides a JavaScript API for accessing native device functionality, such as the camera or accelerometer. Cordova contains the necessary build tools for packaging webapps for iOS, Android, and Windows Phone.</p>
   </section>
 
-  <section id="capacitor">
-    <a href="capacitor"><h3>Capacitor</h3></a>
-    <p><a href="https://capacitor.ionicframework.com/" target="_blank">Capacitor</a> is a cross-platform app runtime that makes it easy to build web apps that run natively on iOS, Android, Electron, and the web. It's helpful to refer to these apps "Native Progressive Web Apps" and they represent the next evolution beyond the traditional Hybrid app mentality. Capacitor was created and actively developed / supported by Ionic, the company.
-    </p>
+  <section id="cors">
+    <a href="#cors"><h3>CORS</h3></a>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" target="_blank">CORS</a> is a mechanism for servers to control client access to web assets.</p>
   </section>
 
   <section id="decorators">
