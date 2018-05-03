@@ -8,7 +8,7 @@
 
  <section id="android-sdk">
     <a href="#android-sdk"><h3>Android SDK</h3></a>
-    <p>The <a href="http://developer.android.com/sdk/index.html" target="_blank">Android SDK</a> is a software development kit that for developers building for Google's Android Platform. It includes tools for building, testing, and debugging Android applications.</p>
+    <p>The <a href="http://developer.android.com/sdk/index.html" target="_blank">Android SDK</a> is a software development kit built for developers building for Google's Android Platform. It includes tools for building, testing, and debugging Android applications.</p>
   </section>
 
   <section id='android-studio'>
@@ -28,34 +28,33 @@
 
   <section id="capacitor">
     <a href="capacitor"><h3>Capacitor</h3></a>
-    <p><a href="https://capacitor.ionicframework.com/" target="_blank">Capacitor</a> is a cross-platform app runtime that makes it easy to build web apps that run natively on iOS, Android, Electron, and the web. It's helpful to refer to these apps "Native Progressive Web Apps" and they represent the next evolution beyond the traditional Hybrid app mentality. Capacitor was created and actively developed / supported by Ionic, the company.
+    <p><a href="https://capacitor.ionicframework.com/" target="_blank">Capacitor</a> is an open source cross-platform app runtime that allows web-based apps to run natively on iOS, Android, Electron, and the web. It's helpful to refer to these apps "Native Progressive Web Apps" and they represent the next evolution beyond the traditional Hybrid app mentality. Capacitor was created and is actively developed/supported by Ionic, the company.
     </p>
   </section>
 
   <section id="cli">
     <a href="#cli"><h3>CLI</h3></a>
-    <p>A CLI, or command-line interface, is text-based interface for interacting with a program. The common command-line app for a Mac user is the Terminal app, and Windows users often use Command Prompt. The Ionic community often uses this term to refer to <a href="https://ionicframework.com/docs/v1/cli/" target="_blank">Ionic's CLI</a>. Ionic's CLI can be used for a number of things, such as creating production builds of an app, running the development server, and accessing <a href="/pro/" target="_blank">Ionic commercial services</a>.</p>
+    <p>A CLI, or <strong>C</strong>ommand-<strong>L</strong>ine <strong>I</strong>nterface, is a text-based interface for interacting with a program. The common command-line app for a Mac user is the Terminal app, and Windows users often use Command Prompt. The Ionic community often uses this term to refer to <a href="https://ionicframework.com/docs/v1/cli/">Ionic's CLI</a>. Ionic's CLI can be used for a number of things, such as creating production builds of an app, running the development server, and accessing <a href="/pro/" target="_blank">Ionic commercial services</a>.</p>
   </section>
 
   <section id="commonjs">
     <a href="#commonjs"><h3>CommonJS</h3></a>
-    <p>CommonJS is a group that defines standard formats for JavaScript APIs. They have defined standards for JavaScript modules and packages.</p>
-    <p><a href="https://webpack.github.io/docs/commonjs.html" target="_blank">CommonJS</a></p>
+    <p><a href="https://webpack.github.io/docs/commonjs.html" target="_blank">CommonJS</a> is a group that defines standard formats for JavaScript APIs. They have defined standards for JavaScript modules and packages.</p>
   </section>
 
   <section id="cordova">
     <a href="#cordova"><h3>Cordova</h3></a>
-    <p><a href="https://cordova.apache.org" target="_blank">Apache Cordova</a> is a mobile application development framework that transforms standard HTML/CSS/JS into full-fledged native apps. It provides a JavaScript API for accessing native device functionality, such as the camera or accelerometer. Cordova contains the necessary build tools for packaging webapps for iOS, Android, and Windows Phone.</p>
+    <p><a href="https://cordova.apache.org" target="_blank">Apache Cordova</a> is an open source mobile application development framework that transforms standard HTML/CSS/JS into full-fledged native apps. It provides a JavaScript API for accessing native device functionality, such as the camera or accelerometer. Cordova contains the necessary build tools for packaging webapps for iOS, Android, and Windows Phone.</p>
   </section>
 
   <section id="cors">
     <a href="#cors"><h3>CORS</h3></a>
-    <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" target="_blank">CORS</a> is a mechanism for servers to control client access to web assets.</p>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" target="_blank">CORS</a> (Cross-Origin Resource Sharing) is a mechanism for servers to control client access to web assets.</p>
   </section>
 
   <section id="decorators">
     <a href="#decorators"><h3>Decorators</h3></a>
-    <p>Decorators are expressions that return a function. They basically allow you to take an existing function, and extend its behavior. With TypeScript, you can also decorate <i>classes</i> and <i>parameters</i>. When you decorate a <strong>class</strong>, you are wrapping and extending the behavior of its constructor. In other words, the decorator will add some functionality when the constructor is called, and will then return the original constructor. When you decorate a <strong>parameter</strong>, you are wrapping the argument that gets passed in for that parameter. In other words, the decorator will add functionality when an argument is passed to the method, and then return the original argument.
+    <p>Decorators are expressions that return a function. They allow you to take an existing function, and extend its behavior. With TypeScript, you can also decorate <i>classes</i> and <i>parameters</i>. When you decorate a <strong>class</strong>, you are wrapping and extending the behavior of its constructor. In other words, the decorator will add some functionality when the constructor is called, and will then return the original constructor. When you decorate a <strong>parameter</strong>, you are wrapping the argument that gets passed in for that parameter. The decorator will add functionality when an argument is passed to the method, and then return the original argument.
     </p>
   </section>
 
@@ -71,12 +70,12 @@
 
   <section id="es2016-es7">
     <a href="#es2016-es7"><h3>ES2016/ES7</h3></a>
-    <p>This version of JavaScript added a number of new features to the language, including Array.includes and the exponentiation operator. This version of JavaScript is fully supported by all evergreen browsers (Chrome, Safari, Firefox and Edge)</p>
+    <p>This version of JavaScript added a number of new features to the language, including <code>Array.includes</code> and the exponentiation operator. This version of JavaScript is fully supported by all evergreen browsers (Chrome, Safari, Firefox and Edge)</p>
   </section>
 
   <section id="es2017-es8">
     <a href="#es2017-es8"><h3>ES2017/ES8</h3></a>
-    <p>This version of JavaScript is the latest standard. It is currently in the final stage before becoming the new official standard. This spec includes Async/Await (already in all evergreen browsers) and shared memory / atomics.</p>
+    <p>This version of JavaScript is the latest standard. It is currently in the final stage before becoming the new official standard. This spec includes Async/Await (already in all evergreen browsers) and shared memory/atomics.</p>
   </section>
 
   <section id="genymotion">
@@ -91,7 +90,7 @@
 
   <section id="gulp">
     <a href="#gulp"><h3>Gulp</h3></a>
-    <p><a href="http://gulpjs.com/" target="_blank">Gulp</a> is a tool for running tasks which can be used to build your application. Common build tasks include transpiling <a href="#es2015-es6" target="_blank">ES6</a> to <a href="#es5" target="_blank">ES5</a>, turning <a href="#sass" target="_blank">Sass</a> into CSS, minifying code, and concatenating files.</p>
+    <p><a href="http://gulpjs.com/" target="_blank">Gulp</a> is a tool for running tasks which can be used to build your app. Common build tasks include transpiling <a href="#es2015-es6">ES6</a> to <a href="#es5">ES5</a>, turning <a href="#sass">Sass</a> into CSS, minifying code, and concatenating files.</p>
   </section>
 
   <section id="es-modules">
@@ -101,32 +100,32 @@
 
   <section id="ionicons">
     <a href="#ionicons"><h3>Ionicons</h3></a>
-    <p><a href="http://ionicons.com/" target="_blank">Ionicons</a> is an open-source icon set used and created by Ionic. It includes iOS, Material Design, and social icons, as well as a wide range of commonly used icons. Ionicons is included by default in Ionic distributions, but they can be used in any project.</p>
+    <p><a href="http://ionicons.com/" target="_blank">Ionicons</a> is an open-source icon set used and created by Ionic. It includes 1:1 iOS and Material Design icons, as well as commonly used social/application icons. Ionicons is included by default in Ionic distributions, but they can also be used in any project.</p>
   </section>
 
   <section id="karma">
     <a href="#karma"><h3>Karma</h3></a>
-    <p><a href="https://karma-runner.github.io/0.13/index.html" target="_blank">Karma</a> is a test runner that will run your app's test inside a real browser. It executes your test cases, written in any testing framework, in a real browser. Karma was originally written for use with Angular 1.</p>
+    <p><a href="https://karma-runner.github.io/0.13/index.html" target="_blank">Karma</a> is a test runner that will run an app's test inside a real browser. It executes test cases, written in any testing framework, in a real browser. Karma was originally written for use with Angular 1.</p>
   </section>
 
   <section id="module">
     <a href="#module"><h3>Module</h3></a>
-    <p>Modules in JavaScript are small, independent, and reusable pieces or code that are isolated from one another and the Global scope</p>
+    <p>Modules in JavaScript are small, independent, and reusable pieces or code that are isolated from one another and the Global scope.</p>
   </section>
 
   <section id="livereload">
     <a href="#livereload"><h3>Live Reload</h3></a>
-    <p>Live Reload is a tool that automatically reloads your browser when it detects changes. It watches a specific path and when a file or directory is updated, it will trigger a full browser reload. In cases where CSS is changed, livereload will inject the changed CSS instead of reloading the entire page</p>
+    <p><strong>Live Reload</strong> is a tool that automatically reloads the browser when it detects changes. It watches a specific path and when a file or directory is updated, it will trigger a full browser reload. In cases where CSS is changed, livereload will inject the changed CSS instead of reloading the entire page.</p>
   </section>
 
   <section id="node">
     <a href="#node"><h3>Node</h3></a>
-    <p><a href="https://nodejs.org/" target="_blank">node</a> is a runtime environment that lets you write JavaScript on the server-side. In addition to being used for web services, node is often used to build developer tools, such as the <a href="#cli">Ionic CLI</a>.</p>
+    <p><a href="https://nodejs.org/" target="_blank">Node</a> is a runtime environment that allows JavaScript to be written on the server-side. In addition to being used for web services, node is often used to build developer tools, such as the <a href="#cli">Ionic CLI</a>.</p>
   </section>
 
   <section id="npm">
     <a href="#npm"><h3>npm</h3></a>
-    <p><a href="https://www.npmjs.com/" target="_blank">npm</a> is the package manager for <a href="#node">node</a>. It allows you to install, share, and package node modules. Ionic can be installed with npm, along with a number of its dependencies.
+    <p><a href="https://www.npmjs.com/" target="_blank">npm</a> is the package manager for <a href="#node">node</a>. It allows developers to install, share, and package node modules. Ionic can be installed with npm, along with a number of its dependencies.
     </p>
   </section>
 
@@ -138,52 +137,51 @@
 
 <section id="polyfill">
     <a href="#polyfill"><h3>Polyfill</h3></a>
-    <p>A polyfill is a bit of code that add functionality to the browser and normalizes browser differences. This is similar to a shim, but where as a shim has it's own API, a polyfill let's you use the expect API of the brower.</p>
-    <p><a href="https://remysharp.com/2010/10/08/what-is-a-polyfill" target="_blank">What is a polyfill?</a></p>
+    <p>A <a href="https://remysharp.com/2010/10/08/what-is-a-polyfill" target="_blank">polyfill</a> is a bit of code that adds functionality to the browser and normalizes browser differences. This is similar to a <a href="#shim">shim</a>, but where a shim has it's own API, a polyfill let's the expect API of the browser be used.</p>
   </section>
 
 <section id="protractor">
     <a href="#protractor"><h3>Protractor</h3></a>
-    <p><a href="https://angular.github.io/protractor/#/" target="_blank">Protractor</a> is testing framework written for and by the Angular team. Protractor can be used with test runners, like Karma, for end-to-end testing. Test runners allow you to quickly and programmatically verify code quality.</p>
+    <p><a href="https://angular.github.io/protractor/#/" target="_blank">Protractor</a> is a testing framework written for and by the Angular team. Protractor can be used with test runners, like Karma, for end-to-end testing. Test runners allow you to quickly and programmatically verify code quality.</p>
   </section>
 
   <section id="css-variables">
-    <a href="#protractor"><h3>CSS Variables</h3></a>
+    <a href="#css-variables"><h3>CSS Variables</h3></a>
     <p>You may be familiar with variables from Sass. <a href="https://developers.google.com/web/updates/2016/02/css-variables-why-should-you-care" target="_blank">CSS Variables</a> enable the same functionality but are built into the browser. CSS Variables are available in all evergreen browsers.</p>
   </section>
 
   <section id="sass">
-    <a href="#protractor"><h3>Sass</h3></a>
-    <p>Sass is a stylesheet language that compiles to CSS and is used by Ionic. Sass is like CSS, but with extra features such as <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#variables_" target="_blank">variables</a>, <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixins" target="_blank">mixins</a>, and <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#_10" target="_blank">for loops</a>.</p>
+    <a href="#sass"><h3>Sass</h3></a>
+    <p>Sass is a stylesheet language that compiles to CSS and is used by Ionic. Sass is like CSS, but with extra features such as <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#variables_" target="_blank">variables</a>, <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixins" target="_blank">mixins</a>, and <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#_10" target="_blank">loops</a>.</p>
   </section>
 
   <section id="shim">
-    <a href="#protractor"><h3>Shim</h3></a>
+    <a href="#shim"><h3>Shim</h3></a>
     <p>A shim is a piece of code that normailizes an APIs across browsers. A shim can have it's own API that hides the browser specific implimentation from the end user.</p>
   </section>
 
   <section id="transpiler">
-    <a href="#protractor"><h3>Transpiler</h3></a>
+    <a href="#transpiler"><h3>Transpiler</h3></a>
     <p>
     Transpilation is the process of converting code from one language to another language prior to execution. Typically, a transpiler will convert a high-level language to another high-level language. The most common type of <em>transpilation</em> in the Ionic framework is converting <a href="#es2015-es6">ES2015/ES6</a> (<a href="#typescript">TypeScript</a>) to <a href="#es5">ES5</a> (traditional JavaScript).
     </p>
   </section>
 
   <section id="typescript">
-    <a href="#protractor"><h3>TypeScript</h3></a>
+    <a href="#typescript"><h3>TypeScript</h3></a>
     <p>
-    TypeScript is a superset of JavaScript, which means it gives you JavaScript, along with a number of extra features such as <a href="http://www.typescriptlang.org/Handbook#basic-types" target="_blank">type declarations</a> and <a href="http://www.typescriptlang.org/Handbook#interfaces" target="_blank">interfaces</a>. Although Ionic is built with TypeScript, using it to build an Ionic app is completely optional.
+    <a href="http://www.typescriptlang.org" target="_blank">TypeScript</a> is a superset of JavaScript, which means it gives you JavaScript, along with a number of extra features such as <a href="http://www.typescriptlang.org/Handbook#basic-types" target="_blank">type declarations</a> and <a href="http://www.typescriptlang.org/Handbook#interfaces" target="_blank">interfaces</a>. Although Ionic is built with TypeScript, using it to build an Ionic app is completely optional.
     </p>
   </section>
 
   <section id="unit-tests">
-    <a href="#protractor"><h3>Unit Tests</h3></a>
-    <p>Unit Tests and unit testing are a way to test small pieces of code to see if they behave as expected. Unit testing frameworks include Jasmine, Mocah, QUnit, and many more.</p>
+    <a href="#unit-tests"><h3>Unit Tests</h3></a>
+    <p>Unit Tests and unit testing are a way to test small pieces of code to see if they behave as expected. Unit testing frameworks include Jasmine, Mocah, QUnit, and many others.</p>
   </section>
 
   <section id="webpack">
-    <a href="#protractor"><h3>Webpack</h3></a>
-    <p><a href="https://webpack.github.io/" target="_blank">Webpack</a> bundles together JavaScript modules and other assets. It can be used to create single or multiple "chunks" that are only loaded when needed. Basically you can use Webpack to take your many files and dependencies and bundle them into one file, or however you see fit.</p>
+    <a href="#webpack"><h3>Webpack</h3></a>
+    <p><a href="https://webpack.github.io/" target="_blank">Webpack</a> bundles together JavaScript modules and other assets. It can be used to create single or multiple "chunks" that are only loaded when needed. Webpack can be used to take many files and dependencies and bundle them into one file, or other types.</p>
   </section>
 
   <section id="xcode">
