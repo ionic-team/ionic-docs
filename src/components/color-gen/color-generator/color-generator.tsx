@@ -86,7 +86,7 @@ const DEFAULT_CSS_TEXT = `
   --ion-color-secondary-contrast: #ffffff;
   --ion-color-secondary-contrast-rgb: 255,255,255;
   --ion-color-secondary-shade: #0bb8cc;
-  --ion-color-secondary-tint: #0bb8cc;
+  --ion-color-secondary-tint: #24d6ea;
 
   /** tertiary **/
   --ion-color-tertiary: #7044ff;
