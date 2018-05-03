@@ -13,7 +13,7 @@
     "lint": "tslint --config tslint.json --project tsconfig.json",
     "precommit-bak": "npm run lint",
     "api-docs": "node scripts/build/scripts",
-    "api-docs-watch": "sd concurrent \"tsc -p scripts/tsconfig.json --watch\" \"chokidar 'scripts/build/**/*.js' -c 'npm run api-docs'\"",
+    "api-docs-watch": "sd concurrent \"tsc -p scripts/tsconfig.json --watch\" \"chokidar 'scripts/build/**/*.js' -c 'node scripts/build/scripts'\"",
     "preapi-docs": "tsc -p scripts/tsconfig.json",
     "server": "node server/build",
     "server-watch": "sd concurrent \"tsc -p server/tsconfig.json --watch\" \"chokidar 'server/build/**/*.js' -c 'npm run server'\" \"npm run dev\"",
