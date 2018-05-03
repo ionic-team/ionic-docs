@@ -32,6 +32,7 @@ export const main = {
     'Electron Desktop App': '/docs/publishing/desktop-app'
   },
   'CLI': {
+    'Overview': '/docs/cli',
     'Commands': '/docs/cli/commands',
     'Configuring': '/docs/cli/configuring',
   },

@@ -1,43 +1,31 @@
 export function getVersionMarkup(doc): string {
-
-  const title =  ((type) => {
-    switch (type) {
-      case 'ionic1':
-        return 'Ionic v1 CLI Docs';
-      case 'ionic-angular':
-        return 'Ionic v2 and v3 CLI Docs';
-      default:
-        return 'Ionic CLI Docs';
-    }
-  })(doc['type']);
-
-  let markdown = `# ${title}\r\n\r\n`;
+  let markdown = `# Commands\n\n`;
 
   doc['commands'].forEach(command => {
-    markdown += `<h2>${command.name}</h2>\r\n`;
+    markdown += `## ${command.name}\n\n`;
 
     if (command.summary) {
-      markdown += `<h4>${command.summary}</h4>\r\n`;
+      markdown += `<p class="intro">${command.summary}</p>\n\n`;
     }
 
     if (command.exampleCommands.length) {
-      markdown += '<h3 no-anchor>Usage</h3>\r\n\r\n';
-      markdown += '<code-block language="shell">\r\n';
-      markdown += command.exampleCommands.join('\r\n');
-      markdown += '\r\n</code-block>\r\n\r\n';
+      markdown += '<h3>Usage</h3>\n\n';
+      markdown += '```shell\n';
+      markdown += command.exampleCommands.join('\n');
+      markdown += '\n```\n\n';
     }
 
-    if (command.summary.length) {
-      markdown += '<h3 no-anchor>Description</h3>\r\n<p>';
+    if (command.description) {
+      markdown += '<h3>Description</h3>\n\n<p>';
       markdown += command.description
-        .replace(/\n\n/g, '</p>\r\n<p>')
-        .replace(/\n\\\[([2-9])/g, '<br>\r\n\\\[$1');
-      markdown += `</p>\r\n`;
+        .replace(/\n\n/g, '</p>\n<p>')
+        .replace(/\n\\\[([2-9])/g, '<br>\n\\\[$1');
+      markdown += `\n</p>\n\n`;
     }
 
     markdown += generateOptionsList(command.options);
 
-    markdown += '<p><br></p>\r\n\r\n';
+    markdown += '<p><br></p>\n\n';
   });
 
   return markdown;
@@ -46,16 +34,16 @@ export function getVersionMarkup(doc): string {
 function generateOptionsList(options) {
   if (!options.length) return '';
 
-  let str = `<h3 no-anchor>Options</h3>\r\n<dl>\r\n\r\n`;
+  let str = `<h3>Options</h3>\n\n<dl>\n\n`;
 
-  for (let i = 0; i < options.length; i++) {
-    str += `<dt><h4>--${options[i].name}</h4>`;
-    if (options[i].aliases.length) {
-      str += `<strong>Alias:</strong> <code>-${options[i].aliases[0]}</code>`;
+  for (const option of options) {
+    str += `<dt><h4>--${option.name}</h4>`;
+    if (option.aliases.length) {
+      str += `**Alias:** \`-${option.aliases[0]}\``;
     }
-    str += `</dt>\r\n`;
-    str += `<dd>${options[i].summary}</dd>\r\n\r\n`;
+    str += `</dt>\n`;
+    str += `<dd>${option.summary}</dd>\n\n`;
   }
 
-  return str + '</dl>\r\n\r\n\r\n';
+  return str + '</dl>\n\n\n';
 }
