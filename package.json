@@ -54,7 +54,9 @@
     "node_modules",
     "scripts/build",
     "server/build",
-    "src/docs-content/api"
+    "src/content/api",
+    "src/content/native",
+    "src/content/cli/commands.md"
   ],
   "author": "Ionic Team",
   "license": "Apache-2.0",

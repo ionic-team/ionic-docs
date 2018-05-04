@@ -1,4 +1,4 @@
-/* tslint:disable:quotemark */
+/* tslint:disable */
 
 export const apiMap = {
   "4.0.0-alpha.2": {

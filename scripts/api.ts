@@ -12,7 +12,7 @@ import * as utils from './utils';
 import { versions as FRAMEWORK_VERSIONS } from '../src/versions';
 
 const menuPath = 'src/components/docs-menu';
-const menuHeader = '/* tslint:disable:quotemark */\n\nexport const apiMap = ';
+const menuHeader = '/* tslint:disable */\n\nexport const apiMap = ';
 const ionicComponentsDir = `${config.IONIC_DIR}/${config.IONIC_CORE_SRC}/components`;
 
 // the main task of the API documentation generation process
