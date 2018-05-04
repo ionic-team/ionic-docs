@@ -12,7 +12,7 @@ import * as utils from './utils';
 import { versions as FRAMEWORK_VERSIONS } from '../src/versions';
 
 const menuPath = 'src/components/docs-menu';
-const menuHeader = 'export const apiMap = ';
+const menuHeader = '/* tslint:disable:quotemark */\n\nexport const apiMap = ';
 const ionicComponentsDir = `${config.IONIC_DIR}/${config.IONIC_CORE_SRC}/components`;
 
 // the main task of the API documentation generation process
@@ -24,6 +24,7 @@ export async function generate() {
     config.IONIC_DIR,
     config.IONIC_REPO_URL
   );
+
   utils.vlog('validating tags');
   const allVersions = await git.getVersions(config.IONIC_DIR);
   const versions = allVersions.filter(v => {
@@ -113,7 +114,7 @@ function generateNav(menuPath, components, version) {
   }
 
   menu[version] = componentsList;
-  const ts = `${menuHeader}${JSON.stringify(menu, null, '  ')}`;
+  const ts = `${menuHeader}${JSON.stringify(menu, null, '  ')};\n`;
   fs.writeFileSync(menuPath, ts);
 }
 

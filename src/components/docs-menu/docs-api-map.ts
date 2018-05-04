@@ -1,3 +1,5 @@
+/* tslint:disable:quotemark */
+
 export const apiMap = {
   "4.0.0-alpha.2": {
     "action-sheet": "/docs/api/4.0.0-alpha.2/action-sheet",
@@ -109,4 +111,4 @@ export const apiMap = {
     "toolbar": "/docs/api/4.0.0-alpha.2/toolbar",
     "virtual-scroll": "/docs/api/4.0.0-alpha.2/virtual-scroll"
   }
-}
+};

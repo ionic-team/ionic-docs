@@ -8,7 +8,7 @@ import { execp, vlog } from './utils';
 
 const distList = `${config.NATIVE_DIR}/dist/@ionic-native`;
 const menuPath = 'src/components/docs-menu/native-menu.ts';
-const menuHeader = 'export const nativeMenu = ';
+const menuHeader = '/* tslint:disable:quotemark */\n\nexport const nativeMenu = ';
 
 const navList = {};
 
@@ -35,7 +35,7 @@ export async function generate() {
   typeDoc.children.forEach(tsData => processPlugin(tsData));
 
   // write nav
-  const ts = `${menuHeader}${JSON.stringify(navList, null, '  ')}`;
+  const ts = `${menuHeader}${JSON.stringify(navList, null, '  ')};\n`;
   fs.writeFileSync(menuPath, ts);
 
   const endTime = new Date().getTime();

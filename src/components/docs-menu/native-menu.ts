@@ -1,3 +1,5 @@
+/* tslint:disable:quotemark */
+
 export const nativeMenu = {
   "Action Sheet": "/docs/native/action-sheet",
   "AdMob Free": "/docs/native/admob-free",
@@ -191,4 +193,4 @@ export const nativeMenu = {
   "ZBar": "/docs/native/zbar",
   "Zeroconf": "/docs/native/zeroconf",
   "Zip": "/docs/native/zip"
-}
+};

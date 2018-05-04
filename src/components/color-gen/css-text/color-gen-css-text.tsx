@@ -7,8 +7,8 @@ import { Component, Event, EventEmitter, Prop, State } from '@stencil/core';
 })
 export class CssText {
 
-  @Prop({ mutable: true }) cssText: string = '';
-  @State() showCopyConfirmation: boolean = false;
+  @Prop({ mutable: true }) cssText = '';
+  @State() showCopyConfirmation = false;
   @Event() cssTextChange: EventEmitter;
 
   onCssTextChange(ev: UIEvent) {
@@ -32,7 +32,7 @@ export class CssText {
     document.execCommand('copy');
     document.body.removeChild(el);
 
-    setTimeout(()=>{
+    setTimeout(() => {
       this.showCopyConfirmation = false;
     }, 2000);
   }

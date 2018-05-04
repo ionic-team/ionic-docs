@@ -1,7 +1,7 @@
 import { COLOR_VARS, ColorVariable } from './color-variables';
 import { Color, RGB } from './color';
 
-export function generateColor(name: string, property: string, value: string):ColorVariable {
+export function generateColor(name: string, property: string, value: string): ColorVariable {
   const color = new Color(value);
   const contrast = color.contrast();
   const tint = color.tint();
@@ -16,7 +16,7 @@ export function generateColor(name: string, property: string, value: string):Col
     contrastRgb: rgbToString(contrast.rgb),
     tint: tint.hex,
     shade: shade.hex,
-  }
+  };
 }
 
 export function convertCssToColors(cssText: string) {
@@ -46,12 +46,12 @@ function parseColorVar(colorAttr: any, cssText: string, colors: ColorVariable[])
     return;
   }
 
-  const color = generateColor(colorAttr.name, colorAttr.property, splt[1].trim())
+  const color = generateColor(colorAttr.name, colorAttr.property, splt[1].trim());
   colors.push(color);
 }
 
-function rgbToString(c: RGB):string {
-  return `${c.r},${c.g},${c.b}`
+function rgbToString(c: RGB): string {
+  return `${c.r},${c.g},${c.b}`;
 }
 
 export function updateCssText(cssText: string, colorProperty: string, newColorValue: string) {

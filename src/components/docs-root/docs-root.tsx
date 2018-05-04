@@ -1,5 +1,5 @@
 import { Component, Listen, State } from '@stencil/core';
-import '@stencil/router';
+import '@stencil/router'; // tslint:disable-line:no-import-side-effect
 
 @Component({
   tag: 'docs-root'

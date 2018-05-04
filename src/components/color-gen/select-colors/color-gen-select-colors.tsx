@@ -9,7 +9,7 @@ import { ColorVariable } from '../color-variables';
 
 export class ColorGenSelectColors {
 
-  @State() activeColor: string = '';
+  @State() activeColor = '';
 
   @Prop() colors: ColorVariable[] = [];
 
@@ -33,8 +33,8 @@ export class ColorGenSelectColors {
             property={color.property}
             value={color.value}
             isParentOpen={isOpen}
-            onClick={()=>{
-              this.toggleActiveColor(color.name)
+            onClick={() => {
+              this.toggleActiveColor(color.name);
             }}/>
 
           <svg width="10px" height="6px" viewBox="0 0 10 6" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -45,7 +45,7 @@ export class ColorGenSelectColors {
               </g>
           </svg>
 
-          <ul class='menu__submenu'>
+          <ul class="menu__submenu">
             <li>
               <color-gen-variable-selector
                 name={color.name + '-shade'}
@@ -62,14 +62,14 @@ export class ColorGenSelectColors {
             </li>
           </ul>
         </li>
-      )
-    })
+      );
+    });
 
     return (
       <ul class="menu">
         { listItems }
       </ul>
-    )
+    );
   }
 
 }

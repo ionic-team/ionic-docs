@@ -10,8 +10,8 @@ export class VariableSelector {
 
   @Prop() name: string;
   @Prop() property: string;
-  @Prop() editable: boolean = true;
-  @Prop() isParentOpen: boolean = false;
+  @Prop() editable = true;
+  @Prop() isParentOpen = false;
   @Prop({ mutable: true }) value: string;
 
   @Event() colorChange: EventEmitter;
@@ -19,7 +19,7 @@ export class VariableSelector {
   onColorChange(ev: UIEvent) {
     const input = ev.currentTarget as HTMLInputElement;
 
-    if (input.matches('[type="text"]') && input.value.trim().length != 7) return;
+    if (input.matches('[type="text"]') && input.value.trim().length !== 7) return;
 
     this.value = input.value.trim();
     this.colorChange.emit({
@@ -37,7 +37,7 @@ export class VariableSelector {
         </div>
         {(this.editable)
         ?
-          <div class="color-selector__input" onClick={ev => { if(this.isParentOpen) ev.stopPropagation() }}>
+          <div class="color-selector__input" onClick={ev => { if (this.isParentOpen) ev.stopPropagation(); }}>
             <div class="color-selector__color-wrap" style={{'backgroundColor': this.value}}>
               <input type="color" value={this.value} onInput={this.onColorChange.bind(this)} tabindex="-1"/>
             </div>
