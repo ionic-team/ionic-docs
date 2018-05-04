@@ -28,7 +28,7 @@ TODO: image?
 
 ## Architecture
 
-The Ionic CLI is built on [TypeScript](/docs/faq/glossary#typescript) and [Node.js](/docs/faq/glossary#node). It supports Node 6+, but the latest Node LTS is always recommended. Follow development on the open source <a href="https://github.com/ionic-team/ionic-cli" target="_blank">Github repository</a>.
+The Ionic CLI is built with [TypeScript](/docs/faq/glossary#typescript) and [Node.js](/docs/faq/glossary#node). It supports Node 6+, but the latest Node LTS is always recommended. Follow development on the open source <a href="https://github.com/ionic-team/ionic-cli" target="_blank">Github repository</a>.
 
 ## Troubleshooting
 
