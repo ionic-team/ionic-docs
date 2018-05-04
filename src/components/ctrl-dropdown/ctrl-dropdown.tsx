@@ -56,6 +56,12 @@ export class CtrlDropdown {
     this.isOpen = true;
   }
 
+  hostData() {
+    return {
+      'class': { 'is-open': this.isOpen }
+    };
+  }
+
   render() {
     return this.renderer(this);
   }
