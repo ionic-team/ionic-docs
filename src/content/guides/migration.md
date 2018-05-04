@@ -48,6 +48,24 @@ Some minor RxJS changes are required due to the change from RxJS v5.x to v6. Ple
 
 Some of the Ionic lifecycle events are equivelent to Angular lifecycle hooks. For example, `ionViewDidLoad()` fills the same role as the Angular `OnInit` lifecycle hook (`ngOnInit()`). In such cases, use the Angular lifecycle hook.
 
+## Overlay Components
+
+In prior versions of Ionic, overlay components such as the Loading component or Toast were created synchronously. In Ionic v4, these components are all created asynchronously. As a result of this, you will need to `await` the call to `create()` where previously you did not need to.
+
+Example:
+```TypeScript
+  async ionViewDidEnter() {
+    // The only difference here between v3 and v4 is the addition of the "await"
+    const loading = await this.loadingCtrl.create({
+      content: 'Loading data...'
+    });
+    loading.present();
+    this.data = await this.dataService.loadSomeData();
+    loading.dismiss();
+  }
+```
+
+
 ## Navigation
 
 In V4, major changes were made to navigation and routing. `NavController` and `ion-nav` have now been deprecated. They can still used, but only if an app is not using lazy loading.
