@@ -41,12 +41,14 @@ export function renderMarkdown(markdown: string, options: RenderOptions): Marked
   const headings: HeadingStruc[] = [];
 
   renderer.heading = (text: string, level: number) => {
-    const anchorId = generateHeadingID(text);
-    headings.push({ text, level, anchorId });
+    const hasNestedTags = /<.+>(.+)<\/.+>/.test(text);
 
-    if (level > 3) {
+    if (level > 3 || hasNestedTags) {
       return `<h${level}>${text}</h${level}>`;
     }
+
+    const anchorId = generateHeadingID(text);
+    headings.push({ text, level, anchorId });
 
     return `
       <h${level} id="${anchorId}">
