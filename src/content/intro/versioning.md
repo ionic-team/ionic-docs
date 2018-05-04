@@ -6,9 +6,9 @@
 
 <!-- TOC goes here -->
 
-## Versioning Scheme
-
+<p class="intro" markdown="1">
 Ionic Framework follows the <a href="https://semver.org/" target="_blank">Semantic Versioning (SemVer)</a> convention: <code>major.minor.patch.</code> Incompatible API changes increment the <code>major</code> version, adding backwards-compatible functionality increments the <code>minor</code> version, and backwards-compatible bug fixes increment the <code>patch</code> version.
+</p>
 
 ## Release Schedule
 
