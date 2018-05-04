@@ -13,6 +13,7 @@
   .toc-list {
     margin-top: 4px;
     padding-left: 0;
+    margin-bottom: 20px;
   }
 
   .toc-item {
@@ -29,6 +30,8 @@
     position: relative;
     display: inline-block;
     letter-spacing: -.02em;
+    color: #3880ff;
+    transition: 150ms all ease;
 
     &:hover {
       color: var(--blue);
