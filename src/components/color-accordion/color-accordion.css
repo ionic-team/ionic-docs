@@ -1,0 +1,87 @@
+color-accordion {
+  display: block;
+  padding-top: 20px;
+  margin-bottom: 80px;
+}
+
+.color-menu,
+.color-submenu {
+  display: block;
+
+  margin: 0;
+  padding: 0;
+
+  list-style-type: none;
+}
+
+.color-menu-item {
+  display: list-item;
+  position: relative;
+
+  margin-bottom: 5px;
+  list-style-type: none;
+
+  font-family: var(--font-family-code-medium);
+  font-size: 14px;
+}
+
+.color-menu-item .color-menu-text {
+  height: 55px;
+}
+
+.color-menu-text {
+  display: flex;
+  align-items: center;
+}
+
+.color-menu-item > .color-menu-text {
+  cursor: pointer;
+}
+
+.color-menu-item svg {
+  transition: 100ms transform;
+  position: absolute;
+  top: 24px;
+  right: 12px;
+  pointer-events: none;
+}
+
+.color-submenu {
+  height: 0;
+  opacity: 0;
+}
+
+.color-submenu-item {
+  display: list-item;
+
+  margin: 0;
+
+  font-family: var(--font-family-code);
+  font-size: 13px;
+
+  pointer-events: none;
+  transition: 160ms height, 160ms opacity;
+}
+
+.color-submenu-item .color-menu-text {
+  height: 40px;
+}
+
+.color-menu-value {
+  margin-left: auto;
+  padding-right: 40px;
+}
+
+.color-menu-text {
+  padding-left: 20px;
+}
+
+.color-menu-item-active svg {
+  transform: rotate(180deg);
+}
+
+.color-menu-item-active .color-submenu {
+  height: 80px;
+  opacity: 1;
+  pointer-events: all;
+}

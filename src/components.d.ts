@@ -135,6 +135,39 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface ColorAccordion {
+
+    }
+  }
+
+  interface HTMLColorAccordionElement extends StencilComponents.ColorAccordion, HTMLStencilElement {}
+
+  var HTMLColorAccordionElement: {
+    prototype: HTMLColorAccordionElement;
+    new (): HTMLColorAccordionElement;
+  };
+  interface HTMLElementTagNameMap {
+    'color-accordion': HTMLColorAccordionElement;
+  }
+  interface ElementTagNameMap {
+    'color-accordion': HTMLColorAccordionElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'color-accordion': JSXElements.ColorAccordionAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface ColorAccordionAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface ColorGenerator {
 
     }
