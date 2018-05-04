@@ -6,7 +6,7 @@ import { join }            from 'path';
 
 import * as config         from './config';
 import * as pageNotFound   from './pageNotFound';
-import * as processRequest from './processRequest';
+import { default as processRequest } from './processRequest';
 
 
 dotenv({silent: true});
@@ -17,9 +17,9 @@ process.env.PWD = process.cwd();
 console.log('PWD', process.env.PWD);
 
 app.set('trust proxy', true);
-// app.use(compress());
-// app.use(helmet());
-// app.use(processRequest);
+app.use(compress());
+app.use(helmet());
+app.use(processRequest);
 
 app.enable('etag');
 

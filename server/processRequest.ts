@@ -30,10 +30,13 @@ export default (req, res, next) => {
   //   return res.redirect(301, redirects[requrl]);
   // }
 
+  // TODO remove before going live
+  res.setHeader('X-Robots-Tag', 'noindex, nofollow');
+
   // don't index non production URLs, but favor HTTPS
   let protocol = 'https';
   if (req.hostname.indexOf('ionicframework.com') === -1) {
-    res.setHeader('X-Robots-Tag', 'noindex, nofollow');
+    // res.setHeader('X-Robots-Tag', 'noindex, nofollow');
     protocol = 'http';
   } else {
    // require https in prod
@@ -45,7 +48,7 @@ export default (req, res, next) => {
   }
 
   // cache static files
-  const staticURLS = ['/img/', '/fonts/', '/favicon.ico'];
+  const staticURLS = ['/assets/', '/favicon.ico'];
   for (let i = 0; i <= staticURLS.length; i++) {
     if (req.url.indexOf(staticURLS[i]) === 0) {
       res.setHeader('Cache-Control', 'public, max-age=315360000000');

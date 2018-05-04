@@ -55,8 +55,7 @@
     "scripts/build",
     "server/build",
     "src/content/api",
-    "src/content/native",
-    "src/content/cli/commands.md"
+    "src/content/native"
   ],
   "author": "Ionic Team",
   "license": "Apache-2.0",
