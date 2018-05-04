@@ -45,12 +45,12 @@ async function run() {
   try {
     await nativeDocs();
   } catch (error) {
-    if (!fs.existsSync(NATIVE_DOCS_DIR)) {
-      throw error;
-    } else {
+    // if (!fs.existsSync(NATIVE_DOCS_DIR)) {
+    //   throw error;
+    // } else {
       console.log(error);
       console.log('Using cached Native Docs because the build currently fails.');
-    }
+    // }
   }
 }
 

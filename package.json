@@ -50,7 +50,7 @@
     "browser-sync": "^2.24.1"
   },
   "cacheDirectories": [
-    "ionic",
+    "sources",
     "node_modules",
     "scripts/build",
     "server/build",
