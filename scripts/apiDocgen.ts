@@ -74,7 +74,7 @@ function generateMethodList(items) {
     str += `<dd>${items[i].docs}</dd>${r}`;
   }
 
-  return str + '</dl>${r}\r\n';
+  return str + `</dl>${r}\r\n`;
 }
 
 function generateUsage(usage) {
