@@ -229,4 +229,34 @@ main {
     padding-left: 32px;
     margin-left: 0;
   }
+
+  table,
+  td,
+  th {
+    border-style: solid;
+    border-color: var(--whiteish);
+    border-collapse: collapse;
+  }
+
+  table {
+    border-width: 1px 0 0 1px;
+    font-size: 13px;
+    margin: 2em 0;
+    min-width: 100%;
+  }
+
+  td,
+  th {
+    border-width: 0 1px 1px 0;
+    line-height: 1.4;
+    padding: 1em;
+  }
+
+  table code {
+    white-space: nowrap;
+  }
+
+  tbody tr:nth-child(odd) {
+    background-color: #fdfdfd;
+  }
 }
