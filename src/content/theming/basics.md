@@ -1,20 +1,24 @@
 # Theming Basics
 
 <p class="intro" markdown="1">
-We built Ionic to be a blank slate that can easily be customized and modified to fit a brand, while still following the standards of the different platforms. We’ve made theming Ionic apps easier than ever. Ionic is built with CSS, which allows us to set some default styles but makes it extremely easy to change our defaults.
+Ionic Framework is built to be a blank slate that can easily be customized and modified to fit a brand, while still following the standards of the different platforms. Theming Ionic apps is now easier than ever. Because the framework is built with CSS, it comes with pre-baked default styles which are extremely easy to change and modify.
 </p>
 
 
 ## Colors
 
-Ionic has nine default colors that can be used to change the color of many components. Each color is actually a collection of multiple properties used throughout Ionic. When changing a color, it is important to set all of the related properties. We've made this easier by providing a [Color Generator](./color-generator) tool, but these can also be manually written if desired.
+Ionic has nine default colors that can be used to change the color of many components. Each color is actually a collection of multiple properties used throughout Ionic. 
+
+When changing a color, it is important to set all of the related properties. This can be done easily with the [Color Generator](./color-generator) tool, but these can also be manually written if desired. Ionic will also generate a `shade` and `tint` color within a specific default color:
 
 <color-accordion></color-accordion>
 
 
 ## Platform Standards
 
-Ionic components adapt their look and behavior based on the platform the application is running on. This allows developers to use the same codebase for multiple platforms, while still looking like native applications. Ionic has two **modes** that are used to customize the look of components based on the **platform**: `ios` and `md`. Each platform has a default mode, but this can easily be configured. For more information on customizing an application based on the platform, see [Platform Styles](./platform-styles).
+Ionic components adapt their look and behavior based on the platform the app is running on. We call this <strong>Platform Continuity</strong>. This allows developers to build apps that use the same codebase for multiple platforms, while still looking "native" to those particular platforms. 
+
+Ionic has two **modes** that are used to customize the look of components based on the **platform**: `ios` and `md`. Each platform has a default mode, but this can easily be configured. For more information on customizing an application based on the platform, see [Platform Styles](./platform-styles).
 
 
 ## CSS Variables
