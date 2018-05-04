@@ -96,13 +96,15 @@ export class DocsDocument {
       return <loading-indicator/>;
     }
 
+    const headings = this.tocHeadings.filter(heading => heading.level < 3);
+
     return [
       <h1>{this.title}</h1>,
       <div class="table-of-contents">
-        {(this.tocHeadings.length > 0) && !this.hideTOC ? [
+        {(headings.length > 0) && !this.hideTOC ? [
         <strong class="toc-label">Contents</strong>,
         <ul class="toc-list">
-          {this.tocHeadings.filter(heading => heading.level < 3).map(heading => {
+          {headings.map(heading => {
             return (
               <li class="toc-item">
                 <a href={`#${heading.anchorId}`} innerHTML={heading.text}></a>
