@@ -1,6 +1,7 @@
 ---
 title: Framework Docs
 hideTOC: true
+hideFooter: true
 ---
 
 <div class="cards">

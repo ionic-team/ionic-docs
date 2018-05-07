@@ -462,6 +462,39 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface DocsFooter {
+
+    }
+  }
+
+  interface HTMLDocsFooterElement extends StencilComponents.DocsFooter, HTMLStencilElement {}
+
+  var HTMLDocsFooterElement: {
+    prototype: HTMLDocsFooterElement;
+    new (): HTMLDocsFooterElement;
+  };
+  interface HTMLElementTagNameMap {
+    'docs-footer': HTMLDocsFooterElement;
+  }
+  interface ElementTagNameMap {
+    'docs-footer': HTMLDocsFooterElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'docs-footer': JSXElements.DocsFooterAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface DocsFooterAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface DocsHeader {
       'isMenuOpen': boolean;
       'onToggleClick': () => void;

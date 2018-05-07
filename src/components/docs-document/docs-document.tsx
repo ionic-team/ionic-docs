@@ -19,6 +19,7 @@ export class DocsDocument {
   @State() body: string;
   @State() title: string;
   @State() hideTOC = false;
+  @State() hideFooter = false;
   @State() tocHeadings: HeadingStruc[] = [];
 
   loadingTimer = null;
@@ -57,6 +58,7 @@ export class DocsDocument {
     this.body = content.body;
     this.title = content.title;
     this.hideTOC = content.hideTOC;
+    this.hideFooter = content.hideFooter;
     this.tocHeadings = this.hideTOC ? [] : content.headings;
     this.onLoaded({
       ...content,
@@ -118,7 +120,8 @@ export class DocsDocument {
         </ul>
         ] : null }
       </div>,
-      <main innerHTML={this.body}/>
+      <main innerHTML={this.body}/>,
+      <div>{ !this.hideFooter && <docs-footer/> }</div>
     ];
   }
 }
