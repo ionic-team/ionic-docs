@@ -2,6 +2,11 @@ import { More } from '../../icons';
 
 const items = [
   {
+    text: 'GitHub',
+    url: 'https://github.com/ionic-team/ionic',
+    className: 'github'
+  },
+  {
     text: 'Forum',
     url: 'https://forum.ionicframework.com/',
     className: 'forum'

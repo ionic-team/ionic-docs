@@ -134,6 +134,12 @@
     }
   }
 
+  &.github {
+    @media (min-width: $breakpoint-md) {
+      display: none;
+    }
+  }
+
   &.forum a::after  {
     background-position: 0 -16px;
   }
