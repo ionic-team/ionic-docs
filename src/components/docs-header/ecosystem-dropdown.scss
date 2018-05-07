@@ -1,6 +1,13 @@
 .ecosystem-dropdown {
   margin-left: auto;
   position: relative;
+  z-index: 1;
+
+  @media (max-width: $breakpoint-md) {
+    &.is-open {
+      color: #d1d7e3;
+    }
+  }
 }
 
 
@@ -37,6 +44,8 @@
 
 .ecosystem-dropdown__mobile-toggle {
   display: none;
+  position: relative;
+  z-index: 2;
 
   > svg {
     fill: currentColor;
@@ -97,6 +106,27 @@
     opacity: 1;
     pointer-events: all;
     transition: 100ms opacity ease-out, 100ms transform ease-out;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    align-items: center;
+    background-color: #141723;
+    border-radius: 0;
+    bottom: 0;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    padding: 20vh 1rem 5vh;
+    position: fixed;
+    right: 0;
+    text-align: center;
+    top: 0;
+
+    &::after,
+    &::before {
+      display: none;
+    }
   }
 }
 
@@ -174,4 +204,46 @@
       opacity: 1;
     }
   }
+
+  @media (max-width: $breakpoint-md) {
+    a {
+      font-size: 18px;
+      font-weight: 500;
+      padding: 0.75em 1em;
+    }
+
+    & a::after,
+    & a::before {
+      display: none;
+    }
+  }
+}
+
+
+.ecosystem-dropdown__title,
+.ecosystem-dropdown__home {
+  @media (min-width: $breakpoint-md) {
+    display: none;
+  }
+}
+
+.ecosystem-dropdown__title {
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+}
+
+.ecosystem-dropdown__home {
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: auto;
+}
+
+.ecosystem-dropdown__home svg {
+  display: inline-block;
+  margin-right: 0.5em;
+  stroke: currentColor;
+  transform: rotate(180deg);
+  width: 0.5em;
 }

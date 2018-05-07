@@ -1,4 +1,4 @@
-import { More } from '../../icons';
+import { Close, More } from '../../icons';
 
 const items = [
   {
@@ -49,15 +49,22 @@ export default () => (
         <svg viewBox="0 0 33 22"><polygon points="16.5 22 0 0 33 0"></polygon></svg>
       </a>,
       <a class="ecosystem-dropdown__mobile-toggle" onClick={dropdown.toggle}>
-        <More/>
+        { dropdown.isOpen ? <Close/> : <More/> }
       </a>,
-      <ul class={{ 'ecosystem-dropdown__panel': true, 'is-open': dropdown.isOpen }}>
-        {dropdown.items.map(item => (
-          <li class={{ 'ecosystem-dropdown__item': true, [item.className]: true }}>
-            <a href={item.url} target="_blank">{item.text}</a>
-          </li>
-        ))}
-      </ul>
+      <div class={{ 'ecosystem-dropdown__panel': true, 'is-open': dropdown.isOpen }}>
+        <div class="ecosystem-dropdown__title">Ecosystem</div>
+        <ul>
+          {dropdown.items.map(item => (
+            <li class={{ 'ecosystem-dropdown__item': true, [item.className]: true }}>
+              <a href={item.url} target="_blank">{item.text}</a>
+            </li>
+          ))}
+        </ul>
+        <stencil-route-link url="/docs" class="ecosystem-dropdown__home" onClick={dropdown.close}>
+          <svg viewBox="0 0 16 24"><path d="M3 2l10 10L3 22" stroke-width="3" fill="none" fill-rule="evenodd"></path></svg>
+          Home
+        </stencil-route-link>
+      </div>
     ]}>
   </ctrl-dropdown>
 );
