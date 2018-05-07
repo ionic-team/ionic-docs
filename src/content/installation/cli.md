@@ -40,7 +40,7 @@ Get started with the `ionic start` command:
 ionic start myApp tabs
 ```
 
-To learn more about starting Ionic apps, see our [Starting Guide](/docs/guides/starting).
+To learn more about starting Ionic apps, see our [Starting Guide](/docs/building/starting).
 
 ## Run an App
 

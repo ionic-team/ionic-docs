@@ -40,7 +40,7 @@ We recommend using the officially supported router based on the framework used, 
 
 An amazing feature of using web technologies, which is what Ionic is built on top of, is that it can be rendered in virtually any platform: desktop computers, phones, tablets, cars, refrigerators, and more! The same codebase for Ionic apps can work in many platforms because it is based on web standards and common APIs that are shared across many platforms.
 
-One of the most common use cases for Ionic is to build an app which can be downloaded from both the [App Store](https://www.apple.com/ios/app-store/) and [Play Store](https://play.google.com/). Both iOS and Android software development kits (SDKs) provide "[web views](/docs/guides/webview)" which render any Ionic app.
+One of the most common use cases for Ionic is to build an app which can be downloaded from both the [App Store](https://www.apple.com/ios/app-store/) and [Play Store](https://play.google.com/). Both iOS and Android software development kits (SDKs) provide "[web views](/docs/building/webview)" which render any Ionic app.
 
 Projects such as <a href="https://capacitor.ionicframework.com/" target="_blank">Capacitor</a> and <a href="https://cordova.apache.org/" target="_blank">Cordova</a> are commonly used to give Ionic apps "native access". This means developers can quickly build out an app using common web development tools, and still have access to native features such as the device's accelerometer, camera, GPS, etc. For more information please see the publishing docs for the [App Store](/docs/publishing/app-store) and [Play Store](http://ionic-docs.herokuapp.com/docs/publishing/play-store).
 

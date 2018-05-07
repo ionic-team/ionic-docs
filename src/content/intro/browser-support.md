@@ -28,4 +28,4 @@ Ionic not only works great on mobile devices, but since it's based on web techno
 - Edge
 - Firefox
 
-For more information on desktop layouts, see [Cross Platform](/docs/guides/cross-platform).
+For more information on desktop layouts, see [Cross Platform](/docs/building/cross-platform).

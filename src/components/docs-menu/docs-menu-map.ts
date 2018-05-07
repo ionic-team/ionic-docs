@@ -8,36 +8,23 @@ export const main = {
     'Support': '/docs/intro/support'
   },
   'Installation': {
-    'Environment Setup': '/docs/installation/environment',
-    'CLI Install':  '/docs/installation/cli',
+    'Ionic CLI':  '/docs/installation/cli',
     'Packages & CDN': '/docs/installation/cdn',
-    'Pro Setup': '/docs/installation/pro',
+    'Environment Setup': '/docs/installation/environment',
   },
-  'Guides': {
-    'Starting': '/docs/guides/starting',
-    'Scaffolding': '/docs/guides/scaffolding',
-    'Developing': '/docs/guides/developing',
-    'Migration': '/docs/guides/migration',
-    'Cross Platform': '/docs/guides/cross-platform',
-    'Testing': '/docs/guides/testing',
-    'Contributing': '/docs/guides/contributing',
-    'Web View': '/docs/guides/webview',
-    'Ionic Storage': '/docs/guides/storage',
-    'Desktop Support': '/docs/guides/desktop-support'
-  },
-  'Publishing': {
-    'Progressive Web App': '/docs/publishing/progressive-web-app',
-    'iOS App Store': '/docs/publishing/app-store',
-    'Android Play Store': '/docs/publishing/play-store',
-    'Electron Desktop App': '/docs/publishing/desktop-app'
-  },
-  'CLI': {
-    'Overview': '/docs/cli',
-    'Commands': '/docs/cli/commands',
-    'Configuring': '/docs/cli/configuring',
+  'Building': {
+    'Starting': '/docs/building/starting',
+    'Scaffolding': '/docs/building/scaffolding',
+    'Developing': '/docs/building/developing',
+    'Migration': '/docs/building/migration',
+    'Cross Platform': '/docs/building/cross-platform',
+    'Testing': '/docs/building/testing',
+    'Contributing': '/docs/building/contributing',
+    'Web View': '/docs/building/webview',
+    'Ionic Storage': '/docs/building/storage',
+    'Desktop Support': '/docs/building/desktop-support'
   },
   'Components': '/docs/components',
-
   'Layout': {
     'Stucture': '/docs/layout/structure',
     'Responsive Grid': '/docs/layout/grid',
@@ -50,6 +37,12 @@ export const main = {
     'Platform Styles': '/docs/theming/platform-styles',
     'CSS Variables': '/docs/theming/css-variables',
     'Advanced': '/docs/theming/advanced'
+  },
+  'Publishing': {
+    'Progressive Web App': '/docs/publishing/progressive-web-app',
+    'iOS App Store': '/docs/publishing/app-store',
+    'Android Play Store': '/docs/publishing/play-store',
+    'Electron Desktop App': '/docs/publishing/desktop-app'
   },
   'FAQ': {
     'Glossary': '/docs/faq/glossary',
@@ -70,5 +63,6 @@ export const main = {
 
 export const outbound = {
   'API Reference': '/docs/api',
+  'CLI Reference': '/docs/cli/overview',
   'Native APIs': '/docs/native'
 };
