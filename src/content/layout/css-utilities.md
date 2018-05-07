@@ -193,7 +193,7 @@ The table below shows the default behavior, where `{modifier}` is any of the fol
 
 The padding attribute sets the padding area of an element. The padding area is the space between the content of the element and its border.
 
-The default amount of `padding` to be applied is `16px` and is set by the `--content-padding` variable. Each mode can have a different value for padding by setting `--content-ios-padding`, or `--content-md-padding`. See [Overriding Variables](./overriding) for more information on how to change these values.
+The default amount of `padding` to be applied is `16px` and is set by the `--content-padding` variable. Each mode can have a different value for padding by setting `--content-ios-padding`, or `--content-md-padding`. See [CSS Variables](../theming/css-variables) for more information on how to change these values.
 
 
 | Attribute            | Style Rule               | Description                             |
@@ -268,7 +268,7 @@ The default amount of `padding` to be applied is `16px` and is set by the `--con
 
 The margin area extends the border area with an empty area used to separate the element from its neighbors.
 
-The default amount of `margin` to be applied is `16px` and is set by the `--content-margin` variable. Each mode can have a different value for margin by setting `--content-ios-margin`, or `--content-md-margin`. See [Overriding Variables](./overriding) for more information on how to change these values.
+The default amount of `margin` to be applied is `16px` and is set by the `--content-margin` variable. Each mode can have a different value for margin by setting `--content-ios-margin`, or `--content-md-margin`. See [CSS Variables](../theming/css-variables) for more information on how to change these values.
 
 
 | Attribute            | Style Rule               | Description                             |
