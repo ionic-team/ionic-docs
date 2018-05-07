@@ -5,7 +5,7 @@
 # Storage
 
 <p class="intro" markdown="1">
-`ionic/storage` is a utility library for Ionic/Angular apps that provides a cross-platform API for browser and native devices using a simple key/value approach.
+[ionic/storage](https://github.com/ionic-team/ionic-storage) is a utility library for Ionic/Angular apps that provides a cross-platform API for browser and native devices using a simple key/value approach.
 </p>
 <p class="intro" markdown="1">
 When `ionic/storage` detects that the context is a browser, it attempt to use IndexedDB or LocalStorage, depending on what is available. If the context is a native app, and the SQLite plugin is installed, `ionic/storage` will attempt to use native SQLite, IndexedDB, or LocalStorage. This storage strategy can be customized though.
@@ -33,7 +33,7 @@ import { IonicStorageModule } from '@ionic/storage';
       driverOrder: ['indexeddb', 'sqlite', 'websql']
     })
   ],
-  bootstrap: [IonicApp],
+  bootstrap: [IonicApp]
 })
 export class AppModule {}
 ```
