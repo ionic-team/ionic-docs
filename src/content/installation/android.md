@@ -42,7 +42,7 @@ For future reference, the Android SDK can be managed with Android Studio in the 
 
 ### Configuring Command Line Tools
 
-The Android SDK ships with [useful command-line tools](https://developer.android.com/studio/command-line/). Before they can be used, some environment variables must be set. The following instructions are for macOS and Linux. For Windows, check the documentation on setting and persisting environment variables in terminal settings.
+The Android SDK ships with [useful command-line tools](https://developer.android.com/studio/command-line/). Before they can be used, some environment variables must be set. The following instructions are for macOS and Linux. For Windows, check the documentation on setting and persisting environment variables in terminal sessions.
 
 In `~/.bashrc`, `~/.bash_profile`, or similar shell startup scripts, make the following modifications:
 
