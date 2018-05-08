@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "allowUnreachableCode": false,
+    "esModuleInterop": true,
     "declaration": false,
     "lib": [
       "es2017"

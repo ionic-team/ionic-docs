@@ -1,3 +1,4 @@
+import { renderMarkdown } from '../src/markdown';
 const r = '\r\n\r\n';
 
 export function getComponentMarkup(
@@ -80,14 +81,14 @@ function generateMethodList(items) {
 function generateUsage(usage) {
   if (!usage) return '';
   let str = `<h2>Usage</h2>${r}`;
-  str += usage['angular'] + r;
-  return str;
-  // str += `<code-switcher languages="${Object.keys(usage).join(',')}">${r}`;
-  // for (const version in usage) {
-  //   str += `<div slot="${version}" markdown="1">${r}`;
-  //   str += usage[version];
-  //   str += `${r}</div>${r}`;
-  // }
-  // return str + `<code-switcher>${r}`;
+  // str += usage['angular'] + r;
+  // return str;
+  str += `<code-switcher languages="${Object.keys(usage).join(',')}">${r}`;
+  for (const version in usage) {
+    str += `<div slot="${version}">${r}`;
+    str += renderMarkdown(usage[version], {disableHtmlPreviews: true}).body;
+    str += `${r}</div>${r}`;
+  }
+  return str + `<code-switcher>${r}`;
 }
 

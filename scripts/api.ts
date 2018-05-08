@@ -13,6 +13,7 @@ import { versions as FRAMEWORK_VERSIONS } from '../src/versions';
 
 const menuPath = 'src/components/docs-menu';
 const menuHeader = '/* tslint:disable */\n\nexport const apiMap = ';
+const menuFooter = ';\n';
 const ionicComponentsDir = `${config.IONIC_DIR}/${config.IONIC_CORE_SRC}/components`;
 
 // the main task of the API documentation generation process
@@ -103,7 +104,7 @@ function copyFiles(components, dest, version = 'latest') {
 // Upsert the given version's navigation
 function generateNav(menuPath, components, version) {
   let file = fs.readFileSync(menuPath).toString('utf8');
-  file = file.replace(menuHeader, '');
+  file = file.replace(menuHeader, '').replace(menuFooter, '');
 
   const menu = JSON.parse(file);
 
@@ -114,7 +115,7 @@ function generateNav(menuPath, components, version) {
   }
 
   menu[version] = componentsList;
-  const ts = `${menuHeader}${JSON.stringify(menu, null, '  ')};\n`;
+  const ts = `${menuHeader}${JSON.stringify(menu, null, '  ')}${menuFooter}`;
   fs.writeFileSync(menuPath, ts);
 }
 
