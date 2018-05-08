@@ -65,12 +65,15 @@
   color: var(--dark-gray);
 }
 
-.color-selector__input--error {
-  border-color: #f04141;
-}
+
 
 .color-selector__input--focused {
   border-color: #7eafff;
+}
+
+.color-selector__input--error,
+.color-selector__input--focused .color-selector__input--error {
+  border-color: #f04141;
 }
 
 .color-selector__color-wrap {
