@@ -11,6 +11,8 @@ export const main = {
     'Ionic CLI':  '/docs/installation/cli',
     'Packages & CDN': '/docs/installation/cdn',
     'Environment Setup': '/docs/installation/environment',
+    'iOS Setup': '/docs/installation/ios',
+    'Android Setup': '/docs/installation/android',
   },
   'Building': {
     'Starting': '/docs/building/starting',

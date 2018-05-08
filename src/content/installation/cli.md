@@ -5,7 +5,7 @@
 # Installing Ionic
 
 <p class="intro" markdown="1">
-Ionic apps are created and developed primarily through the Ionic command-line utility.
+Ionic apps are created and developed primarily through the Ionic [command-line](/docs/faq/glossary#cli) utility.
 </p>
 
 ## Install the Ionic CLI
