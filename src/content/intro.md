@@ -25,7 +25,7 @@ This website and documentation content (found in the <a href="https://github.com
 
 ## Ionic CLI
 
-The official [Ionic CLI](#), or Command Line Interface, is a tool that quickly scaffolds Ionic apps and provides a number of helpful commands to Ionic developers. In addition to installing and updating Ionic, the CLI comes with a built-in development server, build and debugging tools, and much more. If you are an Ionic Pro member, the CLI can be used to export code and even interact with your account programmatically.
+The official [Ionic CLI](#), or Command Line Interface, is a tool that quickly scaffolds Ionic apps and provides a number of helpful commands to Ionic developers. In addition to installing and updating Ionic, the CLI comes with a built-in development server, build and debugging tools, and much more. If you are an [Ionic Pro](#ionic-pro) member, the CLI can be used to export code and even interact with your account programmatically.
 
 ## Ionic Pro
 
@@ -55,7 +55,7 @@ Support for other frameworks, such as Vue and React, are actively being develope
 
 ## Ionic Framework v4+
 
-Ionic Framework v4 is a major advance in the underlying technology and capabilities of the project, with a focus on performance, compatibility, and overall extensibility. Although v4 still integrates deeply with Angular, it’s now also framework-agnostic, meaning it can work with any other JS framework (Vue, React, Preact, etc), no framework at all with the help of Stencil.
+Ionic Framework v4 is a major advance in the underlying technology and capabilities of the project, with a focus on performance, compatibility, and overall extensibility. Although v4 still integrates deeply with Angular, it’s now also framework-agnostic, meaning it can work with any other JS framework (Vue, React, Preact, etc), or no framework at all.
 
 [Write more about what v4 is all about: Performance/startup times, size, web standards, etc.]
 
@@ -69,87 +69,8 @@ Ionic Framework is actively developed and maintained full-time by a core team, a
 
 There are millions of Ionic developers in over 200 countries worldwide. Here are some ways to join:
 
-* <a href="#" target="_blank">Forum:</a> A great place for asking questions and sharing ideas.
-* <a href="#" target="_blank">Chat:</a> A lively place for devs to meet and chat in real time.
-* <a href="#" target="_blank">Twitter:</a> Where we post updates and share content from the Ionic community.
-* <a href="#" target="_blank">GitHub:</a> For reporting bugs or requesting new features, create an issue here. PRs welcome!
-* <a href="#" target="_blank">Content</a> authoring: Write a technical blog or share your story with the Ionic community.
-
-
-
-
-
-
-
-
-
-
-
-
-<blockquote>
-  <p>Here is a nifty little note about something important.</p>
-</blockquote>
-
-
-```js
-import { ActionSheetController } from 'ionic-angular'
-
-export class MyClass{
-
- constructor(public actionSheetCtrl: ActionSheetController) {}
-
- presentActionSheet() {
-   const actionSheet = this.actionSheetCtrl.create({
-     title: 'Modify your album',
-     buttons: [
-       {
-         text: 'Destructive',
-         role: 'destructive',
-         handler: () => {
-           console.log('Destructive clicked');
-         }
-       },
-       {
-         text: 'Archive',
-         handler: () => {
-           console.log('Archive clicked');
-         }
-       },
-       {
-         text: 'Cancel',
-         role: 'cancel',
-         handler: () => {
-           console.log('Cancel clicked');
-         }
-       }
-     ]
-   });
-
-   actionSheet.present();
- }
-}
-```
-
-### Here is an H3
-
-Some directives can take an “argument”, denoted by a colon after the directive name. For example, the v-bind directive is used to reactively update an HTML attribute:
-
-```html
-<p>Here is some HTML to preview...</p>
-```
-
-* Type: `boolean`
-* Default: `false`
-* Restrictions: This option is only available in the full build, with in-browser compilation.
-* Details: When set to true, will preserve and render HTML comments found in templates. The
-  default behavior is discarding them.
-* See also: [Options / Data - data](#)
-
-### Here is an H3
-
-The instantiation options used for the current instance. This is useful when you want to include custom properties in the options.
-
-* List item
-* List item
-* List item
-* List item
+* <a href="https://forum.ionicframework.com/" target="_blank">Forum:</a> A great place for asking questions and sharing ideas.
+* <a href="https://ionicworldwide.herokuapp.com/" target="_blank">Slack:</a> A lively place for devs to meet and chat in real time.
+* <a href="https://twitter.com/Ionicframework" target="_blank">Twitter:</a> Where we post updates and share content from the Ionic community.
+* <a href="https://github.com/ionic-team/ionic" target="_blank">GitHub:</a> For reporting bugs or requesting new features, create an issue here. PRs welcome!
+* <a href="https://ionicframework.com/contributors" target="_blank">Content authoring:</a> Write a technical blog or share your story with the Ionic community.
