@@ -10,7 +10,7 @@ export function generateColor(name: string, property: string, value: string): Co
   return {
     name: name,
     property: property,
-    value: color.hex,
+    value: value,
     valueRgb: rgbToString(color.rgb),
     contrast: contrast.hex,
     contrastRgb: rgbToString(contrast.rgb),
