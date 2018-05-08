@@ -222,7 +222,7 @@
   @media (min-width: $breakpoint-md) {
     color: #131924;
     font-size: 15px;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: -0.01em;
     margin-bottom: 0.15em;
   }
@@ -230,8 +230,9 @@
 
 .section-switch__subtitle {
   display: none;
+  font-family: var(--font-family-sans);
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 500;
 
   @media (min-width: $breakpoint-md) {
     display: block;
