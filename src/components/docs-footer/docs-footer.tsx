@@ -18,7 +18,6 @@ export class SiteFooter {
 
   @Watch('frontmatter')
   parseFrontMatter() {
-    console.log(this.frontmatter);
     this.show = !this.frontmatter.hideFooter;
 
     this.previous = (
@@ -36,10 +35,13 @@ export class SiteFooter {
       text: this.frontmatter.nextText,
       url: this.frontmatter.nextUrl
     } :  null;
-    console.log(this.previous, this.next);
   }
 
   render() {
+    if (!this.show) {
+      return null;
+    }
+
     return <footer>
       <nav>
         {this.previous &&

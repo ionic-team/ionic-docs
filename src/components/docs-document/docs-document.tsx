@@ -58,6 +58,7 @@ export class DocsDocument {
     this.body = body;
     this.title = attributes.title;
     this.hideTOC = attributes.hideTOC;
+    this.frontMatter = attributes;
     this.tocHeadings = this.hideTOC ? [] : headings;
     this.onLoaded({
       ...attributes,
