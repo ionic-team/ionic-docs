@@ -15,7 +15,7 @@ export const main = {
   'Building': {
     'Starting': '/docs/building/starting',
     'Scaffolding': '/docs/building/scaffolding',
-    'Developing': '/docs/building/developing',
+    'Running': '/docs/building/running',
     'Migration': '/docs/building/migration',
     'Cross Platform': '/docs/building/cross-platform',
     'Testing': '/docs/building/testing',
