@@ -43,9 +43,15 @@
 }
 
 .ecosystem-dropdown__mobile-toggle {
+  cursor: pointer;
   display: none;
   position: relative;
+  transition: 150ms color ease;
   z-index: 2;
+
+  &:hover {
+    color: var(--header-color);
+  }
 
   > svg {
     fill: currentColor;
