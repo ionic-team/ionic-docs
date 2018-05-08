@@ -19,7 +19,7 @@ export class DocsDocument {
   @State() body: string;
   @State() title: string;
   @State() hideTOC = false;
-  @State() hideFooter = false;
+  @State() frontMatter = {};
   @State() tocHeadings: HeadingStruc[] = [];
 
   loadingTimer = null;
@@ -48,20 +48,21 @@ export class DocsDocument {
       .then(frontMatter)
       .then(this.stripTitle)
       .then(({ attributes, body }) => ({
-        ...attributes,
-        ...renderMarkdown(body, attributes)
+          attributes,
+          ...renderMarkdown(body, attributes)
       }));
   }
 
-  handleNewContent = content => {
+  handleNewContent = ({attributes, body, headings}) => {
     this.clearLoadingTimer();
-    this.body = content.body;
-    this.title = content.title;
-    this.hideTOC = content.hideTOC;
-    this.hideFooter = content.hideFooter;
-    this.tocHeadings = this.hideTOC ? [] : content.headings;
+    this.body = body;
+    this.title = attributes.title;
+    this.hideTOC = attributes.hideTOC;
+    this.tocHeadings = this.hideTOC ? [] : headings;
     this.onLoaded({
-      ...content,
+      ...attributes,
+      body,
+      headings,
       pageClass: this.pageClass
     });
   }
@@ -121,7 +122,7 @@ export class DocsDocument {
         ] : null }
       </div>,
       <main innerHTML={this.body}/>,
-      <div>{ !this.hideFooter && <docs-footer/> }</div>
+      <docs-footer frontmatter={this.frontMatter}/>
     ];
   }
 }

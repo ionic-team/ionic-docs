@@ -1,3 +1,39 @@
-docs-footer {
+docs-footer footer {
+  p {
+    color: #808d9f;
+    font-size: 14px;
+    display: inline-block;
+    padding-top: 23px;
+    margin-top: 17px;
+    margin-bottom: 0;
+    width: 100%;
+    border-top: 1px #e0e5ed solid;
+  }
 
+  nav {
+    display: flex;
+  }
+
+  .previous a::before,
+  .next a::after {
+    background-color: var(--blue);
+    display: inline-block;
+    vertical-align: -4px;
+    mask-size: cover;
+    content: '';
+    height: 18px;
+    width: 18px;
+  }
+
+  .previous a::before {
+    mask: url('/docs/assets/img/ios-arrow-back.svg');
+  }
+
+  .next {
+    margin-left: auto;
+
+    a::after {
+      mask: url('/docs/assets/img/ios-arrow-forward.svg');
+    }
+  }
 }

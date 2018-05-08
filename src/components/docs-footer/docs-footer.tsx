@@ -1,13 +1,58 @@
-import { Component } from '@stencil/core';
+import { Component, Prop, State, Watch } from '@stencil/core';
 
 @Component({
   tag: 'docs-footer',
   styleUrl: 'docs-footer.scss'
 })
 export class SiteFooter {
+  @Prop() frontmatter: any = {};
+  @State() previous?: {
+    text: string,
+    url: string
+  };
+  @State() next?: {
+    text?: string,
+    url?: string
+  };
+  @State() show = true;
+
+  @Watch('frontmatter')
+  parseFrontMatter() {
+    console.log(this.frontmatter);
+    this.show = !this.frontmatter.hideFooter;
+
+    this.previous = (
+      this.frontmatter.previousText &&
+      this.frontmatter.previousUrl
+    ) ? {
+      text: this.frontmatter.previousText,
+      url: this.frontmatter.previousUrl
+    } :  null;
+
+    this.next = (
+      this.frontmatter.nextText &&
+      this.frontmatter.nextUrl
+    ) ? {
+      text: this.frontmatter.nextText,
+      url: this.frontmatter.nextUrl
+    } :  null;
+    console.log(this.previous, this.next);
+  }
 
   render() {
     return <footer>
+      <nav>
+        {this.previous &&
+          <stencil-route-link class="previous" url={this.previous.url}>
+            {this.previous.text}
+          </stencil-route-link>
+        }
+        {this.next &&
+          <stencil-route-link class="next" url={this.next.url}>
+            {this.next.text}
+          </stencil-route-link>
+        }
+      </nav>
       <p>
         See an error or want to help us improve the documentation? &nbsp;
         <a href="https://github.com/ionic-team/ionic-site/" target="_blank"

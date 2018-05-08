@@ -1,5 +1,8 @@
 ---
-
+previousText: 'Ionic CLI'
+previousUrl: '/docs/installation/cli'
+nextText: 'Environment Setup'
+nextUrl: '/docs/installation/environment'
 ---
 
 # CDN and Package Installation
