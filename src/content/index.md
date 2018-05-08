@@ -13,7 +13,7 @@ hideFooter: true
   </card-link>
   <card-link headline="Installation"
              has-icon="true"
-             url="/docs/installation/windows">
+             url="/docs/installation/cli">
     A step-by-step guide to installing and setting up your system to build Ionic
     Framework apps.
   </card-link>
