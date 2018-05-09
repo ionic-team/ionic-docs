@@ -1,5 +1,8 @@
 ---
-
+previousText: 'Browser Support'
+previousUrl: '/docs/intro/browser-support'
+nextText: 'Support'
+nextUrl: '/docs/intro/support'
 ---
 
 # Versioning

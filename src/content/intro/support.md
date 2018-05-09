@@ -1,5 +1,8 @@
 ---
-
+previousText: 'Versioning'
+previousUrl: '/docs/intro/versioning'
+nextText: 'Installing Ionic'
+nextUrl: '/docs/installation/cli'
 ---
 
 # Support

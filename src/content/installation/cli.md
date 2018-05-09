@@ -8,50 +8,41 @@ nextUrl: '/docs/installation/cdn'
 # Installing Ionic
 
 <p class="intro" markdown="1">
-Ionic apps are created and developed primarily through the Ionic [command-line](/docs/faq/glossary#cli) utility.
+Ionic apps are created and developed primarily through the Ionic [command-line](/docs/faq/glossary#cli) utility. The Ionic CLI is the preferred method of installation, as it offers a wide range of dev tools and help options along the way. It is also the main tool through which to run the app and connect it to other services, such as Ionic Pro.
 </p>
 
 ## Install the Ionic CLI
 
-Before proceeding, ensure [Node.js](/docs/faq/glossary#node) and [npm](/docs/faq/glossary#npm) are installed. See [Environment Setup](/docs/installation/environment) for details.
-
-The Ionic CLI can be installed globally with npm:
+Before proceeding, make sure the latest version of [Node.js](/docs/faq/glossary#node) and [npm](/docs/faq/glossary#npm) are installed. See [Environment Setup](/docs/installation/environment) for details. Install the Ionic CLI globally with npm:
 
 ```shell
 npm install -g ionic
 ```
 
 <blockquote>
-  <p>The `-g` flag means packages are installed globally, possibly into directories owned by a superuser. Elevated privileges will be required if permission issues are encountered. For Windows, run Command Prompt as an Administrator. For other platforms, prefix the installation command with `sudo`.</p>
+  <p>The `-g` means it is a global install. For Window’s it's recommended to open an Admin command prompt. For Mac/Linux, run the command with `sudo`.</p>
 </blockquote>
-
-To verify the installation, run:
-
-```shell
-ionic --version
-```
 
 ## Start an App
 
-Create an Ionic app using one of our pre-made app templates, or a blank one to start fresh. The most common starters are the `blank` starter, `tabs` starter, and `sidemenu` starter.
-
-![start app thumbnails](../assets/img/installation/start-app-thumbnails.png)
-
-Get started with the `ionic start` command:
+Create an Ionic app using one of the pre-made app templates, or a blank one to start fresh. The three most common starters are the `blank` starter, `tabs` starter, and `sidemenu` starter. Get started with the `ionic start` command:
 
 ```shell
 ionic start myApp tabs
 ```
 
-To learn more about starting Ionic apps, see our [Starting Guide](/docs/building/starting).
+![start app thumbnails](../assets/img/installation/start-app-thumbnails.png)
 
-## Run an App
 
-The majority of Ionic app development is spent right in the browser using the `ionic serve` command:
+To learn more about starting Ionic apps, see the [Starting Guide](/docs/building/starting).
+
+## Run the App
+
+The majority of Ionic app development can be spent right in the browser using the `ionic serve` command:
 
 ```shell
 cd myApp
 ionic serve
 ```
 
-We recommend starting with this workflow. To develop and test apps on devices and emulators, see Deploying.
+There are a number of other ways to run an app, it's recommended to start with this workflow. To develop and test apps on devices and emulators, see the [Running an App Guide](/docs/building/running).

@@ -1,5 +1,8 @@
 ---
-
+previousText: 'Environment Setup'
+previousUrl: '/docs/installation/environment'
+nextText: 'Android Setup'
+nextUrl: '/docs/installation/android'
 ---
 
 # iOS Setup

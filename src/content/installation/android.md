@@ -90,7 +90,7 @@ Once the AVD is created, launch the AVD into the Android emulator. Keeping the e
 Actual Android hardware can also be used for Ionic app development. But first, the device must be set up for development. The following documentation is a quick way to set up Android devices for development. For more detailed instructions and information, see [the Android documentation](https://developer.android.com/studio/run/device).
 
 1. Enable USB debugging on the device. Open **Settings**, navigate to **Developer options**, and enable **USB debugging**. The **Developer options** menu may need to be enabled first. See [the Android documentation](https://developer.android.com/studio/debug/dev-options) for instructions.
-1. Ensure the device has permission to connect to the computer. For macOS, no additional setup is required. For Windows, [install the OEM USB drivers](https://developer.android.com/studio/run/oem-usb).
+1. Ensure the device has permission to connect to the computer. For macOS, no additional setup is required. For Windows, <a href="https://developer.android.com/studio/run/oem-usb" target="_blank">install the OEM USB drivers</a>.
 
 Verify the connection works by connecting the device to the computer with a USB cable and using the following command:
 
@@ -98,4 +98,4 @@ Verify the connection works by connecting the device to the computer with a USB 
 adb devices
 ```
 
-The device should be listed. See the full [`adb` documentation](https://developer.android.com/studio/command-line/adb) for troubleshooting and detailed information.
+The device should be listed. See the full <a href="https://developer.android.com/studio/command-line/adb" target="_blank">`adb` documentation</a> for troubleshooting and detailed information.

@@ -1,5 +1,8 @@
 ---
-
+previousText: 'Core concepts'
+previousUrl: '/docs/intro/concepts'
+nextText: 'Versioning'
+nextUrl: '/docs/intro/versioning'
 ---
 
 # Browser Support

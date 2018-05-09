@@ -1,4 +1,8 @@
 ---
+previousText: 'What is Ionic Framework'
+previousUrl: '/docs/intro'
+nextText: 'Browser Support'
+nextUrl: '/docs/intro/browser-support'
 ---
 
 # Core Concepts

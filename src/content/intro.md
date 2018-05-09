@@ -8,7 +8,7 @@ nextUrl: '/docs/intro/concepts'
 <!-- TOC goes here -->
 
 <p class="intro" markdown="1">
-Ionic Framework is an open source UI toolkit for building performant, high-quality mobile and desktop apps using familiar web technologies (HTML, CSS, and JavaScript).
+Ionic Framework is an open source UI toolkit for building performant, high-quality mobile and desktop apps using web technologies (HTML, CSS, and JavaScript).
 </p>
 <p class="intro" markdown="1">
 Ionic Framework is focused on the frontend user experience, or UI interaction of an app (controls, interactions, gestures, animations). It’s easy to learn, and integrates nicely with other libraries or frameworks, such as Angular, or can be used standalone without a frontend framework.
@@ -27,12 +27,6 @@ This website and documentation content (found in the <a href="https://github.com
 ## Ionic CLI
 
 The official [Ionic CLI](#), or Command Line Interface, is a tool that quickly scaffolds Ionic apps and provides a number of helpful commands to Ionic developers. In addition to installing and updating Ionic, the CLI comes with a built-in development server, build and debugging tools, and much more. If you are an [Ionic Pro](#ionic-pro) member, the CLI can be used to export code and even interact with your account programmatically.
-
-## Ionic Pro
-
-To take Ionic Framework apps even further, we also offer a commercial app platform called <a href="https://ionicframework.com/pro" target="_blank">Ionic Pro</a>. Ionic (the company) makes money by charging a subscription for Ionic Pro (among other comercial products), which <strong>is entirely optional and separate from the open source Framework.</strong>
-
-Pro lets you monitor and track runtime errors, compile native app builds, and send live updates to your Ionic apps from a centralized dashboard. It comes with a free "Starter" plan to play around with some of these features, with an optional upgrade to paid plans for more advanced capabilities and scale.
 
 ##  Framework Compatibility
 
@@ -59,6 +53,12 @@ Support for other frameworks, such as Vue and React, are actively being develope
 Ionic Framework v4 is a major advance in the underlying technology and capabilities of the project, with a focus on performance, compatibility, and overall extensibility. Although v4 still integrates deeply with Angular, it’s now also framework-agnostic, meaning it can work with any other JS framework (Vue, React, Preact, etc), or no framework at all.
 
 [Write more about what v4 is all about: Performance/startup times, size, web standards, etc.]
+
+## Ionic Pro
+
+To take Ionic Framework apps even further, we also offer a commercial app platform called <a href="https://ionicframework.com/pro" target="_blank">Ionic Pro</a>. Ionic (the company) makes money by charging a subscription for Ionic Pro (among other comercial products), which <strong>is entirely optional and separate from the open source Framework.</strong>
+
+Ionic Pro helps developers and teams monitor and track runtime errors, compile native app builds, and deploy live code updates to Ionic apps from a centralized dashboard. Pro requires an Ionic Account and comes with a free "Starter" plan for those interested in playing around with some of its features. Optional upgrades to paid plans for more advanced capabilities and scale are available as well.
 
 ## Ecosystem
 
