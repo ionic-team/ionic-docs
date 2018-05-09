@@ -1,10 +1,10 @@
 docs-footer footer {
   p {
     color: #808d9f;
-    font-size: 14px;
+    font-size: 13px;
     display: inline-block;
-    padding-top: 23px;
-    margin-top: 17px;
+    padding-top: 20px;
+    margin-top: 20px;
     margin-bottom: 0;
     width: 100%;
     border-top: 1px #e0e5ed solid;
@@ -12,6 +12,7 @@ docs-footer footer {
 
   nav {
     display: flex;
+    margin-top: 48px;
   }
 
   .previous a::before,

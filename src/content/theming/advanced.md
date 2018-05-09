@@ -1,3 +1,10 @@
+---
+previousText: 'Color Generator'
+previousUrl: '/docs/layout/color-generator'
+nextText: 'Publishing an app'
+nextUrl: '/docs/publishing/app-store'
+---
+
 # Advanced Theming
 
 <p class="intro" markdown="1">

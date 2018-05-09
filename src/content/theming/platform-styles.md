@@ -1,5 +1,9 @@
 ---
 disableHtmlPreviews: true
+previousText: 'Theming Basics'
+previousUrl: '/docs/theming/basics'
+nextText: 'CSS Variables'
+nextUrl: '/docs/theming/css-variables'
 ---
 
 # Platform Styles

@@ -1,3 +1,10 @@
+---
+previousText: 'Platform Styles'
+previousUrl: '/docs/theming/platform-styles'
+nextText: 'Color Generator'
+nextUrl: '/docs/theming/color-generator'
+---
+
 # CSS Variables
 
 <p class="intro" markdown="1">

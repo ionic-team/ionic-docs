@@ -1,5 +1,6 @@
 ---
-
+nextText: 'Core concepts'
+nextUrl: '/docs/intro/concepts'
 ---
 
 # What is Ionic Framework?

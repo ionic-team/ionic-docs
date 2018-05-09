@@ -8,7 +8,7 @@ export const main = {
     'Support': '/docs/intro/support'
   },
   'Installation': {
-    'Ionic CLI':  '/docs/installation/cli',
+    'CLI Installation':  '/docs/installation/cli',
     'Packages & CDN': '/docs/installation/cdn',
     'Environment Setup': '/docs/installation/environment',
     'iOS Setup': '/docs/installation/ios',
@@ -35,9 +35,9 @@ export const main = {
   },
   'Theming': {
     'Basics': '/docs/theming/basics',
-    'Color Generator': '/docs/theming/color-generator',
     'Platform Styles': '/docs/theming/platform-styles',
     'CSS Variables': '/docs/theming/css-variables',
+    'Color Generator': '/docs/theming/color-generator',
     'Advanced': '/docs/theming/advanced'
   },
   'Publishing': {

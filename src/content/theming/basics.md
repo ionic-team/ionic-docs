@@ -1,3 +1,10 @@
+---
+previousText: 'Layout'
+previousUrl: '/docs/layout/structure'
+nextText: 'Platform Styles'
+nextUrl: '/docs/theming/platform-styles'
+---
+
 # Theming Basics
 
 <p class="intro" markdown="1">

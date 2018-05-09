@@ -1,6 +1,10 @@
 ---
 hideTOC: true
 previewUrl: '/docs/theming/color-gen/demo/index.html'
+previousText: 'CSS Variables'
+previousUrl: '/docs/theming/css-variables'
+nextText: 'Advanced Theming'
+nextUrl: '/docs/theming/advanced'
 ---
 
 # Color Generator
