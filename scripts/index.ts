@@ -20,37 +20,22 @@ async function run() {
     utils.vlog('Precheck complete');
   }
 
+  await tryToRun(apiDocs, API_DOCS_DIR);
+  await tryToRun(cliDocs, join(CLI_DOCS_DIR, 'commands.md'));
+  await tryToRun(nativeDocs);
+}
+
+async function tryToRun(func: () => void, outDir?: string) {
   try {
-    await apiDocs();
+    await func();
   } catch (error) {
-    if (!fs.existsSync(API_DOCS_DIR)) {
+    // note if outDir is not provided it defaults to not throwing
+    if (outDir && !fs.existsSync(outDir)) {
       throw error;
     } else {
       console.log(error);
-      console.log('Using cached API Docs because the build currently fails.');
+      console.log(`${func.name} failed, using cached version.`);
     }
-  }
-
-  try {
-    await cliDocs();
-  } catch (error) {
-    if (!fs.existsSync(join(CLI_DOCS_DIR, 'commands.md'))) {
-      throw error;
-    } else {
-      console.log(error);
-      console.log('Using cached CLI Docs because the build currently fails.');
-    }
-  }
-
-  try {
-    await nativeDocs();
-  } catch (error) {
-    // if (!fs.existsSync(NATIVE_DOCS_DIR)) {
-    //   throw error;
-    // } else {
-      console.log(error);
-      console.log('Using cached Native Docs because the build currently fails.');
-    // }
   }
 }
 
