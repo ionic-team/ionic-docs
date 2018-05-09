@@ -35,7 +35,7 @@ export class ColorGenerator {
       tint: '-tint',
     };
     Object.keys(attrMap).forEach(key => {
-      this.cssText = updateCssText(this.cssText, colorProperty + attrMap[key], genColor[key]);
+      this.cssText = updateCssText(colorProperty + attrMap[key], this.cssText, genColor[key]);
     });
 
     this.updatePreview.emit({cssText: this.cssText});
