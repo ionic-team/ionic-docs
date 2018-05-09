@@ -43,11 +43,6 @@ export function convertCssToColors(cssText: string) {
   return colors;
 }
 
-function parseColorVar(colorAttr: any, cssText: string) {
-  const attrKeyVal = getCssKeyVal(colorAttr, cssText);
-  return attrKeyVal.trim().split(':')[1].trim();
-}
-
 export function updateCssText(colorAttr: string, cssText: string, newColorValue: string) {
   const oldKeyValue = getCssKeyVal(colorAttr, cssText);
   const newKeyValue = `${colorAttr}: ${newColorValue}`;
@@ -55,6 +50,12 @@ export function updateCssText(colorAttr: string, cssText: string, newColorValue:
   cssText = cssText.replace(oldKeyValue, newKeyValue);
 
   return cssText;
+}
+
+
+function parseColorVar(colorAttr: any, cssText: string) {
+  const attrKeyVal = getCssKeyVal(colorAttr, cssText);
+  return attrKeyVal.trim().split(':')[1].trim();
 }
 
 function getCssKeyVal (colorAttr: any, cssText: string) {

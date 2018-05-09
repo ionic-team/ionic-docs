@@ -3,7 +3,7 @@ import { Component, Event, EventEmitter, Prop, State } from '@stencil/core';
 
 @Component({
   tag: 'color-gen-variable-selector',
-  styleUrl: 'color-gen-variable-selector.css',
+  styleUrl: 'color-gen-variable-selector.scss',
   shadow: true
 })
 export class VariableSelector {
@@ -65,7 +65,10 @@ export class VariableSelector {
     this.validate();
 
     return [
-      <div class="color-selector">
+      <div class={{
+        'color-selector': true,
+        'color-selector--error': this.showInputError
+        }}>
         <div class="color-selector__name">
           <i class="color-selector__swatch" style={{'backgroundColor': this.value}}></i>
           {this.name}
@@ -75,7 +78,6 @@ export class VariableSelector {
           <div class="color-selector__form-group">
             <div class={{
                 'color-selector__input': true,
-                'color-selector__input--error': this.showInputError,
                 'color-selector__input--focused': this.isInputFocused
               }}
               onClick={ev => { if (this.isParentOpen) ev.stopPropagation(); }}>
