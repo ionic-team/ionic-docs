@@ -26,7 +26,7 @@ export class ColorGenSelectColors {
     const listItems = this.colors.map(color => {
       const isOpen = (this.activeColor === color.name) ? true : false;
       return (
-        <li class={{ 'menu__item': true, 'is-open': isOpen }}>
+        <li class={{ 'controls__item': true, 'is-open': isOpen }}>
 
           <color-gen-variable-selector
             name={color.name}
@@ -45,7 +45,7 @@ export class ColorGenSelectColors {
               </g>
           </svg>
 
-          <ul class="menu__submenu">
+          <ul class="controls__sub">
             <li>
               <color-gen-variable-selector
                 name={color.name + '-shade'}
@@ -66,7 +66,7 @@ export class ColorGenSelectColors {
     });
 
     return (
-      <ul class="menu">
+      <ul class="controls">
         { listItems }
       </ul>
     );

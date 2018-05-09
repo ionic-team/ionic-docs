@@ -4,26 +4,27 @@ color-gen-select-colors {
   margin-bottom: 80px;
 }
 
-.menu,
-.menu__submenu {
+.controls,
+.controls__sub {
   margin: 0;
   padding: 0;
 }
 
-.menu li {
+.controls li {
   list-style-type: none;
 }
 
-.menu__item {
+.controls__item {
+  margin: 0;
   position: relative;
   border-bottom: 1px solid var(--whiteish);
 }
 
-.menu__item > color-gen-variable-selector {
+.controls__item > color-gen-variable-selector {
   cursor: pointer;
 }
 
-.menu__item svg {
+.controls__item svg {
   transition: 100ms transform;
   position: absolute;
   top: 24px;
@@ -31,24 +32,25 @@ color-gen-select-colors {
   pointer-events: none;
 }
 
-.menu__item:first-child {
+.controls__item:first-child {
   border-top: 1px solid var(--whiteish);
 }
 
-.menu__submenu > li {
+.controls__sub > li {
   height: 0;
   opacity: 0;
+  margin: 0;
   pointer-events: none;
   transition:
     160ms height,
     160ms opacity;
 }
 
-.menu__item.is-open svg {
+.controls__item.is-open svg {
   transform: rotate(180deg);
 }
 
-.menu__item.is-open .menu__submenu > li {
+.controls__item.is-open .controls__sub > li {
   height: 54px;
   opacity: 1;
   pointer-events: all;
