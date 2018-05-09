@@ -89,6 +89,6 @@ function generateUsage(usage) {
     str += renderMarkdown(usage[version], {disableHtmlPreviews: true}).body;
     str += `${r}</div>${r}`;
   }
-  return str + `<code-switcher>${r}`;
+  return str + `</code-switcher>${r}`;
 }
 
