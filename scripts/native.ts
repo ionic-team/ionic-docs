@@ -89,11 +89,12 @@ function preparePluginData(tsData) {
     // JSON. Unexected syntax in the refference decorator will break it.
     // console.log(tsChild.decorators[0].arguments.config)
     const str = tsChild.decorators[0].arguments.config
-    .replace(/\n/g, ' ')
-    .replace(/\"/g, '\\"')
-    .replace(/\'/g, '"')
-    .replace(/([\{|,])\s*(\w+):/g, '$1 "$2":')
-    .replace(/, }/g, '}')
+    .replace(/([',|\]]) \/\/+(.*)/g, '$1') // get rid of end of line comments (like this)
+    .replace(/\n/g, ' ') // get rid of new lines
+    .replace(/\"/g, '\\"') // escape quotes
+    .replace(/\'/g, '"') // convert single quotes to double quotes
+    .replace(/([\{|,])\s*(\w+):/g, '$1 "$2":') // format arrays
+    .replace(/, }/g, '}') // trailing commas are valid JS, but not JSON
     ;
     // console.log(str);
     metaArgs = JSON.parse(str);
