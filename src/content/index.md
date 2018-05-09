@@ -43,7 +43,7 @@ hideFooter: true
 
 <ul class="others">
   <li class="cli">
-    <stencil-route-link url="/docs/cli/">
+    <stencil-route-link url="/docs/cli/overview">
       <strong>Ionic CLI</strong>
       <span>
         The primary tool used during the process of developing an Ionic app.
@@ -51,13 +51,13 @@ hideFooter: true
     </stencil-route-link>
   </li>
   <li class="resources">
-    <stencil-route-link url="/docs/developer-resources">
-      <strong>Resources</strong>
+    <stencil-route-link url="/docs/developer-resources/books">
+      <strong>Dev Resources</strong>
       <span>Learn official guides, videos, books, and more.</span>
     </stencil-route-link>
   </li>
   <li class="_ionicons">
-    <a href="http://ionicons.com">
+    <a href="http://ionicons.com" target="_blank">
       <strong>Ionicons</strong>
       <span>
         Beautifully designed icons built for us in web, iOS, Android, and
@@ -66,7 +66,7 @@ hideFooter: true
     </a>
   </li>
   <li class="faq">
-    <stencil-route-link url="/docs/faq">
+    <stencil-route-link url="/docs/faq/glossary">
       <strong>FAQ</strong>
       <span>
         Get answers to some of the most commonly asked questions about the
