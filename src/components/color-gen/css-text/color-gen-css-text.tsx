@@ -13,7 +13,10 @@ export class CssText {
 
   onCssTextChange(ev: UIEvent) {
     if ((ev.target as HTMLTextAreaElement).value !== this.cssText) {
-      this.cssText = (ev.target as HTMLTextAreaElement).value;
+      const value = (ev.target as HTMLTextAreaElement).value;
+      if (!value.length) return;
+
+      this.cssText = value;
 
       this.cssTextChange.emit(this.cssText);
     }
@@ -53,7 +56,12 @@ export class CssText {
             </span>
           </div>
         </div>
-        <textarea spellcheck="false" onInput={this.onCssTextChange.bind(this)} value={this.cssText}></textarea>
+        <textarea
+          spellcheck="false"
+          onClick={function() { this.select(); }}
+          onInput={this.onCssTextChange.bind(this)}
+          value={this.cssText}>
+        </textarea>
       </div>
     ];
   }

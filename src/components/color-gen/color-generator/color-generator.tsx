@@ -44,8 +44,12 @@ export class ColorGenerator {
   @Listen('cssTextChange')
   onCssTextChange(ev: any) {
     this.cssText = ev.detail;
-    this.colors = convertCssToColors(this.cssText);
-    this.updatePreview.emit({cssText: this.cssText});
+    const colors = convertCssToColors(this.cssText);
+
+    if (colors.length > 0) {
+      this.colors = colors;
+      this.updatePreview.emit({cssText: this.cssText});
+    }
   }
 
   componentWillLoad() {

@@ -20,53 +20,53 @@ export function generateColor(name: string, property: string, value: string): Co
 }
 
 export function convertCssToColors(cssText: string) {
-  cssText = cssText
-              .replace(/\;/g, ' ')
-              .replace(/\{/g, ' ')
-              .replace(/\}/g, ' ')
-              .replace(/\s/g, ' ');
-
   const colors: ColorVariable[] = [];
 
   COLOR_VARS.forEach(colorVar => {
-    parseColorVar(colorVar, cssText, colors);
+    const attrMap = {
+      value: '',
+      valueRgb: '-rgb',
+      contrast: '-contrast',
+      contrastRgb: '-contrast-rgb',
+      shade: '-shade',
+      tint: '-tint',
+    };
+
+    const color: ColorVariable = {...colorVar};
+    Object.keys(attrMap).forEach(key => {
+      color[key] = parseColorVar(colorVar.property + attrMap[key], cssText);
+    });
+
+    colors.push(color);
   });
 
   return colors;
 }
 
-function parseColorVar(colorAttr: any, cssText: string, colors: ColorVariable[]) {
-  let splt = cssText.split(colorAttr.property);
-  if (splt.length < 2) {
-    return;
-  }
-
-  splt = splt[1].trim().split(':');
-  if (splt.length < 2) {
-    return;
-  }
-
-  const color = generateColor(colorAttr.name, colorAttr.property, splt[1].trim());
-  colors.push(color);
+function parseColorVar(colorAttr: any, cssText: string) {
+  const attrKeyVal = getCssKeyVal(colorAttr, cssText);
+  return attrKeyVal.trim().split(':')[1].trim();
 }
 
-function rgbToString(c: RGB): string {
-  return `${c.r},${c.g},${c.b}`;
-}
-
-export function updateCssText(cssText: string, colorProperty: string, newColorValue: string) {
-  const startIndex = cssText.indexOf(colorProperty);
-
-  const valueSplt = cssText.substring(startIndex + colorProperty.length);
-
-  const bracketIndex = valueSplt.indexOf('}');
-  const semiColonIndex = valueSplt.indexOf(';');
-  const endIndex = startIndex + colorProperty.length + Math.min(bracketIndex, semiColonIndex);
-
-  const oldKeyValue = cssText.substring(startIndex, endIndex);
-  const newKeyValue = `${colorProperty}: ${newColorValue}`;
+export function updateCssText(colorAttr: string, cssText: string, newColorValue: string) {
+  const oldKeyValue = getCssKeyVal(colorAttr, cssText);
+  const newKeyValue = `${colorAttr}: ${newColorValue}`;
 
   cssText = cssText.replace(oldKeyValue, newKeyValue);
 
   return cssText;
+}
+
+function getCssKeyVal (colorAttr: any, cssText: string) {
+  const startIndex = cssText.indexOf(colorAttr);
+  const valueSplt = cssText.substring(startIndex + colorAttr.length);
+  const bracketIndex = valueSplt.indexOf('}');
+  const semiColonIndex = valueSplt.indexOf(';');
+  const endIndex = startIndex + colorAttr.length + Math.min(bracketIndex, semiColonIndex);
+
+  return cssText.substring(startIndex, endIndex);
+}
+
+function rgbToString(c: RGB): string {
+  return `${c.r},${c.g},${c.b}`;
 }
