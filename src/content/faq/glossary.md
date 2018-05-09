@@ -1,5 +1,6 @@
 ---
-
+nextText: 'Build erros'
+nextUrl: '/docs/faq/build'
 ---
 
 # Glossary

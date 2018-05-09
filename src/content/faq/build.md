@@ -1,5 +1,8 @@
 ---
-
+previousText: 'Glossary'
+previousUrl: '/docs/faq/glossary'
+nextText: 'Runtime Errors'
+nextUrl: '/docs/faq/runtime'
 ---
 
 # Build Errors

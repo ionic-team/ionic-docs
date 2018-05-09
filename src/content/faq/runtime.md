@@ -1,5 +1,8 @@
 ---
-
+previousText: 'Build Errors'
+previousUrl: '/docs/faq/build'
+nextText: 'Native Errors'
+nextUrl: '/docs/faq/native'
 ---
 
 # Runtime Errors
