@@ -20,21 +20,22 @@ async function run() {
     utils.vlog('Precheck complete');
   }
 
-  await tryToRun(apiDocs, API_DOCS_DIR);
-  await tryToRun(cliDocs, join(CLI_DOCS_DIR, 'commands.md'));
-  await tryToRun(nativeDocs);
+  await tryToRun(apiDocs, 'API', API_DOCS_DIR);
+  await tryToRun(cliDocs, 'CLI', CLI_DOCS_DIR);
+  await tryToRun(nativeDocs, 'Native', NATIVE_DOCS_DIR);
 }
 
-async function tryToRun(func: () => void, outDir?: string) {
+async function tryToRun(func: () => void, name: string, outDir?: string) {
   try {
+    console.log(`Generating ${name} Docs`);
     await func();
   } catch (error) {
-    // note if outDir is not provided it defaults to not throwing
-    if (outDir && !fs.existsSync(outDir)) {
+    // note if outDir is not provided throw any time the command fails
+    if (!outDir || !fs.existsSync(outDir)) {
       throw error;
     } else {
       console.log(error);
-      console.log(`${func.name} failed, using cached version.`);
+      console.log(`${name} Docs generation failed, using cached version.`);
     }
   }
 }

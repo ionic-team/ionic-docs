@@ -19,7 +19,7 @@ export class DocsRoot {
   }
 
   parseSection(path) {
-    const match = /^(api|native|pro)(\/.*)?/.exec(path);
+    const match = /^(api|cli|native|pro)(\/.*)?/.exec(path);
     return match && match[1] || 'framework';
   }
 
