@@ -2,7 +2,7 @@
 
 ---
 
-# Configuring
+# CLI Overview
 
 ## Config Files
 

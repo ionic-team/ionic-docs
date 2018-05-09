@@ -1,9 +1,11 @@
 # Ionic Native
 
+<p class="intro" markdown="1">
 Ionic Native is a curated set of wrappers for Cordova plugins that makes adding native functionality to an Ionic app easy.
 Ionic Native wraps Cordova plugins in a Promise or Observable, providing a common interface for all plugins, and dealing with Angular's change detection.
+</p>
 
-### Usage with Angular apps
+## Usage with Angular apps
 
 To use a plugin, import and add the plugin inejectable to a `@NgModule`. For Angular, the import path should end with `/ngx`.
 
@@ -60,7 +62,7 @@ export class MyComponent {
 }
 ```
 
-### Usage with ES2015+/TypeScript
+## Usage with ES2015+/TypeScript
 
 Ionic Native can also be used a vanilla JS app with ES2015+/Typescript. To use any plugin, import the class from the appropriate package, and use it's static methods.
 
