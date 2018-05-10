@@ -17,9 +17,11 @@ export const main = {
   'Building': {
     'Starting': '/docs/building/starting',
     'Scaffolding': '/docs/building/scaffolding',
-    'Running': '/docs/building/running',
     'Migration': '/docs/building/migration',
     'Cross Platform': '/docs/building/cross-platform',
+    'Running Overview': '/docs/building/running',
+    'Running on iOS': '/docs/building/ios',
+    'Running on Android': '/docs/building/android',
     'Testing': '/docs/building/testing',
     'Contributing': '/docs/building/contributing',
     'Web View': '/docs/building/webview',

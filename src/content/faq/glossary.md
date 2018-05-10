@@ -7,12 +7,12 @@ nextUrl: '/docs/faq/build'
 
 <div id="what-is">
 
- <section id="android-sdk">
+  <section id="android-sdk">
     <a href="#android-sdk"><h3>Android SDK</h3></a>
     <p>The <a href="http://developer.android.com/sdk/index.html" target="_blank">Android SDK</a> is a software development kit built for developers building for Google's Android Platform. It includes tools for building, testing, and debugging Android applications.</p>
   </section>
 
-  <section id='android-studio'>
+  <section id="android-studio">
     <a href='#android-studio'><h3>Android Studio</h3></a>
     <p><a href="https://developer.android.com/studio/" target="_blank">Android Studio</a> is the official Integrated Development Environment (IDE) for Native Android app development.</p>
   </section>
@@ -28,7 +28,7 @@ nextUrl: '/docs/faq/build'
   </section>
 
   <section id="capacitor">
-    <a href="capacitor"><h3>Capacitor</h3></a>
+    <a href="#capacitor"><h3>Capacitor</h3></a>
     <p><a href="https://capacitor.ionicframework.com/" target="_blank">Capacitor</a> is an open source cross-platform app runtime that allows web-based apps to run natively on iOS, Android, Electron, and the web. It's helpful to refer to these apps "Native Progressive Web Apps" and they represent the next evolution beyond the traditional Hybrid app mentality. Capacitor was created and is actively developed/supported by Ionic, the company.
     </p>
   </section>
@@ -130,18 +130,23 @@ nextUrl: '/docs/faq/build'
     </p>
   </section>
 
-<section id="observable">
+  <section id="observable">
     <a href="#observable"><h3>Observable</h3></a>
     <p>An observable is an object that emits events (or notifications). An observer is an object that listens for these events, and does something when an event is received. Together, they create a pattern that can be used for programming asynchronously.
     </p>
   </section>
 
-<section id="polyfill">
+  <section id="package-id">
+    <a href="#package-id"><h3>Package ID</h3></a>
+    <p>Referred to by Apple as **Bundle ID** and by Android as **Application ID**, the **Package ID** is used for identifying apps published to the App Store/Play Store. It is a string formatted in <a href="https://en.wikipedia.org/wiki/Reverse_domain_name_notation" target="_blank">reverse-DNS notation</a>.</p>
+  </section>
+
+  <section id="polyfill">
     <a href="#polyfill"><h3>Polyfill</h3></a>
     <p>A <a href="https://remysharp.com/2010/10/08/what-is-a-polyfill" target="_blank">polyfill</a> is a bit of code that adds functionality to the browser and normalizes browser differences. This is similar to a <a href="#shim">shim</a>, but where a shim has it's own API, a polyfill let's the expect API of the browser be used.</p>
   </section>
 
-<section id="protractor">
+  <section id="protractor">
     <a href="#protractor"><h3>Protractor</h3></a>
     <p><a href="https://angular.github.io/protractor/#/" target="_blank">Protractor</a> is a testing framework written for and by the Angular team. Protractor can be used with test runners, like Karma, for end-to-end testing. Test runners allow you to quickly and programmatically verify code quality.</p>
   </section>
