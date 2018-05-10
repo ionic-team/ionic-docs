@@ -56,7 +56,7 @@ export class SitePreviewApp {
       </ul>,
       <figure class={this.selected}>
         <iframe
-          src={`${this.url}?ionic:mode=${this.selected}`}
+          src={`${this.url}?ionic:mode=${this.selected}&ionic:statusbarPadding=true`}
           ref={el => this.iframe = el as any}
           onLoad={this.onIframeLoad.bind(this)}
           frameborder="0"></iframe>
