@@ -11,7 +11,7 @@ const menuHeader = '/* tslint:disable */\n\nexport const cliMenu = ';
 const menuFooter = ';\n';
 
 // the main task of the API documentation generation process
-export async function generate() {
+export async function generate(task) {
   const startTime = new Date().getTime();
 
   await git.ensureLatestMaster(
@@ -37,7 +37,7 @@ export async function generate() {
   generateNav(docs['angular'].commands);
 
   const endTime = new Date().getTime();
-  console.log(`CLI Docs copied in ${endTime - startTime}ms`);
+  task.output = `CLI Docs copied in ${endTime - startTime}ms`;
 }
 
 function urlName(name) {

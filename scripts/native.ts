@@ -13,7 +13,7 @@ const menuHeader = '/* tslint:disable:quotemark */\n\nexport const nativeMenu = 
 const navList = {};
 
 // the main task of the API documentation generation process
-export async function generate() {
+export async function generate(task) {
   const startTime = new Date().getTime();
 
   const repoRef = await git.ensureLatestMaster(
@@ -39,7 +39,7 @@ export async function generate() {
   fs.writeFileSync(menuPath, ts);
 
   const endTime = new Date().getTime();
-  console.log(`Native Docs copied in ${endTime - startTime}ms`);
+  task.output = `Native Docs copied in ${endTime - startTime}ms`;
 }
 
 async function getTypeDoc() {

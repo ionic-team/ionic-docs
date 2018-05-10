@@ -17,7 +17,7 @@ const menuFooter = ';\n';
 const ionicComponentsDir = `${config.IONIC_DIR}/${config.IONIC_CORE_SRC}/components`;
 
 // the main task of the API documentation generation process
-export async function generate() {
+export async function generate(task) {
   const startTime = new Date().getTime();
 
   // clone/update the git repo and get a list of all the tags
@@ -44,12 +44,12 @@ export async function generate() {
     // skip this version if it already exists.
     // delete the directory in src/api/ to force a rebuild
     if (fs.existsSync(DOCS_DEST)) {
-      console.log(`Skipping existing API docs for ${sv.version}`);
+      task.output = `Skipping existing API docs for ${sv.version}`;
       // continue;
     }
 
     // Generate the docs for this version
-    console.log(`Generating API docs for ${sv.raw} (1-3 mins)`);
+    task.output = `Generating API docs for ${sv.raw} (1-3 mins)`;
     await git.checkout(config.IONIC_DIR, sv.raw);
     await npm.installAPI();
     const APIDocs = await npm.buildAPIDocs();
@@ -64,7 +64,7 @@ export async function generate() {
   }
 
   const endTime = new Date().getTime();
-  console.log(`Framework Docs copied in ${endTime - startTime}ms`);
+  task.output = `Framework Docs copied in ${endTime - startTime}ms`;
 }
 
 // copy demos and API docs files over to content/api

@@ -38,6 +38,7 @@
     "highlight.js": "^9.12.0",
     "husky": "^0.14.3",
     "ionicons": "^3.0.0",
+    "listr": "SamVerschueren/listr",
     "marked": "^0.3.12",
     "path": "^0.12.7",
     "semver": "^5.5.0",
