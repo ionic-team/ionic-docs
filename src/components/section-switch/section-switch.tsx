@@ -83,7 +83,7 @@ const options = [
     title: 'Framework',
     subtitle: 'The UI Toolkit for building highly performant apps',
     url: '/docs',
-    sections: ['framework', 'api']
+    sections: ['framework', 'api', 'cli']
   },
   {
     title: 'Pro',
