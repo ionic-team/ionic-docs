@@ -1,5 +1,8 @@
 ---
-
+previousText: 'Courses'
+previousUrl: '/docs/developer-resources/courses'
+nextText: 'Tools'
+nextUrl: '/docs/developer-resources/tools'
 ---
 
 # Community Posts

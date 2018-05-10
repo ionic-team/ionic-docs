@@ -1,5 +1,8 @@
 ---
-
+previousText: 'Changelog'
+previousUrl: '/docs/faq/changelog'
+nextText: 'Courses'
+nextUrl: '/docs/developer-resources/courses'
 ---
 
 # Books

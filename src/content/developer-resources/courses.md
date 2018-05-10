@@ -1,5 +1,8 @@
 ---
-
+previousText: 'Books'
+previousUrl: '/docs/developer-resources/books'
+nextText: 'Courses'
+nextUrl: '/docs/developer-resources/courses'
 ---
 
 # Courses
