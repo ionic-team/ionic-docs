@@ -1,5 +1,5 @@
 import { renderMarkdown } from '../src/markdown';
-const r = '\r\n\r\n';
+const r = '\n\n';
 
 export function getComponentMarkup(
   component,
@@ -35,21 +35,21 @@ function getFrontMatter(name, version, hasDemo) {
 function generatePropertyList(items) {
   if (!items.length) return '';
 
-  let str = `<h2>Properties</h2> ${r}<dl>\r\n`;
+  let str = `<h2>Properties</h2> ${r}<dl>\n`;
 
   for (let i = 0; i < items.length; i++) {
-    str += `<dt>\r\n<h3>${items[i].name}</h3> \r\n`;
+    str += `<dt>\r\n<h3>${items[i].name}</h3> \n`;
     if (items[i].attr) {
-      str += `<strong>Attribute:</strong>  <code>${items[i].attr}</code>\r\n`;
+      str += `<strong>Attribute:</strong>  <code>${items[i].attr}</code>\n`;
     }
     if (items[i].type) {
-      str += `<strong>Type:</strong> <code>${items[i].type}</code>\r\n`;
+      str += `<strong>Type:</strong> <code>${items[i].type}</code>\n`;
     }
     str += `</dt>\r\n`;
     str += `<dd>${items[i].docs}</dd>${r}`;
   }
 
-  return str + '</dl>${r}\r\n';
+  return str + `</dl>${r}\r\n`;
 }
 
 function generateEventsTable(items) {
@@ -58,20 +58,20 @@ function generateEventsTable(items) {
   let str = `<h2>Events</h2>${r}<dl>`;
 
   for (let i = 0; i < items.length; i++) {
-    str += `<dt>\r\n<h3>${items[i].event}</h3></dt>\r\n`;
+    str += `<dt>\r\n<h3>${items[i].event}</h3></dt>\n`;
     str += `<dd>${items[i].docs}</dd>${r}`;
   }
 
-  return str + `</dl>${r}\r\n`;
+  return str + `</dl>${r}\n`;
 }
 
 function generateMethodList(items) {
   if (!items.length) return '';
 
-  let str = `<h2>Methods</h2>\r\n<dl>${r}`;
+  let str = `<h2>Methods</h2>\n<dl>${r}`;
 
   for (let i = 0; i < items.length; i++) {
-    str += `<dt><h3>${items[i].name}()</h3></dt>\r\n`;
+    str += `<dt><h3>${items[i].name}()</h3></dt>\n`;
     str += `<dd>${items[i].docs}</dd>${r}`;
   }
 
