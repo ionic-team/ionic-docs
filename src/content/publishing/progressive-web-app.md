@@ -1,6 +1,6 @@
 ---
-previousText: 'App Store'
-previousUrl: 'docs/publishing/app-store'
+previousText: 'Play Store'
+previousUrl: 'docs/publishing/play-store'
 nextText: 'Publishing to desktop'
 nextUrl: '/docs/publishing/desktop-app'
 ---
