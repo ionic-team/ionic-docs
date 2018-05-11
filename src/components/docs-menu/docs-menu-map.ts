@@ -53,7 +53,7 @@ export const main = {
     'Runtime Errors': '/docs/faq/runtime',
     'Native Errors': '/docs/faq/native',
     'Developer Tips': '/docs/faq/tips',
-    'Changelog': ''
+    'Changelog': 'https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md'
   },
   'Dev Resources': {
     'Books': '/docs/developer-resources/books',

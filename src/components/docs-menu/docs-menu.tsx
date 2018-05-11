@@ -18,15 +18,21 @@ export class DocsMenu {
   createItem = (text, url, onClick?) => {
     return (
       <li>
-        <stencil-route-link
-          class="menu__item"
-          onClick={onClick}
-          activeClass="menu__item--active"
-          url={url}
-          strict={false}
-          exact>
-            { text }
-        </stencil-route-link>
+        {url.indexOf('http') === 0 ?
+          <span class="menu__item">
+            <a href={url} target="_blank">{ text }</a>
+          </span>
+        :
+          <stencil-route-link
+            class="menu__item"
+            onClick={onClick}
+            activeClass="menu__item--active"
+            url={url}
+            strict={false}
+            exact>
+              { text }
+          </stencil-route-link>
+        }
       </li>
     );
   }
