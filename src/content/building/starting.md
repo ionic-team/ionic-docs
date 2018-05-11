@@ -1,5 +1,6 @@
 ---
-
+nextText: 'Scaffolding'
+nextUrl: '/docs/building/scaffolding'
 ---
 
 # Starting an App

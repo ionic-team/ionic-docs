@@ -1,5 +1,8 @@
 ---
-
+previousText: 'Migration'
+previousUrl: '/docs/building/migration'
+nextText: 'Running'
+nextUrl: '/docs/building/running'
 ---
 
 # Cross Platform

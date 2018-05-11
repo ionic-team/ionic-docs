@@ -1,5 +1,6 @@
 ---
-
+previousText: 'Android Play Store'
+previousUrl: 'docs/publishing/play-store'
 ---
 
 # Desktop App

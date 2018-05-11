@@ -25,8 +25,7 @@ export const main = {
     'Testing': '/docs/building/testing',
     'Contributing': '/docs/building/contributing',
     'Web View': '/docs/building/webview',
-    'Ionic Storage': '/docs/building/storage',
-    'Desktop Support': '/docs/building/desktop-support'
+    'Ionic Storage': '/docs/building/storage'
   },
   'Components': '/docs/components',
   'Layout': {

@@ -1,5 +1,8 @@
 ---
-
+previousText: 'Starting'
+previousUrl: '/docs/building/starting'
+nextText: 'Migration'
+nextUrl: '/docs/building/migration'
 ---
 
 # Scaffolding out an App

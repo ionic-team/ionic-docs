@@ -1,5 +1,6 @@
 ---
-
+previousText: 'iOS Setup'
+previousUrl: '/docs/installation/ios'
 ---
 
 # Android Setup

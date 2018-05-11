@@ -1,5 +1,8 @@
 ---
-
+previousText: 'Cross Platform'
+previousUrl: '/docs/building/cross-platform'
+nextText: 'Running on iOS'
+nextUrl: '/docs/building/ios'
 ---
 
 # Running An App
@@ -14,7 +17,7 @@ This article will focus on Ionic DevApp, as it includes the ability to test nati
 
 ## Ionic DevApp
 
-Ionic DevApp extends the capabilities of Ionic Framework, making it easy to test apps directly on devices. DevApp offers a realtime view of changes as they're being made, with a rich library of pre-installed native plugins to test native features of the app. 
+Ionic DevApp extends the capabilities of Ionic Framework, making it easy to test apps directly on devices. DevApp offers a realtime view of changes as they're being made, with a rich library of pre-installed native plugins to test native features of the app.
 
 There’s no need to install complicated Native SDKs - all it takes is one simple command, `ionic serve`, and apps running anywhere DevApp is installed will be immediately available to preivew, with LiveReload to refresh changes as soon as they’re made.
 

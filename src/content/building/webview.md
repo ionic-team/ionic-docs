@@ -1,6 +1,10 @@
 ---
-
+previousText: 'Contributing'
+previousUrl: '/docs/building/contributing'
+nextText: 'Ionic Storage'
+nextUrl: '/docs/building/storage'
 ---
+
 
 # Web View
 

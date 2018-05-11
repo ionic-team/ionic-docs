@@ -1,8 +1,8 @@
 ---
 previousText: 'App Store'
 previousUrl: 'docs/publishing/app-store'
-nextText: 'Publishing a Progressive Web App'
-nextUrl: '/docs/publishing/progressive-web-app'
+nextText: 'Desktop Electron App'
+nextUrl: '/docs/publishing/desktop-app'
 ---
 
 # Android Play Store
@@ -18,7 +18,7 @@ Now we are ready to generate a release build for Android, lets run the following
 
 `ionic cordova build --release android`
 
-This will generate a release build based on the settings in your `config.xml`. Your Ionic app will have preset default values in this file, but if you need to customize how your app is built, you can edit this file to fit your preferences. 
+This will generate a release build based on the settings in your `config.xml`. Your Ionic app will have preset default values in this file, but if you need to customize how your app is built, you can edit this file to fit your preferences.
 
 ## Signing our APK
 

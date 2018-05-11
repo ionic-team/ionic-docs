@@ -1,8 +1,6 @@
 ---
 previousText: 'Native Errors'
 previousUrl: '/docs/faq/native'
-nextText: 'Changelog'
-nextUrl: '/docs/faq/tips'
 ---
 
 # Developer Tips
