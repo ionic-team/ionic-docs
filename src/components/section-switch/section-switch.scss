@@ -50,6 +50,7 @@
   font-weight: 700;
   margin-right: 0.3em;
   transition: opacity 200ms ease;
+  will-change: opacity;
 
   @media (max-width: $breakpoint-md) {
     display: none;
