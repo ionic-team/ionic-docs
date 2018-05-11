@@ -14,6 +14,7 @@ const menuFooter = ';\n';
 export async function generate(task) {
   const startTime = new Date().getTime();
 
+  task.output = 'Updating...';
   await git.ensureLatestMaster(
     config.CLI_DIR,
     config.CLI_REPO_URL
@@ -23,8 +24,10 @@ export async function generate(task) {
     fs.mkdirSync(config.CLI_DOCS_DIR);
   }
 
+  task.output = 'NPM Installing & Building...';
   const docs = await npm.getCLIDocs();
   docs['angular'].commands.forEach(command => {
+    task.output = `Processing ${command.name}...`;
     fs.writeFileSync(
       path.join(
         config.CLI_DOCS_DIR,
@@ -34,6 +37,7 @@ export async function generate(task) {
     );
   });
 
+  task.output = 'Generating Nav...';
   generateNav(docs['angular'].commands);
 
   const endTime = new Date().getTime();

@@ -10,12 +10,12 @@ const distList = `${config.NATIVE_DIR}/dist/@ionic-native`;
 const menuPath = 'src/components/docs-menu/native-menu.ts';
 const menuHeader = '/* tslint:disable:quotemark */\n\nexport const nativeMenu = ';
 
-const navList = {};
+const navList = {'Overview': '/docs/native'};
 
 // the main task of the API documentation generation process
 export async function generate(task) {
   const startTime = new Date().getTime();
-
+  task.output = 'Updating...';
   const repoRef = await git.ensureLatestMaster(
     config.NATIVE_DIR,
     config.NATIVE_REPO_URL,
@@ -23,6 +23,7 @@ export async function generate(task) {
   );
 
   vlog('installing and building');
+  task.output = 'NPM Installing & Building...';
   await execp([
     `cd ${config.NATIVE_DIR}`,
     'npm i',
@@ -30,11 +31,13 @@ export async function generate(task) {
   ].join(' && '));
 
   vlog('Reading output typescript data file');
+  task.output = 'Generating Typedoc...';
   const typeDoc = await getTypeDoc();
 
-  typeDoc.children.forEach(tsData => processPlugin(tsData));
+  typeDoc.children.forEach(tsData => processPlugin(tsData, task));
 
   // write nav
+  task.output = 'Generating Nav...';
   const ts = `${menuHeader}${JSON.stringify(navList, null, '  ')};\n`;
   fs.writeFileSync(menuPath, ts);
 
@@ -56,9 +59,10 @@ async function getTypeDoc() {
 }
 
 // parse plugin data and write to markdown file
-function processPlugin(tsData) {
+function processPlugin(tsData, task) {
 
   const plugin = preparePluginData(tsData);
+  task.output = `Processing ${plugin.prettyName}...`;
 
   if (!fs.existsSync(config.NATIVE_DOCS_DIR)) {
     fs.mkdirSync(config.NATIVE_DOCS_DIR);

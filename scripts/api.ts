@@ -16,17 +16,22 @@ const menuHeader = '/* tslint:disable */\n\nexport const apiMap = ';
 const menuFooter = ';\n';
 const ionicComponentsDir = `${config.IONIC_DIR}/${config.IONIC_CORE_SRC}/components`;
 
+let listrTask = null;
+
 // the main task of the API documentation generation process
 export async function generate(task) {
+  listrTask = task;
   const startTime = new Date().getTime();
-
+  task.output = 'Updating...';
   // clone/update the git repo and get a list of all the tags
+
   await git.ensureLatestMaster(
     config.IONIC_DIR,
     config.IONIC_REPO_URL
   );
 
   utils.vlog('validating tags');
+  task.output = 'Getting Tags...';
   const allVersions = await git.getVersions(config.IONIC_DIR);
   const versions = allVersions.filter(v => {
     for (const whitelistedVersion of FRAMEWORK_VERSIONS) {
@@ -40,6 +45,7 @@ export async function generate(task) {
 
   // generate the docs for each version
   for (const sv of versions) {
+    task.output = `Building for ${sv.version}...`;
     const DOCS_DEST = join(config.API_DOCS_DIR, sv.version);
     // skip this version if it already exists.
     // delete the directory in src/api/ to force a rebuild
@@ -50,12 +56,16 @@ export async function generate(task) {
 
     // Generate the docs for this version
     task.output = `Generating API docs for ${sv.raw} (1-3 mins)`;
+    task.output = `Checking out ${sv.version}`;
     await git.checkout(config.IONIC_DIR, sv.raw);
+    task.output = `NPM Installing ${sv.version}`;
     await npm.installAPI();
+    task.output = `Building Docs for ${sv.version}`;
     const APIDocs = await npm.buildAPIDocs();
 
     copyFiles(APIDocs.components, DOCS_DEST, sv.version);
 
+    task.output = `Generating Nav for ${sv.version}`;
     generateNav(
       join(menuPath, `docs-api-map.ts`),
       APIDocs.components,
@@ -78,6 +88,7 @@ function copyFiles(components, dest, version = 'latest') {
 
   for (let i = 0; i < components.length; i++) {
     const componentName = components[i].tag.replace('ion-', '');
+    listrTask.output = `Copying ${componentName}`;
     // copy demo if it exists and update the ionic path
     hasDemo = utils.copyFileSync(
       join(ionicComponentsDir, componentName, 'test/preview/index.html'),
