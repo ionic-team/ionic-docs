@@ -17,6 +17,24 @@ Ionic Framework is focused on the frontend user experience, or UI interaction of
 Currently, Ionic Framework has official integration with <a href="https://angular.io/" target="_blank">Angular</a>, but support for <strong>Vue</strong> and <strong>React</strong> are in development. If you’d like to learn more about Ionic Framework before diving in, we [created a video](#) to walk you through the basics.
 </p>
 
+## Goals
+
+### Cross-platform
+
+Build and deploy apps that work across multiple platforms, such as native iOS, Android, desktop, and the web as a Progressive Web App - all with one codebase. Write once, run anywhere.
+
+### Web Standards-based
+
+Ionic Framework is intentionally built on top of reliable, standards based web technologies: HTML, CSS, and JavaScript. Because of this, Ionic apps are future proofed by default, and connot be controlled by any one organization.
+
+### Beautiful Design
+
+Clean, simple, and functional. Ionic Framework is designed to work and display beautifully out-of-the-box across all platforms. Start with pre-designed components, typography, interactive paradigms, and a gorgeous (yet extensible) base theme.
+
+### Simplicity
+
+Ionic Framework is built with simplicity in mind, so that creating Ionic apps enjoyable, easy to learn, and accessible to just about anyone with web development familiartiy.
+
 ## License
 
 Ionic Framework is completely a free and open source project, released under <a href="https://opensource.org/licenses/MIT" target="_blank">MIT license</a>. This means you can use it in personal or commercial projects for free. For example, MIT is the same license used by such popular projects as jQuery and Ruby on Rails.
@@ -34,15 +52,15 @@ While versions 1-3 of Ionic Framework were deeply coupled to Angular, version 4 
 
 ### JavaScript
 
-Talk about Ionic Framework’s new support for vanilla ice cream JavaScript (no framework required).
+Todo: Talk about Ionic Framework’s new support for vanilla JS (no framework required).
 
 ### Angular
 
-Talk about Ionic Framework's Angular integration.
+Todo: Talk about Ionic Framework's Angular integration.
 
 ### Stencil
 
-Talk about Ionic Framework being used with Stencil.
+Todo: Talk about Ionic Framework being used with Stencil.
 
 ### Future Support
 
