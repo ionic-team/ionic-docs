@@ -4,6 +4,7 @@ import { apiMap } from './docs-api-map';
 import { cliMenu } from './cli-menu';
 import { nativeMenu } from './native-menu';
 import * as menuMap from './docs-menu-map';
+import { NewTab } from '../../icons';
 
 @Component({
   tag: 'docs-menu',
@@ -20,7 +21,10 @@ export class DocsMenu {
       <li>
         {url.indexOf('http') === 0 ?
           <span class="menu__item">
-            <a href={url} target="_blank">{ text }</a>
+            <a href={url} target="_blank">
+              { text }
+              <NewTab/>
+            </a>
           </span>
         :
           <stencil-route-link

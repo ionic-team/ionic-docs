@@ -1,0 +1,14 @@
+a .new-tab,
+.new-tab {
+  .new-tab__arrow {
+    transition: .2s transform ease-out, .2s fill ease;
+    will-change: trasnform, fill;
+  }
+}
+
+a:hover .new-tab,
+.new-tab:hover {
+  .new-tab__arrow {
+    transform: translate(1px, -1px);
+  }
+}

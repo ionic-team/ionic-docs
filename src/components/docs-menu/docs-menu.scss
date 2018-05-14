@@ -37,11 +37,6 @@ docs-menu {
   color: var(--blackish);
 }
 
-.menu__item:hover {
-  color: var(--darkish);
-  cursor: pointer;
-}
-
 .menu__submenu {
   // display: none;
   margin: 4px 0 6px 8px;
@@ -71,8 +66,13 @@ docs-menu {
   font-weight: 500;
 }
 
-.menu__submenu .menu__item:hover {
+.menu__submenu .menu__item:hover a {
   color: var(--darkish);
+}
+
+.menu__submenu .menu__item:hover .new-tab .new-tab__box,
+.menu__submenu .menu__item:hover .new-tab .new-tab__arrow {
+  fill: var(--darkish);
 }
 
 .menu__submenu .menu__item--active,
@@ -120,6 +120,21 @@ docs-menu {
   stroke: currentColor;
   vertical-align: middle;
   width: 8px;
+}
+
+.new-tab {
+  height: 0.8em;
+  margin-left: 0.4em;
+  width: auto;
+}
+
+.new-tab .new-tab__box {
+  opacity: 0.25;
+}
+
+.new-tab .new-tab__box,
+.new-tab .new-tab__arrow {
+  fill: var(--gray);
 }
 
 @media (max-width: $breakpoint-md) {

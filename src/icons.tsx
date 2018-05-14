@@ -22,9 +22,11 @@ export const Ionic = () => (
 );
 
 export const NewTab = () => (
-  <svg class="new-tab" viewBox="0 0 43 42">
-    <rect class="new-tab__box" y="8" width="34" height="34" rx="6"/>
-    <path class="new-tab__arrow" d="M37.078 3.268H23.617V.243h18.626v18.625h-3.026V5.407L16.13 28.494l-2.14-2.139z"/>
+  <svg class="new-tab" viewBox="0 0 12 12">
+    <g transform="translate(0,1)">
+      <rect class="new-tab__box" x="0" y="2" width="9" height="9" rx="1.5"></rect>
+      <path class="new-tab__arrow" d="M9.18198052,1 L6.5,1 L6.5,0 L11,0 L11,1 L11,4.5 L10,4.5 L10,1.59619408 L4.02512627,7.57106781 L3.31801948,6.86396103 L9.18198052,1 Z"></path>
+    </g>
   </svg>
 );
 
