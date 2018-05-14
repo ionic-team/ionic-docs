@@ -10,7 +10,7 @@ export class CodeBlock {
   render() {
     return [
       <div class="label">{this.language || ''}</div>,
-      <pre><code><slot/></code></pre>
+      <div class="scroll-area"><pre><code><slot/></code></pre></div>
     ];
   }
 }

@@ -9,12 +9,19 @@
 /* Tomorrow Red */
 .hljs-variable,
 .hljs-template-variable,
-.hljs-tag,
 .hljs-name,
 .hljs-selector-id,
 .hljs-selector-class,
 .hljs-regexp,
 .hljs-deletion {
+  color: #2b90ff;
+}
+
+.hljs-tag {
+  color: lighten(#2b90ff, 20);
+}
+
+.hljs-tag .hljs-name {
   color: #2b90ff;
 }
 
@@ -31,7 +38,8 @@
 }
 
 /* Tomorrow Yellow */
-.hljs-attribute {
+.hljs-attribute,
+.hljs-attr {
   color: #8454ff;
 }
 
@@ -39,7 +47,8 @@
 .hljs-string,
 .hljs-symbol,
 .hljs-bullet,
-.hljs-addition {
+.hljs-addition,
+.hljs-string a {
   color: #42b983;
 }
 

@@ -7,8 +7,6 @@ code-block {
   font-family: var(--font-family-code);
   font-size: 12px;
   margin: 1.5em 0;
-  overflow-x: auto;
-  padding: 2em 2em;
   position: relative;
   -webkit-font-smoothing: initial;
 }
@@ -31,7 +29,31 @@ code-block code {
   font-family: inherit;
 }
 
-code-block > pre {
+code-block pre {
   line-height: 2;
   margin: 0;
+}
+
+code-block .scroll-area {
+    overflow-x: auto;
+    padding: 2em 2em;
+}
+
+code-block .scroll-area::after {
+  position: absolute;
+  content: '';
+  right: 0;
+  top: 2em;
+  bottom: 2em;
+  width: 2em;
+  background: linear-gradient(to right,
+    rgba(#f5f6f9, .0),
+    rgba(#f5f6f9, .9) 80%,
+    #f5f6f9
+  );
+}
+
+code-block pre code {
+  margin-right: 2em !important;
+  display: inline-block;
 }
