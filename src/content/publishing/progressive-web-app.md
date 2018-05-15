@@ -44,4 +44,29 @@ First, we need to install the Firebase CLI, to do this we need to run `npm insta
   <p>`firebase init` will ask you a few questions, including if you want all URL's redirected to `/index.html`. Make sure to choose `yes` for this option, but `no` to overwriting your index.html. This will ensure that the routing will work correctly in your app.</p>
 </blockquote>
 
+Finally, we need to make sure we set our caching headers correctly. To do this lets add the following snippet to our `firebase.json` file:
+
+```
+ "headers": [
+      {
+        "source": "/build/app/**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000"
+          }
+        ]
+      },
+      {
+        "source": "sw.js",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
+          }
+        ]
+      }
+    ]
+```
+
 Now our project is ready to deploy to Firebase. The final step is running `firebase deploy`. After this completes your app will now be live on the web! 
