@@ -24,3 +24,11 @@ Here, `myApp` is the name of the project, `tabs` is the starter template, and th
 - `tabs`: A tabs based layout
 - `sidemenu`: A sidemenu based layout
 - `blank`: A empty project with a single page
+
+There are many more templates to choose from. The CLI can list them with the command, `ionic start --list`
+
+
+![ionic template list](../assets/img/guides/starting/template-list.png)
+
+
+These templates provide a great starting point for any app and include all the best practices for making a code base scale.
