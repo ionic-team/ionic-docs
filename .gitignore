@@ -16,3 +16,4 @@ src/content/api/
 !/src/content/native/index.md
 src/content/cli/ionic-angular/commands.md
 src/content/cli/ionic1/commands.md
+/.vscode

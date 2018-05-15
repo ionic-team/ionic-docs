@@ -15,6 +15,7 @@ export class DocsDocument {
   @Prop() pageClass: string;
   @Prop() onLoaded: (document) => void;
   @Prop() isLoadingTimeout = 1000;
+  @Prop() hash: string = null;
   @State() isLoading = false;
   @State() body: string;
   @State() title: string;
@@ -23,6 +24,7 @@ export class DocsDocument {
   @State() tocHeadings: HeadingStruc[] = [];
 
   loadingTimer = null;
+  scrollPending: string = null;
 
   componentDidLoad() {
     return this.fetchDocument();
@@ -60,12 +62,14 @@ export class DocsDocument {
     this.hideTOC = attributes.hideTOC;
     this.frontMatter = attributes;
     this.tocHeadings = this.hideTOC ? [] : headings;
+    this.scrollPending = this.hash;
     this.onLoaded({
       ...attributes,
       body,
       headings,
       pageClass: this.pageClass
     });
+
   }
 
   handleFetchError = err => {
@@ -96,12 +100,24 @@ export class DocsDocument {
     return { attributes, body };
   }
 
+  scrollInToView(el) {
+    if (!el || !el.scrollIntoView) return;
+    el.scrollIntoView();
+    this.scrollPending = null;
+  }
+
   render() {
     if (this.isLoading) {
       return <loading-indicator/>;
     }
 
     const headings = this.tocHeadings.filter(heading => heading.level < 3);
+
+    if (this.scrollPending) {
+      setTimeout(() => {
+        this.scrollInToView(document.querySelector(this.scrollPending));
+      }, 0, this);
+    }
 
     return [
       // <Helmet>
