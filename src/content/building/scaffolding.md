@@ -23,7 +23,7 @@ The `src` directory has items such as the `index.html` file, configuration files
 
 The `app` directory has a few more directories inside of it that hold components, pages, as well as additional features like services. If more features are needed, the CLI can handle this.
 
-```
+```shell
 ionic g <page, component, service> <name>
 ```
 
