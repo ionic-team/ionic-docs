@@ -69,4 +69,4 @@ Finally, we need to make sure we set our caching headers correctly. To do this l
     ]
 ```
 
-Now our project is ready to deploy to Firebase. The final step is running `firebase deploy`. After this completes your app will now be live on the web! 
+Now our project is ready to deploy to Firebase. The final step is running `firebase deploy`. After this completes our app will now be live on the web! 
