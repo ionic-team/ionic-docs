@@ -80,15 +80,13 @@ function generateMethodList(items) {
 
 function generateUsage(usage) {
   if (!usage) return '';
-  let str = `<h2>Usage</h2>${r}`;
-  // str += usage['angular'] + r;
-  // return str;
-  str += `<code-switcher languages="${Object.keys(usage).join(',')}">${r}`;
+  let str = `<h2>Usage</h2>\n`;
+  str += `<code-switcher languages="${Object.keys(usage).join(',')}">\n`;
   for (const version in usage) {
-    str += `<div slot="${version}">${r}`;
+    str += `<div slot="${version}">\n`;
     str += renderMarkdown(usage[version], {disableHtmlPreviews: true}).body;
-    str += `${r}</div>${r}`;
+    str += `\n</div>\n`;
   }
-  return str + `</code-switcher>${r}`;
+  return str + `</code-switcher>\n`;
 }
 
