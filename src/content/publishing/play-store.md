@@ -10,15 +10,15 @@ nextUrl: '/docs/publishing/desktop-app'
 
 ## Generating a release build of our app
 
-Before we deploy, we should take care to adjust plugins needed during development that should not be in production mode. For example, we probably don’t want the debug console plugin enabled, so we should remove it before generating the release builds:
+Before deploying, take care to adjust plugins needed during development that should not be in production mode. For example, it's not recommended to have the debug console plugin enabled, so remove it before generating the release builds:
 
 `ionic cordova plugin rm cordova-plugin-console`
 
-Now we are ready to generate a release build for Android, lets run the following cli command:
+Now, to generate a release build for Android, run the following cli command:
 
 `ionic cordova build --release android`
 
-This will generate a release build based on the settings in your `config.xml`. Your Ionic app will have preset default values in this file, but if you need to customize how your app is built, you can edit this file to fit your preferences.
+This will generate a release build based on the settings in the `config.xml`. An Ionic app will have preset default values in this file, but if you need to customize how your app is built, you can edit this file to fit your preferences.
 
 ## Signing our APK
 
