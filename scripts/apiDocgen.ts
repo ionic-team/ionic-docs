@@ -81,12 +81,12 @@ function generateMethodList(items) {
 function generateUsage(usage) {
   if (!usage) return '';
   let str = `<h2>Usage</h2>\n`;
-  str += `<code-switcher languages="${Object.keys(usage).join(',')}">\n`;
+  str += `<tab-group tabs="${Object.keys(usage).join(',')}">\n`;
   for (const version in usage) {
     str += `<div slot="${version}">\n`;
     str += renderMarkdown(usage[version], {disableHtmlPreviews: true}).body;
     str += `\n</div>\n`;
   }
-  return str + `</code-switcher>\n`;
+  return str + `</tab-group>\n`;
 }
 
