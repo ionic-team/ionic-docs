@@ -1,5 +1,9 @@
 ---
 disableHtmlPreviews: true
+previousText: 'Responsive Grid'
+previousUrl: '/docs/layout/grid'
+nextText: 'RTL Support'
+nextUrl: '/docs/layout/rtl'
 ---
 
 # CSS Utilities

@@ -1,5 +1,9 @@
 ---
 disableHtmlPreviews: true
+previousText: 'Structure'
+previousUrl: '/docs/layout/structure'
+nextText: 'CSS Utilities'
+nextUrl: '/docs/layout/css-utilities'
 ---
 
 # Responsive Grid

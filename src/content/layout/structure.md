@@ -1,5 +1,6 @@
 ---
-
+nextText: 'Responsive Grid'
+nextUrl: '/docs/layout/grid'
 ---
 
 # Structure
