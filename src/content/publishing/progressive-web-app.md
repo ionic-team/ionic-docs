@@ -6,16 +6,16 @@ nextUrl: '/docs/publishing/app-store'
 # Publishing a Progressive Web App
 
 <p class="intro" markdown="1">
-Because Ionic Apps are built with web technologies, they can run just as well as a PWA as they can a native app. This guide will cover how to an Ionic app as a PWA. Not sure what Progressive Web Apps are? Check out Ionic's <a href="https://ionicframework.com/pwa" target="_blank">PWA Overview</a> for more info.
+Because Ionic Apps are built with web technologies, they can run just as well as a PWA as they can a native app. This guide will cover how to deploy an Ionic app as a PWA. Not sure what Progressive Web Apps are? Check out Ionic's <a href="https://ionicframework.com/pwa" target="_blank">PWA Overview</a> for more info.
 </p>
 
 ## Making the App a PWA
 
-The two main requirements of a PWA are a [Service Worker](https://developers.google.com/web/fundamentals/primers/service-workers/) and a [Web Manifest](https://developers.google.com/web/fundamentals/web-app-manifest/). While we can add both of these to an app manually, the Angular team has an `@angular/pwa` package we can use to automate this.
+The two main requirements of a PWA are a <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> and a <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Manifest</a>. While it's possible to add both of these to an app manually, the Angular team has an `@angular/pwa` package that can be used to automate this.
 
 ### Adding @angular/pwa to our Ionic/Angular App
 
-The @angular/pwa package will automatically add a service worker and a web manifest to our app for our. To add this package to our app run `ng add @angular/pwa` in our apps directory. This will add a service worker (using the [@angular/service-worker package](https://angular.io/guide/service-worker-intro)) and a manifest to our app and ensure our are ready to deploy our app as a PWA. Once our have added this package all our need to do is run `ionic build --prod` and our `www` directory will be ready to deploy as a PWA!
+The `@angular/pwa` package will automatically add a <strong>service worker</strong> and a <strong>web manifest</strong> to the app for our. To add this package to the app run `ng add @angular/pwa` in the apps directory. This will add a service worker (using the [@angular/service-worker package](https://angular.io/guide/service-worker-intro)) and a manifest to the app and ensure our are ready to deploy our app as a PWA. Once our have added this package all our need to do is run `ionic build --prod` and our `www` directory will be ready to deploy as a PWA!
 
 <blockquote>
   <p>Be sure to update the web manifest to use our app's name and our icons</p>
