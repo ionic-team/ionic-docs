@@ -29,4 +29,13 @@ ionic g <page, component, service> <name>
 
 For more details on this, run `ionic g --help` from the command line.
 
+## Adding a page
+
+Let's look at what happens when a new page is generated in the CLI.
+
+![generate new page](../assets/img/guides/scaffolding/generate-page-no-options.png)
+
+> What's with the `ng` prefixed output? The ionic CLI uses the underlying framework tooling to stay as close as possible to a vanilla project. For `ionic/angular`, that means the Angular CLI is used under the hood.
+
+After creating the files and directories for the new page, the CLI will also update the router configuration to include the new page. This reduces the amount of manual work need, keep the development life cycle moving.
 
