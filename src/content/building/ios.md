@@ -17,7 +17,7 @@ There are two workflows for running Ionic apps on iOS: [Running with Xcode](#run
 
 Before apps can be deployed to iOS simulators and devices, the native project must be configured.
 
-1. Generate the native project, if it does not already exist.
+1. <strong>Generate the native project, if it does not already exist.</strong>
 
     For Capacitor, run the following:
 
@@ -31,13 +31,13 @@ Before apps can be deployed to iOS simulators and devices, the native project mu
     ionic cordova prepare ios
     ```
 
-1. Set the [Package ID](/docs/faq/glossary#package-id).
+1. <strong>Set the [Package ID](/docs/faq/glossary#package-id).</strong>
 
     For Capacitor, open the `capacitor.config.json` file and modify the `appId` property.
 
     For Cordova, open the `config.xml` file and modify the `id` attribute of the root element, `<widget>`. See [the Cordova documentation](https://cordova.apache.org/docs/en/latest/config_ref/#widget) for more information.
 
-1. Open the project in Xcode.
+1. <strong>Open the project in <b>Xcode</b>.</strong>
 
     For Capacitor, run the following to open the app in Xcode:
 
@@ -47,11 +47,11 @@ Before apps can be deployed to iOS simulators and devices, the native project mu
 
     For Cordova, open Xcode. Use **File** &raquo; **Open** and locate the app. Open the app's `platforms/ios` directory.
 
-1. In **Project navigator**, select the project root to open the project editor. Under the **Identity** section, verify that the Package ID that was set matches the Bundle Identifier.
+1. <strong>In <b>Project navigator</b>, select the project root to open the project editor. Under the **Identity** section, verify that the Package ID that was set matches the Bundle Identifier.</strong>
 
     ![Xcode Identity Setup](../assets/img/running/ios-xcode-identity-setup.png)
 
-1. In the same project editor, under the **Signing** section, ensure **Automatically manage signing** is enabled. Then, select a Development Team. Given a Development Team, Xcode will attempt to automatically prepare provisioning and signing.
+1. <strong>In the same project editor, under the <b>Signing</b> section, ensure <b>Automatically manage signing</b> is enabled.</strong> Then, select a Development Team. Given a Development Team, Xcode will attempt to automatically prepare provisioning and signing.
 
     ![Xcode Signing Setup](../assets/img/running/ios-xcode-signing-setup.png)
 
@@ -59,7 +59,7 @@ Before apps can be deployed to iOS simulators and devices, the native project mu
 
 In this workflow, Xcode can automatically fix common compilation and signing issues that can occur.
 
-1. Develop the Ionic app and sync it to the native project.
+1. <strong>Develop the Ionic app and sync it to the native project.</strong>
 
     With each meaningful change, Ionic apps must be built into web assets before the change can appear on iOS simulators and devices. The web assets then must be copied into the native project. Luckily, this process is made easy with a single Ionic CLI command.
 
@@ -75,7 +75,7 @@ In this workflow, Xcode can automatically fix common compilation and signing iss
     ionic cordova prepare ios
     ```
 
-1. In Xcode, select a target simulator or device and click the play button.
+1. <strong>In Xcode, select a target simulator or device and click the play button.</strong>
 
 ## Running with the Ionic CLI
 

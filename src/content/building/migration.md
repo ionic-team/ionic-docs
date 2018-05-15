@@ -22,7 +22,7 @@ We suggest the following general process when migrating an existing application 
    - Certain life-cycle hooks (such as `ionViewDidLoad()`) should be replaced by Angular's hooks (such as `ngOnInit()`)
    - Markup changes may be required in the page or any any components used by the page
 
-> Note: In many cases, using the ionic CLI to generate a new object and then copying the code also works very well. For example: `ionic g service weather` will create a shell `Weather` service and test. The code can then be copied from the older project with minor modifications as needed. This helps to ensure proper structure is followed. This also generates shells for unit tests.
+In many cases, using the ionic CLI to generate a new object and then copying the code also works very well. For example: `ionic g service weather` will create a shell `Weather` service and test. The code can then be copied from the older project with minor modifications as needed. This helps to ensure proper structure is followed. This also generates shells for unit tests.
 
 ## Project structure
 

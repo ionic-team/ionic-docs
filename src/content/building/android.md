@@ -11,9 +11,7 @@ nextUrl: '/docs/building/testing'
 This guide covers how to deploy Ionic apps to Android simulators and devices using [Capacitor](/docs/faq/glossary#capacitor) or [Cordova](/docs/faq/glossary#cordova).
 </p>
 
-<blockquote>
-  To deploy apps to an Android device and debug them you must enable developer mode and allow for USB debugging. Check out these instructions https://developer.android.com/studio/debug/dev-options#enable to do this on your device.
-</blockquote>
+> To deploy apps to an Android device and debug them you must enable developer mode and allow for USB debugging. Check out <a href="https://developer.android.com/studio/debug/dev-options#enable" target="_blank">these instructions</a> to do this on your device.
 
 ## Project Setup
 

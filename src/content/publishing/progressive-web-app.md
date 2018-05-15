@@ -5,13 +5,11 @@ nextUrl: '/docs/publishing/app-store'
 
 # Publishing a Progressive Web App
 
-<blockquote>
-  <p>Not sure what Progressive Web Apps are? Check out https://ionicframework.com/pwa for more info.</p>
-</blockquote>
+<p class="intro" markdown="1">
+Because Ionic Apps are built with web technologies, they can run just as well as a PWA as they can a native app. This guide will cover how to an Ionic app as a PWA. Not sure what Progressive Web Apps are? Check out Ionic's <a href="https://ionicframework.com/pwa" target="_blank">PWA Overview</a> for more info.
+</p>
 
-Because Ionic Apps are built with web technologies our app can run just as well as a PWA as it can a native app. Lets look at how our can deploy our app as a PWA.
-
-## Making our App a PWA
+## Making the App a PWA
 
 The two main requirements of a PWA are a [Service Worker](https://developers.google.com/web/fundamentals/primers/service-workers/) and a [Web Manifest](https://developers.google.com/web/fundamentals/web-app-manifest/). While we can add both of these to an app manually, the Angular team has an `@angular/pwa` package we can use to automate this.
 

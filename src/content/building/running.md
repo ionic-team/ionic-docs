@@ -34,7 +34,7 @@ First, download the Ionic DevApp. It is available in the iOS App Store as well a
 
 With DevApp installed, sign up or login in to an Ionic Account.
 
-> Note: DevApp is a free service that comes with every Ionic Account.
+> DevApp is a free service that comes with every Ionic Account.
 
 ## Serving the App
 

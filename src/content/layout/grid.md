@@ -10,7 +10,7 @@ nextUrl: '/docs/layout/css-utilities'
 
 <p class="intro" markdown="1">
 The grid is a powerful mobile-first flexbox system for building custom layouts.
-It is heavily influenced by [Bootstrap's grid system](http://v4-alpha.getbootstrap.com/layout/grid/).
+It is heavily influenced by <a href="http://v4-alpha.getbootstrap.com/layout/grid/" target="_blank">Bootstrap's grid system</a>.
 
 The grid is composed of three units — a grid, row(s) and column(s). Columns will expand to fill their
 row, and will resize to fit additional columns. It is based on a 12 column layout with different
@@ -73,7 +73,7 @@ small, medium, large, and extra large.
 (e.g., `col-sm-4` applies to small, medium, large, and extra large devices).
 - Grids can easily be customized via CSS variables. See [customizing the grid](#customizing-the-grid).
 
-There are some [known bugs with flexbox](https://github.com/philipwalton/flexbugs) that
+There are some <a href="https://github.com/philipwalton/flexbugs" target="_blank">known bugs with flexbox</a> that
 should be checked prior to creating issues with Ionic.
 
 ## Grid size

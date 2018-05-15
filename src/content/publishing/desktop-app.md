@@ -5,7 +5,9 @@ previousUrl: 'docs/publishing/play-store'
 
 # Desktop App
 
-Building an Electron App with Ionic allows developers to reuse 100% of their code and ship a traditional desktop app, while still having access to native device feature, like push notifications. This guide does not go into "how" to build an electron app. For that, check out the official [Electron guide](https://electronjs.org/docs/tutorial/first-app).
+<p class="intro" markdown="1">
+Building a desktop app with Ionic allows developers to reuse 100% of their code and ship a traditional desktop app while still having access to all the native device features, like push notifications. This guide assumes familiarity with Electron, and does not go into "how" to build an electron app. For that, check out the official <a href="https://electronjs.org/docs/tutorial/first-app" target="_blank">Electron guide</a>.
+</p>
 
 ## macOS App
 

@@ -11,7 +11,7 @@ To target the Android platform, some additional environment setup is required. A
 
 ## Java
 
-Native Android apps are compiled with the [Java](https://java.com/en/) programming language. Download JDK8 from the [download page](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
+Native Android apps are compiled with the <a href="https://java.com/en/" target="_blank">Java</a> programming language. Download JDK8 from the <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank">download page</a>.
 
 <blockquote>
   <p>Java 10 is still a bit too new and doesn't work well with Cordova. We recommend JDK8.</p>
@@ -19,17 +19,17 @@ Native Android apps are compiled with the [Java](https://java.com/en/) programmi
 
 ## Gradle
 
-[Gradle](https://gradle.org/) is the build tool used in Android apps and can be installed separately. See the [install page](https://gradle.org/install/) for details.
+<a href="https://gradle.org/" target="_blank">Gradle</a> is the build tool used in Android apps and can be installed separately. See the <a href="https://gradle.org/install/" target="_blank">install page</a> for details.
 
 ## Android Studio
 
-[Android Studio](https://developer.android.com/studio/) is the IDE for creating native Android apps. It includes the [Android SDK](/docs/faq/glossary#android-sdk), which will need to be configured for use in the command line.
+<a href="https://developer.android.com/studio/" target="_blank">Android Studio</a> is the IDE for creating native Android apps. It includes the [Android SDK](/docs/faq/glossary#android-sdk), which will need to be configured for use in the command line.
 
 Android Studio is also used to [create Android virtual devices](/docs/installation/android#creating-an-android-virtual-device), which are required for the Android emulator. Ionic apps can also be [launched to a device](/docs/installation/android#set-up-an-android-device).
 
 ### Installing Android Studio
 
-Download Android Studio from the [Android website](https://developer.android.com/studio/). More detailed installation instructions can be found in the [User Guide](https://developer.android.com/studio/install).
+Download Android Studio from the <a href="https://developer.android.com/studio/" target="_blank">Android website<a>. More detailed installation instructions can be found in the <a href="https://developer.android.com/studio/install" target="_blank">User Guide</a>.
 
 ### Installing the Android SDK
 
@@ -43,7 +43,7 @@ For future reference, the Android SDK can be managed with Android Studio in the 
 
 ### Configuring Command Line Tools
 
-The Android SDK ships with [useful command-line tools](https://developer.android.com/studio/command-line/). Before they can be used, some environment variables must be set. The following instructions are for macOS and Linux. For Windows, check the documentation on setting and persisting environment variables in terminal sessions.
+The Android SDK ships with <a href="https://developer.android.com/studio/command-line/" target="_blank">useful command-line tools</a>. Before they can be used, some environment variables must be set. The following instructions are for macOS and Linux. For Windows, check the documentation on setting and persisting environment variables in terminal sessions.
 
 In `~/.bashrc`, `~/.bash_profile`, or similar shell startup scripts, make the following modifications:
 
@@ -53,7 +53,7 @@ In `~/.bashrc`, `~/.bash_profile`, or similar shell startup scripts, make the fo
     export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
     ```
 
-1. Add the Android SDK command-line directories to `PATH`. Each directory corresponds to the category of [command-line tool](https://developer.android.com/studio/command-line/).
+1. Add the Android SDK command-line directories to `PATH`. Each directory corresponds to the category of <a href="https://developer.android.com/studio/command-line/" target="_blank">command-line tool</a>.
 
     ```bash
     # avdmanager, sdkmanager
@@ -72,13 +72,13 @@ In `~/.bashrc`, `~/.bash_profile`, or similar shell startup scripts, make the fo
 
 ### Creating an Android Virtual Device
 
-Android Virtual Devices (AVDs) are a blueprint that the Android emulator uses to run Android OS. The following documentation is a quick way to get the Android emulator set up. For more detailed instructions and information, see [the Android documentation](https://developer.android.com/studio/run/managing-avds).
+Android Virtual Devices (AVDs) are a blueprint that the Android emulator uses to run Android OS. The following documentation is a quick way to get the Android emulator set up. For more detailed instructions and information, see <a href="https://developer.android.com/studio/run/managing-avds" target="_blank">the Android documentation</a>.
 
 AVDs are managed with the AVD Manager. The AVD Manager must be accessed inside an Android project in the **Tools** &raquo; **AVD Manager** menu. The **Tools** menu may not be accessible in the main screen. Create an Android project to access the full menu.
 
 ![AVD Setup](../assets/img/installation/android-studio-avd-setup.png)
 
-Click **Create Virtual Device** and select a suitable device definition. If unsure, choose **Pixel 2 XL**. Then, select a suitable system image. If unsure, choose the latest version. See [Android version history](https://en.wikipedia.org/wiki/Android_version_history) for information on Android versions.
+Click **Create Virtual Device** and select a suitable device definition. If unsure, choose **Pixel 2 XL**. Then, select a suitable system image. If unsure, choose the latest version. See <a href="https://en.wikipedia.org/wiki/Android_version_history" target="_blank">Android version history</a> for information on Android versions.
 
 Once the AVD is created, launch the AVD into the Android emulator. Keeping the emulator running is the best way to ensure detection while developing Ionic apps for Android.
 
@@ -88,9 +88,9 @@ Once the AVD is created, launch the AVD into the Android emulator. Keeping the e
 
 ### Set up an Android Device
 
-Actual Android hardware can also be used for Ionic app development. But first, the device must be set up for development. The following documentation is a quick way to set up Android devices for development. For more detailed instructions and information, see [the Android documentation](https://developer.android.com/studio/run/device).
+Actual Android hardware can also be used for Ionic app development. But first, the device must be set up for development. The following documentation is a quick way to set up Android devices for development. For more detailed instructions and information, see <a href="https://developer.android.com/studio/run/device" target="_blank">the Android documentation</a>.
 
-1. Enable USB debugging on the device. Open **Settings**, navigate to **Developer options**, and enable **USB debugging**. The **Developer options** menu may need to be enabled first. See [the Android documentation](https://developer.android.com/studio/debug/dev-options) for instructions.
+1. Enable USB debugging on the device. Open **Settings**, navigate to **Developer options**, and enable **USB debugging**. The **Developer options** menu may need to be enabled first. See <a href="https://developer.android.com/studio/debug/dev-options" target="_blank">the Android documentation</a> for instructions.
 1. Ensure the device has permission to connect to the computer. For macOS, no additional setup is required. For Windows, <a href="https://developer.android.com/studio/run/oem-usb" target="_blank">install the OEM USB drivers</a>.
 
 Verify the connection works by connecting the device to the computer with a USB cable and using the following command:
