@@ -46,7 +46,7 @@ export class SitePreviewApp {
     }
 
     return [
-      <ul>
+      <ul class="docs-preview__toggle">
         <li
           class={this.selected === 'ios' ? 'active' : ''}
           onClick={this.select.bind(this, 'ios')}>iOS</li>

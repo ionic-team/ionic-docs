@@ -17,12 +17,6 @@ docs-preview {
     display: none;
   }
 
-  ul {
-    padding: 0;
-    display: flex;
-    margin-bottom: 9px;
-  }
-
   li {
     color: var(--gray);
     list-style: none;
@@ -84,4 +78,10 @@ docs-preview {
       }
     }
   }
+}
+
+.docs-preview__toggle {
+  display: flex;
+  margin: 0;
+  padding: 0;
 }
