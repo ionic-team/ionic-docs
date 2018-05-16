@@ -5,13 +5,12 @@ import '@stencil/router'; // tslint:disable-line:no-import-side-effect
   tag: 'docs-root'
 })
 export class DocsRoot {
-  contentElement: HTMLElement;
+  document: HTMLElement;
 
   @State() previewUrl: string;
   @State() previewCss: string;
   @State() isMenuOpen = false;
   @State() pageClass: string;
-  @State() path: string = null;
 
   @Listen('updatePreview')
   handleUpdatePreview(ev: any) {
@@ -27,10 +26,16 @@ export class DocsRoot {
   handleDocumentLoad = (document) => {
     this.previewUrl = document.previewUrl || null;
     this.pageClass = document.pageClass;
-    if (this.contentElement) {
-      this.contentElement.scrollTop = 0;
-    }
+    this.setScrollPosition();
     this.closeMenu();
+  }
+
+  setScrollPosition() {
+    const { hash } = window.location;
+    const target = hash ? document.querySelector(hash) : this.document;
+    if (target) {
+      target.scrollIntoView();
+    }
   }
 
   toggleMenu = () => {
@@ -59,10 +64,13 @@ export class DocsRoot {
               <docs-menu section={section} path={props.match.url}/>
               <docs-header section={section} isMenuOpen={this.isMenuOpen} onToggleClick={this.toggleMenu}/>
               <docs-content
-                ref={node => { this.contentElement = node; }}
                 onOverlayClick={this.closeMenu}
                 showOverlay={this.isMenuOpen}>
-                  <docs-document path={documentPath} hash={props.history.location.hash} onLoaded={this.handleDocumentLoad} pageClass={page}/>
+                  <docs-document
+                    ref={node => { this.document = node; }}
+                    path={documentPath}
+                    onLoaded={this.handleDocumentLoad}
+                    pageClass={page}/>
                   <docs-preview url={this.previewUrl} cssText={this.previewCss}/>
               </docs-content>
             </docs-layout>
