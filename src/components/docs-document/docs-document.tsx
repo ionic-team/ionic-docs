@@ -12,7 +12,9 @@ import { HeadingStruc, renderMarkdown } from '../../markdown';
 })
 export class DocsDocument {
   @Prop() path: string;
-  @Prop() onUpdate: (document) => void;
+  /* tslint:disable */
+  @Prop() onUpdate: (document) => void = () => {};
+  /* tslint:enable */
   @Prop() isLoadingTimeout = 1000;
   @State() isLoading = false;
   @State() body: string;
