@@ -1,5 +1,10 @@
 # Ionic API
 
-This is the Index page for the Ionic API Pages
+![api header image](assets/img/api/api-intro-header.png)
 
-TODO: copy content over
+In the API docs, you'll find two kinds of doc pages: Component and Programmatic APIs.
+
+The Component APIs include classes like `Checkbox`, `Toggle` or `Item` and show you how to use them, in addition to listing their selectors, available properties and events.
+
+The Programmatic APIs are classes like `MenuController`, `Config` or `Platform`.
+These are services provided by Ionic that can be injected into your classes.
