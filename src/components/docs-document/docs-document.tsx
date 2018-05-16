@@ -74,7 +74,7 @@ export class DocsDocument {
   componentDidUpdate() {
     const { attributes, body, tocHeadings: headings, pageClass } = this;
     this.onLoaded({
-      attributes,
+      ...attributes,
       body,
       headings,
       pageClass
