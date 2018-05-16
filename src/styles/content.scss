@@ -68,7 +68,7 @@ docs-content {
   }
 
   blockquote {
-    background: #fff9ed;
+    background: rgba(255, 250, 237, 0.8);
     margin: 0;
     padding: 1px 20px;
     border-radius: 2px 4px 4px 2px;
@@ -82,7 +82,12 @@ docs-content {
 
       a {
         color: #e09f16;
-        border-bottom: 1px solid rgba(224, 159, 22, 0.3);
+        border-bottom: 1px solid rgba(224, 159, 22, 0.2);
+
+        &:hover {
+          color: #d68f00;
+          border-bottom: 1px solid rgba(224, 159, 22, 0.3);
+        }
       }
     }
 
@@ -107,7 +112,7 @@ docs-content {
     background: #f5f7fa;
     margin: 0 2px;
     padding: 4px 6px;
-    color: #1b4796;
+    color: #754bff;
     font-family: var(--font-family-code);
     font-size: 12px;
     font-weight: 600;
