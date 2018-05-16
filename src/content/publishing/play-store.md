@@ -8,63 +8,64 @@ nextUrl: '/docs/publishing/desktop-app'
 # Android Play Store
 
 
-## Generating a release build of our app
+## Generating a release build of an app
 
-Before deploying, take care to adjust plugins needed during development that should not be in production mode. For example, it's not recommended to have the debug console plugin enabled, so remove it before generating the release builds:
-
-`ionic cordova plugin rm cordova-plugin-console`
-
-Now, to generate a release build for Android, run the following cli command:
+To generate a release build for Android, run the following cli command:
 
 `ionic cordova build --release android`
 
-This will generate a release build based on the settings in the `config.xml`. An Ionic app will have preset default values in this file, but if you need to customize how your app is built, you can edit this file to fit your preferences.
+This will generate a release build based on the settings in the `config.xml` in the `platforms/android/build/outputs/apk` directory of an app. An Ionic app will have preset default values in this file but this can be changed to customize builds.
 
 ## Signing our APK
 
-We can now find our unsigned APK file in the `platforms/android/build/outputs/apk` directory of our app. First, we need to sign the unsigned APK. If you already have a signing key, skip these steps and use that one instead.
+First, the unsigned APK must be signed. If a signing key has already been generated, skip these steps and use that one instead.
 
+Let’s generate a private key using the keytool command that comes with the the Android SDK:
 
-Let’s generate our private key using the keytool command that comes with the the Android SDK:
+```
+keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000
+```
 
-`keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000`
-
-Once you have ran that command and answered the prompts you should have a file called `my-release-key.keystore` created in the current directory.
+Once that command has been ran and its prompts have been answered a file called `my-release-key.keystore` will be created in the current directory.
 
 <blockquote>
-  <p>Make sure to save this file somewhere safe, if you lose it you won’t be able to submit updates to your app!</p>
+  <p>Make sure to save this file somewhere safe, if it is lost the Google Play Store will not accept updates for this app!</p>
 </blockquote>
 
 To sign the unsigned APK, run the jarsigner tool which is also included in the Android SDK:
 
-`jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore HelloWorld-release-unsigned.apk alias_name`
+```
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore HelloWorld-release-unsigned.apk alias_name
+```
 
-This signs the apk. Finally, we need to run the zip align tool to optimize the APK. The zipalign tool can be found in /path/to/Android/sdk/build-tools/VERSION/zipalign. For example, on OS X with Android Studio installed, zipalign is in ~/Library/Android/sdk/build-tools/VERSION/zipalign:
+This signs the apk. Finally, the zip align tool must be ran to optimize the APK. The zipalign tool can be found in `/path/to/Android/sdk/build-tools/VERSION/zipalign`. For example, on OS X with Android Studio installed, zipalign is in `~/Library/Android/sdk/build-tools/VERSION/zipalign`:
 
 `zipalign -v 4 HelloWorld-release-unsigned.apk HelloWorld.apk`
 
-Now we have our final release binary called HelloWorld.apk and we can release this on the Google Play Store for all the world to enjoy!
+Now we have a final release binary called HelloWorld.apk and this can be released on the Google Play Store for all the world to enjoy!
 
-## Submitting our app to the Google Play Store
+## Submitting an app to the Google Play Store
 
-Now that we have our release APK ready for the Google Play Store, we can create a Play Store listing and upload our APK.
+Now that we have a release APK ready for the Google Play Store, a Play Store listing can be written and the APK can be uploaded.
 
-To start, you’ll need to visit the [Google Play Store Developer Console](https://play.google.com/apps/publish) and create a new developer account.
+To start, visit the [Google Play Store Developer Console](https://play.google.com/apps/publish) and create a new developer account.
 
 <blockquote>
   <p>Making a developer account with Google Play costs 25 US Dollars</p>
 </blockquote>
 
-Once you have a developer account, you can go ahead and click `Create an Application` as shown in the screenshot below:
+Once a developer account has been created, go ahead and click the `Create an Application` as shown in the screenshot below:
 
 ![Create an App button](../assets/img/publishing/newAppGPlay.png)
 
-We then need to edit our store listing (We will upload an APK later). You’ll want to fill out the description for the app along with providing screenshots and additional info.
+The store listing (the APK will be uploaded later). Be sure to fill out the description for the app along with providing screenshots and additional info.
 
-When you are ready, upload the signed release APK we generated above and publish your app. Be patient and your hard work should be live in the wild!
+When ready, upload the signed release APK that was generated above and publish the app. Be patient and all that hard work should be live in the wild!
 
 ## Updating your app
 
-As you develop your app, you’ll want to update it periodically.
+As an app evolves, it will need to be updated. In order for the Google Play Store to accept updated APKs,the config.xml file will need to be edited to increment the version value, then rebuild the app for release following the instructions above.
 
-In order for the Google Play Store to accept updated APKs, you’ll need to edit the config.xml file to increment the version value, then rebuild the app for release following the instructions above.
+<!--<blockquote> TODO Justin: working on this with Matt
+  Want to have instant updates of all client side code? Check out <a href="https://ionicframework.com/pwa" target="_blank">Ionic Pro</a>
+</blockquote>-->
