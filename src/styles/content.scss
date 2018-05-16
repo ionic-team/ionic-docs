@@ -26,6 +26,11 @@ docs-content {
     margin-top: -2em;
     letter-spacing: -.015em;
     margin-bottom: 0;
+
+    code {
+      font-size:16px;
+      color:var(--blackish);
+    }
   }
 
   h4 {
@@ -159,8 +164,8 @@ docs-content {
     }
 
     code {
-      font-size: 14px;
-      font-weight: 600;
+      font-size: 16px;
+      font-weight: 500;
     }
 
     a {

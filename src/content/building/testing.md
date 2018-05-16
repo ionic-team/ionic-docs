@@ -7,9 +7,15 @@ nextUrl: '/docs/building/contributing'
 
 # Testing
 
+<p class="intro" markdown="1">
 When an `ionic/angular` application is generated using the Ionic CLI, it is automatically set up to unit test the application using Jasmine. This is the same setup that is used by the Angular CLI. Refer to the <a href="https://angular.io/guide/testing" target="_blank">Angular Testing Guide</a> for detailed information on unit testing Angular applications.
+</p>
 
-When testing the application, it is best to keep in mind that the goal of testing is not to verify that the code is correct but is to find problems with the code so bugs can be resolved earlier in the development cycle when fixes are less expensive. This is a subtle but important distinction. If we set out to prove that the code is correct, we are more likely to stick to the happy path through the code. If we set out to find problems, we are more likely to more fully exercise the code and find the bugs that are lurking there.
+## Testing Principles
+
+When testing the application, it is best to keep in mind that the goal of testing is not to verify that the code is correct but is to find problems with the code so bugs can be resolved earlier in the development cycle when fixes are less expensive. This is a subtle but important distinction. 
+
+If we set out to prove that the code is correct, we are more likely to stick to the happy path through the code. If we set out to find problems, we are more likely to more fully exercise the code and find the bugs that are lurking there.
 
 ## General Testing Structure
 
@@ -39,7 +45,7 @@ The outer `describe` call states that the `Calculation` service is being tested,
 
 ## Pages and Components
 
-Pages are just Angular components. Thus pages and components are both tested using <a href="https://angular.io/guide/testing#component-test-basics">Angular's Component Testing</a> guidlines.
+Pages are just Angular components. Thus, pages and components are both tested using <a href="https://angular.io/guide/testing#component-test-basics">Angular's Component Testing</a> guidlines.
 
 Since pages and components contain both TypeScript code and HTML template markup it is possible to perform both component class testing and component DOM testing. When a page is created, the template test that is generated looks like this:
 
