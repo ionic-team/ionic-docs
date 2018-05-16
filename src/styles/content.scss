@@ -68,16 +68,28 @@ docs-content {
   }
 
   blockquote {
-    background: #fdf5e4;
+    background: #fff9ed;
     margin: 0;
     padding: 1px 20px;
-    border-radius: 4px;
+    border-radius: 2px 4px 4px 2px;
+    border-left: 4px solid #ffcc5f;
 
     p {
-      color: #b97900;
-      line-height: 1.4;
+      color: #736545;
+      line-height: 1.8;
       font-size: 14px;
-      margin: 16px 0;
+      margin: 15px 0;
+
+      a {
+        color: #e09f16;
+        border-bottom: 1px solid rgba(224, 159, 22, 0.3);
+      }
+    }
+
+    code {
+      background: #f7f1e6;
+      color: #381600;
+      font-weight: 500;
     }
   }
 

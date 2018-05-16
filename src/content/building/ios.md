@@ -11,7 +11,9 @@ nextUrl: '/docs/building/android'
 This guide covers how to deploy Ionic apps to iOS simulators and devices using [Capacitor](/docs/faq/glossary#capacitor) or [Cordova](/docs/faq/glossary#cordova).
 </p>
 
+<p class="intro">
 There are two workflows for running Ionic apps on iOS: [Running with Xcode](#running-with-xcode) and [Running with the Ionic CLI](#running-with-the-ionic-cli). The Xcode approach is generally more stable, but the Ionic CLI approach offers [live-reload](/docs/faq/glossary#livereload) functionality.
+</p>
 
 ## Project Setup
 
