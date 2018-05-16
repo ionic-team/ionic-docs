@@ -37,8 +37,11 @@ docs-menu {
   color: var(--blackish);
 }
 
+.menu__item:hover {
+  cursor: pointer;
+}
+
 .menu__submenu {
-  // display: none;
   margin: 4px 0 6px 8px;
 }
 
