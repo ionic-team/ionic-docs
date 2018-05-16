@@ -15,16 +15,15 @@ export class DocsDocument {
   @Prop() pageClass: string;
   @Prop() onLoaded: (document) => void;
   @Prop() isLoadingTimeout = 1000;
-  @Prop() hash: string = null;
   @State() isLoading = false;
   @State() body: string;
   @State() title: string;
   @State() hideTOC = false;
   @State() frontMatter = {};
   @State() tocHeadings: HeadingStruc[] = [];
+  @State() attributes = {};
 
   loadingTimer = null;
-  scrollPending: string = null;
 
   componentDidLoad() {
     return this.fetchDocument();
@@ -55,21 +54,14 @@ export class DocsDocument {
       }));
   }
 
-  handleNewContent = ({attributes, body, headings}) => {
+  handleNewContent = ({ attributes, body, headings }) => {
     this.clearLoadingTimer();
     this.body = body;
     this.title = attributes.title;
     this.hideTOC = attributes.hideTOC;
     this.frontMatter = attributes;
     this.tocHeadings = this.hideTOC ? [] : headings;
-    this.scrollPending = this.hash;
-    this.onLoaded({
-      ...attributes,
-      body,
-      headings,
-      pageClass: this.pageClass
-    });
-
+    this.attributes = attributes;
   }
 
   handleFetchError = err => {
@@ -77,6 +69,16 @@ export class DocsDocument {
     this.title = '';
     this.hideTOC = true;
     this.body = err.message;
+  }
+
+  componentDidUpdate() {
+    const { attributes, body, tocHeadings: headings, pageClass } = this;
+    this.onLoaded({
+      attributes,
+      body,
+      headings,
+      pageClass
+    });
   }
 
   setLoadingTimer() {
@@ -100,24 +102,12 @@ export class DocsDocument {
     return { attributes, body };
   }
 
-  scrollInToView(el) {
-    if (!el || !el.scrollIntoView) return;
-    el.scrollIntoView();
-    this.scrollPending = null;
-  }
-
   render() {
     if (this.isLoading) {
       return <loading-indicator/>;
     }
 
     const headings = this.tocHeadings.filter(heading => heading.level < 3);
-
-    if (this.scrollPending) {
-      setTimeout(() => {
-        this.scrollInToView(document.querySelector(this.scrollPending));
-      }, 0, this);
-    }
 
     return [
       // <Helmet>
