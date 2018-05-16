@@ -13,7 +13,7 @@ import { HeadingStruc, renderMarkdown } from '../../markdown';
 export class DocsDocument {
   @Prop() path: string;
   @Prop() pageClass: string;
-  @Prop() onLoaded: (document) => void;
+  @Prop() onUpdate: (document) => void;
   @Prop() isLoadingTimeout = 1000;
   @State() isLoading = false;
   @State() body: string;
@@ -73,7 +73,7 @@ export class DocsDocument {
 
   componentDidUpdate() {
     const { attributes, body, tocHeadings: headings, pageClass } = this;
-    this.onLoaded({
+    this.onUpdate({
       ...attributes,
       body,
       headings,

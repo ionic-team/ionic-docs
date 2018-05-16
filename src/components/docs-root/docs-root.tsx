@@ -23,7 +23,7 @@ export class DocsRoot {
     return match && match[1] || 'framework';
   }
 
-  handleDocumentLoad = (document) => {
+  handleDocumentUpdate = (document) => {
     this.previewUrl = document.previewUrl || null;
     this.pageClass = document.pageClass;
     this.setScrollPosition();
@@ -69,7 +69,7 @@ export class DocsRoot {
                   <docs-document
                     ref={node => { this.document = node; }}
                     path={documentPath}
-                    onLoaded={this.handleDocumentLoad}
+                    onUpdate={this.handleDocumentUpdate}
                     pageClass={page}/>
                   <docs-preview url={this.previewUrl} cssText={this.previewCss}/>
               </docs-content>
