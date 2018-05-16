@@ -52,7 +52,6 @@ export class DocsRoot {
         <stencil-route url={['/docs/:document*', '/docs']} routeRender={props => {
           const documentPath = props.match.params.document || 'index';
           const section = this.parseSection(documentPath);
-          const page = documentPath.replace(/\//g, '-');
           const layoutClass = {
             ['is-menu-open']: this.isMenuOpen,
             [`section-${section}`]: true,
@@ -69,8 +68,7 @@ export class DocsRoot {
                   <docs-document
                     ref={node => { this.document = node; }}
                     path={documentPath}
-                    onUpdate={this.handleDocumentUpdate}
-                    pageClass={page}/>
+                    onUpdate={this.handleDocumentUpdate}/>
                   <docs-preview url={this.previewUrl} cssText={this.previewCss}/>
               </docs-content>
             </docs-layout>

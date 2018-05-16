@@ -12,7 +12,6 @@ import { HeadingStruc, renderMarkdown } from '../../markdown';
 })
 export class DocsDocument {
   @Prop() path: string;
-  @Prop() pageClass: string;
   @Prop() onUpdate: (document) => void;
   @Prop() isLoadingTimeout = 1000;
   @State() isLoading = false;
@@ -21,6 +20,7 @@ export class DocsDocument {
   @State() hideTOC = false;
   @State() frontMatter = {};
   @State() tocHeadings: HeadingStruc[] = [];
+  @State() pageClass: string;
   @State() attributes = {};
 
   loadingTimer = null;
@@ -62,6 +62,7 @@ export class DocsDocument {
     this.frontMatter = attributes;
     this.tocHeadings = this.hideTOC ? [] : headings;
     this.attributes = attributes;
+    this.pageClass = this.path.replace(/\//g, '-');
   }
 
   handleFetchError = err => {

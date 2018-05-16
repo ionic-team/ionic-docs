@@ -426,7 +426,6 @@ declare global {
     interface DocsDocument {
       'isLoadingTimeout': number;
       'onUpdate': (document) => void;
-      'pageClass': string;
       'path': string;
     }
   }
@@ -452,7 +451,6 @@ declare global {
     export interface DocsDocumentAttributes extends HTMLAttributes {
       'isLoadingTimeout'?: number;
       'onUpdate'?: (document) => void;
-      'pageClass'?: string;
       'path'?: string;
     }
   }
