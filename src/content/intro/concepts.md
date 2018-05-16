@@ -51,7 +51,7 @@ Projects such as <a href="https://capacitor.ionicframework.com/" target="_blank"
 
 ## Architecture
 
-Talk about the overall architecture principles of Ionic apps.
+Ionic Apps are structured around the idea of Components. Utilizing the developers framework of choice, app's are built from the ground up with components being the key building block. Top level "views" are just components that are accessible through a URL. More detailed guides on how apps should be structured and built are available from the particular framework developers choose to use, such as [Angular's Style Guide](https://angular.io/guide/styleguide)
 
 
 ## Theming
