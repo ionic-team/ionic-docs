@@ -31,6 +31,7 @@ docs-menu {
   display: inline-block;
   line-height: 2;
   transition: transform 200ms ease;
+  margin-bottom: 3px;
 }
 
 .menu__item {
@@ -42,7 +43,7 @@ docs-menu {
 }
 
 .menu__submenu {
-  margin: 4px 0 6px 8px;
+  margin: 0 0 0 8px;
 }
 
 .menu__submenu > li {
@@ -54,6 +55,10 @@ docs-menu {
     80ms margin,
     80ms height,
     80ms opacity;
+}
+
+.menu__submenu.is-open {
+  margin: 4px 0 6px 8px;
 }
 
 .menu__submenu.is-open > li {
