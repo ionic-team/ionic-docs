@@ -12,14 +12,14 @@ Once an app is created by the Ionic CLI, the next step is to start building out 
 </p>
 
 <figure>
-![ionic angular project layout](../assets/img/guides/scaffolding/src-directory-img.png)
+![ionic angular project layout](/docs/assets/img/guides/scaffolding/src-directory-img.png)
 <figcaption>This is based on an ionic/angular project</figcaption>
 </figure>
 
 The `src` directory has items such as the `index.html` file, configuration files for tests, an asset folder for images, and the main `app` directory for the app's code.
 
 
-![app layout](../assets/img/guides/scaffolding/src-directory-app-img.png)
+![app layout](/docs/assets/img/guides/scaffolding/src-directory-app-img.png)
 
 The `app` directory has a few more directories inside of it that hold components, pages, as well as additional features like services. If more features are needed, the CLI can handle this.
 
@@ -33,7 +33,7 @@ For more details on this, run `ionic g --help` from the command line.
 
 Let's look at what happens when a new page is generated in the CLI.
 
-![generate new page](../assets/img/guides/scaffolding/generate-page-no-options.png)
+![generate new page](/docs/assets/img/guides/scaffolding/generate-page-no-options.png)
 
 > What's with the `ng` prefixed output? The ionic CLI uses the underlying framework tooling to stay as close as possible to a vanilla project. For `ionic/angular`, that means the Angular CLI is used under the hood.
 

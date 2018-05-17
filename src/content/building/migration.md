@@ -30,7 +30,7 @@ One of the major changes between an Ionic 3 app and an Ionic 4 app is the over a
 
 For example, if an app is using Angular, that project structure will be exactly what an Angular CLI app would be. This change, while not too difficult to accommodate, helps to keep common patterns and documentation consistent.
 
-![A V4 project on the left and a V3 project on the right](../assets/img/guides/migration/v4-v3-project-setup.png)
+![A V4 project on the left and a V3 project on the right](/docs/assets/img/guides/migration/v4-v3-project-setup.png)
 
 The above comparison shows an example project structure of the newer V4 layout (left). For developers with experience in a vanilla Angular project, this should feel really familiar.
 
@@ -56,7 +56,7 @@ Some of the Ionic lifecycle events are equivalent to Angular lifecycle hooks. Fo
 
 In prior versions of Ionic, overlay components such as Loading, Toast, or Alert were created synchronously. In Ionic V4, these components are all created asynchronously. As a result of this, promises need to be used or async/await.
 
-```ts
+```typescript
 // V3
 showAlert(){
   let alert = this.alertCtrl.create({
@@ -69,7 +69,7 @@ showAlert(){
 
 In V4, a promise is returned instead:
 
-```js
+```typescript
 showAlert(){
   this.alertCtrl.create({
     message: "Hello There",
@@ -102,7 +102,7 @@ Another change is how lazy loading is done in V4 apps.
 
 In V3, lazy loading was done like this:
 
-```js
+```typescript
 // home.page.ts
 @IonicPage({
   segment: 'home'
@@ -120,7 +120,7 @@ export class HomePageModule {}
 
 However, in V4, lazy loading is done via the `loadChildren` method of the Angular router:
 
-```js
+```typescript
 // home.module.ts
 @NgModule({
   imports: [

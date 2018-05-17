@@ -9,7 +9,7 @@ nextUrl: '/docs/building/scaffolding'
 Starting a new Ionic app is incredibly simple. From the command line, run the `ionic start` command and the CLI will handle the rest.
 </p>
 
-![ionic start prompt](../assets/img/guides/starting/terminal-prompt.png)
+![ionic start prompt](/docs/assets/img/guides/starting/terminal-prompt.png)
 
 The CLI will display prompts asking for app name, template, and what project type to use. This information can be provide in the start command as well.
 
@@ -28,7 +28,7 @@ Here, `myApp` is the name of the project, `tabs` is the starter template, and th
 There are many more templates to choose from. The CLI can list them with the command, `ionic start --list`
 
 
-![ionic template list](../assets/img/guides/starting/template-list.png)
+![ionic template list](/docs/assets/img/guides/starting/template-list.png)
 
 
 These templates provide a great starting point for any app and include all the best practices for making a code base scale.
