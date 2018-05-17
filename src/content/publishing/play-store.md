@@ -12,7 +12,9 @@ nextUrl: '/docs/publishing/desktop-app'
 
 To generate a release build for Android, run the following cli command:
 
-`ionic cordova build --release android`
+```shell
+ionic cordova build --release android
+```
 
 This will generate a release build based on the settings in the `config.xml` in the `platforms/android/build/outputs/apk` directory of an app. An Ionic app will have preset default values in this file but this can be changed to customize builds.
 
@@ -40,7 +42,9 @@ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.
 
 This signs the apk. Finally, the zip align tool must be ran to optimize the APK. The zipalign tool can be found in `/path/to/Android/sdk/build-tools/VERSION/zipalign`. For example, on OS X with Android Studio installed, zipalign is in `~/Library/Android/sdk/build-tools/VERSION/zipalign`:
 
-`zipalign -v 4 HelloWorld-release-unsigned.apk HelloWorld.apk`
+```shell
+zipalign -v 4 HelloWorld-release-unsigned.apk HelloWorld.apk
+```
 
 This generates a final release binary called HelloWorld.apk and this can be released on the Google Play Store for all the world to enjoy!
 
