@@ -16,7 +16,7 @@ To generate a release build for Android, run the following cli command:
 
 This will generate a release build based on the settings in the `config.xml` in the `platforms/android/build/outputs/apk` directory of an app. An Ionic app will have preset default values in this file but this can be changed to customize builds.
 
-## Signing our APK
+## Signing an APK
 
 First, the unsigned APK must be signed. If a signing key has already been generated, skip these steps and use that one instead.
 
@@ -42,7 +42,7 @@ This signs the apk. Finally, the zip align tool must be ran to optimize the APK.
 
 `zipalign -v 4 HelloWorld-release-unsigned.apk HelloWorld.apk`
 
-Now we have a final release binary called HelloWorld.apk and this can be released on the Google Play Store for all the world to enjoy!
+This generates a final release binary called HelloWorld.apk and this can be released on the Google Play Store for all the world to enjoy!
 
 ## Submitting an app to the Google Play Store
 
@@ -62,9 +62,9 @@ The store listing (the APK will be uploaded later). Be sure to fill out the desc
 
 When ready, upload the signed release APK that was generated above and publish the app. Be patient and all that hard work should be live in the wild!
 
-## Updating your app
+## Updating an app
 
-As an app evolves, it will need to be updated with new features and fixes. An app can be updated by either submitting a new version to the Google Play Store, or by using a live update service like Ionic Deploy. Using Ionic Deploy, changes can be pushed directly to your users from the Ionic Pro dashboard, without submitting changes to the Play Store. Learn more about Ionic Deploy <a href="https://ionicframework.com/pro/deploy" target="_blank">here</a>.
+As an app evolves, it will need to be updated with new features and fixes. An app can be updated by either submitting a new version to the Google Play Store, or by using a live update service like Ionic Deploy. Using Ionic Deploy, changes can be pushed directly to users from the Ionic Pro dashboard, without submitting changes to the Play Store. Learn more about Ionic Deploy <a href="https://ionicframework.com/pro/deploy" target="_blank">here</a>.
 
 <blockquote>
   <p>
