@@ -35,7 +35,7 @@ Download Android Studio from the <a href="https://developer.android.com/studio/"
 
 Once installed, open Android Studio. The IDE should detect that the Android SDK needs to be installed. In the **SDK Components Setup** screen, finish installing the SDK. Keep note of the **Android SDK Location**.
 
-![Android Studio SDK Setup](../assets/img/installation/android-studio-sdk-setup.png)
+![Android Studio SDK Setup](/docs/assets/img/installation/android-studio-sdk-setup.png)
 
 After the Android SDK is installed, Android Studio can be closed.
 
@@ -76,14 +76,14 @@ Android Virtual Devices (AVDs) are a blueprint that the Android emulator uses to
 
 AVDs are managed with the AVD Manager. The AVD Manager must be accessed inside an Android project in the **Tools** &raquo; **AVD Manager** menu. The **Tools** menu may not be accessible in the main screen. Create an Android project to access the full menu.
 
-![AVD Setup](../assets/img/installation/android-studio-avd-setup.png)
+![AVD Setup](/docs/assets/img/installation/android-studio-avd-setup.png)
 
 Click **Create Virtual Device** and select a suitable device definition. If unsure, choose **Pixel 2 XL**. Then, select a suitable system image. If unsure, choose the latest version. See <a href="https://en.wikipedia.org/wiki/Android_version_history" target="_blank">Android version history</a> for information on Android versions.
 
 Once the AVD is created, launch the AVD into the Android emulator. Keeping the emulator running is the best way to ensure detection while developing Ionic apps for Android.
 
 <figure class="center" style="width: 300px">
-    ![Android Emulator Booting](../assets/img/installation/android-emulator-booting.png)
+    ![Android Emulator Booting](/docs/assets/img/installation/android-emulator-booting.png)
 </figure>
 
 ### Set up an Android Device

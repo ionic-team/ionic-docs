@@ -51,11 +51,11 @@ Before apps can be deployed to iOS simulators and devices, the native project mu
 
 1. <strong>In <b>Project navigator</b>, select the project root to open the project editor. Under the **Identity** section, verify that the Package ID that was set matches the Bundle Identifier.</strong>
 
-    ![Xcode Identity Setup](../assets/img/running/ios-xcode-identity-setup.png)
+    ![Xcode Identity Setup](/docs/assets/img/running/ios-xcode-identity-setup.png)
 
 1. <strong>In the same project editor, under the <b>Signing</b> section, ensure <b>Automatically manage signing</b> is enabled.</strong> Then, select a Development Team. Given a Development Team, Xcode will attempt to automatically prepare provisioning and signing.
 
-    ![Xcode Signing Setup](../assets/img/running/ios-xcode-signing-setup.png)
+    ![Xcode Signing Setup](/docs/assets/img/running/ios-xcode-signing-setup.png)
 
 ## Running with Xcode
 
@@ -97,10 +97,10 @@ Now, when changes are made to the app's source files, web assets are rebuilt and
 
 Safari has Web Inspector support for iOS simulators and devices. Simply open the **Develop** menu and select the simulator or device, then select the Ionic App to open Web Inspector. If the **Develop** menu is hidden, enable it in **Safari** &raquo; **Preferences** &raquo; **Advanced**.
 
-![Safari Web Inspector](../assets/img/running/ios-safari-web-inspector-timelines.png)
+![Safari Web Inspector](/docs/assets/img/running/ios-safari-web-inspector-timelines.png)
 
 ## Viewing Native Logs
 
 Native logs can be found in Xcode in the **Console**. If hidden, enable the Console in **View** &raquo; **Debug Area** &raquo; **Activate Console**.
 
-![Xcode Console](../assets/img/running/ios-xcode-console.png)
+![Xcode Console](/docs/assets/img/running/ios-xcode-console.png)

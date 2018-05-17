@@ -21,7 +21,7 @@ All iOS apps must be code signed, even for development. Luckily, Xcode makes thi
 
 Open Xcode and navigate to **Xcode** &raquo; **Preferences** &raquo; **Accounts**. Add an Apple ID if none are listed. Once logged in, a Personal Team will appear in the team list of the Apple ID.
 
-![Xcode Accounts](../assets/img/installation/ios-xcode-accounts.png)
+![Xcode Accounts](/docs/assets/img/installation/ios-xcode-accounts.png)
 
 ### Creating an iOS Simulator
 
@@ -29,7 +29,7 @@ The iOS simulator emulates iOS devices on Macs. The following documentation is a
 
 Open Xcode and navigate to **Window** &raquo; **Devices and Simulators**. Create an **iPhone X** simulator if one does not already exist.
 
-![iOS Simulators](../assets/img/installation/ios-xcode-simulators-setup.png)
+![iOS Simulators](/docs/assets/img/installation/ios-xcode-simulators-setup.png)
 
 ## ios-sim & ios-deploy
 

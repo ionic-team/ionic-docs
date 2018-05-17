@@ -56,7 +56,7 @@ To start, visit the [Google Play Store Developer Console](https://play.google.co
 
 Once a developer account has been created, go ahead and click the `Create an Application` as shown in the screenshot below:
 
-![Create an App button](../assets/img/publishing/newAppGPlay.png)
+![Create an App button](/docs/assets/img/publishing/newAppGPlay.png)
 
 The store listing (the APK will be uploaded later). Be sure to fill out the description for the app along with providing screenshots and additional info.
 
