@@ -35,30 +35,30 @@ function getFrontMatter(name, version, hasDemo) {
 function generatePropertyList(items) {
   if (!items.length) return '';
 
-  let str = `<h2>Properties</h2> ${r}<dl>\n`;
+  let str = `## Properties ${r}<dl>\n`;
 
   for (let i = 0; i < items.length; i++) {
-    str += `<dt>\r\n<h3>${items[i].name}</h3> \n`;
+    str += `<dt><h3>${items[i].name}</h3>`;
     if (items[i].attr) {
       str += `<strong>Attribute:</strong>  <code>${items[i].attr}</code>\n`;
     }
     if (items[i].type) {
       str += `<strong>Type:</strong> <code>${items[i].type}</code>\n`;
     }
-    str += `</dt>\r\n`;
+    str += `</dt>\n`;
     str += `<dd>${items[i].docs}</dd>${r}`;
   }
 
-  return str + `</dl>${r}\r\n`;
+  return str + `</dl>${r}\n`;
 }
 
 function generateEventsTable(items) {
   if (!items.length) return '';
 
-  let str = `<h2>Events</h2>${r}<dl>`;
+  let str = `## Events${r}<dl>`;
 
   for (let i = 0; i < items.length; i++) {
-    str += `<dt>\r\n<h3>${items[i].event}</h3></dt>\n`;
+    str += `<dt><h3>${items[i].event}${r}</h3></dt>\n`;
     str += `<dd>${items[i].docs}</dd>${r}`;
   }
 
@@ -68,7 +68,7 @@ function generateEventsTable(items) {
 function generateMethodList(items) {
   if (!items.length) return '';
 
-  let str = `<h2>Methods</h2>\n<dl>${r}`;
+  let str = `## Methods${r}<dl>${r}`;
 
   for (let i = 0; i < items.length; i++) {
     str += `<dt><h3>${items[i].name}()</h3></dt>\n`;
@@ -80,7 +80,7 @@ function generateMethodList(items) {
 
 function generateUsage(usage) {
   if (!usage) return '';
-  let str = `<h2>Usage</h2>\n`;
+  let str = `${r}## Usage${r}`;
   str += `<tab-group tabs="${Object.keys(usage).join(',')}">\n`;
   for (const version in usage) {
     str += `<div slot="${version}">\n`;

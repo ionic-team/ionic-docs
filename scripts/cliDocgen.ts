@@ -6,14 +6,14 @@ export function getVersionMarkup(command): string {
   }
 
   if (command.exampleCommands.length) {
-    markdown += '<h2>Usage</h2>\n\n';
+    markdown += '## Usage\n\n';
     markdown += '```shell\n';
     markdown += command.exampleCommands.join('\n');
     markdown += '\n```\n\n';
   }
 
   if (command.description) {
-    markdown += '<h3>Description</h3>\n\n<p>';
+    markdown += '### Description\n\n<p>';
     markdown += command.description
       .replace(/\n\n/g, '</p>\n<p>')
       .replace(/\n\\\[([2-9])/g, '<br>\n\\\[$1');
@@ -28,7 +28,7 @@ export function getVersionMarkup(command): string {
 function generateOptionsList(options) {
   if (!options.length) return '';
 
-  let str = `<h2>Options</h2>\n\n<dl>\n\n`;
+  let str = `## Options\n\n<dl>\n\n`;
 
   for (const option of options) {
     str += `<dt><h4>--${option.name}</h4>`;
