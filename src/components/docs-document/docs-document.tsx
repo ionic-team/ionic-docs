@@ -63,7 +63,6 @@ export class DocsDocument {
     this.hideTOC = attributes.hideTOC;
     this.frontMatter = attributes;
     this.tocHeadings = this.hideTOC ? [] : headings;
-    console.log(headings);
     this.attributes = attributes;
     this.pageClass = this.path.replace(/\//g, '-');
   }
