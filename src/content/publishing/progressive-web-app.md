@@ -6,7 +6,7 @@ nextUrl: '/docs/publishing/app-store'
 # Publishing a Progressive Web App
 
 <p class="intro" markdown="1">
-Because Ionic Apps are built with web technologies, they can run just as well as a PWA as they can a native app. This guide will cover how to deploy an Ionic app as a PWA. Not sure what Progressive Web Apps are? Check out Ionic's <a href="https://ionicframework.com/pwa" target="_blank">PWA Overview</a> for more info.
+Because Ionic Apps are built with web technologies, they can run just as well as a Progressive Web App as they can a native app. Not sure what PWA are? Check out Ionic's <a href="https://ionicframework.com/pwa" target="_blank">PWA Overview</a> for more info.
 </p>
 
 ## Making the App a PWA
@@ -15,56 +15,73 @@ The two main requirements of a PWA are a <a href="https://developers.google.com/
 
 ### Adding @angular/pwa to our Ionic/Angular App
 
-The `@angular/pwa` package will automatically add a <strong>service worker</strong> and a <strong>web manifest</strong> to the app. To add this package to the app run `ng add @angular/pwa` in the apps directory. This will add a service worker (using the [@angular/service-worker package](https://angular.io/guide/service-worker-intro)) and a manifest to the app and ensure it is ready to deploy as a PWA. Once this package has been added run `ionic build --prod` and the `www` directory will be ready to deploy as a PWA!
+The `@angular/pwa` package will automatically add a **service worker** and a **web manifest** to the app. To add this package to the app run:
 
-<blockquote>
-  <p>Be sure to update the web manifest to use the correct app name and icons</p>
-</blockquote>
+```shell
+ng add @angular/pwa
+```
 
-If this app is being deployed to other channels such as Cordova or Electron we also recommend removing the `"serviceWorker": true` flag from the `angular.json` file. After this option has been removed, run `ionic build --prod --service-worker` each time before the app is deployed as a PWA.
+This will add a service worker (using the [@angular/service-worker package](https://angular.io/guide/service-worker-intro)) and a manifest to the app. Once this package has been added run `ionic build --prod` and the `www` directory will be ready to deploy as a PWA.
 
-The app is now ready to be deployed to a web server or web hosting service as a PWA!
+> Be sure to update the web manifest to use the correct app name and icons
 
-<blockquote>
- <p>Some crucial features of PWAs require HTTPS, including Service Workers and many of the modern web APIs available such as geolocation. To ensure a PWA works as it should make sure the app is deployed using HTTPS</p>
-</blockquote>
+If an app is being deployed to other channels such as Cordova or Electron, it's recommended to remove `"serviceWorker": true` flag from the `angular.json` file. The service worker can be generated though by running:
 
+```shell
+ionic build --prod --service-worker
+```
+
+> Note: Features like Service Workers and many JavaScript APIs (such as geolocation) require the app be hosted in a secure context. When deploying an app through a hosting service, be aware they HTTPS will be required to take full advantage of Service Workers.
 
 ## Deploying
 
 ### Firebase
 
-Firebase hosting provides many benefits for PWAs, including awesome response times thanks to Firebase's usage of CDN's, https out of the box and support for [HTTP2 push](https://firebase.googleblog.com/2016/09/http2-comes-to-firebase-hosting.html). Let's go through the steps to host a PWA on Firebase.
+Firebase hosting provides many benefits for Progressive Web Apps, including fast response times thanks to CDN's, HTTPS enabled by default, and support for [HTTP2 push](https://firebase.googleblog.com/2016/09/http2-comes-to-firebase-hosting.html).
 
-First, we need to install the Firebase CLI, to do this run `npm install -g firebase-tools` in a terminal. Now that we have the Firebase CLI installed run `firebase init` in the project. This will set generate a `firebase.json` config file and set up everything needed to deploy the app.
+First, install the Firebase CLI:
 
-<blockquote>
-  <p>`firebase init` will ask a few questions, including a prompt about all URL's being redirected to `/index.html`. Make sure to choose `yes` for this option, but `no` to overwriting your index.html. This will ensure that routing will work correctly in the app.</p>
-</blockquote>
-
-Finally, we need to make sure we set caching headers correctly. To do this lets add the following snippet to the `firebase.json` file:
-
+```shell
+npm install -g firebase-tools
 ```
- "headers": [
+
+With the Firebase CLI installed run `firebase init` in the project.
+This will set generate a `firebase.json` config file and configure the app for deployment.
+
+> `firebase init` will present a few question, including one about redirecting URLs to `/index.html`.
+> Make sure to choose **yes** for this option, but **no** to overwriting your index.html.
+> This will ensure that routing, hard reload, and deeplinking work in the app.
+
+The last thing needed is to make sure caching headers are being set correctly.
+To do this, add the following snippet to the `firebase.json` file:
+
+```json
+"headers": [
+  {
+    "source": "/build/app/**",
+    "headers": [
       {
-        "source": "/build/app/**",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=31536000"
-          }
-        ]
-      },
-      {
-        "source": "sw.js",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "no-cache"
-          }
-        ]
+        "key": "Cache-Control",
+        "value": "public, max-age=31536000"
       }
     ]
+  },
+  {
+    "source": "sw.js",
+    "headers": [
+      {
+        "key": "Cache-Control",
+        "value": "no-cache"
+      }
+    ]
+  }
+]
 ```
 
-Now the PWA is ready to deploy to Firebase. The final step is running `firebase deploy`. After this completes the app will be live on the web! 
+The app can no be deployed by running
+
+```shell
+firebase deploy
+```
+
+After this completes the app will be live.
