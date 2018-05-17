@@ -1,25 +1,32 @@
 export function getPluginMarkup(data): string {
-  const r = '\r\n\r\n';
+  const r = '\n\n';
   const st = '<strong>Type: </strong>';
 
   let markdown = `# ${data.name} ${r}`;
 
-  markdown += data.description + r;
+  if (data.description.match(/\\n?(.*?)\\n/)) {
+    markdown += data.description
+      .replace(/\\n?(.*?)\\n/, '<p class="intro">$1</p>\n\n');
+  } else {
+    markdown += `<p class="intro">${data.description}</p>`;
+  }
+
+  markdown += r;
   markdown += `Repo: [${data.repo}](${data.repo})${r}${r}`;
 
   markdown += `## Installation ${r}`;
-  markdown += `<ol>\r\n<li>Install the Cordova and Ionic Native plugins:\r\n`;
+  markdown += `<ol>\n<li>Install the Cordova and Ionic Native plugins:\n`;
   markdown += `<code-block language="shell">`;
   markdown += data.installation ?
     data.installation : `$ ionic cordova plugin add ${data.cordovaName}`;
-  markdown += `\r\n$ npm install --save @ionic-native/${data.npmName}\r\n`;
-  markdown += `</code-block>\r\n</li>\r\n`;
+  markdown += `\n$ npm install --save @ionic-native/${data.npmName}\n`;
+  markdown += `</code-block>\n</li>\n`;
   markdown += '<li><a href="/docs/native/#Add_Plugins_to_Your_App_Module">';
-  markdown += `Add this plugin to your app's module</a></li>\r\n</ol>${r}${r}`;
+  markdown += `Add this plugin to your app's module</a></li>\n</ol>${r}${r}`;
 
   if (data.platforms) {
     markdown += `### Supported Platforms${r}`;
-    data.platforms.forEach(os => { markdown += `* ${os}\r\n`; });
+    data.platforms.forEach(os => { markdown += `* ${os}\n`; });
     markdown += `${r}${r}### Usage${r}${data.usage}${r}${r}`;
     markdown += `<p><br></p>${r}`;
   }
@@ -30,7 +37,7 @@ export function getPluginMarkup(data): string {
       if (!member) return;
       markdown += `### ${member.name}${r}${member.description}${r}`;
       if (member.params) {
-        markdown += `<dl>\r\n`;
+        markdown += `<dl>\n`;
         member.params.forEach(param => {
           markdown += `<dt><h4>${param.name}</h4>`;
           if (param.type) {
@@ -53,7 +60,7 @@ export function getPluginMarkup(data): string {
       // if (face.comment) markdown += `${face.comment.shortText}${r}`;
 
       if (face.children) {
-        markdown += `<dl>\r\n`;
+        markdown += `<dl>\n`;
         face.children.forEach(child => {
           if (child.kindString !== 'Property') return;
 
@@ -65,13 +72,13 @@ export function getPluginMarkup(data): string {
               markdown += `${st}<code>${child.type.type}</code>`;
             }
           }
-          markdown += `</dt>\r\n<dd>${child.comment && child.comment.shortText}`;
+          markdown += `</dt>\n<dd>${child.comment && child.comment.shortText}`;
           if (child.flags && child.flags.isOptional) {
             markdown += ' <span class="tag">optional</span>';
           }
           markdown += '</dd>';
         });
-        markdown += `\r\n</dl>${r}`;
+        markdown += `\n</dl>${r}`;
       }
 
     });

@@ -7,7 +7,8 @@ export function getComponentMarkup(
   hasDemo = false): string {
 
   let markdown = getFrontMatter(component.tag.replace('ion-', ''), version, hasDemo);
-  markdown += component.readme + '\r\n';
+  markdown += component.readme
+    .replace(/\n\n(.*?)\n\n/, '\n\n<p class="intro">$1</p>\n\n');
   markdown += generateUsage(component.usage);
   markdown += generatePropertyList(component.props);
   markdown += generateEventsTable(component.events);
