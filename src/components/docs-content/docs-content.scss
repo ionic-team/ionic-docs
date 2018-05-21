@@ -1,7 +1,7 @@
 docs-content {
   display: grid;
   grid-area: content;
-  grid-template-columns: 1fr minmax(var(--content-min, 320px), var(--content-max, 720px)) 2fr auto;
+  grid-template-columns: 1fr minmax(var(--content-min, 320px), var(--content-max, 720px)) 1fr auto;
   grid-template-areas: ". document . preview";
   height: calc(100vh - var(--header-height));
   overflow-y: scroll;

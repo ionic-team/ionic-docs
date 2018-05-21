@@ -8,9 +8,56 @@ docs-preview {
   padding: 2rem;
   position: sticky;
   top: 0;
+  width: 100%;
+  transition: 80ms width ease-out;
 
-  @media (max-width: $breakpoint-lg) {
+  .docs-preview_link {
     display: none;
+  }
+
+  @media (max-height: 930px) {
+    // height: 378px;
+    width: calc(380px / 1.2 + 4rem);
+
+    figure {
+      transform: scale3d(.9, .9, 1);
+    }
+  }
+
+  @media (max-width: $breakpoint-lg), (max-height: 850px) {
+    // height: 378px;
+    width: calc(380px / 1.5 + 4rem);
+
+    figure {
+      transform: scale3d(.75, .75, 1);
+    }
+  }
+
+  @media (max-width: 1050px), (max-height: 740px) {
+    // height: 378px;
+    width: calc(380px / 2 + 2rem);
+
+    figure {
+      transform: scale3d(.5, .5, 1);
+    }
+  }
+
+  // eventually we just hide the preview and link to it as a new tab
+  @media (max-width: 930px), (max-height: 500px) {
+    width: 0;
+
+    .docs-preview_link {
+      position: absolute;
+      display: block;
+      right: 1rem;
+      top: 1rem;
+      width: 90px;
+    }
+
+    .docs-preview__toggle,
+    figure {
+      display: none;
+    }
   }
 
   &.hidden {
@@ -46,8 +93,9 @@ docs-preview {
     width: 380px;
     margin: 0 22px;
     position: relative;
+    transform-origin: 50% 0%;
+    transition: 80ms transform ease-out;
     padding: 26px 30px 41px;
-
 
     &::before {
       background: url('/docs/assets/img/device-iphone.png') no-repeat 0 0;

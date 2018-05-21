@@ -60,7 +60,8 @@ export class SitePreviewApp {
           ref={el => this.iframe = el as any}
           onLoad={this.onIframeLoad.bind(this)}
           frameborder="0"></iframe>
-      </figure>
+      </figure>,
+      <a class="docs-preview_link" target="_blank" href={this.url}>See Preview</a>
     ];
   }
 }
