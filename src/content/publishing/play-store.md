@@ -24,7 +24,7 @@ First, the unsigned APK must be signed. If a signing key has already been genera
 
 Let’s generate a private key using the keytool command that comes with the the Android SDK:
 
-```
+```shell
 keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000
 ```
 
@@ -36,7 +36,7 @@ Once that command has been ran and its prompts have been answered a file called 
 
 To sign the unsigned APK, run the jarsigner tool which is also included in the Android SDK:
 
-```
+```shell
 jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore HelloWorld-release-unsigned.apk alias_name
 ```
 
@@ -50,7 +50,7 @@ This generates a final release binary called HelloWorld.apk and this can be rele
 
 ## Submitting an app to the Google Play Store
 
-Now that we have a release APK ready for the Google Play Store, a Play Store listing can be written and the APK can be uploaded.
+Now that a release APK has been generated for the Google Play Store, a Play Store listing can be written and the APK can be uploaded.
 
 To start, visit the [Google Play Store Developer Console](https://play.google.com/apps/publish) and create a new developer account.
 
