@@ -59,7 +59,9 @@ export class SectionSwitch {
           <strong class="section-switch__title">{ item.title }</strong>
           <span class="section-switch__subtitle">{ item.subtitle }</span>
         </div>
-        { item.isActive ? <Checkmark/> : null }
+        <div class="section-switch__active-icon">
+          { item.isActive ? <Checkmark/> : null }
+        </div>
       </stencil-route-link>
     );
   }
