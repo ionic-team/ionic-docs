@@ -1,5 +1,5 @@
 import { Component, Prop, State, Watch } from '@stencil/core';
-// import { Helmet } from '@stencil/helmet';
+import { Helmet } from '@stencil/helmet';
 import frontMatter from 'front-matter';
 import { HeadingStruc, renderMarkdown } from '../../markdown';
 
@@ -113,9 +113,9 @@ export class DocsDocument {
     const headings = this.tocHeadings.filter(heading => heading.level < 3);
 
     return [
-      // <Helmet>
-      //   <title>{ this.title ? `${this.title} - Ionic Docs` : 'Ionic Docs' }</title>
-      // </Helmet>,
+      <Helmet>
+        <title>{ this.title ? `${this.title} - Ionic Docs` : 'Ionic Docs' }</title>
+      </Helmet>,
       <h1>{this.title}</h1>,
       <div class="table-of-contents">
         {(headings.length > 0) && !this.hideTOC ? [
