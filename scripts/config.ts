@@ -13,6 +13,10 @@ export const NATIVE_DIR = process.env.NATIVE_DIR || 'sources/ionic-native';
 export const NATIVE_REPO_URL = process.env.NATIVE_REPO_URL || 'https://github.com/ionic-team/ionic-native.git';
 export const NATIVE_DOCS_DIR = process.env.NATIVE_DOCS_DIR || 'src/content/native';
 
+export const STORAGE_DIR = process.env.STORAGE_DOCS_DIR || 'sources/ionic-storage';
+export const STORAGE_REPO_URL = process.env.STORAGE_DOCS_DIR || 'https://github.com/ionic-team/ionic-storage.git';
+export const STORAGE_DOCS_DIR = process.env.STORAGE_DOCS_DIR || 'src/content/building';
+
 export const VERBOSE = bool(process.env.VERBOSE) || false;
 
 
