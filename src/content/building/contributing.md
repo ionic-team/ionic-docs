@@ -7,7 +7,7 @@ nextUrl: '/docs/building/webview'
 
 # Contributing to Ionic
 
-Thanks for your interest in contributing to the Ionic Framework!
+Thanks for the interest in contributing to the Ionic Framework!
 
 
 ## Contributing Etiquette
