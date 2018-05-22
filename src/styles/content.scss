@@ -264,6 +264,11 @@ docs-content {
     margin-left: 0;
   }
 
+  .table-wrap {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
   table,
   td,
   th {
