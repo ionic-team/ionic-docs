@@ -259,10 +259,13 @@
   }
 }
 
-.section-switch__item--active svg {
+.section-switch__active-icon {
   align-self: center;
+  margin-left: auto;
+}
+
+.section-switch__active-icon svg {
   fill: var(--blue);
   height: 2em;
-  margin-left: auto;
   width: 2em;
 }
