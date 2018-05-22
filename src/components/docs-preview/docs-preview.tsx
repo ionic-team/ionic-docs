@@ -1,4 +1,4 @@
-import { Component, Prop, State, Watch } from '@stencil/core';
+import { Component, Element, Prop, State, Watch } from '@stencil/core';
 
 @Component({
   tag: 'docs-preview',
@@ -9,11 +9,21 @@ export class SitePreviewApp {
   @Prop() cssText: string;
   @State() selected = 'ios';
   @State() fixed = false;
+  @Element() el: HTMLElement;
   iframe: HTMLIFrameElement;
 
   @Watch('cssText')
   onCssTextChange() {
     this.applyStyles();
+  }
+
+  @Watch('url')
+  onUrlChange() {
+    if (this.url) {
+      this.el.classList.remove('hidden');
+    } else {
+      this.el.classList.add('hidden');
+    }
   }
 
   select(platform) {
