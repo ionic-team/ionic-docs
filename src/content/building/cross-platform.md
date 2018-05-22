@@ -8,7 +8,7 @@ nextUrl: '/docs/building/running'
 # Cross Platform
 
 <p class="intro" markdown="1">
-Ionic is built from the ground up to make cross platform development easy. Ionic apps can be deployed to Native Android, iOS, Progressive Web Apps and Electron, all from one codebase. There are some points to keep in mind when optimizing your app to work across these platforms.
+Ionic is built from the ground up to make cross platform development easy. Ionic apps can be deployed to Native Android, iOS, Progressive Web Apps and Electron, all from one codebase. There are some points to keep in mind when optimizing an app to work across these platforms.
 </p>
 
 ## Cordova Plugins
@@ -38,7 +38,7 @@ This bit of code can be incredibly helpful when targeting environments where acc
 
 ### Fallback to browser based APIs
 
-Many native APIs that people tend to use (for example, the File API), are simply available in the browser. The APIs are always improving and catching up to native, so it is recommended to research them. Taking the first two points into consideration, it's fairly easy to create a nice experience that will adapt for the platform an app is run on.
+Many native APIs that people tend to use (for example, the File API), are simply not available in the browser. The APIs are always improving and catching up to native, so it is recommended to research them. Taking the first two points into consideration, it's fairly easy to create a nice experience that will adapt for the platform an app is run on.
 
 
 ## Desktop
