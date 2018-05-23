@@ -65,6 +65,18 @@ export function renderMarkdown(markdown: string, options: RenderOptions): Marked
     return toCodeBlock(code, lang);
   };
 
+  renderer.table = (thead: string, tbody: string) =>
+    `<div class="table-wrap">
+      <table>
+        <thead>
+          ${thead}
+        </thead>
+        <tbody>
+          ${tbody}
+        </tbody>
+      </table>
+    </div>`;
+
   return {
     headings,
     body: marked(markdown, { renderer })

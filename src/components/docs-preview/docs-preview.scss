@@ -11,6 +11,10 @@ docs-preview {
   width: 100%;
   transition: 80ms width ease-out;
 
+  &.hidden {
+    display: none;
+  }
+
   .docs-preview_link {
     display: none;
   }
@@ -45,6 +49,7 @@ docs-preview {
   // eventually we just hide the preview and link to it as a new tab
   @media (max-width: 930px), (max-height: 500px) {
     width: 0;
+    padding: 0;
 
     .docs-preview_link {
       position: absolute;

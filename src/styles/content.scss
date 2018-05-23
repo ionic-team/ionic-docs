@@ -140,7 +140,7 @@ docs-content {
     color: var(--blue);
     text-decoration: none;
     font-weight: 500;
-    transition: .2s all ease;
+    transition: .2s color ease;
 
     &:hover {
       color: #619aff;
@@ -262,6 +262,11 @@ docs-content {
     color: #555;
     padding-left: 32px;
     margin-left: 0;
+  }
+
+  .table-wrap {
+    max-width: 100%;
+    overflow-x: auto;
   }
 
   table,

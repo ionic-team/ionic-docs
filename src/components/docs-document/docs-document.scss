@@ -4,6 +4,10 @@ docs-document {
   position: relative;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: $breakpoint-md) {
+    padding: 1.6rem;
+  }
 }
 
 docs-document > *:first-child {
