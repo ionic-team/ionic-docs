@@ -28,6 +28,11 @@ export async function generate(task) {
   const docs = await npm.getCLIDocs();
   docs['angular'].commands.forEach(command => {
     task.output = `Processing ${command.name}...`;
+
+    // if (command.name === 'ionic cordova run') {
+    //   console.log( command );
+    // }
+
     fs.writeFileSync(
       path.join(
         config.CLI_DOCS_DIR,

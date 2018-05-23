@@ -21,8 +21,18 @@ export async function buildAPIDocs() {
 
 
 export async function getCLIDocs() {
-  vlog('npm installing ');
-  await execp(`npm i && npm run bootstrap && npm run docs`, { cwd: config.CLI_DIR });
+  vlog('npm installing');
+  await execp('npm i', {cwd: config.CLI_DIR});
+  vlog('running bootstrap');
+  await execp('npm run bootstrap', {cwd: config.CLI_DIR});
+  vlog('building CLI docs');
+  await execp(`npm run docs`, {
+    cwd: config.CLI_DIR,
+    env: {
+      ...process.env,
+      FORCE_COLOR: '1'
+    }
+  });
 
   return {
     // 'ionic1': JSON.parse(
