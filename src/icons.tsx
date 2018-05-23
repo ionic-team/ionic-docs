@@ -1,15 +1,12 @@
 export const Close = () => (
-  <svg viewBox="0 0 54 54">
-    <rect transform="rotate(45 27 27)" y="22" width="54" height="10" rx="2"/>
-    <rect transform="rotate(-45 27 27)" y="22" width="54" height="10" rx="2"/>
+  <svg viewBox="0 0 512 512">
+    <path d="M405 136.798L375.202 107 256 226.202 136.798 107 107 136.798 226.202 256 107 375.202 136.798 405 256 285.798 375.202 405 405 375.202 285.798 256z"/>
   </svg>
 );
 
 export const Menu = () => (
-  <svg viewBox="0 0 54 54">
-    <rect y="0" width="54" height="10" rx="2"/>
-    <rect y="22" width="54" height="10" rx="2"/>
-    <rect y="44" width="54" height="10" rx="2"/>
+  <svg viewBox="0 0 512 512">
+    <path d="M64 384h384v-42.666H64V384zm0-106.666h384v-42.667H64v42.667zM64 128v42.665h384V128H64z"/>
   </svg>
 );
 
@@ -31,10 +28,8 @@ export const NewTab = () => (
 );
 
 export const More = () => (
-  <svg viewBox="0 0 54 54">
-    <circle cx="27" cy="7" r="5"/>
-    <circle cx="27" cy="27" r="5"/>
-    <circle cx="27" cy="47" r="5"/>
+  <svg viewBox="0 0 512 512">
+    <path d="M296 136c0-22.002-17.998-40-40-40s-40 17.998-40 40 17.998 40 40 40 40-17.998 40-40zm0 240c0-22.002-17.998-40-40-40s-40 17.998-40 40 17.998 40 40 40 40-17.998 40-40zm0-120c0-22.002-17.998-40-40-40s-40 17.998-40 40 17.998 40 40 40 40-17.998 40-40z"/>
   </svg>
 );
 
