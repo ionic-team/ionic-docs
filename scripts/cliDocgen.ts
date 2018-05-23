@@ -14,7 +14,10 @@ export function getVersionMarkup(command): string {
   if (command.description) {
     markdown += command.description
       .replace(/\n\n/g, '</p>\n<p>')
-      .replace(/\n\\\[([2-9])/g, '<br>\n\\\[$1');
+      .replace(/\n\\\[([2-9])/g, '<br>\n\\\[$1')
+      .replace(/&amp;/g, '&')
+      .replace(/&gt;/g, '>')
+      .replace(/&lt;/g, '<');
     markdown += `\n</p>\n\n`;
   }
 
