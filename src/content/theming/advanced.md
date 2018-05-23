@@ -8,7 +8,7 @@ nextUrl: '/docs/publishing/app-store'
 # Advanced Theming
 
 <p class="intro" markdown="1">
-CSS-based theming enables apps to customize the colors quickly by simply loading a CSS file or changing a few CSS property values.
+CSS-based theming enables apps to customize the colors quickly by loading a CSS file or changing a few CSS property values.
 </p>
 
 ## Color Language
@@ -64,7 +64,7 @@ Application colors are named for their usage throughout components. The followin
 
 ### Stepped Colors
 
-After exploring many applications and themes, we found that most designs are never simply one background color. There are always subtle variations used to imply importance and depth throughout the design. In order to accommodate this pattern, we created stepped colors.
+After exploring many applications and themes, we found that most designs are never one background color. There are always subtle variations used to imply importance and depth throughout the design. In order to accommodate this pattern, we created stepped colors.
 
 There are only two colors that are used throughout the Ionic component collection. These are `--ion-text-color` and `--ion-background-color`.
 
@@ -140,7 +140,7 @@ Generally, color steps are a mirror image of each other. For example, `--ion-tex
 
 The Color Map is a collection of abstract colors used throughout components. Colors in this collection are also given a CSS class to make them easy to apply to components.
 
-For example, to apply the primary color to a component, one can simply set the component color property to primary.
+For example, to apply the primary color to a component, one can set the component color property to primary.
 
 ```html
 <ion-button color="primary">Primary</ion-button>
@@ -162,7 +162,7 @@ The following is a list of all the top level colors in the color map:
 
 ### Layered Colors
 
-Colors in the color map are considered layered, as they are not simply a single hex value. When you apply ‘primary’ to a button, not only does the button’s background color change, but its text, along with hover and active background colors, change as well. This is just one example of where a layered color is applied.
+Colors in the color map are considered layered, as they are not a single hex value. When you apply ‘primary’ to a button, not only does the button’s background color change, but its text, along with hover and active background colors, change as well. This is just one example of where a layered color is applied.
 
 In order to update a layered color, one should set all the layers at the same time. A layered color is made up of a base, contrast, shade, and tint color. For example, `--ion-color-primary` would consist of the following CSS properties:
 

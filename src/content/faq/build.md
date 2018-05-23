@@ -26,7 +26,6 @@ class MyDirective {
 }
 ```
 
-
 ## Common Errors
 
 ### Cannot resolve all parameters for 'YourClass'(?). Make sure that all the parameters are decorated with Inject or have valid type annotations and that 'YourClass' is decorated with Injectable.

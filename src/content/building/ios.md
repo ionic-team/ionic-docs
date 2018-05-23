@@ -95,7 +95,7 @@ Now, when changes are made to the app's source files, web assets are rebuilt and
 
 ## Using Safari Web Inspector
 
-Safari has Web Inspector support for iOS simulators and devices. Simply open the **Develop** menu and select the simulator or device, then select the Ionic App to open Web Inspector. If the **Develop** menu is hidden, enable it in **Safari** &raquo; **Preferences** &raquo; **Advanced**.
+Safari has Web Inspector support for iOS simulators and devices. Open the **Develop** menu and select the simulator or device, then select the Ionic App to open Web Inspector. If the **Develop** menu is hidden, enable it in **Safari** &raquo; **Preferences** &raquo; **Advanced**.
 
 ![Safari Web Inspector](/docs/assets/img/running/ios-safari-web-inspector-timelines.png)
 

@@ -17,7 +17,7 @@ In a native environment, it's common to make calls to some type of native API. B
 
 ### Use Ionic Native plugins
 
-<strong>Ionic Native</strong> has its own internal logic to detect if it is inside of a native environment. Instead of throwing a runtime error, it will simply print a warning of the situation if it is not and Cordova plugins are not available. This way the app won’t break and will continue to work - although without the native functionality.
+<strong>Ionic Native</strong> has its own internal logic to detect if it is inside of a native environment. Instead of throwing a runtime error, it will print a warning of the situation if it is not and Cordova plugins are not available. This way the app won’t break and will continue to work - although without the native functionality.
 
 ### Detect native platform
 
@@ -38,7 +38,7 @@ This bit of code can be incredibly helpful when targeting environments where acc
 
 ### Fallback to browser based APIs
 
-Many native APIs that people tend to use (for example, the File API), are simply not available in the browser. The APIs are always improving and catching up to native, so it is recommended to research them. Taking the first two points into consideration, it's fairly easy to create a nice experience that will adapt for the platform an app is run on.
+Many native APIs that people tend to use (for example, the File API), are not available in the browser. The APIs are always improving and catching up to native, so it is recommended to research them. Taking the first two points into consideration, it's fairly easy to create a nice experience that will adapt for the platform an app is run on.
 
 
 ## Desktop

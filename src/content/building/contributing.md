@@ -20,7 +20,7 @@ Please see the [Contributor Code of Conduct](https://github.com/ionic-team/ionic
 
 * Have a question about using the framework, please ask on the [Ionic Forum](http://forum.ionicframework.com/) or in the [Ionic Worldwide Slack](http://ionicworldwide.herokuapp.com/) group.
 
-* It is required to clearly describe the steps necessary to reproduce the issue that is being ran into. Although we would love to help users as much as possible, diagnosing issues without clear reproduction steps is extremely time-consuming and simply not sustainable.
+* It is required to clearly describe the steps necessary to reproduce the issue that is being ran into. Although we would love to help users as much as possible, diagnosing issues without clear reproduction steps is extremely time-consuming and not sustainable.
 
 * The issue list of this repository is exclusively for bug reports and feature requests. Non-conforming issues will be closed immediately.
 

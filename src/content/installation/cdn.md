@@ -8,7 +8,7 @@ nextUrl: '/docs/installation/environment'
 # Using Ionic from a CDN
 
 <p class="intro" markdown="1">
-Because Ionic Framework is built with web components, it is possible to simply link to Ionic from a CDN and use Ionic components in any HTML file. Let's dive into how this works:
+Because Ionic Framework is built with web components, it is possible to link to Ionic from a CDN and use Ionic components in any HTML file. Let's dive into how this works:
 </p>
 
 ## Ionic Framework from a CDN
@@ -23,7 +23,7 @@ With this it's possible to use all of the Ionic components without having to ins
 
 <blockquote>
   <p>
-    This does not install Angular or any frameworks. This simply allows use of Ionic components without having to install anything.
+    This does not install Angular or any frameworks. This allows use of Ionic components without having to install anything.
   </p>
 </blockquote>
 

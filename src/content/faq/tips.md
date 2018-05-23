@@ -44,7 +44,7 @@ When an app runs, it will pause at this function. From the, the devtools can be 
 
 ## Changing Mode
 
-By default, when an app is viewed in the browser, Ionic will apply the MD mode. However, since Ionic components adapt according to their platform, it is helpful to be able to view what this app looks like on iOS. To do this, simply add `?ionic:mode=ios` to the URL where the app is being served: `http://localhost:8100/?ionic:mode=ios<`.
+By default, when an app is viewed in the browser, Ionic will apply the MD mode. However, since Ionic components adapt according to their platform, it is helpful to be able to view what this app looks like on iOS. To do this, add `?ionic:mode=ios` to the URL where the app is being served: `http://localhost:8100/?ionic:mode=ios<`.
 
 > However, this will not change how the browser sees which platform is currently being used. Platform is determined by device detection and inspecting the user-agent. So to change the platform, the user-agent must be changed. To do this, open up Chrome DevTools, and toggle device mode on with <kbd>Ctrl+Shift+i</kbd>(<kbd>Cmd+Option+I</kbd> on Mac).
 

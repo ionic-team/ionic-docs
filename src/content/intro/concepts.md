@@ -26,7 +26,7 @@ By making subtle design changes between the platforms, users are provided with a
 
 ## Navigation
 
-Traditional websites use a linear history, meaning that the user navigates to a page and can hit the back button to navigate back. An example of this is clicking around Wikipedia where the user is simply going forward and backward on the browser's linear history stack.
+Traditional websites use a linear history, meaning that the user navigates to a page and can hit the back button to navigate back. An example of this is clicking around Wikipedia where the user is going forward and backward on the browser's linear history stack.
 
 ### Push / Pop
 

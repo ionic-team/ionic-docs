@@ -73,7 +73,7 @@ Now, when changes are made to the app's source files, web assets are rebuilt and
 
 ## Using Chrome DevTools to debug your app
 
-Chrome has devtools support for Android simulators and devices. Simply go to `chrome://inspect` in Chrome while the simulator is running or a device is connected to the computer and select the app that needs to be debugged.
+Chrome has devtools support for Android simulators and devices. Go to `chrome://inspect` in Chrome while the simulator is running or a device is connected to the computer and select the app that needs to be debugged.
 
 ## Viewing Native Logs
 
