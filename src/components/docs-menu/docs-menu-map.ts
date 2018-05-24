@@ -27,12 +27,12 @@ export const main = {
     'Web View': '/docs/building/webview',
     'Ionic Storage': '/docs/building/storage'
   },
-  'Components': '/docs/components',
+  //  'Components': '/docs/components',
   'Layout': {
-    'Stucture': '/docs/layout/structure',
+    //    'Stucture': '/docs/layout/structure',
     'Responsive Grid': '/docs/layout/grid',
-    'CSS Utilities': '/docs/layout/css-utilities',
-    'RTL Support': '/docs/layout/rtl'
+    'CSS Utilities': '/docs/layout/css-utilities'
+    //    'RTL Support': '/docs/layout/rtl'
   },
   'Theming': {
     'Basics': '/docs/theming/basics',
