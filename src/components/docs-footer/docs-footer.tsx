@@ -6,6 +6,7 @@ import { Component, Prop, State, Watch } from '@stencil/core';
 })
 export class SiteFooter {
   @Prop() frontmatter: any = {};
+  @Prop() path: string;
   @State() previous?: {
     text: string,
     url: string
@@ -37,6 +38,15 @@ export class SiteFooter {
     } :  null;
   }
 
+  getEditLink(path: string) {
+    const excludePattern = /^(api|cli|native)\/.+/;
+    if (excludePattern.test(path)) {
+      return 'https://github.com/ionic-team/ionic';
+    } else {
+      return `https://github.com/ionic-team/ionic-docs/tree/master/src/content/${path}.md`;
+    }
+  }
+
   render() {
     if (!this.show) {
       return null;
@@ -57,7 +67,7 @@ export class SiteFooter {
       </nav>
       <p>
         See an error or want to help us improve the documentation? &nbsp;
-        <a href="https://github.com/ionic-team/ionic-site/" target="_blank"
+        <a href={this.getEditLink(this.path)} target="_blank"
         title="Ionic Docs Issues on Github">Submit an edit on GitHub!</a>
       </p>
     </footer>;

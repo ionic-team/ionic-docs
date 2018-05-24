@@ -132,7 +132,7 @@ export class DocsDocument {
         ] : null }
       </div>,
       <main innerHTML={this.body}/>,
-      <docs-footer frontmatter={this.frontMatter}/>
+      <docs-footer frontmatter={this.frontMatter} path={this.path}/>
     ];
   }
 }

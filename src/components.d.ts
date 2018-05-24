@@ -462,6 +462,7 @@ declare global {
   namespace StencilComponents {
     interface DocsFooter {
       'frontmatter': any;
+      'path': string;
     }
   }
 
@@ -485,6 +486,7 @@ declare global {
   namespace JSXElements {
     export interface DocsFooterAttributes extends HTMLAttributes {
       'frontmatter'?: any;
+      'path'?: string;
     }
   }
 }
