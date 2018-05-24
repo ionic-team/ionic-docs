@@ -169,7 +169,7 @@ nextUrl: '/docs/faq/build'
   <section id="transpiler">
     <a href="#transpiler"><h3>Transpiler</h3></a>
     <p>
-    Transpilation is the process of converting code from one language to another language prior to execution. Typically, a transpiler will convert a high-level language to another high-level language. The most common type of <em>transpilation</em> in the Ionic framework is converting <a href="#es2015-es6">ES2015/ES6</a> (<a href="#typescript">TypeScript</a>) to <a href="#es5">ES5</a> (traditional JavaScript).
+    Transpilation is the process of converting code from one language to another language prior to execution. Typically, a transpiler will convert a high-level language to another high-level language. The most common type of <em>transpilation</em> in Ionic Framework is converting <a href="#es2015-es6">ES2015/ES6</a> (<a href="#typescript">TypeScript</a>) to <a href="#es5">ES5</a> (traditional JavaScript).
     </p>
   </section>
 
