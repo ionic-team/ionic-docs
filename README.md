@@ -4,22 +4,26 @@
 
 This is the home for the v4+ [Ionic Framework](https://ionicframework.com) docs.
 
-## Editors
+## Developing
 
-The site content is built from markdown files in `src/docs-content`. Markdown
-files created there will automatically be turned in to routes based on their
-relative place in the directory.
+Install dependencies by running `npm install` and then start the development server with `npm run dev`. **Note** that you'll need recent versions of npm (5.8+) and Node (8+).
 
-Refference pages derived from source code like the API, Native, and some of the
-CLI pages are automatically created when the server starts and are not part of
-this project. To generate these pages locally, run `npm run api-scripts-build`
-to compile the scripts and `npm run api-docs` to generate them. Note, this
-command takes several minutes to run.
+## Editing
 
-## Contributing
+The docs content is written as markdown and lives in [`src/content`](./src/content). The content directory maps directly to routes on the site. (`src/content/intro.md` -> `/docs/intro`) In lieu of a style guide, temporarily, please refer to existing docs for examples of preferred style.
 
-Ensure you're using recent versions of `npm 5.8+` and `node 8+`.
+## Directory Structure
 
-Then run `npm install`, and then `npm run dev` to launch the site in development mode.
+The repo consists of three main top-level directories: `scripts`, `server`, and `src`. The `scripts/` directory holds build scripts for fetching and generating API reference docs from other Ionic repositories. You should not need to change it. The `server/` directory holds the source for the production server. The `src/` directory contains the main Stencil app's components and styles.
 
-.
+```sh
+ionic-docs/
+├── scripts/
+├── server/
+└── src/
+    └── content/
+```
+
+### Content
+
+Markdown content living in `src/content/` is mapped to routes based on the file path. So, a markdown document at `src/content/intro.md` is available on the docs site at `/docs/intro`. Reference content, such as API and CLI docs, is sourced from separate repos and should be edited there.
