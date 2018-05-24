@@ -82,12 +82,12 @@ function generateMethodList(items) {
 function generateUsage(usage) {
   if (!usage) return '';
   let str = `${r}## Usage${r}`;
-  str += `<tab-group tabs="${Object.keys(usage).join(',')}">\n`;
+  str += `<div>\n<tab-group tabs="${Object.keys(usage).join(',')}">\n`;
   for (const version in usage) {
     str += `<div slot="${version}">\n`;
     str += renderMarkdown(usage[version], {disableHtmlPreviews: true}).body;
     str += `\n</div>\n`;
   }
-  return str + `</tab-group>\n`;
+  return str + `</tab-group>\n</div>\n\n`;
 }
 
