@@ -1,4 +1,4 @@
-import * as fs from 'fs';
+import { existsSync } from 'fs';
 import Listr from 'listr';
 import { generate  as apiDocs } from './api';
 import { generate  as cliDocs } from './cli';
@@ -36,7 +36,7 @@ const tasks = new Listr([
         },
         {
           title: 'Storage Docs',
-          task: (ctx, task) => tryToRun(nativeDocs, task, 'Storage', STORAGE_DOCS_DIR)
+          task: (ctx, task) => tryToRun(storageDocs, task, 'Storage', STORAGE_DOCS_DIR)
         }
       ], {concurrent: true});
     }
@@ -71,7 +71,7 @@ async function tryToRun(func: (task) => void, task, name: string, outDir?: strin
     await func(task);
   } catch (error) {
     // note if outDir is not provided throw any time the command fails
-    if (!outDir || !fs.existsSync(outDir)) {
+    if (!outDir || !existsSync(outDir)) {
       throw error;
     } else {
       console.log(error);

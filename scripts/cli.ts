@@ -1,12 +1,12 @@
-import * as fs from 'fs';
-import * as path from 'path';
+import { existsSync, mkdirSync, writeFileSync } from 'fs';
+import { join } from 'path';
 import * as config from './config';
 import * as docgen from './cliDocgen';
 import * as git from './git';
 import * as npm from './npm';
 import * as utils from './utils';
 
-const menuPath = 'src/components/docs-menu/cli-menu.ts';
+const menuPath = join('src/components/docs-menu/cli-menu.ts');
 const menuHeader = '/* tslint:disable */\n\nexport const cliMenu = ';
 const menuFooter = ';\n';
 
@@ -20,8 +20,8 @@ export async function generate(task) {
     config.CLI_REPO_URL
   );
 
-  if (!fs.existsSync(config.CLI_DOCS_DIR)) {
-    fs.mkdirSync(config.CLI_DOCS_DIR);
+  if (!existsSync(config.CLI_DOCS_DIR)) {
+    mkdirSync(config.CLI_DOCS_DIR);
   }
 
   task.output = 'NPM Installing & Building...';
@@ -33,8 +33,8 @@ export async function generate(task) {
     //   console.log( command );
     // }
 
-    fs.writeFileSync(
-      path.join(
+    writeFileSync(
+      join(
         config.CLI_DOCS_DIR,
         `${urlName(command.name)}.md`
       ),
@@ -64,7 +64,7 @@ function generateNav(commands) {
     commmandList[prettyName(commands[i].name)] = `/docs/cli/${urlName(commands[i].name)}`;
   }
 
-  fs.writeFileSync(
+  writeFileSync(
     menuPath,
     `${menuHeader}${JSON.stringify(commmandList, null, '  ')}${menuFooter}`
   );

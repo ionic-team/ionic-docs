@@ -1,15 +1,22 @@
-import * as fs from 'fs';
+import { existsSync } from 'fs';
 import * as semver from 'semver';
+import { join } from 'path';
 
 import * as config from './config';
-import { execp, vlog } from './utils';
+import { deleteFolderRecursive, execp, vlog } from './utils';
 
 export async function ensureLatestMaster(
   dir: string,
   url: string,
   branch = 'master'
 ): Promise<void> {
-  if (!fs.existsSync(dir)) {
+  // make sure dir, if exists, is a valid git project
+  if (existsSync(dir) && !existsSync(join(dir, '.git'))) {
+    vlog('Removing non-git directory in sources');
+    deleteFolderRecursive(dir);
+  }
+
+  if (!existsSync(dir)) {
     // console.log(`Cloning repo ${url}\r\nThis may take a few mins...`);
     await execp(`git clone ${url} ${dir}`);
     if (branch !== 'master') {

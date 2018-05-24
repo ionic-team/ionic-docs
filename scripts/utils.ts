@@ -1,6 +1,17 @@
 import { SpawnOptions, exec } from 'child_process';
-import * as fs from 'fs';
-import * as path from 'path';
+import {
+  createReadStream,
+  createWriteStream,
+  existsSync,
+  lstatSync,
+  mkdirSync,
+  readFileSync,
+  readdirSync,
+  rmdirSync,
+  unlinkSync,
+  writeFileSync
+} from 'fs';
+import { basename, join } from 'path';
 import * as util from 'util';
 
 import * as semver from 'semver';
@@ -12,33 +23,33 @@ export function copyDirectory(source, target) {
   let files = [];
 
   // check if folder needs to be created or integrated
-  const targetFolder = path.join(target, path.basename(source));
-  if (!fs.existsSync(targetFolder)) {
-    fs.mkdirSync(targetFolder);
+  const targetFolder = join(target, basename(source));
+  if (!existsSync(targetFolder)) {
+    mkdirSync(targetFolder);
   }
 
   // copy
-  if (fs.lstatSync(source).isDirectory()) {
-    files = fs.readdirSync(source);
+  if (lstatSync(source).isDirectory()) {
+    files = readdirSync(source);
     for (let i = 0; i < files.length; i++) {
-      const curSource = path.join(source, files[i]);
-      if (fs.lstatSync(curSource).isDirectory()) {
+      const curSource = join(source, files[i]);
+      if (lstatSync(curSource).isDirectory()) {
         copyDirectory(curSource, targetFolder);
       } else {
         // async
-        copyFile(curSource, path.join(targetFolder, files[i]));
+        copyFile(curSource, join(targetFolder, files[i]));
       }
     }
   }
 }
 
 export function copyFileSync(source, dest, hook) {
-  if (!fs.existsSync(source)) {
+  if (!existsSync(source)) {
     vlog('Cannot copy - File does not exist ', source);
     return false;
   }
   vlog('Copying file syncronously ', source);
-  let fileData = fs.readFileSync(source);
+  let fileData = readFileSync(source);
 
   if (typeof hook === 'function') {
     // note, changing fileData from buffer to string
@@ -51,17 +62,17 @@ export function copyFileSync(source, dest, hook) {
   pathArray.pop();
   const parentDirectory = pathArray.join('/');
   // console.log(dest, parentDirectory)
-  if (!fs.existsSync(parentDirectory)) {
-    fs.mkdirSync(parentDirectory);
+  if (!existsSync(parentDirectory)) {
+    mkdirSync(parentDirectory);
   }
 
-  fs.writeFileSync(dest, fileData);
+  writeFileSync(dest, fileData);
   return true;
 }
 
 export function copyFile(source, target) {
-  const rd = fs.createReadStream(source);
-  const wr = fs.createWriteStream(target);
+  const rd = createReadStream(source);
+  const wr = createWriteStream(target);
   return new Promise(function(resolve, reject) {
     rd.on('error', reject);
     wr.on('error', reject);
@@ -80,8 +91,8 @@ export function filterParentDirectory(path) {
 }
 
 export async function preCheck() {
-  if (!fs.existsSync(config.API_DOCS_DIR)) {
-    fs.mkdirSync(config.API_DOCS_DIR);
+  if (!existsSync(config.API_DOCS_DIR)) {
+    mkdirSync(config.API_DOCS_DIR);
   }
 
   return (await validateNPMVersion()) && validateNodeVersion(process.version);
@@ -119,4 +130,21 @@ export function validateNodeVersion(version: string) {
     );
   }
   return true;
+}
+
+export function deleteFolderRecursive(path) {
+  if (!path || path === '/') {
+    throw(new Error('Refusing to delete system root'));
+  }
+  if (existsSync(path)) {
+    readdirSync(path).forEach(function(file, index) {
+      const curPath = join(path, file);
+      if (lstatSync(curPath).isDirectory()) { // recurse
+        deleteFolderRecursive(curPath);
+      } else { // delete file
+        unlinkSync(curPath);
+      }
+    });
+    rmdirSync(path);
+  }
 }

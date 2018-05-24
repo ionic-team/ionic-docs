@@ -1,5 +1,5 @@
-import * as fs from 'fs';
-import * as path from 'path';
+import { readFileSync, writeFileSync } from 'fs';
+import { join } from 'path';
 import * as config from './config';
 import { getMarkup } from './storageDocgen';
 import * as git from './git';
@@ -33,8 +33,8 @@ export async function generate(task) {
 
   console.log(storageInfo.name);
 
-  fs.writeFileSync(
-    path.join(config.STORAGE_DOCS_DIR, 'storage.md'),
+  writeFileSync(
+    join(config.STORAGE_DOCS_DIR, 'storage.md'),
     getMarkup(storageInfo)
   );
 
@@ -45,13 +45,13 @@ export async function generate(task) {
 async function getTypeDoc() {
   vlog('generating storage docs json');
   await execp([
-    `cd ${config.STORAGE_DIR} && ../../node_modules/.bin/typedoc`,
-    '--json dist/docs.json --mode modules',
-    'src/storage.ts'
+    `cd ${config.STORAGE_DIR} && ${join('../../node_modules/.bin/typedoc')}`,
+    `--json ${join('dist/docs.json')} --mode modules`,
+    join('src/storage.ts')
   ].join(' '));
 
   return JSON.parse(
-    fs.readFileSync(`${config.STORAGE_DIR}/dist/docs.json`, `utf8`)
+    readFileSync(join(config.STORAGE_DIR, '/dist/docs.json'), `utf8`)
   );
 }
 

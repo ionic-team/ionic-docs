@@ -1,4 +1,4 @@
-import * as fs from 'fs';
+import { readFileSync } from 'fs';
 import * as path from 'path';
 
 import * as config from './config';
@@ -15,7 +15,7 @@ export async function buildAPIDocs() {
   vlog('building');
   await execp(`cd ${config.IONIC_DIR}/core && npm run build.docs.json`);
   return JSON.parse(
-    fs.readFileSync(`${config.IONIC_DIR}/core/dist/docs.json`, `utf8`)
+    readFileSync(`${config.IONIC_DIR}/core/dist/docs.json`, `utf8`)
   );
 }
 
@@ -36,13 +36,13 @@ export async function getCLIDocs() {
 
   return {
     // 'ionic1': JSON.parse(
-    //   fs.readFileSync(`${config.CLI_DIR}/docs/ionic1.json`, `utf8`)
+    //   readFileSync(`${config.CLI_DIR}/docs/ionic1.json`, `utf8`)
     // ),
     // 'ionic-angular': JSON.parse(
-    //   fs.readFileSync(`${config.CLI_DIR}/docs/ionic-angular.json`, `utf8`)
+    //   readFileSync(`${config.CLI_DIR}/docs/ionic-angular.json`, `utf8`)
     // ),
     'angular': JSON.parse(
-      fs.readFileSync(`${config.CLI_DIR}/docs/angular.json`, `utf8`)
+      readFileSync(`${config.CLI_DIR}/docs/angular.json`, `utf8`)
     )
   };
 }

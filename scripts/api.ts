@@ -1,4 +1,11 @@
-import * as fs from 'fs';
+import {
+  existsSync,
+  lstatSync,
+  mkdirSync,
+  readFileSync,
+  readdirSync,
+  writeFileSync
+} from 'fs';
 import { join } from 'path';
 import * as util from 'util';
 
@@ -49,7 +56,7 @@ export async function generate(task) {
     const DOCS_DEST = join(config.API_DOCS_DIR, sv.version);
     // skip this version if it already exists.
     // delete the directory in src/api/ to force a rebuild
-    if (fs.existsSync(DOCS_DEST)) {
+    if (existsSync(DOCS_DEST)) {
       task.output = `Skipping existing API docs for ${sv.version}`;
       // continue;
     }
@@ -82,8 +89,8 @@ function copyFiles(components, dest, version = 'latest') {
   utils.vlog(`Copying ${components.length} files`);
   let hasDemo = false;
 
-  if (!fs.existsSync(dest)) {
-    fs.mkdirSync(dest);
+  if (!existsSync(dest)) {
+    mkdirSync(dest);
   }
 
   for (let i = 0; i < components.length; i++) {
@@ -105,7 +112,7 @@ function copyFiles(components, dest, version = 'latest') {
 
     // copying component markdown
     utils.vlog('Generating page: ', componentName);
-    fs.writeFileSync(
+    writeFileSync(
       join(dest, `${componentName}.md`),
       docgen.getComponentMarkup(components[i], version, hasDemo)
     );
@@ -114,7 +121,7 @@ function copyFiles(components, dest, version = 'latest') {
 
 // Upsert the given version's navigation
 function generateNav(menuPath, components, version) {
-  let file = fs.readFileSync(menuPath).toString('utf8');
+  let file = readFileSync(menuPath).toString('utf8');
   file = file.replace(menuHeader, '').replace(menuFooter, '');
 
   const menu = JSON.parse(file);
@@ -127,20 +134,20 @@ function generateNav(menuPath, components, version) {
 
   menu[version] = componentsList;
   const ts = `${menuHeader}${JSON.stringify(menu, null, '  ')}${menuFooter}`;
-  fs.writeFileSync(menuPath, ts);
+  writeFileSync(menuPath, ts);
 }
 
 function getUsage(componentName) {
   const dir = join(ionicComponentsDir, componentName, 'usage');
   // return empty if the usage directory doesn't exist
-  if (!fs.existsSync(dir) || !fs.lstatSync(dir).isDirectory()) {
+  if (!existsSync(dir) || !lstatSync(dir).isDirectory()) {
     return null;
   }
   // return an object of usage markdown files
-  const files = fs.readdirSync(dir);
+  const files = readdirSync(dir);
   const usage = {};
   for (const i in files) {
-    usage[files[i].replace('.md', '')] = fs.readFileSync(join(dir, files[i]), 'utf8');
+    usage[files[i].replace('.md', '')] = readFileSync(join(dir, files[i]), 'utf8');
   }
   return usage;
 }

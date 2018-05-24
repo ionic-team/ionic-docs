@@ -1,13 +1,13 @@
-import * as fs from 'fs';
-import * as path from 'path';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs';
+import { join } from 'path';
 import * as config from './config';
 import * as docgen from './nativeDocgen';
 import * as git from './git';
 import * as npm from './npm';
 import { execp, vlog } from './utils';
 
-const distList = `${config.NATIVE_DIR}/dist/@ionic-native`;
-const menuPath = 'src/components/docs-menu/native-menu.ts';
+const distList =  join(config.NATIVE_DIR, '/dist/@ionic-native');
+const menuPath = join('src/components/docs-menu/native-menu.ts');
 const menuHeader = '/* tslint:disable:quotemark */\n\nexport const nativeMenu = ';
 
 const navList = {'Overview': '/docs/native'};
@@ -39,7 +39,7 @@ export async function generate(task) {
   // write nav
   task.output = 'Generating Nav...';
   const ts = `${menuHeader}${JSON.stringify(navList, null, '  ')};\n`;
-  fs.writeFileSync(menuPath, ts);
+  writeFileSync(menuPath, ts);
 
   const endTime = new Date().getTime();
   task.output = `Native Docs copied in ${endTime - startTime}ms`;
@@ -48,13 +48,13 @@ export async function generate(task) {
 async function getTypeDoc() {
   vlog('generating native docs json');
   await execp([
-    `cd ${config.NATIVE_DIR} && ../../node_modules/.bin/typedoc`,
-    '--json dist/docs.json --mode modules',
-    'src/@ionic-native/plugins/*/index.ts'
+    `cd ${config.NATIVE_DIR} && ${join('../../node_modules/.bin/typedoc')}`,
+    `--json ${join('dist/docs.json')} --mode modules`,
+    `${join('src/@ionic-native/plugins/*/index.ts')}`
   ].join(' '));
 
   return JSON.parse(
-    fs.readFileSync(`${config.NATIVE_DIR}/dist/docs.json`, `utf8`)
+    readFileSync(join(config.NATIVE_DIR, '/dist/docs.json'), `utf8`)
   );
 }
 
@@ -64,14 +64,14 @@ function processPlugin(tsData, task) {
   const plugin = preparePluginData(tsData);
   task.output = `Processing ${plugin.prettyName}...`;
 
-  if (!fs.existsSync(config.NATIVE_DOCS_DIR)) {
-    fs.mkdirSync(config.NATIVE_DOCS_DIR);
+  if (!existsSync(config.NATIVE_DOCS_DIR)) {
+    mkdirSync(config.NATIVE_DOCS_DIR);
   }
 
   navList[plugin.prettyName] = `/docs/native/${plugin.npmName}`;
 
-  fs.writeFileSync(
-    path.join(config.NATIVE_DOCS_DIR, `${plugin.npmName}.md`),
+  writeFileSync(
+    join(config.NATIVE_DOCS_DIR, `${plugin.npmName}.md`),
     docgen.getPluginMarkup(plugin)
   );
 }
