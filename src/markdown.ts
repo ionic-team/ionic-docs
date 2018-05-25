@@ -1,6 +1,11 @@
 import marked from 'marked';
 import hljs from 'highlight.js';
 
+import { current } from './versions';
+import { apiMap } from './components/docs-menu/docs-api-map';
+
+const components = apiMap[current];
+
 export interface HeadingStruc {
   text: string;
   level: number;
@@ -65,6 +70,19 @@ export function renderMarkdown(markdown: string, options: RenderOptions): Marked
     return toCodeBlock(code, lang);
   };
 
+  renderer.codespan = code => {
+    // quick out if not an ionic component
+    if (code.indexOf('ion-') !== -1) {
+      // link to ionic component if possible
+      const converted = ionify(code);
+      if (components[converted]) {
+        code = `<a href="${components[converted]}" class="auto-link">${code}</a>`;
+      }
+    }
+
+    return `<code>${code}</code>`;
+  };
+
   renderer.table = (thead: string, tbody: string) =>
     `<div class="table-wrap">
       <table>
@@ -81,4 +99,10 @@ export function renderMarkdown(markdown: string, options: RenderOptions): Marked
     headings,
     body: marked(markdown, { renderer })
   };
+}
+
+function ionify (str) {
+  return str.replace(/([a-zA-Z])(?=[A-Z])/g, '$1-')
+    .toLowerCase()
+    .replace('ion-', '');
 }
