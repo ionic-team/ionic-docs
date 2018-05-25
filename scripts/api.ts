@@ -115,7 +115,7 @@ function copyFiles(components, dest, version = 'latest') {
       file => {
         return file.replace(
           '/dist/ionic.js',
-          `https://unpkg.com/@ionic/core@${version}/dist/ionic.js`
+          `https://unpkg.com/@ionic/core${version === 'dev' ? '' : `@${version}`}/dist/ionic.js`
         );
       }
     );

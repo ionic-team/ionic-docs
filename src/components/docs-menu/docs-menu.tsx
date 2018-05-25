@@ -1,5 +1,5 @@
 import { Component, Prop, State, Watch } from '@stencil/core';
-import { versions } from '../../versions';
+import { current, versions } from '../../versions';
 import { apiMap } from './docs-api-map';
 import { cliMenu } from './cli-menu';
 import { nativeMenu } from './native-menu';
@@ -13,7 +13,7 @@ import { NewTab } from '../../icons';
 export class DocsMenu {
   @Prop() path: string;
   @Prop() section: string;
-  @State() version = versions[0];
+  @State() version = current;
   @State() activeItem: string;
 
   createItem = (text, url, onClick?) => {
