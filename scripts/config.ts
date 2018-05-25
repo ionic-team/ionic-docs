@@ -1,8 +1,8 @@
 import { join } from 'path';
 
 // directories
-export const IONIC_ANGULAR_SRC = process.env.ANGULAR_SRC || join('angular/src');
-export const IONIC_CORE_SRC = process.env.CORE_SRC || join('core/src');
+export const IONIC_ANGULAR_SRC = process.env.IONIC_ANGULAR_SRC || join('angular/src');
+export const IONIC_CORE_SRC = process.env.IONIC_CORE_SRC || join('core/src');
 export const IONIC_DIR = process.env.IONIC_DIR || join('sources/ionic');
 export const IONIC_REPO_URL = process.env.IONIC_REPO_URL || 'https://github.com/ionic-team/ionic';
 export const API_DOCS_DIR = process.env.API_DOCS_DIR || join('src/content/api');

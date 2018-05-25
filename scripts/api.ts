@@ -42,7 +42,7 @@ export async function generate(task) {
   const allVersions = await git.getVersions(config.IONIC_DIR);
   const versions = allVersions.filter(v => {
     for (const whitelistedVersion of FRAMEWORK_VERSIONS) {
-      if (semver.eq(v, whitelistedVersion)) {
+      if (semver.valid(whitelistedVersion) && semver.eq(v, whitelistedVersion)) {
         return true;
       }
     }
@@ -50,33 +50,39 @@ export async function generate(task) {
     return false;
   });
 
+  if (FRAMEWORK_VERSIONS.indexOf('nightly') !== -1) {
+    const nightly = await getNightly();
+    versions.push(nightly);
+  }
+
   // generate the docs for each version
   for (const sv of versions) {
-    task.output = `Building for ${sv.version}...`;
-    const DOCS_DEST = join(config.API_DOCS_DIR, sv.version);
+    const version = sv.raw.indexOf('+dev') !== -1 ? 'dev' : sv.raw;
+    task.output = `Building for ${version}...`;
+    const DOCS_DEST = join(config.API_DOCS_DIR, version);
     // skip this version if it already exists.
     // delete the directory in src/api/ to force a rebuild
     if (existsSync(DOCS_DEST)) {
-      task.output = `Skipping existing API docs for ${sv.version}`;
+      // task.output = `Skipping existing API docs for ${version}`;
       // continue;
     }
 
     // Generate the docs for this version
-    task.output = `Generating API docs for ${sv.raw} (1-3 mins)`;
-    task.output = `Checking out ${sv.version}`;
-    await git.checkout(config.IONIC_DIR, sv.raw);
-    task.output = `NPM Installing ${sv.version}`;
+    task.output = `Generating API docs for ${version} (1-3 mins)`;
+    task.output = `Checking out ${version}`;
+    await git.checkout(config.IONIC_DIR, version === 'dev' ? 'HEAD' : version);
+    task.output = `NPM Installing ${version}`;
     await npm.installAPI();
-    task.output = `Building Docs for ${sv.version}`;
+    task.output = `Building Docs for ${version}`;
     const APIDocs = await npm.buildAPIDocs();
 
-    copyFiles(APIDocs.components, DOCS_DEST, sv.version);
+    copyFiles(APIDocs.components, DOCS_DEST, version);
 
-    task.output = `Generating Nav for ${sv.version}`;
+    task.output = `Generating Nav for ${version}`;
     generateNav(
       join(menuPath, `docs-api-map.ts`),
       APIDocs.components,
-      sv.version
+      version
     );
   }
 
@@ -152,3 +158,9 @@ function getUsage(componentName) {
   return usage;
 }
 
+async function getNightly() {
+  const pkgStr = await readFileSync(
+    join(config.IONIC_DIR, 'core', 'package.json')
+  );
+  return semver.parse(`${JSON.parse(pkgStr.toString('utf8')).version}+dev`);
+}
