@@ -130,19 +130,19 @@ docs-menu {
   width: 8px;
 }
 
-.new-tab {
+.menu__item .new-tab {
   height: 0.8em;
   margin-left: 0.4em;
   width: auto;
-}
 
-.new-tab .new-tab__box {
-  opacity: 0.25;
-}
+  &__box {
+    opacity: 0.25;
+  }
 
-.new-tab .new-tab__box,
-.new-tab .new-tab__arrow {
-  fill: var(--gray);
+  &__box,
+  &__arrow {
+    fill: var(--gray);
+  }
 }
 
 @media (max-width: $breakpoint-md) {
