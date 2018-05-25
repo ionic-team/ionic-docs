@@ -74,7 +74,9 @@ export function renderMarkdown(markdown: string, options: RenderOptions): Marked
     // quick out if not an ionic component
     if (code.indexOf('ion-') !== -1) {
       // link to ionic component if possible
-      const converted = ionify(code);
+      const converted = code.replace(/([a-zA-Z])(?=[A-Z])/g, '$1-')
+        .toLowerCase()
+        .replace('ion-', '');
       if (components[converted]) {
         code = `<a href="${components[converted]}" class="auto-link">${code}</a>`;
       }
@@ -99,10 +101,4 @@ export function renderMarkdown(markdown: string, options: RenderOptions): Marked
     headings,
     body: marked(markdown, { renderer })
   };
-}
-
-function ionify (str) {
-  return str.replace(/([a-zA-Z])(?=[A-Z])/g, '$1-')
-    .toLowerCase()
-    .replace('ion-', '');
 }
