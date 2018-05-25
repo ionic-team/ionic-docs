@@ -6,9 +6,9 @@ import { execp, vlog } from './utils';
 
 export async function installAPI() {
   vlog('npm installing monorepo');
-  await execp('npm ci', { cwd: config.IONIC_DIR });
+  await execp('npm i', { cwd: config.IONIC_DIR });
   vlog('npm installing core');
-  return await execp(`npm ci`, { cwd: path.join(config.IONIC_DIR, 'core') });
+  return await execp(`npm i`, { cwd: path.join(config.IONIC_DIR, 'core') });
 }
 
 export async function buildAPIDocs() {

@@ -29,9 +29,9 @@ let listrTask = null;
 export async function generate(task) {
   listrTask = task;
   const startTime = new Date().getTime();
+
   task.output = 'Updating...';
   // clone/update the git repo and get a list of all the tags
-
   await git.ensureLatestMaster(
     config.IONIC_DIR,
     config.IONIC_REPO_URL
@@ -50,7 +50,7 @@ export async function generate(task) {
     return false;
   });
 
-  if (FRAMEWORK_VERSIONS.indexOf('nightly') !== -1) {
+  if (FRAMEWORK_VERSIONS.indexOf('dev') !== -1) {
     const nightly = await getNightly();
     versions.push(nightly);
   }
