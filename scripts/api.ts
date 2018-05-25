@@ -16,7 +16,10 @@ import * as git from './git';
 import * as npm from './npm';
 import * as utils from './utils';
 
-import { versions as FRAMEWORK_VERSIONS } from '../src/versions';
+import {
+  current as CURRENT_VERSION,
+  versions as FRAMEWORK_VERSIONS
+} from '../src/versions';
 
 const menuPath = 'src/components/docs-menu';
 const menuHeader = '/* tslint:disable */\n\nexport const apiMap = ';
@@ -59,7 +62,10 @@ export async function generate(task) {
   for (const sv of versions) {
     const version = sv.raw.indexOf('+dev') !== -1 ? 'dev' : sv.raw;
     task.output = `Building for ${version}...`;
-    const DOCS_DEST = join(config.API_DOCS_DIR, version);
+    const DOCS_DEST = join(
+      config.API_DOCS_DIR,
+      sv.raw === CURRENT_VERSION ? '' : `${sv.raw}/`
+    );
     // skip this version if it already exists.
     // delete the directory in src/api/ to force a rebuild
     if (existsSync(DOCS_DEST)) {
@@ -82,7 +88,7 @@ export async function generate(task) {
     generateNav(
       join(menuPath, `docs-api-map.ts`),
       APIDocs.components,
-      version
+      version === 'dev' ? 'dev' : sv.version
     );
   }
 
@@ -135,7 +141,8 @@ function generateNav(menuPath, components, version) {
   const componentsList = {};
   for (let i = 0; i < components.length; i++) {
     const tag = components[i].tag.replace('ion-', '');
-    componentsList[tag] = `/docs/api/${version}/${tag}`;
+    componentsList[tag] = `/docs/api/${version === CURRENT_VERSION ?
+      '' : `${version}/`}${tag}`;
   }
 
   menu[version] = componentsList;
