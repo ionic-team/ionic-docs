@@ -60,11 +60,11 @@ export async function generate(task) {
 
   // generate the docs for each version
   for (const sv of versions) {
-    const version = sv.raw.indexOf('+dev') !== -1 ? 'dev' : sv.raw;
+    const version = sv.raw.indexOf('+dev') !== -1 ? 'dev' : sv.version;
     task.output = `Building for ${version}...`;
     const DOCS_DEST = join(
       config.API_DOCS_DIR,
-      sv.raw === CURRENT_VERSION ? '' : `${sv.raw}/`
+      sv.version === CURRENT_VERSION ? '' : `${version}/`
     );
     // skip this version if it already exists.
     // delete the directory in src/api/ to force a rebuild
@@ -76,7 +76,7 @@ export async function generate(task) {
     // Generate the docs for this version
     task.output = `Generating API docs for ${version} (1-3 mins)`;
     task.output = `Checking out ${version}`;
-    await git.checkout(config.IONIC_DIR, version === 'dev' ? 'HEAD' : version);
+    await git.checkout(config.IONIC_DIR, sv.raw.indexOf('+dev') !== -1 ? 'HEAD' : sv.raw);
     task.output = `NPM Installing ${version}`;
     await npm.installAPI();
     task.output = `Building Docs for ${version}`;
@@ -97,7 +97,7 @@ export async function generate(task) {
 }
 
 // copy demos and API docs files over to content/api
-function copyFiles(components, dest, version = 'latest') {
+function copyFiles(components, dest, version = 'dev') {
   utils.vlog(`Copying ${components.length} files`);
   let hasDemo = false;
 
