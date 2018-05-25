@@ -97,6 +97,11 @@ docs-menu {
   color: var(--blue);
 }
 
+.menu__item--outbound a {
+  align-items: center;
+  display: inline-flex;
+}
+
 .menu__item--outbound svg {
   display: inline-block;
   margin-left: 6px;
@@ -143,6 +148,18 @@ docs-menu {
   &__arrow {
     fill: var(--gray);
   }
+}
+
+.migration-pill {
+  background-color: #dfedff;
+  border-radius: 16px;
+  color: #6974ff;
+  font-size: 13px;
+  padding: 8px 14px;
+}
+
+.migration-pill svg {
+  stroke: currentColor;
 }
 
 @media (max-width: $breakpoint-md) {

@@ -172,6 +172,17 @@ export class DocsMenu {
               const onClick = () => this.setActiveItem(null);
               return this.createOutboundItem(key, menuMap.outbound[key], onClick);
             })}
+            <li style={{ marginTop: '1.5rem' }}>
+              <stencil-route-link
+                class="menu__item menu__item--outbound migration-pill"
+                url="/docs/building/migration"
+                exact>
+                  v4 Migration Guide
+                  <svg viewBox="0 0 16 24">
+                    <path d="M3 2l10 10L3 22" stroke-width="3" fill="none" fill-rule="evenodd"/>
+                  </svg>
+              </stencil-route-link>
+            </li>
           </ul>
         ];
     }
