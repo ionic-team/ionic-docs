@@ -1,5 +1,5 @@
 ---
-nextText: 'Build erros'
+nextText: 'Build Errors'
 nextUrl: '/docs/faq/build'
 ---
 
