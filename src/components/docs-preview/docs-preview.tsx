@@ -1,4 +1,4 @@
-import { Component, Element, Prop, State, Watch } from '@stencil/core';
+import { Component, Prop, State, Watch } from '@stencil/core';
 
 @Component({
   tag: 'docs-preview',
@@ -7,27 +7,12 @@ import { Component, Element, Prop, State, Watch } from '@stencil/core';
 export class SitePreviewApp {
   @Prop() url: string;
   @Prop() cssText: string;
-  @State() selected = 'ios';
-  @State() fixed = false;
-  @Element() el: HTMLElement;
+  @State() previewMode = 'ios';
   iframe: HTMLIFrameElement;
 
   @Watch('cssText')
   onCssTextChange() {
     this.applyStyles();
-  }
-
-  @Watch('url')
-  onUrlChange() {
-    if (this.url) {
-      this.el.classList.remove('hidden');
-    } else {
-      this.el.classList.add('hidden');
-    }
-  }
-
-  select(platform) {
-    this.selected = platform;
   }
 
   applyStyles () {
@@ -51,27 +36,29 @@ export class SitePreviewApp {
   }
 
   render() {
-    if (! this.url) {
+    if (!this.url) {
       return null;
     }
 
     return [
-      <ul class="docs-preview__toggle">
-        <li
-          class={this.selected === 'ios' ? 'active' : ''}
-          onClick={this.select.bind(this, 'ios')}>iOS</li>
-        <li
-          class={this.selected === 'md' ? 'active' : ''}
-          onClick={this.select.bind(this, 'md')}>Android</li>
-      </ul>,
-      <figure class={this.selected}>
-        <iframe
-          src={`${this.url}?ionic:mode=${this.selected}&ionic:statusbarPadding=true`}
-          ref={el => this.iframe = el as any}
-          onLoad={this.onIframeLoad.bind(this)}
-          frameborder="0"></iframe>
-      </figure>,
-      <a class="docs-preview_link" target="_blank" href={this.url}>See Preview</a>
+      <div class="docs-preview-mode-toggle">
+        {['ios', 'md'].map(mode => (
+          <button
+            class={ mode === this.previewMode ? 'is-selected' : null }
+            onClick={() => { this.previewMode = mode; }}>
+              { mode }
+          </button>
+        ))}
+      </div>,
+      <div class="docs-preview-device">
+        <figure>
+          <iframe
+            src={`${this.url}?ionic:mode=${this.previewMode}`}
+            ref={el => this.iframe = el as any}
+            onLoad={this.onIframeLoad.bind(this)}
+            frameborder="0"></iframe>
+        </figure>
+      </div>
     ];
   }
 }
