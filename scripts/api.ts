@@ -126,7 +126,11 @@ function copyFiles(components, dest, version = 'dev') {
     utils.vlog('Generating page: ', componentName);
     writeFileSync(
       join(dest, `${componentName}.md`),
-      docgen.getComponentMarkup(components[i], version, hasDemo)
+      docgen.getComponentMarkup(
+        components[i],
+        version === CURRENT_VERSION ? '' : version,
+        hasDemo
+      )
     );
   }
 }
