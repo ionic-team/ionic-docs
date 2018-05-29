@@ -1,140 +1,80 @@
+docs-preview.ios {
+  --device-aspect-ratio: 1.992;
+}
+
+doc-preview.md {
+  --device-aspect-ratio: 2.189;
+}
+
 docs-preview {
-  align-self: start;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
+  --device-aspect-ratio: 2;
+  --device-padding: 2rem;
+
   grid-area: preview;
-  margin-left: auto;
-  padding: 2rem;
-  position: sticky;
-  top: 0;
-  width: 100%;
-  transition: 80ms width ease-out;
 
-  &.hidden {
+  @media (max-width: $breakpoint-lg) {
     display: none;
-  }
-
-  .docs-preview_link {
-    display: none;
-  }
-
-  @media (max-height: 930px) {
-    // height: 378px;
-    width: calc(380px / 1.2 + 4rem);
-
-    figure {
-      transform: scale3d(.9, .9, 1);
-    }
-  }
-
-  @media (max-width: $breakpoint-lg), (max-height: 850px) {
-    // height: 378px;
-    width: calc(380px / 1.5 + 4rem);
-
-    figure {
-      transform: scale3d(.75, .75, 1);
-    }
-  }
-
-  @media (max-width: 1050px), (max-height: 740px) {
-    // height: 378px;
-    width: calc(380px / 2 + 2rem);
-
-    figure {
-      transform: scale3d(.5, .5, 1);
-    }
-  }
-
-  // eventually we just hide the preview and link to it as a new tab
-  @media (max-width: 930px), (max-height: 500px) {
-    width: 0;
-    padding: 0;
-
-    .docs-preview_link {
-      position: absolute;
-      display: block;
-      right: 1rem;
-      top: 1rem;
-      width: 90px;
-    }
-
-    .docs-preview__toggle,
-    figure {
-      display: none;
-    }
-  }
-
-  &.hidden {
-    display: none;
-  }
-
-  li {
-    color: var(--gray);
-    list-style: none;
-    background: transparent;
-    border-radius: 16px;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    padding: 0 9px;
-    margin: 0px 3px;
-    display: block;
-    font-size: 10px;
-    line-height: 24px;
-    font-weight: 700;
-    cursor: pointer;
-    transition:
-      .2s background ease
-      .2s color ease;
-
-    &.active {
-      background: var(--blue);
-      color: white;
-    }
-  }
-
-  figure {
-    height: 757px;
-    width: 380px;
-    margin: 0 22px;
-    position: relative;
-    transform-origin: 50% 0%;
-    transition: 80ms transform ease-out;
-    padding: 26px 30px 41px;
-
-    &::before {
-      background: url('/docs/assets/img/device-iphone.png') no-repeat 0 0;
-      background-size: 380px;
-      width: 380px;
-      height: 757px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      content: '';
-      pointer-events: none;
-    }
-
-    iframe {
-      border: none;
-      width: 100%;
-      height: 100%;
-    }
-
-    &.md {
-      height: 832px;
-      padding: 59px 19px 110px;
-
-      &::before {
-        background-image: url('/docs/assets/img/device-pixel.png');
-        background-size: 380px;
-        height: 832px;
-      }
-    }
   }
 }
 
-.docs-preview__toggle {
-  display: flex;
+.docs-preview-device {
+  padding: var(--device-padding);
+  position: sticky;
+  top: 0;
+}
+
+.docs-preview-device > figure {
+  border-radius: 28px;
+  box-shadow: 0 0 0 12px black, 0 0 0 15px #abb2bf, 0 0 34px 17px rgba(0,0,0,0.2);
+  height: 0;
   margin: 0;
-  padding: 0;
+  max-width: 320px;
+  min-width: 280px;
+  overflow: hidden;
+  padding-bottom: calc(var(--device-aspect-ratio) * 100%);
+  position: relative;
+  width: calc((100vh - var(--header-height) - var(--device-padding) * 2) / var(--device-aspect-ratio));
+  z-index: 1;
+}
+
+.docs-preview-device > figure > iframe {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.docs-preview-mode-toggle {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding-top: 3rem;
+}
+
+.docs-preview-mode-toggle button {
+  background-color: transparent;
+  border: none;
+  border-radius: 16px;
+  color: var(--gray);
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 24px;
+  margin: 0px 3px;
+  padding: 0 9px;
+  text-transform: uppercase;
+  transition: 200ms background-color ease, 200ms color ease;
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+
+  &.is-selected {
+    background-color: var(--blue);
+    color: white;
+  }
 }
