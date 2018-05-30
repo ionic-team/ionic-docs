@@ -195,7 +195,7 @@ declare global {
   }
   namespace JSXElements {
     export interface ColorGeneratorAttributes extends HTMLAttributes {
-      'onUpdatePreview'?: (event: CustomEvent) => void;
+      'onPreviewMessage'?: (event: CustomEvent) => void;
     }
   }
 }
