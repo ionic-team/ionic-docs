@@ -7,7 +7,7 @@ import { Component, Listen, Prop, State, Watch } from '@stencil/core';
 export class SitePreviewApp {
   @Prop() url: string;
   @Prop() cssText: string;
-  @State() previewMode = 'ios';
+  @State() ionicMode = 'ios';
   iframe: HTMLIFrameElement;
 
   @Listen('window:previewMessage')
@@ -53,16 +53,16 @@ export class SitePreviewApp {
       <div class="docs-preview-mode-toggle">
         {['ios', 'md'].map(mode => (
           <button
-            class={ mode === this.previewMode ? 'is-selected' : null }
-            onClick={() => { this.previewMode = mode; }}>
+            class={ mode === this.ionicMode ? 'is-selected' : null }
+            onClick={() => { this.ionicMode = mode; }}>
               { mode }
           </button>
         ))}
       </div>,
-      <div class={`docs-preview-device ${this.previewMode}`}>
+      <div class={`docs-preview-device ${this.ionicMode}`}>
         <figure>
           <iframe
-            src={`${this.url}?ionic:mode=${this.previewMode}`}
+            src={`${this.url}?ionic:mode=${this.ionicMode}`}
             ref={el => this.iframe = el as any}
             onLoad={this.onIframeLoad.bind(this)}/>
         </figure>
