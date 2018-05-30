@@ -11,7 +11,7 @@ import { convertCssToColors, generateColor, updateCssText } from '../parse-css';
 export class ColorGenerator {
 
   @Element() el: HTMLElement;
-  @Event() updatePreview: EventEmitter;
+  @Event() previewMessage: EventEmitter;
   @State() colors: ColorVariable[] = [];
   @State() cssText = DEFAULT_CSS_TEXT;
 
@@ -38,7 +38,7 @@ export class ColorGenerator {
       this.cssText = updateCssText(colorProperty + attrMap[key], this.cssText, genColor[key]);
     });
 
-    this.updatePreview.emit({cssText: this.cssText});
+    this.previewMessage.emit({cssText: this.cssText});
   }
 
   @Listen('cssTextChange')
@@ -48,7 +48,7 @@ export class ColorGenerator {
 
     if (colors.length > 0) {
       this.colors = colors;
-      this.updatePreview.emit({cssText: this.cssText});
+      this.previewMessage.emit({cssText: this.cssText});
     }
   }
 
@@ -57,7 +57,7 @@ export class ColorGenerator {
   }
 
   componentDidLoad () {
-    this.updatePreview.emit({
+    this.previewMessage.emit({
       cssText: this.cssText
     });
   }

@@ -6,6 +6,7 @@
     padding: 0;
   }
 </style>
+<style id="color-style"></style>
 
 <ion-app>
   <ion-tabs useRouter="false">
@@ -147,3 +148,16 @@
 
   </ion-tabs>
 </ion-app>
+
+<script>
+  const styleTag = document.querySelector('#color-style');
+
+  function handleMessage(message) {
+    const cssText = message.data ? message.data.cssText : null;
+    if (cssText) {
+      styleTag.innerHTML = cssText;
+    }
+  }
+
+  window.addEventListener('message', handleMessage);
+</script>
