@@ -1,4 +1,4 @@
-import { Component, Prop, State, Watch } from '@stencil/core';
+import { Component, Listen, Prop, State, Watch } from '@stencil/core';
 
 @Component({
   tag: 'docs-preview',
@@ -9,6 +9,15 @@ export class SitePreviewApp {
   @Prop() cssText: string;
   @State() previewMode = 'ios';
   iframe: HTMLIFrameElement;
+
+  @Listen('window:previewMessage')
+  postToIframe({ detail }: CustomEvent) {
+    try {
+      this.iframe.contentWindow.postMessage(detail, '*');
+    } catch (err) {
+      console.error('Failed to post message to preview: ', err);
+    }
+  }
 
   @Watch('cssText')
   onCssTextChange() {
