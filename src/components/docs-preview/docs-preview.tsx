@@ -1,4 +1,4 @@
-import { Component, Listen, Prop, State, Watch } from '@stencil/core';
+import { Component, Listen, Prop, State } from '@stencil/core';
 
 @Component({
   tag: 'docs-preview',
@@ -6,7 +6,6 @@ import { Component, Listen, Prop, State, Watch } from '@stencil/core';
 })
 export class SitePreviewApp {
   @Prop() url: string;
-  @Prop() cssText: string;
   @State() ionicMode = 'ios';
   iframe: HTMLIFrameElement;
 
@@ -17,31 +16,6 @@ export class SitePreviewApp {
     } catch (err) {
       console.error('Failed to post message to preview: ', err);
     }
-  }
-
-  @Watch('cssText')
-  onCssTextChange() {
-    this.applyStyles();
-  }
-
-  applyStyles () {
-    if (this.iframe && this.iframe.contentDocument && this.iframe.contentDocument.documentElement) {
-      const iframeDoc = this.iframe.contentDocument;
-      const varStyleId = 'color-style';
-
-      let themerStyle: HTMLStyleElement = iframeDoc.getElementById(varStyleId) as any;
-      if (!themerStyle) {
-        themerStyle = iframeDoc.createElement('style');
-        themerStyle.id = varStyleId;
-        iframeDoc.documentElement.appendChild(themerStyle);
-      }
-
-      themerStyle.innerHTML = this.cssText;
-    }
-  }
-
-  onIframeLoad() {
-    this.applyStyles();
   }
 
   render() {
@@ -63,8 +37,7 @@ export class SitePreviewApp {
         <figure>
           <iframe
             src={`${this.url}?ionic:mode=${this.ionicMode}`}
-            ref={el => this.iframe = el as any}
-            onLoad={this.onIframeLoad.bind(this)}/>
+            ref={node => { this.iframe = node as HTMLIFrameElement; }}/>
         </figure>
       </div>
     ];

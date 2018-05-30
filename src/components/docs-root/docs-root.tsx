@@ -1,4 +1,4 @@
-import { Component, Listen, State } from '@stencil/core';
+import { Component, State } from '@stencil/core';
 import '@stencil/router'; // tslint:disable-line:no-import-side-effect
 
 @Component({
@@ -8,15 +8,8 @@ export class DocsRoot {
   document: HTMLElement;
 
   @State() previewUrl: string;
-  @State() previewCss: string;
   @State() isMenuOpen = false;
   @State() pageClass: string;
-
-  @Listen('updatePreview')
-  handleUpdatePreview(ev: any) {
-    if (ev.detail.url) this.previewUrl = ev.detail.url;
-    if (ev.detail.cssText) this.previewCss = ev.detail.cssText;
-  }
 
   parseSection(path) {
     const match = /^(api|cli|native|pro)(\/.*)?/.exec(path);
@@ -69,7 +62,7 @@ export class DocsRoot {
                     ref={node => { this.document = node; }}
                     path={documentPath}
                     onUpdate={this.handleDocumentUpdate}/>
-                  <docs-preview url={this.previewUrl} cssText={this.previewCss}/>
+                  <docs-preview url={this.previewUrl}/>
               </docs-content>
             </docs-layout>
           );
