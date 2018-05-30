@@ -29,7 +29,7 @@ export const main = {
   },
   //  'Components': '/docs/components',
   'Layout': {
-    //    'Stucture': '/docs/layout/structure',
+    'Stucture': '/docs/layout/structure',
     'Responsive Grid': '/docs/layout/grid',
     'CSS Utilities': '/docs/layout/css-utilities'
     //    'RTL Support': '/docs/layout/rtl'
