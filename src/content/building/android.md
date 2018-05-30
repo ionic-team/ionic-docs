@@ -71,7 +71,7 @@ ionic cordova run android -l
 
 Now, when changes are made to the app's source files, web assets are rebuilt and the changes are reflected on the simulator or device without having to deploy again.
 
-## Using Chrome DevTools to debug your app
+## Using Chrome DevTools to debug
 
 Chrome has devtools support for Android simulators and devices. Go to `chrome://inspect` in Chrome while the simulator is running or a device is connected to the computer and select the app that needs to be debugged.
 

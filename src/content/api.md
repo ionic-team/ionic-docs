@@ -1,6 +1,6 @@
 # Ionic API
 
-![api header image](assets/img/api/api-intro-header.png)
+![api header image](/docs/assets/img/api/api-intro-header.png)
 
 In the API docs, you'll find two kinds of doc pages: Component and Programmatic APIs.
 

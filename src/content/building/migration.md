@@ -11,11 +11,11 @@ nextUrl: '/docs/building/cross-platform'
 
 We suggest the following general process when migrating an existing application from Ionic version 2 or 3 to Ionic version 4:
 
-- Generate a new project using one of our generic starters
-- Copy an app's services from `src/providers` to `src/app/services`
+- Generate a new project using one of the generic starters
+- Copy any services from `src/providers` to `src/app/services`
    - Minor rxjs related changes may need to be made. For more details, please see [rxjs's docs](https://github.com/ReactiveX/rxjs/blob/master/MIGRATION.md)
    - Services should include `{providedIn: 'root'}` in the `@Injectable()` decorator. For details, please see Angular [provider docs](https://angular.io/guide/providers).
-- Copy an app's other root level items (pipes, components, etc) keeping in mind that the directory structure changes from `src/components` to `src/app/components`, etc.
+- Copy the app's other root level items (pipes, components, etc) keeping in mind that the directory structure changes from `src/components` to `src/app/components`, etc.
 - Copy global Sass styling from `src/app/app.scss` to `src/global.scss`
 - Copy the rest of the application, page by page or feature by feature, keeping the following items in mind
    - Emulated Shadow DOM is turned on by default so custom Sass no longer needs to be wrapped in the page tag
