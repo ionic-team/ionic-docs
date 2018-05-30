@@ -11,7 +11,7 @@ Most Ionic apps follow similar layout structures. Lets dive into what these comm
 
 ## Common page layouts
 
-Most pages in an Ionic app will have atleast a `header` and `content` while some will also have a footer. Here is a common header + content layout:
+Most pages in an Ionic app will have at least a `header` and `content` while some will also have a footer. Here is a common header + content layout:
 
 ```html
 <ion-header>
