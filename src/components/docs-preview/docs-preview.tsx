@@ -64,8 +64,7 @@ export class SitePreviewApp {
           <iframe
             src={`${this.url}?ionic:mode=${this.previewMode}`}
             ref={el => this.iframe = el as any}
-            onLoad={this.onIframeLoad.bind(this)}
-            frameborder="0"></iframe>
+            onLoad={this.onIframeLoad.bind(this)}/>
         </figure>
       </div>
     ];
