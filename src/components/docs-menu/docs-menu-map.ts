@@ -27,7 +27,7 @@ export const main = {
     'Web View': '/docs/building/webview',
     'Ionic Storage': '/docs/building/storage'
   },
-  //  'Components': '/docs/components',
+  'Components': '/docs/components',
   'Layout': {
     'Stucture': '/docs/layout/structure',
     'Responsive Grid': '/docs/layout/grid',
