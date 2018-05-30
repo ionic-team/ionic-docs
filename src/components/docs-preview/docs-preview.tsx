@@ -50,7 +50,7 @@ export class SitePreviewApp {
           </button>
         ))}
       </div>,
-      <div class="docs-preview-device">
+      <div class={`docs-preview-device ${this.previewMode}`}>
         <figure>
           <iframe
             src={`${this.url}?ionic:mode=${this.previewMode}`}

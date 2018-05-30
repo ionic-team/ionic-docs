@@ -1,15 +1,4 @@
-docs-preview.ios {
-  --device-aspect-ratio: 1.992;
-}
-
-doc-preview.md {
-  --device-aspect-ratio: 2.189;
-}
-
 docs-preview {
-  --device-aspect-ratio: 2;
-  --device-padding: 2rem;
-
   grid-area: preview;
 
   @media (max-width: $breakpoint-lg) {
@@ -18,6 +7,9 @@ docs-preview {
 }
 
 .docs-preview-device {
+  --device-aspect-ratio: 2;
+  --device-padding: 2rem;
+
   padding: var(--device-padding);
   position: sticky;
   top: 0;
