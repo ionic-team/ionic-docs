@@ -14,7 +14,7 @@ export class SitePreviewApp {
     try {
       this.iframe.contentWindow.postMessage(detail, '*');
     } catch (err) {
-      console.error('Failed to post message to preview: ', err);
+      // There probably is no preview...
     }
   }
 
