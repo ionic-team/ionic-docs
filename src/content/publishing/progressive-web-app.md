@@ -6,26 +6,26 @@ nextUrl: '/docs/publishing/app-store'
 # Publishing a Progressive Web App
 
 <p class="intro" markdown="1">
-Because Ionic Apps are built with web technologies, they can run just as well as a Progressive Web App as they can a native app. Not sure what PWA are? Check out Ionic's <a href="https://ionicframework.com/pwa" target="_blank">PWA Overview</a> for more info.
+Because Ionic Apps are built with web technologies, they can run just as well as a Progressive Web App as they can a native app. Not sure what PWAs are? Check out Ionic's <a href="https://ionicframework.com/pwa" target="_blank">PWA Overview</a> for more info.
 </p>
 
-## Making the App a PWA
+## Making an App a PWA
 
 The two main requirements of a PWA are a <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> and a <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Manifest</a>. While it's possible to add both of these to an app manually, the Angular team has an `@angular/pwa` package that can be used to automate this.
 
-### Adding @angular/pwa to our Ionic/Angular App
-
-The `@angular/pwa` package will automatically add a **service worker** and a **web manifest** to the app. To add this package to the app run:
+The `@angular/pwa` package will automatically add a service worker and a app manifest to the app.
+To add this package to the app run:
 
 ```shell
 ng add @angular/pwa
 ```
 
-This will add a service worker (using the [@angular/service-worker package](https://angular.io/guide/service-worker-intro)) and a manifest to the app. Once this package has been added run `ionic build --prod` and the `www` directory will be ready to deploy as a PWA.
+Once this package has been added run `ionic build --prod` and the `www` directory will be ready to deploy as a PWA.
 
-> Be sure to update the web manifest to use the correct app name and icons
+> By default, the `@angular/pwa` package comes with Angular logo for the app icons. Be sure to update the manifest to use the correct app name and also replace the icons.
 
-If an app is being deployed to other channels such as Cordova or Electron, it's recommended to remove `"serviceWorker": true` flag from the `angular.json` file. The service worker can be generated though by running:
+If an app is being deployed to other channels such as Cordova or Electron, can remove teh `"serviceWorker": true` flag from the `angular.json` file.
+The service worker can be generated though by running:
 
 ```shell
 ionic build --prod --service-worker
@@ -50,7 +50,7 @@ This will set generate a `firebase.json` config file and configure the app for d
 
 > `firebase init` will present a few question, including one about redirecting URLs to `/index.html`.
 > Make sure to choose **yes** for this option, but **no** to overwriting your index.html.
-> This will ensure that routing, hard reload, and deeplinking work in the app.
+> This will ensure that routing, hard reload, and deep linking work in the app.
 
 The last thing needed is to make sure caching headers are being set correctly.
 To do this, add the following snippet to the `firebase.json` file:

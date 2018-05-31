@@ -14,35 +14,28 @@ For those completely new to Ionic Framework app development, it can be helpful t
 
 ## UI Components
 
-Ionic Framework is a library of UI Components, which are reusable elements that serve as the building blocks for an application. Components are pre-designed using web-standards, composed of HTML, CSS, and JavaScript. Though the components are pre-built, they're designed from the ground up to be highly customizable so apps can make each component their own, allowing each app to have its own look and feel. More specifically, Ionic components can be easily themed to globally change colors across an entire app. For more information about customizing the look, please see [Theming](/docs/theming/basics).
+Ionic Framework is a library of UI Components, which are reusable elements that serve as the building blocks for an application. Components are pre-designed using web-standards, composed of HTML, CSS, and JavaScript. Though the components are pre-built, they're designed from the ground up to be highly customizable so apps can make each component their own, allowing each app to have its own look and feel. More specifically, Ionic components can be easily themed to globally change appearance across an entire app. For more information about customizing the look, please see [Theming](/docs/theming/basics).
 
 
 ## Platform Continuity
 
-Platform Continuity is a built-in feature of Ionic Framework which allows app developers to use the same codebase for multiple platforms. Every Ionic component adapts its look to the platform on which the app is running on. For example, Apple devices, such as the iPhone and iPad, use Apple's own design language for their [iOS operating system](https://www.apple.com/ios). Similarly, Android devices use Google's design language called [Material Design](https://material.io/guidelines/).
+Platform Continuity is a built-in feature of Ionic Framework which allows app developers to use the same code base for multiple platforms. Every Ionic component adapts its look to the platform on which the app is running on. For example, Apple devices, such as the iPhone and iPad, use Apple's own design language for their [iOS operating system](https://www.apple.com/ios). Similarly, Android devices use Google's design language called [Material Design](https://material.io/guidelines/).
 
 By making subtle design changes between the platforms, users are provided with a familiar app experience. An Ionic app downloaded from Apple's App Store will get the iOS theme, while an Ionic app downloaded from Android's Play Store will get the Material Design theme. For the apps that are viewed as a Progressive Web App (PWA) from a browser, Ionic will default to using the Material Design theme. Additionally, deciding which platform to use in certain scenarios is entirely configurable. More information about platform continuity can be found in [Theming](/docs/theming/basics).
 
 
 ## Navigation
 
-Traditional websites use a linear history, meaning that the user navigates to a page and can hit the back button to navigate back. An example of this is clicking around Wikipedia where the user is going forward and backward on the browser's linear history stack.
+Traditional websites use a linear history, meaning that the user navigates to a page and can hit the back button to navigate back.
+An example of this is clicking around Wikipedia where the user is going forward and backward on the browser's linear history stack. Ionic apps are able to take this a step further by allowing parallel navigation to happen. Meaning that it's possible to have multiple navigation stacks, and swap them at any moment.
 
-### Push / Pop
-
-Native apps, however, commonly use "push/pop" navigation, with multiple history stacks. For example, iOS's App Store has tabs at the bottom such as "Games", "Search", "Updates", etc. Tapping each of the tabs enters into its own history stack, and tapping the "Back" button in one of these stacks means "go back in just this tab". Though it sounds pretty familiar to a traditional website, it's actually quite different and something users of native apps are already accustomed to.
-
-Ionic is able to provide users the "push/pop" navigation they expect, but translate it to the web. This allows developers to create the same native app experience for their users.
-
-
-### Routing
-
-We recommend using the officially supported router based on the framework used, such as the [Angular Router](https://angular.io/guide/router). Previous versions of Ionic shipped with our own custom router, but in order to provide the best tooling and developer experience we have since moved to always using the framework's recommended router.
+For apps the are building built with Angular and `ionic/angular`, we recommend using the [Angular Router](https://angular.io/guide/router).
+Previous versions of Ionic shipped with our own custom router, but in order to provide the best tooling and developer experience we have since moved to always using the framework's recommended router.
 
 
 ## Native Access
 
-An amazing feature of using web technologies, which is what Ionic is built on top of, is that it can be rendered in virtually any platform: desktop computers, phones, tablets, cars, refrigerators, and more! The same codebase for Ionic apps can work in many platforms because it is based on web standards and common APIs that are shared across many platforms.
+An amazing feature of using web technologies, which is what Ionic is built on top of, is that it can be rendered in virtually any platform: desktop computers, phones, tablets, cars, refrigerators, and more! The same code base for Ionic apps can work in many platforms because it is based on web standards and common APIs that are shared across many platforms.
 
 One of the most common use cases for Ionic is to build an app which can be downloaded from both the [App Store](https://www.apple.com/ios/app-store/) and [Play Store](https://play.google.com/). Both iOS and Android software development kits (SDKs) provide "[web views](/docs/building/webview)" which render any Ionic app.
 
