@@ -1,5 +1,9 @@
 import { Component, State } from '@stencil/core';
-import '@stencil/router'; // tslint:disable-line:no-import-side-effect
+
+/* tslint:disable:no-import-side-effect */
+import '@stencil/router';
+import 'intersection-observer';
+/* tslint:enable:no-import-side-effect */
 
 @Component({
   tag: 'docs-root'
