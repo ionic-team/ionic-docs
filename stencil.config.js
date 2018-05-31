@@ -18,6 +18,7 @@ exports.config = {
       type: 'www',
       dir: 'www/docs',
       baseUrl: '/docs',
+      serviceWorker: false
     }
   ],
   enableCache: false
