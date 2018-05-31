@@ -43,12 +43,11 @@ Ionic Framework is completely a free and open source project, released under <a 
 
 This website and documentation content (found in the <a href="https://github.com/ionic-team/ionic-site" target="_blank">ionic-site</a> repo) is licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache 2 license</a>.
 
-
 ## Ionic CLI
 
 The official [Ionic CLI](#), or Command Line Interface, is a tool that quickly scaffolds Ionic apps and provides a number of helpful commands to Ionic developers. In addition to installing and updating Ionic, the CLI comes with a built-in development server, build and debugging tools, and much more. If you are an [Ionic Pro](#ionic-pro) member, the CLI can be used to export code and even interact with your account programmatically.
 
-##  Framework Compatibility
+## Framework Compatibility
 
 While past release of Ionic were tightly coupled to Angular, V4 of the framework was reengineered to work as it a standalone library, and integrate with the latest JavaScript frameworks, like Angular.
 
@@ -69,7 +68,7 @@ To request support for others, please create an issue on our GitHub page, or sen
 
 Ionic Framework V4 is a major advance in the underlying technology and capabilities of the project, with a focus on performance, compatibility, and overall extensibility. Although V4 still integrates deeply with Angular through the `@ionic/angular` package, it is now also framework-agnostic, meaning it can work with any other JavaScript framework (Vue, React, Preact, etc), or no framework at all.
 
-By moving to web standards, V4 allows the core of Ionic to rely on what the browser is capable of, than custom code from a framework. This can mean faster load time, better performance, and less overall code.
+By moving to web standards, V4 allows the core of Ionic to rely on what the browser is capable of, rather than custom code from a framework. This can mean faster load time, better performance, and less overall code.
 
 ## Ionic Pro
 
@@ -81,7 +80,7 @@ Ionic Pro helps developers and teams monitor and track runtime errors, compile n
 
 Ionic Framework is actively developed and maintained full-time by a core team, and its ecosystem is guided by an international community of developers and contributors fueling its growth and adoption. Developers and companies small and large use Ionic to build and ship amazing apps that run everywhere.
 
-###  Join Our Community
+### Join Our Community
 
 There are millions of Ionic developers in over 200 countries worldwide. Here are some ways to join:
 
