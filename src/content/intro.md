@@ -72,15 +72,15 @@ By moving to web standards, V4 allows the core of Ionic to rely on what the brow
 
 ## Ionic Pro
 
-To take Ionic Framework apps even further, we also offer a commercial app platform called <a href="https://ionicframework.com/pro" target="_blank">Ionic Pro</a>. Ionic (the company) makes money by charging a subscription for Ionic Pro (among other comercial products), which <strong>is entirely optional and separate from the open source Framework.</strong>
+To help manage Ionic apps throughout their lifecycle, we also offer a commercial app platform called <a href="https://ionicframework.com/pro" target="_blank">Ionic Pro</a>, which is <strong>separate from the open source Framework.</strong>
 
-Ionic Pro helps developers and teams monitor and track runtime errors, compile native app builds, and deploy live code updates to Ionic apps from a centralized dashboard. Pro requires an Ionic Account and comes with a free "Starter" plan for those interested in playing around with some of its features. Optional upgrades to paid plans for more advanced capabilities and scale are available as well.
+Ionic Pro helps developers and teams monitor and track runtime errors, compile native app builds, and deploy live code updates to Ionic apps from a centralized dashboard. Pro requires an <a href="https://dashboard.ionicframework.com/signup" target="_blank">Ionic Account</a> and comes with a free “Starter” plan for those interested in playing around with some of its features. Optional upgrades to paid plans for more advanced capabilities and scale are available as well.
 
 ## Ecosystem
 
 Ionic Framework is actively developed and maintained full-time by a core team, and its ecosystem is guided by an international community of developers and contributors fueling its growth and adoption. Developers and companies small and large use Ionic to build and ship amazing apps that run everywhere.
 
-### Join Our Community
+### Join the Community
 
 There are millions of Ionic developers in over 200 countries worldwide. Here are some ways to join:
 
