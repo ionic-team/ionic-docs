@@ -58,16 +58,16 @@ One of the main goals with Ionic 4 was to remove any hard requirement of a frame
 
 ### Angular
 
-Angular is at the center of what makes Ionic great. While the core component have been written to work as a standalone library, the `ionic/angular` package makes integration with the Angular ecosystem a breeze. `ionic/angular` includes all the functionality that Angular developers would expect and integrates with core Angular libraries, like the Angular router.
+Angular is at the center of what makes Ionic great. While the core components have been written to work as a standalone library, the `@ionic/angular` package makes integration with the Angular ecosystem a breeze. `@ionic/angular` includes all the functionality that Angular developers would expect and integrates with core Angular libraries, like the Angular router.
 
 ### Future Support
 
 Support for other frameworks are expected in future release. Currently bindings for Vue and React are being devloped.
-To request support for others, please create an issue on our GitHub page, or sending a pull request!;w
+To request support for others, please create an issue on our GitHub page, or sending a pull request!
 
 ## Ionic Framework V4+
 
-Ionic Framework V4 is a major advance in the underlying technology and capabilities of the project, with a focus on performance, compatibility, and overall extensibility. Although V4 still integrates deeply with Angular through the `ionic/angular` package, it is now also framework-agnostic, meaning it can work with any other JavaScript framework (Vue, React, Preact, etc), or no framework at all.
+Ionic Framework V4 is a major advance in the underlying technology and capabilities of the project, with a focus on performance, compatibility, and overall extensibility. Although V4 still integrates deeply with Angular through the `@ionic/angular` package, it is now also framework-agnostic, meaning it can work with any other JavaScript framework (Vue, React, Preact, etc), or no framework at all.
 
 By moving to web standards, V4 allows the core of Ionic to rely on what the browser is capable of, than custom code from a framework. This can mean faster load time, better performance, and less overall code.
 
