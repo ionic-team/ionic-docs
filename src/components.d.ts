@@ -345,6 +345,39 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface ComponentPreview {
+
+    }
+  }
+
+  interface HTMLComponentPreviewElement extends StencilComponents.ComponentPreview, HTMLStencilElement {}
+
+  var HTMLComponentPreviewElement: {
+    prototype: HTMLComponentPreviewElement;
+    new (): HTMLComponentPreviewElement;
+  };
+  interface HTMLElementTagNameMap {
+    'component-preview': HTMLComponentPreviewElement;
+  }
+  interface ElementTagNameMap {
+    'component-preview': HTMLComponentPreviewElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'component-preview': JSXElements.ComponentPreviewAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface ComponentPreviewAttributes extends HTMLAttributes {
+      'onPreviewMessage'?: (event: CustomEvent) => void;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface CtrlDropdown {
       'autoClose': boolean;
       'autoCloseDelay': number;

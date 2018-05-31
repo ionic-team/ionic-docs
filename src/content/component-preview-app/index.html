@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ionic Component Preview App</title>
+</head>
+<body>
+  <pre id="message-target">Init</pre>
+  <script>
+    const messageTarget = document.querySelector('#message-target');
+
+    function handleMessage(message) {
+      const payload = message.data;
+      if (payload.active) {
+        messageTarget.innerHTML = JSON.stringify(payload, null, 2);
+      }
+    }
+
+    window.addEventListener('message', handleMessage);
+  </script>
+</body>
+</html>

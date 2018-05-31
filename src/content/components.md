@@ -1,7 +1,7 @@
 ---
-
+title: Components
+previewUrl: /docs/content/component-preview-app
+hideTOC: true
 ---
 
-# Components
-
-TODO: add stuff here
+<component-preview></component-preview>
