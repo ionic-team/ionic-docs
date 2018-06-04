@@ -7,15 +7,53 @@ import { Component, Listen, Prop, State } from '@stencil/core';
 export class SitePreviewApp {
   @Prop() url: string;
   @State() ionicMode = 'ios';
+
   iframe: HTMLIFrameElement;
+  iframeLoaded = false;
+  messageQueue: CustomEvent[] = [];
 
   @Listen('window:previewMessage')
-  postToIframe({ detail }: CustomEvent) {
+  handleMessage(msg: CustomEvent) {
+    this.iframeLoaded
+      ? this.postMessage(msg)
+      : this.messageQueue.push(msg);
+  }
+
+  postMessage({ detail }: CustomEvent) {
     try {
       this.iframe.contentWindow.postMessage(detail, '*');
-    } catch (err) {
-      // There probably is no preview...
-    }
+    } catch (e) {} // tslint:disable-line
+  }
+
+  onIframeLoad = () => {
+    this.messageQueue.forEach(this.postMessage.bind(this));
+    this.messageQueue = [];
+    this.iframeLoaded = true;
+  }
+
+  renderModeToggle() {
+    return (
+      <div class="docs-preview-mode-toggle">
+        {['ios', 'md'].map(mode => (
+          <button
+            class={ mode === this.ionicMode ? 'is-selected' : null }
+            onClick={() => { this.ionicMode = mode; }}>{ mode }</button>
+        ))}
+      </div>
+    );
+  }
+
+  renderDevice() {
+    return (
+      <div class={`docs-preview-device ${this.ionicMode}`}>
+        <figure>
+          <iframe
+            onLoad={this.onIframeLoad}
+            src={`${this.url}?ionic:mode=${this.ionicMode}`}
+            ref={node => { this.iframe = node as HTMLIFrameElement; }}/>
+        </figure>
+      </div>
+    );
   }
 
   render() {
@@ -24,22 +62,8 @@ export class SitePreviewApp {
     }
 
     return [
-      <div class="docs-preview-mode-toggle">
-        {['ios', 'md'].map(mode => (
-          <button
-            class={ mode === this.ionicMode ? 'is-selected' : null }
-            onClick={() => { this.ionicMode = mode; }}>
-              { mode }
-          </button>
-        ))}
-      </div>,
-      <div class={`docs-preview-device ${this.ionicMode}`}>
-        <figure>
-          <iframe
-            src={`${this.url}?ionic:mode=${this.ionicMode}`}
-            ref={node => { this.iframe = node as HTMLIFrameElement; }}/>
-        </figure>
-      </div>
+      this.renderModeToggle(),
+      this.renderDevice()
     ];
   }
 }
