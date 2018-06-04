@@ -1,43 +1,11 @@
-import { Component, Event, EventEmitter } from '@stencil/core';
-
-const components = [
-  'Action Sheet',
-  'Alert',
-  'Badge',
-  'Button',
-  'Card',
-  'Checkbox',
-  'DateTime',
-  'Fab',
-  'Footer',
-  'Grid',
-  'Header',
-  'Infinite Scroll',
-  'Input',
-  'List',
-  'Loading',
-  'Menu',
-  'Modal',
-  'Nav',
-  'Popover',
-  'Radio',
-  'Range',
-  'Refresher',
-  'Searchbar',
-  'Select',
-  'Slides',
-  'Spinner',
-  'Tabs',
-  'Toast',
-  'Toggle',
-  'Virtual Scroll'
-];
+import { Component, Element, Event, EventEmitter } from '@stencil/core';
 
 @Component({
   tag: 'component-preview',
   styleUrl: 'component-preview.scss'
 })
 export class ComponentPreview {
+  @Element() el: HTMLElement;
   @Event() previewMessage: EventEmitter;
 
   observer = new IntersectionObserver(this.handleIntersection.bind(this), {
@@ -49,12 +17,14 @@ export class ComponentPreview {
   handleIntersection(entries) {
     entries
       .filter(entry => entry.intersectionRatio >= 0.5)
-      .forEach(this.notifyPreview);
+      .map(entry => entry.target)
+      .forEach(this.handleActive);
   }
 
-  notifyPreview = (active) => {
+  handleActive = (active) => {
+    window.history.replaceState(null, null, `#${active.id}`);
     this.previewMessage.emit({
-      active: active.target.textContent
+      active: active.id
     });
   }
 
@@ -68,9 +38,12 @@ export class ComponentPreview {
     this.observer.disconnect();
   }
 
+  componentDidLoad() {
+    const contentEl = this.el.parentElement.parentElement;
+    Array.from(contentEl.querySelectorAll('h2')).forEach(this.observeElement);
+  }
+
   render() {
-    return components.map(name =>
-      <h2 class="component-preview-title" ref={this.observeElement}>{name}</h2>
-    );
+    return null;
   }
 }
