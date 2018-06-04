@@ -19,7 +19,7 @@ hideFooter: true
   </card-link>
   <card-link headline="UI Components"
              has-icon="true"
-             url="/docs/components">
+             url="/docs/components/overview">
     A comprehensive preview of Ionic Framework’s beautifully designed UI component library.
   </card-link>
   <card-link headline="API Reference"
