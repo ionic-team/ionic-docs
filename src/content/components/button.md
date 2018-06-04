@@ -2,6 +2,6 @@
 
 ---
 
-# Components
+# Button
 
 TODO: add stuff here
