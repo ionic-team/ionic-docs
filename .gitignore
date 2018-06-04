@@ -1,4 +1,7 @@
-sources/
+sources/ionic-cli
+sources/ionic-native
+sources/ionic-storage
+sources/ionic
 .idea/
 node_modules/
 scripts/build
