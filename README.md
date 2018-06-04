@@ -27,3 +27,11 @@ ionic-docs/
 ### Content
 
 Markdown content living in `src/content/` is mapped to routes based on the file path. So, a markdown document at `src/content/intro.md` is available on the docs site at `/docs/intro`. Reference content, such as API and CLI docs, is sourced from separate repos and should be edited there.
+
+### Sources
+
+Much of the content is sourced from external repos, each in `sources/` as a [submodule](https://git-scm.com/docs/gitsubmodules). To pull in submodules:
+
+```sh
+git submodule update --init
+```
