@@ -11,7 +11,8 @@ exports.config = {
   globalStyle: 'src/styles/global.scss',
   copy: [
     { src: 'content' },
-    { src: 'components/color-gen/demo', dest: 'theming/color-gen/demo' }
+    { src: 'components/color-gen/demo', dest: 'theming/color-gen/demo' },
+    { src: '../sources/component-preview/docs-www', dest: 'content/component-preview-app' }
   ],
   outputTargets: [
     {
