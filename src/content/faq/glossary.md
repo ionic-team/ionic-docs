@@ -190,6 +190,11 @@ nextUrl: '/docs/faq/build'
     <p><a href="https://webpack.github.io/" target="_blank">Webpack</a> bundles together JavaScript modules and other assets. It can be used to create single or multiple "chunks" that are only loaded when needed. Webpack can be used to take many files and dependencies and bundle them into one file, or other types.</p>
   </section>
 
+  <section id="web-standards">
+    <a href="#web-standards"><h3>Web Standards</h3></a>
+    <p>The <a href="https://www.w3.org/" target="_blank">World Wide Web Consortium</a> (W3C) is the standards organization for the Web. Together, industry leaders and the public work together to develop <a href="https://www.w3.org/standards/" target="_blank">web standards</a>, which are a set of protocols, specifications, and technologies that define the Web Platform.</p>
+  </section>
+
   <section id="xcode">
     <a href="#protractor"><h3>Xcode</h3></a>
     <p>

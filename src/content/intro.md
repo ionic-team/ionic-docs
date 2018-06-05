@@ -25,7 +25,7 @@ Build and deploy apps that work across multiple platforms, such as native iOS, A
 
 ### Web Standards-based
 
-Ionic Framework is built on top of reliable, standardized web technologies: HTML, CSS, and JavaScript.
+Ionic Framework is built on top of reliable, [standardized web technologies](/docs/faq/glossary#web-standards): HTML, CSS, and JavaScript.
 Because of this, Ionic apps are future proofed by default, and cannot be controlled by any one organization.
 
 ### Beautiful Design

@@ -8,13 +8,13 @@ nextUrl: '/docs/intro/browser-support'
 # Core Concepts
 
 <p class="intro" markdown="1">
-For those completely new to Ionic Framework app development, it can be helpful to get a high-level understanding of the core philosophy, concepts, and tools behind the project. Before diving into complex topics, we’ll cover the basics of what Ionic is, and how it works.
+For those completely new to Ionic Framework app development, it can be helpful to get a high-level understanding of the core philosophy, concepts, and tools behind the project. Before diving into complex topics, we'll cover the basics of what Ionic is, and how it works.
 </p>
 
 
 ## UI Components
 
-Ionic Framework is a library of UI Components, which are reusable elements that serve as the building blocks for an application. Components are pre-designed using web-standards, composed of HTML, CSS, and JavaScript. Though the components are pre-built, they're designed from the ground up to be highly customizable so apps can make each component their own, allowing each app to have its own look and feel. More specifically, Ionic components can be easily themed to globally change appearance across an entire app. For more information about customizing the look, please see [Theming](/docs/theming/basics).
+Ionic Framework is a library of UI Components, which are reusable elements that serve as the building blocks for an application. Ionic Components are built with [web standards](/docs/faq/glossary#web-standards) using HTML, CSS, and JavaScript. Though the components are pre-built, they're designed from the ground up to be highly customizable so apps can make each component their own, allowing each app to have its own look and feel. More specifically, Ionic components can be easily themed to globally change appearance across an entire app. For more information about customizing the look, please see [Theming](/docs/theming/basics).
 
 
 ## Platform Continuity
