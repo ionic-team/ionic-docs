@@ -12,6 +12,14 @@ nextUrl: '/docs/building/storage'
 The Web View powers web apps in native devices. Ionic maintains a <a href="https://github.com/ionic-team/cordova-plugin-ionic-webview" target="_blank">Web View plugin</a> for apps integrated with [Cordova](/docs/faq/glossary#cordova). The plugin is provided by default when using the Ionic CLI. For apps integrated with [Capacitor](/docs/faq/glossary#capacitor), the Web View is automatically provided.
 </p>
 
+## Architecture
+
+Ionic apps are built using [web technologies](/docs/faq/glossary#web-standards) and are rendered using Web Views, which are a full screen and full-powered web browser.
+
+Modern Web Views offer many built-in <a href="https://whatwebcando.today" target="_blank">HTML5 APIs</a> for hardware functionality such as cameras, sensors, GPS, speakers, and Bluetooth, but sometimes it may also be necessary to access platform-specific hardware APIs. In Ionic apps, hardware APIs can be accessed through a bridge layer, typically by using native plugins which expose JavaScript APIs.
+
+![webview architecture](/docs/assets/img/webview-architecture.png)
+
 ## iOS
 
 For iOS devices, <a href="https://developer.apple.com/documentation/webkit/wkwebview" target="_blank">WKWebView</a> is the internal utility to provide a Web View shell for apps. Unfortunately, WKWebView has a few quirks.
