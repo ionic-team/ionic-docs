@@ -2,6 +2,14 @@
 
 ---
 
-# Nav Pop
+# ion-nav-pop
 
-TODO: add stuff here
+
+
+<!-- Auto Generated Below -->
+
+
+
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*

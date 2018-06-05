@@ -2,6 +2,14 @@
 
 ---
 
-# Tap Click
+# ion-tap-click
 
-TODO: add stuff here
+
+
+<!-- Auto Generated Below -->
+
+
+
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*

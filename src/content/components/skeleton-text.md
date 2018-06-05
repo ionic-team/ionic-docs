@@ -2,6 +2,28 @@
 
 ---
 
-# Skeleton Text
+# ion-skeleton-text
 
-TODO: add stuff here
+
+
+<!-- Auto Generated Below -->
+
+
+## Properties
+
+#### width
+
+string
+
+
+## Attributes
+
+#### width
+
+string
+
+
+
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*

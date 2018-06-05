@@ -2,6 +2,76 @@
 
 ---
 
-# Label
+# ion-label
+Label is a wrapper element that can be used in combination with `ion-item`.
 
-TODO: add stuff here
+
+<!-- Auto Generated Below -->
+
+
+## Properties
+
+#### color
+
+string
+
+The color to use for the label's text
+
+
+#### mode
+
+string
+
+The mode determines which platform styles to use.
+Possible values are: `"ios"` or `"md"`.
+
+
+#### position
+
+string
+
+The position determines where and how the label behaves inside an item.
+Possible values are: 'inline' | 'fixed' | 'stacked' | 'floating'
+
+
+## Attributes
+
+#### color
+
+string
+
+The color to use for the label's text
+
+
+#### mode
+
+string
+
+The mode determines which platform styles to use.
+Possible values are: `"ios"` or `"md"`.
+
+
+#### position
+
+string
+
+The position determines where and how the label behaves inside an item.
+Possible values are: 'inline' | 'fixed' | 'stacked' | 'floating'
+
+
+## Events
+
+#### ionStyle
+
+Emitted when the styles change.
+
+
+## Methods
+
+#### getText()
+
+
+
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*

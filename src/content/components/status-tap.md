@@ -2,6 +2,28 @@
 
 ---
 
-# Status Tap
+# ion-status-tap
 
-TODO: add stuff here
+
+
+<!-- Auto Generated Below -->
+
+
+## Properties
+
+#### duration
+
+number
+
+
+## Attributes
+
+#### duration
+
+number
+
+
+
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*

@@ -2,6 +2,28 @@
 
 ---
 
-# Picker Column
+# ion-picker-column
 
-TODO: add stuff here
+
+
+<!-- Auto Generated Below -->
+
+
+## Properties
+
+#### col
+
+PickerColumn
+
+
+## Attributes
+
+#### col
+
+
+
+
+
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*
