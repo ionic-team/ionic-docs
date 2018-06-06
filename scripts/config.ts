@@ -19,6 +19,8 @@ export const STORAGE_DIR = process.env.STORAGE_DOCS_DIR || join('sources/ionic-s
 export const STORAGE_REPO_URL = process.env.STORAGE_DOCS_DIR || 'https://github.com/ionic-team/ionic-storage.git';
 export const STORAGE_DOCS_DIR = process.env.STORAGE_DOCS_DIR || join('src/content/building');
 
+export const COMPONENT_PREVIEW_DIR = join('sources/component-preview');
+
 export const VERBOSE = bool(process.env.VERBOSE) || false;
 
 

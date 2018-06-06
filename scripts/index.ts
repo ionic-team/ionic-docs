@@ -4,12 +4,14 @@ import { generate  as apiDocs } from './api';
 import { generate  as cliDocs } from './cli';
 import { generate  as nativeDocs } from './native';
 import { generate as storageDocs } from './storage';
+import { generate as componentPreview } from './components';
 import * as utils from './utils';
 import {
   API_DOCS_DIR,
   CLI_DOCS_DIR,
   NATIVE_DOCS_DIR,
-  STORAGE_DOCS_DIR
+  STORAGE_DOCS_DIR,
+  COMPONENT_PREVIEW_DIR
 } from './config';
 
 // the main task of the API documentation generation process
@@ -37,6 +39,10 @@ const tasks = new Listr([
         {
           title: 'Storage Docs',
           task: (ctx, task) => tryToRun(storageDocs, task, 'Storage', STORAGE_DOCS_DIR)
+        },
+        {
+          title: 'Component Docs',
+          task: (ctx, task) => tryToRun(componentPreview, task, 'Component Preview App', COMPONENT_PREVIEW_DIR)
         }
       ], {concurrent: true});
     }
