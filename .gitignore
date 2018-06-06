@@ -21,3 +21,4 @@ src/content/cli/ionic-angular/commands.md
 src/content/cli/ionic1/commands.md
 src/content/component-preview-app/
 /.vscode
+src/components/docs-menu/docs-api-map.ts

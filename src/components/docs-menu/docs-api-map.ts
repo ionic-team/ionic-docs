@@ -142,6 +142,7 @@ export const apiMap = {
     "grid": "/docs/api/dev/grid",
     "header": "/docs/api/dev/header",
     "hide-when": "/docs/api/dev/hide-when",
+    "img": "/docs/api/dev/img",
     "infinite-scroll": "/docs/api/dev/infinite-scroll",
     "infinite-scroll-content": "/docs/api/dev/infinite-scroll-content",
     "input": "/docs/api/dev/input",
