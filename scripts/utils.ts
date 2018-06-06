@@ -19,10 +19,6 @@ import * as config from './config';
 
 export const execp = util.promisify(exec);
 
-export async function initSubmodules() {
-  await execp('git submodule update --init');
-}
-
 export function copyDirectory(source, target) {
   let files = [];
 
