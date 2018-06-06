@@ -19,7 +19,7 @@ Ionic Framework is a library of UI Components, which are reusable elements that 
 
 ## Platform Continuity
 
-Platform Continuity is a built-in feature of Ionic Framework which allows app developers to use the same code base for multiple platforms. Every Ionic component adapts its look to the platform on which the app is running on. For example, Apple devices, such as the iPhone and iPad, use Apple's own design language for their [iOS operating system](https://www.apple.com/ios). Similarly, Android devices use Google's design language called [Material Design](https://material.io/guidelines/).
+Platform Continuity is a built-in feature of Ionic Framework which allows app developers to use the same code base for multiple platforms. Every Ionic component adapts its look to the platform on which the app is running on. For example, Apple devices, such as the iPhone and iPad, use Apple's own <a href="https://www.apple.com/ios" target="_blank">iOS design language</a>. Similarly, Android devices use Google's design language called <a href="https://material.io/guidelines/" target="_blank">Material Design</a>.
 
 By making subtle design changes between the platforms, users are provided with a familiar app experience. An Ionic app downloaded from Apple's App Store will get the iOS theme, while an Ionic app downloaded from Android's Play Store will get the Material Design theme. For the apps that are viewed as a Progressive Web App (PWA) from a browser, Ionic will default to using the Material Design theme. Additionally, deciding which platform to use in certain scenarios is entirely configurable. More information about platform continuity can be found in [Theming](/docs/theming/basics).
 
@@ -29,7 +29,7 @@ By making subtle design changes between the platforms, users are provided with a
 Traditional websites use a linear history, meaning that the user navigates to a page and can hit the back button to navigate back.
 An example of this is clicking around Wikipedia where the user is going forward and backward on the browser's linear history stack. Ionic apps are able to take this a step further by allowing parallel navigation to happen. Meaning that it's possible to have multiple navigation stacks, and swap them at any moment.
 
-For apps the are building built with Angular and `ionic/angular`, we recommend using the [Angular Router](https://angular.io/guide/router).
+For apps the are building built with Angular and `ionic/angular`, we recommend using the <a href="https://angular.io/guide/router" target="_blank">Angular Router</a>.
 Previous versions of Ionic shipped with our own custom router, but in order to provide the best tooling and developer experience we have since moved to always using the framework's recommended router.
 
 
@@ -37,14 +37,14 @@ Previous versions of Ionic shipped with our own custom router, but in order to p
 
 An amazing feature of using web technologies, which is what Ionic is built on top of, is that it can be rendered in virtually any platform: desktop computers, phones, tablets, cars, refrigerators, and more! The same code base for Ionic apps can work in many platforms because it is based on web standards and common APIs that are shared across many platforms.
 
-One of the most common use cases for Ionic is to build an app which can be downloaded from both the [App Store](https://www.apple.com/ios/app-store/) and [Play Store](https://play.google.com/). Both iOS and Android software development kits (SDKs) provide "[web views](/docs/building/webview)" which render any Ionic app.
+One of the most common use cases for Ionic is to build an app which can be downloaded from both the <a href="https://www.apple.com/ios/app-store/" target="_blank">App Store</a> and <a href="https://play.google.com/" target="_blank">Play Store</a>. Both iOS and Android software development kits (SDKs) provide "[web views](/docs/building/webview)" which render any Ionic app.
 
-Projects such as <a href="https://capacitor.ionicframework.com/" target="_blank">Capacitor</a> and <a href="https://cordova.apache.org/" target="_blank">Cordova</a> are commonly used to give Ionic apps "native access". This means developers can quickly build out an app using common web development tools, and still have access to native features such as the device's accelerometer, camera, GPS, etc. For more information please see the publishing docs for the [App Store](/docs/publishing/app-store) and [Play Store](http://ionic-docs.herokuapp.com/docs/publishing/play-store).
+Projects such as <a href="https://capacitor.ionicframework.com/" target="_blank">Capacitor</a> and <a href="https://cordova.apache.org/" target="_blank">Cordova</a> are commonly used to give Ionic apps "native access". This means developers can quickly build out an app using common web development tools, and still have access to native features such as the device's accelerometer, camera, GPS, etc. For more information please see the publishing docs for the [App Store](/docs/publishing/app-store) and [Play Store](/docs/publishing/play-store).
 
 
 ## Architecture
 
-Ionic Apps are structured around the idea of Components. Utilizing the developers framework of choice, app's are built from the ground up with components being the key building block. Top level "views" are just components that are accessible through a URL. More detailed guides on how apps should be structured and built are available from the particular framework developers choose to use, such as [Angular's Style Guide](https://angular.io/guide/styleguide)
+Ionic Apps are structured around the idea of Components. Utilizing the developers framework of choice, app's are built from the ground up with components being the key building block. Top level "views" are just components that are accessible through a URL. More detailed guides on how apps should be structured and built are available from the particular framework developers choose to use, such as <a href="https://angular.io/guide/styleguide" target="_blank">Angular's Style Guide</a>.
 
 
 ## Theming
