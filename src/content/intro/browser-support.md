@@ -16,9 +16,9 @@ Ionic's original goal was to make it easy to develop mobile apps using web techn
 
 Browser support was first centered around supporting mobile devices through [Platform Continuity](/docs/intro/concepts#platform-continuity), and has been heavily tested on the operating systems listed below:
 
-- Android 4.4+
+- ### Android 4.4+
   - [Latest Android Stats](https://developer.android.com/about/dashboards/)
-- iOS 10+
+- ### iOS 10+
   - [Latest iOS Stats](https://developer.apple.com/support/app-store/)
 
 
@@ -26,9 +26,9 @@ Browser support was first centered around supporting mobile devices through [Pla
 
 Ionic not only works great on mobile devices, but since it's based on web technologies it works great on desktop browsers too.
 
-- Chrome
-- Safari
-- Edge
-- Firefox
+- ### Chrome
+- ### Safari
+- ### Edge
+- ### Firefox
 
 For more information on desktop layouts, see [Cross Platform](/docs/building/cross-platform).
