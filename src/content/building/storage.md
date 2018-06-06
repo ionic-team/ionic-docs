@@ -1,11 +1,11 @@
 
-  # Storage
+# Storage
 
-  <p class="intro">Storage is an easy way to store key/value pairs and JSON objects.
+<p class="intro">Storage is an easy way to store key/value pairs and JSON objects.
 Storage uses a variety of storage engines underneath, picking the best one available
 depending on the platform.</p>
 
-  When running in a native app context, Storage will prioritize using SQLite, as it's one of
+When running in a native app context, Storage will prioritize using SQLite, as it's one of
 the most stable and widely used file-based databases, and avoids some of the
 pitfalls of things like localstorage and IndexedDB, such as the OS deciding to clear out such
 data in low disk-space situations.
@@ -14,9 +14,9 @@ When running in the web or as a Progressive Web App, Storage will attempt to use
 IndexedDB, WebSQL, and localstorage, in that order.
 
 
-  ## Usage
+## Usage
 
-  
+
 First, if you'd like to use SQLite, install the cordova-sqlite-storage plugin:
 ```bash
 ionic cordova plugin add cordova-sqlite-storage
@@ -98,130 +98,129 @@ export class AppModule { }
 ```
 
 
-  ## Instance Members
+## Instance Members
 
-  
-  ### constructor
 
-  Create a new Storage instance using the order of drivers and any additional config
+### constructor
+
+Create a new Storage instance using the order of drivers and any additional config
 options to pass to LocalForage.
 
-  Possible driver options are: ['sqlite', 'indexeddb', 'websql', 'localstorage'] and the
+Possible driver options are: ['sqlite', 'indexeddb', 'websql', 'localstorage'] and the
 default is that exact ordering.
 
-  <br><br>
+<br><br>
 
 
 
 
 
 
-  ### driver
+### driver
 
-  Get the name of the driver being used.
-
-  
-  <br><br>
+Get the name of the driver being used.
 
 
+<br><br>
 
 
 
-  ### clear()
-  Clear the entire key value store. WARNING: HOT!
-  
-  __Returns:__ Returns a promise that resolves when the store is cleared
 
 
-  
+### clear()
+Clear the entire key value store. WARNING: HOT!
 
-  <br><br>
+__Returns:__ Returns a promise that resolves when the store is cleared
 
 
 
-  ### forEach()
-  Iterate through each key,value pair.
-  
-  __Returns:__ Returns a promise that resolves when the iteration has finished.
 
-
-  
-
-  <h4>Parameters</h4>
-  <dl><dt><h5>iteratorCallback</h5></dt><dd>a callback of the form (value, key, iterationNumber)</dd></dl><br><br>
+<br><br>
 
 
 
-  ### get()
-  Get the value associated with the given key.
-  
-  __Returns:__ Returns a promise with the value of the given key
+### forEach()
+Iterate through each key,value pair.
 
-
-  
-
-  <h4>Parameters</h4>
-  <dl><dt><h5>key</h5><strong>Type:</strong> <code>string</code></dt><dd>the key to identify this value</dd></dl><br><br>
+__Returns:__ Returns a promise that resolves when the iteration has finished.
 
 
 
-  ### keys()
-  
-  
-  __Returns:__ Returns a promise that resolves with the keys in the store.
 
-
-  
-
-  <br><br>
+<h4>Parameters</h4>
+<dl><dt><h5>iteratorCallback</h5></dt><dd>a callback of the form (value, key, iterationNumber)</dd></dl><br><br>
 
 
 
-  ### length()
-  
-  
-  __Returns:__ Returns a promise that resolves with the number of keys stored.
+### get()
+Get the value associated with the given key.
 
-
-  
-
-  <br><br>
+__Returns:__ Returns a promise with the value of the given key
 
 
 
-  ### ready()
-  Reflect the readiness of the store.
-  
-  __Returns:__ Returns a promise that resolves when the store is ready
 
-
-  
-
-  <br><br>
+<h4>Parameters</h4>
+<dl><dt><h5>key</h5><strong>Type:</strong> <code>string</code></dt><dd>the key to identify this value</dd></dl><br><br>
 
 
 
-  ### remove()
-  Remove any value associated with this key.
-  
-  __Returns:__ Returns a promise that resolves when the value is removed
+### keys()
 
 
-  
-
-  <h4>Parameters</h4>
-  <dl><dt><h5>key</h5><strong>Type:</strong> <code>string</code></dt><dd>the key to identify this value</dd></dl><br><br>
+__Returns:__ Returns a promise that resolves with the keys in the store.
 
 
 
-  ### set()
-  Set the value for the given key.
-  
-  __Returns:__ Returns a promise that resolves when the key and value are set
+
+<br><br>
 
 
-  
 
-  <h4>Parameters</h4>
-  <dl><dt><h5>key</h5><strong>Type:</strong> <code>string</code></dt><dd>the key to identify this value</dd><dt><h5>value</h5><strong>Type:</strong> <code>any</code></dt><dd>the value for this key</dd></dl><br><br>
-  
+### length()
+
+
+__Returns:__ Returns a promise that resolves with the number of keys stored.
+
+
+
+
+<br><br>
+
+
+
+### ready()
+Reflect the readiness of the store.
+
+__Returns:__ Returns a promise that resolves when the store is ready
+
+
+
+
+<br><br>
+
+
+
+### remove()
+Remove any value associated with this key.
+
+__Returns:__ Returns a promise that resolves when the value is removed
+
+
+
+
+<h4>Parameters</h4>
+<dl><dt><h5>key</h5><strong>Type:</strong> <code>string</code></dt><dd>the key to identify this value</dd></dl><br><br>
+
+
+
+### set()
+Set the value for the given key.
+
+__Returns:__ Returns a promise that resolves when the key and value are set
+
+
+
+
+<h4>Parameters</h4>
+<dl><dt><h5>key</h5><strong>Type:</strong> <code>string</code></dt><dd>the key to identify this value</dd><dt><h5>value</h5><strong>Type:</strong> <code>any</code></dt><dd>the value for this key</dd></dl><br><br>
