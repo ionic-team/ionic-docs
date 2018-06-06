@@ -21,6 +21,10 @@ const tasks = new Listr([
     task: () => utils.preCheck()
   },
   {
+    title: 'Initialize Submodules',
+    task: () => utils.initSubmodules()
+  },
+  {
     title: 'Generating',
     task: () => {
       return new Listr([
