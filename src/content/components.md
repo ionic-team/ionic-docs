@@ -6,9 +6,7 @@ hideTOC: true
 
 <component-preview></component-preview>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vulputate feugiat odio eget egestas. Sed in pharetra lectus, vel mattis eros. Sed ultrices turpis sed eros feugiat tempor. Suspendisse aliquam tincidunt sodales. Proin vitae facilisis dolor. Maecenas iaculis sapien in risus maximus, tempor vehicula nibh tempor. Nulla sit amet elementum massa. Vivamus accumsan iaculis dolor in posuere. Donec blandit ante sed tincidunt pellentesque. Cras dignissim eu urna sed vestibulum. Nunc at urna dolor. Mauris semper vestibulum tortor. Donec dapibus tellus a neque suscipit venenatis.
-
-In hac habitasse platea dictumst. Etiam vitae pretium risus, non sodales turpis. In eu blandit libero. Duis sed dictum dolor, id viverra neque. Maecenas metus libero, hendrerit vel orci ut, iaculis porttitor quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec et sagittis lorem, a accumsan lacus. Duis feugiat metus sit amet arcu ultricies, in luctus nisi gravida. Fusce malesuada tortor sit amet nisi euismod, ut mattis ante blandit. Phasellus mattis urna nisl. Morbi ante dolor, maximus non erat ut, egestas elementum lacus.
+Ionic apps are made of high-level building blocks called components. Components allow you to quickly construct an interface for your app. Ionic comes with a number of components, including modals, popups, and cards. Check out the examples below to see what each component looks like and to learn how to use each one. Once you’re familiar with the basics, head over to the [API docs](/docs/api) for ideas on how to customize each component.
 
 ## Action Sheet
 
