@@ -10,13 +10,13 @@ export class ComponentPreview {
 
   observer = new IntersectionObserver(this.handleIntersection.bind(this), {
     root: document.querySelector('docs-content'),
-    rootMargin: '0px 0px -50% 0px',
-    threshold: 0.5
+    rootMargin: '0px 0px -75% 0px',
+    threshold: 0
   });
 
   handleIntersection(entries) {
     entries
-      .filter(entry => entry.intersectionRatio >= 0.5)
+      .filter(entry => entry.isIntersecting)
       .map(entry => entry.target)
       .forEach(this.handleActive);
   }
