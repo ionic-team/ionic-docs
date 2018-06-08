@@ -40,17 +40,9 @@ DateTime is used to present an interface which makes it easy for users to select
 
 A floating action button (FAB) is a circular button that performs the primary, or most common, action on a screen. It floats above the content of the page and is normally colored either the primary or secondary color of the app.
 
-## Footer
-
-The footer component is a root component that is fixed to the bottom of the page. Footers can contain any HTML and are normally used with buttons.
-
 ## Grid
 
 Grid is a powerful mobile-first system for building custom layouts. The Grid component can be used to ensure your app looks great on any device. It is heavily influenced by Bootstrap's grid system.
-
-## Header
-
-Headers are a root component of a page that is fixed to the top of that page. It is normally used with `ion-title` to display the title of your app.
 
 ## Infinite Scroll
 
