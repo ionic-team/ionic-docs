@@ -108,6 +108,7 @@ function copyFiles(components, dest, version = 'dev') {
   for (let i = 0; i < components.length; i++) {
     const componentName = components[i].tag.replace('ion-', '');
     listrTask.output = `Copying ${componentName}`;
+
     // copy demo if it exists and update the ionic path
     hasDemo = utils.copyFileSync(
       join(ionicComponentsDir, componentName, 'test/preview/index.html'),
@@ -121,6 +122,10 @@ function copyFiles(components, dest, version = 'dev') {
     );
 
     components[i].usage = getUsage(componentName);
+
+    // if (componentName === 'action-sheet-controller') {
+    //   console.log(dest);
+    // }
 
     // copying component markdown
     utils.vlog('Generating page: ', componentName);

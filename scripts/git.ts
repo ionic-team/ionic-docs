@@ -27,7 +27,7 @@ export async function ensureLatestMaster(
     // console.log(dir);
     vlog(`${dir} Repo exists - Updating`);
     await execp('git --git-dir=.git reset --hard', { cwd: dir });
-    await execp(`git --git-dir=.git checkout ${branch}`, { cwd: dir });
+    await execp(`git --git-dir=.git checkout -f ${branch}`, { cwd: dir });
     await execp(`git --git-dir=.git pull --ff-only origin ${branch}`, { cwd: dir });
   }
 }
@@ -43,5 +43,5 @@ export async function getVersions(dir: string): Promise<semver.SemVer[]> {
 }
 
 export async function checkout(dir: string, ref: string): Promise<void> {
-  await execp(`git --git-dir=.git checkout ${ref}`, { cwd: dir });
+  await execp(`git --git-dir=.git checkout -f ${ref}`, { cwd: dir });
 }

@@ -8,7 +8,7 @@ export async function installAPI() {
   vlog('npm installing monorepo');
   await execp('npm i', { cwd: config.IONIC_DIR });
   vlog('npm installing core');
-  return await execp(`npm i`, { cwd: path.join(config.IONIC_DIR, 'core') });
+  return await execp(`npm i && npm rebuild node-sass`, { cwd: path.join(config.IONIC_DIR, 'core') });
 }
 
 export async function buildAPIDocs() {

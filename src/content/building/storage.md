@@ -125,8 +125,6 @@ Get the name of the driver being used.
 
 
 
-
-
 ### clear()
 Clear the entire key value store. WARNING: HOT!
 
