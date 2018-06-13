@@ -58,14 +58,18 @@ export async function generate(task) {
     versions.push(nightly);
   }
 
+  // console.log(versions);
+
   // generate the docs for each version
   for (const sv of versions) {
     const version = sv.raw.indexOf('+dev') !== -1 ? 'dev' : sv.version;
+
     task.output = `Building for ${version}...`;
     const DOCS_DEST = join(
       config.API_DOCS_DIR,
-      sv.version === CURRENT_VERSION ? '' : `${version}/`
+      version === CURRENT_VERSION ? '' : `${version}/`
     );
+    // console.log(version, CURRENT_VERSION, DOCS_DEST);
     // skip this version if it already exists.
     // delete the directory in src/api/ to force a rebuild
     if (existsSync(DOCS_DEST)) {
@@ -76,7 +80,7 @@ export async function generate(task) {
     // Generate the docs for this version
     task.output = `Generating API docs for ${version} (1-3 mins)`;
     task.output = `Checking out ${version}`;
-    await git.checkout(config.IONIC_DIR, sv.raw.indexOf('+dev') !== -1 ? 'HEAD' : sv.raw);
+    const test = await git.checkout(config.IONIC_DIR, sv.raw.indexOf('+dev') !== -1 ? 'master' : sv.raw);
     task.output = `NPM Installing ${version}`;
     await npm.installAPI();
     task.output = `Building Docs for ${version}`;

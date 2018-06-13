@@ -109,6 +109,7 @@ export const nativeMenu = {
   "Instagram": "/docs/native/instagram",
   "Intel Security": "/docs/native/intel-security",
   "Intercom": "/docs/native/intercom",
+  "Ionic Webview": "/docs/native/ionic-webview",
   "Is Debug": "/docs/native/is-debug",
   "Jins Meme": "/docs/native/jins-meme",
   "Keyboard": "/docs/native/keyboard",
