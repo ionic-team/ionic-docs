@@ -1,5 +1,6 @@
 docs-content {
   display: grid;
+  position: relative;
   grid-area: content;
   grid-template-columns: 1fr minmax(var(--content-min, 320px), var(--content-max, 720px)) 1.25fr auto;
   grid-template-areas: ". document . preview";

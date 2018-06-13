@@ -31,6 +31,14 @@ export class SitePreviewApp {
     this.iframeLoaded = true;
   }
 
+  renderTabLink() {
+    return (
+      <a class="docs-preview-new-tab" href={this.url} target="_blank">
+        Open Preview
+      </a>
+    );
+  }
+
   renderModeToggle() {
     return (
       <div class="docs-preview-mode-toggle">
@@ -62,6 +70,7 @@ export class SitePreviewApp {
     }
 
     return [
+      this.renderTabLink(),
       this.renderModeToggle(),
       this.renderDevice()
     ];

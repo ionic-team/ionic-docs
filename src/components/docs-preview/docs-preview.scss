@@ -1,9 +1,5 @@
 docs-preview {
   grid-area: preview;
-
-  @media (max-width: $breakpoint-lg) {
-    display: none;
-  }
 }
 
 .docs-preview-device {
@@ -69,5 +65,26 @@ docs-preview {
   &.is-selected {
     background-color: var(--blue);
     color: white;
+  }
+}
+
+.docs-preview-new-tab {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: white;
+  padding: 2px 8px 4px;
+  border-radius: 14px;
+  display: none;
+}
+
+@media (max-width: $breakpoint-lg) {
+  .docs-preview-new-tab {
+    display: block;
+  }
+
+  .docs-preview-device,
+  .docs-preview-mode-toggle {
+    display: none;
   }
 }
