@@ -20,16 +20,6 @@ Modern Web Views offer many built-in <a href="https://whatwebcando.today" target
 
 The Ionic Web View plugin is specialized for modern JavaScript apps. For both iOS and Android, app files are always hosted using the `http://` protocol with an optimized HTTP server that runs on the local device.
 
-### File Protocol
-
-Cordova and Capacitor apps are hosted on a local HTTP server, so requests inside the Web View are made from the `http://` protocol. To avoid difficulties with the `file://` protocol, paths to local files should be rewritten to use the local HTTP server.
-
-For example, `file:///path/to/web/asset` should be rewritten to `/path/to/web/asset`.
-
-```typescript
-TODO
-```
-
 ### CORS
 
 Web Views enforce [CORS](/docs/faq/glossary#cors), so it's important that external services properly handle cross-origin requests. See <a href="https://enable-cors.org/" target="_blank">enable-cors.org</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" target="_blank">MDN</a> for more details.
@@ -44,6 +34,14 @@ Many web frameworks may have support for CORS built in or as official add-ons, s
 1. Allow any necessary HTTP methods (see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Methods" target="_blank">`Access-Control-Allow-Methods`</a>)
 1. Allow any necessary HTTP headers (see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers" target="_blank">`Access-Control-Allow-Headers`</a>)
 1. Ensure the server can handle <a href="https://developer.mozilla.org/en-US/docs/Glossary/Preflight_request" target="_blank">preflight requests</a>
+
+### File Protocol
+
+Cordova and Capacitor apps are hosted on a local HTTP server and are served with the `http://` protocol. Some plugins, however, attempt to access device files via the `file://` protocol. To avoid difficulties between `http://` and `file://`, paths to device files must be rewritten to use the local HTTP server. For example, `file:///path/to/device/file` must be rewritten as `http://<host>:<port>/<prefix>/path/to/device/file` before being rendered in the app.
+
+For Cordova apps, the [Ionic Web View plugin](https://github.com/ionic-team/cordova-plugin-ionic-webview) provides a utility function for converting File URIs: `window.Ionic.WebView.convertFileSrc()`.
+
+For Capacitor apps, the File URIs are converted automatically.
 
 ### Implementations
 
