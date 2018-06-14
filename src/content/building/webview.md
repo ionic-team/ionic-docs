@@ -39,7 +39,7 @@ Many web frameworks may have support for CORS built in or as official add-ons, s
 
 Cordova and Capacitor apps are hosted on a local HTTP server and are served with the `http://` protocol. Some plugins, however, attempt to access device files via the `file://` protocol. To avoid difficulties between `http://` and `file://`, paths to device files must be rewritten to use the local HTTP server. For example, `file:///path/to/device/file` must be rewritten as `http://<host>:<port>/<prefix>/path/to/device/file` before being rendered in the app.
 
-For Cordova apps, the [Ionic Web View plugin](https://github.com/ionic-team/cordova-plugin-ionic-webview) provides a utility function for converting File URIs: `window.Ionic.WebView.convertFileSrc()`.
+For Cordova apps, the [Ionic Web View plugin](https://github.com/ionic-team/cordova-plugin-ionic-webview) provides a utility function for converting File URIs: `window.Ionic.WebView.convertFileSrc()`. There is also a corresponding Ionic Native plugin: <a href="https://www.npmjs.com/package/@ionic-native/ionic-webview" target="_blank">`@ionic-native/ionic-webview`</a>.
 
 For Capacitor apps, the File URIs are converted automatically.
 
