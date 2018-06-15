@@ -1,4 +1,5 @@
-import { Component, Prop, State, Watch } from '@stencil/core';
+import { Component, Element, Prop, State, Watch } from '@stencil/core';
+import { RouterHistory, injectHistory } from '@stencil/router';
 import { current, versions } from '../../versions';
 import { apiMap } from './docs-api-map';
 import { cliMenu } from './cli-menu';
@@ -11,10 +12,16 @@ import { NewTab } from '../../icons';
   styleUrl: 'docs-menu.scss'
 })
 export class DocsMenu {
+  @Element() el;
   @Prop() path: string;
+  @Prop() history: RouterHistory;
   @Prop() section: string;
   @State() version = current;
   @State() activeItem: string;
+
+  constructor() {
+    this.onVersionChange = this.onVersionChange.bind(this);
+  }
 
   createItem = (text, url, onClick?) => {
     return (
@@ -92,6 +99,11 @@ export class DocsMenu {
     this.setActiveItem(activeKey);
   }
 
+  onVersionChange(e) {
+    this.version = (e.target as HTMLSelectElement).value;
+    this.history.push(`/docs/api`, {});
+  }
+
   componentDidLoad() {
     this.setActiveItemFromPath(this.path);
   }
@@ -102,9 +114,7 @@ export class DocsMenu {
       case 'api':
         const api = apiMap[this.version];
         return [
-          <select class="api-version-selector" onChange={e => {
-            this.version = (e.target as HTMLSelectElement).value;
-          }}>
+          <select class="api-version-selector" onChange={e => this.onVersionChange(e)}>
             { versions.map(version => (
               <option value={version} selected={version === this.version}>{ version }</option>
             ))}
@@ -195,3 +205,5 @@ export class DocsMenu {
     ];
   }
 }
+
+injectHistory(DocsMenu);

@@ -27,10 +27,14 @@ declare global {
 }
 
 import '@stencil/router';
+import '@stencil/state-tunnel';
 
 import {
   ColorVariable,
 } from './components/color-gen/color-variables';
+import {
+  RouterHistory,
+} from '@stencil/router';
 
 declare global {
 
@@ -602,6 +606,7 @@ declare global {
 
   namespace StencilComponents {
     interface DocsMenu {
+      'history': RouterHistory;
       'path': string;
       'section': string;
     }
@@ -626,6 +631,7 @@ declare global {
   }
   namespace JSXElements {
     export interface DocsMenuAttributes extends HTMLAttributes {
+      'history'?: RouterHistory;
       'path'?: string;
       'section'?: string;
     }
