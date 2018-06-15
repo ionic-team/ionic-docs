@@ -9,9 +9,9 @@ nextUrl: '/docs/building/ios'
 
 After building out an app and adding native functionality, there will be a few different routes to test it out:
 
-- Mock the native functionality and test in the browser
-- Deploy to iOS and Android
-- Deploy to device using Ionic DevApp
+* Mock the native functionality and test in the browser with Ionic Lab
+* Deploy to iOS and Android
+* Deploy to device using Ionic DevApp
 
 This article will focus on Ionic DevApp, as it includes the ability to test native functionality on a device.
 
