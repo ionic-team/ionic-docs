@@ -4,4 +4,4 @@ export const versions = [
   'dev'
 ];
 
-export const current = '4.0.0-alpha.7';
+export const current = 'dev';
