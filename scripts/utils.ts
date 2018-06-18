@@ -19,6 +19,7 @@ import * as config from './config';
 
 export const execp = util.promisify(exec);
 
+// copy dir to target
 export function copyDirectory(source, target) {
   let files = [];
 
@@ -38,6 +39,32 @@ export function copyDirectory(source, target) {
       } else {
         // async
         copyFile(curSource, join(targetFolder, files[i]));
+      }
+    }
+  }
+}
+
+// copies contents of source to target
+export function copyDirectoryTo(source, target) {
+  let files = [];
+
+  // copy
+  if (lstatSync(source).isDirectory()) {
+    files = readdirSync(source);
+    for (let i = 0; i < files.length; i++) {
+      // ignore dotfiles
+      if (files[i].charAt() === '.') {
+        continue;
+      }
+      const curSource = join(source, files[i]);
+      if (lstatSync(curSource).isDirectory()) {
+        if (!existsSync(target)) {
+          mkdirSync(target);
+        }
+        copyDirectoryTo(curSource, target);
+      } else {
+        // async
+        copyFile(curSource, join(target, files[i]));
       }
     }
   }
@@ -130,6 +157,10 @@ export function validateNodeVersion(version: string) {
     );
   }
   return true;
+}
+
+export function listDirs(dir) {
+  return readdirSync(dir).filter(x => lstatSync(join(dir, x)).isDirectory());
 }
 
 export function deleteFolderRecursive(path) {

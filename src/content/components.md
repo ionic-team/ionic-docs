@@ -6,19 +6,15 @@ hideTOC: true
 
 <component-preview></component-preview>
 
-Ionic apps are made of high-level building blocks called components. Components allow you to quickly construct an interface for your app. Ionic comes with a number of components, including modals, popups, and cards. Check out the examples below to see what each component looks like and to learn how to use each one. Once you’re familiar with the basics, head over to the [API docs](/docs/api) for ideas on how to customize each component.
-
-## Action Sheet
-
-Action Sheets slide up from the bottom edge of the device screen, and display a set of options with the ability to confirm or cancel an action. Action Sheets can sometimes be used as an alternative to menus, however, they should not be used for navigation.
+action-sheet
 
 ## Alert
-
+ 
 Alerts are a great way to offer the user the ability to choose a specific action or list of actions. They also can provide the user with important information, or require them to make a decision (or multiple decisions). Alerts should only be used for quick actions like password verification, small app notifications, or quick options.
 
 ## Badge
 
-The Badge component is a small component that typically communicates a numerical value to the user. They are normally used within an item.
+The Badge component is a small component that typically communicates a numerical value to the user. They are normally used within an item. 
 
 ## Button
 
@@ -72,6 +68,7 @@ Modals slide in off screen to display a temporary UI, often used for login or si
 
 Navigation is how users move between different pages in your app. Ionic’s navigation follows standard navigation concepts and animated transitions. Ionic's nav can also adapt to larger viewports using [ion-split-pane](link to split pane)
 
+
 ## Popover
 
 The Popover is a view that floats above an app’s content. Popovers provide an easy way to present or gather information from the user and are commonly used in the following situations:
@@ -86,7 +83,7 @@ A Range is a form control that lets users select from a range of values by movin
 
 ## Refresher
 
-Refresh provides pull-to-refresh functionality on a content component. A common use case for the refresher component is to reload data.
+Refresh provides pull-to-refresh functionality on a content component. A common use case for the refresher component is to reload data. 
 
 ## Searchbar
 
@@ -94,7 +91,7 @@ Searchbar is used to search or filter items. It is normally used inside an `ion-
 
 ## Select
 
-The ion-select component is similar to an HTML `<select>` element, however, Ionic’s select component makes it easier for users to sort through and select the preferred option. It must be wrapped in an `ion-item`.
+The ion-select component is similar to an HTML <select> element, however, Ionic’s select component makes it easier for users to sort through and select the preferred option. It must be wrapped in an `ion-item`.
 
 ## Slides
 

@@ -19,6 +19,7 @@ export const cliMenu = {
   "Doctor Check": "/docs/cli/doctor-check",
   "Doctor List": "/docs/cli/doctor-list",
   "Doctor Treat": "/docs/cli/doctor-treat",
+  "Generate": "/docs/cli/generate",
   "Git Remote": "/docs/cli/git-remote",
   "Info": "/docs/cli/info",
   "Integrations Disable": "/docs/cli/integrations-disable",

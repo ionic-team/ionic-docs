@@ -2,12 +2,15 @@ import { existsSync } from 'fs';
 import Listr from 'listr';
 import { generate  as apiDocs } from './api';
 import { generate  as cliDocs } from './cli';
+import { generate  as componentPreview } from './componentPreview';
 import { generate  as nativeDocs } from './native';
 import { generate as storageDocs } from './storage';
+import { updateSubmodules } from './git';
 import * as utils from './utils';
 import {
   API_DOCS_DIR,
   CLI_DOCS_DIR,
+  COMPONENT_PREVIEW_DIR,
   NATIVE_DOCS_DIR,
   STORAGE_DOCS_DIR
 } from './config';
@@ -29,6 +32,10 @@ const tasks = new Listr([
         {
           title: 'CLI Docs',
           task: (ctx, task) => tryToRun(cliDocs, task, 'CLI', CLI_DOCS_DIR)
+        },
+        {
+          title: 'Component Preview',
+          task: (ctx, task) => tryToRun(componentPreview, task, 'Component Preview', COMPONENT_PREVIEW_DIR)
         },
         {
           title: 'Native Docs',
@@ -61,6 +68,7 @@ async function run() {
 
   await tryToRun(apiDocs, taskPolyfill, 'API', API_DOCS_DIR);
   await tryToRun(cliDocs, taskPolyfill, 'CLI', CLI_DOCS_DIR);
+  await tryToRun(componentPreview, taskPolyfill, 'Component', COMPONENT_PREVIEW_DIR);
   await tryToRun(nativeDocs, taskPolyfill, 'Native', NATIVE_DOCS_DIR);
   await tryToRun(storageDocs, taskPolyfill, 'Storage', STORAGE_DOCS_DIR);
 }

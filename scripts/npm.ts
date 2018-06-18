@@ -19,6 +19,17 @@ export async function buildAPIDocs() {
   );
 }
 
+export async function install(dir?) {
+  await execp('npm i', dir ? {cwd: dir} : null);
+}
+
+export async function build(dir?) {
+  await execp('npm run build', dir ? {cwd: dir} : null);
+}
+
+export async function run(command: string, dir?) {
+  await execp(`npm run ${command}`, dir ? {cwd: dir} : null);
+}
 
 export async function getCLIDocs() {
   vlog('npm installing');

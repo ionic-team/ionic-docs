@@ -45,3 +45,7 @@ export async function getVersions(dir: string): Promise<semver.SemVer[]> {
 export async function checkout(dir: string, ref: string): Promise<void> {
   await execp(`git --git-dir=.git checkout -f ${ref}`, { cwd: dir });
 }
+
+export async function updateSubmodules(): Promise<void> {
+  await execp(`git submodule update --init --remote`);
+}
