@@ -8,7 +8,7 @@ export class CodePreview {
   @Prop() markup = '';
 
   render() {
-    const markup = this.markup.indexOf('<ion-app') !== -1 ? this.markup :
+    const markup = this.markup.indexOf('ion-app') !== -1 ? this.markup :
       `<ion-app>${this.markup}</ion-app>`;
     return <iframe src={
       `data:text/html,${encodeURIComponent(`

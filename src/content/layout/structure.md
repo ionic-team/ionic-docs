@@ -52,7 +52,7 @@ It is important to note that the `ion-footer` component should always be below t
 
 ## Split pane layout
 
-Split pane layouts are another very common layout for apps.
+Split pane layouts are another common layout for apps.
 
 ```html
 <ion-app>
