@@ -78,13 +78,21 @@ docs-preview {
   display: none;
 }
 
+.docs-preview-source {
+  position: absolute;
+  top: 34px;
+  right: 44px;
+  font-size: 24px;
+}
+
 @media (max-width: $breakpoint-lg) {
   .docs-preview-new-tab {
     display: block;
   }
 
   .docs-preview-device,
-  .docs-preview-mode-toggle {
+  .docs-preview-mode-toggle,
+  .docs-preview-source {
     display: none;
   }
 }

@@ -28,6 +28,7 @@ declare global {
 
 import '@stencil/router';
 import '@stencil/state-tunnel';
+import 'ionicons';
 
 import {
   ColorVariable,
@@ -643,6 +644,7 @@ declare global {
 
   namespace StencilComponents {
     interface DocsPreview {
+      'source': string;
       'url': string;
     }
   }
@@ -666,6 +668,7 @@ declare global {
   }
   namespace JSXElements {
     export interface DocsPreviewAttributes extends HTMLAttributes {
+      'source'?: string;
       'url'?: string;
     }
   }

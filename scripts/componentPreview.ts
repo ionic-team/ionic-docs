@@ -9,6 +9,7 @@ const frontmatter =
 `---
 title: Components
 previewUrl: /docs/content/component-preview-app
+previewSource: https://github.com/ionic-team/component-preview/tree/master/src/components
 hideTOC: true
 ---
 

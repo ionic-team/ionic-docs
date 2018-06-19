@@ -3,6 +3,7 @@ import { Component, State } from '@stencil/core';
 /* tslint:disable:no-import-side-effect */
 import '@stencil/router';
 import 'intersection-observer';
+import 'ionicons';
 /* tslint:enable:no-import-side-effect */
 
 @Component({
@@ -12,6 +13,7 @@ export class DocsRoot {
   document: HTMLElement;
 
   @State() previewUrl: string;
+  @State() previewSource: string;
   @State() isMenuOpen = false;
   @State() pageClass: string;
 
@@ -22,6 +24,7 @@ export class DocsRoot {
 
   handleDocumentUpdate = (document) => {
     this.previewUrl = document.previewUrl || null;
+    this.previewSource = document.previewSource || null;
     this.pageClass = document.pageClass;
     this.setScrollPosition();
     this.closeMenu();
@@ -58,7 +61,9 @@ export class DocsRoot {
           return (
             <docs-layout class={layoutClass}>
               <docs-menu section={section} path={props.match.url}/>
-              <docs-header section={section} isMenuOpen={this.isMenuOpen} onToggleClick={this.toggleMenu}/>
+              <docs-header section={section}
+                           isMenuOpen={this.isMenuOpen}
+                           onToggleClick={this.toggleMenu}/>
               <docs-content
                 onOverlayClick={this.closeMenu}
                 showOverlay={this.isMenuOpen}>
@@ -66,7 +71,8 @@ export class DocsRoot {
                     ref={node => { this.document = node; }}
                     path={documentPath}
                     onUpdate={this.handleDocumentUpdate}/>
-                  <docs-preview url={this.previewUrl}/>
+                  <docs-preview url={this.previewUrl}
+                                source={this.previewSource}/>
               </docs-content>
             </docs-layout>
           );

@@ -6,6 +6,7 @@ import { Component, Listen, Prop, State } from '@stencil/core';
 })
 export class SitePreviewApp {
   @Prop() url: string;
+  @Prop() source: string;
   @State() ionicMode = 'ios';
 
   iframe: HTMLIFrameElement;
@@ -45,10 +46,21 @@ export class SitePreviewApp {
         {['ios', 'md'].map(mode => (
           <button
             class={ mode === this.ionicMode ? 'is-selected' : null }
+            title={`Toggle ${mode === 'ios' ? 'iOS' : 'Android'} mode`}
             onClick={() => { this.ionicMode = mode; }}>{ mode }</button>
         ))}
       </div>
     );
+  }
+
+  renderSourceLink() {
+    return this.source ?
+      <a href={this.source}
+         class="docs-preview-source"
+         target="_blank"
+         title="Demo Source">
+        <ion-icon name="code"></ion-icon>
+      </a> : null;
   }
 
   renderDevice() {
@@ -71,6 +83,7 @@ export class SitePreviewApp {
 
     return [
       this.renderTabLink(),
+      this.renderSourceLink(),
       this.renderModeToggle(),
       this.renderDevice()
     ];

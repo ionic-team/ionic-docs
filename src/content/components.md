@@ -1,6 +1,7 @@
 ---
 title: Components
 previewUrl: /docs/content/component-preview-app
+previewSource: https://github.com/ionic-team/component-preview/tree/master/src/components
 hideTOC: true
 ---
 
@@ -11,12 +12,12 @@ hideTOC: true
 Action Sheets slide up from the bottom edge of the device screen, and display a set of options with the ability to confirm or cancel an action. Action Sheets can sometimes be used as an alternative to menus, however, they should not be used for navigation.
 
 ## Alert
- 
+
 Alerts are a great way to offer the user the ability to choose a specific action or list of actions. They also can provide the user with important information, or require them to make a decision (or multiple decisions). Alerts should only be used for quick actions like password verification, small app notifications, or quick options.
 
 ## Badge
 
-The Badge component is a small component that typically communicates a numerical value to the user. They are normally used within an item. 
+The Badge component is a small component that typically communicates a numerical value to the user. They are normally used within an item.
 
 ## Button
 
@@ -85,7 +86,7 @@ A Range is a form control that lets users select from a range of values by movin
 
 ## Refresher
 
-Refresh provides pull-to-refresh functionality on a content component. A common use case for the refresher component is to reload data. 
+Refresh provides pull-to-refresh functionality on a content component. A common use case for the refresher component is to reload data.
 
 ## Searchbar
 
