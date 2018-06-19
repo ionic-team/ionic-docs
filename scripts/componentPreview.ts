@@ -27,7 +27,7 @@ export async function generate(task) {
   await install(COMPONENT_PREVIEW_DIR);
 
   task.output = 'NPM Building...';
-  // await build(COMPONENT_PREVIEW_DIR);
+  await build(COMPONENT_PREVIEW_DIR);
 
   task.output = 'Copying app...';
   copyDirectoryTo(
