@@ -124,6 +124,11 @@ docs-menu {
 
 .menu__breadcrumb {
   color: var(--blue);
+  font-size: 13px;
+}
+
+.menu__breadcrumb a {
+  line-height: 1;
 }
 
 .menu__breadcrumb svg {
