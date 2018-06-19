@@ -96,3 +96,32 @@ docs-preview {
     display: none;
   }
 }
+
+.docs-preview-device__ios-notch {
+  display: none;
+  left: 50%;
+  position: absolute;
+  top: -1px;
+  transform: translateX(-50%);
+  width: 165px;
+  z-index: 2;
+}
+
+.docs-preview-device.ios figure:after {
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 2px;
+  bottom: 6px;
+  content: "";
+  display: none;
+  height: 4px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 35%;
+  z-index: 1;
+}
+
+.docs-preview-device.ios .docs-preview-device__ios-notch,
+.docs-preview-device.ios figure:after {
+  display: block;
+}
