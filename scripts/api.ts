@@ -7,14 +7,19 @@ import {
   writeFileSync
 } from 'fs';
 import { join } from 'path';
-import * as util from 'util';
+import { eq, parse, valid } from 'semver';
 
-import * as semver from 'semver';
-import * as config from './config';
-import * as docgen from './apiDocgen';
-import * as git from './git';
+import {
+  API_DOCS_DIR,
+  IONIC_CORE_SRC,
+  IONIC_DIR,
+  IONIC_REPO_URL
+} from './config';
+
+import { getComponentMarkup } from './apiDocgen';
+import { checkout, ensureLatestMaster, getVersions } from './git';
 import * as npm from './npm';
-import * as utils from './utils';
+import { copyFileSync, vlog } from './utils';
 
 import {
   current as CURRENT_VERSION,
@@ -24,7 +29,9 @@ import {
 const menuPath = 'src/components/docs-menu';
 const menuHeader = '/* tslint:disable */\n\nexport const apiMap = ';
 const menuFooter = ';\n';
-const ionicComponentsDir = `${config.IONIC_DIR}/${config.IONIC_CORE_SRC}/components`;
+const ionicComponentsDir = `${IONIC_DIR}/${IONIC_CORE_SRC}/components`;
+const GIT_SRC_URL = `${IONIC_REPO_URL}/tree/master/${IONIC_CORE_SRC}/components`;
+const PREVIEW_PATH = 'test/preview/index.html';
 
 let listrTask = null;
 
@@ -35,17 +42,14 @@ export async function generate(task) {
 
   task.output = 'Updating...';
   // clone/update the git repo and get a list of all the tags
-  await git.ensureLatestMaster(
-    config.IONIC_DIR,
-    config.IONIC_REPO_URL
-  );
+  await ensureLatestMaster(IONIC_DIR, IONIC_REPO_URL);
 
-  utils.vlog('validating tags');
+  vlog('validating tags');
   task.output = 'Getting Tags...';
-  const allVersions = await git.getVersions(config.IONIC_DIR);
+  const allVersions = await getVersions(IONIC_DIR);
   const versions = allVersions.filter(v => {
     for (const whitelistedVersion of FRAMEWORK_VERSIONS) {
-      if (semver.valid(whitelistedVersion) && semver.eq(v, whitelistedVersion)) {
+      if (valid(whitelistedVersion) && eq(v, whitelistedVersion)) {
         return true;
       }
     }
@@ -66,7 +70,7 @@ export async function generate(task) {
 
     task.output = `Building for ${version}...`;
     const DOCS_DEST = join(
-      config.API_DOCS_DIR,
+      API_DOCS_DIR,
       version === CURRENT_VERSION ? '' : `${version}/`
     );
     // console.log(version, CURRENT_VERSION, DOCS_DEST);
@@ -80,7 +84,10 @@ export async function generate(task) {
     // Generate the docs for this version
     task.output = `Generating API docs for ${version} (1-3 mins)`;
     task.output = `Checking out ${version}`;
-    const test = await git.checkout(config.IONIC_DIR, sv.raw.indexOf('+dev') !== -1 ? 'master' : sv.raw);
+    const test = await checkout(
+      IONIC_DIR,
+      sv.raw.indexOf('+dev') !== -1 ? 'master' : sv.raw
+    );
     task.output = `NPM Installing ${version}`;
     await npm.installAPI();
     task.output = `Building Docs for ${version}`;
@@ -102,7 +109,7 @@ export async function generate(task) {
 
 // copy demos and API docs files over to content/api
 function copyFiles(components, dest, version = 'dev') {
-  utils.vlog(`Copying ${components.length} files`);
+  vlog(`Copying ${components.length} files`);
   let hasDemo = false;
 
   if (!existsSync(dest)) {
@@ -114,28 +121,31 @@ function copyFiles(components, dest, version = 'dev') {
     listrTask.output = `Copying ${componentName}`;
 
     // copy demo if it exists and update the ionic path
-    hasDemo = utils.copyFileSync(
-      join(ionicComponentsDir, componentName, 'test/preview/index.html'),
+    hasDemo = copyFileSync(
+      join(ionicComponentsDir, componentName, PREVIEW_PATH),
       join(dest, `${componentName}-demo.html`),
       file => {
         return file.replace(
           '/dist/ionic.js',
-          `https://unpkg.com/@ionic/core${version === 'dev' ? '' : `@${version}`}/dist/ionic.js`
+          `https://unpkg.com/@ionic/core${version === 'dev' ?
+            '' : `@${version}`}/dist/ionic.js`
         );
       }
     );
 
     components[i].usage = getUsage(componentName);
+    components[i].demoSrc = hasDemo ?
+      `${GIT_SRC_URL}/${componentName}/${PREVIEW_PATH}` : null;
 
     // if (componentName === 'action-sheet-controller') {
     //   console.log(dest);
     // }
 
     // copying component markdown
-    utils.vlog('Generating page: ', componentName);
+    vlog('Generating page: ', componentName);
     writeFileSync(
       join(dest, `${componentName}.md`),
-      docgen.getComponentMarkup(
+      getComponentMarkup(
         components[i],
         version === CURRENT_VERSION ? '' : version,
         hasDemo
@@ -180,7 +190,7 @@ function getUsage(componentName) {
 
 async function getNightly() {
   const pkgStr = await readFileSync(
-    join(config.IONIC_DIR, 'core', 'package.json')
+    join(IONIC_DIR, 'core', 'package.json')
   );
-  return semver.parse(`${JSON.parse(pkgStr.toString('utf8')).version}+dev`);
+  return parse(`${JSON.parse(pkgStr.toString('utf8')).version}+dev`);
 }

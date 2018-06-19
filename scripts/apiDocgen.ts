@@ -6,7 +6,8 @@ export function getComponentMarkup(
   version: string,
   hasDemo = false): string {
 
-  let markdown = getFrontMatter(component.tag.replace('ion-', ''), version, hasDemo);
+  let markdown = getFrontMatter(
+    component.tag.replace('ion-', ''), version, hasDemo, component.demoSrc);
   markdown += component.readme
     .replace(/\n\n(.*?)\n\n/, '\n\n<p class="intro">$1</p>\n\n');
   markdown += generateUsage(component.usage);
@@ -23,14 +24,13 @@ export function getComponentMarkup(
   return markdown;
 }
 
-function getFrontMatter(name, version, hasDemo) {
-  let str = '---\r\n';
-  if (hasDemo) {
-    str += `previewUrl: "/docs/content/api/${version}/${name}-demo.html"`;
-    str += '\r\n';
-  }
-  str += '---\r\n';
-  return str;
+function getFrontMatter(name, version, hasDemo = null, demoSource = null) {
+  return `---
+${ hasDemo ?
+  `previewUrl: "/docs/content/api/${version}/${name}-demo.html"` : null }
+${ hasDemo && demoSource.length ? `previewSource: "${demoSource}"` : null }
+---
+`;
 }
 
 function generatePropertyList(items) {
