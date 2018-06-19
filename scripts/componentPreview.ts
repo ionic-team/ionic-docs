@@ -12,9 +12,7 @@ previewUrl: /docs/content/component-preview-app
 hideTOC: true
 ---
 
-<component-preview></component-preview>
-
-`;
+<component-preview></component-preview>`;
 
 
 // the main task of the API documentation generation process
@@ -40,8 +38,8 @@ export async function generate(task) {
   const markdown = await listDirs(join(COMPONENT_PREVIEW_DIR, 'src/components'))
     .filter(component => existsSync(docPath(component)))
     .reduce((accumulator, component) =>
-      `${accumulator}\n\n${readFileSync(docPath(component)).toString('utf8')}`
-    );
+      `${accumulator}\n\n${readFileSync(docPath(component)).toString('utf8')}`,
+    '');
 
   writeFileSync(join('src/content', 'components.md'), frontmatter + markdown);
 

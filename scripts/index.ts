@@ -5,7 +5,6 @@ import { generate  as cliDocs } from './cli';
 import { generate  as componentPreview } from './componentPreview';
 import { generate  as nativeDocs } from './native';
 import { generate as storageDocs } from './storage';
-import { updateSubmodules } from './git';
 import * as utils from './utils';
 import {
   API_DOCS_DIR,

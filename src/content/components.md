@@ -6,7 +6,9 @@ hideTOC: true
 
 <component-preview></component-preview>
 
-action-sheet
+## Action Sheet
+
+Action Sheets slide up from the bottom edge of the device screen, and display a set of options with the ability to confirm or cancel an action. Action Sheets can sometimes be used as an alternative to menus, however, they should not be used for navigation.
 
 ## Alert
  
@@ -91,7 +93,7 @@ Searchbar is used to search or filter items. It is normally used inside an `ion-
 
 ## Select
 
-The ion-select component is similar to an HTML <select> element, however, Ionic’s select component makes it easier for users to sort through and select the preferred option. It must be wrapped in an `ion-item`.
+The ion-select component is similar to an HTML `<select>` element, however, Ionic’s select component makes it easier for users to sort through and select the preferred option. It must be wrapped in an `ion-item`.
 
 ## Slides
 
