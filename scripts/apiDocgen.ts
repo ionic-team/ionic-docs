@@ -27,8 +27,8 @@ export function getComponentMarkup(
 function getFrontMatter(name, version, hasDemo = null, demoSource = null) {
   return `---
 ${ hasDemo ?
-  `previewUrl: "/docs/content/api/${version}/${name}-demo.html"` : null }
-${ hasDemo && demoSource.length ? `previewSource: "${demoSource}"` : null }
+  `previewUrl: "/docs/content/api/${version}/${name}-demo.html"` : '' }
+${ hasDemo && demoSource.length ? `previewSource: "${demoSource}"` : '' }
 ---
 `;
 }
