@@ -57,7 +57,6 @@ export class DocsDocument {
   }
 
   handleNewContent = ({ attributes, body, headings }) => {
-    this.clearLoadingTimer();
     this.body = body;
     this.title = attributes.title;
     this.hideTOC = attributes.hideTOC;
@@ -65,13 +64,14 @@ export class DocsDocument {
     this.tocHeadings = this.hideTOC ? [] : headings;
     this.attributes = attributes;
     this.pageClass = this.path.replace(/\//g, '-');
+    this.clearLoadingTimer();
   }
 
   handleFetchError = err => {
-    this.clearLoadingTimer();
     this.title = '';
     this.hideTOC = true;
     this.body = err.message;
+    this.clearLoadingTimer();
   }
 
   componentDidUpdate() {
