@@ -6,10 +6,16 @@ import { Component, Prop } from '@stencil/core';
 })
 export class CodePreview {
   @Prop() markup = '';
+  @Prop() inline = false;
 
   render() {
     const markup = this.markup.indexOf('ion-app') !== -1 ? this.markup :
       `<ion-app>${this.markup}</ion-app>`;
+
+    if (this.inline) {
+      return <div innerHTML={unescape(markup)}/>;
+    }
+
     return <iframe src={
       `data:text/html,${encodeURIComponent(`
         <!DOCTYPE html>

@@ -111,6 +111,7 @@ declare global {
 
   namespace StencilComponents {
     interface CodePreview {
+      'inline': boolean;
       'markup': string;
     }
   }
@@ -134,6 +135,7 @@ declare global {
   }
   namespace JSXElements {
     export interface CodePreviewAttributes extends HTMLAttributes {
+      'inline'?: boolean;
       'markup'?: string;
     }
   }

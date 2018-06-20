@@ -1,5 +1,5 @@
 ---
-disableHtmlPreviews: true
+inlineHtmlPreviews: true
 previousText: 'Structure'
 previousUrl: '/docs/layout/structure'
 nextText: 'CSS Utilities'
@@ -20,20 +20,6 @@ using CSS.
 
 
 ## How it works
-
-<ion-grid>
-  <ion-row>
-    <ion-col>
-      1 of 3
-    </ion-col>
-    <ion-col>
-      2 of 3
-    </ion-col>
-    <ion-col>
-      3 of 3
-    </ion-col>
-  </ion-row>
-</ion-grid>
 
 ```html
 <ion-grid>
@@ -167,28 +153,6 @@ ascending order._
 
 By default, columns will take up equal width inside of a row for all devices and screen sizes.
 
-<ion-grid>
-  <ion-row>
-    <ion-col>
-      1 of 2
-    </ion-col>
-    <ion-col>
-      2 of 2
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col>
-      1 of 3
-    </ion-col>
-    <ion-col>
-      2 of 3
-    </ion-col>
-    <ion-col>
-      3 of 3
-    </ion-col>
-  </ion-row>
-</ion-grid>
-
 ```html
 <ion-grid>
   <ion-row>
@@ -218,31 +182,6 @@ By default, columns will take up equal width inside of a row for all devices and
 Set the width of one column and the others will automatically resize around it.
 This can be done using our predefined grid attributes. In the example below,
 the other columns will resize no matter the width of the center column.
-
-<ion-grid>
-  <ion-row>
-    <ion-col>
-      1 of 3
-    </ion-col>
-    <ion-col col-8>
-      2 of 3 (wider)
-    </ion-col>
-    <ion-col>
-      3 of 3
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col>
-      1 of 3
-    </ion-col>
-    <ion-col col-6>
-      2 of 3 (wider)
-    </ion-col>
-    <ion-col>
-      3 of 3
-    </ion-col>
-  </ion-row>
-</ion-grid>
 
 ```html
 <ion-grid>
@@ -276,34 +215,6 @@ the other columns will resize no matter the width of the center column.
 Using the `col-{breakpoint}-auto` attributes, the column can size itself based on the
 natural width of its content. This is extremely useful for setting a column width
 using pixels. The columns next to the variable-width column will resize to fill the row.
-
-<ion-grid>
-  <ion-row>
-    <ion-col>
-      1 of 3
-    </ion-col>
-    <ion-col col-auto>
-      Variable width content
-    </ion-col>
-    <ion-col>
-      3 of 3
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col>
-      1 of 4
-    </ion-col>
-    <ion-col>
-      2 of 4
-    </ion-col>
-    <ion-col col-auto>
-      <input placeholder="Variable width input"/>
-    </ion-col>
-    <ion-col>
-      4 of 4
-    </ion-col>
-  </ion-row>
-</ion-grid>
 
 ```html
 <ion-grid>
@@ -344,23 +255,6 @@ To customize a column's width for all devices and screens, add the `col-*`
 attribute. These attributes tell the column to take up `*` columns out
 of the available columns.
 
-<ion-grid>
-  <ion-row>
-    <ion-col col-4>
-      1 of 4
-    </ion-col>
-    <ion-col col-2>
-      2 of 4
-    </ion-col>
-    <ion-col col-2>
-      3 of 4
-    </ion-col>
-    <ion-col col-4>
-      4 of 4
-    </ion-col>
-  </ion-row>
-</ion-grid>
-
 ```html
 <ion-grid>
   <ion-row>
@@ -384,23 +278,6 @@ of the available columns.
 
 Use a combination of width and breakpoint attributes to create a grid that starts out stacked
 on extra small screens before becoming horizontal on small screens.
-
-<ion-grid>
-  <ion-row>
-    <ion-col col-12 col-sm>
-      1 of 4
-    </ion-col>
-    <ion-col col-12 col-sm>
-      2 of 4
-    </ion-col>
-    <ion-col col-12 col-sm>
-      3 of 4
-    </ion-col>
-    <ion-col col-12 col-sm>
-      4 of 4
-    </ion-col>
-  </ion-row>
-</ion-grid>
 
 ```html
 <ion-grid>
@@ -430,17 +307,6 @@ Move columns to the right by adding the `offset-*` attributes. These attributes
 increase the margin left of the column by `*` columns. For example, in the following
 grid the last column will be offset by 3 columns and take up 3 columns:
 
-<ion-grid>
-  <ion-row>
-    <ion-col col-3>
-      1 of 2
-    </ion-col>
-    <ion-col col-3 offset-3>
-      2 of 2
-    </ion-col>
-  </ion-row>
-</ion-grid>
-
 ```html
 <ion-grid>
   <ion-row>
@@ -456,20 +322,6 @@ grid the last column will be offset by 3 columns and take up 3 columns:
 
 Offsets can also be added based on screen breakpoints. Here's an example of a
 grid where the last column will be offset by 3 columns for `md` screens and up:
-
-<ion-grid>
-  <ion-row>
-    <ion-col col-md-3>
-      1 of 3
-    </ion-col>
-    <ion-col col-md-3>
-      2 of 3
-    </ion-col>
-    <ion-col col-md-3 offset-md-3>
-      3 of 3
-    </ion-col>
-  </ion-row>
-</ion-grid>
 
 ```html
 <ion-grid>
@@ -494,17 +346,6 @@ adjust the `left` and `right` of the columns by `*` columns making it easy to re
 columns. For example, in the following grid the column with the `1st col` description
 will actually be the last column and the `2nd col` will be the first column.
 
-<ion-grid>
-  <ion-row>
-    <ion-col col-9 push-3>
-      1 of 2
-    </ion-col>
-    <ion-col col-3 pull-9>
-      2 of 2
-    </ion-col>
-  </ion-row>
-</ion-grid>
-
 ```html
 <ion-grid>
   <ion-row>
@@ -521,20 +362,6 @@ will actually be the last column and the `2nd col` will be the first column.
 Push and pull can also be added based on screen breakpoints. In the following example,
 the column with the `3rd` column description will actually be the first column for
 `md` screens and up:
-
-<ion-grid>
-  <ion-row>
-    <ion-col col-md-6 push-md-3>
-      1 of 3
-    </ion-col>
-    <ion-col col-md-3 push-md-3>
-      2 of 3
-    </ion-col>
-    <ion-col col-md-3 pull-md-9>
-      3 of 3
-    </ion-col>
-  </ion-row>
-</ion-grid>
 
 ```html
 <ion-grid>
@@ -560,53 +387,6 @@ the column with the `3rd` column description will actually be the first column f
 All columns can be vertically aligned inside of a row by adding different
 attributes to the row. For a list of available attributes, see
 [row attributes](../Row#row-attributes).
-
-<ion-grid>
-  <ion-row align-items-start>
-    <ion-col>
-      1 of 4
-    </ion-col>
-    <ion-col>
-      2 of 4
-    </ion-col>
-    <ion-col>
-      3 of 4
-    </ion-col>
-    <ion-col>
-      4 of 4 <br>#<br>#<br>#
-    </ion-col>
-  </ion-row>
-
-  <ion-row align-items-center>
-    <ion-col>
-      1 of 4
-    </ion-col>
-    <ion-col>
-      2 of 4
-    </ion-col>
-    <ion-col>
-      3 of 4
-    </ion-col>
-    <ion-col>
-      4 of 4 <br>#<br>#<br>#
-    </ion-col>
-  </ion-row>
-
-  <ion-row align-items-end>
-    <ion-col>
-      1 of 4
-    </ion-col>
-    <ion-col>
-      2 of 4
-    </ion-col>
-    <ion-col>
-      3 of 4
-    </ion-col>
-    <ion-col>
-      4 of 4 <br>#<br>#<br>#
-    </ion-col>
-  </ion-row>
-</ion-grid>
 
 ```html
 <ion-grid>
@@ -661,31 +441,6 @@ Columns can also align themselves differently than other columns by
 adding the alignment attribute directly to the column. For a list of available
 attributes, see [column attributes](#column-attributes).
 
-<ion-grid>
-  <ion-row>
-    <ion-col align-self-start>
-      <div>
-        1 of 4
-      </div>
-    </ion-col>
-    <ion-col align-self-center>
-      <div>
-        2 of 4
-      </div>
-    </ion-col>
-    <ion-col align-self-end>
-      <div>
-        3 of 4
-      </div>
-    </ion-col>
-    <ion-col>
-      <div>
-        4 of 4 <br>#<br>#<br>#
-      </div>
-    </ion-col>
-  </ion-row>
-</ion-grid>
-
 ```html
 <ion-grid>
   <ion-row>
@@ -718,53 +473,6 @@ attributes, see [column attributes](#column-attributes).
 All columns can be horizontally aligned inside of a row by adding different
 attributes to the row. For a list of available attributes, see
 [row attributes](#row-attributes).
-
-<ion-grid>
-  <ion-row justify-content-start>
-    <ion-col col-3>
-      1 of 2
-    </ion-col>
-    <ion-col col-3>
-      2 of 2
-    </ion-col>
-  </ion-row>
-
-  <ion-row justify-content-center>
-    <ion-col col-3>
-      1 of 2
-    </ion-col>
-    <ion-col col-3>
-      2 of 2
-    </ion-col>
-  </ion-row>
-
-  <ion-row justify-content-end>
-    <ion-col col-3>
-      1 of 2
-    </ion-col>
-    <ion-col col-3>
-      2 of 2
-    </ion-col>
-  </ion-row>
-
-  <ion-row justify-content-around>
-    <ion-col col-3>
-      1 of 2
-    </ion-col>
-    <ion-col col-3>
-      2 of 2
-    </ion-col>
-  </ion-row>
-
-  <ion-row justify-content-between>
-    <ion-col col-3>
-      1 of 2
-    </ion-col>
-    <ion-col col-3>
-      2 of 2
-    </ion-col>
-  </ion-row>
-</ion-grid>
 
 ```html
 <ion-grid>
