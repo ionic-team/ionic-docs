@@ -85,9 +85,37 @@ function generateUsage(usage) {
   str += `<div>\n<tab-group tabs="${Object.keys(usage).join(',')}">\n`;
   for (const version in usage) {
     str += `<div slot="${version}">\n`;
-    str += renderMarkdown(usage[version], {disableHtmlPreviews: true}).body;
+    str += ecapeTics(
+      decodeHTMLEntities(
+        renderMarkdown(usage[version], {disableHtmlPreviews: true}).body
+      )
+    );
     str += `\n</div>\n`;
   }
   return str + `</tab-group>\n</div>\n\n`;
 }
 
+function ecapeTics(text) {
+  return text.replace(/`/g, '\\`');
+}
+
+function decodeHTMLEntities(text) {
+  const entities = [
+      ['amp', '&'],
+      // ['apos', '\''],
+      // ['#x27', '\''],
+      // ['#x2F', '/'],
+      // ['#39', '\''],
+      // ['#47', '/'],
+      // ['lt', '<'],
+      // ['gt', '>'],
+      // ['nbsp', ' '],
+      // ['quot', '"']
+  ];
+
+  for (let i = 0, max = entities.length; i < max; ++i) {
+    text = text.replace(new RegExp(`&${entities[i][0]};`, 'g'), entities[i][1]);
+  }
+
+  return text;
+}
