@@ -38,8 +38,8 @@ const generateHeadingID = (inText: string) => {
 };
 
 interface RenderOptions {
-  disableHtmlPreviews: boolean;
-  inlineHtmlPreviews: boolean;
+  disableHtmlPreviews?: boolean;
+  inlineHtmlPreviews?: boolean;
 }
 
 export function renderMarkdown(markdown: string, options: RenderOptions): MarkedStruc {
