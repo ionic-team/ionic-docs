@@ -9,12 +9,8 @@ export class CodePreview {
   @Prop() inline = false;
 
   render() {
-    const markup = this.markup.indexOf('ion-app') !== -1 && !this.inline ?
-      this.markup :
-      `<ion-app>${this.markup}</ion-app>`;
-
     if (this.inline) {
-      return <div innerHTML={unescape(markup)}/>;
+      return <div innerHTML={unescape(this.markup)}/>;
     }
 
     return <iframe src={
@@ -25,7 +21,7 @@ export class CodePreview {
             <style>body{margin:0;}</style>
             <script src="https://unpkg.com/@ionic/core/dist/ionic.js"></script>
           </head>
-          <body>${unescape(markup)}</body>
+          <body>${unescape(this.markup)}</body>
         </html>
       `)}`
     }/>;
