@@ -1,4 +1,5 @@
 ---
+initialTab: 'preview'
 inlineHtmlPreviews: true
 previousText: 'Structure'
 previousUrl: '/docs/layout/structure'

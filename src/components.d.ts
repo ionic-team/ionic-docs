@@ -778,6 +778,7 @@ declare global {
 
   namespace StencilComponents {
     interface TabGroup {
+      'initial': string;
       'tabs': string;
     }
   }
@@ -801,6 +802,7 @@ declare global {
   }
   namespace JSXElements {
     export interface TabGroupAttributes extends HTMLAttributes {
+      'initial'?: string;
       'tabs'?: string;
     }
   }

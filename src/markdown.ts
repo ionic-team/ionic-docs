@@ -20,10 +20,10 @@ export interface MarkedStruc {
 export const toCodeBlock = (code: string, lang = '') =>
   `<code-block language="${lang}">${hljs.highlightAuto(code, [lang]).value}</code-block>`;
 
-const toPreviewBlock = (code: string, lang = '', inline = false) => `
-  <tab-group tabs="markup preview">
+const toPreviewBlock = (code: string, lang = '', options: RenderOptions = {}) => `
+  <tab-group tabs="markup preview" initial="${options.initialTab || ''}">
     <code-block slot="markup" language="${lang}">${hljs.highlightAuto(code, [lang]).value}</code-block>
-    <code-preview slot="preview" markup="${escape(code)}" inline="${inline}"></code-preview>
+    <code-preview slot="preview" markup="${escape(code)}" inline="${!!options.inlineHtmlPreviews}"></code-preview>
   </tab-group>
 `;
 
@@ -39,6 +39,7 @@ const generateHeadingID = (inText: string) => {
 
 interface RenderOptions {
   disableHtmlPreviews?: boolean;
+  initialTab?: string;
   inlineHtmlPreviews?: boolean;
 }
 
@@ -65,7 +66,7 @@ export function renderMarkdown(markdown: string, options: RenderOptions): Marked
 
   renderer.code = (code: string, lang: string) => {
     if (lang === 'html' && options.disableHtmlPreviews !== true) {
-      return toPreviewBlock(code, lang, options.inlineHtmlPreviews);
+      return toPreviewBlock(code, lang, options);
     }
 
     return toCodeBlock(code, lang);

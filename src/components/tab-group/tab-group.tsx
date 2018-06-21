@@ -6,14 +6,18 @@ import { Component, Prop, State } from '@stencil/core';
 })
 export class TabGroup {
   @Prop() tabs: string;
+  @Prop() initial: string;
   @State() selected: string;
 
   private tabList: string[];
 
   componentWillLoad() {
+    console.log(this.initial);
     if (this.tabs && this.tabs.trim().length) {
       this.tabList = this.tabs.split(/[^\w-]+/);
-      this.selected = this.tabList[0];
+      this.selected = this.tabList.indexOf(this.initial) >= 0
+        ? this.initial
+        : this.tabList[0];
     }
   }
 
