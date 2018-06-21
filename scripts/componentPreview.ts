@@ -1,7 +1,7 @@
 import { existsSync, readFileSync, readdirSync, writeFileSync } from 'fs';
 import { join } from 'path';
-import { COMPONENT_PREVIEW_DIR, COMPONENT_PREVIEW_DOCS_DIR} from './config';
-import { gitInitRemote, updateSubmodules } from './git';
+import { COMPONENT_PREVIEW_DIR, COMPONENT_PREVIEW_DOCS_DIR, COMPONENT_PREVIEW_REPO_URL} from './config';
+import { ensureLatestMaster } from './git';
 import { build, install } from './npm';
 import { copyDirectoryTo, execp, listDirs, vlog } from './utils';
 
@@ -20,12 +20,8 @@ hideTOC: true
 export async function generate(task) {
   const startTime = new Date().getTime();
 
-  if (!existsSync('.git')) {
-    await gitInitRemote();
-  }
-
-  task.output = 'Initialzing Submodule...';
-  await updateSubmodules();
+  task.output = 'Updating...';
+  ensureLatestMaster(COMPONENT_PREVIEW_DIR, COMPONENT_PREVIEW_REPO_URL);
 
   vlog('installing and building');
   task.output = 'NPM Installing';

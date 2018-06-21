@@ -2,6 +2,7 @@ sources/ionic-cli
 sources/ionic-native
 sources/ionic-storage
 sources/ionic
+sources/component-preview
 .idea/
 node_modules/
 scripts/build
