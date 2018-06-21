@@ -6,58 +6,64 @@ nextUrl: '/docs/layout/grid'
 # Structure
 
 <p class="intro">
-Most Ionic apps follow similar layout structures. Lets dive into what these common layouts are and some common issues to look out for.
+Ionic Framework provides several different layouts that can be used to structure an app. From single page layouts, to split pane views and modals.
 </p>
 
-## Common page layouts
+## Header and Footer Layout
 
-Most pages in an Ionic app will have at least a `header` and `content` while some will also have a footer. Here is a common header + content layout:
+### Header
 
-```html
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Hello World</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-  <h1>I have some content</h1>
-</ion-content>
-```
-
-As you can see, the `ion-header` always goes above the content. If we wanted to add a footer to this, it would look like the following example:
-
-```html
-
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Hello World</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-  <h1>I have some content</h1>
-</ion-content>
-
-<ion-footer>
-  <ion-toolbar>
-    <ion-buttons slot='end'>
-      <ion-button>Navigate</ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-footer>
-```
-
-It is important to note that the `ion-footer` component should always be below the `ion-content` component.
-
-## Split pane layout
-
-Split pane layouts are another common layout for apps.
+The most simple layout available consists of a [header](/docs/api/header) and [content](/docs/api/content). Most pages in an app generally have both of these, but a header is not required in order to use content.
 
 ```html
 <ion-app>
-  <ion-split-pane>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Header</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
+  <ion-content padding>
+    <h1>Main Content</h1>
+  </ion-content>
+</ion-app>
+```
+
+### Footer
+
+As you can see, a toolbar in a header appears above the content. Sometimes an app needs to have a toolbar below the content, which is when a footer is used.
+
+```html
+<ion-app>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Header</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content padding>
+    <h1>Main Content</h1>
+  </ion-content>
+
+  <ion-footer>
+    <ion-toolbar>
+      <ion-title>Footer</ion-title>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>
+```
+
+
+## Split Pane Layout
+
+A [split pane](/docs/api/split-pane) layout has a more complex structure. It allows for multiple views to be displayed when the viewport is above a specified breakpoint. If the device's screen size is below a certain size, the split pane view will be hidden.
+
+By default, the split pane view will show when the screen is larger than `768px`, or the `md` breakpoint, but this can be customized to use different breakpoints by setting the `when` property. Below is an example where the split pane contains a menu that is visible for `sm` screens and up, or when the viewport is larger than `576px`. By resizing the browser horizontally so that the app is smaller than this, the split pane view will disappear.
+
+
+```html
+<ion-app>
+  <ion-split-pane when="sm">
     <ion-menu>
       <ion-header>
         <ion-toolbar color="primary">
@@ -71,7 +77,7 @@ Split pane layouts are another common layout for apps.
             Navigate
           </ion-list-header>
           <ion-menu-toggle auto-hide="false">
-            <ion-item button href='/'>
+            <ion-item button>
               <ion-icon slot="start" name='home'></ion-icon>
               <ion-label>
                 Home
@@ -82,17 +88,19 @@ Split pane layouts are another common layout for apps.
       </ion-content>
     </ion-menu>
 
-    <ion-router-outlet main></ion-router-outlet>
+    <ion-page class="ion-page" main>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Header</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content padding>
+        Main Content
+      </ion-content>
+    </ion-page>
 
   </ion-split-pane>
 </ion-app>
 ```
 
-In this case we have a menu that is going to be on the left side of an app and an `ion-router-outlet` which is going to be for the main pages of an app. This markup will give an expanded layout on larger devices such as a tablet or laptop
-
-![expanded layout](/docs/assets/img/layout/largeLayout.png)
-
-and a smaller layout with a slide out menu on mobile devices
-
-![smaller layout](/docs/assets/img/layout/smallLayout.png)
-
+It's important to note that the element with the `main` attribute will be the main content that is always visible. This can be any element, including an [ion-nav](/docs/api/nav), [ion-router-outlet](/docs/api/router-outlet), or an [ion-tabs](/docs/api/tabs).

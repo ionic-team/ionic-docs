@@ -4,8 +4,19 @@
   }
 
   ion-col {
+    padding: 5px;
+  }
+
+  ion-col div {
     background-color: #f5f7fa;
     border: 1px solid #e4e8f0;
+    padding: 5px;
+  }
+}
+
+.page-layout-structure {
+  code-preview > iframe {
+    min-height: 300px;
   }
 }
 
