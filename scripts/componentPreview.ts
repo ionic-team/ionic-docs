@@ -21,7 +21,7 @@ export async function generate(task) {
   const startTime = new Date().getTime();
 
   task.output = 'Updating...';
-  ensureLatestMaster(COMPONENT_PREVIEW_DIR, COMPONENT_PREVIEW_REPO_URL);
+  await ensureLatestMaster(COMPONENT_PREVIEW_DIR, COMPONENT_PREVIEW_REPO_URL);
 
   vlog('installing and building');
   task.output = 'NPM Installing';
