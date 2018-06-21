@@ -1,5 +1,7 @@
 import { join } from 'path';
 
+export const GIT_URL = process.env.GIT_URL || 'https://github.com/ionic-team/ionic-docs.git';
+
 // directories
 export const IONIC_ANGULAR_SRC = process.env.IONIC_ANGULAR_SRC || join('angular/src');
 export const IONIC_CORE_SRC = process.env.IONIC_CORE_SRC || join('core/src');

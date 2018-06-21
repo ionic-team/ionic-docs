@@ -1,7 +1,7 @@
 import { existsSync, readFileSync, readdirSync, writeFileSync } from 'fs';
 import { join } from 'path';
 import { COMPONENT_PREVIEW_DIR, COMPONENT_PREVIEW_DOCS_DIR} from './config';
-import { updateSubmodules } from './git';
+import { gitInitRemote, updateSubmodules } from './git';
 import { build, install } from './npm';
 import { copyDirectoryTo, execp, listDirs, vlog } from './utils';
 
@@ -19,6 +19,11 @@ hideTOC: true
 // the main task of the API documentation generation process
 export async function generate(task) {
   const startTime = new Date().getTime();
+
+  if (!existsSync('.git')) {
+    await gitInitRemote();
+  }
+
   task.output = 'Initialzing Submodule...';
   await updateSubmodules();
 

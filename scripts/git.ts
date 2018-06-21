@@ -2,7 +2,7 @@ import { existsSync } from 'fs';
 import * as semver from 'semver';
 import { join } from 'path';
 
-import * as config from './config';
+import { GIT_URL } from './config';
 import { deleteFolderRecursive, execp, vlog } from './utils';
 
 export async function ensureLatestMaster(
@@ -48,4 +48,9 @@ export async function checkout(dir: string, ref: string): Promise<void> {
 
 export async function updateSubmodules(): Promise<void> {
   await execp(`git submodule update --init --remote`);
+}
+
+export async function gitInitRemote(): Promise<void> {
+  await execp('git init');
+  await execp(`git remote add origin "${GIT_URL}"`);
 }
