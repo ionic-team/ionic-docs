@@ -3,7 +3,6 @@ import { Component, State } from '@stencil/core';
 /* tslint:disable:no-import-side-effect */
 import '@stencil/router';
 import 'intersection-observer';
-import 'ionicons';
 /* tslint:enable:no-import-side-effect */
 
 @Component({
