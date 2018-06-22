@@ -44,30 +44,46 @@ export function copyDirectory(source, target) {
   }
 }
 
-// copies contents of source to target
 export function copyDirectoryTo(source, target) {
   let files = [];
+
+  if (!existsSync(target)) {
+    console.log(target);
+    mkdirSync(target);
+  }
+
+  // check if folder needs to be created or integrated
+  const targetFolder = join(target, basename(source));
+  if (!existsSync(targetFolder)) {
+    mkdirSync(targetFolder);
+  }
 
   // copy
   if (lstatSync(source).isDirectory()) {
     files = readdirSync(source);
-    for (let i = 0; i < files.length; i++) {
-      // ignore dotfiles
-      if (files[i].charAt() === '.') {
-        continue;
-      }
-      const curSource = join(source, files[i]);
+    files.forEach(function (file) {
+      const curSource = join(source, file);
       if (lstatSync(curSource).isDirectory()) {
-        if (!existsSync(target)) {
-          mkdirSync(target);
-        }
-        copyDirectoryTo(curSource, target);
+        copyDirectoryTo(curSource, targetFolder);
       } else {
-        // async
-        copyFile(curSource, join(target, files[i]));
+        copyFileTest(curSource, targetFolder);
       }
-    }
+    });
   }
+}
+
+function copyFileTest( source, target ) {
+
+  let targetFile = target;
+
+  // if target is a directory a new file with the same name will be created
+  if ( existsSync( target ) ) {
+      if ( lstatSync( target ).isDirectory() ) {
+          targetFile = join( target, basename( source ) );
+      }
+  }
+
+  writeFileSync(targetFile, readFileSync(source));
 }
 
 export function copyFileSync(source, dest, hook) {
