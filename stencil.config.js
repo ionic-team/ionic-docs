@@ -20,8 +20,7 @@ exports.config = {
       baseUrl: '/docs',
       serviceWorker: false
     }
-  ],
-  enableCache: false
+  ]
 };
 
 exports.devServer = {
