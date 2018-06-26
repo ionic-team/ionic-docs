@@ -48,7 +48,7 @@
     "typescript": "^2.8.3"
   },
   "devDependencies": {
-    "browser-sync": "^2.24.1"
+    "browser-sync": "^2.24.5"
   },
   "cacheDirectories": [
     "sources",
