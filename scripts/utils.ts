@@ -195,3 +195,44 @@ export function deleteFolderRecursive(path) {
     rmdirSync(path);
   }
 }
+
+/** Apply an intro class to the first set of paragraphs in a markdown file */
+export function introify(text, introClass = 'intro') {
+  if (!text || text.length === 0) {
+    return text;
+  }
+
+  const lineArray = text.split('\n');
+  let lastLineEmpty = false;
+
+  for (let i = 0; i < lineArray.length; i++) {
+    if (
+      (i === 0 && lineArray[i].charAt(0) === '#') || // allow for h1's at the start
+      lineArray[i].length === 0
+    ) {
+      lastLineEmpty = true;
+      continue;
+    }
+
+    // a code sample, table, or heading break out of the loop
+    if (
+      ['##', '``'].indexOf(lineArray[i].substring(0, 2)) !== -1 ||
+      ['|', '>', '<'].indexOf(lineArray[i].charAt(0)) !== -1
+    ) {
+      break;
+    }
+
+    if (lastLineEmpty || i === 0) {
+      // starting a new paragraph
+      lineArray[i] = `<p class="${introClass}">${lineArray[i]}</p>`;
+    } else {
+      // if the last line was a heading, move the closing tag down
+      lineArray[i - 1] = lineArray[i - 1].replace('</p>', '');
+      lineArray[i] = `${lineArray[i]}</p>`;
+    }
+
+    lastLineEmpty = false;
+  }
+
+  return lineArray.join('\n');
+}

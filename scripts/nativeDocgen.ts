@@ -1,14 +1,14 @@
+import { introify } from './utils';
+
 export function getPluginMarkup(data): string {
   const r = '\n\n';
   const st = '<strong>Type: </strong>';
 
   let markdown = `# ${data.name} ${r}`;
 
-  if (data.description.match(/\\n?(.*?)\\n/)) {
-    markdown += data.description
-      .replace(/\\n?(.*?)\\n/, '<p class="intro">$1</p>\n\n');
-  } else {
-    markdown += `<p class="intro">${data.description}</p>`;
+  if (data.description) {
+    markdown += introify(data.description).replace(/\/img\/docs\/native\//g,
+      'https://ionicframework.com/img/docs/native/');
   }
 
   markdown += r;

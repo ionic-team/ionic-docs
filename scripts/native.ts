@@ -3,7 +3,7 @@ import { join } from 'path';
 import * as config from './config';
 import * as docgen from './nativeDocgen';
 import * as git from './git';
-import * as npm from './npm';
+import { install, run } from './npm';
 import { execp, vlog } from './utils';
 
 const distList =  join(config.NATIVE_DIR, '/dist/@ionic-native');
@@ -23,12 +23,11 @@ export async function generate(task) {
   );
 
   vlog('installing and building');
-  task.output = 'NPM Installing & Building...';
-  await execp([
-    `cd ${config.NATIVE_DIR}`,
-    'npm i',
-    'npm run build:core',
-  ].join(' && '));
+  task.output = 'NPM Installing...';
+  await install(config.NATIVE_DIR);
+
+  task.output = 'NPM run build:core...';
+  await run('build:core', config.NATIVE_DIR);
 
   vlog('Reading output typescript data file');
   task.output = 'Generating Typedoc...';

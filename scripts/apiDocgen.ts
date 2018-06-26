@@ -1,4 +1,5 @@
 import { renderMarkdown } from '../src/markdown';
+import { introify } from './utils';
 const r = '\n\n';
 
 export function getComponentMarkup(
@@ -8,8 +9,7 @@ export function getComponentMarkup(
 
   let markdown = getFrontMatter(
     component.tag.replace('ion-', ''), version, hasDemo, component.demoSrc);
-  markdown += component.readme
-    .replace(/\n\n(.*?)\n\n/, '\n\n<p class="intro">$1</p>\n\n');
+  markdown += introify(component.readme);
   markdown += generateUsage(component.usage);
   markdown += generatePropertyList(component.props);
   markdown += generateEventsTable(component.events);
