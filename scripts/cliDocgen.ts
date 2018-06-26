@@ -8,16 +8,18 @@ export function getVersionMarkup(command): string {
   markdown += '`\n\n';
 
   if (command.summary) {
-    markdown += `<p class="intro">${command.summary}</p>\n\n`;
+    markdown += `<h3>${command.summary}</h3>\n\n`;
   }
 
   if (command.description) {
-    markdown += command.description
-      .replace(/\n\n/g, '</p>\n<p>')
+    markdown += '<p class="intro">' + command.description
+      .replace(/\n\n/g, '</p>\n<p class="intro">')
       .replace(/\n\\\[([2-9])/g, '<br>\n\\\[$1')
       .replace(/&amp;/g, '&')
       .replace(/&gt;/g, '>')
-      .replace(/&lt;/g, '<');
+      .replace(/&lt;/g, '<')
+      .replace(/\n- /g, '</p>\n\n- ')
+      .replace(/(- .*?)<\/p>\n/g, '$1\n\n');
     markdown += `\n</p>\n\n`;
   }
 
