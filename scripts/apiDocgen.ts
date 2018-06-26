@@ -79,7 +79,7 @@ function generateMethodList(items) {
   return str + `</dl>${r}\r\n`;
 }
 
-function generateUsage(usage) {
+function generateUsage(usage): string {
   if (!usage) return '';
   let str = `${r}## Usage${r}`;
   str += `<div>\n<tab-group tabs="${Object.keys(usage).join(',')}">\n`;
