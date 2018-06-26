@@ -7,7 +7,7 @@ nextUrl: '/docs/building/ios'
 
 # Running An App
 
-After building out an app and adding native functionality, there will be a few different routes to test it out:
+<p class="intro">After building out an app and adding native functionality, there will be a few different routes to test it out:</p>
 
 * Mock the native functionality and test in the browser with Ionic Lab
 * Deploy to iOS and Android

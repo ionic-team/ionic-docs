@@ -216,7 +216,7 @@ export function introify(text, introClass = 'intro') {
 
     // a code sample, table, or heading break out of the loop
     if (
-      ['##', '``'].indexOf(lineArray[i].substring(0, 2)) !== -1 ||
+      ['##', '``', '- '].indexOf(lineArray[i].substring(0, 2)) !== -1 ||
       ['|', '>', '<'].indexOf(lineArray[i].charAt(0)) !== -1
     ) {
       break;
