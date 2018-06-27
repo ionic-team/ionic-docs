@@ -2,7 +2,7 @@
 
 export const apiMap = {
   "4.0.0-alpha.6": {
-    "Overview": "/docs/api/",
+    "Overview": "/docs/api",
     "action-sheet": "/docs/api/4.0.0-alpha.6/action-sheet",
     "action-sheet-controller": "/docs/api/4.0.0-alpha.6/action-sheet-controller",
     "alert": "/docs/api/4.0.0-alpha.6/alert",
@@ -110,7 +110,7 @@ export const apiMap = {
     "virtual-scroll": "/docs/api/4.0.0-alpha.6/virtual-scroll"
   },
   "dev": {
-    "Overview": "/docs/api/",
+    "Overview": "/docs/api",
     "action-sheet": "/docs/api/action-sheet",
     "action-sheet-controller": "/docs/api/action-sheet-controller",
     "alert": "/docs/api/alert",
@@ -219,7 +219,7 @@ export const apiMap = {
     "virtual-scroll": "/docs/api/virtual-scroll"
   },
   "4.0.0-alpha.7": {
-    "Overview": "/docs/api/",
+    "Overview": "/docs/api",
     "action-sheet": "/docs/api/4.0.0-alpha.7/action-sheet",
     "action-sheet-controller": "/docs/api/4.0.0-alpha.7/action-sheet-controller",
     "alert": "/docs/api/4.0.0-alpha.7/alert",

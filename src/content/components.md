@@ -11,9 +11,46 @@ hideTOC: true
 
 Action Sheets slide up from the bottom edge of the device screen, and display a set of options with the ability to confirm or cancel an action. Action Sheets can sometimes be used as an alternative to menus, however, they should not be used for navigation.
 
+```typescript
+const actionSheet = await this.actionSheetCrl.create({
+  header: 'Action Sheet',
+  buttons: [
+    {
+      text: 'Copy',
+      handler: () => {
+        console.log('copy tapped');
+      }
+    },
+    {
+      text: 'Cancel',
+      role: 'cancel'
+    }
+  ]
+});
+
+await actionSheet.present();
+```
+
 ## Alert
  
-Alerts are a great way to offer the user the ability to choose a specific action or list of actions. They also can provide the user with important information, or require them to make a decision (or multiple decisions). Alerts should only be used for quick actions like password verification, small app notifications, or quick options.
+Alerts are a great way to offer the user the ability to choose a specific action or list of actions. Alerts can include contain text, inputs and buttons. They can provide the user with important information, or require them to make a decision (or multiple decisions). Alerts should only be used for quick actions like password verification, small app notifications, or quick options.
+
+```typescript
+const alert = await this.alertCtrl.create({
+  header: 'Alert',
+  inputs: [
+    {
+      type: 'text',
+      name: 'username',
+      id: 'userName',
+      placeholder: 'username',
+      value: this.user
+    }
+  ]
+});
+
+await alert.present();
+```
 
 ## Badge
 
@@ -21,23 +58,63 @@ The Badge component is a small component that typically communicates a numerical
 
 ## Button
 
-Buttons are an essential way to interact with and navigate through an app, and should clearly communicate what action will occur after the user taps them. Buttons are highly customizeable with color, shape and size being fully customizeable.
+Buttons are an essential way to interact with and navigate through an app, and should clearly communicate what action will occur after the user taps them. Buttons are highly customizeable with color, shape and size being fully customizeable. We support round buttons, FAB buttons, outline buttons and more!
+
+```html
+  <ion-button shape='round' color='primary' fill='outline'>Hello World</ion-button>
+  <ion-button size='small'>Small Button</ion-button>
+```
 
 ## Card
 
-Card components are a great way to display important pieces of content, and are quickly emerging as a core design pattern for apps. Cards can contain images, buttons and more.
+Card components are a great way to display important pieces of content, and are quickly emerging as a core design pattern for apps. Cards can contain images, buttons, text and more. Cards can also be used standalone, in a list or in a grid.
+
+```html
+<ion-card>
+  <ion-img src='/assets/myImg.png'></ion-img>
+
+  <ion-card-content>
+    <ion-card-title>Hello World</ion-card-title>
+
+    <p>The content for this card</p>
+  </ion-card-content>
+</ion-card>
+```
 
 ## Checkbox
 
 A checkbox can be used to let the user know they need to make a binary decision. It provides a clear visual of either a true or false choice. ion-checkbox should always be used with ion-item. If you prefer the look of radio inputs, you can also use `ion-radio` or if you prefer toggles you can use `ion-toggle`.
 
+```html
+<ion-checkbox color="primary"></ion-checkbox>
+<ion-checkbox color="secondary"></ion-checkbox>
+<ion-checkbox color="danger"></ion-checkbox>
+<ion-checkbox color="light"></ion-checkbox>
+<ion-checkbox color="dark"></ion-checkbox>
+```
+
 ## DateTime
 
 DateTime is used to present an interface which makes it easy for users to select dates and times. Datetime will look like a native iOS date picker when rendered on an iOS device and will have a material look on all other platforms. Datetime should always be used within an `ion-item`.
 
+```html
+<ion-item>
+  <ion-label>Date</ion-label>
+  <ion-datetime display-format="MM/DD/YYYY"></ion-datetime>
+</ion-item>
+```
+
 ## Fab
 
-A floating action button (FAB) is a circular button that performs the primary, or most common, action on a screen. It floats above the content of the page and is normally colored either the primary or secondary color of the app.
+A floating action button (FAB) is a circular button that performs the primary, or most common, action on a screen. It floats above the content of the page and is normally colored either the primary or secondary color of the app. FAB buttons can also be positioned easily using the `horizontal`, `vertical` and `slot` attributes.
+
+```html
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button>
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+```
 
 ## Grid
 
@@ -45,19 +122,60 @@ Grid is a powerful mobile-first system for building custom layouts. The Grid com
 
 ## Infinite Scroll
 
-An infinite scroll allows you to perform an action when the user scrolls a specified distance from the bottom or top of the page. It is normally used to lazy load data for long lists and is also very customizeable.
+An infinite scroll allows you to perform an action when the user scrolls a specified distance from the bottom or top of the page, such as loading more data in a long list of paginated data. It is also very customizeable with different loading indicators supported.
+
+
+```html
+<ion-infinite-scroll>
+  <ion-infinite-scroll-content
+    loadingSpinner="bubbles"
+    loadingText="Loading more data...">
+  </ion-infinite-scroll-content>
+</ion-infinite-scroll>
+```
 
 ## Input
 
 Inputs allow users to enter data into a UI. They typically appear in forms and dialogs. They should always be wrapped with an `ion-item`.
 
+```html
+<ion-item>
+  <ion-input required type="text" placeholder="First Name"></ion-input>
+</ion-item>
+```
+
 ## List
 
-The list component is used to display rows of information, such as a contact list, playlist, or menu. It can display cards, list items and more.
+The list component is used to display rows of information, such as a contact list, playlist, or menu. It can display cards, list items and more. Lists are also very customizeable and match the design of the native Android and iOS lists by default.
+
+```html
+<ion-list>
+  <ion-item>
+    <ion-avatar slot='start'>
+      <img src="assets/img/avatar-finn.png"></img>
+    </ion-avatar>
+    <ion-label>
+      <h2>Finn</h2>
+      <h3>I'm a big deal</h3>
+      <p>Listen, I've had a pretty messed up day...</p>
+    </ion-label>
+  </ion-item>
+</ion-list>
+```
 
 ## Loading
 
-Loading is an overlay that prevents user interaction while indicating activity.
+Loading is an overlay that prevents user interaction while indicating activity. 
+
+```typescript
+const loading = await this.loadingCtrl.create({
+  content: 'Please wait...',
+  duration: 3000,
+  dismissOnPageChange: true
+});
+
+loading.present();
+```
 
 ## Menu
 
@@ -65,7 +183,15 @@ Menus are a common navigation pattern for apps. Menus can either be permanently 
 
 ## Modal
 
-Modals slide in off screen to display a temporary UI, often used for login or signup pages, message composition, and option selection.
+Modals slide in and off screen to display a temporary UI. Modals are often used for login or signup pages, message composition,and option selection.
+
+```typescript
+const modal = await this.modalCtrl.create({
+  component: 'modal-page'
+});
+
+modal.present();
+```
 
 ## Nav
 
@@ -80,21 +206,64 @@ The Popover is a view that floats above an app’s content. Popovers provide an 
 - Select a commonly used tool or configuration
 - Present a list of actions to perform inside one of your views
 
+```typescript
+const popover = await popoverController.create({
+  component: 'popover-example-page',
+  ev: event,
+  translucent: true
+});
+
+await popover.present();
+```
+
 ## Range
 
 A Range is a form control that lets users select from a range of values by moving a slider knob along the slider bar. Range must always be wrapped in an `ion-item`
+
+```html
+<ion-item>
+  <ion-range>
+    <ion-icon slot='start' size='small' name="sunny"></ion-icon>
+    <ion-icon slot='end' name="sunny"></ion-icon>
+  </ion-range>
+</ion-item>
+```
 
 ## Refresher
 
 Refresh provides pull-to-refresh functionality on a content component. A common use case for the refresher component is to reload data. 
 
+```html
+<ion-refresher slot='fixed'>
+  <ion-refresher-content></ion-refresher-content>
+</ion-refresher>
+```
+
 ## Searchbar
 
-Searchbar is used to search or filter items. It is normally used inside an `ion-toolbar`.
+Searchbars are used to search or filter items. They are normally used inside an `ion-toolbar`.
+
+```html
+<ion-toolbar>
+  <ion-searchbar></ion-searchbar>
+</ion-toolbar>
+```
 
 ## Select
 
-The ion-select component is similar to an HTML `<select>` element, however, Ionic’s select component makes it easier for users to sort through and select the preferred option. It must be wrapped in an `ion-item`.
+The ion-select component is similar to an HTML `<select>` element, however, Ionic’s select component makes it easier for users to sort through and select the preferred option. It also matches the look of the native Android and iOS select inputs. It must be wrapped in an `ion-item`.
+
+```html
+<ion-item>
+  <ion-label>Hair Color</ion-label>
+  <ion-select value="brown" ok-text="Okay" cancel-text="Dismiss">
+    <ion-select-option value="brown">Brown</ion-select-option>
+    <ion-select-option value="blonde">Blonde</ion-select-option>
+    <ion-select-option value="black">Black</ion-select-option>
+    <ion-select-option value="red">Red</ion-select-option>
+  </ion-select>
+</ion-item>
+```
 
 ## Slides
 
@@ -104,13 +273,35 @@ Slides make it easy to create complex UI such as galleries, tutorials, and page-
 
 The `ion-spinner` component provides a variety of animated SVG spinners. Spinners enables you to give users feedback that the app is actively processing/thinking/waiting/chillin’ out, or whatever you’d like it to indicate.
 
+```html
+<ion-spinner></ion-spinner>
+<ion-spinner name="lines"></ion-spinner>
+```
+
 ## Tabs
 
-Tabs enable tabbed navigation, a standard navigation pattern in modern apps. Tabs can display an icon and label to give the user visual feedback of where they are in the app.
+Tabs enable tabbed navigation, a standard navigation pattern in modern apps. Tabs can display an icon and label to give the user visual feedback of where they are in the app. Tabs can also easily be placed at the top of an app, although by default they are placed at the bottom to match the Material Design and iOS design guidelines.
+
+```html
+<ion-tabs>
+  <ion-tab label='Music' icon='musical-note'></ion-tab>
+  <ion-tab label='Profile' icon='person'></ion-tab>
+  <ion-tab label='people' icon='people'></ion-tab>
+</ion-tabs>
+```
 
 ## Toast
 
-The toast component is a subtle notification that appears on top of an app’s content. The toast component can be used to display a short message to the user.
+The toast component is a subtle notification that appears on top of an app’s content. The toast component can be used to display a short message to the user. Toasts are displayed full width across the bottom of your app on mobile. On tablet / desktop devices the toast will be centered and not full width.
+
+```typescript
+const toast = await this.toastCtrl.create({
+  message: 'Sharing...',
+  duration: 1000
+});
+
+await toast.present();
+```
 
 ## Virtual Scroll
 
