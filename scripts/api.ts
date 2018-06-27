@@ -125,6 +125,8 @@ function copyFiles(components, dest, version = 'dev') {
       join(ionicComponentsDir, componentName, PREVIEW_PATH),
       join(dest, `${componentName}-demo.html`),
       file => {
+        file = file.replace('</head>',
+          '<link rel="stylesheet" href="/docs/overrides.css"></head>');
         return file.replace(
           '/dist/ionic.js',
           `https://unpkg.com/@ionic/core${version === 'dev' ?

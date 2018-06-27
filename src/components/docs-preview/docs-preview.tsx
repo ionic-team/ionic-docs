@@ -11,6 +11,8 @@ export class SitePreviewApp {
 
   iframe: HTMLIFrameElement;
   iframeLoaded = false;
+  URLParams = '&ionic:statusbarPadding=true';
+  // URLParams: '';
   messageQueue: CustomEvent[] = [];
 
   @Listen('window:previewMessage')
@@ -72,7 +74,7 @@ export class SitePreviewApp {
           </svg>
           <iframe
             onLoad={this.onIframeLoad}
-            src={`${this.url}?ionic:mode=${this.ionicMode}&ionic:statusbarPadding=true`}
+            src={`${this.url}?ionic:mode=${this.ionicMode}${this.URLParams}`}
             ref={node => { this.iframe = node as HTMLIFrameElement; }}/>
         </figure>
       </div>
