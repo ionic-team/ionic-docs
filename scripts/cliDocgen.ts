@@ -8,7 +8,7 @@ export function getVersionMarkup(command): string {
   markdown += '`\n\n';
 
   if (command.summary) {
-    markdown += `<h3>${command.summary}</h3>\n\n`;
+    markdown += `<p class="intro"><strong>${command.summary}</strong></p>\n\n`;
   }
 
   if (command.description) {
