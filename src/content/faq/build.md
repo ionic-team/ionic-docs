@@ -3,6 +3,7 @@ previousText: 'Glossary'
 previousUrl: '/docs/faq/glossary'
 nextText: 'Runtime Errors'
 nextUrl: '/docs/faq/runtime'
+disableHtmlPreviews: true
 ---
 
 # Build Errors
@@ -172,10 +173,10 @@ annotation if you don't always expect a component/directive reference:
   selector: '[my-dir]'
 })
 class MyDir {
-  constructor( @Optional() c: MyComp) {
+  constructor(@Optional() c: MyComp) {
     // No longer errors if c is undefined
     if (c) {
-      console.log('Host component\'s name: ' + c.name);
+      console.log(`Host component's name: ${c.name}`);
     }
   }
 }
