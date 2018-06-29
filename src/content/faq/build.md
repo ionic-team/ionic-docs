@@ -164,8 +164,8 @@ No MyComp to inject        +------+------+
                            +-------------+
 ```
 
-To expand on the previous example, you can use the Angular 2 `@Optional` a
-nnotation if you don't always expect a component/directive reference:
+To expand on the previous example, you can use the Angular `@Optional`
+annotation if you don't always expect a component/directive reference:
 
 ```typescript
 @Directive({
