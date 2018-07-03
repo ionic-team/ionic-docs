@@ -15,6 +15,7 @@ export class DocsDocument {
   /* tslint:disable */
   @Prop() onUpdate: (document) => void = () => {};
   /* tslint:enable */
+  @Prop({ context: 'isServer' }) private isServer: boolean;
   @Prop() isLoadingTimeout = 1000;
   @State() isLoading = false;
   @State() body: string;
@@ -107,7 +108,7 @@ export class DocsDocument {
 
   render() {
     if (this.isLoading) {
-      return <loading-indicator/>;
+      return this.isServer ? null : <loading-indicator/>;
     }
 
     const headings = this.tocHeadings.filter(heading => heading.level < 3);
