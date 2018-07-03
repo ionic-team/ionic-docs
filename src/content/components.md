@@ -1,6 +1,6 @@
 ---
 title: Components
-previewUrl: /docs/content/component-preview-app/docs-www
+previewUrl: /docs/content/component-preview-app
 previewSource: https://github.com/ionic-team/component-preview/tree/master/src/components
 hideTOC: true
 ---
@@ -32,7 +32,7 @@ await actionSheet.present();
 ```
 
 ## Alert
-
+ 
 Alerts are a great way to offer the user the ability to choose a specific action or list of actions. Alerts can include contain text, inputs and buttons. They can provide the user with important information, or require them to make a decision (or multiple decisions). Alerts should only be used for quick actions like password verification, small app notifications, or quick options.
 
 ```typescript
@@ -54,7 +54,7 @@ await alert.present();
 
 ## Badge
 
-The Badge component is a small component that typically communicates a numerical value to the user. They are normally used within an item.
+The Badge component is a small component that typically communicates a numerical value to the user. They are normally used within an item. 
 
 ## Button
 
@@ -165,7 +165,7 @@ The list component is used to display rows of information, such as a contact lis
 
 ## Loading
 
-Loading is an overlay that prevents user interaction while indicating activity.
+Loading is an overlay that prevents user interaction while indicating activity. 
 
 ```typescript
 const loading = await this.loadingCtrl.create({
@@ -234,10 +234,13 @@ A Range is a form control that lets users select from a range of values by movin
 Refresh provides pull-to-refresh functionality on a content component. A common use case for the refresher component is to reload data.
 
 ```html
-<ion-refresher slot='fixed'>
-  <ion-refresher-content></ion-refresher-content>
-</ion-refresher>
+<ion-content>
+  <ion-refresher slot='fixed'>
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+</ion-content>
 ```
+
 
 ## Searchbar
 

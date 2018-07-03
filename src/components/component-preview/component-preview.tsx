@@ -1,4 +1,4 @@
-import { Component, Element, Event, EventEmitter } from '@stencil/core';
+import { Component, Element, Event, EventEmitter, Prop } from '@stencil/core';
 
 @Component({
   tag: 'component-preview',
@@ -6,13 +6,17 @@ import { Component, Element, Event, EventEmitter } from '@stencil/core';
 })
 export class ComponentPreview {
   @Element() el: HTMLElement;
+  @Prop({ context: 'document' }) doc!: Document;
   @Event() previewMessage: EventEmitter;
+  observer: any;
 
-  observer = new IntersectionObserver(this.handleIntersection.bind(this), {
-    root: document.querySelector('docs-content'),
-    rootMargin: '0px 0px -75% 0px',
-    threshold: 0
-  });
+  componentWillLoad() {
+    this.observer = new IntersectionObserver(this.handleIntersection.bind(this), {
+      root: this.doc.querySelector('docs-content'),
+      rootMargin: '0px 0px -75% 0px',
+      threshold: 0
+    });
+  }
 
   handleIntersection(entries) {
     entries
