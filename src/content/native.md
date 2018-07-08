@@ -7,7 +7,7 @@ Ionic Native wraps Cordova plugins in a Promise or Observable, providing a commo
 
 ## Usage with Angular apps
 
-To use a plugin, import and add the plugin inejectable to a `@NgModule`. For Angular, the import path should end with `/ngx`.
+To use a plugin, import and add the plugin injectable to a `@NgModule`. For Angular, the import path should end with `/ngx`.
 
 ```typescript
 // app.module.ts
