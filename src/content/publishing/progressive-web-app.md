@@ -78,7 +78,7 @@ To do this, add the following snippet to the `firebase.json` file:
 ]
 ```
 
-The app can no be deployed by running
+The app can now be deployed by running
 
 ```shell
 firebase deploy
