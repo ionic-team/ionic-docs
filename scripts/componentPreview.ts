@@ -8,7 +8,7 @@ import { copyDirectoryTo, execp, listDirs, vlog } from './utils';
 const frontmatter =
 `---
 title: Components
-previewUrl: /docs/content/component-preview-app
+previewUrl: /docs/content/component-preview-app/docs-www
 previewSource: https://github.com/ionic-team/component-preview/tree/master/src/components
 hideTOC: true
 ---
