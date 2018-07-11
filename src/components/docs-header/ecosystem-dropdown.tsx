@@ -45,7 +45,7 @@ export default () => (
     items={items}
     renderer={dropdown => [
       <a class="ecosystem-dropdown__toggle" onClick={dropdown.toggle}>
-        Ecosystem
+        Community
         <svg viewBox="0 0 33 22"><polygon points="16.5 22 0 0 33 0"></polygon></svg>
       </a>,
       <a class="ecosystem-dropdown__mobile-toggle" onClick={dropdown.toggle}>
