@@ -23,7 +23,7 @@
   "dependencies": {
     "@stencil/core": "^0.10.2",
     "@stencil/helmet": "^0.3.0-2",
-    "@stencil/router": "next",
+    "@stencil/router": "^0.2.4",
     "@stencil/sass": "0.0.5",
     "@stencil/utils": "latest",
     "@types/node": "^8.10.9",
