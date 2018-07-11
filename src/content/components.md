@@ -1,5 +1,7 @@
 ---
 title: Components
+nextText: API Reference
+nextUrl: /docs/api
 previewUrl: /docs/content/component-preview-app/docs-www
 previewSource: https://github.com/ionic-team/component-preview/tree/master/src/components
 hideTOC: true
