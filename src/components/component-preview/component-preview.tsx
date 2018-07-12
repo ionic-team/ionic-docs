@@ -13,7 +13,7 @@ export class ComponentPreview {
   componentWillLoad() {
     this.observer = new IntersectionObserver(this.handleIntersection.bind(this), {
       root: this.doc.querySelector('docs-content'),
-      rootMargin: '0px 0px -75% 0px',
+      rootMargin: '0px 0px -95% 0px',
       threshold: 0
     });
   }
