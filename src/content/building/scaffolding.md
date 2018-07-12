@@ -37,5 +37,5 @@ Let's look at what happens when a new page is generated in the CLI.
 
 > What's with the `ng` prefixed output? The ionic CLI uses the underlying framework tooling to stay as close as possible to a vanilla project. For `ionic/angular`, that means the Angular CLI is used under the hood.
 
-After creating the files and directories for the new page, the CLI will also update the router configuration to include the new page. This reduces the amount of manual work need, keep the development life cycle moving.
+After creating the files and directories for the new page, the CLI will also update the router configuration to include the new page. This reduces the amount of manual work needed to keep the development life cycle moving.
 
