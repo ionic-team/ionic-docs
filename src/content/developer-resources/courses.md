@@ -7,6 +7,10 @@ nextUrl: '/docs/developer-resources/posts'
 
 # Courses
 
+### [Elite Ionic](https://www.joshmorony.com/elite/)
+
+by Josh Morony
+
 ### [Introducing Ionic 2](http://shop.oreilly.com/product/0636920050353.do)
 
 by Mathieu Chauvinc
