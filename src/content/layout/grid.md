@@ -214,7 +214,7 @@ Set the width of one column and the others will automatically resize around it. 
 
 ### Variable-width
 
-Using the `col-{breakpoint}-auto` attributes, the column can size itself based on the natural width of its content. This is extremely useful for setting a column width using pixels. The columns next to the variable-width column will resize to fill the row.
+By setting the `size-{breakpoint}` properties to `"auto"` the column can size itself based on the natural width of its content. This is extremely useful for setting a column width using pixels. The columns next to the variable-width column will resize to fill the row.
 
 ```html
 <ion-grid>
@@ -265,7 +265,7 @@ Using the `col-{breakpoint}-auto` attributes, the column can size itself based o
 
 ### All breakpoints
 
-To customize a column's width for all devices and screens, add the `col-*` attribute. These attributes tell the column to take up `*` columns out of the available columns.
+To customize a column's width for all devices and screens, set the `size` property. The value of this property determines how many columns this column should take up out of the total available columns.
 
 ```html
 <ion-grid>
@@ -330,7 +330,7 @@ Use a combination of width and breakpoint attributes to create a grid that start
 
 ### Offsetting columns
 
-Move columns to the right by adding the `offset-*` attributes. These attributes increase the margin left of the column by `*` columns. For example, in the following grid the last column will be offset by 3 columns and take up 3 columns:
+Move columns to the right by adding the `offset` property. This property increases the margin left of the column by the number of specified columns. For example, in the following grid the last column will be offset by 3 columns and take up 3 columns:
 
 ```html
 <ion-grid>
@@ -340,7 +340,7 @@ Move columns to the right by adding the `offset-*` attributes. These attributes 
         1 of 2
       </div>
     </ion-col>
-    <ion-col size="3" size="3">
+    <ion-col size="3" offset="3">
       <div>
         2 of 2
       </div>
@@ -375,7 +375,7 @@ Offsets can also be added based on screen breakpoints. Here's an example of a gr
 
 ### Push and pull
 
-Reorder the columns by adding the `push-*` and `pull-*` attributes. These attributes adjust the `left` and `right` of the columns by `*` columns making it easy to reorder columns. For example, in the following grid the column with the `1st col` description will actually be the last column and the `2nd col` will be the first column.
+Reorder the columns by adding the `push` and `pull` properties. These properties adjust the `left` and `right` of the columns by the specified number of columns making it easy to reorder columns. For example, in the following grid the column with the `1 of 2` description will actually be the last column and the `2 of 2` will be the first column.
 
 ```html
 <ion-grid>
@@ -394,7 +394,7 @@ Reorder the columns by adding the `push-*` and `pull-*` attributes. These attrib
 </ion-grid>
 ```
 
-Push and pull can also be added based on screen breakpoints. In the following example, the column with the `3rd` column description will actually be the first column for `md` screens and up:
+Push and pull can also be added based on screen breakpoints. In the following example, the column with the `3 of 3` column description will actually be the first column for `md` screens and up:
 
 ```html
 <ion-grid>
@@ -513,17 +513,17 @@ Columns can also align themselves differently than other columns by adding the a
 <ion-grid>
   <ion-row>
     <ion-col align-self-start>
-      </div>
+      <div>
         1 of 4
       </div>
     </ion-col>
     <ion-col align-self-center>
-      </div>
+      <div>
         2 of 4
       </div>
     </ion-col>
     <ion-col align-self-end>
-      </div>
+      <div>
         3 of 4
       </div>
     </ion-col>
