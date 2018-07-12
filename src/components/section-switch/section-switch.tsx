@@ -90,8 +90,9 @@ const options = [
   {
     title: 'Pro',
     subtitle: 'Integrated suite of tools & services for shipping apps',
-    url: '/docs/pro',
-    sections: ['pro']
+    url: 'https://ionicframework.com/docs/pro/',
+    sections: ['pro'],
+    outbound: true
   },
   {
     title: 'Stencil',
