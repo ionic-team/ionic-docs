@@ -127,7 +127,8 @@ function copyFiles(components, dest, version = 'dev') {
       file => {
         file = file.replace('</head>',
           `<link rel="stylesheet" href="/docs/overrides.css">
-<link rel="stylesheet" href="https://unpkg.com/@ionic/core/css/ionic.min.css">
+<link rel="stylesheet" href="https://unpkg.com/@ionic/core${version === 'dev' ?
+'' : `@${version}`}/css/ionic.min.css">
 </head>`);
         return file.replace(
           '/dist/ionic.js',
