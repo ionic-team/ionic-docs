@@ -605,6 +605,39 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface DocsLink {
+      'compName': string;
+    }
+  }
+
+  interface HTMLDocsLinkElement extends StencilComponents.DocsLink, HTMLStencilElement {}
+
+  var HTMLDocsLinkElement: {
+    prototype: HTMLDocsLinkElement;
+    new (): HTMLDocsLinkElement;
+  };
+  interface HTMLElementTagNameMap {
+    'docs-link': HTMLDocsLinkElement;
+  }
+  interface ElementTagNameMap {
+    'docs-link': HTMLDocsLinkElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'docs-link': JSXElements.DocsLinkAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface DocsLinkAttributes extends HTMLAttributes {
+      'compName'?: string;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface DocsMenu {
       'history': RouterHistory;
       'path': string;

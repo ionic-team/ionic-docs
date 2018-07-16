@@ -60,6 +60,8 @@ export function renderMarkdown(markdown: string, options: RenderOptions): Marked
     return `
       <h${level} id="${anchorId}">
         <a href="#${anchorId}" class="linked">${text}</a>
+
+        <a id="api-link" href="/docs/api/${anchorId}">API</a>
       </h${level}>
     `;
   };
