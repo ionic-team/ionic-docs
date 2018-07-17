@@ -521,9 +521,9 @@ declare global {
       'autoClose': boolean;
       'autoCloseDelay': number;
       'items': any[];
-      'onSelect': Function;
-      'renderer': Function;
-      'setInitial': Function;
+      'onSelect': (selected: any) => void;
+      'renderer': (component: any) => any;
+      'setInitial': (items: any[]) => any;
     }
   }
 
@@ -549,9 +549,9 @@ declare global {
       'autoClose'?: boolean;
       'autoCloseDelay'?: number;
       'items'?: any[];
-      'onSelect'?: Function;
-      'renderer'?: Function;
-      'setInitial'?: Function;
+      'onSelect'?: (selected: any) => void;
+      'renderer'?: (component: any) => any;
+      'setInitial'?: (items: any[]) => any;
     }
   }
 }

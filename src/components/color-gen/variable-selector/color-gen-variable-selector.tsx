@@ -52,7 +52,7 @@ export class VariableSelector {
     this.isInputFocused = false;
   }
 
-  isValidHex (str) {
+  isValidHex(str) {
     return /^#[0-9A-F]{6}$/i.test(str);
   }
 
@@ -70,7 +70,7 @@ export class VariableSelector {
         'color-selector--error': this.showInputError
         }}>
         <div class="color-selector__name">
-          <i class="color-selector__swatch" style={{'backgroundColor': this.value}}></i>
+          <i class="color-selector__swatch" style={{ 'backgroundColor': this.value }}></i>
           {this.name}
         </div>
         {(this.editable)
@@ -81,7 +81,7 @@ export class VariableSelector {
                 'color-selector__input--focused': this.isInputFocused
               }}
               onClick={ev => { if (this.isParentOpen) ev.stopPropagation(); }}>
-              <div class="color-selector__color-wrap" style={{'backgroundColor': this.value}}>
+              <div class="color-selector__color-wrap" style={{ 'backgroundColor': this.value }}>
                 <input type="color"
                   value={this.value}
                   onInput={this.onColorChange.bind(this)}

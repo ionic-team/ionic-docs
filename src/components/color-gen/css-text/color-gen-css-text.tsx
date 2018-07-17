@@ -40,13 +40,13 @@ export class CssText {
     }, 2000);
   }
 
-  render () {
+  render() {
     return [
       <div>
         <div class="css-text__header">
           <h3>CSS Variables</h3>
 
-          <div class={{'css-text__copy': true, 'show-confirmation': this.showCopyConfirmation}} >
+          <div class={{ 'css-text__copy': true, 'show-confirmation': this.showCopyConfirmation }} >
             <a class="css-text__copy-link" onClick={this.copyCssText.bind(this)}>Copy</a>
             <span class="css-text__copy-confirmation">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="26px" height="26px">

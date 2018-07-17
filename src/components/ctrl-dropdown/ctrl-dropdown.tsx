@@ -6,9 +6,9 @@ import { Component, Element, Prop, State } from '@stencil/core';
 })
 export class CtrlDropdown {
   @Element() el: HTMLElement;
-  @Prop() onSelect: Function = () => null;
-  @Prop() renderer: Function = () => null;
-  @Prop() setInitial: Function = items => items[0];
+  @Prop() onSelect: (selected: any) => void = () => null;
+  @Prop() renderer: (component: any) => any = () => null;
+  @Prop() setInitial: (items: any[]) => any = items => items[0];
   @Prop() items: any[] = [];
   @Prop() autoClose = false;
   @Prop() autoCloseDelay = 300;

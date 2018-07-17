@@ -10,21 +10,21 @@ export interface HSL {
   s: number;
 }
 
-function componentToHex (c) {
+function componentToHex(c) {
   const hex = c.toString(16);
   return hex.length === 1 ? `0${hex}` : hex;
 }
 
-function expandHex (hex: string): string {
+function expandHex(hex: string): string {
   const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
-  hex = hex.replace(shorthandRegex, function (_m, r, g, b) {
+  hex = hex.replace(shorthandRegex, (_m, r, g, b) => {
     return r + r + g + g + b + b;
   });
 
   return `#${hex.replace('#', '')}`;
 }
 
-function hexToRGB (hex: string): RGB {
+function hexToRGB(hex: string): RGB {
   hex = expandHex(hex);
   hex = hex.replace('#', '');
   const intValue: number = parseInt(hex, 16);
@@ -36,7 +36,7 @@ function hexToRGB (hex: string): RGB {
   };
 }
 
-function hslToRGB ({h, s, l}: HSL): RGB {
+function hslToRGB({ h, s, l }: HSL): RGB {
   h = h / 360;
   s = s / 100;
   l = l / 100;
@@ -49,7 +49,7 @@ function hslToRGB ({h, s, l}: HSL): RGB {
     };
   }
 
-  const hue2rgb = function hue2rgb (p, q, t) {
+  const hue2rgb = function hue2rgb(p, q, t) {
       if (t < 0) t += 1;
       if (t > 1) t -= 1;
       if (t < 1 / 6) return p + (q - p) * 6 * t;
@@ -70,7 +70,7 @@ function hslToRGB ({h, s, l}: HSL): RGB {
   };
 }
 
-function mixColors (color: Color, mixColor: Color, weight = .5): RGB {
+function mixColors(color: Color, mixColor: Color, weight = .5): RGB {
   const colorRGB: RGB = color.rgb,
     mixColorRGB: RGB = mixColor.rgb,
     mixColorWeight = 1 - weight;
@@ -82,11 +82,11 @@ function mixColors (color: Color, mixColor: Color, weight = .5): RGB {
   };
 }
 
-function rgbToHex ({r, g, b}: RGB) {
+function rgbToHex({ r, g, b }: RGB) {
   return '#' + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
 
-function rgbToHSL ({r, g, b}: RGB): HSL {
+function rgbToHSL({ r, g, b }: RGB): HSL {
   r = Math.max(Math.min(r / 255, 1), 0);
   g = Math.max(Math.min(g / 255, 1), 0);
   b = Math.max(Math.min(b / 255, 1), 0);
@@ -116,7 +116,7 @@ function rgbToHSL ({r, g, b}: RGB): HSL {
   };
 }
 
-function rgbToYIQ ({r, g, b}: RGB): number {
+function rgbToYIQ({ r, g, b }: RGB): number {
   return ((r * 299) + (g * 587) + (b * 114)) / 1000;
 }
 
@@ -126,13 +126,13 @@ export class Color {
   readonly rgb: RGB;
   readonly yiq: number;
 
-  constructor (value: string | RGB | HSL) {
+  constructor(value: string | RGB | HSL) {
     if (typeof(value) === 'string' && /rgb\(/.test(value)) {
       const matches = /rgb\((\d{1,3}), ?(\d{1,3}), ?(\d{1,3})\)/.exec(value);
-      value = {r: parseInt(matches[0], 10), g: parseInt(matches[1], 10), b: parseInt(matches[2], 10)};
+      value = { r: parseInt(matches[0], 10), g: parseInt(matches[1], 10), b: parseInt(matches[2], 10) };
     } else if (typeof(value) === 'string' && /hsl\(/.test(value)) {
       const matches = /hsl\((\d{1,3}), ?(\d{1,3}%), ?(\d{1,3}%)\)/.exec(value);
-      value = {h: parseInt(matches[0], 10), s: parseInt(matches[1], 10), l: parseInt(matches[2], 10)};
+      value = { h: parseInt(matches[0], 10), s: parseInt(matches[1], 10), l: parseInt(matches[2], 10) };
     }
 
 
@@ -142,11 +142,11 @@ export class Color {
       this.rgb = hexToRGB(this.hex);
       this.hsl = rgbToHSL(this.rgb);
     } else if ('r' in value && 'g' in value && 'b' in value) {
-      this.rgb = <RGB>value;
+      this.rgb = value as RGB;
       this.hex = rgbToHex(this.rgb);
       this.hsl = rgbToHSL(this.rgb);
     } else if ('h' in value && 's' in value && 'l' in value) {
-      this.hsl = <HSL>value;
+      this.hsl = value as HSL;
       this.rgb = hslToRGB(this.hsl);
       this.hex = rgbToHex(this.rgb);
     } else {
@@ -156,31 +156,31 @@ export class Color {
     this.yiq = rgbToYIQ(this.rgb);
   }
 
-  public static isColor (value: string): Boolean {
+  static isColor(value: string): boolean {
     if (/rgb\((\d{1,3}), ?(\d{1,3}), ?(\d{1,3})\)/.test(value)) return true;
 
     return /(^#[0-9a-fA-F]+)/.test(value.trim());
   }
 
-  contrast (threshold = 128): Color {
+  contrast(threshold = 128): Color {
     return new Color((this.yiq >= threshold ? '#000' : '#fff'));
   }
 
-  mix (from: string | RGB | HSL | Color, amount = .5): Color {
+  mix(from: string | RGB | HSL | Color, amount = .5): Color {
     const base: Color = from instanceof Color ? from : new Color(from);
     return new Color(mixColors(this, base, amount));
   }
 
-  shade (weight = .12): Color {
-    return this.mix({r: 0, g: 0, b: 0}, weight);
+  shade(weight = .12): Color {
+    return this.mix({ r: 0, g: 0, b: 0 }, weight);
   }
 
-  tint (weight = .1): Color {
-    return this.mix({r: 255, g: 255, b: 255}, weight);
+  tint(weight = .1): Color {
+    return this.mix({ r: 255, g: 255, b: 255 }, weight);
   }
 
-  toList (): string {
-    const {r, g, b}: RGB = this.rgb;
+  toList(): string {
+    const { r, g, b }: RGB = this.rgb;
     return `${r},${g},${b}`;
   }
 }

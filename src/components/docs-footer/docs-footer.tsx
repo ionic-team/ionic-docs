@@ -27,7 +27,7 @@ export class SiteFooter {
     ) ? {
       text: this.frontmatter.previousText,
       url: this.frontmatter.previousUrl
-    } :  null;
+    } : null;
 
     this.next = (
       this.frontmatter.nextText &&
@@ -35,7 +35,7 @@ export class SiteFooter {
     ) ? {
       text: this.frontmatter.nextText,
       url: this.frontmatter.nextUrl
-    } :  null;
+    } : null;
   }
 
   getEditLink(path: string) {

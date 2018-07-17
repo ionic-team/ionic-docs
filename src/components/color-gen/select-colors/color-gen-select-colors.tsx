@@ -13,7 +13,7 @@ export class ColorGenSelectColors {
 
   @Prop() colors: ColorVariable[] = [];
 
-  toggleActiveColor (color: string) {
+  toggleActiveColor(color: string) {
     if (this.activeColor === color) {
       this.activeColor = '';
       return;

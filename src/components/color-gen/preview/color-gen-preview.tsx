@@ -12,7 +12,7 @@ export class ColorGenPreview {
   @Prop() demoMode: string;
   iframe: HTMLIFrameElement;
 
-  applyStyles () {
+  applyStyles() {
     if (this.iframe && this.iframe.contentDocument && this.iframe.contentDocument.documentElement) {
       const iframeDoc = this.iframe.contentDocument;
       const varStyleId = 'color-gen-style';

@@ -38,7 +38,7 @@ export class ColorGenerator {
       this.cssText = updateCssText(colorProperty + attrMap[key], this.cssText, genColor[key]);
     });
 
-    this.previewMessage.emit({cssText: this.cssText});
+    this.previewMessage.emit({ cssText: this.cssText });
   }
 
   @Listen('cssTextChange')
@@ -48,7 +48,7 @@ export class ColorGenerator {
 
     if (colors.length > 0) {
       this.colors = colors;
-      this.previewMessage.emit({cssText: this.cssText});
+      this.previewMessage.emit({ cssText: this.cssText });
     }
   }
 
@@ -56,13 +56,13 @@ export class ColorGenerator {
     this.colors = convertCssToColors(this.cssText);
   }
 
-  componentDidLoad () {
+  componentDidLoad() {
     this.previewMessage.emit({
       cssText: this.cssText
     });
   }
 
-  render () {
+  render() {
     return [
       <color-gen-select-colors colors={this.colors} />,
       <color-gen-css-text cssText={this.cssText}/>

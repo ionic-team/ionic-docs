@@ -12,7 +12,7 @@ export class ColorAccordion {
 
   @Element() el: HTMLElement;
 
-  toggleActiveColor (color: string) {
+  toggleActiveColor(color: string) {
     if (this.activeColor === color) {
       this.activeColor = '';
       return;
@@ -20,7 +20,7 @@ export class ColorAccordion {
     this.activeColor = color;
   }
 
-  render () {
+  render() {
     const listItems = this.colors.map(color => {
     const isActive = (this.activeColor === color) ? true : false;
 

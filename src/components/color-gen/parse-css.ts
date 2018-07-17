@@ -8,9 +8,9 @@ export function generateColor(name: string, property: string, value: string): Co
   const shade = color.shade();
 
   return {
-    name: name,
-    property: property,
-    value: value,
+    name,
+    property,
+    value,
     valueRgb: rgbToString(color.rgb),
     contrast: contrast.hex,
     contrastRgb: rgbToString(contrast.rgb),
@@ -32,7 +32,7 @@ export function convertCssToColors(cssText: string) {
       tint: '-tint',
     };
 
-    const color: ColorVariable = {...colorVar};
+    const color: ColorVariable = { ...colorVar };
     Object.keys(attrMap).forEach(key => {
       color[key] = parseColorVar(colorVar.property + attrMap[key], cssText);
     });
@@ -58,7 +58,7 @@ function parseColorVar(colorAttr: any, cssText: string) {
   return attrKeyVal.trim().split(':')[1].trim();
 }
 
-function getCssKeyVal (colorAttr: any, cssText: string) {
+function getCssKeyVal(colorAttr: any, cssText: string) {
   const startIndex = cssText.indexOf(colorAttr);
   const valueSplt = cssText.substring(startIndex + colorAttr.length);
   const bracketIndex = valueSplt.indexOf('}');
