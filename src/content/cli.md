@@ -13,7 +13,7 @@ The Ionic command-line interface ([CLI](/docs/faq/glossary#cli)) is your go-to t
 The Ionic CLI can be installed globally with npm:
 
 ```shell
-npm install -g ionic
+$ npm install -g ionic
 ```
 
 ## Help
@@ -21,7 +21,7 @@ npm install -g ionic
 The Ionic CLI ships with command documentation that is accessible with the `--help` flag.
 
 ```shell
-ionic <command> --help
+$ ionic <command> --help
 ```
 
 TODO: image?

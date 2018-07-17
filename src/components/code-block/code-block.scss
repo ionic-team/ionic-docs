@@ -35,8 +35,8 @@ code-block pre {
 }
 
 code-block .scroll-area {
-    overflow-x: auto;
-    padding: 2em 2em;
+  overflow-x: auto;
+  padding: 2em 2em;
 }
 
 code-block .scroll-area::after {
@@ -54,6 +54,34 @@ code-block .scroll-area::after {
 }
 
 code-block pre code {
-  margin-right: 2em !important;
   display: inline-block;
+  margin-right: 2em !important;
+}
+
+code-block[language="shell"] {
+  background-color: #2b313c;
+  border-radius: 7px;
+  -webkit-font-smoothing: inherit;
+}
+
+code-block[language="shell"] code {
+  font-size: 13px;
+  // TODO: doesn't work if multiple commands are used
+  // white-space: nowrap;
+}
+
+code-block[language="shell"] .scroll-area {
+  overflow-x: scroll;
+}
+
+code-block[language="shell"] .scroll-area::after {
+  background: linear-gradient(to right,
+    rgba(#2b313c, .0),
+    rgba(#2b313c, .9) 80%,
+    #2b313c
+  );
+}
+
+code-block[language="shell"] > .label {
+  display: none;
 }

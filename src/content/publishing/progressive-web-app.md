@@ -17,7 +17,7 @@ The `@angular/pwa` package will automatically add a service worker and a app man
 To add this package to the app run:
 
 ```shell
-ng add @angular/pwa
+$ ng add @angular/pwa
 ```
 
 Once this package has been added run `ionic build --prod` and the `www` directory will be ready to deploy as a PWA.
@@ -28,7 +28,7 @@ If an app is being deployed to other channels such as Cordova or Electron, can r
 The service worker can be generated though by running:
 
 ```shell
-ionic build --prod --service-worker
+$ ionic build --prod --service-worker
 ```
 
 > Note: Features like Service Workers and many JavaScript APIs (such as geolocation) require the app be hosted in a secure context. When deploying an app through a hosting service, be aware they HTTPS will be required to take full advantage of Service Workers.
@@ -42,7 +42,7 @@ Firebase hosting provides many benefits for Progressive Web Apps, including fast
 First, install the Firebase CLI:
 
 ```shell
-npm install -g firebase-tools
+$ npm install -g firebase-tools
 ```
 
 With the Firebase CLI installed run `firebase init` in the project.
@@ -81,7 +81,7 @@ To do this, add the following snippet to the `firebase.json` file:
 The app can now be deployed by running
 
 ```shell
-firebase deploy
+$ firebase deploy
 ```
 
 After this completes the app will be live.

@@ -16,7 +16,7 @@ Ionic apps are created and developed primarily through the Ionic [command-line](
 Before proceeding, make sure the latest version of [Node.js](/docs/faq/glossary#node) and [npm](/docs/faq/glossary#npm) are installed. See [Environment Setup](/docs/installation/environment) for details. Install the Ionic CLI globally with npm:
 
 ```shell
-npm install -g ionic
+$ npm install -g ionic
 ```
 
 <blockquote>
@@ -28,7 +28,7 @@ npm install -g ionic
 Create an Ionic app using one of the pre-made app templates, or a blank one to start fresh. The three most common starters are the `blank` starter, `tabs` starter, and `sidemenu` starter. Get started with the `ionic start` command:
 
 ```shell
-ionic start myApp tabs
+$ ionic start myApp tabs
 ```
 
 ![start app thumbnails](/docs/assets/img/installation/start-app-thumbnails.png)
@@ -41,8 +41,8 @@ To learn more about starting Ionic apps, see the [Starting Guide](/docs/building
 The majority of Ionic app development can be spent right in the browser using the `ionic serve` command:
 
 ```shell
-cd myApp
-ionic serve
+$ cd myApp
+$ ionic serve
 ```
 
 There are a number of other ways to run an app, it's recommended to start with this workflow. To develop and test apps on devices and emulators, see the [Running an App Guide](/docs/building/running).

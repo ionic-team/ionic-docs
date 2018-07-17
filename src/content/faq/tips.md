@@ -9,13 +9,13 @@ previousUrl: '/docs/faq/native'
 To update a dependency, run:
 
 ```shell
-npm install <package-name>@<version|latest> --save
+$ npm install <package-name>@<version|latest> --save
 ```
 
 For instance, to update the `@ionic/angular` package to the latest release, run:
 
 ```shell
-npm install @ionic/angular@latest --save
+$ npm install @ionic/angular@latest --save
 ```
 
 It is recommended that packages get updated through the CLI since npm will now read package versions from the `package.lock.json` first.
@@ -57,7 +57,7 @@ Selecting devices from the device dropdown will change the user-agent, as well a
 The iOS simulator enables testing and debugging of an app before it reaches an actual device. Before it can be used, [Xcode](https://developer.apple.com/xcode/download/), Apple's IDE, must be installed. The [Ionic CLI](ionic/cli) can then be used to run the app in the current directory on the simulator:
 
 ```shell
-ionic cordova emulate ios -lc
+$ ionic cordova emulate ios -lc
 ```
 
 Passing in the `-lc` flag will enable livereload and log console output to an terminal.

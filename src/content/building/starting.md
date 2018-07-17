@@ -14,7 +14,7 @@ Starting a new Ionic app is incredibly simple. From the command line, run the `i
 The CLI will display prompts asking for app name, template, and what project type to use. This information can be provide in the start command as well.
 
 ```shell
-ionic start myApp tabs --type=angular
+$ ionic start myApp tabs --type=angular
 ```
 
 Here, `myApp` is the name of the project, `tabs` is the starter template, and the project type is `angular`.

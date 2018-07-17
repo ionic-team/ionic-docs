@@ -23,8 +23,8 @@ Node is bundled with [npm](/docs/faq/glossary#npm), the package manager for Java
 To verify the installation, open a new terminal window and run:
 
 ```shell
-node --version
-npm --version
+$ node --version
+$ npm --version
 ```
 
 ## Git
@@ -34,5 +34,5 @@ Although not required, the version control system [Git](/docs/faq/glossary#git) 
 To verify the installation, open a new terminal window and run:
 
 ```shell
-git --version
+$ git --version
 ```

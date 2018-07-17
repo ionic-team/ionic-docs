@@ -49,26 +49,26 @@ In `~/.bashrc`, `~/.bash_profile`, or similar shell startup scripts, make the fo
 
 1. Set the `ANDROID_SDK_ROOT` environment variable. This path should be the **Android SDK Location** used in the previous section.
 
-    ```bash
-    export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
-    ```
+   ```shell
+   $ export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+   ```
 
 1. Add the Android SDK command-line directories to `PATH`. Each directory corresponds to the category of <a href="https://developer.android.com/studio/command-line/" target="_blank">command-line tool</a>.
 
-    ```bash
-    # avdmanager, sdkmanager
-    export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
+   ```shell
+   # avdmanager, sdkmanager
+   $ export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
 
-    # adb, logcat
-    export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+   # adb, logcat
+   $ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 
-    # emulator
-    export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
-    ```
+   # emulator
+   $ export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+   ```
 
-    <blockquote>
-      <p>For `apksigner` and `zipalign`, `$ANDROID_SDK_ROOT/build-tools/<version>` must also be added to `PATH`.
-    </blockquote>
+   <blockquote>
+     <p>For `apksigner` and `zipalign`, `$ANDROID_SDK_ROOT/build-tools/<version>` must also be added to `PATH`.
+   </blockquote>
 
 ### Creating an Android Virtual Device
 
@@ -96,7 +96,7 @@ Actual Android hardware can also be used for Ionic app development. But first, t
 Verify the connection works by connecting the device to the computer with a USB cable and using the following command:
 
 ```shell
-adb devices
+$ adb devices
 ```
 
 The device should be listed. See the full <a href="https://developer.android.com/studio/command-line/adb" target="_blank">`adb` documentation</a> for troubleshooting and detailed information.

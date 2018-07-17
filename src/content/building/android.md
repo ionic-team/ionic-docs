@@ -22,13 +22,13 @@ Before apps can be deployed to Android simulators and devices, the native projec
     For Capacitor, run the following:
 
     ```shell
-    ionic capacitor add android
+    $ ionic capacitor add android
     ```
 
     For Cordova, run the following:
 
     ```shell
-    ionic cordova prepare android
+    $ ionic cordova prepare android
     ```
 
 2. Set the [Package ID](/docs/faq/glossary#package-id).
@@ -47,7 +47,7 @@ Capacitor uses Android Studio to build and run apps to simulators and devices.
     With each meaningful change, Ionic apps must be built into web assets before the change can appear on Android simulators and devices. The web assets then must be copied into the native project. Luckily, this process is made easy with a single Ionic CLI command.
 
     ```shell
-    ionic capacitor copy android
+    $ ionic capacitor copy android
     ```
 
 2. In Android Studio, select a target simulator or device and click the run button.
@@ -66,7 +66,7 @@ The Ionic CLI can build, copy, and deploy Ionic apps to Android simulators and d
 Run the following to start a long-running CLI process that boots up a live-reload server:
 
 ```shell
-ionic cordova run android -l
+$ ionic cordova run android -l
 ```
 
 Now, when changes are made to the app's source files, web assets are rebuilt and the changes are reflected on the simulator or device without having to deploy again.

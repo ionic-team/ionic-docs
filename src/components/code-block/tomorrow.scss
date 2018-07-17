@@ -79,3 +79,48 @@
 .hljs-strong {
   font-weight: bold;
 }
+
+code-block[language="shell"] {
+  .hljs-comment,
+  .hljs-quote,
+  .hljs-variable,
+  .hljs-template-variable,
+  .hljs-name,
+  .hljs-selector-id,
+  .hljs-selector-class,
+  .hljs-regexp,
+  .hljs-deletion,
+  .hljs-tag,
+  .hljs-tag .hljs-name,
+  .hljs-number,
+  .hljs-built_in,
+  .hljs-builtin-name,
+  .hljs-literal,
+  .hljs-type,
+  .hljs-params,
+  .hljs-link,
+  .hljs-attribute,
+  .hljs-attr,
+  .hljs-string,
+  .hljs-symbol,
+  .hljs-bullet,
+  .hljs-addition,
+  .hljs-string a,
+  .hljs-section,
+  .hljs-title,
+  .hljs-keyword,
+  .hljs-selector-tag,
+  .hljs-emphasis,
+  .hljs-strong {
+    color: inherit;
+  }
+
+  .hljs-meta {
+    color: #fb96f9;
+    user-select: none;
+  }
+
+  pre code {
+    color: rgba(255, 255, 255, 0.7);
+  }
+}

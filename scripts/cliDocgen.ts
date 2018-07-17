@@ -26,7 +26,7 @@ export function getVersionMarkup(command): string {
   if (command.exampleCommands.length) {
     markdown += '## Examples\n\n';
     markdown += '```shell\n';
-    markdown += command.exampleCommands.join('\n');
+    markdown += command.exampleCommands.map(cmd => `$ ${cmd}`).join('\n');
     markdown += '\n```\n\n';
   }
 

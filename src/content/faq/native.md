@@ -24,7 +24,7 @@ Running an app on an iOS device requires a provisioning profile. If a provisioni
     For Capacitor, run the following to open the app in Xcode:
 
     ```shell
-    ionic capacitor open ios
+    $ ionic capacitor open ios
     ```
 
     For Cordova, open Xcode. Use **File** &raquo; **Open** and locate the app. Open the app's `platforms/ios` directory.
@@ -63,12 +63,12 @@ Once these commands have been ran a fresh build can be done.
 This error is caused by two seperate plugins trying to use different versions of the `Google Play Services`. To fix this issue make sure you are running cordova version 7.1.0 or higher and cordova-android 6.3.0 or higher. To update cordova run 
 
 ```shell
-npm install cordova@latest
+$ npm install cordova@latest
 ```
 and to update cordova-android run
 
 ```shell
-cordova platform update android
+$ cordova platform update android
 ```
 .
 

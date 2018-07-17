@@ -24,13 +24,13 @@ Before apps can be deployed to iOS simulators and devices, the native project mu
     For Capacitor, run the following:
 
     ```shell
-    ionic capacitor add ios
+    $ ionic capacitor add ios
     ```
 
     For Cordova, run the following:
 
     ```shell
-    ionic cordova prepare ios
+    $ ionic cordova prepare ios
     ```
 
 1. <strong>Set the [Package ID](/docs/faq/glossary#package-id).</strong>
@@ -44,7 +44,7 @@ Before apps can be deployed to iOS simulators and devices, the native project mu
     For Capacitor, run the following to open the app in Xcode:
 
     ```shell
-    ionic capacitor open ios
+    $ ionic capacitor open ios
     ```
 
     For Cordova, open Xcode. Use **File** &raquo; **Open** and locate the app. Open the app's `platforms/ios` directory.
@@ -68,13 +68,13 @@ In this workflow, Xcode can automatically fix common compilation and signing iss
     For Capacitor, run the following:
 
     ```shell
-    ionic capacitor copy ios
+    $ ionic capacitor copy ios
     ```
 
     For Cordova, run the following:
 
     ```shell
-    ionic cordova prepare ios
+    $ ionic cordova prepare ios
     ```
 
 1. <strong>In Xcode, select a target simulator or device and click the play button.</strong>
@@ -88,7 +88,7 @@ Unfortunately, live-reload for Capacitor is not yet available. Follow [this issu
 For Cordova, run the following to start a long-running CLI process that boots up a live-reload server:
 
 ```shell
-ionic cordova run ios -l
+$ ionic cordova run ios -l
 ```
 
 Now, when changes are made to the app's source files, web assets are rebuilt and the changes are reflected on the simulator or device without having to deploy again.
