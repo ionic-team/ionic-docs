@@ -9,9 +9,21 @@ nextUrl: '/docs/building/scaffolding'
 Starting a new Ionic app is incredibly simple. From the command line, run the `ionic start` command and the CLI will handle the rest.
 </p>
 
-![ionic start prompt](/docs/assets/img/guides/starting/terminal-prompt.png)
+<command-line>
+    <command-prompt>ionic start</command-prompt>
+    <command-output>
+        <br />
+        <span class="bold">Every great app needs a name! 😍</span><br />
+        <br />
+        Please enter the full name of your app. You can change this at any time.
+        To bypass this prompt next time, supply <span class="green">name</span>,
+        the first argument to <span class="green">ionic start</span>.<br />
+        <br />
+        <span class="bold green">?</span> <span class="bold">Project name:</span> <command-cursor blink></command-cursor><br />
+    </command-output>
+</command-line>
 
-The CLI will display prompts asking for app name, template, and what project type to use. This information can be provide in the start command as well.
+The Ionic CLI will display prompts asking for the new project's name and which template to use. These details can be provided inline as well:
 
 ```shell
 $ ionic start myApp tabs --type=angular
@@ -25,10 +37,10 @@ Here, `myApp` is the name of the project, `tabs` is the starter template, and th
 - `sidemenu`: A sidemenu based layout
 - `blank`: A empty project with a single page
 
-There are many more templates to choose from. The CLI can list them with the command, `ionic start --list`
+There are many more templates to choose from. See all available templates with the following command:
 
-
-![ionic template list](/docs/assets/img/guides/starting/template-list.png)
-
+```shell
+$ ionic start --list
+```
 
 These templates provide a great starting point for any app and include all the best practices for making a code base scale.
