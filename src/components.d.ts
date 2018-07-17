@@ -352,6 +352,138 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface CommandCursor {
+      'blink': boolean;
+    }
+  }
+
+  interface HTMLCommandCursorElement extends StencilComponents.CommandCursor, HTMLStencilElement {}
+
+  var HTMLCommandCursorElement: {
+    prototype: HTMLCommandCursorElement;
+    new (): HTMLCommandCursorElement;
+  };
+  interface HTMLElementTagNameMap {
+    'command-cursor': HTMLCommandCursorElement;
+  }
+  interface ElementTagNameMap {
+    'command-cursor': HTMLCommandCursorElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'command-cursor': JSXElements.CommandCursorAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface CommandCursorAttributes extends HTMLAttributes {
+      'blink'?: boolean;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface CommandLine {
+      'nobuttons': boolean;
+    }
+  }
+
+  interface HTMLCommandLineElement extends StencilComponents.CommandLine, HTMLStencilElement {}
+
+  var HTMLCommandLineElement: {
+    prototype: HTMLCommandLineElement;
+    new (): HTMLCommandLineElement;
+  };
+  interface HTMLElementTagNameMap {
+    'command-line': HTMLCommandLineElement;
+  }
+  interface ElementTagNameMap {
+    'command-line': HTMLCommandLineElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'command-line': JSXElements.CommandLineAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface CommandLineAttributes extends HTMLAttributes {
+      'nobuttons'?: boolean;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface CommandOutput {
+
+    }
+  }
+
+  interface HTMLCommandOutputElement extends StencilComponents.CommandOutput, HTMLStencilElement {}
+
+  var HTMLCommandOutputElement: {
+    prototype: HTMLCommandOutputElement;
+    new (): HTMLCommandOutputElement;
+  };
+  interface HTMLElementTagNameMap {
+    'command-output': HTMLCommandOutputElement;
+  }
+  interface ElementTagNameMap {
+    'command-output': HTMLCommandOutputElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'command-output': JSXElements.CommandOutputAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface CommandOutputAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface CommandPrompt {
+
+    }
+  }
+
+  interface HTMLCommandPromptElement extends StencilComponents.CommandPrompt, HTMLStencilElement {}
+
+  var HTMLCommandPromptElement: {
+    prototype: HTMLCommandPromptElement;
+    new (): HTMLCommandPromptElement;
+  };
+  interface HTMLElementTagNameMap {
+    'command-prompt': HTMLCommandPromptElement;
+  }
+  interface ElementTagNameMap {
+    'command-prompt': HTMLCommandPromptElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'command-prompt': JSXElements.CommandPromptAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface CommandPromptAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface ComponentPreview {
 
     }

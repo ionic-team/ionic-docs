@@ -28,7 +28,6 @@ export const cliMenu = {
   "Link": "/docs/cli/link",
   "Login": "/docs/cli/login",
   "Logout": "/docs/cli/logout",
-  "Monitoring Syncmaps": "/docs/cli/monitoring-syncmaps",
   "Serve": "/docs/cli/serve",
   "Signup": "/docs/cli/signup",
   "Ssh Add": "/docs/cli/ssh-add",

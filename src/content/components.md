@@ -7,64 +7,51 @@ previewSource: https://github.com/ionic-team/component-preview/tree/master/src/c
 hideTOC: true
 ---
 
+<p class="intro">Ionic apps are made of high-level building blocks called components. Components allow you to quickly construct an interface for your app. Ionic comes with a number of components, including modals, popups, and cards. Check out the examples below to see what each component looks like and to learn how to use each one. Once you’re familiar with the basics, head over to the [API docs](/docs/api) for ideas on how to customize each component.</p>
+
 <component-preview></component-preview>
 
 ## Action Sheet
 
 Action Sheets slide up from the bottom edge of the device screen, and display a set of options with the ability to confirm or cancel an action. Action Sheets can sometimes be used as an alternative to menus, however, they should not be used for navigation.
 
-```typescript
-const actionSheet = await this.actionSheetCrl.create({
-  header: 'Action Sheet',
-  buttons: [
-    {
-      text: 'Copy',
-      handler: () => {
-        console.log('copy tapped');
-      }
-    },
-    {
-      text: 'Cancel',
-      role: 'cancel'
-    }
-  ]
-});
-
-await actionSheet.present();
-```
 
 ## Alert
  
 Alerts are a great way to offer the user the ability to choose a specific action or list of actions. Alerts can include contain text, inputs and buttons. They can provide the user with important information, or require them to make a decision (or multiple decisions). Alerts should only be used for quick actions like password verification, small app notifications, or quick options.
 
-```typescript
-const alert = await this.alertCtrl.create({
-  header: 'Alert',
-  inputs: [
-    {
-      type: 'text',
-      name: 'username',
-      id: 'userName',
-      placeholder: 'username',
-      value: this.user
-    }
-  ]
-});
-
-await alert.present();
-```
 
 ## Badge
 
 The Badge component is a small component that typically communicates a numerical value to the user. They are normally used within an item. 
+
+```html
+<!-- Default -->
+<ion-badge>99</ion-badge>
+
+<!-- Colors -->
+<ion-badge color="primary">11</ion-badge>
+<ion-badge color="secondary">22</ion-badge>
+<ion-badge color="tertiary">33</ion-badge>
+<ion-badge color="success">44</ion-badge>
+<ion-badge color="warning">55</ion-badge>
+<ion-badge color="danger">66</ion-badge>
+
+<!-- Item with badge on left and right -->
+<ion-item>
+  <ion-badge slot="start">11</ion-badge>
+  <ion-label>My Item</ion-label>
+  <ion-badge slot="end">22</ion-badge>
+</ion-item>
+```
 
 ## Button
 
 Buttons are an essential way to interact with and navigate through an app, and should clearly communicate what action will occur after the user taps them. Buttons are highly customizeable with color, shape and size being fully customizeable. We support round buttons, FAB buttons, outline buttons and more!
 
 ```html
-  <ion-button shape='round' color='primary' fill='outline'>Hello World</ion-button>
-  <ion-button size='small'>Small Button</ion-button>
+  <ion-button shape="round" color="primary" fill="outline">Hello World</ion-button>
+  <ion-button size="small">Small Button</ion-button>
 ```
 
 ## Card
@@ -73,7 +60,7 @@ Card components are a great way to display important pieces of content, and are 
 
 ```html
 <ion-card>
-  <ion-img src='/assets/myImg.png'></ion-img>
+  <ion-img src="/assets/myImg.png"></ion-img>
 
   <ion-card-content>
     <ion-card-title>Hello World</ion-card-title>
@@ -122,6 +109,37 @@ A floating action button (FAB) is a circular button that performs the primary, o
 
 Grid is a powerful mobile-first system for building custom layouts. The Grid component can be used to ensure your app looks great on any device. It is heavily influenced by Bootstrap's grid system.
 
+```html
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      ion-col
+    </ion-col>
+    <ion-col>
+      ion-col
+    </ion-col>
+    <ion-col>
+      ion-col
+    </ion-col>
+    <ion-col>
+      ion-col
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="6">
+      ion-col [size="6"]
+    </ion-col>
+    <ion-col>
+      ion-col
+    </ion-col>
+    <ion-col>
+      ion-col
+    </ion-col>
+  </ion-row>
+</ion-grid>
+```
+
 ## Infinite Scroll
 
 An infinite scroll allows you to perform an action when the user scrolls a specified distance from the bottom or top of the page, such as loading more data in a long list of paginated data. It is also very customizeable with different loading indicators supported.
@@ -153,7 +171,7 @@ The list component is used to display rows of information, such as a contact lis
 ```html
 <ion-list>
   <ion-item>
-    <ion-avatar slot='start'>
+    <ion-avatar slot="start">
       <img src="assets/img/avatar-finn.png"></img>
     </ion-avatar>
     <ion-label>
@@ -169,36 +187,35 @@ The list component is used to display rows of information, such as a contact lis
 
 Loading is an overlay that prevents user interaction while indicating activity. 
 
-```typescript
-const loading = await this.loadingCtrl.create({
-  content: 'Please wait...',
-  duration: 3000,
-  dismissOnPageChange: true
-});
-
-loading.present();
-```
 
 ## Menu
 
 Menus are a common navigation pattern for apps. Menus can either be permanently on-screen (split-pane), swiped into view or toggled through a menu button.
 
+```html
+<ion-menu side="start">
+  <ion-header>
+    <ion-toolbar color="secondary">
+      <ion-title>Left Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-menu>
+```
+
 ## Modal
 
 Modals slide in and off screen to display a temporary UI. Modals are often used for login or signup pages, message composition,and option selection.
 
-```typescript
-const modal = await this.modalCtrl.create({
-  component: 'modal-page'
-});
-
-modal.present();
-```
 
 ## Nav
 
 Navigation is how users move between different pages in your app. Ionic’s navigation follows standard navigation concepts and animated transitions. Ionic's nav can also adapt to larger viewports using [ion-split-pane](link to split pane)
 
+```html
+<ion-app>
+  <ion-nav root="page-one"></ion-nav>
+</ion-app>
+```
 
 ## Popover
 
@@ -208,15 +225,6 @@ The Popover is a view that floats above an app’s content. Popovers provide an 
 - Select a commonly used tool or configuration
 - Present a list of actions to perform inside one of your views
 
-```typescript
-const popover = await popoverController.create({
-  component: 'popover-example-page',
-  ev: event,
-  translucent: true
-});
-
-await popover.present();
-```
 
 ## Range
 
@@ -225,8 +233,8 @@ A Range is a form control that lets users select from a range of values by movin
 ```html
 <ion-item>
   <ion-range>
-    <ion-icon slot='start' size='small' name="sunny"></ion-icon>
-    <ion-icon slot='end' name="sunny"></ion-icon>
+    <ion-icon slot="start" size="small" name="sunny"></ion-icon>
+    <ion-icon slot="end" name="sunny"></ion-icon>
   </ion-range>
 </ion-item>
 ```
@@ -237,7 +245,7 @@ Refresh provides pull-to-refresh functionality on a content component. A common 
 
 ```html
 <ion-content>
-  <ion-refresher slot='fixed'>
+  <ion-refresher slot="fixed">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 </ion-content>
@@ -274,6 +282,22 @@ The ion-select component is similar to an HTML `<select>` element, however, Ioni
 
 Slides make it easy to create complex UI such as galleries, tutorials, and page-based layouts.
 
+```html
+<ion-slides pager="true">
+  <ion-slide>
+    <h1>Slide 1</h1>
+  </ion-slide>
+
+  <ion-slide>
+    <h1>Slide 2</h1>
+  </ion-slide>
+
+  <ion-slide>
+    <h1>Slide 3</h1>
+  </ion-slide>
+</ion-slides>
+```
+
 ## Spinner
 
 The `ion-spinner` component provides a variety of animated SVG spinners. Spinners enables you to give users feedback that the app is actively processing/thinking/waiting/chillin’ out, or whatever you’d like it to indicate.
@@ -289,9 +313,9 @@ Tabs enable tabbed navigation, a standard navigation pattern in modern apps. Tab
 
 ```html
 <ion-tabs>
-  <ion-tab label='Music' icon='musical-note'></ion-tab>
-  <ion-tab label='Profile' icon='person'></ion-tab>
-  <ion-tab label='people' icon='people'></ion-tab>
+  <ion-tab label="Music" icon="musical-note"></ion-tab>
+  <ion-tab label="Profile" icon="person"></ion-tab>
+  <ion-tab label="people" icon="people"></ion-tab>
 </ion-tabs>
 ```
 
@@ -299,14 +323,6 @@ Tabs enable tabbed navigation, a standard navigation pattern in modern apps. Tab
 
 The toast component is a subtle notification that appears on top of an app’s content. The toast component can be used to display a short message to the user. Toasts are displayed full width across the bottom of your app on mobile. On tablet / desktop devices the toast will be centered and not full width.
 
-```typescript
-const toast = await this.toastCtrl.create({
-  message: 'Sharing...',
-  duration: 1000
-});
-
-await toast.present();
-```
 
 ## Virtual Scroll
 
