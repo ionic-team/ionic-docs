@@ -38,13 +38,24 @@ export class ComponentPreview {
     }
   }
 
+  linkAPIRef = (el) => {
+    const link = this.doc.createElement('a');
+    link.className = 'api-link';
+    link.href = `/docs/api/${el.id}`;
+    link.textContent = 'API ›';
+    link.title = `${el.textContent.trim()} API Reference`;
+    el.appendChild(link);
+  }
+
   componentDidUnload() {
     this.observer.disconnect();
   }
 
   componentDidLoad() {
     const contentEl = this.el.parentElement.parentElement;
-    Array.from(contentEl.querySelectorAll('h2')).forEach(this.observeElement);
+    const headings = Array.from(contentEl.querySelectorAll('h2'));
+    headings.forEach(this.observeElement);
+    headings.forEach(this.linkAPIRef);
   }
 
   render() {

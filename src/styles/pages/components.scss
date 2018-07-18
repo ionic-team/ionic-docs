@@ -1,3 +1,20 @@
 .page-components main {
   margin-bottom: 26rem;
 }
+
+.page-components h2 {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-components .api-link {
+  background-color: #dfedff;
+  border-radius: 24px;
+  color: #3880ff;
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: initial;
+  line-height: 1;
+  padding: 6px 10px;
+}
