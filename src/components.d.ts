@@ -810,39 +810,6 @@ declare global {
 declare global {
 
   namespace StencilComponents {
-    interface DocsRoot {
-
-    }
-  }
-
-  interface HTMLDocsRootElement extends StencilComponents.DocsRoot, HTMLStencilElement {}
-
-  var HTMLDocsRootElement: {
-    prototype: HTMLDocsRootElement;
-    new (): HTMLDocsRootElement;
-  };
-  interface HTMLElementTagNameMap {
-    'docs-root': HTMLDocsRootElement;
-  }
-  interface ElementTagNameMap {
-    'docs-root': HTMLDocsRootElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'docs-root': JSXElements.DocsRootAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface DocsRootAttributes extends HTMLAttributes {
-
-    }
-  }
-}
-
-
-declare global {
-
-  namespace StencilComponents {
     interface ImgZoom {
 
     }
@@ -867,6 +834,39 @@ declare global {
   }
   namespace JSXElements {
     export interface ImgZoomAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface DocsRoot {
+
+    }
+  }
+
+  interface HTMLDocsRootElement extends StencilComponents.DocsRoot, HTMLStencilElement {}
+
+  var HTMLDocsRootElement: {
+    prototype: HTMLDocsRootElement;
+    new (): HTMLDocsRootElement;
+  };
+  interface HTMLElementTagNameMap {
+    'docs-root': HTMLDocsRootElement;
+  }
+  interface ElementTagNameMap {
+    'docs-root': HTMLDocsRootElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'docs-root': JSXElements.DocsRootAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface DocsRootAttributes extends HTMLAttributes {
 
     }
   }
