@@ -47,6 +47,12 @@ export function renderMarkdown(markdown: string, options: RenderOptions): Marked
   const renderer = new marked.Renderer();
   const headings: HeadingStruc[] = [];
 
+  renderer.image = (href = '', title = '') => `
+    <img-zoom>
+      <img src="${href}" title="${title}"/>
+    </img-zoom>
+  `;
+
   renderer.heading = (text: string, level: number) => {
     const hasNestedTags = /<.+>(.+)<\/.+>/.test(text);
 

@@ -704,6 +704,39 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface ImgZoom {
+
+    }
+  }
+
+  interface HTMLImgZoomElement extends StencilComponents.ImgZoom, HTMLStencilElement {}
+
+  var HTMLImgZoomElement: {
+    prototype: HTMLImgZoomElement;
+    new (): HTMLImgZoomElement;
+  };
+  interface HTMLElementTagNameMap {
+    'img-zoom': HTMLImgZoomElement;
+  }
+  interface ElementTagNameMap {
+    'img-zoom': HTMLImgZoomElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'img-zoom': JSXElements.ImgZoomAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface ImgZoomAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface DocsLayout {
 
     }
