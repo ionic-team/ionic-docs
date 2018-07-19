@@ -173,6 +173,16 @@ export class DocsMenu {
         ];
 
       case 'pro':
+        return [
+          <ul>
+            { Object.keys(menuMap.pro).map(key => {
+              const val = menuMap.pro[key];
+              const onClick = () => this.toggleActiveItem(key);
+              const renderer = typeof val === 'string' ? this.createItem : this.createSubmenu;
+              return renderer(key, val, onClick);
+            })}
+          </ul>,
+        ];
       case 'framework':
       default:
         return [

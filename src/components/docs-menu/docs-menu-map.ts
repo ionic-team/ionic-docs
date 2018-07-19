@@ -64,6 +64,19 @@ export const main = {
   }
 };
 
+export const pro = {
+  'Home': '/docs',
+  'Introduction': '/docs/pro',
+  'Deploy': {
+    'Introduction': '/docs/pro/deploy/intro',
+    'Installation': '/docs/pro/deploy/setup',
+    'Builds': '/docs/pro/deploy/builds',
+    'Channels': '/docs/pro/deploy/channels',
+    'API Reference': '/docs/pro/deploy/api',
+    'Help': '/docs/pro/deploy/help'
+  }
+};
+
 export const outbound = {
   'API Reference': '/docs/api',
   'CLI Reference': '/docs/cli/overview',
