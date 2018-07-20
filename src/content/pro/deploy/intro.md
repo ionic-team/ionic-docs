@@ -1,14 +1,4 @@
----
-layout: fluid/pro_docs_base
-category: pro-deploy
-id: pro-live-deploy
-title: Live Deploy - Ionic Pro Documentation
-body_class: 'pro-docs'
-hide_header_search: true
-dark_header: true
----
-
-# Deploy: push app updates in real-time
+# Deploy
 
 Ionic Pro's Live Deploy feature let you update the UI and business logic of your app remotely, in real-time. Push HTML, JS, and CSS updates directly to your users without going through the
 app store to quickly fix bugs and ship new features.

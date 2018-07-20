@@ -1,14 +1,4 @@
----
-layout: fluid/pro_docs_base
-category: pro-deploy
-id: pro-deploy-channels
-title: Deploy Channels - Ionic Pro Documentation
-body_class: 'pro-docs'
-hide_header_search: true
-dark_header: true
----
-
-## Channels
+# Channels
 
 A Channel **points to a specific JavaScript Build or Snapshot of your app**
 that will be shared with specific devices listening to that channel for updates.

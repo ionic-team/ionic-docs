@@ -1,12 +1,4 @@
----
-layout: fluid/pro_docs_base
-category: pro-deploy
-id: pro-deploy-builds
-title: Deploy Builds - Ionic Pro Documentation
-body_class: 'pro-docs'
-hide_header_search: true
-dark_header: true
----
+# Building Your Code
 
 ## Builds
 

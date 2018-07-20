@@ -1,12 +1,4 @@
----
-layout: fluid/pro_docs_base
-category: pro-deploy
-id: pro-deploy-tutorials
-title: Deploy Tutorials - Ionic Pro Documentation
-body_class: 'pro-docs'
-hide_header_search: true
-dark_header: true
----
+# Help and Tutorials
 
 ## Setup and Deploy on iOS
 

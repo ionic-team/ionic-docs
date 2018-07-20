@@ -1,13 +1,3 @@
----
-layout: fluid/pro_docs_base
-category: pro-deploy
-id: pro-deploy-setup
-title: Live Deploy Setup - Ionic Pro Documentation
-body_class: 'pro-docs'
-hide_header_search: true
-dark_header: true
----
-
 # Using Ionic Deploy
 
 Ionic Pro's Deploy feature makes it easy to deploy app updates in real time without going through a

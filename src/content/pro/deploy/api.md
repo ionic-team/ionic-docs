@@ -1,13 +1,3 @@
----
-layout: fluid/pro_docs_base
-category: pro-deploy
-id: pro-deploy-api
-title: Deploy Plugin API - Ionic Pro Documentation
-body_class: 'pro-docs'
-hide_header_search: true
-dark_header: true
----
-
 # Using the Deploy API
 
 <div class="alert alert-danger" role="alert">
