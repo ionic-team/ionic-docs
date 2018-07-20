@@ -74,6 +74,11 @@ export const pro = {
     'Channels': '/docs/pro/deploy/channels',
     'API Reference': '/docs/pro/deploy/api',
     'Help': '/docs/pro/deploy/help'
+  },
+  'Package': {
+    'Introduction': '/docs/pro/package/intro',
+    'Credentials': '/docs/pro/package/credentials',
+    'Builds': '/docs/pro/package/intro#performing-a-build'
   }
 };
 
