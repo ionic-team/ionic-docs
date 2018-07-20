@@ -1,5 +1,5 @@
 import { Component, Prop } from '@stencil/core';
-import { Checkmark, Ionic, NewTab } from '../../icons';
+import { Arrow, Checkmark, Ionic, NewTab } from '../../icons';
 
 @Component({
   tag: 'section-switch',
@@ -19,8 +19,9 @@ export class SectionSwitch {
         </a>
         <span class="section-switch__selected" onClick={dropdown.toggle}>
           { selected }
-          <svg viewBox="0 0 33 22"><polygon points="16.5 22 0 0 33 0"></polygon></svg>
+          <Arrow />
         </span>
+        <span class="section-switch__badge">v4 ALPHA</span>
       </div>
     );
   }

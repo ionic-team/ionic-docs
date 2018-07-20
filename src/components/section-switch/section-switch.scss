@@ -48,7 +48,7 @@
   color: var(--header-color);
   display: flex;
   font-weight: 700;
-  margin-right: 0.3em;
+  margin-right: 0.5em;
   transition: opacity 200ms ease;
   will-change: opacity;
 
@@ -98,16 +98,26 @@
 
 .section-switch__selected > svg {
   fill: currentColor;
-  margin-left: 8px;
+  margin-left: 4px;
   transform-origin: 50% 50%;
-  vertical-align: middle;
+  margin-top: 4px;
   width: 6px;
 }
 
 .section-switch__selector.is-open .section-switch__selected > svg {
-  transform: rotate(180deg);
+  // transform: rotate(180deg);
 }
 
+.section-switch__selector .section-switch__badge {
+  background: #3252f5;
+  color: #71c5ff;
+  height: auto;
+  padding: 1px 5px;
+  font-size: 10px;
+  margin-left: 13px;
+  border-radius: 4px;
+  font-weight: 600;
+}
 
 /**
  * Panel
