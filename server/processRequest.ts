@@ -30,9 +30,6 @@ export default (req, res, next) => {
   //   return res.redirect(301, redirects[requrl]);
   // }
 
-  // TODO remove before going live
-  res.setHeader('X-Robots-Tag', 'noindex, nofollow');
-
   // don't index non production URLs, but favor HTTPS
   let protocol = 'https';
   if (req.hostname.indexOf('ionicframework.com') === -1) {
@@ -45,6 +42,11 @@ export default (req, res, next) => {
     res.setHeader('Content-Security-Policy', csp);
     res.setHeader('X-Content-Security-Policy', csp);
     res.setHeader('X-WebKit-CSP', csp);
+
+    // don't index in prod while under the beta subdomain
+    if (req.hostname.indexOf('beta') !== -1) {
+      res.setHeader('X-Robots-Tag', 'noindex, nofollow');
+    }
   }
 
   // cache static files
@@ -59,7 +61,7 @@ export default (req, res, next) => {
 
   // Setting default Page Vars
   res.locals = {
-    protocol: protocol,
+    protocol,
     domain: req.get('host'),
     url: req.originalUrl,
     dev: req.get('host').indexOf('localhost') === 0,
