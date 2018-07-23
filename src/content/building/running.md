@@ -7,11 +7,14 @@ nextUrl: '/docs/building/ios'
 
 # Running An App
 
-<p class="intro">After building out an app and adding native functionality, there will be a few different routes to test it out:</p>
+<p class="intro">
+There are many different options to test native functionality depending on your target platforms and needs.
+</p>
 
-* Mock the native functionality and test in the browser with Ionic Lab
-* Deploy to iOS and Android
-* Deploy to device using Ionic DevApp
+* Implement [Platform Detection](/docs/building/cross-platform) for the native functionality and test with `ionic serve`
+* [Deploy to iOS](/docs/building/ios)
+* [Deploy to Android](/docs/building/android)
+* Deploy to iOS & Android instantly using [Ionic DevApp](/docs/building/running#ionic-devapp)
 
 This article will focus on Ionic DevApp, as it includes the ability to test native functionality on a device.
 
@@ -19,7 +22,7 @@ This article will focus on Ionic DevApp, as it includes the ability to test nati
 
 Ionic DevApp extends the capabilities of Ionic Framework, making it easy to test apps directly on devices. DevApp offers a realtime view of changes as they're being made, with a rich library of pre-installed native plugins to test native features of the app.
 
-There’s no need to install complicated Native SDKs - all it takes is one simple command, `ionic serve`, and apps running anywhere DevApp is installed will be immediately available to preivew, with LiveReload to refresh changes as soon as they’re made.
+There's no need to install complicated Native SDKs - all it takes is one simple command, `ionic serve`, and apps running anywhere DevApp is installed will be immediately available to preview, with LiveReload to refresh changes as soon as they're made.
 
 ### Getting started
 
@@ -32,7 +35,7 @@ First, download the Ionic DevApp. It is available in the iOS App Store as well a
   <img style="width: 160px" alt="Get it on Google Play" src="/docs/assets/img/playstore.png" id="playstore-image">
 </a>
 
-With DevApp installed, sign up or login in to an Ionic Account.
+With DevApp installed, sign up or login to an Ionic Account.
 
 > DevApp is a free service that comes with every Ionic Account.
 
@@ -40,7 +43,28 @@ With DevApp installed, sign up or login in to an Ionic Account.
 
 With DevApp installed, run `ionic serve` from the command line in the project's directory.
 
-![ionic serve prompt](/docs/assets/img/guides/running/ionic-serve.png)
+<command-line>
+    <command-prompt>ionic serve</command-prompt>
+    <command-output>
+        > <span class="green">ng run app:serve --host=0.0.0.0 --port=8100</span>
+        <br />
+        <br />
+        [<span class="bold">INFO</span>] <span class="bold">Development server running!</span>
+        <br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Local: <span class="bold">http://localhost:8100</span>
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;External: <span class="bold">http://192.168.1.169:8100</span>
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DevApp: <span class="bold">StarTrack-ng@8100</span> on <span class="bold">ionic-home-router.network</span>
+        <br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="yellow">Use Ctrl+C to quit this process</span>
+        <br />
+        <br />
+        [<span class="bold">INFO</span>] Browser window opened to <span class="bold">http://localhost:8100!</span>
+    </command-output>
+</command-line>
 
 With `ionic serve` running, open DevApp and select the app from the currently running app list.
 
@@ -48,4 +72,4 @@ With `ionic serve` running, open DevApp and select the app from the currently ru
 
 Now if the app calls any native functionality, DevApp can handle this and actually return the correct native implementation.
 
-Now DevApp has a select list of plugin it supports, so checkout the [DevApp docs](https://ionicframework.com/docs/pro/devapp/) for a complete list.
+DevApp has a select list of plugin it supports, so check out the [DevApp docs](https://ionicframework.com/docs/pro/devapp/) for a complete list.

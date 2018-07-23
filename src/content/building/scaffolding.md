@@ -60,7 +60,7 @@ After a selection is made, the Ionic CLI will prompt for a name. We highly recom
         <br />
         <span class="green">?</span> <span class="bold">Name/path (e.g. <span class="green">pages/&lt;name&gt;</span>):</span> pages/My New Page
     </command-output>
-    <command-cursor></command-cursor>
+    <command-cursor blink></command-cursor>
 </command-line>
 
 Alternatively, the `type` and `name` of the generated feature can be entered on the command line:
