@@ -39,9 +39,9 @@ export default (req, res, next) => {
    // require https in prod
     let csp = 'default-src https: data: blob: \'unsafe-eval\' \'unsafe-inline\'; ';
     csp += 'frame-src \'self\' data: https://unpkg.com';
-    res.setHeader('Content-Security-Policy', csp);
-    res.setHeader('X-Content-Security-Policy', csp);
-    res.setHeader('X-WebKit-CSP', csp);
+    // res.setHeader('Content-Security-Policy', csp);
+    // res.setHeader('X-Content-Security-Policy', csp);
+    // res.setHeader('X-WebKit-CSP', csp);
 
     // don't index in prod while under the beta subdomain
     if (req.hostname.indexOf('beta') !== -1) {
