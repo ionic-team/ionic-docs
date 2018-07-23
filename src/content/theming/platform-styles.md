@@ -36,7 +36,7 @@ _Note: The **platform** and the **mode** are not the same. The platform can be s
 Each Ionic component has up to three stylesheets used to style it. Here's an example of the theming structure for the `badge` component:
 
 
-```bash
+```
 badge
 ├── badge.ios.scss                  # ios mode styles
 ├── badge.ios.vars.scss             # ios mode variables
