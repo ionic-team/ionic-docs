@@ -14,6 +14,7 @@ export class DocsDocument {
   /* tslint:disable */
   @Prop() onUpdate: (document) => void = () => {};
   /* tslint:enable */
+  @Prop({ context: 'document' }) private document: HTMLDocument;
   @Prop({ context: 'isServer' }) private isServer: boolean;
   @Prop() isLoadingTimeout = 1000;
   @State() isLoading = false;
@@ -65,6 +66,7 @@ export class DocsDocument {
     this.attributes = attributes;
     this.pageClass = this.path.replace(/\//g, '-');
     this.clearLoadingTimer();
+    this.setDocumentTitle(this.title);
   }
 
   handleFetchError = err => {
@@ -93,6 +95,10 @@ export class DocsDocument {
   clearLoadingTimer() {
     clearTimeout(this.loadingTimer);
     this.isLoading = false;
+  }
+
+  setDocumentTitle(title: string) {
+    this.document.title = `Ionic Docs${ title ? ` - ${title}` : '' }`;
   }
 
   stripTitle = ({ attributes, body }) => {
