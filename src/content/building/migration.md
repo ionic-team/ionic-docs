@@ -9,44 +9,43 @@ nextUrl: '/docs/building/cross-platform'
 
 ## Overview
 
-We suggest the following general process when migrating an existing application from Ionic version 2 or 3 to Ionic version 4:
+We suggest the following general process when migrating an existing application from Ionic 3 to 4:
 
-1. Generate a new project using one of the generic starters
-1. Copy any services from `src/providers` to `src/app/services`
-   - Minor rxjs related changes may need to be made. For more details, please see [rxjs's docs](https://github.com/ReactiveX/rxjs/blob/master/MIGRATION.md)
-   - Services should include `{providedIn: 'root'}` in the `@Injectable()` decorator. For details, please see Angular [provider docs](https://angular.io/guide/providers).
+1. Generate a new project using the `blank` starter (see [Starting an App](/docs/building/starting))
+1. Copy any Angular services from `src/providers` to `src/app/services`
+   - Services should include `{ providedIn: 'root' }` in the `@Injectable()` decorator. For details, please see Angular [provider docs](https://angular.io/guide/providers).
 1. Copy the app's other root level items (pipes, components, etc) keeping in mind that the directory structure changes from `src/components` to `src/app/components`, etc.
 1. Copy global Sass styling from `src/app/app.scss` to `src/global.scss`
-1. Copy the rest of the application, page by page or feature by feature, keeping the following items in mind
-   - Emulated Shadow DOM is turned on by default so custom Sass no longer needs to be wrapped in the page tag
-   - Certain life-cycle hooks (such as `ionViewDidLoad()`) should be replaced by Angular's hooks (such as `ngOnInit()`)
-   - Markup changes may be required in the page or any any components used by the page
+1. Copy the rest of the application, page by page or feature by feature, keeping the following items in mind:
+   - Emulated Shadow DOM is turned on by default
+   - Page/component Sass should no longer be wrapped in the page/component tag and should use Angular's [`styleUrls`](https://angular.io/api/core/Component#styleUrls) option of the `@Component` decorator
+   - RxJS has been updated from v5 to v6 (see [RxJS Changes](#rxjs-changes))
+   - Certain lifecycle hooks should be replaced by Angular's hooks (see [Lifecycle Events](#lifecycle-events))
+   - Markup changes may be required (migration tool available, see [Markup Changes](#markup-changes))
 
-In many cases, using the ionic CLI to generate a new object and then copying the code also works very well. For example: `ionic g service weather` will create a shell `Weather` service and test. The code can then be copied from the older project with minor modifications as needed. This helps to ensure proper structure is followed. This also generates shells for unit tests.
+In many cases, using the Ionic CLI to generate a new object and then copying the code also works very well. For example: `ionic g service weather` will create a shell `Weather` service and test. The code can then be copied from the older project with minor modifications as needed. This helps to ensure proper structure is followed. This also generates shells for unit tests.
 
 ## Project structure
 
-One of the major changes between an Ionic 3 app and an Ionic 4 app is the over all project layout and structure. In V3, Ionic apps had a custom convention for how an app should be setup and what that folder structure should look like. In V4, this has been changed to follows a typical setup of each framework supported.
+One of the major changes between an Ionic 3 app and an Ionic 4 app is the overall project layout and structure. In v3, Ionic apps had a custom convention for how an app should be setup and what that folder structure should look like. In v4, this has been changed to follow the recommended setup of each supported framework.
 
 For example, if an app is using Angular, that project structure will be exactly what an Angular CLI app would be. This change, while not too difficult to accommodate, helps to keep common patterns and documentation consistent.
 
-![A V4 project on the left and a V3 project on the right](/docs/assets/img/guides/migration/v4-v3-project-setup.png)
+![A v4 project on the left and a v3 project on the right](/docs/assets/img/guides/migration/v4-v3-project-setup.png)
 
-The above comparison shows an example project structure of the newer V4 layout (left). For developers with experience in a vanilla Angular project, this should feel really familiar.
+The above comparison is an example of a v4 app's project structure. For developers with experience in a vanilla Angular project, this should feel really familiar.
 
-There is a `src` directory that acts as the home for the app. This includes the `index.html`, any assets, environment variables, and any app specific config files. Compared to a V3 project which is slightly different.
+There is a `src/` directory that acts as the home for the app. This includes the `index.html`, any assets, environment variables, and any app specific config files.
 
-While migrating an app to take advantage of this new layout, it is suggested that a new project "base" is made with the CLI. Then, with the new project layout, migrate the features of the app piece by piece.
-
-Be aware that pages/components/etc have moved to inside the app folder because `app` is now the home for all of the Angular specific code.
+While migrating an app to take advantage of this new layout, it is suggested that a new project "base" is made with the CLI. Then, with the new project layout, migrate the features of the app piece by piece. Pages/components/etc. should be moved into the `src/app/` folder.
 
 ## Changes in Package Name
 
-Another change in V4 is the actual package name of Ionic. For V4, the package name is now `@ionic/angular`. While migrating an app, update the imports from `ionic-angular` to `@ionic/angular`.
+Another change in v4 is the actual package name of Ionic. For v4, the package name is now `@ionic/angular`. While migrating an app, update the imports from `ionic-angular` to `@ionic/angular`.
 
 ## RxJS Changes
 
-Some minor RxJS changes are required due to the change from RxJS v5.x to v6. Please see the <a href="https://github.com/ReactiveX/rxjs/blob/master/MIGRATION.md" target="_blank">RxJS Migtration Guide</a> for details.
+Some minor RxJS changes are required due to the change from RxJS v5 to v6. Please see the <a href="https://github.com/ReactiveX/rxjs/blob/master/MIGRATION.md" target="_blank">RxJS Migration Guide</a> for details.
 
 ## Lifecycle Events
 
@@ -54,63 +53,65 @@ Some of the Ionic lifecycle events are equivalent to Angular lifecycle hooks. Fo
 
 ## Overlay Components
 
-In prior versions of Ionic, overlay components such as Loading, Toast, or Alert were created synchronously. In Ionic V4, these components are all created asynchronously. As a result of this, promises need to be used or async/await.
+In prior versions of Ionic, overlay components such as Loading, Toast, or Alert were created synchronously. In Ionic v4, these components are all created asynchronously. As a result of this, the API is now promise-based.
 
 ```typescript
-// V3
-showAlert(){
-  let alert = this.alertCtrl.create({
+// v3
+showAlert() {
+  const alert = this.alertCtrl.create({
     message: "Hello There",
     subHeader: "I'm a subheader"
-  })
-  alert.present()
+  });
+
+  alert.present();
 }
 ```
 
-In V4, a promise is returned instead:
+In v4, promises are used:
 
 ```typescript
-showAlert(){
+showAlert() {
   this.alertCtrl.create({
     message: "Hello There",
     subHeader: "I'm a subheader"
-  }).then(alert => alert.present())
+  }).then(alert => alert.present());
+}
 
 // Or using async/await
 
-async showAlert(){
-  let alert = await this.alertCtrl.create({
+async showAlert() {
+  const alert = await this.alertCtrl.create({
     message: "Hello There",
     subHeader: "I'm a subheader"
-  })
-alert.present()
+  });
+
+  await alert.present();
+}
 ```
 
 ## Navigation
 
-In V4, major changes were made to navigation and routing. `NavController` and `ion-nav` have now been deprecated. They can still used, but only if an app is not using lazy loading.
+In v4, major changes were made to navigation and routing. `NavController` and `ion-nav` have now been deprecated. They can still used, but only if an app is not using lazy loading.
 
-In place of `ion-nav` and `NavController`, Ionic has moved to use `@angular/router` for routing.
-The Angular team has  an <a href="http://angular.io/guide/router" target="_blank">excellent guide</a> on their docs site that covers the Router in great detail.
+In place of `ion-nav` and `NavController`, Ionic recommends using the official Angular Router for routing. The Angular team has an <a href="http://angular.io/guide/router" target="_blank">excellent guide</a> on their docs site that covers the Router in great detail.
 
-One key difference is that instead of using the `router-outlet` component, Ionic apps use the `ion-router-outlet`.
-The component has the same functionality as the standard Angular `router-outlet`, but just includes transitions.
+One key difference is that instead of using the `router-outlet` component, Ionic apps use the `ion-router-outlet`. The component has the same functionality as the standard Angular `router-outlet`, but includes transitions.
 
 ## Lazy Loading
 
-Another change is how lazy loading is done in V4 apps.
+Another change is how lazy loading is done in v4 apps.
 
-In V3, lazy loading was done like this:
+In v3, lazy loading was done like this:
 
 ```typescript
 // home.page.ts
 @IonicPage({
   segment: 'home'
 })
-@Component({...})
-export class HomePage{}
+@Component({ ... })
+export class HomePage {}
 
-//home.module.ts
+// home.module.ts
 @NgModule({
   declarations: [HomePage],
   imports: [IonicPageModule.forChild(HomePage)]
@@ -118,7 +119,7 @@ export class HomePage{}
 export class HomePageModule {}
 ```
 
-However, in V4, lazy loading is done via the `loadChildren` method of the Angular router:
+However, in v4, lazy loading is done via the `loadChildren` method of the Angular router:
 
 ```typescript
 // home.module.ts
@@ -149,5 +150,6 @@ export class AppModule {}
 
 ## Markup Changes
 
-Since V4 moved to Custom Elements, there's been a significant change to the markup for each component.
-These changes have all been made to follow the Custom Elements spec, and have been documented in a <a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#breaking-changes" target="_blank">dedicated file on Github</a>
+Since v4 moved to Custom Elements, there's been a significant change to the markup for each component. These changes have all been made to follow the Custom Elements spec, and have been documented in a <a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#breaking-changes" target="_blank">dedicated file on Github</a>.
+
+To help with these markup changes, we've released a TSLint-based <a href="https://github.com/ionic-team/v4-migration-tslint" target="_blank">Migration Tool</a>, which detects issues and can even fix some of them automatically.
