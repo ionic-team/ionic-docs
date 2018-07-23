@@ -25,7 +25,6 @@ export class DocsRoot {
     this.previewUrl = document.previewUrl || null;
     this.previewSource = document.previewSource || null;
     this.pageClass = document.pageClass;
-    this.setScrollPosition();
     this.closeMenu();
   }
 
@@ -43,6 +42,10 @@ export class DocsRoot {
 
   closeMenu = () => {
     this.isMenuOpen = false;
+  }
+
+  componentDidUpdate() {
+    this.setScrollPosition();
   }
 
   render() {
