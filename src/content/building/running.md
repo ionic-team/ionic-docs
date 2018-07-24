@@ -41,7 +41,7 @@ With DevApp installed, sign up or login to an Ionic Account.
 
 ## Serving the App
 
-With DevApp installed, run `ionic serve` from the command line in the project's directory.
+Make sure the device running DevApp and the computer are on the same network, then run `ionic serve` from the command line in the project's directory.
 
 <command-line>
     <command-prompt>ionic serve</command-prompt>
