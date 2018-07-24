@@ -21,7 +21,7 @@ export class SectionSwitch {
           { selected }
           <Arrow />
         </span>
-        <span class="section-switch__badge">v4 ALPHA</span>
+        <span class="section-switch__badge">v4 BETA</span>
       </div>
     );
   }
