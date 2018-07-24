@@ -35,7 +35,7 @@ Open Xcode and navigate to **Window** &raquo; **Devices and Simulators**. Create
 
 The <a href="https://github.com/phonegap/ios-sim" target="_blank">`ios-sim`</a> and <a href="https://github.com/phonegap/ios-deploy" target="_blank">`ios-deploy`</a> are utilities that deploy apps to the iOS simulator and iOS devices during development. They can be installed globally with [npm](/docs/faq/glossary#npm).
 
-```bash
-npm install -g ios-sim
-npm install -g ios-deploy
+```shell
+$ npm install -g ios-sim
+$ npm install -g ios-deploy
 ```

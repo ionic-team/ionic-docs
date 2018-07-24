@@ -60,11 +60,26 @@ docs-content {
   ul,
   ol {
     padding: 1px 0 14px 17px;
-    list-style: disc;
   }
 
   li {
     margin-bottom: 1.08em;
+  }
+
+  ul {
+    list-style: disc;
+  }
+
+  ol {
+    list-style: decimal;
+  }
+
+  ol ol {
+    list-style: lower-alpha;
+  }
+
+  ol ol ol {
+    list-style: circle;
   }
 
   blockquote {

@@ -17,6 +17,10 @@ docs-menu {
   -webkit-overflow-scrolling: touch;
 }
 
+.menu ul {
+  list-style: none;
+}
+
 .menu li {
   margin: 0.5em 0;
 }

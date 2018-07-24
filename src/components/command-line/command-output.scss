@@ -1,9 +1,20 @@
-span.bold {
-  font-family: var(--font-family-code-medium);
-  font-weight: bold;
-  color: #fff;
-}
+command-output {
+  span.bold a,
+  span.bold {
+    font-family: var(--font-family-code-medium);
+    font-weight: bold;
+    color: #fff;
+  }
 
-span.green {
-  color: #8ae26e;
+  span.green {
+    color: #8ae26e;
+  }
+
+  span.cyan {
+    color: #c3b3f9;
+  }
+
+  span.yellow {
+    color: #fffdb2;
+  }
 }

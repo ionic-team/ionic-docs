@@ -1,5 +1,4 @@
 import { Component, Prop, State, Watch } from '@stencil/core';
-// import { Helmet } from '@stencil/helmet';
 import frontMatter from 'front-matter';
 import { HeadingStruc, renderMarkdown } from '../../markdown';
 
@@ -15,6 +14,7 @@ export class DocsDocument {
   /* tslint:disable */
   @Prop() onUpdate: (document) => void = () => {};
   /* tslint:enable */
+  @Prop({ context: 'document' }) private document: HTMLDocument;
   @Prop({ context: 'isServer' }) private isServer: boolean;
   @Prop() isLoadingTimeout = 1000;
   @State() isLoading = false;
@@ -66,6 +66,7 @@ export class DocsDocument {
     this.attributes = attributes;
     this.pageClass = this.path.replace(/\//g, '-');
     this.clearLoadingTimer();
+    this.setDocumentTitle(this.title);
   }
 
   handleFetchError = err => {
@@ -96,6 +97,12 @@ export class DocsDocument {
     this.isLoading = false;
   }
 
+  setDocumentTitle(title: string) {
+    const pageTitle = `Ionic Docs${ title ? ` - ${title}` : '' }`;
+    this.document.title = pageTitle;
+    this.document.head.querySelector('meta[property="og:title"]').setAttribute('content', pageTitle);
+  }
+
   stripTitle = ({ attributes, body }) => {
     const match = /^# (.*?)$/gm.exec(body);
     if (match) {
@@ -114,9 +121,6 @@ export class DocsDocument {
     const headings = this.tocHeadings.filter(heading => heading.level < 3);
 
     return [
-//      <Helmet>
-//        <title>{ this.title ? `${this.title} - Ionic Docs` : 'Ionic Docs' }</title>
-//      </Helmet>,
       <h1>{this.title}</h1>,
       <div class="table-of-contents">
         {(headings.length > 0) && !this.hideTOC ? [
