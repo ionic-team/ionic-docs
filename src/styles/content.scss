@@ -85,15 +85,23 @@ docs-content {
   blockquote {
     background: rgba(255, 250, 237, 0.8);
     margin: 0;
-    padding: 1px 20px;
+    padding: 16px 20px;
     border-radius: 2px 4px 4px 2px;
     border-left: 4px solid #ffcc5f;
+    color: #736545;
+    line-height: 1.8;
+    font-size: 14px;
 
     p {
-      color: #736545;
-      line-height: 1.8;
-      font-size: 14px;
       margin: 15px 0;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
 
       a {
         color: #e09f16;
