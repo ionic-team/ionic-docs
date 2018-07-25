@@ -32,7 +32,7 @@ $ ionic start myApp tabs --type=angular
 ```
 
 <blockquote>
-  Note: Ionic 4 beta requires the <code>--type=angular</code> flag and version 4.0.0 or greater of the CLI.
+  Ionic 4 beta requires the <code>--type=angular</code> flag and version 4.0.0 or greater of the CLI.
 </blockquote>
 
 ![start app thumbnails](/docs/assets/img/installation/start-app-thumbnails.png)
