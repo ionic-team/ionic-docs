@@ -2,6 +2,7 @@
 
 export const nativeMenu = {
   "Overview": "/docs/native",
+  "ABBYY Real-Time Recognition": "/docs/native/abbyy-rtr",
   "Action Sheet": "/docs/native/action-sheet",
   "AdMob Free": "/docs/native/admob-free",
   "AdMob Pro": "/docs/native/admob-pro",
@@ -46,6 +47,7 @@ export const nativeMenu = {
   "Camera Preview": "/docs/native/camera-preview",
   "Camera": "/docs/native/camera",
   "Card IO": "/docs/native/card-io",
+  "Class Kit": "/docs/native/class-kit",
   "Clipboard": "/docs/native/clipboard",
   "Cloud Settings": "/docs/native/cloud-settings",
   "Code Push": "/docs/native/code-push",

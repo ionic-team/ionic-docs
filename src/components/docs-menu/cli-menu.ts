@@ -36,5 +36,6 @@ export const cliMenu = {
   "Ssh List": "/docs/cli/ssh-list",
   "Ssh Setup": "/docs/cli/ssh-setup",
   "Ssh Use": "/docs/cli/ssh-use",
+  "Ssl Generate": "/docs/cli/ssl-generate",
   "Start": "/docs/cli/start"
 };
