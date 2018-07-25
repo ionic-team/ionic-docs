@@ -26,26 +26,24 @@ By making subtle design changes between the platforms, users are provided with a
 
 ## Navigation
 
-Traditional websites use a linear history, meaning that the user navigates to a page and can hit the back button to navigate back.
-An example of this is clicking around Wikipedia where the user is going forward and backward on the browser's linear history stack. Ionic apps are able to take this a step further by allowing parallel navigation to happen. Meaning that it's possible to have multiple navigation stacks, and swap them at any moment.
+Traditional web apps use a linear history, meaning that the user navigates forward to a page and can hit the back button to navigate back.
+An example of this is clicking around Wikipedia where the user is going forward and backward on the browser's linear history stack.
 
-For apps the are building built with Angular and `ionic/angular`, we recommend using the <a href="https://angular.io/guide/router" target="_blank">Angular Router</a>.
-Previous versions of Ionic shipped with our own custom router, but in order to provide the best tooling and developer experience we have since moved to always using the framework's recommended router.
+In contrast, mobile apps often utilize parallel, "non-linear" navigation. For example, a tabbed interface can have separate navigation stacks for each tab, making sure the user never loses their place as they navigate and switch between tabs.
+
+Ionic apps embrace this mobile navigation approach, supporting parallel navigation histories that can also be nested, all while maintaining the familiar browser-style navigation concepts web developers are familiar with.
+
+For apps the are built with Angular and `@ionic/angular`, we recommend using the <a href="https://angular.io/guide/router" target="_blank">Angular Router</a> which comes out of the box for every new Ionic 4 Angular app.
+Previous versions of Ionic shipped with our own custom router, but in order to provide the best tooling and developer experience we have since moved to using the framework's recommended router.
 
 
 ## Native Access
 
-An amazing feature of using web technologies, which is what Ionic is built on top of, is that it can be rendered in virtually any platform: desktop computers, phones, tablets, cars, refrigerators, and more! The same code base for Ionic apps can work in many platforms because it is based on web standards and common APIs that are shared across many platforms.
+An amazing feature of apps built with web technologies (such as Ionic apps!) is that it can run on virtually any platform: desktop computers, phones, tablets, cars, refrigerators, and more! The same code base for Ionic apps can work on many platforms because it is based on web standards and common APIs that are shared across these platforms.
 
-One of the most common use cases for Ionic is to build an app which can be downloaded from both the <a href="https://www.apple.com/ios/app-store/" target="_blank">App Store</a> and <a href="https://play.google.com/" target="_blank">Play Store</a>. Both iOS and Android software development kits (SDKs) provide "[web views](/docs/building/webview)" which render any Ionic app.
+One of the most common use cases for Ionic is to build an app which can be downloaded from both the <a href="https://www.apple.com/ios/app-store/" target="_blank">App Store</a> and <a href="https://play.google.com/" target="_blank">Play Store</a>. Both iOS and Android software development kits (SDKs) provide "[web views](/docs/building/webview)" which render any Ionic app, while still allowing for <i>full</i> Native SDK access.
 
-Projects such as <a href="https://capacitor.ionicframework.com/" target="_blank">Capacitor</a> and <a href="https://cordova.apache.org/" target="_blank">Cordova</a> are commonly used to give Ionic apps "native access". This means developers can quickly build out an app using common web development tools, and still have access to native features such as the device's accelerometer, camera, GPS, etc. For more information please see the publishing docs for the [App Store](/docs/publishing/app-store) and [Play Store](/docs/publishing/play-store).
-
-
-## Architecture
-
-Ionic Apps are structured around the idea of Components. Utilizing the developers framework of choice, app's are built from the ground up with components being the key building block. Top level "views" are just components that are accessible through a URL. More detailed guides on how apps should be structured and built are available from the particular framework developers choose to use, such as <a href="https://angular.io/guide/styleguide" target="_blank">Angular's Style Guide</a>.
-
+Projects such as <a href="https://capacitor.ionicframework.com/" target="_blank">Capacitor</a> and <a href="https://cordova.apache.org/" target="_blank">Cordova</a> are commonly used to give Ionic apps this access to Native SDKs. This means developers can quickly build out an app using common web development tools, and still have access to native features such as the device's accelerometer, camera, GPS, and more. 
 
 ## Theming
 
