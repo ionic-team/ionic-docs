@@ -5,13 +5,19 @@ nextText: 'Environment Setup'
 nextUrl: '/docs/installation/environment'
 ---
 
-# Using Ionic from a CDN
+# Ionic Packages
 
 <p class="intro" markdown="1">
-Because Ionic Framework is built with web components, it is possible to link to Ionic from a CDN and use Ionic components in any HTML file. Let's dive into how this works:
+  Depending on whether you're using Angular or another framework (or none at all!) there are different ways to install Ionic.
 </p>
 
-## Ionic Framework from a CDN
+## Using Ionic in Angular
+
+When using Angular, install the `@ionic/angular` package. This comes with all the Ionic components and Angular-specific services and features.
+
+## Using Ionic from a CDN
+
+Not using Angular? Ionic can also be used directly from a CDN using a simple script include!
 
 It's recommended to use [unpkg](https://unpkg.com) to access the Framework from a CDN. To get the latest version, add the following `script` tag inside the `<head></head>` element in an HTML file:
 
