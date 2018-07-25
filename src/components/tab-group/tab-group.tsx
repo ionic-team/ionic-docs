@@ -12,7 +12,6 @@ export class TabGroup {
   private tabList: string[];
 
   componentWillLoad() {
-    console.log(this.initial);
     if (this.tabs && this.tabs.trim().length) {
       this.tabList = this.tabs.split(/[^\w-]+/);
       this.selected = this.tabList.indexOf(this.initial) >= 0
