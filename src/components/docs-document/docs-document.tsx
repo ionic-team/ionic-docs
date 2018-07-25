@@ -28,7 +28,7 @@ export class DocsDocument {
 
   loadingTimer = null;
 
-  componentDidLoad() {
+  componentWillLoad() {
     return this.fetchDocument();
   }
 
