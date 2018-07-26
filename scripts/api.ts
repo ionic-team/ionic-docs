@@ -47,26 +47,25 @@ export async function generate(task) {
   vlog('validating tags');
   task.output = 'Getting Tags...';
   const allVersions = await getVersions(IONIC_DIR);
+
   const versions = allVersions.filter(v => {
+
     for (const whitelistedVersion of FRAMEWORK_VERSIONS) {
       if (valid(whitelistedVersion) && eq(v, whitelistedVersion)) {
         return true;
       }
     }
-
     return false;
   });
 
-  if (FRAMEWORK_VERSIONS.indexOf('dev') !== -1) {
+  if (FRAMEWORK_VERSIONS.indexOf('nightly') !== -1) {
     const nightly = await getNightly();
     versions.push(nightly);
   }
 
-  // console.log(versions);
-
   // generate the docs for each version
   for (const sv of versions) {
-    const version = sv.raw.indexOf('+dev') !== -1 ? 'dev' : sv.version;
+    const version = sv.raw.indexOf('+nightly') !== -1 ? 'nightly' : sv.version;
 
     task.output = `Building for ${version}...`;
     const DOCS_DEST = join(
@@ -86,7 +85,7 @@ export async function generate(task) {
     task.output = `Checking out ${version}`;
     const test = await checkout(
       IONIC_DIR,
-      sv.raw.indexOf('+dev') !== -1 ? 'master' : sv.raw
+      sv.raw.indexOf('+nightly') !== -1 ? 'master' : sv.raw
     );
     task.output = `NPM Installing ${version}`;
     await npm.installAPI();
@@ -99,7 +98,7 @@ export async function generate(task) {
     generateNav(
       join(menuPath, `docs-api-map.ts`),
       APIDocs.components,
-      version === 'dev' ? 'dev' : sv.version
+      version === 'nightly' ? 'nightly' : sv.version
     );
   }
 
@@ -108,7 +107,7 @@ export async function generate(task) {
 }
 
 // copy demos and API docs files over to content/api
-function copyFiles(components, dest, version = 'dev') {
+function copyFiles(components, dest, version = 'nightly') {
   vlog(`Copying ${components.length} files`);
   let hasDemo = false;
 
@@ -127,12 +126,12 @@ function copyFiles(components, dest, version = 'dev') {
       file => {
         file = file.replace('</head>',
           `<link rel="stylesheet" href="/docs/overrides.css">
-<link rel="stylesheet" href="https://unpkg.com/@ionic/core${version === 'dev' ?
+<link rel="stylesheet" href="https://unpkg.com/@ionic/core${version === 'nightly' ?
 '' : `@${version}`}/css/ionic.min.css">
 </head>`);
         return file.replace(
           '/dist/ionic.js',
-          `https://unpkg.com/@ionic/core${version === 'dev' ?
+          `https://unpkg.com/@ionic/core${version === 'nightly' ?
             '' : `@${version}`}/dist/ionic.js`
         );
       }
@@ -197,5 +196,5 @@ async function getNightly() {
   const pkgStr = await readFileSync(
     join(IONIC_DIR, 'core', 'package.json')
   );
-  return parse(`${JSON.parse(pkgStr.toString('utf8')).version}+dev`);
+  return parse(`${JSON.parse(pkgStr.toString('utf8')).version}+nightly`);
 }

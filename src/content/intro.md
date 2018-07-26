@@ -11,10 +11,10 @@ nextUrl: '/docs/intro/concepts'
 Ionic Framework is an open source UI toolkit for building performant, high-quality mobile and desktop apps using web technologies (HTML, CSS, and JavaScript).
 </p>
 <p class="intro" markdown="1">
-Ionic Framework is focused on the frontend user experience, or UI interaction of an app (controls, interactions, gestures, animations). It’s easy to learn, and integrates nicely with other libraries or frameworks, such as Angular, or can be used standalone without a frontend framework.
+Ionic Framework is focused on the frontend user experience, or UI interaction of an app (controls, interactions, gestures, animations). It’s easy to learn, and integrates nicely with other libraries or frameworks, such as Angular, or can be used standalone without a frontend framework using a simple script include.
 </p>
 <p class="intro" markdown="1">
-Currently, Ionic Framework has official integration with <a href="https://angular.io/" target="_blank">Angular</a>, but support for <strong>Vue</strong> and <strong>React</strong> are in development. If you’d like to learn more about Ionic Framework before diving in, we [created a video](#) to walk you through the basics.
+Currently, Ionic Framework has official integration with <a href="https://angular.io/" target="_blank">Angular</a>, but support for <strong>Vue</strong> and <strong>React</strong> are in development. If you’d like to learn more about Ionic Framework before diving in, we <a href="https://youtu.be/p3AN3igqiRc" target="_blank">created a video</a> to walk you through the basics.
 </p>
 
 ## Goals
@@ -25,8 +25,8 @@ Build and deploy apps that work across multiple platforms, such as native iOS, A
 
 ### Web Standards-based
 
-Ionic Framework is built on top of reliable, [standardized web technologies](/docs/faq/glossary#web-standards): HTML, CSS, and JavaScript.
-Because of this, Ionic apps are future proofed by default, and cannot be controlled by any one organization.
+Ionic Framework is built on top of reliable, [standardized web technologies](/docs/faq/glossary#web-standards): HTML, CSS, and JavaScript, using
+modern Web APIs such as Custom Elements and Shadow DOM. Because of this, Ionic components have a stable API, and aren't at the whim of a single platform vendor.
 
 ### Beautiful Design
 
@@ -35,44 +35,44 @@ Start with pre-designed components, typography, interactive paradigms, and a gor
 
 ### Simplicity
 
-Ionic Framework is built with simplicity in mind, so that creating Ionic apps enjoyable, easy to learn, and accessible to just about anyone with web development familiarity.
+Ionic Framework is built with simplicity in mind, so that creating Ionic apps is enjoyable, easy to learn, and accessible to just about anyone with web development skills.
 
 ## License
 
-Ionic Framework is completely a free and open source project, released under <a href="https://opensource.org/licenses/MIT" target="_blank">MIT license</a>. This means it can be used in personal or commercial projects for free. For example, MIT is the same license used by such popular projects as jQuery and Ruby on Rails.
+Ionic Framework is a free and open source project, released under the permissable <a href="https://opensource.org/licenses/MIT" target="_blank">MIT license</a>. This means it can be used in personal or commercial projects for free. MIT is the same license used by such popular projects as jQuery and Ruby on Rails.
 
-This website and documentation content (found in the <a href="https://github.com/ionic-team/ionic-site" target="_blank">ionic-site</a> repo) is licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache 2 license</a>.
+This documentation content (found in the <a href="https://github.com/ionic-team/ionic-docs" target="_blank">ionic-docs</a> repo) is licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache 2 license</a>.
 
 ## Ionic CLI
 
-The official [Ionic CLI](#), or Command Line Interface, is a tool that quickly scaffolds Ionic apps and provides a number of helpful commands to Ionic developers. In addition to installing and updating Ionic, the CLI comes with a built-in development server, build and debugging tools, and much more. If you are an [Ionic Pro](#ionic-pro) member, the CLI can be used to export code and even interact with your account programmatically.
+The official [Ionic CLI](#), or Command Line Interface, is a tool that quickly scaffolds Ionic apps and provides a number of helpful commands to Ionic developers. In addition to installing and updating Ionic, the CLI comes with a built-in development server, build and debugging tools, and much more. If you are an [Ionic Pro](#ionic-pro) member, the CLI can be used to perform cloud builds and deployments, and administer your account.
 
 ## Framework Compatibility
 
-While past release of Ionic were tightly coupled to Angular, V4 of the framework was reengineered to work as it a standalone library, and integrate with the latest JavaScript frameworks, like Angular.
+While past release of Ionic were tightly coupled to Angular, V4 of the framework was re-engineered to work as it a standalone Web Component library, with integrations for the latest JavaScript frameworks, like Angular. Ionic can be used
+in most frontend frameworks with success, including React and Vue, though some frameworks need a shim for full Web Component support.
 
 ### JavaScript
 
-One of the main goals with Ionic 4 was to remove any hard requirement of a framework. This means the core components can work standalone with just a script tag in a web page. While working with frameworks can be great for larger teams and larger apps, it is now possible to use Ionic as a standalone library in a single page even in a context like Wordpress.
+One of the main goals with Ionic 4 was to remove any hard requirement on a single framework to host the components. This means the core components can work standalone with just a script tag in a web page. While working with frameworks can be great for larger teams and larger apps, it is now possible to use Ionic as a standalone library in a single page even in a context like WordPress.
 
 ### Angular
 
-Angular is at the center of what makes Ionic great. While the core components have been written to work as a standalone library, the `@ionic/angular` package makes integration with the Angular ecosystem a breeze. `@ionic/angular` includes all the functionality that Angular developers would expect and integrates with core Angular libraries, like the Angular router.
+Angular has always been at the center of what makes Ionic great. While the core components have been written to work as a standalone Web Component library, the `@ionic/angular` package makes integration with the Angular ecosystem a breeze. `@ionic/angular` includes all the functionality that Angular developers would expect coming from Ionic 2/3, and integrates with core Angular libraries, like the Angular router.
 
 ### Future Support
 
-Support for other frameworks are expected in future release. Currently bindings for Vue and React are being devloped.
-To request support for others, please create an issue on our GitHub page, or sending a pull request!
+Support for other frameworks are expected in future release. Currently official bindings for Vue and React are being developed, though some components Just Work out of the box in those frameworks.
 
 ## Ionic Framework V4+
 
-Ionic Framework V4 is a major advance in the underlying technology and capabilities of the project, with a focus on performance, compatibility, and overall extensibility. Although V4 still integrates deeply with Angular through the `@ionic/angular` package, it is now also framework-agnostic, meaning it can work with any other JavaScript framework (Vue, React, Preact, etc), or no framework at all.
+Ionic Framework V4 is a major advance in the underlying technology and capabilities of the project, with a focus on performance, compatibility, and overall extensibility. Although V4 still integrates deeply with Angular through the `@ionic/angular` package, it is now also framework-agnostic, meaning it can work with any other JavaScript framework (Vue, React, Preact, etc), or with no framework at all.
 
-By moving to web standards, V4 allows the core of Ionic to rely on what the browser is capable of, rather than custom code from a framework. This can mean faster load time, better performance, and less overall code.
+By moving to web standards, V4 allows the core of Ionic to rely on the standard component model supported in modern browsers, rather than a framework-specific model. This can mean faster load time, better performance, and less overall code.
 
 ## Ionic Pro
 
-To help manage Ionic apps throughout their lifecycle, we also offer a commercial app platform called <a href="https://ionicframework.com/pro" target="_blank">Ionic Pro</a>, which is <strong>separate from the open source Framework.</strong>
+To help manage Ionic apps throughout their lifecycle, we also offer a commercial app platform for production apps called <a href="https://ionicframework.com/pro" target="_blank">Ionic Pro</a>, which is <strong>separate from the open source Framework.</strong>
 
 Ionic Pro helps developers and teams monitor and track runtime errors, compile native app builds, and deploy live code updates to Ionic apps from a centralized dashboard. Pro requires an <a href="https://dashboard.ionicframework.com/signup" target="_blank">Ionic Account</a> and comes with a free “Starter” plan for those interested in playing around with some of its features. Optional upgrades to paid plans for more advanced capabilities and scale are available as well.
 

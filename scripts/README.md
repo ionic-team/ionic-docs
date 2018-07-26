@@ -14,4 +14,4 @@ Clone only, don't copy docs or push: `npm run ci-prep`
 ## TODO
 
 - [ ] Set up with Circle CI
-- [ ] Configure paralellization
+- [ ] Configure parallelization

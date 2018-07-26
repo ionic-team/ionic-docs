@@ -47,7 +47,7 @@ export class ComponentPreview {
     el.appendChild(link);
   }
 
-  componentDidUnload() {
+  componentWillUnload() {
     this.observer.disconnect();
   }
 

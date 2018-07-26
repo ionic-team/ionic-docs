@@ -17,7 +17,7 @@ Ionic Framework follows the <a href="https://semver.org/" target="_blank">Semant
 
 ### Major Release
 
-A major release will be published when there is a breaking change introduced in the API. Major releases will occur every **6 months** and will be backwards compatible for most developers. Several release candidates will be published prior to a major release in order to get feedback prior to release. An outline of what is changing and why will be included with the release candidates.
+A major release will be published when there is a breaking change introduced in the API. Major releases will occur roughly every **6 months** and may contain breaking changes. Several release candidates will be published prior to a major release in order to get feedback before the final release. An outline of what is changing and why will be included with the release candidates.
 
 ### Minor Release
 

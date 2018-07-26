@@ -57,7 +57,7 @@ export class DocsRoot {
           const layoutClass = {
             ['is-menu-open']: this.isMenuOpen,
             [`section-${section}`]: true,
-            [`page-${this.pageClass}`]: true
+            [`page-${this.pageClass || documentPath.replace(/\//g, '')}`]: true
           };
 
           return (

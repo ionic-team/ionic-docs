@@ -28,8 +28,12 @@ $ npm install -g ionic
 Create an Ionic app using one of the pre-made app templates, or a blank one to start fresh. The three most common starters are the `blank` starter, `tabs` starter, and `sidemenu` starter. Get started with the `ionic start` command:
 
 ```shell
-$ ionic start myApp tabs
+$ ionic start myApp tabs --type=angular
 ```
+
+<blockquote>
+  Ionic 4 beta requires the <code>--type=angular</code> flag and version 4.0.0 or greater of the CLI.
+</blockquote>
 
 ![start app thumbnails](/docs/assets/img/installation/start-app-thumbnails.png)
 

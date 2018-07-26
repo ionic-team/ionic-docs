@@ -1,9 +1,9 @@
 import { existsSync } from 'fs';
 import Listr from 'listr';
-import { generate  as apiDocs } from './api';
-import { generate  as cliDocs } from './cli';
-import { generate  as componentPreview } from './componentPreview';
-import { generate  as nativeDocs } from './native';
+import { generate as apiDocs } from './api';
+import { generate as cliDocs } from './cli';
+import { generate as componentPreview } from './componentPreview';
+import { generate as nativeDocs } from './native';
 import { generate as storageDocs } from './storage';
 import * as utils from './utils';
 import {
@@ -44,7 +44,7 @@ const tasks = new Listr([
           title: 'Storage Docs',
           task: (ctx, task) => tryToRun(storageDocs, task, 'Storage', STORAGE_DOCS_DIR)
         }
-      ], {concurrent: true});
+      ], { concurrent: true });
     }
   }
 ]);

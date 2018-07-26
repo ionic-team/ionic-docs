@@ -37,8 +37,8 @@ export default (req, res, next) => {
     protocol = 'http';
   } else {
    // require https in prod
-    let csp = 'default-src https: data: blob: \'unsafe-eval\' \'unsafe-inline\'; ';
-    csp += 'frame-src \'self\' data: https://unpkg.com';
+    // let csp = 'default-src https: data: blob: \'unsafe-eval\' \'unsafe-inline\'; ';
+    // csp += 'frame-src \'self\' data: https://unpkg.com';
     // res.setHeader('Content-Security-Policy', csp);
     // res.setHeader('X-Content-Security-Policy', csp);
     // res.setHeader('X-WebKit-CSP', csp);
