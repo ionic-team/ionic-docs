@@ -24,7 +24,7 @@ Once this package has been added run `ionic build --prod` and the `www` director
 
 > By default, the `@angular/pwa` package comes with Angular logo for the app icons. Be sure to update the manifest to use the correct app name and also replace the icons.
 
-If an app is being deployed to other channels such as Cordova or Electron, can remove teh `"serviceWorker": true` flag from the `angular.json` file.
+If an app is being deployed to other channels such as Cordova or Electron, you can remove the `"serviceWorker": true` flag from the `angular.json` file.
 The service worker can be generated though by running:
 
 ```shell
