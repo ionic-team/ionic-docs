@@ -1,5 +1,5 @@
-.page-components main {
-  margin-bottom: 26rem;
+.page-components docs-footer {
+  margin-bottom: calc(100vh - var(--header-height));
 }
 
 .page-components h2 {
