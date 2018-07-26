@@ -7,10 +7,6 @@ nextUrl: '/docs/developer-resources/videos'
 
 # Tools
 
-### [Editors and IDEs](/docs/resources/editors_and_ides/)
-
-Check out the best options in editors for your project.
-
 ### [Angular CLI](https://github.com/angular/angular-cli)
 
 Learn more about the power of the Angular CLI
