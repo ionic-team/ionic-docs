@@ -21,7 +21,7 @@ exports.config = {
       baseUrl: '/docs',
       serviceWorker: false,
       prerenderFilter(url) {
-        return url.pathname !== '/docs/theming/color-generator';
+        return !/color\-generator/.test(url.pathname);
       }
     }
   ]
