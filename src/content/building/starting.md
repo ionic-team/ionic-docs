@@ -35,7 +35,7 @@ Here, `myApp` is the name of the project, `tabs` is the starter template, and th
 
 - `tabs`: A tabs based layout
 - `sidemenu`: A sidemenu based layout
-- `blank`: A empty project with a single page
+- `blank`: An empty project with a single page
 
 See all available templates with the following command:
 
