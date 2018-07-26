@@ -1,3 +1,9 @@
+---
+previousText: 'Webview'
+previousUrl: '/docs/building/webview'
+nextText: 'Components'
+nextUrl: '/docs/components'
+---
 
 # Storage
 
