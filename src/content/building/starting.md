@@ -37,6 +37,8 @@ Here, `myApp` is the name of the project, `tabs` is the starter template, and th
 - `sidemenu`: A sidemenu based layout
 - `blank`: A empty project with a single page
 
+![start app thumbnails](/docs/assets/img/installation/start-app-thumbnails.png)
+
 See all available templates with the following command:
 
 ```shell
