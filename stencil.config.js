@@ -19,7 +19,10 @@ exports.config = {
       type: 'www',
       dir: 'www/docs',
       baseUrl: '/docs',
-      serviceWorker: false
+      serviceWorker: false,
+      prerenderFilter(url) {
+        return url.pathname !== '/docs/theming/color-generator';
+      }
     }
   ]
 };
