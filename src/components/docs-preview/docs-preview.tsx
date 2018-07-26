@@ -12,7 +12,6 @@ export class SitePreviewApp {
   iframe: HTMLIFrameElement;
   iframeLoaded = false;
   URLParams = '&ionic:statusbarPadding=true';
-  // URLParams: '';
   messageQueue: CustomEvent[] = [];
 
   @Listen('window:previewMessage')
