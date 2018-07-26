@@ -7,6 +7,12 @@ nextText: 'CSS Utilities'
 nextUrl: '/docs/layout/css-utilities'
 ---
 
+<link rel="stylesheet" href="https://unpkg.com/@ionic/core/css/padding.css">
+<link rel="stylesheet" href="https://unpkg.com/@ionic/core/css/float-elements.css">
+<link rel="stylesheet" href="https://unpkg.com/@ionic/core/css/text-alignment.css">
+<link rel="stylesheet" href="https://unpkg.com/@ionic/core/css/text-transformation.css">
+<link rel="stylesheet" href="https://unpkg.com/@ionic/core/css/flex-utils.css">
+
 # Responsive Grid
 
 <p class="intro" markdown="1">
@@ -76,44 +82,6 @@ attributes that can be used to adjust this behavior.
 |-----------------|----------------------------------------------------------------------------------|
 | no-padding      | Removes padding from the grid and immediate children columns.                    |
 | fixed           | Set a max width based on the screen size.                                        |
-
-
-## Row attributes
-
-Rows are horizontal components of the [grid](/docs/api/grid) system and contain varying numbers of
-[columns](/docs/api/col). They ensure the columns are positioned properly.
-
-By default, columns will stretch to fill the entire height of the row and wrap when necessary. There are several attributes that can be added to a row to customize this behavior.
-
-| Property                    | Description                                                                                                                                      |
-|-----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| nowrap                      | Adds `flex-wrap: nowrap`. Forces the columns to a single row.                                                                                    |
-| wrap-reverse                | Adds `flex-wrap: wrap-reverse`. The columns will wrap in reverse.                                                                                |
-| align-items-start           | Adds `align-items: flex-start`. All columns will be vertically aligned at the top, unless they specify their own alignment.                      |
-| align-items-center          | Adds `align-items: center`. All columns will be vertically aligned in the center, unless they specify their own alignment.                       |
-| align-items-end             | Adds `align-items: flex-end`. All columns will be vertically aligned at the bottom, unless they specify their own alignment.                     |
-| align-items-stretch         | Adds `align-items: stretch`. All columns will be stretched to take up the entire height of the row, unless they specify their own alignment.     |
-| align-items-baseline        | Adds `align-items: baseline`. All columns will be vertically aligned at their baselines, unless they specify their own alignment.                |
-| justify-content-start       | Adds `justify-content: start`. All columns will be horizontally aligned at the start.                                                            |
-| justify-content-center      | Adds `justify-content: center`. All columns will be horizontally aligned at the center.                                                          |
-| justify-content-end         | Adds `justify-content: end`. All columns will be horizontally aligned at the end.                                                                |
-| justify-content-around      | Adds `justify-content: space-around`. All columns will be horizontally aligned with equal space around them.                                     |
-| justify-content-between     | Adds `justify-content: space-between`. All columns will be horizontally aligned with a half-size space on either end.                            |
-
-
-## Column attributes
-
-Columns are cellular components of the [grid](/docs/api/grid) system and go inside of a [row](/docs/api/row). They will expand to fill their row. All content within a grid should go inside of a column.
-
-By default, columns will stretch to fill the entire height of the row. There are several attributes that can be added to a column to customize this behavior.
-
-| Property              | Description                                                                                                 |
-|-----------------------|-------------------------------------------------------------------------------------------------------------|
-| align-self-start      | Adds `align-self: flex-start`. The column will be vertically aligned at the top.                            |
-| align-self-center     | Adds `align-self: center`. The column will be vertically aligned in the center.                             |
-| align-self-end        | Adds `align-self: flex-end`. The column will be vertically aligned at the bottom.                           |
-| align-self-stretch    | Adds `align-self: stretch`. The column will be stretched to take up the entire height of the row.           |
-| align-self-baseline   | Adds `align-self: baseline`. The column will be vertically aligned at its baseline.                         |
 
 
 ## Default breakpoints
@@ -423,7 +391,7 @@ Push and pull can also be added based on screen breakpoints. In the following ex
 
 ### Vertical alignment
 
-All columns can be vertically aligned inside of a row by adding different attributes to the row. For a list of available attributes, see [row attributes](../Row#row-attributes).
+All columns can be vertically aligned inside of a row by adding different attributes to the row. For a list of available attributes, see [css utilities](/docs/layout/css-utilities#flex-container-properties).
 
 ```html
 <ion-grid>
@@ -507,7 +475,7 @@ All columns can be vertically aligned inside of a row by adding different attrib
 </ion-grid>
 ```
 
-Columns can also align themselves differently than other columns by adding the alignment attribute directly to the column. For a list of available attributes, see [column attributes](#column-attributes).
+Columns can also align themselves differently than other columns by adding the alignment attribute directly to the column. For a list of available attributes, see [css utilities](/docs/layout/css-utilities#flex-item-properties).
 
 ```html
 <ion-grid>
@@ -541,7 +509,7 @@ Columns can also align themselves differently than other columns by adding the a
 
 ### Horizontal alignment
 
-All columns can be horizontally aligned inside of a row by adding different attributes to the row. For a list of available attributes, see [row attributes](#row-attributes).
+All columns can be horizontally aligned inside of a row by adding different attributes to the row. For a list of available attributes, see [css utilities](/docs/layout/css-utilities#flex-container-properties).
 
 ```html
 <ion-grid>
