@@ -3,8 +3,8 @@ initialTab: 'preview'
 inlineHtmlPreviews: true
 previousText: 'Responsive Grid'
 previousUrl: '/docs/layout/grid'
-nextText: 'RTL Support'
-nextUrl: '/docs/layout/rtl'
+nextText: 'Theming'
+nextUrl: '/docs/theming/basics'
 ---
 
 <link rel="stylesheet" href="https://unpkg.com/@ionic/core/css/padding.css">
