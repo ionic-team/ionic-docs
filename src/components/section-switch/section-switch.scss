@@ -83,8 +83,8 @@
 
   @media (max-width: $breakpoint-md) {
     color: var(--blacker);
+    flex: 1;
     font-weight: 700;
-    width: 100%;
   }
 }
 
@@ -118,6 +118,10 @@
   margin-left: 13px;
   border-radius: 4px;
   font-weight: 600;
+
+  @media (max-width: $breakpoint-md) {
+    padding: 3px 5px;
+  }
 }
 
 /**
