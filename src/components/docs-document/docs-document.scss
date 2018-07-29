@@ -18,3 +18,14 @@ docs-document > *:first-child {
 docs-document main {
   flex: 1;
 }
+
+docs-document #api-link {
+  font-size: 12px;
+  color: #3880ff;
+  background-color: #dfedff;
+  float: right;
+  text-align: center;
+  padding: 2px;
+  width: 2.8em;
+  border-radius: 25px;
+}

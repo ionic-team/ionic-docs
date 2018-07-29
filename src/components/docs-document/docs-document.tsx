@@ -53,7 +53,7 @@ export class DocsDocument {
       .then(this.stripTitle)
       .then(({ attributes, body }) => ({
           attributes,
-          ...renderMarkdown(body, attributes)
+          ...renderMarkdown(body, { ...attributes, path: this.path })
       }));
   }
 
