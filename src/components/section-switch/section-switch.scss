@@ -12,6 +12,7 @@
     box-shadow: 0 3px 6px rgba(0,0,0,0.01);
     color: var(--dark);
     font-family: var(--font-family-sans);
+    pointer-events: none;
   }
 }
 
@@ -102,6 +103,10 @@
   transform-origin: 50% 50%;
   margin-top: 4px;
   width: 6px;
+
+  @media (max-width: $breakpoint-md) {
+    display: none;
+  }
 }
 
 .section-switch__selector .section-switch__badge {
