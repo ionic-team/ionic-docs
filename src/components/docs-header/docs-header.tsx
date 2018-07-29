@@ -1,5 +1,5 @@
 import { Component, Prop } from '@stencil/core';
-import EcosystemDropdown from './ecosystem-dropdown';
+import CommunityDropdown from './community-dropdown';
 import { Close, Ionic, Menu, NewTab } from '../../icons';
 
 @Component({
@@ -29,7 +29,7 @@ export class DocsHeader {
             { this.isMenuOpen ? <Close/> : <Menu/> }
         </button>
         <a href="/docs" class="docs-logo"><Ionic/><span>Docs</span></a>
-        <EcosystemDropdown/>
+        <CommunityDropdown/>
         <a href={this.getGithubLink(this.section)} class="github-link" target="_blank">GitHub<NewTab/></a>
       </nav>
     );

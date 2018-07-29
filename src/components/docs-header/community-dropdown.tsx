@@ -40,27 +40,27 @@ const items = [
 
 export default () => (
   <ctrl-dropdown
-    class="ecosystem-dropdown"
+    class="community-dropdown"
     autoClose
     items={items}
     renderer={dropdown => [
-      <a class="ecosystem-dropdown__toggle" onClick={dropdown.toggle}>
+      <a class="community-dropdown__toggle" onClick={dropdown.toggle}>
         Community
         <svg viewBox="0 0 33 22"><polygon points="16.5 22 0 0 33 0"></polygon></svg>
       </a>,
-      <a class="ecosystem-dropdown__mobile-toggle" onClick={dropdown.toggle}>
+      <a class="community-dropdown__mobile-toggle" onClick={dropdown.toggle}>
         { dropdown.isOpen ? <Close/> : <More/> }
       </a>,
-      <div class={{ 'ecosystem-dropdown__panel': true, 'is-open': dropdown.isOpen }}>
-        <div class="ecosystem-dropdown__title">Ecosystem</div>
+      <div class={{ 'community-dropdown__panel': true, 'is-open': dropdown.isOpen }}>
+        <div class="community-dropdown__title">Community</div>
         <ul>
           {dropdown.items.map(item => (
-            <li class={{ 'ecosystem-dropdown__item': true, [item.className]: true }}>
+            <li class={{ 'community-dropdown__item': true, [item.className]: true }}>
               <a href={item.url} target="_blank">{item.text}</a>
             </li>
           ))}
         </ul>
-        <stencil-route-link url="/docs" class="ecosystem-dropdown__home" onClick={dropdown.close}>
+        <stencil-route-link url="/docs" class="community-dropdown__home" onClick={dropdown.close}>
           <svg viewBox="0 0 16 24"><path d="M3 2l10 10L3 22" stroke-width="3" fill="none" fill-rule="evenodd"></path></svg>
           Home
         </stencil-route-link>

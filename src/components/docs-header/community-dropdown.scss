@@ -1,4 +1,4 @@
-.ecosystem-dropdown {
+.community-dropdown {
   margin-left: auto;
   position: relative;
   z-index: 1;
@@ -15,7 +15,7 @@
  * Selected
  */
 
-.ecosystem-dropdown__toggle {
+.community-dropdown__toggle {
   cursor: pointer;
   font-size: 13px;
   font-weight: 600;
@@ -42,7 +42,7 @@
   }
 }
 
-.ecosystem-dropdown__mobile-toggle {
+.community-dropdown__mobile-toggle {
   cursor: pointer;
   display: none;
   position: relative;
@@ -68,7 +68,7 @@
  * Panel
  */
 
-.ecosystem-dropdown__panel {
+.community-dropdown__panel {
   background: white;
   border-radius: 8px;
   position: absolute;
@@ -140,7 +140,7 @@
  * Item
  */
 
-.ecosystem-dropdown__item {
+.community-dropdown__item {
   display: block;
 
   a {
@@ -154,7 +154,7 @@
 
     &::before,
     &::after {
-      background: url('/docs/assets/img/dropdown-ecosystem-icons.png') no-repeat 0 0;
+      background: url('/docs/assets/img/dropdown-community-icons.png') no-repeat 0 0;
       background-size: 16px;
       height: 16px;
       width: 16px;
@@ -226,27 +226,27 @@
 }
 
 
-.ecosystem-dropdown__title,
-.ecosystem-dropdown__home {
+.community-dropdown__title,
+.community-dropdown__home {
   @media (min-width: $breakpoint-md) {
     display: none;
   }
 }
 
-.ecosystem-dropdown__title {
+.community-dropdown__title {
   font-weight: 700;
   letter-spacing: 0.15em;
   margin-bottom: 1em;
   text-transform: uppercase;
 }
 
-.ecosystem-dropdown__home {
+.community-dropdown__home {
   font-size: 18px;
   font-weight: 500;
   margin-top: auto;
 }
 
-.ecosystem-dropdown__home svg {
+.community-dropdown__home svg {
   display: inline-block;
   margin-right: 0.5em;
   stroke: currentColor;
