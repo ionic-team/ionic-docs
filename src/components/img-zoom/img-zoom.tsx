@@ -10,7 +10,8 @@ const ESCAPE = 27;
 export class ImgZoom {
   @State() zoomed = false;
 
-  onImageClick = () => {
+  @Listen('click')
+  onImageClick() {
     this.zoomed = !this.zoomed;
   }
 
@@ -24,7 +25,6 @@ export class ImgZoom {
   hostData() {
     return {
       class: { 'is-zoomed': this.zoomed },
-      onClick: this.onImageClick
     };
   }
 
