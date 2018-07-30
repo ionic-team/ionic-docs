@@ -75,7 +75,7 @@ export class MyApp {
 ### Configuring Storage
 
 The Storage engine can be configured both with specific storage engine priorities, or custom configuration
-options to pass to localForage. See the [localForage config docs](https://github.com/localForage/localForage#configuration)  for possible options.
+options to pass to localForage. See the [localForage config docs](https://github.com/localForage/localForage#configuration) for possible options.
 
 Note: Any custom configurations will be merged with the default configuration
 
