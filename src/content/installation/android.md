@@ -1,6 +1,8 @@
 ---
 previousText: 'iOS Setup'
 previousUrl: '/docs/installation/ios'
+nextText: 'Starting an App '
+nextUrl: '/docs/building/starting'
 ---
 
 # Android Setup
