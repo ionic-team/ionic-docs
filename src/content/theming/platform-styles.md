@@ -19,8 +19,8 @@ Ionic uses **modes** to customize the look of components. Each **platform** has 
 
 | Platform  | Mode  | Description                                                                                                                       |
 |-----------|-------|-----------------------------------------------------------------------------------------------------------------------------------|
-| `ios`     | `ios` | Viewing on an `iphone`, `ipad`, or `ipod` will use the [iOS styles](https://www.apple.com/ios).                                   |
-| `android` | `md`  | Viewing on any android device will use the [Material Design styles](https://material.io/guidelines/).                             |
+| `ios`     | `ios` | Viewing on an iPhone, iPad, or iPod will use the [iOS styles](https://www.apple.com/ios).                                   |
+| `android` | `md`  | Viewing on any Android device will use the [Material Design styles](https://material.io/guidelines/).                             |
 | `core`    | `md`  | Any platform that doesn't fit any of the above platforms will use the [Material Design styles](https://material.io/guidelines/).  |
 
 For example, an app being viewed on an Android platform will use the `md` (Material Design) mode by default. The `<ion-app>` will have `class="md"` added to it and all of the components will use Material Design styles:
