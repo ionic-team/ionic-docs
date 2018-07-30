@@ -54,7 +54,7 @@ Selecting devices from the device dropdown will change the user-agent, as well a
 
 ## Using the iOS Simulator
 
-The iOS simulator enables testing and debugging of an app before it reaches an actual device. Before it can be used, [Xcode](https://developer.apple.com/xcode/download/), Apple's IDE, must be installed. The [Ionic CLI](ionic/cli) can then be used to run the app in the current directory on the simulator:
+The iOS simulator enables testing and debugging of an app before it reaches an actual device. Before it can be used, [Xcode](https://developer.apple.com/xcode/download/), Apple's IDE, must be installed. The [Ionic CLI](/docs/cli) can then be used to run the app in the current directory on the simulator:
 
 ```shell
 $ ionic cordova emulate ios -lc
