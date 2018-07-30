@@ -1,5 +1,5 @@
 ---
-previousText: 'Webview'
+previousText: 'Web View'
 previousUrl: '/docs/building/webview'
 nextText: 'Components'
 nextUrl: '/docs/components'
