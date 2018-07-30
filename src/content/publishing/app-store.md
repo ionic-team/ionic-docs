@@ -50,7 +50,7 @@ Distribution certs are meant for distributing an app to the store. When an app i
 
 After generating to correct certificates, there are options to either have XCode automatically manage certificates or manually mange them. It's suggest to let XCode automatically manage certificates. This will make sure that the correct Development and Distribution certs are used, based on the build type selected.
 
-With this option selected, select `Arcive` from the `Product > Archive` menu. This will build a version of the app that is ready for distribution in the app stores. After archive has been created, Xcode Organizer is opened.
+With this option selected, select `Archive` from the `Product > Archive` menu. This will build a version of the app that is ready for distribution in the app stores. After archive has been created, Xcode Organizer is opened.
 
 Xcode Organizer displays a list with builds of the current app. Pick the last build and click 'Upload to App Store'.
 There should be a place to select the team followed by some more information on the app and a "Upload" button to click.
