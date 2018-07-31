@@ -18,3 +18,22 @@ docs-document > *:first-child {
 docs-document main {
   flex: 1;
 }
+
+.open-preview {
+  align-items: center;
+  align-self: start;
+  background-color: #dfedff;
+  border-radius: 4px;
+  display: inline-flex;
+  font-size: 13px;
+  line-height: 1;
+  padding: 8px;
+
+  @media (min-width: $breakpoint-lg) {
+    display: none;
+  }
+}
+
+.open-preview > ion-icon {
+  margin-right: 0.25em;
+}

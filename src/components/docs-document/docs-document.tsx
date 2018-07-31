@@ -24,7 +24,7 @@ export class DocsDocument {
   @State() frontMatter = {};
   @State() tocHeadings: HeadingStruc[] = [];
   @State() pageClass: string;
-  @State() attributes = {};
+  @State() attributes: { [key: string]: any } = {};
 
   loadingTimer = null;
 
@@ -109,6 +109,17 @@ export class DocsDocument {
     return { attributes, body };
   }
 
+  renderPreviewLink() {
+    if (!this.attributes.previewUrl) return null;
+
+    return (
+      <a href={this.attributes.previewUrl} class="open-preview" target="_blank">
+        <ion-icon name="md-open"></ion-icon>
+        Open Preview
+      </a>
+    );
+  }
+
   render() {
     if (this.isLoading) {
       return this.isServer ? null : <loading-indicator/>;
@@ -118,6 +129,7 @@ export class DocsDocument {
 
     return [
       <h1>{this.title}</h1>,
+      this.renderPreviewLink(),
       <div class="table-of-contents">
         {(headings.length > 0) && !this.hideTOC ? [
         <strong class="toc-label">Contents</strong>,

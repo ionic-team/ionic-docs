@@ -68,16 +68,6 @@ docs-preview {
   }
 }
 
-.docs-preview-new-tab {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  background: white;
-  padding: 2px 8px 4px;
-  border-radius: 14px;
-  display: none;
-}
-
 .docs-preview-source {
   position: absolute;
   top: 1rem;
@@ -86,10 +76,6 @@ docs-preview {
 }
 
 @media (max-width: $breakpoint-lg) {
-  .docs-preview-new-tab {
-    display: block;
-  }
-
   .docs-preview-device,
   .docs-preview-mode-toggle,
   .docs-preview-source {
