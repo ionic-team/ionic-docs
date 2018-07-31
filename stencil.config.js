@@ -1,4 +1,4 @@
-const sass = require('@stencil/sass');
+const { sass } = require('@stencil/sass');
 
 exports.config = {
   plugins: [
