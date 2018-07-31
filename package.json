@@ -21,9 +21,9 @@
     "heroku-postbuild": "npm run api-docs && npm run build"
   },
   "dependencies": {
-    "@stencil/core": "^0.10.7",
+    "@stencil/core": "^0.11.0",
     "@stencil/router": "^0.2.5",
-    "@stencil/sass": "0.0.5",
+    "@stencil/sass": "^0.1.0",
     "@stencil/utils": "latest",
     "@types/node": "^8.10.9",
     "@types/semver": "^5.5.0",
