@@ -134,7 +134,7 @@ export class DocsMenu {
             <li>
               <span class="menu__item menu__item--static">API Reference</span>
               <ul class="menu__submenu is-open">
-                { Object.keys(api).map(key => this.createItem(key, api[key]))}
+                { Object.keys(api || {}).map(key => this.createItem(key, api[key]))}
               </ul>
             </li>
           </ul>
