@@ -36,7 +36,7 @@ After the plugin has been declared, it can be imported and injected like any oth
 
 ```typescript
 import { Geolocation } from '@ionic-native/geolocation/ngx';
-import { Platform } from 'ionic-angular';
+import { Platform } from '@ionic/angular';
 
 @Component({ ... })
 export class MyComponent {
