@@ -1,6 +1,6 @@
 ---
-previousText: 'Changelog'
-previousUrl: '/docs/faq/changelog'
+previousText: 'Developer Tips'
+previousUrl: '/docs/faq/tips'
 nextText: 'Courses'
 nextUrl: '/docs/developer-resources/courses'
 ---
