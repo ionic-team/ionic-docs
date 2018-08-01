@@ -36,23 +36,18 @@ The Badge component is a small component that typically communicates a numerical
 <ion-badge color="success">44</ion-badge>
 <ion-badge color="warning">55</ion-badge>
 <ion-badge color="danger">66</ion-badge>
-
-<!-- Item with badge on left and right -->
-<ion-item>
-  <ion-badge slot="start">11</ion-badge>
-  <ion-label>My Item</ion-label>
-  <ion-badge slot="end">22</ion-badge>
-</ion-item>
 ```
+
 
 ## Button
 
 Buttons are an essential way to interact with and navigate through an app, and should clearly communicate what action will occur after the user taps them. Buttons are highly customizeable with color, shape and size being fully customizeable. We support round buttons, FAB buttons, outline buttons and more!
 
 ```html
-  <ion-button shape="round" color="primary" fill="outline">Hello World</ion-button>
-  <ion-button size="small">Small Button</ion-button>
+<ion-button shape="round" color="primary" fill="outline">Hello World</ion-button>
+<ion-button size="small">Small Button</ion-button>
 ```
+
 
 ## Card
 
@@ -173,7 +168,7 @@ The list component is used to display rows of information, such as a contact lis
 <ion-list>
   <ion-item>
     <ion-avatar slot="start">
-      <img src="assets/img/avatar-finn.png"></img>
+      <img src="/docs/assets/img/avatar-finn.png"></img>
     </ion-avatar>
     <ion-label>
       <h2>Finn</h2>
@@ -183,6 +178,7 @@ The list component is used to display rows of information, such as a contact lis
   </ion-item>
 </ion-list>
 ```
+
 
 ## Loading
 
@@ -195,9 +191,9 @@ Menus are a common navigation pattern for apps. Menus can either be permanently 
 
 ```html
 <ion-menu side="start">
-  <ion-header>
+  <ion-header translucent>
     <ion-toolbar color="secondary">
-      <ion-title>Left Menu</ion-title>
+      <ion-title>Menu</ion-title>
     </ion-toolbar>
   </ion-header>
 </ion-menu>
@@ -210,7 +206,7 @@ Modals slide in and off screen to display a temporary UI. Modals are often used 
 
 ## Nav
 
-Navigation is how users move between different pages in your app. Ionic’s navigation follows standard navigation concepts and animated transitions. Ionic's nav can also adapt to larger viewports using [ion-split-pane](link to split pane)
+Navigation is how users move between different pages in your app. Ionic’s navigation follows standard navigation concepts and animated transitions. Ionic's nav can also adapt to larger viewports using [ion-split-pane](/docs/api/split-pane)
 
 ```html
 <ion-app>
@@ -245,7 +241,7 @@ A Range is a form control that lets users select from a range of values by movin
 Refresh provides pull-to-refresh functionality on a content component. A common use case for the refresher component is to reload data.
 
 ```html
-<ion-content>
+<ion-content fullscreen>
   <ion-refresher slot="fixed">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
