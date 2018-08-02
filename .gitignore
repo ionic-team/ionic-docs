@@ -10,7 +10,6 @@ server/build
 .DS_Store
 /dist
 /www
-package-lock.json
 src/content/api/
 /null
 /stencil-stats.json
