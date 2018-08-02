@@ -6,7 +6,7 @@ import * as git from './git';
 import { install, run } from './npm';
 import { execp, vlog } from './utils';
 
-const distList =  join(config.NATIVE_DIR, '/dist/@ionic-native');
+const distList = join(config.NATIVE_DIR, '/dist/@ionic-native');
 const menuPath = join('src/components/docs-menu/native-menu.ts');
 const menuHeader = '/* tslint:disable:quotemark */\n\nexport const nativeMenu = ';
 
@@ -104,7 +104,7 @@ function preparePluginData(tsData) {
   }
 
   return {
-    name: name,
+    name,
     prettyName: selectChild(tsChild.comment.tags, 'tag', 'name').text || name,
     description: selectChild(tsChild.comment.tags, 'tag', 'description').text,
     installation: metaArgs['install'],
