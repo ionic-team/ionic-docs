@@ -79,7 +79,7 @@ async function tryToRun(func: (task) => void, task, name: string, outDir?: strin
   } catch (error) {
     // note if outDir is not provided throw any time the command fails
     if (!outDir || !existsSync(outDir)) {
-      // throw error;
+      throw error;
     } else {
       console.log(error);
       console.log(`${name} Docs generation failed, using cached version.`);
@@ -89,8 +89,8 @@ async function tryToRun(func: (task) => void, task, name: string, outDir?: strin
 
 // Invoke run() only if executed directly i.e. `node ./scripts/e2e`
 if (require.main === module) {
-  // tasks.run()
-  run()
+  tasks.run()
+  // run()
   .catch(err => {
     console.log(err);
     // fail with non-zero status code

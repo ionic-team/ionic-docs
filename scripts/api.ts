@@ -68,16 +68,21 @@ export async function generate(task) {
     const version = sv.raw.indexOf('+nightly') !== -1 ? 'nightly' : sv.version;
 
     task.output = `Building for ${version}...`;
-    const DOCS_DEST = join(
-      API_DOCS_DIR,
-      version === CURRENT_VERSION ? '' : `${version}/`
-    );
+
     // console.log(version, CURRENT_VERSION, DOCS_DEST);
     // skip this version if it already exists.
     // delete the directory in src/api/ to force a rebuild
-    if (existsSync(DOCS_DEST)) {
-      // task.output = `Skipping existing API docs for ${version}`;
-      // continue;
+
+    const thisVersionIsCurrent = version === CURRENT_VERSION;
+
+    const DOCS_DEST = thisVersionIsCurrent ?
+      join(API_DOCS_DIR) : join(API_DOCS_DIR, `${version}/`);
+    const fileToCheck = thisVersionIsCurrent ?
+      join(DOCS_DEST, 'alert.md') : DOCS_DEST;
+
+    if (existsSync(fileToCheck) && version !== 'nightly') {
+      task.output = `Skipping existing API docs for ${version}`;
+      continue;
     }
 
     // Generate the docs for this version
