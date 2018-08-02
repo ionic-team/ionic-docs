@@ -8,21 +8,43 @@ nextUrl: '/docs/building/migration'
 # Scaffolding out an App
 
 <p class="intro" markdown="1">
-Once an app is created by the Ionic CLI, the next step is to start building out features and components. The majority of the app will be developed in the `src/` directory.
+Once an app is created by the Ionic CLI, the next step is to start building out features and components. The majority of the app will be developed in the `src/app/` directory.
 </p>
 
 ## Project Structure
 
-<figure>
-![ionic angular project layout](/docs/assets/img/guides/scaffolding/src-directory-img.png)
-<figcaption>This is based on an ionic/angular project</figcaption>
-</figure>
+<file-tree>
+    <file-tree-directory name="src">
+        <file-tree-directory name="app" collapsed></file-tree-directory>
+        <file-tree-directory name="assets" collapsed></file-tree-directory>
+        <file-tree-directory name="environments" collapsed></file-tree-directory>
+        <file-tree-directory name="theme" collapsed></file-tree-directory>
+        <file-tree-file name="global.scss"></file-tree-file>
+        <file-tree-file name="index.html"></file-tree-file>
+        <file-tree-file name="karma.conf.js"></file-tree-file>
+        <file-tree-file name="main.ts"></file-tree-file>
+        <file-tree-file name="polyfills.ts"></file-tree-file>
+        <file-tree-file name="test.ts"></file-tree-file>
+        <file-tree-file name="tsconfig.app.json"></file-tree-file>
+        <file-tree-file name="tsconfig.spec.json"></file-tree-file>
+    </file-tree-directory>
+</file-tree>
 
 The `src/` directory has items such as the `index.html` file, configuration files for tests, an asset folder for images, and the main `app/` directory for the app's code.
 
-![app layout](/docs/assets/img/guides/scaffolding/src-directory-app-img.png)
+<file-tree>
+    <file-tree-directory name="src">
+        <file-tree-directory name="app">
+            <file-tree-file name="app-routing.module.ts"></file-tree-file>
+            <file-tree-file name="app.component.html"></file-tree-file>
+            <file-tree-file name="app.component.spec.ts"></file-tree-file>
+            <file-tree-file name="app.component.ts"></file-tree-file>
+            <file-tree-file name="app.module.ts"></file-tree-file>
+        </file-tree-directory>
+    </file-tree-directory>
+</file-tree>
 
-The `src/app/` directory has a few more directories inside of it that contain components, pages, as well as additional features, like services.
+The `src/app/` directory contains the root app component and module as well as additional directories that contain app features such as pages, components, services, etc.
 
 ## Generating New Features
 
@@ -49,16 +71,16 @@ The Ionic CLI can generate new app features with the [`ionic generate`](/docs/cl
     </command-output>
 </command-line>
 
-After a selection is made, the Ionic CLI will prompt for a name. We highly recommend prefixing `name` with a shared path to maintain a healthy project structure as explained above. For example, for pages, use `pages/My New Page` instead of just `My New Page`.
+After a selection is made, the Ionic CLI will prompt for a name. The name can be a path, allowing easy generation of features within an organized project structure.
 
-> The recommended path prefix also allows any level of nesting, such as `pages/tabs/Main Tab`. It also allows you to scope components to pages by using `ionic g component "pages/about/User Card"`, for example.
+> Any level of nesting is allowed, such as `portfolio/intro`. You can easily scope components to pages by using `ionic g component "portfolio/intro/About Me"`, for example.
 
 <command-line>
     <command-prompt>ionic generate</command-prompt>
     <command-output>
         <span class="green">?</span> <span class="bold">What would you like to generate? <span class="cyan">page</span></span>
         <br />
-        <span class="green">?</span> <span class="bold">Name/path (e.g. <span class="green">pages/&lt;name&gt;</span>):</span> pages/My New Page
+        <span class="green">?</span> <span class="bold">Name/path of <span class="green">page</span>:</span> portfolio
     </command-output>
     <command-cursor blink></command-cursor>
 </command-line>
@@ -66,19 +88,19 @@ After a selection is made, the Ionic CLI will prompt for a name. We highly recom
 Alternatively, the `type` and `name` of the generated feature can be entered on the command line:
 
 <command-line>
-    <command-prompt>ionic g page "pages/User Detail"</command-prompt>
+    <command-prompt>ionic g page "User Detail"</command-prompt>
     <command-output>
-        &gt; <span class="green">ng generate page pages/user-detail</span>
+        &gt; <span class="green">ng generate page "User Detail"</span>
         <br />
-        <span class="green">CREATE</span> src/app/pages/user-detail/user-detail.module.ts (564 bytes)
+        <span class="green">CREATE</span> src/app/user-detail/user-detail.module.ts (564 bytes)
         <br />
-        <span class="green">CREATE</span> src/app/pages/user-detail/user-detail.page.scss (0 bytes)
+        <span class="green">CREATE</span> src/app/user-detail/user-detail.page.scss (0 bytes)
         <br />
-        <span class="green">CREATE</span> src/app/pages/user-detail/user-detail.page.html (138 bytes)
+        <span class="green">CREATE</span> src/app/user-detail/user-detail.page.html (138 bytes)
         <br />
-        <span class="green">CREATE</span> src/app/pages/user-detail/user-detail.page.spec.ts (720 bytes)
+        <span class="green">CREATE</span> src/app/user-detail/user-detail.page.spec.ts (720 bytes)
         <br />
-        <span class="green">CREATE</span> src/app/pages/user-detail/user-detail.page.ts (280 bytes)
+        <span class="green">CREATE</span> src/app/user-detail/user-detail.page.ts (280 bytes)
         <br />
         <span class="bold">UPDATE</span> src/app/app-routing.module.ts (475 bytes)
         <br />
