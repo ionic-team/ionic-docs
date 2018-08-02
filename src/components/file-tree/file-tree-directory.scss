@@ -1,0 +1,46 @@
+:host {
+  display: block;
+}
+
+.name {
+  position: relative;
+  padding-left: 15px;
+
+  &::before,
+  &::after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    content: '';
+    transform: rotate(45deg);
+  }
+
+  &::before {
+    top: 10px;
+    left: 0;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid #fff;
+  }
+}
+
+:host(.collapsed) {
+  .name {
+    &::before,
+    &::after {
+      transform: rotate(0);
+    }
+
+    &::after {
+      top: 12px;
+      left: 1px;
+      border-top: 2px solid transparent;
+      border-bottom: 2px solid transparent;
+      border-left: 2px solid #2b313c;
+    }
+  }
+}
+
+.children {
+  margin-left: 20px;
+}

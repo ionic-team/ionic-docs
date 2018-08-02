@@ -843,6 +843,107 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface FileTreeDirectory {
+      'collapsed': boolean;
+      'name': string;
+    }
+  }
+
+  interface HTMLFileTreeDirectoryElement extends StencilComponents.FileTreeDirectory, HTMLStencilElement {}
+
+  var HTMLFileTreeDirectoryElement: {
+    prototype: HTMLFileTreeDirectoryElement;
+    new (): HTMLFileTreeDirectoryElement;
+  };
+  interface HTMLElementTagNameMap {
+    'file-tree-directory': HTMLFileTreeDirectoryElement;
+  }
+  interface ElementTagNameMap {
+    'file-tree-directory': HTMLFileTreeDirectoryElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'file-tree-directory': JSXElements.FileTreeDirectoryAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface FileTreeDirectoryAttributes extends HTMLAttributes {
+      'collapsed'?: boolean;
+      'name'?: string;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface FileTreeFile {
+      'name': string;
+    }
+  }
+
+  interface HTMLFileTreeFileElement extends StencilComponents.FileTreeFile, HTMLStencilElement {}
+
+  var HTMLFileTreeFileElement: {
+    prototype: HTMLFileTreeFileElement;
+    new (): HTMLFileTreeFileElement;
+  };
+  interface HTMLElementTagNameMap {
+    'file-tree-file': HTMLFileTreeFileElement;
+  }
+  interface ElementTagNameMap {
+    'file-tree-file': HTMLFileTreeFileElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'file-tree-file': JSXElements.FileTreeFileAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface FileTreeFileAttributes extends HTMLAttributes {
+      'name'?: string;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface FileTree {
+
+    }
+  }
+
+  interface HTMLFileTreeElement extends StencilComponents.FileTree, HTMLStencilElement {}
+
+  var HTMLFileTreeElement: {
+    prototype: HTMLFileTreeElement;
+    new (): HTMLFileTreeElement;
+  };
+  interface HTMLElementTagNameMap {
+    'file-tree': HTMLFileTreeElement;
+  }
+  interface ElementTagNameMap {
+    'file-tree': HTMLFileTreeElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'file-tree': JSXElements.FileTreeAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface FileTreeAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface ImgZoom {
 
     }
