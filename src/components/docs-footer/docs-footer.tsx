@@ -39,11 +39,14 @@ export class SiteFooter {
   }
 
   getEditLink(path: string) {
-    const excludePattern = /^(api|cli|native)\/.+/;
+    const excludePattern = /^(cli|native)\/.+/;
+    const apiRefPattern = /^api.*\/([\w-]+)\/?$/;
     if (excludePattern.test(path)) {
       return 'https://github.com/ionic-team/ionic';
+    } else if (apiRefPattern.test(path)) {
+      return `https://github.com/ionic-team/ionic/blob/master/core/src/components/${apiRefPattern.exec(path)[1]}/readme.md`;
     } else {
-      return `https://github.com/ionic-team/ionic-docs/tree/master/src/content/${path}.md`;
+      return `https://github.com/ionic-team/ionic-docs/blob/master/src/content/${path}.md`;
     }
   }
 
