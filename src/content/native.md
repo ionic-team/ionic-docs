@@ -6,7 +6,7 @@ Ionic Native wraps Cordova plugins in a Promise or Observable, providing a commo
 </p>
 
 <blockquote>
-  Disclaimer: <p>Ionic Native is largely a set of <i>community maintained</i> plugins, and while the community is quick to find and fix issues, certain plugins may not function properly. For teams that require dedicated Native plugin support, the Ionic team has options available. Please <a href="mailto:sales@ionicframework.com">contact us</a> for more information.</p>
+  <p>Ionic Native is largely a set of <i>community maintained</i> plugins, and while the community is quick to find and fix issues, certain plugins may not function properly. For teams that require dedicated Native plugin support, the Ionic team has options available. Please <a href="mailto:sales@ionicframework.com">contact us</a> for more information.</p>
 </blockquote>
 
 ## Usage with Angular apps

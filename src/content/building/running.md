@@ -11,12 +11,16 @@ nextUrl: '/docs/building/ios'
 There are many different options to test native functionality depending on your target platforms and needs.
 </p>
 
-* Implement [Platform Detection](/docs/building/cross-platform) for the native functionality and test with `ionic serve`
-* [Deploy to iOS](/docs/building/ios)
-* [Deploy to Android](/docs/building/android)
-* Deploy to iOS & Android instantly using [Ionic DevApp](/docs/building/running#ionic-devapp)
+<ul class="intro">
+<li>Implement [Platform Detection](/docs/building/cross-platform) for the native functionality and test with `ionic serve`</li>
+<li>[Deploy to iOS](/docs/building/ios)</li>
+<li>[Deploy to Android](/docs/building/android)</li>
+<li>Deploy to iOS & Android instantly using [Ionic DevApp](/docs/building/running#ionic-devapp)</li>
+</ul>
 
+<p class="intro">
 This article will focus on Ionic DevApp, as it includes the ability to test native functionality on a device.
+</p>
 
 ## Ionic DevApp
 
