@@ -37,6 +37,7 @@ export function getPluginMarkup(data): string {
       if (!member) return;
       markdown += `### ${member.name}${r}${member.description}${r}`;
       if (member.params) {
+        markdown += `#### Parameters${r}`;
         markdown += `<dl>\n`;
         member.params.forEach(param => {
           markdown += `<dt><h4>${param.name}</h4>`;
@@ -49,8 +50,8 @@ export function getPluginMarkup(data): string {
         });
         markdown += `\r\n</dl>${r}`;
       }
+      markdown += `<p><br></p>${r}`;
     });
-    markdown += `<p><br></p>${r}`;
   }
 
   if (data.interfaces) {
