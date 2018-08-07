@@ -12,7 +12,8 @@
     "outDir": "build",
     "target": "es2017",
     "noUnusedLocals": false,
-    "noUnusedParameters": false
+    "noUnusedParameters": false,
+    "resolveJsonModule": true
   },
   "include": [
     "**/*.ts"

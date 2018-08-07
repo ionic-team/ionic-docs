@@ -1,4 +1,5 @@
-// var redirects       = require('./data/redirects');
+// import redirects = require('./redirects.json');
+import * as redirects from './redirects.json';
 import * as url from 'url';
 
 export default (req, res, next) => {
@@ -17,18 +18,18 @@ export default (req, res, next) => {
   }
 
   // handle redirects
-  // const uri = req.url.split(/[\?|#]/g);
-  // let requrl = uri[0];
-  // if (requrl.endsWith('/')) {
-  //   requrl = requrl.slice(0, -1);
-  // }
+  const uri = req.url.split(/[\?|#]/g);
+  let requrl = uri[0];
+  if (requrl.endsWith('/')) {
+    requrl = requrl.slice(0, -1);
+  }
 
-  // if (redirects[requrl]) {
-  //   if (uri[1]) {
-  //     return res.redirect(301, redirects[requrl] + '?' + uri[1]);
-  //   }
-  //   return res.redirect(301, redirects[requrl]);
-  // }
+  if (redirects[requrl]) {
+    if (uri[1]) {
+      return res.redirect(301, redirects[requrl] + '?' + uri[1]);
+    }
+    return res.redirect(301, redirects[requrl]);
+  }
 
   // don't index non production URLs, but favor HTTPS
   let protocol = 'https';
