@@ -224,11 +224,11 @@ export function introify(text, introClass = 'intro') {
 
     if (lastLineEmpty || i === 0) {
       // starting a new paragraph
-      lineArray[i] = `<p class="${introClass}">${lineArray[i]}</p>`;
+      lineArray[i] = `<p class="${introClass}">${lineArray[i]}</p>\n`;
     } else {
       // if the last line was a heading, move the closing tag down
-      lineArray[i - 1] = lineArray[i - 1].replace('</p>', '');
-      lineArray[i] = `${lineArray[i]}</p>`;
+      lineArray[i - 1] = lineArray[i - 1].replace('</p>\n', '');
+      lineArray[i] = `${lineArray[i]}</p>\n`;
     }
 
     lastLineEmpty = false;
