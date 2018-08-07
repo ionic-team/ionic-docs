@@ -85,6 +85,7 @@ docs-preview {
 
 .docs-preview-device__ios-notch {
   display: none;
+  fill: #090a0d;
   left: 50%;
   position: absolute;
   top: -1px;
@@ -109,5 +110,5 @@ docs-preview {
 
 .docs-preview-device.ios .docs-preview-device__ios-notch,
 .docs-preview-device.ios figure:after {
-  display: none;
+  display: block;
 }
