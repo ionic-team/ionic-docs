@@ -4,7 +4,7 @@ import hljs from 'highlight.js';
 import { current } from './versions';
 import { apiMap } from './components/docs-menu/docs-api-map';
 
-const components = apiMap[current];
+const components = apiMap[current] || [];
 
 export interface HeadingStruc {
   text: string;
@@ -79,7 +79,7 @@ export function renderMarkdown(markdown: string, options: RenderOptions): Marked
   };
 
   renderer.codespan = code => {
-    // quick out if not an ionic component
+    // quick out if not an ionic component or menu is empty
     if (code.indexOf('ion-') !== -1) {
       // link to ionic component if possible
       const converted = code.replace(/([a-zA-Z])(?=[A-Z])/g, '$1-')
