@@ -81,8 +81,8 @@ export async function generate(task) {
       join(DOCS_DEST, 'alert.md') : DOCS_DEST;
 
     if (existsSync(fileToCheck) && version !== 'nightly') {
-      task.output = `Skipping existing API docs for ${version}`;
-      continue;
+      // task.output = `Skipping existing API docs for ${version}`;
+      // continue;
     }
 
     // Generate the docs for this version
