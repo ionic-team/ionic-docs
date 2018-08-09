@@ -49,7 +49,7 @@ The official [Ionic CLI](/docs/cli/overview), or Command Line Interface, is a to
 
 ## Framework Compatibility
 
-While past release of Ionic were tightly coupled to Angular, V4 of the framework was re-engineered to work as it a standalone Web Component library, with integrations for the latest JavaScript frameworks, like Angular. Ionic can be used
+While past releases of Ionic were tightly coupled to Angular, V4 of the framework was re-engineered to work as a standalone Web Component library, with integrations for the latest JavaScript frameworks, like Angular. Ionic can be used
 in most frontend frameworks with success, including React and Vue, though some frameworks need a shim for full Web Component support.
 
 ### JavaScript
