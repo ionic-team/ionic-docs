@@ -12,7 +12,7 @@ export function getComponentMarkup(
   markdown += introify(component.readme)
     // fixing relative links
     .replace(/\(\.\.\/\.(.*)\/\w*\)/g, '($1)') // ../../action-sheet/ActionSheet
-    .replace(/\(\.\.\/(.*)\)/g, './$1'); // ../action-sheet-controller
+    .replace(/\(\.\.\/(.*)\)/g, '(./$1)'); // ../action-sheet-controller
   markdown += generateUsage(component.usage);
   markdown += generatePropertyList(component.props);
   markdown += generateEventsTable(component.events);
