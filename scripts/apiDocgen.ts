@@ -9,7 +9,10 @@ export function getComponentMarkup(
 
   let markdown = getFrontMatter(
     component.tag.replace('ion-', ''), version, hasDemo, component.demoSrc);
-  markdown += introify(component.readme);
+  markdown += introify(component.readme)
+    // fixing relative links
+    .replace(/\(\.\.\/\.(.*)\/\w*\)/g, '($1)') // ../../action-sheet/ActionSheet
+    .replace(/\(\.\.\/(.*)\)/g, './$1'); // ../action-sheet-controller
   markdown += generateUsage(component.usage);
   markdown += generatePropertyList(component.props);
   markdown += generateEventsTable(component.events);
@@ -17,8 +20,8 @@ export function getComponentMarkup(
   // console.log(Object.keys(component));
   // console.log(component.props);
 
-  // if (component.tag === 'ion-router') {
-  //   // console.log(component);
+  // if (component.tag === 'ion-action-sheet-controller') {
+  //   console.log(component.readme);
   // }
 
   return markdown;
