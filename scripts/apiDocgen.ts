@@ -17,6 +17,7 @@ export function getComponentMarkup(
   markdown += generatePropertyList(component.props);
   markdown += generateEventsTable(component.events);
   markdown += generateMethodList(component.methods);
+  markdown += generateStylesTable(component.styles);
   // console.log(Object.keys(component));
   // console.log(component.props);
 
@@ -80,6 +81,18 @@ function generateMethodList(items) {
   }
 
   return str + `</dl>${r}\r\n`;
+}
+
+function generateStylesTable(items) {
+  if (!items.length) return '';
+
+  return `
+## CSS Custom Properties
+
+| Name | Description |
+| ---- | ----------- |
+${items.map(item => `| \`${item.name}\` | ${item.docs} |`).join('\n')}
+`;
 }
 
 function generateUsage(usage): string {
