@@ -52,8 +52,7 @@ This will set generate a `firebase.json` config file and configure the app for d
 > Make sure to choose **yes** for this option, but **no** to overwriting your index.html.
 > This will ensure that routing, hard reload, and deep linking work in the app.
 
-The last thing needed is to make sure caching headers are being set correctly.
-To do this, add the following snippet to the `firebase.json` file:
+The last thing needed is to make sure caching headers are being set correctly. To do this, add the following snippet to the `firebase.json` file to the hosting property:
 
 ```json
 "headers": [
@@ -77,6 +76,7 @@ To do this, add the following snippet to the `firebase.json` file:
   }
 ]
 ```
+For more information about the `firebase.json` properties, see the [Firebase documentation](https://firebase.google.com/docs/hosting/full-config#section-firebase-json).
 
 The app can now be deployed by running
 
