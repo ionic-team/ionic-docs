@@ -1,6 +1,6 @@
 ---
 hideTOC: true
-previewUrl: '/docs/theming/color-gen/demo/index.html'
+previewUrl: '/docs/theming/color-gen/demo/index.html#action-sheet'
 previousText: 'CSS Variables'
 previousUrl: '/docs/theming/css-variables'
 nextText: 'Advanced Theming'
