@@ -63,6 +63,6 @@ const el = document.querySelector('.my-fancy-button');
 const color = el.style.getPropertyValue('--ion-color-primary');
 ```
 
-<!-- ## Overriding Ionic Variables -->
+<!-- ## Global Ionic Variables -->
 
-<!-- TODO - this should be https://ionicframework.com/docs/theming/overriding-ionic-variables/ but css variables -->
+<!-- TODO - this should be https://ionicframework.com/docs/theming/overriding-ionic-variables/ but global css variables -->
