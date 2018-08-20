@@ -45,7 +45,7 @@ As you can see, a toolbar in a header appears above the content. Sometimes an ap
       <ion-title>Footer</ion-title>
     </ion-toolbar>
   </ion-footer>
-</ion-content>
+</ion-app>
 ```
 
 ### Header and Footer
@@ -69,7 +69,7 @@ These can also be combined on one page to have a toolbar above *and* below the c
       <ion-title>Footer</ion-title>
     </ion-toolbar>
   </ion-footer>
-</ion-content>
+</ion-app>
 ```
 
 ## Tabs Layout
