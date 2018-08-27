@@ -22,8 +22,6 @@ Devices must be explicitly registered with Apple for sending push notifications 
 
 <img src="/docs/assets/img/pro/ss-profiles-ios-device-register-1.png" class="browser" />
 
-* Give your device a name and enter the device's UDID. [Find your UDID](/services/profiles/ios-udid.html).
-
 ### Certificate Signing Request
 
 Before you can get a certificate from Apple, you'll need to generate a certificate signing request file. It can be created on Mac OSX by using Keychain Access and on other platforms by using OpenSSL.

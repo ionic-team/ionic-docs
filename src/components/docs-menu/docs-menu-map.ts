@@ -81,7 +81,7 @@ export const pro = {
   },
   'Automation': {
     'Introduction': '/docs/pro/automation/intro',
-    'Automations': '/docs/pro/automation/create',
+    'Manage': '/docs/pro/automation/create',
     'Webhooks': 'docs/pro/automation/webhooks'
   }
 };
