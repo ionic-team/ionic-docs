@@ -6,7 +6,7 @@ Ionic Pro's Package feature makes it easy to build native app binaries for iOS a
 
 To start, you'll need to upload iOS and/or Android certificate profiles to enable Package to build your app in the cloud.
 
-Get started with security profiles [here](/docs/pro/package/profiles.html).
+Get started with security profiles [here](/docs/pro/package/profiles).
 
 ## Performing a Build
 

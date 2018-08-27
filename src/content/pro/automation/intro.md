@@ -9,5 +9,5 @@ In order to take full advantage of automation, you first need to configure the p
 
 ## Get started
 
-* [Creating Automations](/docs/pro/deploy/builds/)
-* [Understanding Webhooks](/docs/pro/deploy/channels/)
+* [Creating Automations](/docs/pro/automation/create)
+* [Understanding Webhooks](/docs/pro/automation/webhooks)
