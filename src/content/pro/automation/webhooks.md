@@ -2,6 +2,8 @@
 
 When you specify a webhook URL for one of your automations, we'll make a POST to it every time a build completes.  We include information about the build, as well as the user who triggered it and the commit that it was built from.
 
+## Webhook Body
+
 Below is the full webhook json payload:
 
 ```json
@@ -66,3 +68,15 @@ Below is the full webhook json payload:
     }
 }
 ```
+
+## Responding to Webhooks
+
+Our server will automatically attempt a retry if you do not respond with an HTTP status code of **200**.  
+
+## Retries
+
+We will retry the hook up to 5 times with an increasing delay between attempts (up to a delay of one hour) in the case where we do not receive a 200 response code.
+
+## Signed Download URLs
+
+The `downloadUrl` field in the webhook allows only this specific build to be downloaded, and will be signed with a token that is valid for 24 hours.  We do not limit the number of downloads, but after the time limit the endpoint will no longer function.
