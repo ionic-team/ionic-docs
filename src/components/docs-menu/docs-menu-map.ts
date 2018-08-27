@@ -64,6 +64,28 @@ export const main = {
   }
 };
 
+export const pro = {
+  'Home': '/docs',
+  'Introduction': '/docs/pro',
+  'Deploy': {
+    'Introduction': '/docs/pro/deploy/intro',
+    'Installation': '/docs/pro/deploy/setup',
+    'Builds': '/docs/pro/deploy/builds',
+    'Channels': '/docs/pro/deploy/channels',
+    'API Reference': '/docs/pro/deploy/api'
+  },
+  'Package': {
+    'Introduction': '/docs/pro/package/intro',
+    'Credentials': '/docs/pro/package/credentials',
+    'Builds': '/docs/pro/package/intro#performing-a-build'
+  },
+  'Automation': {
+    'Introduction': '/docs/pro/automation/intro',
+    'Manage': '/docs/pro/automation/create',
+    'Webhooks': 'docs/pro/automation/webhooks'
+  }
+};
+
 export const outbound = {
   'API Reference': '/docs/api',
   'CLI Reference': '/docs/cli/overview',
