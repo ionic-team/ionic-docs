@@ -18,4 +18,3 @@ In order to use advanced features such as switching Channels on the fly, Split T
 * [Understanding Builds](/docs/pro/deploy/builds/)
 * [Understanding Channels](/docs/pro/deploy/channels/)
 * [Advanced Usage with the Deploy API](/docs/pro/deploy/api)
-* [Tutorials & Helpful Videos](/docs/pro/deploy/tutorials)

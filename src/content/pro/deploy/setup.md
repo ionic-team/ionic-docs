@@ -26,27 +26,7 @@ The first thing you have to do is set up the Pro Client (or update it to the lat
 npm install @ionic/app-scripts@latest @ionic/pro@latest
 ```
 
-### Choose your Integration Type:
-
-<div style="margin-top:15px;">
-
-<!-- Nav tabs -->
-<ul class="nav nav-tabs" role="tablist">
-<li role="ionic2" class="active"><a href="#ionic2" aria-controls="ionic2" role="tab" data-toggle="tab">Ionic 2/3</a></li>
-<li role="ionic1"><a href="#ionic1" aria-controls="ionic1" role="tab" data-toggle="tab">Ionic 1</a></li>
-</ul>
-
-<!-- Tab panes -->
-<div class="tab-content">
-<div role="tabpanel" class="tab-pane active" id="ionic2">
-
-<div markdown="1">
-
-<!-- IONIC 2+ CONTENT STARTS HERE -->
-
 You'll want to initialize Pro Client with your App ID and App Version from Ionic Pro inside of `app.module.ts`.
-
-Modify your `app.module.ts` to include the following code:
 
 ```typescript
 // All of your imports that are already there
@@ -95,74 +75,13 @@ export class MyErrorHandler implements ErrorHandler {
 export class AppModule {}
 ```
 
-`YOUR_APP_ID` is the Ionic Pro App ID found on the dashboard for your app:
-
-![App ID Location](/img/docs/pro/app-id-location.png?1)
+`YOUR_APP_ID` is the Ionic Pro App ID found on the dashboard for your app.
 
 `APP_VERSION` is the version of the code running for the purposes of tracking code changes. We strongly recommend that this mirrors the version in `package.json` or `config.xml`.
 
 <div class="alert alert-warning" role="alert">It's important to keep the app version up to date because that is how the Error tracking
 service will know when regressions have happened, as well as mapping your code to any
 Source Maps you've provided.</div>
-
-<!-- END IONIC 2+ CONTENT -->
-
-</div>
-
-</div>
-<div role="tabpanel" class="tab-pane" id="ionic1">
-
-<div markdown="1">
-
-<!-- IONIC 1 CONTENT STARTS HERE -->
-
-After installing `@ionic/pro` using NPM, you'll have to copy over the Pro Client files (`node_modules/@ionic/dist`) into `www/lib/ionic-pro`. You can run the following command to do so:
-
-```bash
-Mac:
-cp -R node_modules/\@ionic/pro/dist www/lib/ionic-pro
-Windows:
-xcopy node_modules/\@ionic/pro/dist www/lib/ionic-pro
-```
-
-After you copy over the files, you'll have to include the Pro Client in your `index.hml` file after `ionic.bundle.js`:
-
-```html
-<script src="/lib/ionic-pro/ionic-pro.module.min.js"></script>
-```
-
-Then in your main `app.js` file where you set up your app, you should add a `.run` that initializes your app:
-
-```javascript
-// This line may be different in your file
-angular.module('your-app', ['ionic', 'starter.controllers'])
-
-// add this section:
-.run(function(){
-    Pro.init('APP_ID', {
-        appVersion: 'APP_VERSION'
-    });
-})
-```
-
-`YOUR_APP_ID` is the Ionic Pro App ID found on the dashboard for your app:
-
-![App ID Location](/img/docs/pro/app-id-location.png)
-
-`APP_VERSION` is the version of the code running for the purposes of tracking code changes. We strongly recommend that this mirrors the version in `package.json` or `config.xml`.
-
-<div class="alert alert-warning" role="alert">It's important to keep the app version up to date because that is how the Error tracking
-service will know when regressions have happened, as well as mapping your code to any
-Source Maps you've provided.</div>
-
-<!-- IONIC 1 CONTENT ENDS HERE -->
-
-</div>
-
-</div>
-</div>
-
-</div>
 
 ### Installing Ionic Pro Plugin
 
@@ -195,9 +114,3 @@ Once the build is available you can deploy it live in your app by either
 the plugin is configured to listen to, or, if you have specified a
 [specific git branch channel to auto-deploy](/docs/pro/deploy/channels/#automating-deployment-from-a-git-branch),
 the plugin will auto update once the build has completed.
-
-## Advanced Usage
-
-Want to do something sweet, like allow users to [subscribe to a special Beta Channel](/docs/pro/deploy/tutorials/#setting-up-a-beta-channel) instead of the default Production one?
-Do some split testing? Customize the way updates are applied (like checking every 30 minutes, or on login/logout)?
-Check out our detailed [Deploy API Documentation](/docs/pro/deploy/api)!

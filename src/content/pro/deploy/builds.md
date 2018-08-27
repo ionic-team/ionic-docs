@@ -19,9 +19,8 @@ If you'd like to customize your builds, please see our
 
 When you push code up to Ionic, we run `npm run build` in the root directory of your repository. This means you have full control over the build process. By default, we recommend commiting the Ionic Project directory at the root level, which comes default with a `package.json` file with the following:
 
-```bash
+```json
 {
-...
     "scripts": {
         "clean": "ionic-app-scripts clean",
         "build": "ionic-app-scripts build",
@@ -29,7 +28,6 @@ When you push code up to Ionic, we run `npm run build` in the root directory of 
         "ionic:build": "ionic-app-scripts build",
         "ionic:serve": "ionic-app-scripts serve"
     },
-...
 }
 ```
 
@@ -37,9 +35,8 @@ When you push code up to Ionic, we run `npm run build` in the root directory of 
 
 A common change people like to make is making sure that Ionic Pro builds with production output. To make this change, simply change the `package.json` file to include the `--prod` flag like so:
 
-```bash
+```json
 {
-...
     "scripts": {
         "clean": "ionic-app-scripts clean",
         "build": "ionic-app-scripts build --prod",
@@ -47,7 +44,6 @@ A common change people like to make is making sure that Ionic Pro builds with pr
         "ionic:build": "ionic-app-scripts build",
         "ionic:serve": "ionic-app-scripts serve"
     },
-...
 }
 ```
 

@@ -24,16 +24,9 @@ simply view the channels list by going to Code -> Channels, and then click the N
 ### Assigning a Build to a Channel
 
 Once you have created a Channel, go back to the **Builds** section of your app.
-On the right side of each Build, you'll see a "Assign to Channel" icon.
+On the right side of each Build, you'll see a "Assign to Channel" icon. Click this to set the Build as active for a Channel.
 
-<div style="text-align: center">
-  <img style="width: 950px" src="/img/pro/assign-to-channel.png">
-</div>
-
-Click this to set the Build as active for a Channel.
-
-Once a Build is set as active for a Channel any native binaries that have been set up with Ionic Deploy
-for this Channel will receive the new update next time they check in.
+Once a Build is set as active for a Channel any native binaries that have been set up with Ionic Deploy for this Channel will receive the new update next time they check in.
 
 ### Automating Deployment from a Git Branch
 
@@ -45,5 +38,3 @@ To set up a Channel for automatic deployments, open that Channel and click on th
 Then type the name of the branch you want to update from and click Save.
 
 The next time you `git push ionic that-branch` it will automatically deploy to your Channel.
-
-Watch this [video tutorial](/docs/pro/deploy/tutorials/#setup-automated-live-deployments) to learn more.
