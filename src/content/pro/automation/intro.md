@@ -1,4 +1,4 @@
-# Autoamation
+# Automation
 
 Ionic Pro's automation features let you generate deliverable native builds whenever you need them. Webhooks with secure, signed download URL's and build information are also easily configurable and updatable, ensuring your app gets in the necessary hands quickly and automatically.
 
