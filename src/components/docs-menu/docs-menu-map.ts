@@ -79,6 +79,11 @@ export const pro = {
     'Introduction': '/docs/pro/package/intro',
     'Credentials': '/docs/pro/package/credentials',
     'Builds': '/docs/pro/package/intro#performing-a-build'
+  },
+  'Automation': {
+    'Introduction': '/docs/pro/automation/intro',
+    'Automations': '/docs/pro/automation/create',
+    'Webhooks': 'docs/pro/automation/webhooks'
   }
 };
 
