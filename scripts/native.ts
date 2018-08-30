@@ -10,7 +10,7 @@ const distList = join(config.NATIVE_DIR, '/dist/@ionic-native');
 const menuPath = join('src/components/docs-menu/native-menu.ts');
 const menuHeader = '/* tslint:disable:quotemark */\n\nexport const nativeMenu = ';
 
-const navList = {'Overview': '/docs/native'};
+let navList: object = { 'Overview': '/docs/native' };
 
 // the main task of the API documentation generation process
 export async function generate(task) {
@@ -37,6 +37,7 @@ export async function generate(task) {
 
   // write nav
   task.output = 'Generating Nav...';
+  prepareNav();
   const ts = `${menuHeader}${JSON.stringify(navList, null, '  ')};\n`;
   writeFileSync(menuPath, ts);
 
@@ -172,3 +173,13 @@ function getTSChild(children) {
   }
 }
 
+function prepareNav() {
+  navList['Google Maps'] =
+    'https://github.com/ionic-team/ionic-native-google-maps/blob/master/documents/README.md';
+
+  const newNav = {};
+  Object.keys(navList).sort((a, b) => a.localeCompare(b)).forEach(key => {
+    newNav[key] = navList[key];
+  });
+  navList = newNav;
+}
