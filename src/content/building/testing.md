@@ -19,11 +19,11 @@ If we set out to prove that the code is correct, we are more likely to stick to 
 
 ## General Testing Structure
 
-Unit tests are contained in `spec` files with one `spec` file per entity (component, page, service, pipe, etc). The `spec` files live side-by-side with and are named after the source that they are testing. For example, if the project has a service called WeatherService, the code for it will be in a file named `weather.service.ts` with the tests in a file named `weather.service.spec.ts`. Both of those files will be in the same folder.
+Unit tests are contained in `spec` files with one `spec` file per entity (component, page, service, pipe, etc.). The `spec` files live side-by-side with and are named after the source that they are testing. For example, if the project has a service called WeatherService, the code for it will be in a file named `weather.service.ts` with the tests in a file named `weather.service.spec.ts`. Both of those files will be in the same folder.
 
-The `spec` files themeselves contain a single `describe` call that defines that overall test. Nested within it are other `describe` calls that define major areas of functionallity. Each `describe` call can contain setup and teardown code (generally handled via `beforeEach` and `afterEach` calls), more `describe` calls forming a heirarchical breakdown of functionallity, and `it` calls which define individual test cases.
+The `spec` files themselves contain a single `describe` call that defines that overall test. Nested within it are other `describe` calls that define major areas of functionality. Each `describe` call can contain setup and teardown code (generally handled via `beforeEach` and `afterEach` calls), more `describe` calls forming a hierarchical breakdown of functionality, and `it` calls which define individual test cases.
 
-The `describe` and `it` calls also contain a descriptive text label. In well formed tests, the `describe` and `it` calls combine with their labels to perform proper phrases and the full label for the each test case, formed by combining the `describe` and `it` labels, creates a full sentence.
+The `describe` and `it` calls also contain a descriptive text label. In well-formed tests, the `describe` and `it` calls combine with their labels to perform proper phrases and the full label for the each test case, formed by combining the `describe` and `it` labels, creates a full sentence.
 
 For example:
 
@@ -45,7 +45,7 @@ The outer `describe` call states that the `Calculation` service is being tested,
 
 ## Pages and Components
 
-Pages are just Angular components. Thus, pages and components are both tested using <a href="https://angular.io/guide/testing#component-test-basics">Angular's Component Testing</a> guidlines.
+Pages are just Angular components. Thus, pages and components are both tested using <a href="https://angular.io/guide/testing#component-test-basics">Angular's Component Testing</a> guidelines.
 
 Since pages and components contain both TypeScript code and HTML template markup it is possible to perform both component class testing and component DOM testing. When a page is created, the template test that is generated looks like this:
 
@@ -86,7 +86,7 @@ Services often fall into one of two broad categories: utility services that perf
 
 ### Basic Service Testing
 
-The suggested way to test most services is to instantiate the service and manually inject mocks for any dependecy the service has. This way, the code can be tested in isolation.
+The suggested way to test most services is to instantiate the service and manually inject mocks for any dependency the service has. This way, the code can be tested in isolation.
 
 Let's say that there is a service with a method that takes an array of timecards and calculates net pay. Let's also assume that the tax calculations are handled via another service that the current services depends on. This payroll service could be tested as such:
 
@@ -217,7 +217,7 @@ describe('IssTrackingDataService', () => {
 
 ## Pipes
 
-A pipe is like a service with a specifically defined interface. It is a class that contains one public method, `transform`, which maninpulates the input value (and other optional arguments) in order to create the output that is rendered on the page. To test a pipe: instantiate the pipe, call the transform method, and verify the results.
+A pipe is like a service with a specifically defined interface. It is a class that contains one public method, `transform`, which manipulates the input value (and other optional arguments) in order to create the output that is rendered on the page. To test a pipe: instantiate the pipe, call the transform method, and verify the results.
 
 As a simple example, let's look at a pipe that takes a `Person` object and formats the name. For the sake of simplicity, let's say a `Person` consists of an `id`, `firstName`, `lastName`, and `middleInitial`. The requirements for the pipe are to print the name as "Last, First M." handling situations where a first name, last name, or middle initial do not exist. Such a test might look like this:
 
@@ -277,7 +277,7 @@ There are two common ways to create mock objects in Jasmine.  Mock objects can b
 
 ### Using `jasmine.createSpy` and `jasmine.createSpyObj`
 
-`jasmine.createSpyObj` creates a full mock object from scratch with a set of mock methods defined on creation. This is useful in that it is very simple. Nothing needs to be constucted or injected into the test. This disadvantage of using this function is that it allows the creation of objects that may not match the real objects.
+`jasmine.createSpyObj` creates a full mock object from scratch with a set of mock methods defined on creation. This is useful in that it is very simple. Nothing needs to be constructed or injected into the test. This disadvantage of using this function is that it allows the creation of objects that may not match the real objects.
 
 `jasmine.createSpy` is similar but it creates a stand-alone mock function.
 
