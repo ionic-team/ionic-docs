@@ -83,6 +83,9 @@ export const pro = {
     'Introduction': '/docs/pro/automation/intro',
     'Manage': '/docs/pro/automation/create',
     'Webhooks': 'docs/pro/automation/webhooks'
+  },
+  'Environments': {
+    'Introduction': 'docs/pro/environments/intro'
   }
 };
 
