@@ -1,10 +1,10 @@
 # Build Environments
 
-Every time Ionic deploys or packages your code, we do it in a secure environment and provide configurable key/value pairs you can leverage to customise the build and outputs.  These environments are available in both automated builds _and_ one-time builds.
+Every time Ionic deploys or packages code, it's done in a secure environment and provided with configurable key/value pairs which can be leveraged to customise the build and outputs.
 
 ## Default Environment
 
-We provide the following environment variables in every build, which you can access in any of your build scripts:
+The following environment variables are provided in every build, which can be accessed in build scripts:
 
 * `CI_APP_ID` **(string):** Your Ionic app's unique ID.
 * `CI_APP_NAME` **(string):** Your Ionic app's name.
