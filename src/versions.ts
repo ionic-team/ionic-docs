@@ -1,7 +1,7 @@
 export const versions = [
-  '4.0.0-beta.2',
+  '4.0.0-beta.7',
   // '4.0.0-beta.0',
-  'nightly'
+  // 'nightly'
 ];
 
-export const current = '4.0.0-beta.2';
+export const current = '4.0.0-beta.7';

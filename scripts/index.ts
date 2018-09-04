@@ -1,3 +1,5 @@
+import { config as dotenv } from 'dotenv';
+dotenv({ silent: true });
 import { existsSync } from 'fs';
 import Listr from 'listr';
 import { generate as apiDocs } from './api';
