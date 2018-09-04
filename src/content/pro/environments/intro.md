@@ -12,8 +12,8 @@ We provide the following environment variables in every build, which you can acc
 * `CI_AUTOMATION_ID` **(optional int):** The unique ID of the automation which created this build.
 * `CI_AUTOMATION_NAME` **(optional string):** The name of the automation which created this build.
 * `CI_GIT_COMMIT_SHA` **(string):** The SHA for the commit on which the build was run.
-* `CI_GIT_REF` **(string):** The git ref from which the build was created.
-* `CI_GIT_REF_TYPE` **(string):** The git ref type (i.e. 'branch').
+* `CI_GIT_REF` **(string):** The git ref from which the build was created (i.e. `master`).
+* `CI_GIT_REF_TYPE` **(string):** The git ref type (i.e. `branch`).
 
 ## Custom Environments
 
