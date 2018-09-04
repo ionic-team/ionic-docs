@@ -4,6 +4,18 @@ Creating new automations is simple.  To get started, simply navigate to the `Aut
 
 <img style="width: 230px" src="/docs/assets/img/pro/ss-automations-automate-tab.png" class="browser" />
 
+## Creating Automations
+
+To create a new automation, click the `New Automation` button on the top right of the `Automate` dashboard.
+
+<img src="/docs/assets/img/pro/ss-automations-dashboard-new.png" class="browser" />
+
+## Editing Automations
+
+To edit an automation, click the three dots next to the one you'd like to modify.
+
+<img src="/docs/assets/img/pro/ss-automations-dashboard-settings.png" class="browser" />
+
 ## Automation Fields
 
 <img src="/docs/assets/img/pro/ss-automations-automate-form.png" class="browser" />
@@ -31,15 +43,3 @@ Which security profile you'd like to use. If you have no profiles set up, you ca
 ### Webhook
 
 (optional) If specified, we'll send a POST with information about completed builds to a webhook of your choice.  You can learn more about their content [here](/docs/pro/automation/webhooks).
-
-## Creating Automations
-
-To create a new automation, click the `New Automation` button on the top right of the `Automate` dashboard.
-
-<img src="/docs/assets/img/pro/ss-automations-dashboard-new.png" class="browser" />
-
-## Editing Automations
-
-To edit an automation, click the three dots next to the one you'd like to modify.
-
-<img src="/docs/assets/img/pro/ss-automations-dashboard-settings.png" class="browser" />
