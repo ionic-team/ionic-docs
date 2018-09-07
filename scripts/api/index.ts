@@ -14,17 +14,17 @@ import {
   IONIC_CORE_SRC,
   IONIC_DIR,
   IONIC_REPO_URL
-} from './config';
+} from '../config';
 
-import { getComponentMarkup } from './api/template';
-import { checkout, ensureLatestMaster, getVersions } from './git';
-import * as npm from './npm';
-import { copyFileSync, vlog } from './utils';
+import { getComponentMarkup } from './template';
+import { checkout, ensureLatestMaster, getVersions } from '../git';
+import * as npm from '../npm';
+import { copyFileSync, vlog } from '../utils';
 
 import {
   current as CURRENT_VERSION,
   versions as FRAMEWORK_VERSIONS
-} from '../src/versions';
+} from '../../src/versions';
 
 const menuPath = 'src/components/docs-menu';
 const menuHeader = '/* tslint:disable */\n\nexport const apiMap = ';

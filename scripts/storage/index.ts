@@ -1,10 +1,10 @@
 import { readFileSync, writeFileSync } from 'fs';
 import { join } from 'path';
-import * as config from './config';
-import { getMarkup } from './storageDocgen';
-import * as git from './git';
-import * as npm from './npm';
-import { execp, vlog } from './utils';
+import * as config from '../config';
+import { getMarkup } from './template';
+import * as git from '../git';
+import * as npm from '../npm';
+import { execp, vlog } from '../utils';
 
 
 const navList = {'Overview': '/docs/native'};
@@ -30,8 +30,6 @@ export async function generate(task) {
   const typeDoc = await getTypeDoc();
 
   const storageInfo = typeDoc.children[0].children[0];
-
-  console.log(storageInfo.name);
 
   writeFileSync(
     join(config.STORAGE_DOCS_DIR, 'storage.md'),

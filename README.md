@@ -30,8 +30,4 @@ Markdown content living in `src/content/` is mapped to routes based on the file 
 
 ### Sources
 
-Much of the content is sourced from external repos, each in `sources/` as a [submodule](https://git-scm.com/docs/gitsubmodules). To pull in submodules:
-
-```sh
-git submodule update --init
-```
+Much of the content is sourced from external repos, each in `sources/`. To pull this in and generate the missing pages, run the command: `npm run docgen`.

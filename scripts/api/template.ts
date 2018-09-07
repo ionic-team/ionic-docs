@@ -1,5 +1,5 @@
-import { renderMarkdown } from '../src/markdown';
-import { introify } from './utils';
+import { renderMarkdown } from '../../src/markdown';
+import { introify } from '../utils';
 const r = '\n\n';
 
 export function getComponentMarkup(

@@ -1,10 +1,10 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs';
 import { join } from 'path';
-import * as config from './config';
-import * as docgen from './nativeDocgen';
-import * as git from './git';
-import { install, run } from './npm';
-import { execp, vlog } from './utils';
+import * as config from '../config';
+import * as docgen from './template';
+import * as git from '../git';
+import { install, run } from '../npm';
+import { execp, vlog } from '../utils';
 
 const distList = join(config.NATIVE_DIR, '/dist/@ionic-native');
 const menuPath = join('src/components/docs-menu/native-menu.ts');

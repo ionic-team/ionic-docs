@@ -1,4 +1,4 @@
-import { introify } from './utils';
+import { introify } from '../utils';
 
 export function getPluginMarkup(data): string {
   const r = '\n\n';

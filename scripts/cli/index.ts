@@ -1,10 +1,10 @@
 import { existsSync, mkdirSync, writeFileSync } from 'fs';
 import { join } from 'path';
-import * as config from './config';
-import * as docgen from './cliDocgen';
-import * as git from './git';
-import * as npm from './npm';
-import * as utils from './utils';
+import * as config from '../config';
+import * as docgen from './template';
+import * as git from '../git';
+import * as npm from '../npm';
+import * as utils from '../utils';
 
 const menuPath = join('src/components/docs-menu/cli-menu.ts');
 const menuHeader = '/* tslint:disable */\n\nexport const cliMenu = ';
