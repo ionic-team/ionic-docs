@@ -11,7 +11,7 @@ The great thing about Ionic is that with one codebase, you can build for any pla
 
 ![Before and after going through this tutorial](/docs/assets/img/guides/first-app-v3/gallery-combined.png)
 
-It’s easy to get started.
+It’s easy to get started. Reference code for this guide can be [found on GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic3/).
 
 ## Install Node.js
 If you don’t have Node.js installed already, [download the LTS version](https://nodejs.org/en/).
