@@ -17,6 +17,10 @@ export class SiteFooter {
   };
   @State() show = true;
 
+  componentDidLoad() {
+    this.parseFrontMatter();
+  }
+
   @Watch('frontmatter')
   parseFrontMatter() {
     this.show = !this.frontmatter.hideFooter;
