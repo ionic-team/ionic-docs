@@ -98,13 +98,15 @@ Then, continue to [follow the instructions here](/docs/publishing/app-store) reg
 ## Add the Native App to Your Local Device
 Now comes the fun part: testing out the native app on your device! For iOS, the easiest way (that works for both PC and Mac) involves using iTunes. Connect your iOS device, locate your IPA file, then drag and drop the IPA file from the file system onto your device in iTunes. The app will install immediately and be ready for use:
 
-TODO - ios install gif - youtube video?
+<div class="wistia_responsive_padding" style="padding:62.5% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><iframe src="https://fast.wistia.net/embed/iframe/s5v4fujv7w?videoFoam=true" title="Wistia video player" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="100%" height="100%"></iframe></div></div>
+<script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
 For Android testing, the easiest way across all OS platforms is to use [Android Studio](https://developer.android.com/studio/), Google’s official Android IDE. After downloading it, connect your Android device to your computer. On the Studio startup screen, select “Profile or debug APK”, then select the recently built APK file.
 
 In the upper right hand corner, click the Play button. Select your connected device, then click OK:
 
-todo - android-deploy.gif - youtube?
+<div class="wistia_responsive_padding" style="padding:62.5% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><iframe src="https://fast.wistia.net/embed/iframe/b2ys5v4sno?videoFoam=true" title="Wistia video player" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="100%" height="100%"></iframe></div></div>
+<script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
 ## Deploying Changes
 With Ionic Pro Deploy, any JavaScript, HTML, or CSS changes can be pushed automatically to app users. Open the Photo Gallery app in your favorite code editor, then update the title of the Gallery page:
