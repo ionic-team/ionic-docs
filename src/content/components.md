@@ -7,7 +7,14 @@ previewSource: https://github.com/ionic-team/component-preview/tree/master/src/c
 hideTOC: true
 ---
 
-<p class="intro">Ionic apps are made of high-level building blocks called components. Components allow you to quickly construct an interface for your app. Ionic comes with a number of components, including modals, popups, and cards. Check out the examples below to see what each component looks like and to learn how to use each one. Once you’re familiar with the basics, head over to the [API docs](/docs/api) for ideas on how to customize each component.</p>
+<p class="intro">
+  Ionic apps are made of high-level building blocks called components.
+  Components allow you to quickly construct an interface for your app. Ionic
+  comes with a number of components, including modals, popups, and cards. Check
+  out the examples below to see what each component looks like and to learn how
+  to use each one. Once you’re familiar with the basics, head over to the [API
+  docs](/docs/api) for ideas on how to customize each component.
+</p>
 
 <component-preview></component-preview>
 
