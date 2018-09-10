@@ -60,7 +60,7 @@ const tasks = new Listr([
 async function singleSectionRun(section) {
   setVerbose(true);
 
-  vlog('Starting CLI CI task');
+  vlog('Starting individual docgen task');
   if (!(await preCheck())) {
     console.error('Docs Precheck Failure. Check configs and readme.');
     return;
@@ -97,10 +97,12 @@ async function singleSectionRun(section) {
 if (require.main === module) {
   program
     .version('0.1.0')
-    .option('-s, --section [name]', 'Individual section to generate: ')
-    .parse(process.argv);
+    .option(
+      '-s, --section [name]',
+      'Individual section to generate: framework, cli, component, native, storage'
+    ).parse(process.argv);
 
-  if (program.section) {
+  if (program.section && program.section !== 'all') {
     singleSectionRun(program.section);
   } else {
     tasks.run();
