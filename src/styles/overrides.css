@@ -1,10 +1,10 @@
 :root {
-  --safe-area-inset-top: 20px;
-  --safe-area-inset-bottom: 34px;
+  --ion-safe-area-top: 20px;
+  --ion-safe-area-bottom: 34px;
 }
 
 .action-sheet-ios .action-sheet-wrapper {
-  margin: var(--safe-area-inset-top) auto var(--safe-area-inset-bottom);
+  margin: var(--ion-safe-area-top) auto var(--ion-safe-area-bottom);
 }
 
 .app-ios.statusbar-padding .ion-page>.toolbar,
@@ -12,8 +12,8 @@
 .app-ios.statusbar-padding ion-menu>.menu-inner>.toolbar,
 .app-ios.statusbar-padding ion-menu>.menu-inner>ion-header>.toolbar,
 .app-ios.statusbar-padding>ion-header>.toolbar {
-  padding-top: calc(var(--safe-area-inset-top) + 0px);
-  min-height: calc(44px + var(--safe-area-inset-top));
+  padding-top: calc(var(--ion-safe-area-top) + 0px);
+  min-height: calc(44px + var(--ion-safe-area-top));
 }
 
 app-ios.statusbar-padding .ion-page>.toolbar ion-title,
@@ -21,26 +21,26 @@ app-ios.statusbar-padding .ion-page>.toolbar ion-title,
 .app-ios.statusbar-padding ion-menu>.menu-inner>.toolbar ion-title,
 .app-ios.statusbar-padding ion-menu>.menu-inner>ion-header>.toolbar ion-title,
 .app-ios.statusbar-padding>ion-header>.toolbar ion-title {
-  padding-top: var(--safe-area-inset-top);
-  height: calc(44px + var(--safe-area-inset-top));
-  min-height: calc(44px + var(--safe-area-inset-top));
+  padding-top: var(--ion-safe-area-top);
+  height: calc(44px + var(--ion-safe-area-top));
+  min-height: calc(44px + var(--ion-safe-area-top));
 }
 
 .app-ios ion-footer .toolbar,
 .app-ios ion-footer .toolbar:last-child {
-  padding-bottom: calc(4px + var(--safe-area-inset-bottom));
-  min-height: calc(44px + var(--safe-area-inset-bottom));
+  padding-bottom: calc(4px + var(--ion-safe-area-bottom));
+  min-height: calc(44px + var(--ion-safe-area-bottom));
 }
 
 .app-ios ion-footer .toolbar .title {
-  padding-bottom: var(--safe-area-inset-bottom);
+  padding-bottom: var(--ion-safe-area-bottom);
 }
 
 .picker-columns {
-  margin-bottom: var(--safe-area-inset-bottom);
+  margin-bottom: var(--ion-safe-area-bottom);
 }
 
 .app-ios ion-tabs ion-tabbar:not(.placement-top) {
-  padding-bottom: var(--safe-area-inset-bottom);
-  height: calc(50px + var(--safe-area-inset-bottom));
+  padding-bottom: var(--ion-safe-area-bottom);
+  height: calc(50px + var(--ion-safe-area-bottom));
 }

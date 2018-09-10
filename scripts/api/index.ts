@@ -16,7 +16,7 @@ import {
   IONIC_REPO_URL
 } from '../config';
 
-import { getComponentMarkup } from './template';
+import { getComponentMarkup } from '../api/template';
 import { checkout, ensureLatestMaster, getVersions } from '../git';
 import * as npm from '../npm';
 import { copyFileSync, vlog } from '../utils';
@@ -129,11 +129,9 @@ function copyFiles(components, dest, version = 'nightly') {
       join(ionicComponentsDir, componentName, PREVIEW_PATH),
       join(dest, `${componentName}-demo.html`),
       file => {
-        file = file.replace('</head>',
-          `<link rel="stylesheet" href="/docs/overrides.css">
+        file = file.replace('/css/ionic.bundle.css">', `/docs/overrides.css">
 <link rel="stylesheet" href="https://unpkg.com/@ionic/core${version === 'nightly' ?
-'' : `@${version}`}/css/ionic.min.css">
-</head>`);
+'' : `@${version}`}/css/ionic.bundle.css">`);
         return file.replace(
           '/dist/ionic.js',
           `https://unpkg.com/@ionic/core${version === 'nightly' ?

@@ -19,7 +19,7 @@ export class CodePreview {
         <html>
           <head>
             <style>body{margin:0;}</style>
-            <link rel="stylesheet" href="https://unpkg.com/@ionic/core/css/ionic.min.css"/>
+            <link rel="stylesheet" href="https://unpkg.com/@ionic/core/css/ionic.bundle.css"/>
             <script src="https://unpkg.com/@ionic/core/dist/ionic.js"></script>
           </head>
           <body>${unescape(this.markup)}</body>

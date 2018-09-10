@@ -60,7 +60,7 @@ const tasks = new Listr([
 async function singleSectionRun(section) {
   setVerbose(true);
 
-  vlog('Starting individual docgen task');
+  vlog(`Starting individual docgen task: ${section}`);
   if (!(await preCheck())) {
     console.error('Docs Precheck Failure. Check configs and readme.');
     return;
@@ -78,7 +78,7 @@ async function singleSectionRun(section) {
     case 'cli':
       await tryToRun(cliDocs, taskPolyfill, 'CLI', CLI_DOCS_DIR).catch();
       break;
-    case 'component':
+    case 'components':
       await tryToRun(componentPreview, taskPolyfill, 'Component', COMPONENT_PREVIEW_DIR).catch();
       break;
     case 'native':

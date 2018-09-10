@@ -15,7 +15,14 @@ previewSource: https://github.com/ionic-team/component-preview/tree/master/src/c
 hideTOC: true
 ---
 
-<p class="intro">Ionic apps are made of high-level building blocks called components. Components allow you to quickly construct an interface for your app. Ionic comes with a number of components, including modals, popups, and cards. Check out the examples below to see what each component looks like and to learn how to use each one. Once you’re familiar with the basics, head over to the [API docs](/docs/api) for ideas on how to customize each component.</p>
+<p class="intro">
+  Ionic apps are made of high-level building blocks called components.
+  Components allow you to quickly construct an interface for your app. Ionic
+  comes with a number of components, including modals, popups, and cards. Check
+  out the examples below to see what each component looks like and to learn how
+  to use each one. Once you’re familiar with the basics, head over to the [API
+  docs](/docs/api) for ideas on how to customize each component.
+</p>
 
 <component-preview></component-preview>`;
 
@@ -34,11 +41,19 @@ export async function generate(task) {
   task.output = 'NPM Building...';
   await build(COMPONENT_PREVIEW_DIR);
 
+
   task.output = 'Copying app...';
   copyDirectoryTo(
     join(COMPONENT_PREVIEW_DIR, 'docs-www'),
     COMPONENT_PREVIEW_DOCS_DIR
   );
+
+  task.output = 'Applying site polyfill';
+  const indexPath = join(COMPONENT_PREVIEW_DOCS_DIR, 'docs-www', 'index.html');
+  writeFileSync(indexPath, readFileSync(indexPath).toString('utf8').replace(
+    '</head>',
+    '<link rel="stylesheet" type="text/css" href="/docs/overrides.css"></head>'
+  ));
 
   task.output = 'Generating Page...';
   const markdown = await listDirs(join(COMPONENT_PREVIEW_DIR, 'src/components'))
