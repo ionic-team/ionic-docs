@@ -1,6 +1,6 @@
 # Build Environments
 
-Every time Ionic deploys or packages code, it's done in a secure environment and provided with configurable key/value pairs which can be leveraged to customise the build and outputs.
+Every time Ionic deploys or packages code, it's done in a secure environment and provided with configurable key/value pairs which can be leveraged to customize the build and outputs.
 
 ## Default Environment
 
