@@ -1,6 +1,6 @@
 ---
-previousText: 'Courses'
-previousUrl: '/docs/developer-resources/courses'
+previousText: 'Guides'
+previousUrl: '/docs/developer-resources/guides'
 nextText: 'Tools'
 nextUrl: '/docs/developer-resources/tools'
 ---
