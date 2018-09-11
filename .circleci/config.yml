@@ -78,13 +78,3 @@ jobs:
           #       else
           #         echo "We are on ${CIRCLE_BRANCH} branch, not going to update docs."
           #       fi
-workflows:
-  version: 2
-  build_and_test:
-    jobs:
-      - build:
-          requires:
-            - build
-          filters:
-            branches:
-              only: master
