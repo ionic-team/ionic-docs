@@ -38,11 +38,11 @@ jobs:
       - run:
         name: Generate Docs
         command: |
-          if [ "${CIRCLE_BRANCH}" == "master" ]; then
-            npm run docgen
-          else
-            echo "We are on ${CIRCLE_BRANCH} branch, not going to update docs."
-          fi
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              npm run docgen
+            else
+              echo "We are on ${CIRCLE_BRANCH} branch, not going to update docs."
+            fi
 
       # Cache External Sources
       - save_cache:
