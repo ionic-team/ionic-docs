@@ -37,7 +37,12 @@ jobs:
       # Generate Docs for each section concurrently
       - run:
         name: Generate Docs
-        command: npm run docgen
+        command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              npm run docgen
+            else
+              echo "We are on ${CIRCLE_BRANCH} branch, not going to update docs."
+            fi
 
       # Cache External Sources
       - save_cache:
@@ -73,14 +78,3 @@ jobs:
       #       else
       #         echo "We are on ${CIRCLE_BRANCH} branch, not going to update docs."
       #       fi
-workflows:
-  version: 2
-  build_and_deploy:
-    jobs:
-      - build
-      - test:
-        requires:
-          - build
-        filters:
-          branches:
-            only: master
