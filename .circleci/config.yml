@@ -1,7 +1,6 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/ionic-docs/
     docker:
       - image: node:10
     steps:
@@ -22,60 +21,133 @@ jobs:
           name: Checksum scripts
           command: npm run checksum
 
-      # Retore External Sources
+  framework:
+    docker:
+      - image: node:10
+    steps:
+      - checkout
       - restore_cache:
           key: api_{{ checksum ".tmp/api.txt" }}-v0
-      - restore_cache:
-          key: cli_{{ checksum ".tmp/cli.txt" }}-v0
-      - restore_cache:
-          key: component-preview_{{ checksum ".tmp/component-preview.txt" }}-v0
-      - restore_cache:
-          key: native_{{ checksum ".tmp/native.txt" }}-v0
-      - restore_cache:
-          key: storage_{{ checksum ".tmp/storage.txt" }}-v0
-
       # Generate Docs for each section concurrently
       - run:
-          name: Generate Docs
+          name: Generate Framework Docs
           no_output_timeout: 20m
           command: |
               if [ "${CIRCLE_BRANCH}" == "master" ]; then
-                npm run docgen
+                npm run docgen framework
               else
                 echo "We are on ${CIRCLE_BRANCH} branch, not going to update docs."
               fi
-
-      # Cache External Sources
       - save_cache:
           key: api_{{ checksum ".tmp/api.txt" }}-v0
           paths:
-          - sources/ionic/
+            - sources/ionic/
+
+  cli:
+    docker:
+      - image: node:10
+    steps:
+      - checkout
+      - restore_cache:
+          key: cli_{{ checksum ".tmp/cli.txt" }}-v0
+      # Generate Docs for each section concurrently
+      - run:
+          name: Generate CLI Docs
+          no_output_timeout: 20m
+          command: |
+              if [ "${CIRCLE_BRANCH}" == "master" ]; then
+                npm run docgen cli
+              else
+                echo "We are on ${CIRCLE_BRANCH} branch, not going to update docs."
+              fi
       - save_cache:
           key: cli_{{ checksum ".tmp/cli.txt" }}-v0
           paths:
-          - sources/ionic-cli/
-      - save_cache:
-          key: component-preview_{{ checksum ".tmp/component-preview.txt" }}-v0
-          paths:
-          - sources/component-preview/
-      - save_cache:
-          key: native_{{ checksum ".tmp/native.txt" }}-v0
-          paths:
-          - sources/ionic-native/
-      - save_cache:
-          key: storage_{{ checksum ".tmp/storage.txt" }}-v0
-          paths:
-          - sources/ionic-storage/
+            - sources/ionic-cli/
 
+  component-preview:
+    docker:
+      - image: node:10
+    steps:
+      - checkout
+      - restore_cache:
+          key: component-preview_{{ checksum ".tmp/cli.txt" }}-v0
+      # Generate Docs for each section concurrently
       - run:
-          name: No tests
-          command: echo "no tests"
-          # - add_ssh_keys
-          # - deploy:
-          #     name: Update docs
-          #     command: |
-          #       if [ "${CIRCLE_BRANCH}" == "master" ]; then
-          #         ./scripts/docs/deploy.sh
-          #       else
-          #         echo "We are on ${CIRCLE_BRANCH} branch, not going to update docs."
-          #       fi
+          name: Generate Component Preview Docs
+          no_output_timeout: 20m
+          command: |
+              if [ "${CIRCLE_BRANCH}" == "master" ]; then
+                npm run docgen component
+              else
+                echo "We are on ${CIRCLE_BRANCH} branch, not going to update docs."
+              fi
+      - save_cache:
+          key: component-preview_{{ checksum ".tmp/cli.txt" }}-v0
+          paths:
+            - sources/component-preview/
+
+  native:
+    docker:
+      - image: node:10
+    steps:
+      - checkout
+      - restore_cache:
+          key: native_{{ checksum ".tmp/cli.txt" }}-v0
+      # Generate Docs for each section concurrently
+      - run:
+          name: Generate Component Preview Docs
+          no_output_timeout: 20m
+          command: |
+              if [ "${CIRCLE_BRANCH}" == "master" ]; then
+                npm run docgen native
+              else
+                echo "We are on ${CIRCLE_BRANCH} branch, not going to update docs."
+              fi
+      - save_cache:
+          key: native_{{ checksum ".tmp/cli.txt" }}-v0
+          paths:
+            - sources/ionic-native/
+
+  storage:
+    docker:
+      - image: node:10
+    steps:
+      - checkout
+      - restore_cache:
+          key: storage_{{ checksum ".tmp/cli.txt" }}-v0
+      # Generate Docs for each section concurrently
+      - run:
+          name: Generate Component Preview Docs
+          no_output_timeout: 20m
+          command: |
+              if [ "${CIRCLE_BRANCH}" == "master" ]; then
+                npm run docgen storage
+              else
+                echo "We are on ${CIRCLE_BRANCH} branch, not going to update docs."
+              fi
+      - save_cache:
+          key: storage_{{ checksum ".tmp/cli.txt" }}-v0
+          paths:
+            - sources/ionic-storage/
+
+workflows:
+  version: 2
+  build_accept_deploy:
+    jobs:
+      - build
+      - framework:
+          requires:
+            - build
+      - cli:
+          requires:
+            - build
+      - component-preview:
+          requires:
+            - build
+      - native:
+          requires:
+            - build
+      - storage:
+          requires:
+            - build

@@ -27,5 +27,9 @@ const check = section => {
   }
   writeFileSync(join(tmp, `${section}.txt`), hashes);
 };
+if (process.argv[2] && sections.indexOf(process.argv[2]) > -1) {
+  check(process.argv[2]);
+} else {
+  sections.forEach(check);
+}
 
-sections.forEach(check);
