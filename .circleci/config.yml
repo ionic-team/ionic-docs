@@ -37,6 +37,7 @@ jobs:
       # Generate Docs for each section concurrently
       - run:
           name: Generate Docs
+          no_output_timeout: 20m
           command: |
               if [ "${CIRCLE_BRANCH}" == "master" ]; then
                 npm run docgen
