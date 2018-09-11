@@ -3,8 +3,8 @@
   "version": "0.2.0",
   "description": "Ionic Docs Site",
   "engines": {
-    "node": "9.10.x",
-    "npm": "6.0.x"
+    "node": "10.x.x",
+    "npm": "6.x.x"
   },
   "scripts": {
     "start": "npm run server",
@@ -20,7 +20,7 @@
     "preserver": "tsc -p server/tsconfig.json",
     "heroku-postbuild": "npm run docgen && npm run build",
 
-    "docgen-framework": "node scripts/build/scripts/docgen --section=\"framework\""
+    "checksum": "npm run predocgen && node scripts/build/scripts/sumchecker"
   },
   "dependencies": {
     "@stencil/core": "^0.11.0",

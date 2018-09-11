@@ -24,3 +24,4 @@ src/content/component-preview-app/
 src/components/docs-menu/docs-api-map.ts
 .stencil/
 /.env
+/.tmp
