@@ -21,7 +21,7 @@ export class DocsDocument {
   @State() body: string;
   @State() title: string;
   @State() hideTOC = false;
-  @State() frontMatter = {};
+  @State() frontMatter: { [key: string]: any } = {};
   @State() tocHeadings: HeadingStruc[] = [];
   @State() pageClass: string;
   @State() attributes: { [key: string]: any } = {};
@@ -145,7 +145,7 @@ export class DocsDocument {
         ] : null }
       </div>,
       <main innerHTML={this.body}/>,
-      <docs-footer frontmatter={this.frontMatter} path={this.path}/>
+      !this.frontMatter.hideFooter && <docs-footer frontmatter={this.frontMatter} path={this.path}/>
     ];
   }
 }
