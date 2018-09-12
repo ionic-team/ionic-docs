@@ -30,8 +30,6 @@ jobs:
       - attach_workspace:
           at: /ionic-docs
       - restore_cache:
-          key: node_modules_{{ checksum "package.json" }}-v0
-      - restore_cache:
           key: api-v0
       # Generate Docs for each section concurrently
       - run:
@@ -54,8 +52,6 @@ jobs:
       - checkout
       - attach_workspace:
           at: /ionic-docs
-      - restore_cache:
-          key: node_modules_{{ checksum "package.json" }}-v0
       - restore_cache:
           key: cli-v0
       # Generate Docs for each section concurrently
@@ -80,8 +76,6 @@ jobs:
       - attach_workspace:
           at: /ionic-docs
       - restore_cache:
-          key: node_modules_{{ checksum "package.json" }}-v0
-      - restore_cache:
           key: component-preview-v0
       # Generate Docs for each section concurrently
       - run:
@@ -105,8 +99,6 @@ jobs:
       - attach_workspace:
           at: /ionic-docs
       - restore_cache:
-          key: node_modules_{{ checksum "package.json" }}-v0
-      - restore_cache:
           key: native-v0
       # Generate Docs for each section concurrently
       - run:
@@ -129,8 +121,6 @@ jobs:
       - checkout
       - attach_workspace:
           at: /ionic-docs
-      - restore_cache:
-          key: node_modules_{{ checksum "package.json" }}-v0
       - restore_cache:
           key: storage-v0
       # Generate Docs for each section concurrently
