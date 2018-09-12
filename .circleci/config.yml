@@ -17,17 +17,13 @@ jobs:
           paths:
           - ~/ionic/node_modules/
 
-      - run:
-          name: Checksum scripts
-          command: npm run checksum
-
   framework:
     docker:
       - image: node:10
     steps:
       - checkout
       - restore_cache:
-          key: api_{{ checksum ".tmp/api.txt" }}-v0
+          key: api-v0
       # Generate Docs for each section concurrently
       - run:
           name: Generate Framework Docs
@@ -39,7 +35,7 @@ jobs:
                 echo "We are on ${CIRCLE_BRANCH} branch, not going to update docs."
               fi
       - save_cache:
-          key: api_{{ checksum ".tmp/api.txt" }}-v0
+          key: api-v0
           paths:
             - sources/ionic/
 
@@ -49,7 +45,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: cli_{{ checksum ".tmp/cli.txt" }}-v0
+          key: cli-v0
       # Generate Docs for each section concurrently
       - run:
           name: Generate CLI Docs
@@ -61,7 +57,7 @@ jobs:
                 echo "We are on ${CIRCLE_BRANCH} branch, not going to update docs."
               fi
       - save_cache:
-          key: cli_{{ checksum ".tmp/cli.txt" }}-v0
+          key: cli-v0
           paths:
             - sources/ionic-cli/
 
@@ -71,7 +67,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: component-preview_{{ checksum ".tmp/cli.txt" }}-v0
+          key: component-preview-v0
       # Generate Docs for each section concurrently
       - run:
           name: Generate Component Preview Docs
@@ -83,7 +79,7 @@ jobs:
                 echo "We are on ${CIRCLE_BRANCH} branch, not going to update docs."
               fi
       - save_cache:
-          key: component-preview_{{ checksum ".tmp/cli.txt" }}-v0
+          key: component-preview-v0
           paths:
             - sources/component-preview/
 
@@ -93,7 +89,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: native_{{ checksum ".tmp/cli.txt" }}-v0
+          key: native-v0
       # Generate Docs for each section concurrently
       - run:
           name: Generate Component Preview Docs
@@ -105,7 +101,7 @@ jobs:
                 echo "We are on ${CIRCLE_BRANCH} branch, not going to update docs."
               fi
       - save_cache:
-          key: native_{{ checksum ".tmp/cli.txt" }}-v0
+          key: native-v0
           paths:
             - sources/ionic-native/
 
@@ -115,7 +111,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: storage_{{ checksum ".tmp/cli.txt" }}-v0
+          key: storage-v0
       # Generate Docs for each section concurrently
       - run:
           name: Generate Component Preview Docs
@@ -127,7 +123,7 @@ jobs:
                 echo "We are on ${CIRCLE_BRANCH} branch, not going to update docs."
               fi
       - save_cache:
-          key: storage_{{ checksum ".tmp/cli.txt" }}-v0
+          key: storage-v0
           paths:
             - sources/ionic-storage/
 
