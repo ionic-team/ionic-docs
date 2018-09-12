@@ -1,8 +1,10 @@
 version: 2
+defaults: &defaults
+  working_directory: /ionic-docs
+  docker:
+    - image: node:10
 jobs:
   build:
-    docker:
-      - image: node:10
     steps:
       - checkout
       - restore_cache:
@@ -16,12 +18,17 @@ jobs:
           key: node_modules_{{ checksum "package.json" }}-v0
           paths:
           - ~/ionic/node_modules/
+      - persist_to_workspace:
+          root: /ionic-docs
+          paths:
+            - "*"
 
   framework:
-    docker:
-      - image: node:10
+    <<: *defaults
     steps:
       - checkout
+      - attach_workspace:
+          at: /ionic-docs
       - restore_cache:
           key: node_modules_{{ checksum "package.json" }}-v0
       - restore_cache:
@@ -42,10 +49,11 @@ jobs:
             - sources/ionic/
 
   cli:
-    docker:
-      - image: node:10
+    <<: *defaults
     steps:
       - checkout
+      - attach_workspace:
+          at: /ionic-docs
       - restore_cache:
           key: node_modules_{{ checksum "package.json" }}-v0
       - restore_cache:
@@ -66,10 +74,11 @@ jobs:
             - sources/ionic-cli/
 
   component-preview:
-    docker:
-      - image: node:10
+    <<: *defaults
     steps:
       - checkout
+      - attach_workspace:
+          at: /ionic-docs
       - restore_cache:
           key: node_modules_{{ checksum "package.json" }}-v0
       - restore_cache:
@@ -90,10 +99,11 @@ jobs:
             - sources/component-preview/
 
   native:
-    docker:
-      - image: node:10
+    <<: *defaults
     steps:
       - checkout
+      - attach_workspace:
+          at: /ionic-docs
       - restore_cache:
           key: node_modules_{{ checksum "package.json" }}-v0
       - restore_cache:
@@ -114,10 +124,11 @@ jobs:
             - sources/ionic-native/
 
   storage:
-    docker:
-      - image: node:10
+    <<: *defaults
     steps:
       - checkout
+      - attach_workspace:
+          at: /ionic-docs
       - restore_cache:
           key: node_modules_{{ checksum "package.json" }}-v0
       - restore_cache:
