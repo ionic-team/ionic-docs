@@ -23,6 +23,8 @@ jobs:
     steps:
       - checkout
       - restore_cache:
+          key: node_modules_{{ checksum "package.json" }}-v0
+      - restore_cache:
           key: api-v0
       # Generate Docs for each section concurrently
       - run:
@@ -44,6 +46,8 @@ jobs:
       - image: node:10
     steps:
       - checkout
+      - restore_cache:
+          key: node_modules_{{ checksum "package.json" }}-v0
       - restore_cache:
           key: cli-v0
       # Generate Docs for each section concurrently
@@ -67,6 +71,8 @@ jobs:
     steps:
       - checkout
       - restore_cache:
+          key: node_modules_{{ checksum "package.json" }}-v0
+      - restore_cache:
           key: component-preview-v0
       # Generate Docs for each section concurrently
       - run:
@@ -89,6 +95,8 @@ jobs:
     steps:
       - checkout
       - restore_cache:
+          key: node_modules_{{ checksum "package.json" }}-v0
+      - restore_cache:
           key: native-v0
       # Generate Docs for each section concurrently
       - run:
@@ -110,6 +118,8 @@ jobs:
       - image: node:10
     steps:
       - checkout
+      - restore_cache:
+          key: node_modules_{{ checksum "package.json" }}-v0
       - restore_cache:
           key: storage-v0
       # Generate Docs for each section concurrently
