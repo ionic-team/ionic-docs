@@ -54,8 +54,11 @@ if (require.main === module) {
     .version('0.1.0')
     .option(
       '-s, --section [name]',
-      '-v, --verbose',
       'Individual section to generate: framework, cli, component, native, storage'
+    )
+    .option(
+      '-v, --verbose',
+      'Verbose output'
     ).parse(process.argv);
 
   const singleSectionRun = program.section && program.section !== 'all';

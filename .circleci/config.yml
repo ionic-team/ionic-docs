@@ -138,24 +138,3 @@ jobs:
           key: storage-v0
           paths:
             - sources/ionic-storage/
-
-workflows:
-  version: 2
-  build_accept_deploy:
-    jobs:
-      - build
-      - framework:
-          requires:
-            - build
-      - cli:
-          requires:
-            - build
-      - component-preview:
-          requires:
-            - build
-      - native:
-          requires:
-            - build
-      - storage:
-          requires:
-            - build

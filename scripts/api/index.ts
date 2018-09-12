@@ -16,7 +16,7 @@ import {
   IONIC_REPO_URL
 } from '../config';
 
-import { getComponentMarkup } from '../api/template';
+import { getComponentMarkup } from './template';
 import { checkout, ensureLatestMaster, getVersions } from '../git';
 import * as npm from '../npm';
 import { copyFileSync, vlog } from '../utils';
