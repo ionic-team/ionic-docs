@@ -5,6 +5,7 @@ defaults: &defaults
     - image: node:10
 jobs:
   build:
+    <<: *defaults
     steps:
       - checkout
       - restore_cache:
