@@ -34,7 +34,7 @@ jobs:
           name: Run Docgen
           command: |
               if [ "${CIRCLE_BRANCH}" == "master" ]; then
-                npm run docgen cli
+                npm run docgen
               else
                 echo "We are on ${CIRCLE_BRANCH} branch, not going to update docs."
               fi
