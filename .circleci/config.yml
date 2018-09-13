@@ -11,27 +11,78 @@ jobs:
       - restore_cache:
           # -vNUM is a version toggle for busting cache
           key: node_modules_{{ checksum "package.json" }}-v0
+      - restore_cache:
+          key: api-v0
+      - restore_cache:
+          key: cli-v0
+      - restore_cache:
+          key: component-preview-v0
+      - restore_cache:
+          key: native-v0
+      - restore_cache:
+          key: storage-v0
+
       - run:
           name: Install node modules
-          command: npm i
+          command: |
+              if [ "${CIRCLE_BRANCH}" == "master" ]; then
+                npm install
+              else
+                echo "We are on ${CIRCLE_BRANCH} branch, not going to update docs."
+              fi
+      - run:
+          name: Run Docgen
+          command: |
+              if [ "${CIRCLE_BRANCH}" == "master" ]; then
+                npm run docgen cli
+              else
+                echo "We are on ${CIRCLE_BRANCH} branch, not going to update docs."
+              fi
+
       - save_cache:
           # Must mach number above
           key: node_modules_{{ checksum "package.json" }}-v0
           paths:
           - ~/ionic/node_modules/
-      - persist_to_workspace:
-          root: /ionic-docs
+      - save_cache:
+          key: api-v0
           paths:
-            - "*"
+            - sources/ionic/
+      - save_cache:
+          key: cli-v0
+          paths:
+            - sources/ionic-cli/
+      - save_cache:
+          key: component-preview-v0
+          paths:
+            - sources/component-preview/
+      - save_cache:
+          key: native-v0
+          paths:
+            - sources/ionic-native/
+      - save_cache:
+          key: storage-v0
+          paths:
+            - sources/ionic-storage/
 
   framework:
     <<: *defaults
     steps:
       - checkout
-      - attach_workspace:
-          at: /ionic-docs
+      - restore_cache:
+          # -vNUM is a version toggle for busting cache
+          key: node_modules_{{ checksum "package.json" }}-v0
       - restore_cache:
           key: api-v0
+
+      - run:
+          name: Install node modules
+          command: |
+              if [ "${CIRCLE_BRANCH}" == "master" ]; then
+                npm install
+              else
+                echo "We are on ${CIRCLE_BRANCH} branch, not going to update docs."
+              fi
       # Generate Docs for each section concurrently
       - run:
           name: Generate Framework Docs
@@ -42,6 +93,12 @@ jobs:
               else
                 echo "We are on ${CIRCLE_BRANCH} branch, not going to update docs."
               fi
+
+      - save_cache:
+          # Must mach number above
+          key: node_modules_{{ checksum "package.json" }}-v0
+          paths:
+          - ~/ionic/node_modules/
       - save_cache:
           key: api-v0
           paths:
@@ -51,10 +108,20 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - attach_workspace:
-          at: /ionic-docs
+      - restore_cache:
+          # -vNUM is a version toggle for busting cache
+          key: node_modules_{{ checksum "package.json" }}-v0
       - restore_cache:
           key: cli-v0
+
+      - run:
+          name: Install node modules
+          command: |
+              if [ "${CIRCLE_BRANCH}" == "master" ]; then
+                npm install
+              else
+                echo "We are on ${CIRCLE_BRANCH} branch, not going to update docs."
+              fi
       # Generate Docs for each section concurrently
       - run:
           name: Generate CLI Docs
@@ -65,6 +132,12 @@ jobs:
               else
                 echo "We are on ${CIRCLE_BRANCH} branch, not going to update docs."
               fi
+
+      - save_cache:
+          # Must mach number above
+          key: node_modules_{{ checksum "package.json" }}-v0
+          paths:
+          - ~/ionic/node_modules/
       - save_cache:
           key: cli-v0
           paths:
@@ -74,10 +147,20 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - attach_workspace:
-          at: /ionic-docs
+      - restore_cache:
+          # -vNUM is a version toggle for busting cache
+          key: node_modules_{{ checksum "package.json" }}-v0
       - restore_cache:
           key: component-preview-v0
+
+      - run:
+          name: Install node modules
+          command: |
+              if [ "${CIRCLE_BRANCH}" == "master" ]; then
+                npm install
+              else
+                echo "We are on ${CIRCLE_BRANCH} branch, not going to update docs."
+              fi
       # Generate Docs for each section concurrently
       - run:
           name: Generate Component Preview Docs
@@ -88,6 +171,12 @@ jobs:
               else
                 echo "We are on ${CIRCLE_BRANCH} branch, not going to update docs."
               fi
+
+      - save_cache:
+          # Must mach number above
+          key: node_modules_{{ checksum "package.json" }}-v0
+          paths:
+          - ~/ionic/node_modules/
       - save_cache:
           key: component-preview-v0
           paths:
@@ -97,10 +186,20 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - attach_workspace:
-          at: /ionic-docs
+      - restore_cache:
+          # -vNUM is a version toggle for busting cache
+          key: node_modules_{{ checksum "package.json" }}-v0
       - restore_cache:
           key: native-v0
+
+      - run:
+          name: Install node modules
+          command: |
+              if [ "${CIRCLE_BRANCH}" == "master" ]; then
+                npm install
+              else
+                echo "We are on ${CIRCLE_BRANCH} branch, not going to update docs."
+              fi
       # Generate Docs for each section concurrently
       - run:
           name: Generate Component Preview Docs
@@ -111,6 +210,12 @@ jobs:
               else
                 echo "We are on ${CIRCLE_BRANCH} branch, not going to update docs."
               fi
+
+      - save_cache:
+          # Must mach number above
+          key: node_modules_{{ checksum "package.json" }}-v0
+          paths:
+          - ~/ionic/node_modules/
       - save_cache:
           key: native-v0
           paths:
@@ -120,10 +225,20 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - attach_workspace:
-          at: /ionic-docs
+      - restore_cache:
+          # -vNUM is a version toggle for busting cache
+          key: node_modules_{{ checksum "package.json" }}-v0
       - restore_cache:
           key: storage-v0
+
+      - run:
+          name: Install node modules
+          command: |
+              if [ "${CIRCLE_BRANCH}" == "master" ]; then
+                npm install
+              else
+                echo "We are on ${CIRCLE_BRANCH} branch, not going to update docs."
+              fi
       # Generate Docs for each section concurrently
       - run:
           name: Generate Component Preview Docs
@@ -134,6 +249,12 @@ jobs:
               else
                 echo "We are on ${CIRCLE_BRANCH} branch, not going to update docs."
               fi
+
+      - save_cache:
+          # Must mach number above
+          key: node_modules_{{ checksum "package.json" }}-v0
+          paths:
+          - ~/ionic/node_modules/
       - save_cache:
           key: storage-v0
           paths:
