@@ -33,7 +33,7 @@ When you link the repository a webhook will be created for the repository and ev
 
 If you are not using GitHub or Bitbucket Cloud you can push your source code directly to Ionic Pro using Git. Simply choose `Ionic` as your git remote during `ionic start` or run `ionic link` in the root directory of your existing app in order to create the `ionic` git remote. You can learn about git remotes [here](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes).
 
-Follow the steps at [Getting Started](/docs/pro/introduction/getting-started) to start a new App or link an existing App to Ionic Pro.
+Follow the steps at [Getting Started](/docs/pro/basics/getting-started) to start a new App or link an existing App to Ionic Pro.
 
 Once you've created and linked your app to the Ionic remote you can learn about:
 

@@ -3,8 +3,8 @@
   "version": "0.2.0",
   "description": "Ionic Docs Site",
   "engines": {
-    "node": "9.10.x",
-    "npm": "6.0.x"
+    "node": "10.x.x",
+    "npm": "6.x.x"
   },
   "scripts": {
     "start": "npm run server",
@@ -12,13 +12,14 @@
     "dev": "sd concurrent \"stencil build --dev --watch\" \"npm run server\" \"browser-sync start --config bs-config.js\" ",
     "lint": "tslint --config tslint.json --project tsconfig.json",
     "precommit": "npm run lint",
-    "api-docs": "node scripts/build/scripts",
-    "api-docs-watch": "sd concurrent \"tsc -p scripts/tsconfig.json --watch\" \"chokidar 'scripts/build/**/*.js' -c 'node scripts/build/scripts'\"",
-    "preapi-docs": "tsc -p scripts/tsconfig.json",
+    "docgen": "bash -c 'node scripts/build/scripts/docgen --section=\"${1-all}\"' --",
+    "docgen-watch": "sd concurrent \"tsc -p scripts/tsconfig.json --watch\" \"chokidar 'scripts/build/**/*.js' -c 'node scripts/build/scripts/docgen'\"",
+    "predocgen": "tsc -p scripts/tsconfig.json",
     "server": "node server/build",
     "server-watch": "sd concurrent \"tsc -p server/tsconfig.json --watch\" \"chokidar 'server/build/**/*.js' -c 'npm run server'\" \"npm run dev\"",
     "preserver": "tsc -p server/tsconfig.json",
-    "heroku-postbuild": "npm run api-docs && npm run build"
+    "heroku-postbuild": "npm run docgen && npm run build",
+    "checksum": "npm run predocgen && node scripts/build/scripts/sumchecker"
   },
   "dependencies": {
     "@stencil/core": "^0.11.0",
@@ -28,7 +29,8 @@
     "@types/node": "^8.10.9",
     "@types/semver": "^5.5.0",
     "chokidar": "^2.0.2",
-    "chokidar-cli": "^1.2.0",
+    "chokidar-cli": "^1.2.1",
+    "commander": "^2.17.1",
     "compression": "^1.7.2",
     "dotenv": "^5.0.1",
     "express": "^4.16.2",
@@ -37,7 +39,9 @@
     "highlight.js": "^9.12.0",
     "husky": "^0.14.3",
     "intersection-observer": "^0.5.0",
+    "is-ci": "^1.2.1",
     "listr": "SamVerschueren/listr",
+    "listr-verbose-renderer": "^0.4.1",
     "marked": "^0.3.18",
     "path": "^0.12.7",
     "semver": "^5.5.0",
@@ -47,7 +51,7 @@
     "typescript": "^3.0.0"
   },
   "devDependencies": {
-    "browser-sync": "^2.24.5"
+    "browser-sync": "^2.24.7"
   },
   "cacheDirectories": [
     "sources",

@@ -29,47 +29,24 @@ For example, an app being viewed on an Android platform will use the `md` (Mater
 <ion-app class="md">
 ```
 
-_Note: The **platform** and the **mode** are not the same. The platform can be set to use any mode in the [config](../../api/config/Config) of an app._
+_Note: The **platform** and the **mode** are not the same. The platform can be set to use any mode in the [config](../api/config) of an app._
 
 ## Overriding Mode Styles
 
-Each Ionic component has up to three stylesheets used to style it. Here's an example of the theming structure for the `badge` component:
-
-
-```
-badge
-├── badge.ios.scss                  # ios mode styles
-├── badge.ios.vars.scss             # ios mode variables
-├── badge.md.scss                   # md mode styles
-├── badge.md.vars.scss              # md mode variables
-├── badge.scss                      # shared styles for the badge
-└── badge.vars.scss                 # shared variables for the badge
-```
-
-_Note: Not all components are styled differently for each mode, so some will only have some of the above stylesheets._
-
-The class that is applied to the `ion-app` can be used to override styles for any component. For example, to override all badges in `ios` mode to have capitalized text, the following can be written:
+Each Ionic component can be styled based on the mode. The `html` element has both a `class` and `mode` attribute with a value equal to the current mode. These can be used to override styles for any component. For example, to style an `ion-badge` to have `uppercase` text only in `ios` mode:
 
 ```css
-.ios .badge {
-  text-transform: capitalize;
+.ios ion-badge {
+  text-transform: uppercase;
 }
 ```
 
-The mode is also combined with the component name and then added as a class to each component. The above can be simplified to only target `ios` badges by using:
+There are also many global CSS variables that can be used to override the styles. To style the background color for an `ios` app, the following can be written:
 
 ```css
-.badge-ios {
-  text-transform: capitalize;
+.ios {
+  --ion-background-color: #222;
 }
 ```
 
-There are also many CSS variables that can be used to override the styles. Using the same example above, we can change the `ios` badge using the `--badge-ios-text-transform` variable:
-
-```css
-:root {
-  --badge-ios-text-transform: capitalize;
-}
-```
-
-For a list of all CSS variables to override, see [CSS Variables](./css-variables).
+For a list of all global CSS variables to override, see [CSS Variables](./css-variables).

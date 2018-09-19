@@ -236,3 +236,18 @@ export function introify(text, introClass = 'intro') {
 
   return lineArray.join('\n');
 }
+
+export async function tryToRun(func: (task) => void, task, name: string, outDir?: string) {
+  try {
+    // console.log(`Generating ${name} Docs`);
+    await func(task);
+  } catch (error) {
+    // note if outDir is not provided throw any time the command fails
+    if (!outDir || !existsSync(outDir)) {
+      throw error;
+    } else {
+      console.log(error);
+      console.log(`${name} Docs generation failed, using cached version.`);
+    }
+  }
+}

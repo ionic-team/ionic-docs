@@ -3,6 +3,12 @@
 export const cliMenu = {
   "Overview": "/docs/cli/overview",
   "Build": "/docs/cli/build",
+  "Capacitor Add": "/docs/cli/capacitor-add",
+  "Capacitor Copy": "/docs/cli/capacitor-copy",
+  "Capacitor Open": "/docs/cli/capacitor-open",
+  "Capacitor Run": "/docs/cli/capacitor-run",
+  "Capacitor Sync": "/docs/cli/capacitor-sync",
+  "Capacitor Update": "/docs/cli/capacitor-update",
   "Config Get": "/docs/cli/config-get",
   "Config Set": "/docs/cli/config-set",
   "Config Unset": "/docs/cli/config-unset",

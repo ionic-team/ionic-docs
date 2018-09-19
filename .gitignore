@@ -23,3 +23,5 @@ src/content/component-preview-app/
 /.vscode
 src/components/docs-menu/docs-api-map.ts
 .stencil/
+/.env
+/.tmp
