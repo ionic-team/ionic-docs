@@ -7,10 +7,10 @@ import * as npm from '../npm';
 import { execp, vlog } from '../utils';
 
 
-const navList = {'Overview': '/docs/native'};
+const navList = { 'Overview': '/docs/native' };
 
 // the main task of the API documentation generation process
-export async function generate(task) {
+export default async function generate(task) {
   const startTime = new Date().getTime();
   task.output = 'Updating...';
   const repoRef = await git.ensureLatestMaster(

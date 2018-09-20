@@ -1,3 +1,5 @@
+import archiver from 'archiver-promise';
+import AWS from 'aws-sdk';
 import { SpawnOptions, exec } from 'child_process';
 import {
   createReadStream,
@@ -11,13 +13,25 @@ import {
   unlinkSync,
   writeFileSync
 } from 'fs';
+import glob from 'glob';
 import { basename, join } from 'path';
-import * as util from 'util';
-
+import { promisify } from 'util';
 import * as semver from 'semver';
-import * as config from './config';
+import {
+  API_DOCS_DIR,
+  AWS_ACCESS_KEY_ID,
+  AWS_SECRET_ACCESS_KEY,
+  VERBOSE
+} from './config';
 
-export const execp = util.promisify(exec);
+
+export const execp = promisify(exec);
+const globp = promisify(glob);
+
+AWS.config.update({
+  accessKeyId: AWS_ACCESS_KEY_ID,
+  secretAccessKey: AWS_SECRET_ACCESS_KEY
+});
 
 // copy dir to target
 export function copyDirectory(source, target) {
@@ -61,7 +75,7 @@ export function copyDirectoryTo(source, target) {
   // copy
   if (lstatSync(source).isDirectory()) {
     files = readdirSync(source);
-    files.forEach(function (file) {
+    files.forEach(file => {
       const curSource = join(source, file);
       if (lstatSync(curSource).isDirectory()) {
         copyDirectoryTo(curSource, targetFolder);
@@ -72,14 +86,14 @@ export function copyDirectoryTo(source, target) {
   }
 }
 
-function copyFileTest( source, target ) {
+function copyFileTest(source, target) {
 
   let targetFile = target;
 
   // if target is a directory a new file with the same name will be created
-  if ( existsSync( target ) ) {
-      if ( lstatSync( target ).isDirectory() ) {
-          targetFile = join( target, basename( source ) );
+  if (existsSync(target)) {
+      if (lstatSync(target).isDirectory()) {
+          targetFile = join(target, basename(source));
       }
   }
 
@@ -116,12 +130,12 @@ export function copyFileSync(source, dest, hook) {
 export function copyFile(source, target) {
   const rd = createReadStream(source);
   const wr = createWriteStream(target);
-  return new Promise(function(resolve, reject) {
+  return new Promise((resolve, reject) => {
     rd.on('error', reject);
     wr.on('error', reject);
     wr.on('finish', resolve);
     rd.pipe(wr);
-  }).catch(function(error) {
+  }).catch((error) => {
     rd.destroy();
     wr.end();
     throw error;
@@ -134,8 +148,8 @@ export function filterParentDirectory(path) {
 }
 
 export async function preCheck() {
-  if (!existsSync(config.API_DOCS_DIR)) {
-    mkdirSync(config.API_DOCS_DIR);
+  if (!existsSync(API_DOCS_DIR)) {
+    mkdirSync(API_DOCS_DIR);
   }
 
   return (await validateNPMVersion()) && validateNodeVersion(process.version);
@@ -143,7 +157,7 @@ export async function preCheck() {
 
 // logging function that checks to see if VERBOSE mode is on
 export function vlog(message, data = null) {
-  if (config.VERBOSE) {
+  if (VERBOSE) {
     if (data) {
       console.log(message, data);
     } else {
@@ -184,7 +198,7 @@ export function deleteFolderRecursive(path) {
     throw(new Error('Refusing to delete system root'));
   }
   if (existsSync(path)) {
-    readdirSync(path).forEach(function(file, index) {
+    readdirSync(path).forEach((file, index) => {
       const curPath = join(path, file);
       if (lstatSync(curPath).isDirectory()) { // recurse
         deleteFolderRecursive(curPath);
@@ -237,17 +251,49 @@ export function introify(text, introClass = 'intro') {
   return lineArray.join('\n');
 }
 
-export async function tryToRun(func: (task) => void, task, name: string, outDir?: string) {
-  try {
-    // console.log(`Generating ${name} Docs`);
-    await func(task);
-  } catch (error) {
-    // note if outDir is not provided throw any time the command fails
-    if (!outDir || !existsSync(outDir)) {
-      throw error;
+
+export async function createArchive(name: string, fileGlob: (string | [string])) {
+  const tmp = '.tmp';
+  if (!existsSync(tmp)) {
+    mkdirSync(tmp);
+  }
+
+  const globArray = typeof fileGlob === 'string' ? [fileGlob] : fileGlob;
+  const files = [];
+  for (const globStr of globArray) {
+    const foundFiles = await globp(globStr, {
+      cwd: join(process.cwd(), 'src'),
+      root: process.cwd()
+    });
+    files.push(...foundFiles);
+  }
+
+  const zipPath = join(tmp, `${name}.zip`);
+  const archive = archiver(zipPath, { store: true });
+
+  for (let file of files) {
+    file = join('src', file);
+    if (lstatSync(file).isDirectory()) {
+      archive.directory(file, file);
     } else {
-      console.log(error);
-      console.log(`${name} Docs generation failed, using cached version.`);
+      archive.file(file, { name: basename(file) });
     }
   }
+
+  await archive.finalize();
+  return zipPath;
+}
+
+export async function uploadToS3(filePath) {
+  const file = readFileSync(filePath);
+
+  const s3 = new AWS.S3();
+  s3.putObject({
+    Bucket: 'ionic-docs',
+    Key: basename(filePath),
+    Body: file
+  }, resp => {
+    console.log(resp);
+    console.log('Successfully uploaded package.');
+  });
 }

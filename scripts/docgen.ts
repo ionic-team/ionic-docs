@@ -7,46 +7,72 @@ import isCI from 'is-ci';
 import Listr from 'listr';
 import listrVerboseRenderer from 'listr-verbose-renderer';
 
-import { generate as apiDocs } from './api';
-import { generate as cliDocs } from './cli';
-import { generate as componentPreview } from './component-preview';
-import { generate as nativeDocs } from './native';
-import { generate as storageDocs } from './storage';
-import { preCheck, tryToRun, vlog } from './utils';
-import {
-  API_DOCS_DIR,
-  CLI_DOCS_DIR,
-  COMPONENT_PREVIEW_DIR,
-  NATIVE_DOCS_DIR,
-  STORAGE_DOCS_DIR,
-  setVerbose
-} from './config';
+import apiDocs from './api/generate';
+import cliDocs from './cli/generate';
+import componentPreview from './component-preview/generate';
+import nativeDocs from './native/generate';
+import storageDocs from './storage/generate';
+import storageDeploy from './storage/deploy';
+import { preCheck, vlog } from './utils';
+import { AWS_ACCESS_KEY_ID, setVerbose } from './config';
 
 const program = require('commander');
 
 // the main task of the API documentation generation process
-const allTasks = {
-  'framework': {
+
+const allTasks = [
+  {
+    id: 'framework',
     title: 'API Docs',
-    task: (ctx, task) => tryToRun(apiDocs, task, 'API', API_DOCS_DIR)
+    genFunc: apiDocs
   },
-  'cli': {
+  {
+    id: 'cli',
     title: 'CLI Docs',
-    task: (ctx, task) => tryToRun(cliDocs, task, 'CLI', CLI_DOCS_DIR)
+    genFunc: cliDocs
   },
-  'component-preview': {
+  {
+    id: 'component-preview',
     title: 'Component Preview',
-    task: (ctx, task) => tryToRun(componentPreview, task, 'Component Preview', COMPONENT_PREVIEW_DIR)
+    genFunc: componentPreview
   },
-  'native': {
+  {
+    id: 'native',
     title: 'Native Docs',
-    task: (ctx, task) => tryToRun(nativeDocs, task, 'Native', NATIVE_DOCS_DIR)
+    genFunc: nativeDocs,
+    deployFunc: null
   },
-  'storage': {
+  {
+    id: 'storage',
     title: 'Storage Docs',
-    task: (ctx, task) => tryToRun(storageDocs, task, 'Storage', STORAGE_DOCS_DIR)
+    genFunc: storageDocs,
+    deployFunc: storageDeploy
   }
-};
+].reduce((map, obj) => {
+  // Listr needs this to be an array but we're making it an object for now to
+  // make single task runs simpler
+  map[obj.id] = {
+    title: obj.title,
+    task: () => {
+      return new Listr([
+        {
+          title: `Generating ${obj.title}`,
+          task: (ctx, task) => obj.genFunc(task)
+          .catch((e) => {
+            ctx[obj.id] = false;
+            throw(e);
+          })
+        },
+        {
+          title: `Deploying ${obj.title}`,
+          enabled: ctx => obj.deployFunc && AWS_ACCESS_KEY_ID &&ctx[obj.id] !== false,
+          task: (ctx, task) => {obj.deployFunc(task); }
+        }
+      ]);
+    }
+  };
+  return map;
+}, {});
 
 // Invoke run() only if executed directly i.e. `node ./scripts/e2e`
 if (require.main === module) {
@@ -63,7 +89,7 @@ if (require.main === module) {
 
   const singleSectionRun = program.section && program.section !== 'all';
 
-  const listrOpts: any = {};
+  const listrOpts: any = { exitOnError: false };
   if (isCI || program.verbose || singleSectionRun) {
     listrOpts.renderer = listrVerboseRenderer;
     setVerbose(true);
@@ -78,12 +104,14 @@ if (require.main === module) {
       task: () => preCheck()
     },
     {
-      title: 'Generating',
+      title: 'Main Tasks',
       task: () => {
         return new Listr(chosenTasks, { concurrent: true });
       }
     }
   ], listrOpts);
 
-  queue.run();
+  queue.run().catch(err => {
+    vlog(err);
+  });
 }

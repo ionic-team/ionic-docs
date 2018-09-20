@@ -20,7 +20,11 @@ export const COMPONENT_PREVIEW_DIR = process.env.COMPONENT_PREVIEW_DIR || join('
 export const COMPONENT_PREVIEW_REPO_URL = process.env.COMPONENT_PREVIEW_REPO_URL || 'https://github.com/ionic-team/component-preview';
 export const COMPONENT_PREVIEW_DOCS_DIR = process.env.COMPONENT_PREVIEW_DOCS_DIR || join('src/content/component-preview-app');
 
-// setting
+// AWS
+export const AWS_ACCESS_KEY_ID = process.env.AWS_ACCESS_KEY_ID || null;
+export const AWS_SECRET_ACCESS_KEY = process.env.AWS_SECRET_ACCESS_KEY || null;
+
+// settings
 export let VERBOSE = bool(process.env.VERBOSE) || false;
 
 export function setVerbose(val) {

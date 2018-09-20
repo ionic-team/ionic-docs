@@ -11,7 +11,7 @@ const menuHeader = '/* tslint:disable */\n\nexport const cliMenu = ';
 const menuFooter = ';\n';
 
 // the main task of the API documentation generation process
-export async function generate(task) {
+export default async function generate(task) {
   const startTime = new Date().getTime();
 
   task.output = 'Updating...';

@@ -3,7 +3,6 @@ title: Framework Docs
 hideTOC: true
 hideFooter: true
 ---
-
 <div class="cards">
   <card-link headline="Introduction"
              has-icon="true"

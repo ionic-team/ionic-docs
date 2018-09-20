@@ -36,7 +36,7 @@ const PREVIEW_PATH = 'test/preview/index.html';
 let listrTask = null;
 
 // the main task of the API documentation generation process
-export async function generate(task) {
+export default async function generate(task) {
   listrTask = task;
   const startTime = new Date().getTime();
 
