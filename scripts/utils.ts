@@ -259,19 +259,17 @@ export async function createArchive(name: string, fileGlob: (string | string[]))
   }
 
   const globArray = typeof fileGlob === 'string' ? [fileGlob] : fileGlob;
-  const files = [];
+  let files = [];
 
   for (const globStr of globArray) {
     const foundFiles = await globp(globStr, {
       root: process.cwd()
     });
-
-    files.concat(foundFiles);
+    files = files.concat(foundFiles);
   }
 
   const zipPath = join(tmp, `${name}.zip`);
   const archive = archiver(zipPath, { store: true });
-
   for (const file of files) {
     if (lstatSync(file).isDirectory()) {
       archive.directory(file, file);
