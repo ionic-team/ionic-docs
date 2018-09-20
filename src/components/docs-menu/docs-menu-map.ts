@@ -72,9 +72,8 @@ export const pro = {
     'Git Workflow': '/docs/pro/basics/git'
   },
   'Builds': {
-    'Deploy Builds': 'docs/pro/builds/builds#deploy-builds',
-    'Package Builds': 'docs/pro/builds/builds#package-builds',
-    'Build Environments': 'docs/pro/builds/environments'
+    'Build Types': '/docs/pro/builds/intro',
+    'Build Environments': '/docs/pro/builds/environments'
   },
   'Deploy': {
     'Introduction': '/docs/pro/deploy/intro',

@@ -90,11 +90,18 @@ export class DocsMenu {
 
   @Watch('path')
   setActiveItemFromPath(path) {
-    const topLevelKeys = Object.keys(menuMap.main);
+    // Decide if we should look at the Pro or Framework doc maps
+    let keyMap: any = menuMap.main;
+    if (path.includes('/pro')) {
+      keyMap = menuMap.pro;
+    }
+
+    // Find the URL we're at
+    const topLevelKeys = Object.keys(keyMap);
     const activeKey = topLevelKeys.find(key => {
-      const items = menuMap.main[key];
-      if (items === path) return true;
-      return Object.keys(items).some(itemKey => items[itemKey] === path);
+      const items = keyMap[key];
+      if (typeof(items) === 'string' && items.split('#')[0] === path) return true;
+      return Object.keys(items).some(itemKey => items[itemKey].split('#')[0] === path);
     });
     this.setActiveItem(activeKey);
   }
@@ -182,6 +189,19 @@ export class DocsMenu {
               return renderer(key, val, onClick);
             })}
           </ul>,
+          <ul>
+            <li style={{ marginTop: '1.5rem' }}>
+              <stencil-route-link
+                class="menu__item menu__item--outbound migration-pill"
+                url="/docs/building/migration"
+                exact>
+                  v4 Migration Guide
+                  <svg viewBox="0 0 16 24">
+                    <path d="M3 2l10 10L3 22" stroke-width="3" fill="none" fill-rule="evenodd"/>
+                  </svg>
+              </stencil-route-link>
+            </li>
+          </ul>
         ];
       case 'framework':
       default:
