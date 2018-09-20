@@ -1,21 +1,12 @@
-# Managing Automations
+# Using Automations
 
-Creating new automations is simple.  To get started, simply navigate to the `Automate` tab within the desired app.
+## Managing Automations
 
-## Creating Automations
+Creating and customizing automations is simple.  To get started, simply navigate to the `Automate` tab within the desired app.
 
-To create a new automation, click the `New Automation` button on the top right of the `Automate` dashboard.
+To **create a new automation**, click the `New Automation` button on the top right of the `Automate` dashboard. When clicked, the automation customization form will appear, which has several fields available to customize the automation (Read more about these [below](#customizing-automations)). 
 
-<img src="/docs/assets/img/pro/ss-automations-dashboard-new.png" class="browser" />
-
-Upon clicking, the automation customization form will appear (seen below), which has several fields available to customize the automation:
-
-
-## Editing Automations
-
-To edit an automation, click the three dots next to the one you'd like to modify.
-
-<img src="/docs/assets/img/pro/ss-automations-dashboard-settings.png" class="browser" />
+To **edit an automation**, click the three dots next to the one you'd like to modify.
 
 ## Customizing Automations
 
