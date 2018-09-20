@@ -1,6 +1,6 @@
 import { introify } from '../utils';
 
-export function getPluginMarkup(data): string {
+export default function getPluginMarkup(data): string {
   const r = '\n\n';
   const st = '<strong>Type: </strong>';
 

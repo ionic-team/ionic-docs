@@ -10,15 +10,17 @@ import { join } from 'path';
 import { eq, parse, valid } from 'semver';
 
 import {
-  API_DOCS_DIR,
-  IONIC_CORE_SRC,
-  IONIC_DIR,
-  IONIC_REPO_URL
+  FRAMEWORK_COMPONENTS_SRC,
+  FRAMEWORK_CORE_DIR,
+  FRAMEWORK_DIR,
+  FRAMEWORK_DOCS_DIR,
+  FRAMEWORK_MENU_PATH,
+  FRAMEWORK_REPO_URL
 } from '../config';
 
 import { getComponentMarkup } from './template';
 import { checkout, ensureLatestMaster, getVersions } from '../git';
-import * as npm from '../npm';
+import { installFramework as npmInstallFramework, run as npmRun } from '../npm';
 import { copyFileSync, vlog } from '../utils';
 
 import {
@@ -26,11 +28,10 @@ import {
   versions as FRAMEWORK_VERSIONS
 } from '../../src/versions';
 
-const menuPath = 'src/components/docs-menu';
 const menuHeader = '/* tslint:disable */\n\nexport const apiMap = ';
 const menuFooter = ';\n';
-const ionicComponentsDir = `${IONIC_DIR}/${IONIC_CORE_SRC}/components`;
-const GIT_SRC_URL = `${IONIC_REPO_URL}/tree/master/${IONIC_CORE_SRC}/components`;
+const ionicComponentsDir = join(FRAMEWORK_DIR, FRAMEWORK_COMPONENTS_SRC);
+const GIT_SRC_URL = `${FRAMEWORK_REPO_URL}/tree/master/${FRAMEWORK_COMPONENTS_SRC}/components`;
 const PREVIEW_PATH = 'test/preview/index.html';
 
 let listrTask = null;
@@ -42,11 +43,11 @@ export default async function generate(task) {
 
   task.output = 'Updating...';
   // clone/update the git repo and get a list of all the tags
-  await ensureLatestMaster(IONIC_DIR, IONIC_REPO_URL);
+  await ensureLatestMaster(FRAMEWORK_DIR, FRAMEWORK_REPO_URL);
 
   vlog('validating tags');
   task.output = 'Getting Tags...';
-  const allVersions = await getVersions(IONIC_DIR);
+  const allVersions = await getVersions(FRAMEWORK_DIR);
 
   const versions = allVersions.filter(v => {
 
@@ -76,7 +77,7 @@ export default async function generate(task) {
     const thisVersionIsCurrent = version === CURRENT_VERSION;
 
     const DOCS_DEST = thisVersionIsCurrent ?
-      join(API_DOCS_DIR) : join(API_DOCS_DIR, `${version}/`);
+      join(FRAMEWORK_DOCS_DIR) : join(FRAMEWORK_DOCS_DIR, `${version}/`);
     const fileToCheck = thisVersionIsCurrent ?
       join(DOCS_DEST, 'alert.md') : DOCS_DEST;
 
@@ -89,19 +90,22 @@ export default async function generate(task) {
     task.output = `Generating API docs for ${version} (1-3 mins)`;
     task.output = `Checking out ${version}`;
     const test = await checkout(
-      IONIC_DIR,
+      FRAMEWORK_DIR,
       sv.raw.indexOf('+nightly') !== -1 ? 'master' : sv.raw
     );
     task.output = `NPM Installing ${version}`;
-    await npm.installAPI();
+    await npmInstallFramework();
     task.output = `Building Docs for ${version}`;
-    const APIDocs = await npm.buildAPIDocs();
+    await npmRun('build.docs.json', FRAMEWORK_CORE_DIR);
+    const APIDocs = JSON.parse(
+      readFileSync(`${FRAMEWORK_DIR}/core/dist/docs.json`, `utf8`)
+    );
 
     copyFiles(APIDocs.components, DOCS_DEST, version);
 
     task.output = `Generating Nav for ${version}`;
     generateNav(
-      join(menuPath, `docs-api-map.ts`),
+      FRAMEWORK_MENU_PATH,
       APIDocs.components,
       version === 'nightly' ? 'nightly' : sv.version
     );
@@ -197,7 +201,7 @@ function getUsage(componentName) {
 
 async function getNightly() {
   const pkgStr = await readFileSync(
-    join(IONIC_DIR, 'core', 'package.json')
+    join(FRAMEWORK_DIR, 'core', 'package.json')
   );
   return parse(`${JSON.parse(pkgStr.toString('utf8')).version}+nightly`);
 }

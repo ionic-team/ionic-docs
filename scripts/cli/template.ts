@@ -1,4 +1,4 @@
-export function getVersionMarkup(command): string {
+export default function getVersionMarkup(command): string {
   let markdown = `# ${command.name}\n\n`;
 
   markdown += `\`${command.name} `;

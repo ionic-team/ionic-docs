@@ -1,13 +1,17 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs';
 import { join } from 'path';
-import * as config from '../config';
-import * as docgen from './template';
-import * as git from '../git';
+import {
+  NATIVE_DIR,
+  NATIVE_DOCS_DIR,
+  NATIVE_MENU_PATH,
+  NATIVE_REPO_URL
+} from '../config';
+import render from './template';
+import { ensureLatestMaster } from '../git';
 import { install, run } from '../npm';
 import { execp, vlog } from '../utils';
 
-const distList = join(config.NATIVE_DIR, '/dist/@ionic-native');
-const menuPath = join('src/components/docs-menu/native-menu.ts');
+const distList = join(NATIVE_DIR, '/dist/@ionic-native');
 const menuHeader = '/* tslint:disable:quotemark */\n\nexport const nativeMenu = ';
 
 let navList: object = { 'Overview': '/docs/native' };
@@ -16,18 +20,18 @@ let navList: object = { 'Overview': '/docs/native' };
 export default async function generate(task) {
   const startTime = new Date().getTime();
   task.output = 'Updating...';
-  const repoRef = await git.ensureLatestMaster(
-    config.NATIVE_DIR,
-    config.NATIVE_REPO_URL,
+  const repoRef = await ensureLatestMaster(
+    NATIVE_DIR,
+    NATIVE_REPO_URL,
     'v5'
   );
 
   vlog('installing and building');
   task.output = 'NPM Installing...';
-  await install(config.NATIVE_DIR);
+  await install(NATIVE_DIR);
 
   task.output = 'NPM run build:core...';
-  await run('build:core', config.NATIVE_DIR);
+  await run('build:core', NATIVE_DIR);
 
   vlog('Reading output typescript data file');
   task.output = 'Generating Typedoc...';
@@ -39,7 +43,7 @@ export default async function generate(task) {
   task.output = 'Generating Nav...';
   prepareNav();
   const ts = `${menuHeader}${JSON.stringify(navList, null, '  ')};\n`;
-  writeFileSync(menuPath, ts);
+  writeFileSync(NATIVE_MENU_PATH, ts);
 
   const endTime = new Date().getTime();
   task.output = `Native Docs copied in ${endTime - startTime}ms`;
@@ -48,13 +52,13 @@ export default async function generate(task) {
 async function getTypeDoc() {
   vlog('generating native docs json');
   await execp([
-    `cd ${config.NATIVE_DIR} && ${join('../../node_modules/.bin/typedoc')}`,
+    `cd ${NATIVE_DIR} && ${join('../../node_modules/.bin/typedoc')}`,
     `--json ${join('dist/docs.json')} --mode modules`,
     `${join('src/@ionic-native/plugins/*/index.ts')}`
   ].join(' '));
 
   return JSON.parse(
-    readFileSync(join(config.NATIVE_DIR, '/dist/docs.json'), `utf8`)
+    readFileSync(join(NATIVE_DIR, '/dist/docs.json'), `utf8`)
   );
 }
 
@@ -64,15 +68,15 @@ function processPlugin(tsData, task) {
   const plugin = preparePluginData(tsData);
   task.output = `Processing ${plugin.prettyName}...`;
 
-  if (!existsSync(config.NATIVE_DOCS_DIR)) {
-    mkdirSync(config.NATIVE_DOCS_DIR);
+  if (!existsSync(NATIVE_DOCS_DIR)) {
+    mkdirSync(NATIVE_DOCS_DIR);
   }
 
   navList[plugin.prettyName] = `/docs/native/${plugin.npmName}`;
 
   writeFileSync(
-    join(config.NATIVE_DOCS_DIR, `${plugin.npmName}.md`),
-    docgen.getPluginMarkup(plugin)
+    join(NATIVE_DOCS_DIR, `${plugin.npmName}.md`),
+    render(plugin)
   );
 }
 

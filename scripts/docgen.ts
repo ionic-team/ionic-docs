@@ -2,45 +2,51 @@
 
 import { config as dotenv } from 'dotenv';
 dotenv({ silent: true });
-import { existsSync } from 'fs';
+import program from 'commander';
 import isCI from 'is-ci';
 import Listr from 'listr';
 import listrVerboseRenderer from 'listr-verbose-renderer';
 
-import apiDocs from './api/generate';
+import frameworkDocs from './framework/generate';
+import frameworkDeploy from './framework/deploy';
 import cliDocs from './cli/generate';
+import cliDeploy from './cli/deploy';
 import componentPreview from './component-preview/generate';
+import componentPreviewDeploy from './component-preview/deploy';
 import nativeDocs from './native/generate';
+import nativeDeploy from './native/deploy';
 import storageDocs from './storage/generate';
 import storageDeploy from './storage/deploy';
 import { preCheck, vlog } from './utils';
 import { AWS_ACCESS_KEY_ID, setVerbose } from './config';
 
-const program = require('commander');
 
 // the main task of the API documentation generation process
 
 const allTasks = [
   {
     id: 'framework',
-    title: 'API Docs',
-    genFunc: apiDocs
+    title: 'Framework API Docs',
+    genFunc: frameworkDocs,
+    deployFunc: frameworkDeploy
   },
   {
     id: 'cli',
     title: 'CLI Docs',
-    genFunc: cliDocs
+    genFunc: cliDocs,
+    deployFunc: cliDeploy
   },
   {
     id: 'component-preview',
     title: 'Component Preview',
-    genFunc: componentPreview
+    genFunc: componentPreview,
+    deployFunc: componentPreviewDeploy
   },
   {
     id: 'native',
     title: 'Native Docs',
     genFunc: nativeDocs,
-    deployFunc: null
+    deployFunc: nativeDeploy
   },
   {
     id: 'storage',
@@ -65,8 +71,8 @@ const allTasks = [
         },
         {
           title: `Deploying ${obj.title}`,
-          enabled: ctx => obj.deployFunc && AWS_ACCESS_KEY_ID &&ctx[obj.id] !== false,
-          task: (ctx, task) => {obj.deployFunc(task); }
+          enabled: ctx => obj.deployFunc && AWS_ACCESS_KEY_ID && ctx[obj.id] !== false,
+          task: (ctx, task) => obj.deployFunc(task)
         }
       ]);
     }

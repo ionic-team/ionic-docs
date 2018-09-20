@@ -1,4 +1,4 @@
-export function getMarkup(data): string {
+export default function getMarkup(data): string {
   return `
 # Storage
 
@@ -18,13 +18,15 @@ ${data.children.map(member => {
   if (
     member.kindString === 'Constructor' ||
     member.kindString === 'Accessor'
-  ) return `
+  ) {
+    return `
 ### ${member.name}
 
 ${member.comment.shortText ? member.comment.shortText : ''}
 
 ${member.comment.text ? member.comment.text : ''}
 <br><br>`;
+  }
 
   return `
 

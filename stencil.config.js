@@ -24,7 +24,8 @@ exports.config = {
         return !/color\-generator/.test(url.pathname);
       }
     }
-  ]
+  ],
+  excludeSrc: ['/test/', '**/.spec.', 'src/content/component-preview-app/']
 };
 
 exports.devServer = {

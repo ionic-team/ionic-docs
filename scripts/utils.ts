@@ -18,20 +18,20 @@ import { basename, join } from 'path';
 import { promisify } from 'util';
 import * as semver from 'semver';
 import {
-  API_DOCS_DIR,
   AWS_ACCESS_KEY_ID,
   AWS_SECRET_ACCESS_KEY,
+  FRAMEWORK_DOCS_DIR,
   VERBOSE
 } from './config';
 
-
-export const execp = promisify(exec);
-const globp = promisify(glob);
 
 AWS.config.update({
   accessKeyId: AWS_ACCESS_KEY_ID,
   secretAccessKey: AWS_SECRET_ACCESS_KEY
 });
+
+export const execp = promisify(exec);
+const globp = promisify(glob);
 
 // copy dir to target
 export function copyDirectory(source, target) {
@@ -148,8 +148,8 @@ export function filterParentDirectory(path) {
 }
 
 export async function preCheck() {
-  if (!existsSync(API_DOCS_DIR)) {
-    mkdirSync(API_DOCS_DIR);
+  if (!existsSync(FRAMEWORK_DOCS_DIR)) {
+    mkdirSync(FRAMEWORK_DOCS_DIR);
   }
 
   return (await validateNPMVersion()) && validateNodeVersion(process.version);
@@ -252,7 +252,7 @@ export function introify(text, introClass = 'intro') {
 }
 
 
-export async function createArchive(name: string, fileGlob: (string | [string])) {
+export async function createArchive(name: string, fileGlob: (string | string[])) {
   const tmp = '.tmp';
   if (!existsSync(tmp)) {
     mkdirSync(tmp);
@@ -260,19 +260,19 @@ export async function createArchive(name: string, fileGlob: (string | [string]))
 
   const globArray = typeof fileGlob === 'string' ? [fileGlob] : fileGlob;
   const files = [];
+
   for (const globStr of globArray) {
     const foundFiles = await globp(globStr, {
-      cwd: join(process.cwd(), 'src'),
       root: process.cwd()
     });
-    files.push(...foundFiles);
+
+    files.concat(foundFiles);
   }
 
   const zipPath = join(tmp, `${name}.zip`);
   const archive = archiver(zipPath, { store: true });
 
-  for (let file of files) {
-    file = join('src', file);
+  for (const file of files) {
     if (lstatSync(file).isDirectory()) {
       archive.directory(file, file);
     } else {
@@ -288,12 +288,11 @@ export async function uploadToS3(filePath) {
   const file = readFileSync(filePath);
 
   const s3 = new AWS.S3();
-  s3.putObject({
-    Bucket: 'ionic-docs',
-    Key: basename(filePath),
-    Body: file
-  }, resp => {
-    console.log(resp);
-    console.log('Successfully uploaded package.');
+  return new Promise((resolve, reject) => {
+    s3.upload({
+      Bucket: 'ionic-docs',
+      Key: basename(filePath),
+      Body: file
+    }, resp => resolve(resp));
   });
 }

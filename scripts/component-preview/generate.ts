@@ -1,6 +1,10 @@
 import { existsSync, readFileSync, readdirSync, writeFileSync } from 'fs';
 import { join } from 'path';
-import { COMPONENT_PREVIEW_DIR, COMPONENT_PREVIEW_DOCS_DIR, COMPONENT_PREVIEW_REPO_URL} from '../config';
+import {
+  COMPONENT_PREVIEW_DIR,
+  COMPONENT_PREVIEW_DOCS_DIR,
+  COMPONENT_PREVIEW_REPO_URL
+} from '../config';
 import { ensureLatestMaster } from '../git';
 import { build, install } from '../npm';
 import { copyDirectoryTo, execp, listDirs, vlog } from '../utils';

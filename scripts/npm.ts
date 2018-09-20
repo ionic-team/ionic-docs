@@ -1,24 +1,10 @@
 import { readFileSync } from 'fs';
-import * as path from 'path';
+import { join } from 'path';
 
-import * as config from './config';
+import { CLI_DIR, FRAMEWORK_DIR } from './config';
 import { execp, vlog } from './utils';
 
-export async function installAPI() {
-  vlog('npm installing monorepo');
-  await execp('npm i', { cwd: config.IONIC_DIR });
-  vlog('npm installing core');
-  return execp(`npm i && npm rebuild node-sass`, { cwd: path.join(config.IONIC_DIR, 'core') });
-}
-
-export async function buildAPIDocs() {
-  vlog('building');
-  await execp(`cd ${config.IONIC_DIR}/core && npm run build.docs.json`);
-  return JSON.parse(
-    readFileSync(`${config.IONIC_DIR}/core/dist/docs.json`, `utf8`)
-  );
-}
-
+// Generic helpers
 export async function install(dir?) {
   await execp('npm i', dir ? { cwd: dir } : null);
 }
@@ -31,14 +17,24 @@ export async function run(command: string, dir?) {
   await execp(`npm run ${command}`, dir ? { cwd: dir } : null);
 }
 
+// Section specific npm related commands
+export async function installFramework() {
+  vlog('npm installing monorepo');
+  await install(FRAMEWORK_DIR);
+  vlog('npm installing core');
+  const coreDir = join(FRAMEWORK_DIR, 'core');
+  await install(coreDir);
+  return execp(`npm rebuild node-sass`, { cwd: coreDir });
+}
+
 export async function getCLIDocs() {
   vlog('npm installing');
-  await execp('npm i', { cwd: config.CLI_DIR });
+  await install(CLI_DIR);
   vlog('running bootstrap');
-  await execp('npm run bootstrap', { cwd: config.CLI_DIR });
+  await run('bootstrap', CLI_DIR);
   vlog('building CLI docs');
   await execp(`npm run docs`, {
-    cwd: config.CLI_DIR,
+    cwd: CLI_DIR,
     env: {
       ...process.env,
       FORCE_COLOR: '1'
@@ -53,7 +49,7 @@ export async function getCLIDocs() {
     //   readFileSync(`${config.CLI_DIR}/docs/ionic-angular.json`, `utf8`)
     // ),
     'angular': JSON.parse(
-      readFileSync(`${config.CLI_DIR}/docs/angular.json`, `utf8`)
+      readFileSync(`${CLI_DIR}/docs/angular.json`, `utf8`)
     )
   };
 }

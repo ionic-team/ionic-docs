@@ -1,9 +1,11 @@
-import { STORAGE_DOCS_PATH } from '../config';
+import { COMPONENT_PREVIEW_DOCS_DIR } from '../config';
 import { createArchive, uploadToS3, vlog } from '../utils';
 
 export default async function deploy(task) {
   task.output = 'Creating Archive';
-  const zipPath = await createArchive('storage', [STORAGE_DOCS_PATH]);
+  const zipPath = await createArchive('components', [
+    COMPONENT_PREVIEW_DOCS_DIR
+  ]);
   task.output = 'Uploading Archive to S3';
-  return uploadToS3(zipPath);
+  await uploadToS3(zipPath);
 }
