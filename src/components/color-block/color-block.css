@@ -1,0 +1,73 @@
+color-block {
+  display: block;
+}
+
+.color-select {
+  display: block;
+  position: relative;
+
+  width: 100%;
+
+  padding: 1em;
+
+  border: 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.08);
+  border-radius: 4px;
+
+  transition: .2s all ease;
+}
+
+.color-select:hover {
+  transform: translateY(-1px);
+
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+.color-dot {
+  display: inline-block;
+  vertical-align: middle;
+
+  width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+  margin-top: -4px;
+}
+
+.color-select ion-select {
+  position: static;
+
+  display: inline-flex;
+  width: calc(100% - 20px);
+
+  font-size: 14px;
+  font-weight: 700;
+
+  text-align: left;
+}
+
+.color-name,
+.color-value {
+  white-space: nowrap;
+}
+
+.color-property code {
+  white-space: pre-wrap;
+  margin-left: 0;
+}
+
+.color-block {
+  display: inline-block;
+
+  width: 20px;
+  height: 20px;
+
+  border: 1px solid var(--whiteish);
+  border-radius: 4px;
+}
+
+.color-block,
+.color-code {
+  vertical-align: middle;
+}
+

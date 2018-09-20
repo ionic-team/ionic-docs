@@ -176,6 +176,39 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface ColorBlock {
+
+    }
+  }
+
+  interface HTMLColorBlockElement extends StencilComponents.ColorBlock, HTMLStencilElement {}
+
+  var HTMLColorBlockElement: {
+    prototype: HTMLColorBlockElement;
+    new (): HTMLColorBlockElement;
+  };
+  interface HTMLElementTagNameMap {
+    'color-block': HTMLColorBlockElement;
+  }
+  interface ElementTagNameMap {
+    'color-block': HTMLColorBlockElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'color-block': JSXElements.ColorBlockAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface ColorBlockAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface ColorGenerator {
 
     }
