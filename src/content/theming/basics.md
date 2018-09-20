@@ -16,7 +16,7 @@ Ionic Framework is built to be a blank slate that can easily be customized and m
 
 Ionic has nine default colors that can be used to change the color of many components. Each color is actually a collection of multiple properties, including a `shade` and `tint`, used throughout Ionic.
 
-When changing a color, it is important to set all of the related properties. This can be done easily with the [Color Generator](/docs/theming/color-generator) tool, but these can also be manually written if desired.
+When changing a color, it is important to set all of the related properties. This can be done easily with the [Color Generator](/docs/theming/color-generator) tool, but these can also be manually written if desired. For more information on Ionic colors, see [Advanced Colors](/docs/theming/advanced#colors).
 
 <color-accordion></color-accordion>
 
@@ -30,7 +30,7 @@ Ionic has two **modes** that are used to customize the look of components based 
 
 ## CSS Variables
 
-All of the Ionic components are themed using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">CSS properties (variables)</a>. CSS variables add dynamic values to an otherwise static language. This is something that has traditionally required a CSS preprocessor like Sass. The look of an application can easily be changed by changing the value of any of the [Ionic CSS Variables](/docs/theming/css-variables).
+All of the Ionic components are themed using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">CSS properties (variables)</a>. CSS variables add dynamic values to an otherwise static language. This is something that has traditionally required a CSS preprocessor like Sass. The look of an application can easily be changed by changing the value of any of the [Ionic Variables](/docs/theming/css-variables#ionic-variables).
 
 
 ## Branding
