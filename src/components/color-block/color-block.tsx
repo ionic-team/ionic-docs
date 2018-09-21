@@ -17,7 +17,8 @@ export class ColorBlock {
   render() {
     const popoverOptions = {
       'header': 'Select a Color',
-      'subHeader': 'The variations of the color will reflect in the table'
+      'subHeader': 'The variations of the color will reflect in the table',
+      'cssClass': 'temp-fix'
     };
 
     const color = this.color;

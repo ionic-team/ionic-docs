@@ -82,3 +82,14 @@ color-block {
 .color-code {
   vertical-align: middle;
 }
+
+/* TODO this is a temporary fix until a new Ionic version is released */
+.temp-fix ion-list,
+.temp-fix ion-list-header {
+  margin-bottom: 0;
+}
+
+.temp-fix ion-label {
+  margin-top: 0;
+  margin-bottom: 0;
+}
