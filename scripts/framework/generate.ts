@@ -14,6 +14,7 @@ import {
   FRAMEWORK_CORE_DIR,
   FRAMEWORK_DIR,
   FRAMEWORK_DOCS_DIR,
+  FRAMEWORK_LOCALIZED,
   FRAMEWORK_MENU_PATH,
   FRAMEWORK_REPO_URL
 } from '../config';
@@ -43,7 +44,9 @@ export default async function generate(task) {
 
   task.output = 'Updating...';
   // clone/update the git repo and get a list of all the tags
-  await ensureLatestMaster(FRAMEWORK_DIR, FRAMEWORK_REPO_URL);
+  if (!FRAMEWORK_LOCALIZED) {
+    await ensureLatestMaster(FRAMEWORK_DIR, FRAMEWORK_REPO_URL);
+  }
 
   vlog('validating tags');
   task.output = 'Getting Tags...';
@@ -88,13 +91,16 @@ export default async function generate(task) {
 
     // Generate the docs for this version
     task.output = `Generating API docs for ${version} (1-3 mins)`;
-    task.output = `Checking out ${version}`;
-    const test = await checkout(
-      FRAMEWORK_DIR,
-      sv.raw.indexOf('+nightly') !== -1 ? 'master' : sv.raw
-    );
-    task.output = `NPM Installing ${version}`;
-    await npmInstallFramework();
+
+    if (!FRAMEWORK_LOCALIZED) {
+      task.output = `Checking out ${version}`;
+      await checkout(
+        FRAMEWORK_DIR,
+        sv.raw.indexOf('+nightly') !== -1 ? 'master' : sv.raw
+      );
+      task.output = `NPM Installing ${version}`;
+      await npmInstallFramework();
+    }
     task.output = `Building Docs for ${version}`;
     await npmRun('build.docs.json', FRAMEWORK_CORE_DIR);
     const APIDocs = JSON.parse(

@@ -1,3 +1,6 @@
+import { config as dotenv } from 'dotenv';
+dotenv({ silent: true });
+
 import { join } from 'path';
 export const GIT_URL = process.env.GIT_URL || 'https://github.com/ionic-team/ionic-docs.git';
 
@@ -5,10 +8,11 @@ export const GIT_URL = process.env.GIT_URL || 'https://github.com/ionic-team/ion
 export const FRAMEWORK_ANGULAR_SRC = process.env.FRAMEWORK_ANGULAR_SRC || join('angular/src');
 export const FRAMEWORK_COMPONENTS_SRC = process.env.FRAMEWORK_COMPONENTS_SRC || join('core/src/components');
 export const FRAMEWORK_DIR = process.env.FRAMEWORK_DIR || join('sources/ionic');
-export const FRAMEWORK_CORE_DIR = process.env.FRAMEWORK_CORE_DIR || join('sources/ionic/core');
+export const FRAMEWORK_CORE_DIR = process.env.FRAMEWORK_CORE_DIR || join(FRAMEWORK_DIR, 'core');
 export const FRAMEWORK_REPO_URL = process.env.FRAMEWORK_REPO_URL || 'https://github.com/ionic-team/ionic';
 export const FRAMEWORK_DOCS_DIR = process.env.FRAMEWORK_DOCS_DIR || join('src/content/api');
 export const FRAMEWORK_MENU_PATH = process.env.FRAMEWORK_MENU_PATH || join('src/components/docs-menu/docs-api-map.ts');
+export const FRAMEWORK_LOCALIZED = bool(process.env.FRAMEWORK_LOCALIZED) || false;
 
 export const CLI_DIR = process.env.CLI_DIR || join('sources/ionic-cli');
 export const CLI_REPO_URL = process.env.CLI_REPO_URL || 'https://github.com/ionic-team/ionic-cli.git';

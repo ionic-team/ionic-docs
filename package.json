@@ -18,8 +18,12 @@
     "server": "node server/build",
     "server-watch": "sd concurrent \"tsc -p server/tsconfig.json --watch\" \"chokidar 'server/build/**/*.js' -c 'npm run server'\" \"npm run dev\"",
     "preserver": "tsc -p server/tsconfig.json",
+
     "heroku-postbuild": "npm run docgen && npm run build",
-    "checksum": "npm run predocgen && node scripts/build/scripts/sumchecker"
+    
+    "checksum": "npm run predocgen && node scripts/build/scripts/sumchecker",
+    "localize": "node scripts/build/scripts/localize",
+    "prelocalize": "tsc -p scripts/tsconfig.json"
   },
   "dependencies": {
     "@stencil/core": "^0.13.0-13",
@@ -41,6 +45,7 @@
     "helmet": "^3.12.0",
     "highlight.js": "^9.12.0",
     "husky": "^0.14.3",
+    "inquirer": "^6.2.0",
     "intersection-observer": "^0.5.0",
     "is-ci": "^1.2.1",
     "listr": "SamVerschueren/listr",
