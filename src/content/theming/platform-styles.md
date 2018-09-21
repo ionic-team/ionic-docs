@@ -49,4 +49,4 @@ There are also many global CSS variables that can be used to override the styles
 }
 ```
 
-For a list of all global CSS variables to override, see [CSS Variables](./css-variables).
+For a list of all global CSS variables to override, see [Advanced Theming](/docs/theming/advanced).
