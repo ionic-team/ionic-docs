@@ -80,13 +80,13 @@ export function copyDirectoryTo(source, target) {
       if (lstatSync(curSource).isDirectory()) {
         copyDirectoryTo(curSource, targetFolder);
       } else {
-        copyFileTest(curSource, targetFolder);
+        copyFileSafeSync(curSource, targetFolder);
       }
     });
   }
 }
 
-function copyFileTest(source, target) {
+function copyFileSafeSync(source, target) {
 
   let targetFile = target;
 

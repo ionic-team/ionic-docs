@@ -1,4 +1,4 @@
-import { existsSync, readFileSync, readdirSync, writeFileSync } from 'fs';
+import { existsSync, readFileSync, readdirSync, unlinkSync, writeFileSync } from 'fs';
 import { join } from 'path';
 import {
   COMPONENT_PREVIEW_DIR,
@@ -51,6 +51,13 @@ export default async function generate(task) {
     join(COMPONENT_PREVIEW_DIR, 'docs-www'),
     COMPONENT_PREVIEW_DOCS_DIR
   );
+
+  task.output = 'Removing unecessary d.ts files';
+  const badFile = 'src/content/component-preview-app/docs-www/build/app/swiper/swiper-interface.d.ts';
+  if (existsSync(badFile)) {
+    unlinkSync(badFile);
+    console.log('DELETED BAD FILE');
+  }
 
   task.output = 'Applying site polyfill';
   const indexPath = join(COMPONENT_PREVIEW_DOCS_DIR, 'docs-www', 'index.html');

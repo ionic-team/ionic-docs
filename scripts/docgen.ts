@@ -37,7 +37,7 @@ const allTasks = [
     deployFunc: cliDeploy
   },
   {
-    id: 'component-preview',
+    id: 'components',
     title: 'Component Preview',
     genFunc: componentPreview,
     deployFunc: componentPreviewDeploy
@@ -86,7 +86,7 @@ if (require.main === module) {
     .version('0.1.0')
     .option(
       '-s, --section [name]',
-      'Individual section to generate: framework, cli, component, native, storage'
+      'Individual section to generate: framework, cli, components, native, storage'
     )
     .option(
       '-v, --verbose',

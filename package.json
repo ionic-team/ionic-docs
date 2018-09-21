@@ -22,8 +22,8 @@
     "checksum": "npm run predocgen && node scripts/build/scripts/sumchecker"
   },
   "dependencies": {
-    "@stencil/core": "^0.11.0",
-    "@stencil/router": "^0.2.5",
+    "@stencil/core": "^0.13.0-13",
+    "@stencil/router": "^0.2.8",
     "@stencil/sass": "0.1.0",
     "@stencil/utils": "latest",
     "@types/node": "^8.10.9",
