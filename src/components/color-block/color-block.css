@@ -48,12 +48,23 @@ color-block {
 
 .color-name,
 .color-value {
+  width: 10%;
+
   white-space: nowrap;
+}
+
+.color-property {
+  word-break: break-word;
+  width: 45%;
 }
 
 .color-property code {
   white-space: pre-wrap;
   margin-left: 0;
+}
+
+.color-description {
+  width: 35%;
 }
 
 .color-block {
@@ -70,4 +81,3 @@ color-block {
 .color-code {
   vertical-align: middle;
 }
-
