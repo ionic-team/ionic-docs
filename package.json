@@ -18,12 +18,12 @@
     "server": "node server/build",
     "server-watch": "sd concurrent \"tsc -p server/tsconfig.json --watch\" \"chokidar 'server/build/**/*.js' -c 'npm run server'\" \"npm run dev\"",
     "preserver": "tsc -p server/tsconfig.json",
-
     "heroku-postbuild": "npm run docgen && npm run build",
-    
     "checksum": "npm run predocgen && node scripts/build/scripts/sumchecker",
     "localize": "node scripts/build/scripts/localize",
-    "prelocalize": "tsc -p scripts/tsconfig.json"
+    "prelocalize": "tsc -p scripts/tsconfig.json",
+    "download": "node scripts/build/scripts/download",
+    "predownload": "tsc -p scripts/tsconfig.json"
   },
   "dependencies": {
     "@stencil/core": "^0.13.0-13",
@@ -51,6 +51,7 @@
     "listr": "SamVerschueren/listr",
     "listr-verbose-renderer": "^0.4.1",
     "marked": "^0.3.18",
+    "node-fetch": "^2.2.0",
     "path": "^0.12.7",
     "semver": "^5.5.0",
     "tslint": "^5.9.1",
