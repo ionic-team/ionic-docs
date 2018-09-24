@@ -1,7 +1,5 @@
 import { Component, Listen, State } from '@stencil/core';
 
-const ESCAPE = 27;
-
 @Component({
   tag: 'img-zoom',
   styleUrl: 'img-zoom.scss',
@@ -17,7 +15,7 @@ export class ImgZoom {
 
   @Listen('window:keyup')
   onKeyUp(event: KeyboardEvent) {
-    if (event.keyCode === ESCAPE) {
+    if (event.code === 'Escape') {
       this.zoomed = false;
     }
   }

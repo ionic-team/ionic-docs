@@ -43,11 +43,6 @@ export default (req, res, next) => {
     // res.setHeader('Content-Security-Policy', csp);
     // res.setHeader('X-Content-Security-Policy', csp);
     // res.setHeader('X-WebKit-CSP', csp);
-
-    // don't index in prod while under the beta subdomain
-    if (req.hostname.indexOf('beta') !== -1) {
-      res.setHeader('X-Robots-Tag', 'noindex, nofollow');
-    }
   }
 
   // cache static files
