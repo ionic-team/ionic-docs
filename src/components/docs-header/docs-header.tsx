@@ -29,6 +29,8 @@ export class DocsHeader {
             { this.isMenuOpen ? <Close/> : <Menu/> }
         </button>
         <a href="/docs" class="docs-logo"><Ionic/><span>Docs</span></a>
+        <ionic-search>
+        </ionic-search>
         <CommunityDropdown/>
         <a href={this.getGithubLink(this.section)} class="github-link" target="_blank">GitHub<NewTab/></a>
       </nav>

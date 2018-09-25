@@ -7,7 +7,6 @@
 import '@stencil/core';
 
 import '@stencil/router';
-import '@stencil/state-tunnel';
 import {
   ColorVariable,
 } from './components/color-gen/color-variables';
@@ -226,6 +225,13 @@ export namespace Components {
   interface ImgZoom {}
   interface ImgZoomAttributes extends StencilHTMLAttributes {}
 
+  interface IonicSearch {
+    'mobile': boolean;
+  }
+  interface IonicSearchAttributes extends StencilHTMLAttributes {
+    'mobile'?: boolean;
+  }
+
   interface LoadingIndicator {}
   interface LoadingIndicatorAttributes extends StencilHTMLAttributes {}
 
@@ -276,6 +282,7 @@ declare global {
     'FileTreeFile': Components.FileTreeFile;
     'FileTree': Components.FileTree;
     'ImgZoom': Components.ImgZoom;
+    'IonicSearch': Components.IonicSearch;
     'LoadingIndicator': Components.LoadingIndicator;
     'SectionSwitch': Components.SectionSwitch;
     'TabGroup': Components.TabGroup;
@@ -310,6 +317,7 @@ declare global {
     'file-tree-file': Components.FileTreeFileAttributes;
     'file-tree': Components.FileTreeAttributes;
     'img-zoom': Components.ImgZoomAttributes;
+    'ionic-search': Components.IonicSearchAttributes;
     'loading-indicator': Components.LoadingIndicatorAttributes;
     'section-switch': Components.SectionSwitchAttributes;
     'tab-group': Components.TabGroupAttributes;
@@ -484,6 +492,12 @@ declare global {
     new (): HTMLImgZoomElement;
   };
 
+  interface HTMLIonicSearchElement extends Components.IonicSearch, HTMLStencilElement {}
+  var HTMLIonicSearchElement: {
+    prototype: HTMLIonicSearchElement;
+    new (): HTMLIonicSearchElement;
+  };
+
   interface HTMLLoadingIndicatorElement extends Components.LoadingIndicator, HTMLStencilElement {}
   var HTMLLoadingIndicatorElement: {
     prototype: HTMLLoadingIndicatorElement;
@@ -531,6 +545,7 @@ declare global {
     'file-tree-file': HTMLFileTreeFileElement
     'file-tree': HTMLFileTreeElement
     'img-zoom': HTMLImgZoomElement
+    'ionic-search': HTMLIonicSearchElement
     'loading-indicator': HTMLLoadingIndicatorElement
     'section-switch': HTMLSectionSwitchElement
     'tab-group': HTMLTabGroupElement
@@ -565,6 +580,7 @@ declare global {
     'file-tree-file': HTMLFileTreeFileElement;
     'file-tree': HTMLFileTreeElement;
     'img-zoom': HTMLImgZoomElement;
+    'ionic-search': HTMLIonicSearchElement;
     'loading-indicator': HTMLLoadingIndicatorElement;
     'section-switch': HTMLSectionSwitchElement;
     'tab-group': HTMLTabGroupElement;

@@ -47,6 +47,7 @@
     "husky": "^0.14.3",
     "inquirer": "^6.2.0",
     "intersection-observer": "^0.5.0",
+    "ionicons": "^4.4.3",
     "is-ci": "^1.2.1",
     "listr": "SamVerschueren/listr",
     "listr-verbose-renderer": "^0.4.1",
