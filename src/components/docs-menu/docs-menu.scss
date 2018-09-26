@@ -8,6 +8,7 @@ docs-menu {
 }
 
 .menu {
+  max-width: 240px;
   font-size: 14px;
   font-weight: 600;
   height: calc(100% - var(--header-height));
