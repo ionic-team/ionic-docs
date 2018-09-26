@@ -65,33 +65,40 @@ export class IonicSearch {
   }
 
   async onKeyDown(e) {
+    // exit search on escape key
     if (e.keyCode === 27) {
       this.close();
       return;
     }
 
-    // if (e.keyCode === 38 && this.selectedIndex > -1) {
-    //   this.selectedIndex--;
-    //   e.preventDefault();
-    //   return;
-    // }
+    // up and down arrows to go through search results
+    if (e.keyCode === 38 && this.selectedIndex > 0) {
+      this.selectedIndex--;
+      e.preventDefault();
+      return;
+    }
 
-    // if (e.keyCode === 40 && this.selectedIndex < this.results.length) {
-    //   this.selectedIndex++;
-    //   e.preventDefault();
-    //   return;
-    // }
+    if (
+        e.keyCode === 40 &&
+        this.selectedIndex <
+          this.results.beta.length + this.results.main.length - 1
+      ) {
+      this.selectedIndex++;
+      e.preventDefault();
+      return;
+    }
 
+    // follow link on enter key
     if (e.keyCode === 13) {
-      const selector = `li.result:nth-child(${this.selectedIndex + 1}) a`;
+      const selector = `li a[data-index="${this.selectedIndex}"]`;
       const link = this.el.querySelector(selector);
-      console.log(link);
       if (link) {
         link.click();
       }
       return;
     }
 
+    // no special keys pressed, conduct search
     const query = this.query = e.target.value;
 
     if (e.target.value.length < 3) {
@@ -114,7 +121,6 @@ export class IonicSearch {
       }
       return groups;
     });
-    console.log(this.results);
   }
 
   touchStart(e) {
@@ -148,12 +154,13 @@ export class IonicSearch {
     this.dragStyles = {};
   }
 
-  printResults(group) {
+  printResults(group, index = 0) {
     return group.map((result, i) =>
       <li class="result">
         <a href={result.url}
            title={result.title}
-           class={this.selectedIndex === i ? 'selected' : ''}
+           class={this.selectedIndex === i + index ? 'selected' : ''}
+           data-index={i + index}
           //  onMouseOver={() => { this.selectedIndex = i; }}
            innerHTML={result.title}></a>
       </li>
@@ -186,15 +193,15 @@ export class IonicSearch {
         }
 
         {this.results !== null ? <ul>
-          {this.results.beta ?
+          {this.results.beta.length ?
             <li class="title">beta.ionicframework.com</li>
            : null }
           {this.printResults(this.results.beta)}
 
-          {this.results.main ?
+          {this.results.main.length ?
             <li class="title">ionicframework.com</li>
            : null }
-          {this.printResults(this.results.main)}
+          {this.printResults(this.results.main, this.results.beta.length)}
 
           {this.results.length === 0 ?
             <li><span class="no-results">No results</span></li>
