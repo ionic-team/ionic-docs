@@ -127,6 +127,20 @@ ionic-search {
         color: #3880ff;
         background-color: #fafafa;
       }
+
+      strong,
+      small {
+        width: 100%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        display: block;
+        font-weight: 500;
+      }
+
+      small {
+        color: #999;
+      }
     }
   
     .title {
@@ -136,6 +150,7 @@ ionic-search {
       padding: 13px 17px;
       color: #8b99b0;
       background: #f6f8fc;
+      letter-spacing: .06em;
     }
   }
 

@@ -161,8 +161,10 @@ export class IonicSearch {
            title={result.title}
            class={this.selectedIndex === i + index ? 'selected' : ''}
            data-index={i + index}
-          //  onMouseOver={() => { this.selectedIndex = i; }}
-           innerHTML={result.title}></a>
+           onMouseOver={() => { this.selectedIndex = i + index ; }}>
+          <strong>{result.title}</strong>
+          <small innerHTML={result.highlight.sections}></small>
+        </a>
       </li>
     );
   }
