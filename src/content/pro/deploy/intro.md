@@ -15,6 +15,6 @@ In order to use advanced features such as switching Channels on the fly, Split T
 ## Get started
 
 * [Setup and use the plugin](/docs/pro/deploy/setup/)
-* [Understanding Builds](/docs/pro/deploy/builds/)
+* [Understanding Builds](/docs/pro/builds/intro)
 * [Understanding Channels](/docs/pro/deploy/channels/)
 * [Advanced Usage with the Deploy API](/docs/pro/deploy/api)

@@ -105,7 +105,7 @@ available [plugin variables in our api docs](/docs/pro/deploy/api/#plugin-variab
 ## Usage
 
 After you have installed and configured the Pro Plugin & Client libraries you can begin receiving updates in your app.
-To push new updates to your app, first trigger a [build](/docs/pro/deploy/builds/) by making a change to your app
+To push new updates to your app, first trigger a [build](/docs/pro/builds/intro) by making a change to your app
 committing it to version control and pushing the changes to Ionic Pro. The triggered build will be viewable in the
 Ionic Pro dashboard.
 
