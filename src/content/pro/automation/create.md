@@ -16,10 +16,10 @@ There are a number of customizations available to specify the specific behavior 
 
 ### Fields
 
-* **Name:** A name to remember your automation by.
-* **Git Branch:** The branch which will trigger your automation.  This will run your build any time someone makes a `git push` to the specified branch.
+* **Name:** A name to identify the automation task.
+* **Git Branch:** The branch which will trigger the automation.  This will run a build any time a `git push` is made to the specified branch.
 * **Environment:** The [custom build environment](/docs/pro/builds/environments#custom-environments) (if any) to use when this automations is triggered.
-* **Target Platform:** The platform you're targeting, can be Android or iOS (for either Xcode 8 or 9)
-* **Build Type:** The type of build you'd like to create. Options depend on the selected platform.
-* **Security Profile:** Which security profile you'd like to use. If you have no profiles set up, you can learn more about them [here](/docs/pro/package/profiles.html).
-* **Webhook:** (optional) If specified, we'll send a POST with information about completed builds to a webhook of your choice.  You can learn more about their content [here](/docs/pro/automation/webhooks).
+* **Target Platform:** The platform being targeted, can be Android or iOS (for either Xcode 8 or 9)
+* **Build Type:** The type of build to create. Options depend on the selected platform.
+* **Security Profile:** Which security profile to use. Learn more about them [here](/docs/pro/package/profiles.html).
+* **Webhook:** (optional) If specified, a POST with information about completed builds will be sent to the entered URL.  Learn more about their content [here](/docs/pro/automation/webhooks).
