@@ -8,7 +8,7 @@ The following environment variables are provided in every build, which can be ac
 
 * `CI_APP_ID` **(string):** Your Ionic app's unique ID.
 * `CI_APP_NAME` **(string):** Your Ionic app's name.
-* `CI_AUTOMATED_BUILD` **(string):** Whether this build occurred as a result of an automation (`0` for `false`, `1` for `true`).
+* `CI_AUTOMATED_BUILD` **(int):** Whether this build occurred as a result of an automation (`0` for `false`, `1` for `true`).
 * `CI_AUTOMATION_ID` **(optional int):** The unique ID of the automation which created this build.
 * `CI_AUTOMATION_NAME` **(optional string):** The name of the automation which created this build.
 * `CI_GIT_COMMIT_SHA` **(string):** The SHA for the commit on which the build was run.
