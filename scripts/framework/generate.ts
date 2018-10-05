@@ -32,7 +32,7 @@ import {
 const menuHeader = '/* tslint:disable */\n\nexport const apiMap = ';
 const menuFooter = ';\n';
 const ionicComponentsDir = join(FRAMEWORK_DIR, FRAMEWORK_COMPONENTS_SRC);
-const GIT_SRC_URL = `${FRAMEWORK_REPO_URL}/tree/master/${FRAMEWORK_COMPONENTS_SRC}/components`;
+const GIT_SRC_URL = `${FRAMEWORK_REPO_URL}/tree/master/${FRAMEWORK_COMPONENTS_SRC}`;
 const PREVIEW_PATH = 'test/preview/index.html';
 
 let listrTask = null;
