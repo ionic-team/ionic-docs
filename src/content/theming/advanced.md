@@ -83,7 +83,7 @@ The application colors are used in multiple places in Ionic. These are useful fo
 
 ### Stepped Colors
 
-After exploring many applications and themes, we found that most designs are never one background color. There are always subtle variations used to imply importance and depth throughout the design. In order to accommodate this pattern, we created stepped colors.
+After exploring many applications and themes, we found that designs rarely use just one background color. There are always subtle variations used to imply importance and depth throughout the design. In order to accommodate this pattern, we created stepped colors.
 
 There are only two variables that have stepped colors: `--ion-text-color` and `--ion-background-color`.
 
