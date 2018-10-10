@@ -8,7 +8,7 @@ nextUrl: '/docs/theming/color-generator'
 # CSS Variables
 
 <p class="intro" markdown="1">
-Ionic components are built with <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">CSS Variables</a> for easy customization of an application. CSS variables allow a value to be stored in one place, then referenced in multiple other places. They also make it possible to change CSS dynamically at runtime (which previously required a CSS preprocessor in the past). CSS variables make it easier than ever to override Ionic components to match a brand or theme.
+Ionic components are built with <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">CSS Variables</a> for easy customization of an application. CSS variables allow a value to be stored in one place, then referenced in multiple other places. They also make it possible to change CSS dynamically at runtime (which previously required a CSS preprocessor). CSS variables make it easier than ever to override Ionic components to match a brand or theme.
 </p>
 
 ## Setting Values
