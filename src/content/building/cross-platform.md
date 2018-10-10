@@ -171,13 +171,14 @@ Currently this means it will run through SQLite for native, IndexedDB (if availa
 class MyClass {
   constructor(public storage: Storage) {}
 
-  setData(key, value) {
-    this.storage.set(key, value)
-    .then(res => console.log(res))
+  async setData(key, value) {
+    const res = await this.storage.set(key, value);
+    console.log(res);
   }
-  getData(key) {
-    this.storage.get(key)
-    .then(keyVal => console.log('Key is', keyVal))
+
+  async getData(key) {
+    const keyVal = await this.storage.get(key);
+    console.log('Key is', keyVal);
   }
 }
 ```

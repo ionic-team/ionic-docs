@@ -77,7 +77,9 @@ export class MyApp {
 The Storage engine can be configured both with specific storage engine priorities, or custom configuration
 options to pass to localForage. See the localForage config docs for possible options: https://github.com/localForage/localForage#configuration
 
-Note: Any custom configurations will be merged with the default configuration
+<blockquote>
+  <p>Any custom configurations will be merged with the default configuration.</p>
+</blockquote>
 
 ```typescript
 import { IonicStorageModule } from '@ionic/storage';
@@ -87,7 +89,7 @@ import { IonicStorageModule } from '@ionic/storage';
   imports: [
     IonicStorageModule.forRoot({
       name: '__mydb',
-driverOrder: ['indexeddb', 'sqlite', 'websql']
+      driverOrder: ['indexeddb', 'sqlite', 'websql']
     })
   ],
   bootstrap: [...],
