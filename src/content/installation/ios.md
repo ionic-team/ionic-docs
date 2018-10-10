@@ -16,7 +16,7 @@ To target iOS, some additional environment setup is required. Unfortunately, iOS
 <a href="https://developer.apple.com/xcode/" target="_blank">Xcode</a> is the IDE for creating native iOS apps. It includes the iOS SDK and Xcode command-line tools. Xcode can be <a href="https://developer.apple.com/download/" target="_blank">downloaded for free</a> with an Apple account. It can also be installed through the App Store.
 
 <blockquote>
-  <p>`There are few bugs remaining with Cordova under XCode 10. We recommend using XCode 9 for the time being`</p>
+  <p>We recommend using XCode 9. Xcode 10 support in Cordova is still a work-in-progress. See <a href="https://github.com/apache/cordova-ios/issues/407" target="_blank">this issue</a> for details.</p>
 </blockquote>
 
 
