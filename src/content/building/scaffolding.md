@@ -108,7 +108,7 @@ Alternatively, the `type` and `name` of the generated feature can be entered on 
     </command-output>
 </command-line>
 
-The Ionic CLI uses the underlying framework tooling to stay close to best practices. For `ionic/angular`, the Angular CLI is used under the hood.
+The Ionic CLI uses the underlying framework tooling to stay close to best practices. For `@ionic/angular`, the Angular CLI is used under the hood.
 
 After creating the files and directories for the new page, the CLI will also update the router configuration to include the new page. This reduces the amount of manual work needed to keep the development lifecycle moving.
 
