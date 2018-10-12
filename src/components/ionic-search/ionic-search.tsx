@@ -1,5 +1,5 @@
 // import 'ionicons';
-import { Close } from './arrow.svg';
+// import { Close } from './arrow.svg';
 
 import {
   Component,
@@ -21,7 +21,7 @@ export class IonicSearch {
   @State() results: any = null;
   @State() dragStyles: {};
   @State() selectedIndex = -1;
-  // @State() pane: HTMLDivElement;
+  @State() focused = false;
   @Prop() mobile: boolean;
   @Element() el;
 
@@ -45,9 +45,7 @@ export class IonicSearch {
   constructor() {
     this.close = this.close.bind(this);
     this.onKeyDown = this.onKeyDown.bind(this);
-    this.touchStart = this.touchStart.bind(this);
-    this.touchMove = this.touchMove.bind(this);
-    this.touchEnd = this.touchEnd.bind(this);
+    this.focus = this.focus.bind(this);
 
     this.urls = this.URLS();
   }
@@ -123,35 +121,18 @@ export class IonicSearch {
     });
   }
 
-  touchStart(e) {
-    this.screenHeight = window.innerHeight
-      || document.documentElement.clientHeight
-      || document.body.clientHeight;
-    this.startY = Math.round(e.touches.item(0).screenY);
-  }
-
-  touchMove(e) {
-    e.preventDefault();
-    this.dragY = Math.max(0, Math.round(
-      (e.touches.item(0).screenY - this.startY) / this.screenHeight * 100
-    ));
-    this.dragStyles = {
-      transitionDuration: '.1s',
-      transform: `translate3d(0, ${this.dragY}%, 0)`
-    };
-  }
-
-  isFirefox() {
-    return navigator.userAgent.indexOf('Firefox') !== -1;
-  }
-
-  touchEnd() {
-    if (this.dragY > 30) {
-      this.close();
+  focus() {
+    const input = document.getElementById('search-input');
+    if (input) {
+      input.focus();
     }
-    this.dragY = null;
-    this.startY = null;
-    this.dragStyles = {};
+  }
+
+  getBoxClass() {
+    let str = 'search-box';
+    str += this.query.length > 3 ? ' active' : '';
+    str += this.focused ? ' focused' : '';
+    return str;
   }
 
   printResults(group, index = 0) {
@@ -171,28 +152,21 @@ export class IonicSearch {
 
   render() {
     return [
-      <div class={`search-box ${this.query.length > 3 ? 'active' : ''}`}
-           style={this.dragStyles}
-           onTouchMove={e => this.results && this.results.length > 5 ?
-            null : e.preventDefault()}>
-        <input type="text" onKeyUp={this.onKeyDown} placeholder="Search Ionic.."/>
+      <div class={this.getBoxClass()}
+           style={this.dragStyles}>
+        <input type="text"
+               id="search-input"
+               onKeyUp={this.onKeyDown}
+               onFocus={() => {this.focused = true; }}
+               onBlur={() => {this.focused = false; }}
+               placeholder="Search Ionic.."/>
 
         <ion-icon class={`search-static ${this.active ? ' active' : ''}`}
                   name="md-search"></ion-icon>
 
-        {this.mobile && !this.isFirefox() ?
-          <div class="mobile-close"
-               onClick={this.close}
-               onTouchStart={this.touchStart}
-               onTouchMove={this.touchMove}
-               onTouchEnd={this.touchEnd}>
-            <Close/>
-          </div>
-          :
-          <ion-icon class={`close ${this.query.length ? ' active' : ''}`}
-                    name="close-circle"
-                    onClick={this.close}></ion-icon>
-        }
+        <ion-icon class={`close ${this.query.length ? ' active' : ''}`}
+                  name="close-circle"
+                  onClick={this.close}></ion-icon>
 
         {this.results !== null ? <ul>
           {this.results.beta.length ?
@@ -211,7 +185,12 @@ export class IonicSearch {
         </ul> : null}
 
         {this.pending > 0 ? <span class="searching"></span> : null}
-      </div>
+      </div>,
+
+
+      <ion-icon class={`search-mobile-toggle ${this.focused ? ' focused' : ''}`}
+                onClick={this.focus}
+                name="md-search"></ion-icon>
     ];
   }
 }

@@ -16,10 +16,6 @@ ionic-search {
   margin-left: auto;
   margin-right: 44px;
 
-  @media (max-width: 800px) {
-    display: none;
-  }
-
   ion-icon {
     top: 8px;
     font-size: 18px;
@@ -61,7 +57,7 @@ ionic-search {
     border-radius: 24px;
     padding: 8px 30px 8px 35px;
     font-size: 14px;
-    letter-spacing: -.05em;
+    letter-spacing: 0em;
     transition: .2s opacity, .2s background-color;
 
     &::placeholder {
@@ -116,7 +112,7 @@ ionic-search {
       display: inline-block;
       padding: 14px 27px;
       font-size: 13px;
-      letter-spacing: -.036em;
+      letter-spacing: .01em;
       font-weight: 600;
       color: #272a2f;
       width: 100%;
@@ -139,6 +135,7 @@ ionic-search {
       }
 
       small {
+        margin-top: 4px;
         color: #999;
       }
     }
@@ -193,113 +190,71 @@ ionic-search {
     }
   }
 
-  &[mobile] {
-    display: block;
+  .search-mobile-toggle {
+    display: none;
+    position: relative;
+    top: 0;
+  }
 
-    .search {
-      color: #999;
-      right: auto;
-      left: 0;
-      bottom: 0;
-      font-size: 28px;
-      padding: 22px;
-      top: auto;
-      z-index: 3;
-      position: fixed;
+  @media (max-width: 800px) {
+    margin: 0 16px 0 auto;
+
+    .search-mobile-toggle {
+      display: block;
     }
-
-    .backdrop {
-      top: 0;
-      background: rgba(0,0,0,.5);
-      z-index: 2;
-    }
-
+    
     .search-box {
-      width: auto;
-      left: 2px;
-      right: 2px;
-      top: 42px;
-      bottom: 0;
-      padding: 60px 12px 48px;
-      position: fixed;
-      z-index: 3;
-      background: white;
-      border-top-left-radius: 12px;
-      border-top-right-radius: 12px;
-      transform: translate3d(0, 100%, 0);
-      transition: .4s transform cubic-bezier(0.23, 1, 0.32, 1);
-
-      &.active {
-        transform: none;
-      }
-    }
-
-    .mobile-close {
-      transition-delay: 0;
-      left: calc(50% - 24px);
-      top: 0;
+      background-color: var(--header-background);
+      position: absolute;
       left: 0;
       right: 0;
-      position: absolute;
+      top: 0;
+      z-index: 2;
+      opacity: 0;
+      pointer-events: none;
+      transform: scale3d(.98, .98, 1) translate3d(0, 2px, 0);
+      transition: .2s transform ease-out, .2s opacity;
 
-      svg {
-        position: absolute;
-        top: 8px;
-        width: 40px;
-        height: 40px;
-        left: calc(50% - 20px);
+      input {
+        width: 100%;
+        height: var(--header-height);
+        border-radius: 6px 6px 0 0;
       }
-    }
 
-    .searching {
-      top: 113px;
-      z-index: 3;
-      animation: ionic-search-scan-mobile 1s ease-in-out infinite;
+      .search-static {
+        top: 20px;
+      }
+
+      .close {
+        top: 13px;
+        opacity: 1;
+        padding: 5px;
+        pointer-events: all;
+      }
+
+      &.focused {
+        transform: none;
+        opacity: 1;
+        pointer-events: all;
+      }
     }
 
     ul {
-      opacity: 1;
-      transform: none;
-      z-index: 3;
-      top: auto;
-      box-shadow: none;
       width: 100%;
-      max-height: calc(100vh - 154px);
-      overflow: touch;
+      overflow: hidden;
+      overflow-y: auto;
+      max-height: calc(100vh - var(--header-height) - 32px);
     }
 
-    .search-static {
-      transform: none;
-      opacity: 1;
-      z-index: 3;
-      top: 71px;
-      left: 22px;
+    .searching {
+      top: initial;
+      bottom: 0;
+      background: #ccc;
     }
+  }
 
-    a {
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-
-    input {
-      margin: 0 0 10px;
-      padding: 10px 40px 8px;
-      background: #eceef2;
-      border-radius: 12px;
-      width: 100%;
-    }
-
-    ~ .mobile-nav__pane {
-      min-height: 100%;
-      background: white;
-      transition: .4s transform ease, .4s border-radius step-end;
-    }
-
-    &.active ~ .mobile-nav__pane {
-      border-radius: 12px;
-      transform: scale3d(0.97, 0.97, 1);
-      transition: .4s transform ease;
-    }
+  @media (max-width: 700px) {
+    margin-right: 0;
   }
 }
 
