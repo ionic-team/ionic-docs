@@ -26,12 +26,13 @@
     "predownload": "tsc -p scripts/tsconfig.json"
   },
   "dependencies": {
-    "@stencil/core": "^0.13.0",
+    "@stencil/core": "^0.13.1",
     "@stencil/router": "^0.3.0",
     "@stencil/sass": "0.1.0",
     "@stencil/utils": "latest",
     "@types/node": "^8.10.9",
     "@types/semver": "^5.5.0",
+    "@types/unzip": "^0.1.1",
     "archiver-promise": "^1.0.0",
     "aws-sdk": "^2.318.0",
     "chokidar": "^2.0.2",
@@ -58,10 +59,12 @@
     "tslint": "^5.9.1",
     "tslint-ionic-rules": "0.0.16",
     "typedoc": "^0.11.1",
-    "typescript": "^3.0.0"
+    "typescript": "^3.0.0",
+    "unzip": "^0.1.11",
+    "unzipper": "^0.9.4"
   },
   "devDependencies": {
-    "browser-sync": "^2.24.7"
+    "browser-sync": "^2.26.0"
   },
   "cacheDirectories": [
     "sources",

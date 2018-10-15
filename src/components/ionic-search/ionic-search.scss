@@ -194,6 +194,7 @@ ionic-search {
     display: none;
     position: relative;
     top: 0;
+    font-size: 22px;
   }
 
   @media (max-width: 800px) {
@@ -208,25 +209,26 @@ ionic-search {
       position: absolute;
       left: 0;
       right: 0;
-      top: 0;
+      top: calc(var(--header-height) * -1);
       z-index: 2;
       opacity: 0;
       pointer-events: none;
       transform: scale3d(.98, .98, 1) translate3d(0, 2px, 0);
-      transition: .2s transform ease-out, .2s opacity;
+      transition: .2s transform ease-out, .2s opacity, .2s top step-end;
 
       input {
         width: 100%;
+        font-size: 16px;
         height: var(--header-height);
         border-radius: 6px 6px 0 0;
       }
 
       .search-static {
-        top: 20px;
+        top: 17px;
       }
 
       .close {
-        top: 13px;
+        top: 12px;
         opacity: 1;
         padding: 5px;
         pointer-events: all;
@@ -235,15 +237,19 @@ ionic-search {
       &.focused {
         transform: none;
         opacity: 1;
+        top: 0;
         pointer-events: all;
+        transition: .2s transform ease-out, .2s opacity, .2s top step-start;
       }
     }
 
     ul {
+      margin-top: 0;
       width: 100%;
       overflow: hidden;
       overflow-y: auto;
-      max-height: calc(100vh - var(--header-height) - 32px);
+      -webkit-overflow-scrolling: touch;
+      max-height: calc(100vh - var(--header-height));
     }
 
     .searching {
@@ -253,8 +259,17 @@ ionic-search {
     }
   }
 
+  .scroll-block.focused {
+    position: fixed;
+    top: var(--header-height);
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+  }
+
   @media (max-width: 700px) {
-    margin-right: 0;
+    margin-right: 8px;
   }
 }
 

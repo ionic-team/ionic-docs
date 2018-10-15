@@ -22,6 +22,7 @@ export class IonicSearch {
   @State() dragStyles: {};
   @State() selectedIndex = -1;
   @State() focused = false;
+  @State() contentEl: HTMLElement;
   @Prop() mobile: boolean;
   @Element() el;
 
@@ -53,6 +54,7 @@ export class IonicSearch {
   close() {
     this.active = false;
     this.query = '';
+    this.focused = false;
     this.selectedIndex = -1;
     this.el.querySelector('input').value = '';
     this.el.classList.remove('active');
@@ -158,7 +160,7 @@ export class IonicSearch {
                id="search-input"
                onKeyUp={this.onKeyDown}
                onFocus={() => {this.focused = true; }}
-               onBlur={() => {this.focused = false; }}
+              //  onBlur={() => {this.focused = false; }}
                placeholder="Search Ionic.."/>
 
         <ion-icon class={`search-static ${this.active ? ' active' : ''}`}
@@ -190,7 +192,9 @@ export class IonicSearch {
 
       <ion-icon class={`search-mobile-toggle ${this.focused ? ' focused' : ''}`}
                 onClick={this.focus}
-                name="md-search"></ion-icon>
+                name="md-search"></ion-icon>,
+      <div class={`scroll-block ${this.focused ? ' focused' : ''}`}
+           onClick={this.close}></div>
     ];
   }
 }

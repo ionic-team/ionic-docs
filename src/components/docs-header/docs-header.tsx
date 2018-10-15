@@ -32,7 +32,9 @@ export class DocsHeader {
         <ionic-search>
         </ionic-search>
         <CommunityDropdown/>
-        <a href={this.getGithubLink(this.section)} class="github-link" target="_blank">GitHub<NewTab/></a>
+        <a href={this.getGithubLink(this.section)}
+           class="github-link"
+           target="_blank">GitHub<NewTab/></a>
       </nav>
     );
   }
