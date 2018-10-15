@@ -22,19 +22,31 @@ In a native application, it's common to make API calls to communicate with the d
 
 ### Platform Detection
 
-In an app’s logic, whenever it is needed to make a native API call, it is recommended to always check the status of the native environment first. For example:
+In an app’s logic, whenever it is needed to make a native API call, it is recommended to always check the status of the native environment first. You may even want to build a service-layer wrapper that does this for you. For example:
 
 ```typescript
-this.platform.ready().then(() => {
-  if (this.platform.is('cordova')) {
-    // make your native API calls
-  } else {
-    // fallback to browser APIs
+import { Injectable } from '@angular/core';
+import { Platform } from '@ionic/angular';
+
+@Injectable({ providedIn: 'root' })
+export class PlatformService {
+  constructor(
+    private platform: Platform
+  ) { }
+
+  platformIsNative(): Promise<boolean> {
+    return this.platform.ready().then(() => {
+      if (this.platform.is('cordova')) {
+        return true;
+      } else {
+        return false;
+      }
+    });
   }
-});
+}
 ```
 
-This bit of code can be incredibly helpful when targeting environments where access to the native APIs is uncertain.
+The bit of code inside the `platformIsNative()` method can be incredibly helpful when targeting environments where access to the native APIs is uncertain.
 
 ### Browser Fallbacks
 
