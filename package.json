@@ -33,6 +33,7 @@
     "@types/node": "^8.10.9",
     "@types/semver": "^5.5.0",
     "@types/unzip": "^0.1.1",
+    "@types/unzipper": "^0.9.1",
     "archiver-promise": "^1.0.0",
     "aws-sdk": "^2.318.0",
     "chokidar": "^2.0.2",
@@ -53,14 +54,12 @@
     "listr": "SamVerschueren/listr",
     "listr-verbose-renderer": "^0.4.1",
     "marked": "^0.3.18",
-    "node-fetch": "^2.2.0",
     "path": "^0.12.7",
     "semver": "^5.5.0",
     "tslint": "^5.9.1",
     "tslint-ionic-rules": "0.0.16",
     "typedoc": "^0.11.1",
     "typescript": "^3.0.0",
-    "unzip": "^0.1.11",
     "unzipper": "^0.9.4"
   },
   "devDependencies": {

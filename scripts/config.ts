@@ -35,6 +35,7 @@ export const COMPONENT_PREVIEW_DOCS_DIR = process.env.COMPONENT_PREVIEW_DOCS_DIR
 // AWS
 export const AWS_ACCESS_KEY_ID = process.env.AWS_ACCESS_KEY_ID || null;
 export const AWS_SECRET_ACCESS_KEY = process.env.AWS_SECRET_ACCESS_KEY || null;
+export const AWS_BUCKET = process.env.AWS_BUCKET || 'ionic-docs';
 
 // settings
 export let VERBOSE = bool(process.env.VERBOSE) || false;

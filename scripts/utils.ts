@@ -19,6 +19,7 @@ import { promisify } from 'util';
 import * as semver from 'semver';
 import {
   AWS_ACCESS_KEY_ID,
+  AWS_BUCKET,
   AWS_SECRET_ACCESS_KEY,
   FRAMEWORK_DOCS_DIR,
   VERBOSE
@@ -288,9 +289,19 @@ export async function uploadToS3(filePath) {
   const s3 = new AWS.S3();
   return new Promise((resolve, reject) => {
     s3.upload({
-      Bucket: 'ionic-docs',
+      Bucket: AWS_BUCKET,
       Key: basename(filePath),
       Body: file
     }, resp => resolve(resp));
+  });
+}
+
+export function upsertFilePath(path) {
+  let checkedPath = '';
+  const paths = path.split('/').forEach(section => {
+    checkedPath = join(checkedPath, section);
+    if (checkedPath.indexOf('.') === -1 && !existsSync(checkedPath)) {
+      mkdirSync(checkedPath);
+    }
   });
 }
