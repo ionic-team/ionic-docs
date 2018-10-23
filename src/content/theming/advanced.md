@@ -41,10 +41,10 @@ To change the default values of a color, all of the listed variations for that c
 }
 ```
 
-When `secondary` is applied to a button, not only is the base color (`#006600`) used, but the contrast color (`#ffffff`) is used for the text, along with shade (`#005a00`) and tint (`1a751a`) colors for the different states of the button.
+When `secondary` is applied to a button, not only is the base color (`#006600`) used, but the contrast color (`#ffffff`) is used for the text, along with shade (`#005a00`) and tint (`#1a751a`) colors for the different states of the button.
 
 <blockquote>
-  Not sure how to get the variation colors from the base color? Try out our [Color Generator](/docs/theming/color-generator) that calculates out all of the variations and provides code to copy/paste into an app!
+  Not sure how to get the variation colors from the base color? Try out our [Color Generator](/docs/theming/color-generator) that calculates all of the variations and provides code to copy/paste into an app!
 </blockquote>
 
 See the [CSS Variables documentation](/docs/theming/css-variables#setting-values) for more information on how to set CSS variables.
@@ -82,7 +82,7 @@ The application colors are used in multiple places in Ionic. These are useful fo
 
 ### Stepped Colors
 
-After exploring many applications and themes, we found that most designs are never one background color. There are always subtle variations used to imply importance and depth throughout the design. In order to accommodate this pattern, we created stepped colors.
+After exploring many applications and themes, we found that designs rarely use just one background color. There are always subtle variations used to imply importance and depth throughout the design. In order to accommodate this pattern, we created stepped colors.
 
 There are only two variables that have stepped colors: `--ion-text-color` and `--ion-background-color`.
 

@@ -10,7 +10,7 @@ Starting a new Ionic app is incredibly simple. From the command line, run the `i
 </p>
 
 <command-line>
-    <command-prompt>ionic start</command-prompt>
+    <command-prompt>ionic start --type=angular</command-prompt>
     <command-output>
         <br />
         <span class="bold">Every great app needs a name! 😍</span><br />

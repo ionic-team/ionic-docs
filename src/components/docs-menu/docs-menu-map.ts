@@ -67,11 +67,17 @@ export const main = {
 
 export const pro = {
   'Home': '/docs',
-  'Introduction': '/docs/pro',
+  'Introduction': {
+    'Getting Started': '/docs/pro',
+    'Git Workflow': '/docs/pro/basics/git'
+  },
+  'Builds': {
+    'Build Types': '/docs/pro/builds/intro',
+    'Build Environments': '/docs/pro/builds/environments'
+  },
   'Deploy': {
     'Introduction': '/docs/pro/deploy/intro',
     'Installation': '/docs/pro/deploy/setup',
-    'Builds': '/docs/pro/deploy/builds',
     'Channels': '/docs/pro/deploy/channels',
     'API Reference': '/docs/pro/deploy/api'
   },
@@ -85,9 +91,6 @@ export const pro = {
     'Manage': '/docs/pro/automation/create',
     'Webhooks': '/docs/pro/automation/webhooks'
   },
-  'Environments': {
-    'Introduction': '/docs/pro/environments/intro'
-  }
 };
 
 export const outbound = {

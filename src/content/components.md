@@ -178,7 +178,7 @@ The list component is used to display rows of information, such as a contact lis
 <ion-list>
   <ion-item>
     <ion-avatar slot="start">
-      <img src="/docs/assets/img/avatar-finn.png"></img>
+      <img src="/docs/assets/img/avatar-finn.png">
     </ion-avatar>
     <ion-label>
       <h2>Finn</h2>

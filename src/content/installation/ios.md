@@ -15,6 +15,11 @@ To target iOS, some additional environment setup is required. Unfortunately, iOS
 
 <a href="https://developer.apple.com/xcode/" target="_blank">Xcode</a> is the IDE for creating native iOS apps. It includes the iOS SDK and Xcode command-line tools. Xcode can be <a href="https://developer.apple.com/download/" target="_blank">downloaded for free</a> with an Apple account. It can also be installed through the App Store.
 
+<blockquote>
+  <p>We recommend using XCode 9. Xcode 10 support in Cordova is still a work-in-progress. See <a href="https://github.com/apache/cordova-ios/issues/407" target="_blank">this issue</a> for details.</p>
+</blockquote>
+
+
 ### Setting up a Development Team
 
 All iOS apps must be code signed, even for development. Luckily, Xcode makes this easy with automatic code signing. The only prerequisite is an Apple ID.

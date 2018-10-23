@@ -33,4 +33,4 @@ Learn how to use observables in your Ionic 2 app.
 
 ### [Using the Angular Router in ionic/angular 4](https://www.joshmorony.com/using-angular-routing-with-ionic-4/)
 
-Learn how to use the Angular Router in your ionic/angular 4 app.
+Learn how to use the Angular Router in your `@ionic/angular` 4 app.

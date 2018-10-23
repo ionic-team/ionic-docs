@@ -19,7 +19,7 @@ export default function getPluginMarkup(data): string {
   markdown += `<code-block language="shell">`;
   markdown += data.installation ?
     data.installation : `$ ionic cordova plugin add ${data.cordovaName}`;
-  markdown += `\n$ npm install --save @ionic-native/${data.npmName}\n`;
+  markdown += `\n$ npm install --save @ionic-native/${data.npmName}@beta\n`;
   markdown += `</code-block>\n</li>\n`;
   markdown += '<li><a href="/docs/native/#Add_Plugins_to_Your_App_Module">';
   markdown += `Add this plugin to your app's module</a></li>\n</ol>${r}${r}`;

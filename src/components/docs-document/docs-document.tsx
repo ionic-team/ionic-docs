@@ -94,7 +94,7 @@ export class DocsDocument {
   }
 
   setDocumentTitle(title: string) {
-    const pageTitle = `Ionic Docs${ title ? ` - ${title}` : '' }`;
+    const pageTitle = `${ title ? `${title} - ` : '' }Ionic Docs`;
     this.document.title = pageTitle;
     this.document.head.querySelector('meta[property="og:title"]').setAttribute('content', pageTitle);
   }
