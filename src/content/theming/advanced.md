@@ -60,7 +60,7 @@ The application colors are used in multiple places in Ionic. These are useful fo
 
 | Name                                     | Description                                         |
 | ---------------------------------------- | --------------------------------------------------- |
-| `--ion-backdrop-color`                   | Color the Backdrop component                        |
+| `--ion-backdrop-color`                   | Color of the Backdrop component                     |
 | `--ion-overlay-background-color`         | Background color of the overlays                    |
 | `--ion-border-color`                     | Border color                                        |
 | `--ion-box-shadow-color`                 | Box shadow color                                    |
@@ -68,7 +68,7 @@ The application colors are used in multiple places in Ionic. These are useful fo
 | `--ion-tab-bar-background-focused`       | Background of the focused Tab bar                   |
 | `--ion-tab-bar-border-color`             | Border color of the Tab bar                         |
 | `--ion-tab-bar-color`                    | Color of the Tab bar                                |
-| `--ion-tab-bar-color-activated`          | Color of the active Tab                             |
+| `--ion-tab-bar-color-activated`          | Color of the activated Tab                          |
 | `--ion-toolbar-background`               | Background of the Toolbar                           |
 | `--ion-toolbar-border-color`             | Border color of the Toolbar                         |
 | `--ion-toolbar-color`                    | Color of the components in the Toolbar              |
