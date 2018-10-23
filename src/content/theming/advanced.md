@@ -77,7 +77,7 @@ The application colors are used in multiple places in Ionic. These are useful fo
 | `--ion-item-background-activated`        | Background of the activated Item                    |
 | `--ion-item-border-color`                | Border color of the Item                            |
 | `--ion-item-color`                       | Color of the components in the Item                 |
-| `--ion-placeholder-text-color`           | Color of the placeholder in inputs                  |
+| `--ion-placeholder-color`                | Color of the placeholder in inputs                  |
 
 
 ### Stepped Colors
