@@ -144,19 +144,21 @@ While the previously mentioned variables are useful for changing the colors of a
 
 ### Application Variables
 
-| Name                                     | Description                                        |
-| ---------------------------------------- | -------------------------------------------------- |
-| `--ion-font-family`                      | Font family of the app                             |
-| `--ion-statusbar-padding`                | Statusbar padding top of the app                   |
-| `--ion-safe-area-top`                    | Adjust the safe area inset top of the app          |
-| `--ion-safe-area-right`                  | Adjust the safe area inset right of the app        |
-| `--ion-safe-area-bottom`                 | Adjust the safe area inset bottom of the app       |
-| `--ion-safe-area-left`                   | Adjust the safe area inset left of the app         |
+| Name                                     | Description                                                                                     |
+| -----------------------------------------| ------------------------------------------------------------------------------------------------|
+| `--ion-font-family`                      | Font family of the app                                                                          |
+| `--ion-statusbar-padding`                | Statusbar padding top of the app                                                                |
+| `--ion-safe-area-top`                    | Adjust the safe area inset top of the app                                                       |
+| `--ion-safe-area-right`                  | Adjust the safe area inset right of the app                                                     |
+| `--ion-safe-area-bottom`                 | Adjust the safe area inset bottom of the app                                                    |
+| `--ion-safe-area-left`                   | Adjust the safe area inset left of the app                                                      |
+| `--ion-margin`                           | Adjust the margin of the [Margin attributes](/docs/layout/css-utilities#element-margin)         |
+| `--ion-padding`                          | Adjust the padding of the [Padding attributes](/docs/layout/css-utilities#element-padding)      |
 
 ### Grid Variables
 
 | Name                                     | Description                                        |
-| ---------------------------------------- | -------------------------------------------------- |
+| -----------------------------------------| ---------------------------------------------------|
 | `--ion-grid-columns`                     | Number of columns in the grid                      |
 | `--ion-grid-padding-xs`                  | Padding of the grid for xs breakpoints             |
 | `--ion-grid-padding-sm`                  | Padding of the grid for sm breakpoints             |
