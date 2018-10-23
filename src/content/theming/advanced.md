@@ -60,25 +60,24 @@ The application colors are used in multiple places in Ionic. These are useful fo
 
 | Name                                     | Description                                         |
 | ---------------------------------------- | --------------------------------------------------- |
-| `--ion-backdrop-color`                   | Color the backdrop component                        |
+| `--ion-backdrop-color`                   | Color the Backdrop component                        |
 | `--ion-overlay-background-color`         | Background color of the overlays                    |
 | `--ion-border-color`                     | Border color                                        |
 | `--ion-box-shadow-color`                 | Box shadow color                                    |
-| `--ion-tabbar-background-color`          | Background color of the tabbar                      |
-| `--ion-tabbar-background-color-focused`  | Background color of the focused tabbar              |
-| `--ion-tabbar-border-color`              | Border color of the tabbar                          |
-| `--ion-tabbar-text-color`                | Text color of the tabbar                            |
-| `--ion-tabbar-text-color-active`         | Text color of the active tab                        |
-| `--ion-toolbar-background-color`         | Background color of the toolbar                     |
-| `--ion-toolbar-border-color`             | Border color of the toolbar                         |
-| `--ion-toolbar-color-inactive`           | Color of the toolbar                                |
-| `--ion-toolbar-color-active`             | Color of the active toolbar                         |
-| `--ion-toolbar-text-color`               | Text color of the toolbar                           |
-| `--ion-item-background-color`            | Background color of the item                        |
-| `--ion-item-background-color-active`     | Background color of the active item                 |
-| `--ion-item-border-color`                | Border color of the item                            |
-| `--ion-item-text-color`                  | Text color of the item                              |
-| `--ion-placeholder-text-color`           | Text color of the item placeholder                  |
+| `--ion-tab-bar-background`               | Background of the Tab bar                           |
+| `--ion-tab-bar-background-focused`       | Background of the focused Tab bar                   |
+| `--ion-tab-bar-border-color`             | Border color of the Tab bar                         |
+| `--ion-tab-bar-color`                    | Color of the Tab bar                                |
+| `--ion-tab-bar-color-activated`          | Color of the active Tab                             |
+| `--ion-toolbar-background`               | Background of the Toolbar                           |
+| `--ion-toolbar-border-color`             | Border color of the Toolbar                         |
+| `--ion-toolbar-color`                    | Color of the components in the Toolbar              |
+| `--ion-toolbar-color-activated`          | Color of the activated components in the Toolbar    |
+| `--ion-item-background`                  | Background of the Item                              |
+| `--ion-item-background-activated`        | Background of the activated Item                    |
+| `--ion-item-border-color`                | Border color of the Item                            |
+| `--ion-item-color`                       | Color of the components in the Item                 |
+| `--ion-placeholder-text-color`           | Color of the placeholder in inputs                  |
 
 
 ### Stepped Colors
