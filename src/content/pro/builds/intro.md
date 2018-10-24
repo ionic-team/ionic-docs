@@ -1,7 +1,30 @@
 # Builds
 
+## Introduction
+
 The [Git Workflow](/docs/pro/basics/git/) at the core of Ionic Pro allows you to push commits of your app code,
-which can then be used to trigger two distinct types of builds.
+which can then be used to trigger two distinct types of builds: Deploy and Package Builds.
+
+### Concurrency limits
+
+Before talking in details about build types, a brief note about builds concurrency.
+
+Each account plan has a defined maximum amount of concurrent builds allowed (see [Plans Details](/pro/pricing)).
+This limit is enforced at the account level across different apps.
+
+When you trigger a build, in the Pro Dashboard you will notice that a build can have different statuses before it is processed:
+
+* **Queued**: this means that your build is queued for the next available runner. Usually your build should not be in this state for more than few seconds.
+* **Pending**: this means that you have reached your concurrent build limit and your build will continue when your current builds are completed.
+
+After the build starts to be processed the statuses are:
+
+* **Running**: the build is currently being processed. You can read the logs in the build details.
+* **Successful**: the build terminated in a correct state.
+* **Failed**: the build terminated in an incorrect state.
+
+More concurrent builds can be added to your plan. Please [contact us](/sales) for pricing.
+
 
 ## Deploy Builds
 
