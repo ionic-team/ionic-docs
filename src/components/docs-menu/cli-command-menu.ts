@@ -1,7 +1,6 @@
 /* tslint:disable */
 
-export const cliMenu = {
-  "Overview": "/docs/cli/overview",
+export const commandMenu = {
   "Build": "/docs/cli/build",
   "Capacitor Add": "/docs/cli/capacitor-add",
   "Capacitor Copy": "/docs/cli/capacitor-copy",

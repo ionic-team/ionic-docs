@@ -2,7 +2,7 @@ import { Component, Element, Prop, State, Watch } from '@stencil/core';
 import { RouterHistory, injectHistory } from '@stencil/router';
 import { current, versions } from '../../versions';
 import { apiMap } from './docs-api-map';
-import { cliMenu } from './cli-menu';
+import { commandMenu } from './cli-command-menu';
 import { nativeMenu } from './native-menu';
 import * as menuMap from './docs-menu-map';
 import { NewTab } from '../../icons';
@@ -171,9 +171,9 @@ export class DocsMenu {
           </stencil-route-link>,
           <ul>
             <li>
-              <span class="menu__item menu__item--static">CLI Commands</span>
+              <span class="menu__item menu__item--static">Command Reference</span>
               <ul class="menu__submenu is-open">
-                { Object.keys(cliMenu).map(key => this.createItem(key, cliMenu[key]))}
+                { Object.keys(commandMenu).map(key => this.createItem(key, commandMenu[key]))}
               </ul>
             </li>
           </ul>
