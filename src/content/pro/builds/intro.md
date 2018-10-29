@@ -23,7 +23,9 @@ After the build starts to be processed the statuses are:
 * **Successful**: the build terminated in a correct state.
 * **Failed**: the build terminated in an incorrect state.
 
-More concurrent builds can be added to your plan. Please [contact us](/sales) for pricing.
+More concurrent builds can be added to your plan.
+If you have a Starter or Developer plan, you can get more builds by [upgrading plan](https://dashboard.ionicframework.com/settings/billing).
+If you have a Teams or Business plan, please [contact us](https://ionic.zendesk.com/hc/en-us/requests/new).
 
 
 ## Deploy Builds
