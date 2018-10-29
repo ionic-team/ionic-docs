@@ -46,8 +46,8 @@ function urlName(name) {
 }
 
 function prettyName(name) {
-  return name.replace('ionic ', '').replace(/(^| )(\w)/g, s => s.toUpperCase());
- }
+  return name.replace('ionic ', '');
+}
 
 // Upsert the given version's navigation
 function generateNav(commands) {

@@ -173,7 +173,7 @@ export class DocsMenu {
             <li>
               <span class="menu__item menu__item--static">Command Reference</span>
               <ul class="menu__submenu is-open">
-                { Object.keys(commandMenu).map(key => this.createItem(key, commandMenu[key]))}
+                { Object.keys(commandMenu).map(key => this.createItem(<code>{ key }</code>, commandMenu[key]))}
               </ul>
             </li>
           </ul>
