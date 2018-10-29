@@ -14,7 +14,8 @@ src/content/api/
 /null
 /stencil-stats.json
 /src/content/cli
-!/src/content/cli/overview.md
+!/src/content/cli/configuration.md
+!/src/content/cli/using-a-proxy.md
 /src/content/native
 !/src/content/native/index.md
 src/content/cli/ionic-angular/commands.md
