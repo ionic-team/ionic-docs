@@ -524,6 +524,7 @@ export const apiMap = {
     "virtual-scroll": "/docs/api/virtual-scroll"
   },
   "4.0.0-beta.11": {
+    "icon": "https://ionicons.com",
     "action-sheet": "/docs/api/action-sheet",
     "action-sheet-controller": "/docs/api/action-sheet-controller",
     "alert": "/docs/api/alert",

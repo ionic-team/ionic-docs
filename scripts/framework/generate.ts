@@ -178,7 +178,10 @@ function generateNav(menuPath, components, version) {
 
   const menu = JSON.parse(file);
 
-  const componentsList = {};
+  const componentsList = {
+    'icon': 'https://ionicons.com'
+  };
+
   for (let i = 0; i < components.length; i++) {
     const tag = components[i].tag.replace('ion-', '');
     componentsList[tag] = `/docs/api/${version === CURRENT_VERSION ?
