@@ -2,7 +2,6 @@
 
 export const apiMap = {
   "4.0.0-beta.0": {
-    "Overview": "/docs/api",
     "action-sheet": "/docs/api/action-sheet",
     "action-sheet-controller": "/docs/api/action-sheet-controller",
     "alert": "/docs/api/alert",
@@ -108,7 +107,6 @@ export const apiMap = {
     "virtual-scroll": "/docs/api/virtual-scroll"
   },
   "nightly": {
-    "Overview": "/docs/api",
     "action-sheet": "/docs/api/nightly/action-sheet",
     "action-sheet-controller": "/docs/api/nightly/action-sheet-controller",
     "alert": "/docs/api/nightly/alert",
@@ -214,7 +212,6 @@ export const apiMap = {
     "virtual-scroll": "/docs/api/nightly/virtual-scroll"
   },
   "4.0.0-beta.1": {
-    "Overview": "/docs/api",
     "action-sheet": "/docs/api/action-sheet",
     "action-sheet-controller": "/docs/api/action-sheet-controller",
     "alert": "/docs/api/alert",
@@ -320,7 +317,6 @@ export const apiMap = {
     "virtual-scroll": "/docs/api/virtual-scroll"
   },
   "4.0.0-beta.2": {
-    "Overview": "/docs/api",
     "action-sheet": "/docs/api/action-sheet",
     "action-sheet-controller": "/docs/api/action-sheet-controller",
     "alert": "/docs/api/alert",
@@ -426,7 +422,6 @@ export const apiMap = {
     "virtual-scroll": "/docs/api/virtual-scroll"
   },
   "4.0.0-beta.7": {
-    "Overview": "/docs/api",
     "action-sheet": "/docs/api/action-sheet",
     "action-sheet-controller": "/docs/api/action-sheet-controller",
     "alert": "/docs/api/alert",
@@ -529,7 +524,6 @@ export const apiMap = {
     "virtual-scroll": "/docs/api/virtual-scroll"
   },
   "4.0.0-beta.11": {
-    "Overview": "/docs/api",
     "action-sheet": "/docs/api/action-sheet",
     "action-sheet-controller": "/docs/api/action-sheet-controller",
     "alert": "/docs/api/alert",
