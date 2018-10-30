@@ -24,7 +24,7 @@ The Ionic CLI ships with command documentation that is accessible with the `--he
 $ ionic <command> --help
 ```
 
-TODO: image?
+<!-- TODO: image? -->
 
 ## Architecture
 

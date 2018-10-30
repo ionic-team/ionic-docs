@@ -114,6 +114,11 @@ nextUrl: '/docs/faq/build'
     <p>Modules in JavaScript are small, independent, and reusable pieces or code that are isolated from one another and the Global scope.</p>
   </section>
 
+  <section id="monorepo">
+    <a href="#monorepo"><h3>Monorepo</h3></a>
+    <p>A <strong>monorepo</strong> is a single git repository with multiple projects. Advantages include simpler organization, shared tooling and dependencies, and better collaboration with teammates.</p>
+  </section>
+
   <section id="livereload">
     <a href="#livereload"><h3>Live Reload</h3></a>
     <p><strong>Live Reload</strong> is a tool that automatically reloads the browser when it detects changes. It watches a specific path and when a file or directory is updated, it will trigger a full browser reload. In cases where CSS is changed, livereload will inject the changed CSS instead of reloading the entire page.</p>
