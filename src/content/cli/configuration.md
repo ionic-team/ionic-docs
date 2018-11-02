@@ -31,27 +31,44 @@ CLI flags are global options that alter the behavior of a CLI command.
 * `--no-interactive`: Turn off interactive prompts and fancy outputs. If CI or a non-TTY terminal is detected, the CLI is automatically non-interactive.
 * `--confirm`: Turn on auto-confirmation of confirmation prompts. Careful: the CLI prompts before doing something potentially harmful. Auto-confirming may have unintended results.
 
-## Multi-app
+## Multi-app Projects
 
 <small>_Available in CLI 4.3.0+_</small>
 
 The Ionic CLI supports a multi-app configuration setup, which involves multiple Ionic apps and shared code within a single repository, or [monorepo](/docs/faq/glossary#monorepo).
 
- Below is an example setup, where apps in the `apps/` directory are separated from the shared code in `lib/`.
+### Setup Steps
 
-<file-tree>
-    <file-tree-directory name="src">
-        <file-tree-directory name="apps">
-            <file-tree-directory name="myApp" collapsed></file-tree-directory>
-            <file-tree-directory name="myOtherApp" collapsed></file-tree-directory>
-        </file-tree-directory>
-        <file-tree-directory name="lib" collapsed></file-tree-directory>
-        <file-tree-file name="ionic.config.json"></file-tree-file>
-        <file-tree-file name="package.json"></file-tree-file>
-    </file-tree-directory>
-</file-tree>
+Multi-app projects are a new feature in the Ionic CLI. The setup is still partly manual.
 
-### Multi-app Config File
+1. Create a directory and initialize your monorepo (see [Project Structure](#project-structure) for full details).
+1. Create an `ionic.config.json` file at the root of the repository with the following contents (see [Config File](#config-file) for full details):
+
+    ```json
+    {
+      "projects": {}
+    }
+    ```
+
+1. Use `ionic start` within the monorepo to create Ionic apps in a multi-app project (see [Adding an App](#adding-an-app) for full details).
+
+### Project Structure
+
+In a multi-app project, project structure is flexible. The only requirement is a multi-app `ionic.config.json` file at the root of the repository.
+
+Below is an example setup, where apps in the `apps/` directory are separated from the shared code in the `lib/` directory. Notice the root `ionic.config.json` file and the monorepo's `package.json` file.
+
+ <file-tree>
+     <file-tree-directory name="apps">
+         <file-tree-directory name="myApp" collapsed></file-tree-directory>
+         <file-tree-directory name="myOtherApp" collapsed></file-tree-directory>
+     </file-tree-directory>
+     <file-tree-directory name="lib" collapsed></file-tree-directory>
+     <file-tree-file name="ionic.config.json"></file-tree-file>
+     <file-tree-file name="package.json"></file-tree-file>
+ </file-tree>
+
+### Config File
 
 In a multi-app project, apps share a single `ionic.config.json` file at the root of the repository instead of each app having their own. The multi-app config file contains the configuration for each app by nesting configuration objects in a `projects` object. A default app can be specified using `defaultProject`.
 
@@ -83,7 +100,7 @@ When a multi-app project is detected, the Ionic CLI will operate under the conte
 1. If the CLI detects it is being run within a project path, configured with the `root` key, it will select the matched project. For example, using the CLI within the `apps/myOtherApp/src` directory will select the `myOtherApp` project.
 1. If a `defaultProject` is specified in `ionic.config.json`, it will select the specified project when the above criteria is not met.
 
-### Adding an App to a Multi-app Project
+### Adding an App
 
 If a multi-app project is detected during `ionic start`, the CLI will add the app configuration to the root `ionic.config.json` file instead of creating a project-specific one.
 
