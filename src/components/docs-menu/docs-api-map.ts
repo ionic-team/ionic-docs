@@ -1,7 +1,7 @@
 /* tslint:disable */
 
 export const apiMap = {
-  "4.0.0-beta.0": {
+  "4.0.0-beta.15": {
     "action-sheet": "/docs/api/action-sheet",
     "action-sheet-controller": "/docs/api/action-sheet-controller",
     "alert": "/docs/api/alert",
