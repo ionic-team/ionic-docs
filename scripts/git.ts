@@ -27,6 +27,7 @@ export async function ensureLatestMaster(
     // console.log(dir);
     vlog(`${dir} Repo exists - Updating`);
     await execp('git --git-dir=.git reset --hard', { cwd: dir });
+    await execp(`git --git-dir=.git fetch --tags`, { cwd: dir });
     await execp(`git --git-dir=.git checkout -f ${branch}`, { cwd: dir });
     await execp(`git --git-dir=.git pull --ff-only origin ${branch}`, { cwd: dir });
   }
