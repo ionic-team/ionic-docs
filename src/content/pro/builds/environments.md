@@ -35,7 +35,7 @@ For example you could replace your `build` script in the `package.json` with a c
 {
 ...
     "scripts": {
-        "start": "ionic-app-scripts serve"
+        "start": "ionic-app-scripts serve",
         "clean": "ionic-app-scripts clean",
         "build": "./mybuild.sh",
         "lint": "ionic-app-scripts lint"
