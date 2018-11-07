@@ -139,7 +139,7 @@ function copyFiles(components, dest, version = 'nightly') {
       join(ionicComponentsDir, componentName, PREVIEW_PATH),
       join(dest, `${componentName}-demo.html`),
       file => {
-        file = file.replace('../../../../../css/ionic.bundle.css" rel="stylesheet">', `/docs/overrides.css">
+        file = file.replace('../../../../../css/ionic.bundle.css" rel="stylesheet">', `/docs/overrides.css" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/@ionic/core${version === 'nightly' ?
 '' : `@${version}`}/css/ionic.bundle.css">`);
         return file.replace(
