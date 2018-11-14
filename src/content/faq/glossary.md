@@ -168,7 +168,7 @@ nextUrl: '/docs/faq/build'
 
   <section id="shim">
     <a href="#shim"><h3>Shim</h3></a>
-    <p>A shim is a piece of code that normailizes an APIs across browsers. A shim can have it's own API that hides the browser specific implimentation from the end user.</p>
+    <p>A shim is a piece of code that normalizes an APIs across browsers. A shim can have it's own API that hides the browser specific implementation from the end user.</p>
   </section>
 
   <section id="transpiler">
@@ -187,7 +187,7 @@ nextUrl: '/docs/faq/build'
 
   <section id="unit-tests">
     <a href="#unit-tests"><h3>Unit Tests</h3></a>
-    <p>Unit Tests and unit testing are a way to test small pieces of code to see if they behave as expected. Unit testing frameworks include Jasmine, Mocah, QUnit, and many others.</p>
+    <p>Unit Tests and unit testing are a way to test small pieces of code to see if they behave as expected. Unit testing frameworks include Jasmine, Mocha, QUnit, and many others.</p>
   </section>
 
   <section id="webpack">
