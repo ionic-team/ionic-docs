@@ -95,6 +95,6 @@ export const pro = {
 
 export const outbound = {
   'API Reference': '/docs/api',
-  'CLI Reference': '/docs/cli/overview',
+  'CLI Documentation': '/docs/cli',
   'Native APIs': '/docs/native'
 };

@@ -2,6 +2,7 @@ import { Component, Element, Prop, State, Watch } from '@stencil/core';
 import { RouterHistory, injectHistory } from '@stencil/router';
 import { current, versions } from '../../versions';
 import { apiMap } from './docs-api-map';
+import { commandMenu } from './cli-command-menu';
 import { cliMenu } from './cli-menu';
 import { nativeMenu } from './native-menu';
 import * as menuMap from './docs-menu-map';
@@ -141,7 +142,8 @@ export class DocsMenu {
             <li>
               <span class="menu__item menu__item--static">API Reference</span>
               <ul class="menu__submenu is-open">
-                { Object.keys(api || {}).map(key => this.createItem(key, api[key]))}
+                { this.createItem('Overview', '/docs/api') }
+                { Object.keys(api || {}).sort().map(key => this.createItem(key, api[key]))}
               </ul>
             </li>
           </ul>
@@ -171,9 +173,13 @@ export class DocsMenu {
           </stencil-route-link>,
           <ul>
             <li>
-              <span class="menu__item menu__item--static">CLI Commands</span>
+              <span class="menu__item menu__item--static">CLI Documentation</span>
               <ul class="menu__submenu is-open">
                 { Object.keys(cliMenu).map(key => this.createItem(key, cliMenu[key]))}
+              </ul>
+              <span class="menu__item menu__item--static">Command Reference</span>
+              <ul class="menu__submenu is-open">
+                { Object.keys(commandMenu).map(key => this.createItem(<code>{ key }</code>, commandMenu[key]))}
               </ul>
             </li>
           </ul>

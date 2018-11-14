@@ -35,11 +35,10 @@ For example you could replace your `build` script in the `package.json` with a c
 {
 ...
     "scripts": {
+        "start": "ionic-app-scripts serve",
         "clean": "ionic-app-scripts clean",
         "build": "./mybuild.sh",
-        "lint": "ionic-app-scripts lint",
-        "ionic:build": "ionic-app-scripts build",
-        "ionic:serve": "ionic-app-scripts serve"
+        "lint": "ionic-app-scripts lint"
     },
 ...
 ```
@@ -47,9 +46,9 @@ For example you could replace your `build` script in the `package.json` with a c
 ```
 #!/bin/bash
 if [ "$CI_GIT_REF" = "master" ]; then
-    npx ionic-app-scripts build --prod
+    npx ionic build --prod
 else
-    npx ionic-app-scripts build
+    npx ionic build
 fi
 ```
 

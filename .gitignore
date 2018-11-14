@@ -1,27 +1,34 @@
-sources/ionic-cli
-sources/ionic-native
-sources/ionic-storage
-sources/ionic
-sources/component-preview
 .idea/
+.vscode/
+*.sw*
+.tmp/
+.stencil/
+.DS_Store
+.env
+stencil-stats.json
 node_modules/
+npm-debug.log*
+
+# Ignored folders
 scripts/build
 server/build
-.DS_Store
-/dist
-/www
+dist/
+sources/
+www/
+
+# Auto-generated API docs
 src/content/api/
-/null
-/stencil-stats.json
-/src/content/cli
-!/src/content/cli/overview.md
-/src/content/native
+
+# Auto-generated CLI docs
+src/content/cli/*.md
+# (except these)
+!src/content/cli/configuration.md
+!src/content/cli/using-a-proxy.md
+
+# Auto-generated Ionic Native docs
+src/content/native
+# (except these)
 !/src/content/native/index.md
-src/content/cli/ionic-angular/commands.md
-src/content/cli/ionic1/commands.md
+
 src/content/component-preview-app/
-/.vscode
 src/components/docs-menu/docs-api-map.ts
-.stencil/
-/.env
-/.tmp

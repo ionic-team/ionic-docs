@@ -5,7 +5,7 @@ import render from './template';
 import { ensureLatestMaster } from '../git';
 import { getCLIDocs } from '../npm';
 
-const menuHeader = '/* tslint:disable */\n\nexport const cliMenu = ';
+const menuHeader = '/* tslint:disable */\n\nexport const commandMenu = ';
 const menuFooter = ';\n';
 
 // the main task of the API documentation generation process
@@ -46,12 +46,12 @@ function urlName(name) {
 }
 
 function prettyName(name) {
-  return name.replace('ionic ', '').replace(/(^| )(\w)/g, s => s.toUpperCase());
- }
+  return name.replace('ionic ', '');
+}
 
 // Upsert the given version's navigation
 function generateNav(commands) {
-  const commmandList = { 'Overview': '/docs/cli/overview' };
+  const commmandList = {};
   for (let i = 0; i < commands.length; i++) {
     commmandList[prettyName(commands[i].name)] = `/docs/cli/${urlName(commands[i].name)}`;
   }
