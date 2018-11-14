@@ -156,7 +156,7 @@ describe('PayrolService', () => {
 
 ### Testing HTTP Data Services
 
-Most services that perform HTTP operations will used Angular's HttpClient service in order to perform those operations. For such tests is it suggested to use Angular's `HttpClientTestingModule`. For detailed documentation of this module, please see Angular's <a href="https://angular.io/guide/http#testing-http-requests" target="_blank">Angular's Testing HTTP requests</a> guide.
+Most services that perform HTTP operations will use Angular's HttpClient service in order to perform those operations. For such tests it is suggested to use Angular's `HttpClientTestingModule`. For detailed documentation of this module, please see Angular's <a href="https://angular.io/guide/http#testing-http-requests" target="_blank">Angular's Testing HTTP requests</a> guide.
 
 This basic setup for such a test looks like this:
 
