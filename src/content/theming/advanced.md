@@ -131,6 +131,8 @@ The application colors are used in multiple places in Ionic. These are useful fo
 | `--ion-toolbar-border-color`             | Border color of the Toolbar                         |
 | `--ion-toolbar-color`                    | Color of the components in the Toolbar              |
 | `--ion-toolbar-color-activated`          | Color of the activated components in the Toolbar    |
+| `--ion-toolbar-color-unchecked`          | Color of the unchecked components in the Toolbar    |
+| `--ion-toolbar-color-checked`            | Color of the checked components in the Toolbar      |
 | `--ion-item-background`                  | Background of the Item                              |
 | `--ion-item-background-activated`        | Background of the activated Item                    |
 | `--ion-item-border-color`                | Border color of the Item                            |
@@ -230,7 +232,9 @@ While the previously mentioned variables are useful for changing the colors of a
 | `--ion-grid-column-padding-xl`           | Padding of the grid columns for xl breakpoints     |
 
 
-## The Alpha Problem
+## Known Limitations
+
+### The Alpha Problem
 
 There is not yet full <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Browser_compatibility" target="_blank">browser support</a> for alpha use of a hex color. The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#rgb()_and_rgba()" target="_blank">rgba()</a> function only accepts a value in `R, G, B, A` (Red, Green, Blue, Alpha) format. The following code shows examples of correct and incorrect values passed to `rgba()`.
 
