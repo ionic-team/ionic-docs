@@ -34,6 +34,10 @@ A deploy build is a build of your application that includes only the web assets 
 which can be shipped out to customer via [Deploy](/docs/pro/deploy/). Deploy builds can be created from the Ionic 
 Dashboard, the **Builds** section under **Deploy** in the sidebar.
 
+<div style="text-align: center">
+  <img style="width: 950px" src="/img/pro/deploy-builds-create-location.png">
+</div>
+
 A deploy build will do the following:
 
 * `npm install` will run to install any dependencies you have.
