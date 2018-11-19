@@ -52,13 +52,6 @@ Capacitor uses Android Studio to build and run apps to simulators and devices.
 
 2. In Android Studio, select a target simulator or device and click the run button.
 
-<blockquote>
-  <p>
-  Unfortunately, live-reload for Capacitor is not yet available. Follow [this issue](https://github.com/ionic-team/ionic-cli/issues/3130) for updates.
-  </p>
-</blockquote>
-
-
 ## Running with Cordova
 
 The Ionic CLI can build, copy, and deploy Ionic apps to Android simulators and devices with a single command. It can also spin up a development server, like the one used in `ionic serve`, to provide [live-reload](/docs/faq/glossary#livereload) functionality.
