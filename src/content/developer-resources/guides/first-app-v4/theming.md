@@ -1,8 +1,6 @@
 ---
 previousText: 'Creating a Photo Gallery with Device Storage'
 previousUrl: '/docs/developer-resources/guides/first-app-v4/creating-photo-gallery-device-storage'
-nextText: 'Realtime App Updates with Ionic Deploy'
-nextUrl: '/docs/developer-resources/guides/first-app-v4/realtime-updates-ionic-deploy'
 ---
 
 # Make It Your Own! Ionic Theming
@@ -51,6 +49,6 @@ Now, the iOS version of our app has a Material Design skin!
 
 ![ios and android comparison](/docs/assets/img/guides/first-app-v3/ion-lab-md-styling.png)
 
-Creating gorgeous-looking Ionic apps is easy with Sass variables and platform-specific styling. You now have everything you need to get started with Ionic. Go forth and build great apps!
+Creating gorgeous-looking Ionic apps is easy with Sass variables and platform-specific styling. You now have everything you need to get started with Ionic. 
 
-If you're interested in taking your Ionic apps to the next level, continue on with our exploration of Ionic Pro next.
+Go forth and build great apps!

@@ -16,7 +16,7 @@ It’s easy to get started. Note that all code referenced in this guide can be [
 ## Required Tools
 Download/install these right away to ensure an optimal Ionic development experience:
 * [Git](https://git-scm.com/downloads) for version control.
-* <strong>SSH client</strong>, such as [PuTTy](https://www.putty.org/), for secure login to Ionic Pro.
+* <strong>SSH client</strong>, such as [PuTTy](https://www.putty.org/), for secure login to Ionic Appflow.
 * <strong>Node.js</strong> for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
 * <strong>A code editor</strong> for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
 * <strong>Command-line terminal (CLI)</strong>: FYI <strong>Windows</strong> users, for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode. For <strong>Mac/Linux</strong> users, virtually any terminal will work.
@@ -37,9 +37,9 @@ $ ionic start photo-gallery tabs --type=angular
 
 This starter project comes complete with three pre-built pages and best practices for Ionic development. With common building blocks already in place, we can add more features easily!
 
-<strong>“Install the free Ionic Pro SDK and connect your app?”</strong>
+<strong>“Install the free Ionic Appflow SDK and connect your app?”</strong>
 
-Type “y” and press Enter. [Ionic Pro](https://ionicframework.com/pro) is a powerful set of services and features built on top of the flagship Ionic Framework. This includes updating your app instantly (skipping the app store review process!), packaging apps in the cloud, and error monitoring.
+Type “y” and press Enter. [Ionic Appflow](https://ionicframework.com/Appflow) is a powerful set of services and features built on top of the flagship Ionic Framework. This includes updating your app instantly (skipping the app store review process!), packaging apps in the cloud, and error monitoring.
 
 <strong>Log into your Ionic Account</strong>
 
@@ -47,18 +47,18 @@ Sign in now to easily access awesome features like building native apps in the c
 
 <strong>What would you like to do?</strong>
 
-Choose “Create a new app on Ionic Pro.”
+Choose “Create a new app on Ionic Appflow.”
 
 <strong>Which git host would you like to use?</strong>
 
-Choose “Ionic Pro.”
+Choose “Ionic Appflow.”
 
-<strong>“How would you like to connect to Ionic Pro?”</strong>
+<strong>“How would you like to connect to Ionic Appflow?”</strong>
 
-* Choose “Automatically setup a new SSH key pair for Ionic Pro” if you haven’t used SSH before.
+* Choose “Automatically setup a new SSH key pair for Ionic Appflow” if you haven’t used SSH before.
 * Choose “Use an existing SSH key pair” if you’ve used SSH before. 
 
-Next, change into the app folder, then push your code to Ionic Pro:
+Next, change into the app folder, then push your code to Ionic Appflow:
 
 ```shell
 $ cd photo-gallery
@@ -108,7 +108,7 @@ Next, open `src/app/tabs/tabs.page.html`. Change the label to “Gallery” and 
 </ion-tab-button>
 ```
 
-Now, back up your changes to Ionic Pro:
+Now, back up your changes to Ionic Appflow:
 
 ```shell
 $ git add .

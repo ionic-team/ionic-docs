@@ -11,4 +11,4 @@ nextUrl: '/docs/developer-resources/posts'
 Follow along as we create a working Photo Gallery app using Ionic Framework v3 and Ionic Pro.
 
 ### [Your First Ionic App - v4](/docs/developer-resources/guides/first-app-v4/intro)
-Follow along as we create a working Photo Gallery app using Ionic Framework v4 and Ionic Pro.
+Follow along as we create a working Photo Gallery app using Ionic Framework v4.
