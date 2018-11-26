@@ -543,8 +543,8 @@ The default amount of `margin` to be applied is `16px` and is set by the `--ion-
 | `justify-content-start`   | `justify-content: flex-start`    | Items are packed toward the start on the main axis.                         |
 | `justify-content-end`     | `justify-content: flex-end`      | Items are packed toward the end on the main axis.                           |
 | `justify-content-center`  | `justify-content: center`        | Items are centered along the main axis.                                     |
-| `justify-content-between` | `justify-content: space-between` | Items are evenly distributed on the main axis.                              |
 | `justify-content-around`  | `justify-content: space-around`  | Items are evenly distributed on the main axis with equal space around them. |
+| `justify-content-between` | `justify-content: space-between` | Items are evenly distributed on the main axis.                              |
 | `justify-content-evenly`  | `justify-content: space-evenly`  | Items are distributed so that the spacing between any two items is equal.   |
 | `align-items-start`       | `align-items: flex-start`        | Items are packed toward the start on the cross axis.                        |
 | `align-items-end`         | `align-items: flex-end`          | Items are packed toward the end on the cross axis.                          |
