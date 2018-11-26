@@ -273,7 +273,7 @@ Ionic uses colors with an opacity (alpha) in several components. In order for th
 }
 ```
 
-Note that the RGB formatted colors are the exact same color as the hex properties, but can now be used with `rbga()`. For example, `--ion-text-color-rgb` can now be used in the following way
+Note that the RGB formatted colors are the exact same color as the hex properties, but can now be used with `rgba()`. For example, `--ion-text-color-rgb` can now be used in the following way
 
 ```css
 body {
