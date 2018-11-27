@@ -34,8 +34,8 @@ The Ionic CLI is built with [TypeScript](/docs/faq/glossary#typescript) and [Nod
 
 To troubleshoot issues with the Ionic CLI, the following may be useful:
 
-- Make sure the latest version of the Ionic CLI is installed. Update with `npm install -g ionic`.
+- Make sure the latest version of the Ionic CLI is installed. Update with `npm install -g ionic@latest`.
 - Make sure the latest Node LTS is installed. See [Node & npm](/docs/installation/environment#node-npm) environment setup.
 - The `--verbose` flag prints debugging messages, which may narrow down the issue.
 - Connection issues may be due to improperly configured proxy settings. See [Using a Proxy](/docs/cli/configuring#using-a-proxy) to configure request proxying.
-- The global Ionic CLI configuration directory is `~/.ionic` on all platforms. It can safely be deleted and the Ionic CLI will repopulate it, but all configuration (including user sessions) will be lost.
+- The global Ionic CLI configuration directory is `~/.ionic` on all platforms. It can safely be deleted and the Ionic CLI will repopulate it, but all configuration (including user sessions) will be lost. Configure this directory with [CLI environment variables](/docs/cli/configuration#environment-variables).

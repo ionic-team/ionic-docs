@@ -19,7 +19,7 @@ The CLI will look for the following environment variables:
 
 * `IONIC_CONFIG_DIRECTORY`: The directory of the global CLI config. Defaults to `~/.ionic`.
 * `IONIC_HTTP_PROXY`: Set a URL for proxying all CLI requests through. See [Using a Proxy](./using-a-proxy).
-* `IONIC_TOKEN`: Automatically authenticates with Ionic Pro.
+* `IONIC_TOKEN`: Automatically authenticates with [Ionic Appflow](https://ionicframework.com/appflow).
 
 ## Flags
 
@@ -127,3 +127,7 @@ $ export IONIC_CMDOPTS_CORDOVA_RUN_ADDRESS=localhost
 ```
 
 If these variables are set in your environment, `ionic cordova build ios` will use new defaults for its options.
+
+### Telemetry
+
+The CLI sends usage data to Ionic to create a better experience. To disable this functionality, run `ionic config set -g telemetry false`.
