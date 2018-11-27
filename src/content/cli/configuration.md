@@ -31,6 +31,22 @@ CLI flags are global options that alter the behavior of a CLI command.
 * `--no-interactive`: Turn off interactive prompts and fancy outputs. If CI or a non-TTY terminal is detected, the CLI is automatically non-interactive.
 * `--confirm`: Turn on auto-confirmation of confirmation prompts. Careful: the CLI prompts before doing something potentially harmful. Auto-confirming may have unintended results.
 
+## Hooks
+
+The CLI can run scripts during certain events, such as before and after builds. To hook into the CLI, the following [npm scripts](https://docs.npmjs.com/misc/scripts) can be used in `package.json`:
+
+* `ionic:serve:before`: executed before `ionic serve` and other commands that use the dev server
+* `ionic:build:before`: executed before `ionic build` and other commands that run Ionic build
+* `ionic:build:after`: executed after `ionic build` and other commands that run Ionic build
+
+### Example
+
+```json
+  "scripts": {
+    "ionic:build:after": "cp file www/file"
+  }
+```
+
 ## Multi-app Projects
 
 <small>_Available in CLI 4.3.0+_</small>
