@@ -108,9 +108,20 @@ For example, if an app is using Angular, that project structure will be exactly 
 
 The above comparison is an example of a v4 app's project structure. For developers with experience in a vanilla Angular project, this should feel really familiar.
 
-There is a `src/` directory that acts as the home for the app. This includes the `index.html`, any assets, environment variables, and any app specific config files.
+There is a `src/` directory that acts as the home for the app. This includes the `index.html`, any assets, environment configuration, and any app specific config files.
 
 While migrating an app to take advantage of this new layout, it is suggested that a new project "base" is made with the CLI. Then, with the new project layout, migrate the features of the app piece by piece. Pages/components/etc. should be moved into the `src/app/` folder.
+
+Ensure your Ionic configuration file has the appropriate `type`. The project type for v3 is `ionic-angular`. The project type for v4 is `angular`. If this value is incorrect, the CLI may invoke the incorrect build scripts.
+
+See the following `ionic.config.json` as an example:
+
+```json
+{
+  "name": "my-app",
+  "type": "angular"
+}
+```
 
 ## RxJS Changes
 
