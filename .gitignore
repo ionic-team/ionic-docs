@@ -20,10 +20,7 @@ www/
 src/content/api/
 
 # Auto-generated CLI docs
-src/content/cli/*.md
-# (except these)
-!src/content/cli/configuration.md
-!src/content/cli/using-a-proxy.md
+src/content/cli/commands/*.md
 
 # Auto-generated Ionic Native docs
 src/content/native

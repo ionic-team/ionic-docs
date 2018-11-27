@@ -16,7 +16,7 @@ export const FRAMEWORK_LOCALIZED = bool(process.env.FRAMEWORK_LOCALIZED) || fals
 
 export const CLI_DIR = process.env.CLI_DIR || join('sources/ionic-cli');
 export const CLI_REPO_URL = process.env.CLI_REPO_URL || 'https://github.com/ionic-team/ionic-cli.git';
-export const CLI_DOCS_DIR = process.env.CLI_DOCS_DIR || join('src/content/cli');
+export const CLI_DOCS_DIR = process.env.CLI_DOCS_DIR || join('src/content/cli/commands');
 export const CLI_MENU_PATH = process.env.CLI_MENU_PATH || join('src/components/docs-menu/cli-command-menu.ts');
 
 export const NATIVE_DIR = process.env.NATIVE_DIR || join('sources/ionic-native');

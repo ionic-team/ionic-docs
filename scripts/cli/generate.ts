@@ -53,7 +53,7 @@ function prettyName(name) {
 function generateNav(commands) {
   const commmandList = {};
   for (let i = 0; i < commands.length; i++) {
-    commmandList[prettyName(commands[i].name)] = `/docs/cli/${urlName(commands[i].name)}`;
+    commmandList[prettyName(commands[i].name)] = `/docs/cli/commands/${urlName(commands[i].name)}`;
   }
 
   writeFileSync(
