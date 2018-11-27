@@ -40,6 +40,28 @@ The CLI can run scripts during certain events, such as before and after builds. 
 * `ionic:build:before`: executed before a web asset build begins
 * `ionic:build:after`: executed after a web asset build finishes
 
+Hooks can also be defined in `ionic.config.json`. Define a `hooks` object within the project, where each key is the name of the hook (without the `ionic:` prefix), and the value is a path to a JavaScript file or an array of paths.
+
+In the following example, the file is imported and run during the `ionic:build:before` hook.
+
+```json
+"hooks": {
+  "build:before": "./scripts/build-before.js"
+},
+```
+
+JavaScript hook files should export a single function, which is passed a single argument (`ctx`) whenever the hook executes.
+
+The argument is the context given to the hook file, which differs from hook to hook and with different invocations.
+
+`./scripts/build-before.js`:
+
+```javascript
+module.exports = function(ctx) {
+  console.log(ctx);
+};
+```
+
 ## Multi-app Projects
 
 <small>_Available in CLI 4.3.0+_</small>
