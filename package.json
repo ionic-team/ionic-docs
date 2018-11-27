@@ -1,5 +1,6 @@
 {
-  "name": "@ionic/ionic-docs",
+  "name": "ionic-docs",
+  "private": true,
   "version": "0.2.0",
   "description": "Ionic Docs Site",
   "engines": {
