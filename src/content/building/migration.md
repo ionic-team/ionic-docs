@@ -129,7 +129,11 @@ Some minor RxJS changes are required due to the change from RxJS v5 to v6. Pleas
 
 ## Lifecycle Events
 
-Some of the Ionic lifecycle events are equivalent to Angular lifecycle hooks. For example, `ionViewDidLoad()` fills the same role as the Angular `OnInit` lifecycle hook (`ngOnInit()`). In such cases, use the Angular lifecycle hook.
+With V4, we're now able to utilize the typical events provided by [Angular](https://angular.io/guide/lifecycle-hooks). But for certain cases, you might want to have access to the events fired when a component has finished animating during it's route change. In this case, the `ionViewWillEnter`, `ionViewDidEnter`, `ionViewWillLeave`, and `ionViewDidLeave` have been ported over from V3. Use these events to coordinate actions with Ionic's own animations system.
+
+Older events like `ionViewDidLoad`, `ionViewCanLeave`, and `ionViewCanEnter` have been removed, and the proper Angular alternatives should be used.
+
+For more details, checkout the [router-outlet docs](/docs/api/router-outlet)
 
 ## Overlay Components
 
