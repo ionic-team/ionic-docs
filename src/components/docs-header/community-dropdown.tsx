@@ -60,7 +60,7 @@ export default () => (
             </li>
           ))}
         </ul>
-        <stencil-route-link url="/docs" class="community-dropdown__home" onClick={dropdown.close}>
+        <stencil-route-link url="/docs/" class="community-dropdown__home" onClick={dropdown.close}>
           <svg viewBox="0 0 16 24"><path d="M3 2l10 10L3 22" stroke-width="3" fill="none" fill-rule="evenodd"></path></svg>
           Home
         </stencil-route-link>

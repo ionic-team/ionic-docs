@@ -1,5 +1,5 @@
 export const main = {
-  'Home': '/docs',
+  'Home': '/docs/',
   'Introduction': {
     'What is Ionic Framework': '/docs/intro',
     'Core Concepts': '/docs/intro/concepts',
@@ -66,7 +66,7 @@ export const main = {
 };
 
 export const pro = {
-  'Home': '/docs',
+  'Home': '/docs/',
   'Introduction': {
     'Getting Started': '/docs/pro',
     'Git Workflow': '/docs/pro/basics/git'

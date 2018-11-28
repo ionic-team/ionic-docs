@@ -134,7 +134,7 @@ export class DocsMenu {
               <svg viewBox="0 0 33 22"><polygon points="16.5 22 0 0 33 0"></polygon></svg>
             </label>
           </div>,
-          <stencil-route-link class="menu__breadcrumb" url="/docs">
+          <stencil-route-link class="menu__breadcrumb" url="/docs/">
             <svg viewBox="0 0 16 24"><path d="M13 22L3 12 13 2" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
             Docs
           </stencil-route-link>,
@@ -151,7 +151,7 @@ export class DocsMenu {
 
       case 'native':
         return [
-          <stencil-route-link class="menu__breadcrumb" url="/docs">
+          <stencil-route-link class="menu__breadcrumb" url="/docs/">
             <svg viewBox="0 0 16 24"><path d="M13 22L3 12 13 2" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
             Docs
           </stencil-route-link>,
@@ -167,7 +167,7 @@ export class DocsMenu {
 
       case 'cli':
         return [
-          <stencil-route-link class="menu__breadcrumb" url="/docs">
+          <stencil-route-link class="menu__breadcrumb" url="/docs/">
             <svg viewBox="0 0 16 24"><path d="M13 22L3 12 13 2" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
             Docs
           </stencil-route-link>,
