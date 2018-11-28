@@ -1,7 +1,5 @@
 export const versions = [
-  '4.0.0-beta.15',
-  // '4.0.0-beta.0',
-  // 'nightly'
+  '4.0.0-beta.16'
 ];
 
-export const current = '4.0.0-beta.15';
+export const current = '4.0.0-beta.16';
