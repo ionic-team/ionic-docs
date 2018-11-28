@@ -10,7 +10,7 @@
   "scripts": {
     "start": "npm run server",
     "build": "stencil build --prerender",
-    "dev": "sd concurrent \"stencil build --dev --watch\" \"npm run server\" \"browser-sync start --config bs-config.js\" ",
+    "dev": "stencil build --dev --serve --watch",
     "lint": "tslint --config tslint.json --project tsconfig.json",
     "precommit": "npm run lint",
     "docgen": "bash -c 'node scripts/build/scripts/docgen --section=\"${1-all}\"' --",
@@ -62,9 +62,6 @@
     "typedoc": "^0.11.1",
     "typescript": "^3.0.0",
     "unzipper": "^0.9.4"
-  },
-  "devDependencies": {
-    "browser-sync": "^2.26.0"
   },
   "cacheDirectories": [
     "sources",
