@@ -89,10 +89,10 @@ const options = [
     sections: ['framework', 'api', 'cli']
   },
   {
-    title: 'Pro',
+    title: 'Appflow',
     subtitle: 'Integrated suite of tools & services for shipping apps',
-    url: 'https://ionicframework.com/docs/pro/',
-    sections: ['pro'],
+    url: 'https://ionicframework.com/docs/appflow/',
+    sections: ['appflow'],
     outbound: true
   },
   {
