@@ -28,7 +28,7 @@ export class DocsHeader {
           class="menu-toggle">
             { this.isMenuOpen ? <Close/> : <Menu/> }
         </button>
-        <a href="/docs" class="docs-logo"><Ionic/><span>Docs</span></a>
+        <a href="/docs/" class="docs-logo"><Ionic/><span>Docs</span></a>
         <ionic-search>
         </ionic-search>
         <CommunityDropdown/>
