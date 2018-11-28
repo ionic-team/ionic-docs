@@ -64,7 +64,7 @@
     "unzipper": "^0.9.4"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.0"
+    "browser-sync": "^2.26.3"
   },
   "cacheDirectories": [
     "sources",
