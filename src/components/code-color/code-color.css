@@ -1,3 +1,8 @@
+code-color {
+  display: inline-block;
+  vertical-align: bottom;
+}
+
 .color-block {
   display: inline-block;
 
