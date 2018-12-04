@@ -3,7 +3,7 @@ code-color {
   vertical-align: bottom;
 }
 
-.color-block {
+.code-color-block {
   display: inline-block;
 
   width: 20px;
@@ -13,7 +13,7 @@ code-color {
   border-radius: 4px;
 }
 
-.color-block,
-.color-code {
+.code-color-block,
+.code-color-value {
   vertical-align: middle;
 }

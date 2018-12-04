@@ -38,9 +38,11 @@ export namespace Components {
   }
 
   interface CodeColor {
+    'display': string;
     'value': string;
   }
   interface CodeColorAttributes extends StencilHTMLAttributes {
+    'display'?: string;
     'value'?: string;
   }
 
@@ -251,6 +253,9 @@ export namespace Components {
     'section'?: string;
   }
 
+  interface SteppedColorGenerator {}
+  interface SteppedColorGeneratorAttributes extends StencilHTMLAttributes {}
+
   interface TabGroup {
     'initial': string;
     'tabs': string;
@@ -295,6 +300,7 @@ declare global {
     'LayeredColorsSelect': Components.LayeredColorsSelect;
     'LoadingIndicator': Components.LoadingIndicator;
     'SectionSwitch': Components.SectionSwitch;
+    'SteppedColorGenerator': Components.SteppedColorGenerator;
     'TabGroup': Components.TabGroup;
   }
 
@@ -331,6 +337,7 @@ declare global {
     'layered-colors-select': Components.LayeredColorsSelectAttributes;
     'loading-indicator': Components.LoadingIndicatorAttributes;
     'section-switch': Components.SectionSwitchAttributes;
+    'stepped-color-generator': Components.SteppedColorGeneratorAttributes;
     'tab-group': Components.TabGroupAttributes;
   }
 
@@ -527,6 +534,12 @@ declare global {
     new (): HTMLSectionSwitchElement;
   };
 
+  interface HTMLSteppedColorGeneratorElement extends Components.SteppedColorGenerator, HTMLStencilElement {}
+  var HTMLSteppedColorGeneratorElement: {
+    prototype: HTMLSteppedColorGeneratorElement;
+    new (): HTMLSteppedColorGeneratorElement;
+  };
+
   interface HTMLTabGroupElement extends Components.TabGroup, HTMLStencilElement {}
   var HTMLTabGroupElement: {
     prototype: HTMLTabGroupElement;
@@ -566,6 +579,7 @@ declare global {
     'layered-colors-select': HTMLLayeredColorsSelectElement
     'loading-indicator': HTMLLoadingIndicatorElement
     'section-switch': HTMLSectionSwitchElement
+    'stepped-color-generator': HTMLSteppedColorGeneratorElement
     'tab-group': HTMLTabGroupElement
   }
 
@@ -602,6 +616,7 @@ declare global {
     'layered-colors-select': HTMLLayeredColorsSelectElement;
     'loading-indicator': HTMLLoadingIndicatorElement;
     'section-switch': HTMLSectionSwitchElement;
+    'stepped-color-generator': HTMLSteppedColorGeneratorElement;
     'tab-group': HTMLTabGroupElement;
   }
 

@@ -8,15 +8,19 @@ import { Component, Prop } from '@stencil/core';
 export class ColorBlock {
   @Prop() value: string;
 
+  @Prop() display: string;
+
   render() {
+    const display = this.display === undefined ? this.value.trim() : this.display.trim();
+
     return [
       <span
-        class="color-block"
+        class="code-color-block"
         style={{
           'background-color': this.value
         }}>
       </span>,
-      <code class="color-code">{ this.value.trim() }</code>
+      <code class="code-color-value">{ display }</code>
     ];
   }
 }

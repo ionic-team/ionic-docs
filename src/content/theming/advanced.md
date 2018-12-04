@@ -155,29 +155,13 @@ While updating the background (`--ion-background-color`) and text (`--ion-text-c
 
 In some components we use a shade darker than the background or lighter than the text. For example, an item heading text may need to be <code-color value="#404040"></code-color>, which is a few shades lighter than our default text color. Meanwhile, the loading component background is a shade darker than white, using <code-color value="#f2f2f2"></code-color>. We use stepped colors in order to define these slight variations. It is important to update the stepped colors when updating the background or text color of an application.
 
-By default, the Ionic stepped colors start at the default background color value <code-color value="#ffffff"></code-color> and mix with the text color value <code-color value="#000000"></code-color> using an increasing percentage. The full list of stepped colors is below, including the percentage that we use to generate the default values.
+By default, the Ionic stepped colors start at the default background color value <code-color value="#ffffff"></code-color> and mix with the text color value <code-color value="#000000"></code-color> using an increasing percentage. The full list of stepped colors is shown in the generator below.
 
-| Name                          | Percent   | Default Value                             |
-| ------------------------------| ----------| ------------------------------------------|
-| `--ion-color-step-50`         | 5%        | <code-color value="#f2f2f2"></code-color> |
-| `--ion-color-step-100`        | 10%       | <code-color value="#e6e6e6"></code-color> |
-| `--ion-color-step-150`        | 15%       | <code-color value="#d9d9d9"></code-color> |
-| `--ion-color-step-200`        | 20%       | <code-color value="#cccccc"></code-color> |
-| `--ion-color-step-250`        | 25%       | <code-color value="#bfbfbf"></code-color> |
-| `--ion-color-step-300`        | 30%       | <code-color value="#b3b3b3"></code-color> |
-| `--ion-color-step-350`        | 35%       | <code-color value="#a6a6a6"></code-color> |
-| `--ion-color-step-400`        | 40%       | <code-color value="#999999"></code-color> |
-| `--ion-color-step-450`        | 45%       | <code-color value="#8c8c8c"></code-color> |
-| `--ion-color-step-500`        | 50%       | <code-color value="#808080"></code-color> |
-| `--ion-color-step-550`        | 55%       | <code-color value="#737373"></code-color> |
-| `--ion-color-step-600`        | 60%       | <code-color value="#666666"></code-color> |
-| `--ion-color-step-650`        | 65%       | <code-color value="#595959"></code-color> |
-| `--ion-color-step-700`        | 70%       | <code-color value="#4d4d4d"></code-color> |
-| `--ion-color-step-750`        | 75%       | <code-color value="#404040"></code-color> |
-| `--ion-color-step-800`        | 80%       | <code-color value="#333333"></code-color> |
-| `--ion-color-step-850`        | 85%       | <code-color value="#262626"></code-color> |
-| `--ion-color-step-900`        | 90%       | <code-color value="#191919"></code-color> |
-| `--ion-color-step-950`        | 95%       | <code-color value="#0d0d0d"></code-color> |
+### Generate Stepped Color Variables
+
+Create a custom background and text color theme for your app. Update the background or text color’s hex values below, then copy and paste the generated code directly into your Ionic project.
+
+<stepped-color-generator></stepped-color-generator>
 
 
 ## Globals

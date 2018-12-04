@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, Prop, State } from '@stencil/core';
+import { Component, Element, Event, EventEmitter, Prop, State } from '@stencil/core';
 
 
 @Component({
@@ -10,6 +10,8 @@ export class CssText {
   @Prop({ mutable: true }) cssText = '';
   @State() showCopyConfirmation = false;
   @Event() cssTextChange: EventEmitter;
+
+  @Element() el: HTMLElement;
 
   onCssTextChange(ev: UIEvent) {
     if ((ev.target as HTMLTextAreaElement).value !== this.cssText) {
@@ -25,8 +27,11 @@ export class CssText {
   copyCssText() {
     this.showCopyConfirmation = true;
 
+    const cssEl = this.el.querySelector('#cssText');
+    const cssText = cssEl.textContent || '';
+
     const el = document.createElement('textarea');
-    el.value = this.cssText;
+    el.value = cssText;
     el.setAttribute('readonly', '');
     el.style.position = 'absolute';
     el.style.left = '-9999px';
@@ -56,12 +61,15 @@ export class CssText {
             </span>
           </div>
         </div>
-        <textarea
+        <div
+          id="cssText"
+          class="css-text__code"
+          contentEditable="true"
           spellcheck="false"
           onClick={function() { this.select(); }}
           onInput={this.onCssTextChange.bind(this)}
-          value={this.cssText}>
-        </textarea>
+          innerHTML={this.cssText}>
+        </div>
       </div>
     ];
   }
