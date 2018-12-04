@@ -2,8 +2,8 @@ import { Component, Element, State } from '@stencil/core';
 
 
 @Component({
-  tag: 'color-block',
-  styleUrl: 'color-block.css'
+  tag: 'layered-colors-select',
+  styleUrl: 'layered-colors-select.css'
 })
 export class ColorBlock {
   @Element() el: HTMLElement;
@@ -64,7 +64,10 @@ export class ColorBlock {
       }
     ];
 
+
     const blockItems = variations.map(variation => {
+      const codeColor = variation.rgb ? `rgb(${variation.value})` : `${variation.value}`;
+
       return (
         <tr>
           <td class="color-name">
@@ -74,13 +77,7 @@ export class ColorBlock {
             <code>{ variation.property }</code>
           </td>
           <td class="color-value">
-            <span
-              class="color-block"
-              style={{
-                'background-color': variation.rgb ? `rgb(${variation.value})` : `${variation.value}`
-              }}>
-            </span>
-            <code class="color-code">{ variation.value.trim() }</code>
+            <code-color value={ codeColor }></code-color>
           </td>
           <td class="color-description">
             { variation.description }

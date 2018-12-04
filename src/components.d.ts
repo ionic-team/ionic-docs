@@ -37,6 +37,15 @@ export namespace Components {
     'language'?: string;
   }
 
+  interface CodeColor {
+    'display': string;
+    'value': string;
+  }
+  interface CodeColorAttributes extends StencilHTMLAttributes {
+    'display'?: string;
+    'value'?: string;
+  }
+
   interface CodePreview {
     'inline': boolean;
     'markup': string;
@@ -48,9 +57,6 @@ export namespace Components {
 
   interface ColorAccordion {}
   interface ColorAccordionAttributes extends StencilHTMLAttributes {}
-
-  interface ColorBlock {}
-  interface ColorBlockAttributes extends StencilHTMLAttributes {}
 
   interface ColorGenerator {}
   interface ColorGeneratorAttributes extends StencilHTMLAttributes {
@@ -234,6 +240,9 @@ export namespace Components {
     'mobile'?: boolean;
   }
 
+  interface LayeredColorsSelect {}
+  interface LayeredColorsSelectAttributes extends StencilHTMLAttributes {}
+
   interface LoadingIndicator {}
   interface LoadingIndicatorAttributes extends StencilHTMLAttributes {}
 
@@ -243,6 +252,9 @@ export namespace Components {
   interface SectionSwitchAttributes extends StencilHTMLAttributes {
     'section'?: string;
   }
+
+  interface SteppedColorGenerator {}
+  interface SteppedColorGeneratorAttributes extends StencilHTMLAttributes {}
 
   interface TabGroup {
     'initial': string;
@@ -258,9 +270,9 @@ declare global {
   interface StencilElementInterfaces {
     'CardLink': Components.CardLink;
     'CodeBlock': Components.CodeBlock;
+    'CodeColor': Components.CodeColor;
     'CodePreview': Components.CodePreview;
     'ColorAccordion': Components.ColorAccordion;
-    'ColorBlock': Components.ColorBlock;
     'ColorGenerator': Components.ColorGenerator;
     'ColorGenCssText': Components.ColorGenCssText;
     'ColorGenPreview': Components.ColorGenPreview;
@@ -285,17 +297,19 @@ declare global {
     'FileTree': Components.FileTree;
     'ImgZoom': Components.ImgZoom;
     'IonicSearch': Components.IonicSearch;
+    'LayeredColorsSelect': Components.LayeredColorsSelect;
     'LoadingIndicator': Components.LoadingIndicator;
     'SectionSwitch': Components.SectionSwitch;
+    'SteppedColorGenerator': Components.SteppedColorGenerator;
     'TabGroup': Components.TabGroup;
   }
 
   interface StencilIntrinsicElements {
     'card-link': Components.CardLinkAttributes;
     'code-block': Components.CodeBlockAttributes;
+    'code-color': Components.CodeColorAttributes;
     'code-preview': Components.CodePreviewAttributes;
     'color-accordion': Components.ColorAccordionAttributes;
-    'color-block': Components.ColorBlockAttributes;
     'color-generator': Components.ColorGeneratorAttributes;
     'color-gen-css-text': Components.ColorGenCssTextAttributes;
     'color-gen-preview': Components.ColorGenPreviewAttributes;
@@ -320,8 +334,10 @@ declare global {
     'file-tree': Components.FileTreeAttributes;
     'img-zoom': Components.ImgZoomAttributes;
     'ionic-search': Components.IonicSearchAttributes;
+    'layered-colors-select': Components.LayeredColorsSelectAttributes;
     'loading-indicator': Components.LoadingIndicatorAttributes;
     'section-switch': Components.SectionSwitchAttributes;
+    'stepped-color-generator': Components.SteppedColorGeneratorAttributes;
     'tab-group': Components.TabGroupAttributes;
   }
 
@@ -338,6 +354,12 @@ declare global {
     new (): HTMLCodeBlockElement;
   };
 
+  interface HTMLCodeColorElement extends Components.CodeColor, HTMLStencilElement {}
+  var HTMLCodeColorElement: {
+    prototype: HTMLCodeColorElement;
+    new (): HTMLCodeColorElement;
+  };
+
   interface HTMLCodePreviewElement extends Components.CodePreview, HTMLStencilElement {}
   var HTMLCodePreviewElement: {
     prototype: HTMLCodePreviewElement;
@@ -348,12 +370,6 @@ declare global {
   var HTMLColorAccordionElement: {
     prototype: HTMLColorAccordionElement;
     new (): HTMLColorAccordionElement;
-  };
-
-  interface HTMLColorBlockElement extends Components.ColorBlock, HTMLStencilElement {}
-  var HTMLColorBlockElement: {
-    prototype: HTMLColorBlockElement;
-    new (): HTMLColorBlockElement;
   };
 
   interface HTMLColorGeneratorElement extends Components.ColorGenerator, HTMLStencilElement {}
@@ -500,6 +516,12 @@ declare global {
     new (): HTMLIonicSearchElement;
   };
 
+  interface HTMLLayeredColorsSelectElement extends Components.LayeredColorsSelect, HTMLStencilElement {}
+  var HTMLLayeredColorsSelectElement: {
+    prototype: HTMLLayeredColorsSelectElement;
+    new (): HTMLLayeredColorsSelectElement;
+  };
+
   interface HTMLLoadingIndicatorElement extends Components.LoadingIndicator, HTMLStencilElement {}
   var HTMLLoadingIndicatorElement: {
     prototype: HTMLLoadingIndicatorElement;
@@ -512,6 +534,12 @@ declare global {
     new (): HTMLSectionSwitchElement;
   };
 
+  interface HTMLSteppedColorGeneratorElement extends Components.SteppedColorGenerator, HTMLStencilElement {}
+  var HTMLSteppedColorGeneratorElement: {
+    prototype: HTMLSteppedColorGeneratorElement;
+    new (): HTMLSteppedColorGeneratorElement;
+  };
+
   interface HTMLTabGroupElement extends Components.TabGroup, HTMLStencilElement {}
   var HTMLTabGroupElement: {
     prototype: HTMLTabGroupElement;
@@ -521,9 +549,9 @@ declare global {
   interface HTMLElementTagNameMap {
     'card-link': HTMLCardLinkElement
     'code-block': HTMLCodeBlockElement
+    'code-color': HTMLCodeColorElement
     'code-preview': HTMLCodePreviewElement
     'color-accordion': HTMLColorAccordionElement
-    'color-block': HTMLColorBlockElement
     'color-generator': HTMLColorGeneratorElement
     'color-gen-css-text': HTMLColorGenCssTextElement
     'color-gen-preview': HTMLColorGenPreviewElement
@@ -548,17 +576,19 @@ declare global {
     'file-tree': HTMLFileTreeElement
     'img-zoom': HTMLImgZoomElement
     'ionic-search': HTMLIonicSearchElement
+    'layered-colors-select': HTMLLayeredColorsSelectElement
     'loading-indicator': HTMLLoadingIndicatorElement
     'section-switch': HTMLSectionSwitchElement
+    'stepped-color-generator': HTMLSteppedColorGeneratorElement
     'tab-group': HTMLTabGroupElement
   }
 
   interface ElementTagNameMap {
     'card-link': HTMLCardLinkElement;
     'code-block': HTMLCodeBlockElement;
+    'code-color': HTMLCodeColorElement;
     'code-preview': HTMLCodePreviewElement;
     'color-accordion': HTMLColorAccordionElement;
-    'color-block': HTMLColorBlockElement;
     'color-generator': HTMLColorGeneratorElement;
     'color-gen-css-text': HTMLColorGenCssTextElement;
     'color-gen-preview': HTMLColorGenPreviewElement;
@@ -583,8 +613,10 @@ declare global {
     'file-tree': HTMLFileTreeElement;
     'img-zoom': HTMLImgZoomElement;
     'ionic-search': HTMLIonicSearchElement;
+    'layered-colors-select': HTMLLayeredColorsSelectElement;
     'loading-indicator': HTMLLoadingIndicatorElement;
     'section-switch': HTMLSectionSwitchElement;
+    'stepped-color-generator': HTMLSteppedColorGeneratorElement;
     'tab-group': HTMLTabGroupElement;
   }
 
