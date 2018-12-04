@@ -116,9 +116,12 @@
   letter-spacing: 0.01em;
   padding: 1px 5px;
   font-size: 10px;
-  margin-left: 13px;
   border-radius: 4px;
   font-weight: 600;
+  position: absolute;
+  left: 100%;
+  z-index: 1;
+  white-space: nowrap;
 
   @media (max-width: $breakpoint-md) {
     padding: 3px 5px;
