@@ -227,7 +227,7 @@ docs-content {
   dl {
     display: grid;
     border-top: 1px #eee solid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: minmax(min-content, 1fr) 2fr;
 
     @media (max-width: $breakpoint-md)  {
       display: block;
