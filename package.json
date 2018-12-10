@@ -27,9 +27,9 @@
     "predownload": "tsc -p scripts/tsconfig.json"
   },
   "dependencies": {
-    "@stencil/core": "^0.15.2",
-    "@stencil/router": "^0.3.0",
-    "@stencil/sass": "0.1.0",
+    "@stencil/core": "^0.16.0",
+    "@stencil/router": "^0.3.1",
+    "@stencil/sass": "^0.1.1",
     "@stencil/utils": "latest",
     "@types/node": "^10.12.10",
     "@types/semver": "^5.5.0",
