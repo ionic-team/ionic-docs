@@ -13,7 +13,7 @@ docs-menu {
   font-weight: 600;
   height: calc(100% - var(--header-height));
   overflow-y: auto;
-  padding: 1rem 1rem 2rem 2rem;
+  padding: 2rem;
   overscroll-behavior-y: contain;
   -webkit-overflow-scrolling: touch;
 }
@@ -34,7 +34,7 @@ docs-menu {
 
 .menu a {
   display: inline-block;
-  line-height: 2;
+  line-height: 1.9;
   transition: transform 200ms ease;
   margin-bottom: 3px;
 }
