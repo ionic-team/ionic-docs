@@ -37,6 +37,10 @@ docs-menu {
   line-height: 1.9;
   transition: transform 200ms ease;
   margin-bottom: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 100%;
+  text-overflow: ellipsis;
 }
 
 .menu__item {
