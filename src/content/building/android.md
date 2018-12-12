@@ -11,13 +11,13 @@ nextUrl: '/docs/building/testing'
 This guide covers how to deploy Ionic apps to Android simulators and devices using [Capacitor](/docs/faq/glossary#capacitor) or [Cordova](/docs/faq/glossary#cordova).
 </p>
 
-> To deploy apps to an Android device and debug them, developer mode must be enabled and allow for USB debugging turned on. Check out <a href="https://developer.android.com/studio/debug/dev-options#enable" target="_blank">these instructions</a> to do this on a device.
+> To deploy and debug apps on an Android device, **developer mode** and **USB debugging** must be enabled. Check out <a href="https://developer.android.com/studio/debug/dev-options#enable" target="_blank">these instructions</a> for more information.
 
 ## Project Setup
 
 Before apps can be deployed to Android simulators and devices, the native project must be configured.
 
-1. Generate the native project, if it does not already exist.
+1. **Generate the native project, if it does not already exist.**
 
     For Capacitor, run the following:
 
@@ -31,7 +31,7 @@ Before apps can be deployed to Android simulators and devices, the native projec
     $ ionic cordova prepare android
     ```
 
-2. Set the [Package ID](/docs/faq/glossary#package-id).
+2. **Set the [Package ID](/docs/faq/glossary#package-id).**
 
     For Capacitor, open the `capacitor.config.json` file and modify the `appId` property.
 
@@ -42,7 +42,7 @@ Before apps can be deployed to Android simulators and devices, the native projec
 
 Capacitor uses Android Studio to build and run apps to simulators and devices.
 
-1. Develop the Ionic app and sync it to the native project.
+1. **Develop the Ionic app and sync it to the native project.**
 
     With each meaningful change, Ionic apps must be built into web assets before the change can appear on Android simulators and devices. The web assets then must be copied into the native project. Luckily, this process is made easy with a single Ionic CLI command.
 
@@ -50,7 +50,9 @@ Capacitor uses Android Studio to build and run apps to simulators and devices.
     $ ionic capacitor copy android
     ```
 
-2. In Android Studio, select a target simulator or device and click the run button.
+2. **In Android Studio, click the Run button and then select the target simulator or device.**
+
+![Android Studio Run Button Area](/docs/assets/img/running/android-studio-run-button-area.png)
 
 ## Running with Cordova
 
@@ -64,10 +66,18 @@ $ ionic cordova run android -l
 
 Now, when changes are made to the app's source files, web assets are rebuilt and the changes are reflected on the simulator or device without having to deploy again.
 
-## Using Chrome DevTools to debug
+## Using Chrome DevTools
 
-Chrome has devtools support for Android simulators and devices. Go to `chrome://inspect` in Chrome while the simulator is running or a device is connected to the computer and select the app that needs to be debugged.
+Chrome has web developer tool support for Android simulators and devices. Go to `chrome://inspect` in Chrome while the simulator is running or a device is connected to the computer and **Inspect** the app that needs to be debugged.
+
+> Make sure your application is running on the device or simulator, or it will not show up in the list.
+
+![Android Chrome DevTools](/docs/assets/img/running/android-chrome-devtools.png)
 
 ## Viewing Native Logs
 
-Native logs can be found in Android Studio in the **Console**.
+Native logs can be found in Android Studio in **Logcat**. 
+
+> If the **Logcat** window is hidden, you can enable it in **View** &raquo; **Tool Windows** &raquo; **Logcat**.
+
+![Android Studio Logcat](/docs/assets/img/running/android-studio-logcat.png)
