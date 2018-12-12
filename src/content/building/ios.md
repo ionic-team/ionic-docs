@@ -11,9 +11,7 @@ nextUrl: '/docs/building/android'
 This guide covers how to deploy Ionic apps to iOS simulators and devices using [Capacitor](/docs/faq/glossary#capacitor) or [Cordova](/docs/faq/glossary#cordova).
 </p>
 
-<p class="intro">
-There are two workflows for running Ionic apps on iOS: [Running with Xcode](#running-with-xcode) and [Running with the Ionic CLI](#running-with-the-ionic-cli). The Xcode approach is generally more stable, but the Ionic CLI approach offers [live-reload](/docs/faq/glossary#livereload) functionality.
-</p>
+> There are two workflows for running Ionic apps on iOS: [Running with Xcode](#running-with-xcode) and [Running with the Ionic CLI](#running-with-the-ionic-cli). The Xcode approach is generally more stable, but the Ionic CLI approach offers [live-reload](/docs/faq/glossary#livereload) functionality.
 
 ## Project Setup
 
@@ -79,6 +77,8 @@ In this workflow, Xcode can automatically fix common compilation and signing iss
 
 1. <strong>In Xcode, select a target simulator or device and click the play button.</strong>
 
+    ![Xcode Play Button Area](/docs/assets/img/running/ios-xcode-play-button-area.png)
+
 ## Running with the Ionic CLI
 
 The Ionic CLI can build, copy, and deploy Ionic apps to iOS simulators and devices with a single command. It can also spin up a development server, like the one used in `ionic serve`, to provide [live-reload](/docs/faq/glossary#livereload) functionality.
@@ -93,12 +93,16 @@ Now, when changes are made to the app's source files, web assets are rebuilt and
 
 ## Using Safari Web Inspector
 
-Safari has Web Inspector support for iOS simulators and devices. Open the **Develop** menu and select the simulator or device, then select the Ionic App to open Web Inspector. If the **Develop** menu is hidden, enable it in **Safari** &raquo; **Preferences** &raquo; **Advanced**.
+Safari has Web Inspector support for iOS simulators and devices. Open the **Develop** menu and select the simulator or device, then select the Ionic App to open Web Inspector. 
+
+> If the **Develop** menu is hidden, enable it in **Safari** &raquo; **Preferences** &raquo; **Advanced** &raquo; **Show Develop menu in menu bar**.
 
 ![Safari Web Inspector](/docs/assets/img/running/ios-safari-web-inspector-timelines.png)
 
 ## Viewing Native Logs
 
-Native logs can be found in Xcode in the **Console**. If hidden, enable the Console in **View** &raquo; **Debug Area** &raquo; **Activate Console**.
+Native logs can be found in Xcode in the **Console**.
+
+> If the **Console** is hidden, enable it in **View** &raquo; **Debug Area** &raquo; **Activate Console**.
 
 ![Xcode Console](/docs/assets/img/running/ios-xcode-console.png)
