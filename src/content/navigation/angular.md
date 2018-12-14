@@ -1,11 +1,11 @@
 ---
-previousText: 'Ionic Storage'
-previousUrl: '/docs/building/storage'
+previousText: ''
+previousUrl: ''
 nextText: ''
 nextUrl: ''
 ---
 
-# Angular Router Deep Dive
+# Angular Navigation
 
 <p class="intro">
 This guide covers how routing works in and app built with Ionic and Angular.

@@ -26,7 +26,6 @@ export const main = {
     'Contributing': '/docs/building/contributing',
     'Web View': '/docs/building/webview',
     'Ionic Storage': '/docs/building/storage',
-    'Angular Navigation': '/docs/building/angular-navigation',
   },
   'Components': '/docs/components',
   'Layout': {
@@ -41,6 +40,9 @@ export const main = {
     'CSS Variables': '/docs/theming/css-variables',
     'Color Generator': '/docs/theming/color-generator',
     'Advanced': '/docs/theming/advanced'
+  },
+  'Navigation': {
+    'Angular': '/docs/navigation/angular',
   },
   'Publishing': {
     'Progressive Web App': '/docs/publishing/progressive-web-app',
