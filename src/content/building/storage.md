@@ -1,3 +1,9 @@
+---
+previousText: 'Web View'
+previousUrl: '/docs/building/webview'
+nextText: 'Angular Navigation'
+nextUrl: '/docs/building/angular-navigation'
+---
 
 # Storage
 
