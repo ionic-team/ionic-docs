@@ -14,10 +14,13 @@ export default {
 };
 
 async function getCLIDocuments(): Promise<Document[]> {
-  return commands.map(command => ({
-    title: command.name,
-    body: renderMarkdown(command.description),
-    path: join(DOCUMENTS_DIR, `cli/commands/${command.name.slice(6).replace(/\s/g, '-')}.json`),
-    ...command
-  }));
+  return commands.map(command => {
+    const { name, description, ...rest } = command;
+    return {
+      title: name,
+      body: renderMarkdown(description),
+      path: join(DOCUMENTS_DIR, `cli/commands/${name.slice(6).replace(/\s/g, '-')}.json`),
+      ...rest
+    };
+  });
 }
