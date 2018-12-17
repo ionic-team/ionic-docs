@@ -1,0 +1,10 @@
+docs-menu nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+docs-menu .link-active {
+  color: inherit;
+  text-decoration: none;
+}

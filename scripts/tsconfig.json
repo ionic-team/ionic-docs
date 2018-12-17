@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "allowUnreachableCode": false,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "declaration": false,
+    "lib": [
+      "es2017"
+    ],
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "outDir": "build",
+    "target": "es2017",
+    "pretty": true
+  },
+  "include": [
+    "**/*.ts"
+  ]
+}

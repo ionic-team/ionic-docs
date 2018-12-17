@@ -1,0 +1,22 @@
+:root {
+  --background-color: #ffffff;
+  --text-color: #3c4b62;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: system-ui, sans-serif;
+  text-size-adjust: none;
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
