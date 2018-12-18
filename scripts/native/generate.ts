@@ -37,7 +37,9 @@ export default async function generate(task) {
   task.output = 'Generating Typedoc...';
   const typeDoc = await getTypeDoc();
 
-  typeDoc.children.forEach(tsData => processPlugin(tsData, task));
+  typeDoc.children
+    .filter(tsData => getTSChild(tsData.children).comment !== undefined) // Ensure there is a comment documenting this plugin.
+    .forEach(tsData => processPlugin(tsData, task));
 
   // write nav
   task.output = 'Generating Nav...';
