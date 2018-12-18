@@ -21,6 +21,11 @@ p.intro {
   margin-bottom: 1.2em;
 }
 
+p.intro code {
+  font-size: 15px;
+  font-weight: 500;
+}
+
 h1,
 h2,
 h3,
