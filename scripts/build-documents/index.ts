@@ -41,6 +41,14 @@ function patchDocument(document: Document): Document {
     h1.remove();
   }
 
+  for (let i = 0, children = [...body.children]; i < children.length; i++) {
+    if (children[i].tagName === 'P') {
+      children[i].classList.add('intro');
+    } else {
+      break;
+    }
+  }
+
   const headings = [...body.querySelectorAll('h2')].map(heading => ({
     text: heading.textContent,
     hash: heading.getAttribute('id')
