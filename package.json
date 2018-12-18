@@ -59,7 +59,7 @@
     "semver": "^5.5.0",
     "tslint": "^5.9.1",
     "tslint-ionic-rules": "0.0.20",
-    "typedoc": "^0.11.1",
+    "typedoc": "^0.13.0",
     "typescript": "^3.0.0",
     "unzipper": "^0.9.4"
   },
