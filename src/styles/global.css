@@ -1,8 +1,13 @@
 :root {
-  --background-color: #ffffff;
+  --background-color: var(--color-white);
+  --code-color: #3b00ff;
+  --code-font-family: "SFMono-Regular", "Roboto Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  --link-color: #005cff;
+  --line-rule-color: #edf2f6;
   --text-color: #3c4b62;
+  --text-color--dark: #24282e;
+  --text-color--light: #6e7f99;
 }
-
 
 * {
   box-sizing: border-box;

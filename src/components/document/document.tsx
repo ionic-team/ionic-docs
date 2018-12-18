@@ -6,7 +6,9 @@ import cliTemplate from './templates/cli';
 import errorTemplate from './templates/error';
 
 @Component({
-  tag: 'docs-document'
+  tag: 'docs-document',
+  styleUrl: 'document.css',
+  shadow: true
 })
 export class DocsDocument {
   @Prop() path: string;
