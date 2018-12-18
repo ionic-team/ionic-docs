@@ -125,7 +125,7 @@ See the following `ionic.config.json` as an example:
 
 ## RxJS Changes
 
-Some minor RxJS changes are required due to the change from RxJS v5 to v6. Please see the <a href="https://github.com/ReactiveX/rxjs/blob/master/MIGRATION.md" target="_blank">RxJS Migration Guide</a> for details.
+Between V3 and V4, RxJS was updated to version 6. This changes many of the import paths of operators and core RxJS functions. Please see the <a href="https://github.com/ReactiveX/rxjs/blob/master/MIGRATION.md" target="_blank">RxJS Migration Guide</a> for details.
 
 ## Lifecycle Events
 
@@ -175,17 +175,18 @@ async showAlert() {
 
 ## Navigation
 
-In v4, major changes were made to navigation and routing. `NavController` and `ion-nav` have now been deprecated. They can still used, but only if an app is not using lazy loading.
+In V4, navigation received the most changes. Now, instead of using Ionic's own `NavController`, we integrate with the official Angular Router. This not only provides a consistent routing experience across apps, but is much more dependable. The Angular team has an <a href="http://angular.io/guide/router" target="_blank">excellent guide</a> on their docs site that covers the Router in great detail.
 
-In place of `ion-nav` and `NavController`, Ionic recommends using the official Angular Router for routing. The Angular team has an <a href="http://angular.io/guide/router" target="_blank">excellent guide</a> on their docs site that covers the Router in great detail.
+To provide the platform specific animations that users are used to, we have created `ion-router-outlet` for Angular Apps. This behaves in a similar manor to Angular's `rouer-outlet` but provides a stack-based navigation (tabs) and animations.
 
-One key difference is that instead of using the `router-outlet` component, Ionic apps use the `ion-router-outlet`. The component has the same functionality as the standard Angular `router-outlet`, but includes transitions.
+For a detailed explanation in navigation works in a V4 project, checkout the [Angular navigation guide](/docs/navigation/angular).
+
 
 ## Lazy Loading
 
-Another change is how lazy loading is done in v4 apps.
+Since Navigation has changed, the mechanism for lazy loading has also changed in V4.
 
-In v3, lazy loading was done like this:
+In v3, a typical lazy loading setup worked like this:
 
 ```typescript
 // home.page.ts
@@ -231,6 +232,8 @@ export class HomePageModule {}
 })
 export class AppModule {}
 ```
+
+For a detailed explanation of lazy loading in V4 project, check out the [Angular navigation guide](docs/navigation/angular#lazy-loading-routes).
 
 ## Markup Changes
 
