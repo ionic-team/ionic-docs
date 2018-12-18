@@ -60,7 +60,7 @@
     "tslint": "^5.9.1",
     "tslint-ionic-rules": "0.0.20",
     "typedoc": "^0.13.0",
-    "typescript": "^3.0.0",
+    "typescript": "^3.2.2",
     "unzipper": "^0.9.4"
   },
   "cacheDirectories": [
