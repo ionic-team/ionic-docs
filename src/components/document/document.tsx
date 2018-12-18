@@ -26,7 +26,7 @@ export class DocsDocument {
   }
 
   validateFetch = (response) => {
-    if (!response.ok) throw new Error(`Failed to fetch ${response.url}`);
+    if (!response.ok) throw new Error(response.statusText);
     return response.json();
   }
 
