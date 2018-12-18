@@ -16,21 +16,8 @@ export default {
 
 async function getStaticDocuments(): Promise<Document[]> {
   const paths = await getMarkdownPaths(DOCUMENTS_DIR);
-  return Promise.all(paths.map(async path => {
-    const markdown = await readMarkdown(path);
-    const { body, attributes } = frontMatter(markdown);
-    return {
-      ...attributes,
-      body: markdownRenderer(body),
-      path: (path as string).replace(/md$/, 'json')
-    };
-  }));
+  return Promise.all(paths.map(toDocument));
 }
-
-const readMarkdown = (path: string): Promise<string> =>
-  fs.readFile(path, {
-    encoding: 'utf8'
-  });
 
 const getMarkdownPaths = (cwd: string): Promise<string[]> =>
   glob('**/*.md', {
@@ -38,3 +25,22 @@ const getMarkdownPaths = (cwd: string): Promise<string[]> =>
     cwd
   });
 
+const toDocument = async (path: string) => {
+  return {
+    path: path.replace(/md$/, 'json'),
+    ...renderMarkdown(await readMarkdown(path))
+  };
+};
+
+const renderMarkdown = (markdown: string) => {
+  const { body, attributes } = frontMatter(markdown);
+  return {
+    ...attributes,
+    body: markdownRenderer(body)
+  };
+};
+
+const readMarkdown = (path: string): Promise<string> =>
+  fs.readFile(path, {
+    encoding: 'utf8'
+  });
