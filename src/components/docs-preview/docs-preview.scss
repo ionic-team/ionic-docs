@@ -3,7 +3,7 @@ docs-preview {
 }
 
 .docs-preview-device {
-  --device-aspect-ratio: 2.1667;
+  --device-aspect-ratio: 2.125;
   --device-padding: 2rem;
 
   padding: var(--device-padding);
@@ -16,7 +16,7 @@ docs-preview {
   box-shadow: 0 0 0 14px #090a0d, 0 0 0 17px #9fa3a8, 0 0 34px 17px rgba(0,0,0,0.2);
   height: 0;
   margin: 0;
-  max-width: 375px;
+  max-width: 320px;
   min-width: 320px;
   overflow: hidden;
   padding-bottom: calc(var(--device-aspect-ratio) * 100%);
