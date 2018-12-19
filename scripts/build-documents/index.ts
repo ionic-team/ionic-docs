@@ -3,12 +3,12 @@ import fs from 'fs-extra';
 import { JSDOM } from 'jsdom';
 import Listr from 'listr';
 import Static from './document-types/static';
-import Component from './document-types/component';
+import API from './document-types/api';
 import CLI from './document-types/cli';
 
 const tasks = new Listr();
 tasks.add(Static);
-tasks.add(Component);
+tasks.add(API);
 tasks.add(CLI);
 tasks.run().catch(console.error);
 

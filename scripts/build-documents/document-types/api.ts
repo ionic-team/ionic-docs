@@ -9,14 +9,14 @@ import { join } from 'path';
 import markdownRenderer from '../markdown-renderer';
 
 export default {
-  title: 'Build component documents',
-  task: () => buildDocuments(getComponentDocuments)
+  title: 'Build API documents',
+  task: () => buildDocuments(getAPIDocuments)
 };
 
-async function getComponentDocuments(): Promise<Document[]> {
+async function getAPIDocuments(): Promise<Document[]> {
   return components.map(component => {
     const title = component.tag.slice(4);
-    const path = `${join(DOCUMENTS_DIR, 'components', title)}.json`;
+    const path = `${join(DOCUMENTS_DIR, 'api', title)}.json`;
     const { readme, ...contents } = component;
     return {
       title,

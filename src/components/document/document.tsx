@@ -1,7 +1,7 @@
 import { Component, Prop, State, Watch } from '@stencil/core';
 import defaultTemplate from './templates/default';
-import componentTemplate from './templates/component';
 import nativeTemplate from './templates/native';
+import apiTemplate from './templates/api';
 import cliTemplate from './templates/cli';
 import errorTemplate from './templates/error';
 
@@ -50,8 +50,8 @@ export class DocsDocument {
 
     return (
       <stencil-route-switch>
-        <stencil-route url="/docs/components" routeRender={componentTemplate} componentProps={{ document }}/>
         <stencil-route url="/docs/native" routeRender={nativeTemplate} componentProps={{ document }}/>
+        <stencil-route url="/docs/api" routeRender={apiTemplate} componentProps={{ document }}/>
         <stencil-route url="/docs/cli" routeRender={cliTemplate} componentProps={{ document }}/>
         <stencil-route url="/docs" routeRender={defaultTemplate} componentProps={{ document }}/>
       </stencil-route-switch>
