@@ -1,4 +1,4 @@
-import { components } from '@ionic/docs';
+import { components } from '@ionic/docs/core.json';
 
 export default () => (
   <nav>
