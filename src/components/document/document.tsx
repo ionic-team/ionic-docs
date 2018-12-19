@@ -7,8 +7,7 @@ import errorTemplate from './templates/error';
 
 @Component({
   tag: 'docs-document',
-  styleUrl: 'document.css',
-  shadow: true
+  styleUrl: 'document.css'
 })
 export class DocsDocument {
   @Prop() path: string;
