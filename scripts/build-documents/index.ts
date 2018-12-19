@@ -51,7 +51,7 @@ function patchDocument(document: Document): Document {
 
   const headings = [...body.querySelectorAll('h2')].map(heading => ({
     text: heading.textContent,
-    hash: heading.getAttribute('id')
+    href: `#${heading.getAttribute('id')}`
   }));
 
   return {
