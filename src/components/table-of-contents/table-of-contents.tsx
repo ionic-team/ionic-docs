@@ -9,18 +9,18 @@ export class DocsTableOfContents {
   @Prop() links: Link[] = [];
   @Prop() label = 'Contents';
 
+  toItem = ({ text, href }: Link) => (
+    <stencil-route-link url={href}>{text}</stencil-route-link>
+  )
+
   render() {
-    if (this.links.length < 1) {
+    if (!this.links || this.links.length < 1) {
       return null;
     }
 
     return [
       <strong>{ this.label }</strong>,
-      <nav>
-        {this.links.map(link => (
-          <a href={link.href}>{link.text}</a>
-        ))}
-      </nav>
+      <nav>{ this.links.map(this.toItem) }</nav>
     ];
   }
 }
