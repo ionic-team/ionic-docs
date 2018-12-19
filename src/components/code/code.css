@@ -1,0 +1,22 @@
+@import './highlight-theme.css';
+
+docs-code {
+  display: block;
+}
+
+docs-code pre {
+  position: relative;
+}
+
+docs-code pre:before {
+  color: #bdc5d1;
+  content: attr(data-language);
+  font-family: var(--code-font-family);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  padding: 0.65em;
+  position: absolute;
+  right: 0;
+  text-transform: uppercase;
+  top: 0;
+}

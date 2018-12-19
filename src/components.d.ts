@@ -13,6 +13,13 @@ import '@stencil/state-tunnel';
 
 export namespace Components {
 
+  interface DocsCode {
+    'language': string;
+  }
+  interface DocsCodeAttributes extends StencilHTMLAttributes {
+    'language'?: string;
+  }
+
   interface DocsDocument {
     'path': string;
   }
@@ -29,17 +36,25 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
+    'DocsCode': Components.DocsCode;
     'DocsDocument': Components.DocsDocument;
     'DocsMenu': Components.DocsMenu;
     'DocsRoot': Components.DocsRoot;
   }
 
   interface StencilIntrinsicElements {
+    'docs-code': Components.DocsCodeAttributes;
     'docs-document': Components.DocsDocumentAttributes;
     'docs-menu': Components.DocsMenuAttributes;
     'docs-root': Components.DocsRootAttributes;
   }
 
+
+  interface HTMLDocsCodeElement extends Components.DocsCode, HTMLStencilElement {}
+  var HTMLDocsCodeElement: {
+    prototype: HTMLDocsCodeElement;
+    new (): HTMLDocsCodeElement;
+  };
 
   interface HTMLDocsDocumentElement extends Components.DocsDocument, HTMLStencilElement {}
   var HTMLDocsDocumentElement: {
@@ -60,12 +75,14 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'docs-code': HTMLDocsCodeElement
     'docs-document': HTMLDocsDocumentElement
     'docs-menu': HTMLDocsMenuElement
     'docs-root': HTMLDocsRootElement
   }
 
   interface ElementTagNameMap {
+    'docs-code': HTMLDocsCodeElement;
     'docs-document': HTMLDocsDocumentElement;
     'docs-menu': HTMLDocsMenuElement;
     'docs-root': HTMLDocsRootElement;

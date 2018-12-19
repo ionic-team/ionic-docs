@@ -102,7 +102,7 @@ pre {
   border-radius: 4px;
   line-height: 1.2;
   margin: 2rem 0;
-  overflow-x: auto;
+  overflow: auto;
   padding: 20px;
 }
 
@@ -110,6 +110,8 @@ pre code {
   background-color: transparent;
   color: inherit;
   font-weight: 500;
+  padding: 0;
+  white-space: inherit;
 }
 
 table {
