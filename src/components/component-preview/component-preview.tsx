@@ -11,6 +11,7 @@ export class ComponentPreview {
   observer: any;
 
   componentWillLoad() {
+    this.handleActive = debounce(this.handleActive, 100);
     this.observer = new IntersectionObserver(this.handleIntersection.bind(this), {
       root: this.doc.querySelector('docs-content'),
       rootMargin: '0px 0px -95% 0px',
@@ -62,3 +63,11 @@ export class ComponentPreview {
     return null;
   }
 }
+
+const debounce = (fn, wait) => {
+  let timeout;
+  return (...args) => {
+    clearTimeout(timeout);
+    timeout = setTimeout(fn, wait, ...args);
+  };
+};
