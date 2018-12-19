@@ -26,6 +26,11 @@ p.intro code {
   font-weight: 500;
 }
 
+ol,
+ul {
+  padding-left: 2em;
+}
+
 h1,
 h2,
 h3,
