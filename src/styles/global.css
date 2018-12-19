@@ -1,7 +1,16 @@
+@font-face {
+  src: url("/docs/assets/fonts/eina-700.woff2") format("woff2"), url("/docs/assets/fonts/eina-700.woff") format("woff");
+  font-family: "Eina";
+  font-style: normal;
+  font-weight: 700;
+}
+
 :root {
   --background-color: var(--color-white);
   --code-color: #3b00ff;
   --code-font-family: "SFMono-Regular", "Roboto Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  --font-family: system-ui, sans-serif;
+  --header-font-family: "Eina", var(--font-family);
   --link-color: #005cff;
   --line-rule-color: #edf2f6;
   --text-color: #3c4b62;
@@ -17,7 +26,7 @@
 body {
   background-color: var(--background-color);
   color: var(--text-color);
-  font-family: system-ui, sans-serif;
+  font-family: var(--font-family);
   text-size-adjust: none;
   margin: 0;
 }
@@ -61,12 +70,14 @@ h4,
 h5,
 h6 {
   color: var(--text-color--dark);
-  letter-spacing: -0.015em;
+  font-family: var(--header-font-family);
+  letter-spacing: -0.03em;
+  line-height: 1.2;
   padding-top: 0.75em;
 }
 
 h1 {
-  font-size: 2.25rem;
+  font-size: 3rem;
   padding-top: 0;
 }
 
@@ -76,7 +87,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.25rem;
+  font-size: 1.375rem;
 }
 
 h2 + h3 {
