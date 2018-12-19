@@ -12,7 +12,7 @@
     "build-documents": "ts-node -P scripts/tsconfig.json scripts/build-documents"
   },
   "dependencies": {
-    "@ionic/docs": "^4.0.0-beta.17",
+    "@ionic/docs": "^4.0.0-rc.0",
     "@stencil/core": "^0.16.1",
     "@stencil/router": "^0.3.1"
   },
