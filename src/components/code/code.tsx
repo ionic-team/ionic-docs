@@ -5,7 +5,7 @@ import { Component, Prop } from '@stencil/core';
   styleUrl: 'code.css'
 })
 export class DocsCode {
-  @Prop() language = '';
+  @Prop({ reflectToAttr: true }) language = '';
 
   render() {
     return (
