@@ -1,4 +1,5 @@
 @import './highlight-theme.css';
+@import './shell-theme.css';
 
 docs-code {
   display: block;
