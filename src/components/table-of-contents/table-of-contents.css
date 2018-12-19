@@ -1,0 +1,27 @@
+docs-table-of-contents {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 2rem;
+}
+
+docs-table-of-contents > strong {
+  color: var(--text-color--lighter);
+  font-size: 0.75em;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+docs-table-of-contents > nav {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+
+docs-table-of-contents a {
+  transition: opacity 100ms ease;
+}
+
+docs-table-of-contents a:hover {
+  opacity: 0.8;
+}
