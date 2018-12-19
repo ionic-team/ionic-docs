@@ -8,9 +8,10 @@ import { Link } from '../../definitions';
 export class DocsTableOfContents {
   @Prop() links: Link[] = [];
   @Prop() label = 'Contents';
+  @Prop() basepath = '';
 
   toItem = ({ text, href }: Link) => (
-    <stencil-route-link url={href}>{text}</stencil-route-link>
+    <stencil-route-link url={`${this.basepath}${href}`}>{text}</stencil-route-link>
   )
 
   render() {

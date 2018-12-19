@@ -37,10 +37,12 @@ export namespace Components {
   interface DocsRootAttributes extends StencilHTMLAttributes {}
 
   interface DocsTableOfContents {
+    'basepath': string;
     'label': string;
     'links': Link[];
   }
   interface DocsTableOfContentsAttributes extends StencilHTMLAttributes {
+    'basepath'?: string;
     'label'?: string;
     'links'?: Link[];
   }
