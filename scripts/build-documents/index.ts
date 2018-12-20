@@ -15,6 +15,7 @@ tasks.run().catch(console.error);
 export const DOCUMENTS_DIR = resolve(__dirname, '../../src/documents');
 
 export interface Document {
+  title: string;
   path: string;
   body: string;
   [key: string]: any;
