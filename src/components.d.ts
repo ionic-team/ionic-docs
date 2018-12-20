@@ -11,6 +11,7 @@ import '@stencil/router';
 import '@stencil/state-tunnel';
 import {
   Link,
+  ReferenceKeys,
 } from './definitions';
 
 
@@ -32,6 +33,15 @@ export namespace Components {
 
   interface DocsMenu {}
   interface DocsMenuAttributes extends StencilHTMLAttributes {}
+
+  interface DocsReference {
+    'data': any[];
+    'keys': ReferenceKeys;
+  }
+  interface DocsReferenceAttributes extends StencilHTMLAttributes {
+    'data'?: any[];
+    'keys'?: ReferenceKeys;
+  }
 
   interface DocsRoot {}
   interface DocsRootAttributes extends StencilHTMLAttributes {}
@@ -62,6 +72,7 @@ declare global {
     'DocsCode': Components.DocsCode;
     'DocsDocument': Components.DocsDocument;
     'DocsMenu': Components.DocsMenu;
+    'DocsReference': Components.DocsReference;
     'DocsRoot': Components.DocsRoot;
     'DocsTableOfContents': Components.DocsTableOfContents;
     'DocsTabs': Components.DocsTabs;
@@ -71,6 +82,7 @@ declare global {
     'docs-code': Components.DocsCodeAttributes;
     'docs-document': Components.DocsDocumentAttributes;
     'docs-menu': Components.DocsMenuAttributes;
+    'docs-reference': Components.DocsReferenceAttributes;
     'docs-root': Components.DocsRootAttributes;
     'docs-table-of-contents': Components.DocsTableOfContentsAttributes;
     'docs-tabs': Components.DocsTabsAttributes;
@@ -95,6 +107,12 @@ declare global {
     new (): HTMLDocsMenuElement;
   };
 
+  interface HTMLDocsReferenceElement extends Components.DocsReference, HTMLStencilElement {}
+  var HTMLDocsReferenceElement: {
+    prototype: HTMLDocsReferenceElement;
+    new (): HTMLDocsReferenceElement;
+  };
+
   interface HTMLDocsRootElement extends Components.DocsRoot, HTMLStencilElement {}
   var HTMLDocsRootElement: {
     prototype: HTMLDocsRootElement;
@@ -117,6 +135,7 @@ declare global {
     'docs-code': HTMLDocsCodeElement
     'docs-document': HTMLDocsDocumentElement
     'docs-menu': HTMLDocsMenuElement
+    'docs-reference': HTMLDocsReferenceElement
     'docs-root': HTMLDocsRootElement
     'docs-table-of-contents': HTMLDocsTableOfContentsElement
     'docs-tabs': HTMLDocsTabsElement
@@ -126,6 +145,7 @@ declare global {
     'docs-code': HTMLDocsCodeElement;
     'docs-document': HTMLDocsDocumentElement;
     'docs-menu': HTMLDocsMenuElement;
+    'docs-reference': HTMLDocsReferenceElement;
     'docs-root': HTMLDocsRootElement;
     'docs-table-of-contents': HTMLDocsTableOfContentsElement;
     'docs-tabs': HTMLDocsTabsElement;
