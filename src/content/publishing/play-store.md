@@ -35,7 +35,7 @@ Once that command has been ran and its prompts have been answered a file called 
 To sign the unsigned APK, run the jarsigner tool which is also included in the Android SDK:
 
 ```shell
-$ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore HelloWorld-release-unsigned.apk alias_name
+$ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore app-release-unsigned.apk alias_name
 ```
 
 Finally, the zip align tool must be ran to optimize the APK.
@@ -43,7 +43,7 @@ The `zipalign` tool can be found in `/path/to/Android/sdk/build-tools/VERSION/zi
 For example, on macOS with Android Studio installed, `zipalign` is in `~/Library/Android/sdk/build-tools/VERSION/zipalign`:
 
 ```shell
-$ zipalign -v 4 HelloWorld-release-unsigned.apk HelloWorld.apk
+$ zipalign -v 4 app-release-unsigned.apk HelloWorld.apk
 ```
 
 This generates a final release binary called HelloWorld.apk that can be accepted into the Google Play Store.
