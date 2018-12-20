@@ -46,6 +46,15 @@ export namespace Components {
     'label'?: string;
     'links'?: Link[];
   }
+
+  interface DocsTabs {
+    'initial': string;
+    'tabs': string;
+  }
+  interface DocsTabsAttributes extends StencilHTMLAttributes {
+    'initial'?: string;
+    'tabs'?: string;
+  }
 }
 
 declare global {
@@ -55,6 +64,7 @@ declare global {
     'DocsMenu': Components.DocsMenu;
     'DocsRoot': Components.DocsRoot;
     'DocsTableOfContents': Components.DocsTableOfContents;
+    'DocsTabs': Components.DocsTabs;
   }
 
   interface StencilIntrinsicElements {
@@ -63,6 +73,7 @@ declare global {
     'docs-menu': Components.DocsMenuAttributes;
     'docs-root': Components.DocsRootAttributes;
     'docs-table-of-contents': Components.DocsTableOfContentsAttributes;
+    'docs-tabs': Components.DocsTabsAttributes;
   }
 
 
@@ -96,12 +107,19 @@ declare global {
     new (): HTMLDocsTableOfContentsElement;
   };
 
+  interface HTMLDocsTabsElement extends Components.DocsTabs, HTMLStencilElement {}
+  var HTMLDocsTabsElement: {
+    prototype: HTMLDocsTabsElement;
+    new (): HTMLDocsTabsElement;
+  };
+
   interface HTMLElementTagNameMap {
     'docs-code': HTMLDocsCodeElement
     'docs-document': HTMLDocsDocumentElement
     'docs-menu': HTMLDocsMenuElement
     'docs-root': HTMLDocsRootElement
     'docs-table-of-contents': HTMLDocsTableOfContentsElement
+    'docs-tabs': HTMLDocsTabsElement
   }
 
   interface ElementTagNameMap {
@@ -110,6 +128,7 @@ declare global {
     'docs-menu': HTMLDocsMenuElement;
     'docs-root': HTMLDocsRootElement;
     'docs-table-of-contents': HTMLDocsTableOfContentsElement;
+    'docs-tabs': HTMLDocsTabsElement;
   }
 
 
