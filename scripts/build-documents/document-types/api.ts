@@ -17,12 +17,13 @@ async function getAPIDocuments(): Promise<Document[]> {
   return components.map(component => {
     const title = component.tag.slice(4);
     const path = `${join(DOCUMENTS_DIR, 'api', title)}.json`;
-    const { readme, usage, ...contents } = component;
+    const { readme, usage, props, ...contents } = component;
     return {
       title,
       path,
       body: markdownRenderer(readme),
       usage: renderUsage(usage),
+      props: renderPropertyDocs(props),
       ...contents
     };
   });
@@ -32,3 +33,8 @@ const renderUsage = (usage) => Object.keys(usage).reduce((out, key) => {
   out[key] = markdownRenderer(usage[key]);
   return out;
 }, {});
+
+const renderPropertyDocs = (props) => props.map(prop => ({
+  ...prop,
+  docs: markdownRenderer(prop.docs)
+}));
