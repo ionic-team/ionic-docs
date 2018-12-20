@@ -26,7 +26,7 @@ In DevApp, you should now see the app appear. If it doesn't, or you have any iss
 
 Much better! Now we can add the camera functionality. By the way, you can find reference code for this [on GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4).
 
-Back in `about.page.html`, add the following:
+Back in `tab2.page.html`, add the following:
 
 ```html
 <ion-content>
@@ -98,7 +98,7 @@ It can now be used on any of our App pages.
 
 ## Add the Camera to the About page
 
-Our camera button doesn’t do anything yet. Over in `about.page.html`, add a click handler to the button:
+Our camera button doesn’t do anything yet. Over in `tab2.page.html`, add a click handler to the button:
 
 ```html
 <ion-fab vertical="bottom" horizontal="center" slot="fixed">
@@ -114,7 +114,7 @@ Then, update the image placeholder. The following binds the “currentImage” v
 <img [src]="currentImage" *ngIf="currentImage">
 ```
 
-Open `about.page.ts` next and import the Camera library:
+Open `tab2.page.ts` next and import the Camera library:
 
 ```Javascript
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
@@ -123,7 +123,7 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 Next, define the “currentImage” variable and inject the Camera into this class via the constructor:
 
 ```Javascript
-export class AboutPage {
+export class Tab2Page {
   currentImage: any;
 
   constructor(private camera: Camera) {
