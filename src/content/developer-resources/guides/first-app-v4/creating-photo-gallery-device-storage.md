@@ -8,7 +8,7 @@ nextUrl: '/docs/developer-resources/guides/first-app-v4/theming'
 # Creating a Photo Gallery with Device Storage
 
 <p class="intro">
-Last time, we successfully added the Camera plugin to the About page of our Tabs app. Currently, the photo is replaced each time a new one is taken. What if we wanted to display multiple photos together? Let’s create a photo gallery. You can follow along with the complete code for this [on GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4).
+Last time, we successfully added the Camera plugin to the Tab2 page of our Tabs app. Currently, the photo is replaced each time a new one is taken. What if we wanted to display multiple photos together? Let’s create a photo gallery. You can follow along with the complete code for this [on GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4).
 </p>
 
 ## Creating a Dedicated Photo Service
@@ -50,7 +50,7 @@ export class PhotoService {
 }
 ```
 
-Back in `about.page.ts`, import PhotoService:
+Back in `tab2.page.ts`, import PhotoService:
 
 ```Javascript
 import { PhotoService } from '../services/photo.service';
@@ -77,15 +77,15 @@ this.camera.getPicture(options).then((imageData) => {
 });
 ```
 
-In `about.page.ts`, remove the currentImage variable and the reference to Camera in the constructor, leaving only PhotoService:
+In `tab2.page.ts`, remove the currentImage variable and the reference to Camera in the constructor, leaving only PhotoService:
 
 ```Javascript
-export class AboutPage {
+export class Tab2Page {
   constructor(public photoService: PhotoService) {  }
 }
 ```
 
-Next, in `about.page.html`, remove the currentImage img tag. In its place, use an ion-grid component, which provides a great way to arrange elements on a page. In this case, we’ll use it to display 2 photos per row.
+Next, in `tab2.page.html`, remove the currentImage img tag. In its place, use an ion-grid component, which provides a great way to arrange elements on a page. In this case, we’ll use it to display 2 photos per row.
 
 ```html
 <ion-grid>
@@ -186,7 +186,7 @@ loadSaved() {
 }
 ```
 
-Over in the About page, call the loadSaved method once it begins loading:
+Over in the Tab2 page, call the loadSaved method once it begins loading:
 
 ```Javascript
 ngOnInit() {
@@ -194,7 +194,7 @@ ngOnInit() {
 }
 ```
 
-Sweet! Photos are now saved to your device. To demonstrate that they are indeed being saved, force close DevApp, reopen it, and open the About page.  Or, shake your device to have the Control Menu pop up, then tap “Exit preview.” Afterwards, reload this app to view the photos.
+Sweet! Photos are now saved to your device. To demonstrate that they are indeed being saved, force close DevApp, reopen it, and open the Tab2 page.  Or, shake your device to have the Control Menu pop up, then tap “Exit preview.” Afterwards, reload this app to view the photos.
 
 Finally, back up your changes to Ionic Pro:
 
