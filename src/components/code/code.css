@@ -3,15 +3,12 @@
 
 docs-code {
   display: block;
-}
-
-docs-code pre {
   position: relative;
 }
 
-docs-code pre:before {
+docs-code:before {
   color: #bdc5d1;
-  content: attr(data-language);
+  content: attr(language);
   font-family: var(--code-font-family);
   font-size: 11px;
   letter-spacing: 0.05em;

@@ -9,7 +9,7 @@ export class DocsCode {
 
   render() {
     return (
-      <pre data-language={this.language}><code><slot/></code></pre>
+      <pre><code><slot/></code></pre>
     );
   }
 }
