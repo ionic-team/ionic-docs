@@ -3,6 +3,7 @@ export default (props) => {
   const headings = [...document.headings];
   const usage = renderUsage(document.usage);
   const properties = renderProperties(document.props);
+  const events = renderEvents(document.events);
   const customProps = renderCustomProps(document.styles);
 
   if (usage) {
@@ -16,6 +17,13 @@ export default (props) => {
     headings.push({
       text: 'Properties',
       href: '#properties'
+    });
+  }
+
+  if (events) {
+    headings.push({
+      text: 'Events',
+      href: '#events'
     });
   }
 
@@ -33,6 +41,7 @@ export default (props) => {
       <div class="markdown-content" innerHTML={document.body}/>
       { usage }
       { properties }
+      { events }
       { customProps }
     </main>
   );
@@ -71,6 +80,34 @@ const renderProperties = (properties) => {
           Attribute: prop => <code>{ prop.attr }</code>,
           Type: prop => <code>{ prop.type }</code>
         }}/>
+    </section>
+  );
+};
+
+const renderEvents = (events) => {
+  if (!events.length) {
+    return null;
+  }
+
+  return (
+    <section>
+      <h2 id="events">Events</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {events.map(event => (
+            <tr>
+              <td><code>{ event.event }</code></td>
+              <td>{ event.docs }</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </section>
   );
 };
