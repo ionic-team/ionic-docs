@@ -4,6 +4,7 @@ export default (props) => {
   const usage = renderUsage(document.usage);
   const properties = renderProperties(document.props);
   const events = renderEvents(document.events);
+  const methods = renderMethods(document.methods);
   const customProps = renderCustomProps(document.styles);
 
   if (usage) {
@@ -27,6 +28,13 @@ export default (props) => {
     });
   }
 
+  if (methods) {
+    headings.push({
+      text: 'Methods',
+      href: '#methods'
+    });
+  }
+
   if (customProps) {
     headings.push({
       text: 'CSS Custom Properties',
@@ -42,6 +50,7 @@ export default (props) => {
       { usage }
       { properties }
       { events }
+      { methods }
       { customProps }
     </main>
   );
@@ -108,6 +117,25 @@ const renderEvents = (events) => {
           ))}
         </tbody>
       </table>
+    </section>
+  );
+};
+
+const renderMethods = (methods) => {
+  if (!methods.length) {
+    return null;
+  }
+
+  return (
+    <section>
+      <h2 id="methods">Methods</h2>
+      <docs-reference
+        data={methods}
+        keys={{
+          Head: method => method.name,
+          Description: method => <div innerHTML={method.docs}/>,
+          Signature: method => <code>{ method.signature }</code>
+        }}/>
     </section>
   );
 };
