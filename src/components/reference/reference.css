@@ -1,13 +1,12 @@
 docs-reference {
-  color: var(--text-color--light);
   display: block;
   margin: 1rem 0;
 }
 
 docs-reference h3 {
   font-family: var(--code-font-family);
-  font-size: 1.15rem;
-  margin: 0.5rem 0;
+  font-size: 1.25rem;
+  margin: 0.75rem 0;
   padding: 0;
 }
 
@@ -19,9 +18,12 @@ docs-reference tbody th {
   vertical-align: top;
 }
 
-docs-reference td:first-child {
-  font-weight: 600;
-  vertical-align: top;
+docs-reference tbody td {
+  color: var(--text-color--light);
+}
+
+docs-reference tbody p {
+  line-height: 2;
 }
 
 docs-reference p:first-child {
