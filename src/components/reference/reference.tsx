@@ -27,7 +27,7 @@ export class DocsReference {
             return (
               <tr>
                 <th>{ name }</th>
-                <td colSpan={2}>{ content }</td>
+                <td>{ content }</td>
               </tr>
             );
           }
