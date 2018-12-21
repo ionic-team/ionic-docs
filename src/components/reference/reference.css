@@ -15,6 +15,10 @@ docs-reference tbody tr {
   background-color: #fcfcfc;
 }
 
+docs-reference tbody th {
+  vertical-align: top;
+}
+
 docs-reference td:first-child {
   font-weight: 600;
   vertical-align: top;
