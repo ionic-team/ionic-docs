@@ -172,13 +172,9 @@ th {
 td,
 th {
   border-width: 0 1px 1px 0;
-  line-height: 1.4;
+  line-height: 1.5;
   padding: 1em;
   text-align: left;
-}
-
-table code {
-  white-space: nowrap;
 }
 
 tbody tr:nth-child(odd) {
