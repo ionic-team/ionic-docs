@@ -6,8 +6,8 @@ docs-reference {
 
 docs-reference h3 {
   font-family: var(--code-font-family);
-  font-size: 1.25rem;
-  margin: 1rem 0;
+  font-size: 1.15rem;
+  margin: 0.5rem 0;
   padding: 0;
 }
 
@@ -18,4 +18,12 @@ docs-reference tbody tr {
 docs-reference td:first-child {
   font-weight: 600;
   vertical-align: top;
+}
+
+docs-reference p:first-child {
+  margin-top: 0;
+}
+
+docs-reference p:last-child {
+  margin-bottom: 0;
 }
