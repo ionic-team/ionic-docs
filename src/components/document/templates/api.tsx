@@ -77,7 +77,7 @@ const renderProperties = (properties) => {
         keys={{
           Head: prop => prop.name,
           Description: prop => <div innerHTML={prop.docs}/>,
-          Attribute: prop => <code>{ prop.attr }</code>,
+          Attribute: prop => prop.attr ? <code>{ prop.attr }</code> : null,
           Type: prop => <code>{ prop.type }</code>
         }}/>
     </section>
