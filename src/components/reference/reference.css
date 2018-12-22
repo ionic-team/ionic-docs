@@ -6,12 +6,20 @@ docs-reference {
 docs-reference h3 {
   font-family: var(--code-font-family);
   font-size: 1.25rem;
-  margin: 0.75rem 0;
+  margin: 1rem 0;
   padding: 0;
 }
 
+docs-reference tbody * {
+  font-size: 12px !important;
+}
+
+docs-reference thead tr {
+  background-color: #fdfdfd;
+}
+
 docs-reference tbody tr {
-  background-color: #fcfcfd;
+  background-color: #ffffff !important;
 }
 
 docs-reference tbody th {
