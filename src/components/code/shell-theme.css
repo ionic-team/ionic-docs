@@ -4,7 +4,7 @@ docs-code[language="shell"] > pre {
   padding: 2em;
 }
 
-docs-code[language="shell"] > pre:before {
+docs-code[language="shell"]:before {
   display: none;
 }
 
