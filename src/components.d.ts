@@ -31,6 +31,9 @@ export namespace Components {
     'path'?: string;
   }
 
+  interface DocsHeader {}
+  interface DocsHeaderAttributes extends StencilHTMLAttributes {}
+
   interface DocsMenu {}
   interface DocsMenuAttributes extends StencilHTMLAttributes {}
 
@@ -71,6 +74,7 @@ declare global {
   interface StencilElementInterfaces {
     'DocsCode': Components.DocsCode;
     'DocsDocument': Components.DocsDocument;
+    'DocsHeader': Components.DocsHeader;
     'DocsMenu': Components.DocsMenu;
     'DocsReference': Components.DocsReference;
     'DocsRoot': Components.DocsRoot;
@@ -81,6 +85,7 @@ declare global {
   interface StencilIntrinsicElements {
     'docs-code': Components.DocsCodeAttributes;
     'docs-document': Components.DocsDocumentAttributes;
+    'docs-header': Components.DocsHeaderAttributes;
     'docs-menu': Components.DocsMenuAttributes;
     'docs-reference': Components.DocsReferenceAttributes;
     'docs-root': Components.DocsRootAttributes;
@@ -99,6 +104,12 @@ declare global {
   var HTMLDocsDocumentElement: {
     prototype: HTMLDocsDocumentElement;
     new (): HTMLDocsDocumentElement;
+  };
+
+  interface HTMLDocsHeaderElement extends Components.DocsHeader, HTMLStencilElement {}
+  var HTMLDocsHeaderElement: {
+    prototype: HTMLDocsHeaderElement;
+    new (): HTMLDocsHeaderElement;
   };
 
   interface HTMLDocsMenuElement extends Components.DocsMenu, HTMLStencilElement {}
@@ -134,6 +145,7 @@ declare global {
   interface HTMLElementTagNameMap {
     'docs-code': HTMLDocsCodeElement
     'docs-document': HTMLDocsDocumentElement
+    'docs-header': HTMLDocsHeaderElement
     'docs-menu': HTMLDocsMenuElement
     'docs-reference': HTMLDocsReferenceElement
     'docs-root': HTMLDocsRootElement
@@ -144,6 +156,7 @@ declare global {
   interface ElementTagNameMap {
     'docs-code': HTMLDocsCodeElement;
     'docs-document': HTMLDocsDocumentElement;
+    'docs-header': HTMLDocsHeaderElement;
     'docs-menu': HTMLDocsMenuElement;
     'docs-reference': HTMLDocsReferenceElement;
     'docs-root': HTMLDocsRootElement;

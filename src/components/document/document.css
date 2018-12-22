@@ -4,3 +4,7 @@ docs-document {
   line-height: 2;
   max-width: 640px;
 }
+
+docs-document h1 {
+  margin-top: 0;
+}

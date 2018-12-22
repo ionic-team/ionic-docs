@@ -9,6 +9,7 @@ export class DocsRoot {
   render() {
     return (
       <stencil-router class="layout" scrollTopOffset={0}>
+        <docs-header/>
         <docs-menu/>
         <stencil-route url="/docs/:document*" routeRender={props => (
           <docs-document path={`/docs/documents/${props.match.params.document || 'index'}.json`}/>

@@ -1,0 +1,26 @@
+docs-header {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateY(0);
+  transition: transform 200ms ease;
+  width: 100%;
+  z-index: 1;
+}
+
+docs-header.hidden {
+  transform: translateY(-100%);
+}
+
+docs-header header {
+  background-color: #ffffff;
+  box-shadow: 0px 1px 3px rgba(2, 8, 20, 0.06), 0px 1px 2px rgba(2, 8, 20, 0.04);
+  padding: 1rem 2rem;
+}
+
+docs-header .Logo {
+  color: var(--link-color);
+  font-family: var(--header-font-family);
+  height: 25px;
+}
