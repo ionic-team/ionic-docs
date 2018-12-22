@@ -21,6 +21,6 @@ docs-header header {
 
 docs-header .Logo {
   color: var(--link-color);
-  font-family: var(--header-font-family);
+  font-family: var(--heading-font-family);
   height: 25px;
 }

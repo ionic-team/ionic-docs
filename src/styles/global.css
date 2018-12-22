@@ -11,7 +11,7 @@
   --code-color: var(--text-color--dark);
   --code-font-family: "SFMono-Regular", "Roboto Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace;
   --font-family: system-ui, sans-serif;
-  --header-font-family: "Eina", var(--font-family);
+  --heading-font-family: "Eina", var(--font-family);
   --link-color: #005cff;
   --line-rule-color: #edf2f6;
   --text-color: #4e5b6a;
@@ -71,7 +71,7 @@ h4,
 h5,
 h6 {
   color: var(--text-color--dark);
-  font-family: var(--header-font-family);
+  font-family: var(--heading-font-family);
   letter-spacing: -0.03em;
   line-height: 1.2;
   padding-top: 0.75em;
