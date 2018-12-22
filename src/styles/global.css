@@ -7,7 +7,8 @@
 
 :root {
   --background-color: var(--color-white);
-  --code-color: #3b00ff;
+  --code-background-color: #f5f7fa;
+  --code-color: var(--text-color--dark);
   --code-font-family: "SFMono-Regular", "Roboto Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace;
   --font-family: system-ui, sans-serif;
   --header-font-family: "Eina", var(--font-family);
@@ -125,7 +126,7 @@ blockquote code {
 }
 
 code {
-  background-color: rgba(0, 0, 100, 0.03);
+  background-color: var(--code-background-color);
   border-radius: 4px;
   color: var(--code-color);
   font-family: var(--code-font-family);
@@ -137,7 +138,7 @@ code {
 }
 
 pre {
-  background-color: #f5f6f9;
+  background-color: var(--code-background-color);
   border-radius: 4px;
   line-height: 1.2;
   margin: 2rem 0;
@@ -178,5 +179,5 @@ th {
 }
 
 tbody tr:nth-child(odd) {
-  background-color: #fcfcfc;
+  background-color: #fcfcfd;
 }
