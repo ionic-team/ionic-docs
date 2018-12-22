@@ -9,6 +9,6 @@
 
 .layout docs-menu,
 .layout docs-document {
-  margin-top: 90px;
+  margin-top: var(--header-height);
   padding: 2rem;
 }
