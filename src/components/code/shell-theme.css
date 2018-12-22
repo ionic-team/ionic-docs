@@ -1,5 +1,5 @@
 docs-code[language="shell"] > pre {
-  background-color: #2b313c;
+  background-color: var(--text-color--dark);
   border-radius: 7px;
   padding: 2em;
 }
