@@ -46,7 +46,7 @@ export default (props) => {
     <main>
       <h1>{ document.title }</h1>
       <docs-table-of-contents links={headings} basepath={history.location.pathname}/>
-      <div class="markdown-content" innerHTML={document.body}/>
+      <section class="markdown-content" innerHTML={document.body}/>
       { usage }
       { properties }
       { events }
