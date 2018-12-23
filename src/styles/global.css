@@ -126,6 +126,13 @@ blockquote code {
   font-weight: 500;
 }
 
+hr {
+  border-color: var(--line-rule-color);
+  border-style: solid;
+  border-width: 1px 0 0 0;
+  margin: 1rem 0;
+}
+
 code {
   background-color: var(--code-background-color);
   border-radius: 4px;
