@@ -38,7 +38,7 @@ function patchDocument(document: Document): Document {
 
   const h1 = body.querySelector('h1');
   if (h1) {
-    document.title = document.title || h1.textContent;
+    document.title = document.title || h1.textContent.trim();
     h1.remove();
   }
 
@@ -51,7 +51,7 @@ function patchDocument(document: Document): Document {
   }
 
   const headings = [...body.querySelectorAll('h2')].map(heading => ({
-    text: heading.textContent,
+    text: heading.textContent.trim(),
     href: `#${heading.getAttribute('id')}`
   }));
 
