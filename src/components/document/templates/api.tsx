@@ -65,7 +65,9 @@ const renderUsage = (usage) => {
 
   return (
     <section>
-      <h2 id="usage">Usage</h2>
+      <h2 id="usage">
+        <a href="#usage">Usage</a>
+      </h2>
       <docs-tabs tabs={keys.join(',')}>
         { keys.map(key => <div slot={key} innerHTML={usage[key]}/>) }
       </docs-tabs>
@@ -80,7 +82,9 @@ const renderProperties = (properties) => {
 
   return (
     <section>
-      <h2 id="properties">Properties</h2>
+      <h2 id="properties">
+        <a href="#properties">Properties</a>
+      </h2>
       <docs-reference
         data={properties}
         keys={{
@@ -100,7 +104,9 @@ const renderEvents = (events) => {
 
   return (
     <section>
-      <h2 id="events">Events</h2>
+      <h2 id="events">
+        <a href="#events">Events</a>
+      </h2>
       <table>
         <thead>
           <tr>
@@ -128,7 +134,9 @@ const renderMethods = (methods) => {
 
   return (
     <section>
-      <h2 id="methods">Methods</h2>
+      <h2 id="methods">
+        <a href="#methods">Methods</a>
+      </h2>
       <docs-reference
         data={methods}
         keys={{
@@ -147,7 +155,9 @@ const renderCustomProps = (customProps) => {
 
   return (
     <section>
-      <h2 id="css-custom-properties">CSS Custom Properties</h2>
+      <h2 id="css-custom-properties">
+        <a href="#css-custom-properties">CSS Custom Properties</a>
+      </h2>
       <table>
         <thead>
           <tr>
