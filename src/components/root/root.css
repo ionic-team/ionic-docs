@@ -1,14 +1,22 @@
-.layout {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
+.Layout {
+  display: flex;
+  min-height: 100vh;
 }
 
-.layout docs-header {
-  grid-column: 1 / -1;
+.Layout docs-menu,
+.Layout docs-document {
+  padding: calc(var(--header-height) + 2rem) 2rem;
 }
 
-.layout docs-menu,
-.layout docs-document {
-  margin-top: var(--header-height);
-  padding: 2rem;
+.Layout docs-menu {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--menu-width);
+}
+
+.Layout docs-document {
+  margin-left: var(--menu-width);
+  padding-left: 4rem;
 }

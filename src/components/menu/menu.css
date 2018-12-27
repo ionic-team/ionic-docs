@@ -1,3 +1,8 @@
+docs-menu {
+  border-right: solid 1px var(--line-rule-color);
+  overflow-y: auto;
+}
+
 docs-menu nav {
   display: flex;
   flex-direction: column;

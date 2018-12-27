@@ -8,7 +8,7 @@ import '@stencil/router';
 export class DocsRoot {
   render() {
     return (
-      <stencil-router class="layout" scrollTopOffset={0}>
+      <stencil-router class="Layout" scrollTopOffset={0}>
         <docs-header/>
         <docs-menu/>
         <stencil-route url="/docs/:document*" routeRender={props => (
