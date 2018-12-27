@@ -21,10 +21,8 @@ export class DocsHeader {
   handleScroll = () => {
     if (!this.frameRequested) {
       requestAnimationFrame(() => {
-        const { scrollY, innerHeight } = window;
-        const { height } = document.body.getBoundingClientRect();
-        const maxScroll = height - innerHeight - 60;
-        this.hidden = scrollY > 60 && scrollY > this.prevScroll || scrollY > maxScroll;
+        const { scrollY } = window;
+        this.hidden = scrollY > 60 && scrollY > this.prevScroll;
         this.prevScroll = scrollY;
         this.frameRequested = false;
       });
