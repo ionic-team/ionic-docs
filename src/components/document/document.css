@@ -2,7 +2,10 @@ docs-document {
   display: block;
   font-size: 15px;
   line-height: 2;
+  margin-left: var(--menu-width);
+  margin-top: var(--header-height);
   max-width: 640px;
+  padding: 2rem 2rem 2rem 4rem;
 }
 
 docs-document h1 {

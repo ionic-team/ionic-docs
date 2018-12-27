@@ -2,21 +2,3 @@
   display: flex;
   min-height: 100vh;
 }
-
-.Layout docs-menu,
-.Layout docs-document {
-  padding: calc(var(--header-height) + 2rem) 2rem;
-}
-
-.Layout docs-menu {
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: var(--menu-width);
-}
-
-.Layout docs-document {
-  margin-left: var(--menu-width);
-  padding-left: 4rem;
-}

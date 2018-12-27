@@ -1,12 +1,40 @@
-docs-menu {
-  border-right: solid 1px var(--line-rule-color);
-  overflow-y: auto;
-}
-
+docs-menu,
 docs-menu nav {
   display: flex;
   flex-direction: column;
+}
+
+docs-menu {
+  border-right: solid 1px var(--line-rule-color);
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: var(--menu-width);
+}
+
+docs-menu > stencil-route-switch {
+  overflow-y: auto;
+}
+
+docs-menu header {
+  border-bottom: solid 1px var(--line-rule-color);
+  flex: 0;
+  height: var(--header-height);
+  padding: 1rem 2rem;
+}
+
+docs-menu header .Logo {
+  color: var(--link-color);
+  font-family: var(--heading-font-family);
+  height: 25px;
+}
+
+docs-menu nav {
   align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
 }
 
 docs-menu .link-active {
