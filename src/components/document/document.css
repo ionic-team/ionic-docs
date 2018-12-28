@@ -4,8 +4,11 @@ docs-document {
   line-height: 2;
   margin-left: var(--menu-width);
   margin-top: var(--header-height);
-  max-width: 640px;
   padding: 2rem 2rem 2rem 4rem;
+}
+
+docs-document main {
+  max-width: 600px;
 }
 
 docs-document h1 {
