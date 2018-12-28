@@ -12,6 +12,7 @@ export class DocsHeader {
 
   componentDidLoad() {
     window.addEventListener('scroll', this.handleScroll);
+    this.handleScroll();
   }
 
   componentDidUnload() {
