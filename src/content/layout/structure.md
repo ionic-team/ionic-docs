@@ -130,7 +130,7 @@ A standard layout among mobile apps includes the ability to toggle a side [menu]
     </ion-content>
   </ion-menu>
 
-  <ion-page class="ion-page" main>
+  <div class="ion-page" main>
     <ion-header>
       <ion-toolbar>
         <ion-buttons slot="start">
@@ -147,7 +147,7 @@ A standard layout among mobile apps includes the ability to toggle a side [menu]
       <h1>Main Content</h1>
       <p>Click the icon in the top left to toggle the menu.</p>
     </ion-content>
-  </ion-page>
+  </div>
 </ion-app>
 
 <ion-menu-controller></ion-menu-controller>
@@ -188,7 +188,7 @@ By default, the split pane view will show when the screen is larger than `768px`
       </ion-content>
     </ion-menu>
 
-    <ion-page class="ion-page" main>
+    <div class="ion-page" main>
       <ion-header>
         <ion-toolbar>
           <ion-buttons slot="start">
@@ -204,7 +204,7 @@ By default, the split pane view will show when the screen is larger than `768px`
       <ion-content padding>
         <h1>Main Content</h1>
       </ion-content>
-    </ion-page>
+    </div>
 
   </ion-split-pane>
 </ion-app>
