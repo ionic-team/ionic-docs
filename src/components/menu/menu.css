@@ -32,12 +32,26 @@ docs-menu header .Logo {
 
 docs-menu nav {
   align-items: flex-start;
-  display: flex;
-  flex-direction: column;
+  font-size: 14px;
   padding: 2rem;
 }
 
+docs-menu nav a {
+  color: var(--text-color--dark);
+  display: inline-block;
+  line-height: 1;
+  margin: 4px 0;
+  padding: 4px 0;
+}
+
+docs-menu nav stencil-route-link {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 docs-menu .link-active {
-  color: inherit;
+  color: var(--link-color);
   text-decoration: none;
 }
