@@ -42,6 +42,11 @@ export class DocsHeader {
         <stencil-route-link url="/docs/">
           <Logo/>
         </stencil-route-link>
+        <nav>
+          <a href="#">Community</a>
+          <a href="#">Support</a>
+          <a href="#">GitHub</a>
+        </nav>
       </header>
     );
   }

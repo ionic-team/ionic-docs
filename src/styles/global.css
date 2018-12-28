@@ -6,7 +6,7 @@
 }
 
 :root {
-  --background-color: var(--color-white);
+  --background-color: #ffffff;
   --code-background-color: #f5f7fa;
   --code-color: var(--text-color--dark);
   --code-font-family: "SFMono-Regular", "Roboto Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace;
