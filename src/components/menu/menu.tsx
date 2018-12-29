@@ -17,6 +17,7 @@ export class DocsMenu {
           <Logo/>
         </stencil-route-link>
       </header>,
+      <docs-search/>,
       <stencil-route-switch>
         <stencil-route url="/docs/api" routeRender={apiMenu}/>
         <stencil-route url="/docs/cli" routeRender={cliMenu}/>

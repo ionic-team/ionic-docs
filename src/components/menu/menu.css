@@ -33,7 +33,7 @@ docs-menu header .Logo {
 docs-menu nav {
   align-items: flex-start;
   font-size: 14px;
-  padding: 2rem;
+  padding: 1rem 2rem 2rem;
 }
 
 docs-menu nav a {

@@ -49,6 +49,9 @@ export namespace Components {
   interface DocsRoot {}
   interface DocsRootAttributes extends StencilHTMLAttributes {}
 
+  interface DocsSearch {}
+  interface DocsSearchAttributes extends StencilHTMLAttributes {}
+
   interface DocsTableOfContents {
     'basepath': string;
     'label': string;
@@ -78,6 +81,7 @@ declare global {
     'DocsMenu': Components.DocsMenu;
     'DocsReference': Components.DocsReference;
     'DocsRoot': Components.DocsRoot;
+    'DocsSearch': Components.DocsSearch;
     'DocsTableOfContents': Components.DocsTableOfContents;
     'DocsTabs': Components.DocsTabs;
   }
@@ -89,6 +93,7 @@ declare global {
     'docs-menu': Components.DocsMenuAttributes;
     'docs-reference': Components.DocsReferenceAttributes;
     'docs-root': Components.DocsRootAttributes;
+    'docs-search': Components.DocsSearchAttributes;
     'docs-table-of-contents': Components.DocsTableOfContentsAttributes;
     'docs-tabs': Components.DocsTabsAttributes;
   }
@@ -130,6 +135,12 @@ declare global {
     new (): HTMLDocsRootElement;
   };
 
+  interface HTMLDocsSearchElement extends Components.DocsSearch, HTMLStencilElement {}
+  var HTMLDocsSearchElement: {
+    prototype: HTMLDocsSearchElement;
+    new (): HTMLDocsSearchElement;
+  };
+
   interface HTMLDocsTableOfContentsElement extends Components.DocsTableOfContents, HTMLStencilElement {}
   var HTMLDocsTableOfContentsElement: {
     prototype: HTMLDocsTableOfContentsElement;
@@ -149,6 +160,7 @@ declare global {
     'docs-menu': HTMLDocsMenuElement
     'docs-reference': HTMLDocsReferenceElement
     'docs-root': HTMLDocsRootElement
+    'docs-search': HTMLDocsSearchElement
     'docs-table-of-contents': HTMLDocsTableOfContentsElement
     'docs-tabs': HTMLDocsTabsElement
   }
@@ -160,6 +172,7 @@ declare global {
     'docs-menu': HTMLDocsMenuElement;
     'docs-reference': HTMLDocsReferenceElement;
     'docs-root': HTMLDocsRootElement;
+    'docs-search': HTMLDocsSearchElement;
     'docs-table-of-contents': HTMLDocsTableOfContentsElement;
     'docs-tabs': HTMLDocsTabsElement;
   }
