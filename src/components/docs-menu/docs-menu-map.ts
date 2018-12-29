@@ -68,31 +68,31 @@ export const main = {
   }
 };
 
-export const pro = {
+export const appflow = {
   'Home': '/docs/',
   'Introduction': {
-    'Getting Started': '/docs/pro',
-    'Git Workflow': '/docs/pro/basics/git'
+    'Getting Started': '/docs/appflow',
+    'Git Workflow': '/docs/appflow/basics/git'
   },
   'Builds': {
-    'Build Types': '/docs/pro/builds/intro',
-    'Build Environments': '/docs/pro/builds/environments'
+    'Build Types': '/docs/appflow/builds/intro',
+    'Build Environments': '/docs/appflow/builds/environments'
   },
   'Deploy': {
-    'Introduction': '/docs/pro/deploy/intro',
-    'Installation': '/docs/pro/deploy/setup',
-    'Channels': '/docs/pro/deploy/channels',
-    'API Reference': '/docs/pro/deploy/api'
+    'Introduction': '/docs/appflow/deploy/intro',
+    'Installation': '/docs/appflow/deploy/setup',
+    'Channels': '/docs/appflow/deploy/channels',
+    'API Reference': '/docs/appflow/deploy/api'
   },
   'Package': {
-    'Introduction': '/docs/pro/package/intro',
-    'Credentials': '/docs/pro/package/credentials',
-    'Builds': '/docs/pro/package/intro#performing-a-build'
+    'Introduction': '/docs/appflow/package/intro',
+    'Credentials': '/docs/appflow/package/credentials',
+    'Builds': '/docs/appflow/package/intro#performing-a-build'
   },
   'Automation': {
-    'Introduction': '/docs/pro/automation/intro',
-    'Manage': '/docs/pro/automation/create',
-    'Webhooks': '/docs/pro/automation/webhooks'
+    'Introduction': '/docs/appflow/automation/intro',
+    'Manage': '/docs/appflow/automation/create',
+    'Webhooks': '/docs/appflow/automation/webhooks'
   },
 };
 

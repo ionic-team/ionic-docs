@@ -318,7 +318,7 @@ ___
 `string`
 
 
-The [Ionic Appflow](https://ionicframework.com/docs/pro/) app id.
+The [Ionic Appflow](https://ionicframework.com/docs/appflow/) app id.
 
 ___
 
@@ -328,7 +328,7 @@ ___
 `string`
 
 
-The [channel](/docs/pro/deploy/channels) that the plugin should listen for updates on.
+The [channel](/docs/appflow/deploy/channels) that the plugin should listen for updates on.
 
 ___
 
@@ -486,12 +486,12 @@ cordova plugin add cordova-plugin-ionic --variable MIN_BACKGROUND_DURATION=60 ..
 ### `APP_ID` - `Required`
 
 The `APP_ID` variable sets app in the Appflow dashboard the plugin should check for updates.
-The App ID can be updated at runtime via the [Deploy Appflow Client](/docs/pro/deploy/api).
+The App ID can be updated at runtime via the [Deploy Appflow Client](/docs/appflow/deploy/api).
 
 ### `CHANNEL_NAME` - `Required`
 
 The `CHANNEL_NAME` variable sets which channel the plugin should check for updates.
-The Channel can be updated at runtime via the [configure method](/docs/pro/deploy/api/#configure) of the Deploy Pro Client.
+The Channel can be updated at runtime via the [configure method](/docs/appflow/deploy/api/#configure) of the Deploy Pro Client.
 
 ### `UPDATE_METHOD`
 
@@ -506,7 +506,7 @@ The three options are:
 It will download the update in the background while the user is using your app.
 The next time they close and open your app, we will apply the updated version.
 You can still perform updates yourself and override the update method using the
-[Deploy Pro Client](/docs/pro/deploy/api) as well.
+[Deploy Pro Client](/docs/appflow/deploy/api) as well.
 
 `auto` - mode will check for updates when a user first opens your app from a completely closed state (in the splashscreen)
 or after a user resumes the app from the background after the [minimum duration](#min_background_duration).
@@ -514,10 +514,10 @@ It will then WAIT on the splashscreen until the new update is downloaded, and im
 Using this method essentially forces users to always use the most up to date version when connected to the internet
 with the trade off that users may wait on the splashscreen longer before interacting with the app while waiting for an update.
 You can still perform updates yourself and override the update method using the
-[Deploy Pro Client](/docs/pro/deploy/api) as well.
+[Deploy Pro Client](/docs/appflow/deploy/api) as well.
 
 `none` - will not automatically apply or download updates for you.
-Instead you have to manage the entire update process yourself using the [Deploy Pro Client](/docs/pro/deploy/api).
+Instead you have to manage the entire update process yourself using the [Deploy Pro Client](/docs/appflow/deploy/api).
 This isn't recommended as if you deploy an update that "breaks" your app and can no longer apply Deploy updates,
 you will have to release a native binary in order to fix the issue or the user will have to delete and reinstall your app.
 Using the background or auto methods protects you by applying updates in the native layer.

@@ -93,8 +93,8 @@ export class DocsMenu {
   setActiveItemFromPath(path) {
     // Decide if we should look at the Pro or Framework doc maps
     let keyMap: any = menuMap.main;
-    if (path.includes('/pro')) {
-      keyMap = menuMap.pro;
+    if (path.includes('/appflow')) {
+      keyMap = menuMap.appflow;
     }
 
     // Find the URL we're at
@@ -185,11 +185,11 @@ export class DocsMenu {
           </ul>
         ];
 
-      case 'pro':
+      case 'appflow':
         return [
           <ul>
-            { Object.keys(menuMap.pro).map(key => {
-              const val = menuMap.pro[key];
+            { Object.keys(menuMap.appflow).map(key => {
+              const val = menuMap.appflow[key];
               const onClick = () => this.toggleActiveItem(key);
               const renderer = typeof val === 'string' ? this.createItem : this.createSubmenu;
               return renderer(key, val, onClick);

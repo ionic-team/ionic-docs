@@ -6,7 +6,7 @@ Ionic Appflow's Package feature makes it easy to build native app binaries for i
 
 To start, you'll need to upload iOS and/or Android certificate profiles to enable Package to build your app in the cloud.
 
-Get started with security profiles [here](/docs/pro/package/credentials).
+Get started with security profiles [here](/docs/appflow/package/credentials).
 
 ## Performing a Build
 
@@ -16,4 +16,4 @@ In the Package GUI you'll be able to choose the type of Build you want to perfor
 
 ## Automating Builds
 
-If you'd like package builds to be generated automatically, check out the automation docs [here](/docs/pro/automation/intro).
+If you'd like package builds to be generated automatically, check out the automation docs [here](/docs/appflow/automation/intro).

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The [Git Workflow](/docs/pro/basics/git/) at the core of Ionic Appflow allows you to push commits of your app code,
+The [Git Workflow](/docs/appflow/basics/git/) at the core of Ionic Appflow allows you to push commits of your app code,
 which can then be used to trigger two distinct types of builds: Deploy and Package Builds.
 
 ### Concurrency limits
@@ -31,22 +31,22 @@ If you have a Teams or Business plan, please [contact us](https://ionic.zendesk.
 ## Deploy Builds
 
 A deploy build is a build of your application that includes only the web assets (JavaScript, HTML, fonts, and images) 
-which can be shipped out to customer via [Deploy](/docs/pro/deploy/). Deploy builds can be created from the Ionic 
+which can be shipped out to customer via [Deploy](/docs/appflow/deploy/). Deploy builds can be created from the Ionic 
 Dashboard, the **Builds** section under **Deploy** in the sidebar.
 
 <div style="text-align: center">
-  <img style="width: 950px" src="/docs/assets/img/pro/deploy-builds-create-location.png">
+  <img style="width: 950px" src="/docs/assets/img/appflow/deploy-builds-create-location.png">
 </div>
 
 A deploy build will do the following:
 
 * `npm install` will run to install any dependencies you have.
 * `npm run build` will run if a `build` script is detected in the `scripts` section of your `package.json` in order to build the web assets for your application.
-* The `www` directory with your built application will be stored and made available for live updates via [Deploy](/docs/pro/deploy/)
+* The `www` directory with your built application will be stored and made available for live updates via [Deploy](/docs/appflow/deploy/)
 * You can find the history and status of your deploy builds in the side menu under `Builds` in the `Deploy` tab.
 
 <div style="text-align: center">
-  <img style="width: 950px" src="/docs/assets/img/pro/deploy-builds-img.png">
+  <img style="width: 950px" src="/docs/assets/img/appflow/deploy-builds-img.png">
 </div>
 
 ## Package Builds
@@ -64,5 +64,5 @@ The basic steps of the package build are as follows:
 * You can find the history and status of your package builds as well as download successful builds in the side menu under `Builds` in the `Package` tab.
 
 <div style="text-align: center">
-  <img style="width: 950px" src="/docs/assets/img/pro/package-builds-img.png">
+  <img style="width: 950px" src="/docs/assets/img/appflow/package-builds-img.png">
 </div>

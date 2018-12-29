@@ -20,11 +20,11 @@ The following environment variables are provided in every build, which can be ac
 
 In addition to the [default environment](#default-environment), it's easy to create and manage custom sets of key/value pairs to further customize builds on Ionic Appflow. To get started with custom environments, open the app you wish to work on and navigate in the sidebar to **Automate -> Environments**, then click **New Environment** on the top right. You should see a form like this:
 
-<img src="/docs/assets/img/pro/ss-environments-create.png" class="browser" />
+<img src="/docs/assets/img/appflow/ss-environments-create.png" class="browser" />
 
 The environments dashboard also lists available custom environments along with their configured key/value pairs
 
-<img src="/docs/assets/img/pro/ss-environments-list.png" class="browser" />
+<img src="/docs/assets/img/appflow/ss-environments-list.png" class="browser" />
 
 ## Usage
 

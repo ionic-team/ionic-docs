@@ -10,7 +10,7 @@ dark_header: true
 
 # Getting Started with Ionic Appflow
 
-If you're new to Ionic Appflow, please read the [Welcome](/docs/pro/) introduction for a quick overview of Ionic pro and instructions on creating an account.
+If you're new to Ionic Appflow, please read the [Welcome](/docs/appflow/) introduction for a quick overview of Ionic pro and instructions on creating an account.
 
 ## Install Ionic CLI
 
@@ -50,7 +50,7 @@ If this is your first time running `ionic link` you may be prompted to perform a
 Now that you are logged into your Ionic Appflow account from the CLI and have an app you'd like to use, the next
 step is to push commits to your Ionic Appflow account.
 
-Follow the [Git Workflow](/docs/pro/basics/git/) to learn more about the workflow you should use while developing your App with Ionic Appflow.
+Follow the [Git Workflow](/docs/appflow/basics/git/) to learn more about the workflow you should use while developing your App with Ionic Appflow.
 
 ## Pro Client Setup
 

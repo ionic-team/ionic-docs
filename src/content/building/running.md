@@ -76,4 +76,4 @@ With `ionic serve` running, open DevApp and select the app from the currently ru
 
 Now if the app calls any native functionality, DevApp can handle this and actually return the correct native implementation.
 
-DevApp has a select list of plugin it supports, so check out the [DevApp docs](https://ionicframework.com/docs/pro/devapp/) for a complete list.
+DevApp has a select list of plugin it supports, so check out the [DevApp docs](https://ionicframework.com/docs/appflow/devapp/) for a complete list.

@@ -22,7 +22,7 @@ Ionic Appflow to needs access to your source code to build native binaries and r
 If you are already using [GitHub](https://github.com/) or [Bitbucket Cloud](https://bitbucket.org/) you can link your repository with your Ionic Appflow app to push code automatically. In order to enable the integration with your Ionic Appflow app you will need an existing repository on GitHub or Bitbucket Cloud. Navigate to the `Git` section of the app settings tab in your app on the Ionic Appflow dashboard choose the tab of the correct integration. If this is your first time connecting you'll need to click the `Connect` button. Then you can choose the repository to link from the list of available repos.
 
 <div style="text-align: center">
-  <img style="width: 950px" src="/img/pro/github-connect-app.png">
+  <img style="width: 950px" src="/img/appflow/github-connect-app.png">
 </div>
 
 When you link the repository a webhook will be created for the repository and events will be sent to Ionic Appflow so that we can automatically trigger builds for any of the branches you specify during the linking process. Be sure to specify all the branches you would like to trigger builds for. By default only pushes to the `master` branch will trigger builds.
@@ -33,7 +33,7 @@ When you link the repository a webhook will be created for the repository and ev
 
 If you are not using GitHub or Bitbucket Cloud you can push your source code directly to Ionic Appflow using Git. Simply choose `Ionic` as your git remote during `ionic start` or run `ionic link` in the root directory of your existing app in order to create the `ionic` git remote. You can learn about git remotes [here](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes).
 
-Follow the steps at [Getting Started](/docs/pro/basics/getting-started) to start a new App or link an existing App to Ionic Appflow.
+Follow the steps at [Getting Started](/docs/appflow/basics/getting-started) to start a new App or link an existing App to Ionic Appflow.
 
 Once you've created and linked your app to the Ionic remote you can learn about:
 
@@ -72,7 +72,7 @@ git push ionic my-new-branch
 ```
 
 It's also common to set up automatic deployments to deploy channels using specific branches.
-For more information on that, please check out our [Ionic Deploy](/docs/pro/deploy) documentation.
+For more information on that, please check out our [Ionic Deploy](/docs/appflow/deploy) documentation.
 
 ### Working with other Team Members
 

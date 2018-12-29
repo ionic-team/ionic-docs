@@ -17,7 +17,7 @@ export class DocsRoot {
   @State() pageClass: string;
 
   parseSection(path) {
-    const match = /^(api|cli|native|pro)(\/.*)?/.exec(path);
+    const match = /^(api|cli|native|appflow)(\/.*)?/.exec(path);
     return match && match[1] || 'framework';
   }
 

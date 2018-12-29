@@ -3,7 +3,7 @@
 Ionic Appflow's Deploy feature makes it easy to deploy app updates in real time without going through a
 traditional app store submission process for the vast majority of business logic, UI, and style changes.
 
-The Deploy feature works with the Ionic Appflow [Git Workflow](/docs/pro/basics/git/) to deploy new code updates
+The Deploy feature works with the Ionic Appflow [Git Workflow](/docs/appflow/basics/git/) to deploy new code updates
 in production (or testing) apps.
 
 *Note: The Deploy feature only works on binary compatible changes (HTML, CSS, JS),
@@ -95,22 +95,22 @@ To install the plugin manually, run the following command in the root of your Io
 cordova plugin add cordova-plugin-ionic --save --variable APP_ID="YOUR_APP_ID" --variable CHANNEL_NAME="YOUR_CHANNEL_NAME" --variable UPDATE_METHOD="background|auto|none" --variable MAX_STORE="2"
 ```
 
-Where `YOUR_APP_ID` is the ID of the app in Ionic Appflow, and `YOUR_CHANNEL_NAME` is the name of a [channel](/docs/pro/deploy/channels).
+Where `YOUR_APP_ID` is the ID of the app in Ionic Appflow, and `YOUR_CHANNEL_NAME` is the name of a [channel](/docs/appflow/deploy/channels).
 Make sure to use the exact name of your channel, including the exact casing.
-[MAX_STORE](/docs/pro/deploy/api/#max_store) tells us how many previous versions of code to keep inside your app,
+[MAX_STORE](/docs/appflow/deploy/api/#max_store) tells us how many previous versions of code to keep inside your app,
 this enables you to revert to those versions quickly, or swap between versions.
-[UPDATE_METHOD](/docs/pro/deploy/api/#update_method) is one of `background | auto | none`. You can read about all the
-available [plugin variables in our api docs](/docs/pro/deploy/api/#plugin-variables).
+[UPDATE_METHOD](/docs/appflow/deploy/api/#update_method) is one of `background | auto | none`. You can read about all the
+available [plugin variables in our api docs](/docs/appflow/deploy/api/#plugin-variables).
 
 ## Usage
 
 After you have installed and configured the Pro Plugin & Client libraries you can begin receiving updates in your app.
-To push new updates to your app, first trigger a [build](/docs/pro/builds/intro) by making a change to your app
+To push new updates to your app, first trigger a [build](/docs/appflow/builds/intro) by making a change to your app
 committing it to version control and pushing the changes to Ionic Appflow. The triggered build will be viewable in the
 Ionic Appflow dashboard.
 
 Once the build is available you can deploy it live in your app by either
-[manually assigning the build to the channel](/docs/pro/deploy/channels/#assigning-a-build-to-a-channel)
+[manually assigning the build to the channel](/docs/appflow/deploy/channels/#assigning-a-build-to-a-channel)
 the plugin is configured to listen to, or, if you have specified a
-[specific git branch channel to auto-deploy](/docs/pro/deploy/channels/#automating-deployment-from-a-git-branch),
+[specific git branch channel to auto-deploy](/docs/appflow/deploy/channels/#automating-deployment-from-a-git-branch),
 the plugin will auto update once the build has completed.

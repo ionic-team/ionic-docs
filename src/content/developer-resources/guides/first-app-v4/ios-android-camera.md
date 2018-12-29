@@ -22,7 +22,7 @@ Afterwards, open a terminal and navigate to your Ionic project. Execute the foll
 $ ionic serve -c
 ```
 
-In DevApp, you should now see the app appear. If it doesn't, or you have any issues throughout creating this app, [see here](https://ionicframework.com/docs/pro/devapp/).
+In DevApp, you should now see the app appear. If it doesn't, or you have any issues throughout creating this app, [see here](https://ionicframework.com/docs/appflow/devapp/).
 
 Much better! Now we can add the camera functionality. By the way, you can find reference code for this [on GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4).
 

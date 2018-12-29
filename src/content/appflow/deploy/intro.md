@@ -10,11 +10,11 @@ This enables you to
 * Get new features and bug fixes to your users quickly
 * A/B test changes with certain users before rolling them out to everyone
 
-In order to use advanced features such as switching Channels on the fly, Split Testing, Beta Channels, etc, you may have to use some of the [Deploy API](/docs/pro/deploy/api).
+In order to use advanced features such as switching Channels on the fly, Split Testing, Beta Channels, etc, you may have to use some of the [Deploy API](/docs/appflow/deploy/api).
 
 ## Get started
 
-* [Setup and use the plugin](/docs/pro/deploy/setup/)
-* [Understanding Builds](/docs/pro/builds/intro)
-* [Understanding Channels](/docs/pro/deploy/channels/)
-* [Advanced Usage with the Deploy API](/docs/pro/deploy/api)
+* [Setup and use the plugin](/docs/appflow/deploy/setup/)
+* [Understanding Builds](/docs/appflow/builds/intro)
+* [Understanding Channels](/docs/appflow/deploy/channels/)
+* [Advanced Usage with the Deploy API](/docs/appflow/deploy/api)

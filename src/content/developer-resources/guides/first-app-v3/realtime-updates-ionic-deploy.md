@@ -133,9 +133,9 @@ Log into the [Ionic Appflow dashboard](https://dashboard.ionicframework.com) and
 
 A Channel points to a specific JavaScript Build or Snapshot of your app that will be shared with devices listening to that channel for updates. You can change which Build a Channel points to whenever you’d like. 
 
-Each time a user launches our Photo Gallery app, it will poll for updates from Ionic Appflow. If new code is available, the update is downloaded in the background. There are [a handful of ways](/docs/pro/deploy/api/#update_method) to control how updates are performed, but by default they will be applied the next time the user closes then opens the app.
+Each time a user launches our Photo Gallery app, it will poll for updates from Ionic Appflow. If new code is available, the update is downloaded in the background. There are [a handful of ways](/docs/appflow/deploy/api/#update_method) to control how updates are performed, but by default they will be applied the next time the user closes then opens the app.
 
-When the latest Build has been successful, close your local copy of Photo Gallery app or put it in the background for 30 seconds (the [MIN_BACKGROUND_DURATION default](/docs/pro/deploy/api/#min_background_duration)), then reopen it. The title of the Photo Gallery page should change from “Photo Gallery” to “Photo Viewer.”
+When the latest Build has been successful, close your local copy of Photo Gallery app or put it in the background for 30 seconds (the [MIN_BACKGROUND_DURATION default](/docs/appflow/deploy/api/#min_background_duration)), then reopen it. The title of the Photo Gallery page should change from “Photo Gallery” to “Photo Viewer.”
 
 What if you deploy a change, then realize that there is a bug? Or perhaps you’re just not happy with the name “Photo Viewer?” No problem: Ionic Appflow Deploy makes it easy to roll back changes as well!
 

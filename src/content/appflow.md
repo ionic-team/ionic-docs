@@ -6,9 +6,9 @@ Ionic Appflow is a powerful set of services and features built on top of the fla
 
 Ionic Appflow has several core services that help you through the full app lifecycle, including
 
- * [Deploy](/docs/pro/deploy/): Update your app remotely in real-time without app store delays.
- * [Package](/docs/pro/package/): Build app binaries in the cloud for iOS and Android.
- * [Pipeline](/docs/pro/pipeline/): Automate your application's builds and get your code in the right people's hands.
+ * [Deploy](/docs/appflow/deploy/): Update your app remotely in real-time without app store delays.
+ * [Package](/docs/appflow/package/): Build app binaries in the cloud for iOS and Android.
+ * [Pipeline](/docs/appflow/pipeline/): Automate your application's builds and get your code in the right people's hands.
 
 Each one of these services is based around a simple git-based workflow that should be familiar to any app developer.
 
@@ -21,4 +21,4 @@ Ionic Appflow has a free plan for development and kicking the tires, and paid pl
 
 ## Getting Started
 
-Once your account has been created, continue to the [Installation](/docs/pro/basics/getting-started/) guide to install Pro and link your app to the service.
+Once your account has been created, continue to the [Installation](/docs/appflow/basics/getting-started/) guide to install Pro and link your app to the service.
