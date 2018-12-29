@@ -1,3 +1,5 @@
 export default () => (
-  <div>Native Menu</div>
+  <nav>
+    <div>Native Menu</div>
+  </nav>
 );
