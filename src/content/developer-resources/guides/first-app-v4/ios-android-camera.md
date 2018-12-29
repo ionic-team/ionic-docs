@@ -126,7 +126,7 @@ Next, define the “currentImage” variable and inject the Camera into this cla
 export class Tab2Page {
   currentImage: any;
 
-  constructor(private camera: Camera) {
+  constructor(private camera: Camera) { }
 }
 ```
 
