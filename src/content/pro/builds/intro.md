@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The [Git Workflow](/docs/pro/basics/git/) at the core of Ionic Pro allows you to push commits of your app code,
+The [Git Workflow](/docs/pro/basics/git/) at the core of Ionic Appflow allows you to push commits of your app code,
 which can then be used to trigger two distinct types of builds: Deploy and Package Builds.
 
 ### Concurrency limits

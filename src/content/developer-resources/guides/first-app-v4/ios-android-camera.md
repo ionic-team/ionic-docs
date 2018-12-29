@@ -161,7 +161,7 @@ $ ionic cordova platform add ios
 $ ionic cordova platform add android 
 ```
 
-Finally, back up your changes to Ionic Pro:
+Finally, back up your changes to Ionic Appflow:
 
 ```shell
 git add .

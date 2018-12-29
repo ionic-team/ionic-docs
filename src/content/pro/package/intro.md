@@ -1,6 +1,6 @@
 # Packaging Native Binaries
 
-Ionic Pro's Package feature makes it easy to build native app binaries for iOS and Android in the cloud. Perfect for automating binary builds and for developers using Windows that want to build iOS apps.
+Ionic Appflow's Package feature makes it easy to build native app binaries for iOS and Android in the cloud. Perfect for automating binary builds and for developers using Windows that want to build iOS apps.
 
 ## Getting Started
 

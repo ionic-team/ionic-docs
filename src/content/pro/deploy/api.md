@@ -103,7 +103,7 @@ async performAutomaticUpdate() {
     }
   } catch (err) {
     // We encountered an error.
-    // Here's how we would log it to Ionic Pro Monitoring while also catching:
+    // Here's how we would log it to Ionic Appflow Monitoring while also catching:
 
     // Pro.monitoring.exception(err);
   }
@@ -318,7 +318,7 @@ ___
 `string`
 
 
-The [Ionic Pro](https://ionicframework.com/docs/pro/) app id.
+The [Ionic Appflow](https://ionicframework.com/docs/pro/) app id.
 
 ___
 
@@ -485,8 +485,8 @@ cordova plugin add cordova-plugin-ionic --variable MIN_BACKGROUND_DURATION=60 ..
 
 ### `APP_ID` - `Required`
 
-The `APP_ID` variable sets app in the pro dashboard the plugin should check for updates.
-The App ID can be updated at runtime via the [Deploy Pro Client](/docs/pro/deploy/api).
+The `APP_ID` variable sets app in the Appflow dashboard the plugin should check for updates.
+The App ID can be updated at runtime via the [Deploy Appflow Client](/docs/pro/deploy/api).
 
 ### `CHANNEL_NAME` - `Required`
 
@@ -498,7 +498,7 @@ The Channel can be updated at runtime via the [configure method](/docs/pro/deplo
 `Default: background`
 
 The `UPDATE_METHOD` determines how updates are applied to your app.
-When you are installing the Ionic Pro plugin, you have the option to choose which update method to use.
+When you are installing the Ionic Appflow plugin, you have the option to choose which update method to use.
 The three options are:
 
 `background` - mode will check for updates when a user first opens your app from a completely closed state
