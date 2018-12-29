@@ -69,7 +69,7 @@ In `~/.bashrc`, `~/.bash_profile`, or similar shell startup scripts, make the fo
    </command-line>
 
    <blockquote>
-     <p>For `apksigner` and `zipalign`, `$ANDROID_SDK_ROOT/build-tools/<version>` must also be added to `PATH`.
+     <p>For `apksigner` and `zipalign`, `$ANDROID_SDK_ROOT/build-tools/<version>` must also be added to `PATH`.</p>
    </blockquote>
 
 ### Creating an Android Virtual Device
