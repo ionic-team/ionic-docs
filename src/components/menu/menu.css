@@ -9,14 +9,14 @@ docs-menu {
   width: var(--menu-width);
 }
 
-docs-menu header {
+docs-menu > header {
   border-bottom: solid 1px var(--line-rule-color);
   flex: none;
   height: var(--header-height);
   padding: 1rem 2rem;
 }
 
-docs-menu header .Logo {
+docs-menu > header .Logo {
   color: var(--link-color);
   font-family: var(--heading-font-family);
   height: 25px;
