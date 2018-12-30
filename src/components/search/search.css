@@ -6,9 +6,7 @@ docs-search {
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.01);
   color: var(--text-color--light);
   display: flex;
-  flex: none;
   font-size: 14px;
-  margin: 1rem 0.75rem 0;
   padding: 0.5rem 1rem;
   transition: background-color 200ms ease, box-shadow 200ms ease;
 }
