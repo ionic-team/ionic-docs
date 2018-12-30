@@ -1,9 +1,9 @@
 import { Component } from '@stencil/core';
 import Logo from '../header/logo';
-import apiMenu from './api';
-import cliMenu from './cli';
-import nativeMenu from './native';
-import mainMenu from './main';
+import apiTemplate from './templates/api';
+import cliTemplate from './templates/cli';
+import nativeTemplate from './templates/native';
+import mainTemplate from './templates/main';
 
 @Component({
   tag: 'docs-menu',
@@ -19,10 +19,10 @@ export class DocsMenu {
       </header>,
       <docs-search/>,
       <stencil-route-switch>
-        <stencil-route url="/docs/api" routeRender={apiMenu}/>
-        <stencil-route url="/docs/cli" routeRender={cliMenu}/>
-        <stencil-route url="/docs/native" routeRender={nativeMenu}/>
-        <stencil-route routeRender={mainMenu}/>
+        <stencil-route url="/docs/api" routeRender={apiTemplate}/>
+        <stencil-route url="/docs/cli" routeRender={cliTemplate}/>
+        <stencil-route url="/docs/native" routeRender={nativeTemplate}/>
+        <stencil-route routeRender={mainTemplate}/>
       </stencil-route-switch>
     ];
   }
