@@ -29,5 +29,8 @@ docs-menu > docs-search {
 
 docs-menu > stencil-route-switch {
   overflow-y: auto;
-  padding: 1rem 2rem 2rem;
+}
+
+docs-menu nav {
+  padding: 2rem;
 }

@@ -11,6 +11,7 @@ import '@stencil/router';
 import '@stencil/state-tunnel';
 import {
   Link,
+  MenuItems,
   ReferenceKeys,
 } from './definitions';
 
@@ -36,6 +37,13 @@ export namespace Components {
 
   interface DocsMenu {}
   interface DocsMenuAttributes extends StencilHTMLAttributes {}
+
+  interface DocsNav {
+    'items': MenuItems;
+  }
+  interface DocsNavAttributes extends StencilHTMLAttributes {
+    'items'?: MenuItems;
+  }
 
   interface DocsReference {
     'data': any[];
@@ -79,6 +87,7 @@ declare global {
     'DocsDocument': Components.DocsDocument;
     'DocsHeader': Components.DocsHeader;
     'DocsMenu': Components.DocsMenu;
+    'DocsNav': Components.DocsNav;
     'DocsReference': Components.DocsReference;
     'DocsRoot': Components.DocsRoot;
     'DocsSearch': Components.DocsSearch;
@@ -91,6 +100,7 @@ declare global {
     'docs-document': Components.DocsDocumentAttributes;
     'docs-header': Components.DocsHeaderAttributes;
     'docs-menu': Components.DocsMenuAttributes;
+    'docs-nav': Components.DocsNavAttributes;
     'docs-reference': Components.DocsReferenceAttributes;
     'docs-root': Components.DocsRootAttributes;
     'docs-search': Components.DocsSearchAttributes;
@@ -121,6 +131,12 @@ declare global {
   var HTMLDocsMenuElement: {
     prototype: HTMLDocsMenuElement;
     new (): HTMLDocsMenuElement;
+  };
+
+  interface HTMLDocsNavElement extends Components.DocsNav, HTMLStencilElement {}
+  var HTMLDocsNavElement: {
+    prototype: HTMLDocsNavElement;
+    new (): HTMLDocsNavElement;
   };
 
   interface HTMLDocsReferenceElement extends Components.DocsReference, HTMLStencilElement {}
@@ -158,6 +174,7 @@ declare global {
     'docs-document': HTMLDocsDocumentElement
     'docs-header': HTMLDocsHeaderElement
     'docs-menu': HTMLDocsMenuElement
+    'docs-nav': HTMLDocsNavElement
     'docs-reference': HTMLDocsReferenceElement
     'docs-root': HTMLDocsRootElement
     'docs-search': HTMLDocsSearchElement
@@ -170,6 +187,7 @@ declare global {
     'docs-document': HTMLDocsDocumentElement;
     'docs-header': HTMLDocsHeaderElement;
     'docs-menu': HTMLDocsMenuElement;
+    'docs-nav': HTMLDocsNavElement;
     'docs-reference': HTMLDocsReferenceElement;
     'docs-root': HTMLDocsRootElement;
     'docs-search': HTMLDocsSearchElement;
