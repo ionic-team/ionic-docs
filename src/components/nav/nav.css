@@ -42,10 +42,10 @@ docs-nav header {
 
 docs-nav header > svg {
   fill: currentColor;
-  height: 1em;
+  height: 0.75em;
   margin-bottom: -0.15em;
-  margin-left: 0.15em;
-  width: 1em;
+  margin-left: 0.25em;
+  width: 0.75em;
 }
 
 docs-nav section header + ul {

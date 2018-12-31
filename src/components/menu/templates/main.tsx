@@ -31,7 +31,14 @@ const items = {
   'Components': {
     'Alert': '/docs/api/alert',
     'Button': '/docs/api/button',
-    'Card': '/docs/api/card'
+    'Card': {
+      'Usage': '/docs/components/card',
+      'ion-card': '/docs/api/card',
+      'ion-card-content': '/docs/api/card-content',
+      'ion-card-header': '/docs/api/card-header',
+      'ion-card-subtitle': '/docs/api/card-subtitle',
+      'ion-card-title': '/docs/api/card-title'
+    }
   },
   'Layout': {
     'Structure': '/docs/layout/structure',
