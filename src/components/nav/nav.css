@@ -8,6 +8,13 @@ docs-nav {
 docs-nav a {
   color: inherit;
   font-weight: inherit;
+  transition: color 100ms ease;
+}
+
+@media (hover: hover) {
+  docs-nav a:hover {
+    color: var(--text-color);
+  }
 }
 
 docs-nav a.link-active {
