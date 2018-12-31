@@ -50,8 +50,8 @@ export class DocsDocument {
     return (
       <stencil-route-switch>
         <stencil-route url="/docs/native" routeRender={nativeTemplate} componentProps={{ document }}/>
-        <stencil-route url="/docs/api" routeRender={apiTemplate} componentProps={{ document }}/>
-        <stencil-route url="/docs/cli" routeRender={cliTemplate} componentProps={{ document }}/>
+        <stencil-route url="/docs/api/(.+)" routeRender={apiTemplate} componentProps={{ document }}/>
+        <stencil-route url="/docs/cli/commands/(.+)" routeRender={cliTemplate} componentProps={{ document }}/>
         <stencil-route url="/docs" routeRender={defaultTemplate} componentProps={{ document }}/>
       </stencil-route-switch>
     );
