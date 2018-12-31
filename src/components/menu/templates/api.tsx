@@ -1,10 +1,10 @@
-import { components } from '@ionic/docs/core.json';
+import components from '../data/api-components.json';
 
-export default () => (
-  <nav>
-    { components.map(component => {
-      const name = component.tag.slice(4);
-      return <stencil-route-link url={`/docs/api/${name}`}>{ name }</stencil-route-link>;
-    })}
-  </nav>
-);
+export default () => <docs-nav items={items}/>;
+
+const items = {
+  'API Reference': {
+    __class: 'reference-nav',
+    ...components
+  }
+};

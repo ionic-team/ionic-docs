@@ -1,5 +1,5 @@
-export default () => (
-  <nav>
-    <div>Native Menu</div>
-  </nav>
-);
+export default () => <docs-nav items={items}/>;
+
+const items = {
+  'Native APIs': {}
+};
