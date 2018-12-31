@@ -1,7 +1,7 @@
 docs-nav {
   color: var(--text-color--dark);
   display: block;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
 }
 
@@ -61,7 +61,7 @@ docs-nav section header + ul {
 
 docs-nav section ul {
   color: var(--text-color--light);
-  font-size: 13px;
+  font-size: 14px;
   margin-left: 12px;
 }
 
