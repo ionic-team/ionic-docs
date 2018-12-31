@@ -38,7 +38,6 @@ docs-nav section li {
 docs-nav header {
   align-items: center;
   display: flex;
-  margin-bottom: 14px;
 }
 
 docs-nav header > svg {
@@ -47,6 +46,10 @@ docs-nav header > svg {
   margin-bottom: -0.15em;
   margin-left: 0.15em;
   width: 1em;
+}
+
+docs-nav section header + ul {
+  margin-top: 14px;
 }
 
 docs-nav section ul {
