@@ -33,16 +33,32 @@ docs-header nav {
   align-items: center;
   color: var(--text-color--light);
   display: flex;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1;
   white-space: nowrap;
 }
 
 docs-header nav a {
   color: inherit;
-  font-weight: inherit;
 }
 
-docs-header nav a:not(:last-child) {
-  margin-right: 1.5em;
+@media (hover: hover) {
+  docs-header nav a:hover {
+    color: var(--text-color);
+  }
+}
+
+docs-header nav stencil-route-link a {
+  border-radius: 3px;
+  display: inline-block;
+  padding: 6px;
+}
+
+docs-header nav stencil-route-link .link-active {
+  background-color: var(--link-background-color);
+  color: var(--link-color);
+}
+
+docs-header nav > *:not(:last-child) {
+  margin-right: 0.5em;
 }

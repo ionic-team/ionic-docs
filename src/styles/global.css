@@ -13,6 +13,7 @@
   --font-family: system-ui, sans-serif;
   --header-height: 56px;
   --heading-font-family: "Eina", var(--font-family);
+  --link-background-color: #ebf2ff;
   --link-color: #005cff;
   --line-rule-color: #edf2f6;
   --menu-width: 260px;

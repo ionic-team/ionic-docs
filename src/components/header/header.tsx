@@ -44,9 +44,11 @@ export class DocsHeader {
           <Logo/>
         </stencil-route-link>
         <nav>
-          <a href="#">Community</a>
-          <a href="#">Support</a>
-          <a href="#">GitHub</a>
+          <stencil-route-link url="/docs/api">API</stencil-route-link>
+          <stencil-route-link url="/docs/cli">CLI</stencil-route-link>
+          <stencil-route-link url="/docs/native">Native</stencil-route-link>
+          <stencil-route-link url="/docs/community">Community</stencil-route-link>
+          <a target="_blank" href="https://github.com/ionic-team/ionic">GitHub</a>
         </nav>
       </header>
     );
