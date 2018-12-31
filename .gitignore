@@ -3,3 +3,4 @@ node_modules/
 .stencil/
 www/
 src/documents/**/*.json
+src/components/menu/data/

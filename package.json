@@ -9,7 +9,8 @@
     "start": "stencil build --dev --serve --watch",
     "build": "stencil build --prerender",
     "lint": "tslint --config tslint.json --project tsconfig.json",
-    "build-documents": "ts-node -P scripts/tsconfig.json scripts/build-documents"
+    "build-documents": "ts-node -P scripts/tsconfig.json scripts/build-documents",
+    "build-menu-data": "ts-node -P scripts/tsconfig.json scripts/build-menu-data"
   },
   "dependencies": {
     "@ionic/docs": "^4.0.0-rc.0",
