@@ -13,7 +13,7 @@ export class DocsNav {
       case 'string':
         return <li>{this.toLink([text, value])}</li>;
       case 'object':
-        return <li>{this.toSection([text, Object.entries(value)])}</li>;
+        return <li>{this.toSection([text, value])}</li>;
     }
   }
 
@@ -41,12 +41,13 @@ export class DocsNav {
     );
   }
 
-  toSection = ([header, items]) => {
+  toSection = ([header, value]) => {
+    const { __class, ...items } = value;
     return (
-      <section>
+      <section class={__class}>
         <header>{header} <CollapsibleIcon/></header>
         <ul>
-          {items.map(this.toItem)}
+          {Object.entries(items).map(this.toItem)}
         </ul>
       </section>
     );
