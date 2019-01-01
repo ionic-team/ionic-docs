@@ -1,3 +1,3 @@
-export default (error: Error) => (
-  <div>Error: { error.message }</div>
+export default (response: Response) => (
+  <div>{ response.statusText }</div>
 );

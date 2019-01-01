@@ -11,7 +11,7 @@ import errorTemplate from './templates/error';
 })
 export class DocsDocument {
   @Prop() path: string;
-  @State() fetchError: Error = null;
+  @State() badFetch: Response = null;
   @State() document;
 
   componentWillLoad() {
@@ -23,28 +23,28 @@ export class DocsDocument {
     return fetch(path)
       .then(this.validateFetch)
       .then(this.handleNewDocument)
-      .catch(this.handleFetchError);
+      .catch(this.handleBadFetch);
   }
 
   validateFetch = (response) => {
-    if (!response.ok) throw new Error(response.statusText);
+    if (!response.ok) throw response;
     return response.json();
   }
 
   handleNewDocument = (document) => {
-    this.fetchError = null;
+    this.badFetch = null;
     this.document = document;
   }
 
-  handleFetchError = (error) => {
-    this.fetchError = error;
+  handleBadFetch = (error) => {
+    this.badFetch = error;
   }
 
   render() {
     const { document } = this;
 
-    if (this.fetchError) {
-      return errorTemplate(this.fetchError);
+    if (this.badFetch) {
+      return errorTemplate(this.badFetch);
     }
 
     return (
