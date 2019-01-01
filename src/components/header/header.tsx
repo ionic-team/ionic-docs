@@ -1,4 +1,5 @@
 import { Component, State } from '@stencil/core';
+import { Outbound } from '../../icons';
 import Logo from './logo';
 
 @Component({
@@ -48,7 +49,7 @@ export class DocsHeader {
           <stencil-route-link url="/docs/cli">CLI</stencil-route-link>
           <stencil-route-link url="/docs/native">Native</stencil-route-link>
           <stencil-route-link url="/docs/community">Community</stencil-route-link>
-          <a target="_blank" href="https://github.com/ionic-team/ionic">GitHub</a>
+          <a class="outbound" target="_blank" href="https://github.com/ionic-team/ionic">GitHub <Outbound/></a>
         </nav>
       </header>
     );

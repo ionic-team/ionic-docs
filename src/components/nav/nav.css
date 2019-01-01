@@ -65,19 +65,6 @@ docs-nav section ul {
   margin-left: 12px;
 }
 
-docs-nav .outbound-link {
-  align-items: center;
-  display: inline-flex;
-}
-
-docs-nav .outbound-link svg {
-  fill: currentColor;
-  height: 1em;
-  margin-bottom: -0.125em;
-  margin-left: 0.25em;
-  width: 1em;
-}
-
 .reference-nav ul {
   font-family: var(--code-font-family);
   font-size: 12px;

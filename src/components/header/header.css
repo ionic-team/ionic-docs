@@ -48,7 +48,7 @@ docs-header nav a {
   }
 }
 
-docs-header nav stencil-route-link a {
+docs-header nav a {
   border-radius: 3px;
   display: inline-block;
   padding: 6px;
@@ -61,4 +61,8 @@ docs-header nav stencil-route-link .link-active {
 
 docs-header nav > *:not(:last-child) {
   margin-right: 0.5em;
+}
+
+docs-header nav > *:last-child {
+  margin-right: -6px;
 }

@@ -25,10 +25,9 @@ export class DocsNav {
       return (
         <a
           href={url}
-          class="outbound-link"
+          class="outbound"
           target="_blank">
-            {text}
-            <Outbound/>
+            {text} <Outbound/>
         </a>
       );
     }

@@ -46,6 +46,13 @@ a {
   text-decoration: none;
 }
 
+a.outbound svg {
+  fill: currentColor;
+  height: 1em;
+  width: 1em;
+  margin-bottom: -0.15em;
+}
+
 p.intro {
   color: var(--text-color--light);
   font-size: 1.2em;
