@@ -8,7 +8,7 @@ docs-search {
   display: flex;
   font-size: 14px;
   padding: 0.5rem 1rem;
-  transition: background-color 200ms ease, box-shadow 200ms ease;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
 }
 
 docs-search:hover,
@@ -17,7 +17,7 @@ docs-search.is-focused {
 }
 
 docs-search.is-focused {
-  background-color: var(--offset-background-color);
+  border-color: var(--link-color);
 }
 
 docs-search .Search-field {
