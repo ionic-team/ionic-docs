@@ -17,7 +17,7 @@ docs-search.is-focused {
 }
 
 docs-search.is-focused {
-  background-color: #fdfdfd;
+  background-color: var(--offset-background-color);
 }
 
 docs-search .Search-field {

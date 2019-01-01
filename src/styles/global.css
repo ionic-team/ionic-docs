@@ -17,6 +17,7 @@
   --link-color: #005cff;
   --line-rule-color: #edf2f6;
   --menu-width: 260px;
+  --offset-background-color: #fdfdff;
   --text-color: #4e5b6a;
   --text-color--dark: #1a232f;
   --text-color--light: #73849a;
@@ -200,5 +201,5 @@ th {
 }
 
 tbody tr:nth-child(odd) {
-  background-color: #fcfcfd;
+  background-color: var(--offset-background-color);
 }

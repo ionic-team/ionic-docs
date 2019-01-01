@@ -15,7 +15,7 @@ docs-reference tbody * {
 }
 
 docs-reference thead tr {
-  background-color: #fdfdfd;
+  background-color: var(--offset-background-color);
 }
 
 docs-reference tbody tr {
