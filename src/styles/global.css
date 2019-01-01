@@ -127,6 +127,11 @@ blockquote code {
   font-weight: 500;
 }
 
+mark {
+  background-color: #ffd780;
+  color: var(--text-color--dark);
+}
+
 hr {
   border-color: var(--line-rule-color);
   border-style: solid;
