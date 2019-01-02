@@ -25,6 +25,26 @@ export namespace Components {
     'language'?: string;
   }
 
+  interface CommandCursor {
+    'blink': boolean;
+  }
+  interface CommandCursorAttributes extends StencilHTMLAttributes {
+    'blink'?: boolean;
+  }
+
+  interface CommandLine {
+    'nobuttons': boolean;
+  }
+  interface CommandLineAttributes extends StencilHTMLAttributes {
+    'nobuttons'?: boolean;
+  }
+
+  interface CommandOutput {}
+  interface CommandOutputAttributes extends StencilHTMLAttributes {}
+
+  interface CommandPrompt {}
+  interface CommandPromptAttributes extends StencilHTMLAttributes {}
+
   interface DocsDocument {
     'path': string;
   }
@@ -91,6 +111,10 @@ export namespace Components {
 declare global {
   interface StencilElementInterfaces {
     'DocsCode': Components.DocsCode;
+    'CommandCursor': Components.CommandCursor;
+    'CommandLine': Components.CommandLine;
+    'CommandOutput': Components.CommandOutput;
+    'CommandPrompt': Components.CommandPrompt;
     'DocsDocument': Components.DocsDocument;
     'DocsHeader': Components.DocsHeader;
     'DocsMenu': Components.DocsMenu;
@@ -105,6 +129,10 @@ declare global {
 
   interface StencilIntrinsicElements {
     'docs-code': Components.DocsCodeAttributes;
+    'command-cursor': Components.CommandCursorAttributes;
+    'command-line': Components.CommandLineAttributes;
+    'command-output': Components.CommandOutputAttributes;
+    'command-prompt': Components.CommandPromptAttributes;
     'docs-document': Components.DocsDocumentAttributes;
     'docs-header': Components.DocsHeaderAttributes;
     'docs-menu': Components.DocsMenuAttributes;
@@ -122,6 +150,30 @@ declare global {
   var HTMLDocsCodeElement: {
     prototype: HTMLDocsCodeElement;
     new (): HTMLDocsCodeElement;
+  };
+
+  interface HTMLCommandCursorElement extends Components.CommandCursor, HTMLStencilElement {}
+  var HTMLCommandCursorElement: {
+    prototype: HTMLCommandCursorElement;
+    new (): HTMLCommandCursorElement;
+  };
+
+  interface HTMLCommandLineElement extends Components.CommandLine, HTMLStencilElement {}
+  var HTMLCommandLineElement: {
+    prototype: HTMLCommandLineElement;
+    new (): HTMLCommandLineElement;
+  };
+
+  interface HTMLCommandOutputElement extends Components.CommandOutput, HTMLStencilElement {}
+  var HTMLCommandOutputElement: {
+    prototype: HTMLCommandOutputElement;
+    new (): HTMLCommandOutputElement;
+  };
+
+  interface HTMLCommandPromptElement extends Components.CommandPrompt, HTMLStencilElement {}
+  var HTMLCommandPromptElement: {
+    prototype: HTMLCommandPromptElement;
+    new (): HTMLCommandPromptElement;
   };
 
   interface HTMLDocsDocumentElement extends Components.DocsDocument, HTMLStencilElement {}
@@ -186,6 +238,10 @@ declare global {
 
   interface HTMLElementTagNameMap {
     'docs-code': HTMLDocsCodeElement
+    'command-cursor': HTMLCommandCursorElement
+    'command-line': HTMLCommandLineElement
+    'command-output': HTMLCommandOutputElement
+    'command-prompt': HTMLCommandPromptElement
     'docs-document': HTMLDocsDocumentElement
     'docs-header': HTMLDocsHeaderElement
     'docs-menu': HTMLDocsMenuElement
@@ -200,6 +256,10 @@ declare global {
 
   interface ElementTagNameMap {
     'docs-code': HTMLDocsCodeElement;
+    'command-cursor': HTMLCommandCursorElement;
+    'command-line': HTMLCommandLineElement;
+    'command-output': HTMLCommandOutputElement;
+    'command-prompt': HTMLCommandPromptElement;
     'docs-document': HTMLDocsDocumentElement;
     'docs-header': HTMLDocsHeaderElement;
     'docs-menu': HTMLDocsMenuElement;

@@ -1,0 +1,8 @@
+command-prompt {
+  display: block;
+}
+
+command-prompt:before {
+  content: '$ ';
+  color: #fb96f9;
+}
