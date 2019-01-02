@@ -193,10 +193,15 @@ docs-menu {
 
 .migration-pill {
   background-color: #dfedff;
-  border-radius: 16px;
+  border-radius: 2em;
   color: #6974ff;
+  display: inline-block;
   font-size: 13px;
-  padding: 8px 14px;
+  padding: 6px 14px;
+}
+
+.migration-pill a {
+  margin-bottom: 0;
 }
 
 .migration-pill svg {
