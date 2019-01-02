@@ -1,0 +1,28 @@
+.Error {
+  align-items: center;
+  background-color: var(--offset-background-color);
+  color: var(--text-color--light);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.Error > * {
+  margin: 10px;
+}
+
+.Error h1,
+.Error div {
+  color: inherit;
+  font-size: 3rem;
+}
+
+.Error div {
+  text-shadow: 3px 3px 3px rgba(0,0,0,0.1);
+}
+
+.Error p {
+  font-size: 18px;
+}
