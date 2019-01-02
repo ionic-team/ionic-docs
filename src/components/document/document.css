@@ -11,6 +11,14 @@ docs-document main {
   padding: 2rem 2rem 2rem 4rem;
 }
 
+docs-document .full-screen {
+  height: calc(100vh - var(--header-height));
+  width: calc(100vw - var(--menu-width));
+  max-width: none;
+  overflow: hidden;
+  padding: 0;
+}
+
 docs-document h1 {
   margin-top: 2rem;
 }
