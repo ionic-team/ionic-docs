@@ -203,3 +203,8 @@ th {
 tbody tr:nth-child(odd) {
   background-color: var(--offset-background-color);
 }
+
+.markdown-content iframe {
+  box-shadow: 10px 10px 20px rgba(0,0,0,0.1);
+  margin: 2rem 0;
+}
