@@ -84,9 +84,7 @@ Click **Create Virtual Device** and select a suitable device definition. If unsu
 
 Once the AVD is created, launch the AVD into the Android emulator. Keeping the emulator running is the best way to ensure detection while developing Ionic apps for Android.
 
-<figure class="center" style="width: 300px">
-    ![Android Emulator Booting](/docs/assets/img/installation/android-emulator-booting.png)
-</figure>
+<img alt="Android Emulator Booting" height="400" src="/docs/assets/img/installation/android-emulator-booting.png"/>
 
 ### Set up an Android Device
 
