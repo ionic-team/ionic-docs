@@ -77,7 +77,7 @@ ionic serve
 And voilà! Your Ionic app is now running in a web browser. Most of your app can be built right in the browser, greatly increasing development speed.
 
 ## Photo Gallery!!!
-There are three tabs. Click on the Tab2 tab. It’s a blank canvas, aka the perfect spot to add camera functionality. Let’s begin to transform the About page into a Photo Gallery. Ionic features LiveReload, so when you make changes and save them, the app is updated immediately!
+There are three tabs. Click on the Tab2 tab. It’s a blank canvas, aka the perfect spot to add camera functionality. Let’s begin to transform this page into a Photo Gallery. Ionic features LiveReload, so when you make changes and save them, the app is updated immediately!
 
 ![Before and after going through this tutorial](/docs/assets/img/guides/first-app-v3/email-photogallery.gif)
 
@@ -102,7 +102,7 @@ Open the photo-gallery app folder in your favorite code editor of choice, then n
 Next, open `src/app/tabs/tabs.page.html`. Change the label to “Gallery” and the icon name to “images”:
 
 ```html
-<ion-tab-button tab="about">
+<ion-tab-button tab="tab2">
   <ion-icon name="images"></ion-icon>
   <ion-label>Gallery</ion-label>
 </ion-tab-button>
@@ -112,7 +112,7 @@ Now, back up your changes to Ionic Appflow:
 
 ```shell
 $ git add .
-$ git commit -m "converting about page to photo gallery"
+$ git commit -m "converting tab2 page to photo gallery"
 $ git push ionic master
 ```
 

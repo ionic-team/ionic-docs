@@ -96,7 +96,7 @@ providers: [
 
 It can now be used on any of our App pages.
 
-## Add the Camera to the About page
+## Add the Camera to the Gallery page
 
 Our camera button doesn’t do anything yet. Over in `tab2.page.html`, add a click handler to the button:
 
