@@ -4,15 +4,15 @@ docs-pagination {
   border-width: 1px 0;
   display: flex;
   margin-top: 2rem;
+  padding: 2rem 4rem;
 }
 
-docs-pagination > * {
-  flex: none;
-  width: 50%;
+docs-pagination .next,
+docs-pagination .previous {
+  max-width: 40%;
 }
 
 docs-pagination .next {
-  border-left: solid 1px var(--line-rule-color);
   margin-left: auto;
 }
 
@@ -27,13 +27,6 @@ docs-pagination .previous {
 docs-pagination a {
   align-items: center;
   display: flex;
-  padding: 2rem 4rem;
-}
-
-@media (hover: hover) {
-  docs-pagination a:hover {
-    background-color: var(--offset-background-color);
-  }
 }
 
 docs-pagination span {
