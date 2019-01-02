@@ -45,6 +45,13 @@ export namespace Components {
     'items'?: MenuItems;
   }
 
+  interface DocsPagination {
+    'document': Document;
+  }
+  interface DocsPaginationAttributes extends StencilHTMLAttributes {
+    'document'?: Document;
+  }
+
   interface DocsReference {
     'data': any[];
     'keys': ReferenceKeys;
@@ -88,6 +95,7 @@ declare global {
     'DocsHeader': Components.DocsHeader;
     'DocsMenu': Components.DocsMenu;
     'DocsNav': Components.DocsNav;
+    'DocsPagination': Components.DocsPagination;
     'DocsReference': Components.DocsReference;
     'DocsRoot': Components.DocsRoot;
     'DocsSearch': Components.DocsSearch;
@@ -101,6 +109,7 @@ declare global {
     'docs-header': Components.DocsHeaderAttributes;
     'docs-menu': Components.DocsMenuAttributes;
     'docs-nav': Components.DocsNavAttributes;
+    'docs-pagination': Components.DocsPaginationAttributes;
     'docs-reference': Components.DocsReferenceAttributes;
     'docs-root': Components.DocsRootAttributes;
     'docs-search': Components.DocsSearchAttributes;
@@ -139,6 +148,12 @@ declare global {
     new (): HTMLDocsNavElement;
   };
 
+  interface HTMLDocsPaginationElement extends Components.DocsPagination, HTMLStencilElement {}
+  var HTMLDocsPaginationElement: {
+    prototype: HTMLDocsPaginationElement;
+    new (): HTMLDocsPaginationElement;
+  };
+
   interface HTMLDocsReferenceElement extends Components.DocsReference, HTMLStencilElement {}
   var HTMLDocsReferenceElement: {
     prototype: HTMLDocsReferenceElement;
@@ -175,6 +190,7 @@ declare global {
     'docs-header': HTMLDocsHeaderElement
     'docs-menu': HTMLDocsMenuElement
     'docs-nav': HTMLDocsNavElement
+    'docs-pagination': HTMLDocsPaginationElement
     'docs-reference': HTMLDocsReferenceElement
     'docs-root': HTMLDocsRootElement
     'docs-search': HTMLDocsSearchElement
@@ -188,6 +204,7 @@ declare global {
     'docs-header': HTMLDocsHeaderElement;
     'docs-menu': HTMLDocsMenuElement;
     'docs-nav': HTMLDocsNavElement;
+    'docs-pagination': HTMLDocsPaginationElement;
     'docs-reference': HTMLDocsReferenceElement;
     'docs-root': HTMLDocsRootElement;
     'docs-search': HTMLDocsSearchElement;

@@ -47,13 +47,25 @@ export class DocsDocument {
       return errorTemplate(this.badFetch);
     }
 
-    return (
+    const content = [
       <stencil-route-switch>
         <stencil-route url="/docs/native" routeRender={nativeTemplate} componentProps={{ document }}/>
         <stencil-route url="/docs/api/(.+)" routeRender={apiTemplate} componentProps={{ document }}/>
         <stencil-route url="/docs/cli/commands/(.+)" routeRender={cliTemplate} componentProps={{ document }}/>
         <stencil-route url="/docs" routeRender={defaultTemplate} componentProps={{ document }}/>
       </stencil-route-switch>
+    ];
+
+    const shouldShowPagination = (
+      document.previousText && document.previousUrl || document.nextText && document.nextUrl
     );
+
+    if (shouldShowPagination) {
+      content.push(
+        <docs-pagination document={document}/>
+      );
+    }
+
+    return content;
   }
 }

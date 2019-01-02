@@ -1,0 +1,59 @@
+docs-pagination {
+  border-color: var(--line-rule-color);
+  border-style: solid;
+  border-width: 1px 0;
+  display: flex;
+  margin-top: 2rem;
+}
+
+docs-pagination > * {
+  flex: none;
+  width: 50%;
+}
+
+docs-pagination .next {
+  border-left: solid 1px var(--line-rule-color);
+  margin-left: auto;
+}
+
+docs-pagination .next a {
+  justify-content: flex-end;
+}
+
+docs-pagination .previous {
+  margin-right: auto;
+}
+
+docs-pagination a {
+  align-items: center;
+  display: flex;
+  padding: 2rem 4rem;
+}
+
+@media (hover: hover) {
+  docs-pagination a:hover {
+    background-color: var(--offset-background-color);
+  }
+}
+
+docs-pagination span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+docs-pagination svg {
+  fill: currentColor;
+  flex: none;
+  height: 1em;
+  margin-bottom: -0.125em;
+  width: 1em;
+}
+
+docs-pagination .next svg {
+  margin-left: 0.5em;
+}
+
+docs-pagination .previous svg {
+  margin-right: 0.5em;
+}
