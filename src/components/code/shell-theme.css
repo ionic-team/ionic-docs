@@ -1,7 +1,6 @@
 docs-code[language="shell"] > pre {
   background-color: var(--text-color--dark);
   border-radius: 7px;
-  padding: 2em;
 }
 
 docs-code[language="shell"]:before {
