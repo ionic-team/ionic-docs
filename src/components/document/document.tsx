@@ -1,4 +1,5 @@
 import { Component, Prop, State, Watch } from '@stencil/core';
+import { slugify } from '../../utils';
 import defaultTemplate from './templates/default';
 import nativeTemplate from './templates/native';
 import apiTemplate from './templates/api';
@@ -38,6 +39,19 @@ export class DocsDocument {
 
   handleBadFetch = (error) => {
     this.badFetch = error;
+  }
+
+  getPageClass(path: string) {
+    const [, doc]: string[] | null = /^\/docs\/documents\/(.+)\.json$/.exec(path) || [];
+    return slugify(doc);
+  }
+
+  hostData() {
+    return {
+      class: {
+        [`page-${this.getPageClass(this.path)}`]: true
+      }
+    };
   }
 
   render() {
