@@ -33,6 +33,7 @@ export class DocsPagination {
       links.push(
         <stencil-route-link
           url={previousUrl}
+          key="previous"
           class="previous"
           anchorTitle={previousText}>
             <BackArrow/>
@@ -45,6 +46,7 @@ export class DocsPagination {
       links.push(
         <stencil-route-link
           url={nextUrl}
+          key="next"
           class="next"
           anchorTitle={nextText}>
             <span>{nextText}</span>
