@@ -6,6 +6,7 @@ docs-document {
   line-height: 2;
   margin-left: var(--menu-width);
   margin-top: var(--header-height);
+  overflow-x: hidden;
 }
 
 docs-document main {
@@ -30,9 +31,7 @@ docs-document h3 a[href^="#"],
 docs-document h4 a[href^="#"],
 docs-document h5 a[href^="#"],
 docs-document h6 a[href^="#"] {
-  align-items: baseline;
   color: inherit;
-  display: inline-flex;
   position: relative;
 }
 
@@ -55,4 +54,13 @@ docs-document h4 a[href^="#"]:hover:before,
 docs-document h5 a[href^="#"]:hover:before,
 docs-document h6 a[href^="#"]:hover:before {
   opacity: 1;
+}
+
+docs-document h2 code,
+docs-document h3 code,
+docs-document h4 code,
+docs-document h5 code,
+docs-document h6 code {
+  background: none;
+  font-size: inherit;
 }
