@@ -9,11 +9,12 @@ docs-code[language="shell"]:before {
 }
 
 docs-code[language="shell"] code {
+  color: rgba(255, 255, 255, 0.7);
   font-size: 13px;
 }
 
 docs-code[language="shell"] code * {
-  color: rgba(255, 255, 255, 0.7);
+  color: inherit;
 }
 
 docs-code[language="shell"] code .hljs-meta {
