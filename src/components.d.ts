@@ -18,6 +18,15 @@ import {
 
 export namespace Components {
 
+  interface DocsCard {
+    'header': string;
+    'href': string;
+  }
+  interface DocsCardAttributes extends StencilHTMLAttributes {
+    'header'?: string;
+    'href'?: string;
+  }
+
   interface DocsCode {
     'language': string;
   }
@@ -110,6 +119,7 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
+    'DocsCard': Components.DocsCard;
     'DocsCode': Components.DocsCode;
     'CommandCursor': Components.CommandCursor;
     'CommandLine': Components.CommandLine;
@@ -128,6 +138,7 @@ declare global {
   }
 
   interface StencilIntrinsicElements {
+    'docs-card': Components.DocsCardAttributes;
     'docs-code': Components.DocsCodeAttributes;
     'command-cursor': Components.CommandCursorAttributes;
     'command-line': Components.CommandLineAttributes;
@@ -145,6 +156,12 @@ declare global {
     'docs-tabs': Components.DocsTabsAttributes;
   }
 
+
+  interface HTMLDocsCardElement extends Components.DocsCard, HTMLStencilElement {}
+  var HTMLDocsCardElement: {
+    prototype: HTMLDocsCardElement;
+    new (): HTMLDocsCardElement;
+  };
 
   interface HTMLDocsCodeElement extends Components.DocsCode, HTMLStencilElement {}
   var HTMLDocsCodeElement: {
@@ -237,6 +254,7 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'docs-card': HTMLDocsCardElement
     'docs-code': HTMLDocsCodeElement
     'command-cursor': HTMLCommandCursorElement
     'command-line': HTMLCommandLineElement
@@ -255,6 +273,7 @@ declare global {
   }
 
   interface ElementTagNameMap {
+    'docs-card': HTMLDocsCardElement;
     'docs-code': HTMLDocsCodeElement;
     'command-cursor': HTMLCommandCursorElement;
     'command-line': HTMLCommandLineElement;
