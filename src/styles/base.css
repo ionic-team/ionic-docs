@@ -1,0 +1,221 @@
+@font-face {
+  src: url("/docs/assets/fonts/eina-700.woff2") format("woff2"), url("/docs/assets/fonts/eina-700.woff") format("woff");
+  font-family: "Eina";
+  font-style: normal;
+  font-weight: 700;
+}
+
+:root {
+  --background-color: #ffffff;
+  --code-background-color: #f5f7fa;
+  --code-color: var(--text-color--dark);
+  --code-font-family: "SFMono-Regular", "Roboto Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  --font-family: system-ui, sans-serif;
+  --header-height: 56px;
+  --heading-font-family: "Eina", var(--font-family);
+  --link-background-color: #ebf2ff;
+  --link-color: #005cff;
+  --line-rule-color: #edf2f6;
+  --menu-width: 260px;
+  --offset-background-color: #fdfdff;
+  --text-color: #4e5b6a;
+  --text-color--dark: #1a232f;
+  --text-color--light: #73849a;
+  --text-color--lighter: #abb2bf;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  text-size-adjust: none;
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: var(--link-color);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+a.outbound svg {
+  fill: currentColor;
+  height: 1em;
+  width: 1em;
+  margin-bottom: -0.15em;
+}
+
+p.intro {
+  color: var(--text-color--light);
+  font-size: 1.2em;
+  margin-bottom: 1.2em;
+}
+
+p.intro code {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+p.intro strong {
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+ol,
+ul {
+  padding-left: 2em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-color--dark);
+  font-family: var(--heading-font-family);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  padding-top: 2em;
+}
+
+h1 {
+  font-size: 4rem;
+  padding-top: 0;
+}
+
+h2 {
+  font-size: 1.825rem;
+}
+
+h3 {
+  font-size: 1.375rem;
+}
+
+h4 {
+  font-size: 1.15rem;
+}
+
+h5,
+h6 {
+  font-size: 1rem;
+}
+
+h2 + h3,
+h3 + h4 {
+  margin-top: -1em;
+}
+
+blockquote {
+  background: rgba(255, 250, 237, 0.8);
+  border-left: 4px solid #ffcc5f;
+  border-radius: 2px 4px 4px 2px;
+  color: #736545;
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 1em;
+  padding: 2em;
+}
+
+blockquote a {
+  border-bottom: dotted 1px currentColor;
+  color: #e09f16;
+}
+
+blockquote > *:first-child {
+  margin-top: 0;
+}
+
+blockquote > *:last-child {
+  margin-bottom: 0;
+}
+
+blockquote code {
+  background: #f7f1e6;
+  color: #381600;
+  font-weight: 500;
+}
+
+mark {
+  background-color: #ffd780;
+  color: var(--text-color--dark);
+}
+
+hr {
+  border-color: var(--line-rule-color);
+  border-style: solid;
+  border-width: 1px 0 0 0;
+  margin: 3rem 0;
+}
+
+code {
+  background-color: var(--code-background-color);
+  border-radius: 4px;
+  color: var(--code-color);
+  font-family: var(--code-font-family);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0;
+  padding: 4px 6px;
+  white-space: pre-wrap;
+}
+
+pre {
+  background-color: var(--code-background-color);
+  border-radius: 4px;
+  line-height: 1.2;
+  margin: 2rem 0;
+  overflow: auto;
+  padding: 2em;
+}
+
+pre code {
+  background-color: transparent;
+  color: inherit;
+  font-weight: 500;
+  padding: 0;
+  white-space: inherit;
+}
+
+table {
+  border-width: 1px 0 0 1px;
+  font-size: 13px;
+  margin: 2em 0;
+  overflow-x: auto;
+  width: 100%;
+}
+
+table,
+td,
+th {
+  border-collapse: collapse;
+  border-color: var(--line-rule-color);
+  border-style: solid;
+}
+
+td,
+th {
+  border-width: 0 1px 1px 0;
+  line-height: 1.5;
+  padding: 1em;
+  text-align: left;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: var(--offset-background-color);
+}
+
+iframe {
+  background-color: rgba(0, 0, 0, 0.02);
+  box-shadow: 10px 10px 20px rgba(0,0,0,0.1);
+  margin: 2rem 0;
+}
