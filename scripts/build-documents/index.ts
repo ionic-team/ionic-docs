@@ -1,4 +1,5 @@
 import { resolve } from 'path';
+import { slugify } from '../../src/utils';
 import fs from 'fs-extra';
 import { JSDOM } from 'jsdom';
 import Listr from 'listr';
@@ -55,10 +56,13 @@ function patchDocument(document: Document): Document {
     href: `#${heading.getAttribute('id')}`
   }));
 
+  const pageClass = slugify(document.path.slice(DOCUMENTS_DIR.length + 1).replace('.json', ''));
+
   return {
     ...document,
     body: body.innerHTML,
-    headings
+    headings,
+    pageClass
   };
 }
 

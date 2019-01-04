@@ -1,13 +1,6 @@
 import { Component, Prop } from '@stencil/core';
 import { BackArrow, ForwardArrow } from '../../icons';
-
-interface Document {
-  previousText?: string;
-  previousUrl?: string;
-  nextText?: string;
-  nextUrl?: string;
-  [key: string]: any;
-}
+import { Document } from '../../definitions';
 
 @Component({
   tag: 'docs-pagination',

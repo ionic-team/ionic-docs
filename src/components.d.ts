@@ -10,6 +10,7 @@ import '@stencil/core';
 import '@stencil/router';
 import '@stencil/state-tunnel';
 import {
+  Document,
   Link,
   MenuItems,
   ReferenceKeys,

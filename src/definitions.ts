@@ -1,3 +1,9 @@
+export interface Document {
+  title: string;
+  body: string;
+  [key: string]: any;
+}
+
 export interface Link {
   text: string;
   href: string;

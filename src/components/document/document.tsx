@@ -1,5 +1,5 @@
 import { Component, Prop, State, Watch } from '@stencil/core';
-import { slugify } from '../../utils';
+import { Document } from '../../definitions';
 import defaultTemplate from './templates/default';
 import nativeTemplate from './templates/native';
 import apiTemplate from './templates/api';
@@ -13,7 +13,7 @@ import errorTemplate from './templates/error';
 export class DocsDocument {
   @Prop() path: string;
   @State() badFetch: Response = null;
-  @State() document;
+  @State() document: Document;
 
   componentWillLoad() {
     return this.fetchDocument(this.path);
@@ -37,19 +37,18 @@ export class DocsDocument {
     this.document = document;
   }
 
-  handleBadFetch = (error) => {
+  handleBadFetch = (error: Response) => {
     this.badFetch = error;
-  }
-
-  getPageClass(path: string) {
-    const [, doc]: string[] | null = /^\/docs\/documents\/(.+)\.json$/.exec(path) || [];
-    return slugify(doc);
+    this.document = {
+      title: error.statusText,
+      body: null
+    };
   }
 
   hostData() {
     return {
       class: {
-        [`page-${this.getPageClass(this.path)}`]: true
+        [`page-${this.document.pageClass}`]: typeof this.document.pageClass === 'string'
       }
     };
   }
