@@ -1,4 +1,4 @@
-import { Component, State } from '@stencil/core';
+import { Component, State, Listen } from '@stencil/core';
 import { Outbound } from '../../icons';
 import Logo from './logo';
 
@@ -11,16 +11,8 @@ export class DocsHeader {
   private frameRequested = false;
   private prevScroll = 0;
 
-  componentDidLoad() {
-    window.addEventListener('scroll', this.handleScroll);
-    this.handleScroll();
-  }
-
-  componentDidUnload() {
-    window.removeEventListener('scroll', this.handleScroll);
-  }
-
-  handleScroll = () => {
+  @Listen('window:scroll')
+  handleScroll() {
     if (!this.frameRequested) {
       requestAnimationFrame(() => {
         const { scrollY } = window;
