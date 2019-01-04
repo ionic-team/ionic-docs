@@ -1,6 +1,5 @@
 .Layout {
   display: flex;
-  min-height: 100vh;
 }
 
 .Layout > stencil-route {
