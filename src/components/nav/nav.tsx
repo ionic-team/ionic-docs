@@ -1,6 +1,6 @@
 import { Component, Prop } from '@stencil/core';
 import { MenuItems } from '../../definitions';
-import { DownArrow, Outbound } from '../../icons';
+import { Outbound } from '../../icons';
 
 @Component({
   tag: 'docs-nav',
@@ -45,7 +45,7 @@ export class DocsNav {
     const { __class, ...items } = value;
     return (
       <section class={__class}>
-        <header>{header} <DownArrow/></header>
+        <header>{header}</header>
         <ul>
           {Object.entries(items).map(this.toItem)}
         </ul>
