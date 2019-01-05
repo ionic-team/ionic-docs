@@ -1,4 +1,4 @@
-import { Component, State, Listen } from '@stencil/core';
+import { Component, Listen, State } from '@stencil/core';
 import { Outbound } from '../../icons';
 import Logo from './logo';
 
