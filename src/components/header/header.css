@@ -20,7 +20,10 @@ docs-header header {
   display: flex;
   height: var(--header-height);
   justify-content: space-between;
-  padding: 1rem 2rem;
+}
+
+docs-header header > * {
+  padding: 0 2rem;
 }
 
 docs-header .Logo {
@@ -33,13 +36,14 @@ docs-header nav {
   align-items: center;
   color: var(--text-color--light);
   display: flex;
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1;
   white-space: nowrap;
 }
 
 docs-header nav a {
   color: inherit;
+  padding: 5px 0;
 }
 
 @media (hover: hover) {
@@ -48,21 +52,35 @@ docs-header nav a {
   }
 }
 
-docs-header nav a {
-  border-radius: 3px;
-  display: inline-block;
-  padding: 6px;
+docs-header nav > *:not(:last-child) {
+  margin-right: 1.5em;
 }
 
-docs-header nav stencil-route-link .link-active {
-  background-color: var(--link-background-color);
+.SectionNav {
+  font-size: 14px;
+  height: 100%;
+  margin-right: auto;
+  padding-left: 0;
+}
+
+.SectionNav .link-active {
   color: var(--link-color);
 }
 
-docs-header nav > *:not(:last-child) {
-  margin-right: 0.5em;
+.SectionNav .link-active:after {
+  background-color: currentColor;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 0;
+  position: absolute;
+  width: 100%;
 }
 
-docs-header nav > *:last-child {
-  margin-right: -6px;
+.SectionNav > * {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  position: relative;
 }
