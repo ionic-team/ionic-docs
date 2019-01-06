@@ -10,10 +10,12 @@ docs-menu {
 }
 
 docs-menu > header {
+  align-items: center;
   border-bottom: solid 1px var(--line-rule-color);
+  display: flex;
   flex: none;
   height: var(--header-height);
-  padding: 1rem 2rem;
+  padding: 0 1.5rem;
 }
 
 docs-menu > header .Logo {
@@ -24,7 +26,7 @@ docs-menu > header .Logo {
 
 docs-menu > docs-search {
   flex: none;
-  margin: 1rem 0.75rem 0;
+  margin: 1rem 0.5rem 0;
 }
 
 docs-menu > stencil-route-switch {
@@ -32,5 +34,5 @@ docs-menu > stencil-route-switch {
 }
 
 docs-menu nav {
-  padding: 2rem;
+  padding: 2rem 1.5rem;
 }

@@ -10,8 +10,8 @@ docs-document {
 }
 
 docs-document main {
-  max-width: 700px;
-  padding: 2rem 4rem;
+  max-width: 680px;
+  padding: 2rem 3rem;
 }
 
 docs-document .full-screen {
