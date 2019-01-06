@@ -48,7 +48,7 @@ export class DocsDocument {
   hostData() {
     return {
       class: {
-        [`page-${this.document.pageClass}`]: typeof this.document.pageClass === 'string'
+        [this.document.pageClass]: typeof this.document.pageClass === 'string'
       }
     };
   }

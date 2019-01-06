@@ -56,7 +56,7 @@ function patchDocument(document: Document): Document {
     href: `#${heading.getAttribute('id')}`
   }));
 
-  const pageClass = slugify(document.path.slice(DOCUMENTS_DIR.length + 1).replace('.json', ''));
+  const pageClass = `page-${slugify(document.path.slice(DOCUMENTS_DIR.length + 1).replace('.json', ''))}`;
 
   return {
     ...document,
