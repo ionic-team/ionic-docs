@@ -9,8 +9,5 @@ const items = {
     'Using a Proxy': '/docs/cli/using-a-proxy',
     'Change Log': 'https://github.com/ionic-team/ionic-cli/blob/master/packages/ionic/CHANGELOG.md'
   },
-  'Command Reference': {
-    __class: 'reference-nav',
-    ...commands
-  }
+  'Command Reference': Object.entries(commands).sort()
 };

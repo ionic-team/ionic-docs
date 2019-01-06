@@ -42,12 +42,12 @@ export class DocsNav {
   }
 
   toSection = ([header, value]) => {
-    const { __class, ...items } = value;
+    const items = Array.isArray(value) ? value : Object.entries(value);
     return (
-      <section class={__class}>
+      <section>
         <header>{header}</header>
         <ul>
-          {Object.entries(items).map(this.toItem)}
+          {items.map(this.toItem)}
         </ul>
       </section>
     );

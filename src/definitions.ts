@@ -14,6 +14,8 @@ export interface ReferenceKeys {
   [key: string]: (item: any) => any;
 }
 
+export type MenuItem = [string, string];
+
 export interface MenuItems {
-  [key: string]: string | MenuItems;
+  [key: string]: string | MenuItems | MenuItem[];
 }
