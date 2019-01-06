@@ -62,7 +62,7 @@ docs-nav section header + ul {
 docs-nav section ul {
   color: var(--text-color--light);
   font-size: 13px;
-  margin-left: 12px;
+  margin-left: 10px;
 }
 
 .reference-nav ul {
