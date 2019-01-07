@@ -9,6 +9,7 @@
     "start": "stencil build --dev --serve --watch",
     "build": "stencil build --prerender",
     "lint": "tslint --config tslint.json --project tsconfig.json",
+    "build-all": "ts-node -P scripts/tsconfig.json scripts/build-all",
     "build-documents": "ts-node -P scripts/tsconfig.json scripts/build-documents",
     "build-menu-data": "ts-node -P scripts/tsconfig.json scripts/build-menu-data"
   },
