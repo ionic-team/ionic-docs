@@ -37,7 +37,7 @@ export class DocsHeader {
           <Logo/>
         </stencil-route-link>
         <nav class="SectionNav">
-          <stencil-route-link url="/docs/" exact>Guide</stencil-route-link>
+          <stencil-route-link url="/docs/" urlMatch={guideTabMatch}>Guide</stencil-route-link>
           <stencil-route-link url="/docs/api">API</stencil-route-link>
           <stencil-route-link url="/docs/cli">CLI</stencil-route-link>
           <stencil-route-link url="/docs/native">Native</stencil-route-link>
@@ -51,3 +51,5 @@ export class DocsHeader {
     );
   }
 }
+
+const guideTabMatch = /^\/docs\/(?!(api|cli|native)).*$/;
