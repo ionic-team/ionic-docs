@@ -2,5 +2,10 @@
   "extends": "tslint-ionic-rules",
   "rules": {
     "no-import-side-effect": false
+  },
+  "linterOptions": {
+    "exclude": [
+      "**/*.json"
+    ]
   }
 }
