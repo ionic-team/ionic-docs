@@ -11,7 +11,11 @@ const tasks = new Listr();
 tasks.add(Static);
 tasks.add(API);
 tasks.add(CLI);
-tasks.run().catch(console.error);
+export default tasks;
+
+if (!module.parent) {
+  tasks.run().catch(console.error);
+}
 
 export const DOCUMENTS_DIR = resolve(__dirname, '../../src/documents');
 
