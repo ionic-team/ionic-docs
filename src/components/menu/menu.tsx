@@ -1,6 +1,6 @@
 import { Component } from '@stencil/core';
 import Logo from '../header/logo';
-import apiTemplate from './templates/api';
+import componentsTemplate from './templates/components';
 import cliTemplate from './templates/cli';
 import nativeTemplate from './templates/native';
 import appflowTemplate from './templates/appflow';
@@ -20,7 +20,7 @@ export class DocsMenu {
       </header>,
       <docs-search/>,
       <stencil-route-switch>
-        <stencil-route url="/docs/api" routeRender={apiTemplate}/>
+        <stencil-route url="/docs/(components|api)" routeRender={componentsTemplate}/>
         <stencil-route url="/docs/cli" routeRender={cliTemplate}/>
         <stencil-route url="/docs/native" routeRender={nativeTemplate}/>
         <stencil-route url="/docs/appflow" routeRender={appflowTemplate}/>

@@ -2,6 +2,10 @@
 title: Ionic Framework
 ---
 
+<docs-card header="Components" href="/docs/components">
+  <p>A comprehensive look at Ionic Framework's beautifully designed UI component library.</p>
+</docs-card>
+
 <docs-card header="Introduction" href="/docs/intro">
   <p>Learn the fundamentals you need to know to start building amazing apps with Ionic Framework.</p>
 </docs-card>
@@ -12,10 +16,6 @@ title: Ionic Framework
 
 <docs-card header="CLI" href="/docs/cli">
   <p>The Ionic command-line interface is your go-to tool for for developing Ionic apps.</p>
-</docs-card>
-
-<docs-card header="API Reference" href="/docs/api">
-  <p>Explore the API for a deeper understanding of component methods, properties, and events.</p>
 </docs-card>
 
 <docs-card header="Native APIs" href="/docs/native">
