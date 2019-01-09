@@ -2,7 +2,7 @@
 title: Ionic Framework
 ---
 
-<docs-cards>
+<docs-cards class="prioritized">
   <docs-card header="Components" href="/docs/components">
     <p>A comprehensive look at Ionic Framework's beautifully designed UI component library.</p>
   </docs-card>
