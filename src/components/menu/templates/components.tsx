@@ -42,5 +42,8 @@ const items = {
     'Toggle': '/docs/components/toggle',
     'Toolbar': '/docs/components/toolbar',
     'Typography': '/docs/components/typography'
+  },
+  'Resources': {
+    'API Reference': '/docs/api'
   }
 };
