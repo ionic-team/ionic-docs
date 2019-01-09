@@ -1,0 +1,17 @@
+docs-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-gap: 1.25rem;
+}
+
+docs-cards > docs-card {
+  max-width: none;
+}
+
+docs-cards > docs-card:nth-child(-n+5) {
+  font-size: 15px;
+}
+
+docs-cards > docs-card:first-child {
+  grid-row: span 2;
+}

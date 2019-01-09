@@ -28,6 +28,9 @@ export namespace Components {
     'href'?: string;
   }
 
+  interface DocsCards {}
+  interface DocsCardsAttributes extends StencilHTMLAttributes {}
+
   interface DocsCode {
     'language': string;
   }
@@ -121,6 +124,7 @@ export namespace Components {
 declare global {
   interface StencilElementInterfaces {
     'DocsCard': Components.DocsCard;
+    'DocsCards': Components.DocsCards;
     'DocsCode': Components.DocsCode;
     'CommandCursor': Components.CommandCursor;
     'CommandLine': Components.CommandLine;
@@ -140,6 +144,7 @@ declare global {
 
   interface StencilIntrinsicElements {
     'docs-card': Components.DocsCardAttributes;
+    'docs-cards': Components.DocsCardsAttributes;
     'docs-code': Components.DocsCodeAttributes;
     'command-cursor': Components.CommandCursorAttributes;
     'command-line': Components.CommandLineAttributes;
@@ -162,6 +167,12 @@ declare global {
   var HTMLDocsCardElement: {
     prototype: HTMLDocsCardElement;
     new (): HTMLDocsCardElement;
+  };
+
+  interface HTMLDocsCardsElement extends Components.DocsCards, HTMLStencilElement {}
+  var HTMLDocsCardsElement: {
+    prototype: HTMLDocsCardsElement;
+    new (): HTMLDocsCardsElement;
   };
 
   interface HTMLDocsCodeElement extends Components.DocsCode, HTMLStencilElement {}
@@ -256,6 +267,7 @@ declare global {
 
   interface HTMLElementTagNameMap {
     'docs-card': HTMLDocsCardElement
+    'docs-cards': HTMLDocsCardsElement
     'docs-code': HTMLDocsCodeElement
     'command-cursor': HTMLCommandCursorElement
     'command-line': HTMLCommandLineElement
@@ -275,6 +287,7 @@ declare global {
 
   interface ElementTagNameMap {
     'docs-card': HTMLDocsCardElement;
+    'docs-cards': HTMLDocsCardsElement;
     'docs-code': HTMLDocsCodeElement;
     'command-cursor': HTMLCommandCursorElement;
     'command-line': HTMLCommandLineElement;

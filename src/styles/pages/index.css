@@ -1,21 +1,3 @@
 .page-index main {
   max-width: 960px;
 }
-
-.page-index .markdown-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  grid-gap: 1.25rem;
-}
-
-.page-index .markdown-content docs-card {
-  max-width: none;
-}
-
-.page-index .markdown-content docs-card:nth-child(-n+5) {
-  font-size: 15px;
-}
-
-.page-index .markdown-content docs-card:first-child {
-  grid-row: span 2;
-}
