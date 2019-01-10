@@ -21,7 +21,7 @@ const cliCommandMenu = keyBy(
 
 const tasks = new Listr([
   {
-    title: 'Build API reference menu data',
+    title: 'Build API reference menu',
     task: () => fs.outputJSON(
       join(MENU_DATA_DIR, 'api-reference.json'),
       componentMenu,
@@ -29,7 +29,7 @@ const tasks = new Listr([
     )
   },
   {
-    title: 'Build CLI command menu data',
+    title: 'Build CLI command menu',
     task: () => fs.outputJSON(
       join(MENU_DATA_DIR, 'cli-commands.json'),
       cliCommandMenu,

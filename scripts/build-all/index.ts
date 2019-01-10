@@ -1,6 +1,6 @@
 import Listr from 'listr';
 import buildDocuments from '../build-documents';
-import buildMenuData from '../build-menu-data';
+import buildMenus from '../build-menus';
 
 const tasks = new Listr({ collapse: false });
 
@@ -10,8 +10,8 @@ tasks.add({
 });
 
 tasks.add({
-  title: 'Menu data',
-  task: () => buildMenuData
+  title: 'Menus',
+  task: () => buildMenus
 });
 
 tasks.run().catch(console.error);

@@ -13,7 +13,7 @@
     "lint": "tslint --config tslint.json --project tsconfig.json",
     "build-all": "ts-node -P scripts/tsconfig.json scripts/build-all",
     "build-documents": "ts-node -P scripts/tsconfig.json scripts/build-documents",
-    "build-menu-data": "ts-node -P scripts/tsconfig.json scripts/build-menu-data"
+    "build-menus": "ts-node -P scripts/tsconfig.json scripts/build-menus"
   },
   "dependencies": {
     "@ionic/docs": "^4.0.0-rc.0",
