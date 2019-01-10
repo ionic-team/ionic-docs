@@ -1,0 +1,1834 @@
+[
+  {
+    "name": "@ionic-native/abbyy-rtr",
+    "displayName": "ABBYY Real-Time Recognition",
+    "description": "<p>This plugin allows to use the Text Capture and Data Capture features of ABBYY Real-Time Recognition SDK (RTR SDK) in apps.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-abbyy-rtr-sdk"
+    }
+  },
+  {
+    "name": "@ionic-native/action-sheet",
+    "displayName": "Action Sheet",
+    "description": "<p>The ActionSheet plugin shows a native list of options the user can choose from.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-actionsheet"
+    }
+  },
+  {
+    "name": "@ionic-native/admob-free",
+    "displayName": "AdMob Free",
+    "description": "<p>A free, no ad-sharing version of Google AdMob plugin for Cordova.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-admob-free"
+    }
+  },
+  {
+    "name": "@ionic-native/admob-plus",
+    "displayName": "AdMob Plus",
+    "description": "<p>AdMob Plus is the successor of cordova-plugin-admob-free, which provides a cleaner API and build with modern tools.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-admob-plus"
+    }
+  },
+  {
+    "name": "@ionic-native/admob-pro",
+    "displayName": "AdMob Pro",
+    "description": "<p>Plugin for Google Ads, including AdMob / DFP (DoubleClick for publisher) and mediations to other Ad networks.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-admobpro"
+    }
+  },
+  {
+    "name": "@ionic-native/admob",
+    "displayName": "Admob",
+    "description": "<p>Most complete Admob plugin with support for <a href=\"http://www.tappx.com/?h=dec334d63287772de859bdb4e977fce6\">Tappx</a> ads. Monetize your apps and games with AdMob ads, using latest Google AdMob SDK. With this plugin you can show AdMob ads easily!</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-admob"
+    }
+  },
+  {
+    "name": "@ionic-native/aes-256",
+    "displayName": "AES256",
+    "description": "<p>This cordova ionic plugin allows you to perform AES 256 encryption and decryption on the plain text. It&#39;s a cross-platform plugin which supports both Android and iOS. The encryption and decryption are performed on the device native layer so that the performance is much faster.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-aes256-encryption"
+    }
+  },
+  {
+    "name": "@ionic-native/alipay",
+    "displayName": "Alipay",
+    "description": "<p>This plugin facilitates the usage of Alipay 支付宝 in an Ionic apps with the integrated AlipaySDK dated on 20180601.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-gubnoi-alipay"
+    }
+  },
+  {
+    "name": "@ionic-native/analytics-firebase",
+    "displayName": "Analytics Firebase",
+    "description": "<p>Google Analytics Firebase plugin for Ionic Native apps.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-analytics"
+    }
+  },
+  {
+    "name": "@ionic-native/android-exoplayer",
+    "displayName": "Android ExoPlayer",
+    "description": "<p>Cordova media player plugin using Google&#39;s ExoPlayer framework.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-exoplayer"
+    }
+  },
+  {
+    "name": "@ionic-native/android-fingerprint-auth",
+    "displayName": "Android Fingerprint Auth",
+    "description": "<p>This plugin will open a native dialog fragment prompting the user to authenticate using their fingerprint. If the device has a secure lockscreen (pattern, PIN, or password), the user may opt to authenticate using that method as a backup.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-android-fingerprint-auth"
+    }
+  },
+  {
+    "name": "@ionic-native/android-full-screen",
+    "displayName": "Android Full Screen",
+    "description": "<p>This plugin enables developers to offer users a true full screen experience in their Cordova and PhoneGap apps for Android. Using Android 4.0+, you can use true full screen in &quot;lean mode&quot;, the way you see in apps like YouTube, expanding the app right to the edges of the screen, hiding the status and navigation bars until the user next interacts. This is ideally suited to video or cut-scene content. In Android 4.4+, however, you can now enter true full screen, fully interactive immersive mode. In this mode, your app will remain in true full screen until you choose otherwise; users can swipe down from the top of the screen to temporarily display the system UI.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-fullscreen"
+    }
+  },
+  {
+    "name": "@ionic-native/android-permissions",
+    "displayName": "Android Permissions",
+    "description": "<p>This plugin is designed to support Android new permissions checking mechanism.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-android-permissions"
+    }
+  },
+  {
+    "name": "@ionic-native/app-availability",
+    "displayName": "App Availability",
+    "description": "<p>This plugin allows you to check if an app is installed on the user&#39;s device. It requires an URI Scheme (e.g. twitter://) on iOS or a Package Name (e.g com.twitter.android) on Android.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-appavailability"
+    }
+  },
+  {
+    "name": "@ionic-native/app-center-analytics",
+    "displayName": "App Center Analytics",
+    "description": "<p>App Center Analytics helps you understand user behavior and customer engagement to improve your app. The SDK automatically captures session count and device properties like model, OS version, etc. You can define your own custom events to measure things that matter to you. All the information captured is available in the App Center portal for you to analyze the data.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-appcenter-analytics"
+    }
+  },
+  {
+    "name": "@ionic-native/app-center-crashes",
+    "displayName": "App Center Crashes",
+    "description": "<p>App Center Analytics helps you understand user behavior and customer engagement to improve your app. The SDK automatically captures session count and device properties like model, OS version, etc. You can define your own custom events to measure things that matter to you. All the information captured is available in the App Center portal for you to analyze the data.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-appcenter-crashes"
+    }
+  },
+  {
+    "name": "@ionic-native/app-center-push",
+    "displayName": "App Center Push",
+    "description": "<p>For more info, please see <a href=\"https://docs.microsoft.com/en-us/appcenter/sdk/push/cordova\">https://docs.microsoft.com/en-us/appcenter/sdk/push/cordova</a></p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-appcenter-push"
+    }
+  },
+  {
+    "name": "@ionic-native/app-minimize",
+    "displayName": "App Minimize",
+    "description": "<p>AppMinimize is a plugin to minimize the application on android devices</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-appminimize"
+    }
+  },
+  {
+    "name": "@ionic-native/app-preferences",
+    "displayName": "App Preferences",
+    "description": "<p>This plugin allows you to read and write app preferences</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-app-preferences"
+    }
+  },
+  {
+    "name": "@ionic-native/app-rate",
+    "displayName": "App Rate",
+    "description": "<p>The AppRate plugin makes it easy to prompt the user to rate your app, either now, later, or never.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-apprate"
+    }
+  },
+  {
+    "name": "@ionic-native/app-update",
+    "displayName": "App Update",
+    "description": "<p>This plugin does self-update for android</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-app-update"
+    }
+  },
+  {
+    "name": "@ionic-native/app-version",
+    "displayName": "App Version",
+    "description": "<p>Reads the version of your app from the target build settings.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-app-version"
+    }
+  },
+  {
+    "name": "@ionic-native/apple-pay",
+    "displayName": "Apple Pay",
+    "description": "<p>A dependency free Cordova plugin to provide Apple Pay functionality.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-applepay"
+    }
+  },
+  {
+    "name": "@ionic-native/apple-wallet",
+    "displayName": "Apple Wallet",
+    "description": "<p>A Cordova plugin that enables users from Add Payment Cards to their Apple Wallet.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-apple-wallet"
+    }
+  },
+  {
+    "name": "@ionic-native/appodeal",
+    "displayName": "Appodeal",
+    "description": "<p>Plugin to serve ads through native Appodeal SDKs</p>\n",
+    "cordovaPlugin": {
+      "name": "https://github.com/appodeal/appodeal-cordova-plugin.git"
+    }
+  },
+  {
+    "name": "@ionic-native/appsflyer",
+    "displayName": "Appsflyer",
+    "description": "<p>Appsflyer Cordova SDK support for Attribution</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-appsflyer-sdk"
+    }
+  },
+  {
+    "name": "@ionic-native/autostart",
+    "displayName": "Autostart",
+    "description": "<p>This plugin automatically starts your Android app after every boot or auto-update. You can enable or disable the autostart function in your app.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-autostart"
+    }
+  },
+  {
+    "name": "@ionic-native/background-fetch",
+    "displayName": "Background Fetch",
+    "description": "<p>iOS Background Fetch Implementation. See: <a href=\"https://developer.apple.com/reference/uikit/uiapplication#1657399\">https://developer.apple.com/reference/uikit/uiapplication#1657399</a> iOS Background Fetch is basically an API which wakes up your app about every 15 minutes (during the user&#39;s prime-time hours) and provides your app exactly 30s of background running-time. This plugin will execute your provided callbackFn whenever a background-fetch event occurs. There is no way to increase the rate which a fetch-event occurs and this plugin sets the rate to the most frequent possible value of UIApplicationBackgroundFetchIntervalMinimum -- iOS determines the rate automatically based upon device usage and time-of-day (ie: fetch-rate is about ~15min during prime-time hours; less frequently when the user is presumed to be sleeping, at 3am for example). For more detail, please see <a href=\"https://github.com/transistorsoft/cordova-plugin-background-fetch\">https://github.com/transistorsoft/cordova-plugin-background-fetch</a></p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-background-fetch"
+    }
+  },
+  {
+    "name": "@ionic-native/background-geolocation",
+    "displayName": "Background Geolocation",
+    "description": "<p>This plugin provides foreground and background geolocation with battery-saving &quot;circular region monitoring&quot; and &quot;stop detection&quot;. For more detail, please see <a href=\"https://github.com/mauron85/cordova-plugin-background-geolocation\">https://github.com/mauron85/cordova-plugin-background-geolocation</a></p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-mauron85-background-geolocation"
+    }
+  },
+  {
+    "name": "@ionic-native/background-mode",
+    "displayName": "Background Mode",
+    "description": "<p>Cordova plugin to prevent the app from going to sleep while in background. Requires Cordova plugin: cordova-plugin-background-mode. For more info about plugin, visit: <a href=\"https://github.com/katzer/cordova-plugin-background-mode\">https://github.com/katzer/cordova-plugin-background-mode</a></p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-background-mode"
+    }
+  },
+  {
+    "name": "@ionic-native/backlight",
+    "displayName": "Backlight",
+    "description": "<p>This plugin adds turning on/off the device backlight.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-backlight"
+    }
+  },
+  {
+    "name": "@ionic-native/badge",
+    "displayName": "Badge",
+    "description": "<p>The essential purpose of badge numbers is to enable an application to inform its users that it has something for them — for example, unread messages — when the application isn’t running in the foreground.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-badge"
+    }
+  },
+  {
+    "name": "@ionic-native/baidu-push",
+    "displayName": "Baidu Push",
+    "description": "<p>This plugin faciliates the use of Baidu Push notifications.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-push-baidu"
+    }
+  },
+  {
+    "name": "@ionic-native/barcode-scanner",
+    "displayName": "Barcode Scanner",
+    "description": "<p>The Barcode Scanner Plugin opens a camera view and automatically scans a barcode, returning the data back to you.</p>\n",
+    "cordovaPlugin": {
+      "name": "phonegap-plugin-barcodescanner"
+    }
+  },
+  {
+    "name": "@ionic-native/base64-to-gallery",
+    "displayName": "Base64 To Gallery",
+    "description": "<p>This plugin allows you to save base64 data as a png image into the device</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-base64-to-gallery"
+    }
+  },
+  {
+    "name": "@ionic-native/base64",
+    "displayName": "Base64",
+    "description": "<p>This Plugin is used to encode base64 of any file, it uses js code for iOS, but in case of android it uses native code to handle android versions lower than v.3</p>\n",
+    "cordovaPlugin": {
+      "name": "com-badrit-base64"
+    }
+  },
+  {
+    "name": "@ionic-native/battery-status",
+    "displayName": "Battery Status",
+    "description": "<p>Requires Cordova plugin: cordova-plugin-batterystatus. For more info, please see the <a href=\"https://github.com/apache/cordova-plugin-battery-status\">BatteryStatus plugin docs</a>.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-battery-status"
+    }
+  },
+  {
+    "name": "@ionic-native/ble",
+    "displayName": "BLE",
+    "description": "<p>This plugin enables communication between a phone and Bluetooth Low Energy (BLE) peripherals.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-ble-central"
+    }
+  },
+  {
+    "name": "@ionic-native/blinkup",
+    "displayName": "BlinkUp",
+    "description": "<p>Electric Imp BlinkUp ionic plugin.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-blinkup"
+    }
+  },
+  {
+    "name": "@ionic-native/bluetooth-le",
+    "displayName": "BluetoothLE",
+    "description": "<p>This plugin has the most complete implementation for interacting with Bluetooth LE devices on Android, iOS and partially Windows. It&#39;s a wrap around <a href=\"https://github.com/randdusing/cordova-plugin-bluetoothle/blob/master/readme.md\">randdusing/cordova-plugin-bluetoothle</a> cordova plugin for Ionic. It supports peripheral <strong>and</strong> central modes and covers most of the API methods available on Android and iOS.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-bluetoothle"
+    }
+  },
+  {
+    "name": "@ionic-native/bluetooth-serial",
+    "displayName": "Bluetooth Serial",
+    "description": "<p>This plugin enables serial communication over Bluetooth. It was written for communicating between Android or iOS and an Arduino (not Android to Android or iOS to iOS).</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-bluetooth-serial"
+    }
+  },
+  {
+    "name": "@ionic-native/braintree",
+    "displayName": "Braintree",
+    "description": "<p>This plugin enables the use of the Braintree Drop-In Payments UI in your Ionic applications on Android and iOS, using the native Drop-In UI for each platform (not the Javascript SDK).</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-braintree"
+    }
+  },
+  {
+    "name": "@ionic-native/branch-io",
+    "displayName": "BranchIo",
+    "description": "<p>Branch.io is an attribution service for deeplinking and invitation links</p>\n",
+    "cordovaPlugin": {
+      "name": "branch-cordova-sdk"
+    }
+  },
+  {
+    "name": "@ionic-native/brightness",
+    "displayName": "Brightness",
+    "description": "<p>The Brightness plugin let you control the display brightness of your device.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-brightness"
+    }
+  },
+  {
+    "name": "@ionic-native/broadcaster",
+    "displayName": "Broadcaster",
+    "description": "<p>This plugin adds exchanging events between native code and your app.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-broadcaster"
+    }
+  },
+  {
+    "name": "@ionic-native/browser-tab",
+    "displayName": "Browser Tab",
+    "description": "<p>This plugin provides an interface to in-app browser tabs that exist on some mobile platforms, specifically <a href=\"http://developer.android.com/tools/support-library/features.html#custom-tabs\">Custom Tabs</a> on Android (including the <a href=\"https://developer.chrome.com/multidevice/android/customtabs\">Chrome Custom Tabs</a> implementation), and <a href=\"https://developer.apple.com/library/ios/documentation/SafariServices/Reference/SFSafariViewController_Ref/\">SFSafariViewController</a> on iOS.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-browsertab"
+    }
+  },
+  {
+    "name": "@ionic-native/calendar",
+    "displayName": "Calendar",
+    "description": "<p>This plugin allows you to add events to the Calendar of the mobile device.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-calendar"
+    }
+  },
+  {
+    "name": "@ionic-native/call-directory",
+    "displayName": "Call Directory",
+    "description": "<p>This plugin can add phone numbers to an Callkit call directory extension. Call <code>reloadExtension</code> after using <code>addIdentification</code> and <code>removeIdentification</code> to process the changes in the call directory extension.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-call-directory"
+    }
+  },
+  {
+    "name": "@ionic-native/call-log",
+    "displayName": "Call Log",
+    "description": "<p>This plugin access the call history on a device and that can be filtered</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-calllog"
+    }
+  },
+  {
+    "name": "@ionic-native/call-number",
+    "displayName": "Call Number",
+    "description": "<p>Call a number directly from your Cordova/Ionic application. <strong>NOTE</strong>: The iOS Simulator (and maybe Android Simulators) do not provide access to the phone subsystem.</p>\n",
+    "cordovaPlugin": {
+      "name": "call-number"
+    }
+  },
+  {
+    "name": "@ionic-native/camera-preview",
+    "displayName": "Camera Preview",
+    "description": "<p>Showing camera preview in HTML</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-camera-preview"
+    }
+  },
+  {
+    "name": "@ionic-native/camera",
+    "displayName": "Camera",
+    "description": "<p>Take a photo or capture video.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-camera"
+    }
+  },
+  {
+    "name": "@ionic-native/card-io",
+    "displayName": "Card IO",
+    "description": "",
+    "cordovaPlugin": {
+      "name": "card.io.cordova.mobilesdk"
+    }
+  },
+  {
+    "name": "@ionic-native/chooser",
+    "displayName": "Chooser",
+    "description": "<p>File chooser plugin for Cordova.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-chooser"
+    }
+  },
+  {
+    "name": "@ionic-native/class-kit",
+    "displayName": "Class Kit",
+    "description": "<p>Plugin for using Apple&#39;s ClassKit framework.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-classkit"
+    }
+  },
+  {
+    "name": "@ionic-native/clevertap",
+    "displayName": "CleverTap",
+    "description": "<p>Cordova Plugin that wraps CleverTap SDK for Android and iOS</p>\n",
+    "cordovaPlugin": {
+      "name": "clevertap-cordova"
+    }
+  },
+  {
+    "name": "@ionic-native/clipboard",
+    "displayName": "Clipboard",
+    "description": "<p>Clipboard management plugin for Cordova that supports iOS, Android, and Windows Phone 8.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-clipboard"
+    }
+  },
+  {
+    "name": "@ionic-native/cloud-settings",
+    "displayName": "Cloud Settings",
+    "description": "<p>Stores app settings in cloud storage so if the user re-installs the app or installs it on a different device, the settings will be restored and available in the new installation.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-cloud-settings"
+    }
+  },
+  {
+    "name": "@ionic-native/code-push",
+    "displayName": "Code Push",
+    "description": "<p>CodePush plugin for Cordova by Microsoft that supports iOS and Android.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-code-push"
+    }
+  },
+  {
+    "name": "@ionic-native/contacts",
+    "displayName": "Contacts",
+    "description": "<p>Access and manage Contacts on the device.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-contacts"
+    }
+  },
+  {
+    "name": "@ionic-native/couchbase-lite",
+    "displayName": "Couchbase Lite",
+    "description": "<p>Plugin to install Couchbase Lite in your PhoneGap app on iOS or Android</p>\n",
+    "cordovaPlugin": {
+      "name": "couchbase-lite-phonegap-plugin"
+    }
+  },
+  {
+    "name": "@ionic-native/crop",
+    "displayName": "Crop",
+    "description": "<p>Crops images</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-crop"
+    }
+  },
+  {
+    "name": "@ionic-native/date-picker",
+    "displayName": "Date Picker",
+    "description": "<p>The DatePicker plugin allows the user to fetch date or time using native dialogs.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-datepicker"
+    }
+  },
+  {
+    "name": "@ionic-native/db-meter",
+    "displayName": "DB Meter",
+    "description": "<p>This plugin defines a global DBMeter object, which permits to get the decibel values from the microphone.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-dbmeter"
+    }
+  },
+  {
+    "name": "@ionic-native/deeplinks",
+    "displayName": "Deeplinks",
+    "description": "<p>This plugin handles deeplinks on iOS and Android for both custom URL scheme links and Universal App Links.</p>\n",
+    "cordovaPlugin": {
+      "name": "ionic-plugin-deeplinks"
+    }
+  },
+  {
+    "name": "@ionic-native/device-accounts",
+    "displayName": "Device Accounts",
+    "description": "<p>Gets the Google accounts associated with the Android device</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-device-accounts"
+    }
+  },
+  {
+    "name": "@ionic-native/device-feedback",
+    "displayName": "Device Feedback",
+    "description": "<p>Plugin that lets you provide haptic or acoustic feedback on Android devices.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-velda-devicefeedback"
+    }
+  },
+  {
+    "name": "@ionic-native/device-motion",
+    "displayName": "Device Motion",
+    "description": "<p>Requires Cordova plugin: <code>cordova-plugin-device-motion</code>. For more info, please see the <a href=\"https://github.com/apache/cordova-plugin-device-motion\">Device Motion docs</a>.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-device-motion"
+    }
+  },
+  {
+    "name": "@ionic-native/device-orientation",
+    "displayName": "Device Orientation",
+    "description": "<p>Requires Cordova plugin: <code>cordova-plugin-device-orientation</code>. For more info, please see the <a href=\"https://github.com/apache/cordova-plugin-device-orientation\">Device Orientation docs</a>.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-device-orientation"
+    }
+  },
+  {
+    "name": "@ionic-native/device",
+    "displayName": "Device",
+    "description": "<p>Access information about the underlying device and platform.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-device"
+    }
+  },
+  {
+    "name": "@ionic-native/diagnostic",
+    "displayName": "Diagnostic",
+    "description": "<p>Checks whether device hardware features are enabled or available to the app, e.g. camera, GPS, wifi</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova.plugins.diagnostic"
+    }
+  },
+  {
+    "name": "@ionic-native/dialogs",
+    "displayName": "Dialogs",
+    "description": "<p>This plugin gives you ability to access and customize the device native dialogs.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-dialogs"
+    }
+  },
+  {
+    "name": "@ionic-native/dns",
+    "displayName": "DNS",
+    "description": "<p>A plugin for Apache Cordova that enables applications to manually resolve hostnames into an underlying network address. This is mostly useful for determining whether there is a problem with the device&#39;s DNS server configuration.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-dns"
+    }
+  },
+  {
+    "name": "@ionic-native/document-picker",
+    "displayName": "iOS DocumentPicker",
+    "description": "<p>Opens the file picker on iOS for the user to select a file, returns a file URI. Allows the user to upload files from iCloud</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-documentpicker.DocumentPicker"
+    }
+  },
+  {
+    "name": "@ionic-native/document-viewer",
+    "displayName": "Document Viewer",
+    "description": "<p>This plugin offers a slim API to view PDF files which are either stored in the apps assets folder (/www/*) or in any other file system directory available via the cordova file plugin.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-document-viewer"
+    }
+  },
+  {
+    "name": "@ionic-native/downloader",
+    "displayName": "Downloader",
+    "description": "<p>This plugin is designed to support downloading files using Android DownloadManager.</p>\n",
+    "cordovaPlugin": {
+      "name": "integrator-cordova-plugin-downloader"
+    }
+  },
+  {
+    "name": "@ionic-native/email-composer",
+    "displayName": "Email Composer",
+    "description": "<p>Requires Cordova plugin: cordova-plugin-email-composer. For more info, please see the <a href=\"https://github.com/hypery2k/cordova-email-plugin\">Email Composer plugin docs</a>.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-email-composer"
+    }
+  },
+  {
+    "name": "@ionic-native/estimote-beacons",
+    "displayName": "Estimote Beacons\n",
+    "description": "<p>This plugin enables communication between a phone and Estimote Beacons peripherals.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-estimote"
+    }
+  },
+  {
+    "name": "@ionic-native/extended-device-information",
+    "displayName": "Extended Device Information",
+    "description": "<p>Retrieves additional device information from the Device Hardware  - memory  - cpumhz  - totalstorage  - freestorage</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-extended-device-information"
+    }
+  },
+  {
+    "name": "@ionic-native/fabric",
+    "displayName": "Answers",
+    "description": "<p>API for interacting with the Answers kit.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-fabric-plugin"
+    }
+  },
+  {
+    "name": "@ionic-native/fabric",
+    "displayName": "Crashlytics",
+    "description": "<p>API for interacting with the Crashlytics kit.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-fabric-plugin"
+    }
+  },
+  {
+    "name": "@ionic-native/facebook",
+    "displayName": "Facebook",
+    "description": "<p>Use the Facebook Connect plugin to obtain access to the native FB application on iOS and Android.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-facebook4"
+    }
+  },
+  {
+    "name": "@ionic-native/fcm",
+    "displayName": "FCM",
+    "description": "<p>Provides basic functionality for Firebase Cloud Messaging</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-fcm-with-dependecy-updated"
+    }
+  },
+  {
+    "name": "@ionic-native/file-chooser",
+    "displayName": "File Chooser",
+    "description": "<p>Opens the file picker on Android for the user to select a file, returns a file URI.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-filechooser"
+    }
+  },
+  {
+    "name": "@ionic-native/file-encryption",
+    "displayName": "File Encryption",
+    "description": "<p>Simple file encryption for Cordova.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-safe"
+    }
+  },
+  {
+    "name": "@ionic-native/file-opener",
+    "displayName": "File Opener",
+    "description": "<p>This plugin will open a file on your device file system with its default application.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-file-opener2"
+    }
+  },
+  {
+    "name": "@ionic-native/file-path",
+    "displayName": "File Path",
+    "description": "<p>This plugin allows you to resolve the native filesystem path for Android content URIs and is based on code in the aFileChooser library.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-filepath"
+    }
+  },
+  {
+    "name": "@ionic-native/file-picker",
+    "displayName": "iOS File Picker",
+    "description": "<p>Opens the file picker on iOS for the user to select a file, returns a file URI.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-filepicker"
+    }
+  },
+  {
+    "name": "@ionic-native/file-transfer",
+    "displayName": "File Transfer\n",
+    "description": "<p>This plugin allows you to upload and download files.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-file-transfer"
+    }
+  },
+  {
+    "name": "@ionic-native/file",
+    "displayName": "File",
+    "description": "<p>This plugin implements a File API allowing read/write access to files residing on the device.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-file"
+    }
+  },
+  {
+    "name": "@ionic-native/fingerprint-aio",
+    "displayName": "Fingerprint AIO",
+    "description": "<p>Use simple fingerprint authentication on Android and iOS. Requires Cordova plugin: cordova-plugin-fingerprint-aio. For more info about plugin, vist: <a href=\"https://github.com/NiklasMerz/cordova-plugin-fingerprint-aio\">https://github.com/NiklasMerz/cordova-plugin-fingerprint-aio</a></p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-fingerprint-aio"
+    }
+  },
+  {
+    "name": "@ionic-native/firebase-analytics",
+    "displayName": "Firebase Analytics",
+    "description": "<p>Cordova plugin for Firebase Analytics</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-firebase-analytics"
+    }
+  },
+  {
+    "name": "@ionic-native/firebase-authentication",
+    "displayName": "Firebase Authentication",
+    "description": "<p>Cordova plugin for Firebase Authentication</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-firebase-authentication"
+    }
+  },
+  {
+    "name": "@ionic-native/firebase-config",
+    "displayName": "Firebase Config",
+    "description": "<p>Cordova plugin for Firebase Config</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-firebase-config"
+    }
+  },
+  {
+    "name": "@ionic-native/firebase-dynamic-links",
+    "displayName": "Firebase Dynamic Links",
+    "description": "<p>Cordova plugin for Firebase Dynamic Links</p>\n",
+    "cordovaPlugin": {
+      "name": " cordova-plugin-firebase-dynamiclinks"
+    }
+  },
+  {
+    "name": "@ionic-native/firebase-messaging",
+    "displayName": "Firebase Messaging",
+    "description": "<p>Cordova plugin for Firebase Messaging</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-firebase-messaging"
+    }
+  },
+  {
+    "name": "@ionic-native/firebase",
+    "displayName": "Firebase",
+    "description": "<p>This plugin brings push notifications, analytics, event tracking, crash reporting and more from Google Firebase to your Cordova project! Android and iOS supported (including iOS 10).</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-firebase"
+    }
+  },
+  {
+    "name": "@ionic-native/flashlight",
+    "displayName": "Flashlight",
+    "description": "<p>This plugin allows you to switch the flashlight / torch of the device on and off.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-flashlight"
+    }
+  },
+  {
+    "name": "@ionic-native/flurry-analytics",
+    "displayName": "Flurry Analytics",
+    "description": "<p>This plugin connects to Flurry Analytics SDK</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-flurryanalytics"
+    }
+  },
+  {
+    "name": "@ionic-native/ftp",
+    "displayName": "FTP",
+    "description": "<p>This cordova plugin is created to use ftp (client) in web/js.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-ftp"
+    }
+  },
+  {
+    "name": "@ionic-native/gao-de-location",
+    "displayName": "Gao De Location",
+    "description": "<p>Because the original GPS positioning uses Google Browser positioning, and Google withdraws from China, resulting in GPS Android positioning can not be positioned. Gaode location can directly return address informationGaode location can directly return address information</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-gaodelocation-chenyu"
+    }
+  },
+  {
+    "name": "@ionic-native/geofence",
+    "displayName": "Geofence",
+    "description": "<p>Monitors circular geofences around latitude/longitude coordinates, and sends a notification to the user when the boundary of a geofence is crossed. Notifications can be sent when the user enters and/or exits a geofence. Geofences persist after device reboot. Geofences will be monitored even when the app is not running.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-geofence"
+    }
+  },
+  {
+    "name": "@ionic-native/geolocation",
+    "displayName": "Geolocation",
+    "description": "<p>This plugin provides information about the device&#39;s location, such as latitude and longitude. Common sources of location information include Global Positioning System (GPS) and location inferred from network signals such as IP address, RFID, WiFi and Bluetooth MAC addresses, and GSM/CDMA cell IDs.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-geolocation"
+    }
+  },
+  {
+    "name": "@ionic-native/globalization",
+    "displayName": "Globalization",
+    "description": "<p>This plugin obtains information and performs operations specific to the user&#39;s locale, language, and timezone.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-globalization"
+    }
+  },
+  {
+    "name": "@ionic-native/google-analytics",
+    "displayName": "Google Analytics",
+    "description": "<p>This plugin connects to Google&#39;s native Universal Analytics SDK Prerequisites: - A Cordova 3.0+ project for iOS and/or Android - A Mobile App property through the Google Analytics Admin Console - (Android) Google Play Services SDK installed via <a href=\"https://developer.android.com/sdk/installing/adding-packages.html\">Android SDK Manager</a></p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-google-analytics"
+    }
+  },
+  {
+    "name": "@ionic-native/google-nearby",
+    "displayName": "Google Nearby",
+    "description": "<p>This plugin adds support for the Google Nearby Messages API.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-google-nearby"
+    }
+  },
+  {
+    "name": "@ionic-native/google-play-games-services",
+    "displayName": "Google Play Games Services",
+    "description": "<p>A Cordova plugin that let&#39;s you interact with Google Play Games Services.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-play-games-service"
+    }
+  },
+  {
+    "name": "@ionic-native/google-plus",
+    "displayName": "Google Plus",
+    "description": "",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-googleplus"
+    }
+  },
+  {
+    "name": "@ionic-native/gyroscope",
+    "displayName": "Gyroscope",
+    "description": "<p>Read Gyroscope sensor data</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-gyroscope"
+    }
+  },
+  {
+    "name": "@ionic-native/hce",
+    "displayName": "hce",
+    "description": "<p>HCE Cordova Wrapper</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-hce"
+    }
+  },
+  {
+    "name": "@ionic-native/header-color",
+    "displayName": "Header Color",
+    "description": "<p>Cordova plugin to change color of header in Android Multitask View</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-headercolor"
+    }
+  },
+  {
+    "name": "@ionic-native/health-kit",
+    "displayName": "Health Kit",
+    "description": "<p>The HealthKit plugin allows you to read data from and write data to the iOS 8+ HealthKit framework. Any data saved shows up in the iOS Health app and is available for other iOS apps.</p>\n",
+    "cordovaPlugin": {
+      "name": "com.telerik.plugins.healthkit"
+    }
+  },
+  {
+    "name": "@ionic-native/health",
+    "displayName": "Health",
+    "description": "<p>A plugin that abstracts fitness and health repositories like Apple HealthKit or Google Fit.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-health"
+    }
+  },
+  {
+    "name": "@ionic-native/hot-code-push",
+    "displayName": "Hot Code Push",
+    "description": "<p>HotCodePush plugin for Cordova that supports iOS and Android. This plugin allows you to keep your html, css and js files synced with your server.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-hot-code-push"
+    }
+  },
+  {
+    "name": "@ionic-native/hotspot",
+    "displayName": "Hotspot",
+    "description": "<p>A Cordova plugin for managing Hotspot networks on Android.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-hotspot"
+    }
+  },
+  {
+    "name": "@ionic-native/http",
+    "displayName": "HTTP",
+    "description": "<p>Cordova / Phonegap plugin for communicating with HTTP servers. Supports iOS and Android.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-advanced-http"
+    }
+  },
+  {
+    "name": "@ionic-native/httpd",
+    "displayName": "Httpd",
+    "description": "<p>Embedded httpd for Cordova apps. Light weight HTTP server.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-httpd"
+    }
+  },
+  {
+    "name": "@ionic-native/hyper-track",
+    "displayName": "HyperTrack",
+    "description": "<p>HyperTrack cordova plugin wrapper for Ionic Native. Location-based services provider. Make sure to include your publishable key at config.xml (see <a href=\"https://docs.hypertrack.com/sdks/cordova/setup.html#step-2-configure-the-sdk\">HyperTrack Cordova Setup</a>).</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-hypertrack"
+    }
+  },
+  {
+    "name": "@ionic-native/ibeacon",
+    "displayName": "IBeacon",
+    "description": "<p>This plugin provides functions for working with iBeacons.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-ibeacon"
+    }
+  },
+  {
+    "name": "@ionic-native/image-picker",
+    "displayName": "Image Picker",
+    "description": "<p>Cordova Plugin For Multiple Image Selection</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-telerik-imagepicker"
+    }
+  },
+  {
+    "name": "@ionic-native/image-resizer",
+    "displayName": "Image Resizer",
+    "description": "<p>Cordova Plugin For Image Resize</p>\n",
+    "cordovaPlugin": {
+      "name": "info.protonet.imageresizer"
+    }
+  },
+  {
+    "name": "@ionic-native/in-app-browser",
+    "displayName": "In App Browser",
+    "description": "<p>Launches in app Browser</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-inappbrowser"
+    }
+  },
+  {
+    "name": "@ionic-native/in-app-purchase-2",
+    "displayName": "In App Purchase 2",
+    "description": "",
+    "cordovaPlugin": {
+      "name": "cc.fovea.cordova.purchase"
+    }
+  },
+  {
+    "name": "@ionic-native/in-app-purchase",
+    "displayName": "In App Purchase",
+    "description": "<p>A lightweight Cordova plugin for in app purchases on iOS/Android.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-inapppurchase"
+    }
+  },
+  {
+    "name": "@ionic-native/in-app-review",
+    "displayName": "In App Review",
+    "description": "<p>This plugin does use the iOS class SKStore​Review​Controller to open the inApp review popup available since iOS 10.3</p>\n",
+    "cordovaPlugin": {
+      "name": "com.omarben.inappreview"
+    }
+  },
+  {
+    "name": "@ionic-native/index-app-content",
+    "displayName": "Index App Content",
+    "description": "<p>This plugin gives you a Javascript API to interact with Core Spotlight on iOS (=&gt; iOS 9). You can add, update and delete items to the spotlight search index. Spotlight Search will include these items in the result list. You can deep-link the search results with your app.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-indexappcontent"
+    }
+  },
+  {
+    "name": "@ionic-native/insomnia",
+    "displayName": "Insomnia",
+    "description": "<p>Prevent the screen of the mobile device from falling asleep.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-insomnia"
+    }
+  },
+  {
+    "name": "@ionic-native/instagram",
+    "displayName": "Instagram",
+    "description": "<p>Share a photo with the instagram app</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-instagram-plugin"
+    }
+  },
+  {
+    "name": "@ionic-native/intel-security",
+    "displayName": "Intel Security",
+    "description": "<p>The App Security API enables the use of security properties and capabilities on the platform, using a new set of API defined for application developers. You are not required to be a security expert to make good use of the API. Key elements, such as encryption of data and establishments of capabilities, is abstracted and done by the API implementation, for you.</p>\n",
+    "cordovaPlugin": {
+      "name": "com-intel-security-cordova-plugin"
+    }
+  },
+  {
+    "name": "@ionic-native/intercom",
+    "displayName": "Intercom",
+    "description": "<p>This is a plugin that allows your Ionic app to use Intercom for iOS and/or Intercom for Android. Follow the offical documentation to setup this plugin correctly: <a href=\"https://developers.intercom.com/docs/cordova-phonegap-configuration\">https://developers.intercom.com/docs/cordova-phonegap-configuration</a></p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-intercom"
+    }
+  },
+  {
+    "name": "@ionic-native/is-debug",
+    "displayName": "Is Debug",
+    "description": "<p>Detect if the app is running in debug mode or not. Debug mode is when the app is built and installed locally via xcode / eclipse / the cordova cli etc, compared to release mode when the app was downloaded from the app / play store via an end user.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-is-debug"
+    }
+  },
+  {
+    "name": "@ionic-native/janalytics",
+    "displayName": "jAnalytics",
+    "description": "<p>This plugin does something</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-janalytics"
+    }
+  },
+  {
+    "name": "@ionic-native/jins-meme",
+    "displayName": "Jins Meme",
+    "description": "<p>Implementation of the JINS MEME SDK</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-jins-meme"
+    }
+  },
+  {
+    "name": "@ionic-native/keyboard",
+    "displayName": "Keyboard",
+    "description": "<p>Keyboard plugin for Cordova.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-ionic-keyboard"
+    }
+  },
+  {
+    "name": "@ionic-native/keychain-touch-id",
+    "displayName": "Keychain Touch Id",
+    "description": "<p>A cordova plugin adding the iOS TouchID / Android fingerprint to your app and allowing you to store a password securely in the device keychain.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-keychain-touch-id"
+    }
+  },
+  {
+    "name": "@ionic-native/keychain",
+    "displayName": "Keychain",
+    "description": "<p>Get and set data in the iOS Keychain</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-ios-keychain"
+    }
+  },
+  {
+    "name": "@ionic-native/last-cam",
+    "displayName": "LastCam",
+    "description": "<p>Last Cam is a Camera Preview plugin that allows you to take capture both Videos and images in a custom html preview of your choice.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-last-cam"
+    }
+  },
+  {
+    "name": "@ionic-native/launch-navigator",
+    "displayName": "Launch Navigator",
+    "description": "<p>Requires Cordova plugin: uk.co.workingedge.phonegap.plugin.launchnavigator. For more info, please see the <a href=\"https://github.com/dpa99c/phonegap-launch-navigator\">LaunchNavigator plugin docs</a>.</p>\n",
+    "cordovaPlugin": {
+      "name": "uk.co.workingedge.phonegap.plugin.launchnavigator"
+    }
+  },
+  {
+    "name": "@ionic-native/launch-review",
+    "displayName": "Launch Review",
+    "description": "<p>Assists in leaving user reviews/ratings in the App Stores. - Launches the platform&#39;s App Store page for the current app in order for the user to leave a review. - On iOS (10.3 and above) invokes the native in-app rating dialog which allows a user to rate your app without needing to open the App Store.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-launch-review"
+    }
+  },
+  {
+    "name": "@ionic-native/line-login",
+    "displayName": "Line Login",
+    "description": "<p>The function login, logs out, acquires, verifies, and refreshes the access token. The version of LineSDK you are using is as follows.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-line-login-plugin"
+    }
+  },
+  {
+    "name": "@ionic-native/linkedin",
+    "displayName": "LinkedIn",
+    "description": "<p>A Cordova plugin that lets you use LinkedIn Native SDKs for Android and iOS.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-linkedin"
+    }
+  },
+  {
+    "name": "@ionic-native/local-notifications",
+    "displayName": "Local Notifications",
+    "description": "<p>This plugin allows you to display local notifications on the device</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-local-notification"
+    }
+  },
+  {
+    "name": "@ionic-native/location-accuracy",
+    "displayName": "Location Accuracy",
+    "description": "<p>This Cordova/Phonegap plugin for Android and iOS to request enabling/changing of Location Services by triggering a native dialog from within the app, avoiding the need for the user to leave your app to change location settings manually.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-request-location-accuracy"
+    }
+  },
+  {
+    "name": "@ionic-native/market",
+    "displayName": "Market",
+    "description": "<p>Opens an app&#39;s page in the market place (Google Play, App Store)</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-market"
+    }
+  },
+  {
+    "name": "@ionic-native/media-capture",
+    "displayName": "Media Capture",
+    "description": "<p>This plugin provides access to the device&#39;s audio, image, and video capture capabilities.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-media-capture"
+    }
+  },
+  {
+    "name": "@ionic-native/media",
+    "displayName": "Media",
+    "description": "<p>This plugin provides the ability to record and play back audio files on a device.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-media"
+    }
+  },
+  {
+    "name": "@ionic-native/mixpanel",
+    "displayName": "Mixpanel",
+    "description": "<p>Cordova Plugin that wraps Mixpanel SDK for Android and iOS</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-mixpanel"
+    }
+  },
+  {
+    "name": "@ionic-native/mobile-accessibility",
+    "displayName": "Mobile Accessibility",
+    "description": "<p>This plugin exposes information on the status of various accessibility features of mobile operating systems, including, for example, whether a screen reader is running, invert colors is enabled, and the preferred scaling for text. It also allows an application to send a string to be spoken by the screen reader, or a command to stop the screen reader from speaking.</p>\n",
+    "cordovaPlugin": {
+      "name": "phonegap-plugin-mobile-accessibility"
+    }
+  },
+  {
+    "name": "@ionic-native/ms-adal",
+    "displayName": "MS ADAL",
+    "description": "<p>Active Directory Authentication Library (ADAL) plugin. Active Directory Authentication Library (<a href=\"https://docs.microsoft.com/en-us/dotnet/api/microsoft.identitymodel.clients.activedirectory?view=azure-dotnet\">ADAL</a>) plugin provides easy to use authentication functionality for your Apache Cordova apps by taking advantage of Windows Server Active Directory and Windows Azure Active Directory. Here you can find the source code for the library.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-ms-adal"
+    }
+  },
+  {
+    "name": "@ionic-native/music-controls",
+    "displayName": "Music Controls",
+    "description": "<p>Music controls for Cordova applications. Display a &#39;media&#39; notification with play/pause, previous, next buttons, allowing the user to control the play. Handle also headset event (plug, unplug, headset button).</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-music-controls"
+    }
+  },
+  {
+    "name": "@ionic-native/native-audio",
+    "displayName": "Native Audio",
+    "description": "<p>Native Audio Playback</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-nativeaudio"
+    }
+  },
+  {
+    "name": "@ionic-native/native-geocoder",
+    "displayName": "Native Geocoder",
+    "description": "<p>Cordova plugin for native forward and reverse geocoding</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-nativegeocoder"
+    }
+  },
+  {
+    "name": "@ionic-native/native-keyboard",
+    "displayName": "Native Keyboard",
+    "description": "<p>A cross platform WhatsApp / Messenger / Slack -style keyboard even. For your Cordova app.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-native-keyboard"
+    }
+  },
+  {
+    "name": "@ionic-native/native-page-transitions",
+    "displayName": "Native Page Transitions",
+    "description": "<p>The Native Page Transitions plugin uses native hardware acceleration to animate your transitions between views. You have complete control over the type of transition, the duration, and direction.</p>\n",
+    "cordovaPlugin": {
+      "name": "com.telerik.plugins.nativepagetransitions"
+    }
+  },
+  {
+    "name": "@ionic-native/native-ringtones",
+    "displayName": "Native Ringtones",
+    "description": "<p>The plugin helps get the native ringtones list on Android or IOS devices. And you can also use this plugin to play or stop the native ringtones and custom ringtones(added in the www folder).</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-native-ringtones"
+    }
+  },
+  {
+    "name": "@ionic-native/native-storage",
+    "displayName": "Native Storage",
+    "description": "<p>Native storage of variables in Android and iOS</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-nativestorage"
+    }
+  },
+  {
+    "name": "@ionic-native/navigation-bar",
+    "displayName": "Navigation Bar",
+    "description": "<p>The NavigationBar plugin allows you to hide and auto hide the android navigation bar.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-navigationbar"
+    }
+  },
+  {
+    "name": "@ionic-native/network-interface",
+    "displayName": "Network Interface",
+    "description": "<p>Network interface information plugin for Cordova/PhoneGap that supports Android, Blackberry 10, Browser, iOS, and Windows Phone 8.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-networkinterface"
+    }
+  },
+  {
+    "name": "@ionic-native/network",
+    "displayName": "Network",
+    "description": "<p>Requires Cordova plugin: cordova-plugin-network-information. For more info, please see the <a href=\"https://github.com/apache/cordova-plugin-network-information\">Network plugin docs</a>.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-network-information"
+    }
+  },
+  {
+    "name": "@ionic-native/nfc",
+    "displayName": "NFC",
+    "description": "<p>The NFC plugin allows you to read and write NFC tags. You can also beam to, and receive from, other NFC enabled devices.</p>\n",
+    "cordovaPlugin": {
+      "name": "phonegap-nfc"
+    }
+  },
+  {
+    "name": "@ionic-native/onesignal",
+    "displayName": "OneSignal",
+    "description": "<p>The OneSignal plugin is an client implementation for using the <a href=\"https://onesignal.com/\">OneSignal</a> Service. OneSignal is a simple implementation for delivering push notifications.</p>\n",
+    "cordovaPlugin": {
+      "name": "onesignal-cordova-plugin"
+    }
+  },
+  {
+    "name": "@ionic-native/open-native-settings",
+    "displayName": "Open Native Settings",
+    "description": "<p>Plugin to open native screens of iOS/android settings</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-open-native-settings"
+    }
+  },
+  {
+    "name": "@ionic-native/openalpr",
+    "displayName": "OpenALPR",
+    "description": "<p>This Cordova plugin adds support for the OpenALPR (Automatic License Plate Recognition) library, which provides support for retrieving the license plate from a picture.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-openalpr"
+    }
+  },
+  {
+    "name": "@ionic-native/paypal",
+    "displayName": "PayPal",
+    "description": "<p>PayPal plugin for Cordova/Ionic Applications</p>\n",
+    "cordovaPlugin": {
+      "name": "com.paypal.cordova.mobilesdk"
+    }
+  },
+  {
+    "name": "@ionic-native/pedometer",
+    "displayName": "Pedometer",
+    "description": "<p>Fetch pedestrian-related pedometer data, such as step counts and other information about the distance travelled.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-pedometer"
+    }
+  },
+  {
+    "name": "@ionic-native/phonegap-local-notification",
+    "displayName": "Phonegap Local Notification",
+    "description": "<p>The Local Notification plugin gives developers the ability to post notifications from their app that show up in the device’s notification area. The API for the local notification plugin follows the W3C Web Notifications specification: <a href=\"https://www.w3.org/TR/notifications/\">https://www.w3.org/TR/notifications/</a></p>\n",
+    "cordovaPlugin": {
+      "name": "phonegap-plugin-local-notification"
+    }
+  },
+  {
+    "name": "@ionic-native/photo-library",
+    "displayName": "Photo Library",
+    "description": "<p>The PhotoLibrary plugin allows access to photos from device by url. So you can use plain img tag to display photos and their thumbnails, and different 3rd party libraries as well. Saving photos and videos to the library is also supported. cdvphotolibrary urls should be trusted by Angular. See plugin homepage to learn how.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-photo-library"
+    }
+  },
+  {
+    "name": "@ionic-native/photo-viewer",
+    "displayName": "Photo Viewer",
+    "description": "<p>This plugin can display your image in full screen with the ability to pan, zoom, and share the image.</p>\n",
+    "cordovaPlugin": {
+      "name": "com-sarriaroman-photoviewer"
+    }
+  },
+  {
+    "name": "@ionic-native/pin-check",
+    "displayName": "Pin Check",
+    "description": "<p>This plugin is for use with Apache Cordova and allows your application to check whether pin/keyguard or passcode is setup on iOS and Android phones.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-pincheck"
+    }
+  },
+  {
+    "name": "@ionic-native/pin-dialog",
+    "displayName": "Pin Dialog",
+    "description": "<p>PhoneGap numeric password dialog plugin for Android and iOS.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-pin-dialog"
+    }
+  },
+  {
+    "name": "@ionic-native/pinterest",
+    "displayName": "Pinterest",
+    "description": "<p>Cordova plugin for Pinterest</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-pinterest"
+    }
+  },
+  {
+    "name": "@ionic-native/power-management",
+    "displayName": "Power Management",
+    "description": "<p>The PowerManagement plugin offers access to the devices power-management functionality. It should be used for applications which keep running for a long time without any user interaction.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-powermanagement-orig"
+    }
+  },
+  {
+    "name": "@ionic-native/printer",
+    "displayName": "Printer",
+    "description": "<p>Prints documents or HTML rendered content</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-printer"
+    }
+  },
+  {
+    "name": "@ionic-native/pro",
+    "displayName": "Pro",
+    "description": "<p>This plugin enables Ionic Pro services like live updates and error monitoring</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-ionic"
+    }
+  },
+  {
+    "name": "@ionic-native/push",
+    "displayName": "Push",
+    "description": "<p>Register and receive push notifications.</p>\n",
+    "cordovaPlugin": {
+      "name": "phonegap-plugin-push"
+    }
+  },
+  {
+    "name": "@ionic-native/qqsdk",
+    "displayName": "QQSDK",
+    "description": "<p>This Plugin is a wrapper around the Tencent QQ SDK for Android and iOS. Provides access to QQ ssoLogin, QQ Sharing, QQZone Sharing etc.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-qqsdk"
+    }
+  },
+  {
+    "name": "@ionic-native/qr-scanner",
+    "displayName": "QR Scanner",
+    "description": "<p>A fast, energy efficient, highly-configurable QR code scanner for Cordova apps.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-qrscanner"
+    }
+  },
+  {
+    "name": "@ionic-native/regula-document-reader",
+    "displayName": "Regula Document Reader",
+    "description": "<p>Plugin for reading and validation of identification documents.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-documentreader"
+    }
+  },
+  {
+    "name": "@ionic-native/rollbar",
+    "displayName": "Rollbar",
+    "description": "<p>This plugin adds Rollbar App monitoring to your application</p>\n",
+    "cordovaPlugin": {
+      "name": "resgrid-cordova-plugins-rollbar"
+    }
+  },
+  {
+    "name": "@ionic-native/safari-view-controller",
+    "displayName": "Safari View Controller",
+    "description": "<p>For displaying read-only web content.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-safariviewcontroller"
+    }
+  },
+  {
+    "name": "@ionic-native/screen-orientation",
+    "displayName": "Screen Orientation",
+    "description": "<p>Cordova plugin to set/lock the screen orientation in a common way.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-screen-orientation"
+    }
+  },
+  {
+    "name": "@ionic-native/screenshot",
+    "displayName": "Screenshot",
+    "description": "<p>Captures a screen shot</p>\n",
+    "cordovaPlugin": {
+      "name": "com.darktalker.cordova.screenshot"
+    }
+  },
+  {
+    "name": "@ionic-native/secure-storage",
+    "displayName": "Secure Storage",
+    "description": "<p>This plugin gets, sets and removes key,value pairs from a device&#39;s secure storage.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-secure-storage"
+    }
+  },
+  {
+    "name": "@ionic-native/sensors",
+    "displayName": "Sensors",
+    "description": "<p>This plugin enables sensors on Android devices</p>\n",
+    "cordovaPlugin": {
+      "name": "https://github.com/fabiorogeriosj/cordova-plugin-sensors.git"
+    }
+  },
+  {
+    "name": "@ionic-native/serial",
+    "displayName": "Serial",
+    "description": "<p>This plugin provides functions for working with Serial connections</p>\n",
+    "cordovaPlugin": {
+      "name": "cordovarduino"
+    }
+  },
+  {
+    "name": "@ionic-native/shake",
+    "displayName": "Shake",
+    "description": "<p>Handles shake gesture</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-shake"
+    }
+  },
+  {
+    "name": "@ionic-native/sim",
+    "displayName": "Sim",
+    "description": "<p>Gets info from the Sim card like the carrier name, mcc, mnc and country code and other system dependent info.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-sim"
+    }
+  },
+  {
+    "name": "@ionic-native/siri-shortcuts",
+    "displayName": "Siri Shortcuts",
+    "description": "<p>This plugin only works when your app is built with XCode 10. Shortcuts will only appear on iOS-versions &gt;= 12.0</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-siri-shortcuts"
+    }
+  },
+  {
+    "name": "@ionic-native/sms",
+    "displayName": "SMS",
+    "description": "<p>Requires Cordova plugin: cordova-sms-plugin. For more info, please see the <a href=\"https://github.com/cordova-sms/cordova-sms-plugin\">SMS plugin docs</a>.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-sms-plugin"
+    }
+  },
+  {
+    "name": "@ionic-native/social-sharing",
+    "displayName": "Social Sharing",
+    "description": "<p>Share text, files, images, and links via social networks, sms, and email.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-x-socialsharing"
+    }
+  },
+  {
+    "name": "@ionic-native/speech-recognition",
+    "displayName": "Speech Recognition",
+    "description": "<p>This plugin does speech recognition using cloud services</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-speechrecognition"
+    }
+  },
+  {
+    "name": "@ionic-native/speechkit",
+    "displayName": "SpeechKit",
+    "description": "<p>Implementation of Nuance SpeechKit SDK on Ionic</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-nuance-speechkit"
+    }
+  },
+  {
+    "name": "@ionic-native/spinner-dialog",
+    "displayName": "Spinner Dialog",
+    "description": "<p>Cordova plugin for showing a native spinner based on Paldom/SpinnerDialog.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-native-spinner"
+    }
+  },
+  {
+    "name": "@ionic-native/splash-screen",
+    "displayName": "Splash Screen",
+    "description": "<p>This plugin displays and hides a splash screen during application launch. The methods below allows showing and hiding the splashscreen after the app has loaded.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-splashscreen"
+    }
+  },
+  {
+    "name": "@ionic-native/sqlite-db-copy",
+    "displayName": "Sqlite Db Copy",
+    "description": "<p>This plugin does something</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-dbcopy"
+    }
+  },
+  {
+    "name": "@ionic-native/sqlite-porter",
+    "displayName": "SQLite Porter",
+    "description": "<p>This Cordova/Phonegap plugin can be used to import/export to/from a SQLite database using either SQL or JSON.</p>\n",
+    "cordovaPlugin": {
+      "name": "uk.co.workingedge.cordova.plugin.sqliteporter"
+    }
+  },
+  {
+    "name": "@ionic-native/sqlite",
+    "displayName": "SQLite\n",
+    "description": "<p>Access SQLite databases on the device.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-sqlite-storage"
+    }
+  },
+  {
+    "name": "@ionic-native/star-prnt",
+    "displayName": "StarPRNT",
+    "description": "<ul>\n<li>Ionic Native wrappers for the starprnt cordova plugin for Star Micronics Bluetooth/LAN printers</li>\n</ul>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-starprnt"
+    }
+  },
+  {
+    "name": "@ionic-native/status-bar",
+    "displayName": "Status Bar",
+    "description": "<p>Manage the appearance of the native status bar.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-statusbar"
+    }
+  },
+  {
+    "name": "@ionic-native/stepcounter",
+    "displayName": "Stepcounter",
+    "description": "<p>Cordova plugin for using device&#39;s stepcounter on Android (API &gt; 19)</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-stepcounter"
+    }
+  },
+  {
+    "name": "@ionic-native/streaming-media",
+    "displayName": "Streaming Media",
+    "description": "<p>This plugin allows you to stream audio and video in a fullscreen, native player on iOS and Android.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-streaming-media"
+    }
+  },
+  {
+    "name": "@ionic-native/stripe",
+    "displayName": "Stripe",
+    "description": "<p>A plugin that allows you to use Stripe&#39;s Native SDKs for Android and iOS.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-stripe"
+    }
+  },
+  {
+    "name": "@ionic-native/taptic-engine",
+    "displayName": "Taptic Engine",
+    "description": "<p>An Ionic plugin to use Taptic Engine API on iPhone 7, 7 Plus or newer.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-taptic-engine"
+    }
+  },
+  {
+    "name": "@ionic-native/tealium-adidentifier",
+    "displayName": "TealiumAdIdentifier",
+    "description": "<p>This module depends on the <a href=\"https://github.com/tealium/cordova-plugin\">Tealium Cordova Plugin</a>. Without it, this module will not do anything. Makes the IDFA and Google Ad Identifier available in the Tealium data layer.</p>\n",
+    "cordovaPlugin": {
+      "name": "tealium-cordova-adidentifier"
+    }
+  },
+  {
+    "name": "@ionic-native/tealium-installreferrer",
+    "displayName": "TealiumInstallReferrer",
+    "description": "<p>This module depends on the <a href=\"https://github.com/tealium/cordova-plugin\">Tealium Cordova Plugin</a>. Without it, this module will not do anything. Implements a Broadcast Receiver for the INSTALL_REFERRER intent.</p>\n",
+    "cordovaPlugin": {
+      "name": "tealium-cordova-installreferrer"
+    }
+  },
+  {
+    "name": "@ionic-native/tealium",
+    "displayName": "Tealium",
+    "description": "<p>This plugin provides a TypeScript wrapper around the <a href=\"https://www.tealium.com\">Tealium</a> Cordova plugin for Ionic Native.</p>\n",
+    "cordovaPlugin": {
+      "name": "tealium-cordova-plugin"
+    }
+  },
+  {
+    "name": "@ionic-native/text-to-speech",
+    "displayName": "Text To Speech",
+    "description": "<p>Text to Speech plugin</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-tts"
+    }
+  },
+  {
+    "name": "@ionic-native/themeable-browser",
+    "displayName": "Themeable Browser",
+    "description": "<p>In-app browser that allows styling.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-themeablebrowser"
+    }
+  },
+  {
+    "name": "@ionic-native/three-dee-touch",
+    "displayName": "3D Touch",
+    "description": "<p>The 3D Touch plugin adds 3D Touch capabilities to your Cordova app.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-3dtouch"
+    }
+  },
+  {
+    "name": "@ionic-native/toast",
+    "displayName": "Toast",
+    "description": "<p>This plugin allows you to show a native Toast (a little text popup) on iOS, Android and WP8. It&#39;s great for showing a non intrusive native notification which is guaranteed always in the viewport of the browser.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-x-toast"
+    }
+  },
+  {
+    "name": "@ionic-native/touch-id",
+    "displayName": "Touch ID",
+    "description": "<p>Scan the fingerprint of a user with the TouchID sensor.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-touch-id"
+    }
+  },
+  {
+    "name": "@ionic-native/twitter-connect",
+    "displayName": "Twitter Connect",
+    "description": "<p>Plugin to use Twitter Single Sign On Uses Twitter&#39;s Fabric SDK ```typescript import { TwitterConnect } from &#39;@ionic-native/twitter-connect&#39;;</p>\n",
+    "cordovaPlugin": {
+      "name": "twitter-connect-plugin"
+    }
+  },
+  {
+    "name": "@ionic-native/uid",
+    "displayName": "Uid",
+    "description": "<p>Get unique identifiers: UUID, IMEI, IMSI, ICCID and MAC.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-uid"
+    }
+  },
+  {
+    "name": "@ionic-native/unique-device-id",
+    "displayName": "Unique Device ID",
+    "description": "<p>This plugin produces a unique, cross-install, app-specific device id.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-uniquedeviceid"
+    }
+  },
+  {
+    "name": "@ionic-native/uptime",
+    "displayName": "Uptime",
+    "description": "<p>This plugin provides the time spent in milliseconds since boot (uptime).</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-uptime"
+    }
+  },
+  {
+    "name": "@ionic-native/user-agent",
+    "displayName": "User Agent",
+    "description": "<p>The UserAgent plugin provides functions to set the HTTP  user-agent header. For more info about User-Agents, please <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent\">see the HTTP User-Agent docs</a>.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-useragent"
+    }
+  },
+  {
+    "name": "@ionic-native/vibration",
+    "displayName": "Vibration",
+    "description": "<p>Vibrates the device</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-vibration"
+    }
+  },
+  {
+    "name": "@ionic-native/video-capture-plus",
+    "displayName": "Video Capture Plus",
+    "description": "<p>This plugin offers some useful extras on top of the default Media Capture Plugin capabilities: - HD recording. - Starting with the front camera. - A custom overlay (currently iOS only).</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-video-capture-plus"
+    }
+  },
+  {
+    "name": "@ionic-native/video-editor",
+    "displayName": "Video Editor",
+    "description": "<p>Edit videos using native device APIs</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-video-editor"
+    }
+  },
+  {
+    "name": "@ionic-native/video-player",
+    "displayName": "Video Player",
+    "description": "<p>A Cordova plugin that simply allows you to immediately play a video in fullscreen mode.</p>\n",
+    "cordovaPlugin": {
+      "name": "https://github.com/moust/cordova-plugin-videoplayer.git"
+    }
+  },
+  {
+    "name": "@ionic-native/web-intent",
+    "displayName": "Web Intent",
+    "description": "<p>This Plugin provides a general purpose shim layer for the Android intent mechanism, exposing various ways to handle sending and receiving intents.</p>\n",
+    "cordovaPlugin": {
+      "name": "com-darryncampbell-cordova-plugin-intent"
+    }
+  },
+  {
+    "name": "@ionic-native/web-server",
+    "displayName": "Web Server",
+    "description": "<p>This plugin allows you to start a local dynamic content web server for android and iOS devices.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-webserver"
+    }
+  },
+  {
+    "name": "@ionic-native/webengage",
+    "displayName": "Webengage",
+    "description": "<p>Ionic-Native wrapper that wraps Webengage Cordova plugin for Android and iOS</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-webengage"
+    }
+  },
+  {
+    "name": "@ionic-native/wechat",
+    "displayName": "Wechat",
+    "description": "<p>A cordova plugin, a JS version of Wechat SDK</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-wechat"
+    }
+  },
+  {
+    "name": "@ionic-native/wheel-selector",
+    "displayName": "WheelSelector Plugin",
+    "description": "<p>Native wheel selector for Cordova (Android/iOS).</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-wheel-selector-plugin"
+    }
+  },
+  {
+    "name": "@ionic-native/youtube-video-player",
+    "displayName": "Youtube Video Player",
+    "description": "<p>Plays YouTube videos in Native YouTube App</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-youtube-video-player"
+    }
+  },
+  {
+    "name": "@ionic-native/zbar",
+    "displayName": "ZBar",
+    "description": "<p>The ZBar Scanner Plugin allows you to scan 2d barcodes.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-cszbar"
+    }
+  },
+  {
+    "name": "@ionic-native/zeroconf",
+    "displayName": "Zeroconf",
+    "description": "<p>This plugin allows you to browse and publish Zeroconf/Bonjour/mDNS services.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-zeroconf"
+    }
+  },
+  {
+    "name": "@ionic-native/zip",
+    "displayName": "Zip",
+    "description": "<p>A Cordova plugin to unzip files in Android and iOS.</p>\n",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-zip"
+    }
+  }
+]

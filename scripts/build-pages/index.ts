@@ -6,11 +6,13 @@ import Listr from 'listr';
 import Static from './page-types/static';
 import API from './page-types/api';
 import CLI from './page-types/cli';
+import Native from './page-types/native';
 
 const tasks = new Listr();
 tasks.add(Static);
 tasks.add(API);
 tasks.add(CLI);
+tasks.add(Native);
 export default tasks;
 
 if (!module.parent) {
