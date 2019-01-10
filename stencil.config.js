@@ -9,6 +9,6 @@ export const config = {
     }
   ],
   copy: [
-    { src: 'documents/**/*.json' }
+    { src: 'pages/**/*.json' }
   ]
 };

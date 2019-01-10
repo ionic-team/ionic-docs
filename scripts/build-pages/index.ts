@@ -3,9 +3,9 @@ import { slugify } from '../../src/utils';
 import fs from 'fs-extra';
 import { JSDOM } from 'jsdom';
 import Listr from 'listr';
-import Static from './document-types/static';
-import API from './document-types/api';
-import CLI from './document-types/cli';
+import Static from './page-types/static';
+import API from './page-types/api';
+import CLI from './page-types/cli';
 
 const tasks = new Listr();
 tasks.add(Static);
@@ -17,33 +17,33 @@ if (!module.parent) {
   tasks.run().catch(console.error);
 }
 
-export const DOCUMENTS_DIR = resolve(__dirname, '../../src/documents');
+export const PAGES_DIR = resolve(__dirname, '../../src/pages');
 
-export interface Document {
+export interface Page {
   title: string;
   path: string;
   body: string;
   [key: string]: any;
 }
 
-export type DocumentGetter = () => Promise<Document[]>;
+export type PageGetter = () => Promise<Page[]>;
 
-export async function buildDocuments(getter: DocumentGetter) {
-  const documents = await getter();
+export async function buildPages(getter: PageGetter) {
+  const pages = await getter();
   return Promise.all(
-    documents
-      .map(patchDocument)
-      .map(writeDocument)
+    pages
+      .map(patchPage)
+      .map(writePage)
   );
 }
 
-function patchDocument(document: Document): Document {
-  const { window } = new JSDOM(document.body);
+function patchPage(page: Page): Page {
+  const { window } = new JSDOM(page.body);
   const { body } = window.document;
 
   const h1 = body.querySelector('h1');
   if (h1) {
-    document.title = document.title || h1.textContent.trim();
+    page.title = page.title || h1.textContent.trim();
     h1.remove();
   }
 
@@ -60,18 +60,18 @@ function patchDocument(document: Document): Document {
     href: `#${heading.getAttribute('id')}`
   }));
 
-  const pageClass = `page-${slugify(document.path.slice(DOCUMENTS_DIR.length + 1).replace('.json', ''))}`;
+  const pageClass = `page-${slugify(page.path.slice(PAGES_DIR.length + 1).replace('.json', ''))}`;
 
   return {
-    ...document,
+    ...page,
     body: body.innerHTML,
     headings,
     pageClass
   };
 }
 
-function writeDocument(document: Document): Promise<any> {
-  const { path, ...contents } = document;
+function writePage(page: Page): Promise<any> {
+  const { path, ...contents } = page;
   return fs.outputJson(path, contents, {
     spaces: 2
   });

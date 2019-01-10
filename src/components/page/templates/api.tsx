@@ -1,11 +1,11 @@
 export default (props) => {
-  const { document, history } = props;
-  const headings = [...document.headings];
-  const usage = renderUsage(document.usage);
-  const properties = renderProperties(document.props);
-  const events = renderEvents(document.events);
-  const methods = renderMethods(document.methods);
-  const customProps = renderCustomProps(document.styles);
+  const { page, history } = props;
+  const headings = [...page.headings];
+  const usage = renderUsage(page.usage);
+  const properties = renderProperties(page.props);
+  const events = renderEvents(page.events);
+  const methods = renderMethods(page.methods);
+  const customProps = renderCustomProps(page.styles);
 
   if (usage) {
     headings.push({
@@ -44,9 +44,9 @@ export default (props) => {
 
   return (
     <main>
-      <h1>{ document.title }</h1>
+      <h1>{ page.title }</h1>
       <docs-table-of-contents links={headings} basepath={history.location.pathname}/>
-      <section class="markdown-content" innerHTML={document.body}/>
+      <section class="markdown-content" innerHTML={page.body}/>
       { usage }
       { properties }
       { events }

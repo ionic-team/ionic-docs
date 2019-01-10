@@ -15,8 +15,8 @@ npm start
 
 ## Editing Content
 
-The content is written as Markdown and stored in `src/documents`. Each Markdown file corresponds to a route. For example, `src/documents/intro.md` contains the content for the route `/docs/intro`. After you've made changes, you'll need to rebuild the documents:
+The content is written as Markdown and stored in `src/pages`. Each Markdown file corresponds to a route. For example, `src/pages/intro.md` contains the content for the route `/docs/intro`. After you've made changes, you'll need to rebuild the pages:
 
 ```shell
-npm run build-documents
+npm run build-pages
 ```

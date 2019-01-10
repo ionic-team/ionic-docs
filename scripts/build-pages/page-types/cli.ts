@@ -1,7 +1,7 @@
 import {
-  DOCUMENTS_DIR,
-  Document,
-  buildDocuments
+  PAGES_DIR,
+  Page,
+  buildPages
 } from '../index';
 
 import { join } from 'path';
@@ -9,17 +9,17 @@ import renderMarkdown from '../markdown-renderer';
 import { commands } from '../../data/cli.json';
 
 export default {
-  title: 'Build CLI documents',
-  task: () => buildDocuments(getCLIDocuments)
+  title: 'Build CLI pages',
+  task: () => buildPages(getCLIPages)
 };
 
-async function getCLIDocuments(): Promise<Document[]> {
+async function getCLIPages(): Promise<Page[]> {
   return commands.map(command => {
     const { name, description, ...rest } = command;
     return {
       title: name,
       body: renderMarkdown(description),
-      path: join(DOCUMENTS_DIR, `cli/commands/${name.slice(6).replace(/\s/g, '-')}.json`),
+      path: join(PAGES_DIR, `cli/commands/${name.slice(6).replace(/\s/g, '-')}.json`),
       ...rest
     };
   });

@@ -1,12 +1,12 @@
 import Listr from 'listr';
-import buildDocuments from '../build-documents';
+import buildPages from '../build-pages';
 import buildMenus from '../build-menus';
 
 const tasks = new Listr({ collapse: false });
 
 tasks.add({
-  title: 'Documents',
-  task: () => buildDocuments
+  title: 'Pages',
+  task: () => buildPages
 });
 
 tasks.add({

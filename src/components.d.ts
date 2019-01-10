@@ -10,9 +10,9 @@ import '@stencil/core';
 import '@stencil/router';
 import '@stencil/state-tunnel';
 import {
-  Document,
   Link,
   MenuItems,
+  Page,
   ReferenceKeys,
 } from './definitions';
 
@@ -58,13 +58,6 @@ export namespace Components {
   interface CommandPrompt {}
   interface CommandPromptAttributes extends StencilHTMLAttributes {}
 
-  interface DocsDocument {
-    'path': string;
-  }
-  interface DocsDocumentAttributes extends StencilHTMLAttributes {
-    'path'?: string;
-  }
-
   interface DocsHeader {}
   interface DocsHeaderAttributes extends StencilHTMLAttributes {}
 
@@ -78,11 +71,18 @@ export namespace Components {
     'items'?: MenuItems;
   }
 
+  interface DocsPage {
+    'path': string;
+  }
+  interface DocsPageAttributes extends StencilHTMLAttributes {
+    'path'?: string;
+  }
+
   interface DocsPagination {
-    'document': Document;
+    'page': Page;
   }
   interface DocsPaginationAttributes extends StencilHTMLAttributes {
-    'document'?: Document;
+    'page'?: Page;
   }
 
   interface DocsReference {
@@ -130,10 +130,10 @@ declare global {
     'CommandLine': Components.CommandLine;
     'CommandOutput': Components.CommandOutput;
     'CommandPrompt': Components.CommandPrompt;
-    'DocsDocument': Components.DocsDocument;
     'DocsHeader': Components.DocsHeader;
     'DocsMenu': Components.DocsMenu;
     'DocsNav': Components.DocsNav;
+    'DocsPage': Components.DocsPage;
     'DocsPagination': Components.DocsPagination;
     'DocsReference': Components.DocsReference;
     'DocsRoot': Components.DocsRoot;
@@ -150,10 +150,10 @@ declare global {
     'command-line': Components.CommandLineAttributes;
     'command-output': Components.CommandOutputAttributes;
     'command-prompt': Components.CommandPromptAttributes;
-    'docs-document': Components.DocsDocumentAttributes;
     'docs-header': Components.DocsHeaderAttributes;
     'docs-menu': Components.DocsMenuAttributes;
     'docs-nav': Components.DocsNavAttributes;
+    'docs-page': Components.DocsPageAttributes;
     'docs-pagination': Components.DocsPaginationAttributes;
     'docs-reference': Components.DocsReferenceAttributes;
     'docs-root': Components.DocsRootAttributes;
@@ -205,12 +205,6 @@ declare global {
     new (): HTMLCommandPromptElement;
   };
 
-  interface HTMLDocsDocumentElement extends Components.DocsDocument, HTMLStencilElement {}
-  var HTMLDocsDocumentElement: {
-    prototype: HTMLDocsDocumentElement;
-    new (): HTMLDocsDocumentElement;
-  };
-
   interface HTMLDocsHeaderElement extends Components.DocsHeader, HTMLStencilElement {}
   var HTMLDocsHeaderElement: {
     prototype: HTMLDocsHeaderElement;
@@ -227,6 +221,12 @@ declare global {
   var HTMLDocsNavElement: {
     prototype: HTMLDocsNavElement;
     new (): HTMLDocsNavElement;
+  };
+
+  interface HTMLDocsPageElement extends Components.DocsPage, HTMLStencilElement {}
+  var HTMLDocsPageElement: {
+    prototype: HTMLDocsPageElement;
+    new (): HTMLDocsPageElement;
   };
 
   interface HTMLDocsPaginationElement extends Components.DocsPagination, HTMLStencilElement {}
@@ -273,10 +273,10 @@ declare global {
     'command-line': HTMLCommandLineElement
     'command-output': HTMLCommandOutputElement
     'command-prompt': HTMLCommandPromptElement
-    'docs-document': HTMLDocsDocumentElement
     'docs-header': HTMLDocsHeaderElement
     'docs-menu': HTMLDocsMenuElement
     'docs-nav': HTMLDocsNavElement
+    'docs-page': HTMLDocsPageElement
     'docs-pagination': HTMLDocsPaginationElement
     'docs-reference': HTMLDocsReferenceElement
     'docs-root': HTMLDocsRootElement
@@ -293,10 +293,10 @@ declare global {
     'command-line': HTMLCommandLineElement;
     'command-output': HTMLCommandOutputElement;
     'command-prompt': HTMLCommandPromptElement;
-    'docs-document': HTMLDocsDocumentElement;
     'docs-header': HTMLDocsHeaderElement;
     'docs-menu': HTMLDocsMenuElement;
     'docs-nav': HTMLDocsNavElement;
+    'docs-page': HTMLDocsPageElement;
     'docs-pagination': HTMLDocsPaginationElement;
     'docs-reference': HTMLDocsReferenceElement;
     'docs-root': HTMLDocsRootElement;

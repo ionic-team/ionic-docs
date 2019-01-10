@@ -1,7 +1,7 @@
 import {
-  DOCUMENTS_DIR,
-  Document,
-  buildDocuments
+  PAGES_DIR,
+  Page,
+  buildPages
 } from '../index';
 
 import { components } from '@ionic/docs/core.json';
@@ -9,14 +9,14 @@ import { join } from 'path';
 import markdownRenderer from '../markdown-renderer';
 
 export default {
-  title: 'Build API documents',
-  task: () => buildDocuments(getAPIDocuments)
+  title: 'Build API pages',
+  task: () => buildPages(getAPIPages)
 };
 
-async function getAPIDocuments(): Promise<Document[]> {
+async function getAPIPages(): Promise<Page[]> {
   return components.map(component => {
     const title = component.tag.slice(4);
-    const path = `${join(DOCUMENTS_DIR, 'api', title)}.json`;
+    const path = `${join(PAGES_DIR, 'api', title)}.json`;
     const { readme, usage, props, methods, ...contents } = component;
     return {
       title,

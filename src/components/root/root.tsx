@@ -11,8 +11,8 @@ export class DocsRoot {
       <stencil-router class="Layout" scrollTopOffset={0}>
         <docs-header/>
         <docs-menu/>
-        <stencil-route url="/docs/:document*" routeRender={props => (
-          <docs-document path={`/docs/documents/${props.match.params.document || 'index'}.json`}/>
+        <stencil-route url="/docs/:page*" routeRender={props => (
+          <docs-page path={`/docs/pages/${props.match.params.page || 'index'}.json`}/>
         )}/>
       </stencil-router>
     );

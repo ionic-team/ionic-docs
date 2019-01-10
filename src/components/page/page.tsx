@@ -1,5 +1,5 @@
 import { Component, Prop, State, Watch } from '@stencil/core';
-import { Document } from '../../definitions';
+import { Page } from '../../definitions';
 import defaultTemplate from './templates/default';
 import nativeTemplate from './templates/native';
 import apiTemplate from './templates/api';
@@ -7,23 +7,23 @@ import cliTemplate from './templates/cli';
 import errorTemplate from './templates/error';
 
 @Component({
-  tag: 'docs-document',
-  styleUrl: 'document.css'
+  tag: 'docs-page',
+  styleUrl: 'page.css'
 })
-export class DocsDocument {
+export class DocsPage {
   @Prop() path: string;
   @State() badFetch: Response = null;
-  @State() document: Document;
+  @State() page: Page;
 
   componentWillLoad() {
-    return this.fetchDocument(this.path);
+    return this.fetchPage(this.path);
   }
 
   @Watch('path')
-  fetchDocument(path) {
+  fetchPage(path) {
     return fetch(path)
       .then(this.validateFetch)
-      .then(this.handleNewDocument)
+      .then(this.handleNewPage)
       .catch(this.handleBadFetch);
   }
 
@@ -32,14 +32,14 @@ export class DocsDocument {
     return response.json();
   }
 
-  handleNewDocument = (document) => {
+  handleNewPage = (page) => {
     this.badFetch = null;
-    this.document = document;
+    this.page = page;
   }
 
   handleBadFetch = (error: Response) => {
     this.badFetch = error;
-    this.document = {
+    this.page = {
       title: error.statusText,
       body: null
     };
@@ -48,13 +48,13 @@ export class DocsDocument {
   hostData() {
     return {
       class: {
-        [this.document.pageClass]: typeof this.document.pageClass === 'string'
+        [this.page.pageClass]: typeof this.page.pageClass === 'string'
       }
     };
   }
 
   render() {
-    const { document } = this;
+    const { page } = this;
 
     if (this.badFetch) {
       return errorTemplate(this.badFetch);
@@ -62,20 +62,20 @@ export class DocsDocument {
 
     const content = [
       <stencil-route-switch>
-        <stencil-route url="/docs/native" routeRender={nativeTemplate} componentProps={{ document }}/>
-        <stencil-route url="/docs/api/(.+)" routeRender={apiTemplate} componentProps={{ document }}/>
-        <stencil-route url="/docs/cli/commands/(.+)" routeRender={cliTemplate} componentProps={{ document }}/>
-        <stencil-route url="/docs" routeRender={defaultTemplate} componentProps={{ document }}/>
+        <stencil-route url="/docs/native" routeRender={nativeTemplate} componentProps={{ page }}/>
+        <stencil-route url="/docs/api/(.+)" routeRender={apiTemplate} componentProps={{ page }}/>
+        <stencil-route url="/docs/cli/commands/(.+)" routeRender={cliTemplate} componentProps={{ page }}/>
+        <stencil-route url="/docs" routeRender={defaultTemplate} componentProps={{ page }}/>
       </stencil-route-switch>
     ];
 
     const shouldShowPagination = (
-      document.previousText && document.previousUrl || document.nextText && document.nextUrl
+      page.previousText && page.previousUrl || page.nextText && page.nextUrl
     );
 
     if (shouldShowPagination) {
       content.push(
-        <docs-pagination document={document}/>
+        <docs-pagination page={page}/>
       );
     }
 

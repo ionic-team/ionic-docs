@@ -1,4 +1,4 @@
-export interface Document {
+export interface Page {
   title: string;
   body: string;
   [key: string]: any;

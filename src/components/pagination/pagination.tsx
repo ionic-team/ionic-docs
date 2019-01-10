@@ -1,13 +1,13 @@
 import { Component, Prop } from '@stencil/core';
 import { BackArrow, ForwardArrow } from '../../icons';
-import { Document } from '../../definitions';
+import { Page } from '../../definitions';
 
 @Component({
   tag: 'docs-pagination',
   styleUrl: 'pagination.css'
 })
 export class DocsPagination {
-  @Prop() document: Document;
+  @Prop() page: Page;
 
   render() {
     const {
@@ -15,7 +15,7 @@ export class DocsPagination {
       previousUrl,
       nextText,
       nextUrl
-    } = this.document;
+    } = this.page;
 
     const shouldShowPrevious = previousText && previousUrl;
     const shouldShowNext = nextText && nextUrl;

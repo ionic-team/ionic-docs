@@ -1,0 +1,66 @@
+@import './templates/error.css';
+
+docs-page {
+  display: block;
+  font-size: 15px;
+  line-height: 2;
+  margin-left: var(--menu-width);
+  margin-top: var(--header-height);
+  overflow-x: hidden;
+}
+
+docs-page main {
+  max-width: 680px;
+  padding: 2rem 3rem;
+}
+
+docs-page .full-screen {
+  height: calc(100vh - var(--header-height));
+  width: calc(100vw - var(--menu-width));
+  max-width: none;
+  overflow: hidden;
+  padding: 0;
+}
+
+docs-page h1 {
+  margin-top: 2rem;
+}
+
+docs-page h2 a[href^="#"],
+docs-page h3 a[href^="#"],
+docs-page h4 a[href^="#"],
+docs-page h5 a[href^="#"],
+docs-page h6 a[href^="#"] {
+  color: inherit;
+  position: relative;
+}
+
+docs-page h2 a[href^="#"]:before,
+docs-page h3 a[href^="#"]:before,
+docs-page h4 a[href^="#"]:before,
+docs-page h5 a[href^="#"]:before,
+docs-page h6 a[href^="#"]:before {
+  content: "#";
+  opacity: 0;
+  padding-right: 5px;
+  position: absolute;
+  right: 100%;
+  transition: opacity 100ms ease;
+}
+
+docs-page h2 a[href^="#"]:hover:before,
+docs-page h3 a[href^="#"]:hover:before,
+docs-page h4 a[href^="#"]:hover:before,
+docs-page h5 a[href^="#"]:hover:before,
+docs-page h6 a[href^="#"]:hover:before {
+  opacity: 1;
+}
+
+docs-page h2 code,
+docs-page h3 code,
+docs-page h4 code,
+docs-page h5 code,
+docs-page h6 code {
+  background: none;
+  font-size: inherit;
+}

@@ -1,7 +1,7 @@
 import {
-  DOCUMENTS_DIR,
-  Document,
-  buildDocuments
+  PAGES_DIR,
+  Page,
+  buildPages
 } from '../index';
 
 import fs from 'fs-extra';
@@ -10,13 +10,13 @@ import frontMatter from 'front-matter';
 import markdownRenderer from '../markdown-renderer';
 
 export default {
-  title: 'Build static documents',
-  task: () => buildDocuments(getStaticDocuments)
+  title: 'Build static pages',
+  task: () => buildPages(getStaticPages)
 };
 
-async function getStaticDocuments(): Promise<Document[]> {
-  const paths = await getMarkdownPaths(DOCUMENTS_DIR);
-  return Promise.all(paths.map(toDocument));
+async function getStaticPages(): Promise<Page[]> {
+  const paths = await getMarkdownPaths(PAGES_DIR);
+  return Promise.all(paths.map(toPage));
 }
 
 const getMarkdownPaths = (cwd: string): Promise<string[]> =>
@@ -25,7 +25,7 @@ const getMarkdownPaths = (cwd: string): Promise<string[]> =>
     cwd
   });
 
-const toDocument = async (path: string) => {
+const toPage = async (path: string) => {
   return {
     path: path.replace(/md$/, 'json'),
     ...renderMarkdown(await readMarkdown(path))
