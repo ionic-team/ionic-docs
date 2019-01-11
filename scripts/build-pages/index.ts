@@ -3,7 +3,7 @@ import { slugify } from '../../src/utils';
 import fs from 'fs-extra';
 import { JSDOM } from 'jsdom';
 import Listr from 'listr';
-import Static from './page-types/static';
+import Static, { toPage as toStaticPage } from './page-types/static';
 import API from './page-types/api';
 import CLI from './page-types/cli';
 import Native from './page-types/native';
@@ -37,6 +37,11 @@ export async function buildPages(getter: PageGetter) {
       .map(patchPage)
       .map(writePage)
   );
+}
+
+export async function buildStaticPage(path: string) {
+  const page = await toStaticPage(path);
+  return writePage(patchPage(page));
 }
 
 function patchPage(page: Page): Page {

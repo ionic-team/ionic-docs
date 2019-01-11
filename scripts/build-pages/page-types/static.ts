@@ -25,7 +25,7 @@ const getMarkdownPaths = (cwd: string): Promise<string[]> =>
     cwd
   });
 
-const toPage = async (path: string) => {
+export const toPage = async (path: string) => {
   return {
     path: path.replace(/md$/, 'json'),
     ...renderMarkdown(await readMarkdown(path))
