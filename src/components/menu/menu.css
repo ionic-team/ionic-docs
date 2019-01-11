@@ -1,4 +1,5 @@
 docs-menu {
+  background-color: var(--background-color);
   border-right: solid 1px var(--line-rule-color);
   display: flex;
   flex-direction: column;
@@ -7,6 +8,7 @@ docs-menu {
   position: fixed;
   top: 0;
   width: var(--menu-width);
+  z-index: var(--menu-z-index, initial);
 }
 
 docs-menu > header {
