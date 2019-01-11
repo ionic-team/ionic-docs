@@ -7,6 +7,7 @@ docs-menu {
   left: 0;
   position: fixed;
   top: 0;
+  transform: var(--menu-transform, none);
   width: var(--menu-width);
   z-index: var(--menu-z-index, initial);
 }

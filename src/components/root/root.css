@@ -5,3 +5,13 @@
 .Layout > stencil-route {
   width: 100%;
 }
+
+@media (max-width: 768px) {
+  .Layout {
+    --menu-transform: translateX(calc(-1 * var(--menu-width)));
+    --menu-width: 75vw;
+    --menu-z-index: 2;
+    --page-margin-left: 0;
+    --page-padding: 1.5rem;
+  }
+}

@@ -4,14 +4,14 @@ docs-page {
   display: block;
   font-size: 15px;
   line-height: 2;
-  margin-left: var(--menu-width);
+  margin-left: var(--page-margin-left, var(--menu-width));
   margin-top: var(--header-height);
   overflow-x: hidden;
 }
 
 docs-page main {
   max-width: 680px;
-  padding: 2rem 3rem;
+  padding: var(--page-padding, 2rem 3rem);
 }
 
 docs-page .full-screen {
