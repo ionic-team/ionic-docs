@@ -30,7 +30,7 @@ There are a few things you can check. Make sure:
 - You include it in the `directives` array of the `@Component` you want to use it in (only if your ionic-angular version is below RC0).
 - Your selector doesn't have any misspellings.
 - You're using the selector correctly as an attribute, element or class.
-- Your selector has the [proper syntax](http://learnangular2.com/components/):
+- Your selector has the proper syntax:
   - `[attr]` if it's an attribute selector
   - `element` if it's an element selector
   - `.class` if it's a class selector
