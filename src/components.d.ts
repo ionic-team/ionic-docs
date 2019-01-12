@@ -58,6 +58,16 @@ export namespace Components {
   interface CommandPrompt {}
   interface CommandPromptAttributes extends StencilHTMLAttributes {}
 
+  interface DocsDropdown {
+    'close': () => void;
+    'label': string;
+    'open': () => void;
+    'toggle': () => void;
+  }
+  interface DocsDropdownAttributes extends StencilHTMLAttributes {
+    'label'?: string;
+  }
+
   interface DocsHeader {}
   interface DocsHeaderAttributes extends StencilHTMLAttributes {}
 
@@ -130,6 +140,7 @@ declare global {
     'CommandLine': Components.CommandLine;
     'CommandOutput': Components.CommandOutput;
     'CommandPrompt': Components.CommandPrompt;
+    'DocsDropdown': Components.DocsDropdown;
     'DocsHeader': Components.DocsHeader;
     'DocsMenu': Components.DocsMenu;
     'DocsNav': Components.DocsNav;
@@ -150,6 +161,7 @@ declare global {
     'command-line': Components.CommandLineAttributes;
     'command-output': Components.CommandOutputAttributes;
     'command-prompt': Components.CommandPromptAttributes;
+    'docs-dropdown': Components.DocsDropdownAttributes;
     'docs-header': Components.DocsHeaderAttributes;
     'docs-menu': Components.DocsMenuAttributes;
     'docs-nav': Components.DocsNavAttributes;
@@ -203,6 +215,12 @@ declare global {
   var HTMLCommandPromptElement: {
     prototype: HTMLCommandPromptElement;
     new (): HTMLCommandPromptElement;
+  };
+
+  interface HTMLDocsDropdownElement extends Components.DocsDropdown, HTMLStencilElement {}
+  var HTMLDocsDropdownElement: {
+    prototype: HTMLDocsDropdownElement;
+    new (): HTMLDocsDropdownElement;
   };
 
   interface HTMLDocsHeaderElement extends Components.DocsHeader, HTMLStencilElement {}
@@ -273,6 +291,7 @@ declare global {
     'command-line': HTMLCommandLineElement
     'command-output': HTMLCommandOutputElement
     'command-prompt': HTMLCommandPromptElement
+    'docs-dropdown': HTMLDocsDropdownElement
     'docs-header': HTMLDocsHeaderElement
     'docs-menu': HTMLDocsMenuElement
     'docs-nav': HTMLDocsNavElement
@@ -293,6 +312,7 @@ declare global {
     'command-line': HTMLCommandLineElement;
     'command-output': HTMLCommandOutputElement;
     'command-prompt': HTMLCommandPromptElement;
+    'docs-dropdown': HTMLDocsDropdownElement;
     'docs-header': HTMLDocsHeaderElement;
     'docs-menu': HTMLDocsMenuElement;
     'docs-nav': HTMLDocsNavElement;
