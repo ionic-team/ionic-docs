@@ -18,7 +18,7 @@ docs-nav a {
 }
 
 docs-nav a.link-active {
-  color: var(--link-color);
+  color: var(--accent-color);
 }
 
 docs-nav ul {

@@ -35,16 +35,16 @@ docs-tabs .tab-link:after {
 }
 
 docs-tabs .tab-link.is-selected {
-  color: var(--link-color);
+  color: var(--accent-color);
   font-weight: 700;
 }
 
 docs-tabs .tab-link.is-selected:after {
-  background-color: var(--link-color);
+  background-color: var(--accent-color);
 }
 
 docs-tabs .tab-link:hover {
-  color: var(--link-color);
+  color: var(--accent-color);
 }
 
 docs-tabs .tab {

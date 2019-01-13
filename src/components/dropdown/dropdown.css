@@ -35,7 +35,7 @@
 }
 
 .Dropdown-panel {
-  background-color: var(--background-color);
+  background-color: var(--background);
   border-radius: 4px;
   border: solid 1px var(--line-rule-color);
   box-shadow: 4px 4px 12px 4px rgba(0,0,0,0.025);

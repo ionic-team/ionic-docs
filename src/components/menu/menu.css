@@ -1,5 +1,5 @@
 docs-menu {
-  background-color: var(--background-color);
+  background-color: var(--background);
   border-right: solid 1px var(--line-rule-color);
   display: flex;
   flex-direction: column;
@@ -22,7 +22,7 @@ docs-menu > header {
 }
 
 docs-menu > header .Logo {
-  color: var(--link-color);
+  color: var(--accent-color);
   font-family: var(--heading-font-family);
   height: 25px;
 }

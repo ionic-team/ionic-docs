@@ -1,6 +1,6 @@
 docs-search {
   align-items: center;
-  background-color: var(--background-color);
+  background-color: var(--background);
   border-radius: 2em;
   border: solid 1px var(--line-rule-color);
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.01);
@@ -17,7 +17,7 @@ docs-search.is-focused {
 }
 
 docs-search.is-focused {
-  border-color: var(--link-color);
+  border-color: var(--accent-color);
 }
 
 docs-search .Search-field {

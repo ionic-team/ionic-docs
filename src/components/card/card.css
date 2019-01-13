@@ -5,7 +5,7 @@ docs-card {
 }
 
 .Card {
-  background-color: var(--background-color);
+  background-color: var(--background);
   border-radius: 4px;
   box-shadow: 0px 0.175em 0.5em rgba(2, 8, 20, 0.1), 0px 0.085em 0.175em rgba(2, 8, 20, 0.08);
   color: var(--text-color--light);

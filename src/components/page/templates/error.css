@@ -1,6 +1,6 @@
 .Error {
   align-items: center;
-  background-color: var(--offset-background-color);
+  background-color: var(--offset-background);
   color: var(--text-color--light);
   display: flex;
   flex-direction: column;
