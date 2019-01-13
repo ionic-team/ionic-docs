@@ -15,8 +15,8 @@ export default {
 
 async function getAPIPages(): Promise<Page[]> {
   return components.map(component => {
-    const title = component.tag.slice(4);
-    const path = `${join(PAGES_DIR, 'api', title)}.json`;
+    const title = component.tag;
+    const path = `${join(PAGES_DIR, 'api', title.slice(4))}.json`;
     const { readme, usage, props, methods, ...contents } = component;
     return {
       title,

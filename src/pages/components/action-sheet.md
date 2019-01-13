@@ -94,10 +94,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed lacus eu pu
 ## API
 
 <docs-cards>
-  <docs-card header="action-sheet" href="/docs/api/action-sheet">
+  <docs-card header="ion-action-sheet" href="/docs/api/action-sheet">
     <p>Display a set of options with the ability to confirm or cancel an action.</p>
   </docs-card>
-  <docs-card header="action-sheet-controller" href="/docs/api/action-sheet-controller">
+  <docs-card header="ion-action-sheet-controller" href="/docs/api/action-sheet-controller">
     <p>Used to manage the creation, dismissal, and destruction of action sheets.</p>
   </docs-card>
 </docs-cards>
