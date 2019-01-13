@@ -12,9 +12,9 @@ export class DocsNav {
   toItem = ([text, value]) => {
     switch (typeof value) {
       case 'string':
-        return <li>{this.toLink([text, value])}</li>;
+        return <li key={text}>{this.toLink([text, value])}</li>;
       case 'object':
-        return <li>{this.toSection([text, value])}</li>;
+        return <li key={text}>{this.toSection([text, value])}</li>;
     }
   }
 
