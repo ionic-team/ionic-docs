@@ -41,6 +41,7 @@
   box-shadow: 4px 4px 12px 4px rgba(0,0,0,0.025);
   left: 0;
   min-width: 120%;
+  overflow: hidden;
   pointer-events: none;
   position: absolute;
   top: 100%;
