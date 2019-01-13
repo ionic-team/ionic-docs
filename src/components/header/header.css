@@ -20,10 +20,11 @@ docs-header header {
   display: flex;
   height: var(--header-height);
   justify-content: space-between;
+  padding: 0 1.5rem;
 }
 
-docs-header header > * {
-  padding: 0 1.5rem;
+docs-header header > *:not(:last-child) {
+  padding-right: 1.5rem;
 }
 
 docs-header .Logo {
@@ -53,14 +54,13 @@ docs-header nav a {
 }
 
 docs-header nav > *:not(:last-child) {
-  margin-right: 1.5em;
+  margin-right: 1.25em;
 }
 
 .SectionNav {
   font-size: 14px;
   height: 100%;
   margin-right: auto;
-  padding-left: 0;
 }
 
 .SectionNav .link-active {
