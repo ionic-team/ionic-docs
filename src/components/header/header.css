@@ -1,11 +1,17 @@
 docs-header {
+  background-color: var(--background);
+  box-shadow: 0px 1px 3px rgba(2, 8, 20, 0.06), 0px 1px 2px rgba(2, 8, 20, 0.04);
+  color: var(--text-color--light);
   display: block;
+  font-size: 14px;
+  line-height: 1;
   position: fixed;
   top: 0;
   left: 0;
   transform: translateY(0);
   transition: transform 200ms ease;
   width: 100%;
+  white-space: nowrap;
   z-index: 1;
 }
 
@@ -14,53 +20,47 @@ docs-header.hidden {
 }
 
 docs-header header {
-  align-items: center;
-  background-color: var(--background);
-  box-shadow: 0px 1px 3px rgba(2, 8, 20, 0.06), 0px 1px 2px rgba(2, 8, 20, 0.04);
-  display: flex;
   height: var(--header-height);
-  justify-content: space-between;
   padding: 0 1.5rem;
 }
 
-docs-header header > *:not(:last-child) {
-  padding-right: 1.5rem;
-}
-
-docs-header .Logo {
-  color: var(--accent-color);
-  font-family: var(--heading-font-family);
-  height: 25px;
-}
-
+docs-header header,
 docs-header nav {
   align-items: center;
-  color: var(--text-color--light);
   display: flex;
-  font-size: 12px;
-  line-height: 1;
-  white-space: nowrap;
 }
 
-docs-header nav a {
+docs-header header > *:not(:last-child),
+docs-header nav > *:not(:last-child) {
+  margin-right: 1rem;
+}
+
+docs-header a {
   color: inherit;
   padding: 5px 0;
 }
 
 @media (hover: hover) {
-  docs-header nav a:hover {
+  docs-header a:hover {
     color: var(--text-color);
   }
 }
 
-docs-header nav > *:not(:last-child) {
-  margin-right: 1.25em;
+.Logo {
+  color: var(--accent-color);
+  font-family: var(--heading-font-family);
+  height: 25px;
 }
 
 .SectionNav {
-  font-size: 14px;
   height: 100%;
-  margin-right: auto;
+}
+
+.SectionNav > * {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  position: relative;
 }
 
 .SectionNav .link-active {
@@ -78,9 +78,7 @@ docs-header nav > *:not(:last-child) {
   width: 100%;
 }
 
-.SectionNav > * {
-  align-items: center;
-  display: flex;
-  height: 100%;
-  position: relative;
+.UtilNav {
+  font-size: 12px;
+  margin-left: auto;
 }

@@ -42,7 +42,7 @@ export class DocsHeader {
           <stencil-route-link url="/docs/cli">CLI</stencil-route-link>
           <stencil-route-link url="/docs/native">Native</stencil-route-link>
         </nav>
-        <nav>
+        <nav class="UtilNav">
           <a href="https://ionicframework.com/support">Support</a>
           <a href="https://ionicframework.com/community">Community</a>
           <a class="outbound" href="https://github.com/ionic-team/ionic">GitHub <Outbound/></a>
