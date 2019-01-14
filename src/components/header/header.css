@@ -32,7 +32,7 @@ docs-header nav {
 
 docs-header header > *:not(:last-child),
 docs-header nav > *:not(:last-child) {
-  margin-right: 1rem;
+  margin-right: 1em;
 }
 
 docs-header a {
@@ -40,8 +40,12 @@ docs-header a {
   padding: 5px 0;
 }
 
+docs-header .link-active {
+  color: var(--accent-color);
+}
+
 @media (hover: hover) {
-  docs-header a:hover {
+  docs-header a:not(.link-active):hover {
     color: var(--text-color);
   }
 }
@@ -61,10 +65,6 @@ docs-header a {
   display: flex;
   height: 100%;
   position: relative;
-}
-
-.SectionNav .link-active {
-  color: var(--accent-color);
 }
 
 .SectionNav .link-active:after {
