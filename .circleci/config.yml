@@ -6,6 +6,9 @@ defaults: &defaults
 jobs:
   build:
     <<: *defaults
+    branches:
+      only:
+        - master
     steps:
       - checkout
       - restore_cache:
@@ -67,6 +70,9 @@ jobs:
 
   framework:
     <<: *defaults
+    branches:
+      only:
+        - master
     steps:
       - checkout
       - restore_cache:
@@ -106,6 +112,9 @@ jobs:
 
   cli:
     <<: *defaults
+    branches:
+      only:
+        - master
     steps:
       - checkout
       - restore_cache:
@@ -145,6 +154,9 @@ jobs:
 
   component-preview:
     <<: *defaults
+    branches:
+      only:
+        - master
     steps:
       - checkout
       - restore_cache:
@@ -184,6 +196,9 @@ jobs:
 
   native:
     <<: *defaults
+    branches:
+      only:
+        - master
     steps:
       - checkout
       - restore_cache:
@@ -223,6 +238,9 @@ jobs:
 
   storage:
     <<: *defaults
+    branches:
+      only:
+        - master
     steps:
       - checkout
       - restore_cache:
