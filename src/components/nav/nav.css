@@ -45,7 +45,7 @@ docs-nav section li {
 docs-nav header {
   align-items: center;
   display: flex;
-  font-size: 1.0875em;
+  font-size: 1.125em;
 }
 
 docs-nav header > svg {
