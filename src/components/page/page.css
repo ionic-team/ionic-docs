@@ -1,7 +1,8 @@
 @import './templates/error.css';
 
 docs-page {
-  display: block;
+  display: flex;
+  flex-direction: column;
   font-size: 15px;
   line-height: 2;
   margin-left: var(--page-margin-left, var(--menu-width));
@@ -10,6 +11,7 @@ docs-page {
 }
 
 docs-page main {
+  margin-bottom: 3rem;
   max-width: 680px;
   padding: var(--page-padding, 2rem 3rem);
 }
