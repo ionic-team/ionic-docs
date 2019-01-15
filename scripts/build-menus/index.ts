@@ -1,4 +1,3 @@
-import { components } from '@ionic/docs/core.json';
 import { commands } from '../data/cli.json';
 import plugins from '../data/native.json';
 import { join, resolve } from 'path';
@@ -7,12 +6,6 @@ import Listr from 'listr';
 import fs from 'fs-extra';
 
 const MENU_DATA_DIR = resolve(__dirname, '../../src/components/menu/data');
-
-const componentMenu = keyBy(
-  components,
-  (item) => item.tag.slice(4),
-  (item) => `/docs/api/${slugify(item.tag.slice(4))}`
-);
 
 const cliCommandMenu = keyBy(
   commands,
@@ -27,14 +20,6 @@ const nativePluginMenu = keyBy(
 );
 
 const tasks = new Listr([
-  {
-    title: 'Build API reference menu',
-    task: () => fs.outputJSON(
-      join(MENU_DATA_DIR, 'api-reference.json'),
-      componentMenu,
-      { spaces: 2 }
-    )
-  },
   {
     title: 'Build CLI command menu',
     task: () => fs.outputJSON(
