@@ -1,6 +1,6 @@
 export default (props) => {
   const { page, history } = props;
-  const headings = [...page.headings];
+  const headings = [];
   const properties = renderProperties(page.props);
   const events = renderEvents(page.events);
   const methods = renderMethods(page.methods);
