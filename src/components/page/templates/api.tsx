@@ -1,3 +1,5 @@
+import { slugify } from '../../../utils';
+
 export default (props) => {
   const { page, history } = props;
   const headings = [];
@@ -59,7 +61,7 @@ const renderProperties = (properties) => {
       <docs-reference
         data={properties}
         keys={{
-          Head: prop => prop.name,
+          Head: prop => renderAnchor(prop.name),
           Description: prop => <div innerHTML={prop.docs}/>,
           Attribute: prop => prop.attr ? <code>{ prop.attr }</code> : null,
           Type: prop => <code>{ prop.type }</code>
@@ -111,7 +113,7 @@ const renderMethods = (methods) => {
       <docs-reference
         data={methods}
         keys={{
-          Head: method => method.name,
+          Head: method => renderAnchor(method.name),
           Description: method => <div innerHTML={method.docs}/>,
           Signature: method => <code>{ method.signature }</code>
         }}/>
@@ -146,5 +148,12 @@ const renderCustomProps = (customProps) => {
         </tbody>
       </table>
     </section>
+  );
+};
+
+const renderAnchor = (text: string) => {
+  const slug = slugify(text);
+  return (
+    <a href={`#${slug}`} id={slug}>{text}</a>
   );
 };

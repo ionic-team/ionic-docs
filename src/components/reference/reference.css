@@ -10,6 +10,14 @@ docs-reference h3 {
   padding: 0;
 }
 
+docs-reference a {
+  font-weight: inherit;
+}
+
+docs-reference a:before {
+  display: none;
+}
+
 docs-reference tbody * {
   font-size: 12px !important;
 }
