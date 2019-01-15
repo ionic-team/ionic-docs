@@ -1,18 +1,10 @@
 export default (props) => {
   const { page, history } = props;
   const headings = [...page.headings];
-  const usage = renderUsage(page.usage);
   const properties = renderProperties(page.props);
   const events = renderEvents(page.events);
   const methods = renderMethods(page.methods);
   const customProps = renderCustomProps(page.styles);
-
-  if (usage) {
-    headings.push({
-      text: 'Usage',
-      href: '#usage'
-    });
-  }
 
   if (properties) {
     headings.push({
@@ -46,32 +38,11 @@ export default (props) => {
     <main>
       <h1>{ page.title }</h1>
       <docs-table-of-contents links={headings} basepath={history.location.pathname}/>
-      <section class="markdown-content" innerHTML={page.body}/>
-      { usage }
       { properties }
       { events }
       { methods }
       { customProps }
     </main>
-  );
-};
-
-const renderUsage = (usage) => {
-  const keys = Object.keys(usage);
-
-  if (!keys.length) {
-    return null;
-  }
-
-  return (
-    <section>
-      <h2 id="usage">
-        <a href="#usage">Usage</a>
-      </h2>
-      <docs-tabs tabs={keys.join(',')}>
-        { keys.map(key => <div slot={key} innerHTML={usage[key]}/>) }
-      </docs-tabs>
-    </section>
   );
 };
 
