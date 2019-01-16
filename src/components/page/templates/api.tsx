@@ -56,7 +56,7 @@ export default (props) => {
   );
 };
 
-const renderUsage = (usage) => {
+const renderUsage = (usage = {}) => {
   const keys = Object.keys(usage);
 
   if (!keys.length) {
@@ -75,7 +75,7 @@ const renderUsage = (usage) => {
   );
 };
 
-const renderProperties = (properties) => {
+const renderProperties = (properties = []) => {
   if (!properties.length) {
     return null;
   }
@@ -97,7 +97,7 @@ const renderProperties = (properties) => {
   );
 };
 
-const renderEvents = (events) => {
+const renderEvents = (events = []) => {
   if (!events.length) {
     return null;
   }
@@ -127,7 +127,7 @@ const renderEvents = (events) => {
   );
 };
 
-const renderMethods = (methods) => {
+const renderMethods = (methods = []) => {
   if (!methods.length) {
     return null;
   }
@@ -148,7 +148,7 @@ const renderMethods = (methods) => {
   );
 };
 
-const renderCustomProps = (customProps) => {
+const renderCustomProps = (customProps = []) => {
   if (!customProps.length) {
     return null;
   }
