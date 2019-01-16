@@ -7,7 +7,7 @@ nextUrl: '/docs/building/cross-platform'
 
 # Migration Guide
 
-## Overview
+## Migrating from Ionic 3.0 to Ionic 4.0 - Overview
 
 We suggest the following general process when migrating an existing application from Ionic 3 to 4:
 
@@ -238,7 +238,7 @@ Since v4 moved to Custom Elements, there's been a significant change to the mark
 
 To help with these markup changes, we've released a TSLint-based <a href="https://github.com/ionic-team/v4-migration-tslint" target="_blank">Migration Tool</a>, which detects issues and can even fix some of them automatically.
 
-## Migrating from Ionic 1.0 to Ionic 4.0
+## Migrating from Ionic 1.0 to Ionic 4.0 - Overview
 
 ### Ionic 1.0 to Ionic 4.0: What’s Involved?
 
