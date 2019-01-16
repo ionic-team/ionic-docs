@@ -4,3 +4,4 @@ node_modules/
 www/
 src/pages/**/*.json
 src/components/menu/data/
+src/components/page/data/
