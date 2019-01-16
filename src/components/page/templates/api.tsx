@@ -1,12 +1,18 @@
-import { slugify } from '../../../utils';
-
 export default (props) => {
   const { page, history } = props;
-  const headings = [];
+  const headings = [...page.headings];
+  const usage = renderUsage(page.usage);
   const properties = renderProperties(page.props);
   const events = renderEvents(page.events);
   const methods = renderMethods(page.methods);
   const customProps = renderCustomProps(page.styles);
+
+  if (usage) {
+    headings.push({
+      text: 'Usage',
+      href: '#usage'
+    });
+  }
 
   if (properties) {
     headings.push({
@@ -40,11 +46,32 @@ export default (props) => {
     <main>
       <h1>{ page.title }</h1>
       <docs-table-of-contents links={headings} basepath={history.location.pathname}/>
+      <section class="markdown-content" innerHTML={page.body}/>
+      { usage }
       { properties }
       { events }
       { methods }
       { customProps }
     </main>
+  );
+};
+
+const renderUsage = (usage) => {
+  const keys = Object.keys(usage);
+
+  if (!keys.length) {
+    return null;
+  }
+
+  return (
+    <section>
+      <h2 id="usage">
+        <a href="#usage">Usage</a>
+      </h2>
+      <docs-tabs tabs={keys.join(',')}>
+        { keys.map(key => <div slot={key} innerHTML={usage[key]}/>) }
+      </docs-tabs>
+    </section>
   );
 };
 
@@ -61,7 +88,7 @@ const renderProperties = (properties) => {
       <docs-reference
         data={properties}
         keys={{
-          Head: prop => renderAnchor(prop.name),
+          Head: prop => prop.name,
           Description: prop => <div innerHTML={prop.docs}/>,
           Attribute: prop => prop.attr ? <code>{ prop.attr }</code> : null,
           Type: prop => <code>{ prop.type }</code>
@@ -113,7 +140,7 @@ const renderMethods = (methods) => {
       <docs-reference
         data={methods}
         keys={{
-          Head: method => renderAnchor(method.name),
+          Head: method => method.name,
           Description: method => <div innerHTML={method.docs}/>,
           Signature: method => <code>{ method.signature }</code>
         }}/>
@@ -148,12 +175,5 @@ const renderCustomProps = (customProps) => {
         </tbody>
       </table>
     </section>
-  );
-};
-
-const renderAnchor = (text: string) => {
-  const slug = slugify(text);
-  return (
-    <a href={`#${slug}`} id={slug}>{text}</a>
   );
 };
