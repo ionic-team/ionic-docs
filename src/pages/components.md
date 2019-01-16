@@ -33,7 +33,7 @@
     <p>Chips are a compact way to display data or actions.</p>
   </docs-card>
 
-  <docs-card header="DateTime" href="/docs/api/date-time">
+  <docs-card header="DateTime" href="/docs/api/datetime">
     <p>DateTime is used to present an interface which makes it easy for users to select dates and times.</p>
   </docs-card>
 
