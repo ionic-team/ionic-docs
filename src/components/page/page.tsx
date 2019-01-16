@@ -2,6 +2,7 @@ import { Component, Prop, State, Watch } from '@stencil/core';
 import { Page } from '../../definitions';
 import defaultTemplate from './templates/default';
 import nativeTemplate from './templates/native';
+import apiReferenceTemplate from './templates/api-reference';
 import apiTemplate from './templates/api';
 import cliTemplate from './templates/cli';
 import errorTemplate from './templates/error';
@@ -63,6 +64,7 @@ export class DocsPage {
     const content = [
       <stencil-route-switch>
         <stencil-route url="/docs/native" routeRender={nativeTemplate} componentProps={{ page }}/>
+        <stencil-route exact url="/docs/api" routeRender={apiReferenceTemplate} componentProps={{ page }}/>
         <stencil-route url="/docs/api/(.+)" routeRender={apiTemplate} componentProps={{ page }}/>
         <stencil-route url="/docs/cli/commands/(.+)" routeRender={cliTemplate} componentProps={{ page }}/>
         <stencil-route url="/docs" routeRender={defaultTemplate} componentProps={{ page }}/>
