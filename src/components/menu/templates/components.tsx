@@ -172,6 +172,6 @@ const items = {
     'ion-text': '/docs/api/text'
   },
   'Resources': {
-    'API Reference': '/docs/api'
+    'API Index': '/docs/api'
   }
 };
