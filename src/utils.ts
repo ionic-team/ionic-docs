@@ -13,3 +13,11 @@ export const keyBy = (
     obj[keyMap(item)] = valMap ? valMap(item) : item;
     return obj;
   }, {});
+
+export const debounce = (fn: (...args: any[]) => any, wait: number) => {
+  let scheduled = null;
+  return (...args) => {
+    clearTimeout(scheduled);
+    scheduled = setTimeout(fn, wait, ...args);
+  };
+};
