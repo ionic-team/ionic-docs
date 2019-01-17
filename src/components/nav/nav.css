@@ -1,7 +1,7 @@
 docs-nav {
   color: var(--text-color--dark);
   display: block;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
 }
 
@@ -44,8 +44,8 @@ docs-nav section li {
 
 docs-nav header {
   align-items: center;
+  color: var(--text-color--dark);
   display: flex;
-  font-size: 1.125em;
 }
 
 docs-nav header > svg {
@@ -57,6 +57,7 @@ docs-nav header > svg {
 }
 
 docs-nav section header + ul {
+  font-size: 13px;
   margin-top: 14px;
 }
 
