@@ -47,9 +47,7 @@ You can then triggering a new build from the commit in the *Deploy* > *Builds* a
 You can set the build to automatically be deployed to a channel when it is done or
 [manually assign the build to a channel](/docs/appflow/deploy/channels/#assigning-a-build-to-a-channel) later.
 
-<div style="text-align: center">
-  <img style="width: 950px" src="/img/pro/deploy-builds-create-location.png">
-</div>
+![Deploy builds create location](/docs/assets/img/appflow/deploy-builds-create-location.png)
 
 ## Advanced Usage
 

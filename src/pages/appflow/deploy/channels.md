@@ -26,9 +26,7 @@ simply view the channels list by going to Deploy -> Channels, and then click the
 Once you have created a Channel, go back to the **Builds** section of your app.
 On the right side of each Build, you'll see a "Assign to Channel" icon.
 
-<div style="text-align: center">
-  <img style="width: 950px" src="/img/pro/assign-to-channel.png">
-</div>
+![Assign build to a channel](/docs/assets/img/appflow/assign-to-channel.png)
 
 Click this to set the Build as active for a Channel.
 
@@ -38,4 +36,4 @@ for this Channel will receive the new update next time they check in.
 ### Automating Deployment from a Git Branch
 
 If your interested in automating your deploys from git push all the way to deploying to a channel you can
-take advantage or our [Automation](/docs/appflow/automation) features if your [plan](/pricing) includes them.
+take advantage or our [Automation](/docs/appflow/automation/intro) features if your [plan](/pricing) includes them.

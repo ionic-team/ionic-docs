@@ -8,7 +8,7 @@ Automations can be used to create both Deploy (web) and Package builds, as well 
 
 ## Before Starting
 
-To take advantage of the full power of native build automations, an app must be configured to use [Package Builds](/docs/appflow/package), as this feature is leveraged to deliver native code.
+To take advantage of the full power of native build automations, an app must be configured to use [Package Builds](/docs/appflow/package/intro), as this feature is leveraged to deliver native code.
 
 ## Using Automation
 

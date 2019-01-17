@@ -5,9 +5,9 @@ and organize workflows without the hassle.
 
 Ionic Appflow has several core concepts that help you through the full app lifecycle, including
 
- * [Deploy](/docs/appflow/deploy/): Update your app remotely in real-time without app store delays.
- * [Package](/docs/appflow/package/): Build app binaries in the cloud for iOS and Android.
- * [Automate](/docs/appflow/automate/): Automate the building, testing, and distribution of Package & Deploy to ship better updates faster.
+ * [Deploy](/docs/appflow/deploy/intro): Update your app remotely in real-time without app store delays.
+ * [Package](/docs/appflow/package/intro): Build app binaries in the cloud for iOS and Android.
+ * [Automate](/docs/appflow/automation/intro): Automate the building, testing, and distribution of Package & Deploy to ship better updates faster.
 
 Each one of these services is based around a simple git-based workflow that should be familiar to any app developer.
 

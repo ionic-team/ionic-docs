@@ -17,8 +17,8 @@ Split Testing, Beta Channels, etc, you may have to use some of the [Deploy API](
 ## Get started
 
 * [Setup and use the plugin](/docs/appflow/deploy/setup/)
-* [Understanding Builds](/docs/appflow/deploy/builds/)
+* [Understanding Builds](/docs/appflow/builds)
 * [Understanding Channels](/docs/appflow/deploy/channels/)
 * [Advanced Usage with the Deploy API](/docs/appflow/deploy/api)
 * [Tutorials & Helpful Videos](/docs/appflow/deploy/tutorials)
-* [Deploy builds on Appflow using the Ionic CLI](/docs/appflow/deploy/cli.html)
+* [Deploy builds on Appflow using the Ionic CLI](/docs/appflow/deploy/cli)

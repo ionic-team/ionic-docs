@@ -17,7 +17,7 @@ some predefined variables which are key/value pairs that are made available in
 the environment and are available by using
 [process.env.MY_VAR](https://nodejs.org/docs/latest-v8.x/api/process.html#process_process_env) syntax
 in NodeJS or via `$MY_VAR` syntax in a standard shell script.
-These variables can be leveraged to [customize the build and outputs](#example-environment-usage).
+These variables can be leveraged to [customize the build and outputs](#usage).
 
 The following environment variables are provided in every build, which can be accessed in build scripts:
 
@@ -42,7 +42,7 @@ or to build different white labeled versions of your application.
 To get started with custom environments, open the app you wish to work on and navigate in the sidebar to
 **Automate -> Environments**, then click **New Environment** on the top right. You should see a form like this:
 
-<img src="/img/pro/ss-environments-create.png" class="browser" />
+![Create Environment Form](/docs/assets/img/appflow/ss-environments-create.png)
 
 As can be noticed, there are 2 different sets of environment variables sections that can be utilized:
 * Secrets
@@ -53,8 +53,7 @@ the variables are always available to be read.
 
 The environments dashboard also lists available custom environments along with their configured key/value pairs and secrets keys.
 
-<img src="/img/pro/ss-environments-list.png" class="browser" />
-
+![Environments List View](/docs/assets/img/appflow/ss-environments-list.png)
 
 ## Usage
 For example you could replace your `build` script in the `package.json` with a custom shell script that

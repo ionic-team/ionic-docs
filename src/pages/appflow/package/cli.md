@@ -72,7 +72,7 @@ this will prompt for the desired platform (`ios`/`android`) and build type speci
 For iOS or Android `release` builds, a valid security profile is required and can be specified
 using the `--security-profile=<name>` option.
 
-To setup valid security profiles see [here](/docs/appflow/package/profiles.html).
+To setup valid security profiles see [here](/docs/appflow/package/credentials).
 
 The previous command can be execute in one single step, for instance
 
@@ -91,7 +91,7 @@ The Options available to customize the build:
 * `--environment=<name>` to specify the group of environment variables to be exposed to the build
 (available only with Automation; more info about environments are available [here](/docs/appflow/environments/))
 * `--native-config=<name>` to specify the group of native config variables to be exposed to your
-build (more info about native configs are available [here](/docs/appflow/package/#native-configs))
+build (more info about native configs are available [here](/docs/appflow/package/intro/#native-configs))
 
 
 ### Customize the package build with Advanced Options
@@ -117,11 +117,10 @@ Apart from the `--commit` options, all the others require the full name setup wi
 
 For the Security Profiles, Environments and Native Configs it is the Name
 
-<img src="/img/pro/cli/cli-security-profile-list.png" class="browser" />
-<img src="/img/pro/cli/cli-environments-list.png" class="browser" />
-<img src="/img/pro/cli/cli-native-config-list.png" class="browser" />
-
+![Security Profiles](/docs/assets/img/appflow/cli-security-profile-list.png)
+![Environments](/docs/assets/img/appflow/cli-environments-list.png)
+![Native Configs](/docs/assets/img/appflow/cli-native-config-list.png)
 
 For the Target Platform, it is one of the strings identifying the platform in the Applflow Package Build Form.
 
-<img src="/img/pro/cli/cli-target-platform.png" class="browser" />
+![Target Platform](/docs/assets/img/appflow/cli-target-platform.png)

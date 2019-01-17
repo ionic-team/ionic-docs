@@ -19,11 +19,11 @@ Ionic Appflow to needs access to your source code to build native binaries and r
 Using Git allows you to specify the exact versions of your app which you would like to operate on.
 There are two ways in which you can give Ionic Appflow access you your source code and Git versioning history.
 
-* [GitHub & Bitbucket Cloud Integration](#github--bitbucket-cloud-integration)
-* [Ionic Git Remote](#ionic-git)
+* [GitHub and Bitbucket Cloud Integration](#github-and-bitbucket-cloud-integration)
+* [Ionic Git Remote](#using-ionic-as-a-git-remote)
 
 
-## GitHub & Bitbucket Cloud Integration
+## GitHub and Bitbucket Cloud Integration
 
 If you are already using [GitHub](https://github.com/) or [Bitbucket Cloud](https://bitbucket.org/)
 you can link your repository with your Ionic Appflow app to push code automatically.
@@ -32,9 +32,7 @@ GitHub or Bitbucket Cloud. Navigate to the `Git` section of the app settings tab
 Ionic Appflow dashboard choose the tab of the correct integration. If this is your first time connecting
 you'll need to click the `Connect` button. Then you can choose the repository to link from the list of available repos.
 
-<div style="text-align: center">
-  <img style="width: 950px" src="/img/pro/github-connect-app.png?1">
-</div>
+![Git Settings](/docs/assets/img/appflow/github-connect-app.png)
 
 When you link the repository a webhook will be created for the repository
 and events will be sent to Ionic Appflow so that we can automatically trigger builds

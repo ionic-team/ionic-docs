@@ -10,7 +10,7 @@ Every app must register an ID with Apple.
 
 * Navigate to [Certificates, Identifiers & Profiles › Identifiers › App IDs](https://developer.apple.com/account/ios/identifier/bundle) in the [Apple Developer Center](https://developer.apple.com/account) and register a new App ID.
 
-<img src="/img/pro/ss-profiles-ios-app-id.png" class="browser" />
+![iOS App id](/docs/assets/img/appflow/ss-profiles-ios-app-id.png)
 
 * Under Explicit App ID, set the Bundle ID to the ID you've specified in your app's `config.xml` file. iOS Bundle IDs are represented as a reversed address, such as `com.ionicframework.MyIonicApp`.
 
@@ -20,7 +20,7 @@ Devices must be explicitly registered with Apple for sending push notifications 
 
 * Navigate to [Certificates, Identifiers & Profiles › Devices › All](https://developer.apple.com/account/ios/device/) in the [Apple Developer Center](https://developer.apple.com/account) and register a new Device.
 
-<img src="/img/pro/ss-profiles-ios-device-register-1.png" class="browser" />
+![iOS Register Device](/docs/assets/img/appflow/ss-profiles-ios-device-register-1.png)
 
 * Give your device a name and enter the device's UDID. [Find your UDID](/services/profiles/ios-udid.html).
 
@@ -32,7 +32,7 @@ Before you can get a certificate from Apple, you'll need to generate a certifica
 
 * Navigate to Keychain Access › Certificate Assistant › Request a Certificate From a Certificate Authority on your Mac.
 
-<img src="/img/pro/ss-profiles-ios-csr.png" />
+![iOS CSR](/docs/assets/img/appflow/ss-profiles-ios-csr.png)
 
 * Enter your name and email address. Leave the CA Email blank.
 * Select Saved to disk and hit continue. This will generate your `.certSigningRequest` file.
@@ -63,7 +63,7 @@ There are two types of Apple certificates: development and production. We'll gui
 
 * Navigate to [Certificates, Identifiers & Profiles › Certificates › Development](https://developer.apple.com/account/ios/certificate/development) in the [Apple Developer Center](https://developer.apple.com/account) and create a new certificate. Under Development, select iOS App Development.
 
-<img src="/img/pro/ss-profiles-ios-cert-1.png" />
+![iOS Cert](/docs/assets/img/appflow/ss-profiles-ios-cert-1.png)
 
 * Step through the steps. Upload the `.certSigningRequest` you created to generate a certificate. Then, download your certificate. It should be a `.cer` file.
 
@@ -74,7 +74,7 @@ Next, we'll need to convert the certificate from a `.cer` file to a `.p12` file.
 * Drag your `.cer` file into your login keychain.
 * Right click on your imported certificate and click Export.
 
-<img src="/img/pro/ss-profiles-ios-cert-2.png" />
+![iOS Cert](/docs/assets/img/appflow/ss-profiles-ios-cert-2.png)
 
 * Select Personal Information Exchange (.p12) for File Format.
 * Save the certificate, giving it a strong password.
@@ -100,7 +100,7 @@ Provisioning profiles give your app access to be installed, or *provisioned*, on
 
 * Navigate to [Certificates, Identifiers & Profiles › Provisioning Profiles › Development](https://developer.apple.com/account/ios/profile/limited) in the [Apple Developer Center](https://developer.apple.com/account) and create a new provisioning profile.
 
-<img src="/img/pro/ss-profiles-ios-pp-1.png" class="browser" />
+![iOS Provisioning Profile](/docs/assets/img/appflow/ss-profiles-ios-pp-1.png)
 
 * Under **Development**, select **iOS App Development**.
 * Select the correct App ID (with the Bundle ID matching your app's `config.xml` file)

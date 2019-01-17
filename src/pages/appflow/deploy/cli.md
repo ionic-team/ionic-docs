@@ -97,5 +97,5 @@ Apart from the `--commit` options, all the others require the full name setup wi
 
 For the Environments and Channels it is the Name
 
-<img src="/img/pro/cli/cli-environments-list.png" class="browser" />
-<img src="/img/pro/cli/cli-channels-list.png" class="browser" />
+![CLI Environments List](/docs/assets/img/appflow/cli-environments-list.png)
+![CLI Channels List](/docs/assets/img/appflow/cli-channels-list.png)

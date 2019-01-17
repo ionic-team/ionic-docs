@@ -1,6 +1,6 @@
 # Getting Started with Ionic Appflow
 
-If you're new to Ionic Appflow, please read the [Welcome](/docs/appflow/basics/welcome/)
+If you're new to Ionic Appflow, please read the [Welcome](/docs/appflow)
 introduction for a quick overview of Ionic Appflow and instructions on creating an account.
 
 ## Install Ionic CLI
