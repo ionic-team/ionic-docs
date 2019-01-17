@@ -21,7 +21,8 @@ export class DocsPage {
   }
 
   @Watch('path')
-  fetchPage(path) {
+  fetchPage(path, oldPath?) {
+    if (path == null || path === oldPath) return;
     return fetch(path)
       .then(this.validateFetch)
       .then(this.handleNewPage)
