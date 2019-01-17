@@ -1,6 +1,6 @@
 # Understanding Webhooks
 
-When a webhook URL is specified for an automation, a POST is made every time a build completes.  Information is 
+When a webhook URL is specified for an automation, a POST is made every time a build completes.  Information is
 included about the build, as well as the user who triggered it and the commit that it was built from.
 
 ## Webhook Body
@@ -183,15 +183,15 @@ Below are example webhook json payloads:
 
 ## Responding to Webhooks
 
-The server will automatically attempt a retry if the webhook request does noe receive a status code of **200**.  
+The server will automatically attempt a retry if the webhook request does not receive a status code of **200**.
 
 ## Retries
 
-The server will retry the hook up to 5 times with an increasing delay between attempts (up to a delay of one hour) in 
+The server will retry the hook up to 5 times with an increasing delay between attempts (up to a delay of one hour) in
 the case where it does not receive a 200 response code.
 
 ## Signed Download URLs (Package Automations Only)
 
-The `downloadUrl` field in the webhook allows only this specific build to be downloaded, and will be signed with a 
-token that is valid for 24 hours.  There is no limit on the number of downloads, but after the time limit the endpoint 
+The `downloadUrl` field in the webhook allows only this specific build to be downloaded, and will be signed with a
+token that is valid for 24 hours.  There is no limit on the number of downloads, but after the time limit the endpoint
 will no longer function.

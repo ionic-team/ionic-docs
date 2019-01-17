@@ -12,12 +12,12 @@ and one for production.
 We'll guide you through creating a development profile with the credentials
 that you need for the desired platform below.
 
-* [Android credentials](/docs/pro/package/android)
-* [iOS credentials](/docs/pro/package/ios)
+* [Android credentials](/docs/appflow/package/android)
+* [iOS credentials](/docs/appflow/package/ios)
 
 ## Creating Security Profiles
 
-After you have generated your Security Profile, you must upload it to Ionic Pro. Navigate to your App, then click on Settings Tab and choose Certificates on the left hand side.
+After you have generated your Security Profile, you must upload it to Ionic Appflow. Navigate to your App, then click on Package Tab and choose Certificates on the left hand side.
 
 Click the **Add Profile** button to create a new Profile. Both iOS and Android certifications can be used with one Profile, so we recommend making things like "Real App Store Profile", etc.
 
