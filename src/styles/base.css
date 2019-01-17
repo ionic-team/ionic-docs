@@ -64,6 +64,7 @@ p.intro {
   color: var(--text-color--light);
   font-size: 1.2em;
   margin-bottom: 1.2em;
+  max-width: 40em;
 }
 
 p.intro code {
