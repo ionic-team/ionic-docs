@@ -22,7 +22,7 @@ docs-menu > header {
 }
 
 docs-menu > header .Logo {
-  color: var(--accent-color);
+  color: var(--text-color--dark);
   font-family: var(--heading-font-family);
   height: 25px;
 }

@@ -41,7 +41,7 @@ docs-header a {
 }
 
 docs-header .link-active {
-  color: var(--accent-color);
+  color: var(--text-color--dark);
 }
 
 @media (hover: hover) {
@@ -51,7 +51,7 @@ docs-header .link-active {
 }
 
 .Logo {
-  color: var(--accent-color);
+  color: var(--text-color--dark);
   font-family: var(--heading-font-family);
   height: 25px;
 }
