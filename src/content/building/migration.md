@@ -251,7 +251,7 @@ One upside is that for the most part, the Ionic UI components you know and love 
 
 Here are some considerations to review before beginning the upgrade:
 - **App complexity**: Naturally, the larger and more complex the app is, the longer it will take to migrate.
-- **Framework support**: In 2019, Ionic will release full support for React and Vue. You can also use Ionic Framework components [without a framework](https://beta.ionicframework.com/docs/installation/cdn/). Since these are not production ready yet, we recommend sticking with Angular or waiting until the other framework support is available.
+- **Framework support**: In 2019, Ionic will release full support for React and Vue. You can also use Ionic Framework components [without a framework](/docs/installation/cdn/). Since these are not production ready yet, we recommend sticking with Angular or waiting until the other framework support is available.
 - **Budget and team makeup**: The length of a migration project will vary based on the size of your team, the complexity of the app, and the amount of time allotted to make the transition.
 
 ### Suggested Strategy
