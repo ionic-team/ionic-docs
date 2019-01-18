@@ -43,9 +43,9 @@ export class DocsHeader {
           <stencil-route-link url="/docs/native">Native</stencil-route-link>
         </nav>
         <nav class="UtilNav">
-          <a href="https://ionicframework.com/support">Support</a>
-          <a href="https://ionicframework.com/community">Community</a>
-          <a class="outbound" href="https://github.com/ionic-team/ionic">GitHub <Outbound/></a>
+          <a href="https://ionicframework.com/support" target="_blank">Support</a>
+          <a href="https://ionicframework.com/community" target="_blank">Community</a>
+          <a class="outbound" href="https://github.com/ionic-team/ionic" target="_blank">GitHub <Outbound/></a>
         </nav>
       </header>
     );
