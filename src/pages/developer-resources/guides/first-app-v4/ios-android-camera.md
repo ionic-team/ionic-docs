@@ -16,10 +16,17 @@ The Ionic DevApp is a free app that makes it easy to run your Ionic app directly
 <a href="https://itunes.apple.com/us/app/ionic-devapp/id1233447133?ls=1&mt=8" ><img src="/docs/assets/img/guides/first-app-v3/appstore.png"></a>
 <a href="https://play.google.com/store/apps/details?id=io.ionic.devapp&hl=en" ><img src="/docs/assets/img/guides/first-app-v3/playstore.png"></a>
 
+To run your app on DevApp, you will first need to add a reference to cordova.js in your index.html file. Open up the file at src/index.html and add the following tag into the &lt;head&gt; section.
+
+```html
+<script src="cordova.js"></script>
+```
+> Note: Usually doing a cordova build will add this script tag into the index.html file for us. But since we are skipping that step and using DevApp, we have to do it manually ourselves.
+
 Afterwards, open a terminal and navigate to your Ionic project. Execute the following:
 
 ```shell
-$ ionic serve -c
+$ ionic serve
 ```
 
 In DevApp, you should now see the app appear. If it doesn't, or you have any issues throughout creating this app, [see here](https://ionicframework.com/docs/pro/devapp/).
@@ -52,7 +59,7 @@ $ npm install --save @ionic-native/camera@beta
 
 In `package.json`, you’ll notice a new JavaScript dependency has been added, with a version number similar to the following:
 
-`"@ionic-native/camera": "^5.0.0-beta.21"`
+`"@ionic-native/camera": "^5.0.0-beta.23"`
 
 Next, run this command to add the native iOS and Android code, effectively allowing the Camera to work on a mobile device. For more info on how this works, read up on [Cordova](https://cordova.apache.org/docs/en/latest/guide/overview/) and [Ionic Native](https://beta.ionicframework.com/docs/native).
 
