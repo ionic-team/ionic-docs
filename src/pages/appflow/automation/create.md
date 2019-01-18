@@ -26,6 +26,13 @@ All automations need a name and git branch to trigger from. Whenever code is pus
 
 In addition to name and git branches, automations have a number of customizations available depending on the type of job selected.
 
+##### Note about Git Branch naming
+It is possible to specify one or multiple `*` wildcards character to match multiple branches within a single automation; for instance:
+
+* a branch simply set to `*` will match all the branches and will trigger the automation for any single git push
+* a branch set to `dev*` will match any branch with a name starting with `dev` including `dev` itself
+* a branch set to `dev*other` will match any branch with a name starting with `dev` and ending with `other` including `devother`
+
 ### Package Automations
 
 Package automations create native builds which can be downloaded and run on devices. They have the following customizations:
