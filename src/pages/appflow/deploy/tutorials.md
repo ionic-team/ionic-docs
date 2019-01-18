@@ -2,7 +2,7 @@
 
 ## Setup and Deploy on iOS
 
-<script src="https://fast.wistia.com/embed/medias/2702mkf530.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_embed wistia_async_2702mkf530" style="height:400px;width:640px">&nbsp;</div>
+<wistia-video id="2702mkf530"></wistia-video>
 
 Learn how to install, configure, and deploy your first live update.
 
@@ -11,7 +11,9 @@ Learn how to install, configure, and deploy your first live update.
 Here are the steps in order to successfully upgrade to the new version of the Pro Client, Deploy Plugin, and Webview Plugin.
 You can follow the guide below or watch this video:
 
-<script src="https://ionicpro.wistia.com/medias/0o27tfvoam.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_embed wistia_async_0o27tfvoam" style="height:400px;width:640px">&nbsp;</div>
+<wistia-video id="0o27tfvoam"></wistia-video>
+
+<script>console.log('hey')</script>
 
 ### Deploy Upgrade Guide
 You'll need specific versions of each of the following libraries:
@@ -43,26 +45,13 @@ In the following video tutorial, and code snippets we use the Deploy API to set 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/I7PC3O4q1ug?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ### Choose your Integration Type:
-
-<div style="margin-top:15px;">
-
-<!-- Nav tabs -->
-<ul class="nav nav-tabs" role="tablist">
-<li role="ionic2" class="active"><a href="#ionic2" aria-controls="ionic2" role="tab" data-toggle="tab">Ionic 2/3</a></li>
-<li role="ionic1"><a href="#ionic1" aria-controls="ionic1" role="tab" data-toggle="tab">Ionic 1</a></li>
-</ul>
-
-<!-- Tab panes -->
-<div class="tab-content">
-<div role="tabpanel" class="tab-pane active" id="ionic2">
-
-<div markdown="1">
-
-<!-- HERE IS WHERE IONIC 2+ CONTENT GOES -->
-
 Here's an example template/JS for a page where we allow users to toggle to pull from a Beta Channel instead of Production and apply updates immediately when they toggle:
 
-```html {% raw %}
+<docs-tabs tabs="Ionic 2/3, Ionic 1">
+<div slot="Ionic23">
+<!-- HERE IS WHERE IONIC 2+ CONTENT GOES -->
+
+```html
 <!-- settings.html -->
 <ion-header>
   <ion-navbar>
@@ -83,7 +72,6 @@ Here's an example template/JS for a page where we allow users to toggle to pull 
   </ion-item>
 
 </ion-content>
-{% endraw %}
 ```
 
 ```js
@@ -172,20 +160,10 @@ export class SettingsPage {
 
 }
 ```
-<!-- END IONIC 2+ CONTENT -->
-
 </div>
+<div slot="Ionic1">
 
-</div>
-<div role="tabpanel" class="tab-pane" id="ionic1">
-
-<div markdown="1">
-
-<!-- HERE IS WHERE IONIC 1 CONTENT GOES -->
-
-Here's an example template/JS for a page where we allow users to toggle to pull from a Beta Channel instead of Production and apply updates immediately when they toggle:
-
-```html {% raw %}
+```html
 <!-- settings.html -->
 <ion-view view-title="Settings">
   <ion-content>
@@ -199,7 +177,6 @@ Here's an example template/JS for a page where we allow users to toggle to pull 
     </ion-list>
   </ion-content>
 </ion-view>
-{% endraw %}
 ```
 
 ```js
@@ -238,7 +215,7 @@ Here's an example template/JS for a page where we allow users to toggle to pull 
     */
 
     Pro.deploy.checkForUpdate().then(function(update){
-     if (update.available){
+    if (update.available){
       $scope.data.downloadProgress = 0;
       Pro.deploy.downloadUpdate(function(progress){
         $timeout(function(){
@@ -257,7 +234,7 @@ Here's an example template/JS for a page where we allow users to toggle to pull 
         // Here's how we would log it to Ionic Pro Monitoring while also catching:
         Pro.monitoring.exception(err);
       })
-     }
+    }
     }, function(err){
       // We encountered an error.
       // Here's how we would log it to Ionic Pro Monitoring while also catching:
@@ -286,6 +263,4 @@ Here's an example template/JS for a page where we allow users to toggle to pull 
 })
 ```
 </div>
-</div>
-</div>
-</div>
+</docs-tabs>

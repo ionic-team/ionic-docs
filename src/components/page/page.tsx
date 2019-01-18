@@ -57,7 +57,6 @@ export class DocsPage {
 
   render() {
     const { page } = this;
-
     if (this.badFetch) {
       return errorTemplate(this.badFetch);
     }

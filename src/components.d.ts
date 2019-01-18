@@ -129,6 +129,13 @@ export namespace Components {
     'initial'?: string;
     'tabs'?: string;
   }
+
+  interface WistiaVideo {
+    'id': string;
+  }
+  interface WistiaVideoAttributes extends StencilHTMLAttributes {
+    'id'?: string;
+  }
 }
 
 declare global {
@@ -151,6 +158,7 @@ declare global {
     'DocsSearch': Components.DocsSearch;
     'DocsTableOfContents': Components.DocsTableOfContents;
     'DocsTabs': Components.DocsTabs;
+    'WistiaVideo': Components.WistiaVideo;
   }
 
   interface StencilIntrinsicElements {
@@ -172,6 +180,7 @@ declare global {
     'docs-search': Components.DocsSearchAttributes;
     'docs-table-of-contents': Components.DocsTableOfContentsAttributes;
     'docs-tabs': Components.DocsTabsAttributes;
+    'wistia-video': Components.WistiaVideoAttributes;
   }
 
 
@@ -283,6 +292,12 @@ declare global {
     new (): HTMLDocsTabsElement;
   };
 
+  interface HTMLWistiaVideoElement extends Components.WistiaVideo, HTMLStencilElement {}
+  var HTMLWistiaVideoElement: {
+    prototype: HTMLWistiaVideoElement;
+    new (): HTMLWistiaVideoElement;
+  };
+
   interface HTMLElementTagNameMap {
     'docs-card': HTMLDocsCardElement
     'docs-cards': HTMLDocsCardsElement
@@ -302,6 +317,7 @@ declare global {
     'docs-search': HTMLDocsSearchElement
     'docs-table-of-contents': HTMLDocsTableOfContentsElement
     'docs-tabs': HTMLDocsTabsElement
+    'wistia-video': HTMLWistiaVideoElement
   }
 
   interface ElementTagNameMap {
@@ -323,6 +339,7 @@ declare global {
     'docs-search': HTMLDocsSearchElement;
     'docs-table-of-contents': HTMLDocsTableOfContentsElement;
     'docs-tabs': HTMLDocsTabsElement;
+    'wistia-video': HTMLWistiaVideoElement;
   }
 
 

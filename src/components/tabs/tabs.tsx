@@ -13,7 +13,7 @@ export class TabGroup {
 
   componentWillLoad() {
     if (this.tabs && this.tabs.trim().length) {
-      this.tabList = this.tabs.split(/[^\w-]+/);
+      this.tabList = this.tabs.split(/[^\w/-\s]+/);
       this.selected = this.tabList.indexOf(this.initial) >= 0
         ? this.initial
         : this.tabList[0];
@@ -44,7 +44,7 @@ export class TabGroup {
         'tab': true,
         'is-selected': this.selected === tabName
         }}>
-          <slot name={tabName}/>
+          <slot name={tabName.replace(/[\s/]/g, '')}/>
       </div>
     );
   }

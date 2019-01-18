@@ -1,3 +1,8 @@
+---
+nextText: 'Foo'
+nextUrl: '/docs/appflow/basics/getting-started'
+---
+
 # Welcome to Ionic Appflow
 
 Ionic Appflow makes it easier to generate native apps, ship real-time updates, streamline build processes,
