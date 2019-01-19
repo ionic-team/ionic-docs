@@ -159,7 +159,7 @@ For more information on customizing with grid, see the [Grid](/docs/layout/grid)
 
 ## Storage
 
-Most apps at some point will need to store some sort of data locally. Whether it’s storing some json from an XHR request, or saving an auth token, there are many different storage options available. On top of this, the app is running in a native environment, it is possible to create a full SQLite database and store data there. All of these different storage mechanisms have their own advantages and disadvantages, but Ionic developers should not have to worry about that.
+Most apps at some point will need to store some sort of data locally. Whether it’s storing some JSON from an XHR request, or saving an auth token, there are many different storage options available. On top of this, the app is running in a native environment, it is possible to create a full SQLite database and store data there. All of these different storage mechanisms have their own advantages and disadvantages, but Ionic developers should not have to worry about that.
 
 ### Ionic Storage
 
