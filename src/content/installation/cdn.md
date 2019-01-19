@@ -21,7 +21,7 @@ Not using Angular? Ionic can also be used directly from a CDN using a simple scr
 
 It's recommended to use [unpkg](https://unpkg.com) to access the Framework from a CDN. To get the latest version, add the following `script` tag inside the `<head></head>` element in an HTML file:
 
-```javascript
+```html
 <script src="https://unpkg.com/@ionic/core@latest/dist/ionic.js"></script>
 ```
 
@@ -38,7 +38,7 @@ With this it's possible to use all of the Ionic components without having to ins
 
 If you're using Ionic Framework, Ionicons is packaged by default, so no installation is necessary. Want to use Ionicons without Ionic Framework? Place the following `<script>` near the end of your page, right before the closing `</body>` tag,to enable them.
 
-```javascript
+```html
 <script src="https://unpkg.com/ionicons@4.0.0/dist/ionicons.js"></script>
 ```
 
