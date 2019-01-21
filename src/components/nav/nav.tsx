@@ -7,7 +7,7 @@ import { Outbound } from '../../icons';
   styleUrl: 'nav.css'
 })
 export class DocsNav {
-  @Prop() items: MenuItems;
+  @Prop() items: MenuItems = {};
 
   toItem = ([text, value]) => {
     switch (typeof value) {
