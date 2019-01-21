@@ -14,7 +14,7 @@ import errorTemplate from './templates/error';
 export class DocsPage {
   @Prop() path: string;
   @State() badFetch: Response = null;
-  @State() page: Page;
+  @State() page: Page = { title: null, body: null };
 
   componentWillLoad() {
     return this.fetchPage(this.path);

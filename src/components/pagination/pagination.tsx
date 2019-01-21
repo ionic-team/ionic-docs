@@ -7,7 +7,7 @@ import { Page } from '../../definitions';
   styleUrl: 'pagination.css'
 })
 export class DocsPagination {
-  @Prop() page: Page;
+  @Prop() page: Page = { title: null, body: null };
 
   render() {
     const {
