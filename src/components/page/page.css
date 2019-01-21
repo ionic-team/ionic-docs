@@ -17,7 +17,7 @@ docs-page main {
 }
 
 docs-page .full-screen {
-  height: calc(100vh - var(--header-height));
+  height: calc(100vh - var(--header-height) - 3rem);
   width: calc(100vw - var(--menu-width));
   max-width: none;
   overflow: hidden;
