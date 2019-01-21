@@ -37,7 +37,7 @@ docs-header nav > *:not(:last-child) {
 
 docs-header a {
   color: inherit;
-  padding: 5px 0;
+  padding: 10px 0;
 }
 
 docs-header .link-active {
