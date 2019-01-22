@@ -1,3 +1,10 @@
+---
+previousText: 'Intro'
+previousUrl: '/docs/appflow/automation/intro'
+nextText: 'Environments'
+nextUrl: '/docs/appflow/automation/environments'
+---
+
 # Using Automations
 
 ## Managing Automations

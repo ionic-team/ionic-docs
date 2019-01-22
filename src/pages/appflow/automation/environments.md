@@ -1,3 +1,10 @@
+---
+previousText: 'Create Automations'
+previousUrl: '/docs/appflow/automation/create'
+nextText: 'Webhooks'
+nextUrl: '/docs/appflow/automation/webhooks'
+---
+
 # Build Environments
 
 ## Introduction

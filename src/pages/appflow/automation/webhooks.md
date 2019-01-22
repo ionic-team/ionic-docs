@@ -1,3 +1,10 @@
+---
+previousText: 'Environments'
+previousUrl: '/docs/appflow/automation/environments'
+nextText: 'Cookbook'
+nextUrl: '/docs/appflow/cookbook/private_git'
+---
+
 # Understanding Webhooks
 
 When a webhook URL is specified for an automation, a POST is made every time a build completes.  Information is

@@ -1,5 +1,33 @@
-# iOS Certificates and Provisioning Profiles
+---
+previousText: 'Introduction'
+previousUrl: '/docs/appflow/package/intro'
+nextText: 'Adding Credentials'
+nextUrl: '/docs/appflow/package/adding-credentials'
+---
 
+# Generating Credentials
+
+Security Profiles securely store your credentials so you can easily reference
+them when building your app in the cloud.
+
+## Overview
+
+You'll need two sets of Apple certificates when your app goes to production,
+which means you'll eventually need two Security Profiles: one for development
+and one for production.
+
+We'll guide you through creating a development profile with the credentials
+that you need for the desired platform below.
+
+
+## Android Credentials
+The [Android keystore](https://developer.android.com/training/articles/keystore.html), used for signing apps, can be generated using keytool, which is included in the [Java JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html). Change `MY-RELEASE-KEY` and `MY_ALIAS_NAME` to be relevant to your app. The tool will ask you to enter a keystore password and a key password.
+
+```bash
+$ keytool -genkey -v -keystore MY-RELEASE-KEY.keystore -alias MY_ALIAS_NAME -keyalg RSA -keysize 2048 -validity 10000
+```
+
+## iOS Credentials
 You'll need an Apple Developer account (Individual or Organization). See
 [comparing
 memberships](https://developer.apple.com/support/compare-memberships/).
@@ -51,13 +79,13 @@ $ openssl genrsa -out keyname.key 2048
 $ openssl req -new -key keyname.key -out CertificateSigningRequest.certSigningRequest
 ```
 
-## iOS App Certificate & Provisioning Profile
+### iOS App Certificate & Provisioning Profile
 
 Before you can generate App Certificates & Provisioning Profiles, you'll need to [register your app and any devices, and obtain a `.certSigningRequest`](#ios-setup).
 
 App Certificates & Provisioning Profiles are for signing your app and giving it access to certain devices.
 
-### Certificate
+#### Certificate
 
 There are two types of Apple certificates: development and production. We'll guide you through generating credentials with a development certificate.
 

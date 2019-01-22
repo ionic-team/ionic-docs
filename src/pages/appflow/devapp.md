@@ -1,3 +1,8 @@
+---
+previousText: 'Cookbook'
+previousUrl: '/docs/appflow/cookbook/private_npm_modules'
+---
+
 # Ionic DevApp
 
 The Ionic DevApp is a free app that makes it easy to run your Ionic app directly on your iOS or Android device.

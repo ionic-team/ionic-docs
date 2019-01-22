@@ -1,3 +1,10 @@
+---
+previousText: 'Intro'
+previousUrl: '/docs/appflow/deploy/intro'
+nextText: 'Deploy Builds'
+nextUrl: '/docs/appflow/deploy/builds'
+---
+
 # Using Ionic Deploy
 
 Ionic Appflow's Deploy feature makes it easy to deploy app updates in real time without going through a

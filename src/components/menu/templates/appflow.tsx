@@ -9,19 +9,12 @@ const items = {
   },
   'Builds': {
     'Introduction': '/docs/appflow/builds',
-    'Deploy Builds': '/docs/appflow/builds/#deploy-builds',
-    'Package Builds': '/docs/appflow/builds/#package-builds',
     'Concurrency Limits': '/docs/appflow/builds/#concurrency-limits'
-  },
-  'Build Environments': {
-    'Introduction': '/docs/appflow/environments',
-    'Predefined Environments': '/docs/appflow/environments/#predefined-environments',
-    'Custom Environments': '/docs/appflow/environments/#custom-environments',
-    'Usage': '/docs/appflow/environments/#usage'
   },
   'Deploy': {
     'Introduction': '/docs/appflow/deploy/intro',
     'Setup': '/docs/appflow/deploy/setup',
+    'Deploy Builds': '/docs/appflow/deploy/builds',
     'Channels': '/docs/appflow/deploy/channels',
     'Deploy API': '/docs/appflow/deploy/api',
     'Tutorials and Videos': '/docs/appflow/deploy/tutorials',
@@ -29,15 +22,16 @@ const items = {
   },
   'Package': {
     'Introduction': '/docs/appflow/package/intro',
-    'Generating Credentials': '/docs/appflow/package/credentials',
-    'Adding Credentials': '/docs/appflow/package/credentials/#creating-security-profiles',
-    'Performing Builds': '/docs/appflow/package/intro#performing-a-build',
-    'Native Configurations': '/docs/appflow/package/intro#native-configs',
+    'Package Builds': '/docs/appflow/package/builds'
+    'Generating Credentials': '/docs/appflow/package/generating-credentials',
+    'Adding Credentials': '/docs/appflow/package/adding-credentials',
+    'Native Configurations': '/docs/appflow/package/native-configs',
     'Using Ionic CLI': '/docs/appflow/package/cli'
   },
-  'Automation': {
+  'Automations': {
     'Introduction': '/docs/appflow/automation/intro',
     'Create Automations': '/docs/appflow/automation/create',
+    'Environments': '/docs/appflow/automation/environments',
     'Webhooks': '/docs/appflow/automation/webhooks',
   },
   'Cookbook': {

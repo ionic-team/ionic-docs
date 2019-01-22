@@ -1,3 +1,10 @@
+---
+previousText: 'Environments'
+previousUrl: '/docs/appflow/environments'
+nextText: 'Setup'
+nextUrl: '/docs/appflow/deploy/setup'
+---
+
 # Deploy: push app updates in real-time
 
 Ionic Appflow's Live Deploy feature let you update the UI and business logic of your app remotely, in real-time.

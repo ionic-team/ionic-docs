@@ -1,3 +1,10 @@
+---
+previousText: 'Native Configurations'
+previousUrl: '/docs/appflow/package/native-configs'
+nextText: 'Automations'
+nextUrl: '/docs/appflow/automation/intro'
+---
+
 # Package builds on Appflow using the Ionic CLI
 
 It is possible to trigger package builds on Appflow directly from the CLI.

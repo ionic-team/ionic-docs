@@ -1,3 +1,10 @@
+---
+previousText: 'Setup'
+previousUrl: '/docs/appflow/deploy/setup'
+nextText: 'Deploy API'
+nextUrl: '/docs/appflow/deploy/api'
+---
+
 # Channels
 
 A Channel **points to a specific JavaScript Build or Web Build of your app**

@@ -1,3 +1,10 @@
+---
+previousText: 'Channels'
+previousUrl: '/docs/appflow/deploy/channels'
+nextText: 'Tutorials and Videos'
+nextUrl: '/docs/appflow/deploy/tutorials'
+---
+
 # Deploy API
 
 ## v4 Methods

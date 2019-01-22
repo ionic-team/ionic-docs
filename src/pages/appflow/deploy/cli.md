@@ -1,3 +1,10 @@
+---
+previousText: 'Tutorials and Videos'
+previousUrl: '/docs/appflow/deploy/tutorials'
+nextText: 'Package'
+nextUrl: '/docs/appflow/package/intro'
+---
+
 # Deploy builds on Appflow using the Ionic CLI
 
 
