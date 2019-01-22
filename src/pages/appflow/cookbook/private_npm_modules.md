@@ -1,11 +1,11 @@
 ---
-previousText: 'How to use Private GIT repositories belonging to users not owning the app codebase (GIT Credentials)'
+previousText: 'Using private GIT repositories'
 previousUrl: '/docs/appflow/cookbook/private_git'
 nextText: 'DevApp: Local Development'
 nextUrl: '/docs/appflow/devapp'
 ---
 
-# How to use private NPM modules
+# Using private NPM modules
 
 Get an authentication token using the npm CLI:
 
