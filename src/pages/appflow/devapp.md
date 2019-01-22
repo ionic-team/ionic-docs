@@ -19,14 +19,12 @@ The DevApp is available on iOS and Android.
 Enter your phone number below to text yourself an install link, or find the app on your app store of choice:
 
 <sms-form></sms-form>
-
-<div id="badges">
-  <a href="https://itunes.apple.com/us/app/ionic-devapp/id1233447133?ls=1&mt=8">
-    <img style="width: 148px" src="/img/pro/appstore.png" id="appstore-image">
+<div style="display:flex;">
+  <a href="https://itunes.apple.com/us/app/ionic-devapp/id1233447133?ls=1&amp;mt=8" target="_blank">
+    <img style="width: 160px" src="/docs/assets/img/appstore.png" id="appstore-image">
   </a>
-
-  <a href="https://play.google.com/store/apps/details?id=io.ionic.devapp&hl=en">
-    <img style="width: 180px" alt="Get it on Google Play" src="/img/pro/playstore.png" id="playstore-image">
+  <a href="https://play.google.com/store/apps/details?id=io.ionic.devapp&amp;hl=en" target="_blank">
+    <img style="width: 160px" alt="Get it on Google Play" src="/docs/assets/img/playstore.png" id="playstore-image">
   </a>
 </div>
 

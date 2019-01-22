@@ -1,7 +1,8 @@
 sms-form form {
   padding: 1.2em;
-  background: #F5F7FA;
+  background: #f5f8fb;
   border-radius: 8px;
+  margin-bottom: 1.8em;
 }
 
 sms-form h6 {
@@ -38,7 +39,7 @@ sms-form button {
   margin-top: 0.8em;
   padding: 0.75em 1em;
 
-  background-color: #4D8DFF;
+  background-color: #007fff;
   color: #fff;
   font-size: 12px;
   letter-spacing: -0.03em;
@@ -55,5 +56,5 @@ sms-form button {
 }
 
 sms-form button:hover {
-  background-color: #3e80f7;
+  background-color: #0373e4;
 }
