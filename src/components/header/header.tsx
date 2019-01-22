@@ -36,12 +36,7 @@ export class DocsHeader {
         <stencil-route-link url="/docs/">
           <Logo/>
         </stencil-route-link>
-        <nav class="SectionNav">
-          <stencil-route-link url="/docs/" urlMatch={guideTabMatch}>Guide</stencil-route-link>
-          <stencil-route-link url="/docs/components" urlMatch={componentsTabMatch}>Components</stencil-route-link>
-          <stencil-route-link url="/docs/cli">CLI</stencil-route-link>
-          <stencil-route-link url="/docs/native">Native</stencil-route-link>
-        </nav>
+        <docs-section-nav/>
         <nav class="UtilNav">
           <a href="https://ionicframework.com/support" target="_blank">Support</a>
           <a href="https://ionicframework.com/community" target="_blank">Community</a>
@@ -51,6 +46,3 @@ export class DocsHeader {
     );
   }
 }
-
-const componentsTabMatch = ['/docs/api', '/docs/components'];
-const guideTabMatch = /^\/docs\/(?!(api|components|cli|native)).*$/;

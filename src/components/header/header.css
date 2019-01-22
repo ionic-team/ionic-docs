@@ -4,6 +4,7 @@ docs-header {
   color: var(--text-color--light);
   display: block;
   font-size: 14px;
+  font-weight: 500;
   line-height: 1;
   position: fixed;
   top: 0;
@@ -54,28 +55,6 @@ docs-header .link-active {
   color: var(--text-color--dark);
   font-family: var(--heading-font-family);
   height: 25px;
-}
-
-.SectionNav {
-  height: 100%;
-}
-
-.SectionNav > * {
-  align-items: center;
-  display: flex;
-  height: 100%;
-  position: relative;
-}
-
-.SectionNav .link-active:after {
-  background-color: currentColor;
-  bottom: 0;
-  content: "";
-  display: block;
-  height: 2px;
-  left: 0;
-  position: absolute;
-  width: 100%;
 }
 
 .UtilNav {

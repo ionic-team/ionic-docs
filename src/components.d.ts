@@ -110,6 +110,9 @@ export namespace Components {
   interface DocsSearch {}
   interface DocsSearchAttributes extends StencilHTMLAttributes {}
 
+  interface DocsSectionNav {}
+  interface DocsSectionNavAttributes extends StencilHTMLAttributes {}
+
   interface DocsTableOfContents {
     'basepath': string;
     'label': string;
@@ -156,6 +159,7 @@ declare global {
     'DocsReference': Components.DocsReference;
     'DocsRoot': Components.DocsRoot;
     'DocsSearch': Components.DocsSearch;
+    'DocsSectionNav': Components.DocsSectionNav;
     'DocsTableOfContents': Components.DocsTableOfContents;
     'DocsTabs': Components.DocsTabs;
     'WistiaVideo': Components.WistiaVideo;
@@ -178,6 +182,7 @@ declare global {
     'docs-reference': Components.DocsReferenceAttributes;
     'docs-root': Components.DocsRootAttributes;
     'docs-search': Components.DocsSearchAttributes;
+    'docs-section-nav': Components.DocsSectionNavAttributes;
     'docs-table-of-contents': Components.DocsTableOfContentsAttributes;
     'docs-tabs': Components.DocsTabsAttributes;
     'wistia-video': Components.WistiaVideoAttributes;
@@ -280,6 +285,12 @@ declare global {
     new (): HTMLDocsSearchElement;
   };
 
+  interface HTMLDocsSectionNavElement extends Components.DocsSectionNav, HTMLStencilElement {}
+  var HTMLDocsSectionNavElement: {
+    prototype: HTMLDocsSectionNavElement;
+    new (): HTMLDocsSectionNavElement;
+  };
+
   interface HTMLDocsTableOfContentsElement extends Components.DocsTableOfContents, HTMLStencilElement {}
   var HTMLDocsTableOfContentsElement: {
     prototype: HTMLDocsTableOfContentsElement;
@@ -315,6 +326,7 @@ declare global {
     'docs-reference': HTMLDocsReferenceElement
     'docs-root': HTMLDocsRootElement
     'docs-search': HTMLDocsSearchElement
+    'docs-section-nav': HTMLDocsSectionNavElement
     'docs-table-of-contents': HTMLDocsTableOfContentsElement
     'docs-tabs': HTMLDocsTabsElement
     'wistia-video': HTMLWistiaVideoElement
@@ -337,6 +349,7 @@ declare global {
     'docs-reference': HTMLDocsReferenceElement;
     'docs-root': HTMLDocsRootElement;
     'docs-search': HTMLDocsSearchElement;
+    'docs-section-nav': HTMLDocsSectionNavElement;
     'docs-table-of-contents': HTMLDocsTableOfContentsElement;
     'docs-tabs': HTMLDocsTabsElement;
     'wistia-video': HTMLWistiaVideoElement;
