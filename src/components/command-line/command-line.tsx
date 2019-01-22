@@ -5,7 +5,7 @@ import { Component, Prop } from '@stencil/core';
   styleUrl: 'command-line.css'
 })
 export class CommandLine {
-  @Prop() nobuttons: boolean;
+  @Prop({ reflectToAttr: true }) nobuttons: boolean;
 
   renderButtons() {
     return (

@@ -1,5 +1,6 @@
 command-prompt {
   display: block;
+  white-space: nowrap;
 }
 
 command-prompt:before {

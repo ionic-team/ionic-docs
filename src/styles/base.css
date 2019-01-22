@@ -60,19 +60,19 @@ a.outbound svg {
   margin-bottom: -0.15em;
 }
 
-p.intro {
+.intro {
   color: var(--text-color--light);
   font-size: 1.2em;
   margin-bottom: 1.2em;
   max-width: 40em;
 }
 
-p.intro code {
+.intro code {
   font-size: 15px;
   font-weight: 500;
 }
 
-p.intro strong {
+.intro strong {
   font-weight: 500;
   color: var(--text-color);
 }
