@@ -1227,7 +1227,7 @@
         "cordova"
       ],
       "summary": "Automatically create icon and splash screen resources",
-      "description": "Ionic can automatically generate perfectly sized icons and splash screens from source images (**.png**, **.psd**, or **.ai**) for your Cordova platforms.\n\nThe source image for icons should ideally be at least **1024×1024px** and located at **resources/icon.png**. The source image for splash screens should ideally be at least **2732×2732px** and located at **resources/splash.png**. If you used `ionic start`, there should already be default Ionic resources in the **resources/** directory, which you can overwrite.\n\nYou can also generate platform-specific icons and splash screens by placing them in the respective **resources/&lt;platform&gt;/** directory. For example, to generate an icon for Android, place your image at **resources/android/icon.png**.\n\nBy default, this command will not regenerate resources whose source image has not changed. To disable this functionality and always overwrite generated images, use `--force`.\n\nFor best results, the splash screen's artwork should roughly fit within a square (**1200×1200px**) at the center of the image. You can use **[https://code.ionicframework.com/resources/splash.psd](https://code.ionicframework.com/resources/splash.psd)** as a template for your splash screen.\n\n`ionic cordova resources` will automatically update your **config.xml** to reflect the changes in the generated images, which Cordova then configures.\n\nCordova reference documentation:\n- Icons: **[https://cordova.apache.org/docs/en/latest/config_ref/images.html](https://cordova.apache.org/docs/en/latest/config_ref/images.html)**\n- Splash Screens: **[https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-splashscreen/](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-splashscreen/)**\n\nThis command uses Ionic servers, so we require you to be logged into your free Ionic account. Use `ionic login` to login.",
+      "description": "Ionic can automatically generate perfectly sized icons and splash screens from source images (**.png**, **.psd**, or **.ai**) for your Cordova platforms.\n\nThe source image for icons should ideally be at least **1024×1024px** and located at **resources/icon.png**. The source image for splash screens should ideally be at least **2732×2732px** and located at **resources/splash.png**. If you used `ionic start`, there should already be default Ionic resources in the **resources/** directory, which you can overwrite.\n\nYou can also generate platform-specific icons and splash screens by placing them in the respective **resources/<platform>/** directory. For example, to generate an icon for Android, place your image at **resources/android/icon.png**.\n\nBy default, this command will not regenerate resources whose source image has not changed. To disable this functionality and always overwrite generated images, use `--force`.\n\nFor best results, the splash screen's artwork should roughly fit within a square (**1200×1200px**) at the center of the image. You can use **[https://code.ionicframework.com/resources/splash.psd](https://code.ionicframework.com/resources/splash.psd)** as a template for your splash screen.\n\n`ionic cordova resources` will automatically update your **config.xml** to reflect the changes in the generated images, which Cordova then configures.\n\nCordova reference documentation:\n- Icons: **[https://cordova.apache.org/docs/en/latest/config_ref/images.html](https://cordova.apache.org/docs/en/latest/config_ref/images.html)**\n- Splash Screens: **[https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-splashscreen/](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-splashscreen/)**\n\nThis command uses Ionic servers, so we require you to be logged into your free Ionic account. Use `ionic login` to login.",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [
@@ -1643,7 +1643,7 @@
         "doctor"
       ],
       "summary": "List all issues and their identifiers",
-      "description": "Issues can have various tags:\n- **treatable**: `ionic doctor treat` can attempt to fix the issue\n- **ignored**: configured not to be detected in `ionic doctor check` or `ionic doctor treat`\n- **explicit-detection**: issue is only detected explicitly with `ionic doctor check &lt;issue-id&gt;`\n\nYou can flip whether an issue is ignored or not by using `ionic config set -g doctor.issues.&lt;issue-id&gt;.ignored true/false`, where `&lt;issue-id&gt;` matches an ID listed with this command.",
+      "description": "Issues can have various tags:\n- **treatable**: `ionic doctor treat` can attempt to fix the issue\n- **ignored**: configured not to be detected in `ionic doctor check` or `ionic doctor treat`\n- **explicit-detection**: issue is only detected explicitly with `ionic doctor check <issue-id>`\n\nYou can flip whether an issue is ignored or not by using `ionic config set -g doctor.issues.<issue-id>.ignored true/false`, where `<issue-id>` matches an ID listed with this command.",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [],
@@ -1687,7 +1687,7 @@
         "ionic"
       ],
       "summary": "Automatically create framework features",
-      "description": "This command uses the Angular CLI to generate features such as `pages`, `components`, `directives`, `services`, etc.\n\n - For a full list of available types, use `npx ng g --help`\n - For a list of options for a types, use `npx ng g &lt;type&gt; --help`\n\nYou can specify a path to nest your feature within any number of subdirectories. For example, specify a name of `\"pages/New Page\"` to generate page files at **src/app/pages/new-page/**.\n\nTo test a generator before file modifications are made, use the `--dry-run` option.",
+      "description": "This command uses the Angular CLI to generate features such as `pages`, `components`, `directives`, `services`, etc.\n\n - For a full list of available types, use `npx ng g --help`\n - For a list of options for a types, use `npx ng g <type> --help`\n\nYou can specify a path to nest your feature within any number of subdirectories. For example, specify a name of `\"pages/New Page\"` to generate page files at **src/app/pages/new-page/**.\n\nTo test a generator before file modifications are made, use the `--dry-run` option.",
       "footnotes": [],
       "groups": [
         "beta"
@@ -1726,7 +1726,7 @@
         "git"
       ],
       "summary": "Adds/updates the Ionic Appflow git remote to your local Ionic app",
-      "description": "This command is used by `ionic link` when Ionic Appflow is used as the git host.\n\n`ionic git remote` will check the local repository for whether or not the git remote is properly set up. This command operates on the **ionic** remote. For advanced configuration, see **Settings** =&gt; **Git** in the app settings of the [Dashboard](https://dashboard.ionicframework.com).",
+      "description": "This command is used by `ionic link` when Ionic Appflow is used as the git host.\n\n`ionic git remote` will check the local repository for whether or not the git remote is properly set up. This command operates on the **ionic** remote. For advanced configuration, see **Settings** => **Git** in the app settings of the [Dashboard](https://dashboard.ionicframework.com).",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [],
@@ -2491,7 +2491,7 @@
         "ssh"
       ],
       "summary": "Setup your Ionic Appflow SSH keys automatically",
-      "description": "This command offers a setup wizard for Ionic Appflow SSH keys using a series of prompts. For more control, see the commands available for managing SSH keys with the `ionic ssh --help` command. For an entirely manual approach, see **Personal Settings** =&gt; **SSH Keys** in the [Dashboard](https://dashboard.ionicframework.com/settings/ssh-keys).\n\nIf you are having issues setting up SSH keys, please get in touch with our [Support](https://ion.link/support-request).",
+      "description": "This command offers a setup wizard for Ionic Appflow SSH keys using a series of prompts. For more control, see the commands available for managing SSH keys with the `ionic ssh --help` command. For an entirely manual approach, see **Personal Settings** => **SSH Keys** in the [Dashboard](https://dashboard.ionicframework.com/settings/ssh-keys).\n\nIf you are having issues setting up SSH keys, please get in touch with our [Support](https://ion.link/support-request).",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [],
