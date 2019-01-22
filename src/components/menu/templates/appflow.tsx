@@ -22,7 +22,7 @@ const items = {
   },
   'Package': {
     'Introduction': '/docs/appflow/package/intro',
-    'Package Builds': '/docs/appflow/package/builds'
+    'Package Builds': '/docs/appflow/package/builds',
     'Generating Credentials': '/docs/appflow/package/credentials',
     'Adding Credentials': '/docs/appflow/package/adding-credentials',
     'Native Configurations': '/docs/appflow/package/native-configs',
