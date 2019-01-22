@@ -25,6 +25,7 @@ export interface Page {
   title: string;
   path: string;
   body: string;
+  skipIntros?: boolean;
   [key: string]: any;
 }
 
@@ -54,11 +55,13 @@ function patchPage(page: Page): Page {
     h1.remove();
   }
 
-  for (let i = 0, children = [...body.children]; i < children.length; i++) {
-    if (children[i].tagName === 'P') {
-      children[i].classList.add('intro');
-    } else {
-      break;
+  if (!page.skipIntros) {
+    for (let i = 0, children = [...body.children]; i < children.length; i++) {
+      if (children[i].tagName === 'P') {
+        children[i].classList.add('intro');
+      } else {
+        break;
+      }
     }
   }
 
