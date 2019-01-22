@@ -1,0 +1,13 @@
+{
+  "name": "Ionic Framework",
+  "short_name": "Ionic",
+  "start_url": "/docs/",
+  "display": "standalone",
+  "icons": [{
+    "src": "/docs/assets/img/icon.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }],
+  "background_color": "#16161d",
+  "theme_color": "#16161d"
+}
