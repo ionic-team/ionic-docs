@@ -1,6 +1,6 @@
 ---
 previousText: 'Generating Credentials'
-previousUrl: '/docs/appflow/package/generating-credentials'
+previousUrl: '/docs/appflow/package/credentials'
 nextText: 'Native Configurations'
 nextUrl: '/docs/appflow/package/native-configs'
 ---

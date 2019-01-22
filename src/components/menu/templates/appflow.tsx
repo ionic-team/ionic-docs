@@ -23,7 +23,7 @@ const items = {
   'Package': {
     'Introduction': '/docs/appflow/package/intro',
     'Package Builds': '/docs/appflow/package/builds'
-    'Generating Credentials': '/docs/appflow/package/generating-credentials',
+    'Generating Credentials': '/docs/appflow/package/credentials',
     'Adding Credentials': '/docs/appflow/package/adding-credentials',
     'Native Configurations': '/docs/appflow/package/native-configs',
     'Using Ionic CLI': '/docs/appflow/package/cli'

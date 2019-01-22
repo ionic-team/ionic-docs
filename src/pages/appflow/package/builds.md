@@ -2,7 +2,7 @@
 previousText: 'Introduction'
 previousUrl: '/docs/appflow/package/intro'
 nextText: 'Generating Credentials'
-nextUrl: '/docs/appflow/package/generating-credentials'
+nextUrl: '/docs/appflow/package/credentials'
 ---
 
 # Package Builds

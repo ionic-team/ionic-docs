@@ -1,5 +1,7 @@
-/                            /docs/                302
-/docs/pages/*                /docs/index.html      404
-/docs/*                      /docs/index.html      200
-/docs/pro/                   /docs/appflow         301
-/docs/pro/*                  /docs/appflow/:splat  301
+/                            /docs/                                 302
+/docs/pages/*                /docs/index.html                       404
+/docs/*                      /docs/index.html                       200
+/docs/pro/                   /docs/appflow                          301
+/docs/pro/*                  /docs/appflow/:splat                   301
+
+/docs/appflow/environments   /docs/appflow/automation/environments  301
