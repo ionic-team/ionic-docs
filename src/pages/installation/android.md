@@ -7,9 +7,7 @@ nextUrl: '/docs/building/starting'
 
 # Android Setup
 
-<p class="intro" markdown="1">
 To target the Android platform, some additional environment setup is required. Android apps can be created on Windows, macOS, and Linux.
-</p>
 
 ## Java
 
@@ -69,7 +67,7 @@ In `~/.bashrc`, `~/.bash_profile`, or similar shell startup scripts, make the fo
    </command-line>
 
    <blockquote>
-     <p>For `apksigner` and `zipalign`, `$ANDROID_SDK_ROOT/build-tools/<version>` must also be added to `PATH`.
+     <p>For `apksigner` and `zipalign`, `$ANDROID_SDK_ROOT/build-tools/<version>` must also be added to `PATH`.</p>
    </blockquote>
 
 ### Creating an Android Virtual Device
@@ -84,7 +82,9 @@ Click **Create Virtual Device** and select a suitable device definition. If unsu
 
 Once the AVD is created, launch the AVD into the Android emulator. Keeping the emulator running is the best way to ensure detection while developing Ionic apps for Android.
 
-<img alt="Android Emulator Booting" height="400" src="/docs/assets/img/installation/android-emulator-booting.png"/>
+<figure class="center" style="width: 300px">
+    ![Android Emulator Booting](/docs/assets/img/installation/android-emulator-booting.png)
+</figure>
 
 ### Set up an Android Device
 

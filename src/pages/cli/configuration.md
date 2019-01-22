@@ -6,12 +6,40 @@
 
 ## Files
 
-Configuration values are stored in JSON files.
+Configuration values are stored in JSON files. The Ionic CLI maintains a global configuration file, usually located at `~/.ionic/config.json`, and project configuration files, usually at the project's root directory as `ionic.config.json`.
 
-* Global config file (`~/.ionic/config.json`): for global CLI config and auth
-* Project config files (`ionic.config.json`): for Ionic project config
+The CLI provides commands for setting and printing config values from project config files and the global CLI config file. See `ionic config --help` or see the documentation for usage of [`ionic config get`](/docs/cli/commands/config-get) and [`ionic config set`](/docs/cli/commands/config-set).
 
-The CLI provides commands for setting and printing config values from project config files and the global CLI config file. See `ionic config set --help` and `ionic config get --help` for usage.
+### Project Configuration File
+
+Each Ionic project has a project configuration file, usually at the project's root directory. The following is an annotated `ionic.config.json` file.
+
+```json
+{
+  // The human-readable name of the app.
+  "name": "My App",
+
+  // The project type of the app. The CLI uses this value to determine which
+  // commands and command options are available, what to output for help
+  // documentation, and what to use for web asset builds and the dev server.
+  "type": "angular",
+
+  // The App ID for Ionic Appflow.
+  "id": "abc123",
+
+  // Configuration object for integrations such as Cordova and Capacitor.
+  "integrations": {
+    "cordova": {
+      ...
+    }
+  },
+
+  // Hook configuration--see the Hooks section below for details.
+  "hooks": {
+    ...
+  }
+}
+```
 
 ## Environment Variables
 

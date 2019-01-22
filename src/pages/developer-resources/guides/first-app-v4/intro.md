@@ -5,9 +5,7 @@ nextUrl: '/docs/developer-resources/guides/first-app-v4/ios-android-camera'
 
 # Your First Ionic App - Framework v4
 
-<p class="intro">
 The great thing about Ionic is that with one codebase, you can build for any platform using familiar web tools and languages. Follow along as we create a working Photo Gallery. Here’s the before and after:
-</p>
 
 ![Before and after going through this tutorial](/docs/assets/img/guides/first-app-v3/gallery-combined.png)
 
@@ -77,23 +75,23 @@ ionic serve
 And voilà! Your Ionic app is now running in a web browser. Most of your app can be built right in the browser, greatly increasing development speed.
 
 ## Photo Gallery!!!
-There are three tabs: “Home”, “About”, and “Contact.” Click on the About tab. It’s a blank canvas, aka the perfect spot to add camera functionality. Let’s begin to transform the About page into a Photo Gallery. Ionic features LiveReload, so when you make changes and save them, the app is updated immediately!
+There are three tabs. Click on the Tab2 tab. It’s a blank canvas, aka the perfect spot to add camera functionality. Let’s begin to transform this page into a Photo Gallery. Ionic features LiveReload, so when you make changes and save them, the app is updated immediately!
 
 ![Before and after going through this tutorial](/docs/assets/img/guides/first-app-v3/email-photogallery.gif)
 
-Open the photo-gallery app folder in your favorite code editor of choice, then navigate to `/src/app/about/about.page.html`. We see:
+Open the photo-gallery app folder in your favorite code editor of choice, then navigate to `/src/app/tab2/tab2.page.html`. We see:
 
 ```html
 <ion-header>
   <ion-toolbar>
-    <ion-title>About</ion-title>
+    <ion-title>Tab Two</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding></ion-content>
 ```
 
-`ion-header` represents the top navigation and toolbar, with “About” as the title. We put our app code into `ion-content`. In this case, it’s where we’ll add a button that opens the device’s camera and shows the image captured by the camera. But first, let’s start with something obvious: renaming the About page:
+`ion-header` represents the top navigation and toolbar, with "Tab 2" as the title. We put our app code into `ion-content`. In this case, it’s where we’ll add a button that opens the device’s camera and shows the image captured by the camera. But first, let’s start with something obvious: renaming the Tab Two page:
 
 ```html
 <ion-title>Photo Gallery</ion-title>
@@ -102,7 +100,7 @@ Open the photo-gallery app folder in your favorite code editor of choice, then n
 Next, open `src/app/tabs/tabs.page.html`. Change the label to “Gallery” and the icon name to “images”:
 
 ```html
-<ion-tab-button tab="about" href="/tabs/(about:about)">
+<ion-tab-button tab="tab2">
   <ion-icon name="images"></ion-icon>
   <ion-label>Gallery</ion-label>
 </ion-tab-button>
@@ -112,7 +110,7 @@ Now, back up your changes to Ionic Appflow:
 
 ```shell
 $ git add .
-$ git commit -m "converting about page to photo gallery"
+$ git commit -m "converting tab2 page to photo gallery"
 $ git push ionic master
 ```
 

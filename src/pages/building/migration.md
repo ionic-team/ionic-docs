@@ -125,7 +125,7 @@ See the following `ionic.config.json` as an example:
 
 ## RxJS Changes
 
-Some minor RxJS changes are required due to the change from RxJS v5 to v6. Please see the <a href="https://github.com/ReactiveX/rxjs/blob/master/MIGRATION.md" target="_blank">RxJS Migration Guide</a> for details.
+Between V3 and V4, RxJS was updated to version 6. This changes many of the import paths of operators and core RxJS functions. Please see the <a href="https://github.com/ReactiveX/rxjs/blob/master/MIGRATION.md" target="_blank">RxJS Migration Guide</a> for details.
 
 ## Lifecycle Events
 
@@ -175,17 +175,18 @@ async showAlert() {
 
 ## Navigation
 
-In v4, major changes were made to navigation and routing. `NavController` and `ion-nav` have now been deprecated. They can still used, but only if an app is not using lazy loading.
+In V4, navigation received the most changes. Now, instead of using Ionic's own `NavController`, we integrate with the official Angular Router. This not only provides a consistent routing experience across apps, but is much more dependable. The Angular team has an <a href="http://angular.io/guide/router" target="_blank">excellent guide</a> on their docs site that covers the Router in great detail.
 
-In place of `ion-nav` and `NavController`, Ionic recommends using the official Angular Router for routing. The Angular team has an <a href="http://angular.io/guide/router" target="_blank">excellent guide</a> on their docs site that covers the Router in great detail.
+To provide the platform specific animations that users are used to, we have created `ion-router-outlet` for Angular Apps. This behaves in a similar manor to Angular's `router-outlet` but provides a stack-based navigation (tabs) and animations.
 
-One key difference is that instead of using the `router-outlet` component, Ionic apps use the `ion-router-outlet`. The component has the same functionality as the standard Angular `router-outlet`, but includes transitions.
+For a detailed explanation in navigation works in a V4 project, checkout the [Angular navigation guide](/docs/navigation/angular).
+
 
 ## Lazy Loading
 
-Another change is how lazy loading is done in v4 apps.
+Since Navigation has changed, the mechanism for lazy loading has also changed in V4.
 
-In v3, lazy loading was done like this:
+In v3, a typical lazy loading setup worked like this:
 
 ```typescript
 // home.page.ts
@@ -232,6 +233,8 @@ export class HomePageModule {}
 export class AppModule {}
 ```
 
+For a detailed explanation of lazy loading in V4 project, check out the [Angular navigation guide](docs/navigation/angular#lazy-loading-routes).
+
 ## Markup Changes
 
 Since v4 moved to Custom Elements, there's been a significant change to the markup for each component. These changes have all been made to follow the Custom Elements spec, and have been documented in a <a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#breaking-changes" target="_blank">dedicated file on Github</a>.
@@ -239,20 +242,30 @@ Since v4 moved to Custom Elements, there's been a significant change to the mark
 To help with these markup changes, we've released a TSLint-based <a href="https://github.com/ionic-team/v4-migration-tslint" target="_blank">Migration Tool</a>, which detects issues and can even fix some of them automatically.
 
 ## Migrating from Ionic 1.0 to Ionic 4.0 - Overview
- ### Ionic 1.0 to Ionic 4.0: What’s Involved?
- Migrating from Ionic 1 to Ionic 4.0 involves moving from AngularJS (aka Angular 1) to Angular 7+. There are many architectural differences between these versions, so some of the app code will have to be rewritten. The amount of work involved depends on the complexity and size of your app.
- One upside is that for the most part, the Ionic UI components you know and love from V1 haven’t changed much. 
- Here are some considerations to review before beginning the upgrade:
+
+### Ionic 1.0 to Ionic 4.0: What’s Involved?
+
+Migrating from Ionic 1 to Ionic 4.0 involves moving from AngularJS (aka Angular 1) to Angular 7+. There are many architectural differences between these versions, so some of the app code will have to be rewritten. The amount of work involved depends on the complexity and size of your app.
+
+One upside is that for the most part, the Ionic UI components you know and love from V1 haven’t changed much. 
+
+Here are some considerations to review before beginning the upgrade:
 - **App complexity**: Naturally, the larger and more complex the app is, the longer it will take to migrate.
 - **Framework support**: In 2019, Ionic will release full support for React and Vue. You can also use Ionic Framework components [without a framework](/docs/installation/cdn/). Since these are not production ready yet, we recommend sticking with Angular or waiting until the other framework support is available.
 - **Budget and team makeup**: The length of a migration project will vary based on the size of your team, the complexity of the app, and the amount of time allotted to make the transition.
- ### Suggested Strategy
+
+### Suggested Strategy
 Once your development team has identified a good time frame for beginning the migration, Ionic recommends feature-freezing the Ionic 1 application and getting the code in order: Fix any major bugs, eliminate tech debt, and reorganize as you see fit. Then, identify which features to migrate over and which to abandon. 
- Once the Ionic 1 app is stable, create a new Ionic 4.0 project. The majority of the dev team’s attention should be given to the new project; only bugs should be fixed in the Ionic 1 app to ensure that the transition happens as quickly and smoothly as possible.
- Once the team is comfortable that the Ionic 4.0 app has become stable and has fulfilled a core set of features, you can then shut down the Ionic 1 app.
- ### Moving From AngularJS to Angular
+
+Once the Ionic 1 app is stable, create a new Ionic 4.0 project. The majority of the dev team’s attention should be given to the new project; only bugs should be fixed in the Ionic 1 app to ensure that the transition happens as quickly and smoothly as possible.
+
+Once the team is comfortable that the Ionic 4.0 app has become stable and has fulfilled a core set of features, you can then shut down the Ionic 1 app.
+
+### Moving From AngularJS to Angular
 Please reference official [Angular upgrade guide](https://angular.io/guide/upgrade) information.
- ### Ionic Changes
+
+### Ionic Changes
 Our Ionic 3.0 to Ionic 4.0 migration sections above may prove to be a useful reference. Generate a new Ionic 4.0 project using the blank starter (see [Starting an App](/docs/building/starting). Spend time getting familiar with Ionic 4.0 components. Happy building!
- ### Need Assistance?
+
+### Need Assistance?
 If your team would like assistance with the migration, please [reach out to us](https://ionicframework.com/enterprise-engine)! Ionic offers Advisory Services, which includes Ionic 4.0 training, architecture reviews, and migration assistance.

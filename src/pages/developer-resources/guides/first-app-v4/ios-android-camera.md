@@ -7,9 +7,7 @@ nextUrl: '/docs/developer-resources/guides/first-app-v4/creating-photo-gallery-d
 
 # Android, iOS, and the Camera - Oh My!
 
-<p class="intro">
 Previously, we got an Ionic app up and running locally in a web browser. Now, let’s get it onto your iOS or Android device, then start building the photo gallery feature. Fortunately, Ionic provides a way to skip the frustration of dealing with native SDK installations: Ionic DevApp!
-</p>
 
 The Ionic DevApp is a free app that makes it easy to run your Ionic app directly on your iOS or Android device. Download it here, then open on your device: 
 
@@ -33,7 +31,7 @@ In DevApp, you should now see the app appear. If it doesn't, or you have any iss
 
 Much better! Now we can add the camera functionality. By the way, you can find reference code for this [on GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4).
 
-Back in `about.page.html`, add the following:
+Back in `tab2.page.html`, add the following:
 
 ```html
 <ion-content>
@@ -103,9 +101,9 @@ providers: [
 
 It can now be used on any of our App pages.
 
-## Add the Camera to the About page
+## Add the Camera to the Gallery page
 
-Our camera button doesn’t do anything yet. Over in `about.page.html`, add a click handler to the button:
+Our camera button doesn’t do anything yet. Over in `tab2.page.html`, add a click handler to the button:
 
 ```html
 <ion-fab vertical="bottom" horizontal="center" slot="fixed">
@@ -121,7 +119,7 @@ Then, update the image placeholder. The following binds the “currentImage” v
 <img [src]="currentImage" *ngIf="currentImage">
 ```
 
-Open `about.page.ts` next and import the Camera library:
+Open `tab2.page.ts` next and import the Camera library:
 
 ```Javascript
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
@@ -130,10 +128,10 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 Next, define the “currentImage” variable and inject the Camera into this class via the constructor:
 
 ```Javascript
-export class AboutPage {
+export class Tab2Page {
   currentImage: any;
 
-  constructor(private camera: Camera) {
+  constructor(private camera: Camera) { }
 }
 ```
 
