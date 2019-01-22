@@ -35,8 +35,8 @@ const items = {
     'Webhooks': '/docs/appflow/automation/webhooks',
   },
   'Cookbook': {
-    'How to use Private GIT repositories belonging to users not owning the app codebase': '/docs/appflow/cookbook/private_git',
-    'How to use private NPM modules': '/docs/appflow/cookbook/private_npm_modules'
+    'Using Private GIT repositories': '/docs/appflow/cookbook/private_git',
+    'Using Private NPM modules': '/docs/appflow/cookbook/private_npm_modules'
   },
   'DevApp: Local Development': {
     'Download the DevApp': '/docs/appflow/devapp/#download-the-devapp',

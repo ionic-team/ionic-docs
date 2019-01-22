@@ -113,6 +113,9 @@ export namespace Components {
   interface DocsSectionNav {}
   interface DocsSectionNavAttributes extends StencilHTMLAttributes {}
 
+  interface SmsForm {}
+  interface SmsFormAttributes extends StencilHTMLAttributes {}
+
   interface DocsTableOfContents {
     'basepath': string;
     'label': string;
@@ -160,6 +163,7 @@ declare global {
     'DocsRoot': Components.DocsRoot;
     'DocsSearch': Components.DocsSearch;
     'DocsSectionNav': Components.DocsSectionNav;
+    'SmsForm': Components.SmsForm;
     'DocsTableOfContents': Components.DocsTableOfContents;
     'DocsTabs': Components.DocsTabs;
     'WistiaVideo': Components.WistiaVideo;
@@ -183,6 +187,7 @@ declare global {
     'docs-root': Components.DocsRootAttributes;
     'docs-search': Components.DocsSearchAttributes;
     'docs-section-nav': Components.DocsSectionNavAttributes;
+    'sms-form': Components.SmsFormAttributes;
     'docs-table-of-contents': Components.DocsTableOfContentsAttributes;
     'docs-tabs': Components.DocsTabsAttributes;
     'wistia-video': Components.WistiaVideoAttributes;
@@ -291,6 +296,12 @@ declare global {
     new (): HTMLDocsSectionNavElement;
   };
 
+  interface HTMLSmsFormElement extends Components.SmsForm, HTMLStencilElement {}
+  var HTMLSmsFormElement: {
+    prototype: HTMLSmsFormElement;
+    new (): HTMLSmsFormElement;
+  };
+
   interface HTMLDocsTableOfContentsElement extends Components.DocsTableOfContents, HTMLStencilElement {}
   var HTMLDocsTableOfContentsElement: {
     prototype: HTMLDocsTableOfContentsElement;
@@ -327,6 +338,7 @@ declare global {
     'docs-root': HTMLDocsRootElement
     'docs-search': HTMLDocsSearchElement
     'docs-section-nav': HTMLDocsSectionNavElement
+    'sms-form': HTMLSmsFormElement
     'docs-table-of-contents': HTMLDocsTableOfContentsElement
     'docs-tabs': HTMLDocsTabsElement
     'wistia-video': HTMLWistiaVideoElement
@@ -350,6 +362,7 @@ declare global {
     'docs-root': HTMLDocsRootElement;
     'docs-search': HTMLDocsSearchElement;
     'docs-section-nav': HTMLDocsSectionNavElement;
+    'sms-form': HTMLSmsFormElement;
     'docs-table-of-contents': HTMLDocsTableOfContentsElement;
     'docs-tabs': HTMLDocsTabsElement;
     'wistia-video': HTMLWistiaVideoElement;
