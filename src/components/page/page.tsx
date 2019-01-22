@@ -13,6 +13,7 @@ import errorTemplate from './templates/error';
 })
 export class DocsPage {
   @Prop() path: string;
+  @Prop({ context: 'document' }) private document: HTMLDocument;
   @State() badFetch: Response = null;
   @State() page: Page = { title: null, body: null };
 
@@ -45,6 +46,14 @@ export class DocsPage {
       title: error.statusText,
       body: null
     };
+  }
+
+  @Watch('page')
+  setDocumentTitle(page: Page) {
+    const { title, meta = {} } = page;
+    const suffix = /^\/docs\/pages\/appflow.*$/.test(this.path) ? 'Ionic Appflow Documentation' : 'Ionic Documentation';
+    const pageTitle = meta.title || `${title} - ${suffix}`;
+    this.document.title = pageTitle;
   }
 
   hostData() {
