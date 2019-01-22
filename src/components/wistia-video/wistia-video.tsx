@@ -7,11 +7,11 @@ export class WistiaVideo {
   @Prop() id: string;
 
   componentDidLoad() {
-    if (!document.getElementById("wistia_script")) {
-      let wistiaScript = document.createElement("script");
-      wistiaScript.id = "wistia_script";
-      wistiaScript.type = "text/javascript";
-      wistiaScript.src = "https://fast.wistia.com/assets/external/E-v1.js";
+    if (!document.getElementById('wistia_script')) {
+      const wistiaScript = document.createElement('script');
+      wistiaScript.id = 'wistia_script';
+      wistiaScript.type = 'text/javascript';
+      wistiaScript.src = 'https://fast.wistia.com/assets/external/E-v1.js';
       wistiaScript.async = true;
       document.body.appendChild(wistiaScript);
     }
