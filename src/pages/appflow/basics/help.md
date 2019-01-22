@@ -1,3 +1,10 @@
+---
+previousText: 'Git Workflow'
+previousUrl: '/docs/appflow/basics/git'
+nextText: 'Builds'
+nextUrl: '/docs/appflow/builds'
+---
+
 # Ionic Appflow Help and Support
 
 Need help with any Ionic Appflow service? Visit the [main support portal](https://ionic.zendesk.com/hc/en-us).

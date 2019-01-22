@@ -1,5 +1,5 @@
 ---
-nextText: 'Foo'
+nextText: 'Installation'
 nextUrl: '/docs/appflow/basics/getting-started'
 ---
 

@@ -1,3 +1,10 @@
+---
+previousText: 'Installation'
+previousUrl: '/docs/appflow/basics/getting-started'
+nextText: 'Help and Support'
+nextUrl: '/docs/appflow/basics/help'
+---
+
 # Working with Git
 
 Ionic Appflow integrates with [Git](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)

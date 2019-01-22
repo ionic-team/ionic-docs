@@ -1,3 +1,10 @@
+---
+previousText: 'Welcome'
+previousUrl: '/docs/appflow'
+nextText: 'Git Workflow'
+nextUrl: '/docs/appflow/basics/git'
+---
+
 # Getting Started with Ionic Appflow
 
 If you're new to Ionic Appflow, please read the [Welcome](/docs/appflow)
