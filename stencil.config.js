@@ -9,6 +9,8 @@ export const config = {
     }
   ],
   copy: [
-    { src: 'pages/**/*.json' }
+    { src: 'pages/**/*.json' },
+    { src: '_redirects' },
+    { src: 'robots.txt' }
   ]
 };
