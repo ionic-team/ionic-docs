@@ -20,8 +20,6 @@ You can follow the guide below or watch this video:
 
 <wistia-video id="0o27tfvoam"></wistia-video>
 
-<script>console.log('hey')</script>
-
 ### Deploy Upgrade Guide
 You'll need specific versions of each of the following libraries:
 * `cordova-plugin-ionic-webview >= 2.0.0`
