@@ -18,14 +18,7 @@ The DevApp is available on iOS and Android.
 
 Enter your phone number below to text yourself an install link, or find the app on your app store of choice:
 
-<div id="branch-sms-box">
-  <form id="branch-sms-form">
-    Phone # (include country code): <input type="tel" class="form-control" id="branch-phone-no">
-    <div>
-      <button class="btn btn-primary btn-small" type="submit">Text Me the Link</button>
-    </div>
-  </form>
-</div>
+<sms-form></sms-form>
 
 <div id="badges">
   <a href="https://itunes.apple.com/us/app/ionic-devapp/id1233447133?ls=1&mt=8">
