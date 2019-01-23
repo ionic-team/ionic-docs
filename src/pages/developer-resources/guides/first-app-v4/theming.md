@@ -5,9 +5,7 @@ previousUrl: '/docs/developer-resources/guides/first-app-v4/creating-photo-galle
 
 # Make It Your Own! Ionic Theming
 
-<p class="intro">
 Previously, we converted our single use Camera app into an epic photo gallery. Now, let’s explore how to make the photo gallery our own with Ionic theming. The visual design of the app is incredibly important - fortunately, Ionic provides a lot for us out-of-the-box.
-</p>
 
 Ionic has five default colors, defined as Sass variables, that can be used to change the color of its UI components:
 

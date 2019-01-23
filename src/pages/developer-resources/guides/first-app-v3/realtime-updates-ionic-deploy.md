@@ -7,9 +7,7 @@ nextUrl: '/docs/developer-resources/guides/first-app-v3/track-bugs-ionic-monitor
 
 # Realtime App Updates with Ionic Deploy
 
-<p class="intro">
 As you’ve seen so far, building web and mobile apps is quick and easy with the Ionic Framework. However, nothing disrupts rapid iteration faster than App Store delays. Fortunately, with Ionic Pro’s Deploy feature, you can send live code changes directly to your users. Paired with seamless background updates, they are always upgraded to the latest version.
-</p>
 
 Setting it up is quick and easy. For reference, continue to refer to [the part 3 folder](https://github.com/ionic-team/photo-gallery-tutorial-ionic3/tree/master/part3) on GitHub. First, install the Ionic Pro JavaScript library:
 

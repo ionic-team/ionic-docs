@@ -15,9 +15,7 @@ nextUrl: '/docs/theming/basics'
 
 # CSS Utilities
 
-<p class="intro" markdown="1">
 Ionic provides a set of utility attributes that can be used on any element in order to modify the text, element placement or adjust the padding and margin.
-</p>
 
 
 ## Text Modification

@@ -5,9 +5,9 @@ previousUrl: '/docs/building/webview'
 
 # Storage
 
-<p class="intro">Storage is an easy way to store key/value pairs and JSON objects.
+Storage is an easy way to store key/value pairs and JSON objects.
 Storage uses a variety of storage engines underneath, picking the best one available
-depending on the platform.</p>
+depending on the platform.
 
 When running in a native app context, Storage will prioritize using SQLite, as it's one of
 the most stable and widely used file-based databases, and avoids some of the
