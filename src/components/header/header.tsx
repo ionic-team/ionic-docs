@@ -40,6 +40,7 @@ export class DocsHeader {
         <nav class="UtilNav">
           <a href="https://ionicframework.com/support" target="_blank">Support</a>
           <a href="https://ionicframework.com/community" target="_blank">Community</a>
+          <a class="outbound" href="https://ionicframework.com/docs/v3" target="_blank">v3 <Outbound/></a>
           <a class="outbound" href="https://github.com/ionic-team/ionic" target="_blank">GitHub <Outbound/></a>
         </nav>
       </header>
