@@ -5,7 +5,7 @@ docs-search {
   border: solid 1px var(--line-rule-color);
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.01);
   color: var(--text-color--light);
-  display: flex;
+  display: none;
   font-size: 14px;
   padding: 0.5rem 1rem;
   transition: border-color 200ms ease, box-shadow 200ms ease;
