@@ -1,6 +1,6 @@
 ---
-previousText: 'Setup'
-previousUrl: '/docs/appflow/deploy/setup'
+previousText: 'Deploy Builds'
+previousUrl: '/docs/appflow/deploy/builds'
 nextText: 'Deploy API'
 nextUrl: '/docs/appflow/deploy/api'
 ---
