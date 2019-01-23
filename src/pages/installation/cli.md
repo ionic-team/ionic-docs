@@ -18,7 +18,7 @@ $ npm install -g ionic
 ```
 
 <blockquote>
-  <p>The `-g` means it is a global install. For Window’s it's recommended to open an Admin command prompt. For Mac/Linux, run the command with `sudo`.</p>
+  <p>The <code>-g</code> means it is a global install. For Window’s it's recommended to open an Admin command prompt. For Mac/Linux, run the command with <code>sudo</code>.</p>
 </blockquote>
 
 ## Start an App
