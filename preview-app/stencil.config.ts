@@ -5,8 +5,9 @@ export const config: Config = {
   outputTargets: [
     {
       type: 'www',
-      dir: '../www/demos',
-      baseUrl: '/demos',
+      dir: '../www/docs/demos',
+      baseUrl: '/docs/demos',
+      empty: false,
       serviceWorker: null
     }
   ]

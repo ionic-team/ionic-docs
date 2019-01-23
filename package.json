@@ -11,7 +11,7 @@
     "build": "stencil build --prerender",
     "prebuild": "npm run -s build-all",
     "lint": "tslint --config tslint.json --project tsconfig.json",
-    "build-all": "ts-node -P scripts/tsconfig.json scripts/build-all",
+    "build-all": "ts-node -P scripts/tsconfig.json scripts/build-all && npm run build-demos",
     "build-demos": "stencil build --config ./preview-app/stencil.config.ts",
     "build-data": "ts-node -P scripts/tsconfig.json scripts/build-data",
     "build-pages": "ts-node -P scripts/tsconfig.json scripts/build-pages",

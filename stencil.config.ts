@@ -7,7 +7,8 @@ export const config: Config = {
       type: 'www',
       dir: 'www/docs',
       baseUrl: '/docs',
-      serviceWorker: null
+      serviceWorker: null,
+      empty: false
     }
   ],
   copy: [
