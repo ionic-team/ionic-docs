@@ -8,6 +8,18 @@ import { Outbound } from '../../icons';
 export class DocsCard {
   @Prop() href: string;
   @Prop() header: string;
+  @Prop() icon: string;
+  @Prop() img: string;
+
+  hostData() {
+    return {
+      class: {
+        'Card-with-image': !!this.img,
+        'Card-without-image': !this.img,
+
+      }
+    };
+  }
 
   render() {
     const isStatic = !this.href;
@@ -18,11 +30,19 @@ export class DocsCard {
       </header>
     );
 
+    const content = [
+      this.img && <img src={this.img} class="Card-image"/>,
+      <div class="Card-container">
+        { this.icon && <img src={this.icon} class="Card-icon"/> }
+        { header }
+        <div class="Card-content"><slot/></div>
+      </div>
+    ];
+
     if (isStatic) {
       return (
         <div class="Card">
-          { header }
-          <div class="Card-content"><slot/></div>
+          { content }
         </div>
       );
     }
@@ -30,16 +50,14 @@ export class DocsCard {
     if (isOutbound) {
       return (
         <a class="Card" href={this.href}>
-          { header }
-          <div class="Card-content"><slot/></div>
+          { content }
         </a>
       );
     }
 
     return (
       <stencil-route-link url={this.href} anchorClass="Card">
-        { header }
-        <div class="Card-content"><slot/></div>
+        { content }
       </stencil-route-link>
     );
   }
