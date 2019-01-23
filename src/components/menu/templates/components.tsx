@@ -160,7 +160,7 @@ const items = {
     'ion-toggle': '/docs/api/toggle'
   },
   'Toolbar': {
-    'ion-toolbar': '/docs/api/toobar',
+    'ion-toolbar': '/docs/api/toolbar',
     'ion-footer': '/docs/api/footer',
     'ion-header': '/docs/api/header',
     'ion-title': '/docs/api/title',
