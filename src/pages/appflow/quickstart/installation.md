@@ -1,15 +1,3 @@
----
-previousText: 'Welcome'
-previousUrl: '/docs/appflow'
-nextText: 'Git Workflow'
-nextUrl: '/docs/appflow/basics/git'
----
-
-# Getting Started with Ionic Appflow
-
-If you're new to Ionic Appflow, please read the [Welcome](/docs/appflow)
-introduction for a quick overview of Ionic Appflow and instructions on creating an account.
-
 ## Install Ionic CLI
 
 Ionic Appflow uses the latest version of the Ionic CLI to interface between your local code and our tools and services.

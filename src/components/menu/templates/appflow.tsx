@@ -1,12 +1,14 @@
+import { NavItem } from '../../nav/nav-item';
+
 export default () => <docs-nav items={items}/>;
 
 const items = {
-  'Introduction': {
-    'Welcome': '/docs/appflow',
-    'Installation': '/docs/appflow/basics/getting-started',
-    'Git Workflow': '/docs/appflow/basics/git',
+  'Welcome to Appflow': '/docs/appflow',
+  'Quickstart': new NavItem({
+    'Connecting your Repo': '/docs/appflow/quickstart/connect',
+    'Installing the Appflow SDK': '/docs/appflow/quickstart/installation',
     'Help and Support': '/docs/appflow/basics/help'
-  },
+  }, '/docs/appflow/quickstart'),
   'Deploy': {
     'Introduction': '/docs/appflow/deploy/intro',
     'Setup': '/docs/appflow/deploy/setup',

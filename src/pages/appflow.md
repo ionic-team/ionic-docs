@@ -1,29 +1,33 @@
 ---
-nextText: 'Installation'
-nextUrl: '/docs/appflow/basics/getting-started'
+title: Welcome to Appflow
 ---
 
-# Welcome to Ionic Appflow
+Appflow is a continuous integration (CI) and continuous deployment (CD) platform
+for Ionic Development teams. Appflow helps development teams continuously build and ship
+their iOS, Android, and web apps faster than ever.
+        
+<docs-cards class="prioritized">
+  <docs-card header="Quickstart" href="/docs/appflow/quickstart">
+    <p>Get your app setup with multiple environments that automatically build new binaries for
+    iOS and Android and deploy real time bug fixes & updates instantly every time your team checks in
+    new code.</p>
+    <b>Get Started!</b>
+  </docs-card>
 
-Ionic Appflow makes it easier to generate native apps, ship real-time updates, streamline build processes,
-and organize workflows without the hassle.
 
-Ionic Appflow has several core concepts that help you through the full app lifecycle, including
+  <docs-card header="News & Updates" href="https://ionic.zendesk.com/hc/en-us/categories/360000410554-Announcements">
+    <p>Learn about recent Appflow updates & announcements.</p>
+  </docs-card>
+  
+  <docs-card header="Package FAQ" href="https://ionic.zendesk.com/hc/en-us/categories/360000410494-Package">
+    <p>Find answers to common questions about building native binaries</p>
+  </docs-card>
 
- * [Deploy](/docs/appflow/deploy/intro): Update your app remotely in real-time without app store delays.
- * [Package](/docs/appflow/package/intro): Build app binaries in the cloud for iOS and Android.
- * [Automate](/docs/appflow/automation/intro): Automate the building, testing, and distribution of Package & Deploy to ship better updates faster.
-
-Each one of these services is based around a simple git-based workflow that should be familiar to any app developer.
-
-
-## Create an Account
-
-To get started with Ionic Appflow, first [create an account](https://dashboard.ionicframework.com/signup?source=framework-{{page.id}}).
-
-Ionic Appflow has a free plan for development and kicking the tires, and paid plans for production app usage.
-Larger teams can also create Organizations to administer team members and make it easy to manage projects.
-
-## Getting Started
-
-Once your account has been created, continue to the [Installation](/docs/appflow/basics/getting-started/) guide to link your app to the service.
+  <docs-card header="Deploy FAQ" href="https://ionic.zendesk.com/hc/en-us/categories/360000409113-Deploy">
+    <p>A step-by-step guide to installing and setting up your system to build Ionic Framework apps.</p>
+  </docs-card>
+  
+  <docs-card header="Billing FAQ" href="https://ionic.zendesk.com/hc/en-us/categories/360000410574-Billing-Support">
+    <p>Find answers to common billing questions</p>
+  </docs-card>
+</docs-cards>

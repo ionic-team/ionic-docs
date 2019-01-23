@@ -1,5 +1,5 @@
 ---
-previousText: 'Installation'
+previousText: 'Quickstart'
 previousUrl: '/docs/appflow/basics/getting-started'
 nextText: 'Help and Support'
 nextUrl: '/docs/appflow/basics/help'
