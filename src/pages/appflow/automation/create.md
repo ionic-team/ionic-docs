@@ -1,5 +1,5 @@
 ---
-previousText: 'Intro'
+previousText: 'Introduction'
 previousUrl: '/docs/appflow/automation/intro'
 nextText: 'Environments'
 nextUrl: '/docs/appflow/automation/environments'

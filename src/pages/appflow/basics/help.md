@@ -1,8 +1,8 @@
 ---
 previousText: 'Git Workflow'
 previousUrl: '/docs/appflow/basics/git'
-nextText: 'Builds'
-nextUrl: '/docs/appflow/builds'
+nextText: 'Deploy'
+nextUrl: '/docs/appflow/deploy/intro'
 ---
 
 # Ionic Appflow Help and Support

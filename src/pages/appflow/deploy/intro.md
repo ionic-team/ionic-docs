@@ -1,6 +1,6 @@
 ---
-previousText: 'Environments'
-previousUrl: '/docs/appflow/environments'
+previousText: 'Introduction'
+previousUrl: '/docs/appflow/basics/help'
 nextText: 'Setup'
 nextUrl: '/docs/appflow/deploy/setup'
 ---
