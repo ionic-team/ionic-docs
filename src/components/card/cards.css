@@ -2,6 +2,7 @@ docs-cards {
   display: grid;
   font-size: 12px;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-auto-rows: 180px;
   grid-gap: 1.35rem;
 }
 

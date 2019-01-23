@@ -13,7 +13,7 @@ docs-page {
 docs-page main {
   margin-bottom: 3rem;
   max-width: 680px;
-  padding: var(--page-padding, 2rem 3rem);
+  padding: var(--page-padding, 2rem 4rem);
 }
 
 docs-page .full-screen {
