@@ -5,7 +5,12 @@ export default () => <docs-nav items={items}/>;
 const items = {
   'Welcome to Appflow': '/docs/appflow',
   'Quickstart': new NavItem({
-    'Connecting your Repo': '/docs/appflow/quickstart/connect',
+    'Connect your Repo': new NavItem({
+      'GitHub': '/docs/appflow/quickstart/github',
+      'Bitbucket': '/docs/appflow/quickstart/bitbucket',
+      'Bitbucket Server': '/docs/appflow/quickstart/bitbucket-server',
+      'Ionic Remote': '/docs/appflow/quickstart/ionic-remote',
+    }, '/docs/appflow/quickstart/connect'),
     'Installing the Appflow SDK': '/docs/appflow/quickstart/installation',
     'Help and Support': '/docs/appflow/basics/help'
   }, '/docs/appflow/quickstart'),
