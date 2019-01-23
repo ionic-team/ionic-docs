@@ -7,9 +7,7 @@ nextUrl: '/docs/installation/environment'
 
 # Ionic Packages
 
-<p class="intro" markdown="1">
-  Depending on whether you're using Angular or another framework (or none at all!) there are different ways to install Ionic.
-</p>
+Depending on whether you're using Angular or another framework (or none at all!) there are different ways to install Ionic.
 
 ## Using Ionic in Angular
 

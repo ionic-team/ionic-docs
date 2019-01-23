@@ -7,12 +7,9 @@ nextUrl: '/docs/installation/ios'
 
 # Environment Setup
 
-<p class="intro" markdown="1">
 To get started with Ionic Framework, the only requirement is a [Node & npm](#anchor-node-npm) environment.
-</p>
-<p class="intro" markdown="1">
+
 Of course, you will also need an editor. We recommend [VS Code](https://code.visualstudio.com/), a free, batteries-included text editor made by Microsoft.
-</p>
 
 ## Node & npm
 

@@ -8,9 +8,7 @@ nextUrl: '/docs/building/storage'
 
 # Web View
 
-<p class="intro" markdown="1">
 The Web View powers web apps in native devices. Ionic maintains a <a href="https://github.com/ionic-team/cordova-plugin-ionic-webview" target="_blank">Web View plugin</a> for apps integrated with [Cordova](/docs/faq/glossary#cordova). The plugin is provided by default when using the Ionic CLI. For apps integrated with [Capacitor](/docs/faq/glossary#capacitor), the Web View is automatically provided.
-</p>
 
 ## What is a Web View?
 

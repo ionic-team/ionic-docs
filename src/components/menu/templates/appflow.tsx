@@ -7,10 +7,6 @@ const items = {
     'Git Workflow': '/docs/appflow/basics/git',
     'Help and Support': '/docs/appflow/basics/help'
   },
-  'Builds': {
-    'Introduction': '/docs/appflow/builds',
-    'Concurrency Limits': '/docs/appflow/builds/#concurrency-limits'
-  },
   'Deploy': {
     'Introduction': '/docs/appflow/deploy/intro',
     'Setup': '/docs/appflow/deploy/setup',

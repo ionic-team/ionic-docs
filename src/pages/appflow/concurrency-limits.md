@@ -1,19 +1,4 @@
----
-previousText: 'Help and Support'
-previousUrl: '/docs/appflow/basics/help'
-nextText: 'Environments'
-nextUrl: '/docs/appflow/environments'
----
-
-# Builds
-
-## Introduction
-
-The [Git Workflow](/docs/appflow/basics/git/) at the core of Ionic Appflow allows you to push commits of your app code,
-which can then be used to trigger two distinct types of builds: Deploy and Package Builds.
-
-
-## Concurrency limits
+# Concurrency limits
 
 Each account plan has a defined maximum amount of concurrent builds allowed (see [Plans Details](/pricing)).
 This limit is enforced at the account level across different apps.

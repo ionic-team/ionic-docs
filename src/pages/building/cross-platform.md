@@ -8,9 +8,7 @@ disableHtmlPreviews: true
 
 # Cross Platform
 
-<p class="intro" markdown="1">
 Ionic is built from the ground up to make development easy, no matter what platform you are building for. Ionic apps are truly cross-platform: able to run as an Android, iOS, Electron, and Progressive Web App (PWA), all from a single codebase. There are some points to keep in mind when optimizing an app to work across these platforms.
-</p>
 
 ## Hardware APIs
 

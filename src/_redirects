@@ -1,7 +1,11 @@
-/                            /docs/                                 302
-/docs/pages/*                /docs/index.html                       404
-/docs/*                      /docs/index.html                       200
-/docs/pro/                   /docs/appflow                          301
-/docs/pro/*                  /docs/appflow/:splat                   301
+/                                     /docs/                                 302
+/docs/pages/*                         /docs/index.html                       404
+/docs/*                               /docs/index.html                       200
+/docs/pro/                            /docs/appflow                          301
+/docs/pro/*                           /docs/appflow/:splat                   301
 
-/docs/appflow/environments   /docs/appflow/automation/environments  301
+/docs/appflow/environments/           /docs/appflow/automation/environments  301
+/docs/appflow/deploy/                 /docs/appflow/deploy/intro             301
+/docs/appflow/package/                /docs/appflow/package/intro            301
+/docs/appflow/package/profiles.html   /docs/appflow/package/credentials      301
+/docs/appflow/automation/             /docs/appflow/automation/intro         301

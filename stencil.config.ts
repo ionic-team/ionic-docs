@@ -8,7 +8,8 @@ export const config: Config = {
       dir: 'www/docs',
       baseUrl: '/docs',
       serviceWorker: null,
-      empty: false
+      empty: false,
+   inlineLoaderScript: false
     }
   ],
   copy: [

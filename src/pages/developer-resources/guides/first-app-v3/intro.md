@@ -5,9 +5,7 @@ nextUrl: '/docs/developer-resources/guides/first-app-v3/ios-android-camera'
 
 # Your First Ionic App - Framework v3
 
-<p class="intro">
 The great thing about Ionic is that with one codebase, you can build for any platform using familiar web tools and languages. Follow along as we create a working Photo Gallery. Here’s the before and after:
-</p>
 
 ![Before and after going through this tutorial](/docs/assets/img/guides/first-app-v3/gallery-combined.png)
 

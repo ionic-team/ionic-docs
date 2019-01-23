@@ -5,9 +5,7 @@ previousUrl: '/docs/developer-resources/guides/first-app-v3/theming'
 
 # Track Bugs in Realtime with Ionic Monitoring 
 
-<p class="intro">
 Bugs happen, and can be hard to track down - especially with hundreds of possible combinations of mobile devices and operating systems. Ionic Pro Monitoring allows you to track errors in your app on users’ phones and it sends them directly to you instantly, even if your code is minified!
-</p>
 
 Reducing customer frustration by fixing major issues quickly in your production apps are a substantial part of providing a high quality app experience. Combined with Ionic Pro Deploy, new updates can be rolled out quickly to address problems in real-time.
 

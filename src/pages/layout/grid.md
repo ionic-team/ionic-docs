@@ -15,9 +15,7 @@ nextUrl: '/docs/layout/css-utilities'
 
 # Responsive Grid
 
-<p class="intro" markdown="1">
 The grid is a powerful mobile-first flexbox system for building custom layouts. It is composed of three units — a [grid](/docs/api/grid), [row(s)](/docs/api/row) and [column(s)](/docs/api/col). Columns will expand to fill their row, and will resize to fit additional columns. It is based on a 12 column layout with different breakpoints based on the screen size. The number of columns can be customized using CSS.
-</p>
 
 
 ## How it works
