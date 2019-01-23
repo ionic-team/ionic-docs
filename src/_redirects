@@ -9,3 +9,81 @@
 /docs/appflow/package/                /docs/appflow/package/intro            301
 /docs/appflow/package/profiles.html   /docs/appflow/package/credentials      301
 /docs/appflow/automation/             /docs/appflow/automation/intro         301
+
+/docs/api/components/action-sheet/ActionSheetController /docs/api/action-sheet-controller       301
+/docs/api/components/alert/AlertController              /docs/api/alert-controller              301
+/docs/api/components/app/App                            /docs/api/app                           301
+/docs/api/components/app/MenuController                 /docs/api/menu-controller               301
+/docs/api/components/avatar/Avatar                      /docs/api/avatar                        301
+/docs/api/components/badge/Badge                        /docs/api/badge                         301
+/docs/api/components/button/Button                      /docs/api/button                        301
+/docs/api/components/checkbox/Checkbox                  /docs/api/checkbox                      301
+/docs/api/components/chip/Chip                          /docs/api/chip                          301
+/docs/api/components/content/Content                    /docs/api/content                       301
+/docs/api/components/datetime/DateTime                  /docs/api/datetime                      301
+/docs/api/components/fab/FabButton                      /docs/api/fab-button                    301
+/docs/api/components/fab/FabContainer                   /docs/api/fab                           301
+/docs/api/components/fab/FabList                        /docs/api/fab-list                      301
+/docs/api/components/grid/Col                           /docs/api/col                           301
+/docs/api/components/grid/Grid                          /docs/api/grid                          301
+/docs/api/components/grid/Row                           /docs/api/row                           301
+/docs/api/components/icon/Icon                          https://ionicons.com                    301
+/docs/api/components/img/Img                            /docs/api/img                           301
+/docs/api/components/infinite-scroll/InfiniteScroll     /docs/api/infinite-scroll               301
+/docs/api/components/input/Input                        /docs/api/input                         301
+/docs/api/components/item/Item                          /docs/api/item                          301
+/docs/api/components/item/ItemOptions                   /docs/api/item-options                  301
+/docs/api/components/item/ItemReorder                   /docs/api/reorder                       301
+/docs/api/components/item/ItemSliding                   /docs/api/item-sliding                  301
+/docs/api/components/label/Label                        /docs/api/label                         301
+/docs/api/components/list/List                          /docs/api/list                          301
+/docs/api/components/loading/LoadingController          /docs/api/loading-controller            301
+/docs/api/components/menu/Menu                          /docs/api/menu                          301
+# /docs/api/components/menu/MenuClose
+/docs/api/components/menu/MenuToggle                    /docs/api/menu-toggle                   301
+/docs/api/components/modal/ModalController              /docs/api/modal-controller              301
+/docs/api/components/nav/Nav                            /docs/api/nav                           301
+/docs/api/components/nav/NavPop                         /docs/api/nav-pop                       301
+/docs/api/components/nav/NavPush                        /docs/api/nav-push                      301
+/docs/api/components/note/Note                          /docs/api/note                          301
+/docs/api/components/option/Option                      /docs/api/select-option                 301
+/docs/api/components/popover/PopoverController          /docs/api/popover-controller            301
+/docs/api/components/radio/RadioButton                  /docs/api/radio                         301
+/docs/api/components/radio/RadioGroup                   /docs/api/radio-group                   301
+/docs/api/components/range/Range                        /docs/api/range                         301
+/docs/api/components/refresher/Refresher                /docs/api/refresher                     301
+/docs/api/components/scroll/Scroll                      /docs/api/content                       301
+/docs/api/components/searchbar/Searchbar                /docs/api/searchbar                     301
+/docs/api/components/segment/Segment                    /docs/api/segment                       301
+/docs/api/components/segment/SegmentButton              /docs/api/segment-button                301
+/docs/api/components/select/Select                      /docs/api/select                        301
+# /docs/api/components/show-hide-when/HideWhen
+# /docs/api/components/show-hide-when/ShowWhen
+/docs/api/components/slides/Slide                       /docs/api/slide                         301
+/docs/api/components/slides/Slides                      /docs/api/slides                        301
+/docs/api/components/spinner/Spinner                    /docs/api/spinner                       301
+/docs/api/components/split-pane/SplitPane               /docs/api/split-pane                    301
+/docs/api/components/tabs/Tab                           /docs/api/tab                           301
+/docs/api/components/tabs/Tabs                          /docs/api/tabs                          301
+/docs/api/components/thumbnail/Thumbnail                /docs/api/thumbnail                     301
+/docs/api/components/toast/ToastController              /docs/api/toast-controller              301
+/docs/api/components/toggle/Toggle                      /docs/api/toggle                        301
+/docs/api/components/toolbar/Footer                     /docs/api/footer                        301
+/docs/api/components/toolbar/Header                     /docs/api/header                        301
+# /docs/api/components/toolbar/Navbar
+/docs/api/components/toolbar/Title                      /docs/api/title                         301
+/docs/api/components/toolbar/Toolbar                    /docs/api/toolbar                       301
+/docs/api/components/typography/Typography              /docs/api/text                          301
+/docs/api/components/virtual-scroll/VirtualScroll       /docs/api/virtual-scroll                301
+# /docs/api/config/Config
+# /docs/api/config/registerModeConfigs
+# /docs/api/navigation/IonicPage
+# /docs/api/navigation/NavController
+# /docs/api/navigation/NavParams
+# /docs/api/navigation/ViewController
+# /docs/api/platform/Keyboard
+# /docs/api/platform/Platform
+# /docs/api/platform/PlatformConfigToken
+# /docs/api/tap-click/Haptic
+# /docs/api/util/Events
+# /docs/api/util/IonicErrorHandler
