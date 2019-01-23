@@ -22,10 +22,14 @@ export namespace Components {
   interface DocsCard {
     'header': string;
     'href': string;
+    'icon': string;
+    'img': string;
   }
   interface DocsCardAttributes extends StencilHTMLAttributes {
     'header'?: string;
     'href'?: string;
+    'icon'?: string;
+    'img'?: string;
   }
 
   interface DocsCards {}

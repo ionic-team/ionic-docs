@@ -14,11 +14,35 @@ docs-card {
   font-size: inherit;
   font-weight: normal;
   height: 100%;
-  justify-content: space-between;
+  justify-content: flex-start;
   line-height: 1.6;
-  padding: 1.65em 1.65em 2em;
   transition: box-shadow 150ms ease, transform 150ms ease;
   width: 100%;
+  overflow: hidden;
+}
+
+.Card-with-image {
+  grid-row: span 2;
+}
+
+.Card-without-image {
+  font-size: 12px;
+}
+
+.Card-container {
+  padding: 1.65em 2em 1.65em;
+}
+
+.Card-image {
+  width: 100%;
+  height: auto;
+}
+
+.Card-icon {
+  width: 48px;
+  height: 48px;
+
+  margin-bottom: 1.2em;
 }
 
 @media (hover: hover) {
@@ -42,10 +66,16 @@ docs-card {
 
 .Card-header {
   color: var(--text-color--dark);
-  font-size: 1.2em;
-  font-weight: 500;
+  font-size: 1.25em;
+  font-weight: 600;
   line-height: 1.4;
-  margin-bottom: 0.65em;
+  margin-bottom: 0.45em;
+}
+
+.Card-without-image .Card-header {
+  font-size: 1.2em;
+  margin-bottom: 0.3em;
+
 }
 
 .Card-header > svg {
