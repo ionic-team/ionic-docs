@@ -35,7 +35,7 @@ export default (props) => {
   }
 
   return (
-    <main>
+    <main class="docs-content-pane">
       <h1>{ page.title }</h1>
       <docs-table-of-contents links={headings} basepath={props.history.location.pathname} />
       <section class="summary intro" innerHTML={page.summary} />
