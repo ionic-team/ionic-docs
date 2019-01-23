@@ -24,6 +24,7 @@ docs-page main.docs-api {
 
 docs-page .docs-content-pane {
   flex: 1;
+  max-width: 680px;
   padding: var(--page-padding, 2rem 3rem);
 }
 
