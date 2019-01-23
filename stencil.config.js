@@ -5,7 +5,8 @@ export const config = {
       type: 'www',
       dir: 'www/docs',
       baseUrl: '/docs',
-      serviceWorker: null
+      serviceWorker: null,
+      inlineLoaderScript: false
     }
   ],
   copy: [
