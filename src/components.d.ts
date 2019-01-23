@@ -95,6 +95,15 @@ export namespace Components {
     'page'?: Page;
   }
 
+  interface DocsPreview {
+    'source': string;
+    'url': string;
+  }
+  interface DocsPreviewAttributes extends StencilHTMLAttributes {
+    'source'?: string;
+    'url'?: string;
+  }
+
   interface DocsReference {
     'data': any[];
     'keys': ReferenceKeys;
@@ -159,6 +168,7 @@ declare global {
     'DocsNav': Components.DocsNav;
     'DocsPage': Components.DocsPage;
     'DocsPagination': Components.DocsPagination;
+    'DocsPreview': Components.DocsPreview;
     'DocsReference': Components.DocsReference;
     'DocsRoot': Components.DocsRoot;
     'DocsSearch': Components.DocsSearch;
@@ -183,6 +193,7 @@ declare global {
     'docs-nav': Components.DocsNavAttributes;
     'docs-page': Components.DocsPageAttributes;
     'docs-pagination': Components.DocsPaginationAttributes;
+    'docs-preview': Components.DocsPreviewAttributes;
     'docs-reference': Components.DocsReferenceAttributes;
     'docs-root': Components.DocsRootAttributes;
     'docs-search': Components.DocsSearchAttributes;
@@ -272,6 +283,12 @@ declare global {
     new (): HTMLDocsPaginationElement;
   };
 
+  interface HTMLDocsPreviewElement extends Components.DocsPreview, HTMLStencilElement {}
+  var HTMLDocsPreviewElement: {
+    prototype: HTMLDocsPreviewElement;
+    new (): HTMLDocsPreviewElement;
+  };
+
   interface HTMLDocsReferenceElement extends Components.DocsReference, HTMLStencilElement {}
   var HTMLDocsReferenceElement: {
     prototype: HTMLDocsReferenceElement;
@@ -334,6 +351,7 @@ declare global {
     'docs-nav': HTMLDocsNavElement
     'docs-page': HTMLDocsPageElement
     'docs-pagination': HTMLDocsPaginationElement
+    'docs-preview': HTMLDocsPreviewElement
     'docs-reference': HTMLDocsReferenceElement
     'docs-root': HTMLDocsRootElement
     'docs-search': HTMLDocsSearchElement
@@ -358,6 +376,7 @@ declare global {
     'docs-nav': HTMLDocsNavElement;
     'docs-page': HTMLDocsPageElement;
     'docs-pagination': HTMLDocsPaginationElement;
+    'docs-preview': HTMLDocsPreviewElement;
     'docs-reference': HTMLDocsReferenceElement;
     'docs-root': HTMLDocsRootElement;
     'docs-search': HTMLDocsSearchElement;

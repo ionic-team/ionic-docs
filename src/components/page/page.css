@@ -12,8 +12,27 @@ docs-page {
 
 docs-page main {
   margin-bottom: 3rem;
-  max-width: 680px;
+}
+
+docs-page main.docs-api {
+  display: flex;
+}
+
+docs-page main.docs-api {
+  display: flex;
+}
+
+docs-page .docs-content-pane {
+  flex: 1;
   padding: var(--page-padding, 2rem 3rem);
+}
+
+docs-page .docs-preview-pane {
+  padding-right: 10px;
+}
+
+docs-page .docs-content {
+  max-width: 680px;
 }
 
 docs-page .full-screen {

@@ -6,6 +6,7 @@ export default (props) => {
   const events = renderEvents(page.events);
   const methods = renderMethods(page.methods);
   const customProps = renderCustomProps(page.styles);
+  const demoPreview = rendeDemoPreview(page);
 
   if (usage) {
     headings.push({
@@ -43,15 +44,20 @@ export default (props) => {
   }
 
   return (
-    <main>
-      <h1>{ page.title }</h1>
-      <docs-table-of-contents links={headings} basepath={history.location.pathname}/>
-      <section class="markdown-content" innerHTML={page.body}/>
-      { usage }
-      { properties }
-      { events }
-      { methods }
-      { customProps }
+    <main class="docs-api">
+      <div class="docs-content-pane">
+        <div class="docs-content">
+          <h1>{ page.title }</h1>
+          <docs-table-of-contents links={headings} basepath={history.location.pathname}/>
+          <section class="markdown-content" innerHTML={page.body}/>
+          { usage }
+          { properties }
+          { events }
+          { methods }
+          { customProps }
+        </div>
+      </div>
+      { demoPreview }
     </main>
   );
 };
@@ -175,5 +181,19 @@ const renderCustomProps = (customProps = []) => {
         </tbody>
       </table>
     </section>
+  );
+};
+
+
+const rendeDemoPreview = (page: any) => {
+  if (!Array.isArray(page.demos) || page.demos.length === 0) {
+    return null;
+  }
+  const demo = `/docs/demos/${page.tag}/${page.demos[0]}/index.html`;
+
+  return (
+    <div class="docs-preview-pane">
+      <docs-preview url={demo}></docs-preview>
+    </div>
   );
 };
