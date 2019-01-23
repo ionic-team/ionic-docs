@@ -9,10 +9,9 @@ nextUrl: '/docs/faq/native'
 
 ## Blank App
 
->I have no errors in my app. Why does it show a blank screen?
+> I have no errors in my app. Why does it show a blank screen?
 
-There are different reasons this can happen. If you are unable to find a
-solution on the forums, make sure:
+There are several different reasons this can happen. If you are unable to find a solution on the [Ionic forums](https://forum.ionicframework.com), make sure:
 
 - Root `@Component` has a `template` or `templateUrl`.
 - Root `@Component` template has an `<ion-nav>` with a `root` property:
@@ -84,7 +83,7 @@ add the `tappable` attribute to your element.
 At some point in your development you may, try to call Cordova plugin, but get a
 warning:
 
-```
+```shell
 [Warning] Native: tried calling StatusBar.styleDefault, but Cordova is not
 available. Make sure to include cordova.js or run in a device/simulator
 (app.bundle.js, line 83388)
@@ -96,7 +95,7 @@ Thankfully, Ionic Native will print out a nice warning, instead of an error.
 In other cases where the plugin is not being used through Ionic Native, plugins
 can print a much more obscure warning.
 
-```
+```shell
 EXCEPTION: Error: Uncaught (in promise): TypeError: undefined is not an object
 (evaluating 'navigator.camera.getPicture')
 ```
@@ -144,5 +143,3 @@ class MyApp {
   }
 }
 ```
-
-Plunker: [http://plnkr.co/edit/QzgR5H0r8FijHeVtv2dd](http://plnkr.co/edit/QzgR5H0r8FijHeVtv2dd)

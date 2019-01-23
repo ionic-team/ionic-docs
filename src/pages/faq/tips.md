@@ -6,22 +6,24 @@ previousUrl: '/docs/faq/native'
 # Developer Tips
 
 ## Updating Dependencies
-To update a dependency, run:
+
+To update a [npm](https://www.npmjs.com/) dependency, run the following, where `<package-name>` is the package to update:
 
 ```shell
 $ npm install <package-name>@<version|latest> --save
 ```
 
-For instance, to update the `@ionic/angular` package to the latest release, run:
+For instance, to update the `@ionic/angular` package to the release tagged `latest`, run:
 
 ```shell
 $ npm install @ionic/angular@latest --save
 ```
 
-It is recommended that packages get updated through the CLI since npm will now read package versions from the `package.lock.json` first.
+It is recommended that packages get updated through the CLI since npm will now read package versions from the `package-lock.json` first.
 
 ## Editors
-There a lots of editors to choose from.
+
+There are a lots of editors to choose from. Here are some of our favorites:
 
 - [VSCode](https://code.visualstudio.com)
 - [Atom](https://atom.io)
@@ -40,11 +42,11 @@ function myBrokenFunction() {
 }
 ```
 
-When an app runs, it will pause at this function. From the, the devtools can be use to run pieces of JavaScript, line by line, and inspect where exactly the function breaks.
+When an app runs, it will pause at this function. From the, the developer tools can be use to run pieces of JavaScript, line by line, and inspect where exactly the function breaks.
 
 ## Changing Mode
 
-By default, when an app is viewed in the browser, Ionic will apply the MD mode. However, since Ionic components adapt according to their platform, it is helpful to be able to view what this app looks like on iOS. To do this, add `?ionic:mode=ios` to the URL where the app is being served: `http://localhost:8100/?ionic:mode=ios<`.
+By default, when an app is viewed in the browser, Ionic will apply the `md` mode. However, since Ionic components adapt according to their platform, it is helpful to be able to view what this app looks like on iOS. To do this, add `?ionic:mode=ios` to the URL where the app is being served: `http://localhost:8100/?ionic:mode=ios`.
 
 > However, this will not change how the browser sees which platform is currently being used. Platform is determined by device detection and inspecting the user-agent. So to change the platform, the user-agent must be changed. To do this, open up Chrome DevTools, and toggle device mode on with <kbd>Ctrl+Shift+i</kbd>(<kbd>Cmd+Option+I</kbd> on Mac).
 
