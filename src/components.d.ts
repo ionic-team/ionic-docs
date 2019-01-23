@@ -102,10 +102,12 @@ export namespace Components {
   interface DocsPreview {
     'source': string;
     'url': string;
+    'urlFragment': string;
   }
   interface DocsPreviewAttributes extends StencilHTMLAttributes {
     'source'?: string;
     'url'?: string;
+    'urlFragment'?: string;
   }
 
   interface DocsReference {

@@ -5,8 +5,10 @@ import { Component, Listen, Prop, State } from '@stencil/core';
   styleUrl: 'preview.css'
 })
 export class SitePreviewApp {
+
   @Prop() url: string;
   @Prop() source: string;
+  @Prop() urlFragment = '';
   @State() ionicMode = 'ios';
 
   iframe: HTMLIFrameElement;
@@ -70,7 +72,7 @@ export class SitePreviewApp {
           </svg>
           <iframe
             onLoad={this.onIframeLoad}
-            src={`${this.url}?ionic:mode=${this.ionicMode}${this.URLParams}`}
+            src={`${this.url}?ionic:mode=${this.ionicMode}${this.URLParams}${this.urlFragment}`}
             ref={node => { this.iframe = node as HTMLIFrameElement; }}/>
         </figure>
       </div>

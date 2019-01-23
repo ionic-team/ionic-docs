@@ -1,0 +1,5 @@
+page-grid ion-col > div {
+  background-color: #f7f7f7;
+  border: solid 1px #ddd;
+  padding: 10px;
+}

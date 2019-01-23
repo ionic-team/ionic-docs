@@ -186,14 +186,43 @@ const renderCustomProps = (customProps = []) => {
 
 
 const rendeDemoPreview = (page: any) => {
-  if (!Array.isArray(page.demos) || page.demos.length === 0) {
+  if (DEMOS.indexOf(page.tag) < 0) {
     return null;
   }
-  const demo = `/docs/demos/${page.tag}/${page.demos[0]}/index.html`;
-
   return (
     <div class="docs-preview-pane">
-      <docs-preview url={demo}></docs-preview>
+      <docs-preview url="/docs/demos/index.html" urlFragment={`#/${page.tag}`}></docs-preview>
     </div>
   );
 };
+
+
+
+const DEMOS = [
+  'ion-action-sheet',
+  'ion-alert',
+  'ion-badge',
+  'ion-button',
+  'ion-card',
+  'ion-checkbox',
+  'ion-datetime',
+  'ion-fab',
+  'ion-grid',
+  'ion-infinite-scroll',
+  'ion-input',
+  'ion-list',
+  'ion-loading',
+  'ion-menu',
+  'ion-modal',
+  'ion-nav',
+  'ion-popover',
+  'ion-range',
+  'ion-refresher',
+  'ion-searchbar',
+  'ion-select',
+  'ion-slides',
+  'ion-spinner',
+  'ion-tabs',
+  'ion-toast',
+  'ion-virtual-scroll'
+];
