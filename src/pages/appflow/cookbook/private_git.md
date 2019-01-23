@@ -1,11 +1,11 @@
 ---
 previousText: 'Webhooks'
 previousUrl: '/docs/appflow/automation/webhooks'
-nextText: 'How to use private NPM modules'
+nextText: 'Using private NPM modules'
 nextUrl: '/docs/appflow/cookbook/private_npm_modules'
 ---
 
-# How to use Private GIT repositories belonging to users not owning the app codebase (GIT Credentials)
+# Using private GIT repositories
 
 During the build process, it might be necessary to access other private repositories containing, for instance, libraries.
 
