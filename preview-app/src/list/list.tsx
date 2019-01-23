@@ -21,7 +21,7 @@ export class PageList {
 
           <ion-item>
             <ion-avatar slot="start">
-              <img src="assets/img/avatar-finn.png"></img>
+              <img src="/docs/assets/preview/avatar-finn.png"></img>
             </ion-avatar>
             <ion-label>
               <h2>Finn</h2>
@@ -32,7 +32,7 @@ export class PageList {
 
           <ion-item>
             <ion-avatar slot="start">
-              <img src="assets/img/avatar-han.png"></img>
+              <img src="/docs/assets/preview/avatar-han.png"></img>
             </ion-avatar>
             <ion-label>
               <h2>Han</h2>
@@ -43,7 +43,7 @@ export class PageList {
 
           <ion-item>
             <ion-avatar slot="start">
-              <img src="assets/img/avatar-rey.png"></img>
+              <img src="/docs/assets/preview/avatar-rey.png"></img>
             </ion-avatar>
             <ion-label>
               <h2>Rey</h2>
@@ -54,7 +54,7 @@ export class PageList {
 
           <ion-item>
             <ion-avatar slot="start">
-              <img src="assets/img/avatar-luke.png"></img>
+              <img src="/docs/assets/preview/avatar-luke.png"></img>
             </ion-avatar>
             <ion-label>
               <h2>Luke</h2>
@@ -71,7 +71,7 @@ export class PageList {
 
           <ion-item>
             <ion-avatar slot="start">
-              <img src="assets/img/avatar-poe.png"></img>
+              <img src="/docs/assets/preview/avatar-poe.png"></img>
             </ion-avatar>
             <ion-label>
               <h2>Poe</h2>
@@ -82,7 +82,7 @@ export class PageList {
 
           <ion-item>
             <ion-avatar slot="start">
-              <img src="assets/img/avatar-ben.png"></img>
+              <img src="/docs/assets/preview/avatar-ben.png"></img>
             </ion-avatar>
             <ion-label>
               <h2>Ben</h2>
@@ -93,7 +93,7 @@ export class PageList {
 
           <ion-item>
             <ion-avatar slot="start">
-              <img src="assets/img/avatar-leia.png"></img>
+              <img src="/docs/assets/preview/avatar-leia.png"></img>
             </ion-avatar>
             <ion-label>
               <h2>Leia</h2>
@@ -104,7 +104,7 @@ export class PageList {
 
           <ion-item>
             <ion-avatar slot="start">
-              <img src="assets/img/avatar-yoda.png"></img>
+              <img src="/docs/assets/preview/avatar-yoda.png"></img>
             </ion-avatar>
             <ion-label>
               <h2>Yoda</h2>

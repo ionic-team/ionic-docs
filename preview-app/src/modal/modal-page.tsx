@@ -20,7 +20,7 @@ export class ModalPage {
       {
         name: 'Gollum',
         quote: 'Sneaky little hobbitses!',
-        image: 'assets/img/avatar-gollum.jpg',
+        image: '/docs/assets/preview/avatar-gollum.jpg',
         items: [
           { title: 'Race', note: 'Hobbit' },
           { title: 'Culture', note: 'River Folk' },
@@ -30,7 +30,7 @@ export class ModalPage {
       {
         name: 'Frodo',
         quote: 'Go back, Sam! I\'m going to Mordor alone!',
-        image: 'assets/img/avatar-frodo.jpg',
+        image: '/docs/assets/preview/avatar-frodo.jpg',
         items: [
           { title: 'Race', note: 'Hobbit' },
           { title: 'Culture', note: 'Shire Folk' },
@@ -40,7 +40,7 @@ export class ModalPage {
       {
         name: 'Samwise Gamgee',
         quote: 'What we need is a few good taters.',
-        image: 'assets/img/avatar-samwise.jpg',
+        image: '/docs/assets/preview/avatar-samwise.jpg',
         items: [
           { title: 'Race', note: 'Hobbit' },
           { title: 'Culture', note: 'Shire Folk' },

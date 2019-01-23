@@ -18,7 +18,7 @@ export class PageSlides {
         <ion-slides pager={false}>
 
           <ion-slide>
-            <img src="assets/img/ica-slidebox-img-1.png" class="slide-image" />
+            <img src="/docs/assets/preview/ica-slidebox-img-1.png" class="slide-image" />
             <h2 class="slide-title">
               Welcome to the <b>ICA</b>
             </h2>
@@ -28,7 +28,7 @@ export class PageSlides {
           </ion-slide>
 
           <ion-slide>
-            <img src="assets/img/ica-slidebox-img-2.png" class="slide-image" />
+            <img src="/docs/assets/preview/ica-slidebox-img-2.png" class="slide-image" />
             <h2 class="slide-title">What is Ionic?</h2>
             <p>
               <b>Ionic Framework</b> is an open source SDK that enables developers to build high quality mobile apps with web technologies
@@ -37,7 +37,7 @@ export class PageSlides {
           </ion-slide>
 
           <ion-slide>
-            <img src="assets/img/ica-slidebox-img-3.png" class="slide-image" />
+            <img src="/docs/assets/preview/ica-slidebox-img-3.png" class="slide-image" />
             <h2 class="slide-title">What is Ionic Pro?</h2>
             <p>
               <b>Ionic Pro</b> is a powerful set of services and features built on top of Ionic Framework that brings a totally new
@@ -46,7 +46,7 @@ export class PageSlides {
           </ion-slide>
 
           <ion-slide>
-            <img src="assets/img/ica-slidebox-img-4.png" class="slide-image" />
+            <img src="/docs/assets/preview/ica-slidebox-img-4.png" class="slide-image" />
             <h2 class="slide-title">Ready to Play?</h2>
             <ion-button fill="clear" href="/schedule">
               Continue

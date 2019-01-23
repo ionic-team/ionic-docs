@@ -7,7 +7,15 @@
 
 /** Optional CSS utils that can be commented out */
 @import "~@ionic/core/css/padding.css";
-@import "~@ionic/core/css/float-elements.css";
-@import "~@ionic/core/css/text-alignment.css";
-@import "~@ionic/core/css/text-transformation.css";
-@import "~@ionic/core/css/flex-utils.css";
+
+ion-toolbar {
+  --background: white;
+}
+
+:root {
+  --ion-safe-area-top: 20px;
+}
+
+:root.ios {
+  --ion-safe-area-bottom: 22px;
+}
