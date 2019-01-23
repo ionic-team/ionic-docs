@@ -6,7 +6,7 @@
   "author": "Ionic Team",
   "license": "MIT",
   "scripts": {
-    "start": "stencil build --dev --serve --watch",
+    "start": "stencil build --dev --serve --watch --es5",
     "prestart": "npm run -s build-all",
     "build": "stencil build --prerender --dev --es5",
     "prebuild": "npm run -s build-all",
