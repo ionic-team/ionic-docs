@@ -5,9 +5,7 @@ nextUrl: '/docs/building/scaffolding'
 
 # Starting an App
 
-<p class="intro" markdown="1">
 Starting a new Ionic app is incredibly simple. From the command line, run the `ionic start` command and the CLI will handle the rest.
-</p>
 
 <command-line>
     <command-prompt>ionic start --type=angular</command-prompt>

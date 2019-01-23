@@ -11,9 +11,7 @@ nextUrl: '/docs/publishing/app-store'
 
 # Advanced Theming
 
-<p class="intro" markdown="1">
 CSS-based theming enables apps to customize the colors quickly by loading a CSS file or changing a few CSS property values.
-</p>
 
 ## Colors
 

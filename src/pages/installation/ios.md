@@ -7,9 +7,7 @@ nextUrl: '/docs/installation/android'
 
 # iOS Setup
 
-<p class="intro" markdown="1">
 To target iOS, some additional environment setup is required. Unfortunately, iOS apps can only be created on macOS.
-</p>
 
 ## Xcode
 
