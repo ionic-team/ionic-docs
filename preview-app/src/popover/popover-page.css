@@ -1,0 +1,106 @@
+popover-page ion-grid {
+  --ion-grid-padding: 0;
+  --ion-grid-column-padding: 0;
+}
+
+/* TODO */
+popover-page .text-button {
+  padding-left: 0;
+  text-align: center;
+  min-height: 20px;
+  line-height: 18px;
+}
+
+popover-page .text-button .item-inner {
+  padding-right: 0;
+}
+
+popover-page .text-button .input-wrapper {
+  justify-content: center;
+}
+
+/*
+ * Font Size Items
+ */
+
+popover-page .text-smaller {
+  font-size: 12px;
+}
+
+popover-page .text-larger {
+  font-size: 16px;
+}
+
+popover-page .text-smaller {
+  border-right: 1px solid;
+}
+
+
+/*
+ * Color Dots
+ */
+
+popover-page .row-dots {
+  text-align: center;
+}
+
+popover-page .row-dots .dot {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin: 10px auto;
+  position: relative;
+}
+
+popover-page .dot-white {
+  background-color: #fff;
+}
+
+popover-page .dot-tan {
+  background-color: #f9f1e4;
+}
+
+popover-page .dot-grey {
+  background-color: #4c4b50;
+}
+
+popover-page .dot-black {
+  background-color: #000;
+}
+
+popover-page .dot.selected {
+  border-width: 2px;
+  border-color: #327eff;
+}
+
+popover-page .row-dots {
+  border-bottom: 1px solid rgba(var(--ion-item-md-border-color-rgb, var(--ion-item-border-color-rgb,0,0,0)), .13);
+}
+
+popover-page .dot {
+  border: 1px solid rgba(var(--ion-item-md-border-color-rgb, var(--ion-item-border-color-rgb,0,0,0)), .13);
+}
+
+/*
+ * Font Family Items
+ */
+
+popover-page .text-arial {
+  --ion-font-family: "Arial";
+}
+
+popover-page .text-courier-new {
+  --ion-font-family: "Courier New";
+}
+
+popover-page .text-trebuchet {
+  --ion-font-family: "Trebuchet MS";
+}
+
+popover-page .text-comic-sans {
+  --ion-font-family: "Comic Sans MS";
+}
+
+popover-page .text-times-new-roman {
+  --ion-font-family: "Times New Roman";
+}

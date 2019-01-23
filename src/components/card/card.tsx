@@ -16,7 +16,6 @@ export class DocsCard {
       class: {
         'Card-with-image': !!this.img,
         'Card-without-image': !this.img,
-
       }
     };
   }

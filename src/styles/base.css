@@ -230,5 +230,4 @@ tbody tr:nth-child(odd) {
 iframe {
   background-color: rgba(0, 0, 0, 0.02);
   box-shadow: 10px 10px 20px rgba(0,0,0,0.1);
-  margin: 2rem 0;
 }

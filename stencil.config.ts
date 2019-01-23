@@ -1,4 +1,6 @@
-export const config = {
+import { Config } from '@stencil/core';
+
+export const config: Config = {
   globalStyle: 'src/styles/global.css',
   outputTargets: [
     {
@@ -6,7 +8,8 @@ export const config = {
       dir: 'www/docs',
       baseUrl: '/docs',
       serviceWorker: null,
-      inlineLoaderScript: false
+      empty: false,
+   inlineLoaderScript: false
     }
   ],
   copy: [

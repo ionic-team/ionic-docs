@@ -1,0 +1,13 @@
+page-slides .swiper-slide {
+  display: block;
+}
+
+page-slides .slide-title {
+  margin-top: 2.8rem;
+}
+
+page-slides .slide-image {
+  max-height: 50%;
+  max-width: 60%;
+  margin: 36px 0;
+}
