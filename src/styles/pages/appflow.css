@@ -1,3 +1,27 @@
 .page-appflow main {
   max-width: 1000px;
 }
+
+.page-appflow-quickstart-connect img {
+  max-height: 400px;
+}
+
+.page-appflow-quickstart-native-config img {
+  max-height: 500px;
+}
+
+.page-appflow-quickstart-ionic-remote img {
+  max-height: 500px;
+}
+
+.page-appflow-quickstart-package img {
+  max-height: 500px;
+}
+
+.page-appflow-quickstart-automation img {
+  max-height: 500px;
+}
+
+.page-appflow-quickstart-environment img {
+  max-height: 500px;
+}
