@@ -14,15 +14,15 @@ their iOS, Android, and web apps faster than ever.
     <b>Get Started!</b>
   </docs-card>
 
-  <docs-card header="Deploy" href="/docs/appflow/deploy/intro" icon="/docs/assets/icons/guide-deploy-icon.png">>
+  <docs-card header="Deploy" href="/docs/appflow/deploy/intro" icon="/docs/assets/icons/guide-deploy-icon.png">
     <p>Provide live updates and hotfixes to user devices instantly without going through the app stores.</p>
   </docs-card>
 
-  <docs-card header="Package" href="/docs/appflow/package/intro" icon="/docs/assets/icons/guide-package-icon.png">>
+  <docs-card header="Package" href="/docs/appflow/package/intro" icon="/docs/assets/icons/guide-package-icon.png">
     <p>Build native iOS and Android binaries in the cloud without the headache of maintaining your own build servers.</p>
   </docs-card>
 
-  <docs-card header="Automate" href="/docs/appflow/automation/intro" icon="/docs/assets/icons/guide-automate-icon.png">>
+  <docs-card header="Automate" href="/docs/appflow/automation/intro" icon="/docs/assets/icons/guide-automate-icon.png">
     <p>Automate your Deploy and Package builds to help you team ship better updates faster.</p>
   </docs-card>
 
