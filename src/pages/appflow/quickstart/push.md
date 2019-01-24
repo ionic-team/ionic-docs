@@ -6,9 +6,12 @@ nextText: 'Deploy a Live Update'
 nextUrl: '/docs/appflow/quickstart/deploy'
 ---
 
-In order for Appflow to access your code base you'll need to push a commit so that it shows up in your dashboard.
-If you are using GitHub, Bitbucket, or Bitbucket Server a new commit will show up every time you push to your git host.
-If you are using the Ionic remote you'll need to push to it directly in order to see your commit in the dashboard.
+In order for Appflow to access your code base you'll need to push a commit so that it shows up in your Dashboard.
+
+## Committing to Appflow
+If you are using an integration with GitHub, Bitbucket or Bitbucket Server, a new commit will show up every time you push to your git host.
+
+If you are using Ionic as your git remote, you'll need to push to your commit to Appflow directly to see your commit in the Dashboard.
 
 <docs-tabs tabs="GitHub / Bitbucket, Ionic Remote">
 <div slot="GitHubBitbucket">
@@ -30,6 +33,6 @@ If you are using the Ionic remote you'll need to push to it directly in order to
 </div>
 </docs-tabs>
 
-Once you've pushed the changes you should see your commit available in the `Commits` tab of the dashboard.
+Once you've done a `git push`, you should see your commit available in the `Commits` tab of the Dashboard.
 
 ![Commits List](/docs/assets/img/appflow/ss-commit-list.png)
