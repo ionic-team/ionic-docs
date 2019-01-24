@@ -163,7 +163,7 @@ Most apps at some point will need to store some sort of data locally. Whether it
 
 In this case, <a href="https://github.com/ionic-team/ionic-storage" target="_blank">Ionic’s Storage library</a> is a perfect candidate for the multi-environment use case. Built on top of the well tested LocalForage library, Ionic’s storage class provides an adaptable storage mechanism that will pick the best storage solution for the current run time.
 
-Currently this means it will run through SQLite for native, IndexedDB (if available), WebSql, or Local Storage. By handling all of this, it writing to storage using a stable API.
+Currently this means it will run through SQLite for native, IndexedDB (if available), WebSql, or Local Storage. By handling all of this, it allows writing to storage using a stable API.
 
 ```typescript
 class MyClass {
