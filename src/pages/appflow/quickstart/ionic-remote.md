@@ -26,7 +26,7 @@ an existing SSH key pair for authentication when pushing changes to Ionic Appflo
 
 You can learn about git remotes [here](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes).
 
-# SSH keys
+## SSH keys
 When using the Ionic remote authentication is done via public/private SSH key pairs for the most secure authentication possible.
 You'll need to upload a public key to Ionic Appflow to authenticate yourself. This can be done during the `ionic link` process or manually.
 
