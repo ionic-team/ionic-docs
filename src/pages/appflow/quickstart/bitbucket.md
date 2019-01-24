@@ -8,8 +8,13 @@ nextUrl: '/docs/appflow/quickstart/installation'
 
 If you are already using [Bitbucket Cloud](https://bitbucket.org/)
 you can link your repository with your Appflow app to push code automatically.
+
+## Prequisites
 In order to enable the integration with your Ionic Appflow app you will need an existing repository on
-Bitbucket. Navigate to the `Git` section of the app settings tab in your app on the
+Bitbucket. 
+
+## Setting up the Integration
+Navigate to the `Git` section of the app settings tab in your app on the
 Ionic Appflow dashboard choose the Bitbucket Cloud tab. If this is your first time connecting
 you'll need to click the `Connect` button.
 Then you can choose the repository to link from the list of available repos.

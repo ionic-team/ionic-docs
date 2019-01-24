@@ -8,8 +8,13 @@ nextUrl: '/docs/appflow/quickstart/installation'
 
 If you are already using [GitHub](https://github.com/)
 you can link your repository with your Appflow app to push code automatically.
+
+## Prerequisites
 In order to enable the integration with your Ionic Appflow app you will need an existing repository on
-GitHub. Navigate to the `Git` section of the app settings tab in your app on the
+GitHub. 
+
+## Setting up the Integration
+Navigate to the `Git` section of the app settings tab in your app on the
 Ionic Appflow dashboard choose the GitHub tab. If this is your first time connecting
 you'll need to click the `Connect` button.
 Then you can choose the repository to link from the list of available repos.
