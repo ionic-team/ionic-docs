@@ -6,9 +6,7 @@ nextText: 'Connect your Repo'
 nextUrl: '/docs/appflow/quickstart/connect'
 ---
 
-The quick start walks you through how to get up & running with the Ionic Appflow SDK (Deploy Plugin) for
-live updates and configuring you first automated Android & iOS native build environments.
-Begin the quickstart tutorial or go directly to the docs for component you're interested in.
+The quickstart tutorial walks you through the process of setting up your application with Ionic Appflow, including how to connect your application to Appflow, how to set up the Appflow SDK (Deploy plugin) for live updates, and how to configure your first automated Android and iOS builds using native build environments. Simply follow the guide step-by-step, or navigate directly to the documentation for the component that interests you.
 
 <docs-cards>
   <docs-card header="Start the Tutorial" href="/docs/appflow/quickstart/connect">
@@ -24,6 +22,6 @@ Begin the quickstart tutorial or go directly to the docs for component you're in
   </docs-card>
 
   <docs-card header="Automation Docs" href="/docs/appflow/automation/intro">
-    <p>Automate the building, testing, and distribution of Package & Deploy to ship better updates faster.</p>
+    <p>Automate the building, testing, and distribution of Package & Deploy builds to ship better updates faster.</p>
   </docs-card>
 </docs-cards>
