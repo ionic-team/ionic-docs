@@ -60,18 +60,18 @@ Finally, inject it into any of your components or pages:
 ```typescript
 import { Storage } from '@ionic/storage';
 
-export class MyApp {
-  constructor(private storage: Storage) { }
+class MyClass {
+  constructor(public storage: Storage) {}
 
-  ...
+  async setData(key, value) {
+    const res = await this.storage.set(key, value);
+    console.log(res);
+  }
 
-  // set a key/value
-  storage.set('name', 'Max');
-
-  // Or to get a key/value pair
-  storage.get('age').then((val) => {
-    console.log('Your age is', val);
-  });
+  async getData(key) {
+    const keyVal = await this.storage.get(key);
+    console.log('Key is', keyVal);
+  }
 }
 ```
 
