@@ -11,7 +11,6 @@ their iOS, Android, and web apps faster than ever.
     <p>Get your app set up with multiple environments that automatically build new binaries for
     iOS and Android and provide real time updates for your users instantly every time your team commits
     new code.</p>
-    <b>Get Started!</b>
   </docs-card>
 
   <docs-card header="Deploy" href="/docs/appflow/deploy/intro" icon="/docs/assets/icons/guide-deploy-icon.png">
