@@ -9,8 +9,8 @@ nextUrl: '/docs/appflow/cookbook/private_git'
 # Cookbook
 
 ### [Using Private Git Repos](/docs/appflow/cookbook/private_git)
+Learn how to access private Git repos used in npm dependencies.
+
+### [Using Private NPM Modules](/docs/appflow/cookbook/private_npm)
 Learn how to access private NPM modules used in dependencies.
 
-### [Building Mobile Apps with Ionic 2](/docs/appflow/package/cli")
-Learn how to integrate Ionic package with existing CI/CD tools like Jenkins, Travis CI,
-Circle CI, GitLab CI, and others using the Ionic CLI.
