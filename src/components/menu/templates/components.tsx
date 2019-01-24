@@ -16,7 +16,7 @@ const items = {
     'ion-button': '/docs/api/button',
     'ion-ripple-effect': '/docs/api/ripple-effect'
   },
-  'Cards': {
+  'Card': {
     'ion-card': '/docs/api/card',
     'ion-card-content': '/docs/api/card-content',
     'ion-card-header': '/docs/api/card-header',
@@ -39,7 +39,7 @@ const items = {
     'ion-picker-controller': '/docs/api/picker-controller',
     'ion-picker': '/docs/api/picker'
   },
-  'FAB': {
+  'Floating Action Button': {
     'ion-fab-button': '/docs/api/fab-button',
     'ion-fab-list': '/docs/api/fab-list',
     'ion-fab': '/docs/api/fab',
@@ -56,11 +56,11 @@ const items = {
   'Icons': {
     'ion-icon': 'https://ionicons.com'
   },
-  'Inputs': {
+  'Input': {
     'ion-input': '/docs/api/input',
     'ion-textarea': '/docs/api/textarea'
   },
-  'Items': {
+  'Item': {
     'ion-item': '/docs/api/item',
     'ion-item-divider': '/docs/api/item-divider',
     'ion-item-group': '/docs/api/item-group',
@@ -70,7 +70,7 @@ const items = {
     'ion-label': '/docs/api/label',
     'ion-note': '/docs/api/note'
   },
-  'Lists': {
+  'List': {
     'ion-list': '/docs/api/list',
     'ion-list-header': '/docs/api/list-header',
     'ion-virtual-scroll': '/docs/api/virtual-scroll'
@@ -88,7 +88,7 @@ const items = {
     'ion-menu': '/docs/api/menu',
     'ion-split-pane': '/docs/api/split-pane'
   },
-  'Modals': {
+  'Modal': {
     'ion-modal-controller': '/docs/api/modal-controller',
     'ion-modal': '/docs/api/modal'
   },

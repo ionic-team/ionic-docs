@@ -32,23 +32,23 @@ Ionic apps are made of high-level building blocks called Components, which allow
   </docs-card>
 
   <docs-card header="Content" href="/docs/api/content" icon="/docs/assets/icons/component-content-icon.png">
-    <p>The quintessential way to interact with and navigate through an app.</p>
+    <p>Content is the quintessential way to interact with and navigate through an app.</p>
   </docs-card>
 
-  <docs-card header="DateTime" href="/docs/api/datetime" icon="/docs/assets/icons/component-datetimepicker-icon.png">
-    <p>DateTime is used to present an interface which makes it easy for users to select dates and times.</p>
+  <docs-card header="Date & Time Pickers" href="/docs/api/datetime" icon="/docs/assets/icons/component-datetimepicker-icon.png">
+    <p>Date & time pickers are used to present an interface that makes it easy for users to select dates and times.</p>
   </docs-card>
 
-  <docs-card header="FAB" href="/docs/api/fab" icon="/docs/assets/icons/component-fab-icon.png">
-    <p>Floating action buttons are circular and perform the primary, or most common, action on a screen.</p>
+  <docs-card header="Floating Action Button" href="/docs/api/fab" icon="/docs/assets/icons/component-fab-icon.png">
+    <p>Floating action buttons are circular buttons that perform a primary action on a screen.</p>
   </docs-card>
 
-  <docs-card header="Icon" href="https://ionicons.com" img="/docs/assets/icons/feature-component-icons-icon.png">
+  <docs-card header="Icons" href="https://ionicons.com" img="/docs/assets/icons/feature-component-icons-icon.png">
     <p>Beautifully designed icons for use in web, iOS, Android, and desktop apps.</p>
   </docs-card>
 
   <docs-card header="Grid" href="/docs/api/grid" icon="/docs/assets/icons/component-grid-icon.png">
-    <p>Grid is a powerful mobile-first system for building custom layouts.</p>
+    <p>The grid is a powerful mobile-first system for building custom layouts.</p>
   </docs-card>
 
   <docs-card header="Infinite Scroll" href="/docs/api/infinite-scroll" icon="/docs/assets/icons/component-infinitescroll-icon.png">
@@ -56,7 +56,7 @@ Ionic apps are made of high-level building blocks called Components, which allow
   </docs-card>
 
   <docs-card header="Input" href="/docs/api/input" icon="/docs/assets/icons/component-input-icon.png">
-    <p>Inputs allow users to provide data to your app.</p>
+    <p>Inputs provides a way for users to enter data in your app.</p>
   </docs-card>
 
   <docs-card header="Item" href="/docs/api/item" icon="/docs/assets/icons/component-item-icon.png">
@@ -76,19 +76,19 @@ Ionic apps are made of high-level building blocks called Components, which allow
   </docs-card>
 
   <docs-card header="Modal" href="/docs/api/modal" icon="/docs/assets/icons/component-modal-icon.png">
-    <p>Modals slide in and off screen to display a temporary UI and are often used for login or signup pages.</p>
+    <p>Modals slide in and off screen to display a temporary UI and are often used for login or sign-up pages.</p>
   </docs-card>
 
   <docs-card header="Popover" href="/docs/api/popover" icon="/docs/assets/icons/component-popover-icon.png">
     <p>Popover provides an easy way to present information or options without changing contexts.</p>
   </docs-card>
 
-  <docs-card header="Progress Bar" href="/docs/api/progress-bar" icon="/docs/assets/icons/component-progress-icon.png">
-    <p>Progress bar visualizes the progression of an operation or activity.</p>
+  <docs-card header="Progress Indicators" href="/docs/api/progress-bar" icon="/docs/assets/icons/component-progress-icon.png">
+    <p>Progress indicators visualize the progression of an operation or activity.</p>
   </docs-card>
 
   <docs-card header="Radio" href="/docs/api/radio" icon="/docs/assets/icons/component-radio-icon.png">
-    <p>Radio inputs allow you to present a select of exclusive options.</p>
+    <p>Radio inputs allow you to present a set of exclusive options.</p>
   </docs-card>
 
   <docs-card header="Refresher" href="/docs/api/refresher" icon="/docs/assets/icons/component-refresher-icon.png">
@@ -96,21 +96,20 @@ Ionic apps are made of high-level building blocks called Components, which allow
   </docs-card>
 
   <docs-card header="Searchbar" href="/docs/api/searchbar" img="/docs/assets/icons/feature-component-search-icon.png">
-    <p>Seachbar is used to search or filter items, usually from a toolbar.</p>
+    <p>Searchbar is used to search or filter items, usually from a toolbar.</p>
   </docs-card>
 
   <docs-card header="Reorder" href="/docs/api/reorder" icon="/docs/assets/icons/component-reorder-icon.png">
-    <p>Reorder lets users (surprise!) reorder a list of content.</p>
+    <p>Reorder lets users drag and drop to reorder a list of items.</p>
   </docs-card>
 
-  <docs-card header="Router" href="/docs/api/router" icon="/docs/assets/icons/component-routing-icon.png">
-    <p>Router shows the correct content based on your users current path.</p>
+  <docs-card header="Routing" href="/docs/api/router" icon="/docs/assets/icons/component-routing-icon.png">
+    <p>Routing allows navigation based on the current path.</p>
   </docs-card>
 
   <docs-card header="Segment" href="/docs/api/segment" icon="/docs/assets/icons/component-segment-icon.png">
-    <p>Segment can be used to prevent a set of exclusive options, often as a filter or view selector.</p>
+    <p>Segments provide a set of exclusive buttons that can be used as a filter or view switcher.</p>
   </docs-card>
-
 
   <docs-card header="Select" href="/docs/api/select" icon="/docs/assets/icons/component-select-icon.png">
     <p>Select is similar to the native HTML select, with a few improvements to sorting and selecting.</p>
