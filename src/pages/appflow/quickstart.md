@@ -9,7 +9,7 @@ nextUrl: '/docs/appflow/quickstart/connect'
 The quickstart tutorial walks you through the process of setting up your application with Ionic Appflow, including how to connect your application to Appflow, how to set up the Appflow SDK (Deploy plugin) for live updates, and how to configure your first automated Android and iOS builds using native build environments. Simply follow the guide step-by-step, or navigate directly to the documentation for the component that interests you.
 
 <docs-cards>
-  <docs-card header="Start the Tutorial" href="/docs/appflow/quickstart/connect" icon="/docs/assets/icons/guides-quickstart-icon.png">
+  <docs-card header="Start the Tutorial" href="/docs/appflow/quickstart/connect" icon="/docs/assets/icons/guide-quickstart-icon.png">
     <p>Follow the quickstart tutorial and get up and running with Appflow in no time!</p>
   </docs-card>
 
