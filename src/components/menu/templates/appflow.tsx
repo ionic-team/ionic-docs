@@ -11,7 +11,8 @@ const items = {
       'Bitbucket Server': '/docs/appflow/quickstart/bitbucket-server',
       'Ionic Remote': '/docs/appflow/quickstart/ionic-remote',
     }, '/docs/appflow/quickstart/connect'),
-    'Installing the Appflow SDK': '/docs/appflow/quickstart/installation',
+    'Install the Appflow SDK': '/docs/appflow/quickstart/installation',
+    'Push a Commit': '/docs/appflow/quickstart/push',
     'Help and Support': '/docs/appflow/basics/help'
   }, '/docs/appflow/quickstart'),
   'Deploy': {

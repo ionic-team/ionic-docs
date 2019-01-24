@@ -1,48 +1,39 @@
-## Install Ionic CLI
+---
+title: 'Install the Appflow SDK'
+previousText: 'Connect your Repo'
+previousUrl: '/docs/appflow/quickstart/connect'
+nextText: 'Push a Commit'
+nextUrl: '/docs/appflow/quickstart/push'
+---
 
-Ionic Appflow uses the latest version of the Ionic CLI to interface between your local code and our tools and services.
-To make sure you're using the latest CLI, upgrade using the following command:
+In order to take advantage of some of the best Appflow features like deploying live updates to your
+app and bypassing the app stores you'll need to install the Appflow SDK sometimes referred to as the
+Ionic Deploy plugin. The Appflow SDK comes with Ionic Appflow's Deploy feature for detecting and syncing
+your app with updates that you've pushed to channels.
 
-```bash
-npm install -g ionic
-```
+To install the plugin, we recommend following the automatic instructions after clicking "Install Instructions"
+on the channels list in the dashboard.
 
-Note: you may need to add `sudo` to this command on Mac/Linux.
+![Install Instructions](/docs/assets/img/appflow/ss-appflow-sdk-install.png)
 
-## Starting a New App
+To install the plugin manually, run the following command in the root of your Ionic app,
+making sure to substitute the correct values for your app:
 
-If you are looking to create a brand new App to use with Ionic Appflow, you can either start the process in
-[your dashboard](https://dashboard.ionicframework.com) or use the CLI locally.
-If you already have an App you'd like to link, skip this step.
+<command-line>
+<command-prompt>cordova plugin add cordova-plugin-ionic --save --variable APP_ID="YOUR_APP_ID" --variable CHANNEL_NAME="YOUR_CHANNEL_NAME" --variable UPDATE_METHOD="background|auto|none" --variable MAX_STORE="3"</command-prompt>
+</command-line>
 
-To create a new app, run the `ionic start` command, or follow the official
-[Ionic Framework Getting Started](/getting-started) guide.
+Where `YOUR_APP_ID` is the ID of the app in Ionic Appflow, and `YOUR_CHANNEL_NAME`
+is the name of a [channel](/docs/appflow/deploy/channels) you'd like the app to listen to for updates.
+Make sure to use the exact name of your channel, including the exact casing.
+[MAX_STORE](/docs/appflow/deploy/api/#max_store) tells us how many previous versions of code to keep
+inside your app, this enables you to revert to those versions quickly, or swap between versions.
+[UPDATE_METHOD](/docs/appflow/deploy/api/#update_method) is one of `background | auto | none`.
+You can read about all the available [plugin variables in our api docs](/docs/appflow/deploy/api/#plugin-variables).
 
-If this is your first time create an App on Appflow, you may have to perform some
-additional steps that the CLI will walk you through such as logging into your account and setting up SSH keys.
+After you've installed the plugin be sure to commit the changes it may have made to your `config.xml` and `package.json` files.
 
-Once the command finishes, you'll be prompted to create a new Ionic Appflow app or link to an existing one.
-Go ahead and choose the option you'd like to do.
-
-## Linking an Existing app
-
-Already have an existing Ionic app you'd like to link?
-No problem. Run `ionic link` in the directory of that app to connect it to Ionic Appflow:
-
-```bash
-cd myApp
-ionic link
-```
-
-The command will prompt you to create a new Ionic Appflow app or link to an existing app.
-
-If this is your first time running `ionic link` you may be prompted to perform
-additional steps such as logging in to your Appflow account and setting up your SSH keys.
-
-## Pushing your Code to Ionic
-
-Now that you are logged into your Ionic Appflow account from the CLI and have an app you'd like to use, the next
-step is to push commits to your Ionic Appflow account.
-
-Follow the [Git Workflow](/docs/appflow/basics/git/) to learn more about the workflow you should
-use while developing your App with Ionic Appflow.
+<command-line>
+<command-prompt>git add . # stage any changes</command-prompt>
+<command-prompt>git commit -m "added appflow sdk" #  commit staged changes</command-prompt>
+</command-line>

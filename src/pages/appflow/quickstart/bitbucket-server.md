@@ -8,7 +8,7 @@ nextUrl: '/docs/appflow/quickstart/installation'
 
 <blockquote>
   <p>The Bitbucket Server integration is only available on our scale plan.
-  Please <a href="mailto:sales@ionicframework.com">contact us</a> if you require this feature.
+  Please <a href="/sales">contact us</a> if you require this feature.
   </p>
 </blockquote>
 
