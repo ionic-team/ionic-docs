@@ -40,6 +40,10 @@ The following environment variables are provided in every build, which can be ac
 
 ## Custom Environments
 
+<blockquote>
+  <p><b>Note:</b>This feature is only available on our <a href="/pricing">Growth plans</a> and above.</p>
+</blockquote>
+
 In addition to the [predefined environments](#predefined-environments), customers on the [plans with access to automations](/pricing)
 will have access to create custom environments.
 With custom environments it's easy to create and manage custom sets of key/value pairs
