@@ -13,6 +13,7 @@ const items = {
     }, '/docs/appflow/quickstart/connect'),
     'Install the Appflow SDK': '/docs/appflow/quickstart/installation',
     'Push a Commit': '/docs/appflow/quickstart/push',
+    'Deploy a Live Update': '/docs/appflow/quickstart/deploy',
     'Help and Support': '/docs/appflow/basics/help'
   }, '/docs/appflow/quickstart'),
   'Deploy': {

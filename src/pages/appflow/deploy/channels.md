@@ -1,20 +1,20 @@
 ---
+title: 'Channels'
 previousText: 'Deploy Builds'
 previousUrl: '/docs/appflow/deploy/builds'
 nextText: 'Deploy API'
 nextUrl: '/docs/appflow/deploy/api'
 ---
 
-# Channels
+A channel points to a specific deploy build of your app that will be shared with any devices configured to
+listen to that channel for updates.
+You can change the build a channel points to whenever you'd like, and can rollback changes as well.
 
-A Channel **points to a specific JavaScript Build or Web Build of your app**
-that will be shared with specific devices listening to that channel for updates.
-You can change which build a Channel points to whenever you'd like, and can rollback changes as well.
+When you [install the Appflow SDK](/docs/appflow/quickstart/installation) in your app
+(by clicking Install Instructions on a channel), any native binary configured to that channel
+will check the channel for available updates whenever it is loaded.
 
-When you integrate Deploy with your App (by clicking Set Up Deploy on a Channel),
-the native binary set up with that Channel will poll that Channel for updates whenever it is loaded.
-
-### Setting up a Channel
+## Setting up a Channel
 
 Every app comes with two default channels: **Master**, and **Production**.
 
@@ -28,7 +28,7 @@ To create new channels beyond these two, you must have a paid Ionic Appflow memb
 simply view the channels list by going to Deploy -> Channels, and then click the New Channel button.
 
 
-### Assigning a Build to a Channel
+## Assigning a Build to a Channel
 
 Once you have created a Channel, go back to the **Builds** section of your app.
 On the right side of each Build, you'll see a "Assign to Channel" icon.
@@ -40,7 +40,7 @@ Click this to set the Build as active for a Channel.
 Once a Build is set as active for a Channel any native binaries that have been set up with Ionic Deploy
 for this Channel will receive the new update next time they check in.
 
-### Automating Deployment from a Git Branch
+## Automating Deployment from a Git Branch
 
 If your interested in automating your deploys from git push all the way to deploying to a channel you can
 take advantage or our [Automation](/docs/appflow/automation/intro) features if your [plan](/pricing) includes them.
