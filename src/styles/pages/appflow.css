@@ -2,6 +2,10 @@
   max-width: 1000px;
 }
 
+.page-appflow docs-cards > docs-card:nth-child(1) {
+  font-size: 1.25em;
+}
+
 .page-appflow-deploy-intro main {
   max-width: 1000px;
 }
