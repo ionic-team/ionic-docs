@@ -10,41 +10,19 @@ nextUrl: '/docs/appflow/package/builds'
 Ionic Appflow's Package feature makes it easy to build native app binaries for iOS and Android in the cloud.
 Perfect for automating binary builds and for developers using Windows that want to build iOS apps.
 
-## Get Started
+##### Helpful links
 
-<docs-cards class="prioritized">
-  <docs-card header="Build a Native Binary" href="/docs/appflow/quickstart/package">
+<docs-cards>
+  <docs-card header="Build a Native Binary" href="/docs/appflow/quickstart/package" icon="/docs/assets/icons/guide-quickstart-icon.png">
     <p>Build your very first Android debug build by following our quickstart guide.</p>
-    <b>Get Started!</b>
   </docs-card>
 
-  <docs-card header="Package Builds" href="/docs/appflow/package/builds">
-    <p>Learn what package builds are and how to use them.</p>
-  </docs-card>
-  
-  <docs-card header="Build Types" href="/docs/appflow/package/build-types/">
-    <p>Learn about all the different package build types for each platform and what they mean.</p>
-  </docs-card>
-
-  <docs-card header="Generating Credentials" href="/docs/appflow/package/credentials/">
-    <p>Learn what signing credentials are and how to generate them.</p>
-  </docs-card>
-  
-  <docs-card header="Native Configurations" href="/docs/appflow/package/native-configs">
-    <p>Learn about what native configurations are and how to use them.</p>
-  </docs-card>
-  
-  <docs-card header="CI/CD Integrations" href="/docs/appflow/deploy/cli">
-    <p>Learn how to integrate Appflow and package with your existing CI/CD infrastructure in
-     Jenkins, Travis CI, GitLab CI, Circle CI, and others using the Ionic CLI</p>
-  </docs-card>
-  
-  <docs-card header="Package FAQ" href="https://ionic.zendesk.com/hc/en-us/categories/360000410494-Package">
+  <docs-card header="Package FAQ" href="https://ionic.zendesk.com/hc/en-us/categories/360000410494-Package" icon="/docs/assets/icons/guide-faq-icon.png">
     <p>Find answers to common questions about building native binaries</p>
   </docs-card>
-  
-  <docs-card header="Managing Plugins using CocoaPods" href="https://ionic.zendesk.com/hc/en-us/articles/360010049673-Managing-plugins-using-CocoaPods-in-Ionic-Appflow-">
+
+  <docs-card header="Managing Plugins using CocoaPods" href="https://ionic.zendesk.com/hc/en-us/articles/360010049673-Managing-plugins-using-CocoaPods-in-Ionic-Appflow-" icon="/docs/assets/icons/guide-faq-icon.png">
     <p>Learn about how you can resolve build issues related to plugins using CocoaPods.</p>
   </docs-card>
-  
+
 </docs-cards>

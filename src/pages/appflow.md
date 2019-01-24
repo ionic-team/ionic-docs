@@ -6,8 +6,8 @@ Appflow is a continuous integration (CI) and continuous deployment (CD) platform
 for Ionic development teams. Appflow helps development teams continuously build and ship
 their iOS, Android, and web apps faster than ever.
 
-<docs-cards>
-  <docs-card header="Quickstart" href="/docs/appflow/quickstart" img="/docs/assets/icons/guide-quickstart.png">
+<docs-cards class="static-width">
+  <docs-card header="Quickstart" href="/docs/appflow/quickstart/connect" img="/docs/assets/icons/guide-quickstart.png">
     <p>Get your app set up with multiple environments that automatically build new binaries for
     iOS and Android and provide real time updates for your users instantly every time your team commits
     new code.</p>

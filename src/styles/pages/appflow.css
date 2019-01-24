@@ -6,22 +6,10 @@
   font-size: 1.25em;
 }
 
-.page-appflow-deploy-intro main {
-  max-width: 1000px;
-}
-
-.page-appflow-package-intro main {
-  max-width: 1000px;
-}
-
-.page-appflow-automation-intro main {
-  max-width: 800px;
-}
-
-.page-appflow-cookbook-intro main {
-  max-width: 800px;
-}
-
+.page-appflow-cookbook-intro main,
+.page-appflow-deploy-intro main,
+.page-appflow-package-intro main,
+.page-appflow-automation-intro main,
 .page-appflow-quickstart main {
   max-width: 800px;
 }
@@ -30,22 +18,10 @@
   max-height: 400px;
 }
 
-.page-appflow-quickstart-native-config img {
-  max-height: 500px;
-}
-
-.page-appflow-quickstart-ionic-remote img {
-  max-height: 500px;
-}
-
-.page-appflow-quickstart-package img {
-  max-height: 500px;
-}
-
-.page-appflow-quickstart-automation img {
-  max-height: 500px;
-}
-
+.page-appflow-quickstart-native-config img,
+.page-appflow-quickstart-ionic-remote img,
+.page-appflow-quickstart-package img,
+.page-appflow-quickstart-automation img,
 .page-appflow-quickstart-environment img {
   max-height: 500px;
 }

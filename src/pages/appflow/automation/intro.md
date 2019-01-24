@@ -18,24 +18,10 @@ every time your team checks in new code to a given branch and you can even confi
 [environments](/docs/appflow/automation/environments#custom-environments) and [native configurations](/docs/appflow/package/native-configs)
 so that you can build different versions of your app for development, staging, and production.
 
-## Get Started
+##### Helpful links
 
-<docs-cards>
-  <docs-card header="Create an Automation" href="/docs/appflow/quickstart/automation">
+<docs-cards class="max-measure">
+  <docs-card header="Create an Automation" href="/docs/appflow/quickstart/automation" icon="/docs/assets/icons/guide-quickstart-icon.png">
     <p>Create your first Android development binary automation using our quickstart guide!</p>
-    <b>Get Started!</b>
-  </docs-card>
-
-  <docs-card header="Managing Automations" href="/docs/appflow/automation/create/">
-    <p>Learn how to create and manage automations.</p>
-  </docs-card>
-  
-  <docs-card header="Webhooks" href="/docs/appflow/automation/webhooks">
-    <p>Learn what webhooks are and how you can use them.</p>
-  </docs-card>
-  
-  <docs-card header="Use an Environment in an Automation" href="/docs/appflow/quickstart/environment">
-    <p>Learn how to configure your app to use environment variables to customize you automated builds
-    in our quickstart guide!</p>
   </docs-card>
 </docs-cards>
