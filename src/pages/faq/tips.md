@@ -42,7 +42,7 @@ function myBrokenFunction() {
 }
 ```
 
-When an app runs, it will pause at this function. From the, the developer tools can be use to run pieces of JavaScript, line by line, and inspect where exactly the function breaks.
+When an app runs, it will pause at this function. From there, the developer tools can be use to run pieces of JavaScript, line by line, and inspect where exactly the function breaks.
 
 ## Changing Mode
 
