@@ -2,6 +2,26 @@
   max-width: 1000px;
 }
 
+.page-appflow-deploy-intro main {
+  max-width: 1000px;
+}
+
+.page-appflow-package-intro main {
+  max-width: 1000px;
+}
+
+.page-appflow-automation-intro main {
+  max-width: 800px;
+}
+
+.page-appflow-cookbook-intro main {
+  max-width: 800px;
+}
+
+.page-appflow-quickstart main {
+  max-width: 800px;
+}
+
 .page-appflow-quickstart-connect img {
   max-height: 400px;
 }

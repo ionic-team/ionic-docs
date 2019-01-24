@@ -43,4 +43,8 @@ Perfect for automating binary builds and for developers using Windows that want 
     <p>Find answers to common questions about building native binaries</p>
   </docs-card>
   
+  <docs-card header="Managing Plugins using CocoaPods" href="https://ionic.zendesk.com/hc/en-us/articles/360010049673-Managing-plugins-using-CocoaPods-in-Ionic-Appflow-">
+    <p>Learn about how you can resolve build issues related to plugins using CocoaPods.</p>
+  </docs-card>
+  
 </docs-cards>

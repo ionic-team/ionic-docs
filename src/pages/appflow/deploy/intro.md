@@ -34,12 +34,16 @@ bugs and ship new features.
     <p>Learn about advanced functionality using the deploy API.</p>
   </docs-card>
   
+  <docs-card header="CI/CD Integrations" href="/docs/appflow/deploy/cli">
+    <p>Learn how to integrate Appflow and deploy with your existing CI/CD infrastructure in
+     Jenkins, Travis CI, GitLab CI, Circle CI, and others using the Ionic CLI</p>
+  </docs-card>
+  
   <docs-card header="Tutorials & Videos" href="/docs/appflow/deploy/tutorials">
     <p>Check out some helpful tutorials and videos we've made about the service.</p>
   </docs-card>
   
-  <docs-card header="CI/CD Integrations" href="/docs/appflow/deploy/cli">
-    <p>Learn how to integrate Appflow and deploy with your existing CI/CD infrastructure in
-     Jenkins, Travis CI, GitLab CI, Circle CI, and others using the Ionic CLI</p>
+  <docs-card header="Deploy FAQ" href="https://ionic.zendesk.com/hc/en-us/categories/360000409113-Deploy">
+    <p>Find answers to common questions about deploy.</p>
   </docs-card>
 </docs-cards>
