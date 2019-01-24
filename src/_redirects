@@ -4,6 +4,8 @@
 /docs/pro/                            /docs/appflow                          301
 /docs/pro/*                           /docs/appflow/:splat                   301
 
+/docs/appflow/basics/                 /docs/appflow/quickstart/connect       301
+/docs/appflow/basics/*                /docs/appflow/quickstart/connect       301
 /docs/appflow/environments/           /docs/appflow/automation/environments  301
 /docs/appflow/deploy/                 /docs/appflow/deploy/intro             301
 /docs/appflow/package/                /docs/appflow/package/intro            301
