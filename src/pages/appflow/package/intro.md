@@ -34,8 +34,9 @@ Perfect for automating binary builds and for developers using Windows that want 
     <p>Learn about what native configurations are and how to use them.</p>
   </docs-card>
   
-  <docs-card header="Jenkins, Travis CI, Circle CI, and Other CI Integrations" href="/docs/appflow/package/cli">
-    <p>Learn how to integrate Appflow and package with your existing CI/CD pipeline using the Ionic CLI</p>
+  <docs-card header="CI/CD Integrations" href="/docs/appflow/deploy/cli">
+    <p>Learn how to integrate Appflow and package with your existing CI/CD infrastructure in
+     Jenkins, Travis CI, GitLab CI, Circle CI, and others using the Ionic CLI</p>
   </docs-card>
   
   <docs-card header="Package FAQ" href="https://ionic.zendesk.com/hc/en-us/categories/360000410494-Package">

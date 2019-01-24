@@ -1,24 +1,14 @@
 ---
 title: 'Deploy'
-previousText: 'Introduction'
-previousUrl: '/docs/appflow/basics/help'
+previousText: 'Quickstart'
+previousUrl: '/docs/appflow/quickstart'
 nextText: 'Setup'
 nextUrl: '/docs/appflow/deploy/setup'
 ---
 
 Ionic Appflow's Live Deploy feature let you update the UI and business logic of your app remotely, in real-time.
-Push HTML, JS, and CSS updates directly to your users without going through the app store to quickly fix
+Push HTML, JS, and CSS updates directly to your users without going through the app store to instantly fix
 bugs and ship new features.
-
-This enables you to
-
-* Update your application on demand
-* Avoid app store publishing for many fixes
-* Get new features and bug fixes to your users quickly
-* A/B test changes with certain users before rolling them out to everyone
-
-In order to use advanced features such as switching Channels on the fly,
-Split Testing, Beta Channels, etc, you may have to use some of the [Deploy API](/docs/appflow/deploy/api).
 
 ## Get started
 
@@ -48,7 +38,8 @@ Split Testing, Beta Channels, etc, you may have to use some of the [Deploy API](
     <p>Check out some helpful tutorials and videos we've made about the service.</p>
   </docs-card>
   
-  <docs-card header="Jenkins, Travis CI, Circle CI, and Other CI Integrations" href="/docs/appflow/deploy/cli">
-    <p>Learn how to integrate Appflow and deploy with your existing CI/CD pipeline using the Ionic CLI</p>
+  <docs-card header="CI/CD Integrations" href="/docs/appflow/deploy/cli">
+    <p>Learn how to integrate Appflow and deploy with your existing CI/CD infrastructure in
+     Jenkins, Travis CI, GitLab CI, Circle CI, and others using the Ionic CLI</p>
   </docs-card>
 </docs-cards>

@@ -25,7 +25,6 @@ Common use cases are:
 Deploy Channels so that you can install all the environments on a single device and easily tell the apart
 * leaving the [DisableDeploy](/docs/appflow/deploy/api#disabledeploy) `true` for development and automatically setting it back to `false` when building binaries for release
 
-To create one make sure you've upgraded to a plan that includes them and go to the `Package > Native Configs` tab in the sidebar
-and click `New native config`.
+To create one go to the `Package > Native Configs` tab in the sidebar and click `New native config`.
 
 ![Native configs](/docs/assets/img/appflow/ss-native-configs.png)

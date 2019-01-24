@@ -15,7 +15,9 @@ const items = {
     'Push a Commit': '/docs/appflow/quickstart/push',
     'Deploy a Live Update': '/docs/appflow/quickstart/deploy',
     'Build a Native Binary': '/docs/appflow/quickstart/package',
-    'Create an Automation': '/docs/appflow/quickstart/automation'
+    'Create an Automation': '/docs/appflow/quickstart/automation',
+    'Create an Environment': '/docs/appflow/quickstart/environment',
+    'Create a Native Configuration': '/docs/appflow/quickstart/native-config'
   }, '/docs/appflow/quickstart'),
   'Deploy': new NavItem({
     'Setup': '/docs/appflow/deploy/setup',

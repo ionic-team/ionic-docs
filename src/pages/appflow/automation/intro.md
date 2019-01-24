@@ -1,11 +1,10 @@
 ---
+title: 'Automations'
 previousText: 'Package'
 previousUrl: '/docs/appflow/package/cli'
 nextText: 'Create Automations'
 nextUrl: '/docs/appflow/automation/create'
 ---
-
-# Automations
 
 <blockquote>
   <p><b>Note:</b>This feature is only available on our <a href="/pricing">Growth plans</a> and above.</p>
@@ -21,7 +20,7 @@ so that you can build different versions of your app for development, staging, a
 
 ## Get Started
 
-<docs-cards class="prioritized">
+<docs-cards>
   <docs-card header="Create an Automation" href="/docs/appflow/quickstart/automation">
     <p>Create your first Android development binary automation using our quickstart guide!</p>
     <b>Get Started!</b>
@@ -33,5 +32,10 @@ so that you can build different versions of your app for development, staging, a
   
   <docs-card header="Webhooks" href="/docs/appflow/automation/webhooks">
     <p>Learn what webhooks are and how you can use them.</p>
+  </docs-card>
+  
+  <docs-card header="Use an Environment in an Automation" href="/docs/appflow/quickstart/environment">
+    <p>Learn how to configure your app to use environment variables to customize you automated builds
+    in our quickstart guide!</p>
   </docs-card>
 </docs-cards>
