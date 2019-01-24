@@ -7,17 +7,31 @@ nextUrl: '/docs/appflow/automation/create'
 
 # Automations
 
+<blockquote>
+  <p><b>Note:</b>This feature is only available on our <a href="/pricing">Growth plans</a> and above.</p>
+</blockquote>
+
 Ionic Appflow's automation features let you generate builds whenever you need them. Webhooks with secure, signed download URL's and build information are also easily configurable and updatable, ensuring your app gets in the necessary hands quickly and automatically.
 
-## Automation Types
+Automations enable you and your team to utilize the full CI/CD powers of Appflow. You can create automations
+that trigger [package builds](/docs/appflow/package/builds) and [deploy builds](/docs/appflow/deploy/builds)
+every time your team checks in new code to a given branch and you can even configure the automations to use different
+[environments](/docs/appflow/automation/environments#custom-environments) and [native configurations](/docs/appflow/package/native-configs)
+so that you can build different versions of your app for development, staging, and production.
 
-Automations can be used to create both Deploy (web) and Package builds, as well as manage channel assignments for in-app live updates ([Build type docs](/docs/appflow/builds)).
+## Get Started
 
-## Before Starting
+<docs-cards class="prioritized">
+  <docs-card header="Create an Automation" href="/docs/appflow/quickstart/automation">
+    <p>Create your first Android development binary automation using our quickstart guide!</p>
+    <b>Get Started!</b>
+  </docs-card>
 
-To take advantage of the full power of native build automations, an app must be configured to use [Package Builds](/docs/appflow/package/intro), as this feature is leveraged to deliver native code.
-
-## Using Automations
-
-* [Creating Automations](/docs/appflow/automation/create)
-* [Understanding Webhooks](/docs/appflow/automation/webhooks)
+  <docs-card header="Managing Automations" href="/docs/appflow/automation/create/">
+    <p>Learn how to create and manage automations.</p>
+  </docs-card>
+  
+  <docs-card header="Webhooks" href="/docs/appflow/automation/webhooks">
+    <p>Learn what webhooks are and how you can use them.</p>
+  </docs-card>
+</docs-cards>

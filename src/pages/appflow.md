@@ -24,7 +24,7 @@ their iOS, Android, and web apps faster than ever.
   </docs-card>
 
   <docs-card header="Deploy FAQ" href="https://ionic.zendesk.com/hc/en-us/categories/360000409113-Deploy">
-    <p>A step-by-step guide to installing and setting up your system to build Ionic Framework apps.</p>
+    <p>Find answers to common questions about deploy.</p>
   </docs-card>
   
   <docs-card header="Billing FAQ" href="https://ionic.zendesk.com/hc/en-us/categories/360000410574-Billing-Support">

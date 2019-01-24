@@ -7,15 +7,25 @@ nextUrl: '/docs/appflow/package/cli'
 
 # Native Configurations
 
-If your [plan](/pricing) includes the automation features you will have access to make and use *Native Configs* as part of
-you package builds and automations. Native configs allow you to overwrite the Bundle ID and the App Name as well as the
-Deploy Plugin configuration without having to commit the changes to version control. That way you can build your app for
-diffent environments from the same version of the code. If using the [automation](/docs/appflow/automation/intro) you can
-trigger multiple automations from the same branch that will produce different builds.
+<blockquote>
+  <p><b>Note:</b>This feature is only available on our <a href="/pricing">Growth plans</a> and above.</p>
+</blockquote>
 
-Common use cases are for making Staging, QA, and Production versions of you app with different Bundle IDs, App names, and
-Deploy Channels so that you can install all the environments on a single device and easily tell the apart. To create
-one make sure you've upgrade to a plan that includes them and go to the *Package* > *Native Configs* tab in the sidebar
+Native configs allow you overwrite certain configurations without having to commit changes to version control on a per build/automation basis such as:
+* overwrite the unique bundle identifier or [id attribute](https://cordova.apache.org/docs/en/latest/config_ref/#widget) in the `config.xml`
+* overwrite the App Name as it will appear on the home screen
+* overwrite the [Appflow SDK or Deploy Plugin variables and preferences](/docs/appflow/deploy/api#plugin-variables)
+
+This makes it easy to build your app for multiple environments from the same version of the code.
+If using an [automation](/docs/appflow/automation/intro) you can trigger multiple automations from
+the same branch that will produce different builds.
+
+Common use cases are:
+* making Staging, QA, and Production versions of you app with different Bundle IDs, App names, and
+Deploy Channels so that you can install all the environments on a single device and easily tell the apart
+* leaving the [DisableDeploy](/docs/appflow/deploy/api#disabledeploy) `true` for development and automatically setting it back to `false` when building binaries for release
+
+To create one make sure you've upgraded to a plan that includes them and go to the `Package > Native Configs` tab in the sidebar
 and click `New native config`.
 
 ![Native configs](/docs/assets/img/appflow/ss-native-configs.png)

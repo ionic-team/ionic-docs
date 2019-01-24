@@ -2,8 +2,8 @@
 title: 'Deploy a Live Update'
 previousText: 'Push a Commit'
 previousUrl: '/docs/appflow/quickstart/push'
-nextText: 'Trigger a Deploy Build'
-nextUrl: '/docs/appflow/quickstart/deploy-build'
+nextText: 'Build a Native Binary'
+nextUrl: '/docs/appflow/quickstart/package'
 ---
 
 Now that we've:
@@ -21,7 +21,7 @@ In order to deploy a live update you will first need to create a [deploy build](
 there are two ways to do this:
 * Click the `Start web build` icon from the `Commits` tab
 ![Start Web Build from Commits](/docs/assets/img/appflow/ss-start-web-build-commits.png)
-* Click the `New web build` button from the `Deploy > Builds` tab in the top right
+* Click the `New web build` button in the top right from the `Deploy > Builds` tab
 ![New Web Build](/docs/assets/img/appflow/ss-new-web-build.png)
 
 You will need to make sure you've selected the correct commit to deploy, and you can optionally assign a
@@ -29,7 +29,7 @@ You will need to make sure you've selected the correct commit to deploy, and you
 if you have one and your plan includes them.
 You can also pick a [channel](/docs/appflow/deploy/channels) to automatically assign the build to when it completes.
 For the quickstart tutorial we will leave both options blank. Once the build begins you will be able to watch it's
-progess and look at the logs if you encounter errors.
+progress and look at the logs if you encounter errors.
 
 ![Running Web Build](/docs/assets/img/appflow/gif-start-web-build.gif)
 
@@ -41,7 +41,7 @@ progess and look at the logs if you encounter errors.
 </blockquote>
 
 Once you've got a successful build you can assign it to the same channel you configured the Appflow SDK to
-listen to when you installed it by clicking the `Assign to channel` button in the top left of the build detail
+listen to when you installed it by clicking the `Assign to channel` button in the top right of the build detail
 page or clicking the `Assign to channel` icon on the build in the `Deploy > Builds` tab and selecting the channel
 from the dropdown.
 
@@ -62,3 +62,12 @@ is downloaded in the background then close the app and reopen it again and you s
 ionic cordova run [ios | android] [options]
 </command-prompt>
 </command-line>
+
+## Disabling Deploy for Development
+
+Generally speaking if you are developing using an emulator and live reload you probably do not want deploy
+to be active as it can intefere with and deploy over you local changes. One common use case it to set the
+[DisableDeploy](/docs/appflow/deploy/api#disabledeploy) preference to `true` in the `config.xml` file during
+development and setting it back to `false` before building you binary for release by either manually setting it
+back or using the [native config feature](/docs/appflow/package/native-configs)
+if you're building your binaries with [Ionic Package](/docs/appflow/package/intro).

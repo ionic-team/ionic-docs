@@ -1,6 +1,6 @@
 ---
-previousText: 'Webhooks'
-previousUrl: '/docs/appflow/automation/webhooks'
+previousText: 'Introduction'
+previousUrl: '/docs/appflow/cookbook/intro'
 nextText: 'Using private NPM modules'
 nextUrl: '/docs/appflow/cookbook/private_npm_modules'
 ---
