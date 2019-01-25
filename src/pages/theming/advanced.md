@@ -2,7 +2,7 @@
 initialTab: 'preview'
 inlineHtmlPreviews: true
 previousText: 'Color Generator'
-previousUrl: '/docs/layout/color-generator'
+previousUrl: '/docs/theming/color-generator'
 nextText: 'Publishing an app'
 nextUrl: '/docs/publishing/app-store'
 ---
