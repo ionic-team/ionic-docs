@@ -7,8 +7,6 @@ nextText: 'Publishing an app'
 nextUrl: '/docs/publishing/app-store'
 ---
 
-<link rel="stylesheet" href="https://unpkg.com/@ionic/core/css/core.css">
-
 # Advanced Theming
 
 CSS-based theming enables apps to customize the colors quickly by loading a CSS file or changing a few CSS property values.

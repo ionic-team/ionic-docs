@@ -7,8 +7,10 @@
 
 import '@stencil/core';
 
+import '@ionic/core';
 import '@stencil/router';
 import '@stencil/state-tunnel';
+import 'ionicons';
 import {
   Link,
   MenuItems,
@@ -35,12 +37,24 @@ export namespace Components {
   interface DocsCards {}
   interface DocsCardsAttributes extends StencilHTMLAttributes {}
 
+  interface CodeColor {
+    'display': string;
+    'value': string;
+  }
+  interface CodeColorAttributes extends StencilHTMLAttributes {
+    'display'?: string;
+    'value'?: string;
+  }
+
   interface DocsCode {
     'language': string;
   }
   interface DocsCodeAttributes extends StencilHTMLAttributes {
     'language'?: string;
   }
+
+  interface ColorAccordion {}
+  interface ColorAccordionAttributes extends StencilHTMLAttributes {}
 
   interface CommandCursor {
     'blink': boolean;
@@ -74,6 +88,9 @@ export namespace Components {
 
   interface DocsHeader {}
   interface DocsHeaderAttributes extends StencilHTMLAttributes {}
+
+  interface LayeredColorsSelect {}
+  interface LayeredColorsSelectAttributes extends StencilHTMLAttributes {}
 
   interface DocsMenu {}
   interface DocsMenuAttributes extends StencilHTMLAttributes {}
@@ -131,6 +148,9 @@ export namespace Components {
   interface SmsForm {}
   interface SmsFormAttributes extends StencilHTMLAttributes {}
 
+  interface SteppedColorGenerator {}
+  interface SteppedColorGeneratorAttributes extends StencilHTMLAttributes {}
+
   interface DocsTableOfContents {
     'basepath': string;
     'label': string;
@@ -163,13 +183,16 @@ declare global {
   interface StencilElementInterfaces {
     'DocsCard': Components.DocsCard;
     'DocsCards': Components.DocsCards;
+    'CodeColor': Components.CodeColor;
     'DocsCode': Components.DocsCode;
+    'ColorAccordion': Components.ColorAccordion;
     'CommandCursor': Components.CommandCursor;
     'CommandLine': Components.CommandLine;
     'CommandOutput': Components.CommandOutput;
     'CommandPrompt': Components.CommandPrompt;
     'DocsDropdown': Components.DocsDropdown;
     'DocsHeader': Components.DocsHeader;
+    'LayeredColorsSelect': Components.LayeredColorsSelect;
     'DocsMenu': Components.DocsMenu;
     'DocsNav': Components.DocsNav;
     'DocsPage': Components.DocsPage;
@@ -180,6 +203,7 @@ declare global {
     'DocsSearch': Components.DocsSearch;
     'DocsSectionNav': Components.DocsSectionNav;
     'SmsForm': Components.SmsForm;
+    'SteppedColorGenerator': Components.SteppedColorGenerator;
     'DocsTableOfContents': Components.DocsTableOfContents;
     'DocsTabs': Components.DocsTabs;
     'WistiaVideo': Components.WistiaVideo;
@@ -188,13 +212,16 @@ declare global {
   interface StencilIntrinsicElements {
     'docs-card': Components.DocsCardAttributes;
     'docs-cards': Components.DocsCardsAttributes;
+    'code-color': Components.CodeColorAttributes;
     'docs-code': Components.DocsCodeAttributes;
+    'color-accordion': Components.ColorAccordionAttributes;
     'command-cursor': Components.CommandCursorAttributes;
     'command-line': Components.CommandLineAttributes;
     'command-output': Components.CommandOutputAttributes;
     'command-prompt': Components.CommandPromptAttributes;
     'docs-dropdown': Components.DocsDropdownAttributes;
     'docs-header': Components.DocsHeaderAttributes;
+    'layered-colors-select': Components.LayeredColorsSelectAttributes;
     'docs-menu': Components.DocsMenuAttributes;
     'docs-nav': Components.DocsNavAttributes;
     'docs-page': Components.DocsPageAttributes;
@@ -205,6 +232,7 @@ declare global {
     'docs-search': Components.DocsSearchAttributes;
     'docs-section-nav': Components.DocsSectionNavAttributes;
     'sms-form': Components.SmsFormAttributes;
+    'stepped-color-generator': Components.SteppedColorGeneratorAttributes;
     'docs-table-of-contents': Components.DocsTableOfContentsAttributes;
     'docs-tabs': Components.DocsTabsAttributes;
     'wistia-video': Components.WistiaVideoAttributes;
@@ -223,10 +251,22 @@ declare global {
     new (): HTMLDocsCardsElement;
   };
 
+  interface HTMLCodeColorElement extends Components.CodeColor, HTMLStencilElement {}
+  var HTMLCodeColorElement: {
+    prototype: HTMLCodeColorElement;
+    new (): HTMLCodeColorElement;
+  };
+
   interface HTMLDocsCodeElement extends Components.DocsCode, HTMLStencilElement {}
   var HTMLDocsCodeElement: {
     prototype: HTMLDocsCodeElement;
     new (): HTMLDocsCodeElement;
+  };
+
+  interface HTMLColorAccordionElement extends Components.ColorAccordion, HTMLStencilElement {}
+  var HTMLColorAccordionElement: {
+    prototype: HTMLColorAccordionElement;
+    new (): HTMLColorAccordionElement;
   };
 
   interface HTMLCommandCursorElement extends Components.CommandCursor, HTMLStencilElement {}
@@ -263,6 +303,12 @@ declare global {
   var HTMLDocsHeaderElement: {
     prototype: HTMLDocsHeaderElement;
     new (): HTMLDocsHeaderElement;
+  };
+
+  interface HTMLLayeredColorsSelectElement extends Components.LayeredColorsSelect, HTMLStencilElement {}
+  var HTMLLayeredColorsSelectElement: {
+    prototype: HTMLLayeredColorsSelectElement;
+    new (): HTMLLayeredColorsSelectElement;
   };
 
   interface HTMLDocsMenuElement extends Components.DocsMenu, HTMLStencilElement {}
@@ -325,6 +371,12 @@ declare global {
     new (): HTMLSmsFormElement;
   };
 
+  interface HTMLSteppedColorGeneratorElement extends Components.SteppedColorGenerator, HTMLStencilElement {}
+  var HTMLSteppedColorGeneratorElement: {
+    prototype: HTMLSteppedColorGeneratorElement;
+    new (): HTMLSteppedColorGeneratorElement;
+  };
+
   interface HTMLDocsTableOfContentsElement extends Components.DocsTableOfContents, HTMLStencilElement {}
   var HTMLDocsTableOfContentsElement: {
     prototype: HTMLDocsTableOfContentsElement;
@@ -346,13 +398,16 @@ declare global {
   interface HTMLElementTagNameMap {
     'docs-card': HTMLDocsCardElement
     'docs-cards': HTMLDocsCardsElement
+    'code-color': HTMLCodeColorElement
     'docs-code': HTMLDocsCodeElement
+    'color-accordion': HTMLColorAccordionElement
     'command-cursor': HTMLCommandCursorElement
     'command-line': HTMLCommandLineElement
     'command-output': HTMLCommandOutputElement
     'command-prompt': HTMLCommandPromptElement
     'docs-dropdown': HTMLDocsDropdownElement
     'docs-header': HTMLDocsHeaderElement
+    'layered-colors-select': HTMLLayeredColorsSelectElement
     'docs-menu': HTMLDocsMenuElement
     'docs-nav': HTMLDocsNavElement
     'docs-page': HTMLDocsPageElement
@@ -363,6 +418,7 @@ declare global {
     'docs-search': HTMLDocsSearchElement
     'docs-section-nav': HTMLDocsSectionNavElement
     'sms-form': HTMLSmsFormElement
+    'stepped-color-generator': HTMLSteppedColorGeneratorElement
     'docs-table-of-contents': HTMLDocsTableOfContentsElement
     'docs-tabs': HTMLDocsTabsElement
     'wistia-video': HTMLWistiaVideoElement
@@ -371,13 +427,16 @@ declare global {
   interface ElementTagNameMap {
     'docs-card': HTMLDocsCardElement;
     'docs-cards': HTMLDocsCardsElement;
+    'code-color': HTMLCodeColorElement;
     'docs-code': HTMLDocsCodeElement;
+    'color-accordion': HTMLColorAccordionElement;
     'command-cursor': HTMLCommandCursorElement;
     'command-line': HTMLCommandLineElement;
     'command-output': HTMLCommandOutputElement;
     'command-prompt': HTMLCommandPromptElement;
     'docs-dropdown': HTMLDocsDropdownElement;
     'docs-header': HTMLDocsHeaderElement;
+    'layered-colors-select': HTMLLayeredColorsSelectElement;
     'docs-menu': HTMLDocsMenuElement;
     'docs-nav': HTMLDocsNavElement;
     'docs-page': HTMLDocsPageElement;
@@ -388,6 +447,7 @@ declare global {
     'docs-search': HTMLDocsSearchElement;
     'docs-section-nav': HTMLDocsSectionNavElement;
     'sms-form': HTMLSmsFormElement;
+    'stepped-color-generator': HTMLSteppedColorGeneratorElement;
     'docs-table-of-contents': HTMLDocsTableOfContentsElement;
     'docs-tabs': HTMLDocsTabsElement;
     'wistia-video': HTMLWistiaVideoElement;

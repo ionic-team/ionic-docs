@@ -1,3 +1,5 @@
+import '@ionic/core';
+
 import { Component } from '@stencil/core';
 import { LocationSegments } from '@stencil/router';
 
@@ -11,7 +13,7 @@ export class DocsRoot {
       <stencil-router class="Layout" scrollTopOffset={0}>
         <stencil-route style={{ display: 'none' }} routeRender={({ history }) =>
           history.listen((location: LocationSegments) => {
-            (window as any).gtag('config', 'UA-44023830-1', {'page_path': location.pathname + location.search})
+            (window as any).gtag('config', 'UA-44023830-1', { 'page_path': location.pathname + location.search });
           })
         } />
         <docs-header/>
