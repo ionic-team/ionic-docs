@@ -22,7 +22,7 @@
     "@ionic/core": "4.0.0-rc.3",
     "@ionic/docs": "4.0.0-rc.3",
     "@stencil/core": "^0.17.0",
-    "@stencil/router": "^0.3.2"
+    "@stencil/router": "^0.3.3"
   },
   "devDependencies": {
     "chokidar": "^2.0.4",
