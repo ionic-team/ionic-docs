@@ -9,7 +9,7 @@ export const config: Config = {
       baseUrl: '/docs',
       serviceWorker: null,
       empty: false,
-   inlineLoaderScript: false
+      inlineLoaderScript: false
     }
   ],
   copy: [
