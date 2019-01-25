@@ -2,7 +2,7 @@
 previousText: 'Environments'
 previousUrl: '/docs/appflow/automation/environments'
 nextText: 'Cookbook'
-nextUrl: '/docs/appflow/cookbook/private_git'
+nextUrl: '/docs/appflow/cookbook/intro'
 ---
 
 # Understanding Webhooks

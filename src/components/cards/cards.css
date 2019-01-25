@@ -2,7 +2,6 @@ docs-cards {
   display: grid;
   font-size: 12px;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  grid-auto-rows: 180px;
   grid-gap: 1.35rem;
 }
 
@@ -25,4 +24,8 @@ docs-cards.prioritized > docs-card:nth-child(-n+5) {
 
 docs-cards.prioritized > docs-card:first-child {
   grid-row: span 2;
+}
+
+docs-cards.max-measure > docs-card {
+  max-width: 50%;
 }

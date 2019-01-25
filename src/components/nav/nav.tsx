@@ -1,6 +1,7 @@
 import { Component, Prop } from '@stencil/core';
 import { MenuItems } from '../../definitions';
 import { Outbound } from '../../icons';
+import { NavItem } from './nav-item';
 
 @Component({
   tag: 'docs-nav',
@@ -41,11 +42,20 @@ export class DocsNav {
     );
   }
 
+  findHeaderLink = (value: string[]) => {
+    return value.length && value[0] === 'item+default';
+  }
+
   toSection = ([header, value]) => {
+    let headerLink: string;
+    if (value instanceof NavItem) {
+      headerLink = value.defaultUrl;
+      value = value.navItems;
+    }
     const items = Array.isArray(value) ? value : Object.entries(value);
     return (
       <section>
-        <header>{header}</header>
+        <header>{headerLink ? this.toLink([header, headerLink]) : header}</header>
         <ul>
           {items.map(this.toItem)}
         </ul>

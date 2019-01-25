@@ -1,3 +1,5 @@
+import { NavItem } from './components/nav/nav-item';
+
 export interface Page {
   title: string;
   body: string;
@@ -17,5 +19,5 @@ export interface ReferenceKeys {
 export type MenuItem = [string, string];
 
 export interface MenuItems {
-  [key: string]: string | MenuItems | MenuItem[];
+  [key: string]: string | MenuItems | MenuItem[] | NavItem;
 }
