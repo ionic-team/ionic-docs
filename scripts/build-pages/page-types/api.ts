@@ -1,11 +1,9 @@
 import {
-  PAGES_DIR,
   Page,
   buildPages
 } from '../index';
 
 import { components } from '@ionic/docs/core.json';
-import { join } from 'path';
 import markdownRenderer from '../markdown-renderer';
 
 export default {
@@ -16,16 +14,15 @@ export default {
 async function getAPIPages(): Promise<Page[]> {
   return components.map(component => {
     const title = component.tag;
-    const path = `${join(PAGES_DIR, 'api', title.slice(4))}.json`;
-    const baseUrl = `/docs/api/${title.slice(4)}/`;
+    const path = `/docs/api/${title.slice(4)}`;
     const { readme, usage, props, methods, ...contents } = component;
     return {
       title,
       path,
-      body: markdownRenderer(readme, baseUrl),
-      usage: renderUsage(usage, baseUrl),
-      props: renderDocsKey(props, baseUrl),
-      methods: renderDocsKey(methods, baseUrl),
+      body: markdownRenderer(readme, path),
+      usage: renderUsage(usage, path),
+      props: renderDocsKey(props, path),
+      methods: renderDocsKey(methods, path),
       ...contents
     };
   });
