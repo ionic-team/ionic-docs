@@ -20,7 +20,7 @@ To enroll in the Apple Developer Program, follow the instructions [listed here](
 
 ## Generating a release build
 
-If the iOS platform is not already add, be sure to add it:
+If the iOS platform is not already added, be sure to add it:
 
 ```shell
 $ ionic cordova platform add ios
