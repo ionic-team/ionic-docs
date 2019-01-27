@@ -1,5 +1,5 @@
 export default (props) => {
-  const { page, history } = props;
+  const { page } = props;
   const headings = [...page.headings];
   const usage = renderUsage(page.usage);
   const properties = renderProperties(page.props);
@@ -48,7 +48,7 @@ export default (props) => {
       <div class="docs-content-pane">
         <div class="docs-content">
           <h1>{ page.title }</h1>
-          <docs-table-of-contents links={headings} basepath={history.location.pathname}/>
+          <docs-table-of-contents links={headings} basepath={page.path}/>
           <section class="markdown-content" innerHTML={page.body}/>
           { usage }
           { properties }
