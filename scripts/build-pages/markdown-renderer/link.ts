@@ -1,10 +1,10 @@
 import { resolve } from 'url';
 
+const isFragment = /^#/;
 const isInternal = /^\/docs\/.*/;
-const isRelative = /^\.{1,2}\//;
 
 export default function(href: string, title: string, text: string) {
-  if (this.options.baseUrl && isRelative.test(href)) {
+  if (this.options.baseUrl && !isFragment.test(href)) {
     href = resolve(this.options.baseUrl, href);
   }
 
