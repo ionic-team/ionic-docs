@@ -7,30 +7,29 @@ nextUrl: '/docs/appflow/deploy/intro'
 ---
 
 <blockquote>
-  <p><b>Note:</b>This feature is only available on our <a href="/pricing">Growth plans</a> and above.</p>
+  <p><b>Note:</b> This feature is only available on our <a href="/pricing">Growth plans</a> and above.</p>
 </blockquote>
 
-[Native Configurations](/docs/appflow/package/native-configs) can be attached to any [package build](/doc/appflow/package)
-or automation in order to easily configure some common configuration values that can change between development, staging, and
-production environments so you don't need to write logic to modify them or change them manually and commit them to version
-control.
+[Native Configurations](/docs/appflow/package/native-configs) allow you to easily modify common configuration values that can change between different environments (development, production, staging, etc.) so you don't need to use extra logic or manually commit them to version control. Native configurations can be attached to any [Package build](/doc/appflow/package)
+or [Automation](/doc/appflow/automation).
 
-These include the ability to:
-* overwrite the unique bundle identifier or [id attribute](https://cordova.apache.org/docs/en/latest/config_ref/#widget) in the `config.xml`
-* overwrite the App Name as it will appear on the home screen
-* overwrite the [Appflow SDK/Deploy Plugin variables and preferences](/docs/appflow/deploy/api#plugin-variables)
+You can use native configs to:
+* Overwrite the unique bundle identifier or [id attribute](https://cordova.apache.org/docs/en/latest/config_ref/#widget) in `config.xml`
+* Overwrite the App Name as it will appear on the home screen of a device
+* Overwrite the [Appflow SDK (Deploy Plugin) variables and preferences](/docs/appflow/deploy/api#plugin-variables)
 
-In this part of the tutorial we'll setup our `Development` native config to use a unique bundle id so that we can
-install the development version of the app and the production version of the app on the same device and we'll change
-the App Name too so we can tell them apart easily. We'll also modify the [deploy channel](/docs/appflow/deploy/channels)
-the development version listens to so that we can assign updates to that channel first to make sure they work before we
-assign them to the production channel
+In this part of the tutorial, we'll setup a native configuration for `Development` to:
+* Use a unique bundle id so that we can install both the development version of the app and the production version of the app on the same device
+* Change the App Name so we can tell the two installations apart once they're installed on the device
+* We'll also modify the [Deploy Channel](/docs/appflow/deploy/channels)
+that the development version of the app listens to so that we can assign updates to that channel first to make sure they work (before we
+assign them to the `production` Channel)
 
 ## Create a Native Configuration
 
-To create a native config go to the `Package > Native Configs` tab in the sidebar and click `New native config` in the top right.
+To create a native config, go to the `Package > Native Configs` tab in the Appflow Dashboard sidebar and click `New native config` in the top right.
 
-Then we'll:
+Next:
 * Name the configuration `Development`
 * Overwrite the unique bundle id with `com.snapcats.demo.development`
 * Overwrite the app name with `Snapcats - Dev`
@@ -40,14 +39,15 @@ Then we'll:
 
 
 ## Add the Native Config to an Automation
-To take full advantage of automating your development environment you'll want to add the native config to the automation
-we created earlier. Click the `Edit` from the options icon on the right of the automation and select the environment from
-the dropdown and click save.
+To take full advantage of automating your development environment, you'll want to add the native config to the automation
+we created earlier. 
+
+In your `Automations` tab, click `Edit` from the `Options` icon on the right of your automation, select the configuration from
+the `Native Config` dropdown and click `Save`.
 
 ![Add Native Config to Automation](/docs/assets/img/appflow/gif-add-native-config.gif)
 
-Now your apps should automatically use a different bundle id, name, and deploy channel between your development and production
-builds meaning you can easily install both environments on the same device and tell them apart! 🔥
+Now your apps should automatically use a different `bundle id`, app name, and deploy channel between your development and production
+builds. This means you can install both your development and production applications on the same device and easily tell them apart! 🔥
 
 ![Multiple Enviroments on a Device](/docs/assets/img/appflow/ss-multiple-envs-device.png)
-
