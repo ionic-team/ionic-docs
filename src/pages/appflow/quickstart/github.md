@@ -1,6 +1,6 @@
 ---
 title: 'Connect Using GitHub'
-previousText: 'Connect your Repo'
+previousText: 'Connect Your Repo'
 previousUrl: '/docs/appflow/quickstart/connect'
 nextText: 'Install the Appflow SDK'
 nextUrl: '/docs/appflow/quickstart/installation'
