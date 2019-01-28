@@ -55,9 +55,7 @@ To change the default values of a color, all of the listed variations for that c
 
 When `secondary` is applied to a button, not only is the base color <code-color value="#006600"></code-color> used, but the contrast color <code-color value="#ffffff"></code-color> is used for the text, along with shade <code-color value="#005a00"></code-color> and tint <code-color value="#1a751a"></code-color> colors for the different states of the button.
 
-<blockquote>
-  Not sure how to get the variation colors from the base color? Try out our [Color Generator](/docs/theming/color-generator) that calculates all of the variations and provides code to copy/paste into an app!
-</blockquote>
+> Not sure how to get the variation colors from the base color? Try out our [Color Generator](/docs/theming/color-generator) that calculates all of the variations and provides code to copy/paste into an app!
 
 See the [CSS Variables documentation](/docs/theming/css-variables) for more information on CSS variables.
 
@@ -219,9 +217,7 @@ There is not yet full <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/
 }
 ```
 
-<blockquote>
-  See the [CSS Variables](/docs/theming/css-variables) section for more information on how to get and set CSS variables.
-</blockquote>
+> See the [CSS Variables](/docs/theming/css-variables) section for more information on how to get and set CSS variables.
 
 Ionic uses colors with an opacity (alpha) in several components. In order for this to work, those properties must be provided in RGB format. When changing any of the properties that have a variation ending in `-rgb`, it is important they are also provided in a comma separated format **without parentheses**. Below are some examples for changing text and background color.
 
