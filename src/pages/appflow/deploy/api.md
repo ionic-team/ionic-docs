@@ -135,6 +135,7 @@ console.log(info)
 //   'maxVersions': 3,
 //   'minBackgroundDuration': 30,
 //   'currentVersionId': 'xxxx-xxxx-xxxx-xxxx'
+//   'currentBuildId' : 'xxxxxxx'
 // }
 ```
 
@@ -424,7 +425,9 @@ ___
 * <b>minBackgroundDuration</b>: `number`
 </br>The number of seconds the app needs to be in the background before the plugin considers it closed for the purposes of fetching and applying a new update.
 * <b>currentVersionId</b>: `string | undefined`
-</br>The id of the currently applied update or `undefined` if none is applied.
+</br>The version id of the currently applied update or `undefined` if none is applied.
+* <b>currentBuildId</b>: `string | undefined`
+</br>The build id of the currently applied update or `undefined` if none is applied.
 
 
 
