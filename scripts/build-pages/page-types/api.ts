@@ -19,21 +19,21 @@ async function getAPIPages(): Promise<Page[]> {
     return {
       title,
       path,
-      body: markdownRenderer(readme),
-      usage: renderUsage(usage),
-      props: renderDocsKey(props),
-      methods: renderDocsKey(methods),
+      body: markdownRenderer(readme, path),
+      usage: renderUsage(usage, path),
+      props: renderDocsKey(props, path),
+      methods: renderDocsKey(methods, path),
       ...contents
     };
   });
 }
 
-const renderUsage = (usage) => Object.keys(usage).reduce((out, key) => {
-  out[key] = markdownRenderer(usage[key]);
+const renderUsage = (usage, baseUrl) => Object.keys(usage).reduce((out, key) => {
+  out[key] = markdownRenderer(usage[key], baseUrl);
   return out;
 }, {});
 
-const renderDocsKey = (items) => items.map(item => ({
+const renderDocsKey = (items, baseUrl) => items.map(item => ({
   ...item,
-  docs: markdownRenderer(item.docs)
+  docs: markdownRenderer(item.docs, baseUrl)
 }));
