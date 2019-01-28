@@ -16,12 +16,12 @@ If you are already using Bitbucket Server
 you can link your repository with Appflow to push code automatically.
 
 ## Prerequisites
-In order to enable the integration with Ionic Appflow, you will need an existing repository on
+In order to enable the integration with Appflow, you will need an existing repository on
 your Bitbucket Server instance. 
 
 ## Setting up the Integration
 Navigate to the `Git` section of the Settings tab in your app on the
-Ionic Appflow Dashboard and select the Bitbucket Server tab. 
+Appflow Dashboard and select the Bitbucket Server tab. 
 
 If this is your first time connecting you'll need to:
 * Enter the URL for your Bitbucket Server instance
@@ -30,7 +30,7 @@ If this is your first time connecting you'll need to:
   <p>
     <b>Note:</b> If the personal access token you use has read-only access,
     you will need to <a href="https://confluence.atlassian.com/bitbucketserver/managing-webhooks-in-bitbucket-server-938025878.html" target="_blank">
-    create the webhook yourself</a> so that Ionic recieves push events.
+    create the webhook yourself</a> so that Appflow recieves push events.
     A modal will pop up after you connect to your repo giving you the details you need to create the webhook.
     If you use a personal access token with admin privileges, this will be done
     automatically for you.
@@ -44,4 +44,4 @@ If this is your first time connecting you'll need to:
 Then you can choose the repository to link from the list of available repos.
 
 When you link to the repository, a webhook will be created
-and your commits will be sent to Ionic Appflow.
+and your commits will be sent to Appflow.
