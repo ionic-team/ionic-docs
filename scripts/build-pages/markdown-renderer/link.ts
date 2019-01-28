@@ -1,11 +1,13 @@
 import { resolve } from 'url';
 
-const isFragment = /^#/;
+const hasTrailingSlash = /\/$/;
 const isInternal = /^\/docs\/.*/;
 
 export default function(href: string, title: string, text: string) {
-  if (this.options.baseUrl && !isFragment.test(href)) {
-    href = resolve(this.options.baseUrl, href);
+  const { baseUrl } = this.options;
+
+  if (baseUrl) {
+    href = resolve(hasTrailingSlash.test(baseUrl) ? baseUrl : `${baseUrl}/`, href);
   }
 
   if (isInternal.test(href)) {
