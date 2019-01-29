@@ -394,8 +394,12 @@ ___
 
 * <b>available</b>: `boolean`
 </br>Whether or not an update is available.
+* <b>incompatibleUpdateAvailable</b>: `boolean`
+</br>Whether or not an update that is not compatible with this device is available.
 * <b>snapshot</b> (optional): `undefined` | `string`
-</br>The id of the snapshot if available.
+</br>The id of the snapshot, if available.
+* <b>build</b> (optional): `undefined` | `string`
+</br>The id of the build, if available.
 
 ___
 
