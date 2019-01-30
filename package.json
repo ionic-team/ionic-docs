@@ -20,9 +20,10 @@
   },
   "dependencies": {
     "@ionic/core": "4.0.0",
-    "@ionic/docs": "4.0.0-rc.3",
+    "@ionic/docs": "4.0.0",
     "@stencil/core": "^0.17.0",
-    "@stencil/router": "^0.3.3"
+    "@stencil/router": "^0.3.3",
+    "express": "^4.16.4"
   },
   "devDependencies": {
     "chokidar": "^2.0.4",
@@ -37,5 +38,6 @@
     "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
     "tslint-ionic-rules": "0.0.21"
-  }
+  },
+  "heroku-run-build-script": true
 }

@@ -70,7 +70,7 @@ function patchPage(page: Page): Page {
     href: `#${heading.getAttribute('id')}`
   }));
 
-  const pageClass = `page-${slugify(page.path.slice(PAGES_DIR.length + 1).replace('.json', ''))}`;
+  const pageClass = `page-${slugify(page.path.slice(6))}`;
 
   return {
     ...page,
@@ -81,8 +81,10 @@ function patchPage(page: Page): Page {
 }
 
 function writePage(page: Page): Promise<any> {
-  const { path, ...contents } = page;
-  return fs.outputJson(path, contents, {
+  return fs.outputJson(toFilePath(page.path), page, {
     spaces: 2
   });
 }
+
+const toFilePath = (urlPath: string) =>
+  `${resolve(PAGES_DIR, urlPath.slice(6))}.json`;

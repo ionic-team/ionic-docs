@@ -73,8 +73,8 @@ export class DocsPage {
     const content = [
       <stencil-route-switch>
         <stencil-route url="/docs/native" routeRender={nativeTemplate} componentProps={{ page }}/>
-        <stencil-route exact url="/docs/api" routeRender={apiReferenceTemplate} componentProps={{ page }}/>
         <stencil-route url="/docs/api/(.+)" routeRender={apiTemplate} componentProps={{ page }}/>
+        <stencil-route url="/docs/api" routeRender={apiReferenceTemplate} componentProps={{ page }}/>
         <stencil-route url="/docs/cli/commands/(.+)" routeRender={cliTemplate} componentProps={{ page }}/>
         <stencil-route url="/docs" routeRender={defaultTemplate} componentProps={{ page }}/>
       </stencil-route-switch>
