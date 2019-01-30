@@ -12,6 +12,9 @@ import 'ionicons';
 import '@stencil/router';
 import '@stencil/state-tunnel';
 import {
+  ColorVariable,
+} from './components/color-gen/color-variables';
+import {
   Link,
   MenuItems,
   Page,
@@ -55,6 +58,51 @@ export namespace Components {
 
   interface ColorAccordion {}
   interface ColorAccordionAttributes extends StencilHTMLAttributes {}
+
+  interface ColorGenerator {}
+  interface ColorGeneratorAttributes extends StencilHTMLAttributes {
+    'onPreviewMessage'?: (event: CustomEvent) => void;
+  }
+
+  interface ColorGenCssText {
+    'cssText': string;
+  }
+  interface ColorGenCssTextAttributes extends StencilHTMLAttributes {
+    'cssText'?: string;
+    'onCssTextChange'?: (event: CustomEvent) => void;
+  }
+
+  interface ColorGenPreview {
+    'cssText': string;
+    'demoMode': string;
+  }
+  interface ColorGenPreviewAttributes extends StencilHTMLAttributes {
+    'cssText'?: string;
+    'demoMode'?: string;
+  }
+
+  interface ColorGenSelectColors {
+    'colors': ColorVariable[];
+  }
+  interface ColorGenSelectColorsAttributes extends StencilHTMLAttributes {
+    'colors'?: ColorVariable[];
+  }
+
+  interface ColorGenVariableSelector {
+    'editable': boolean;
+    'isParentOpen': boolean;
+    'name': string;
+    'property': string;
+    'value': string;
+  }
+  interface ColorGenVariableSelectorAttributes extends StencilHTMLAttributes {
+    'editable'?: boolean;
+    'isParentOpen'?: boolean;
+    'name'?: string;
+    'onColorChange'?: (event: CustomEvent) => void;
+    'property'?: string;
+    'value'?: string;
+  }
 
   interface CommandCursor {
     'blink': boolean;
@@ -186,6 +234,11 @@ declare global {
     'CodeColor': Components.CodeColor;
     'DocsCode': Components.DocsCode;
     'ColorAccordion': Components.ColorAccordion;
+    'ColorGenerator': Components.ColorGenerator;
+    'ColorGenCssText': Components.ColorGenCssText;
+    'ColorGenPreview': Components.ColorGenPreview;
+    'ColorGenSelectColors': Components.ColorGenSelectColors;
+    'ColorGenVariableSelector': Components.ColorGenVariableSelector;
     'CommandCursor': Components.CommandCursor;
     'CommandLine': Components.CommandLine;
     'CommandOutput': Components.CommandOutput;
@@ -215,6 +268,11 @@ declare global {
     'code-color': Components.CodeColorAttributes;
     'docs-code': Components.DocsCodeAttributes;
     'color-accordion': Components.ColorAccordionAttributes;
+    'color-generator': Components.ColorGeneratorAttributes;
+    'color-gen-css-text': Components.ColorGenCssTextAttributes;
+    'color-gen-preview': Components.ColorGenPreviewAttributes;
+    'color-gen-select-colors': Components.ColorGenSelectColorsAttributes;
+    'color-gen-variable-selector': Components.ColorGenVariableSelectorAttributes;
     'command-cursor': Components.CommandCursorAttributes;
     'command-line': Components.CommandLineAttributes;
     'command-output': Components.CommandOutputAttributes;
@@ -267,6 +325,36 @@ declare global {
   var HTMLColorAccordionElement: {
     prototype: HTMLColorAccordionElement;
     new (): HTMLColorAccordionElement;
+  };
+
+  interface HTMLColorGeneratorElement extends Components.ColorGenerator, HTMLStencilElement {}
+  var HTMLColorGeneratorElement: {
+    prototype: HTMLColorGeneratorElement;
+    new (): HTMLColorGeneratorElement;
+  };
+
+  interface HTMLColorGenCssTextElement extends Components.ColorGenCssText, HTMLStencilElement {}
+  var HTMLColorGenCssTextElement: {
+    prototype: HTMLColorGenCssTextElement;
+    new (): HTMLColorGenCssTextElement;
+  };
+
+  interface HTMLColorGenPreviewElement extends Components.ColorGenPreview, HTMLStencilElement {}
+  var HTMLColorGenPreviewElement: {
+    prototype: HTMLColorGenPreviewElement;
+    new (): HTMLColorGenPreviewElement;
+  };
+
+  interface HTMLColorGenSelectColorsElement extends Components.ColorGenSelectColors, HTMLStencilElement {}
+  var HTMLColorGenSelectColorsElement: {
+    prototype: HTMLColorGenSelectColorsElement;
+    new (): HTMLColorGenSelectColorsElement;
+  };
+
+  interface HTMLColorGenVariableSelectorElement extends Components.ColorGenVariableSelector, HTMLStencilElement {}
+  var HTMLColorGenVariableSelectorElement: {
+    prototype: HTMLColorGenVariableSelectorElement;
+    new (): HTMLColorGenVariableSelectorElement;
   };
 
   interface HTMLCommandCursorElement extends Components.CommandCursor, HTMLStencilElement {}
@@ -401,6 +489,11 @@ declare global {
     'code-color': HTMLCodeColorElement
     'docs-code': HTMLDocsCodeElement
     'color-accordion': HTMLColorAccordionElement
+    'color-generator': HTMLColorGeneratorElement
+    'color-gen-css-text': HTMLColorGenCssTextElement
+    'color-gen-preview': HTMLColorGenPreviewElement
+    'color-gen-select-colors': HTMLColorGenSelectColorsElement
+    'color-gen-variable-selector': HTMLColorGenVariableSelectorElement
     'command-cursor': HTMLCommandCursorElement
     'command-line': HTMLCommandLineElement
     'command-output': HTMLCommandOutputElement
@@ -430,6 +523,11 @@ declare global {
     'code-color': HTMLCodeColorElement;
     'docs-code': HTMLDocsCodeElement;
     'color-accordion': HTMLColorAccordionElement;
+    'color-generator': HTMLColorGeneratorElement;
+    'color-gen-css-text': HTMLColorGenCssTextElement;
+    'color-gen-preview': HTMLColorGenPreviewElement;
+    'color-gen-select-colors': HTMLColorGenSelectColorsElement;
+    'color-gen-variable-selector': HTMLColorGenVariableSelectorElement;
     'command-cursor': HTMLCommandCursorElement;
     'command-line': HTMLCommandLineElement;
     'command-output': HTMLCommandOutputElement;

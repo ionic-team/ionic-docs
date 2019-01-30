@@ -1,5 +1,5 @@
 ---
-title: 'Connect your Repo'
+title: 'Connect Your Repo'
 previousText: 'Quickstart Home'
 previousUrl: '/docs/appflow/quickstart'
 nextText: 'Connect Using GitHub'

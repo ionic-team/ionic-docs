@@ -46,7 +46,7 @@ docs-preview {
   background-color: transparent;
   border: none;
   border-radius: 16px;
-  color: var(--gray);
+  color: var(--text-color--light);
   cursor: pointer;
   font-size: 10px;
   font-weight: 700;

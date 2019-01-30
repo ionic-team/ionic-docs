@@ -1,0 +1,163 @@
+<link rel="stylesheet" href="https://unpkg.com/@ionic/core@4.0.0-beta.17/css/ionic.bundle.css">
+<script src="https://unpkg.com/@ionic/core@4.0.0-beta.17/dist/ionic.js"></script>
+
+<style>
+  ion-app {
+    --ion-safe-area-top: 22px;
+  }
+</style>
+<style id="color-style"></style>
+
+<ion-app>
+  <ion-tabs useRouter="false">
+    <ion-tab label="Preview" icon="star"  path="">
+
+      <ion-header>
+        <ion-toolbar color="primary">
+            <ion-buttons slot="secondary">
+              <ion-button>
+                <ion-icon slot="icon-only" name="contact"></ion-icon>
+              </ion-button>
+              <ion-button>
+                <ion-icon slot="icon-only" name="search"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+            <ion-buttons slot="primary">
+              <ion-button>
+                <ion-icon slot="icon-only" name="more"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+            <ion-title>Theme preview</ion-title>
+          </ion-toolbar>
+      </ion-header>
+
+      <ion-content>
+
+        <ion-segment padding>
+          <ion-segment-button value="all" checked>
+            All
+          </ion-segment-button>
+          <ion-segment-button value="favorites">
+            Favorites
+          </ion-segment-button>
+        </ion-segment>
+
+        <ion-list>
+          <ion-item>
+            <ion-label>A medium toggle</ion-label>
+            <ion-toggle slot="end" color="medium" name="medium" checked></ion-toggle>
+          </ion-item>
+          <ion-item>
+            <ion-label>This is disabled</ion-label>
+            <ion-toggle slot="end" color="medium" name="medium" checked disabled></ion-toggle>
+          </ion-item>
+
+          <ion-item>Danger!</ion-label>
+            <ion-toggle slot="end" color="danger" checked></ion-toggle>
+          </ion-item>
+
+          <ion-item>Success!</ion-label>
+            <ion-toggle slot="end" color="success" checked></ion-toggle>
+          </ion-item>
+        </ion-list>
+
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-button expand="block" color="primary">Aa</ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button expand="block" color="secondary">Aa</ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button expand="block" color="tertiary">Aa</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <ion-item-divider></ion-item-divider>
+
+        <ion-grid>
+          <ion-row text-center>
+            <ion-col>
+              <ion-chip expand="block" color="success">
+                <ion-label>Success</ion-label>
+              </ion-chip>
+            </ion-col>
+            <ion-col>
+              <ion-chip expand="block" color="warning">
+                <ion-label>Warning</ion-label>
+              </ion-chip>
+            </ion-col>
+            <ion-col>
+              <ion-chip expand="block" color="danger">
+                <ion-label>Danger</ion-label>
+              </ion-chip>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <ion-list>
+          <ion-item>
+            <ion-label>Star</ion-label>
+              <ion-icon name="star" color="secondary" slot="start"></ion-icon>
+          </ion-item>
+          <ion-item>
+            <ion-label>Planet</ion-label>
+            <ion-icon name="planet" color="secondary" slot="start"></ion-icon>
+          </ion-item>
+          <ion-item>
+            <ion-label>Sun</ion-label>
+            <ion-icon name="sunny" color="secondary" slot="start"></ion-icon>
+          </ion-item>
+          <ion-item>
+            <ion-label>Moon</ion-label>
+            <ion-icon name="moon" color="secondary" slot="start"></ion-icon>
+          </ion-item>
+          <ion-item>
+            <ion-label>Rocket</ion-label>
+            <ion-icon name="rocket" color="secondary" slot="start"></ion-icon>
+          </ion-item>
+          <ion-item>
+            <ion-label>Earth</ion-label>
+            <ion-icon name="md-globe" color="secondary" slot="start"></ion-icon>
+          </ion-item>
+        </ion-list>
+
+        <ion-fab vertical="bottom" horizontal="end" id="fab4" slot="fixed">
+          <ion-fab-button color="tertiary" color="light" class="e2eFabBottomLeft">
+            <ion-icon name="arrow-up"></ion-icon>
+          </ion-fab-button>
+          <ion-fab-list side="top">
+            <ion-fab-button color="dark"><ion-icon name="logo-facebook"></ion-icon></ion-fab-button>
+            <ion-fab-button color="dark"><ion-icon name="logo-twitter"></ion-icon></ion-fab-button>
+            <ion-fab-button color="dark"><ion-icon name="logo-vimeo"></ion-icon></ion-fab-button>
+            <ion-fab-button color="dark"><ion-icon name="logo-googleplus"></ion-icon></ion-fab-button>
+          </ion-fab-list>
+        </ion-fab>
+      </ion-content>
+
+      <ion-tab
+        label="Save"
+        icon="save">
+        </ion-tab>
+      <ion-tab disabled
+        label="Share"
+        icon="share">
+      </ion-tab>
+
+  </ion-tabs>
+</ion-app>
+
+<script>
+  const styleTag = document.querySelector('#color-style');
+
+  function handleMessage(message) {
+    const cssText = message.data ? message.data.cssText : null;
+    if (cssText) {
+      styleTag.innerHTML = cssText;
+    }
+  }
+
+  window.addEventListener('message', handleMessage);
+</script>

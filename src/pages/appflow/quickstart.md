@@ -2,7 +2,7 @@
 title: 'Quickstart'
 previousText: 'Welcome'
 previousUrl: '/docs/appflow'
-nextText: 'Connect your Repo'
+nextText: 'Connect Your Repo'
 nextUrl: '/docs/appflow/quickstart/connect'
 ---
 

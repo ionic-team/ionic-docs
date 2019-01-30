@@ -1,5 +1,4 @@
 import { Component, Element, Listen, State } from '@stencil/core';
-// import { convertCssToColors, generateColor, updateCssText } from '../color-gen/parse-css';
 import { generateSteppedColors } from './parse-css';
 import { Color } from '../color-gen/color';
 
@@ -48,10 +47,6 @@ ${steppedColors}
 
   render() {
     return [
-      // <div class="stepped-color-header">
-      //   <h3>Generate Stepped Color Variables</h3>
-      //   <p>Create a custom background and text color theme for your app. Update the background or text color’s hex values below, then copy and paste the generated code directly into your Ionic project.</p>
-      // </div>,
       <div class="stepped-color-pickers">
         <color-gen-variable-selector id="background" name="Background" value={ this.backgroundColor }></color-gen-variable-selector>
         <color-gen-variable-selector id="text" name="Text" value={ this.textColor }></color-gen-variable-selector>
