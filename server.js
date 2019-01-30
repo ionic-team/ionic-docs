@@ -5,9 +5,9 @@ const path = require('path');
 const app = express();
 app.set('trust proxy', true);
 
-app.get('/', (req, res) => res.redirect(301, '/docs/'));
+app.get('/', (_, res) => res.redirect(301, '/docs/'));
 
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
   const pathname = path.join(parseurl(req).pathname, 'index.html');
   const options = { root: path.join(__dirname, 'www') };
 
@@ -16,4 +16,10 @@ app.use(function(req, res, next) {
 
 app.use(express.static(path.join(__dirname, 'www')));
 
-app.listen(process.env.PORT);
+app.use((_, res) => {
+  res.status(404).sendFile(`${__dirname}/www/docs/index.html`);
+});
+
+const listener = app.listen(process.env.PORT || 3030, () => {
+  console.log(`Listening on port ${listener.address().port}`);
+});
