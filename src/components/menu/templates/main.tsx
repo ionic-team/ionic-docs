@@ -15,6 +15,9 @@ const items = {
     'iOS Setup': '/docs/installation/ios',
     'Android Setup': '/docs/installation/android',
   },
+  'Utilities': {
+    'Config': '/docs/utilities/config'
+  },
   'Building': {
     'Starting': '/docs/building/starting',
     'Scaffolding': '/docs/building/scaffolding',
