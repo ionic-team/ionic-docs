@@ -118,7 +118,8 @@ export class ColorBlock {
           <th>Description</th>
         </tr>
         { blockItems }
-      </table>
+      </table>,
+      <ion-select-popover hidden></ion-select-popover>
     ];
   }
 }
