@@ -64,8 +64,8 @@ export class ColorGenerator {
 
   render() {
     return [
-      <color-gen-select-colors colors={this.colors} />,
-      <color-gen-css-text cssText={this.cssText}/>
+      <color-gen-select-colors colors={this.colors}></color-gen-select-colors>,
+      <color-gen-css-text cssText={this.cssText}></color-gen-css-text>
     ];
   }
 

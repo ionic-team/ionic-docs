@@ -6,7 +6,7 @@ export default (props) => {
   const events = renderEvents(page.events);
   const methods = renderMethods(page.methods);
   const customProps = renderCustomProps(page.styles);
-  const demoPreview = rendeDemoPreview(page);
+  const demoPreview = renderDemoPreview(page);
 
   if (usage) {
     headings.push({
@@ -185,7 +185,7 @@ const renderCustomProps = (customProps = []) => {
 };
 
 
-const rendeDemoPreview = (page: any) => {
+const renderDemoPreview = (page: any) => {
   if (DEMOS.indexOf(page.tag) < 0) {
     return null;
   }

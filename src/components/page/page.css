@@ -14,11 +14,8 @@ docs-page main {
   margin-bottom: 3rem;
 }
 
-docs-page main.docs-api {
-  display: flex;
-}
-
-docs-page main.docs-api {
+docs-page main.docs-api,
+docs-page main.docs-guide {
   display: flex;
 }
 
