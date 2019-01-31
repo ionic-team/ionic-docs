@@ -36,7 +36,7 @@ const tasks = new Listr([
     title: 'Build native plugins menu',
     task: () => fs.outputJSON(
       join(MENU_DATA_DIR, 'native-plugins.json'),
-      { ...nativePluginMenu, externalNativePlugins },
+      { ...nativePluginMenu, ...externalNativePlugins },
       { spaces: 2 }
     )
   }
