@@ -1,6 +1,6 @@
 ---
-previousText: ''
-previousUrl: ''
+previousText: 'Config'
+previousUrl: '/docs/utilities/config'
 nextText: ''
 nextUrl: ''
 ---

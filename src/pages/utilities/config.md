@@ -1,8 +1,8 @@
 ---
 previousText: ''
 previousUrl: ''
-nextText: ''
-nextUrl: ''
+nextText: 'Platform'
+nextUrl: '/docs/utilities/platform'
 ---
 
 # Config
