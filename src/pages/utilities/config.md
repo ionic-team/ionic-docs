@@ -11,6 +11,8 @@ The Config lets you configure your entire app. You can set the tab button layout
 
 ## Usage
 
+### Basic example
+
 ```typescript
 import { IonicModule } from '@ionic/angular';
 
@@ -28,22 +30,78 @@ import { IonicModule } from '@ionic/angular';
 })
 ```
 
-In this example, we are disabling the material design ripple effect across the app as well as forcing the app mode to be material design.
+In the above example, we are disabling the Material Design ripple effect across the app, as well as forcing the mode to be Material Design.
+
+### Customizing Animations
+
+```typescript
+import { IonicModule } from '@ionic/angular';
+
+@NgModule({
+  ...
+  imports: [
+    BrowserModule, 
+    IonicModule.forRoot({
+      toastEnter: (AnimationC: Animation, baseEl: ShadowRoot, position: string): Promise<Animation> => {
+        const baseAnimation = new AnimationC();
+
+        const wrapperAnimation = new AnimationC();
+      
+        const hostEl = (baseEl.host || baseEl) as HTMLElement;
+        const wrapperEl = baseEl.querySelector('.toast-wrapper') as HTMLElement;
+      
+        wrapperAnimation.addElement(wrapperEl);
+      
+        const bottom = `calc(8px + var(--ion-safe-area-bottom, 0px))`;
+        const top = `calc(8px + var(--ion-safe-area-top, 0px))`;
+      
+        switch (position) {
+          case 'top':
+            wrapperEl.style.top = top;
+            wrapperEl.style.opacity = 1;
+            wrapperAnimation.fromTo('transform', `translateY(-${hostEl.clientHeight}px)`, 'translateY(10px)')
+            break;
+          case 'middle':
+            const topPosition = Math.floor(
+              hostEl.clientHeight / 2 - wrapperEl.clientHeight / 2
+            );
+            wrapperEl.style.top = `${topPosition}px`;
+            wrapperAnimation.fromTo('opacity', 0.01, 1);
+            break;
+          default:
+            wrapperEl.style.bottom = bottom;
+            wrapperAnimation.fromTo('opacity', 0.01, 1);
+            break;
+        }
+        return Promise.resolve(baseAnimation
+          .addElement(hostEl)
+          .easing('cubic-bezier(.36,.66,.04,1)')
+          .duration(400)
+          .add(wrapperAnimation));
+      },
+    }), 
+    AppRoutingModule
+  ],
+  ...
+})
+```
+
+In the above example, we are customizing the "enter" animation for the `ion-toast` component. When an `ion-toast` component is presented from the top, it will slide down instead of fading in.
 
 ## Config Options
 
 Below is a list of config options that Ionic uses.
 
-| Config                   | type               | Description                                                                                              |
+| Config                   | Type               | Description                                                                                              |
 |--------------------------|--------------------|----------------------------------------------------------------------------------------------------------|
 | `actionSheetEnter`       | `AnimationBuilder` | Provides a custom enter animation for all `ion-action-sheet`, overriding the default "animation".
 | `actionSheetLeave`       | `AnimationBuilder` | Provides a custom leave animation for all `ion-action-sheet`, overriding the default "animation".
 | `alertEnter`             | `AnimationBuilder` | Provides a custom enter animation for all `ion-alert`, overriding the default "animation".
 | `alertLeave`             | `AnimationBuilder` | Provides a custom leave animation for all `ion-alert`, overriding the default "animation".
-| `animated`               | `boolean`          | When it's set to `false`, disables all animation and transition across the app.
+| `animated`               | `boolean`          | If `false`, Ionic will disable all animations and transitions across the app.
 | `backButtonIcon`         | `string`           | Overrides the default icon in all `<ion-back-button>` components.
 | `backButtonText`         | `string`           | Overrides the default text in all `<ion-back-button>` components.
-| `hardwareBackButton`     | `boolean`          | Wherever ionic will respond to hardware go back buttons in an Android device.
+| `hardwareBackButton`     | `boolean`          | If `true`, Ionic will respond to the hardware back button in an Android device
 | `infiniteLoadingSpinner` | `SpinnerTypes`     | Overrides the default spinner type in all `<ion-infinite-scroll-content>` components.
 | `loadingEnter`           | `AnimationBuilder` | Provides a custom enter animation for all `ion-loading`, overriding the default "animation".
 | `loadingLeave`           | `AnimationBuilder` | Provides a custom leave animation for all `ion-loading`, overriding the default "animation".
@@ -61,8 +119,8 @@ Below is a list of config options that Ionic uses.
 | `refreshingIcon`         | `string`           | Overrides the default icon in all `<ion-refresh-content>` components.
 | `refreshingSpinner`      | `SpinnerTypes`     | Overrides the default spinner type in all `<ion-refresh-content>` components.
 | `spinner`                | `SpinnerTypes`     | Overrides the default spinner in all `<ion-spinner>` components.
-| `statusTap`              | `boolean`          | Whenever clicking the top status bar should cause the scroll to top in an application.
-| `swipeBackEnabled`       | `boolean`          | Global switch that disables or enables "swipe-to-go-back" gesture across your application.
+| `statusTap`              | `boolean`          | If `true`, clicking or tapping the status bar will cause the content to scroll to the top.
+| `swipeBackEnabled`       | `boolean`          | If `false`, Ionic will disable the "swipe-to-go-back" gesture across your application.
 | `tabButtonLayout`        | `TabButtonLayout`  | Overrides the default "layout" of all `ion-bar-button` across the whole application.
 | `toastEnter`             | `AnimationBuilder` | Provides a custom enter animation for all `ion-toast`, overriding the default "animation".
 | `toastLeave`             | `AnimationBuilder` | Provides a custom leave animation for all `ion-toast`, overriding the default "animation".
