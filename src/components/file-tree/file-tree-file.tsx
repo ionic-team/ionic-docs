@@ -2,8 +2,7 @@ import { Component, Prop } from '@stencil/core';
 
 @Component({
   tag: 'file-tree-file',
-  styleUrl: 'file-tree-file.css',
-  shadow: true,
+  styleUrl: 'file-tree-file.css'
 })
 export class FileTreeFile {
   @Prop() name: string;
