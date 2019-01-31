@@ -15,7 +15,6 @@ export default (props) => {
 };
 
 const renderDemoPreview = (page: any) => {
-  console.log(page);
   if (!page.previewUrl) {
     return null;
   }

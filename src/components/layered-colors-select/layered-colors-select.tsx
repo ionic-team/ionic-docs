@@ -86,6 +86,9 @@ export class ColorBlock {
       );
     });
 
+    // TODO
+    // interface="popover" does not currently work
+    // see https://github.com/ionic-team/ionic/issues/17337
     return [
       <button class="color-select">
         <span
@@ -96,7 +99,6 @@ export class ColorBlock {
         </span>
         <ion-select
           value={this.color}
-          interface="popover"
           interfaceOptions={popoverOptions}
           onIonChange={() => this.changeColor(event)}>
           <ion-select-option value="primary">Primary</ion-select-option>
@@ -119,7 +121,6 @@ export class ColorBlock {
         </tr>
         { blockItems }
       </table>,
-      <ion-select-popover hidden></ion-select-popover>
     ];
   }
 }
