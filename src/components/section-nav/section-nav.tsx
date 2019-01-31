@@ -9,7 +9,7 @@ export class DocsSectionNav {
     return (
       <stencil-route-switch>
         <stencil-route url="/docs/appflow" routeRender={Appflow}/>
-        <stencil-route url="/docs/" routeRender={Framework}/>
+        <stencil-route url="/docs" routeRender={Framework}/>
       </stencil-route-switch>
     );
   }
