@@ -30,6 +30,49 @@ Depending on the platform the user is on, is(platformName) will return true or f
 
  #### Parameters
 
-| Name.               | Type                | Description                                                                                                                                  |
+| Name                | Type                | Description                                                                                                                                  |
 |---------------------|---------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
 | `platformName`      | `Platforms`         | Name of the platform. Available options are android, cordova, core, ios, ipad, iphone, mobile, mobileweb, phablet, tablet, desktop, electron |
+
+### `platforms() => string[]`
+
+Depending on what device you are on, `platforms` can return multiple values. Each possible value is a hierarchy of platforms. For example, on an iPhone, it would return `mobile`, `ios`, and `iphone`.
+
+### `ready() => Promise<string>`
+
+Returns a promise when the platform is ready and native functionality can be called. If the app is running from within a web browser, then the promise will resolve when the DOM is ready. When the app is running from an application engine such as Cordova, then the promise will resolve when Cordova triggers the `deviceready` event. The resolved value is the `readySource`, which states which platform ready was used.
+
+For example, when Cordova is ready, the resolved ready source is `cordova`. The default ready source value will be `dom`. The `readySource` is useful if different logic should run depending on the platform the app is running from. For example, only Cordova can execute the status bar plugin, so the web should not run status bar plugin logic.
+
+### `isRTL() => boolean`
+
+Returns if this app is using right-to-left language direction or not. We recommend the app's `index.html` file already has the correct `dir` attribute value set, such as `<html dir="ltr">` or `<html dir="rtl">`. [W3C: Structural markup and right-to-left text in HTML](http://www.w3.org/International/questions/qa-html-dir)
+
+### `isLandscape() => boolean`
+
+Returns `true` if the app is in landscape mode.
+
+### `isPortrait() => boolean`
+
+Returns `true` if the app is in portait mode.
+
+### `width() => number`
+
+Gets the width of the platform's viewport using `window.innerWidth`.
+
+### `height() => number`
+
+Gets the height of the platform's viewport using `window.innerHeight`.
+
+### `url() => string`
+
+Get the current url.
+
+### `testUserAgent(expression: string) => boolean`
+
+Returns `true` if the expression is included in the user agent string.
+
+### Parameters 
+| Name       | Type   | Description                           |
+|------------|--------|---------------------------------------|
+| expression | string | The string to check in the user agent |
