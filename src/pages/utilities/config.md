@@ -7,7 +7,7 @@ nextUrl: ''
 
 # Config
 
-The Config lets you configure your entire app or specific platforms. You can set the tab placement, icon mode, animations, and more here.
+The Config lets you configure your entire app. You can set the tab button layout, icon mode, animations, and more here.
 
 ## Usage
 
