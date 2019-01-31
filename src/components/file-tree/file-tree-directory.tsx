@@ -2,8 +2,7 @@ import { Component, Prop } from '@stencil/core';
 
 @Component({
   tag: 'file-tree-directory',
-  styleUrl: 'file-tree-directory.css',
-  shadow: true,
+  styleUrl: 'file-tree-directory.css'
 })
 export class FileTreeDirectory {
   @Prop() collapsed = false;
