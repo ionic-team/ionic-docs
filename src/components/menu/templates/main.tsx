@@ -15,9 +15,6 @@ const items = {
     'iOS Setup': '/docs/installation/ios',
     'Android Setup': '/docs/installation/android',
   },
-  'Utilities': {
-    'Config': '/docs/utilities/config'
-  },
   'Building': {
     'Starting': '/docs/building/starting',
     'Scaffolding': '/docs/building/scaffolding',
@@ -45,6 +42,9 @@ const items = {
   },
   'Navigation': {
     'Angular': '/docs/navigation/angular'
+  },
+  'Utilities': {
+    'Config': '/docs/utilities/config'
   },
   'Publishing': {
     'Progressive Web App': '/docs/publishing/progressive-web-app',

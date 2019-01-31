@@ -9,14 +9,30 @@ nextUrl: ''
 
 The Config lets you configure your entire app or specific platforms. You can set the tab placement, icon mode, animations, and more here.
 
-## Passing as Parameter
+## Usage
 
-## Setting Globally
+```typescript
+import { IonicModule } from '@ionic/angular';
+
+@NgModule({
+  ...
+  imports: [
+    BrowserModule, 
+    IonicModule.forRoot({
+      rippleEffect: false,
+      mode: 'md'
+    }), 
+    AppRoutingModule
+  ],
+  ...
+})
+```
+
+In this example, we are disabling the material design ripple effect across the app as well as forcing the app mode to be material design.
 
 ## Config Options
 
-Below is a list of config options that Ionic uses. You can also add you're own custom config keys to the global object for you're own needs.
-
+Below is a list of config options that Ionic uses.
 
 | Config                   | type               | Description                                                                                              |
 |--------------------------|--------------------|----------------------------------------------------------------------------------------------------------|
@@ -50,28 +66,3 @@ Below is a list of config options that Ionic uses. You can also add you're own c
 | `tabButtonLayout`        | `TabButtonLayout`  | Overrides the default "layout" of all `ion-bar-button` across the whole application.
 | `toastEnter`             | `AnimationBuilder` | Provides a custom enter animation for all `ion-toast`, overriding the default "animation".
 | `toastLeave`             | `AnimationBuilder` | Provides a custom leave animation for all `ion-toast`, overriding the default "animation".
-
-## Methods
-
-### `get(key: keyof IonicConfig, fallback?: any) => any`
-
-Get the value of the given key. If return value is null, use fallback instead.
-
-#### Parameters
-
-| Name       | Type                | Description                          |
-|------------|---------------------|--------------------------------------|
-| `key`      | `keyof IonicConfig` | Config key to get                    |
-| `fallback` | `any`               | Fallback value to use if key is null |
-
-
-### `set(key: keyof IonicConfig, value: any) => void`
-
-Set the value of the given key.
-
-#### Parameters
-
-| Name    | Type                | Description          |
-|---------|---------------------|----------------------|
-| `key`   | `keyof IonicConfig` | Config key to set    |
-| `value` | `any`               | Value to set the key |
