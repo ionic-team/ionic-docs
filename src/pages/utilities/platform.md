@@ -7,7 +7,7 @@ nextUrl: ''
 
 # Platform
 
-The Platform service can be used to get information about your current device. You can get all of the platforms associated with the device using the platforms method, including whether the app is being viewed from a tablet, if it's on a mobile device or browser, and the exact platform (iOS, Android, etc). You can also get the orientation of the device, if it uses right-to-left language direction, and much much more. With this information you can completely customize your app to fit any device.
+The Platform service can be used to get information about your current device. You can get all of the platforms associated with the device using the `platforms` method, including whether the app is being viewed from a tablet, if it's on a mobile device or browser, and the exact platform (iOS, Android, etc). You can also get the orientation of the device, if it uses right-to-left language direction, and much much more. With this information you can completely customize your app to fit any device.
 
 ## Usage
 
@@ -26,13 +26,33 @@ export MyPage {
 
 ### `is(platformName: Platforms) => boolean`
 
-Depending on the platform the user is on, is(platformName) will return true or false. Note that the same app can return true for more than one platform name. For example, an app running from an iPad would return true for the platform names: mobile, ios, ipad, and tablet. Additionally, if the app was running from Cordova then cordova would be true, and if it was running from a web browser on the iPad then mobileweb would be true.
+Depending on the platform the user is on, `is(platformName)` will return true or false. Note that the same app can return true for more than one platform name. For example, an app running from an iPad would return true for the platform names: `mobile`, `ios`, `ipad`, and `tablet`. Additionally, if the app was running from Cordova then `cordova` would be true.
 
- #### Parameters
+#### Parameters
 
 | Name                | Type                | Description                                                                                                                                  |
 |---------------------|---------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| `platformName`      | `Platforms`         | Name of the platform. Available options are android, cordova, core, ios, ipad, iphone, mobile, mobileweb, phablet, tablet, desktop, electron |
+| `platformName`      | `Platforms`         | Name of the platform. Available options are android, capacitor, cordova, desktop, electron, hybrid, ios, ipad, iphone, mobile, phablet, pwa, tablet |
+
+#### Platforms
+
+Below is a table listing all the possible `Platforms` values along with corresponding descriptions.
+
+| Platform Name | Description                           |
+|---------------|---------------------------------------|
+| android       | a device running Android              |
+| capacitor     | a device running Capacitor            |
+| cordova       | a device running Cordova              |
+| desktop       | a desktop device                      |
+| electron      | a desktop device running Electron     |
+| hybrid        | a device running Capacitor or Cordova |
+| ios           | a device running iOS                  |
+| ipad          | an iPad device                        |
+| iphone        | an iPhone device                      |
+| mobile        | a mobile device                       |
+| phablet       | a phablet device                      |
+| pwa           | a PWA app                             |
+| tablet        | a tablet device                       |
 
 ### `platforms() => string[]`
 
@@ -40,9 +60,9 @@ Depending on what device you are on, `platforms` can return multiple values. Eac
 
 ### `ready() => Promise<string>`
 
-Returns a promise when the platform is ready and native functionality can be called. If the app is running from within a web browser, then the promise will resolve when the DOM is ready. When the app is running from an application engine such as Cordova, then the promise will resolve when Cordova triggers the `deviceready` event. The resolved value is the `readySource`, which states which platform ready was used.
+Returns a promise when the platform is ready and native functionality can be called. If the app is running from within a web browser, then the promise will resolve when the DOM is ready. When the app is running from an application engine such as Cordova, then the promise will resolve when Cordova triggers the `deviceready` event. The resolved value is the `readySource`, which states the platform that was used.
 
-For example, when Cordova is ready, the resolved ready source is `cordova`. The default ready source value will be `dom`. The `readySource` is useful if different logic should run depending on the platform the app is running from. For example, only Cordova can execute the status bar plugin, so the web should not run status bar plugin logic.
+For example, when Cordova is ready, the resolved ready source is `cordova`. The default ready source value will be `dom`. The `readySource` is useful if different logic should run depending on the platform the app is running from. For example, only Capacitor and Cordova can execute the status bar plugin, so the web should not run status bar plugin logic.
 
 ### `isRTL() => boolean`
 
@@ -54,7 +74,7 @@ Returns `true` if the app is in landscape mode.
 
 ### `isPortrait() => boolean`
 
-Returns `true` if the app is in portait mode.
+Returns `true` if the app is in portrait mode.
 
 ### `width() => number`
 
