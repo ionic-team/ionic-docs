@@ -138,7 +138,6 @@ const items = {
   },
   'Select': {
     'ion-select-option': '/docs/api/select-option',
-    'ion-select-popover': '/docs/api/select-popover',
     'ion-select': '/docs/api/select'
   },
   'Slides': {
