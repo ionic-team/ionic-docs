@@ -1,13 +1,13 @@
 {
-  "name": "Ionic Framework",
-  "short_name": "Ionic",
+  "name": "Ionic Documentation",
+  "short_name": "Ionic Docs",
   "start_url": "/docs/",
   "display": "standalone",
   "icons": [{
-    "src": "/docs/assets/img/icon.png",
+    "src": "/docs/assets/img/meta/icon.svg",
     "sizes": "512x512",
-    "type": "image/png"
+    "type": "image/svg+xml"
   }],
-  "background_color": "#16161d",
-  "theme_color": "#16161d"
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff"
 }
