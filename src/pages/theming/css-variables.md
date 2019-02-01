@@ -15,7 +15,7 @@ Ionic components are built with <a href="https://developer.mozilla.org/en-US/doc
 
 CSS variables can be set globally in an application in the `:root` selector. They can also be applied only for a specific mode. See [Ionic Variables](#ionic-variables) for more information on the global variables Ionic provides.
 
-When using the Ionic CLI to start an angular, it creates a `src/theme/variables.scss` file where you can override the default Ionic Variables.
+When using the Ionic CLI to start an Angular project, the `src/theme/variables.scss` file is created where you can override the default Ionic Variables.
 
 ```css
 /* Set variables for all modes */
