@@ -8,9 +8,9 @@
 import '@stencil/core';
 
 import '@ionic/core';
-import 'ionicons';
 import '@stencil/router';
 import '@stencil/state-tunnel';
+import 'ionicons';
 import {
   ColorVariable,
 } from './components/color-gen/color-variables';
@@ -42,10 +42,12 @@ export namespace Components {
 
   interface CodeColor {
     'display': string;
+    'mode': string;
     'value': string;
   }
   interface CodeColorAttributes extends StencilHTMLAttributes {
     'display'?: string;
+    'mode'?: string;
     'value'?: string;
   }
 

@@ -77,7 +77,7 @@ export class ColorBlock {
             <code>{ variation.property }</code>
           </td>
           <td class="color-value">
-            <code-color value={ codeColor }></code-color>
+            <code-color mode="md" value={ codeColor }></code-color>
           </td>
           <td class="color-description">
             { variation.description }

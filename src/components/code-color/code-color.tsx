@@ -7,7 +7,7 @@ import { Component, Prop } from '@stencil/core';
 })
 export class ColorBlock {
   @Prop() value: string;
-
+  @Prop() mode: string;
   @Prop() display: string;
 
   render() {
