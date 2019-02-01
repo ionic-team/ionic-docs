@@ -33,7 +33,7 @@ export class DocsHeader {
   render() {
     return (
       <header>
-        <stencil-route-link url="/docs/">
+        <stencil-route-link url="/docs">
           <Logo/>
         </stencil-route-link>
         <docs-section-nav/>
