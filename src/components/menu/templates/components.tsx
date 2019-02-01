@@ -35,7 +35,6 @@ const items = {
   },
   'Date & Time Pickers': {
     'ion-datetime': '/docs/api/datetime',
-    'ion-picker-column': '/docs/api/picker-column',
     'ion-picker-controller': '/docs/api/picker-controller',
     'ion-picker': '/docs/api/picker'
   },

@@ -19,6 +19,10 @@ const nativePluginMenu = keyBy(
   (item) => `/docs/native/${slugify(item.name.slice(14))}`
 );
 
+const externalNativePlugins = {
+  'Google Maps': 'https://github.com/ionic-team/ionic-native-google-maps'
+};
+
 const tasks = new Listr([
   {
     title: 'Build CLI command menu',
@@ -32,7 +36,7 @@ const tasks = new Listr([
     title: 'Build native plugins menu',
     task: () => fs.outputJSON(
       join(MENU_DATA_DIR, 'native-plugins.json'),
-      nativePluginMenu,
+      { ...nativePluginMenu, ...externalNativePlugins },
       { spaces: 2 }
     )
   }
