@@ -9,12 +9,12 @@ export const config: Config = {
       baseUrl: '/docs',
       serviceWorker: null,
       empty: false,
-   inlineLoaderScript: false
+      inlineLoaderScript: false
     }
   ],
   copy: [
     { src: 'pages/**/*.json' },
-    { src: '_redirects' },
-    { src: 'robots.txt' }
+    { src: '_redirects', dest: '../_redirects' },
+    { src: 'robots.txt', dest: '../robots.txt' }
   ]
 };

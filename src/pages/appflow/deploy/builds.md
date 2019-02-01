@@ -42,5 +42,6 @@ After the build starts to be processed the statuses are:
 * **Failed**: the build terminated in an incorrect state.
 
 More concurrent builds can be added to your plan.
-If you have a Starter or Developer plan, you can get more builds by [upgrading plan](https://dashboard.ionicframework.com/settings/billing).
-If you have a Teams or Business plan, please [contact us](https://ionic.zendesk.com/hc/en-us/requests/new).
+If you have a Starter or Starter + Add-on plan, you can get more builds by [upgrading your plan](https://dashboard.ionicframework.com/settings/billing).
+
+If you have a Growth or Scale plan, please [contact us](https://ionic.zendesk.com/hc/en-us/requests/new).

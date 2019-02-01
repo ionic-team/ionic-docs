@@ -72,6 +72,25 @@ export namespace Components {
     'label'?: string;
   }
 
+  interface FileTreeDirectory {
+    'collapsed': boolean;
+    'name': string;
+  }
+  interface FileTreeDirectoryAttributes extends StencilHTMLAttributes {
+    'collapsed'?: boolean;
+    'name'?: string;
+  }
+
+  interface FileTreeFile {
+    'name': string;
+  }
+  interface FileTreeFileAttributes extends StencilHTMLAttributes {
+    'name'?: string;
+  }
+
+  interface FileTree {}
+  interface FileTreeAttributes extends StencilHTMLAttributes {}
+
   interface DocsHeader {}
   interface DocsHeaderAttributes extends StencilHTMLAttributes {}
 
@@ -169,6 +188,9 @@ declare global {
     'CommandOutput': Components.CommandOutput;
     'CommandPrompt': Components.CommandPrompt;
     'DocsDropdown': Components.DocsDropdown;
+    'FileTreeDirectory': Components.FileTreeDirectory;
+    'FileTreeFile': Components.FileTreeFile;
+    'FileTree': Components.FileTree;
     'DocsHeader': Components.DocsHeader;
     'DocsMenu': Components.DocsMenu;
     'DocsNav': Components.DocsNav;
@@ -194,6 +216,9 @@ declare global {
     'command-output': Components.CommandOutputAttributes;
     'command-prompt': Components.CommandPromptAttributes;
     'docs-dropdown': Components.DocsDropdownAttributes;
+    'file-tree-directory': Components.FileTreeDirectoryAttributes;
+    'file-tree-file': Components.FileTreeFileAttributes;
+    'file-tree': Components.FileTreeAttributes;
     'docs-header': Components.DocsHeaderAttributes;
     'docs-menu': Components.DocsMenuAttributes;
     'docs-nav': Components.DocsNavAttributes;
@@ -257,6 +282,24 @@ declare global {
   var HTMLDocsDropdownElement: {
     prototype: HTMLDocsDropdownElement;
     new (): HTMLDocsDropdownElement;
+  };
+
+  interface HTMLFileTreeDirectoryElement extends Components.FileTreeDirectory, HTMLStencilElement {}
+  var HTMLFileTreeDirectoryElement: {
+    prototype: HTMLFileTreeDirectoryElement;
+    new (): HTMLFileTreeDirectoryElement;
+  };
+
+  interface HTMLFileTreeFileElement extends Components.FileTreeFile, HTMLStencilElement {}
+  var HTMLFileTreeFileElement: {
+    prototype: HTMLFileTreeFileElement;
+    new (): HTMLFileTreeFileElement;
+  };
+
+  interface HTMLFileTreeElement extends Components.FileTree, HTMLStencilElement {}
+  var HTMLFileTreeElement: {
+    prototype: HTMLFileTreeElement;
+    new (): HTMLFileTreeElement;
   };
 
   interface HTMLDocsHeaderElement extends Components.DocsHeader, HTMLStencilElement {}
@@ -352,6 +395,9 @@ declare global {
     'command-output': HTMLCommandOutputElement
     'command-prompt': HTMLCommandPromptElement
     'docs-dropdown': HTMLDocsDropdownElement
+    'file-tree-directory': HTMLFileTreeDirectoryElement
+    'file-tree-file': HTMLFileTreeFileElement
+    'file-tree': HTMLFileTreeElement
     'docs-header': HTMLDocsHeaderElement
     'docs-menu': HTMLDocsMenuElement
     'docs-nav': HTMLDocsNavElement
@@ -377,6 +423,9 @@ declare global {
     'command-output': HTMLCommandOutputElement;
     'command-prompt': HTMLCommandPromptElement;
     'docs-dropdown': HTMLDocsDropdownElement;
+    'file-tree-directory': HTMLFileTreeDirectoryElement;
+    'file-tree-file': HTMLFileTreeFileElement;
+    'file-tree': HTMLFileTreeElement;
     'docs-header': HTMLDocsHeaderElement;
     'docs-menu': HTMLDocsMenuElement;
     'docs-nav': HTMLDocsNavElement;

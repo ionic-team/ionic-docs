@@ -43,6 +43,10 @@ const items = {
   'Navigation': {
     'Angular': '/docs/navigation/angular'
   },
+  'Utilities': {
+    'Config': '/docs/utilities/config',
+    'Platform': '/docs/utilities/platform'
+  },
   'Publishing': {
     'Progressive Web App': '/docs/publishing/progressive-web-app',
     'iOS App Store': '/docs/publishing/app-store',
