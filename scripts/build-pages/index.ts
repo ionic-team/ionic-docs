@@ -16,7 +16,10 @@ tasks.add(Native);
 export default tasks;
 
 if (!module.parent) {
-  tasks.run().catch(console.error);
+  tasks.run().catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
 }
 
 export const PAGES_DIR = resolve(__dirname, '../../src/pages');
