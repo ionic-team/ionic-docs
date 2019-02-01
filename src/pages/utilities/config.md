@@ -105,7 +105,7 @@ Below is a list of config options that Ionic uses.
 | `infiniteLoadingSpinner` | `SpinnerTypes`     | Overrides the default spinner type in all `<ion-infinite-scroll-content>` components.
 | `loadingEnter`           | `AnimationBuilder` | Provides a custom enter animation for all `ion-loading`, overriding the default "animation".
 | `loadingLeave`           | `AnimationBuilder` | Provides a custom leave animation for all `ion-loading`, overriding the default "animation".
-| `loadingSpinner`         | `SpinnerTypes`     | Overrides the default spinner for all `ion-loading` overlays, ie. the ones.
+| `loadingSpinner`         | `SpinnerTypes`     | Overrides the default spinner for all `ion-loading` overlays.
 | `menuIcon`               | `string`           | Overrides the default icon in all `<ion-menu-button>` components.
 | `menuType`               | `string`           | Overrides the default menu type for all `<ion-menu>` components.
 | `modalEnter`             | `AnimationBuilder` | Provides a custom enter animation for all `ion-modal`, overriding the default "animation".
