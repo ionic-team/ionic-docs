@@ -27,7 +27,7 @@ For example, an app being viewed on an Android platform will use the `md` (Mater
 <html class="md">
 ```
 
-_Note: The **platform** and the **mode** are not the same. The platform can be set to use any mode in the [config](../api/config) of an app._
+_Note: The **platform** and the **mode** are not the same. The platform can be set to use any mode in the [config](../utilities/config) of an app._
 
 ## Overriding Mode Styles
 
