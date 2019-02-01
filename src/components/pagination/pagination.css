@@ -3,7 +3,7 @@ docs-pagination {
   border-style: solid;
   border-width: 1px 0;
   display: flex;
-  padding: 2rem 4rem;
+  padding: var(--page-padding, 2rem 3rem);
 }
 
 docs-pagination .next,
