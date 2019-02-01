@@ -33,6 +33,49 @@
 </head>
 <body>
   <docs-root></docs-root>
+  <script>
+    // tmp work-around
+    function createComponentOnReadyPrototype(win, namespace, HTMLElementPrototype) {
+      (win['s-apps'] = win['s-apps'] || []).push(namespace);
+
+      if (!HTMLElementPrototype.componentOnReady) {
+
+        HTMLElementPrototype.componentOnReady = function componentOnReady() {
+          var elm = this;
+
+          function executor(resolve) {
+            if (elm.nodeName.indexOf('-') > 0) {
+              var apps = win['s-apps'];
+              var appsReady = 0;
+
+              for (var i = 0; i < apps.length; i++) {
+                if (win[apps[i]].componentOnReady) {
+                  if (win[apps[i]].componentOnReady(elm, resolve)) {
+                    return;
+                  }
+                  appsReady++;
+                }
+              }
+
+              if (appsReady < apps.length) {
+                (win['s-cr'] = win['s-cr'] || []).push([elm, resolve]);
+                return;
+              }
+            }
+
+            resolve(null);
+          }
+
+          if (win.Promise) {
+            return new win.Promise(executor);
+          }
+
+          return { then: executor };
+        };
+      }
+    }
+    createComponentOnReadyPrototype(window, 'App', HTMLElement.prototype);
+  </script>
   <script src="/docs/build/app/app.core.pf.js" data-resources-url="/docs/build/app/" data-namespace="app"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->

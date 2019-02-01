@@ -1,0 +1,69 @@
+layered-colors-select {
+  display: block;
+}
+
+.color-select {
+  display: block;
+  position: relative;
+
+  width: 100%;
+
+  padding: 1em;
+
+  background: inherit;
+  border: 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.08);
+  border-radius: 4px;
+
+  transition: .2s all ease;
+}
+
+.color-select:hover {
+  transform: translateY(-1px);
+
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+.color-dot {
+  display: inline-block;
+  vertical-align: middle;
+
+  width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+  margin-top: -4px;
+}
+
+.color-select ion-select {
+  position: static;
+
+  display: inline-flex;
+  width: calc(100% - 20px);
+
+  font-size: 14px;
+  font-weight: 700;
+
+  text-align: left;
+}
+
+.color-name,
+.color-value {
+  width: 10%;
+
+  white-space: nowrap;
+}
+
+.color-property {
+  word-break: break-word;
+  width: 45%;
+}
+
+.color-property code {
+  white-space: pre-wrap;
+  margin-left: 0;
+}
+
+.color-description {
+  width: 35%;
+}

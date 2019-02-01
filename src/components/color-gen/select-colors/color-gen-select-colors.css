@@ -1,0 +1,57 @@
+color-gen-select-colors {
+  display: block;
+  padding-top: 20px;
+  margin-bottom: 80px;
+}
+
+.controls,
+.controls__sub {
+  margin: 0;
+  padding: 0;
+}
+
+.controls li {
+  list-style-type: none;
+}
+
+.controls__item {
+  margin: 0;
+  position: relative;
+  border-bottom: 1px solid var(--line-rule-color);
+}
+
+.controls__item > color-gen-variable-selector {
+  cursor: pointer;
+}
+
+.controls__item svg {
+  transition: 100ms transform;
+  position: absolute;
+  top: 24px;
+  right: 12px;
+  pointer-events: none;
+}
+
+.controls__item:first-child {
+  border-top: 1px solid var(--line-rule-color);
+}
+
+.controls__sub > li {
+  height: 0;
+  opacity: 0;
+  margin: 0;
+  pointer-events: none;
+  transition:
+    160ms height,
+    160ms opacity;
+}
+
+.controls__item.is-open svg {
+  transform: rotate(180deg);
+}
+
+.controls__item.is-open .controls__sub > li {
+  height: 54px;
+  opacity: 1;
+  pointer-events: all;
+}

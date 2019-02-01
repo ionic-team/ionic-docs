@@ -1,3 +1,5 @@
+import '@ionic/core';
+
 import { Component } from '@stencil/core';
 import { LocationSegments, RouterHistory } from '@stencil/router';
 

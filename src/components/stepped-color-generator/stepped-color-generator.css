@@ -1,0 +1,42 @@
+
+.stepped-color-pickers {
+  display: flex;
+
+  margin-bottom: 20px;
+}
+
+color-gen-variable-selector {
+  display: block;
+
+  width: 50%;
+  margin: 5px;
+
+  border: 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.08);
+  border-radius: 4px;
+}
+
+@media (max-width: 900px) {
+  .stepped-color-pickers {
+    flex-direction: column;
+  }
+
+  color-gen-variable-selector {
+    width: 100%;
+  }
+}
+
+color-gen-css-text .css-text__code {
+  height: 630px;
+}
+
+color-gen-css-text code-color code {
+  background: transparent;
+  color: inherit;
+  margin: 0 0 0 6px;
+  padding: 0;
+}
+
+stepped-color-generator .stepped-color-header h3 {
+  margin-bottom: 1.5em;
+}

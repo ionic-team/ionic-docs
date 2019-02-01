@@ -7,8 +7,6 @@ nextText: 'Publishing an app'
 nextUrl: '/docs/publishing/app-store'
 ---
 
-<link rel="stylesheet" href="https://unpkg.com/@ionic/core/css/core.css">
-
 # Advanced Theming
 
 CSS-based theming enables apps to customize the colors quickly by loading a CSS file or changing a few CSS property values.
@@ -36,11 +34,11 @@ A color can be applied to an Ionic component in order to change the default colo
 
 Each color consists of the following properties: a `base`, `contrast`, `shade`, and `tint`. The `base` and `contrast` colors also require a `rgb` property which is the same color, just in <a href="https://developer.mozilla.org/en-US/docs/Glossary/RGB" target="_blank">rgb format</a>. See [The Alpha Problem](#the-alpha-problem) for an explanation of why the `rgb` property is also needed. Select from the dropdown below to see all of the default colors Ionic provides and their variations.
 
-<layered-colors-select></layered-colors-select>
+<layered-colors-select mode="md" no-prerender></layered-colors-select>
 
 ### Modifying Colors
 
-To change the default values of a color, all of the listed variations for that color should be set. For example, to change the secondary color to <code-color value="#006600"></code-color>, set the following CSS properties:
+To change the default values of a color, all of the listed variations for that color should be set. For example, to change the secondary color to <code-color mode="md" value="#006600"></code-color>, set the following CSS properties:
 
 ```css
 :root {
@@ -53,7 +51,7 @@ To change the default values of a color, all of the listed variations for that c
 }
 ```
 
-When `secondary` is applied to a button, not only is the base color <code-color value="#006600"></code-color> used, but the contrast color <code-color value="#ffffff"></code-color> is used for the text, along with shade <code-color value="#005a00"></code-color> and tint <code-color value="#1a751a"></code-color> colors for the different states of the button.
+When `secondary` is applied to a button, not only is the base color <code-color mode="md" value="#006600"></code-color> used, but the contrast color <code-color mode="md" value="#ffffff"></code-color> is used for the text, along with shade <code-color mode="md" value="#005a00"></code-color> and tint <code-color mode="md" value="#1a751a"></code-color> colors for the different states of the button.
 
 > Not sure how to get the variation colors from the base color? Try out our [Color Generator](/docs/theming/color-generator) that calculates all of the variations and provides code to copy/paste into an app!
 
@@ -149,15 +147,15 @@ After exploring different ways to customize the Ionic theme, we found that we co
 
 While updating the background (`--ion-background-color`) and text (`--ion-text-color`) variables will change the look of the app for most components, there are certain Ionic components where it may look off, or broken. This will be more apparent when applying a darker theme.
 
-In some components we use a shade darker than the background or lighter than the text. For example, an item heading text may need to be <code-color value="#404040"></code-color>, which is a few shades lighter than our default text color. Meanwhile, the loading component background is a shade darker than white, using <code-color value="#f2f2f2"></code-color>. We use stepped colors in order to define these slight variations. It is important to update the stepped colors when updating the background or text color of an application.
+In some components we use a shade darker than the background or lighter than the text. For example, an item heading text may need to be <code-color mode="md" value="#404040"></code-color>, which is a few shades lighter than our default text color. Meanwhile, the loading component background is a shade darker than white, using <code-color mode="md" value="#f2f2f2"></code-color>. We use stepped colors in order to define these slight variations. It is important to update the stepped colors when updating the background or text color of an application.
 
-By default, the Ionic stepped colors start at the default background color value <code-color value="#ffffff"></code-color> and mix with the text color value <code-color value="#000000"></code-color> using an increasing percentage. The full list of stepped colors is shown in the generator below.
+By default, the Ionic stepped colors start at the default background color value <code-color mode="md" value="#ffffff"></code-color> and mix with the text color value <code-color mode="md" value="#000000"></code-color> using an increasing percentage. The full list of stepped colors is shown in the generator below.
 
 ### Generate Stepped Color Variables
 
 Create a custom background and text color theme for your app. Update the background or text color’s hex values below, then copy and paste the generated code directly into your Ionic project.
 
-<stepped-color-generator></stepped-color-generator>
+<stepped-color-generator mode="md" no-prerender></stepped-color-generator>
 
 
 ## Globals
