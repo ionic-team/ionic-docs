@@ -20,4 +20,7 @@ tasks.add({
   task: () => buildData
 });
 
-tasks.run().catch(console.error);
+tasks.run().catch(err => {
+  console.error(err);
+  process.exit(1);
+});
