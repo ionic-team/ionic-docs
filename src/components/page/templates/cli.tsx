@@ -35,7 +35,7 @@ export default (props) => {
   }
 
   return (
-    <main class="docs-content-pane">
+    <main>
       <h1>{ page.title }</h1>
       <docs-table-of-contents links={headings} basepath={page.path} />
       <section class="summary intro" innerHTML={page.summary} />
@@ -123,9 +123,9 @@ const renderOptionList = (options = []) => {
       data={options}
       keys={{
         Head: option => renderOptionSpec(option),
-          Description: option => <div innerHTML={option.summary} />,
-          Aliases: option => option.aliases.length > 0 ? option.aliases.map(alias => <code>-{alias}</code>) : null,
-          Default: option => option.default && option.type === 'string' ? option.default : null,
+        Description: option => <div innerHTML={option.summary} />,
+        Aliases: option => option.aliases.length > 0 ? option.aliases.map(alias => <code>-{alias}</code>) : null,
+        Default: option => option.default && option.type === 'string' ? option.default : null
       }} />
   );
 };
