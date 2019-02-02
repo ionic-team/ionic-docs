@@ -1,9 +1,10 @@
 @import './templates/error.css';
 
 docs-page {
-  display: flex;
+  display: grid;
   flex-direction: column;
   font-size: 15px;
+  grid-template-columns: 1fr auto;
   line-height: 2;
   margin-left: var(--page-margin-left, var(--menu-width));
   margin-top: var(--header-height);
@@ -14,6 +15,10 @@ docs-page main {
   margin-bottom: 3rem;
   max-width: 680px;
   padding: var(--page-padding, 2rem 3rem);
+}
+
+docs-page docs-pagination {
+  grid-column: 1 / -1;
 }
 
 docs-page .full-screen {
