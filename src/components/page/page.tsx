@@ -80,6 +80,12 @@ export class DocsPage {
       </stencil-route-switch>
     ];
 
+    if (typeof page.demoUrl === 'string') {
+      content.push(
+        <docs-demo url={page.demoUrl}/>
+      );
+    }
+
     const shouldShowPagination = (
       page.previousText && page.previousUrl || page.nextText && page.nextUrl
     );

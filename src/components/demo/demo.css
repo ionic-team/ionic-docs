@@ -71,7 +71,7 @@
   font-size: 24px;
 }
 
-@media (max-width: 1124px) {
+@media (max-width: 1160px) {
   .docs-demo-device,
   .docs-demo-mode-toggle,
   .docs-demo-source {
