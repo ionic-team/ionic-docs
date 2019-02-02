@@ -1,8 +1,4 @@
-docs-preview {
-  grid-area: preview;
-}
-
-.docs-preview-device {
+.docs-demo-device {
   --device-aspect-ratio: 2.125;
   --device-padding: 2rem;
 
@@ -11,7 +7,7 @@ docs-preview {
   top: 0;
 }
 
-.docs-preview-device > figure {
+.docs-demo-device > figure {
   border-radius: 32px;
   box-shadow: 0 0 0 14px #090a0d, 0 0 0 17px #9fa3a8, 0 0 34px 17px rgba(0,0,0,0.2);
   height: 0;
@@ -25,7 +21,7 @@ docs-preview {
   z-index: 1;
 }
 
-.docs-preview-device > figure > iframe {
+.docs-demo-device > figure > iframe {
   border: none;
   height: 100%;
   left: 0;
@@ -35,14 +31,14 @@ docs-preview {
   z-index: 1;
 }
 
-.docs-preview-mode-toggle {
+.docs-demo-mode-toggle {
   align-items: center;
   display: flex;
   justify-content: center;
   padding-top: 1rem;
 }
 
-.docs-preview-mode-toggle button {
+.docs-demo-mode-toggle button {
   background-color: transparent;
   border: none;
   border-radius: 16px;
@@ -58,17 +54,17 @@ docs-preview {
   transition: 200ms background-color ease, 200ms color ease;
 }
 
-.docs-preview-mode-toggle button:focus,
-.docs-preview-mode-toggle button:active {
+.docs-demo-mode-toggle button:focus,
+.docs-demo-mode-toggle button:active {
   outline: none;
 }
 
-.docs-preview-mode-toggle button.is-selected {
+.docs-demo-mode-toggle button.is-selected {
   background-color: var(--text-color--dark);
   color: white;
 }
 
-.docs-preview-source {
+.docs-demo-source {
   position: absolute;
   top: 1rem;
   right: 44px;
@@ -76,14 +72,14 @@ docs-preview {
 }
 
 @media (max-width: 1124px) {
-  .docs-preview-device,
-  .docs-preview-mode-toggle,
-  .docs-preview-source {
+  .docs-demo-device,
+  .docs-demo-mode-toggle,
+  .docs-demo-source {
     display: none;
   }
 }
 
-.docs-preview-device__ios-notch {
+.docs-demo-device__ios-notch {
   display: none;
   fill: #090a0d;
   left: 50%;
@@ -94,7 +90,7 @@ docs-preview {
   z-index: 2;
 }
 
-.docs-preview-device.ios figure:after {
+.docs-demo-device.ios figure:after {
   background-color: rgba(0,0,0,0.5);
   border-radius: 2px;
   bottom: 6px;
@@ -108,21 +104,21 @@ docs-preview {
   z-index: 1;
 }
 
-.docs-preview-device.ios .docs-preview-device__ios-notch,
-.docs-preview-device.ios figure:after {
+.docs-demo-device.ios .docs-demo-device__ios-notch,
+.docs-demo-device.ios figure:after {
   display: block;
 }
 
 
-.docs-preview-device.md figure {
+.docs-demo-device.md figure {
   border-radius: 20px;
 }
 
-.docs-preview-device__md-bar {
+.docs-demo-device__md-bar {
   display: none;
 }
 
-.docs-preview-device.md .docs-preview-device__md-bar {
+.docs-demo-device.md .docs-demo-device__md-bar {
   display: block;
   fill: #090a0d;
   opacity: 0.1;
