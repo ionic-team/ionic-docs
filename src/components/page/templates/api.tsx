@@ -6,7 +6,6 @@ export default (props) => {
   const events = renderEvents(page.events);
   const methods = renderMethods(page.methods);
   const customProps = renderCustomProps(page.styles);
-  const demoPreview = renderDemoPreview(page);
 
   if (usage) {
     headings.push({
@@ -44,20 +43,15 @@ export default (props) => {
   }
 
   return (
-    <main class="docs-api">
-      <div class="docs-content-pane">
-        <div class="docs-content">
-          <h1>{ page.title }</h1>
-          <docs-table-of-contents links={headings} basepath={page.path}/>
-          <section class="markdown-content" innerHTML={page.body}/>
-          { usage }
-          { properties }
-          { events }
-          { methods }
-          { customProps }
-        </div>
-      </div>
-      { demoPreview }
+    <main>
+      <h1>{ page.title }</h1>
+      <docs-table-of-contents links={headings} basepath={page.path}/>
+      <section class="markdown-content" innerHTML={page.body}/>
+      { usage }
+      { properties }
+      { events }
+      { methods }
+      { customProps }
     </main>
   );
 };
@@ -183,46 +177,3 @@ const renderCustomProps = (customProps = []) => {
     </section>
   );
 };
-
-
-const renderDemoPreview = (page: any) => {
-  if (DEMOS.indexOf(page.tag) < 0) {
-    return null;
-  }
-  return (
-    <div class="docs-preview-pane">
-      <docs-preview url="/docs/demos/index.html" urlFragment={`#/${page.tag}`}></docs-preview>
-    </div>
-  );
-};
-
-
-
-const DEMOS = [
-  'ion-action-sheet',
-  'ion-alert',
-  'ion-badge',
-  'ion-button',
-  'ion-card',
-  'ion-checkbox',
-  'ion-datetime',
-  'ion-fab',
-  'ion-grid',
-  'ion-infinite-scroll',
-  'ion-input',
-  'ion-list',
-  'ion-loading',
-  'ion-menu',
-  'ion-modal',
-  'ion-nav',
-  'ion-popover',
-  'ion-range',
-  'ion-refresher',
-  'ion-searchbar',
-  'ion-select',
-  'ion-slides',
-  'ion-spinner',
-  'ion-tabs',
-  'ion-toast',
-  'ion-virtual-scroll'
-];

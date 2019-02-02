@@ -9,7 +9,7 @@ export default (props) => {
   const { page } = props;
 
   return (
-    <main class="docs-content-pane">
+    <main>
       <h1>{page.title}</h1>
       <section class="markdown-content" innerHTML={page.body}/>
       <hr/>
