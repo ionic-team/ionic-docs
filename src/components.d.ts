@@ -63,7 +63,7 @@ export namespace Components {
 
   interface ColorGenerator {}
   interface ColorGeneratorAttributes extends StencilHTMLAttributes {
-    'onPreviewMessage'?: (event: CustomEvent) => void;
+    'onDemoMessage'?: (event: CustomEvent) => void;
   }
 
   interface ColorGenCssText {
@@ -126,6 +126,15 @@ export namespace Components {
   interface CommandPrompt {}
   interface CommandPromptAttributes extends StencilHTMLAttributes {}
 
+  interface DocsDemo {
+    'source': string;
+    'url': string;
+  }
+  interface DocsDemoAttributes extends StencilHTMLAttributes {
+    'source'?: string;
+    'url'?: string;
+  }
+
   interface DocsDropdown {
     'close': () => void;
     'label': string;
@@ -183,17 +192,6 @@ export namespace Components {
   }
   interface DocsPaginationAttributes extends StencilHTMLAttributes {
     'page'?: Page;
-  }
-
-  interface DocsPreview {
-    'source': string;
-    'url': string;
-    'urlFragment': string;
-  }
-  interface DocsPreviewAttributes extends StencilHTMLAttributes {
-    'source'?: string;
-    'url'?: string;
-    'urlFragment'?: string;
   }
 
   interface DocsReference {
@@ -264,6 +262,7 @@ declare global {
     'CommandLine': Components.CommandLine;
     'CommandOutput': Components.CommandOutput;
     'CommandPrompt': Components.CommandPrompt;
+    'DocsDemo': Components.DocsDemo;
     'DocsDropdown': Components.DocsDropdown;
     'FileTreeDirectory': Components.FileTreeDirectory;
     'FileTreeFile': Components.FileTreeFile;
@@ -274,7 +273,6 @@ declare global {
     'DocsNav': Components.DocsNav;
     'DocsPage': Components.DocsPage;
     'DocsPagination': Components.DocsPagination;
-    'DocsPreview': Components.DocsPreview;
     'DocsReference': Components.DocsReference;
     'DocsRoot': Components.DocsRoot;
     'DocsSearch': Components.DocsSearch;
@@ -301,6 +299,7 @@ declare global {
     'command-line': Components.CommandLineAttributes;
     'command-output': Components.CommandOutputAttributes;
     'command-prompt': Components.CommandPromptAttributes;
+    'docs-demo': Components.DocsDemoAttributes;
     'docs-dropdown': Components.DocsDropdownAttributes;
     'file-tree-directory': Components.FileTreeDirectoryAttributes;
     'file-tree-file': Components.FileTreeFileAttributes;
@@ -311,7 +310,6 @@ declare global {
     'docs-nav': Components.DocsNavAttributes;
     'docs-page': Components.DocsPageAttributes;
     'docs-pagination': Components.DocsPaginationAttributes;
-    'docs-preview': Components.DocsPreviewAttributes;
     'docs-reference': Components.DocsReferenceAttributes;
     'docs-root': Components.DocsRootAttributes;
     'docs-search': Components.DocsSearchAttributes;
@@ -408,6 +406,12 @@ declare global {
     new (): HTMLCommandPromptElement;
   };
 
+  interface HTMLDocsDemoElement extends Components.DocsDemo, HTMLStencilElement {}
+  var HTMLDocsDemoElement: {
+    prototype: HTMLDocsDemoElement;
+    new (): HTMLDocsDemoElement;
+  };
+
   interface HTMLDocsDropdownElement extends Components.DocsDropdown, HTMLStencilElement {}
   var HTMLDocsDropdownElement: {
     prototype: HTMLDocsDropdownElement;
@@ -466,12 +470,6 @@ declare global {
   var HTMLDocsPaginationElement: {
     prototype: HTMLDocsPaginationElement;
     new (): HTMLDocsPaginationElement;
-  };
-
-  interface HTMLDocsPreviewElement extends Components.DocsPreview, HTMLStencilElement {}
-  var HTMLDocsPreviewElement: {
-    prototype: HTMLDocsPreviewElement;
-    new (): HTMLDocsPreviewElement;
   };
 
   interface HTMLDocsReferenceElement extends Components.DocsReference, HTMLStencilElement {}
@@ -543,6 +541,7 @@ declare global {
     'command-line': HTMLCommandLineElement
     'command-output': HTMLCommandOutputElement
     'command-prompt': HTMLCommandPromptElement
+    'docs-demo': HTMLDocsDemoElement
     'docs-dropdown': HTMLDocsDropdownElement
     'file-tree-directory': HTMLFileTreeDirectoryElement
     'file-tree-file': HTMLFileTreeFileElement
@@ -553,7 +552,6 @@ declare global {
     'docs-nav': HTMLDocsNavElement
     'docs-page': HTMLDocsPageElement
     'docs-pagination': HTMLDocsPaginationElement
-    'docs-preview': HTMLDocsPreviewElement
     'docs-reference': HTMLDocsReferenceElement
     'docs-root': HTMLDocsRootElement
     'docs-search': HTMLDocsSearchElement
@@ -580,6 +578,7 @@ declare global {
     'command-line': HTMLCommandLineElement;
     'command-output': HTMLCommandOutputElement;
     'command-prompt': HTMLCommandPromptElement;
+    'docs-demo': HTMLDocsDemoElement;
     'docs-dropdown': HTMLDocsDropdownElement;
     'file-tree-directory': HTMLFileTreeDirectoryElement;
     'file-tree-file': HTMLFileTreeFileElement;
@@ -590,7 +589,6 @@ declare global {
     'docs-nav': HTMLDocsNavElement;
     'docs-page': HTMLDocsPageElement;
     'docs-pagination': HTMLDocsPaginationElement;
-    'docs-preview': HTMLDocsPreviewElement;
     'docs-reference': HTMLDocsReferenceElement;
     'docs-root': HTMLDocsRootElement;
     'docs-search': HTMLDocsSearchElement;
