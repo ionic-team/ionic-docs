@@ -4,15 +4,15 @@ nextUrl: '/docs/layout/grid'
 initialTab: 'preview'
 ---
 
-# Structure
+# 構造
 
-Ionic Framework provides several different layouts that can be used to structure an app. From single page layouts, to split pane views and modals.
+Ionic Frameworkは、アプリを構成するために、単一ページレイアウトから、分割ペインビューとモーダルまで使用できるいくつかのレイアウトを提供します。
 
-## Header and Footer Layout
+## HeaderとFooterのレイアウト
 
 ### Header
 
-The most simple layout available consists of a [header](/docs/api/header) and [content](/docs/api/content). Most pages in an app generally have both of these, but a header is not required in order to use content.
+利用できる一番単純なレイアウトは、[header](/docs/api/header) と [content](/docs/api/content)で構成されています。通常、アプリ内のほとんどのページにこれらの両方がありますが、コンテンツを使用するためにヘッダーは必須ではありません。
 
 ```html
 <ion-app>
@@ -30,7 +30,7 @@ The most simple layout available consists of a [header](/docs/api/header) and [c
 
 ### Footer
 
-As you can see, a toolbar in a header appears above the content. Sometimes an app needs to have a toolbar below the content, which is when a footer is used.
+ご覧のとおり、Headerにあるツールバーがコンテンツ上に表示されます。アプリケーションのコンテンツの下にツールバーが必要な場合があります。これがFooterが使用されている場合です。
 
 ```html
 <ion-app>
@@ -46,9 +46,9 @@ As you can see, a toolbar in a header appears above the content. Sometimes an ap
 </ion-app>
 ```
 
-### Header and Footer
+### Header と Footer
 
-These can also be combined on one page to have a toolbar above *and* below the content.
+また、これらはひとつのページのコンテンツの上部と下部にツールバーを持つことも可能です。
 
 ```html
 <ion-app>
@@ -70,9 +70,9 @@ These can also be combined on one page to have a toolbar above *and* below the c
 </ion-app>
 ```
 
-## Tabs Layout
+## Tabs レイアウト
 
-A layout consisting of horizontal [tabs](/docs/api/tabs) can be used to let the user quickly change between content views. Each tab can contain static content or a navigation stack by using an `ion-router-outlet` or `ion-nav`.
+水平に配置された [tabs](/docs/api/tabs) レイアウトを利用すると、ユーザはコンテンツの表示をすばやく切り替えることができます。それぞれのタブは、`ion-router-outlet` もしくは `ion-nav` を利用して静的コンテンツまたはナビゲーションスタックを持つことができます。
 
 ```html
 <ion-app>
@@ -98,9 +98,9 @@ A layout consisting of horizontal [tabs](/docs/api/tabs) can be used to let the 
 </ion-app>
 ```
 
-## Menu Layout
+## Menu レイアウト
 
-A standard layout among mobile apps includes the ability to toggle a side [menu](/docs/api/menu) by clicking a button or swiping it open from the side. Side menus are generally used for navigation, but they can contain any content.
+モバイルアプリの標準的なレイアウトには、ボタンをクリックするか横からスワイプすると、横から [menu](/docs/api/menu) が表示されるものがあります。サイドメニューは通常ナビゲーションに使用されますが、任意のコンテンツを含めることができます。
 
 ```html
 <ion-app>
@@ -152,11 +152,11 @@ A standard layout among mobile apps includes the ability to toggle a side [menu]
 ```
 
 
-## Split Pane Layout
+## 分割表示のレイアウト
 
-A [split pane](/docs/api/split-pane) layout has a more complex structure because it can combine the previous layouts. It allows for multiple views to be displayed when the viewport is above a specified breakpoint. If the device's screen size is below a certain size, the split pane view will be hidden.
+[分割表示](/docs/api/split-pane) レイアウトは、上記のレイアウトと組み合わせることができるので、レイアウトはより複雑な構造になります。ビューポートがブレークポイントを超えると、複数のビューを表示することができます。デバイスの画面サイズが特定のサイズを下回ると、分割表示は非表示となります。
 
-By default, the split pane view will show when the screen is larger than `768px`, or the `md` breakpoint, but this can be customized to use different breakpoints by setting the `when` property. Below is an example where the split pane contains a menu that is visible for `sm` screens and up, or when the viewport is larger than `576px`. By resizing the browser horizontally so that the app is smaller than this, the split pane view will disappear.
+デフォルトでは、画面がブレークポイント `768px` または `md` のブレークポイントよりも大きいときに分割表示が表示されますが、 `when` プロパティを設定することで異なるブレークポイントを使用するようにカスタマイズできます。以下は、分割表示に `sm` サイズ以上もしくは `576px` 以上で表示されるメニューが含まれているサンプルです。アプリがこれより小さくなるようにブラウザの水平方向のサイズを変更すると、分割表示は消えます。
 
 
 ```html
@@ -208,4 +208,4 @@ By default, the split pane view will show when the screen is larger than `768px`
 </ion-app>
 ```
 
-It's important to note that the element with the `main` attribute will be the main content that is always visible. This can be any element, including an [ion-nav](/docs/api/nav), [ion-router-outlet](/docs/api/router-outlet), or an [ion-tabs](/docs/api/tabs).
+`main` 属性を持つ要素が常に表示されるメインコンテンツになることに注意が重要です。これには、[ion-nav](/docs/api/nav), [ion-router-outlet](/docs/api/router-outlet), [ion-tabs](/docs/api/tabs) といったいくつかの要素も同様です。

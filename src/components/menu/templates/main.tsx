@@ -1,46 +1,46 @@
 export default () => <docs-nav items={items}/>;
 
 const items = {
-  'Introduction': {
-    'What is Ionic Framework?': '/docs/intro',
-    'Core Concepts': '/docs/intro/concepts',
-    'Browser Support': '/docs/intro/browser-support',
-    'Versioning': '/docs/intro/versioning',
-    'Support': '/docs/intro/support'
+  '紹介': {
+    'Ionic Frameworkとは': '/docs/intro',
+    'コアコンセプト': '/docs/intro/concepts',
+    'ブラウザサポート': '/docs/intro/browser-support',
+    'バージョニング': '/docs/intro/versioning',
+    'サポート': '/docs/intro/support'
   },
-  'Installation': {
-    'CLI Installation': '/docs/installation/cli',
-    'Packages & CDN': '/docs/installation/cdn',
-    'Environment Setup': '/docs/installation/environment',
-    'iOS Setup': '/docs/installation/ios',
-    'Android Setup': '/docs/installation/android',
+  'インストール': {
+    'CLIのインストール': '/docs/installation/cli',
+    'PackagesとCDN': '/docs/installation/cdn',
+    '環境設定': '/docs/installation/environment',
+    'iOSセットアップ': '/docs/installation/ios',
+    'Androidセットアップ': '/docs/installation/android',
   },
-  'Building': {
-    'Starting': '/docs/building/starting',
-    'Scaffolding': '/docs/building/scaffolding',
-    'Migration': '/docs/building/migration',
-    'Cross Platform': '/docs/building/cross-platform',
-    'Running Overview': '/docs/building/running',
-    'Running on iOS': '/docs/building/ios',
-    'Running on Android': '/docs/building/android',
+  '構築方法': {
+    'はじめ方': '/docs/building/starting',
+    'アプリ開発の基本': '/docs/building/scaffolding',
+    'v4への移行': '/docs/building/migration',
+    'クロスプラットフォーム': '/docs/building/cross-platform',
+    'アプリ開発の概要': '/docs/building/running',
+    'iOSでの開発': '/docs/building/ios',
+    'Androidでの開発': '/docs/building/android',
     'Testing': '/docs/building/testing',
     'Contributing': '/docs/building/contributing',
     'Web View': '/docs/building/webview',
     'Ionic Storage': '/docs/building/storage'
   },
-  'Layout': {
-    'Structure': '/docs/layout/structure',
+  'レイアウト': {
+    '構造': '/docs/layout/structure',
     'Responsive Grid': '/docs/layout/grid',
-    'CSS Utilities': '/docs/layout/css-utilities',
+    'CSSユーティリティ': '/docs/layout/css-utilities',
   },
-  'Theming': {
+  'テーマのカスタマイズ': {
     'Basics': '/docs/theming/basics',
     'Platform Styles': '/docs/theming/platform-styles',
     'CSS Variables': '/docs/theming/css-variables',
     'Color Generator': '/docs/theming/color-generator',
     'Advanced': '/docs/theming/advanced',
   },
-  'Navigation': {
+  'ナビゲーション': {
     'Angular': '/docs/navigation/angular'
   },
   'Utilities': {
@@ -53,10 +53,10 @@ const items = {
     'Android Play Store': '/docs/publishing/play-store',
     'Electron Desktop App': '/docs/publishing/desktop-app'
   },
-  'FAQ': {
+  'よくある質問': {
     'Glossary': '/docs/faq/glossary',
     'Build Errors': '/docs/faq/build',
-    'Runtime Errors': '/docs/faq/runtime',
+    'ランタイムエラー': '/docs/faq/runtime',
     'Native Errors': '/docs/faq/native',
     'Developer Tips': '/docs/faq/tips',
     'Changelog': 'https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md'

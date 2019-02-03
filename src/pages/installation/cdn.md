@@ -7,11 +7,11 @@ nextUrl: '/docs/installation/environment'
 
 # Ionic Packages
 
-Depending on whether you're using Angular, another framework, or none at all, there are a few different ways to install Ionic.
+Ionicをインストールする方法は、あなたがAngularを使うのか、他のフレームワークを使うのか（もしくは使わないのか）によって変わります。
 
-## Using Ionic in Angular
+## AngularでIonicをつかう
 
-When using Ionic in an Angular project, install the latest `@ionic/angular` package from [npm](/docs/faq/glossary#npm). This comes with all of the Ionic components and Angular specific services and features.
+Angularを使うときは、npmから `@ionic/angular` パッケージをインストールしてください。これには、すべてのIonicコンポーネントと、IonicをAngularで使うための機能が含まれています。
 
 ```shell
 $ npm install @ionic/angular@latest --save
@@ -20,30 +20,30 @@ $ npm install @ionic/angular@latest --save
 Each time there is a new Ionic release, the [version](/docs/intro/versioning) will increment. The version can be [updated using npm](/docs/faq/tips#updating-dependencies), as well.
 
 
-## Using Ionic from a CDN
+## CDNでIonicをつかう
 
-Ionic can also be included from a CDN by adding a script tag!
+Ionicは、簡単に`<script>`タグを使用してCDNから直接利用することもできます。
 
-It's recommended to use [unpkg](https://unpkg.com) to access the Framework from a CDN. To get the latest version, add the following `<script>` tag inside the `<head></head>` element in an HTML file:
+CDNをつかってIonic Frameworkにアクセスするためには、[unpkg](https://unpkg.com)を使うことをおすすめします。最新版を入手するには、HTMLファイルの`<head></head>`要素内に`script`タグを追加します。
 
 ```html
 <script src="https://unpkg.com/@ionic/core@latest/dist/ionic.js"></script>
 ```
 
-With this it's possible to use all of the Ionic components without having to install anything.
+これで、何もインストールしなくても、すべてのIonicコンポーネントを利用することができます。
 
 <blockquote>
   <p>
-    This does not install Angular or any frameworks. This allows use of Ionic components without a framework.
+    これはAngularなどフレームワークをインストールしません。`<script>`タグを利用することにより、何もインストールしなくてもIonicコンポーネントを使用できます。
   </p>
 </blockquote>
 
 
-## Ionicons from a CDN
+## CDNでIoniconsをつかう
 
-Ionicons is packaged by default with the Ionic Framework, so no installation is necessary if you're using Ionic. Want to use Ionicons without Ionic Framework? Place the following `<script>` near the end of your page, right before the closing `</body>` tag, to enable them.
+Ionic Frameworkを使用している場合、Ioniconsはデフォルトでパッケージに含まれているので、インストールは不要です。もしIonic FrameworkなしにIoniconsを使う場合は、次の`<script>`のコードを閉じタグ`</body>`の直前に配置します。
 
 ```html
-<script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
+<script src="https://unpkg.com/ionicons@4.0.0/dist/ionicons.js"></script>
 ```
 

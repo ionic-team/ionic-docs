@@ -5,28 +5,28 @@ nextText: 'Versioning'
 nextUrl: '/docs/intro/versioning'
 ---
 
-# Browser Support
+# ブラウザサポート
 
-Ionic's original goal was to make it easy to develop mobile apps using web technologies, including HTML, CSS and JavaScript. By using web technologies, Ionic is able to work across a wide range of devices, operating systems and browsers, all while using the same codebase.
+Ionicの本来の目標は、HTML、CSS、JavaScriptといったWeb技術を使用してモバイルアプリを開発することを簡単にすることでした。Webテクノロジーを使用することで、Ionicは、同じコードを使用しながら、幅広いデバイス、オペレーティングシステム、ブラウザで動作します。
 
 
-## Mobile
+## モバイル
 
-Browser support was first centered around supporting mobile devices through [Platform Continuity](/docs/intro/concepts#platform-continuity), and has been heavily tested on the operating systems listed below:
+ブラウザのサポートは、まず[Platform Continuity](/docs/intro/concepts#platform-continuity)を通じてモバイルデバイスをサポートすることが中心に行われ、以下のオペレーティングシステムで念入りにテストされています。
 
 - ### Android 4.4+
-  - [Latest Android Stats](https://developer.android.com/about/dashboards/)
+  - [Androidの最新統計](https://developer.android.com/about/dashboards/)
 - ### iOS 10+
-  - [Latest iOS Stats](https://developer.apple.com/support/app-store/)
+  - [iOSの最新統計](https://developer.apple.com/support/app-store/)
 
 
-## Desktop
+## デスクトップ
 
-Ionic not only works great on mobile devices, but since it's based on web technologies it works great on desktop browsers too.
+Ionicはモバイルデバイスで正常に動作するだけでなく、ウェブ技術に基づいているので、デスクトップブラウザでも正常に機能します。
 
 - ### Chrome
 - ### Safari
 - ### Edge
 - ### Firefox
 
-For more information on desktop layouts, see [Cross Platform](/docs/building/cross-platform).
+デスクトップレイアウトの詳細については、[Cross Platform](/docs/building/cross-platform)をご覧ください。

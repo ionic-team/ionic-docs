@@ -5,26 +5,26 @@ nextText: 'Running on iOS'
 nextUrl: '/docs/building/ios'
 ---
 
-# Running An App
+# アプリの開発
 
-There are many different options to test native functionality depending on your target platforms and needs.
+ターゲットとするプラットフォームとニーズに応じて、ネイティブ機能をテストするためのさまざまなやり方があります。
 
-* Implement [Platform Detection](/docs/building/cross-platform) for the native functionality and test with `ionic serve`
-* [Deploy to iOS](/docs/building/ios)
-* [Deploy to Android](/docs/building/android)
-* Deploy to iOS & Android instantly using [Ionic DevApp](/docs/building/running#ionic-devapp)
+* ネイティブ機能を開発するために、[Platformを検出する](/docs/building/cross-platform) `ionic serve` でテストします。
+* [iOSへのデプロイ](/docs/building/ios)
+* [Androidへのデプロイ](/docs/building/android)
+* [Ionic DevApp](/docs/building/running#ionic-devapp)を使って瞬時にiOS、Androidにデプロイ
 
-This article will focus on Ionic DevApp, as it includes the ability to test native functionality on a device.
+本稿では、デバイス上でネイティブ機能をテストする、Ionic DevAppをご紹介します。
 
 ## Ionic DevApp
 
-Ionic DevApp extends the capabilities of Ionic Framework, making it easy to test apps directly on devices. DevApp offers a realtime view of changes as they're being made, with a rich library of pre-installed native plugins to test native features of the app.
+Ionic DevAppは、Ionic Frameworkを使って簡単にデバイス上で直接アプリをテストすることあできます。DevAppは、アプリケーションのネイティブ機能をテストするための、プリインストールされた豊富なネイティブプラグインのライブラリを使用することができ、またリアルタイムの変更検知を利用することができます。
 
-There's no need to install complicated Native SDKs - all it takes is one simple command, `ionic serve`, and apps running anywhere DevApp is installed will be immediately available to preview, with LiveReload to refresh changes as soon as they're made.
+複雑なNative SDKをインストールする必要はありません。 `ionic serve`をいう1つの簡単なコマンドで実行できます。実行されているアプリは、DevAppがインストールされているデバイスですぐにプレビューできます。LiveReloadで、変更が反映されます。
 
-### Getting started
+### はじめかた
 
-First, download the Ionic DevApp. It is available in the iOS App Store as well as Google Play
+まず、Ionic DevAppをダウンロードしてください。iOS App StoreとGoogle Playで利用できます。
 
 <a href="https://itunes.apple.com/us/app/ionic-devapp/id1233447133?ls=1&amp;mt=8" target="_blank">
   <img style="width: 160px" src="/docs/assets/img/appstore.png" id="appstore-image">
@@ -33,13 +33,13 @@ First, download the Ionic DevApp. It is available in the iOS App Store as well a
   <img style="width: 160px" alt="Get it on Google Play" src="/docs/assets/img/playstore.png" id="playstore-image">
 </a>
 
-With DevApp installed, sign up or login to an Ionic Account.
+DevAppをインストールしたら、Ionicアカウントを登録するか、ログインします。
 
-> DevApp is a free service that comes with every Ionic Account.
+> DevAppは、すべてのIonicアカウントに付いてる無料サービスです。
 
-## Serving the App
+## アプリの実行
 
-Make sure the device running DevApp and the computer are on the same network, then run `ionic serve` from the command line in the project's directory.
+DevAppを実行しているデバイスとコンピュータが同じネットワーク上にあることを確認して、`ionic serve`をプロジェクトのディレクトリのコマンドラインから実行します。
 
 <command-line>
     <command-prompt>ionic serve</command-prompt>
@@ -64,10 +64,10 @@ Make sure the device running DevApp and the computer are on the same network, th
     </command-output>
 </command-line>
 
-With `ionic serve` running, open DevApp and select the app from the currently running app list.
+`ionic serve` 実行後にDevAppを開いて、現在実行中のアプリ一覧からアプリを選択します。
 
 ![dev app with running app](/docs/assets/img/guides/running/dev-app-preview.png)
 
-Now if the app calls any native functionality, DevApp can handle this and actually return the correct native implementation.
+アプリがネイティブ機能を呼び出す場合場合、DevAppは呼び出しを処理して、実際に正しいネイティブ実装を返すことができます。
 
-DevApp has a select list of plugin it supports, so check out the [DevApp docs](https://ionicframework.com/docs/pro/devapp/) for a complete list.
+DevAppはがサポートするプラグインのリストがあるので、詳細については [DevApp docs](https://ionicframework.com/docs/pro/devapp/) をご覧ください。

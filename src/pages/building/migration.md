@@ -5,42 +5,42 @@ nextText: 'Cross Platform'
 nextUrl: '/docs/building/cross-platform'
 ---
 
-# Migration Guide
+# v4への移行ガイド
 
-## Migrating from Ionic 3.0 to Ionic 4.0 - Overview
+## 概要
 
-We suggest the following general process when migrating an existing application from Ionic 3 to 4:
+既存のアプリケーションをIonic 3から4に移行するときは、次の一般的なプロセスをお勧めします。
 
-1. Generate a new project using the `blank` starter (see [Starting an App](/docs/building/starting))
-1. Copy any Angular services from `src/providers` to `src/app/services`
-   - Services should include `{ providedIn: 'root' }` in the `@Injectable()` decorator. For details, please see Angular [provider docs](https://angular.io/guide/providers).
-1. Copy the app's other root level items (pipes, components, etc) keeping in mind that the directory structure changes from `src/components` to `src/app/components`, etc.
-1. Copy global Sass styling from `src/app/app.scss` to `src/global.scss`
-1. Copy the rest of the application, page by page or feature by feature, keeping the following items in mind:
-   - Emulated Shadow DOM is turned on by default
-   - Page/component Sass should no longer be wrapped in the page/component tag and should use Angular's [`styleUrls`](https://angular.io/api/core/Component#styleUrls) option of the `@Component` decorator
-   - RxJS has been updated from v5 to v6 (see [RxJS Changes](#rxjs-changes))
-   - Certain lifecycle hooks should be replaced by Angular's hooks (see [Lifecycle Events](#lifecycle-events))
-   - Markup changes may be required (migration tool available, see [Markup Changes](#markup-changes))
+1. `blank` スターターを使用して新しいプロジェクトを作成します ([アプリ開発をはじめる](/docs/building/starting)を参照)
+1. AngularのServiceを `src/providers` から `src/app/services`にコピーする
+   - サービスの`@Injectable()` デコレーターに`{ providedIn: 'root' }`を含まなければなりません。詳しくは、Angularの[プロバイダー](https://angular.jp/guide/providers)をご覧ください。
+1. ディレクトリ構成が変化することを念頭に置いて（`src/components`が`src/app/components`になるなど）、rootに置かれている他のアイテム（Pipe、Componentなど）をコピーします。
+1. グローバルに適用しているSassのスタイルシートを `src/app/app.scss` から `src/global.scss` に移動します。
+1. 次の点に注意しながら、ページごと、または機能ごとにアプリケーションの残りをコピーします。
+   - Shadow DOMはデフォルトで有効になっています。
+   - PageとComponentのSassは、Page/Component名でくくられなくなり、Angularの`@Component`デコレーターのオプションである[`styleUrls`](https://angular.io/api/core/Component#styleUrls)を利用します。
+   - RxJSはv5からv6にアップデートされました([RxJSの変更点](#rxjs-changes)を参照)
+   - 一部のライフサイクルはAngularのものに置き換える必要があります([ライフサイクルイベント](#lifecycle-events)を参照)
+   - マークアップの変更が必要になる場合があります (移行ツールを利用することができます。[マークアップの変更](#markup-changes)をご覧ください)
 
-In many cases, using the Ionic CLI to generate a new object and then copying the code also works very well. For example: `ionic g service weather` will create a shell `Weather` service and test. The code can then be copied from the older project with minor modifications as needed. This helps to ensure proper structure is followed. This also generates shells for unit tests.
+多くの場合、Ionic CLIを使用して新しいオブジェクトを生成してからコードをコピーするとうまくいきます。例：`ionic g service weather` は`Weather`というServiceとテストを生成します。その後、必要に応じて少し修正を加えて、コードを古いプロジェクトからコピーします。これは、適切な構造に従っていることを確認するのに役立ちます。また、ユニットテストも生成します。
 
-## Changes in Package Name
+## パッケージ名の変更
 
-In Ionic 4, the package name is `@ionic/angular`. Uninstall Ionic 3 and install Ionic 4 using the new package name:
+Ionic 4のパッケージ名は`@ionic/angular`です。Ionic 3をアンインストールし、新しいパッケージ名を利用してIonic 4をインストールします。
 
 ```shell
 $ npm uninstall ionic-angular
 $ npm install @ionic/angular
 ```
 
-While migrating an app, update the imports from `ionic-angular` to `@ionic/angular`.
+アプリの移行中に、`ionic-angular`から`@ionic/angular`にアップデートします。
 
-## Project structure
+## プロジェクト構成
 
-One of the major changes between an Ionic 3 app and an Ionic 4 app is the overall project layout and structure. In v3, Ionic apps had a custom convention for how an app should be setup and what that folder structure should look like. In v4, this has been changed to follow the recommended setup of each supported framework.
+Ionic 3アプリとIonic 4アプリの大きな違いの1つは、プロジェクト全体のレイアウトと構造です。v3では、Ionicアプリにはアプリの設定方法とフォルダ構造の外観に関するオリジナルのやり方がありました。v4では、サポートされている各フレームワークの推奨設定に従うように変更されました。
 
-For example, if an app is using Angular, that project structure will be exactly what an Angular CLI app would be. This change, while not too difficult to accommodate, helps to keep common patterns and documentation consistent.
+たとえば、アプリがAngularを使用している場合、そのプロジェクト構造はAngular CLIアプリとまったく同じになります。この変更は、対応するのはそれほど難しくありませんが、共通パターンとドキュメントの一貫性を保つのに役立ちます。
 
 <div style="display: flex;">
     <figure style="display: flex; flex-direction: column; width: 50%; margin-right: 5px;">
@@ -106,15 +106,15 @@ For example, if an app is using Angular, that project structure will be exactly 
     </figure>
 </div>
 
-The above comparison is an example of a v4 app's project structure. For developers with experience in a vanilla Angular project, this should feel really familiar.
+上記の比較は、v4アプリのプロジェクト構造の例です。一般的なAngularプロジェクト開発の経験を持つ開発者にとっては、これはとてもなじみがあるはずです。
 
-There is a `src/` directory that acts as the home for the app. This includes the `index.html`, any assets, environment configuration, and any app specific config files.
+`src/`が、アプリのホームディレクトリとなっています。これには`index.html`と画像など、環境設定やアプリ固有の設定ファイルが入っています。
 
-While migrating an app to take advantage of this new layout, it is suggested that a new project "base" is made with the CLI. Then, with the new project layout, migrate the features of the app piece by piece. Pages/components/etc. should be moved into the `src/app/` folder.
+この新しいレイアウトを利用するために、アプリを移行する時は、まずCLIを使用してベースとなる新しいプロジェクトを作成することをお勧めします。次に、新しいプロジェクトのレイアウトを使用して、アプリの機能を1つずつ移行します。Page/Componentなどを`src/app/`フォルダに移動する必要があります。
 
-Ensure your Ionic configuration file has the appropriate `type`. The project type for v3 is `ionic-angular`. The project type for v4 is `angular`. If this value is incorrect, the CLI may invoke the incorrect build scripts.
+あなたのIonic設定ファイルにある`type`が適切であることを確認してください。v3のプロジェクトタイプは`ionic-angular`です。v4のプロジェクトタイプは`angular`です。この値が正しくない場合、CLIは正しくないビルドスクリプトを呼び出すことがあります。
 
-See the following `ionic.config.json` as an example:
+以下を例として、`ionic.config.json`をご覧ください。
 
 ```json
 {
@@ -123,21 +123,21 @@ See the following `ionic.config.json` as an example:
 }
 ```
 
-## RxJS Changes
+## RxJSの変更
 
-Between V3 and V4, RxJS was updated to version 6. This changes many of the import paths of operators and core RxJS functions. Please see the <a href="https://github.com/ReactiveX/rxjs/blob/master/MIGRATION.md" target="_blank">RxJS Migration Guide</a> for details.
+v3からv4で、RxJSはバージョン6に更新されました。これは、オペレーターとコアのRxJSの関数のインポートパスのほとんどが変更になります。詳細は<a href="https://github.com/ReactiveX/rxjs/blob/master/MIGRATION.md" target="_blank">RxJS Migration Guide</a>をご覧ください。
 
-## Lifecycle Events
+## ライフサイクルイベント
 
-With V4, we're now able to utilize the typical events provided by [Angular](https://angular.io/guide/lifecycle-hooks). But for certain cases, you might want to have access to the events fired when a component has finished animating during it's route change. In this case, the `ionViewWillEnter`, `ionViewDidEnter`, `ionViewWillLeave`, and `ionViewDidLeave` have been ported over from V3. Use these events to coordinate actions with Ionic's own animations system.
+v4では、[Angular](https://angular.io/guide/lifecycle-hooks)が提供する一般的なイベントを利用できるようになりました。しかし、場合によっては、遷移してComponentのアニメーションが終了してから発生するイベントを使うことをお勧めします。v3から、`ionViewWillEnter`, `ionViewDidEnter`, `ionViewWillLeave`, `ionViewDidLeave`が移植されました。これらのイベントを利用してして、Ionicの独自のアニメーションシステムとアクションを調整します。
 
-Older events like `ionViewDidLoad`, `ionViewCanLeave`, and `ionViewCanEnter` have been removed, and the proper Angular alternatives should be used.
+ルート変更中にコンポーネントのアニメーション化が完了したときに発生するイベントにアクセスすることをお勧めします。この場合には、ionViewWillEnter、ionViewDidEnter、ionViewWillLeave、およびionViewDidLeaveV3から移植されてきました。これらのイベントを使用して、Ionicのアニメーションシステムと調整します。
 
-For more details, checkout the [router-outlet docs](/docs/api/router-outlet)
+古いイベント`ionViewDidLoad`、`ionViewCanLeave`、`ionViewCanEnter`は削除されました。適切なAngularの選択肢を利用する必要があります。詳細については、[router-outlet docs](/docs/api/router-outlet)のドキュメントをチェックしてください。
 
-## Overlay Components
+## オーバーレイコンポーネント
 
-In prior versions of Ionic, overlay components such as Loading, Toast, or Alert were created synchronously. In Ionic v4, these components are all created asynchronously. As a result of this, the API is now promise-based.
+Ionicの以前のバージョンでは、Loading、Toast、Alertなどのオーバーレイコンポーネントは同期的に生成されていました。Ionic v4では、これらのコンポーネントはすべて非同期に作成されています。この結果、APIはPromiseベースになりました。
 
 ```typescript
 // v3
@@ -151,7 +151,7 @@ showAlert() {
 }
 ```
 
-In v4, promises are used:
+v4ではPromiseが使われています。
 
 ```typescript
 showAlert() {
@@ -173,20 +173,20 @@ async showAlert() {
 }
 ```
 
-## Navigation
+## ナビゲーション
 
-In V4, navigation received the most changes. Now, instead of using Ionic's own `NavController`, we integrate with the official Angular Router. This not only provides a consistent routing experience across apps, but is much more dependable. The Angular team has an <a href="http://angular.io/guide/router" target="_blank">excellent guide</a> on their docs site that covers the Router in great detail.
+v4では、ナビゲーションが最も多くの変更がありました。`NavController`はオリジナルのものを使わずに、公式のAngular Routerと統合しました。これは、アプリケーション間で一貫したルーティング体験を提供するだけでなく、はるかに信頼性が高くなります。Angularチームのdocsサイトには、ルーターの詳細を網羅した<a href="http://angular.io/guide/router" target="_blank">excellent guide</a>があります。
 
-To provide the platform specific animations that users are used to, we have created `ion-router-outlet` for Angular Apps. This behaves in a similar manor to Angular's `router-outlet` but provides a stack-based navigation (tabs) and animations.
+ユーザーが慣れ親しんでいるプラットフォーム固有のアニメーションを提供するために、`ion-router-outlet`をAngularアプリ用に作成しました。これはAngularの場合と同様に`router-outlet`機能しますが、スタックベースのナビゲーション（tabs）とアニメーションを提供します。
 
-For a detailed explanation in navigation works in a V4 project, checkout the [Angular navigation guide](/docs/navigation/angular).
+v4プロジェクトでのナビゲーション機能の詳細な説明は、[Angular navigation guide](/docs/navigation/angular)をご覧ください。
 
 
 ## Lazy Loading
 
-Since Navigation has changed, the mechanism for lazy loading has also changed in V4.
+ナビゲーションを変更したため、v4ではLazy Loadingの仕組みも変更となりました。
 
-In v3, a typical lazy loading setup worked like this:
+v3では、一般的にLazy Loadingの設定は次の通りでした。
 
 ```typescript
 // home.page.ts
@@ -204,7 +204,7 @@ export class HomePage {}
 export class HomePageModule {}
 ```
 
-However, in v4, lazy loading is done via the `loadChildren` method of the Angular router:
+しかしながらv4では、Angular routerのやり方である`loadChildren`を使います。
 
 ```typescript
 // home.module.ts
@@ -233,13 +233,13 @@ export class HomePageModule {}
 export class AppModule {}
 ```
 
-For a detailed explanation of lazy loading in V4 project, check out the [Angular navigation guide](docs/navigation/angular#lazy-loading-routes).
+v4プロジェクトでのLazy Loadingの詳細な説明は、[Angular navigation guide](docs/navigation/angular#lazy-loading-routes)を調べてください。
 
-## Markup Changes
+## マークアップの変更
 
-Since v4 moved to Custom Elements, there's been a significant change to the markup for each component. These changes have all been made to follow the Custom Elements spec, and have been documented in a <a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#breaking-changes" target="_blank">dedicated file on Github</a>.
+v4でCustom Elementsに移行したため、各コンポーネントのマークアップに大きな変更があります。これらの変更はすべてCustom Elementsの仕様に準拠しており、ドキュメント化して<a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#breaking-changes" target="_blank">GitHubで公開しています。</a>
 
-To help with these markup changes, we've released a TSLint-based <a href="https://github.com/ionic-team/v4-migration-tslint" target="_blank">Migration Tool</a>, which detects issues and can even fix some of them automatically.
+これらのマークアップの変更を支援するために、TSLintベースの<a href="https://github.com/ionic-team/v4-migration-tslint" target="_blank">移行ツール</a>をリリースしました。これは、問題を検出し、それらのいくつかを自動的に修正することもできます。
 
 ## Migrating from Ionic 1.0 to Ionic 4.0 - Overview
 

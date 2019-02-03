@@ -5,77 +5,77 @@ nextText: 'Testing'
 nextUrl: '/docs/building/testing'
 ---
 
-# Android Development
+# Androidでの開発
 
-This guide covers how to deploy Ionic apps to Android simulators and devices using [Capacitor](/docs/faq/glossary#capacitor) or [Cordova](/docs/faq/glossary#cordova).
+このガイドでは、[Capacitor](/docs/faq/glossary#capacitor)または[Cordova](/docs/faq/glossary#cordova)を使用して、AndroidシミュレータおよびデバイスにIonicアプリケーションをデプロイする方法について説明します。
 
-> To deploy and debug apps on an Android device, **developer mode** and **USB debugging** must be enabled. Check out <a href="https://developer.android.com/studio/debug/dev-options#enable" target="_blank">these instructions</a> for more information.
+> Androidデバイスにアプリをデプロイしてデバッグするには、 **developer mode** と **USB debugging** を有効にする必要があります。詳しくは <a href="https://developer.android.com/studio/debug/dev-options#enable" target="_blank">these instructions</a> をご覧ください。
 
-## Project Setup
+## プロジェクト設定
 
-Before apps can be deployed to Android simulators and devices, the native project must be configured.
+アプリをAndroidシミュレータやデバイスにデプロイする前に、ネイティブプロジェクトを設定する必要があります。
 
-1. **Generate the native project, if it does not already exist.**
+1. **ネイティブプロジェクトが存在していない場合は生成します。**
 
-    For Capacitor, run the following:
+    Capacitorの場合は、以下を実行します。
 
     ```shell
     $ ionic capacitor add android
     ```
 
-    For Cordova, run the following:
+    Cordovaの場合は、以下を実行します。
 
     ```shell
     $ ionic cordova prepare android
     ```
 
-2. **Set the [Package ID](/docs/faq/glossary#package-id).**
+2. **[Package ID](/docs/faq/glossary#package-id)を設定します**
 
-    For Capacitor, open the `capacitor.config.json` file and modify the `appId` property.
+    Capacitorの場合は、`capacitor.config.json`ファイルを開き、`appId`を変更します。
 
-    For Cordova, open the `config.xml` file and modify the `id` attribute of the root element, `<widget>`. See [the Cordova documentation](https://cordova.apache.org/docs/en/latest/config_ref/#widget) for more information.
+    Cordovaの場合は、`config.xml`ファイルを開き、`id`を変更し`<widget>`でルートを設定します。要素の属性を変更します。詳しくは [the Cordova documentation](https://cordova.apache.org/docs/en/latest/config_ref/#widget) をご覧ください。
 
 
-## Running with Capacitor
+## Capacitorで実行する
 
-Capacitor uses Android Studio to build and run apps to simulators and devices.
+CapacitorはAndroid Studioを使用して、シミュレータやデバイス向けのアプリを構築して実行します。
 
-1. **Develop the Ionic app and sync it to the native project.**
+1. **Ionicアプリを開発し、それをネイティブプロジェクトと同期させます。**
 
-    With each meaningful change, Ionic apps must be built into web assets before the change can appear on Android simulators and devices. The web assets then must be copied into the native project. Luckily, this process is made easy with a single Ionic CLI command.
+    変更が検知がある度に、iOSシミュレータやデバイスが変更を検知するより前に、IonicアプリをWebアセットにビルドする必要があります。その後、Webアセットをネイティブプロジェクトにコピーします。幸いなことに、このプロセスはIonic CLIコマンドひとつで簡単にできます。
 
     ```shell
     $ ionic capacitor copy android
     ```
 
-2. **In Android Studio, click the Run button and then select the target simulator or device.**
+2. **Android StudioでRun牡丹をクリックしてから、ターゲットのシミュレータまたはデバイスを選択します。**
 
 ![Android Studio Run Button Area](/docs/assets/img/running/android-studio-run-button-area.png)
 
-## Running with Cordova
+## Cordovaで実行する
 
-The Ionic CLI can build, copy, and deploy Ionic apps to Android simulators and devices with a single command. It can also spin up a development server, like the one used in `ionic serve`, to provide [live-reload](/docs/faq/glossary#livereload) functionality.
+Ionic CLIは、コマンドひとつで、Ionicアプリを作成、コピーし、iOSシミュレータやデバイスにデプロイできます。　`ionic serve`のような[ライブリロード](/docs/faq/glossary#livereload) 機能を利用するために、開発用のサーバを遅延することもできます。
 
-Run the following to start a long-running CLI process that boots up a live-reload server:
+次のコマンドを実行して、ライブリロードのための開発サーバーを起動するCLIプロセスを起動します。
 
 ```shell
 $ ionic cordova run android -l
 ```
 
-Now, when changes are made to the app's source files, web assets are rebuilt and the changes are reflected on the simulator or device without having to deploy again.
+これで、アプリのソースファイルに変更が加えられたときに、Webアセットが再構築され、再度デプロイすることなくシミュレータまたはデバイスに反映されます。
 
-## Using Chrome DevTools
+## Chrome DevToolsを使う
 
-Chrome has web developer tool support for Android simulators and devices. Go to `chrome://inspect` in Chrome while the simulator is running or a device is connected to the computer and **Inspect** the app that needs to be debugged.
+Chromeは、Androidシミュレータおよびデバイス用のWeb開発者ツールをサポートしています。シミュレータが実行されているか、デバイスがコンピュータに接続されているのを確認した上、`chrome://inspect` をURLバーに入力するとアプリのデバッグができます。
 
-> Make sure your application is running on the device or simulator, or it will not show up in the list.
+> アプリケーションがデバイスまたはシミュレータ上で実行されていることを確認してください。そうしないと、リストに表示されません。
 
 ![Android Chrome DevTools](/docs/assets/img/running/android-chrome-devtools.png)
 
-## Viewing Native Logs
+## ネイティブログの表示
 
-Native logs can be found in Android Studio in **Logcat**. 
+ネイティブログは、Android Studioの **Logcat** にあります。
 
-> If the **Logcat** window is hidden, you can enable it in **View** &raquo; **Tool Windows** &raquo; **Logcat**.
+> **Logcat** ウインドウが表示されていない場合、**View** &raquo; **Tool Windows** &raquo; **Logcat**から表示できます。
 
 ![Android Studio Logcat](/docs/assets/img/running/android-studio-logcat.png)

@@ -5,25 +5,25 @@ nextText: 'Packages & CDN'
 nextUrl: '/docs/installation/cdn'
 ---
 
-# Installing Ionic
+# CLIのインストール
 
-Ionic apps are created and developed primarily through the Ionic [command-line](/docs/faq/glossary#cli) utility. The Ionic CLI is the preferred method of installation, as it offers a wide range of dev tools and help options along the way. It is also the main tool through which to run the app and connect it to other services, such as Ionic Appflow.
+Ionicアプリは、主にIonic CLI（[command-line-interface](/docs/faq/glossary#cli)）を利用して作成・開発します。Ionic CLIは、幅広い開発ツールと開発を手助けするオプションを提供している、Ionic teamが推奨しているインストール方法です。Ionic CLIは、アプリの実行や、Ionic Appflowといった他のサービスに接続などができる重要なツールです。
 
-## Install the Ionic CLI
+## Ionic CLIをインストール
 
-Before proceeding, make sure the latest version of [Node.js](/docs/faq/glossary#node) and [npm](/docs/faq/glossary#npm) are installed. See [Environment Setup](/docs/installation/environment) for details. Install the Ionic CLI globally with npm:
+先に進む前に、[Node.js](/docs/faq/glossary#node)と[npm](/docs/faq/glossary#npm)の最新バージョンがインストールされていることを確認してください。詳細については、[環境構築](/docs/installation/environment)をご覧ください。npmでIonic CLIをグローバルにインストールします。
 
 ```shell
 $ npm install -g ionic
 ```
 
 <blockquote>
-  <p>The <code>-g</code> means it is a global install. For Window’s it's recommended to open an Admin command prompt. For Mac/Linux, run the command with <code>sudo</code>.</p>
+  <p>`-g`のオプションは、グローバルインストールを意味します。Windowの場合は、コマンドプロンプトで実行することをお勧めします。Mac/Linuxの場合は、`sudo` コマンドをつけて実行してください。</p>
 </blockquote>
 
-## Start an App
+## アプリケーションの起動
 
-Create an Ionic app using one of the pre-made app templates, or a blank one to start fresh. The three most common starters are the `blank` starter, `tabs` starter, and `sidemenu` starter. Get started with the `ionic start` command:
+Ionicアプリを作成するには、スターターテンプレートを利用するか、まっさらな状態からつくるための`blank`テンプレートを利用して作成します。汎用的な3つのスターターテンプレートは、`blank`、`tabs`、`sidemenu`があります。`ionic start`コマンドで作成を開始できます。
 
 ```shell
 $ ionic start myApp tabs
@@ -32,15 +32,15 @@ $ ionic start myApp tabs
 ![start app thumbnails](/docs/assets/img/installation/start-app-thumbnails.png)
 
 
-To learn more about starting Ionic apps, see the [Starting Guide](/docs/building/starting).
+Ionicアプリのはじめ方をもっと知りたい方は、[「スタートガイド」](/docs/building/starting)を参照してください。
 
-## Run the App
+## アプリケーションを実行する
 
-The majority of Ionic app development can be spent right in the browser using the `ionic serve` command:
+ほとんどのIonicアプリは、`ionic serve`コマンドを利用することによってブラウザですぐに利用することができます。
 
 ```shell
 $ cd myApp
 $ ionic serve
 ```
 
-There are a number of other ways to run an app, it's recommended to start with this workflow. To develop and test apps on devices and emulators, see the [Running an App Guide](/docs/building/running).
+アプリケーションを実行するにはいくつかの方法がありますが、この方法ではじめることをおすすめします。デバイスとエミュレータでアプリケーションを開発してテストする方法については、[Running an App Guide](/docs/building/running)を参照してください。

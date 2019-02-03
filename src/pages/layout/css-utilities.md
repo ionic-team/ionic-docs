@@ -13,14 +13,14 @@ nextUrl: '/docs/theming/basics'
 <link rel="stylesheet" href="https://unpkg.com/@ionic/core/css/text-transformation.css">
 <link rel="stylesheet" href="https://unpkg.com/@ionic/core/css/flex-utils.css">
 
-# CSS Utilities
+# CSSユーティリティ
 
-Ionic provides a set of utility attributes that can be used on any element in order to modify the text, element placement or adjust the padding and margin.
+Ionicは、テキストの順番を入れ替えたり、要素の配置やpaddingやmarginを修正する一連のユーティリティ属性を提供します。これは要素で使うことができます。
 
 
-## Text Modification
+## テキストの修正
 
-### Text Alignment
+### テキストの配置
 
 ```html
 <ion-grid>
@@ -68,19 +68,19 @@ Ionic provides a set of utility attributes that can be used on any element in or
 ```
 
 
-| Attribute         | Style Rule             | Description                                                                                                                                                         |
+| 属性              | スタイルルール           | 概要                                                                                                                                                                 |
 |-------------------|------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `text-left`       | `text-align: left`     | The inline contents are aligned to the left edge of the line box.                                                                                                   |
 | `text-right`      | `text-align: right`    | The inline contents are aligned to the right edge of the line box.                                                                                                  |
-| `text-start`      | `text-align: start`    | The same as `text-left` if direction is left-to-right and `text-right` if direction is right-to-left.                                                                         |
-| `text-end`        | `text-align: end`      | The same as `text-right` if direction is left-to-right and `text-left` if direction is right-to-left.                                                                         |
+| `text-start`      | `text-align: start`    | The same as `text-left` if direction is left-to-right and `text-right` if direction is right-to-left.                                                               |
+| `text-end`        | `text-align: end`      | The same as `text-right` if direction is left-to-right and `text-left` if direction is right-to-left.                                                               |
 | `text-center`     | `text-align: center`   | The inline contents are centered within the line box.                                                                                                               |
 | `text-justify`    | `text-align: justify`  | The inline contents are justified. Text should be spaced to line up its left and right edges to the left and right edges of the line box, except for the last line. |
 | `text-wrap`       | `white-space: normal`  | Sequences of whitespace are collapsed. Newline characters in the source are handled as other whitespace. Breaks lines as necessary to fill line boxes.              |
 | `text-nowrap`     | `white-space: nowrap`  | Collapses whitespace as for `normal`, but suppresses line breaks (text wrapping) within text.                                                                       |
 
 
-### Text Transformation
+### テキストの変換
 
 ```html
 <ion-grid>
@@ -108,18 +108,18 @@ Ionic provides a set of utility attributes that can be used on any element in or
 ```
 
 
-| Attribute         | Style Rule                   | Description                                                         |
+| 属性              | スタイルルール                 | 概要                                                                 |
 |-------------------|------------------------------|---------------------------------------------------------------------|
 | `text-uppercase`  | `text-transform: uppercase`  | Forces all characters to be converted to uppercase.                 |
 | `text-lowercase`  | `text-transform: lowercase`  | Forces all characters to be converted to lowercase.                 |
 | `text-capitalize` | `text-transform: capitalize` | Forces the first letter of each word to be converted to uppercase.  |
 
 
-### Responsive Text Attributes
+### レスポンシブでのテキスト属性
 
-All of the text attributes listed above have additional attributes to modify the text based on the screen size. Instead of `text-` in each attribute, use `text-{breakpoint}-` to only use the attribute on specific screen sizes, where `{breakpoint}` is one of the defined breakpoints in the `--screen-breakpoints` variable.
+上記のすべてのテキスト属性には、画面サイズに基づいてテキストを変更することもできます。`text-` ではじまる各属性の代わりに、 `text-{breakpoint}-` を使うことで、特定のスクリーンサイズのみ適用することができます。 `{breakpoint}` は、`--screen-breakpoints` 変数で定義されたブレークポイントです。
 
-The table below shows the default behavior, where `{modifier}` is any of the following: `left`, `right`, `start`, `end`, `center`, `justify`, `wrap`, `nowrap`, `uppercase`, `lowercase`, or `capitalize`, as they are described above.
+以下の表は、 `{modifier}` のデフォルトの挙動です。 `left`, `right`, `start`, `end`, `center`, `justify`, `wrap`, `nowrap`, `uppercase`, `lowercase`, `capitalize` は上記の通りです。
 
 | Attribute             | Description                                                         |
 |-----------------------|---------------------------------------------------------------------|
@@ -130,11 +130,11 @@ The table below shows the default behavior, where `{modifier}` is any of the fol
 | `text-xl-{modifier}`  | Applies the modifier to the element when `min-width: 1200px`.       |
 
 
-## Element Placement
+## 要素の配置
 
-### Float Elements
+### Float要素
 
-The float CSS property specifies that an element should be placed along the left or right side of its container, where text and inline elements will wrap around it. This way, the element is taken from the normal flow of the web page, though still remaining a part of the flow, contrary to absolute positioning.
+CSSプロパティのfloatは、テキストとインライン要素を囲んだ要素がそのコンテナの左側または右側に沿って配置することを指定します。 This way, the element is taken from the normal flow of the web page, though still remaining a part of the flow, contrary to absolute positioning.
 
 ```html
 <ion-grid>
@@ -155,7 +155,7 @@ The float CSS property specifies that an element should be placed along the left
 </ion-grid>
 ```
 
-| Attribute     | Style Rule                      | Description                                                                                               |
+| 属性          | スタイルルール                    | 概要                                                                                                       |
 |---------------|---------------------------------|-----------------------------------------------------------------------------------------------------------|
 | `float-left`  | `float: left`                   | The element will float on the left side of its containing block.                                          |
 | `float-right` | `float: right`                  | The element will float on the right side of its containing block.                                         |
@@ -163,12 +163,12 @@ The float CSS property specifies that an element should be placed along the left
 | `float-end`   | `float: left` / `float: right`  | The same as `float-right` if direction is left-to-right and `float-left` if direction is right-to-left.   |
 
 
-### Responsive Float Attributes
+### レスポンシブでのFloat属性
 
-All of the float attributes listed above have additional attributes to modify the float based on the screen size. Instead of `float-` in each attribute, use `float-{breakpoint}-` to only use the attribute on specific screen sizes, where `{breakpoint}` is one of the defined breakpoints in the `--screen-breakpoints` variable.
-The table below shows the default behavior, where `{modifier}` is any of the following: `left`, `right`, `start`, or `end`, as they are described above.
+上記のすべてのテキスト属性には、画面サイズに基づいてfloatを変更することもできます。`float-` ではじまる各属性の代わりに、 `float-{breakpoint}-` を使うことで、特定のスクリーンサイズのみ適用することができます。 `{breakpoint}` は、`--screen-breakpoints` 変数で定義されたブレークポイントです。
+以下の表は、 `{modifier}` のデフォルトの挙動です。 `left`, `right`, `start`, or `end` は上記の通りです。
 
-| Attribute              | Description                                                         |
+| 属性                   | 概要                                                                 |
 |------------------------|---------------------------------------------------------------------|
 | `float-{modifier}`     | Applies the modifier to the element on all screen sizes.            |
 | `float-sm-{modifier}`  | Applies the modifier to the element when `min-width: 576px`.        |
@@ -177,13 +177,13 @@ The table below shows the default behavior, where `{modifier}` is any of the fol
 | `float-xl-{modifier}`  | Applies the modifier to the element when `min-width: 1200px`.       |
 
 
-## Content Space
+## コンテンツのスペース
 
-### Element Padding
+### 要素のPadding
 
-The padding attribute sets the padding area of an element. The padding area is the space between the content of the element and its border.
+padding属性は、要素のpaddingエリアを設定します。paddingエリアは、要素のコンテンツとその境界線のスペースです。
 
-The default amount of `padding` to be applied is `16px` and is set by the `--ion-padding` variable. See the [CSS Variables](/docs/theming/css-variables) section for more information on how to change these values.
+`padding` で適用されるデフォルトの数値は `16px` で、これは `--ion-padding`　変数で設定することができます。これらの値を変更する方法については [CSS Variables](/docs/theming/css-variables) をご覧ください。
 
 ```html
 <ion-grid>
@@ -235,7 +235,7 @@ The default amount of `padding` to be applied is `16px` and is set by the `--ion
 ```
 
 
-| Attribute            | Style Rule               | Description                             |
+| 属性                 | スタイルルール             | 概要                                     |
 |----------------------|--------------------------|-----------------------------------------|
 | `padding`            | `padding: 16px`          | Applies padding to all sides.           |
 | `padding-top`        | `padding-top: 16px`      | Applies padding to the top.             |
@@ -247,11 +247,11 @@ The default amount of `padding` to be applied is `16px` and is set by the `--ion
 | `no-padding`         | `padding: 0`             | Applies no padding to all sides.        |
 
 
-### Element Margin
+### 要素のMargin
 
-The margin area extends the border area with an empty area used to separate the element from its neighbors.
+Marginエリアは、隣り合う要素とのスペースを広げるために境界線の外に空のエリアをつくるためのものです。
 
-The default amount of `margin` to be applied is `16px` and is set by the `--ion-margin` variable. See the [CSS Variables](/docs/theming/css-variables) section for more information on how to change these values.
+`margin`　はデフォルトで `16px` が設定されており、 `--ion-margin` 変数で設定されています。 これらの値を変更する方法については [CSS Variables](/docs/theming/css-variables) をご覧ください。
 
 ```html
 <ion-grid>
@@ -303,7 +303,7 @@ The default amount of `margin` to be applied is `16px` and is set by the `--ion-
 ```
 
 
-| Attribute            | Style Rule               | Description                             |
+| 属性                 | スタイルルール             | 概要                                     |
 |----------------------|--------------------------|-----------------------------------------|
 | `margin`             | `margin: 16px`           | Applies margin to all sides.            |
 | `margin-top`         | `margin-top: 16px`       | Applies margin to the top.              |
@@ -315,11 +315,11 @@ The default amount of `margin` to be applied is `16px` and is set by the `--ion-
 | `no-margin`          | `margin: 0`              | Applies no margin to all sides.         |
 
 
-## Flex Properties
+## Flex プロパティ
 
 <img src="/docs/assets/img/layout/diagram-flex-attributes.png"/>
 
-### Flex Container Properties
+### Flex コンテナのプロパティ
 
 
 ```html
@@ -536,7 +536,7 @@ The default amount of `margin` to be applied is `16px` and is set by the `--ion-
 </ion-grid>
 ```
 
-| Attribute                 | Style Rule                       | Description                                                                 |
+| 属性                      | スタイルルール                     | 概要                                                                         |
 |---------------------------|----------------------------------|-----------------------------------------------------------------------------|
 | `justify-content-start`   | `justify-content: flex-start`    | Items are packed toward the start on the main axis.                         |
 | `justify-content-end`     | `justify-content: flex-end`      | Items are packed toward the end on the main axis.                           |
@@ -554,7 +554,7 @@ The default amount of `margin` to be applied is `16px` and is set by the `--ion-
 | `wrap-reverse`            | `flex-wrap: wrap-reverse`        | Items will wrap onto multiple lines, from bottom to top.                    |
 
 
-### Flex Item Properties
+### Flex Item のプロパティ
 
 ```html
 <ion-grid>
@@ -587,7 +587,7 @@ The default amount of `margin` to be applied is `16px` and is set by the `--ion-
 ```
 
 
-| Attribute                 | Style Rule               | Description                                                                         |
+| 属性                      | スタイルルール             | 概要                                                                                 |
 |---------------------------|--------------------------|-------------------------------------------------------------------------------------|
 | `align-self-start`        | `align-self: flex-start` | Item is packed toward the start on the cross axis.                                  |
 | `align-self-end`          | `align-self: flex-end`   | Item is packed toward the end on the cross axis.                                    |

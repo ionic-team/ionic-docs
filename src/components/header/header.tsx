@@ -42,6 +42,7 @@ export class DocsHeader {
           <a href="https://ionicframework.com/community" target="_blank">Community</a>
           <a class="outbound" href="https://ionicframework.com/docs/v3" target="_blank">v3 <Outbound/></a>
           <a class="outbound" href="https://github.com/ionic-team/ionic" target="_blank">GitHub <Outbound/></a>
+          <a class="outbound" href="https://github.com/ionic-jp/ionic-docs" target="_blank">翻訳に協力する <Outbound/></a>
         </nav>
       </header>
     );

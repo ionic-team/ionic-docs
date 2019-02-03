@@ -5,19 +5,19 @@ nextText: 'iOS Setup'
 nextUrl: '/docs/installation/ios'
 ---
 
-# Environment Setup
+# 環境設定
 
-To get started with Ionic Framework, the only requirement is a [Node & npm](#node-amp-npm) environment.
+Ionic Frameworkをはじめるためには、[Node と npm](#anchor-node-npm)がインストールされている環境が必要です。
 
-Of course, you will also need an editor. We recommend [VS Code](https://code.visualstudio.com/), a free, batteries-included text editor made by Microsoft.
+もちろん、エディタも必要でしょう。私たちは、Microsoft製の無料高機能エディタ[VS Code](https://code.visualstudio.com/)をお勧めします。
 
-## Node & npm
+## Node と npm
 
-Almost all tooling for modern JavaScript projects is based in [Node.js](/docs/faq/glossary#node). The [download page](https://nodejs.org/en/download/) has prebuilt installation packages for all platforms. We recommend selecting the LTS version to ensure best compatibility.
+モダンなJavaScriptプロジェクトのほとんどのツールは[Node.js](/docs/faq/glossary#node)で作られています。[ダウンロードページ](https://nodejs.org/en/download/)には、すべてのプラットフォームのインストールパッケージが事前に用意されています。互換性を確保するためにLTSバージョンを選択することをお勧めします。
 
-Node is bundled with [npm](/docs/faq/glossary#npm), the package manager for JavaScript.
+NodeにはJavaScriptパッケージマネージャーである[npm](/docs/faq/glossary#npm)がバンドルされています。
 
-To verify the installation, open a new terminal window and run:
+インストールできているかを確認するためには、新しいターミナルウィンドウを開いて以下を実行します。
 
 ```shell
 $ node --version
@@ -26,9 +26,9 @@ $ npm --version
 
 ## Git
 
-Although not required, the version control system [Git](/docs/faq/glossary#git) is highly recommended. First, install the command-line utility from the [download page](https://git-scm.com/downloads). For a GUI client, we recommend [Github Desktop](https://desktop.github.com/).
+必須ではありませんが、バージョン管理システムの[Git](/docs/faq/glossary#git)の利用を強くお勧めします。まず、[ダウンロードページ](https://git-scm.com/downloads)からコマンドラインユーティリティをインストールします。GUIクライアントを使う場合は、[Github Desktop](https://desktop.github.com/)をお勧めします。
 
-To verify the installation, open a new terminal window and run:
+インストールできているかを確認するためには、新しいターミナルウィンドウを開いて以下を実行します。
 
 ```shell
 $ git --version

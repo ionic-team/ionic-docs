@@ -5,11 +5,11 @@ nextText: 'Migration'
 nextUrl: '/docs/building/migration'
 ---
 
-# Scaffolding out an App
+# アプリ開発の基本
 
-Once an app is created by the Ionic CLI, the next step is to start building out features and components. The majority of the app will be developed in the `src/app/` directory.
+Ionic CLIでアプリを作成したあとは、機能やコンポーネントを追加していきましょう。たいていの場合、`src/app/`ディレクトリ下で開発を進めていくことになります。
 
-## Project Structure
+## プロジェクト構成
 
 <file-tree>
     <file-tree-directory name="src">
@@ -28,7 +28,7 @@ Once an app is created by the Ionic CLI, the next step is to start building out 
     </file-tree-directory>
 </file-tree>
 
-The `src/` directory has items such as the `index.html` file, configuration files for tests, an asset folder for images, and the main `app/` directory for the app's code.
+`src/`ディレクトリは、`index.html`のようなファイルや、テスト用の設定ファイル、画像用のassetフォルダ、そしてアプリのコードを格納する`app/`ディレクトリを持っています。
 
 <file-tree>
     <file-tree-directory name="src">
@@ -42,11 +42,11 @@ The `src/` directory has items such as the `index.html` file, configuration file
     </file-tree-directory>
 </file-tree>
 
-The `src/app/` directory contains the root app component and module as well as additional directories that contain app features such as pages, components, services, etc.
+`src/app/`ディレクトリはアプリのルートコンポーネントとモジュールを含んでおり、同様にPageやComponent、Serviceなどのアプリの機能群を含んだディレクトリも含んでいます。
 
-## Generating New Features
+## 機能を追加する
 
-The Ionic CLI can generate new app features with the [`ionic generate`](/docs/cli/commands/generate) command. By running `ionic generate` in the command line, a selection prompt is displayed which lists the available features that can be generated.
+Ionic CLIは[`ionic generate`](/docs/cli/generate)コマンドでアプリに新しい機能を追加していくことができます。コマンドラインで`ionic generate`を実行すると選択式のプロンプトが表示され、使用可能な機能のリストを表示します。
 
 <command-line>
     <command-prompt>ionic generate</command-prompt>
@@ -69,9 +69,9 @@ The Ionic CLI can generate new app features with the [`ionic generate`](/docs/cl
     </command-output>
 </command-line>
 
-After a selection is made, the Ionic CLI will prompt for a name. The name can be a path, allowing easy generation of features within an organized project structure.
+作りたい機能を選択した後、Ionic CLIが機能名を尋ねてきます。機能名にはパスも入力可能で、プロジェクト構成に適した機能を簡単に配置することができます。
 
-> Any level of nesting is allowed, such as `portfolio/intro`. You can easily scope components to pages by using `ionic g component "portfolio/intro/About Me"`, for example.
+> 機能名には`portfolio/intro`といったようなどんな階層のネスト構造も入力可能です。例として、`ionic g component "portfolio/intro/About Me"` と入力することで、そのコンポーネントのスコープをページ内に限定することができます。
 
 <command-line>
     <command-prompt>ionic generate</command-prompt>
@@ -83,7 +83,7 @@ After a selection is made, the Ionic CLI will prompt for a name. The name can be
     <command-cursor blink></command-cursor>
 </command-line>
 
-Alternatively, the `type` and `name` of the generated feature can be entered on the command line:
+もう一つの方法として、生成する機能の`type`と`name`は直接コマンドに引数として渡すこともできます:
 
 <command-line>
     <command-prompt>ionic g page "User Detail"</command-prompt>
@@ -106,8 +106,8 @@ Alternatively, the `type` and `name` of the generated feature can be entered on 
     </command-output>
 </command-line>
 
-The Ionic CLI uses the underlying framework tooling to stay close to best practices. For `@ionic/angular`, the Angular CLI is used under the hood.
+Ionic CLIを使って機能を生成すると、フレームワークに基づいてベストプラクティスとなる構成を自動的に設定してくれます。 `@ionic/angular`モジュールに関連する機能を生成するときは、内部的にAngular CLIが使用されます。
 
-After creating the files and directories for the new page, the CLI will also update the router configuration to include the new page. This reduces the amount of manual work needed to keep the development lifecycle moving.
+新しいページのためのファイルやディレクトリを生成したあと、CLIは新しいページを含んだルーティング設定も自動で更新してくれます。つまり、開発サイクルにおける手動での作業を減らしてくれるということです。
 
-For more details, run `ionic g --help` from the command line or see [the documentation](/docs/cli/commands/generate) for `ionic generate`.
+より詳細な情報がほしい場合は、コマンドラインに`ionic g --help`を入力するか、`ionic generate`の[ドキュメント](/docs/cli/generate)をご覧ください。

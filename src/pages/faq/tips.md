@@ -3,9 +3,9 @@ previousText: 'Native Errors'
 previousUrl: '/docs/faq/native'
 ---
 
-# Developer Tips
+# 開発者向けのヒント
 
-## Updating Dependencies
+## 依存モジュールの更新
 
 To update a [npm](https://www.npmjs.com/) dependency, run the following, where `<package-name>` is the package to update:
 
@@ -13,27 +13,27 @@ To update a [npm](https://www.npmjs.com/) dependency, run the following, where `
 $ npm install <package-name>@<version|latest> --save
 ```
 
-For instance, to update the `@ionic/angular` package to the release tagged `latest`, run:
+例えば、`@ionic/angular` パッケージを最新リリースのものに更新するには、以下を実行してください:
 
 ```shell
 $ npm install @ionic/angular@latest --save
 ```
 
-It is recommended that packages get updated through the CLI since npm will now read package versions from the `package-lock.json` first.
+npm は最初に `package.lock.json` からパッケージのバージョンを読み込みにいきますので、パッケージを更新する際は CLI を利用することをおすすめします。
 
-## Editors
+## エディタ
 
-There are a lots of editors to choose from. Here are some of our favorites:
+選ぶべきエディタがたくさんあります。
 
 - [VSCode](https://code.visualstudio.com)
 - [Atom](https://atom.io)
 - [Webstorm](https://www.jetbrains.com/webstorm/)
 
-VSCode is highly recommended as it includes many features and plugins out of the box.
+VSCode は多くの機能やプラグインを含んでいるため強くおすすめします。
 
-## Using a Debugger
+## デバッガの利用
 
-The `debugger` keyword can be used to debug an app. When most browsers encounters a `debugger` statement, running of JavaScript is stopped, and the browser will load its debugger. This can be used to set "breakpoints" in the app. For example, if a function that is not returning the correct value, the debugger can be used to step through the code and inspect variables.
+`デバッガ` というキーワードはアプリケーションをデバッグするために利用されます。ほとんどのブラウザが`デバッガ`ステートメントに直面する時、 実行中の JavaScript の処理は停止され、ブラウザはデバッガをロードします。これはアプリケーションに"ブレークポイント"をセットするために使用されます。例えば、ある関数が正しい値を返さない時は、デバッガを使用してコードをステップ実行し、変数を調べることができます。
 
 ```javascript
 function myBrokenFunction() {
@@ -44,53 +44,52 @@ function myBrokenFunction() {
 
 When an app runs, it will pause at this function. From there, the developer tools can be used to run pieces of JavaScript, line by line, and inspect where exactly the function breaks.
 
-## Changing Mode
+## モードの変更
 
-By default, when an app is viewed in the browser, Ionic will apply the `md` mode. However, since Ionic components adapt according to their platform, it is helpful to be able to view what this app looks like on iOS. To do this, add `?ionic:mode=ios` to the URL where the app is being served: `http://localhost:8100/?ionic:mode=ios`.
+デフォルトでは、アプリケーションがブラウザで表示されると、Ionic は MD モードを適用します。しかし、Ionic コンポーネントはそれぞれのプラットフォームに応じて接続されるため、そのアプリケーションが iOS でどのように見えているか確認できると便利です。そのために、アプリケーションが起動しているURL に `?ionic:mode=ios` を追加します: `http://localhost:8100/?ionic:mode=ios<`
 
-> However, this will not change how the browser sees which platform is currently being used. Platform is determined by device detection and inspecting the user-agent. So to change the platform, the user-agent must be changed. To do this, open up Chrome DevTools, and toggle device mode on with <kbd>Ctrl+Shift+i</kbd>(<kbd>Cmd+Option+I</kbd> on Mac).
+> しかし、どのプラットフォームが現在使用されているかをブラウザがどのように認識するか、ということは変わらないでしょう。プラットフォームはデバイスの検出とユーザーエージェントの検査によって決定されます。そのため、プラットフォームを変更するには、ユーザーエージェントを変更する必要があります。これを行うには、Chrome DevTools を開き、<kbd>Ctrl+Shift+i</kbd>(Mac では <kbd>Cmd+Option+I</kbd>) でデバイスのモードをオンに切り替えでください。
 
-![app with a different mode](/docs/assets/img/faq/tips/change-device-platform.png)
+![別のモードのアプリケーション](/docs/assets/img/faq/tips/change-device-platform.png)
 
-Selecting devices from the device dropdown will change the user-agent, as well as the dimensions of the viewport.
+デバイスのドロップダウンからデバイスを選択すると viewport の大きさと同様に、ユーザーエージェントも変更されます。
 
-## Using the iOS Simulator
+## iOS シミュレータを使用する
 
-The iOS simulator enables testing and debugging of an app before it reaches an actual device. Before it can be used, [Xcode](https://developer.apple.com/xcode/download/), Apple's IDE, must be installed. The [Ionic CLI](/docs/cli) can then be used to run the app in the current directory on the simulator:
+iOS シミュレータは実際のデバイスに届く前にアプリケーションのテストとデバッグを可能にします。シミュレータを利用可能にする前に、[Xcode](https://developer.apple.com/xcode/download/)、アップルの IDE をインストールする必要があります。[Ionic CLI](/docs/cli) を用いて、シミュレータ上の現在のディレクトリでアプリケーションを実行可能にします:
 
 ```shell
 $ ionic cordova emulate ios -lc
 ```
 
-Passing in the `-lc` flag will enable livereload and log console output to an terminal.
+`-lc` フラグを渡すことでライブリロードを有効にし、かつログコンソールををターミナルに出力することができます。
 
-Xcode can also be used to launch the emulator and debug an app.
-Open up Xcode and open `../path-to-app/platforms/ios/myApp.xcodeproj`.
-After the app loads, console output and device logs will be printed inside of Xcode's output window.
+また Xcode を利用することでエミュレータを起動し、アプリケーションをデバッグすることもできます。
+Xcode を開き、`../path-to-app/platforms/ios/myApp.xcodeproj` を開きます。
+アプリケーションが読み込まれると、コンソール出力とデバイスのログが Xcode の出力ウィンドウに表示されます。
 
-## Using the Genymotion Android Emulator
+## Genymotion Android エミュレーターを使用する
 
-While the Android SDK comes with a stock emulator, it can be slow and unresponsive at times. [Genymotion](https://www.genymotion.com) is an alternate emulator that is faster, and still allows accesses to native functionality like GPS and camera.
+Android SDKには標準でエミュレータが実装されていますが、動作が遅くて応答しないことがあります。[Genymotion](https://www.genymotion.com) はより高速かつ、GPSやカメラなどのネイティブ機能へのアクセスも可能にする代替のエミュレーターです。
 
-## Remote Debugging - iOS and Safari
+## リモートデバッグ - iOS と Safari
 
-Safari can be used to debug an Ionic app on a connected iOS device.
-First, Web Inspector needs to be enabled on the connected device.
-Web Inspector can be found under `Settings > Safari > Advanced`.
-Next, head over to the Safari on an Mac and enable **Show Develop menu in menu bar** under `Safari > Preferences > Advanced`.
-The connected device should now appear in the **Develop** menu.
-From there, Safari's developer tools can be used to inspect and debug the app.
+Safari は iOS デバイス上で実行されている Ionic アプリケーションと接続しながらデバッグするために使用できます。
+はじめに、接続しているデバイス上で Web インスペクタを有効にする必要があります。
+Web インスペクタは `設定 > Safari > 詳細` で見つけることができます。
+次に、Mac の Safari に進み、`Safari > 環境設定 > 詳細` から **メニューバーに開発者メニューを表示** を有効にします。
+接続されたデバイスが **開発** メニューに表示されます。
+以上で、Safari の開発者ツールを用いてアプリケーションの調査とデバッグができます。
 
-## Remote Debugging - Android and Chrome
+## リモートデバッグ - Android と Chrome
 
-Chrome DevTools can be used to debug an app when it is running in the browser through `ionic serve`, or deployed to an emulator or physical device.
-To inspect a emulator or physical device, go to `chrome://inspect` in Chrome and select the target the has the running app.
+Chrome の DevTools は、`ionic serve` というコマンドを介してブラウザ上で実行している時、またはエミュレーターか実機でにデプロイされている時、アプリケーションのデバッグに使用できます。
+エミュレーターや実機を調査するには、Chrome で `chrome://inspect` にアクセスし、実行中のアプリケーションをターゲットとして選択してください。
 
-> Note: Physical Devices might need to have developer mode enabled in order to debug from Chrome.
+> メモ: 実機では、Chromeからデバッグするために開発者モードを有効にする必要があります。
 
 
-## Remote Debugging - VS Code Plugin
+## リモートデバッグ - VS Code プラグイン
 
-VSCode has a dedicated plugin for debugging apps built with Cordova.
-[The plugin](https://marketplace.visualstudio.com/items?itemName=vsmobile.cordova-tools) creates a bridge between the device and the VSCode Devtools and allow debugging to be done right in the editor.
-
+VSCode には Cordova で作られたアプリケーションのデバッグ専用のプラグインがある。
+[そのプラグイン](https://marketplace.visualstudio.com/items?itemName=vsmobile.cordova-tools) はデバイスと VSCode の Devtools の間にブリッジを生成し、エディタ内でデバッグを行えるようにします。

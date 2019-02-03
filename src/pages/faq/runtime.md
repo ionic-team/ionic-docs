@@ -5,36 +5,36 @@ nextText: 'Native Errors'
 nextUrl: '/docs/faq/native'
 ---
 
-# Runtime Errors
+# ランタイムエラー
 
-## Blank App
+## 真っ白なアプリケーション
 
-> I have no errors in my app. Why does it show a blank screen?
+> 私のアプリケーションにはエラーはありません。なぜ真っ白な画面が表示されるのでしょうか？
 
-There are several different reasons this can happen. If you are unable to find a solution on the [Ionic forums](https://forum.ionicframework.com), make sure:
+この事象が発生しうる理由がいくつかあります。もしあなたがフォーラム上で解決策を見つけられなかった場合、これらを確認して下さい:
 
-- Root `@Component` has a `template` or `templateUrl`.
-- Root `@Component` template has an `<ion-nav>` with a `root` property:
+- ルート `@Component` に `template` または `templateUrl` がある。
+- ルート `@Component` テンプレートには `root` プロパティを持つ `<ion-nav>` がある:
 
   ```html
   <ion-nav [root]="rootPage"></ion-nav>
   ```
 
-## Directive Not Working
+## ディレクティブが動作しない
 
-> Why is my custom component/directive not working?
+> なぜ私のカスタムコンポーネント/ディレクティブは動作しないのでしょうか？
 
-There are a few things you can check. Make sure:
+あなたが確認できるものがいくつか存在します。
 
-- You include it in the `directives` array of the `@Component` you want to use it in (only if your ionic-angular version is below RC0).
-- Your selector doesn't have any misspellings.
-- You're using the selector correctly as an attribute, element or class.
-- Your selector has the [proper syntax](http://learnangular2.com/components/):
-  - `[attr]` if it's an attribute selector
-  - `element` if it's an element selector
-  - `.class` if it's a class selector
+- あなたが使いたい `@Component` の `directives` 配列の中に含める。(ionic-angular のバージョンが RC0 の場合のみ)
+- あなたのセレクタに何らかのスペルミスがあるか。
+- あなたはセレクタを属性、要素、またはクラスとして正しく利用しているか。
+- あなたのセレクタが[正しい文法](http://learnangular2.com/components/)であるか:
+  - 属性セレクタの場合は `[attr]`
+  - 要素セレクタの場合は `element`
+  - クラスセレクタの場合は `.class`
 
-Here's an example using an attribute selector:
+以下に、属性セレクタの例を挙げます:
 
 ```typescript
 @Directive({
@@ -60,28 +60,28 @@ class MyDir {
 class MyPage { }
 ```
 
-## Click Delays
+## クリックの遅延
 
-> Why is there a delay on my click event?
+> なぜ私のクリックイベントは遅延するのでしょうか？
 
-In general, we recommend only adding `(click)` events to elements that are
-normally clickable. This includes `<button>` and `<a>` elements. This improves
-accessibility as a screen reader will be able to tell that the element is
-clickable.
+一般的に、我々は標準的なクリックイベントを要素に追加する場合は `(click)` のみを勧めています。
+これには `<button>` や `<a>` 要素も含まります。これにより、
+画面を読むときに各要素がクリック可能であることを伝えることができるため、アクセシビリティを
+向上します。
 
-However, you may need to add a `(click)` event to an element that is not
-normally clickable. When you do this you may experience a `300ms` delay from the
-time you click the element to the event firing. To remove this delay, you can
-add the `tappable` attribute to your element.
+しかしながら、おそらくあなたは通常はなクリックできない要素に `(click)` イベントを要素に追加することを
+求められるかもしれません。もしあなたがこれを実行すると、要素をクリックしてイベントが発火するまで
+`300ms` の遅延が発生するかもしれません。この遅延を改善するには、あなたは
+要素に `tappable` 属性を追加することができます。
 
 ```html
  <div tappable (click)="doClick()">I am clickable!</div>
 ```
 
-### Cordova plugins not working in the browser
+## Cordova プラグインがブラウザ上で動作しない
 
-At some point in your development you may, try to call Cordova plugin, but get a
-warning:
+あなたの開発中のある時点で、Cordova プラグインを呼び出そうとしますが、
+警告:
 
 ```shell
 [Warning] Native: tried calling StatusBar.styleDefault, but Cordova is not
@@ -89,23 +89,23 @@ available. Make sure to include cordova.js or run in a device/simulator
 (app.bundle.js, line 83388)
 ```
 
-This happens when you try to call a native plugin, but Cordova isn't available.
-Thankfully, Ionic Native will print out a nice warning, instead of an error.
+これは、あなたがネイティブプラグインを呼び出そうとしますが、Cordova プラグインが利用できないときに発生します。
+ありがたいことに、Ionic Native はエラーの代わりに良い警告を表示してくれます。
 
-In other cases where the plugin is not being used through Ionic Native, plugins
-can print a much more obscure warning.
+他のケースでは、プラグインが Ionic Native を介して利用されない場合、プラグインは
+より曖昧な警告を表示することができます。
 
 ```shell
 EXCEPTION: Error: Uncaught (in promise): TypeError: undefined is not an object
 (evaluating 'navigator.camera.getPicture')
 ```
 
-If this happens, test the plugin on a real device or simulator.
+もしこれが発生した場合は、そのプラグインを実機かシミュレーターでテストしてみてください。
 
-### Multiple instances of a provider
+## provider の複数のインスタンス
 
-If you inject a provider in every component because you want it available to all
-of them you will end up with multiple instances of the provider. You should
+あなたは provider をすべてのコンポーネントで利用可能にしたいので、すべてのコンポーネントに provider を注入した場合、
+provider の複数のインスタンスが生成されます。You should
 inject the provider once in the parent component if you want it to be available
 to the child components.
 
