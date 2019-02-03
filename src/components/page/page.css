@@ -2,7 +2,6 @@
 
 docs-page {
   display: grid;
-  flex-direction: column;
   font-size: 15px;
   grid-template-columns: 1fr auto;
   line-height: 2;
@@ -15,6 +14,10 @@ docs-page main {
   margin-bottom: 3rem;
   max-width: 680px;
   padding: var(--page-padding, 2rem 3rem);
+}
+
+docs-page > stencil-route-switch {
+  min-width: 0; /* Prevent grid overflow */
 }
 
 docs-page docs-pagination {
