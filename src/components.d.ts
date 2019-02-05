@@ -126,6 +126,13 @@ export namespace Components {
   interface CommandPrompt {}
   interface CommandPromptAttributes extends StencilHTMLAttributes {}
 
+  interface ContributorList {
+    'contributors': string[];
+  }
+  interface ContributorListAttributes extends StencilHTMLAttributes {
+    'contributors'?: string[];
+  }
+
   interface DocsDemo {
     'source': string;
     'url': string;
@@ -262,6 +269,7 @@ declare global {
     'CommandLine': Components.CommandLine;
     'CommandOutput': Components.CommandOutput;
     'CommandPrompt': Components.CommandPrompt;
+    'ContributorList': Components.ContributorList;
     'DocsDemo': Components.DocsDemo;
     'DocsDropdown': Components.DocsDropdown;
     'FileTreeDirectory': Components.FileTreeDirectory;
@@ -299,6 +307,7 @@ declare global {
     'command-line': Components.CommandLineAttributes;
     'command-output': Components.CommandOutputAttributes;
     'command-prompt': Components.CommandPromptAttributes;
+    'contributor-list': Components.ContributorListAttributes;
     'docs-demo': Components.DocsDemoAttributes;
     'docs-dropdown': Components.DocsDropdownAttributes;
     'file-tree-directory': Components.FileTreeDirectoryAttributes;
@@ -404,6 +413,12 @@ declare global {
   var HTMLCommandPromptElement: {
     prototype: HTMLCommandPromptElement;
     new (): HTMLCommandPromptElement;
+  };
+
+  interface HTMLContributorListElement extends Components.ContributorList, HTMLStencilElement {}
+  var HTMLContributorListElement: {
+    prototype: HTMLContributorListElement;
+    new (): HTMLContributorListElement;
   };
 
   interface HTMLDocsDemoElement extends Components.DocsDemo, HTMLStencilElement {}
@@ -541,6 +556,7 @@ declare global {
     'command-line': HTMLCommandLineElement
     'command-output': HTMLCommandOutputElement
     'command-prompt': HTMLCommandPromptElement
+    'contributor-list': HTMLContributorListElement
     'docs-demo': HTMLDocsDemoElement
     'docs-dropdown': HTMLDocsDropdownElement
     'file-tree-directory': HTMLFileTreeDirectoryElement
@@ -578,6 +594,7 @@ declare global {
     'command-line': HTMLCommandLineElement;
     'command-output': HTMLCommandOutputElement;
     'command-prompt': HTMLCommandPromptElement;
+    'contributor-list': HTMLContributorListElement;
     'docs-demo': HTMLDocsDemoElement;
     'docs-dropdown': HTMLDocsDropdownElement;
     'file-tree-directory': HTMLFileTreeDirectoryElement;
