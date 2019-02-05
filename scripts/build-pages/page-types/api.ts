@@ -27,6 +27,7 @@ async function getAPIPages(): Promise<Page[]> {
       usage: renderUsage(usage, path),
       props: renderDocsKey(props, path),
       methods: renderDocsKey(methods, path),
+      template: 'api',
       ...contents
     };
   });
