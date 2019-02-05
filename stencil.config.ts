@@ -14,6 +14,7 @@ export const config: Config = {
   ],
   copy: [
     { src: 'pages/**/*.json' },
+    { src: 'demos' },
     { src: 'components/color-gen/demo/index.html', dest: 'pages/theming/color-generator/index.html' },
     { src: '_redirects', dest: '../_redirects' },
     { src: 'robots.txt', dest: '../robots.txt' }
