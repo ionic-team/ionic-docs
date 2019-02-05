@@ -1,9 +1,9 @@
 @import './templates/error.css';
 
 docs-page {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   font-size: 15px;
+  grid-template-columns: 1fr auto;
   line-height: 2;
   margin-left: var(--page-margin-left, var(--menu-width));
   margin-top: var(--header-height);
@@ -12,25 +12,16 @@ docs-page {
 
 docs-page main {
   margin-bottom: 3rem;
-}
-
-docs-page main.docs-api,
-docs-page main.docs-guide {
-  display: flex;
-}
-
-docs-page .docs-content-pane {
-  flex: 1;
   max-width: 680px;
   padding: var(--page-padding, 2rem 3rem);
 }
 
-docs-page .docs-preview-pane {
-  padding-right: 10px;
+docs-page > stencil-route-switch {
+  min-width: 0; /* Prevent grid overflow */
 }
 
-docs-page .docs-content {
-  max-width: 680px;
+docs-page docs-pagination {
+  grid-column: 1 / -1;
 }
 
 docs-page .full-screen {

@@ -11,10 +11,10 @@ To target the Android platform, some additional environment setup is required. A
 
 ## Java
 
-Native Android apps are compiled with the <a href="https://java.com/en/" target="_blank">Java</a> programming language. Download JDK8 from the <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank">download page</a>.
+Native Android apps are compiled with the <a href="https://java.com/en/" target="_blank">Java</a> programming language. Download JDK8 from the <a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank">download page</a>.
 
 <blockquote>
-  <p>Java 10 is still a bit too new and doesn't work well with Cordova. We recommend JDK8.</p>
+  <p>Cordova is not compatible with Java 11 yet. You must install JDK8 to build Cordova Android apps.</p>
 </blockquote>
 
 ## Gradle

@@ -30,7 +30,7 @@ export default (props) => {
   }
 
   return (
-    <main class="docs-content-pane">
+    <main>
       <h1>{ page.title }</h1>
       <docs-table-of-contents links={headings} basepath={page.path}/>
       <section class="markdown-content" innerHTML={page.body}/>
