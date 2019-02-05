@@ -3,7 +3,7 @@
 docs-page {
   display: grid;
   font-size: 15px;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(0, var(--page-width, 680px)) auto;
   line-height: 2;
   margin-left: var(--page-margin-left, var(--menu-width));
   margin-top: var(--header-height);
@@ -12,12 +12,7 @@ docs-page {
 
 docs-page main {
   margin-bottom: 3rem;
-  max-width: 680px;
   padding: var(--page-padding, 2rem 3rem);
-}
-
-docs-page > stencil-route-switch {
-  min-width: 0; /* Prevent grid overflow */
 }
 
 docs-page docs-pagination {
