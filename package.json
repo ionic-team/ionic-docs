@@ -36,7 +36,7 @@
     "marked": "^0.6.0",
     "ora": "^3.0.0",
     "ts-node": "^7.0.1",
-    "tslint": "^5.11.0",
+    "tslint": "^5.12.1",
     "tslint-ionic-rules": "0.0.21"
   },
   "husky": {
