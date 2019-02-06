@@ -3,7 +3,7 @@
 docs-page {
   display: grid;
   font-size: 15px;
-  grid-template-columns: minmax(0, var(--page-width, 680px)) auto;
+  grid-template-columns: minmax(0, var(--page-width, 680px)) 1fr;
   line-height: 2;
   margin-left: var(--page-margin-left, var(--menu-width));
   margin-top: var(--header-height);
