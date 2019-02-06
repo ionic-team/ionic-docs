@@ -149,7 +149,7 @@ The browser automatically sends the appropriate headers for CORS in every reques
 
 The correct and easiest solution is to enable CORS by returning the <a href="#server-headers-response-">right response headers</a> from the web server or backend and responding to preflight requests, as it allows to keep using `XMLHttpRequest`, `fetch`, or abstractions like `HttpClient` in Angular.
 
-Ionic apps may be run from different origins, but only one origin can be specified in the `Access-Control-Allow-Origin` header. Therefore we recommend to check the value of the `Origin` header from the request and reflect it in the `Access-Control-Allow-Origin` header of the response.
+Ionic apps may be run from different origins, but only one origin can be specified in the `Access-Control-Allow-Origin` header. Therefore we recommend checking the value of the `Origin` header from the request and reflecting it in the `Access-Control-Allow-Origin` header in the response.
 
 Please note that all of the `Access-Control-Allow-*` headers have to be sent from the server, and don't belong in your app code.
 
@@ -285,7 +285,7 @@ export class HomePage {
 
 Send the requests through an HTTP/HTTPS proxy that bypasses them to the external resources and adds the necessary CORS headers to the responses. This proxy must be trusted or under your control, as it will be intercepting most traffic made by the app.
 
-Also, keep in mind that the browser or webview will not receive the original HTTPS certificates but the one being sent from the proxy if provided. URLs may need to be rewritten in your code in order to use the proxy.
+Also, keep in mind that the browser or webview will not receive the original HTTPS certificates but the one being sent from the proxy if it's provided. URLs may need to be rewritten in your code in order to use the proxy.
 
 Check <a href="https://github.com/Rob--W/cors-anywhere/" target="_blank" rel="noopener">cors-anywhere</a> for a Node.js CORS proxy that can be deployed in your own server. Using free hosted CORS proxies in production is not recommended.
 
