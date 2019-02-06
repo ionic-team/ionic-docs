@@ -15,6 +15,10 @@ docs-page main {
   padding: var(--page-padding, 2rem 3rem);
 }
 
+docs-page docs-demo {
+  margin-right: auto;
+}
+
 docs-page docs-pagination {
   grid-column: 1 / -1;
 }
