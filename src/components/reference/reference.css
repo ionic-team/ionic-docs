@@ -6,7 +6,7 @@ docs-reference {
 docs-reference h3 {
   font-family: var(--code-font-family);
   font-size: 1.25rem;
-  margin: 1rem 0;
+  margin: 2rem 0 1rem;
   padding: 0;
 }
 
