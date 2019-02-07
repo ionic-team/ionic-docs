@@ -1,14 +1,7 @@
-# Ionic Native
-Ionic Native is a curated set of Cordova plugins that make it easy to add native functionality to any Ionic app.
+# Native Core
+Native Core is a reliable set of Native APIs & functionality that you can use in your Ionic app, available within a single plugin, that is written and maintained by the Ionic Team.
 
-These docs are for apps built with Ionic Framework 4.0.0 and greater. For older Ionic v3 projects, [please see here](http://ionicframework.com/docs/v3/native/).
-
-## Community Edition
-Ionic Native CE is a set of open source plugins maintained by community contributors.
-Ionic does not maintain, fix, improve, or provide any guarantee that these plugins function.
-
-## Enterprise Edition
-For teams that require dedicated native plugin support, fixes, improvements, or implementation guidance, Ionic Native EE is available.
+Native Core is included in Ionic EE (Enterprise Edition):
 
 <div class="native-ee-pricing">
   <div class="table-wrap">
@@ -85,7 +78,7 @@ For teams that require dedicated native plugin support, fixes, improvements, or 
         </tr>
         <tr>
           <th>
-            <a href="native/native-core">Native Core</a>
+            Native Core
           </th>
           <td>No</td>
           <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
@@ -101,74 +94,26 @@ For teams that require dedicated native plugin support, fixes, improvements, or 
   </div>
 </div>
 
-## Usage
-All plugins have two components - the native code (Cordova) and the JavaScript code.
-Cordova plugins are also wrapped in a `Promise` or `Observable` in order to provide a common plugin interface.
-Below are various framework options using the Camera plugin as an example.
+It includes functionality for:
 
-## Angular
-Import the plugin in a `@NgModule` and add it to the list of Providers. For Angular, the import path should end with `/ngx`.  Angular's change detection is automatically handled.
-
-```typescript
-// app.module.ts
-import { Camera } from '@ionic-native/camera/ngx';
-
-...
-
-@NgModule({
-  ...
-
-  providers: [
-    ...
-    Camera
-    ...
-  ]
-  ...
-})
-export class AppModule { }
-```
-
-After the plugin has been declared, it can be imported and injected like any other service:
-
-```typescript
-// camera.service.ts
-import { Injectable } from '@angular/core';
-import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
-
-@Injectable({
-  providedIn: 'root'
-})
-export class PhotoService {
-  constructor(private camera: Camera) { }
-
-  takePicture() {
-    const options: CameraOptions = {
-      quality: 100,
-      destinationType: this.camera.DestinationType.DATA_URL,
-      encodingType: this.camera.EncodingType.JPEG,
-      mediaType: this.camera.MediaType.PICTURE
-    }
-    
-    this.camera.getPicture(options).then((imageData) => {
-      // Do something with the new photo
-      
-    }, (err) => {
-     // Handle error
-     console.log("Camera issue: " + err);
-    });
-  }
-}
-```
-
-## Vanilla JavaScript
-Ionic Native can also be used in a vanilla JavaScript app targeting ES2015+ and/or TypeScript. To use any plugin, import the class from the appropriate package and use its static methods:
-
-```js
-import { Camera } from '@ionic-native/camera';
-
-document.addEventListener('deviceready', () => {
-  Camera.getPicture()
-    .then(data => console.log('Took a picture!', data))
-    .catch(e => console.log('Error occurred while taking a picture', e));
-});
-```
+- Accessibility
+- App
+- Background Task
+- Browser
+- Camera
+- Clipboard
+- Console
+- Device
+- Filesystem
+- Geolocation
+- Haptics
+- Keyboard
+- Local Notifications
+- Modals
+- Motion
+- Network
+- Share
+- Splash Screen
+- Status Bar
+- Storage
+- Toast

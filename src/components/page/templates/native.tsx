@@ -67,10 +67,17 @@ const renderInstallation = (cordova: string, npm: string) => {
               <command-prompt>{`ionic cordova plugin add ${cordova}`}</command-prompt>
               <command-prompt>{`npm install ${npm}`}</command-prompt>
         </command-line>
-        <command-line slot="Enterprise">
-              <command-prompt>{`ionic activate-native-ee --key=YOURPRODUCTKEY`}</command-prompt>
-              <command-prompt>{`ionic integrations add ${npm}`}</command-prompt>
-        </command-line>
+        <div slot="Enterprise">
+          <command-line>
+                <command-prompt>{`ionic activate-native-ee --key=YOURPRODUCTKEY`}</command-prompt>
+                <command-prompt>{`ionic integrations add ${npm}`}</command-prompt>
+          </command-line>
+          <div>
+            <strong>Need an Enterprise Edition key?</strong>
+            <a class="btn"
+              href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
+          </div>
+        </div>
       </docs-tabs>
     </section>
   );

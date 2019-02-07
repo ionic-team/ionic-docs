@@ -7,10 +7,13 @@
     fill:#00d287;
 }
 
+
+
 .native-ee-pricing table,
 .native-ee-pricing .table {
   margin-bottom: 0;
   min-width: 800px;
+  border-style: none;
 }
 .native-ee-pricing thead tr td:first-child,
 .native-ee-pricing thead tr th:first-child,
@@ -26,20 +29,21 @@
 }
 .native-ee-pricing thead th,
 .native-ee-pricing tbody td {
-  width: 20%;
+  width: 30%;
 }
 .native-ee-pricing thead th, .native-ee-pricing thead td {
   background: #fff;
   border-bottom: 1px solid rgba(232, 235, 241, 0.6);
-  padding-top: 32px;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
   vertical-align: bottom;
+  border: 0;
 }
 .native-ee-pricing thead th {
   text-align: center;
 }
 .native-ee-pricing thead th h2 {
-  margin-bottom: 3px;
+  padding-top: 0;
+  margin-bottom: 0;
 }
 .native-ee-pricing thead .eyebrow {
   font-size: 10px;
@@ -51,7 +55,7 @@
   display: inline-block;
 }
 .native-ee-pricing thead h2 {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
   margin: 0;
   letter-spacing: -0.01em;
@@ -59,7 +63,7 @@
 }
 .native-ee-pricing thead .price {
   font-weight: 600;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 20px;
   color: #5B708B;
 }
@@ -87,7 +91,7 @@
 }
 .native-ee-pricing thead .plan-wrap {
   display: inline-block;
-  text-align: left;
+  text-align: center;
   border: 0;
 }
 .native-ee-pricing tbody th,
@@ -203,12 +207,27 @@
   line-height: 1em;
 }
 .native-ee-pricing tbody tr:last-child td {
-  padding-top: 36px;
-  padding-bottom: 36px;
+  padding-top: 24px;
 }
 .native-ee-pricing tbody .btn {
+  transition: all .3s ease;
+  background: #3880ff;
+  color: #FFF;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 6px;
+  padding: 12px 18px 14px;
   width: 100%;
+  box-shadow: 0 1px 3px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.12);
 }
+
+.native-ee-pricing tbody .btn:hover {
+  box-shadow: 0 7px 14px rgba(0,0,0,.12), 0 3px 6px rgba(0,0,0,.08);
+  background: #4d8dfd;
+  color: #fff;
+  outline: 0;
+}
+
 .native-ee-pricing tbody .btn.sm {
   font-size: 12px;
   letter-spacing: 0.1em;
@@ -271,99 +290,4 @@
 }
 .native-ee-pricing .pinned-at-point thead tr {
   padding: 0;
-}
-@media (max-width: 830px) {
-  .native-ee-pricing thead tr td:first-child,
-.native-ee-pricing thead tr th:first-child,
-.native-ee-pricing tbody tr td:first-child,
-.native-ee-pricing tbody tr th:first-child {
-    padding-left: 16px;
-  }
-  .native-ee-pricing thead tr td:last-child,
-.native-ee-pricing thead tr th:last-child,
-.native-ee-pricing tbody tr td:last-child,
-.native-ee-pricing tbody tr th:last-child {
-    padding-right: 16px;
-  }
-  .native-ee-pricing .btn.sm {
-    font-size: 12px;
-  }
-  .native-ee-pricing thead th,
-.native-ee-pricing thead td {
-    padding-top: 24px;
-    padding-bottom: 18px;
-  }
-  .native-ee-pricing tbody th[colspan="4"] span {
-    padding-top: 8px;
-    padding-bottom: 0;
-  }
-  .native-ee-pricing .box,
-.native-ee-pricing .table-wrap,
-.native-ee-pricing table,
-.native-ee-pricing .table {
-    overflow: hidden;
-  }
-  .native-ee-pricing thead {
-    position: relative;
-    display: block;
-    /*seperates the header from the body allowing it to be positioned*/
-    width: 800px;
-    overflow: visible;
-  }
-  .native-ee-pricing thead td,
-.native-ee-pricing thead th {
-    height: 118px;
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-  .native-ee-pricing thead td {
-    /*first cell in the header*/
-    position: relative;
-    display: block;
-    /*seperates the first cell in the header from the header*/
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-  }
-  .native-ee-pricing tbody {
-    height: calc(100vh - 100px - 118px);
-    position: relative;
-    display: block;
-    /*seperates the tbody from the header*/
-    width: calc(100vw);
-    overflow: scroll;
-    -webkit-overflow-scrolling: touch;
-  }
-  .native-ee-pricing thead tr,
-.native-ee-pricing tbody tr {
-    display: flex;
-  }
-  .native-ee-pricing thead th,
-.native-ee-pricing tbody td {
-    flex: 0 0 204px;
-  }
-  .native-ee-pricing thead td,
-.native-ee-pricing tbody th {
-    flex: 0 0 120px;
-    border-right: 1px solid rgba(232, 235, 241, 0.6);
-  }
-  .native-ee-pricing tbody th[colspan="4"] span,
-.native-ee-pricing tbody th strong,
-.native-ee-pricing tbody tr.combined th {
-    font-size: 13px;
-    line-height: 18px;
-  }
-  .native-ee-pricing tbody tr.combined th, .native-ee-pricing tbody tr.combined td {
-    padding-top: 22px;
-    padding-bottom: 14px;
-  }
-  .native-ee-pricing tbody tr th {
-    /*the first cell in each tr*/
-    position: relative;
-    display: block;
-    /*seperates the first column from the tbody*/
-  }
-  .native-ee-pricing tbody tr:last-child th {
-    height: 110px;
-  }
 }
