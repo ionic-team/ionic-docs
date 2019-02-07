@@ -7,7 +7,7 @@ nextUrl: '/docs/intro/versioning'
 
 # Browser Support
 
-Ionic's original goal was to make it easy to develop mobile apps using web technologies, including HTML, CSS and JavaScript. By using web technologies, Ionic is able to work across a wide range of devices, operating systems and browsers, all while using the same codebase.
+Ionic's earliest goal was to make it easy to develop mobile apps using web technologies like HTML, CSS, and JavaScript. Because of this foundation in web technologies, Ionic can run anywhere the web runs — iOS, Android, browsers, Electron, PWAs, and more.
 
 
 ## Mobile
