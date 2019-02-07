@@ -3,14 +3,21 @@
 docs-page {
   display: grid;
   font-size: 15px;
-  grid-template-columns: minmax(0, var(--page-width, 720px)) 1fr;
+  grid-template-columns: 1fr minmax(0, var(--page-width, 720px)) 1fr;
   line-height: 2;
   margin-left: var(--page-margin-left, var(--menu-width));
   margin-top: var(--header-height);
   overflow-x: hidden;
 }
 
-docs-page main {
+@media (min-width: 1800px) {
+  docs-page {
+    grid-template-columns: 1fr minmax(0, var(--page-width, 720px)) 1fr var(--menu-width);
+  }
+}
+
+docs-page > main {
+  grid-column: 2;
   margin-bottom: 3rem;
   padding: var(--page-padding, 2rem 3rem);
 }
@@ -24,9 +31,9 @@ docs-page docs-pagination {
 }
 
 docs-page .full-screen {
-  height: calc(100vh - var(--header-height) - 3rem);
-  width: calc(100vw - var(--menu-width));
-  max-width: none;
+  grid-column: 1 / -1;
+  height: calc(100vh - var(--header-height));
+  margin-bottom: 0;
   overflow: hidden;
   padding: 0;
 }

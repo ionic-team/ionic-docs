@@ -9,6 +9,10 @@
   white-space: nowrap;
 }
 
+.Error.full-screen {
+  padding-bottom: 3rem;
+}
+
 .Error > * {
   margin: 10px;
 }
