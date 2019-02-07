@@ -8,7 +8,7 @@ nextUrl: '/docs/building/scaffolding'
 新しくIonicアプリを始めるのはとても簡単です。 コマンドラインで `ionic start` を入力すれば、CLIが残りの処理をうまくやってくれます。
 
 <command-line>
-    <command-prompt>ionic start --type=angular</command-prompt>
+    <command-prompt>ionic start</command-prompt>
     <command-output>
         <br />
         <span class="bold">Every great app needs a name! 😍</span><br />
@@ -24,7 +24,7 @@ nextUrl: '/docs/building/scaffolding'
 Ionic CLIがプロンプトを表示し、プロジェクト名やどのテンプレートを使用するかを対話形式で質問してきます。これらの質問は下記のようにコマンドへの引数として予め入力すればスキップすることも可能です。
 
 ```shell
-$ ionic start myApp tabs --type=angular
+$ ionic start myApp tabs
 ```
 
 この場合、`myApp` はプロジェクト名、`tabs` はテンプレート名、そしてプロジェクトタイプは　`angular` を意味します。

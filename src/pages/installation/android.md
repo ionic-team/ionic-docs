@@ -11,10 +11,10 @@ Androidアプリを開発するためには、追加の環境設定が必要で�
 
 ## Java
 
-ネイティブAndroidアプリは<a href="https://java.com/en/" target="_blank">Java</a>でコンパイルされています。<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank">ダウンロードページ</a>からJDK 8をダウンロードしてください。
+ネイティブAndroidアプリは<a href="https://java.com/en/" target="_blank">Java</a>でコンパイルされています。<a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank">ダウンロードページ</a>からJDK 8をダウンロードしてください。
 
 <blockquote>
-  <p>Java 10はまだ新しく、Cordovaではうまく動きません。JDK8をご利用ください。</p>
+  <p>Java 11はまだ新しく、Cordovaではうまく動きません。JDK8をご利用ください。</p>
 </blockquote>
 
 ## Gradle

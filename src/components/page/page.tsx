@@ -1,11 +1,6 @@
 import { Component, Prop, State, Watch } from '@stencil/core';
 import { Page } from '../../definitions';
-import defaultTemplate from './templates/default';
-import nativeTemplate from './templates/native';
-import apiReferenceTemplate from './templates/api-reference';
-import apiTemplate from './templates/api';
-import cliTemplate from './templates/cli';
-import errorTemplate from './templates/error';
+import templates from './templates';
 
 @Component({
   tag: 'docs-page',
@@ -66,19 +61,22 @@ export class DocsPage {
 
   render() {
     const { page } = this;
+
     if (this.badFetch) {
-      return errorTemplate(this.badFetch);
+      return templates.error(this.badFetch);
     }
 
+    const Template = templates[page.template] || templates.default;
+
     const content = [
-      <stencil-route-switch>
-        <stencil-route url="/docs/native" routeRender={nativeTemplate} componentProps={{ page }}/>
-        <stencil-route url="/docs/api/(.+)" routeRender={apiTemplate} componentProps={{ page }}/>
-        <stencil-route url="/docs/api" routeRender={apiReferenceTemplate} componentProps={{ page }}/>
-        <stencil-route url="/docs/cli/commands/(.+)" routeRender={cliTemplate} componentProps={{ page }}/>
-        <stencil-route url="/docs" routeRender={defaultTemplate} componentProps={{ page }}/>
-      </stencil-route-switch>
+      <Template page={page}/>
     ];
+
+    if (typeof page.demoUrl === 'string') {
+      content.push(
+        <docs-demo url={page.demoUrl}/>
+      );
+    }
 
     const shouldShowPagination = (
       page.previousText && page.previousUrl || page.nextText && page.nextUrl
