@@ -9,7 +9,7 @@ export default (props) => {
   const { page } = props;
 
   return (
-    <main>
+    <article>
       <h1>{page.title}</h1>
       <section class="markdown-content" innerHTML={page.body}/>
       <hr/>
@@ -20,6 +20,6 @@ export default (props) => {
           </li>
         ))}
       </ul>
-    </main>
+    </article>
   );
 };

@@ -69,7 +69,9 @@ export class DocsPage {
     const Template = templates[page.template] || templates.default;
 
     const content = [
-      <Template page={page}/>
+      <main>
+        <Template page={page}/>
+      </main>
     ];
 
     if (typeof page.demoUrl === 'string') {
