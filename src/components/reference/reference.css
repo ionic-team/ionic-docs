@@ -18,10 +18,6 @@ docs-reference a:before {
   display: none;
 }
 
-docs-reference tbody * {
-  font-size: 12px !important;
-}
-
 docs-reference thead tr {
   background-color: var(--offset-background);
 }
@@ -32,10 +28,6 @@ docs-reference tbody tr {
 
 docs-reference tbody th {
   vertical-align: top;
-}
-
-docs-reference tbody td {
-  color: var(--text-color--light);
 }
 
 docs-reference tbody p {
