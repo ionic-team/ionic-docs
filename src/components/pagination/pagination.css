@@ -25,7 +25,19 @@ docs-pagination .previous {
 
 docs-pagination a {
   align-items: center;
+  border-radius: 4px;
   display: flex;
+  padding: 1em 1.5em;
+}
+
+@media (hover: hover) {
+  docs-pagination a:hover {
+    background-color: rgba(0, 0, 0, 0.025);
+  }
+
+  docs-pagination a:active {
+    background-color: rgba(0, 0, 0, 0.035);
+  }
 }
 
 docs-pagination span {

@@ -30,7 +30,7 @@ export default (props) => {
   }
 
   return (
-    <main>
+    <article>
       <h1>{ page.title }</h1>
       <docs-table-of-contents links={headings} basepath={page.path}/>
       <section class="markdown-content" innerHTML={page.body}/>
@@ -38,7 +38,7 @@ export default (props) => {
       { installation }
       { platforms }
       { usage }
-    </main>
+    </article>
   );
 };
 
@@ -69,10 +69,10 @@ const renderInstallation = (cordova: string, npm: string) => {
         </command-line>
         <div slot="Enterprise">
         <div>
-            <strong>Ionic EE comes with fully supported and maintained plugins from the Ionic Team. </strong> 
+            <strong>Ionic EE comes with fully supported and maintained plugins from the Ionic Team. </strong>
             <a class="btn"
               href="/docs/native#enterprise-edition">Learn More</a>
-              &nbsp;<strong>or</strong>&nbsp; 
+              &nbsp;<strong>or</strong>&nbsp;
             <a class="btn"
               href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
           </div>

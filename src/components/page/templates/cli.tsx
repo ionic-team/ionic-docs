@@ -35,7 +35,7 @@ export default (props) => {
   }
 
   return (
-    <main>
+    <article>
       <h1>{ page.title }</h1>
       <docs-table-of-contents links={headings} basepath={page.path} />
       <section class="summary intro" innerHTML={page.summary} />
@@ -45,7 +45,7 @@ export default (props) => {
       { inputs }
       { options }
       { advancedOptions }
-    </main>
+    </article>
   );
 };
 

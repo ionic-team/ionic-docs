@@ -1,17 +1,17 @@
-.page-appflow main {
-  max-width: 1000px;
+.page-appflow {
+  --page-width: 1000px;
 }
 
 .page-appflow docs-cards > docs-card:nth-child(1) {
   font-size: 1.25em;
 }
 
-.page-appflow-cookbook-intro main,
-.page-appflow-deploy-intro main,
-.page-appflow-package-intro main,
-.page-appflow-automation-intro main,
-.page-appflow-quickstart main {
-  max-width: 800px;
+.page-appflow-cookbook-intro,
+.page-appflow-deploy-intro,
+.page-appflow-package-intro,
+.page-appflow-automation-intro,
+.page-appflow-quickstart {
+  --page-width: 800px;
 }
 
 .page-appflow-quickstart-connect img {

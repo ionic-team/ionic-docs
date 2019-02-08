@@ -135,6 +135,7 @@ console.log(info)
 //   'maxVersions': 3,
 //   'minBackgroundDuration': 30,
 //   'currentVersionId': 'xxxx-xxxx-xxxx-xxxx'
+//   'currentBuildId' : 'xxxxxxx'
 // }
 ```
 
@@ -393,8 +394,12 @@ ___
 
 * <b>available</b>: `boolean`
 </br>Whether or not an update is available.
+* <b>incompatibleUpdateAvailable</b>: `boolean`
+</br>Whether or not an update that is not compatible with this device is available.
 * <b>snapshot</b> (optional): `undefined` | `string`
-</br>The id of the snapshot if available.
+</br>The id of the snapshot, if available.
+* <b>build</b> (optional): `undefined` | `string`
+</br>The id of the build, if available.
 
 ___
 
@@ -424,7 +429,9 @@ ___
 * <b>minBackgroundDuration</b>: `number`
 </br>The number of seconds the app needs to be in the background before the plugin considers it closed for the purposes of fetching and applying a new update.
 * <b>currentVersionId</b>: `string | undefined`
-</br>The id of the currently applied update or `undefined` if none is applied.
+</br>The version id of the currently applied update or `undefined` if none is applied.
+* <b>currentBuildId</b>: `string | undefined`
+</br>The build id of the currently applied update or `undefined` if none is applied.
 
 
 
