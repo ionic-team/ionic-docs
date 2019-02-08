@@ -4,10 +4,10 @@ export default () => <docs-nav items={items}/>;
 
 const items = {
   'Premium': {
-    "Active Directory": "https://ionicframework.com/integrations/active-directory",
+    "Native Core": "/docs/native/native-core",
+    "Active Directory": "https://ionicframework.com/integrations/ms-activedirectory-ms-adal",
     "Identity Vault": "https://ionicframework.com/enterprise/identity-vault",
-    "Offline Support": "https://ionicframework.com/integrations/couchbase-lite",
-    "Native Core": "/docs/native/native-core"
+    "Offline Support": "https://ionicframework.com/integrations/couchbase-lite"
   },
   'Standard': Object.entries(plugins).sort()
 };

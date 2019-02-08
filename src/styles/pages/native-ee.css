@@ -7,7 +7,13 @@
     fill:#00d287;
 }
 
-
+.native-ee-pricing-table {
+  font-size: 18px;
+  color: #020814;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
 
 .native-ee-pricing table,
 .native-ee-pricing .table {

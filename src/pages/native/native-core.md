@@ -9,17 +9,17 @@ Native Core is included in Ionic EE (Enterprise Edition):
       <thead>
         <tr>
           <td>
-            <h2>Features</h2>
+            <span class="native-ee-pricing-table">Features</span>
           </td>
           <th>
             <div class="plan-wrap"> 
-              <h2>Community Edition</h2>
+              <span class="native-ee-pricing-table">Community Edition</span>
               <div class="price">$0/mo </div>
             </div>
           </th>
           <th>
             <div class="plan-wrap">
-              <h2>Enterprise Edition</h2>
+              <span class="native-ee-pricing-table">Enterprise Edition</span>
               <div class="price" data-toggle="billing-team">
                 Contact Us</div>
             </div>

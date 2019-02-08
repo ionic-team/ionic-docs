@@ -3,6 +3,8 @@ Ionic Native is a curated set of Cordova plugins that make it easy to add native
 
 These docs are for apps built with Ionic Framework 4.0.0 and greater. For older Ionic v3 projects, [please see here](http://ionicframework.com/docs/v3/native/).
 
+Ionic Native is available in two editions: Community Edition and Enterprise Edition.
+
 ## Community Edition
 Ionic Native CE is a set of open source plugins maintained by community contributors.
 Ionic does not maintain, fix, improve, or provide any guarantee that these plugins function.
@@ -16,17 +18,17 @@ For teams that require dedicated native plugin support, fixes, improvements, or 
       <thead>
         <tr>
           <td>
-            <h2>Features</h2>
+            <span class="native-ee-pricing-table">Features</span>
           </td>
           <th>
             <div class="plan-wrap"> 
-              <h2>Community Edition</h2>
+              <span class="native-ee-pricing-table">Community Edition</span>
               <div class="price">$0/mo </div>
             </div>
           </th>
           <th>
             <div class="plan-wrap">
-              <h2>Enterprise Edition</h2>
+              <span class="native-ee-pricing-table">Enterprise Edition</span>
               <div class="price" data-toggle="billing-team">
                 Contact Us</div>
             </div>
