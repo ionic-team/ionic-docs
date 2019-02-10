@@ -43,7 +43,7 @@ export default (props) => {
   }
 
   return (
-    <main>
+    <article>
       <h1>{ page.title }</h1>
       <docs-table-of-contents links={headings} basepath={page.path}/>
       <section class="markdown-content" innerHTML={page.body}/>
@@ -52,7 +52,7 @@ export default (props) => {
       { events }
       { methods }
       { customProps }
-    </main>
+    </article>
   );
 };
 

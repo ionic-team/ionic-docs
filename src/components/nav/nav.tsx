@@ -36,6 +36,7 @@ export class DocsNav {
     return (
       <stencil-route-link
         url={url}
+        strict={false}
         exact>
           {text}
       </stencil-route-link>

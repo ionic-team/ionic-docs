@@ -24,6 +24,15 @@ import {
 
 export namespace Components {
 
+  interface DocsButton {
+    'href': string;
+    'primary': boolean;
+  }
+  interface DocsButtonAttributes extends StencilHTMLAttributes {
+    'href'?: string;
+    'primary'?: boolean;
+  }
+
   interface DocsCard {
     'header': string;
     'href': string;
@@ -255,6 +264,7 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
+    'DocsButton': Components.DocsButton;
     'DocsCard': Components.DocsCard;
     'DocsCards': Components.DocsCards;
     'CodeColor': Components.CodeColor;
@@ -293,6 +303,7 @@ declare global {
   }
 
   interface StencilIntrinsicElements {
+    'docs-button': Components.DocsButtonAttributes;
     'docs-card': Components.DocsCardAttributes;
     'docs-cards': Components.DocsCardsAttributes;
     'code-color': Components.CodeColorAttributes;
@@ -330,6 +341,12 @@ declare global {
     'wistia-video': Components.WistiaVideoAttributes;
   }
 
+
+  interface HTMLDocsButtonElement extends Components.DocsButton, HTMLStencilElement {}
+  var HTMLDocsButtonElement: {
+    prototype: HTMLDocsButtonElement;
+    new (): HTMLDocsButtonElement;
+  };
 
   interface HTMLDocsCardElement extends Components.DocsCard, HTMLStencilElement {}
   var HTMLDocsCardElement: {
@@ -542,6 +559,7 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'docs-button': HTMLDocsButtonElement
     'docs-card': HTMLDocsCardElement
     'docs-cards': HTMLDocsCardsElement
     'code-color': HTMLCodeColorElement
@@ -580,6 +598,7 @@ declare global {
   }
 
   interface ElementTagNameMap {
+    'docs-button': HTMLDocsButtonElement;
     'docs-card': HTMLDocsCardElement;
     'docs-cards': HTMLDocsCardsElement;
     'code-color': HTMLCodeColorElement;
