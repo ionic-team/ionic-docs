@@ -1,16 +1,16 @@
 # Ionic Native
-Ionic Native is a curated set of Cordova plugins that make it easy to add native functionality to any Ionic app.
+Ionic Nativeは、あらゆるIonicアプリに簡単にNative機能を追加できるCordovaプラグインのcuratedセットです。
 
-These docs are for apps built with Ionic Framework 4.0.0 and greater. For older Ionic v3 projects, [please see here](http://ionicframework.com/docs/v3/native/).
+これらのドキュメントは、Ionic Framework 4.0.0以降で構築されたアプリケーション用です。 Ionic v3 プロジェクトは [please see here](http://ionicframework.com/docs/v3/native/) をご覧ください。
 
-Ionic Native is available in two editions: Community Edition and Enterprise Edition.
+Ionic Nativeには、Community EditionとEnterprise Editionの2つのエディションがあります。
 
 ## Community Edition
-Ionic Native CE is a set of open source plugins maintained by community contributors.
-Ionic does not maintain, fix, improve, or provide any guarantee that these plugins function.
+Ionic Native CEは、コミュニティの貢献者によって管理されているオープンソースプラグインのセットです。
+Ionicはこれらのプラグインが機能することを維持、修正、改善、保証するものではありません。
 
 ## Enterprise Edition
-For teams that require dedicated native plugin support, fixes, improvements, or implementation guidance, Ionic Native EE is available.
+専用のネイティブプラグインサポート、修正、改善、または実装ガイダンスが必要なチームには、Ionic Native EEが利用できます。
 
 <div class="native-ee-pricing">
   <div class="table-wrap">
@@ -18,19 +18,19 @@ For teams that require dedicated native plugin support, fixes, improvements, or 
       <thead>
         <tr>
           <td>
-            <span class="native-ee-pricing-table">Features</span>
+            <span class="native-ee-pricing-table">特徴</span>
           </td>
           <th>
             <div class="plan-wrap"> 
               <span class="native-ee-pricing-table">Community Edition</span>
-              <div class="price">$0/mo </div>
+              <div class="price">$0/月 </div>
             </div>
           </th>
           <th>
             <div class="plan-wrap">
               <span class="native-ee-pricing-table">Enterprise Edition</span>
               <div class="price" data-toggle="billing-team">
-                Contact Us</div>
+                連絡ください</div>
             </div>
           </th>
         </tr>
@@ -45,42 +45,42 @@ For teams that require dedicated native plugin support, fixes, improvements, or 
         </tr>
         <tr>
           <th>
-            Regular Release Cycles & Updates
+            通常のリリースサイクルとアップデート
           </th>
           <td>No</td>
           <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
         </tr>
         <tr class="stripe">
           <th>
-            Support SLA & Ticketing System
+            サービス品質保証とチケットシステム
           </th>
           <td>No</td>
           <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
         </tr>
         <tr>
           <th>
-            Advisory & Support
+            アドバイザリ＆サポート
           </th>
           <td>No</td>
           <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
         </tr>
         <tr class="stripe">
           <th>
-            Security & Bug fixes 
+            セキュリティとバグ修正
           </th>
           <td>OSS Community</td>
           <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
         </tr>
         <tr>
           <th>
-            Implementation Guidance
+            ガイダンスの実施
           </th>
           <td>No</td>
           <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
         </tr>
         <tr class="stripe">
           <th>
-            Guaranteed SLA
+            サービス品質保証
           </th>
           <td>No</td>
           <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
@@ -104,12 +104,12 @@ For teams that require dedicated native plugin support, fixes, improvements, or 
 </div>
 
 ## Usage
-All plugins have two components - the native code (Cordova) and the JavaScript code.
-Cordova plugins are also wrapped in a `Promise` or `Observable` in order to provide a common plugin interface.
-Below are various framework options using the Camera plugin as an example.
+すべてのプラグインには、ネイティブコード（Cordova）とJavaScriptコードという2つのコンポーネントがあります。
+Cordovaプラグインは、共通のプラグインインターフェースを提供するために `Promise` か `Observable` にラップされています。
+以下はCameraプラグインを例にしたさまざまなフレームワークオプションです。
 
 ## Angular
-Import the plugin in a `@NgModule` and add it to the list of Providers. For Angular, the import path should end with `/ngx`.  Angular's change detection is automatically handled.
+`@NgModule` にプラグインをインポートし、Providersに追加します。Angularでは、import pathは `/ngx` で終わる必要があります。Angularの変更検知は自動的に処理されます。
 
 ```typescript
 // app.module.ts
@@ -130,7 +130,7 @@ import { Camera } from '@ionic-native/camera/ngx';
 export class AppModule { }
 ```
 
-After the plugin has been declared, it can be imported and injected like any other service:
+プラグインの宣言後は、他のServiceと同様にimportとinjectすることができます:
 
 ```typescript
 // camera.service.ts
@@ -163,7 +163,7 @@ export class PhotoService {
 ```
 
 ## Vanilla JavaScript
-Ionic Native can also be used in a vanilla JavaScript app targeting ES2015+ and/or TypeScript. To use any plugin, import the class from the appropriate package and use its static methods:
+Ionic Nativeは、ES2015 +やTypeScriptをターゲットとした一般的なJavaScriptアプリケーションでも使用できます。プラグインを使用するには、適切なパッケージからClassをimportしてその静的メソッドを使用します:
 
 ```js
 import { Camera } from '@ionic-native/camera';
