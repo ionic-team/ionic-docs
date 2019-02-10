@@ -5,33 +5,33 @@ previousUrl: '/docs/building/webview'
 
 # Storage
 
-Storage is an easy way to store key/value pairs and JSON objects.
-Storage uses a variety of storage engines underneath, picking the best one available
-depending on the platform.
+Storage は、key/valueのペアとJSONオブジェクトを保存するための簡単な方法です。
+Storage はデバイス上の様々なStorageエンジンを利用し、
+プラットフォームに応じて利用できる最善のものを選択します。
 
-When running in a native app context, Storage will prioritize using SQLite, as it's one of
-the most stable and widely used file-based databases, and avoids some of the
-pitfalls of things like localstorage and IndexedDB, such as the OS deciding to clear out such
-data in low disk-space situations.
+ネイティブアプリケーション上で実行する場合、
+Storageはもっとも安定して広く使用されているファイルベースのデータベースの1つである
+SQLiteを使用することを優先し、ディスク容量が少ない状況ではOSがデータを削除することのある 
+localstorage や IndexedDB といった落とし穴を避けます。
 
-When running in the web or as a Progressive Web App, Storage will attempt to use
-IndexedDB, WebSQL, and localstorage, in that order.
+WebであったりProgressive Web Appとして実行している時は、
+Storageは IndexedDB、WebSQL、およびlocalstorageの順に使用しようとします。
 
 
 ## Usage
 
 
-First, if you'd like to use SQLite, install the cordova-sqlite-storage plugin:
+もしSQLiteを使いたいときは、まずcordova-sqlite-storage プラグインをインストールします:
 ```bash
 ionic cordova plugin add cordova-sqlite-storage
 ```
 
-Next, install the package (comes by default for Ionic apps > Ionic V1):
+次に、パッケージをインストールします（Ionic V1よりもバージョンが新しい時に可能です）:
 ```bash
 npm install --save @ionic/storage
 ```
 
-Next, add it to the imports list in your `NgModule` declaration (for example, in `src/app/app.module.ts`):
+そして、以下をあなたの `NgModule` デコレーションに追加します（例えば、 `src/app/app.module.ts` に追記ください）:
 
 ```typescript
 import { IonicStorageModule } from '@ionic/storage';
@@ -56,7 +56,7 @@ import { IonicStorageModule } from '@ionic/storage';
 export class AppModule {}
 ```
 
-Finally, inject it into any of your components or pages:
+最後に、あなたのComponentsやpageに注入します:
 ```typescript
 import { Storage } from '@ionic/storage';
 
@@ -76,12 +76,12 @@ export class MyApp {
 ```
 
 
-### Configuring Storage
+### Storage の設定
 
-The Storage engine can be configured both with specific storage engine priorities, or custom configuration
-options to pass to localForage. See the localForage config docs for possible options: https://github.com/localForage/localForage#configuration
+Storageエンジンは、特定のストレージエンジンの優先順位、 localForageに渡す任意の設定の両方で構成されます。 localForageの設定ドキュメントについては、こちらをご覧ください:
+https://github.com/localForage/localForage#configuration
 
-Note: Any custom configurations will be merged with the default configuration
+Note: どのカスタム設定も、デフォルト設定とマージされます。
 
 ```typescript
 import { IonicStorageModule } from '@ionic/storage';
@@ -107,11 +107,11 @@ export class AppModule { }
 
 ### constructor
 
-Create a new Storage instance using the order of drivers and any additional config
-options to pass to LocalForage.
+LocalForageに渡すドライバの順序とその他の設定オプションを使用して、
+新しいStorageインスタンスを作成します。
 
-Possible driver options are: ['sqlite', 'indexeddb', 'websql', 'localstorage'] and the
-default is that exact ordering.
+利用可能なドライバオプション: ['sqlite', 'indexeddb', 'websql', 'localstorage'] 
+そして、これはデフォルトの優先順です。
 
 <br><br>
 
@@ -122,7 +122,7 @@ default is that exact ordering.
 
 ### driver
 
-Get the name of the driver being used.
+使用されているドライバの名前を取得します。
 
 
 <br><br>
@@ -130,7 +130,7 @@ Get the name of the driver being used.
 
 
 ### clear()
-Clear the entire key value store. WARNING: HOT!
+保存されているすべてのデータを削除します。 WARNING: HOT!
 
 __Returns:__ Returns a promise that resolves when the store is cleared
 
@@ -142,7 +142,7 @@ __Returns:__ Returns a promise that resolves when the store is cleared
 
 
 ### forEach()
-Iterate through each key,value pair.
+key, valueの値を順に取得します。
 
 __Returns:__ Returns a promise that resolves when the iteration has finished.
 
@@ -155,7 +155,7 @@ __Returns:__ Returns a promise that resolves when the iteration has finished.
 
 
 ### get()
-Get the value associated with the given key.
+keyを引数にいれることによって、valueを取得します。
 
 __Returns:__ Returns a promise with the value of the given key
 
@@ -192,7 +192,7 @@ __Returns:__ Returns a promise that resolves with the number of keys stored.
 
 
 ### ready()
-Reflect the readiness of the store.
+storeが利用可能になったことを反映します。
 
 __Returns:__ Returns a promise that resolves when the store is ready
 
@@ -204,7 +204,7 @@ __Returns:__ Returns a promise that resolves when the store is ready
 
 
 ### remove()
-Remove any value associated with this key.
+keyを引数にわたすことで、valueを削除します。
 
 __Returns:__ Returns a promise that resolves when the value is removed
 
@@ -217,7 +217,7 @@ __Returns:__ Returns a promise that resolves when the value is removed
 
 
 ### set()
-Set the value for the given key.
+keyを引数にわたすことでvalueを保存します。
 
 __Returns:__ Returns a promise that resolves when the key and value are set
 
