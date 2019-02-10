@@ -4,11 +4,11 @@
 
 # Ionic CLI
 
-The Ionic command-line interface ([CLI](/docs/faq/glossary#cli)) is your go-to tool for developing Ionic apps.
+The Ionic command-line interface ([CLI](/docs/faq/glossary#cli)) は、Ionicアプリを開発する時に頼りになるツールです。
 
 ## Installation
 
-The Ionic CLI can be installed globally with npm:
+Ionic CLI はnpmでグローバルにインストールできます:
 
 ```shell
 $ npm install -g ionic
@@ -16,7 +16,7 @@ $ npm install -g ionic
 
 ## Help
 
-The Ionic CLI ships with command documentation that is accessible with the `--help` flag.
+Ionic CLIでは `--help` フラグをつけることでコマンドのドキュメントを利用できます。
 
 ```shell
 $ ionic <command> --help
@@ -26,14 +26,14 @@ $ ionic <command> --help
 
 ## Architecture
 
-The Ionic CLI is built with [TypeScript](/docs/faq/glossary#typescript) and [Node.js](/docs/faq/glossary#node). It supports Node 6+, but the latest Node LTS is always recommended. Follow development on the open source <a href="https://github.com/ionic-team/ionic-cli" target="_blank">Github repository</a>.
+Ionic CLI は、[TypeScript](/docs/faq/glossary#typescript)と [Node.js](/docs/faq/glossary#node)で構築されています。Node 6+をサポートしていますが、最新のNode LTSが推奨です。Follow development on the open source <a href="https://github.com/ionic-team/ionic-cli" target="_blank">Github repository</a>.
 
 ## Troubleshooting
 
-To troubleshoot issues with the Ionic CLI, the following may be useful:
+Ionic CLIの問題をトラブルシューティングするには、以下の方法が役立ちます:
 
-- Make sure the latest version of the Ionic CLI is installed. Update with `npm install -g ionic@latest`.
-- Make sure the latest Node LTS is installed. See [Node & npm](/docs/installation/environment#node-npm) environment setup.
-- The `--verbose` flag prints debugging messages, which may narrow down the issue.
-- Connection issues may be due to improperly configured proxy settings. See [Using a Proxy](/docs/cli/configuring#using-a-proxy) to configure request proxying.
-- The global Ionic CLI configuration directory is `~/.ionic` on all platforms. It can safely be deleted and the Ionic CLI will repopulate it, but all configuration (including user sessions) will be lost. Configure this directory with [CLI environment variables](/docs/cli/configuration#environment-variables).
+- 最新バージョンのIonic CLIがインストールされていることを確認してください。 `npm install -g ionic@latest` で更新してください。
+- 最新のNode LTSがインストールされていることを確認してください。 [Node & npm](/docs/installation/environment#node-npm) の環境設定をご覧ください。
+- `--verbose` フラグをつけると、問題を絞り込むためのデバッグメッセージが表示されます。
+- 接続の問題は、不適切に設定されたプロキシ設定が原因である可能性があります。必要なプロキシ設定を行うときは、 [Using a Proxy](/docs/cli/configuring#using-a-proxy) をご覧ください。
+- グローバルなIonic CLIの設定ディレクトリは、すべてのプラットフォームで `~/.ionic` にあります。これは安全に削除することができ、Ionic CLIはそれを再読込します。しかし、すべての設定（ユーザセッションを含む）は失われます。ディレクトリの設定は [CLI environment variables](/docs/cli/configuration#environment-variables) をご覧ください。
