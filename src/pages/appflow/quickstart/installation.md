@@ -22,10 +22,10 @@ To install the plugin manually, run the following command in the root directory 
 making sure to substitute the correct values for your app:
 
 ```shell
-cordova plugin add cordova-plugin-ionic --save<br /> 
-    --variable APP_ID="YOUR_APP_ID" <br />
-    --variable CHANNEL_NAME="YOUR_CHANNEL_NAME" <br />
-    --variable UPDATE_METHOD="background|auto|none" <br />
+cordova plugin add cordova-plugin-ionic --save \
+    --variable APP_ID="YOUR_APP_ID" \
+    --variable CHANNEL_NAME="YOUR_CHANNEL_NAME" \
+    --variable UPDATE_METHOD="background|auto|none" \
     --variable MAX_STORE="3"
 ```
 
