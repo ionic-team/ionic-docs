@@ -7,6 +7,8 @@ nextUrl: '/docs/building/cross-platform'
 
 # Migration Guide
 
+> For a **complete list of breaking changes** from Ionic 3 to Ionic 4, please refer to [the breaking changes document](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md) in the Ionic core repo.
+
 ## Migrating from Ionic 3.0 to Ionic 4.0 - Overview
 
 We suggest the following general process when migrating an existing application from Ionic 3 to 4:
