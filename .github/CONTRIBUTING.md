@@ -36,11 +36,11 @@ At a high level, the production documentation works like this:
     ├── intro.json
     └── intro.md
     ```
-2. The `docs-page` component receives the current path (e.g. `/docs/intro`)
+2. At runtime, the `docs-page` component receives the current path (e.g. `/docs/intro`)
 3. The `docs-page` component fetches and parses the [JSON representation](https://ionicframework.com/docs/pages/intro.json) of that page
 4. The `docs-page` component renders that data using a [template](../src/components/page/templates)
 
-> **Note**: most reference content (e.g. APIs, native plugins, CLI commands) is not stored as Markdown. Those pages are created using data provided by other repositories and stored in `scripts/data`.
+> **Note**: most reference content (e.g. APIs, native plugins, CLI commands) is not stored as Markdown. Those pages are created using data provided by other repositories to the `build-pages` script.
 
 ### Directories
 
