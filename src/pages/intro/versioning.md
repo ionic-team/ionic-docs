@@ -27,7 +27,6 @@ A patch release will be published when bug fixes were included, but the API has 
 
 ## Changelog
 
-To see a list of all notable changes to Ionic please refer to the changelog. This contains an ordered
+To see a list of all notable changes to Ionic please refer to the <a href="https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md" target="_blank">changelog</a>. This contains an ordered
 list of all bug fixes and new features under each release.
-<a href="https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md" target="_blank">Changelog</a>
 
