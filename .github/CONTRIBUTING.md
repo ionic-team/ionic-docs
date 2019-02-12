@@ -65,7 +65,11 @@ The content of the Ionic docs is written as [Markdown](https://commonmark.org/) 
 /docs/theming           =>  src/pages/theming.md
 ```
 
-By default, the pages are only built once while starting the server. You can rebuild the pages continuously as you edit them by concurrently running the `watch-pages` script:
+You can make copy edits to the site by [editing the Markdown files directly on GitHub](https://help.github.com/articles/editing-files-in-another-user-s-repository/). In your pull request, please explain what was missing from or inaccurate about the content.
+
+### Authoring Locally
+
+To edit or create content locally, you'll need to [run the development server](#development-workflow). By default, the pages are only built once while starting the server. You can rebuild the pages continuously as you edit them by concurrently running the `watch-pages` script:
 
 ```sh
 $ npm run watch-pages
