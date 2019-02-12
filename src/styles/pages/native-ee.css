@@ -1,5 +1,19 @@
 @charset "UTF-8";
 
+.native-ee-detail {
+  float: right;
+}
+
+.cordova-ee-img{
+  width:50px;
+  float:left;
+  margin-right:20px;
+}
+
+.cordova-ee-card{
+  max-width:100%;
+}
+
 .native-ee-pricing svg {
     width:1em;
     height:1em;
