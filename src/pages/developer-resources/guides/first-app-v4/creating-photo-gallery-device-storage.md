@@ -3,6 +3,8 @@ previousText: 'Android, iOS, and the Camera - Oh My!'
 previousUrl: '/docs/developer-resources/guides/first-app-v4/ios-android-camera'
 nextText: 'Theming'
 nextUrl: '/docs/developer-resources/guides/first-app-v4/theming'
+contributors:
+  - jsonMartin
 ---
 
 # Creating a Photo Gallery with Device Storage
