@@ -1,6 +1,6 @@
 ---
-previousText: 'Native Errors'
-previousUrl: '/docs/faq/native'
+previousText: 'CORS Errors'
+previousUrl: '/docs/faq/cors'
 ---
 
 # 開発者向けのヒント

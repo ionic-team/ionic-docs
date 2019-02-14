@@ -36,11 +36,11 @@ At a high level, the production documentation works like this:
     ├── intro.json
     └── intro.md
     ```
-2. The `docs-page` component receives the current path (e.g. `/docs/intro`)
+2. At runtime, the `docs-page` component receives the current path (e.g. `/docs/intro`)
 3. The `docs-page` component fetches and parses the [JSON representation](https://ionicframework.com/docs/pages/intro.json) of that page
 4. The `docs-page` component renders that data using a [template](../src/components/page/templates)
 
-> **Note**: most reference content (e.g. APIs, native plugins, CLI commands) is not stored as Markdown. Those pages are created using data provided by other repositories and stored in `scripts/data`.
+> **Note**: most reference content (e.g. APIs, native plugins, CLI commands) is not stored as Markdown. Those pages are created using data provided by other repositories to the `build-pages` script.
 
 ### Directories
 
@@ -65,7 +65,11 @@ The content of the Ionic docs is written as [Markdown](https://commonmark.org/) 
 /docs/theming           =>  src/pages/theming.md
 ```
 
-By default, the pages are only built once while starting the server. You can rebuild the pages continuously as you edit them by concurrently running the `watch-pages` script:
+You can make copy edits to the site by [editing the Markdown files directly on GitHub](https://help.github.com/articles/editing-files-in-another-user-s-repository/). In your pull request, please explain what was missing from or inaccurate about the content.
+
+### Authoring Locally
+
+To edit or create content locally, you'll need to [run the development server](#development-workflow). By default, the pages are only built once while starting the server. You can rebuild the pages continuously as you edit them by concurrently running the `watch-pages` script:
 
 ```sh
 $ npm run watch-pages

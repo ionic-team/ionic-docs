@@ -7,7 +7,9 @@ nextUrl: '/docs/building/cross-platform'
 
 # v4への移行ガイド
 
-## 概要
+> For a **complete list of breaking changes** from Ionic 3 to Ionic 4, please refer to [the breaking changes document](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md) in the Ionic core repo.
+
+## Migrating from Ionic 3.0 to Ionic 4.0 - Overview
 
 既存のアプリケーションをIonic 3から4に移行するときは、次の一般的なプロセスをお勧めします。
 
@@ -247,7 +249,7 @@ v4でCustom Elementsに移行したため、各コンポーネントのマーク
 
 Migrating from Ionic 1 to Ionic 4.0 involves moving from AngularJS (aka Angular 1) to Angular 7+. There are many architectural differences between these versions, so some of the app code will have to be rewritten. The amount of work involved depends on the complexity and size of your app.
 
-One upside is that for the most part, the Ionic UI components you know and love from V1 haven’t changed much. 
+One upside is that for the most part, the Ionic UI components you know and love from V1 haven’t changed much.
 
 Here are some considerations to review before beginning the upgrade:
 - **App complexity**: Naturally, the larger and more complex the app is, the longer it will take to migrate.
@@ -255,7 +257,7 @@ Here are some considerations to review before beginning the upgrade:
 - **Budget and team makeup**: The length of a migration project will vary based on the size of your team, the complexity of the app, and the amount of time allotted to make the transition.
 
 ### Suggested Strategy
-Once your development team has identified a good time frame for beginning the migration, Ionic recommends feature-freezing the Ionic 1 application and getting the code in order: Fix any major bugs, eliminate tech debt, and reorganize as you see fit. Then, identify which features to migrate over and which to abandon. 
+Once your development team has identified a good time frame for beginning the migration, Ionic recommends feature-freezing the Ionic 1 application and getting the code in order: Fix any major bugs, eliminate tech debt, and reorganize as you see fit. Then, identify which features to migrate over and which to abandon.
 
 Once the Ionic 1 app is stable, create a new Ionic 4.0 project. The majority of the dev team’s attention should be given to the new project; only bugs should be fixed in the Ionic 1 app to ensure that the transition happens as quickly and smoothly as possible.
 

@@ -1,8 +1,8 @@
 ---
 previousText: 'Runtime Errors'
 previousUrl: '/docs/faq/runtime'
-nextText: 'Developer Tips'
-nextUrl: '/docs/faq/tips'
+nextText: 'CORS Errors'
+nextUrl: '/docs/faq/cors'
 ---
 
 # Native Errors

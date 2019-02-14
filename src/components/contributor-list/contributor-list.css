@@ -1,0 +1,39 @@
+contributor-list {
+  display: block;
+}
+
+contributor-list h5 {
+  margin: 10px 0;
+}
+
+contributor-list a {
+  display: inline-block;
+  width: 90px;
+  margin: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--accent-color);
+  font-size: 11px;
+}
+
+contributor-list .img-wrapper {
+  border-radius: 14px;
+  border: 2px solid var(--accent-color);
+  display: inline-block;
+  overflow: hidden;
+}
+
+contributor-list img {
+  display: block;
+  width: 45px;
+  height: 45px;
+}
+
+contributor-list .username {
+  display: block;
+  text-decoration: none;
+}
+
+contributor-list a:hover .username {
+  text-decoration: underline;
+}

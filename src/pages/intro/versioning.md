@@ -29,5 +29,4 @@ Ionic Frameworkは<a href="https://semver.org/" target="_blank">Semantic Version
 
 注目すべき変更点の一覧はchangelogで確認することができます。これには、
 各リリースでのすべてのバグ修正と新機能の一覧が含まれています。
-<a href="https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md" target="_blank">Changelog</a>
-
+<a href="https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md" target="_blank">changelog</a>
