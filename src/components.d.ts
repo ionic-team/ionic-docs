@@ -24,6 +24,15 @@ import {
 
 export namespace Components {
 
+  interface DocsButton {
+    'href': string;
+    'primary': boolean;
+  }
+  interface DocsButtonAttributes extends StencilHTMLAttributes {
+    'href'?: string;
+    'primary'?: boolean;
+  }
+
   interface DocsCard {
     'header': string;
     'href': string;
@@ -125,6 +134,13 @@ export namespace Components {
 
   interface CommandPrompt {}
   interface CommandPromptAttributes extends StencilHTMLAttributes {}
+
+  interface ContributorList {
+    'contributors': string[];
+  }
+  interface ContributorListAttributes extends StencilHTMLAttributes {
+    'contributors'?: string[];
+  }
 
   interface DocsDemo {
     'source': string;
@@ -248,6 +264,7 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
+    'DocsButton': Components.DocsButton;
     'DocsCard': Components.DocsCard;
     'DocsCards': Components.DocsCards;
     'CodeColor': Components.CodeColor;
@@ -262,6 +279,7 @@ declare global {
     'CommandLine': Components.CommandLine;
     'CommandOutput': Components.CommandOutput;
     'CommandPrompt': Components.CommandPrompt;
+    'ContributorList': Components.ContributorList;
     'DocsDemo': Components.DocsDemo;
     'DocsDropdown': Components.DocsDropdown;
     'FileTreeDirectory': Components.FileTreeDirectory;
@@ -285,6 +303,7 @@ declare global {
   }
 
   interface StencilIntrinsicElements {
+    'docs-button': Components.DocsButtonAttributes;
     'docs-card': Components.DocsCardAttributes;
     'docs-cards': Components.DocsCardsAttributes;
     'code-color': Components.CodeColorAttributes;
@@ -299,6 +318,7 @@ declare global {
     'command-line': Components.CommandLineAttributes;
     'command-output': Components.CommandOutputAttributes;
     'command-prompt': Components.CommandPromptAttributes;
+    'contributor-list': Components.ContributorListAttributes;
     'docs-demo': Components.DocsDemoAttributes;
     'docs-dropdown': Components.DocsDropdownAttributes;
     'file-tree-directory': Components.FileTreeDirectoryAttributes;
@@ -321,6 +341,12 @@ declare global {
     'wistia-video': Components.WistiaVideoAttributes;
   }
 
+
+  interface HTMLDocsButtonElement extends Components.DocsButton, HTMLStencilElement {}
+  var HTMLDocsButtonElement: {
+    prototype: HTMLDocsButtonElement;
+    new (): HTMLDocsButtonElement;
+  };
 
   interface HTMLDocsCardElement extends Components.DocsCard, HTMLStencilElement {}
   var HTMLDocsCardElement: {
@@ -404,6 +430,12 @@ declare global {
   var HTMLCommandPromptElement: {
     prototype: HTMLCommandPromptElement;
     new (): HTMLCommandPromptElement;
+  };
+
+  interface HTMLContributorListElement extends Components.ContributorList, HTMLStencilElement {}
+  var HTMLContributorListElement: {
+    prototype: HTMLContributorListElement;
+    new (): HTMLContributorListElement;
   };
 
   interface HTMLDocsDemoElement extends Components.DocsDemo, HTMLStencilElement {}
@@ -527,6 +559,7 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'docs-button': HTMLDocsButtonElement
     'docs-card': HTMLDocsCardElement
     'docs-cards': HTMLDocsCardsElement
     'code-color': HTMLCodeColorElement
@@ -541,6 +574,7 @@ declare global {
     'command-line': HTMLCommandLineElement
     'command-output': HTMLCommandOutputElement
     'command-prompt': HTMLCommandPromptElement
+    'contributor-list': HTMLContributorListElement
     'docs-demo': HTMLDocsDemoElement
     'docs-dropdown': HTMLDocsDropdownElement
     'file-tree-directory': HTMLFileTreeDirectoryElement
@@ -564,6 +598,7 @@ declare global {
   }
 
   interface ElementTagNameMap {
+    'docs-button': HTMLDocsButtonElement;
     'docs-card': HTMLDocsCardElement;
     'docs-cards': HTMLDocsCardsElement;
     'code-color': HTMLCodeColorElement;
@@ -578,6 +613,7 @@ declare global {
     'command-line': HTMLCommandLineElement;
     'command-output': HTMLCommandOutputElement;
     'command-prompt': HTMLCommandPromptElement;
+    'contributor-list': HTMLContributorListElement;
     'docs-demo': HTMLDocsDemoElement;
     'docs-dropdown': HTMLDocsDropdownElement;
     'file-tree-directory': HTMLFileTreeDirectoryElement;

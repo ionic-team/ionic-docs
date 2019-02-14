@@ -3,6 +3,8 @@ previousText: 'Android, iOS, and the Camera - Oh My!'
 previousUrl: '/docs/developer-resources/guides/first-app-v4/ios-android-camera'
 nextText: 'Theming'
 nextUrl: '/docs/developer-resources/guides/first-app-v4/theming'
+contributors:
+  - jsonMartin
 ---
 
 # Creating a Photo Gallery with Device Storage
@@ -88,14 +90,14 @@ Next, in `tab2.page.html`, remove the currentImage img tag. In its place, use an
 ```html
 <ion-grid>
   <ion-row>
-  <ion-col col-6 *ngFor="let photo of photoService.photos">
+    <ion-col size="6" *ngFor="let photo of photoService.photos">
       <img [src]="photo.data" />
-      </ion-col>
+    </ion-col>
   </ion-row>
 </ion-grid>
 ```
 
-Here, we loop through each photo in the PhotoServices photos array, adding a new column for each. Since an ion-row consists of 12 “blocks” of space, and we’re setting the size to 6 (“col-6”), only 2 photos are displayed per row.
+Here, we loop through each photo in the PhotoServices photos array, adding a new column for each. Since an ion-row consists of 12 “blocks” of space, and we’re setting the size to 6 (`size="6"`), only 2 photos are displayed per row.
 
 Last, update the Fab button to call the PhotoService’s `takePicture` method:
 
