@@ -70,4 +70,4 @@ DevAppを実行しているデバイスとコンピュータが同じネット�
 
 アプリがネイティブ機能を呼び出す場合場合、DevAppは呼び出しを処理して、実際に正しいネイティブ実装を返すことができます。
 
-DevAppはがサポートするプラグインのリストがあるので、詳細については [DevApp docs](https://ionicframework.com/docs/pro/devapp/) をご覧ください。
+DevAppがサポートするプラグインのリストがあるので、詳細については [DevApp docs](https://ionicframework.com/docs/pro/devapp/) をご覧ください。
