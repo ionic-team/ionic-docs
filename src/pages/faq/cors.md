@@ -122,7 +122,7 @@ In our example API, `GET` requests don't need to be preflighted because no JSON 
 | **Access-Control-Allow-Methods** | `methods`         | Which methods are allowed when accessing the resource: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`. |
 | **Access-Control-Allow-Headers** | `headers`         | Used in response to a preflight request to indicate which headers can be used when making the actual request, aside from the <a href="#simple-requests">simple headers</a>, which are always allowed. |
 | Access-Control-Allow-Credentials | `true` or `false` | Whether or not the request can be made with credentials.                                           |
-| Access-Control-Expose-Headers    | `headers`         | Whitelists the headers that the browser is allowed to access.                                      |
+| Access-Control-Expose-Headers    | `headers`         | Specifies the headers that the browser is allowed to access.                                       |
 | Access-Control-Max-Age           | `seconds`         | Indicates how long the results of a preflight request can be cached.                               |
 
 ### Browser Headers (Request)
@@ -204,7 +204,7 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
-const whitelist = [
+const allowedOrigins = [
   'capacitor://localhost',
   'ionic://localhost',
   'http://localhost',
@@ -212,10 +212,10 @@ const whitelist = [
   'http://localhost:8100'
 ];
 
-// Reflect the origin if it's in the whitelist or not defined (cURL, Postman, etc.)
+// Reflect the origin if it's in the allowed list or not defined (cURL, Postman, etc.)
 const corsOptions = {
   origin: (origin, callback) => {
-    if (whitelist.includes(origin) || !origin) {
+    if (allowedOrigins.includes(origin) || !origin) {
       callback(null, true);
     } else {
       callback(new Error('Origin not allowed by CORS'));
@@ -227,7 +227,7 @@ const corsOptions = {
 app.options('*', cors(corsOptions));
 
 app.get('/', cors(corsOptions), (req, res, next) => {
-  res.json({ message: 'This route is CORS-enabled for a whitelisted origin.' });
+  res.json({ message: 'This route is CORS-enabled for an allowed origin.' });
 })
 
 app.listen(3000, () => {
