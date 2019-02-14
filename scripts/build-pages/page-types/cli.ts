@@ -23,6 +23,7 @@ async function getCLIPages(): Promise<Page[]> {
       inputs: renderInputs(inputs),
       options: renderOptions(options),
       skipIntros: true,
+      template: 'cli',
       ...rest
     };
   });

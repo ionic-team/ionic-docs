@@ -6,6 +6,7 @@ export default (props) => {
   const events = renderEvents(page.events);
   const methods = renderMethods(page.methods);
   const customProps = renderCustomProps(page.styles);
+  const slots = renderSlots(page.slots);
 
   if (usage) {
     headings.push({
@@ -42,8 +43,15 @@ export default (props) => {
     });
   }
 
+  if (slots) {
+    headings.push({
+      text: 'Slots',
+      href: '#slots'
+    });
+  }
+
   return (
-    <main>
+    <article>
       <h1>{ page.title }</h1>
       <docs-table-of-contents links={headings} basepath={page.path}/>
       <section class="markdown-content" innerHTML={page.body}/>
@@ -52,7 +60,8 @@ export default (props) => {
       { events }
       { methods }
       { customProps }
-    </main>
+      { slots }
+    </article>
   );
 };
 
@@ -170,6 +179,36 @@ const renderCustomProps = (customProps = []) => {
             <tr>
               <td><code>{ prop.name }</code></td>
               <td>{ prop.docs }</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+  );
+};
+
+const renderSlots = (slots = []) => {
+  if (!slots.length) {
+    return null;
+  }
+
+  return (
+    <section>
+      <h2 id="slots">
+        <a href="#slots">Slots</a>
+      </h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {slots.map(slot => (
+            <tr>
+              <td>{ slot.name && <code>"{ slot.name }"</code>}</td>
+              <td>{ slot.docs }</td>
             </tr>
           ))}
         </tbody>
