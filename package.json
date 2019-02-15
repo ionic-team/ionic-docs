@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@ionic/core": "4.0.1",
-    "@ionic/docs": "^4.1.0-dev.201902122208.39fbc32",
+    "@ionic/docs": "^4.1.0-dev.201902142010.08fe8e4",
     "@stencil/core": "^0.17.2",
     "@stencil/router": "^0.3.3",
     "express": "^4.16.4"
