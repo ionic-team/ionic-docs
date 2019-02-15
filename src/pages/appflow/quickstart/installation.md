@@ -29,6 +29,8 @@ cordova plugin add cordova-plugin-ionic --save \
     --variable MAX_STORE="3"
 ```
 
+**NOTE**: The plugin delays the cordova ready event until it finish checking for updates and add this preference to the app `<preference name="AutoHideSplashScreen" value="false"/>`, which makes the Splash Screen to not go away automatically. All Ionic templates run `this.splashScreen.hide();` on cordova ready event, but if it was removed it should be added back. Alternatively the app can add `<preference name="AutoHideSplashScreen" value="true"/>` to override the value added by the plugin, but that can lead to the Splash Screen going away before the download is complete.
+
 ### Plugin Variables
 * `YOUR_APP_ID` is the ID of the app in Ionic Appflow.
 * `YOUR_CHANNEL_NAME` is the name of the [Channel](/docs/appflow/deploy/channels) you'd like the app to listen to for updates.
