@@ -1,24 +1,5 @@
 docs-nav {
-  color: var(--text-color--dark);
   display: block;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-docs-nav a {
-  color: inherit;
-  font-weight: inherit;
-  transition: color 100ms ease;
-}
-
-@media (hover: hover) {
-  docs-nav a:hover {
-    color: var(--text-color);
-  }
-}
-
-docs-nav a.link-active {
-  color: var(--accent-color);
 }
 
 docs-nav ul {
@@ -27,41 +8,60 @@ docs-nav ul {
   padding: 0;
 }
 
-docs-nav li {
-  margin-bottom: 18px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-docs-nav li:last-child {
-  margin-bottom: 0;
-}
-
-docs-nav section li {
-  margin-bottom: 10px;
-}
-
-docs-nav header {
-  align-items: center;
+.Nav {
   color: var(--text-color--dark);
+  font-size: 14px;
+  margin: 1rem 0 2rem;
+}
+
+.Nav-subnav {
+  color: var(--text-color--light);
+  font-size: 13px;
+}
+
+.Nav-link,
+.Nav-header {
+  background-color: rgba(0,0,0, var(--bg-alpha, 0));
+  color: inherit;
+  display: block;
+  font-size: inherit;
+  font-weight: 500;
+  padding: 5px 20px 5px calc(10px + var(--level, 1) * 10px);
+}
+
+@media (hover: hover) {
+  .Nav-link:hover {
+    --bg-alpha: 0.025;
+  }
+
+  .Nav-link:active {
+    --bg-alpha: 0.05;
+  }
+}
+
+.Nav-link--active {
+  border-left: solid 2px currentColor;
+  color: var(--accent-color);
+}
+
+.Nav-link.outbound {
+  align-items: center;
   display: flex;
 }
 
-docs-nav header > svg {
-  fill: currentColor;
-  height: 0.75em;
-  margin-bottom: -0.15em;
+.Nav-link.outbound svg {
+  flex: none;
   margin-left: 0.25em;
-  width: 0.75em;
 }
 
-docs-nav section header + ul {
-  font-size: 13px;
-  margin-top: 14px;
+.Nav-header {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
-docs-nav section ul {
-  color: var(--text-color--light);
-  margin-left: 10px;
+.Nav span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
