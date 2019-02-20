@@ -8,6 +8,7 @@ import { MenuItems } from '../../definitions';
 })
 export class DocsNav {
   @Element() element: HTMLElement;
+  @Prop({ context: 'isServer' }) private isServer: boolean;
   @Prop() items: MenuItems;
 
   private normalizeItems(items) {
@@ -82,7 +83,9 @@ export class DocsNav {
   }
 
   componentDidLoad() {
-    requestAnimationFrame(this.setScroll);
+    if (!this.isServer) {
+      requestAnimationFrame(this.setScroll);
+    }
   }
 
   hostData() {
