@@ -8,13 +8,22 @@ docs-nav ul {
   padding: 0;
 }
 
+docs-nav a {
+  color: inherit;
+  font-weight: inherit;
+}
+
 .Nav {
+  --item-spacing: 10px;
   color: var(--text-color--dark);
   font-size: 14px;
+  font-weight: 500;
+  line-height: 1.25;
   padding: 1rem 0 2rem;
 }
 
 .Nav-subnav {
+  --item-spacing: 5px;
   color: var(--text-color--light);
   font-size: 13px;
 }
@@ -22,11 +31,11 @@ docs-nav ul {
 .Nav-link,
 .Nav-header {
   background-color: rgba(0,0,0, var(--bg-alpha, 0));
-  color: inherit;
   display: block;
-  font-size: inherit;
-  font-weight: 500;
-  padding: 5px 20px 5px calc(10px + var(--level, 1) * 10px);
+  padding-top: var(--item-spacing);
+  padding-right: 20px;
+  padding-bottom: var(--item-spacing);
+  padding-left: calc(10px + var(--level, 1) * 10px);
 }
 
 @media (hover: hover) {
@@ -44,6 +53,11 @@ docs-nav ul {
   color: var(--accent-color);
 }
 
+.Nav-subnav .Nav-header {
+  color: var(--text-color);
+  font-weight: 600;
+}
+
 .Nav-link.outbound {
   align-items: center;
   display: flex;
@@ -52,11 +66,6 @@ docs-nav ul {
 .Nav-link.outbound svg {
   flex: none;
   margin-left: 0.25em;
-}
-
-.Nav-header {
-  padding-top: 10px;
-  padding-bottom: 10px;
 }
 
 .Nav span {
