@@ -11,7 +11,7 @@ docs-nav ul {
 .Nav {
   color: var(--text-color--dark);
   font-size: 14px;
-  margin: 1rem 0 2rem;
+  padding: 1rem 0 2rem;
 }
 
 .Nav-subnav {

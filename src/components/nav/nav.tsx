@@ -1,4 +1,4 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Element, Prop } from '@stencil/core';
 import { Outbound } from '../../icons';
 import { MenuItems } from '../../definitions';
 
@@ -7,6 +7,7 @@ import { MenuItems } from '../../definitions';
   styleUrl: 'nav.css'
 })
 export class DocsNav {
+  @Element() element: HTMLElement;
   @Prop() items: MenuItems;
 
   private normalizeItems(items) {
@@ -67,6 +68,21 @@ export class DocsNav {
         </ul>
       </section>
     );
+  }
+
+  setScroll = () => {
+    try {
+      this.element.querySelector('.Nav-link--active')
+        .scrollIntoView({
+          block: 'center'
+        });
+    } catch (err) {
+      this.element.scrollIntoView();
+    }
+  }
+
+  componentDidLoad() {
+    requestAnimationFrame(this.setScroll);
   }
 
   hostData() {
