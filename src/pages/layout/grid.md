@@ -7,10 +7,10 @@ nextText: 'CSS Utilities'
 nextUrl: '/docs/layout/css-utilities'
 ---
 
-<link rel="stylesheet" href="https://unpkg.com/@ionic/core/css/padding.css">
-<link rel="stylesheet" href="https://unpkg.com/@ionic/core/css/float-elements.css">
 <link rel="stylesheet" href="https://unpkg.com/@ionic/core/css/text-alignment.css">
 <link rel="stylesheet" href="https://unpkg.com/@ionic/core/css/text-transformation.css">
+<link rel="stylesheet" href="https://unpkg.com/@ionic/core/css/float-elements.css">
+<link rel="stylesheet" href="https://unpkg.com/@ionic/core/css/padding.css">
 <link rel="stylesheet" href="https://unpkg.com/@ionic/core/css/flex-utils.css">
 
 # Responsive Grid
@@ -389,11 +389,11 @@ Push and pull can also be added based on screen breakpoints. In the following ex
 
 ### Vertical alignment
 
-All columns can be vertically aligned inside of a row by adding different attributes to the row. For a list of available attributes, see [css utilities](/docs/layout/css-utilities#flex-container-properties).
+All columns can be vertically aligned inside of a row by adding different classes to the row. For a list of available classes, see [css utilities](/docs/layout/css-utilities#flex-container-properties).
 
 ```html
 <ion-grid>
-  <ion-row align-items-start>
+  <ion-row class="ion-align-items-start">
     <ion-col>
       <div>
         1 of 4
@@ -419,7 +419,7 @@ All columns can be vertically aligned inside of a row by adding different attrib
     </ion-col>
   </ion-row>
 
-  <ion-row align-items-center>
+  <ion-row class="ion-align-items-center">
     <ion-col>
       <div>
         1 of 4
@@ -445,7 +445,7 @@ All columns can be vertically aligned inside of a row by adding different attrib
     </ion-col>
   </ion-row>
 
-  <ion-row align-items-end>
+  <ion-row class="ion-align-items-end">
     <ion-col>
       <div>
         1 of 4
@@ -473,22 +473,22 @@ All columns can be vertically aligned inside of a row by adding different attrib
 </ion-grid>
 ```
 
-Columns can also align themselves differently than other columns by adding the alignment attribute directly to the column. For a list of available attributes, see [css utilities](/docs/layout/css-utilities#flex-item-properties).
+Columns can also align themselves differently than other columns by adding the alignment class directly to the column. For a list of available classes, see [css utilities](/docs/layout/css-utilities#flex-item-properties).
 
 ```html
 <ion-grid>
   <ion-row>
-    <ion-col align-self-start>
+    <ion-col class="ion-align-self-start">
       <div>
         1 of 4
       </div>
     </ion-col>
-    <ion-col align-self-center>
+    <ion-col class="ion-align-self-center">
       <div>
         2 of 4
       </div>
     </ion-col>
-    <ion-col align-self-end>
+    <ion-col class="ion-align-self-end">
       <div>
         3 of 4
       </div>
@@ -507,11 +507,11 @@ Columns can also align themselves differently than other columns by adding the a
 
 ### Horizontal alignment
 
-All columns can be horizontally aligned inside of a row by adding different attributes to the row. For a list of available attributes, see [css utilities](/docs/layout/css-utilities#flex-container-properties).
+All columns can be horizontally aligned inside of a row by adding different classes to the row. For a list of available classes, see [css utilities](/docs/layout/css-utilities#flex-container-properties).
 
 ```html
 <ion-grid>
-  <ion-row justify-content-start>
+  <ion-row class="ion-justify-content-start">
     <ion-col size="3">
       <div>
         1 of 2
@@ -524,7 +524,7 @@ All columns can be horizontally aligned inside of a row by adding different attr
     </ion-col>
   </ion-row>
 
-  <ion-row justify-content-center>
+  <ion-row class="ion-justify-content-center">
     <ion-col size="3">
       <div>
         1 of 2
@@ -537,7 +537,7 @@ All columns can be horizontally aligned inside of a row by adding different attr
     </ion-col>
   </ion-row>
 
-  <ion-row justify-content-end>
+  <ion-row class="ion-justify-content-end">
     <ion-col size="3">
       <div>
         1 of 2
@@ -550,7 +550,7 @@ All columns can be horizontally aligned inside of a row by adding different attr
     </ion-col>
   </ion-row>
 
-  <ion-row justify-content-around>
+  <ion-row class="ion-justify-content-around">
     <ion-col size="3">
       <div>
         1 of 2
@@ -563,7 +563,7 @@ All columns can be horizontally aligned inside of a row by adding different attr
     </ion-col>
   </ion-row>
 
-  <ion-row justify-content-between>
+  <ion-row class="ion-justify-content-between">
     <ion-col size="3">
       <div>
         1 of 2
