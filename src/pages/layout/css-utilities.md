@@ -176,14 +176,14 @@ The table below shows the default behavior, where `{modifier}` is any of the fol
 | `float-lg-{modifier}`  | Applies the modifier to the element when `min-width: 992px`.        |
 | `float-xl-{modifier}`  | Applies the modifier to the element when `min-width: 1200px`.       |
 
-## Element Visibility
+## Element Display
 
 The display CSS property determines if an element should be visible or not. The element will still be in the DOM, but not rendered, if it is hidden.
 
 ```html
 <ion-grid>
   <ion-row>
-    <ion-col hidden>
+    <ion-col class="ion-hide">
       <div>
         <h3>hidden</h3>
         You can't see me.
@@ -199,21 +199,21 @@ The display CSS property determines if an element should be visible or not. The 
 </ion-grid>
 ```
 
-| Attribute     | Style Rule                      | Description                                                                                               |
+| Class         | Style Rule                      | Description                                                                                               |
 |---------------|---------------------------------|-----------------------------------------------------------------------------------------------------------|
-| `hidden`      | `display: hidden`               | The element will be hidden. 
+| `.ion-hide`   | `display: hidden`               | The element will be hidden. 
 
-### Responsive Visibility Attributes
+### Responsive Display Attributes
 
-There are also additional attributes to modify the visibility based on the screen size. Instead of just `hidden` as a sole attribute, use `hidden-{breakpoint}-{dir}` to only use the attribute on specific screen sizes, where `{breakpoint}` is one of the defined breakpoints in the `--screen-breakpoints` variable, and `{dir}` is whether the element should be hidden on all screen sizes above or below the current one.
+There are also additional classes to modify the visibility based on the screen size. Instead of just `.ion-hide` as a sole class, use `.ion-hide-{breakpoint}-{dir}` to only use the attribute on specific screen sizes, where `{breakpoint}` is one of the defined breakpoints in the `--screen-breakpoints` variable, and `{dir}` is whether the element should be hidden on all screen sizes above or below the current one.
 The table below shows the default behavior, where `{dir}` is any of the following: `up` or `down`, as they are described above.
 
-| Attribute              | Description                                                                                                    |
-|------------------------|---------------------------------------------------------------------------------------------------------------|
-| `hidden-sm-{dir}`      | Applies the modifier to the element when `min-width: 576px` (`up`) or `max-width: 576px` (`down`).            |
-| `hidden-md-{dir}`      | Applies the modifier to the element when `min-width: 768px` (`up`) or `max-width: 768px` (`down`).            |
-| `hidden-lg-{dir}`      | Applies the modifier to the element when `min-width: 992px` (`up`) or `max-width: 992px` (`down`).            |
-| `hidden-xl-{dir}`      | Applies the modifier to the element when `min-width: 1200px` (`up`) or `max-width: 1200px` (`down`).  |
+| Class                  | Description                                                                                                    |
+|------------------------|--------------------------------------------------------------------------------------------------------------|
+| `.ion-hide-sm-{dir}`   | Applies the modifier to the element when `min-width: 576px` (`up`) or `max-width: 576px` (`down`).            |
+| `.ion-hide-md-{dir}`   | Applies the modifier to the element when `min-width: 768px` (`up`) or `max-width: 768px` (`down`).            |
+| `.ion-hide-lg-{dir}`   | Applies the modifier to the element when `min-width: 992px` (`up`) or `max-width: 992px` (`down`).            |
+| `.ion-hide-xl-{dir}`   | Applies the modifier to the element when `min-width: 1200px` (`up`) or `max-width: 1200px` (`down`).  |
 
 ## Content Space
 
