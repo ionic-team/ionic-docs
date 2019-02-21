@@ -525,7 +525,7 @@ The default configuration uses the same `environment.ts` file that is used for d
 
 #### Testing Environment
 
-Setting up a testing environment involves creating a new environment file that uses a dedicated testing backend and updating the `angular.json` file to use that environment.
+Setting up a testing environment involves creating a new environment file that uses a dedicated testing backend, updating the `angular.json` file to use that environment, and modifying the `e2e` script in the `package.json` to specify the `test` environment.
 
 ##### Create the `environment.e2e.ts` File
 
@@ -571,6 +571,22 @@ Add a configuration at `/projects/app-e2e/architect/e2e/configurations` called `
             "test": {
               "devServerTarget": "app:serve:test"
             }
+```
+
+##### Modify the `package.json` File
+
+Modify the `package.json` file so that `npm run e2e` uses the `test` configuration.
+
+```JSON
+  "scripts": {
+    "e2e": "ng e2e --configuration=test",
+    "lint": "ng lint",
+    "ng": "ng",
+    "start": "ng serve",
+    "test": "ng test",
+    "test:dev": "ng test --browsers=ChromeHeadlessCI",
+    "test:ci": "ng test --no-watch --browsers=ChromeHeadlessCI"
+  },
 ```
 
 #### Test Cleanup
