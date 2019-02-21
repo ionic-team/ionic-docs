@@ -11,9 +11,11 @@ When an `@ionic/angular` application is generated using the Ionic CLI, it is aut
 
 ## Testing Principles
 
-When testing the application, it is best to keep in mind that the goal of testing is not to verify that the code is correct but is to find problems with the code so bugs can be resolved earlier in the development cycle when fixes are less expensive. This is a subtle but important distinction.
+When testing an application, it is best to keep in mind that testing can show if defects are present in a system. However, it is impossible to prove that any non-trivial system is completely free of defects. For this reason, the goal of testing is not to verify that the code is correct but is to find problems within the code. This is a subtle but important distinction.
 
 If we set out to prove that the code is correct, we are more likely to stick to the happy path through the code. If we set out to find problems, we are more likely to more fully exercise the code and find the bugs that are lurking there.
+
+It is also best to begin testing an application from the very start. This allows defects to be found early in the process when they are easier to fix. This also allows code to be refactored with confidence as new features are added to the system.
 
 ## Unit Testing
 
