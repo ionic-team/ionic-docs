@@ -21,9 +21,15 @@ on the Channels list in the Appflow Dashboard.
 To install the plugin manually, run the following command in the root directory of your Ionic app,
 making sure to substitute the correct values for your app:
 
-<command-line>
-<command-prompt>cordova plugin add cordova-plugin-ionic --save --variable APP_ID="YOUR_APP_ID" --variable CHANNEL_NAME="YOUR_CHANNEL_NAME" --variable UPDATE_METHOD="background|auto|none" --variable MAX_STORE="3"</command-prompt>
-</command-line>
+```shell
+cordova plugin add cordova-plugin-ionic --save \
+    --variable APP_ID="YOUR_APP_ID" \
+    --variable CHANNEL_NAME="YOUR_CHANNEL_NAME" \
+    --variable UPDATE_METHOD="background|auto|none" \
+    --variable MAX_STORE="3"
+```
+
+**NOTE**: The plugin delays the cordova ready event until it finish checking for updates and add this preference to the app `<preference name="AutoHideSplashScreen" value="false"/>`, which makes the Splash Screen to not go away automatically. All Ionic templates run `this.splashScreen.hide();` on cordova ready event, but if it was removed it should be added back. Alternatively the app can add `<preference name="AutoHideSplashScreen" value="true"/>` to override the value added by the plugin, but that can lead to the Splash Screen going away before the download is complete.
 
 ### Plugin Variables
 * `YOUR_APP_ID` is the ID of the app in Ionic Appflow.

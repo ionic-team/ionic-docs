@@ -1,0 +1,43 @@
+docs-button {
+  background-color: var(--background);
+  border: solid 1px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.02);
+  color: var(--accent-color);
+  display: inline-block;
+  font-weight: 600;
+  transition: all 50ms ease-out;
+}
+
+docs-button a,
+docs-button button {
+  color: inherit;
+  display: inline-block;
+  font-size: inherit;
+  font-weight: inherit;
+  padding: 0.75em 1.5em;
+}
+
+docs-button button {
+  appearance: none;
+  background: none;
+  border: none;
+  line-height: inherit;
+}
+
+docs-button[primary] {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+@media (hover: hover) {
+  docs-button:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.04);
+    transform: translateY(-1px);
+  }
+
+  docs-button:active {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+}

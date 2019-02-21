@@ -1,76 +1,104 @@
-import { Component, Prop } from '@stencil/core';
-import { MenuItems } from '../../definitions';
+import { Component, Element, Prop } from '@stencil/core';
 import { Outbound } from '../../icons';
-import { NavItem } from './nav-item';
+import { MenuItems } from '../../definitions';
 
 @Component({
   tag: 'docs-nav',
   styleUrl: 'nav.css'
 })
 export class DocsNav {
-  @Prop() items: MenuItems = {};
+  @Element() element: HTMLElement;
+  @Prop({ context: 'isServer' }) private isServer: boolean;
+  @Prop() items: MenuItems;
 
-  toItem = ([text, value]) => {
+  private normalizeItems(items) {
+    return Array.isArray(items) ? items : Object.entries(items);
+  }
+
+  private isExternalLink(href: string) {
+    return href.indexOf('http') === 0;
+  }
+
+  toItem = (item, level) => {
+    const [, value] = item;
     switch (typeof value) {
       case 'string':
-        return <li key={text}>{this.toLink([text, value])}</li>;
+        return <li key={item}>{this.toLink(item)}</li>;
       case 'object':
-        return <li key={text}>{this.toSection([text, value])}</li>;
+        return <li key={item}>{this.toSection(item, level + 1)}</li>;
+      default:
+        return null;
     }
   }
 
-  toLink = ([text, url]) => {
-    const isExternal = url.indexOf('http') === 0;
+  toLink = (item) => {
+    const [text, href] = item;
+    const isExternal = this.isExternalLink(href);
 
     if (isExternal) {
       return (
-        <a
-          href={url}
-          class="outbound"
-          target="_blank">
-            {text} <Outbound/>
+        <a href={href}
+          target="_blank"
+          class="Nav-link outbound">
+            <span>{text}</span> <Outbound/>
         </a>
       );
     }
 
     return (
       <stencil-route-link
-        url={url}
-        exact>
-          {text}
+        url={href}
+        strict={false}
+        exact
+        activeClass="Nav-link--active"
+        anchorClass="Nav-link">
+          <span>{text}</span>
       </stencil-route-link>
     );
   }
 
-  findHeaderLink = (value: string[]) => {
-    return value.length && value[0] === 'item+default';
-  }
-
-  toSection = ([header, value]) => {
-    let headerLink: string;
-    if (value instanceof NavItem) {
-      headerLink = value.defaultUrl;
-      value = value.navItems;
-    }
-    const items = Array.isArray(value) ? value : Object.entries(value);
+  toSection = ([text, value], level) => {
+    const items = this.normalizeItems(value);
     return (
       <section>
-        <header>{headerLink ? this.toLink([header, headerLink]) : header}</header>
-        <ul>
-          {items.map(this.toItem)}
+        <header class="Nav-header">{text}</header>
+        <ul
+          class="Nav-subnav"
+          style={{ '--level': level }}>
+            {items.map(item => this.toItem(item, level))}
         </ul>
       </section>
     );
   }
 
+  setScroll = () => {
+    try {
+      this.element.querySelector('.Nav-link--active')
+        .scrollIntoView({
+          block: 'center'
+        });
+    } catch (err) {
+      this.element.scrollIntoView();
+    }
+  }
+
+  componentDidLoad() {
+    if (!this.isServer) {
+      requestAnimationFrame(this.setScroll);
+    }
+  }
+
+  hostData() {
+    return {
+      'role': 'navigation'
+    };
+  }
+
   render() {
-    const items = Object.entries(this.items);
     return (
-      <nav>
-        <ul>
-          {items.map(this.toItem)}
-        </ul>
-      </nav>
+      <ul class="Nav">
+        {this.normalizeItems(this.items).map(item => this.toItem(item, 1))}
+      </ul>
     );
   }
 }

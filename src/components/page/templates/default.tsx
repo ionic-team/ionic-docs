@@ -1,26 +1,12 @@
 export default (props) => {
   const { page } = props;
-  const demoPreview = renderDemoPreview(page);
 
   return (
-    <main class="docs-guide">
-      <div class="docs-content-pane">
-        <h1>{ page.title }</h1>
-        <docs-table-of-contents links={page.headings} basepath={page.path}/>
-        <section class="markdown-content" innerHTML={page.body}/>
-      </div>
-      { demoPreview }
-    </main>
-  );
-};
-
-const renderDemoPreview = (page: any) => {
-  if (!page.previewUrl) {
-    return null;
-  }
-  return (
-    <div class="docs-preview-pane">
-      <docs-preview url={ page.previewUrl }></docs-preview>
-    </div>
+    <article>
+      <h1>{ page.title }</h1>
+      <docs-table-of-contents links={page.headings} basepath={page.path}/>
+      <section class="markdown-content" innerHTML={page.body}/>
+      <contributor-list contributors={page.contributors}/>
+    </article>
   );
 };

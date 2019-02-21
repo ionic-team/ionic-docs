@@ -44,7 +44,7 @@ $ npm install -g firebase-tools
 ```
 
 With the Firebase CLI installed run `firebase init` in the project.
-This will set generate a `firebase.json` config file and configure the app for deployment.
+This will generate a `firebase.json` config file and configure the app for deployment.
 
 > `firebase init` will present a few question, including one about redirecting URLs to `/index.html`.
 > Make sure to choose **yes** for this option, but **no** to overwriting your index.html.

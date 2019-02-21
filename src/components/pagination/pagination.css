@@ -3,7 +3,7 @@ docs-pagination {
   border-style: solid;
   border-width: 1px 0;
   display: flex;
-  padding: 2rem 4rem;
+  padding: var(--page-padding, 2rem 3rem);
 }
 
 docs-pagination .next,
@@ -25,7 +25,19 @@ docs-pagination .previous {
 
 docs-pagination a {
   align-items: center;
+  border-radius: 4px;
   display: flex;
+  padding: 1em 1.5em;
+}
+
+@media (hover: hover) {
+  docs-pagination a:hover {
+    background-color: rgba(0, 0, 0, 0.025);
+  }
+
+  docs-pagination a:active {
+    background-color: rgba(0, 0, 0, 0.035);
+  }
 }
 
 docs-pagination span {

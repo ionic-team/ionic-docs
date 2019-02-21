@@ -24,7 +24,8 @@ async function getNativePages(): Promise<Page[]> {
       platforms,
       usage: usage ? renderMarkdown(usage) : null,
       package: plugin.name,
-      cordova: plugin.cordovaPlugin.name
+      cordova: plugin.cordovaPlugin.name,
+      template: 'native'
     };
   });
 }

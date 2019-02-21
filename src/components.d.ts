@@ -24,6 +24,15 @@ import {
 
 export namespace Components {
 
+  interface DocsButton {
+    'href': string;
+    'primary': boolean;
+  }
+  interface DocsButtonAttributes extends StencilHTMLAttributes {
+    'href'?: string;
+    'primary'?: boolean;
+  }
+
   interface DocsCard {
     'header': string;
     'href': string;
@@ -63,7 +72,7 @@ export namespace Components {
 
   interface ColorGenerator {}
   interface ColorGeneratorAttributes extends StencilHTMLAttributes {
-    'onPreviewMessage'?: (event: CustomEvent) => void;
+    'onDemoMessage'?: (event: CustomEvent) => void;
   }
 
   interface ColorGenCssText {
@@ -126,6 +135,22 @@ export namespace Components {
   interface CommandPrompt {}
   interface CommandPromptAttributes extends StencilHTMLAttributes {}
 
+  interface ContributorList {
+    'contributors': string[];
+  }
+  interface ContributorListAttributes extends StencilHTMLAttributes {
+    'contributors'?: string[];
+  }
+
+  interface DocsDemo {
+    'source': string;
+    'url': string;
+  }
+  interface DocsDemoAttributes extends StencilHTMLAttributes {
+    'source'?: string;
+    'url'?: string;
+  }
+
   interface DocsDropdown {
     'close': () => void;
     'label': string;
@@ -185,17 +210,6 @@ export namespace Components {
     'page'?: Page;
   }
 
-  interface DocsPreview {
-    'source': string;
-    'url': string;
-    'urlFragment': string;
-  }
-  interface DocsPreviewAttributes extends StencilHTMLAttributes {
-    'source'?: string;
-    'url'?: string;
-    'urlFragment'?: string;
-  }
-
   interface DocsReference {
     'data': any[];
     'keys': ReferenceKeys;
@@ -250,6 +264,7 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
+    'DocsButton': Components.DocsButton;
     'DocsCard': Components.DocsCard;
     'DocsCards': Components.DocsCards;
     'CodeColor': Components.CodeColor;
@@ -264,6 +279,8 @@ declare global {
     'CommandLine': Components.CommandLine;
     'CommandOutput': Components.CommandOutput;
     'CommandPrompt': Components.CommandPrompt;
+    'ContributorList': Components.ContributorList;
+    'DocsDemo': Components.DocsDemo;
     'DocsDropdown': Components.DocsDropdown;
     'FileTreeDirectory': Components.FileTreeDirectory;
     'FileTreeFile': Components.FileTreeFile;
@@ -274,7 +291,6 @@ declare global {
     'DocsNav': Components.DocsNav;
     'DocsPage': Components.DocsPage;
     'DocsPagination': Components.DocsPagination;
-    'DocsPreview': Components.DocsPreview;
     'DocsReference': Components.DocsReference;
     'DocsRoot': Components.DocsRoot;
     'DocsSearch': Components.DocsSearch;
@@ -287,6 +303,7 @@ declare global {
   }
 
   interface StencilIntrinsicElements {
+    'docs-button': Components.DocsButtonAttributes;
     'docs-card': Components.DocsCardAttributes;
     'docs-cards': Components.DocsCardsAttributes;
     'code-color': Components.CodeColorAttributes;
@@ -301,6 +318,8 @@ declare global {
     'command-line': Components.CommandLineAttributes;
     'command-output': Components.CommandOutputAttributes;
     'command-prompt': Components.CommandPromptAttributes;
+    'contributor-list': Components.ContributorListAttributes;
+    'docs-demo': Components.DocsDemoAttributes;
     'docs-dropdown': Components.DocsDropdownAttributes;
     'file-tree-directory': Components.FileTreeDirectoryAttributes;
     'file-tree-file': Components.FileTreeFileAttributes;
@@ -311,7 +330,6 @@ declare global {
     'docs-nav': Components.DocsNavAttributes;
     'docs-page': Components.DocsPageAttributes;
     'docs-pagination': Components.DocsPaginationAttributes;
-    'docs-preview': Components.DocsPreviewAttributes;
     'docs-reference': Components.DocsReferenceAttributes;
     'docs-root': Components.DocsRootAttributes;
     'docs-search': Components.DocsSearchAttributes;
@@ -323,6 +341,12 @@ declare global {
     'wistia-video': Components.WistiaVideoAttributes;
   }
 
+
+  interface HTMLDocsButtonElement extends Components.DocsButton, HTMLStencilElement {}
+  var HTMLDocsButtonElement: {
+    prototype: HTMLDocsButtonElement;
+    new (): HTMLDocsButtonElement;
+  };
 
   interface HTMLDocsCardElement extends Components.DocsCard, HTMLStencilElement {}
   var HTMLDocsCardElement: {
@@ -408,6 +432,18 @@ declare global {
     new (): HTMLCommandPromptElement;
   };
 
+  interface HTMLContributorListElement extends Components.ContributorList, HTMLStencilElement {}
+  var HTMLContributorListElement: {
+    prototype: HTMLContributorListElement;
+    new (): HTMLContributorListElement;
+  };
+
+  interface HTMLDocsDemoElement extends Components.DocsDemo, HTMLStencilElement {}
+  var HTMLDocsDemoElement: {
+    prototype: HTMLDocsDemoElement;
+    new (): HTMLDocsDemoElement;
+  };
+
   interface HTMLDocsDropdownElement extends Components.DocsDropdown, HTMLStencilElement {}
   var HTMLDocsDropdownElement: {
     prototype: HTMLDocsDropdownElement;
@@ -468,12 +504,6 @@ declare global {
     new (): HTMLDocsPaginationElement;
   };
 
-  interface HTMLDocsPreviewElement extends Components.DocsPreview, HTMLStencilElement {}
-  var HTMLDocsPreviewElement: {
-    prototype: HTMLDocsPreviewElement;
-    new (): HTMLDocsPreviewElement;
-  };
-
   interface HTMLDocsReferenceElement extends Components.DocsReference, HTMLStencilElement {}
   var HTMLDocsReferenceElement: {
     prototype: HTMLDocsReferenceElement;
@@ -529,6 +559,7 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'docs-button': HTMLDocsButtonElement
     'docs-card': HTMLDocsCardElement
     'docs-cards': HTMLDocsCardsElement
     'code-color': HTMLCodeColorElement
@@ -543,6 +574,8 @@ declare global {
     'command-line': HTMLCommandLineElement
     'command-output': HTMLCommandOutputElement
     'command-prompt': HTMLCommandPromptElement
+    'contributor-list': HTMLContributorListElement
+    'docs-demo': HTMLDocsDemoElement
     'docs-dropdown': HTMLDocsDropdownElement
     'file-tree-directory': HTMLFileTreeDirectoryElement
     'file-tree-file': HTMLFileTreeFileElement
@@ -553,7 +586,6 @@ declare global {
     'docs-nav': HTMLDocsNavElement
     'docs-page': HTMLDocsPageElement
     'docs-pagination': HTMLDocsPaginationElement
-    'docs-preview': HTMLDocsPreviewElement
     'docs-reference': HTMLDocsReferenceElement
     'docs-root': HTMLDocsRootElement
     'docs-search': HTMLDocsSearchElement
@@ -566,6 +598,7 @@ declare global {
   }
 
   interface ElementTagNameMap {
+    'docs-button': HTMLDocsButtonElement;
     'docs-card': HTMLDocsCardElement;
     'docs-cards': HTMLDocsCardsElement;
     'code-color': HTMLCodeColorElement;
@@ -580,6 +613,8 @@ declare global {
     'command-line': HTMLCommandLineElement;
     'command-output': HTMLCommandOutputElement;
     'command-prompt': HTMLCommandPromptElement;
+    'contributor-list': HTMLContributorListElement;
+    'docs-demo': HTMLDocsDemoElement;
     'docs-dropdown': HTMLDocsDropdownElement;
     'file-tree-directory': HTMLFileTreeDirectoryElement;
     'file-tree-file': HTMLFileTreeFileElement;
@@ -590,7 +625,6 @@ declare global {
     'docs-nav': HTMLDocsNavElement;
     'docs-page': HTMLDocsPageElement;
     'docs-pagination': HTMLDocsPaginationElement;
-    'docs-preview': HTMLDocsPreviewElement;
     'docs-reference': HTMLDocsReferenceElement;
     'docs-root': HTMLDocsRootElement;
     'docs-search': HTMLDocsSearchElement;
