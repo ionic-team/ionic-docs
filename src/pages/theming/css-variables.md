@@ -7,7 +7,7 @@ nextUrl: '/docs/theming/color-generator'
 
 # CSS変数
 
-Ionicのコンポーネントは、アプリケーションを簡単にカスタマイズできるように<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">CSS変数</a>を使用して構築されています。CSS変数を使用すると、1か所に保存している値を、他の複数の場所から参照できます。それらはまた実行時に動的にCSSを変更することを可能にします（以前はCSSプリプロセッサが必要でした）。CSS変数を使用すると、ブランディングやテーマに合わせてIonicコンポーネントをオーバーライドすることがこれまでになく簡単になります。
+Ionicのコンポーネントは、アプリケーションを簡単にカスタマイズできるように<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">CSS変数</a>を使用して構築されています。CSS変数を使用すると、1か所に保存している値を、他の複数の場所から参照できます。また、実行時に動的にCSSを変更することを可能にします（以前はCSSプリプロセッサが必要でした）。CSS変数を使用すると、ブランディングやテーマに合わせてIonicコンポーネントをオーバーライドすることが、これまでになく簡単になります。
 
 ## 変数の設定
 
@@ -68,7 +68,7 @@ el.style.setProperty('--background', '#36454f');
 
 ### CSSでの使い方
 
-[var() CSS function](https://developer.mozilla.org/en-US/docs/Web/CSS/var) を使うと、失敗した時の値とともにCSS変数を取得することができます。 例えば、以下の例では `--background` プロパティに `--charcoal` 変数を利用しますが、もし値を使うことができなければ代わりに `#36454f` が適用されます。
+[CSSの var() 関数](https://developer.mozilla.org/en-US/docs/Web/CSS/var) を使うと、失敗した時の設定とともにCSS変数を取得することができます。 例えば、以下の例では `--background` プロパティに `--charcoal` 変数を利用しますが、もし値を取得できなければ代わりに `#36454f` が適用されます。
 
 ```css
 .fancy-button {

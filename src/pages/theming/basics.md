@@ -14,21 +14,21 @@ Ionic Frameworkは、さまざまなプラットフォームの標準デザイ�
 
 Ionicには、多くのコンポーネントの配色を変更するために使用できる9つのデフォルトカラーがあります。 それぞれの配色は、 `shade` と `tint` を含む複数のプロパティを持つコレクションであり、Ionic全体で利用されます。
 
-配色を変更するときは、関連するすべてのプロパティを設定することが重要です。[Color Generator](/docs/theming/color-generator) を使えば、これは簡単にできますし、必要に応じてこれらを手動で書き込むこともできます。Ionicの配色についての詳細は イオンカラーの詳細については、[Advanced Colors](/docs/theming/advanced#colors) をご覧ください。
+配色を変更するときは、関連するすべてのプロパティを設定することが重要です。[Color Generator](/docs/theming/color-generator) を使えば、これは簡単に設定できますし、必要に応じてこれらを手動で書き込むこともできます。Ionicの配色についての詳細は [Advanced Colors](/docs/theming/advanced#colors) をご覧ください。
 
 <color-accordion></color-accordion>
 
 
 ## プラットフォームの標準
 
-Ionicのコンポーネントは、アプリケーションが実行されているプラ​​ットフォームに基づいて外観と動作を調整します。私たちはこれを <strong>Platform Continuity</strong> と呼んでいます。これにより、開発者は複数のプラットフォームで同じコードベースを使用するアプリケーションを構築することができますが、それでもそれらはプラットフォームにおいて「ネイティブ」に見えます。
+Ionicのコンポーネントは、アプリケーションが実行されているプラ​​ットフォームに基づいて外観と動作を調整します。私たちはこれを <strong>Platformの継続性</strong> と呼んでいます。これにより、開発者は複数のプラットフォームにおいて同じコードベースでアプリケーションを構築することができますが、それでもそれらはプラットフォームにおける「ネイティブ」に見えます。
 
-Ionicは、2つの **modes** をもっており、これらはプラットフォーム: `ios` と `md` に基づいてコンポーネントの外観がカスタマイズされます。各プラットフォームにはデフォルトモードがありますが、これは簡単に変更できます。プラットフォームに基づいてアプリケーションをカスタマイズする方法の詳細については、[Platform Styles](/docs/theming/platform-styles) をご覧ください。
+Ionicは、2つの **modes** をもっており、これらはプラットフォーム: `ios` と `md` に基づいてコンポーネントの外観がカスタマイズされます。各プラットフォームにはデフォルトモードがありますが、簡単に変更できます。プラットフォームに基づいてアプリケーションをカスタマイズする方法の詳細については、[Platform Styles](/docs/theming/platform-styles) をご覧ください。
 
 
 ## CSS変数
 
-すべてのIonicコンポーネントは、<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">CSSプロパティ（変数）</a>を使ってテーマ化されています。CSS変数は、動的な値を静的なCSSに追加します。これは今まではSassのようなCSSプリプロセッサを必要としていたものです。アプリケーションの外観は、[Ionic Variables](/docs/theming/css-variables#ionic-variables)のいずれかの値を変更することで簡単に変更できます。
+すべてのIonicコンポーネントは、<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">CSSプロパティ（変数）</a>を使ってテーマ化されています。CSS変数は、動的な値を静的なCSSで利用することができます。これは今まではSassのようなCSSプリプロセッサを必要としていたものです。アプリケーションの外観は、[Ionic Variables](/docs/theming/css-variables#ionic-variables)のいずれかの値を変更することで簡単に変更できます。
 
 
 ## ブランディング
