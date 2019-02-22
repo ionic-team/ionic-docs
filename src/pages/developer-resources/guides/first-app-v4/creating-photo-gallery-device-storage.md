@@ -29,7 +29,7 @@ export class PhotoService {
 }
 ```
 
-Within this class, add a Photo class. The “data” property represents the base64 image data of a captured photo:
+Within this file, add a Photo class. The “data” property represents the base64 image data of a captured photo:
 
 ```Javascript
 class Photo {
