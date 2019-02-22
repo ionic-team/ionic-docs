@@ -51,7 +51,7 @@ Ionicには、多くのコンポーネントの配色を変更するために使
 }
 ```
 
-`secondary` をボタンに適用した時、利用されるのは base color <code-color mode="md" value="#006600"></code-color> だけではありません。contrast color <code-color mode="md" value="#ffffff"></code-color> はテキストに適用され、それに加えて shade <code-color mode="md" value="#005a00"></code-color> と tint <code-color mode="md" value="#1a751a"></code-color> はボタンのステータスが変更された時に利用されます。
+`secondary` をボタンに適用した時、利用されるのはベースカラー <code-color mode="md" value="#006600"></code-color> だけではありません。`contrast color` <code-color mode="md" value="#ffffff"></code-color> はテキストに適用され、それに加えて `shade` <code-color mode="md" value="#005a00"></code-color> と `tint` <code-color mode="md" value="#1a751a"></code-color> はボタンのステータスが変更された時に利用されます。
 
 > ベースカラーからバリエーションカラーを取得する方法がわからない？その場合、 [Color Generator](/docs/theming/color-generator) をお試しください。これはすべてのバリエーションを計算し、アプリにコピー&ペーストできるコードを提供します！
 
