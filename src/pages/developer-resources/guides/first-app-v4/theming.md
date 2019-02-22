@@ -11,7 +11,7 @@ Ionic has five default colors, defined as Sass variables, that can be used to ch
 
 ![v3-theming](/docs/assets/img/guides/first-app-v3/v3-theming.png)
 
-You can customize each color further by supplying a base and contract property. Base acts as the background color and contrast acts as the text color for most components. This provides much more flexible control over your styles:
+You can customize each color further by supplying a base and contrast property. Base acts as the background color and contrast acts as the text color for most components. This provides much more flexible control over your styles:
 
 ![v3-theming-colors](/docs/assets/img/guides/first-app-v3/v3-themeColors.png)
 
