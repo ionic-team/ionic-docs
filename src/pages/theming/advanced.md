@@ -7,15 +7,15 @@ nextText: 'Publishing an app'
 nextUrl: '/docs/publishing/app-store'
 ---
 
-# Advanced Theming
+# 高度なカスタマイズ
 
-CSS-based theming enables apps to customize the colors quickly by loading a CSS file or changing a few CSS property values.
+CSSベースのテーマ設定では、CSSファイルをロードするか、いくつかのCSSプロパティ値を変更することで、アプリの配色をすばやくカスタマイズできます。
 
-## Colors
+## 配色
 
-Ionic has nine default colors that can be used to change the color of many components. Each color is actually a collection of multiple properties, including a `shade` and `tint`, used throughout Ionic.
+Ionicには、多くのコンポーネントの配色を変更するために使用できる9つのデフォルトカラーがあります。 それぞれの配色は、 `shade` と `tint` を含む複数のプロパティを持つコレクションであり、Ionic全体で利用されます。
 
-A color can be applied to an Ionic component in order to change the default colors using the `color` attribute. Notice in the buttons below that the text and background changes based on the `color` set. When there is no `color` set on the button it uses the `primary` color by default.
+デフォルトの配色を変更するために、 `color` 属性を使って任意の色をIonicのコンポーネントに適用できます。以下の buttons はテキストと背景が `color` 属性に基づいて変更されていることに注目してください。button に `color` 属性がない時は、デフォルト値として `primary` の配色が適用されます。
 
 ```html
 <ion-button>Default</ion-button>
@@ -30,15 +30,15 @@ A color can be applied to an Ionic component in order to change the default colo
 <ion-button color="dark">Dark</ion-button>
 ```
 
-### Layered Colors
+### 配色のレイヤードスタイル
 
-Each color consists of the following properties: a `base`, `contrast`, `shade`, and `tint`. The `base` and `contrast` colors also require a `rgb` property which is the same color, just in <a href="https://developer.mozilla.org/en-US/docs/Glossary/RGB" target="_blank">rgb format</a>. See [The Alpha Problem](#the-alpha-problem) for an explanation of why the `rgb` property is also needed. Select from the dropdown below to see all of the default colors Ionic provides and their variations.
+それぞれの配色は、これらのプロパティで構成されています: `base`, `contrast`, `shade`, と `tint` です。`base` と `contrast` の配色は `rgb` プロパティと同一の配色が求められます。 <a href="https://developer.mozilla.org/en-US/docs/Glossary/RGB" target="_blank">rgb format</a> をご覧ください。この `rgb` の変数が必要な理由は [The Alpha Problem](#the-alpha-problem) をご覧ください。下のドロップダウンから選択することで、Ionicが提供するデフォルトの配色とそのバリエーションを確認することができます。
 
 <layered-colors-select mode="md" no-prerender></layered-colors-select>
 
-### Modifying Colors
+### 配色を変更する
 
-To change the default values of a color, all of the listed variations for that color should be set. For example, to change the secondary color to <code-color mode="md" value="#006600"></code-color>, set the following CSS properties:
+配色を変更するときは、その色についてリストされているすべてのバリエーションを変更する必要があります。例えば、secondary colorを <code-color mode="md" value="#006600"></code-color> に変更する時、以下のCSSプロパティが必要です。
 
 ```css
 :root {
@@ -51,15 +51,15 @@ To change the default values of a color, all of the listed variations for that c
 }
 ```
 
-When `secondary` is applied to a button, not only is the base color <code-color mode="md" value="#006600"></code-color> used, but the contrast color <code-color mode="md" value="#ffffff"></code-color> is used for the text, along with shade <code-color mode="md" value="#005a00"></code-color> and tint <code-color mode="md" value="#1a751a"></code-color> colors for the different states of the button.
+`secondary` をボタンに適用した時、利用されるのは base color <code-color mode="md" value="#006600"></code-color> だけではありません。contrast color <code-color mode="md" value="#ffffff"></code-color> はテキストに適用され、それに加えて shade <code-color mode="md" value="#005a00"></code-color> と tint <code-color mode="md" value="#1a751a"></code-color> はボタンのステータスが変更された時に利用されます。
 
-> Not sure how to get the variation colors from the base color? Try out our [Color Generator](/docs/theming/color-generator) that calculates all of the variations and provides code to copy/paste into an app!
+> ベースカラーからバリエーションカラーを取得する方法がわからない？その場合、 [Color Generator](/docs/theming/color-generator) をお試しください。これはすべてのバリエーションを計算し、アプリにコピー&ペーストできるコードを提供します！
 
-See the [CSS Variables documentation](/docs/theming/css-variables) for more information on CSS variables.
+CSS変数についてもっと詳しく知りたい時は [CSS Variables documentation](/docs/theming/css-variables) をご覧ください。
 
-### Adding Colors
+### 配色の追加
 
-To add a new color, create a class that defines all of the variations using CSS variables for that color. The class should be written in the format `.ion-color-{COLOR}` where `{COLOR}` is the name of the color to add. For example, to add a color called `favorite`, the following class could be added:
+新しい配色を追加する時は、CSS変数を利用してすべてのバリエーションを追加する必要があります。クラス名は `.ion-color-{COLOR}` というフォーマットに従い、 `{COLOR}` には新しい色の名前をつけてください。例えば、配色が `favorite` という名前なら、次のようなclassを追加します:
 
 ```css
 .ion-color-favorite {
@@ -72,13 +72,13 @@ To add a new color, create a class that defines all of the variations using CSS 
 }
 ```
 
-Once the class is added, the color can be used on any Ionic component that supports the `color` property. An example of using the `favorite` color on an Ionic button is below.
+classが追加されると、Ionicのコンポーネントの `color` プロパティでその配色を利用することができます。 `favorite` をIonicのボタンで使う時は以下の通りになります。
 
 ```html
 <ion-button color="favorite">Favorite</ion-button>
 ```
 
-It's important to note that adding the class above does not automatically create the Ionic CSS variables for use in an application's stylesheets. This means that the variations beginning with `--ion-color-favorite` **do not exist** by adding the `.ion-color-favorite` class. These should be declared separately for use in an application:
+上記のクラスを追記しても、アプリケーションのスタイルシートで使用するためのIonic CSS変数が自動的に作成されないことに注意が必要です。`--ion-color-favorite` ではじまる変数は、`.ion-color-favorite` というclassを追加しただけでは、 **存在しません** 。 アプリケーションで利用するためには、別々に宣言する必要があります:
 
 ```css
 :root {
@@ -91,7 +91,7 @@ It's important to note that adding the class above does not automatically create
 }
 ```
 
-Now the `favorite` color can be used in CSS like below to set the `background` and `color` on a `div`.
+これで、CSSで`div` の`background` と `color` で `favorite` を利用することができます。
 
 ```css
 div {
@@ -100,17 +100,17 @@ div {
 }
 ```
 
-See the [CSS Variables documentation](/docs/theming/css-variables) for more information on CSS variables.
+CSS変数についてもっと知りたい場合は [CSS Variables documentation](/docs/theming/css-variables) をご覧ください。
 
-## Themes
+## テーマ
 
-Ionic provides several global variables that are used throughout components to change the default theme of an entire application. The following sections separate the different theme variables by usage: [Application Colors](#application-colors), [Stepped Colors](#stepped-colors).
+Ionicは、アプリケーション全体のデフォルトテーマを変更するために、コンポーネント全体で使用できるいくつかのグローバル変数を提供します。次のセクションでは、さまざまなテーマ変数を用途別に分類しています: [Application Colors](#application-colors), [Stepped Colors](#stepped-colors)
 
-### Application Colors
+### アプリケーションの配色
 
-The application colors are used in multiple places in Ionic. These are useful for easily creating dark themes or themes that match a brand.
+アプリケーションの配色は、Ionicの複数の場所で使用されています。ダークテーマや、ブランディングにあったテーマを簡単に作成することができます。
 
-It is important to note that the background and text color variables also require a rgb variable to be set in <a href="https://developer.mozilla.org/en-US/docs/Glossary/RGB" target="_blank">rgb format</a>. See [The Alpha Problem](#the-alpha-problem) for an explanation of why the `rgb` property is also needed.
+背景とテキストの色変数は、RGBである必要があります: <a href="https://developer.mozilla.org/en-US/docs/Glossary/RGB" target="_blank">rgb format</a>. なぜ `rgb` プロパティも必要であるかは [The Alpha Problem](#the-alpha-problem) をご覧ください。
 
 
 | Name                                     | Description                                         |
@@ -141,26 +141,26 @@ It is important to note that the background and text color variables also requir
 | `--ion-placeholder-color`                | Color of the placeholder in inputs                  |
 
 
-### Stepped Colors
+### ステップカラー
 
-After exploring different ways to customize the Ionic theme, we found that we couldn't use just one background or text color. In order to imply importance and depth throughout the design, we need to use different shades of the background and text colors. To accommodate this pattern, we created stepped colors.
+Ionicテーマをカスタマイズするためのさまざまな方法を検討した結果、1つの背景色またはテキスト色しか使用できないことがわかりました。デザイン全体を通して重要性と深度を暗示するためには、背景色とテキスト色の色合いを変える必要があります。このパターンに対応するために、ステップカラーを作成しました。
 
-While updating the background (`--ion-background-color`) and text (`--ion-text-color`) variables will change the look of the app for most components, there are certain Ionic components where it may look off, or broken. This will be more apparent when applying a darker theme.
+背景色 (`--ion-background-color`) と テキストカラー (`--ion-text-color`) の変数を更新すると、ほとんどのアプリコンポーネントの外観が変わりますが、見逃したり壊れたりする可能性のある特定のIonicコンポーネントがあります。ダークテーマを適用するとき、これはより明白になります。
 
-In some components we use a shade darker than the background or lighter than the text. For example, an item heading text may need to be <code-color mode="md" value="#404040"></code-color>, which is a few shades lighter than our default text color. Meanwhile, the loading component background is a shade darker than white, using <code-color mode="md" value="#f2f2f2"></code-color>. We use stepped colors in order to define these slight variations. It is important to update the stepped colors when updating the background or text color of an application.
+一部のコンポーネントでは、背景よりも暗い、またはテキストよりも明るい色合いを使用しています。たとえば、item の見出しテキストは、私たちのデフォルトのテキストカラーよりも数段階明るい色である <code-color mode="md" value="#404040"></code-color> になります。一方、ローディングコンポーネントの背景は白よりも濃い色 <code-color mode="md" value="#f2f2f2"></code-color> になります。私達はこれらのわずかな変化を定義するために、ステップカラーを利用します。アプリケーションの背景色やテキストの色を更新するときは、ステップカラーを更新することが重要です。
 
-By default, the Ionic stepped colors start at the default background color value <code-color mode="md" value="#ffffff"></code-color> and mix with the text color value <code-color mode="md" value="#000000"></code-color> using an increasing percentage. The full list of stepped colors is shown in the generator below.
+デフォルトでは、Ionicのステップカラーはデフォルトの背景色の値 <code-color mode="md" value="#ffffff"></code-color> で始まります。 そしてテキストカラー値 <code-color mode="md" value="#000000"></code-color> を混ぜるために使います。ステップカラーの完全なリストは、以下のジェネレータに表示されています。
 
-### Generate Stepped Color Variables
+### ステップカラーの変数生成
 
-Create a custom background and text color theme for your app. Update the background or text color’s hex values below, then copy and paste the generated code directly into your Ionic project.
+アプリのカスタム背景色とテキストの色のテーマを作成します。下記の背景色またはテキストカラーの16進値を更新してから、生成されたコードをコピーしてIonicプロジェクトに直接貼り付けます。
 
 <stepped-color-generator mode="md" no-prerender></stepped-color-generator>
 
 
-## Globals
+## グローバル
 
-While the previously mentioned variables are useful for changing the colors of an application, often times there is a need for variables used in multiple components. The following variables are shared across components to change global padding settings and more.
+前述の変数はアプリケーションの色を変更するのに役立ちますが、多くの場合、複数のコンポーネントで使用される変数が必要になります。以下の変数は、グローバルパディング設定などを変更するためにコンポーネント間で共有されます。
 
 ### Application Variables
 
@@ -192,11 +192,11 @@ While the previously mentioned variables are useful for changing the colors of a
 | `--ion-grid-column-padding-xl`           | Padding of the grid columns for xl breakpoints     |
 
 
-## Known Limitations
+## 既知の制限
 
-### The Alpha Problem
+### Alpha問題
 
-There is not yet full <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Browser_compatibility" target="_blank">browser support</a> for alpha use of a hex color. The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#rgb()_and_rgba()" target="_blank">rgba()</a> function only accepts a value in `R, G, B, A` (Red, Green, Blue, Alpha) format. The following code shows examples of correct and incorrect values passed to `rgba()`.
+16進数カラーのアルファ使用については、まだ完全な<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Browser_compatibility" target="_blank">ブラウザサポート</a>はありません。<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#rgb()_and_rgba()" target="_blank">rgba()</a> 関数は、`R, G, B, A` (Red, Green, Blue, Alpha) のフォーマットのみ利用可能です。次のコードは、`rgba()`　に受け渡される正しい値と間違った値の例を示しています。
 
 ```css
 /* These examples use the same color: blueviolet. */
@@ -215,9 +215,9 @@ There is not yet full <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/
 }
 ```
 
-> See the [CSS Variables](/docs/theming/css-variables) section for more information on how to get and set CSS variables.
+> CSS変数を取得および設定する方法については、 [CSS Variables](/docs/theming/css-variables) セクションをご参照ください。
 
-Ionic uses colors with an opacity (alpha) in several components. In order for this to work, those properties must be provided in RGB format. When changing any of the properties that have a variation ending in `-rgb`, it is important they are also provided in a comma separated format **without parentheses**. Below are some examples for changing text and background color.
+Ionicはいくつかのコンポーネントで不透明度（アルファ）を​​持つ色を使用します。これが機能するためには、それらのプロパティはRGBフォーマットで提供されなければなりません。末尾にバリエーションがあるプロパティのいずれかを変更する場合、 `-rgb` で終わる括弧なしのカンマ区切り形式でも提供されることが重要です。以下は、テキストと背景色を変更するための例です。
 
 ```css
 :root {
@@ -231,7 +231,7 @@ Ionic uses colors with an opacity (alpha) in several components. In order for th
 }
 ```
 
-Note that the RGB formatted colors are the exact same color as the hex properties, but can now be used with `rgba()`. For example, `--ion-text-color-rgb` can now be used in the following way
+RGB形式の色はhexプロパティとまったく同じ色ですが、現在は `rgba()` で使用できることに注意してください。例えば、`--ion-text-color-rgb` は以下のように利用できます。
 
 ```css
 body {

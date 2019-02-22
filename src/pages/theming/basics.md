@@ -5,32 +5,32 @@ nextText: 'Platform Styles'
 nextUrl: '/docs/theming/platform-styles'
 ---
 
-# Theming Basics
+# Themingの基本
 
-Ionic Framework is built to be a blank slate that can easily be customized and modified to fit a brand, while still following the standards of the different platforms. Theming Ionic apps is now easier than ever. Because the framework is built with CSS, it comes with pre-baked default styles which are extremely easy to change and modify.
+Ionic Frameworkは、さまざまなプラットフォームの標準デザインに準拠しながら、白紙の状態からブランディングに合わせて簡単にカスタマイズおよび変更できるように構築されています。IonicアプリのThemingは今まで以上に簡単です。フレームワークはCSSで構築されているため、事前に用意されているデフォルトスタイルは簡単に変更や修正をすることができます。
 
 
-## Colors
+## 配色
 
-Ionic has nine default colors that can be used to change the color of many components. Each color is actually a collection of multiple properties, including a `shade` and `tint`, used throughout Ionic.
+Ionicには、多くのコンポーネントの配色を変更するために使用できる9つのデフォルトカラーがあります。 それぞれの配色は、 `shade` と `tint` を含む複数のプロパティを持つコレクションであり、Ionic全体で利用されます。
 
-When changing a color, it is important to set all of the related properties. This can be done easily with the [Color Generator](/docs/theming/color-generator) tool, but these can also be manually written if desired. For more information on Ionic colors, see [Advanced Colors](/docs/theming/advanced#colors).
+配色を変更するときは、関連するすべてのプロパティを設定することが重要です。[Color Generator](/docs/theming/color-generator) を使えば、これは簡単にできますし、必要に応じてこれらを手動で書き込むこともできます。Ionicの配色についての詳細は イオンカラーの詳細については、[Advanced Colors](/docs/theming/advanced#colors) をご覧ください。
 
 <color-accordion></color-accordion>
 
 
-## Platform Standards
+## プラットフォームの標準
 
-Ionic components adapt their look and behavior based on the platform the app is running on. We call this <strong>Platform Continuity</strong>. This allows developers to build apps that use the same codebase for multiple platforms, while still looking "native" to those particular platforms.
+Ionicのコンポーネントは、アプリケーションが実行されているプラ​​ットフォームに基づいて外観と動作を調整します。私たちはこれを <strong>Platform Continuity</strong> と呼んでいます。これにより、開発者は複数のプラットフォームで同じコードベースを使用するアプリケーションを構築することができますが、それでもそれらはプラットフォームにおいて「ネイティブ」に見えます。
 
-Ionic has two **modes** that are used to customize the look of components based on the **platform**: `ios` and `md`. Each platform has a default mode, but this can easily be configured. For more information on customizing an application based on the platform, see [Platform Styles](/docs/theming/platform-styles).
-
-
-## CSS Variables
-
-All of the Ionic components are themed using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">CSS properties (variables)</a>. CSS variables add dynamic values to an otherwise static language. This is something that has traditionally required a CSS preprocessor like Sass. The look of an application can easily be changed by changing the value of any of the [Ionic Variables](/docs/theming/css-variables#ionic-variables).
+Ionicは、2つの **modes** をもっており、これらはプラットフォーム: `ios` と `md` に基づいてコンポーネントの外観がカスタマイズされます。各プラットフォームにはデフォルトモードがありますが、これは簡単に変更できます。プラットフォームに基づいてアプリケーションをカスタマイズする方法の詳細については、[Platform Styles](/docs/theming/platform-styles) をご覧ください。
 
 
-## Branding
+## CSS変数
 
-Ionic provides application colors that can be used to theme an application to match a brand or color scheme. The default theme uses a light background, but everything from the background color to the text color is fully customizable. For more information on branding, see [Advanced Theming](/docs/theming/advanced).
+すべてのIonicコンポーネントは、<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">CSSプロパティ（変数）</a>を使ってテーマ化されています。CSS変数は、動的な値を静的なCSSに追加します。これは今まではSassのようなCSSプリプロセッサを必要としていたものです。アプリケーションの外観は、[Ionic Variables](/docs/theming/css-variables#ionic-variables)のいずれかの値を変更することで簡単に変更できます。
+
+
+## ブランディング
+
+Ionicは、ブランディングや配色にあったテーマとなるアプリケーションの配色を提供します。デフォルトのテーマは明るい背景を使用しますが、背景色からテキストの色まですべてカスタマイズ可能です。ブランディングの詳細については、[Advanced Theming](/docs/theming/advanced) をご覧ください。

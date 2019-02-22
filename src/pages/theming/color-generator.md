@@ -7,8 +7,8 @@ nextText: 'Advanced Theming'
 nextUrl: '/docs/theming/advanced'
 ---
 
-# Color Generator
+# カラージェネレーター
 
-Create custom color palettes for your app’s UI. Update a color’s hex values, check the demo app on the right to confirm, then copy and paste the generated code directly into your Ionic project.
+アプリのUI用にカスタムカラーパレットが利用できます。16進数の色番号を更新し、右側にあるデモアプリを確認して、それでよければ生成されたコードをコピーして直接Ionicプロジェクトに貼り付けます。
 
 <color-generator mode="md" no-prerender></color-generator>

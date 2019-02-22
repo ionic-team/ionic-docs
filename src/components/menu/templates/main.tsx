@@ -34,11 +34,11 @@ const items = {
     'CSSユーティリティ': '/docs/layout/css-utilities',
   },
   'テーマのカスタマイズ': {
-    'Basics': '/docs/theming/basics',
-    'Platform Styles': '/docs/theming/platform-styles',
-    'CSS Variables': '/docs/theming/css-variables',
-    'Color Generator': '/docs/theming/color-generator',
-    'Advanced': '/docs/theming/advanced',
+    'テーマの基本': '/docs/theming/basics',
+    'プラットフォームの外観': '/docs/theming/platform-styles',
+    'CSS変数': '/docs/theming/css-variables',
+    'カラージェネレーター': '/docs/theming/color-generator',
+    '高度なカスタマイズ': '/docs/theming/advanced',
   },
   'ナビゲーション': {
     'Angular': '/docs/navigation/angular'
