@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Back Button</title>
+  <link rel="stylesheet" href="/docs/assets/ionic/css/ionic.bundle.css"/>
+  <script src="/docs/assets/ionic/dist/ionic.js"></script>
+  <style>
+    :root {
+      --ion-safe-area-top: 20px;
+      --ion-safe-area-bottom: 22px;
+    }
+  </style>
+</head>
+<body>
+  <ion-app>
+    <ion-nav root="nav-home"></ion-nav>
+  </ion-app>
+
+  <script>
+
+    customElements.define('nav-home', class NavHome extends HTMLElement {
+      connectedCallback() {
+        this.innerHTML = `
+          <ion-header translucent>
+            <ion-toolbar>
+              <ion-title>Back Button</ion-title>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content fullscreen>
+            <ion-list>
+            <ion-item onclick="navigateForward()">
+              Navigate Forward
+            </ion-item>
+            </ion-list>
+          </ion-content>
+        `;
+      }
+    });
+
+    const nav = document.querySelector('ion-nav');
+
+    function navigateForward() {
+      nav.push('nav-detail');
+    }
+
+    customElements.define('nav-detail', class NavDetail extends HTMLElement {
+      connectedCallback() {
+        this.innerHTML = `
+          <ion-header translucent>
+            <ion-toolbar>
+              <ion-buttons slot="start">
+                <ion-back-button defaultHref="/"></ion-back-button>
+              </ion-buttons>
+              <ion-title>Page Two</ion-title>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content fullscreen padding>
+            <p>Back-Button is displayed when there is history</p>
+          </ion-content>
+        `;
+      }
+    });
+  </script>
+</body>
+</html>
