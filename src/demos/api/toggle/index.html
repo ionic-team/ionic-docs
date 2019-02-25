@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toggle</title>
+  <link rel="stylesheet" href="https://unpkg.com/@ionic/core@latest/css/ionic.bundle.css" />
+  <script src="https://unpkg.com/@ionic/core@latest/dist/ionic.js"></script>
+  <style>
+    :root {
+      --ion-safe-area-top: 20px;
+      --ion-safe-area-bottom: 22px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <ion-app>
+    <ion-header translucent>
+      <ion-toolbar>
+        <ion-title>Toggle</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content fullscreen padding>
+      <ion-list>
+        <ion-item>
+          <ion-label>Apple</ion-label>
+          <ion-toggle slot="start" name="apple" checked></ion-toggle>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Banana</ion-label>
+          <ion-toggle slot="start" name="banana" checked></ion-toggle>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Cherry, disabled</ion-label>
+          <ion-toggle slot="start" color="danger" name="cherry" disabled></ion-toggle>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Grape, checked, disabled</ion-label>
+          <ion-toggle slot="start" id="grapeChecked" name="grape" checked disabled></ion-toggle>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Kiwi, (ionChange) Secondary color</ion-label>
+          <ion-toggle slot="start" color="secondary" (ionChange)="kiwiChange($event)"></ion-toggle>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Strawberry, (ionChange) checked="true"</ion-label>
+          <ion-toggle slot="start" color="light" (ionChange)="strawberryChange($event)" checked="true"></ion-toggle>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Checkbox right, checked, really long text that should ellipsis</ion-label>
+          <ion-toggle slot="end" color="danger" checked></ion-toggle>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Checkbox right side</ion-label>
+          <ion-toggle slot="end" checked></ion-toggle>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Button w/ right side default icon, really long text that should ellipsis</ion-label>
+          <ion-icon name="information-circle" slot="end"></ion-icon>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-app>
+</body>
+
+</html>

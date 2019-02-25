@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avatar</title>
+  <link rel="stylesheet" href="https://unpkg.com/@ionic/core@latest/css/ionic.bundle.css" />
+  <script src="https://unpkg.com/@ionic/core@latest/dist/ionic.js"></script>
+  <style>
+    :root {
+      --ion-safe-area-top: 20px;
+      --ion-safe-area-bottom: 22px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <ion-app>
+    <ion-header translucent>
+      <ion-toolbar>
+        <ion-title>Avatar</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content fullscreen padding>
+      <ion-avatar>
+        <img src="/src/components/avatar/test/avatar.svg">
+      </ion-avatar>
+
+      <ion-chip>
+        <ion-avatar>
+          <img src="/src/components/avatar/test/avatar.svg">
+        </ion-avatar>
+        <ion-label>Chip Avatar</ion-label>
+      </ion-chip>
+
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="/src/components/avatar/test/avatar.svg">
+        </ion-avatar>
+        <ion-label>Item Avatar</ion-label>
+      </ion-item>
+    </ion-content>
+  </ion-app>
+</body>
+
+</html>

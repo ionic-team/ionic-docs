@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anchor</title>
+  <link rel="stylesheet" href="https://unpkg.com/@ionic/core@latest/css/ionic.bundle.css" />
+  <script src="https://unpkg.com/@ionic/core@latest/dist/ionic.js"></script>
+  <style>
+    :root {
+      --ion-safe-area-top: 20px;
+      --ion-safe-area-bottom: 22px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <ion-app>
+    <ion-header translucent>
+      <ion-toolbar>
+        <ion-title>Anchor</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content fullscreen padding>
+      <p>
+        <ion-anchor href="#">Anchor</ion-anchor>
+      </p>
+
+      <p>
+        <ion-anchor href="#" style="text-decoration: underline">Underline Anchor</ion-anchor>
+      </p>
+
+      <p>
+        <ion-anchor href="#" class="custom">Custom Anchor</ion-anchor>
+      </p>
+
+      <p>
+        <ion-anchor color="dark" href="#">Dark Anchor</ion-anchor>
+      </p>
+
+      <p>
+        <ion-anchor color="danger" href="#">Danger Anchor</ion-anchor>
+      </p>
+
+      <p>
+        <ion-anchor id="toggleColor" color="tertiary" href="#">Dynamic Color</ion-anchor>
+      </p>
+    </ion-content>
+  </ion-app>
+</body>
+
+</html>
