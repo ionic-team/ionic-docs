@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Img</title>
+  <link rel="stylesheet" href="/docs/assets/ionic/css/ionic.bundle.css" />
+  <script src="/docs/assets/ionic/dist/ionic.js"></script>
+  <style>
+    :root {
+      --ion-safe-area-top: 20px;
+      --ion-safe-area-bottom: 22px;
+    }
+  </style>
+</head>
+
+<body>
+  <ion-app>
+    <img-page class="ion-page"></img-page>
+    <!-- <ion-header translucent>       -->
+    <!--   <ion-toolbar>                -->
+    <!--     <ion-title>Img</ion-title> -->
+    <!--   </ion-toolbar>               -->
+    <!-- </ion-header>                  -->
+
+    <!-- <ion-content fullscreen>       -->
+    <!--   <ion-list>                   -->
+    <!--     <ion-list-header>          -->
+    <!--       Recent Conversations     -->
+    <!--     </ion-list-header>         -->
+
+    <!--   </ion-list>                  -->
+
+    <!-- </ion-content>                 -->
+  </ion-app>
+  <script>
+    const listItms = [...Array(100).keys()];
+    customElements.define('img-page', class NavDetail extends HTMLElement {
+      connectedCallback() {
+        this.innerHTML = `
+          <ion-header translucent>
+            <ion-toolbar translucent>
+              <ion-buttons slot="start">
+                <ion-back-button defaultHref="/"></ion-back-button>
+              </ion-buttons>
+              <ion-title>Img</ion-title>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content fullscreen>
+            <ion-list>
+            ${listItms.map(i => `
+                <ion-item>
+                  <ion-avatar slot="start">
+                    <ion-img src="https://cageme.herokuapp.com/200/300?q=${i}"></ion-img>
+                  </ion-avatar>
+                  <ion-label>
+                    <h3>User${i}</h3>
+                  </ion-label>
+                </ion-item>
+            `).join('\n')}
+            </ion-list>
+          </ion-content>
+        `;
+      }
+    });
+
+    // const listEl = document.querySelector('ion-list');
+    // for (let i of [...Array.from(100).keys())]) {
+    //
+    //   list.appencChild(`
+    //
+    //       <ion-item>Item ${i}</ion-item>
+    //   `)
+    // }
+  </script>
+</body>
+
+</html>
