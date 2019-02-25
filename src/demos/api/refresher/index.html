@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Refresher</title>
+  <link rel="stylesheet" href="/docs/assets/ionic/css/ionic.bundle.css" />
+  <script src="/docs/assets/ionic/dist/ionic.js"></script>
+  <style>
+    :root {
+      --ion-safe-area-top: 20px;
+      --ion-safe-area-bottom: 22px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <ion-app>
+    <ion-header translucent>
+      <ion-toolbar>
+        <ion-title>Refresher</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content padding>
+      <ion-refresher slot="fixed" id="refresher">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
+      
+      <ion-text>Pull down to refresh</ion-text>
+    </ion-content>
+  </ion-app>
+  
+  <script>
+    const refresher = document.getElementById('refresher');
+    
+    refresher.addEventListener('ionRefresh', () => {
+      setTimeout(() => {
+        refresher.complete();
+      }, 2000);
+    })    
+  </script>
+</body>
+
+</html>
