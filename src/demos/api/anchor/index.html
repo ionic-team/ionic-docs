@@ -12,7 +12,6 @@
       --ion-safe-area-top: 20px;
       --ion-safe-area-bottom: 22px;
     }
-
   </style>
 </head>
 
@@ -25,30 +24,92 @@
     </ion-header>
 
     <ion-content fullscreen padding>
-      <p>
-        <ion-anchor href="#">Anchor</ion-anchor>
-      </p>
+      <ion-list-header>Colors</ion-list-header>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-anchor href="#">Default</ion-anchor>
+          </ion-col>
+          <ion-col>
+            <ion-anchor color="secondary" href="#">Secondary</ion-anchor>
+          </ion-col>
+          <ion-col>
+            <ion-anchor color="tertiary" href="#">Tertiary</ion-anchor>
+          </ion-col>
+        </ion-row>
 
-      <p>
-        <ion-anchor href="#" style="text-decoration: underline">Underline Anchor</ion-anchor>
-      </p>
+        <ion-row>
+          <ion-col>
+            <ion-anchor color="success" href="#">Success</ion-anchor>
+          </ion-col>
+          <ion-col>
+            <ion-anchor color="warning" href="#">Warning</ion-anchor>
+          </ion-col>
+          <ion-col>
+            <ion-anchor color="danger" href="#">Danger</ion-anchor>
+          </ion-col>
+        </ion-row>
 
-      <p>
-        <ion-anchor href="#" class="custom">Custom Anchor</ion-anchor>
-      </p>
+        <ion-row>
+          <ion-col>
+            <ion-anchor color="light" href="#">Light</ion-anchor>
+          </ion-col>
+          <ion-col>
+            <ion-anchor color="medium" href="#">Medium</ion-anchor>
+          </ion-col>
+          <ion-col>
+            <ion-anchor color="dark" href="#">Dark</ion-anchor>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
 
-      <p>
-        <ion-anchor color="dark" href="#">Dark Anchor</ion-anchor>
-      </p>
+      <ion-list-header>Custom Styles</ion-list-header>
 
-      <p>
-        <ion-anchor color="danger" href="#">Danger Anchor</ion-anchor>
-      </p>
-
-      <p>
-        <ion-anchor id="toggleColor" color="tertiary" href="#">Dynamic Color</ion-anchor>
-      </p>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-anchor href="#" class="underline">Underline</ion-anchor>
+          </ion-col>
+          <ion-col>
+            <ion-anchor href="#" class="spacing">Spacing</ion-anchor>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-anchor href="#" class="uppercase">Uppercase</ion-anchor>
+          </ion-col>
+          <ion-col>
+            <ion-anchor href="#" class="color">Magenta</ion-anchor>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </ion-content>
+
+    <style>
+      ion-list-header {
+        padding-left: 10px;
+      }
+
+      ion-row {
+        margin-bottom: 15px;
+      }
+
+      .underline {
+        text-decoration: underline;
+      }
+
+      .spacing {
+        letter-spacing: 5px;
+      }
+
+      .uppercase {
+        text-transform: uppercase;
+      }
+
+      .color {
+        color: magenta;
+      }
+    </style>
   </ion-app>
 </body>
 

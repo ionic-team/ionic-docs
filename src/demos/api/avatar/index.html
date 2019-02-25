@@ -24,24 +24,73 @@
       </ion-toolbar>
     </ion-header>
 
-    <ion-content fullscreen padding>
-      <ion-avatar>
-        <img src="/src/components/avatar/test/avatar.svg">
+    <ion-content fullscreen>
+      <ion-list-header>Default</ion-list-header>
+      <ion-avatar class="ion-margin-start">
+        <img src="./avatar.svg">
       </ion-avatar>
 
-      <ion-chip>
+      <ion-list-header>Chip Avatar</ion-list-header>
+      <ion-chip class="ion-margin-start">
         <ion-avatar>
-          <img src="/src/components/avatar/test/avatar.svg">
+          <img src="./avatar.svg">
         </ion-avatar>
-        <ion-label>Chip Avatar</ion-label>
+        <ion-label>Kit Bishop</ion-label>
       </ion-chip>
 
-      <ion-item>
-        <ion-avatar slot="start">
-          <img src="/src/components/avatar/test/avatar.svg">
-        </ion-avatar>
-        <ion-label>Item Avatar</ion-label>
-      </ion-item>
+      <ion-list>
+        <ion-list-header>Item Avatars</ion-list-header>
+        <ion-item>
+          <ion-avatar slot="start">
+            <img src="./avatar.svg">
+          </ion-avatar>
+          <ion-label>Lorem ipsum</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-avatar slot="start">
+            <img src="./avatar.svg">
+          </ion-avatar>
+          <ion-label>
+            <h3>Lorem ipsum</h3>
+            <p>dolor sit amet</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-avatar slot="start">
+            <img src="./avatar.svg">
+          </ion-avatar>
+          <ion-label>
+            <h3>Lorem ipsum</h3>
+            <p>dolor sit amet</p>
+            <p>consectetur adipiscing elit. Duis ut urna neque.</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-avatar slot="end">
+            <img src="./avatar.svg">
+          </ion-avatar>
+          <ion-label>Lorem ipsum</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-avatar slot="end">
+            <img src="./avatar.svg">
+          </ion-avatar>
+          <ion-label>
+            <h3>Lorem ipsum</h3>
+            <p>dolor sit amet</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-avatar slot="end">
+            <img src="./avatar.svg">
+          </ion-avatar>
+          <ion-label>
+            <h3>Lorem ipsum</h3>
+            <p>dolor sit amet</p>
+            <p>consectetur adipiscing elit. Duis ut urna neque.</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
     </ion-content>
   </ion-app>
 </body>

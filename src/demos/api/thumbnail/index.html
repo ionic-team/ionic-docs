@@ -24,24 +24,65 @@
       </ion-toolbar>
     </ion-header>
 
-    <ion-content fullscreen padding>
-      <ion-thumbnail>
-        <img src="/src/components/thumbnail/test/thumbnail.svg">
+    <ion-content fullscreen>
+      <ion-list-header>Default</ion-list-header>
+      <ion-thumbnail class="ion-margin-start">
+        <img src="./thumbnail.svg">
       </ion-thumbnail>
 
-      <ion-item>
-        <ion-thumbnail slot="start">
-          <img src="/src/components/thumbnail/test/thumbnail.svg">
-        </ion-thumbnail>
-        <ion-label>Item Thumbnail</ion-label>
-      </ion-item>
-
-      <ion-item>
-        <ion-thumbnail slot="start">
-          <img src="/src/components/thumbnail/test/thumbnail.svg">
-        </ion-thumbnail>
-        <ion-label>Wide Thumbnail</ion-label>
-      </ion-item>
+      <ion-list>
+        <ion-list-header>Item thumbnails</ion-list-header>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img src="./thumbnail.svg">
+          </ion-thumbnail>
+          <ion-label>Lorem ipsum</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img src="./thumbnail.svg">
+          </ion-thumbnail>
+          <ion-label>
+            <h3>Lorem ipsum</h3>
+            <p>dolor sit amet</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img src="./thumbnail.svg">
+          </ion-thumbnail>
+          <ion-label>
+            <h3>Lorem ipsum</h3>
+            <p>dolor sit amet</p>
+            <p>consectetur adipiscing elit. Duis ut urna neque.</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-thumbnail slot="end">
+            <img src="./thumbnail.svg">
+          </ion-thumbnail>
+          <ion-label>Lorem ipsum</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-thumbnail slot="end">
+            <img src="./thumbnail.svg">
+          </ion-thumbnail>
+          <ion-label>
+            <h3>Lorem ipsum</h3>
+            <p>dolor sit amet</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-thumbnail slot="end">
+            <img src="./thumbnail.svg">
+          </ion-thumbnail>
+          <ion-label>
+            <h3>Lorem ipsum</h3>
+            <p>dolor sit amet</p>
+            <p>consectetur adipiscing elit. Duis ut urna neque.</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
     </ion-content>
   </ion-app>
 </body>
