@@ -24,51 +24,51 @@
       </ion-toolbar>
     </ion-header>
 
-    <ion-content fullscreen padding>
+    <ion-content fullscreen>
       <ion-list>
         <ion-item>
+          <ion-label>Blueberry</ion-label>
+          <ion-toggle slot="start" name="blueberry" checked></ion-toggle>
+        </ion-item>
+
+        <ion-item>
           <ion-label>Apple</ion-label>
-          <ion-toggle slot="start" name="apple" checked></ion-toggle>
+          <ion-toggle slot="start" name="apple" color="secondary" checked></ion-toggle>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Grape</ion-label>
+          <ion-toggle slot="start" name="grape" color="tertiary" checked></ion-toggle>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Kiwi</ion-label>
+          <ion-toggle slot="start" name="kiwi" color="success" checked></ion-toggle>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Orange</ion-label>
+          <ion-toggle slot="start" name="banana" color="warning" checked></ion-toggle>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Cherry</ion-label>
+          <ion-toggle slot="start" name="cherry" color="danger" checked></ion-toggle>
         </ion-item>
 
         <ion-item>
           <ion-label>Banana</ion-label>
-          <ion-toggle slot="start" name="banana" checked></ion-toggle>
+          <ion-toggle slot="start" name="banana" color="light" checked></ion-toggle>
         </ion-item>
 
         <ion-item>
-          <ion-label>Cherry, disabled</ion-label>
-          <ion-toggle slot="start" color="danger" name="cherry" disabled></ion-toggle>
+          <ion-label>Cantaloupe</ion-label>
+          <ion-toggle slot="start" name="cantaloupe" color="medium" checked></ion-toggle>
         </ion-item>
 
         <ion-item>
-          <ion-label>Grape, checked, disabled</ion-label>
-          <ion-toggle slot="start" id="grapeChecked" name="grape" checked disabled></ion-toggle>
-        </ion-item>
-
-        <ion-item>
-          <ion-label>Kiwi, (ionChange) Secondary color</ion-label>
-          <ion-toggle slot="start" color="secondary" (ionChange)="kiwiChange($event)"></ion-toggle>
-        </ion-item>
-
-        <ion-item>
-          <ion-label>Strawberry, (ionChange) checked="true"</ion-label>
-          <ion-toggle slot="start" color="light" (ionChange)="strawberryChange($event)" checked="true"></ion-toggle>
-        </ion-item>
-
-        <ion-item>
-          <ion-label>Checkbox right, checked, really long text that should ellipsis</ion-label>
-          <ion-toggle slot="end" color="danger" checked></ion-toggle>
-        </ion-item>
-
-        <ion-item>
-          <ion-label>Checkbox right side</ion-label>
-          <ion-toggle slot="end" checked></ion-toggle>
-        </ion-item>
-
-        <ion-item>
-          <ion-label>Button w/ right side default icon, really long text that should ellipsis</ion-label>
-          <ion-icon name="information-circle" slot="end"></ion-icon>
+          <ion-label>Blackberry</ion-label>
+          <ion-toggle slot="start" name="blackberry" color="dark" checked></ion-toggle>
         </ion-item>
       </ion-list>
     </ion-content>
