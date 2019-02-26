@@ -64,7 +64,7 @@ The last thing needed is to make sure caching headers are being set correctly. T
     ]
   },
   {
-    "source": "sw.js",
+    "source": "ngsw-worker.js",
     "headers": [
       {
         "key": "Cache-Control",
