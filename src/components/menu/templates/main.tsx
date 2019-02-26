@@ -4,6 +4,7 @@ const items = {
   'Introduction': {
     'What is Ionic Framework?': '/docs/intro',
     'Core Concepts': '/docs/intro/concepts',
+    'Technology Ecosystem': '/docs/intro/ecosystem',
     'Browser Support': '/docs/intro/browser-support',
     'Versioning': '/docs/intro/versioning',
     'Support': '/docs/intro/support'

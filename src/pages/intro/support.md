@@ -1,6 +1,6 @@
 ---
-previousText: 'Versioning'
-previousUrl: '/docs/intro/versioning'
+previousText: 'Technology Ecosystem'
+previousUrl: '/docs/intro/ecosystem'
 nextText: 'Installing Ionic'
 nextUrl: '/docs/installation/cli'
 ---
