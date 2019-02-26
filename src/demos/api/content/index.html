@@ -18,11 +18,11 @@
     <ion-router>
       <ion-route url="/" component="page-root"></ion-route>
     </ion-router>
-    
+
     <ion-nav></ion-nav>
   </ion-app>
-  
-  <script>    
+
+  <script>
     function generateNumItems(number) {
       let itemString = '';
       for (let i = 0; i < number; i++) {
@@ -32,10 +32,10 @@
           </ion-item>
         `;
       }
-      
+
       return itemString;
     }
-    
+
     function generateList(number = 5) {
       return `
         <ion-list>
@@ -43,7 +43,7 @@
         </ion-list>
       `;
     }
-    
+
     function getContent() {
       return document.querySelector('ion-content');
     }
@@ -51,12 +51,12 @@
     function scrollToBottom() {
       getContent().scrollToBottom(500);
     }
-    
+
     function scrollToTop() {
       getContent().scrollToTop(500);
     }
-    
-    
+
+
     class PageRoot extends HTMLElement {
       connectedCallback() {
         this.innerHTML = `
@@ -65,12 +65,12 @@
               <ion-title>Content</ion-title>
             </ion-toolbar>
           </ion-header>
-          <ion-content padding fullscreen>            
-            <ion-button onclick="scrollToBottom()" shape="round" expand="full">Scroll To Bottom</ion-button>
-            
+          <ion-content fullscreen>
+            <p class="ion-padding-start ion-padding-end"><ion-button onclick="scrollToBottom()" expand="block" fill="outline">Scroll To Bottom</ion-button></p>
+
             ${generateList(15)}
-            
-            <ion-button onclick="scrollToTop()" shape="round" expand="full">Scroll To Top</ion-button>
+
+            <p class="ion-padding-start ion-padding-end"><ion-button onclick="scrollToTop()" expand="block" fill="outline">Scroll To Top</ion-button></p>
           </ion-content>
         `;
       }
