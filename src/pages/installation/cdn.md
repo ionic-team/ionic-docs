@@ -28,6 +28,7 @@ CDNをつかってIonic Frameworkにアクセスするためには、[unpkg](htt
 
 ```html
 <script src="https://unpkg.com/@ionic/core@latest/dist/ionic.js"></script>
+<link href="https://unpkg.com/@ionic/core@latest/css/ionic.bundle.css" rel="stylesheet">
 ```
 
 これで、何もインストールしなくても、すべてのIonicコンポーネントを利用することができます。
@@ -46,4 +47,3 @@ Ionic Frameworkを使用している場合、Ioniconsはデフォルトでパッ
 ```html
 <script src="https://unpkg.com/ionicons@4.0.0/dist/ionicons.js"></script>
 ```
-
