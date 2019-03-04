@@ -41,7 +41,8 @@ const items = {
     'Advanced': '/docs/theming/advanced',
   },
   'Navigation': {
-    'Angular': '/docs/navigation/angular'
+    'Angular': '/docs/navigation/angular',
+    'React': '/docs/navigation/react'
   },
   'Utilities': {
     'Config': '/docs/utilities/config',
