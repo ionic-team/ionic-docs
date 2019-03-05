@@ -6,6 +6,7 @@ nextUrl: '/docs/building/cross-platform'
 contributors:
   - mhartington
   - kensodemann
+  - elylucas
 ---
 
 # Migration Guide
