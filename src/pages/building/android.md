@@ -74,7 +74,7 @@ Chrome has web developer tool support for Android simulators and devices. Go to 
 
 ## Viewing Native Logs
 
-Native logs can be found in Android Studio in **Logcat**. 
+Native logs can be found in Android Studio in **Logcat**.
 
 > If the **Logcat** window is hidden, you can enable it in **View** &raquo; **Tool Windows** &raquo; **Logcat**.
 
