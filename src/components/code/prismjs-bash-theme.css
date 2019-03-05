@@ -15,3 +15,8 @@ docs-code[language="bash"] code {
 docs-code[language="bash"] code * {
   color: inherit;
 }
+
+docs-code[language="bash"] .cursor::before {
+  content: "\$ ";
+  color: #fb96f9;
+}
