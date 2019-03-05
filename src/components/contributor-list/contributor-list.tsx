@@ -5,6 +5,8 @@ import { Component, Prop } from '@stencil/core';
   styleUrl: 'contributor-list.css'
 })
 export class ContributorList {
+  @Prop() basepath: string;
+
   @Prop() contributors: string[];
 
   render() {
@@ -12,12 +14,16 @@ export class ContributorList {
       return;
     }
 
+    console.log(this.basepath);
+    const path = this.basepath.replace('/docs', '');
+    console.log(path);
+
     return (
       <section>
         <h5>Contributors</h5>
         <div>
           {this.contributors.map(contributor => (
-            <a href={`https://github.com/${contributor}`}>
+            <a target="_blank" href={`https://github.com/${contributor}`}>
               <span class="img-wrapper">
                 <img
                   src={`https://github.com/${contributor}.png?size=90`}
@@ -27,6 +33,15 @@ export class ContributorList {
               <span class="username">{contributor}</span>
             </a>
           ))}
+          <a target="_blank" href={`https://github.com/ionic-team/ionic-docs/edit/master/src/pages${path}.md`}>
+            <span class="img-wrapper">
+              <img
+                src="/docs/assets/img/avatar.svg"
+                title="Become a Contributor"
+              />
+            </span>
+            <span class="username">You?</span>
+          </a>
         </div>
       </section>
     );

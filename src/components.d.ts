@@ -136,9 +136,11 @@ export namespace Components {
   interface CommandPromptAttributes extends StencilHTMLAttributes {}
 
   interface ContributorList {
+    'basepath': string;
     'contributors': string[];
   }
   interface ContributorListAttributes extends StencilHTMLAttributes {
+    'basepath'?: string;
     'contributors'?: string[];
   }
 
