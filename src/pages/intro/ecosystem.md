@@ -3,6 +3,8 @@ previousText: 'Core concepts'
 previousUrl: '/docs/intro/concepts'
 nextText: 'Browser Support'
 nextUrl: '/docs/intro/browser-support'
+contributors:
+  - dotNetkow
 ---
 
 # Technology Ecosystem
