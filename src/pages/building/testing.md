@@ -3,6 +3,8 @@ previousText: 'Running on Android'
 previousUrl: '/docs/building/android'
 nextText: 'Contributing'
 nextUrl: '/docs/building/contributing'
+contributors:
+  - kensodemann
 ---
 
 # Testing

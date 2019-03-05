@@ -5,6 +5,7 @@ nextText: 'Migration'
 nextUrl: '/docs/building/migration'
 contributors:
   - mhartington
+  - brandyscarney
 ---
 
 # Scaffolding out an App
