@@ -137,9 +137,11 @@ export namespace Components {
 
   interface ContributorList {
     'contributors': string[];
+    'path': string;
   }
   interface ContributorListAttributes extends StencilHTMLAttributes {
     'contributors'?: string[];
+    'path'?: string;
   }
 
   interface DocsDemo {
