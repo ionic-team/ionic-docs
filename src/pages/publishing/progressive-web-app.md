@@ -1,6 +1,8 @@
 ---
 nextText: 'Publishing to the iOS App Store'
 nextUrl: '/docs/publishing/app-store'
+contributors:
+  - mhartington
 ---
 
 # Publishing a Progressive Web App
