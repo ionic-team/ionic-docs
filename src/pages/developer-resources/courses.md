@@ -15,6 +15,18 @@ by Josh Morony
 
 by Mathieu Chauvinc
 
+### [Ionic CLI](https://app.pluralsight.com/library/courses/ionic-cli/)
+
+by Pluralsight
+
+This course will start at the top and explore the Ionic CLI. First, you'll see how to create projects and components. Next, you will learn how to build and serve apps. Finally, you'll discover how to share projects with others, and even integrate with other build tools. Whether you’re just starting to explore Ionic, or have been using it since its pre-beta days, there is something here for you. By the end of the course, you’ll have the confidence to use the Ionic CLI as part of your everyday Ionic development.
+
+### [Creating Cross-platform Apps with Ionic and Electron](https://app.pluralsight.com/library/courses/ionic-electron-building-cross-platform-apps)
+
+by Pluralsight
+
+In this course, you'll learn how to create cross-platform apps with Ionic and Electron. Electron is the technology behind Visual Studio Code, Slack, GitKraken, and countless others. This course will provide a better understanding of how to create cross-platform apps with Iconic and Electron. Whether you aspire to create the next iTunes, or just want to port your mobile app to run on Windows, this is the technology you need in your toolbox.
+
 ### [Building Mobile Apps with Ionic 2, Angular 2, and TypeScript](https://app.pluralsight.com/library/courses/ionic2-angular2-typescript-mobile-apps/table-of-contents)
 
 by Pluralsight
