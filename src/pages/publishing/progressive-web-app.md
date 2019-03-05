@@ -2,6 +2,7 @@
 nextText: 'Publishing to the iOS App Store'
 nextUrl: '/docs/publishing/app-store'
 contributors:
+  - MustaRohman
   - mhartington
 ---
 
