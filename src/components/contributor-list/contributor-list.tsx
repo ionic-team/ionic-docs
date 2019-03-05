@@ -14,33 +14,28 @@ export class ContributorList {
       return;
     }
 
-    console.log(this.basepath);
     const path = this.basepath.replace('/docs', '');
-    console.log(path);
 
     return (
       <section>
         <h5>Contributors</h5>
         <div>
-          {this.contributors.map(contributor => (
-            <a target="_blank" href={`https://github.com/${contributor}`}>
+          {this.contributors.map((contributor, index) => (
+            <a
+              target="_blank"
+              href={`https://github.com/${contributor}`}
+              style={{ 'z-index': `calc(1000 - ${index})` }}>
               <span class="img-wrapper">
                 <img
                   src={`https://github.com/${contributor}.png?size=90`}
                   title={`Contributor ${contributor}`}
                 />
               </span>
-              <span class="username">{contributor}</span>
             </a>
           ))}
-          <a target="_blank" href={`https://github.com/ionic-team/ionic-docs/edit/master/src/pages${path}.md`}>
-            <span class="img-wrapper">
-              <img
-                src="/docs/assets/img/avatar.svg"
-                title="Become a Contributor"
-              />
-            </span>
-            <span class="username">You?</span>
+          <a class="contribute" target="_blank" href={`https://github.com/ionic-team/ionic-docs/edit/master/src/pages${path}.md`}>
+            <span>Contribute</span>
+            <ion-icon name="ios-arrow-forward"></ion-icon>
           </a>
         </div>
       </section>

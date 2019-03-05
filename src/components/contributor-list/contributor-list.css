@@ -7,33 +7,38 @@ contributor-list h5 {
 }
 
 contributor-list a {
+  position: relative;
   display: inline-block;
-  width: 90px;
-  margin: 10px;
+  margin-right: -6px;
   text-align: center;
   text-decoration: none;
   color: var(--accent-color);
   font-size: 11px;
+  vertical-align: middle;
 }
 
 contributor-list .img-wrapper {
-  border-radius: 14px;
-  border: 2px solid var(--accent-color);
-  display: inline-block;
+  display: block;
+  border-radius: 50%;
+  border: 2px solid var(--background);
   overflow: hidden;
 }
 
 contributor-list img {
   display: block;
-  width: 45px;
-  height: 45px;
+  width: 32px;
+  height: 32px;
 }
 
-contributor-list .username {
-  display: block;
-  text-decoration: none;
+contributor-list .contribute {
+  margin-left: 17px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: rgba(var(--accent-color-rgb), 0.08);
+  color: var(--accent-color);
 }
 
-contributor-list a:hover .username {
-  text-decoration: underline;
+contributor-list .contribute span,
+contributor-list .contribute ion-icon {
+  vertical-align: middle;
 }
