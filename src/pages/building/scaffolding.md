@@ -3,6 +3,8 @@ previousText: 'Starting'
 previousUrl: '/docs/building/starting'
 nextText: 'Migration'
 nextUrl: '/docs/building/migration'
+contributors:
+  - mhartington
 ---
 
 # Scaffolding out an App
