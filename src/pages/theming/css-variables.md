@@ -3,6 +3,9 @@ previousText: 'Platform Styles'
 previousUrl: '/docs/theming/platform-styles'
 nextText: 'Color Generator'
 nextUrl: '/docs/theming/color-generator'
+contributors:
+  - brandyscarney
+  - iget-master
 ---
 
 # CSS Variables
