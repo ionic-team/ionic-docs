@@ -7,16 +7,7 @@ loadLanguages(languages);
 export default (code: string, info: string) => {
   let [lang] = info.split(/\s+/);
 
-  lang = lang.toLowerCase();
-
-  switch (lang) {
-  case 'shell':
-    lang = 'bash';
-    break;
-  case 'vue':
-    lang = 'html';
-    break;
-  }
+  lang = (lang === 'shell') ? 'bash' : lang.toLowerCase();
 
   if (lang != null && languages.indexOf(lang) !== -1) {
     code = Prism.highlight(code, Prism.languages[lang]);

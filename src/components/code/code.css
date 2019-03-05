@@ -1,5 +1,5 @@
 @import './prismjs-theme.css';
-@import './shell-theme.css';
+@import './prismjs-bash-theme.css';
 
 docs-code {
   display: block;
