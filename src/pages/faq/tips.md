@@ -1,6 +1,10 @@
 ---
 previousText: 'CORS Errors'
 previousUrl: '/docs/faq/cors'
+contributors:
+  - rtpHarry
+  - FdezRomero
+  - brandyscarney
 ---
 
 # Developer Tips
