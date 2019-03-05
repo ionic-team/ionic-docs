@@ -5,7 +5,7 @@ import { Component, Prop } from '@stencil/core';
   styleUrl: 'contributor-list.css'
 })
 export class ContributorList {
-  @Prop() basepath: string;
+  @Prop() path: string;
 
   @Prop() contributors: string[];
 
@@ -36,14 +36,12 @@ export class ContributorList {
   }
 
   render() {
-    const path = this.basepath.replace('/docs', '');
-
     return (
       <section>
         <h5>Contributors</h5>
         <div>
           { this.renderContributors() }
-          <a class="contribute-button" target="_blank" href={`https://github.com/ionic-team/ionic-docs/edit/master/src/pages${path}.md`}>
+          <a class="contribute-button" target="_blank" href={`https://github.com/ionic-team/ionic-docs/edit/master/src/pages${this.path}.md`}>
             <span>Contribute</span>
             <ion-icon name="ios-arrow-forward"></ion-icon>
           </a>

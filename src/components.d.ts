@@ -8,9 +8,9 @@
 import '@stencil/core';
 
 import '@ionic/core';
-import 'ionicons';
 import '@stencil/router';
 import '@stencil/state-tunnel';
+import 'ionicons';
 import {
   ColorVariable,
 } from './components/color-gen/color-variables';
@@ -136,12 +136,12 @@ export namespace Components {
   interface CommandPromptAttributes extends StencilHTMLAttributes {}
 
   interface ContributorList {
-    'basepath': string;
     'contributors': string[];
+    'path': string;
   }
   interface ContributorListAttributes extends StencilHTMLAttributes {
-    'basepath'?: string;
     'contributors'?: string[];
+    'path'?: string;
   }
 
   interface DocsDemo {
