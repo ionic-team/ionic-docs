@@ -2,6 +2,8 @@
 nextText: 'Responsive Grid'
 nextUrl: '/docs/layout/grid'
 initialTab: 'preview'
+contributors:
+  - brandyscarney
 ---
 
 # Structure

@@ -4,6 +4,8 @@ previousText: 'Theming Basics'
 previousUrl: '/docs/theming/basics'
 nextText: 'CSS Variables'
 nextUrl: '/docs/theming/css-variables'
+contributors:
+  - brandyscarney
 ---
 
 # Platform Styles
