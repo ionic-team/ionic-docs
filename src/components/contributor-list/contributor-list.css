@@ -30,15 +30,22 @@ contributor-list img {
   height: 32px;
 }
 
-contributor-list .contribute {
-  margin-left: 17px;
+contributor-list .contributors {
+  margin-right: 17px;
+}
+
+contributor-list .contribute-button {
   padding: 5px 10px;
   border-radius: 20px;
   background: rgba(var(--accent-color-rgb), 0.08);
   color: var(--accent-color);
 }
 
-contributor-list .contribute span,
-contributor-list .contribute ion-icon {
+contributor-list .contribute-button:hover {
+  background: rgba(var(--accent-color-rgb), 0.1);
+}
+
+contributor-list .contribute-button span,
+contributor-list .contribute-button ion-icon {
   vertical-align: middle;
 }
