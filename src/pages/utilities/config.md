@@ -3,6 +3,8 @@ previousText: ''
 previousUrl: ''
 nextText: 'Platform'
 nextUrl: '/docs/utilities/platform'
+contributors:
+  - liamdebeasi
 ---
 
 # Config
@@ -19,11 +21,11 @@ import { IonicModule } from '@ionic/angular';
 @NgModule({
   ...
   imports: [
-    BrowserModule, 
+    BrowserModule,
     IonicModule.forRoot({
       rippleEffect: false,
       mode: 'md'
-    }), 
+    }),
     AppRoutingModule
   ],
   ...
@@ -40,21 +42,21 @@ import { IonicModule } from '@ionic/angular';
 @NgModule({
   ...
   imports: [
-    BrowserModule, 
+    BrowserModule,
     IonicModule.forRoot({
       toastEnter: (AnimationC: Animation, baseEl: ShadowRoot, position: string): Promise<Animation> => {
         const baseAnimation = new AnimationC();
 
         const wrapperAnimation = new AnimationC();
-      
+
         const hostEl = (baseEl.host || baseEl) as HTMLElement;
         const wrapperEl = baseEl.querySelector('.toast-wrapper') as HTMLElement;
-      
+
         wrapperAnimation.addElement(wrapperEl);
-      
+
         const bottom = `calc(8px + var(--ion-safe-area-bottom, 0px))`;
         const top = `calc(8px + var(--ion-safe-area-top, 0px))`;
-      
+
         switch (position) {
           case 'top':
             wrapperEl.style.top = top;
@@ -79,7 +81,7 @@ import { IonicModule } from '@ionic/angular';
           .duration(400)
           .add(wrapperAnimation));
       },
-    }), 
+    }),
     AppRoutingModule
   ],
   ...

@@ -1,6 +1,8 @@
 ---
 previousText: 'Android Play Store'
 previousUrl: 'docs/publishing/play-store'
+contributors:
+  - mhartington
 ---
 
 # Desktop App

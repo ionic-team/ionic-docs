@@ -3,6 +3,8 @@ previousText: 'Config'
 previousUrl: '/docs/utilities/config'
 nextText: ''
 nextUrl: ''
+contributors:
+  - liamdebeasi
 ---
 
 # Platform
@@ -92,7 +94,7 @@ Get the current url.
 
 Returns `true` if the expression is included in the user agent string.
 
-### Parameters 
+### Parameters
 | Name       | Type   | Description                           |
 |------------|--------|---------------------------------------|
 | expression | string | The string to check in the user agent |

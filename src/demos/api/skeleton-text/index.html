@@ -16,7 +16,7 @@
   </style>
 </head>
 
-<body onLoad="onLoad()">
+<body>
   <ion-app>
     <ion-header translucent>
       <ion-toolbar>
@@ -114,7 +114,7 @@
       </ion-list>
       <ion-list id="skeleton">
         <ion-list-header>
-          <ion-skeleton-text width="80px"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width: 80px"></ion-skeleton-text>
         </ion-list-header>
         <ion-item>
           <ion-thumbnail slot="start">
@@ -122,13 +122,13 @@
           </ion-thumbnail>
           <ion-label>
             <h3>
-              <ion-skeleton-text width="80%"></ion-skeleton-text>
+              <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
             </h3>
             <p>
-              <ion-skeleton-text width="60%"></ion-skeleton-text>
+              <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
             </p>
             <p>
-              <ion-skeleton-text width="30%"></ion-skeleton-text>
+              <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
             </p>
           </ion-label>
         </ion-item>
@@ -138,13 +138,13 @@
           </ion-thumbnail>
           <ion-label>
             <h3>
-              <ion-skeleton-text width="80%"></ion-skeleton-text>
+              <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
             </h3>
             <p>
-              <ion-skeleton-text width="60%"></ion-skeleton-text>
+              <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
             </p>
             <p>
-              <ion-skeleton-text width="30%"></ion-skeleton-text>
+              <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
             </p>
           </ion-label>
         </ion-item>
@@ -154,13 +154,13 @@
           </ion-thumbnail>
           <ion-label>
             <h3>
-              <ion-skeleton-text width="80%"></ion-skeleton-text>
+              <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
             </h3>
             <p>
-              <ion-skeleton-text width="60%"></ion-skeleton-text>
+              <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
             </p>
             <p>
-              <ion-skeleton-text width="30%"></ion-skeleton-text>
+              <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
             </p>
           </ion-label>
         </ion-item>
@@ -170,13 +170,13 @@
           </ion-thumbnail>
           <ion-label>
             <h3>
-              <ion-skeleton-text width="80%"></ion-skeleton-text>
+              <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
             </h3>
             <p>
-              <ion-skeleton-text width="60%"></ion-skeleton-text>
+              <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
             </p>
             <p>
-              <ion-skeleton-text width="30%"></ion-skeleton-text>
+              <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
             </p>
           </ion-label>
         </ion-item>
@@ -186,13 +186,13 @@
           </ion-thumbnail>
           <ion-label>
             <h3>
-              <ion-skeleton-text width="80%"></ion-skeleton-text>
+              <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
             </h3>
             <p>
-              <ion-skeleton-text width="60%"></ion-skeleton-text>
+              <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
             </p>
             <p>
-              <ion-skeleton-text width="30%"></ion-skeleton-text>
+              <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
             </p>
           </ion-label>
         </ion-item>
@@ -202,13 +202,13 @@
           </ion-thumbnail>
           <ion-label>
             <h3>
-              <ion-skeleton-text width="80%"></ion-skeleton-text>
+              <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
             </h3>
             <p>
-              <ion-skeleton-text width="60%"></ion-skeleton-text>
+              <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
             </p>
             <p>
-              <ion-skeleton-text width="30%"></ion-skeleton-text>
+              <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
             </p>
           </ion-label>
         </ion-item>
@@ -218,13 +218,13 @@
           </ion-thumbnail>
           <ion-label>
             <h3>
-              <ion-skeleton-text width="80%"></ion-skeleton-text>
+              <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
             </h3>
             <p>
-              <ion-skeleton-text width="60%"></ion-skeleton-text>
+              <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
             </p>
             <p>
-              <ion-skeleton-text width="30%"></ion-skeleton-text>
+              <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
             </p>
           </ion-label>
         </ion-item>
@@ -234,13 +234,13 @@
           </ion-thumbnail>
           <ion-label>
             <h3>
-              <ion-skeleton-text width="80%"></ion-skeleton-text>
+              <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
             </h3>
             <p>
-              <ion-skeleton-text width="60%"></ion-skeleton-text>
+              <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
             </p>
             <p>
-              <ion-skeleton-text width="30%"></ion-skeleton-text>
+              <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
             </p>
           </ion-label>
         </ion-item>
@@ -257,39 +257,9 @@
     #skeleton {
       display: block;
     }
-
-    /* TODO temporary hack for skeleton */
-    ion-skeleton-text {
-      display: inline;
-      height: 100%;
-      width: auto;
-    }
-
-    #skeleton h3,
-    #skeleton p {
-      margin-top: 7px;
-      margin-bottom: 6px;
-    }
-
-    #skeleton p:last-child {
-      margin-bottom: 5px;
-    }
   </style>
 
   <script>
-    /* TODO temporary hack for skeleton */
-    async function onLoad() {
-      const skeletonTexts = document.querySelectorAll('ion-skeleton-text');
-
-      for (i = 0; i < skeletonTexts.length; ++i) {
-        const skel = await skeletonTexts[i].componentOnReady();
-
-        const childSpan = skel.shadowRoot.querySelector('span');
-        childSpan.style.height = '100%';
-        childSpan.style.display = 'block';
-      }
-    }
-
     function toggleSkeleton() {
       const skeletonEl = document.getElementById('skeleton'),
         skeletonStyle = window.getComputedStyle(skeletonEl),
