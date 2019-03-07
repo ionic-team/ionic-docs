@@ -18,8 +18,8 @@ Given the reality of time and resource restraints as well as the desire to keep 
 The current status of each Ionic Framework version is:
 * **Ionic 4 [Active]** (Angular, React, Vue, and more): Latest version in active development. 
 * **Ionic 3** (Angular 2+): No new feature development, but actively shipping major bug fixes.
-* **Ionic 2** (Angular 2+): No new feature development, but maintained by the community.
-* **Ionic 1** (Angular 1 aka AngularJS): No new feature development, but maintained by the community.
+* **Ionic 2** (Angular 2+): No new feature development.
+* **Ionic 1** (Angular 1 aka AngularJS): No new feature development.
 
 For teams and organizations that require additional support for any Framework version, Ionic has options available.
 
