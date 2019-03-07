@@ -5,6 +5,8 @@ previousText: 'Structure'
 previousUrl: '/docs/layout/structure'
 nextText: 'CSS Utilities'
 nextUrl: '/docs/layout/css-utilities'
+contributors:
+  - brandyscarney
 ---
 
 <link rel="stylesheet" href="https://unpkg.com/@ionic/core/css/padding.css">

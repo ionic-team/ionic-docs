@@ -5,6 +5,9 @@ previousText: 'Color Generator'
 previousUrl: '/docs/theming/color-generator'
 nextText: 'Publishing an app'
 nextUrl: '/docs/publishing/app-store'
+contributors:
+  - brandyscarney
+  - marcjulian
 ---
 
 # Advanced Theming
@@ -238,3 +241,54 @@ body {
   color: rgba(var(--ion-text-color-rgb), 0.25);
 }
 ```
+
+
+### Variables in Media Queries
+
+CSS variables in [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries) are not currently supported, but there are open drafts to add [custom media queries](https://drafts.csswg.org/mediaqueries-5/#custom-mq) and [custom environment variables](https://drafts.csswg.org/css-env-1/) that would solve this problem! However, with the current state of support, the following will **not** work:
+
+```css
+:root {
+  --breakpoint: 600px;
+}
+
+@media (min-width: var(--breakpoint)) {
+  /* Doesn't work :( */
+}
+```
+
+
+### Modifying CSS Color Variables
+
+While it is possible to easily alter a color in Sass using its built-in functions, it is currently not as easy to modify colors set in CSS Variables. This can be accomplished in CSS by splitting the [RGB](https://developer.mozilla.org/en-US/docs/Glossary/RGB) or [HSL](https://en.wikipedia.org/wiki/HSL_and_HSV) channels and modifying each value, but it is complex and has missing functionality.
+
+What exactly does this mean? Basically, using a CSS preprocessor, such as Sass, allows us to use functions to manipulate a single color. For example, we can create the following colors in Sass:
+
+```scss
+// Background color, shade, and tint
+$background: #3880ff;
+$background-shade: mix(#000, $background, 12%);
+$background-tint: mix(#fff, $background, 10%);
+
+// Text color, darker and lighter
+$text: #444;
+$text-darker: darken($text, 15);
+$text-lighter: lighten($text, 15);
+```
+
+After running through the Sass compiler, the colors will have the following values:
+
+| Variable            | Value                                                     |
+| --------------------| ----------------------------------------------------------|
+| `$background`       | <code-color mode="md" value="#3880ff"></code-color>       |
+| `$background-shade` | <code-color mode="md" value="#3171e0"></code-color>       |
+| `$background-tint`  | <code-color mode="md" value="#4c8dff"></code-color>       |
+| `$text`             | <code-color mode="md" value="#444444"></code-color>       |
+| `$text-darker`      | <code-color mode="md" value="#1e1e1e"></code-color>       |
+| `$text-lighter`     | <code-color mode="md" value="#6a6a6a"></code-color>       |
+
+However, because CSS variables can be set at runtime and are more dynamic, it is not currently possible to manipulate them using a simple function.
+
+This is normally not a problem, but when an application needs to have dynamic theming it presents issues. In Ionic, this is the reason that there are [variations to each color](#layered-colors), and it is also why [stepped colors](#stepped-colors) are necessary for theming.
+
+There are drafts and issues discussing [color modification proposals](https://github.com/w3c/csswg-drafts/issues/3187) that would make this possible.

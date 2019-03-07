@@ -3,6 +3,8 @@ previousText: 'Layout'
 previousUrl: '/docs/layout/structure'
 nextText: 'Platform Styles'
 nextUrl: '/docs/theming/platform-styles'
+contributors:
+  - brandyscarney
 ---
 
 # Theming Basics

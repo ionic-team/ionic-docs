@@ -1,0 +1,22 @@
+docs-code[language="bash"] > pre {
+  background-color: var(--text-color--dark);
+  border-radius: 7px;
+}
+
+docs-code[language="bash"]:before {
+  display: none;
+}
+
+docs-code[language="bash"] code {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+}
+
+docs-code[language="bash"] code * {
+  color: inherit;
+}
+
+docs-code[language="bash"] .cursor::before {
+  content: "\$ ";
+  color: #fb96f9;
+}

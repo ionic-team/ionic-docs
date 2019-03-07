@@ -3,6 +3,8 @@ previousText: 'Progressive Web App'
 previousUrl: 'docs/publishing/progressive-web-app'
 nextText: 'Android Play Store'
 nextUrl: '/docs/publishing/play-store'
+contributors:
+  - zaarheed
 ---
 
 # Publishing to app store
