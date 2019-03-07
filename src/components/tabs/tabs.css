@@ -53,3 +53,7 @@ docs-tabs .tab {
 docs-tabs .tab.is-selected {
   display: block;
 }
+
+docs-tabs .tab docs-code pre {
+  margin-top: 0;
+}
