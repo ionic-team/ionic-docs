@@ -7,7 +7,8 @@ const INDEX_PATH = resolve(__dirname, '../../src/components/search/data/index.js
 
 export default {
   title: 'Build search index',
-  task: () => buildIndex(PAGES_PATH)
+  task: () => buildIndex(PAGES_PATH),
+  skip: () => true
 };
 
 async function buildIndex(dir) {

@@ -3,6 +3,9 @@ previousText: 'Ionic CLI'
 previousUrl: '/docs/installation/cli'
 nextText: 'Environment Setup'
 nextUrl: '/docs/installation/environment'
+contributors:
+  - brandyscarney
+  - rtpHarry
 ---
 
 # Ionic Packages
@@ -22,12 +25,13 @@ Each time there is a new Ionic release, the [version](/docs/intro/versioning) wi
 
 ## Using Ionic from a CDN
 
-Ionic can also be included from a CDN by adding a script tag!
+Ionic can also be included from a CDN!
 
-It's recommended to use [unpkg](https://unpkg.com) to access the Framework from a CDN. To get the latest version, add the following `<script>` tag inside the `<head></head>` element in an HTML file:
+It's recommended to use [unpkg](https://unpkg.com) to access the Framework from a CDN. To get the latest version, add the following inside the `<head></head>` element in an HTML file:
 
 ```html
 <script src="https://unpkg.com/@ionic/core@latest/dist/ionic.js"></script>
+<link href="https://unpkg.com/@ionic/core@latest/css/ionic.bundle.css" rel="stylesheet">
 ```
 
 With this it's possible to use all of the Ionic components without having to install anything.

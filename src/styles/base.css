@@ -7,6 +7,7 @@
 
 :root {
   --accent-color: #3880ff;
+  --accent-color-rgb: 56, 128, 255;
   --background: #ffffff;
   --code-background: #f5f7fa;
   --code-color: var(--text-color--dark);

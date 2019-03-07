@@ -31,7 +31,7 @@ export class PhotoService {
 }
 ```
 
-Within this class, add a Photo class. The “data” property represents the base64 image data of a captured photo:
+Within this file, add a Photo class. The “data” property represents the base64 image data of a captured photo:
 
 ```Javascript
 class Photo {
@@ -62,7 +62,7 @@ Add it to the Constructor:
 constructor(private camera: Camera, public photoService: PhotoService) {  }
 ```
 
-Next, move all code pertaining to the Camera plugin to the PhotoService class. This includes the takePicture method, the Camera import, and the About page constructor.
+Next, move all code pertaining to the Camera plugin to the PhotoService class. This includes the takePicture method, the Camera and CameraOptions imports, and the Tab2Page page constructor.
 
 Continuing on, we need to convert currentImage variable references to the new photos array. Start by adding the captured photo data into the photos array:
 
