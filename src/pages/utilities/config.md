@@ -14,7 +14,9 @@ The Config service provides a way to change the properties of components globall
 
 ## Usage
 
-### Basic example
+### Global
+
+#### Basic example
 
 ```typescript
 import { IonicModule } from '@ionic/angular';
@@ -35,23 +37,7 @@ import { IonicModule } from '@ionic/angular';
 
 In the above example, we are disabling the Material Design ripple effect across the app, as well as forcing the mode to be Material Design.
 
-
-
-### From a Component
-
-```typescript
-import { Component } from '@angular/core';
-import { Config } from '@ionic/angular';
-@Component({...})
-export class HomePage {
-  constructor(private config: Config) {
-    const text = this.config.get('backButtonText');
-    this.config.set('backButtonIcon', 'home');
-  }
-}
-```
-
-### Customizing Animations
+#### Customizing Animations
 
 ```typescript
 import { IonicModule } from '@ionic/angular';
@@ -106,6 +92,24 @@ import { IonicModule } from '@ionic/angular';
 ```
 
 In the above example, we are customizing the "enter" animation for the `ion-toast` component. When an `ion-toast` component is presented from the top, it will slide down instead of fading in.
+
+
+
+### By Component
+
+#### Basic Example
+
+```typescript
+import { Component } from '@angular/core';
+import { Config } from '@ionic/angular';
+@Component({...})
+export class HomePage {
+  constructor(private config: Config) {
+    const text = this.config.get('backButtonText');
+    this.config.set('backButtonIcon', 'home');
+  }
+}
+```
 
 ## Config Options
 
