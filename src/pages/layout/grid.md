@@ -3,8 +3,8 @@ initialTab: 'preview'
 inlineHtmlPreviews: true
 previousText: 'Structure'
 previousUrl: '/docs/layout/structure'
-nextText: 'CSS Utilities'
-nextUrl: '/docs/layout/css-utilities'
+nextText: 'Global Stylesheets'
+nextUrl: '/docs/layout/global-stylesheets'
 contributors:
   - brandyscarney
 ---
