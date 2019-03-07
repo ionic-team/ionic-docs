@@ -49,7 +49,7 @@ const readMarkdown = (path: string): Promise<string> =>
   });
 
 const getGitHubData = async (filePath: string) => {
-  const [, path] = /^.+(\/src\/pages\/.+\.md)$/.exec(filePath);
+  const [, path] = /^.+\/(src\/pages\/.+\.md)$/.exec(filePath);
   const since = new Date('2019-01-23').toISOString();
   const request = await fetch(url.format({
     protocol: 'https',
