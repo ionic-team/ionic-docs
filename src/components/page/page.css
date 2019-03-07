@@ -80,8 +80,3 @@ docs-page h6 code {
   background: none;
   font-size: inherit;
 }
-
-docs-page .contribute-link {
-  display: block;
-  text-align: right;
-}
