@@ -5,6 +5,9 @@ previousText: 'Color Generator'
 previousUrl: '/docs/theming/color-generator'
 nextText: 'Publishing an app'
 nextUrl: '/docs/publishing/app-store'
+contributors:
+  - brandyscarney
+  - marcjulian
 ---
 
 # 高度なカスタマイズ

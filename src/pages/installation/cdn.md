@@ -3,6 +3,9 @@ previousText: 'Ionic CLI'
 previousUrl: '/docs/installation/cli'
 nextText: 'Environment Setup'
 nextUrl: '/docs/installation/environment'
+contributors:
+  - brandyscarney
+  - rtpHarry
 ---
 
 # Ionic Packages

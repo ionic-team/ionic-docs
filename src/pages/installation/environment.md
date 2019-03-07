@@ -3,6 +3,8 @@ previousText: 'Packages & CDN'
 previousUrl: '/docs/installation/cdn'
 nextText: 'iOS Setup'
 nextUrl: '/docs/installation/ios'
+contributors:
+  - rtpHarry
 ---
 
 # 環境設定

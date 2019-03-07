@@ -3,6 +3,10 @@ previousText: 'Scaffolding'
 previousUrl: '/docs/building/scaffolding'
 nextText: 'Cross Platform'
 nextUrl: '/docs/building/cross-platform'
+contributors:
+  - mhartington
+  - kensodemann
+  - elylucas
 ---
 
 # v4への移行ガイド

@@ -3,6 +3,8 @@ previousText: 'iOS Setup'
 previousUrl: '/docs/installation/ios'
 nextText: 'Starting an App '
 nextUrl: '/docs/building/starting'
+contributors:
+  - rtpHarry
 ---
 
 # Androidセットアップ

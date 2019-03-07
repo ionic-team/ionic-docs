@@ -5,6 +5,8 @@ previousText: 'Responsive Grid'
 previousUrl: '/docs/layout/grid'
 nextText: 'Theming'
 nextUrl: '/docs/theming/basics'
+contributors:
+  - brandyscarney
 ---
 
 <link rel="stylesheet" href="https://unpkg.com/@ionic/core/css/padding.css">

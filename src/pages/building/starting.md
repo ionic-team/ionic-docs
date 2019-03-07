@@ -1,6 +1,8 @@
 ---
 nextText: 'Scaffolding'
 nextUrl: '/docs/building/scaffolding'
+contributors:
+  - dwieeb
 ---
 
 # アプリ開発をはじめる

@@ -5,6 +5,9 @@ previousText: 'CSS Variables'
 previousUrl: '/docs/theming/css-variables'
 nextText: 'Advanced Theming'
 nextUrl: '/docs/theming/advanced'
+contributors:
+  - brandyscarney
+  - kevinports
 ---
 
 # カラージェネレーター

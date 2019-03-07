@@ -4,6 +4,8 @@ previousUrl: '/docs/building/migration'
 nextText: 'Running'
 nextUrl: '/docs/building/running'
 disableHtmlPreviews: true
+contributors:
+  - rtpHarry
 ---
 
 # クロスプラットフォーム

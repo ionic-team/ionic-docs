@@ -3,6 +3,9 @@ previousText: 'What is Ionic Framework'
 previousUrl: '/docs/intro'
 nextText: 'Packages & CDN'
 nextUrl: '/docs/installation/cdn'
+contributors:
+  - rtpHarry
+  - dwieeb
 ---
 
 # CLIのインストール

@@ -3,6 +3,9 @@ previousText: 'Starting'
 previousUrl: '/docs/building/starting'
 nextText: 'Migration'
 nextUrl: '/docs/building/migration'
+contributors:
+  - mhartington
+  - brandyscarney
 ---
 
 # アプリ開発の基本
