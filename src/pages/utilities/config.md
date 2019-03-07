@@ -5,6 +5,7 @@ nextText: 'Platform'
 nextUrl: '/docs/utilities/platform'
 contributors:
   - liamdebeasi
+  - nigelbpeck
 ---
 
 # Config
