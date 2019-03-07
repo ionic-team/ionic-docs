@@ -178,6 +178,43 @@ The table below shows the default behavior, where `{modifier}` is any of the fol
 | `float-lg-{modifier}`  | Applies the modifier to the element when `min-width: 992px`.        |
 | `float-xl-{modifier}`  | Applies the modifier to the element when `min-width: 1200px`.       |
 
+## Element Display
+
+The display CSS property determines if an element should be visible or not. The element will still be in the DOM, but not rendered, if it is hidden.
+
+```html
+<ion-grid>
+  <ion-row>
+    <ion-col class="ion-hide">
+      <div>
+        <h3>hidden</h3>
+        You can't see me.
+      </div>
+    </ion-col>
+    <ion-col>
+      <div>
+        <h3>not-hidden</h3>
+        You can see me!
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+```
+
+| Class         | Style Rule                      | Description                                                                                               |
+|---------------|---------------------------------|-----------------------------------------------------------------------------------------------------------|
+| `.ion-hide`   | `display: none`                 | The element will be hidden. 
+
+### Responsive Display Attributes
+
+There are also additional classes to modify the visibility based on the screen size. Instead of just `.ion-hide` for all screen sizes, use `.ion-hide-{breakpoint}-{dir}` to only use the class on specific screen sizes, where `{breakpoint}` is one of the breakpoint names listed in [Ionic Breakpoints](#ionic-breakpoints), and `{dir}` is whether the element should be hidden on all screen sizes above (`up`) or below (`down`) the specified breakpoint.
+
+| Class                  | Description                                                                                                    |
+|------------------------|--------------------------------------------------------------------------------------------------------------|
+| `.ion-hide-sm-{dir}`   | Applies the modifier to the element when `min-width: 576px` (`up`) or `max-width: 576px` (`down`).            |
+| `.ion-hide-md-{dir}`   | Applies the modifier to the element when `min-width: 768px` (`up`) or `max-width: 768px` (`down`).            |
+| `.ion-hide-lg-{dir}`   | Applies the modifier to the element when `min-width: 992px` (`up`) or `max-width: 992px` (`down`).            |
+| `.ion-hide-xl-{dir}`   | Applies the modifier to the element when `min-width: 1200px` (`up`) or `max-width: 1200px` (`down`).  |
 
 ## Content Space
 
