@@ -5,6 +5,7 @@ nextText: 'Platform'
 nextUrl: '/docs/utilities/platform'
 contributors:
   - liamdebeasi
+  - mhartington
 ---
 
 # Config
@@ -33,6 +34,22 @@ import { IonicModule } from '@ionic/angular';
 ```
 
 In the above example, we are disabling the Material Design ripple effect across the app, as well as forcing the mode to be Material Design.
+
+
+
+### From a Component
+
+```typescript
+import { Component } from '@angular/core';
+import { Config } from '@ionic/angular';
+@Component({...})
+export class HomePage {
+  constructor(private config: Config) {
+    const text = this.config.get('backButtonText');
+    this.config.set('backButtonIcon', 'home');
+  }
+}
+```
 
 ### Customizing Animations
 
