@@ -34,6 +34,58 @@ import { IonicModule } from '@ionic/angular';
 
 In the above example, we are disabling the Material Design ripple effect across the app, as well as forcing the mode to be Material Design.
 
+Below is an example where an app can override any setting we want based on a platform. This allows for more granular configuration.
+
+```typescript
+import { IonicModule } from 'ionic-angular';
+
+@NgModule({
+  ...
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot({
+      tabsPlacement: 'bottom',
+      platforms: {
+        ios: {
+          tabsPlacement: 'top',
+        }
+      }
+    }),
+    AppRoutingModule
+  ],
+  ...
+})
+```
+
+### Working with the Config
+
+Ionic allows you to customize and examine the config at any level. This allows for more granular configuration.
+
+We can configure values at a component level. Take `tabsPlacement`, we can configure this as a property on our `ion-tabs`.
+
+```
+<ion-tabs tabsPlacement="top">
+  <ion-tab tabTitle="Dash" tabIcon="pulse" [root]="tabRoot"></ion-tab>
+</ion-tabs>
+```
+
+The last way we could configure is through URL query strings. This is useful for testing while in the browser. Simply add `?ionic<PROPERTYNAME>=<value>` to the url.
+
+```
+http://localhost:8100/?ionicTabsPlacement=bottom
+```
+
+Any value can be added to config, and looked up at a later in any component.
+
+```
+config.set('ios', 'favoriteColor', 'green');
+
+// from any page in your app:
+config.get('favoriteColor'); // 'green' when iOS
+```
+
+A config value can come from anywhere and be anything, but there are default values for each mode. The theming documentation has a chart of the default mode configuration. See below for a list of config options.
+
 ### Customizing Animations
 
 ```typescript
