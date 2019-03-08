@@ -5,6 +5,7 @@ nextText: 'Platform'
 nextUrl: '/docs/utilities/platform'
 contributors:
   - liamdebeasi
+  - mhartington
   - nigelbpeck
 ---
 
@@ -14,7 +15,9 @@ The Config service provides a way to change the properties of components globall
 
 ## Usage
 
-### Basic example
+### Global
+
+#### Basic example
 
 ```typescript
 import { IonicModule } from '@ionic/angular';
@@ -87,7 +90,7 @@ config.get('favoriteColor'); // 'green' when iOS
 
 A config value can come from anywhere and be anything, but there are default values for each mode. The theming documentation has a chart of the default mode configuration. See below for a list of config options.
 
-### Customizing Animations
+#### Customizing Animations
 
 ```typescript
 import { IonicModule } from '@ionic/angular';
@@ -142,6 +145,22 @@ import { IonicModule } from '@ionic/angular';
 ```
 
 In the above example, we are customizing the "enter" animation for the `ion-toast` component. When an `ion-toast` component is presented from the top, it will slide down instead of fading in.
+
+### By Component
+
+#### Basic Example
+
+```typescript
+import { Component } from '@angular/core';
+import { Config } from '@ionic/angular';
+@Component({...})
+export class HomePage {
+  constructor(private config: Config) {
+    const text = this.config.get('backButtonText');
+    this.config.set('backButtonIcon', 'home');
+  }
+}
+```
 
 ## Config Options
 
