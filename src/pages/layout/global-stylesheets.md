@@ -13,7 +13,7 @@ contributors:
 
 While Ionic Framework component styles are self-contained, there are several global stylesheets that should be included in order to use all of Ionic's features. Some of the stylesheets are required in order for an Ionic Framework app to look and behave properly, and others include optional utilities to quickly style your app.
 
-## Available Stylesheets
+## Available
 
 ### Required
 
@@ -70,6 +70,6 @@ Adds utility classes to align flex containers and items, see [CSS Utilities](./c
 Adds utility classes to hide any element based on the breakpoint, see [CSS Utilities](./css-utilities#element-display) for usage information.
 
 
-## Including Stylesheets
+## Usage
 
-Refer to the [Ionic Packages](../installation/cdn) section for how to include the global stylesheets based on the framework.
+Refer to [Ionic Packages](../installation/cdn) for how to include the global stylesheets based on the framework and [CSS Utilities](./css-utilities) for how to use the optional utilities.
