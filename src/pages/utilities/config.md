@@ -240,7 +240,6 @@ Same as `get()`, however always returns a number value. Uses `parseFloat()` on t
 |-------------------|--------------------|------------------------------------------------------------------------------------------------------|
 | `key`             | `string`           | the key for the config value **Optional**
 | `fallbackValue`   | `number`           | a fallback value to use when the config value turned out to be `NaN`. Fallback value defaults to `NaN`. **Optional**
-| `PARAM`           | `TYPE`             | DETAILS
 
 ### `set(platform, key, value)`
   
