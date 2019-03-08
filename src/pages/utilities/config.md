@@ -210,3 +210,44 @@ The following chart displays each property with a description of what it control
 | `tabButtonLayout`        | `TabButtonLayout`  | Overrides the default "layout" of all `ion-bar-button` across the whole application.
 | `toastEnter`             | `AnimationBuilder` | Provides a custom enter animation for all `ion-toast`, overriding the default "animation".
 | `toastLeave`             | `AnimationBuilder` | Provides a custom leave animation for all `ion-toast`, overriding the default "animation".
+
+## API
+
+### `get(key, fallbackValue)`
+  
+Returns a single config value, given a key.
+
+| Param             | Type               | Details                                                                                              |
+|-------------------------|--------------|------------------------------------------------------------------------------------------------------|
+| `key`             | `string`           | the key for the config value **Optional**
+| `fallbackValue`   | `any`              | a fallback value to use when the config value was not found, or is config value is `null`. Fallback value defaults to `null`. **Optional**
+| `key`             | `string`           | the key for the config value **Optional**
+
+### `getBoolean(key, fallbackValue)`
+  
+Same as `get()`, however always returns a boolean value. If the value from `get()` is `null`, then it'll return the `fallbackValue` which defaults to `false`. Otherwise, `getBoolean()` will return if the config value is truthy or not. It also returns `true` if the config value was the string value `true`.
+
+| Param             | Type               | Details                                                                                              |
+|-------------------|--------------------|------------------------------------------------------------------------------------------------------|
+| `key`             | `string`           | the key for the config value **Optional**
+| `fallbackValue`   | `boolean`          | a fallback value to use when the config value was `null`. Fallback value defaults to `false`. **Optional**
+
+### `getNumber(key, fallbackValue)`
+  
+Same as `get()`, however always returns a number value. Uses `parseFloat()` on the value received from `get()`. If the result from the parse is `NaN`, then it will return the value passed to `fallbackValue`. If no fallback value was provided then it’ll default to returning `NaN` when the result is not a valid number.
+
+| Param             | Type               | Details                                                                                              |
+|-------------------------|--------------|------------------------------------------------------------------------------------------------------|
+| `key`             | `string`           | the key for the config value **Optional**
+| `fallbackValue`   | `number`           | a fallback value to use when the config value turned out to be `NaN`. Fallback value defaults to `NaN`. **Optional**
+| `PARAM`           | `TYPE`             | DETAILS
+
+### `set(platform, key, value)`
+  
+Sets a single config value.
+
+| Param             | Type               | Details                                                                                              |
+|-------------------|--------------------|------------------------------------------------------------------------------------------------------|
+| `platform`        | `string`           | The platform (either 'ios' or 'android') that the config value should apply to. Leaving this blank will apply the config value to all platforms. **Optional**
+| `key`             | `string`           | The key used to look up the value at a later point in time. **Optional**
+| `value`           | `string`           | The config value being stored. **Optional**
