@@ -11,13 +11,32 @@ contributors:
 
 # Config
 
-The Config service provides a way to change the properties of components globally across an app. It can set the app mode, tab button layout, animations, and more.
+The Config service provides a way to change the properties of components. This can be done globally, at a platform level, or at a component level. They can be changed for testing by adding a parameter to the URL. It can set the app mode, tab button layout, animations, and more.
 
 ## Usage
 
-### Global
+Any value can be added to config, and looked up at a later time in any component. A config value can come from anywhere and be anything, but there are default values for each mode (see "Config Options" later in this document). The theming documentation has a chart of the default mode configuration.
 
-#### Basic example
+### Checking Active Config
+
+The config that is currently in force can be checked using the `Config` API.
+
+```typescript
+import { Component } from '@angular/core';
+import { Config } from '@ionic/angular';
+@Component({...})
+export class HomePage {
+  constructor(private config: Config) {
+    const text = this.config.get('backButtonText', 'Default back button text.');
+  }
+}
+```
+
+Other options include `getBoolean` and `getNumber`. All support an optional fallback value as the second parameter.
+
+### Setting Globally
+
+Here we are passing our settings while importing the `IonicModule` module. This will disable the Material Design ripple effect across the app, as well as forcing the mode to be Material Design.
 
 ```typescript
 import { IonicModule } from '@ionic/angular';
@@ -36,9 +55,18 @@ import { IonicModule } from '@ionic/angular';
 })
 ```
 
-In the above example, we are disabling the Material Design ripple effect across the app, as well as forcing the mode to be Material Design.
+Here we are making the same change using the `Config` API. This can only be used to make changes globally.
 
-Below is an example where an app can override any setting we want based on a platform. This allows for more granular configuration.
+```typescript
+import { Config } from '@ionic/angular';
+...
+this.config.set('rippleEffect', false);
+this.config.set('mode', 'md');
+```
+
+#### Per Platform
+
+Here is an example where settings can be overridden based on platform. This will specify that tabs should be placed at the top for the `ios` platform, and otherwise at the bottom.
 
 ```typescript
 import { IonicModule } from 'ionic-angular';
@@ -61,9 +89,16 @@ import { IonicModule } from 'ionic-angular';
 })
 ```
 
-### Working with the Config
+Here we are making the same change using the `Config` API. This can only be used to make changes globally. The platform is an optional first parameter on `config.set()`.
 
-Ionic allows you to customize and examine the config at any level. This allows for more granular configuration.
+```typescript
+import { Config } from '@ionic/angular';
+...
+this.config.set('tabsPlacement', 'bottom');
+this.config.set('ios', 'tabsPlacement', 'top');
+```
+
+### Setting for Components
 
 We can configure values at a component level. Take `tabsPlacement`, we can configure this as a property on our `ion-tabs`.
 
@@ -73,24 +108,17 @@ We can configure values at a component level. Take `tabsPlacement`, we can confi
 </ion-tabs>
 ```
 
-The last way we could configure is through URL query strings. This is useful for testing while in the browser. Simply add `?ionic<PROPERTYNAME>=<value>` to the url.
+To set dynamically at a component level, `@ViewChild` can be used.
+
+### Testing with URL Parameters
+
+We can configure settings using URL parameters. This is useful for testing while in the browser. Simply add `?ionic<PROPERTYNAME>=<value>` to the url.
 
 ```
 http://localhost:8100/?ionicTabsPlacement=bottom
 ```
 
-Any value can be added to config, and looked up at a later in any component.
-
-```
-config.set('ios', 'favoriteColor', 'green');
-
-// from any page in your app:
-config.get('favoriteColor'); // 'green' when iOS
-```
-
-A config value can come from anywhere and be anything, but there are default values for each mode. The theming documentation has a chart of the default mode configuration. See below for a list of config options.
-
-#### Customizing Animations
+### Customizing Animations
 
 ```typescript
 import { IonicModule } from '@ionic/angular';
@@ -146,26 +174,10 @@ import { IonicModule } from '@ionic/angular';
 
 In the above example, we are customizing the "enter" animation for the `ion-toast` component. When an `ion-toast` component is presented from the top, it will slide down instead of fading in.
 
-### By Component
-
-#### Basic Example
-
-```typescript
-import { Component } from '@angular/core';
-import { Config } from '@ionic/angular';
-@Component({...})
-export class HomePage {
-  constructor(private config: Config) {
-    const text = this.config.get('backButtonText');
-    this.config.set('backButtonIcon', 'home');
-  }
-}
-```
-
 ## Config Options
 
-Below is a list of config options that Ionic uses.
-
+The following chart displays each property with a description of what it controls.
+ 
 | Config                   | Type               | Description                                                                                              |
 |--------------------------|--------------------|----------------------------------------------------------------------------------------------------------|
 | `actionSheetEnter`       | `AnimationBuilder` | Provides a custom enter animation for all `ion-action-sheet`, overriding the default "animation".
