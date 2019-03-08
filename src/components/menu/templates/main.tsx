@@ -39,6 +39,7 @@ const items = {
     'CSS Variables': '/docs/theming/css-variables',
     'Color Generator': '/docs/theming/color-generator',
     'Advanced': '/docs/theming/advanced',
+    'Dark Mode': '/docs/theming/dark-mode',
   },
   'Navigation': {
     'Angular': '/docs/navigation/angular'
