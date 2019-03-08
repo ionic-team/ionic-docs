@@ -3,8 +3,8 @@ initialTab: 'preview'
 inlineHtmlPreviews: true
 previousText: 'Color Generator'
 previousUrl: '/docs/theming/color-generator'
-nextText: 'Publishing an app'
-nextUrl: '/docs/publishing/app-store'
+nextText: 'Dark Mode'
+nextUrl: '/docs/theming/dark-mode'
 contributors:
   - brandyscarney
   - marcjulian
