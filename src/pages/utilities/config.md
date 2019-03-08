@@ -11,7 +11,7 @@ contributors:
 
 # Config
 
-The Config service provides a way to change the properties of components. This can be done globally, at a platform level, or at a component level. They can be changed for testing by adding a parameter to the URL. It can set the app mode, tab button layout, animations, and more.
+The Config service provides a way to change the properties of components. This can be done globally, at a platform level, or at a component level. To change a setting for testing, a parameter can be added to the URL. It can set the app mode, tab button layout, animations, and more.
 
 ## Usage
 
@@ -32,7 +32,7 @@ export class HomePage {
 }
 ```
 
-Other options include `getBoolean` and `getNumber`. All support an optional fallback value as the second parameter.
+Other options include `getBoolean` and `getNumber`. All support an optional fallback value as the second parameter. See API details at the end of this document for details.
 
 ### Setting Globally
 
@@ -89,7 +89,7 @@ import { IonicModule } from 'ionic-angular';
 })
 ```
 
-Here we are making the same change using the `Config` API. This can only be used to make changes globally. The platform is an optional first parameter on `config.set()`.
+Here we are making the same change using the `Config` API. This can only be used to make changes globally. The platform is an optional first parameter for `config.set()`.
 
 ```typescript
 import { Config } from '@ionic/angular';
@@ -237,7 +237,7 @@ Same as `get()`, however always returns a boolean value. If the value from `get(
 Same as `get()`, however always returns a number value. Uses `parseFloat()` on the value received from `get()`. If the result from the parse is `NaN`, then it will return the value passed to `fallbackValue`. If no fallback value was provided then it’ll default to returning `NaN` when the result is not a valid number.
 
 | Param             | Type               | Details                                                                                              |
-|-------------------------|--------------|------------------------------------------------------------------------------------------------------|
+|-------------------|--------------------|------------------------------------------------------------------------------------------------------|
 | `key`             | `string`           | the key for the config value **Optional**
 | `fallbackValue`   | `number`           | a fallback value to use when the config value turned out to be `NaN`. Fallback value defaults to `NaN`. **Optional**
 | `PARAM`           | `TYPE`             | DETAILS
