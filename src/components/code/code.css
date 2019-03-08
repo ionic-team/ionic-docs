@@ -19,7 +19,3 @@ docs-code:before {
   text-transform: uppercase;
   top: 0;
 }
-
-docs-code pre {
-  margin-top: 0;
-}
