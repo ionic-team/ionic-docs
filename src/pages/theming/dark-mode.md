@@ -7,11 +7,11 @@ contributors:
 
 # Dark Mode
 
-Dark Mode is a specific theme that developers can add to their app in 2 ways. There's the new `prefers-color-scheme` media query, and a fall back method of targeting a class. To create a dark mode for an app, all that's needed are a few changes to different CSS variables.
+Dark Mode is a specific theme that developers can add to their app in two ways. There's the new `prefers-color-scheme` media query or the fallback method of targeting a class. To create a dark mode for an app, all that's needed are a few changes to different CSS variables.
 
 ## Using Media Queries
 
-The first method available is the CSS media query for preferred color scheme. This media query will hook into the system setting of you device and apply the changes if a dark mode is enabled.
+The first method available is the CSS media query for the user's preferred color scheme. This media query will hook into the system setting of the user's device and apply the changes if a dark mode is enabled.
 
 The fist values that will need to change are the text color and background color. As the name "dark mode" implies, the background of an app should be dark, with lighter text.
 
@@ -27,9 +27,11 @@ The fist values that will need to change are the text color and background color
 }
 ```
 
-These will borrow from the overall theme colors in a default app. Depending on any other customizations that have been made to the default theme, some adjustments may be needed. The overall idea is that the dark mode that is applied uses the same colors in an app's theme and creates a cohesive UI.
+These will take the value from the default Ionic colors in an app. Depending on any other customizations that have been made to the default theme, some adjustments may be needed. The overall idea is that the dark mode that is applied uses the same colors in an app's theme and creates a cohesive UI.
 
 In addition, the step variables can also be modified to further enhance the dark mode experience.
+
+In this case, the color steps are generated based on the background color and text color. The [stepped color generator](/docs/theming/advanced#generate-stepped-color-variables) can take the hex value of the background color and text color and automatically generate the steps needed for an app.
 
 ```css
 @media (prefers-color-scheme: dark) {
@@ -63,11 +65,9 @@ In addition, the step variables can also be modified to further enhance the dark
 }
 ```
 
-In this case, the color steps are generated based on the background color and text color. The [stepped color generator](/docs/theming/advanced#generate-stepped-color-variables) can take the hex value of the background color and automatically generate the steps needed for an app.
-
 ## Class Fallback
 
-Currently, the `prefers-color-scheme` media query is only supported in desktop Safari and mobile Firebox, so users will not able to benefit from having the dark mode applied automatically. But the dark mode can still be applied by using a CSS selector and applying a class to our document body.
+Currently, the `prefers-color-scheme` media query is only supported in desktop Safari and mobile Firebox, so users will not able to benefit from having the dark mode applied automatically in other browsers. However, the dark mode can still be applied by styling a CSS selector and applying the class to our document body
 
 ```css
 @media (prefers-color-scheme: dark) {...}
