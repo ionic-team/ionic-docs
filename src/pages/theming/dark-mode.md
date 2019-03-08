@@ -27,7 +27,7 @@ The fist values that will need to change are the text color and background color
 }
 ```
 
-These will take the value from the default Ionic colors in an app. Depending on any other customizations that have been made to the default theme, some adjustments may be needed. The overall idea is that the dark mode that is applied uses the same colors in an app's theme and creates a cohesive UI.
+These will take the value from the [default Ionic colors](https://ionicframework.com/docs/theming/advanced#colors) in an app. Depending on any other customizations that have been made to the default theme, some adjustments may be needed. The overall idea is that the dark mode that is applied uses the same colors in an app's theme and creates a cohesive UI.
 
 In addition, the step variables can also be modified to further enhance the dark mode experience.
 
