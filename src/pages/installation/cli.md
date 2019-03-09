@@ -26,7 +26,7 @@ $ npm install -g ionic
 
 ## Start an App
 
-Create an Ionic app using one of the pre-made app templates, or a blank one to start fresh. The three most common starters are the `blank` starter, `tabs` starter, and `sidemenu` starter. Get started with the `ionic start` command:
+Create an Ionic app using one of the pre-made app templates, or a blank one to start fresh. The three most common starters are the `blank` starter, `tabs` starter, and `sidemenu` starter. Get started with the `ionic stnart` command:
 
 ```shell
 $ ionic start myApp tabs
@@ -44,6 +44,6 @@ The majority of Ionic app development can be spent right in the browser using th
 ```shell
 $ cd myApp
 $ ionic serve
-```
+```command
 
 There are a number of other ways to run an app, it's recommended to start with this workflow. To develop and test apps on devices and emulators, see the [Running an App Guide](/docs/building/running).
