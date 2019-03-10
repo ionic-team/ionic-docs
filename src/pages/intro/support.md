@@ -3,21 +3,28 @@ previousText: 'Versioning'
 previousUrl: '/docs/intro/versioning'
 nextText: 'Installing Ionic'
 nextUrl: '/docs/installation/cli'
+contributors:
+  - dotNetkow
 ---
 
-# サポート
+# Ionic Frameworkのサポートポリシー
 
+## Community Maintenance
 
-## サポート方針
+The Ionic Framework CE (Community Edition) has been 100% open source (MIT) since the very beginning, and always will be. Developers can ensure Ionic is the right choice for their cross-platform apps through Ionic’s community maintenance strategy. The Ionic team regularly ships new releases, bug fixes, and is very welcoming to community pull requests.
 
-### 長期サポート
+Given the reality of time and resource restraints as well as the desire to keep innovating in the frontend development space, over time it becomes necessary for the Ionic team to shift focus to newer versions of the Framework. However, Ionic will do everything it can to make the transition to newer versions as smooth as possible, including but not limited to publishing migration guides such as [this one for Ionic 4](/docs/building/migration). The open source community is always welcome to submit new features and bug fixes as well.
 
-長期サポート（LTS）を通じて、私たちは開発者と組織に開発中のアプリの安定性と信頼性を提供する予定です。Ionic Framework 4.0.0のような<a href="/docs/intro/versioning#major-release" target="_blank">メジャーリリース</a>では、2年間のバグとセキュリティの修正が提供されますが、私たちはLTSのサポートを3年間行います。つまり、v5.0.0がリリースされても、最新の4.x.xは1年間引き続きバグの修正を行います。
+The current status of each Ionic Framework version is:
+* **Ionic 4 [Active]** (Angular, React, Vue, and more): Latest version in active development.
+* **Ionic 3** (Angular 2+): No new feature development, but actively shipping major bug fixes.
+* **Ionic 2** (Angular 2+): No new feature development.
+* **Ionic 1** (Angular 1 aka AngularJS): No new feature development.
 
-<blockquote>
-  <p>4.0以下のフレームワークバージョンにはLTSはありません。</p>
-</blockquote>
+For teams and organizations that require additional support for any Framework version, Ionic has options available.
 
-## 有料サポートのオプション
+## Long Term Support (Premium)
 
-Ionic offers paid support options for teams and organizations that would like guaranteed support level agreements (SLAs) and advisory services to help them kick off or maintain their Ionic projects. You can learn more about our Enterprise Support packages <a href="https://ionicframework.com/enterprise/support" target="_blank">here</a>.
+Long Term Support (LTS) provides developers and organizations with additional stability and reliability in the apps they’re developing, including guaranteed support level agreements (SLAs) and advisory services. Take the preparation time you need before upgrading to the latest version of the Ionic Framework or remain confident in your app’s long-term success by staying on whichever version you’re most comfortable with.
+
+LTS is available as part of Ionic Enterprise Edition and extends to Ionic 1 implementations and higher. For more information, visit the [Ionic Enterprise Edition](https://ionicframework.com/enterprise-edition) page or schedule a [Strategy Session](https://ionicframework.com/strategysession) with one of our Solutions Engineers.

@@ -39,12 +39,12 @@ docs-nav a {
 }
 
 @media (hover: hover) {
-  .Nav-link:hover {
-    --bg-alpha: 0.025;
+  .Nav-link:not(.Nav-link--active):hover {
+    color: var(--text-color);
   }
 
   .Nav-link:active {
-    --bg-alpha: 0.05;
+    --bg-alpha: 0.025;
   }
 }
 
