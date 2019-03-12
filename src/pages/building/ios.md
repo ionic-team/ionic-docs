@@ -81,6 +81,12 @@ In this workflow, Xcode can automatically fix common compilation and signing iss
 
 The Ionic CLI can build, copy, and deploy Ionic apps to iOS simulators and devices with a single command. It can also spin up a development server, like the one used in `ionic serve`, to provide [live-reload](/docs/faq/glossary#livereload) functionality.
 
+For Capacitor, run the following to start a long-running CLI process that boots up a live-reload server:
+
+```shell
+$ ionic capacitor run ios -l
+```
+
 For Cordova, run the following to start a long-running CLI process that boots up a live-reload server:
 
 ```shell
