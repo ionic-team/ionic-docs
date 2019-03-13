@@ -26,11 +26,11 @@ export namespace Components {
 
   interface DocsButton {
     'href': string;
-    'primary': boolean;
+    'round': boolean;
   }
   interface DocsButtonAttributes extends StencilHTMLAttributes {
     'href'?: string;
-    'primary'?: boolean;
+    'round'?: boolean;
   }
 
   interface DocsCard {
