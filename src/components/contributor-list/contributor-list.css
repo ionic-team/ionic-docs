@@ -2,50 +2,34 @@ contributor-list {
   display: block;
 }
 
-contributor-list h5 {
-  margin: 10px 0;
+contributor-list ul {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-contributor-list a {
-  position: relative;
-  display: inline-block;
-  margin-right: -6px;
-  text-align: center;
-  text-decoration: none;
-  color: var(--accent-color);
-  font-size: 11px;
-  vertical-align: middle;
-}
-
-contributor-list .img-wrapper {
-  display: block;
-  border-radius: 50%;
-  border: 2px solid var(--background);
-  overflow: hidden;
+contributor-list li:not(:last-child) {
+  margin-left: -10px;
 }
 
 contributor-list img {
+  border: solid 2px var(--background);
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+}
+
+contributor-list a {
   display: block;
-  width: 32px;
-  height: 32px;
+  transition: transform 50ms ease-out;
 }
 
-contributor-list .contributors {
-  margin-right: 17px;
-}
-
-contributor-list .contribute-button {
-  padding: 5px 10px;
-  border-radius: 20px;
-  background: rgba(var(--accent-color-rgb), 0.08);
-  color: var(--accent-color);
-}
-
-contributor-list .contribute-button:hover {
-  background: rgba(var(--accent-color-rgb), 0.1);
-}
-
-contributor-list .contribute-button span,
-contributor-list .contribute-button ion-icon {
-  vertical-align: middle;
+@media (hover: hover) {
+  contributor-list a:hover {
+    transform: scale(1.125);
+    z-index: 1;
+  }
 }
