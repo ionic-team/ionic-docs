@@ -19,12 +19,16 @@ contributor-list img {
   border: solid 2px var(--background);
   border-radius: 50%;
   height: 40px;
-  transition: transform 50ms ease-out;
   width: 40px;
 }
 
+contributor-list a {
+  display: block;
+  transition: transform 50ms ease-out;
+}
+
 @media (hover: hover) {
-  contributor-list img:hover {
+  contributor-list a:hover {
     transform: scale(1.125);
     z-index: 1;
   }
