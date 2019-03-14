@@ -4,5 +4,5 @@ The official [Ionic](https://ionicframework.com) documentation, built with [Sten
 
 ---
 
-- [Contributing Guide](https://github.com/ionic-team/ionic-docs/blob/master/.github/CONTRIBUTING.md) :flashlight:
+- [Contributing Guide](https://github.com/ionic-team/ionic-docs/blob/master/CONTRIBUTING.md) :flashlight:
 - [Project Board](https://github.com/ionic-team/ionic-docs/projects/3) :pushpin:
