@@ -100,7 +100,8 @@ const renderProperties = (properties = []) => {
           Head: prop => prop.name,
           Description: prop => <div innerHTML={prop.docs}/>,
           Attribute: prop => prop.attr ? <code>{ prop.attr }</code> : null,
-          Type: prop => <code>{ prop.type }</code>
+          Type: prop => <code>{ prop.type }</code>,
+          Default: prop => prop.default ? <code>{ prop.default }</code> : null
         }}/>
     </section>
   );
