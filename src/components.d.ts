@@ -26,11 +26,11 @@ export namespace Components {
 
   interface DocsButton {
     'href': string;
-    'primary': boolean;
+    'round': boolean;
   }
   interface DocsButtonAttributes extends StencilHTMLAttributes {
     'href'?: string;
-    'primary'?: boolean;
+    'round'?: boolean;
   }
 
   interface DocsCard {
@@ -137,11 +137,9 @@ export namespace Components {
 
   interface ContributorList {
     'contributors': string[];
-    'path': string;
   }
   interface ContributorListAttributes extends StencilHTMLAttributes {
     'contributors'?: string[];
-    'path'?: string;
   }
 
   interface DocsDemo {
@@ -196,6 +194,13 @@ export namespace Components {
   }
   interface DocsNavAttributes extends StencilHTMLAttributes {
     'items'?: MenuItems;
+  }
+
+  interface DocsPageFooter {
+    'page': Page;
+  }
+  interface DocsPageFooterAttributes extends StencilHTMLAttributes {
+    'page'?: Page;
   }
 
   interface DocsPage {
@@ -291,6 +296,7 @@ declare global {
     'LayeredColorsSelect': Components.LayeredColorsSelect;
     'DocsMenu': Components.DocsMenu;
     'DocsNav': Components.DocsNav;
+    'DocsPageFooter': Components.DocsPageFooter;
     'DocsPage': Components.DocsPage;
     'DocsPagination': Components.DocsPagination;
     'DocsReference': Components.DocsReference;
@@ -330,6 +336,7 @@ declare global {
     'layered-colors-select': Components.LayeredColorsSelectAttributes;
     'docs-menu': Components.DocsMenuAttributes;
     'docs-nav': Components.DocsNavAttributes;
+    'docs-page-footer': Components.DocsPageFooterAttributes;
     'docs-page': Components.DocsPageAttributes;
     'docs-pagination': Components.DocsPaginationAttributes;
     'docs-reference': Components.DocsReferenceAttributes;
@@ -494,6 +501,12 @@ declare global {
     new (): HTMLDocsNavElement;
   };
 
+  interface HTMLDocsPageFooterElement extends Components.DocsPageFooter, HTMLStencilElement {}
+  var HTMLDocsPageFooterElement: {
+    prototype: HTMLDocsPageFooterElement;
+    new (): HTMLDocsPageFooterElement;
+  };
+
   interface HTMLDocsPageElement extends Components.DocsPage, HTMLStencilElement {}
   var HTMLDocsPageElement: {
     prototype: HTMLDocsPageElement;
@@ -586,6 +599,7 @@ declare global {
     'layered-colors-select': HTMLLayeredColorsSelectElement
     'docs-menu': HTMLDocsMenuElement
     'docs-nav': HTMLDocsNavElement
+    'docs-page-footer': HTMLDocsPageFooterElement
     'docs-page': HTMLDocsPageElement
     'docs-pagination': HTMLDocsPaginationElement
     'docs-reference': HTMLDocsReferenceElement
@@ -625,6 +639,7 @@ declare global {
     'layered-colors-select': HTMLLayeredColorsSelectElement;
     'docs-menu': HTMLDocsMenuElement;
     'docs-nav': HTMLDocsNavElement;
+    'docs-page-footer': HTMLDocsPageFooterElement;
     'docs-page': HTMLDocsPageElement;
     'docs-pagination': HTMLDocsPaginationElement;
     'docs-reference': HTMLDocsReferenceElement;
