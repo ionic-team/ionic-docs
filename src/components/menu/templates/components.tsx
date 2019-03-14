@@ -2,12 +2,12 @@ export default () => <docs-nav items={items}/>;
 
 const items = {
   'Action Sheet': {
-    'ion-action-sheet-controller': '/docs/api/action-sheet-controller',
-    'ion-action-sheet': '/docs/api/action-sheet'
+    'ion-action-sheet': '/docs/api/action-sheet',
+    'ion-action-sheet-controller': '/docs/api/action-sheet-controller'
   },
   'Alert': {
-    'ion-alert-controller': '/docs/api/alert-controller',
-    'ion-alert': '/docs/api/alert'
+    'ion-alert': '/docs/api/alert',
+    'ion-alert-controller': '/docs/api/alert-controller'
   },
   'Badge': {
     'ion-badge': '/docs/api/badge'
@@ -35,22 +35,22 @@ const items = {
   },
   'Date & Time Pickers': {
     'ion-datetime': '/docs/api/datetime',
-    'ion-picker-controller': '/docs/api/picker-controller',
-    'ion-picker': '/docs/api/picker'
+    'ion-picker': '/docs/api/picker',
+    'ion-picker-controller': '/docs/api/picker-controller'
   },
   'Floating Action Button': {
-    'ion-fab-button': '/docs/api/fab-button',
-    'ion-fab-list': '/docs/api/fab-list',
     'ion-fab': '/docs/api/fab',
+    'ion-fab-button': '/docs/api/fab-button',
+    'ion-fab-list': '/docs/api/fab-list'
   },
   'Grid': {
-    'ion-col': '/docs/api/col',
-    'ion-row': '/docs/api/row',
     'ion-grid': '/docs/api/grid',
+    'ion-col': '/docs/api/col',
+    'ion-row': '/docs/api/row'
   },
   'Infinite Scroll': {
-    'ion-infinite-scroll-content': '/docs/api/infinite-scroll-content',
-    'ion-infinite-scroll': '/docs/api/infinite-scroll'
+    'ion-infinite-scroll': '/docs/api/infinite-scroll',
+    'ion-infinite-scroll-content': '/docs/api/infinite-scroll-content'
   },
   'Icons': {
     'ion-icon': 'https://ionicons.com'
@@ -81,26 +81,26 @@ const items = {
     'ion-thumbnail': '/docs/api/thumbnail'
   },
   'Menu': {
+    'ion-menu': '/docs/api/menu',
     'ion-menu-button': '/docs/api/menu-button',
     'ion-menu-controller': '/docs/api/menu-controller',
     'ion-menu-toggle': '/docs/api/menu-toggle',
-    'ion-menu': '/docs/api/menu',
     'ion-split-pane': '/docs/api/split-pane'
   },
   'Modal': {
-    'ion-modal-controller': '/docs/api/modal-controller',
     'ion-modal': '/docs/api/modal',
+    'ion-modal-controller': '/docs/api/modal-controller',
     'ion-backdrop': '/docs/api/backdrop'
   },
   'Navigation': {
+    'ion-nav': '/docs/api/nav',
     'ion-nav-pop': '/docs/api/nav-pop',
     'ion-nav-push': '/docs/api/nav-push',
-    'ion-nav-set-root': '/docs/api/nav-set-root',
-    'ion-nav': '/docs/api/nav'
+    'ion-nav-set-root': '/docs/api/nav-set-root'
   },
   'Popover': {
-    'ion-popover-controller': '/docs/api/popover-controller',
-    'ion-popover': '/docs/api/popover'
+    'ion-popover': '/docs/api/popover',
+    'ion-popover-controller': '/docs/api/popover-controller'
   },
   'Progress Indicators': {
     'ion-loading': '/docs/api/loading',
@@ -110,58 +110,58 @@ const items = {
     'ion-spinner': '/docs/api/spinner'
   },
   'Radio': {
-    'ion-radio-group': '/docs/api/radio-group',
-    'ion-radio': '/docs/api/radio'
+    'ion-radio': '/docs/api/radio',
+    'ion-radio-group': '/docs/api/radio-group'
   },
   'Range': {
     'ion-range': '/docs/api/range'
   },
   'Refresher': {
-    'ion-refresher-content': '/docs/api/refresher-content',
-    'ion-refresher': '/docs/api/refresher'
+    'ion-refresher': '/docs/api/refresher',
+    'ion-refresher-content': '/docs/api/refresher-content'
   },
   'Reorder': {
-    'ion-reorder-group': '/docs/api/reorder-group',
-    'ion-reorder': '/docs/api/reorder'
+    'ion-reorder': '/docs/api/reorder',
+    'ion-reorder-group': '/docs/api/reorder-group'
   },
   'Routing': {
-    'ion-route-redirect': '/docs/api/route-redirect',
-    'ion-route': '/docs/api/route',
+    'ion-router': '/docs/api/router',
     'ion-router-outlet': '/docs/api/router-outlet',
-    'ion-router': '/docs/api/router'
+    'ion-route': '/docs/api/route',
+    'ion-route-redirect': '/docs/api/route-redirect'
   },
   'Searchbar': {
     'ion-searchbar': '/docs/api/searchbar'
   },
   'Segment': {
-    'ion-segment-button': '/docs/api/segment-button',
-    'ion-segment': '/docs/api/segment'
+    'ion-segment': '/docs/api/segment',
+    'ion-segment-button': '/docs/api/segment-button'
   },
   'Select': {
-    'ion-select-option': '/docs/api/select-option',
-    'ion-select': '/docs/api/select'
+    'ion-select': '/docs/api/select',
+    'ion-select-option': '/docs/api/select-option'
   },
   'Slides': {
-    'ion-slide': '/docs/api/slide',
-    'ion-slides': '/docs/api/slides'
+    'ion-slides': '/docs/api/slides',
+    'ion-slide': '/docs/api/slide'
   },
   'Tabs': {
-    'ion-tab-bar': '/docs/api/tab-bar',
-    'ion-tab-button': '/docs/api/tab-button',
+    'ion-tabs': '/docs/api/tabs',
     'ion-tab': '/docs/api/tab',
-    'ion-tabs': '/docs/api/tabs'
+    'ion-tab-bar': '/docs/api/tab-bar',
+    'ion-tab-button': '/docs/api/tab-button'
   },
   'Toast': {
-    'ion-toast-controller': '/docs/api/toast-controller',
-    'ion-toast': '/docs/api/toast'
+    'ion-toast': '/docs/api/toast',
+    'ion-toast-controller': '/docs/api/toast-controller'
   },
   'Toggle': {
     'ion-toggle': '/docs/api/toggle'
   },
   'Toolbar': {
     'ion-toolbar': '/docs/api/toolbar',
-    'ion-footer': '/docs/api/footer',
     'ion-header': '/docs/api/header',
+    'ion-footer': '/docs/api/footer',
     'ion-title': '/docs/api/title',
     'ion-buttons': '/docs/api/buttons',
     'ion-back-button': '/docs/api/back-button'
