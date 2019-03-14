@@ -3,6 +3,8 @@ previousText: 'Testing'
 previousUrl: '/docs/building/testing'
 nextText: 'Web View'
 nextUrl: '/docs/building/webview'
+contributors:
+  - brandyscarney
 ---
 
 # Contributing to Ionic

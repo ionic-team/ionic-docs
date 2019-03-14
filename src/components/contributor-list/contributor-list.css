@@ -2,38 +2,34 @@ contributor-list {
   display: block;
 }
 
-contributor-list h5 {
-  margin: 10px 0;
+contributor-list ul {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-contributor-list a {
-  display: inline-block;
-  width: 90px;
-  margin: 10px;
-  text-align: center;
-  text-decoration: none;
-  color: var(--accent-color);
-  font-size: 11px;
-}
-
-contributor-list .img-wrapper {
-  border-radius: 14px;
-  border: 2px solid var(--accent-color);
-  display: inline-block;
-  overflow: hidden;
+contributor-list li:not(:last-child) {
+  margin-left: -10px;
 }
 
 contributor-list img {
-  display: block;
-  width: 45px;
-  height: 45px;
+  border: solid 2px var(--background);
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
 }
 
-contributor-list .username {
+contributor-list a {
   display: block;
-  text-decoration: none;
+  transition: transform 50ms ease-out;
 }
 
-contributor-list a:hover .username {
-  text-decoration: underline;
+@media (hover: hover) {
+  contributor-list a:hover {
+    transform: scale(1.125);
+    z-index: 1;
+  }
 }

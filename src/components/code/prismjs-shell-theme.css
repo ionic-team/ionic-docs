@@ -12,10 +12,15 @@ docs-code[language="shell"] code {
   font-size: 13px;
 }
 
-docs-code[language="shell"] code * {
+docs-code[language="shell"] .token {
   color: inherit;
 }
 
-docs-code[language="shell"] code .hljs-meta {
+docs-code[language="shell"] .token.prompt {
   color: #fb96f9;
+  user-select: none;
+}
+
+docs-code[language="shell"] .token.comment {
+  color: rgba(255, 255, 255, 0.45);
 }

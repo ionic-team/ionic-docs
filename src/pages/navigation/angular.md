@@ -3,6 +3,8 @@ previousText: ''
 previousUrl: ''
 nextText: ''
 nextUrl: ''
+contributors:
+  - mhartington
 ---
 
 # Angular Navigation

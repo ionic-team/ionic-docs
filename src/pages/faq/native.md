@@ -3,6 +3,9 @@ previousText: 'Runtime Errors'
 previousUrl: '/docs/faq/runtime'
 nextText: 'CORS Errors'
 nextUrl: '/docs/faq/cors'
+contributors:
+  - FdezRomero
+  - brandyscarney
 ---
 
 # Native Errors

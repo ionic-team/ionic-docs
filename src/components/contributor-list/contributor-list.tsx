@@ -5,30 +5,23 @@ import { Component, Prop } from '@stencil/core';
   styleUrl: 'contributor-list.css'
 })
 export class ContributorList {
-  @Prop() contributors: string[];
+  @Prop() contributors: string[] = [];
 
   render() {
-    if (!this.contributors || this.contributors.length === 0) {
-      return;
+    if (this.contributors.length === 0) {
+      return null;
     }
 
     return (
-      <section>
-        <h5>Contributors</h5>
-        <div>
-          {this.contributors.map(contributor => (
-            <a href={`https://github.com/${contributor}`}>
-              <span class="img-wrapper">
-                <img
-                  src={`https://github.com/${contributor}.png?size=90`}
-                  title={`Contributor ${contributor}`}
-                />
-              </span>
-              <span class="username">{contributor}</span>
+      <ul>
+        {this.contributors.reverse().map(contributor => (
+          <li>
+            <a target="_blank" href={`https://github.com/${contributor}`}>
+              <img src={`https://github.com/${contributor}.png?size=90`} title={`Contributor ${contributor}`}/>
             </a>
-          ))}
-        </div>
-      </section>
+          </li>
+        ))}
+      </ul>
     );
   }
 }

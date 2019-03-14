@@ -3,6 +3,9 @@ previousText: ''
 previousUrl: ''
 nextText: 'Platform'
 nextUrl: '/docs/utilities/platform'
+contributors:
+  - liamdebeasi
+  - mhartington
 ---
 
 # Config
@@ -11,7 +14,9 @@ The Config service provides a way to change the properties of components globall
 
 ## Usage
 
-### Basic example
+### Global
+
+#### Basic example
 
 ```typescript
 import { IonicModule } from '@ionic/angular';
@@ -19,11 +24,11 @@ import { IonicModule } from '@ionic/angular';
 @NgModule({
   ...
   imports: [
-    BrowserModule, 
+    BrowserModule,
     IonicModule.forRoot({
       rippleEffect: false,
       mode: 'md'
-    }), 
+    }),
     AppRoutingModule
   ],
   ...
@@ -32,7 +37,7 @@ import { IonicModule } from '@ionic/angular';
 
 In the above example, we are disabling the Material Design ripple effect across the app, as well as forcing the mode to be Material Design.
 
-### Customizing Animations
+#### Customizing Animations
 
 ```typescript
 import { IonicModule } from '@ionic/angular';
@@ -40,21 +45,21 @@ import { IonicModule } from '@ionic/angular';
 @NgModule({
   ...
   imports: [
-    BrowserModule, 
+    BrowserModule,
     IonicModule.forRoot({
       toastEnter: (AnimationC: Animation, baseEl: ShadowRoot, position: string): Promise<Animation> => {
         const baseAnimation = new AnimationC();
 
         const wrapperAnimation = new AnimationC();
-      
+
         const hostEl = (baseEl.host || baseEl) as HTMLElement;
         const wrapperEl = baseEl.querySelector('.toast-wrapper') as HTMLElement;
-      
+
         wrapperAnimation.addElement(wrapperEl);
-      
+
         const bottom = `calc(8px + var(--ion-safe-area-bottom, 0px))`;
         const top = `calc(8px + var(--ion-safe-area-top, 0px))`;
-      
+
         switch (position) {
           case 'top':
             wrapperEl.style.top = top;
@@ -79,7 +84,7 @@ import { IonicModule } from '@ionic/angular';
           .duration(400)
           .add(wrapperAnimation));
       },
-    }), 
+    }),
     AppRoutingModule
   ],
   ...
@@ -87,6 +92,24 @@ import { IonicModule } from '@ionic/angular';
 ```
 
 In the above example, we are customizing the "enter" animation for the `ion-toast` component. When an `ion-toast` component is presented from the top, it will slide down instead of fading in.
+
+
+
+### By Component
+
+#### Basic Example
+
+```typescript
+import { Component } from '@angular/core';
+import { Config } from '@ionic/angular';
+@Component({...})
+export class HomePage {
+  constructor(private config: Config) {
+    const text = this.config.get('backButtonText');
+    this.config.set('backButtonIcon', 'home');
+  }
+}
+```
 
 ## Config Options
 
