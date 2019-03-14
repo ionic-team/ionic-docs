@@ -15,38 +15,18 @@ Without Ionic Enterprise Identity Vault, Ionic developers have to resort to comb
 
 The Vault comes with a native Cordova plugin and a JavaScript library complete with TypeScript types. Both need to be installed to use the Vault.
 
+### Installation
+
+<command-line>
+<command-prompt>ionic enterprise register --key=MY_PRODUCT_KEY</command-prompt>
+<command-prompt>npm install @ionic-enterprise/identity-vault</command-prompt>
+<command-prompt>ionic cordova plugin add @ionic-enterprise/cordova-plugin-identity-vault</command-prompt>
+</command-line>
+
 ### Implementation Video Walkthrough
 
 <iframe src="https://fast.wistia.net/embed/iframe/11kyjukz3u" title="Wistia video player" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="640" height="360"></iframe>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
-
-### Installation
-
-To install Ionic Enterprise Identity Vault, find the zip file sent to you from the Ionic team, and unzip it.
-
-In case your distribution does not have the dist folder or you are building directly from sources, you need to first build the library. Please refer to lib Readme for more details.
-
-```bash
-cd ~/path/to/enterprise-auth/lib
-npm install
-
-npm run build
-```
-
-Next, navigate to the app you wish to install EIV into, and run
-
-```bash
-npm install --save ~/path/to/enterprise-auth/lib
-cordova plugin add ~/path/to/enterprise-auth/cordova/ionic-plugin-native-auth
-```
-
-### Adopt `user.ts`
-
-We have provided an example User service that shows how to configure the vault, along
-with examples of several common operations. We recommend adopting portions of this
-code into your own `User` service, or similar.
-
-Find this file in `~/path/to/enterprise-auth/demo/src/services/user.ts` or in the repo: [user.ts](https://github.com/ionic-team/enterprise-auth/blob/master/demo/src/services/user.ts).
 
 #### Configuring the Vault
 
@@ -107,19 +87,6 @@ _Log out_
 Logging a user out removes their session and clears any stored tokens in the Vault. This should be used when the user wants to completely log out from the app, for example to switch to a different user.
 
 The `User` service provides a `logout()` method that *clears* the vault. This will also trigger the lock out event in `onVaultLocked()`, so your logic can remain the same.
-
-#### Login
-
-The login page provides a typical login form, but also queries the vault to check if biometrics
-is enabled and there is a stored token.
-
-If there is a stored token and biometrics is enabled, then the login form displays an option to
-authorize with the biometric sensor (either TouchID, FaceID, or fingerprint). This will
-query the vault for the stored token which will prompt the biometric authentication if required. Once the token is returned from the vault, the login page directs the user to the main app screen. The token will
-have been saved by the `User` service by this point.
-
-See
-[biometricAuth()](https://github.com/ionic-team/enterprise-auth/blob/3d9a96bdda94de0071474147f65a0e727bfb712b/demo/src/pages/login/login.ts#L65) in `login.ts`.
 
 ## Automatically adding your token to requests
 
