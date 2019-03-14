@@ -89,7 +89,8 @@ const items = {
   },
   'Modal': {
     'ion-modal': '/docs/api/modal',
-    'ion-modal-controller': '/docs/api/modal-controller'
+    'ion-modal-controller': '/docs/api/modal-controller',
+    'ion-backdrop': '/docs/api/backdrop'
   },
   'Navigation': {
     'ion-nav': '/docs/api/nav',
