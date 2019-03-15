@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "The official Ionic documentation",
   "author": "Ionic Team",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "scripts": {
     "start": "stencil build --dev --serve --watch --es5",
     "prestart": "npm run -s build-all",
