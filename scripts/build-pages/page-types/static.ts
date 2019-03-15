@@ -58,7 +58,7 @@ const getGitHubData = async (filePath: string) => {
       hostname: 'api.github.com',
       pathname: 'repos/ionic-team/ionic-docs/commits',
       query: {
-        access_token: process.env.GITHUB_API_TOKEN,
+        access_token: process.env.GITHUB_TOKEN,
         since,
         path
       }
