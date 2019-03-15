@@ -1,0 +1,26 @@
+docs-code[language="shell"] > pre {
+  background-color: var(--text-color--dark);
+  border-radius: 7px;
+}
+
+docs-code[language="shell"]:before {
+  display: none;
+}
+
+docs-code[language="shell"] code {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+}
+
+docs-code[language="shell"] .token {
+  color: inherit;
+}
+
+docs-code[language="shell"] .token.prompt {
+  color: #fb96f9;
+  user-select: none;
+}
+
+docs-code[language="shell"] .token.comment {
+  color: rgba(255, 255, 255, 0.45);
+}
