@@ -12,9 +12,11 @@ nextUrl: '/docs/developer-resources/courses'
 by Chris Griffith
 
 
-### [Building Mobile Apps with Ionic 2](https://www.joshmorony.com/building-mobile-apps-with-ionic-2/)
+### [Building Mobile Apps with Ionic & Angular](https://www.joshmorony.com/building-mobile-apps-with-ionic-2/)
 
 by Joshua Morony
+
+Building Mobile Apps with Ionic & Angular is an all-in-one resource for learning the latest and greatest version of Ionic. It is targeted at beginners and works its way through the basics of Ionic, to example applications of varying complexity, and then to the steps required to build and publish your application (on the app stores or as a PWA). It has been updated for every major release, so you can rest easy knowing that you're not learning outdated tech.
 
 ### [Ionic 2 From Zero to App Store](https://devdactic.com/zero-to-app)
 
