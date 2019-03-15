@@ -288,7 +288,21 @@
           "type": "boolean",
           "summary": "Use HTTPS for the dev server",
           "groups": [
-            "experimental"
+            "experimental",
+            "cordova"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
+          }
+        },
+        {
+          "name": "devapp",
+          "type": "boolean",
+          "summary": "Publish DevApp service",
+          "default": false,
+          "groups": [
+            "advanced"
           ],
           "aliases": [],
           "spec": {
@@ -591,7 +605,8 @@
           "type": "boolean",
           "summary": "Mark as a debug build",
           "groups": [
-            "cordova"
+            "cordova",
+            "cordova-cli"
           ],
           "aliases": [],
           "spec": {
@@ -603,7 +618,8 @@
           "type": "boolean",
           "summary": "Mark as a release build",
           "groups": [
-            "cordova"
+            "cordova",
+            "cordova-cli"
           ],
           "aliases": [],
           "spec": {
@@ -616,6 +632,7 @@
           "summary": "Deploy build to a device",
           "groups": [
             "cordova",
+            "cordova-cli",
             "native-run"
           ],
           "aliases": [],
@@ -629,6 +646,7 @@
           "summary": "Deploy build to an emulator",
           "groups": [
             "cordova",
+            "cordova-cli",
             "native-run"
           ],
           "aliases": [],
@@ -642,7 +660,8 @@
           "summary": "Use the specified build configuration",
           "groups": [
             "advanced",
-            "cordova"
+            "cordova",
+            "cordova-cli"
           ],
           "aliases": [],
           "spec": {
@@ -717,7 +736,8 @@
           "type": "boolean",
           "summary": "Mark as a debug build",
           "groups": [
-            "cordova"
+            "cordova",
+            "cordova-cli"
           ],
           "aliases": [],
           "spec": {
@@ -729,7 +749,8 @@
           "type": "boolean",
           "summary": "Mark as a release build",
           "groups": [
-            "cordova"
+            "cordova",
+            "cordova-cli"
           ],
           "aliases": [],
           "spec": {
@@ -742,6 +763,7 @@
           "summary": "Deploy build to a device",
           "groups": [
             "cordova",
+            "cordova-cli",
             "native-run"
           ],
           "aliases": [],
@@ -755,6 +777,7 @@
           "summary": "Deploy build to an emulator",
           "groups": [
             "cordova",
+            "cordova-cli",
             "native-run"
           ],
           "aliases": [],
@@ -768,7 +791,8 @@
           "summary": "Use the specified build configuration",
           "groups": [
             "advanced",
-            "cordova"
+            "cordova",
+            "cordova-cli"
           ],
           "aliases": [],
           "spec": {
@@ -785,7 +809,7 @@
         "cordova"
       ],
       "summary": "Emulate an Ionic project on a simulator/emulator",
-      "description": "Like running `cordova run` or `cordova emulate` directly, but performs `ionic build` before deploying to the device or emulator. Optionally specify the `--livereload` option to use the dev server from `ionic serve` for livereload functionality.\n\nFor Android and iOS, you can setup Remote Debugging on your device with browser development tools using these [docs](https://ionicframework.com/docs/developer-resources/developer-tips).\n\nJust like with `ionic cordova build`, you can pass additional options to the Cordova CLI using the `--` separator. To pass additional options to the dev server, consider using `ionic serve` and the `--livereload-url` option.",
+      "description": "Like running `cordova run` or `cordova emulate` directly, but performs `ionic build` before deploying to the device or emulator. Optionally specify the `--livereload` option to use the dev server from `ionic serve` for livereload functionality.\n\nFor Android and iOS, you can setup Remote Debugging on your device with browser development tools using these [docs](https://ionicframework.com/docs/developer-resources/developer-tips).\n\nJust like with `ionic cordova build`, you can pass additional options to the Cordova CLI using the `--` separator. To pass additional options to the dev server, consider using `ionic serve` and the `--livereload-url` option.\n\nWith the experimental `--native-run` flag, this command will first use Cordova to build your app, and then it will run it on a device using the `native-run` [utility](https://github.com/ionic-team/native-run) instead of Cordova.",
       "footnotes": [],
       "groups": [
         "beta"
@@ -822,6 +846,7 @@
           "summary": "List all available targets",
           "groups": [
             "cordova",
+            "cordova-cli",
             "native-run"
           ],
           "aliases": [],
@@ -887,7 +912,7 @@
           "groups": [],
           "aliases": [],
           "spec": {
-            "value": "livereload-url"
+            "value": "url"
           }
         },
         {
@@ -931,7 +956,8 @@
           "type": "boolean",
           "summary": "Use HTTPS for the dev server",
           "groups": [
-            "experimental"
+            "experimental",
+            "cordova"
           ],
           "aliases": [],
           "spec": {
@@ -943,7 +969,8 @@
           "type": "boolean",
           "summary": "Mark as a debug build",
           "groups": [
-            "cordova"
+            "cordova",
+            "cordova-cli"
           ],
           "aliases": [],
           "spec": {
@@ -955,7 +982,8 @@
           "type": "boolean",
           "summary": "Mark as a release build",
           "groups": [
-            "cordova"
+            "cordova",
+            "cordova-cli"
           ],
           "aliases": [],
           "spec": {
@@ -968,6 +996,7 @@
           "summary": "Deploy build to a device",
           "groups": [
             "cordova",
+            "cordova-cli",
             "native-run"
           ],
           "aliases": [],
@@ -981,6 +1010,7 @@
           "summary": "Deploy build to an emulator",
           "groups": [
             "cordova",
+            "cordova-cli",
             "native-run"
           ],
           "aliases": [],
@@ -994,7 +1024,8 @@
           "summary": "Use the specified build configuration",
           "groups": [
             "advanced",
-            "cordova"
+            "cordova",
+            "cordova-cli"
           ],
           "aliases": [],
           "spec": {
@@ -1008,11 +1039,52 @@
           "groups": [
             "advanced",
             "cordova",
+            "cordova-cli",
             "native-run"
           ],
           "aliases": [],
           "spec": {
             "value": "target"
+          }
+        },
+        {
+          "name": "native-run",
+          "type": "boolean",
+          "summary": "Use `native-run` instead of Cordova for running the app",
+          "groups": [
+            "experimental",
+            "native-run"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
+          }
+        },
+        {
+          "name": "connect",
+          "type": "boolean",
+          "summary": "Do not tie the running app to the process",
+          "default": true,
+          "groups": [
+            "experimental",
+            "native-run"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
+          }
+        },
+        {
+          "name": "json",
+          "type": "boolean",
+          "summary": "Output `--list` targets in JSON",
+          "groups": [
+            "experimental",
+            "native-run"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
           }
         }
       ],
@@ -1102,7 +1174,8 @@
           "summary": "Force overwrite the plugin if it exists (corresponds to `add`)",
           "groups": [
             "advanced",
-            "cordova"
+            "cordova",
+            "cordova-cli"
           ],
           "aliases": [],
           "spec": {
@@ -1114,7 +1187,8 @@
           "type": "string",
           "summary": "Specify plugin variables",
           "groups": [
-            "cordova"
+            "cordova",
+            "cordova-cli"
           ],
           "aliases": [],
           "spec": {
@@ -1227,7 +1301,7 @@
         "cordova"
       ],
       "summary": "Automatically create icon and splash screen resources",
-      "description": "Ionic can automatically generate perfectly sized icons and splash screens from source images (**.png**, **.psd**, or **.ai**) for your Cordova platforms.\n\nThe source image for icons should ideally be at least **1024×1024px** and located at **resources/icon.png**. The source image for splash screens should ideally be at least **2732×2732px** and located at **resources/splash.png**. If you used `ionic start`, there should already be default Ionic resources in the **resources/** directory, which you can overwrite.\n\nYou can also generate platform-specific icons and splash screens by placing them in the respective **resources/<platform>/** directory. For example, to generate an icon for Android, place your image at **resources/android/icon.png**.\n\nBy default, this command will not regenerate resources whose source image has not changed. To disable this functionality and always overwrite generated images, use `--force`.\n\nFor best results, the splash screen's artwork should roughly fit within a square (**1200×1200px**) at the center of the image. You can use **[https://code.ionicframework.com/resources/splash.psd](https://code.ionicframework.com/resources/splash.psd)** as a template for your splash screen.\n\n`ionic cordova resources` will automatically update your **config.xml** to reflect the changes in the generated images, which Cordova then configures.\n\nCordova reference documentation:\n- Icons: **[https://cordova.apache.org/docs/en/latest/config_ref/images.html](https://cordova.apache.org/docs/en/latest/config_ref/images.html)**\n- Splash Screens: **[https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-splashscreen/](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-splashscreen/)**\n\nThis command uses Ionic servers, so we require you to be logged into your free Ionic account. Use `ionic login` to login.",
+      "description": "Ionic can automatically generate perfectly sized icons and splash screens from source images (**.png**, **.psd**, or **.ai**) for your Cordova platforms.\n\nThe source image for icons should ideally be at least **1024×1024px** and located at **resources/icon.png**. The source image for splash screens should ideally be at least **2732×2732px** and located at **resources/splash.png**. If you used `ionic start`, there should already be default Ionic resources in the **resources/** directory, which you can overwrite.\n\nYou can also generate platform-specific icons and splash screens by placing them in the respective **resources/<platform>/** directory. For example, to generate an icon for Android, place your image at **resources/android/icon.png**.\n\nBy default, this command will not regenerate resources whose source image has not changed. To disable this functionality and always overwrite generated images, use `--force`.\n\nFor best results, the splash screen's artwork should roughly fit within a square (**1200×1200px**) at the center of the image. You can use **[https://code.ionicframework.com/resources/splash.psd](https://code.ionicframework.com/resources/splash.psd)** as a template for your splash screen.\n\n`ionic cordova resources` will automatically update your **config.xml** to reflect the changes in the generated images, which Cordova then configures.\n\nCordova reference documentation:\n- Icons: **[https://cordova.apache.org/docs/en/latest/config_ref/images.html](https://cordova.apache.org/docs/en/latest/config_ref/images.html)**\n- Splash Screens: **[https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-splashscreen/](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-splashscreen/)**\n\nThis command uses Ionic servers and we require you to be logged into your free Ionic account. Use `ionic login` to login.\n\nWith the experimental `--cordova-res` option, `ionic cordova resources` will generate resources locally using the `cordova-res` [utility](https://github.com/ionic-team/cordova-res).",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [
@@ -1279,6 +1353,18 @@
           "spec": {
             "value": "true/false"
           }
+        },
+        {
+          "name": "cordova-res",
+          "type": "boolean",
+          "summary": "Use `cordova-res` instead of Ionic resource server",
+          "groups": [
+            "experimental"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
+          }
         }
       ],
       "type": "project"
@@ -1290,7 +1376,7 @@
         "cordova"
       ],
       "summary": "Run an Ionic project on a connected device",
-      "description": "Like running `cordova run` or `cordova emulate` directly, but performs `ionic build` before deploying to the device or emulator. Optionally specify the `--livereload` option to use the dev server from `ionic serve` for livereload functionality.\n\nFor Android and iOS, you can setup Remote Debugging on your device with browser development tools using these [docs](https://ionicframework.com/docs/developer-resources/developer-tips).\n\nJust like with `ionic cordova build`, you can pass additional options to the Cordova CLI using the `--` separator. To pass additional options to the dev server, consider using `ionic serve` and the `--livereload-url` option.",
+      "description": "Like running `cordova run` or `cordova emulate` directly, but performs `ionic build` before deploying to the device or emulator. Optionally specify the `--livereload` option to use the dev server from `ionic serve` for livereload functionality.\n\nFor Android and iOS, you can setup Remote Debugging on your device with browser development tools using these [docs](https://ionicframework.com/docs/developer-resources/developer-tips).\n\nJust like with `ionic cordova build`, you can pass additional options to the Cordova CLI using the `--` separator. To pass additional options to the dev server, consider using `ionic serve` and the `--livereload-url` option.\n\nWith the experimental `--native-run` flag, this command will first use Cordova to build your app, and then it will run it on a device using the `native-run` [utility](https://github.com/ionic-team/native-run) instead of Cordova.",
       "footnotes": [],
       "groups": [
         "beta"
@@ -1327,6 +1413,7 @@
           "summary": "List all available targets",
           "groups": [
             "cordova",
+            "cordova-cli",
             "native-run"
           ],
           "aliases": [],
@@ -1392,7 +1479,7 @@
           "groups": [],
           "aliases": [],
           "spec": {
-            "value": "livereload-url"
+            "value": "url"
           }
         },
         {
@@ -1436,7 +1523,8 @@
           "type": "boolean",
           "summary": "Use HTTPS for the dev server",
           "groups": [
-            "experimental"
+            "experimental",
+            "cordova"
           ],
           "aliases": [],
           "spec": {
@@ -1448,7 +1536,8 @@
           "type": "boolean",
           "summary": "Mark as a debug build",
           "groups": [
-            "cordova"
+            "cordova",
+            "cordova-cli"
           ],
           "aliases": [],
           "spec": {
@@ -1460,7 +1549,8 @@
           "type": "boolean",
           "summary": "Mark as a release build",
           "groups": [
-            "cordova"
+            "cordova",
+            "cordova-cli"
           ],
           "aliases": [],
           "spec": {
@@ -1473,6 +1563,7 @@
           "summary": "Deploy build to a device",
           "groups": [
             "cordova",
+            "cordova-cli",
             "native-run"
           ],
           "aliases": [],
@@ -1486,6 +1577,7 @@
           "summary": "Deploy build to an emulator",
           "groups": [
             "cordova",
+            "cordova-cli",
             "native-run"
           ],
           "aliases": [],
@@ -1499,7 +1591,8 @@
           "summary": "Use the specified build configuration",
           "groups": [
             "advanced",
-            "cordova"
+            "cordova",
+            "cordova-cli"
           ],
           "aliases": [],
           "spec": {
@@ -1513,11 +1606,52 @@
           "groups": [
             "advanced",
             "cordova",
+            "cordova-cli",
             "native-run"
           ],
           "aliases": [],
           "spec": {
             "value": "target"
+          }
+        },
+        {
+          "name": "native-run",
+          "type": "boolean",
+          "summary": "Use `native-run` instead of Cordova for running the app",
+          "groups": [
+            "experimental",
+            "native-run"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
+          }
+        },
+        {
+          "name": "connect",
+          "type": "boolean",
+          "summary": "Do not tie the running app to the process",
+          "default": true,
+          "groups": [
+            "experimental",
+            "native-run"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
+          }
+        },
+        {
+          "name": "json",
+          "type": "boolean",
+          "summary": "Output `--list` targets in JSON",
+          "groups": [
+            "experimental",
+            "native-run"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
           }
         }
       ],
@@ -1682,6 +1816,43 @@
       "type": "project"
     },
     {
+      "name": "ionic enterprise register",
+      "namespace": [
+        "ionic",
+        "enterprise"
+      ],
+      "summary": "Register your Product Key with this app",
+      "description": "",
+      "footnotes": [],
+      "groups": [],
+      "exampleCommands": [],
+      "aliases": [],
+      "inputs": [],
+      "options": [
+        {
+          "name": "app-id",
+          "type": "string",
+          "summary": "The Ionic App ID",
+          "groups": [],
+          "aliases": [],
+          "spec": {
+            "value": "id"
+          }
+        },
+        {
+          "name": "key",
+          "type": "string",
+          "summary": "The Product Key",
+          "groups": [],
+          "aliases": [],
+          "spec": {
+            "value": "key"
+          }
+        }
+      ],
+      "type": "project"
+    },
+    {
       "name": "ionic generate",
       "namespace": [
         "ionic"
@@ -1839,7 +2010,7 @@
       "inputs": [
         {
           "name": "name",
-          "summary": "The integration to disable (e.g. `capacitor`, `cordova`)",
+          "summary": "The integration to disable (e.g. `capacitor`, `cordova`, `enterprise`)",
           "required": true
         }
       ],
@@ -1861,7 +2032,7 @@
       "inputs": [
         {
           "name": "name",
-          "summary": "The integration to enable (e.g. `capacitor`, `cordova`)",
+          "summary": "The integration to enable (e.g. `capacitor`, `cordova`, `enterprise`)",
           "required": true
         }
       ],
@@ -2191,19 +2362,6 @@
           }
         },
         {
-          "name": "devapp",
-          "type": "boolean",
-          "summary": "Do not publish DevApp service",
-          "default": true,
-          "groups": [
-            "advanced"
-          ],
-          "aliases": [],
-          "spec": {
-            "value": "true/false"
-          }
-        },
-        {
           "name": "open",
           "type": "boolean",
           "summary": "Do not open a browser window",
@@ -2269,7 +2427,8 @@
           "type": "boolean",
           "summary": "Use HTTPS for the dev server",
           "groups": [
-            "experimental"
+            "experimental",
+            "cordova"
           ],
           "aliases": [],
           "spec": {
@@ -2280,7 +2439,9 @@
           "name": "prod",
           "type": "boolean",
           "summary": "Flag to use the `production` configuration",
-          "groups": [],
+          "groups": [
+            "cordova"
+          ],
           "aliases": [],
           "spec": {
             "value": "true/false"
@@ -2291,7 +2452,8 @@
           "type": "string",
           "summary": "Specify the configuration to use.",
           "groups": [
-            "advanced"
+            "advanced",
+            "cordova"
           ],
           "aliases": [],
           "spec": {
@@ -2302,6 +2464,20 @@
           "name": "source-map",
           "type": "boolean",
           "summary": "Output sourcemaps",
+          "groups": [
+            "advanced",
+            "cordova"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
+          }
+        },
+        {
+          "name": "devapp",
+          "type": "boolean",
+          "summary": "Publish DevApp service",
+          "default": false,
           "groups": [
             "advanced"
           ],
@@ -2651,7 +2827,7 @@
         "ionic"
       ],
       "summary": "Create a new project",
-      "description": "This command creates a working Ionic app. It installs dependencies for you and sets up your project.\n\nRunning `ionic start` without any arguments will prompt you for information about your new project.\n\nThe first argument is your app's `name`. Don't worry--you can always change this later. The `--project-id` is generated from `name` unless explicitly specified.\n\nThe second argument is the `template` from which to generate your app. You can list all templates with the `--list` option. You can also specify a git repository URL for `template`, in which case the existing project will be cloned.",
+      "description": "This command creates a working Ionic app. It installs dependencies for you and sets up your project.\n\nRunning `ionic start` without any arguments will prompt you for information about your new project.\n\nThe first argument is your app's `name`. Don't worry--you can always change this later. The `--project-id` is generated from `name` unless explicitly specified.\n\nThe second argument is the `template` from which to generate your app. You can list all templates with the `--list` option. You can also specify a git repository URL for `template`, in which case the existing project will be cloned.\n\nUse the `--type` option to start projects using older versions of Ionic. For example, you can start an Ionic 3 project with `--type=ionic-angular`. Use `--list` to see all project types and templates.",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [
@@ -2661,7 +2837,7 @@
         "ionic start myApp blank",
         "ionic start myApp tabs --cordova",
         "ionic start myApp tabs --capacitor",
-        "ionic start myApp super --type=angular",
+        "ionic start myApp super --type=ionic-angular",
         "ionic start myApp blank --type=ionic1",
         "ionic start cordovaApp tabs --cordova",
         "ionic start \"My App\" blank",

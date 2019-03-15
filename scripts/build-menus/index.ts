@@ -16,7 +16,7 @@ const cliCommandMenu = keyBy(
 const nativePluginMenu = keyBy(
   plugins,
   (item) => item.displayName.trim(),
-  (item) => `/docs/native/${slugify(item.name.slice(14))}`
+  (item) => `/docs/native/${slugify(item.packageName.slice(14))}`
 );
 
 const externalNativePlugins = {

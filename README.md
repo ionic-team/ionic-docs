@@ -105,5 +105,5 @@ $ npm run trans ja
 - 本レポジトリは、元レポジトリを引き継ぎ `Apache License` を採用しています。皆さんの翻訳も同一ライセンスとなりますのでご了承ください。
 - 元レポジトリがライセンスを変更いた場合、本レポジトリはそれに追随する可能性があります。
 - 翻訳前と翻訳後で行数が同じになるようにご注意ください。これは、本家のdiffを追跡しやすくするためですのでご協力お願いいたします。
-- [Contributing Guide](https://github.com/ionic-team/ionic-docs/blob/master/.github/CONTRIBUTING.md) :flashlight:
+- [Contributing Guide](https://github.com/ionic-team/ionic-docs/blob/master/CONTRIBUTING.md) :flashlight:
 - [Project Board](https://github.com/ionic-team/ionic-docs/projects/3) :pushpin:

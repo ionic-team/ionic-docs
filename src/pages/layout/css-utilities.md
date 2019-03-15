@@ -599,17 +599,17 @@ Marginエリアは、隣り合う要素とのスペースを広げるために�
 ```html
 <ion-grid>
   <ion-row>
-    <ion-col align-self-start>
+    <ion-col class="ion-align-self-start">
       <div>
         1 of 4
       </div>
     </ion-col>
-    <ion-col align-self-center>
+    <ion-col class="ion-align-self-center">
       <div>
         2 of 4
       </div>
     </ion-col>
-    <ion-col align-self-end>
+    <ion-col class="ion-align-self-end">
       <div>
         3 of 4
       </div>

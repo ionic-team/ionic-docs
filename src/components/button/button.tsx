@@ -6,7 +6,7 @@ import { Component, Prop } from '@stencil/core';
 })
 export class DocsButton {
   @Prop() href: string;
-  @Prop() primary = false;
+  @Prop({ reflectToAttr: true }) round = false;
 
   render() {
     if (typeof this.href === 'string') {
