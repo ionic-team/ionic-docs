@@ -6,7 +6,8 @@ const items = {
   'Enterprise': {
     'Native Core': '/docs/native/native-core',
     'Active Directory': 'https://ionicframework.com/integrations/ms-activedirectory-ms-adal',
-    'Identity Vault': 'https://ionicframework.com/enterprise/identity-vault',
+    'Identity Vault': 'docs/native/identity-vault',
+    'mParticle': 'docs/native/mparticle',
     'Offline Support': 'https://ionicframework.com/integrations/couchbase-lite'
   },
   'Plugins': Object.entries(plugins).sort()
