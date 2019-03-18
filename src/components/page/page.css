@@ -8,6 +8,8 @@ docs-page {
   margin-left: var(--page-margin-left);
   margin-top: var(--header-height);
   overflow-x: hidden;
+  transform: var(--page-transform, none);
+  transition: transform 200ms cubic-bezier(0.2, 1, 0.2, 1);
 }
 
 @media (min-width: 1800px) {

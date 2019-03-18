@@ -1,5 +1,6 @@
 .Layout {
   display: flex;
+  overflow-x: hidden;
 }
 
 .Layout > stencil-route {
@@ -17,7 +18,7 @@
     --page-margin-left: 0;
   }
 
-  .Layout docs-menu {
-    position: fixed;
+  .Layout:not(.is-collapsed) {
+    --page-transform: translateX(var(--menu-width));
   }
 }
