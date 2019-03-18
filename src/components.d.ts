@@ -20,6 +20,9 @@ import {
   Page,
   ReferenceKeys,
 } from './definitions';
+import {
+  RouterHistory,
+} from '@stencil/router';
 
 
 export namespace Components {
@@ -215,9 +218,11 @@ export namespace Components {
   }
 
   interface DocsPage {
+    'history': RouterHistory;
     'path': string;
   }
   interface DocsPageAttributes extends StencilHTMLAttributes {
+    'history'?: RouterHistory;
     'path'?: string;
   }
 

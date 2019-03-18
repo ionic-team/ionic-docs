@@ -38,7 +38,7 @@ export class DocsRoot {
         <docs-header onToggleClick={this.toggleCollapsed}/>
         <docs-menu onToggleClick={this.toggleCollapsed}/>
         <stencil-route url="/docs/:page*" routeRender={props => (
-          <docs-page path={`/docs/pages/${props.match.params.page || 'index'}.json`}/>
+          <docs-page history={props.history} path={`/docs/pages/${props.match.params.page || 'index'}.json`}/>
         )}/>
       </stencil-router>
     );
