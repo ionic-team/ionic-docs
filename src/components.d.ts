@@ -180,14 +180,22 @@ export namespace Components {
   interface FileTree {}
   interface FileTreeAttributes extends StencilHTMLAttributes {}
 
-  interface DocsHeader {}
-  interface DocsHeaderAttributes extends StencilHTMLAttributes {}
+  interface DocsHeader {
+    'onToggleClick': (e: Event) => void;
+  }
+  interface DocsHeaderAttributes extends StencilHTMLAttributes {
+    'onToggleClick'?: (e: Event) => void;
+  }
 
   interface LayeredColorsSelect {}
   interface LayeredColorsSelectAttributes extends StencilHTMLAttributes {}
 
-  interface DocsMenu {}
-  interface DocsMenuAttributes extends StencilHTMLAttributes {}
+  interface DocsMenu {
+    'onToggleClick': (e: Event) => void;
+  }
+  interface DocsMenuAttributes extends StencilHTMLAttributes {
+    'onToggleClick'?: (e: Event) => void;
+  }
 
   interface DocsMenuToggle {}
   interface DocsMenuToggleAttributes extends StencilHTMLAttributes {}
