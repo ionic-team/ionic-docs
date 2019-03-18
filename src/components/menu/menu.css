@@ -21,7 +21,7 @@ docs-menu > header {
   padding: 0 1.5rem;
 }
 
-docs-menu > header .Logo {
+docs-menu .MenuLogo {
   color: var(--text-color--dark);
   font-family: var(--heading-font-family);
   height: 25px;

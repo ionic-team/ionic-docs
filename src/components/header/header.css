@@ -51,7 +51,7 @@ docs-header .link-active {
   }
 }
 
-.Logo {
+.HeaderLogo {
   color: var(--text-color--dark);
   font-family: var(--heading-font-family);
   height: 25px;

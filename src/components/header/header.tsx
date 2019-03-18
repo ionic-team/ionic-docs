@@ -1,6 +1,5 @@
 import { Component, Listen, State } from '@stencil/core';
-import { Outbound } from '../../icons';
-import Logo from './logo';
+import { Logo, Menu, Outbound } from '../../icons';
 
 @Component({
   tag: 'docs-header',
@@ -34,7 +33,7 @@ export class DocsHeader {
     return (
       <header>
         <stencil-route-link url="/docs/">
-          <Logo/>
+          <Logo class="HeaderLogo"/>
         </stencil-route-link>
         <docs-section-nav/>
         <nav class="UtilNav">
