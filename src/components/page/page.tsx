@@ -10,6 +10,7 @@ import templates from './templates';
 export class DocsPage {
   @Prop() history: RouterHistory;
   @Prop() path: string;
+  @Prop({ context: 'isServer' }) private isServer: boolean;
   @Prop({ context: 'document' }) private document: HTMLDocument;
   @State() badFetch: Response = null;
   @State() page: Page = { title: null, body: null };
@@ -47,13 +48,15 @@ export class DocsPage {
 
   @Watch('page')
   setScrollPosition() {
+    if (this.isServer) {
+      return;
+    }
+
     requestAnimationFrame(() => {
       const { location } = this.history;
       const { scrollPosition = [0, 0] } = location;
       const [x, y] = scrollPosition;
-      if (this.document.documentElement instanceof HTMLElement) {
-        this.document.documentElement.scrollTo(x, y);
-      }
+      this.document.documentElement.scrollTo(x, y);
     });
   }
 
