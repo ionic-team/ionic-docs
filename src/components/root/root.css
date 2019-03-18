@@ -1,17 +1,24 @@
 .Layout {
   display: flex;
+  overflow-x: hidden;
 }
 
 .Layout > stencil-route {
   width: 100%;
 }
 
+.Layout.is-collapsed {
+  --menu-transform: translateX(calc(-1 * var(--menu-width)));
+  --page-margin-left: 0;
+}
+
 @media (max-width: 768px) {
   .Layout {
-    --menu-transform: translateX(calc(-1 * var(--menu-width)));
-    --menu-width: 75vw;
-    --menu-z-index: 2;
-    --page-margin-left: 0;
     --page-padding: 1.5rem;
+    --page-margin-left: 0;
+  }
+
+  .Layout:not(.is-collapsed) {
+    --page-transform: translateX(var(--menu-width));
   }
 }

@@ -19,6 +19,7 @@
   --menu-width: 240px;
   --offset-background: #fdfdff;
   --offset-background--dark: #f7f7ff;
+  --page-margin-left: var(--menu-width);
 
   --text-color: #4e5b6a;
   --text-color--darker: #24282e;

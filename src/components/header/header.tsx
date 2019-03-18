@@ -1,6 +1,5 @@
-import { Component, Listen, State } from '@stencil/core';
-import { Outbound } from '../../icons';
-import Logo from './logo';
+import { Component, Listen, Prop, State } from '@stencil/core';
+import { Logo, Outbound } from '../../icons';
 
 @Component({
   tag: 'docs-header',
@@ -10,6 +9,8 @@ export class DocsHeader {
   @State() hidden = false;
   private frameRequested = false;
   private prevScroll = 0;
+
+  @Prop() onToggleClick: (e: Event) => void;
 
   @Listen('window:scroll')
   handleScroll() {
@@ -33,8 +34,9 @@ export class DocsHeader {
   render() {
     return (
       <header>
+        <docs-menu-toggle onClick={this.onToggleClick}/>
         <stencil-route-link url="/docs/">
-          <Logo/>
+          <Logo class="HeaderLogo"/>
         </stencil-route-link>
         <docs-section-nav/>
         <nav class="UtilNav">

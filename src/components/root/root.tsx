@@ -1,6 +1,6 @@
 import '@ionic/core';
 
-import { Component } from '@stencil/core';
+import { Component, State } from '@stencil/core';
 import { LocationSegments, RouterHistory } from '@stencil/router';
 
 
@@ -11,6 +11,8 @@ import { LocationSegments, RouterHistory } from '@stencil/router';
 export class DocsRoot {
   history: RouterHistory = null;
 
+  @State() isCollapsed = this.isSmallViewport();
+
   setHistory = ({ history }: { history: RouterHistory }) => {
     if (!this.history) {
       this.history = history;
@@ -20,14 +22,36 @@ export class DocsRoot {
     }
   }
 
+  toggleCollapsed = () => {
+    this.isCollapsed = !this.isCollapsed;
+  }
+
+  handlePageClick = () => {
+    if (this.isSmallViewport() && !this.isCollapsed) {
+      this.isCollapsed = true;
+    }
+  }
+
+  isSmallViewport() {
+    return matchMedia && matchMedia('(max-width: 768px)').matches;
+  }
+
   render() {
+    const layout = {
+      'Layout': true,
+      'is-collapsed': this.isCollapsed
+    };
+
     return (
-      <stencil-router class="Layout" scrollTopOffset={0}>
+      <stencil-router class={layout}>
         <stencil-route style={{ display: 'none' }} routeRender={this.setHistory}/>
-        <docs-header/>
-        <docs-menu/>
+        <docs-header onToggleClick={this.toggleCollapsed}/>
+        <docs-menu onToggleClick={this.toggleCollapsed}/>
         <stencil-route url="/docs/:page*" routeRender={props => (
-          <docs-page path={`/docs/pages/${props.match.params.page || 'index'}.json`}/>
+          <docs-page
+            history={props.history}
+            path={`/docs/pages/${props.match.params.page || 'index'}.json`}
+            onClick={this.handlePageClick}/>
         )}/>
       </stencil-router>
     );
