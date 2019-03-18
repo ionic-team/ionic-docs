@@ -5,7 +5,7 @@ docs-page {
   font-size: 15px;
   grid-template-columns: 1fr minmax(0, var(--page-width, 720px)) 1fr;
   line-height: 2;
-  margin-left: var(--page-margin-left, var(--menu-width));
+  margin-left: var(--page-margin-left);
   margin-top: var(--header-height);
   overflow-x: hidden;
 }
