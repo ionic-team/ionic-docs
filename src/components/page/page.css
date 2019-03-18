@@ -12,7 +12,7 @@ docs-page {
 
 @media (min-width: 1800px) {
   docs-page {
-    grid-template-columns: 1fr minmax(0, var(--page-width, 720px)) 1fr var(--menu-width);
+    grid-template-columns: 1fr minmax(0, var(--page-width, 720px)) 1fr var(--page-margin-left);
   }
 }
 
