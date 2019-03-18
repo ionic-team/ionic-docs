@@ -11,7 +11,7 @@ import { LocationSegments, RouterHistory } from '@stencil/router';
 export class DocsRoot {
   history: RouterHistory = null;
 
-  @State() isCollapsed = false;
+  @State() isCollapsed = matchMedia && matchMedia('(max-width: 768px').matches;
 
   setHistory = ({ history }: { history: RouterHistory }) => {
     if (!this.history) {
