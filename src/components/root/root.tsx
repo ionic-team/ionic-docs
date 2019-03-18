@@ -11,7 +11,7 @@ import { LocationSegments, RouterHistory } from '@stencil/router';
 export class DocsRoot {
   history: RouterHistory = null;
 
-  @State() isCollapsed = matchMedia && matchMedia('(max-width: 768px').matches;
+  @State() isCollapsed = this.isSmallViewport();
 
   setHistory = ({ history }: { history: RouterHistory }) => {
     if (!this.history) {
@@ -26,6 +26,16 @@ export class DocsRoot {
     this.isCollapsed = !this.isCollapsed;
   }
 
+  handlePageClick = () => {
+    if (this.isSmallViewport() && !this.isCollapsed) {
+      this.isCollapsed = true;
+    }
+  }
+
+  isSmallViewport() {
+    return matchMedia && matchMedia('(max-width: 768px)').matches;
+  }
+
   render() {
     const layout = {
       'Layout': true,
@@ -38,7 +48,10 @@ export class DocsRoot {
         <docs-header onToggleClick={this.toggleCollapsed}/>
         <docs-menu onToggleClick={this.toggleCollapsed}/>
         <stencil-route url="/docs/:page*" routeRender={props => (
-          <docs-page history={props.history} path={`/docs/pages/${props.match.params.page || 'index'}.json`}/>
+          <docs-page
+            history={props.history}
+            path={`/docs/pages/${props.match.params.page || 'index'}.json`}
+            onClick={this.handlePageClick}/>
         )}/>
       </stencil-router>
     );
