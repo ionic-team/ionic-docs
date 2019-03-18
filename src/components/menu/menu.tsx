@@ -22,7 +22,7 @@ export class DocsMenu {
         </stencil-route-link>
       </header>,
       <docs-search/>,
-      <stencil-route-switch>
+      <stencil-route-switch scrollTopOffset={0}>
         <stencil-route url="/docs/(components|api)" routeRender={componentsTemplate}/>
         <stencil-route url="/docs/cli" routeRender={cliTemplate}/>
         <stencil-route url="/docs/native" routeRender={nativeTemplate}/>

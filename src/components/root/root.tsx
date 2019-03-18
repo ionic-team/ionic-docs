@@ -33,7 +33,7 @@ export class DocsRoot {
     };
 
     return (
-      <stencil-router class={layout} scrollTopOffset={0}>
+      <stencil-router class={layout}>
         <stencil-route style={{ display: 'none' }} routeRender={this.setHistory}/>
         <docs-header onToggleClick={this.toggleCollapsed}/>
         <docs-menu onToggleClick={this.toggleCollapsed}/>
