@@ -21,6 +21,10 @@ docs-menu > header {
   padding: 0 1.5rem;
 }
 
+docs-menu docs-menu-toggle {
+  margin-right: 1em;
+}
+
 docs-menu .MenuLogo {
   color: var(--text-color--dark);
   font-family: var(--heading-font-family);

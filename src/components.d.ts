@@ -189,6 +189,9 @@ export namespace Components {
   interface DocsMenu {}
   interface DocsMenuAttributes extends StencilHTMLAttributes {}
 
+  interface DocsMenuToggle {}
+  interface DocsMenuToggleAttributes extends StencilHTMLAttributes {}
+
   interface DocsNav {
     'items': MenuItems;
   }
@@ -295,6 +298,7 @@ declare global {
     'DocsHeader': Components.DocsHeader;
     'LayeredColorsSelect': Components.LayeredColorsSelect;
     'DocsMenu': Components.DocsMenu;
+    'DocsMenuToggle': Components.DocsMenuToggle;
     'DocsNav': Components.DocsNav;
     'DocsPageFooter': Components.DocsPageFooter;
     'DocsPage': Components.DocsPage;
@@ -335,6 +339,7 @@ declare global {
     'docs-header': Components.DocsHeaderAttributes;
     'layered-colors-select': Components.LayeredColorsSelectAttributes;
     'docs-menu': Components.DocsMenuAttributes;
+    'docs-menu-toggle': Components.DocsMenuToggleAttributes;
     'docs-nav': Components.DocsNavAttributes;
     'docs-page-footer': Components.DocsPageFooterAttributes;
     'docs-page': Components.DocsPageAttributes;
@@ -495,6 +500,12 @@ declare global {
     new (): HTMLDocsMenuElement;
   };
 
+  interface HTMLDocsMenuToggleElement extends Components.DocsMenuToggle, HTMLStencilElement {}
+  var HTMLDocsMenuToggleElement: {
+    prototype: HTMLDocsMenuToggleElement;
+    new (): HTMLDocsMenuToggleElement;
+  };
+
   interface HTMLDocsNavElement extends Components.DocsNav, HTMLStencilElement {}
   var HTMLDocsNavElement: {
     prototype: HTMLDocsNavElement;
@@ -598,6 +609,7 @@ declare global {
     'docs-header': HTMLDocsHeaderElement
     'layered-colors-select': HTMLLayeredColorsSelectElement
     'docs-menu': HTMLDocsMenuElement
+    'docs-menu-toggle': HTMLDocsMenuToggleElement
     'docs-nav': HTMLDocsNavElement
     'docs-page-footer': HTMLDocsPageFooterElement
     'docs-page': HTMLDocsPageElement
@@ -638,6 +650,7 @@ declare global {
     'docs-header': HTMLDocsHeaderElement;
     'layered-colors-select': HTMLLayeredColorsSelectElement;
     'docs-menu': HTMLDocsMenuElement;
+    'docs-menu-toggle': HTMLDocsMenuToggleElement;
     'docs-nav': HTMLDocsNavElement;
     'docs-page-footer': HTMLDocsPageFooterElement;
     'docs-page': HTMLDocsPageElement;

@@ -1,5 +1,5 @@
 import { Component } from '@stencil/core';
-import { Logo, Menu } from '../../icons';
+import { Logo } from '../../icons';
 import componentsTemplate from './templates/components';
 import cliTemplate from './templates/cli';
 import nativeTemplate from './templates/native';
@@ -14,6 +14,7 @@ export class DocsMenu {
   render() {
     return [
       <header>
+        <docs-menu-toggle/>
         <stencil-route-link url="/docs/">
           <Logo class="MenuLogo"/>
         </stencil-route-link>
