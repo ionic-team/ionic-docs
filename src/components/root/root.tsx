@@ -11,7 +11,7 @@ import { LocationSegments, RouterHistory } from '@stencil/router';
 export class DocsRoot {
   history: RouterHistory = null;
 
-  @State() isCollapsed = this.isSmallViewport();
+  @State() isCollapsed = false;
 
   setHistory = ({ history }: { history: RouterHistory }) => {
     if (!this.history) {
@@ -34,6 +34,10 @@ export class DocsRoot {
 
   isSmallViewport() {
     return matchMedia && matchMedia('(max-width: 768px)').matches;
+  }
+
+  componentWillLoad() {
+    this.isCollapsed = this.isSmallViewport();
   }
 
   render() {
