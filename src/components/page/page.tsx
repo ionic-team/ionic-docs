@@ -51,7 +51,9 @@ export class DocsPage {
       const { location } = this.history;
       const { scrollPosition = [0, 0] } = location;
       const [x, y] = scrollPosition;
-      this.document.documentElement.scrollTo(x, y);
+      if (this.document.documentElement instanceof HTMLElement) {
+        this.document.documentElement.scrollTo(x, y);
+      }
     });
   }
 
