@@ -48,7 +48,7 @@ export class DocsPage {
 
   @Watch('page')
   setScrollPosition() {
-    if (this.isServer) {
+    if (this.isServer || this.history.location.hash) {
       return;
     }
 
