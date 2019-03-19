@@ -4,6 +4,7 @@ docs-button {
   color: var(--accent-color);
   display: inline-block;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 docs-button a,
