@@ -35,6 +35,6 @@ Learn how to use observables in your Ionic 2 app.
 
 Learn how to use the Angular Router in your `@ionic/angular` 4 app.
 
-### [Ionic 4 examples using Angular, Vue and React)(https://ionicworkshop.com/posts/introduction-to-ionic-framework-angular-vue-react/)
+### [Ionic 4 examples using Angular, Vue and React](https://ionicworkshop.com/posts/introduction-to-ionic-framework-angular-vue-react/)
 
 Learn how to use Ionic 4 with Angular, React and Vue.
