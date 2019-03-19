@@ -7,6 +7,9 @@ nextUrl: '/docs/appflow/package/intro'
 
 # Deploy builds on Appflow using the Ionic CLI
 
+<blockquote>
+  <p><b>Note:</b>This feature is only available on our Scale plan <a href="/sales">contact us</a> to enable this feature.</p>
+</blockquote>
 
 It is possible to trigger deploy builds on Appflow directly from the CLI.
 This is extremely useful if you need to integrate the deploy build step inside an existing external CI/CD process.

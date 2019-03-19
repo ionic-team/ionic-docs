@@ -16,8 +16,12 @@ const cliCommandMenu = keyBy(
 const nativePluginMenu = keyBy(
   plugins,
   (item) => item.displayName.trim(),
-  (item) => `/docs/native/${slugify(item.name.slice(14))}`
+  (item) => `/docs/native/${slugify(item.packageName.slice(14))}`
 );
+
+const externalNativePlugins = {
+  'Google Maps': 'https://github.com/ionic-team/ionic-native-google-maps'
+};
 
 const tasks = new Listr([
   {
@@ -32,7 +36,7 @@ const tasks = new Listr([
     title: 'Build native plugins menu',
     task: () => fs.outputJSON(
       join(MENU_DATA_DIR, 'native-plugins.json'),
-      nativePluginMenu,
+      { ...nativePluginMenu, ...externalNativePlugins },
       { spaces: 2 }
     )
   }
@@ -41,5 +45,8 @@ const tasks = new Listr([
 export default tasks;
 
 if (!module.parent) {
-  tasks.run().catch(console.error);
+  tasks.run().catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
 }

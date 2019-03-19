@@ -1,10 +1,8 @@
 import {
-  PAGES_DIR,
   Page,
   buildPages
 } from '../index';
 
-import { join } from 'path';
 import renderMarkdown from '../markdown-renderer';
 import { commands } from '../../data/cli.json';
 
@@ -20,11 +18,12 @@ async function getCLIPages(): Promise<Page[]> {
     return {
       title: name,
       body: renderMarkdown(description),
-      path: join(PAGES_DIR, `cli/commands/${name.slice(6).replace(/\s/g, '-')}.json`),
+      path: `/docs/cli/commands/${name.slice(6).replace(/\s/g, '-')}`,
       summary: renderMarkdown(summary),
       inputs: renderInputs(inputs),
       options: renderOptions(options),
       skipIntros: true,
+      template: 'cli',
       ...rest
     };
   });

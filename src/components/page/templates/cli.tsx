@@ -35,9 +35,9 @@ export default (props) => {
   }
 
   return (
-    <main class="docs-content-pane">
+    <article>
       <h1>{ page.title }</h1>
-      <docs-table-of-contents links={headings} basepath={props.history.location.pathname} />
+      <docs-table-of-contents links={headings} basepath={page.path} />
       <section class="summary intro" innerHTML={page.summary} />
       { renderUsage(page) }
       <section class="description" innerHTML={page.body} />
@@ -45,7 +45,7 @@ export default (props) => {
       { inputs }
       { options }
       { advancedOptions }
-    </main>
+    </article>
   );
 };
 
@@ -123,9 +123,9 @@ const renderOptionList = (options = []) => {
       data={options}
       keys={{
         Head: option => renderOptionSpec(option),
-          Description: option => <div innerHTML={option.summary} />,
-          Aliases: option => option.aliases.length > 0 ? option.aliases.map(alias => <code>-{alias}</code>) : null,
-          Default: option => option.default && option.type === 'string' ? option.default : null,
+        Description: option => <div innerHTML={option.summary} />,
+        Aliases: option => option.aliases.length > 0 ? option.aliases.map(alias => <code>-{alias}</code>) : null,
+        Default: option => option.default && option.type === 'string' ? option.default : null
       }} />
   );
 };
@@ -133,7 +133,7 @@ const renderOptionList = (options = []) => {
 const renderOptionSpec = option => {
   return (
     <span>
-      --{option.name}
+      --{ option.type === 'boolean' && option.default === true ? `no-${option.name}` : option.name }
       { option.type === 'string' ?
         <span class="option-spec">
           { `=<${option.spec.value}>` }

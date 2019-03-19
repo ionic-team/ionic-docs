@@ -7,6 +7,7 @@
 
 :root {
   --accent-color: #3880ff;
+  --accent-color-rgb: 56, 128, 255;
   --background: #ffffff;
   --code-background: #f5f7fa;
   --code-color: var(--text-color--dark);
@@ -15,13 +16,16 @@
   --header-height: 56px;
   --heading-font-family: "Eina", var(--font-family);
   --line-rule-color: #edf2f6;
-  --menu-width: 260px;
+  --menu-width: 240px;
   --offset-background: #fdfdff;
   --offset-background--dark: #f7f7ff;
+  --page-margin-left: var(--menu-width);
+
   --text-color: #4e5b6a;
+  --text-color--darker: #24282e;
   --text-color--dark: #020814;
-  --text-color--light: #73849a;
   --text-color--lighter: #abb2bf;
+  --text-color--light: #73849a;
 }
 
 * {
@@ -64,7 +68,7 @@ a.outbound svg {
   color: var(--text-color--light);
   font-size: 1.2em;
   margin-bottom: 1.2em;
-  /* max-width: 40em; */
+  max-width: 40em;
 }
 
 .intro code {
@@ -175,8 +179,8 @@ code {
   border-radius: 4px;
   color: var(--code-color);
   font-family: var(--code-font-family);
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 13px;
+  font-weight: 500;
   letter-spacing: 0;
   padding: 4px 6px;
   white-space: pre-wrap;
@@ -194,7 +198,6 @@ pre {
 pre code {
   background-color: transparent;
   color: inherit;
-  font-weight: 500;
   padding: 0;
   white-space: inherit;
 }

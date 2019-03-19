@@ -1,15 +1,115 @@
 # Ionic Native
+Ionic Native is a curated set of Cordova plugins that make it easy to add native functionality to any Ionic app.
 
-Ionic Native is a curated set of community-created wrappers for Cordova plugins that makes adding native functionality to an Ionic app easy.
-Ionic Native wraps Cordova plugins in a Promise or Observable, providing a common interface for all plugins, and dealing with Angular's change detection.
+These docs are for apps built with Ionic Framework 4.0.0 and greater. For older Ionic v3 projects, [please see here](http://ionicframework.com/docs/v3/native/).
 
-<blockquote>
-  <p>Ionic Native is largely a set of <i>community maintained</i> plugins, and while the community is quick to find and fix issues, certain plugins may not function properly. For teams that require dedicated Native plugin support, the Ionic team has options available. Please <a href="mailto:sales@ionicframework.com">contact us</a> for more information.</p>
-</blockquote>
+Ionic Native is available in two editions: Community Edition and Enterprise Edition.
 
-## Usage with Angular apps
+## Community Edition
+Ionic Native CE is a set of open source plugins maintained by community contributors.
+Ionic does not maintain, fix, improve, or provide any guarantee that these plugins function.
 
-To use a plugin, import and add the plugin injectable to a `@NgModule`. For Angular, the import path should end with `/ngx`.
+## Enterprise Edition
+For teams that require dedicated native plugin support, fixes, improvements, or implementation guidance, Ionic Native EE is available.
+
+<div class="native-ee-pricing">
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <td>
+            <span class="native-ee-pricing-table">Features</span>
+          </td>
+          <th>
+            <div class="plan-wrap"> 
+              <span class="native-ee-pricing-table">Community Edition</span>
+              <div class="price">$0/mo </div>
+            </div>
+          </th>
+          <th>
+            <div class="plan-wrap">
+              <span class="native-ee-pricing-table">Enterprise Edition</span>
+              <div class="price" data-toggle="billing-team">
+                Contact Us</div>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="stripe">
+          <th>
+            Maintainer
+          </th>
+          <td>OSS Community</td>
+          <td>Ionic</td>
+        </tr>
+        <tr>
+          <th>
+            Regular Release Cycles & Updates
+          </th>
+          <td>No</td>
+          <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
+        </tr>
+        <tr class="stripe">
+          <th>
+            Support SLA & Ticketing System
+          </th>
+          <td>No</td>
+          <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
+        </tr>
+        <tr>
+          <th>
+            Advisory & Support
+          </th>
+          <td>No</td>
+          <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
+        </tr>
+        <tr class="stripe">
+          <th>
+            Security & Bug fixes 
+          </th>
+          <td>OSS Community</td>
+          <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
+        </tr>
+        <tr>
+          <th>
+            Implementation Guidance
+          </th>
+          <td>No</td>
+          <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
+        </tr>
+        <tr class="stripe">
+          <th>
+            Guaranteed SLA
+          </th>
+          <td>No</td>
+          <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
+        </tr>
+        <tr>
+          <th>
+            <a href="native/native-core">Native Core</a>
+          </th>
+          <td>No</td>
+          <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
+        </tr>
+        <tr>
+          <th></th>
+          <td></td>
+          <td><a class="btn"
+                href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+## Usage
+All plugins have two components - the native code (Cordova) and the JavaScript code.
+Cordova plugins are also wrapped in a `Promise` or `Observable` in order to provide a common plugin interface.
+Below are various framework options using the Camera plugin as an example.
+
+## Angular
+Import the plugin in a `@NgModule` and add it to the list of Providers. For Angular, the import path should end with `/ngx`.  Angular's change detection is automatically handled.
 
 ```typescript
 // app.module.ts
@@ -30,43 +130,40 @@ import { Camera } from '@ionic-native/camera/ngx';
 export class AppModule { }
 ```
 
-After the plugin has been declared, it can be imported and injected like any other service.
+After the plugin has been declared, it can be imported and injected like any other service:
 
 ```typescript
-import { Geolocation } from '@ionic-native/geolocation/ngx';
-import { Platform } from '@ionic/angular';
+// camera.service.ts
+import { Injectable } from '@angular/core';
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 
-@Component({ ... })
-export class MyComponent {
+@Injectable({
+  providedIn: 'root'
+})
+export class PhotoService {
+  constructor(private camera: Camera) { }
 
-  constructor(private geolocation: Geolocation, private platform: Platform) {
-
-    platform.ready().then(() => {
-
-      // get position
-      geolocation.getCurrentPosition().then(pos => {
-        console.log(`lat: ${pos.coords.latitude}, lon: ${pos.coords.longitude}`)
-      });
-
-
-      // watch position
-      const watch = geolocation.watchPosition().subscribe(pos => {
-        console.log(`lat: ${pos.coords.latitude}, lon: ${pos.coords.longitude}`)
-        this.position = pos;
-      });
-
-      // to stop watching
-      watch.unsubscribe();
+  takePicture() {
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE
+    }
+    
+    this.camera.getPicture(options).then((imageData) => {
+      // Do something with the new photo
+      
+    }, (err) => {
+     // Handle error
+     console.log("Camera issue: " + err);
     });
-
   }
-
 }
 ```
 
-## Usage with ES2015+/TypeScript
-
-Ionic Native can also be used a vanilla JS app with ES2015+/Typescript. To use any plugin, import the class from the appropriate package, and use it's static methods.
+## Vanilla JavaScript
+Ionic Native can also be used in a vanilla JavaScript app targeting ES2015+ and/or TypeScript. To use any plugin, import the class from the appropriate package and use its static methods:
 
 ```js
 import { Camera } from '@ionic-native/camera';

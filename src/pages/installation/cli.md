@@ -3,11 +3,14 @@ previousText: 'What is Ionic Framework'
 previousUrl: '/docs/intro'
 nextText: 'Packages & CDN'
 nextUrl: '/docs/installation/cdn'
+contributors:
+  - rtpHarry
+  - dwieeb
 ---
 
 # Installing Ionic
 
-Ionic apps are created and developed primarily through the Ionic [command-line](/docs/faq/glossary#cli) utility. The Ionic CLI is the preferred method of installation, as it offers a wide range of dev tools and help options along the way. It is also the main tool through which to run the app and connect it to other services, such as Ionic Pro.
+Ionic apps are created and developed primarily through the Ionic [command-line](/docs/faq/glossary#cli) utility. The Ionic CLI is the preferred method of installation, as it offers a wide range of dev tools and help options along the way. It is also the main tool through which to run the app and connect it to other services, such as Ionic Appflow.
 
 ## Install the Ionic CLI
 

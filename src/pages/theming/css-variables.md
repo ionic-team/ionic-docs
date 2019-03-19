@@ -3,6 +3,9 @@ previousText: 'Platform Styles'
 previousUrl: '/docs/theming/platform-styles'
 nextText: 'Color Generator'
 nextUrl: '/docs/theming/color-generator'
+contributors:
+  - brandyscarney
+  - iget-master
 ---
 
 # CSS Variables
@@ -14,6 +17,8 @@ Ionic components are built with <a href="https://developer.mozilla.org/en-US/doc
 ### Global Variables
 
 CSS variables can be set globally in an application in the `:root` selector. They can also be applied only for a specific mode. See [Ionic Variables](#ionic-variables) for more information on the global variables Ionic provides.
+
+When using the Ionic CLI to start an Angular project, the `src/theme/variables.scss` file is created where you can override the default Ionic Variables.
 
 ```css
 /* Set variables for all modes */

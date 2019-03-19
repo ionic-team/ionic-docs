@@ -1,0 +1,29 @@
+file-tree-directory {
+  display: block;
+}
+
+file-tree-directory > .name {
+  position: relative;
+  padding-left: 15px;
+}
+
+file-tree-directory > .name::before {
+  border-bottom: 4px solid transparent;
+  border-left: 4px solid #fff;
+  border-top: 4px solid transparent;
+  content: "";
+  height: 0;
+  left: 0;
+  position: absolute;
+  top: 10px;
+  transform: rotate(45deg);
+  width: 0;
+}
+
+file-tree-directory.collapsed > .name::before {
+  transform: rotate(0);
+}
+
+file-tree-directory > .children {
+  margin-left: 20px;
+}

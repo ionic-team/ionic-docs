@@ -8,4 +8,4 @@ renderer.heading = heading;
 renderer.code = code;
 renderer.link = link;
 
-export default (markdown: string) => marked(markdown, { renderer });
+export default (markdown: string, baseUrl?: string) => marked(markdown, { baseUrl, renderer });

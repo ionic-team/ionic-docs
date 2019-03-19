@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slides</title>
+  <link rel="stylesheet" href="/docs/assets/ionic/css/ionic.bundle.css"/>
+  <script defer src="/docs/assets/ionic/dist/ionic.js"></script>
+  <style>
+    :root {
+      --ion-safe-area-top: 20px;
+      --ion-safe-area-bottom: 22px;
+    }
+
+    .swiper-slide {
+      display: block;
+    }
+
+    ion-slide > h2 {
+      margin-top: 2.8rem;
+    }
+
+    ion-slide > img {
+      max-height: 50%;
+      max-width: 60%;
+      margin: 36px 0;
+    }
+  </style>
+</head>
+<body>
+  <ion-app>
+    <ion-header translucent>
+      <ion-toolbar>
+        <ion-title>Slides</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content fullscreen padding scroll-y="false">
+      <ion-slides>
+
+        <ion-slide>
+          <img src="./slide-1.png"/>
+          <h2>Welcome to the <b>ICA</b></h2>
+          <p>The <b>ionic conference app</b> is a practical preview of the ionic framework in action, and a demonstration of proper code use.</p>
+        </ion-slide>
+
+        <ion-slide>
+          <img src="./slide-2.png"/>
+          <h2>What is Ionic?</h2>
+          <p><b>Ionic Framework</b> is an open source SDK that enables developers to build high quality mobile apps with web technologies like HTML, CSS, and JavaScript.</p>
+        </ion-slide>
+
+        <ion-slide>
+          <img src="./slide-3.png"/>
+          <h2>What is Ionic Pro?</h2>
+          <p><b>Ionic Pro</b> is a powerful set of services and features built on top of Ionic Framework that brings a totally new level of app development agility to mobile dev teams.</p>
+        </ion-slide>
+
+        <ion-slide>
+          <img src="./slide-4.png"/>
+          <h2>Ready to Play?</h2>
+          <ion-button fill="clear">Continue <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
+        </ion-slide>
+
+      </ion-slides>
+    </ion-content>
+  </ion-app>
+</body>
+</html>

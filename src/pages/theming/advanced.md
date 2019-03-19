@@ -2,12 +2,13 @@
 initialTab: 'preview'
 inlineHtmlPreviews: true
 previousText: 'Color Generator'
-previousUrl: '/docs/layout/color-generator'
+previousUrl: '/docs/theming/color-generator'
 nextText: 'Publishing an app'
 nextUrl: '/docs/publishing/app-store'
+contributors:
+  - brandyscarney
+  - marcjulian
 ---
-
-<link rel="stylesheet" href="https://unpkg.com/@ionic/core/css/core.css">
 
 # Advanced Theming
 
@@ -36,11 +37,11 @@ A color can be applied to an Ionic component in order to change the default colo
 
 Each color consists of the following properties: a `base`, `contrast`, `shade`, and `tint`. The `base` and `contrast` colors also require a `rgb` property which is the same color, just in <a href="https://developer.mozilla.org/en-US/docs/Glossary/RGB" target="_blank">rgb format</a>. See [The Alpha Problem](#the-alpha-problem) for an explanation of why the `rgb` property is also needed. Select from the dropdown below to see all of the default colors Ionic provides and their variations.
 
-<layered-colors-select></layered-colors-select>
+<layered-colors-select mode="md" no-prerender></layered-colors-select>
 
 ### Modifying Colors
 
-To change the default values of a color, all of the listed variations for that color should be set. For example, to change the secondary color to <code-color value="#006600"></code-color>, set the following CSS properties:
+To change the default values of a color, all of the listed variations for that color should be set. For example, to change the secondary color to <code-color mode="md" value="#006600"></code-color>, set the following CSS properties:
 
 ```css
 :root {
@@ -53,11 +54,9 @@ To change the default values of a color, all of the listed variations for that c
 }
 ```
 
-When `secondary` is applied to a button, not only is the base color <code-color value="#006600"></code-color> used, but the contrast color <code-color value="#ffffff"></code-color> is used for the text, along with shade <code-color value="#005a00"></code-color> and tint <code-color value="#1a751a"></code-color> colors for the different states of the button.
+When `secondary` is applied to a button, not only is the base color <code-color mode="md" value="#006600"></code-color> used, but the contrast color <code-color mode="md" value="#ffffff"></code-color> is used for the text, along with shade <code-color mode="md" value="#005a00"></code-color> and tint <code-color mode="md" value="#1a751a"></code-color> colors for the different states of the button.
 
-<blockquote>
-  Not sure how to get the variation colors from the base color? Try out our [Color Generator](/docs/theming/color-generator) that calculates all of the variations and provides code to copy/paste into an app!
-</blockquote>
+> Not sure how to get the variation colors from the base color? Try out our [Color Generator](/docs/theming/color-generator) that calculates all of the variations and provides code to copy/paste into an app!
 
 See the [CSS Variables documentation](/docs/theming/css-variables) for more information on CSS variables.
 
@@ -151,15 +150,15 @@ After exploring different ways to customize the Ionic theme, we found that we co
 
 While updating the background (`--ion-background-color`) and text (`--ion-text-color`) variables will change the look of the app for most components, there are certain Ionic components where it may look off, or broken. This will be more apparent when applying a darker theme.
 
-In some components we use a shade darker than the background or lighter than the text. For example, an item heading text may need to be <code-color value="#404040"></code-color>, which is a few shades lighter than our default text color. Meanwhile, the loading component background is a shade darker than white, using <code-color value="#f2f2f2"></code-color>. We use stepped colors in order to define these slight variations. It is important to update the stepped colors when updating the background or text color of an application.
+In some components we use a shade darker than the background or lighter than the text. For example, an item heading text may need to be <code-color mode="md" value="#404040"></code-color>, which is a few shades lighter than our default text color. Meanwhile, the loading component background is a shade darker than white, using <code-color mode="md" value="#f2f2f2"></code-color>. We use stepped colors in order to define these slight variations. It is important to update the stepped colors when updating the background or text color of an application.
 
-By default, the Ionic stepped colors start at the default background color value <code-color value="#ffffff"></code-color> and mix with the text color value <code-color value="#000000"></code-color> using an increasing percentage. The full list of stepped colors is shown in the generator below.
+By default, the Ionic stepped colors start at the default background color value <code-color mode="md" value="#ffffff"></code-color> and mix with the text color value <code-color mode="md" value="#000000"></code-color> using an increasing percentage. The full list of stepped colors is shown in the generator below.
 
 ### Generate Stepped Color Variables
 
 Create a custom background and text color theme for your app. Update the background or text color’s hex values below, then copy and paste the generated code directly into your Ionic project.
 
-<stepped-color-generator></stepped-color-generator>
+<stepped-color-generator mode="md" no-prerender></stepped-color-generator>
 
 
 ## Globals
@@ -219,9 +218,7 @@ There is not yet full <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/
 }
 ```
 
-<blockquote>
-  See the [CSS Variables](/docs/theming/css-variables) section for more information on how to get and set CSS variables.
-</blockquote>
+> See the [CSS Variables](/docs/theming/css-variables) section for more information on how to get and set CSS variables.
 
 Ionic uses colors with an opacity (alpha) in several components. In order for this to work, those properties must be provided in RGB format. When changing any of the properties that have a variation ending in `-rgb`, it is important they are also provided in a comma separated format **without parentheses**. Below are some examples for changing text and background color.
 
@@ -244,3 +241,54 @@ body {
   color: rgba(var(--ion-text-color-rgb), 0.25);
 }
 ```
+
+
+### Variables in Media Queries
+
+CSS variables in [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries) are not currently supported, but there are open drafts to add [custom media queries](https://drafts.csswg.org/mediaqueries-5/#custom-mq) and [custom environment variables](https://drafts.csswg.org/css-env-1/) that would solve this problem! However, with the current state of support, the following will **not** work:
+
+```css
+:root {
+  --breakpoint: 600px;
+}
+
+@media (min-width: var(--breakpoint)) {
+  /* Doesn't work :( */
+}
+```
+
+
+### Modifying CSS Color Variables
+
+While it is possible to easily alter a color in Sass using its built-in functions, it is currently not as easy to modify colors set in CSS Variables. This can be accomplished in CSS by splitting the [RGB](https://developer.mozilla.org/en-US/docs/Glossary/RGB) or [HSL](https://en.wikipedia.org/wiki/HSL_and_HSV) channels and modifying each value, but it is complex and has missing functionality.
+
+What exactly does this mean? Basically, using a CSS preprocessor, such as Sass, allows us to use functions to manipulate a single color. For example, we can create the following colors in Sass:
+
+```scss
+// Background color, shade, and tint
+$background: #3880ff;
+$background-shade: mix(#000, $background, 12%);
+$background-tint: mix(#fff, $background, 10%);
+
+// Text color, darker and lighter
+$text: #444;
+$text-darker: darken($text, 15);
+$text-lighter: lighten($text, 15);
+```
+
+After running through the Sass compiler, the colors will have the following values:
+
+| Variable            | Value                                                     |
+| --------------------| ----------------------------------------------------------|
+| `$background`       | <code-color mode="md" value="#3880ff"></code-color>       |
+| `$background-shade` | <code-color mode="md" value="#3171e0"></code-color>       |
+| `$background-tint`  | <code-color mode="md" value="#4c8dff"></code-color>       |
+| `$text`             | <code-color mode="md" value="#444444"></code-color>       |
+| `$text-darker`      | <code-color mode="md" value="#1e1e1e"></code-color>       |
+| `$text-lighter`     | <code-color mode="md" value="#6a6a6a"></code-color>       |
+
+However, because CSS variables can be set at runtime and are more dynamic, it is not currently possible to manipulate them using a simple function.
+
+This is normally not a problem, but when an application needs to have dynamic theming it presents issues. In Ionic, this is the reason that there are [variations to each color](#layered-colors), and it is also why [stepped colors](#stepped-colors) are necessary for theming.
+
+There are drafts and issues discussing [color modification proposals](https://github.com/w3c/csswg-drafts/issues/3187) that would make this possible.

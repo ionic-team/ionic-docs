@@ -3,6 +3,9 @@ previousText: 'Starting'
 previousUrl: '/docs/building/starting'
 nextText: 'Migration'
 nextUrl: '/docs/building/migration'
+contributors:
+  - mhartington
+  - brandyscarney
 ---
 
 # Scaffolding out an App
@@ -46,7 +49,7 @@ The `src/app/` directory contains the root app component and module as well as a
 
 ## Generating New Features
 
-The Ionic CLI can generate new app features with the [`ionic generate`](/docs/cli/generate) command. By running `ionic generate` in the command line, a selection prompt is displayed which lists the available features that can be generated.
+The Ionic CLI can generate new app features with the [`ionic generate`](/docs/cli/commands/generate) command. By running `ionic generate` in the command line, a selection prompt is displayed which lists the available features that can be generated.
 
 <command-line>
     <command-prompt>ionic generate</command-prompt>
@@ -110,4 +113,4 @@ The Ionic CLI uses the underlying framework tooling to stay close to best practi
 
 After creating the files and directories for the new page, the CLI will also update the router configuration to include the new page. This reduces the amount of manual work needed to keep the development lifecycle moving.
 
-For more details, run `ionic g --help` from the command line or see [the documentation](/docs/cli/generate) for `ionic generate`.
+For more details, run `ionic g --help` from the command line or see [the documentation](/docs/cli/commands/generate) for `ionic generate`.

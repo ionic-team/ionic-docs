@@ -1,12 +1,12 @@
 export default (props) => {
-  const { page, history } = props;
+  const { page } = props;
   const headings = [...page.headings];
   const usage = renderUsage(page.usage);
   const properties = renderProperties(page.props);
   const events = renderEvents(page.events);
   const methods = renderMethods(page.methods);
   const customProps = renderCustomProps(page.styles);
-  const demoPreview = rendeDemoPreview(page);
+  const slots = renderSlots(page.slots);
 
   if (usage) {
     headings.push({
@@ -43,22 +43,25 @@ export default (props) => {
     });
   }
 
+  if (slots) {
+    headings.push({
+      text: 'Slots',
+      href: '#slots'
+    });
+  }
+
   return (
-    <main class="docs-api">
-      <div class="docs-content-pane">
-        <div class="docs-content">
-          <h1>{ page.title }</h1>
-          <docs-table-of-contents links={headings} basepath={history.location.pathname}/>
-          <section class="markdown-content" innerHTML={page.body}/>
-          { usage }
-          { properties }
-          { events }
-          { methods }
-          { customProps }
-        </div>
-      </div>
-      { demoPreview }
-    </main>
+    <article>
+      <h1>{ page.title }</h1>
+      <docs-table-of-contents links={headings} basepath={page.path}/>
+      <section class="markdown-content" innerHTML={page.body}/>
+      { usage }
+      { properties }
+      { events }
+      { methods }
+      { customProps }
+      { slots }
+    </article>
   );
 };
 
@@ -97,7 +100,8 @@ const renderProperties = (properties = []) => {
           Head: prop => prop.name,
           Description: prop => <div innerHTML={prop.docs}/>,
           Attribute: prop => prop.attr ? <code>{ prop.attr }</code> : null,
-          Type: prop => <code>{ prop.type }</code>
+          Type: prop => <code>{ prop.type }</code>,
+          Default: prop => prop.default ? <code>{ prop.default }</code> : null
         }}/>
     </section>
   );
@@ -184,45 +188,32 @@ const renderCustomProps = (customProps = []) => {
   );
 };
 
-
-const rendeDemoPreview = (page: any) => {
-  if (DEMOS.indexOf(page.tag) < 0) {
+const renderSlots = (slots = []) => {
+  if (!slots.length) {
     return null;
   }
+
   return (
-    <div class="docs-preview-pane">
-      <docs-preview url="/docs/demos/index.html" urlFragment={`#/${page.tag}`}></docs-preview>
-    </div>
+    <section>
+      <h2 id="slots">
+        <a href="#slots">Slots</a>
+      </h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {slots.map(slot => (
+            <tr>
+              <td>{ slot.name && <code>"{ slot.name }"</code>}</td>
+              <td>{ slot.docs }</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
   );
 };
-
-
-
-const DEMOS = [
-  'ion-action-sheet',
-  'ion-alert',
-  'ion-badge',
-  'ion-button',
-  'ion-card',
-  'ion-checkbox',
-  'ion-datetime',
-  'ion-fab',
-  'ion-grid',
-  'ion-infinite-scroll',
-  'ion-input',
-  'ion-list',
-  'ion-loading',
-  'ion-menu',
-  'ion-modal',
-  'ion-nav',
-  'ion-popover',
-  'ion-range',
-  'ion-refresher',
-  'ion-searchbar',
-  'ion-select',
-  'ion-slides',
-  'ion-spinner',
-  'ion-tabs',
-  'ion-toast',
-  'ion-virtual-scroll'
-];

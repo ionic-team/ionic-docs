@@ -1,0 +1,21 @@
+code-color {
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.code-color-block {
+  display: inline-block;
+
+  width: 20px;
+  height: 20px;
+
+  margin-right: 2px;
+
+  border: 1px solid var(--line-rule-color);
+  border-radius: 4px;
+}
+
+.code-color-block,
+.code-color-value {
+  vertical-align: middle;
+}

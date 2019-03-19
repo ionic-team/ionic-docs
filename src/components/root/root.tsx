@@ -1,23 +1,55 @@
-import { Component } from '@stencil/core';
-import { LocationSegments } from '@stencil/router';
+import '@ionic/core';
+import { Component, State } from '@stencil/core';
+import { LocationSegments, RouterHistory } from '@stencil/router';
 
 @Component({
   tag: 'docs-root',
   styleUrl: 'root.css'
 })
 export class DocsRoot {
+  history: RouterHistory = null;
+
+  @State() isMenuToggled = false;
+
+  setHistory = ({ history }: { history: RouterHistory }) => {
+    if (!this.history) {
+      this.history = history;
+      this.history.listen((location: LocationSegments) => {
+        (window as any).gtag('config', 'UA-44023830-1', { 'page_path': location.pathname + location.search });
+      });
+    }
+  }
+
+  toggleMenu = () => {
+    this.isMenuToggled = !this.isMenuToggled;
+  }
+
+  handlePageClick = () => {
+    if (this.isSmallViewport() && this.isMenuToggled) {
+      this.isMenuToggled = false;
+    }
+  }
+
+  isSmallViewport() {
+    return matchMedia && matchMedia('(max-width: 768px)').matches;
+  }
+
   render() {
+    const layout = {
+      'Layout': true,
+      'is-menu-toggled': this.isMenuToggled
+    };
+
     return (
-      <stencil-router class="Layout" scrollTopOffset={0}>
-        <stencil-route style={{ display: 'none' }} routeRender={({ history }) =>
-          history.listen((location: LocationSegments) => {
-            (window as any).gtag('config', 'UA-44023830-1', {'page_path': location.pathname + location.search})
-          })
-        } />
-        <docs-header/>
-        <docs-menu/>
+      <stencil-router class={layout}>
+        <stencil-route style={{ display: 'none' }} routeRender={this.setHistory}/>
+        <docs-header onToggleClick={this.toggleMenu}/>
+        <docs-menu onToggleClick={this.toggleMenu}/>
         <stencil-route url="/docs/:page*" routeRender={props => (
-          <docs-page path={`/docs/pages/${props.match.params.page || 'index'}.json`}/>
+          <docs-page
+            history={props.history}
+            path={`/docs/pages/${props.match.params.page || 'index'}.json`}
+            onClick={this.handlePageClick}/>
         )}/>
       </stencil-router>
     );

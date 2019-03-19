@@ -43,6 +43,10 @@ const items = {
   'Navigation': {
     'Angular': '/docs/navigation/angular'
   },
+  'Utilities': {
+    'Config': '/docs/utilities/config',
+    'Platform': '/docs/utilities/platform'
+  },
   'Publishing': {
     'Progressive Web App': '/docs/publishing/progressive-web-app',
     'iOS App Store': '/docs/publishing/app-store',
@@ -54,6 +58,7 @@ const items = {
     'Build Errors': '/docs/faq/build',
     'Runtime Errors': '/docs/faq/runtime',
     'Native Errors': '/docs/faq/native',
+    'CORS Errors': '/docs/faq/cors',
     'Developer Tips': '/docs/faq/tips',
     'Changelog': 'https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md'
   },

@@ -1,0 +1,27 @@
+.page-appflow {
+  --page-width: 1000px;
+}
+
+.page-appflow docs-cards > docs-card:nth-child(1) {
+  font-size: 1.25em;
+}
+
+.page-appflow-cookbook-intro,
+.page-appflow-deploy-intro,
+.page-appflow-package-intro,
+.page-appflow-automation-intro,
+.page-appflow-quickstart {
+  --page-width: 800px;
+}
+
+.page-appflow-quickstart-connect img {
+  max-height: 400px;
+}
+
+.page-appflow-quickstart-native-config img,
+.page-appflow-quickstart-ionic-remote img,
+.page-appflow-quickstart-package img,
+.page-appflow-quickstart-automation img,
+.page-appflow-quickstart-environment img {
+  max-height: 500px;
+}

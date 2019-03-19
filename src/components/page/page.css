@@ -1,45 +1,41 @@
 @import './templates/error.css';
 
 docs-page {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   font-size: 15px;
+  grid-template-columns: 1fr minmax(0, var(--page-width, 720px)) 1fr;
   line-height: 2;
-  margin-left: var(--page-margin-left, var(--menu-width));
+  margin-left: var(--page-margin-left);
   margin-top: var(--header-height);
   overflow-x: hidden;
+  transform: var(--page-transform, none);
+  transition: transform 200ms cubic-bezier(0.2, 1, 0.2, 1);
 }
 
-docs-page main {
+@media (min-width: 1800px) {
+  docs-page {
+    grid-template-columns: 1fr minmax(0, var(--page-width, 720px)) 1fr var(--page-margin-left);
+  }
+}
+
+docs-page > main {
+  grid-column: 2;
   margin-bottom: 3rem;
-}
-
-docs-page main.docs-api {
-  display: flex;
-}
-
-docs-page main.docs-api {
-  display: flex;
-}
-
-docs-page .docs-content-pane {
-  flex: 1;
-  max-width: 680px;
   padding: var(--page-padding, 2rem 3rem);
 }
 
-docs-page .docs-preview-pane {
-  padding-right: 10px;
+docs-page docs-demo {
+  margin-right: auto;
 }
 
-docs-page .docs-content {
-  max-width: 680px;
+docs-page docs-pagination {
+  grid-column: 1 / -1;
 }
 
 docs-page .full-screen {
-  height: calc(100vh - var(--header-height) - 3rem);
-  width: calc(100vw - var(--menu-width));
-  max-width: none;
+  grid-column: 1 / -1;
+  height: calc(100vh - var(--header-height));
+  margin-bottom: 0;
   overflow: hidden;
   padding: 0;
 }

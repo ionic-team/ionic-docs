@@ -1,18 +1,16 @@
 import { Component, Prop, State, Watch } from '@stencil/core';
+import { RouterHistory } from '@stencil/router';
 import { Page } from '../../definitions';
-import defaultTemplate from './templates/default';
-import nativeTemplate from './templates/native';
-import apiReferenceTemplate from './templates/api-reference';
-import apiTemplate from './templates/api';
-import cliTemplate from './templates/cli';
-import errorTemplate from './templates/error';
+import templates from './templates';
 
 @Component({
   tag: 'docs-page',
   styleUrl: 'page.css'
 })
 export class DocsPage {
+  @Prop() history: RouterHistory;
   @Prop() path: string;
+  @Prop({ context: 'isServer' }) private isServer: boolean;
   @Prop({ context: 'document' }) private document: HTMLDocument;
   @State() badFetch: Response = null;
   @State() page: Page = { title: null, body: null };
@@ -49,6 +47,20 @@ export class DocsPage {
   }
 
   @Watch('page')
+  setScrollPosition() {
+    if (this.isServer) {
+      return;
+    }
+
+    requestAnimationFrame(() => {
+      const { location } = this.history;
+      const { scrollPosition = [0, 0] } = location;
+      const [x, y] = scrollPosition;
+      this.document.documentElement.scrollTo(x, y);
+    });
+  }
+
+  @Watch('page')
   setDocumentTitle(page: Page) {
     const { title, meta = {} } = page;
     const suffix = /^\/docs\/pages\/appflow.*$/.test(this.path) ? 'Ionic Appflow Documentation' : 'Ionic Documentation';
@@ -66,19 +78,24 @@ export class DocsPage {
 
   render() {
     const { page } = this;
+
     if (this.badFetch) {
-      return errorTemplate(this.badFetch);
+      return templates.error(this.badFetch);
     }
 
+    const Template = templates[page.template] || templates.default;
+
     const content = [
-      <stencil-route-switch>
-        <stencil-route url="/docs/native" routeRender={nativeTemplate} componentProps={{ page }}/>
-        <stencil-route exact url="/docs/api" routeRender={apiReferenceTemplate} componentProps={{ page }}/>
-        <stencil-route url="/docs/api/(.+)" routeRender={apiTemplate} componentProps={{ page }}/>
-        <stencil-route url="/docs/cli/commands/(.+)" routeRender={cliTemplate} componentProps={{ page }}/>
-        <stencil-route url="/docs" routeRender={defaultTemplate} componentProps={{ page }}/>
-      </stencil-route-switch>
+      <main>
+        <Template page={page}/>
+      </main>
     ];
+
+    if (typeof page.demoUrl === 'string') {
+      content.push(
+        <docs-demo url={page.demoUrl}/>
+      );
+    }
 
     const shouldShowPagination = (
       page.previousText && page.previousUrl || page.nextText && page.nextUrl

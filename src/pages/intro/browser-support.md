@@ -7,26 +7,33 @@ nextUrl: '/docs/intro/versioning'
 
 # Browser Support
 
-Ionic's original goal was to make it easy to develop mobile apps using web technologies, including HTML, CSS and JavaScript. By using web technologies, Ionic is able to work across a wide range of devices, operating systems and browsers, all while using the same codebase.
+Ionic's earliest goal was to make it easy to develop mobile apps using web technologies like HTML, CSS, and JavaScript. Because of this foundation in web technologies, Ionic can run anywhere the web runs — iOS, Android, browsers, Electron, PWAs, and more.
 
 
 ## Mobile
 
-Browser support was first centered around supporting mobile devices through [Platform Continuity](/docs/intro/concepts#platform-continuity), and has been heavily tested on the operating systems listed below:
+In pursuit of [platform continuity](/docs/intro/concepts#platform-continuity), Ionic fully supports and is well tested on the mobile platforms listed below:
 
-- ### Android 4.4+
-  - [Latest Android Stats](https://developer.android.com/about/dashboards/)
-- ### iOS 10+
-  - [Latest iOS Stats](https://developer.apple.com/support/app-store/)
+| Platform     | Supported Versions |
+| ------------ | ------------------ |
+| **Android**  | 4.4+               |
+| **iOS**      | 10+                |
+
+> Check the [latest Android stats](https://developer.android.com/about/dashboards/) and the [latest iOS stats](https://developer.apple.com/support/app-store/) for up-to-date platform information.
 
 
 ## Desktop
 
-Ionic not only works great on mobile devices, but since it's based on web technologies it works great on desktop browsers too.
+Because Ionic is based on web technologies, it works just as well on desktop browsers as it does on mobile devices. For more information on desktop layouts, see [Cross Platform](/docs/building/cross-platform#desktop).
 
-- ### Chrome
-- ### Safari
-- ### Edge
-- ### Firefox
 
-For more information on desktop layouts, see [Cross Platform](/docs/building/cross-platform).
+| Browser     | Supported |
+| ----------- | --------- |
+| **Chrome**  | ✔         |
+| **Safari**  | ✔         |
+| **Edge**    | ✔         |
+| **Firefox** | ✔         |
+| **IE**      | 11+       |
+
+
+> Because Ionic is built with Stencil, see [Stencil's browser support](https://stenciljs.com/docs/browser-support) for a more detailed breakdown of support.

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Input</title>
+  <link rel="stylesheet" href="/docs/assets/ionic/css/ionic.bundle.css"/>
+  <script src="/docs/assets/ionic/dist/ionic.js"></script>
+  <style>
+    :root {
+      --ion-safe-area-top: 20px;
+      --ion-safe-area-bottom: 22px;
+    }
+  </style>
+</head>
+<body>
+  <ion-app>
+    <ion-header translucent>
+      <ion-toolbar>
+        <ion-title>Input</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content fullscreen padding>
+      <form onsubmit="processForm(event)">
+        <ion-list>
+          <ion-item>
+            <ion-input required type="text" placeholder="First Name" oninput="handleFirstNameValue(event)"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-input required type="text" placeholder="Last Name" oninput="handleLastNameValue(event)"></ion-input>
+          </ion-item>
+        </ion-list>
+
+        <div>
+          <ion-button expand="block" type="submit">Create Account</ion-button>
+        </div>
+      </form>
+    </ion-content>
+    <ion-alert-controller></ion-alert-controller>
+  </ion-app>
+
+  <script>
+    const controller = document.querySelector('ion-alert-controller');
+    let firstName, lastName;
+
+    function processForm(event) {
+      event.preventDefault();
+      controller.create({
+        header: 'Account Created',
+        message: `Created account for: ${firstName} ${lastName}`,
+        buttons: [{
+          text: 'OK'
+        }]
+      }).then(alert => alert.present());
+    }
+
+    function handleFirstNameValue(event) {
+      firstName = event.target.value;
+    }
+
+    function handleLastNameValue(event) {
+      lastName = event.target.value;
+    }
+  </script>
+</body>
+</html>

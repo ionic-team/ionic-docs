@@ -7,6 +7,10 @@ nextUrl: '/docs/appflow/automation/intro'
 
 # Package builds on Appflow using the Ionic CLI
 
+<blockquote>
+  <p><b>Note:</b>This feature is only available on our Scale plan <a href="/sales">contact us</a> to enable this feature.</p>
+</blockquote>
+
 It is possible to trigger package builds on Appflow directly from the CLI.
 This is extremely useful if you need to integrate the package build step inside an existing external CI/CD process.
 

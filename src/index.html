@@ -6,7 +6,7 @@
   <meta name="author" content="Ionic">
   <meta name="description" content="Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards">
   <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
-  <meta name="theme-color" content="#16161d">
+  <meta name="theme-color" content="#ffffff">
   <link rel="manifest" href="/docs/manifest.json">
 
   <meta property="og:url" content="https://ionicframework.com/docs/">
@@ -33,6 +33,49 @@
 </head>
 <body>
   <docs-root></docs-root>
+  <script>
+    // tmp work-around
+    function createComponentOnReadyPrototype(win, namespace, HTMLElementPrototype) {
+      (win['s-apps'] = win['s-apps'] || []).push(namespace);
+
+      if (!HTMLElementPrototype.componentOnReady) {
+
+        HTMLElementPrototype.componentOnReady = function componentOnReady() {
+          var elm = this;
+
+          function executor(resolve) {
+            if (elm.nodeName.indexOf('-') > 0) {
+              var apps = win['s-apps'];
+              var appsReady = 0;
+
+              for (var i = 0; i < apps.length; i++) {
+                if (win[apps[i]].componentOnReady) {
+                  if (win[apps[i]].componentOnReady(elm, resolve)) {
+                    return;
+                  }
+                  appsReady++;
+                }
+              }
+
+              if (appsReady < apps.length) {
+                (win['s-cr'] = win['s-cr'] || []).push([elm, resolve]);
+                return;
+              }
+            }
+
+            resolve(null);
+          }
+
+          if (win.Promise) {
+            return new win.Promise(executor);
+          }
+
+          return { then: executor };
+        };
+      }
+    }
+    createComponentOnReadyPrototype(window, 'App', HTMLElement.prototype);
+  </script>
   <script src="/docs/build/app/app.core.pf.js" data-resources-url="/docs/build/app/" data-namespace="app"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->

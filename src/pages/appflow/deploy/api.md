@@ -7,31 +7,32 @@ nextUrl: '/docs/appflow/deploy/tutorials'
 
 # Using the Deploy API
 
-<div class="alert alert-danger" role="alert">
+<blockquote>
 Before you begin using the API you'll need to make sure you've already
-<a href="/docs/appflow/deploy/setup/#installation" style="color: #4a8bfc;">installed and configured the plugin.</a>
-and you'll likely want to use the <a href="/docs/appflow/deploy/api/#using-the-ionic-pro-client" style="color: #4a8bfc;">Pro Client</a> to make accessing the API easier.
-</div>
+<a href="/docs/appflow/quickstart/installation" style="color: #4a8bfc;">installed and configured the plugin.</a>
+and you may want to use the <a href="/docs/appflow/deploy/api/#using-the-ionic-pro-client" style="color: #4a8bfc;">Pro Client</a> to make accessing the API easier.
+</blockquote>
 
-While the Ionic Cordova plugin can handle all of your updates and perform them for you,
-sometimes you may want to customize how this works.
-Some examples of things you may want to do are:
+While the Appflow SDK can handle all of your updates and perform them for you, sometimes you may
+want to customize how this works. Some examples of things you may want to do are:
 
 - Allow users to subscribe to different Channels for Beta Features, etc.
 - Manage the update process yourself (ex. Download updates on login, Apply updates on logout or Check for updates every 30 minutes)
 - Display what Channel the user is connected to
 
 The Pro Client gives you access to everything you need to make these modifications,
-and it's recommended that you always use the Pro Client instead of the Cordova plugin directly.
+and it's recommended that you always use the Pro Client instead of the plugin API directly.
 
-<div class="alert alert-warning" role="alert"><h4>Note: Async Await vs. ".then()"</h4>
+
+<blockquote>
+<h4>Note: Async Await vs. ".then()"</h4>
 <p>In all of the examples on this page you'll notice that we use Async/Await.
 This automatically resolves promises inline for you and waits to perform the next action.
 This is just an alternative to using `.then`. Async/Await just allows your code to be much more legible
 (especially when you'd normally be chaining multiple promises) as it's read like a syncronous piece of code.
 Here are two ways to write the same piece of code:</p>
-<div markdown="1">
-```js
+
+```typescript
 Pro.deploy.getCurrentVersion().then((versionInfo) => {
   console.log(versionInfo);
 })
@@ -44,8 +45,8 @@ async getVersionInfo(){
 }
 
 ```
-</div>
-</div>
+
+</blockquote>
 
 ### Using the Ionic Pro Client
 
@@ -53,40 +54,24 @@ The Ionic Pro Client gives you access to the Deploy API inside of your app.
 
 You simply need to install the latest version of the Pro Client:
 
-```bash
+<command-line>
+<command-prompt>
 npm install @ionic/pro@latest
-```
+</command-prompt>
+</command-line>
 
 Then you can import it in order to use the Deploy API in your code:
 ```typescript
 import { Pro } from '@ionic/pro';
 ```
 
-## Try the New Improved Deploy Plugin
+### How To Upgrade from v4 to v5
 
-We're excited to announce that we've released major update to the deploy plugin and Pro Client!
-The new version of the plugin was neccessary to support underlying changes to the `cordova-plugin-ionic-webview`
-in order to support Ionic 4 and it also brings with it a number of optimizations that we know users have been looking
-forward to for a long time and lays the foundation for more! The major updates include:
-* CDN - The new deploy plugin is backed by a CDN so that files are cached close to your users in edge locations
-and will reduce download times
-* Differential Updates - The previous version of the plugin shipped all the assets in you built `www` directory for every
-update. The new one only downloads files that have changed since the previous versions stored on the device which can reduce
-bandwidth by up to 90% and should increase download speeds as well.
-* OnResume Updates - Now users will be able to recieve app updates on resuming the app after it has been in the background for
-a long enough period of time. Previously updates were only installed if the app was fully closed and reopened now you can use the
-[MIN_BACKGROUND_DURATION](#min_background_duration) plugin variable to control how long the app needs to be in the background before
-the plugin considers it "closed" for the purposes of checking for an update.
-
-### How To Install the New Version
-
-If you're starting from a brand new app created with `ionic start` you can follow the [setup instructions](/docs/appflow/deploy/setup/#installation)
-and you'll get the new version. If you're upgrading from a previous version you can follow
+The following docs are for `v5.x.x` of the Appflow SDK. If you're upgrading from a previous version you can follow
 [this guide & tutorial video](/docs/appflow/deploy/tutorials/#upgrading-to-the-new-deploy-plugin).
 
 ## Methods
 
-*Note*: If you're looking for the v4 API you can find them [here](/docs/appflow/deploy/api/v4api.html)
 `Pro.deploy` contains many functions that can help you utilize Deploy inside of your app. Here's a rundown of each:
 
 * [configure](#configure)
@@ -104,7 +89,7 @@ and you'll get the new version. If you're upgrading from a previous version you 
 
 ###  configure
 
-▸ **configure**(config: *[DeployConfig](#deployconfig)*): `Promise`<`void`>
+▸ **configure**(config: [DeployConfig](#deployconfig)): `Promise`<`void`>
 
 *__description__*: Update the default configuration for the plugin on the current device. The new configuration will be persisted across app close and binary updates.
 
@@ -118,7 +103,7 @@ and you'll get the new version. If you're upgrading from a previous version you 
 
 **Returns:** `Promise`<`void`>
 
-```js
+```typescript
 async configureDeploy() {
   const config = {
     'appId': 'YOUR_APP_ID',
@@ -137,7 +122,7 @@ async configureDeploy() {
 
 **Returns:** `Promise`<[ConfigurationInfo](#configurationinfo)> - Info about the currently applied configuration details.
 
-```js
+```typescript
 const info = await Pro.deploy.getConfiguration()
 console.log(info)
 // {
@@ -150,6 +135,7 @@ console.log(info)
 //   'maxVersions': 3,
 //   'minBackgroundDuration': 30,
 //   'currentVersionId': 'xxxx-xxxx-xxxx-xxxx'
+//   'currentBuildId' : 'xxxxxxx'
 // }
 ```
 
@@ -171,7 +157,7 @@ ___
 
 **Returns:** `Promise`<[SnapshotInfo](#snapshotinfo) `| undefined`> - The info of the currently applied update or undefined if there is no applied update.
 
-```js
+```typescript
 async performAutomaticUpdate() {
   try {
     const currentVersion = Pro.deploy.getCurrentVersion();
@@ -202,7 +188,7 @@ ___
 
 **Returns:** `Promise`<[CheckForUpdateResponse](#checkforupdateresponse)> - An object describing if an update is available.
 
-```js
+```typescript
 async performManualUpdate() {
   const update = await Pro.deploy.checkForUpdate()
   if (update.available){
@@ -215,7 +201,7 @@ ___
 
 ###  downloadUpdate
 
-▸ **downloadUpdate**(progress?: *[CallbackFunction](#callbackfunction)<`number`>*): `Promise`<`boolean`>
+▸ **downloadUpdate**(progress?: [CallbackFunction](#callbackfunction)<`number`>): `Promise`<`boolean`>
 
 *__description__*: Download the new files from an available update found by the checkForUpdate method and prepare the update.
 
@@ -229,7 +215,7 @@ ___
 
 **Returns:** `Promise`<`boolean`> - `true` if the available update was successfully downloaded.
 
-```js
+```typescript
 
 async performManualUpdate() {
   const update = await Pro.deploy.checkForUpdate()
@@ -245,7 +231,7 @@ ___
 
 ###  extractUpdate
 
-▸ **extractUpdate**(progress?: *[CallbackFunction](#callbackfunction)<`number`>*): `Promise`<`boolean`>
+▸ **extractUpdate**(progress?: [CallbackFunction](#callbackfunction)<`number`>): `Promise`<`boolean`>
 
 *__description__*: Extract the files from an update downloaded with the downloadUpdate method to prepare for loading the app.
 
@@ -259,7 +245,7 @@ ___
 
 **Returns:** `Promise`<`boolean`> - `true` if the available update was successfully extracted.
 
-```js
+```typescript
 async performManualUpdate() {
   const update = await Pro.deploy.checkForUpdate()
   if (update.available){
@@ -285,7 +271,7 @@ ___
 
 **Returns:** `Promise`<`boolean`> - `true` if the app was successfully reloaded.
 
-```js
+```typescript
 async performManualUpdate() {
   const update = await Pro.deploy.checkForUpdate()
   if (update.available){
@@ -312,7 +298,7 @@ ___
 
 **Returns:** `Promise`<[SnapshotInfo](#snapshotinfo) `| undefined`> - Info about the currently applied update or `undefined` if there isn't one applied.
 
-```js
+```typescript
 const info = await Pro.deploy.getCurrentVersion()
 console.log(info)
 // {
@@ -333,7 +319,7 @@ ___
 
 **Returns:** `Promise`<[SnapshotInfo](#snapshotinfo)[]> - A list of updates stored locally on the device.
 
-```js
+```typescript
 async checkVersions() {
   const versions = await Pro.deploy.getAvailableVersions();
   console.log(versions);
@@ -369,7 +355,7 @@ ___
 
 **Returns:** `Promise`<`boolean`> - `true` if the version was successfully deleted.
 
-```js
+```typescript
 async deleteVersion() {
   const versions = await Pro.deploy.getAvailableVersions();
   Pro.deploy.deleteVersion(versions[0].versionId);
@@ -389,58 +375,16 @@ ___
 
 #### Properties
 
-* [channel](#optional-channel)
-* [appId](#optional-appid)
-* [maxVersions](#optional-maxversions)
-* [minBackgroundDuration](#optional-minbackgroundduration)
-
-___
-
-#### `<Optional>` appId
-
-**● appId**: `undefined` |
-`string`
-
-
-The [Ionic Appflow](https://ionicframework.com/docs/appflow/) app id.
-
-___
-
-#### `<Optional>` channel
-
-**● channel**: `undefined` |
-`string`
-
-
-The [channel](/docs/pro/deploy/channels) that the plugin should listen for updates on.
-
-___
-
-#### `<Optional>` maxVersions
-
-**● maxVersions**: `undefined` |
-`number`
-
-
-The number of previous updates to be cached on the device
-
-___
-
-#### `<Optional>` minBackgroundDuration
-
-**● minBackgroundDuration**: `undefined` |
-`number`
-
-The number of seconds the app should be in the background for before the plugin considers it closed and checks for an updated on resume of the app.
-
-___
-
-#### `<Optional>` updateMethod
-
-**● updateMethod**: `undefined` |
-`background | none | auto`
-
-The update method the app should use when checking for available updates
+* <b>appId</b> (optional): `undefined` | `string`
+</br>The [Ionic Appflow](https://ionicframework.com/docs/appflow/) app id.
+* <b>channel</b> (optional): `undefined` | `string`
+</br>The [channel](/docs/appflow/deploy/channels) that the plugin should listen for updates on.
+* <b>maxVersions</b> (optional): `undefined` | `number`
+</br>The number of previous updates to be cached on the device
+* <b>minBackgroundDuration</b> (optional): `undefined` | `number`
+</br>The number of seconds the app should be in the background for before the plugin considers it closed and checks for an updated on resume of the app.
+* <b>updateMethod</b> (optional): `undefined` | `background | none | auto`
+</br>The update method the app should use when checking for available updates
 
 ___
 
@@ -448,94 +392,46 @@ ___
 
 #### Properties
 
-* [available](#available)
-* [compatible](#compatible)
-* [partial](#partial)
-* [integrity](#optional-integrity)
-* [snapshot](#optional-snapshot)
-* [url](#optional-url)
-
-####  available
-
-**● available**: `boolean`
-
-Whether or not an update is available.
-
-___
-
-####  compatible
-
-**● compatible**: `boolean`
-
-*__deprecated__*: in favor of [available](#available)
-Whether or not an update is available. Will always be identical to [available](#available)
-
-___
-
-####  partial
-
-**● compatible**: `boolean`
-
-*__deprecated__*
-Legacy way of determining whether an update was full or partial. Will always be `false`.
-
-___
-
-#### `<Optional>` integrity
-
-**● integrity**: `undefined` |
-`string`
-
-
-The checksum of the manifest file.
-
-___
-
-#### `<Optional>` snapshot
-
-**● snapshot**: `undefined` |
-`string`
-
-
-The id of the snapshot if available.
-
-___
-
-#### `<Optional>` url
-
-**● url**: `undefined` |
-`string`
-
-
-The url to fetch the manifest of files in the update.
+* <b>available</b>: `boolean`
+</br>Whether or not an update is available.
+* <b>incompatibleUpdateAvailable</b>: `boolean`
+</br>Whether or not an update that is not compatible with this device is available.
+* <b>snapshot</b> (optional): `undefined` | `string`
+</br>The id of the snapshot, if available.
+* <b>build</b> (optional): `undefined` | `string`
+</br>The id of the build, if available.
 
 ___
 
 ### SyncOptions
 
 #### Properties
-* [updateMethod](#updatemethod)
-
-####  updateMethod
-
-**● updateMethod**: `'background' | 'auto'`
-
-The update method to use when applying an update if available. This will override the default method the plugin was configured with temporarily.
+* <b>updateMethod</b>: `'background' | 'auto'`
+</br>The update method to use when applying an update if available. This will override the default method the plugin was configured with temporarily.
 
 ___
 
 ### ConfigurationInfo
 
 #### Properties
-* `binaryVersion` `<string>` - **deprecated** in favor of `binaryVersionName`. The versionName on Android or CFBundleShortVersionString on iOS this is the end user readable version listed on the stores.
-* `binaryVersionName` `<string>` - The versionName on Android or CFBundleShortVersionString on iOS this is the end user readable version listed on the stores.
-* `binaryVersionCode` `<string(iOS)|number(Android)>` -The versionCode on Android or CFBundleVersion on iOS this should be changed every time you do a new build.
-* `channel` `<string>` - The channel name the device is currently configured to check for updates on.
-* `disabled` `<boolean>` - Whether the deploy updates are disabled or not.
-* `updateMethod` `<'none' | 'auto' | 'background'>` - The currently configured updateMethod for the plugin.
-* `maxVersions` `<number>` - The maximum number of updates to be stored locally on the device.
-* `minBackgroundDuration` `<number>` - The number of seconds the app needs to be in the background before the plugin considers it closed for the purposes of fetching and applying a new update.
-* `currentVersionId` `<string | undefined>` - The id of the currently applied update or `undefined` if none is applied.
+* <b>binaryVersionName</b>: `string`
+</br>The versionName on Android or CFBundleShortVersionString on iOS this is the end user readable version listed on the stores.
+* <b>binaryVersionCode</b>: `string (iOS) | number (Android)`
+</br>The versionCode on Android or CFBundleVersion on iOS this should be changed every time you do a new build.
+* <b>channel</b>: `string`
+</br>The channel name the device is currently configured to check for updates on.
+* <b>disabled</b>: `boolean`
+</br>Whether the deploy updates are disabled or not.
+* <b>updateMethod</b>: `'none' | 'auto' | 'background'`
+</br>The currently configured updateMethod for the plugin.
+* <b>maxVersions</b>: `number`
+</br>The maximum number of updates to be stored locally on the device.
+* <b>minBackgroundDuration</b>: `number`
+</br>The number of seconds the app needs to be in the background before the plugin considers it closed for the purposes of fetching and applying a new update.
+* <b>currentVersionId</b>: `string | undefined`
+</br>The version id of the currently applied update or `undefined` if none is applied.
+* <b>currentBuildId</b>: `string | undefined`
+</br>The build id of the currently applied update or `undefined` if none is applied.
 
 
 
@@ -544,60 +440,19 @@ ___
 ### SnapshotInfo
 
 #### Properties
-* [binaryVersion](#binaryversion)
-* [binary_version](#binary_version)
-* [channel](#channel)
-* [deploy_uuid](#deploy_uuid)
-* [versionId](#versionid)
-
-####  binaryVersion
-
-**● binaryVersion**: *`string`*
-
-The binary version the snapshot was downloaded for.
-
-___
-
-####  binary_version
-
-**● binary_version**: *`string`*
-
-*__deprecated__*: in favor of [binaryVersion](#binaryversion)
-
-The binary version the snapshot was downloaded for.
-
-___
-
-####  channel
-
-**● channel**: *`string`*
-
-The channel that the snapshot was downloaded for..
-
-___
-
-####  deploy_uuid
-
-**● deploy_uuid**: *`string`*
-
-*__deprecated__*: in favor of [versionId](#versionid)
-
-The id for the snapshot.
-
-___
-
-####  versionId
-
-**● versionId**: *`string`*
-
-The id for the snapshot.
+* <b>binaryVersion</b>: `string`
+</br>The binary version the snapshot was downloaded for.
+* <b>channel</b>: `string`
+</br>The channel that the snapshot was downloaded for..
+* <b>versionId</b>: `string`
+</br>The id for the snapshot.
 
 ___
 
 ### CallbackFunction
 
 #### Callable
-▸ **__call**(result?: *[T]()*): `void`
+▸ **__call**(result?: *T*): `void`
 
 A callback function to handle the result.
 
@@ -605,33 +460,34 @@ A callback function to handle the result.
 
 | Param | Type |
 | ------ | ------ |
-| `Optional` result | [T]() |
+| `Optional` result | T |
 
 **Returns:** `void`
 
 ## Plugin Variables
 
-When installing `cordova-plugin-ionic` there are a number of variables you can install the plugin with to configure the behavior of the plugin and how
-updates are applied to your app by using the `--variable` flag.
+When installing the Appflow SDK (`cordova-plugin-ionic`) there are a number of variables you can install
+the plugin with to configure the behavior of the plugin and how updates are applied to your app by
+using the `--variable` flag.
 
 Example:
-```bash
-// use the MIN_BACKGROUND_DURATION variable
-cordova plugin add cordova-plugin-ionic --variable MIN_BACKGROUND_DURATION=60 ...
-```
+<command-line>
+<command-prompt># use the MIN_BACKGROUND_DURATION variable</command-prompt>
+<command-prompt>cordova plugin add cordova-plugin-ionic --variable MIN_BACKGROUND_DURATION=60 ...</command-prompt>
+</command-line>
 
 
-### `APP_ID` - `Required`
+### APP_ID - Required
 
 The `APP_ID` variable sets app in the pro dashboard the plugin should check for updates.
-The App ID can be updated at runtime via the [Deploy Pro Client](/docs/pro/deploy/api).
+The App ID can be updated at runtime via the [configure method](/docs/appflow/deploy/api#configure).
 
-### `CHANNEL_NAME` - `Required`
+### CHANNEL_NAME - Required
 
 The `CHANNEL_NAME` variable sets which channel the plugin should check for updates.
 The Channel can be updated at runtime via the [configure method](/docs/pro/deploy/api/#configure) of the Deploy Pro Client.
 
-### `UPDATE_METHOD`
+### UPDATE_METHOD
 
 `Default: background`
 
@@ -660,14 +516,14 @@ This isn't recommended as if you deploy an update that "breaks" your app and can
 you will have to release a native binary in order to fix the issue or the user will have to delete and reinstall your app.
 Using the background or auto methods protects you by applying updates in the native layer.
 
-### `MAX_STORE`
+### MAX_STORE
 
 `Default: 2`
 
 The `MAX_STORE` variable can be configured to tell the deploy plugin how many updates to keep around locally on the device.
 Keeping more versions around locally makes rolling back faster but takes up more room on the device.
 
-### `MIN_BACKGROUND_DURATION`
+### MIN_BACKGROUND_DURATION
 
 `New in v5 RC`
 
@@ -680,7 +536,7 @@ the plugin considers the app closed and checks for an update on resume like it w
 
 ## Plugin Preferences
 
-### `DisableDeploy`
+### DisableDeploy
 
 `Default: false`
 

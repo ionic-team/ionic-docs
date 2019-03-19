@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alert</title>
+  <link rel="stylesheet" href="/docs/assets/ionic/css/ionic.bundle.css"/>
+  <script src="/docs/assets/ionic/dist/ionic.js"></script>
+  <style>
+    :root {
+      --ion-safe-area-top: 20px;
+      --ion-safe-area-bottom: 22px;
+    }
+  </style>
+</head>
+<body>
+  <ion-app>
+    <ion-header translucent>
+      <ion-toolbar>
+        <ion-title>Alert</ion-title>
+      </ion-toolbar>
+    </ion-header>,
+    <ion-content fullscreen padding>
+      <ion-alert-controller></ion-alert-controller>
+      <ion-button expand="block">Show Alert</ion-button>
+    </ion-content>
+  </ion-app>
+
+  <script>
+    const controller = document.querySelector('ion-alert-controller');
+    const button = document.querySelector('ion-button');
+    button.addEventListener('click', handleButtonClick);
+
+    function handleButtonClick() {
+      controller.create({
+        header: 'Use this lightsaber?',
+        message: 'Do you agree to use this lightsaber to do good across the galaxy?',
+        buttons: ['Disagree', 'Agree']
+      }).then(alert => {
+        alert.present();
+      });
+    }
+  </script>
+</body>
+</html>

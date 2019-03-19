@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progress Bar</title>
+  <link rel="stylesheet" href="/docs/assets/ionic/css/ionic.bundle.css" />
+  <script src="/docs/assets/ionic/dist/ionic.js"></script>
+  <style>
+    ion-content ion-progress-bar {
+      margin: 10px 0;
+    }
+
+    :root {
+      --ion-safe-area-top: 20px;
+      --ion-safe-area-bottom: 22px;
+    }
+  </style>
+</head>
+
+<body>
+  <ion-app>
+    <ion-header translucent>
+      <ion-toolbar>
+        <ion-title>Progress Bar</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content class="outer-content">
+      <!-- Default Progressbar -->
+      <ion-list>
+        <ion-list-header>
+          <ion-label>Default</ion-label>
+        </ion-list-header>
+        <ion-progress-bar></ion-progress-bar>
+      </ion-list>
+
+      <ion-list>
+        <ion-list-header>
+          <ion-label>Default at 50%</ion-label>
+        </ion-list-header>
+        <ion-progress-bar value="0.5"></ion-progress-bar>
+      </ion-list>
+
+      <ion-list>
+        <ion-list-header>
+          <ion-label>Colorized</ion-label>
+        </ion-list-header>
+        <!-- Colorize Progressbar -->
+        <ion-progress-bar color="primary" value="0.5"></ion-progress-bar>
+        <ion-progress-bar color="secondary" value="0.5"></ion-progress-bar>
+
+
+
+        <ion-list-header>
+          <ion-label>
+            Indeterminate
+          </ion-label>
+        </ion-list-header>
+        <ion-progress-bar type="indeterminate"></ion-progress-bar>
+
+        <ion-list-header>
+          <ion-label>
+            Indeterminate (reversed)
+          </ion-label>
+        </ion-list-header>
+        <ion-progress-bar type="indeterminate" reversed="true"></ion-progress-bar>
+
+        <ion-list-header>
+          <ion-label>
+            Buffer
+          </ion-label>
+        </ion-list-header>
+        <ion-progress-bar value="0.25" buffer="0.5"></ion-progress-bar>
+      </ion-list>
+
+
+
+    </ion-content>
+  </ion-app>
+</body>
+
+</html>

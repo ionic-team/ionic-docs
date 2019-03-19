@@ -6,7 +6,7 @@ docs-reference {
 docs-reference h3 {
   font-family: var(--code-font-family);
   font-size: 1.25rem;
-  margin: 1rem 0;
+  margin: 2rem 0 1rem;
   padding: 0;
 }
 
@@ -16,10 +16,6 @@ docs-reference a {
 
 docs-reference a:before {
   display: none;
-}
-
-docs-reference tbody * {
-  font-size: 12px !important;
 }
 
 docs-reference thead tr {
@@ -32,10 +28,6 @@ docs-reference tbody tr {
 
 docs-reference tbody th {
   vertical-align: top;
-}
-
-docs-reference tbody td {
-  color: var(--text-color--light);
 }
 
 docs-reference tbody p {

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toast</title>
+  <link rel="stylesheet" href="/docs/assets/ionic/css/ionic.bundle.css"/>
+  <script src="/docs/assets/ionic/dist/ionic.js"></script>
+  <style>
+    :root {
+      --ion-safe-area-top: 20px;
+      --ion-safe-area-bottom: 22px;
+    }
+  </style>
+</head>
+<body>
+  <ion-app>
+    <ion-header translucent>
+      <ion-toolbar>
+        <ion-title>Toast</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content fullscreen padding>
+      <ion-toast-controller></ion-toast-controller>
+      <ion-button expand="block">Pair <ion-icon slot="end" name="bluetooth"></ion-icon></ion-button>
+    </ion-content>
+  </ion-app>
+
+  <script>
+    const controller = document.querySelector('ion-toast-controller');
+    const button = document.querySelector('ion-button');
+    button.addEventListener('click', handleButtonClick);
+
+    function handleButtonClick() {
+      controller.create({
+        color: 'dark',
+        duration: 2000,
+        message: 'Paired successfully',
+        showCloseButton: true
+      }).then(toast => {
+        toast.present();
+      });
+    }
+  </script>
+</body>
+</html>

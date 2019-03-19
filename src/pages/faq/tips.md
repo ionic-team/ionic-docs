@@ -1,6 +1,10 @@
 ---
-previousText: 'Native Errors'
-previousUrl: '/docs/faq/native'
+previousText: 'CORS Errors'
+previousUrl: '/docs/faq/cors'
+contributors:
+  - rtpHarry
+  - FdezRomero
+  - brandyscarney
 ---
 
 # Developer Tips
@@ -42,7 +46,7 @@ function myBrokenFunction() {
 }
 ```
 
-When an app runs, it will pause at this function. From the, the developer tools can be use to run pieces of JavaScript, line by line, and inspect where exactly the function breaks.
+When an app runs, it will pause at this function. From there, the developer tools can be used to run pieces of JavaScript, line by line, and inspect where exactly the function breaks.
 
 ## Changing Mode
 

@@ -9,7 +9,7 @@ export class DocsSectionNav {
     return (
       <stencil-route-switch>
         <stencil-route url="/docs/appflow" routeRender={Appflow}/>
-        <stencil-route url="/docs/" routeRender={Framework}/>
+        <stencil-route url="/docs" routeRender={Framework}/>
       </stencil-route-switch>
     );
   }
@@ -31,7 +31,7 @@ const Appflow = () => (
 const Framework = () => (
   <nav class="SectionNav">
     <Dropdown label="Framework"/>
-    <stencil-route-link url="/docs/" urlMatch={[/^\/docs\/(?!(api|components|cli|native)).*$/]}>Guide</stencil-route-link>
+    <stencil-route-link url="/docs/" urlMatch={[/^\/docs(?!\/(api|components|cli|native)).*$/]}>Guide</stencil-route-link>
     <stencil-route-link url="/docs/components" urlMatch={['/docs/api', '/docs/components']}>Components</stencil-route-link>
     <stencil-route-link url="/docs/cli">CLI</stencil-route-link>
     <stencil-route-link url="/docs/native">Native</stencil-route-link>

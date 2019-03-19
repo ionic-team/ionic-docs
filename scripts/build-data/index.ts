@@ -10,5 +10,8 @@ const tasks = new Listr([
 export default tasks;
 
 if (!module.parent) {
-  tasks.run().catch(console.error);
+  tasks.run().catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
 }
