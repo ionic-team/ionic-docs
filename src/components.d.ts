@@ -20,6 +20,9 @@ import {
   Page,
   ReferenceKeys,
 } from './definitions';
+import {
+  RouterHistory,
+} from '@stencil/router';
 
 
 export namespace Components {
@@ -180,14 +183,25 @@ export namespace Components {
   interface FileTree {}
   interface FileTreeAttributes extends StencilHTMLAttributes {}
 
-  interface DocsHeader {}
-  interface DocsHeaderAttributes extends StencilHTMLAttributes {}
+  interface DocsHeader {
+    'onToggleClick': (e: Event) => void;
+  }
+  interface DocsHeaderAttributes extends StencilHTMLAttributes {
+    'onToggleClick'?: (e: Event) => void;
+  }
 
   interface LayeredColorsSelect {}
   interface LayeredColorsSelectAttributes extends StencilHTMLAttributes {}
 
-  interface DocsMenu {}
-  interface DocsMenuAttributes extends StencilHTMLAttributes {}
+  interface DocsMenu {
+    'onToggleClick': (e: Event) => void;
+  }
+  interface DocsMenuAttributes extends StencilHTMLAttributes {
+    'onToggleClick'?: (e: Event) => void;
+  }
+
+  interface DocsMenuToggle {}
+  interface DocsMenuToggleAttributes extends StencilHTMLAttributes {}
 
   interface DocsNav {
     'items': MenuItems;
@@ -204,9 +218,11 @@ export namespace Components {
   }
 
   interface DocsPage {
+    'history': RouterHistory;
     'path': string;
   }
   interface DocsPageAttributes extends StencilHTMLAttributes {
+    'history'?: RouterHistory;
     'path'?: string;
   }
 
@@ -295,6 +311,7 @@ declare global {
     'DocsHeader': Components.DocsHeader;
     'LayeredColorsSelect': Components.LayeredColorsSelect;
     'DocsMenu': Components.DocsMenu;
+    'DocsMenuToggle': Components.DocsMenuToggle;
     'DocsNav': Components.DocsNav;
     'DocsPageFooter': Components.DocsPageFooter;
     'DocsPage': Components.DocsPage;
@@ -335,6 +352,7 @@ declare global {
     'docs-header': Components.DocsHeaderAttributes;
     'layered-colors-select': Components.LayeredColorsSelectAttributes;
     'docs-menu': Components.DocsMenuAttributes;
+    'docs-menu-toggle': Components.DocsMenuToggleAttributes;
     'docs-nav': Components.DocsNavAttributes;
     'docs-page-footer': Components.DocsPageFooterAttributes;
     'docs-page': Components.DocsPageAttributes;
@@ -495,6 +513,12 @@ declare global {
     new (): HTMLDocsMenuElement;
   };
 
+  interface HTMLDocsMenuToggleElement extends Components.DocsMenuToggle, HTMLStencilElement {}
+  var HTMLDocsMenuToggleElement: {
+    prototype: HTMLDocsMenuToggleElement;
+    new (): HTMLDocsMenuToggleElement;
+  };
+
   interface HTMLDocsNavElement extends Components.DocsNav, HTMLStencilElement {}
   var HTMLDocsNavElement: {
     prototype: HTMLDocsNavElement;
@@ -598,6 +622,7 @@ declare global {
     'docs-header': HTMLDocsHeaderElement
     'layered-colors-select': HTMLLayeredColorsSelectElement
     'docs-menu': HTMLDocsMenuElement
+    'docs-menu-toggle': HTMLDocsMenuToggleElement
     'docs-nav': HTMLDocsNavElement
     'docs-page-footer': HTMLDocsPageFooterElement
     'docs-page': HTMLDocsPageElement
@@ -638,6 +663,7 @@ declare global {
     'docs-header': HTMLDocsHeaderElement;
     'layered-colors-select': HTMLLayeredColorsSelectElement;
     'docs-menu': HTMLDocsMenuElement;
+    'docs-menu-toggle': HTMLDocsMenuToggleElement;
     'docs-nav': HTMLDocsNavElement;
     'docs-page-footer': HTMLDocsPageFooterElement;
     'docs-page': HTMLDocsPageElement;
