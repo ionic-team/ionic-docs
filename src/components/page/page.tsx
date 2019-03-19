@@ -1,4 +1,5 @@
 import { Component, Prop, State, Watch } from '@stencil/core';
+import { RouterHistory } from '@stencil/router';
 import { Page } from '../../definitions';
 import templates from './templates';
 
@@ -7,7 +8,9 @@ import templates from './templates';
   styleUrl: 'page.css'
 })
 export class DocsPage {
+  @Prop() history: RouterHistory;
   @Prop() path: string;
+  @Prop({ context: 'isServer' }) private isServer: boolean;
   @Prop({ context: 'document' }) private document: HTMLDocument;
   @State() badFetch: Response = null;
   @State() page: Page = { title: null, body: null };
@@ -41,6 +44,20 @@ export class DocsPage {
       title: error.statusText,
       body: null
     };
+  }
+
+  @Watch('page')
+  setScrollPosition() {
+    if (this.isServer) {
+      return;
+    }
+
+    requestAnimationFrame(() => {
+      const { location } = this.history;
+      const { scrollPosition = [0, 0] } = location;
+      const [x, y] = scrollPosition;
+      this.document.documentElement.scrollTo(x, y);
+    });
   }
 
   @Watch('page')

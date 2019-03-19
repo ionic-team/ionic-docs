@@ -131,7 +131,7 @@ Ionic 3アプリとIonic 4アプリの大きな違いの1つは、プロジェ�
 
 ## RxJSの変更
 
-v3からv4で、RxJSはバージョン6に更新されました。これは、オペレーターとコアのRxJSの関数のインポートパスのほとんどが変更になります。詳細は<a href="https://github.com/ReactiveX/rxjs/blob/master/MIGRATION.md" target="_blank">RxJS Migration Guide</a>をご覧ください。
+v3からv4で、RxJSはバージョン6に更新されました。これは、オペレーターとコアのRxJSの関数のインポートパスのほとんどが変更になります。詳細は<a href="https://github.com/ReactiveX/rxjs/blob/master/docs_app/content/guide/v6/migration.md" target="_blank">RxJS Migration Guide</a>をご覧ください。
 
 ## ライフサイクルイベント
 
