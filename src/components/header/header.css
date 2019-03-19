@@ -17,8 +17,16 @@ docs-header {
   z-index: 2;
 }
 
-.Layout:not(.is-collapsed) docs-header.hidden {
-  transform: translateY(-100%);
+@media (min-width: 768px) {
+  .Layout:not(.is-menu-toggled) docs-header.hidden {
+    transform: translateY(-100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .Layout.is-menu-toggled docs-header.hidden {
+    transform: translateY(-100%);
+  }
 }
 
 docs-header header {
