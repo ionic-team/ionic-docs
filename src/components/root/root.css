@@ -7,18 +7,20 @@
   width: 100%;
 }
 
-.Layout.is-collapsed {
+.Layout.is-menu-toggled {
   --menu-transform: translateX(calc(-1 * var(--menu-width)));
   --page-margin-left: 0;
 }
 
 @media (max-width: 768px) {
   .Layout {
+    --menu-transform: translateX(calc(-1 * var(--menu-width)));
     --page-padding: 1.5rem;
     --page-margin-left: 0;
   }
 
-  .Layout:not(.is-collapsed) {
+  .Layout.is-menu-toggled {
+    --menu-transform: none;
     --page-transform: translateX(var(--menu-width));
   }
 }
