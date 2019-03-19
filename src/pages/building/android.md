@@ -9,7 +9,7 @@ nextUrl: '/docs/building/testing'
 
 This guide covers how to deploy Ionic apps to Android simulators and devices using [Capacitor](/docs/faq/glossary#capacitor) or [Cordova](/docs/faq/glossary#cordova).
 
-> To deploy and debug apps on an Android device, you must follow these [environment setup](/docs/installation/android/) steps.
+> To deploy and debug apps on an Android device, you must follow these [environment setup](/docs/installation/android) steps.
 
 ## Project Setup
 
