@@ -11,13 +11,22 @@ docs-header {
   left: 0;
   transform: translateY(0);
   transition: transform 200ms ease;
+  user-select: none;
   width: 100%;
   white-space: nowrap;
-  z-index: 1;
+  z-index: 2;
 }
 
-docs-header.hidden {
-  transform: translateY(-100%);
+@media (min-width: 768px) {
+  .Layout:not(.is-menu-toggled) docs-header.hidden {
+    transform: translateY(-100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .Layout.is-menu-toggled docs-header.hidden {
+    transform: translateY(-100%);
+  }
 }
 
 docs-header header {
@@ -51,7 +60,11 @@ docs-header .link-active {
   }
 }
 
-.Logo {
+docs-header docs-menu-toggle {
+  flex: none;
+}
+
+.HeaderLogo {
   color: var(--text-color--dark);
   font-family: var(--heading-font-family);
   height: 25px;

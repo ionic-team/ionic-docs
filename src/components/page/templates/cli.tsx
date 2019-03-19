@@ -133,7 +133,7 @@ const renderOptionList = (options = []) => {
 const renderOptionSpec = option => {
   return (
     <span>
-      --{option.name}
+      --{ option.type === 'boolean' && option.default === true ? `no-${option.name}` : option.name }
       { option.type === 'string' ?
         <span class="option-spec">
           { `=<${option.spec.value}>` }
