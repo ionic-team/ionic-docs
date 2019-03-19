@@ -26,9 +26,11 @@ by Simon Reimler
 
 by Sani Yusuf
 
-### [Building Firebase Powered Ionic Apps](https://javebratt.com/ionic-firebase-book/)
+### [Building Firestore Powered Ionic Apps](https://javebratt.com/ionic-firebase-book/)
 
 by Jorge Vergara
+
+This book will help you go from not knowing what Firebase is to be able to use the different APIs for your Ionic Applications. It will take you from “_What’s Firebase?_” to building scalable, production-ready apps and it’s always up-to-date with latest Ionic and Firebase versions.
 
 ### [Ionic 2 Cookbook - Second Edition](https://www.amazon.com/Ionic-Cookbook-Second-Hoc-Phan-ebook/dp/B01C4D9VWS?ie=UTF8&keywords=ionic%202&qid=1464183332&ref_=sr_1_3&sr=8-3)
 
