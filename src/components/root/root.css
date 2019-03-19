@@ -23,4 +23,13 @@
     --menu-transform: none;
     --page-transform: translateX(var(--menu-width));
   }
+
+  .Layout.is-menu-toggled docs-page > * {
+    opacity: 0.2;
+    pointer-events: none;
+  }
+
+  body.scroll-lock {
+    overflow-y: hidden;
+  }
 }
