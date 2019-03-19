@@ -25,8 +25,8 @@ export class DocsRoot {
   }
 
   handlePageClick = () => {
-    if (this.isSmallViewport() && !this.isMenuToggled) {
-      this.isMenuToggled = true;
+    if (this.isSmallViewport() && this.isMenuToggled) {
+      this.isMenuToggled = false;
     }
   }
 
