@@ -17,7 +17,7 @@ docs-section-nav stencil-route {
   border: solid 1px transparent;
   border-radius: 6px;
   color: var(--text-color--dark);
-  margin: 0 -5px 0 -10px;
+  margin: 0 -5px;
   padding: 10px;
   transition: border-color 100ms ease-out;
 }
