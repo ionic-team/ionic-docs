@@ -6,6 +6,7 @@ import { Component, Prop } from '@stencil/core';
 })
 export class ContributorList {
   @Prop() contributors: string[] = [];
+  @Prop() link = (contributor: string) => `https://github.com/${contributor}`;
 
   render() {
     if (this.contributors.length === 0) {
@@ -16,7 +17,7 @@ export class ContributorList {
       <ul>
         {this.contributors.reverse().map(contributor => (
           <li>
-            <a target="_blank" href={`https://github.com/${contributor}`}>
+            <a target="_blank" href={this.link(contributor)}>
               <img src={`https://github.com/${contributor}.png?size=90`} title={`Contributor ${contributor}`}/>
             </a>
           </li>
