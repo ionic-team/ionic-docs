@@ -74,3 +74,15 @@ docs-nav a {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+@media (max-width: 768px), (pointer: coarse) {
+  .Nav {
+    --item-spacing: 12px;
+    font-size: 15px;
+  }
+
+  .Nav-subnav {
+    --item-spacing: 6px;
+    font-size: 14px;
+  }
+}
