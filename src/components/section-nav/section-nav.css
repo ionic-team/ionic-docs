@@ -22,11 +22,6 @@ docs-section-nav stencil-route {
   transition: border-color 100ms ease-out;
 }
 
-.SectionNav .Dropdown-button svg {
-  font-size: 0.75em;
-  margin-bottom: -0.125em;
-}
-
 .SectionNav .Dropdown.is-open .Dropdown-button {
   border-color: var(--line-rule-color);
 }
