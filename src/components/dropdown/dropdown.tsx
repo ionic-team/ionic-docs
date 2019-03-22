@@ -45,13 +45,17 @@ export class DocsDropdown {
     const button = (
       <button
         class="Dropdown-button"
+        aria-haspopup="menu"
+        aria-expanded={this.isOpen ? 'true' : 'false'}
         onClick={this.toggle.bind(this)}>
         {this.label} <DownArrow/>
       </button>
     );
 
     const panel = (
-      <div class="Dropdown-panel">
+      <div
+        role="menu"
+        class="Dropdown-panel">
         <slot/>
       </div>
     );
