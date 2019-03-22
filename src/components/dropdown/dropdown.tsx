@@ -6,6 +6,7 @@ import { DownArrow } from '../../icons';
   styleUrl: 'dropdown.css'
 })
 export class DocsDropdown {
+  @Prop() align: 'left' | 'right' | 'center' = 'left';
   @Prop() label: string;
   @State() isOpen = false;
 
@@ -34,6 +35,7 @@ export class DocsDropdown {
     return {
       class: {
         'Dropdown': true,
+        [`Dropdown--${this.align}`]: true,
         'is-open': this.isOpen
       }
     };
