@@ -9,7 +9,7 @@ nextUrl: '/docs/building/testing'
 
 このガイドでは、[Capacitor](/docs/faq/glossary#capacitor)または[Cordova](/docs/faq/glossary#cordova)を使用して、AndroidシミュレータおよびデバイスにIonicアプリケーションをデプロイする方法について説明します。
 
-> Androidデバイスにアプリをデプロイしてデバッグするには、 **developer mode** と **USB debugging** を有効にする必要があります。詳しくは <a href="https://developer.android.com/studio/debug/dev-options#enable" target="_blank">these instructions</a> をご覧ください。
+> Androidデバイスにアプリをデプロイしてデバッグするには、[environment setup](/docs/installation/android) のステップを行う必要があります。
 
 ## プロジェクト設定
 

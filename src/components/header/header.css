@@ -17,13 +17,21 @@ docs-header {
   z-index: 2;
 }
 
-.Layout:not(.is-collapsed) docs-header.hidden {
-  transform: translateY(-100%);
+@media (min-width: 768px) {
+  .Layout:not(.is-menu-toggled) docs-header.hidden {
+    transform: translateY(-100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .Layout.is-menu-toggled docs-header.hidden {
+    transform: translateY(-100%);
+  }
 }
 
 docs-header header {
   height: var(--header-height);
-  padding: 0 1.5rem;
+  padding: 0 1.4rem 0 0.8rem;
 }
 
 docs-header header,

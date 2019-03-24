@@ -140,9 +140,11 @@ export namespace Components {
 
   interface ContributorList {
     'contributors': string[];
+    'link': any;
   }
   interface ContributorListAttributes extends StencilHTMLAttributes {
     'contributors'?: string[];
+    'link'?: any;
   }
 
   interface DocsDemo {

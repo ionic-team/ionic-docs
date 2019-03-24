@@ -19,7 +19,7 @@ docs-menu > header {
   display: flex;
   flex: none;
   height: var(--header-height);
-  padding: 0 1.5rem;
+  padding: 0 1.4rem 0 0.8rem;
   user-select: none;
 }
 
