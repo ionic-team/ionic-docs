@@ -74,3 +74,15 @@ docs-header docs-menu-toggle {
   font-size: 12px;
   margin-left: auto;
 }
+
+.UtilNav docs-dropdown {
+  padding: 10px 0;
+}
+
+.UtilNav docs-dropdown.is-open {
+  color: var(--text-color);
+}
+
+.UtilNav docs-dropdown .Dropdown-panel {
+  font-size: 14px;
+}
