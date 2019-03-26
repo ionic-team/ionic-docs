@@ -119,7 +119,7 @@ See [Global Stylesheets](../layout/global-stylesheets) for the styles that each 
 
 ## Ionicons CDN
 
-Ionicons is packaged by default with the Ionic Framework, so no installation is necessary if you're using Ionic. To use Ionicons without Ionic Framework, place the following `<script>` near the end of your page, right before the closing `</body>` tag, to enable them.
+Ionicons is packaged by default with the Ionic Framework, so no installation is necessary if you're using Ionic. To use Ionicons without Ionic Framework, place the following `<script>` near the end of your page, right before the closing `</body>` tag.
 
 ```html
 <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
