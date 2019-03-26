@@ -14,7 +14,7 @@ Ionic provides different packages that can be used to quickly get started using 
 
 ## Ionic Framework CDN
 
-Ionic Framework can be quickly included from a CDN for quick testing in a [Plunker](https://plnkr.co/), [Codepen](codepen.io), or any other online code editor!
+Ionic Framework can be quickly included from a CDN for quick testing in a [Plunker](https://plnkr.co/), [Codepen](https://codepen.io), or any other online code editor!
 
 It's recommended to use [unpkg](https://unpkg.com) to access the Framework from a CDN. To get the latest version, add the following inside the `<head>` element in an HTML file, or where external assets are included in the online code editor:
 
@@ -25,11 +25,7 @@ It's recommended to use [unpkg](https://unpkg.com) to access the Framework from 
 
 With this it's possible to use all of the Ionic Framework core components without having to install a framework. The CSS bundle will include all of the Ionic [Global Stylesheets](../layout/global-stylesheets).
 
-<blockquote>
-  <p>
-    This does not install Angular or any other frameworks. This allows use of the Ionic Framework core components without a framework.
-  </p>
-</blockquote>
+> This does not install Angular or any other frameworks. This allows use of the Ionic Framework core components without a framework.
 
 
 ## Angular + Ionic Framework
@@ -128,3 +124,5 @@ Ionicons is packaged by default with the Ionic Framework, so no installation is 
 ```html
 <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
 ```
+
+> See [Ionicons usage](https://ionicons.com/usage) for more information on using Ionicons.
