@@ -40,9 +40,31 @@ export class DocsHeader {
         </stencil-route-link>
         <docs-section-nav/>
         <nav class="UtilNav">
-          <a href="https://ionicframework.com/support" target="_blank">Support</a>
-          <a href="https://ionicframework.com/community" target="_blank">Community</a>
-          <a class="outbound" href="https://ionicframework.com/docs/v3" target="_blank">v3 <Outbound/></a>
+          <docs-dropdown label="Community" align="right">
+            <section>
+              <a href="https://ionicframework.com/community" target="_blank">Community Hub</a>
+            </section>
+            <section>
+              <a href="https://forum.ionicframework.com/" target="_blank">Forum</a>
+              <a href="http://ionicworldwide.herokuapp.com/" target="_blank">Slack</a>
+              <a href="https://spectrum.chat/ionic" target="_blank">Spectrum</a>
+              <a href="https://www.meetup.com/topics/ionic-framework/" target="_blank">Meetups</a>
+            </section>
+            <section>
+              <a href="https://blog.ionicframework.com/" target="_blank">Blog</a>
+              <a href="https://twitter.com/ionicframework" target="_blank">Twitter</a>
+              <a href="https://shop.ionicframework.com/" target="_blank">Swag</a>
+            </section>
+          </docs-dropdown>
+          <docs-dropdown label="Support" align="right">
+            <section>
+              <a href="https://ionic.zendesk.com/" target="_blank">Help Center</a>
+            </section>
+            <section>
+              <a href="https://ionicframework.com/support" target="_blank">Customer Support</a>
+              <a href="https://ionicframework.com/advisory" target="_blank">Enterprise Advisory</a>
+            </section>
+          </docs-dropdown>
           <a class="outbound" href="https://github.com/ionic-team/ionic" target="_blank">GitHub <Outbound/></a>
         </nav>
       </header>
