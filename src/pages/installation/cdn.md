@@ -14,7 +14,7 @@ Ionic provides different packages that can be used to quickly get started using 
 
 ## Ionic Framework CDN
 
-Ionic Framework can be quickly included from a CDN for quick testing in a [Plunker](https://plnkr.co/), [Codepen](https://codepen.io), or any other online code editor!
+Ionic Framework can be included from a CDN for quick testing in a [Plunker](https://plnkr.co/), [Codepen](https://codepen.io), or any other online code editor!
 
 It's recommended to use [unpkg](https://unpkg.com) to access the Framework from a CDN. To get the latest version, add the following inside the `<head>` element in an HTML file, or where external assets are included in the online code editor:
 
