@@ -1,4 +1,4 @@
-import { Component, Listen, Method, Prop, State } from '@stencil/core';
+import { Component, Element, Listen, Method, Prop, State } from '@stencil/core';
 import { DownArrow } from '../../icons';
 
 @Component({
@@ -9,13 +9,18 @@ export class DocsDropdown {
   @Prop() align: 'left' | 'right' | 'center' = 'left';
   @Prop() label: string;
   @State() isOpen = false;
-
-  @Listen('click')
-  handleClick(event: MouseEvent) {
-    event.stopPropagation();
-  }
+  @Element() element: HTMLElement;
 
   @Listen('window:click')
+  handleClick(event: MouseEvent) {
+    const isNode = event.target instanceof Node;
+    const isOurs = isNode && this.element.contains(event.target as Node);
+
+    if (!isOurs) {
+      this.close();
+    }
+  }
+
   @Method()
   close() {
     this.isOpen = false;
