@@ -49,9 +49,9 @@ export class DocsHeader {
                   <stencil-route-link url="/docs/appflow">Appflow <Checkmark/></stencil-route-link>
                 </section>
                 <section>
-                  <a href="https://ionicframework.com/docs/v3" class="outbound" target="_blank">Framework v3 <Outbound/></a>
-                  <a href="https://stenciljs.com" class="outbound" target="_blank">Stencil <Outbound/></a>
-                  <a href="https://capacitor.ionicframework.com" class="outbound" target="_blank">Capacitor <Outbound/></a>
+                  <a href="https://ionicframework.com/docs/v3">Framework v3</a>
+                  <a href="https://stenciljs.com">Stencil</a>
+                  <a href="https://capacitor.ionicframework.com">Capacitor</a>
                 </section>
               </docs-dropdown>
             </stencil-route>
@@ -62,9 +62,9 @@ export class DocsHeader {
                   <stencil-route-link url="/docs/appflow">Appflow</stencil-route-link>
                 </section>
                 <section>
-                  <a href="https://ionicframework.com/docs/v3" class="outbound" target="_blank">Framework v3 <Outbound/></a>
-                  <a href="https://stenciljs.com" class="outbound" target="_blank">Stencil <Outbound/></a>
-                  <a href="https://capacitor.ionicframework.com" class="outbound" target="_blank">Capacitor <Outbound/></a>
+                  <a href="https://ionicframework.com/docs/v3">Framework v3</a>
+                  <a href="https://stenciljs.com">Stencil</a>
+                  <a href="https://capacitor.ionicframework.com">Capacitor</a>
                 </section>
               </docs-dropdown>
               <div class="SectionNav-tabs">
