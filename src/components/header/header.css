@@ -135,20 +135,20 @@ docs-header docs-menu-toggle {
   margin-left: 1em;
 }
 
-.UtilNav docs-dropdown {
-  padding: 10px 0;
-}
-
-.UtilNav docs-dropdown.is-open {
+.UtilNav .Dropdown.is-open {
   color: var(--text-color);
 }
 
+.UtilNav .Dropdown-button {
+  padding: 10px 0;
+}
+
 @media (hover: hover) {
-  .UtilNav docs-dropdown:hover {
+  .UtilNav .Dropdown-button:hover {
     color: var(--text-color);
   }
 }
 
-.UtilNav docs-dropdown .Dropdown-panel {
+.UtilNav .Dropdown-panel {
   font-size: 14px;
 }
