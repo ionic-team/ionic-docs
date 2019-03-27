@@ -55,3 +55,9 @@ export const Menu = props => (
     <path d="M64 384h384v-42.666H64V384zm0-106.666h384v-42.667H64v42.667zM64 128v42.665h384V128H64z"/>
   </svg>
 );
+
+export const Checkmark = props => (
+  <svg viewBox="0 0 512 512" {...props}>
+    <path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/>
+  </svg>
+);
