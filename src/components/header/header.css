@@ -30,19 +30,10 @@ docs-header {
 }
 
 docs-header header {
-  height: var(--header-height);
-  padding: 0 1.4rem 0 0.8rem;
-}
-
-docs-header header,
-docs-header nav {
   align-items: center;
   display: flex;
-}
-
-docs-header header > *:not(:last-child),
-docs-header nav > *:not(:last-child) {
-  margin-right: 1em;
+  height: var(--header-height);
+  padding: 0 1.4rem 0 0.8rem;
 }
 
 docs-header a {
@@ -62,17 +53,86 @@ docs-header .link-active {
 
 docs-header docs-menu-toggle {
   flex: none;
+  margin-right: 0.75em;
 }
 
 .HeaderLogo {
   color: var(--text-color--dark);
   font-family: var(--heading-font-family);
   height: 25px;
+  margin-right: 0.125em;
+}
+
+.SectionNav stencil-route {
+  display: flex;
+}
+
+.SectionNav .Dropdown {
+  align-self: center;
+  color: var(--text-color);
+  margin-right: 0.75em;
+}
+
+.SectionNav .Dropdown-button {
+  border: solid 1px transparent;
+  border-radius: 6px;
+  color: var(--text-color--dark);
+  padding: 10px;
+  transition: border-color 100ms ease;
+}
+
+.SectionNav .Dropdown.is-open .Dropdown-button {
+  border-color: var(--line-rule-color);
+}
+
+@media (hover: hover) {
+  .SectionNav .Dropdown-button:hover {
+    border-color: var(--line-rule-color);
+  }
+}
+
+.SectionNav .Dropdown-panel {
+  min-width: 180px;
+}
+
+.SectionNav .Dropdown-panel a {
+  display: flex;
+  justify-content: space-between;
+}
+
+.SectionNav .Dropdown-panel svg {
+  height: 1em;
+  width: 1em;
+}
+
+.SectionNav-tabs > * {
+  align-items: center;
+  display: inline-flex;
+  height: var(--header-height);
+  margin-right: 1em;
+  position: relative;
+}
+
+.SectionNav-tabs .link-active:after {
+  background-color: currentColor;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 0;
+  position: absolute;
+  width: 100%;
 }
 
 .UtilNav {
+  align-items: center;
+  display: flex;
   font-size: 12px;
   margin-left: auto;
+}
+
+.UtilNav > * {
+  margin-left: 1em;
 }
 
 .UtilNav docs-dropdown {
@@ -81,6 +141,12 @@ docs-header docs-menu-toggle {
 
 .UtilNav docs-dropdown.is-open {
   color: var(--text-color);
+}
+
+@media (hover: hover) {
+  .UtilNav docs-dropdown:hover {
+    color: var(--text-color);
+  }
 }
 
 .UtilNav docs-dropdown .Dropdown-panel {
