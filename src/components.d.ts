@@ -252,9 +252,6 @@ export namespace Components {
   interface DocsSearch {}
   interface DocsSearchAttributes extends StencilHTMLAttributes {}
 
-  interface DocsSectionNav {}
-  interface DocsSectionNavAttributes extends StencilHTMLAttributes {}
-
   interface SmsForm {}
   interface SmsFormAttributes extends StencilHTMLAttributes {}
 
@@ -323,7 +320,6 @@ declare global {
     'DocsReference': Components.DocsReference;
     'DocsRoot': Components.DocsRoot;
     'DocsSearch': Components.DocsSearch;
-    'DocsSectionNav': Components.DocsSectionNav;
     'SmsForm': Components.SmsForm;
     'SteppedColorGenerator': Components.SteppedColorGenerator;
     'DocsTableOfContents': Components.DocsTableOfContents;
@@ -364,7 +360,6 @@ declare global {
     'docs-reference': Components.DocsReferenceAttributes;
     'docs-root': Components.DocsRootAttributes;
     'docs-search': Components.DocsSearchAttributes;
-    'docs-section-nav': Components.DocsSectionNavAttributes;
     'sms-form': Components.SmsFormAttributes;
     'stepped-color-generator': Components.SteppedColorGeneratorAttributes;
     'docs-table-of-contents': Components.DocsTableOfContentsAttributes;
@@ -565,12 +560,6 @@ declare global {
     new (): HTMLDocsSearchElement;
   };
 
-  interface HTMLDocsSectionNavElement extends Components.DocsSectionNav, HTMLStencilElement {}
-  var HTMLDocsSectionNavElement: {
-    prototype: HTMLDocsSectionNavElement;
-    new (): HTMLDocsSectionNavElement;
-  };
-
   interface HTMLSmsFormElement extends Components.SmsForm, HTMLStencilElement {}
   var HTMLSmsFormElement: {
     prototype: HTMLSmsFormElement;
@@ -634,7 +623,6 @@ declare global {
     'docs-reference': HTMLDocsReferenceElement
     'docs-root': HTMLDocsRootElement
     'docs-search': HTMLDocsSearchElement
-    'docs-section-nav': HTMLDocsSectionNavElement
     'sms-form': HTMLSmsFormElement
     'stepped-color-generator': HTMLSteppedColorGeneratorElement
     'docs-table-of-contents': HTMLDocsTableOfContentsElement
@@ -675,7 +663,6 @@ declare global {
     'docs-reference': HTMLDocsReferenceElement;
     'docs-root': HTMLDocsRootElement;
     'docs-search': HTMLDocsSearchElement;
-    'docs-section-nav': HTMLDocsSectionNavElement;
     'sms-form': HTMLSmsFormElement;
     'stepped-color-generator': HTMLSteppedColorGeneratorElement;
     'docs-table-of-contents': HTMLDocsTableOfContentsElement;
