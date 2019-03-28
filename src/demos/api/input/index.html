@@ -17,24 +17,40 @@
   <ion-app>
     <ion-header translucent>
       <ion-toolbar>
-        <ion-title>Input</ion-title>
+        <ion-title>Create Account</ion-title>
       </ion-toolbar>
     </ion-header>
 
-    <ion-content fullscreen padding>
+    <ion-content fullscreen>
       <form onsubmit="processForm(event)">
-        <ion-list>
+        <ion-list lines="full" class="ion-no-margin ion-no-padding">
           <ion-item>
-            <ion-input required type="text" placeholder="First Name" oninput="handleFirstNameValue(event)"></ion-input>
+            <ion-label position="stacked">First Name <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required type="text" oninput="handleFirstNameValue(event)"></ion-input>
           </ion-item>
 
           <ion-item>
-            <ion-input required type="text" placeholder="Last Name" oninput="handleLastNameValue(event)"></ion-input>
+            <ion-label position="stacked">Last Name <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required type="text" oninput="handleLastNameValue(event)"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Address</ion-label>
+            <ion-input placeholder="Address Line 1"></ion-input>
+            <ion-input placeholder="Address Line 2"></ion-input>
+            <ion-input placeholder="City"></ion-input>
+            <ion-input placeholder="State"></ion-input>
+            <ion-input placeholder="Zip Code"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Notes</ion-label>
+            <ion-textarea></ion-textarea>
           </ion-item>
         </ion-list>
 
-        <div>
-          <ion-button expand="block" type="submit">Create Account</ion-button>
+        <div class="ion-padding">
+          <ion-button expand="block" type="submit" class="ion-no-margin">Create account</ion-button>
         </div>
       </form>
     </ion-content>
@@ -49,7 +65,7 @@
       event.preventDefault();
       controller.create({
         header: 'Account Created',
-        message: `Created account for: ${firstName} ${lastName}`,
+        message: `Created account for: <b>${firstName} ${lastName}</b>`,
         buttons: [{
           text: 'OK'
         }]
