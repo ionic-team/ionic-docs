@@ -21,6 +21,17 @@ export class DocsDropdown {
     }
   }
 
+  @Listen('keyup')
+  handleKeyup(event: KeyboardEvent) {
+    if (event.key === 'Enter') {
+      this.toggle();
+    }
+
+    if (event.key === 'Escape') {
+      this.close();
+    }
+  }
+
   @Method()
   close() {
     this.isOpen = false;
@@ -38,6 +49,7 @@ export class DocsDropdown {
 
   hostData() {
     return {
+      tabindex: '0',
       class: {
         'Dropdown': true,
         [`Dropdown--${this.align}`]: true,
@@ -49,6 +61,7 @@ export class DocsDropdown {
   render() {
     const button = (
       <button
+        tabindex="-1"
         class="Dropdown-button"
         aria-haspopup="menu"
         aria-expanded={this.isOpen ? 'true' : 'false'}

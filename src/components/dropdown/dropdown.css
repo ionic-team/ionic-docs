@@ -1,4 +1,5 @@
 .Dropdown {
+  display: inline-block;
   position: relative;
   z-index: 1;
 }
@@ -40,6 +41,7 @@
   border-radius: 6px;
   border: solid 1px var(--line-rule-color);
   box-shadow: 4px 4px 12px 4px rgba(0,0,0,0.025);
+  display: none;
   min-width: 100%;
   overflow: hidden;
   pointer-events: none;
@@ -49,6 +51,7 @@
 }
 
 .Dropdown.is-open .Dropdown-panel {
+  display: initial;
   pointer-events: auto;
   visibility: visible;
 }
