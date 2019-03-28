@@ -8,9 +8,6 @@
     }
   ],
   "env": {
-    "GITHUB_TOKEN": {
-      "required": true
-    },
     "NODE_ENV": {
       "required": true
     },
@@ -18,9 +15,6 @@
       "required": true
     },
     "NPM_CONFIG_PRODUCTION": {
-      "required": true
-    },
-    "PAPERTRAIL_API_TOKEN": {
       "required": true
     },
     "PORT": {
