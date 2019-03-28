@@ -9,7 +9,8 @@ export class DocsMenuToggle {
   hostData() {
     return {
       role: 'button',
-      tabindex: '0'
+      tabindex: '0',
+      'aria-label': 'Toggle Menu'
     };
   }
 
