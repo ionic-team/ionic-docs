@@ -1,0 +1,42 @@
+{
+  "addons": [
+    "papertrail"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "env": {
+    "GITHUB_TOKEN": {
+      "required": true
+    },
+    "NODE_ENV": {
+      "required": true
+    },
+    "NODEMODULESCACHE": {
+      "required": true
+    },
+    "NPM_CONFIG_PRODUCTION": {
+      "required": true
+    },
+    "PAPERTRAIL_API_TOKEN": {
+      "required": true
+    },
+    "PORT": {
+      "required": true
+    },
+    "PROD": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "name": "ionic-docs",
+  "scripts": {
+  },
+  "stack": "heroku-18"
+}
