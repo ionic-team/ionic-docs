@@ -1,8 +1,8 @@
 ---
 initialTab: 'preview'
 inlineHtmlPreviews: true
-previousText: 'Responsive Grid'
-previousUrl: '/docs/layout/grid'
+previousText: 'Global Stylesheets'
+previousUrl: '/docs/layout/global-stylesheets'
 nextText: 'Theming'
 nextUrl: '/docs/theming/basics'
 contributors:
@@ -17,7 +17,13 @@ contributors:
 
 # CSS Utilities
 
-Ionic provides a set of CSS utility classes that can be used on any element in order to modify the text, element placement or adjust the padding and margin.
+Ionic Framework provides a set of CSS utility classes that can be used on any element in order to modify the text, element placement or adjust the padding and margin.
+
+<blockquote>
+  <p>
+    If your app was not started using an available Ionic Framework starter, the stylesheets listed in the <a href="./global-stylesheets#optional">optional section of the global stylesheets</a> will need to be included in order for these styles to work.
+  </p>
+</blockquote>
 
 
 ## Text Modification
@@ -204,7 +210,7 @@ The display CSS property determines if an element should be visible or not. The 
 
 | Class         | Style Rule                      | Description                                                                                               |
 |---------------|---------------------------------|-----------------------------------------------------------------------------------------------------------|
-| `.ion-hide`   | `display: none`                 | The element will be hidden. 
+| `.ion-hide`   | `display: none`                 | The element will be hidden.
 
 ### Responsive Display Attributes
 
