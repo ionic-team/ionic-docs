@@ -160,7 +160,7 @@ ___
 ```typescript
 async performAutomaticUpdate() {
   try {
-    const currentVersion = Pro.deploy.getCurrentVersion();
+    const currentVersion = await Pro.deploy.getCurrentVersion();
     const resp = await Pro.deploy.sync({updateMethod: 'auto'});
     if (currentVersion.versionId !== resp.versionId){
       // We found an update, and are in process of redirecting you since you put auto!
@@ -169,9 +169,6 @@ async performAutomaticUpdate() {
     }
   } catch (err) {
     // We encountered an error.
-    // Here's how we would log it to Ionic Pro Monitoring while also catching:
-
-    // Pro.monitoring.exception(err);
   }
 }
 ```
