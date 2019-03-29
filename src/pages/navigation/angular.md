@@ -5,6 +5,7 @@ nextText: ''
 nextUrl: ''
 contributors:
   - mhartington
+  - daniellepintz
 ---
 
 # Angular Navigation
