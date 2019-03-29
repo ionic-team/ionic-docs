@@ -259,6 +259,17 @@ export namespace Components {
   interface DocsSearch {}
   interface DocsSearchAttributes extends StencilHTMLAttributes {}
 
+  interface DocsSelect {
+    'initializer': (options: string[]) => string;
+    'onSelect': (option: string) => any;
+    'options': string[];
+  }
+  interface DocsSelectAttributes extends StencilHTMLAttributes {
+    'initializer'?: (options: string[]) => string;
+    'onSelect'?: (option: string) => any;
+    'options'?: string[];
+  }
+
   interface SmsForm {}
   interface SmsFormAttributes extends StencilHTMLAttributes {}
 
@@ -328,6 +339,7 @@ declare global {
     'DocsReference': Components.DocsReference;
     'DocsRoot': Components.DocsRoot;
     'DocsSearch': Components.DocsSearch;
+    'DocsSelect': Components.DocsSelect;
     'SmsForm': Components.SmsForm;
     'SteppedColorGenerator': Components.SteppedColorGenerator;
     'DocsTableOfContents': Components.DocsTableOfContents;
@@ -369,6 +381,7 @@ declare global {
     'docs-reference': Components.DocsReferenceAttributes;
     'docs-root': Components.DocsRootAttributes;
     'docs-search': Components.DocsSearchAttributes;
+    'docs-select': Components.DocsSelectAttributes;
     'sms-form': Components.SmsFormAttributes;
     'stepped-color-generator': Components.SteppedColorGeneratorAttributes;
     'docs-table-of-contents': Components.DocsTableOfContentsAttributes;
@@ -575,6 +588,12 @@ declare global {
     new (): HTMLDocsSearchElement;
   };
 
+  interface HTMLDocsSelectElement extends Components.DocsSelect, HTMLStencilElement {}
+  var HTMLDocsSelectElement: {
+    prototype: HTMLDocsSelectElement;
+    new (): HTMLDocsSelectElement;
+  };
+
   interface HTMLSmsFormElement extends Components.SmsForm, HTMLStencilElement {}
   var HTMLSmsFormElement: {
     prototype: HTMLSmsFormElement;
@@ -639,6 +658,7 @@ declare global {
     'docs-reference': HTMLDocsReferenceElement
     'docs-root': HTMLDocsRootElement
     'docs-search': HTMLDocsSearchElement
+    'docs-select': HTMLDocsSelectElement
     'sms-form': HTMLSmsFormElement
     'stepped-color-generator': HTMLSteppedColorGeneratorElement
     'docs-table-of-contents': HTMLDocsTableOfContentsElement
@@ -680,6 +700,7 @@ declare global {
     'docs-reference': HTMLDocsReferenceElement;
     'docs-root': HTMLDocsRootElement;
     'docs-search': HTMLDocsSearchElement;
+    'docs-select': HTMLDocsSelectElement;
     'sms-form': HTMLSmsFormElement;
     'stepped-color-generator': HTMLSteppedColorGeneratorElement;
     'docs-table-of-contents': HTMLDocsTableOfContentsElement;
