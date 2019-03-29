@@ -37,7 +37,7 @@ There are two common ways to create mock objects in Jasmine. Mock objects can be
 
 #### Using `jasmine.createSpy` and `jasmine.createSpyObj`
 
-`jasmine.createSpyObj` creates a full mock object from scratch with a set of mock methods defined on creation. This is useful in that it is very simple. Nothing needs to be constructed or injected into the test. This disadvantage of using this function is that it allows the creation of objects that may not match the real objects.
+`jasmine.createSpyObj` creates a full mock object from scratch with a set of mock methods defined on creation. This is useful in that it is very simple. Nothing needs to be constructed or injected into the test. The disadvantage of using this function is that it allows the creation of objects that may not match the real objects.
 
 `jasmine.createSpy` is similar but it creates a stand-alone mock function.
 
