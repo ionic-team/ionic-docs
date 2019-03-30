@@ -1979,7 +1979,7 @@
       "Android",
       "iOS"
     ],
-    "usage": "\n```typescript\nimport { LaunchReview } from '@ionic-native/launch-review';\n\nconstructor(private launchReview: LaunchReview) { }\n\n...\n\nthis.launchReview.launch()\n  .then(() => console.log('Successfully launched store app');\n\nif(this.launchReview.isRatingSupported()){\n  this.launchReview.rating()\n    .then(() => console.log('Successfully launched rating dialog'));\n}\n```\n",
+    "usage": "\n```typescript\nimport { LaunchReview } from '@ionic-native/launch-review';\n\nconstructor(private launchReview: LaunchReview) { }\n\n...\n\nthis.launchReview.launch()\n  .then(() => console.log('Successfully launched store app'));\n\nif(this.launchReview.isRatingSupported()){\n  this.launchReview.rating()\n    .then(() => console.log('Successfully launched rating dialog'));\n}\n```\n",
     "repo": "https://github.com/dpa99c/cordova-launch-review",
     "cordovaPlugin": {
       "name": "cordova-launch-review"
