@@ -255,11 +255,13 @@ export namespace Components {
   interface DocsSelect {
     'initializer': (options: string[]) => string;
     'onSelect': (option: string) => any;
+    'optionRenderer': (option: string) => any;
     'options': string[];
   }
   interface DocsSelectAttributes extends StencilHTMLAttributes {
     'initializer'?: (options: string[]) => string;
     'onSelect'?: (option: string) => any;
+    'optionRenderer'?: (option: string) => any;
     'options'?: string[];
   }
 

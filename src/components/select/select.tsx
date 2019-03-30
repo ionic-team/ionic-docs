@@ -11,6 +11,7 @@ export class DocsSelect {
   @Prop() options: string[];
   @Prop() onSelect: (option: string) => any;
   @Prop() initializer: (options: string[]) => string;
+  @Prop() optionRenderer: (option: string) => any = (option: string) => option;
 
   select = (option: string) => {
     this.selected = option;
@@ -50,7 +51,7 @@ export class DocsSelect {
         tabindex="0"
         onClick={handleClick}
         onKeyUp={handleKeyUp}>
-          {option}
+          {this.optionRenderer(option)}
       </div>
     );
   }
@@ -71,7 +72,9 @@ export class DocsSelect {
 
   render() {
     return (
-      <docs-dropdown label={this.selected} ref={el => { this.dropdown = el; }}>
+      <docs-dropdown
+        ref={el => { this.dropdown = el; }}
+        label={this.optionRenderer(this.selected)}>
           {this.options.map(this.toOption)}
       </docs-dropdown>
     );
