@@ -25,14 +25,14 @@
   cursor: pointer;
 }
 
-.Dropdown-button > svg {
+.Dropdown-arrow {
   fill: currentColor;
   height: 0.8em;
   margin-bottom: -0.0875em;
   width: 0.8em;
 }
 
-.Dropdown.is-open .Dropdown-button > svg {
+.Dropdown.is-open .Dropdown-arrow {
   transform: rotate(180deg);
 }
 
