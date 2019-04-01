@@ -1,5 +1,6 @@
 import { Component, Prop } from '@stencil/core';
 import { Logo } from '../../icons';
+import { FrameworkSelect } from './framework-select';
 import componentsTemplate from './templates/components';
 import cliTemplate from './templates/cli';
 import nativeTemplate from './templates/native';
@@ -28,7 +29,10 @@ export class DocsMenu {
         <stencil-route url="/docs/native" routeRender={nativeTemplate}/>
         <stencil-route url="/docs/appflow" routeRender={appflowTemplate}/>
         <stencil-route routeRender={mainTemplate}/>
-      </stencil-route-switch>
+      </stencil-route-switch>,
+      <section class="MenuControls">
+        <FrameworkSelect/>
+      </section>
     ];
   }
 }
