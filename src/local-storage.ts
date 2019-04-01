@@ -18,10 +18,15 @@ function setItem(key: string, value: string): void {
 type LocalStorageGetter = () => string;
 type LocalStorageSetter = (value: string) => void;
 
-export function useLocalStorage(key: string): [
+export function useLocalStorage(key: string, defaultValue?: string): [
   LocalStorageGetter,
   LocalStorageSetter
 ] {
+
+  if (defaultValue != null && getItem(key) === null) {
+    setItem(key, defaultValue);
+  }
+
   return [
     () => getItem(key),
     (value: string) => setItem(key, value)
