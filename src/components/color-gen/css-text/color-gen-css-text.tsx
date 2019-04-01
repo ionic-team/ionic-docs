@@ -1,4 +1,5 @@
 import { Component, Element, Event, EventEmitter, Prop, State } from '@stencil/core';
+import { convertCssToColors } from '../parse-css';
 
 
 @Component({
@@ -9,6 +10,7 @@ export class CssText {
 
   @Prop({ mutable: true }) cssText = '';
   @State() showCopyConfirmation = false;
+  @State() showShareConfirmation = false;
   @Event() cssTextChange: EventEmitter;
 
   @Element() el: HTMLElement;
@@ -22,6 +24,24 @@ export class CssText {
 
       this.cssTextChange.emit(this.cssText);
     }
+  }
+
+  shareCssText() {
+    this.showShareConfirmation = true;
+
+    const cssEl = this.el.querySelector('#cssText');
+    const cssText = cssEl.textContent || '';
+    const colors = convertCssToColors(cssText);
+    let urlParams = '';
+    colors.forEach(c => {
+      urlParams = urlParams + c.name.toLocaleLowerCase() + '=' + c.value + '&';
+    });
+    urlParams = urlParams.slice(0, -1);
+    history.pushState(null, null, '?' + urlParams);
+
+    setTimeout(() => {
+      this.showShareConfirmation = false;
+    }, 2000);
   }
 
   copyCssText() {
@@ -51,15 +71,26 @@ export class CssText {
         <div class="css-text__header">
           <h3>CSS Variables</h3>
 
-          <div class={{ 'css-text__copy': true, 'show-confirmation': this.showCopyConfirmation }} >
-            <a class="css-text__copy-link" onClick={this.copyCssText.bind(this)}>Copy</a>
-            <span class="css-text__copy-confirmation">
+          <section class="css-text__header-buttons">
+            <div class={{ 'css-text__copy': true, 'show-confirmation': this.showShareConfirmation }}>
+              <a class="css-text__copy-link css-text__copy-share" onClick={this.shareCssText.bind(this)}>URL</a>
+              <span class="css-text__copy-confirmation css-text__copy-share">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="26px" height="26px">
+                <path d="M362.6 192.9L345 174.8c-.7-.8-1.8-1.2-2.8-1.2-1.1 0-2.1.4-2.8 1.2l-122 122.9-44.4-44.4c-.8-.8-1.8-1.2-2.8-1.2-1 0-2 .4-2.8 1.2l-17.8 17.8c-1.6 1.6-1.6 4.1 0 5.7l56 56c3.6 3.6 8 5.7 11.7 5.7 5.3 0 9.9-3.9 11.6-5.5h.1l133.7-134.4c1.4-1.7 1.4-4.2-.1-5.7z"/>
+              </svg>
+              Changed
+            </span>
+            </div>
+            <div class={{ 'css-text__copy': true, 'show-confirmation': this.showCopyConfirmation }}>
+              <a class="css-text__copy-link" onClick={this.copyCssText.bind(this)}>Copy</a>
+              <span class="css-text__copy-confirmation">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="26px" height="26px">
                 <path d="M362.6 192.9L345 174.8c-.7-.8-1.8-1.2-2.8-1.2-1.1 0-2.1.4-2.8 1.2l-122 122.9-44.4-44.4c-.8-.8-1.8-1.2-2.8-1.2-1 0-2 .4-2.8 1.2l-17.8 17.8c-1.6 1.6-1.6 4.1 0 5.7l56 56c3.6 3.6 8 5.7 11.7 5.7 5.3 0 9.9-3.9 11.6-5.5h.1l133.7-134.4c1.4-1.7 1.4-4.2-.1-5.7z"/>
               </svg>
               Copied
             </span>
-          </div>
+            </div>
+          </section>
         </div>
         <div
           id="cssText"

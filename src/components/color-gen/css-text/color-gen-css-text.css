@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+.css-text__header-buttons {
+  display: flex;
+}
+
 .css-text__code {
   box-sizing: border-box;
   display: block;
@@ -47,6 +51,11 @@ h3 {
   position: absolute;
   right: 0;
   top: 0;
+}
+
+.css-text__copy-share {
+  top: 0;
+  right: 56px;
 }
 
 .css-text__copy-link {
