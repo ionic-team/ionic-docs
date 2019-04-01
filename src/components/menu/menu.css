@@ -45,3 +45,31 @@ docs-menu > stencil-route-switch {
 docs-menu nav {
   padding: 2rem 1.5rem;
 }
+
+.MenuControls {
+  border-top: solid 1px var(--line-rule-color);
+  box-shadow: 0 -5px 10px -10px rgba(0, 0, 0, 0.1);
+  font-size: 12px;
+  padding: 1em;
+}
+
+.FrameworkSelect-framework {
+  align-items: center;
+  display: flex;
+}
+
+.FrameworkSelect-icon {
+  height: 14px;
+  width: 14px;
+  margin-right: 0.5em;
+}
+
+.FrameworkSelect .Select-option {
+  padding-left: 0.75em;
+}
+
+.FrameworkSelect .Dropdown-panel {
+  bottom: 100%;
+  top: auto;
+  min-width: 140px;
+}
