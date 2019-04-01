@@ -20,11 +20,11 @@
   <ion-app>
     <ion-header translucent>
       <ion-toolbar>
-        <ion-title>Picker</ion-title>      
+        <ion-title>Picker</ion-title>
       </ion-toolbar>
     </ion-header>
 
-    <ion-content fullscreen padding>
+    <ion-content fullscreen class="ion-padding">
       <ion-picker-controller></ion-picker-controller>
       <ion-button onclick="openPicker()">Open Single Column Picker</ion-button>
       <ion-button onclick="openPicker(2, 5, multiColumnOptions)">Open Multi Column Picker</ion-button>
@@ -41,7 +41,7 @@
         'Chinchilla'
       ]
     ]
-    
+
     const multiColumnOptions = [
       [
         'Minified',
@@ -71,14 +71,14 @@
             text: 'Confirm',
             handler: (value) => {
               console.log(`Got Value ${value}`);
-            }  
+            }
           }
         ]
       });
-      
+
       await picker.present();
     }
-    
+
     function getColumns(numColumns, numOptions, columnOptions) {
       let columns = [];
       for (let i = 0; i < numColumns; i++) {
@@ -87,10 +87,10 @@
           options: this.getColumnOptions(i, numOptions, columnOptions)
         });
       }
-      
+
       return columns;
     }
-    
+
     function getColumnOptions(columnIndex, numOptions, columnOptions) {
       let options = [];
       for (let i = 0; i < numOptions; i++) {
@@ -99,7 +99,7 @@
           value: i
         })
       }
-      
+
       return options;
     }
   </script>

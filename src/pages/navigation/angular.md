@@ -9,7 +9,7 @@ contributors:
 
 # Angular Navigation
 
-This guide covers how routing works in and app built with Ionic and Angular.
+This guide covers how routing works in an app built with Ionic and Angular.
 
 
 The Angular Router is one of the most important libraries in an Angular application. Without it, apps would be single view/single context apps or would not be able to maintain their navigation state on browser reloads. With Angular Router, we can create rich apps that are linkable and have rich animations (when paired with Ionic of course). Let's look at the basics of the Angular Router and how we can configure it for Ionic apps.
@@ -33,7 +33,7 @@ import { RouterModule } from '@angular/router';
 })
 ```
 
-The simplest breakdown for what we have here is a path/component lookup. When our app loads, the router kicks off things by reading the URL the user is trying to load. In our sample, our route looks for `''`, which is essentially our index route. So for this, we load the `LoginComponent`. Fairly straight forward. This pattern of matching paths with a component continues for every entry we have in the router config. But what if we wanted to load a different path on our initial load?
+The simplest breakdown for what we have here is a path/component lookup. When our app loads, the router kicks things off by reading the URL the user is trying to load. In our sample, our route looks for `''`, which is essentially our index route. So for this, we load the `LoginComponent`. Fairly straight forward. This pattern of matching paths with a component continues for every entry we have in the router config. But what if we wanted to load a different path on our initial load?
 
 ## Handling Redirects
 

@@ -1,8 +1,8 @@
 ---
 initialTab: 'preview'
 inlineHtmlPreviews: true
-previousText: 'Responsive Grid'
-previousUrl: '/docs/layout/grid'
+previousText: 'Global Stylesheets'
+previousUrl: '/docs/layout/global-stylesheets'
 nextText: 'Theming'
 nextUrl: '/docs/theming/basics'
 contributors:
@@ -17,7 +17,13 @@ contributors:
 
 # CSSユーティリティ
 
-Ionicは、テキストの順番を入れ替えたり、要素の配置やpaddingやmarginを修正する一連のユーティリティ属性を提供します。これは要素で使うことができます。
+Ionic Frameworは、テキストの順番を入れ替えたり、要素の配置やpaddingやmarginを修正する一連のユーティリティ属性を提供します。これは要素で使うことができます。
+
+<blockquote>
+  <p>
+    If your app was not started using an available Ionic Framework starter, the stylesheets listed in the <a href="./global-stylesheets#optional">optional section of the global stylesheets</a> will need to be included in order for these styles to work.
+  </p>
+</blockquote>
 
 
 ## テキストの修正

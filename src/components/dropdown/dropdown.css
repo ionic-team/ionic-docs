@@ -26,9 +26,9 @@
 
 .Dropdown-button > svg {
   fill: currentColor;
-  height: 1em;
-  margin-bottom: -0.15em;
-  width: 1em;
+  height: 0.8em;
+  margin-bottom: -0.0875em;
+  width: 0.8em;
 }
 
 .Dropdown.is-open .Dropdown-button > svg {
@@ -37,11 +37,10 @@
 
 .Dropdown-panel {
   background-color: var(--background);
-  border-radius: 4px;
+  border-radius: 6px;
   border: solid 1px var(--line-rule-color);
   box-shadow: 4px 4px 12px 4px rgba(0,0,0,0.025);
-  left: 0;
-  min-width: 120%;
+  min-width: 100%;
   overflow: hidden;
   pointer-events: none;
   position: absolute;
@@ -52,4 +51,36 @@
 .Dropdown.is-open .Dropdown-panel {
   pointer-events: auto;
   visibility: visible;
+}
+
+.Dropdown--left .Dropdown-panel {
+  left: 0;
+}
+
+.Dropdown--right .Dropdown-panel {
+  right: 0;
+}
+
+.Dropdown--center .Dropdown-panel {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.Dropdown-panel a {
+  display: block;
+  padding: 0.5em 1em;
+}
+
+@media (hover: hover) {
+  .Dropdown-panel a:hover {
+    background-color: rgba(0, 0, 0, 0.025);
+  }
+}
+
+.Dropdown-panel > section {
+  padding: 0.5em 0;
+}
+
+.Dropdown-panel > section:not(:last-child) {
+  border-bottom: solid 1px var(--line-rule-color);
 }
