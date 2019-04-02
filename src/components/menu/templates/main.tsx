@@ -31,6 +31,7 @@ const items = {
   'Layout': {
     'Structure': '/docs/layout/structure',
     'Responsive Grid': '/docs/layout/grid',
+    'Global Stylesheets': '/docs/layout/global-stylesheets',
     'CSS Utilities': '/docs/layout/css-utilities',
   },
   'Theming': {

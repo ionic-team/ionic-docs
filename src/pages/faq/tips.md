@@ -14,7 +14,7 @@ contributors:
 To update a [npm](https://www.npmjs.com/) dependency, run the following, where `<package-name>` is the package to update:
 
 ```shell
-$ npm install <package-name>@<version|latest> --save
+$ npm install &lt;package-name>@<version|latest&gt; --save
 ```
 
 For instance, to update the `@ionic/angular` package to the release tagged `latest`, run:

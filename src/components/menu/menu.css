@@ -7,9 +7,10 @@ docs-menu {
   left: 0;
   position: fixed;
   top: 0;
+  transition: transform 200ms cubic-bezier(0.2, 1, 0.2, 1);
   transform: var(--menu-transform, none);
   width: var(--menu-width);
-  z-index: var(--menu-z-index, initial);
+  z-index: 1;
 }
 
 docs-menu > header {
@@ -18,10 +19,15 @@ docs-menu > header {
   display: flex;
   flex: none;
   height: var(--header-height);
-  padding: 0 1.5rem;
+  padding: 0 1.4rem 0 0.8rem;
+  user-select: none;
 }
 
-docs-menu > header .Logo {
+docs-menu docs-menu-toggle {
+  margin-right: 0.75em;
+}
+
+docs-menu .MenuLogo {
   color: var(--text-color--dark);
   font-family: var(--heading-font-family);
   height: 25px;

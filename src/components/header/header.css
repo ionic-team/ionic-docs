@@ -11,29 +11,29 @@ docs-header {
   left: 0;
   transform: translateY(0);
   transition: transform 200ms ease;
+  user-select: none;
   width: 100%;
   white-space: nowrap;
-  z-index: 1;
+  z-index: 2;
 }
 
-docs-header.hidden {
-  transform: translateY(-100%);
+@media (min-width: 768px) {
+  .Layout:not(.is-menu-toggled) docs-header.hidden {
+    transform: translateY(-100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .Layout.is-menu-toggled docs-header.hidden {
+    transform: translateY(-100%);
+  }
 }
 
 docs-header header {
-  height: var(--header-height);
-  padding: 0 1.5rem;
-}
-
-docs-header header,
-docs-header nav {
   align-items: center;
   display: flex;
-}
-
-docs-header header > *:not(:last-child),
-docs-header nav > *:not(:last-child) {
-  margin-right: 1em;
+  height: var(--header-height);
+  padding: 0 1.4rem 0 0.8rem;
 }
 
 docs-header a {
@@ -51,13 +51,104 @@ docs-header .link-active {
   }
 }
 
-.Logo {
+docs-header docs-menu-toggle {
+  flex: none;
+  margin-right: 0.75em;
+}
+
+.HeaderLogo {
   color: var(--text-color--dark);
   font-family: var(--heading-font-family);
   height: 25px;
+  margin-right: 0.125em;
+}
+
+.SectionNav stencil-route {
+  display: flex;
+}
+
+.SectionNav .Dropdown {
+  align-self: center;
+  color: var(--text-color);
+  margin-right: 0.75em;
+}
+
+.SectionNav .Dropdown-button {
+  border: solid 1px transparent;
+  border-radius: 6px;
+  color: var(--text-color--dark);
+  padding: 10px;
+  transition: border-color 100ms ease;
+}
+
+.SectionNav .Dropdown.is-open .Dropdown-button {
+  border-color: var(--line-rule-color);
+}
+
+@media (hover: hover) {
+  .SectionNav .Dropdown-button:hover {
+    border-color: var(--line-rule-color);
+  }
+}
+
+.SectionNav .Dropdown-panel {
+  min-width: 180px;
+}
+
+.SectionNav .Dropdown-panel a {
+  display: flex;
+  justify-content: space-between;
+}
+
+.SectionNav .Dropdown-panel svg {
+  height: 1em;
+  width: 1em;
+}
+
+.SectionNav-tabs > * {
+  align-items: center;
+  display: inline-flex;
+  height: var(--header-height);
+  margin-right: 1em;
+  position: relative;
+}
+
+.SectionNav-tabs .link-active:after {
+  background-color: currentColor;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 0;
+  position: absolute;
+  width: 100%;
 }
 
 .UtilNav {
+  align-items: center;
+  display: flex;
   font-size: 12px;
   margin-left: auto;
+}
+
+.UtilNav > * {
+  margin-left: 1em;
+}
+
+.UtilNav .Dropdown.is-open {
+  color: var(--text-color);
+}
+
+.UtilNav .Dropdown-button {
+  padding: 10px 0;
+}
+
+@media (hover: hover) {
+  .UtilNav .Dropdown-button:hover {
+    color: var(--text-color);
+  }
+}
+
+.UtilNav .Dropdown-panel {
+  font-size: 14px;
 }

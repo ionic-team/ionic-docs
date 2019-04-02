@@ -1,0 +1,25 @@
+docs-menu-toggle {
+  background-color: rgba(0, 0, 0, var(--bg-alpha, 0));
+  border-radius: 50%;
+  color: var(--text-color--light);
+  cursor: pointer;
+  height: 40px;
+  padding: 8px;
+  width: 40px;
+}
+
+@media (hover: hover) {
+  docs-menu-toggle:focus,
+  docs-menu-toggle:hover {
+    --bg-alpha: 0.03;
+    outline: none;
+  }
+
+  docs-menu-toggle:active {
+    --bg-alpha: 0.06;
+  }
+}
+
+docs-menu-toggle svg {
+  fill: currentColor;
+}

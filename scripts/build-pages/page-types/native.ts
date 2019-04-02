@@ -19,7 +19,7 @@ async function getNativePages(): Promise<Page[]> {
     return {
       title,
       path,
-      body: description,
+      body: renderMarkdown(description),
       repo,
       platforms,
       usage: usage ? renderMarkdown(usage) : null,

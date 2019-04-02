@@ -7,10 +7,11 @@
 
 import '@stencil/core';
 
-import '@ionic/core';
-import 'ionicons';
+
 import '@stencil/router';
 import '@stencil/state-tunnel';
+import '@ionic/core';
+import 'ionicons';
 import {
   ColorVariable,
 } from './components/color-gen/color-variables';
@@ -20,6 +21,9 @@ import {
   Page,
   ReferenceKeys,
 } from './definitions';
+import {
+  RouterHistory,
+} from '@stencil/router';
 
 
 export namespace Components {
@@ -137,9 +141,11 @@ export namespace Components {
 
   interface ContributorList {
     'contributors': string[];
+    'link': any;
   }
   interface ContributorListAttributes extends StencilHTMLAttributes {
     'contributors'?: string[];
+    'link'?: any;
   }
 
   interface DocsDemo {
@@ -152,12 +158,14 @@ export namespace Components {
   }
 
   interface DocsDropdown {
+    'align': 'left' | 'right' | 'center';
     'close': () => void;
     'label': string;
     'open': () => void;
     'toggle': () => void;
   }
   interface DocsDropdownAttributes extends StencilHTMLAttributes {
+    'align'?: 'left' | 'right' | 'center';
     'label'?: string;
   }
 
@@ -180,14 +188,25 @@ export namespace Components {
   interface FileTree {}
   interface FileTreeAttributes extends StencilHTMLAttributes {}
 
-  interface DocsHeader {}
-  interface DocsHeaderAttributes extends StencilHTMLAttributes {}
+  interface DocsHeader {
+    'onToggleClick': (e: Event) => void;
+  }
+  interface DocsHeaderAttributes extends StencilHTMLAttributes {
+    'onToggleClick'?: (e: Event) => void;
+  }
 
   interface LayeredColorsSelect {}
   interface LayeredColorsSelectAttributes extends StencilHTMLAttributes {}
 
-  interface DocsMenu {}
-  interface DocsMenuAttributes extends StencilHTMLAttributes {}
+  interface DocsMenu {
+    'onToggleClick': (e: Event) => void;
+  }
+  interface DocsMenuAttributes extends StencilHTMLAttributes {
+    'onToggleClick'?: (e: Event) => void;
+  }
+
+  interface DocsMenuToggle {}
+  interface DocsMenuToggleAttributes extends StencilHTMLAttributes {}
 
   interface DocsNav {
     'items': MenuItems;
@@ -204,9 +223,11 @@ export namespace Components {
   }
 
   interface DocsPage {
+    'history': RouterHistory;
     'path': string;
   }
   interface DocsPageAttributes extends StencilHTMLAttributes {
+    'history'?: RouterHistory;
     'path'?: string;
   }
 
@@ -231,9 +252,6 @@ export namespace Components {
 
   interface DocsSearch {}
   interface DocsSearchAttributes extends StencilHTMLAttributes {}
-
-  interface DocsSectionNav {}
-  interface DocsSectionNavAttributes extends StencilHTMLAttributes {}
 
   interface SmsForm {}
   interface SmsFormAttributes extends StencilHTMLAttributes {}
@@ -295,6 +313,7 @@ declare global {
     'DocsHeader': Components.DocsHeader;
     'LayeredColorsSelect': Components.LayeredColorsSelect;
     'DocsMenu': Components.DocsMenu;
+    'DocsMenuToggle': Components.DocsMenuToggle;
     'DocsNav': Components.DocsNav;
     'DocsPageFooter': Components.DocsPageFooter;
     'DocsPage': Components.DocsPage;
@@ -302,7 +321,6 @@ declare global {
     'DocsReference': Components.DocsReference;
     'DocsRoot': Components.DocsRoot;
     'DocsSearch': Components.DocsSearch;
-    'DocsSectionNav': Components.DocsSectionNav;
     'SmsForm': Components.SmsForm;
     'SteppedColorGenerator': Components.SteppedColorGenerator;
     'DocsTableOfContents': Components.DocsTableOfContents;
@@ -335,6 +353,7 @@ declare global {
     'docs-header': Components.DocsHeaderAttributes;
     'layered-colors-select': Components.LayeredColorsSelectAttributes;
     'docs-menu': Components.DocsMenuAttributes;
+    'docs-menu-toggle': Components.DocsMenuToggleAttributes;
     'docs-nav': Components.DocsNavAttributes;
     'docs-page-footer': Components.DocsPageFooterAttributes;
     'docs-page': Components.DocsPageAttributes;
@@ -342,7 +361,6 @@ declare global {
     'docs-reference': Components.DocsReferenceAttributes;
     'docs-root': Components.DocsRootAttributes;
     'docs-search': Components.DocsSearchAttributes;
-    'docs-section-nav': Components.DocsSectionNavAttributes;
     'sms-form': Components.SmsFormAttributes;
     'stepped-color-generator': Components.SteppedColorGeneratorAttributes;
     'docs-table-of-contents': Components.DocsTableOfContentsAttributes;
@@ -495,6 +513,12 @@ declare global {
     new (): HTMLDocsMenuElement;
   };
 
+  interface HTMLDocsMenuToggleElement extends Components.DocsMenuToggle, HTMLStencilElement {}
+  var HTMLDocsMenuToggleElement: {
+    prototype: HTMLDocsMenuToggleElement;
+    new (): HTMLDocsMenuToggleElement;
+  };
+
   interface HTMLDocsNavElement extends Components.DocsNav, HTMLStencilElement {}
   var HTMLDocsNavElement: {
     prototype: HTMLDocsNavElement;
@@ -535,12 +559,6 @@ declare global {
   var HTMLDocsSearchElement: {
     prototype: HTMLDocsSearchElement;
     new (): HTMLDocsSearchElement;
-  };
-
-  interface HTMLDocsSectionNavElement extends Components.DocsSectionNav, HTMLStencilElement {}
-  var HTMLDocsSectionNavElement: {
-    prototype: HTMLDocsSectionNavElement;
-    new (): HTMLDocsSectionNavElement;
   };
 
   interface HTMLSmsFormElement extends Components.SmsForm, HTMLStencilElement {}
@@ -598,6 +616,7 @@ declare global {
     'docs-header': HTMLDocsHeaderElement
     'layered-colors-select': HTMLLayeredColorsSelectElement
     'docs-menu': HTMLDocsMenuElement
+    'docs-menu-toggle': HTMLDocsMenuToggleElement
     'docs-nav': HTMLDocsNavElement
     'docs-page-footer': HTMLDocsPageFooterElement
     'docs-page': HTMLDocsPageElement
@@ -605,7 +624,6 @@ declare global {
     'docs-reference': HTMLDocsReferenceElement
     'docs-root': HTMLDocsRootElement
     'docs-search': HTMLDocsSearchElement
-    'docs-section-nav': HTMLDocsSectionNavElement
     'sms-form': HTMLSmsFormElement
     'stepped-color-generator': HTMLSteppedColorGeneratorElement
     'docs-table-of-contents': HTMLDocsTableOfContentsElement
@@ -638,6 +656,7 @@ declare global {
     'docs-header': HTMLDocsHeaderElement;
     'layered-colors-select': HTMLLayeredColorsSelectElement;
     'docs-menu': HTMLDocsMenuElement;
+    'docs-menu-toggle': HTMLDocsMenuToggleElement;
     'docs-nav': HTMLDocsNavElement;
     'docs-page-footer': HTMLDocsPageFooterElement;
     'docs-page': HTMLDocsPageElement;
@@ -645,7 +664,6 @@ declare global {
     'docs-reference': HTMLDocsReferenceElement;
     'docs-root': HTMLDocsRootElement;
     'docs-search': HTMLDocsSearchElement;
-    'docs-section-nav': HTMLDocsSectionNavElement;
     'sms-form': HTMLSmsFormElement;
     'stepped-color-generator': HTMLSteppedColorGeneratorElement;
     'docs-table-of-contents': HTMLDocsTableOfContentsElement;

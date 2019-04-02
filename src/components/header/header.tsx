@@ -1,6 +1,5 @@
-import { Component, Listen, State } from '@stencil/core';
-import { Outbound } from '../../icons';
-import Logo from './logo';
+import { Component, Listen, Prop, State } from '@stencil/core';
+import { Checkmark, Logo, Outbound } from '../../icons';
 
 @Component({
   tag: 'docs-header',
@@ -10,6 +9,8 @@ export class DocsHeader {
   @State() hidden = false;
   private frameRequested = false;
   private prevScroll = 0;
+
+  @Prop() onToggleClick: (e: Event) => void;
 
   @Listen('window:scroll')
   handleScroll() {
@@ -33,14 +34,75 @@ export class DocsHeader {
   render() {
     return (
       <header>
+        <docs-menu-toggle onClick={this.onToggleClick}/>
+
         <stencil-route-link url="/docs/">
-          <Logo/>
+          <Logo class="HeaderLogo"/>
         </stencil-route-link>
-        <docs-section-nav/>
+
+        <nav class="SectionNav">
+          <stencil-route-switch>
+            <stencil-route url="/docs/appflow">
+              <docs-dropdown label="Appflow">
+                <section>
+                  <stencil-route-link url="/docs/" urlMatch={/^\/docs\/(?!(appflow)).*$/}>Framework</stencil-route-link>
+                  <stencil-route-link url="/docs/appflow">Appflow <Checkmark/></stencil-route-link>
+                </section>
+                <section>
+                  <a href="https://ionicframework.com/docs/v3">Framework v3</a>
+                  <a href="https://stenciljs.com">Stencil</a>
+                  <a href="https://capacitor.ionicframework.com">Capacitor</a>
+                </section>
+              </docs-dropdown>
+            </stencil-route>
+            <stencil-route>
+              <docs-dropdown label="Framework">
+                <section>
+                  <stencil-route-link url="/docs/" urlMatch={/^\/docs\/(?!(appflow)).*$/}>Framework <Checkmark/></stencil-route-link>
+                  <stencil-route-link url="/docs/appflow">Appflow</stencil-route-link>
+                </section>
+                <section>
+                  <a href="https://ionicframework.com/docs/v3">Framework v3</a>
+                  <a href="https://stenciljs.com">Stencil</a>
+                  <a href="https://capacitor.ionicframework.com">Capacitor</a>
+                </section>
+              </docs-dropdown>
+              <div class="SectionNav-tabs">
+                <stencil-route-link url="/docs/" urlMatch={[/^\/docs(?!\/(api|components|cli|native)).*$/]}>Guide</stencil-route-link>
+                <stencil-route-link url="/docs/components" urlMatch={['/docs/api', '/docs/components']}>Components</stencil-route-link>
+                <stencil-route-link url="/docs/cli">CLI</stencil-route-link>
+                <stencil-route-link url="/docs/native">Native</stencil-route-link>
+              </div>
+            </stencil-route>
+          </stencil-route-switch>
+        </nav>
+
         <nav class="UtilNav">
-          <a href="https://ionicframework.com/support" target="_blank">Support</a>
-          <a href="https://ionicframework.com/community" target="_blank">Community</a>
-          <a class="outbound" href="https://ionicframework.com/docs/v3" target="_blank">v3 <Outbound/></a>
+          <docs-dropdown label="Community" align="right">
+            <section>
+              <a href="https://ionicframework.com/community" target="_blank">Community Hub</a>
+            </section>
+            <section>
+              <a href="https://forum.ionicframework.com/" target="_blank">Forum</a>
+              <a href="http://ionicworldwide.herokuapp.com/" target="_blank">Slack</a>
+              <a href="https://spectrum.chat/ionic" target="_blank">Spectrum</a>
+              <a href="https://www.meetup.com/topics/ionic-framework/" target="_blank">Meetups</a>
+            </section>
+            <section>
+              <a href="https://blog.ionicframework.com/" target="_blank">Blog</a>
+              <a href="https://twitter.com/ionicframework" target="_blank">Twitter</a>
+              <a href="https://shop.ionicframework.com/" target="_blank">Swag</a>
+            </section>
+          </docs-dropdown>
+          <docs-dropdown label="Support" align="right">
+            <section>
+              <a href="https://ionic.zendesk.com/" target="_blank">Help Center</a>
+            </section>
+            <section>
+              <a href="https://ionicframework.com/support" target="_blank">Customer Support</a>
+              <a href="https://ionicframework.com/advisory" target="_blank">Enterprise Advisory</a>
+            </section>
+          </docs-dropdown>
           <a class="outbound" href="https://github.com/ionic-team/ionic" target="_blank">GitHub <Outbound/></a>
         </nav>
       </header>
