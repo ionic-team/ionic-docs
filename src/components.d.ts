@@ -7,9 +7,9 @@
 
 import '@stencil/core';
 
-import '@ionic/core';
 import '@stencil/router';
 import '@stencil/state-tunnel';
+import '@ionic/core';
 import 'ionicons';
 import {
   ColorVariable,
