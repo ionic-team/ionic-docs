@@ -38,7 +38,7 @@
     "ora": "^3.1.0",
     "prismjs": "^1.15.0",
     "ts-node": "^8.0.2",
-    "tslint": "^5.14.0",
+    "tslint": "^5.15.0",
     "tslint-ionic-rules": "0.0.21"
   },
   "husky": {
