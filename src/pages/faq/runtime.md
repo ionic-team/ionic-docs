@@ -15,12 +15,29 @@ contributors:
 
 この事象が発生しうる理由がいくつかあります。もしあなたがフォーラム上で解決策を見つけられなかった場合、これらを確認して下さい:
 
-- ルート `@Component` に `template` または `templateUrl` がある。
-- ルート `@Component` テンプレートには `root` プロパティを持つ `<ion-nav>` がある:
+- Polyfills are not included for older browser/versions of android
 
-  ```html
-  <ion-nav [root]="rootPage"></ion-nav>
-  ```
+For projects with `@angular/cli@7.3` or above, polyfills will automatically be included. For project created before that, polyfills need to be manually enabled.
+
+In `src/polyfills.ts`, you must enabled all ES6 polyfills for Android 4.4 support.
+
+Alternatively, a project could be updated to use the latest release of the `@angular/cli` package & `@angular-devkit` packages and include the `es5BrowserSupport` option in the `angular.json`'s build options object:
+
+```diff
+        "input": "src/global.scss"
+      }
+    ],
+-   "scripts": []
++   "scripts": [],
++   "es5BrowserSupport": true
+  },
+  "configurations": {
+    "production": {
+```
+
+This will automatically include the polyfills for older browsers that need them.
+
+
 
 ## ディレクティブが動作しない
 
@@ -28,13 +45,12 @@ contributors:
 
 あなたが確認できるものがいくつか存在します。
 
-- あなたが使いたい `@Component` の `directives` 配列の中に含める。(ionic-angular のバージョンが RC0 の場合のみ)
-- あなたのセレクタに何らかのスペルミスがあるか。
-- あなたはセレクタを属性、要素、またはクラスとして正しく利用しているか。
-- あなたのセレクタが[正しい文法](http://learnangular2.com/components/)であるか:
-  - 属性セレクタの場合は `[attr]`
-  - 要素セレクタの場合は `element`
-  - クラスセレクタの場合は `.class`
+- Your selector doesn't have any misspellings.
+- You're using the selector correctly as an attribute, element or class.
+- Your selector has the proper syntax:
+  - `[attr]` if it's an attribute selector
+  - `element` if it's an element selector
+  - `.class` if it's a class selector
 
 以下に、属性セレクタの例を挙げます:
 
