@@ -115,7 +115,24 @@ export class LoginComponent {
 
 Both options provide the same navigation mechanism, just fitting different use cases.
 
-> A note on navigation with relative URLs: Currently, to support multiple navigation stacks, relative URLs are something not supported
+And we also can use navigate relative URLs by `ActivatedRoute` and `relativeTo`. 
+
+```typescript
+import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+
+@Component({
+  ...
+})
+export class LoginComponent {
+
+  constructor(private router: Router, private route: ActivatedRoute,){}
+
+  navigate(){
+    this.router.navigate(['/detail'], { relativeTo: this.route })
+  }
+}
+```
 
 ## Lazy loading routes
 
