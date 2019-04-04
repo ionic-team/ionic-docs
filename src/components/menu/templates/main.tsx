@@ -41,6 +41,9 @@ const items = {
     'Color Generator': '/docs/theming/color-generator',
     'Advanced': '/docs/theming/advanced',
   },
+  'Life Cycle': {
+    'Angular': '/docs/lifecycle/angular'
+  },
   'Navigation': {
     'Angular': '/docs/navigation/angular'
   },
