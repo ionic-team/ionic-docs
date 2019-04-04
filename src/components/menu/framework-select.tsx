@@ -1,12 +1,19 @@
 import { Angular, JavaScript, React, Vue } from '../../icons';
 import { useLocalStorage } from '../../local-storage';
 
+const frameworks = [
+  'Angular',
+  'JavaScript',
+  'React',
+  'Vue'
+];
+
 const [
   getFramework,
   setFramework
-] = useLocalStorage('ionic-docs:framework', 'Angular');
+] = useLocalStorage('ionic-docs:framework', frameworks[0]);
 
-const FrameworkIcons = {
+const frameworkIcons = {
   Angular,
   JavaScript,
   React,
@@ -14,7 +21,7 @@ const FrameworkIcons = {
 };
 
 const renderOption = (framework: string) => {
-  const Icon = FrameworkIcons[framework];
+  const Icon = frameworkIcons[framework];
   return (
     <div class="FrameworkSelect-framework">
       <Icon class="FrameworkSelect-icon"/>
@@ -26,7 +33,7 @@ const renderOption = (framework: string) => {
 export const FrameworkSelect = () => (
   <docs-select
     class="FrameworkSelect"
-    options={['Angular', 'JavaScript', 'React', 'Vue']}
+    options={frameworks}
     optionRenderer={renderOption}
     initializer={getFramework}
     onSelect={setFramework}/>
