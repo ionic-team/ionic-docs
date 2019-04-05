@@ -7,16 +7,18 @@ function getItem(key: string): string {
   }
 }
 
-function setItem(key: string, value: string): void {
+function setItem(key: string, value: string): string {
   try {
     localStorage.setItem(key, value);
+    return value;
   } catch (error) {
     console.warn(`Unable to set key "${key}" of localStorage:`, error);
+    return null;
   }
 }
 
 type LocalStorageGetter = () => string;
-type LocalStorageSetter = (value: string) => void;
+type LocalStorageSetter = (value: string) => string;
 
 export function useLocalStorage(key: string, defaultValue?: string): [
   LocalStorageGetter,
