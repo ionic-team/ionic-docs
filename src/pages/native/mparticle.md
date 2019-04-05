@@ -17,10 +17,22 @@ In `capacitor.config.json` add your key and secret
 ```json
 "plugins": {
     "CapacitorMparticleIntegration": {
-      "key": "my key",
-      "secret": "my secret"
+      "ios-key": "my iOS key",
+      "ios-secret": "my iOS secret",
+      "android-key": "my Android key",
+      "android-secret": "my Android secret"
     }
 }
+```
+
+In the javascript mParticle initialization code add `useNativeSdk: true`
+
+```
+window.mParticle = {
+  config: {
+    useNativeSdk: true
+  }
+};
 ```
 
 ## Register plugin for Android
