@@ -81,7 +81,7 @@ $ npm run watch-pages
 
 The Markdown in `src/pages` does not contain all of the Ionic documentation's content:
 
-- Paths matching `/docs/api/*` are built from the [Ionic](https://github.com/ionic-team/ionic) source code
+- Paths matching `/docs/api/*` are built from the [Ionic Framework](https://github.com/ionic-team/ionic) source code
 - Paths matching `/docs/native/*` are built from the [Ionic Native](https://github.com/ionic-team/ionic-native) source code
 - Paths matching `/docs/cli/commands/*` are built from the [Ionic CLI](https://github.com/ionic-team/ionic-cli) source code
 
@@ -97,6 +97,8 @@ If the issue you're reporting is a bug, please be sure it is an issue with the I
 - Expected behavior
 - OS and browser versions
 - If possible, a demo repo or CodePen/CodeSandbox
+
+> **Note**: Some [reference content](#reference-content) is pulled from other Ionic repos. In that case, please submit your issue on the docs repo with a link to the repo where the content lives.
 
 ---
 
