@@ -289,13 +289,18 @@ export namespace Components {
     'links'?: Link[];
   }
 
+  interface DocsTab {
+    'tab': string;
+  }
+  interface DocsTabAttributes extends StencilHTMLAttributes {
+    'tab'?: string;
+  }
+
   interface DocsTabs {
-    'initial': string;
-    'tabs': string;
+    'initializer': (tabs: HTMLDocsTabElement[]) => HTMLDocsTabElement;
   }
   interface DocsTabsAttributes extends StencilHTMLAttributes {
-    'initial'?: string;
-    'tabs'?: string;
+    'initializer'?: (tabs: HTMLDocsTabElement[]) => HTMLDocsTabElement;
   }
 
   interface WistiaVideo {
@@ -345,6 +350,7 @@ declare global {
     'SmsForm': Components.SmsForm;
     'SteppedColorGenerator': Components.SteppedColorGenerator;
     'DocsTableOfContents': Components.DocsTableOfContents;
+    'DocsTab': Components.DocsTab;
     'DocsTabs': Components.DocsTabs;
     'WistiaVideo': Components.WistiaVideo;
   }
@@ -387,6 +393,7 @@ declare global {
     'sms-form': Components.SmsFormAttributes;
     'stepped-color-generator': Components.SteppedColorGeneratorAttributes;
     'docs-table-of-contents': Components.DocsTableOfContentsAttributes;
+    'docs-tab': Components.DocsTabAttributes;
     'docs-tabs': Components.DocsTabsAttributes;
     'wistia-video': Components.WistiaVideoAttributes;
   }
@@ -614,6 +621,12 @@ declare global {
     new (): HTMLDocsTableOfContentsElement;
   };
 
+  interface HTMLDocsTabElement extends Components.DocsTab, HTMLStencilElement {}
+  var HTMLDocsTabElement: {
+    prototype: HTMLDocsTabElement;
+    new (): HTMLDocsTabElement;
+  };
+
   interface HTMLDocsTabsElement extends Components.DocsTabs, HTMLStencilElement {}
   var HTMLDocsTabsElement: {
     prototype: HTMLDocsTabsElement;
@@ -664,6 +677,7 @@ declare global {
     'sms-form': HTMLSmsFormElement
     'stepped-color-generator': HTMLSteppedColorGeneratorElement
     'docs-table-of-contents': HTMLDocsTableOfContentsElement
+    'docs-tab': HTMLDocsTabElement
     'docs-tabs': HTMLDocsTabsElement
     'wistia-video': HTMLWistiaVideoElement
   }
@@ -706,6 +720,7 @@ declare global {
     'sms-form': HTMLSmsFormElement;
     'stepped-color-generator': HTMLSteppedColorGeneratorElement;
     'docs-table-of-contents': HTMLDocsTableOfContentsElement;
+    'docs-tab': HTMLDocsTabElement;
     'docs-tabs': HTMLDocsTabsElement;
     'wistia-video': HTMLWistiaVideoElement;
   }

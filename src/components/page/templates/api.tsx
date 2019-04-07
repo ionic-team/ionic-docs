@@ -71,7 +71,8 @@ export default (props) => {
 
 const renderUsage = (usage = {}, path: string) => {
   const keys = Object.keys(usage);
-  const initialTab = getFramework() ? getFramework().toLowerCase() : null;
+  const framework = getFramework().toLowerCase();
+  const getInitialTab = (tabs) => tabs.find(tab => tab.getAttribute('tab') === framework);
 
   if (!keys.length) {
     return null;
@@ -89,9 +90,8 @@ const renderUsage = (usage = {}, path: string) => {
          * be set during componentWillLoad.
          */
         key={path}
-        tabs={keys.join(',')}
-        initial={initialTab}>
-          { keys.map(key => <div slot={key} innerHTML={usage[key]}/>) }
+        initializer={getInitialTab}>
+          { keys.map(key => <docs-tab tab={key} innerHTML={usage[key]}/>) }
       </docs-tabs>
     </section>
   );
