@@ -16,11 +16,11 @@ export class DocsTabs {
   }
 
   select(tab: HTMLDocsTabElement) {
-    if (this.selected != null) {
-      this.selected.removeAttribute('selected');
-    }
-
     if (tab != null) {
+      if (this.selected != null) {
+        this.selected.removeAttribute('selected');
+      }
+
       this.selected = tab;
       this.selected.setAttribute('selected', '');
     }
