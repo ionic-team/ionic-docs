@@ -71,7 +71,8 @@ export default (props) => {
 
 const renderUsage = (usage = {}, path: string) => {
   const keys = Object.keys(usage);
-  const framework = getFramework().toLowerCase();
+  const frameworkPref = getFramework();
+  const framework = frameworkPref ? frameworkPref.toLowerCase() : null;
   const getInitialTab = (tabs) => tabs.find(tab => tab.getAttribute('tab') === framework);
 
   if (!keys.length) {
