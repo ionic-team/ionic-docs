@@ -41,6 +41,9 @@ const items = {
     'カラージェネレーター': '/docs/theming/color-generator',
     '高度なカスタマイズ': '/docs/theming/advanced',
   },
+  'Life Cycle': {
+    'Angular': '/docs/lifecycle/angular'
+  },
   'ナビゲーション': {
     'Angular': '/docs/navigation/angular'
   },
