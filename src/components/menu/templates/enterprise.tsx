@@ -5,6 +5,7 @@ const items = {
   'Ionic Enterprise': '/docs/enterprise',
   'Enterprise Plugins': {
     'Identity Vault': '/docs/enterprise/identity-vault',
+    'Apple Wallet': '/docs/enterprise/apple-wallet',
     'mParticle': '/docs/enterprise/mparticle',
     'Native Core': '/docs/enterprise/native-core',
     'Active Directory': 'https://ionicframework.com/integrations/ms-activedirectory-ms-adal',
