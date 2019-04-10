@@ -34,16 +34,16 @@ You can import types from `@ionic-enterprise/apple-wallet/types` and `AppleWalle
 ```typescript
 ...
 import { Platform } from '@ionic/angular';
-import { Window } from 'plugins/@ionic-enterprise/apple-wallet/types';
+import { AppleWallet } from '@ionic-enterprise/apple-wallet';
 ...
 
 // declare the global
-declare const AppleWallet: Window['AppleWallet'];
+declare const AppleWallet: AppleWallet;
 
 class MyService {
   constructor(private platform: Platform) { }
 
-  async getPlugin(): Promise<Window['AppleWallet']> {
+  async getPlugin(): Promise<AppleWallet> {
     await this.platform.ready();
     return AppleWallet;
   }
@@ -117,7 +117,7 @@ This method provides the data needed to create a request to add your payment pas
 
 ###  AddPassOptions
 
-**AddPassOptions**: 
+**AddPassOptions**:
 
 The options interface to pass to the [addPaymentPass](#applewallet.addpaymentpass) function.
 
@@ -188,7 +188,7 @@ ___
 
 ###  AddPassResponse
 
-**AddPassResponse**: 
+**AddPassResponse**:
 
 The response from adding the pass with the pass data
 
@@ -252,7 +252,7 @@ ___
 
 ###  AppleWallet
 
-**AppleWallet**: 
+**AppleWallet**:
 
 <a id="applewallet.certificate_0"></a>
 
@@ -348,7 +348,7 @@ ___
 
 ###  CardData
 
-**CardData**: 
+**CardData**:
 
 <a id="carddata.cardholdername"></a>
 
@@ -401,7 +401,7 @@ ___
 
 ###  Headers
 
-**Headers**: 
+**Headers**:
 
 An object with the headers required for the server request.
 
@@ -419,7 +419,7 @@ ___
 
 ###  Window
 
-**Window**: 
+**Window**:
 
 <a id="window.applewallet"></a>
 
@@ -440,4 +440,3 @@ ___
 **Ƭ ActivationState**: *"activated" \| "activating" \| "suspended" \| "deactivated" \| "requires-activation" \| "unknown"*
 
 ___
-
