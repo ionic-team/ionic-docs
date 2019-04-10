@@ -3,6 +3,7 @@ export default (props) => {
   const headings = [...page.headings];
 
   const pluginId = page.path.split('/')[3];
+  const otherVersions = page.otherVersions || [];
 
   return (
     <article>
@@ -14,7 +15,7 @@ export default (props) => {
       <h2>Other Versions</h2>
       <ul>
       <li><stencil-route-link url={`/docs/enterprise/${pluginId}`}>Latest</stencil-route-link></li>
-      {page.otherVersions.filter(v => v !== page.minor).map(version => (
+      {otherVersions.filter(v => v !== page.minor).map(version => (
         <li><stencil-route-link url={`/docs/enterprise/${pluginId}/${version}/${pluginId}`}>{version}</stencil-route-link></li>
       ))}
     </ul>
