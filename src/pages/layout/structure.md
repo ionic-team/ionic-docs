@@ -79,20 +79,13 @@ A layout consisting of horizontal [tabs](/docs/api/tabs) can be used to let the 
 ```html
 <ion-app>
   <ion-tabs>
-    <ion-tab tab="home">
-      <h1>Home Content</h1>
-    </ion-tab>
-    <ion-tab tab="settings">
-      <h1>Settings Content</h1>
-    </ion-tab>
-
     <ion-tab-bar slot="bottom">
       <ion-tab-button tab="home">
         <ion-label>Home</ion-label>
         <ion-icon name="home"></ion-icon>
       </ion-tab-button>
-      <ion-tab-button tab="settings">
-        <ion-label>Settings</ion-label>
+      <ion-tab-button tab="login">
+        <ion-label>Babylove</ion-label>
         <ion-icon name="settings"></ion-icon>
       </ion-tab-button>
     </ion-tab-bar>
