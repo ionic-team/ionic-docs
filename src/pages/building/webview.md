@@ -16,7 +16,7 @@ Ionicアプリは[Web技術](/docs/faq/glossary#web-standards)をつかって構
 
 最近のWeb Viewは、カメラ、センサー、GPS、スピーカー、Bluetoothなどのハードウェア機能のための組み込み<a href="https://whatwebcando.today" target="_blank">HTML5 APIs</a>を多数提供していますが、プラットフォーム固有のハードウェアAPIにアクセスする必要がある場合もあります。Ionicアプリでは、通常はJavaScript APIを利用してネイティブプラグインにアクセスしてブリッジする形でハードウェアAPIを利用することができます。
 
-![webview architecture](/docs/assets/img/webview-architecture.png)
+![webview architecture](/docs/assets/img/building/webview-architecture.png)
 
 Ionic Web Viewプラグインは、最新のJavaScriptアプリケーションに特化しています。iOSとAndroidの両方で、アプリファイルは常に `http://` プロトコルを使ってデバイス上で動作する最適化されたHTTPサーバーしてホストされます。
 

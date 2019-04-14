@@ -5,6 +5,7 @@ import cliTemplate from './templates/cli';
 import nativeTemplate from './templates/native';
 import appflowTemplate from './templates/appflow';
 import mainTemplate from './templates/main';
+import enterpriseTemplate from './templates/enterprise';
 
 @Component({
   tag: 'docs-menu',
@@ -27,6 +28,7 @@ export class DocsMenu {
         <stencil-route url="/docs/cli" routeRender={cliTemplate}/>
         <stencil-route url="/docs/native" routeRender={nativeTemplate}/>
         <stencil-route url="/docs/appflow" routeRender={appflowTemplate}/>
+        <stencil-route url="/docs/enterprise" routeRender={enterpriseTemplate}/>
         <stencil-route routeRender={mainTemplate}/>
       </stencil-route-switch>
     ];
