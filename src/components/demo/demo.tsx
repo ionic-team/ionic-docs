@@ -1,4 +1,4 @@
-import { Component, Listen, Prop, State } from '@stencil/core';
+import { Component, Event, EventEmitter, Listen, Prop, State } from '@stencil/core';
 
 @Component({
   tag: 'docs-demo',
@@ -8,6 +8,7 @@ export class DocsDemo {
   @Prop() url: string;
   @Prop() source: string;
   @State() ionicMode = 'ios';
+  @Event() demoModeChange: EventEmitter;
 
   iframe: HTMLIFrameElement;
   iframeLoaded = false;
@@ -27,6 +28,7 @@ export class DocsDemo {
   }
 
   onIframeLoad = () => {
+    this.demoModeChange.emit({ mode: this.ionicMode });
     this.messageQueue.forEach(this.postMessage.bind(this));
     this.messageQueue = [];
     this.iframeLoaded = true;
