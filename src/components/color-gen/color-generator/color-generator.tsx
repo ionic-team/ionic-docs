@@ -52,6 +52,11 @@ export class ColorGenerator {
     }
   }
 
+  @Listen('window:demoModeChange')
+  onModeChanged() {
+    this.demoMessage.emit({ cssText: this.cssText });
+  }
+
   componentWillLoad() {
     this.colors = convertCssToColors(this.cssText);
   }
