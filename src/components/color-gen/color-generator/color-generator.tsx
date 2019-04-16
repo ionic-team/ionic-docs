@@ -59,6 +59,24 @@ export class ColorGenerator {
 
   componentWillLoad() {
     this.colors = convertCssToColors(this.cssText);
+    const getParamColor = (name) => {
+      name = name.replace(/[\[\]]/g, '\\$&');
+      const regex = new RegExp('[?&]' + name + '(=(#[^&]*)|&|#|$)');
+      const results = regex.exec(window.location.href);
+      if (!results || !results[2]) return null;
+      return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    };
+
+    this.colors.forEach(c => {
+      if (getParamColor(c.name.toLocaleLowerCase())) {
+        this.onColorChange({
+          detail: {
+            property: c.property,
+            value: getParamColor(c.name.toLocaleLowerCase())
+          }
+        });
+      }
+    });
   }
 
   componentDidLoad() {
