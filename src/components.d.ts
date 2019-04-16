@@ -152,6 +152,7 @@ export namespace Components {
     'url': string;
   }
   interface DocsDemoAttributes extends StencilHTMLAttributes {
+    'onDemoModeChange'?: (event: CustomEvent) => void;
     'source'?: string;
     'url'?: string;
   }
