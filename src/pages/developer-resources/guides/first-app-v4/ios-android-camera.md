@@ -27,7 +27,7 @@ Afterwards, open a terminal and navigate to your Ionic project. Execute the foll
 $ ionic serve
 ```
 
-In DevApp, you should now see the app appear. If it doesn't, or you have any issues throughout creating this app, [see here](https://ionicframework.com/docs/pro/devapp/).
+In DevApp, you should now see the app appear. If it doesn't, or you have any issues throughout creating this app, [see here](https://ionicframework.com/docs/appflow/devapp/).
 
 Much better! Now we can add the camera functionality. By the way, you can find reference code for this [on GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4).
 
@@ -47,25 +47,36 @@ Back in `tab2.page.html`, add the following:
 
 Save the file and watch - a camera button appears! Tap on it and notice that it doesn’t do anything. Let’s fix that next.
 
+## Add Cordova iOS and Android Platforms
+
+Ionic leverages the open source [Cordova project](https://cordova.apache.org/docs/en/latest/guide/overview/) to provide native hardware support. We begin by adding the iOS and Android _platforms_ then will add specific _plugins_ like the Camera afterwards:
+
+```shell
+$ ionic cordova platform add ios
+$ ionic cordova platform add android
+```
+
+These commands will create a `config.xml` file, which is used to define Cordova iOS and Android settings. Cordova reads this file and applies each setting as it builds each native app binary.
+
 ## Add the Camera Dependencies via the CLI
 
 In order to use the Camera, we need to bring in its JavaScript and native library dependencies. Back over in your Terminal window, run the following command, which adds the JavaScript library to the project, thus exposing the Camera API in TypeScript code: 
 
 ```shell
-$ npm install --save @ionic-native/camera@beta
+$ npm install @ionic-native/camera
 ```
 
 In `package.json`, you’ll notice a new JavaScript dependency has been added, with a version number similar to the following:
 
-`"@ionic-native/camera": "^5.0.0-beta.23"`
+`"@ionic-native/camera": "^5.4.0"`
 
-Next, run this command to add the native iOS and Android code, effectively allowing the Camera to work on a mobile device. For more info on how this works, read up on [Cordova](https://cordova.apache.org/docs/en/latest/guide/overview/) and [Ionic Native](https://beta.ionicframework.com/docs/native).
+Next, run this command to add the native iOS and Android code, effectively allowing the Camera to work on a mobile device. For more info on how this works, read up on [Cordova](https://cordova.apache.org/docs/en/latest/guide/overview/) and [Ionic Native](https://ionicframework.com/docs/native).
 
 ```shell
 $ ionic cordova plugin add cordova-plugin-camera
 ```
 
-A `config.xml` file has been created, with an entry for the native camera code:
+The `config.xml` file is now updated with an entry similar to the following for the native camera code:
 
 ```xml
 <plugin name="cordova-plugin-camera" spec="^4.0.3" />
@@ -159,14 +170,7 @@ Take notice: there’s no mention of iOS or Android! This is the awesome power o
 
 Save this file then tap the Camera button in DevApp. Voila! The camera should open on your device. Once a photo has been taken, it displays on the Photo Gallery page.
 
-Eventually, you’ll likely want to build an iOS or Android version of your app locally. To prepare for this, add both platforms:
-
-```shell
-$ ionic cordova platform add ios
-$ ionic cordova platform add android 
-```
-
-Finally, back up your changes to Ionic Pro:
+Finally, back up your changes to Ionic Appflow:
 
 ```shell
 git add .
