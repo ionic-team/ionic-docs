@@ -27,6 +27,8 @@ You'll then see a form that allows you to create two types of environment variab
 * <b>Secrets</b> - These values are encypted and only available at build time. Once you save a secret, *you will be unable to edit or see it again*.
 * <b>Variables</b> - These values are available at build time. Variables are visible and editable.
 
+Let's create a new Environment called "Development". For this environment, create a variable named `BUILD_ENV` with the value `development`. This variable will allow us to customize the way our builds are configured.
+
 ![New Environment Form](/docs/assets/img/appflow/gif-new-environment.gif)
 
 ## Add the Environment to an Automation
