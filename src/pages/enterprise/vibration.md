@@ -50,48 +50,6 @@ this.vibration.vibrate([2000,1000,2000]);
 this.vibration.vibrate(0);
 ```
 
-<a id="vibration.install"></a>
-
-### `<Static>` install
-
-**● install**: *`string`*
-
-___
-<a id="vibration.platforms"></a>
-
-### `<Static>` platforms
-
-**● platforms**: *`string`[]*
-
-___
-<a id="vibration.plugin"></a>
-
-### `<Static>` plugin
-
-**● plugin**: *`string`*
-
-___
-<a id="vibration.pluginname"></a>
-
-### `<Static>` pluginName
-
-**● pluginName**: *`string`*
-
-___
-<a id="vibration.pluginref"></a>
-
-### `<Static>` pluginRef
-
-**● pluginRef**: *`string`*
-
-___
-<a id="vibration.repo"></a>
-
-### `<Static>` repo
-
-**● repo**: *`string`*
-
-___
 <a id="vibration.vibrate"></a>
 
 ###  vibrate
@@ -107,72 +65,6 @@ Vibrates the device for given amount of time.
 | time | `number` \| `number`[] |  Milliseconds to vibrate the device. If passed an array of numbers, it will define a vibration pattern. Pass 0 to stop any vibration immediately. |
 
 **Returns:** `void`
-
-___
-<a id="vibration.getplugin"></a>
-
-### `<Static>` getPlugin
-
-▸ **getPlugin**(): `any`
-
-Returns the original plugin object
-
-**Returns:** `any`
-
-___
-<a id="vibration.getplugininstallname"></a>
-
-### `<Static>` getPluginInstallName
-
-▸ **getPluginInstallName**(): `string`
-
-Returns the plugin's install name
-
-**Returns:** `string`
-
-___
-<a id="vibration.getpluginname"></a>
-
-### `<Static>` getPluginName
-
-▸ **getPluginName**(): `string`
-
-Returns the plugin's name
-
-**Returns:** `string`
-
-___
-<a id="vibration.getpluginref"></a>
-
-### `<Static>` getPluginRef
-
-▸ **getPluginRef**(): `string`
-
-Returns the plugin's reference
-
-**Returns:** `string`
-
-___
-<a id="vibration.getsupportedplatforms"></a>
-
-### `<Static>` getSupportedPlatforms
-
-▸ **getSupportedPlatforms**(): `string`[]
-
-Returns the plugin's supported platforms
-
-**Returns:** `string`[]
-
-___
-<a id="vibration.installed"></a>
-
-### `<Static>` installed
-
-▸ **installed**(): `boolean`
-
-Returns a boolean that indicates whether the plugin is installed
-
-**Returns:** `boolean`
 
 ___
 

@@ -218,8 +218,6 @@ ___
 
 *__description__*: Take a photo or capture video.
 
-Requires the Cordova plugin: `cordova-plugin-camera`. For more info, please see the [Cordova Camera Plugin Docs](https://github.com/apache/cordova-plugin-camera).
-
 \[Warning\] Since IOS 10 the camera requires permissions to be placed in your config.xml add
 
 ```xml
@@ -384,48 +382,6 @@ Convenience constant
  ARROW_UP: `number`
 
 ___
-<a id="camera.install"></a>
-
-### `<Static>` install
-
-**● install**: *`string`*
-
-___
-<a id="camera.platforms"></a>
-
-### `<Static>` platforms
-
-**● platforms**: *`string`[]*
-
-___
-<a id="camera.plugin"></a>
-
-### `<Static>` plugin
-
-**● plugin**: *`string`*
-
-___
-<a id="camera.pluginname"></a>
-
-### `<Static>` pluginName
-
-**● pluginName**: *`string`*
-
-___
-<a id="camera.pluginref"></a>
-
-### `<Static>` pluginRef
-
-**● pluginRef**: *`string`*
-
-___
-<a id="camera.repo"></a>
-
-### `<Static>` repo
-
-**● repo**: *`string`*
-
-___
 <a id="camera.cleanup"></a>
 
 ###  cleanup
@@ -453,72 +409,6 @@ Take a picture or video, or load one from the library.
 
 **Returns:** `Promise`<`any`>
 Returns a Promise that resolves with Base64 encoding of the image data, or the image file URI, depending on cameraOptions, otherwise rejects with an error.
-
-___
-<a id="camera.getplugin"></a>
-
-### `<Static>` getPlugin
-
-▸ **getPlugin**(): `any`
-
-Returns the original plugin object
-
-**Returns:** `any`
-
-___
-<a id="camera.getplugininstallname"></a>
-
-### `<Static>` getPluginInstallName
-
-▸ **getPluginInstallName**(): `string`
-
-Returns the plugin's install name
-
-**Returns:** `string`
-
-___
-<a id="camera.getpluginname"></a>
-
-### `<Static>` getPluginName
-
-▸ **getPluginName**(): `string`
-
-Returns the plugin's name
-
-**Returns:** `string`
-
-___
-<a id="camera.getpluginref"></a>
-
-### `<Static>` getPluginRef
-
-▸ **getPluginRef**(): `string`
-
-Returns the plugin's reference
-
-**Returns:** `string`
-
-___
-<a id="camera.getsupportedplatforms"></a>
-
-### `<Static>` getSupportedPlatforms
-
-▸ **getSupportedPlatforms**(): `string`[]
-
-Returns the plugin's supported platforms
-
-**Returns:** `string`[]
-
-___
-<a id="camera.installed"></a>
-
-### `<Static>` installed
-
-▸ **installed**(): `boolean`
-
-Returns a boolean that indicates whether the plugin is installed
-
-**Returns:** `boolean`
 
 ___
 

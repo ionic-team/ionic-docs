@@ -27,8 +27,6 @@ minor: 3.0.X
 
 *__description__*: Cordova plugin to set/lock the screen orientation in a common way.
 
-Requires Cordova plugin: `cordova-plugin-screen-orientation`. For more info, please see the [Screen Orientation plugin docs](https://github.com/apache/cordova-plugin-screen-orientation).
-
 *__usage__*:
  ```typescript
 import { ScreenOrientation } from '@ionic-enterprise/screen-orientation/ngx';
@@ -119,48 +117,6 @@ ___
 Get the current orientation of the device.
 
 ___
-<a id="screenorientation.install"></a>
-
-### `<Static>` install
-
-**● install**: *`string`*
-
-___
-<a id="screenorientation.platforms"></a>
-
-### `<Static>` platforms
-
-**● platforms**: *`string`[]*
-
-___
-<a id="screenorientation.plugin"></a>
-
-### `<Static>` plugin
-
-**● plugin**: *`string`*
-
-___
-<a id="screenorientation.pluginname"></a>
-
-### `<Static>` pluginName
-
-**● pluginName**: *`string`*
-
-___
-<a id="screenorientation.pluginref"></a>
-
-### `<Static>` pluginRef
-
-**● pluginRef**: *`string`*
-
-___
-<a id="screenorientation.repo"></a>
-
-### `<Static>` repo
-
-**● repo**: *`string`*
-
-___
 <a id="screenorientation.lock"></a>
 
 ###  lock
@@ -198,72 +154,6 @@ ___
 Unlock and allow all orientations.
 
 **Returns:** `void`
-
-___
-<a id="screenorientation.getplugin"></a>
-
-### `<Static>` getPlugin
-
-▸ **getPlugin**(): `any`
-
-Returns the original plugin object
-
-**Returns:** `any`
-
-___
-<a id="screenorientation.getplugininstallname"></a>
-
-### `<Static>` getPluginInstallName
-
-▸ **getPluginInstallName**(): `string`
-
-Returns the plugin's install name
-
-**Returns:** `string`
-
-___
-<a id="screenorientation.getpluginname"></a>
-
-### `<Static>` getPluginName
-
-▸ **getPluginName**(): `string`
-
-Returns the plugin's name
-
-**Returns:** `string`
-
-___
-<a id="screenorientation.getpluginref"></a>
-
-### `<Static>` getPluginRef
-
-▸ **getPluginRef**(): `string`
-
-Returns the plugin's reference
-
-**Returns:** `string`
-
-___
-<a id="screenorientation.getsupportedplatforms"></a>
-
-### `<Static>` getSupportedPlatforms
-
-▸ **getSupportedPlatforms**(): `string`[]
-
-Returns the plugin's supported platforms
-
-**Returns:** `string`[]
-
-___
-<a id="screenorientation.installed"></a>
-
-### `<Static>` installed
-
-▸ **installed**(): `boolean`
-
-Returns a boolean that indicates whether the plugin is installed
-
-**Returns:** `boolean`
 
 ___
 

@@ -96,7 +96,7 @@ ___
 
 *__name__*: Network
 
-*__description__*: Requires Cordova plugin: cordova-plugin-network-information. For more info, please see the [Network plugin docs](https://github.com/apache/cordova-plugin-network-information).
+*__description__*: 
 
 *__usage__*:
  ```typescript
@@ -183,48 +183,6 @@ Connection type
 *__returns__*: 
 
 ___
-<a id="network.install"></a>
-
-### `<Static>` install
-
-**● install**: *`string`*
-
-___
-<a id="network.platforms"></a>
-
-### `<Static>` platforms
-
-**● platforms**: *`string`[]*
-
-___
-<a id="network.plugin"></a>
-
-### `<Static>` plugin
-
-**● plugin**: *`string`*
-
-___
-<a id="network.pluginname"></a>
-
-### `<Static>` pluginName
-
-**● pluginName**: *`string`*
-
-___
-<a id="network.pluginref"></a>
-
-### `<Static>` pluginRef
-
-**● pluginRef**: *`string`*
-
-___
-<a id="network.repo"></a>
-
-### `<Static>` repo
-
-**● repo**: *`string`*
-
-___
 <a id="network.onconnect"></a>
 
 ###  onConnect
@@ -258,72 +216,6 @@ ___
 Returns an observable to watch connection changes
 
 **Returns:** `Observable`<`any`>
-
-___
-<a id="network.getplugin"></a>
-
-### `<Static>` getPlugin
-
-▸ **getPlugin**(): `any`
-
-Returns the original plugin object
-
-**Returns:** `any`
-
-___
-<a id="network.getplugininstallname"></a>
-
-### `<Static>` getPluginInstallName
-
-▸ **getPluginInstallName**(): `string`
-
-Returns the plugin's install name
-
-**Returns:** `string`
-
-___
-<a id="network.getpluginname"></a>
-
-### `<Static>` getPluginName
-
-▸ **getPluginName**(): `string`
-
-Returns the plugin's name
-
-**Returns:** `string`
-
-___
-<a id="network.getpluginref"></a>
-
-### `<Static>` getPluginRef
-
-▸ **getPluginRef**(): `string`
-
-Returns the plugin's reference
-
-**Returns:** `string`
-
-___
-<a id="network.getsupportedplatforms"></a>
-
-### `<Static>` getSupportedPlatforms
-
-▸ **getSupportedPlatforms**(): `string`[]
-
-Returns the plugin's supported platforms
-
-**Returns:** `string`[]
-
-___
-<a id="network.installed"></a>
-
-### `<Static>` installed
-
-▸ **installed**(): `boolean`
-
-Returns a boolean that indicates whether the plugin is installed
-
-**Returns:** `boolean`
 
 ___
 

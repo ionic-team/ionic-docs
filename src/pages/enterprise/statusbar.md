@@ -27,8 +27,6 @@ minor: 2.4.X
 
 *__description__*: Manage the appearance of the native status bar.
 
-Requires Cordova plugin: `cordova-plugin-statusbar`. For more info, please see the [StatusBar plugin docs](https://github.com/apache/cordova-plugin-statusbar).
-
 *__usage__*:
  ```typescript
 import { StatusBar } from '@ionic-enterprise/statusbar/ngx';
@@ -51,48 +49,6 @@ this.statusBar.backgroundColorByHexString('#ffffff');
 **● isVisible**: *`boolean`*
 
 Whether the StatusBar is currently visible or not.
-
-___
-<a id="statusbar.install"></a>
-
-### `<Static>` install
-
-**● install**: *`string`*
-
-___
-<a id="statusbar.platforms"></a>
-
-### `<Static>` platforms
-
-**● platforms**: *`string`[]*
-
-___
-<a id="statusbar.plugin"></a>
-
-### `<Static>` plugin
-
-**● plugin**: *`string`*
-
-___
-<a id="statusbar.pluginname"></a>
-
-### `<Static>` pluginName
-
-**● pluginName**: *`string`*
-
-___
-<a id="statusbar.pluginref"></a>
-
-### `<Static>` pluginRef
-
-**● pluginRef**: *`string`*
-
-___
-<a id="statusbar.repo"></a>
-
-### `<Static>` repo
-
-**● repo**: *`string`*
 
 ___
 <a id="statusbar.backgroundcolorbyhexstring"></a>
@@ -214,72 +170,6 @@ ___
 Use the lightContent statusbar (light text, for dark backgrounds).
 
 **Returns:** `void`
-
-___
-<a id="statusbar.getplugin"></a>
-
-### `<Static>` getPlugin
-
-▸ **getPlugin**(): `any`
-
-Returns the original plugin object
-
-**Returns:** `any`
-
-___
-<a id="statusbar.getplugininstallname"></a>
-
-### `<Static>` getPluginInstallName
-
-▸ **getPluginInstallName**(): `string`
-
-Returns the plugin's install name
-
-**Returns:** `string`
-
-___
-<a id="statusbar.getpluginname"></a>
-
-### `<Static>` getPluginName
-
-▸ **getPluginName**(): `string`
-
-Returns the plugin's name
-
-**Returns:** `string`
-
-___
-<a id="statusbar.getpluginref"></a>
-
-### `<Static>` getPluginRef
-
-▸ **getPluginRef**(): `string`
-
-Returns the plugin's reference
-
-**Returns:** `string`
-
-___
-<a id="statusbar.getsupportedplatforms"></a>
-
-### `<Static>` getSupportedPlatforms
-
-▸ **getSupportedPlatforms**(): `string`[]
-
-Returns the plugin's supported platforms
-
-**Returns:** `string`[]
-
-___
-<a id="statusbar.installed"></a>
-
-### `<Static>` installed
-
-▸ **installed**(): `boolean`
-
-Returns a boolean that indicates whether the plugin is installed
-
-**Returns:** `boolean`
 
 ___
 
