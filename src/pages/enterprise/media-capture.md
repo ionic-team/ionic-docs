@@ -37,8 +37,6 @@ minor: 3.0.X
 
 *__description__*: This plugin provides access to the device's audio, image, and video capture capabilities.
 
-Requires Cordova plugin: `cordova-plugin-media-capture`. For more info, please see the [Media Capture plugin docs](https://github.com/apache/cordova-plugin-media-capture).
-
 *__usage__*:
  ```typescript
 import { MediaCapture, MediaFile, CaptureError, CaptureImageOptions } from '@ionic-enterprise/media-capture/ngx';
@@ -89,48 +87,6 @@ ___
 The recording video resolutions and formats supported by the device.
 
 *__returns__*: 
-
-___
-<a id="mediacapture.install"></a>
-
-### `<Static>` install
-
-**● install**: *`string`*
-
-___
-<a id="mediacapture.platforms"></a>
-
-### `<Static>` platforms
-
-**● platforms**: *`string`[]*
-
-___
-<a id="mediacapture.plugin"></a>
-
-### `<Static>` plugin
-
-**● plugin**: *`string`*
-
-___
-<a id="mediacapture.pluginname"></a>
-
-### `<Static>` pluginName
-
-**● pluginName**: *`string`*
-
-___
-<a id="mediacapture.pluginref"></a>
-
-### `<Static>` pluginRef
-
-**● pluginRef**: *`string`*
-
-___
-<a id="mediacapture.repo"></a>
-
-### `<Static>` repo
-
-**● repo**: *`string`*
 
 ___
 <a id="mediacapture.captureaudio"></a>
@@ -204,72 +160,6 @@ ___
 is fired if the capture call is successful
 
 **Returns:** `Observable`<[MediaFile](#mediafile)[]>
-
-___
-<a id="mediacapture.getplugin"></a>
-
-### `<Static>` getPlugin
-
-▸ **getPlugin**(): `any`
-
-Returns the original plugin object
-
-**Returns:** `any`
-
-___
-<a id="mediacapture.getplugininstallname"></a>
-
-### `<Static>` getPluginInstallName
-
-▸ **getPluginInstallName**(): `string`
-
-Returns the plugin's install name
-
-**Returns:** `string`
-
-___
-<a id="mediacapture.getpluginname"></a>
-
-### `<Static>` getPluginName
-
-▸ **getPluginName**(): `string`
-
-Returns the plugin's name
-
-**Returns:** `string`
-
-___
-<a id="mediacapture.getpluginref"></a>
-
-### `<Static>` getPluginRef
-
-▸ **getPluginRef**(): `string`
-
-Returns the plugin's reference
-
-**Returns:** `string`
-
-___
-<a id="mediacapture.getsupportedplatforms"></a>
-
-### `<Static>` getSupportedPlatforms
-
-▸ **getSupportedPlatforms**(): `string`[]
-
-Returns the plugin's supported platforms
-
-**Returns:** `string`[]
-
-___
-<a id="mediacapture.installed"></a>
-
-### `<Static>` installed
-
-▸ **installed**(): `boolean`
-
-Returns a boolean that indicates whether the plugin is installed
-
-**Returns:** `boolean`
 
 ___
 

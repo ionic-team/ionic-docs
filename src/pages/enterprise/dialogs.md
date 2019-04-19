@@ -31,8 +31,6 @@ minor: 2.0.X
 
 *__description__*: This plugin gives you ability to access and customize the device native dialogs.
 
-Requires Cordova plugin: `cordova-plugin-dialogs`. For more info, please see the [Dialogs plugin docs](https://github.com/apache/cordova-plugin-dialogs).
-
 *__usage__*:
  ```typescript
 import { Dialogs } from '@ionic-enterprise/dialogs/ngx';
@@ -49,48 +47,6 @@ this.dialogs.alert('Hello world')
 
 *__interfaces__*: DialogsPromptCallback
 
-<a id="dialogs.install"></a>
-
-### `<Static>` install
-
-**● install**: *`string`*
-
-___
-<a id="dialogs.platforms"></a>
-
-### `<Static>` platforms
-
-**● platforms**: *`string`[]*
-
-___
-<a id="dialogs.plugin"></a>
-
-### `<Static>` plugin
-
-**● plugin**: *`string`*
-
-___
-<a id="dialogs.pluginname"></a>
-
-### `<Static>` pluginName
-
-**● pluginName**: *`string`*
-
-___
-<a id="dialogs.pluginref"></a>
-
-### `<Static>` pluginRef
-
-**● pluginRef**: *`string`*
-
-___
-<a id="dialogs.repo"></a>
-
-### `<Static>` repo
-
-**● repo**: *`string`*
-
-___
 <a id="dialogs.alert"></a>
 
 ###  alert
@@ -167,72 +123,6 @@ Displays a native dialog box that is more customizable than the browser's prompt
 
 **Returns:** `Promise`<[DialogsPromptCallback](#dialogspromptcallback)>
 Returns a promise that resolves an object with the button index clicked and the text entered
-
-___
-<a id="dialogs.getplugin"></a>
-
-### `<Static>` getPlugin
-
-▸ **getPlugin**(): `any`
-
-Returns the original plugin object
-
-**Returns:** `any`
-
-___
-<a id="dialogs.getplugininstallname"></a>
-
-### `<Static>` getPluginInstallName
-
-▸ **getPluginInstallName**(): `string`
-
-Returns the plugin's install name
-
-**Returns:** `string`
-
-___
-<a id="dialogs.getpluginname"></a>
-
-### `<Static>` getPluginName
-
-▸ **getPluginName**(): `string`
-
-Returns the plugin's name
-
-**Returns:** `string`
-
-___
-<a id="dialogs.getpluginref"></a>
-
-### `<Static>` getPluginRef
-
-▸ **getPluginRef**(): `string`
-
-Returns the plugin's reference
-
-**Returns:** `string`
-
-___
-<a id="dialogs.getsupportedplatforms"></a>
-
-### `<Static>` getSupportedPlatforms
-
-▸ **getSupportedPlatforms**(): `string`[]
-
-Returns the plugin's supported platforms
-
-**Returns:** `string`[]
-
-___
-<a id="dialogs.installed"></a>
-
-### `<Static>` installed
-
-▸ **installed**(): `boolean`
-
-Returns a boolean that indicates whether the plugin is installed
-
-**Returns:** `boolean`
 
 ___
 
