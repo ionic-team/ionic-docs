@@ -46,7 +46,7 @@ const renderInstallation = (pluginId: string) => {
       </h2>
       <command-line>
         <command-prompt>{`ionic enterprise register --key=YOURPRODUCTKEY`}</command-prompt>
-        <command-prompt>{`cordova plugin add @ionic-enterprise/${pluginId}`}</command-prompt>
+        <command-prompt>{`ionic cordova plugin add @ionic-enterprise/${pluginId}`}</command-prompt>
       </command-line>
     </section>
   );

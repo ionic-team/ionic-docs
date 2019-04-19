@@ -10,22 +10,8 @@ Ionic Filesystem
 
 This plugin presents a simple and intuitive interface for common filesytem operations such as reading/writing and listing the contents of directories.
 
-Installation and Usage
+Usage
 ----------------------
-
-Before attempting to use the plugin make sure you're using our enterprise version of the Cordova CLI. This will ensure that you can successfully install & restore your cordova project since the regular version of the CLI doesn't support scoped plugins well.
-
-```shell
-npm uninstall -g cordova
-npm install -g @ionic-enterprise/cordova
-```
-
-The Filesystem code and wrappers are all in the plugin.
-
-```shell
-ionic enterprise register --key=MY_PRODUCT_KEY
-ionic cordova plugin add @ionic-enterprise/filesystem
-```
 
 The Filesystem plugin ship with a native Angular & es2015+/Typescript wrappers as well as being available on window.
 

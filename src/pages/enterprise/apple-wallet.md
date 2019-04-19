@@ -14,18 +14,6 @@ This plugin provides support for adding credit/debit cards to Apple Wallet. It a
 
 > Adding payment passes requires a special entitlement issued by Apple. Your app must include this entitlement before you can use this class. For more information on requesting this entitlement, see the Card Issuers section at developer.apple.com/apple-pay/.
 
-Installation
-------------
-
-First make sure you're using the Ionic Enterprise version of the Cordova CLI. Then you can add the plugin to your project.
-
-```shell
-npm uninstall -g cordova
-npm install -g @ionic-enterprise/cordova
-ionic enterprise register // follow prompts to enter you product key
-ionic cordova plugin add @ionic-enterprise/apple-wallet
-```
-
 Usage
 -----
 
@@ -117,7 +105,7 @@ This method provides the data needed to create a request to add your payment pas
 
 ###  AddPassOptions
 
-**AddPassOptions**:
+**AddPassOptions**: 
 
 The options interface to pass to the [addPaymentPass](#applewallet.addpaymentpass) function.
 
@@ -188,7 +176,7 @@ ___
 
 ###  AddPassResponse
 
-**AddPassResponse**:
+**AddPassResponse**: 
 
 The response from adding the pass with the pass data
 
@@ -252,7 +240,7 @@ ___
 
 ###  AppleWallet
 
-**AppleWallet**:
+**AppleWallet**: 
 
 <a id="applewallet.certificate_0"></a>
 
@@ -348,7 +336,7 @@ ___
 
 ###  CardData
 
-**CardData**:
+**CardData**: 
 
 <a id="carddata.cardholdername"></a>
 
@@ -401,7 +389,7 @@ ___
 
 ###  Headers
 
-**Headers**:
+**Headers**: 
 
 An object with the headers required for the server request.
 
@@ -419,7 +407,7 @@ ___
 
 ###  Window
 
-**Window**:
+**Window**: 
 
 <a id="window.applewallet"></a>
 
@@ -440,3 +428,4 @@ ___
 **Ƭ ActivationState**: *"activated" \| "activating" \| "suspended" \| "deactivated" \| "requires-activation" \| "unknown"*
 
 ___
+
