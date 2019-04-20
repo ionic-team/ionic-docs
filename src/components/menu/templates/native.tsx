@@ -3,8 +3,7 @@ import plugins from '../data/native-plugins.json';
 export default () => <docs-nav items={items}/>;
 
 const items = {
-  'Enterprise': {
-    'Identity Vault': '/docs/enterprise/identity-vault',
+  'Enterprise Edition Plugins': {
     'Apple Wallet': '/docs/enterprise/apple-wallet',
     'Camera': '/docs/enterprise/camera',
     'Clipboard': '/docs/enterprise/clipboard',
@@ -12,6 +11,7 @@ const items = {
     'Dialogs': '/docs/enterprise/dialogs',
     'Filesystem': '/docs/enterprise/filesystem',
     'Geolocation': '/docs/enterprise/geolocation',
+    'Identity Vault': '/docs/enterprise/identity-vault',
     'Inappbrowser': '/docs/enterprise/inappbrowser',
     'Media': '/docs/enterprise/media',
     'Media Capture': '/docs/enterprise/media-capture',
@@ -24,5 +24,5 @@ const items = {
     'Active Directory': 'https://ionicframework.com/integrations/ms-activedirectory-ms-adal',
     'Offline Support': 'https://ionicframework.com/integrations/couchbase-lite'
   },
-  'Plugins': Object.entries(plugins).sort()
+  'Community Plugins': Object.entries(plugins).sort()
 };
