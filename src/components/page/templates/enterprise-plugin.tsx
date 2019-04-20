@@ -44,6 +44,17 @@ const renderInstallation = (pluginId: string) => {
       <h2 id="installation">
         <a href="#installation">Installation</a>
       </h2>
+      <p>
+        In order to use Ionic Enterprise Edition plugins you should make sure you're using the
+        Ionic Enterprise Cordova CLI as the regular version can have issues with scoped plugins.
+      </p>
+      <command-line>
+        <command-prompt>{'npm uninstall -g cordova'}</command-prompt>
+        <command-prompt>{'npm install -g @ionic-enterprise/cordova'}</command-prompt>
+      </command-line>
+      <p>
+        Once you've installed the Ionic Enterprise Cordova CLI you can install the plugin.
+      </p>
       <command-line>
         <command-prompt>{`ionic enterprise register --key=YOURPRODUCTKEY`}</command-prompt>
         <command-prompt>{`ionic cordova plugin add @ionic-enterprise/${pluginId}`}</command-prompt>

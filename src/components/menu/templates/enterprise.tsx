@@ -2,9 +2,7 @@
 export default () => <docs-nav items={items}/>;
 
 const items = {
-  'Ionic Enterprise': '/docs/enterprise',
-  'Enterprise Plugins': {
-    'Identity Vault': '/docs/enterprise/identity-vault',
+  'Enterprise Edition Plugins': {
     'Apple Wallet': '/docs/enterprise/apple-wallet',
     'Camera': '/docs/enterprise/camera',
     'Clipboard': '/docs/enterprise/clipboard',
@@ -12,6 +10,7 @@ const items = {
     'Dialogs': '/docs/enterprise/dialogs',
     'Filesystem': '/docs/enterprise/filesystem',
     'Geolocation': '/docs/enterprise/geolocation',
+    'Identity Vault': '/docs/enterprise/identity-vault',
     'Inappbrowser': '/docs/enterprise/inappbrowser',
     'Media': '/docs/enterprise/media',
     'Media Capture': '/docs/enterprise/media-capture',
