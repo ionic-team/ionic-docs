@@ -5,6 +5,7 @@ minor: 2.0.X
 template: enterprise-plugin
 otherVersions:
   - 2.0.X
+  - 3.0.X
 ---
 
 # Ionic Enterprise Identity Vault
@@ -19,18 +20,6 @@ Without Ionic Enterprise Identity Vault, Ionic developers have to resort to comb
 
 <iframe src="https://fast.wistia.net/embed/iframe/1drqkhh5sb" title="Wistia video player" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="640" height="360"></iframe>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
-
-## Installation and Usage
-
-The Vault comes with a native Cordova plugin and a JavaScript library complete with TypeScript types. Both need to be installed to use the Vault.
-
-### Installation
-
-<command-line>
-<command-prompt>ionic enterprise register --key=MY_PRODUCT_KEY</command-prompt>
-<command-prompt>npm install @ionic-enterprise/identity-vault</command-prompt>
-<command-prompt>ionic cordova plugin add @ionic-enterprise/cordova-plugin-identity-vault</command-prompt>
-</command-line>
 
 ### Implementation Video Walkthrough
 

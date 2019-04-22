@@ -1008,7 +1008,7 @@
     "platforms": [
       "Android"
     ],
-    "repo": "https://github.com/danielsogl/cordova-device-accounts",
+    "repo": "https://github.com/xUnholy/cordova-device-accounts",
     "cordovaPlugin": {
       "name": "cordova-device-accounts"
     }
