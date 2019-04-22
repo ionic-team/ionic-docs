@@ -63,6 +63,7 @@ const items = {
     'Runtime Errors': '/docs/faq/runtime',
     'Native Errors': '/docs/faq/native',
     'CORS Errors': '/docs/faq/cors',
+    'Security': '/docs/faq/security',
     'Developer Tips': '/docs/faq/tips',
     'Changelog': 'https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md'
   },
