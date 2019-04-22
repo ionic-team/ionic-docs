@@ -12,11 +12,11 @@ contributors:
 
 ## Sanitizing User Input
 
-For components such as `ion-alert` or `ion-refresher-content` users can pass in custom content. This custom content can be plain text, but it can also be HTML. As with any untrusted input, it is important to sanitize them before using them. In particular, using things like `innerHTML` without sanitization provides an attack vector for bad actors to input malicious content and potentially launch a [Cross Site Scripting attack (XSS)](<https://en.wikipedia.org/wiki/Cross-site_scripting>).
+For components such as `ion-alert` developers can allow for custom or user-provided content. This content can be plain text or HTML and should be considered untrusted. As with any untrusted input, it is important to sanitize it before doing anything else with it. In particular, using things like `innerHTML` without sanitization provides an attack vector for bad actors to input malicious content and potentially launch a [Cross Site Scripting attack (XSS)](<https://en.wikipedia.org/wiki/Cross-site_scripting>).
 
-Ionic comes built in with basic sanitization methods for these types of components, but for user-created components it is up to the developer to make sure all data is sanitized. Different frameworks have solutions for sanitizing user input, so developers should familiarize themselves with what each framework offers.
+Ionic comes built in with basic sanitization methods for the components it provides, but for user-created components it is up to the developer to make sure all data is sanitized. Different frameworks have different solutions for sanitizing user input, so developers should familiarize themselves with what their specific framework offers.
 
-For developers who are not using a framework, or whose framework does not provide the sanitization methods they need, we recommend using [sanitize-html](<https://www.npmjs.com/package/sanitize-html>). This package provides a simple HTML sanitizer that allows the developer to specify the exact tags and attributes that they want to allow in their application.
+For developers who are not using a framework, or for developers whose framework does not provide the sanitization methods they need, we recommend using [sanitize-html](<https://www.npmjs.com/package/sanitize-html>). This package provides a simple HTML sanitizer that allows the developer to specify the exact tags and attributes that they want to allow in their application.
 
 ### Angular
 
@@ -34,14 +34,14 @@ To learn more about the built-in protections that Angular provides, see the [Ang
 
 ### React
 
-React DOM escapes values embedded in JSX before rendering them. These values are converted to strings before being rendered. So doing the following would be safe:
+React DOM escapes values embedded in JSX before rendering them by converting them to strings. For example, the following would be safe as `name` is converted to a string before being rendered:
 
 ```jsx
 const name = values.name;
 const element = <h1>Hello, {name}!</h1>;
 ```
 
-However, this does not stop someone from injecting JavaScript into places such as the `href` of an anchor element. The following would potentially allow an XSS attack to occur:
+However, this does not stop someone from injecting JavaScript into places such as the `href` attribute of an anchor element. The following is unsafe and can potentially allow an XSS attack to occur:
 
 ```jsx
 const userInput = 'javascript:alert("Oh no!")';
