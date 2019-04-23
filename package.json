@@ -22,7 +22,10 @@
     "@ionic/docs": "^4.3.0",
     "@stencil/core": "^0.18.0",
     "@stencil/router": "^0.3.3",
-    "express": "^4.16.4"
+    "compression": "^1.7.4",
+    "express": "^4.16.4",
+    "helmet": "^3.16.0",
+    "throng": "^4.0.0"
   },
   "devDependencies": {
     "@types/prismjs": "^1.9.1",
