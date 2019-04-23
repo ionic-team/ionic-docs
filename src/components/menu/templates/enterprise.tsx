@@ -3,9 +3,11 @@ export default () => <docs-nav items={items}/>;
 
 const items = {
   'Enterprise Edition Plugins': {
+    'Overview': '/docs/enterprise',
     'Apple Wallet': '/docs/enterprise/apple-wallet',
     'Camera': '/docs/enterprise/camera',
     'Clipboard': '/docs/enterprise/clipboard',
+    'Couchbase Lite': 'https://ionicframework.com/integrations/couchbase-lite',
     'Device': '/docs/enterprise/device',
     'Dialogs': '/docs/enterprise/dialogs',
     'Filesystem': '/docs/enterprise/filesystem',

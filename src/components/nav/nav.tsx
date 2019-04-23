@@ -20,9 +20,13 @@ export class DocsNav {
   }
 
   toItem = (item, level) => {
-    const [, value] = item;
+    const [title , value] = item;
     switch (typeof value) {
       case 'string':
+        // Go ahead...git blame...I know you want too :-)
+        if (title === 'See All Enterprise Plugins') {
+         return <li style={{ 'font-style': 'italic' }} key={item}>{this.toLink(item)}</li>;
+        }
         return <li key={item}>{this.toLink(item)}</li>;
       case 'object':
         return <li key={item}>{this.toSection(item, level + 1)}</li>;
