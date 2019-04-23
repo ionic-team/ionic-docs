@@ -35,15 +35,6 @@ docs page.
 <command-prompt>ionic cordova add plugin @ionic-enterprise/plugin-name</command-prompt>
 </command-line>
 
-<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
-<script>
-hbspt.forms.create({
-  portalId: '3776657',
-  formId: 'eb86cfa5-91c9-45df-ae0d-182c85909ff0',
-  css: ''
-});
-</script>
-
 ## Comparison
 <div class="native-ee-pricing">
   <div class="table-wrap">
