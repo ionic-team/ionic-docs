@@ -21,7 +21,9 @@ const start = () => {
     res.sendFile(pathname, options, err => err && next());
   });
 
-  app.use(express.static(path.join(__dirname, 'www')));
+  app.use(express.static(path.join(__dirname, 'www'), {
+    maxAge: '2h'
+  }));
 
   app.use((_, res) => {
     res.status(404).sendFile(`${__dirname}/www/docs/index.html`);
