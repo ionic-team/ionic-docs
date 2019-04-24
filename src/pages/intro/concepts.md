@@ -15,11 +15,11 @@ Ionicアプリの開発に慣れていない人には、Ionicプロジェクト�
 Ionic Frameworkは、アプリケーションの構成要素として機能する、再利用可能なUIコンポーネントのライブラリです。Ionicのコンポーネントは、HTML、CSS、JavaScriptを利用した[Web標準](/docs/faq/glossary#web-standards)に基づいて構築されています。コンポーネントは事前に構築されていますが、高度にカスタマイズできるようになるように設計されており、アプリで各コンポーネントを独自に作成できるため、アプリごとにオリジナルの外観を持たせることができます。具体的には、Ionicコンポーネントは、アプリ全体で外観をグローバルに変更するように簡単にテーマを設定できます。外観のカスタマイズの詳細については、[Theming](/docs/theming/basics)を参照してください。
 
 
-## プラットフォームの継続性
+## プラットフォームの互換性
 
-プラットフォームの継続性は、アプリ開発者が複数のプラットフォームで共通したベースとなるコードを使用できるIonic Frameworkに組み込まれている機能です。すべてのIonicコンポーネントは、自動的にアプリケーションが実行されているプラ​​ットフォームに外観を合わせます。たとえば、iPhoneやiPadなどのAppleデバイスは、Apple独自の<a href="https://www.apple.com/ios" target="_blank">iOSデザイン</a>を使用します。同様に、Androidデバイスは、<a href="https://material.io/guidelines/" target="_blank">Material Design</a>と呼ばれるGoogleのデザインを使用します。
+プラットフォームの互換性は、アプリ開発者が複数のプラットフォームで共通したベースとなるコードを使用できるIonic Frameworkに組み込まれている機能です。すべてのIonicコンポーネントは、自動的にアプリケーションが実行されているプラ​​ットフォームに外観を合わせます。たとえば、iPhoneやiPadなどのAppleデバイスは、Apple独自の<a href="https://www.apple.com/ios" target="_blank">iOSデザイン</a>を使用します。同様に、Androidデバイスは、<a href="https://material.io/guidelines/" target="_blank">Material Design</a>と呼ばれるGoogleのデザインを使用します。
 
-プラットフォーム間で微妙なデザイン変更を行うことで、ユーザーに使い慣れたアプリのUXを提供します。AppleのApp StoreからダウンロードしたIonicアプリはiOSテーマを使用し、AndroidのPlay StoreからダウンロードしたIonicアプリはMaterial Designテーマを取得します。ブラウザからProgressive Web Apps（PWA）として表示アプリを表示する場合、IonicはデフォルトでMaterial Designテーマを使用します。さらに、特定のシナリオで使用するプラットフォームを決定することはすべて設定可能です。プラットフォームの継続性についてのさらなる情報は[Theming](/docs/theming/basics)をご覧ください。
+プラットフォーム間で微妙なデザイン変更を行うことで、ユーザーに使い慣れたアプリのUXを提供します。AppleのApp StoreからダウンロードしたIonicアプリはiOSテーマを使用し、AndroidのPlay StoreからダウンロードしたIonicアプリはMaterial Designテーマを取得します。ブラウザからProgressive Web Apps（PWA）として表示アプリを表示する場合、IonicはデフォルトでMaterial Designテーマを使用します。さらに、特定のシナリオで使用するプラットフォームを決定することはすべて設定可能です。プラットフォームの互換性についてのさらなる情報は[Theming](/docs/theming/basics)をご覧ください。
 
 
 ## ナビゲーション
