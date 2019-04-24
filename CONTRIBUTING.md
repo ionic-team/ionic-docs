@@ -51,6 +51,19 @@ At a high level, the production documentation works like this:
   - `demos/` - Self-contained demos, optionally presented by pages via `demoUrl` YAML frontmatter
   - `pages/` - Markdown content organized by route and uncommitted JSON representation of each page
   - `styles/` - Global and page-specific styles (non-component styles)
+  
+### Page Templates
+
+The [`docs-page`](https://github.com/ionic-team/ionic-docs/blob/master/src/components/page/page.tsx) component is responsible for loading and rendering page content. Page content is rendered using one of the templates exported [here](https://github.com/ionic-team/ionic-docs/blob/master/src/components/page/templates/index.ts). Pages can specify a template via the `template` key in their frontmatter, or the default template will be used.
+
+```tsx
+const Template = templates[page.template] || template.default;
+return <Template page={page}/>;
+```
+
+### Menu Templates
+
+The [`docs-menu`](https://github.com/ionic-team/ionic-docs/blob/master/src/components/menu/menu.tsx) component is responsible for rendering the side menu. The menu content differs by path and is specified in [per-section templates](https://github.com/ionic-team/ionic-docs/tree/master/src/components/menu/templates).
 
 ---
 
