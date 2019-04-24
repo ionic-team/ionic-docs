@@ -132,6 +132,7 @@ docs page.
 
 ## Plugin List
 - [Apple Wallet](/docs/enterprise/apple-wallet)
+- [Badge](/docs/enterprise/badge)
 - [Camera](/docs/enterprise/camera)
 - [Clipboard](/docs/enterprise/clipboard)
 - [Device](/docs/enterprise/device)
