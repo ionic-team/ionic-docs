@@ -7,35 +7,7 @@ Accelerate development with powerful solutions to common enterprise use cases - 
 Ionic Enterprise Edition includes a reliable set of Native APIs & functionality that you can use in your Ionic app,
 quality controlled and maintained by the Ionic Team.
 
-
-## Setup
-In order to provide the best experience you should make sure you're using the
-Ionic Enterprise Cordova CLI as the regular version can have issues with scoped plugins.
-
-<command-line>
-<command-prompt>npm uninstall -g cordova</command-prompt>
-<command-prompt>npm install -g @ionic-enterprise/cordova</command-prompt>
-</command-line>
-
-## Register Your Product Key
-If you already have an app you can simply register the product key for your application using the Ionic CLI and following
-the provided prompts.
-
-<command-line>
-<command-prompt># in your app root</command-prompt>
-<command-prompt>ionic enterprise register</command-prompt>
-</command-line>
-
-Running the register command should generate a `.npmrc` file in you app directory and update your `ionic.config.json` it is safe
-to commit both these changes to version control so that CI and other team members can restore the plugins from a fresh clone of the
-repo. Now you should be able to install Ionic Enterprise plugins that you have access to by following the instructions on the plugin
-docs page.
-
-<command-line>
-<command-prompt>ionic cordova add plugin @ionic-enterprise/plugin-name</command-prompt>
-</command-line>
-
-## Comparison
+## What is Ionic Enterprise Edition
 <div class="native-ee-pricing">
   <div class="table-wrap">
     <table>
@@ -120,12 +92,43 @@ docs page.
           <th></th>
           <td></td>
           <td><a class="btn"
-                href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a></td>
+                href="https://ionicframework.com/enterprise-edition">Learn More</a></td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
+
+## Sign Up for Ionic Enterprise Edition
+
+<hubspot-form form-id="7c2c6529-48c0-4d17-86a0-bfd40c849bb1"></hubspot-form>
+
+## Setup
+In order to provide the best experience you should make sure you're using the
+Ionic Enterprise Cordova CLI as the regular version can have issues with scoped plugins.
+
+<command-line>
+<command-prompt>npm uninstall -g cordova</command-prompt>
+<command-prompt>npm install -g @ionic-enterprise/cordova</command-prompt>
+</command-line>
+
+## Register Your Product Key
+If you already have an app you can simply register the product key for your application using the Ionic CLI and following
+the provided prompts.
+
+<command-line>
+<command-prompt># in your app root</command-prompt>
+<command-prompt>ionic enterprise register</command-prompt>
+</command-line>
+
+Running the register command should generate a `.npmrc` file in you app directory and update your `ionic.config.json` it is safe
+to commit both these changes to version control so that CI and other team members can restore the plugins from a fresh clone of the
+repo. Now you should be able to install Ionic Enterprise plugins that you have access to by following the instructions on the plugin
+docs page.
+
+<command-line>
+<command-prompt>ionic cordova add plugin @ionic-enterprise/plugin-name</command-prompt>
+</command-line>
 
 ## Plugin List
 - [Apple Wallet](/docs/enterprise/apple-wallet)

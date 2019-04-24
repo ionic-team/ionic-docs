@@ -45,8 +45,10 @@ const renderInstallation = (pluginId: string) => {
         <a href="#installation">Installation</a>
       </h2>
       <p>
-        In order to use Ionic Enterprise Edition plugins you should make sure you're using the
-        Ionic Enterprise Cordova CLI as the regular version can have issues with scoped plugins.
+        In order to use <a href="https://ionicframework.com/enterprise-edition">
+        Ionic Enterprise Edition</a> plugins you should make sure you're using
+        the Ionic Enterprise Cordova CLI as the regular version can have issues
+        with scoped plugins.
       </p>
       <command-line>
         <command-prompt>{'npm uninstall -g cordova'}</command-prompt>

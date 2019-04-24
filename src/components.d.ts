@@ -194,6 +194,13 @@ export namespace Components {
     'onToggleClick'?: (e: Event) => void;
   }
 
+  interface HubspotForm {
+    'formId': string;
+  }
+  interface HubspotFormAttributes extends StencilHTMLAttributes {
+    'formId'?: string;
+  }
+
   interface LayeredColorsSelect {}
   interface LayeredColorsSelectAttributes extends StencilHTMLAttributes {}
 
@@ -310,6 +317,7 @@ declare global {
     'FileTreeFile': Components.FileTreeFile;
     'FileTree': Components.FileTree;
     'DocsHeader': Components.DocsHeader;
+    'HubspotForm': Components.HubspotForm;
     'LayeredColorsSelect': Components.LayeredColorsSelect;
     'DocsMenu': Components.DocsMenu;
     'DocsMenuToggle': Components.DocsMenuToggle;
@@ -350,6 +358,7 @@ declare global {
     'file-tree-file': Components.FileTreeFileAttributes;
     'file-tree': Components.FileTreeAttributes;
     'docs-header': Components.DocsHeaderAttributes;
+    'hubspot-form': Components.HubspotFormAttributes;
     'layered-colors-select': Components.LayeredColorsSelectAttributes;
     'docs-menu': Components.DocsMenuAttributes;
     'docs-menu-toggle': Components.DocsMenuToggleAttributes;
@@ -500,6 +509,12 @@ declare global {
     new (): HTMLDocsHeaderElement;
   };
 
+  interface HTMLHubspotFormElement extends Components.HubspotForm, HTMLStencilElement {}
+  var HTMLHubspotFormElement: {
+    prototype: HTMLHubspotFormElement;
+    new (): HTMLHubspotFormElement;
+  };
+
   interface HTMLLayeredColorsSelectElement extends Components.LayeredColorsSelect, HTMLStencilElement {}
   var HTMLLayeredColorsSelectElement: {
     prototype: HTMLLayeredColorsSelectElement;
@@ -613,6 +628,7 @@ declare global {
     'file-tree-file': HTMLFileTreeFileElement
     'file-tree': HTMLFileTreeElement
     'docs-header': HTMLDocsHeaderElement
+    'hubspot-form': HTMLHubspotFormElement
     'layered-colors-select': HTMLLayeredColorsSelectElement
     'docs-menu': HTMLDocsMenuElement
     'docs-menu-toggle': HTMLDocsMenuToggleElement
@@ -653,6 +669,7 @@ declare global {
     'file-tree-file': HTMLFileTreeFileElement;
     'file-tree': HTMLFileTreeElement;
     'docs-header': HTMLDocsHeaderElement;
+    'hubspot-form': HTMLHubspotFormElement;
     'layered-colors-select': HTMLLayeredColorsSelectElement;
     'docs-menu': HTMLDocsMenuElement;
     'docs-menu-toggle': HTMLDocsMenuToggleElement;
