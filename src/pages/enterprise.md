@@ -142,6 +142,7 @@ docs page.
 - [Inappbrowser](/docs/enterprise/inappbrowser)
 - [Media](/docs/enterprise/media)
 - [Media Capture](/docs/enterprise/media-capture)
+- [Native Storage](/docs/enterprise/nativestorage)
 - [Network Information](/docs/enterprise/network-information)
 - [Screen Orientation](/docs/enterprise/screen-orientation)
 - [Splash Screen](/docs/enterprise/splashscreen)

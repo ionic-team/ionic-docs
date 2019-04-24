@@ -17,6 +17,7 @@ const items = {
     'Media': '/docs/enterprise/media',
     'Media Capture': '/docs/enterprise/media-capture',
     'mParticle': '/docs/enterprise/mparticle',
+    'Native Storage': '/docs/enterprise/nativestorage',
     'Network Information': '/docs/enterprise/network-information',
     'Screen Orientation': '/docs/enterprise/screen-orientation',
     'Splashscreen': '/docs/enterprise/splashscreen',

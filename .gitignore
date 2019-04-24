@@ -6,3 +6,4 @@ src/pages/**/*.json
 src/components/menu/data/
 src/components/page/data/
 src/components/search/data/
+.idea
