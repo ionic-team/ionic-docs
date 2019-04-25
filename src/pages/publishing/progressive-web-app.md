@@ -6,54 +6,52 @@ contributors:
   - mhartington
 ---
 
-# Publishing a Progressive Web App
+# Progressive Web App のリリース
 
-Because Ionic Apps are built with web technologies, they can run just as well as a Progressive Web App as they can a native app. Not sure what PWAs are? Check out Ionic's <a href="https://ionicframework.com/pwa" target="_blank">PWA Overview</a> for more info.
+IonicアプリはWebテクノロジで構築されているため、Progressive Web Appを作成して、ネイティブアプリと同じように実行できます。PWAが何かわからない？詳細については、Ionicの<a href="https://ionicframework.com/pwa" target="_blank">PWA Overview</a>を参照してください。
 
-## Making an App a PWA
+## アプリをPWAにする
 
-The two main requirements of a PWA are a <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> and a <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Manifest</a>. While it's possible to add both of these to an app manually, the Angular team has an `@angular/pwa` package that can be used to automate this.
+PWAの2つの主な要件は、<a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> と <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Manifest</a>です。これらの両方を手動でアプリに追加することは可能ですが、Angularチームはこれを自動化するための `@angular/pwa` というパッケージを用意しています。
 
-The `@angular/pwa` package will automatically add a service worker and a app manifest to the app.
-To add this package to the app run:
+`@angular/pwa` パッケージは、自動的にアプリケーションにService Workerやアプリのマニフェストを追加します。このパッケージをアプリに追加するには、次のコマンドを実行します:
 
 ```shell
 $ ng add @angular/pwa
 ```
 
-Once this package has been added run `ionic build --prod` and the `www` directory will be ready to deploy as a PWA.
+このパッケージが追加されて `ionic build --prod` を実行すると、 `www` ディレクトリにPWAとしてデプロイするファイルが用意されます。
 
-> By default, the `@angular/pwa` package comes with Angular logo for the app icons. Be sure to update the manifest to use the correct app name and also replace the icons.
+> デフォルトでは `@angular/pwa` パッケージにはアプリアイコン用のAngularロゴが付いています。マニフェストを更新して正しいアプリ名を使用するようにし、アイコンを置き換えるようにしてください。
 
-If an app is being deployed to other channels such as Cordova or Electron, you can remove the `"serviceWorker": true` flag from the `angular.json` file.
-The service worker can be generated though by running:
+アプリが、CordovaやElectronなどの他のチャンネルにデプロイされている場合は、`angular.json` で `"serviceWorker": true` フラグを削除できます。"serviceWorker": true、angular.jsonファイルからフラグを削除できます。service workerは、次のコマンドを実行しても生成できます。
 
 ```shell
 $ ionic build --prod --service-worker
 ```
 
-> Note: Features like Service Workers and many JavaScript APIs (such as geolocation) require the app be hosted in a secure context. When deploying an app through a hosting service, be aware they HTTPS will be required to take full advantage of Service Workers.
+> Note: Service Workersや多くのJavaScript API（地理位置情報など）などの機能では、アプリを安全なコンテキストでホストする必要があります。ホスティングサービスを介してアプリをデプロイする場合は、Service Workersを最大限に活用するためにHTTPSが必要になることに注意してください。
 
-## Deploying
+## Deploy
 
 ### Firebase
 
-Firebase hosting provides many benefits for Progressive Web Apps, including fast response times thanks to CDN's, HTTPS enabled by default, and support for [HTTP2 push](https://firebase.googleblog.com/2016/09/http2-comes-to-firebase-hosting.html).
+Firebase hostingは、CDNによる応答時間の短縮、デフォルトでHTTPSが有効になっており、[HTTP2 push](https://firebase.googleblog.com/2016/09/http2-comes-to-firebase-hosting.html)のサポートなど、Progressive Web Appsに多くの利点を提供します。
 
-First, install the Firebase CLI:
+まず、Firebase CLIをインストールします:
 
 ```shell
 $ npm install -g firebase-tools
 ```
 
-With the Firebase CLI installed run `firebase init` in the project.
-This will generate a `firebase.json` config file and configure the app for deployment.
+Firebase CLIをインストールした状態でプロジェクトで `firebase init` を実行します。
+これで `firebase.json` という設定ファイルが生成され、デプロイ用にアプリが設定されます。
 
-> `firebase init` will present a few question, including one about redirecting URLs to `/index.html`.
-> Make sure to choose **yes** for this option, but **no** to overwriting your index.html.
-> This will ensure that routing, hard reload, and deep linking work in the app.
+> `firebase init` は、`/index.html` へのリダイレクトについての質問を含む、いくつかの質問を提示します。
+> これらの質問には **yes** を選択してください。 **no** を選択した場合、あなたの index.html を上書きします。
+> これにより、ルーティング、ハードリロード、およびディープリンクがアプリで機能するようになります。
 
-The last thing needed is to make sure caching headers are being set correctly. To do this, add the following snippet to the `firebase.json` file to the hosting property:
+最後に必要なことは、キャッシュヘッダが正しく設定されていることを確認することです。これを行うには、`firebase.json` のホスティングプロパティに次のスニペットを追加します:
 
 ```json
 "headers": [
@@ -77,12 +75,12 @@ The last thing needed is to make sure caching headers are being set correctly. T
   }
 ]
 ```
-For more information about the `firebase.json` properties, see the [Firebase documentation](https://firebase.google.com/docs/hosting/full-config#section-firebase-json).
+詳細については [Firebase documentation](https://firebase.google.com/docs/hosting/full-config#section-firebase-json) の `firebase.json` properties をご確認ください。
 
-The app can now be deployed by running
+アプリを実行してデプロイできるようになりました。
 
 ```shell
 $ firebase deploy
 ```
 
-After this completes the app will be live.
+これが完了すると、アプリはliveになり利用可能となります。

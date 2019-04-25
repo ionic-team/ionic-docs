@@ -8,7 +8,7 @@ nextUrl: '/docs/publishing/desktop-app'
 # Android Play Store
 
 
-## Generating a release build of an app
+## アプリのリリースビルド作成
 
 To generate a release build for Android, run the following cli command:
 
@@ -19,7 +19,7 @@ $ ionic cordova build android --prod --release
 This will generate a release build based on the settings in the `config.xml` in the `platforms/android/build/outputs/apk` directory of an app.
 An Ionic app will have preset default values in this file but this can be changed to customize builds.
 
-## Signing an APK
+## APKへの署名
 
 First, the unsigned APK must be signed. If a signing key has already been generated, skip these steps and use that one instead.
 Generate a private key using the keytool command that comes with the the Android SDK:
@@ -48,7 +48,7 @@ $ zipalign -v 4 HelloWorld-release-unsigned.apk HelloWorld.apk
 
 This generates a final release binary called HelloWorld.apk that can be accepted into the Google Play Store.
 
-## Submitting an app to the Google Play Store
+## Google Play Storeにアプリを送信する
 
 Now that a release APK has been generated, a Play Store listing can be written and the APK can be uploaded.
 
@@ -64,7 +64,7 @@ Be sure to fill out the description for the app along with providing screenshots
 When ready, upload the signed release APK that was generated and publish the app.
 
 
-## Updating an app
+## アプリのアップデート
 
 As an app evolves, it will need to be updated with new features and fixes. An app can be updated by either submitting a new version to the Google Play Store, or by using a live update service like Ionic Deploy. Using Ionic Deploy, changes can be pushed directly to users from the Ionic Pro dashboard, without submitting changes to the Play Store. Learn more about Ionic Deploy <a href="https://ionicframework.com/pro/deploy" target="_blank">here</a>.
 

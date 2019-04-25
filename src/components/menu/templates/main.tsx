@@ -51,7 +51,7 @@ const items = {
     'Config': '/docs/utilities/config',
     'Platform': '/docs/utilities/platform'
   },
-  'Publishing': {
+  'リリース': {
     'Progressive Web App': '/docs/publishing/progressive-web-app',
     'iOS App Store': '/docs/publishing/app-store',
     'Android Play Store': '/docs/publishing/play-store',
