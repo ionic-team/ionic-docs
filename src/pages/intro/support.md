@@ -9,7 +9,7 @@ contributors:
 
 # Ionic Frameworkのサポートポリシー
 
-## Community Maintenance
+## コミュニティメンテナンス
 
 Ionic Framework CE (Community Edition) は、当初から100%オープンソース (MIT) であり、今後もそうである予定です。開発者は、Ionicのコミュニティメンテナンス戦略を通して、Ionicがクロスプラットフォームアプリケーションに最適であることを確認できます。 Ionicチームは定期的に新しいリリース、バグの修正を提供します。そしてコミュニティからのプルリクエストをとても歓迎しています。
 
