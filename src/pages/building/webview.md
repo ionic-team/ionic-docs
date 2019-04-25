@@ -37,7 +37,7 @@ CORSがサーバーに実装されていない場合は、 CORSをバイパス�
 
 ### Fileプロトコル
 
-CordovaとCapacitorのアプリはローカルのHTTPサーバーでホストされており、`http://` プロトコルとして提供されます。ただし、一部のプラグインは `file://` プロトコルを利用してデバイスファイルにアクセスしようとします。`http://` と `file://` プロトコルの間にある問題を会費するためには、ファイルアクセスするパスをローカルのHTTPサーバに書き換える必要がありあす。例えば、 `file:///path/to/device/file` はアプリがレンダリングする前に `http://<host>:<port>/<prefix>/path/to/device/file` に書き換えなければなりません。
+CordovaとCapacitorのアプリはローカルのHTTPサーバーでホストされており、`http://` プロトコルとして提供されます。ただし、一部のプラグインは `file://` プロトコルを利用してデバイスファイルにアクセスしようとします。`http://` と `file://` プロトコルの間にある問題を回避するためには、ファイルアクセスするパスをローカルのHTTPサーバに書き換える必要がありあす。例えば、 `file:///path/to/device/file` はアプリがレンダリングする前に `http://<host>:<port>/<prefix>/path/to/device/file` に書き換えなければなりません。
 
 Cordovaアプリの場合、[Ionic Web View plugin](https://github.com/ionic-team/cordova-plugin-ionic-webview) はファイルURLを変換するためのユーティリティ `window.Ionic.WebView.convertFileSrc()` があります。対応する [`@ionic-native/ionic-webview`](/docs/native/ionic-webview/) というIonic Nativeのプラグインもあります。
 
