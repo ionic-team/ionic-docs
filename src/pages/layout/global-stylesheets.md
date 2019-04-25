@@ -9,67 +9,67 @@ contributors:
   - brandyscarney
 ---
 
-# Global Stylesheets
+# グローバルスタイルシート
 
-While Ionic Framework component styles are self-contained, there are several global stylesheets that should be included in order to use all of Ionic's features. Some of the stylesheets are required in order for an Ionic Framework app to look and behave properly, and others include optional utilities to quickly style your app.
+Ionic Frameworkのコンポーネントスタイルは自己完結型ですが、Ionicのすべての機能を使用するために含めるべきいくつかのグローバルスタイルシートがあります。一部のスタイルシートは、Ionic Frameworkアプリケーションが正しく表示され動作するために必要です。また、他のスタイルシートには、アプリケーションを素早くスタイル設定するためのオプションのユーティリティが含まれています。
 
-## Available
+## 利用可能なグローバルスタイルシート
 
-### Required
+### 必須
 
-The following CSS file must be included in order for Ionic Framework to work properly.
+Ionic Frameworkが正しく機能するためには、次のCSSファイルが含まれている必要があります。
 
 #### core.css
 
-This file is the only stylesheet that is required in order for Ionic components to work properly. It includes app specific styles, and allows the `color` property to work across components. If this file is not included the colors will not show up and some elements may not appear properly.
+このファイルは、Ionicのコンポーネントが正しく動作するために必要な唯一のスタイルシートです。アプリ固有のスタイルが含まれており、`color` プロパティがコンポーネント間で機能することを可能にします。このファイルが含まれていないと、テーマカラーが表示されず、一部の要素が正しく表示されない場合があります。
 
 
-### Recommended
+### おすすめ
 
-The following CSS files are recommended to be included in an Ionic Framework app. If they are not included, some elements may have undesired styles. If Ionic Framework components are being used outside of an app, these files may not be necessary.
+次のCSSファイルをIonic Frameworkのアプリに含めることをお勧めします。含まれていない場合、一部の要素はデザインが崩れることがあります。Ionic Frameworkのコンポーネントが、アプリ以外で使用されている場合、これらのファイルは必要ないかもしれません。
 
 #### structure.css
 
-Applies styles to `<html>` and defaults `box-sizing` to `border-box`. It ensures scrolling behaves like native in mobile devices.
+`<html>` にスタイルを適用し、 `box-sizing` を `border-box` に設定します。それはスクロールがモバイル機器のネイティブのように振る舞うことを確実にします。
 
 #### typography.css
 
-Typography changes the font-family of the entire document and modifies the font styles for heading elements. It also applies positioning styles to some native text elements.
+Typography は、文書全体の font-family を変更し、見出し要素のフォントスタイルを変更します。また、いくつかのネイティブテキスト要素に配置スタイルを適用します。
 
 #### normalize.css
 
-Makes browsers render all elements more consistently and in line with modern standards. It is based on [Normalize.css](https://necolas.github.io/normalize.css/).
+ブラウザがすべての要素をより一貫して最新の標準に沿って表示するようにします。これは [Normalize.css](https://necolas.github.io/normalize.css/) に基づいています。
 
 
-### Optional
+### オプション
 
-The following set of CSS files are optional and can safely be commented out or removed if the application is not using any of the features.
+次のCSSファイルはオプションであり、アプリケーションがこれらの機能を使用していない場合は、コメントアウトしたり削除しても問題ありません。
 
 #### padding.css
 
-Adds utility classes to modify the padding or margin on any element, see [CSS Utilities](./css-utilities#content-space) for usage information.
+任意の要素の余白または余白を変更するためのユーティリティクラスを追加します。使用法については [CSS Utilities](./css-utilities#content-space) を参照してください。
 
 #### float-elements.css
 
-Adds utility classes to float an element based on the breakpoint and side, see [CSS Utilities](./css-utilities#element-placement) for usage information.
+ブレークポイントと横幅に基づいて要素を float するためのユーティリティクラスを追加します。使用法については [CSS Utilities](./css-utilities#element-placement) を参照してください。
 
 #### text-alignment.css
 
-Adds utility classes to align the text of an element or adjust the white space based on the breakpoint, see [CSS Utilities](./css-utilities#text-alignment) for usage information.
+要素のテキストを揃えるため、またはブレークポイントに基づいて空白を調整するためのユーティリティクラスを追加します。使用法については [CSS Utilities](./css-utilities#text-alignment) を参照してください。
 
 #### text-transformation.css
 
-Adds utility classes to transform the text of an element to `uppercase`, `lowercase` or `capitalize` based on the breakpoint, see [CSS Utilities](./css-utilities#text-transformation) for usage information.
+ブレークポイントに基づいて、要素のテキストを `uppercase`, `lowercase` もしくは `capitalize` に変換するためのユーティリティクラスを追加します。使用法については [CSS Utilities](./css-utilities#text-transformation) を参照してください。
 
 #### flex-utils.css
 
-Adds utility classes to align flex containers and items, see [CSS Utilities](./css-utilities#flex-properties) for usage information.
+フレックスコンテナと項目を揃えるためのユーティリティクラスを追加します。使用法については [CSS Utilities](./css-utilities#flex-properties) を参照してください。
 
 #### display.css
 
-Adds utility classes to hide any element based on the breakpoint, see [CSS Utilities](./css-utilities#element-display) for usage information.
+ブレークポイントに基づいて要素を非表示にするユーティリティクラスを追加します。使用法については [CSS Utilities](./css-utilities#element-display) を参照してください。
 
 
 ## Usage
 
-Refer to [Ionic Packages](../installation/cdn) for how to include the global stylesheets based on the framework and [CSS Utilities](./css-utilities) for how to use the optional utilities.
+フレームワークに基づくグローバルスタイルシートを含める方法については [Ionic Packages](../installation/cdn) を、オプションのユーティリティを使用する方法については [CSS Utilities](./css-utilities) を参照してください。

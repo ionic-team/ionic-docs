@@ -31,7 +31,7 @@ const items = {
   'レイアウト': {
     '構造': '/docs/layout/structure',
     'Responsive Grid': '/docs/layout/grid',
-    'Global Stylesheets': '/docs/layout/global-stylesheets',
+    'グローバルスタイルシート': '/docs/layout/global-stylesheets',
     'CSSユーティリティ': '/docs/layout/css-utilities',
   },
   'テーマのカスタマイズ': {
