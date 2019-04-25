@@ -5,6 +5,7 @@ const items = {
   'Enterprise Edition Plugins': {
     'Overview': '/docs/enterprise',
     'Apple Wallet': '/docs/enterprise/apple-wallet',
+    'Badge': '/docs/enterprise/badge',
     'Camera': '/docs/enterprise/camera',
     'Clipboard': '/docs/enterprise/clipboard',
     'Couchbase Lite': 'https://ionicframework.com/integrations/couchbase-lite',
@@ -17,6 +18,7 @@ const items = {
     'Media': '/docs/enterprise/media',
     'Media Capture': '/docs/enterprise/media-capture',
     'mParticle': '/docs/enterprise/mparticle',
+    'Native Storage': '/docs/enterprise/nativestorage',
     'Network Information': '/docs/enterprise/network-information',
     'Screen Orientation': '/docs/enterprise/screen-orientation',
     'Splashscreen': '/docs/enterprise/splashscreen',
