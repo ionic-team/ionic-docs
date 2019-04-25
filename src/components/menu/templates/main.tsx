@@ -63,15 +63,15 @@ const items = {
     'ランタイムエラー': '/docs/faq/runtime',
     'Native Errors': '/docs/faq/native',
     'CORS Errors': '/docs/faq/cors',
-    'Developer Tips': '/docs/faq/tips',
-    'Changelog': 'https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md'
+    '開発者向けのヒント': '/docs/faq/tips',
+    '変更履歴': 'https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md'
   },
   'Resources': {
     'Books': '/docs/developer-resources/books',
     'Courses': '/docs/developer-resources/courses',
     'Guides': '/docs/developer-resources/guides',
     'Posts': '/docs/developer-resources/posts',
-    'Tools': '/docs/developer-resources/tools',
+    'ツール': '/docs/developer-resources/tools',
     'Videos': '/docs/developer-resources/videos'
   }
 };
