@@ -10,7 +10,7 @@ contributors:
 
 # Config
 
-The Config service provides a way to change the properties of components globally across an app. It can set the app mode, tab button layout, animations, and more.
+Config service provides は、アプリケーション全体でコンポーネントのプロパティをグローバルに変更する方法を提供します。アプリのmode、タブボタンのレイアウト、アニメーションなどを設定できます。
 
 ## Usage
 
@@ -35,7 +35,7 @@ import { IonicModule } from '@ionic/angular';
 })
 ```
 
-In the above example, we are disabling the Material Design ripple effect across the app, as well as forcing the mode to be Material Design.
+上記の例では、アプリ全体でマテリアルデザインのripple effectを無効にし、同時にmodeをマテリアルデザインに統一しています。
 
 #### Customizing Animations
 
@@ -91,7 +91,7 @@ import { IonicModule } from '@ionic/angular';
 })
 ```
 
-In the above example, we are customizing the "enter" animation for the `ion-toast` component. When an `ion-toast` component is presented from the top, it will slide down instead of fading in.
+上記の例では、 `ion-toast` コンポーネントの"enter"アニメーションをカスタマイズしています。この場合、`ion-toast` コンポーネントはフェードインの代わりに上からスライドインして表示されます。
 
 
 
@@ -113,7 +113,7 @@ export class HomePage {
 
 ## Config Options
 
-Below is a list of config options that Ionic uses.
+以下はIonicが使用する設定オプションのリストです。
 
 | Config                   | Type               | Description                                                                                              |
 |--------------------------|--------------------|----------------------------------------------------------------------------------------------------------|

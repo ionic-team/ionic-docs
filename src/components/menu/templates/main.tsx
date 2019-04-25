@@ -47,7 +47,7 @@ const items = {
   'ナビゲーション': {
     'Angular': '/docs/navigation/angular'
   },
-  'Utilities': {
+  'ユーティリティ': {
     'Config': '/docs/utilities/config',
     'Platform': '/docs/utilities/platform'
   },
