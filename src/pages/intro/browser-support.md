@@ -12,14 +12,14 @@ Ionicの本来の目標は、HTML、CSS、JavaScriptといったWeb技術を使�
 
 ## モバイル
 
-In pursuit of [platform continuity](/docs/intro/concepts#platform-continuity), Ionic fully supports and is well tested on the mobile platforms listed below:
+[プラットフォームの継続性](/docs/intro/concepts#platform-continuity)を追求するために, Ionicは以下のモバイルプラットフォームを完全にサポート、テストしています。:
 
 | Platform     | Supported Versions |
 | ------------ | ------------------ |
 | **Android**  | 4.4+               |
 | **iOS**      | 10+                |
 
-> Check the [latest Android stats](https://developer.android.com/about/dashboards/) and the [latest iOS stats](https://developer.apple.com/support/app-store/) for up-to-date platform information.
+> 最新のプラットフォームの情報については [latest Android stats](https://developer.android.com/about/dashboards/) と [latest iOS stats](https://developer.apple.com/support/app-store/) をご確認ください。
 
 
 ## デスクトップ
@@ -36,4 +36,4 @@ Ionicはモバイルデバイスで正常に動作するだけでなく、ウェ
 | **IE**      | 11+       |
 
 
-> Because Ionic is built with Stencil, see [Stencil's browser support](https://stenciljs.com/docs/browser-support) for a more detailed breakdown of support.
+> IonicはStencilで作成されているため、より詳細なブラウザサポートについては [Stencil's browser support](https://stenciljs.com/docs/browser-support) をご覧ください。

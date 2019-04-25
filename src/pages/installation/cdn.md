@@ -10,38 +10,38 @@ contributors:
 
 # Ionic Packages
 
-Ionic provides different packages that can be used to quickly get started using Ionic Framework or Ionicons in a test environment, Angular, any other framework, or none at all.
+Ionicは、テスト環境、Angular、その他のフレームワーク、またはVanilla JSといったすべての状況で、Ionic Frameworkを使い始めるために使用できるさまざまなパッケージを提供しています。
 
 ## Ionic Framework CDN
 
-Ionic Framework can be included from a CDN for quick testing in a [Plunker](https://plnkr.co/), [Codepen](https://codepen.io), or any other online code editor!
+イオンフレームワークは、[Plunker](https://plnkr.co/)、[Codepen](https://codepen.io)、またはその他のオンラインコードエディタですばやくテストするために、CDNから組み込むことができます。。
 
-It's recommended to use [unpkg](https://unpkg.com) to access the Framework from a CDN. To get the latest version, add the following inside the `<head>` element in an HTML file, or where external assets are included in the online code editor:
+CDNからフレームワークにアクセスするには、[unpkg](https://unpkg.com)を使用することをお勧めします。最新バージョンを入手するためにはに HTMLファイルの `<head>`  要素、もしくはオンラインコードエディタの呼び出しコードに、次のコードを追加します。
 
 ```html
 <script src="https://unpkg.com/@ionic/core@latest/dist/ionic.js"></script>
 <link href="https://unpkg.com/@ionic/core@latest/css/ionic.bundle.css" rel="stylesheet">
 ```
 
-With this it's possible to use all of the Ionic Framework core components without having to install a framework. The CSS bundle will include all of the Ionic [Global Stylesheets](../layout/global-stylesheets).
+これにより、フレームワークをインストールしなくても、すべてのIonic Frameworkのコアコンポーネントを使用することができます。CSSバンドルには、すべてのIonic [Global Stylesheets](../layout/global-stylesheets) が含まれます。
 
-> This does not install Angular or any other frameworks. This allows use of the Ionic Framework core components without a framework.
+> これはAngularや他のフレームワークをインストールしません。これにより、フレームワークなしでIonic Frameworkのコアコンポーネントを使用できます。
 
 
 ## Angular + Ionic Framework
 
-When using Ionic Framework in an Angular project, install the latest `@ionic/angular` package from [npm](/docs/faq/glossary#npm). This comes with all of the Ionic Framework components and Angular specific services and features.
+AngularプロジェクトでIonic Frameworkを使用する場合は、 [npm](/docs/faq/glossary#npm) から最新の `@ionic/angular` をインストールしてください。これによって、すべてのIonic Frameworkコンポーネントと、Angularのサービスおよび機能を使うことができます。
 
 ```shell
 $ npm install @ionic/angular@latest --save
 ```
 
-Each time there is a new Ionic Framework release, this [version](/docs/intro/versioning) will need to be updated to get the latest features and fixes. The version can be [updated using npm](/docs/faq/tips#updating-dependencies), as well.
+新しいIonic Frameworkのリリースがあるたびに、最新バージョンの機能と修正を入手するために [version](/docs/intro/versioning) を更新する必要があります。
 
 
 ### CSS
 
-Create a global stylesheet file and add it to the `styles` object in the [Angular workspace config](https://angular.io/guide/workspace-config). Add the following imports to that file:
+グローバルのスタイルシートファイルを作成し、それを [Angular workspace config](https://angular.io/guide/workspace-config) の `styles` のオブジェクトに追加します。そのファイルに次のインポートを追加します:
 
 ```css
 /* Core CSS required for Ionic components to work properly */
@@ -61,12 +61,12 @@ Create a global stylesheet file and add it to the `styles` object in the [Angula
 @import "~@ionic/angular/css/display.css";
 ```
 
-See [Global Stylesheets](../layout/global-stylesheets) for the styles that each of these files contain.
+これらの各ファイルに含まれているスタイルについては、 [Global Stylesheets](../layout/global-stylesheets) を参照してください。
 
 
 ## Stencil + Ionic Framework
 
-When using Ionic Framework in a Stencil project, install the latest `@ionic/core` package from [npm](/docs/faq/glossary#npm). This comes with all of the Ionic Framework components.
+StencilのプロジェクトでIonic Frameworkを使用する場合は、 [npm](/docs/faq/glossary#npm) から、`@ionic/core` の最新のパッケージをインストールしてください。これは、すべてのIonic Frameworkコンポーネントを内包しています。
 
 ```shell
 $ npm install @ionic/core@latest --save
@@ -74,7 +74,7 @@ $ npm install @ionic/core@latest --save
 
 ### JS
 
-Include an import of `@ionic/core` in the root app file:
+`@ionic/core` をアプリのrootファイルでimportしてください:
 
 ```typescript
 import '@ionic/core';
@@ -82,7 +82,7 @@ import '@ionic/core';
 
 ### CSS
 
-Create a global stylesheet file and add it to the `config` object in the [Stencil Config](https://stenciljs.com/docs/config).
+グローバルのスタイルシートファイルを作成し、 [Stencil Config](https://stenciljs.com/docs/config) の `config` オブジェクトに以下を追記ください。
 
 ```javascript
 exports.config = {
@@ -94,7 +94,7 @@ exports.config = {
 };
 ```
 
-Add the following imports to that file:
+そのファイルに次のインポートを追加します:
 
 ```css
 /* Core CSS required for Ionic components to work properly */
@@ -114,15 +114,15 @@ Add the following imports to that file:
 @import "~@ionic/core/css/display.css";
 ```
 
-See [Global Stylesheets](../layout/global-stylesheets) for the styles that each of these files contain.
+これらの各ファイルに含まれているスタイルについては、 [Global Stylesheets](../layout/global-stylesheets) を参照してください。
 
 
 ## Ionicons CDN
 
-Ionicons is packaged by default with the Ionic Framework, so no installation is necessary if you're using Ionic. To use Ionicons without Ionic Framework, place the following `<script>` near the end of your page, right before the closing `</body>` tag.
+IoniconsはデフォルトでIonic Frameworkに同梱されているので、Ionicを使用している場合はインストールは不要です。Ionic Frameworkを使用せずにIoniconsを使用するためには、ページの終わりの近くにある `</body>` の閉じタグの直前に以下の `<script>` タグを配置します。
 
 ```html
 <script src="https://unpkg.com/ionicons@4.0.0/dist/ionicons.js"></script>
 ```
 
-> See [Ionicons usage](https://ionicons.com/usage) for more information on using Ionicons.
+> アイコンの使い方については [Ionicons usage](https://ionicons.com/usage) をご覧ください。

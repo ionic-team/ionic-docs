@@ -5,38 +5,38 @@ nextText: 'Android Setup'
 nextUrl: '/docs/installation/android'
 ---
 
-# iOS Setup
+# iOS セットアップ
 
-To target iOS, some additional environment setup is required. Unfortunately, iOS apps can only be created on macOS.
+iOSをターゲットにするには、追加の環境設定が必要です。残念ながら、iOSアプリはmacOS上でしか作成できません。
 
 ## Xcode
 
-<a href="https://developer.apple.com/xcode/" target="_blank">Xcode</a> is the IDE for creating native iOS apps. It includes the iOS SDK and Xcode command-line tools. Xcode can be <a href="https://developer.apple.com/download/" target="_blank">downloaded for free</a> with an Apple account. It can also be installed through the App Store.
+<a href="https://developer.apple.com/xcode/" target="_blank">Xcode</a>は、ネイティブiOSアプリを作成するためのIDEです。iOS SDKとXcodeのコマンドラインツールが含まれています。XcodeはAppleアカウントをつかって<a href="https://developer.apple.com/download/" target="_blank">無料でダウンロード</a>できます。App Storeからもインストールできます。
 
 <blockquote>
-  <p>We recommend using XCode 9. Xcode 10 support in Cordova is still a work-in-progress. See <a href="https://github.com/apache/cordova-ios/issues/407" target="_blank">this issue</a> for details.</p>
+  <p>XCode 9を使用することをお勧めします。CordovaでのXcode 10サポートはまだ進行中です。詳細は<a href="https://github.com/apache/cordova-ios/issues/407" target="_blank">このIssue</a>をご覧ください。</p>
 </blockquote>
 
 
-### Setting up a Development Team
+### Development Team の設定
 
-All iOS apps must be code signed, even for development. Luckily, Xcode makes this easy with automatic code signing. The only prerequisite is an Apple ID.
+すべてのiOSアプリは、開発用であっても code signed （署名）されている必要があります。幸いなことに、Xcodeは automatic code signing によってこれを容易にします。唯一の前提条件はApple IDを用意していることです。
 
-Open Xcode and navigate to **Xcode** &raquo; **Preferences** &raquo; **Accounts**. Add an Apple ID if none are listed. Once logged in, a Personal Team will appear in the team list of the Apple ID.
+Xcodeを開き、 **Xcode** &raquo; **Preferences** &raquo; **Accounts** に移動します。アカウントがリストにない場合は、Apple IDを追加してください。ログインすると、Personal TeamがApple IDのチームリストに表示されます。
 
 ![Xcode Accounts](/docs/assets/img/installation/ios-xcode-accounts.png)
 
-### Creating an iOS Simulator
+### iOS Simulator の作成
 
-The iOS simulator emulates iOS devices on Macs. The following documentation is a quick way to get the iOS simulator set up. For more information, see <a href="https://developer.apple.com/library/content/documentation/IDEs/Conceptual/simulator_help_topics/Chapter/Chapter.html" target="_blank">Apple's documentation</a>.
+iOSシミュレータは、Mac上でiOSデバイスをエミュレートします。次のドキュメントはiOSシミュレータをセットアップするための簡単な方法です。詳しくは、 <a href="https://developer.apple.com/library/content/documentation/IDEs/Conceptual/simulator_help_topics/Chapter/Chapter.html" target="_blank">Apple's documentation</a> を参照してください。
 
-Open Xcode and navigate to **Window** &raquo; **Devices and Simulators**. Create an **iPhone X** simulator if one does not already exist.
+Xcodeを開き、**Window** &raquo; **Devices and Simulators** に移動します。**iPhone X** のシュミレーターがまだ存在しない場合は作成します。
 
 ![iOS Simulators](/docs/assets/img/installation/ios-xcode-simulators-setup.png)
 
 ## ios-sim & ios-deploy
 
-The <a href="https://github.com/phonegap/ios-sim" target="_blank">`ios-sim`</a> and <a href="https://github.com/phonegap/ios-deploy" target="_blank">`ios-deploy`</a> are utilities that deploy apps to the iOS simulator and iOS devices during development. They can be installed globally with [npm](/docs/faq/glossary#npm).
+<a href="https://github.com/phonegap/ios-sim" target="_blank">`ios-sim`</a> と <a href="https://github.com/phonegap/ios-deploy" target="_blank">`ios-deploy`</a> は開発中のiOSシミュレータとiOSデバイスにアプリケーションを配備するユーティリティです。それらは [npm](/docs/faq/glossary#npm) を使って、グローバルにインストールすることができます
 
 ```shell
 $ npm install -g ios-sim
