@@ -5,6 +5,7 @@ const items = {
   'Enterprise Edition Plugins': {
     'Overview': '/docs/enterprise',
     'Apple Wallet': '/docs/enterprise/apple-wallet',
+    'App Version': '/docs/enterprise/appversion',
     'Badge': '/docs/enterprise/badge',
     'Camera': '/docs/enterprise/camera',
     'Clipboard': '/docs/enterprise/clipboard',
