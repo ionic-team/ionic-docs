@@ -33,7 +33,7 @@ With this it's possible to use all of the Ionic Framework core components withou
 When using Ionic Framework in an Angular project, install the latest `@ionic/angular` package from [npm](/docs/faq/glossary#npm). This comes with all of the Ionic Framework components and Angular specific services and features.
 
 ```shell
-$ npm install @ionic/angular@latest --save
+$ ng add @ionic/angular@latest
 ```
 
 Each time there is a new Ionic Framework release, this [version](/docs/intro/versioning) will need to be updated to get the latest features and fixes. The version can be [updated using npm](/docs/faq/tips#updating-dependencies), as well.
