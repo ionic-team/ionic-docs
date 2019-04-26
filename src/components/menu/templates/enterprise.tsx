@@ -12,6 +12,7 @@ const items = {
     'Couchbase Lite': 'https://ionicframework.com/integrations/couchbase-lite',
     'Device': '/docs/enterprise/device',
     'Dialogs': '/docs/enterprise/dialogs',
+    'Email Composer': '/docs/enterprise/emailcomposer',
     'Filesystem': '/docs/enterprise/filesystem',
     'Geolocation': '/docs/enterprise/geolocation',
     'Identity Vault': '/docs/enterprise/identity-vault',
