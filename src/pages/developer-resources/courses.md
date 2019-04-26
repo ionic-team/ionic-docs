@@ -15,6 +15,12 @@ by Josh Morony
 
 Elite Ionic is an online course for Ionic developers who want to move past the basics, and build complex, well tested, high performing, beautiful, and useable mobile applications. It is recommended that you already have a reasonably solid understanding of the basics of Ionic before starting this course.
 
+### [Ionic Academy](https://ionicacademy.com/)
+
+by Simon Grimm
+
+Learn Ionic with step-by-step video courses & quick wins from one of the Ionic community leaders. Covers beginner, intermediate and advanced topics. Get access to a community of developers just like you.
+
 ### [Introducing Ionic 2](http://shop.oreilly.com/product/0636920050353.do)
 
 by Mathieu Chauvinc
