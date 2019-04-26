@@ -1,9 +1,11 @@
 import Listr from 'listr';
 import buildApiReference from './api-reference';
+import buildReleaseNotes from './release-notes';
 import buildSearchIndex from './search-index';
 
 const tasks = new Listr([
   buildApiReference,
+  buildReleaseNotes,
   buildSearchIndex
 ]);
 
