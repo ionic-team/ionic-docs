@@ -1,18 +1,17 @@
-import { Component, Element, Prop, State } from '@stencil/core';
+import { Component, Element, State } from '@stencil/core';
 
 @Component({
   tag: 'docs-tabs',
   styleUrl: 'tabs.css'
 })
 export class DocsTabs {
-  @Prop() initializer: (tabs: HTMLDocsTabElement[]) => HTMLDocsTabElement = tabs => tabs[0];
   @State() selected: HTMLDocsTabElement = null;
   @State() tabs: HTMLDocsTabElement[] = [];
   @Element() element: HTMLDocsTabElement;
 
   componentDidLoad() {
     this.tabs = Array.from(this.element.querySelectorAll('docs-tab'));
-    this.select(this.initializer(this.tabs) || this.tabs[0]);
+    this.select(this.tabs.find(t => t.hasAttribute('selected')) || this.tabs[0]);
   }
 
   select(tab: HTMLDocsTabElement) {
