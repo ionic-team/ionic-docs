@@ -1,10 +1,10 @@
 ---
-title: Ionic Enterprise Edition
+title: Ionic Native Enterprise Edition
 ---
 
-Accelerate development with powerful solutions to common enterprise use cases - all built and supported by the Ionic team. Ionic’s growing library of solutions are ready to deploy in any of the apps you build with Enterprise Edition
+Accelerate development with powerful solutions to common enterprise use cases - all built and supported by the Ionic team. Ionic’s growing library of solutions are ready to deploy in any of the apps you build with Native Enterprise Edition
 
-Ionic Enterprise Edition includes a reliable set of Native APIs & functionality that you can use in your Ionic app,
+Ionic Native Enterprise Edition includes a reliable set of Native APIs & functionality that you can use in your Ionic app,
 quality controlled and maintained by the Ionic Team.
 
 ## What is Ionic Enterprise Edition
@@ -24,7 +24,7 @@ quality controlled and maintained by the Ionic Team.
           </th>
           <th>
             <div class="plan-wrap">
-              <span class="native-ee-pricing-table">Enterprise Edition</span>
+              <span class="native-ee-pricing-table">Native Enterprise Edition</span>
               <div class="price" data-toggle="billing-team">
                 Contact Us</div>
             </div>
