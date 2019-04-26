@@ -1,10 +1,5 @@
 import releases from '../data/release-notes.json';
 
-const listStyle = {
-  fontFamily: 'var(--code-font-family)',
-  fontSize: '13px'
-};
-
 export default (props) => {
   const { page } = props;
 
@@ -18,18 +13,36 @@ export default (props) => {
   return (
     <article>
       <h1>{page.title}</h1>
-      {/* <section class="markdown-content" innerHTML={page.body}/> */}
-      {/* <hr/> */}
-      <div style={listStyle}>
+      <section class="markdown-content" innerHTML={page.body}/>
+      <div class="release-notes">
         { releases.map(release =>
-          <div>
-            <a href="https://github.com/ionic-team/ionic/releases/tag/{v4.3.0}" target="_blank">
-              <h2>{release.name}</h2>
-            </a>
+          <section class="release-note">
+          <div class="release-tag-wrapper">
+            <h2 id={release.version}>
+              <a href={`#${release.version}`} class={getTagClasses(release)}>
+                {release.version}
+              </a>
+            </h2>
+          </div>
+          <div class="release-info">
+            <div class="release-published">
+              <h2>{release.published_at}</h2>
+            </div>
             <div innerHTML={release.body}></div>
           </div>
+          </section>
         )}
       </div>
+      <blockquote>
+        To see more releases, visit <a href="https://github.com/ionic-team/ionic/releases/" target="_blank">Github</a>.
+      </blockquote>
     </article>
   );
 };
+
+function getTagClasses(release) {
+  return {
+    'release-tag': true,
+    'release-tag-patch': release.patch
+  };
+}

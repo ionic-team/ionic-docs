@@ -31,21 +31,47 @@ async function getReleases() {
       }
     }));
 
-    let releases = await request.json();
-    releases = releases.slice(0, 10);
+    const releases = await request.json();
 
     return releases.map(release => {
-      const body = renderMarkdown(release.body);
-      const { name, tag_name, published_at } = release;
+      const body = parseMarkdown(release.body);
+      const published_at = parseDate(release.published_at);
+      const version = release.tag_name.replace('v', '');
+      const patch = release.name.length < 7;
+      const { name, tag_name } = release;
 
       return {
-        name,
         body,
+        patch,
+        name,
+        published_at,
         tag_name,
-        published_at
+        version
       };
-    });
+    }).sort((a, b) => {
+      if (a.tag_name < b.tag_name) {
+        return 1;
+      }
+      if (a.tag_name > b.tag_name) {
+        return -1;
+      }
+      // a must be equal to b
+      return 0;
+    }).slice(0, 10);
   } catch (error) {
     throw error;
   }
+}
+
+// Takes the date in format 2019-04-26T18:24:09Z
+// and returns it as April 26 2019
+function parseDate(datetime: string) {
+  const date = new Date(datetime);
+  return date.toLocaleString('en-us', { month: 'long' }) + ' ' + date.getDate() + ' ' + date.getFullYear();
+}
+
+function parseMarkdown(content) {
+  const markdown = renderMarkdown(content);
+
+  return markdown.replace('<a href=\"#bug-fixes\">Bug Fixes</a>', 'Bug Fixes').replace('<a href=\"#features\">Features</a>', 'Features');
 }
