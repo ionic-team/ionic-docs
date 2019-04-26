@@ -290,18 +290,16 @@ export namespace Components {
   }
 
   interface DocsTab {
+    'selected': boolean;
     'tab': string;
   }
   interface DocsTabAttributes extends StencilHTMLAttributes {
+    'selected'?: boolean;
     'tab'?: string;
   }
 
-  interface DocsTabs {
-    'initializer': (tabs: HTMLDocsTabElement[]) => HTMLDocsTabElement;
-  }
-  interface DocsTabsAttributes extends StencilHTMLAttributes {
-    'initializer'?: (tabs: HTMLDocsTabElement[]) => HTMLDocsTabElement;
-  }
+  interface DocsTabs {}
+  interface DocsTabsAttributes extends StencilHTMLAttributes {}
 
   interface WistiaVideo {
     'id': string;

@@ -73,7 +73,6 @@ const renderUsage = (usage = {}, path: string) => {
   const keys = Object.keys(usage);
   const frameworkPref = getFramework();
   const framework = frameworkPref ? frameworkPref.toLowerCase() : null;
-  const getInitialTab = (tabs) => tabs.find(tab => tab.getAttribute('tab') === framework);
 
   if (!keys.length) {
     return null;
@@ -90,9 +89,13 @@ const renderUsage = (usage = {}, path: string) => {
          * re-created on each page so that the initial tab will
          * be set during componentWillLoad.
          */
-        key={path}
-        initializer={getInitialTab}>
-          { keys.map(key => <docs-tab tab={key} innerHTML={usage[key]}/>) }
+        key={path}>
+          {keys.map(key =>
+            <docs-tab
+              tab={key}
+              selected={framework === key.toLowerCase()}
+              innerHTML={usage[key]}/>
+          )}
       </docs-tabs>
     </section>
   );
