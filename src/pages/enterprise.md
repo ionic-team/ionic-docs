@@ -135,6 +135,7 @@ docs page.
 - [Apple Wallet](/docs/enterprise/apple-wallet)
 - [App Version](/docs/enterprise/appversion)
 - [Badge](/docs/enterprise/badge)
+- [Calendar](/docs/enterprise/calendar)
 - [Camera](/docs/enterprise/camera)
 - [Clipboard](/docs/enterprise/clipboard)
 - [Device](/docs/enterprise/device)
