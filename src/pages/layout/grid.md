@@ -86,7 +86,7 @@ attributes that can be used to adjust this behavior.
 
 ## Default breakpoints
 
-The default breakpoints are defined by the `--ion-grid-breakpoints` CSS variable. It can be customized to use different values for the breakpoint, rename and add/remove breakpoints. For more information, see [customizing the grid](#customizing-the-grid).
+The default breakpoints are defined in the table below. Breakpoints can not be customized at this time. For more information on why they can't be customized, see [Variables in Media Queries](/docs/theming/advanced#variables-in-media-queries).
 
 | Name     | Value    | Width Prefix | Offset Prefix | Push Prefix  | Pull Prefix | Description                                       |
 |----------|----------|--------------|---------------|--------------|-------------|---------------------------------------------------|
