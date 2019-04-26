@@ -24,6 +24,9 @@ export class DocsMenu {
         </stencil-route-link>
       </header>,
       <docs-search/>,
+      <section class="MenuControls">
+        <FrameworkSelect/>
+      </section>,
       <stencil-route-switch scrollTopOffset={0}>
         <stencil-route url="/docs/(components|api)" routeRender={componentsTemplate}/>
         <stencil-route url="/docs/cli" routeRender={cliTemplate}/>
@@ -31,10 +34,7 @@ export class DocsMenu {
         <stencil-route url="/docs/appflow" routeRender={appflowTemplate}/>
         <stencil-route url="/docs/enterprise" routeRender={enterpriseTemplate}/>
         <stencil-route routeRender={mainTemplate}/>
-      </stencil-route-switch>,
-      <section class="MenuControls">
-        <FrameworkSelect/>
-      </section>
+      </stencil-route-switch>
     ];
   }
 }
