@@ -65,7 +65,7 @@ In Ionic 3, there were a couple of additional life cycle methods that were usefu
 
 These methods were removed in Ionic 4 in favor of using Angular's Route Guards. 
 
-A route guard helps determine if a particular action can be taken against a route. They are classes that implement a certain interface. The `CanActive` and `CanDeactivate` interfaces can be used to implement the same type of logic that the removed events `ionViewCanEnter` and `ionViewCanLeave` did.
+A route guard helps determine if a particular action can be taken against a route. They are classes that implement a certain interface. The `CanActivate` and `CanDeactivate` interfaces can be used to implement the same type of logic that the removed events `ionViewCanEnter` and `ionViewCanLeave` did.
 
 ```typescript
 @Injectable()
