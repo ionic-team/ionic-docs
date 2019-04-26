@@ -7,7 +7,7 @@ Accelerate development with powerful solutions to common enterprise use cases - 
 Ionic Native Enterprise Edition includes a reliable set of Native APIs & functionality that you can use in your Ionic app,
 quality controlled and maintained by the Ionic Team.
 
-## What is Ionic Enterprise Edition
+## What is Ionic Native Enterprise Edition
 <div class="native-ee-pricing">
   <div class="table-wrap">
     <table>
@@ -99,7 +99,7 @@ quality controlled and maintained by the Ionic Team.
   </div>
 </div>
 
-## Sign Up for Ionic Enterprise Edition
+## Sign Up for Ionic Native Enterprise Edition
 
 <hubspot-form form-id="7c2c6529-48c0-4d17-86a0-bfd40c849bb1"></hubspot-form>
 
