@@ -1,0 +1,57 @@
+.page-intro-release-notes {
+  --page-width: 1000px;
+}
+
+.page-intro-release-notes .release-note {
+  display: flex;
+  align-items: top;
+}
+
+.page-intro-release-notes h2 {
+  margin: 0;
+
+  font-size: 24px;
+  line-height: normal;
+}
+
+.page-intro-release-notes h3 {
+  font-size: 18px;
+}
+
+.page-intro-release-notes h2,
+.page-intro-release-notes h3 {
+  padding-top: 0;
+}
+
+.page-intro-release-notes .release-tag-wrapper {
+  margin-right: 8px;
+}
+
+.page-intro-release-notes .release-tag-wrapper h2 {
+  font-size: 15px;
+}
+
+.page-intro-release-notes .release-tag {
+  padding: 6px 4px;
+  display: inline-block;
+  width: 65px;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 3px;
+
+  background: var(--accent-color);
+  color: #fff;
+
+  line-height: normal;
+}
+
+.page-intro-release-notes blockquote {
+  margin-left: 0;
+
+  background: rgba(var(--accent-color-rgb), 0.05);
+  border-color: var(--accent-color);
+}
+
+.page-intro-release-notes a {
+  color: var(--accent-color);
+}

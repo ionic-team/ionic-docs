@@ -6,6 +6,7 @@ const items = {
     'Core Concepts': '/docs/intro/concepts',
     'Browser Support': '/docs/intro/browser-support',
     'Versioning': '/docs/intro/versioning',
+    'Release Notes': '/docs/intro/release-notes',
     'Support': '/docs/intro/support'
   },
   'Installation': {
