@@ -1,6 +1,6 @@
 ---
-previousText: 'CORS Errors'
-previousUrl: '/docs/faq/cors'
+previousText: 'Security'
+previousUrl: '/docs/faq/security'
 contributors:
   - rtpHarry
   - FdezRomero
