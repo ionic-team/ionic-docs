@@ -131,6 +131,7 @@ docs page.
 </command-line>
 
 ## Plugin List
+- [Android Permissions](/docs/enterprise/android-permissions)
 - [Apple Wallet](/docs/enterprise/apple-wallet)
 - [App Version](/docs/enterprise/appversion)
 - [Badge](/docs/enterprise/badge)

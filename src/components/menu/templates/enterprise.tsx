@@ -4,6 +4,7 @@ export default () => <docs-nav items={items}/>;
 const items = {
   'Enterprise Edition Plugins': {
     'Overview': '/docs/enterprise',
+    'Android Permissions': '/docs/enterprise/android-permissions',
     'Apple Wallet': '/docs/enterprise/apple-wallet',
     'App Version': '/docs/enterprise/appversion',
     'Badge': '/docs/enterprise/badge',
