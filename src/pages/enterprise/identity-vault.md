@@ -1,7 +1,7 @@
 ---
 title: Identity Vault
 template: enterprise-plugin
-version: 3.2.0
+version: 3.2.1
 minor: 3.2.X
 otherVersions:
   - 2.0.X
@@ -151,7 +151,7 @@ You can find the API and interface documentation for everything below. The main 
 
 ###  AuthMode
 
-**AuthMode**:
+**AuthMode**: 
 
 The type of authentication the vault should be configured to allow.
 
@@ -159,7 +159,7 @@ The type of authentication the vault should be configured to allow.
 
 ###  BiometricAndPasscode
 
-**BiometricAndPasscode**:
+**BiometricAndPasscode**: 
 
 Both biometric and passcode authentication should be allowed
 
@@ -168,7 +168,7 @@ ___
 
 ###  BiometricOnly
 
-**BiometricOnly**:
+**BiometricOnly**: 
 
 Biometrics authentication should only be allowed
 
@@ -177,7 +177,7 @@ ___
 
 ###  InMemoryOnly
 
-**InMemoryOnly**:
+**InMemoryOnly**: 
 
 Both biometric and passcode authentication should be disabled. With this setting all data in the vault will be cleared on lock or if the app is closed. Stored data is kept only in memory.
 
@@ -186,7 +186,7 @@ ___
 
 ###  PasscodeOnly
 
-**PasscodeOnly**:
+**PasscodeOnly**: 
 
 Passcode authentication should only be allowed
 
@@ -197,7 +197,7 @@ ___
 
 ###  VaultErrorCodes
 
-**VaultErrorCodes**:
+**VaultErrorCodes**: 
 
 The meaning of the error code in the thrown [VaultError](#vaulterror)
 
@@ -205,7 +205,7 @@ The meaning of the error code in the thrown [VaultError](#vaulterror)
 
 ###  AuthFailed
 
-**AuthFailed**:
+**AuthFailed**: 
 
 User authentication failed
 
@@ -214,7 +214,7 @@ ___
 
 ###  BiometricsNotEnabled
 
-**BiometricsNotEnabled**:
+**BiometricsNotEnabled**: 
 
 The operation failed because biometric authentication is not enabled
 
@@ -223,7 +223,7 @@ ___
 
 ###  InvalidArguments
 
-**InvalidArguments**:
+**InvalidArguments**: 
 
 The operation failed because the provided arguments were invalid
 
@@ -232,7 +232,7 @@ ___
 
 ###  InvalidAuthMode
 
-**InvalidAuthMode**:
+**InvalidAuthMode**: 
 
 The AuthMode is invalid
 
@@ -241,7 +241,7 @@ ___
 
 ###  InvalidatedCredential
 
-**InvalidatedCredential**:
+**InvalidatedCredential**: 
 
 The credentials were invalidated. This can happen when a user changes biometrics or passcode.
 
@@ -250,7 +250,7 @@ ___
 
 ###  KeyNotFound
 
-**KeyNotFound**:
+**KeyNotFound**: 
 
 The key was not found. This can happen when a user changes biometrics or passcode.
 
@@ -259,7 +259,7 @@ ___
 
 ###  MismatchedPasscode
 
-**MismatchedPasscode**:
+**MismatchedPasscode**: 
 
 The user provided mismatched passcodes
 
@@ -268,7 +268,7 @@ ___
 
 ###  MissingPasscode
 
-**MissingPasscode**:
+**MissingPasscode**: 
 
 The operation requires passcode to be setup but it isn't set yet. Call [setPasscode](#identityvault.setpasscode) to set it.
 
@@ -277,7 +277,7 @@ ___
 
 ###  PasscodeNotEnabled
 
-**PasscodeNotEnabled**:
+**PasscodeNotEnabled**: 
 
 The operation failed because passcode authentication is not enabled
 
@@ -286,7 +286,7 @@ ___
 
 ###  SecurityNotAvailable
 
-**SecurityNotAvailable**:
+**SecurityNotAvailable**: 
 
 Biometric security is unavailable
 
@@ -295,7 +295,7 @@ ___
 
 ###  TooManyFailedAttempts
 
-**TooManyFailedAttempts**:
+**TooManyFailedAttempts**: 
 
 Too many failed authentication attempts so the vault was cleared an user will need to login again
 
@@ -304,7 +304,7 @@ ___
 
 ###  Unknown
 
-**Unknown**:
+**Unknown**: 
 
 An unknown error happened
 
@@ -313,7 +313,7 @@ ___
 
 ###  UserCanceledInteraction
 
-**UserCanceledInteraction**:
+**UserCanceledInteraction**: 
 
 The user cancelled the native authentication dialog
 
@@ -322,7 +322,7 @@ ___
 
 ###  VaultLocked
 
-**VaultLocked**:
+**VaultLocked**: 
 
 The operation failed because the vault was locked
 
@@ -331,7 +331,7 @@ ___
 
 ###  VaultUnavailable
 
-**VaultUnavailable**:
+**VaultUnavailable**: 
 
 The operation failed because the vault was unavailable
 
@@ -345,7 +345,7 @@ ___
 
 ###  DefaultSession
 
-**DefaultSession**:
+**DefaultSession**: 
 
 The interface for the Default Session. Extend this interface to make a custom session
 
@@ -378,7 +378,7 @@ ___
 
 ###  IdentityVault
 
-**IdentityVault**:
+**IdentityVault**: 
 
 The underlying vault API. You can gain direct access to the vault for more advanced usage by using the [IdentityVaultUser.getVault](#identityvaultuser.getvault) method.
 
@@ -700,7 +700,7 @@ ___
 
 ###  IdentityVaultUser
 
-**IdentityVaultUser**:
+**IdentityVaultUser**: 
 
 The main class which you can extend in order to implement vault usage. @typeparam `T` must extend [DefaultSession](#defaultsession)
 
@@ -1151,7 +1151,7 @@ ___
 
 ###  IonicNativeAuthPlugin
 
-**IonicNativeAuthPlugin**:
+**IonicNativeAuthPlugin**: 
 
 The native plugin
 
@@ -1176,7 +1176,7 @@ ___
 
 ###  LockEvent
 
-**LockEvent**:
+**LockEvent**: 
 
 The lock event passed to the [onVaultLocked](#identityvaultuser.onvaultlocked) handler.
 
@@ -1204,7 +1204,7 @@ ___
 
 ###  PluginConfiguration
 
-**PluginConfiguration**:
+**PluginConfiguration**: 
 
 The configuration returned from [IonicNativeAuthPlugin](#ionicnativeauthplugin) when [getConfig](#identityvault.getconfig) is called.
 
@@ -1268,7 +1268,7 @@ ___
 
 ###  PluginOptions
 
-**PluginOptions**:
+**PluginOptions**: 
 
 The options passed the the [IonicNativeAuthPlugin](#ionicnativeauthplugin) when creating a vault with [getVault](#identityvaultuser.getvault)
 
@@ -1399,7 +1399,7 @@ ___
 
 ###  VaultConfig
 
-**VaultConfig**:
+**VaultConfig**: 
 
 The configuration file returned to event handlers such as [onConfigChange](#identityvaultuser.onconfigchange) and [onVaultReady](#identityvaultuser.onvaultready).
 
@@ -1451,7 +1451,7 @@ ___
 
 ###  VaultDescriptor
 
-**VaultDescriptor**:
+**VaultDescriptor**: 
 
 An interface that describes the vault. In [IdentityVaultUser](#identityvaultuser) this defaults to `_lastUser` & `default` you can optionally add this to the constructor to accomplish advanced use cases multi-tenant vaults.
 
@@ -1479,7 +1479,7 @@ ___
 
 ###  VaultError
 
-**VaultError**:
+**VaultError**: 
 
 An error that can be thrown by the plugin.
 
@@ -1521,7 +1521,7 @@ ___
 
 ###  VaultOptions
 
-**VaultOptions**:
+**VaultOptions**: 
 
 The options passed in to initialize the vault.
 
@@ -1607,6 +1607,15 @@ The possible values returned by [getBiometricType](#identityvault.getbiometricty
 ___
 
 ## Change Log
+
+
+
+### [3.2.1] (2019-04-27)
+
+
+### Bug Fixes
+
+* fix bug where plugin id was incorrect and didn't include scope 
 
 
 

@@ -5,7 +5,7 @@ const items = {
   'Enterprise Edition Plugins': {
     'Overview': '/docs/enterprise',
     'Android Permissions': '/docs/enterprise/android-permissions',
-    'Apple Wallet': '/docs/enterprise/apple-wallet',
+    'Apple Payment Pass': '/docs/enterprise/apple-payment-pass',
     'App Version': '/docs/enterprise/appversion',
     'Badge': '/docs/enterprise/badge',
     'Calendar': '/docs/enterprise/calendar',
