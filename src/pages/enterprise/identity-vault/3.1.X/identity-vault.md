@@ -1,8 +1,8 @@
 ---
 title: Identity Vault
 template: enterprise-plugin
-version: 3.2.1
-minor: 3.2.X
+version: 3.1.0
+minor: 3.1.X
 otherVersions:
   - 2.0.X
   - 3.0.X
@@ -757,29 +757,6 @@ Get the type of biometrics the device supports
 
 **Returns:** `Promise`<[BiometricType](#biometrictype)>
 the type of biometrics the device supports
-
-___
-<a id="identityvaultuser.getplugin"></a>
-
-###  getPlugin
-
-▸ **getPlugin**(): [IonicNativeAuthPlugin](#ionicnativeauthplugin)
-
-Returns the underlying Plugin Implementation. This can be overriden in the sub class service to allow for a customer browser implementation. Note that when overriding this with a browser implementation you should use the storeValue/getValue functions with the key `session` to store & retrieve the session as described or by [DefaultSession](#defaultsession) or the interface that extends it.
-
-*__usage__*:
- ```typescript
-getPlugin(): IonicNativeAuthPlugin {
-  if (this.platform.is('cordova')) {
-    return super.getPlugin();
-  }
-  // MyCustomerBrowserImplementation must implement the IonicNativeAuthPlugin interface
-  // make sure getValue('session') & storeValue('session') store & retrieve the session.
-  return MyCustomBrowserImplementation();
-}
-```
-
-**Returns:** [IonicNativeAuthPlugin](#ionicnativeauthplugin)
 
 ___
 <a id="identityvaultuser.getsession"></a>
@@ -1606,41 +1583,3 @@ The possible values returned by [getBiometricType](#identityvault.getbiometricty
 
 ___
 
-## Change Log
-
-
-
-### [3.2.1] (2019-04-27)
-
-
-### Bug Fixes
-
-* fix bug where plugin id was incorrect and didn't include scope 
-
-
-
-### [3.2.0] (2019-04-26)
-
-### Features
-
-- Added [getPlugin](#identityvaultuser.getplugin) method which can be overridden in advanced use cases to provide custom implementations for PWA compatability etc.
-
-### Bug Fixes
-
-* **iOS:** Fixed a bug on iOS where when using the [hideScreenOnBackground](#vaultoptions.hidescreenonbackground) flag the splashscreen may temporarily flash during biometric prompts.
-* **Android:** Fixed a bug on Android where [isBiometricsAvailable](#identityvaultuser.isbiometricsavailable) would return true is some cases if No fingerprints were enrolled or fingerprint hardware wasn't available.
-* **Android, iOS:** Fixed a bug where [getSession](#identityvaultuser.getsession) may incorrectly return `undefined` due to failing to wait for the plugin to be ready before returning.
-
-### [3.1.0] (2019-04-19)
-
-### Features
-
-* Added [login](#identityvaultuser.login) method which clears the vault and stores the session passed to it.
-
-### [3.0.0] (2019-04-08)
-
-### Features
-
-* Added the ability to use [onPasscodeRequest](#identityvaultuser.onpasscoderequest) to use a custom pin prompt screen.
-* Made [IdentityVaultUser](#identityvaultuser) a generic class to allow using the [DefaultSession](#defaultsession) or extending it to type and store the session object.
-* Added support for advanced usages such as multi-tenant vaults by using the [IonicNativeAuthPlugin](#ionicnativeauthplugin.getvault) and [IdentityVault](#identityvault) APIs directly.

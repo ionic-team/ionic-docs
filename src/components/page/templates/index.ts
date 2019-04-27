@@ -5,6 +5,7 @@ import cli from './cli';
 import enterprisePlugin from './enterprise-plugin';
 import error from './error';
 import native from './native';
+import releaseNotes from './release-notes';
 
 export default {
   'default': defaultTemplate,
@@ -13,5 +14,6 @@ export default {
   'cli': cli,
   'enterprise-plugin': enterprisePlugin,
   'error': error,
-  'native': native
+  'native': native,
+  'release-notes': releaseNotes,
 };

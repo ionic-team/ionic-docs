@@ -6,6 +6,7 @@ minor: 3.0.X
 otherVersions:
   - 2.0.X
   - 3.0.X
+  - 3.1.X
 ---
 
 Ionic Identity Vault

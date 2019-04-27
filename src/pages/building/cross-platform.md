@@ -1,7 +1,7 @@
 ---
 previousText: 'Migration'
 previousUrl: '/docs/building/migration'
-nextText: 'Running'
+nextText: 'Running Overview'
 nextUrl: '/docs/building/running'
 disableHtmlPreviews: true
 contributors:

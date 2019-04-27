@@ -1,5 +1,6 @@
 import { Component, Prop } from '@stencil/core';
 import { Logo } from '../../icons';
+import { FrameworkSelect } from './framework-select';
 import componentsTemplate from './templates/components';
 import cliTemplate from './templates/cli';
 import nativeTemplate from './templates/native';
@@ -23,6 +24,9 @@ export class DocsMenu {
         </stencil-route-link>
       </header>,
       <docs-search/>,
+      <section class="MenuControls">
+        <FrameworkSelect/>
+      </section>,
       <stencil-route-switch scrollTopOffset={0}>
         <stencil-route url="/docs/(components|api)" routeRender={componentsTemplate}/>
         <stencil-route url="/docs/cli" routeRender={cliTemplate}/>

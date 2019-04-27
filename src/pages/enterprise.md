@@ -1,13 +1,13 @@
 ---
-title: Ionic Enterprise Edition
+title: Ionic Native Enterprise Edition
 ---
 
-Accelerate development with powerful solutions to common enterprise use cases - all built and supported by the Ionic team. Ionic’s growing library of solutions are ready to deploy in any of the apps you build with Enterprise Edition
+Accelerate development with powerful solutions to common enterprise use cases - all built and supported by the Ionic team. Ionic’s growing library of solutions are ready to deploy in any of the apps you build with Native Enterprise Edition
 
-Ionic Enterprise Edition includes a reliable set of Native APIs & functionality that you can use in your Ionic app,
+Ionic Native Enterprise Edition includes a reliable set of Native APIs & functionality that you can use in your Ionic app,
 quality controlled and maintained by the Ionic Team.
 
-## What is Ionic Enterprise Edition
+## What is Ionic Native Enterprise Edition
 <div class="native-ee-pricing">
   <div class="table-wrap">
     <table>
@@ -24,7 +24,7 @@ quality controlled and maintained by the Ionic Team.
           </th>
           <th>
             <div class="plan-wrap">
-              <span class="native-ee-pricing-table">Enterprise Edition</span>
+              <span class="native-ee-pricing-table">Native Enterprise Edition</span>
               <div class="price" data-toggle="billing-team">
                 Contact Us</div>
             </div>
@@ -99,7 +99,7 @@ quality controlled and maintained by the Ionic Team.
   </div>
 </div>
 
-## Sign Up for Ionic Enterprise Edition
+## Sign Up for Ionic Native Enterprise Edition
 
 <hubspot-form form-id="7c2c6529-48c0-4d17-86a0-bfd40c849bb1"></hubspot-form>
 
@@ -131,12 +131,16 @@ docs page.
 </command-line>
 
 ## Plugin List
+- [Android Permissions](/docs/enterprise/android-permissions)
 - [Apple Wallet](/docs/enterprise/apple-wallet)
+- [App Version](/docs/enterprise/appversion)
 - [Badge](/docs/enterprise/badge)
+- [Calendar](/docs/enterprise/calendar)
 - [Camera](/docs/enterprise/camera)
 - [Clipboard](/docs/enterprise/clipboard)
 - [Device](/docs/enterprise/device)
 - [Dialogs](/docs/enterprise/dialogs)
+- [Email Composer](/docs/enterprise/emailcomposer)
 - [Filesystem](/docs/enterprise/filesystem)
 - [Geolocation](/docs/enterprise/geolocation)
 - [Identity Vault](/docs/enterprise/identity-vault)

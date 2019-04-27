@@ -260,6 +260,19 @@ export namespace Components {
   interface DocsSearch {}
   interface DocsSearchAttributes extends StencilHTMLAttributes {}
 
+  interface DocsSelect {
+    'initializer': (options: string[]) => string;
+    'onSelect': (option: string) => any;
+    'optionRenderer': (option: string) => any;
+    'options': string[];
+  }
+  interface DocsSelectAttributes extends StencilHTMLAttributes {
+    'initializer'?: (options: string[]) => string;
+    'onSelect'?: (option: string) => any;
+    'optionRenderer'?: (option: string) => any;
+    'options'?: string[];
+  }
+
   interface SmsForm {}
   interface SmsFormAttributes extends StencilHTMLAttributes {}
 
@@ -277,14 +290,17 @@ export namespace Components {
     'links'?: Link[];
   }
 
-  interface DocsTabs {
-    'initial': string;
-    'tabs': string;
+  interface DocsTab {
+    'selected': boolean;
+    'tab': string;
   }
-  interface DocsTabsAttributes extends StencilHTMLAttributes {
-    'initial'?: string;
-    'tabs'?: string;
+  interface DocsTabAttributes extends StencilHTMLAttributes {
+    'selected'?: boolean;
+    'tab'?: string;
   }
+
+  interface DocsTabs {}
+  interface DocsTabsAttributes extends StencilHTMLAttributes {}
 
   interface WistiaVideo {
     'id': string;
@@ -329,9 +345,11 @@ declare global {
     'DocsReference': Components.DocsReference;
     'DocsRoot': Components.DocsRoot;
     'DocsSearch': Components.DocsSearch;
+    'DocsSelect': Components.DocsSelect;
     'SmsForm': Components.SmsForm;
     'SteppedColorGenerator': Components.SteppedColorGenerator;
     'DocsTableOfContents': Components.DocsTableOfContents;
+    'DocsTab': Components.DocsTab;
     'DocsTabs': Components.DocsTabs;
     'WistiaVideo': Components.WistiaVideo;
   }
@@ -370,9 +388,11 @@ declare global {
     'docs-reference': Components.DocsReferenceAttributes;
     'docs-root': Components.DocsRootAttributes;
     'docs-search': Components.DocsSearchAttributes;
+    'docs-select': Components.DocsSelectAttributes;
     'sms-form': Components.SmsFormAttributes;
     'stepped-color-generator': Components.SteppedColorGeneratorAttributes;
     'docs-table-of-contents': Components.DocsTableOfContentsAttributes;
+    'docs-tab': Components.DocsTabAttributes;
     'docs-tabs': Components.DocsTabsAttributes;
     'wistia-video': Components.WistiaVideoAttributes;
   }
@@ -576,6 +596,12 @@ declare global {
     new (): HTMLDocsSearchElement;
   };
 
+  interface HTMLDocsSelectElement extends Components.DocsSelect, HTMLStencilElement {}
+  var HTMLDocsSelectElement: {
+    prototype: HTMLDocsSelectElement;
+    new (): HTMLDocsSelectElement;
+  };
+
   interface HTMLSmsFormElement extends Components.SmsForm, HTMLStencilElement {}
   var HTMLSmsFormElement: {
     prototype: HTMLSmsFormElement;
@@ -592,6 +618,12 @@ declare global {
   var HTMLDocsTableOfContentsElement: {
     prototype: HTMLDocsTableOfContentsElement;
     new (): HTMLDocsTableOfContentsElement;
+  };
+
+  interface HTMLDocsTabElement extends Components.DocsTab, HTMLStencilElement {}
+  var HTMLDocsTabElement: {
+    prototype: HTMLDocsTabElement;
+    new (): HTMLDocsTabElement;
   };
 
   interface HTMLDocsTabsElement extends Components.DocsTabs, HTMLStencilElement {}
@@ -640,9 +672,11 @@ declare global {
     'docs-reference': HTMLDocsReferenceElement
     'docs-root': HTMLDocsRootElement
     'docs-search': HTMLDocsSearchElement
+    'docs-select': HTMLDocsSelectElement
     'sms-form': HTMLSmsFormElement
     'stepped-color-generator': HTMLSteppedColorGeneratorElement
     'docs-table-of-contents': HTMLDocsTableOfContentsElement
+    'docs-tab': HTMLDocsTabElement
     'docs-tabs': HTMLDocsTabsElement
     'wistia-video': HTMLWistiaVideoElement
   }
@@ -681,9 +715,11 @@ declare global {
     'docs-reference': HTMLDocsReferenceElement;
     'docs-root': HTMLDocsRootElement;
     'docs-search': HTMLDocsSearchElement;
+    'docs-select': HTMLDocsSelectElement;
     'sms-form': HTMLSmsFormElement;
     'stepped-color-generator': HTMLSteppedColorGeneratorElement;
     'docs-table-of-contents': HTMLDocsTableOfContentsElement;
+    'docs-tab': HTMLDocsTabElement;
     'docs-tabs': HTMLDocsTabsElement;
     'wistia-video': HTMLWistiaVideoElement;
   }

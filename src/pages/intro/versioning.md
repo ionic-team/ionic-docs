@@ -1,8 +1,8 @@
 ---
 previousText: 'Browser Support'
 previousUrl: '/docs/intro/browser-support'
-nextText: 'Support'
-nextUrl: '/docs/intro/support'
+nextText: 'Release Notes'
+nextUrl: '/docs/intro/release-notes'
 ---
 
 # バージョニング

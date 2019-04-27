@@ -6,6 +6,7 @@ const items = {
     'コアコンセプト': '/docs/intro/concepts',
     'ブラウザサポート': '/docs/intro/browser-support',
     'バージョニング': '/docs/intro/versioning',
+    'Release Notes': '/docs/intro/release-notes',
     'サポート': '/docs/intro/support'
   },
   'インストール': {
@@ -63,6 +64,7 @@ const items = {
     'ランタイムエラー': '/docs/faq/runtime',
     'Native Errors': '/docs/faq/native',
     'CORS Errors': '/docs/faq/cors',
+    'Security': '/docs/faq/security',
     '開発者向けのヒント': '/docs/faq/tips',
     '変更履歴': 'https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md'
   },

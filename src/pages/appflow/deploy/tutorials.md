@@ -52,8 +52,8 @@ In the following video tutorial, and code snippets we use the Deploy API to set 
 ### Choose your Integration Type:
 Here's an example template/JS for a page where we allow users to toggle to pull from a Beta Channel instead of Production and apply updates immediately when they toggle:
 
-<docs-tabs tabs="Ionic 2/3, Ionic 1">
-<div slot="Ionic23">
+<docs-tabs>
+<docs-tab tab="Ionic 2/3">
 <!-- HERE IS WHERE IONIC 2+ CONTENT GOES -->
 
 ```html
@@ -165,8 +165,8 @@ export class SettingsPage {
 
 }
 ```
-</div>
-<div slot="Ionic1">
+</docs-tab>
+<docs-tab tab="Ionic 1">
 
 ```html
 <!-- settings.html -->
@@ -267,5 +267,5 @@ export class SettingsPage {
 
 })
 ```
-</div>
+</docs-tab>
 </docs-tabs>

@@ -1,7 +1,11 @@
+import { useLocalStorage } from '../../../local-storage';
+
+const [getFramework] = useLocalStorage('ionic-docs:framework');
+
 export default (props) => {
   const { page } = props;
   const headings = [...page.headings];
-  const usage = renderUsage(page.usage);
+  const usage = renderUsage(page.usage, page.path);
   const properties = renderProperties(page.props);
   const events = renderEvents(page.events);
   const methods = renderMethods(page.methods);
@@ -65,8 +69,10 @@ export default (props) => {
   );
 };
 
-const renderUsage = (usage = {}) => {
+const renderUsage = (usage = {}, path: string) => {
   const keys = Object.keys(usage);
+  const frameworkPref = getFramework();
+  const framework = frameworkPref ? frameworkPref.toLowerCase() : null;
 
   if (!keys.length) {
     return null;
@@ -77,8 +83,19 @@ const renderUsage = (usage = {}) => {
       <h2 id="usage">
         <a href="#usage">Usage</a>
       </h2>
-      <docs-tabs tabs={keys.join(',')}>
-        { keys.map(key => <div slot={key} innerHTML={usage[key]}/>) }
+      <docs-tabs
+        /**
+         * We need the `key` here to ensure that the tabs are
+         * re-created on each page so that the initial tab will
+         * be set during componentWillLoad.
+         */
+        key={path}>
+          {keys.map(key =>
+            <docs-tab
+              tab={key}
+              selected={framework === key.toLowerCase()}
+              innerHTML={usage[key]}/>
+          )}
       </docs-tabs>
     </section>
   );

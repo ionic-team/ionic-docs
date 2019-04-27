@@ -4,13 +4,17 @@ export default () => <docs-nav items={items}/>;
 const items = {
   'Enterprise Edition Plugins': {
     'Overview': '/docs/enterprise',
-    'Apple Wallet': '/docs/enterprise/apple-wallet',
+    'Android Permissions': '/docs/enterprise/android-permissions',
+    'Apple Payment Pass': '/docs/enterprise/apple-payment-pass',
+    'App Version': '/docs/enterprise/appversion',
     'Badge': '/docs/enterprise/badge',
+    'Calendar': '/docs/enterprise/calendar',
     'Camera': '/docs/enterprise/camera',
     'Clipboard': '/docs/enterprise/clipboard',
     'Couchbase Lite': 'https://ionicframework.com/integrations/couchbase-lite',
     'Device': '/docs/enterprise/device',
     'Dialogs': '/docs/enterprise/dialogs',
+    'Email Composer': '/docs/enterprise/emailcomposer',
     'Filesystem': '/docs/enterprise/filesystem',
     'Geolocation': '/docs/enterprise/geolocation',
     'Identity Vault': '/docs/enterprise/identity-vault',
