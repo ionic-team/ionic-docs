@@ -9,13 +9,14 @@
     "start": "stencil build --dev --serve --watch --es5",
     "prestart": "npm run -s build-all",
     "build": "stencil build --prerender --dev --es5 && echo '/ /docs/ 302'  >> www/_redirects && echo '/docs/api/* docs/api/index.html 200' >> www/_redirects",
-    "prebuild": "npm run -s build-all",
+    "prebuild": "npm run -s build-all && npm run translate",
     "lint": "tslint --config tslint.json --project tsconfig.json",
     "build-all": "ts-node -P scripts/tsconfig.json scripts/build-all",
     "build-data": "ts-node -P scripts/tsconfig.json scripts/build-data",
     "build-pages": "ts-node -P scripts/tsconfig.json scripts/build-pages",
     "build-menus": "ts-node -P scripts/tsconfig.json scripts/build-menus",
-    "watch-pages": "ts-node -P scripts/tsconfig.json scripts/watch-pages"
+    "watch-pages": "ts-node -P scripts/tsconfig.json scripts/watch-pages",
+    "translate": "ts-node -P scripts/tsconfig.json scripts/translate.ts apply ja"
   },
   "dependencies": {
     "@ionic/core": "^4.3.0",
