@@ -1,8 +1,5 @@
 const documentDirectories = ['api', 'cli', 'native'];
-interface SourceJSON {
-  body: string;
-  docs: string;
-}
+import { components } from '@ionic/docs/core.json';
 
 async function apply() {
   const fs = require('fs');
@@ -24,20 +21,17 @@ async function apply() {
     fileList = fileList.concat(files);
   }
 
+  const componentsObject: object[] = [];
   for (const path of fileList) {
-    const transText = JSON.parse(fs.readFileSync(path, { encoding: 'UTF8' }));
-    const resourceText: SourceJSON = JSON.parse(fs.readFileSync(process.cwd() + '/' + transText.target, { encoding: 'UTF8' }));
-
-    ['body'].forEach(key => {
-      if (resourceText[key] === transText.translate[key]['original'] && transText.translate[key]['translate'].length > 0) {
-        resourceText[key] = transText.translate[key]['translate'];
-      }
-    });
-    fs.writeFileSync(process.cwd() + '/' + transText.target, JSON.stringify(resourceText, null, 2), { encoding: 'UTF8' });
+    componentsObject.push(JSON.parse(fs.readFileSync(path, { encoding: 'UTF8' })));
   }
+  const corePath = process.cwd() + '/scripts/data/core.json';
+  const core = JSON.parse(fs.readFileSync(corePath, { encoding: 'UTF8' }));
+  core.components = componentsObject;
+
+  fs.writeFileSync(process.cwd() + '/scripts/data/core.json', JSON.stringify(core, null, 2), { encoding: 'UTF8' });
 }
 
-import { components } from '@ionic/docs/core.json';
 async function create() {
   const fs = require('fs');
   components.map(component => {
@@ -54,12 +48,28 @@ async function create() {
   });
 }
 
+async function diff() {
+  const fs = require('fs');
+  const execSync = require('child_process').execSync;
+  execSync('git diff src/translate/.api/*  > structure_api.patch');
+
+  const patchPath = process.cwd() + '/structure_api.patch';
+  const patchTxt = fs.readFileSync(patchPath, { encoding: 'UTF8' });
+  console.log(patchTxt.replace(/\.api/g, 'api'));
+  fs.writeFileSync(patchPath, patchTxt.replace(/\.api/g, 'api'), { encoding: 'UTF8' });
+
+  execSync('patch -p1 < \'structure_api.patch\'');
+  execSync('rm structure_api.patch');
+}
+
 (async () => {
   if (process.argv[2] === 'apply') {
     await apply();
   }
-
   if (process.argv[2] === 'create') {
     await create();
+  }
+  if (process.argv[2] === 'diff') {
+    await diff();
   }
 })();

@@ -17,7 +17,7 @@
     "build-menus": "ts-node -P scripts/tsconfig.json scripts/build-menus",
     "watch-pages": "ts-node -P scripts/tsconfig.json scripts/watch-pages",
     "translate": "ts-node -P scripts/tsconfig.json scripts/translate.ts apply",
-    "translate:create": "ts-node -P scripts/tsconfig.json scripts/translate.ts create"
+    "translate:create": "ts-node -P scripts/tsconfig.json scripts/translate.ts create && ts-node -P scripts/tsconfig.json scripts/translate.ts diff"
   },
   "dependencies": {
     "@ionic/core": "^4.3.0",
