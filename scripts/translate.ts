@@ -38,39 +38,45 @@ async function apply(lang: string) {
 }
 
 async function create(lang: string, path: string) {
-  // const fs = require('fs');
-  console.log([lang, path]);
-  // path = path.replace('src/', '').replace('content/', '');
-  // const includeFlg = documentDirectories.find(data => {
-  //   if (!data) {
-  //     return false;
-  //   }
-  //   return (path.indexOf(data) !== -1);
-  // });
-  // if (!includeFlg) {
-  //   Error('[error] path is disable string.');
-  //   return;
-  // }
-  // const resourceText = readFileSync(process.cwd() + '/src/content/' + path, { encoding: 'UTF8' });
-  // if (!resourceText) {
-  //   Error('[error] path is not exist file.');
-  //   return;
-  // }
-  //
-  // const json = JSON.stringify({
-  //   target: path,
-  //   translate: {}
-  // });
-  //
-  // const writeFileName = process.cwd() + '/translate/' + lang + '/' + path.replace('md', 'json');
-  // if (!existsSync(writeFileName.split('/').reverse().slice(1).reverse().join('/'))) {
-  //   mkdirSync(writeFileName.split('/').reverse().slice(1).reverse().join('/'));
-  // }
-  // if (existsSync(writeFileName)) {
-  //   Error('[error] translate file exist.');
-  //   return;
-  // }
-  // writeFileSync(writeFileName, json, { encoding: 'UTF8' });
+  const fs = require('fs');
+  const isInclude = documentDirectories.find(data => {
+    if (!data) {
+      return false;
+    }
+    return (path.indexOf(data) !== -1);
+  });
+  if (!isInclude) {
+    Error('[error] path is disable string.');
+    return;
+  }
+  const resourceText: SourceJSON = JSON.parse(fs.readFileSync(process.cwd() + '/' + path, { encoding: 'UTF8' }));
+  if (!resourceText) {
+    Error('[error] path is not exist file.');
+    return;
+  }
+
+  const json = JSON.stringify({
+    target: path,
+    translate: {
+      body: {
+        'original': resourceText.body,
+        'translate': resourceText.body,
+      },
+      docs: {
+        'original': resourceText.docs,
+        'translate': resourceText.docs,
+      }
+    }
+  }, null, 2);
+  const writeFileName = process.cwd() + '/src/translate/' + lang + '/' + path.replace('src/pages/', '');
+  if (!fs.existsSync(writeFileName.split('/').reverse().slice(1).reverse().join('/'))) {
+    fs.mkdirSync(writeFileName.split('/').reverse().slice(1).reverse().join('/'));
+  }
+  if (fs.existsSync(writeFileName)) {
+    Error('[error] translate file exist.');
+    return;
+  }
+  fs.writeFileSync(writeFileName, json, { encoding: 'UTF8' });
 }
 
 (async () => {
