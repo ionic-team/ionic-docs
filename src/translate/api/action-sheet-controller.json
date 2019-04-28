@@ -4,10 +4,6 @@
     "body": {
       "original": "\n  <p class=\"intro\">Action Sheet controllers programmatically control the action sheet component. Action Sheets can be created and dismissed from the action sheet controller. View the <stencil-route-link url=\"/docs/api/action-sheet\">Action Sheet</stencil-route-link> documentation for a full list of options to pass upon creation.</p>\n",
       "translate": "\n  <p class=\"intro\">Action Sheet controllers は、プログラミングで Action Sheet を制御します。Action Sheets を作成し、削除することができます。 Action Sheetをつくる時に利用することができるすべてのオプションは <stencil-route-link url=\"/docs/api/action-sheet\">Action Sheet</stencil-route-link> をご覧ください。</p>\n"
-    },
-    "docs": {
-      "original": "Action Sheet controllers programmatically control the action sheet component. Action Sheets can be created and dismissed from the action sheet controller. View the [Action Sheet](../action-sheet) documentation for a full list of options to pass upon creation.",
-      "translate": "Action Sheet controllers は、プログラミングで Action Sheet を制御します。Action Sheets を作成し、削除することができます。 Action Sheetをつくる時に利用することができるすべてのオプションは [Action Sheet](../action-sheet) をご覧ください。"
     }
   }
 }

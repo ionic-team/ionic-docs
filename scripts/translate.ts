@@ -28,7 +28,7 @@ async function apply() {
     const transText = JSON.parse(fs.readFileSync(path, { encoding: 'UTF8' }));
     const resourceText: SourceJSON = JSON.parse(fs.readFileSync(process.cwd() + '/' + transText.target, { encoding: 'UTF8' }));
 
-    ['docs', 'body'].forEach(key => {
+    ['body'].forEach(key => {
       if (resourceText[key] === transText.translate[key]['original'] && transText.translate[key]['translate'].length > 0) {
         resourceText[key] = transText.translate[key]['translate'];
       }
@@ -61,10 +61,6 @@ async function create(path: string) {
       body: {
         'original': resourceText.body,
         'translate': resourceText.body,
-      },
-      docs: {
-        'original': resourceText.docs,
-        'translate': resourceText.docs,
       }
     }
   }, null, 2);
