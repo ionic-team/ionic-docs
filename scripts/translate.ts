@@ -36,8 +36,8 @@ async function create() {
   const fs = require('fs');
   components.map(component => {
     const files = {
-      real: process.cwd() + '/src/translate/api/' + component.tag + '.json',
-      shadow: process.cwd() + '/src/translate/.api/' + component.tag + '.json'
+      real: process.cwd() + '/src/translate/api/' + component.tag.replace('ion-', '') + '.json',
+      shadow: process.cwd() + '/src/translate/.api/' + component.tag.replace('ion-', '') + '.json'
     };
 
     if (!fs.existsSync(files.real)) {
