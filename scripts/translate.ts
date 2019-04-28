@@ -13,7 +13,7 @@ async function apply() {
     let files: string[] | any = fs.readdirSync(directory, { encoding: 'UTF8' });
     files = files
       .filter(file => {
-        return /.*\.json$/.test(file);
+        return (/.*\.json$/.test(file) && !file.match(/readme/));
       })
       .map(file => {
         return directory + '/' + file;
@@ -23,7 +23,12 @@ async function apply() {
 
   const componentsObject: object[] = [];
   for (const path of fileList) {
-    componentsObject.push(JSON.parse(fs.readFileSync(path, { encoding: 'UTF8' })));
+    const componentObject = JSON.parse(fs.readFileSync(path, { encoding: 'UTF8' }));
+    const readmePath = path.replace(/\.json/g, '.readme.md');
+    if (fs.existsSync(readmePath)) {
+      componentObject.readme = fs.readFileSync(readmePath, { encoding: 'UTF8' });
+    }
+    componentsObject.push(componentObject);
   }
   const corePath = process.cwd() + '/scripts/data/core.json';
   const core = JSON.parse(fs.readFileSync(corePath, { encoding: 'UTF8' }));
@@ -37,14 +42,21 @@ async function create() {
   components.map(component => {
     const files = {
       real: process.cwd() + '/src/translate/api/' + component.tag.replace('ion-', '') + '.json',
-      shadow: process.cwd() + '/src/translate/.api/' + component.tag.replace('ion-', '') + '.json'
+      realReadme: process.cwd() + '/src/translate/api/' + component.tag.replace('ion-', '') + '.readme.md',
+      shadow: process.cwd() + '/src/translate/.api/' + component.tag.replace('ion-', '') + '.json',
+      shadowReadme: process.cwd() + '/src/translate/.api/' + component.tag.replace('ion-', '') + '.readme.md'
     };
 
     if (!fs.existsSync(files.real)) {
       fs.writeFileSync(files.real, JSON.stringify(component, null, 2), { encoding: 'UTF8' });
     }
 
+    if (!fs.existsSync(files.realReadme)) {
+      fs.writeFileSync(files.realReadme, component.readme, { encoding: 'UTF8' });
+    }
+
     fs.writeFileSync(files.shadow, JSON.stringify(component, null, 2), { encoding: 'UTF8' });
+    fs.writeFileSync(files.shadowReadme, component.readme, { encoding: 'UTF8' });
   });
 }
 
