@@ -85,6 +85,6 @@ async function create(path: string) {
   }
 
   if (process.argv[2] === 'create' && process.argv[3]) {
-    await create(process.argv[4]);
+    await create(process.argv[3]);
   }
 })();
