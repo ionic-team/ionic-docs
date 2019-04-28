@@ -16,7 +16,7 @@ export class DocsRoot {
     if (!this.history) {
       this.history = history;
       this.history.listen((location: LocationSegments) => {
-        (window as any).gtag('config', 'UA-44023830-1', { 'page_path': location.pathname + location.search });
+        (window as any).gtag('config', 'UA-73373181-13', { 'page_path': location.pathname + location.search });
       });
     }
   }
