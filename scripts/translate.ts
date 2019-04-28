@@ -4,12 +4,12 @@ interface SourceJSON {
   docs: string;
 }
 
-async function apply(lang: string) {
+async function apply() {
   const fs = require('fs');
   let fileList: string[] | any = [];
 
   for (const d of documentDirectories) {
-    const directory = process.cwd() + '/src/translate/' + lang + '/' + d;
+    const directory = process.cwd() + '/src/translate/' + d;
     if (!fs.existsSync(directory)) {
       continue;
     }
@@ -37,7 +37,7 @@ async function apply(lang: string) {
   }
 }
 
-async function create(lang: string, path: string) {
+async function create(path: string) {
   const fs = require('fs');
   const isInclude = documentDirectories.find(data => {
     if (!data) {
@@ -68,7 +68,7 @@ async function create(lang: string, path: string) {
       }
     }
   }, null, 2);
-  const writeFileName = process.cwd() + '/src/translate/' + lang + '/' + path.replace('src/pages/', '');
+  const writeFileName = process.cwd() + '/src/translate/' + path.replace('src/pages/', '');
   if (!fs.existsSync(writeFileName.split('/').reverse().slice(1).reverse().join('/'))) {
     fs.mkdirSync(writeFileName.split('/').reverse().slice(1).reverse().join('/'));
   }
@@ -81,10 +81,10 @@ async function create(lang: string, path: string) {
 
 (async () => {
   if (process.argv[2] === 'apply') {
-    await apply(process.argv[3]);
+    await apply();
   }
 
-  if (process.argv[2] === 'create' && process.argv[3] && process.argv[4]) {
-    await create(process.argv[3], process.argv[4]);
+  if (process.argv[2] === 'create' && process.argv[3]) {
+    await create(process.argv[4]);
   }
 })();
