@@ -63,7 +63,7 @@ export class DocsPage {
   @Watch('page')
   setDocumentTitle(page: Page) {
     const { title, meta = {} } = page;
-    const suffix = /^\/docs\/pages\/appflow.*$/.test(this.path) ? 'Ionic Appflow Documentation' : 'Ionic Documentation';
+    const suffix = /^\/docs\/pages\/appflow.*$/.test(this.path) ? 'Ionic Appflow 日本語ドキュメンテーション' : 'Ionic Framework 日本語ドキュメンテーション';
     const pageTitle = meta.title || `${title} - ${suffix}`;
     this.document.title = pageTitle;
   }
