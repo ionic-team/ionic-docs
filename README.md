@@ -10,8 +10,7 @@ Ionic v4+ の公式ドキュメントを日本語に翻訳するためのレポ�
 
 ### ローカルプレビュー
 ```shell
-$ npm run build-pages # Build once
-$ npm run watch-pages # Build continuously
+$ npm start
 ```
 立ち上げが完了すると、`localhost:3333/docs/` が自動的に立ち上がります。
 
