@@ -11,7 +11,7 @@ Ionic v4+ の公式ドキュメントを日本語に翻訳するためのレポ�
 ### ローカルプレビュー
 ```shell
 $ npm run build-pages # Build once
-$npm run watch-pages # Build continuously
+$ npm run watch-pages # Build continuously
 ```
 立ち上げが完了すると、`localhost:3333/docs/` が自動的に立ち上がります。
 
@@ -23,37 +23,21 @@ $ npm run prebuild
 ```
 
 __なお、これによって生成したファイルは通常翻訳できません。__
-拡張子が `json` となっているファイルは、ソースファイルのコメントアウトから自動生成するため、必ず `置換翻訳` するようにしてください。
+拡張子が `json` となっているファイルは、動的にドキュメントが生成するため、必ず `置換翻訳` するようにしてください。
 
 ### 翻訳ファイル
 #### 通常翻訳
 
-翻訳を行うファイルは 拡張子が `md` となっております。`src/pages/intro.md` のコンテンツは、URLは `/docs/intro` となります。ご参照ください。変更すればGitで追跡できる（ `.gitignore` に含まれていない）ファイルは通常手順で翻訳可能です。
+翻訳を行うファイルは 拡張子が `md` となっております。`src/pages/intro.md` のコンテンツは、URLは `/docs/intro` となります。
+変更すればGitで追跡できる（ `.gitignore` に含まれていない）ファイルは通常の手順で翻訳可能です。翻訳前と翻訳後の行数が一致するように気をつけて作業ください。
 
 
-#### 置換翻訳
-ソースファイルから自動生成されるドキュメントはビルド時に上書きされるため、置換翻訳するようにします。どのようなものかを知るために、まず以下の翻訳ファイルをご覧ください。
-https://github.com/ionic-jp/ionic-docs/blob/master/src/translate/api/action-sheet-controller.json
+#### jsonファイル
 
-現在、`body` と `docs` のみ翻訳可能です。
+`Components` はjsonファイルから動的に生成されるため、翻訳ファイルは `transalate/api/` に格納されています。
+キー「`readme`」を中心に翻訳ください。
 
-作業手順は以下の通りです。
-
-1. npmコマンドで翻訳ファイルを生成する
-```bash
-$ npm run translate:create 【ファイルパス】
-```
-
-例えばAPIのaction-sheet.md（`src/content/api/action-sheet.md`）を翻訳する場合、ファイルパスは`api/`以下となりますので
-
-
-```bash
-$ npm run translate:create src/pages/api/action-sheet.json
-```
-
-と入力ください。そうすると自動的に`translate/api/action-sheet.json`が生成されます。その後、翻訳ください。
-
-なお、翻訳を元ファイルに適用するには以下コマンドを実行ください。
+なお、翻訳をローカルプレビューに適用するには以下コマンドを実行ください。
 
 ```bash
 $ npm run translate
