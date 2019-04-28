@@ -1,0 +1,413 @@
+{
+  "tag": "ion-nav",
+  "encapsulation": "shadow",
+  "readme": "# ion-nav\n\nNav is a standalone component for loading arbitrary components and pushing to new components on to the stack.\nUnlike RouterOutlet, Nav is not tied to a particular router. Meaning that if we load a Nav component, and push other components to the stack, they will not affect the apps overall router. This fits use cases where you could have a modal, which needs it's own sub-navigation, but not make it tied to the apps URL.\n\n",
+  "docs": "Nav is a standalone component for loading arbitrary components and pushing to new components on to the stack.\nUnlike RouterOutlet, Nav is not tied to a particular router. Meaning that if we load a Nav component, and push other components to the stack, they will not affect the apps overall router. This fits use cases where you could have a modal, which needs it's own sub-navigation, but not make it tied to the apps URL.",
+  "docsTags": [],
+  "usage": {},
+  "props": [
+    {
+      "name": "animated",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "animated",
+      "reflectToAttr": false,
+      "docs": "If `true`, the nav should animate the transition of components.",
+      "docsTags": [],
+      "default": "true",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "animation",
+      "type": "((Animation: Animation, baseEl: any, opts?: any) => Promise<Animation>) | undefined",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "By default `ion-nav` animates transition between pages based in the mode (ios or material design).\nHowever, this property allows to create custom transition using `AnimateBuilder` functions.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "root",
+      "type": "Function | HTMLElement | ViewController | null | string | undefined",
+      "mutable": false,
+      "attr": "root",
+      "reflectToAttr": false,
+      "docs": "Root NavComponent to load",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "rootParams",
+      "type": "undefined | { [key: string]: any; }",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "Any parameters for the root component",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "swipeGesture",
+      "type": "boolean | undefined",
+      "mutable": true,
+      "attr": "swipe-gesture",
+      "reflectToAttr": false,
+      "docs": "If the nav component should allow for swipe-to-go-back.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "canGoBack",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "canGoBack(view?: ViewController | undefined) => Promise<boolean>",
+      "parameters": [
+        {
+          "name": "view",
+          "type": "ViewController | undefined",
+          "docs": ""
+        }
+      ],
+      "docs": "Returns `true` or false if the current view can go back",
+      "docsTags": []
+    },
+    {
+      "name": "getActive",
+      "returns": {
+        "type": "Promise<ViewController | undefined>",
+        "docs": ""
+      },
+      "signature": "getActive() => Promise<ViewController | undefined>",
+      "parameters": [],
+      "docs": "Gets the active view",
+      "docsTags": []
+    },
+    {
+      "name": "getByIndex",
+      "returns": {
+        "type": "Promise<ViewController | undefined>",
+        "docs": ""
+      },
+      "signature": "getByIndex(index: number) => Promise<ViewController | undefined>",
+      "parameters": [
+        {
+          "name": "index",
+          "type": "number",
+          "docs": ""
+        }
+      ],
+      "docs": "Returns the view at the index",
+      "docsTags": []
+    },
+    {
+      "name": "getPrevious",
+      "returns": {
+        "type": "Promise<ViewController | undefined>",
+        "docs": ""
+      },
+      "signature": "getPrevious(view?: ViewController | undefined) => Promise<ViewController | undefined>",
+      "parameters": [
+        {
+          "name": "view",
+          "type": "ViewController | undefined",
+          "docs": ""
+        }
+      ],
+      "docs": "Gets the previous view",
+      "docsTags": []
+    },
+    {
+      "name": "insert",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "insert<T extends NavComponent>(insertIndex: number, component: T, componentProps?: ComponentProps<T> | null | undefined, opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>",
+      "parameters": [
+        {
+          "name": "insertIndex",
+          "type": "number",
+          "docs": ""
+        },
+        {
+          "name": "component",
+          "type": "T",
+          "docs": ""
+        },
+        {
+          "name": "componentProps",
+          "type": "T extends \"object\" | \"ion-icon\" | \"ion-action-sheet-controller\" | \"ion-action-sheet\" | \"ion-alert-controller\" | \"ion-alert\" | \"ion-anchor\" | \"ion-app\" | \"ion-avatar\" | \"ion-back-button\" | \"ion-backdrop\" | \"ion-badge\" | \"ion-button\" | \"ion-buttons\" | \"ion-card-content\" | \"ion-card-header\" | \"ion-card-subtitle\" | \"ion-card-title\" | \"ion-card\" | \"ion-checkbox\" | \"ion-chip\" | \"ion-col\" | \"ion-content\" | \"ion-datetime\" | \"ion-fab-button\" | \"ion-fab-list\" | \"ion-fab\" | \"ion-footer\" | \"ion-grid\" | \"ion-header\" | \"ion-img\" | \"ion-infinite-scroll-content\" | \"ion-infinite-scroll\" | \"ion-input\" | \"ion-item-divider\" | \"ion-item-group\" | \"ion-item-option\" | \"ion-item-options\" | \"ion-item-sliding\" | \"ion-item\" | \"ion-label\" | \"ion-list-header\" | \"ion-list\" | \"ion-loading-controller\" | \"ion-loading\" | \"ion-menu-button\" | \"ion-menu-controller\" | \"ion-menu-toggle\" | \"ion-menu\" | \"ion-modal-controller\" | \"ion-modal\" | \"ion-nav-pop\" | \"ion-nav-push\" | \"ion-nav-set-root\" | \"ion-nav\" | \"ion-note\" | \"ion-picker-column\" | \"ion-picker-controller\" | \"ion-picker\" | \"ion-popover-controller\" | \"ion-popover\" | \"ion-progress-bar\" | \"ion-radio-group\" | \"ion-radio\" | \"ion-range\" | \"ion-refresher-content\" | \"ion-refresher\" | \"ion-reorder-group\" | \"ion-reorder\" | \"ion-ripple-effect\" | \"ion-route-redirect\" | \"ion-route\" | \"ion-router-outlet\" | \"ion-router\" | \"ion-row\" | \"ion-searchbar\" | \"ion-segment-button\" | \"ion-segment\" | \"ion-select-option\" | \"ion-select-popover\" | \"ion-select\" | \"ion-skeleton-text\" | \"ion-slide\" | \"ion-slides\" | \"ion-spinner\" | \"ion-split-pane\" | \"ion-tab-bar\" | \"ion-tab-button\" | \"ion-tab\" | \"ion-tabs\" | \"ion-text\" | \"ion-textarea\" | \"ion-thumbnail\" | \"ion-title\" | \"ion-toast-controller\" | \"ion-toast\" | \"ion-toggle\" | \"ion-toolbar\" | \"ion-virtual-scroll\" | \"slot\" | \"a\" | \"abbr\" | \"address\" | \"area\" | \"article\" | \"aside\" | \"audio\" | \"b\" | \"base\" | \"bdi\" | \"bdo\" | \"big\" | \"blockquote\" | \"body\" | \"br\" | \"button\" | \"canvas\" | \"caption\" | \"cite\" | \"code\" | \"col\" | \"colgroup\" | \"data\" | \"datalist\" | \"dd\" | \"del\" | \"details\" | \"dfn\" | \"dialog\" | \"div\" | \"dl\" | \"dt\" | \"em\" | \"embed\" | \"fieldset\" | \"figcaption\" | \"figure\" | \"footer\" | \"form\" | \"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\" | \"h6\" | \"head\" | \"header\" | \"hgroup\" | \"hr\" | \"html\" | \"i\" | \"iframe\" | \"img\" | \"input\" | \"ins\" | \"kbd\" | \"keygen\" | \"label\" | \"legend\" | \"li\" | \"link\" | \"main\" | \"map\" | \"mark\" | \"menu\" | \"menuitem\" | \"meta\" | \"meter\" | \"nav\" | \"noscript\" | \"ol\" | \"optgroup\" | \"option\" | \"output\" | \"p\" | \"param\" | \"picture\" | \"pre\" | \"progress\" | \"q\" | \"rp\" | \"rt\" | \"ruby\" | \"s\" | \"samp\" | \"script\" | \"section\" | \"select\" | \"small\" | \"source\" | \"span\" | \"strong\" | \"style\" | \"sub\" | \"summary\" | \"sup\" | \"table\" | \"tbody\" | \"td\" | \"textarea\" | \"tfoot\" | \"th\" | \"thead\" | \"time\" | \"title\" | \"tr\" | \"track\" | \"u\" | \"ul\" | \"var\" | \"video\" | \"wbr\" ? StencilIntrinsicElements[T] : { [key: string]: any; } | null | undefined",
+          "docs": ""
+        },
+        {
+          "name": "opts",
+          "type": "NavOptions | null | undefined",
+          "docs": ""
+        },
+        {
+          "name": "done",
+          "type": "((hasCompleted: boolean, requiresTransition: boolean, enteringView?: ViewController | undefined, leavingView?: ViewController | undefined, direction?: string | undefined) => void) | undefined",
+          "docs": ""
+        }
+      ],
+      "docs": "Inserts a component into the nav stack at the specified index. This is useful if you need to add a component at any point in your navigation stack.",
+      "docsTags": []
+    },
+    {
+      "name": "insertPages",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "insertPages(insertIndex: number, insertComponents: NavComponent[], opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>",
+      "parameters": [
+        {
+          "name": "insertIndex",
+          "type": "number",
+          "docs": ""
+        },
+        {
+          "name": "insertComponents",
+          "type": "NavComponent[]",
+          "docs": ""
+        },
+        {
+          "name": "opts",
+          "type": "NavOptions | null | undefined",
+          "docs": ""
+        },
+        {
+          "name": "done",
+          "type": "((hasCompleted: boolean, requiresTransition: boolean, enteringView?: ViewController | undefined, leavingView?: ViewController | undefined, direction?: string | undefined) => void) | undefined",
+          "docs": ""
+        }
+      ],
+      "docs": "Inserts an array of components into the nav stack at the specified index. The last component in the array will become instantiated as a view, and animate in to become the active view.",
+      "docsTags": []
+    },
+    {
+      "name": "pop",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "pop(opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>",
+      "parameters": [
+        {
+          "name": "opts",
+          "type": "NavOptions | null | undefined",
+          "docs": ""
+        },
+        {
+          "name": "done",
+          "type": "((hasCompleted: boolean, requiresTransition: boolean, enteringView?: ViewController | undefined, leavingView?: ViewController | undefined, direction?: string | undefined) => void) | undefined",
+          "docs": ""
+        }
+      ],
+      "docs": "Call to navigate back from a current component. Similar to push(), you can also pass navigation options.",
+      "docsTags": []
+    },
+    {
+      "name": "popTo",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "popTo(indexOrViewCtrl: number | ViewController, opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>",
+      "parameters": [
+        {
+          "name": "indexOrViewCtrl",
+          "type": "ViewController | number",
+          "docs": ""
+        },
+        {
+          "name": "opts",
+          "type": "NavOptions | null | undefined",
+          "docs": ""
+        },
+        {
+          "name": "done",
+          "type": "((hasCompleted: boolean, requiresTransition: boolean, enteringView?: ViewController | undefined, leavingView?: ViewController | undefined, direction?: string | undefined) => void) | undefined",
+          "docs": ""
+        }
+      ],
+      "docs": "Pop to a specific index in the navigation stack",
+      "docsTags": []
+    },
+    {
+      "name": "popToRoot",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "popToRoot(opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>",
+      "parameters": [
+        {
+          "name": "opts",
+          "type": "NavOptions | null | undefined",
+          "docs": ""
+        },
+        {
+          "name": "done",
+          "type": "((hasCompleted: boolean, requiresTransition: boolean, enteringView?: ViewController | undefined, leavingView?: ViewController | undefined, direction?: string | undefined) => void) | undefined",
+          "docs": ""
+        }
+      ],
+      "docs": "Navigate back to the root of the stack, no matter how far back that is.",
+      "docsTags": []
+    },
+    {
+      "name": "push",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "push<T extends NavComponent>(component: T, componentProps?: ComponentProps<T> | null | undefined, opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>",
+      "parameters": [
+        {
+          "name": "component",
+          "type": "T",
+          "docs": ""
+        },
+        {
+          "name": "componentProps",
+          "type": "T extends \"object\" | \"ion-icon\" | \"ion-action-sheet-controller\" | \"ion-action-sheet\" | \"ion-alert-controller\" | \"ion-alert\" | \"ion-anchor\" | \"ion-app\" | \"ion-avatar\" | \"ion-back-button\" | \"ion-backdrop\" | \"ion-badge\" | \"ion-button\" | \"ion-buttons\" | \"ion-card-content\" | \"ion-card-header\" | \"ion-card-subtitle\" | \"ion-card-title\" | \"ion-card\" | \"ion-checkbox\" | \"ion-chip\" | \"ion-col\" | \"ion-content\" | \"ion-datetime\" | \"ion-fab-button\" | \"ion-fab-list\" | \"ion-fab\" | \"ion-footer\" | \"ion-grid\" | \"ion-header\" | \"ion-img\" | \"ion-infinite-scroll-content\" | \"ion-infinite-scroll\" | \"ion-input\" | \"ion-item-divider\" | \"ion-item-group\" | \"ion-item-option\" | \"ion-item-options\" | \"ion-item-sliding\" | \"ion-item\" | \"ion-label\" | \"ion-list-header\" | \"ion-list\" | \"ion-loading-controller\" | \"ion-loading\" | \"ion-menu-button\" | \"ion-menu-controller\" | \"ion-menu-toggle\" | \"ion-menu\" | \"ion-modal-controller\" | \"ion-modal\" | \"ion-nav-pop\" | \"ion-nav-push\" | \"ion-nav-set-root\" | \"ion-nav\" | \"ion-note\" | \"ion-picker-column\" | \"ion-picker-controller\" | \"ion-picker\" | \"ion-popover-controller\" | \"ion-popover\" | \"ion-progress-bar\" | \"ion-radio-group\" | \"ion-radio\" | \"ion-range\" | \"ion-refresher-content\" | \"ion-refresher\" | \"ion-reorder-group\" | \"ion-reorder\" | \"ion-ripple-effect\" | \"ion-route-redirect\" | \"ion-route\" | \"ion-router-outlet\" | \"ion-router\" | \"ion-row\" | \"ion-searchbar\" | \"ion-segment-button\" | \"ion-segment\" | \"ion-select-option\" | \"ion-select-popover\" | \"ion-select\" | \"ion-skeleton-text\" | \"ion-slide\" | \"ion-slides\" | \"ion-spinner\" | \"ion-split-pane\" | \"ion-tab-bar\" | \"ion-tab-button\" | \"ion-tab\" | \"ion-tabs\" | \"ion-text\" | \"ion-textarea\" | \"ion-thumbnail\" | \"ion-title\" | \"ion-toast-controller\" | \"ion-toast\" | \"ion-toggle\" | \"ion-toolbar\" | \"ion-virtual-scroll\" | \"slot\" | \"a\" | \"abbr\" | \"address\" | \"area\" | \"article\" | \"aside\" | \"audio\" | \"b\" | \"base\" | \"bdi\" | \"bdo\" | \"big\" | \"blockquote\" | \"body\" | \"br\" | \"button\" | \"canvas\" | \"caption\" | \"cite\" | \"code\" | \"col\" | \"colgroup\" | \"data\" | \"datalist\" | \"dd\" | \"del\" | \"details\" | \"dfn\" | \"dialog\" | \"div\" | \"dl\" | \"dt\" | \"em\" | \"embed\" | \"fieldset\" | \"figcaption\" | \"figure\" | \"footer\" | \"form\" | \"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\" | \"h6\" | \"head\" | \"header\" | \"hgroup\" | \"hr\" | \"html\" | \"i\" | \"iframe\" | \"img\" | \"input\" | \"ins\" | \"kbd\" | \"keygen\" | \"label\" | \"legend\" | \"li\" | \"link\" | \"main\" | \"map\" | \"mark\" | \"menu\" | \"menuitem\" | \"meta\" | \"meter\" | \"nav\" | \"noscript\" | \"ol\" | \"optgroup\" | \"option\" | \"output\" | \"p\" | \"param\" | \"picture\" | \"pre\" | \"progress\" | \"q\" | \"rp\" | \"rt\" | \"ruby\" | \"s\" | \"samp\" | \"script\" | \"section\" | \"select\" | \"small\" | \"source\" | \"span\" | \"strong\" | \"style\" | \"sub\" | \"summary\" | \"sup\" | \"table\" | \"tbody\" | \"td\" | \"textarea\" | \"tfoot\" | \"th\" | \"thead\" | \"time\" | \"title\" | \"tr\" | \"track\" | \"u\" | \"ul\" | \"var\" | \"video\" | \"wbr\" ? StencilIntrinsicElements[T] : { [key: string]: any; } | null | undefined",
+          "docs": ""
+        },
+        {
+          "name": "opts",
+          "type": "NavOptions | null | undefined",
+          "docs": ""
+        },
+        {
+          "name": "done",
+          "type": "((hasCompleted: boolean, requiresTransition: boolean, enteringView?: ViewController | undefined, leavingView?: ViewController | undefined, direction?: string | undefined) => void) | undefined",
+          "docs": ""
+        }
+      ],
+      "docs": "Push a new component onto the current navigation stack. Pass any additional information along as an object. This additional information is accessible through NavParams",
+      "docsTags": []
+    },
+    {
+      "name": "removeIndex",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "removeIndex(startIndex: number, removeCount?: number, opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>",
+      "parameters": [
+        {
+          "name": "startIndex",
+          "type": "number",
+          "docs": ""
+        },
+        {
+          "name": "removeCount",
+          "type": "number",
+          "docs": ""
+        },
+        {
+          "name": "opts",
+          "type": "NavOptions | null | undefined",
+          "docs": ""
+        },
+        {
+          "name": "done",
+          "type": "((hasCompleted: boolean, requiresTransition: boolean, enteringView?: ViewController | undefined, leavingView?: ViewController | undefined, direction?: string | undefined) => void) | undefined",
+          "docs": ""
+        }
+      ],
+      "docs": "Removes a page from the nav stack at the specified index.",
+      "docsTags": []
+    },
+    {
+      "name": "setPages",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "setPages(views: any[], opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>",
+      "parameters": [
+        {
+          "name": "views",
+          "type": "any[]",
+          "docs": ""
+        },
+        {
+          "name": "opts",
+          "type": "NavOptions | null | undefined",
+          "docs": ""
+        },
+        {
+          "name": "done",
+          "type": "((hasCompleted: boolean, requiresTransition: boolean, enteringView?: ViewController | undefined, leavingView?: ViewController | undefined, direction?: string | undefined) => void) | undefined",
+          "docs": ""
+        }
+      ],
+      "docs": "Set the views of the current navigation stack and navigate to the last view. By default animations are disabled, but they can be enabled by passing options to the navigation controller.You can also pass any navigation params to the individual pages in the array.",
+      "docsTags": []
+    },
+    {
+      "name": "setRoot",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "setRoot<T extends NavComponent>(component: T, componentProps?: ComponentProps<T> | null | undefined, opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>",
+      "parameters": [
+        {
+          "name": "component",
+          "type": "T",
+          "docs": ""
+        },
+        {
+          "name": "componentProps",
+          "type": "T extends \"object\" | \"ion-icon\" | \"ion-action-sheet-controller\" | \"ion-action-sheet\" | \"ion-alert-controller\" | \"ion-alert\" | \"ion-anchor\" | \"ion-app\" | \"ion-avatar\" | \"ion-back-button\" | \"ion-backdrop\" | \"ion-badge\" | \"ion-button\" | \"ion-buttons\" | \"ion-card-content\" | \"ion-card-header\" | \"ion-card-subtitle\" | \"ion-card-title\" | \"ion-card\" | \"ion-checkbox\" | \"ion-chip\" | \"ion-col\" | \"ion-content\" | \"ion-datetime\" | \"ion-fab-button\" | \"ion-fab-list\" | \"ion-fab\" | \"ion-footer\" | \"ion-grid\" | \"ion-header\" | \"ion-img\" | \"ion-infinite-scroll-content\" | \"ion-infinite-scroll\" | \"ion-input\" | \"ion-item-divider\" | \"ion-item-group\" | \"ion-item-option\" | \"ion-item-options\" | \"ion-item-sliding\" | \"ion-item\" | \"ion-label\" | \"ion-list-header\" | \"ion-list\" | \"ion-loading-controller\" | \"ion-loading\" | \"ion-menu-button\" | \"ion-menu-controller\" | \"ion-menu-toggle\" | \"ion-menu\" | \"ion-modal-controller\" | \"ion-modal\" | \"ion-nav-pop\" | \"ion-nav-push\" | \"ion-nav-set-root\" | \"ion-nav\" | \"ion-note\" | \"ion-picker-column\" | \"ion-picker-controller\" | \"ion-picker\" | \"ion-popover-controller\" | \"ion-popover\" | \"ion-progress-bar\" | \"ion-radio-group\" | \"ion-radio\" | \"ion-range\" | \"ion-refresher-content\" | \"ion-refresher\" | \"ion-reorder-group\" | \"ion-reorder\" | \"ion-ripple-effect\" | \"ion-route-redirect\" | \"ion-route\" | \"ion-router-outlet\" | \"ion-router\" | \"ion-row\" | \"ion-searchbar\" | \"ion-segment-button\" | \"ion-segment\" | \"ion-select-option\" | \"ion-select-popover\" | \"ion-select\" | \"ion-skeleton-text\" | \"ion-slide\" | \"ion-slides\" | \"ion-spinner\" | \"ion-split-pane\" | \"ion-tab-bar\" | \"ion-tab-button\" | \"ion-tab\" | \"ion-tabs\" | \"ion-text\" | \"ion-textarea\" | \"ion-thumbnail\" | \"ion-title\" | \"ion-toast-controller\" | \"ion-toast\" | \"ion-toggle\" | \"ion-toolbar\" | \"ion-virtual-scroll\" | \"slot\" | \"a\" | \"abbr\" | \"address\" | \"area\" | \"article\" | \"aside\" | \"audio\" | \"b\" | \"base\" | \"bdi\" | \"bdo\" | \"big\" | \"blockquote\" | \"body\" | \"br\" | \"button\" | \"canvas\" | \"caption\" | \"cite\" | \"code\" | \"col\" | \"colgroup\" | \"data\" | \"datalist\" | \"dd\" | \"del\" | \"details\" | \"dfn\" | \"dialog\" | \"div\" | \"dl\" | \"dt\" | \"em\" | \"embed\" | \"fieldset\" | \"figcaption\" | \"figure\" | \"footer\" | \"form\" | \"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\" | \"h6\" | \"head\" | \"header\" | \"hgroup\" | \"hr\" | \"html\" | \"i\" | \"iframe\" | \"img\" | \"input\" | \"ins\" | \"kbd\" | \"keygen\" | \"label\" | \"legend\" | \"li\" | \"link\" | \"main\" | \"map\" | \"mark\" | \"menu\" | \"menuitem\" | \"meta\" | \"meter\" | \"nav\" | \"noscript\" | \"ol\" | \"optgroup\" | \"option\" | \"output\" | \"p\" | \"param\" | \"picture\" | \"pre\" | \"progress\" | \"q\" | \"rp\" | \"rt\" | \"ruby\" | \"s\" | \"samp\" | \"script\" | \"section\" | \"select\" | \"small\" | \"source\" | \"span\" | \"strong\" | \"style\" | \"sub\" | \"summary\" | \"sup\" | \"table\" | \"tbody\" | \"td\" | \"textarea\" | \"tfoot\" | \"th\" | \"thead\" | \"time\" | \"title\" | \"tr\" | \"track\" | \"u\" | \"ul\" | \"var\" | \"video\" | \"wbr\" ? StencilIntrinsicElements[T] : { [key: string]: any; } | null | undefined",
+          "docs": ""
+        },
+        {
+          "name": "opts",
+          "type": "NavOptions | null | undefined",
+          "docs": ""
+        },
+        {
+          "name": "done",
+          "type": "((hasCompleted: boolean, requiresTransition: boolean, enteringView?: ViewController | undefined, leavingView?: ViewController | undefined, direction?: string | undefined) => void) | undefined",
+          "docs": ""
+        }
+      ],
+      "docs": "Set the root for the current navigation stack.",
+      "docsTags": []
+    }
+  ],
+  "events": [
+    {
+      "event": "ionNavDidChange",
+      "detail": "void",
+      "bubbles": false,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Event fired when the nav has changed components",
+      "docsTags": []
+    },
+    {
+      "event": "ionNavWillChange",
+      "detail": "void",
+      "bubbles": false,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Event fired when the nav will change components",
+      "docsTags": []
+    }
+  ],
+  "styles": [],
+  "slots": []
+}

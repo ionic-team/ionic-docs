@@ -1,0 +1,301 @@
+{
+  "tag": "ion-item",
+  "encapsulation": "shadow",
+  "readme": "# ion-item\n\nItems are elements that can contain text, icons, avatars, images, inputs, and any other native or custom elements. Generally they are placed in a list with other items. Items can be swiped, deleted, reordered, edited, and more.\n\n## Clickable Items\n\nAn item is considered \"clickable\" if it has an `href` or `button` property set. Clickable items have a few visual differences that indicate they can be interacted with. For example, a clickable item receives the ripple effect upon activation in `md` mode, has a highlight when activated in `ios` mode, and has a [detail arrow](/#detail-arrows) by default in `ios` mode.\n\n## Detail Arrows\n\nBy default [clickable items](/#clickable-items) will display a right arrow icon on `ios` mode. To hide the right arrow icon on clickable elements, set the `detail` property to `false`. To show the right arrow icon on an item that doesn't display it naturally, set the `detail` property to `true`.\n\n<!--\n\nTODO add this functionality back as a css variable\n\nThis feature is not enabled by default on clickable items for the `md` mode, but it can be enabled by setting the following CSS variable:\n\n```css\n--item-detail-push-show: true;\n```\n\nSee the [theming documentation](/docs/theming/css-variables) for more information.\n\n-->\n\n\n## Item Placement\n\nItem uses named [slots](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot) in order to position content. This logic makes it possible to write a complex item with simple, understandable markup without having to worry about styling and positioning the elements.\n\nThe below chart details the item slots and where it will place the element inside of the item:\n\n| Slot    | Description                                                                 |\n|---------|-----------------------------------------------------------------------------|\n| `start` | Placed to the left of all other content in LTR, and to the `right` in RTL.  |\n| `end`   | Placed to the right of all other content in LTR, and to the `left` in RTL.  |\n| none    | Placed inside of the input wrapper.                                         |\n\n\n### Text Alignment\n\nItems left align text and add an ellipsis when the text is wider than the item. See the [Utility Attributes Documentation](/docs/layout/css-utilities) for attributes that can be added to `<ion-item>` to transform the text.\n\n\n## Input Highlight\n\n### Highlight Height\n\nItems containing an input will highlight the bottom border of the input with a different color when focused, valid, or invalid. By default, `md` items have a highlight with a height set to `2px` and `ios` has no highlight (technically the height is set to `0`). The height can be changed using the `--highlight-height` CSS property. To turn off the highlight, set this variable to `0`. For more information on setting CSS properties, see the [theming documentation](/docs/theming/css-variables).\n\n### Highlight Color\n\nThe highlight color changes based on the item state, but all of the states use Ionic colors by default. When focused, the input highlight will use the `primary` color. If the input is valid it will use the `success` color, and invalid inputs will use the `danger` color. See the [CSS Custom Properties](#css-custom-properties) section below for the highlight color variables.\n\n",
+  "docs": "Items are elements that can contain text, icons, avatars, images, inputs, and any other native or custom elements. Generally they are placed in a list with other items. Items can be swiped, deleted, reordered, edited, and more.",
+  "docsTags": [
+    {
+      "name": "slot",
+      "text": "- Content is placed between the named slots if provided without a slot."
+    },
+    {
+      "name": "slot",
+      "text": "start - Content is placed to the left of the item text in LTR, and to the right in RTL."
+    },
+    {
+      "name": "slot",
+      "text": "end - Content is placed to the right of the item text in LTR, and to the left in RTL."
+    }
+  ],
+  "usage": {
+    "angular": "Basic Usage\n\n```html\n<!-- Default Item -->\n<ion-item>\n  <ion-label>\n    Item\n  </ion-label>\n</ion-item>\n\n<!-- Item as a Button -->\n<ion-item (click)=\"buttonClick()\">\n  <ion-label>\n    Button Item\n  </ion-label>\n</ion-item>\n\n<!-- Item as an Anchor -->\n<ion-item href=\"https://www.ionicframework.com\">\n  <ion-label>\n    Anchor Item\n  </ion-label>\n</ion-item>\n\n<ion-item color=\"secondary\">\n  <ion-label>\n    Secondary Color Item\n  </ion-label>\n</ion-item>\n```\n\nDetail Arrows\n\n```html\n<ion-item detail>\n  <ion-label>\n    Standard Item with Detail Arrow\n  </ion-label>\n</ion-item>\n\n<ion-item (click)=\"buttonClick()\" detail>\n  <ion-label>\n    Button Item with Detail Arrow\n  </ion-label>\n</ion-item>\n\n<ion-item detail=\"false\" href=\"https://www.ionicframework.com\">\n  <ion-label>\n    Anchor Item with no Detail Arrow\n  </ion-label>\n</ion-item>\n```\n\nList Items\n\n```html\n<ion-list>\n  <ion-item>\n    <ion-label>\n      Item\n    </ion-label>\n  </ion-item>\n\n  <ion-item lines=\"none\">\n    <ion-label>\n      No Lines Item\n    </ion-label>\n  </ion-item>\n\n  <ion-item>\n    <ion-label text-wrap>\n    Multiline text that should wrap when it is too long\n    to fit on one line in the item.\n    </ion-label>\n  </ion-item>\n\n  <ion-item>\n    <ion-label text-wrap>\n      <ion-text color=\"primary\">\n        <h3>H3 Primary Title</h3>\n      </ion-text>\n      <p>Paragraph line 1</p>\n      <ion-text color=\"secondary\">\n        <p>Paragraph line 2 secondary</p>\n      </ion-text>\n    </ion-label>\n  </ion-item>\n\n  <ion-item lines=\"full\">\n    <ion-label>\n      Item with Full Lines\n    </ion-label>\n  </ion-item>\n\n</ion-list>\n```\n\nItem Lines\n\n```html\n<!-- Item Inset Lines -->\n<ion-item lines=\"inset\">\n  <ion-label>Item Lines Inset</ion-label>\n</ion-item>\n\n<!-- Item Full Lines -->\n<ion-item lines=\"full\">\n  <ion-label>Item Lines Full</ion-label>\n</ion-item>\n\n<!-- Item None Lines -->\n<ion-item lines=\"none\">\n  <ion-label>Item Lines None</ion-label>\n</ion-item>\n\n<!-- List Full Lines -->\n<ion-list lines=\"full\">\n  <ion-item>\n    <ion-label>Full Lines Item 1</ion-label>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>Full Lines Item 2</ion-label>\n  </ion-item>\n</ion-list>\n\n<!-- List Inset Lines -->\n<ion-list lines=\"inset\">\n  <ion-item>\n    <ion-label>Inset Lines Item 1</ion-label>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>Inset Lines Item 2</ion-label>\n  </ion-item>\n</ion-list>\n\n<!-- List No Lines -->\n<ion-list lines=\"none\">\n  <ion-item>\n    <ion-label>No lines Item 1</ion-label>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>No lines Item 2</ion-label>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>No lines Item 3</ion-label>\n  </ion-item>\n</ion-list>\n```\n\n\nMedia Items\n\n```html\n<ion-item (click)=\"testClick()\">\n  <ion-avatar slot=\"start\">\n    <img src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==\">\n  </ion-avatar>\n  <ion-label>\n    Avatar Start, Button Item\n  </ion-label>\n</ion-item>\n\n<ion-item href=\"#\">\n  <ion-label>\n    Thumbnail End, Anchor Item\n  </ion-label>\n  <ion-thumbnail slot=\"end\">\n    <img src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==\">\n  </ion-thumbnail>\n</ion-item>\n\n<ion-item>\n  <ion-thumbnail slot=\"start\">\n    <img src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==\">\n  </ion-thumbnail>\n  <ion-label>\n    <h2>H2 Title Text</h2>\n    <p>Button on right</p>\n  </ion-label>\n  <ion-button fill=\"outline\" slot=\"end\">View</ion-button>\n</ion-item>\n\n<ion-item (click)=\"testClick()\">\n  <ion-thumbnail slot=\"start\">\n    <img src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==\">\n  </ion-thumbnail>\n  <ion-label>\n    <h3>H3 Title Text</h3>\n    <p>Icon on right</p>\n  </ion-label>\n  <ion-icon name=\"close-circle\" slot=\"end\"></ion-icon>\n</ion-item>\n```\n\nButtons in Items\n\n```html\n<ion-item>\n  <ion-button slot=\"start\">\n    Start\n  </ion-button>\n  <ion-label>Button Start/End</ion-label>\n  <ion-button slot=\"end\">\n    End\n  </ion-button>\n</ion-item>\n\n<ion-item>\n  <ion-button slot=\"start\">\n    Start Icon\n    <ion-icon name=\"home\" slot=\"end\"></ion-icon>\n  </ion-button>\n  <ion-label>Buttons with Icons</ion-label>\n  <ion-button slot=\"end\">\n    <ion-icon name=\"star\" slot=\"end\"></ion-icon>\n    End Icon\n  </ion-button>\n</ion-item>\n\n<ion-item>\n  <ion-button slot=\"start\">\n    <ion-icon slot=\"icon-only\" name=\"navigate\"></ion-icon>\n  </ion-button>\n  <ion-label>Icon only Buttons</ion-label>\n  <ion-button slot=\"end\">\n    <ion-icon slot=\"icon-only\" name=\"star\"></ion-icon>\n  </ion-button>\n</ion-item>\n```\n\nIcons in Items\n\n```html\n<ion-item>\n  <ion-label>\n    Icon End\n  </ion-label>\n  <ion-icon name=\"information-circle\" slot=\"end\"></ion-icon>\n</ion-item>\n\n<ion-item>\n  <ion-label>\n    Large Icon End\n  </ion-label>\n  <ion-icon name=\"information-circle\" size=\"large\" slot=\"end\"></ion-icon>\n</ion-item>\n\n<ion-item>\n  <ion-label>\n    Small Icon End\n  </ion-label>\n  <ion-icon name=\"information-circle\" size=\"small\" slot=\"end\"></ion-icon>\n</ion-item>\n\n<ion-item>\n  <ion-icon name=\"star\" slot=\"start\"></ion-icon>\n  <ion-label>\n    Icon Start\n  </ion-label>\n</ion-item>\n\n<ion-item>\n  <ion-label>\n    Two Icons End\n  </ion-label>\n  <ion-icon name=\"checkmark-circle\" slot=\"end\"></ion-icon>\n  <ion-icon name=\"shuffle\" slot=\"end\"></ion-icon>\n</ion-item>\n```\n\nItem Inputs\n\n```html\n<ion-item>\n  <ion-label position=\"floating\">Datetime</ion-label>\n  <ion-datetime></ion-datetime>\n</ion-item>\n\n<ion-item>\n  <ion-label position=\"floating\">Select</ion-label>\n  <ion-select>\n    <ion-select-option value=\"\">No Game Console</ion-select-option>\n    <ion-select-option value=\"nes\">NES</ion-select-option>\n    <ion-select-option value=\"n64\" selected>Nintendo64</ion-select-option>\n    <ion-select-option value=\"ps\">PlayStation</ion-select-option>\n    <ion-select-option value=\"genesis\">Sega Genesis</ion-select-option>\n    <ion-select-option value=\"saturn\">Sega Saturn</ion-select-option>\n    <ion-select-option value=\"snes\">SNES</ion-select-option>\n  </ion-select>\n</ion-item>\n\n<ion-item>\n  <ion-label>Toggle</ion-label>\n  <ion-toggle slot=\"end\"></ion-toggle>\n</ion-item>\n\n<ion-item>\n  <ion-label position=\"floating\">Floating Input</ion-label>\n  <ion-input></ion-input>\n</ion-item>\n\n<ion-item>\n  <ion-label>Input (placeholder)</ion-label>\n  <ion-input placeholder=\"Placeholder\"></ion-input>\n</ion-item>\n\n<ion-item>\n  <ion-label>Checkbox</ion-label>\n  <ion-checkbox slot=\"start\"></ion-checkbox>\n</ion-item>\n\n<ion-item>\n  <ion-label>Range</ion-label>\n  <ion-range></ion-range>\n</ion-item>\n```\n",
+    "javascript": "Basic Usage\n\n```html\n<!-- Default Item -->\n<ion-item>\n  <ion-label>\n    Item\n  </ion-label>\n</ion-item>\n\n<!-- Item as a Button -->\n<ion-item onclick=\"buttonClick()\">\n  <ion-label>\n    Button Item\n  </ion-label>\n</ion-item>\n\n<!-- Item as an Anchor -->\n<ion-item href=\"https://www.ionicframework.com\">\n  <ion-label>\n    Anchor Item\n  </ion-label>\n</ion-item>\n\n<ion-item color=\"secondary\">\n  <ion-label>\n    Secondary Color Item\n  </ion-label>\n</ion-item>\n```\n\nDetail Arrows\n\n```html\n<ion-item detail>\n  <ion-label>\n    Standard Item with Detail Arrow\n  </ion-label>\n</ion-item>\n\n<ion-item onclick=\"buttonClick()\" detail>\n  <ion-label>\n    Button Item with Detail Arrow\n  </ion-label>\n</ion-item>\n\n<ion-item detail=\"false\" href=\"https://www.ionicframework.com\">\n  <ion-label>\n    Anchor Item with no Detail Arrow\n  </ion-label>\n</ion-item>\n```\n\nList Items\n\n```html\n<ion-list>\n  <ion-item>\n    <ion-label>\n      Item\n    </ion-label>\n  </ion-item>\n\n  <ion-item lines=\"none\">\n    <ion-label>\n      No Lines Item\n    </ion-label>\n  </ion-item>\n\n  <ion-item>\n    <ion-label text-wrap>\n    Multiline text that should wrap when it is too long\n    to fit on one line in the item.\n    </ion-label>\n  </ion-item>\n\n  <ion-item>\n    <ion-label text-wrap>\n      <ion-text color=\"primary\">\n        <h3>H3 Primary Title</h3>\n      </ion-text>\n      <p>Paragraph line 1</p>\n      <ion-text color=\"secondary\">\n        <p>Paragraph line 2 secondary</p>\n      </ion-text>\n    </ion-label>\n  </ion-item>\n\n  <ion-item lines=\"full\">\n    <ion-label>\n      Item with Full Lines\n    </ion-label>\n  </ion-item>\n\n</ion-list>\n```\n\nItem Lines\n\n```html\n<!-- Item Inset Lines -->\n<ion-item lines=\"inset\">\n  <ion-label>Item Lines Inset</ion-label>\n</ion-item>\n\n<!-- Item Full Lines -->\n<ion-item lines=\"full\">\n  <ion-label>Item Lines Full</ion-label>\n</ion-item>\n\n<!-- Item None Lines -->\n<ion-item lines=\"none\">\n  <ion-label>Item Lines None</ion-label>\n</ion-item>\n\n<!-- List Full Lines -->\n<ion-list lines=\"full\">\n  <ion-item>\n    <ion-label>Full Lines Item 1</ion-label>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>Full Lines Item 2</ion-label>\n  </ion-item>\n</ion-list>\n\n<!-- List Inset Lines -->\n<ion-list lines=\"inset\">\n  <ion-item>\n    <ion-label>Inset Lines Item 1</ion-label>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>Inset Lines Item 2</ion-label>\n  </ion-item>\n</ion-list>\n\n<!-- List No Lines -->\n<ion-list lines=\"none\">\n  <ion-item>\n    <ion-label>No lines Item 1</ion-label>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>No lines Item 2</ion-label>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>No lines Item 3</ion-label>\n  </ion-item>\n</ion-list>\n```\n\n\nMedia Items\n\n```html\n<ion-item onclick=\"testClick()\">\n  <ion-avatar slot=\"start\">\n    <img src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==\">\n  </ion-avatar>\n  <ion-label>\n    Avatar Start, Button Item\n  </ion-label>\n</ion-item>\n\n<ion-item href=\"#\">\n  <ion-label>\n    Thumbnail End, Anchor Item\n  </ion-label>\n  <ion-thumbnail slot=\"end\">\n    <img src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==\">\n  </ion-thumbnail>\n</ion-item>\n\n<ion-item>\n  <ion-thumbnail slot=\"start\">\n    <img src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==\">\n  </ion-thumbnail>\n  <ion-label>\n    <h2>H2 Title Text</h2>\n    <p>Button on right</p>\n  </ion-label>\n  <ion-button fill=\"outline\" slot=\"end\">View</ion-button>\n</ion-item>\n\n<ion-item onclick=\"testClick()\">\n  <ion-thumbnail slot=\"start\">\n    <img src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==\">\n  </ion-thumbnail>\n  <ion-label>\n    <h3>H3 Title Text</h3>\n    <p>Icon on right</p>\n  </ion-label>\n  <ion-icon name=\"close-circle\" slot=\"end\"></ion-icon>\n</ion-item>\n```\n\nButtons in Items\n\n```html\n<ion-item>\n  <ion-button slot=\"start\">\n    Start\n  </ion-button>\n  <ion-label>Button Start/End</ion-label>\n  <ion-button slot=\"end\">\n    End\n  </ion-button>\n</ion-item>\n\n<ion-item>\n  <ion-button slot=\"start\">\n    Start Icon\n    <ion-icon name=\"home\" slot=\"end\"></ion-icon>\n  </ion-button>\n  <ion-label>Buttons with Icons</ion-label>\n  <ion-button slot=\"end\">\n    <ion-icon name=\"star\" slot=\"end\"></ion-icon>\n    End Icon\n  </ion-button>\n</ion-item>\n\n<ion-item>\n  <ion-button slot=\"start\">\n    <ion-icon slot=\"icon-only\" name=\"navigate\"></ion-icon>\n  </ion-button>\n  <ion-label>Icon only Buttons</ion-label>\n  <ion-button slot=\"end\">\n    <ion-icon slot=\"icon-only\" name=\"star\"></ion-icon>\n  </ion-button>\n</ion-item>\n```\n\nIcons in Items\n\n```html\n<ion-item>\n  <ion-label>\n    Icon End\n  </ion-label>\n  <ion-icon name=\"information-circle\" slot=\"end\"></ion-icon>\n</ion-item>\n\n<ion-item>\n  <ion-label>\n    Large Icon End\n  </ion-label>\n  <ion-icon name=\"information-circle\" size=\"large\" slot=\"end\"></ion-icon>\n</ion-item>\n\n<ion-item>\n  <ion-label>\n    Small Icon End\n  </ion-label>\n  <ion-icon name=\"information-circle\" size=\"small\" slot=\"end\"></ion-icon>\n</ion-item>\n\n<ion-item>\n  <ion-icon name=\"star\" slot=\"start\"></ion-icon>\n  <ion-label>\n    Icon Start\n  </ion-label>\n</ion-item>\n\n<ion-item>\n  <ion-label>\n    Two Icons End\n  </ion-label>\n  <ion-icon name=\"checkmark-circle\" slot=\"end\"></ion-icon>\n  <ion-icon name=\"shuffle\" slot=\"end\"></ion-icon>\n</ion-item>\n```\n\nItem Inputs\n\n```html\n<ion-item>\n  <ion-label position=\"floating\">Datetime</ion-label>\n  <ion-datetime></ion-datetime>\n</ion-item>\n\n<ion-item>\n  <ion-label position=\"floating\">Select</ion-label>\n  <ion-select>\n    <ion-select-option value=\"\">No Game Console</ion-select-option>\n    <ion-select-option value=\"nes\">NES</ion-select-option>\n    <ion-select-option value=\"n64\" selected>Nintendo64</ion-select-option>\n    <ion-select-option value=\"ps\">PlayStation</ion-select-option>\n    <ion-select-option value=\"genesis\">Sega Genesis</ion-select-option>\n    <ion-select-option value=\"saturn\">Sega Saturn</ion-select-option>\n    <ion-select-option value=\"snes\">SNES</ion-select-option>\n  </ion-select>\n</ion-item>\n\n<ion-item>\n  <ion-label>Toggle</ion-label>\n  <ion-toggle slot=\"end\"></ion-toggle>\n</ion-item>\n\n<ion-item>\n  <ion-label position=\"floating\">Floating Input</ion-label>\n  <ion-input></ion-input>\n</ion-item>\n\n<ion-item>\n  <ion-label>Input (placeholder)</ion-label>\n  <ion-input placeholder=\"Placeholder\"></ion-input>\n</ion-item>\n\n<ion-item>\n  <ion-label>Checkbox</ion-label>\n  <ion-checkbox slot=\"start\"></ion-checkbox>\n</ion-item>\n\n<ion-item>\n  <ion-label>Range</ion-label>\n  <ion-range></ion-range>\n</ion-item>\n```\n",
+    "react": "```tsx\nimport React from 'react';\n\nimport { IonItem, IonLabel, IonList, IonText, IonAvatar, IonThumbnail, IonButton, IonIcon, IonSelect, IonSelectOption, IonDatetime, IonToggle, IonInput, IonCheckbox, IonRange } from '@ionic/react';\n\nconst Example: React.SFC<{}> = () => (\n  <>\n    {/*-- Default Item --*/}\n    <IonItem>\n      <IonLabel>\n        Item\n      </IonLabel>\n    </IonItem>\n\n    {/*-- Item as a Button --*/}\n    <IonItem onClick={() => {}}>\n      <IonLabel>\n        Button Item\n      </IonLabel>\n    </IonItem>\n\n    {/*-- Item as an Anchor --*/}\n    <IonItem href=\"https://www.ionicframework.com\">\n      <IonLabel>\n        Anchor Item\n      </IonLabel>\n    </IonItem>\n\n    <IonItem color=\"secondary\">\n      <IonLabel>\n        Secondary Color Item\n      </IonLabel>\n    </IonItem>\n\n    {/*-- Detail Arrows --*/}\n\n    <IonItem detail>\n      <IonLabel>\n        Standard Item with Detail Arrow\n      </IonLabel>\n    </IonItem>\n\n    <IonItem onClick={() => {}} detail>\n      <IonLabel>\n        Button Item with Detail Arrow\n      </IonLabel>\n    </IonItem>\n\n    <IonItem detail={false} href=\"https://www.ionicframework.com\">\n      <IonLabel>\n        Anchor Item with no Detail Arrow\n      </IonLabel>\n    </IonItem>\n\n\n    <IonList>\n      <IonItem>\n        <IonLabel>\n          Item\n        </IonLabel>\n      </IonItem>\n\n      <IonItem lines=\"none\">\n        <IonLabel>\n          No Lines Item\n        </IonLabel>\n      </IonItem>\n\n      <IonItem>\n        <IonLabel text-wrap>\n        Multiline text that should wrap when it is too long\n        to fit on one line in the item.\n        </IonLabel>\n      </IonItem>\n\n      <IonItem>\n        <IonLabel text-wrap>\n          <IonText color=\"primary\">\n            <h3>H3 Primary Title</h3>\n          </IonText>\n          <p>Paragraph line 1</p>\n          <IonText color=\"secondary\">\n            <p>Paragraph line 2 secondary</p>\n          </IonText>\n        </IonLabel>\n      </IonItem>\n\n      <IonItem lines=\"full\">\n        <IonLabel>\n          Item with Full Lines\n        </IonLabel>\n      </IonItem>\n\n    </IonList>\n\n\n    {/*-- Item Inset Lines --*/}\n    <IonItem lines=\"inset\">\n      <IonLabel>Item Lines Inset</IonLabel>\n    </IonItem>\n\n    {/*-- Item Full Lines --*/}\n    <IonItem lines=\"full\">\n      <IonLabel>Item Lines Full</IonLabel>\n    </IonItem>\n\n    {/*-- Item None Lines --*/}\n    <IonItem lines=\"none\">\n      <IonLabel>Item Lines None</IonLabel>\n    </IonItem>\n\n    {/*-- List Full Lines --*/}\n    <IonList lines=\"full\">\n      <IonItem>\n        <IonLabel>Full Lines Item 1</IonLabel>\n      </IonItem>\n\n      <IonItem>\n        <IonLabel>Full Lines Item 2</IonLabel>\n      </IonItem>\n    </IonList>\n\n    {/*-- List Inset Lines --*/}\n    <IonList lines=\"inset\">\n      <IonItem>\n        <IonLabel>Inset Lines Item 1</IonLabel>\n      </IonItem>\n\n      <IonItem>\n        <IonLabel>Inset Lines Item 2</IonLabel>\n      </IonItem>\n    </IonList>\n\n    {/*-- List No Lines --*/}\n    <IonList lines=\"none\">\n      <IonItem>\n        <IonLabel>No lines Item 1</IonLabel>\n      </IonItem>\n\n      <IonItem>\n        <IonLabel>No lines Item 2</IonLabel>\n      </IonItem>\n\n      <IonItem>\n        <IonLabel>No lines Item 3</IonLabel>\n      </IonItem>\n    </IonList>\n\n\n\n    <IonItem onClick={() => {}}>\n      <IonAvatar slot=\"start\">\n        <img src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==\" />\n      </IonAvatar>\n      <IonLabel>\n        Avatar Start, Button Item\n      </IonLabel>\n    </IonItem>\n\n    <IonItem href=\"#\">\n      <IonLabel>\n        Thumbnail End, Anchor Item\n      </IonLabel>\n      <IonThumbnail slot=\"end\">\n        <img src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==\" />\n      </IonThumbnail>\n    </IonItem>\n\n    <IonItem>\n      <IonThumbnail slot=\"start\">\n        <img src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==\" />\n      </IonThumbnail>\n      <IonLabel>\n        <h2>H2 Title Text</h2>\n        <p>Button on right</p>\n      </IonLabel>\n      <IonButton fill=\"outline\" slot=\"end\">View</IonButton>\n    </IonItem>\n\n    <IonItem onClick={() => {}}>\n      <IonThumbnail slot=\"start\">\n        <img src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==\" />\n      </IonThumbnail>\n      <IonLabel>\n        <h3>H3 Title Text</h3>\n        <p>Icon on right</p>\n      </IonLabel>\n      <IonIcon name=\"close-circle\" slot=\"end\" />\n    </IonItem>\n\n\n    Buttons in Items\n\n\n    <IonItem>\n      <IonButton slot=\"start\">\n        Start\n      </IonButton>\n      <IonLabel>Button Start/End</IonLabel>\n      <IonButton slot=\"end\">\n        End\n      </IonButton>\n    </IonItem>\n\n    <IonItem>\n      <IonButton slot=\"start\">\n        Start Icon\n        <IonIcon name=\"home\" slot=\"end\" />\n      </IonButton>\n      <IonLabel>Buttons with Icons</IonLabel>\n      <IonButton slot=\"end\">\n        <IonIcon name=\"star\" slot=\"end\" />\n        End Icon\n      </IonButton>\n    </IonItem>\n\n    <IonItem>\n      <IonButton slot=\"start\">\n        <IonIcon slot=\"icon-only\" name=\"navigate\" />\n      </IonButton>\n      <IonLabel>Icon only Buttons</IonLabel>\n      <IonButton slot=\"end\">\n        <IonIcon slot=\"icon-only\" name=\"star\" />\n      </IonButton>\n    </IonItem>\n\n\n    <IonItem>\n      <IonLabel>\n        Icon End\n      </IonLabel>\n      <IonIcon name=\"information-circle\" slot=\"end\" />\n    </IonItem>\n\n    <IonItem>\n      <IonLabel>\n        Large Icon End\n      </IonLabel>\n      <IonIcon name=\"information-circle\" size=\"large\" slot=\"end\" />\n    </IonItem>\n\n    <IonItem>\n      <IonLabel>\n        Small Icon End\n      </IonLabel>\n      <IonIcon name=\"information-circle\" size=\"small\" slot=\"end\" />\n    </IonItem>\n\n    <IonItem>\n      <IonIcon name=\"star\" slot=\"start\" />\n      <IonLabel>\n        Icon Start\n      </IonLabel>\n    </IonItem>\n\n    <IonItem>\n      <IonLabel>\n        Two Icons End\n      </IonLabel>\n      <IonIcon name=\"checkmark-circle\" slot=\"end\" />\n      <IonIcon name=\"shuffle\" slot=\"end\" />\n    </IonItem>\n\n    <IonItem>\n      <IonLabel position=\"floating\">Datetime</IonLabel>\n      <IonDatetime></IonDatetime>\n    </IonItem>\n\n    <IonItem>\n      <IonLabel position=\"floating\">Select</IonLabel>\n      <IonSelect>\n        <IonSelectOption value=\"\">No Game Console</IonSelectOption>\n        <IonSelectOption value=\"nes\">NES</IonSelectOption>\n        <IonSelectOption value=\"n64\" selected>Nintendo64</IonSelectOption>\n        <IonSelectOption value=\"ps\">PlayStation</IonSelectOption>\n        <IonSelectOption value=\"genesis\">Sega Genesis</IonSelectOption>\n        <IonSelectOption value=\"saturn\">Sega Saturn</IonSelectOption>\n        <IonSelectOption value=\"snes\">SNES</IonSelectOption>\n      </IonSelect>\n    </IonItem>\n\n    <IonItem>\n      <IonLabel>Toggle</IonLabel>\n      <IonToggle slot=\"end\"></IonToggle>\n    </IonItem>\n\n    <IonItem>\n      <IonLabel position=\"floating\">Floating Input</IonLabel>\n      <IonInput></IonInput>\n    </IonItem>\n\n    <IonItem>\n      <IonLabel>Input (placeholder)</IonLabel>\n      <IonInput placeholder=\"Placeholder\"></IonInput>\n    </IonItem>\n\n    <IonItem>\n      <IonLabel>Checkbox</IonLabel>\n      <IonCheckbox slot=\"start\" />\n    </IonItem>\n\n    <IonItem>\n      <IonLabel>Range</IonLabel>\n      <IonRange></IonRange>\n    </IonItem>\n  </>\n);\n\nexport default Example;\n```\n",
+    "vue": "Basic Usage\n\n```html\n<template>\n  <!-- Default Item -->\n  <ion-item>\n    <ion-label>\n      Item\n    </ion-label>\n  </ion-item>\n\n  <!-- Item as a Button -->\n  <ion-item @click=\"buttonClick()\">\n    <ion-label>\n      Button Item\n    </ion-label>\n  </ion-item>\n\n  <!-- Item as an Anchor -->\n  <ion-item href=\"https://www.ionicframework.com\">\n    <ion-label>\n      Anchor Item\n    </ion-label>\n  </ion-item>\n\n  <ion-item color=\"secondary\">\n    <ion-label>\n      Secondary Color Item\n    </ion-label>\n  </ion-item>\n</template>\n```\n\nDetail Arrows\n\n```html\n<template>\n  <ion-item detail>\n    <ion-label>\n      Standard Item with Detail Arrow\n    </ion-label>\n  </ion-item>\n\n  <ion-item @click=\"buttonClick()\" detail>\n    <ion-label>\n      Button Item with Detail Arrow\n    </ion-label>\n  </ion-item>\n\n  <ion-item detail=\"false\" href=\"https://www.ionicframework.com\">\n    <ion-label>\n      Anchor Item with no Detail Arrow\n    </ion-label>\n  </ion-item>\n</template>\n```\n\nList Items\n\n```html\n<template>\n  <ion-list>\n    <ion-item>\n      <ion-label>\n        Item\n      </ion-label>\n    </ion-item>\n\n    <ion-item lines=\"none\">\n      <ion-label>\n        No Lines Item\n      </ion-label>\n    </ion-item>\n\n    <ion-item>\n      <ion-label text-wrap>\n      Multiline text that should wrap when it is too long\n      to fit on one line in the item.\n      </ion-label>\n    </ion-item>\n\n    <ion-item>\n      <ion-label text-wrap>\n        <ion-text color=\"primary\">\n          <h3>H3 Primary Title</h3>\n        </ion-text>\n        <p>Paragraph line 1</p>\n        <ion-text color=\"secondary\">\n          <p>Paragraph line 2 secondary</p>\n        </ion-text>\n      </ion-label>\n    </ion-item>\n\n    <ion-item lines=\"full\">\n      <ion-label>\n        Item with Full Lines\n      </ion-label>\n    </ion-item>\n\n  </ion-list>\n</template>\n```\n\nItem Lines\n\n```html\n<template>\n  <!-- Item Inset Lines -->\n  <ion-item lines=\"inset\">\n    <ion-label>Item Lines Inset</ion-label>\n  </ion-item>\n\n  <!-- Item Full Lines -->\n  <ion-item lines=\"full\">\n    <ion-label>Item Lines Full</ion-label>\n  </ion-item>\n\n  <!-- Item None Lines -->\n  <ion-item lines=\"none\">\n    <ion-label>Item Lines None</ion-label>\n  </ion-item>\n\n  <!-- List Full Lines -->\n  <ion-list lines=\"full\">\n    <ion-item>\n      <ion-label>Full Lines Item 1</ion-label>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>Full Lines Item 2</ion-label>\n    </ion-item>\n  </ion-list>\n\n  <!-- List Inset Lines -->\n  <ion-list lines=\"inset\">\n    <ion-item>\n      <ion-label>Inset Lines Item 1</ion-label>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>Inset Lines Item 2</ion-label>\n    </ion-item>\n  </ion-list>\n\n  <!-- List No Lines -->\n  <ion-list lines=\"none\">\n    <ion-item>\n      <ion-label>No lines Item 1</ion-label>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>No lines Item 2</ion-label>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>No lines Item 3</ion-label>\n    </ion-item>\n  </ion-list>\n</template>\n```\n\n\nMedia Items\n\n```html\n<template>\n  <ion-item @click=\"testClick()\">\n    <ion-avatar slot=\"start\">\n      <img src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==\">\n    </ion-avatar>\n    <ion-label>\n      Avatar Start, Button Item\n    </ion-label>\n  </ion-item>\n\n  <ion-item href=\"#\">\n    <ion-label>\n      Thumbnail End, Anchor Item\n    </ion-label>\n    <ion-thumbnail slot=\"end\">\n      <img src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==\">\n    </ion-thumbnail>\n  </ion-item>\n\n  <ion-item>\n    <ion-thumbnail slot=\"start\">\n      <img src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==\">\n    </ion-thumbnail>\n    <ion-label>\n      <h2>H2 Title Text</h2>\n      <p>Button on right</p>\n    </ion-label>\n    <ion-button fill=\"outline\" slot=\"end\">View</ion-button>\n  </ion-item>\n\n  <ion-item @click=\"testClick()\">\n    <ion-thumbnail slot=\"start\">\n      <img src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==\">\n    </ion-thumbnail>\n    <ion-label>\n      <h3>H3 Title Text</h3>\n      <p>Icon on right</p>\n    </ion-label>\n    <ion-icon name=\"close-circle\" slot=\"end\"></ion-icon>\n  </ion-item>\n</template>\n```\n\nButtons in Items\n\n```html\n<template>\n  <ion-item>\n    <ion-button slot=\"start\">\n      Start\n    </ion-button>\n    <ion-label>Button Start/End</ion-label>\n    <ion-button slot=\"end\">\n      End\n    </ion-button>\n  </ion-item>\n\n  <ion-item>\n    <ion-button slot=\"start\">\n      Start Icon\n      <ion-icon name=\"home\" slot=\"end\"></ion-icon>\n    </ion-button>\n    <ion-label>Buttons with Icons</ion-label>\n    <ion-button slot=\"end\">\n      <ion-icon name=\"star\" slot=\"end\"></ion-icon>\n      End Icon\n    </ion-button>\n  </ion-item>\n\n  <ion-item>\n    <ion-button slot=\"start\">\n      <ion-icon slot=\"icon-only\" name=\"navigate\"></ion-icon>\n    </ion-button>\n    <ion-label>Icon only Buttons</ion-label>\n    <ion-button slot=\"end\">\n      <ion-icon slot=\"icon-only\" name=\"star\"></ion-icon>\n    </ion-button>\n  </ion-item>\n</template>\n```\n\nIcons in Items\n\n```html\n<template>\n  <ion-item>\n    <ion-label>\n      Icon End\n    </ion-label>\n    <ion-icon name=\"information-circle\" slot=\"end\"></ion-icon>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>\n      Large Icon End\n    </ion-label>\n    <ion-icon name=\"information-circle\" size=\"large\" slot=\"end\"></ion-icon>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>\n      Small Icon End\n    </ion-label>\n    <ion-icon name=\"information-circle\" size=\"small\" slot=\"end\"></ion-icon>\n  </ion-item>\n\n  <ion-item>\n    <ion-icon name=\"star\" slot=\"start\"></ion-icon>\n    <ion-label>\n      Icon Start\n    </ion-label>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>\n      Two Icons End\n    </ion-label>\n    <ion-icon name=\"checkmark-circle\" slot=\"end\"></ion-icon>\n    <ion-icon name=\"shuffle\" slot=\"end\"></ion-icon>\n  </ion-item>\n</template>\n```\n\nItem Inputs\n\n```html\n<template>\n  <ion-item>\n    <ion-label position=\"floating\">Datetime</ion-label>\n    <ion-datetime></ion-datetime>\n  </ion-item>\n\n  <ion-item>\n    <ion-label position=\"floating\">Select</ion-label>\n    <ion-select>\n      <ion-select-option value=\"\">No Game Console</ion-select-option>\n      <ion-select-option value=\"nes\">NES</ion-select-option>\n      <ion-select-option value=\"n64\" selected>Nintendo64</ion-select-option>\n      <ion-select-option value=\"ps\">PlayStation</ion-select-option>\n      <ion-select-option value=\"genesis\">Sega Genesis</ion-select-option>\n      <ion-select-option value=\"saturn\">Sega Saturn</ion-select-option>\n      <ion-select-option value=\"snes\">SNES</ion-select-option>\n    </ion-select>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>Toggle</ion-label>\n    <ion-toggle slot=\"end\"></ion-toggle>\n  </ion-item>\n\n  <ion-item>\n    <ion-label position=\"floating\">Floating Input</ion-label>\n    <ion-input></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>Input (placeholder)</ion-label>\n    <ion-input placeholder=\"Placeholder\"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>Checkbox</ion-label>\n    <ion-checkbox slot=\"start\"></ion-checkbox>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>Range</ion-label>\n    <ion-range></ion-range>\n  </ion-item>\n</template>\n```\n"
+  },
+  "props": [
+    {
+      "name": "button",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "button",
+      "reflectToAttr": false,
+      "docs": "If `true`, a button tag will be rendered and the item will be tappable.",
+      "docsTags": [],
+      "default": "false",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "color",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "color",
+      "reflectToAttr": false,
+      "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "detail",
+      "type": "boolean | undefined",
+      "mutable": false,
+      "attr": "detail",
+      "reflectToAttr": false,
+      "docs": "If `true`, a detail arrow will appear on the item. Defaults to `false` unless the `mode`\nis `ios` and an `href` or `button` property is present.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "detailIcon",
+      "type": "string",
+      "mutable": false,
+      "attr": "detail-icon",
+      "reflectToAttr": false,
+      "docs": "The icon to use when `detail` is set to `true`.",
+      "docsTags": [],
+      "default": "'ios-arrow-forward'",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "disabled",
+      "reflectToAttr": false,
+      "docs": "If `true`, the user cannot interact with the item.",
+      "docsTags": [],
+      "default": "false",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "href",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "href",
+      "reflectToAttr": false,
+      "docs": "Contains a URL or a URL fragment that the hyperlink points to.\nIf this property is set, an anchor tag will be rendered.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "lines",
+      "type": "\"full\" | \"inset\" | \"none\" | undefined",
+      "mutable": false,
+      "attr": "lines",
+      "reflectToAttr": false,
+      "docs": "How the bottom border should be displayed on the item.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "routerDirection",
+      "type": "\"back\" | \"forward\" | \"root\"",
+      "mutable": false,
+      "attr": "router-direction",
+      "reflectToAttr": false,
+      "docs": "When using a router, it specifies the transition direction when navigating to\nanother page using `href`.",
+      "docsTags": [],
+      "default": "'forward'",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "type",
+      "type": "\"button\" | \"reset\" | \"submit\"",
+      "mutable": false,
+      "attr": "type",
+      "reflectToAttr": false,
+      "docs": "The type of the button. Only used when an `onclick` or `button` property is present.",
+      "docsTags": [],
+      "default": "'button'",
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "styles": [
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the item"
+    },
+    {
+      "name": "--background-activated",
+      "annotation": "prop",
+      "docs": "Background of the activated item"
+    },
+    {
+      "name": "--border-color",
+      "annotation": "prop",
+      "docs": "Color of the item border"
+    },
+    {
+      "name": "--border-radius",
+      "annotation": "prop",
+      "docs": "Radius of the item border"
+    },
+    {
+      "name": "--border-style",
+      "annotation": "prop",
+      "docs": "Style of the item border"
+    },
+    {
+      "name": "--border-width",
+      "annotation": "prop",
+      "docs": "Width of the item border"
+    },
+    {
+      "name": "--box-shadow",
+      "annotation": "prop",
+      "docs": "Box shadow of the item"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the item"
+    },
+    {
+      "name": "--detail-icon-color",
+      "annotation": "prop",
+      "docs": "Color of the item detail icon"
+    },
+    {
+      "name": "--detail-icon-font-size",
+      "annotation": "prop",
+      "docs": "Font size of the item detail icon"
+    },
+    {
+      "name": "--detail-icon-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the item detail icon"
+    },
+    {
+      "name": "--highlight-color-focused",
+      "annotation": "prop",
+      "docs": "The color of the highlight on the item when focused"
+    },
+    {
+      "name": "--highlight-color-invalid",
+      "annotation": "prop",
+      "docs": "The color of the highlight on the item when invalid"
+    },
+    {
+      "name": "--highlight-color-valid",
+      "annotation": "prop",
+      "docs": "The color of the highlight on the item when valid"
+    },
+    {
+      "name": "--highlight-height",
+      "annotation": "prop",
+      "docs": "The height of the highlight on the item"
+    },
+    {
+      "name": "--inner-border-width",
+      "annotation": "prop",
+      "docs": "Width of the item inner border"
+    },
+    {
+      "name": "--inner-box-shadow",
+      "annotation": "prop",
+      "docs": "Box shadow of the item inner"
+    },
+    {
+      "name": "--inner-padding-bottom",
+      "annotation": "prop",
+      "docs": "Bottom padding of the item inner"
+    },
+    {
+      "name": "--inner-padding-end",
+      "annotation": "prop",
+      "docs": "End padding of the item inner"
+    },
+    {
+      "name": "--inner-padding-start",
+      "annotation": "prop",
+      "docs": "Start padding of the item inner"
+    },
+    {
+      "name": "--inner-padding-top",
+      "annotation": "prop",
+      "docs": "Top padding of the item inner"
+    },
+    {
+      "name": "--min-height",
+      "annotation": "prop",
+      "docs": "Minimum height of the item"
+    },
+    {
+      "name": "--padding-bottom",
+      "annotation": "prop",
+      "docs": "Bottom padding of the item"
+    },
+    {
+      "name": "--padding-end",
+      "annotation": "prop",
+      "docs": "End padding of the item"
+    },
+    {
+      "name": "--padding-start",
+      "annotation": "prop",
+      "docs": "Start padding of the item"
+    },
+    {
+      "name": "--padding-top",
+      "annotation": "prop",
+      "docs": "Top padding of the item"
+    },
+    {
+      "name": "--ripple-color",
+      "annotation": "prop",
+      "docs": "Color of the item ripple effect"
+    },
+    {
+      "name": "--transition",
+      "annotation": "prop",
+      "docs": "Transition of the item"
+    }
+  ],
+  "slots": [
+    {
+      "name": "",
+      "docs": "Content is placed between the named slots if provided without a slot."
+    },
+    {
+      "name": "end",
+      "docs": "Content is placed to the right of the item text in LTR, and to the left in RTL."
+    },
+    {
+      "name": "start",
+      "docs": "Content is placed to the left of the item text in LTR, and to the right in RTL."
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "tag": "ion-thumbnail",
+  "encapsulation": "shadow",
+  "readme": "# ion-thumbnail\n\nThumbnails are square components that usually wrap an image or icon. They can be used to make it easier to display a group of larger images or provide a preview of the full-size image.\n\nThumbnails can be used by themselves or inside of any element. If placed inside of an `ion-item`, the thumbnail will resize to fit the parent component. To position a thumbnail on the left or right side of an item, set the slot to `start` or `end`, respectively.\n\n",
+  "docs": "Thumbnails are square components that usually wrap an image or icon. They can be used to make it easier to display a group of larger images or provide a preview of the full-size image.\n\nThumbnails can be used by themselves or inside of any element. If placed inside of an `ion-item`, the thumbnail will resize to fit the parent component. To position a thumbnail on the left or right side of an item, set the slot to `start` or `end`, respectively.",
+  "docsTags": [],
+  "usage": {
+    "javascript": "```html\n<ion-thumbnail>\n  <img src=\"https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y\">\n</ion-thumbnail>\n\n<ion-item>\n  <ion-thumbnail slot=\"start\">\n    <img src=\"https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y\">\n  </ion-thumbnail>\n  <ion-label>Item Thumbnail</ion-label>\n</ion-item>\n```",
+    "react": "```tsx\nimport React from 'react';\n\nimport { IonThumbnail, IonItem, IonLabel } from '@ionic/react';\n\nconst Example: React.SFC<{}> = () => (\n  <>\n    <IonThumbnail>\n      <img src=\"https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y\" />\n    </IonThumbnail>\n\n    <IonItem>\n      <IonThumbnail slot=\"start\">\n        <img src=\"https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y\" />\n      </IonThumbnail>\n      <IonLabel>Item Thumbnail</IonLabel>\n    </IonItem>\n  </>\n);\n\nexport default Example;\n```\n"
+  },
+  "props": [],
+  "methods": [],
+  "events": [],
+  "styles": [
+    {
+      "name": "--border-radius",
+      "annotation": "prop",
+      "docs": "Border radius of the thumbnail"
+    },
+    {
+      "name": "--size",
+      "annotation": "prop",
+      "docs": "Size of the thumbnail"
+    }
+  ],
+  "slots": []
+}

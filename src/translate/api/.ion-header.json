@@ -1,0 +1,40 @@
+{
+  "tag": "ion-header",
+  "encapsulation": "none",
+  "readme": "# ion-header\n\nHeader is a parent component that holds the toolbar component.\nIt's important to note that ion-header needs to be the one of the three root elements of a page\n\n\n",
+  "docs": "Header is a parent component that holds the toolbar component.\nIt's important to note that ion-header needs to be the one of the three root elements of a page",
+  "docsTags": [],
+  "usage": {
+    "javascript": "```html\n<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-back-button></ion-back-button>\n    </ion-buttons>\n    <ion-title>My Navigation Bar</ion-title>\n  </ion-toolbar>\n\n  <ion-toolbar>\n    <ion-title>Subheader</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content></ion-content>\n```\n",
+    "react": "```tsx\nimport React from 'react';\n\nimport { IonHeader, IonContent, IonToolbar, IonButtons, IonBackButton, IonTitle } from '@ionic/react';\n\nconst Example: React.SFC<{}> = () => (\n  <>\n    <IonHeader>\n      <IonToolbar>\n        <IonButtons slot=\"start\">\n          <IonBackButton goBack={() => {}} />\n        </IonButtons>\n        <IonTitle>My Navigation Bar</IonTitle>\n      </IonToolbar>\n\n      <IonToolbar>\n        <IonTitle>Subheader</IonTitle>\n      </IonToolbar>\n    </IonHeader>\n\n    <IonContent />\n  </>\n);\n\nexport default Example\n"
+  },
+  "props": [
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "translucent",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "translucent",
+      "reflectToAttr": false,
+      "docs": "If `true`, the header will be translucent.\nNote: In order to scroll content behind the header, the `fullscreen`\nattribute needs to be set on the content.",
+      "docsTags": [],
+      "default": "false",
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "styles": [],
+  "slots": []
+}

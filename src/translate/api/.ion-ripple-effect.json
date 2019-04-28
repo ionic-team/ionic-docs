@@ -1,0 +1,51 @@
+{
+  "tag": "ion-ripple-effect",
+  "encapsulation": "shadow",
+  "readme": "# ion-ripple-effect\n\nThe ripple effect component adds the [Material Design ink ripple interaction effect](https://material.io/develop/web/components/ripples/). This component can be used without a button and can be added to any component.\n\n",
+  "docs": "The ripple effect component adds the [Material Design ink ripple interaction effect](https://material.io/develop/web/components/ripples/). This component can be used without a button and can be added to any component.",
+  "docsTags": [],
+  "usage": {
+    "javascript": "```html\n<div>\n  <ion-ripple-effect></ion-ripple-effect>\n  A plain div with a ripple effect\n</div>\n\n<button>\n  <ion-ripple-effect></ion-ripple-effect>\n  Button\n</button>\n```"
+  },
+  "props": [
+    {
+      "name": "type",
+      "type": "\"bounded\" | \"unbounded\"",
+      "mutable": false,
+      "attr": "type",
+      "reflectToAttr": false,
+      "docs": "Sets the type of ripple-effect:\n\n- `bounded`: the ripple effect expands from the user's click position\n- `unbounded`: the ripple effect expands from the center of the button and overflows the container.\n\nNOTE: Surfaces for bounded ripples should have the overflow property set to hidden,\nwhile surfaces for unbounded ripples should have it set to visible.",
+      "docsTags": [],
+      "default": "'bounded'",
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "addRipple",
+      "returns": {
+        "type": "Promise<() => void>",
+        "docs": ""
+      },
+      "signature": "addRipple(pageX: number, pageY: number) => Promise<() => void>",
+      "parameters": [
+        {
+          "name": "pageX",
+          "type": "number",
+          "docs": ""
+        },
+        {
+          "name": "pageY",
+          "type": "number",
+          "docs": ""
+        }
+      ],
+      "docs": "Adds the ripple effect to the parent element",
+      "docsTags": []
+    }
+  ],
+  "events": [],
+  "styles": [],
+  "slots": []
+}

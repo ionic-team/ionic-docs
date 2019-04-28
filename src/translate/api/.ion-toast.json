@@ -1,0 +1,360 @@
+{
+  "tag": "ion-toast",
+  "encapsulation": "shadow",
+  "readme": "# ion-toast\n\nA Toast is a subtle notification commonly used in modern applications. It can be used to provide feedback about an operation or to display a system message. The toast appears on top of the app's content, and can be dismissed by the app to resume user interaction with the app.\n\n### Creating\n\nAll of the toast options should be passed in the create method. The message to display should be passed in the `message` property. The `showCloseButton` option can be set to true in order to display a close button on the toast. See the properties below for all available options.\n\n### Positioning\n\nToasts can be positioned at the top, bottom or middle of the viewport. The position can be passed upon creation. The possible values are `top`, `bottom` and `middle`. If the position is not specified, the toast will be displayed at the bottom of the viewport.\n\n### Dismissing\n\nThe toast can be dismissed automatically after a specific amount of time by passing the number of milliseconds to display it in the `duration` of the toast options. If `showCloseButton` is set to true, then the close button will dismiss the toast. To dismiss the toast after creation, call the `dismiss()` method on the instance.\n\n",
+  "docs": "A Toast is a subtle notification commonly used in modern applications. It can be used to provide feedback about an operation or to display a system message. The toast appears on top of the app's content, and can be dismissed by the app to resume user interaction with the app.",
+  "docsTags": [],
+  "usage": {
+    "angular": "```typescript\nimport { Component } from '@angular/core';\nimport { ToastController } from '@ionic/angular';\n\n@Component({\n  selector: 'toast-example',\n  templateUrl: 'toast-example.html',\n  styleUrls: ['./toast-example.css'],\n})\nexport class ToastExample {\n\n  constructor(public toastController: ToastController) {}\n\n  async presentToast() {\n    const toast = await this.toastController.create({\n      message: 'Your settings have been saved.',\n      duration: 2000\n    });\n    toast.present();\n  }\n\n  async presentToastWithOptions() {\n    const toast = await this.toastController.create({\n      header: 'Toast header',\n      message: 'Click to Close',\n      position: 'top',\n      buttons: [\n        {\n          side: 'start',\n          icon: 'star',\n          text: 'Favorite',\n          handler: () => {\n            console.log('Favorite clicked');\n          }\n        }, {\n          text: 'Done',\n          role: 'cancel',\n          handler: () => {\n            console.log('Cancel clicked');\n          }\n        }\n      ]\n    });\n    toast.present();\n  }\n\n}\n```\n",
+    "javascript": "```javascript\nasync function presentToast() {\n  const toastController = document.querySelector('ion-toast-controller');\n  await toastController.componentOnReady();\n\n  const toast = await toastController.create({\n    message: 'Your settings have been saved.',\n    duration: 2000\n  });\n  return await toast.present();\n}\n\nasync function presentToastWithOptions() {\n  const toastController = document.querySelector('ion-toast-controller');\n  await toastController.componentOnReady();\n\n  const toast = await toastController.create({\n    header: 'Toast header',\n    message: 'Click to Close',\n    position: 'top',\n    buttons: [\n      {\n        side: 'start',\n        icon: 'star',\n        text: 'Favorite',\n        handler: () => {\n          console.log('Favorite clicked');\n        }\n      }, {\n        text: 'Done',\n        role: 'cancel',\n        handler: () => {\n          console.log('Cancel clicked');\n        }\n      }\n    ]\n  });\n\n  return await toast.present();\n}\n```\n",
+    "react": "```tsx\nimport React, { Component } from 'react'\nimport { IonToast } from '@ionic/react';\n\ntype Props = {}\ntype State = {\n  showToast1: boolean\n  showToast2: boolean\n}\n\nexport class Toast extends Component<Props, State> {\n\n  constructor(props: Props) {\n    super(props);\n    this.state = {\n      showToast1: false\n      showToast2: false\n    };\n  }\n\n  render() {\n    return (\n      <IonToast\n        isOpen={this.state.showToast1}\n        onDidDismiss={() => this.setState(() => ({ showToast1: false }))}\n        message='Your settings have been saved.'\n        duration={200}\n      >\n      </IonToast>\n\n      <IonToast\n        isOpen={this.state.showToast2}\n        onDidDismiss={() => this.setState(() => ({ showToast2: false }))}\n        message='Click to Close'\n        position='top'\n        buttons={[{\n          side: 'start',\n          icon: 'star',\n          text: 'Favorite',\n          handler: () => {\n            console.log('Favorite clicked');\n          }\n        }, {\n          text: 'Done',\n          role: 'cancel',\n          handler: () => {\n            console.log('Cancel clicked');\n          }\n        }]}\n      >\n      </IonToast>\n    );\n  }\n}\n\n```\n"
+  },
+  "props": [
+    {
+      "name": "animated",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "animated",
+      "reflectToAttr": false,
+      "docs": "If `true`, the toast will animate.",
+      "docsTags": [],
+      "default": "true",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "buttons",
+      "type": "(string | ToastButton)[] | undefined",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "An array of buttons for the toast.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "closeButtonText",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "close-button-text",
+      "reflectToAttr": false,
+      "docs": "Text to display in the close button.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "color",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "color",
+      "reflectToAttr": false,
+      "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "cssClass",
+      "type": "string | string[] | undefined",
+      "mutable": false,
+      "attr": "css-class",
+      "reflectToAttr": false,
+      "docs": "Additional classes to apply for custom CSS. If multiple classes are\nprovided they should be separated by spaces.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "duration",
+      "type": "number",
+      "mutable": false,
+      "attr": "duration",
+      "reflectToAttr": false,
+      "docs": "How many milliseconds to wait before hiding the toast. By default, it will show\nuntil `dismiss()` is called.",
+      "docsTags": [],
+      "default": "0",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "enterAnimation",
+      "type": "((Animation: Animation, baseEl: any, opts?: any) => Promise<Animation>) | undefined",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "Animation to use when the toast is presented.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "header",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "header",
+      "reflectToAttr": false,
+      "docs": "Header to be shown in the toast.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "keyboardClose",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "keyboard-close",
+      "reflectToAttr": false,
+      "docs": "If `true`, the keyboard will be automatically dismissed when the overlay is presented.",
+      "docsTags": [],
+      "default": "false",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "leaveAnimation",
+      "type": "((Animation: Animation, baseEl: any, opts?: any) => Promise<Animation>) | undefined",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "Animation to use when the toast is dismissed.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "message",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "message",
+      "reflectToAttr": false,
+      "docs": "Message to be shown in the toast.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "position",
+      "type": "\"bottom\" | \"middle\" | \"top\"",
+      "mutable": false,
+      "attr": "position",
+      "reflectToAttr": false,
+      "docs": "The position of the toast on the screen.",
+      "docsTags": [],
+      "default": "'bottom'",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "showCloseButton",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "show-close-button",
+      "reflectToAttr": false,
+      "docs": "If `true`, the close button will be displayed.",
+      "docsTags": [],
+      "default": "false",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "translucent",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "translucent",
+      "reflectToAttr": false,
+      "docs": "If `true`, the toast will be translucent.",
+      "docsTags": [],
+      "default": "false",
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "dismiss",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "dismiss(data?: any, role?: string | undefined) => Promise<boolean>",
+      "parameters": [
+        {
+          "name": "data",
+          "type": "any",
+          "docs": ""
+        },
+        {
+          "name": "role",
+          "type": "string | undefined",
+          "docs": ""
+        }
+      ],
+      "docs": "Dismiss the toast overlay after it has been presented.",
+      "docsTags": []
+    },
+    {
+      "name": "onDidDismiss",
+      "returns": {
+        "type": "Promise<OverlayEventDetail<any>>",
+        "docs": ""
+      },
+      "signature": "onDidDismiss() => Promise<OverlayEventDetail<any>>",
+      "parameters": [],
+      "docs": "Returns a promise that resolves when the toast did dismiss.",
+      "docsTags": []
+    },
+    {
+      "name": "onWillDismiss",
+      "returns": {
+        "type": "Promise<OverlayEventDetail<any>>",
+        "docs": ""
+      },
+      "signature": "onWillDismiss() => Promise<OverlayEventDetail<any>>",
+      "parameters": [],
+      "docs": "Returns a promise that resolves when the toast will dismiss.",
+      "docsTags": []
+    },
+    {
+      "name": "present",
+      "returns": {
+        "type": "Promise<void>",
+        "docs": ""
+      },
+      "signature": "present() => Promise<void>",
+      "parameters": [],
+      "docs": "Present the toast overlay after it has been created.",
+      "docsTags": []
+    }
+  ],
+  "events": [
+    {
+      "event": "ionToastDidDismiss",
+      "detail": "OverlayEventDetail",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted after the toast has dismissed.",
+      "docsTags": []
+    },
+    {
+      "event": "ionToastDidPresent",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted after the toast has presented.",
+      "docsTags": []
+    },
+    {
+      "event": "ionToastWillDismiss",
+      "detail": "OverlayEventDetail",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted before the toast has dismissed.",
+      "docsTags": []
+    },
+    {
+      "event": "ionToastWillPresent",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted before the toast has presented.",
+      "docsTags": []
+    }
+  ],
+  "styles": [
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the toast"
+    },
+    {
+      "name": "--border-color",
+      "annotation": "prop",
+      "docs": "Border color of the toast"
+    },
+    {
+      "name": "--border-radius",
+      "annotation": "prop",
+      "docs": "Border radius of the toast"
+    },
+    {
+      "name": "--border-style",
+      "annotation": "prop",
+      "docs": "Border style of the toast"
+    },
+    {
+      "name": "--border-width",
+      "annotation": "prop",
+      "docs": "Border width of the toast"
+    },
+    {
+      "name": "--box-shadow",
+      "annotation": "prop",
+      "docs": "Box shadow of the toast"
+    },
+    {
+      "name": "--button-color",
+      "annotation": "prop",
+      "docs": "Color of the button text"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the toast text"
+    },
+    {
+      "name": "--end",
+      "annotation": "prop",
+      "docs": "Position from the end"
+    },
+    {
+      "name": "--height",
+      "annotation": "prop",
+      "docs": "Height of the toast"
+    },
+    {
+      "name": "--max-height",
+      "annotation": "prop",
+      "docs": "Maximum height of the toast"
+    },
+    {
+      "name": "--max-width",
+      "annotation": "prop",
+      "docs": "Maximum width of the toast"
+    },
+    {
+      "name": "--min-height",
+      "annotation": "prop",
+      "docs": "Minimum height of the toast"
+    },
+    {
+      "name": "--min-width",
+      "annotation": "prop",
+      "docs": "Minimum width of the toast"
+    },
+    {
+      "name": "--start",
+      "annotation": "prop",
+      "docs": "Position from the start"
+    },
+    {
+      "name": "--width",
+      "annotation": "prop",
+      "docs": "Width of the toast"
+    }
+  ],
+  "slots": []
+}

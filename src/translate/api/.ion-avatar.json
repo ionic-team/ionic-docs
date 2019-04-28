@@ -1,0 +1,24 @@
+{
+  "tag": "ion-avatar",
+  "encapsulation": "shadow",
+  "readme": "# ion-avatar\n\nAvatars are circular components that usually wrap an image or icon. They can be used to represent a person or an object.\n\nAvatars can be used by themselves or inside of any element. If placed inside of an `ion-chip` or `ion-item`, the avatar will resize to fit the parent component. To position an avatar on the left or right side of an item, set the slot to `start` or `end`, respectively.\n\n",
+  "docs": "Avatars are circular components that usually wrap an image or icon. They can be used to represent a person or an object.\n\nAvatars can be used by themselves or inside of any element. If placed inside of an `ion-chip` or `ion-item`, the avatar will resize to fit the parent component. To position an avatar on the left or right side of an item, set the slot to `start` or `end`, respectively.",
+  "docsTags": [],
+  "usage": {
+    "angular": "```html\n<ion-avatar>\n  <img src=\"https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y\">\n</ion-avatar>\n\n<ion-chip>\n  <ion-avatar>\n    <img src=\"https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y\">\n  </ion-avatar>\n  <ion-label>Chip Avatar</ion-label>\n</ion-chip>\n\n<ion-item>\n  <ion-avatar slot=\"start\">\n    <img src=\"https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y\">\n  </ion-avatar>\n  <ion-label>Item Avatar</ion-label>\n</ion-item>\n```",
+    "javascript": "```html\n<ion-avatar>\n  <img src=\"https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y\">\n</ion-avatar>\n\n<ion-chip>\n  <ion-avatar>\n    <img src=\"https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y\">\n  </ion-avatar>\n  <ion-label>Chip Avatar</ion-label>\n</ion-chip>\n\n<ion-item>\n  <ion-avatar slot=\"start\">\n    <img src=\"https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y\">\n  </ion-avatar>\n  <ion-label>Item Avatar</ion-label>\n</ion-item>\n```",
+    "react": "```tsx\nimport React from 'react'\nimport { IonAvatar, IonChip, IonItem, IonLabel } from '@ionic/react';\n\nconst AvatarExample: React.SFC<{}> = () => (\n  <>\n    <IonAvatar>\n      <img src=\"https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y\" />\n    </IonAvatar>\n\n    <IonChip>\n      <IonAvatar>\n        <img src=\"https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y\" />\n      </IonAvatar>\n      <IonLabel>Chip Avatar</IonLabel>\n    </IonChip>\n\n    <IonItem>\n      <IonAvatar slot=\"start\">\n        <img src=\"https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y\" />\n      </IonAvatar>\n      <IonLabel>Item Avatar</IonLabel>\n    </IonItem>\n  </>\n);\n\nexport default AvatarExample;\n```",
+    "vue": "```html\n<template>\n  <ion-avatar>\n    <img src=\"https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y\">\n  </ion-avatar>\n\n  <ion-chip>\n    <ion-avatar>\n      <img src=\"https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y\">\n    </ion-avatar>\n    <ion-label>Chip Avatar</ion-label>\n  </ion-chip>\n\n  <ion-item>\n    <ion-avatar slot=\"start\">\n      <img src=\"https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y\">\n    </ion-avatar>\n    <ion-label>Item Avatar</ion-label>\n  </ion-item>\n</template>\n```"
+  },
+  "props": [],
+  "methods": [],
+  "events": [],
+  "styles": [
+    {
+      "name": "--border-radius",
+      "annotation": "prop",
+      "docs": "Border radius of the avatar and inner image"
+    }
+  ],
+  "slots": []
+}

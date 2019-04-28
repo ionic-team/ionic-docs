@@ -1,0 +1,70 @@
+{
+  "tag": "ion-spinner",
+  "encapsulation": "shadow",
+  "readme": "# ion-spinner\n\nThe Spinner component provides a variety of animated SVG spinners. Spinners are visual indicators that the app is loading content or performing another process that the user needs to wait on.\n\nThe default spinner to use is based on the platform. The default spinner for `ios` is `\"lines\"`, and the default for `android` is `\"crescent\"`. If the platform is not `ios` or `android`, the spinner will default to `crescent`. If the `name` property is set, then that spinner will be used instead of the platform specific spinner.\n\n\n",
+  "docs": "The Spinner component provides a variety of animated SVG spinners. Spinners are visual indicators that the app is loading content or performing another process that the user needs to wait on.\n\nThe default spinner to use is based on the platform. The default spinner for `ios` is `\"lines\"`, and the default for `android` is `\"crescent\"`. If the platform is not `ios` or `android`, the spinner will default to `crescent`. If the `name` property is set, then that spinner will be used instead of the platform specific spinner.",
+  "docsTags": [],
+  "usage": {
+    "angular": "```html\n<!-- Default Spinner -->\n<ion-spinner></ion-spinner>\n\n<!-- Lines -->\n<ion-spinner name=\"lines\"></ion-spinner>\n\n<!-- Lines Small -->\n<ion-spinner name=\"lines-small\"></ion-spinner>\n\n<!-- Dots -->\n<ion-spinner name=\"dots\"></ion-spinner>\n\n<!-- Bubbles -->\n<ion-spinner name=\"bubbles\"></ion-spinner>\n\n<!-- Circles -->\n<ion-spinner name=\"circles\"></ion-spinner>\n\n<!-- Crescent -->\n<ion-spinner name=\"crescent\"></ion-spinner>\n\n<!-- Paused Default Spinner -->\n<ion-spinner paused></ion-spinner>\n```\n",
+    "javascript": "```html\n<!-- Default Spinner -->\n<ion-spinner></ion-spinner>\n\n<!-- Lines -->\n<ion-spinner name=\"lines\"></ion-spinner>\n\n<!-- Lines Small -->\n<ion-spinner name=\"lines-small\"></ion-spinner>\n\n<!-- Dots -->\n<ion-spinner name=\"dots\"></ion-spinner>\n\n<!-- Bubbles -->\n<ion-spinner name=\"bubbles\"></ion-spinner>\n\n<!-- Circles -->\n<ion-spinner name=\"circles\"></ion-spinner>\n\n<!-- Crescent -->\n<ion-spinner name=\"crescent\"></ion-spinner>\n\n<!-- Paused Default Spinner -->\n<ion-spinner paused></ion-spinner>\n```\n",
+    "react": "```tsx\nimport React from 'react';\n\nimport { IonSpinner } from '@ionic/react';\n\nconst Example: React.SFC<{}> = () => (\n  <>\n    {/*-- Default Spinner --*/}\n    <IonSpinner></IonSpinner>\n\n    {/*-- Lines --*/}\n    <IonSpinner name=\"lines\"></IonSpinner>\n\n    {/*-- Lines Small --*/}\n    <IonSpinner name=\"lines-small\"></IonSpinner>\n\n    {/*-- Dots --*/}\n    <IonSpinner name=\"dots\"></IonSpinner>\n\n    {/*-- Bubbles --*/}\n    <IonSpinner name=\"bubbles\"></IonSpinner>\n\n    {/*-- Circles --*/}\n    <IonSpinner name=\"circles\"></IonSpinner>\n\n    {/*-- Crescent --*/}\n    <IonSpinner name=\"crescent\"></IonSpinner>\n\n    {/*-- Paused Default Spinner --*/}\n    <IonSpinner paused></IonSpinner>\n  </>\n);\n\nexport default Example;\n```\n",
+    "vue": "```html\n<template>\n  <!-- Default Spinner -->\n  <ion-spinner></ion-spinner>\n\n  <!-- Lines -->\n  <ion-spinner name=\"lines\"></ion-spinner>\n\n  <!-- Lines Small -->\n  <ion-spinner name=\"lines-small\"></ion-spinner>\n\n  <!-- Dots -->\n  <ion-spinner name=\"dots\"></ion-spinner>\n\n  <!-- Bubbles -->\n  <ion-spinner name=\"bubbles\"></ion-spinner>\n\n  <!-- Circles -->\n  <ion-spinner name=\"circles\"></ion-spinner>\n\n  <!-- Crescent -->\n  <ion-spinner name=\"crescent\"></ion-spinner>\n\n  <!-- Paused Default Spinner -->\n  <ion-spinner paused></ion-spinner>\n</template>\n```\n"
+  },
+  "props": [
+    {
+      "name": "color",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "color",
+      "reflectToAttr": false,
+      "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "duration",
+      "type": "number | undefined",
+      "mutable": false,
+      "attr": "duration",
+      "reflectToAttr": false,
+      "docs": "Duration of the spinner animation in milliseconds. The default varies based on the spinner.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "name",
+      "type": "\"bubbles\" | \"circles\" | \"crescent\" | \"dots\" | \"lines\" | \"lines-small\" | undefined",
+      "mutable": false,
+      "attr": "name",
+      "reflectToAttr": false,
+      "docs": "The name of the SVG spinner to use. If a name is not provided, the platform's default\nspinner will be used.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "paused",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "paused",
+      "reflectToAttr": false,
+      "docs": "If `true`, the spinner's animation will be paused.",
+      "docsTags": [],
+      "default": "false",
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "styles": [
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the spinner"
+    }
+  ],
+  "slots": []
+}

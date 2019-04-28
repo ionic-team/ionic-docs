@@ -1,0 +1,314 @@
+{
+  "tag": "ion-col",
+  "encapsulation": "shadow",
+  "readme": "# ion-col\n\nColumns are cellular components of the [grid](../grid) system and go inside of a [row](../row).\nThey will expand to fill their row. All content within a grid should go inside of a column.\n\nSee [Grid Layout](/docs/layout/grid) for more information.\n\n\n## Column attributes\n\nBy default, columns will stretch to fill the entire height of the row.\nThere are several attributes that can be added to a column to customize this behavior.\n\n| Property              | Description                                                                                                 |\n|-----------------------|-------------------------------------------------------------------------------------------------------------|\n| align-self-start      | Adds `align-self: flex-start`. The column will be vertically aligned at the top.                            |\n| align-self-center     | Adds `align-self: center`. The column will be vertically aligned in the center.                             |\n| align-self-end        | Adds `align-self: flex-end`. The column will be vertically aligned at the bottom.                           |\n| align-self-stretch    | Adds `align-self: stretch`. The column will be stretched to take up the entire height of the row.           |\n| align-self-baseline   | Adds `align-self: baseline`. The column will be vertically aligned at its baseline.                         |\n\n\n",
+  "docs": "Columns are cellular components of the [grid](../grid) system and go inside of a [row](../row).\nThey will expand to fill their row. All content within a grid should go inside of a column.\n\nSee [Grid Layout](/docs/layout/grid) for more information.",
+  "docsTags": [],
+  "usage": {},
+  "props": [
+    {
+      "name": "offset",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "offset",
+      "reflectToAttr": false,
+      "docs": "The amount to offset the column, in terms of how many columns it should shift to the end\nof the total available.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "offsetLg",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "offset-lg",
+      "reflectToAttr": false,
+      "docs": "The amount to offset the column for lg screens, in terms of how many columns it should shift\nto the end of the total available.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "offsetMd",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "offset-md",
+      "reflectToAttr": false,
+      "docs": "The amount to offset the column for md screens, in terms of how many columns it should shift\nto the end of the total available.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "offsetSm",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "offset-sm",
+      "reflectToAttr": false,
+      "docs": "The amount to offset the column for sm screens, in terms of how many columns it should shift\nto the end of the total available.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "offsetXl",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "offset-xl",
+      "reflectToAttr": false,
+      "docs": "The amount to offset the column for xl screens, in terms of how many columns it should shift\nto the end of the total available.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "offsetXs",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "offset-xs",
+      "reflectToAttr": false,
+      "docs": "The amount to offset the column for xs screens, in terms of how many columns it should shift\nto the end of the total available.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "pull",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "pull",
+      "reflectToAttr": false,
+      "docs": "The amount to pull the column, in terms of how many columns it should shift to the start of\nthe total available.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "pullLg",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "pull-lg",
+      "reflectToAttr": false,
+      "docs": "The amount to pull the column for lg screens, in terms of how many columns it should shift\nto the start of the total available.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "pullMd",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "pull-md",
+      "reflectToAttr": false,
+      "docs": "The amount to pull the column for md screens, in terms of how many columns it should shift\nto the start of the total available.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "pullSm",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "pull-sm",
+      "reflectToAttr": false,
+      "docs": "The amount to pull the column for sm screens, in terms of how many columns it should shift\nto the start of the total available.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "pullXl",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "pull-xl",
+      "reflectToAttr": false,
+      "docs": "The amount to pull the column for xl screens, in terms of how many columns it should shift\nto the start of the total available.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "pullXs",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "pull-xs",
+      "reflectToAttr": false,
+      "docs": "The amount to pull the column for xs screens, in terms of how many columns it should shift\nto the start of the total available.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "push",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "push",
+      "reflectToAttr": false,
+      "docs": "The amount to push the column, in terms of how many columns it should shift to the end\nof the total available.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "pushLg",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "push-lg",
+      "reflectToAttr": false,
+      "docs": "The amount to push the column for lg screens, in terms of how many columns it should shift\nto the end of the total available.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "pushMd",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "push-md",
+      "reflectToAttr": false,
+      "docs": "The amount to push the column for md screens, in terms of how many columns it should shift\nto the end of the total available.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "pushSm",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "push-sm",
+      "reflectToAttr": false,
+      "docs": "The amount to push the column for sm screens, in terms of how many columns it should shift\nto the end of the total available.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "pushXl",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "push-xl",
+      "reflectToAttr": false,
+      "docs": "The amount to push the column for xl screens, in terms of how many columns it should shift\nto the end of the total available.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "pushXs",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "push-xs",
+      "reflectToAttr": false,
+      "docs": "The amount to push the column for xs screens, in terms of how many columns it should shift\nto the end of the total available.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "size",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "size",
+      "reflectToAttr": false,
+      "docs": "The size of the column, in terms of how many columns it should take up out of the total\navailable. If `\"auto\"` is passed, the column will be the size of its content.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "sizeLg",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "size-lg",
+      "reflectToAttr": false,
+      "docs": "The size of the column for lg screens, in terms of how many columns it should take up out\nof the total available. If `\"auto\"` is passed, the column will be the size of its content.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "sizeMd",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "size-md",
+      "reflectToAttr": false,
+      "docs": "The size of the column for md screens, in terms of how many columns it should take up out\nof the total available. If `\"auto\"` is passed, the column will be the size of its content.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "sizeSm",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "size-sm",
+      "reflectToAttr": false,
+      "docs": "The size of the column for sm screens, in terms of how many columns it should take up out\nof the total available. If `\"auto\"` is passed, the column will be the size of its content.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "sizeXl",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "size-xl",
+      "reflectToAttr": false,
+      "docs": "The size of the column for xl screens, in terms of how many columns it should take up out\nof the total available. If `\"auto\"` is passed, the column will be the size of its content.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "sizeXs",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "size-xs",
+      "reflectToAttr": false,
+      "docs": "The size of the column for xs screens, in terms of how many columns it should take up out\nof the total available. If `\"auto\"` is passed, the column will be the size of its content.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "styles": [
+    {
+      "name": "--ion-grid-column-padding",
+      "annotation": "prop",
+      "docs": "Padding for the Column"
+    },
+    {
+      "name": "--ion-grid-column-padding-lg",
+      "annotation": "prop",
+      "docs": "Padding for the Column on lg screens and up"
+    },
+    {
+      "name": "--ion-grid-column-padding-md",
+      "annotation": "prop",
+      "docs": "Padding for the Column on md screens and up"
+    },
+    {
+      "name": "--ion-grid-column-padding-sm",
+      "annotation": "prop",
+      "docs": "Padding for the Column on sm screens and up"
+    },
+    {
+      "name": "--ion-grid-column-padding-xl",
+      "annotation": "prop",
+      "docs": "Padding for the Column on xl screens and up"
+    },
+    {
+      "name": "--ion-grid-column-padding-xs",
+      "annotation": "prop",
+      "docs": "Padding for the Column on xs screens and up"
+    },
+    {
+      "name": "--ion-grid-columns",
+      "annotation": "prop",
+      "docs": "The number of total Columns in the Grid"
+    }
+  ],
+  "slots": []
+}

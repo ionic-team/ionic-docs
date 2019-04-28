@@ -1,0 +1,25 @@
+{
+  "tag": "ion-card-content",
+  "encapsulation": "none",
+  "readme": "# ion-card-content\n\n`ion-card-content` is child component of `ion-card` that adds some content padding.\nIt is recommended that any text content for a card should be placed in an `ion-card-content`.\n\n",
+  "docs": "`ion-card-content` is child component of `ion-card` that adds some content padding.\nIt is recommended that any text content for a card should be placed in an `ion-card-content`.",
+  "docsTags": [],
+  "usage": {},
+  "props": [
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "styles": [],
+  "slots": []
+}

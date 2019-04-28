@@ -1,0 +1,33 @@
+{
+  "tag": "ion-title",
+  "encapsulation": "shadow",
+  "readme": "# ion-title\n\n`ion-title` is a component that sets the title of the `Toolbar`.\n\n\n",
+  "docs": "`ion-title` is a component that sets the title of the `Toolbar`.",
+  "docsTags": [],
+  "usage": {
+    "javascript": "```html\n<ion-header>\n\n  <ion-toolbar>\n    <ion-title>Settings</ion-title>\n  </ion-toolbar>\n\n</ion-header>\n```\n"
+  },
+  "props": [
+    {
+      "name": "color",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "color",
+      "reflectToAttr": false,
+      "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "styles": [
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Text color of the title"
+    }
+  ],
+  "slots": []
+}

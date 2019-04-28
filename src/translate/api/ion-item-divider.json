@@ -1,0 +1,110 @@
+{
+  "tag": "ion-item-divider",
+  "encapsulation": "shadow",
+  "readme": "# ion-item-divider\n\nItem Dividers are block elements that can be used to separate items in a list. They are similar to list headers, but instead of being placed at the top of a list, they should go in between groups of like items.\n",
+  "docs": "Item Dividers are block elements that can be used to separate items in a list. They are similar to list headers, but instead of being placed at the top of a list, they should go in between groups of like items.",
+  "docsTags": [
+    {
+      "name": "slot",
+      "text": "- Content is placed between the named slots if provided without a slot."
+    },
+    {
+      "name": "slot",
+      "text": "start - Content is placed to the left of the divider text in LTR, and to the right in RTL."
+    },
+    {
+      "name": "slot",
+      "text": "end - Content is placed to the right of the divider text in LTR, and to the left in RTL."
+    }
+  ],
+  "usage": {
+    "angular": "```html\n<ion-item-divider>\n  <ion-label>\n    Basic Item Divider\n  </ion-label>\n</ion-item-divider>\n\n<ion-item-divider color=\"secondary\">\n  <ion-label>\n    Secondary Item Divider\n  </ion-label>\n</ion-item-divider>\n\n<!-- Item Dividers in a List -->\n<ion-list>\n  <ion-item-divider>\n    <ion-label>\n      Section A\n    </ion-label>\n  </ion-item-divider>\n\n  <ion-item><ion-label>A1</ion-label></ion-item>\n  <ion-item><ion-label>A2</ion-label></ion-item>\n  <ion-item><ion-label>A3</ion-label></ion-item>\n  <ion-item><ion-label>A4</ion-label></ion-item>\n  <ion-item><ion-label>A5</ion-label></ion-item>\n\n  <ion-item-divider>\n    <ion-label>\n      Section B\n    </ion-label>\n  </ion-item-divider>\n\n  <ion-item><ion-label>B1</ion-label></ion-item>\n  <ion-item><ion-label>B2</ion-label></ion-item>\n  <ion-item><ion-label>B3</ion-label></ion-item>\n  <ion-item><ion-label>B4</ion-label></ion-item>\n  <ion-item><ion-label>B5</ion-label></ion-item>\n</ion-list>\n```\n",
+    "javascript": "```html\n<ion-item-divider>\n  <ion-label>\n    Basic Item Divider\n  </ion-label>\n</ion-item-divider>\n\n<ion-item-divider color=\"secondary\">\n  <ion-label>\n    Secondary Item Divider\n  </ion-label>\n</ion-item-divider>\n\n<!-- Item Dividers in a List -->\n<ion-list>\n  <ion-item-divider>\n    <ion-label>\n      Section A\n    </ion-label>\n  </ion-item-divider>\n\n  <ion-item><ion-label>A1</ion-label></ion-item>\n  <ion-item><ion-label>A2</ion-label></ion-item>\n  <ion-item><ion-label>A3</ion-label></ion-item>\n  <ion-item><ion-label>A4</ion-label></ion-item>\n  <ion-item><ion-label>A5</ion-label></ion-item>\n\n  <ion-item-divider>\n    <ion-label>\n      Section B\n    </ion-label>\n  </ion-item-divider>\n\n  <ion-item><ion-label>B1</ion-label></ion-item>\n  <ion-item><ion-label>B2</ion-label></ion-item>\n  <ion-item><ion-label>B3</ion-label></ion-item>\n  <ion-item><ion-label>B4</ion-label></ion-item>\n  <ion-item><ion-label>B5</ion-label></ion-item>\n</ion-list>\n```\n",
+    "react": "```tsx\nimport React from 'react';\n\nimport { IonItemDivider, IonLabel, IonList, IonItem } from '@ionic/react';\n\nconst Example: React.SFC<{}> = () => (\n  <>\n    <IonItemDivider>\n      <IonLabel>\n        Basic Item Divider\n      </IonLabel>\n    </IonItemDivider>\n\n    <IonItemDivider color=\"secondary\">\n      <IonLabel>\n        Secondary Item Divider\n      </IonLabel>\n    </IonItemDivider>\n\n    {/*-- Item Dividers in a List --*/}\n    <IonList>\n      <IonItemDivider>\n        <IonLabel>\n          Section A\n        </IonLabel>\n      </IonItemDivider>\n\n      <IonItem><IonLabel>A1</IonLabel></IonItem>\n      <IonItem><IonLabel>A2</IonLabel></IonItem>\n      <IonItem><IonLabel>A3</IonLabel></IonItem>\n      <IonItem><IonLabel>A4</IonLabel></IonItem>\n      <IonItem><IonLabel>A5</IonLabel></IonItem>\n\n      <IonItemDivider>\n        <IonLabel>\n          Section B\n        </IonLabel>\n      </IonItemDivider>\n\n      <IonItem><IonLabel>B1</IonLabel></IonItem>\n      <IonItem><IonLabel>B2</IonLabel></IonItem>\n      <IonItem><IonLabel>B3</IonLabel></IonItem>\n      <IonItem><IonLabel>B4</IonLabel></IonItem>\n      <IonItem><IonLabel>B5</IonLabel></IonItem>\n    </IonList>\n  </>\n);\n\nexport default Example\n",
+    "vue": "```html\n<template>\n  <ion-item-divider>\n    <ion-label>\n      Basic Item Divider\n    </ion-label>\n  </ion-item-divider>\n\n  <ion-item-divider color=\"secondary\">\n    <ion-label>\n      Secondary Item Divider\n    </ion-label>\n  </ion-item-divider>\n\n  <!-- Item Dividers in a List -->\n  <ion-list>\n    <ion-item-divider>\n      <ion-label>\n        Section A\n      </ion-label>\n    </ion-item-divider>\n\n    <ion-item><ion-label>A1</ion-label></ion-item>\n    <ion-item><ion-label>A2</ion-label></ion-item>\n    <ion-item><ion-label>A3</ion-label></ion-item>\n    <ion-item><ion-label>A4</ion-label></ion-item>\n    <ion-item><ion-label>A5</ion-label></ion-item>\n\n    <ion-item-divider>\n      <ion-label>\n        Section B\n      </ion-label>\n    </ion-item-divider>\n\n    <ion-item><ion-label>B1</ion-label></ion-item>\n    <ion-item><ion-label>B2</ion-label></ion-item>\n    <ion-item><ion-label>B3</ion-label></ion-item>\n    <ion-item><ion-label>B4</ion-label></ion-item>\n    <ion-item><ion-label>B5</ion-label></ion-item>\n  </ion-list>\n</template>\n```\n"
+  },
+  "props": [
+    {
+      "name": "color",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "color",
+      "reflectToAttr": false,
+      "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "sticky",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "sticky",
+      "reflectToAttr": false,
+      "docs": "When it's set to `true`, the item-divider will stay visible when it reaches the top\nof the viewport until the next `ion-item-divider` replaces it.\n\nThis feature relies in `position:sticky`:\nhttps://caniuse.com/#feat=css-sticky",
+      "docsTags": [],
+      "default": "false",
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "styles": [
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the item divider"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the item divider"
+    },
+    {
+      "name": "--padding-bottom",
+      "annotation": "prop",
+      "docs": "Bottom padding of the item divider"
+    },
+    {
+      "name": "--padding-end",
+      "annotation": "prop",
+      "docs": "End padding of the item divider"
+    },
+    {
+      "name": "--padding-start",
+      "annotation": "prop",
+      "docs": "Start padding of the item divider"
+    },
+    {
+      "name": "--padding-top",
+      "annotation": "prop",
+      "docs": "Top padding of the item divider"
+    }
+  ],
+  "slots": [
+    {
+      "name": "",
+      "docs": "Content is placed between the named slots if provided without a slot."
+    },
+    {
+      "name": "end",
+      "docs": "Content is placed to the right of the divider text in LTR, and to the left in RTL."
+    },
+    {
+      "name": "start",
+      "docs": "Content is placed to the left of the divider text in LTR, and to the right in RTL."
+    }
+  ]
+}

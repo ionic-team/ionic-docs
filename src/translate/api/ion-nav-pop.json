@@ -1,0 +1,13 @@
+{
+  "tag": "ion-nav-pop",
+  "encapsulation": "none",
+  "readme": "# ion-nav-pop\n\n`NavPop` is a component used the automatically go back in navigation. It is the element from of `NavController.pop()`\n\n",
+  "docs": "`NavPop` is a component used the automatically go back in navigation. It is the element from of `NavController.pop()`",
+  "docsTags": [],
+  "usage": {},
+  "props": [],
+  "methods": [],
+  "events": [],
+  "styles": [],
+  "slots": []
+}

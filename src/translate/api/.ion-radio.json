@@ -1,0 +1,127 @@
+{
+  "tag": "ion-radio",
+  "encapsulation": "shadow",
+  "readme": "# ion-radio\n\nRadios are generally used as a set of related options inside of a group, but they can also be used alone. Pressing on a radio will check it. They can also be checked programmatically by setting the `checked` property.\n\nAn `ion-radio-group` can be used to group a set of radios. When radios are inside of a [radio group](../radio-group), only one radio in the group will be checked at any time. Pressing a radio will check it and uncheck the previously selected radio, if there is one. If a radio is not in a group with another radio, then both radios will have the ability to be checked at the same time.\n\n\n\n",
+  "docs": "Radios are generally used as a set of related options inside of a group, but they can also be used alone. Pressing on a radio will check it. They can also be checked programmatically by setting the `checked` property.\n\nAn `ion-radio-group` can be used to group a set of radios. When radios are inside of a [radio group](../radio-group), only one radio in the group will be checked at any time. Pressing a radio will check it and uncheck the previously selected radio, if there is one. If a radio is not in a group with another radio, then both radios will have the ability to be checked at the same time.",
+  "docsTags": [],
+  "usage": {
+    "angular": "```html\n<ion-list>\n  <ion-radio-group>\n    <ion-list-header>\n      <ion-label>Name</ion-label>\n    </ion-list-header>\n\n    <ion-item>\n      <ion-label>Biff</ion-label>\n      <ion-radio slot=\"start\" value=\"biff\" checked></ion-radio>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>Griff</ion-label>\n      <ion-radio slot=\"start\" value=\"griff\"></ion-radio>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>Buford</ion-label>\n      <ion-radio slot=\"start\" value=\"buford\"></ion-radio>\n    </ion-item>\n  </ion-radio-group>\n</ion-list>\n```\n",
+    "javascript": "```html\n<ion-list>\n  <ion-radio-group>\n    <ion-list-header>\n      <ion-label>Name</ion-label>\n    </ion-list-header>\n\n    <ion-item>\n      <ion-label>Biff</ion-label>\n      <ion-radio slot=\"start\" value=\"biff\" checked></ion-radio>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>Griff</ion-label>\n      <ion-radio slot=\"start\" value=\"griff\"></ion-radio>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>Buford</ion-label>\n      <ion-radio slot=\"start\" value=\"buford\"></ion-radio>\n    </ion-item>\n  </ion-radio-group>\n</ion-list>\n```\n",
+    "react": "```tsx\nimport React from 'react';\n\nimport { IonList, IonRadioGroup, IonListHeader, IonLabel, IonItem, IonRadio } from '@ionic/react';\n\nconst Example: React.SFC<{}> = () => (\n\n  <IonList>\n    <IonRadioGroup>\n      <IonListHeader>\n        <IonLabel>Name</IonLabel>\n      </IonListHeader>\n\n      <IonItem>\n        <IonLabel>Biff</IonLabel>\n        <IonRadio slot=\"start\" value=\"biff\" checked></IonRadio>\n      </IonItem>\n\n      <IonItem>\n        <IonLabel>Griff</IonLabel>\n        <IonRadio slot=\"start\" value=\"griff\"></IonRadio>\n      </IonItem>\n\n      <IonItem>\n        <IonLabel>Buford</IonLabel>\n        <IonRadio slot=\"start\" value=\"buford\"></IonRadio>\n      </IonItem>\n    </IonRadioGroup>\n  </IonList>\n);\n\nexport default Example\n",
+    "vue": "```html\n<template>\n  <ion-list>\n    <ion-radio-group>\n      <ion-list-header>\n        <ion-label>Name</ion-label>\n      </ion-list-header>\n\n      <ion-item>\n        <ion-label>Biff</ion-label>\n        <ion-radio slot=\"start\" value=\"biff\" checked></ion-radio>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>Griff</ion-label>\n        <ion-radio slot=\"start\" value=\"griff\"></ion-radio>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>Buford</ion-label>\n        <ion-radio slot=\"start\" value=\"buford\"></ion-radio>\n      </ion-item>\n    </ion-radio-group>\n  </ion-list>\n</template>\n```\n"
+  },
+  "props": [
+    {
+      "name": "checked",
+      "type": "boolean",
+      "mutable": true,
+      "attr": "checked",
+      "reflectToAttr": false,
+      "docs": "If `true`, the radio is selected.",
+      "docsTags": [],
+      "default": "false",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "color",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "color",
+      "reflectToAttr": false,
+      "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "disabled",
+      "reflectToAttr": false,
+      "docs": "If `true`, the user cannot interact with the radio.",
+      "docsTags": [],
+      "default": "false",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "mutable": false,
+      "attr": "name",
+      "reflectToAttr": false,
+      "docs": "The name of the control, which is submitted with the form data.",
+      "docsTags": [],
+      "default": "this.inputId",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "value",
+      "type": "any",
+      "mutable": true,
+      "attr": "value",
+      "reflectToAttr": false,
+      "docs": "the value of the radio.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [
+    {
+      "event": "ionBlur",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the radio button loses focus.",
+      "docsTags": []
+    },
+    {
+      "event": "ionFocus",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the radio button has focus.",
+      "docsTags": []
+    },
+    {
+      "event": "ionSelect",
+      "detail": "RadioChangeEventDetail",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the radio button is selected.",
+      "docsTags": []
+    }
+  ],
+  "styles": [
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the radio"
+    },
+    {
+      "name": "--color-checked",
+      "annotation": "prop",
+      "docs": "Color of the checked radio"
+    }
+  ],
+  "slots": []
+}

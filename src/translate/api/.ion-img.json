@@ -1,0 +1,59 @@
+{
+  "tag": "ion-img",
+  "encapsulation": "shadow",
+  "readme": "# ion-img\n\nImg is a tag that will lazily load an image when ever the tag is in the viewport. This is extremely useful when generating a large list as images are only loaded when they're visible. The component uses [Intersection Observer](https://caniuse.com/#feat=intersectionobserver) internally, which is supported in most modern browser, but falls back to a `setTimeout` when it is not supported.\n\n",
+  "docs": "Img is a tag that will lazily load an image when ever the tag is in the viewport. This is extremely useful when generating a large list as images are only loaded when they're visible. The component uses [Intersection Observer](https://caniuse.com/#feat=intersectionobserver) internally, which is supported in most modern browser, but falls back to a `setTimeout` when it is not supported.",
+  "docsTags": [],
+  "usage": {
+    "angular": "```html\n<ion-list>\n  <ion-item *ngFor=\"let item of items\">\n    <ion-thumbnail slot=\"start\">\n      <ion-img [src]=\"item.src\"></ion-img>\n    </ion-thumbnail>\n    <ion-label>{{item.text}}</ion-label>\n  </ion-item>\n</ion-list>\n```\n",
+    "react": "```tsx\nimport React from 'react';\n\nimport { IonList, IonItem, IonThumbnail, IonImg, IonLabel } from '@ionic/react';\n\ntype Item = {\n  src: string;\n  text: string\n};\nconst items: Item[] = [];\n\nconst Example: React.SFC<{}> = () => (\n\n  <IonList>\n    {items.map(({src, text}) =>\n      <IonItem>\n        <IonThumbnail slot=\"start\">\n          <IonImg src={src}></IonImg>\n        </IonThumbnail>\n        <IonLabel>{text}}</IonLabel>\n      </IonItem>\n    )}\n  </IonList>\n);\n\nexport default Example\n",
+    "vue": "```html\n<template>\n  <ion-list>\n    <ion-item v-for=\"item in items\" :key=\"item.src\">\n      <ion-thumbnail slot=\"start\">\n        <ion-img :src=\"item.src\"></ion-img>\n      </ion-thumbnail>\n      <ion-label>{{item.text}}</ion-label>\n    </ion-item>\n  </ion-list>\n</template>\n```\n"
+  },
+  "props": [
+    {
+      "name": "alt",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "alt",
+      "reflectToAttr": false,
+      "docs": "This attribute defines the alternative text describing the image.\nUsers will see this text displayed if the image URL is wrong,\nthe image is not in one of the supported formats, or if the image is not yet downloaded.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "src",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "src",
+      "reflectToAttr": false,
+      "docs": "The image URL. This attribute is mandatory for the <img> element.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [
+    {
+      "event": "ionError",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the img fails to load",
+      "docsTags": []
+    },
+    {
+      "event": "ionImgDidLoad",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the img src has been set",
+      "docsTags": []
+    }
+  ],
+  "styles": [],
+  "slots": []
+}

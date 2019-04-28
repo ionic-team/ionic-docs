@@ -1,0 +1,52 @@
+{
+  "tag": "ion-card",
+  "encapsulation": "scoped",
+  "readme": "# ion-card\n\nCards are a standard piece of UI that serves as an entry point to more detailed\ninformation. A card can be a single component, but is often made up of some\nheader, title, subtitle, and content. `ion-card` is broken up into several\nsub-components to reflect this. Please see `ion-card-content`,\n`ion-card-header`, `ion-card-title`, `ion-card-subtitle`.\n",
+  "docs": "Cards are a standard piece of UI that serves as an entry point to more detailed\ninformation. A card can be a single component, but is often made up of some\nheader, title, subtitle, and content. `ion-card` is broken up into several\nsub-components to reflect this. Please see `ion-card-content`,\n`ion-card-header`, `ion-card-title`, `ion-card-subtitle`.",
+  "docsTags": [],
+  "usage": {
+    "angular": "```html\n<ion-card>\n  <ion-card-header>\n    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>\n    <ion-card-title>Card Title</ion-card-title>\n  </ion-card-header>\n\n  <ion-card-content>\n    Keep close to Nature's heart... and break clear away, once in awhile,\n    and climb a mountain or spend a week in the woods. Wash your spirit clean.\n  </ion-card-content>\n</ion-card>\n\n<ion-card>\n  <ion-item>\n    <ion-icon name=\"pin\" slot=\"start\"></ion-icon>\n    <ion-label>ion-item in a card, icon left, button right</ion-label>\n    <ion-button fill=\"outline\" slot=\"end\">View</ion-button>\n  </ion-item>\n\n  <ion-card-content>\n    This is content, without any paragraph or header tags,\n    within an ion-card-content element.\n  </ion-card-content>\n</ion-card>\n\n<ion-card>\n  <ion-item href=\"#\" class=\"activated\">\n    <ion-icon name=\"wifi\" slot=\"start\"></ion-icon>\n    <ion-label>Card Link Item 1 .activated</ion-label>\n  </ion-item>\n\n  <ion-item href=\"#\">\n    <ion-icon name=\"wine\" slot=\"start\"></ion-icon>\n    <ion-label>Card Link Item 2</ion-label>\n  </ion-item>\n\n  <ion-item class=\"activated\">\n    <ion-icon name=\"warning\" slot=\"start\"></ion-icon>\n    <ion-label>Card Button Item 1 .activated</ion-label>\n  </ion-item>\n\n  <ion-item>\n    <ion-icon name=\"walk\" slot=\"start\"></ion-icon>\n    <ion-label>Card Button Item 2</ion-label>\n  </ion-item>\n</ion-card>\n```",
+    "javascript": "```html\n<ion-card>\n  <ion-card-header>\n    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>\n    <ion-card-title>Card Title</ion-card-title>\n  </ion-card-header>\n\n  <ion-card-content>\n    Keep close to Nature's heart... and break clear away, once in awhile,\n    and climb a mountain or spend a week in the woods. Wash your spirit clean.\n  </ion-card-content>\n</ion-card>\n\n<ion-card>\n  <ion-item>\n    <ion-icon name=\"pin\" slot=\"start\"></ion-icon>\n    <ion-label>ion-item in a card, icon left, button right</ion-label>\n    <ion-button fill=\"outline\" slot=\"end\">View</ion-button>\n  </ion-item>\n\n  <ion-card-content>\n    This is content, without any paragraph or header tags,\n    within an ion-card-content element.\n  </ion-card-content>\n</ion-card>\n\n<ion-card>\n  <ion-item href=\"#\" class=\"activated\">\n    <ion-icon name=\"wifi\" slot=\"start\"></ion-icon>\n    <ion-label>Card Link Item 1 .activated</ion-label>\n  </ion-item>\n\n  <ion-item href=\"#\">\n    <ion-icon name=\"wine\" slot=\"start\"></ion-icon>\n    <ion-label>Card Link Item 2</ion-label>\n  </ion-item>\n\n  <ion-item class=\"activated\">\n    <ion-icon name=\"warning\" slot=\"start\"></ion-icon>\n    <ion-label>Card Button Item 1 .activated</ion-label>\n  </ion-item>\n\n  <ion-item>\n    <ion-icon name=\"walk\" slot=\"start\"></ion-icon>\n    <ion-label>Card Button Item 2</ion-label>\n  </ion-item>\n</ion-card>\n```",
+    "react": "```tsx\nimport React from 'react';\n\nimport { IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonItem, IonIcon, IonLabel, IonButton } from '@ionic/react';\n\nconst Example: React.SFC<{}> = () => (\n  <>\n    <IonCard>\n      <IonCardHeader>\n        <IonCardSubtitle>Card Subtitle</IonCardSubtitle>\n        <IonCardTitle>Card Title</IonCardTitle>\n      </IonCardHeader>\n\n      <IonCardContent>\n        Keep close to Nature's heart... and break clear away, once in awhile,\n        and climb a mountain or spend a week in the woods. Wash your spirit clean.\n      </IonCardContent>\n    </IonCard>\n\n    <IonCard>\n      <IonItem>\n        <IonIcon name=\"pin\" slot=\"start\" />\n        <IonLabel>ion-item in a card, icon left, button right</IonLabel>\n        <IonButton fill=\"outline\" slot=\"end\">View</IonButton>\n      </IonItem>\n\n      <IonCardContent>\n        This is content, without any paragraph or header tags,\n        within an ion-cardContent element.\n      </IonCardContent>\n    </IonCard>\n\n    <IonCard>\n      <IonItem href=\"#\" class=\"activated\">\n        <IonIcon name=\"wifi\" slot=\"start\" />\n        <IonLabel>Card Link Item 1 .activated</IonLabel>\n      </IonItem>\n\n      <IonItem href=\"#\">\n        <IonIcon name=\"wine\" slot=\"start\" />\n        <IonLabel>Card Link Item 2</IonLabel>\n      </IonItem>\n\n      <IonItem class=\"activated\">\n        <IonIcon name=\"warning\" slot=\"start\" />\n        <IonLabel>Card Button Item 1 .activated</IonLabel>\n      </IonItem>\n\n      <IonItem>\n        <IonIcon name=\"walk\" slot=\"start\" />\n        <IonLabel>Card Button Item 2</IonLabel>\n      </IonItem>\n    </IonCard>\n  </>\n);\n\nexport default Example;\n```\n",
+    "vue": "```html\n<template>\n  <ion-card>\n    <ion-card-header>\n      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>\n      <ion-card-title>Card Title</ion-card-title>\n    </ion-card-header>\n\n    <ion-card-content>\n      Keep close to Nature's heart... and break clear away, once in awhile,\n      and climb a mountain or spend a week in the woods. Wash your spirit clean.\n    </ion-card-content>\n  </ion-card>\n\n  <ion-card>\n    <ion-item>\n      <ion-icon name=\"pin\" slot=\"start\"></ion-icon>\n      <ion-label>ion-item in a card, icon left, button right</ion-label>\n      <ion-button fill=\"outline\" slot=\"end\">View</ion-button>\n    </ion-item>\n\n    <ion-card-content>\n      This is content, without any paragraph or header tags,\n      within an ion-card-content element.\n    </ion-card-content>\n  </ion-card>\n\n  <ion-card>\n    <ion-item href=\"#\" class=\"activated\">\n      <ion-icon name=\"wifi\" slot=\"start\"></ion-icon>\n      <ion-label>Card Link Item 1 .activated</ion-label>\n    </ion-item>\n\n    <ion-item href=\"#\">\n      <ion-icon name=\"wine\" slot=\"start\"></ion-icon>\n      <ion-label>Card Link Item 2</ion-label>\n    </ion-item>\n\n    <ion-item class=\"activated\">\n      <ion-icon name=\"warning\" slot=\"start\"></ion-icon>\n      <ion-label>Card Button Item 1 .activated</ion-label>\n    </ion-item>\n\n    <ion-item>\n      <ion-icon name=\"walk\" slot=\"start\"></ion-icon>\n      <ion-label>Card Button Item 2</ion-label>\n    </ion-item>\n  </ion-card>\n</template>\n```"
+  },
+  "props": [
+    {
+      "name": "color",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "color",
+      "reflectToAttr": false,
+      "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "styles": [
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the card"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the card"
+    }
+  ],
+  "slots": []
+}

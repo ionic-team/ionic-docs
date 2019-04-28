@@ -1,0 +1,103 @@
+{
+  "tag": "ion-progress-bar",
+  "encapsulation": "shadow",
+  "readme": "# ion-progress-bar\n\nion-progress-bar is a horizontal progress bar to visualize the progression of an operation and activity. You can choose between two types: `determinate` and `indeterminate`.\n\n## Progress Type\n\n### Determinate\n\nIf the percentage of an operation is known, you should use the determinate type. This is the default type and the progress is represented by the `value` property.\n\nA buffer shows circles as animation to indicate some activity. If the `buffer` property is smaller than 1 you can show the addditional buffering progress. \n\n### Indeterminate\n\nIf an operation is in progress and it's not necessary to indicate how long it will take.\n\nIf you add `reversed=\"true\"`, you receive a query which is used to indicate pre-loading.\n",
+  "docs": "ion-progress-bar is a horizontal progress bar to visualize the progression of an operation and activity. You can choose between two types: `determinate` and `indeterminate`.",
+  "docsTags": [],
+  "usage": {
+    "javascript": "```html\n<!-- Default Progressbar -->\n<ion-progress-bar></ion-progress-bar>\n\n<!-- Default Progressbar with 50 percent -->\n<ion-progress-bar value=\"0.5\"></ion-progress-bar>\n\n<!-- Colorize Progressbar -->\n<ion-progress-bar color=\"primary\" value=\"0.5\"></ion-progress-bar>\n<ion-progress-bar color=\"secondary\" value=\"0.5\"></ion-progress-bar>\n\n<!-- Other types -->\n<ion-progress-bar value=\"0.25\" buffer=\"0.5\"></ion-progress-bar>\n<ion-progress-bar type=\"indeterminate\"></ion-progress-bar>\n<ion-progress-bar type=\"indeterminate\" reversed=\"true\"></ion-progress-bar>\n```\n",
+    "react": "```tsx\nimport React from 'react';\n\nimport { IonProgressBar } from '@ionic/react';\n\nconst Example: React.SFC<{}> = () => (\n  <>\n    {/*-- Default Progressbar --*/}\n    <IonProgressBar></IonProgressBar>\n\n    {/*-- Default Progressbar with 50 percent --*/}\n    <IonProgressBar value={0.5}></IonProgressBar>\n\n    {/*-- Colorize Progressbar --*/}\n    <IonProgressBar color=\"primary\" value={0.5}></IonProgressBar>\n    <IonProgressBar color=\"secondary\" value={0.5}></IonProgressBar>\n\n    {/*-- Other types --*/}\n    <IonProgressBar value={0.25} buffer={0.5}></IonProgressBar>\n    <IonProgressBar type=\"indeterminate\"></IonProgressBar>\n    <IonProgressBar type=\"indeterminate\" reversed={true}></IonProgressBar>\n  </>\n);\n\nexport default Example;\n```\n"
+  },
+  "props": [
+    {
+      "name": "buffer",
+      "type": "number",
+      "mutable": false,
+      "attr": "buffer",
+      "reflectToAttr": false,
+      "docs": "If the buffer and value are smaller than 1, the buffer circles will show.\nThe buffer should be between [0, 1].",
+      "docsTags": [],
+      "default": "1",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "color",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "color",
+      "reflectToAttr": false,
+      "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "reversed",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "reversed",
+      "reflectToAttr": false,
+      "docs": "If true, reverse the progress bar direction.",
+      "docsTags": [],
+      "default": "false",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "type",
+      "type": "\"determinate\" | \"indeterminate\"",
+      "mutable": false,
+      "attr": "type",
+      "reflectToAttr": false,
+      "docs": "The state of the progress bar, based on if the time the process takes is known or not.\nDefault options are: `\"determinate\"` (no animation), `\"indeterminate\"` (animate from left to right).",
+      "docsTags": [],
+      "default": "'determinate'",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "value",
+      "type": "number",
+      "mutable": false,
+      "attr": "value",
+      "reflectToAttr": false,
+      "docs": "The value determines how much of the active bar should display when the\n`type` is `\"determinate\"`.\nThe value should be between [0, 1].",
+      "docsTags": [],
+      "default": "0",
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "styles": [
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Same as --buffer-background when using a determinate progress bar, otherwise it styles the background of the ion-progress-bar itself."
+    },
+    {
+      "name": "--buffer-background",
+      "annotation": "prop",
+      "docs": "Color of the buffer bar"
+    },
+    {
+      "name": "--progress-background",
+      "annotation": "prop",
+      "docs": "Color of the progress bar"
+    }
+  ],
+  "slots": []
+}

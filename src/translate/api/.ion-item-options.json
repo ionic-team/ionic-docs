@@ -1,0 +1,36 @@
+{
+  "tag": "ion-item-options",
+  "encapsulation": "none",
+  "readme": "# ion-item-options\n\nThe option buttons for an `ion-item-sliding`. These buttons can be placed either on the [start or end side](#side-description).\nYou can combine the `ionSwipe` event plus the `expandable` directive to create a full swipe action for the item.\n\n\n### Side description\n\n| Side    | Position                                                        | Swipe direction                                                   |\n|---------|-----------------------------------------------------------------|-------------------------------------------------------------------|\n| `start` | To the `left` of the content in LTR, and to the `right` in RTL. | From `left` to `right` in LTR, and from `right` to `left` in RTL. |\n| `end`   | To the `right` of the content in LTR, and to the `left` in RTL. | From `right` to `left` in LTR, and from `left` to `right` in RTL. |\n\n",
+  "docs": "The option buttons for an `ion-item-sliding`. These buttons can be placed either on the [start or end side](#side-description).\nYou can combine the `ionSwipe` event plus the `expandable` directive to create a full swipe action for the item.",
+  "docsTags": [],
+  "usage": {},
+  "props": [
+    {
+      "name": "side",
+      "type": "\"end\" | \"start\"",
+      "mutable": false,
+      "attr": "side",
+      "reflectToAttr": false,
+      "docs": "The side the option button should be on. Possible values: `\"start\"` and `\"end\"`. If you have multiple `ion-item-options`, a side must be provided for each.",
+      "docsTags": [],
+      "default": "'end'",
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [
+    {
+      "event": "ionSwipe",
+      "detail": "any",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the item has been fully swiped.",
+      "docsTags": []
+    }
+  ],
+  "styles": [],
+  "slots": []
+}

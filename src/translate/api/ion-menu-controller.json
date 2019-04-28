@@ -1,0 +1,215 @@
+{
+  "tag": "ion-menu-controller",
+  "encapsulation": "none",
+  "readme": "# ion-menu-controller\n\nThe Menu Controller makes it easy to control a Menu. The methods provided can be used to display the menu, enable the menu, toggle the menu, and more. The controller will grab a reference to the menu by the side, or id. if neither of these are passed to it, it will grab the first menu it finds.\n\n",
+  "docs": "The Menu Controller makes it easy to control a Menu. The methods provided can be used to display the menu, enable the menu, toggle the menu, and more. The controller will grab a reference to the menu by the side, or id. if neither of these are passed to it, it will grab the first menu it finds.",
+  "docsTags": [],
+  "usage": {},
+  "props": [],
+  "methods": [
+    {
+      "name": "close",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "close(menuId?: string | null | undefined) => Promise<boolean>",
+      "parameters": [
+        {
+          "name": "menuId",
+          "type": "null | string | undefined",
+          "docs": ""
+        }
+      ],
+      "docs": "Close the menu. If no menu is specified, then it will close any menu\nthat is open. If a menu is specified, it will close that menu.",
+      "docsTags": []
+    },
+    {
+      "name": "enable",
+      "returns": {
+        "type": "Promise<HTMLIonMenuElement | undefined>",
+        "docs": ""
+      },
+      "signature": "enable(shouldEnable: boolean, menuId?: string | null | undefined) => Promise<HTMLIonMenuElement | undefined>",
+      "parameters": [
+        {
+          "name": "shouldEnable",
+          "type": "boolean",
+          "docs": ""
+        },
+        {
+          "name": "menuId",
+          "type": "null | string | undefined",
+          "docs": ""
+        }
+      ],
+      "docs": "Used to enable or disable a menu. For example, there could be multiple\nleft menus, but only one of them should be able to be opened at the same\ntime. If there are multiple menus on the same side, then enabling one menu\nwill also automatically disable all the others that are on the same side.",
+      "docsTags": []
+    },
+    {
+      "name": "get",
+      "returns": {
+        "type": "Promise<HTMLIonMenuElement | undefined>",
+        "docs": ""
+      },
+      "signature": "get(menuId?: string | null | undefined) => Promise<HTMLIonMenuElement | undefined>",
+      "parameters": [
+        {
+          "name": "menuId",
+          "type": "null | string | undefined",
+          "docs": ""
+        }
+      ],
+      "docs": "Used to get a menu instance. If a menu is not provided then it will\nreturn the first menu found. If the specified menu is `start` or `end`, then\nit will return the enabled menu on that side. Otherwise, it will try to find\nthe menu using the menu's `id` property. If a menu is not found then it will\nreturn `null`.",
+      "docsTags": []
+    },
+    {
+      "name": "getMenus",
+      "returns": {
+        "type": "Promise<HTMLIonMenuElement[]>",
+        "docs": ""
+      },
+      "signature": "getMenus() => Promise<HTMLIonMenuElement[]>",
+      "parameters": [],
+      "docs": "Returns an array of all menu instances.",
+      "docsTags": []
+    },
+    {
+      "name": "getOpen",
+      "returns": {
+        "type": "Promise<HTMLIonMenuElement | undefined>",
+        "docs": ""
+      },
+      "signature": "getOpen() => Promise<HTMLIonMenuElement | undefined>",
+      "parameters": [],
+      "docs": "Returns the instance of the menu already opened, otherwise `null`.",
+      "docsTags": []
+    },
+    {
+      "name": "isAnimating",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "isAnimating() => Promise<boolean>",
+      "parameters": [],
+      "docs": "Returns `true` if any menu is currently animating.",
+      "docsTags": []
+    },
+    {
+      "name": "isEnabled",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "isEnabled(menuId?: string | null | undefined) => Promise<boolean>",
+      "parameters": [
+        {
+          "name": "menuId",
+          "type": "null | string | undefined",
+          "docs": ""
+        }
+      ],
+      "docs": "Returns `true` if the specified menu is enabled.",
+      "docsTags": []
+    },
+    {
+      "name": "isOpen",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "isOpen(menuId?: string | null | undefined) => Promise<boolean>",
+      "parameters": [
+        {
+          "name": "menuId",
+          "type": "null | string | undefined",
+          "docs": ""
+        }
+      ],
+      "docs": "Returns `true` if the specified menu is open. If the menu is not specified, it\nwill return `true` if any menu is currently open.",
+      "docsTags": []
+    },
+    {
+      "name": "open",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "open(menuId?: string | null | undefined) => Promise<boolean>",
+      "parameters": [
+        {
+          "name": "menuId",
+          "type": "null | string | undefined",
+          "docs": ""
+        }
+      ],
+      "docs": "Open the menu.",
+      "docsTags": []
+    },
+    {
+      "name": "registerAnimation",
+      "returns": {
+        "type": "void",
+        "docs": ""
+      },
+      "signature": "registerAnimation(name: string, animation: AnimationBuilder) => void",
+      "parameters": [
+        {
+          "name": "name",
+          "type": "string",
+          "docs": ""
+        },
+        {
+          "name": "animation",
+          "type": "(Animation: Animation, baseEl: any, opts?: any) => Promise<Animation>",
+          "docs": ""
+        }
+      ],
+      "docs": "Registers a new animation that can be used in any `ion-menu`.\n\n```\n   * <ion-menu type=\"my-animation\">\n   * ```",
+      "docsTags": []
+    },
+    {
+      "name": "swipeGesture",
+      "returns": {
+        "type": "Promise<HTMLIonMenuElement | undefined>",
+        "docs": ""
+      },
+      "signature": "swipeGesture(shouldEnable: boolean, menuId?: string | null | undefined) => Promise<HTMLIonMenuElement | undefined>",
+      "parameters": [
+        {
+          "name": "shouldEnable",
+          "type": "boolean",
+          "docs": ""
+        },
+        {
+          "name": "menuId",
+          "type": "null | string | undefined",
+          "docs": ""
+        }
+      ],
+      "docs": "Used to enable or disable the ability to swipe open the menu.",
+      "docsTags": []
+    },
+    {
+      "name": "toggle",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "toggle(menuId?: string | null | undefined) => Promise<boolean>",
+      "parameters": [
+        {
+          "name": "menuId",
+          "type": "null | string | undefined",
+          "docs": ""
+        }
+      ],
+      "docs": "Toggle the menu. If it's closed, it will open, and if opened, it\nwill close.",
+      "docsTags": []
+    }
+  ],
+  "events": [],
+  "styles": [],
+  "slots": []
+}

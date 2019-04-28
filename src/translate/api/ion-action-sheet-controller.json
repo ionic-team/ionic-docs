@@ -1,0 +1,69 @@
+{
+  "tag": "ion-action-sheet-controller",
+  "encapsulation": "none",
+  "readme": "# ion-action-sheet-controller\n\nAction Sheet controllers programmatically control the action sheet component. Action Sheets can be created and dismissed from the action sheet controller. View the [Action Sheet](../action-sheet) documentation for a full list of options to pass upon creation.\n",
+  "docs": "Action Sheet controllers programmatically control the action sheet component. Action Sheets can be created and dismissed from the action sheet controller. View the [Action Sheet](../action-sheet) documentation for a full list of options to pass upon creation.",
+  "docsTags": [],
+  "usage": {},
+  "props": [],
+  "methods": [
+    {
+      "name": "create",
+      "returns": {
+        "type": "Promise<HTMLIonActionSheetElement>",
+        "docs": ""
+      },
+      "signature": "create(opts: ActionSheetOptions) => Promise<HTMLIonActionSheetElement>",
+      "parameters": [
+        {
+          "name": "opts",
+          "type": "ActionSheetOptions",
+          "docs": ""
+        }
+      ],
+      "docs": "Create an action sheet overlay with action sheet options.",
+      "docsTags": []
+    },
+    {
+      "name": "dismiss",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "dismiss(data?: any, role?: string | undefined, id?: string | undefined) => Promise<boolean>",
+      "parameters": [
+        {
+          "name": "data",
+          "type": "any",
+          "docs": ""
+        },
+        {
+          "name": "role",
+          "type": "string | undefined",
+          "docs": ""
+        },
+        {
+          "name": "id",
+          "type": "string | undefined",
+          "docs": ""
+        }
+      ],
+      "docs": "Dismiss the open action sheet overlay.",
+      "docsTags": []
+    },
+    {
+      "name": "getTop",
+      "returns": {
+        "type": "Promise<HTMLIonActionSheetElement | undefined>",
+        "docs": ""
+      },
+      "signature": "getTop() => Promise<HTMLIonActionSheetElement | undefined>",
+      "parameters": [],
+      "docs": "Get the most recently opened action sheet overlay.",
+      "docsTags": []
+    }
+  ],
+  "events": [],
+  "styles": [],
+  "slots": []
+}

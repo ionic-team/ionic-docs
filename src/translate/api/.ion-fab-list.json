@@ -1,0 +1,43 @@
+{
+  "tag": "ion-fab-list",
+  "encapsulation": "shadow",
+  "readme": "# ion-fab-list\n\nThe `ion-fab-list` element is a container for multiple fab buttons. This collection of fab buttons contains actions related to the main fab button and is flung out on click. To specify what side the buttons should appear on, set the `side` property to 'start', 'end', 'top', 'bottom'\n",
+  "docs": "The `ion-fab-list` element is a container for multiple fab buttons. This collection of fab buttons contains actions related to the main fab button and is flung out on click. To specify what side the buttons should appear on, set the `side` property to 'start', 'end', 'top', 'bottom'",
+  "docsTags": [],
+  "usage": {
+    "angular": "```html\n<ion-fab vertical=\"bottom\" horizontal=\"end\">\n  <ion-fab-button>Share</ion-fab-button>\n\n  <ion-fab-list side=\"top\">\n    <ion-fab-button>Facebook</ion-fab-button>\n    <ion-fab-button>Twitter</ion-fab-button>\n    <ion-fab-button>Youtube</ion-fab-button>\n  </ion-fab-list>\n\n  <ion-fab-list side=\"start\">\n    <ion-fab-button>Vimeo</ion-fab-button>\n  </ion-fab-list>\n\n</ion-fab>\n```\n",
+    "javascript": "```html\n<ion-fab vertical=\"bottom\" horizontal=\"end\">\n  <ion-fab-button>Share</ion-fab-button>\n\n  <ion-fab-list side=\"top\">\n    <ion-fab-button>Facebook</ion-fab-button>\n    <ion-fab-button>Twitter</ion-fab-button>\n    <ion-fab-button>Youtube</ion-fab-button>\n  </ion-fab-list>\n\n  <ion-fab-list side=\"start\">\n    <ion-fab-button>Vimeo</ion-fab-button>\n  </ion-fab-list>\n\n</ion-fab>\n```\n",
+    "react": "```tsx\nimport React from 'react';\n\nimport { IonFab, IonFabButton, IonFabList } from '@ionic/react';\n\nconst Example: React.SFC<{}> = () => (\n\n  <IonFab vertical=\"bottom\" horizontal=\"end\">\n    <IonFabButton>Share</IonFabButton>\n\n    <IonFabList side=\"top\">\n      <IonFabButton>Facebook</IonFabButton>\n      <IonFabButton>Twitter</IonFabButton>\n      <IonFabButton>Youtube</IonFabButton>\n    </IonFabList>\n\n    <IonFabList side=\"start\">\n      <IonFabButton>Vimeo</IonFabButton>\n    </IonFabList>\n\n  </IonFab>\n);\n\nexport default Example\n",
+    "vue": "```html\n<template>\n  <ion-fab vertical=\"bottom\" horizontal=\"end\">\n    <ion-fab-button>Share</ion-fab-button>\n\n    <ion-fab-list side=\"top\">\n      <ion-fab-button>Facebook</ion-fab-button>\n      <ion-fab-button>Twitter</ion-fab-button>\n      <ion-fab-button>Youtube</ion-fab-button>\n    </ion-fab-list>\n\n    <ion-fab-list side=\"start\">\n      <ion-fab-button>Vimeo</ion-fab-button>\n    </ion-fab-list>\n\n  </ion-fab>\n</template>\n```\n"
+  },
+  "props": [
+    {
+      "name": "activated",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "activated",
+      "reflectToAttr": false,
+      "docs": "If `true`, the fab list will be show all fab buttons in the list.",
+      "docsTags": [],
+      "default": "false",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "side",
+      "type": "\"bottom\" | \"end\" | \"start\" | \"top\"",
+      "mutable": false,
+      "attr": "side",
+      "reflectToAttr": false,
+      "docs": "The side the fab list will show on relative to the main fab button.",
+      "docsTags": [],
+      "default": "'bottom'",
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "styles": [],
+  "slots": []
+}

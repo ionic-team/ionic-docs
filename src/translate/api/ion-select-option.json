@@ -1,0 +1,49 @@
+{
+  "tag": "ion-select-option",
+  "encapsulation": "shadow",
+  "readme": "# ion-select-option\n\nSelectOption is a component that is a child element of Select. For more information, see the [Select docs](../select).\n\n",
+  "docs": "SelectOption is a component that is a child element of Select. For more information, see the [Select docs](../select).",
+  "docsTags": [],
+  "usage": {},
+  "props": [
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "disabled",
+      "reflectToAttr": false,
+      "docs": "If `true`, the user cannot interact with the select option.",
+      "docsTags": [],
+      "default": "false",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "selected",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "selected",
+      "reflectToAttr": false,
+      "docs": "If `true`, the element is selected.",
+      "docsTags": [],
+      "default": "false",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "value",
+      "type": "any",
+      "mutable": true,
+      "attr": "value",
+      "reflectToAttr": false,
+      "docs": "The text value of the option.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "styles": [],
+  "slots": []
+}

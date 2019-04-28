@@ -1,0 +1,13 @@
+{
+  "tag": "ion-reorder",
+  "encapsulation": "shadow",
+  "readme": "# ion-reorder\n\nReorder is a component that allows an item to be dragged to change its order. It must be used within an `ion-reorder-group` to provide a visual drag and drop interface.\n\n`ion-reorder` is the anchor users will use to drag and drop items inside the `ion-reorder-group`.\n\n```html\n<ion-item>\n  <ion-label>\n    Item\n  </ion-label>\n  <ion-reorder slot=\"end\"></ion-reorder>\n</ion-item>\n```\n",
+  "docs": "Reorder is a component that allows an item to be dragged to change its order. It must be used within an `ion-reorder-group` to provide a visual drag and drop interface.\n\n`ion-reorder` is the anchor users will use to drag and drop items inside the `ion-reorder-group`.\n\n```html\n<ion-item>\n  <ion-label>\n    Item\n  </ion-label>\n  <ion-reorder slot=\"end\"></ion-reorder>\n</ion-item>\n```",
+  "docsTags": [],
+  "usage": {},
+  "props": [],
+  "methods": [],
+  "events": [],
+  "styles": [],
+  "slots": []
+}

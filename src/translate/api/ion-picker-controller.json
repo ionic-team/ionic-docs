@@ -1,0 +1,69 @@
+{
+  "tag": "ion-picker-controller",
+  "encapsulation": "none",
+  "readme": "# ion-picker-controller\n\n\n",
+  "docs": "",
+  "docsTags": [],
+  "usage": {},
+  "props": [],
+  "methods": [
+    {
+      "name": "create",
+      "returns": {
+        "type": "Promise<HTMLIonPickerElement>",
+        "docs": ""
+      },
+      "signature": "create(opts: PickerOptions) => Promise<HTMLIonPickerElement>",
+      "parameters": [
+        {
+          "name": "opts",
+          "type": "PickerOptions",
+          "docs": ""
+        }
+      ],
+      "docs": "Create a picker overlay with picker options.",
+      "docsTags": []
+    },
+    {
+      "name": "dismiss",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "dismiss(data?: any, role?: string | undefined, id?: string | undefined) => Promise<boolean>",
+      "parameters": [
+        {
+          "name": "data",
+          "type": "any",
+          "docs": ""
+        },
+        {
+          "name": "role",
+          "type": "string | undefined",
+          "docs": ""
+        },
+        {
+          "name": "id",
+          "type": "string | undefined",
+          "docs": ""
+        }
+      ],
+      "docs": "Dismiss the open picker overlay.",
+      "docsTags": []
+    },
+    {
+      "name": "getTop",
+      "returns": {
+        "type": "Promise<HTMLIonPickerElement | undefined>",
+        "docs": ""
+      },
+      "signature": "getTop() => Promise<HTMLIonPickerElement | undefined>",
+      "parameters": [],
+      "docs": "Get the most recently opened picker overlay.",
+      "docsTags": []
+    }
+  ],
+  "events": [],
+  "styles": [],
+  "slots": []
+}

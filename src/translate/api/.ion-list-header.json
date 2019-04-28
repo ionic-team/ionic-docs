@@ -1,0 +1,49 @@
+{
+  "tag": "ion-list-header",
+  "encapsulation": "shadow",
+  "readme": "# ion-list-header\n\nListHeader a header component for a list.\nUnlike ItemDivider, ListHeaders are styled to be stand-out from the rest of the list items.\n\n",
+  "docs": "ListHeader a header component for a list.\nUnlike ItemDivider, ListHeaders are styled to be stand-out from the rest of the list items.",
+  "docsTags": [],
+  "usage": {
+    "javascript": "```html\n<ion-list>\n  <ion-list-header>\n    <ion-label>Items</ion-label>\n  </ion-list-header>\n  <ion-item>Item 1</ion-item>\n  <ion-item>Item 2</ion-item>\n  <ion-item>Item 3</ion-item>\n  <ion-item>Item 4</ion-item>\n  <ion-item>Item 5</ion-item>\n</ion-list>\n```\n"
+  },
+  "props": [
+    {
+      "name": "color",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "color",
+      "reflectToAttr": false,
+      "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "styles": [
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the list header"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the list header text"
+    }
+  ],
+  "slots": []
+}

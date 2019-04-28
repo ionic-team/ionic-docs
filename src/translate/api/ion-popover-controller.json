@@ -1,0 +1,71 @@
+{
+  "tag": "ion-popover-controller",
+  "encapsulation": "none",
+  "readme": "# ion-popover-controller\n\nPopover controllers programmatically control the popover component. Popovers can be created and dismissed from the popover controller. View the [Popover](../popover) documentation for a full list of options to pass upon creation.\n\n",
+  "docs": "Popover controllers programmatically control the popover component. Popovers can be created and dismissed from the popover controller. View the [Popover](../popover) documentation for a full list of options to pass upon creation.",
+  "docsTags": [],
+  "usage": {
+    "javascript": "```javascript\nasync function presentPopover() {\n  const popoverController = document.querySelector('ion-popover-controller');\n  await popoverController.componentOnReady();\n\n  const popoverElement = await popoverController.create({\n    component: 'profile-page',\n    event: event\n  });\n  return await popoverElement.present();\n}\n```\n"
+  },
+  "props": [],
+  "methods": [
+    {
+      "name": "create",
+      "returns": {
+        "type": "Promise<HTMLIonPopoverElement>",
+        "docs": ""
+      },
+      "signature": "create<T extends ComponentRef>(opts: PopoverOptions<T>) => Promise<HTMLIonPopoverElement>",
+      "parameters": [
+        {
+          "name": "opts",
+          "type": "PopoverOptions<T>",
+          "docs": ""
+        }
+      ],
+      "docs": "Create a popover overlay with popover options.",
+      "docsTags": []
+    },
+    {
+      "name": "dismiss",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "dismiss(data?: any, role?: string | undefined, id?: string | undefined) => Promise<boolean>",
+      "parameters": [
+        {
+          "name": "data",
+          "type": "any",
+          "docs": ""
+        },
+        {
+          "name": "role",
+          "type": "string | undefined",
+          "docs": ""
+        },
+        {
+          "name": "id",
+          "type": "string | undefined",
+          "docs": ""
+        }
+      ],
+      "docs": "Dismiss the open popover overlay.",
+      "docsTags": []
+    },
+    {
+      "name": "getTop",
+      "returns": {
+        "type": "Promise<HTMLIonPopoverElement | undefined>",
+        "docs": ""
+      },
+      "signature": "getTop() => Promise<HTMLIonPopoverElement | undefined>",
+      "parameters": [],
+      "docs": "Get the most recently opened popover overlay.",
+      "docsTags": []
+    }
+  ],
+  "events": [],
+  "styles": [],
+  "slots": []
+}

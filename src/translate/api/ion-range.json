@@ -1,0 +1,265 @@
+{
+  "tag": "ion-range",
+  "encapsulation": "shadow",
+  "readme": "# ion-range\n\nThe Range slider lets users select from a range of values by moving\nthe slider knob. It can accept dual knobs, but by default one knob\ncontrols the value of the range.\n\n### Range Labels\n\nLabels can be placed on either side of the range by adding the\n`slot=\"start\"` or `slot=\"end\"` to the element. The element doesn't have to\nbe an `ion-label`, it can be added to any element to place it to the\nleft or right of the range.\n\n",
+  "docs": "The Range slider lets users select from a range of values by moving\nthe slider knob. It can accept dual knobs, but by default one knob\ncontrols the value of the range.",
+  "docsTags": [
+    {
+      "name": "slot",
+      "text": "start - Content is placed to the left of the range slider in LTR, and to the right in RTL."
+    },
+    {
+      "name": "slot",
+      "text": "end - Content is placed to the right of the range slider in LTR, and to the left in RTL."
+    }
+  ],
+  "usage": {
+    "angular": "```html\n<ion-list>\n  <ion-item>\n    <ion-range color=\"danger\" pin=\"true\"></ion-range>\n  </ion-item>\n\n  <ion-item>\n    <ion-range min=\"-200\" max=\"200\" color=\"secondary\">\n      <ion-label slot=\"start\">-200</ion-label>\n      <ion-label slot=\"end\">200</ion-label>\n    </ion-range>\n  </ion-item>\n\n  <ion-item>\n    <ion-range min=\"20\" max=\"80\" step=\"2\">\n      <ion-icon size=\"small\" slot=\"start\" name=\"sunny\"></ion-icon>\n      <ion-icon slot=\"end\" name=\"sunny\"></ion-icon>\n    </ion-range>\n  </ion-item>\n\n  <ion-item>\n    <ion-range min=\"1000\" max=\"2000\" step=\"100\" snaps=\"true\" color=\"secondary\"></ion-range>\n  </ion-item>\n\n  <ion-item>\n    <ion-range min=\"1000\" max=\"2000\" step=\"100\" snaps=\"true\" ticks=\"false\" color=\"secondary\"></ion-range>\n  </ion-item>\n\n  <ion-item>\n    <ion-range dualKnobs=\"true\" min=\"21\" max=\"72\" step=\"3\" snaps=\"true\"></ion-range>\n  </ion-item>\n</ion-list>\n```\n",
+    "javascript": "```html\n<ion-list>\n  <ion-item>\n    <ion-range color=\"danger\" pin=\"true\"></ion-range>\n  </ion-item>\n\n  <ion-item>\n    <ion-range min=\"-200\" max=\"200\" color=\"secondary\">\n      <ion-label slot=\"start\">-200</ion-label>\n      <ion-label slot=\"end\">200</ion-label>\n    </ion-range>\n  </ion-item>\n\n  <ion-item>\n    <ion-range min=\"20\" max=\"80\" step=\"2\">\n      <ion-icon size=\"small\" slot=\"start\" name=\"sunny\"></ion-icon>\n      <ion-icon slot=\"end\" name=\"sunny\"></ion-icon>\n    </ion-range>\n  </ion-item>\n\n  <ion-item>\n    <ion-range min=\"1000\" max=\"2000\" step=\"100\" snaps=\"true\" color=\"secondary\"></ion-range>\n  </ion-item>\n\n  <ion-item>\n    <ion-range min=\"1000\" max=\"2000\" step=\"100\" snaps=\"true\" ticks=\"false\" color=\"secondary\"></ion-range>\n  </ion-item>\n\n  <ion-item>\n    <ion-range dual-knobs=\"true\" min=\"21\" max=\"72\" step=\"3\" snaps=\"true\"></ion-range>\n  </ion-item>\n</ion-list>\n```\n",
+    "react": "```tsx\nimport React from 'react';\n\nimport { IonList, IonItem, IonRange, IonLabel, IonIcon } from '@ionic/react';\n\nconst Example: React.SFC<{}> = () => (\n\n  <IonList>\n    <IonItem>\n      <IonRange color=\"danger\" pin={true}></IonRange>\n    </IonItem>\n\n    <IonItem>\n      <IonRange min={-200} max={200} color=\"secondary\">\n        <IonLabel slot=\"start\">-200</IonLabel>\n        <IonLabel slot=\"end\">200</IonLabel>\n      </IonRange>\n    </IonItem>\n\n    <IonItem>\n      <IonRange min={20} max={80} step={2}>\n        <IonIcon size=\"small\" slot=\"start\" name=\"sunny\" />\n        <IonIcon slot=\"end\" name=\"sunny\" />\n      </IonRange>\n    </IonItem>\n\n    <IonItem>\n      <IonRange min={1000} max={2000} step={100} snaps={true} color=\"secondary\"></IonRange>\n    </IonItem>\n\n    <IonItem>\n      <IonRange min={1000} max={2000} step={100} snaps={true} ticks={false} color=\"secondary\"></IonRange>\n    </IonItem>\n\n    <IonItem>\n      <IonRange dualKnobs={true} min={21} max={72} step={3} snaps={true}></IonRange>\n    </IonItem>\n  </IonList>\n);\n\nexport default Example;\n```\n",
+    "vue": "```html\n<template>\n  <ion-list>\n    <ion-item>\n      <ion-range color=\"danger\" pin=\"true\"></ion-range>\n    </ion-item>\n\n    <ion-item>\n      <ion-range min=\"-200\" max=\"200\" color=\"secondary\">\n        <ion-label slot=\"start\">-200</ion-label>\n        <ion-label slot=\"end\">200</ion-label>\n      </ion-range>\n    </ion-item>\n\n    <ion-item>\n      <ion-range min=\"20\" max=\"80\" step=\"2\">\n        <ion-icon size=\"small\" slot=\"start\" name=\"sunny\"></ion-icon>\n        <ion-icon slot=\"end\" name=\"sunny\"></ion-icon>\n      </ion-range>\n    </ion-item>\n\n    <ion-item>\n      <ion-range min=\"1000\" max=\"2000\" step=\"100\" snaps=\"true\" color=\"secondary\"></ion-range>\n    </ion-item>\n\n    <ion-item>\n      <ion-range min=\"1000\" max=\"2000\" step=\"100\" snaps=\"true\" ticks=\"false\" color=\"secondary\"></ion-range>\n    </ion-item>\n\n    <ion-item>\n      <ion-range ref=\"rangeDualKnobs\" dual-knobs=\"true\" min=\"21\" max=\"72\" step=\"3\" snaps=\"true\"></ion-range>\n    </ion-item>\n  </ion-list>\n</template>\n\n<script>\nexport default {\n  mounted() {\n    // Sets initial value for dual-knob ion-range\n    this.$refs.rangeDualKnobs.value = { lower: 24, upper: 42 };\n  }\n}\n</script>\n```\n"
+  },
+  "props": [
+    {
+      "name": "color",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "color",
+      "reflectToAttr": false,
+      "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "debounce",
+      "type": "number",
+      "mutable": false,
+      "attr": "debounce",
+      "reflectToAttr": false,
+      "docs": "How long, in milliseconds, to wait to trigger the\n`ionChange` event after each change in the range value.",
+      "docsTags": [],
+      "default": "0",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "disabled",
+      "reflectToAttr": false,
+      "docs": "If `true`, the user cannot interact with the range.",
+      "docsTags": [],
+      "default": "false",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "dualKnobs",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "dual-knobs",
+      "reflectToAttr": false,
+      "docs": "Show two knobs.",
+      "docsTags": [],
+      "default": "false",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "max",
+      "type": "number",
+      "mutable": false,
+      "attr": "max",
+      "reflectToAttr": false,
+      "docs": "Maximum integer value of the range.",
+      "docsTags": [],
+      "default": "100",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "min",
+      "type": "number",
+      "mutable": false,
+      "attr": "min",
+      "reflectToAttr": false,
+      "docs": "Minimum integer value of the range.",
+      "docsTags": [],
+      "default": "0",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "mutable": false,
+      "attr": "name",
+      "reflectToAttr": false,
+      "docs": "The name of the control, which is submitted with the form data.",
+      "docsTags": [],
+      "default": "''",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "pin",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "pin",
+      "reflectToAttr": false,
+      "docs": "If `true`, a pin with integer value is shown when the knob\nis pressed.",
+      "docsTags": [],
+      "default": "false",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "snaps",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "snaps",
+      "reflectToAttr": false,
+      "docs": "If `true`, the knob snaps to tick marks evenly spaced based\non the step property value.",
+      "docsTags": [],
+      "default": "false",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "step",
+      "type": "number",
+      "mutable": false,
+      "attr": "step",
+      "reflectToAttr": false,
+      "docs": "Specifies the value granularity.",
+      "docsTags": [],
+      "default": "1",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "ticks",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "ticks",
+      "reflectToAttr": false,
+      "docs": "If `true`, tick marks are displayed based on the step value.\nOnly applies when `snaps` is `true`.",
+      "docsTags": [],
+      "default": "true",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "value",
+      "type": "number | { lower: number; upper: number; }",
+      "mutable": true,
+      "attr": "value",
+      "reflectToAttr": false,
+      "docs": "the value of the range.",
+      "docsTags": [],
+      "default": "0",
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [
+    {
+      "event": "ionBlur",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the range loses focus.",
+      "docsTags": []
+    },
+    {
+      "event": "ionChange",
+      "detail": "RangeChangeEventDetail",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the value property has changed.",
+      "docsTags": []
+    },
+    {
+      "event": "ionFocus",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the range has focus.",
+      "docsTags": []
+    }
+  ],
+  "styles": [
+    {
+      "name": "--bar-background",
+      "annotation": "prop",
+      "docs": "Background of the range bar"
+    },
+    {
+      "name": "--bar-background-active",
+      "annotation": "prop",
+      "docs": "Background of the active range bar"
+    },
+    {
+      "name": "--bar-border-radius",
+      "annotation": "prop",
+      "docs": "Border radius of the range bar"
+    },
+    {
+      "name": "--bar-height",
+      "annotation": "prop",
+      "docs": "Height of the range bar"
+    },
+    {
+      "name": "--height",
+      "annotation": "prop",
+      "docs": "Height of the range"
+    },
+    {
+      "name": "--knob-background",
+      "annotation": "prop",
+      "docs": "Background of the range knob"
+    },
+    {
+      "name": "--knob-border-radius",
+      "annotation": "prop",
+      "docs": "Border radius of the range knob"
+    },
+    {
+      "name": "--knob-box-shadow",
+      "annotation": "prop",
+      "docs": "Box shadow of the range knob"
+    },
+    {
+      "name": "--knob-size",
+      "annotation": "prop",
+      "docs": "Size of the range knob"
+    }
+  ],
+  "slots": [
+    {
+      "name": "end",
+      "docs": "Content is placed to the right of the range slider in LTR, and to the left in RTL."
+    },
+    {
+      "name": "start",
+      "docs": "Content is placed to the left of the range slider in LTR, and to the right in RTL."
+    }
+  ]
+}

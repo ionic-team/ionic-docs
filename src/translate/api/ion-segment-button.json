@@ -1,0 +1,209 @@
+{
+  "tag": "ion-segment-button",
+  "encapsulation": "shadow",
+  "readme": "# ion-segment-button\n\nSegment buttons are groups of related buttons inside of a [Segment](../segment). They are displayed in a horizontal row. A segment button can be checked by default by adding the `checked` attribute or by setting the `value` of the segment to the `value` of the segment button. Only one segment button should be selected at a time.\n\n",
+  "docs": "Segment buttons are groups of related buttons inside of a [Segment](../segment). They are displayed in a horizontal row. A segment button can be checked by default by adding the `checked` attribute or by setting the `value` of the segment to the `value` of the segment button. Only one segment button should be selected at a time.",
+  "docsTags": [],
+  "usage": {
+    "angular": "```html\n<!-- Segment buttons with text and click listeners -->\n<ion-segment>\n  <ion-segment-button (ionSelect)=\"segmentButtonClicked($event)\">\n    <ion-label>Friends</ion-label>\n  </ion-segment-button>\n  <ion-segment-button (ionSelect)=\"segmentButtonClicked($event)\">\n    <ion-label>Enemies</ion-label>\n  </ion-segment-button>\n</ion-segment>\n\n<!-- Segment buttons with the first checked and the last disabled -->\n<ion-segment>\n  <ion-segment-button checked>\n    <ion-label>Paid</ion-label>\n  </ion-segment-button>\n  <ion-segment-button>\n    <ion-label>Free</ion-label>\n  </ion-segment-button>\n  <ion-segment-button disabled>\n    <ion-label>Top</ion-label>\n  </ion-segment-button>\n</ion-segment>\n\n<!-- Segment buttons with values and icons -->\n<ion-segment>\n  <ion-segment-button value=\"camera\">\n    <ion-icon name=\"camera\"></ion-icon>\n  </ion-segment-button>\n  <ion-segment-button value=\"bookmark\">\n    <ion-icon name=\"bookmark\"></ion-icon>\n  </ion-segment-button>\n</ion-segment>\n\n<!-- Segment with a value that checks the last button -->\n<ion-segment value=\"shared\">\n  <ion-segment-button value=\"bookmarks\">\n    <ion-label>Bookmarks</ion-label>\n  </ion-segment-button>\n  <ion-segment-button value=\"reading\">\n    <ion-label>Reading List</ion-label>\n  </ion-segment-button>\n  <ion-segment-button value=\"shared\">\n    <ion-label>Shared Links</ion-label>\n  </ion-segment-button>\n</ion-segment>\n\n<!-- Label only -->\n<ion-segment>\n  <ion-segment-button checked>\n    <ion-label>Item One</ion-label>\n  </ion-segment-button>\n  <ion-segment-button>\n    <ion-label>Item Two</ion-label>\n  </ion-segment-button>\n  <ion-segment-button>\n    <ion-label>Item Three</ion-label>\n  </ion-segment-button>\n</ion-segment>\n\n<!-- Icon only -->\n<ion-segment>\n  <ion-segment-button>\n    <ion-icon name=\"call\"></ion-icon>\n  </ion-segment-button>\n  <ion-segment-button checked>\n    <ion-icon name=\"heart\"></ion-icon>\n  </ion-segment-button>\n  <ion-segment-button>\n    <ion-icon name=\"pin\"></ion-icon>\n  </ion-segment-button>\n</ion-segment>\n\n<!-- Icon top -->\n<ion-segment>\n  <ion-segment-button>\n    <ion-label>Item One</ion-label>\n    <ion-icon name=\"call\"></ion-icon>\n  </ion-segment-button>\n  <ion-segment-button checked>\n    <ion-label>Item Two</ion-label>\n    <ion-icon name=\"heart\"></ion-icon>\n  </ion-segment-button>\n  <ion-segment-button>\n    <ion-label>Item Three</ion-label>\n    <ion-icon name=\"pin\"></ion-icon>\n  </ion-segment-button>\n</ion-segment>\n\n<!-- Icon bottom -->\n<ion-segment>\n  <ion-segment-button checked layout=\"icon-bottom\">\n    <ion-icon name=\"call\"></ion-icon>\n    <ion-label>Item One</ion-label>\n  </ion-segment-button>\n  <ion-segment-button layout=\"icon-bottom\">\n    <ion-icon name=\"heart\"></ion-icon>\n    <ion-label>Item Two</ion-label>\n  </ion-segment-button>\n  <ion-segment-button layout=\"icon-bottom\">\n    <ion-icon name=\"pin\"></ion-icon>\n    <ion-label>Item Three</ion-label>\n  </ion-segment-button>\n</ion-segment>\n\n<!-- Icon start -->\n<ion-segment>\n  <ion-segment-button checked layout=\"icon-start\">\n    <ion-label>Item One</ion-label>\n    <ion-icon name=\"call\"></ion-icon>\n  </ion-segment-button>\n  <ion-segment-button layout=\"icon-start\">\n    <ion-label>Item Two</ion-label>\n    <ion-icon name=\"heart\"></ion-icon>\n  </ion-segment-button>\n  <ion-segment-button layout=\"icon-start\">\n    <ion-label>Item Three</ion-label>\n    <ion-icon name=\"pin\"></ion-icon>\n  </ion-segment-button>\n</ion-segment>\n\n<!-- Icon end -->\n<ion-segment>\n  <ion-segment-button checked layout=\"icon-end\">\n    <ion-icon name=\"call\"></ion-icon>\n    <ion-label>Item One</ion-label>\n  </ion-segment-button>\n  <ion-segment-button disabled layout=\"icon-end\">\n    <ion-icon name=\"heart\"></ion-icon>\n    <ion-label>Item Two</ion-label>\n  </ion-segment-button>\n  <ion-segment-button layout=\"icon-end\">\n    <ion-icon name=\"pin\"></ion-icon>\n    <ion-label>Item Three</ion-label>\n  </ion-segment-button>\n</ion-segment>\n```\n\n```typescript\nimport { Component } from '@angular/core';\n\n@Component({\n  selector: 'segment-button-example',\n  templateUrl: 'segment-button-example.html',\n  styleUrls: ['./segment-button-example.css'],\n})\nexport class SegmentButtonExample {\n  segmentButtonClicked(ev: any) {\n    console.log('Segment button clicked', ev);\n  }\n}\n```",
+    "javascript": "```html\n<!-- Segment buttons with text -->\n<ion-segment>\n  <ion-segment-button>\n    <ion-label>Friends</ion-label>\n  </ion-segment-button>\n  <ion-segment-button>\n    <ion-label>Enemies</ion-label>\n  </ion-segment-button>\n</ion-segment>\n\n<!-- Segment buttons with the first checked and the last disabled -->\n<ion-segment>\n  <ion-segment-button checked>\n    <ion-label>Paid</ion-label>\n  </ion-segment-button>\n  <ion-segment-button>\n    <ion-label>Free</ion-label>\n  </ion-segment-button>\n  <ion-segment-button disabled>\n    <ion-label>Top</ion-label>\n  </ion-segment-button>\n</ion-segment>\n\n<!-- Segment buttons with values and icons -->\n<ion-segment>\n  <ion-segment-button value=\"camera\">\n    <ion-icon name=\"camera\"></ion-icon>\n  </ion-segment-button>\n  <ion-segment-button value=\"bookmark\">\n    <ion-icon name=\"bookmark\"></ion-icon>\n  </ion-segment-button>\n</ion-segment>\n\n<!-- Segment with a value that checks the last button -->\n<ion-segment value=\"shared\">\n  <ion-segment-button value=\"bookmarks\">\n    <ion-label>Bookmarks</ion-label>\n  </ion-segment-button>\n  <ion-segment-button value=\"reading\">\n    <ion-label>Reading List</ion-label>\n  </ion-segment-button>\n  <ion-segment-button value=\"shared\">\n    <ion-label>Shared Links</ion-label>\n  </ion-segment-button>\n</ion-segment>\n\n<!-- Label only -->\n<ion-segment>\n  <ion-segment-button checked>\n    <ion-label>Item One</ion-label>\n  </ion-segment-button>\n  <ion-segment-button>\n    <ion-label>Item Two</ion-label>\n  </ion-segment-button>\n  <ion-segment-button>\n    <ion-label>Item Three</ion-label>\n  </ion-segment-button>\n</ion-segment>\n\n<!-- Icon only -->\n<ion-segment>\n  <ion-segment-button>\n    <ion-icon name=\"call\"></ion-icon>\n  </ion-segment-button>\n  <ion-segment-button checked>\n    <ion-icon name=\"heart\"></ion-icon>\n  </ion-segment-button>\n  <ion-segment-button>\n    <ion-icon name=\"pin\"></ion-icon>\n  </ion-segment-button>\n</ion-segment>\n\n<!-- Icon top -->\n<ion-segment>\n  <ion-segment-button>\n    <ion-label>Item One</ion-label>\n    <ion-icon name=\"call\"></ion-icon>\n  </ion-segment-button>\n  <ion-segment-button checked>\n    <ion-label>Item Two</ion-label>\n    <ion-icon name=\"heart\"></ion-icon>\n  </ion-segment-button>\n  <ion-segment-button>\n    <ion-label>Item Three</ion-label>\n    <ion-icon name=\"pin\"></ion-icon>\n  </ion-segment-button>\n</ion-segment>\n\n<!-- Icon bottom -->\n<ion-segment>\n  <ion-segment-button checked layout=\"icon-bottom\">\n    <ion-icon name=\"call\"></ion-icon>\n    <ion-label>Item One</ion-label>\n  </ion-segment-button>\n  <ion-segment-button layout=\"icon-bottom\">\n    <ion-icon name=\"heart\"></ion-icon>\n    <ion-label>Item Two</ion-label>\n  </ion-segment-button>\n  <ion-segment-button layout=\"icon-bottom\">\n    <ion-icon name=\"pin\"></ion-icon>\n    <ion-label>Item Three</ion-label>\n  </ion-segment-button>\n</ion-segment>\n\n<!-- Icon start -->\n<ion-segment>\n  <ion-segment-button checked layout=\"icon-start\">\n    <ion-label>Item One</ion-label>\n    <ion-icon name=\"call\"></ion-icon>\n  </ion-segment-button>\n  <ion-segment-button layout=\"icon-start\">\n    <ion-label>Item Two</ion-label>\n    <ion-icon name=\"heart\"></ion-icon>\n  </ion-segment-button>\n  <ion-segment-button layout=\"icon-start\">\n    <ion-label>Item Three</ion-label>\n    <ion-icon name=\"pin\"></ion-icon>\n  </ion-segment-button>\n</ion-segment>\n\n<!-- Icon end -->\n<ion-segment>\n  <ion-segment-button checked layout=\"icon-end\">\n    <ion-icon name=\"call\"></ion-icon>\n    <ion-label>Item One</ion-label>\n  </ion-segment-button>\n  <ion-segment-button disabled layout=\"icon-end\">\n    <ion-icon name=\"heart\"></ion-icon>\n    <ion-label>Item Two</ion-label>\n  </ion-segment-button>\n  <ion-segment-button layout=\"icon-end\">\n    <ion-icon name=\"pin\"></ion-icon>\n    <ion-label>Item Three</ion-label>\n  </ion-segment-button>\n</ion-segment>\n```\n\n```javascript\n// Listen for ionClick on all segment buttons\nconst segmentButtons = document.querySelectorAll('ion-segment-button')\nfor (let i = 0; i < segmentButtons.length; i++) {\n  segmentButtons[i].addEventListener('ionSelect', (ev) => {\n    console.log('Segment button clicked', ev);\n  })\n}\n```",
+    "react": "```tsx\nimport React from 'react';\n\nimport { IonSegment, IonSegmentButton, IonLabel, IonIcon } from '@ionic/react';\n\nconst Example: React.SFC<{}> = () => (\n  <>\n    {/*-- Segment buttons with text and click listeners --*/}\n    <IonSegment>\n      <IonSegmentButton onIonSelect={() => console.log('Friends segment selected')}>\n        <IonLabel>Friends</IonLabel>\n      </IonSegmentButton>\n      <IonSegmentButton onIonSelect={() => console.log('Enemies segment selected')}>\n        <IonLabel>Enemies</IonLabel>\n      </IonSegmentButton>\n    </IonSegment>\n\n    {/*-- Segment buttons with the first checked and the last disabled --*/}\n    <IonSegment>\n      <IonSegmentButton checked>\n        <IonLabel>Paid</IonLabel>\n      </IonSegmentButton>\n      <IonSegmentButton>\n        <IonLabel>Free</IonLabel>\n      </IonSegmentButton>\n      <IonSegmentButton disabled>\n        <IonLabel>Top</IonLabel>\n      </IonSegmentButton>\n    </IonSegment>\n\n    {/*-- Segment buttons with values and icons --*/}\n    <IonSegment>\n      <IonSegmentButton value=\"camera\">\n        <IonIcon name=\"camera\" />\n      </IonSegmentButton>\n      <IonSegmentButton value=\"bookmark\">\n        <IonIcon name=\"bookmark\" />\n      </IonSegmentButton>\n    </IonSegment>\n\n    {/*-- Segment with a value that checks the last button --*/}\n    <IonSegment value=\"shared\">\n      <IonSegmentButton value=\"bookmarks\">\n        <IonLabel>Bookmarks</IonLabel>\n      </IonSegmentButton>\n      <IonSegmentButton value=\"reading\">\n        <IonLabel>Reading List</IonLabel>\n      </IonSegmentButton>\n      <IonSegmentButton value=\"shared\">\n        <IonLabel>Shared Links</IonLabel>\n      </IonSegmentButton>\n    </IonSegment>\n\n    {/*-- Label only --*/}\n    <IonSegment>\n      <IonSegmentButton checked>\n        <IonLabel>Item One</IonLabel>\n      </IonSegmentButton>\n      <IonSegmentButton>\n        <IonLabel>Item Two</IonLabel>\n      </IonSegmentButton>\n      <IonSegmentButton>\n        <IonLabel>Item Three</IonLabel>\n      </IonSegmentButton>\n    </IonSegment>\n\n    {/*-- Icon only --*/}\n    <IonSegment>\n      <IonSegmentButton>\n        <IonIcon name=\"call\" />\n      </IonSegmentButton>\n      <IonSegmentButton checked>\n        <IonIcon name=\"heart\" />\n      </IonSegmentButton>\n      <IonSegmentButton>\n        <IonIcon name=\"pin\" />\n      </IonSegmentButton>\n    </IonSegment>\n\n    {/*-- Icon top --*/}\n    <IonSegment>\n      <IonSegmentButton>\n        <IonLabel>Item One</IonLabel>\n        <IonIcon name=\"call\" />\n      </IonSegmentButton>\n      <IonSegmentButton checked>\n        <IonLabel>Item Two</IonLabel>\n        <IonIcon name=\"heart\" />\n      </IonSegmentButton>\n      <IonSegmentButton>\n        <IonLabel>Item Three</IonLabel>\n        <IonIcon name=\"pin\" />\n      </IonSegmentButton>\n    </IonSegment>\n\n    {/*-- Icon bottom --*/}\n    <IonSegment>\n      <IonSegmentButton checked layout=\"icon-bottom\">\n        <IonIcon name=\"call\" />\n        <IonLabel>Item One</IonLabel>\n      </IonSegmentButton>\n      <IonSegmentButton layout=\"icon-bottom\">\n        <IonIcon name=\"heart\" />\n        <IonLabel>Item Two</IonLabel>\n      </IonSegmentButton>\n      <IonSegmentButton layout=\"icon-bottom\">\n        <IonIcon name=\"pin\" />\n        <IonLabel>Item Three</IonLabel>\n      </IonSegmentButton>\n    </IonSegment>\n\n    {/*-- Icon start --*/}\n    <IonSegment>\n      <IonSegmentButton checked layout=\"icon-start\">\n        <IonLabel>Item One</IonLabel>\n        <IonIcon name=\"call\" />\n      </IonSegmentButton>\n      <IonSegmentButton layout=\"icon-start\">\n        <IonLabel>Item Two</IonLabel>\n        <IonIcon name=\"heart\" />\n      </IonSegmentButton>\n      <IonSegmentButton layout=\"icon-start\">\n        <IonLabel>Item Three</IonLabel>\n        <IonIcon name=\"pin\" />\n      </IonSegmentButton>\n    </IonSegment>\n\n    {/*-- Icon end --*/}\n    <IonSegment>\n      <IonSegmentButton checked layout=\"icon-end\">\n        <IonIcon name=\"call\" />\n        <IonLabel>Item One</IonLabel>\n      </IonSegmentButton>\n      <IonSegmentButton disabled layout=\"icon-end\">\n        <IonIcon name=\"heart\" />\n        <IonLabel>Item Two</IonLabel>\n      </IonSegmentButton>\n      <IonSegmentButton layout=\"icon-end\">\n        <IonIcon name=\"pin\" />\n        <IonLabel>Item Three</IonLabel>\n      </IonSegmentButton>\n    </IonSegment>\n  </>\n);\n\nexport default Example;\n```\n",
+    "vue": "```html\n<template>\n  <!-- Segment buttons with text and click listeners -->\n  <ion-segment>\n    <ion-segment-button @ionSelect=\"segmentButtonClicked($event)\">\n      <ion-label>Friends</ion-label>\n    </ion-segment-button>\n    <ion-segment-button @ionSelect=\"segmentButtonClicked($event)\">\n      <ion-label>Enemies</ion-label>\n    </ion-segment-button>\n  </ion-segment>\n\n  <!-- Segment buttons with the first checked and the last disabled -->\n  <ion-segment>\n    <ion-segment-button checked>\n      <ion-label>Paid</ion-label>\n    </ion-segment-button>\n    <ion-segment-button>\n      <ion-label>Free</ion-label>\n    </ion-segment-button>\n    <ion-segment-button disabled>\n      <ion-label>Top</ion-label>\n    </ion-segment-button>\n  </ion-segment>\n\n  <!-- Segment buttons with values and icons -->\n  <ion-segment>\n    <ion-segment-button value=\"camera\">\n      <ion-icon name=\"camera\"></ion-icon>\n    </ion-segment-button>\n    <ion-segment-button value=\"bookmark\">\n      <ion-icon name=\"bookmark\"></ion-icon>\n    </ion-segment-button>\n  </ion-segment>\n\n  <!-- Segment with a value that checks the last button -->\n  <ion-segment value=\"shared\">\n    <ion-segment-button value=\"bookmarks\">\n      <ion-label>Bookmarks</ion-label>\n    </ion-segment-button>\n    <ion-segment-button value=\"reading\">\n      <ion-label>Reading List</ion-label>\n    </ion-segment-button>\n    <ion-segment-button value=\"shared\">\n      <ion-label>Shared Links</ion-label>\n    </ion-segment-button>\n  </ion-segment>\n\n  <!-- Label only -->\n  <ion-segment>\n    <ion-segment-button checked>\n      <ion-label>Item One</ion-label>\n    </ion-segment-button>\n    <ion-segment-button>\n      <ion-label>Item Two</ion-label>\n    </ion-segment-button>\n    <ion-segment-button>\n      <ion-label>Item Three</ion-label>\n    </ion-segment-button>\n  </ion-segment>\n\n  <!-- Icon only -->\n  <ion-segment>\n    <ion-segment-button>\n      <ion-icon name=\"call\"></ion-icon>\n    </ion-segment-button>\n    <ion-segment-button checked>\n      <ion-icon name=\"heart\"></ion-icon>\n    </ion-segment-button>\n    <ion-segment-button>\n      <ion-icon name=\"pin\"></ion-icon>\n    </ion-segment-button>\n  </ion-segment>\n\n  <!-- Icon top -->\n  <ion-segment>\n    <ion-segment-button>\n      <ion-label>Item One</ion-label>\n      <ion-icon name=\"call\"></ion-icon>\n    </ion-segment-button>\n    <ion-segment-button checked>\n      <ion-label>Item Two</ion-label>\n      <ion-icon name=\"heart\"></ion-icon>\n    </ion-segment-button>\n    <ion-segment-button>\n      <ion-label>Item Three</ion-label>\n      <ion-icon name=\"pin\"></ion-icon>\n    </ion-segment-button>\n  </ion-segment>\n\n  <!-- Icon bottom -->\n  <ion-segment>\n    <ion-segment-button checked layout=\"icon-bottom\">\n      <ion-icon name=\"call\"></ion-icon>\n      <ion-label>Item One</ion-label>\n    </ion-segment-button>\n    <ion-segment-button layout=\"icon-bottom\">\n      <ion-icon name=\"heart\"></ion-icon>\n      <ion-label>Item Two</ion-label>\n    </ion-segment-button>\n    <ion-segment-button layout=\"icon-bottom\">\n      <ion-icon name=\"pin\"></ion-icon>\n      <ion-label>Item Three</ion-label>\n    </ion-segment-button>\n  </ion-segment>\n\n  <!-- Icon start -->\n  <ion-segment>\n    <ion-segment-button checked layout=\"icon-start\">\n      <ion-label>Item One</ion-label>\n      <ion-icon name=\"call\"></ion-icon>\n    </ion-segment-button>\n    <ion-segment-button layout=\"icon-start\">\n      <ion-label>Item Two</ion-label>\n      <ion-icon name=\"heart\"></ion-icon>\n    </ion-segment-button>\n    <ion-segment-button layout=\"icon-start\">\n      <ion-label>Item Three</ion-label>\n      <ion-icon name=\"pin\"></ion-icon>\n    </ion-segment-button>\n  </ion-segment>\n\n  <!-- Icon end -->\n  <ion-segment>\n    <ion-segment-button checked layout=\"icon-end\">\n      <ion-icon name=\"call\"></ion-icon>\n      <ion-label>Item One</ion-label>\n    </ion-segment-button>\n    <ion-segment-button disabled layout=\"icon-end\">\n      <ion-icon name=\"heart\"></ion-icon>\n      <ion-label>Item Two</ion-label>\n    </ion-segment-button>\n    <ion-segment-button layout=\"icon-end\">\n      <ion-icon name=\"pin\"></ion-icon>\n      <ion-label>Item Three</ion-label>\n    </ion-segment-button>\n  </ion-segment>\n</template>\n\n<script lang=\"ts\">\n  import { Component, Vue } from 'vue-property-decorator';\n\n  @Component()\n  export default class MenuExample extends Vue {\n    segmentButtonClicked(ev: any) {\n      console.log('Segment button clicked', ev);\n    }\n  }\n</script>\n```\n"
+  },
+  "props": [
+    {
+      "name": "checked",
+      "type": "boolean",
+      "mutable": true,
+      "attr": "checked",
+      "reflectToAttr": false,
+      "docs": "If `true`, the segment button is selected.",
+      "docsTags": [],
+      "default": "false",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "disabled",
+      "reflectToAttr": false,
+      "docs": "If `true`, the user cannot interact with the segment button.",
+      "docsTags": [],
+      "default": "false",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "layout",
+      "type": "\"icon-bottom\" | \"icon-end\" | \"icon-hide\" | \"icon-start\" | \"icon-top\" | \"label-hide\" | undefined",
+      "mutable": false,
+      "attr": "layout",
+      "reflectToAttr": false,
+      "docs": "Set the layout of the text and icon in the segment.",
+      "docsTags": [],
+      "default": "'icon-top'",
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "mutable": false,
+      "attr": "value",
+      "reflectToAttr": false,
+      "docs": "The value of the segment button.",
+      "docsTags": [],
+      "default": "'ion-sb-' + (ids++)",
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [
+    {
+      "event": "ionSelect",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the segment button is clicked.",
+      "docsTags": []
+    }
+  ],
+  "styles": [
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the segment button"
+    },
+    {
+      "name": "--background-activated",
+      "annotation": "prop",
+      "docs": "Background of the activated (pressed) segment button"
+    },
+    {
+      "name": "--background-checked",
+      "annotation": "prop",
+      "docs": "Background of the checked segment button"
+    },
+    {
+      "name": "--background-hover",
+      "annotation": "prop",
+      "docs": "Background of the segment button on hover"
+    },
+    {
+      "name": "--border-color",
+      "annotation": "prop",
+      "docs": "Color of the segment button border"
+    },
+    {
+      "name": "--border-radius",
+      "annotation": "prop",
+      "docs": "Radius of the segment button border"
+    },
+    {
+      "name": "--border-style",
+      "annotation": "prop",
+      "docs": "Style of the segment button border"
+    },
+    {
+      "name": "--border-width",
+      "annotation": "prop",
+      "docs": "Width of the segment button border"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the segment button"
+    },
+    {
+      "name": "--color-activated",
+      "annotation": "prop",
+      "docs": "Color of the activated segment button"
+    },
+    {
+      "name": "--color-checked",
+      "annotation": "prop",
+      "docs": "Color of the checked segment button"
+    },
+    {
+      "name": "--color-checked-disabled",
+      "annotation": "prop",
+      "docs": "Color of the checked & disabled segment button"
+    },
+    {
+      "name": "--color-disabled",
+      "annotation": "prop",
+      "docs": "Color of the disabled segment button"
+    },
+    {
+      "name": "--indicator-color",
+      "annotation": "prop",
+      "docs": "Color of the indicator (highlight) under the segment button"
+    },
+    {
+      "name": "--indicator-color-checked",
+      "annotation": "prop",
+      "docs": "Color of the indicator (highlight) under the checked segment button"
+    },
+    {
+      "name": "--margin-bottom",
+      "annotation": "prop",
+      "docs": "Bottom margin of the segment button"
+    },
+    {
+      "name": "--margin-end",
+      "annotation": "prop",
+      "docs": "End margin of the segment button"
+    },
+    {
+      "name": "--margin-start",
+      "annotation": "prop",
+      "docs": "Start margin of the segment button"
+    },
+    {
+      "name": "--margin-top",
+      "annotation": "prop",
+      "docs": "Top margin of the segment button"
+    },
+    {
+      "name": "--padding-bottom",
+      "annotation": "prop",
+      "docs": "Bottom padding of the segment button"
+    },
+    {
+      "name": "--padding-end",
+      "annotation": "prop",
+      "docs": "End padding of the segment button"
+    },
+    {
+      "name": "--padding-start",
+      "annotation": "prop",
+      "docs": "Start padding of the segment button"
+    },
+    {
+      "name": "--padding-top",
+      "annotation": "prop",
+      "docs": "Top padding of the segment button"
+    },
+    {
+      "name": "--transition",
+      "annotation": "prop",
+      "docs": "Transition of the segment button"
+    }
+  ],
+  "slots": []
+}

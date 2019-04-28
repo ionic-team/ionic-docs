@@ -1,0 +1,133 @@
+{
+  "tag": "ion-tab-button",
+  "encapsulation": "shadow",
+  "readme": "# ion-tab-button\n\nA tab button is a UI component that is placed inside of a [tab bar](../tab-bar). The tab button can specify the layout of the icon and label and connect to a [tab view](../tab).\n\nSee the [tabs documentation](../tabs) for more details on configuring tabs.\n\n",
+  "docs": "A tab button is a UI component that is placed inside of a [tab bar](../tab-bar). The tab button can specify the layout of the icon and label and connect to a [tab view](../tab).\n\nSee the [tabs documentation](../tabs) for more details on configuring tabs.",
+  "docsTags": [],
+  "usage": {
+    "angular": "```html\n<ion-tabs>\n\n  <ion-tab-bar slot=\"bottom\">\n    <ion-tab-button tab=\"schedule\">\n      <ion-icon name=\"calendar\"></ion-icon>\n      <ion-label>Schedule</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"speakers\">\n      <ion-icon name=\"contacts\"></ion-icon>\n      <ion-label>Speakers</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"map\">\n      <ion-icon name=\"map\"></ion-icon>\n      <ion-label>Map</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"about\">\n      <ion-icon name=\"information-circle\"></ion-icon>\n      <ion-label>About</ion-label>\n    </ion-tab-button>\n  </ion-tab-bar>\n\n</ion-tabs>\n```\n",
+    "javascript": "```html\n<ion-tabs>\n\n  <ion-tab-bar slot=\"bottom\">\n    <ion-tab-button tab=\"schedule\" href=\"/app/tabs/(schedule:schedule)\">\n      <ion-icon name=\"calendar\"></ion-icon>\n      <ion-label>Schedule</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"speakers\" href=\"/app/tabs/(speakers:speakers)\">\n      <ion-icon name=\"contacts\"></ion-icon>\n      <ion-label>Speakers</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"map\" href=\"/app/tabs/(map:map)\">\n      <ion-icon name=\"map\"></ion-icon>\n      <ion-label>Map</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"about\" href=\"/app/tabs/(about:about)\">\n      <ion-icon name=\"information-circle\"></ion-icon>\n      <ion-label>About</ion-label>\n    </ion-tab-button>\n  </ion-tab-bar>\n\n  <ion-tab tab=\"schedule\">\n    <ion-router-outlet name=\"schedule\"></ion-router-outlet>\n  </ion-tab>\n\n  <ion-tab tab=\"speakers\">\n    <ion-router-outlet name=\"speakers\"></ion-router-outlet>\n  </ion-tab>\n\n  <ion-tab tab=\"map\">\n    <ion-router-outlet name=\"map\"></ion-router-outlet>\n  </ion-tab>\n\n  <ion-tab tab=\"about\">\n    <ion-router-outlet name=\"about\"></ion-router-outlet>\n  </ion-tab>\n\n</ion-tabs>\n```\n",
+    "react": "```tsx\nimport React from 'react';\n\nimport { IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel } from '@ionic/react';\n\nconst Example: React.SFC<{}> = () => (\n\n  <IonTabs>\n\n    <IonTabBar slot=\"bottom\">\n      <IonTabButton tab=\"schedule\">\n        <IonIcon name=\"calendar\" />\n        <IonLabel>Schedule</IonLabel>\n      </IonTabButton>\n\n      <IonTabButton tab=\"speakers\">\n        <IonIcon name=\"contacts\" />\n        <IonLabel>Speakers</IonLabel>\n      </IonTabButton>\n\n      <IonTabButton tab=\"map\">\n        <IonIcon name=\"map\" />\n        <IonLabel>Map</IonLabel>\n      </IonTabButton>\n\n      <IonTabButton tab=\"about\">\n        <IonIcon name=\"information-circle\" />\n        <IonLabel>About</IonLabel>\n      </IonTabButton>\n    </IonTabBar>\n\n  </IonTabs>\n);\n\nexport default Example;\n```\n",
+    "vue": "```html\n<template>\n  <ion-tabs>\n\n    <ion-tab-bar slot=\"bottom\">\n      <ion-tab-button tab=\"schedule\">\n        <ion-icon name=\"calendar\"></ion-icon>\n        <ion-label>Schedule</ion-label>\n      </ion-tab-button>\n\n      <ion-tab-button tab=\"speakers\">\n        <ion-icon name=\"contacts\"></ion-icon>\n        <ion-label>Speakers</ion-label>\n      </ion-tab-button>\n\n      <ion-tab-button tab=\"map\">\n        <ion-icon name=\"map\"></ion-icon>\n        <ion-label>Map</ion-label>\n      </ion-tab-button>\n\n      <ion-tab-button tab=\"about\">\n        <ion-icon name=\"information-circle\"></ion-icon>\n        <ion-label>About</ion-label>\n      </ion-tab-button>\n    </ion-tab-bar>\n\n  </ion-tabs>\n</template>\n```\n"
+  },
+  "props": [
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "disabled",
+      "reflectToAttr": false,
+      "docs": "The selected tab component",
+      "docsTags": [],
+      "default": "false",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "href",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "href",
+      "reflectToAttr": false,
+      "docs": "The URL which will be used as the `href` within this tab's button anchor.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "layout",
+      "type": "\"icon-bottom\" | \"icon-end\" | \"icon-hide\" | \"icon-start\" | \"icon-top\" | \"label-hide\" | undefined",
+      "mutable": true,
+      "attr": "layout",
+      "reflectToAttr": false,
+      "docs": "Set the layout of the text and icon in the tab bar.\nIt defaults to `'icon-top'`.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "selected",
+      "type": "boolean",
+      "mutable": true,
+      "attr": "selected",
+      "reflectToAttr": false,
+      "docs": "The selected tab component",
+      "docsTags": [],
+      "default": "false",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "tab",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "tab",
+      "reflectToAttr": false,
+      "docs": "A tab id must be provided for each `ion-tab`. It's used internally to reference\nthe selected tab or by the router to switch between them.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "styles": [
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the tab button"
+    },
+    {
+      "name": "--background-focused",
+      "annotation": "prop",
+      "docs": "Background of the focused tab button"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the tab button"
+    },
+    {
+      "name": "--color-selected",
+      "annotation": "prop",
+      "docs": "Color of the selected tab button"
+    },
+    {
+      "name": "--padding-bottom",
+      "annotation": "prop",
+      "docs": "Bottom padding of the tab button"
+    },
+    {
+      "name": "--padding-end",
+      "annotation": "prop",
+      "docs": "End padding of the tab button"
+    },
+    {
+      "name": "--padding-start",
+      "annotation": "prop",
+      "docs": "Start padding of the tab button"
+    },
+    {
+      "name": "--padding-top",
+      "annotation": "prop",
+      "docs": "Top padding of the tab button"
+    },
+    {
+      "name": "--ripple-color",
+      "annotation": "prop",
+      "docs": "Color of the button ripple effect"
+    }
+  ],
+  "slots": []
+}

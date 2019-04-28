@@ -1,0 +1,65 @@
+{
+  "tag": "ion-list",
+  "encapsulation": "none",
+  "readme": "# ion-list\n\nLists are made up of multiple rows of items which can contain text, buttons, toggles,\nicons, thumbnails, and much more. Lists generally contain items with similar data content, such as images and text.\n\nLists support several interactions including swiping items to reveal options, dragging to reorder items within the list, and deleting items.\n\n",
+  "docs": "Lists are made up of multiple rows of items which can contain text, buttons, toggles,\nicons, thumbnails, and much more. Lists generally contain items with similar data content, such as images and text.\n\nLists support several interactions including swiping items to reveal options, dragging to reorder items within the list, and deleting items.",
+  "docsTags": [],
+  "usage": {
+    "angular": "```html\n<!-- List of Text Items -->\n<ion-list>\n  <ion-item>\n    <ion-label>Pokémon Yellow</ion-label>\n  </ion-item>\n  <ion-item>\n    <ion-label>Mega Man X</ion-label>\n  </ion-item>\n  <ion-item>\n    <ion-label>The Legend of Zelda</ion-label>\n  </ion-item>\n  <ion-item>\n    <ion-label>Pac-Man</ion-label>\n  </ion-item>\n  <ion-item>\n    <ion-label>Super Mario World</ion-label>\n  </ion-item>\n</ion-list>\n\n<!-- List of Input Items -->\n<ion-list>\n  <ion-item>\n    <ion-label>Input</ion-label>\n    <ion-input></ion-input>\n  </ion-item>\n  <ion-item>\n    <ion-label>Toggle</ion-label>\n    <ion-toggle slot=\"end\"></ion-toggle>\n  </ion-item>\n  <ion-item>\n    <ion-label>Radio</ion-label>\n    <ion-radio slot=\"end\"></ion-radio>\n  </ion-item>\n  <ion-item>\n    <ion-label>Checkbox</ion-label>\n    <ion-checkbox slot=\"start\"></ion-checkbox>\n  </ion-item>\n</ion-list>\n\n<!-- List of Sliding Items -->\n<ion-list>\n  <ion-item-sliding>\n    <ion-item>\n      <ion-label>Item</ion-label>\n    </ion-item>\n    <ion-item-options side=\"end\">\n      <ion-item-option (click)=\"unread(item)\">Unread</ion-item-option>\n    </ion-item-options>\n  </ion-item-sliding>\n\n  <ion-item-sliding>\n    <ion-item>\n      <ion-label>Item</ion-label>\n    </ion-item>\n    <ion-item-options side=\"end\">\n      <ion-item-option (click)=\"unread(item)\">Unread</ion-item-option>\n    </ion-item-options>\n  </ion-item-sliding>\n</ion-list>\n```",
+    "javascript": "```html\n<!-- List of Text Items -->\n<ion-list>\n  <ion-item>\n    <ion-label>Pokémon Yellow</ion-label>\n  </ion-item>\n  <ion-item>\n    <ion-label>Mega Man X</ion-label>\n  </ion-item>\n  <ion-item>\n    <ion-label>The Legend of Zelda</ion-label>\n  </ion-item>\n  <ion-item>\n    <ion-label>Pac-Man</ion-label>\n  </ion-item>\n  <ion-item>\n    <ion-label>Super Mario World</ion-label>\n  </ion-item>\n</ion-list>\n\n<!-- List of Input Items -->\n<ion-list>\n  <ion-item>\n    <ion-label>Input</ion-label>\n    <ion-input></ion-input>\n  </ion-item>\n  <ion-item>\n    <ion-label>Toggle</ion-label>\n    <ion-toggle slot=\"end\"></ion-toggle>\n  </ion-item>\n  <ion-item>\n    <ion-label>Radio</ion-label>\n    <ion-radio slot=\"end\"></ion-radio>\n  </ion-item>\n  <ion-item>\n    <ion-label>Checkbox</ion-label>\n    <ion-checkbox slot=\"start\"></ion-checkbox>\n  </ion-item>\n</ion-list>\n\n<!-- List of Sliding Items -->\n<ion-list>\n  <ion-item-sliding>\n    <ion-item>\n      <ion-label>Item</ion-label>\n    </ion-item>\n    <ion-item-options side=\"end\">\n      <ion-item-option onClick=\"unread(item)\">Unread</ion-item-option>\n    </ion-item-options>\n  </ion-item-sliding>\n\n  <ion-item-sliding>\n    <ion-item>\n      <ion-label>Item</ion-label>\n    </ion-item>\n    <ion-item-options side=\"end\">\n      <ion-item-option onClick=\"unread(item)\">Unread</ion-item-option>\n    </ion-item-options>\n  </ion-item-sliding>\n</ion-list>\n```",
+    "react": "```tsx\nimport React from 'react';\n\nimport { IonList, IonItem, IonLabel, IonInput, IonToggle, IonRadio, IonCheckbox, IonItemSliding, IonItemOption, IonItemOptions } from '@ionic/react';\n\nconst Example: React.SFC<{}> = () => (\n  <>\n    {/*-- List of Text Items --*/}\n    <IonList>\n      <IonItem>\n        <IonLabel>Pokémon Yellow</IonLabel>\n      </IonItem>\n      <IonItem>\n        <IonLabel>Mega Man X</IonLabel>\n      </IonItem>\n      <IonItem>\n        <IonLabel>The Legend of Zelda</IonLabel>\n      </IonItem>\n      <IonItem>\n        <IonLabel>Pac-Man</IonLabel>\n      </IonItem>\n      <IonItem>\n        <IonLabel>Super Mario World</IonLabel>\n      </IonItem>\n    </IonList>\n\n    {/*-- List of Input Items --*/}\n    <IonList>\n      <IonItem>\n        <IonLabel>Input</IonLabel>\n        <IonInput></IonInput>\n      </IonItem>\n      <IonItem>\n        <IonLabel>Toggle</IonLabel>\n        <IonToggle slot=\"end\"></IonToggle>\n      </IonItem>\n      <IonItem>\n        <IonLabel>Radio</IonLabel>\n        <IonRadio slot=\"end\"></IonRadio>\n      </IonItem>\n      <IonItem>\n        <IonLabel>Checkbox</IonLabel>\n        <IonCheckbox slot=\"start\" />\n      </IonItem>\n    </IonList>\n\n    {/*-- List of Sliding Items --*/}\n    <IonList>\n      <IonItemSliding>\n        <IonItem>\n          <IonLabel>Item</IonLabel>\n        </IonItem>\n        <IonItemOptions side=\"end\">\n          <IonItemOption onClick={() => {}}>Unread</IonItemOption>\n        </IonItemOptions>\n      </IonItemSliding>\n\n      <IonItemSliding>\n        <IonItem>\n          <IonLabel>Item</IonLabel>\n        </IonItem>\n        <IonItemOptions side=\"end\">\n          <IonItemOption onClick={() => {}}>Unread</IonItemOption>\n        </IonItemOptions>\n      </IonItemSliding>\n    </IonList>\n  </>\n);\n\nexport default Example;\n```\n",
+    "vue": "```html\n<template>\n  <!-- List of Text Items -->\n  <ion-list>\n    <ion-item>\n      <ion-label>Pokémon Yellow</ion-label>\n    </ion-item>\n    <ion-item>\n      <ion-label>Mega Man X</ion-label>\n    </ion-item>\n    <ion-item>\n      <ion-label>The Legend of Zelda</ion-label>\n    </ion-item>\n    <ion-item>\n      <ion-label>Pac-Man</ion-label>\n    </ion-item>\n    <ion-item>\n      <ion-label>Super Mario World</ion-label>\n    </ion-item>\n  </ion-list>\n\n  <!-- List of Input Items -->\n  <ion-list>\n    <ion-item>\n      <ion-label>Input</ion-label>\n      <ion-input></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label>Toggle</ion-label>\n      <ion-toggle slot=\"end\"></ion-toggle>\n    </ion-item>\n    <ion-item>\n      <ion-label>Radio</ion-label>\n      <ion-radio slot=\"end\"></ion-radio>\n    </ion-item>\n    <ion-item>\n      <ion-label>Checkbox</ion-label>\n      <ion-checkbox slot=\"start\"></ion-checkbox>\n    </ion-item>\n  </ion-list>\n\n  <!-- List of Sliding Items -->\n  <ion-list>\n    <ion-item-sliding>\n      <ion-item>\n        <ion-label>Item</ion-label>\n      </ion-item>\n      <ion-item-options side=\"end\">\n        <ion-item-option @click=\"unread(item)\">Unread</ion-item-option>\n      </ion-item-options>\n    </ion-item-sliding>\n\n    <ion-item-sliding>\n      <ion-item>\n        <ion-label>Item</ion-label>\n      </ion-item>\n      <ion-item-options side=\"end\">\n        <ion-item-option @click=\"unread(item)\">Unread</ion-item-option>\n      </ion-item-options>\n    </ion-item-sliding>\n  </ion-list>\n</template>\n```"
+  },
+  "props": [
+    {
+      "name": "inset",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "inset",
+      "reflectToAttr": false,
+      "docs": "If `true`, the list will have margin around it and rounded corners.",
+      "docsTags": [],
+      "default": "false",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "lines",
+      "type": "\"full\" | \"inset\" | \"none\" | undefined",
+      "mutable": false,
+      "attr": "lines",
+      "reflectToAttr": false,
+      "docs": "How the bottom border should be displayed on all items.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "closeSlidingItems",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "closeSlidingItems() => Promise<boolean>",
+      "parameters": [],
+      "docs": "If `ion-item-sliding` are used inside the list, this method closes\nany open sliding item.\n\nReturns `true` if an actual `ion-item-sliding` is closed.",
+      "docsTags": []
+    }
+  ],
+  "events": [],
+  "styles": [],
+  "slots": []
+}

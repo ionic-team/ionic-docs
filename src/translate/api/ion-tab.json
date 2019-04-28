@@ -1,0 +1,48 @@
+{
+  "tag": "ion-tab",
+  "encapsulation": "shadow",
+  "readme": "# ion-tab\n\nThe tab component is a child component of [tabs](../tabs). Each tab can contain a top level navigation stack for an app or a single view. An app can have many tabs, all with their own independent navigation.\n\nSee the [tabs documentation](../tabs/) for more details on configuring tabs.\n\n",
+  "docs": "The tab component is a child component of [tabs](../tabs). Each tab can contain a top level navigation stack for an app or a single view. An app can have many tabs, all with their own independent navigation.\n\nSee the [tabs documentation](../tabs/) for more details on configuring tabs.",
+  "docsTags": [],
+  "usage": {},
+  "props": [
+    {
+      "name": "component",
+      "type": "Function | HTMLElement | null | string | undefined",
+      "mutable": false,
+      "attr": "component",
+      "reflectToAttr": false,
+      "docs": "The component to display inside of the tab.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "tab",
+      "type": "string",
+      "mutable": false,
+      "attr": "tab",
+      "reflectToAttr": false,
+      "docs": "A tab id must be provided for each `ion-tab`. It's used internally to reference\nthe selected tab or by the router to switch between them.",
+      "docsTags": [],
+      "optional": false,
+      "required": true
+    }
+  ],
+  "methods": [
+    {
+      "name": "setActive",
+      "returns": {
+        "type": "Promise<void>",
+        "docs": ""
+      },
+      "signature": "setActive() => Promise<void>",
+      "parameters": [],
+      "docs": "Set the active component for the tab",
+      "docsTags": []
+    }
+  ],
+  "events": [],
+  "styles": [],
+  "slots": []
+}

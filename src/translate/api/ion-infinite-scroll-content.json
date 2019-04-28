@@ -1,0 +1,41 @@
+{
+  "tag": "ion-infinite-scroll-content",
+  "encapsulation": "none",
+  "readme": "# ion-infinite-scroll-content\n\nThe `ion-infinite-scroll-content` component is the default child used by the `ion-infinite-scroll`. It displays an infinite scroll spinner that looks best based on the platform and changes the look depending on the infinite scroll's state. The default spinner can be changed and text can be added by setting the `loadingSpinner` and `loadingText` properties.\n",
+  "docs": "The `ion-infinite-scroll-content` component is the default child used by the `ion-infinite-scroll`. It displays an infinite scroll spinner that looks best based on the platform and changes the look depending on the infinite scroll's state. The default spinner can be changed and text can be added by setting the `loadingSpinner` and `loadingText` properties.",
+  "docsTags": [],
+  "usage": {
+    "angular": "```html\n<ion-content>\n  <ion-infinite-scroll>\n    <ion-infinite-scroll-content\n      loadingSpinner=\"bubbles\"\n      loadingText=\"Loading more data…\">\n    </ion-infinite-scroll-content>\n  </ion-infinite-scroll>\n</ion-content>\n```\n",
+    "javascript": "```html\n<ion-content>\n  <ion-infinite-scroll>\n    <ion-infinite-scroll-content\n      loading-spinner=\"bubbles\"\n      loading-text=\"Loading more data…\">\n    </ion-infinite-scroll-content>\n  </ion-infinite-scroll>\n</ion-content>\n```\n",
+    "react": "```tsx\nimport React from 'react';\n\nimport { IonContent, IonInfiniteScroll } from '@ionic/react';\n\nconst Example: React.SFC<{}> = () => (\n\n  <IonContent>\n    <IonInfiniteScroll>\n      <IonInfiniteScrollContent\n        loadingSpinner=\"bubbles\"\n        loadingText=\"Loading more data…\">\n      </IonInfiniteScrollContent>\n    </IonInfiniteScroll>\n  </IonContent>\n);\n\nexport default Example\n",
+    "vue": "```html\n<template>\n  <ion-content>\n    <ion-infinite-scroll>\n      <ion-infinite-scroll-content\n        loadingSpinner=\"bubbles\"\n        loadingText=\"Loading more data…\">\n      </ion-infinite-scroll-content>\n    </ion-infinite-scroll>\n  </ion-content>\n</template>\n```\n"
+  },
+  "props": [
+    {
+      "name": "loadingSpinner",
+      "type": "\"bubbles\" | \"circles\" | \"crescent\" | \"dots\" | \"lines\" | \"lines-small\" | null | undefined",
+      "mutable": true,
+      "attr": "loading-spinner",
+      "reflectToAttr": false,
+      "docs": "An animated SVG spinner that shows while loading.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "loadingText",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "loading-text",
+      "reflectToAttr": false,
+      "docs": "Optional text to display while loading.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "styles": [],
+  "slots": []
+}

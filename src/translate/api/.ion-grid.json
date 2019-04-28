@@ -1,0 +1,92 @@
+{
+  "tag": "ion-grid",
+  "encapsulation": "shadow",
+  "readme": "# ion-grid\n\n\nThe grid is a powerful mobile-first flexbox system for building custom layouts.\n\nIt is composed of three units — a grid, [row(s)](../row) and [column(s)](../col). Columns will expand to fill the row, and will resize to fit additional columns. It is based on a 12 column layout with different breakpoints based on the screen size. The number of columns can be customized using CSS.\n\nSee [Grid Layout](/docs/layout/grid) for more information.\n",
+  "docs": "The grid is a powerful mobile-first flexbox system for building custom layouts.\n\nIt is composed of three units — a grid, [row(s)](../row) and [column(s)](../col). Columns will expand to fill the row, and will resize to fit additional columns. It is based on a 12 column layout with different breakpoints based on the screen size. The number of columns can be customized using CSS.\n\nSee [Grid Layout](/docs/layout/grid) for more information.",
+  "docsTags": [],
+  "usage": {
+    "angular": "```html\n<ion-grid>\n  <ion-row>\n    <ion-col>\n      ion-col\n    </ion-col>\n    <ion-col>\n      ion-col\n    </ion-col>\n    <ion-col>\n      ion-col\n    </ion-col>\n    <ion-col>\n      ion-col\n    </ion-col>\n  </ion-row>\n\n  <ion-row>\n    <ion-col size=\"6\">\n      ion-col [size=\"6\"]\n    </ion-col>\n    <ion-col>\n      ion-col\n    </ion-col>\n    <ion-col>\n      ion-col\n    </ion-col>\n  </ion-row>\n\n  <ion-row>\n    <ion-col size=\"3\">\n      ion-col [size=\"3\"]\n    </ion-col>\n    <ion-col>\n      ion-col\n    </ion-col>\n    <ion-col size=\"3\">\n      ion-col [size=\"3\"]\n    </ion-col>\n  </ion-row>\n\n  <ion-row>\n    <ion-col size=\"3\">\n      ion-col [size=\"3\"]\n    </ion-col>\n    <ion-col size=\"3\" offset=\"3\">\n      ion-col [size=\"3\"] [offset=\"3\"]\n    </ion-col>\n  </ion-row>\n\n  <ion-row>\n    <ion-col>\n      ion-col\n    </ion-col>\n    <ion-col>\n      ion-col\n      <br>#\n    </ion-col>\n    <ion-col>\n      ion-col\n      <br>#\n      <br>#\n    </ion-col>\n    <ion-col>\n      ion-col\n      <br>#\n      <br>#\n      <br>#\n    </ion-col>\n  </ion-row>\n\n  <ion-row>\n    <ion-col align-self-start>\n      ion-col [start]\n    </ion-col>\n    <ion-col align-self-center>\n      ion-col [center]\n    </ion-col>\n    <ion-col align-self-end>\n      ion-col [end]\n    </ion-col>\n    <ion-col>\n      ion-col\n      <br>#\n      <br>#\n    </ion-col>\n  </ion-row>\n\n  <ion-row align-items-start>\n    <ion-col>\n      [start] ion-col\n    </ion-col>\n    <ion-col>\n      [start] ion-col\n    </ion-col>\n    <ion-col align-self-end>\n      [start] ion-col [end]\n    </ion-col>\n    <ion-col>\n      ion-col\n      <br>#\n      <br>#\n    </ion-col>\n  </ion-row>\n\n  <ion-row align-items-center>\n    <ion-col>\n      [center] ion-col\n    </ion-col>\n    <ion-col>\n      [center] ion-col\n    </ion-col>\n    <ion-col>\n      [center] ion-col\n    </ion-col>\n    <ion-col>\n      ion-col\n      <br>#\n      <br>#\n    </ion-col>\n  </ion-row>\n\n  <ion-row align-items-end>\n    <ion-col>\n      [end] ion-col\n    </ion-col>\n    <ion-col align-self-start>\n      [end] ion-col [start]\n    </ion-col>\n    <ion-col>\n      [end] ion-col\n    </ion-col>\n    <ion-col>\n      ion-col\n      <br>#\n      <br>#\n    </ion-col>\n  </ion-row>\n\n  <ion-row>\n    <ion-col size=\"12\" size-sm>\n      ion-col [size=\"12\"] [size-sm]\n    </ion-col>\n    <ion-col size=\"12\" size-sm>\n      ion-col [size=\"12\"] [size-sm]\n    </ion-col>\n    <ion-col size=\"12\" size-sm>\n      ion-col [size=\"12\"] [size-sm]\n    </ion-col>\n    <ion-col size=\"12\" size-sm>\n      ion-col [size=\"12\"] [size-sm]\n    </ion-col>\n  </ion-row>\n\n  <ion-row>\n    <ion-col size=\"12\" size-md>\n      ion-col [size=\"12\"] [size-md]\n    </ion-col>\n    <ion-col size=\"12\" size-md>\n      ion-col [size=\"12\"] [size-md]\n    </ion-col>\n    <ion-col size=\"12\" size-md>\n      ion-col [size=\"12\"] [size-md]\n    </ion-col>\n    <ion-col size=\"12\" size-md>\n      ion-col [size=\"12\"] [size-md]\n    </ion-col>\n  </ion-row>\n\n  <ion-row>\n    <ion-col size=\"6\" size-lg offset=\"3\">\n      ion-col [size=\"6\"] [size-lg] [offset=\"3\"]\n    </ion-col>\n    <ion-col size=\"3\" size-lg>\n      ion-col [size=\"3\"] [size-lg]\n    </ion-col>\n  </ion-row>\n</ion-grid>\n```",
+    "javascript": "```html\n<ion-grid>\n  <ion-row>\n    <ion-col>\n      ion-col\n    </ion-col>\n    <ion-col>\n      ion-col\n    </ion-col>\n    <ion-col>\n      ion-col\n    </ion-col>\n    <ion-col>\n      ion-col\n    </ion-col>\n  </ion-row>\n\n  <ion-row>\n    <ion-col size=\"6\">\n      ion-col [size=\"6\"]\n    </ion-col>\n    <ion-col>\n      ion-col\n    </ion-col>\n    <ion-col>\n      ion-col\n    </ion-col>\n  </ion-row>\n\n  <ion-row>\n    <ion-col size=\"3\">\n      ion-col [size=\"3\"]\n    </ion-col>\n    <ion-col>\n      ion-col\n    </ion-col>\n    <ion-col size=\"3\">\n      ion-col [size=\"3\"]\n    </ion-col>\n  </ion-row>\n\n  <ion-row>\n    <ion-col size=\"3\">\n      ion-col [size=\"3\"]\n    </ion-col>\n    <ion-col size=\"3\" offset=\"3\">\n      ion-col [size=\"3\"] [offset=\"3\"]\n    </ion-col>\n  </ion-row>\n\n  <ion-row>\n    <ion-col>\n      ion-col\n    </ion-col>\n    <ion-col>\n      ion-col\n      <br>#\n    </ion-col>\n    <ion-col>\n      ion-col\n      <br>#\n      <br>#\n    </ion-col>\n    <ion-col>\n      ion-col\n      <br>#\n      <br>#\n      <br>#\n    </ion-col>\n  </ion-row>\n\n  <ion-row>\n    <ion-col align-self-start>\n      ion-col [start]\n    </ion-col>\n    <ion-col align-self-center>\n      ion-col [center]\n    </ion-col>\n    <ion-col align-self-end>\n      ion-col [end]\n    </ion-col>\n    <ion-col>\n      ion-col\n      <br>#\n      <br>#\n    </ion-col>\n  </ion-row>\n\n  <ion-row align-items-start>\n    <ion-col>\n      [start] ion-col\n    </ion-col>\n    <ion-col>\n      [start] ion-col\n    </ion-col>\n    <ion-col align-self-end>\n      [start] ion-col [end]\n    </ion-col>\n    <ion-col>\n      ion-col\n      <br>#\n      <br>#\n    </ion-col>\n  </ion-row>\n\n  <ion-row align-items-center>\n    <ion-col>\n      [center] ion-col\n    </ion-col>\n    <ion-col>\n      [center] ion-col\n    </ion-col>\n    <ion-col>\n      [center] ion-col\n    </ion-col>\n    <ion-col>\n      ion-col\n      <br>#\n      <br>#\n    </ion-col>\n  </ion-row>\n\n  <ion-row align-items-end>\n    <ion-col>\n      [end] ion-col\n    </ion-col>\n    <ion-col align-self-start>\n      [end] ion-col [start]\n    </ion-col>\n    <ion-col>\n      [end] ion-col\n    </ion-col>\n    <ion-col>\n      ion-col\n      <br>#\n      <br>#\n    </ion-col>\n  </ion-row>\n\n  <ion-row>\n    <ion-col size=\"12\" size-sm>\n      ion-col [size=\"12\"] [size-sm]\n    </ion-col>\n    <ion-col size=\"12\" size-sm>\n      ion-col [size=\"12\"] [size-sm]\n    </ion-col>\n    <ion-col size=\"12\" size-sm>\n      ion-col [size=\"12\"] [size-sm]\n    </ion-col>\n    <ion-col size=\"12\" size-sm>\n      ion-col [size=\"12\"] [size-sm]\n    </ion-col>\n  </ion-row>\n\n  <ion-row>\n    <ion-col size=\"12\" size-md>\n      ion-col [size=\"12\"] [size-md]\n    </ion-col>\n    <ion-col size=\"12\" size-md>\n      ion-col [size=\"12\"] [size-md]\n    </ion-col>\n    <ion-col size=\"12\" size-md>\n      ion-col [size=\"12\"] [size-md]\n    </ion-col>\n    <ion-col size=\"12\" size-md>\n      ion-col [size=\"12\"] [size-md]\n    </ion-col>\n  </ion-row>\n\n  <ion-row>\n    <ion-col size=\"6\" size-lg offset=\"3\">\n      ion-col [size=\"6\"] [size-lg] [offset=\"3\"]\n    </ion-col>\n    <ion-col size=\"3\" size-lg>\n      ion-col [size=\"3\"] [size-lg]\n    </ion-col>\n  </ion-row>\n</ion-grid>\n```",
+    "react": "```tsx\nimport React from 'react';\n\nimport { IonGrid, IonRow, IonCol } from '@ionic/react';\n\nconst Example: React.SFC<{}> = () => (\n  <IonGrid>\n    <IonRow>\n      <IonCol>\n        ion-col\n      </IonCol>\n      <IonCol>\n        ion-col\n      </IonCol>\n      <IonCol>\n        ion-col\n      </IonCol>\n      <IonCol>\n        ion-col\n      </IonCol>\n    </IonRow>\n\n    <IonRow>\n      <IonCol size=\"6\">\n        ion-col size=\"6\"\n      </IonCol>\n      <IonCol>\n        ion-col\n      </IonCol>\n      <IonCol>\n        ion-col\n      </IonCol>\n    </IonRow>\n\n    <IonRow>\n      <IonCol size=\"3\">\n        ion-col size=\"3\"\n      </IonCol>\n      <IonCol>\n        ion-col\n      </IonCol>\n      <IonCol size=\"3\">\n        ion-col size=\"3\"\n      </IonCol>\n    </IonRow>\n\n    <IonRow>\n      <IonCol size=\"3\">\n        ion-col size=\"3\"\n      </IonCol>\n      <IonCol size=\"3\" offset=\"3\">\n        ion-col size=\"3\" offset=\"3\"\n      </IonCol>\n    </IonRow>\n\n    <IonRow>\n      <IonCol>\n        ion-col\n      </IonCol>\n      <IonCol>\n        ion-col\n        <br/>#\n      </IonCol>\n      <IonCol>\n        ion-col\n        <br/>#\n        <br/>#\n      </IonCol>\n      <IonCol>\n        ion-col\n        <br/>#\n        <br/>#\n        <br/>#\n      </IonCol>\n    </IonRow>\n\n    <IonRow>\n      <IonCol align-self-start>\n        ion-col start\n      </IonCol>\n      <IonCol align-self-center>\n        ion-col center\n      </IonCol>\n      <IonCol align-self-end>\n        ion-col end\n      </IonCol>\n      <IonCol>\n        ion-col\n        <br/>#\n        <br/>#\n      </IonCol>\n    </IonRow>\n\n    <IonRow align-items-start>\n      <IonCol>\n        start ion-col\n      </IonCol>\n      <IonCol>\n        start ion-col\n      </IonCol>\n      <IonCol align-self-end>\n        start ion-col end\n      </IonCol>\n      <IonCol>\n        ion-col\n        <br/>#\n        <br/>#\n      </IonCol>\n    </IonRow>\n\n    <IonRow align-items-center>\n      <IonCol>\n        center ion-col\n      </IonCol>\n      <IonCol>\n        center ion-col\n      </IonCol>\n      <IonCol>\n        center ion-col\n      </IonCol>\n      <IonCol>\n        ion-col\n        <br/>#\n        <br/>#\n      </IonCol>\n    </IonRow>\n\n    <IonRow align-items-end>\n      <IonCol>\n        end ion-col\n      </IonCol>\n      <IonCol align-self-start>\n        end ion-col start\n      </IonCol>\n      <IonCol>\n        end ion-col\n      </IonCol>\n      <IonCol>\n        ion-col\n        <br/>#\n        <br/>#\n      </IonCol>\n    </IonRow>\n\n    <IonRow>\n      <IonCol size=\"12\" size-sm>\n        ion-col size=\"12\" size-sm\n      </IonCol>\n      <IonCol size=\"12\" size-sm>\n        ion-col size=\"12\" size-sm\n      </IonCol>\n      <IonCol size=\"12\" size-sm>\n        ion-col size=\"12\" size-sm\n      </IonCol>\n      <IonCol size=\"12\" size-sm>\n        ion-col size=\"12\" size-sm\n      </IonCol>\n    </IonRow>\n\n    <IonRow>\n      <IonCol size=\"12\" size-md>\n        ion-col size=\"12\" size-md\n      </IonCol>\n      <IonCol size=\"12\" size-md>\n        ion-col size=\"12\" size-md\n      </IonCol>\n      <IonCol size=\"12\" size-md>\n        ion-col size=\"12\" size-md\n      </IonCol>\n      <IonCol size=\"12\" size-md>\n        ion-col size=\"12\" size-md\n      </IonCol>\n    </IonRow>\n\n    <IonRow>\n      <IonCol size=\"6\" size-lg offset=\"3\">\n        ion-col size=\"6\" size-lg offset=\"3\"\n      </IonCol>\n      <IonCol size=\"3\" size-lg>\n        ion-col size=\"3\" size-lg\n      </IonCol>\n    </IonRow>\n  </IonGrid>\n);\n\nexport default Example;\n```\n",
+    "vue": "```html\n<template>\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n        ion-col\n      </ion-col>\n      <ion-col>\n        ion-col\n      </ion-col>\n      <ion-col>\n        ion-col\n      </ion-col>\n      <ion-col>\n        ion-col\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col size=\"6\">\n        ion-col [size=\"6\"]\n      </ion-col>\n      <ion-col>\n        ion-col\n      </ion-col>\n      <ion-col>\n        ion-col\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col size=\"3\">\n        ion-col [size=\"3\"]\n      </ion-col>\n      <ion-col>\n        ion-col\n      </ion-col>\n      <ion-col size=\"3\">\n        ion-col [size=\"3\"]\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col size=\"3\">\n        ion-col [size=\"3\"]\n      </ion-col>\n      <ion-col size=\"3\" offset=\"3\">\n        ion-col [size=\"3\"] [offset=\"3\"]\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col>\n        ion-col\n      </ion-col>\n      <ion-col>\n        ion-col\n        <br>#\n      </ion-col>\n      <ion-col>\n        ion-col\n        <br>#\n        <br>#\n      </ion-col>\n      <ion-col>\n        ion-col\n        <br>#\n        <br>#\n        <br>#\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col align-self-start>\n        ion-col [start]\n      </ion-col>\n      <ion-col align-self-center>\n        ion-col [center]\n      </ion-col>\n      <ion-col align-self-end>\n        ion-col [end]\n      </ion-col>\n      <ion-col>\n        ion-col\n        <br>#\n        <br>#\n      </ion-col>\n    </ion-row>\n\n    <ion-row align-items-start>\n      <ion-col>\n        [start] ion-col\n      </ion-col>\n      <ion-col>\n        [start] ion-col\n      </ion-col>\n      <ion-col align-self-end>\n        [start] ion-col [end]\n      </ion-col>\n      <ion-col>\n        ion-col\n        <br>#\n        <br>#\n      </ion-col>\n    </ion-row>\n\n    <ion-row align-items-center>\n      <ion-col>\n        [center] ion-col\n      </ion-col>\n      <ion-col>\n        [center] ion-col\n      </ion-col>\n      <ion-col>\n        [center] ion-col\n      </ion-col>\n      <ion-col>\n        ion-col\n        <br>#\n        <br>#\n      </ion-col>\n    </ion-row>\n\n    <ion-row align-items-end>\n      <ion-col>\n        [end] ion-col\n      </ion-col>\n      <ion-col align-self-start>\n        [end] ion-col [start]\n      </ion-col>\n      <ion-col>\n        [end] ion-col\n      </ion-col>\n      <ion-col>\n        ion-col\n        <br>#\n        <br>#\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col size=\"12\" size-sm>\n        ion-col [size=\"12\"] [size-sm]\n      </ion-col>\n      <ion-col size=\"12\" size-sm>\n        ion-col [size=\"12\"] [size-sm]\n      </ion-col>\n      <ion-col size=\"12\" size-sm>\n        ion-col [size=\"12\"] [size-sm]\n      </ion-col>\n      <ion-col size=\"12\" size-sm>\n        ion-col [size=\"12\"] [size-sm]\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col size=\"12\" size-md>\n        ion-col [size=\"12\"] [size-md]\n      </ion-col>\n      <ion-col size=\"12\" size-md>\n        ion-col [size=\"12\"] [size-md]\n      </ion-col>\n      <ion-col size=\"12\" size-md>\n        ion-col [size=\"12\"] [size-md]\n      </ion-col>\n      <ion-col size=\"12\" size-md>\n        ion-col [size=\"12\"] [size-md]\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col size=\"6\" size-lg offset=\"3\">\n        ion-col [size=\"6\"] [size-lg] [offset=\"3\"]\n      </ion-col>\n      <ion-col size=\"3\" size-lg>\n        ion-col [size=\"3\"] [size-lg]\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</template>\n```"
+  },
+  "props": [
+    {
+      "name": "fixed",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "fixed",
+      "reflectToAttr": false,
+      "docs": "If `true`, the grid will have a fixed width based on the screen size.",
+      "docsTags": [],
+      "default": "false",
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "styles": [
+    {
+      "name": "--ion-grid-padding",
+      "annotation": "prop",
+      "docs": "Padding for the Grid"
+    },
+    {
+      "name": "--ion-grid-padding-lg",
+      "annotation": "prop",
+      "docs": "Padding for the Grid on lg screens"
+    },
+    {
+      "name": "--ion-grid-padding-md",
+      "annotation": "prop",
+      "docs": "Padding for the Grid on md screens"
+    },
+    {
+      "name": "--ion-grid-padding-sm",
+      "annotation": "prop",
+      "docs": "Padding for the Grid on sm screens"
+    },
+    {
+      "name": "--ion-grid-padding-xl",
+      "annotation": "prop",
+      "docs": "Padding for the Grid on xl screens"
+    },
+    {
+      "name": "--ion-grid-padding-xs",
+      "annotation": "prop",
+      "docs": "Padding for the Grid on xs screens"
+    },
+    {
+      "name": "--ion-grid-width",
+      "annotation": "prop",
+      "docs": "Width of the fixed Grid"
+    },
+    {
+      "name": "--ion-grid-width-lg",
+      "annotation": "prop",
+      "docs": "Width of the fixed Grid on lg screens"
+    },
+    {
+      "name": "--ion-grid-width-md",
+      "annotation": "prop",
+      "docs": "Width of the fixed Grid on md screens"
+    },
+    {
+      "name": "--ion-grid-width-sm",
+      "annotation": "prop",
+      "docs": "Width of the fixed Grid on sm screens"
+    },
+    {
+      "name": "--ion-grid-width-xl",
+      "annotation": "prop",
+      "docs": "Width of the fixed Grid on xl screens"
+    },
+    {
+      "name": "--ion-grid-width-xs",
+      "annotation": "prop",
+      "docs": "Width of the fixed Grid on xs screens"
+    }
+  ],
+  "slots": []
+}

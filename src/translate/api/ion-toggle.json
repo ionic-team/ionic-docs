@@ -1,0 +1,138 @@
+{
+  "tag": "ion-toggle",
+  "encapsulation": "shadow",
+  "readme": "# ion-toggle\n\nToggles change the state of a single option. Toggles can be switched on or off by pressing or swiping them. They can also be checked programmatically by setting the `checked` property.\n\n\n",
+  "docs": "Toggles change the state of a single option. Toggles can be switched on or off by pressing or swiping them. They can also be checked programmatically by setting the `checked` property.",
+  "docsTags": [],
+  "usage": {
+    "angular": "```html\n<!-- Default Toggle -->\n<ion-toggle></ion-toggle>\n\n<!-- Disabled Toggle -->\n<ion-toggle disabled></ion-toggle>\n\n<!-- Checked Toggle -->\n<ion-toggle checked></ion-toggle>\n\n<!-- Toggle Colors -->\n<ion-toggle color=\"primary\"></ion-toggle>\n<ion-toggle color=\"secondary\"></ion-toggle>\n<ion-toggle color=\"danger\"></ion-toggle>\n<ion-toggle color=\"light\"></ion-toggle>\n<ion-toggle color=\"dark\"></ion-toggle>\n\n<!-- Toggles in a List -->\n<ion-list>\n  <ion-item>\n    <ion-label>Pepperoni</ion-label>\n    <ion-toggle [(ngModel)]=\"pepperoni\"></ion-toggle>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>Sausage</ion-label>\n    <ion-toggle [(ngModel)]=\"sausage\" disabled=\"true\"></ion-toggle>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>Mushrooms</ion-label>\n    <ion-toggle [(ngModel)]=\"mushrooms\"></ion-toggle>\n  </ion-item>\n</ion-list>\n```\n",
+    "javascript": "```html\n<!-- Default Toggle -->\n<ion-toggle></ion-toggle>\n\n<!-- Disabled Toggle -->\n<ion-toggle disabled></ion-toggle>\n\n<!-- Checked Toggle -->\n<ion-toggle checked></ion-toggle>\n\n<!-- Toggle Colors -->\n<ion-toggle color=\"primary\"></ion-toggle>\n<ion-toggle color=\"secondary\"></ion-toggle>\n<ion-toggle color=\"danger\"></ion-toggle>\n<ion-toggle color=\"light\"></ion-toggle>\n<ion-toggle color=\"dark\"></ion-toggle>\n\n<!-- Toggles in a List -->\n<ion-list>\n  <ion-item>\n    <ion-label>Pepperoni</ion-label>\n    <ion-toggle slot=\"end\" value=\"pepperoni\" checked></ion-toggle>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>Sausage</ion-label>\n    <ion-toggle slot=\"end\" value=\"sausage\" disabled></ion-toggle>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>Mushrooms</ion-label>\n    <ion-toggle slot=\"end\" value=\"mushrooms\"></ion-toggle>\n  </ion-item>\n</ion-list>\n```\n",
+    "react": "```tsx\nimport React from 'react';\n\nimport { IonToggle, IonList, IonItem, IonLabel } from '@ionic/react';\n\nconst Example: React.SFC<{}> = () => (\n  <>\n    {/*-- Default Toggle --*/}\n    <IonToggle></IonToggle>\n\n    {/*-- Disabled Toggle --*/}\n    <IonToggle disabled></IonToggle>\n\n    {/*-- Checked Toggle --*/}\n    <IonToggle checked></IonToggle>\n\n    {/*-- Toggle Colors --*/}\n    <IonToggle color=\"primary\"></IonToggle>\n    <IonToggle color=\"secondary\"></IonToggle>\n    <IonToggle color=\"danger\"></IonToggle>\n    <IonToggle color=\"light\"></IonToggle>\n    <IonToggle color=\"dark\"></IonToggle>\n\n    {/*-- Toggles in a List --*/}\n    <IonList>\n      <IonItem>\n        <IonLabel>Pepperoni</IonLabel>\n        <IonToggle value=\"pepperoni\" onChange={() => {}}></IonToggle>\n      </IonItem>\n\n      <IonItem>\n        <IonLabel>Sausage</IonLabel>\n        <IonToggle value=\"sausage\" onChange={() => {}} disabled={true}></IonToggle>\n      </IonItem>\n\n      <IonItem>\n        <IonLabel>Mushrooms</IonLabel>\n        <IonToggle value=\"mushrooms\" onChange={() => {}}></IonToggle>\n      </IonItem>\n    </IonList>\n  </>\n);\n\nexport default Example;\n```\n",
+    "vue": "```html\n<template>\n  <!-- Default Toggle -->\n  <ion-toggle></ion-toggle>\n\n  <!-- Disabled Toggle -->\n  <ion-toggle disabled></ion-toggle>\n\n  <!-- Checked Toggle -->\n  <ion-toggle checked></ion-toggle>\n\n  <!-- Toggle Colors -->\n  <ion-toggle color=\"primary\"></ion-toggle>\n  <ion-toggle color=\"secondary\"></ion-toggle>\n  <ion-toggle color=\"danger\"></ion-toggle>\n  <ion-toggle color=\"light\"></ion-toggle>\n  <ion-toggle color=\"dark\"></ion-toggle>\n\n  <!-- Toggles in a List -->\n  <ion-list>\n    <ion-item>\n      <ion-label>Pepperoni</ion-label>\n      <ion-toggle @ionChange=\"toppings.push($event.target.value)\" value=\"pepperoni\" v-bind:checked=\"toppings.indexOf('pepperoni') !== -1\"></ion-toggle>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>Sausage</ion-label>\n      <ion-toggle @ionChange=\"toppings.push($event.target.value)\" value=\"sausage\" v-bind:checked=\"toppings.indexOf('pepperoni') !== -1\" disabled=\"true\"></ion-toggle>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>Mushrooms</ion-label>\n      <ion-toggle @ionChange=\"toppings.push($event.target.value)\" value=\"mushrooms\" v-bind:checked=\"toppings.indexOf('pepperoni') !== -1\"></ion-toggle>\n    </ion-item>\n  </ion-list>\n</template>\n```\n"
+  },
+  "props": [
+    {
+      "name": "checked",
+      "type": "boolean",
+      "mutable": true,
+      "attr": "checked",
+      "reflectToAttr": false,
+      "docs": "If `true`, the toggle is selected.",
+      "docsTags": [],
+      "default": "false",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "color",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "color",
+      "reflectToAttr": false,
+      "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "disabled",
+      "reflectToAttr": false,
+      "docs": "If `true`, the user cannot interact with the toggle.",
+      "docsTags": [],
+      "default": "false",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "mutable": false,
+      "attr": "name",
+      "reflectToAttr": false,
+      "docs": "The name of the control, which is submitted with the form data.",
+      "docsTags": [],
+      "default": "this.inputId",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "value",
+      "type": "null | string | undefined",
+      "mutable": false,
+      "attr": "value",
+      "reflectToAttr": false,
+      "docs": "The value of the toggle does not mean if it's checked or not, use the `checked`\nproperty for that.\n\nThe value of a toggle is analogous to the value of a `<input type=\"checkbox\">`,\nit's only used when the toggle participates in a native `<form>`.",
+      "docsTags": [],
+      "default": "'on'",
+      "optional": true,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [
+    {
+      "event": "ionBlur",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the toggle loses focus.",
+      "docsTags": []
+    },
+    {
+      "event": "ionChange",
+      "detail": "ToggleChangeEventDetail",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the value property has changed.",
+      "docsTags": []
+    },
+    {
+      "event": "ionFocus",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the toggle has focus.",
+      "docsTags": []
+    }
+  ],
+  "styles": [
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the toggle"
+    },
+    {
+      "name": "--background-checked",
+      "annotation": "prop",
+      "docs": "Background of the toggle when checked"
+    },
+    {
+      "name": "--handle-background",
+      "annotation": "prop",
+      "docs": "Background of the toggle handle"
+    },
+    {
+      "name": "--handle-background-checked",
+      "annotation": "prop",
+      "docs": "Background of the toggle handle when checked"
+    }
+  ],
+  "slots": []
+}

@@ -1,0 +1,71 @@
+{
+  "tag": "ion-loading-controller",
+  "encapsulation": "none",
+  "readme": "# ion-loading-controller\n\nLoading controllers programmatically control the loading component. Loadings can be created and dismissed from the loading controller. View the [Loading](../loading) documentation for a full list of options to pass upon creation.\n\n\n\n",
+  "docs": "Loading controllers programmatically control the loading component. Loadings can be created and dismissed from the loading controller. View the [Loading](../loading) documentation for a full list of options to pass upon creation.",
+  "docsTags": [],
+  "usage": {
+    "javascript": "```javascript\nasync function presentLoading() {\n  const loadingController = document.querySelector('ion-loading-controller');\n  await loadingController.componentOnReady();\n\n  const loadingElement = await loadingController.create({\n    message: 'Please wait...',\n    spinner: 'crescent',\n    duration: 2000\n  });\n  return await loadingElement.present();\n}\n```\n"
+  },
+  "props": [],
+  "methods": [
+    {
+      "name": "create",
+      "returns": {
+        "type": "Promise<HTMLIonLoadingElement>",
+        "docs": ""
+      },
+      "signature": "create(opts?: LoadingOptions | undefined) => Promise<HTMLIonLoadingElement>",
+      "parameters": [
+        {
+          "name": "opts",
+          "type": "LoadingOptions | undefined",
+          "docs": ""
+        }
+      ],
+      "docs": "Create a loading overlay with loading options.",
+      "docsTags": []
+    },
+    {
+      "name": "dismiss",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "dismiss(data?: any, role?: string | undefined, id?: string | undefined) => Promise<boolean>",
+      "parameters": [
+        {
+          "name": "data",
+          "type": "any",
+          "docs": ""
+        },
+        {
+          "name": "role",
+          "type": "string | undefined",
+          "docs": ""
+        },
+        {
+          "name": "id",
+          "type": "string | undefined",
+          "docs": ""
+        }
+      ],
+      "docs": "Dismiss the open loading overlay.",
+      "docsTags": []
+    },
+    {
+      "name": "getTop",
+      "returns": {
+        "type": "Promise<HTMLIonLoadingElement | undefined>",
+        "docs": ""
+      },
+      "signature": "getTop() => Promise<HTMLIonLoadingElement | undefined>",
+      "parameters": [],
+      "docs": "Get the most recently opened loading overlay.",
+      "docsTags": []
+    }
+  ],
+  "events": [],
+  "styles": [],
+  "slots": []
+}

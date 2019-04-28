@@ -1,0 +1,240 @@
+{
+  "tag": "ion-fab-button",
+  "encapsulation": "shadow",
+  "readme": "# ion-fab-button\n\nFloating Action Buttons (FABs) represent the primary action in an application. By default, they have a circular shape. When pressed, the button may open more related actions. As the name suggests, FABs generally float over the content in a fixed position. This is not achieved exclusively by using an `<ion-fab-button>FAB</ion-fab-button>`. They need to be wrapped with an `<ion-fab>` component in order to be fixed over the content.\n\nIf the FAB button is not wrapped with `<ion-fab>`, it will scroll with the content. FAB buttons have a default size, a mini size and can accept different colors:\n",
+  "docs": "Floating Action Buttons (FABs) represent the primary action in an application. By default, they have a circular shape. When pressed, the button may open more related actions. As the name suggests, FABs generally float over the content in a fixed position. This is not achieved exclusively by using an `<ion-fab-button>FAB</ion-fab-button>`. They need to be wrapped with an `<ion-fab>` component in order to be fixed over the content.\n\nIf the FAB button is not wrapped with `<ion-fab>`, it will scroll with the content. FAB buttons have a default size, a mini size and can accept different colors:",
+  "docsTags": [],
+  "usage": {
+    "angular": "```html\n<ion-content>\n\n  <!-- Fixed Floating Action Button that does not scroll with the content -->\n  <ion-fab>\n    <ion-fab-button>Button</ion-fab-button>\n  </ion-fab>\n\n  <!-- Default Floating Action Button that scrolls with the content.-->\n  <ion-fab-button>Default</ion-fab-button>\n\n  <!-- Mini -->\n  <ion-fab-button size=\"small\">Mini</ion-fab-button>\n\n  <!-- Colors -->\n  <ion-fab-button color=\"primary\">Primary</ion-fab-button>\n  <ion-fab-button color=\"secondary\">Secondary</ion-fab-button>\n  <ion-fab-button color=\"danger\">Danger</ion-fab-button>\n  <ion-fab-button color=\"light\">Light</ion-fab-button>\n  <ion-fab-button color=\"dark\">Dark</ion-fab-button>\n\n</ion-content>\n```\n",
+    "javascript": "```html\n<ion-content>\n\n  <!-- Fixed Floating Action Button that does not scroll with the content -->\n  <ion-fab>\n    <ion-fab-button>Button</ion-fab-button>\n  </ion-fab>\n\n  <!-- Default Floating Action Button that scrolls with the content.-->\n  <ion-fab-button>Default</ion-fab-button>\n\n  <!-- Mini -->\n  <ion-fab-button size=\"small\">Mini</ion-fab-button>\n\n  <!-- Colors -->\n  <ion-fab-button color=\"primary\">Primary</ion-fab-button>\n  <ion-fab-button color=\"secondary\">Secondary</ion-fab-button>\n  <ion-fab-button color=\"danger\">Danger</ion-fab-button>\n  <ion-fab-button color=\"light\">Light</ion-fab-button>\n  <ion-fab-button color=\"dark\">Dark</ion-fab-button>\n\n</ion-content>\n```\n",
+    "react": "```tsx\nimport React from 'react';\n\nimport { IonContent, IonFab, IonFabButton } from '@ionic/react';\n\nconst Example: React.SFC<{}> = () => (\n  <IonContent>\n\n    {/*-- Fixed Floating Action Button that does not scroll with the content --*/}\n    <IonFab>\n      <IonFabButton>Button</IonFabButton>\n    </IonFab>\n\n    {/*-- Default Floating Action Button that scrolls with the content.--*/}\n    <IonFabButton>Default</IonFabButton>\n\n    {/*-- Mini --*/}\n    <IonFabButton size=\"small\">Mini</IonFabButton>\n\n    {/*-- Colors --*/}\n    <IonFabButton color=\"primary\">Primary</IonFabButton>\n    <IonFabButton color=\"secondary\">Secondary</IonFabButton>\n    <IonFabButton color=\"danger\">Danger</IonFabButton>\n    <IonFabButton color=\"light\">Light</IonFabButton>\n    <IonFabButton color=\"dark\">Dark</IonFabButton>\n  </IonContent>\n);\n\nexport default Example\n",
+    "vue": "```html\n<template>\n  <ion-content>\n\n    <!-- Fixed Floating Action Button that does not scroll with the content -->\n    <ion-fab>\n      <ion-fab-button>Button</ion-fab-button>\n    </ion-fab>\n\n    <!-- Default Floating Action Button that scrolls with the content.-->\n    <ion-fab-button>Default</ion-fab-button>\n\n    <!-- Mini -->\n    <ion-fab-button size=\"small\">Mini</ion-fab-button>\n\n    <!-- Colors -->\n    <ion-fab-button color=\"primary\">Primary</ion-fab-button>\n    <ion-fab-button color=\"secondary\">Secondary</ion-fab-button>\n    <ion-fab-button color=\"danger\">Danger</ion-fab-button>\n    <ion-fab-button color=\"light\">Light</ion-fab-button>\n    <ion-fab-button color=\"dark\">Dark</ion-fab-button>\n\n  </ion-content>\n</template>\n```\n"
+  },
+  "props": [
+    {
+      "name": "activated",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "activated",
+      "reflectToAttr": false,
+      "docs": "If `true`, the fab button will be show a close icon.",
+      "docsTags": [],
+      "default": "false",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "color",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "color",
+      "reflectToAttr": false,
+      "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "disabled",
+      "reflectToAttr": false,
+      "docs": "If `true`, the user cannot interact with the fab button.",
+      "docsTags": [],
+      "default": "false",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "href",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "href",
+      "reflectToAttr": false,
+      "docs": "Contains a URL or a URL fragment that the hyperlink points to.\nIf this property is set, an anchor tag will be rendered.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "routerDirection",
+      "type": "\"back\" | \"forward\" | \"root\"",
+      "mutable": false,
+      "attr": "router-direction",
+      "reflectToAttr": false,
+      "docs": "When using a router, it specifies the transition direction when navigating to\nanother page using `href`.",
+      "docsTags": [],
+      "default": "'forward'",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "show",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "show",
+      "reflectToAttr": false,
+      "docs": "If `true`, the fab button will show when in a fab-list.",
+      "docsTags": [],
+      "default": "false",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "size",
+      "type": "\"small\" | undefined",
+      "mutable": false,
+      "attr": "size",
+      "reflectToAttr": false,
+      "docs": "The size of the button. Set this to `small` in order to have a mini fab.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "translucent",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "translucent",
+      "reflectToAttr": false,
+      "docs": "If `true`, the fab button will be translucent.",
+      "docsTags": [],
+      "default": "false",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "type",
+      "type": "\"button\" | \"reset\" | \"submit\"",
+      "mutable": false,
+      "attr": "type",
+      "reflectToAttr": false,
+      "docs": "The type of the button.",
+      "docsTags": [],
+      "default": "'button'",
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [
+    {
+      "event": "ionBlur",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the button loses focus.",
+      "docsTags": []
+    },
+    {
+      "event": "ionFocus",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the button has focus.",
+      "docsTags": []
+    }
+  ],
+  "styles": [
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the button"
+    },
+    {
+      "name": "--background-activated",
+      "annotation": "prop",
+      "docs": "Background of the button when activated"
+    },
+    {
+      "name": "--background-focused",
+      "annotation": "prop",
+      "docs": "Background of the button when focused"
+    },
+    {
+      "name": "--border-color",
+      "annotation": "prop",
+      "docs": "Border color of the button"
+    },
+    {
+      "name": "--border-radius",
+      "annotation": "prop",
+      "docs": "Border radius of the button"
+    },
+    {
+      "name": "--border-style",
+      "annotation": "prop",
+      "docs": "Border style of the button"
+    },
+    {
+      "name": "--border-width",
+      "annotation": "prop",
+      "docs": "Border width of the button"
+    },
+    {
+      "name": "--box-shadow",
+      "annotation": "prop",
+      "docs": "Box shadow of the button"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Text color of the button"
+    },
+    {
+      "name": "--color-activated",
+      "annotation": "prop",
+      "docs": "Text color of the button when activated"
+    },
+    {
+      "name": "--color-focused",
+      "annotation": "prop",
+      "docs": "Text color of the button when focused"
+    },
+    {
+      "name": "--padding-bottom",
+      "annotation": "prop",
+      "docs": "Padding bottom of the button"
+    },
+    {
+      "name": "--padding-end",
+      "annotation": "prop",
+      "docs": "Padding end of the button"
+    },
+    {
+      "name": "--padding-start",
+      "annotation": "prop",
+      "docs": "Padding start of the button"
+    },
+    {
+      "name": "--padding-top",
+      "annotation": "prop",
+      "docs": "Padding top of the button"
+    },
+    {
+      "name": "--ripple-color",
+      "annotation": "prop",
+      "docs": "Color of the button ripple effect"
+    },
+    {
+      "name": "--transition",
+      "annotation": "prop",
+      "docs": "Transition of the button"
+    }
+  ],
+  "slots": []
+}

@@ -1,0 +1,40 @@
+{
+  "tag": "ion-footer",
+  "encapsulation": "none",
+  "readme": "# ion-footer\n\nFooter is a root component of a page that sits at the bottom of the page.\nFooter can be a wrapper for ion-toolbar to make sure the content area is sized correctly.\n",
+  "docs": "Footer is a root component of a page that sits at the bottom of the page.\nFooter can be a wrapper for ion-toolbar to make sure the content area is sized correctly.",
+  "docsTags": [],
+  "usage": {
+    "javascript": "```html\n<ion-content></ion-content>\n\n<ion-footer>\n  <ion-toolbar>\n    <ion-title>Footer</ion-title>\n  </ion-toolbar>\n</ion-footer>\n```\n",
+    "react": "```tsx\nimport React from 'react';\n\nimport { IonContent, IonFooter, IonToolbar, IonTitle } from '@ionic/react';\n\nconst Example: React.SFC<{}> = () => (\n  <>\n    <IonContent></IonContent>\n\n    <IonFooter>\n      <IonToolbar>\n        <IonTitle>Footer</IonTitle>\n      </IonToolbar>\n    </IonFooter>\n  </>\n);\n\nexport default Example;\n```\n"
+  },
+  "props": [
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "translucent",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "translucent",
+      "reflectToAttr": false,
+      "docs": "If `true`, the footer will be translucent.\nNote: In order to scroll content behind the footer, the `fullscreen`\nattribute needs to be set on the content.",
+      "docsTags": [],
+      "default": "false",
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "styles": [],
+  "slots": []
+}

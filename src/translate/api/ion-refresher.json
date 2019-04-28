@@ -1,0 +1,141 @@
+{
+  "tag": "ion-refresher",
+  "encapsulation": "none",
+  "readme": "# ion-refresher\n\nThe refresher provides pull-to-refresh functionality on a content component.\nThe pull-to-refresh pattern lets a user pull down on a list of data using touch\nin order to retrieve more data.\n\nData should be modified during the refresher's output events. Once the async\noperation has completed and the refreshing should end, call `complete()` on the\nrefresher.\n\n\n",
+  "docs": "The refresher provides pull-to-refresh functionality on a content component.\nThe pull-to-refresh pattern lets a user pull down on a list of data using touch\nin order to retrieve more data.\n\nData should be modified during the refresher's output events. Once the async\noperation has completed and the refreshing should end, call `complete()` on the\nrefresher.",
+  "docsTags": [],
+  "usage": {
+    "angular": "```html\n<!-- Default Refresher -->\n<ion-content>\n  <ion-refresher slot=\"fixed\" (ionRefresh)=\"doRefresh($event)\">\n    <ion-refresher-content></ion-refresher-content>\n  </ion-refresher>\n</ion-content>\n\n<!-- Custom Refresher Content -->\n<ion-content>\n  <ion-refresher slot=\"fixed\" (ionRefresh)=\"doRefresh($event)\">\n    <ion-refresher-content\n      pullingIcon=\"arrow-dropdown\"\n      pullingText=\"Pull to refresh\"\n      refreshingSpinner=\"circles\"\n      refreshingText=\"Refreshing...\">\n    </ion-refresher-content>\n  </ion-refresher>\n</ion-content>\n```\n\n```typescript\nimport { Component } from '@angular/core';\n\n@Component({\n  selector: 'refresher-example',\n  templateUrl: 'refresher-example.html',\n  styleUrls: ['./refresher-example.css'],\n})\nexport class RefresherExample {\n  constructor() {}\n\n  doRefresh(event) {\n    console.log('Begin async operation');\n\n    setTimeout(() => {\n      console.log('Async operation has ended');\n      event.target.complete();\n    }, 2000);\n  }\n}\n```\n",
+    "javascript": "```html\n<!-- Default Refresher -->\n<ion-content>\n  <ion-refresher slot=\"fixed\">\n    <ion-refresher-content></ion-refresher-content>\n  </ion-refresher>\n</ion-content>\n\n<!-- Custom Refresher Content -->\n<ion-content>\n  <ion-refresher slot=\"fixed\">\n    <ion-refresher-content\n      pulling-icon=\"arrow-dropdown\"\n      pulling-text=\"Pull to refresh\"\n      refreshing-spinner=\"circles\"\n      refreshing-text=\"Refreshing...\">\n    </ion-refresher-content>\n  </ion-refresher>\n</ion-content>\n```\n",
+    "react": "```tsx\nimport React from 'react';\n\nimport { IonContent, IonRefresher, IonRefresherContent } from '@ionic/react';\n\nfunction doRefresh(event: CustomEvent) {\n  console.log('Begin async operation');\n\n  setTimeout(() => {\n    console.log('Async operation has ended');\n    event.target.complete();\n  }, 2000);\n}\n\nconst Example: React.SFC<{}> = () => (\n  <>\n    {/*-- Default Refresher --*/}\n    <IonContent>\n      <IonRefresher slot=\"fixed\" onIonRefresh={doRefresh}>\n        <IonRefresherContent></IonRefresherContent>\n      </IonRefresher>\n    </IonContent>\n\n    {/*-- Custom Refresher Content --*/}\n    <IonContent>\n      <IonRefresher slot=\"fixed\" onIonRefresh={doRefresh}>\n        <IonRefresherContent\n          pullingIcon=\"arrow-dropdown\"\n          pullingText=\"Pull to refresh\"\n          refreshingSpinner=\"circles\"\n          refreshingText=\"Refreshing...\">\n        </IonRefresherContent>\n      </IonRefresher>\n    </IonContent>\n  </>\n\n  }\n\n\n);\n\nexport default Example\n",
+    "vue": "```html\n<template>\n  <!-- Default Refresher -->\n  <ion-content>\n    <ion-refresher slot=\"fixed\" @ionRefresh=\"doRefresh($event)\">\n      <ion-refresher-content></ion-refresher-content>\n    </ion-refresher>\n  </ion-content>\n\n  <!-- Custom Refresher Content -->\n  <ion-content>\n    <ion-refresher slot=\"fixed\" @ionRefresh=\"doRefresh($event)\">\n      <ion-refresher-content\n        pullingIcon=\"arrow-dropdown\"\n        pullingText=\"Pull to refresh\"\n        refreshingSpinner=\"circles\"\n        refreshingText=\"Refreshing...\">\n      </ion-refresher-content>\n    </ion-refresher>\n  </ion-content>\n</template>\n<script lang=\"ts\">\n  import { Component, Vue } from 'vue-property-decorator';\n\n  @Component()\n  export default class Menu extends Vue {\n\n    doRefresh(event) {\n      console.log('Begin async operation');\n\n      setTimeout(() => {\n        console.log('Async operation has ended');\n        event.target.complete();\n      }, 2000);\n    }\n  }\n</script>\n```\n"
+  },
+  "props": [
+    {
+      "name": "closeDuration",
+      "type": "string",
+      "mutable": false,
+      "attr": "close-duration",
+      "reflectToAttr": false,
+      "docs": "Time it takes to close the refresher.",
+      "docsTags": [],
+      "default": "'280ms'",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "disabled",
+      "reflectToAttr": false,
+      "docs": "If `true`, the refresher will be hidden.",
+      "docsTags": [],
+      "default": "false",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "pullMax",
+      "type": "number",
+      "mutable": false,
+      "attr": "pull-max",
+      "reflectToAttr": false,
+      "docs": "The maximum distance of the pull until the refresher\nwill automatically go into the `refreshing` state.\nDefaults to the result of `pullMin + 60`.",
+      "docsTags": [],
+      "default": "this.pullMin + 60",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "pullMin",
+      "type": "number",
+      "mutable": false,
+      "attr": "pull-min",
+      "reflectToAttr": false,
+      "docs": "The minimum distance the user must pull down until the\nrefresher will go into the `refreshing` state.",
+      "docsTags": [],
+      "default": "60",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "snapbackDuration",
+      "type": "string",
+      "mutable": false,
+      "attr": "snapback-duration",
+      "reflectToAttr": false,
+      "docs": "Time it takes the refresher to to snap back to the `refreshing` state.",
+      "docsTags": [],
+      "default": "'280ms'",
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "cancel",
+      "returns": {
+        "type": "void",
+        "docs": ""
+      },
+      "signature": "cancel() => void",
+      "parameters": [],
+      "docs": "Changes the refresher's state from `refreshing` to `cancelling`.",
+      "docsTags": []
+    },
+    {
+      "name": "complete",
+      "returns": {
+        "type": "void",
+        "docs": ""
+      },
+      "signature": "complete() => void",
+      "parameters": [],
+      "docs": "Call `complete()` when your async operation has completed.\nFor example, the `refreshing` state is while the app is performing\nan asynchronous operation, such as receiving more data from an\nAJAX request. Once the data has been received, you then call this\nmethod to signify that the refreshing has completed and to close\nthe refresher. This method also changes the refresher's state from\n`refreshing` to `completing`.",
+      "docsTags": []
+    },
+    {
+      "name": "getProgress",
+      "returns": {
+        "type": "Promise<number>",
+        "docs": ""
+      },
+      "signature": "getProgress() => Promise<number>",
+      "parameters": [],
+      "docs": "A number representing how far down the user has pulled.\nThe number `0` represents the user hasn't pulled down at all. The\nnumber `1`, and anything greater than `1`, represents that the user\nhas pulled far enough down that when they let go then the refresh will\nhappen. If they let go and the number is less than `1`, then the\nrefresh will not happen, and the content will return to it's original\nposition.",
+      "docsTags": []
+    }
+  ],
+  "events": [
+    {
+      "event": "ionPull",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted while the user is pulling down the content and exposing the refresher.",
+      "docsTags": []
+    },
+    {
+      "event": "ionRefresh",
+      "detail": "RefresherEventDetail",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the user lets go of the content and has pulled down\nfurther than the `pullMin` or pulls the content down and exceeds the pullMax.\nUpdates the refresher state to `refreshing`. The `complete()` method should be\ncalled when the async operation has completed.",
+      "docsTags": []
+    },
+    {
+      "event": "ionStart",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the user begins to start pulling down.",
+      "docsTags": []
+    }
+  ],
+  "styles": [],
+  "slots": []
+}

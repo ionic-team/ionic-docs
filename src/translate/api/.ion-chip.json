@@ -1,0 +1,64 @@
+{
+  "tag": "ion-chip",
+  "encapsulation": "shadow",
+  "readme": "# ion-chip\n\nChips represent complex entities in small blocks, such as a contact. A chip can contain several different elements such as avatars, text, and icons.\n",
+  "docs": "Chips represent complex entities in small blocks, such as a contact. A chip can contain several different elements such as avatars, text, and icons.",
+  "docsTags": [],
+  "usage": {
+    "angular": "```html\n<ion-chip>\n  <ion-label>Default</ion-label>\n</ion-chip>\n\n<ion-chip>\n  <ion-label color=\"secondary\">Secondary Label</ion-label>\n</ion-chip>\n\n<ion-chip color=\"secondary\">\n  <ion-label color=\"dark\">Secondary w/ Dark label</ion-label>\n</ion-chip>\n\n<ion-chip>\n  <ion-icon name=\"pin\"></ion-icon>\n  <ion-label>Default</ion-label>\n</ion-chip>\n\n<ion-chip>\n  <ion-icon name=\"heart\" color=\"dark\"></ion-icon>\n  <ion-label>Default</ion-label>\n</ion-chip>\n\n<ion-chip>\n  <ion-label>Button Chip</ion-label>\n  <ion-icon name=\"close-circle\"></ion-icon>\n</ion-chip>\n\n<ion-chip>\n  <ion-icon name=\"pin\" color=\"primary\"></ion-icon>\n  <ion-label>Icon Chip</ion-label>\n  <ion-icon name=\"close\"></ion-icon>\n</ion-chip>\n\n<ion-chip>\n  <ion-avatar>\n    <img src=\"https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y\">\n  </ion-avatar>\n  <ion-label>Avatar Chip</ion-label>\n  <ion-icon name=\"close-circle\"></ion-icon>\n</ion-chip>\n```\n",
+    "javascript": "```html\n<ion-chip>\n  <ion-label>Default</ion-label>\n</ion-chip>\n\n<ion-chip>\n  <ion-label color=\"secondary\">Secondary Label</ion-label>\n</ion-chip>\n\n<ion-chip color=\"secondary\">\n  <ion-label color=\"dark\">Secondary w/ Dark label</ion-label>\n</ion-chip>\n\n<ion-chip>\n  <ion-icon name=\"pin\"></ion-icon>\n  <ion-label>Default</ion-label>\n</ion-chip>\n\n<ion-chip>\n  <ion-icon name=\"heart\" color=\"dark\"></ion-icon>\n  <ion-label>Default</ion-label>\n</ion-chip>\n\n<ion-chip>\n  <ion-label>Button Chip</ion-label>\n  <ion-icon name=\"close-circle\"></ion-icon>\n</ion-chip>\n\n<ion-chip>\n  <ion-icon name=\"pin\" color=\"primary\"></ion-icon>\n  <ion-label>Icon Chip</ion-label>\n  <ion-icon name=\"close\"></ion-icon>\n</ion-chip>\n\n<ion-chip>\n  <ion-avatar>\n    <img src=\"https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y\">\n  </ion-avatar>\n  <ion-label>Avatar Chip</ion-label>\n  <ion-icon name=\"close-circle\"></ion-icon>\n</ion-chip>\n```\n",
+    "react": "```tsx\nimport React from 'react';\n\nimport { IonChip, IonLabel, IonIcon, IonAvatar } from '@ionic/react';\n\nconst ChipExample: React.SFC<{}> = () => (\n  <>\n    <IonChip>\n      <IonLabel>Default</IonLabel>\n    </IonChip>\n\n    <IonChip>\n      <IonLabel color=\"secondary\">Secondary Label</IonLabel>\n    </IonChip>\n\n    <IonChip color=\"secondary\">\n      <IonLabel color=\"dark\">Secondary w/ Dark label</IonLabel>\n    </IonChip>\n\n    <IonChip>\n      <IonIcon name=\"pin\" />\n      <IonLabel>Default</IonLabel>\n    </IonChip>\n\n    <IonChip>\n      <IonIcon name=\"heart\" color=\"dark\" />\n      <IonLabel>Default</IonLabel>\n    </IonChip>\n\n    <IonChip>\n      <IonLabel>Button Chip</IonLabel>\n      <IonIcon name=\"close-circle\" />\n    </IonChip>\n\n    <IonChip>\n      <IonIcon name=\"pin\" color=\"primary\" />\n      <IonLabel>Icon Chip</IonLabel>\n      <IonIcon name=\"close\" />\n    </IonChip>\n\n    <IonChip>\n      <IonAvatar>\n        <img src=\"https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y\" />\n      </IonAvatar>\n      <IonLabel>Avatar Chip</IonLabel>\n      <IonIcon name=\"close-circle\" />\n    </IonChip>\n  </>\n);\n\nexport default ChipExample;\n",
+    "vue": "```html\n<template>\n  <ion-chip>\n    <ion-label>Default</ion-label>\n  </ion-chip>\n\n  <ion-chip>\n    <ion-label color=\"secondary\">Secondary Label</ion-label>\n  </ion-chip>\n\n  <ion-chip color=\"secondary\">\n    <ion-label color=\"dark\">Secondary w/ Dark label</ion-label>\n  </ion-chip>\n\n  <ion-chip>\n    <ion-icon name=\"pin\"></ion-icon>\n    <ion-label>Default</ion-label>\n  </ion-chip>\n\n  <ion-chip>\n    <ion-icon name=\"heart\" color=\"dark\"></ion-icon>\n    <ion-label>Default</ion-label>\n  </ion-chip>\n\n  <ion-chip>\n    <ion-label>Button Chip</ion-label>\n    <ion-icon name=\"close-circle\"></ion-icon>\n  </ion-chip>\n\n  <ion-chip>\n    <ion-icon name=\"pin\" color=\"primary\"></ion-icon>\n    <ion-label>Icon Chip</ion-label>\n    <ion-icon name=\"close\"></ion-icon>\n  </ion-chip>\n\n  <ion-chip>\n    <ion-avatar>\n      <img src=\"https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y\">\n    </ion-avatar>\n    <ion-label>Avatar Chip</ion-label>\n    <ion-icon name=\"close-circle\"></ion-icon>\n  </ion-chip>\n</template>\n```\n"
+  },
+  "props": [
+    {
+      "name": "color",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "color",
+      "reflectToAttr": false,
+      "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "outline",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "outline",
+      "reflectToAttr": false,
+      "docs": "Display an outline style button.",
+      "docsTags": [],
+      "default": "false",
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "styles": [
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the chip"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the chip"
+    }
+  ],
+  "slots": []
+}

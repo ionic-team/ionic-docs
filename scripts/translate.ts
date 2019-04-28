@@ -37,42 +37,21 @@ async function apply() {
   }
 }
 
-async function create(path: string) {
+import { components } from '@ionic/docs/core.json';
+async function create() {
   const fs = require('fs');
-  const isInclude = documentDirectories.find(data => {
-    if (!data) {
-      return false;
-    }
-    return (path.indexOf(data) !== -1);
-  });
-  if (!isInclude) {
-    Error('[error] path is disable string.');
-    return;
-  }
-  const resourceText: SourceJSON = JSON.parse(fs.readFileSync(process.cwd() + '/' + path, { encoding: 'UTF8' }));
-  if (!resourceText) {
-    Error('[error] path is not exist file.');
-    return;
-  }
+  components.map(component => {
+    const files = {
+      real: process.cwd() + '/src/translate/api/' + component.tag + '.json',
+      shadow: process.cwd() + '/src/translate/api/.' + component.tag + '.json'
+    };
 
-  const json = JSON.stringify({
-    target: path,
-    translate: {
-      body: {
-        'original': resourceText.body,
-        'translate': resourceText.body,
-      }
+    if (!fs.existsSync(files.real)) {
+      fs.writeFileSync(files.real, JSON.stringify(component, null, 2), { encoding: 'UTF8' });
     }
-  }, null, 2);
-  const writeFileName = process.cwd() + '/src/translate/' + path.replace('src/pages/', '');
-  if (!fs.existsSync(writeFileName.split('/').reverse().slice(1).reverse().join('/'))) {
-    fs.mkdirSync(writeFileName.split('/').reverse().slice(1).reverse().join('/'));
-  }
-  if (fs.existsSync(writeFileName)) {
-    Error('[error] translate file exist.');
-    return;
-  }
-  fs.writeFileSync(writeFileName, json, { encoding: 'UTF8' });
+
+    fs.writeFileSync(files.shadow, JSON.stringify(component, null, 2), { encoding: 'UTF8' });
+  });
 }
 
 (async () => {
@@ -80,7 +59,7 @@ async function create(path: string) {
     await apply();
   }
 
-  if (process.argv[2] === 'create' && process.argv[3]) {
-    await create(process.argv[3]);
+  if (process.argv[2] === 'create') {
+    await create();
   }
 })();

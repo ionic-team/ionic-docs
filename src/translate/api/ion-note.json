@@ -1,0 +1,47 @@
+{
+  "tag": "ion-note",
+  "encapsulation": "shadow",
+  "readme": "# ion-note\n\nNotes are text elements generally used as subtitles that provide more information. Notes are styled to appear grey by default. Notes can be used in an item as metadata text.\n\n",
+  "docs": "Notes are text elements generally used as subtitles that provide more information. Notes are styled to appear grey by default. Notes can be used in an item as metadata text.",
+  "docsTags": [],
+  "usage": {
+    "angular": "```html\n<!-- Default Note -->\n<ion-note>Default Note</ion-note>\n\n<!-- Note Colors -->\n<ion-note color=\"primary\">Primary Note</ion-note>\n<ion-note color=\"secondary\">Secondary Note</ion-note>\n<ion-note color=\"danger\">Danger Note</ion-note>\n<ion-note color=\"light\">Light Note</ion-note>\n<ion-note color=\"dark\">Dark Note</ion-note>\n\n<!-- Notes in a List -->\n<ion-list>\n  <ion-item>\n    <ion-label>Note (End)</ion-label>\n    <ion-note slot=\"end\">On</ion-note>\n  </ion-item>\n\n  <ion-item>\n    <ion-note slot=\"start\">Off</ion-note>\n    <ion-label>Note (Start)</ion-label>\n  </ion-item>\n</ion-list>\n```\n",
+    "javascript": "```html\n<!-- Default Note -->\n<ion-note>Default Note</ion-note>\n\n<!-- Note Colors -->\n<ion-note color=\"primary\">Primary Note</ion-note>\n<ion-note color=\"secondary\">Secondary Note</ion-note>\n<ion-note color=\"danger\">Danger Note</ion-note>\n<ion-note color=\"light\">Light Note</ion-note>\n<ion-note color=\"dark\">Dark Note</ion-note>\n\n<!-- Notes in a List -->\n<ion-list>\n  <ion-item>\n    <ion-label>Note (End)</ion-label>\n    <ion-note slot=\"end\">On</ion-note>\n  </ion-item>\n\n  <ion-item>\n    <ion-note slot=\"start\">Off</ion-note>\n    <ion-label>Note (Start)</ion-label>\n  </ion-item>\n</ion-list>\n```\n",
+    "react": "```tsx\nimport React from 'react';\n\nimport { IonNote, IonList, IonItem, IonLabel } from '@ionic/react';\n\nconst Example: React.SFC<{}> = () => (\n  <>\n    {/*-- Default Note --*/}\n    <IonNote>Default Note</IonNote>\n\n    {/*-- Note Colors --*/}\n    <IonNote color=\"primary\">Primary Note</IonNote>\n    <IonNote color=\"secondary\">Secondary Note</IonNote>\n    <IonNote color=\"danger\">Danger Note</IonNote>\n    <IonNote color=\"light\">Light Note</IonNote>\n    <IonNote color=\"dark\">Dark Note</IonNote>\n\n    {/*-- Notes in a List --*/}\n    <IonList>\n      <IonItem>\n        <IonLabel>Note (End)</IonLabel>\n        <IonNote slot=\"end\">On</IonNote>\n      </IonItem>\n\n      <IonItem>\n        <IonNote slot=\"start\">Off</IonNote>\n        <IonLabel>Note (Start)</IonLabel>\n      </IonItem>\n    </IonList>\n  </>\n);\n\nexport default Example\n",
+    "vue": "```html\n<template>\n  <!-- Default Note -->\n  <ion-note>Default Note</ion-note>\n\n  <!-- Note Colors -->\n  <ion-note color=\"primary\">Primary Note</ion-note>\n  <ion-note color=\"secondary\">Secondary Note</ion-note>\n  <ion-note color=\"danger\">Danger Note</ion-note>\n  <ion-note color=\"light\">Light Note</ion-note>\n  <ion-note color=\"dark\">Dark Note</ion-note>\n\n  <!-- Notes in a List -->\n  <ion-list>\n    <ion-item>\n      <ion-label>Note (End)</ion-label>\n      <ion-note slot=\"end\">On</ion-note>\n    </ion-item>\n\n    <ion-item>\n      <ion-note slot=\"start\">Off</ion-note>\n      <ion-label>Note (Start)</ion-label>\n    </ion-item>\n  </ion-list>\n</template>\n```\n"
+  },
+  "props": [
+    {
+      "name": "color",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "color",
+      "reflectToAttr": false,
+      "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "styles": [
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the note"
+    }
+  ],
+  "slots": []
+}

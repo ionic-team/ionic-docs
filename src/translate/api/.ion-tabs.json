@@ -1,0 +1,109 @@
+{
+  "tag": "ion-tabs",
+  "encapsulation": "shadow",
+  "readme": "# ion-tabs\n\nTabs are a top level navigation component to implement a tab-based navigation.\nThe component is a container of individual [Tab](../tab/) components.\n\n`ion-tabs` is a styleless component that works as a router outlet in order to handle navigation.\nThis component does not provide any UI feedback or mechanism to switch between tabs.\nIn order to do so, an `ion-tab-bar` should be provided as a direct child of `ion-tabs`:\n\n```html\n<ion-tabs>\n  <ion-tab tab=\"home\">Home Content</ion-tab>\n  <ion-tab tab=\"settings\">Settings Content</ion-tab>\n\n  <ion-tab-bar slot=\"bottom\">\n\n    <ion-tab-button tab=\"home\">\n      <ion-label>Home</ion-label>\n      <ion-icon name=\"home\"></ion-icon>\n      <ion-badge>6</ion-badge>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"settings\">\n      <ion-label>Settings</ion-label>\n      <ion-icon name=\"settings\"></ion-icon>\n    </ion-tab-button>\n\n  </ion-tab-bar>\n</ion-tabs>\n```\n\nNote that both `ion-tabs` and `ion-tab-bar` can be used as standalone elements. They don’t depend on each other to work, but they are usually used together in order to implement a tab-based navigation that feels like a native app.\n\n`ion-tab-bar` always needs `slot=\"bottom\"` in order to be projected into `ion-tabs` at the right place.\n\n## The \"tab\" property\n\nEach `ion-tab-button` will activate one of the tabs when tapped.\nIn order to link the button to the `ion-tab` container, a matching `tab` property must be used.\n\n```html\n<ion-tab tab=\"settings\">\n[...]\n<ion-tab-button tab=\"settings\">\n```\n\nThis `ion-tab-button` and `ion-tab` are now linked by the common `tab` property.\n\nThe `tab` property identifies each tab, and it has to be unique within the scope of the same `ion-tabs`. It's important to set the same property to `ion-tab` and `ion-tab-button`, even if you are only using one. e.g. You could use the `ion-tab-bar` without using `ion-tabs`. In this case you should still give each `ion-tab` the property of `tab=\"something\"`.\n\n### Router integration\n\nWhen the ionic's router (`ion-router`) is used, the `tab` property matches the \"component\" of `ion-route`:\n\nThe following route within the scope of a `ion-tabs` outlet:\n\n```html\n<ion-route url=\"/settings-page\" component=\"settings\"></ion-route>\n```\n\nWould match the following tab:\n\n```html\n<ion-tab tab=\"settings\" component=\"settings-component\"></ion-tab>\n```\n\n### Angular Router integration\n\nUsing tabs with Angular's router is fairly straight forward. Here you only need to define tab which is the reference to the route.\n\n```html\n\n<ion-tabs>\n  <ion-tab-bar slot=\"bottom\">\n    <ion-tab-button tab=\"schedule\">\n      <ion-icon name=\"calendar\"></ion-icon>\n      <ion-label>Schedule</ion-label>\n    </ion-tab-button>\n  </ion-tab-bar>\n</ion-tabs>\n```\n",
+  "docs": "Tabs are a top level navigation component to implement a tab-based navigation.\nThe component is a container of individual [Tab](../tab/) components.\n\n`ion-tabs` is a styleless component that works as a router outlet in order to handle navigation.\nThis component does not provide any UI feedback or mechanism to switch between tabs.\nIn order to do so, an `ion-tab-bar` should be provided as a direct child of `ion-tabs`:\n\n```html\n<ion-tabs>\n  <ion-tab tab=\"home\">Home Content</ion-tab>\n  <ion-tab tab=\"settings\">Settings Content</ion-tab>\n\n  <ion-tab-bar slot=\"bottom\">\n\n    <ion-tab-button tab=\"home\">\n      <ion-label>Home</ion-label>\n      <ion-icon name=\"home\"></ion-icon>\n      <ion-badge>6</ion-badge>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"settings\">\n      <ion-label>Settings</ion-label>\n      <ion-icon name=\"settings\"></ion-icon>\n    </ion-tab-button>\n\n  </ion-tab-bar>\n</ion-tabs>\n```\n\nNote that both `ion-tabs` and `ion-tab-bar` can be used as standalone elements. They don’t depend on each other to work, but they are usually used together in order to implement a tab-based navigation that feels like a native app.\n\n`ion-tab-bar` always needs `slot=\"bottom\"` in order to be projected into `ion-tabs` at the right place.",
+  "docsTags": [
+    {
+      "name": "slot",
+      "text": "- Content is placed between the named slots if provided without a slot."
+    },
+    {
+      "name": "slot",
+      "text": "top - Content is placed at the top of the screen."
+    },
+    {
+      "name": "slot",
+      "text": "bottom - Content is placed at the bottom of the screen."
+    }
+  ],
+  "usage": {
+    "angular": "```html\n<ion-tabs>\n  <ion-tab-bar slot=\"bottom\">\n    <ion-tab-button tab=\"schedule\">\n      <ion-icon name=\"calendar\"></ion-icon>\n      <ion-label>Schedule</ion-label>\n      <ion-badge>6</ion-badge>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"speakers\">\n      <ion-icon name=\"contacts\"></ion-icon>\n      <ion-label>Speakers</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"map\">\n      <ion-icon name=\"map\"></ion-icon>\n      <ion-label>Map</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"about\">\n      <ion-icon name=\"information-circle\"></ion-icon>\n      <ion-label>About</ion-label>\n    </ion-tab-button>\n  </ion-tab-bar>\n</ion-tabs>\n```\n",
+    "javascript": "```html\n<ion-tabs>\n\n  <ion-tab tab=\"tab-schedule\">\n    <ion-nav></ion-nav>\n  </ion-tab>\n\n  <ion-tab tab=\"tab-speaker\">\n    <ion-nav></ion-nav>\n  </ion-tab>\n\n  <ion-tab tab=\"tab-map\" component=\"page-map\">\n    <ion-nav></ion-nav>\n  </ion-tab>\n\n  <ion-tab tab=\"tab-about\" component=\"page-about\">\n    <ion-nav></ion-nav>\n  </ion-tab>\n\n  <ion-tab-bar slot=\"bottom\">\n    <ion-tab-button tab=\"tab-schedule\">\n      <ion-icon name=\"calendar\"></ion-icon>\n      <ion-label>Schedule</ion-label>\n      <ion-badge>6</ion-badge>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"tab-speaker\">\n      <ion-icon name=\"contacts\"></ion-icon>\n      <ion-label>Speakers</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"tab-map\">\n      <ion-icon name=\"map\"></ion-icon>\n      <ion-label>Map</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"tab-about\">\n      <ion-icon name=\"information-circle\"></ion-icon>\n      <ion-label>About</ion-label>\n    </ion-tab-button>\n  </ion-tab-bar>\n\n</ion-tabs>\n```\n",
+    "react": "```tsx\nimport React from 'react';\n\nimport { IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel, IonBadge } from '@ionic/react';\n\nconst Example: React.SFC<{}> = () => (\n\n  <IonTabs>\n    <IonTabBar slot=\"bottom\">\n      <IonTabButton tab=\"schedule\">\n        <IonIcon name=\"calendar\" />\n        <IonLabel>Schedule</IonLabel>\n        <IonBadge>6</IonBadge>\n      </IonTabButton>\n\n      <IonTabButton tab=\"speakers\">\n        <IonIcon name=\"contacts\" />\n        <IonLabel>Speakers</IonLabel>\n      </IonTabButton>\n\n      <IonTabButton tab=\"map\">\n        <IonIcon name=\"map\" />\n        <IonLabel>Map</IonLabel>\n      </IonTabButton>\n\n      <IonTabButton tab=\"about\">\n        <IonIcon name=\"information-circle\" />\n        <IonLabel>About</IonLabel>\n      </IonTabButton>\n    </IonTabBar>\n  </IonTabs>\n);\n\nexport default Example;\n```\n",
+    "vue": "```html\n<template>\n  <!-- Listen to before and after tab change events -->\n  <ion-tabs @IonTabsWillChange=\"beforeTabChange\" @IonTabsDidChange=\"afterTabChange\">\n    <ion-tab tab=\"schedule\">\n      <Schedule />\n    </ion-tab>\n\n    <!-- Match by \"app.speakers\" route name -->\n    <ion-tab tab=\"speakers\" :routes=\"'app.speakers'\">\n      <Speakers />\n    </ion-tab>\n\n    <!-- Match by an array of route names -->\n    <ion-tab tab=\"map\" :routes=\"['app.map', 'app.other.route']\">\n      <Map />\n    </ion-tab>\n\n    <!-- Get matched routes with a helper method -->\n    <ion-tab tab=\"about\" :routes=\"getMatchedRoutes\">\n      <About />\n    </ion-tab>\n\n    <!-- Use v-slot:bottom with Vue ^2.6.0 -->\n    <template slot=\"bottom\">\n      <ion-tab-bar>\n        <ion-tab-button tab=\"schedule\">\n          <ion-icon name=\"calendar\"></ion-icon>\n          <ion-label>Schedule</ion-label>\n          <ion-badge>6</ion-badge>\n        </ion-tab-button>\n\n        <!-- Provide a custom route to navigate to -->\n        <ion-tab-button tab=\"speakers\" :to=\"{ name: 'app.speakers' }\">\n          <ion-icon name=\"contacts\"></ion-icon>\n          <ion-label>Speakers</ion-label>\n        </ion-tab-button>\n\n        <!-- Provide extra data to route -->\n        <ion-tab-button tab=\"map\" :to=\"{ name: 'app.map', params: { mode: 'dark' } }\">\n          <ion-icon name=\"map\"></ion-icon>\n          <ion-label>Map</ion-label>\n        </ion-tab-button>\n\n        <!-- Provide custom click handler -->\n        <ion-tab-button tab=\"about\" @click=\"goToAboutTab\">\n          <ion-icon name=\"information-circle\"></ion-icon>\n          <ion-label>About</ion-label>\n        </ion-tab-button>\n      </ion-tab-bar>\n    </template>\n  </ion-tabs>\n</template>\n```\n"
+  },
+  "props": [],
+  "methods": [
+    {
+      "name": "getSelected",
+      "returns": {
+        "type": "Promise<string | undefined>",
+        "docs": ""
+      },
+      "signature": "getSelected() => Promise<string | undefined>",
+      "parameters": [],
+      "docs": "Get the currently selected tab",
+      "docsTags": []
+    },
+    {
+      "name": "getTab",
+      "returns": {
+        "type": "Promise<HTMLIonTabElement | undefined>",
+        "docs": ""
+      },
+      "signature": "getTab(tab: string | HTMLIonTabElement) => Promise<HTMLIonTabElement | undefined>",
+      "parameters": [
+        {
+          "name": "tab",
+          "type": "HTMLIonTabElement | string",
+          "docs": ""
+        }
+      ],
+      "docs": "Get the tab element given the tab name",
+      "docsTags": []
+    },
+    {
+      "name": "select",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "select(tab: string | HTMLIonTabElement) => Promise<boolean>",
+      "parameters": [
+        {
+          "name": "tab",
+          "type": "HTMLIonTabElement | string",
+          "docs": ""
+        }
+      ],
+      "docs": "Index or the Tab instance, of the tab to select.",
+      "docsTags": []
+    }
+  ],
+  "events": [
+    {
+      "event": "ionTabsDidChange",
+      "detail": "{tab: string}",
+      "bubbles": false,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the navigation has finished transitioning to a new component.",
+      "docsTags": []
+    },
+    {
+      "event": "ionTabsWillChange",
+      "detail": "{tab: string}",
+      "bubbles": false,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the navigation is about to transition to a new component.",
+      "docsTags": []
+    }
+  ],
+  "styles": [],
+  "slots": [
+    {
+      "name": "",
+      "docs": "Content is placed between the named slots if provided without a slot."
+    },
+    {
+      "name": "bottom",
+      "docs": "Content is placed at the bottom of the screen."
+    },
+    {
+      "name": "top",
+      "docs": "Content is placed at the top of the screen."
+    }
+  ]
+}

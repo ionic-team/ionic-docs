@@ -1,0 +1,57 @@
+{
+  "tag": "ion-route",
+  "encapsulation": "none",
+  "readme": "# ion-route\n\nRouter is a component that can take a component, and render it when the Browser URl matches the url prop\n\n> Note: this is only meant for vanilla JavaScript project. For Angular projects, use `ion-router-outlet` and the Angular router.\n",
+  "docs": "Router is a component that can take a component, and render it when the Browser URl matches the url prop\n\n> Note: this is only meant for vanilla JavaScript project. For Angular projects, use `ion-router-outlet` and the Angular router.",
+  "docsTags": [],
+  "usage": {},
+  "props": [
+    {
+      "name": "component",
+      "type": "string",
+      "mutable": false,
+      "attr": "component",
+      "reflectToAttr": false,
+      "docs": "Name of the component to load/select in the navigation outlet (`ion-tabs`, `ion-nav`)\nwhen the route matches.\n\nThe value of this property is not always the tagname of the component to load,\nin `ion-tabs` it actually refers to the name of the `ion-tab` to select.",
+      "docsTags": [],
+      "optional": false,
+      "required": true
+    },
+    {
+      "name": "componentProps",
+      "type": "undefined | { [key: string]: any; }",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "A key value `{ 'red': true, 'blue': 'white'}` containing props that should be passed\nto the defined component when rendered.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "url",
+      "type": "string",
+      "mutable": false,
+      "attr": "url",
+      "reflectToAttr": false,
+      "docs": "Relative path that needs to match in order for this route to apply.\n\nAccepts paths similar to expressjs so that you can define parameters\nin the url /foo/:bar where bar would be available in incoming props.",
+      "docsTags": [],
+      "default": "''",
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [
+    {
+      "event": "ionRouteDataChanged",
+      "detail": "any",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Used internally by `ion-router` to know when this route did change.",
+      "docsTags": []
+    }
+  ],
+  "styles": [],
+  "slots": []
+}

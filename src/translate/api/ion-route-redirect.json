@@ -1,0 +1,46 @@
+{
+  "tag": "ion-route-redirect",
+  "encapsulation": "none",
+  "readme": "# ion-route-redirect\n\nA redirect router can only be used in the scope of `ion-router` as a direct children of it.\n\n> Note: this is only meant for vanilla JavaScript project. For Angular projects, use `ion-router-outlet` and the Angular router.\n\nThis route has only two configurable values:\n - `from`\n - `to`\n\nTheir meaning is obvious under the context of a redirection, that occurs `from` a given URL `to` another given URL.\n\nIn other for a redirection to occurs the `from` path needs to be an exact match of the navigated URL.\n\n## Redirection evaluation\n\nAn arbitrary number of redirect routes can be defined inside an `ion-router`, but only one can match.\n\nAlso, a redirection route WILL never redirect to another redirection router, since this could lead to infinity loops.\n\nLet's say we have this two redirection rules:\n\n```html\n<ion-router>\n  <ion-route-redirect from=\"/admin\" to=\"/login\"/>\n  <ion-route-redirect from=\"/login\" to=\"/admin\"/>\n</ion-router>\n```\n\nAnd the user navigates to `/admin`. The router will then redirect to `/login` and stop there.\n\nIt WILL NOT never evaluate more than one redirection rule in a roll.\n\n\n## Examples\n\n### Simple path\n\n```html\n<ion-route-redirect from=\"/admin\" to=\"/login\">\n```\n\nThis route will apply (redirect) when the user navigates to: `/admin` but it will NOT apply if the user navigates to `/admin/posts`.\n\nIn order to match any subpath of admin, the wildcard character (`*`) needs to be used.\n\n```html\n<ion-route-redirect from=\"/admin/*\" to=\"/login\">\n```\n\n### Redirect all routes to login\n\nRedirection routes can work as guards, since that can prevent user to navigate to areas to your application based in a given condition, for example, if the user is authenticated or not.\n\n\n```tsx\n{!this.isLoggedIn &&\n  <ion-route-redirect from=\"*\" to=\"/login\"/> }\n```\n\nA router can be added and removed dynamically to redirect (or guard) some routes from being accessed.\n\nAnother approach is to modify the value of `to`, since given `to` the value of `null` or `undefined` makes disables the redirection.\n\n```tsx\n <ion-route-redirect from=\"*\" to={this.isLoggedin ? undefined : '/login'}/>\n```\n",
+  "docs": "A redirect router can only be used in the scope of `ion-router` as a direct children of it.\n\n> Note: this is only meant for vanilla JavaScript project. For Angular projects, use `ion-router-outlet` and the Angular router.\n\nThis route has only two configurable values:\n - `from`\n - `to`\n\nTheir meaning is obvious under the context of a redirection, that occurs `from` a given URL `to` another given URL.\n\nIn other for a redirection to occurs the `from` path needs to be an exact match of the navigated URL.",
+  "docsTags": [],
+  "usage": {},
+  "props": [
+    {
+      "name": "from",
+      "type": "string",
+      "mutable": false,
+      "attr": "from",
+      "reflectToAttr": false,
+      "docs": "A redirect route, redirects \"from\" a URL \"to\" another URL. This property is that \"from\" URL.\nIt needs to be an exact match of the navigated URL in order to apply.\n\nThe path specified in this value is always an absolute path, even if the initial `/` slash\nis not specified.",
+      "docsTags": [],
+      "optional": false,
+      "required": true
+    },
+    {
+      "name": "to",
+      "type": "null | string | undefined",
+      "mutable": false,
+      "attr": "to",
+      "reflectToAttr": false,
+      "docs": "A redirect route, redirects \"from\" a URL \"to\" another URL. This property is that \"to\" URL.\nWhen the defined `ion-route-redirect` rule matches, the router will redirect to the path\nspecified in this property.\n\nThe value of this property is always an absolute path inside the scope of routes defined in\n`ion-router` it can't be used with another router or to perform a redirection to a different domain.\n\nNote that this is a virtual redirect, it will not cause a real browser refresh, again, it's\na redirect inside the context of ion-router.\n\nWhen this property is not specified or his value is `undefined` the whole redirect route is noop,\neven if the \"from\" value matches.",
+      "docsTags": [],
+      "optional": false,
+      "required": true
+    }
+  ],
+  "methods": [],
+  "events": [
+    {
+      "event": "ionRouteRedirectChanged",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Internal event that fires when any value of this rule is added/removed from the DOM,\nor any of his public properties changes.\n\n`ion-router` captures this event in order to update his internal registry of router rules.",
+      "docsTags": []
+    }
+  ],
+  "styles": [],
+  "slots": []
+}

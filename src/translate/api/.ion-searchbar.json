@@ -1,0 +1,320 @@
+{
+  "tag": "ion-searchbar",
+  "encapsulation": "scoped",
+  "readme": "# ion-searchbar\n\nSearchbars represent a text field that can be used to search through a collection. They can be displayed inside of a toolbar or the main content.\n\nA Searchbar should be used instead of an input to search lists. A clear button is displayed upon entering input in the searchbar's text field. Clicking on the clear button will erase the text field and the input will remain focused. A cancel button can be enabled which will clear the input and lose the focus upon click.\n\n\n",
+  "docs": "Searchbars represent a text field that can be used to search through a collection. They can be displayed inside of a toolbar or the main content.\n\nA Searchbar should be used instead of an input to search lists. A clear button is displayed upon entering input in the searchbar's text field. Clicking on the clear button will erase the text field and the input will remain focused. A cancel button can be enabled which will clear the input and lose the focus upon click.",
+  "docsTags": [],
+  "usage": {
+    "angular": "```html\n<!-- Default Searchbar -->\n<ion-searchbar></ion-searchbar>\n\n<!-- Searchbar with danger color -->\n<ion-searchbar color=\"danger\"></ion-searchbar>\n\n<!-- Searchbar with value -->\n<ion-searchbar value=\"Ionic\"></ion-searchbar>\n\n<!-- Searchbar with telephone type -->\n<ion-searchbar type=\"tel\"></ion-searchbar>\n\n<!-- Searchbar with a cancel button and custom cancel button text -->\n<ion-searchbar showCancelButton cancelButtonText=\"Custom Cancel\"></ion-searchbar>\n\n<!-- Searchbar with a custom debounce -->\n<ion-searchbar debounce=\"500\"></ion-searchbar>\n\n<!-- Animated Searchbar -->\n<ion-searchbar animated></ion-searchbar>\n\n<!-- Searchbar with a placeholder -->\n<ion-searchbar placeholder=\"Filter Schedules\"></ion-searchbar>\n\n<!-- Searchbar in a Toolbar -->\n<ion-toolbar>\n  <ion-searchbar></ion-searchbar>\n</ion-toolbar>\n```\n",
+    "javascript": "```html\n<!-- Default Searchbar -->\n<ion-searchbar></ion-searchbar>\n\n<!-- Searchbar with danger color -->\n<ion-searchbar color=\"danger\"></ion-searchbar>\n\n<!-- Searchbar with value -->\n<ion-searchbar value=\"Ionic\"></ion-searchbar>\n\n<!-- Searchbar with telephone type -->\n<ion-searchbar type=\"tel\"></ion-searchbar>\n\n<!-- Searchbar with a cancel button and custom cancel button text -->\n<ion-searchbar show-cancel-button cancel-button-text=\"Custom Cancel\"></ion-searchbar>\n\n<!-- Searchbar with a custom debounce -->\n<ion-searchbar debounce=\"500\"></ion-searchbar>\n\n<!-- Animated Searchbar -->\n<ion-searchbar animated></ion-searchbar>\n\n<!-- Searchbar with a placeholder -->\n<ion-searchbar placeholder=\"Filter Schedules\"></ion-searchbar>\n\n<!-- Searchbar in a Toolbar -->\n<ion-toolbar>\n  <ion-searchbar></ion-searchbar>\n</ion-toolbar>\n```\n",
+    "react": "```tsx\nimport React from 'react';\n\nimport { IonSearchbar, IonToolbar } from '@ionic/react';\n\nconst Example: React.SFC<{}> = () => (\n  <>\n    {/*-- Default Searchbar --*/}\n    <IonSearchbar></IonSearchbar>\n\n    {/*-- Searchbar with danger color --*/}\n    <IonSearchbar color=\"danger\"></IonSearchbar>\n\n    {/*-- Searchbar with value --*/}\n    <IonSearchbar value=\"Ionic\"></IonSearchbar>\n\n    {/*-- Searchbar with telephone type --*/}\n    <IonSearchbar type=\"tel\"></IonSearchbar>\n\n    {/*-- Searchbar with a cancel button and custom cancel button text --*/}\n    <IonSearchbar showCancelButton cancelButtonText=\"Custom Cancel\"></IonSearchbar>\n\n    {/*-- Searchbar with a custom debounce --*/}\n    <IonSearchbar debounce={500}></IonSearchbar>\n\n    {/*-- Animated Searchbar --*/}\n    <IonSearchbar animated></IonSearchbar>\n\n    {/*-- Searchbar with a placeholder --*/}\n    <IonSearchbar placeholder=\"Filter Schedules\"></IonSearchbar>\n\n    {/*-- Searchbar in a Toolbar --*/}\n    <IonToolbar>\n      <IonSearchbar></IonSearchbar>\n    </IonToolbar>\n  </>\n);\n\nexport default Example;\n```\n",
+    "vue": "```html\n<template>\n  <!-- Default Searchbar -->\n  <ion-searchbar></ion-searchbar>\n\n  <!-- Searchbar with danger color -->\n  <ion-searchbar color=\"danger\"></ion-searchbar>\n\n  <!-- Searchbar with value -->\n  <ion-searchbar value=\"Ionic\"></ion-searchbar>\n\n  <!-- Searchbar with telephone type -->\n  <ion-searchbar type=\"tel\"></ion-searchbar>\n\n  <!-- Searchbar with a cancel button and custom cancel button text -->\n  <ion-searchbar showCancelButton cancelButtonText=\"Custom Cancel\"></ion-searchbar>\n\n  <!-- Searchbar with a custom debounce -->\n  <ion-searchbar debounce=\"500\"></ion-searchbar>\n\n  <!-- Animated Searchbar -->\n  <ion-searchbar animated></ion-searchbar>\n\n  <!-- Searchbar with a placeholder -->\n  <ion-searchbar placeholder=\"Filter Schedules\"></ion-searchbar>\n\n  <!-- Searchbar in a Toolbar -->\n  <ion-toolbar>\n    <ion-searchbar></ion-searchbar>\n  </ion-toolbar>\n</template>\n```\n"
+  },
+  "props": [
+    {
+      "name": "animated",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "animated",
+      "reflectToAttr": false,
+      "docs": "If `true`, enable searchbar animation.",
+      "docsTags": [],
+      "default": "false",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "autocomplete",
+      "type": "\"off\" | \"on\"",
+      "mutable": false,
+      "attr": "autocomplete",
+      "reflectToAttr": false,
+      "docs": "Set the input's autocomplete property.",
+      "docsTags": [],
+      "default": "'off'",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "autocorrect",
+      "type": "\"off\" | \"on\"",
+      "mutable": false,
+      "attr": "autocorrect",
+      "reflectToAttr": false,
+      "docs": "Set the input's autocorrect property.",
+      "docsTags": [],
+      "default": "'off'",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "cancelButtonIcon",
+      "type": "string",
+      "mutable": false,
+      "attr": "cancel-button-icon",
+      "reflectToAttr": false,
+      "docs": "Set the cancel button icon. Only applies to `md` mode.",
+      "docsTags": [],
+      "default": "'md-arrow-back'",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "cancelButtonText",
+      "type": "string",
+      "mutable": false,
+      "attr": "cancel-button-text",
+      "reflectToAttr": false,
+      "docs": "Set the the cancel button text. Only applies to `ios` mode.",
+      "docsTags": [],
+      "default": "'Cancel'",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "clearIcon",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "clear-icon",
+      "reflectToAttr": false,
+      "docs": "Set the clear icon. Defaults to `\"close-circle\"` for `ios` and `\"close\"` for `md`.",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "color",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "color",
+      "reflectToAttr": false,
+      "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "debounce",
+      "type": "number",
+      "mutable": false,
+      "attr": "debounce",
+      "reflectToAttr": false,
+      "docs": "Set the amount of time, in milliseconds, to wait to trigger the `ionChange` event after each keystroke.",
+      "docsTags": [],
+      "default": "250",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "mutable": false,
+      "attr": "placeholder",
+      "reflectToAttr": false,
+      "docs": "Set the input's placeholder.",
+      "docsTags": [],
+      "default": "'Search'",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "searchIcon",
+      "type": "string",
+      "mutable": false,
+      "attr": "search-icon",
+      "reflectToAttr": false,
+      "docs": "The icon to use as the search icon.",
+      "docsTags": [],
+      "default": "'search'",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "showCancelButton",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "show-cancel-button",
+      "reflectToAttr": false,
+      "docs": "If `true`, show the cancel button.",
+      "docsTags": [],
+      "default": "false",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "spellcheck",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "spellcheck",
+      "reflectToAttr": false,
+      "docs": "If `true`, enable spellcheck on the input.",
+      "docsTags": [],
+      "default": "false",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "type",
+      "type": "\"email\" | \"number\" | \"password\" | \"search\" | \"tel\" | \"text\" | \"url\"",
+      "mutable": false,
+      "attr": "type",
+      "reflectToAttr": false,
+      "docs": "Set the type of the input.",
+      "docsTags": [],
+      "default": "'search'",
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "value",
+      "type": "null | string | undefined",
+      "mutable": true,
+      "attr": "value",
+      "reflectToAttr": false,
+      "docs": "the value of the searchbar.",
+      "docsTags": [],
+      "default": "''",
+      "optional": true,
+      "required": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "getInputElement",
+      "returns": {
+        "type": "Promise<HTMLInputElement>",
+        "docs": ""
+      },
+      "signature": "getInputElement() => Promise<HTMLInputElement>",
+      "parameters": [],
+      "docs": "Returns the native `<input>` element used under the hood.",
+      "docsTags": []
+    },
+    {
+      "name": "setFocus",
+      "returns": {
+        "type": "void",
+        "docs": ""
+      },
+      "signature": "setFocus() => void",
+      "parameters": [],
+      "docs": "Sets focus on the specified `ion-searchbar`. Use this method instead of the global\n`input.focus()`.",
+      "docsTags": []
+    }
+  ],
+  "events": [
+    {
+      "event": "ionBlur",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the input loses focus.",
+      "docsTags": []
+    },
+    {
+      "event": "ionCancel",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the cancel button is clicked.",
+      "docsTags": []
+    },
+    {
+      "event": "ionChange",
+      "detail": "SearchbarChangeEventDetail",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the value has changed.",
+      "docsTags": []
+    },
+    {
+      "event": "ionClear",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the clear input button is clicked.",
+      "docsTags": []
+    },
+    {
+      "event": "ionFocus",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the input has focus.",
+      "docsTags": []
+    },
+    {
+      "event": "ionInput",
+      "detail": "KeyboardEvent",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when a keyboard input ocurred.",
+      "docsTags": []
+    }
+  ],
+  "styles": [
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the searchbar"
+    },
+    {
+      "name": "--cancel-button-color",
+      "annotation": "prop",
+      "docs": "Color of the searchbar cancel button"
+    },
+    {
+      "name": "--clear-button-color",
+      "annotation": "prop",
+      "docs": "Color of the searchbar clear button"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the searchbar text"
+    },
+    {
+      "name": "--icon-color",
+      "annotation": "prop",
+      "docs": "Color of the searchbar icon"
+    },
+    {
+      "name": "--placeholder-color",
+      "annotation": "prop",
+      "docs": "Color of the searchbar placeholder"
+    },
+    {
+      "name": "--placeholder-font-style",
+      "annotation": "prop",
+      "docs": "Font style of the searchbar placeholder"
+    },
+    {
+      "name": "--placeholder-font-weight",
+      "annotation": "prop",
+      "docs": "Font weight of the searchbar placeholder"
+    },
+    {
+      "name": "--placeholder-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the searchbar placeholder"
+    }
+  ],
+  "slots": []
+}

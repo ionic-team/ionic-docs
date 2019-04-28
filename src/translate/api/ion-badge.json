@@ -1,0 +1,72 @@
+{
+  "tag": "ion-badge",
+  "encapsulation": "shadow",
+  "readme": "# ion-badge\n\nBadges are inline block elements that usually appear near another element. Typically they contain a number or other characters. They can be used as a notification that there are additional items associated with an element and indicate how many items there are.\n\n",
+  "docs": "Badges are inline block elements that usually appear near another element. Typically they contain a number or other characters. They can be used as a notification that there are additional items associated with an element and indicate how many items there are.",
+  "docsTags": [],
+  "usage": {
+    "angular": "```html\n<!-- Default -->\n<ion-badge>99</ion-badge>\n\n<!-- Colors -->\n<ion-badge color=\"primary\">11</ion-badge>\n<ion-badge color=\"secondary\">22</ion-badge>\n<ion-badge color=\"tertiary\">33</ion-badge>\n<ion-badge color=\"success\">44</ion-badge>\n<ion-badge color=\"warning\">55</ion-badge>\n<ion-badge color=\"danger\">66</ion-badge>\n<ion-badge color=\"light\">77</ion-badge>\n<ion-badge color=\"medium\">88</ion-badge>\n<ion-badge color=\"dark\">99</ion-badge>\n\n<!-- Item with badge on left and right -->\n<ion-item>\n  <ion-badge slot=\"start\">11</ion-badge>\n  <ion-label>My Item</ion-label>\n  <ion-badge slot=\"end\">22</ion-badge>\n</ion-item>\n```",
+    "javascript": "```html\n<!-- Default -->\n<ion-badge>99</ion-badge>\n\n<!-- Colors -->\n<ion-badge color=\"primary\">11</ion-badge>\n<ion-badge color=\"secondary\">22</ion-badge>\n<ion-badge color=\"tertiary\">33</ion-badge>\n<ion-badge color=\"success\">44</ion-badge>\n<ion-badge color=\"warning\">55</ion-badge>\n<ion-badge color=\"danger\">66</ion-badge>\n<ion-badge color=\"light\">77</ion-badge>\n<ion-badge color=\"medium\">88</ion-badge>\n<ion-badge color=\"dark\">99</ion-badge>\n\n<!-- Item with badge on left and right -->\n<ion-item>\n  <ion-badge slot=\"start\">11</ion-badge>\n  <ion-label>My Item</ion-label>\n  <ion-badge slot=\"end\">22</ion-badge>\n</ion-item>\n```",
+    "react": "```tsx\nimport React from 'react';\n\nimport { IonBadge, IonItem, IonLabel } from '@ionic/react';\n\nconst Example: React.SFC<{}> = () => (\n  <>\n    {/*-- Default --*/}\n    <IonBadge>99</IonBadge>\n\n    {/*-- Colors --*/}\n    <IonBadge color=\"primary\">11</IonBadge>\n    <IonBadge color=\"secondary\">22</IonBadge>\n    <IonBadge color=\"tertiary\">33</IonBadge>\n    <IonBadge color=\"success\">44</IonBadge>\n    <IonBadge color=\"warning\">55</IonBadge>\n    <IonBadge color=\"danger\">66</IonBadge>\n    <IonBadge color=\"light\">77</IonBadge>\n    <IonBadge color=\"medium\">88</IonBadge>\n    <IonBadge color=\"dark\">99</IonBadge>\n\n    {/*-- Item with badge on left and right --*/}\n    <IonItem>\n      <IonBadge slot=\"start\">11</IonBadge>\n      <IonLabel>My Item</IonLabel>\n      <IonBadge slot=\"end\">22</IonBadge>\n    </IonItem>\n  </>\n);\n\nexport default Example;\n```\n",
+    "vue": "```html\n<template>\n  <!-- Default -->\n  <ion-badge>99</ion-badge>\n\n  <!-- Colors -->\n  <ion-badge color=\"primary\">11</ion-badge>\n  <ion-badge color=\"secondary\">22</ion-badge>\n  <ion-badge color=\"tertiary\">33</ion-badge>\n  <ion-badge color=\"success\">44</ion-badge>\n  <ion-badge color=\"warning\">55</ion-badge>\n  <ion-badge color=\"danger\">66</ion-badge>\n  <ion-badge color=\"light\">77</ion-badge>\n  <ion-badge color=\"medium\">88</ion-badge>\n  <ion-badge color=\"dark\">99</ion-badge>\n\n  <!-- Item with badge on left and right -->\n  <ion-item>\n    <ion-badge slot=\"start\">11</ion-badge>\n    <ion-label>My Item</ion-label>\n    <ion-badge slot=\"end\">22</ion-badge>\n  </ion-item>\n</template>\n```"
+  },
+  "props": [
+    {
+      "name": "color",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "color",
+      "reflectToAttr": false,
+      "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "styles": [
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the badge"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Text color of the badge"
+    },
+    {
+      "name": "--padding-bottom",
+      "annotation": "prop",
+      "docs": "Padding bottom of the badge"
+    },
+    {
+      "name": "--padding-end",
+      "annotation": "prop",
+      "docs": "Padding end of the badge"
+    },
+    {
+      "name": "--padding-start",
+      "annotation": "prop",
+      "docs": "Padding start of the badge"
+    },
+    {
+      "name": "--padding-top",
+      "annotation": "prop",
+      "docs": "Padding top of the badge"
+    }
+  ],
+  "slots": []
+}

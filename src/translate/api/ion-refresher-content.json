@@ -1,0 +1,58 @@
+{
+  "tag": "ion-refresher-content",
+  "encapsulation": "none",
+  "readme": "# ion-refresher-content\n\nThe refresher content contains the text, icon and spinner to display during a pull-to-refresh. Ionic provides the pulling icon and refreshing spinner based on the platform. However, the default icon, spinner, and text can be customized based on the state of the refresher.\n\n\n",
+  "docs": "The refresher content contains the text, icon and spinner to display during a pull-to-refresh. Ionic provides the pulling icon and refreshing spinner based on the platform. However, the default icon, spinner, and text can be customized based on the state of the refresher.",
+  "docsTags": [],
+  "usage": {},
+  "props": [
+    {
+      "name": "pullingIcon",
+      "type": "null | string | undefined",
+      "mutable": true,
+      "attr": "pulling-icon",
+      "reflectToAttr": false,
+      "docs": "A static icon to display when you begin to pull down",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "pullingText",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "pulling-text",
+      "reflectToAttr": false,
+      "docs": "The text you want to display when you begin to pull down",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "refreshingSpinner",
+      "type": "\"bubbles\" | \"circles\" | \"crescent\" | \"dots\" | \"lines\" | \"lines-small\" | null | undefined",
+      "mutable": true,
+      "attr": "refreshing-spinner",
+      "reflectToAttr": false,
+      "docs": "An animated SVG spinner that shows when refreshing begins",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "refreshingText",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "refreshing-text",
+      "reflectToAttr": false,
+      "docs": "The text you want to display when performing a refresh",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "styles": [],
+  "slots": []
+}

@@ -1,0 +1,38 @@
+{
+  "tag": "ion-text",
+  "encapsulation": "shadow",
+  "readme": "# ion-text\n\nThe text component is a simple component that can be used to style the text color of any element. The `ion-text` element should wrap the element in order to change the text color of that element.\n\n",
+  "docs": "The text component is a simple component that can be used to style the text color of any element. The `ion-text` element should wrap the element in order to change the text color of that element.",
+  "docsTags": [],
+  "usage": {
+    "javascript": "```html\n<ion-text color=\"secondary\">\n  <h1>H1: The quick brown fox jumps over the lazy dog</h1>\n</ion-text>\n\n<ion-text color=\"primary\">\n  <h2>H2: The quick brown fox jumps over the lazy dog</h2>\n</ion-text>\n\n<ion-text color=\"light\">\n  <h3>H3: The quick brown fox jumps over the lazy dog</h3>\n</ion-text>\n\n<ion-text color=\"danger\">\n  <h4 >H4: The quick brown fox jumps over the lazy dog</h4>\n</ion-text>\n\n<ion-text color=\"dark\">\n  <h5>H5: The quick brown fox jumps over the lazy dog</h5>\n</ion-text>\n\n<p>\n  I saw a werewolf with a Chinese menu in his hand.\n  Walking through the <ion-text color=\"danger\"><sub>streets</sub></ion-text> of Soho in the rain.\n  He <ion-text color=\"primary\"><i>was</i></ion-text> looking for a place called Lee Ho Fook's.\n  Gonna get a <ion-text color=\"secondary\"><a>big dish of beef chow mein.</a></ion-text>\n  <ion-text color=\"danger\"><ion-icon name=\"cut\"></ion-icon></ion-text>\n</p>\n```"
+  },
+  "props": [
+    {
+      "name": "color",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "color",
+      "reflectToAttr": false,
+      "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
+      "docsTags": [],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "styles": [],
+  "slots": []
+}
