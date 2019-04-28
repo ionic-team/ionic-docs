@@ -1,6 +1,6 @@
 # ion-alert-controller
 
-Alert controllerはプログラムでAlertコンポーネントを制御します。Alert controllerを利用することで、Alertを作成し、破棄することができます。Alertを作成する時に利用できるオプションについての詳しくは [Alert](../alert) documentation をご覧ください。
+Alert controllerはプログラムでAlertコンポーネントを制御します。Alert controllerを利用することで、Alertを作成し、破棄することができます。Alertを作成する時に利用できるオプションについての詳しくは [Alert](../alert) のドキュメントをご覧ください。
 
 
 ```javascript

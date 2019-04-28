@@ -1,4 +1,4 @@
 # ion-anchor
 
-The Anchor component is used for navigating to a specified link. Similar to the browser's anchor tag, it can accept a href for the location, and a direction for the transition animation.
+Anchorコンポーネントは、指定したリンクに移動するために使用します。ブラウザのAnchorタグと同様に、hrefでリンク先と遷移アニメーションを設定することができます。
 

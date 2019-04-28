@@ -364,7 +364,7 @@
     {
       "tag": "ion-alert-controller",
       "encapsulation": "none",
-      "readme": "# ion-alert-controller\n\nAlert controllerはプログラムでAlertコンポーネントを制御します。Alert controllerを利用することで、Alertを作成し、破棄することができます。Alertを作成する時に利用できるオプションについての詳しくは [Alert](../alert) documentation をご覧ください。\n\n\n```javascript\nasync function presentAlert() {\n  const alertController = document.querySelector('ion-alert-controller');\n  await alertController.componentOnReady();\n\n  const alert = await alertController.create({\n    header: 'Alert',\n    subHeader: 'Subtitle',\n    message: 'This is an alert message.',\n    buttons: ['OK']\n  });\n  return await alert.present();\n}\n```\n\n",
+      "readme": "# ion-alert-controller\n\nAlert controllerはプログラムでAlertコンポーネントを制御します。Alert controllerを利用することで、Alertを作成し、破棄することができます。Alertを作成する時に利用できるオプションについての詳しくは [Alert](../alert) のドキュメントをご覧ください。\n\n\n```javascript\nasync function presentAlert() {\n  const alertController = document.querySelector('ion-alert-controller');\n  await alertController.componentOnReady();\n\n  const alert = await alertController.create({\n    header: 'Alert',\n    subHeader: 'Subtitle',\n    message: 'This is an alert message.',\n    buttons: ['OK']\n  });\n  return await alert.present();\n}\n```\n\n",
       "docs": "Alert controllers programmatically control the alert component. Alerts can be created and dismissed from the alert controller. View the [Alert](../alert) documentation for a full list of options to pass upon creation.\n\n\n```javascript\nasync function presentAlert() {\n  const alertController = document.querySelector('ion-alert-controller');\n  await alertController.componentOnReady();\n\n  const alert = await alertController.create({\n    header: 'Alert',\n    subHeader: 'Subtitle',\n    message: 'This is an alert message.',\n    buttons: ['OK']\n  });\n  return await alert.present();\n}\n```",
       "docsTags": [],
       "usage": {},
@@ -726,7 +726,7 @@
     {
       "tag": "ion-anchor",
       "encapsulation": "shadow",
-      "readme": "# ion-anchor\n\nThe Anchor component is used for navigating to a specified link. Similar to the browser's anchor tag, it can accept a href for the location, and a direction for the transition animation.\n\n",
+      "readme": "# ion-anchor\n\nAnchorコンポーネントは、指定したリンクに移動するために使用します。ブラウザのAnchorタグと同様に、hrefでリンク先と遷移アニメーションを設定することができます。\n\n",
       "docs": "The Anchor component is used for navigating to a specified link. Similar to the browser's anchor tag, it can accept a href for the location, and a direction for the transition animation.",
       "docsTags": [],
       "usage": {},
@@ -785,7 +785,7 @@
     {
       "tag": "ion-app",
       "encapsulation": "none",
-      "readme": "# ion-app\n\nApp is a container element for an Ionic application. There should only be one `<ion-app>` element per project. An app can have many Ionic components including menus, headers, content, and footers. The overlay components get appended to the `<ion-app>` when they are presented.\n",
+      "readme": "# ion-app\n\nAppはIonicアプリケーションのコンテナ要素です。プロジェクトごとに `<ion-app>` 要素は1つだけにしてください。アプリケーションには、menus, headers, content, footersなど、多くのIonicコンポーネントを含めることができます。オーバーレイコンポーネントは、表示されるときに `<ion-app>` に追加されます。\n",
       "docs": "App is a container element for an Ionic application. There should only be one `<ion-app>` element per project. An app can have many Ionic components including menus, headers, content, and footers. The overlay components get appended to the `<ion-app>` when they are presented.",
       "docsTags": [],
       "usage": {},
@@ -798,7 +798,7 @@
     {
       "tag": "ion-avatar",
       "encapsulation": "shadow",
-      "readme": "# ion-avatar\n\nAvatars are circular components that usually wrap an image or icon. They can be used to represent a person or an object.\n\nAvatars can be used by themselves or inside of any element. If placed inside of an `ion-chip` or `ion-item`, the avatar will resize to fit the parent component. To position an avatar on the left or right side of an item, set the slot to `start` or `end`, respectively.\n\n",
+      "readme": "# ion-avatar\n\nAvatarは通常、写真やアイコンをラップする円形のコンポーネントです。これらは、人またはオブジェクトを表示するために使用できます。\n\nAvatarは、単独で使用することも、任意の要素の内部で使用することもできます。`ion-chip` または `ion-item` の内部に配置すると、Avatarは親コンポーネントに合わせてサイズ変更します。Avatarをitemの左側または右側に配置するには、`slot` を `start` か `end` に設定します。\n\n",
       "docs": "Avatars are circular components that usually wrap an image or icon. They can be used to represent a person or an object.\n\nAvatars can be used by themselves or inside of any element. If placed inside of an `ion-chip` or `ion-item`, the avatar will resize to fit the parent component. To position an avatar on the left or right side of an item, set the slot to `start` or `end`, respectively.",
       "docsTags": [],
       "usage": {
@@ -822,7 +822,7 @@
     {
       "tag": "ion-back-button",
       "encapsulation": "scoped",
-      "readme": "# ion-back-button\n\nThe back button navigates back in the app's history upon click. It is smart enough to know what to render based on the mode and when to show based on the navigation stack.\n\nTo change what is displayed in the back button, use the `text` and `icon` properties.\n\n",
+      "readme": "# ion-back-button\n\nback buttonは、クリックするとアプリのひとつ前の履歴に戻ります。modeに基づいてどのようにレンダリングし、ナビゲーションスタックに基づいていつ表示するかを知っていれば十分です。\n\nback buttonの表示内容を変更するには、`text` と `icon` のプロパティを使用します。\n\n",
       "docs": "The back button navigates back in the app's history upon click. It is smart enough to know what to render based on the mode and when to show based on the navigation stack.\n\nTo change what is displayed in the back button, use the `text` and `icon` properties.",
       "docsTags": [],
       "usage": {
@@ -1027,7 +1027,7 @@
     {
       "tag": "ion-backdrop",
       "encapsulation": "shadow",
-      "readme": "# ion-backdrop\n\nBackdrops are full screen components that overlay other components. They are useful behind components that transition in on top of other content and can be used to dismiss that component.\n\n",
+      "readme": "# ion-backdrop\n\nBackdropは、他のコンポーネントをオーバーレイするためフルスクリーンのコンポーネントです。これらは、他のコンテンツの上に遷移するコンポーネントのバックグラウンドで役立ち、そのコンポーネントを削除するために使用できます。\n\n",
       "docs": "Backdrops are full screen components that overlay other components. They are useful behind components that transition in on top of other content and can be used to dismiss that component.",
       "docsTags": [],
       "usage": {
