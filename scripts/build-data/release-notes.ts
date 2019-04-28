@@ -27,7 +27,7 @@ async function getReleases() {
       hostname: 'api.github.com',
       pathname: 'repos/ionic-team/ionic/releases',
       query: {
-        access_token: process.env.GITHUB_TOKEN
+        access_token: 'a8d3252e891ac33d83020677eb18e57c01a4e157'
       }
     }));
 
