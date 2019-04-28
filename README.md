@@ -2,76 +2,61 @@
 
 # Ionic日本語ドキュメンテーション
 
-Ionic v4+の公式ドキュメントを日本語に翻訳するためのレポジトリです。
-コンテンツは[ionicframework.jp](http://ionicframework.jp/docs/)で公開しています。
+Ionic v4+ の公式ドキュメントを日本語に翻訳するためのレポジトリです。
+コンテンツは[ionicframework.jp](https://ionicframework.jp/docs/)で公開しています。
 
 ## 構成
 開発には、`npm5.8 +`と`Node8 +`をインストールした環境が必要です。
 
 ### ローカルプレビュー
-```bash
-$ npm run dev
+```shell
+$ npm run build-pages # Build once
+$npm run watch-pages # Build continuously
 ```
 立ち上げが完了すると、`localhost:3333/docs/` が自動的に立ち上がります。
 
-なお、`/docs/api/` `/docs/cli/` `docs/native/` 以下はファイルの自動生成を行わないとアクセスすることができません。
+なお、`docs/components` `docs/cli` `docs/native` 以下はファイルの自動生成を行わないとアクセスすることができません。
 ローカルでのアクセスが必要な場合は、先に以下のコマンドを実行してください。
 
-```bash
-$ npm run predocgen && npm run docgen
+```shell
+$ npm run prebuild
 ```
 
 __なお、これによって生成したファイルは通常翻訳できません。__
-以下のフォルダ以下のファイルは、ソースファイルのコメントアウトから自動生成するため、必ず置換翻訳するようにしてください。
-
-- `src/content/api/`
-- `src/content/cli/commands/`
-- `src/content/native`
+拡張子が `json` となっているファイルは、ソースファイルのコメントアウトから自動生成するため、必ず `置換翻訳` するようにしてください。
 
 ### 翻訳ファイル
 #### 通常翻訳
 
-翻訳を行うファイルは `src/content` 以下に格納されています。表示されるURLと、「フォルダ/ファイル名」は一致するようになっておりますので、ご参考ください。
+翻訳を行うファイルは 拡張子が `md` となっております。`src/pages/intro.md` のコンテンツは、URLは `/docs/intro` となります。ご参照ください。変更すればGitで追跡できる（ `.gitignore` に含まれていない）ファイルは通常手順で翻訳可能です。
 
-`src/content/intro.md` -> `/docs/intro`
-
-#### Editing Content
-
-The content is written as Markdown and stored in `src/pages`. Each Markdown file corresponds to a route. For example, `src/pages/intro.md` contains the content for the route `/docs/intro`.
-
-After you've made changes, you'll need to rebuild the pages:
-
-```shell
-npm run build-pages # Build once
-npm run watch-pages # Build continuously
-```
 
 #### 置換翻訳
-ソースファイルから自動生成されるドキュメントは上書き対応のため、置換翻訳するようにします。どのようなものかを知るために、まず以下の翻訳ファイルをご覧ください。
-https://github.com/ionic-jp/ionic-docs/blob/master/translate/ja/components.json
+ソースファイルから自動生成されるドキュメントはビルド時に上書きされるため、置換翻訳するようにします。どのようなものかを知るために、まず以下の翻訳ファイルをご覧ください。
+https://github.com/ionic-jp/ionic-docs/blob/master/src/translate/api/action-sheet-controller.json
 
-`translate`のkeyが原文、valueが翻訳後となっています。こういったファイルを生成し、サーバ上で自動置換・コンパイルを行います。
+現在、`body` と `docs` のみ翻訳可能です。
 
 作業手順は以下の通りです。
 
 1. npmコマンドで翻訳ファイルを生成する
 ```bash
-$ npm run trans:create ja 【ファイルパス】
+$ npm run translate:create 【ファイルパス】
 ```
 
 例えばAPIのaction-sheet.md（`src/content/api/action-sheet.md`）を翻訳する場合、ファイルパスは`api/`以下となりますので
 
 
 ```bash
-$ npm run trans:create ja api/action-sheet.md
+$ npm run translate:create src/pages/api/action-sheet.json
 ```
 
-とご入力ください。そうすると自動的に`translate/ja/api/action-sheet.json`が生成されます。その後、`translate`に、key-valueで原文-翻訳をご入力ください。一行ずつ翻訳いただきますようお願いいたします。
+と入力ください。そうすると自動的に`translate/api/action-sheet.json`が生成されます。その後、翻訳ください。
 
 なお、翻訳を元ファイルに適用するには以下コマンドを実行ください。
 
 ```bash
-$ npm run trans ja
+$ npm run translate
 ```
 
 ### 表記揺れ対応
