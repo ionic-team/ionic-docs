@@ -17,19 +17,27 @@ export default (props) => {
       <div class="release-notes">
         { releases.map(release =>
           <section class="release-note">
-          <div class="release-tag-wrapper">
-            <h2 id={release.version}>
-              <a href={`#${release.version}`} class={getTagClasses(release)}>
-                {release.name}
-              </a>
-            </h2>
-          </div>
-          <div class="release-info">
-            <div class="release-published">
-              <h2>{release.published_at}</h2>
+
+            <div class="release-tag-wrapper">
+              <h2 id={release.version}>
+                <a href={`#${release.version}`} class={getTagClasses(release)}>
+                  <span class="release-symbol">{release.symbol}</span>
+                  <span class="release-version">{release.version}</span>
+                </a>
+              </h2>
             </div>
-            <div innerHTML={release.body}></div>
-          </div>
+
+            <div class="release-info">
+              <div class="release-header">
+                <h2>{release.name}</h2>
+                <span class={getBadgeClasses(release)}>{release.type}</span>
+              </div>
+              <div class="release-published">
+                <h2>{release.published_at}</h2>
+              </div>
+              <div innerHTML={release.body}></div>
+            </div>
+
           </section>
         )}
       </div>
@@ -43,6 +51,13 @@ export default (props) => {
 function getTagClasses(release) {
   return {
     'release-tag': true,
-    'release-tag-patch': release.patch
+    [`release-tag-${release.type}`]: true
+  };
+}
+
+function getBadgeClasses(release) {
+  return {
+    'release-badge': true,
+    [`release-badge-${release.type}`]: true
   };
 }

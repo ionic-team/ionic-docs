@@ -37,15 +37,19 @@ async function getReleases() {
       const body = parseMarkdown(release.body);
       const published_at = parseDate(release.published_at);
       const version = release.tag_name.replace('v', '');
-      const patch = release.name.length < 7;
+      const type = getVersionType(version);
+      const symbol = getVersionSymbol(version);
+      const element = getVersionElement(version);
       const { name, tag_name } = release;
 
       return {
         body,
-        patch,
+        element,
         name,
         published_at,
+        symbol,
         tag_name,
+        type,
         version
       };
     }).sort((a, b) => {
@@ -57,7 +61,9 @@ async function getReleases() {
       }
       // a must be equal to b
       return 0;
-    }).slice(0, 10);
+    }).filter((release) =>
+      !release.tag_name.includes('alpha') && !release.tag_name.includes('beta') && !release.tag_name.includes('rc')
+    );
   } catch (error) {
     throw error;
   }
@@ -70,8 +76,195 @@ function parseDate(datetime: string) {
   return date.toLocaleString('en-us', { month: 'long' }) + ' ' + date.getDate() + ' ' + date.getFullYear();
 }
 
-function parseMarkdown(content) {
+function parseMarkdown(content: any) {
   const markdown = renderMarkdown(content);
 
   return markdown.replace('<a href=\"#bug-fixes\">Bug Fixes</a>', 'Bug Fixes').replace('<a href=\"#features\">Features</a>', 'Features');
 }
+
+// Given a version, return if it is a
+// major, minor, or patch release
+function getVersionType(version: string) {
+  let type = 'patch';
+
+  if (version.indexOf('-alpha') > -1 || version.indexOf('-beta') > -1 || version.indexOf('-rc') > -1) {
+    type = 'prerelease';
+  } else if (version.indexOf('.0.0') > -1) {
+    type = 'major';
+  } else if (version.indexOf('.0') > -1) {
+    type = 'minor';
+  }
+
+  return type;
+}
+
+// Given a version, return its element symbol
+function getVersionSymbol(version) {
+  const v = versions.filter(
+    versions => version.startsWith(`${versions.minor}.`)
+  );
+
+  return v[v.length - 1].symbol;
+}
+
+// Given a version, return its element name
+function getVersionElement(version) {
+  const v = versions.filter(
+    versions => version.startsWith(`${versions.minor}.`)
+  );
+
+  return v[v.length - 1].element;
+}
+
+const versions = [
+  {
+    'minor': '4.0',
+    'symbol': 'N',
+    'element': 'Neutronium'
+  },
+  {
+    'minor': '4.1',
+    'symbol': 'H',
+    'element': 'Hydrogen'
+  },
+  {
+    'minor': '4.2',
+    'symbol': 'He',
+    'element': 'Helium'
+  },
+  {
+    'minor': '4.3',
+    'symbol': 'Li',
+    'element': 'Lithium'
+  },
+  {
+    'minor': '4.4',
+    'symbol': 'Be',
+    'element': 'Beryllium'
+  },
+  {
+    'minor': '4.5',
+    'symbol': 'B',
+    'element': 'Boron'
+  },
+  {
+    'minor': '4.6',
+    'symbol': 'C',
+    'element': 'Carbon'
+  },
+  {
+    'minor': '4.7',
+    'symbol': 'N',
+    'element': 'Nitrogen'
+  },
+  {
+    'minor': '4.8',
+    'symbol': 'O',
+    'element': 'Oxygen'
+  },
+  {
+    'minor': '4.9',
+    'symbol': 'F',
+    'element': 'Fluorine'
+  },
+  {
+    'minor': '4.10',
+    'symbol': 'Ne',
+    'element': 'Neon'
+  },
+  {
+    'minor': '4.11',
+    'symbol': 'Na',
+    'element': 'Sodium'
+  },
+  {
+    'minor': '4.12',
+    'symbol': 'Mg',
+    'element': 'Magnesium'
+  },
+  {
+    'minor': '4.13',
+    'symbol': 'Al',
+    'element': 'Aluminium'
+  },
+  {
+    'minor': '4.14',
+    'symbol': 'Si',
+    'element': 'Silicon'
+  },
+  {
+    'minor': '4.15',
+    'symbol': 'P',
+    'element': 'Phosphorus'
+  },
+  {
+    'minor': '4.16',
+    'symbol': 'S',
+    'element': 'Sulfur'
+  },
+  {
+    'minor': '4.17',
+    'symbol': 'Cl',
+    'element': 'Chlorine'
+  },
+  {
+    'minor': '4.18',
+    'symbol': 'Ar',
+    'element': 'Argon'
+  },
+  {
+    'minor': '4.19',
+    'symbol': 'K',
+    'element': 'Potassium'
+  },
+  {
+    'minor': '4.20',
+    'symbol': 'Ca',
+    'element': 'Calcium'
+  },
+  {
+    'minor': '4.21',
+    'symbol': 'Sc',
+    'element': 'Scandium'
+  },
+  {
+    'minor': '4.22',
+    'symbol': 'Ti',
+    'element': 'Titanium'
+  },
+  {
+    'minor': '4.23',
+    'symbol': 'V',
+    'element': 'Vanadium'
+  },
+  {
+    'minor': '4.24',
+    'symbol': 'Cr',
+    'element': 'Chromium'
+  },
+  {
+    'minor': '4.25',
+    'symbol': 'Mn',
+    'element': 'Manganese'
+  },
+  {
+    'minor': '4.26',
+    'symbol': 'Fe',
+    'element': 'Iron'
+  },
+  {
+    'minor': '4.27',
+    'symbol': 'Co',
+    'element': 'Cobalt'
+  },
+  {
+    'minor': '4.28',
+    'symbol': 'Ni',
+    'element': 'Nickel'
+  },
+  {
+    'minor': '4.29',
+    'symbol': 'Cu',
+    'element': 'Copper'
+  }
+];
