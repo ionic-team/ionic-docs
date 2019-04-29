@@ -110,7 +110,11 @@ async function diff() {
     const patchTxt = readFileSync(patchPath, { encoding: 'UTF8' });
     writeFileSync(patchPath, patchTxt.replace(/\/\.detection/g, ''), { encoding: 'UTF8' });
 
-    execSync('patch -p1 < \'structure_' + translateType.type + '.patch\'');
+    try {
+      execSync('patch -p1 < \'structure_' + translateType.type + '.patch\'');
+    } catch (e) {
+      console.log('▲ this patch request contains merge conflicts!');
+    }
     execSync('rm structure_' + translateType.type + '.patch');
   }
 }
