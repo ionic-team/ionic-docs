@@ -103,15 +103,16 @@ async function create() {
 
 async function diff() {
   const execSync = require('child_process').execSync;
-  execSync('git diff src/translate/.api/*  > structure_api.patch');
+  for (const translateType of translateTypes) {
+    execSync('git diff src/translate/.detection/' + translateType.type + '/*  > structure_' + translateType.type + '.patch');
 
-  const patchPath = process.cwd() + '/structure_api.patch';
-  const patchTxt = readFileSync(patchPath, { encoding: 'UTF8' });
-  console.log(patchTxt.replace(/\.api/g, 'api'));
-  writeFileSync(patchPath, patchTxt.replace(/\.api/g, 'api'), { encoding: 'UTF8' });
+    const patchPath = process.cwd() + '/structure_' + translateType.type + '.patch';
+    const patchTxt = readFileSync(patchPath, { encoding: 'UTF8' });
+    writeFileSync(patchPath, patchTxt.replace(/\/\.detection/g, ''), { encoding: 'UTF8' });
 
-  execSync('patch -p1 < \'structure_api.patch\'');
-  execSync('rm structure_api.patch');
+    execSync('patch -p1 < \'structure_' + translateType.type + '.patch\'');
+    execSync('rm structure_' + translateType.type + '.patch');
+  }
 }
 
 function _changeNameToVariable(name: string) {
