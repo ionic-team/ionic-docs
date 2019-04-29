@@ -6,7 +6,7 @@ export default (props) => {
   if (releases.length === 0) {
     return [
       <h1>{page.title}</h1>,
-      <p>Unable to load Releases. Please see all releases on <a href="https://github.com/ionic-team/ionic/releases/" target="_blank">Github</a>.</p>
+      <p>Unable to load Releases. Please see all releases on <a href="https://github.com/ionic-team/ionic/releases/" target="_blank">GitHub</a>.</p>
     ];
   }
 
@@ -20,7 +20,7 @@ export default (props) => {
           <div class="release-tag-wrapper">
             <h2 id={release.version}>
               <a href={`#${release.version}`} class={getTagClasses(release)}>
-                {release.version}
+                {release.name}
               </a>
             </h2>
           </div>
@@ -34,7 +34,7 @@ export default (props) => {
         )}
       </div>
       <blockquote>
-        To see more releases, visit <a href="https://github.com/ionic-team/ionic/releases/" target="_blank">Github</a>.
+        To see more releases, visit <a href="https://github.com/ionic-team/ionic/releases/" target="_blank">GitHub</a>.
       </blockquote>
     </article>
   );

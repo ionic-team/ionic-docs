@@ -1,40 +1,45 @@
-.page-intro-release-notes {
+.page-release-notes {
   --page-width: 1000px;
 }
 
-.page-intro-release-notes .release-note {
+.page-release-notes .release-note {
   display: flex;
   align-items: top;
+
+  margin-bottom: 40px;
 }
 
-.page-intro-release-notes h2 {
+.page-release-notes h2 {
   margin: 0;
 
   font-size: 24px;
   line-height: normal;
 }
 
-.page-intro-release-notes h3 {
+.page-release-notes h3 {
   font-size: 18px;
 }
 
-.page-intro-release-notes h2,
-.page-intro-release-notes h3 {
+.page-release-notes h2,
+.page-release-notes h3 {
   padding-top: 0;
 }
 
-.page-intro-release-notes .release-tag-wrapper {
-  margin-right: 8px;
+.page-release-notes .release-tag-wrapper {
+  min-width: 180px;
+
+  text-align: right;
 }
 
-.page-intro-release-notes .release-tag-wrapper h2 {
+.page-release-notes .release-tag-wrapper h2 {
   font-size: 15px;
+
+  margin-right: 20px;
 }
 
-.page-intro-release-notes .release-tag {
-  padding: 6px 4px;
+.page-release-notes .release-tag {
+  padding: 6px 12px;
   display: inline-block;
-  width: 65px;
   text-align: center;
   font-weight: 600;
   border-radius: 3px;
@@ -45,13 +50,13 @@
   line-height: normal;
 }
 
-.page-intro-release-notes blockquote {
+.page-release-notes blockquote {
   margin-left: 0;
 
   background: rgba(var(--accent-color-rgb), 0.05);
   border-color: var(--accent-color);
 }
 
-.page-intro-release-notes a {
+.page-release-notes a {
   color: var(--accent-color);
 }

@@ -2,7 +2,7 @@
 previousText: 'Browser Support'
 previousUrl: '/docs/intro/browser-support'
 nextText: 'Release Notes'
-nextUrl: '/docs/intro/release-notes'
+nextUrl: '/docs/release-notes'
 ---
 
 # Versioning
