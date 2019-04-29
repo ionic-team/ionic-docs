@@ -60,7 +60,7 @@ async function apply() {
       resource = componentsObject;
     }
 
-    writeFileSync(process.cwd() + '/scripts/data/' + translateType.type + '.json', JSON.stringify(resource, null, 2), { encoding: 'UTF8' });
+    writeFileSync(process.cwd() + '/scripts/data/translated-' + translateType.type + '.json', JSON.stringify(resource, null, 2), { encoding: 'UTF8' });
   }
 }
 

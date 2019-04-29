@@ -3,7 +3,8 @@ import {
   buildPages
 } from '../index';
 
-import plugins from '../../data/native.json';
+// import plugins from '../../data/native.json';
+import plugins from '../../data/translated-native.json';
 import renderMarkdown from '../markdown-renderer';
 
 export default {

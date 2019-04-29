@@ -6,7 +6,7 @@ import {
 import fs from 'fs-extra';
 import { join, resolve } from 'path';
 // import { components } from '@ionic/docs/core.json';
-import { components } from '../../data/core.json';
+import { components } from '../../data/translated-api.json';
 import markdownRenderer from '../markdown-renderer';
 
 export default {

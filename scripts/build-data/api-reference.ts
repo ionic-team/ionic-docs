@@ -1,5 +1,5 @@
 // import { components } from '@ionic/docs/core.json';
-import { components } from '../data/core.json';
+import { components } from '../data/translated-api.json';
 import { resolve } from 'path';
 import { outputJson } from 'fs-extra';
 
