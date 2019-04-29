@@ -1,7 +1,7 @@
 ---
 title: Identity Vault
 template: enterprise-plugin
-version: 3.2.1
+version: 3.2.2
 minor: 3.2.X
 otherVersions:
   - 2.0.X
@@ -1607,6 +1607,15 @@ The possible values returned by [getBiometricType](#identityvault.getbiometricty
 ___
 
 ## Change Log
+
+
+
+### [3.2.2] (2019-04-29)
+
+
+### Bug Fixes
+
+* fix release configuration issue where xlmns:android was incorrectly add to manifest 
 
 
 
