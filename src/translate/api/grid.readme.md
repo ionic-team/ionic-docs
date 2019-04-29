@@ -1,8 +1,8 @@
 # ion-grid
 
 
-The grid is a powerful mobile-first flexbox system for building custom layouts.
+grid はカスタムレイアウトを作成するための強力なモバイルファーストのflexboxシステムです。
 
-It is composed of three units — a grid, [row(s)](../row) and [column(s)](../col). Columns will expand to fill the row, and will resize to fit additional columns. It is based on a 12 column layout with different breakpoints based on the screen size. The number of columns can be customized using CSS.
+グリッド、[row(s)](../row)、 [column(s)](../col)の3つのユニットで構成されます。rowは行全体に展開され、他の列に合わせてサイズが変更されます。画面サイズに応じてブレークポイントが異なる、12列のレイアウトに基づいています。カラム数はCSSを使用してカスタマイズできます。
 
-See [Grid Layout](/docs/layout/grid) for more information.
+詳しくは [Grid Layout](/docs/layout/grid) をご覧ください。
