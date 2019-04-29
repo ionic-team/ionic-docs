@@ -1,5 +1,5 @@
 
-Take a photo or capture video.
+写真やビデオを撮影します。
 
 Requires the Cordova plugin: `cordova-plugin-camera`. For more info, please see the [Cordova Camera Plugin Docs](https://github.com/apache/cordova-plugin-camera).
 
