@@ -1,9 +1,9 @@
 ![Built With Stencil](https://img.shields.io/badge/-Built%20With%20Stencil-16161d.svg?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI%2BCjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI%2BCgkuc3Qwe2ZpbGw6I0ZGRkZGRjt9Cjwvc3R5bGU%2BCjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik00MjQuNywzNzMuOWMwLDM3LjYtNTUuMSw2OC42LTkyLjcsNjguNkgxODAuNGMtMzcuOSwwLTkyLjctMzAuNy05Mi43LTY4LjZ2LTMuNmgzMzYuOVYzNzMuOXoiLz4KPHBhdGggY2xhc3M9InN0MCIgZD0iTTQyNC43LDI5Mi4xSDE4MC40Yy0zNy42LDAtOTIuNy0zMS05Mi43LTY4LjZ2LTMuNkgzMzJjMzcuNiwwLDkyLjcsMzEsOTIuNyw2OC42VjI5Mi4xeiIvPgo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNDI0LjcsMTQxLjdIODcuN3YtMy42YzAtMzcuNiw1NC44LTY4LjYsOTIuNy02OC42SDMzMmMzNy45LDAsOTIuNywzMC43LDkyLjcsNjguNlYxNDEuN3oiLz4KPC9zdmc%2BCg%3D%3D&colorA=16161d&style=flat-square)
 
-# Ionic日本語ドキュメンテーション
+# Ionic Framework 日本語ドキュメンテーション
 
 Ionic v4+ の公式ドキュメントを日本語に翻訳するためのレポジトリです。
-コンテンツは[ionicframework.jp](https://ionicframework.jp/docs/)で公開しています。
+コンテンツは [ionicframework.jp](https://ionicframework.jp/docs/) で公開しています。
 
 ## 構成
 開発には、`npm5.8 +`と`Node8 +`をインストールした環境が必要です。
@@ -21,22 +21,15 @@ $ npm start
 $ npm run prebuild
 ```
 
-__なお、これによって生成したファイルは通常翻訳できません。__
-拡張子が `json` となっているファイルは、動的にドキュメントが生成するため、必ず `jsonファイルの翻訳` の通りに作業するようにしてください。
-
 ### 翻訳ファイル
-#### 通常の翻訳
 
 翻訳を行うファイルは 拡張子が `md` となっております。`src/pages/intro.md` のコンテンツは、URLは `/docs/intro` となります。
 変更すればGitで追跡できる（ `.gitignore` に含まれていない）ファイルは通常の手順で翻訳可能です。翻訳前と翻訳後の行数が一致するように気をつけて作業ください。
 
+なお、 `Components`、`API`、`CLI`は特別な処理が入るため、翻訳するファイルは `src/transalate/` にそれぞれ格納されています。
+ファイル名の末尾が `readme.md` となっているファイルを翻訳ください。
 
-#### jsonファイルの翻訳
-
-`Components` はjsonファイルから動的に生成されるため、翻訳ファイルは `src/transalate/api/` に格納されています。
-キー「`readme`」を中心に翻訳ください。
-
-なお、翻訳をローカルプレビューに適用するには以下コマンドを実行ください。
+なお、`Components`、`API`、`CLI` については翻訳をローカルプレビューに適用するには以下コマンドを実行する必要があります。
 
 ```bash
 $ npm run translate
