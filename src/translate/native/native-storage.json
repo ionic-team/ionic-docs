@@ -1,0 +1,17 @@
+{
+  "packageName": "@ionic-native/native-storage",
+  "displayName": "Native Storage",
+  "description": "Native storage of variables in Android and iOS\n",
+  "usage": "\n```typescript\nimport { NativeStorage } from '@ionic-native/native-storage/ngx';\n\nconstructor(private nativeStorage: NativeStorage) { }\n\n...\n\nthis.nativeStorage.setItem('myitem', {property: 'value', anotherProperty: 'anotherValue'})\n  .then(\n    () => console.log('Stored item!'),\n    error => console.error('Error storing item', error)\n  );\n\nthis.nativeStorage.getItem('myitem')\n  .then(\n    data => console.log(data),\n    error => console.error(error)\n  );\n```\n",
+  "platforms": [
+    "Android",
+    "Browser",
+    "iOS",
+    "macOS",
+    "Windows"
+  ],
+  "repo": "https://github.com/TheCocoaProject/cordova-plugin-nativestorage",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-nativestorage"
+  }
+}

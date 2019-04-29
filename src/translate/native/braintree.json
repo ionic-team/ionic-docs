@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/braintree",
+  "displayName": "Braintree",
+  "description": "\nThis plugin enables the use of the Braintree Drop-In Payments UI in your Ionic applications on Android and iOS, using the native Drop-In UI for each platform (not the Javascript SDK).\n\n Ionic Native utilizes [a maintained fork](https://github.com/taracque/cordova-plugin-braintree) of the original `cordova-plugin-braintree`\n\n For information on how to use Apple Pay with this plugin, please refer to the [plugin documentation](https://github.com/Taracque/cordova-plugin-braintree#apple-pay-ios-only)\n\n**NOTE**: This is not a complete payments solution. All of the Braintree client-side UIs simply generate a payment nonce that must then be processed by your server to complete the payment.\nSee the [Braintree Node server documentation](https://developers.braintreepayments.com/start/hello-server/node) for details and a [sample Express server](https://github.com/braintree/braintree_express_example) that implements the required functionality.\n",
+  "usage": "\n```typescript\nimport { Braintree, ApplePayOptions, PaymentUIOptions } from '@ionic-native/braintree/ngx';\n\nconstructor(private braintree: Braintree) { }\n\n...\n\n// Your Braintree `Tokenization Key` from the Braintree dashboard.\n// Alternatively you can also generate this token server-side\n// using a client ID in order to allow users to use stored payment methods.\n// See the [Braintree Client Token documentation](https://developers.braintreepayments.com/reference/request/client-token/generate/node#customer_id) for details.\nconst BRAINTREE_TOKEN = '<YOUR_BRAINTREE_TOKEN>';\n\n// NOTE: Do not provide this unless you have configured your Apple Developer account\n// as well as your Braintree merchant account, otherwise the Braintree module will fail.\nconst appleOptions: ApplePayOptions = {\n  merchantId: '<YOUR MERCHANT ID>',\n  currency: 'USD',\n  country: 'US'\n}\n\nconst paymentOptions: PaymentUIOptions = {\n  amount: '14.99',\n  primaryDescription: 'Your product or service (per /item, /month, /week, etc)',\n}\n\nthis.braintree.initialize(BRAINTREE_TOKEN)\n  .then(() => this.braintree.setupApplePay(appleOptions))\n  .then(() => this.braintree.presentDropInPaymentUI(paymentOptions))\n  .then((result: PaymentUIResult) => {\n    if (result.userCancelled) {\n      console.log(\"User cancelled payment dialog.\");\n    } else {\n      console.log(\"User successfully completed payment!\");\n      console.log(\"Payment Nonce: \" + result.nonce);\n      console.log(\"Payment Result.\", result);\n    }\n  })\n  .catch((error: string) => console.error(error));\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/taracque/cordova-plugin-braintree",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-braintree"
+  }
+}

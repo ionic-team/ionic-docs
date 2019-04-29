@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/audio-management",
+  "displayName": "Audio Management",
+  "description": "\nA Cordova plugin to manage volume of audio streams for: ring, music, notification and system. Possible\nringer values for those streams are: silent, vibrate and normal.\n",
+  "usage": "\n```typescript\nimport { AudioManagement } from '@ionic-native/audio-management/ngx';\n\n\nconstructor(public audioman: AudioManagement) { }\n\n...\n\nsetAudioMode() {\n this.audioman.setAudioMode(AudioManagement.AudioMode.NORMAL)\n   .then(() => {\n    console.log('Device audio mode is now NORMAL');\n   })\n   .catch((reason) => {\n     console.log(reason);\n   });\n}\n\ngetAudioMode() {\n this.audioman.getAudioMode()\n   .then((value: AudioManagement.AudioModeReturn) => {\n    console.log('Device audio mode is ' + value.label + ' (' + value.audioMode + ')');\n   })\n   .catch((reason) => {\n     console.log(reason);\n   });\n}\n\n```",
+  "platforms": [
+    "Android"
+  ],
+  "repo": "https://github.com/clovelCed/cordova-plugin-audiomanagement",
+  "cordovaPlugin": {
+    "name": "clovelced-plugin-audiomanagement"
+  }
+}

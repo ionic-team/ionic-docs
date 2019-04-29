@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/fabric",
+  "displayName": "Answers",
+  "description": "\nAPI for interacting with the Answers kit.\n\nhttps://docs.fabric.io/crashlytics/index.html\n",
+  "usage": "\n```typescript\nimport { Answers } from '@ionic-native/fabric/ngx';\n\n\nconstructor(private answers: Answers) { }\n\n...\n\nthis.answers.sendCustomEvent('SomeCustomEvent', { some: \"attributes\" })\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://www.npmjs.com/package/cordova-fabric-plugin",
+  "cordovaPlugin": {
+    "name": "cordova-fabric-plugin"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/health",
+  "displayName": "Health",
+  "description": "\nA plugin that abstracts fitness and health repositories like Apple HealthKit or Google Fit.\n",
+  "usage": "\n```typescript\nimport { Health } from '@ionic-native/health/ngx';\n\n\nconstructor(private health: Health) { }\n\n...\n\nthis.health.isAvailable()\n.then((available:boolean) => {\n  console.log(available);\n  this.health.requestAuthorization([\n    'distance', 'nutrition',  //read and write permissions\n    {\n      read: ['steps'],       //read only permission\n      write: ['height', 'weight']  //write only permission\n    }\n  ])\n  .then(res => console.log(res))\n  .catch(e => console.log(e));\n})\n.catch(e => console.log(e));\n\n```\nSee description at https://github.com/dariosalvi78/cordova-plugin-health for a full list of Datatypes and see examples.\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/dariosalvi78/cordova-plugin-health",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-health"
+  }
+}

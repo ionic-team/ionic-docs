@@ -1,0 +1,15 @@
+{
+  "packageName": "@ionic-native/clipboard",
+  "displayName": "Clipboard",
+  "description": "\nClipboard management plugin for Cordova that supports iOS, Android, and Windows Phone 8.\n\n",
+  "usage": "\n```typescript\nimport { Clipboard } from '@ionic-native/clipboard/ngx';\n\nconstructor(private clipboard: Clipboard) { }\n\n...\n\n\nthis.clipboard.copy('Hello world');\n\nthis.clipboard.paste().then(\n   (resolve: string) => {\n      alert(resolve);\n    },\n    (reject: string) => {\n      alert('Error: ' + reject);\n    }\n  );\n\nthis.clipboard.clear();\n```\n",
+  "platforms": [
+    "Android",
+    "iOS",
+    "Windows Phone 8"
+  ],
+  "repo": "https://github.com/ihadeed/cordova-clipboard",
+  "cordovaPlugin": {
+    "name": "cordova-clipboard"
+  }
+}

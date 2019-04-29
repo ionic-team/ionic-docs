@@ -1,0 +1,15 @@
+{
+  "packageName": "@ionic-native/httpd",
+  "displayName": "Httpd",
+  "description": "\nEmbedded httpd for Cordova apps. Light weight HTTP server.",
+  "usage": "\n```typescript\nimport { Httpd, HttpdOptions } from '@ionic-native/httpd/ngx';\n\nconstructor(private httpd: Httpd) { }\n\n...\n\n\nlet options: HttpdOptions = {\n     www_root: 'httpd_root', // relative path to app's www directory\n     port: 80,\n     localhost_only: false\n }\n\nthis.httpd.startServer(options).subscribe((data) => {\n console.log('Server is live');\n});\n\n```",
+  "platforms": [
+    "Android",
+    "iOS",
+    "macOS"
+  ],
+  "repo": "https://github.com/floatinghotpot/cordova-httpd",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-httpd"
+  }
+}

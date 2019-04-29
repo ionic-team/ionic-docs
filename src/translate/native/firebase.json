@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/firebase",
+  "displayName": "Firebase",
+  "description": "\nThis plugin brings push notifications, analytics, event tracking, crash reporting and more from Google Firebase to your Cordova project! Android and iOS supported (including iOS 10).\n",
+  "usage": "\n```typescript\nimport { Firebase } from '@ionic-native/firebase/ngx';\n\nconstructor(private firebase: Firebase) { }\n\n...\n\nthis.firebase.getToken()\n  .then(token => console.log(`The token is ${token}`)) // save the token server-side and use it to push notifications to this device\n  .catch(error => console.error('Error getting token', error));\n\nthis.firebase.onNotificationOpen()\n   .subscribe(data => console.log(`User opened a notification ${data}`));\n\nthis.firebase.onTokenRefresh()\n  .subscribe((token: string) => console.log(`Got a new token ${token}`));\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/arnesson/cordova-plugin-firebase",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-firebase"
+  }
+}

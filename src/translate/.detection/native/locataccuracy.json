@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/location-accuracy",
+  "displayName": "Location Accuracy",
+  "description": "\nThis Cordova/Phonegap plugin for Android and iOS to request enabling/changing of Location Services by triggering a native dialog from within the app, avoiding the need for the user to leave your app to change location settings manually.\n",
+  "usage": "\n```typescript\nimport { LocationAccuracy } from '@ionic-native/location-accuracy/ngx';\n\nconstructor(private locationAccuracy: LocationAccuracy) { }\n\n...\n\nthis.locationAccuracy.canRequest().then((canRequest: boolean) => {\n\n  if(canRequest) {\n    // the accuracy option will be ignored by iOS\n    this.locationAccuracy.request(this.locationAccuracy.REQUEST_PRIORITY_HIGH_ACCURACY).then(\n      () => console.log('Request successful'),\n      error => console.log('Error requesting location permissions', error)\n    );\n  }\n\n});\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/dpa99c/cordova-plugin-request-location-accuracy",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-request-location-accuracy"
+  }
+}

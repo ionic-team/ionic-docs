@@ -1,0 +1,29 @@
+{
+  "name": "ionic ssh list",
+  "namespace": [
+    "ionic",
+    "ssh"
+  ],
+  "summary": "List your SSH public keys on Ionic",
+  "description": "",
+  "footnotes": [],
+  "groups": [],
+  "exampleCommands": [],
+  "aliases": [
+    "ionic ssh ls"
+  ],
+  "inputs": [],
+  "options": [
+    {
+      "name": "json",
+      "type": "boolean",
+      "summary": "Output SSH keys in JSON",
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    }
+  ],
+  "type": "global"
+}

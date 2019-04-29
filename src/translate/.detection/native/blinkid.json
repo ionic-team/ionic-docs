@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/blinkid",
+  "displayName": "BlinkId",
+  "description": "\nMicroblink SDK wrapper for barcode and document scanning. See the\nblinkid-phonegap repository for available recognizers and other settings\n",
+  "usage": "\n```typescript\nimport { BlinkId, RecognizerResultState } from '@ionic-native/blinkid/ngx';\n\nconstructor(private blinkId: BlinkId) { }\n\n...\n\nconst overlaySettings = new this.blinkId.DocumentOverlaySettings();\n\nconst usdlRecognizer = new this.blinkId.UsdlRecognizer();\nconst usdlSuccessFrameGrabber = new this.blinkId.SuccessFrameGrabberRecognizer(usdlRecognizer);\n\nconst barcodeRecognizer = new this.blinkId.BarcodeRecognizer();\nbarcodeRecognizer.scanPdf417 = true;\n\nconst recognizerCollection = new this.blinkId.RecognizerCollection([\n  usdlSuccessFrameGrabber,\n  barcodeRecognizer,\n]);\n\nconst canceled = await this.blinkId.scanWithCamera(\n  overlaySettings,\n  recognizerCollection,\n  { ios: IOS_LICENSE_KEY, android: ANDROID_LICENSE_KEY },\n);\n\nif (!canceled) {\n  if (usdlRecognizer.result.resultState === RecognizerResultState.valid) {\n    const successFrame = usdlSuccessFrameGrabber.result.successFrame;\n    if (successFrame) {\n      this.base64Img = `data:image/jpg;base64, ${successFrame}`;\n      this.fields = usdlRecognizer.result.fields;\n    }\n  } else {\n    this.barcodeStringData = barcodeRecognizer.result.stringData;\n  }\n}\n```\n",
+  "platforms": [
+    "iOS",
+    "Android"
+  ],
+  "repo": "https://github.com/BlinkID/blinkid-phonegap",
+  "cordovaPlugin": {
+    "name": "blinkid-cordova"
+  }
+}

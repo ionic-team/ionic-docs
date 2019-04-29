@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/jins-meme",
+  "displayName": "Jins Meme",
+  "description": "\nImplementation of the JINS MEME SDK\n",
+  "usage": "\n```typescript\nimport { JinsMeme } from '@ionic-native/jins-meme/ngx';\n\nconstructor(private jinsMeme: JinsMeme) { }\n\n...\n\nthis.jinsMeme.setAppClientID(appClientId: string, clientSecret: string).then(\n  // Bluetooth should be enabled and the JINS MEME powered on (blinking blue light)\n  this.jinsMeme.startScan().subscribe((meme_addr) => {\n    this.jinsMeme.connect(meme_addr).subscribe((connectResult) => {\n      this.memeService.startDataReport().subscribe((dataReport) => {\n        console.log(dataReport);\n      });\n    });\n  });\n.catch(console.log('jinsMeme.setAppClientID authentication error'));\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/BlyncSync/cordova-plugin-jins-meme",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-jins-meme"
+  }
+}

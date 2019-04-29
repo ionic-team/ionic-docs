@@ -1,0 +1,15 @@
+{
+  "packageName": "@ionic-native/app-version",
+  "displayName": "App Version",
+  "description": "\nReads the version of your app from the target build settings.\n\nRequires Cordova plugin: `cordova-plugin-app-version`. For more info, please see the [Cordova App Version docs](https://github.com/whiteoctober/cordova-plugin-app-version).\n",
+  "usage": "\n```typescript\nimport { AppVersion } from '@ionic-native/app-version/ngx';\n\nconstructor(private appVersion: AppVersion) { }\n\n...\n\n\nthis.appVersion.getAppName();\nthis.appVersion.getPackageName();\nthis.appVersion.getVersionCode();\nthis.appVersion.getVersionNumber();\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS",
+    "Windows"
+  ],
+  "repo": "https://github.com/whiteoctober/cordova-plugin-app-version",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-app-version"
+  }
+}

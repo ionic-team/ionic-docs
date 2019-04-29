@@ -1,0 +1,22 @@
+{
+  "name": "ionic integrations disable",
+  "namespace": [
+    "ionic",
+    "integrations"
+  ],
+  "summary": "Disable an integration",
+  "description": "Integrations, such as Cordova, can be disabled with this command.",
+  "footnotes": [],
+  "groups": [],
+  "exampleCommands": [],
+  "aliases": [],
+  "inputs": [
+    {
+      "name": "name",
+      "summary": "The integration to disable (e.g. `capacitor`, `cordova`, `enterprise`)",
+      "required": true
+    }
+  ],
+  "options": [],
+  "type": "project"
+}

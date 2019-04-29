@@ -1,0 +1,16 @@
+{
+  "packageName": "@ionic-native/app-rate",
+  "displayName": "App Rate",
+  "description": "\nThe AppRate plugin makes it easy to prompt the user to rate your app, either now, later, or never.\n\nRequires Cordova plugin: cordova-plugin-apprate. For more info, please see the [AppRate plugin docs](https://github.com/pushandplay/cordova-plugin-apprate).\n",
+  "usage": "\n```typescript\nimport { AppRate } from '@ionic-native/app-rate/ngx';\n\nconstructor(private appRate: AppRate) { }\n\n...\n// set certain preferences\nthis.appRate.preferences.storeAppURL = {\n  ios: '<app_id>',\n  android: 'market://details?id=<package_name>',\n  windows: 'ms-windows-store://review/?ProductId=<store_id>'\n}\n\nthis.appRate.promptForRating(true);\n\n// or, override the whole preferences object\nthis.appRate.preferences = {\n  usesUntilPrompt: 3,\n  storeAppURL: {\n   ios: '<app_id>',\n   android: 'market://details?id=<package_name>',\n   windows: 'ms-windows-store://review/?ProductId=<store_id>'\n  }\n}\n\nthis.appRate.promptForRating(false);\n```\n",
+  "platforms": [
+    "Android",
+    "BlackBerry 10",
+    "iOS",
+    "Windows"
+  ],
+  "repo": "https://github.com/pushandplay/cordova-plugin-apprate",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-apprate"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/dns",
+  "displayName": "DNS",
+  "description": "A plugin for Apache Cordova that enables applications to manually resolve hostnames into an underlying network address. This is mostly useful for determining whether there is a problem with the device's DNS server configuration.\n",
+  "usage": "\n```typescript\nimport { DNS } from '@ionic-native/dns/ngx';\n\n\nconstructor(private dns: DNS) { }\n\n...\nthis.dns.resolve(hostname)\n  .then(\n    address => console.log('Resolved ' + hostname + ' to ' + address),\n    error => console.log('Failed to resolve ' + hostname + ': ' + error)\n  );\n\n```\n",
+  "platforms": [
+    "Android"
+  ],
+  "repo": "https://bitbucket.org/zegeba/cordova-plugin-dns",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-dns"
+  }
+}

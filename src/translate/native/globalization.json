@@ -1,0 +1,17 @@
+{
+  "packageName": "@ionic-native/globalization",
+  "displayName": "Globalization",
+  "description": "\nThis plugin obtains information and performs operations specific to the user's locale, language, and timezone.\n",
+  "usage": "\n```typescript\nimport { Globalization } from '@ionic-native/globalization/ngx';\n\nconstructor(private globalization: Globalization) { }\n\n\n...\n\n\nthis.globalization.getPreferredLanguage()\n  .then(res => console.log(res))\n  .catch(e => console.log(e));\n\n\n```",
+  "platforms": [
+    "Amazon Fire OS",
+    "Android",
+    "Browser",
+    "iOS",
+    "Windows"
+  ],
+  "repo": "https://github.com/apache/cordova-plugin-globalization",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-globalization"
+  }
+}

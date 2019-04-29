@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/browser-tab",
+  "displayName": "Browser Tab",
+  "description": "\nThis plugin provides an interface to in-app browser tabs that exist on some mobile platforms, specifically [Custom Tabs](http://developer.android.com/tools/support-library/features.html#custom-tabs) on Android (including the [Chrome Custom Tabs](https://developer.chrome.com/multidevice/android/customtabs) implementation), and [SFSafariViewController](https://developer.apple.com/library/ios/documentation/SafariServices/Reference/SFSafariViewController_Ref/) on iOS.\n",
+  "usage": "\n```typescript\nimport { BrowserTab } from '@ionic-native/browser-tab/ngx';\n\nconstructor(private browserTab: BrowserTab) {\n\n  browserTab.isAvailable()\n    .then(isAvailable => {\n      if (isAvailable) {\n        browserTab.openUrl('https://ionic.io');\n      } else {\n        // open URL with InAppBrowser instead or SafariViewController\n      }\n    });\n}\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/google/cordova-plugin-browsertab",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-browsertab"
+  }
+}

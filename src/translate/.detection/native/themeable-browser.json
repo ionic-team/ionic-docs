@@ -1,0 +1,21 @@
+{
+  "packageName": "@ionic-native/themeable-browser",
+  "displayName": "Themeable Browser",
+  "description": "\nIn-app browser that allows styling.\n",
+  "usage": "\n```typescript\nimport { ThemeableBrowser, ThemeableBrowserOptions, ThemeableBrowserObject } from '@ionic-native/themeable-browser/ngx';\n\nconstructor(private themeableBrowser: ThemeableBrowser) { }\n\n...\n\n// can add options from the original InAppBrowser in a JavaScript object form (not string)\n// This options object also takes additional parameters introduced by the ThemeableBrowser plugin\n// This example only shows the additional parameters for ThemeableBrowser\n// Note that that `image` and `imagePressed` values refer to resources that are stored in your app\nconst options: ThemeableBrowserOptions = {\n     statusbar: {\n         color: '#ffffffff'\n     },\n     toolbar: {\n         height: 44,\n         color: '#f0f0f0ff'\n     },\n     title: {\n         color: '#003264ff',\n         showPageTitle: true\n     },\n     backButton: {\n         image: 'back',\n         imagePressed: 'back_pressed',\n         align: 'left',\n         event: 'backPressed'\n     },\n     forwardButton: {\n         image: 'forward',\n         imagePressed: 'forward_pressed',\n         align: 'left',\n         event: 'forwardPressed'\n     },\n     closeButton: {\n         image: 'close',\n         imagePressed: 'close_pressed',\n         align: 'left',\n         event: 'closePressed'\n     },\n     customButtons: [\n         {\n             image: 'share',\n             imagePressed: 'share_pressed',\n             align: 'right',\n             event: 'sharePressed'\n         }\n     ],\n     menu: {\n         image: 'menu',\n         imagePressed: 'menu_pressed',\n         title: 'Test',\n         cancel: 'Cancel',\n         align: 'right',\n         items: [\n             {\n                 event: 'helloPressed',\n                 label: 'Hello World!'\n             },\n             {\n                 event: 'testPressed',\n                 label: 'Test!'\n             }\n         ]\n     },\n     backButtonCanClose: true\n}\n\nconst browser: ThemeableBrowserObject = this.themeableBrowser.create('https://ionic.io', '_blank', options);\n\n```\nWe suggest that you refer to the plugin's repository for additional information on usage that may not be covered here.",
+  "platforms": [
+    "Amazon Fire OS",
+    "Android",
+    "Blackberry 10",
+    "Browser",
+    "FirefoxOS",
+    "iOS",
+    "Ubuntu",
+    "Windows",
+    "Windows Phone"
+  ],
+  "repo": "https://github.com/initialxy/cordova-plugin-themeablebrowser",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-themeablebrowser"
+  }
+}

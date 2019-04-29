@@ -1,0 +1,18 @@
+{
+  "packageName": "@ionic-native/insomnia",
+  "displayName": "Insomnia",
+  "description": "\nPrevent the screen of the mobile device from falling asleep.\n",
+  "usage": "\n```typescript\nimport { Insomnia } from '@ionic-native/insomnia/ngx';\n\nconstructor(private insomnia: Insomnia) { }\n\n...\n\nthis.insomnia.keepAwake()\n  .then(\n    () => console.log('success'),\n    () => console.log('error')\n  );\n\nthis.insomnia.allowSleepAgain()\n  .then(\n    () => console.log('success'),\n    () => console.log('error')\n  );\n```\n\n",
+  "platforms": [
+    "Android",
+    "Browser",
+    "Firefox OS",
+    "iOS",
+    "Windows",
+    "Windows Phone 8"
+  ],
+  "repo": "https://github.com/EddyVerbruggen/Insomnia-PhoneGap-Plugin",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-insomnia"
+  }
+}

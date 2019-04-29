@@ -1,0 +1,37 @@
+{
+  "name": "ionic enterprise register",
+  "namespace": [
+    "ionic",
+    "enterprise"
+  ],
+  "summary": "Register your Product Key with this app",
+  "description": "",
+  "footnotes": [],
+  "groups": [],
+  "exampleCommands": [],
+  "aliases": [],
+  "inputs": [],
+  "options": [
+    {
+      "name": "app-id",
+      "type": "string",
+      "summary": "The Ionic App ID",
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "id"
+      }
+    },
+    {
+      "name": "key",
+      "type": "string",
+      "summary": "The Product Key",
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "key"
+      }
+    }
+  ],
+  "type": "project"
+}

@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/file-path",
+  "displayName": "File Path",
+  "description": "\n\nThis plugin allows you to resolve the native filesystem path for Android content URIs and is based on code in the aFileChooser library.\n",
+  "usage": "\n```typescript\nimport { FilePath } from '@ionic-native/file-path/ngx';\n\nconstructor(private filePath: FilePath) { }\n\n...\n\nthis.filePath.resolveNativePath(path)\n  .then(filePath => console.log(filePath))\n  .catch(err => console.log(err));\n\n```\n",
+  "platforms": [
+    "Android"
+  ],
+  "repo": "https://github.com/hiddentao/cordova-plugin-filepath",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-filepath"
+  }
+}

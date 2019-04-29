@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/navigation-bar",
+  "displayName": "Navigation Bar",
+  "description": "\nThe NavigationBar plugin allows you to hide and auto hide the android navigation bar.\n",
+  "usage": "\n```typescript\nimport { NavigationBar } from '@ionic-native/navigation-bar/ngx';\n\nconstructor(private navigationBar: NavigationBar) { }\n\n...\n\nlet autoHide: boolean = true;\nthis.navigationBar.setUp(autoHide);\n```\n",
+  "platforms": [
+    "Android"
+  ],
+  "repo": "https://github.com/cranberrygame/cordova-plugin-navigationbar",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-navigationbar"
+  }
+}

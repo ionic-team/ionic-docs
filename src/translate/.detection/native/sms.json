@@ -1,0 +1,16 @@
+{
+  "packageName": "@ionic-native/sms",
+  "displayName": "SMS",
+  "description": "\n\nRequires Cordova plugin: cordova-sms-plugin. For more info, please see the [SMS plugin docs](https://github.com/cordova-sms/cordova-sms-plugin).\n",
+  "usage": "\n```typescript\nimport { SMS } from '@ionic-native/sms/ngx';\n\nconstructor(private sms: SMS) { }\n\n\n...\n\n\n// Send a text message using default options\nthis.sms.send('416123456', 'Hello world!');\n```",
+  "platforms": [
+    "Android",
+    "iOS",
+    "Windows",
+    "Windows Phone 8"
+  ],
+  "repo": "https://github.com/cordova-sms/cordova-sms-plugin",
+  "cordovaPlugin": {
+    "name": "cordova-sms-plugin"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "ionic logout",
+  "namespace": [
+    "ionic"
+  ],
+  "summary": "Logout of Ionic Appflow",
+  "description": "Remove the Ionic Appflow user token from the CLI config.\n\nLogin again with `ionic login`.\n\nIf you need to create an Ionic Appflow account, use `ionic signup`.",
+  "footnotes": [],
+  "groups": [],
+  "exampleCommands": [],
+  "aliases": [],
+  "inputs": [],
+  "options": [],
+  "type": "global"
+}

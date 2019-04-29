@@ -1,0 +1,55 @@
+{
+  "name": "ionic deploy build",
+  "namespace": [
+    "ionic",
+    "deploy"
+  ],
+  "summary": "Create a deploy build on Appflow",
+  "description": "This command creates a deploy build on Ionic Appflow. While the build is running, it prints the remote build log to the terminal.\n\nCustomizing the build:\n- The `--environment` and `--channel` options can be used to customize the groups of values exposed to the build.\n\nApart from `--commit`, every option can be specified using the full name setup within the Appflow [Dashboard](https://dashboard.ionicframework.com).",
+  "footnotes": [],
+  "groups": [],
+  "exampleCommands": [
+    "ionic deploy build ",
+    "ionic deploy build --environment=\"My Custom Environment Name\"",
+    "ionic deploy build --commit=2345cd3305a1cf94de34e93b73a932f25baac77c",
+    "ionic deploy build --channel=\"Master\"",
+    "ionic deploy build --channel=\"Master\" --channel=\"My Custom Channel\""
+  ],
+  "aliases": [],
+  "inputs": [],
+  "options": [
+    {
+      "name": "environment",
+      "type": "string",
+      "summary": "The group of environment variables exposed to your build",
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "name"
+      }
+    },
+    {
+      "name": "channel",
+      "type": "string",
+      "summary": "The channel you want to auto deploy the build to. This can be repeated multiple times if multiple channels need to be specified.",
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "name"
+      }
+    },
+    {
+      "name": "commit",
+      "type": "string",
+      "summary": "Commit (defaults to HEAD)",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "sha1"
+      }
+    }
+  ],
+  "type": "project"
+}

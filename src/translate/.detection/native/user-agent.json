@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/user-agent",
+  "displayName": "User Agent",
+  "description": "\nThe UserAgent plugin provides functions to set the HTTP  user-agent header. For more info about User-Agents, please [see the HTTP User-Agent docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent).\n\nRequires Cordova plugin: `cordova-useragent`. For more info, please see the [User-Agent plugin docs](https://github.com/LouisT/cordova-useragent).\n",
+  "usage": "\n```typescript\nimport { UserAgent } from '@ionic-native/user-agent/ngx';\n\n\nconstructor(private userAgent: UserAgent) { }\n\n...\n\n\nthis.userAgent.set('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36')\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n* this.userAgent.get()\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n* this.userAgent.reset()\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/danielsogl/cordova-plugin-useragent",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-useragent"
+  }
+}

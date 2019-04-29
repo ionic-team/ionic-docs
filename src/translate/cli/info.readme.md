@@ -1,0 +1,1 @@
+This command is an easy way to share information about your setup. If applicable, be sure to run `ionic info` within your project directory to display even more information.

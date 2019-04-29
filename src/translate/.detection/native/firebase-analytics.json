@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/firebase-analytics",
+  "displayName": "Firebase Analytics",
+  "description": "\nCordova plugin for Firebase Analytics\n\nGo to firebase console and export google-services.json and GoogleService-Info.plist. Put those files into the root of your cordova app folder.\n\nNOTE: on iOS in order to collect demographic, age, gender data etc. you should additionally include AdSupport.framework into your project.\n",
+  "usage": "\n```typescript\nimport { FirebaseAnalytics } from '@ionic-native/firebase-analytics/ngx';\n\n\nconstructor(private firebaseAnalytics: FirebaseAnalytics) { }\n\n...\n\nthis.firebaseAnalytics.logEvent('page_view', {page: \"dashboard\"})\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/chemerisuk/cordova-plugin-firebase-analytics",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-firebase-analytics"
+  }
+}

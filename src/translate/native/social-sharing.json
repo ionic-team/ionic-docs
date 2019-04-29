@@ -1,0 +1,17 @@
+{
+  "packageName": "@ionic-native/social-sharing",
+  "displayName": "Social Sharing",
+  "description": "\nShare text, files, images, and links via social networks, sms, and email.\n\nFor Browser usage check out the Web Share API docs: https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin#5-web-share-api\n",
+  "usage": "\n```typescript\nimport { SocialSharing } from '@ionic-native/social-sharing/ngx';\n\nconstructor(private socialSharing: SocialSharing) { }\n\n...\n\n// Check if sharing via email is supported\nthis.socialSharing.canShareViaEmail().then(() => {\n  // Sharing via email is possible\n}).catch(() => {\n  // Sharing via email is not possible\n});\n\n// Share via email\nthis.socialSharing.shareViaEmail('Body', 'Subject', ['recipient@example.org']).then(() => {\n  // Success!\n}).catch(() => {\n  // Error!\n});\n```\n",
+  "platforms": [
+    "Android",
+    "Browser",
+    "iOS",
+    "Windows",
+    "Windows Phone"
+  ],
+  "repo": "https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-x-socialsharing"
+  }
+}

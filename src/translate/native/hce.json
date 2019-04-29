@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/hce",
+  "displayName": "hce",
+  "description": "\nHCE Cordova Wrapper\n",
+  "usage": "\n```typescript\nimport { hce } from '@ionic-native/hce/ngx';\n\n\nconstructor(private hce: hce) { }\n\n...\n\nfunction onCommand(command){\n  var commandAsBytes = new Uint8Array(command);\n  var commandAsString = hce.util.byteArrayToHexString(commandAsBytes);\n\n  // do something with the command\n\n  // send the response\n  hce.sendReponse(commandResponse);\n}\nthis.hce.registerCommandCallback().then(onCommand);\n\n```\n",
+  "platforms": [
+    "Android"
+  ],
+  "repo": "https://github.com/don/cordova-plugin-hce",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-hce"
+  }
+}

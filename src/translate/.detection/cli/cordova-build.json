@@ -1,0 +1,151 @@
+{
+  "name": "ionic cordova build",
+  "namespace": [
+    "ionic",
+    "cordova"
+  ],
+  "summary": "Build (prepare + compile) an Ionic project for a given platform",
+  "description": "Like running `cordova build` directly, but also builds web assets with configuration from `ionic build` and provides friendly checks.\n\nTo pass additional options to the Cordova CLI, use the `--` separator after the Ionic CLI arguments.\n\nThe Cordova CLI requires a separator for platform-specific arguments for Android [builds](https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html#using-flags), so an additional separator is required for the Ionic CLI, but it is not required for iOS [builds](https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html#using-flags). See the example commands for usage with separators. To avoid using flags, consider using `--buildConfig` with a **build.json** file.",
+  "footnotes": [],
+  "groups": [],
+  "exampleCommands": [
+    "ionic cordova build android",
+    "ionic cordova build android --buildConfig=build.json",
+    "ionic cordova build android --prod --release -- -- --gradleArg=-PcdvBuildMultipleApks=true",
+    "ionic cordova build android --prod --release -- -- --keystore=filename.keystore --alias=myalias",
+    "ionic cordova build android --prod --release -- -- --minSdkVersion=21",
+    "ionic cordova build android --prod --release -- -- --versionCode=55",
+    "ionic cordova build android --prod --release --buildConfig=build.json",
+    "ionic cordova build ios",
+    "ionic cordova build ios --buildConfig=build.json",
+    "ionic cordova build ios --prod --release",
+    "ionic cordova build ios --prod --release -- --developmentTeam=\"ABCD\" --codeSignIdentity=\"iPhone Developer\" --packageType=\"app-store\"",
+    "ionic cordova build ios --prod --release --buildConfig=build.json"
+  ],
+  "aliases": [],
+  "inputs": [
+    {
+      "name": "platform",
+      "summary": "The platform to build (e.g. `android`, `ios`)",
+      "required": true
+    }
+  ],
+  "options": [
+    {
+      "name": "build",
+      "type": "boolean",
+      "summary": "Do not invoke an Ionic build",
+      "default": true,
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "debug",
+      "type": "boolean",
+      "summary": "Mark as a debug build",
+      "groups": [
+        "cordova",
+        "cordova-cli"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "release",
+      "type": "boolean",
+      "summary": "Mark as a release build",
+      "groups": [
+        "cordova",
+        "cordova-cli"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "device",
+      "type": "boolean",
+      "summary": "Deploy build to a device",
+      "groups": [
+        "cordova",
+        "cordova-cli",
+        "native-run"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "emulator",
+      "type": "boolean",
+      "summary": "Deploy build to an emulator",
+      "groups": [
+        "cordova",
+        "cordova-cli",
+        "native-run"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "buildConfig",
+      "type": "string",
+      "summary": "Use the specified build configuration",
+      "groups": [
+        "advanced",
+        "cordova",
+        "cordova-cli"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "file"
+      }
+    },
+    {
+      "name": "prod",
+      "type": "boolean",
+      "summary": "Flag to use the `production` configuration",
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "source-map",
+      "type": "boolean",
+      "summary": "Output source maps",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "configuration",
+      "type": "string",
+      "summary": "Specify the configuration to use.",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [
+        "c"
+      ],
+      "spec": {
+        "value": "conf"
+      }
+    }
+  ],
+  "type": "project"
+}

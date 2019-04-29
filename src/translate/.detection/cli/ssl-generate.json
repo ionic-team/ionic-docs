@@ -1,0 +1,123 @@
+{
+  "name": "ionic ssl generate",
+  "namespace": [
+    "ionic",
+    "ssl"
+  ],
+  "summary": "Generates an SSL key & certificate",
+  "description": "Uses OpenSSL to create a self-signed certificate for **localhost** (by default).\n\nAfter the certificate is generated, you will still need to add it to your system or browser as a trusted certificate.\n\nThe default directory for `--key-path` and `--cert-path` is `.ionic/ssl/`.",
+  "footnotes": [],
+  "groups": [
+    "experimental"
+  ],
+  "exampleCommands": [],
+  "aliases": [
+    "ionic ssl g"
+  ],
+  "inputs": [],
+  "options": [
+    {
+      "name": "key-path",
+      "type": "string",
+      "summary": "Destination of private key file",
+      "default": "./.ionic/ssl/key.pem",
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "path"
+      }
+    },
+    {
+      "name": "cert-path",
+      "type": "string",
+      "summary": "Destination of certificate file",
+      "default": "./.ionic/ssl/cert.pem",
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "path"
+      }
+    },
+    {
+      "name": "country-name",
+      "type": "string",
+      "summary": "The country name (C) of the SSL certificate",
+      "default": "US",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "C"
+      }
+    },
+    {
+      "name": "state-or-province-name",
+      "type": "string",
+      "summary": "The state or province name (ST) of the SSL certificate",
+      "default": "Wisconsin",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "ST"
+      }
+    },
+    {
+      "name": "locality-name",
+      "type": "string",
+      "summary": "The locality name (L) of the SSL certificate",
+      "default": "Madison",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "L"
+      }
+    },
+    {
+      "name": "organization-name",
+      "type": "string",
+      "summary": "The organization name (O) of the SSL certificate",
+      "default": "Ionic",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "O"
+      }
+    },
+    {
+      "name": "common-name",
+      "type": "string",
+      "summary": "The common name (CN) of the SSL certificate",
+      "default": "localhost",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "CN"
+      }
+    },
+    {
+      "name": "bits",
+      "type": "string",
+      "summary": "Number of bits in the key",
+      "default": "2048",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [
+        "b"
+      ],
+      "spec": {
+        "value": "bits"
+      }
+    }
+  ],
+  "type": "project"
+}

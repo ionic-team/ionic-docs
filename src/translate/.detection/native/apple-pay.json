@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/apple-pay",
+  "displayName": "Apple Pay",
+  "description": "\nA dependency free Cordova plugin to provide Apple Pay functionality.\n",
+  "usage": "\n```typescript\nimport { ApplePay } from '@ionic-native/apple-pay/ngx';\n\n\nconstructor(private applePay: ApplePay) { }\n\n...\nasync applePay() {\n  // This block is optional -- only if you need to update order items/shipping\n  // methods in response to shipping method selections\n  this.applePay.startListeningForShippingContactSelection()\n    .subscribe(async selection => {\n      try {\n        await this.applePay.updateItemsAndShippingMethods({\n          items: getFromSelection(selection),\n          shippingMethods: getFromSelection(selection),\n        });\n      }\n      catch {\n        // handle update items error\n      }\n    });\n\n  try {\n    const applePayTransaction = await this.applePay.makePaymentRequest({\n      items,\n      shippingMethods,\n      merchantIdentifier,\n      currencyCode,\n      countryCode,\n      billingAddressRequirement: ['name', 'email', 'phone'],\n      shippingAddressRequirement: 'none',\n      shippingType: 'shipping'\n    });\n\n    const transactionStatus = await completeTransactionWithMerchant(applePayTransaction);\n    await this.applePay.completeLastTransaction(transactionStatus);\n  } catch {\n    // handle payment request error\n    // Can also handle stop complete transaction but these should normally not occur\n  }\n\n  // only if you started listening before\n  await this.applePay.stopListeningForShippingContactSelection();\n}\n```\n",
+  "platforms": [
+    "iOS"
+  ],
+  "repo": "https://github.com/samkelleher/cordova-plugin-applepay",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-applepay"
+  }
+}

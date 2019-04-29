@@ -1,0 +1,16 @@
+{
+  "packageName": "@ionic-native/media",
+  "displayName": "Media",
+  "description": "\nThis plugin provides the ability to record and play back audio files on a device.\n",
+  "usage": "\n```typescript\nimport { Media, MediaObject } from '@ionic-native/media/ngx';\n\n\nconstructor(private media: Media) { }\n\n\n...\n\n\n// Create a Media instance.  Expects path to file or url as argument\n// We can optionally pass a second argument to track the status of the media\n\nconst file: MediaObject = this.media.create('file.mp3');\n\n// to listen to plugin events:\n\nfile.onStatusUpdate.subscribe(status => console.log(status)); // fires when file status changes\n\nfile.onSuccess.subscribe(() => console.log('Action is successful'));\n\nfile.onError.subscribe(error => console.log('Error!', error));\n\n// play the file\nfile.play();\n\n// pause the file\nfile.pause();\n\n// get current playback position\nfile.getCurrentPosition().then((position) => {\n  console.log(position);\n});\n\n// get file duration\nlet duration = file.getDuration();\nconsole.log(duration);\n\n// skip to 10 seconds (expects int value in ms)\nfile.seekTo(10000);\n\n// stop playing the file\nfile.stop();\n\n// release the native audio resource\n// Platform Quirks:\n// iOS simply create a new instance and the old one will be overwritten\n// Android you must call release() to destroy instances of media when you are done\nfile.release();\n\n\n\n// Recording to a file\nconst file: MediaObject = this.media.create('path/to/file.mp3');\n\nfile.startRecord();\n\nfile.stopRecord();\n\n\n```\n\nSome hints if you are using iOS and recording doesn't work:\n1.) Try to use a absolute file path but remove beginning \"file://\".\nThen it looks like: `/var/mobile/Containers/Data/Application/AF438B8B-7724-4FBB-8E69-083463224FC4/tmp/my_file.m4a`\nExample: `this.media.create(this.file.tempDirectory.replace(/^file:\\/\\//, '') + 'my_file.m4a')`\n2.) If that's not working, too, create the file before using.\nExample:\n```typescript\nimport { Media, MediaObject } from '@ionic-native/media/ngx';\nimport { File } from '@ionic-native/file/ngx';\n\n...\n\nconstructor(private media: Media, private file: File) { }\n\n...\n\nthis.file.createFile(this.file.tempDirectory, 'my_file.m4a', true).then(() => {\n  let file = this.media.create(this.file.tempDirectory.replace(/^file:\\/\\//, '') + 'my_file.m4a');\n  file.startRecord();\n  window.setTimeout(() => file.stopRecord(), 10000);\n});\n```\n\nYou can find the reasons here: https://github.com/ionic-team/ionic-native/issues/1452#issuecomment-299605906",
+  "platforms": [
+    "Android",
+    "Browser",
+    "iOS",
+    "Windows"
+  ],
+  "repo": "https://github.com/apache/cordova-plugin-media",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-media"
+  }
+}

@@ -1,0 +1,1 @@
+Read Gyroscope sensor data

@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/appodeal",
+  "displayName": "Appodeal",
+  "description": "\nPlugin to serve ads through native Appodeal SDKs\n",
+  "usage": "\n```typescript\nimport { Appodeal } from '@ionic-native/appodeal/ngx';\n\nconstructor(private appodeal: Appodeal) {\n\n   const appKey = '<your app key>';\n   appodeal.initialize(appKey, appodeal.AD_TYPES.REWARDED_VIDEO);\n   appodeal.show(appodeal.AD_TYPES.REWARDED_VIDEO);\n\n}\n```\n",
+  "platforms": [
+    "iOS",
+    "Android"
+  ],
+  "repo": "https://github.com/appodeal/appodeal-cordova-plugin",
+  "cordovaPlugin": {
+    "name": "https://github.com/appodeal/appodeal-cordova-plugin.git"
+  }
+}

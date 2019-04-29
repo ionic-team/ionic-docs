@@ -1,0 +1,16 @@
+{
+  "packageName": "@ionic-native/badge",
+  "displayName": "Badge",
+  "description": "\nThe essential purpose of badge numbers is to enable an application to inform its users that it has something for them — for example, unread messages — when the application isn’t running in the foreground.\n\nRequires Cordova plugin: cordova-plugin-badge. For more info, please see the [Badge plugin docs](https://github.com/katzer/cordova-plugin-badge).\n",
+  "usage": "\n```typescript\nimport { Badge } from '@ionic-native/badge/ngx';\n\nconstructor(private badge: Badge) { }\n\n...\n\nthis.badge.set(10);\nthis.badge.increase(1);\nthis.badge.clear();\n```\n",
+  "platforms": [
+    "Android",
+    "Browser",
+    "iOS",
+    "Windows"
+  ],
+  "repo": "https://github.com/katzer/cordova-plugin-badge",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-badge"
+  }
+}

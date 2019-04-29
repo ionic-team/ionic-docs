@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/openalpr",
+  "displayName": "OpenALPR",
+  "description": "\nThis Cordova plugin adds support for the OpenALPR (Automatic License Plate Recognition) library, which provides support for retrieving the license plate from a picture.\n",
+  "usage": "\n```typescript\nimport { OpenALPR, OpenALPROptions, OpenALPRResult } from '@ionic-native/openalpr/ngx';\n\n\nconstructor(private openALPR: OpenALPR) { }\n\nconst scanOptions: OpenALPROptions = {\n   country: this.openALPR.Country.EU,\n   amount: 3\n}\n\n// To get imageData, you can use the @ionic-native/camera module for example. It works with DestinationType.FILE_URI and DATA_URL\n\nthis.openALPR.scan(imageData, scanOptions)\n  .then((res: [OpenALPRResult]) => console.log(res))\n  .catch((error: Error) => console.error(error));\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/iMicknl/cordova-plugin-openalpr",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-openalpr"
+  }
+}

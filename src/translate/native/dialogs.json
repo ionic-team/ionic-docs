@@ -1,0 +1,17 @@
+{
+  "packageName": "@ionic-native/dialogs",
+  "displayName": "Dialogs",
+  "description": "\nThis plugin gives you ability to access and customize the device native dialogs.\n\nRequires Cordova plugin: `cordova-plugin-dialogs`. For more info, please see the [Dialogs plugin docs](https://github.com/apache/cordova-plugin-dialogs).\n",
+  "usage": "\n```typescript\nimport { Dialogs } from '@ionic-native/dialogs/ngx';\n\nconstructor(private dialogs: Dialogs) { }\n\n...\n\nthis.dialogs.alert('Hello world')\n  .then(() => console.log('Dialog dismissed'))\n  .catch(e => console.log('Error displaying dialog', e));\n\n\n```",
+  "platforms": [
+    "Amazon Fire OS",
+    "Android",
+    "Browser",
+    "iOS",
+    "Windows"
+  ],
+  "repo": "https://github.com/apache/cordova-plugin-dialogs",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-dialogs"
+  }
+}

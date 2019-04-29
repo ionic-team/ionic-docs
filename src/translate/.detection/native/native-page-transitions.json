@@ -1,0 +1,15 @@
+{
+  "packageName": "@ionic-native/native-page-transitions",
+  "displayName": "Native Page Transitions",
+  "description": "\nThe Native Page Transitions plugin uses native hardware acceleration to animate your transitions between views. You have complete control over the type of transition, the duration, and direction.\n",
+  "usage": "\n```typescript\nimport { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions/ngx';\n\nconstructor(private nativePageTransitions: NativePageTransitions) { }\n\n...\n\n\n// example of adding a transition when a page/modal closes\nionViewWillLeave() {\n\n let options: NativeTransitionOptions = {\n    direction: 'up',\n    duration: 500,\n    slowdownfactor: 3,\n    slidePixels: 20,\n    iosdelay: 100,\n    androiddelay: 150,\n    fixedPixelsTop: 0,\n    fixedPixelsBottom: 60\n   }\n\n this.nativePageTransitions.slide(options)\n   .then(onSuccess)\n   .catch(onError);\n\n}\n\n\n// example of adding a transition when pushing a new page\nopenPage(page: any) {\n\n  this.nativePageTransitions.slide(options);\n  this.navCtrl.push(page);\n\n}\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS",
+    "Windows Phone 8"
+  ],
+  "repo": "https://github.com/Telerik-Verified-Plugins/NativePageTransitions",
+  "cordovaPlugin": {
+    "name": "com.telerik.plugins.nativepagetransitions"
+  }
+}

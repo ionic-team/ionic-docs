@@ -1,0 +1,16 @@
+{
+  "packageName": "@ionic-native/sim",
+  "displayName": "Sim",
+  "description": "\nGets info from the Sim card like the carrier name, mcc, mnc and country code and other system dependent info.\n\nRequires Cordova plugin: `cordova-plugin-sim`. For more info, please see the [Cordova Sim docs](https://github.com/pbakondy/cordova-plugin-sim).\n",
+  "usage": "\n```typescript\nimport { Sim } from '@ionic-native/sim/ngx';\n\n\nconstructor(private sim: Sim) { }\n\n...\n\nthis.sim.getSimInfo().then(\n  (info) => console.log('Sim info: ', info),\n  (err) => console.log('Unable to get sim info: ', err)\n);\n\nthis.sim.hasReadPermission().then(\n  (info) => console.log('Has permission: ', info)\n);\n\nthis.sim.requestReadPermission().then(\n  () => console.log('Permission granted'),\n  () => console.log('Permission denied')\n);\n```\n",
+  "platforms": [
+    "Android",
+    "iOS",
+    "Windows",
+    "Windows Phone"
+  ],
+  "repo": "https://github.com/pbakondy/cordova-plugin-sim",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-sim"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "packageName": "@ionic-native/screen-orientation",
+  "displayName": "Screen Orientation",
+  "description": "\nCordova plugin to set/lock the screen orientation in a common way.\n\nRequires Cordova plugin: `cordova-plugin-screen-orientation`. For more info, please see the [Screen Orientation plugin docs](https://github.com/apache/cordova-plugin-screen-orientation).\n",
+  "usage": "\n```typescript\nimport { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';\n\nconstructor(private screenOrientation: ScreenOrientation) { }\n\n...\n\n\n// get current\nconsole.log(this.screenOrientation.type); // logs the current orientation, example: 'landscape'\n\n// set to landscape\nthis.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);\n\n// allow user rotate\nthis.screenOrientation.unlock();\n\n// detect orientation changes\nthis.screenOrientation.onChange().subscribe(\n   () => {\n       console.log(\"Orientation Changed\");\n   }\n);\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS",
+    "Windows"
+  ],
+  "repo": "https://github.com/apache/cordova-plugin-screen-orientation",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-screen-orientation"
+  }
+}

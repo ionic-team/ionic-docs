@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/in-app-review",
+  "displayName": "In App Review",
+  "description": "\nThis plugin does use the iOS class SKStore​Review​Controller to open the inApp review popup available since iOS 10.3\n\nThis functionality only works on iOS devices\n\n",
+  "usage": "\n```typescript\nimport { InAppReview } from '@ionic-native/in-app-review/ngx';\n\n\nconstructor(private inAppReview: InAppReview) { }\n\n...\n\n\nthis.inAppReview.requestReview()\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+  "platforms": [
+    "iOS"
+  ],
+  "repo": "https://github.com/omaxlive/com.omarben.inappreview",
+  "cordovaPlugin": {
+    "name": "com.omarben.inappreview"
+  }
+}

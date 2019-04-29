@@ -1,0 +1,16 @@
+{
+  "packageName": "@ionic-native/sqlite",
+  "displayName": "SQLite\n",
+  "description": "\nAccess SQLite databases on the device.\n",
+  "usage": "\n\n```typescript\nimport { SQLite, SQLiteObject } from '@ionic-native/sqlite/ngx';\n\nconstructor(private sqlite: SQLite) { }\n\n...\n\nthis.sqlite.create({\n  name: 'data.db',\n  location: 'default'\n})\n  .then((db: SQLiteObject) => {\n\n\n    db.executeSql('create table danceMoves(name VARCHAR(32))', [])\n      .then(() => console.log('Executed SQL'))\n      .catch(e => console.log(e));\n\n\n  })\n  .catch(e => console.log(e));\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS",
+    "macOS",
+    "Windows"
+  ],
+  "repo": "https://github.com/litehelpers/Cordova-sqlite-storage",
+  "cordovaPlugin": {
+    "name": "cordova-sqlite-storage"
+  }
+}

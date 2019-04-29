@@ -1,0 +1,19 @@
+{
+  "packageName": "@ionic-native/file-transfer",
+  "displayName": "File Transfer\n",
+  "description": "\nThis plugin allows you to upload and download files.\n",
+  "usage": "\n```typescript\nimport { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer/ngx';\nimport { File } from '@ionic-native/file';\n\nconstructor(private transfer: FileTransfer, private file: File) { }\n\n...\n\nconst fileTransfer: FileTransferObject = this.transfer.create();\n\n// Upload a file:\nfileTransfer.upload(..).then(..).catch(..);\n\n// Download a file:\nfileTransfer.download(..).then(..).catch(..);\n\n// Abort active transfer:\nfileTransfer.abort();\n\n// full example\nupload() {\n  let options: FileUploadOptions = {\n     fileKey: 'file',\n     fileName: 'name.jpg',\n     headers: {}\n     .....\n  }\n\n  fileTransfer.upload('<file path>', '<api endpoint>', options)\n   .then((data) => {\n     // success\n   }, (err) => {\n     // error\n   })\n}\n\ndownload() {\n  const url = 'http://www.example.com/file.pdf';\n  fileTransfer.download(url, this.file.dataDirectory + 'file.pdf').then((entry) => {\n    console.log('download complete: ' + entry.toURL());\n  }, (error) => {\n    // handle error\n  });\n}\n\n```\n\nTo store files in a different/publicly accessible directory, please refer to the following link\nhttps://github.com/apache/cordova-plugin-file#where-to-store-files\n",
+  "platforms": [
+    "Amazon Fire OS",
+    "Android",
+    "Browser",
+    "iOS",
+    "Ubuntu",
+    "Windows",
+    "Windows Phone"
+  ],
+  "repo": "https://github.com/apache/cordova-plugin-file-transfer",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-file-transfer"
+  }
+}

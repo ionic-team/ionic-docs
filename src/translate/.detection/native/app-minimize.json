@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/app-minimize",
+  "displayName": "App Minimize",
+  "description": "\nAppMinimize is a plugin to minimize the application on android devices\n",
+  "usage": "\n```typescript\nimport { Platfrom } from '@ionic/angular';\nimport { AppMinimize } from '@ionic-native/app-minimize/ngx';\n\n\nconstructor(private platform: Platform, private appMinimize: AppMinimize) { }\n\n...\n\nthis.platform.registerBackButtonAction(() => {\n   this.appMinimize.minimize();\n});\n\n```\n",
+  "platforms": [
+    "Android"
+  ],
+  "repo": "https://github.com/tomloprod/cordova-plugin-appminimize",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-appminimize"
+  }
+}

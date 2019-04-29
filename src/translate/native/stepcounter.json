@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/stepcounter",
+  "displayName": "Stepcounter",
+  "description": "\nCordova plugin for using device's stepcounter on Android (API > 19)\n\nUse to\n- start and stop stepcounter service\n- read device's stepcounter data\n",
+  "usage": "\n```typescript\nimport { Stepcounter } from '@ionic-native/stepcounter/ngx';\n\nconstructor(private stepcounter: Stepcounter) { }\n\n...\n\nlet startingOffset = 0;\nthis.stepcounter.start(startingOffset).then(onSuccess => console.log('stepcounter-start success', onSuccess), onFailure => console.log('stepcounter-start error', onFailure));\n\nthis.stepcounter.getHistory().then(historyObj => console.log('stepcounter-history success', historyObj), onFailure => console.log('stepcounter-history error', onFailure));\n\n```\n",
+  "platforms": [
+    "Android"
+  ],
+  "repo": "https://github.com/ihadeed/cordova-plugin-stepcounter",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-stepcounter"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/android-permissions",
+  "displayName": "Android Permissions",
+  "description": "\nThis plugin is designed to support Android new permissions checking mechanism.\n\nYou can find all permissions here: https://developer.android.com/reference/android/Manifest.permission.html\n",
+  "usage": "\n```\nimport { AndroidPermissions } from '@ionic-native/android-permissions/ngx';\n\n\nconstructor(private androidPermissions: AndroidPermissions) { }\n\n...\n\nthis.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.CAMERA).then(\n  result => console.log('Has permission?',result.hasPermission),\n  err => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.CAMERA)\n);\n\nthis.androidPermissions.requestPermissions([this.androidPermissions.PERMISSION.CAMERA, this.androidPermissions.PERMISSION.GET_ACCOUNTS]);\n\n```\n\nAndroid 26 and above: due to Android 26's changes to permissions handling (permissions are requested at time of use rather than at runtime,) if your app does not include any functions (eg. other Ionic Native plugins) that utilize a particular permission, then `requestPermission()` and `requestPermissions()` will resolve immediately with no prompt shown to the user.  Thus, you must include a function utilizing the feature you would like to use before requesting permission for it.\n",
+  "platforms": [
+    "Android"
+  ],
+  "repo": "https://github.com/NeoLSN/cordova-plugin-android-permissions",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-android-permissions"
+  }
+}

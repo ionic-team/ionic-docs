@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/app-center-analytics",
+  "displayName": "App Center Analytics",
+  "description": "\nApp Center Analytics helps you understand user behavior and customer engagement to improve your app.\nThe SDK automatically captures session count and device properties like model, OS version, etc.\nYou can define your own custom events to measure things that matter to you.\nAll the information captured is available in the App Center portal for you to analyze the data.\n\nFor more info, please see https://docs.microsoft.com/en-us/appcenter/sdk/analytics/cordova\n",
+  "usage": "\n```typescript\nimport { AppCenterAnalytics } from '@ionic-native/app-center-analytics/ngx';\n\n\nconstructor(private appCenterAnalytics: AppCenterAnalytics) { }\n\n...\n\nthis.appCenterAnalytics.setEnabled(true).then(() => {\n   this.appCenterAnalytics.trackEvent('My Event', { TEST: 'HELLO_WORLD' }).then(() => {\n       console.log('Custom event tracked');\n   });\n});\n\n```",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/Microsoft/appcenter-sdk-cordova/tree/master/cordova-plugin-appcenter-analytics",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-appcenter-analytics"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "name": "ionic integrations enable",
+  "namespace": [
+    "ionic",
+    "integrations"
+  ],
+  "summary": "Add & enable integrations to your app",
+  "description": "Integrations, such as Cordova, can be enabled with this command. If the integration has never been added to the project, `ionic integrations enable` will download and add the integration.\n\nIntegrations can be re-added with the `--add` option.",
+  "footnotes": [],
+  "groups": [],
+  "exampleCommands": [],
+  "aliases": [],
+  "inputs": [
+    {
+      "name": "name",
+      "summary": "The integration to enable (e.g. `capacitor`, `cordova`, `enterprise`)",
+      "required": true
+    }
+  ],
+  "options": [
+    {
+      "name": "add",
+      "type": "boolean",
+      "summary": "Download and add the integration even if enabled",
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "root",
+      "type": "string",
+      "summary": "Specify an alternative destination to download into when adding",
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "path"
+      }
+    },
+    {
+      "name": "quiet",
+      "type": "boolean",
+      "summary": "Do not log file operations",
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    }
+  ],
+  "type": "project"
+}

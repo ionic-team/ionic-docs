@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/quikkly",
+  "displayName": "QuikklyPlugin",
+  "description": "ionic wrapper for cordova-plugin-quikkly\nUse the quikkly scanner in your ionic app\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/quikkly/cordova-plugin-quikkly.git",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-quikkly"
+  }
+}

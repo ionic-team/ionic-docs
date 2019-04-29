@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/lottie-splash-screen",
+  "displayName": "Lottie Splash Screen",
+  "description": "\nCordova plugin to show bodymovin/Lottie animations as the splash screen with Airbnb's Lottie wrapper\n",
+  "usage": "\n```typescript\nimport { LottieSplashScreen } from '@ionic-native/lottie-splash-screen/ngx';\n\n\nconstructor(private lottieSplashScreen: LottieSplashScreen) { }\n\n...\n\n\nthis.lottieSplashScreen.show('www/lottie/animation.json', false, 1024, 768)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/timbru31/cordova-plugin-lottie-splashscreen",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-lottie-splashscreen"
+  }
+}

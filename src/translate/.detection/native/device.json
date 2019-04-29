@@ -1,0 +1,17 @@
+{
+  "packageName": "@ionic-native/device",
+  "displayName": "Device",
+  "description": "\nAccess information about the underlying device and platform.\n",
+  "usage": "\n```typescript\nimport { Device } from '@ionic-native/device/ngx';\n\nconstructor(private device: Device) { }\n\n...\n\nconsole.log('Device UUID is: ' + this.device.uuid);\n```\n",
+  "platforms": [
+    "Android",
+    "Browser",
+    "iOS",
+    "macOS",
+    "Windows"
+  ],
+  "repo": "https://github.com/apache/cordova-plugin-device",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-device"
+  }
+}

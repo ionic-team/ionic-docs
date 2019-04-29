@@ -1,0 +1,18 @@
+{
+  "packageName": "@ionic-native/network-interface",
+  "displayName": "Network Interface",
+  "description": "\nNetwork interface information plugin for Cordova/PhoneGap that supports Android, Blackberry 10, Browser, iOS, and Windows Phone 8.\n",
+  "usage": "\n```typescript\nimport { NetworkInterface } from '@ionic-native/network-interface/ngx';\n\nconstructor( private networkInterface: NetworkInterface ) {\n\n  this.networkInterface.getWiFiIPAddress()\n    .then(address => console.info(`IP: ${address.ip}, Subnet: ${address.subnet}`))\n    .catch(error => console.error(`Unable to get IP: ${error}`));\n\n  this.networkInterface.getCarrierIPAddress()\n    .then(address => console.info(`IP: ${address.ip}, Subnet: ${address.subnet}`))\n    .catch(error => console.error(`Unable to get IP: ${error}`));\n\n  const url = 'www.github.com';\n  this.networkInterface.getHttpProxyInformation(url)\n    .then(proxy => console.info(`Type: ${proxy.type}, Host: ${proxy.host}, Port: ${proxy.port}`))\n    .catch(error => console.error(`Unable to get proxy info: ${error}`));\n}\n```\n",
+  "platforms": [
+    "Android",
+    "BlackBerry 10",
+    "Browser",
+    "iOS",
+    "Windows",
+    "Windows Phone"
+  ],
+  "repo": "https://github.com/salbahra/cordova-plugin-networkinterface",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-networkinterface"
+  }
+}

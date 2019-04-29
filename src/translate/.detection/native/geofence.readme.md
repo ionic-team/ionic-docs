@@ -1,0 +1,2 @@
+Monitors circular geofences around latitude/longitude coordinates, and sends a notification to the user when the boundary of a geofence is crossed. Notifications can be sent when the user enters and/or exits a geofence.
+Geofences persist after device reboot. Geofences will be monitored even when the app is not running.

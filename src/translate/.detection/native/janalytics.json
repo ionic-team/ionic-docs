@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/janalytics",
+  "displayName": "jAnalytics",
+  "description": "\nThis plugin does something\n",
+  "usage": "\n```typescript\nimport { JAnalytics } from '@ionic-native/JAnalytics/ngx';\n\n\nconstructor(private jAnalytics: JAnalytics) { }\n\n...\n\n\nthis.jAnalytics.functionName('Hello', 123)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/jpush/cordova-plugin-janalytics",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-janalytics"
+  }
+}

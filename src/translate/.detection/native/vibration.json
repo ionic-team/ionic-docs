@@ -1,0 +1,15 @@
+{
+  "packageName": "@ionic-native/vibration",
+  "displayName": "Vibration",
+  "description": "Vibrates the device",
+  "usage": "\n```typescript\nimport { Vibration } from '@ionic-native/vibration/ngx';\n\nconstructor(private vibration: Vibration) { }\n\n...\n\n// Vibrate the device for a second\n// Duration is ignored on iOS.\nthis.vibration.vibrate(1000);\n\n// Vibrate 2 seconds\n// Pause for 1 second\n// Vibrate for 2 seconds\n// Patterns work on Android and Windows only\nthis.vibration.vibrate([2000,1000,2000]);\n\n// Stop any current vibrations immediately\n// Works on Android and Windows only\nthis.vibration.vibrate(0);\n```\n",
+  "platforms": [
+    "Android",
+    "iOS",
+    "Windows"
+  ],
+  "repo": "https://github.com/apache/cordova-plugin-vibration",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-vibration"
+  }
+}

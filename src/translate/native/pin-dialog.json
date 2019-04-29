@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/pin-dialog",
+  "displayName": "Pin Dialog",
+  "description": "\nPhoneGap numeric password dialog plugin for Android and iOS.\n\nRequires Cordova plugin: `cordova-plugin-pin-dialog`. For more info, please see the [Pin Dialog plugin docs](https://github.com/Paldom/PinDialog).\n\n\n",
+  "usage": "\n```typescript\nimport { PinDialog } from '@ionic-native/pin-dialog/ngx';\n\n\nconstructor(private pinDialog: PinDialog) { }\n\n...\n\nthis.pinDialog.prompt('Enter your PIN', 'Verify PIN', ['OK', 'Cancel'])\n  .then(\n    (result: any) => {\n      if (result.buttonIndex == 1) console.log('User clicked OK, value is: ', result.input1);\n      else if(result.buttonIndex == 2) console.log('User cancelled');\n    }\n  );\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/Paldom/PinDialog",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-pin-dialog"
+  }
+}

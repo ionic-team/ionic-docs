@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/db-meter",
+  "displayName": "DB Meter",
+  "description": "This plugin defines a global DBMeter object, which permits to get the decibel values from the microphone.",
+  "usage": "\n```typescript\nimport { DBMeter } from '@ionic-native/db-meter/ngx';\n\nconstructor(private dbMeter: DBMeter) { }\n\n...\n\n\n// Start listening\nlet subscription = this.dbMeter.start().subscribe(\n  data => console.log(data)\n);\n\n// Check if we are listening\nthis.dbMeter.isListening().then(\n  isListening => console.log(isListening)\n);\n\n// Stop listening\nsubscription.unsubscribe();\n\n// Delete DBMeter instance from memory\nthis.dbMeter.delete().then(\n  () => console.log('Deleted DB Meter instance'),\n  error => console.log('Error occurred while deleting DB Meter instance')\n);\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/akofman/cordova-plugin-dbmeter",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-dbmeter"
+  }
+}

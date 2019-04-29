@@ -1,0 +1,16 @@
+{
+  "packageName": "@ionic-native/secure-storage",
+  "displayName": "Secure Storage",
+  "description": "\nThis plugin gets, sets and removes key,value pairs from a device's secure storage.\n\nRequires Cordova plugin: `cordova-plugin-secure-storage`. For more info, please see the [Cordova Secure Storage docs](https://github.com/Crypho/cordova-plugin-secure-storage).\n\nThe browser platform is supported as a mock only. Key/values are stored unencrypted in localStorage.\n",
+  "usage": "\n\n```typescript\nimport { SecureStorage, SecureStorageObject } from '@ionic-native/secure-storage/ngx';\n\nconstructor(private secureStorage: SecureStorage) { }\n\n...\n\nthis.secureStorage.create('my_store_name')\n  .then((storage: SecureStorageObject) => {\n\n     storage.get('key')\n       .then(\n         data => console.log(data),\n         error => console.log(error)\n     );\n\n     storage.set('key', 'value')\n       .then(\n        data => console.log(data),\n         error => console.log(error)\n     );\n\n     storage.remove('key')\n     .then(\n         data => console.log(data),\n         error => console.log(error)\n     );\n\n  });\n\n\n```",
+  "platforms": [
+    "Android",
+    "Browser",
+    "iOS",
+    "Windows"
+  ],
+  "repo": "https://github.com/Crypho/cordova-plugin-secure-storage",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-secure-storage"
+  }
+}

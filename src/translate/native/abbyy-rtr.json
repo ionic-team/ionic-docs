@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/abbyy-rtr",
+  "displayName": "ABBYY Real-Time Recognition",
+  "description": "\nThis plugin allows to use the Text Capture and Data Capture features of\nABBYY Real-Time Recognition SDK (RTR SDK) in apps.\n",
+  "usage": "\n```typescript\nimport { AbbyyRTR } from '@ionic-native/abbyy-rtr/ngx';\n\n\nconstructor(private abbyyRTR: AbbyyRTR) { }\n\n...\n\n\nthis.abbyyRTR.startTextCapture(options)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n\nthis.abbyyRTR.startDataCapture(options)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/abbyysdk/RTR-SDK.Cordova",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-abbyy-rtr-sdk"
+  }
+}

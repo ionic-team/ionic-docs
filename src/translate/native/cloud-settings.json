@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/cloud-settings",
+  "displayName": "Cloud Settings",
+  "description": "\nStores app settings in cloud storage so if the user re-installs the app or installs it on a different device, the settings will be restored and available in the new installation.\n",
+  "usage": "\n```typescript\nimport { CloudSettings } from '@ionic-native/cloud-settings/ngx';\n\n\nconstructor(private cloudSettings: CloudSettings) { }\n\n...\n\nthis.cloudSettings.exists()\n  .then((exists: boolean) => console.log(\"Saved settings exist: \" + exists) )\n\nthis.cloudSettings.load()\n  .then((settings: any) => this.settings = settings)\n  .catch((error: any) => console.error(error));\n\nthis.cloudSettings.save(this.settings)\n  .then((savedSettings: any) => console.log(\"Saved settings: \" + JSON.stringify(savedSettings)))\n  .catch((error: any) => console.error(error));\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/dpa99c/cordova-plugin-cloud-settings",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-cloud-settings"
+  }
+}

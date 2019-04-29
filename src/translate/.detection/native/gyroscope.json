@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/gyroscope",
+  "displayName": "Gyroscope",
+  "description": "Read Gyroscope sensor data",
+  "usage": "\n```typescript\nimport { Gyroscope, GyroscopeOrientation, GyroscopeOptions } from '@ionic-native/gyroscope/ngx';\n\n\nconstructor(private gyroscope: Gyroscope) { }\n\n...\n\n\nlet options: GyroscopeOptions = {\n   frequency: 1000\n}\n\nthis.gyroscope.getCurrent(options)\n  .then((orientation: GyroscopeOrientation) => {\n     console.log(orientation.x, orientation.y, orientation.z, orientation.timestamp);\n   })\n  .catch()\n\n\nthis.gyroscope.watch()\n   .subscribe((orientation: GyroscopeOrientation) => {\n      console.log(orientation.x, orientation.y, orientation.z, orientation.timestamp);\n   });\n\n```",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/NeoLSN/cordova-plugin-gyroscope",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-gyroscope"
+  }
+}

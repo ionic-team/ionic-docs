@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/alipay",
+  "displayName": "Alipay",
+  "description": "\nThis plugin facilitates the usage of Alipay 支付宝 in an Ionic apps with the integrated AlipaySDK dated on 20180601.\n\nRequires Cordova plugin: `cordova-plugin-gubnoi-alipay`. For more info, please see https://github.com/jing-zhou/cordova-plugin-alipay .\n",
+  "usage": "\n```typescript\nimport { Alipay } from '@ionic-native/alipay/ngx';\n\nconstructor(private alipay: Alipay) {\n\n//alipayOrder is a string that has been generated and signed by the server side.\nthis.alipay.pay(alipayOrder)\n   .then(result => {\n      console.log(result); // Success\n   })\n   .catch(error => {\n      console.log(error); // Failed\n   });\n\n}\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/jing-zhou/cordova-plugin-alipay",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-gubnoi-alipay"
+  }
+}

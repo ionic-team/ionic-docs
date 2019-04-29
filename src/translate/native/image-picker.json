@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/image-picker",
+  "displayName": "Image Picker",
+  "description": "\nCordova Plugin For Multiple Image Selection\n\nRequires Cordova plugin: `cordova-plugin-image-picker`.\nFor more info, please see the https://github.com/wymsee/cordova-imagePicker\n",
+  "usage": "\n```typescript\nimport { ImagePicker } from '@ionic-native/image-picker/ngx';\n\n\nconstructor(private imagePicker: ImagePicker) { }\n\n...\n\nthis.imagePicker.getPictures(options).then((results) => {\n  for (var i = 0; i < results.length; i++) {\n      console.log('Image URI: ' + results[i]);\n  }\n}, (err) => { });\n\n```",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/Telerik-Verified-Plugins/ImagePicker",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-telerik-imagepicker"
+  }
+}

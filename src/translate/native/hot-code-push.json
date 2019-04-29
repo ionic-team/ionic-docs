@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/hot-code-push",
+  "displayName": "Hot Code Push",
+  "description": "\nHotCodePush plugin for Cordova that supports iOS and Android. This plugin allows you to keep your html, css and js files synced with your server.\n\nFor more info, please see the detailed wiki https://github.com/nordnet/cordova-hot-code-push/wiki\n",
+  "usage": "\n```typescript\nimport { HotCodePush } from '@ionic-native/hot-code-push/ngx';\n\nconstructor(private hotCodePush: HotCodePush) { }\n\n...\n\nhotCodePush.fetchUpdate(options).then(data => { console.log('Update available'); });\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/nordnet/cordova-hot-code-push",
+  "cordovaPlugin": {
+    "name": "cordova-hot-code-push"
+  }
+}

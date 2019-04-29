@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/calendar",
+  "displayName": "Calendar",
+  "description": "\nThis plugin allows you to add events to the Calendar of the mobile device.\n\nRequires Cordova plugin: `cordova-plugin-calendar`. For more info, please see the [Calendar plugin docs](https://github.com/EddyVerbruggen/Calendar-PhoneGap-Plugin).\n\n",
+  "usage": "\n```typescript\nimport { Calendar } from '@ionic-native/calendar/ngx';\n\nconstructor(private calendar: Calendar) { }\n\n\nthis.calendar.createCalendar('MyCalendar').then(\n  (msg) => { console.log(msg); },\n  (err) => { console.log(err); }\n);\n```",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/EddyVerbruggen/Calendar-PhoneGap-Plugin",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-calendar"
+  }
+}

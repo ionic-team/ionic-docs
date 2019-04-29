@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/apple-wallet",
+  "displayName": "Apple Wallet",
+  "description": "\nA Cordova plugin that enables users from Add Payment Cards to their Apple Wallet.\n",
+  "usage": "\n```typescript\nimport { AppleWallet } from '@ionic-native/apple-wallet/ngx';\n\n\nconstructor(private appleWallet: AppleWallet) { }\n\n\n...\n\n\n// Simple call to determine if the current device supports Apple Pay and has a supported card installed.\nthis.appleWallet.isAvailable()\n .then((res: boolean) => {\n   // Expect res to be boolean\n  })\n .catch((err) => {\n   // Catch {{err}} here\n });\n\n\n...\n\n\n// Simple call to check existence and ellibagility to add a card\nthis.appleWallet.isCardExistInWalletOrWatch(data: CardPrimarySuffixData)\n .then((res: EligibilityData) => {\n   // object contains boolean values that ensure that card is already exists in wallet or paired-watch\n  })\n .catch((err) => {\n   // Catch {{err}} here\n });\n\n\n...\n\n\n// Simple call to check out if there is any paired Watches so that you can toggle visibility of 'Add to Watch' button\nthis.appleWallet.isPairedWatchExist()\n .then((res: WatchExistData) => {\n   // object contains boolean value that ensure that there is already a paired Watch\n  })\n .catch((err) => {\n   // Catch {{err}} here\n });\n\n\n...\n\n\n// Simple call with the configuration data needed to instantiate a new PKAddPaymentPassViewController object.\n// This method provides the data needed to create a request to add your payment pass (credit/debit card). After a successful callback, pass the certificate chain to your issuer server-side using our callback delegate method `AppleWallet.completeAddPaymentPass`. The issuer server-side should returns an encrypted JSON payload containing the encrypted card data, which is required to be get the final response\n\nthis.appleWallet.startAddPaymentPass(data: cardData)\n .then((res: SignatureCertificatesData) => {\n   // User proceed and successfully asked to add card to his wallet\n   // Use the callback response JSON payload to complete addition process\n  })\n .catch((err) => {\n   // Catch {{err}} here\n });\n\n\n...\n\n\nthis.appleWallet.completeAddPaymentPass(data: encryptedCardData)\n .then((res: string) => {\n   // Expect res to be string either 'success' or 'error'\n  })\n .catch((err) => {\n   // Catch {{err}} here\n   // Error and can not add the card, or something wrong happend\n   // PKAddPaymentPassViewController will be dismissed\n });\n\n```",
+  "platforms": [
+    "iOS"
+  ],
+  "repo": "https://github.com/tomavic/cordova-apple-wallet",
+  "cordovaPlugin": {
+    "name": "cordova-apple-wallet"
+  }
+}

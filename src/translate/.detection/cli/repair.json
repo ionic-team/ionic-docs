@@ -1,0 +1,15 @@
+{
+  "name": "ionic repair",
+  "namespace": [
+    "ionic"
+  ],
+  "summary": "Remove and recreate dependencies and generated files",
+  "description": "This command may be useful when obscure errors or issues are encountered. It removes and recreates dependencies of your project.\n\nFor Cordova apps, it removes and recreates the generated native project and the native dependencies of your project.",
+  "footnotes": [],
+  "groups": [],
+  "exampleCommands": [],
+  "aliases": [],
+  "inputs": [],
+  "options": [],
+  "type": "project"
+}

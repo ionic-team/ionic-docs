@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/android-fingerprint-auth",
+  "displayName": "Android Fingerprint Auth",
+  "description": "\nThis plugin will open a native dialog fragment prompting the user to authenticate using their fingerprint. If the device has a secure lockscreen (pattern, PIN, or password), the user may opt to authenticate using that method as a backup.",
+  "usage": "\n```typescript\nimport { AndroidFingerprintAuth } from '@ionic-native/android-fingerprint-auth/ngx';\n\nconstructor(private androidFingerprintAuth: AndroidFingerprintAuth) { }\n\n...\n\n\nthis.androidFingerprintAuth.isAvailable()\n  .then((result)=> {\n    if(result.isAvailable){\n      // it is available\n\n      this.androidFingerprintAuth.encrypt({ clientId: 'myAppName', username: 'myUsername', password: 'myPassword' })\n        .then(result => {\n           if (result.withFingerprint) {\n               console.log('Successfully encrypted credentials.');\n               console.log('Encrypted credentials: ' + result.token);\n           } else if (result.withBackup) {\n             console.log('Successfully authenticated with backup password!');\n           } else console.log('Didn\\'t authenticate!');\n        })\n        .catch(error => {\n           if (error === this.androidFingerprintAuth.ERRORS.FINGERPRINT_CANCELLED) {\n             console.log('Fingerprint authentication cancelled');\n           } else console.error(error)\n        });\n\n    } else {\n      // fingerprint auth isn't available\n    }\n  })\n  .catch(error => console.error(error));\n```",
+  "platforms": [
+    "Android"
+  ],
+  "repo": "https://github.com/mjwheatley/cordova-plugin-android-fingerprint-auth",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-android-fingerprint-auth"
+  }
+}

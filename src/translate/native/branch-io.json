@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/branch-io",
+  "displayName": "BranchIo",
+  "description": "\nBranch.io is an attribution service for deeplinking and invitation links\n",
+  "usage": "\n```\nimport { BranchIo } from '@ionic-native/branch-io/ngx';\n\n\nconstructor(private branch: BranchIo) { }\n\n```\n",
+  "platforms": [
+    "iOS",
+    "Android"
+  ],
+  "repo": "https://github.com/BranchMetrics/cordova-ionic-phonegap-branch-deep-linking",
+  "cordovaPlugin": {
+    "name": "branch-cordova-sdk"
+  }
+}

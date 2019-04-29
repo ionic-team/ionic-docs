@@ -1,0 +1,17 @@
+{
+  "packageName": "@ionic-native/network",
+  "displayName": "Network",
+  "description": "\nRequires Cordova plugin: cordova-plugin-network-information. For more info, please see the [Network plugin docs](https://github.com/apache/cordova-plugin-network-information).\n",
+  "usage": "\n```typescript\nimport { Network } from '@ionic-native/network/ngx';\n\nconstructor(private network: Network) { }\n\n...\n\n// watch network for a disconnection\nlet disconnectSubscription = this.network.onDisconnect().subscribe(() => {\n  console.log('network was disconnected :-(');\n});\n\n// stop disconnect watch\ndisconnectSubscription.unsubscribe();\n\n\n// watch network for a connection\nlet connectSubscription = this.network.onConnect().subscribe(() => {\n  console.log('network connected!');\n  // We just got a connection but we need to wait briefly\n   // before we determine the connection type. Might need to wait.\n  // prior to doing any api requests as well.\n  setTimeout(() => {\n    if (this.network.type === 'wifi') {\n      console.log('we got a wifi connection, woohoo!');\n    }\n  }, 3000);\n});\n\n// stop connect watch\nconnectSubscription.unsubscribe();\n\n```",
+  "platforms": [
+    "Amazon Fire OS",
+    "Android",
+    "Browser",
+    "iOS",
+    "Windows"
+  ],
+  "repo": "https://github.com/apache/cordova-plugin-network-information",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-network-information"
+  }
+}

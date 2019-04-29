@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/luxand",
+  "displayName": "Luxand",
+  "description": "\nThis plugin let you integrat Luxand Face SDK into your ionic projects, so you can implements face authentication easily in your applications.\n",
+  "usage": "\n```typescript\nimport { Luxand } from '@ionic-native/luxand';\n\n\nconstructor(private luxand: Luxand) { }\n\n...\n\n//init Luxand  Face SDK\n\nthis.luxand.init({\n licence: \"\",\n dbname: \"data.dat\",\n loginTryCount: 3\n})\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n// register a face\nthis.luxand.register({\n timeout: 20000//20 seconds\n})\n.then(r=>{\n console.log(\"Your FACE ID:\", r.id);\n console.log(\"Your AGE:\", r.extra.AGE);\n console.log(\"Your GENDER:\", r.extra.GENDER);\n console.log(\"SIMILING:\", r.extra.SMILE>35? \"YES\": \"NO\");\n console.log(\"EYE OPENED:\", r.extra.EYESOPENED>45? \"YES\": \"NO\");\n})\n.catch(err=>{\n if(err.messgae === \"Already registered\") {\n   //extra data available\n   console.log(\"Your AGE:\", r.extra.AGE);\n   console.log(\"Your GENDER:\", r.extra.GENDER);\n   console.log(\"SIMILING:\", r.extra.SMILE>35? \"YES\": \"NO\");\n   console.log(\"EYE OPENED:\", r.extra.EYESOPENED>45? \"YES\": \"NO\");\n }\n})\n//to login using a face\nthis.luxand.login({\ntimeout: 20000\n}).then(r=>console.log(r))\n.catch(err=>console.log(err));\n\n```",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/molobala/cordova-plugin-luxand",
+  "cordovaPlugin": {
+    "name": "codova-plugin-luxand"
+  }
+}

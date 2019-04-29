@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/blinkup",
+  "displayName": "BlinkUp",
+  "description": "\nElectric Imp BlinkUp ionic plugin.\n",
+  "usage": "\n```typescript\nimport { BlinkUp } from '@ionic-native/blinkup/ngx';\n\nconst options = <BlinkUpWifiOptions>{\n   apiKey: 'API_KEY',\n   timeoutMs: 60000,\n   ssid: 'MY_SSID',\n   password: 'MY_PASSWORD'\n }\n BlinkUp.flashWifiBlinkUp(options).subscribe(\n    (result) => console.log('Done'),\n    (error) => console.log(error)\n  )\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/SensorShare/cordova-plugin-blinkup",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-blinkup"
+  }
+}

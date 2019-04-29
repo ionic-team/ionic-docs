@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/three-dee-touch",
+  "displayName": "3D Touch",
+  "description": "\nThe 3D Touch plugin adds 3D Touch capabilities to your Cordova app.\n\nRequires Cordova plugin: `cordova-plugin-3dtouch`. For more info, please see the [3D Touch plugin docs](https://github.com/EddyVerbruggen/cordova-plugin-3dtouch).\n",
+  "usage": "\nPlease do refer to the original plugin's repo for detailed usage. The usage example here might not be sufficient.\n```typescript\nimport { ThreeDeeTouch, ThreeDeeTouchQuickAction, ThreeDeeTouchForceTouch } from '@ionic-native/three-dee-touch/ngx';\n\nconstructor(private threeDeeTouch: ThreeDeeTouch) { }\n\n...\n\nthis.threeDeeTouch.isAvailable().then(isAvailable => console.log('3D Touch available? ' + isAvailable));\n\nthis.threeDeeTouch.watchForceTouches()\n  .subscribe(\n    (data: ThreeDeeTouchForceTouch) => {\n      console.log('Force touch %' + data.force);\n      console.log('Force touch timestamp: ' + data.timestamp);\n      console.log('Force touch x: ' + data.x);\n      console.log('Force touch y: ' + data.y);\n    }\n  );\n\n\nlet actions: ThreeDeeTouchQuickAction[] = [\n  {\n    type: 'checkin',\n    title: 'Check in',\n    subtitle: 'Quickly check in',\n    iconType: 'Compose'\n  },\n  {\n    type: 'share',\n    title: 'Share',\n    subtitle: 'Share like you care',\n    iconType: 'Share'\n  },\n  {\n    type: 'search',\n    title: 'Search',\n    iconType: 'Search'\n  },\n  {\n    title: 'Show favorites',\n    iconTemplate: 'HeartTemplate'\n  }\n];\n\nthis.threeDeeTouch.configureQuickActions(actions);\n\nthis.threeDeeTouch.onHomeIconPressed().subscribe(\n (payload) => {\n   // returns an object that is the button you presed\n   console.log('Pressed the ${payload.title} button')\n   console.log(payload.type)\n\n }\n)\n```",
+  "platforms": [
+    "iOS"
+  ],
+  "repo": "https://github.com/EddyVerbruggen/cordova-plugin-3dtouch",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-3dtouch"
+  }
+}

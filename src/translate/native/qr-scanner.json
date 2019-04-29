@@ -1,0 +1,16 @@
+{
+  "packageName": "@ionic-native/qr-scanner",
+  "displayName": "QR Scanner",
+  "description": "\nA fast, energy efficient, highly-configurable QR code scanner for Cordova apps.\n\nRequires Cordova plugin: `cordova-plugin-qrscanner`. For more info, please see the [QR Scanner plugin docs](https://github.com/bitpay/cordova-plugin-qrscanner).\n",
+  "usage": "\n```typescript\nimport { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';\n\n\nconstructor(private qrScanner: QRScanner) { }\n\n...\n\n// Optionally request the permission early\nthis.qrScanner.prepare()\n  .then((status: QRScannerStatus) => {\n     if (status.authorized) {\n       // camera permission was granted\n\n\n       // start scanning\n       let scanSub = this.qrScanner.scan().subscribe((text: string) => {\n         console.log('Scanned something', text);\n\n         this.qrScanner.hide(); // hide camera preview\n         scanSub.unsubscribe(); // stop scanning\n       });\n\n     } else if (status.denied) {\n       // camera permission was permanently denied\n       // you must use QRScanner.openSettings() method to guide the user to the settings page\n       // then they can grant the permission from there\n     } else {\n       // permission was denied, but not permanently. You can ask for permission again at a later time.\n     }\n  })\n  .catch((e: any) => console.log('Error is', e));\n\n\n```",
+  "platforms": [
+    "Android",
+    "Browser",
+    "iOS",
+    "Windows"
+  ],
+  "repo": "https://github.com/bitpay/cordova-plugin-qrscanner",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-qrscanner"
+  }
+}

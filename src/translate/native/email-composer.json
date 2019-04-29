@@ -1,0 +1,18 @@
+{
+  "packageName": "@ionic-native/email-composer",
+  "displayName": "Email Composer",
+  "description": "\n\nRequires Cordova plugin: cordova-plugin-email-composer. For more info, please see the [Email Composer plugin docs](https://github.com/hypery2k/cordova-email-plugin).\n\n",
+  "usage": "\n```typescript\nimport { EmailComposer } from '@ionic-native/email-composer/ngx';\n\nconstructor(private emailComposer: EmailComposer) { }\n\n...\n\n\nthis.emailComposer.isAvailable().then((available: boolean) =>{\n if(available) {\n   //Now we know we can send\n }\n});\n\nlet email = {\n  to: 'max@mustermann.de',\n  cc: 'erika@mustermann.de',\n  bcc: ['john@doe.com', 'jane@doe.com'],\n  attachments: [\n    'file://img/logo.png',\n    'res://icon.png',\n    'base64:icon.png//iVBORw0KGgoAAAANSUhEUg...',\n    'file://README.pdf'\n  ],\n  subject: 'Cordova Icons',\n  body: 'How are you? Nice greetings from Leipzig',\n  isHtml: true\n}\n\n// Send a text message using default options\nthis.emailComposer.open(email);\n```\n\nYou can also assign aliases to email apps\n```ts\n// add alias\nthis.email.addAlias('gmail', 'com.google.android.gm');\n\n// then use alias when sending email\nthis.email.open({\n  app: 'gmail',\n  ...\n});\n```",
+  "platforms": [
+    "Amazon Fire OS",
+    "Android",
+    "Browser",
+    "iOS",
+    "Windows",
+    "macOS"
+  ],
+  "repo": "https://github.com/katzer/cordova-plugin-email-composer",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-email-composer"
+  }
+}

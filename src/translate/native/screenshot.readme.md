@@ -1,0 +1,1 @@
+Captures a screen shot

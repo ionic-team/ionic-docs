@@ -7,54 +7,61 @@ const translateTypes = [
     type: 'api',
     contents: components,
     key: 'tag',
-    md: 'readme',
+    contentsKey: 'components',
+    markdown: 'readme',
+    resource: require('@ionic/docs/core.json'),
   },
   {
     type: 'cli',
     contents: commands,
     key: 'name',
-    md: 'description',
+    contentsKey: 'commands',
+    markdown: 'description',
+    resource: require('./data/cli.json'),
   },
   {
     type: 'native',
     contents: require('./data/native.json'),
     key: 'packageName',
-    md: 'description',
+    contentsKey: '',
+    markdown: 'description',
+    resource: require('./data/native.json'),
   }
 ];
 
 async function apply() {
-  let fileList: string[] | any = [];
-  for (const d of translateTypes) {
-    const directory = process.cwd() + '/src/translate/' + d.type;
+  for (const translateType of translateTypes) {
+    const directory = process.cwd() + '/src/translate/' + translateType.type;
     if (!existsSync(directory)) {
       continue;
     }
-    let files: string[] | any = readdirSync(directory, { encoding: 'UTF8' });
-    files = files
+    let directoryFiles: string[] | any = readdirSync(directory, { encoding: 'UTF8' });
+    directoryFiles = directoryFiles
       .filter(file => {
         return (/.*\.json$/.test(file) && !file.match(/readme/));
       })
       .map(file => {
         return directory + '/' + file;
       });
-    fileList = fileList.concat(files);
-  }
 
-  const componentsObject: object[] = [];
-  for (const path of fileList) {
-    const componentObject = JSON.parse(readFileSync(path, { encoding: 'UTF8' }));
-    const readmePath = path.replace(/\.json/g, '.readme.md');
-    if (existsSync(readmePath)) {
-      componentObject.readme = readFileSync(readmePath, { encoding: 'UTF8' });
+    const componentsObject: object[] = [];
+    for (const path of directoryFiles) {
+      const componentObject = JSON.parse(readFileSync(path, { encoding: 'UTF8' }));
+      const readmePath = path.replace(/\.json/g, '.readme.md');
+      if (existsSync(readmePath)) {
+        componentObject[translateType.markdown] = readFileSync(readmePath, { encoding: 'UTF8' });
+      }
+      componentsObject.push(componentObject);
     }
-    componentsObject.push(componentObject);
-  }
-  const corePath = process.cwd() + '/scripts/data/core.json';
-  const core = JSON.parse(readFileSync(corePath, { encoding: 'UTF8' }));
-  core.components = componentsObject;
+    let resource = translateType.resource;
+    if (translateType.contentsKey) {
+      resource[translateType.contentsKey] = componentsObject;
+    } else {
+      resource = componentsObject;
+    }
 
-  writeFileSync(process.cwd() + '/scripts/data/core.json', JSON.stringify(core, null, 2), { encoding: 'UTF8' });
+    writeFileSync(process.cwd() + '/scripts/data/' + translateType.type + '.json', JSON.stringify(resource, null, 2), { encoding: 'UTF8' });
+  }
 }
 
 async function create() {
@@ -63,7 +70,7 @@ async function create() {
       const key = _changeNameToVariable(ob[translateType.key]);
       const folder = {
         real: process.cwd() + '/src/translate/' + translateType.type + '/',
-        shadow: process.cwd() + '/src/translate/.' + translateType.type + '/',
+        shadow: process.cwd() + '/src/translate/.detection/' + translateType.type + '/',
       };
       const files = {
         real: folder.real + key + '.json',
@@ -85,11 +92,11 @@ async function create() {
       }
 
       if (!existsSync(files.realReadme)) {
-        writeFileSync(files.realReadme, ob[translateType.md], { encoding: 'UTF8' });
+        writeFileSync(files.realReadme, ob[translateType.markdown], { encoding: 'UTF8' });
       }
 
       writeFileSync(files.shadow, JSON.stringify(ob, null, 2), { encoding: 'UTF8' });
-      writeFileSync(files.shadowReadme, ob[translateType.md], { encoding: 'UTF8' });
+      writeFileSync(files.shadowReadme, ob[translateType.markdown], { encoding: 'UTF8' });
     });
   }
 }

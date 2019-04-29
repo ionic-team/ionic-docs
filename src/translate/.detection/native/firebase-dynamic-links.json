@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/firebase-dynamic-links",
+  "displayName": "Firebase Dynamic Links",
+  "description": "\nCordova plugin for Firebase Dynamic Links\n\nVariables APP_DOMAIN and APP_PATH specify web URL where your app will start an activity to handle the link. They also used to setup support for App Indexing.\nGo to firebase console and export google-services.json and GoogleService-Info.plist. Put those files into the root of your cordova app folder.\n\nPreferences:\n\nPreferences GoogleIOSClientId and GoogleAndroidClientId are used to setup dynamic links when you have an app for several platforms.\nYou can find values at your GoogleService-Info.plist (key ANDROID_CLIENT_ID) and google-services.json (key client[0].oauth_client[0].client_id).\n\nconfig.xml:\n```xml\n<platform name=\"ios\">\n    <preference name=\"GoogleIOSClientId\" value=\"...\" />\n</platform>\n<platform name=\"android\">\n    <preference name=\"GoogleAndroidClientId\" value=\"...\" />\n</platform>\n```",
+  "usage": "\n```typescript\nimport { FirebaseDynamicLinks } from '@ionic-native/firebase-dynamic-links/ngx';\n\n\nconstructor(private firebaseDynamicLinks: FirebaseDynamicLinks) { }\n\n...\n// Handle the logic here after opening the app with the Dynamic link\nthis.firebaseDynamicLinks.onDynamicLink()\n  .subscribe((res: any) => console.log(res), (error:any) => console.log(error));\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/chemerisuk/cordova-plugin-firebase-dynamiclinks",
+  "cordovaPlugin": {
+    "name": " cordova-plugin-firebase-dynamiclinks"
+  }
+}

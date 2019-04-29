@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/ionic-webview",
+  "displayName": "Ionic Webview",
+  "description": "\nAccess Web View utilities.\n\nRequires the Cordova plugin: `cordova-plugin-ionic-webview` > 2.0. For more info, please see the [Ionic Web View](https://github.com/ionic-team/cordova-plugin-ionic-webview) repository.\n",
+  "usage": "\n```typescript\nimport { WebView } from '@ionic-native/ionic-webview/ngx';\n\n\nconstructor(private webview: WebView) { }\n\n...\n\nimg = this.webview.convertFileSrc('file:///Users/dan/camera-image-12345.png')\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/ionic-team/cordova-plugin-ionic-webview",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-ionic-webview"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/device-feedback",
+  "displayName": "Device Feedback",
+  "description": "\n\nPlugin that lets you provide haptic or acoustic feedback on Android devices.\n",
+  "usage": "\n```typescript\nimport { DeviceFeedback } from '@ionic-native/device-feedback/ngx';\n\nconstructor(private deviceFeedback: DeviceFeedback) { }\n\n...\n\n\nthis.deviceFeedback.acoustic();\n\nthis.deviceFeedback.haptic(0);\n\nthis.deviceFeedback.isFeedbackEnabled().then(feedback => {\n    console.log(feedback);\n    // {\n    //   acoustic: true,\n    //   haptic: true\n    // }\n  });\n\n```",
+  "platforms": [
+    "Android"
+  ],
+  "repo": "https://github.com/VVelda/device-feedback",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-velda-devicefeedback"
+  }
+}

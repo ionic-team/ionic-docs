@@ -1,0 +1,18 @@
+{
+  "packageName": "@ionic-native/in-app-browser",
+  "displayName": "In App Browser",
+  "description": "Launches in app Browser",
+  "usage": "\n```typescript\nimport { InAppBrowser } from '@ionic-native/in-app-browser/ngx';\n\nconstructor(private iab: InAppBrowser) { }\n\n\n...\n\n\nconst browser = this.iab.create('https://ionicframework.com/');\n\nbrowser.executeScript(...);\n\nbrowser.insertCSS(...);\nbrowser.on('loadstop').subscribe(event => {\n   browser.insertCSS({ code: \"body{color: red;\" });\n});\n\nbrowser.close();\n\n```",
+  "platforms": [
+    "AmazonFire OS",
+    "Android",
+    "Browser",
+    "iOS",
+    "macOS",
+    "Windows"
+  ],
+  "repo": "https://github.com/apache/cordova-plugin-inappbrowser",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-inappbrowser"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "packageName": "@ionic-native/device-orientation",
+  "displayName": "Device Orientation",
+  "description": "\nRequires Cordova plugin: `cordova-plugin-device-orientation`. For more info, please see the [Device Orientation docs](https://github.com/apache/cordova-plugin-device-orientation).\n",
+  "usage": "\n```typescript\n// DeviceOrientationCompassHeading is an interface for compass\nimport { DeviceOrientation, DeviceOrientationCompassHeading } from '@ionic-native/device-orientation/ngx';\n\nconstructor(private deviceOrientation: DeviceOrientation) { }\n\n...\n\n// Get the device current compass heading\nthis.deviceOrientation.getCurrentHeading().then(\n  (data: DeviceOrientationCompassHeading) => console.log(data),\n  (error: any) => console.log(error)\n);\n\n// Watch the device compass heading change\nvar subscription = this.deviceOrientation.watchHeading().subscribe(\n  (data: DeviceOrientationCompassHeading) => console.log(data)\n);\n\n// Stop watching heading change\nsubscription.unsubscribe();\n```",
+  "platforms": [
+    "Amazon Fire OS",
+    "Android",
+    "BlackBerry 10",
+    "Browser",
+    "Firefox OS",
+    "iOS",
+    "Tizen",
+    "Ubuntu",
+    "Windows",
+    "Windows Phone"
+  ],
+  "repo": "https://github.com/apache/cordova-plugin-device-orientation",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-device-orientation"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "ionic capacitor open",
+  "namespace": [
+    "ionic",
+    "capacitor"
+  ],
+  "summary": "Open the IDE for a given native platform project",
+  "description": "`ionic capacitor open` will do the following:\n- Open the IDE for your native project (Xcode for iOS, Android Studio for Android)",
+  "footnotes": [],
+  "groups": [
+    "beta"
+  ],
+  "exampleCommands": [],
+  "aliases": [],
+  "inputs": [
+    {
+      "name": "platform",
+      "summary": "The platform to open (e.g. `android`, `ios`)",
+      "required": true
+    }
+  ],
+  "options": [],
+  "type": "project"
+}

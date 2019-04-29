@@ -1,0 +1,63 @@
+{
+  "name": "ionic init",
+  "namespace": [
+    "ionic"
+  ],
+  "summary": "Initialize existing projects with Ionic",
+  "description": "This command will initialize the current directory with an **ionic.config.json** file.\n\n`ionic init` will prompt for a project name and then proceed to determine the type of your project. You can specify the `name` argument and `--type` option to provide these values via command-line.",
+  "footnotes": [],
+  "groups": [
+    "beta"
+  ],
+  "exampleCommands": [
+    "ionic init ",
+    "ionic init \"My App\"",
+    "ionic init \"My App\" --type=angular"
+  ],
+  "aliases": [],
+  "inputs": [
+    {
+      "name": "name",
+      "summary": "The name of your project (e.g. `myApp`, `\"My App\"`)",
+      "required": true
+    }
+  ],
+  "options": [
+    {
+      "name": "type",
+      "type": "string",
+      "summary": "Type of project (e.g. `angular`, `ionic-angular`, `ionic1`, `custom`)",
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "type"
+      }
+    },
+    {
+      "name": "force",
+      "type": "boolean",
+      "summary": "Initialize even if a project already exists",
+      "default": false,
+      "groups": [],
+      "aliases": [
+        "f"
+      ],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "project-id",
+      "type": "string",
+      "summary": "Specify a slug for your app",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "slug"
+      }
+    }
+  ],
+  "type": "global"
+}

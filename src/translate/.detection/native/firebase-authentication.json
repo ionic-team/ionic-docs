@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/firebase-authentication",
+  "displayName": "Firebase Authentication",
+  "description": "\nCordova plugin for Firebase Authentication\n",
+  "usage": "\n```typescript\nimport { FirebaseAuthentication } from '@ionic-native/firebase-authentication/ngx';\n\n\nconstructor(private firebaseAuthentication: FirebaseAuthentication) { }\n\n...\n\n\nthis.firebaseAuthentication.createUserWithEmailAndPassword('test@gmail.com', '123')\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/chemerisuk/cordova-plugin-firebase-authentication",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-firebase-authentication"
+  }
+}

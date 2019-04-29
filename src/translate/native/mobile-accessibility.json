@@ -1,0 +1,16 @@
+{
+  "packageName": "@ionic-native/mobile-accessibility",
+  "displayName": "Mobile Accessibility",
+  "description": "\nThis plugin exposes information on the status of various accessibility features of mobile operating systems, including, for example, whether a screen reader is running, invert colors is enabled, and the preferred scaling for text.\nIt also allows an application to send a string to be spoken by the screen reader, or a command to stop the screen reader from speaking.\n",
+  "usage": "\n```typescript\nimport { MobileAccessibility } from '@ionic-native/mobile-ccessibility/ngx';\n\n\nconstructor(private mobileAccessibility: MobileAccessibility) { }\n\n...\n\nif(this.mobileAccessibility.isScreenReaderRunningCallback();\n\n```\n",
+  "platforms": [
+    "Android Fire OS",
+    "Android",
+    "iOS",
+    "Windows"
+  ],
+  "repo": "https://github.com/phonegap/phonegap-mobile-accessibility",
+  "cordovaPlugin": {
+    "name": "phonegap-plugin-mobile-accessibility"
+  }
+}

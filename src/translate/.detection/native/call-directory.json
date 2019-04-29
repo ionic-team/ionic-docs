@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/call-directory",
+  "displayName": "Call Directory",
+  "description": "\nThis plugin can add phone numbers to an Callkit call directory extension. Call `reloadExtension` after using `addIdentification` and `removeIdentification`\nto process the changes in the call directory extension.\n",
+  "usage": "\n```typescript\nimport { CallDirectory } from '@ionic-native/call-directory/ngx';\n\n\nconstructor(private callDirectory: CallDirectory) { }\n\n\nlet items = [{label: \"Hello\", number: \"123\"}];\nthis.callDirectory.addIdentification(items)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\nthis.callDirectory.reloadExtension()\n  .then(res: string) => console.log(res))\n  .catch((error: any) => console.error(error));\n```\n",
+  "platforms": [
+    "iOS"
+  ],
+  "repo": "https://github.com/GEDYSIntraWare/cordova-plugin-call-directory",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-call-directory"
+  }
+}

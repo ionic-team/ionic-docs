@@ -1,0 +1,64 @@
+{
+  "name": "ionic config get",
+  "namespace": [
+    "ionic",
+    "config"
+  ],
+  "summary": "Print config values",
+  "description": "This command reads and prints configuration values from the project's **./ionic.config.json** file. It can also operate on the global CLI configuration (**~/.ionic/config.json**) using the `--global` option.\n\nFor nested properties, separate nest levels with dots. For example, the property name `integrations.cordova` will look in the **integrations** object for the **cordova** property.\n\nWithout a `property` argument, this command prints out the entire config.\n\nFor multi-app projects, this command is scoped to the current project by default. To operate at the root of the project configuration file instead, use the `--root` option.\n\nIf you are using this command programmatically, you can use the `--json` option.\n\nThis command will sanitize config output for known sensitive fields (disabled when using `--json`).",
+  "footnotes": [],
+  "groups": [],
+  "exampleCommands": [
+    "ionic config get ",
+    "ionic config get id",
+    "ionic config get --global user.email",
+    "ionic config get -g npmClient"
+  ],
+  "aliases": [],
+  "inputs": [
+    {
+      "name": "property",
+      "summary": "The property name you wish to get",
+      "required": false
+    }
+  ],
+  "options": [
+    {
+      "name": "global",
+      "type": "boolean",
+      "summary": "Use global CLI config",
+      "groups": [],
+      "aliases": [
+        "g"
+      ],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "json",
+      "type": "boolean",
+      "summary": "Output config values in JSON",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "root",
+      "type": "boolean",
+      "summary": "Operate on root of **./ionic.config.json**",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    }
+  ],
+  "type": "global"
+}

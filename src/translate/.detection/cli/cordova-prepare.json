@@ -1,0 +1,74 @@
+{
+  "name": "ionic cordova prepare",
+  "namespace": [
+    "ionic",
+    "cordova"
+  ],
+  "summary": "Copies assets to Cordova platforms, preparing them for native builds",
+  "description": "`ionic cordova prepare` will do the following:\n\n- Perform an Ionic build, which compiles web assets to **www/**.\n- Copy the **www/** directory into your Cordova platforms.\n- Transform **config.xml** into platform-specific manifest files.\n- Copy icons and splash screens from **resources/** to into your Cordova platforms.\n- Copy plugin files into specified platforms.\n\nYou may wish to use `ionic cordova prepare` if you run your project with Android Studio or Xcode.",
+  "footnotes": [],
+  "groups": [],
+  "exampleCommands": [
+    "ionic cordova prepare ",
+    "ionic cordova prepare ios",
+    "ionic cordova prepare android"
+  ],
+  "aliases": [],
+  "inputs": [
+    {
+      "name": "platform",
+      "summary": "The platform you would like to prepare (e.g. `android`, `ios`)",
+      "required": false
+    }
+  ],
+  "options": [
+    {
+      "name": "build",
+      "type": "boolean",
+      "summary": "Do not invoke an Ionic build",
+      "default": true,
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "prod",
+      "type": "boolean",
+      "summary": "Flag to use the `production` configuration",
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "source-map",
+      "type": "boolean",
+      "summary": "Output source maps",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "configuration",
+      "type": "string",
+      "summary": "Specify the configuration to use.",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [
+        "c"
+      ],
+      "spec": {
+        "value": "conf"
+      }
+    }
+  ],
+  "type": "project"
+}

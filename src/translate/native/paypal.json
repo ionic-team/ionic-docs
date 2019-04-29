@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/paypal",
+  "displayName": "PayPal",
+  "description": "\nPayPal plugin for Cordova/Ionic Applications\n",
+  "usage": "\n```typescript\nimport { PayPal, PayPalPayment, PayPalConfiguration } from '@ionic-native/paypal/ngx';\n\nconstructor(private payPal: PayPal) { }\n\n...\n\n\nthis.payPal.init({\n  PayPalEnvironmentProduction: 'YOUR_PRODUCTION_CLIENT_ID',\n  PayPalEnvironmentSandbox: 'YOUR_SANDBOX_CLIENT_ID'\n}).then(() => {\n  // Environments: PayPalEnvironmentNoNetwork, PayPalEnvironmentSandbox, PayPalEnvironmentProduction\n  this.payPal.prepareToRender('PayPalEnvironmentSandbox', new PayPalConfiguration({\n    // Only needed if you get an \"Internal Service Error\" after PayPal login!\n    //payPalShippingAddressOption: 2 // PayPalShippingAddressOptionPayPal\n  })).then(() => {\n    let payment = new PayPalPayment('3.33', 'USD', 'Description', 'sale');\n    this.payPal.renderSinglePaymentUI(payment).then(() => {\n      // Successfully paid\n\n      // Example sandbox response\n      //\n      // {\n      //   \"client\": {\n      //     \"environment\": \"sandbox\",\n      //     \"product_name\": \"PayPal iOS SDK\",\n      //     \"paypal_sdk_version\": \"2.16.0\",\n      //     \"platform\": \"iOS\"\n      //   },\n      //   \"response_type\": \"payment\",\n      //   \"response\": {\n      //     \"id\": \"PAY-1AB23456CD789012EF34GHIJ\",\n      //     \"state\": \"approved\",\n      //     \"create_time\": \"2016-10-03T13:33:33Z\",\n      //     \"intent\": \"sale\"\n      //   }\n      // }\n    }, () => {\n      // Error or render dialog closed without being successful\n    });\n  }, () => {\n    // Error in configuration\n  });\n}, () => {\n  // Error in initialization, maybe PayPal isn't supported or something else\n});\n```",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/paypal/PayPal-Cordova-Plugin",
+  "cordovaPlugin": {
+    "name": "com.paypal.cordova.mobilesdk"
+  }
+}

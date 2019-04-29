@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/magnetometer",
+  "displayName": "Device eMagnetometer",
+  "description": "\nRequires Cordova plugin: `cordova-plugin-magnetometer`. For more info, please see the [Device Orientation docs](https://github.com/sdesalas/cordova-plugin-magnetometer).\n",
+  "usage": "\n```typescript\n// DeviceOrientationCompassHeading is an interface for compass\nimport { Magnetometer, MagnetometerReading } from '@ionic-native/device-orientation/ngx';\n\nconstructor(private magnetometer: Magnetometer) { }\n\n...\n\n// Get the device current compass heading\nthis.deviceOrientation.getReading().then(\n  (data: MagnetometerReading) => console.log(data),\n  (error: any) => console.log(error)\n);\n\n// Watch the device compass heading change\nvar subscription = this.deviceOrientation.watchReadings().subscribe(\n  (data: MagnetometerReading) => console.log(data)\n);\n\n// Stop watching heading change\nsubscription.unsubscribe();\n```",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/sdesalas/cordova-plugin-magnetometer",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-magnetometer"
+  }
+}

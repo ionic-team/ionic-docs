@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/fcm",
+  "displayName": "FCM",
+  "description": "\nProvides basic functionality for Firebase Cloud Messaging\n",
+  "usage": "\n```typescript\nimport { FCM } from '@ionic-native/fcm/ngx';\n\nconstructor(private fcm: FCM) {}\n\n...\n\nthis.fcm.subscribeToTopic('marketing');\n\nthis.fcm.getToken().then(token => {\n  backend.registerToken(token);\n});\n\nthis.fcm.onNotification().subscribe(data => {\n  if(data.wasTapped){\n    console.log(\"Received in background\");\n  } else {\n    console.log(\"Received in foreground\");\n  };\n});\n\nthis.fcm.onTokenRefresh().subscribe(token => {\n  backend.registerToken(token);\n});\n\nthis.fcm.unsubscribeFromTopic('marketing');\n\n```",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/andrehtissot/cordova-plugin-fcm-with-dependecy-updated",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-fcm-with-dependecy-updated"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/open-native-settings",
+  "displayName": "Open Native Settings",
+  "description": "\nPlugin to open native screens of iOS/android settings",
+  "usage": "\nYou can open any of these settings:\n```\n \"about\", // ios\n \"accessibility\", // ios, android\n \"account\", // ios, android\n \"airplane_mode\", // ios, android\n \"apn\", // android\n \"application_details\", // ios, android\n \"application_development\", // android\n \"application\", // android\n \"autolock\", // ios\n \"battery_optimization\", // android\n \"bluetooth\", // ios, android\n \"castle\", // ios\n \"captioning\", // android\n \"cast\", // android\n \"cellular_usage\", // ios\n \"configuration_list\", // ios\n \"data_roaming\", // android\n \"date\", // ios, android\n \"display\", // ios, android\n \"dream\", // android\n \"facetime\", // ios\n \"home\", // android\n \"keyboard\", // ios, android\n \"keyboard_subtype\", // android\n \"locale\", // ios, android\n\"location\", // ios, android\n\"locations\", // ios\n\"manage_all_applications\", // android\n\"manage_applications\", // android\n\"memory_card\", // android\n\"music\", // ios\n\"music_equalizer\", // ios\n\"music_volume\", // ios\n\"network\", // ios, android\n\"nike_ipod\", // ios\n\"nfcsharing\", // android\n\"nfc_payment\", // android\n\"nfc_settings\", // android\n\"notes\", // ios\n\"notification_id\", // ios\n\"passbook\", // ios\n\"phone\", // ios\n\"photos\", // ios\n\"print\", // android\n\"privacy\", // android\n\"quick_launch\", // android\n\"reset\", // ios\n\"ringtone\", // ios\n\"browser\", // ios\n\"search\", // ios, android\n\"security\", // android\n\"settings\", // ios, android\n\"show_regulatory_info\",\n\"sound\", // ios, android\n\"software_update\", // ios\n\"storage\", // ios, android\n\"store\", // ios, android\n\"sync\", // android\n\"tethering\", // ios\n\"twitter\", // ios\n\"touch\", // ios\n\"usage\", // ios, android\n\"user_dictionary\", // android\n\"video\", // ios\n\"voice_input\", // android\n\"vpn\", // ios\n\"wallpaper\", // ios\n\"wifi_ip\", // android\n\"wifi\", // ios, android\n\"wireless\" // android\n ```\n```typescript\nimport { OpenNativeSettings } from '@ionic-native/open-native-settings/ngx';\n\n\nconstructor(private openNativeSettings: OpenNativeSettings) { }\n\n...\n\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/guyromb/Cordova-open-native-settings",
+  "cordovaPlugin": {
+    "name": "cordova-open-native-settings"
+  }
+}

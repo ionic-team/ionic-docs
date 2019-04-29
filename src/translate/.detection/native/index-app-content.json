@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/index-app-content",
+  "displayName": "Index App Content",
+  "description": "\nThis plugin gives you a Javascript API to interact with Core Spotlight on iOS (=> iOS 9).\nYou can add, update and delete items to the spotlight search index.\nSpotlight Search will include these items in the result list. You can deep-link the search results with your app.\n",
+  "usage": "\n```typescript\nimport { IndexAppContent } from '@ionic-native/index-app-content/ngx';\n\n\nconstructor(private indexAppContent: IndexAppContent) { }\n\n...\n\nvar items = [\n     {\n       domain: 'com.my.domain',\n       identifier: '88asdf7dsf',\n       title: 'Foo',\n       description: 'Bar',\n       url: 'http://location/of/my/image.jpg',\n   },\n   {\n       domain: 'com.other.domain',\n       identifier: '9asd67g6a',\n       title: 'Baz',\n       description: 'Woot',\n       url: 'http://location/of/my/image2.jpg',\n    }\n];\n\nthis.indexAppContent.setItems(items)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+  "platforms": [
+    "iOS"
+  ],
+  "repo": "https://github.com/johanblomgren/cordova-plugin-indexappcontent",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-indexappcontent"
+  }
+}

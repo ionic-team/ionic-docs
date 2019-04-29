@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/bluetooth-le",
+  "displayName": "BluetoothLE",
+  "description": "\nThis plugin has the most complete implementation for interacting with Bluetooth LE devices on Android, iOS and partially Windows.\nIt's a wrap around [randdusing/cordova-plugin-bluetoothle](https://github.com/randdusing/cordova-plugin-bluetoothle/blob/master/readme.md) cordova plugin for Ionic.\nIt supports peripheral **and** central modes and covers most of the API methods available on Android and iOS.\n",
+  "usage": "\n```typescript\nimport { BluetoothLE } from '@ionic-native/bluetooth-le/ngx';\n\n\nconstructor(public bluetoothle: BluetoothLE, public plt: Platform) {\n\n this.plt.ready().then((readySource) => {\n\n   console.log('Platform ready from', readySource);\n\n   this.bluetoothle.initialize().then(ble => {\n     console.log('ble', ble.status) // logs 'enabled'\n   });\n\n  });\n}\n\n```\n\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/randdusing/cordova-plugin-bluetoothle",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-bluetoothle"
+  }
+}

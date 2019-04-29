@@ -1,0 +1,24 @@
+{
+  "name": "ionic capacitor copy",
+  "namespace": [
+    "ionic",
+    "capacitor"
+  ],
+  "summary": "Copy web assets to native platforms",
+  "description": "`ionic capacitor copy` will do the following:\n- Copy the **www/** directory into your native platforms.",
+  "footnotes": [],
+  "groups": [
+    "beta"
+  ],
+  "exampleCommands": [],
+  "aliases": [],
+  "inputs": [
+    {
+      "name": "platform",
+      "summary": "The platform to copy (e.g. `android`, `ios`, `electron`)",
+      "required": false
+    }
+  ],
+  "options": [],
+  "type": "project"
+}

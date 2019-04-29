@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/launch-review",
+  "displayName": "Launch Review",
+  "description": "\n\nAssists in leaving user reviews/ratings in the App Stores.\n- Launches the platform's App Store page for the current app in order for the user to leave a review.\n- On iOS (10.3 and above) invokes the native in-app rating dialog which allows a user to rate your app without needing to open the App Store.\n",
+  "usage": "\n```typescript\nimport { LaunchReview } from '@ionic-native/launch-review/ngx';\n\nconstructor(private launchReview: LaunchReview) { }\n\n...\n\nthis.launchReview.launch()\n  .then(() => console.log('Successfully launched store app');\n\nif(this.launchReview.isRatingSupported()){\n  this.launchReview.rating()\n    .then(() => console.log('Successfully launched rating dialog'));\n}\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/dpa99c/cordova-launch-review",
+  "cordovaPlugin": {
+    "name": "cordova-launch-review"
+  }
+}

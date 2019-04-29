@@ -1,0 +1,15 @@
+{
+  "packageName": "@ionic-native/photo-library",
+  "displayName": "Photo Library",
+  "description": "\nThe PhotoLibrary plugin allows access to photos from device by url. So you can use plain img tag to display photos and their thumbnails, and different 3rd party libraries as well.\nSaving photos and videos to the library is also supported.\ncdvphotolibrary urls should be trusted by Angular. See plugin homepage to learn how.\n",
+  "usage": "\n```typescript\nimport { PhotoLibrary } from '@ionic-native/photo-library/ngx';\n\nconstructor(private photoLibrary: PhotoLibrary) { }\n\nthis.photoLibrary.requestAuthorization().then(() => {\n  this.photoLibrary.getLibrary().subscribe({\n    next: library => {\n      library.forEach(function(libraryItem) {\n        console.log(libraryItem.id);          // ID of the photo\n        console.log(libraryItem.photoURL);    // Cross-platform access to photo\n        console.log(libraryItem.thumbnailURL);// Cross-platform access to thumbnail\n        console.log(libraryItem.fileName);\n        console.log(libraryItem.width);\n        console.log(libraryItem.height);\n        console.log(libraryItem.creationDate);\n        console.log(libraryItem.latitude);\n        console.log(libraryItem.longitude);\n        console.log(libraryItem.albumIds);    // array of ids of appropriate AlbumItem, only of includeAlbumsData was used\n      });\n    },\n    error: err => { console.log('could not get photos'); },\n    complete: () => { console.log('done getting photos'); }\n  });\n})\n.catch(err => console.log('permissions weren\\'t granted'));\n\n```\n",
+  "platforms": [
+    "Android",
+    "Browser",
+    "iOS"
+  ],
+  "repo": "https://github.com/terikon/cordova-plugin-photo-library",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-photo-library"
+  }
+}

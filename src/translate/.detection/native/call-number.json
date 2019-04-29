@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/call-number",
+  "displayName": "Call Number",
+  "description": "\nCall a number directly from your Cordova/Ionic application.\n**NOTE**: The iOS Simulator (and maybe Android Simulators) do not provide access to the phone subsystem.\n",
+  "usage": "\n```typescript\nimport { CallNumber } from '@ionic-native/call-number/ngx';\n\nconstructor(private callNumber: CallNumber) { }\n\n...\n\n\nthis.callNumber.callNumber(\"18001010101\", true)\n  .then(res => console.log('Launched dialer!', res))\n  .catch(err => console.log('Error launching dialer', err));\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/Rohfosho/CordovaCallNumberPlugin",
+  "cordovaPlugin": {
+    "name": "call-number"
+  }
+}

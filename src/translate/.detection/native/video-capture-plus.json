@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/video-capture-plus",
+  "displayName": "Video Capture Plus",
+  "description": "\nThis plugin offers some useful extras on top of the default Media Capture Plugin capabilities:\n- HD recording.\n- Starting with the front camera.\n- A custom overlay (currently iOS only).\n",
+  "usage": "\n```typescript\nimport { VideoCapturePlus, VideoCapturePlusOptions, MediaFile } from '@ionic-native/video-capture-plus/ngx';\n\n\nconstructor(private videoCapturePlus: VideoCapturePlus) { }\n\n...\n\nconst options: VideoCapturePlusOptions = {\n   limit: 1,\n   highquality: true,\n   portraitOverlay: 'assets/img/camera/overlay/portrait.png',\n   landscapeOverlay: 'assets/img/camera/overlay/landscape.png'\n}\n\nthis.videoCapturePlus.captureVideo(options).then(mediafile: MediaFile[] => console.log(mediafile), error => console.log('Something went wrong'));\n\n```",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/danielsogl/cordova-plugin-video-capture-plus",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-video-capture-plus"
+  }
+}

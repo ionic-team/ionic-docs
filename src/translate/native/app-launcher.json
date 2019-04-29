@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/app-launcher",
+  "displayName": "App Launcher",
+  "description": "\nSimple Cordova plugin to see if other apps are installed and launch them.\n",
+  "usage": "\n```typescript\nimport { AppLauncher, AppLauncherOptions } from '@ionic-native/app-launcher/ngx';\nimport { Platform } from '@ionic/angular';\n\nconstructor(private appLauncher: AppLauncher, private platform: Platform) { }\n\n...\n\nconst options: AppLauncherOptions = {\n}\n\nif(this.platform.is('ios')) {\n  options.uri = 'fb://'\n} else {\n  options.packageName = 'com.facebook.katana'\n}\n\nthis.appLauncher.canLaunch(options)\n  .then((canLaunch: boolean) => console.log('Facebook is available'))\n  .catch((error: any) => console.error('Facebook is not available'));\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/nchutchind/cordova-plugin-app-launcher",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-app-launcher"
+  }
+}

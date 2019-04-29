@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/app-availability",
+  "displayName": "App Availability",
+  "description": "\nThis plugin allows you to check if an app is installed on the user's device. It requires an URI Scheme (e.g. twitter://) on iOS or a Package Name (e.g com.twitter.android) on Android.\n\nRequires Cordova plugin: cordova-plugin-appavailability. For more info, please see the [AppAvailability plugin docs](https://github.com/ohh2ahh/AppAvailability).\n",
+  "usage": "\n```typescript\nimport { AppAvailability } from '@ionic-native/app-availability/ngx';\nimport { Platform } from 'ionic-angular';\n\nconstructor(private appAvailability: AppAvailability, private platform: Platform) { }\n\n...\n\nlet app;\n\nif (this.platform.is('ios')) {\n  app = 'twitter://';\n} else if (this.platform.is('android')) {\n  app = 'com.twitter.android';\n}\n\nthis.appAvailability.check(app)\n  .then(\n    (yes: boolean) => console.log(app + ' is available'),\n    (no: boolean) => console.log(app + ' is NOT available')\n  );\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/ohh2ahh/AppAvailability",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-appavailability"
+  }
+}

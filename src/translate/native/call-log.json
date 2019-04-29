@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/call-log",
+  "displayName": "Call Log",
+  "description": "\nThis plugin access the call history on a device and that can be filtered\n",
+  "usage": "\n```typescript\nimport { CallLog } from '@ionic-native/call-log/ngx';\n\n\nconstructor(private callLog: CallLog) { }\n\n````",
+  "platforms": [
+    "Android"
+  ],
+  "repo": "https://github.com/creacore-team/cordova-plugin-calllog",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-calllog"
+  }
+}

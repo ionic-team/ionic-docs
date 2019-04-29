@@ -1,0 +1,15 @@
+{
+  "packageName": "@ionic-native/text-to-speech",
+  "displayName": "Text To Speech",
+  "description": "\nText to Speech plugin\n",
+  "usage": "\n```typescript\nimport { TextToSpeech } from '@ionic-native/text-to-speech/ngx';\n\nconstructor(private tts: TextToSpeech) { }\n\n...\n\nthis.tts.speak('Hello World')\n  .then(() => console.log('Success'))\n  .catch((reason: any) => console.log(reason));\n\n```",
+  "platforms": [
+    "Android",
+    "iOS",
+    "Windows Phone 8"
+  ],
+  "repo": "https://github.com/vilic/cordova-plugin-tts",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-tts"
+  }
+}

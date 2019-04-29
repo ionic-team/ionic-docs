@@ -1,0 +1,15 @@
+{
+  "packageName": "@ionic-native/document-viewer",
+  "displayName": "Document Viewer",
+  "description": "\nThis plugin offers a slim API to view PDF files which are either stored in the apps assets folder (/www/*) or in any other file system directory available via the cordova file plugin.\n",
+  "usage": "\n```typescript\nimport { DocumentViewer } from '@ionic-native/document-viewer/ngx';\n\n\nconstructor(private document: DocumentViewer) { }\n\n...\nconst options: DocumentViewerOptions = {\n  title: 'My PDF'\n}\n\nthis.document.viewDocument('assets/myFile.pdf', 'application/pdf', options)\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS",
+    "Windows"
+  ],
+  "repo": "https://github.com/sitewaerts/cordova-plugin-document-viewer",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-document-viewer"
+  }
+}

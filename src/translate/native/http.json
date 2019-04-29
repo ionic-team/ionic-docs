@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/http",
+  "displayName": "HTTP",
+  "description": "\nCordova / Phonegap plugin for communicating with HTTP servers. Supports iOS and Android.\n\nAdvantages over Javascript requests:\n- Background threading - all requests are done in a background thread\n- SSL Pinning\n",
+  "usage": "\n```typescript\nimport { HTTP } from '@ionic-native/http/ngx';\n\nconstructor(private http: HTTP) {}\n\n...\n\nthis.http.get('http://ionic.io', {}, {})\n  .then(data => {\n\n    console.log(data.status);\n    console.log(data.data); // data received by server\n    console.log(data.headers);\n\n  })\n  .catch(error => {\n\n    console.log(error.status);\n    console.log(error.error); // error message as string\n    console.log(error.headers);\n\n  });\n\n```",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/silkimen/cordova-plugin-advanced-http",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-advanced-http"
+  }
+}

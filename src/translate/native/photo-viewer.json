@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/photo-viewer",
+  "displayName": "Photo Viewer",
+  "description": "This plugin can display your image in full screen with the ability to pan, zoom, and share the image.",
+  "usage": "\n```typescript\nimport { PhotoViewer } from '@ionic-native/photo-viewer/ngx';\n\nconstructor(private photoViewer: PhotoViewer) { }\n\n...\n\nthis.photoViewer.show('https://mysite.com/path/to/image.jpg');\n\nthis.photoViewer.show('https://mysite.com/path/to/image.jpg', 'My image title', {share: false});\n\nthis.photoViewer.show('https://mysecuresite.com/path/to/image.jpg', 'My image title', {share: false, headers: '{username:foo,password:bar}'});\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/sarriaroman/photoviewer",
+  "cordovaPlugin": {
+    "name": "com-sarriaroman-photoviewer"
+  }
+}

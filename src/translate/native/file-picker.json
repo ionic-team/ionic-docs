@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/file-picker",
+  "displayName": "iOS File Picker",
+  "description": "\n\nOpens the file picker on iOS for the user to select a file, returns a file URI.\n",
+  "usage": "\n```typescript\nimport { IOSFilePicker } from '@ionic-native/file-picker/ngx';\n\nconstructor(private filePicker: IOSFilePicker) { }\n\n...\n\nthis.filePicker.pickFile()\n  .then(uri => console.log(uri))\n  .catch(err => console.log('Error', err));\n\n```",
+  "platforms": [
+    "iOS"
+  ],
+  "repo": "https://github.com/jcesarmobile/FilePicker-Phonegap-iOS-Plugin",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-filepicker"
+  }
+}

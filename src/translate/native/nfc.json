@@ -1,0 +1,16 @@
+{
+  "packageName": "@ionic-native/nfc",
+  "displayName": "NFC",
+  "description": "\nThe NFC plugin allows you to read and write NFC tags. You can also beam to, and receive from, other NFC enabled devices.\n\nUse to\n- read data from NFC tags\n- write data to NFC tags\n- send data to other NFC enabled devices\n- receive data from NFC devices\n\nThis plugin uses NDEF (NFC Data Exchange Format) for maximum compatibilty between NFC devices, tag types, and operating systems.\n",
+  "usage": "\n```typescript\nimport { NFC, Ndef } from '@ionic-native/nfc/ngx';\n\nconstructor(private nfc: NFC, private ndef: Ndef) { }\n\n...\n\nthis.nfc.addNdefListener(() => {\n  console.log('successfully attached ndef listener');\n}, (err) => {\n  console.log('error attaching ndef listener', err);\n}).subscribe((event) => {\n  console.log('received ndef message. the tag contains: ', event.tag);\n  console.log('decoded tag id', this.nfc.bytesToHexString(event.tag.id));\n\n  let message = this.ndef.textRecord('Hello world');\n  this.nfc.share([message]).then(onSuccess).catch(onError);\n});\n\n```\n",
+  "platforms": [
+    "Android",
+    "BlackBerry 10",
+    "Windows",
+    "Windows Phone 8"
+  ],
+  "repo": "https://github.com/chariotsolutions/phonegap-nfc",
+  "cordovaPlugin": {
+    "name": "phonegap-nfc"
+  }
+}

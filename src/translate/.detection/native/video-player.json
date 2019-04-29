@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/video-player",
+  "displayName": "Video Player",
+  "description": "\nA Cordova plugin that simply allows you to immediately play a video in fullscreen mode.\n\nRequires Cordova plugin: `com.moust.cordova.videoplayer`. For more info, please see the [VideoPlayer plugin docs](https://github.com/moust/cordova-plugin-videoplayer).\n",
+  "usage": "\n```typescript\nimport { VideoPlayer } from '@ionic-native/video-player/ngx';\n\nconstructor(private videoPlayer: VideoPlayer) { }\n\n...\n\n// Playing a video.\nthis.videoPlayer.play('file:///android_asset/www/movie.mp4').then(() => {\n console.log('video completed');\n}).catch(err => {\n console.log(err);\n});\n\n```",
+  "platforms": [
+    "Android"
+  ],
+  "repo": "https://github.com/moust/cordova-plugin-videoplayer",
+  "cordovaPlugin": {
+    "name": "https://github.com/moust/cordova-plugin-videoplayer.git"
+  }
+}

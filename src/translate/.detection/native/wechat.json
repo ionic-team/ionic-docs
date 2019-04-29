@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/wechat",
+  "displayName": "Wechat",
+  "description": "\nA cordova plugin, a JS version of Wechat SDK\n",
+  "usage": "\n```typescript\nimport { Wechat } from '@ionic-native/wechat/ngx';\n\n\nconstructor(private wechat: Wechat) { }\n\n...\n\n\nthis.wechat.functionName('Hello', 123)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/xu-li/cordova-plugin-wechat.git",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-wechat"
+  }
+}

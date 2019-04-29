@@ -1,0 +1,30 @@
+{
+  "name": "ionic docs",
+  "namespace": [
+    "ionic"
+  ],
+  "summary": "Open the Ionic documentation website",
+  "description": "",
+  "footnotes": [],
+  "groups": [],
+  "exampleCommands": [],
+  "aliases": [],
+  "inputs": [],
+  "options": [
+    {
+      "name": "browser",
+      "type": "string",
+      "summary": "Specifies the browser to use (`safari`, `firefox`, `google chrome`)",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [
+        "w"
+      ],
+      "spec": {
+        "value": "browser"
+      }
+    }
+  ],
+  "type": "global"
+}

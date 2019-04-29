@@ -1,0 +1,21 @@
+{
+  "packageName": "@ionic-native/contacts",
+  "displayName": "Contacts",
+  "description": "\nAccess and manage Contacts on the device.\n",
+  "usage": "\n\n```typescript\nimport { Contacts, Contact, ContactField, ContactName } from '@ionic-native/contacts/ngx';\n\nconstructor(private contacts: Contacts) { }\n\nlet contact: Contact = this.contacts.create();\n\ncontact.name = new ContactName(null, 'Smith', 'John');\ncontact.phoneNumbers = [new ContactField('mobile', '6471234567')];\ncontact.save().then(\n  () => console.log('Contact saved!', contact),\n  (error: any) => console.error('Error saving contact.', error)\n);\n\n```",
+  "platforms": [
+    "Android",
+    "BlackBerry 10",
+    "Browser",
+    "Firefox OS",
+    "iOS",
+    "Ubuntu",
+    "Windows",
+    "Windows 8",
+    "Windows Phone"
+  ],
+  "repo": "https://github.com/apache/cordova-plugin-contacts",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-contacts"
+  }
+}

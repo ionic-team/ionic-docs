@@ -1,0 +1,20 @@
+{
+  "packageName": "@ionic-native/sqlite-porter",
+  "displayName": "SQLite Porter",
+  "description": "\nThis Cordova/Phonegap plugin can be used to import/export to/from a SQLite database using either SQL or JSON.\n",
+  "usage": "\n```typescript\nimport { SQLitePorter } from '@ionic-native/sqlite-porter/ngx';\n\n\nconstructor(private sqlitePorter: SQLitePorter) { }\n\n...\n\nlet db = window.openDatabase('Test', '1.0', 'TestDB', 1 * 1024);\n// or we can use SQLite plugin\n// we will assume that we injected SQLite into this component as sqlite\nthis.sqlite.create({\n  name: 'data.db',\n  location: 'default'\n})\n  .then((db: any) => {\n    let dbInstance = db._objectInstance;\n    // we can pass db._objectInstance as the database option in all SQLitePorter methods\n  });\n\n\nlet sql = 'CREATE TABLE Artist ([Id] PRIMARY KEY, [Title]);' +\n           'INSERT INTO Artist(Id,Title) VALUES (\"1\",\"Fred\");';\n\nthis.sqlitePorter.importSqlToDb(db, sql)\n  .then(() => console.log('Imported'))\n  .catch(e => console.error(e));\n\n\n```\n",
+  "platforms": [
+    "Amazon Fire OS",
+    "Android",
+    "BlackBerry 10",
+    "Browser",
+    "iOS",
+    "Tizen",
+    "Windows",
+    "Windows Phone"
+  ],
+  "repo": "https://github.com/dpa99c/cordova-sqlite-porter",
+  "cordovaPlugin": {
+    "name": "uk.co.workingedge.cordova.plugin.sqliteporter"
+  }
+}

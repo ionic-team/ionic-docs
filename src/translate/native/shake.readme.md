@@ -1,0 +1,1 @@
+Handles shake gesture

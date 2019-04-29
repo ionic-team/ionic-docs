@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/twitter-connect",
+  "displayName": "Twitter Connect",
+  "description": "\nPlugin to use Twitter Single Sign On\nUses Twitter's Fabric SDK\n```typescript\nimport { TwitterConnect } from '@ionic-native/twitter-connect/ngx';\n\nconstructor(private twitter: TwitterConnect) { }\n\n...\n\nfunction onSuccess(response) {\n  console.log(response);\n\n  // Will console log something like:\n  // {\n  //   userName: 'myuser',\n  //   userId: '12358102',\n  //   secret: 'tokenSecret'\n  //   token: 'accessTokenHere'\n  // }\n}\n\nthis.twitter.login().then(onSuccess, onError);\n\nthis.twitter.logout().then(onLogoutSuccess, onLogoutError);\n```",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/chroa/twitter-connect-plugin",
+  "cordovaPlugin": {
+    "name": "twitter-connect-plugin"
+  }
+}

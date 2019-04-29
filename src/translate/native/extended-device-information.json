@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/extended-device-information",
+  "displayName": "Extended Device Information",
+  "description": "\nRetrieves additional device information from the Device Hardware\n - memory\n - cpumhz\n - totalstorage\n - freestorage\n",
+  "usage": "\n```typescript\nimport { ExtendedDeviceInformation } from '@ionic-native/extended-device-information/ngx';\n\n\nconstructor(private extendedDeviceInformation: ExtendedDeviceInformation) { }\n\n...\n\nconsole.log('The Memory is: ' + this.extendedDeviceInformation.memory);\n```\n",
+  "platforms": [
+    "Android"
+  ],
+  "repo": "https://github.com/danielehrhardt/cordova-plugin-extended-device-information",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-extended-device-information"
+  }
+}

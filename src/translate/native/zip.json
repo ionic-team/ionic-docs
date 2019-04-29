@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/zip",
+  "displayName": "Zip",
+  "description": "\nA Cordova plugin to unzip files in Android and iOS.\n",
+  "usage": "\n```typescript\nimport { Zip } from '@ionic-native/zip/ngx';\n\nconstructor(private zip: Zip) { }\n\n...\n\nthis.zip.unzip('path/to/source.zip', 'path/to/dest', (progress) => console.log('Unzipping, ' + Math.round((progress.loaded / progress.total) * 100) + '%'))\n .then((result) => {\n   if(result === 0) console.log('SUCCESS');\n   if(result === -1) console.log('FAILED');\n });\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/MobileChromeApps/cordova-plugin-zip",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-zip"
+  }
+}

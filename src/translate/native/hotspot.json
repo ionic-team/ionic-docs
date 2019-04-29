@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/hotspot",
+  "displayName": "Hotspot",
+  "description": "\nA Cordova plugin for managing Hotspot networks on Android.\n\nRequires Cordova plugin: `cordova-plugin-hotspot`. For more info, please see the [Hotspot plugin docs](https://github.com/hypery2k/cordova-hotspot-plugin).\n",
+  "usage": "\n```typescript\nimport { Hotspot, HotspotNetwork } from '@ionic-native/hotspot/ngx';\n\nconstructor(private hotspot: Hotspot) { }\n\n...\n\n\nthis.hotspot.scanWifi().then((networks: HotspotNetwork[]) => {\n    console.log(networks);\n});\n\n```",
+  "platforms": [
+    "Android"
+  ],
+  "repo": "https://github.com/hypery2k/cordova-hotspot-plugin",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-hotspot"
+  }
+}

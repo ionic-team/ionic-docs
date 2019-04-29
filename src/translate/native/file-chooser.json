@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/file-chooser",
+  "displayName": "File Chooser",
+  "description": "\n\nOpens the file picker on Android for the user to select a file, returns a file URI.\n",
+  "usage": "\n```typescript\nimport { FileChooser } from '@ionic-native/file-chooser/ngx';\n\nconstructor(private fileChooser: FileChooser) { }\n\n...\n\nthis.fileChooser.open()\n  .then(uri => console.log(uri))\n  .catch(e => console.log(e));\n\n```\n",
+  "platforms": [
+    "Android"
+  ],
+  "repo": "https://github.com/ihadeed/cordova-filechooser",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-filechooser"
+  }
+}

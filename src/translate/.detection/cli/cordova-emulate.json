@@ -1,0 +1,288 @@
+{
+  "name": "ionic cordova emulate",
+  "namespace": [
+    "ionic",
+    "cordova"
+  ],
+  "summary": "Emulate an Ionic project on a simulator/emulator",
+  "description": "Like running `cordova run` or `cordova emulate` directly, but performs `ionic build` before deploying to the device or emulator. Optionally specify the `--livereload` option to use the dev server from `ionic serve` for livereload functionality.\n\nFor Android and iOS, you can setup Remote Debugging on your device with browser development tools using these [docs](https://ionicframework.com/docs/developer-resources/developer-tips).\n\nJust like with `ionic cordova build`, you can pass additional options to the Cordova CLI using the `--` separator. To pass additional options to the dev server, consider using `ionic serve` and the `--livereload-url` option.\n\nWith the experimental `--native-run` flag, this command will first use Cordova to build your app, and then it will run it on a device using the `native-run` [utility](https://github.com/ionic-team/native-run) instead of Cordova.",
+  "footnotes": [],
+  "groups": [
+    "beta"
+  ],
+  "exampleCommands": [
+    "ionic cordova emulate android",
+    "ionic cordova emulate android --buildConfig=build.json",
+    "ionic cordova emulate android --prod --release -- -- --gradleArg=-PcdvBuildMultipleApks=true",
+    "ionic cordova emulate android --prod --release -- -- --keystore=filename.keystore --alias=myalias",
+    "ionic cordova emulate android --prod --release -- -- --minSdkVersion=21",
+    "ionic cordova emulate android --prod --release -- -- --versionCode=55",
+    "ionic cordova emulate android --prod --release --buildConfig=build.json",
+    "ionic cordova emulate android -l",
+    "ionic cordova emulate ios",
+    "ionic cordova emulate ios --buildConfig=build.json",
+    "ionic cordova emulate ios --livereload",
+    "ionic cordova emulate ios --livereload-url=http://localhost:8100",
+    "ionic cordova emulate ios --prod --release",
+    "ionic cordova emulate ios --prod --release -- --developmentTeam=\"ABCD\" --codeSignIdentity=\"iPhone Developer\" --packageType=\"app-store\"",
+    "ionic cordova emulate ios --prod --release --buildConfig=build.json"
+  ],
+  "aliases": [],
+  "inputs": [
+    {
+      "name": "platform",
+      "summary": "The platform to run (e.g. `android`, `ios`)",
+      "required": false
+    }
+  ],
+  "options": [
+    {
+      "name": "list",
+      "type": "boolean",
+      "summary": "List all available targets",
+      "groups": [
+        "cordova",
+        "cordova-cli",
+        "native-run"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "build",
+      "type": "boolean",
+      "summary": "Do not invoke Ionic build",
+      "default": true,
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "address",
+      "type": "string",
+      "summary": "Use specific address for the dev server",
+      "default": "0.0.0.0",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "address"
+      }
+    },
+    {
+      "name": "port",
+      "type": "string",
+      "summary": "Use specific port for HTTP",
+      "default": "8100",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [
+        "p"
+      ],
+      "spec": {
+        "value": "port"
+      }
+    },
+    {
+      "name": "livereload",
+      "type": "boolean",
+      "summary": "Spin up dev server to live-reload www files",
+      "groups": [],
+      "aliases": [
+        "l"
+      ],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "livereload-url",
+      "type": "string",
+      "summary": "Provide a custom URL to the dev server",
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "url"
+      }
+    },
+    {
+      "name": "prod",
+      "type": "boolean",
+      "summary": "Flag to use the `production` configuration",
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "source-map",
+      "type": "boolean",
+      "summary": "Output source maps",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "configuration",
+      "type": "string",
+      "summary": "Specify the configuration to use.",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [
+        "c"
+      ],
+      "spec": {
+        "value": "conf"
+      }
+    },
+    {
+      "name": "ssl",
+      "type": "boolean",
+      "summary": "Use HTTPS for the dev server",
+      "groups": [
+        "experimental",
+        "cordova"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "debug",
+      "type": "boolean",
+      "summary": "Mark as a debug build",
+      "groups": [
+        "cordova",
+        "cordova-cli"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "release",
+      "type": "boolean",
+      "summary": "Mark as a release build",
+      "groups": [
+        "cordova",
+        "cordova-cli"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "device",
+      "type": "boolean",
+      "summary": "Deploy build to a device",
+      "groups": [
+        "cordova",
+        "cordova-cli",
+        "native-run"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "emulator",
+      "type": "boolean",
+      "summary": "Deploy build to an emulator",
+      "groups": [
+        "cordova",
+        "cordova-cli",
+        "native-run"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "buildConfig",
+      "type": "string",
+      "summary": "Use the specified build configuration",
+      "groups": [
+        "advanced",
+        "cordova",
+        "cordova-cli"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "file"
+      }
+    },
+    {
+      "name": "target",
+      "type": "string",
+      "summary": "Deploy build to a device (use `--list` to see all)",
+      "groups": [
+        "advanced",
+        "cordova",
+        "cordova-cli",
+        "native-run"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "target"
+      }
+    },
+    {
+      "name": "native-run",
+      "type": "boolean",
+      "summary": "Use `native-run` instead of Cordova for running the app",
+      "groups": [
+        "experimental",
+        "native-run"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "connect",
+      "type": "boolean",
+      "summary": "Do not tie the running app to the process",
+      "default": true,
+      "groups": [
+        "experimental",
+        "native-run"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "json",
+      "type": "boolean",
+      "summary": "Output `--list` targets in JSON",
+      "groups": [
+        "experimental",
+        "native-run"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    }
+  ],
+  "type": "project"
+}

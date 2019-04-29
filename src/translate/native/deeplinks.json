@@ -1,0 +1,15 @@
+{
+  "packageName": "@ionic-native/deeplinks",
+  "displayName": "Deeplinks",
+  "description": "This plugin handles deeplinks on iOS and Android for both custom URL scheme links\nand Universal App Links.\n",
+  "usage": "\n```typescript\nimport { Deeplinks } from '@ionic-native/deeplinks/ngx';\n\nconstructor(private deeplinks: Deeplinks) { }\n\nthis.deeplinks.route({\n     '/about-us': AboutPage,\n     '/universal-links-test': AboutPage,\n     '/products/:productId': ProductPage\n   }).subscribe(match => {\n     // match.$route - the route we matched, which is the matched entry from the arguments to route()\n     // match.$args - the args passed in the link\n     // match.$link - the full link data\n     console.log('Successfully matched route', match);\n   }, nomatch => {\n     // nomatch.$link - the full link data\n     console.error('Got a deeplink that didn\\'t match', nomatch);\n   });\n```\n\nAlternatively, if you're using Ionic, there's a convenience method that takes a reference to a `NavController` and handles\nthe actual navigation for you:\n\n```typescript\nthis.deeplinks.routeWithNavController(this.navController, {\n  '/about-us': AboutPage,\n  '/products/:productId': ProductPage\n}).subscribe(match => {\n    // match.$route - the route we matched, which is the matched entry from the arguments to route()\n    // match.$args - the args passed in the link\n    // match.$link - the full link data\n    console.log('Successfully matched route', match);\n  }, nomatch => {\n    // nomatch.$link - the full link data\n    console.error('Got a deeplink that didn\\'t match', nomatch);\n  });\n```\n\nSee the [Ionic Deeplinks Demo](https://github.com/ionic-team/ionic2-deeplinks-demo/blob/master/app/app.ts) for an example of how to\nretrieve the `NavController` reference at runtime.\n",
+  "platforms": [
+    "Android",
+    "Browser",
+    "iOS"
+  ],
+  "repo": "https://github.com/ionic-team/ionic-plugin-deeplinks",
+  "cordovaPlugin": {
+    "name": "ionic-plugin-deeplinks"
+  }
+}

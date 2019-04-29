@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/pinterest",
+  "displayName": "Pinterest",
+  "description": "\nCordova plugin for Pinterest\n",
+  "usage": "\n```typescript\nimport { Pinterest, PinterestUser, PinterestPin, PinterestBoard } from '@ionic-native/pinterest/ngx';\n\nconstructor(private pinterest: Pinterest) { }\n\n...\n\nconst scopes = [\n  this.pinterest.SCOPES.READ_PUBLIC,\n  this.pinterest.SCOPES.WRITE_PUBLIC,\n  this.pinterest.SCOPES.READ_RELATIONSHIPS,\n  this.pinterest.SCOPES.WRITE_RELATIONSHIPS\n];\n\nthis.pinterest.login(scopes)\n  .then(res => console.log('Logged in!', res))\n  .catch(err => console.error('Error loggin in', err));\n\nthis.pinterest.getMyPins()\n  .then((pins: PinterestPin[]) => console.log(pins))\n  .catch(err => console.error(err));\n\nthis.pinterest.getMe()\n  .then((user: PinterestUser) => console.log(user));\n\nthis.pinterest.getMyBoards()\n  .then((boards: PinterestBoard[]) => console.log(boards));\n\n```",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/zyramedia/cordova-plugin-pinterest",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-pinterest"
+  }
+}

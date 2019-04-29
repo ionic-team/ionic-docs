@@ -1,0 +1,17 @@
+{
+  "packageName": "@ionic-native/geolocation",
+  "displayName": "Geolocation",
+  "description": "\nThis plugin provides information about the device's location, such as latitude and longitude. Common sources of location information include Global Positioning System (GPS) and location inferred from network signals such as IP address, RFID, WiFi and Bluetooth MAC addresses, and GSM/CDMA cell IDs.\n\n This API is based on the W3C Geolocation API Specification, and only executes on devices that don't already provide an implementation.\n\nFor iOS you have to add this configuration to your configuration.xml file\n```xml\n<edit-config file=\"*-Info.plist\" mode=\"merge\" target=\"NSLocationWhenInUseUsageDescription\">\n   <string>We use your location for full functionality of certain app features.</string>\n</edit-config>\n```\n\n",
+  "usage": "\n\n```typescript\nimport { Geolocation } from '@ionic-native/geolocation/ngx';\n\n...\n\nconstructor(private geolocation: Geolocation) {}\n\n...\n\nthis.geolocation.getCurrentPosition().then((resp) => {\n // resp.coords.latitude\n // resp.coords.longitude\n}).catch((error) => {\n  console.log('Error getting location', error);\n});\n\nlet watch = this.geolocation.watchPosition();\nwatch.subscribe((data) => {\n // data can be a set of coordinates, or an error (if an error occurred).\n // data.coords.latitude\n // data.coords.longitude\n});\n```",
+  "platforms": [
+    "Amazon Fire OS",
+    "Android",
+    "Browser",
+    "iOS",
+    "Windows"
+  ],
+  "repo": "https://github.com/apache/cordova-plugin-geolocation",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-geolocation"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/sqlite-db-copy",
+  "displayName": "Sqlite Db Copy",
+  "description": "\nThis plugin does something\n",
+  "usage": "\n```typescript\nimport { SqliteDbCopy } from '@ionic-native/sqlite-db-copy/ngx';\n\n\nconstructor(private sqliteDbCopy: SqliteDbCopy) { }\n\n...\n\n\nthis.sqliteDbCopy.copy('sample.db', 0)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/an-rahulpandey/cordova-plugin-dbcopy",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-dbcopy"
+  }
+}

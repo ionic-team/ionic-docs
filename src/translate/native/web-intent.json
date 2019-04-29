@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/web-intent",
+  "displayName": "Web Intent",
+  "description": "\nThis Plugin provides a general purpose shim layer for the Android intent mechanism, exposing various ways to handle sending and receiving intents.",
+  "usage": "\nFor usage information please refer to the plugin's Github repo.\n\n```typescript\nimport { WebIntent } from '@ionic-native/web-intent/ngx';\n\nconstructor(private webIntent: WebIntent) { }\n\n...\n\nconst options = {\n  action: this.webIntent.ACTION_VIEW,\n  url: 'path/to/file',\n  type: 'application/vnd.android.package-archive'\n}\n\nthis.webIntent.startActivity(options).then(onSuccess, onError);\n\n```",
+  "platforms": [
+    "Android"
+  ],
+  "repo": "https://github.com/darryncampbell/darryncampbell-cordova-plugin-intent",
+  "cordovaPlugin": {
+    "name": "com-darryncampbell-cordova-plugin-intent"
+  }
+}

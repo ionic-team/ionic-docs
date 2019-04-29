@@ -1,0 +1,15 @@
+{
+  "packageName": "@ionic-native/in-app-purchase-2",
+  "displayName": "In App Purchase 2",
+  "description": "\n",
+  "usage": "\n```\nimport { InAppPurchase2 } from '@ionic-native/in-app-purchase-2/ngx';\n\n\nconstructor(private inAppPurchase2: InAppPurchase2) { }\n\n...\n\n\n```\n",
+  "platforms": [
+    "iOS",
+    "Android",
+    "Windows"
+  ],
+  "repo": "https://github.com/j3k0/cordova-plugin-purchase",
+  "cordovaPlugin": {
+    "name": "cc.fovea.cordova.purchase"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "packageName": "@ionic-native/printer",
+  "displayName": "Printer",
+  "description": "Prints documents or HTML rendered content",
+  "usage": "\n```typescript\nimport { Printer, PrintOptions } from '@ionic-native/printer/ngx';\n\nconstructor(private printer: Printer) { }\n\n...\n\nthis.printer.isAvailable().then(onSuccess, onError);\n\nlet options: PrintOptions = {\n     name: 'MyDocument',\n     printerId: 'printer007',\n     duplex: true,\n     landscape: true,\n     grayscale: true\n   }\n\nthis.printer.print(content, options).then(onSuccess, onError);\n```",
+  "platforms": [
+    "Android",
+    "iOS",
+    "Windows"
+  ],
+  "repo": "https://github.com/katzer/cordova-plugin-printer",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-printer"
+  }
+}

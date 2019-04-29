@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/gao-de-location",
+  "displayName": "Gao De Location",
+  "description": "\nBecause the original GPS positioning uses Google Browser positioning, and Google withdraws from China, resulting in GPS Android positioning can not be positioned.\nGaode location can directly return address informationGaode location can directly return address information\n",
+  "usage": "\n```typescript\nimport { GaoDeLocation } from '@ionic-native/gao-de-location/ngx';\n\n\nconstructor(private gaoDeLocation: GaoDeLocation) { }\n\nthis.gaoDeLocation.getCurrentPosition()\n.then((res: PositionOptions) => console.log(res))\n.catch((error) => console.error(error));\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/waliu/cordova-plugin-gaodelocation-chenyu.git",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-gaodelocation-chenyu"
+  }
+}

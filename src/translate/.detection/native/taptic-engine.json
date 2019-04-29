@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/taptic-engine",
+  "displayName": "Taptic Engine",
+  "description": "\nAn Ionic plugin to use Taptic Engine API on iPhone 7, 7 Plus or newer.\n",
+  "usage": "\n```typescript\nimport { TapticEngine } from '@ionic-native/taptic-engine/ngx';\n\n...\n\nconstructor(private taptic: TapticEngine) { }\n\n...\n\nthis.taptic.selection();\n\nthis.taptic.notification();\n\nthis.taptic.impact();\n\n```\n",
+  "platforms": [
+    "iOS"
+  ],
+  "repo": "https://github.com/EddyVerbruggen/cordova-plugin-taptic-engine",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-taptic-engine"
+  }
+}

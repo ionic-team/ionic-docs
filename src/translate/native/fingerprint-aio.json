@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/fingerprint-aio",
+  "displayName": "Fingerprint AIO",
+  "description": "\nUse simple fingerprint authentication on Android and iOS.\nRequires Cordova plugin: cordova-plugin-fingerprint-aio. For more info about plugin, vist: https://github.com/NiklasMerz/cordova-plugin-fingerprint-aio\n",
+  "usage": "\n```typescript\nimport { FingerprintAIO } from '@ionic-native/fingerprint-aio/ngx';\n\nconstructor(private faio: FingerprintAIO) { }\n\n...\n\nthis.faio.show({\n    clientId: 'Fingerprint-Demo',\n    clientSecret: 'password', //Only necessary for Android\n    disableBackup:true,  //Only for Android(optional)\n    localizedFallbackTitle: 'Use Pin', //Only for iOS\n    localizedReason: 'Please authenticate' //Only for iOS\n})\n.then((result: any) => console.log(result))\n.catch((error: any) => console.log(error));\n\n```",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/NiklasMerz/cordova-plugin-fingerprint-aio",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-fingerprint-aio"
+  }
+}

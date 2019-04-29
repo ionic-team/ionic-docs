@@ -1,0 +1,52 @@
+{
+  "name": "ionic config unset",
+  "namespace": [
+    "ionic",
+    "config"
+  ],
+  "summary": "Delete config values",
+  "description": "This command deletes configuration values from the project's **./ionic.config.json** file. It can also operate on the global CLI configuration (**~/.ionic/config.json**) using the `--global` option.\n\nFor nested properties, separate nest levels with dots. For example, the property name `integrations.cordova` will look in the **integrations** object for the **cordova** property.\n\nFor multi-app projects, this command is scoped to the current project by default. To operate at the root of the project configuration file instead, use the `--root` option.",
+  "footnotes": [],
+  "groups": [],
+  "exampleCommands": [
+    "ionic config unset ",
+    "ionic config unset type",
+    "ionic config unset --global git.setup",
+    "ionic config unset -g interactive"
+  ],
+  "aliases": [],
+  "inputs": [
+    {
+      "name": "property",
+      "summary": "The property name you wish to delete",
+      "required": true
+    }
+  ],
+  "options": [
+    {
+      "name": "global",
+      "type": "boolean",
+      "summary": "Use global CLI config",
+      "groups": [],
+      "aliases": [
+        "g"
+      ],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "root",
+      "type": "boolean",
+      "summary": "Operate on root of **./ionic.config.json**",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    }
+  ],
+  "type": "global"
+}

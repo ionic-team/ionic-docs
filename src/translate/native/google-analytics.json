@@ -1,0 +1,16 @@
+{
+  "packageName": "@ionic-native/google-analytics",
+  "displayName": "Google Analytics",
+  "description": "\nThis plugin connects to Google's native Universal Analytics SDK\nPrerequisites:\n- A Cordova 3.0+ project for iOS and/or Android\n- A Mobile App property through the Google Analytics Admin Console\n- (Android) Google Play Services SDK installed via [Android SDK Manager](https://developer.android.com/sdk/installing/adding-packages.html)",
+  "usage": "\n```typescript\nimport { GoogleAnalytics } from '@ionic-native/google-analytics/ngx';\n\nconstructor(private ga: GoogleAnalytics) { }\n\n...\n\nthis.ga.startTrackerWithId('YOUR_TRACKER_ID')\n   .then(() => {\n     console.log('Google analytics is ready now');\n      this.ga.trackView('test');\n     // Tracker is ready\n     // You can now track pages or set additional information such as AppVersion or UserId\n   })\n   .catch(e => console.log('Error starting GoogleAnalytics', e));\n\n\n```\n",
+  "platforms": [
+    "Android",
+    "Browser",
+    "iOS",
+    "Windows Phone 8"
+  ],
+  "repo": "https://github.com/danwilson/google-analytics-plugin",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-google-analytics"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/google-nearby",
+  "displayName": "Google Nearby",
+  "description": "\nThis plugin adds support for the Google Nearby Messages API.\n",
+  "usage": "\n```typescript\nimport { GoogleNearby } from '@ionic-native/google-nearby/ngx';\n\n\nconstructor(private googleNearby: GoogleNearby) { }\n\nthis.googleNearby.publish('Hello')\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\nthis.googleNearby.subscribe()\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n```\n",
+  "platforms": [
+    "Android"
+  ],
+  "repo": "https://github.com/hahahannes/cordova-plugin-google-nearby",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-google-nearby"
+  }
+}

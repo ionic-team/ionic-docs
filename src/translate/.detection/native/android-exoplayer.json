@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/android-exoplayer",
+  "displayName": "Android ExoPlayer",
+  "description": "\nCordova media player plugin using Google's ExoPlayer framework.\n\nhttps://github.com/google/ExoPlayer\n",
+  "usage": "\n```typescript\nimport { AndroidExoPlayer } from '@ionic-native/android-exoplayer/ngx';\n\nconstructor(private androidExoPlayer: AndroidExoPlayer) { }\n\n...\n\nthis.androidExoPlayer.show({url: 'http://www.youtube.com/api/manifest/dash/id/bf5bb2419360daf1/source/youtube'});\n\n```\n",
+  "platforms": [
+    "Android"
+  ],
+  "repo": "https://github.com/frontyard/cordova-plugin-exoplayer",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-exoplayer"
+  }
+}
