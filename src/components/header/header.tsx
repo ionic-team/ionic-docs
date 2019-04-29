@@ -45,7 +45,7 @@ export class DocsHeader {
             <stencil-route url="/docs/appflow">
               <docs-dropdown label="Appflow">
                 <section>
-                  <stencil-route-link url="/docs/" urlMatch={/^\/docs\/(?!(appflow)).*$/}>Framework</stencil-route-link>
+                  <stencil-route-link url="/docs/" urlMatch={/^\/docs\/(?!(appflow)).*$/}>フレームワーク</stencil-route-link>
                   <stencil-route-link url="/docs/appflow">Appflow <Checkmark/></stencil-route-link>
                 </section>
                 <section>
@@ -68,11 +68,11 @@ export class DocsHeader {
                 </section>
               </docs-dropdown>
               <div class="SectionNav-tabs">
-                <stencil-route-link url="/docs/" urlMatch={[/^\/docs(?!\/(api|components|cli|native|enterprise)).*$/]}>Guide</stencil-route-link>
-                <stencil-route-link url="/docs/components" urlMatch={['/docs/api', '/docs/components']}>Components</stencil-route-link>
+                <stencil-route-link url="/docs/" urlMatch={[/^\/docs(?!\/(api|components|cli|native|enterprise)).*$/]}>ガイド</stencil-route-link>
+                <stencil-route-link url="/docs/components" urlMatch={['/docs/api', '/docs/components']}>コンポーネント</stencil-route-link>
                 <stencil-route-link url="/docs/cli">CLI</stencil-route-link>
-                <stencil-route-link url="/docs/native">Native</stencil-route-link>
-                <stencil-route-link url="/docs/enterprise">Enterprise Edition</stencil-route-link>
+                <stencil-route-link url="/docs/native">ネイティブ</stencil-route-link>
+                <stencil-route-link url="/docs/enterprise">エンタープライズ</stencil-route-link>
               </div>
             </stencil-route>
           </stencil-route-switch>
