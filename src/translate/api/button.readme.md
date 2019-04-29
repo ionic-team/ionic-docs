@@ -1,10 +1,10 @@
 # ion-button
 
-Buttons provide a clickable element, which can be used in forms, or anywhere that needs simple, standard button functionality. They may display text, icons, or both. Buttons can be styled with several attributes to look a specific way.
+Buttonはクリック可能な要素を提供し、Form内や、標準の単機能なButton機能を必要とする任意の場所で使用できます。text、icon、またはその両方を表示できます。Buttonは、いくつかの属性を利用して特定の外観になるようにスタイル設定できます。
 
 ## Expand
 
-This attribute lets you specify how wide the button should be. By default, buttons are inline blocks, but setting this attribute will change the button to a full-width block element.
+この属性では、Buttonの横幅を指定します。デフォルトでは、ボタンはinline-blockですが、Expandを設定すると、Buttonは横幅100%のblock要素になります。
 
 | Value          | Details                                                                      |
 |----------------|------------------------------------------------------------------------------|
@@ -13,7 +13,7 @@ This attribute lets you specify how wide the button should be. By default, butto
 
 ## Fill
 
-This attributes determines the background and border color of the button. By default, buttons have a solid background unless the button is inside of a toolbar, in which case it has a transparent background.
+この属性は、Buttonのbackgroundとborder-colorを設定します。デフォルトでは、Buttonはtoolbar内にない限り、backgroundは塗りつぶされます。toolbar内にある場合は、backgroundは透明になります。
 
 | Value          | Details                                                                      |
 |----------------|------------------------------------------------------------------------------|
@@ -23,7 +23,7 @@ This attributes determines the background and border color of the button. By def
 
 ## Size
 
-This attribute specifies the size of the button. Setting this attribute will change the height and padding of a button.
+この属性は、Buttonのサイズを指定します。この属性を設定すると、Buttonの高さとpaddingが変更されます。
 
 | Value          | Details                                                                      |
 |----------------|------------------------------------------------------------------------------|

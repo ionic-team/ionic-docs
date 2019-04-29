@@ -1,3 +1,3 @@
 # ion-card-subtitle
 
-`ion-card-subtitle` is a child component of `ion-card`
+`ion-card-subtitle` は `ion-card` の子コンポーネントです。

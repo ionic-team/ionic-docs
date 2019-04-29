@@ -1,15 +1,15 @@
 # ion-col
 
-Columns are cellular components of the [grid](../grid) system and go inside of a [row](../row).
-They will expand to fill their row. All content within a grid should go inside of a column.
+Columnは [grid](../grid) system のセルとなるコンポーネントで、行の内側に入ります。 [row](../row) を埋めるように展開されます。
+グリッド内のすべてのコンテンツは、Columnの内側に配置する必要があります。
 
-See [Grid Layout](/docs/layout/grid) for more information.
+詳しくは [Grid Layout](/docs/layout/grid) をご覧ください。
 
 
 ## Column attributes
 
-By default, columns will stretch to fill the entire height of the row.
-There are several attributes that can be added to a column to customize this behavior.
+デフォルトでは、column は行の高さ全体に合わせて伸縮します。
+この動作をカスタマイズするために、column に追加できる属性がいくつかあります。
 
 | Property              | Description                                                                                                 |
 |-----------------------|-------------------------------------------------------------------------------------------------------------|

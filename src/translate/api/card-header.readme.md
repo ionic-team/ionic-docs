@@ -1,4 +1,4 @@
 # ion-card-header
 
-`ion-card-header` is a header component for `ion-card`.
+`ion-card-header` は `ion-card` のヘッダーコンポーネントです。
 

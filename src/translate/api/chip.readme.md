@@ -1,3 +1,3 @@
 # ion-chip
 
-Chips represent complex entities in small blocks, such as a contact. A chip can contain several different elements such as avatars, text, and icons.
+Chipは連絡先などを複数の小さなエンティティで表示します。 Chipにはavatars, text, や iconsなど、いくつかの異なる要素を含めることができます。
