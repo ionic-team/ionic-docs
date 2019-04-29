@@ -1,17 +1,17 @@
 # ion-datetime
 
-Datetimes present a picker interface from the bottom of a page, making it easy for users to select
-dates and times. The picker displays scrollable columns that can be used to individually select years,
-months, days, hours and minute values. Datetimes are similar to the native `input` elements of type
-`datetime-local`, however, Ionic's Datetime component makes it easy to display the date and time in a
-preferred format, and manage the datetime values.
+datetime はページの下部にピッカー・インターフェースを表示し、
+ユーザーが日付と時刻を簡単に選択できるようにします。
+ピッカーには、年、月、日、時間、分の値を個別に選択するためのスクロール可能な列が表示されます。
+日時は `datetime-local` 型のネイティブの `input` 要素に似ていますが、Ionicのdatetimeコンポーネントを使用すると、
+希望する形式で日付と時刻を表示したり、日時の値を管理したりすることが容易になります。
 
 
 ## Display and Picker Formats
 
-The datetime component displays the values in two places: in the `<ion-datetime>` component,
-and in the picker interface that is presented from the bottom of the screen. The following
-chart lists all of the formats that can be used.
+datetimeコンポーネントでは、`<ion-datetime>` コンポーネントと、
+画面の下部に表示されるピッカー・インターフェースの2つの場所に値が表示されます。
+次の表に、使用できるすべての形式を示します。
 
 | Format | Description                    | Example                 |
 | ------ | ------------------------------ | ----------------------- |
@@ -37,20 +37,20 @@ chart lists all of the formats that can be used.
 | `ss`   | Second, leading zero           | `01` ... `59`           |
 | `Z`    | UTC Timezone Offset            | `Z or +HH:mm or -HH:mm` |
 
-**Important**: See the [Month Names and Day of the Week
-Names](#month-names-and-day-of-the-week-names) section below on how to use
-different names for the month and day.
+**Important**: 月と日に異なる名前を使用する方法については、後述の
+[Month Names and Day of the Week
+Names](#month-names-and-day-of-the-week-names) をご覧ください。
 
 ### Display Format
 
-The `displayFormat` input property specifies how a datetime's value should be
-printed, as formatted text, within the datetime component.
+`displayFormat` の入力プロパティーは、datetimeコンポーネント内で
+datetimeの値を書式付きテキストとして出力する方法を指定します。
 
-In the following example, the display in the `<ion-datetime>` will use the
-month's short name, the numerical day with a leading zero, a comma and the
-four-digit year. In addition to the date, it will display the time with the
-hours in the 24-hour format and the minutes. Any character can be used as a
-separator. An example display using this format is: `Jun 17, 2005 11:06`.
+次の例の `<ion-datetime>` では、月は `short name` 、日は先頭に0を付けた数字、
+カンマを置いて、年を4桁で仕様しています。
+日付のほかに、時刻も24時間表示と分を利用しています。
+区切り文字として任意の文字を使用できます。
+この書式を使用した表示例は、`Jun 17, 2005 11:06` となります。
 
 ```html
 <ion-item>
@@ -61,14 +61,14 @@ separator. An example display using this format is: `Jun 17, 2005 11:06`.
 
 ### Picker Format
 
-The `pickerFormat` input property determines which columns should be shown in
-the interface, the order of the columns, and which format to use within each
-column. If the `pickerFormat` input is not provided then it will default to the
-`displayFormat`.
+`pickerFormat` 入力プロパティは、ピッカー・インタフェースで表示する列、
+列の順序、および各列内で使用する形式を決定します。
+`pickerFormat` が指定されていない場合は、
+`displayFormat` がデフォルトになります。
 
-In the following example, the display in the `<ion-datetime>` will use the
-`MM/YYYY` format, such as `06/2020`. However, the picker interface will display
-two columns with the month's long name, and the four-digit year.
+次の例では、 `<ion-datetime>`コンポーネントの表示には `06/2020` のような
+`MM/YYYY` 形式が使用されます。
+ただし、ピッカー・インタフェースでは、月の `long name` 、4桁の年の列が表示されます。
 
 ```html
 <ion-item>
@@ -79,29 +79,29 @@ two columns with the month's long name, and the four-digit year.
 
 ### Datetime Data
 
-Historically, handling datetime values within JavaScript, or even within HTML
-inputs, has always been a challenge. Specifically, JavaScript's `Date` object is
-notoriously difficult to correctly parse apart datetime strings or to format
-datetime values. Even worse is how different browsers and JavaScript versions
-parse various datetime strings differently, especially per locale.
+これまで、JavaScript内、あるいはHTMLのInputでの日時値の処理は、常に課題でした。
+特に、JavaScriptの `Date` オブジェクトは、datetimeの文字列を正しく解析したり、
+datetimeの値をフォーマットしたりすることが非常に困難であることで有名です。
+さらに悪いことに、ブラウザとJavaScriptのバージョンが異なると、
+さまざまな日時ストリングの構文解析方法が異なり、特にロケールごとに異なります。
 
-Fortunately, Ionic's datetime input has been designed so developers can avoid
-the common pitfalls, allowing developers to easily format datetime values within
-the input, and give the user a simple datetime picker for a great user
-experience.
+幸いなことに、Ionicの datetime は、開発者がよくはまる落とし穴を避けることができるように設計されているため、
+開発者は Input の中で日時の値を簡単にフォーマットすることができ、
+ユーザーには素晴らしいUser Experienceのための
+シンプルな日時ピッカーを提供することができます。
 
 ##### ISO 8601 Datetime Format: YYYY-MM-DDTHH:mmZ
 
-Ionic uses the [ISO 8601 datetime format](https://www.w3.org/TR/NOTE-datetime)
-for its value. The value is simply a string, rather than using JavaScript's
-`Date` object. Additionally, when using the ISO datetime format, it makes it
-easier to serialize and pass within JSON objects, and sending databases a
-standardized format which it can be easily parsed if need be.
+Ionic では、[ISO 8601 datetime format](https://www.w3.org/TR/NOTE-datetime) を使用されます。
+値は、JavaScriptの `Date` オブジェクトを使用するのではなく、単なる文字列です。
+さらに、ISO datetime formatを使用すると、JSONオブジェクト内でシリアライズして渡すことが容易になり、
+データベースに標準フォーマットを送信して
+必要に応じて簡単に解析できるようになります。
 
-An ISO format can be used as a simple year, or just the hour and minute, or get
-more detailed down to the millisecond and timezone. Any of the ISO formats below
-can be used, and after a user selects a new value, Ionic will continue to use
-the same ISO format which datetime value was originally given as.
+ISO formatは、単純に年だけを利用することも、時間と分だけを使用することも、
+ミリ秒とタイムゾーンまで詳細に表示することもできます。
+以下のISO formatを使用でき、ユーザーが新しい値を選択した後も、
+Ionic はdatetime値が最初に指定されたのと同じISOフォーマットを引き続き使用します。
 
 | Description          | Format                 | Datetime Value Example        |
 | -------------------- | ---------------------- | ----------------------------  |
@@ -114,31 +114,31 @@ the same ISO format which datetime value was originally given as.
 | Hour and Minute      | HH:mm                  | 13:47                         |
 | Hour, Minute, Second | HH:mm:ss               | 13:47:20                      |
 
-Note that the year is always four-digits, milliseconds (if it's added) is always
-three-digits, and all others are always two-digits. So the number representing
-January always has a leading zero, such as `01`. Additionally, the hour is
-always in the 24-hour format, so `00` is `12am` on a 12-hour clock, `13` means
-`1pm`, and `23` means `11pm`.
+年は常に4桁、ミリ秒(利用している場合)は常に3桁、
+その他は常に2桁となることに注意してください。
+したがって、1月を表す数字の先頭には常に0 (`01`のように) が付きます。
+また、時間は常に24時間形式であるため、`00`は12時間表記の`12am`、
+`13`は`1pm`、`23`は`11pm`を意味します。
 
-It's also important to note that neither the `displayFormat` or `pickerFormat`
-can set the datetime value's output, which is the value that is set by the
-component's `ngModel`. The format's are merely for displaying the value as text
-and the picker's interface, but the datetime's value is always persisted as a
-valid ISO 8601 datetime string.
+`displayFormat` と `pickerFormat` のどちらも
+入力された値 (コンポーネントの `ngModel` によって設定される値) を
+任意のフォーマットで変更できないことにも注意してください。
+書式は単に値をテキストおよびピッカーのインタフェースとして表示するためのもので、
+日時の値は常に有効な ISO 8601 datetime の文字列として保持されます。
 
 ## Min and Max Datetimes
 
-Dates are infinite in either direction, so for a user's selection there should
-be at least some form of restricting the dates that can be selected. By default,
-the maximum date is to the end of the current year, and the minimum date is from
-the beginning of the year that was 100 years ago.
+日付はどちらの方向（過去・未来）にも無限であるため、ユーザーが選択するには、
+選択できる日付を何らかの形で制限する必要があります。
+既定では、最大の日付は現在の年の終わりまでで、
+最小の日付は100年前の年の初めからです。
 
-To customize the minimum and maximum datetime values, the `min` and `max`
-component inputs can be provided which may make more sense for the app's
-use-case, rather than the default of the last 100 years. Following the same IS0
-8601 format listed in the table above, each component can restrict which dates
-can be selected by the user. Below is an example of restricting the date
-selection between the beginning of 2016, and October 31st of 2020:
+日時の `min` と `max` をカスタマイズするために、
+過去100年のデフォルト値ではなく、アプリケーションのユースケースに
+適した最小値と最大値を入力できます。
+上の表と同じ IS0 8601 format に従って、
+各コンポーネントはユーザーが選択できる日付を制限できます。
+以下に、2016年の初めから2020年の10月31日までの日付選択を制限する例を示します。
 
 ```html
 <ion-item>
@@ -149,22 +149,22 @@ selection between the beginning of 2016, and October 31st of 2020:
 
 ## Month Names and Day of the Week Names
 
-At this time, there is no one-size-fits-all standard to automatically choose the
-correct language/spelling for a month name, or day of the week name, depending
-on the language or locale. 
+現時点では、言語またはロケールの設定ひとつで、
+月や曜日の名前を、正しい言語/スペルで自動的に
+選択することができる標準機能はありません。
 
-The good news is that there is an [Intl.DatetimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DatetimeFormat)
-standard which [most browsers](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DatetimeFormat#Browser_compatibility) have adopted.
+幸いなことに、 [Intl.DatetimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DatetimeFormat) を
+[ほとんどのブラウザが](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DatetimeFormat#Browser_compatibility) 採用しています。
 
-However, at this time the standard has not been fully implemented by all popular browsers
-so Ionic is unavailable to take advantage of it yet. 
+しかし現時点では、この標準はすべての一般的なブラウザーで完全に実装されているわけではないため、
+Ionicがこの標準を利用することはまだできません。
 
-Additionally, Angular also provides an internationalization service, but it is still
-under heavy development so Ionic does not depend on it at this time.
+また、Angularは国際化サービスも提供しているが、まだ開発途中であるため、
+現時点ではIonicはこれに依存していません。
 
-The current best practice is to provide an array of names if the app needs to use names other 
-than the default English version of month and day names. The month names and day names can be 
-either configured at the app level, or individual `ion-datetime` level.
+現在のベスト・プラクティスは、デフォルトの英語バージョンの月名と曜日名以外の名前を使用する必要がある場合に
+一連の名前を指定することです。
+月名と日名は、アプリケーション・レベルまたは個別の `ion-datetime` レベルで構成できます。
 
 ### Component Input Level
 
@@ -183,15 +183,15 @@ either configured at the app level, or individual `ion-datetime` level.
 
 ### Advanced Datetime Validation and Manipulation
 
-The datetime picker provides the simplicity of selecting an exact format, and
-persists the datetime values as a string using the standardized [ISO 8601
-datetime format](https://www.w3.org/TR/NOTE-datetime). However, it's important
-to note that `ion-datetime` does not attempt to solve all situtations when
-validating and manipulating datetime values. If datetime values need to be
-parsed from a certain format, or manipulated (such as adding 5 days to a date,
-subtracting 30 minutes, etc.), or even formatting data to a specific locale,
-then we highly recommend using [date-fns](https://date-fns.org) to work with
-dates in JavaScript.
+datetimeピッカーは、正確な書式を簡単に選択でき、
+標準化された [ISO 8601 datetime format](https://www.w3.org/TR/NOTE-datetime) を使用して、
+日時の値を文字列として保持します。
+ただし、 `ion-datetime` は、日時の値を検証および操作するときに、
+すべての状況を解決しようとするわけではないことに注意してください。
+datetimeの値を特定の形式から解析したり、操作したり(たとえば、
+日付に5日進めたり、30分戻ったり)、
+あるいは特定のロケールにデータをフォーマットしたりする必要がある場合は、
+[date-fns](https://date-fns.org) を使用してJavaScriptの日付を処理することを強くお勧めします。
 
 ```html
 <ion-item>
