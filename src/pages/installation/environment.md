@@ -28,7 +28,7 @@ $ npm --version
 
 ## Git
 
-Although not required, the version control system [Git](/docs/faq/glossary#git) is highly recommended. First, install the command-line utility from the [download page](https://git-scm.com/downloads). For a GUI client, we recommend [Github Desktop](https://desktop.github.com/).
+Although not required, the version control system [Git](/docs/faq/glossary#git) is highly recommended. First, install the command-line utility from the [download page](https://git-scm.com/downloads). For a GUI client, we recommend [GitHub Desktop](https://desktop.github.com/).
 
 To verify the installation, open a new terminal window and run:
 
