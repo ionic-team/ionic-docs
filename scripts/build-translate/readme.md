@@ -48,13 +48,13 @@ This is resource file instead of original file.
 
 #### require change file
 
-scripts/build-data/api-reference.ts
+##### scripts/build-data/api-reference.ts
 ```diff
 -import { components } from '@ionic/docs/core.json';
 +import { components } from '../data/translated-api.json';
 ```
 
-scripts/build-menus/index.ts
+##### scripts/build-menus/index.ts
 ```diff
 -import { commands } from '../data/cli.json';
 +import { commands } from '../data/translated-cli.json';
@@ -62,22 +62,27 @@ scripts/build-menus/index.ts
 +import plugins from '../data/translated-native.json';
 ```
 
-scripts/build-pages/page-types/api.ts
+##### scripts/build-pages/page-types/api.ts
 ```diff
 -import { components } from '@ionic/docs/core.json';
 +import { components } from '../../data/translated-api.json';
 ```
 
-scripts/build-pages/page-types/cli.ts
+##### scripts/build-pages/page-types/cli.ts
 ```diff
 -import { commands } from '../../data/cli.json';
 +import { commands } from '../../data/translated-cli.json';
 ```
 
-scripts/build-pages/page-types/native.ts
+##### scripts/build-pages/page-types/native.ts
 ```diff
 -import plugins from '../../data/native.json';
 +import plugins from '../../data/translated-native.json';
+```
+
+##### .gitignore
+```diff
++scripts/data/translated-*
 ```
 
 ### Get diff from original
