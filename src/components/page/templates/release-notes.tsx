@@ -15,12 +15,12 @@ export default (props) => {
       <h1>{page.title}</h1>
       <section class="markdown-content" innerHTML={page.body}/>
       <div class="release-notes">
-        { releases.map(release =>
-          <section class="release-note">
+        { releases.map((release, index) =>
+          <section class={getReleaseClasses(release)}>
 
             <div class="release-tag-wrapper">
               <h2 id={release.version}>
-                <a href={`#${release.version}`} class={getTagClasses(release)}>
+                <a href={`#${release.version}`} class="release-tag">
                   <span class="release-symbol">{release.symbol}</span>
                   <span class="release-version">{release.version}</span>
                 </a>
@@ -30,10 +30,14 @@ export default (props) => {
             <div class="release-info">
               <div class="release-header">
                 <h2>{release.name}</h2>
-                <span class={getBadgeClasses(release)}>{release.type}</span>
+                <span class="release-badge">{release.type}</span>
+                { index === 0
+                  ? <span class="release-badge release-badge-latest">Latest Production Version</span>
+                  : null
+                }
               </div>
               <div class="release-published">
-                <h2>{release.published_at}</h2>
+                <h3>{release.published_at}</h3>
               </div>
               <div innerHTML={release.body}></div>
             </div>
@@ -48,16 +52,9 @@ export default (props) => {
   );
 };
 
-function getTagClasses(release) {
+function getReleaseClasses(release) {
   return {
-    'release-tag': true,
-    [`release-tag-${release.type}`]: true
-  };
-}
-
-function getBadgeClasses(release) {
-  return {
-    'release-badge': true,
-    [`release-badge-${release.type}`]: true
+    'release-note': true,
+    [`release-note-${release.type}`]: true
   };
 }

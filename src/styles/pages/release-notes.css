@@ -3,21 +3,31 @@
 }
 
 .page-release-notes .release-note {
+  position: relative;
+
   display: flex;
   align-items: top;
 
-  margin-bottom: 40px;
+  padding-bottom: 40px;
+}
+
+/* Turn off the # on anchor hover */
+.page-release-notes h2 a[href^="#"]:hover:before,
+.page-release-notes h3 a[href^="#"]:hover:before,
+.page-release-notes h4 a[href^="#"]:hover:before,
+.page-release-notes h5 a[href^="#"]:hover:before,
+.page-release-notes h6 a[href^="#"]:hover:before {
+  opacity: 0;
 }
 
 .page-release-notes h2 {
   margin: 0;
 
-  font-size: 24px;
-  line-height: normal;
+  font-size: 32px;
 }
 
 .page-release-notes h3 {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .page-release-notes h2,
@@ -25,10 +35,21 @@
   padding-top: 0;
 }
 
-/* Release Note Header */
+/*
+ * Release Note Header
+ * --------------------------------------------------------
+ */
 
 .page-release-notes .release-header {
   display: flex;
+}
+
+.page-release-notes .release-published h3 {
+  font-family: var(--font-family);
+
+  font-weight: 300;
+
+  margin-top: 0;
 }
 
 .page-release-notes .release-badge {
@@ -50,8 +71,13 @@
   letter-spacing: 0.08em;
 }
 
-.page-release-notes .release-badge-major,
-.page-release-notes .release-badge-minor {
+.page-release-notes .release-note-major .release-badge {
+  background: var(--text-color--dark);
+  border-color: var(--text-color--dark);
+  color: white;
+}
+
+.page-release-notes .release-note-minor .release-badge {
   background: #b2becd;
   border-color: #b2becd;
   color: white;
@@ -63,7 +89,10 @@
 }
 
 
-/* Release Note Tag */
+/*
+ * Release Note Element Tag
+ * --------------------------------------------------------
+ */
 
 .page-release-notes .release-tag-wrapper h2 {
   font-size: 15px;
@@ -71,9 +100,20 @@
   margin-right: 30px;
 }
 
+.page-release-notes .release-note-patch .release-tag-wrapper:after {
+  content: "";
+  background-image: linear-gradient(to bottom, #ebf0f6, #ebf0f6);
+  width: 3px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc((65px / 2));
+  z-index: -1;
+}
+
 .page-release-notes .release-tag {
   line-height: 200%;
-  color: #639CFF;
+  color: var(--accent-color-200);
 
   padding: 6px 12px;
   display: inline-block;
@@ -81,8 +121,9 @@
   font-weight: 600;
   border-radius: 16px;
   width: 64px;
+  height: 64px;
 
-  background: transparent;
+  background: var(--background);
   color: var(--accent-color-200);
 
   border: 2px solid var(--accent-color-200);
@@ -90,16 +131,28 @@
   line-height: normal;
 }
 
-.page-release-notes .release-tag-major,
-.page-release-notes .release-tag-minor {
+.page-release-notes .release-tag:hover {
+  background: var(--accent-color-800);
+}
+
+.page-release-notes .release-note-major .release-tag,
+.page-release-notes .release-note-minor .release-tag {
   background: var(--accent-color-200);
   color: #fff;
+}
+
+.page-release-notes .release-note-major:hover .release-tag,
+.page-release-notes .release-note-minor:hover .release-tag {
+  background: var(--accent-color-100);
 }
 
 .page-release-notes .release-tag .release-symbol {
   display: block;
 
   font-size: 24px;
+
+  margin-top: 3px;
+  margin-bottom: -10px;
 }
 
 .page-release-notes .release-tag .release-version {
@@ -109,7 +162,10 @@
 }
 
 
-/* Release Note Blockquote */
+/*
+ * Release Note Blockquote
+ * --------------------------------------------------------
+ */
 
 .page-release-notes blockquote {
   margin-left: 0;
