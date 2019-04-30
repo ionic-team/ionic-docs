@@ -29,7 +29,7 @@ export class DocsNav {
         }
         return <li key={item}>{this.toLink(item)}</li>;
       case 'object':
-        return <li key={item}>{this.toSection(item, level + 1)}</li>;
+        return <li key={item}>{this.toSection(item, level)}</li>;
       default:
         return null;
     }
