@@ -8,6 +8,17 @@
 :root {
   --accent-color: #3880ff;
   --accent-color-rgb: 56, 128, 255;
+
+  --accent-color-100: #4d8dff;
+  --accent-color-200: #639cff;
+  --accent-color-300: #4d8dff;
+  --accent-color-400: #7cabff;
+  --accent-color-500: #97bdff;
+  --accent-color-600: #b2ceff;
+  --accent-color-700: #cddfff;
+  --accent-color-800: #e3edff;
+  --accent-color-900: #f0f6ff;
+
   --background: #ffffff;
   --code-background: #f5f7fa;
   --code-color: var(--text-color--dark);
