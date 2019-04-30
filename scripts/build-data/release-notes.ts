@@ -89,9 +89,9 @@ function getVersionType(version: string) {
 
   if (version.indexOf('-alpha') > -1 || version.indexOf('-beta') > -1 || version.indexOf('-rc') > -1) {
     type = 'prerelease';
-  } else if (version.indexOf('.0.0') > -1) {
+  } else if (version.endsWith('.0.0')) {
     type = 'major';
-  } else if (version.indexOf('.0') > -1) {
+  } else if (version.endsWith('.0')) {
     type = 'minor';
   }
 
