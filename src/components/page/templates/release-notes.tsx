@@ -29,7 +29,10 @@ export default (props) => {
 
             <div class="release-info">
               <div class="release-header">
-                <h2>{release.name}</h2>
+                <h2>
+                  <span class="release-version">{release.version}</span>
+                  { release.type !== 'patch' ? ' ' + release.element : null }
+                </h2>
                 <span class="release-badge">{release.type}</span>
                 { index === 0
                   ? <span class="release-badge release-badge-latest">Latest Production Version</span>
