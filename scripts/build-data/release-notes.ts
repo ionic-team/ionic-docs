@@ -61,9 +61,12 @@ async function getReleases() {
       }
       // a must be equal to b
       return 0;
-    }).filter((release) =>
-      !release.tag_name.includes('alpha') && !release.tag_name.includes('beta') && !release.tag_name.includes('rc')
-    );
+    }).filter((release) => {
+      const releasePattern = /^v(\d+)\.(\d+)\.(\d+)$/;
+
+      // All non-prerelease, non-alpha, non-beta, non-rc release
+      return releasePattern.test(release.tag_name);
+    });
   } catch (error) {
     throw error;
   }
@@ -85,9 +88,11 @@ function parseMarkdown(content: any) {
 // Given a version, return if it is a
 // major, minor, or patch release
 function getVersionType(version: string) {
+  const releasePattern = /^(\d+)\.(\d+)\.(\d+)$/;
+
   let type = 'patch';
 
-  if (version.indexOf('-alpha') > -1 || version.indexOf('-beta') > -1 || version.indexOf('-rc') > -1) {
+  if (!releasePattern.test(version)) {
     type = 'prerelease';
   } else if (version.endsWith('.0.0')) {
     type = 'major';
