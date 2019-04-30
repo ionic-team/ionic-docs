@@ -23,9 +23,17 @@ docs-nav a {
 }
 
 .Nav-subnav {
-  --item-spacing: 5px;
+  --item-spacing: 6px;
   color: var(--text-color--light);
   font-size: 13px;
+}
+
+.Nav-header {
+  font-size: 12px;
+  font-weight: 600;
+  color: #b2becd;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
 .Nav-link,
@@ -35,7 +43,11 @@ docs-nav a {
   padding-top: var(--item-spacing);
   padding-right: 20px;
   padding-bottom: var(--item-spacing);
-  padding-left: calc(10px + var(--level, 1) * 10px);
+  padding-left: calc(14px + var(--level, 1) * 10px);
+}
+
+.Nav > li {
+  padding-bottom: 16px;
 }
 
 @media (hover: hover) {
@@ -44,11 +56,12 @@ docs-nav a {
   }
 
   .Nav-link:active {
-    --bg-alpha: 0.025;
+    background-color: #f6fbff;
   }
 }
 
 .Nav-link--active {
+  background-color: #f6fbff;
   border-left: solid 2px currentColor;
   color: var(--accent-color);
 }
