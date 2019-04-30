@@ -26,7 +26,6 @@ docs-nav a {
   --item-spacing: 6px;
   color: var(--text-color--light);
   font-size: 13px;
-  padding-bottom: 16px;
 }
 
 .Nav-header {
@@ -47,13 +46,17 @@ docs-nav a {
   padding-left: calc(14px + var(--level, 1) * 10px);
 }
 
+.Nav > li {
+  padding-bottom: 16px;
+}
+
 @media (hover: hover) {
   .Nav-link:not(.Nav-link--active):hover {
     color: var(--text-color);
   }
 
   .Nav-link:active {
-    --bg-alpha: 0.025;
+    background-color: #f6fbff;
   }
 }
 
