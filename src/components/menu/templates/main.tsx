@@ -62,7 +62,7 @@ const items = {
     'Glossary': '/docs/faq/glossary',
     'Build Errors': '/docs/faq/build',
     'ランタイムエラー': '/docs/faq/runtime',
-    'Native Errors': '/docs/faq/native',
+    'ネイティブエラー': '/docs/faq/native',
     'CORS Errors': '/docs/faq/cors',
     'Security': '/docs/faq/security',
     '開発者向けのヒント': '/docs/faq/tips',
@@ -74,6 +74,6 @@ const items = {
     'Guides': '/docs/developer-resources/guides',
     'Posts': '/docs/developer-resources/posts',
     'ツール': '/docs/developer-resources/tools',
-    'Videos': '/docs/developer-resources/videos'
+    'ビデオ': '/docs/developer-resources/videos'
   }
 };
