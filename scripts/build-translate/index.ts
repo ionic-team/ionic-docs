@@ -31,7 +31,7 @@ const translateTypes = [
 
 async function apply() {
   for (const translateType of translateTypes) {
-    const directory = '../../src/translate/' + translateType.type;
+    const directory = process.cwd() + '/src/translate/' + translateType.type;
     if (!existsSync(directory)) {
       continue;
     }
@@ -60,7 +60,7 @@ async function apply() {
       resource = componentsObject;
     }
 
-    writeFileSync('../data/translated-' + translateType.type + '.json', JSON.stringify(resource, null, 2), { encoding: 'UTF8' });
+    writeFileSync(process.cwd() + '/scripts/data/translated-' + translateType.type + '.json', JSON.stringify(resource, null, 2), { encoding: 'UTF8' });
   }
 }
 
