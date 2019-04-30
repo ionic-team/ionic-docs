@@ -33,42 +33,48 @@ async function getReleases() {
 
     const releases = await request.json();
 
-    return releases.map(release => {
-      const body = parseMarkdown(release.body);
-      const published_at = parseDate(release.published_at);
-      const version = release.tag_name.replace('v', '');
-      const type = getVersionType(version);
-      const symbol = getVersionSymbol(version);
-      const element = getVersionElement(version);
-      const { name, tag_name } = release;
+    // Check that the response is an array in case it was
+    // successful but returned an object
+    if (Array.isArray(releases)) {
+      return releases.map(release => {
+        const body = parseMarkdown(release.body);
+        const published_at = parseDate(release.published_at);
+        const version = release.tag_name.replace('v', '');
+        const type = getVersionType(version);
+        const symbol = getVersionSymbol(version);
+        const element = getVersionElement(version);
+        const { name, tag_name } = release;
 
-      return {
-        body,
-        element,
-        name,
-        published_at,
-        symbol,
-        tag_name,
-        type,
-        version
-      };
-    }).sort((a, b) => {
-      if (a.tag_name < b.tag_name) {
-        return 1;
-      }
-      if (a.tag_name > b.tag_name) {
-        return -1;
-      }
-      // a must be equal to b
-      return 0;
-    }).filter((release) => {
-      const releasePattern = /^v(\d+)\.(\d+)\.(\d+)$/;
+        return {
+          body,
+          element,
+          name,
+          published_at,
+          symbol,
+          tag_name,
+          type,
+          version
+        };
+      }).sort((a, b) => {
+        if (a.tag_name < b.tag_name) {
+          return 1;
+        }
+        if (a.tag_name > b.tag_name) {
+          return -1;
+        }
+        // a must be equal to b
+        return 0;
+      }).filter((release) => {
+        const releasePattern = /^v(\d+)\.(\d+)\.(\d+)$/;
 
-      // All non-prerelease, non-alpha, non-beta, non-rc release
-      return releasePattern.test(release.tag_name);
-    });
+        // All non-prerelease, non-alpha, non-beta, non-rc release
+        return releasePattern.test(release.tag_name);
+      });
+    } else {
+      return [];
+    }
   } catch (error) {
-    throw error;
+    return [];
   }
 }
 
