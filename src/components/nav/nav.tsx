@@ -19,7 +19,7 @@ export class DocsNav {
     return href.indexOf('http') === 0;
   }
 
-  toItem = (item, level) => {
+  toItem = (item, level = 0) => {
     const [title , value] = item;
     switch (typeof value) {
       case 'string':
@@ -65,7 +65,7 @@ export class DocsNav {
     const items = this.normalizeItems(value);
     return (
       <section>
-        <header class="Nav-header">{text}</header>
+        { text !== '' && text !== undefined ? <header class="Nav-header">{text}</header> : null }
         <ul
           class="Nav-subnav"
           style={{ '--level': level }}>
@@ -101,7 +101,7 @@ export class DocsNav {
   render() {
     return (
       <ul class="Nav">
-        {this.normalizeItems(this.items).map(item => this.toItem(item, 1))}
+        {this.normalizeItems(this.items).map(item => this.toItem(item))}
       </ul>
     );
   }
