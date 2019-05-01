@@ -29,6 +29,20 @@ const items = {
     'Web View': '/docs/building/webview',
     'Ionic Storage': '/docs/building/storage'
   },
+  'Guides': {
+    'Ionic': {
+      'Security': '/docs/guides/ionic/security'
+    },
+    'Angular': {
+      'Getting Started': '/docs/guides/angular/getting-started',
+    },
+    'React': {
+      'Getting Started': '/docs/guides/react/getting-started'
+    },
+    'Vue': {
+      'Getting Started': '/docs/guides/vue/getting-started'
+    }
+  },
   'Layout': {
     'Structure': '/docs/layout/structure',
     'Responsive Grid': '/docs/layout/grid',
@@ -63,15 +77,12 @@ const items = {
     'Build Errors': '/docs/faq/build',
     'Runtime Errors': '/docs/faq/runtime',
     'Native Errors': '/docs/faq/native',
-    'CORS Errors': '/docs/faq/cors',
-    'Security': '/docs/faq/security',
     'Developer Tips': '/docs/faq/tips',
     'Changelog': 'https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md'
   },
   'Resources': {
     'Books': '/docs/developer-resources/books',
     'Courses': '/docs/developer-resources/courses',
-    'Guides': '/docs/developer-resources/guides',
     'Posts': '/docs/developer-resources/posts',
     'Tools': '/docs/developer-resources/tools',
     'Videos': '/docs/developer-resources/videos'
