@@ -1,7 +1,7 @@
 ---
 title: Ionic Native
 ---
-Ionic Native is a library of Cordova plugins and integrations that make it easy to add native functionality to any Ionic app, Cordova project, or WebView. Ionic Native is available in two editions: Community and Enterprise.
+<p class='intro'>Ionic Native is a library of Cordova plugins and integrations that make it easy to add native functionality to any Ionic app, Cordova project, or WebView. Ionic Native is available in two editions: Community and Enterprise.</p>
 
 <docs-cards class="static-width">
   <docs-card header="Community Edition" href="/docs/native/overview" img="/docs/assets/img/native/community-edition.png">
@@ -13,4 +13,4 @@ Ionic Native is a library of Cordova plugins and integrations that make it easy 
   </docs-card>
 </docs-cards>
 
-These docs are for apps built with Ionic Framework 4.0.0 and greater. For older Ionic v3 projects, please [see here](/docs/v3/native).
+> These docs are for apps built with Ionic Framework 4.0.0 and greater. For older Ionic v3 projects, please [see here](/docs/v3/native).
