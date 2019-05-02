@@ -1,0 +1,12 @@
+.page-native {
+  --page-width: 1000px;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+}
+
+.page-native docs-cards {
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: -0.01em;
+  color: #5B708B;
+}
