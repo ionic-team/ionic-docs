@@ -31,7 +31,7 @@ const items = {
   },
   'Guides': {
     'Ionic': {
-      'Performance': 'docs/guides/ionic/performance',
+      'Performance': '/docs/guides/ionic/performance',
       'Security': '/docs/guides/ionic/security'
     },
     'Angular': {
