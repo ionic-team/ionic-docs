@@ -31,8 +31,8 @@ export class DocsMenu {
       <stencil-route-switch scrollTopOffset={0}>
         <stencil-route url="/docs/(components|api)" routeRender={componentsTemplate}/>
         <stencil-route url="/docs/cli" routeRender={cliTemplate}/>
-        <stencil-route url="/docs/ionic-native" routeRender={nativeLandingTemplate}/>
-        <stencil-route url="/docs/native" routeRender={nativeTemplate}/>
+        <stencil-route url="/docs/native" exact={true} routeRender={nativeLandingTemplate}/>
+        <stencil-route url="/docs/native/:plugin" exact={true} routeRender={nativeTemplate}/>
         <stencil-route url="/docs/appflow" routeRender={appflowTemplate}/>
         <stencil-route url="/docs/enterprise" routeRender={enterpriseTemplate}/>
         <stencil-route routeRender={mainTemplate}/>
