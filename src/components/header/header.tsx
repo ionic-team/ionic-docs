@@ -71,8 +71,7 @@ export class DocsHeader {
                 <stencil-route-link url="/docs/" urlMatch={[/^\/docs(?!\/(api|components|cli|native|enterprise)).*$/]}>ガイド</stencil-route-link>
                 <stencil-route-link url="/docs/components" urlMatch={['/docs/api', '/docs/components']}>コンポーネント</stencil-route-link>
                 <stencil-route-link url="/docs/cli">CLI</stencil-route-link>
-                <stencil-route-link url="/docs/native">ネイティブ</stencil-route-link>
-                <stencil-route-link url="/docs/enterprise">エンタープライズ</stencil-route-link>
+                <stencil-route-link url="/docs/native" urlMatch={['/docs/native', '/docs/enterprise']}>ネイティブ</stencil-route-link>
               </div>
             </stencil-route>
           </stencil-route-switch>

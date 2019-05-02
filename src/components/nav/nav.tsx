@@ -23,8 +23,8 @@ export class DocsNav {
     const [title , value] = item;
     switch (typeof value) {
       case 'string':
-        // Go ahead...git blame...I know you want too :-)
-        if (title === 'See All Enterprise Plugins') {
+        // Go ahead...git blame...I know you want TWO :-)
+        if (title.match(/Show all [EC]E plugins/)) {
          return <li style={{ 'font-style': 'italic' }} key={item}>{this.toLink(item)}</li>;
         }
         return <li key={item}>{this.toLink(item)}</li>;

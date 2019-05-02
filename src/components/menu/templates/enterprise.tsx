@@ -1,35 +1,53 @@
 
-export default () => <docs-nav items={items}/>;
+export default () => <docs-nav items={ items } />;
 
 const items = {
-  'Enterprise Edition Plugins': {
-    'Overview': '/docs/enterprise',
+  'Community Edition': '/docs/native/overview',
+  'Enterprise Edition': '/docs/enterprise',
+  'Authentication & Security': {
+    'Identity Vault': '/docs/enterprise/identity-vault',
+  },
+  'Common Device Features': {
     'Android Permissions': '/docs/enterprise/android-permissions',
-    'Apple Payment Pass': '/docs/enterprise/apple-payment-pass',
     'App Version': '/docs/enterprise/appversion',
-    'Badge': '/docs/enterprise/badge',
+    'Browser': '/docs/enterprise/inappbrowser',
     'Calendar': '/docs/enterprise/calendar',
     'Camera': '/docs/enterprise/camera',
     'Clipboard': '/docs/enterprise/clipboard',
-    'Couchbase Lite': 'https://ionicframework.com/integrations/couchbase-lite',
     'Device': '/docs/enterprise/device',
-    'Dialogs': '/docs/enterprise/dialogs',
-    'Email Composer': '/docs/enterprise/emailcomposer',
     'Filesystem': '/docs/enterprise/filesystem',
-    'Geolocation': '/docs/enterprise/geolocation',
-    'Identity Vault': '/docs/enterprise/identity-vault',
-    'Inappbrowser': '/docs/enterprise/inappbrowser',
-    'Media': '/docs/enterprise/media',
-    'Media Capture': '/docs/enterprise/media-capture',
-    'mParticle': '/docs/enterprise/mparticle',
-    'Native Storage': '/docs/enterprise/nativestorage',
+    'Haptics & Vibration': '/docs/enterprise/vibration',
     'Network Information': '/docs/enterprise/network-information',
     'Screen Orientation': '/docs/enterprise/screen-orientation',
     'Splashscreen': '/docs/enterprise/splashscreen',
     'Statusbar': '/docs/enterprise/statusbar',
-    'Vibration': '/docs/enterprise/vibration',
-    'Active Directory': 'https://ionicframework.com/integrations/ms-activedirectory-ms-adal',
-    'Offline Support': 'https://ionicframework.com/integrations/couchbase-lite'
   },
-  'Community Plugins': '/docs/native',
+  'Integrated Services': {
+    'Active Directory': 'https://ionicframework.com/integrations/ms-activedirectory-ms-adal',
+    'mParticle': '/docs/enterprise/mparticle',
+  },
+  'Inter-App Communication': {
+    'Email Composer': '/docs/enterprise/emailcomposer',
+  },
+  'Maps & Navigation': {
+    'Geolocation': '/docs/enterprise/geolocation',
+  },
+  'Media': {
+    'Media': '/docs/enterprise/media',
+    'Media Capture': '/docs/enterprise/media-capture',
+  },
+  'Native UI': {
+    'Dialogs': '/docs/enterprise/dialogs',
+  },
+  'Notifications': {
+    'Badge': '/docs/enterprise/badge',
+  },
+  'Offline & Data': {
+    'Couchbase Lite': 'https://ionicframework.com/integrations/couchbase-lite',
+    'Native Storage': '/docs/enterprise/nativestorage',
+    'Offline Support': 'https://ionicframework.com/integrations/couchbase-lite',
+  },
+  'Payments': {
+    'Apple Payment Pass': '/docs/enterprise/apple-payment-pass',
+  },
 };
