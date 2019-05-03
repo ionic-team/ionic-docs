@@ -3,7 +3,8 @@ import { Outbound } from '../../icons';
 
 @Component({
   tag: 'docs-card',
-  styleUrl: 'card.css'
+  styleUrl: 'card.css',
+  shadow: true
 })
 export class DocsCard {
   @Prop() href: string;
