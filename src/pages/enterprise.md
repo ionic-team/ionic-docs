@@ -132,7 +132,7 @@ docs page.
 - [Clipboard](/docs/enterprise/clipboard)
 - [Device](/docs/enterprise/device)
 - [Dialogs](/docs/enterprise/dialogs)
-- [Email Composer](/docs/enterprise/emailcomposer)
+- [Email Composer](/docs/enterprise/email-composer)
 - [Filesystem](/docs/enterprise/filesystem)
 - [Geolocation](/docs/enterprise/geolocation)
 - [Identity Vault](/docs/enterprise/identity-vault)
