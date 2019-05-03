@@ -1,17 +1,17 @@
 # ion-progress-bar
 
-ion-progress-bar is a horizontal progress bar to visualize the progression of an operation and activity. You can choose between two types: `determinate` and `indeterminate`.
+ion-progress-bar は操作や処理の進捗を可視化するための、水平方向のプログレスバーです。`determinate` または `indeterminate`の2タイプから選択できます。
 
 ## Progress Type
 
 ### Determinate
 
-If the percentage of an operation is known, you should use the determinate type. This is the default type and the progress is represented by the `value` property.
+操作の進捗率が分かる場合はdeterminateタイプを選択するべきです。このタイプはデフォルトであり、進捗率は`value`属性値にて指定します。
 
-A buffer shows circles as animation to indicate some activity. If the `buffer` property is smaller than 1 you can show the addditional buffering progress. 
+バッファは何らかの処理中であることを表す、円のアニメーションを表示します。 `buffer`属性値が1より小さければ、追加のバッファ処理の進捗率を示すことが可能です。
 
 ### Indeterminate
 
-If an operation is in progress and it's not necessary to indicate how long it will take.
+実行中の操作を表します。操作にかかる時間を示す必要はありません。
 
-If you add `reversed="true"`, you receive a query which is used to indicate pre-loading.
+`reversed="true"`を指定した場合、ロード前状態を表すための表示となります。
