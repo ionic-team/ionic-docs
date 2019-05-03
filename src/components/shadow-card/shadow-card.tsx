@@ -2,10 +2,11 @@ import { Component, Prop } from '@stencil/core';
 import { Outbound } from '../../icons';
 
 @Component({
-  tag: 'docs-card',
-  styleUrl: 'card.css'
+  tag: 'docs-shadow-card',
+  styleUrl: 'shadow-card.css',
+  shadow: true
 })
-export class DocsCard {
+export class DocsShadowCard {
   @Prop() href: string;
   @Prop() header: string;
   @Prop() icon: string;
