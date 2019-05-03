@@ -14,10 +14,10 @@ $ npm start
 ```
 立ち上げが完了すると、`localhost:3333/docs/` が自動的に立ち上がります。
 
-なお、`docs/components` `docs/cli` `docs/native` 以下はファイルの自動生成を行わないとアクセスすることができません。
-ローカルでのアクセスが必要な場合は、先に以下のコマンドを実行してください。
+なお、はじめてのビルド時は以下を実行してください。
 
 ```shell
+$ npm install
 $ npm run prebuild
 ```
 
