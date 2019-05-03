@@ -83,18 +83,13 @@ const renderUsage = (usage = {}, path: string) => {
       <h2 id="usage">
         <a href="#usage">Usage</a>
       </h2>
-      <docs-tabs
-        /**
-         * We need the `key` here to ensure that the tabs are
-         * re-created on each page so that the initial tab will
-         * be set during componentWillLoad.
-         */
-        key={path}>
+      <docs-tabs key={path}>
           {keys.map(key =>
             <docs-tab
               tab={key}
-              selected={framework === key.toLowerCase()}
-              innerHTML={usage[key]}/>
+              selected={framework === key.toLowerCase()}>
+                <div innerHTML={usage[key]}></div>
+            </docs-tab>
           )}
       </docs-tabs>
     </section>

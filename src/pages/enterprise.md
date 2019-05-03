@@ -24,7 +24,7 @@ quality controlled and maintained by the Ionic Team.
           </th>
           <th>
             <div class="plan-wrap">
-              <span class="native-ee-pricing-table">Native Enterprise Edition</span>
+              <span class="native-ee-pricing-table">Enterprise Edition</span>
               <div class="price" data-toggle="billing-team">
                 Contact Us</div>
             </div>
@@ -81,14 +81,6 @@ quality controlled and maintained by the Ionic Team.
           <td>No</td>
           <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
         </tr>
-        <tr>
-          <th>
-            Native Core
-          </th>
-          <td>No</td>
-          <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
-        </tr>
-        <tr>
           <th></th>
           <td></td>
           <td><a class="btn"

@@ -1,4 +1,3 @@
 # ion-label
 
-Label is a wrapper element that can be used in combination with `ion-item`, `ion-input`, `ion-toggle`, and more. The position of the label inside of an item can be inline, fixed, stacked, or floating.
-
+Labelは`ion-item`、`ion-input`、`ion-toggle`等と共に使用できるラッパー(wrapper)要素です。item内のlabelの位置はinline、fixed、stacked、またはfloatingにすることができます。

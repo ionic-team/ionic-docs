@@ -51,10 +51,12 @@ const renderRepo = (repo: string) => {
     <section>
       <a href={repo} class="outbound" target="_blank"><GitBranch/> { repo }</a>
       <h2>Stuck on a Cordova issue?</h2>
-      <docs-card class="cordova-ee-card" header="Don't waste precious time on plugin issues." href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine" >
-        <img src="/docs/assets/icons/native-cordova-bot.png" class="cordova-ee-img" />
-        <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic's experts offer official maintenance, support, and integration help.</p>
-        <docs-button class="native-ee-detail" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us Today!</docs-button>
+      <docs-card class="cordova-ee-card" header="Don't waste precious time on plugin issues." href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">
+        <div>
+          <img src="/docs/assets/icons/native-cordova-bot.png" class="cordova-ee-img" />
+          <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic's experts offer official maintenance, support, and integration help.</p>
+          <docs-button class="native-ee-detail" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us Today!</docs-button>
+        </div>
       </docs-card>
     </section>
   );

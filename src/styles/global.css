@@ -5,5 +5,6 @@
 @import './pages/guides.css';
 @import './pages/appflow.css';
 @import './pages/browser-support.css';
+@import './pages/native.css';
 @import './pages/native-ee.css';
 @import './pages/release-notes.css';
