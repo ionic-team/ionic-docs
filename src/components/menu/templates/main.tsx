@@ -60,7 +60,7 @@ const items = {
   'FAQ': {
     'Glossary': '/docs/faq/glossary',
     'Build Errors': '/docs/faq/build',
-    'Runtime Errors': '/docs/faq/runtime',
+    'Runtime Issues': '/docs/faq/runtime',
     'Native Errors': '/docs/faq/native',
     'CORS Errors': '/docs/faq/cors',
     'Developer Tips': '/docs/faq/tips',

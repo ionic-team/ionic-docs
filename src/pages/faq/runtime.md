@@ -5,10 +5,9 @@ nextText: 'Native Errors'
 nextUrl: '/docs/faq/native'
 contributors:
   - brandyscarney
-  - liamdebeasi
 ---
 
-# Runtime Errors
+# Runtime Issues
 
 ## Blank App
 
