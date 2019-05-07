@@ -273,6 +273,19 @@ export namespace Components {
     'options'?: string[];
   }
 
+  interface DocsShadowCard {
+    'header': string;
+    'href': string;
+    'icon': string;
+    'img': string;
+  }
+  interface DocsShadowCardAttributes extends StencilHTMLAttributes {
+    'header'?: string;
+    'href'?: string;
+    'icon'?: string;
+    'img'?: string;
+  }
+
   interface SmsForm {}
   interface SmsFormAttributes extends StencilHTMLAttributes {}
 
@@ -346,6 +359,7 @@ declare global {
     'DocsRoot': Components.DocsRoot;
     'DocsSearch': Components.DocsSearch;
     'DocsSelect': Components.DocsSelect;
+    'DocsShadowCard': Components.DocsShadowCard;
     'SmsForm': Components.SmsForm;
     'SteppedColorGenerator': Components.SteppedColorGenerator;
     'DocsTableOfContents': Components.DocsTableOfContents;
@@ -389,6 +403,7 @@ declare global {
     'docs-root': Components.DocsRootAttributes;
     'docs-search': Components.DocsSearchAttributes;
     'docs-select': Components.DocsSelectAttributes;
+    'docs-shadow-card': Components.DocsShadowCardAttributes;
     'sms-form': Components.SmsFormAttributes;
     'stepped-color-generator': Components.SteppedColorGeneratorAttributes;
     'docs-table-of-contents': Components.DocsTableOfContentsAttributes;
@@ -602,6 +617,12 @@ declare global {
     new (): HTMLDocsSelectElement;
   };
 
+  interface HTMLDocsShadowCardElement extends Components.DocsShadowCard, HTMLStencilElement {}
+  var HTMLDocsShadowCardElement: {
+    prototype: HTMLDocsShadowCardElement;
+    new (): HTMLDocsShadowCardElement;
+  };
+
   interface HTMLSmsFormElement extends Components.SmsForm, HTMLStencilElement {}
   var HTMLSmsFormElement: {
     prototype: HTMLSmsFormElement;
@@ -673,6 +694,7 @@ declare global {
     'docs-root': HTMLDocsRootElement
     'docs-search': HTMLDocsSearchElement
     'docs-select': HTMLDocsSelectElement
+    'docs-shadow-card': HTMLDocsShadowCardElement
     'sms-form': HTMLSmsFormElement
     'stepped-color-generator': HTMLSteppedColorGeneratorElement
     'docs-table-of-contents': HTMLDocsTableOfContentsElement
@@ -716,6 +738,7 @@ declare global {
     'docs-root': HTMLDocsRootElement;
     'docs-search': HTMLDocsSearchElement;
     'docs-select': HTMLDocsSelectElement;
+    'docs-shadow-card': HTMLDocsShadowCardElement;
     'sms-form': HTMLSmsFormElement;
     'stepped-color-generator': HTMLSteppedColorGeneratorElement;
     'docs-table-of-contents': HTMLDocsTableOfContentsElement;

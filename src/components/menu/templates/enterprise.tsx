@@ -27,7 +27,7 @@ const items = {
     'mParticle': '/docs/enterprise/mparticle',
   },
   'Inter-App Communication': {
-    'Email Composer': '/docs/enterprise/emailcomposer',
+    'Email Composer': '/docs/enterprise/email-composer',
   },
   'Maps & Navigation': {
     'Geolocation': '/docs/enterprise/geolocation',
