@@ -1,0 +1,5 @@
+---
+title: Code
+---
+
+Example page.
