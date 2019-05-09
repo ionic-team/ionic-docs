@@ -1,3 +1,4 @@
+import { h } from '@stencil/core';
 import { GitBranch } from '../../../icons';
 
 export default (props) => {

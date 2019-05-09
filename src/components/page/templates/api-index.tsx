@@ -1,3 +1,4 @@
+import { h } from '@stencil/core';
 import components from '../data/api-reference.json';
 
 const listStyle = {

@@ -1,3 +1,4 @@
+import { h } from '@stencil/core';
 import { useLocalStorage } from '../../../local-storage';
 
 const [getFramework] = useLocalStorage('ionic-docs:framework');

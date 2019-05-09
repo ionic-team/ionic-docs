@@ -1,4 +1,4 @@
-import { Component, Element, Listen, Method, Prop, State } from '@stencil/core';
+import { Component, Element, Listen, Method, Prop, State, h } from '@stencil/core';
 import { DownArrow } from '../../icons';
 
 @Component({
@@ -11,7 +11,7 @@ export class DocsDropdown {
   @State() isOpen = false;
   @Element() element: HTMLElement;
 
-  @Listen('window:click')
+  @Listen('click', { target: 'window' })
   handleClick(event: MouseEvent) {
     const isNode = event.target instanceof Node;
     const isOurs = isNode && this.element.contains(event.target as Node);
@@ -33,17 +33,17 @@ export class DocsDropdown {
   }
 
   @Method()
-  close() {
+  async close() {
     this.isOpen = false;
   }
 
   @Method()
-  open() {
+  async open() {
     this.isOpen = true;
   }
 
   @Method()
-  toggle() {
+  async toggle() {
     this.isOpen = !this.isOpen;
   }
 

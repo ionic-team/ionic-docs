@@ -1,4 +1,4 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Prop, h } from '@stencil/core';
 import { Logo } from '../../icons';
 import { FrameworkSelect } from './framework-select';
 import componentsTemplate from './templates/components';

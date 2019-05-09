@@ -1,3 +1,4 @@
+import { h } from '@stencil/core';
 import { sample } from '../../../utils';
 
 export default (response: Response) => (

@@ -1,3 +1,4 @@
+import { h } from '@stencil/core';
 import releases from '../data/release-notes.json';
 
 export default (props) => {

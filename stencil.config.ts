@@ -6,10 +6,9 @@ export const config: Config = {
     {
       type: 'www',
       dir: 'www/docs',
-      baseUrl: '/docs',
+      baseUrl: 'http://ionicframework.com/docs',
       serviceWorker: null,
-      empty: false,
-      inlineLoaderScript: false
+      empty: false
     }
   ],
   copy: [

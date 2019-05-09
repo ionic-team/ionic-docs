@@ -1,4 +1,4 @@
-import { Component, Element, State } from '@stencil/core';
+import { Component, Element, State, h } from '@stencil/core';
 
 
 @Component({
@@ -10,8 +10,8 @@ export class ColorBlock {
 
   @State() color = 'primary';
 
-  changeColor(event) {
-    this.color = event.detail.value;
+  changeColor(ev) {
+    this.color = ev.detail.value;
   }
 
   render() {
@@ -100,7 +100,7 @@ export class ColorBlock {
         <ion-select
           value={this.color}
           interfaceOptions={popoverOptions}
-          onIonChange={() => this.changeColor(event)}>
+          onIonChange={ev => this.changeColor(ev)}>
           <ion-select-option value="primary">Primary</ion-select-option>
           <ion-select-option value="secondary">Secondary</ion-select-option>
           <ion-select-option value="tertiary">Tertiary</ion-select-option>

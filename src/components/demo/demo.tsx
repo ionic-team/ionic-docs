@@ -1,4 +1,4 @@
-import { Component, Listen, Prop, State } from '@stencil/core';
+import { Component, Listen, Prop, State, h } from '@stencil/core';
 
 @Component({
   tag: 'docs-demo',
@@ -13,8 +13,8 @@ export class DocsDemo {
   iframeLoaded = false;
   messageQueue: CustomEvent[] = [];
 
-  @Listen('window:demoMessage')
-  handleMessage(msg: CustomEvent) {
+  @Listen('demoMessage', { target: 'window' })
+  async handleMessage(msg: CustomEvent) {
     this.iframeLoaded
       ? this.postMessage(msg)
       : this.messageQueue.push(msg);
