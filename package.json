@@ -18,9 +18,9 @@
     "watch-pages": "ts-node -P scripts/tsconfig.json scripts/watch-pages"
   },
   "dependencies": {
-    "@ionic/core": "4.4.0-dev.201905072249.02badf9",
+    "@ionic/core": "^4.3.0",
     "@ionic/docs": "^4.3.0",
-    "@stencil/core": "^1.0.0-alpha.25",
+    "@stencil/core": "^1.0.0-alpha.26",
     "@stencil/router": "^0.3.4-2",
     "compression": "^1.7.4",
     "express": "^4.16.4",
