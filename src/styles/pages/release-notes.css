@@ -107,7 +107,8 @@
   color: white;
 }
 
-.page-release-notes .release-badge-latest {
+.page-release-notes .release-badge.release-badge-latest {
+  background: transparent;
   color: #43c465;
   border-color: #43c465;
 }

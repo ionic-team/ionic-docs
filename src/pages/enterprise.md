@@ -119,7 +119,7 @@ repo. Now you should be able to install Ionic Enterprise plugins that you have a
 docs page.
 
 <command-line>
-<command-prompt>ionic cordova add plugin @ionic-enterprise/plugin-name</command-prompt>
+<command-prompt>ionic cordova plugin add @ionic-enterprise/plugin-name</command-prompt>
 </command-line>
 
 ## Plugin List
