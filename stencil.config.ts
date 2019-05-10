@@ -5,8 +5,8 @@ export const config: Config = {
   outputTargets: [
     {
       type: 'www',
-      dir: 'www/docs',
-      baseUrl: 'https://ionicframework.com/docs',
+      dir: 'www',
+      baseUrl: 'https://ionicframework.com/docs/',
       serviceWorker: null,
       copy: [
         { src: 'pages/**/*.json' },
