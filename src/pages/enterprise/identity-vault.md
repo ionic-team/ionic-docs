@@ -1,12 +1,13 @@
 ---
 title: Identity Vault
 template: enterprise-plugin
-version: 3.2.3
-minor: 3.2.X
+version: 3.3.0
+minor: 3.3.X
 otherVersions:
   - 2.0.X
   - 3.0.X
   - 3.1.X
+  - 3.2.X
 ---
 
 Ionic Identity Vault
@@ -171,6 +172,15 @@ ___
 **BiometricOnly**: 
 
 Biometrics authentication should only be allowed
+
+___
+<a id="authmode.biometricorpasscode"></a>
+
+###  BiometricOrPasscode
+
+**BiometricOrPasscode**: 
+
+Use biometrics if it is available, otherwise use passcode
 
 ___
 <a id="authmode.inmemoryonly"></a>
@@ -1607,6 +1617,20 @@ The possible values returned by [getBiometricType](#identityvault.getbiometricty
 ___
 
 ## Change Log
+
+
+
+### [3.3.0] (2019-05-10)
+
+
+### Bug Fixes
+
+* **Android, iOS:** make the setting of the auth mode fault tolerant  
+
+
+### Features
+
+* **Android. iOS:** add Biometric or Passcode mode  
 
 
 
