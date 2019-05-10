@@ -18,7 +18,7 @@ export class ContributorList {
         {this.contributors.reverse().map(contributor => (
           <li>
             <a target="_blank" href={this.link(contributor)}>
-              <img src={`https://github.com/${contributor}.png?size=90`} title={`Contributor ${contributor}`}/>
+              <img src={`https://github.com/${contributor}.png?size=90`} title={`Contributor ${contributor}`} loading="lazy" importance="low"/>
             </a>
           </li>
         ))}
