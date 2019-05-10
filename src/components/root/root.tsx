@@ -1,4 +1,3 @@
-import '@ionic/core';
 import { Build, Component, State, Watch, h } from '@stencil/core';
 import { LocationSegments, RouterHistory } from '@stencil/router';
 

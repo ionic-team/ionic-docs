@@ -8,6 +8,7 @@ import templates from './templates';
   styleUrl: 'page.css'
 })
 export class DocsPage {
+
   @Prop() history: RouterHistory;
   @Prop() path: string;
   @State() badFetch: Response = null;
