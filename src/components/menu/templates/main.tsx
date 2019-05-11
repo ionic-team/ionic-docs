@@ -6,7 +6,7 @@ const items = {
     'コアコンセプト': '/docs/intro/concepts',
     'ブラウザサポート': '/docs/intro/browser-support',
     'バージョニング': '/docs/intro/versioning',
-    'Release Notes': '/docs/release-notes',
+    'リリースノート': '/docs/release-notes',
     'サポート': '/docs/intro/support'
   },
   'インストール': {
