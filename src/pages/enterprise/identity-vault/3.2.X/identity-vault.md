@@ -1,8 +1,8 @@
 ---
 title: Identity Vault
 template: enterprise-plugin
-version: 3.0.0
-minor: 3.0.X
+version: 3.2.3
+minor: 3.2.X
 otherVersions:
   - 2.0.X
   - 3.0.X
@@ -18,6 +18,50 @@ The Ionic Identity Vault is a all-in-one frontend identity management system tha
 The Vault manages secure user identity and session tokens, ensuring sensitive tokens are encrypted at rest, stored only in secure locations on the device, and unlocked only with biometric identity (TouchID/FaceID).
 
 Without Ionic Identity Vault, Ionic developers have to resort to combining third party Cordova plugins, often resulting in insecure setups due to the lack of correct implementation of biometric and at-rest encryption strategies.
+
+**Important Note**
+
+> If you're upgrading from the `3.0.0` to `>=3.1.0` versions you no longer need to install 2 packages. The plugin now ships under the `@ionic-enterprise/identity-vault` package. Simply run the commands below to upgrade. Imports and usage should remain identical.
+
+Upgrade from v3.0.0 to >=v3.1.0
+-------------------------------
+
+First remove v3.0.0 of the plugin
+
+```shell
+# NOTE do not prepend @ionic-enterprise to the plugin name when removing v3.0.0
+ionic cordova plugin rm cordova-plugin-identity-vault
+```
+
+You should make sure `@ionic-enterprise/cordova-plugin-identity-vault` and `cordova-plugin-identity-vault` are completely removed from your package.json in all locations.
+
+```javascript
+...
+  "dependencies": {
+    ...
+     // Make sure both these are gone from the dependencies
+    "@ionic-enterprise/cordova-plugin-identity-vault": "3.0.0",
+    "@ionic-enterprise/identity-vault": "3.0.0",
+    ...
+  }
+  "cordova": {
+    "plugins": {
+      ...
+      // Make sure both these are gone from the cordova plugins section as well
+      "@ionic-enterprise/cordova-plugin-identity-vault": {},
+      "cordova-plugin-identity-vault": {}
+      ...
+    },
+    ...
+  }
+...
+```
+
+It should now be safe to add >=v3.1.0 of the plugin
+
+```shell
+ionic cordova plugin add @ionic-enterprise/identity-vault@latest
+```
 
 #### Configuring the Vault
 
@@ -108,7 +152,7 @@ You can find the API and interface documentation for everything below. The main 
 
 ###  AuthMode
 
-**AuthMode**:
+**AuthMode**: 
 
 The type of authentication the vault should be configured to allow.
 
@@ -116,7 +160,7 @@ The type of authentication the vault should be configured to allow.
 
 ###  BiometricAndPasscode
 
-**BiometricAndPasscode**:
+**BiometricAndPasscode**: 
 
 Both biometric and passcode authentication should be allowed
 
@@ -125,7 +169,7 @@ ___
 
 ###  BiometricOnly
 
-**BiometricOnly**:
+**BiometricOnly**: 
 
 Biometrics authentication should only be allowed
 
@@ -134,7 +178,7 @@ ___
 
 ###  InMemoryOnly
 
-**InMemoryOnly**:
+**InMemoryOnly**: 
 
 Both biometric and passcode authentication should be disabled. With this setting all data in the vault will be cleared on lock or if the app is closed. Stored data is kept only in memory.
 
@@ -143,7 +187,7 @@ ___
 
 ###  PasscodeOnly
 
-**PasscodeOnly**:
+**PasscodeOnly**: 
 
 Passcode authentication should only be allowed
 
@@ -154,7 +198,7 @@ ___
 
 ###  VaultErrorCodes
 
-**VaultErrorCodes**:
+**VaultErrorCodes**: 
 
 The meaning of the error code in the thrown [VaultError](#vaulterror)
 
@@ -162,7 +206,7 @@ The meaning of the error code in the thrown [VaultError](#vaulterror)
 
 ###  AuthFailed
 
-**AuthFailed**:
+**AuthFailed**: 
 
 User authentication failed
 
@@ -171,7 +215,7 @@ ___
 
 ###  BiometricsNotEnabled
 
-**BiometricsNotEnabled**:
+**BiometricsNotEnabled**: 
 
 The operation failed because biometric authentication is not enabled
 
@@ -180,7 +224,7 @@ ___
 
 ###  InvalidArguments
 
-**InvalidArguments**:
+**InvalidArguments**: 
 
 The operation failed because the provided arguments were invalid
 
@@ -189,7 +233,7 @@ ___
 
 ###  InvalidAuthMode
 
-**InvalidAuthMode**:
+**InvalidAuthMode**: 
 
 The AuthMode is invalid
 
@@ -198,7 +242,7 @@ ___
 
 ###  InvalidatedCredential
 
-**InvalidatedCredential**:
+**InvalidatedCredential**: 
 
 The credentials were invalidated. This can happen when a user changes biometrics or passcode.
 
@@ -207,7 +251,7 @@ ___
 
 ###  KeyNotFound
 
-**KeyNotFound**:
+**KeyNotFound**: 
 
 The key was not found. This can happen when a user changes biometrics or passcode.
 
@@ -216,7 +260,7 @@ ___
 
 ###  MismatchedPasscode
 
-**MismatchedPasscode**:
+**MismatchedPasscode**: 
 
 The user provided mismatched passcodes
 
@@ -225,7 +269,7 @@ ___
 
 ###  MissingPasscode
 
-**MissingPasscode**:
+**MissingPasscode**: 
 
 The operation requires passcode to be setup but it isn't set yet. Call [setPasscode](#identityvault.setpasscode) to set it.
 
@@ -234,7 +278,7 @@ ___
 
 ###  PasscodeNotEnabled
 
-**PasscodeNotEnabled**:
+**PasscodeNotEnabled**: 
 
 The operation failed because passcode authentication is not enabled
 
@@ -243,7 +287,7 @@ ___
 
 ###  SecurityNotAvailable
 
-**SecurityNotAvailable**:
+**SecurityNotAvailable**: 
 
 Biometric security is unavailable
 
@@ -252,7 +296,7 @@ ___
 
 ###  TooManyFailedAttempts
 
-**TooManyFailedAttempts**:
+**TooManyFailedAttempts**: 
 
 Too many failed authentication attempts so the vault was cleared an user will need to login again
 
@@ -261,7 +305,7 @@ ___
 
 ###  Unknown
 
-**Unknown**:
+**Unknown**: 
 
 An unknown error happened
 
@@ -270,7 +314,7 @@ ___
 
 ###  UserCanceledInteraction
 
-**UserCanceledInteraction**:
+**UserCanceledInteraction**: 
 
 The user cancelled the native authentication dialog
 
@@ -279,7 +323,7 @@ ___
 
 ###  VaultLocked
 
-**VaultLocked**:
+**VaultLocked**: 
 
 The operation failed because the vault was locked
 
@@ -288,7 +332,7 @@ ___
 
 ###  VaultUnavailable
 
-**VaultUnavailable**:
+**VaultUnavailable**: 
 
 The operation failed because the vault was unavailable
 
@@ -302,7 +346,7 @@ ___
 
 ###  DefaultSession
 
-**DefaultSession**:
+**DefaultSession**: 
 
 The interface for the Default Session. Extend this interface to make a custom session
 
@@ -335,7 +379,7 @@ ___
 
 ###  IdentityVault
 
-**IdentityVault**:
+**IdentityVault**: 
 
 The underlying vault API. You can gain direct access to the vault for more advanced usage by using the [IdentityVaultUser.getVault](#identityvaultuser.getvault) method.
 
@@ -657,7 +701,7 @@ ___
 
 ###  IdentityVaultUser
 
-**IdentityVaultUser**:
+**IdentityVaultUser**: 
 
 The main class which you can extend in order to implement vault usage. @typeparam `T` must extend [DefaultSession](#defaultsession)
 
@@ -714,6 +758,29 @@ Get the type of biometrics the device supports
 
 **Returns:** `Promise`<[BiometricType](#biometrictype)>
 the type of biometrics the device supports
+
+___
+<a id="identityvaultuser.getplugin"></a>
+
+###  getPlugin
+
+▸ **getPlugin**(): [IonicNativeAuthPlugin](#ionicnativeauthplugin)
+
+Returns the underlying Plugin Implementation. This can be overriden in the sub class service to allow for a customer browser implementation. Note that when overriding this with a browser implementation you should use the storeValue/getValue functions with the key `session` to store & retrieve the session as described or by [DefaultSession](#defaultsession) or the interface that extends it.
+
+*__usage__*:
+ ```typescript
+getPlugin(): IonicNativeAuthPlugin {
+  if (this.platform.is('cordova')) {
+    return super.getPlugin();
+  }
+  // MyCustomerBrowserImplementation must implement the IonicNativeAuthPlugin interface
+  // make sure getValue('session') & storeValue('session') store & retrieve the session.
+  return MyCustomBrowserImplementation();
+}
+```
+
+**Returns:** [IonicNativeAuthPlugin](#ionicnativeauthplugin)
 
 ___
 <a id="identityvaultuser.getsession"></a>
@@ -798,6 +865,24 @@ ___
 ▸ **lockOut**(): `Promise`<`void`>
 
 Lock the user out without clearing their secure session information from the vault
+
+**Returns:** `Promise`<`void`>
+
+___
+<a id="identityvaultuser.login"></a>
+
+###  login
+
+▸ **login**(session: *`T`*, authMode?: *[AuthMode](#authmode)*): `Promise`<`void`>
+
+Login a new session for the user. This method will clear the vault & any stored PIN for previously stored sessions.
+
+**Parameters:**
+
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| session | `T` |  the session to store |
+| `Optional` authMode | [AuthMode](#authmode) |
 
 **Returns:** `Promise`<`void`>
 
@@ -1067,7 +1152,7 @@ ___
 
 ###  IonicNativeAuthPlugin
 
-**IonicNativeAuthPlugin**:
+**IonicNativeAuthPlugin**: 
 
 The native plugin
 
@@ -1092,7 +1177,7 @@ ___
 
 ###  LockEvent
 
-**LockEvent**:
+**LockEvent**: 
 
 The lock event passed to the [onVaultLocked](#identityvaultuser.onvaultlocked) handler.
 
@@ -1120,7 +1205,7 @@ ___
 
 ###  PluginConfiguration
 
-**PluginConfiguration**:
+**PluginConfiguration**: 
 
 The configuration returned from [IonicNativeAuthPlugin](#ionicnativeauthplugin) when [getConfig](#identityvault.getconfig) is called.
 
@@ -1184,7 +1269,7 @@ ___
 
 ###  PluginOptions
 
-**PluginOptions**:
+**PluginOptions**: 
 
 The options passed the the [IonicNativeAuthPlugin](#ionicnativeauthplugin) when creating a vault with [getVault](#identityvaultuser.getvault)
 
@@ -1315,7 +1400,7 @@ ___
 
 ###  VaultConfig
 
-**VaultConfig**:
+**VaultConfig**: 
 
 The configuration file returned to event handlers such as [onConfigChange](#identityvaultuser.onconfigchange) and [onVaultReady](#identityvaultuser.onvaultready).
 
@@ -1367,7 +1452,7 @@ ___
 
 ###  VaultDescriptor
 
-**VaultDescriptor**:
+**VaultDescriptor**: 
 
 An interface that describes the vault. In [IdentityVaultUser](#identityvaultuser) this defaults to `_lastUser` & `default` you can optionally add this to the constructor to accomplish advanced use cases multi-tenant vaults.
 
@@ -1395,7 +1480,7 @@ ___
 
 ###  VaultError
 
-**VaultError**:
+**VaultError**: 
 
 An error that can be thrown by the plugin.
 
@@ -1437,7 +1522,7 @@ ___
 
 ###  VaultOptions
 
-**VaultOptions**:
+**VaultOptions**: 
 
 The options passed in to initialize the vault.
 
@@ -1522,3 +1607,59 @@ The possible values returned by [getBiometricType](#identityvault.getbiometricty
 
 ___
 
+## Change Log
+
+
+
+### [3.2.3] (2019-04-29)
+
+
+### Bug Fixes
+
+* **Android:** fix bug in Android where FingerprintManager import was missing 
+
+
+
+### [3.2.2] (2019-04-29)
+
+
+### Bug Fixes
+
+* fix release configuration issue where xlmns:android was incorrectly add to manifest 
+
+
+
+### [3.2.1] (2019-04-27)
+
+
+### Bug Fixes
+
+* fix bug where plugin id was incorrect and didn't include scope 
+
+
+
+### [3.2.0] (2019-04-26)
+
+### Features
+
+- Added [getPlugin](#identityvaultuser.getplugin) method which can be overridden in advanced use cases to provide custom implementations for PWA compatability etc.
+
+### Bug Fixes
+
+* **iOS:** Fixed a bug on iOS where when using the [hideScreenOnBackground](#vaultoptions.hidescreenonbackground) flag the splashscreen may temporarily flash during biometric prompts.
+* **Android:** Fixed a bug on Android where [isBiometricsAvailable](#identityvaultuser.isbiometricsavailable) would return true is some cases if No fingerprints were enrolled or fingerprint hardware wasn't available.
+* **Android, iOS:** Fixed a bug where [getSession](#identityvaultuser.getsession) may incorrectly return `undefined` due to failing to wait for the plugin to be ready before returning.
+
+### [3.1.0] (2019-04-19)
+
+### Features
+
+* Added [login](#identityvaultuser.login) method which clears the vault and stores the session passed to it.
+
+### [3.0.0] (2019-04-08)
+
+### Features
+
+* Added the ability to use [onPasscodeRequest](#identityvaultuser.onpasscoderequest) to use a custom pin prompt screen.
+* Made [IdentityVaultUser](#identityvaultuser) a generic class to allow using the [DefaultSession](#defaultsession) or extending it to type and store the session object.
+* Added support for advanced usages such as multi-tenant vaults by using the [IonicNativeAuthPlugin](#ionicnativeauthplugin.getvault) and [IdentityVault](#identityvault) APIs directly.
