@@ -1,8 +1,8 @@
 # ion-radio
 
-Radios are generally used as a set of related options inside of a group, but they can also be used alone. Pressing on a radio will check it. They can also be checked programmatically by setting the `checked` property.
+Radioは一般的にグループ内の関連するオプションに対して使用します。 しかし、単独で使用することも可能です。 Radioを押すことでチェックがつきます。 `checked`プロパティを設定することで、プログラム的にチェックをつけることも可能です。
 
-An `ion-radio-group` can be used to group a set of radios. When radios are inside of a [radio group](../radio-group), only one radio in the group will be checked at any time. Pressing a radio will check it and uncheck the previously selected radio, if there is one. If a radio is not in a group with another radio, then both radios will have the ability to be checked at the same time.
+`ion-radio-group`はRadioのセットをグループ化するために使用されます。 Radioが[radio group](../radio-group)の内部にある時は, 常にグループ内の1つのみチェックがつきます。 Radioを押すことでチェックがつき、既にチェックされたものはチェックが消えます。 もしRadioが他のRadioと同じグループに属さない場合、それらは同時にチェックをつけることが可能です。
 
 
 
