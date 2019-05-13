@@ -7,12 +7,16 @@ const listStyle = {
 };
 
 export default (props) => {
-  const { page } = props;
+  const { page, contentChanged } = props;
 
   return (
     <article>
       <h1>{page.title}</h1>
-      <section class="markdown-content" innerHTML={page.body}/>
+      <section class="markdown-content" ref={elm => {
+        if (contentChanged) {
+          elm.innerHTML = page.body;
+        }
+      }}/>
       <hr/>
       <ul style={listStyle}>
         {components.map(([name, href]) => (

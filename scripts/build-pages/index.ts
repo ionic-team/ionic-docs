@@ -1,7 +1,8 @@
 import { resolve } from 'path';
 import { slugify } from '../../src/utils';
 import fs from 'fs-extra';
-import { JSDOM } from 'jsdom';
+import crypto from 'crypto';
+import { createDocument } from '@stencil/core/mock-doc';
 import Listr from 'listr';
 import Static, { toPage as toStaticPage } from './page-types/static';
 import API from './page-types/api';
@@ -28,6 +29,7 @@ export interface Page {
   title: string;
   path: string;
   body: string;
+  hash?: string;
   skipIntros?: boolean;
   [key: string]: any;
 }
@@ -49,8 +51,7 @@ export async function buildStaticPage(path: string) {
 }
 
 function patchPage(page: Page): Page {
-  const { window } = new JSDOM(page.body);
-  const { body } = window.document;
+  const body = createDocument(page.body).body;
 
   const h1 = body.querySelector('h1');
   if (h1) {
@@ -84,6 +85,11 @@ function patchPage(page: Page): Page {
 }
 
 function writePage(page: Page): Promise<any> {
+  page.hash = crypto.createHash('md5')
+    .update(JSON.stringify(page))
+    .digest('base64')
+    .substr(0, 8);
+
   return fs.outputJson(toFilePath(page.path), page, {
     spaces: 2
   });

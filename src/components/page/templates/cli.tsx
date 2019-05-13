@@ -1,7 +1,7 @@
 import { h } from '@stencil/core';
 
 export default (props) => {
-  const { page } = props;
+  const { page, contentChanged } = props;
   const headings = [...page.headings];
   const examples = renderExamples(page.exampleCommands);
   const inputs = renderInputs(page.inputs);
@@ -40,9 +40,17 @@ export default (props) => {
     <article>
       <h1>{ page.title }</h1>
       <docs-table-of-contents links={headings} basepath={page.path} />
-      <section class="summary intro" innerHTML={page.summary} />
+      <section class="summary intro" ref={elm => {
+        if (contentChanged) {
+          elm.innerHTML = page.summary;
+        }
+      }} />
       { renderUsage(page) }
-      <section class="description" innerHTML={page.body} />
+      <section class="description" ref={elm => {
+        if (contentChanged) {
+          elm.innerHTML = page.body;
+        }
+      }} />
       { examples }
       { inputs }
       { options }

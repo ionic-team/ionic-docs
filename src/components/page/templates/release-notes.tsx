@@ -2,7 +2,7 @@ import { h } from '@stencil/core';
 import releases from '../data/release-notes.json';
 
 export default (props) => {
-  const { page } = props;
+  const { page, contentChanged } = props;
 
   if (releases.length === 0) {
     return [
@@ -14,7 +14,11 @@ export default (props) => {
   return (
     <article>
       <h1>{page.title}</h1>
-      <section class="markdown-content" innerHTML={page.body}/>
+      <section class="markdown-content" ref={elm => {
+        if (contentChanged) {
+          elm.innerHTML = page.body;
+        }
+      }}/>
       <div class="release-notes">
         { releases.map((release, index) =>
           <section class={getReleaseClasses(release)}>
@@ -43,7 +47,11 @@ export default (props) => {
               <div class="release-published">
                 <h3>{release.published_at}</h3>
               </div>
-              <div innerHTML={release.body}></div>
+              <div ref={elm => {
+                if (contentChanged) {
+                  elm.innerHTML = release.body;
+                }
+              }}></div>
             </div>
 
           </section>

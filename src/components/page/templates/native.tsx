@@ -2,7 +2,7 @@ import { h } from '@stencil/core';
 import { GitBranch } from '../../../icons';
 
 export default (props) => {
-  const { page } = props;
+  const { page, contentChanged } = props;
   const headings = [...page.headings];
   const repo = renderRepo(page.repo);
   const installation = renderInstallation(page.cordova, page.package);
@@ -34,7 +34,11 @@ export default (props) => {
     <article>
       <h1>{ page.title }</h1>
       <docs-table-of-contents links={headings} basepath={page.path}/>
-      <section class="markdown-content" innerHTML={page.body}/>
+      <section class="markdown-content" ref={elm => {
+        if (contentChanged) {
+          elm.innerHTML = page.body;
+        }
+      }}/>
       { repo }
       { installation }
       { platforms }

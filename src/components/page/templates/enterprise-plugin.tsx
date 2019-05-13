@@ -1,7 +1,7 @@
 import { h } from '@stencil/core';
 
 export default (props) => {
-  const { page } = props;
+  const { page, contentChanged } = props;
   const headings = [...page.headings];
 
   const pluginId = page.path.split('/')[3];
@@ -22,7 +22,11 @@ export default (props) => {
       <h4>v{page.version}</h4>
       <docs-table-of-contents links={headings.concat([{ 'href': '#previous-versions', text: 'Other Versions' }])} basepath={page.path}/>
       { installation }
-      <section class="markdown-content" innerHTML={page.body}/>
+      <section class="markdown-content" ref={elm => {
+        if (contentChanged) {
+          elm.innerHTML = page.body;
+        }
+      }}/>
       <section id="previous-versions">
       <h2>Other Versions</h2>
       <ul>

@@ -94,6 +94,7 @@ export namespace Components {
     'items': MenuItems;
   }
   interface DocsPage {
+    'hash': string;
     'history': RouterHistory;
     'path': string;
   }
@@ -224,6 +225,7 @@ declare namespace LocalJSX {
     'items'?: MenuItems;
   }
   interface DocsPage extends JSXBase.HTMLAttributes {
+    'hash'?: string;
     'history'?: RouterHistory;
     'path'?: string;
   }

@@ -5,8 +5,8 @@ export const config: Config = {
   outputTargets: [
     {
       type: 'www',
-      dir: 'www',
-      baseUrl: 'https://ionicframework.com/docs/',
+      baseUrl: 'https://beta.ionicframework.com/docs',
+      prerenderConfig: 'prerender.config.js',
       serviceWorker: null,
       copy: [
         { src: 'pages/**/*.json' },
