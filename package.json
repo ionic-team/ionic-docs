@@ -9,7 +9,7 @@
     "start": "stencil build --dev --serve --watch",
     "prestart": "npm run -s build-all",
     "build": "stencil build --prerender",
-    "build.ci": "npm run build-all && stencil build --prerender --ci",
+    "build.ci": "npm run build-all && stencil build --prerender --ci --max-workers=1",
     "prebuild": "npm run -s build-all",
     "lint": "tslint --config tslint.json --project tsconfig.json",
     "build-all": "ts-node -P scripts/tsconfig.json scripts/build-all",
