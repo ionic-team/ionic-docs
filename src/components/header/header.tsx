@@ -114,7 +114,7 @@ export class DocsHeader {
               <a href="https://ionicframework.com/jp/docs/" target="_blank">日本語</a>
             </section>
             <section>
-              <a href="https://ionicframework.com/trasnlate" target="_blank">Translate</a>
+              <a href="https://ionicframework.com/translate" target="_blank">Translate</a>
             </section>
           </docs-dropdown>
           <a class="outbound" href="https://github.com/ionic-team/ionic" target="_blank">GitHub <Outbound/></a>
