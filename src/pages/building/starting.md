@@ -36,6 +36,10 @@ Here, `myApp` is the name of the project, `tabs` is the starter template, and th
 - `tabs`: A tabs based layout
 - `sidemenu`: A sidemenu based layout
 - `blank`: An empty project with a single page
+- `super`:  A starting project complete with pre-built pages, providers and best practices for Ionic development.
+- `tutorial`: A tutorial based project that goes along with the Ionic documentation.
+- `maps`:  An Ionic starter project using Google Maps and a side menu.
+- `aws`: AWS Mobile Hub Starter.
 
 See all available templates with the following command:
 
