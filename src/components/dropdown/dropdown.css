@@ -70,8 +70,15 @@
 }
 
 .Dropdown-panel a {
-  display: block;
+  display: flex;
+  justify-content: space-between;
   padding: 0.5em 1em;
+}
+
+.Dropdown-panel svg {
+  height: 1em;
+  width: 1em;
+  margin-left: 4px;
 }
 
 @media (hover: hover) {
