@@ -1,5 +1,5 @@
 # ion-nav-set-root
 
-`NavSetRoot` is an element that allows you to set the root of the current navigation stack.
-It is the element form a calling `NavController.setRoot()`
+`NavSetRoot` は、現在のナビゲーションスタックのルートを設定するエレメントです。
+`NavController.setRoot()` を使って呼び出します。
 

@@ -1,4 +1,4 @@
 # ion-modal-controller
 
-Modal controllers programmatically control the modal component. Modals can be created and dismissed from the modal controller. View the [Modal](../modal) documentation for a full list of options to pass upon creation.
+Modal controllersは、modal componentをプログラムによって制御します。Modalは、modal controllerから作成および削除できます。作成時に渡すオプションの完全なリストについては、[Modal](../modal)のドキュメントを参照してください。
 

@@ -1,16 +1,16 @@
 # ion-modal
 
-A Modal is a dialog that appears on top of the app's content, and must be dismissed by the app before interaction can resume. It is useful as a select component when there are a lot of options to choose from, or when filtering items in a list, as well as many other use cases.
+Modalは、アプリのコンテンツの上に表示されるダイアログであり、インタラクションを再開する前にはアプリによって消されなければならない。選択できるオプションが多い場合や、リスト内の項目をフィルタする場合、およびその他の多くのユースケースで、Selectコンポーネントとして役立ちます。
 
 
 ### Creating
 
-Modals can be created using a [Modal Controller](../modal-controller). They can be customized by passing modal options in the modal controller's create method.
+Modalは、[Modal Controller](../modal-controller) を使用して作成できます。Modalオプションをmodal controllerの作成メソッドに渡すことでカスタマイズできます。
 
 
 ### Passing parameters
 
-When a modal is created, parameters might be passed to the newly created modal:
+Modalをつくる時は、新しくつくるModalにパラメーターを渡す必要があります:
 
 ```ts
 // Create a modal using MyModalComponent with some initial data
@@ -23,8 +23,8 @@ const modal = await modalController.create({
 });
 ```
 
-Under the hood, the controller creates a new `ion-modal` and attaches the specified component to it.
-It also assigns the specified `componentProps` to the component's instance:
+内部では、コントローラが新しい `ion-modal` を作成し、指定されたComponentをそれにアタッチします。
+また、指定した `componentProps` をComponentのインスタンスに割り当てます:
 
 ```js
 // pseudo-code
@@ -33,12 +33,12 @@ instance.prop1 = value;
 instance.prop2 = value2;
 ```
 
-This way, your component can access the passed params, check the "Usage" section for further code example for each frameworks.
+このようにして、Componentは渡されたパラメーターにアクセスすることができます。"Usage" セクションで各フレームワークの詳細なコード例を調べてください。
 
 
 ### Returning data
 
-Modals can also return data back to the controller when they are dismissed.
+また、Modalsを終了すると、コントローラにデータを返すこともできます。
 
 ```js
 const modal = await modalController.create({...});
