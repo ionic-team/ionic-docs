@@ -8,6 +8,7 @@ import { DownArrow } from '../../icons';
 export class DocsDropdown {
   @Prop() align: 'left' | 'right' | 'center' = 'left';
   @Prop() label: string;
+  @Prop() icon: any;
   @State() isOpen = false;
   @Element() element: HTMLElement;
 
@@ -59,6 +60,7 @@ export class DocsDropdown {
   }
 
   render() {
+    const Icon = this.icon;
     const button = (
       <button
         tabindex="-1"
@@ -66,7 +68,9 @@ export class DocsDropdown {
         aria-haspopup="menu"
         aria-expanded={this.isOpen ? 'true' : 'false'}
         onClick={this.toggle.bind(this)}>
-        {this.label} <DownArrow class="Dropdown-arrow"/>
+        {this.label ? this.label : null}
+        {this.icon ? <Icon/> : null}
+        <DownArrow class="Dropdown-arrow"/>
       </button>
     );
 

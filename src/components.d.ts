@@ -159,12 +159,14 @@ export namespace Components {
   interface DocsDropdown {
     'align': 'left' | 'right' | 'center';
     'close': () => void;
+    'icon': any;
     'label': string;
     'open': () => void;
     'toggle': () => void;
   }
   interface DocsDropdownAttributes extends StencilHTMLAttributes {
     'align'?: 'left' | 'right' | 'center';
+    'icon'?: any;
     'label'?: string;
   }
 

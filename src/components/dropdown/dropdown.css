@@ -17,6 +17,11 @@
   white-space: nowrap;
 }
 
+.Dropdown-button svg {
+  height: 14px;
+  width: 22px;
+}
+
 .Dropdown-button:focus {
   outline: none;
 }
