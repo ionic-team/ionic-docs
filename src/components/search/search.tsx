@@ -4,6 +4,7 @@ import { Close } from '../../icons';
 import {
   Component,
   Element,
+  Listen,
   Prop,
   State
 } from '@stencil/core';
@@ -50,6 +51,13 @@ export class IonicSearch {
     this.touchEnd = this.touchEnd.bind(this);
 
     this.urls = this.URLS();
+  }
+
+  @Listen('window:keyup')
+  handleScroll(ev) {
+    if (ev.keyCode === 191) {
+      this.activate();
+    }
   }
 
   // componentDidLoad() {
