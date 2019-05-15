@@ -37,6 +37,8 @@
   --text-color--dark: #020814;
   --text-color--lighter: #abb2bf;
   --text-color--light: #73849a;
+
+  --breakpoint-lg: 1200px;
 }
 
 * {
