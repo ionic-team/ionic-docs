@@ -1,13 +1,13 @@
 # ion-range
 
-The Range slider lets users select from a range of values by moving
-the slider knob. It can accept dual knobs, but by default one knob
-controls the value of the range.
+Range sliderを使用すると、sliderのつまみを動かして値の範囲を選択できます。
+2つのつまみを使用できますが、デフォルトでは、
+1つのつまみで範囲の値を制御します。
 
 ### Range Labels
 
-Labels can be placed on either side of the range by adding the
-`slot="start"` or `slot="end"` to the element. The element doesn't have to
-be an `ion-label`, it can be added to any element to place it to the
-left or right of the range.
+要素に `slot="start"` または `slot="end"` を追加すると、
+Labelを範囲の両側に配置できます。
+要素は `ion-label` である必要はなく、
+任意の要素に追加して、rangeの左または右に配置できます。
 
