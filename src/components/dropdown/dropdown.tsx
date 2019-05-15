@@ -8,7 +8,7 @@ import { DownArrow } from '../../icons';
 export class DocsDropdown {
   @Prop() align: 'left' | 'right' | 'center' = 'left';
   @Prop() label: string;
-  @Prop() icon: any;
+  @Prop() icon: (props: any) => JSX.Element;
   @State() isOpen = false;
   @Element() element: HTMLElement;
 
@@ -69,7 +69,7 @@ export class DocsDropdown {
         aria-expanded={this.isOpen ? 'true' : 'false'}
         onClick={this.toggle.bind(this)}>
         {this.label ? this.label : null}
-        {this.icon ? <Icon/> : null}
+        {Icon ? <Icon class="Dropdown-icon"/> : null}
         <DownArrow class="Dropdown-arrow"/>
       </button>
     );

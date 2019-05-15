@@ -17,10 +17,17 @@
   white-space: nowrap;
 }
 
-.Dropdown-button svg {
+.Dropdown-button .Dropdown-icon {
   height: 14px;
   width: 22px;
+  fill: #CED6E0;
 }
+
+.Dropdown-button .Dropdown-icon + .Dropdown-arrow {
+  margin-left: 0px;
+  fill: #CED6E0;
+  vertical-align: 2px;
+} 
 
 .Dropdown-button:focus {
   outline: none;
@@ -47,7 +54,7 @@
   border: solid 1px var(--line-rule-color);
   box-shadow: 4px 4px 12px 4px rgba(0,0,0,0.025);
   display: none;
-  min-width: 100%;
+  min-width: 140px;
   overflow: hidden;
   pointer-events: none;
   position: absolute;
