@@ -2,6 +2,7 @@
   display: inline-block;
   position: relative;
   z-index: 1;
+  outline: none;
 }
 
 .Dropdown-button {
@@ -16,6 +17,18 @@
   padding: initial;
   white-space: nowrap;
 }
+
+.Dropdown-button .Dropdown-icon {
+  height: 14px;
+  width: 22px;
+  fill: #CED6E0;
+}
+
+.Dropdown-button .Dropdown-icon + .Dropdown-arrow {
+  margin-left: 0px;
+  fill: #CED6E0;
+  vertical-align: 2px;
+} 
 
 .Dropdown-button:focus {
   outline: none;

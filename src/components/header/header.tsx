@@ -1,5 +1,5 @@
 import { Component, Listen, Prop, State } from '@stencil/core';
-import { Checkmark, Logo, Outbound } from '../../icons';
+import { Checkmark, Logo, Outbound, Translation } from '../../icons';
 
 @Component({
   tag: 'docs-header',
@@ -103,7 +103,7 @@ export class DocsHeader {
               <a href="https://ionicframework.com/advisory" target="_blank">Enterprise Advisory</a>
             </section>
           </docs-dropdown>
-          <docs-dropdown label="翻訳" align="right">
+          <docs-dropdown icon={Translation} align="right">
             <section>
               <a href="https://ionicframework.com/docs/">English</a>
               <a href="https://ionicframework.com/jp/docs/" class="link-active">
