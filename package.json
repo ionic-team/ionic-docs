@@ -21,14 +21,14 @@
   "dependencies": {
     "@ionic/core": "^4.3.0",
     "@ionic/docs": "^4.3.0",
-    "@stencil/router": "^0.3.4-2",
+    "@stencil/router": "one",
     "compression": "^1.7.4",
     "express": "^4.16.4",
     "helmet": "^3.16.0",
     "throng": "^4.0.0"
   },
   "devDependencies": {
-    "@stencil/core": "^1.0.0-alpha.29",
+    "@stencil/core": "one",
     "@types/prismjs": "^1.9.1",
     "chokidar": "^3.0.0",
     "fast-glob": "^2.2.6",
