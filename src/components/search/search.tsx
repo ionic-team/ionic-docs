@@ -18,6 +18,7 @@ export class IonicSearch {
 
   @State() active = false;
   @State() query = '';
+  @State() higlightIndex: number = null;
   @State() pending = 0;
   @State() results: any[] = null;
   @State() nonDocsResults: any[] = null;
@@ -51,6 +52,7 @@ export class IonicSearch {
     this.touchStart = this.touchStart.bind(this);
     this.touchMove = this.touchMove.bind(this);
     this.touchEnd = this.touchEnd.bind(this);
+    this.keyNavigation = this.keyNavigation.bind(this);
 
     this.urls = this.URLS();
   }
@@ -80,7 +82,7 @@ export class IonicSearch {
     this.el.querySelector('input').blur();
     setTimeout(() => {
       this.el.querySelector('input').value = '';
-      this.results = this.nonDocsResults = null;
+      this.results = this.nonDocsResults = this.higlightIndex = null;
     }, 220, this);
   }
 
@@ -90,8 +92,13 @@ export class IonicSearch {
       return;
     }
 
+    // don't search on arrow keypress
+    if ([37, 38, 39, 40].indexOf(e.keyCode) !== -1) {
+      return;
+    }
+
     if (e.target.value.length < 3) {
-      this.results = this.nonDocsResults = null;
+      this.results = this.nonDocsResults = this.higlightIndex = null;
       return;
     }
 
@@ -104,6 +111,7 @@ export class IonicSearch {
       item => item.url.indexOf('\/docs\/') !== -1);
     this.nonDocsResults = res.records.page.filter(
       item => item.url.indexOf('\/docs\/') === -1);
+    this.higlightIndex = null;
   }
 
   touchStart(e) {
@@ -142,13 +150,46 @@ export class IonicSearch {
     this.dragStyles = {};
   }
 
+  keyNavigation(ev) {
+    if (ev.keyCode === 38) {
+      ev.preventDefault();
+      if (this.higlightIndex === 0) {
+        this.el.querySelector('input').focus();
+        this.higlightIndex = null;
+      } else if (this.higlightIndex !== null && this.higlightIndex > 0) {
+        this.higlightIndex--;
+      }
+    } else if (ev.keyCode === 40) {
+      ev.preventDefault();
+      if (this.higlightIndex === null) {
+        this.higlightIndex = 0;
+      } else if (
+        this.higlightIndex !== null &&
+        this.higlightIndex < this.results.length + this.nonDocsResults.length - 1) {
+        this.higlightIndex++;
+
+        if (
+          this.higlightIndex >= this.results.length &&
+          !this.nonDocsResultsActive
+        ) {
+          this.nonDocsResultsActive = true;
+        }
+      }
+    } else if (ev.keyCode === 13) {
+      const link = this.el.querySelector('ul a.active');
+      if (link) {
+        window.location = link.href;
+      }
+    }
+  }
+
   render() {
-    console.log(this.nonDocsResults);
     return [
       <div class={`search-box${this.active ? ' active' : ''}`}
            style={this.dragStyles}
            onTouchMove={e => this.results && this.results.length > 5 ?
-            null : e.preventDefault()}>
+            null : e.preventDefault()}
+           onKeyDown={this.keyNavigation}>
         <input type="text" onKeyUp={this.onKeyUp} placeholder="Search Ionic.."/>
 
         <Search class={`search-static ${this.active ? ' active' : ''}`}/>
@@ -166,43 +207,48 @@ export class IonicSearch {
                     name="md-close"
                     onClick={this.close}></ion-icon>
         }
+        {this.results !== null ?
+          <div class="SearchResults">
+            <ul>
+              {this.results.map((result, i) =>
+                <li>
+                  <a href={result.url}
+                     title={result.title}
+                     class={i === this.higlightIndex ? 'active' : ''}>
+                    <Book/>
+                    <strong>{result.title}</strong>
+                    <span innerHTML={result.highlight.sections}></span>
+                  </a>
+                </li>
+              )}
+              {this.results.length === 0 ?
+                <li><span class="no-results">No results</span></li>
+              : null}
+            </ul>
 
-        {this.results !== null ? [
-          <ul>
-            {this.results.map(result =>
-              <li>
-                <a href={result.url} title={result.title}>
-                  <Book/>
-                  <strong>{result.title}</strong>
-                  <span innerHTML={result.highlight.sections}></span>
-                </a>
-              </li>
-            )}
-            {this.results.length === 0 ?
-              <li><span class="no-results">No results</span></li>
-            : null}
-          </ul>,
-
-          <div class={`SearchMore ${this.nonDocsResultsActive ? 'active' : ''}`}>
-            {this.nonDocsResults && this.nonDocsResults.length !== 0 ? [
-              <a class="SearchMore__link"
-                 onClick={() =>
-                  this.nonDocsResultsActive = !this.nonDocsResultsActive}>
-                {this.nonDocsResults.length} Results outside docs <ForwardArrow/>
-              </a>,
-              <ul class="SearchMore__list">
-                {this.nonDocsResults.map(result =>
-                  <li>
-                    <a href={result.url} title={result.title}>
-                      <strong>{result.title}</strong>
-                      <span innerHTML={result.highlight.sections}></span>
-                    </a>
-                  </li>
-                )}
-              </ul>
-            ] : null}
+            <div class={`SearchMore ${this.nonDocsResultsActive ? 'active' : ''}`}>
+              {this.nonDocsResults && this.nonDocsResults.length !== 0 ? [
+                <a class="SearchMore__link"
+                   onClick={() =>
+                    this.nonDocsResultsActive = !this.nonDocsResultsActive}>
+                  {this.nonDocsResults.length} Results outside docs <ForwardArrow/>
+                </a>,
+                <ul class="SearchMore__list">
+                  {this.nonDocsResults.map((result, i) =>
+                    <li>
+                      <a href={result.url}
+                         title={result.title}
+                         class={i + this.results.length === this.higlightIndex ? 'active' : ''}>
+                        <strong>{result.title}</strong>
+                        <span innerHTML={result.highlight.sections}></span>
+                      </a>
+                    </li>
+                  )}
+                </ul>
+              ] : null}
+            </div>
           </div>
-        ] : null}
+        : null}
 
         <div class={`slot ${this.results === null ? '' : 'hidden'}`}>
           <slot/>

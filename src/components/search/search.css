@@ -31,14 +31,14 @@ ionic-search .SearchBtn__lg {
   padding: 4px;
   display: flex;
   min-width: 180px;
-  padding: 5px 9px;
+  padding: 5px 9px 7px;
   cursor: pointer;
 }
 
 ionic-search .SearchBtn__lg__icon  {
-  height: 12px;
-  color: #B2BECD;
-  margin: 3px 6px 0 1px;
+  height: 14px;
+  fill: #B2BECD;
+  margin: 2px 6px 0 1px;
 }
 
 ionic-search .SearchBtn__lg__text {
@@ -63,8 +63,14 @@ ionic-search .SearchBtn__lg__key {
 }
 
 ionic-search .SearchBtn__sm {
-  color: #B2BECD;
-  font-size: 1em;
+  fill: rgb(115, 132, 154);
+  height:  16px;
+  cursor: pointer;
+  transition: .2s color;
+}
+
+ionic-search .SearchBtn__sm:hover {
+  fill: var(--text-color);
 }
 
 @media (min-width: 992px) {
@@ -146,7 +152,7 @@ ionic-search input {
   border: none;
   z-index: 2;
   background: transparent;
-  padding: 14px 30px 14px 41px;
+  padding: 13px 30px 15px 41px;
   font-size: 20px;
   line-height: 24px;
   letter-spacing: -0.02em;
@@ -216,27 +222,33 @@ ionic-search ul a {
   position: relative;
 }
 
-ionic-search ul a:hover {
+ionic-search ul a:hover,
+ionic-search ul a.active {
   background-color: #F4FAFF;
 }
 
-ionic-search ul a:hover strong {
+ionic-search ul a:hover strong,
+ionic-search ul a.active strong {
   color: #3880FF;
 }
 
-ionic-search ul a:hover span {
+ionic-search ul a:hover span,
+ionic-search ul a.active span {
   color: var(--accent-color-500);
 }
 
-ionic-search ul a:hover em {
+ionic-search ul a:hover em,
+ionic-search ul a.active em {
   color: var(--accent-color-300);
 }
 
-ionic-search ul a:hover svg path {
+ionic-search ul a:hover svg path,
+ionic-search ul a.active svg path {
   fill: #639CFF;
 }
 
-ionic-search ul a:hover svg path:last-child {
+ionic-search ul a:hover svg path:last-child,
+ionic-search ul a.active svg path:last-child {
   fill: #97BDFF;
 }
 
@@ -259,27 +271,15 @@ ionic-search .searching {
   animation: ionic-search-scan 1s ease-in-out infinite;
 }
 
-/* ionic-search .search-box.active ul {
-  transform: none;
-  opacity: 1;
-  transition-delay: .2s;
-}
-
-ionic-search .search-box.active input {
-  transform: none;
-  opacity: 1;
-  transition-delay: .1s;
-}
-
-ionic-search .search-box.active .search-static {
-  opacity: 1;
-  transform: none;
-} */
-
 ionic-search .search-box.active .close {
   opacity: 1;
   transform: none;
   transition-delay: .4s;
+}
+
+ionic-search .SearchResults {
+  max-height: calc(100vh - 160px);
+  overflow-y: auto;
 }
 
 ionic-search .backdrop {
@@ -290,7 +290,7 @@ ionic-search .backdrop {
   bottom: 0;
   left: 0;
   opacity: 0;
-  min-height: 100vh;
+  min-height: calc(100vh + 200px);
   pointer-events: none;
   transition: .4s all ease;
 }
@@ -314,8 +314,7 @@ ionic-search .SearchMore__link {
 }
 
 ionic-search .SearchMore__link svg {
-  color: var(--accent-color);
-  fill: var(--accent-color);
+  fill: var(--text-color);
   height: 1.2em;
   vertical-align: -3px;
   float: right;
@@ -326,6 +325,10 @@ ionic-search .SearchMore__link svg {
 ionic-search .search-box .SearchMore__link:hover {
   color: var(--accent-color-300);
   background: #F4FAFF;
+}
+
+ionic-search .search-box .SearchMore__link:hover svg {
+  fill: var(--accent-color);
 }
 
 ionic-search .SearchMore__list {
