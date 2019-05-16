@@ -1,7 +1,8 @@
 import { h } from '@stencil/core';
+import { toHypertext } from '../to-hypertext';
 
 export default (props) => {
-  const { page, contentChanged } = props;
+  const { page } = props;
   const headings = [...page.headings];
   const examples = renderExamples(page.exampleCommands);
   const inputs = renderInputs(page.inputs);
@@ -40,17 +41,13 @@ export default (props) => {
     <article>
       <h1>{ page.title }</h1>
       <docs-table-of-contents links={headings} basepath={page.path} />
-      <section class="summary intro" ref={elm => {
-        if (contentChanged) {
-          elm.innerHTML = page.summary;
-        }
-      }} />
+      <section class="summary intro">
+        {toHypertext(h, page.summary)}
+      </section>
       { renderUsage(page) }
-      <section class="description" ref={elm => {
-        if (contentChanged) {
-          elm.innerHTML = page.body;
-        }
-      }} />
+      <section class="description">
+        {toHypertext(h, page.body)}
+      </section>
       { examples }
       { inputs }
       { options }

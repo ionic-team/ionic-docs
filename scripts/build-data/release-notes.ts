@@ -1,11 +1,9 @@
 import { resolve } from 'path';
 import { outputJson } from 'fs-extra';
-
 import renderMarkdown from '../build-pages/markdown-renderer';
-
 import fetch from 'node-fetch';
-
 import url from 'url';
+import { convertHtmlToHypertextData } from '../build-pages/html-to-hypertext-data';
 
 const OUTPUT_PATH = resolve(
   __dirname,
@@ -86,9 +84,10 @@ function parseDate(datetime: string) {
 }
 
 function parseMarkdown(content: any) {
-  const markdown = renderMarkdown(content);
-
-  return markdown.replace('<a href=\"#bug-fixes\">Bug Fixes</a>', 'Bug Fixes').replace('<a href=\"#features\">Features</a>', 'Features');
+  let html = renderMarkdown(content);
+  html = html.replace('<a href=\"#bug-fixes\">Bug Fixes</a>', 'Bug Fixes')
+             .replace('<a href=\"#features\">Features</a>', 'Features');
+  return convertHtmlToHypertextData(html);
 }
 
 // Given a version, return if it is a
@@ -111,20 +110,20 @@ function getVersionType(version: string) {
 
 // Given a version, return its element symbol
 function getVersionSymbol(version) {
-  const v = versions.filter(
-    versions => version.startsWith(`${versions.minor}.`)
+  const filteredVersions = versions.filter(
+    v => version.startsWith(`${v.minor}.`)
   );
 
-  return v[v.length - 1].symbol;
+  return filteredVersions[filteredVersions.length - 1].symbol;
 }
 
 // Given a version, return its element name
 function getVersionElement(version) {
-  const v = versions.filter(
-    versions => version.startsWith(`${versions.minor}.`)
+  const filteredVersions = versions.filter(
+    v => version.startsWith(`${v.minor}.`)
   );
 
-  return v[v.length - 1].element;
+  return filteredVersions[filteredVersions.length - 1].element;
 }
 
 const versions = [

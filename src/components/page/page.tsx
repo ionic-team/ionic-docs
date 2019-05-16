@@ -10,23 +10,17 @@ import templates from './templates';
 export class DocsPage {
 
   @Prop() history: RouterHistory;
-  @Prop({ reflect: true }) hash: string;
   @Prop() path: string;
   @State() badFetch: Response = null;
   @State() page: Page = { title: null, body: null };
-  lastHash: string;
 
-  componentWillLoad() {
-    return this.fetchPage(this.path);
-  }
-
-  @Watch('path')
-  fetchPage(path, oldPath?) {
-    if (path == null || path === oldPath) return;
-    return fetch(path)
-      .then(this.validateFetch)
-      .then(this.handleNewPage)
-      .catch(this.handleBadFetch);
+  componentWillRender() {
+    if (this.path != null) {
+      return fetch(this.path)
+        .then(this.validateFetch)
+        .then(this.handleNewPage)
+        .catch(this.handleBadFetch);
+    }
   }
 
   validateFetch = (response) => {
@@ -36,9 +30,7 @@ export class DocsPage {
 
   handleNewPage = (page) => {
     this.badFetch = null;
-    this.lastHash = this.hash;
     this.page = page;
-    this.hash = page.hash;
   }
 
   handleBadFetch = (error: Response) => {
@@ -90,7 +82,7 @@ export class DocsPage {
 
     const content = [
       <main>
-        <Template page={page} contentChanged={this.lastHash !== this.hash}/>
+        <Template page={page}/>
       </main>
     ];
 

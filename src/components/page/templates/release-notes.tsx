@@ -1,8 +1,9 @@
 import { h } from '@stencil/core';
 import releases from '../data/release-notes.json';
+import { toHypertext } from '../to-hypertext.js';
 
 export default (props) => {
-  const { page, contentChanged } = props;
+  const { page } = props;
 
   if (releases.length === 0) {
     return [
@@ -14,11 +15,9 @@ export default (props) => {
   return (
     <article>
       <h1>{page.title}</h1>
-      <section class="markdown-content" ref={elm => {
-        if (contentChanged) {
-          elm.innerHTML = page.body;
-        }
-      }}/>
+      <section class="markdown-content">
+        {toHypertext(h, page.body)}
+      </section>
       <div class="release-notes">
         { releases.map((release, index) =>
           <section class={getReleaseClasses(release)}>
@@ -47,11 +46,7 @@ export default (props) => {
               <div class="release-published">
                 <h3>{release.published_at}</h3>
               </div>
-              <div ref={elm => {
-                if (contentChanged) {
-                  elm.innerHTML = release.body;
-                }
-              }}></div>
+              {toHypertext(h, release.body)}
             </div>
 
           </section>

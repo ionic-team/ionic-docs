@@ -1,13 +1,13 @@
 import { resolve } from 'path';
 import { slugify } from '../../src/utils';
 import fs from 'fs-extra';
-import crypto from 'crypto';
 import { createDocument } from '@stencil/core/mock-doc';
 import Listr from 'listr';
 import Static, { toPage as toStaticPage } from './page-types/static';
 import API from './page-types/api';
 import CLI from './page-types/cli';
 import Native from './page-types/native';
+import { convertHtmlToHypertextData } from './html-to-hypertext-data';
 
 const tasks = new Listr();
 tasks.add(Static);
@@ -29,7 +29,6 @@ export interface Page {
   title: string;
   path: string;
   body: string;
-  hash?: string;
   skipIntros?: boolean;
   [key: string]: any;
 }
@@ -40,17 +39,18 @@ export async function buildPages(getter: PageGetter) {
   const pages = await getter();
   return Promise.all(
     pages
-      .map(patchPage)
+      .map(patchBody)
+      .map(updatePageHtmlToHypertext)
       .map(writePage)
   );
 }
 
 export async function buildStaticPage(path: string) {
   const page = await toStaticPage(path);
-  return writePage(patchPage(page));
+  return writePage(patchBody(page));
 }
 
-function patchPage(page: Page): Page {
+function patchBody(page: Page): Page {
   const body = createDocument(page.body).body;
 
   const h1 = body.querySelector('h1');
@@ -84,12 +84,21 @@ function patchPage(page: Page): Page {
   };
 }
 
-function writePage(page: Page): Promise<any> {
-  page.hash = crypto.createHash('md5')
-    .update(JSON.stringify(page))
-    .digest('base64')
-    .substr(0, 8);
+function updatePageHtmlToHypertext(page: Page) {
+  page.body = convertHtmlToHypertextData(page.body);
+  if (page.docs) {
+    page.docs = convertHtmlToHypertextData(page.docs);
+  }
+  if (page.summary) {
+    page.summary = convertHtmlToHypertextData(page.summary);
+  }
+  if (page.usage) {
+    page.usage = convertHtmlToHypertextData(page.usage);
+  }
+  return page;
+}
 
+function writePage(page: Page): Promise<any> {
   return fs.outputJson(toFilePath(page.path), page, {
     spaces: 2
   });
