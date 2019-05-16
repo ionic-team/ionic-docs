@@ -9,8 +9,8 @@ import '@stencil/core';
 
 import '@stencil/router';
 import '@stencil/state-tunnel';
-import '@ionic/core';
 import 'ionicons';
+import '@ionic/core';
 import {
   ColorVariable,
 } from './components/color-gen/color-variables';

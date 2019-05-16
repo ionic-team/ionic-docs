@@ -1,5 +1,5 @@
 import 'ionicons';
-import { Close } from '../../icons';
+import { Book, Close, ForwardArrow, Search } from '../../icons';
 
 import {
   Component,
@@ -20,6 +20,8 @@ export class IonicSearch {
   @State() query = '';
   @State() pending = 0;
   @State() results: any[] = null;
+  @State() nonDocsResults: any[] = null;
+  @State() nonDocsResultsActive = false;
   @State() dragStyles: {};
   // @State() pane: HTMLDivElement;
   @Prop() mobile: boolean;
@@ -69,7 +71,7 @@ export class IonicSearch {
     this.el.classList.add('active');
     setTimeout(() => {
       this.el.querySelector('input').focus();
-    }, 500, this);
+    }, 220, this);
   }
 
   close() {
@@ -78,8 +80,8 @@ export class IonicSearch {
     this.el.querySelector('input').blur();
     setTimeout(() => {
       this.el.querySelector('input').value = '';
-      this.results = null;
-    }, 500, this);
+      this.results = this.nonDocsResults = null;
+    }, 220, this);
   }
 
   async onKeyUp(e) {
@@ -89,7 +91,7 @@ export class IonicSearch {
     }
 
     if (e.target.value.length < 3) {
-      this.results = null;
+      this.results = this.nonDocsResults = null;
       return;
     }
 
@@ -98,7 +100,10 @@ export class IonicSearch {
     const resp = await fetch(this.urls.autocomplete(this.query));
     const res = await resp.json();
     this.pending--;
-    this.results = res.records.page;
+    this.results = res.records.page.filter(
+      item => item.url.indexOf('\/docs\/') !== -1);
+    this.nonDocsResults = res.records.page.filter(
+      item => item.url.indexOf('\/docs\/') === -1);
   }
 
   touchStart(e) {
@@ -138,6 +143,7 @@ export class IonicSearch {
   }
 
   render() {
+    console.log(this.nonDocsResults);
     return [
       <div class={`search-box${this.active ? ' active' : ''}`}
            style={this.dragStyles}
@@ -145,8 +151,7 @@ export class IonicSearch {
             null : e.preventDefault()}>
         <input type="text" onKeyUp={this.onKeyUp} placeholder="Search Ionic.."/>
 
-        <ion-icon class={`search-static ${this.active ? ' active' : ''}`}
-                  name="md-search"></ion-icon>
+        <Search class={`search-static ${this.active ? ' active' : ''}`}/>
 
         {this.mobile && !this.isFirefox() ?
           <div class="mobile-close"
@@ -162,19 +167,42 @@ export class IonicSearch {
                     onClick={this.close}></ion-icon>
         }
 
-        {this.results !== null ? <ul>
-          {this.results.map(result =>
-            <li>
-              <a href={result.url} title={result.title}>
-                <strong>{result.title}</strong>
-                <span innerHTML={result.highlight.sections}></span>
-              </a>
-            </li>
-          )}
-          {this.results.length === 0 ?
-            <li><span class="no-results">No results</span></li>
-          : null}
-        </ul> : null}
+        {this.results !== null ? [
+          <ul>
+            {this.results.map(result =>
+              <li>
+                <a href={result.url} title={result.title}>
+                  <Book/>
+                  <strong>{result.title}</strong>
+                  <span innerHTML={result.highlight.sections}></span>
+                </a>
+              </li>
+            )}
+            {this.results.length === 0 ?
+              <li><span class="no-results">No results</span></li>
+            : null}
+          </ul>,
+
+          <div class={`SearchMore ${this.nonDocsResultsActive ? 'active' : ''}`}>
+            {this.nonDocsResults && this.nonDocsResults.length !== 0 ? [
+              <a class="SearchMore__link"
+                 onClick={() =>
+                  this.nonDocsResultsActive = !this.nonDocsResultsActive}>
+                {this.nonDocsResults.length} Results outside docs <ForwardArrow/>
+              </a>,
+              <ul class="SearchMore__list">
+                {this.nonDocsResults.map(result =>
+                  <li>
+                    <a href={result.url} title={result.title}>
+                      <strong>{result.title}</strong>
+                      <span innerHTML={result.highlight.sections}></span>
+                    </a>
+                  </li>
+                )}
+              </ul>
+            ] : null}
+          </div>
+        ] : null}
 
         <div class={`slot ${this.results === null ? '' : 'hidden'}`}>
           <slot/>
@@ -184,13 +212,11 @@ export class IonicSearch {
       </div>,
 
       <div class={`SearchBtn ${this.active ? ' active' : ''}`}>
-        <ion-icon class="SearchBtn__sm"
-                  name="md-search"
-                  onClick={this.active ? null : this.activate}></ion-icon>
+        <Search class="SearchBtn__sm"
+                onClick={this.active ? null : this.activate}/>
 
         <div class="SearchBtn__lg" onClick={this.active ? null : this.activate}>
-          <ion-icon class="SearchBtn__lg__icon"
-                    name="md-search" ></ion-icon>
+          <Search class="SearchBtn__lg__icon"/>
           <span class="SearchBtn__lg__text">Search docs</span>
           <span class="SearchBtn__lg__key">/</span>
         </div>
