@@ -93,7 +93,12 @@ function updatePageHtmlToHypertext(page: Page) {
     page.summary = convertHtmlToHypertextData(page.summary);
   }
   if (page.usage) {
-    page.usage = convertHtmlToHypertextData(page.usage);
+    const hypertextUsage = {};
+    Object.keys(page.usage).forEach(key => {
+      const usageContent = page.usage[key];
+      hypertextUsage[key] = convertHtmlToHypertextData(usageContent);
+    });
+    page.usage = hypertextUsage;
   }
   return page;
 }

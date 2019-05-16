@@ -92,7 +92,7 @@ const renderUsage = (usage = {}, path: string) => {
             <docs-tab
               tab={key}
               selected={framework === key.toLowerCase()}>
-                <div innerHTML={usage[key]}></div>
+                {toHypertext(h, usage[key])}
             </docs-tab>
           )}
       </docs-tabs>
