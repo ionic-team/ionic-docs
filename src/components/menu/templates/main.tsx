@@ -4,6 +4,7 @@ const items = {
   'Introduction': {
     'What is Ionic Framework?': '/docs/intro',
     'Core Concepts': '/docs/intro/concepts',
+    'Build your First App': '/docs/developer-resources/guides/first-app-v4/intro',
     'Browser Support': '/docs/intro/browser-support',
     'Versioning': '/docs/intro/versioning',
     'Release Notes': '/docs/release-notes',
