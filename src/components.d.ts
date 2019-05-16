@@ -257,8 +257,12 @@ export namespace Components {
   interface DocsRoot {}
   interface DocsRootAttributes extends StencilHTMLAttributes {}
 
-  interface DocsSearch {}
-  interface DocsSearchAttributes extends StencilHTMLAttributes {}
+  interface IonicSearch {
+    'mobile': boolean;
+  }
+  interface IonicSearchAttributes extends StencilHTMLAttributes {
+    'mobile'?: boolean;
+  }
 
   interface DocsSelect {
     'initializer': (options: string[]) => string;
@@ -357,7 +361,7 @@ declare global {
     'DocsPagination': Components.DocsPagination;
     'DocsReference': Components.DocsReference;
     'DocsRoot': Components.DocsRoot;
-    'DocsSearch': Components.DocsSearch;
+    'IonicSearch': Components.IonicSearch;
     'DocsSelect': Components.DocsSelect;
     'DocsShadowCard': Components.DocsShadowCard;
     'SmsForm': Components.SmsForm;
@@ -401,7 +405,7 @@ declare global {
     'docs-pagination': Components.DocsPaginationAttributes;
     'docs-reference': Components.DocsReferenceAttributes;
     'docs-root': Components.DocsRootAttributes;
-    'docs-search': Components.DocsSearchAttributes;
+    'ionic-search': Components.IonicSearchAttributes;
     'docs-select': Components.DocsSelectAttributes;
     'docs-shadow-card': Components.DocsShadowCardAttributes;
     'sms-form': Components.SmsFormAttributes;
@@ -605,10 +609,10 @@ declare global {
     new (): HTMLDocsRootElement;
   };
 
-  interface HTMLDocsSearchElement extends Components.DocsSearch, HTMLStencilElement {}
-  var HTMLDocsSearchElement: {
-    prototype: HTMLDocsSearchElement;
-    new (): HTMLDocsSearchElement;
+  interface HTMLIonicSearchElement extends Components.IonicSearch, HTMLStencilElement {}
+  var HTMLIonicSearchElement: {
+    prototype: HTMLIonicSearchElement;
+    new (): HTMLIonicSearchElement;
   };
 
   interface HTMLDocsSelectElement extends Components.DocsSelect, HTMLStencilElement {}
@@ -692,7 +696,7 @@ declare global {
     'docs-pagination': HTMLDocsPaginationElement
     'docs-reference': HTMLDocsReferenceElement
     'docs-root': HTMLDocsRootElement
-    'docs-search': HTMLDocsSearchElement
+    'ionic-search': HTMLIonicSearchElement
     'docs-select': HTMLDocsSelectElement
     'docs-shadow-card': HTMLDocsShadowCardElement
     'sms-form': HTMLSmsFormElement
@@ -736,7 +740,7 @@ declare global {
     'docs-pagination': HTMLDocsPaginationElement;
     'docs-reference': HTMLDocsReferenceElement;
     'docs-root': HTMLDocsRootElement;
-    'docs-search': HTMLDocsSearchElement;
+    'ionic-search': HTMLIonicSearchElement;
     'docs-select': HTMLDocsSelectElement;
     'docs-shadow-card': HTMLDocsShadowCardElement;
     'sms-form': HTMLSmsFormElement;
