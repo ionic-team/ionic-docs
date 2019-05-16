@@ -37,7 +37,7 @@ docs-header header {
 }
 
 docs-header a {
-  color: #92A1B3;;
+  color: inherit;
   padding: 10px 0;
 }
 
