@@ -8,28 +8,28 @@ export default (props) => {
 
   if (examples) {
     headings.push({
-      text: 'Examples',
+      text: '例',
       href: '#examples',
     });
   }
 
   if (inputs) {
     headings.push({
-      text: 'Inputs',
+      text: '入力データ',
       href: '#inputs',
     });
   }
 
   if (options) {
     headings.push({
-      text: 'Options',
+      text: 'オプション',
       href: '#options',
     });
   }
 
   if (advancedOptions) {
     headings.push({
-      text: 'Advanced Options',
+      text: '詳細オプション',
       href: '#advanced-options',
     });
   }
@@ -71,7 +71,7 @@ const renderInputs = (inputs = []) => {
   return (
     <section>
       <h2 id="inputs">
-        <a href="#inputs">Inputs</a>
+        <a href="#inputs">入力データ</a>
       </h2>
       <docs-reference
         data={inputs}
@@ -93,7 +93,7 @@ const renderOptions = (options = []) => {
   return (
     <section>
       <h2 id="options">
-        <a href="#options">Options</a>
+        <a href="#options">オプション</a>
       </h2>
       { renderOptionList(options) }
     </section>
@@ -110,7 +110,7 @@ const renderAdvancedOptions = (options = []) => {
   return (
     <section>
       <h2 id="advanced-options">
-        <a href="#advanced-options">Advanced Options</a>
+        <a href="#advanced-options">詳細オプション</a>
       </h2>
       { renderOptionList(options) }
     </section>
@@ -151,7 +151,7 @@ const renderExamples = (examples = []) => {
   return (
     <section>
       <h2 id="examples">
-        <a href="#examples">Examples</a>
+        <a href="#examples">例</a>
       </h2>
       <command-line nobuttons>
       { examples.map(command => (

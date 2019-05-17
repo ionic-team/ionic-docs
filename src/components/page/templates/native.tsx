@@ -10,21 +10,21 @@ export default (props) => {
 
   if (installation) {
     headings.push({
-      text: 'Installation',
+      text: 'インストール',
       href: '#installation'
     });
   }
 
   if (platforms) {
     headings.push({
-      text: 'Supported Platforms',
+      text: 'プラットフォームのサポート',
       href: '#platforms'
     });
   }
 
   if (usage) {
     headings.push({
-      text: 'Usage',
+      text: '利用方法',
       href: '#usage'
     });
   }
@@ -70,7 +70,7 @@ const renderInstallation = (cordova: string, npm: string) => {
   return (
     <section>
       <h2 id="installation">
-        <a href="#installation">Installation</a>
+        <a href="#installation">インストール</a>
       </h2>
       <docs-tabs>
         <docs-tab tab="Community">
@@ -99,7 +99,7 @@ const renderPlatforms = (platforms: string[] = []) => {
   return (
     <section>
       <h2 id="platforms">
-        <a href="#platforms">Supported Platforms</a>
+        <a href="#platforms">プラットフォームのサポート</a>
       </h2>
       <ul>
         {platforms.map(platform => (
@@ -118,7 +118,7 @@ const renderUsage = (usage: string) => {
   return (
     <section>
       <h2 id="usage">
-        <a href="#usage">Usage</a>
+        <a href="#usage">利用方法</a>
       </h2>
       <div innerHTML={usage}/>
     </section>
