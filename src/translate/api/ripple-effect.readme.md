@@ -1,4 +1,4 @@
 # ion-ripple-effect
 
-The ripple effect component adds the [Material Design ink ripple interaction effect](https://material.io/develop/web/components/ripples/). This component can be used without a button and can be added to any component.
+ripple effectコンポーネントは、[Material Design ink ripple interaction effect](https://material.io/develop/web/components/ripples/)を追加します。このコンポーネントはButton以外でも使用でき、どのコンポーネントにも追加できます。
 
