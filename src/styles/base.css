@@ -50,6 +50,7 @@ body {
   text-size-adjust: none;
   margin: 0;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html,
@@ -161,10 +162,12 @@ blockquote a {
 
 blockquote > *:first-child {
   margin-top: 0;
+  padding-top: 0;
 }
 
 blockquote > *:last-child {
   margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 blockquote code {
