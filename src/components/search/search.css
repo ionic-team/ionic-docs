@@ -1,4 +1,4 @@
-/* @import '../../vars'; */
+@import './search-defaults.css';
 
 @keyframes ionic-search-scan {
   from {left: 0;}
@@ -220,6 +220,9 @@ ionic-search ul a {
   border-radius: 6px;
   transition: .2s background-color;
   position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 ionic-search ul a:hover,
