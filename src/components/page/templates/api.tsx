@@ -49,7 +49,7 @@ export default (props) => {
 
   if (slots) {
     headings.push({
-      text: 'slot',
+      text: 'slot属性',
       href: '#slots'
     });
   }
@@ -208,7 +208,7 @@ const renderSlots = (slots = []) => {
   return (
     <section>
       <h2 id="slots">
-        <a href="#slots">slot</a>
+        <a href="#slots">slot属性</a>
       </h2>
       <table>
         <thead>
