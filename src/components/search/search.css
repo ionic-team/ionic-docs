@@ -16,12 +16,12 @@ ionic-search {
 }
 
 ionic-search .SearchBtn {
-  transition: .2s opacity, .4s transform cubic-bezier(0.23, 1, 0.32, 1);
+  transition: .2s opacity;
 }
 
 ionic-search .SearchBtn.active {
   cursor: default;
-  opacity: 0;
+  opacity: .7;
   /* transform: scale3d(0, 0, 1); */
 }
 
@@ -31,14 +31,14 @@ ionic-search .SearchBtn__lg {
   padding: 4px;
   display: flex;
   min-width: 180px;
-  padding: 5px 9px;
+  padding: 5px 9px 7px;
   cursor: pointer;
 }
 
 ionic-search .SearchBtn__lg__icon  {
-  font-size: 12px;
-  color: #B2BECD;
-  margin: 3px 6px 0 1px;
+  height: 14px;
+  fill: #B2BECD;
+  margin: 2px 6px 0 1px;
 }
 
 ionic-search .SearchBtn__lg__text {
@@ -63,7 +63,14 @@ ionic-search .SearchBtn__lg__key {
 }
 
 ionic-search .SearchBtn__sm {
-  color: #B2BECD;
+  fill: rgb(115, 132, 154);
+  height:  16px;
+  cursor: pointer;
+  transition: .2s color;
+}
+
+ionic-search .SearchBtn__sm:hover {
+  fill: var(--text-color);
 }
 
 @media (min-width: 992px) {
@@ -111,7 +118,7 @@ ionic-search .search-static {
   position: absolute;
   top: 42px;
   left: 15px;
-  font-size: 20px;
+  height: 20px;
   z-index: 2;
   color: #92A1B3;
   pointer-events: none;
@@ -145,7 +152,7 @@ ionic-search input {
   border: none;
   z-index: 2;
   background: transparent;
-  padding: 14px 30px 14px 41px;
+  padding: 13px 30px 15px 41px;
   font-size: 20px;
   line-height: 24px;
   letter-spacing: -0.02em;
@@ -172,22 +179,33 @@ ionic-search ul {
   margin-bottom: 0;
   text-align: left;
   border-top: 1px solid #E6E7E9;
-  padding: 32px 44px;
+  padding: 20px;
   transition: .5s transform cubic-bezier(0.23, 1, 0.32, 1), .2s opacity;
+}
+
+ionic-search span,
+ionic-search strong,
+ionic-search em,
+ionic-search ul path {
+  transition: .2s color, .2s fill;
 }
 
 ionic-search strong {
   display: block;
-  font-weight: 600;
+  font-weight: 500;
+  color: #1A232F;
+  font-size: 14px;
+  margin-bottom: .4em;
 }
 
 ionic-search span {
-  color: #767d88;
+  color: #B2BECD;
   font-size: 12px;
+  font-weight: 400;
 }
 
 ionic-search span em {
-  color: #727a87;
+  color: #92A1B3;
 }
 
 ionic-search span .no-results {
@@ -195,18 +213,52 @@ ionic-search span .no-results {
   color: #2a2f38;
 }
 
-ionic-search a {
+ionic-search ul a {
   display: inline-block;
-  padding: 8px 40px;
-  font-weight: 600;
-  color: #2a2f38;
+  padding: 10px 20px 10px 40px;
   width: 100%;
-  transition: .2s color, .2s background-color;
+  border-radius: 6px;
+  transition: .2s background-color;
+  position: relative;
 }
 
-ionic-search a:hover {
-  color: #3880ff;
-  background-color: #fafafa;
+ionic-search ul a:hover,
+ionic-search ul a.active {
+  background-color: #F4FAFF;
+}
+
+ionic-search ul a:hover strong,
+ionic-search ul a.active strong {
+  color: #3880FF;
+}
+
+ionic-search ul a:hover span,
+ionic-search ul a.active span {
+  color: var(--accent-color-500);
+}
+
+ionic-search ul a:hover em,
+ionic-search ul a.active em {
+  color: var(--accent-color-300);
+}
+
+ionic-search ul a:hover svg path,
+ionic-search ul a.active svg path {
+  fill: #639CFF;
+}
+
+ionic-search ul a:hover svg path:last-child,
+ionic-search ul a.active svg path:last-child {
+  fill: #97BDFF;
+}
+
+ionic-search ul a svg {
+  position: absolute;
+  left: 12px;
+  top: 11px;
+  height: 14px;
+  width: 16px;
+  display: block;
 }
 
 ionic-search .searching {
@@ -219,27 +271,15 @@ ionic-search .searching {
   animation: ionic-search-scan 1s ease-in-out infinite;
 }
 
-/* ionic-search .search-box.active ul {
-  transform: none;
-  opacity: 1;
-  transition-delay: .2s;
-}
-
-ionic-search .search-box.active input {
-  transform: none;
-  opacity: 1;
-  transition-delay: .1s;
-}
-
-ionic-search .search-box.active .search-static {
-  opacity: 1;
-  transform: none;
-} */
-
 ionic-search .search-box.active .close {
   opacity: 1;
   transform: none;
   transition-delay: .4s;
+}
+
+ionic-search .SearchResults {
+  max-height: calc(100vh - 160px);
+  overflow-y: auto;
 }
 
 ionic-search .backdrop {
@@ -250,7 +290,7 @@ ionic-search .backdrop {
   bottom: 0;
   left: 0;
   opacity: 0;
-  min-height: 100vh;
+  min-height: calc(100vh + 200px);
   pointer-events: none;
   transition: .4s all ease;
 }
@@ -259,7 +299,53 @@ ionic-search .backdrop.active {
   opacity: 1;
   pointer-events: all;
 }
-  
+
+ionic-search .SearchMore__link {
+  color: var(--text-color);
+  padding: 10px 25px;
+  border-top: 1px solid rgba(0,20,56,.06);
+  background: #fafafa;
+  cursor: pointer;
+  width: 100%;
+  font-weight: 600;
+  display: block;
+  border-radius: 0 0 6px 6px;
+  transition: .3s background-color, .3s color;
+}
+
+ionic-search .SearchMore__link svg {
+  fill: var(--text-color);
+  height: 1.2em;
+  vertical-align: -3px;
+  float: right;
+  transform: rotate(90deg);
+  transition: .3s transform ease;
+}
+
+ionic-search .search-box .SearchMore__link:hover {
+  color: var(--accent-color-300);
+  background: #F4FAFF;
+}
+
+ionic-search .search-box .SearchMore__link:hover svg {
+  fill: var(--accent-color);
+}
+
+ionic-search .SearchMore__list {
+  display: none;
+}
+
+ionic-search .SearchMore.active .SearchMore__link {
+  border-radius: 0;
+}
+
+ionic-search .SearchMore.active .SearchMore__link svg {
+  transform: rotate(-90deg);
+}
+
+ionic-search .SearchMore.active .SearchMore__list {
+  display: block;
+}
 
 ionic-search[mobile] {
   display: block;

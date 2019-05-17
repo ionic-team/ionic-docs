@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "@types/prismjs": "^1.9.1",
-    "chokidar": "^2.1.0",
+    "chokidar": "^2.1.6",
     "fast-glob": "^2.2.6",
     "front-matter": "^3.0.2",
     "fs-extra": "^7.0.1",

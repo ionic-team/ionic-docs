@@ -24,7 +24,6 @@ export class DocsMenu {
           <Logo class="MenuLogo"/>
         </stencil-route-link>
       </header>,
-      <docs-search/>,
       <section class="MenuControls">
         <FrameworkSelect/>
       </section>,
