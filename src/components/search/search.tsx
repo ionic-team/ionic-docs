@@ -58,8 +58,8 @@ export class IonicSearch {
   }
 
   @Listen('window:keyup')
-  handleScroll(ev) {
-    if (ev.keyCode === 191) {
+  handleKeyUp(ev) {
+    if (ev.key === '/' || ev.code === 'Slash') {
       this.activate();
     }
   }
@@ -151,6 +151,8 @@ export class IonicSearch {
   }
 
   keyNavigation(ev) {
+    if (!this.results) return;
+
     if (ev.keyCode === 38) {
       ev.preventDefault();
       if (this.higlightIndex === 0) {
