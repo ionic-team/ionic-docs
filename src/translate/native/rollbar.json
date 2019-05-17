@@ -1,7 +1,7 @@
 {
   "packageName": "@ionic-native/rollbar",
   "displayName": "Rollbar",
-  "description": "\nThis plugin adds Rollbar App monitoring to your application\n",
+  "description": "\nThis plugin adds [Rollbar](https://rollbar.com/) App monitoring to your application\n",
   "usage": "\n```typescript\nimport { Rollbar } from '@ionic-native/rollbar/ngx';\n\nconstructor(private rollbar: Rollbar) { }\n\n...\n\nthis.rollbar.init();\n\n```\n",
   "platforms": [
     "Android",

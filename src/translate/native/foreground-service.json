@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/foreground-service",
+  "displayName": "Foreground Service",
+  "description": "\nThis plugin allows for android devices to continue running services in the background, using a\nforeground ongoing notification. This is targeted towards use with plugins such as\n'cordova-geolocation' that will not run while the app is in the background on android API 26+.\n\nFor android API 28+, the following xml snippet should be inserted into ```config.xml```:\n\n```\n...\n<platform name=\"android\">\n  <config-file parent=\"/*\" target=\"AndroidManifest.xml\">\n    <uses-permission android:name=\"android.permission.FOREGROUND_SERVICE\" />\n  </config-file>\n  ...\n```",
+  "usage": "\n```typescript\nimport { ForegroundService } from '@ionic-native/foreground-service/ngx';\n\n\nconstructor(public foregroundService: ForegroundService) { }\n\n...\n\nstartService() {\n // Notification importance is optional, the default is 1 - Low (no sound or vibration)\n this.foregroundService.start('GPS Running', 'Background Service', 'drawable/fsicon');\n}\n\nstopService() {\n // Disable the foreground service\n this.foregroundService.stop();\n}\n\n```\n",
+  "platforms": [
+    "Android"
+  ],
+  "repo": "https://github.com/DavidBriglio/cordova-plugin-foreground-service",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-foreground-service"
+  }
+}
