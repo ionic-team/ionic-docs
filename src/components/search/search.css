@@ -85,6 +85,10 @@ ionic-search .SearchBtn__sm:hover {
   }
 }
 
+ionic-search .slot.hidden {
+  display: none;
+}
+
 ionic-search .search-box {
   background: white;
   border-radius: 10px;
