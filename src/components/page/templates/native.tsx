@@ -17,7 +17,7 @@ export default (props) => {
 
   if (platforms) {
     headings.push({
-      text: 'プラットフォームのサポート',
+      text: 'サポートしているプラットフォーム',
       href: '#platforms'
     });
   }
@@ -99,7 +99,7 @@ const renderPlatforms = (platforms: string[] = []) => {
   return (
     <section>
       <h2 id="platforms">
-        <a href="#platforms">プラットフォームのサポート</a>
+        <a href="#platforms">サポートしているプラットフォーム</a>
       </h2>
       <ul>
         {platforms.map(platform => (
