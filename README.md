@@ -12,9 +12,7 @@ Ionic v4+ の公式ドキュメントを日本語に翻訳するためのレポ�
 ```shell
 $ npm start
 ```
-立ち上げが完了すると、`localhost:3333/docs/` が自動的に立ち上がります。
-
-なお、はじめてのビルド時は以下を実行してください。
+立ち上げが完了すると、`localhost:3333/docs/` が自動的に立ち上がります。なお、はじめてのビルド時は以下を実行してください。
 
 ```shell
 $ npm install
@@ -29,7 +27,7 @@ $ npm run prebuild
 なお、 `Components`、`API`、`CLI`は特別な処理が入るため、翻訳するファイルは `src/transalate/` にそれぞれ格納されています。
 ファイル名の末尾が `readme.md` となっているファイルを翻訳ください。
 
-なお、`Components`、`API`、`CLI` については翻訳をローカルプレビューに適用するには以下コマンドを実行する必要があります。
+`Components`、`API`、`CLI` については翻訳をローカルプレビューに適用するには以下コマンドを実行する必要があります。
 
 ```bash
 $ npm run translate
@@ -54,7 +52,7 @@ $ npm run translate
 ### コントリビューションのお願い
 翻訳プロジェクトは規模が大きく、多くの方々の協力なくては成立しません。ぜひ皆さんのコントリビューションをお待ちしております。また、翻訳作業についての議論はIonic Japan slackの `#translation` チャンネルで行っておりますのでぜひご参加ください。
 
-[Ionicの知見を共有するためのslackのオープンチャンネル](https://ionic-jp.herokuapp.com)
+[Ionicの知見を共有するためのslackのオープンチャンネル Ionic Japan Users Group](https://ionic-jp.herokuapp.com)
 
 ### ワークフロー
 #### 0. 本レポジトリをForkする
