@@ -63,10 +63,10 @@ CLI flagsは、CLIコマンドの動作を変更するグローバルオプシ�
 
 CLIは、ビルドの前後など、特定のイベント中にスクリプトを実行できます。CLIにフックするために、以下の [npm scripts](https://docs.npmjs.com/misc/scripts) を `package.json`: ファイルで使用できます。:
 
-* `ionic:serve:before`: executed before the dev server starts
-* `ionic:serve:after`: executed after the dev server is terminated
-* `ionic:build:before`: executed before a web asset build begins
-* `ionic:build:after`: executed after a web asset build finishes
+* `ionic:serve:before`: dev server が start される前に実行されます
+* `ionic:serve:after`: dev server が終了される前に実行されます
+* `ionic:build:before`: web assetの構築がはじまる前に実行されます
+* `ionic:build:after`: web assetの構築が終了して実行されます。
 
 Hooksは `ionic.config.json` で定義することもできます。プロジェクト内でHooksオブジェクトを定義します。各キーはフックの名前(先頭に`ionic:`を付けない)で、値はJavaScriptファイルへのパスまたはパスの配列です。
 
@@ -78,9 +78,9 @@ Hooksは `ionic.config.json` で定義することもできます。プロジェ
 },
 ```
 
-JavaScript hook files should export a single function, which is passed a single argument (`ctx`) whenever the hook executes.
+JavaScript Hook ファイルは、フックが実行されるたびに単一の引数(`ctx`)が渡される単一の関数をエクスポートする必要があります。
 
-The argument is the context given to the hook file, which differs from hook to hook and with different invocations.
+引数は、Hook ファイルに指定されたコンテキストであり、Hook ごと、および呼び出しごとに異なります。
 
 `./scripts/build-before.js`:
 
@@ -94,11 +94,11 @@ module.exports = function(ctx) {
 
 <small>_Available in CLI 4.3.0+_</small>
 
-The Ionic CLI supports a multi-app configuration setup, which involves multiple Ionic apps and shared code within a single repository, or [monorepo](/docs/faq/glossary#monorepo).
+Ionic CLIは multi-app 構成セットアップをサポートしており、複数のIonicアプリケーションと共有コードが単一のリポジトリ [monorepo](/docs/faq/glossary#monorepo) 内に存在することができます。
 
 ### セットアップステップ
 
-Multi-app projects are a new feature in the Ionic CLI. The setup is still partly manual.
+Multi-app projects はIonic CLIの新機能ですが、一部の設定はまだ手動で行う必要があります。
 
 1. Create a directory and initialize a monorepo (see [Project Structure](#project-structure) for full details).
 1. Create an `ionic.config.json` file at the root of the repository with the following contents (see [Config File](#config-file) for full details):
