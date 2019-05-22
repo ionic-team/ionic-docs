@@ -13,12 +13,23 @@ export class DocsRoot {
   @State() isMenuToggled = false;
 
   setHistory = ({ history }: { history: RouterHistory }) => {
+
     if (!this.history) {
       this.history = history;
       this.history.listen((location: LocationSegments) => {
         (window as any).gtag('config', 'UA-73373181-13', { 'page_path': location.pathname + location.search });
+        (window as any).gtag('config', 'UA-44023830-1', { 'page_path': location.pathname + location.search });
       });
     }
+
+    document.querySelectorAll('head .url').forEach(el => {
+      if (el['href']) {
+        el['href'] = el['href'].split('\/docs\/')[0] + '\/docs\/' + location.pathname.split('\/docs\/')[1];
+      }
+      if (el['content']) {
+        el['content'] = el['content'].split('\/docs\/')[0] + '\/docs\/' + location.pathname.split('\/docs\/')[1];
+      }
+    });
   }
 
   @Watch('isMenuToggled')

@@ -1,5 +1,5 @@
 import { Component, Listen, Prop, State } from '@stencil/core';
-import { Book, Checkmark, Logo } from '../../icons';
+import { Book, Checkmark, Logo, Outbound, Translation } from '../../icons';
 
 @Component({
   tag: 'docs-header',
@@ -143,7 +143,23 @@ export class DocsHeader {
               <a href="https://ionicframework.com/advisory" target="_blank">Enterprise Advisory</a>
             </section>
           </docs-dropdown>
+          <a class="outbound" href="https://github.com/ionic-jp/ionic-docs" target="_blank">翻訳に協力する <Outbound/></a>
+          <docs-dropdown icon={Translation} align="right">
+            <section>
+              <a href="https://ionicframework.com/docs/">English</a>
+              <a href="https://ionicframework.com/jp/docs/" class="link-active">
+                日本語
+                <svg viewBox="0 0 512 512" width="14">
+                  <path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"></path>
+                </svg>
+              </a>
+            </section>
+            <section>
+              <a href="https://ionicframework.com/translate" target="_blank">Translate</a>
+            </section>
+          </docs-dropdown>
           <a class="outbound" href="https://github.com/ionic-team/ionic" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
+
         </nav>
       </header>
     );
