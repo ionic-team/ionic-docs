@@ -6,13 +6,13 @@
 
 ## ファイル
 
-Configuration values are stored in JSON files. The Ionic CLI maintains a global configuration file, usually located at `~/.ionic/config.json`, and project configuration files, usually at the project's root directory as `ionic.config.json`.
+設定された値はJSONファイルに格納されます。Ionic CLIは、通常`~/.ionic/config.json`にグローバル設定ファイルを設定します。通常はプロジェクトのルートディレクトリに `ionic.config.json` という名前で保存されます。
 
-The CLI provides commands for setting and printing config values from project config files and the global CLI config file. See `ionic config --help` or see the documentation for usage of [`ionic config get`](/docs/cli/commands/config-get) and [`ionic config set`](/docs/cli/commands/config-set).
+CLIには、プロジェクト設定ファイルおよびグローバルCLI設定ファイルから設定値を設定およびprintfするためのコマンドが用意されています。[`ionic config get`](/docs/cli/commands/config-get) と [`ionic config set`](/docs/cli/commands/config-set) の使い方については、`ionic config--help`を参照してください。
 
 ### プロジェクト設定ファイル
 
-Each Ionic project has a project configuration file, usually at the project's root directory. The following is an annotated `ionic.config.json` file.
+各Ionicプロジェクトには、通常はプロジェクトのルートディレクトリに、プロジェクト設定ファイルがあります。以下は注釈付きの `ionic.config.json` です。
 
 ```json
 {
@@ -43,7 +43,7 @@ Each Ionic project has a project configuration file, usually at the project's ro
 
 ## 環境変数
 
-The CLI will look for the following environment variables:
+CLIは、次の環境変数を検索します:
 
 * `IONIC_CONFIG_DIRECTORY`: The directory of the global CLI config. Defaults to `~/.ionic`.
 * `IONIC_HTTP_PROXY`: Set a URL for proxying all CLI requests through. See [Using a Proxy](./using-a-proxy).
@@ -51,7 +51,7 @@ The CLI will look for the following environment variables:
 
 ## Flags
 
-CLI flags are global options that alter the behavior of a CLI command.
+CLI flagsは、CLIコマンドの動作を変更するグローバルオプションです。
 
 * `--help`: Instead of running the command, view its help page.
 * `--verbose`: Show all log messages for debugging purposes.
@@ -61,16 +61,16 @@ CLI flags are global options that alter the behavior of a CLI command.
 
 ## Hooks
 
-The CLI can run scripts during certain events, such as before and after builds. To hook into the CLI, the following [npm scripts](https://docs.npmjs.com/misc/scripts) can be used in `package.json`:
+CLIは、ビルドの前後など、特定のイベント中にスクリプトを実行できます。CLIにフックするために、以下の [npm scripts](https://docs.npmjs.com/misc/scripts) を `package.json`: ファイルで使用できます。:
 
 * `ionic:serve:before`: executed before the dev server starts
 * `ionic:serve:after`: executed after the dev server is terminated
 * `ionic:build:before`: executed before a web asset build begins
 * `ionic:build:after`: executed after a web asset build finishes
 
-Hooks can also be defined in `ionic.config.json`. Define a `hooks` object within the project, where each key is the name of the hook (without the `ionic:` prefix), and the value is a path to a JavaScript file or an array of paths.
+Hooksは `ionic.config.json` で定義することもできます。プロジェクト内でHooksオブジェクトを定義します。各キーはフックの名前(先頭に`ionic:`を付けない)で、値はJavaScriptファイルへのパスまたはパスの配列です。
 
-In the following example, the file is imported and run during the `ionic:build:before` hook.
+次の例では、ファイルは `ionic:build:before` フックでインポートされ、実行されます。
 
 ```json
 "hooks": {
