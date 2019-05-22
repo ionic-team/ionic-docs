@@ -16,12 +16,12 @@ Androidアプリを開発するためには、追加の環境設定が必要で�
 ネイティブAndroidアプリは<a href="https://java.com/en/" target="_blank">Java</a>でコンパイルされています。<a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank">ダウンロードページ</a>からJDK 8をダウンロードしてください。
 
 <blockquote>
-  <p>Java 11はまだ新しく、Cordovaではうまく動きません。JDK8をご利用ください。</p>
+  <p>Cordova は最新のJavaでは動きません。Androidアプリをビルドするために、JDK8をインストールする必要があります。</p>
 </blockquote>
 
 ## Gradle
 
-<a href="https://gradle.org/" target="_blank">Gradle</a>はAndroidアプリで使用するビルドツールで個別にインストールすることができます。詳しくは<a href="https://gradle.org/install/" target="_blank">インストールページ</a>をご覧ください。
+<a href="https://gradle.org/" target="_blank">Gradle</a>はAndroidアプリで使用するビルドツールで個別にインストールしなければなりません。詳しくは<a href="https://gradle.org/install/" target="_blank">インストールページ</a>をご覧ください。
 
 ## Android Studio
 
@@ -39,9 +39,14 @@ Android Studioをインストールしたら起動します。IDEは、Android S
 
 ![Android Studio SDK Setup](/docs/assets/img/installation/android-studio-sdk-setup.png)
 
-Android SDKをインストールしたら、Android Studioを終了できます。
+By default, the latest stable SDK Platform is installed, which includes a collection of packages required to target that version of Android.
 
-なお、Android SDKは、Android Studioの**Configure** &raquo; **SDK Manager**で管理することができます。
+<blockquote>
+    📝 <strong>Note</strong>: To install system images and other minor SDK platform packages, you may need to ensure <strong>Show Package Details</strong> is checked at the bottom of the SDK Manager.
+    <img alt="Android Studio SDK Manager" src="/docs/assets/img/installation/android-studio-sdk.png" />
+</blockquote>
+
+For future reference, the Android SDK can be managed with Android Studio in the **Configure** &raquo; **SDK Manager** menu of the Android Studio welcome screen or **Tools** &raquo; **SDK Manager** inside Android projects.
 
 ### コマンドラインツールの設定
 
@@ -69,23 +74,23 @@ Android SDKには<a href="https://developer.android.com/studio/command-line/" ta
    </command-line>
 
    <blockquote>
-     <p>`apksigner`と`zipalign`のために, `$ANDROID_SDK_ROOT/build-tools/<version>`は必ず`PATH`に追加する必要があります。</p>
+     <p><code>apksigner</code>と<code>zipalign</code>のために, <code>$ANDROID_SDK_ROOT/build-tools/<version></code>は必ず<code>PATH</code>に追加する必要があります。</p>
    </blockquote>
 
 ### Android仮想デバイスの作成
 
 Android仮想デバイス（AVD）は、AndroidエミュレータがAndroid OSを実行するために利用する設計図です。以下のドキュメントはAndroidエミュレータをセットアップするための簡単な方法です。詳細な手順と情報は、<a href="https://developer.android.com/studio/run/managing-avds" target="_blank">Android のドキュメント</a>を参照ください。
 
-AVDはAVD Managerで管理されます。AVD Managerは、Androidのプロジェクト内の**Tools** &raquo; **AVD Manager**からアクセスしなければいけません。メインメニューから**Tools**メニューにアクセスできない場合があります。すべてのメニューにアクセスするためのAndroidプロジェクトを作成します。
+AVDs are managed with the AVD Manager. In the Android Studio welcome screen, click **Configure** &raquo; **AVD Manager**. The AVD Manager can also be opened inside Android projects in the **Tools** &raquo; **AVD Manager** menu.
 
 ![AVD Setup](/docs/assets/img/installation/android-studio-avd-setup.png)
 
-**Create Virtual Device**をクリックして、適切なデバイス定義を選択します。よくわからない場合は、**Pixel 2 XL**を選択してください。次に、適切なシステムイメージを選択してください。よくわからない場合は、最新のバージョンを選択してください。Androidのバージョンについては<a href="https://en.wikipedia.org/wiki/Android_version_history" target="_blank">Android version history</a>をご確認ください。
+Click **Create Virtual Device** and select a suitable device definition. If unsure, choose **Pixel 2**. Then, select a suitable system image. If unsure, choose **Pie** (API 28) with Google Play services. See <a href="https://en.wikipedia.org/wiki/Android_version_history" target="_blank">Android version history</a> for information on Android versions.
 
 AVDが作成されたら、AndroidエミュレータでAVDを起動します。エミュレータを実行し続けることは、Android用のIonicアプリケーションを開発しながら検出を確実にするための最良の方法です。
 
-<figure class="center" style="width: 300px">
-    ![Android Emulator Booting](/docs/assets/img/installation/android-emulator-booting.png)
+<figure style="width: 300px; margin: 0 auto;">
+    <img alt="Android Emulator Booting" src="/docs/assets/img/installation/android-emulator-booting.png" />
 </figure>
 
 ### Androidデバイスを設定する

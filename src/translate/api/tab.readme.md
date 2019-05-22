@@ -1,6 +1,6 @@
 # ion-tab
 
-The tab component is a child component of [tabs](../tabs). Each tab can contain a top level navigation stack for an app or a single view. An app can have many tabs, all with their own independent navigation.
+Tabコンポーネントは、[tabs](../tabs)の子コンポーネントです。各Tabには、アプリケーションまたは単一のビューの最上位レベルのナビゲーションスタックを含めることができます。アプリには多くのTabがあり、それぞれに独立したナビゲーションがあります。
 
-See the [tabs documentation](../tabs/) for more details on configuring tabs.
+Tabの設定の詳細については、[tabs documentation](../tabs/)を参照してください。
 

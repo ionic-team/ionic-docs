@@ -1,4 +1,4 @@
 # ion-toast-controller
 
-ToastController is a component use to create Toast components. Please see the docs for [Toast](../toast).
+ToastControllerは、Toastコンポーネントの作成に使用するコンポーネントです。[Toast](../toast)のドキュメントを参照してください。
 

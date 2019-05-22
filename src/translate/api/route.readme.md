@@ -1,5 +1,5 @@
 # ion-route
 
-Router is a component that can take a component, and render it when the Browser URl matches the url prop
+Routerはコンポーネントを表示できるコンポーネントで、ブラウザのURLがurl propと一致したときにレンダリングします。
 
-> Note: this is only meant for vanilla JavaScript project. For Angular projects, use `ion-router-outlet` and the Angular router.
+> Note: これは、単純なJavaScriptプロジェクトのみを対象としています。Angularプロジェクトの場合は、 `ion-router-outlet` とAngularルーターを使用します。

@@ -14,42 +14,42 @@ export default (props) => {
 
   if (usage) {
     headings.push({
-      text: 'Usage',
+      text: '利用方法',
       href: '#usage'
     });
   }
 
   if (properties) {
     headings.push({
-      text: 'Properties',
+      text: 'プロパティ',
       href: '#properties'
     });
   }
 
   if (events) {
     headings.push({
-      text: 'Events',
+      text: 'イベント',
       href: '#events'
     });
   }
 
   if (methods) {
     headings.push({
-      text: 'Methods',
+      text: 'メソッド',
       href: '#methods'
     });
   }
 
   if (customProps) {
     headings.push({
-      text: 'CSS Custom Properties',
+      text: 'CSSカスタムプロパティ',
       href: '#css-custom-properties'
     });
   }
 
   if (slots) {
     headings.push({
-      text: 'Slots',
+      text: 'slot属性',
       href: '#slots'
     });
   }
@@ -81,7 +81,7 @@ const renderUsage = (usage = {}, path: string) => {
   return (
     <section>
       <h2 id="usage">
-        <a href="#usage">Usage</a>
+        <a href="#usage">利用方法</a>
       </h2>
       <docs-tabs key={path}>
           {keys.map(key =>
@@ -104,7 +104,7 @@ const renderProperties = (properties = []) => {
   return (
     <section>
       <h2 id="properties">
-        <a href="#properties">Properties</a>
+        <a href="#properties">プロパティ</a>
       </h2>
       <docs-reference
         data={properties}
@@ -127,7 +127,7 @@ const renderEvents = (events = []) => {
   return (
     <section>
       <h2 id="events">
-        <a href="#events">Events</a>
+        <a href="#events">イベント</a>
       </h2>
       <table>
         <thead>
@@ -157,7 +157,7 @@ const renderMethods = (methods = []) => {
   return (
     <section>
       <h2 id="methods">
-        <a href="#methods">Methods</a>
+        <a href="#methods">メソッド</a>
       </h2>
       <docs-reference
         data={methods}
@@ -178,7 +178,7 @@ const renderCustomProps = (customProps = []) => {
   return (
     <section>
       <h2 id="css-custom-properties">
-        <a href="#css-custom-properties">CSS Custom Properties</a>
+        <a href="#css-custom-properties">CSSカスタムプロパティ</a>
       </h2>
       <table>
         <thead>
@@ -208,7 +208,7 @@ const renderSlots = (slots = []) => {
   return (
     <section>
       <h2 id="slots">
-        <a href="#slots">Slots</a>
+        <a href="#slots">slot属性</a>
       </h2>
       <table>
         <thead>

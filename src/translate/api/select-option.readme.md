@@ -1,4 +1,4 @@
 # ion-select-option
 
-SelectOption is a component that is a child element of Select. For more information, see the [Select docs](../select).
+SelectOptionは、Selectの子要素であるコンポーネントです。詳細については、[Select docs](../select)を参照してください。
 

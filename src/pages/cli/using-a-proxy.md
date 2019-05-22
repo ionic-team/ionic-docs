@@ -2,7 +2,7 @@
 
 ---
 
-# Using a Proxy
+# Proxyの利用
 
 Proxy support is built-in to the Ionic CLI. Proxy settings can be configured via the config file or an environment variable.
 
@@ -20,7 +20,7 @@ $ export HTTPS_PROXY="https://proxy.example.com:8888" # also used by npm
 $ export IONIC_HTTP_PROXY="http://proxy.example.com:8888"
 ```
 
-### Other CLIs
+### 他のCLI
 
 Each CLI that you use must be configured separately to proxy network requests.
 
@@ -36,7 +36,7 @@ $ npm config set proxy http://proxy.company.com:8888
 $ git config --global http.proxy http://proxy.example.com:8888
 ```
 
-### SSL Configuration
+### SSLの設定
 
 The Ionic CLI can be configured to use various SSL settings for HTTP requests.
 

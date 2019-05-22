@@ -1,4 +1,4 @@
 # ion-tab-bar
 
-The tab bar is a UI component that contains a set of [tab buttons](../tab-button). A tab bar must be provided inside of [tabs](../tabs) to communicate with each [tab](../tab).
+TabBarは、[tab buttons](../tab-button)のセットを含むUIコンポーネントです。各[tab](../tab)と通信するには、[tabs](../tabs)の内部にTabBarを設定する必要があります。
 

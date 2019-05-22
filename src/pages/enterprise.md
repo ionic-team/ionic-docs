@@ -119,7 +119,7 @@ repo. Now you should be able to install Ionic Enterprise plugins that you have a
 docs page.
 
 <command-line>
-<command-prompt>ionic cordova add plugin @ionic-enterprise/plugin-name</command-prompt>
+<command-prompt>ionic cordova plugin add @ionic-enterprise/plugin-name</command-prompt>
 </command-line>
 
 ## Plugin List
@@ -132,7 +132,7 @@ docs page.
 - [Clipboard](/docs/enterprise/clipboard)
 - [Device](/docs/enterprise/device)
 - [Dialogs](/docs/enterprise/dialogs)
-- [Email Composer](/docs/enterprise/emailcomposer)
+- [Email Composer](/docs/enterprise/email-composer)
 - [Filesystem](/docs/enterprise/filesystem)
 - [Geolocation](/docs/enterprise/geolocation)
 - [Identity Vault](/docs/enterprise/identity-vault)

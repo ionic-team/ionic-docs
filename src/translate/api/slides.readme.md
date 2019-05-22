@@ -1,11 +1,11 @@
 # ion-slides
 
-The Slides component is a multi-section container. Each section can be swiped
-or dragged between. It contains any number of [Slide](../slide) components.
+Slidesコンポーネントは複数セクションのコンテナです。
+各セクション間をスワイプまたはドラッグできます。これには任意の数の[Slide](../slide)コンポーネントが含まれます。
 
 
-Adopted from Swiper.js:
-The most modern mobile touch slider and framework with hardware accelerated transitions.
+Swiper.jsを採用しています:
+ハードウェアアクセラレートされたトランジションを備えた最新のモバイルタッチスライダとフレームワークです。
 
 http://www.idangero.us/swiper/
 
@@ -15,9 +15,9 @@ http://www.idangero.us/
 
 Licensed under MIT
 
-### Custom Animations
+### カスタムアニメーション
 
-By default, Ionic slides use the built-in `slide` animation effect. Custom animations can be provided via the `options` property. Examples of other animations can be found below.
+デフォルトでは、Ionic slidesは `slide` のスライドアニメーション効果を使用します。カスタムアニメーションは、`options` プロパティを使用して提供できます。他のアニメーションの例を以下に示します。
 
 
 #### Coverflow

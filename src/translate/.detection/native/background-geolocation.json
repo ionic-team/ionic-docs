@@ -9,6 +9,6 @@
   ],
   "repo": "https://github.com/mauron85/cordova-plugin-background-geolocation",
   "cordovaPlugin": {
-    "name": "cordova-plugin-mauron85-background-geolocation@alpha"
+    "name": "@mauron85/cordova-plugin-background-geolocation"
   }
 }

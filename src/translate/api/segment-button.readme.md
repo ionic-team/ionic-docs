@@ -1,4 +1,4 @@
 # ion-segment-button
 
-Segment buttons are groups of related buttons inside of a [Segment](../segment). They are displayed in a horizontal row. A segment button can be checked by default by adding the `checked` attribute or by setting the `value` of the segment to the `value` of the segment button. Only one segment button should be selected at a time.
+Segment buttonsは、[Segment](../segment) 内の関連するボタングループです。これらは水平行に表示されます。segment buttonをデフォルトでチェックするには、`checked` 属性を追加するか、セグメントの `value` をセグメントボタンの `value` に設定します。一度に選択できるsegment buttonは1つだけです。
 

@@ -1,14 +1,14 @@
 # ion-loading
 
-An overlay that can be used to indicate activity while blocking user interaction. The loading indicator appears on top of the app's content, and can be dismissed by the app to resume user interaction with the app. It includes an optional backdrop, which can be disabled by setting `showBackdrop: false` upon creation.
+ユーザインタラクションをブロックしながらアクティビティを示すためのオーバーレイです。ローディング・インジケータはアプリのコンテンツの上に表示され、ユーザーの操作を再開するために消すことができます。オプションでbackdropが含まれており、`showBackdrop: false` で無効にすることができます。
 
 
 ### Creating
 
-Loading indicators can be created using a [Loading Controller](../loading-controller). They can be customized by passing loading options in the loading controller's create method. The spinner name should be passed in the `spinner` property, and any optional HTML can be passed in the `content` property. If a value is not passed to `spinner` the loading indicator will use the spinner specified by the platform.
+ローディング・インジケータは、 [Loading Controller](../loading-controller) を使用して作成できます。これらは、Loading Controllersの作成メソッドにloadingのオプションを渡すことでカスタマイズできます。スピナー名は `spinner` プロパティに渡す必要があり、オプションのHTMLは `content` プロパティに渡すことができます。スピナーに値が渡されない場合、プラットフォームで指定されたスピナーがローディングインジケータで使用されます。
 
 
 ### Dismissing
 
-The loading indicator can be dismissed automatically after a specific amount of time by passing the number of milliseconds to display it in the `duration` of the loading options. To dismiss the loading indicator after creation, call the `dismiss()` method on the loading instance. The `onDidDismiss` function can be called to perform an action after the loading indicator is dismissed.
+ローディング・インジケータは、ローディング・オプションの `duration` にミリ秒単位で設定することによって、一定時間後に自動的に閉じることができます。作成後にローディング・インジケータを終了するには、ロードインスタンスで `dismiss()` メソッドを呼び出します。`onDidDismiss` 関数は、ローディングインジケータが終了した後、アクションを実行するために呼び出すことができます。
 

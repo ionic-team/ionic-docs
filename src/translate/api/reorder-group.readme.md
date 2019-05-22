@@ -1,8 +1,8 @@
 # ion-reorder-group
 
-The reorder group is a wrapper component for items with the `ion-reorder` component, Check [Reorder documentation](../reorder/) for further information about the anchor component that is used to drag items within the `ion-reorder-group` list.
+reorder groupは、`ion-reorder`コンポーネントのラッパーコンポーネントです。`ion-reorder-group` のList内でItemをドラッグするために使用するアンカーコンポーネントの詳細については、 [Reorder documentation](../reorder/) を参照してください。
 
-Once the user drags an item and drops it in a new position, the `ionItemReorder` event is dispatched. A handler for it must be implemented by the developer to commit changes.
+ユーザがアイテムをドラッグして新しい位置にドロップすると、 `ionItemReorder` イベントが発生します。変更をコミットするには、開発者がhandlerを実装する必要があります。
 
 ```js
 reorderGroup.addEventListener('ionItemReorder', (ev) => {
@@ -13,9 +13,9 @@ reorderGroup.addEventListener('ionItemReorder', (ev) => {
 });
 ```
 
-The event's detail includes all the relevant information about the reorder operation, including the `from` and `to` indexes. In the context of reordering, an item moves `from` index X `to` index Y.
+イベントの詳細には、 `from` インデックスと `to` インデックスを含む、reorderの操作に関するすべての関連情報が含まれます。並べ替えのコンテキストでは、Itemは `from` インデックスX `to`インデックスYに移動します。
 
-For example, in this list we move the item at index `0` to the index `3`:
+たとえば、次のリストでは、インデックス0の項目をインデックス3に移動します:
 
 ```
 BEFORE | AFTER
@@ -33,10 +33,10 @@ detail: {
 }
 ```
 
-Once the data structure has been updated to reflect the reorder change, the `complete()` method must be called.
-This method finishes the reorder operation and resets all the CSS transforms applied by the `ion-reorder-group` component.
+reorderの変更を反映するようにデータ構造が更新されたら、`complete()` メソッドを呼び出さなければならなりません。
+このメソッドは、並べ替え操作を終了し、 `ion-reorder-group` コンポーネントによって適用されたすべてのCSS変換をリセットします。
 
-Fortunately this `complete()` method can optionally accept an array as input and it will return a reordered copy, based in `detail.from` and `detail.to`.
+幸いなことに、この`complete()`メソッドはオプションとして配列を入力として受け入れることができ、その場合にはに基づいて、`detail.from` と `detail.to` に基づいて、順序を変更したコピーを返します。
 
 ```ts
 this.dataList = reorderGroup.complete(this.dataList);

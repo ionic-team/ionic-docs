@@ -4,9 +4,10 @@ const items = {
   '紹介': {
     'Ionic Frameworkとは': '/docs/intro',
     'コアコンセプト': '/docs/intro/concepts',
+    'Build your First App': '/docs/developer-resources/guides/first-app-v4/intro',
     'ブラウザサポート': '/docs/intro/browser-support',
     'バージョニング': '/docs/intro/versioning',
-    'Release Notes': '/docs/release-notes',
+    'リリースノート': '/docs/release-notes',
     'サポート': '/docs/intro/support'
   },
   'インストール': {

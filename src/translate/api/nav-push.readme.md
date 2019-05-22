@@ -1,5 +1,5 @@
 # ion-nav-push
 
-`NavPush` is a component used to navigate to the specified component.
-It is the element form of `NavController.push()`
+`NavPush` は指定したコンポーネントへの移動に使用するコンポーネントです。
+`NavController.push()` として扱います。
 

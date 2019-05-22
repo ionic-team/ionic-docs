@@ -1,4 +1,4 @@
 # ion-nav-pop
 
-`NavPop` is a component used the automatically go back in navigation. It is the element from of `NavController.pop()`
+`NavPop` は、ナビゲーションで自動的に戻るために使用されるコンポーネントです。これは `NavController.pop()` で利用します。
 

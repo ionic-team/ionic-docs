@@ -1,5 +1,5 @@
 ---
-title: EmailComposer
+title: Email Composer
 template: enterprise-plugin
 version: 0.9.2
 minor: 0.9.X

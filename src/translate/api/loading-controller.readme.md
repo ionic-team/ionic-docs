@@ -1,6 +1,6 @@
 # ion-loading-controller
 
-Loading controllers programmatically control the loading component. Loadings can be created and dismissed from the loading controller. View the [Loading](../loading) documentation for a full list of options to pass upon creation.
+Loading controllersは、Loadingコンポーネントをプログラムで制御します。Loadingは、loading controllerから作成および削除できます。作成時に渡すオプションの完全なリストについては、[Loading](../loading)のマニュアルを参照してください。
 
 
 

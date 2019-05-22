@@ -1,6 +1,6 @@
 # ion-item-group
 
-Item groups are containers that organize similar items together. They can contain item dividers to divide the items into multiple sections.
+Item groupsは、類似したItemをまとめて整理するコンテナです。Itemを複数のセクションに分割するitem dividersを含めることができます。
 
 
 

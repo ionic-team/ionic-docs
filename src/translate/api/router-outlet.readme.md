@@ -1,28 +1,28 @@
 # ion-router-outlet
 
-Router Outlet is a component used in routing within an Angular app.
-Router Outlet behaves in a similar way as Angular's built-in Router Outlet component, but contains the logic for providing a stacked navigation, and animating views in and out.
+Router OutletはAngularアプリ内のルーティングに使われるコンポーネントです。
+Router OutletはAngularに組み込まれているRouter Outletコンポーネントと同じように動作しますが、スタックナビゲーションを提供したり、ビューをアニメーションしたりするロジックが含まれています。
 
 
-> Note: this is only meant for Angular projects. For vanilla JavaScript, use `ion-router` and `ion-route` instead.
+> Note: これはAngularプロジェクト専用です。JavaScript標準の場合は、代わりに `ion-router` と `ion-route` を使用します。
 
-While Router Outlet has methods for navigating around, it's recommended to use the navigation methods in Angular's router.
-
-
-### Life Cycle Hooks
-
-Routes rendered in a Router Outlet have access to specific Ionic events that are wired up to animations
+Router Outletにはナビゲートする方法がありますが、Angularルータのナビゲーション方法を使用することをお勧めします。
 
 
-| Event Name         | Trigger                                                          |
+### ライフサイクルHook
+
+Router OutletでRoutesがレンダリングされた時、アニメーションに関連付けられた特定のIonicイベントにアクセスできます。
+
+
+| Event Name         | Description                                                          |
 |--------------------|------------------------------------------------------------------|
-| `ionViewWillEnter` | Fired when the component being routed to is about to animate in. |
-| `ionViewDidEnter`  | Fired when the component being routed to has animated in.        |
-| `ionViewWillLeave` | Fired when the component being routed from is about to animate.  |
-| `ionViewDidLeave`  | Fired when the component being routed from has animated.         |
+| `ionViewWillEnter` | コンポーネントが表示されるアニメーションがはじまる時に発火します。 |
+| `ionViewDidEnter`  | コンポーネントが表示されるアニメーションが終了した時に発火します。 |
+| `ionViewWillLeave` | コンポーネントを離脱するアニメーションがはじまる時に発火します。  |
+| `ionViewDidLeave`  | コンポーネントを離脱するアニメーションが終了した時に発火します。 |
 
 
-These event tie into Ionic's animation system and can be used to coordinate parts of your app when a Components is done with it's animation. These events are not a replacement for Angular's own event system, but an addition.
+これらのイベントはIonicのアニメーションシステムと連携し、コンポーネントがアニメーションを完成させたときにアプリの挙動を調整するのに使用できる。これらのイベントはAngular独自のイベントシステムに代わるものではなく、追加されたものです。
 
-For handling Router Guards, the older `ionViewCanEnter` and `ionViewCanLeave` have been replaced with their framework specific equivalent. For Angular, there are [Router Guards](https://angular.io/guide/router#milestone-5-route-guards).
+Router Guardsを扱うために、以前の`ionViewCanEnter` と `ionViewCanLeave`は、フレームワーク特有の同等のものに置き換えられました。Angularには[Router Guards](https://angular.io/guide/router#milestone-5-route-guards)があります。
 

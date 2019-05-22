@@ -259,8 +259,12 @@ export namespace Components {
   interface DocsRoot {}
   interface DocsRootAttributes extends StencilHTMLAttributes {}
 
-  interface DocsSearch {}
-  interface DocsSearchAttributes extends StencilHTMLAttributes {}
+  interface IonicSearch {
+    'mobile': boolean;
+  }
+  interface IonicSearchAttributes extends StencilHTMLAttributes {
+    'mobile'?: boolean;
+  }
 
   interface DocsSelect {
     'initializer': (options: string[]) => string;
@@ -273,6 +277,19 @@ export namespace Components {
     'onSelect'?: (option: string) => any;
     'optionRenderer'?: (option: string) => any;
     'options'?: string[];
+  }
+
+  interface DocsShadowCard {
+    'header': string;
+    'href': string;
+    'icon': string;
+    'img': string;
+  }
+  interface DocsShadowCardAttributes extends StencilHTMLAttributes {
+    'header'?: string;
+    'href'?: string;
+    'icon'?: string;
+    'img'?: string;
   }
 
   interface SmsForm {}
@@ -346,8 +363,9 @@ declare global {
     'DocsPagination': Components.DocsPagination;
     'DocsReference': Components.DocsReference;
     'DocsRoot': Components.DocsRoot;
-    'DocsSearch': Components.DocsSearch;
+    'IonicSearch': Components.IonicSearch;
     'DocsSelect': Components.DocsSelect;
+    'DocsShadowCard': Components.DocsShadowCard;
     'SmsForm': Components.SmsForm;
     'SteppedColorGenerator': Components.SteppedColorGenerator;
     'DocsTableOfContents': Components.DocsTableOfContents;
@@ -389,8 +407,9 @@ declare global {
     'docs-pagination': Components.DocsPaginationAttributes;
     'docs-reference': Components.DocsReferenceAttributes;
     'docs-root': Components.DocsRootAttributes;
-    'docs-search': Components.DocsSearchAttributes;
+    'ionic-search': Components.IonicSearchAttributes;
     'docs-select': Components.DocsSelectAttributes;
+    'docs-shadow-card': Components.DocsShadowCardAttributes;
     'sms-form': Components.SmsFormAttributes;
     'stepped-color-generator': Components.SteppedColorGeneratorAttributes;
     'docs-table-of-contents': Components.DocsTableOfContentsAttributes;
@@ -592,16 +611,22 @@ declare global {
     new (): HTMLDocsRootElement;
   };
 
-  interface HTMLDocsSearchElement extends Components.DocsSearch, HTMLStencilElement {}
-  var HTMLDocsSearchElement: {
-    prototype: HTMLDocsSearchElement;
-    new (): HTMLDocsSearchElement;
+  interface HTMLIonicSearchElement extends Components.IonicSearch, HTMLStencilElement {}
+  var HTMLIonicSearchElement: {
+    prototype: HTMLIonicSearchElement;
+    new (): HTMLIonicSearchElement;
   };
 
   interface HTMLDocsSelectElement extends Components.DocsSelect, HTMLStencilElement {}
   var HTMLDocsSelectElement: {
     prototype: HTMLDocsSelectElement;
     new (): HTMLDocsSelectElement;
+  };
+
+  interface HTMLDocsShadowCardElement extends Components.DocsShadowCard, HTMLStencilElement {}
+  var HTMLDocsShadowCardElement: {
+    prototype: HTMLDocsShadowCardElement;
+    new (): HTMLDocsShadowCardElement;
   };
 
   interface HTMLSmsFormElement extends Components.SmsForm, HTMLStencilElement {}
@@ -673,8 +698,9 @@ declare global {
     'docs-pagination': HTMLDocsPaginationElement
     'docs-reference': HTMLDocsReferenceElement
     'docs-root': HTMLDocsRootElement
-    'docs-search': HTMLDocsSearchElement
+    'ionic-search': HTMLIonicSearchElement
     'docs-select': HTMLDocsSelectElement
+    'docs-shadow-card': HTMLDocsShadowCardElement
     'sms-form': HTMLSmsFormElement
     'stepped-color-generator': HTMLSteppedColorGeneratorElement
     'docs-table-of-contents': HTMLDocsTableOfContentsElement
@@ -716,8 +742,9 @@ declare global {
     'docs-pagination': HTMLDocsPaginationElement;
     'docs-reference': HTMLDocsReferenceElement;
     'docs-root': HTMLDocsRootElement;
-    'docs-search': HTMLDocsSearchElement;
+    'ionic-search': HTMLIonicSearchElement;
     'docs-select': HTMLDocsSelectElement;
+    'docs-shadow-card': HTMLDocsShadowCardElement;
     'sms-form': HTMLSmsFormElement;
     'stepped-color-generator': HTMLSteppedColorGeneratorElement;
     'docs-table-of-contents': HTMLDocsTableOfContentsElement;

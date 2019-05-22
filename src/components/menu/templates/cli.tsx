@@ -3,11 +3,11 @@ import commands from '../data/cli-commands.json';
 export default () => <docs-nav items={items}/>;
 
 const items = {
-  'CLI Documentation': {
-    'Overview': '/docs/cli',
-    'Configuration': '/docs/cli/configuration',
-    'Using a Proxy': '/docs/cli/using-a-proxy',
-    'Change Log': 'https://github.com/ionic-team/ionic-cli/blob/master/packages/ionic/CHANGELOG.md'
+  'CLIドキュメンテーション': {
+    '概要': '/docs/cli',
+    '設定': '/docs/cli/configuration',
+    'Proxyの利用': '/docs/cli/using-a-proxy',
+    '変更履歴': 'https://github.com/ionic-team/ionic-cli/blob/master/packages/ionic/CHANGELOG.md'
   },
-  'Command Reference': Object.entries(commands).sort()
+  'コマンドリファレンス': Object.entries(commands).sort()
 };

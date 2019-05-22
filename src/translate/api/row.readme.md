@@ -1,15 +1,15 @@
 # ion-row
 
-Rows are horizontal components of the [grid](../grid) system and contain varying numbers of
-[columns](../col). They ensure the columns are positioned properly.
+Rowsは [grid](../grid)システムの水平コンポーネントであり、さまざまな数の[columns](../col)を含みます。
+これにより、columnsが適切に配置されます。
 
-See [Grid Layout](/docs/layout/grid) for more information.
+詳しくは [Grid Layout](/docs/layout/grid) をご覧ください。
 
 
-## Row attributes
+## Rowの属性
 
-By default, columns will stretch to fill the entire height of the row and wrap when necessary.
-There are several attributes that can be added to a row to customize this behavior.
+デフォルトでは、columnsはrowの高さ全体に拡大され、必要に応じて折り返されます。
+この動作をカスタマイズするために、rowに追加できる属性がいくつかあります。
 
 | Property                    | Description                                                                                                                                      |
 |-----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|

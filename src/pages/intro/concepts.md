@@ -1,8 +1,8 @@
 ---
 previousText: 'What is Ionic Framework'
 previousUrl: '/docs/intro'
-nextText: 'Browser Support'
-nextUrl: '/docs/intro/browser-support'
+nextText: 'Build Your First App'
+nextUrl: '/docs/developer-resources/guides/first-app-v4/intro'
 ---
 
 # コアコンセプト

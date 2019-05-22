@@ -1,24 +1,24 @@
 # ion-route-redirect
 
-A redirect router can only be used in the scope of `ion-router` as a direct children of it.
+edirect routerは、`ion-router`の直下で、その範囲でのみ使用できます。
 
-> Note: this is only meant for vanilla JavaScript project. For Angular projects, use `ion-router-outlet` and the Angular router.
+> Note: これは、シンプルなJavaScriptプロジェクトのみを対象としています。Angularプロジェクトの場合は、 `ion-router-outlet` とAngularルーターを使用します。
 
-This route has only two configurable values:
+このrouteには、設定可能な値が2つだけあります。
  - `from`
  - `to`
 
-Their meaning is obvious under the context of a redirection, that occurs `from` a given URL `to` another given URL.
+それらの意味は、あるURLから別のURLへのリダイレクトという文脈の中で明らかです。
 
-In other for a redirection to occurs the `from` path needs to be an exact match of the navigated URL.
+一方、リダイレクトが発生するためには、 `from` パスがナビゲーションされたURLと完全に一致する必要があります。
 
-## Redirection evaluation
+## リダイレクトの評価
 
-An arbitrary number of redirect routes can be defined inside an `ion-router`, but only one can match.
+任意の数のリダイレクトルートが `ion-router` の内部で定義できますが、一致できるのは1つだけです。
 
-Also, a redirection route WILL never redirect to another redirection router, since this could lead to infinity loops.
+また、リダイレクションルートは無限ループにつながる可能性があるため、別のリダイレクションルータにリダイレクトされることはありません。
 
-Let's say we have this two redirection rules:
+次の2つのリダイレクトルールがあるとします：
 
 ```html
 <ion-router>
@@ -27,30 +27,30 @@ Let's say we have this two redirection rules:
 </ion-router>
 ```
 
-And the user navigates to `/admin`. The router will then redirect to `/login` and stop there.
+ユーザが`/admin`にアクセスしたとき、ルータは`/login`にリダイレクトし、そこで停止します。
 
-It WILL NOT never evaluate more than one redirection rule in a roll.
+ロール内で複数のリダイレクションルールを評価することはありません。
 
 
-## Examples
+## 例
 
-### Simple path
+### シンプルなパス
 
 ```html
 <ion-route-redirect from="/admin" to="/login">
 ```
 
-This route will apply (redirect) when the user navigates to: `/admin` but it will NOT apply if the user navigates to `/admin/posts`.
+このルートは、ユーザが`/admin`に移動したときに(リダイレクト)適用されますが、ユーザが`/admin/posts`に移動したときには適用されません。
 
-In order to match any subpath of admin, the wildcard character (`*`) needs to be used.
+adminのサブパスに一致させるには、ワイルドカード文字(`*`)を使用する必要があります。
 
 ```html
 <ion-route-redirect from="/admin/*" to="/login">
 ```
 
-### Redirect all routes to login
+### すべてのルートをloginにリダイレクト
 
-Redirection routes can work as guards, since that can prevent user to navigate to areas to your application based in a given condition, for example, if the user is authenticated or not.
+リダイレクトルートは、ユーザーが認証されているかどうかなど、特定の条件に基づいてユーザーがアプリケーションの領域に移動できないようにするため、Guardとして機能します。
 
 
 ```tsx
@@ -58,9 +58,9 @@ Redirection routes can work as guards, since that can prevent user to navigate t
   <ion-route-redirect from="*" to="/login"/> }
 ```
 
-A router can be added and removed dynamically to redirect (or guard) some routes from being accessed.
+ルータを動的に追加および削除して、一部のルートがアクセスされないようにリダイレクト(またはguard)できます。
 
-Another approach is to modify the value of `to`, since given `to` the value of `null` or `undefined` makes disables the redirection.
+もう1つの方法は、`to` の値を変更することである。なぜなら、`to` の値が与えられた場合、`null` or `undefined`はリダイレクトを無効にするからです。
 
 ```tsx
  <ion-route-redirect from="*" to={this.isLoggedin ? undefined : '/login'}/>
