@@ -1,11 +1,11 @@
 # ion-tabs
 
-Tabs are a top level navigation component to implement a tab-based navigation.
-The component is a container of individual [Tab](../tab/) components.
+Tabsは、Tabをベースとしたナビゲーションを実装する最上位レベルのナビゲーション・コンポーネントです。
+個々の[Tab](../tab/) を含めて構成するコンテナです。
 
-`ion-tabs` is a styleless component that works as a router outlet in order to handle navigation.
-This component does not provide any UI feedback or mechanism to switch between tabs.
-In order to do so, an `ion-tab-bar` should be provided as a direct child of `ion-tabs`:
+`ion-tabs` は、ナビゲーションを操作するためのrouter outletとして機能する、スタイルのない部品です。
+このコンポーネントには、Tabsを切り替えるためのUIフィードバックやメカニズムはありません。
+そのためには、`ion-tabs` の直下に `ion-tab-bar` を設けなければなりません
 
 ```html
 <ion-tabs>
@@ -29,14 +29,14 @@ In order to do so, an `ion-tab-bar` should be provided as a direct child of `ion
 </ion-tabs>
 ```
 
-Note that both `ion-tabs` and `ion-tab-bar` can be used as standalone elements. They don’t depend on each other to work, but they are usually used together in order to implement a tab-based navigation that feels like a native app.
+`ion-tabs` と `ion-tab-bar` は、どちらも単独の要素として使用できます。互いに依存して動作するわけではないが、通常はネイティブアプリのように感じるタブベースのナビゲーションを実装するために一緒に使います。
 
-`ion-tab-bar` always needs `slot="bottom"` in order to be projected into `ion-tabs` at the right place.
+`ion-tab-bar` を `ion-tabs` に反映するためには、常に`slot="bottom"`が必要です。
 
-## The "tab" property
+## "tab" プロパティ
 
-Each `ion-tab-button` will activate one of the tabs when tapped.
-In order to link the button to the `ion-tab` container, a matching `tab` property must be used.
+それぞれの `ion-tab-button` はタップされるとタブの1つを作動させます。
+buttonを `ion-tab` コンテナにリンクするには、対応する `tab` プロパティを使用する必要があります。
 
 ```html
 <ion-tab tab="settings">
@@ -44,29 +44,29 @@ In order to link the button to the `ion-tab` container, a matching `tab` propert
 <ion-tab-button tab="settings">
 ```
 
-This `ion-tab-button` and `ion-tab` are now linked by the common `tab` property.
+この `ion-tab-button` と `ion-tab` は現在、共通の `tab` プロパティによってリンクされています。
 
-The `tab` property identifies each tab, and it has to be unique within the scope of the same `ion-tabs`. It's important to set the same property to `ion-tab` and `ion-tab-button`, even if you are only using one. e.g. You could use the `ion-tab-bar` without using `ion-tabs`. In this case you should still give each `ion-tab` the property of `tab="something"`.
+`tab` プロパティはそれぞれのタブを識別し、同じ `ion-tabs` の範囲内で一意である必要があります。`ion-tab` と `ion-tab-button` だけを使用する場合でも、同じプロパティを設定することが重要です。たとえば、 `ion-tabs` を使用せずに `ion-tab-bar` を使用できます。この場合でも、各`ion-tab`には`tab="何か"`のプロパティを指定する必要があります。
 
-### Router integration
+### Routerとの統合
 
-When the ionic's router (`ion-router`) is used, the `tab` property matches the "component" of `ion-route`:
+IonicのRouter (`ion-router`) を利用する場合、`tab`のプロパティは、`ion-route` の "component" に一致させます:
 
-The following route within the scope of a `ion-tabs` outlet:
+`ion-tabs` outletの範囲内で以下のrouteを使った場合:
 
 ```html
 <ion-route url="/settings-page" component="settings"></ion-route>
 ```
 
-Would match the following tab:
+次の `tab` プロパティに一致します:
 
 ```html
 <ion-tab tab="settings" component="settings-component"></ion-tab>
 ```
 
-### Angular Router integration
+### Angular Routerとの統合
 
-Using tabs with Angular's router is fairly straight forward. Here you only need to define tab which is the reference to the route.
+Angularのrouterでタブを使うのはかなり簡単です。ここでは、routeへの参照であるtabを定義するだけです。
 
 ```html
 

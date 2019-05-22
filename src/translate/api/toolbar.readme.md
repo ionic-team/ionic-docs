@@ -1,11 +1,11 @@
 # ion-toolbar
 
-Toolbars are positioned above or below content. When a toolbar is placed in an `<ion-header>` it will appear fixed at the top of the content, and when it is in an `<ion-footer>` it will appear fixed at the bottom. Fullscreen content will scroll behind a toolbar in a header or footer. When placed within an `<ion-content>`, toolbars will scroll with the content.
+Toolbarはコンテンツの上または下に配置されます。Toolbarを`<ion-header>`に配置すると、Toolbarはコンテンツの一番上に固定されて表示され、`<ion-footer>`に配置すると、Toolbarは一番下に固定されて表示されます。全画面表示のコンテンツは、ヘッダーまたはフッターのToolbarの後ろにスクロールされます。`<ion-content>`内に配置すると、Toolbarはコンテンツとともにスクロールします。
 
 
 ### Buttons
 
-Buttons placed in a toolbar should be placed inside of the `<ion-buttons>` element. The `<ion-buttons>` element can be positioned inside of the toolbar using a named slot. The below chart has a description of each slot.
+Toolbarに配置するボタンは`<ion-buttons>`要素の中に配置しなければなりません。`<ion-buttons>`要素はnamed slotを使ってToolbarの内側に置くことができます。次の表に、各slotの説明を示します。
 
 | Slot         | Description                                                                                              |
 |--------------|----------------------------------------------------------------------------------------------------------|
@@ -17,6 +17,6 @@ Buttons placed in a toolbar should be placed inside of the `<ion-buttons>` eleme
 
 ### Borders
 
-In `md` mode, the `<ion-header>` will receive a box-shadow on the bottom, and the `<ion-footer>` will receive a box-shadow on the top.  In `ios` mode, the `<ion-header>` will receive a border on the bottom, and the `<ion-footer>` will receive a border on the top. Both the `md` box-shadow and the `ios` border can be removed by adding the `no-border` attribute to the element.
+`md` モードでは、`<ion-header>`は下側にボックスシャドウを表示し、`<ion-footer>`は上側にボックスシャドウを受け取ります。`ios` モードでは、`<ion-header>`は下側に境界線を表示し、`<ion-footer>`は上側に境界線を表示します。要素に `no-border` 属性を追加すると、`md` ボックスシャドウと `md` 境界線の両方を削除できます。
 
 
