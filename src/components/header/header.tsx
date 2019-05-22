@@ -1,9 +1,5 @@
 import { Component, Listen, Prop, State } from '@stencil/core';
-<<<<<<< HEAD
-import { Checkmark, Logo, Outbound, Translation } from '../../icons';
-=======
-import { Book, Checkmark, Logo } from '../../icons';
->>>>>>> origin/master
+import { Book, Checkmark, Logo, Outbound, Translation } from '../../icons';
 
 @Component({
   tag: 'docs-header',
