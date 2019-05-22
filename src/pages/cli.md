@@ -6,7 +6,7 @@
 
 The Ionic command-line interface ([CLI](/docs/faq/glossary#cli)) は、Ionicアプリを開発する時に頼りになるツールです。
 
-## Installation
+## インストール
 
 Ionic CLI はnpmでグローバルにインストールできます:
 
@@ -24,11 +24,11 @@ $ ionic <command> --help
 
 <!-- TODO: image? -->
 
-## Architecture
+## 構成
 
 Ionic CLI は、[TypeScript](/docs/faq/glossary#typescript)と [Node.js](/docs/faq/glossary#node)で構築されています。Node 6+をサポートしていますが、最新のNode LTSが推奨です。Follow development on the open source <a href="https://github.com/ionic-team/ionic-cli" target="_blank">Github repository</a>.
 
-## Troubleshooting
+## トラブルシューティング
 
 Ionic CLIの問題をトラブルシューティングするには、以下の方法が役立ちます:
 
