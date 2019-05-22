@@ -7,10 +7,10 @@
 
 import '@stencil/core';
 
+import '@ionic/core';
+import 'ionicons';
 import '@stencil/router';
 import '@stencil/state-tunnel';
-import 'ionicons';
-import '@ionic/core';
 import {
   ColorVariable,
 } from './components/color-gen/color-variables';

@@ -19,6 +19,15 @@ export class DocsRoot {
         (window as any).gtag('config', 'UA-44023830-1', { 'page_path': location.pathname + location.search });
       });
     }
+
+    document.querySelectorAll('head .url').forEach(el => {
+      if (el['href']) {
+        el['href'] = el['href'].split('\/docs\/')[0] + '\/docs\/' + location.pathname.split('\/docs\/')[1];
+      }
+      if (el['content']) {
+        el['content'] = el['content'].split('\/docs\/')[0] + '\/docs\/' + location.pathname.split('\/docs\/')[1];
+      }
+    });
   }
 
   @Watch('isMenuToggled')
