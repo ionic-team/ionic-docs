@@ -7,10 +7,10 @@
 
 import '@stencil/core';
 
-import '@stencil/router';
-import '@stencil/state-tunnel';
 import '@ionic/core';
 import 'ionicons';
+import '@stencil/router';
+import '@stencil/state-tunnel';
 import {
   ColorVariable,
 } from './components/color-gen/color-variables';
@@ -190,6 +190,9 @@ export namespace Components {
   interface FileTree {}
   interface FileTreeAttributes extends StencilHTMLAttributes {}
 
+  interface DocsFooterAnnouncement {}
+  interface DocsFooterAnnouncementAttributes extends StencilHTMLAttributes {}
+
   interface DocsHeader {
     'onToggleClick': (e: Event) => void;
   }
@@ -352,6 +355,7 @@ declare global {
     'FileTreeDirectory': Components.FileTreeDirectory;
     'FileTreeFile': Components.FileTreeFile;
     'FileTree': Components.FileTree;
+    'DocsFooterAnnouncement': Components.DocsFooterAnnouncement;
     'DocsHeader': Components.DocsHeader;
     'HubspotForm': Components.HubspotForm;
     'LayeredColorsSelect': Components.LayeredColorsSelect;
@@ -396,6 +400,7 @@ declare global {
     'file-tree-directory': Components.FileTreeDirectoryAttributes;
     'file-tree-file': Components.FileTreeFileAttributes;
     'file-tree': Components.FileTreeAttributes;
+    'docs-footer-announcement': Components.DocsFooterAnnouncementAttributes;
     'docs-header': Components.DocsHeaderAttributes;
     'hubspot-form': Components.HubspotFormAttributes;
     'layered-colors-select': Components.LayeredColorsSelectAttributes;
@@ -545,6 +550,12 @@ declare global {
     new (): HTMLFileTreeElement;
   };
 
+  interface HTMLDocsFooterAnnouncementElement extends Components.DocsFooterAnnouncement, HTMLStencilElement {}
+  var HTMLDocsFooterAnnouncementElement: {
+    prototype: HTMLDocsFooterAnnouncementElement;
+    new (): HTMLDocsFooterAnnouncementElement;
+  };
+
   interface HTMLDocsHeaderElement extends Components.DocsHeader, HTMLStencilElement {}
   var HTMLDocsHeaderElement: {
     prototype: HTMLDocsHeaderElement;
@@ -687,6 +698,7 @@ declare global {
     'file-tree-directory': HTMLFileTreeDirectoryElement
     'file-tree-file': HTMLFileTreeFileElement
     'file-tree': HTMLFileTreeElement
+    'docs-footer-announcement': HTMLDocsFooterAnnouncementElement
     'docs-header': HTMLDocsHeaderElement
     'hubspot-form': HTMLHubspotFormElement
     'layered-colors-select': HTMLLayeredColorsSelectElement
@@ -731,6 +743,7 @@ declare global {
     'file-tree-directory': HTMLFileTreeDirectoryElement;
     'file-tree-file': HTMLFileTreeFileElement;
     'file-tree': HTMLFileTreeElement;
+    'docs-footer-announcement': HTMLDocsFooterAnnouncementElement;
     'docs-header': HTMLDocsHeaderElement;
     'hubspot-form': HTMLHubspotFormElement;
     'layered-colors-select': HTMLLayeredColorsSelectElement;

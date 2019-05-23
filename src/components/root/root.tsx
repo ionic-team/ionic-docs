@@ -70,6 +70,7 @@ export class DocsRoot {
             path={`/docs/pages/${props.match.params.page || 'index'}.json`}
             onClick={this.handlePageClick}/>
         )}/>
+        <docs-footer-announcement></docs-footer-announcement>
       </stencil-router>
     );
   }
