@@ -17,7 +17,7 @@ Ionic Frameworkは、アプリケーションの構成要素として機能す�
 
 ## プラットフォームの互換性
 
-プラットフォームの互換性は、アプリ開発者が複数のプラットフォームで共通したベースとなるコードを使用できるIonic Frameworkに組み込まれている機能です。すべてのIonicコンポーネントは、自動的にアプリケーションが実行されているプラ​​ットフォームに外観を合わせます。たとえば、iPhoneやiPadなどのAppleデバイスは、Apple独自の<a href="https://www.apple.com/ios" target="_blank">iOSデザイン</a>を使用します。同様に、Androidデバイスは、<a href="https://material.io/guidelines/" target="_blank">Material Design</a>と呼ばれるGoogleのデザインを使用します。
+プラットフォームの互換性は、アプリ開発者が複数のプラットフォームで共通したベースとなるコードを使用できるIonic Frameworkに組み込まれている機能です。すべてのIonicコンポーネントは、自動的にアプリケーションが実行されているプラットフォームに外観を合わせます。たとえば、iPhoneやiPadなどのAppleデバイスは、Apple独自の<a href="https://www.apple.com/ios" target="_blank">iOSデザイン</a>を使用します。同様に、Androidデバイスは、<a href="https://material.io/guidelines/" target="_blank">Material Design</a>と呼ばれるGoogleのデザインを使用します。
 
 プラットフォーム間で微妙なデザイン変更を行うことで、ユーザーに使い慣れたアプリのUXを提供します。AppleのApp StoreからダウンロードしたIonicアプリはiOSテーマを使用し、AndroidのPlay StoreからダウンロードしたIonicアプリはMaterial Designテーマを取得します。ブラウザからProgressive Web Apps（PWA）として表示アプリを表示する場合、IonicはデフォルトでMaterial Designテーマを使用します。さらに、特定のシナリオで使用するプラットフォームを決定することはすべて設定可能です。プラットフォームの互換性についてのさらなる情報は[Theming](/docs/theming/basics)をご覧ください。
 
@@ -29,7 +29,7 @@ Ionic Frameworkは、アプリケーションの構成要素として機能す�
 
 これとは対照的に、モバイルアプリはしばしば平行な「非線形」ナビゲーションを利用します。たとえば、タブのついたインタフェースでは、タブごとにナビゲーションスタックを個別に設定できるため、ユーザがタブ間を移動したり切り替えたりするときにユーザが自分の場所を失うことはありません。
 
-Ionicアプリはは、このモバイルナビゲーションのアプローチを採用しており、Web開発者が慣れ親しんでいるブラウザスタイルのナビゲーション概念を維持しながら、ネストすることもできる並列ナビゲーション履歴をサポートしています。
+Ionicアプリは、このモバイルナビゲーションのアプローチを採用しており、Web開発者が慣れ親しんでいるブラウザスタイルのナビゲーション概念を維持しながら、ネストすることもできる並列ナビゲーション履歴をサポートしています。
 
 Angularと`@ionic/angular`で構築するアプリは、<a href="https://angular.io/guide/router" target="_blank">Angular Router</a>を使用することをお勧めします。これはAngularとIonic 4の組み合わせから使うことができます。
 Ionicの以前のバージョンは、ionic自体にカスタムルーターが含まれていました。しかし最高のツーリングと開発者の経験を提供するために、私たちはAngularの推奨ルーターに移行しました。
