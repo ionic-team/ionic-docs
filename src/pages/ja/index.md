@@ -12,24 +12,24 @@ Ionic Frameworkを使ってすばらしいアプリをつくるために、知�
 
 <docs-card header="Installation" href="/docs/installation/cli" icon="/docs/assets/icons/guide-installation-icon.png"> 
 
-A step-by-step guide to installing and setting up your system to build Ionic Framework apps.</docs-card>
+Ionic Frameworkを使うためのパッケージのインストールとセットアップ方法を順番に案内します。</docs-card>
 
 <docs-card header="CLI" href="/docs/cli" icon="/docs/assets/icons/guide-cli-icon.png"> 
 
-The Ionic command-line interface is your go-to tool for for developing Ionic apps.</docs-card>
+Ionic CLIは、Ionicアプリを開発するための便利なツールです。</docs-card>
 
 <docs-card header="Native APIs" href="/docs/native" icon="/docs/assets/icons/guide-nativeapis-icon.png"> 
 
-Integrate and leverage device plugins like Bluetooth, Maps, HealthKit, and more.</docs-card>
+BluetoothやMap、HealthKitといったネイティブデバイスのプラグインを統合して活用することができます。</docs-card>
 
 <docs-card header="Theming" href="/docs/theming/basics" icon="/docs/assets/icons/guide-theming-icon.png"> 
 
-Learn how to easily customize and modify your Ionic app's design to fit your brand styles.</docs-card>
+あなたのデザインに合わせて、Ionicアプリのビジュアルデザインを簡単にカスタマイズする方法を学ぶことができます。</docs-card>
 
 <docs-card header="Resources" href="/docs/developer-resources/books" icon="/docs/assets/icons/guide-resources-icon.png"> 
 
-Learn Ionic with official guides, videos, books, courses, and more.</docs-card>
+公式ガイド、ビデオ、書籍で学ぶことができます。</docs-card>
 
 <docs-card header="FAQ" href="/docs/faq/glossary" icon="/docs/assets/icons/guide-faq-icon.png"> 
 
-Get answers to some of the most commonly asked questions about the framework.</docs-card> </docs-cards>
+フレームワークについてよくある質問と回答</docs-card> </docs-cards>
