@@ -1,0 +1,23 @@
+***************
+*** 1,14 ****
+  # ion-reorder
+  
+- Reorder is a component that allows an item to be dragged to change its order. It must be used within an `ion-reorder-group` to provide a visual drag and drop interface.
+  
+- `ion-reorder` is the anchor users will use to drag and drop items inside the `ion-reorder-group`.
+  
+- ```html
+- <ion-item>
+-   <ion-label>
+-     Item
+-   </ion-label>
+-   <ion-reorder slot="end"></ion-reorder>
+- </ion-item>
+- ```
+--- 1,6 ----
+  # ion-reorder
+  
++ Reorder is a component that allows an item in a group of items to be dragged to change its order within that group. It must be used within an `ion-reorder-group` to provide a visual drag and drop interface.
+  
++ `ion-reorder` is the anchor used to drag and drop the items inside of the `ion-reorder-group`. See the [Reorder Group](../reorder-group) for more information on how to complete the reorder operation.
+  
