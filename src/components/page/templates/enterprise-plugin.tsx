@@ -9,7 +9,7 @@ export default (props) => {
 
   if (installation) {
     headings.unshift({
-      text: 'Installation',
+      text: 'インストール',
       href: '#installation'
     });
   }
@@ -42,20 +42,20 @@ const renderInstallation = (pluginId: string) => {
   return (
     <section>
       <h2 id="installation">
-        <a href="#installation">Installation</a>
+        <a href="#installation">インストール</a>
       </h2>
       <p>
-        In order to use <a href="https://ionicframework.com/enterprise-edition">
-        Ionic Enterprise Edition</a> plugins you should make sure you're using
-        the Ionic Enterprise Cordova CLI as the regular version can have issues
-        with scoped plugins.
+        <a href="https://ionicframework.com/enterprise-edition">
+        Ionic エンタープライズエディション</a>のプラグインを利用する場合は、
+        通常のバージョンでスコープ指定されたプラグインに問題がある可能性があるため、
+        Ionic Enterprise Cordova CLIを使用していることを確認する必要があります。
       </p>
       <command-line>
         <command-prompt>{'npm uninstall -g cordova'}</command-prompt>
         <command-prompt>{'npm install -g @ionic-enterprise/cordova'}</command-prompt>
       </command-line>
       <p>
-        Once you've installed the Ionic Enterprise Cordova CLI you can install the plugin.
+        Ionic Enterprise Cordova CLIをインストールしたら、プラグインをインストールできます。
       </p>
       <command-line>
         <command-prompt>{`ionic enterprise register --key=YOURPRODUCTKEY`}</command-prompt>
