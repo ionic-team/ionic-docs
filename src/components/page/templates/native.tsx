@@ -54,7 +54,7 @@ const renderRepo = (repo: string) => {
       <docs-shadow-card class="cordova-ee-card" header="プラグインの問題で貴重な時間を無駄にしないでください." href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">
         <div>
           <img src="/docs/assets/icons/native-cordova-bot.png" class="cordova-ee-img" />
-          <p>本格的なプロジェクトを構築している場合、トラブルシューティングに時間を費やす余裕はありません。Ionicの専門家は、保守、サポート、統合に関する公式なサポートを提供しています。</p>
+          <p>本格的なプロジェクトを構築している場合、トラブルシューティングに時間を費やす余裕はありません。Ionicのエキスパートが、保守、サポート、統合に関する公式サポートを提供しています。</p>
           <docs-button class="native-ee-detail" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">今日連絡ください！</docs-button>
         </div>
       </docs-shadow-card>
