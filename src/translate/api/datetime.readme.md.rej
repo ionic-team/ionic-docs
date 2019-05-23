@@ -1,0 +1,17 @@
+***************
+*** 186,192 ****
+  The datetime picker provides the simplicity of selecting an exact format, and
+  persists the datetime values as a string using the standardized [ISO 8601
+  datetime format](https://www.w3.org/TR/NOTE-datetime). However, it's important
+- to note that `ion-datetime` does not attempt to solve all situtations when
+  validating and manipulating datetime values. If datetime values need to be
+  parsed from a certain format, or manipulated (such as adding 5 days to a date,
+  subtracting 30 minutes, etc.), or even formatting data to a specific locale,
+--- 190,196 ----
+  The datetime picker provides the simplicity of selecting an exact format, and
+  persists the datetime values as a string using the standardized [ISO 8601
+  datetime format](https://www.w3.org/TR/NOTE-datetime). However, it's important
++ to note that `ion-datetime` does not attempt to solve all situations when
+  validating and manipulating datetime values. If datetime values need to be
+  parsed from a certain format, or manipulated (such as adding 5 days to a date,
+  subtracting 30 minutes, etc.), or even formatting data to a specific locale,
