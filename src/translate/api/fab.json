@@ -67,7 +67,7 @@
       },
       "signature": "close() => void",
       "parameters": [],
-      "docs": "Close an active FAB list container",
+      "docs": "Close an active FAB list container.",
       "docsTags": []
     }
   ],

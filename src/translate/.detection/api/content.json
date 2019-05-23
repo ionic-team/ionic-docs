@@ -100,7 +100,7 @@
       },
       "signature": "getScrollElement() => Promise<HTMLElement>",
       "parameters": [],
-      "docs": "Returns the element where the actual scrolling takes places.\nThis element is the one you could subscribe to `scroll` events or manually modify\n`scrollTop`, however, it's recommended to use the API provided by `ion-content`:\n\nIe. Using `ionScroll`, `ionScrollStart`, `ionScrollEnd` for scrolling events\nand scrollToPoint() to scroll the content into a certain point.",
+      "docs": "Get the element where the actual scrolling takes place.\nThis element can be used to subscribe to `scroll` events or manually modify\n`scrollTop`. However, it's recommended to use the API provided by `ion-content`:\n\ni.e. Using `ionScroll`, `ionScrollStart`, `ionScrollEnd` for scrolling events\nand `scrollToPoint()` to scroll the content into a certain point.",
       "docsTags": []
     },
     {
@@ -114,21 +114,34 @@
         {
           "name": "x",
           "type": "number",
-          "docs": ""
+          "docs": "The amount to scroll by on the horizontal axis."
         },
         {
           "name": "y",
           "type": "number",
-          "docs": ""
+          "docs": "The amount to scroll by on the vertical axis."
         },
         {
           "name": "duration",
           "type": "number",
-          "docs": ""
+          "docs": "The amount of time to take scrolling by that amount."
         }
       ],
-      "docs": "Scroll by a specified X/Y distance in the component",
-      "docsTags": []
+      "docs": "Scroll by a specified X/Y distance in the component.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "x The amount to scroll by on the horizontal axis."
+        },
+        {
+          "name": "param",
+          "text": "y The amount to scroll by on the vertical axis."
+        },
+        {
+          "name": "param",
+          "text": "duration The amount of time to take scrolling by that amount."
+        }
+      ]
     },
     {
       "name": "scrollToBottom",
@@ -141,11 +154,16 @@
         {
           "name": "duration",
           "type": "number",
-          "docs": ""
+          "docs": "The amount of time to take scrolling to the bottom. Defaults to `0`."
         }
       ],
-      "docs": "Scroll to the bottom of the component",
-      "docsTags": []
+      "docs": "Scroll to the bottom of the component.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "duration The amount of time to take scrolling to the bottom. Defaults to `0`."
+        }
+      ]
     },
     {
       "name": "scrollToPoint",
@@ -158,21 +176,34 @@
         {
           "name": "x",
           "type": "null | number | undefined",
-          "docs": ""
+          "docs": "The point to scroll to on the horizontal axis."
         },
         {
           "name": "y",
           "type": "null | number | undefined",
-          "docs": ""
+          "docs": "The point to scroll to on the vertical axis."
         },
         {
           "name": "duration",
           "type": "number",
-          "docs": ""
+          "docs": "The amount of time to take scrolling to that point. Defaults to `0`."
         }
       ],
-      "docs": "Scroll to a specified X/Y location in the component",
-      "docsTags": []
+      "docs": "Scroll to a specified X/Y location in the component.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "x The point to scroll to on the horizontal axis."
+        },
+        {
+          "name": "param",
+          "text": "y The point to scroll to on the vertical axis."
+        },
+        {
+          "name": "param",
+          "text": "duration The amount of time to take scrolling to that point. Defaults to `0`."
+        }
+      ]
     },
     {
       "name": "scrollToTop",
@@ -185,11 +216,16 @@
         {
           "name": "duration",
           "type": "number",
-          "docs": ""
+          "docs": "The amount of time to take scrolling to the top. Defaults to `0`."
         }
       ],
-      "docs": "Scroll to the top of the component",
-      "docsTags": []
+      "docs": "Scroll to the top of the component.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "duration The amount of time to take scrolling to the top. Defaults to `0`."
+        }
+      ]
     }
   ],
   "events": [

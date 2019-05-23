@@ -68,6 +68,28 @@
       "parameters": [],
       "docs": "Get the ratio of the open amount of the item compared to the width of the options.\nIf the number returned is positive, then the options on the right side are open.\nIf the number returned is negative, then the options on the left side are open.\nIf the absolute value of the number is greater than 1, the item is open more than\nthe width of the options.",
       "docsTags": []
+    },
+    {
+      "name": "open",
+      "returns": {
+        "type": "Promise<void>",
+        "docs": ""
+      },
+      "signature": "open(side: string | undefined) => Promise<void>",
+      "parameters": [
+        {
+          "name": "side",
+          "type": "string | undefined",
+          "docs": "The side of the options to open. If a side is not provided, it will open the first set of options it finds within the item."
+        }
+      ],
+      "docs": "Open the sliding item.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "side The side of the options to open. If a side is not provided, it will open the first set of options it finds within the item."
+        }
+      ]
     }
   ],
   "events": [

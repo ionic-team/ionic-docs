@@ -13,16 +13,21 @@
         "type": "Promise<HTMLIonAlertElement>",
         "docs": ""
       },
-      "signature": "create(opts: AlertOptions) => Promise<HTMLIonAlertElement>",
+      "signature": "create(options: AlertOptions) => Promise<HTMLIonAlertElement>",
       "parameters": [
         {
-          "name": "opts",
+          "name": "options",
           "type": "AlertOptions",
-          "docs": ""
+          "docs": "The options to use to create the alert."
         }
       ],
-      "docs": "Create an alert overlay with alert options",
-      "docsTags": []
+      "docs": "Create an alert overlay with alert options.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "options The options to use to create the alert."
+        }
+      ]
     },
     {
       "name": "dismiss",
@@ -35,21 +40,34 @@
         {
           "name": "data",
           "type": "any",
-          "docs": ""
+          "docs": "Any data to emit in the dismiss events."
         },
         {
           "name": "role",
           "type": "string | undefined",
-          "docs": ""
+          "docs": "The role of the element that is dismissing the alert.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the alert.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
         },
         {
           "name": "id",
           "type": "string | undefined",
-          "docs": ""
+          "docs": "The id of the alert to dismiss. If an id is not provided, it will dismiss the most recently opened alert."
         }
       ],
       "docs": "Dismiss the open alert overlay.",
-      "docsTags": []
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "data Any data to emit in the dismiss events."
+        },
+        {
+          "name": "param",
+          "text": "role The role of the element that is dismissing the alert.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the alert.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+        },
+        {
+          "name": "param",
+          "text": "id The id of the alert to dismiss. If an id is not provided, it will dismiss the most recently opened alert."
+        }
+      ]
     },
     {
       "name": "getTop",

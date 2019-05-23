@@ -28,21 +28,30 @@
         "type": "Promise<() => void>",
         "docs": ""
       },
-      "signature": "addRipple(pageX: number, pageY: number) => Promise<() => void>",
+      "signature": "addRipple(x: number, y: number) => Promise<() => void>",
       "parameters": [
         {
-          "name": "pageX",
+          "name": "x",
           "type": "number",
-          "docs": ""
+          "docs": "The horizontal coordinate of where the ripple should start."
         },
         {
-          "name": "pageY",
+          "name": "y",
           "type": "number",
-          "docs": ""
+          "docs": "The vertical coordinate of where the ripple should start."
         }
       ],
-      "docs": "Adds the ripple effect to the parent element",
-      "docsTags": []
+      "docs": "Adds the ripple effect to the parent element.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "x The horizontal coordinate of where the ripple should start."
+        },
+        {
+          "name": "param",
+          "text": "y The vertical coordinate of where the ripple should start."
+        }
+      ]
     }
   ],
   "events": [],

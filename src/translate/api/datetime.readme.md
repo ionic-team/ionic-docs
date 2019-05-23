@@ -59,6 +59,10 @@ datetimeの値を書式付きテキストとして出力する方法を指定し
 </ion-item>
 ```
 
+**Important**: `ion-datetime` will always display values relative to the user's timezone.
+Given a value of `09:00:00+01:00`, the datetime component will
+display it as `04:00:00-04:00` for users in a `-04:00` timezone offset.
+
 ### Picker Format
 
 `pickerFormat` 入力プロパティは、ピッカー・インタフェースで表示する列、

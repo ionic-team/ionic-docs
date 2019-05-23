@@ -59,6 +59,26 @@
       "name": "--color",
       "annotation": "prop",
       "docs": "Color of the menu button"
+    },
+    {
+      "name": "--padding-bottom",
+      "annotation": "prop",
+      "docs": "Padding bottom of the button"
+    },
+    {
+      "name": "--padding-end",
+      "annotation": "prop",
+      "docs": "Padding end of the button"
+    },
+    {
+      "name": "--padding-start",
+      "annotation": "prop",
+      "docs": "Padding start of the button"
+    },
+    {
+      "name": "--padding-top",
+      "annotation": "prop",
+      "docs": "Padding top of the button"
     }
   ],
   "slots": []

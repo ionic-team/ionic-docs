@@ -23,7 +23,7 @@
       "mutable": false,
       "attr": "pulling-text",
       "reflectToAttr": false,
-      "docs": "The text you want to display when you begin to pull down",
+      "docs": "The text you want to display when you begin to pull down.\n`pullingText` can accept either plaintext or HTML as a string.\nTo display characters normally reserved for HTML, they\nmust be escaped. For example `<Ionic>` would become\n`&lt;Ionic&gt;`\n\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)",
       "docsTags": [],
       "optional": true,
       "required": false
@@ -45,7 +45,7 @@
       "mutable": false,
       "attr": "refreshing-text",
       "reflectToAttr": false,
-      "docs": "The text you want to display when performing a refresh",
+      "docs": "The text you want to display when performing a refresh.\n`refreshingText` can accept either plaintext or HTML as a string.\nTo display characters normally reserved for HTML, they\nmust be escaped. For example `<Ionic>` would become\n`&lt;Ionic&gt;`\n\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)",
       "docsTags": [],
       "optional": true,
       "required": false

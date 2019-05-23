@@ -73,11 +73,16 @@
         {
           "name": "view",
           "type": "ViewController | undefined",
-          "docs": ""
+          "docs": "The view to check."
         }
       ],
-      "docs": "Returns `true` or false if the current view can go back",
-      "docsTags": []
+      "docs": "Returns `true` if the current view can go back.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "view The view to check."
+        }
+      ]
     },
     {
       "name": "getActive",
@@ -87,7 +92,7 @@
       },
       "signature": "getActive() => Promise<ViewController | undefined>",
       "parameters": [],
-      "docs": "Gets the active view",
+      "docs": "Get the active view.",
       "docsTags": []
     },
     {
@@ -101,11 +106,16 @@
         {
           "name": "index",
           "type": "number",
-          "docs": ""
+          "docs": "The index of the view."
         }
       ],
-      "docs": "Returns the view at the index",
-      "docsTags": []
+      "docs": "Get the view at the specified index.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "index The index of the view."
+        }
+      ]
     },
     {
       "name": "getPrevious",
@@ -118,11 +128,16 @@
         {
           "name": "view",
           "type": "ViewController | undefined",
-          "docs": ""
+          "docs": "The view to get."
         }
       ],
-      "docs": "Gets the previous view",
-      "docsTags": []
+      "docs": "Get the previous view.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "view The view to get."
+        }
+      ]
     },
     {
       "name": "insert",
@@ -135,31 +150,52 @@
         {
           "name": "insertIndex",
           "type": "number",
-          "docs": ""
+          "docs": "The index to insert the component at in the stack."
         },
         {
           "name": "component",
           "type": "T",
-          "docs": ""
+          "docs": "The component to insert into the navigation stack."
         },
         {
           "name": "componentProps",
           "type": "T extends \"object\" | \"ion-icon\" | \"ion-action-sheet-controller\" | \"ion-action-sheet\" | \"ion-alert-controller\" | \"ion-alert\" | \"ion-anchor\" | \"ion-app\" | \"ion-avatar\" | \"ion-back-button\" | \"ion-backdrop\" | \"ion-badge\" | \"ion-button\" | \"ion-buttons\" | \"ion-card-content\" | \"ion-card-header\" | \"ion-card-subtitle\" | \"ion-card-title\" | \"ion-card\" | \"ion-checkbox\" | \"ion-chip\" | \"ion-col\" | \"ion-content\" | \"ion-datetime\" | \"ion-fab-button\" | \"ion-fab-list\" | \"ion-fab\" | \"ion-footer\" | \"ion-grid\" | \"ion-header\" | \"ion-img\" | \"ion-infinite-scroll-content\" | \"ion-infinite-scroll\" | \"ion-input\" | \"ion-item-divider\" | \"ion-item-group\" | \"ion-item-option\" | \"ion-item-options\" | \"ion-item-sliding\" | \"ion-item\" | \"ion-label\" | \"ion-list-header\" | \"ion-list\" | \"ion-loading-controller\" | \"ion-loading\" | \"ion-menu-button\" | \"ion-menu-controller\" | \"ion-menu-toggle\" | \"ion-menu\" | \"ion-modal-controller\" | \"ion-modal\" | \"ion-nav-pop\" | \"ion-nav-push\" | \"ion-nav-set-root\" | \"ion-nav\" | \"ion-note\" | \"ion-picker-column\" | \"ion-picker-controller\" | \"ion-picker\" | \"ion-popover-controller\" | \"ion-popover\" | \"ion-progress-bar\" | \"ion-radio-group\" | \"ion-radio\" | \"ion-range\" | \"ion-refresher-content\" | \"ion-refresher\" | \"ion-reorder-group\" | \"ion-reorder\" | \"ion-ripple-effect\" | \"ion-route-redirect\" | \"ion-route\" | \"ion-router-outlet\" | \"ion-router\" | \"ion-row\" | \"ion-searchbar\" | \"ion-segment-button\" | \"ion-segment\" | \"ion-select-option\" | \"ion-select-popover\" | \"ion-select\" | \"ion-skeleton-text\" | \"ion-slide\" | \"ion-slides\" | \"ion-spinner\" | \"ion-split-pane\" | \"ion-tab-bar\" | \"ion-tab-button\" | \"ion-tab\" | \"ion-tabs\" | \"ion-text\" | \"ion-textarea\" | \"ion-thumbnail\" | \"ion-title\" | \"ion-toast-controller\" | \"ion-toast\" | \"ion-toggle\" | \"ion-toolbar\" | \"ion-virtual-scroll\" | \"slot\" | \"a\" | \"abbr\" | \"address\" | \"area\" | \"article\" | \"aside\" | \"audio\" | \"b\" | \"base\" | \"bdi\" | \"bdo\" | \"big\" | \"blockquote\" | \"body\" | \"br\" | \"button\" | \"canvas\" | \"caption\" | \"cite\" | \"code\" | \"col\" | \"colgroup\" | \"data\" | \"datalist\" | \"dd\" | \"del\" | \"details\" | \"dfn\" | \"dialog\" | \"div\" | \"dl\" | \"dt\" | \"em\" | \"embed\" | \"fieldset\" | \"figcaption\" | \"figure\" | \"footer\" | \"form\" | \"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\" | \"h6\" | \"head\" | \"header\" | \"hgroup\" | \"hr\" | \"html\" | \"i\" | \"iframe\" | \"img\" | \"input\" | \"ins\" | \"kbd\" | \"keygen\" | \"label\" | \"legend\" | \"li\" | \"link\" | \"main\" | \"map\" | \"mark\" | \"menu\" | \"menuitem\" | \"meta\" | \"meter\" | \"nav\" | \"noscript\" | \"ol\" | \"optgroup\" | \"option\" | \"output\" | \"p\" | \"param\" | \"picture\" | \"pre\" | \"progress\" | \"q\" | \"rp\" | \"rt\" | \"ruby\" | \"s\" | \"samp\" | \"script\" | \"section\" | \"select\" | \"small\" | \"source\" | \"span\" | \"strong\" | \"style\" | \"sub\" | \"summary\" | \"sup\" | \"table\" | \"tbody\" | \"td\" | \"textarea\" | \"tfoot\" | \"th\" | \"thead\" | \"time\" | \"title\" | \"tr\" | \"track\" | \"u\" | \"ul\" | \"var\" | \"video\" | \"wbr\" ? StencilIntrinsicElements[T] : { [key: string]: any; } | null | undefined",
-          "docs": ""
+          "docs": "Any properties of the component."
         },
         {
           "name": "opts",
           "type": "NavOptions | null | undefined",
-          "docs": ""
+          "docs": "The navigation options."
         },
         {
           "name": "done",
           "type": "((hasCompleted: boolean, requiresTransition: boolean, enteringView?: ViewController | undefined, leavingView?: ViewController | undefined, direction?: string | undefined) => void) | undefined",
-          "docs": ""
+          "docs": "The transition complete function."
         }
       ],
-      "docs": "Inserts a component into the nav stack at the specified index. This is useful if you need to add a component at any point in your navigation stack.",
-      "docsTags": []
+      "docs": "Inserts a component into the navigation stack at the specified index.\nThis is useful to add a component at any point in the navigation stack.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "insertIndex The index to insert the component at in the stack."
+        },
+        {
+          "name": "param",
+          "text": "component The component to insert into the navigation stack."
+        },
+        {
+          "name": "param",
+          "text": "componentProps Any properties of the component."
+        },
+        {
+          "name": "param",
+          "text": "opts The navigation options."
+        },
+        {
+          "name": "param",
+          "text": "done The transition complete function."
+        }
+      ]
     },
     {
       "name": "insertPages",
@@ -172,26 +208,43 @@
         {
           "name": "insertIndex",
           "type": "number",
-          "docs": ""
+          "docs": "The index to insert the components at in the stack."
         },
         {
           "name": "insertComponents",
           "type": "NavComponent[]",
-          "docs": ""
+          "docs": "The components to insert into the navigation stack."
         },
         {
           "name": "opts",
           "type": "NavOptions | null | undefined",
-          "docs": ""
+          "docs": "The navigation options."
         },
         {
           "name": "done",
           "type": "((hasCompleted: boolean, requiresTransition: boolean, enteringView?: ViewController | undefined, leavingView?: ViewController | undefined, direction?: string | undefined) => void) | undefined",
-          "docs": ""
+          "docs": "The transition complete function."
         }
       ],
-      "docs": "Inserts an array of components into the nav stack at the specified index. The last component in the array will become instantiated as a view, and animate in to become the active view.",
-      "docsTags": []
+      "docs": "Inserts an array of components into the navigation stack at the specified index.\nThe last component in the array will become instantiated as a view, and animate\nin to become the active view.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "insertIndex The index to insert the components at in the stack."
+        },
+        {
+          "name": "param",
+          "text": "insertComponents The components to insert into the navigation stack."
+        },
+        {
+          "name": "param",
+          "text": "opts The navigation options."
+        },
+        {
+          "name": "param",
+          "text": "done The transition complete function."
+        }
+      ]
     },
     {
       "name": "pop",
@@ -204,16 +257,25 @@
         {
           "name": "opts",
           "type": "NavOptions | null | undefined",
-          "docs": ""
+          "docs": "The navigation options."
         },
         {
           "name": "done",
           "type": "((hasCompleted: boolean, requiresTransition: boolean, enteringView?: ViewController | undefined, leavingView?: ViewController | undefined, direction?: string | undefined) => void) | undefined",
-          "docs": ""
+          "docs": "The transition complete function."
         }
       ],
-      "docs": "Call to navigate back from a current component. Similar to push(), you can also pass navigation options.",
-      "docsTags": []
+      "docs": "Pop a component off of the navigation stack. Navigates back from the current\ncomponent.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "opts The navigation options."
+        },
+        {
+          "name": "param",
+          "text": "done The transition complete function."
+        }
+      ]
     },
     {
       "name": "popTo",
@@ -226,21 +288,34 @@
         {
           "name": "indexOrViewCtrl",
           "type": "ViewController | number",
-          "docs": ""
+          "docs": "The index or view controller to pop to."
         },
         {
           "name": "opts",
           "type": "NavOptions | null | undefined",
-          "docs": ""
+          "docs": "The navigation options."
         },
         {
           "name": "done",
           "type": "((hasCompleted: boolean, requiresTransition: boolean, enteringView?: ViewController | undefined, leavingView?: ViewController | undefined, direction?: string | undefined) => void) | undefined",
-          "docs": ""
+          "docs": "The transition complete function."
         }
       ],
-      "docs": "Pop to a specific index in the navigation stack",
-      "docsTags": []
+      "docs": "Pop to a specific index in the navigation stack.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "indexOrViewCtrl The index or view controller to pop to."
+        },
+        {
+          "name": "param",
+          "text": "opts The navigation options."
+        },
+        {
+          "name": "param",
+          "text": "done The transition complete function."
+        }
+      ]
     },
     {
       "name": "popToRoot",
@@ -253,16 +328,25 @@
         {
           "name": "opts",
           "type": "NavOptions | null | undefined",
-          "docs": ""
+          "docs": "The navigation options."
         },
         {
           "name": "done",
           "type": "((hasCompleted: boolean, requiresTransition: boolean, enteringView?: ViewController | undefined, leavingView?: ViewController | undefined, direction?: string | undefined) => void) | undefined",
-          "docs": ""
+          "docs": "The transition complete function."
         }
       ],
       "docs": "Navigate back to the root of the stack, no matter how far back that is.",
-      "docsTags": []
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "opts The navigation options."
+        },
+        {
+          "name": "param",
+          "text": "done The transition complete function."
+        }
+      ]
     },
     {
       "name": "push",
@@ -275,26 +359,43 @@
         {
           "name": "component",
           "type": "T",
-          "docs": ""
+          "docs": "The component to push onto the navigation stack."
         },
         {
           "name": "componentProps",
           "type": "T extends \"object\" | \"ion-icon\" | \"ion-action-sheet-controller\" | \"ion-action-sheet\" | \"ion-alert-controller\" | \"ion-alert\" | \"ion-anchor\" | \"ion-app\" | \"ion-avatar\" | \"ion-back-button\" | \"ion-backdrop\" | \"ion-badge\" | \"ion-button\" | \"ion-buttons\" | \"ion-card-content\" | \"ion-card-header\" | \"ion-card-subtitle\" | \"ion-card-title\" | \"ion-card\" | \"ion-checkbox\" | \"ion-chip\" | \"ion-col\" | \"ion-content\" | \"ion-datetime\" | \"ion-fab-button\" | \"ion-fab-list\" | \"ion-fab\" | \"ion-footer\" | \"ion-grid\" | \"ion-header\" | \"ion-img\" | \"ion-infinite-scroll-content\" | \"ion-infinite-scroll\" | \"ion-input\" | \"ion-item-divider\" | \"ion-item-group\" | \"ion-item-option\" | \"ion-item-options\" | \"ion-item-sliding\" | \"ion-item\" | \"ion-label\" | \"ion-list-header\" | \"ion-list\" | \"ion-loading-controller\" | \"ion-loading\" | \"ion-menu-button\" | \"ion-menu-controller\" | \"ion-menu-toggle\" | \"ion-menu\" | \"ion-modal-controller\" | \"ion-modal\" | \"ion-nav-pop\" | \"ion-nav-push\" | \"ion-nav-set-root\" | \"ion-nav\" | \"ion-note\" | \"ion-picker-column\" | \"ion-picker-controller\" | \"ion-picker\" | \"ion-popover-controller\" | \"ion-popover\" | \"ion-progress-bar\" | \"ion-radio-group\" | \"ion-radio\" | \"ion-range\" | \"ion-refresher-content\" | \"ion-refresher\" | \"ion-reorder-group\" | \"ion-reorder\" | \"ion-ripple-effect\" | \"ion-route-redirect\" | \"ion-route\" | \"ion-router-outlet\" | \"ion-router\" | \"ion-row\" | \"ion-searchbar\" | \"ion-segment-button\" | \"ion-segment\" | \"ion-select-option\" | \"ion-select-popover\" | \"ion-select\" | \"ion-skeleton-text\" | \"ion-slide\" | \"ion-slides\" | \"ion-spinner\" | \"ion-split-pane\" | \"ion-tab-bar\" | \"ion-tab-button\" | \"ion-tab\" | \"ion-tabs\" | \"ion-text\" | \"ion-textarea\" | \"ion-thumbnail\" | \"ion-title\" | \"ion-toast-controller\" | \"ion-toast\" | \"ion-toggle\" | \"ion-toolbar\" | \"ion-virtual-scroll\" | \"slot\" | \"a\" | \"abbr\" | \"address\" | \"area\" | \"article\" | \"aside\" | \"audio\" | \"b\" | \"base\" | \"bdi\" | \"bdo\" | \"big\" | \"blockquote\" | \"body\" | \"br\" | \"button\" | \"canvas\" | \"caption\" | \"cite\" | \"code\" | \"col\" | \"colgroup\" | \"data\" | \"datalist\" | \"dd\" | \"del\" | \"details\" | \"dfn\" | \"dialog\" | \"div\" | \"dl\" | \"dt\" | \"em\" | \"embed\" | \"fieldset\" | \"figcaption\" | \"figure\" | \"footer\" | \"form\" | \"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\" | \"h6\" | \"head\" | \"header\" | \"hgroup\" | \"hr\" | \"html\" | \"i\" | \"iframe\" | \"img\" | \"input\" | \"ins\" | \"kbd\" | \"keygen\" | \"label\" | \"legend\" | \"li\" | \"link\" | \"main\" | \"map\" | \"mark\" | \"menu\" | \"menuitem\" | \"meta\" | \"meter\" | \"nav\" | \"noscript\" | \"ol\" | \"optgroup\" | \"option\" | \"output\" | \"p\" | \"param\" | \"picture\" | \"pre\" | \"progress\" | \"q\" | \"rp\" | \"rt\" | \"ruby\" | \"s\" | \"samp\" | \"script\" | \"section\" | \"select\" | \"small\" | \"source\" | \"span\" | \"strong\" | \"style\" | \"sub\" | \"summary\" | \"sup\" | \"table\" | \"tbody\" | \"td\" | \"textarea\" | \"tfoot\" | \"th\" | \"thead\" | \"time\" | \"title\" | \"tr\" | \"track\" | \"u\" | \"ul\" | \"var\" | \"video\" | \"wbr\" ? StencilIntrinsicElements[T] : { [key: string]: any; } | null | undefined",
-          "docs": ""
+          "docs": "Any properties of the component."
         },
         {
           "name": "opts",
           "type": "NavOptions | null | undefined",
-          "docs": ""
+          "docs": "The navigation options."
         },
         {
           "name": "done",
           "type": "((hasCompleted: boolean, requiresTransition: boolean, enteringView?: ViewController | undefined, leavingView?: ViewController | undefined, direction?: string | undefined) => void) | undefined",
-          "docs": ""
+          "docs": "The transition complete function."
         }
       ],
-      "docs": "Push a new component onto the current navigation stack. Pass any additional information along as an object. This additional information is accessible through NavParams",
-      "docsTags": []
+      "docs": "Push a new component onto the current navigation stack. Pass any additional\ninformation along as an object. This additional information is accessible\nthrough NavParams.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "component The component to push onto the navigation stack."
+        },
+        {
+          "name": "param",
+          "text": "componentProps Any properties of the component."
+        },
+        {
+          "name": "param",
+          "text": "opts The navigation options."
+        },
+        {
+          "name": "param",
+          "text": "done The transition complete function."
+        }
+      ]
     },
     {
       "name": "removeIndex",
@@ -307,26 +408,43 @@
         {
           "name": "startIndex",
           "type": "number",
-          "docs": ""
+          "docs": "The number to begin removal at."
         },
         {
           "name": "removeCount",
           "type": "number",
-          "docs": ""
+          "docs": "The number of components to remove."
         },
         {
           "name": "opts",
           "type": "NavOptions | null | undefined",
-          "docs": ""
+          "docs": "The navigation options."
         },
         {
           "name": "done",
           "type": "((hasCompleted: boolean, requiresTransition: boolean, enteringView?: ViewController | undefined, leavingView?: ViewController | undefined, direction?: string | undefined) => void) | undefined",
-          "docs": ""
+          "docs": "The transition complete function."
         }
       ],
-      "docs": "Removes a page from the nav stack at the specified index.",
-      "docsTags": []
+      "docs": "Removes a component from the navigation stack at the specified index.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "startIndex The number to begin removal at."
+        },
+        {
+          "name": "param",
+          "text": "removeCount The number of components to remove."
+        },
+        {
+          "name": "param",
+          "text": "opts The navigation options."
+        },
+        {
+          "name": "param",
+          "text": "done The transition complete function."
+        }
+      ]
     },
     {
       "name": "setPages",
@@ -339,21 +457,34 @@
         {
           "name": "views",
           "type": "any[]",
-          "docs": ""
+          "docs": "The list of views to set as the navigation stack."
         },
         {
           "name": "opts",
           "type": "NavOptions | null | undefined",
-          "docs": ""
+          "docs": "The navigation options."
         },
         {
           "name": "done",
           "type": "((hasCompleted: boolean, requiresTransition: boolean, enteringView?: ViewController | undefined, leavingView?: ViewController | undefined, direction?: string | undefined) => void) | undefined",
-          "docs": ""
+          "docs": "The transition complete function."
         }
       ],
-      "docs": "Set the views of the current navigation stack and navigate to the last view. By default animations are disabled, but they can be enabled by passing options to the navigation controller.You can also pass any navigation params to the individual pages in the array.",
-      "docsTags": []
+      "docs": "Set the views of the current navigation stack and navigate to the last view.\nBy default animations are disabled, but they can be enabled by passing options\nto the navigation controller. Navigation parameters can also be passed to the\nindividual pages in the array.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "views The list of views to set as the navigation stack."
+        },
+        {
+          "name": "param",
+          "text": "opts The navigation options."
+        },
+        {
+          "name": "param",
+          "text": "done The transition complete function."
+        }
+      ]
     },
     {
       "name": "setRoot",
@@ -366,26 +497,43 @@
         {
           "name": "component",
           "type": "T",
-          "docs": ""
+          "docs": "The component to set as the root of the navigation stack."
         },
         {
           "name": "componentProps",
           "type": "T extends \"object\" | \"ion-icon\" | \"ion-action-sheet-controller\" | \"ion-action-sheet\" | \"ion-alert-controller\" | \"ion-alert\" | \"ion-anchor\" | \"ion-app\" | \"ion-avatar\" | \"ion-back-button\" | \"ion-backdrop\" | \"ion-badge\" | \"ion-button\" | \"ion-buttons\" | \"ion-card-content\" | \"ion-card-header\" | \"ion-card-subtitle\" | \"ion-card-title\" | \"ion-card\" | \"ion-checkbox\" | \"ion-chip\" | \"ion-col\" | \"ion-content\" | \"ion-datetime\" | \"ion-fab-button\" | \"ion-fab-list\" | \"ion-fab\" | \"ion-footer\" | \"ion-grid\" | \"ion-header\" | \"ion-img\" | \"ion-infinite-scroll-content\" | \"ion-infinite-scroll\" | \"ion-input\" | \"ion-item-divider\" | \"ion-item-group\" | \"ion-item-option\" | \"ion-item-options\" | \"ion-item-sliding\" | \"ion-item\" | \"ion-label\" | \"ion-list-header\" | \"ion-list\" | \"ion-loading-controller\" | \"ion-loading\" | \"ion-menu-button\" | \"ion-menu-controller\" | \"ion-menu-toggle\" | \"ion-menu\" | \"ion-modal-controller\" | \"ion-modal\" | \"ion-nav-pop\" | \"ion-nav-push\" | \"ion-nav-set-root\" | \"ion-nav\" | \"ion-note\" | \"ion-picker-column\" | \"ion-picker-controller\" | \"ion-picker\" | \"ion-popover-controller\" | \"ion-popover\" | \"ion-progress-bar\" | \"ion-radio-group\" | \"ion-radio\" | \"ion-range\" | \"ion-refresher-content\" | \"ion-refresher\" | \"ion-reorder-group\" | \"ion-reorder\" | \"ion-ripple-effect\" | \"ion-route-redirect\" | \"ion-route\" | \"ion-router-outlet\" | \"ion-router\" | \"ion-row\" | \"ion-searchbar\" | \"ion-segment-button\" | \"ion-segment\" | \"ion-select-option\" | \"ion-select-popover\" | \"ion-select\" | \"ion-skeleton-text\" | \"ion-slide\" | \"ion-slides\" | \"ion-spinner\" | \"ion-split-pane\" | \"ion-tab-bar\" | \"ion-tab-button\" | \"ion-tab\" | \"ion-tabs\" | \"ion-text\" | \"ion-textarea\" | \"ion-thumbnail\" | \"ion-title\" | \"ion-toast-controller\" | \"ion-toast\" | \"ion-toggle\" | \"ion-toolbar\" | \"ion-virtual-scroll\" | \"slot\" | \"a\" | \"abbr\" | \"address\" | \"area\" | \"article\" | \"aside\" | \"audio\" | \"b\" | \"base\" | \"bdi\" | \"bdo\" | \"big\" | \"blockquote\" | \"body\" | \"br\" | \"button\" | \"canvas\" | \"caption\" | \"cite\" | \"code\" | \"col\" | \"colgroup\" | \"data\" | \"datalist\" | \"dd\" | \"del\" | \"details\" | \"dfn\" | \"dialog\" | \"div\" | \"dl\" | \"dt\" | \"em\" | \"embed\" | \"fieldset\" | \"figcaption\" | \"figure\" | \"footer\" | \"form\" | \"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\" | \"h6\" | \"head\" | \"header\" | \"hgroup\" | \"hr\" | \"html\" | \"i\" | \"iframe\" | \"img\" | \"input\" | \"ins\" | \"kbd\" | \"keygen\" | \"label\" | \"legend\" | \"li\" | \"link\" | \"main\" | \"map\" | \"mark\" | \"menu\" | \"menuitem\" | \"meta\" | \"meter\" | \"nav\" | \"noscript\" | \"ol\" | \"optgroup\" | \"option\" | \"output\" | \"p\" | \"param\" | \"picture\" | \"pre\" | \"progress\" | \"q\" | \"rp\" | \"rt\" | \"ruby\" | \"s\" | \"samp\" | \"script\" | \"section\" | \"select\" | \"small\" | \"source\" | \"span\" | \"strong\" | \"style\" | \"sub\" | \"summary\" | \"sup\" | \"table\" | \"tbody\" | \"td\" | \"textarea\" | \"tfoot\" | \"th\" | \"thead\" | \"time\" | \"title\" | \"tr\" | \"track\" | \"u\" | \"ul\" | \"var\" | \"video\" | \"wbr\" ? StencilIntrinsicElements[T] : { [key: string]: any; } | null | undefined",
-          "docs": ""
+          "docs": "Any properties of the component."
         },
         {
           "name": "opts",
           "type": "NavOptions | null | undefined",
-          "docs": ""
+          "docs": "The navigation options."
         },
         {
           "name": "done",
           "type": "((hasCompleted: boolean, requiresTransition: boolean, enteringView?: ViewController | undefined, leavingView?: ViewController | undefined, direction?: string | undefined) => void) | undefined",
-          "docs": ""
+          "docs": "The transition complete function."
         }
       ],
-      "docs": "Set the root for the current navigation stack.",
-      "docsTags": []
+      "docs": "Set the root for the current navigation stack to a component.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "component The component to set as the root of the navigation stack."
+        },
+        {
+          "name": "param",
+          "text": "componentProps Any properties of the component."
+        },
+        {
+          "name": "param",
+          "text": "opts The navigation options."
+        },
+        {
+          "name": "param",
+          "text": "done The transition complete function."
+        }
+      ]
     }
   ],
   "events": [

@@ -17,7 +17,7 @@
       "mutable": false,
       "attr": "activated",
       "reflectToAttr": false,
-      "docs": "If `true`, the fab list will be show all fab buttons in the list.",
+      "docs": "If `true`, the fab list will show all fab buttons in the list.",
       "docsTags": [],
       "default": "false",
       "optional": false,

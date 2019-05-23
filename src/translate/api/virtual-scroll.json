@@ -135,7 +135,7 @@
       },
       "signature": "checkEnd() => void",
       "parameters": [],
-      "docs": "This method marks the tail the items array as dirty, so they can be re-rendered.\n\nIt's equivalent to calling:\n\n```js\n   * virtualScroll.checkRange(lastItemLen);\n   * ```",
+      "docs": "Marks the tail of the items array as dirty, so they can be re-rendered.\nIt's equivalent to calling `checkRange(length)` where `length` is the\ntotal length of the items.",
       "docsTags": []
     },
     {
@@ -144,21 +144,30 @@
         "type": "void",
         "docs": ""
       },
-      "signature": "checkRange(offset: number, len?: number) => void",
+      "signature": "checkRange(offset: number, length?: number) => void",
       "parameters": [
         {
           "name": "offset",
           "type": "number",
-          "docs": ""
+          "docs": "The index of the item to start marking dirty."
         },
         {
-          "name": "len",
+          "name": "length",
           "type": "number",
-          "docs": ""
+          "docs": "The number of items to mark dirty."
         }
       ],
-      "docs": "This method marks a subset of items as dirty, so they can be re-rendered. Items should be marked as\ndirty any time the content or their style changes.\n\nThe subset of items to be updated can are specifing by an offset and a length.",
-      "docsTags": []
+      "docs": "Marks a subset of the items as dirty so they can be re-rendered.\nItems should be marked as dirty any time the content or their style changes.\n\nThe subset of items to be updated are specified by an offset and a length.\nIf a length is not provided it will check all of the items beginning at\nthe offset.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "offset The index of the item to start marking dirty."
+        },
+        {
+          "name": "param",
+          "text": "length The number of items to mark dirty."
+        }
+      ]
     },
     {
       "name": "positionForItem",
@@ -171,11 +180,16 @@
         {
           "name": "index",
           "type": "number",
-          "docs": ""
+          "docs": "The index of the item."
         }
       ],
       "docs": "Returns the position of the virtual item at the given index.",
-      "docsTags": []
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "index The index of the item."
+        }
+      ]
     }
   ],
   "events": [],

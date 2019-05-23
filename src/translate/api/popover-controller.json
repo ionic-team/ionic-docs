@@ -15,16 +15,21 @@
         "type": "Promise<HTMLIonPopoverElement>",
         "docs": ""
       },
-      "signature": "create<T extends ComponentRef>(opts: PopoverOptions<T>) => Promise<HTMLIonPopoverElement>",
+      "signature": "create<T extends ComponentRef>(options: PopoverOptions<T>) => Promise<HTMLIonPopoverElement>",
       "parameters": [
         {
-          "name": "opts",
+          "name": "options",
           "type": "PopoverOptions<T>",
-          "docs": ""
+          "docs": "The options to use to create the popover."
         }
       ],
       "docs": "Create a popover overlay with popover options.",
-      "docsTags": []
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "options The options to use to create the popover."
+        }
+      ]
     },
     {
       "name": "dismiss",
@@ -37,21 +42,34 @@
         {
           "name": "data",
           "type": "any",
-          "docs": ""
+          "docs": "Any data to emit in the dismiss events."
         },
         {
           "name": "role",
           "type": "string | undefined",
-          "docs": ""
+          "docs": "The role of the element that is dismissing the popover.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the popover.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
         },
         {
           "name": "id",
           "type": "string | undefined",
-          "docs": ""
+          "docs": "The id of the popover to dismiss. If an id is not provided, it will dismiss the most recently opened popover."
         }
       ],
       "docs": "Dismiss the open popover overlay.",
-      "docsTags": []
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "data Any data to emit in the dismiss events."
+        },
+        {
+          "name": "param",
+          "text": "role The role of the element that is dismissing the popover.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the popover.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+        },
+        {
+          "name": "param",
+          "text": "id The id of the popover to dismiss. If an id is not provided, it will dismiss the most recently opened popover."
+        }
+      ]
     },
     {
       "name": "getTop",

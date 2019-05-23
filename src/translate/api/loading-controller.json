@@ -15,16 +15,21 @@
         "type": "Promise<HTMLIonLoadingElement>",
         "docs": ""
       },
-      "signature": "create(opts?: LoadingOptions | undefined) => Promise<HTMLIonLoadingElement>",
+      "signature": "create(options?: LoadingOptions | undefined) => Promise<HTMLIonLoadingElement>",
       "parameters": [
         {
-          "name": "opts",
+          "name": "options",
           "type": "LoadingOptions | undefined",
-          "docs": ""
+          "docs": "The options to use to create the loading."
         }
       ],
       "docs": "Create a loading overlay with loading options.",
-      "docsTags": []
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "options The options to use to create the loading."
+        }
+      ]
     },
     {
       "name": "dismiss",
@@ -37,21 +42,34 @@
         {
           "name": "data",
           "type": "any",
-          "docs": ""
+          "docs": "Any data to emit in the dismiss events."
         },
         {
           "name": "role",
           "type": "string | undefined",
-          "docs": ""
+          "docs": "The role of the element that is dismissing the loading.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the loading.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
         },
         {
           "name": "id",
           "type": "string | undefined",
-          "docs": ""
+          "docs": "The id of the loading to dismiss. If an id is not provided, it will dismiss the most recently opened loading."
         }
       ],
       "docs": "Dismiss the open loading overlay.",
-      "docsTags": []
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "data Any data to emit in the dismiss events."
+        },
+        {
+          "name": "param",
+          "text": "role The role of the element that is dismissing the loading.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the loading.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+        },
+        {
+          "name": "param",
+          "text": "id The id of the loading to dismiss. If an id is not provided, it will dismiss the most recently opened loading."
+        }
+      ]
     },
     {
       "name": "getTop",

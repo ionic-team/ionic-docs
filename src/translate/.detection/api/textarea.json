@@ -12,6 +12,18 @@
   },
   "props": [
     {
+      "name": "autoGrow",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "auto-grow",
+      "reflectToAttr": false,
+      "docs": "If `true`, the element height will increase based on the value.",
+      "docsTags": [],
+      "default": "false",
+      "optional": false,
+      "required": false
+    },
+    {
       "name": "autocapitalize",
       "type": "string",
       "mutable": false,

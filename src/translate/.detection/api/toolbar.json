@@ -22,7 +22,7 @@
     },
     {
       "name": "slot",
-      "text": "end - Content is placed to the left of the toolbar text in LTR, and to the right in RTL."
+      "text": "end - Content is placed to the right of the toolbar text in LTR, and to the left in RTL."
     }
   ],
   "usage": {
@@ -121,7 +121,7 @@
     },
     {
       "name": "end",
-      "docs": "Content is placed to the left of the toolbar text in LTR, and to the right in RTL."
+      "docs": "Content is placed to the right of the toolbar text in LTR, and to the left in RTL."
     },
     {
       "name": "primary",

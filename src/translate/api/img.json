@@ -50,6 +50,15 @@
       "bubbles": true,
       "cancelable": true,
       "composed": true,
+      "docs": "Emitted when the image has finished loading",
+      "docsTags": []
+    },
+    {
+      "event": "ionImgWillLoad",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
       "docs": "Emitted when the img src has been set",
       "docsTags": []
     }

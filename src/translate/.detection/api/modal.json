@@ -7,7 +7,7 @@
   "usage": {
     "angular": "```typescript\nimport { Component } from '@angular/core';\nimport { ModalController } from '@ionic/angular';\nimport { ModalPage } from '../modal/modal.page';\n@Component({\n  selector: 'modal-example',\n  templateUrl: 'modal-example.html',\n  styleUrls: ['./modal-example.css']\n})\nexport class ModalExample {\n  constructor(public modalController: ModalController) {}\n\n  async presentModal() {\n    const modal = await this.modalController.create({\n      component: ModalPage,\n      componentProps: { value: 123 }\n    });\n    return await modal.present();\n  }\n}\n```\n\n```typescript\nimport { Component, Input } from '@angular/core';\nimport { NavParams } from '@ionic/angular';\n\n@Component({\n  selector: 'modal-page',\n})\nexport class ModalExample {\n\n  // \"value\" passed in componentProps\n  @Input() value: number;\n\n  constructor(navParams: NavParams) {\n    // componentProps can also be accessed at construction time using NavParams\n  }\n\n}\n```\n\n#### Lazy Loading\n\nWhen lazy loading a modal, it's important to note that the modal will not be loaded when it is opened, but rather when the module that imports the modal's module is loaded.\n\nFor example, say there exists a `CalendarComponent` and an `EventModal`. The modal is presented by clicking a button in the `CalendarComponent`. In Angular, the `EventModalModule` would need to be included in the `CalendarComponentModule` since the modal is created in the `CalendarComponent`:\n\n```typescript\nimport { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { IonicModule } from '@ionic/angular';\n\nimport { CalendarComponent } from './calendar.component';\nimport { EventModalModule } from '../modals/event/event.module';\n\n@NgModule({\n    declarations: [\n        CalendarComponent\n    ],\n    imports: [\n      IonicModule,\n      CommonModule,\n      EventModalModule\n    ],\n    exports: [\n      CalendarComponent\n    ]\n})\n\nexport class CalendarComponentModule {}\n```",
     "javascript": "```html\n<body>\n  <ion-modal-controller></ion-modal-controller>\n</body>\n```\n\n```javascript\ncustomElements.define('modal-page', class extends HTMLElement {\n  connectedCallback() {\n    this.innerHTML = `\n<ion-header>\n  <ion-toolbar>\n    <ion-title>Super Modal</ion-title>\n  </ion-toolbar>\n</ion-header>\n<ion-content>\n  Content\n</ion-content>`;\n  }\n});\n\nasync function presentModal() {\n  // initialize controller\n  const modalController = document.querySelector('ion-modal-controller');\n  await modalController.componentOnReady();\n\n  // present the modal\n  const modalElement = await modalController.create({\n    component: 'modal-page'\n  });\n  await modalElement.present();\n}\n```\n",
-    "react": "```tsx\nimport React, { Component } from 'react'\nimport { IonModal } from '@ionic/react';\n\ntype Props = {}\ntype State = {\n  showModal: boolean\n}\n\nexport class ModalExample extends Component<Props, State> {\n\n  constructor(props: Props) {\n    super(props);\n    this.state = {\n      showModal: false\n    };\n  }\n\n  render() {\n    return (\n      <IonModal\n        isOpen={this.state.showModal}\n        onDidDismiss={() => this.setState(() => ({ showModal: false }))}\n      >\n        <p>This is modal content</p>\n        <IonButton onClick={() => this.setState(() => ({ showModal: false }))}>\n          Close Modal\n        </IonButton>\n      </IonModal>\n    );\n  }\n}\n\n```\n",
+    "react": "```tsx\nimport React, { Component } from 'react'\nimport { IonModal } from '@ionic/react';\n\ntype Props = {}\ntype State = {\n  showModal: boolean\n}\n\nexport class ModalExample extends Component<Props, State> {\n\n  constructor(props: Props) {\n    super(props);\n    this.state = {\n      showModal: false\n    };\n  }\n\n  render() {\n    return (\n      <IonModal\n        isOpen={this.state.showModal}\n        onDidDismiss={() => this.setState(() => ({ showModal: false }))}\n      >\n        <p>This is modal content</p>\n        <IonButton onClick={() => this.setState(() => ({ showModal: false }))}>\n          Close Modal\n        </IonButton>\n      </IonModal>\n    );\n  }\n}\n```\n",
     "vue": "```html\n<template>\n  <div>\n    <ion-header>\n      <ion-toolbar>\n        <ion-title>{{ title }}</ion-title>\n      </ion-toolbar>\n    </ion-header>\n    <ion-content padding>\n      {{ content }}\n    </ion-content>\n  </div>\n</template>\n\n<script>\nexport default {\n  name: 'Modal',\n  props: {\n    title: { type: String, default: 'Super Modal' },\n  },\n  data() {\n    return {\n      content: 'Content',\n    }\n  },\n}\n</script>\n```\n\n```html\n<template>\n  <ion-page class=\"ion-page\" main>\n    <ion-content class=\"ion-content\" padding>\n      <ion-button @click=\"openModal\">Open Modal</ion-button>\n    </ion-content>\n  </ion-page>\n</template>\n\n<script>\nimport Modal from './modal.vue'\n\nexport default {\n  methods: {\n    openModal() {\n      return this.$ionic.modalController\n        .create({\n          component: Modal,\n          componentProps: {\n            data: {\n              content: 'New Content',\n            },\n            propsData: {\n              title: 'New title',\n            },\n          },\n        })\n        .then(m => m.present())\n    },\n  },\n}\n</script>\n```\n"
   },
   "props": [
@@ -135,16 +135,25 @@
         {
           "name": "data",
           "type": "any",
-          "docs": ""
+          "docs": "Any data to emit in the dismiss events."
         },
         {
           "name": "role",
           "type": "string | undefined",
-          "docs": ""
+          "docs": "The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'."
         }
       ],
       "docs": "Dismiss the modal overlay after it has been presented.",
-      "docsTags": []
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "data Any data to emit in the dismiss events."
+        },
+        {
+          "name": "param",
+          "text": "role The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'."
+        }
+      ]
     },
     {
       "name": "onDidDismiss",

@@ -7,7 +7,7 @@
   "usage": {
     "angular": "```typescript\nimport { Component } from '@angular/core';\nimport { ActionSheetController } from '@ionic/angular';\n\n@Component({\n  selector: 'action-sheet-example',\n  templateUrl: 'action-sheet-example.html',\n  styleUrls: ['./action-sheet-example.css'],\n})\nexport class ActionSheetExample {\n\n  constructor(public actionSheetController: ActionSheetController) {}\n\n  async presentActionSheet() {\n    const actionSheet = await this.actionSheetController.create({\n      header: 'Albums',\n      buttons: [{\n        text: 'Delete',\n        role: 'destructive',\n        icon: 'trash',\n        handler: () => {\n          console.log('Delete clicked');\n        }\n      }, {\n        text: 'Share',\n        icon: 'share',\n        handler: () => {\n          console.log('Share clicked');\n        }\n      }, {\n        text: 'Play (open modal)',\n        icon: 'arrow-dropright-circle',\n        handler: () => {\n          console.log('Play clicked');\n        }\n      }, {\n        text: 'Favorite',\n        icon: 'heart',\n        handler: () => {\n          console.log('Favorite clicked');\n        }\n      }, {\n        text: 'Cancel',\n        icon: 'close',\n        role: 'cancel',\n        handler: () => {\n          console.log('Cancel clicked');\n        }\n      }]\n    });\n    await actionSheet.present();\n  }\n\n}\n```\n",
     "javascript": "```javascript\nasync function presentActionSheet() {\n  const actionSheetController = document.querySelector('ion-action-sheet-controller');\n  await actionSheetController.componentOnReady();\n\n  const actionSheet = await actionSheetController.create({\n    header: \"Albums\",\n    buttons: [{\n      text: 'Delete',\n      role: 'destructive',\n      icon: 'trash',\n      handler: () => {\n        console.log('Delete clicked');\n      }\n    }, {\n      text: 'Share',\n      icon: 'share',\n      handler: () => {\n        console.log('Share clicked');\n      }\n    }, {\n      text: 'Play (open modal)',\n      icon: 'arrow-dropright-circle',\n      handler: () => {\n        console.log('Play clicked');\n      }\n    }, {\n      text: 'Favorite',\n      icon: 'heart',\n      handler: () => {\n        console.log('Favorite clicked');\n      }\n    }, {\n      text: 'Cancel',\n      icon: 'close',\n      role: 'cancel',\n      handler: () => {\n        console.log('Cancel clicked');\n      }\n    }]\n  });\n  await actionSheet.present();\n}\n```\n",
-    "react": "```typescript\nimport React, { Component } from 'react'\nimport { IonActionSheet } from '@ionic/react';\n\ntype Props = {}\ntype State = {\n  showActionSheet: boolean\n}\n\nexport default class ActionSheetExample extends Component<Props, State> {\n\n  constructor(props: Props) {\n    super(props);\n    this.state = {\n      showActionSheet: false\n    };\n  }\n\n  render() {\n    return (\n      <IonActionSheet\n        isOpen={this.state.showActionSheet}\n        onDidDismiss={() => this.setState(() => ({ showActionSheet: false }))}\n        buttons={[{\n          text: 'Delete',\n          role: 'destructive',\n          icon: 'trash',\n          handler: () => {\n            console.log('Delete clicked');\n          }\n        }, {\n          text: 'Share',\n          icon: 'share',\n          handler: () => {\n            console.log('Share clicked');\n          }\n        }, {\n          text: 'Play (open modal)',\n          icon: 'arrow-dropright-circle',\n          handler: () => {\n            console.log('Play clicked');\n          }\n        }, {\n          text: 'Favorite',\n          icon: 'heart',\n          handler: () => {\n            console.log('Favorite clicked');\n          }\n        }, {\n          text: 'Cancel',\n          icon: 'close',\n          role: 'cancel',\n          handler: () => {\n            console.log('Cancel clicked');\n          }\n        }]}\n      >\n      </IonActionSheet>\n    );\n  }\n}\n\n```\n",
+    "react": "```typescript\nimport React, { Component } from 'react'\nimport { IonActionSheet } from '@ionic/react';\n\ntype Props = {}\ntype State = {\n  showActionSheet: boolean\n}\n\nexport default class ActionSheetExample extends Component<Props, State> {\n\n  constructor(props: Props) {\n    super(props);\n    this.state = {\n      showActionSheet: false\n    };\n  }\n\n  render() {\n    return (\n      <IonActionSheet\n        isOpen={this.state.showActionSheet}\n        onDidDismiss={() => this.setState(() => ({ showActionSheet: false }))}\n        buttons={[{\n          text: 'Delete',\n          role: 'destructive',\n          icon: 'trash',\n          handler: () => {\n            console.log('Delete clicked');\n          }\n        }, {\n          text: 'Share',\n          icon: 'share',\n          handler: () => {\n            console.log('Share clicked');\n          }\n        }, {\n          text: 'Play (open modal)',\n          icon: 'arrow-dropright-circle',\n          handler: () => {\n            console.log('Play clicked');\n          }\n        }, {\n          text: 'Favorite',\n          icon: 'heart',\n          handler: () => {\n            console.log('Favorite clicked');\n          }\n        }, {\n          text: 'Cancel',\n          icon: 'close',\n          role: 'cancel',\n          handler: () => {\n            console.log('Cancel clicked');\n          }\n        }]}\n      >\n      </IonActionSheet>\n    );\n  }\n}\n```\n",
     "vue": "```html\n<template>\n  <IonVuePage :title=\"'Action Sheet'\">\n    <ion-button @click=\"presentActionSheet\">Show Action Sheet</ion-button>\n  </IonVuePage>\n</template>\n\n<script>\nexport default {\n  methods: {\n    presentActionSheet() {\n      return this.$ionic.actionSheetController\n        .create({\n          header: 'Albums',\n          buttons: [\n            {\n              text: 'Delete',\n              role: 'destructive',\n              icon: 'trash',\n              handler: () => {\n                console.log('Delete clicked')\n              },\n            },\n            {\n              text: 'Share',\n              icon: 'share',\n              handler: () => {\n                console.log('Share clicked')\n              },\n            },\n            {\n              text: 'Play (open modal)',\n              icon: 'arrow-dropright-circle',\n              handler: () => {\n                console.log('Play clicked')\n              },\n            },\n            {\n              text: 'Favorite',\n              icon: 'heart',\n              handler: () => {\n                console.log('Favorite clicked')\n              },\n            },\n            {\n              text: 'Cancel',\n              icon: 'close',\n              role: 'cancel',\n              handler: () => {\n                console.log('Cancel clicked')\n              },\n            },\n          ],\n        })\n        .then(a => a.present())\n    },\n  },\n}\n</script>\n```\n"
   },
   "props": [
@@ -147,16 +147,25 @@
         {
           "name": "data",
           "type": "any",
-          "docs": ""
+          "docs": "Any data to emit in the dismiss events."
         },
         {
           "name": "role",
           "type": "string | undefined",
-          "docs": ""
+          "docs": "The role of the element that is dismissing the action sheet.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the action sheet.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
         }
       ],
       "docs": "Dismiss the action sheet overlay after it has been presented.",
-      "docsTags": []
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "data Any data to emit in the dismiss events."
+        },
+        {
+          "name": "param",
+          "text": "role The role of the element that is dismissing the action sheet.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the action sheet.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+        }
+      ]
     },
     {
       "name": "onDidDismiss",
@@ -166,7 +175,7 @@
       },
       "signature": "onDidDismiss() => Promise<OverlayEventDetail<any>>",
       "parameters": [],
-      "docs": "Returns a promise that resolves when the action-sheet did dismiss.",
+      "docs": "Returns a promise that resolves when the action sheet did dismiss.",
       "docsTags": []
     },
     {
@@ -177,7 +186,7 @@
       },
       "signature": "onWillDismiss() => Promise<OverlayEventDetail<any>>",
       "parameters": [],
-      "docs": "Returns a promise that resolves when the action-sheet will dismiss.",
+      "docs": "Returns a promise that resolves when the action sheet will dismiss.",
       "docsTags": []
     },
     {

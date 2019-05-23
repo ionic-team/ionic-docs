@@ -28,7 +28,7 @@
       "mutable": false,
       "attr": "loading-text",
       "reflectToAttr": false,
-      "docs": "Optional text to display while loading.",
+      "docs": "Optional text to display while loading.\n`loadingText` can accept either plaintext or HTML as a string.\nTo display characters normally reserved for HTML, they\nmust be escaped. For example `<Ionic>` would become\n`&lt;Ionic&gt;`\n\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)",
       "docsTags": [],
       "optional": true,
       "required": false

@@ -56,16 +56,25 @@
         {
           "name": "url",
           "type": "string",
-          "docs": ""
+          "docs": "The url to navigate to."
         },
         {
           "name": "direction",
           "type": "\"back\" | \"forward\" | \"root\"",
-          "docs": ""
+          "docs": "The direction of the animation. Defaults to `\"forward\"`."
         }
       ],
       "docs": "Navigate to the specified URL.",
-      "docsTags": []
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "url The url to navigate to."
+        },
+        {
+          "name": "param",
+          "text": "direction The direction of the animation. Defaults to `\"forward\"`."
+        }
+      ]
     }
   ],
   "events": [

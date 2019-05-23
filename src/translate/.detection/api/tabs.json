@@ -33,7 +33,7 @@
       },
       "signature": "getSelected() => Promise<string | undefined>",
       "parameters": [],
-      "docs": "Get the currently selected tab",
+      "docs": "Get the currently selected tab.",
       "docsTags": []
     },
     {
@@ -47,11 +47,16 @@
         {
           "name": "tab",
           "type": "HTMLIonTabElement | string",
-          "docs": ""
+          "docs": "The tab instance to select. If passed a string, it should be the value of the tab's `tab` property."
         }
       ],
-      "docs": "Get the tab element given the tab name",
-      "docsTags": []
+      "docs": "Get a specific tab by the value of its `tab` property or an element reference.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "tab The tab instance to select. If passed a string, it should be the value of the tab's `tab` property."
+        }
+      ]
     },
     {
       "name": "select",
@@ -64,11 +69,16 @@
         {
           "name": "tab",
           "type": "HTMLIonTabElement | string",
-          "docs": ""
+          "docs": "The tab instance to select. If passed a string, it should be the value of the tab's `tab` property."
         }
       ],
-      "docs": "Index or the Tab instance, of the tab to select.",
-      "docsTags": []
+      "docs": "Select a tab by the value of its `tab` property or an element reference.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "tab The tab instance to select. If passed a string, it should be the value of the tab's `tab` property."
+        }
+      ]
     }
   ],
   "events": [

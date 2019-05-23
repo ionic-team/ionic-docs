@@ -17,7 +17,7 @@
       "mutable": false,
       "attr": "content-id",
       "reflectToAttr": false,
-      "docs": "The content `id` of the split-pane's main content.\nThis property can be used instead of the `[main]` attribute to select the `main`\ncontent of the split-pane.\n\n```html\n   * <ion-split-pane content-id=\"my-content\">\n   *   <ion-menu></ion-menu>\n   *   <div id=\"my-content\">\n   * </ion-split-pane>\n   * ```",
+      "docs": "The content `id` of the split-pane's main content.\nThis property can be used instead of the `[main]` attribute to select the `main`\ncontent of the split-pane.",
       "docsTags": [],
       "optional": true,
       "required": false

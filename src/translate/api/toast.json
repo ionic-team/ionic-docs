@@ -7,7 +7,7 @@
   "usage": {
     "angular": "```typescript\nimport { Component } from '@angular/core';\nimport { ToastController } from '@ionic/angular';\n\n@Component({\n  selector: 'toast-example',\n  templateUrl: 'toast-example.html',\n  styleUrls: ['./toast-example.css'],\n})\nexport class ToastExample {\n\n  constructor(public toastController: ToastController) {}\n\n  async presentToast() {\n    const toast = await this.toastController.create({\n      message: 'Your settings have been saved.',\n      duration: 2000\n    });\n    toast.present();\n  }\n\n  async presentToastWithOptions() {\n    const toast = await this.toastController.create({\n      header: 'Toast header',\n      message: 'Click to Close',\n      position: 'top',\n      buttons: [\n        {\n          side: 'start',\n          icon: 'star',\n          text: 'Favorite',\n          handler: () => {\n            console.log('Favorite clicked');\n          }\n        }, {\n          text: 'Done',\n          role: 'cancel',\n          handler: () => {\n            console.log('Cancel clicked');\n          }\n        }\n      ]\n    });\n    toast.present();\n  }\n\n}\n```\n",
     "javascript": "```javascript\nasync function presentToast() {\n  const toastController = document.querySelector('ion-toast-controller');\n  await toastController.componentOnReady();\n\n  const toast = await toastController.create({\n    message: 'Your settings have been saved.',\n    duration: 2000\n  });\n  return await toast.present();\n}\n\nasync function presentToastWithOptions() {\n  const toastController = document.querySelector('ion-toast-controller');\n  await toastController.componentOnReady();\n\n  const toast = await toastController.create({\n    header: 'Toast header',\n    message: 'Click to Close',\n    position: 'top',\n    buttons: [\n      {\n        side: 'start',\n        icon: 'star',\n        text: 'Favorite',\n        handler: () => {\n          console.log('Favorite clicked');\n        }\n      }, {\n        text: 'Done',\n        role: 'cancel',\n        handler: () => {\n          console.log('Cancel clicked');\n        }\n      }\n    ]\n  });\n\n  return await toast.present();\n}\n```\n",
-    "react": "```tsx\nimport React, { Component } from 'react'\nimport { IonToast } from '@ionic/react';\n\ntype Props = {}\ntype State = {\n  showToast1: boolean\n  showToast2: boolean\n}\n\nexport class Toast extends Component<Props, State> {\n\n  constructor(props: Props) {\n    super(props);\n    this.state = {\n      showToast1: false\n      showToast2: false\n    };\n  }\n\n  render() {\n    return (\n      <IonToast\n        isOpen={this.state.showToast1}\n        onDidDismiss={() => this.setState(() => ({ showToast1: false }))}\n        message='Your settings have been saved.'\n        duration={200}\n      >\n      </IonToast>\n\n      <IonToast\n        isOpen={this.state.showToast2}\n        onDidDismiss={() => this.setState(() => ({ showToast2: false }))}\n        message='Click to Close'\n        position='top'\n        buttons={[{\n          side: 'start',\n          icon: 'star',\n          text: 'Favorite',\n          handler: () => {\n            console.log('Favorite clicked');\n          }\n        }, {\n          text: 'Done',\n          role: 'cancel',\n          handler: () => {\n            console.log('Cancel clicked');\n          }\n        }]}\n      >\n      </IonToast>\n    );\n  }\n}\n\n```\n"
+    "react": "```tsx\nimport React, { Component } from 'react'\nimport { IonToast } from '@ionic/react';\n\ntype Props = {}\ntype State = {\n  showToast1: boolean\n  showToast2: boolean\n}\n\nexport class Toast extends Component<Props, State> {\n\n  constructor(props: Props) {\n    super(props);\n    this.state = {\n      showToast1: false\n      showToast2: false\n    };\n  }\n\n  render() {\n    return (\n      <IonToast\n        isOpen={this.state.showToast1}\n        onDidDismiss={() => this.setState(() => ({ showToast1: false }))}\n        message='Your settings have been saved.'\n        duration={200}\n      >\n      </IonToast>\n\n      <IonToast\n        isOpen={this.state.showToast2}\n        onDidDismiss={() => this.setState(() => ({ showToast2: false }))}\n        message='Click to Close'\n        position='top'\n        buttons={[{\n          side: 'start',\n          icon: 'star',\n          text: 'Favorite',\n          handler: () => {\n            console.log('Favorite clicked');\n          }\n        }, {\n          text: 'Done',\n          role: 'cancel',\n          handler: () => {\n            console.log('Cancel clicked');\n          }\n        }]}\n      >\n      </IonToast>\n    );\n  }\n}\n```\n"
   },
   "props": [
     {
@@ -191,16 +191,25 @@
         {
           "name": "data",
           "type": "any",
-          "docs": ""
+          "docs": "Any data to emit in the dismiss events."
         },
         {
           "name": "role",
           "type": "string | undefined",
-          "docs": ""
+          "docs": "The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
         }
       ],
       "docs": "Dismiss the toast overlay after it has been presented.",
-      "docsTags": []
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "data Any data to emit in the dismiss events."
+        },
+        {
+          "name": "param",
+          "text": "role The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+        }
+      ]
     },
     {
       "name": "onDidDismiss",
