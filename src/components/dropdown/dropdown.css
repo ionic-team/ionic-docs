@@ -55,7 +55,7 @@
   border: solid 1px var(--line-rule-color);
   box-shadow: 4px 4px 12px 4px rgba(0,0,0,0.025);
   display: none;
-  min-width: 100%;
+  min-width: 140px;
   overflow: hidden;
   pointer-events: none;
   position: absolute;
