@@ -146,7 +146,7 @@ export class DocsHeader {
           <a class="outbound" href="https://github.com/ionic-jp/ionic-docs" target="_blank">翻訳に協力する <Outbound/></a>
           <docs-dropdown icon={Translation} align="right">
             <section>
-              <a href="https://ionicframework.com/docs/">English</a>
+              <a href="https://ionicframework.com/en/docs/">English</a>
               <a href="https://ionicframework.com/jp/docs/" class="link-active">
                 日本語
                 <svg viewBox="0 0 512 512" width="14">
