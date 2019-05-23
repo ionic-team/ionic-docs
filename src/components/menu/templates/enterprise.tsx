@@ -2,12 +2,12 @@
 export default () => <docs-nav items={ items } />;
 
 const items = {
-  'Community Edition': '/docs/native/overview',
-  'Enterprise Edition': '/docs/enterprise',
-  'Authentication & Security': {
+  'コミュニティエディション': '/docs/native/overview',
+  'エンタープライズエディション': '/docs/enterprise',
+  '認証とセキュリティ': {
     'Identity Vault': '/docs/enterprise/identity-vault',
   },
-  'Common Device Features': {
+  '一般的なデバイス機能': {
     'Android Permissions': '/docs/enterprise/android-permissions',
     'App Version': '/docs/enterprise/appversion',
     'Browser': '/docs/enterprise/inappbrowser',
@@ -22,32 +22,32 @@ const items = {
     'Splashscreen': '/docs/enterprise/splashscreen',
     'Statusbar': '/docs/enterprise/statusbar',
   },
-  'Integrated Services': {
+  '統合サービス': {
     'Active Directory': 'https://ionicframework.com/integrations/ms-activedirectory-ms-adal',
     'mParticle': '/docs/enterprise/mparticle',
   },
-  'Inter-App Communication': {
+  'アプリケーション間通信': {
     'Email Composer': '/docs/enterprise/email-composer',
   },
-  'Maps & Navigation': {
+  '地図とガイド': {
     'Geolocation': '/docs/enterprise/geolocation',
   },
-  'Media': {
+  'メディア': {
     'Media': '/docs/enterprise/media',
     'Media Capture': '/docs/enterprise/media-capture',
   },
-  'Native UI': {
+  'ネイティブUI': {
     'Dialogs': '/docs/enterprise/dialogs',
   },
-  'Notifications': {
+  '通知': {
     'Badge': '/docs/enterprise/badge',
   },
-  'Offline & Data': {
+  'オフラインデータ': {
     'Couchbase Lite': 'https://ionicframework.com/integrations/couchbase-lite',
     'Native Storage': '/docs/enterprise/nativestorage',
     'Offline Support': 'https://ionicframework.com/integrations/couchbase-lite',
   },
-  'Payments': {
+  '支払い': {
     'Apple Payment Pass': '/docs/enterprise/apple-payment-pass',
   },
 };
