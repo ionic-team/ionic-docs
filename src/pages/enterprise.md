@@ -1,5 +1,5 @@
 ---
-title: Ionic Native Enterprise Edition
+title: Ionic Native エンタープライズエディション
 ---
 
 一般的なエンタープライズ・ユース・ケースに対する強力なソリューションを使用して、開発を迅速化するためにIonicチームが構築し、サポートします。Ionicの増え続けるソリューションライブラリは、Native Enterprise Editionで構築するあらゆるアプリケーションにすぐに導入できます。
@@ -7,7 +7,7 @@ title: Ionic Native Enterprise Edition
 Ionic Native Enterprise Editionには、Ionicアプリで使用できる信頼性の高いネイティブAPIと機能のセットが含まれています。
 Ionicチームによって品質管理され、維持されます。
 
-## Ionic Native Enterprise Editionとは
+## Ionic Native エンタープライズエディションとは
 <div class="native-ee-pricing">
   <div class="table-wrap">
     <table>
