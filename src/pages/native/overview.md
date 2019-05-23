@@ -1,20 +1,20 @@
 ---
-title: Ionic Native Community Edition
+title: Ionic Native コミュニティエディション
 ---
 
-Ionic Native Community Edition (CE) is a collection of open source Cordova plugins that make it easy to add native functionality to any Ionic app.
+Ionic Native Community Edition(CE)はオープンソースのCordovaプラグインのコレクションで、任意のIonicアプリへのネイティブ機能の追加を容易にします。
 
-The plugins in Ionic Native CE are submitted and maintained by the Ionic community. While community members are generally quick to find and fix issues, certain plugins may not function properly. For teams that require dedicated native plugin support, please explore Ionic Native Enterprise Edition and request a free trial.
+Ionic Native CEのプラグインは、Ionicコミュニティによってサブミットされ、保守されます。コミュニティメンバーは一般的に問題をすばやく見つけて修正しますが、一部のプラグインは正しく機能しない場合があります。専用のネイティブプラグインのサポートが必要なチームは、Ionic Native Enterprise Editionを試し、無料の試用版をリクエストしてください。
 
-Note: These docs are for apps built with Ionic Framework 4.0.0 and greater. For older Ionic v3 projects, please see here.
+Note: これらのドキュメントはIonic Framework 4.0 .0以降で構築されたアプリ用です。以前のIonic v3プロジェクトについては、こちらをご覧ください。
 
-## Usage
-All plugins have two components - the native code (Cordova) and the JavaScript code.
-Cordova plugins are also wrapped in a `Promise` or `Observable` in order to provide a common plugin interface.
-Below are various framework options using the Camera plugin as an example.
+## 利用方法
+すべてのプラグインには、ネイティブコード(Cordova)とJavaScriptコードの2つのコンポーネントがあります。
+Cordovaプラグインは、共通のプラグインインタフェースを提供するために、 `Promise` もしくは `Observable` にラップされています。
+以下は、Cameraプラグインを使用したさまざまなフレームワークでの使い方です。
 
 ## Angular
-Import the plugin in a `@NgModule` and add it to the list of Providers. For Angular, the import path should end with `/ngx`.  Angular's change detection is automatically handled.
+プラグインを`@NgModule`にインポートし、Providerのリストに追加します。Angularの場合、インポートパスは`/ngx`で終わる必要があります。Angularの変更検出は自動的に処理されます。
 
 ```typescript
 // app.module.ts
@@ -35,7 +35,7 @@ import { Camera } from '@ionic-native/camera/ngx';
 export class AppModule { }
 ```
 
-After the plugin has been declared, it can be imported and injected like any other service:
+プラグインを宣言すると、他のサービスと同様にimportおよび注入できます:
 
 ```typescript
 // camera.service.ts
@@ -68,7 +68,7 @@ export class PhotoService {
 ```
 
 ## Vanilla JavaScript
-Ionic Native can also be used in a vanilla JavaScript app targeting ES2015+ and/or TypeScript. To use any plugin, import the class from the appropriate package and use its static methods:
+Ionic Nativeは、ES2015+やTypeScriptをターゲットにした普通のJavaScriptアプリでも使うことができます。プラグインを使用するには、適切なパッケージからClassをインポートし、そのstaticメソッドを使用します:
 
 ```js
 import { Camera } from '@ionic-native/camera';
