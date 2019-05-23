@@ -4,11 +4,11 @@ title: Ionic Framework
 
 <docs-cards> <docs-card header="Components" href="/docs/components" img="/docs/assets/icons/feature-guide-components-icon.png"> 
 
-A comprehensive look at Ionic Framework's beautifully designed UI component library.</docs-card>
+Ionic Frameworkの美しくデザインされたUIコンポーネントをまとめて見ることができます。</docs-card>
 
 <docs-card header="Introduction" href="/docs/intro" icon="/docs/assets/icons/guide-introduction-icon.png"> 
 
-Learn the fundamentals you need to know to start building amazing apps with Ionic Framework.</docs-card>
+Ionic Frameworkを使ってすばらしいアプリをつくるために、知っておくべき基本を学びます。</docs-card>
 
 <docs-card header="Installation" href="/docs/installation/cli" icon="/docs/assets/icons/guide-installation-icon.png"> 
 
