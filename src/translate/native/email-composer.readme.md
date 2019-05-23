@@ -1,4 +1,4 @@
 
 
-Requires Cordova plugin: cordova-plugin-email-composer. For more info, please see the [Email Composer plugin docs](https://github.com/hypery2k/cordova-email-plugin).
+Cordovaプラグインが必要: cordova-plugin-email-composer. 詳しくは [Email Composer plugin docs](https://github.com/hypery2k/cordova-email-plugin) をご覧ください。
 

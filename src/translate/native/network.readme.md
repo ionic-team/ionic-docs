@@ -1,2 +1,2 @@
 
-Requires Cordova plugin: cordova-plugin-network-information. For more info, please see the [Network plugin docs](https://github.com/apache/cordova-plugin-network-information).
+Cordovaプラグインが必要: cordova-plugin-network-information. 詳しくは [Network plugin docs](https://github.com/apache/cordova-plugin-network-information) をご覧ください。

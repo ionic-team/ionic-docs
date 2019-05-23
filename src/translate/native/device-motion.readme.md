@@ -1,2 +1,2 @@
 
-Requires Cordova plugin: `cordova-plugin-device-motion`. For more info, please see the [Device Motion docs](https://github.com/apache/cordova-plugin-device-motion).
+Cordovaプラグインが必要: `cordova-plugin-device-motion`. 詳しくは [Device Motion docs](https://github.com/apache/cordova-plugin-device-motion) をご覧ください。

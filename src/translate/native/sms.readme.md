@@ -1,3 +1,3 @@
 
 
-Requires Cordova plugin: cordova-sms-plugin. For more info, please see the [SMS plugin docs](https://github.com/cordova-sms/cordova-sms-plugin).
+Cordovaプラグインが必要: cordova-sms-plugin. 詳しくは [SMS plugin docs](https://github.com/cordova-sms/cordova-sms-plugin) をご覧ください。

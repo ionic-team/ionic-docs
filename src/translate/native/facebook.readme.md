@@ -1,7 +1,7 @@
 
 Use the Facebook Connect plugin to obtain access to the native FB application on iOS and Android.
 
-Requires Cordova plugin: `cordova-plugin-facebook4`. For more info, please see the [Facebook Connect](https://github.com/jeduan/cordova-plugin-facebook4).
+Cordovaプラグインが必要: `cordova-plugin-facebook4`. 詳しくは [Facebook Connect](https://github.com/jeduan/cordova-plugin-facebook4) をご覧ください。
 
 #### Installation
 
