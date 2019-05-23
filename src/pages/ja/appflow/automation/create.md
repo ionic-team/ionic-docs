@@ -5,7 +5,7 @@ nextText: 'Environments'
 nextUrl: '/docs/appflow/automation/environments'
 ---
 
-# Using Automations
+# Japanese Translation of Using Automations
 
 ## Managing Automations
 
@@ -25,7 +25,7 @@ All automations need a name and git branch to trigger from. Whenever code is pus
 
 ![Choosing an Automation Type](/docs/assets/img/appflow/ss-automation-create-type.png)
 
-#### Fields
+#### Field in Japanese
 
 * **Name:** A name to identify the automation task.
 * **Git Branch:** The branch which will trigger the automation. This will run a build any time a `git push` is made to the specified branch.
@@ -47,7 +47,7 @@ Package automations create native builds which can be downloaded and run on devi
 
 ![Creating a package automation](/docs/assets/img/appflow/ss-automation-create-package.png)
 
-#### Fields
+#### Field in Japanese
 
 * **Environment:** The [custom build environment](/docs/appflow/environments/#custom-environments) (if any) to use when this automations is triggered.
 * **Native Config:** The [native config](/docs/appflow/package/intro#native-configs) (if any) to use when this automations is triggered.
