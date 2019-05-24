@@ -23,12 +23,12 @@ export class DocsRoot {
     }
 
     document.querySelectorAll('head .url').forEach(el => {
-      if (el['href']) {
-        el['href'] = el['href'].split('\/docs\/')[0] + '\/docs\/' + location.pathname.split('\/docs\/')[1];
-      }
-      if (el['content']) {
-        el['content'] = el['content'].split('\/docs\/')[0] + '\/docs\/' + location.pathname.split('\/docs\/')[1];
-      }
+      const uri = '\/docs\/';
+      ['href', 'content'].forEach(attr => {
+        if (el[attr]) {
+          el[attr] = el[attr].split(uri)[0] + uri + location.pathname.split(uri)[1] || '';
+        }
+      });
     });
   }
 
