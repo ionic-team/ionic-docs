@@ -10,9 +10,13 @@
   font-family: Inter,"Inter UI",Helvetica,Arial,sans-serif;
   box-shadow: 0 0 0 1px rgba(0,20,56,.06);
   color: #73849a;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   letter-spacing: 1px;
   padding: 8px 0;
+}
+
+.docs-footer-announcement strong {
+  color: #333333;
 }
 
 .docs-footer-announcement a {
@@ -20,7 +24,7 @@
   color: #fff;
   border-radius: 16px;
   margin-left: 12px;
-  padding: 6px 8px 5px;
+  padding: 5px 10px;
   font-weight: 600;
   font-size: 9px;
   text-transform: uppercase;
