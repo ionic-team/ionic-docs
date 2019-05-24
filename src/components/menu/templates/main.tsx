@@ -53,7 +53,7 @@ const items = {
     'Config': '/docs/utilities/config',
     'Platform': '/docs/utilities/platform'
   },
-  'リリース': {
+  '公開': {
     'Progressive Web App': '/docs/publishing/progressive-web-app',
     'iOS App Store': '/docs/publishing/app-store',
     'Android Play Store': '/docs/publishing/play-store',
@@ -69,7 +69,7 @@ const items = {
     '開発者向けのヒント': '/docs/faq/tips',
     '変更履歴': 'https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md'
   },
-  'Resources': {
+  'リソース': {
     'Books': '/docs/developer-resources/books',
     'Courses': '/docs/developer-resources/courses',
     'Guides': '/docs/developer-resources/guides',
