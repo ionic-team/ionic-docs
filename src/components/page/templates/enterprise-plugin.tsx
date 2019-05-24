@@ -46,7 +46,7 @@ const renderInstallation = (pluginId: string) => {
       </h2>
       <p>
         <a href="https://ionicframework.com/enterprise-edition">
-        Ionic エンタープライズエディション</a>のプラグインを利用する場合は、
+        Ionic Enterprise Edition</a>のプラグインを利用する場合は、
         通常のバージョンでスコープ指定されたプラグインに問題がある可能性があるため、
         Ionic Enterprise Cordova CLIを使用していることを確認する必要があります。
       </p>

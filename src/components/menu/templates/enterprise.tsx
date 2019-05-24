@@ -2,8 +2,8 @@
 export default () => <docs-nav items={ items } />;
 
 const items = {
-  'コミュニティエディション': '/docs/native/overview',
-  'エンタープライズエディション': '/docs/enterprise',
+  'Community Edition': '/docs/native/overview',
+  'Enterprise Edition': '/docs/enterprise',
   '認証とセキュリティ': {
     'Identity Vault': '/docs/enterprise/identity-vault',
   },

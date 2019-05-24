@@ -5,7 +5,7 @@ const communityPlugins = Object.entries(plugins).sort().slice(0, 6);
 communityPlugins.unshift(['概要', '/docs/native/overview']);
 communityPlugins.push(['すべてのCEプラグイン...', '/docs/native/overview']);
 const items = {
-  'エンタープライズエディション': {
+  'Enterprise Edition': {
     '概要': '/docs/enterprise',
     'Browser': '/docs/enterprise/inappbrowser',
     'Camera': '/docs/enterprise/camera',
@@ -16,5 +16,5 @@ const items = {
     'Network Information': '/docs/enterprise/network-information',
     'すべてのEEプラグイン...': '/docs/enterprise',
   },
-  'コミュニティエディション': communityPlugins,
+  'Community Edition': communityPlugins,
 };

@@ -1,5 +1,5 @@
 ---
-title: Ionic Native コミュニティエディション
+title: Ionic Native Community Edition
 ---
 
 Ionic Native Community Edition(CE)はオープンソースのCordovaプラグインのコレクションで、任意のIonicアプリへのネイティブ機能の追加を容易にします。
