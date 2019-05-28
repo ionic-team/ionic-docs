@@ -57,9 +57,13 @@ export class IonicSearch {
     this.urls = this.URLS();
   }
 
-  @Listen('window:keyup')
-  handleKeyUp(ev) {
-    if (ev.key === '/' || ev.code === 'Slash') {
+  @Listen('window:keydown')
+  handleKeyDown(ev) {
+    if (
+      ev.key === '/' ||
+      ev.code === 'Slash' ||
+      (ev.metaKey && ev.key === 'k')
+    ) {
       this.activate();
     }
   }
