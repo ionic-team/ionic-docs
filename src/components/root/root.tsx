@@ -24,7 +24,11 @@ export class DocsRoot {
       const uri = '\/docs\/';
       ['href', 'content'].forEach(attr => {
         if (el[attr]) {
-          el[attr] = el[attr].split(uri)[0] + uri + location.pathname.split(uri)[1] || '';
+          let path = location.pathname.split(uri)[1];
+          if (path === undefined) {
+            path = '';
+          }
+          el[attr] = el[attr].split(uri)[0] + uri + path;
         }
       });
     });
