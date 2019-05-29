@@ -19,6 +19,7 @@ docs-page {
 }
 
 docs-page > main {
+  position: relative;
   grid-column: 2;
   margin-bottom: 3rem;
   padding: var(--page-padding, 2rem 3rem);
@@ -81,4 +82,12 @@ docs-page h5 code,
 docs-page h6 code {
   background: none;
   font-size: inherit;
+}
+
+@media (min-width: 1500px) {
+  docs-page aside {
+    position: absolute;
+    right: -240px;
+    width: 240px;
+  }
 }

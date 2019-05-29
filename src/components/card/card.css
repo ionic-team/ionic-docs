@@ -84,3 +84,53 @@ docs-card {
   margin-bottom: -0.125em;
   width: auto;
 }
+
+aside docs-card {
+  max-width: 240px;
+}
+
+aside .Card-container {
+  display: grid;
+  grid-template-columns: minmax(0, max-content) 1fr;
+  grid-template-rows: minmax(0, min-content);
+  grid-template-areas: 
+    "icon title"
+    "icon body";
+}
+
+aside .Card-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 16px;
+  margin-bottom: 0;
+  grid-area: icon;
+}
+
+aside .Card-header {
+  grid-area: title;
+}
+
+aside .Card-header::after {
+  background-image: url("/docs/assets/img/new-tab.svg");
+  display: inline-block;
+  height: 13px;
+  width: 13px;
+  background-size: 13px 13px;
+  margin-left: 4px;
+  content: '';
+}
+
+aside .Card-content {
+  grid-area: body;
+  /* https://stackoverflow.com/questions/5269713/css-ellipsis-on-second-line */
+  max-height: 42px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+aside .Card-icon + .Card-content {
+  margin-top: -6px;
+}
