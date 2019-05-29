@@ -42,7 +42,7 @@ ionic-search .SearchBtn__lg__icon  {
 }
 
 ionic-search .SearchBtn__lg__text {
-  font-size: 11px;
+  font-size: 12px;
   line-height: 14px;
   letter-spacing: -0.03em;
   color: #B2BECD;
@@ -52,14 +52,13 @@ ionic-search .SearchBtn__lg__text {
 ionic-search .SearchBtn__lg__key {
   background: #F8FAFC;
   border: 1px solid #E2E8F0;
-  padding: 1px 3px 3px;
   border-radius: 4px;
   font-size: 11px;
   line-height: 1em;
   letter-spacing: -0.03em;
   color: #B2BECD;
   margin-left: auto;
-  padding: 1px 4px 2px;
+  padding: 1px 5px 3px;
 }
 
 ionic-search .SearchBtn__sm {

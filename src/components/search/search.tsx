@@ -24,6 +24,7 @@ export class IonicSearch {
   @State() nonDocsResults: any[] = null;
   @State() nonDocsResultsActive = false;
   @State() dragStyles: {};
+  @State() searchTimeout: NodeJS.Timeout = null;
   // @State() pane: HTMLDivElement;
   @Prop() mobile: boolean;
   @Element() el;
@@ -34,14 +35,16 @@ export class IonicSearch {
 
   urls: any;
   URLS = () => {
-    const api = 'https://api.swiftype.com/api/v1/public/engines/';
+    const api = 'https://api.swiftype.com/api/v1/public/';
     const key = '9oVyaKGPzxoZAyUo9Sm8';
 
     return {
-      autocomplete: query =>
-        `${api}suggest.json?q=${query}&engine_key=${key}`,
-      search: query =>
-        `${api}search.json?q=${query}&engine_key=${key}`
+      autocomplete: (query: string) =>
+        `${api}engines/suggest.json?q=${query}&engine_key=${key}`,
+      click: (query: string, doc_id: string) =>
+        `${api}analytics/pc.json?q=${query}&doc_id=${doc_id}&engine_key=${key}`,
+      search: (query: string) => // &per_page=1&page=1
+        `${api}engines/search.json?q=${query}&engine_key=${key}`
     };
   }
 
@@ -53,6 +56,8 @@ export class IonicSearch {
     this.touchMove = this.touchMove.bind(this);
     this.touchEnd = this.touchEnd.bind(this);
     this.keyNavigation = this.keyNavigation.bind(this);
+    this.resultClick = this.resultClick.bind(this);
+    this.search = this.search.bind(this);
 
     this.urls = this.URLS();
   }
@@ -81,6 +86,7 @@ export class IonicSearch {
   }
 
   close() {
+    clearTimeout(this.searchTimeout);
     this.active = false;
     this.el.classList.remove('active');
     this.el.querySelector('input').blur();
@@ -116,6 +122,16 @@ export class IonicSearch {
     this.nonDocsResults = res.records.page.filter(
       item => item.url.indexOf('\/docs\/') === -1);
     this.higlightIndex = null;
+
+    clearTimeout(this.searchTimeout);
+    this.searchTimeout = setTimeout(this.search, 1500);
+  }
+
+  // Trigger lightweight search after 1.5sec of innactivity
+  // but we'll stick with auto-complete results
+  async search() {
+    await fetch(this.urls.search(this.query));
+    // console.log(result);
   }
 
   touchStart(e) {
@@ -184,9 +200,17 @@ export class IonicSearch {
     } else if (ev.keyCode === 13) {
       const link = this.el.querySelector('ul a.active');
       if (link) {
-        window.location = link.href;
+        this.resultClick({ url: link.href, id: link.dataset.id });
       }
     }
+  }
+
+  async resultClick(result, event?) {
+    if (event) {
+      event.preventDefault();
+    }
+    await fetch(this.urls.click(this.query, result.id));
+    window.location = result.url;
   }
 
   render() {
@@ -213,13 +237,20 @@ export class IonicSearch {
                     name="md-close"
                     onClick={this.close}></ion-icon>
         }
+
+        <div class={`slot ${this.results === null ? '' : 'hidden'}`}>
+          <slot/>
+        </div>
+
         {this.results !== null ?
           <div class="SearchResults">
             <ul>
               {this.results.map((result, i) =>
                 <li>
-                  <a href={result.url}
+                  <a onClick={ev => this.resultClick(result, ev)}
+                     href={result.url}
                      title={result.title}
+                     data-id={result.id}
                      class={i === this.higlightIndex ? 'active' : ''}>
                     <Book/>
                     <strong>{result.title}</strong>
@@ -242,8 +273,10 @@ export class IonicSearch {
                 <ul class="SearchMore__list">
                   {this.nonDocsResults.map((result, i) =>
                     <li>
-                      <a href={result.url}
+                      <a onClick={ev => this.resultClick(result, ev)}
+                         href={result.url}
                          title={result.title}
+                         data-id={result.id}
                          class={i + this.results.length === this.higlightIndex ? 'active' : ''}>
                         <strong>{result.title}</strong>
                         <span innerHTML={result.highlight.sections}></span>
@@ -255,10 +288,6 @@ export class IonicSearch {
             </div>
           </div>
         : null}
-
-        <div class={`slot ${this.results === null ? '' : 'hidden'}`}>
-          <slot/>
-        </div>
 
         {this.pending > 0 ? <span class="searching"></span> : null}
       </div>,
