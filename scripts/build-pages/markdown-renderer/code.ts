@@ -11,7 +11,7 @@ export default (code: string, info: string) => {
   }
 
   return (
-    `<docs-code language="${language}">${Prism.highlight(code, Prism.languages[language])}</docs-code>`
+    `<docs-code language="${language}">${Prism.highlight(code, Prism.languages[language], language)}</docs-code>`
   );
 };
 
