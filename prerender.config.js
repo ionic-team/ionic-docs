@@ -8,6 +8,10 @@ module.exports = {
     return true;
   },
 
+  canonicalUrl() {
+    return null;
+  },
+
   robotsTxt(opts) {
     return `
       User-agent: *
