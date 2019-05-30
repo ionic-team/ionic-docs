@@ -84,10 +84,18 @@ docs-page h6 code {
   font-size: inherit;
 }
 
+docs-page aside {
+  float: right;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
 @media (min-width: 1500px) {
   docs-page aside {
     position: absolute;
     right: -240px;
     width: 240px;
+    float: none;
+    margin-left: 0;
   }
 }
