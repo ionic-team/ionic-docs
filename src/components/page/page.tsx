@@ -78,6 +78,7 @@ export class DocsPage {
 
   render() {
     const { page } = this;
+    const hasDemo = typeof page.demoUrl === 'string';
 
     if (this.badFetch) {
       return templates.error(this.badFetch);
@@ -86,12 +87,12 @@ export class DocsPage {
     const Template = templates[page.template] || templates.default;
 
     const content = [
-      <main>
+      <main class={hasDemo ? 'has-demo' : 'no-demo'}>
         <Template page={page}/>
       </main>
     ];
 
-    if (typeof page.demoUrl === 'string') {
+    if (hasDemo) {
       content.push(
         <docs-demo url={page.demoUrl}/>
       );

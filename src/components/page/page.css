@@ -23,6 +23,7 @@ docs-page > main {
   grid-column: 2;
   margin-bottom: 3rem;
   padding: var(--page-padding, 2rem 3rem);
+  position: relative;
 }
 
 docs-page docs-demo {
@@ -97,5 +98,11 @@ docs-page aside {
     width: 240px;
     float: none;
     margin-left: 0;
+  }
+
+  docs-page main.no-demo docs-table-of-contents {
+    position: absolute;
+    right: -240px;
+    width: 240px;
   }
 }
