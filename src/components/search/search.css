@@ -33,6 +33,12 @@ ionic-search .SearchBtn__lg {
   min-width: 180px;
   padding: 5px 9px 7px;
   cursor: pointer;
+  transition: .4s border-color ease, .4s box-shadow;
+}
+
+ionic-search .SearchBtn__lg:hover {
+  border-color: #ddd;
+  box-shadow: 0 2px 8px rgba(0,0,0,.02);
 }
 
 ionic-search .SearchBtn__lg__icon  {
