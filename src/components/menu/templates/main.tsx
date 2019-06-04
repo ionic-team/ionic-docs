@@ -61,7 +61,8 @@ const items = {
     'Overview': '/docs/vue/overview',
     'Build Your First App': '/docs/vue/your-first-app',
     'Lifecycle': '/docs/vue/lifecycle',
-    'Navigation': '/docs/vue/navigation',
+    'Navigation/Routing': '/docs/vue/navigation',
+    'Performance': '/docs/vue/performance'
   },
   'Utilities': {
     'Config': '/docs/utilities/config',

@@ -1,7 +1,8 @@
 ---
+previousText: 'Overview'
+previousUrl: '/docs/angular/overview'
 nextText: 'iOS, Android, and the Camera'
 nextUrl: '/docs/angular/your-first-app/ios-android-camera'
-url: /docs/angular/your-first-app
 ---
 
 # Your First Ionic App: Angular

@@ -1,11 +1,11 @@
 ---
-nextText: 'React Overview'
-nextUrl: '/docs/react/overview'
+previousText: 'Navigation'
+previousUrl: '/docs/angular/navigation'
 ---
 
 # Angular Performance
 
-Performance is good. General advice, strategy here.
+Coming soon.
 
 ## More From Ionic
 
