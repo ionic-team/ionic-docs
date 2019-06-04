@@ -5,14 +5,12 @@ nextUrl: '/docs/angular/your-first-app'
 
 # Ionic Angular Overview
 
-Angular has always been at the center of what makes Ionic great. While the core components have been written to work as a standalone Web Component library, the `@ionic/angular` package makes integration with the Angular ecosystem a breeze.
+`@ionic/angular` take the core Ionic experience and provides tooling and APIs that are tailored to Angular Developers.
 
 ## Angular Version Support
 
-Ionic supports Angular 6.0.0 and up. It's recommended to update to the latest version of Angular when possible. Given both team's modern tooling approaches, updating should not be disruptive.
+Ionic supports `Angular 6.0.0 and up`. As part of their upgrade strategy, Angular has built-in tooling to help automate upgrades and provide feedback to developers whenever changes to an API occurred. This reduces update friction and keeps the ecosystem in a evergreen state.
 
 ## Angular Tooling
 
-With Ionic 4+, Angular's [official tooling](https://angular.io/cli) for building, bundling, and routing is used, so you get the most out of Angular's ecosystem and Ionic can focus on what we do best.
-
-There isn't any non-standard tooling to invest in, so your skills will match what the rest of the Angular ecosystem is using. This also means that, in general, Ionic supports any new updates to a given framework immediately. No need to wait on us to support *version N* of Angular, it "Just Works."
+With Ionic 4+, the official Angular stack for building an app and routing are used, so your app can fall in-line with the rest of the great Angular ecosystem. In cases where more opinionated features are needed, Ionic provides `@ionic/angular-toolkit`, which builds and integrates with the [official Angular CLI](https://angular.io/cli) and provides features that are specific to `@ionic/angular` apps.
