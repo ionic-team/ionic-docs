@@ -101,8 +101,14 @@ docs-page aside {
   }
 
   docs-page main.no-demo docs-table-of-contents {
-    position: absolute;
-    right: -240px;
+    position: fixed;
+    right: calc((100% - 720px - (240px * 3)) / 2);
     width: 240px;
+  }
+}
+
+@media (min-width: 1800px) {
+  docs-page main.no-demo docs-table-of-contents {
+    right: calc((100% - 720px - (240px * 2)) / 2);
   }
 }
