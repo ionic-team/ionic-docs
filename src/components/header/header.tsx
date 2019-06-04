@@ -136,10 +136,10 @@ export class DocsHeader {
           </docs-dropdown>
           <docs-dropdown label="Support" align="right">
             <section>
-              <a href="https://ionic.zendesk.com/" target="_blank">Help Center</a>
+              <a href="https://ionicframework.com/support" target="_blank">Help Center</a>
             </section>
             <section>
-              <a href="https://ionicframework.com/support" target="_blank">Customer Support</a>
+              <a href="https://ionic.zendesk.com/" target="_blank">Customer Support</a>
               <a href="https://ionicframework.com/advisory" target="_blank">Enterprise Advisory</a>
             </section>
           </docs-dropdown>
