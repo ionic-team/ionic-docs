@@ -1,9 +1,10 @@
 ---
 nextText: 'iOS, Android, and the Camera'
-nextUrl: '/docs/developer-resources/guides/first-app-v4/ios-android-camera'
+nextUrl: '/docs/angular/your-first-app/ios-android-camera'
+url: /docs/angular/your-first-app
 ---
 
-# Your First Ionic App - Framework v4
+# Your First Ionic App: Angular
 
 The great thing about Ionic is that with one codebase, you can build for any platform using familiar web tools and languages. Follow along as we create a working Photo Gallery. Here’s the before and after:
 

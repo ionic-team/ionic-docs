@@ -1,8 +1,8 @@
 ---
 previousText: 'Your First Ionic App'
-previousUrl: '/docs/developer-resources/guides/first-app-v4/intro'
+previousUrl: '/docs/angular/your-first-app'
 nextText: 'Creating a Photo Gallery'
-nextUrl: '/docs/developer-resources/guides/first-app-v4/creating-photo-gallery-device-storage'
+nextUrl: '/docs/angular/your-first-app/creating-photo-gallery-device-storage'
 ---
 
 # Android, iOS, and the Camera - Oh My!
