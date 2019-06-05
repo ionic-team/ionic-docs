@@ -9,12 +9,30 @@ docs-page {
   margin-top: var(--header-height);
   overflow-x: hidden;
   transform: var(--page-transform, none);
-  transition: transform 200ms cubic-bezier(0.2, 1, 0.2, 1);
+  transition: all 200ms cubic-bezier(0.2, 1, 0.2, 1);
+}
+
+@media (min-width: 1200px) {
+  docs-page {
+    grid-template-columns: 1fr minmax(0, var(--page-width, 720px)) 1fr 240px;
+  }
+}
+
+@media (min-width: 1440px) {
+  docs-page {
+    grid-template-columns: 0px minmax(0, var(--page-width, 720px)) 1fr 240px;
+  }
+}
+
+@media (min-width: 1500px) {
+  docs-page {
+    grid-template-columns: 1fr minmax(0, var(--page-width, 720px)) 4fr 240px;
+  }
 }
 
 @media (min-width: 1800px) {
   docs-page {
-    grid-template-columns: 1fr minmax(0, var(--page-width, 720px)) 1fr var(--page-margin-left);
+    grid-template-columns: 1fr minmax(0, var(--page-width, 720px)) 2fr 240px;
   }
 }
 
@@ -44,6 +62,7 @@ docs-page .full-screen {
 
 docs-page h1 {
   margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 docs-page h2 a[href^="#"],
@@ -91,24 +110,26 @@ docs-page aside {
   margin-bottom: 20px;
 }
 
-@media (min-width: 1500px) {
+@media (min-width: 1200px) {
+  docs-page main.no-demo docs-table-of-contents {
+    position: fixed;
+    right: 0;
+    top: 100px;
+    width: 240px;
+    transition: .2s transform ease;
+  }
+
+  docs-header.hidden ~ stencil-route docs-page main.no-demo docs-table-of-contents {
+    transform: translateY(-60px);
+  }
+}
+
+@media (min-width: 1440px) {
   docs-page aside {
     position: absolute;
     right: -240px;
     width: 240px;
     float: none;
     margin-left: 0;
-  }
-
-  docs-page main.no-demo docs-table-of-contents {
-    position: fixed;
-    right: calc((100% - 720px - (240px * 3)) / 2);
-    width: 240px;
-  }
-}
-
-@media (min-width: 1800px) {
-  docs-page main.no-demo docs-table-of-contents {
-    right: calc((100% - 720px - (240px * 2)) / 2);
   }
 }
