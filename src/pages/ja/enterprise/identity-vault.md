@@ -1,7 +1,7 @@
 ---
 title: Identity Vault
 template: enterprise-plugin
-version: 3.4.0
+version: 3.4.1
 minor: 3.4.X
 otherVersions:
   - 2.0.X
@@ -1770,6 +1770,12 @@ The possible values returned by [getBiometricType](#identityvault.getbiometricty
 * * *
 
 ## Change Log
+
+### \[3.4.1\] (2019-06-06)
+
+### Bug Fixes
+
+* **Android:** fix issue where setBiometricsEnabled(false) would throw an error if biometrics was unavailable 
 
 ### \[3.4.0\] (2019-06-06)
 
