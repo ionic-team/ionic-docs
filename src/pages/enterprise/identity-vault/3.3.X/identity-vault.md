@@ -1,8 +1,8 @@
 ---
 title: Identity Vault
 template: enterprise-plugin
-version: 3.4.0
-minor: 3.4.X
+version: 3.3.0
+minor: 3.3.X
 otherVersions:
   - 2.0.X
   - 3.0.X
@@ -200,15 +200,6 @@ ___
 **PasscodeOnly**: 
 
 Passcode authentication should only be allowed
-
-___
-<a id="authmode.securestorage"></a>
-
-###  SecureStorage
-
-**SecureStorage**: 
-
-Both biometric and passcode authentication will be disabled but any stored values will persist and be stored securely at rest using the keychain and will be available without needing to authenticate via passcode or biometrics when the device is unlocked.
 
 ___
 
@@ -564,18 +555,6 @@ Check whether or not a passcode needs to be set for the vault using [setPasscode
 whether or not the passcode needs to be set
 
 ___
-<a id="identityvault.issecurestoragemodeenabled"></a>
-
-###  isSecureStorageModeEnabled
-
-▸ **isSecureStorageModeEnabled**(): `Promise`<`boolean`>
-
-Check if [AuthMode.SecureStorage](#authmode.securestorage) is enabled for the vault
-
-**Returns:** `Promise`<`boolean`>
-whether or not the secure storage mode is enabled
-
-___
 <a id="identityvault.lock"></a>
 
 ###  lock
@@ -652,25 +631,6 @@ Enable/Disable passcode authentication for the vault
 | Name | Type | Description |
 | ------ | ------ | ------ |
 | isPasscodeEnabled | `boolean` |  whether or not passcode should be enabled |
-
-**Returns:** `Promise`<`void`>
-
-___
-<a id="identityvault.setsecurestoragemodeenabled"></a>
-
-###  setSecureStorageModeEnabled
-
-▸ **setSecureStorageModeEnabled**(isSecureStorageModeEnabled: *`boolean`*): `Promise`<`void`>
-
-Enable/Disable secure storage mode for the vault. Setting [AuthMode.SecureStorage](#authmode.securestorage) automatically disables passcode and biometric authentication and allows for session values to be stored persistently and securely at rest using the keychain but allowing the user to access the data without authenticating as long as the device is unlocked.
-
-*__throws__*: [VaultError](#vaulterror) - if the vault is locked
-
-**Parameters:**
-
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| isSecureStorageModeEnabled | `boolean` |  whether or not secure storage mode should be enabled |
 
 **Returns:** `Promise`<`void`>
 
@@ -906,18 +866,6 @@ Check if passcode authentication is enabled for the vault
 
 **Returns:** `Promise`<`boolean`>
 whether or not the passcode is enabled
-
-___
-<a id="identityvaultuser.issecurestoragemodeenabled"></a>
-
-###  isSecureStorageModeEnabled
-
-▸ **isSecureStorageModeEnabled**(): `Promise`<`boolean`>
-
-Check if [AuthMode.SecureStorage](#authmode.securestorage) is enabled for the vault
-
-**Returns:** `Promise`<`boolean`>
-whether or not the secure storage mode is enabled
 
 ___
 <a id="identityvaultuser.lockout"></a>
@@ -1316,15 +1264,6 @@ ___
 Whether a passcode needs to be set with [setPasscode](#identityvault.setpasscode)
 
 ___
-<a id="pluginconfiguration.issecurestoragemodeenabled"></a>
-
-###  isSecureStorageModeEnabled
-
-**● isSecureStorageModeEnabled**: *`boolean`*
-
-Whether [AuthMode.SecureStorage](#authmode.securestorage) is enabled for the vault
-
-___
 <a id="pluginconfiguration.lockafter"></a>
 
 ###  lockAfter
@@ -1679,23 +1618,6 @@ The possible values returned by [getBiometricType](#identityvault.getbiometricty
 ___
 
 ## Change Log
-
-
-
-### [3.4.0] (2019-06-06)
-
-
-### Bug Fixes
-
-* **iOS:** fix an issue where if a user removed fingerprints after authentication storing the session would return an error rather than default to passcode only mode 
-* **iOS:** Fix issue where `getBiometricType` would return `none` if TouchID or FaceID was present on device but the user was not enrolled.  
-* **iOS:** fix issue with getBiometricType and issue where lock event was triggered when lock was called in secure storage mode 
-
-
-### Features
-
-* Added android side of Secure Storage Mode 
-* update Typescript/JS layer to support Secure Storage mode 
 
 
 
