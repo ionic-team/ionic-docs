@@ -2,7 +2,7 @@
 title: Ionic Native Enterprise Edition
 ---
 
-Accelerate development with powerful solutions to common enterprise use cases - all built and supported by the Ionic team. Ionic’s growing library of solutions are ready to deploy in any of the apps you build with Native Enterprise Edition
+My japanese translation Ionic’s growing library of solutions are ready to deploy in any of the apps you build with Native Enterprise Edition
 
 Ionic Native Enterprise Edition includes a reliable set of Native APIs & functionality that you can use in your Ionic app, quality controlled and maintained by the Ionic Team.
 
@@ -43,7 +43,7 @@ Ionic Native Enterprise Edition includes a reliable set of Native APIs & functio
           <th>
             Regular Release Cycles & Updates
           </th>
-          <td>No</td>
+          <td>Nein</td>
           <td><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
         </tr>
         <tr class="stripe">
