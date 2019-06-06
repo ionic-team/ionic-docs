@@ -54,15 +54,13 @@ const items = {
     'Overview': '/docs/react/overview',
     'Build Your First App': '/docs/react/your-first-app',
     'Lifecycle': '/docs/react/lifecycle',
-    'Navigation/Routing': '/docs/react/navigation',
-    'Performance': '/docs/react/performance'
+    'Navigation/Routing': '/docs/react/navigation'
   },
   'Vue': {
     'Overview': '/docs/vue/overview',
     'Build Your First App': '/docs/vue/your-first-app',
     'Lifecycle': '/docs/vue/lifecycle',
-    'Navigation/Routing': '/docs/vue/navigation',
-    'Performance': '/docs/vue/performance'
+    'Navigation/Routing': '/docs/vue/navigation'
   },
   'Utilities': {
     'Config': '/docs/utilities/config',
