@@ -1,8 +1,8 @@
 ---
 previousText: 'Your First Ionic App'
-previousUrl: '/docs/developer-resources/guides/first-app-v4/intro'
+previousUrl: '/docs/angular/your-first-app'
 nextText: 'Creating a Photo Gallery'
-nextUrl: '/docs/developer-resources/guides/first-app-v4/creating-photo-gallery-device-storage'
+nextUrl: '/docs/angular/your-first-app/creating-photo-gallery-device-storage'
 ---
 
 # Android, iOS, and the Camera - Oh My!
@@ -181,5 +181,5 @@ git push ionic master
 Next, we’ll look at how to transform the app into a photo gallery, as well as how to save the photos to your device!
 
 <div style="text-align:right;">
-  <docs-button href="/docs/developer-resources/guides/first-app-v4/creating-photo-gallery-device-storage">Continue <svg viewBox="0 0 512 512"><path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path></svg></docs-button>
+  <docs-button href="/docs/angular/your-first-app/creating-photo-gallery-device-storage">Continue <svg viewBox="0 0 512 512"><path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path></svg></docs-button>
 </div>

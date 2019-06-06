@@ -1,8 +1,8 @@
 ---
-previousText: ''
-previousUrl: ''
-nextText: ''
-nextUrl: ''
+previousText: 'Lifecycle'
+previousUrl: '/docs/angular/lifecycle'
+nextText: 'Performance'
+nextUrl: '/docs/angular/performance'
 contributors:
   - mhartington
 ---

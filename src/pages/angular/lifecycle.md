@@ -1,8 +1,8 @@
 ---
-previousText: ''
-previousUrl: ''
-nextText: ''
-nextUrl: ''
+previousText: 'Your First App: Theming'
+previousUrl: '/docs/angular/your-first-app/theming'
+nextText: 'Navigation'
+nextUrl: '/docs/angular/navigation'
 contributors:
   - elylucas
 ---
