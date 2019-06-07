@@ -169,9 +169,6 @@ async performAutomaticUpdate() {
     }
   } catch (err) {
     // We encountered an error.
-    // Here's how we would log it to Ionic Pro Monitoring while also catching:
-
-    // Pro.monitoring.exception(err);
   }
 }
 ```
