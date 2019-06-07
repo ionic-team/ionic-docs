@@ -1,5 +1,7 @@
 ---
 title: Ionic Framework
+meta:
+  image: testing.png
 ---
 
 <docs-cards> <docs-card header="Components" href="/docs/components" img="/docs/assets/icons/feature-guide-components-icon.png"> 
