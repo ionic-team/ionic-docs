@@ -13,7 +13,7 @@ contributors:
 
 Submitting an App to the iOS App store requires a few things:
 
-* XCode
+* Xcode
 * A Paid Apple Developers account
 * A valid provisioning profile
 * App Development and Distribution certificates
@@ -36,7 +36,7 @@ $ ionic cordova build ios --prod
 
 This will generate the minified code for the web portion of an app and copy it over the iOS code base.
 
-From here, open the `.xcworkspace` file in `./platforms/ios/` to start XCode.
+From here, open the `.xcworkspace` file in `./platforms/ios/` to start Xcode.
 
 ## Generating Signing Certs
 
@@ -48,16 +48,16 @@ There are two types of certificates that matter here, Development, and Distribut
 
 Distribution certs are meant for distributing an app to the store. When an app is signed with a Distribution cert, it can be installed on any device.
 
-## Signing the App in XCode.
+## Signing the App in Xcode.
 
-After generating to correct certificates, there are options to either have XCode automatically manage certificates or manually mange them. It's suggested to let XCode automatically manage certificates. This will make sure that the correct Development and Distribution certs are used, based on the build type selected.
+After generating the correct certificates, there are options to either have Xcode automatically manage certificates or manually manage them. It's suggested to let Xcode automatically manage certificates. This will make sure that the correct Development and Distribution certs are used, based on the build type selected.
 
 With this option selected, select `Archive` from the `Product > Archive` menu. This will build a version of the app that is ready for distribution in the app stores. After archive has been created, Xcode Organizer is opened.
 
 Xcode Organizer displays a list with builds of the current app. Pick the last build and click 'Upload to App Store'.
 There should be a place to select the team followed by some more information on the app and a "Upload" button to click.
 
-If the upload successfully, the app should be listed on [Itunes Connect](https://itunesconnect.apple.com) and listed in 'Activities'.
+If the upload successfully, the app should be listed on [iTunes Connect](https://itunesconnect.apple.com) and listed in 'Activities'.
 From there, TestFlight can be enabled for beta testing, or the App can be sent for approval from Apple.
 
 ## Updating an app
