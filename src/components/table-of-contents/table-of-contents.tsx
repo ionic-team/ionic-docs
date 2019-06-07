@@ -40,7 +40,6 @@ export class DocsTableOfContents {
           topOffset: item.getBoundingClientRect().top + window.scrollY
         };
       });
-      console.log(this.itemOffsets);
     });
   }
 

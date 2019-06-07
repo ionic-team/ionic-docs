@@ -1,5 +1,7 @@
 ---
 title: Ionic Framework
+meta:
+  image: testing.png
 ---
 
 <docs-cards>
