@@ -12,7 +12,13 @@ docs-page {
   transition: all 200ms cubic-bezier(0.2, 1, 0.2, 1);
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 1234px) {
+  docs-page {
+    grid-template-columns: 1fr minmax(0, var(--page-width, 720px)) 3fr;
+  }
+}
+
+@media (min-width: 1800px) {
   docs-page {
     grid-template-columns: 1fr minmax(0, var(--page-width, 720px)) 1fr 240px;
   }
@@ -92,7 +98,7 @@ docs-page aside {
   margin-bottom: 20px;
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 1234px) {
   docs-page main.no-demo docs-table-of-contents {
     position: fixed;
     right: 0;
