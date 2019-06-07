@@ -61,11 +61,55 @@ export class DocsPage {
   }
 
   @Watch('page')
-  setDocumentTitle(page: Page) {
+  setDocumentMeta(page: Page) {
     const { title, meta = {} } = page;
-    const suffix = /^\/docs\/pages\/appflow.*$/.test(this.path) ? 'Ionic Appflow Documentation' : 'Ionic Documentation';
-    const pageTitle = meta.title || `${title} - ${suffix}`;
-    this.document.title = pageTitle;
+    const metaEls = {
+      title: document.querySelectorAll('head .meta-title'),
+      description: document.querySelectorAll('head .meta-description'),
+      url: document.querySelectorAll('head .meta-url'),
+      image: document.querySelectorAll('head .meta-image')
+    };
+
+    function updateMeta(els, update) {
+      els.forEach(el => {
+        ['href', 'content'].forEach(attr => {
+          if (el[attr]) {
+            el[attr] = update(el[attr]);
+          }
+        });
+        ['title'].forEach(elType => {
+          if (el.nodeName === elType.toUpperCase()) {
+            el.text = update(el.text);
+          }
+        });
+      });
+    }
+
+    // Title
+    updateMeta(metaEls.title, () => {
+      const suffix = /^\/docs\/pages\/appflow.*$/.test(this.path) ?
+        'Ionic Appflow Documentation' : 'Ionic Documentation';
+      // Favor meta title, else go with auto-title. fallback to generic title
+      return meta.title || title ? `${title} - ${suffix}` : suffix;
+    });
+
+    // Canonical URL
+    updateMeta(metaEls.url, oldVal => {
+      const uri = '\/docs\/';
+      let path = location.pathname.split(uri)[1];
+      if (path === undefined) {
+        path = '';
+      }
+      return oldVal.split(uri)[0] + uri + path;
+    });
+
+    // Description
+    updateMeta(metaEls.description, () => meta.description ||
+      'Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards');
+
+    // Sharing Image
+    updateMeta(metaEls.image, () => meta.image ||
+      'https://ionicframework.com/docs/assets/img/meta/open-graph.png');
   }
 
   hostData() {
