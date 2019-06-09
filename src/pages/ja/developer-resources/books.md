@@ -7,6 +7,12 @@ nextUrl: '/docs/developer-resources/courses'
 
 # Books
 
+### [Learn Ionic 4 From Scratch](https://leanpub.com/learnionic4fromscratch)
+
+Angular. Vue. React. Vanilla JavaScript. All of these tools can be used to create awesome applications with Ionic, thanks to the new Stencil compiler. This book is aimed at beginners that are looking to create amazing web, mobile and desktop applications using Ionic with examples across all of the popular frameworks.
+
+by [Paul Halliday](https:://developer.school)
+
 ### [Mobile App Development with Ionic: Cross-Platform Apps with Ionic 2, Angular 2, and Cordova](https://www.amazon.com/Mobile-App-Development-Ionic-Cross-Platform/dp/1491937785/ref=sr_1_2?ie=UTF8&qid=1464183332&sr=8-2&keywords=ionic+2)
 
 by Chris Griffith
