@@ -84,7 +84,7 @@ function patchBody(page: Page): Page {
   };
 }
 
-function updatePageHtmlToHypertext(page: Page) {
+export function updatePageHtmlToHypertext(page: Page) {
   page.body = convertHtmlToHypertextData(page.body);
   if (page.docs) {
     page.docs = convertHtmlToHypertextData(page.docs);

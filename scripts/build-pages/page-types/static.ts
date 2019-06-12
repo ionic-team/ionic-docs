@@ -1,7 +1,8 @@
 import {
   PAGES_DIR,
   Page,
-  buildPages
+  buildPages,
+  updatePageHtmlToHypertext
 } from '../index';
 
 import fs from 'fs-extra';
