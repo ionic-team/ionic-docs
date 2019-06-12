@@ -74,7 +74,7 @@ function patchBody(page: Page): Page {
     href: `#${heading.getAttribute('id')}`
   }));
 
-  const pageClass = `page-${slugify(page.path.slice(6))}`;
+  const pageClass = `page-${slugify(page.path.slice(6) || 'index')}`;
 
   return {
     ...page,
@@ -110,4 +110,4 @@ function writePage(page: Page): Promise<any> {
 }
 
 const toFilePath = (urlPath: string) =>
-  `${resolve(PAGES_DIR, urlPath.slice(6))}.json`;
+  `${resolve(PAGES_DIR, urlPath.slice(6) || 'index')}.json`;

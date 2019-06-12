@@ -1,4 +1,4 @@
-import { Build, Component, Prop, State, Watch, h } from '@stencil/core';
+import { Component, Prop, State, Watch, h } from '@stencil/core';
 import { RouterHistory } from '@stencil/router';
 import { Page } from '../../definitions';
 import templates from './templates';
@@ -8,19 +8,24 @@ import templates from './templates';
   styleUrl: 'page.css'
 })
 export class DocsPage {
-
   @Prop() history: RouterHistory;
   @Prop() path: string;
+  @Prop({ context: 'isServer' }) private isServer: boolean;
+  @Prop({ context: 'document' }) private document: HTMLDocument;
   @State() badFetch: Response = null;
   @State() page: Page = { title: null, body: null };
 
-  componentWillRender() {
-    if (this.path != null) {
-      return fetch(this.path)
-        .then(this.validateFetch)
-        .then(this.handleNewPage)
-        .catch(this.handleBadFetch);
-    }
+  componentWillLoad() {
+    return this.fetchPage(this.path);
+  }
+
+  @Watch('path')
+  fetchPage(path, oldPath?) {
+    if (path == null || path === oldPath) return;
+    return fetch(path)
+      .then(this.validateFetch)
+      .then(this.handleNewPage)
+      .catch(this.handleBadFetch);
   }
 
   validateFetch = (response) => {
@@ -43,7 +48,7 @@ export class DocsPage {
 
   @Watch('page')
   setScrollPosition() {
-    if (!Build.isBrowser || this.history.location.hash) {
+    if (this.isServer || this.history.location.hash) {
       return;
     }
 
@@ -51,16 +56,60 @@ export class DocsPage {
       const { location } = this.history;
       const { scrollPosition = [0, 0] } = location;
       const [x, y] = scrollPosition;
-      document.documentElement.scrollTo(x, y);
+      this.document.documentElement.scrollTo(x, y);
     });
   }
 
   @Watch('page')
-  setDocumentTitle(page: Page) {
+  setDocumentMeta(page: Page) {
     const { title, meta = {} } = page;
-    const suffix = /^\/docs\/pages\/appflow.*$/.test(this.path) ? 'Ionic Appflow Documentation' : 'Ionic Documentation';
-    const pageTitle = meta.title || `${title} - ${suffix}`;
-    document.title = pageTitle;
+    const metaEls = {
+      title: document.querySelectorAll('head .meta-title'),
+      description: document.querySelectorAll('head .meta-description'),
+      url: document.querySelectorAll('head .meta-url'),
+      image: document.querySelectorAll('head .meta-image')
+    };
+
+    function updateMeta(els, update) {
+      els.forEach(el => {
+        ['href', 'content'].forEach(attr => {
+          if (el[attr]) {
+            el[attr] = update(el[attr]);
+          }
+        });
+        ['title'].forEach(elType => {
+          if (el.nodeName === elType.toUpperCase()) {
+            el.text = update(el.text);
+          }
+        });
+      });
+    }
+
+    // Title
+    updateMeta(metaEls.title, () => {
+      const suffix = /^\/docs\/pages\/appflow.*$/.test(this.path) ?
+        'Ionic Appflow Documentation' : 'Ionic Documentation';
+      // Favor meta title, else go with auto-title. fallback to generic title
+      return meta.title || title ? `${title} - ${suffix}` : suffix;
+    });
+
+    // Canonical URL
+    updateMeta(metaEls.url, oldVal => {
+      const uri = '\/docs\/';
+      let path = location.pathname.split(uri)[1];
+      if (path === undefined) {
+        path = '';
+      }
+      return oldVal.split(uri)[0] + uri + path;
+    });
+
+    // Description
+    updateMeta(metaEls.description, () => meta.description ||
+      'Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards');
+
+    // Sharing Image
+    updateMeta(metaEls.image, () => meta.image ||
+      'https://ionicframework.com/docs/assets/img/meta/open-graph.png');
   }
 
   hostData() {
@@ -73,6 +122,7 @@ export class DocsPage {
 
   render() {
     const { page } = this;
+    const hasDemo = typeof page.demoUrl === 'string';
 
     if (this.badFetch) {
       return templates.error(this.badFetch);
@@ -81,12 +131,12 @@ export class DocsPage {
     const Template = templates[page.template] || templates.default;
 
     const content = [
-      <main>
+      <main class={hasDemo ? 'has-demo' : 'no-demo'}>
         <Template page={page}/>
       </main>
     ];
 
-    if (typeof page.demoUrl === 'string') {
+    if (hasDemo) {
       content.push(
         <docs-demo url={page.demoUrl}/>
       );

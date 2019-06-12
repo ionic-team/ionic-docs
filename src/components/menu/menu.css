@@ -33,11 +33,6 @@ docs-menu .MenuLogo {
   height: 25px;
 }
 
-docs-menu > docs-search {
-  flex: none;
-  margin: 1rem 0.5rem 0;
-}
-
 docs-menu > stencil-route-switch {
   overflow-y: auto;
 }

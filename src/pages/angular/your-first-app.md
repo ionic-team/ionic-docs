@@ -1,9 +1,11 @@
 ---
+previousText: 'Overview'
+previousUrl: '/docs/angular/overview'
 nextText: 'iOS, Android, and the Camera'
-nextUrl: '/docs/developer-resources/guides/first-app-v4/ios-android-camera'
+nextUrl: '/docs/angular/your-first-app/ios-android-camera'
 ---
 
-# Your First Ionic App - Framework v4
+# Your First Ionic App: Angular
 
 The great thing about Ionic is that with one codebase, you can build for any platform using familiar web tools and languages. Follow along as we create a working Photo Gallery. Here’s the before and after:
 
@@ -41,7 +43,7 @@ Type “y” and press Enter. [Ionic Appflow](https://ionicframework.com/Appflow
 
 <strong>Log into your Ionic Account</strong>
 
-Sign in now to easily access awesome features like building native apps in the cloud and Live Deploys later in this tutorial. 
+Sign in now to easily access awesome features like building native apps in the cloud and Live Deploys later in this tutorial.
 
 <strong>What would you like to do?</strong>
 
@@ -54,7 +56,7 @@ Choose “Ionic Appflow.”
 <strong>“How would you like to connect to Ionic Appflow?”</strong>
 
 * Choose “Automatically setup a new SSH key pair for Ionic Appflow” if you haven’t used SSH before.
-* Choose “Use an existing SSH key pair” if you’ve used SSH before. 
+* Choose “Use an existing SSH key pair” if you’ve used SSH before.
 
 Next, change into the app folder, then push your code to Ionic Appflow:
 
@@ -115,3 +117,7 @@ $ git push ionic master
 ```
 
 That’s just the start of all the cool things we can do with Ionic. Up next, we’ll deploy the app to iOS and Android, then continue building the photo gallery.
+
+<div style="text-align:right;">
+  <docs-button href="/docs/angular/your-first-app/ios-android-camera">Continue <svg viewBox="0 0 512 512"><path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path></svg></docs-button>
+</div>

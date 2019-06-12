@@ -444,7 +444,7 @@
     ],
     "repo": "https://github.com/mauron85/cordova-plugin-background-geolocation",
     "cordovaPlugin": {
-      "name": "cordova-plugin-mauron85-background-geolocation@alpha"
+      "name": "@mauron85/cordova-plugin-background-geolocation"
     }
   },
   {
@@ -567,6 +567,19 @@
     "repo": "https://github.com/apache/cordova-plugin-battery-status",
     "cordovaPlugin": {
       "name": "cordova-plugin-battery-status"
+    }
+  },
+  {
+    "packageName": "@ionic-native/biocatch",
+    "displayName": "BioCatch",
+    "description": "\nBioCatch SDK Cordova support\n",
+    "usage": "\n```typescript\nimport { BioCatch } from '@ionic-native/biocatch';\n\n\nconstructor(private biocatch: BioCatch) { }\n\n...\n\n\nthis.biocatch.start('customer-session-1', 'http://example.com', 'some-public-key')\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+    "platforms": [
+      "iOS"
+    ],
+    "repo": "https://bitbucket.org/whisprnd/biocatch-cordova-plugin",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-biocatch"
     }
   },
   {
@@ -769,7 +782,7 @@
     "packageName": "@ionic-native/camera-preview",
     "displayName": "Camera Preview",
     "description": "\nShowing camera preview in HTML\n\nRequires Cordova plugin: `https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview.git`. For more info, please see the [Cordova Camera Preview docs](https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview).\n",
-    "usage": "\n```typescript\nimport { CameraPreview, CameraPreviewPictureOptions, CameraPreviewOptions, CameraPreviewDimensions } from '@ionic-native/camera-preview/ngx';\n\nconstructor(private cameraPreview: CameraPreview) { }\n\n...\n\n// camera options (Size and location). In the following example, the preview uses the rear camera and display the preview in the back of the webview\nconst cameraPreviewOpts: CameraPreviewOptions = {\n  x: 0,\n  y: 0,\n  width: window.screen.width,\n  height: window.screen.height,\n  camera: 'rear',\n  tapPhoto: true,\n  previewDrag: true,\n  toBack: true,\n  alpha: 1\n}\n\n// start camera\nthis.cameraPreview.startCamera(cameraPreviewOpts).then(\n  (res) => {\n    console.log(res)\n  },\n  (err) => {\n    console.log(err)\n  });\n\n// Set the handler to run every time we take a picture\nthis.cameraPreview.setOnPictureTakenHandler().subscribe((result) => {\n  console.log(result);\n  // do something with the result\n});\n\n\n// picture options\nconst pictureOpts: CameraPreviewPictureOptions = {\n  width: 1280,\n  height: 1280,\n  quality: 85\n}\n\n// take a picture\nthis.cameraPreview.takePicture(this.pictureOpts).then((imageData) => {\n  this.picture = 'data:image/jpeg;base64,' + imageData;\n}, (err) => {\n  console.log(err);\n  this.picture = 'assets/img/test.jpg';\n});\n\n\n// Switch camera\nthis.cameraPreview.switchCamera();\n\n// set color effect to negative\nthis.cameraPreview.setColorEffect('negative');\n\n// Stop the camera preview\nthis.cameraPreview.stopCamera();\n\n```\n",
+    "usage": "\n```typescript\nimport { CameraPreview, CameraPreviewPictureOptions, CameraPreviewOptions, CameraPreviewDimensions } from '@ionic-native/camera-preview/ngx';\n\nconstructor(private cameraPreview: CameraPreview) { }\n\n...\n\n// camera options (Size and location). In the following example, the preview uses the rear camera and display the preview in the back of the webview\nconst cameraPreviewOpts: CameraPreviewOptions = {\n  x: 0,\n  y: 0,\n  width: window.screen.width,\n  height: window.screen.height,\n  camera: 'rear',\n  tapPhoto: true,\n  previewDrag: true,\n  toBack: true,\n  alpha: 1\n}\n\n// start camera\nthis.cameraPreview.startCamera(cameraPreviewOpts).then(\n  (res) => {\n    console.log(res)\n  },\n  (err) => {\n    console.log(err)\n  });\n\n// Set the handler to run every time we take a picture\nthis.cameraPreview.setOnPictureTakenHandler().subscribe((result) => {\n  console.log(result);\n  // do something with the result\n});\n\n\n// picture options\nconst pictureOpts: CameraPreviewPictureOptions = {\n  width: 1280,\n  height: 1280,\n  quality: 85\n}\n\n// take a picture\nthis.cameraPreview.takePicture(this.pictureOpts).then((imageData) => {\n  this.picture = 'data:image/jpeg;base64,' + imageData;\n}, (err) => {\n  console.log(err);\n  this.picture = 'assets/img/test.jpg';\n});\n\n// take a snap shot\nthis.cameraPreview.takeSnapshot(this.pictureOpts).then((imageData) => {\n  this.picture = 'data:image/jpeg;base64,' + imageData;\n}, (err) => {\n  console.log(err);\n  this.picture = 'assets/img/test.jpg';\n});\n\n\n// Switch camera\nthis.cameraPreview.switchCamera();\n\n// set color effect to negative\nthis.cameraPreview.setColorEffect('negative');\n\n// Stop the camera preview\nthis.cameraPreview.stopCamera();\n\n```\n",
     "platforms": [
       "Android",
       "iOS"
@@ -1010,7 +1023,7 @@
     ],
     "repo": "https://github.com/xUnholy/cordova-device-accounts",
     "cordovaPlugin": {
-      "name": "cordova-device-accounts"
+      "name": "cordova-device-accounts-v2"
     }
   },
   {
@@ -1291,7 +1304,7 @@
     "packageName": "@ionic-native/file-opener",
     "displayName": "File Opener",
     "description": "\nThis plugin will open a file on your device file system with its default application.\n",
-    "usage": "\n```typescript\nimport { FileOpener } from '@ionic-native/file-opener/ngx';\n\nconstructor(private fileOpener: FileOpener) { }\n\n...\n\nthis.fileOpener.open('path/to/file.pdf', 'application/pdf')\n  .then(() => console.log('File is opened'))\n  .catch(e => console.log('Error opening file', e));\n\n```\n",
+    "usage": "\n```typescript\nimport { FileOpener } from '@ionic-native/file-opener/ngx';\n\nconstructor(private fileOpener: FileOpener) { }\n\n...\n\nthis.fileOpener.open('path/to/file.pdf', 'application/pdf')\n  .then(() => console.log('File is opened'))\n  .catch(e => console.log('Error opening file', e));\n\nthis.fileOpener.showOpenWithDialog('path/to/file.pdf', 'application/pdf')\n  .then(() => console.log('File is opened'))\n  .catch(e => console.log('Error opening file', e));\n\n```\n",
     "platforms": [
       "Android",
       "iOS",
@@ -1368,7 +1381,7 @@
     "packageName": "@ionic-native/fingerprint-aio",
     "displayName": "Fingerprint AIO",
     "description": "\nUse simple fingerprint authentication on Android and iOS.\nRequires Cordova plugin: cordova-plugin-fingerprint-aio. For more info about plugin, vist: https://github.com/NiklasMerz/cordova-plugin-fingerprint-aio\n",
-    "usage": "\n```typescript\nimport { FingerprintAIO } from '@ionic-native/fingerprint-aio/ngx';\n\nconstructor(private faio: FingerprintAIO) { }\n\n...\n\nthis.faio.show({\n    clientId: 'Fingerprint-Demo',\n    clientSecret: 'password', //Only necessary for Android\n    disableBackup:true,  //Only for Android(optional)\n    localizedFallbackTitle: 'Use Pin', //Only for iOS\n    localizedReason: 'Please authenticate' //Only for iOS\n})\n.then((result: any) => console.log(result))\n.catch((error: any) => console.log(error));\n\n```",
+    "usage": "\n```typescript\nimport { FingerprintAIO } from '@ionic-native/fingerprint-aio/ngx';\n\nconstructor(private faio: FingerprintAIO) { }\n\n...\n\nthis.faio.show({\n    clientId: 'Fingerprint-Demo', //Android: Used for encryption. iOS: used for dialogue if no `localizedReason` is given.\n    clientSecret: 'o7aoOMYUbyxaD23oFAnJ' //Necessary for Android encrpytion of keys. Use random secret key.\n    disableBackup:true,  //Only for Android(optional)\n    localizedFallbackTitle: 'Use Pin', //Only for iOS\n    localizedReason: 'Please authenticate' //Only for iOS\n})\n.then((result: any) => console.log(result))\n.catch((error: any) => console.log(error));\n\n```",
     "platforms": [
       "Android",
       "iOS"
@@ -1418,6 +1431,20 @@
     "repo": "https://github.com/chemerisuk/cordova-plugin-firebase-config",
     "cordovaPlugin": {
       "name": "cordova-plugin-firebase-config"
+    }
+  },
+  {
+    "packageName": "@ionic-native/firebase-crash",
+    "displayName": "FirebaseCrash",
+    "description": "\nThis plugin brings crash reporting from Google Firebase to your Cordova project! Android and iOS supported.\n",
+    "usage": "\n```typescript\nimport { FirebaseCrash } from '@ionic-native/firebase-crash';\n\nconstructor(private firebaseCrash: FirebaseCrash) { }\n\n...\n\nthis.firebaseCrash.setUserId('123456789');\nthis.firebaseCrash.log('message');\nthis.firebaseCrash.logError('non fatal exception');\n\n```\n",
+    "platforms": [
+      "Android",
+      "iOS"
+    ],
+    "repo": "https://github.com/chemerisuk/cordova-plugin-firebase-crash",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-firebase-crash"
     }
   },
   {
@@ -1503,6 +1530,19 @@
     "repo": "https://github.com/blakgeek/cordova-plugin-flurryanalytics",
     "cordovaPlugin": {
       "name": "cordova-plugin-flurryanalytics"
+    }
+  },
+  {
+    "packageName": "@ionic-native/foreground-service",
+    "displayName": "Foreground Service",
+    "description": "\nThis plugin allows for android devices to continue running services in the background, using a\nforeground ongoing notification. This is targeted towards use with plugins such as\n'cordova-geolocation' that will not run while the app is in the background on android API 26+.\n\nFor android API 28+, the following xml snippet should be inserted into ```config.xml```:\n\n```\n...\n<platform name=\"android\">\n  <config-file parent=\"/*\" target=\"AndroidManifest.xml\">\n    <uses-permission android:name=\"android.permission.FOREGROUND_SERVICE\" />\n  </config-file>\n  ...\n```",
+    "usage": "\n```typescript\nimport { ForegroundService } from '@ionic-native/foreground-service/ngx';\n\n\nconstructor(public foregroundService: ForegroundService) { }\n\n...\n\nstartService() {\n // Notification importance is optional, the default is 1 - Low (no sound or vibration)\n this.foregroundService.start('GPS Running', 'Background Service', 'drawable/fsicon');\n}\n\nstopService() {\n // Disable the foreground service\n this.foregroundService.stop();\n}\n\n```\n",
+    "platforms": [
+      "Android"
+    ],
+    "repo": "https://github.com/DavidBriglio/cordova-plugin-foreground-service",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-foreground-service"
     }
   },
   {
@@ -1616,7 +1656,7 @@
     "packageName": "@ionic-native/google-play-games-services",
     "displayName": "Google Play Games Services",
     "description": "\nA Cordova plugin that let's you interact with Google Play Games Services.\n",
-    "usage": "\n```typescript\nimport { GooglePlayGamesServices } from '@ionic-native/google-play-games-services/ngx';\n\n\nconstructor(private googlePlayGamesServices: GooglePlayGamesServices) { }\n\n...\n\n// Authenticate with Play Games Services\nthis.googlePlayGamesServices.auth()\n    .then(() => console.log('Logged in to Play Games Services'))\n    .catch(e) => console.log('Error logging in Play Games Services', e);\n\n// Sign out of Play Games Services.\nthis.googlePlayGamesServices.signOut()\n    .then(() => console.log('Logged out of Play Games Services'))\n    .catch(e => console.log('Error logging out of Play Games Services', e);\n\n// Check auth status.\nthis.googlePlayGamesServices.isSignedIn()\n    .then((signedIn: SignedInResponse) => {\n        if (signedIn.isSignedIn) {\n            hideLoginButton();\n        }\n    });\n\n// Fetch currently authenticated user's data.\nthis.googlePlayGamesServices.showPlayer().then((data: Player) => {\n   console.log('Player data', data);\n});\n\n// Submit a score.\nthis.googlePlayGamesServices.submitScore({\n    score: 100,\n    leaderboardId: 'SomeLeaderboardId'\n});\n\n// Show the native leaderboards window.\nthis.googlePlayGamesServices.showAllLeaderboards()\n    .then(() => console.log('The leaderboard window is visible.'));\n\n// Show a signle native leaderboard window.\nthis.googlePlayGamesServices.showLeaderboard({\n    leaderboardId: 'SomeLeaderBoardId'\n}).then(() => console.log('The leaderboard window is visible.'));\n\n// Unlock an achievement.\nthis.googlePlayGamesServices.unlockAchievement({\n    achievementId: 'SomeAchievementId'\n}).then(() => console.log('Achievement unlocked'));\n\n// Incremement an achievement.\nthis.googlePlayGamesServices.incrementAchievement({\n    step: 1,\n    achievementId: 'SomeAchievementId'\n}).then(() => console.log('Achievement incremented'));\n\n// Show the native achievements window.\nthis.googlePlayGamesServices.showAchivements()\n   .then(() => console.log('The achievements window is visible.'));\n\n```\n",
+    "usage": "\n```typescript\nimport { GooglePlayGamesServices } from '@ionic-native/google-play-games-services/ngx';\n\n\nconstructor(private googlePlayGamesServices: GooglePlayGamesServices) { }\n\n...\n\n// Authenticate with Play Games Services\nthis.googlePlayGamesServices.auth()\n    .then(() => console.log('Logged in to Play Games Services'))\n    .catch(e) => console.log('Error logging in Play Games Services', e);\n\n// Sign out of Play Games Services.\nthis.googlePlayGamesServices.signOut()\n    .then(() => console.log('Logged out of Play Games Services'))\n    .catch(e => console.log('Error logging out of Play Games Services', e);\n\n// Check auth status.\nthis.googlePlayGamesServices.isSignedIn()\n    .then((signedIn: SignedInResponse) => {\n        if (signedIn.isSignedIn) {\n            hideLoginButton();\n        }\n    });\n\n// Fetch currently authenticated user's data.\nthis.googlePlayGamesServices.showPlayer().then((data: Player) => {\n   console.log('Player data', data);\n});\n\n// Submit a score.\nthis.googlePlayGamesServices.submitScore({\n    score: 100,\n    leaderboardId: 'SomeLeaderboardId'\n});\n\n// Get the player score on a leaderboard.\nthis.googlePlayGamesServices.getPlayerScore({\n    leaderboardId: 'SomeLeaderBoardId'\n}).then((data: PlayerScoreData) => {\n   console.log('Player score', data);\n});\n\n// Show the native leaderboards window.\nthis.googlePlayGamesServices.showAllLeaderboards()\n    .then(() => console.log('The leaderboard window is visible.'));\n\n// Show a signle native leaderboard window.\nthis.googlePlayGamesServices.showLeaderboard({\n    leaderboardId: 'SomeLeaderBoardId'\n}).then(() => console.log('The leaderboard window is visible.'));\n\n// Unlock an achievement.\nthis.googlePlayGamesServices.unlockAchievement({\n    achievementId: 'SomeAchievementId'\n}).then(() => console.log('Achievement unlocked'));\n\n// Incremement an achievement.\nthis.googlePlayGamesServices.incrementAchievement({\n    step: 1,\n    achievementId: 'SomeAchievementId'\n}).then(() => console.log('Achievement incremented'));\n\n// Show the native achievements window.\nthis.googlePlayGamesServices.showAchivements()\n   .then(() => console.log('The achievements window is visible.'));\n\n```\n",
     "platforms": [
       "Android"
     ],
@@ -2303,7 +2343,7 @@
     "packageName": "@ionic-native/native-geocoder",
     "displayName": "Native Geocoder",
     "description": "\nCordova plugin for native forward and reverse geocoding\n",
-    "usage": "\n```typescript\nimport { NativeGeocoder, NativeGeocoderReverseResult, NativeGeocoderForwardResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder/ngx';\n\nconstructor(private nativeGeocoder: NativeGeocoder) { }\n\n...\n\nlet options: NativeGeocoderOptions = {\n    useLocale: true,\n    maxResults: 5\n};\n\nthis.nativeGeocoder.reverseGeocode(52.5072095, 13.1452818, options)\n  .then((result: NativeGeocoderReverseResult[]) => console.log(JSON.stringify(result[0])))\n  .catch((error: any) => console.log(error));\n\nthis.nativeGeocoder.forwardGeocode('Berlin', options)\n  .then((coordinates: NativeGeocoderForwardResult[]) => console.log('The coordinates are latitude=' + coordinates[0].latitude + ' and longitude=' + coordinates[0].longitude))\n  .catch((error: any) => console.log(error));\n```",
+    "usage": "\n```typescript\nimport { NativeGeocoder, NativeGeocoderResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder/ngx';\n\nconstructor(private nativeGeocoder: NativeGeocoder) { }\n\n...\n\nlet options: NativeGeocoderOptions = {\n    useLocale: true,\n    maxResults: 5\n};\n\nthis.nativeGeocoder.reverseGeocode(52.5072095, 13.1452818, options)\n  .then((result: NativeGeocoderResult[]) => console.log(JSON.stringify(result[0])))\n  .catch((error: any) => console.log(error));\n\nthis.nativeGeocoder.forwardGeocode('Berlin', options)\n  .then((result: NativeGeocoderResult[]) => console.log('The coordinates are latitude=' + result[0].latitude + ' and longitude=' + result[0].longitude))\n  .catch((error: any) => console.log(error));\n```",
     "platforms": [
       "iOS",
       "Android"
@@ -2642,6 +2682,20 @@
     }
   },
   {
+    "packageName": "@ionic-native/purchases",
+    "displayName": "Purchases",
+    "description": "\nPurchases is a cross platform solution for managing in-app subscriptions. A backend is also provided via [RevenueCat](https://www.revenuecat.com)\n\n## Features\n|     | RevenueCat                                                                                                                                                   |\n| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |\n| ✅  | Server-side receipt validation                                                                                                                               |\n| ➡️  | [Webhooks](https://docs.revenuecat.com/docs/webhooks) - enhanced server-to-server communication with events for purchases, renewals, cancellations, and more |\n| 🎯  | Subscription status tracking - know whether a user is subscribed whether they're on iOS, Android or web                                                      |\n| 📊  | Analytics - automatic calculation of metrics like conversion, mrr, and churn                                                                                 |\n| 📝  | [Online documentation](https://docs.revenuecat.com/docs) up to date                                                                                          |\n| 🔀  | [Integrations](https://www.revenuecat.com/integrations) - over a dozen integrations to easily send purchase data where you need it                           |\n| 💯  | Well maintained - [frequent releases](https://github.com/RevenueCat/purchases-ios/releases)                                                                  |\n| 📮  | Great support - [Help Center](https://docs.revenuecat.com/discuss)                                                                                           |\n| 🤩  | Awesome [new features](https://trello.com/b/RZRnWRbI/revenuecat-product-roadmap)                                                                             |\n\n## Getting Started\n\nFor more detailed information, you can view our complete documentation at [docs.revenuecat.com](https://docs.revenuecat.com/docs).\n",
+    "usage": "\n#### 1. Get a RevenueCat API key\n\nLog in to the [RevenueCat dashboard](https://app.revenuecat.com) and obtain a free API key for your application.\n\n#### 2. Initialize the SDK\n\nYou should only configure _Purchases_ once (usually on app launch) as soon as your app has a unique user id for your user. This can be when a user logs in if you have accounts or on launch if you can generate a random user identifier.\n\n```typescript\n import { Platform } from \"@ionic/angular\";\n import { Purchases } from \"@ionic-native/purchases/ngx\";\n\n constructor(public platform: Platform, private purchases: Purchases) {\n     platform.ready().then(() => {\n         this.purchases.setDebugLogsEnabled(true); // Enable to get debug logs\n         this.purchases.setup(\"my_api_key\", \"my_app_user_id\");\n     }\n }\n```\n#### 3. Displaying Available Products\n\n_Purchases_ will automatically fetch the latest _active_ entitlements and get the product information from Apple or Google. This means when users launch your purchase screen, products will already be loaded.\n\nBelow is an example of fetching entitlements and launching an upsell screen.\n\n```typescript\nthis.purchases.getEntitlements()\n     .subscribe(entitlements => ,\n                error => );\n```\n\n#### 4. Make a purchase\n\nWhen it comes time to make a purchase, _Purchases_ has a simple method, `makePurchase`. The code sample below shows the process of purchasing a product and confirming it unlocks the \"my_entitlement_identifier\" content.\n\n```typescript\nthis.purchases.makePurchase(\"product_id\")\n     .subscribe(response => {\n         if (response.purchaserInfo.activeEntitlements.includes(\"my_entitlement_identifier\")) {\n             // Unlock content\n         }\n     },\n     ({ error, userCancelled }) => // Error making purchase. You can check error.userCancelled to check if user cancelled the purchase\n     );\n\n```\n\n`makePurchase` handles the underlying framework interaction and automatically validates purchases with Apple and Google through our secure servers. This helps reduce in-app purchase fraud and decreases the complexity of your app. Receipt tokens are stored remotely and always kept up-to-date.\n\n#### 5. Get Subscription Status\n\n_Purchases_ makes it easy to check what active subscriptions the current user has. This can\nbe done two ways within the `.purchaserInfo` method:\n\n1. Checking active Entitlements - this lets you see what entitlements ([from RevenueCat dashboard](https://app.revenuecat.com))\nare active for the user.\n2. Checking the active subscriptions - this lets you see what product ids (from iTunes Connect or Play Store) are active for the user.\n\n```typescript\n this.purchases.getPurchaserInfo()\n     .subscribe(info => {\n         // Option 1: Check if user has access to entitlement (from RevenueCat dashboard)\n         const isPro =\n             info.activeEntitlements !== \"undefined\" &&\n             info.activeEntitlements.includes(\"pro\");\n         // Option 2: Check if user has active subscription (from App Store Connect or Play Store)\n         const isPro =\n             info.activeSubscriptions !== \"undefined\" &&\n             info.activeSubscriptions.includes(\"my_product_identifier\");\n     },\n     error => );\n```\n\n> Since the SDK updates and caches the latest PurchaserInfo when the app becomes active, the completion block in `.purchaserInfo` won't need to make a network request in most cases.\n\n### Restoring Purchases\n\nRestoring purchases is a mechanism by which your user can restore their in-app purchases, reactivating any content that had previously been purchased from the same store account (Apple or Google).\n\nIf two different App User IDs try to restore transactions from the same underlying store account (Apple or Google) RevenueCat will create an alias between the two App User IDs and count them as the same user going forward.\n\nThis is a common if your app does not have accounts and is relying on RevenueCat's random App User IDs.\n\n```typescript\nthis.purchases.restore()\n     .subscribe(info => {\n          //... check purchaserInfo to see if entitlement is now active\n     },\n     error => );\n```\n> If you've provided your own App User ID, calling restoreTransactions could alias the logged in user to another generated App User ID that has made a purchase on the same device.\n\n> By default, RevenueCat will not let you reuse an App or Play Store account that already has an active subscription. If you set allowSharingAppStoreAccount = True the SDK will be permissive in accepting shared accounts, creating aliases as needed.\n\n> By default allowSharingAppStoreAccount is True for RevenueCat random App User IDs but must be enabled manually if you want to allow permissive sharing for your own App User IDs.\n\n## Debugging\n\nYou can enabled detailed debug logs by setting `debugLogsEnabled = true`. You can set this **before** you configure Purchases.\n\n```typescript\nthis.purchases.setDebugLogsEnabled(true);\nthis.purchases.setup(\"my_api_key\", \"my_app_user_id\");\n```\n\n**OS_ACTIVITY_MODE**\n> On iOS, disabling `OS_ACTIVITY_MODE` in your XCode scheme will block debug logs from printing in the console. If you have debug logs enabled, but don't see any output, go to `Product -> Scheme -> Edit Scheme...` in Xcode and uncheck the `OS_ACTIVITY_MODE` environment variable.\n\nExample output:\n```\n[Purchases] - DEBUG: Debug logging enabled.\n[Purchases] - DEBUG: SDK Version - 2.0.0\n[Purchases] - DEBUG: Initial App User ID - (null)\n[Purchases] - DEBUG: GET /v1/subscribers/<APP_USER_ID>\n[Purchases] - DEBUG: GET /v1/subscribers/<APP_USER_ID>/products\n[Purchases] - DEBUG: No cached entitlements, fetching\n[Purchases] - DEBUG: Vending purchaserInfo from cache\n[Purchases] - DEBUG: applicationDidBecomeActive\n[Purchases] - DEBUG: GET /v1/subscribers/<APP_USER_ID>/products 200\n```\n## Entitlements\n\nAn entitlement represents features or content that a user is \"entitled\" to. With Entitlements, you can set up your available in-app products remotely and control their availability without the need to update your app. For more information on configuring entitlements, look at our [entitlements documetation](https://docs.revenuecat.com/docs/entitlements).\n\n## Sample App\n\nWe've added an [example](https://github.com/RevenueCat/purchases-ionic-example) showing a simple example using _Purchases_ with the RevenueCat backend. Note that the pre-registered in app purchases in the demo apps are for illustration purposes only and may not be valid in App Store Connect. [Set up your own purchases](https://docs.revenuecat.com/docs/entitlements) with RevenueCat when running the example.\n\n#### Additional iOS Setup\n\n##### Add Strip Frameworks Phase\nThe App Store, in it's infinite wisdom, still rejects fat frameworks, so we need to strip our framework before it is deployed. To do this, add the following script phase to your build.\n1. In Xcode, in project manager, select your app target.\n2. Open the `Build Phases` tab\n3. Add a new `Run Script`, name it `Strip Frameworks`\n4. Add the following command `\"${PROJECT_DIR}/../../node_modules/cordova-plugin-purchases/src/ios/strip-frameworks.sh\"` (quotes included)\n\n![](https://media.giphy.com/media/39zTmnsW1CIrJNk5AM/giphy.gif)\n\n## Next Steps\n- Head over to our **[online documentation](https://docs.revenuecat.com/docs)** for complete setup guides\n- If you haven't already, make sure your products are configured correctly in the RevenueCat dashboard by checking out our [guide on entitlements](https://docs.revenuecat.com/docs/entitlements)\n- If you want to use your own user identifiers, read about [setting app user ids](https://docs.revenuecat.com/docs/user-ids)\n- If you're moving to RevenueCat from another system, see our guide on [migrating your existing subscriptions](https://docs.revenuecat.com/docs/migrating-existing-subscriptions)\n- Once you're ready to test your integration, you can follow our guides on [testing purchases](https://docs.revenuecat.com/docs/testing-purchases)\n\n## Reporting Issues\n\nYou can use Github Issues to report any bugs and issues with _Purchases_. Here is some advice for users that want to report an issue:\n\n1. Make sure that you are using the latest version of _Purchases_. The issue that you are about to report may be already fixed in the latest master branch version: https://github.com/revenuecat/cordova-plugin-purchases/tree/master.\n2. Providing reproducible steps for the issue will shorten the time it takes for it to be fixed - a Gist is always welcomed!\n3. Since some issues are Sandbox specific, specifying what environment you encountered the issue might help.\n\n## Technical Support or Questions\n\nIf you have questions or need help integrating _Purchases_ please [contact us](https://www.revenuecat.com/contact) or email _support@revenuecat.com_ instead of opening an issue.\n\n## Feature Requests\n\nIf there is something you'd like to see included or feel anything is missing you can add a feature to our [public roadmap](https://trello.com/b/RZRnWRbI/revenuecat-product-roadmap). If the feature already exists, or you see something else you'd like, upvote it.\n\n## Pricing\n\n_Purchases_ SDK is free to use but some features require a paid plan. You can find more about that on our website on the [pricing plan page](https://www.revenuecat.com/pricing).\n",
+    "platforms": [
+      "Android",
+      "iOS"
+    ],
+    "repo": "https://github.com/RevenueCat/cordova-plugin-purchases",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-purchases"
+    }
+  },
+  {
     "packageName": "@ionic-native/push",
     "displayName": "Push",
     "description": "\nRegister and receive push notifications.\n\nRequires Cordova plugin: `phonegap-plugin-push`. For more info, please see the [Push plugin docs](https://github.com/phonegap/phonegap-plugin-push).\n\nFor TypeScript users, see the [Push plugin docs about using TypeScript for custom notifications](https://github.com/phonegap/phonegap-plugin-push/blob/master/docs/TYPESCRIPT.md).\n",
@@ -2717,7 +2771,7 @@
   {
     "packageName": "@ionic-native/rollbar",
     "displayName": "Rollbar",
-    "description": "\nThis plugin adds Rollbar App monitoring to your application\n",
+    "description": "\nThis plugin adds [Rollbar](https://rollbar.com/) App monitoring to your application\n",
     "usage": "\n```typescript\nimport { Rollbar } from '@ionic-native/rollbar/ngx';\n\nconstructor(private rollbar: Rollbar) { }\n\n...\n\nthis.rollbar.init();\n\n```\n",
     "platforms": [
       "Android",
@@ -2948,6 +3002,20 @@
     "repo": "https://github.com/apache/cordova-plugin-splashscreen",
     "cordovaPlugin": {
       "name": "cordova-plugin-splashscreen"
+    }
+  },
+  {
+    "packageName": "@ionic-native/spotify-auth",
+    "displayName": "Spotify Auth",
+    "description": "\nCordova plugin for authenticating with Spotify\n> https://github.com/Festify/cordova-spotify-oauth\n",
+    "usage": "\n```typescript\nimport { SpotifyAuth } from '@ionic-native/spotify-auth';\n\n// [...]\n\nconstructor(private spotifyAuth: SpotifyAuth) { }\n\n// [...]\n\nconst config = {\n  clientId: \"<SPOTIFY CLIENT ID>\",\n  redirectUrl: \"<REDIRECT URL, MUST MATCH WITH AUTH ENDPOINT AND SPOTIFY DEV CONSOLE>\",\n  scopes: [\"streaming\"], // see Spotify Dev console for all scopes\n  tokenExchangeUrl: \"<URL OF TOKEN EXCHANGE HTTP ENDPOINT>\",\n  tokenRefreshUrl: \"<URL OF TOKEN REFRESH HTTP ENDPOINT>\",\n};\n\n...\n\nthis.spotifyAuth.authorize(config)\n  .then(({ accessToken, expiresAt }) => {\n    console.log(`Got an access token, its ${accessToken}!`);\n    console.log(`Its going to expire in ${expiresAt - Date.now()}ms.`);\n  });\n\n// [...]\n\nthis.spotifyAuth.forget().then(() => console.log(\"We're logged out!\"));\n\n// [...]\n```\n",
+    "platforms": [
+      "Android",
+      "iOS"
+    ],
+    "repo": "https://github.com/Festify/cordova-spotify-oauth",
+    "cordovaPlugin": {
+      "name": "cordova-spotify-oauth"
     }
   },
   {

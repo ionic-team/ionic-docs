@@ -14,6 +14,12 @@ Ionic Framework provides several different layouts that can be used to structure
 
 ### Header
 
+<aside>
+  <docs-card href="/docs/api/header" header="Learn More" icon="/docs/assets/icons/component-header-icon.png">
+    <code>ion-header</code> API docs
+  </docs-card>
+</aside>
+
 The most simple layout available consists of a [header](/docs/api/header) and [content](/docs/api/content). Most pages in an app generally have both of these, but a header is not required in order to use content.
 
 ```html
@@ -31,6 +37,12 @@ The most simple layout available consists of a [header](/docs/api/header) and [c
 ```
 
 ### Footer
+
+<aside>
+  <docs-card href="/docs/api/footer" header="Learn More" icon="/docs/assets/icons/component-footer-icon.png">
+    <code>ion-footer</code> API docs
+  </docs-card>
+</aside>
 
 As you can see, a toolbar in a header appears above the content. Sometimes an app needs to have a toolbar below the content, which is when a footer is used.
 

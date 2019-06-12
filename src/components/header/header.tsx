@@ -1,5 +1,5 @@
 import { Component, Listen, Prop, State, h } from '@stencil/core';
-import { Checkmark, Logo, Outbound } from '../../icons';
+import { Book, Checkmark, Logo, Translation } from '../../icons';
 
 @Component({
   tag: 'docs-header',
@@ -78,6 +78,46 @@ export class DocsHeader {
         </nav>
 
         <nav class="UtilNav">
+          <ionic-search>
+            <div class="Search__Defaults">
+              <div class="Search__Defaults__Section">
+                <h4>Getting Started</h4>
+                <ul>
+                  <li><a href="/docs/installation/cli"><Book/><strong>Installation Guide</strong> | Installation</a></li>
+                  <li><a href="/docs/building/running"><Book/><strong>Running an App</strong> | Building</a></li>
+                  <li><a href="/docs/layout/structure"><Book/><strong>App Structure</strong> | Layout</a></li>
+                  <li><a href="/docs/theming/basics"><Book/><strong>Theming Basics</strong> | Theming</a></li>
+                </ul>
+              </div>
+              <div class="Search__Defaults__Section">
+                <h4>Common topics</h4>
+                <ul>
+                  <li><a href="/docs/building/testing"><Book/><strong>Testing</strong> | Building</a></li>
+                  <li><a href="/docs/building/cross-platform#storage"><Book/><strong>Storage</strong> | Building</a></li>
+                  <li><a href="/docs/lifecycle/angular"><Book/><strong>Life Cycle Events</strong> | Angular</a></li>
+                  <li><a href="/docs/navigation/angular"><Book/><strong>Navigation</strong> | Angular</a></li>
+                </ul>
+              </div>
+              <div class="Search__Defaults__Section">
+                <h4>UI Components</h4>
+                <ul>
+                  <li><a href="/docs/api/button"><Book/><strong>ion-button</strong> | Buttons</a></li>
+                  <li><a href="/docs/api/card"><Book/><strong>ion-card</strong> | Cards</a></li>
+                  <li><a href="/docs/api/loading"><Book/><strong>ion-loading</strong> | Progress Indicators</a></li>
+                  <li><a href="/docs/api/tabs"><Book/><strong>ion-tabs</strong> | Tabs</a></li>
+                </ul>
+              </div>
+              <div class="Search__Defaults__Section">
+                <h4>Native</h4>
+                <ul>
+                  <li><a href="/docs/enterprise/camera"><Book/><strong>Camera</strong> | Native EE</a></li>
+                  <li><a href="/docs/enterprise/identity-vault"><Book/><strong>Identity Vault</strong> | Native EE</a></li>
+                  <li><a href="/docs/native/firebase"><Book/><strong>Firebase</strong> | Native CE</a></li>
+                  <li><a href="/docs/native/barcode-scanner"><Book/><strong>Barcode Scanner</strong> | Native CE</a></li>
+                </ul>
+              </div>
+            </div>
+          </ionic-search>
           <docs-dropdown label="Community" align="right">
             <section>
               <a href="https://ionicframework.com/community" target="_blank">Community Hub</a>
@@ -96,14 +136,29 @@ export class DocsHeader {
           </docs-dropdown>
           <docs-dropdown label="Support" align="right">
             <section>
-              <a href="https://ionic.zendesk.com/" target="_blank">Help Center</a>
+              <a href="https://ionicframework.com/support" target="_blank">Help Center</a>
             </section>
             <section>
-              <a href="https://ionicframework.com/support" target="_blank">Customer Support</a>
+              <a href="https://ionic.zendesk.com/" target="_blank">Customer Support</a>
               <a href="https://ionicframework.com/advisory" target="_blank">Enterprise Advisory</a>
             </section>
           </docs-dropdown>
-          <a class="outbound" href="https://github.com/ionic-team/ionic" target="_blank">GitHub <Outbound/></a>
+          <docs-dropdown icon={Translation} align="right">
+            <section>
+              <a href="https://ionicframework.com/en/docs/" class="link-active">
+                English
+                <svg viewBox="0 0 512 512" width="14">
+                  <path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"></path>
+                </svg>
+              </a>
+              <a href="https://ionicframework.com/jp/docs/" target="_blank">日本語</a>
+            </section>
+            <section>
+              <a href="https://ionicframework.com/translate" target="_blank">Translate</a>
+            </section>
+          </docs-dropdown>
+          <a href="https://github.com/ionic-team/ionic" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
+          <a href="https://twitter.com/ionicframework" target="_blank"><ion-icon name="logo-twitter"></ion-icon></a>
         </nav>
       </header>
     );

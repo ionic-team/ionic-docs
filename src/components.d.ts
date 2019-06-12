@@ -19,7 +19,6 @@ import {
   RouterHistory,
 } from '@stencil/router';
 
-
 export namespace Components {
   interface CodeColor {
     'display': string;
@@ -78,6 +77,7 @@ export namespace Components {
   interface DocsDropdown {
     'align': 'left' | 'right' | 'center';
     'close': () => Promise<void>;
+    'icon': (props: any) => JSX.Element;
     'label': string;
     'open': () => Promise<void>;
     'toggle': () => Promise<void>;
@@ -107,7 +107,6 @@ export namespace Components {
     'keys': ReferenceKeys;
   }
   interface DocsRoot {}
-  interface DocsSearch {}
   interface DocsSelect {
     'initializer': (options: string[]) => string;
     'onSelect': (option: string) => any;
@@ -141,6 +140,9 @@ export namespace Components {
   interface HubspotForm {
     'formId': string;
   }
+  interface IonicSearch {
+    'mobile': boolean;
+  }
   interface LayeredColorsSelect {}
   interface SmsForm {}
   interface SteppedColorGenerator {}
@@ -150,6 +152,11 @@ export namespace Components {
 }
 
 declare global {
+
+  // Adding a global JSX for backcompatibility with legacy dependencies
+  export namespace JSX {
+    export interface Element {}
+  }
 
 
   interface HTMLCodeColorElement extends Components.CodeColor, HTMLStencilElement {}
@@ -314,12 +321,6 @@ declare global {
     new (): HTMLDocsRootElement;
   };
 
-  interface HTMLDocsSearchElement extends Components.DocsSearch, HTMLStencilElement {}
-  var HTMLDocsSearchElement: {
-    prototype: HTMLDocsSearchElement;
-    new (): HTMLDocsSearchElement;
-  };
-
   interface HTMLDocsSelectElement extends Components.DocsSelect, HTMLStencilElement {}
   var HTMLDocsSelectElement: {
     prototype: HTMLDocsSelectElement;
@@ -374,6 +375,12 @@ declare global {
     new (): HTMLHubspotFormElement;
   };
 
+  interface HTMLIonicSearchElement extends Components.IonicSearch, HTMLStencilElement {}
+  var HTMLIonicSearchElement: {
+    prototype: HTMLIonicSearchElement;
+    new (): HTMLIonicSearchElement;
+  };
+
   interface HTMLLayeredColorsSelectElement extends Components.LayeredColorsSelect, HTMLStencilElement {}
   var HTMLLayeredColorsSelectElement: {
     prototype: HTMLLayeredColorsSelectElement;
@@ -425,7 +432,6 @@ declare global {
     'docs-pagination': HTMLDocsPaginationElement;
     'docs-reference': HTMLDocsReferenceElement;
     'docs-root': HTMLDocsRootElement;
-    'docs-search': HTMLDocsSearchElement;
     'docs-select': HTMLDocsSelectElement;
     'docs-shadow-card': HTMLDocsShadowCardElement;
     'docs-tab': HTMLDocsTabElement;
@@ -435,6 +441,7 @@ declare global {
     'file-tree-directory': HTMLFileTreeDirectoryElement;
     'file-tree-file': HTMLFileTreeFileElement;
     'hubspot-form': HTMLHubspotFormElement;
+    'ionic-search': HTMLIonicSearchElement;
     'layered-colors-select': HTMLLayeredColorsSelectElement;
     'sms-form': HTMLSmsFormElement;
     'stepped-color-generator': HTMLSteppedColorGeneratorElement;
@@ -503,6 +510,7 @@ declare namespace LocalJSX {
   }
   interface DocsDropdown extends JSXBase.HTMLAttributes<HTMLDocsDropdownElement> {
     'align'?: 'left' | 'right' | 'center';
+    'icon'?: (props: any) => JSX.Element;
     'label'?: string;
   }
   interface DocsHeader extends JSXBase.HTMLAttributes<HTMLDocsHeaderElement> {
@@ -530,7 +538,6 @@ declare namespace LocalJSX {
     'keys'?: ReferenceKeys;
   }
   interface DocsRoot extends JSXBase.HTMLAttributes<HTMLDocsRootElement> {}
-  interface DocsSearch extends JSXBase.HTMLAttributes<HTMLDocsSearchElement> {}
   interface DocsSelect extends JSXBase.HTMLAttributes<HTMLDocsSelectElement> {
     'initializer'?: (options: string[]) => string;
     'onSelect'?: (option: string) => any;
@@ -563,6 +570,9 @@ declare namespace LocalJSX {
   }
   interface HubspotForm extends JSXBase.HTMLAttributes<HTMLHubspotFormElement> {
     'formId'?: string;
+  }
+  interface IonicSearch extends JSXBase.HTMLAttributes<HTMLIonicSearchElement> {
+    'mobile'?: boolean;
   }
   interface LayeredColorsSelect extends JSXBase.HTMLAttributes<HTMLLayeredColorsSelectElement> {}
   interface SmsForm extends JSXBase.HTMLAttributes<HTMLSmsFormElement> {}
@@ -599,7 +609,6 @@ declare namespace LocalJSX {
     'docs-pagination': DocsPagination;
     'docs-reference': DocsReference;
     'docs-root': DocsRoot;
-    'docs-search': DocsSearch;
     'docs-select': DocsSelect;
     'docs-shadow-card': DocsShadowCard;
     'docs-tab': DocsTab;
@@ -609,6 +618,7 @@ declare namespace LocalJSX {
     'file-tree-directory': FileTreeDirectory;
     'file-tree-file': FileTreeFile;
     'hubspot-form': HubspotForm;
+    'ionic-search': IonicSearch;
     'layered-colors-select': LayeredColorsSelect;
     'sms-form': SmsForm;
     'stepped-color-generator': SteppedColorGenerator;
