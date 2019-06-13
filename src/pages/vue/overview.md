@@ -19,7 +19,7 @@ Coming soon.
 
 [Capacitor](https://capacitor.ionicframework.com) is the official cross-platform app runtime used to make your `Ionic Vue` web app run natively on iOS, Android, Electron, and the web. 
 
-While there are no known technical limitations to using `Ionic Vue` with [Cordova](https://cordova.apache.org/) plugins, Capacitor is officially recommended. **Note:** There are no plans to support `Ionic Vue` in the [Ionic CLI tooling](/docs/cli) at this time. For more details, please [see here](https://capacitor.ionicframework.com/docs/cordova).
+While there are no known technical limitations to using `Ionic Vue` with [Cordova](https://cordova.apache.org/) plugins, Capacitor is officially recommended. **Note:** There are no plans to support a Cordova integration for `Ionic Vue` in the [Ionic CLI tooling](/docs/cli) at this time. For more details, please [see here](https://capacitor.ionicframework.com/docs/cordova).
 
 ## From the Community
 
