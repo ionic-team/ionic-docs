@@ -64,10 +64,10 @@ export class DocsPage {
   setDocumentMeta(page: Page) {
     const { title, meta = {} } = page;
     const metaEls = {
-      title: document.querySelectorAll('head .meta-title'),
-      description: document.querySelectorAll('head .meta-description'),
-      url: document.querySelectorAll('head .meta-url'),
-      image: document.querySelectorAll('head .meta-image')
+      title: this.document.querySelectorAll('head .meta-title'),
+      description: this.document.querySelectorAll('head .meta-description'),
+      url: this.document.querySelectorAll('head .meta-url'),
+      image: this.document.querySelectorAll('head .meta-image')
     };
 
     function updateMeta(els, update) {
@@ -81,7 +81,7 @@ export class DocsPage {
     }
 
     // Title
-    document.title = (() => {
+    this.document.title = (() => {
       const suffix = /^\/docs\/pages\/appflow.*$/.test(this.path) ?
         'Ionic Appflow Documentation' : 'Ionic Documentation';
       // Favor meta title, else go with auto-title. fallback to generic title
@@ -105,6 +105,9 @@ export class DocsPage {
     // Sharing Image
     updateMeta(metaEls.image, () => meta.image ||
       'https://ionicframework.com/docs/assets/img/meta/open-graph.png');
+
+    // const test = document.getElementById('testing');
+    // test['content'] = 'bar';
   }
 
   hostData() {
