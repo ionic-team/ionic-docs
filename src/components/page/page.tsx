@@ -64,29 +64,31 @@ export class DocsPage {
   setDocumentMeta(page: Page) {
     const { title, meta = {} } = page;
     const metaEls = {
-      title: this.document.querySelectorAll('head .meta-title'),
-      description: this.document.querySelectorAll('head .meta-description'),
-      url: this.document.querySelectorAll('head .meta-url'),
-      image: this.document.querySelectorAll('head .meta-image')
+      title: this.document.getElementsByClassName('meta-title'),
+      description: this.document.getElementsByClassName('meta-description'),
+      url: this.document.getElementsByClassName('meta-url'),
+      image: this.document.getElementsByClassName('meta-image')
     };
 
     function updateMeta(els, update) {
       els.forEach(el => {
         ['href', 'content'].forEach(attr => {
-          if (el[attr]) {
-            el[attr] = update(el[attr]);
+          if (el.hasAttribute(attr)) {
+            el.setAttribute(attr, update(el.getAttribute(attr)));
           }
         });
       });
     }
 
     // Title
-    this.document.title = (() => {
+    const getTitle = () => {
       const suffix = /^\/docs\/pages\/appflow.*$/.test(this.path) ?
         'Ionic Appflow Documentation' : 'Ionic Documentation';
       // Favor meta title, else go with auto-title. fallback to generic title
       return meta.title || title ? `${title} - ${suffix}` : suffix;
-    })();
+    };
+    this.document.title = getTitle();
+    updateMeta(metaEls.title, getTitle);
 
     // Canonical URL
     updateMeta(metaEls.url, oldVal => {
@@ -105,9 +107,6 @@ export class DocsPage {
     // Sharing Image
     updateMeta(metaEls.image, () => meta.image ||
       'https://ionicframework.com/docs/assets/img/meta/open-graph.png');
-
-    // const test = document.getElementById('testing');
-    // test['content'] = 'bar';
   }
 
   hostData() {
