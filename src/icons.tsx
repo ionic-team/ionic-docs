@@ -1,3 +1,5 @@
+import { h } from '@stencil/core';
+
 export const Logo = props => (
   <svg viewBox="0 0 78 25" fill="currentColor" {...props}>
     <title>Ionic Docs</title>

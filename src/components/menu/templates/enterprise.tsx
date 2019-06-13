@@ -1,3 +1,4 @@
+import { h } from '@stencil/core';
 
 export default () => <docs-nav items={ items } />;
 

@@ -1,3 +1,4 @@
+import { h } from '@stencil/core';
 import plugins from '../data/native-plugins.json';
 
 export default () => <docs-nav items={items}/>;

@@ -1,6 +1,7 @@
 .DS_Store
 node_modules/
 .stencil/
+dist/
 www/
 src/pages/**/*.json
 src/components/menu/data/

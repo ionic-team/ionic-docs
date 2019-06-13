@@ -5,18 +5,15 @@ export const config: Config = {
   outputTargets: [
     {
       type: 'www',
-      dir: 'www/docs',
-      baseUrl: '/docs',
+      baseUrl: 'https://ionicframework.com/docs',
+      prerenderConfig: 'prerender.config.js',
       serviceWorker: null,
-      empty: false,
-      inlineLoaderScript: false
+      copy: [
+        { src: 'pages/**/*.json' },
+        { src: 'demos' },
+        { src: 'components/color-gen/demo/index.html', dest: 'pages/theming/color-generator/index.html' },
+        { src: '../node_modules/@ionic/core', dest: 'assets/ionic' }
+      ]
     }
-  ],
-  copy: [
-    { src: 'pages/**/*.json' },
-    { src: 'demos' },
-    { src: 'components/color-gen/demo/index.html', dest: 'pages/theming/color-generator/index.html' },
-    { src: 'robots.txt', dest: '../robots.txt' },
-    { src: '../node_modules/@ionic/core', dest: 'assets/ionic' }
   ]
 };

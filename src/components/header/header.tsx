@@ -1,4 +1,4 @@
-import { Component, Listen, Prop, State } from '@stencil/core';
+import { Component, Listen, Prop, State, h } from '@stencil/core';
 import { Book, Checkmark, Logo, Translation } from '../../icons';
 
 @Component({
@@ -12,7 +12,7 @@ export class DocsHeader {
 
   @Prop() onToggleClick: (e: Event) => void;
 
-  @Listen('window:scroll')
+  @Listen('scroll', { target: 'window' })
   handleScroll() {
     if (!this.frameRequested) {
       requestAnimationFrame(() => {

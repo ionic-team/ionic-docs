@@ -1,4 +1,4 @@
-import { Component, Prop, State, Watch } from '@stencil/core';
+import { Component, Prop, State, Watch, h } from '@stencil/core';
 import { RouterHistory } from '@stencil/router';
 import { Page } from '../../definitions';
 import templates from './templates';
@@ -77,21 +77,16 @@ export class DocsPage {
             el[attr] = update(el[attr]);
           }
         });
-        ['title'].forEach(elType => {
-          if (el.nodeName === elType.toUpperCase()) {
-            el.text = update(el.text);
-          }
-        });
       });
     }
 
     // Title
-    updateMeta(metaEls.title, () => {
+    document.title = (() => {
       const suffix = /^\/docs\/pages\/appflow.*$/.test(this.path) ?
         'Ionic Appflow Documentation' : 'Ionic Documentation';
       // Favor meta title, else go with auto-title. fallback to generic title
       return meta.title || title ? `${title} - ${suffix}` : suffix;
-    });
+    })();
 
     // Canonical URL
     updateMeta(metaEls.url, oldVal => {

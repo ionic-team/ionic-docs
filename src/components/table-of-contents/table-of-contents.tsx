@@ -1,4 +1,4 @@
-import { Component, Listen, Prop, State, Watch } from '@stencil/core';
+import { Component, Listen, Prop, State, Watch, h } from '@stencil/core';
 import { Link } from '../../definitions';
 
 interface ItemOffset {
@@ -17,7 +17,7 @@ export class DocsTableOfContents {
   @State() itemOffsets: ItemOffset[] = [];
   @State() selectedId: string = null;
 
-  @Listen('window:scroll')
+  @Listen('scroll', { target: 'window' })
   function() {
     const itemIndex = this.itemOffsets.findIndex(item => item.topOffset > window.scrollY);
     if (itemIndex === 0 || this.itemOffsets[this.itemOffsets.length - 1] === undefined) {
@@ -30,7 +30,7 @@ export class DocsTableOfContents {
   }
 
   @Watch('links')
-  @Listen('window:resize')
+  @Listen('resize', { target: 'window' })
   updateItemOffsets() {
     requestAnimationFrame(() => {
       this.itemOffsets = this.links.map(link => {

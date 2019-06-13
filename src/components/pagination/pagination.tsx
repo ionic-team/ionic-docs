@@ -1,4 +1,4 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Prop, h } from '@stencil/core';
 import { BackArrow, ForwardArrow } from '../../icons';
 import { Page } from '../../definitions';
 

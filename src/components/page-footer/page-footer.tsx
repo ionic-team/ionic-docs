@@ -1,4 +1,4 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Prop, h } from '@stencil/core';
 import { Page } from '../../definitions';
 import { ForwardArrow } from '../../icons';
 
@@ -18,7 +18,7 @@ export class DocsPageFooter {
   render() {
     const { page } = this;
 
-    if (page == null) {
+    if (page == null || !page.github) {
       return null;
     }
 

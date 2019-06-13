@@ -1,7 +1,8 @@
 import {
   PAGES_DIR,
   Page,
-  buildPages
+  buildPages,
+  updatePageHtmlToHypertext
 } from '../index';
 
 import fs from 'fs-extra';
@@ -18,6 +19,7 @@ export default {
 
 async function getStaticPages(): Promise<Page[]> {
   const paths = await getMarkdownPaths(PAGES_DIR);
+
   return Promise.all(paths.map(toPage));
 }
 

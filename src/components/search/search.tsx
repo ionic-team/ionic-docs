@@ -6,7 +6,8 @@ import {
   Element,
   Listen,
   Prop,
-  State
+  State,
+  h
 } from '@stencil/core';
 
 @Component({
@@ -62,7 +63,7 @@ export class IonicSearch {
     this.urls = this.URLS();
   }
 
-  @Listen('window:keydown')
+  @Listen('keydown', { target: 'window' })
   handleKeyDown(ev) {
     if (
       ev.key === '/' ||
