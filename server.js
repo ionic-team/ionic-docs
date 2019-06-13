@@ -36,7 +36,7 @@ const start = () => {
 
   function setCustomCacheControl (res, path) {
     if (
-      serveStatic.mime.lookup(path) === 'text/javascript' &&
+      express.static.mime.lookup(path) === 'text/javascript' &&
       path.indexOf('p-') !== -1
     ) {
       // Custom Cache-Control for production JS files
