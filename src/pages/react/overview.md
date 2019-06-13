@@ -28,3 +28,9 @@ Coming soon.
 ## React Tooling
 
 Coming soon.
+
+## Native Tooling
+
+[Capacitor](https://capacitor.ionicframework.com) is the official cross-platform app runtime used to make your `Ionic React` web app run natively on iOS, Android, Electron, and the web. 
+
+While there are no known technical limitations to using `Ionic React` with [Cordova](https://cordova.apache.org/) plugins, Capacitor is officially recommended. There are no plans to support a Cordova integration for `Ionic React` in the [Ionic CLI tooling](/docs/cli) at this time. For more details, please [see here](https://capacitor.ionicframework.com/docs/cordova).
