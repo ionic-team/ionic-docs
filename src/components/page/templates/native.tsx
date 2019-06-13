@@ -8,7 +8,7 @@ export default (props) => {
   const repo = renderRepo(page.repo);
   const installation = renderInstallation(page.cordova, page.package);
   const platforms = renderPlatforms(page.platforms);
-  const usage = renderUsage(page.usage);
+  const usage = renderUsage(page.codeUsage);
 
   if (installation) {
     headings.push({
@@ -114,7 +114,7 @@ const renderPlatforms = (platforms: string[] = []) => {
   );
 };
 
-const renderUsage = (usage: string) => {
+const renderUsage = (usage: any) => {
   if (!usage) {
     return null;
   }
@@ -124,7 +124,7 @@ const renderUsage = (usage: string) => {
       <h2 id="usage">
         <a href="#usage">Usage</a>
       </h2>
-      <div innerHTML={usage}/>
+      {toHypertext(h, usage)}
     </section>
   );
 };

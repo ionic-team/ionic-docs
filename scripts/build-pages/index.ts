@@ -92,6 +92,9 @@ export function updatePageHtmlToHypertext(page: Page) {
   if (page.summary) {
     page.summary = convertHtmlToHypertextData(page.summary);
   }
+  if (page.codeUsage) {
+    page.codeUsage = convertHtmlToHypertextData(page.codeUsage);
+  }
   if (page.usage) {
     const hypertextUsage = {};
     Object.keys(page.usage).forEach(key => {
