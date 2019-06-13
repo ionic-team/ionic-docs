@@ -52,7 +52,7 @@ const renderRepo = (repo: string) => {
   }
 
   return (
-    <section>
+    <section hidden>
       <a href={repo} class="outbound" target="_blank"><GitBranch/> { repo }</a>
       <h2>Stuck on a Cordova issue?</h2>
       <docs-shadow-card class="cordova-ee-card" header="Don't waste precious time on plugin issues." href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">
