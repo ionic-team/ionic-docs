@@ -22,7 +22,8 @@ const start = () => {
   });
 
   app.use(express.static(path.join(__dirname, 'www'), {
-    maxAge: '2h'
+    maxAge: '2h',
+    setHeaders: setCustomCacheControl
   }));
 
   app.use((_, res) => {
@@ -32,6 +33,18 @@ const start = () => {
   const listener = app.listen(process.env.PORT || 3030, () => {
     console.log(`Listening on port ${listener.address().port}`);
   });
+
+  function setCustomCacheControl (res, path) {
+    if (
+      serveStatic.mime.lookup(path) === 'text/javascript' &&
+      path.indexOf('p-') !== -1
+    ) {
+      // Custom Cache-Control for production JS files
+      res.setHeader('Cache-Control', 'public, max-age=86400')
+    } else {
+      res.setHeader('Cache-Control', 'public, max-age=600')
+    }
+  }
 }
 
 throng({
