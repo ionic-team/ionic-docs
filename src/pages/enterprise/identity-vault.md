@@ -1,7 +1,7 @@
 ---
 title: Identity Vault
 template: enterprise-plugin
-version: 3.4.1
+version: 3.4.2
 minor: 3.4.X
 otherVersions:
   - 2.0.X
@@ -1679,6 +1679,15 @@ The possible values returned by [getBiometricType](#identityvault.getbiometricty
 ___
 
 ## Change Log
+
+
+
+### [3.4.2] (2019-06-14)
+
+
+### Bug Fixes
+
+* **iOS:** Fixed an issue where the hide screen in background functionality was broken 
 
 
 
