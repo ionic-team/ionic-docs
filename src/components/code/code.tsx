@@ -1,4 +1,4 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Prop } from '@stencil/core';
 
 @Component({
   tag: 'docs-code',
@@ -6,10 +6,4 @@ import { Component, Prop, h } from '@stencil/core';
 })
 export class DocsCode {
   @Prop({ reflectToAttr: true }) language = '';
-
-  render() {
-    return (
-      <pre><code><slot/></code></pre>
-    );
-  }
 }

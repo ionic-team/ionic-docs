@@ -1,4 +1,4 @@
-docs-shadow-card {
+:host {
   display: block;
   font-size: 12px;
   max-width: 30em;
