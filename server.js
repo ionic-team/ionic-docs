@@ -2,6 +2,7 @@ const express = require('express');
 const parseurl = require('parseurl');
 const path = require('path');
 
+const Sentry = require('@sentry/node');
 const compress = require('compression');
 const helmet = require('helmet');
 const throng = require('throng');
@@ -9,6 +10,15 @@ const throng = require('throng');
 const start = () => {
   const app = express();
   app.set('trust proxy', true);
+
+  if (process.env.SENTRY_DSN) {
+    Sentry.init({
+      dsn: process.env.SENTRY_DSN,
+      environment: process.env.SENTRY_ENVIRONMENT
+    });
+  }
+
+  app.use(Sentry.Handlers.requestHandler());
   app.use(compress());
   app.use(helmet());
 
@@ -26,6 +36,7 @@ const start = () => {
     setHeaders: setCustomCacheControl
   }));
 
+  app.use(Sentry.Handlers.errorHandler());
   app.use((_, res) => {
     res.status(404).sendFile(`${__dirname}/www/docs/index.html`);
   });

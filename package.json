@@ -21,7 +21,8 @@
   "dependencies": {
     "@ionic/core": "^4.4.2",
     "@ionic/docs": "^4.4.2",
-    "@stencil/router": "one",
+    "@sentry/node": "^5.4.0",
+    "@stencil/router": "^1.0.0",
     "compression": "^1.7.4",
     "express": "^4.16.4",
     "helmet": "^3.16.0",
