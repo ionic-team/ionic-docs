@@ -3,12 +3,12 @@ import { h } from '@stencil/core';
 export default () => <docs-nav items={ items } />;
 
 const items = {
-  'Community Edition': '/docs/native/overview',
-  'Enterprise Edition': '/docs/enterprise',
-  'Authentication & Security': {
+  'menu-native-ce': '/docs/native/overview',
+  'menu-native-ee': '/docs/enterprise',
+  'menu-enterprise-authentication-security': {
     'Identity Vault': '/docs/enterprise/identity-vault',
   },
-  'Common Device Features': {
+  'menu-enterprise-common-device-features': {
     'Android Permissions': '/docs/enterprise/android-permissions',
     'App Version': '/docs/enterprise/appversion',
     'Browser': '/docs/enterprise/inappbrowser',
@@ -23,32 +23,32 @@ const items = {
     'Splashscreen': '/docs/enterprise/splashscreen',
     'Statusbar': '/docs/enterprise/statusbar',
   },
-  'Integrated Services': {
+  'menu-enterprise-integrated-services': {
     'Active Directory': 'https://ionicframework.com/integrations/ms-activedirectory-ms-adal',
     'mParticle': '/docs/enterprise/mparticle',
   },
-  'Inter-App Communication': {
+  'menu-enterprise-inter-app-communication': {
     'Email Composer': '/docs/enterprise/email-composer',
   },
-  'Maps & Navigation': {
+  'menu-enterprise-maps-navigation': {
     'Geolocation': '/docs/enterprise/geolocation',
   },
-  'Media': {
+  'menu-enterprise-media': {
     'Media': '/docs/enterprise/media',
     'Media Capture': '/docs/enterprise/media-capture',
   },
-  'Native UI': {
+  'menu-enterprise-native-ui': {
     'Dialogs': '/docs/enterprise/dialogs',
   },
-  'Notifications': {
+  'menu-enterprise-notifications': {
     'Badge': '/docs/enterprise/badge',
   },
-  'Offline & Data': {
+  'menu-enterprise-offline-data': {
     'Couchbase Lite': 'https://ionicframework.com/integrations/couchbase-lite',
     'Native Storage': '/docs/enterprise/nativestorage',
     'Offline Support': 'https://ionicframework.com/integrations/couchbase-lite',
   },
-  'Payments': {
+  'menu-enterprise-payments': {
     'Apple Payment Pass': '/docs/enterprise/apple-payment-pass',
   },
 };

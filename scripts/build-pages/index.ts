@@ -75,16 +75,16 @@ function patchBody(page: Page): Page {
   }));
 
   // remove /docs/ and language tag
-  const prefix = /^\/docs\/[a-z]{2}\//;
+  const prefix = /^\/docs\/([a-z]{2}\b)?/;
   const pageClass = `page-${slugify(page.path.replace(prefix, ''))}`;
 
   const [, language] = prefix.exec(page.path);
-  if (language && language != 'en') {
+  if (language && language !== 'en') {
     if (page.previousUrl) {
-      page.previousUrl = `/docs/${language}/${page.previousUrl.replace(prefix, '')}`;
+      page.previousUrl = page.previousUrl.replace(prefix, `/docs/${language}/`);
     }
     if (page.nextUrl) {
-      page.nextUrl = `/docs/${language}/${page.nextUrl.replace(prefix, '')}`;
+      page.nextUrl = page.nextUrl.replace(prefix, `/docs/${language}/`);
     }
   }
 
