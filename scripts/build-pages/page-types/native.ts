@@ -14,7 +14,7 @@ export default {
 async function getNativePages(): Promise<Page[]> {
   return plugins.map(plugin => {
     const title = plugin.displayName.trim();
-    const path = `/docs/native/${plugin.packageName.slice(14)}`;
+    const path = `/docs/en/native/${plugin.packageName.slice(14)}`;
     const { description, usage, repo, platforms } = plugin;
     return {
       title,

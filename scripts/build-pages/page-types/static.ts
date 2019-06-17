@@ -31,7 +31,7 @@ const getMarkdownPaths = (cwd: string): Promise<string[]> =>
 
 export const toPage = async (path: string) => {
   return {
-    path: path.replace(PAGES_DIR, '/docs').replace(/(\/index)?\.md$/i, ''),
+    path: path.replace(PAGES_DIR, '/docs').replace(/\.md$/, ''),
     github: await getGitHubData(path),
     ...renderMarkdown(await readMarkdown(path))
   };

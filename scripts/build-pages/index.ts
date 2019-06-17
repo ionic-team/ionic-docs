@@ -74,7 +74,19 @@ function patchBody(page: Page): Page {
     href: `#${heading.getAttribute('id')}`
   }));
 
-  const pageClass = `page-${slugify(page.path.slice(6) || 'index')}`;
+  // remove /docs/ and language tag
+  const prefix = /^\/docs\/[a-z]{2}\//;
+  const pageClass = `page-${slugify(page.path.replace(prefix, ''))}`;
+
+  const [, language] = prefix.exec(page.path);
+  if (language && language != 'en') {
+    if (page.previousUrl) {
+      page.previousUrl = `/docs/${language}/${page.previousUrl.replace(prefix, '')}`;
+    }
+    if (page.nextUrl) {
+      page.nextUrl = `/docs/${language}/${page.nextUrl.replace(prefix, '')}`;
+    }
+  }
 
   return {
     ...page,
@@ -113,4 +125,4 @@ function writePage(page: Page): Promise<any> {
 }
 
 const toFilePath = (urlPath: string) =>
-  `${resolve(PAGES_DIR, urlPath.slice(6) || 'index')}.json`;
+  `${resolve(PAGES_DIR, urlPath.slice(6))}.json`;

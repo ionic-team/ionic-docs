@@ -42,7 +42,7 @@ export class DocsHeader {
 
         <nav class="SectionNav">
           <stencil-route-switch>
-            <stencil-route url="/docs/appflow">
+            <stencil-route url="/docs/:lang([a-z]{2})?/appflow">
               <docs-dropdown label="Appflow">
                 <section>
                   <stencil-route-link url="/docs/" urlMatch={/^\/docs\/(?!(appflow)).*$/}>Framework</stencil-route-link>

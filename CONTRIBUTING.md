@@ -72,10 +72,10 @@ The [`docs-menu`](https://github.com/ionic-team/ionic-docs/blob/master/src/compo
 The content of the Ionic docs is written as [Markdown](https://commonmark.org/) in `src/pages`. Each Markdown file corresponds to a route.
 
 ```
-/docs/intro             =>  src/pages/intro.md
-/docs/installation/cli  =>  src/pages/installation/cli.md
-/docs/theming/advanced  =>  src/pages/theming/advanced.md
-/docs/theming           =>  src/pages/theming.md
+/docs/intro             =>  src/pages/en/intro.md
+/docs/installation/cli  =>  src/pages/en/installation/cli.md
+/docs/theming/advanced  =>  src/pages/en/theming/advanced.md
+/docs/theming           =>  src/pages/en/theming.md
 ```
 
 You can make copy edits to the site by [editing the Markdown files directly on GitHub](https://help.github.com/articles/editing-files-in-another-user-s-repository/). In your pull request, please explain what was missing from or inaccurate about the content.

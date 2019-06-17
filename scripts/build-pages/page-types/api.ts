@@ -16,7 +16,7 @@ export default {
 async function getAPIPages(): Promise<Page[]> {
   const pages = components.map(async component => {
     const title = component.tag;
-    const path = `/docs/api/${title.slice(4)}`;
+    const path = `/docs/en/api/${title.slice(4)}`;
     const demoUrl = await getDemoUrl(component);
     const { readme, usage, props, methods, ...contents } = component;
     return {
