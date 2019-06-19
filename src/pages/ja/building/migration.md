@@ -274,7 +274,7 @@ Please reference official [Angular upgrade guide](https://angular.io/guide/upgra
 
 ### Ionic Changes
 
-Our Ionic 3.0 to Ionic 4.0 migration sections above may prove to be a useful reference. Generate a new Ionic 4.0 project using the blank starter (see [Starting an App](/docs/building/starting). Spend time getting familiar with Ionic 4.0 components. Happy building!
+Our Ionic 3.0 to Ionic 4.0 migration sections above may prove to be a useful reference. Generate a new Ionic 4.0 project using the blank starter (see [Starting an App](/docs/building/starting)). Spend time getting familiar with Ionic 4.0 components. Happy building!
 
 ### Need Assistance?
 
