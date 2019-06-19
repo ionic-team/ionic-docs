@@ -13,6 +13,10 @@ Angular. Vue. React. Vanilla JavaScript. All of these tools can be used to creat
 
 by [Paul Halliday](https:://developer.school)
 
+### [Free Preview: Creating Ionic Applications with Stenciljs](https://cdn2.hubspot.net/hubfs/3776657/PREVIEW-Creating-Ionic-Apps-with-StencilJS.pdf)
+
+by Joshua Morony
+
 ### [Mobile App Development with Ionic: Cross-Platform Apps with Ionic 2, Angular 2, and Cordova](https://www.amazon.com/Mobile-App-Development-Ionic-Cross-Platform/dp/1491937785/ref=sr_1_2?ie=UTF8&qid=1464183332&sr=8-2&keywords=ionic+2)
 
 by Chris Griffith
