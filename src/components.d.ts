@@ -65,6 +65,7 @@ export namespace Components {
     'href': string;
     'icon': string;
     'img': string;
+    'ionicon': string;
   }
   interface DocsCards {}
   interface DocsCode {
@@ -486,6 +487,7 @@ declare namespace LocalJSX {
     'href'?: string;
     'icon'?: string;
     'img'?: string;
+    'ionicon'?: string;
   }
   interface DocsCards extends JSXBase.HTMLAttributes<HTMLDocsCardsElement> {}
   interface DocsCode extends JSXBase.HTMLAttributes<HTMLDocsCodeElement> {
