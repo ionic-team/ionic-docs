@@ -11,6 +11,7 @@ const items = {
   'Common Device Features': {
     'Android Permissions': '/docs/enterprise/android-permissions',
     'App Version': '/docs/enterprise/appversion',
+    'Auth Connect': '/docs/enterprise/auth',
     'Badge': '/docs/enterprise/badge',
     'Browser': '/docs/enterprise/inappbrowser',
     'Calendar': '/docs/enterprise/calendar',
