@@ -141,3 +141,7 @@ aside .Card-content {
 aside .Card-icon + .Card-content {
   margin-top: -6px;
 }
+
+.markdown-content p docs-card {
+  margin-top: 1em;
+}
