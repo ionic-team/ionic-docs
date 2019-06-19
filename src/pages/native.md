@@ -12,5 +12,3 @@ title: Ionic Native
     <p>For teams building mission-critical apps, Ionic Native EE is a curated collection of plugins and integrations that are built and supported by Ionic, with stability assurances and guaranteed to work on all major platforms and versions.</p>
   </docs-card>
 </docs-cards>
-
-> These docs are for apps built with Ionic Framework 4.0.0 and greater. For older Ionic v3 projects, please [see here](/docs/v3/native).
