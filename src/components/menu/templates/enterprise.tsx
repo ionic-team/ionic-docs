@@ -7,11 +7,11 @@ const items = {
   'Enterprise Edition': '/docs/enterprise',
   'Authentication & Security': {
     'Identity Vault': '/docs/enterprise/identity-vault',
+    'Auth Connect': '/docs/enterprise/auth-connect'
   },
   'Common Device Features': {
     'Android Permissions': '/docs/enterprise/android-permissions',
     'App Version': '/docs/enterprise/appversion',
-    'Auth Connect': '/docs/enterprise/auth',
     'Badge': '/docs/enterprise/badge',
     'Browser': '/docs/enterprise/inappbrowser',
     'Calendar': '/docs/enterprise/calendar',

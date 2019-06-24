@@ -126,7 +126,7 @@ docs page.
 
 ### Authentication & Security
 - [Identity Vault](/docs/enterprise/identity-vault)
-- [Auth Connect](/docs/enterprise/auth)
+- [Auth Connect](/docs/enterprise/auth-connect)
 
 ### Common Device Features
 - [Android Permissions](/docs/enterprise/android-permissions)

@@ -1,5 +1,5 @@
 ---
-title: Auth
+title: Auth Connect
 template: enterprise-plugin
 version: 1.0.2
 minor: 1.0.X
@@ -8,23 +8,23 @@ minor: 1.0.X
 Ionic Auth Connect
 ==================
 
-Overview
-========
+Auth Connect provides a simple, secure method of integrating with authentication providers to enable single sign-on (SSO) within your Ionic applications.
 
-Auth Connect is designed to handle logging in and/or registering a user using a given authtehnication provider using OAuth/OpenId Connect. Once the hosting app has all of the required information that is passed to the plugin and the plugin handles displaying the authtinication provider's login/registration UI and the providing back to the hosting app access to the tokens for access and refresh.
+Using the OAuth and OpenID Connect authentication standards, Auth Connect provides all the infrastructure needed to set up login and token refresh in an Ionic app, along with sample configuration files for easily integrating with auth providers that use the above standards. The Auth Connect handles displaying the UI from the authentication provider, so neither your app or the Auth Connect plugin need to handle the information required to login.
 
-The hosting app has two things, in addition to the options, that it will provide to the plugin:
+The application you are adding authentication to (also known as the hosting app) will provide two articles of information to the Auth Connect plugin, in addition to any options you configure:
 
-*   an implmentation of the [TokenStorageProvider](#tokenstorageprovider) for use in storing the tokens securely. One choice here would be to use the Ionic Enterprise Identity Vault
-*   forward on callbacks to the urls used for [logoutUrl](#ionicauthoptions.logouturl) and [redirectUri](#ionicauthoptions.redirecturi) in the options. These are usually specified in the hosting app config to allow the authentication provider to callback to the app and should be forwarded on to [handleCallback](#ionicauth.handlecallback)
+1. An implementation of the [TokenStorageProvider](#tokenstorageprovider) for use in storing the tokens securely. One choice here would be to use the Ionic Enterprise [Identity Vault](/docs/enterprise/identity-vault).
+2. Forward on callbacks to the urls used for [logoutUrl](#ionicauthoptions.logouturl) and [redirectUri](#ionicauthoptions.redirecturi) in the options. These are usually specified in the hosting app config to allow the authentication provider to callback to the app and should be forwarded on to [handleCallback](#ionicauth.handlecallback).
+
 
 Flow
 ----
 
-1.  Hosting app creates the Auth Connect and passes in the [options](#ionicauthoptions)
+1.  The hosting app passes in the [configuration options](#ionicauthoptions) to Auth Connect.
 2.  [Login](#ionicauth.login) or [Register](#ionicauth.register) are called to login/register a user using the authentication provider supplied in the options.
 3.  The hosting app can wait on [IsAuthenticated](#ionicauth.isauthenticated) until it succeeds or fails.
-4.  On success the access token can be retrieved and used as needed.
+4.  On success, the access token can be retrieved and used as needed.
 5.  [IsAuthenticated](#ionicauth.isauthenticated) can be called again to refresh the access token as needed.
 
 Supported Providers
@@ -33,7 +33,7 @@ Supported Providers
 OAuth/OpenId Connect from the following providers:
 
 *   Cognito (AWS)
-*   Azure Active Directory v.2 (Micorosoft)
+*   Azure Active Directory v.2 (Microsoft)
 *   Auth0
 
 \=======
