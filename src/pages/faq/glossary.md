@@ -121,7 +121,8 @@ nextUrl: '/docs/faq/build'
 
   <section id="livereload">
     <a href="#livereload"><h3>Live Reload</h3></a>
-    <p><strong>Live Reload</strong> is a tool that automatically reloads the browser when it detects changes. It watches a specific path and when a file or directory is updated, it will trigger a full browser reload. In cases where CSS is changed, livereload will inject the changed CSS instead of reloading the entire page.</p>
+    <p><strong>Live Reload</strong> (or <strong>live-reload</strong>) is a tool that automatically reloads the browser or <a href="/docs/building/webview">Web View</a> when it detects changes in your app. In some cases, it can replace parts of your app without having to reload the entire window.</p>
+    <p>Since live-reload requires a running development server, thus requiring the Web View to load a URL instead of simply reading deployed files, using live-reload on a separate device can be tricky. This may require additional configuration. It can also cause issues such as <a href="#cors">CORS</a> errors.</p>
   </section>
 
   <section id="node">
@@ -143,7 +144,7 @@ nextUrl: '/docs/faq/build'
 
   <section id="package-id">
     <a href="#package-id"><h3>Package ID</h3></a>
-    <p>Referred to by Apple as **Bundle ID** and by Android as **Application ID**, the **Package ID** is used for identifying apps published to the App Store/Play Store. It is a string formatted in <a href="https://en.wikipedia.org/wiki/Reverse_domain_name_notation" target="_blank">reverse-DNS notation</a>.</p>
+    <p>Referred to by Apple as <strong>Bundle ID</strong> and by Android as <strong>Application ID</strong>, the <strong>Package ID</strong> is used for identifying apps published to the App Store/Play Store. It is a string formatted in <a href="https://en.wikipedia.org/wiki/Reverse_domain_name_notation" target="_blank">reverse-DNS notation</a>.</p>
   </section>
 
   <section id="polyfill">

@@ -81,13 +81,29 @@ In this workflow, Xcode can automatically fix common compilation and signing iss
 
 The Ionic CLI can build, copy, and deploy Ionic apps to iOS simulators and devices with a single command. It can also spin up a development server, like the one used in `ionic serve`, to provide [live-reload](/docs/faq/glossary#livereload) functionality.
 
-For Cordova, run the following to start a long-running CLI process that boots up a live-reload server:
+With live-reload, changes made to the app's source files trigger a rebuild of web assets and the changes are reflected on the simulator or device without having to deploy again.
+
+> **Warning**: For iOS devices, the device and the computer need to be on the same Wi-Fi network. An external URL for the dev server is also required so the device can connect to it. Use `--address=0.0.0.0` to bind to external addresses.
+
+### Live-reload with Capacitor
+
+Capacitor does not yet have a way to build native projects. It relies on Xcode to build and deploy app binaries. However, the Ionic CLI can boot up a live-reload server and configure Capacitor to use it with a single command.
+
+Run the following, then select a target simulator or device and click the play button in Xcode:
 
 ```shell
-$ ionic cordova run ios -l
+$ ionic capacitor run ios -l --address=0.0.0.0
 ```
 
-Now, when changes are made to the app's source files, web assets are rebuilt and the changes are reflected on the simulator or device without having to deploy again.
+### Live-reload with Cordova
+
+Cordova can build and deploy native projects programmatically.
+
+To boot up a live-reload server, build, and deploy the app, run the following:
+
+```shell
+$ ionic cordova run ios -l --address=0.0.0.0
+```
 
 ## Using Safari Web Inspector
 
