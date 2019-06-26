@@ -10,6 +10,9 @@ import {
   ColorVariable,
 } from './components/color-gen/color-variables';
 import {
+  JSX,
+} from '@stencil/core';
+import {
   Link,
   MenuItems,
   Page,
@@ -147,11 +150,6 @@ export namespace Components {
 }
 
 declare global {
-
-  // Adding a global JSX for backcompatibility with legacy dependencies
-  export namespace JSX {
-    export interface Element {}
-  }
 
 
   interface HTMLCodeColorElement extends Components.CodeColor, HTMLStencilElement {}
