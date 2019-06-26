@@ -47,7 +47,7 @@ export async function buildPages(getter: PageGetter) {
 
 export async function buildStaticPage(path: string) {
   const page = await toStaticPage(path);
-  return writePage(patchBody(page));
+  return writePage(updatePageHtmlToHypertext(patchBody(page)));
 }
 
 function patchBody(page: Page): Page {
