@@ -58,7 +58,7 @@
   -webkit-appearance: none;
   border: 0;
   outline: none;
-  font-family: var(--font-family-code);
+  font-family: var(--code-font-family);
   font-size: 12px;
   width: 60px;
   color: var(--text-color--light);
@@ -124,7 +124,7 @@
 }
 
 .color-selector__hex span {
-  font-family: var(--font-family-code);
+  font-family: var(--code-font-family);
   font-size: 12px;
   background-color: var(--line-rule-color);
   color: var(--text-color--dark);
