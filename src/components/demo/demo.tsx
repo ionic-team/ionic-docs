@@ -51,7 +51,7 @@ export class DocsDemo {
          class="docs-demo-source"
          target="_blank"
          title="Demo Source">
-        <ion-icon name="code"></ion-icon>
+        <ion-icon name="open"/> View Source
       </a> : null;
   }
 
@@ -84,9 +84,9 @@ export class DocsDemo {
     }
 
     return [
-      this.renderSourceLink(),
       this.renderModeToggle(),
-      this.renderDevice()
+      this.renderDevice(),
+      this.renderSourceLink()
     ];
   }
 }
