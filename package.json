@@ -32,7 +32,7 @@
     "@stencil/core": "1.0.3",
     "@types/prismjs": "^1.9.1",
     "chokidar": "^3.0.0",
-    "fast-glob": "^2.2.7",
+    "fast-glob": "^3.0.3",
     "front-matter": "^3.0.2",
     "fs-extra": "^7.0.1",
     "husky": "^1.3.1",
