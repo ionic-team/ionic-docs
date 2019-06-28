@@ -134,7 +134,7 @@ export class DocsPage {
 
     if (hasDemo) {
       content.push(
-        <docs-demo url={page.demoUrl}/>
+        <docs-demo url={page.demoUrl} source={page.demoSourceUrl}/>
       );
     }
 
