@@ -106,7 +106,7 @@ nextUrl: '/docs/faq/build'
 
   <section id="karma">
     <a href="#karma"><h3>Karma</h3></a>
-    <p><a href="https://karma-runner.github.io/0.13/index.html" target="_blank">Karma</a> is a test runner that will run an app's test inside a real browser. It executes test cases, written in any testing framework, in a real browser. Karma was originally written for use with Angular 1.</p>
+    <p><a href="https://karma-runner.github.io/latest/index.html" target="_blank">Karma</a> is a test runner that will run an app's test inside a real browser. It executes test cases, written in any testing framework, in a real browser. Karma was originally written for use with Angular 1.</p>
   </section>
 
   <section id="module">
