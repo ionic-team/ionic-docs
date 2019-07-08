@@ -115,8 +115,8 @@ Running the register command should generate a `.npmrc` file in you app director
 
 ### Authentication & Security
 
-- [Identity Vault](/docs/enterprise/identity-vault)
 - [Auth Connect](/docs/enterprise/auth-connect)
+- [Identity Vault](/docs/enterprise/identity-vault)
 
 ### Common Device Features
 
