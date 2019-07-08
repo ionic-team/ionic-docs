@@ -14,9 +14,11 @@ Angular. Vue. React. Vanilla JavaScript. All of these tools can be used to creat
 by [Paul Halliday](https:://developer.school)
 
 
-### [Free Preview: Creating Ionic Applications with Stenciljs](https://cdn2.hubspot.net/hubfs/3776657/PREVIEW-Creating-Ionic-Apps-with-StencilJS.pdf)
+### [Creating Ionic Applications with StencilJS](https://www.joshmorony.com/creating-ionic-applications-with-stencil-js/) - [Free Preview](https://cdn2.hubspot.net/hubfs/3776657/PREVIEW-Creating-Ionic-Apps-with-StencilJS.pdf)
 
-by Joshua Morony
+As well as being a powerful tool for generating reuseable web components, StencilJS provides the tools needed to build an entire application out of web components. Combined with the Ionic web components, StencilJS gives us everything we need to build high-quality production mobile applications - no framework required.
+
+by [Joshua Morony](https://www.joshmorony.com/blog)
 
 
 ### [Mobile App Development with Ionic: Cross-Platform Apps with Ionic 2, Angular 2, and Cordova](https://www.amazon.com/Mobile-App-Development-Ionic-Cross-Platform/dp/1491937785/ref=sr_1_2?ie=UTF8&qid=1464183332&sr=8-2&keywords=ionic+2)
@@ -26,7 +28,7 @@ by Chris Griffith
 
 ### [Building Mobile Apps with Ionic & Angular](https://www.joshmorony.com/building-mobile-apps-with-ionic-2/)
 
-by Joshua Morony
+by [Joshua Morony](https://www.joshmorony.com/blog)
 
 Building Mobile Apps with Ionic & Angular is an all-in-one resource for learning the latest and greatest version of Ionic. It is targeted at beginners and works its way through the basics of Ionic, to example applications of varying complexity, and then to the steps required to build and publish your application (on the app stores or as a PWA). It has been updated for every major release, so you can rest easy knowing that you're not learning outdated tech.
 
