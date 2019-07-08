@@ -6,8 +6,8 @@ const items = {
   'Community Edition': '/docs/native/overview',
   'Enterprise Edition': '/docs/enterprise',
   'Authentication & Security': {
+    'Auth Connect': '/docs/enterprise/auth-connect',
     'Identity Vault': '/docs/enterprise/identity-vault',
-    'Auth Connect': '/docs/enterprise/auth-connect'
   },
   'Common Device Features': {
     'Android Permissions': '/docs/enterprise/android-permissions',

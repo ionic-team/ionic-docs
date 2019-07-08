@@ -125,8 +125,8 @@ docs page.
 ## Plugins
 
 ### Authentication & Security
-- [Identity Vault](/docs/enterprise/identity-vault)
 - [Auth Connect](/docs/enterprise/auth-connect)
+- [Identity Vault](/docs/enterprise/identity-vault)
 
 ### Common Device Features
 - [Android Permissions](/docs/enterprise/android-permissions)

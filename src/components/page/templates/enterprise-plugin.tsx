@@ -5,7 +5,10 @@ export default (props) => {
   const { page } = props;
   const headings = [...page.headings];
 
-  const pluginId = page.path.split('/')[3];
+  let pluginId = page.path.split('/')[3];
+  if (pluginId === 'auth-connect') {
+    pluginId = 'auth';
+  }
   const otherVersions = page.otherVersions || [];
 
   const installation = renderInstallation(pluginId);

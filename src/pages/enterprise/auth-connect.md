@@ -1,31 +1,33 @@
 ---
 title: Auth Connect
 template: enterprise-plugin
-version: 1.0.2
+version: 1.0.6
 minor: 1.0.X
 ---
 
-Ionic Auth Connect
-==================
+Overview
+--------
 
-Auth Connect provides a simple, secure method of integrating with authentication providers to enable single sign-on (SSO) within your Ionic applications.
+The Auth Plugin is designed to handle logging in and/or registering a user using a given authtehnication provider using OAuth/OpenId Connect. Once the hosting app has all of the required information that is passed to the plugin and the plugin handles displaying the authtinication provider's login/registration UI and the providing back to the hosting app access to the tokens for access and refresh.
 
-Using the OAuth and OpenID Connect authentication standards, Auth Connect provides all the infrastructure needed to set up login and token refresh in an Ionic app, along with sample configuration files for easily integrating with auth providers that use the above standards. The Auth Connect handles displaying the UI from the authentication provider, so neither your app or the Auth Connect plugin need to handle the information required to login.
+The hosting app has two things, in addition to the options, that it will provide to the plugin:
 
-The application you are adding authentication to (also known as the hosting app) will provide two articles of information to the Auth Connect plugin, in addition to any options you configure:
-
-1. An implementation of the [TokenStorageProvider](#tokenstorageprovider) for use in storing the tokens securely. One choice here would be to use the Ionic Enterprise [Identity Vault](/docs/enterprise/identity-vault).
-2. Forward on callbacks to the urls used for [logoutUrl](#ionicauthoptions.logouturl) and [redirectUri](#ionicauthoptions.redirecturi) in the options. These are usually specified in the hosting app config to allow the authentication provider to callback to the app and should be forwarded on to [handleCallback](#ionicauth.handlecallback).
-
+*   an implmentation of the [TokenStorageProvider](#tokenstorageprovider) for use in storing the tokens securely. One choice here would be to use the Ionic Enterprise Identity Vault
+*   forward on callbacks to the urls used for [logoutUrl](#ionicauthoptions.logouturl) and [redirectUri](#ionicauthoptions.redirecturi) in the options. These are usually specified in the hosting app config to allow the authentication provider to callback to the app and should be forwarded on to [handleCallback](#ionicauth.handlecallback)
 
 Flow
 ----
 
-1.  The hosting app passes in the [configuration options](#ionicauthoptions) to Auth Connect.
+1.  Hosting app creates the Auth Plugin and passes in the [options](#ionicauthoptions)
 2.  [Login](#ionicauth.login) or [Register](#ionicauth.register) are called to login/register a user using the authentication provider supplied in the options.
 3.  The hosting app can wait on [IsAuthenticated](#ionicauth.isauthenticated) until it succeeds or fails.
-4.  On success, the access token can be retrieved and used as needed.
+4.  On success the access token can be retrieved and used as needed.
 5.  [IsAuthenticated](#ionicauth.isauthenticated) can be called again to refresh the access token as needed.
+
+Implicit/Web Flow Notes
+-----------------------
+
+The redirect URL for the auth service needs to be local path that the hosting app can naviate to, as the auth plugin needs to read the tokens from the redirect url. The auth service needs to support returning the authorization and id tokens back to the implict path (for Azure this is under App registrations/Authentication in the 'Implict Grants' section).
 
 Supported Providers
 -------------------
@@ -33,33 +35,52 @@ Supported Providers
 OAuth/OpenId Connect from the following providers:
 
 *   Cognito (AWS)
-*   Azure Active Directory v.2 (Microsoft)
+*   Azure Active Directory v.2 (Micorosoft)
 *   Auth0
-
-\=======
 
 ## Index
 
-### Classes
-
-* [IonicAuth](#ionicauth)
-
 ### Interfaces
 
+* [IHandlers](#ihandlers)
+* [IIonicAuth](#iionicauth)
 * [IonicAuthOptions](#ionicauthoptions)
 * [TokenStorageProvider](#tokenstorageprovider)
 
 ---
 
-## Classes
+## Interfaces
 
-<a id="ionicauth"></a>
+<a id="ihandlers"></a>
 
-###  IonicAuth
+###  IHandlers
 
-**IonicAuth**: 
+**IHandlers**:
 
-<a id="ionicauth.expire"></a>
+<a id="ihandlers.onloginsuccess"></a>
+
+###  onLoginSuccess
+
+▸ **onLoginSuccess**(result: *`AuthResult`*): `void`
+
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| result | `AuthResult` |
+
+**Returns:** `void`
+
+___
+
+___
+<a id="iionicauth"></a>
+
+###  IIonicAuth
+
+**IIonicAuth**:
+
+<a id="iionicauth.expire"></a>
 
 ###  expire
 
@@ -70,7 +91,7 @@ expire the current access token, but keep the refresh token, useful for testing
 **Returns:** `Promise`<`void`>
 
 ___
-<a id="ionicauth.getaccesstoken"></a>
+<a id="iionicauth.getaccesstoken"></a>
 
 ###  getAccessToken
 
@@ -81,18 +102,18 @@ get the access token, once logged in, for API calls
 **Returns:** `Promise`<`string` \| `undefined`>
 
 ___
-<a id="ionicauth.getidtoken"></a>
+<a id="iionicauth.getidtoken"></a>
 
 ###  getIdToken
 
-▸ **getIdToken**(): `Promise`<`any`>
+▸ **getIdToken**(): `Promise`<`IDTokenType` \| `undefined`>
 
 get the parsed id token, includes requested scope values
 
-**Returns:** `Promise`<`any`>
+**Returns:** `Promise`<`IDTokenType` \| `undefined`>
 
 ___
-<a id="ionicauth.handlecallback"></a>
+<a id="iionicauth.handlecallback"></a>
 
 ###  handleCallback
 
@@ -109,7 +130,7 @@ called by the hosting app when callbacks happen, these will be to the URL specif
 **Returns:** `Promise`<`AuthResult`>
 
 ___
-<a id="ionicauth.isauthenticated"></a>
+<a id="iionicauth.isauthenticated"></a>
 
 ###  isAuthenticated
 
@@ -120,7 +141,7 @@ check to see if the user is logged in, and refresh the token if needed
 **Returns:** `Promise`<`boolean`>
 
 ___
-<a id="ionicauth.login"></a>
+<a id="iionicauth.login"></a>
 
 ###  login
 
@@ -131,7 +152,7 @@ using configuration display the auth provider's login UI
 **Returns:** `Promise`<`void`>
 
 ___
-<a id="ionicauth.logout"></a>
+<a id="iionicauth.logout"></a>
 
 ###  logout
 
@@ -142,27 +163,30 @@ log the user out
 **Returns:** `Promise`<`void`>
 
 ___
-<a id="ionicauth.register"></a>
+<a id="iionicauth.onloginsuccess"></a>
 
-###  register
+###  onLoginSuccess
 
-▸ **register**(): `Promise`<`void`>
+▸ **onLoginSuccess**(result: *`AuthResult`*): `void`
 
-using configuration display the auth provider's registration UI
+Event handler which can be overriden to handle successful events
 
-**Returns:** `Promise`<`void`>
+**Parameters:**
+
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| result | `AuthResult` |  the auth result from a successful login |
+
+**Returns:** `void`
 
 ___
 
 ___
-
-## Interfaces
-
 <a id="ionicauthoptions"></a>
 
 ###  IonicAuthOptions
 
-**IonicAuthOptions**: 
+**IonicAuthOptions**:
 
 Provided by the hosting app, this interface allows the hosting app to configure, and provide information needed to login, logout.
 
@@ -179,7 +203,7 @@ ___
 
 ### `<Optional>` authConfig
 
-**● authConfig**: *`undefined` \| `string`*
+**● authConfig**: *"auth0" \| "azure" \| "cognito"*
 
 The type of the Auth Server, currently only the following are supported:
 
@@ -215,6 +239,15 @@ ___
 Location that the hosting app expects logout callbacks to navigate to.
 
 ___
+<a id="ionicauthoptions.platform"></a>
+
+### `<Optional>` platform
+
+**● platform**: *"web" \| "cordova" \| "capacitor"*
+
+Are we hosted in cordova, web, capacitor
+
+___
 <a id="ionicauthoptions.redirecturi"></a>
 
 ### `<Optional>` redirectUri
@@ -248,7 +281,7 @@ ___
 
 ###  TokenStorageProvider
 
-**TokenStorageProvider**: 
+**TokenStorageProvider**:
 
 This interface should be implemented by the hosting app, and set in the options it should be a wrapper around access to a secure storage solution, such as Ionic Enterprise Identity Vault
 
@@ -310,11 +343,3 @@ ___
 ___
 
 ## Change Log
-
-
-
-## 1.0.2 (2019-06-17)
-
-
-
-## 1.0.1 (2019-06-11)
