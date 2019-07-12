@@ -139,14 +139,14 @@ const renderOptionList = (options = []) => {
 
 const renderOptionSpec = option => {
   return (
-    <span>
+    <a href={`#option-${option.name}`} id={`option-${option.name}`}>
       --{ option.type === 'boolean' && option.default === true ? `no-${option.name}` : option.name }
       { option.type === 'string' ?
         <span class="option-spec">
           { `=<${option.spec.value}>` }
         </span> :
         null }
-    </span>
+    </a>
   );
 };
 
