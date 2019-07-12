@@ -1,8 +1,8 @@
 ---
 previousText: 'Overview'
 previousUrl: '/docs/react/overview'
-nextText: ''
-nextUrl: ''
+nextText: 'Lifecycle'
+nextUrl: '/docs/react/lifecycle'
 ---
 
 # Ionic React
@@ -90,7 +90,7 @@ The next import is from `react-router-dom`. We're importing Route, which is how 
 
 Following ReactRouter, we next have our first imports for Ionic. To use a component in React, you must first import it. So for Ionic, this means anytime we want to use a Button or a Card, it must be added to our imports. In the case of our App component, we're only using `IonPage`, `IonRouterOutlet`, and `IonReactRouter`.
 
-`IonReactRouter` is a component that wraps ReactRouter’s BrowserRouter component. It more or less behaves the same as BrowserRouter with a few differences. We’ll be providing a deeper guide that goes over these differences at a later point.
+`IonReactRouter` is a component that wraps ReactRouter’s BrowserRouter component. It more or less behaves the same as BrowserRouter with a few differences. We have deeper guide that goes over these differences in our [React Navigation Docs](/docs/react/navigation).
 
 The last important import is the `Home` component import. This is a component that we will be able to navigate to in our app. We'll look at the navigation part a bit later.
 
