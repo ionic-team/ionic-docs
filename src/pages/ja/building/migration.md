@@ -185,7 +185,7 @@ In V4, navigation received the most changes. Now, instead of using Ionic's own `
 
 To provide the platform specific animations that users are used to, we have created `ion-router-outlet` for Angular Apps. This behaves in a similar manner to Angular's `router-outlet` but provides a stack-based navigation (tabs) and animations.
 
-For a detailed explanation in navigation works in a V4 project, checkout the [Angular navigation guide](/docs/navigation/angular).
+For a detailed explanation in navigation works in a V4 project, checkout the [Angular navigation guide](/docs/angular/navigation).
 
 ## Lazy Loading
 
