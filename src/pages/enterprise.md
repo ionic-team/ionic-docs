@@ -119,14 +119,20 @@ repo. Now you should be able to install Ionic Enterprise plugins that you have a
 docs page.
 
 <command-line>
-<command-prompt>ionic cordova add plugin @ionic-enterprise/plugin-name</command-prompt>
+<command-prompt>ionic cordova plugin add @ionic-enterprise/plugin-name</command-prompt>
 </command-line>
 
-## Plugin List
+## Plugins
+
+### Authentication & Security
+- [Auth Connect](/docs/enterprise/auth-connect)
+- [Identity Vault](/docs/enterprise/identity-vault)
+
+### Common Device Features
 - [Android Permissions](/docs/enterprise/android-permissions)
-- [Apple Wallet](/docs/enterprise/apple-wallet)
-- [App Version](/docs/enterprise/appversion)
+- [App Version](/docs/enterprise/app-version)
 - [Badge](/docs/enterprise/badge)
+- [Browser](/docs/enterprise/inappbrowser)
 - [Calendar](/docs/enterprise/calendar)
 - [Camera](/docs/enterprise/camera)
 - [Clipboard](/docs/enterprise/clipboard)
@@ -135,8 +141,7 @@ docs page.
 - [Email Composer](/docs/enterprise/email-composer)
 - [Filesystem](/docs/enterprise/filesystem)
 - [Geolocation](/docs/enterprise/geolocation)
-- [Identity Vault](/docs/enterprise/identity-vault)
-- [Inappbrowser](/docs/enterprise/inappbrowser)
+- [Haptics & Vibration](/docs/enterprise/vibration)
 - [Media](/docs/enterprise/media)
 - [Media Capture](/docs/enterprise/media-capture)
 - [Native Storage](/docs/enterprise/nativestorage)
@@ -144,4 +149,14 @@ docs page.
 - [Screen Orientation](/docs/enterprise/screen-orientation)
 - [Splash Screen](/docs/enterprise/splashscreen)
 - [Status Bar](/docs/enterprise/statusbar)
-- [Vibration](/docs/enterprise/vibration)
+
+### Integrated Services
+- [Active Directory](https://ionicframework.com/integrations/ms-activedirectory-ms-adal)
+- [mParticle](/docs/enterprise/mparticle)
+
+### Offline & Data
+- [Couchbase Lite](https://ionicframework.com/integrations/couchbase-lite)
+- [Offline Support](https://ionicframework.com/integrations/couchbase-lite)
+
+### Payments
+- [Apple Wallet](/docs/enterprise/apple-wallet)

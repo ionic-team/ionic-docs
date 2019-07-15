@@ -1,12 +1,13 @@
 import { resolve } from 'path';
 import { slugify } from '../../src/utils';
 import fs from 'fs-extra';
-import { JSDOM } from 'jsdom';
+import { createDocument } from '@stencil/core/mock-doc';
 import Listr from 'listr';
 import Static, { toPage as toStaticPage } from './page-types/static';
 import API from './page-types/api';
 import CLI from './page-types/cli';
 import Native from './page-types/native';
+import { convertHtmlToHypertextData } from './html-to-hypertext-data';
 
 const tasks = new Listr();
 tasks.add(Static);
@@ -38,19 +39,19 @@ export async function buildPages(getter: PageGetter) {
   const pages = await getter();
   return Promise.all(
     pages
-      .map(patchPage)
+      .map(patchBody)
+      .map(updatePageHtmlToHypertext)
       .map(writePage)
   );
 }
 
 export async function buildStaticPage(path: string) {
   const page = await toStaticPage(path);
-  return writePage(patchPage(page));
+  return writePage(updatePageHtmlToHypertext(patchBody(page)));
 }
 
-function patchPage(page: Page): Page {
-  const { window } = new JSDOM(page.body);
-  const { body } = window.document;
+function patchBody(page: Page): Page {
+  const body = createDocument(page.body).body;
 
   const h1 = body.querySelector('h1');
   if (h1) {
@@ -73,7 +74,7 @@ function patchPage(page: Page): Page {
     href: `#${heading.getAttribute('id')}`
   }));
 
-  const pageClass = `page-${slugify(page.path.slice(6))}`;
+  const pageClass = `page-${slugify(page.path.slice(6) || 'index')}`;
 
   return {
     ...page,
@@ -83,6 +84,28 @@ function patchPage(page: Page): Page {
   };
 }
 
+export function updatePageHtmlToHypertext(page: Page) {
+  page.body = convertHtmlToHypertextData(page.body);
+  if (page.docs) {
+    page.docs = convertHtmlToHypertextData(page.docs);
+  }
+  if (page.summary) {
+    page.summary = convertHtmlToHypertextData(page.summary);
+  }
+  if (page.codeUsage) {
+    page.codeUsage = convertHtmlToHypertextData(page.codeUsage);
+  }
+  if (page.usage) {
+    const hypertextUsage = {};
+    Object.keys(page.usage).forEach(key => {
+      const usageContent = page.usage[key];
+      hypertextUsage[key] = convertHtmlToHypertextData(usageContent);
+    });
+    page.usage = hypertextUsage;
+  }
+  return page;
+}
+
 function writePage(page: Page): Promise<any> {
   return fs.outputJson(toFilePath(page.path), page, {
     spaces: 2
@@ -90,4 +113,4 @@ function writePage(page: Page): Promise<any> {
 }
 
 const toFilePath = (urlPath: string) =>
-  `${resolve(PAGES_DIR, urlPath.slice(6))}.json`;
+  `${resolve(PAGES_DIR, urlPath.slice(6) || 'index')}.json`;

@@ -1,4 +1,4 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Prop, h } from '@stencil/core';
 import { Logo } from '../../icons';
 import { FrameworkSelect } from './framework-select';
 import componentsTemplate from './templates/components';
@@ -24,7 +24,6 @@ export class DocsMenu {
           <Logo class="MenuLogo"/>
         </stencil-route-link>
       </header>,
-      <docs-search/>,
       <section class="MenuControls">
         <FrameworkSelect/>
       </section>,

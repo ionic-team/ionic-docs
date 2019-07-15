@@ -1,8 +1,8 @@
 ---
 previousText: 'Android, iOS, and the Camera - Oh My!'
-previousUrl: '/docs/developer-resources/guides/first-app-v4/ios-android-camera'
+previousUrl: '/docs/angular/your-first-app/ios-android-camera'
 nextText: 'Theming'
-nextUrl: '/docs/developer-resources/guides/first-app-v4/theming'
+nextUrl: '/docs/angular/your-first-app/theming'
 contributors:
   - jsonMartin
 ---
@@ -196,12 +196,8 @@ ngOnInit() {
 
 Sweet! Photos are now saved to your device. To demonstrate that they are indeed being saved, force close DevApp, reopen it, and open the Tab2 page.  Or, shake your device to have the Control Menu pop up, then tap “Exit preview.” Afterwards, reload this app to view the photos.
 
-Finally, back up your changes to Ionic Pro:
-
-```shell
-git add .
-git commit -m "implemented photo gallery"
-git push ionic master
-```
-
 Next up, we’ll look at how to apply a custom theme to an Ionic app.
+
+<div style="text-align:right;">
+  <docs-button href="/docs/angular/your-first-app/theming">Continue <svg viewBox="0 0 512 512"><path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path></svg></docs-button>
+</div>

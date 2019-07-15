@@ -1,9 +1,12 @@
+import { h } from '@stencil/core';
+
 export default () => <docs-nav items={items}/>;
 
 const items = {
   'Introduction': {
     'What is Ionic Framework?': '/docs/intro',
     'Core Concepts': '/docs/intro/concepts',
+    'Build your First App': '/docs/angular/your-first-app',
     'Browser Support': '/docs/intro/browser-support',
     'Versioning': '/docs/intro/versioning',
     'Release Notes': '/docs/release-notes',
@@ -42,11 +45,24 @@ const items = {
     'Color Generator': '/docs/theming/color-generator',
     'Advanced': '/docs/theming/advanced',
   },
-  'Life Cycle': {
-    'Angular': '/docs/lifecycle/angular'
+  'Angular': {
+    'Overview': '/docs/angular/overview',
+    'Build Your First App': '/docs/angular/your-first-app',
+    'Lifecycle': '/docs/angular/lifecycle',
+    'Navigation/Routing': '/docs/angular/navigation',
+    'Performance': '/docs/angular/performance'
   },
-  'Navigation': {
-    'Angular': '/docs/navigation/angular'
+  'React': {
+    'Overview': '/docs/react/overview',
+    'Build Your First App': '/docs/react/your-first-app',
+    'Lifecycle': '/docs/react/lifecycle',
+    'Navigation/Routing': '/docs/react/navigation'
+  },
+  'Vue': {
+    'Overview': '/docs/vue/overview',
+    'Build Your First App': '/docs/vue/your-first-app',
+    'Lifecycle': '/docs/vue/lifecycle',
+    'Navigation/Routing': '/docs/vue/navigation'
   },
   'Utilities': {
     'Config': '/docs/utilities/config',

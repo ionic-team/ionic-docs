@@ -4,24 +4,31 @@ docs-table-of-contents {
   margin-bottom: 2rem;
 }
 
-docs-table-of-contents > strong {
+docs-table-of-contents .Nav-header {
   color: var(--text-color--lighter);
   font-size: 0.75em;
   font-weight: 800;
   letter-spacing: 1px;
-  text-transform: uppercase;
+  padding-left: 0;
 }
 
-docs-table-of-contents > nav {
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
+docs-table-of-contents ul {
+  padding: 0;
+  list-style: none;
+  line-height: 1.23em;
+}
+
+docs-table-of-contents .Nav-link {
+  padding-left: 0;
 }
 
 docs-table-of-contents a {
-  transition: opacity 100ms ease;
+  color: inherit;
+  display: inline-block;
+  transition: .2s color, .3s transform ease-out;
 }
 
-docs-table-of-contents a:hover {
-  opacity: 0.8;
+docs-table-of-contents .Nav-link.selected a {
+  color: var(--accent-color);
+  transform: translateX(2px);
 }

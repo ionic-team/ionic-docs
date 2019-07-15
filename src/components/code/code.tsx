@@ -6,10 +6,4 @@ import { Component, Prop } from '@stencil/core';
 })
 export class DocsCode {
   @Prop({ reflectToAttr: true }) language = '';
-
-  render() {
-    return (
-      <pre><code><slot/></code></pre>
-    );
-  }
 }

@@ -17,3 +17,13 @@
   margin-top: 40px;
   padding: 1em;
 }
+
+[class^='page-native'] .Card[href] docs-button button, 
+[class*=' page-native'] .Card[href] docs-button button {
+  cursor: pointer;
+}
+
+[class^='page-native'] ion-icon[aria-label="alert"], 
+[class*=' page-native'] ion-icon[aria-label="alert"] {
+  color: var(--ion-color-danger);
+}

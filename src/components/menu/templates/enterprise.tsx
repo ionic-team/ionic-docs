@@ -1,3 +1,4 @@
+import { h } from '@stencil/core';
 
 export default () => <docs-nav items={ items } />;
 
@@ -5,18 +6,26 @@ const items = {
   'Community Edition': '/docs/native/overview',
   'Enterprise Edition': '/docs/enterprise',
   'Authentication & Security': {
+    'Auth Connect': '/docs/enterprise/auth-connect',
     'Identity Vault': '/docs/enterprise/identity-vault',
   },
   'Common Device Features': {
     'Android Permissions': '/docs/enterprise/android-permissions',
-    'App Version': '/docs/enterprise/appversion',
+    'App Version': '/docs/enterprise/app-version',
+    'Badge': '/docs/enterprise/badge',
     'Browser': '/docs/enterprise/inappbrowser',
     'Calendar': '/docs/enterprise/calendar',
     'Camera': '/docs/enterprise/camera',
     'Clipboard': '/docs/enterprise/clipboard',
     'Device': '/docs/enterprise/device',
+    'Dialogs': '/docs/enterprise/dialogs',
+    'Email Composer': '/docs/enterprise/email-composer',
     'Filesystem': '/docs/enterprise/filesystem',
+    'Geolocation': '/docs/enterprise/geolocation',
     'Haptics & Vibration': '/docs/enterprise/vibration',
+    'Media': '/docs/enterprise/media',
+    'Media Capture': '/docs/enterprise/media-capture',
+    'Native Storage': '/docs/enterprise/nativestorage',
     'Network Information': '/docs/enterprise/network-information',
     'Screen Orientation': '/docs/enterprise/screen-orientation',
     'Splashscreen': '/docs/enterprise/splashscreen',
@@ -26,25 +35,8 @@ const items = {
     'Active Directory': 'https://ionicframework.com/integrations/ms-activedirectory-ms-adal',
     'mParticle': '/docs/enterprise/mparticle',
   },
-  'Inter-App Communication': {
-    'Email Composer': '/docs/enterprise/email-composer',
-  },
-  'Maps & Navigation': {
-    'Geolocation': '/docs/enterprise/geolocation',
-  },
-  'Media': {
-    'Media': '/docs/enterprise/media',
-    'Media Capture': '/docs/enterprise/media-capture',
-  },
-  'Native UI': {
-    'Dialogs': '/docs/enterprise/dialogs',
-  },
-  'Notifications': {
-    'Badge': '/docs/enterprise/badge',
-  },
   'Offline & Data': {
     'Couchbase Lite': 'https://ionicframework.com/integrations/couchbase-lite',
-    'Native Storage': '/docs/enterprise/nativestorage',
     'Offline Support': 'https://ionicframework.com/integrations/couchbase-lite',
   },
   'Payments': {

@@ -1,3 +1,4 @@
+import { h } from '@stencil/core';
 import { Angular, JavaScript, React, Vue } from '../../icons';
 import { useLocalStorage } from '../../local-storage';
 

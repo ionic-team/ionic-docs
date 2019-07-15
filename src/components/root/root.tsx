@@ -1,5 +1,4 @@
-import '@ionic/core';
-import { Component, Prop, State, Watch } from '@stencil/core';
+import { Build, Component, State, Watch, h } from '@stencil/core';
 import { LocationSegments, RouterHistory } from '@stencil/router';
 
 @Component({
@@ -9,7 +8,6 @@ import { LocationSegments, RouterHistory } from '@stencil/router';
 export class DocsRoot {
   history: RouterHistory = null;
 
-  @Prop({ context: 'isServer' }) private isServer: boolean;
   @State() isMenuToggled = false;
 
   setHistory = ({ history }: { history: RouterHistory }) => {
@@ -23,7 +21,7 @@ export class DocsRoot {
 
   @Watch('isMenuToggled')
   lockScroll(isMenuToggled: boolean) {
-    if (!this.isServer && this.isSmallViewport()) {
+    if (Build.isBrowser && this.isSmallViewport()) {
       document.body.classList.toggle('scroll-lock', isMenuToggled);
     }
   }

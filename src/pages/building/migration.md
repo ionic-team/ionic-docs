@@ -271,7 +271,7 @@ Once the team is comfortable that the Ionic 4.0 app has become stable and has fu
 Please reference official [Angular upgrade guide](https://angular.io/guide/upgrade) information.
 
 ### Ionic Changes
-Our Ionic 3.0 to Ionic 4.0 migration sections above may prove to be a useful reference. Generate a new Ionic 4.0 project using the blank starter (see [Starting an App](/docs/building/starting). Spend time getting familiar with Ionic 4.0 components. Happy building!
+Our Ionic 3.0 to Ionic 4.0 migration sections above may prove to be a useful reference. Generate a new Ionic 4.0 project using the blank starter (see [Starting an App](/docs/building/starting)). Spend time getting familiar with Ionic 4.0 components. Happy building!
 
 ### Need Assistance?
 If your team would like assistance with the migration, please [reach out to us](https://ionicframework.com/enterprise-engine)! Ionic offers Advisory Services, which includes Ionic 4.0 training, architecture reviews, and migration assistance.

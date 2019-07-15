@@ -3,17 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <title>Ionic Documentation</title>
+
+  <script type="module" src="/docs/build/app.esm.js"></script>
+  <script nomodule src="/docs/build/app.js"></script>
+  <link rel="stylesheet" href="/docs/build/app.css">
+
   <meta name="author" content="Ionic">
-  <meta name="description" content="Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards">
   <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#4d8dff">
   <link rel="manifest" href="/docs/manifest.json">
 
-  <meta property="og:url" content="https://ionicframework.com/docs/">
+  <!-- Schema.org markup for Google+ -->
+  <meta itemprop="name" content="Ionic Documentation" class="meta-title">
+  <meta itemprop="description" content="Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards" class="meta-description">
+  <meta itemprop="image" content="https://ionicframework.com/docs/assets/img/meta/open-graph.png" class="meta-image">
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@ionicframework">
+  <meta name="twitter:title" content="Ionic Documentation" class="meta-title">
+  <meta name="twitter:description" content="Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards" class="meta-description">
+  <meta name="twitter:creator" content="@ionicframework">
+  <meta name="twitter:image:src" content="https://ionicframework.com/docs/assets/img/meta/open-graph.png" class="meta-image">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Ionic Documentation" class="meta-title">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Ionic Documentation">
-  <meta property="og:image" content="https://ionicframework.com/docs/assets/img/meta/open-graph.png"/>
-  <meta property="og:description" content="Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards">
+  <meta property="og:url" content="https://ionicframework.com/docs/" class="meta-url">
+  <meta property="og:image" content="https://ionicframework.com/docs/assets/img/meta/open-graph.png" class="meta-image">
+  <meta property="og:description" content="Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards" class="meta-description">
+  <meta property="og:site_name" content="Ionic Docs">
+  <meta property="fb:page_id" content="1321836767955949">
+  <meta property="fb:admins" content="219701936">
+  <meta property="article:tag" content="Ionic">
+  <meta property="article:tag" content="PWA">
+  <meta property="article:tag" content="hybrid app">
 
   <link rel="apple-touch-icon" sizes="57x57" href="/docs/assets/img/meta/apple-touch-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="/docs/assets/img/meta/apple-touch-icon-60x60.png">
@@ -28,62 +52,18 @@
   <link rel="icon" type="image/png" href="/docs/assets/img/meta/favicon-32x32.png" sizes="32x32">
   <link rel="icon" type="image/png" href="/docs/assets/img/meta/favicon-96x96.png" sizes="96x96">
 
-  <link rel="stylesheet" href="/docs/build/app.css">
+  <link rel="alternate" hreflang="x-default" href="https://ionicframework.com/docs/" class="meta-url" />
+  <link rel="alternate" hreflang="ja" href="https://ionicframework.com/jp/docs/" class="meta-url" />
 </head>
 <body>
+
   <docs-root></docs-root>
-  <script>
-    // tmp work-around
-    function createComponentOnReadyPrototype(win, namespace, HTMLElementPrototype) {
-      (win['s-apps'] = win['s-apps'] || []).push(namespace);
 
-      if (!HTMLElementPrototype.componentOnReady) {
-
-        HTMLElementPrototype.componentOnReady = function componentOnReady() {
-          var elm = this;
-
-          function executor(resolve) {
-            if (elm.nodeName.indexOf('-') > 0) {
-              var apps = win['s-apps'];
-              var appsReady = 0;
-
-              for (var i = 0; i < apps.length; i++) {
-                if (win[apps[i]].componentOnReady) {
-                  if (win[apps[i]].componentOnReady(elm, resolve)) {
-                    return;
-                  }
-                  appsReady++;
-                }
-              }
-
-              if (appsReady < apps.length) {
-                (win['s-cr'] = win['s-cr'] || []).push([elm, resolve]);
-                return;
-              }
-            }
-
-            resolve(null);
-          }
-
-          if (win.Promise) {
-            return new win.Promise(executor);
-          }
-
-          return { then: executor };
-        };
-      }
-    }
-    createComponentOnReadyPrototype(window, 'App', HTMLElement.prototype);
-  </script>
-  <script src="/docs/build/app/app.core.pf.js" data-resources-url="/docs/build/app/" data-namespace="app"></script>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-44023830-1"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-44023830-1" importance="low"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'UA-44023830-1');
   </script>
 </body>

@@ -2,6 +2,7 @@
 
 .native-ee-detail {
   float: right;
+  cursor: pointer;
 }
 
 .cordova-ee-img{

@@ -1,4 +1,4 @@
-import { Component, Element, Prop } from '@stencil/core';
+import { Build, Component, Element, Prop, h } from '@stencil/core';
 import { Outbound } from '../../icons';
 import { MenuItems } from '../../definitions';
 
@@ -8,7 +8,6 @@ import { MenuItems } from '../../definitions';
 })
 export class DocsNav {
   @Element() element: HTMLElement;
-  @Prop({ context: 'isServer' }) private isServer: boolean;
   @Prop() items: MenuItems;
 
   private normalizeItems(items) {
@@ -87,7 +86,7 @@ export class DocsNav {
   }
 
   componentDidLoad() {
-    if (!this.isServer) {
+    if (Build.isBrowser) {
       requestAnimationFrame(this.setScroll);
     }
   }
