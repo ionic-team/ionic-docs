@@ -10,19 +10,37 @@ nextUrl: '/docs/appflow/deploy/tutorials'
 Installation and Usage
 ----------------------
 
-In order to use the Deploy API inside of your app. You simply need to install the latest version of the Appflow SDK and set the `UPDATE_METHOD` to `none`:
+In order to use the Deploy API inside of your app. You need to install the latest version of the Appflow SDK and set the `UPDATE_METHOD` to `none`:
 
-ionic cordova plugin add cordova-plugin-ionic --variable UPDATE\_METHOD="none" --variable APP\_ID="YOUR\_APP\_ID" --variable CHANNEL\_NAME="YOUR\_CHANNEL\_NAME"
+```shell
+ionic deploy add --update-method=none --app-id="YOUR_APP_ID" --channel-name="YOUR_CHANNEL_NAME"
+```
 
 Then you can import the Deploy API in order to it in your code:
 
 ```typescript
+// ES2015/Typescript
 import { Deploy } from 'cordova-plugin-ionic';
 
 ...
 
 async changeToBetaChannel() {
   await Deploy.configure({channel: 'BETA'});
+}
+
+...
+
+// Angular
+import { Deploy } from 'cordova-plugin-ionic/dist/ngx';
+
+...
+
+constructor(private deploy: Deploy) {
+  ...
+}
+
+async changeToBetaChannel() {
+  await this.deploy.configure({channel: 'BETA'});
 }
 
 ...
@@ -361,7 +379,7 @@ ___
 
 ###  sync
 
-▸ **sync**(syncOptions?: *[ISyncOptions](#isyncoptions)*): `Promise`<[ISnapshotInfo](#isnapshotinfo) \| `undefined`>
+▸ **sync**(syncOptions?: *[ISyncOptions](#isyncoptions)*, progress?: *[CallbackFunction](#callbackfunction)<`number`>*): `Promise`<[ISnapshotInfo](#isnapshotinfo) \| `undefined`>
 
 *__description__*: Check for an update, download it, and apply it in one step.
 
@@ -372,7 +390,9 @@ ___
 async performAutomaticUpdate() {
   try {
     const currentVersion = Deploy.getCurrentVersion();
-    const resp = await Deploy.sync({updateMethod: 'auto'});
+    const resp = await Deploy.sync({updateMethod: 'auto'}, percentDone => {
+      console.log(`Update is ${percentDone}% done!`);
+    });
     if (currentVersion.versionId !== resp.versionId){
       // We found an update, and are in process of redirecting you since you put auto!
     }else{
@@ -870,12 +890,51 @@ Whether the update should be applied immediately or on the next app start.
 
 ___
 
+## Plugin Variables
+
+The deploy plugin uses variables to configure the way in which the plugin behaves.
+You can set these values when you add the plugin using flags (if using the `ionic deploy add` command) or using cordova variables (if using `ionic cordova plugin add`). The available variables are as follows:
+
+### App ID
+* **Required**
+* The app id is required to recieve updates for an app in the Appflow dashboard.
+* `ionic deploy add --app-id=abcdef12`
+* `ionic cordova plugin add cordova-plugin-ionic --variable APP_ID=abcdef12`
+
+### Channel Name
+* **Required**
+* The channel name is required to recieve updates for an app in the Appflow dashboard and indicates the channel from which the device will recieve updates. Note this can also be updated programatically at runtime for advanced use cases.
+* `ionic deploy add --channel-name=Production`
+* `ionic cordova plugin add cordova-plugin-ionic --variable CHANNEL_NAME=Production`
+
+### Update Method
+* **Default** `background`
+* The update method determines how the app will check for and apply updates. Possible values are:
+  * `background` (Recommended) - The app will check for updates in the background and not prolong the amount of time the splash screen is shown. If an update is available it will be downloaded and installed while the user is using the older version. The next time they launch the app or the app has been in background for the duration specified my `min-background-duration` the new version will be loaded.
+  * `auto` - The app will delay the launch of the app by extending how long the splash screen is shown while downloading any available updates. Once the update is available the new version will be immediately shown and the splash screen will be hidden. We generally don't recommend this mode since it can lead to the splash screen showing for a long time particularly if the user is on a poor network connection.
+  * `none` - Setting the update method to `none` indicates that you will manually perform all update logic programatically and the plugin will not check for or apply updates on its own.
+* `ionic deploy add --updated-method=Production`
+* `ionic cordova plugin add cordova-plugin-ionic --variable UPDATE_METHOD=background`
+
+### Max Versions
+* **Default** `2`
+* This tells the plugin the number of previous updates it should keep on the device in order to speed up the rollback process if ever needed.
+* `ionic deploy add --max-versions=Production`
+* `ionic cordova plugin add cordova-plugin-ionic --variable MAX_VERSIONS=Production`
+
+### Min Background Duration
+* **Default** `30`
+* This tells the plugin the number of seconds the app needs to be in the background for it to have been considered "closed". If the app has been in the background for at least this duration the plugin will check for and apply updates according to the update method as if the app were opened from a fully closed state. This is helpful for triggering updates even when a user never fully closes the app but also allowing them to page over to another app or password manager for short periods of time without triggering an update.
+* `ionic deploy add --min-background-duration=60`
+* `ionic cordova plugin add cordova-plugin-ionic --variable MIN_BACKGROUND_DURATION=60`
+
 ___
 
 ## Change Log
 
 ### 5.4.0
 * Added Deploy API Imports
+* Removed dependency on `cordova-plugin-file`
 
 ### 5.3.0
 * Added an 'incompatibleUpdateAvailable' property to the 'CheckForUpdateResponse' ([#204] (https://github.com/ionic-team/cordova-plugin-ionic/pull/204))
