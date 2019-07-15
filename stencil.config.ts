@@ -13,7 +13,8 @@ export const config: Config = {
         { src: 'demos', dest: 'docs/demos' },
         { src: 'components/color-gen/demo/index.html', dest: 'docs/pages/theming/color-generator/index.html' },
         { src: '../node_modules/@ionic/core', dest: 'docs/assets/ionic' },
-        { src: 'assets', dest: 'docs/assets' }
+        { src: 'assets', dest: 'docs/assets' },
+        { src: 'manifest.json', dest: 'docs/manifest.json' },
       ]
     }
   ]
