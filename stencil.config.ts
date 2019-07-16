@@ -9,12 +9,12 @@ export const config: Config = {
       prerenderConfig: 'prerender.config.js',
       serviceWorker: null,
       copy: [
-        { src: 'pages/**/*.json', dest: 'docs' },
-        { src: 'demos', dest: 'docs/demos' },
-        { src: 'components/color-gen/demo/index.html', dest: 'docs/pages/theming/color-generator/index.html' },
-        { src: '../node_modules/@ionic/core', dest: 'docs/assets/ionic' },
-        { src: 'assets', dest: 'docs/assets' },
-        { src: 'manifest.json', dest: 'docs/manifest.json' },
+        { src: 'pages/**/*.json' },
+        { src: 'demos', dest: 'demos' },
+        { src: 'components/color-gen/demo/index.html', dest: 'pages/theming/color-generator/index.html' },
+        { src: '../node_modules/@ionic/core', dest: 'assets/ionic' },
+        { src: 'assets', dest: 'assets' },
+        { src: 'manifest.json', dest: 'manifest.json' },
       ]
     }
   ]
