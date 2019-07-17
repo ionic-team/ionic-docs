@@ -42,8 +42,10 @@ const items = {
     'Basics': '/docs/theming/basics',
     'Platform Styles': '/docs/theming/platform-styles',
     'CSS Variables': '/docs/theming/css-variables',
-    'Color Generator': '/docs/theming/color-generator',
+    'Colors': '/docs/theming/colors',
+    'Themes': '/docs/theming/themes',
     'Advanced': '/docs/theming/advanced',
+    'Color Generator 🎨': '/docs/theming/color-generator'
   },
   'Angular': {
     'Overview': '/docs/angular/overview',
