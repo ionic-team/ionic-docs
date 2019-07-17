@@ -15,10 +15,10 @@ export class ColorBlock {
   }
 
   render() {
-    const popoverOptions = {
+    const selectOptions = {
       'header': 'Select a Color',
       'subHeader': 'The variations of the color will reflect in the table',
-      'cssClass': 'temp-fix'
+      'cssClass': 'layered-colors-select-interface'
     };
 
     const color = this.color;
@@ -86,9 +86,6 @@ export class ColorBlock {
       );
     });
 
-    // TODO
-    // interface="popover" does not currently work
-    // see https://github.com/ionic-team/ionic/issues/17337
     return [
       <button class="color-select">
         <span
@@ -99,7 +96,7 @@ export class ColorBlock {
         </span>
         <ion-select
           value={this.color}
-          interfaceOptions={popoverOptions}
+          interfaceOptions={selectOptions}
           onIonChange={ev => this.changeColor(ev)}>
           <ion-select-option value="primary">Primary</ion-select-option>
           <ion-select-option value="secondary">Secondary</ion-select-option>
