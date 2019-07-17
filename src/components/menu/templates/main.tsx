@@ -45,7 +45,7 @@ const items = {
     'Colors': '/docs/theming/colors',
     'Themes': '/docs/theming/themes',
     'Advanced': '/docs/theming/advanced',
-    'Color Generator': '/docs/theming/color-generator'
+    'Color Generator 🎨': '/docs/theming/color-generator'
   },
   'Angular': {
     'Overview': '/docs/angular/overview',
