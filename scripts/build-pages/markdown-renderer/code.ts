@@ -25,7 +25,8 @@ loadLanguages([
   'bash',
   'json',
   'tsx',
-  'typescript'
+  'typescript',
+  'scss'
 ]);
 
 // `shell` is an alias of `bash`, so we have to extend `bash`.

@@ -44,7 +44,7 @@ import App from './App';
 ReactDOM.render(<App />, document.getElementById('root'));
 ```
 
-So what's going on here? Well, the first three lines are pulling in some dependencies. The first being React it self. This allows us to write components in an HTML-like syntax called JSX. We'll talk about JSX a bit more later on.
+So what's going on here? Well, the first three lines are pulling in some dependencies. The first being React itself. This allows us to write components in an HTML-like syntax called JSX. We'll talk about JSX a bit more later on.
 
 The second import is for ReactDOM. The `ReactDOM.render` method is the browser/DOM specific way of taking our components and rendering it to a specified DOM node.
 
@@ -52,14 +52,14 @@ The last import is the root component for our app, simply named `App`. This is o
 
 If we open `App.tsx`, we should see the following.
 
-```tsx
+```typescript
 import React from 'react';
 import { Route } from 'react-router-dom';
 import { IonPage, IonRouterOutlet, IonReactRouter } from '@ionic/react';
 import Home from './pages/Home';
 
 /* Core CSS required for Ionic components to work properly */
-import '@ionic/core/css/ionic.bundle.css';
+import '@ionic/core/css/core.css';
 
 const App: React.FunctionComponent = () => (
   <IonApp>
@@ -98,7 +98,7 @@ The CSS import is pulling in the utility styles from Ionic for things like paddi
 
 After reviewing all of the imports, we now get to our first look at a React Component:
 
-```tsx
+```typescript
 const App: React.FunctionComponent = () => (
   <IonApp>
     <IonReactRouter>
@@ -115,7 +115,7 @@ const App: React.FunctionComponent = () => (
 
 This React component sets up the initial routing for our app, as well as include some core Ionic components for animations and layout (IonRouterOutlet and IonApp). One thing that stands out is that in React, to do data-binding, the value is passed in curly braces (`{}`). So in the `Route` component, we can set the value of `component` to the `Home` component from earlier. This is how React will know that that value is not a string, but a reference to a component.
 
-> What's important to note here is that these are all standard React DOM libraries. Meaning there's no custom integration layer or transpilation step.
+> What's important to note here is that these are all standard React DOM libraries, meaning there's no custom integration layer or transpilation step.
 
 ## A component with style
 
@@ -123,9 +123,9 @@ Now the `App` does not really have a lot to modify here. It's a basic example of
 
 Currently, the `Home` component looks like so:
 
-**Insert home route image**
+![React home component](/docs/assets/img/guides/react/first-app/home-route.png)
 
-```tsx
+```typescript
 import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/react';
 import React from 'react';
 
@@ -166,7 +166,7 @@ Our current content is fairly simple, but does not contain anything that could b
 
 > Note: For brevity, we're excluding repeating part of our component, like the function declaration or import statements for other components.
 
-```tsx
+```typescript
 <>
   ...
   <IonContent>
@@ -188,7 +188,7 @@ Our current content is fairly simple, but does not contain anything that could b
 
 Here in our `IonContent`, we're adding an `IonList` and a much more involved `IonItem` component. Let's look at `IonItem`, as it's really the centerpiece here.
 
-```tsx
+```typescript
 <IonItem>
   <IonCheckbox slot="start" />
   <IonLabel>
@@ -207,9 +207,8 @@ From the Web Components side, we have a special attribute called `slot`. This is
 
 Let's look at another component from Ionic, FAB. Floating Action Buttons are a nice way to provide a main action that is elevated from the rest of an app. For this FAB, we'll need 3 components: a FAB, a FAB Button, and an Icon.
 
-```jsx
-
-Import { add } from ‘ionicons/icons’;
+```typescript
+import { add } from ‘ionicons/icons’;
 …
 
 <IonContent>
@@ -251,16 +250,14 @@ export default function Home(props: RouteComponentProps) {
 So in our function declaration, we're passing in `props` and giving it a type of `RouteComponentProps`. This `props` object gives us access to the history API from React Router, allowing us to push a new route onto the navigation stack. On our `IonFabButton`, we can add a click handler, and just call `props.history.push` and pass in the new route. In this case, we'll navigate to `new`.
 
 ```typescript
-<IonFabButton
-  onClick={() => props.history.push('/new')}
->
+<IonFabButton onClick={() => props.history.push('/new')} >
 ```
 
 ## Creating a new Route
 
 Now that we have the pieces in place to navigate in our app, we need to create a new component and add the new route to our router declaration. Let's open our `App.tsx` file and add the new route.
 
-````tsx
+````typescript
 ...
 import Home from './pages/Home';
 
@@ -287,7 +284,7 @@ With our router now having an entry for the route `/new`, we'll create the compo
 
 Let's fill the `NewItem.tsx` with some placeholder content for the moment.
 
-```tsx
+```typescript
 import {
   IonBackButton,
   IonButtons,
@@ -319,7 +316,7 @@ The content here is pretty straight forward, and should look familiar to the `Ho
 
 Well in this case, the in-memory history is lost, so the back button disappears. To address this, we can set the `defaultHref` attribute value to the URL we want to navigate to if there is no history.
 
-```
+```typescript
 return (
   <>
     <IonHeader>
@@ -339,4 +336,4 @@ Here, when we reload, if there is no app history present, we'll be able to navig
 
 ## Where to go from here
 
-This guide covers the basics of creating an Ionic React app and adding some basic navigation. For a more detailed look at Ionic’s components, check out the [component API pages](ADD LINK). For more details on React, review the [React Docs](https://reactjs.org).
+This guide covers the basics of creating an Ionic React app and adding some basic navigation. For a more detailed look at Ionic’s components, check out the [component API pages](/docs/components). For more details on React, review the [React Docs](https://reactjs.org).
