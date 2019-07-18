@@ -55,7 +55,7 @@ See the [CSS Variables documentation](/docs/theming/css-variables) for more info
 
 ## Adding Colors
 
-Colors can be added for use throughout an application by setting the `color` property on an Ionic component, or by styling with CSS. Read on to see how to manually add a new color, or use the [New Color Generator](#new-color-generator) below for a quick way to generate the code of a new color to be copy and pasted into an application.
+Colors can be added for use throughout an application by setting the `color` property on an Ionic component, or by styling with CSS. Read on to see how to manually add a new color, or use the [New Color Creator](#new-color-creator) below for a quick way to generate the code of a new color to be copy and pasted into an application.
 
 To add a new color, first define the CSS variables for all of the variations of the color at the root. For example, to add a new color called `favorite`, we can define the following variables:
 
@@ -101,8 +101,8 @@ div {
 See the [CSS Variables documentation](/docs/theming/css-variables) for more information on setting and using CSS variables.
 
 
-## New Color Generator
+## New Color Creator
 
-Generate a new color below by changing the name and value, then copy and paste the code below into your project:
+Create a new color below by changing the name and value, then copy and paste the code below into your project.
 
 <new-color-generator mode="md" no-prerender></new-color-generator>
