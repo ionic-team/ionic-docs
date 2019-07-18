@@ -4,7 +4,7 @@ import { Component, Prop, h } from '@stencil/core';
   tag: 'wistia-video'
 })
 export class WistiaVideo {
-  @Prop() id: string;
+  @Prop() videoId: string;
 
   componentDidLoad() {
     if (!document.getElementById('wistia_script')) {
@@ -19,7 +19,7 @@ export class WistiaVideo {
 
   render() {
     return (
-        <div class={`wistia_embed wistia_async_${this.id} videoFoam=true`}>&nbsp;</div>
+        <div class={`wistia_embed wistia_async_${this.videoId} videoFoam=true`}>&nbsp;</div>
     );
   }
 }
