@@ -1,3 +1,11 @@
 .page-index docs-cards {
   font-size: 14px;
 }
+
+.page-building-migration figure {
+  height: 100%;
+}
+
+.page-building-migration file-tree {
+  flex: 1;
+}

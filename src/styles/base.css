@@ -58,6 +58,16 @@ body {
   height: 100%;
 }
 
+figure {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+figcaption {
+  text-align: center;
+}
+
 img {
   display: block;
   max-width: 100%;

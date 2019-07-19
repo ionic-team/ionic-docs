@@ -48,59 +48,63 @@ One of the major changes between an Ionic 3 app and an Ionic 4 app is the overal
 
 For example, if an app is using Angular, that project structure will be exactly what an Angular CLI app would be. This change, while not too difficult to accommodate, helps to keep common patterns and documentation consistent.
 
-<div style="display: flex;">
-    <figure style="display: flex; flex-direction: column; width: 50%; margin-right: 5px;">
-        <file-tree style="flex: 1">
-            <file-tree-directory name="src">
-                <file-tree-directory name="app">
-                    <file-tree-directory name="about" collapsed></file-tree-directory>
-                    <file-tree-directory name="home" collapsed></file-tree-directory>
-                    <file-tree-file name="app-routing.module.ts"></file-tree-file>
-                    <file-tree-file name="app.component.html"></file-tree-file>
-                    <file-tree-file name="app.component.spec.ts"></file-tree-file>
-                    <file-tree-file name="app.component.ts"></file-tree-file>
-                    <file-tree-file name="app.module.ts"></file-tree-file>
-                </file-tree-directory>
-                <file-tree-directory name="assets" collapsed></file-tree-directory>
-                <file-tree-directory name="environments" collapsed></file-tree-directory>
-                <file-tree-directory name="theme" collapsed></file-tree-directory>
-                <file-tree-file name="global.scss"></file-tree-file>
-                <file-tree-file name="index.html"></file-tree-file>
-                <file-tree-file name="karma.conf.js"></file-tree-file>
-                <file-tree-file name="main.ts"></file-tree-file>
-                <file-tree-file name="polyfills.ts"></file-tree-file>
-                <file-tree-file name="test.ts"></file-tree-file>
-                <file-tree-file name="tsconfig.app.json"></file-tree-file>
-                <file-tree-file name="tsconfig.spec.json"></file-tree-file>
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <figure>
+        <file-tree>
+          <file-tree-directory name="src">
+            <file-tree-directory name="app">
+              <file-tree-directory name="about" collapsed></file-tree-directory>
+              <file-tree-directory name="home" collapsed></file-tree-directory>
+              <file-tree-file name="app-routing.module.ts"></file-tree-file>
+              <file-tree-file name="app.component.html"></file-tree-file>
+              <file-tree-file name="app.component.spec.ts"></file-tree-file>
+              <file-tree-file name="app.component.ts"></file-tree-file>
+              <file-tree-file name="app.module.ts"></file-tree-file>
             </file-tree-directory>
-            <file-tree-file name=".gitignore"></file-tree-file>
-            <file-tree-file name="angular.json"></file-tree-file>
-            <file-tree-file name="ionic.config.json"></file-tree-file>
-            <file-tree-file name="package.json"></file-tree-file>
-            <file-tree-file name="tsconfig.json"></file-tree-file>
-            <file-tree-file name="tslint.json"></file-tree-file>
+            <file-tree-directory name="assets" collapsed></file-tree-directory>
+            <file-tree-directory name="environments" collapsed></file-tree-directory>
+            <file-tree-directory name="theme" collapsed></file-tree-directory>
+            <file-tree-file name="global.scss"></file-tree-file>
+            <file-tree-file name="index.html"></file-tree-file>
+            <file-tree-file name="karma.conf.js"></file-tree-file>
+            <file-tree-file name="main.ts"></file-tree-file>
+            <file-tree-file name="polyfills.ts"></file-tree-file>
+            <file-tree-file name="test.ts"></file-tree-file>
+            <file-tree-file name="tsconfig.app.json"></file-tree-file>
+            <file-tree-file name="tsconfig.spec.json"></file-tree-file>
+          </file-tree-directory>
+          <file-tree-file name=".gitignore"></file-tree-file>
+          <file-tree-file name="angular.json"></file-tree-file>
+          <file-tree-file name="ionic.config.json"></file-tree-file>
+          <file-tree-file name="package.json"></file-tree-file>
+          <file-tree-file name="tsconfig.json"></file-tree-file>
+          <file-tree-file name="tslint.json"></file-tree-file>
         </file-tree>
         <figcaption>Ionic 4</figcaption>
-    </figure>
-    <figure style="display: flex; flex-direction: column; width: 50%; margin-left: 5px;">
-        <file-tree style="flex: 1">
-            <file-tree-directory name="src">
-                <file-tree-directory name="app">
-                    <file-tree-file name="app.component.html"></file-tree-file>
-                    <file-tree-file name="app.html"></file-tree-file>
-                    <file-tree-file name="app.module.ts"></file-tree-file>
-                    <file-tree-file name="app.scss"></file-tree-file>
-                    <file-tree-file name="main.ts"></file-tree-file>
-                </file-tree-directory>
-                <file-tree-directory name="assets" collapsed></file-tree-directory>
-                <file-tree-directory name="pages">
-                    <file-tree-directory name="about" collapsed></file-tree-directory>
-                    <file-tree-directory name="home" collapsed></file-tree-directory>
-                </file-tree-directory>
-                <file-tree-directory name="theme" collapsed></file-tree-directory>
-                <file-tree-file name="index.html"></file-tree-file>
-                <file-tree-file name="manifest.json"></file-tree-file>
-                <file-tree-file name="service-worker.js"></file-tree-file>
+      </figure>
+    </ion-col>
+    <ion-col>
+      <figure>
+        <file-tree>
+          <file-tree-directory name="src">
+              <file-tree-directory name="app">
+                <file-tree-file name="app.component.html"></file-tree-file>
+                <file-tree-file name="app.html"></file-tree-file>
+                <file-tree-file name="app.module.ts"></file-tree-file>
+                <file-tree-file name="app.scss"></file-tree-file>
+                <file-tree-file name="main.ts"></file-tree-file>
+              </file-tree-directory>
+              <file-tree-directory name="assets" collapsed></file-tree-directory>
+              <file-tree-directory name="pages">
+                <file-tree-directory name="about" collapsed></file-tree-directory>
+                <file-tree-directory name="home" collapsed></file-tree-directory>
+              </file-tree-directory>
+              <file-tree-directory name="theme" collapsed></file-tree-directory>
+              <file-tree-file name="index.html"></file-tree-file>
+              <file-tree-file name="manifest.json"></file-tree-file>
+              <file-tree-file name="service-worker.js"></file-tree-file>
             </file-tree-directory>
             <file-tree-file name=".gitignore"></file-tree-file>
             <file-tree-file name="ionic.config.json"></file-tree-file>
@@ -109,8 +113,10 @@ For example, if an app is using Angular, that project structure will be exactly 
             <file-tree-file name="tslint.json"></file-tree-file>
         </file-tree>
         <figcaption>Ionic 3</figcaption>
-    </figure>
-</div>
+      </figure>
+    </ion-col>
+  </ion-row>
+</ion-grid>
 
 The above comparison is an example of a v4 app's project structure. For developers with experience in a vanilla Angular project, this should feel really familiar.
 
