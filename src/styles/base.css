@@ -58,10 +58,21 @@ body {
   height: 100%;
 }
 
+ion-grid {
+  margin: 1em 0;
+}
+
 figure {
-  display: flex;
-  flex-direction: column;
   margin: 0;
+}
+
+figure > * {
+  display: block;
+  margin: 0 auto;
+}
+
+figure.device {
+  max-width: 400px;
 }
 
 figcaption {
