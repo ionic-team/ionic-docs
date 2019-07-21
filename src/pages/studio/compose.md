@@ -1,8 +1,10 @@
 ---
-title: Compose Overview
+
 ---
 
-Compose is the powerhouse of app development using Ionic, offering a powerful side-by-side coupling of component code and an interactive canvas for building components.
+# Compose Overview
+
+Compose is the powerhouse of Ionic app development, offering a powerful side-by-side coupling of component code and an interactive canvas for building components.
 
 <blockquote>
 🚧 These docs are a work-in-progress. Check back frequently for updates!
