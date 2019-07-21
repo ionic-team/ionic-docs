@@ -5,6 +5,7 @@ export default () => <docs-nav items={items}/>;
 const items = {
   'Introduction': {
     'Welcome': '/docs/studio',
+    'Support': '/docs/studio/support',
   },
   'Setup': {
     'Installation': '/docs/studio/setup/installation',
@@ -18,5 +19,6 @@ const items = {
     'Compose': '/docs/studio/compose',
     'Code': '/docs/studio/code',
     'Running Apps': '/docs/studio/running',
+    'Settings': '/docs/studio/settings',
   }
 };
