@@ -15,10 +15,14 @@ const items = {
     'Overview': '/docs/studio/quickstart',
     'Code & Compose': '/docs/studio/quickstart/code-and-compose',
   },
+  'Guides': {
+    'Routing and Navigation': '/docs/studio/guides/routing-and-navigation',
+  },
   'Documentation': {
     'Compose': '/docs/studio/compose',
     'Code': '/docs/studio/code',
     'Running Apps': '/docs/studio/running',
+    'Theming': '/docs/studio/theming',
     'Settings': '/docs/studio/settings',
   }
 };
