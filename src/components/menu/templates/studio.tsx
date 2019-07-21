@@ -22,6 +22,7 @@ const items = {
     'Compose': '/docs/studio/compose',
     'Code': '/docs/studio/code',
     'Running Apps': '/docs/studio/running',
+    'Asset Management': '/docs/studio/assets',
     'Theming': '/docs/studio/theming',
     'Settings': '/docs/studio/settings',
   }
