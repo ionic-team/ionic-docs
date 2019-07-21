@@ -15,15 +15,17 @@ const items = {
     'Overview': '/docs/studio/quickstart',
     'Code & Compose': '/docs/studio/quickstart/code-and-compose',
   },
-  'Guides': {
-    'Routing and Navigation': '/docs/studio/guides/routing-and-navigation',
-  },
   'Documentation': {
     'Compose': '/docs/studio/compose',
     'Code': '/docs/studio/code',
-    'Running Apps': '/docs/studio/running',
     'Asset Management': '/docs/studio/assets',
     'Theming': '/docs/studio/theming',
     'Settings': '/docs/studio/settings',
-  }
+    'Running Apps': '/docs/studio/running',
+  },
+  'Guides': {
+    'Routing and Navigation': '/docs/studio/guides/routing-and-navigation',
+    'Using Native Functionality': '/docs/studio/guides/using-native-functionality',
+  },
+  'FAQ': '/docs/studio/faq',
 };
