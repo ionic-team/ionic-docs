@@ -3131,7 +3131,7 @@
       "macOS",
       "Windows"
     ],
-    "repo": "https://github.com/litehelpers/Cordova-sqlite-storage",
+    "repo": "https://github.com/xpbrew/Cordova-sqlite-storage",
     "cordovaPlugin": {
       "name": "cordova-sqlite-storage"
     }
