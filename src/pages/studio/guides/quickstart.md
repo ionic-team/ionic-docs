@@ -16,7 +16,7 @@ To create a new Ionic project:
 
 1. Open the New Project modal with **File** &raquo; **New Project**. ![Start a New Project with Studio](/docs/assets/img/studio/ss-new-project.png)
 1. Supply a name for your app. This can be changed later.
-1. Optionally supply a Bundle ID (aka Package ID), which is used to identify your app when published. It's okay to leave this blank for now.
+1. Optionally supply a Bundle ID (aka [Package ID](/docs/faq/glossary#package-id)), which is used to identify your app when published. It's okay to leave this blank for now.
 1. Choose the **tabs** starter template for your app.
 1. Click **Create Project**.
 
@@ -28,10 +28,8 @@ Ionic Studio offers two main modes for making changes to your app: **Code** and 
 
 For this quickstart tutorial, we are going to focus on using Compose to update a page.
 
-1. Open Compose mode by clicking the cursor icon in the navigation menu.
-    ![Compose Page Index](/docs/assets/img/studio/ss-page-index.png)
-1. Open the **Tab1Page** provided by the **tabs** starter template.
-    ![Compose](/docs/assets/img/studio/ss-compose.png)
+1. Open Compose mode by clicking the cursor icon in the navigation menu. ![Compose Page Index](/docs/assets/img/studio/ss-page-index.png)
+1. Open the **Tab1Page** provided by the **tabs** starter template. ![Compose](/docs/assets/img/studio/ss-compose.png)
 1. **Change text** by double-clicking in the canvas. Change "Tab One" to "My New Page".
 1. **Delete elements** by clicking on them and pressing the Delete or Backspace key. Delete the `<ion-img>` inside the card that shows `shapes.svg`.
 1. **Insert elements** by clicking on the cube icon in the header and dragging them into the canvas or code. Add a button at the bottom of the card.
