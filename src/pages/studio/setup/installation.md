@@ -10,6 +10,13 @@ The latest downloads for Ionic Studio are available in the [Ionic Dashboard](htt
 🚧 These docs are a work-in-progress. Check back frequently for updates!
 </blockquote>
 
+## Prerequisites
+
+* Make sure you have [Node &amp; npm](/docs/installation/environment#node-npm) set up on your computer
+* Optionally install [Git](/docs/installation/environment#git) for version control
+
+## Installation
+
 The Ionic Studio download link can be obtained in the [downloads section](https://dashboard.ionicframework.com/personal/downloads) of the Ionic Dashboard.
 
 Once Ionic Studio has been downloaded, run through the installer and open Ionic Studio to continue the installation process. Ionic Studio has a few tools it depends on, which are installed and updated automatically when it boots up.

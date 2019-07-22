@@ -105,21 +105,13 @@ To add new elements to a template, open the **Add Element** menu by clicking the
 
 The menu contains HTML elements, Ionic components, and the custom components in the app.
 
-To insert an element:
-
-1. Click and hold on it
-1. Drag it into place in either canvas or code (in **Template** mode)
-1. Let go of the mouse!
+To insert an element, click and hold on it, then drag it into place in either canvas or code (in **Template** mode).
 
 Dragging an element into code allows more precise placement, but dragging it into the canvas may be easier and offers intelligent `slot` usage when using Ionic components.
 
 ### Rearranging Existing Elements
 
-To rearrange existing elements in the canvas:
-
-1. Click and hold on it
-1. Drag it into place
-1. Let go of the mouse!
+To rearrange existing elements in the canvas, click and hold on it, then drag it into place.
 
 Remember, it is also possible to drag and drop code selections in the code editor.
 

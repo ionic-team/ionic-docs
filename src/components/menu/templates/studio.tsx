@@ -8,12 +8,8 @@ const items = {
     'Support': '/docs/studio/support',
   },
   'Setup': {
-    'Installation': '/docs/studio/setup/installation',
+    'Installing Studio': '/docs/studio/setup/installation',
     'Native iOS & Android': '/docs/studio/setup/native',
-  },
-  'Quickstart': {
-    'Overview': '/docs/studio/quickstart',
-    'Code & Compose': '/docs/studio/quickstart/code-and-compose',
   },
   'Documentation': {
     'Compose': '/docs/studio/compose',
@@ -24,6 +20,7 @@ const items = {
     'Running Apps': '/docs/studio/running',
   },
   'Guides': {
+    'Quickstart': '/docs/studio/guides/quickstart',
     'Routing and Navigation': '/docs/studio/guides/routing-and-navigation',
     'Using Native Functionality': '/docs/studio/guides/using-native-functionality',
   },
