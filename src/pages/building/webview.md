@@ -46,7 +46,7 @@ For Capacitor apps, converting file URIs is very similar:
 ```javascript
 import { Capacitor } from '@capacitor/core';
 
-Capacitor.convertFileSrc(fileString)
+Capacitor.convertFileSrc(filePath);
 ```
 
 ### Implementations
