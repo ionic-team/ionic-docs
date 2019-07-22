@@ -46,13 +46,12 @@ Compose uses the component code itself as a source of truth for rendering a prev
 
 ## Serving Your App
 
-Serving your app will start a livereload server and display your app in a separate browser window.
+Serving your app will start a [Live Reload](/docs/faq/glossary#livereload) server and display your app in a separate browser window.
 
-## Running Your App
+<figure>
+  <img alt="Run Menu" src="/docs/assets/img/studio/ss-run-menu.png" />
+</figure>
 
-Running your app will prompt you to select a native target, which can be an emulator or hardware device plugged in to your computer. Since running your app will deploy to an actual native device, it does require some setup.
+While serving your app, changes made when files are saved will automatically reload the Serve Window.
 
-* For Android, see [Android Setup](/docs/installation/android)
-* For iOS, see [iOS Setup](/docs/installation/ios)
-
-Running your app can also make debugging more difficult than simply serving your app, but it is the only way to test the native functionality of your app.
+See the documentation for [Serving Apps](/docs/studio/running#serving-apps) for more information. To run your app on a real device or emulator, first make sure your computer is setup for a [native iOS or Android environment](/docs/studio/native). Then, see the docs for [Running Apps](/docs/studio/running#running-apps).
