@@ -8,7 +8,7 @@
 🚧 These docs are a work-in-progress. Check back frequently for updates!
 </blockquote>
 
-Depending on the Cordova Plugin you're using, you may need to run your app on a physical or virtual device in order to test out that feature.
+Depending on which Cordova Plugin you're using, you may need to run your app on a physical or virtual device in order to test out that feature.
 
 For instance, a plugin for utilizing the Gyroscope will only work on a physical device, while a plugin for Storage will work in Serve as well.
 
@@ -22,4 +22,4 @@ In order to debug Native Functionality, it is best to utilize the native tooling
 
 For more detailed instructions, please see the [Building for iOS](/docs/building/ios) or [Building for Android](/docs/building/android) documentation.
 
-If you'd like to follow along with a beginners tutorial that includes utilizing the Camera Cordova plugin, please see our [Build your First App guide](/docs/angular/your-first-app). While this guide isn't specific to Studio, you can still follow along utilizing Studio.
+If you'd like to follow along with a beginners tutorial that includes utilizing the Camera Cordova plugin, please see our [Build your First App guide](/docs/angular/your-first-app). While this guide isn't specific to Studio, you can still follow along using Studio.

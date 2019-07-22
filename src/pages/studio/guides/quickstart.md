@@ -12,10 +12,6 @@ The quickstart tutorial walks you through starting a new app, the basics of Comp
 
 ## Start a New App
 
-Ionic apps can be created right in Ionic Studio.
-
-You may have an existing Ionic 4 app you wish to use in Studio, in which case you may need to adapt this tutorial to your unique app.
-
 To create a new Ionic project:
 
 1. Open the New Project modal with **File** &raquo; **New Project**. ![Start a New Project with Studio](/docs/assets/img/studio/ss-new-project.png)

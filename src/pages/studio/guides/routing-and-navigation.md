@@ -14,7 +14,7 @@ The Ionic Framework docs have a [great primer](/docs/angular/navigation) on Angu
 
 ## Quick Tips
 
-The following tips assume you know the basics about Angular routing.
+The following tips assume you already know the basics about Angular routing.
 
 ### Adding a New Page
 
