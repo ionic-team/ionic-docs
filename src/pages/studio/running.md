@@ -14,7 +14,7 @@ Serving, running, and deploying each have pros and cons.
 
 * **Serving** is easy and requires no native project setup, but doesn't work with native functionality
 * **Running** apps can be complex and difficult to debug, but allows the app to be tested on a real device
-* **Deploying** is the best way to make sure the app is ready for production, but doesn't work with livereload
+* **Installing** is the best way to make sure the app is ready for production, but doesn't work with livereload
 
 ## Serving Apps
 
@@ -51,7 +51,7 @@ For information on how to use the Chrome DevTools, see the [Chrome DevTools docu
 ## Running Apps
 
 <blockquote>
-Since running an app will deploy it to an actual native device, some additional setup is required. See the <a href="/docs/studio/native">Native iOS & Android</a> documentation for setup guides.
+Since running an app will install it on an actual native device, some additional setup is required. See the <a href="/docs/studio/native">Native iOS & Android</a> documentation for setup guides.
 </blockquote>
 
 To run an app, click the Play button in the upper right-hand corner of Ionic Studio. Then choose _Run_ from the dropdown.
@@ -66,6 +66,8 @@ With the Live Reload option, Ionic Studio will use the same Dev Server as in _Se
 
 To debug running apps, see the docs for debugging [iOS Apps](/docs/building/ios#debugging-ios-apps) and [Android Apps](/docs/building/android#debugging-android-apps).
 
-## Deploying Apps
+## Installing Apps
 
-To deploy an app, use _Run_ and then switch off the _Live Reload_ option. This will copy app assets onto the target device or emulator, instead of using a Dev Server.
+To install a standalone version of an app, use _Run_ and then switch off the _Live Reload_ option.
+
+This will copy app assets onto the target device or emulator, instead of using a Dev Server, which allows the app to continue working when the device to be disconnected from the computer.

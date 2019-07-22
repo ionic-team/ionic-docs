@@ -10,7 +10,7 @@ A key part of developing Ionic apps is setting up routing and ensuring fluid nav
 🚧 These docs are a work-in-progress. Check back frequently for updates!
 </blockquote>
 
-Unfortunately, Ionic Studio doesn't currently help very much in this area yet. The Ionic Framework docs have a [great primer](/docs/angular/navigation) on Angular routing and navigation.
+The Ionic Framework docs have a [great primer](/docs/angular/navigation) on Angular routing and navigation.
 
 ## Quick Tips
 

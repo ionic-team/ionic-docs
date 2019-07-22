@@ -24,6 +24,6 @@ For this quickstart tutorial, we are going to focus on using Compose to update a
 1. **Delete elements** by clicking on them and pressing the Delete or Backspace key. Delete the `<ion-img>` inside the card that shows `shapes.svg`.
 1. **Insert elements** by clicking on the cube icon in the header and dragging them into the canvas or code. Add a button at the bottom of the card.
 1. **Modify component properties** by clicking on the component and using the properties panel. Change the **Theme Color** of your button to **Secondary**.
-1. **Save your changes** with `⌘S`, or with **File** &raquo; **Save**.
+1. **Save your changes** with <kbd>Ctrl</kbd>+<kbd>S</kbd> (or <kbd>Command</kbd>+<kbd>S</kbd> for macOS), or with **File** &raquo; **Save**.
 
 Compose uses the component code itself as a source of truth for rendering a preview in the canvas. Try making direct changes to the code to see how the canvas reacts.

@@ -78,7 +78,7 @@ When adding a component, Ionic Studio will prompt for the name and a page in whi
 This adds the component as a _import_ in the NgModule of the selected page, which allows it to be used in that page.
 
 <blockquote>
-The same code changes are necessary to use the component in other pages.
+The same code changes are necessary to use the component in other pages. See <a href="/docs/studio/faq#using-a-custom-component-in-additional-pages">this FAQ</a> for details.
 </blockquote>
 
 ## Template Mode
