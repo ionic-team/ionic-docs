@@ -1,6 +1,8 @@
 ---
-title: Welcome to Studio
+
 ---
+
+# Welcome to Studio
 
 Ionic Studio is a powerful app builder that delivers a smooth developer experience for teams building with Ionic.
 
