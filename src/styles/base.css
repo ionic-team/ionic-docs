@@ -73,6 +73,7 @@ figure > * {
 
 figure.device {
   max-width: 400px;
+  margin: 0 auto;
 }
 
 figcaption {
@@ -209,7 +210,8 @@ hr {
   margin: 3rem 0;
 }
 
-code {
+code,
+kbd {
   background-color: var(--code-background);
   border-radius: 4px;
   color: var(--code-color);
@@ -235,6 +237,12 @@ pre code {
   color: inherit;
   padding: 0;
   white-space: inherit;
+}
+
+kbd {
+  border: 1px solid #ccc;
+  white-space: nowrap;
+  margin: 0 1px;
 }
 
 table {

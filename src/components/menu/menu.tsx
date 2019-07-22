@@ -3,6 +3,7 @@ import { Logo } from '../../icons';
 import { FrameworkSelect } from './framework-select';
 import componentsTemplate from './templates/components';
 import cliTemplate from './templates/cli';
+import studioTemplate from './templates/studio';
 import nativeTemplate from './templates/native';
 import appflowTemplate from './templates/appflow';
 import mainTemplate from './templates/main';
@@ -30,6 +31,7 @@ export class DocsMenu {
       <stencil-route-switch scrollTopOffset={0}>
         <stencil-route url="/docs/(components|api)" routeRender={componentsTemplate}/>
         <stencil-route url="/docs/cli" routeRender={cliTemplate}/>
+        <stencil-route url="/docs/studio" routeRender={studioTemplate}/>
         <stencil-route url="/docs/native/:plugin" routeRender={nativeTemplate}/>
         <stencil-route url="/docs/native" routeRender={nativeLandingTemplate}/>
         <stencil-route url="/docs/appflow" routeRender={appflowTemplate}/>
