@@ -14,7 +14,7 @@ Ionic Studio is a powerful app builder that delivers a smooth developer experien
     <p>Coming soon.</p>
   </docs-card>
 
-  <docs-card header="Studio FAQ 🚧" icon="/docs/assets/icons/guide-faq-icon.png">
-    <p>Coming soon.</p>
+  <docs-card header="Studio FAQ" href="/docs/studio/faq" icon="/docs/assets/icons/guide-faq-icon.png">
+    <p>Find answers to common questions about Ionic Studio.</p>
   </docs-card>
 </docs-cards>
