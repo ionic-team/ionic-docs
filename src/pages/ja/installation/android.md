@@ -56,98 +56,45 @@ In `~/.bashrc`, `~/.bash_profile`, or similar shell startup scripts, make the fo
 
 1. Set the `ANDROID_SDK_ROOT` environment variable. This path should be the **Android SDK Location** used in the previous section.
 
-```shell
+   ```shell
    $ export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
    ```
 
-1. Add the Android SDK command-line directories to `PATH`. Each directory corresponds to the category of &lt;a href="https://developer.android.com/studio/command-line/" target="_blank"&gt;command-line tool&lt;/a&gt;.
+1. Add the Android SDK command-line directories to `PATH`. Each directory corresponds to the category of <a href="https://developer.android.com/studio/command-line/" target="_blank">command-line tool</a>.
+    
+    <command-line nobuttons> <command-output># avdmanager, sdkmanager</command-output> <command-prompt>export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin</command-prompt>   
+    <command-output># adb, logcat</command-output> <command-prompt>export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools</command-prompt>   
+    <command-output># emulator</command-output> <command-prompt>export PATH=$PATH:$ANDROID_SDK_ROOT/emulator</command-prompt> </command-line>
 
-   &lt;command-line nobuttons&gt;
-      &lt;command-output&gt;# avdmanager, sdkmanager&lt;/command-output&gt;
-      &lt;command-prompt&gt;export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin&lt;/command-prompt&gt;
-      &lt;br /&gt;
-      &lt;command-output&gt;# adb, logcat&lt;/command-output&gt;
-      &lt;command-prompt&gt;export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools&lt;/command-prompt&gt;
-      &lt;br /&gt;
-      &lt;command-output&gt;# emulator&lt;/command-output&gt;
-      &lt;command-prompt&gt;export PATH=$PATH:$ANDROID_SDK_ROOT/emulator&lt;/command-prompt&gt;
-   &lt;/command-line&gt;
-
-
-
-<blockquote>
-     <p>For <code>apksigner</code> and <code>zipalign</code>, <code>$ANDROID_SDK_ROOT/build-tools<version></code> must also be added to <code>PATH</code>.</p>
-   </blockquote>
-
-
+> For `apksigner` and `zipalign`, `$ANDROID_SDK_ROOT/build-tools<version>` must also be added to `PATH`.
 
 ### Creating an Android Virtual Device
 
-Android Virtual Devices (AVDs) are blueprints that the Android emulator uses to run the Android OS. The following documentation is a quick way to get the Android emulator set up. For more detailed instructions and information, see &lt;a href="https://developer.android.com/studio/run/managing-avds" target="_blank"&gt;the Android documentation&lt;/a&gt;.
+Android Virtual Devices (AVDs) are blueprints that the Android emulator uses to run the Android OS. The following documentation is a quick way to get the Android emulator set up. For more detailed instructions and information, see <a href="https://developer.android.com/studio/run/managing-avds" target="_blank">the Android documentation</a>.
 
 AVDs are managed with the AVD Manager. In the Android Studio welcome screen, click **Configure** &raquo; **AVD Manager**. The AVD Manager can also be opened inside Android projects in the **Tools** &raquo; **AVD Manager** menu.
 
 ![AVD Setup](/docs/assets/img/installation/android-studio-avd-setup.png)
 
-Click **Create Virtual Device** and select a suitable device definition. If unsure, choose **Pixel 2**. Then, select a suitable system image. If unsure, choose **Pie** (API 28) with Google Play services. See &lt;a href="https://en.wikipedia.org/wiki/Android_version_history" target="_blank"&gt;Android version history&lt;/a&gt; for information on Android versions.
+Click **Create Virtual Device** and select a suitable device definition. If unsure, choose **Pixel 2**. Then, select a suitable system image. If unsure, choose **Pie** (API 28) with Google Play services. See <a href="https://en.wikipedia.org/wiki/Android_version_history" target="_blank">Android version history</a> for information on Android versions.
 
 Once the AVD is created, launch the AVD into the Android emulator. Keeping the emulator running is the best way to ensure detection while developing Ionic apps for Android.
 
-
-
-<figure style="width: 300px; margin: 0 auto;">
-    <img alt="Android Emulator Booting" src="/docs/assets/img/installation/android-emulator-booting.png" />
+<figure class="device">
+  <img alt="Android Emulator Booting" src="/docs/assets/img/installation/android-emulator-booting.png" />
 </figure>
-
-
 
 ### Set up an Android Device
 
-Actual Android hardware can also be used for Ionic app development. But first, the device must be set up for development. The following documentation is a quick way to set up Android devices for development. For more detailed instructions and information, see &lt;a href="https://developer.android.com/studio/run/device" target="_blank"&gt;the Android documentation&lt;/a&gt;.
+Actual Android hardware can also be used for Ionic app development. But first, the device must be set up for development. The following documentation is a quick way to set up Android devices for development. For more detailed instructions and information, see <a href="https://developer.android.com/studio/run/device" target="_blank">the Android documentation</a>.
 
-1. Enable USB debugging on the device. Open **Settings**, navigate to **Developer options**, and enable **USB debugging**. The **Developer options** menu may need to be enabled first. See &lt;a href="https://developer.android.com/studio/debug/dev-options" target="_blank"&gt;the Android documentation&lt;/a&gt; for instructions.
-1. Ensure the device has permission to connect to the computer. For macOS, no additional setup is required. For Windows, &lt;a href="https://developer.android.com/studio/run/oem-usb" target="_blank"&gt;install the OEM USB drivers&lt;/a&gt;.
+1. Enable USB debugging on the device. Open **Settings**, navigate to **Developer options**, and enable **USB debugging**. The **Developer options** menu may need to be enabled first. See <a href="https://developer.android.com/studio/debug/dev-options" target="_blank">the Android documentation</a> for instructions.
+2. Ensure the device has permission to connect to the computer. For macOS, no additional setup is required. For Windows, <a href="https://developer.android.com/studio/run/oem-usb" target="_blank">install the OEM USB drivers</a>.
 
 Verify the connection works by connecting the device to the computer with a USB cable and using the following command:
 
 ```shell
 $ adb devices
-``` and zipalign, $ANDROID_SDK_ROOT/build-tools<version> must also be added to PATH.</p>
-   </blockquote>
-
-
-
-### Creating an Android Virtual Device
-
-Android Virtual Devices (AVDs) are blueprints that the Android emulator uses to run the Android OS. The following documentation is a quick way to get the Android emulator set up. For more detailed instructions and information, see &lt;a href="https://developer.android.com/studio/run/managing-avds" target="_blank"&gt;the Android documentation&lt;/a&gt;.
-
-AVDs are managed with the AVD Manager. In the Android Studio welcome screen, click **Configure** &raquo; **AVD Manager**. The AVD Manager can also be opened inside Android projects in the **Tools** &raquo; **AVD Manager** menu.
-
-![AVD Setup](/docs/assets/img/installation/android-studio-avd-setup.png)
-
-Click **Create Virtual Device** and select a suitable device definition. If unsure, choose **Pixel 2**. Then, select a suitable system image. If unsure, choose **Pie** (API 28) with Google Play services. See &lt;a href="https://en.wikipedia.org/wiki/Android_version_history" target="_blank"&gt;Android version history&lt;/a&gt; for information on Android versions.
-
-Once the AVD is created, launch the AVD into the Android emulator. Keeping the emulator running is the best way to ensure detection while developing Ionic apps for Android.
-
-
-
-<figure style="width: 300px; margin: 0 auto;">
-    <img alt="Android Emulator Booting" src="/docs/assets/img/installation/android-emulator-booting.png" />
-</figure>
-
-
-
-### Set up an Android Device
-
-Actual Android hardware can also be used for Ionic app development. But first, the device must be set up for development. The following documentation is a quick way to set up Android devices for development. For more detailed instructions and information, see &lt;a href="https://developer.android.com/studio/run/device" target="_blank"&gt;the Android documentation&lt;/a&gt;.
-
-1. Enable USB debugging on the device. Open **Settings**, navigate to **Developer options**, and enable **USB debugging**. The **Developer options** menu may need to be enabled first. See &lt;a href="https://developer.android.com/studio/debug/dev-options" target="_blank"&gt;the Android documentation&lt;/a&gt; for instructions.
-1. Ensure the device has permission to connect to the computer. For macOS, no additional setup is required. For Windows, &lt;a href="https://developer.android.com/studio/run/oem-usb" target="_blank"&gt;install the OEM USB drivers&lt;/a&gt;.
-
-Verify the connection works by connecting the device to the computer with a USB cable and using the following command:
-
-```shell
-$ adb devices
-</code>
+```
 
 The device should be listed. See the full <a href="https://developer.android.com/studio/command-line/adb" target="_blank"><code>adb</code> documentation</a> for troubleshooting and detailed information.
