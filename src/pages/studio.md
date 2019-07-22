@@ -7,9 +7,12 @@
 Ionic Studio is a powerful app builder that delivers a smooth developer experience for teams building with Ionic.
 
 <docs-cards class="static-width">
+  <docs-card header="Get Studio" href="https://ionicframework.com/studio" icon="/docs/assets/icons/guide-installation-icon.png">
+    <p>Sign up for Studio and start building today.</p>
+  </docs-card>
+
   <docs-card header="Quickstart" href="/docs/studio/guides/quickstart" img="/docs/assets/icons/guide-quickstart.png">
-    <p>Get started by creating a new app and diving head-first into the suite of
-    features offered by Ionic Studio.</p>
+    <p>Get started by creating a new app and diving head-first into the suite of features offered by Ionic Studio.</p>
   </docs-card>
 
   <docs-card header="News & Updates 🚧" icon="/docs/assets/icons/guide-news-icon.png">
