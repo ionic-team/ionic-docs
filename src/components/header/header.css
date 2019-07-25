@@ -90,12 +90,6 @@ docs-header docs-menu-toggle {
   border-color: var(--line-rule-color);
 }
 
-@media (hover: hover) {
-  .SectionNav .Dropdown-button:hover {
-    border-color: var(--line-rule-color);
-  }
-}
-
 .SectionNav .Dropdown-panel {
   min-width: 180px;
 }
