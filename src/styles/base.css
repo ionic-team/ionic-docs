@@ -58,6 +58,28 @@ body {
   height: 100%;
 }
 
+ion-grid {
+  margin: 1em 0;
+}
+
+figure {
+  margin: 0;
+}
+
+figure > * {
+  display: block;
+  margin: 0 auto;
+}
+
+figure.device {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+figcaption {
+  text-align: center;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -188,7 +210,8 @@ hr {
   margin: 3rem 0;
 }
 
-code {
+code,
+kbd {
   background-color: var(--code-background);
   border-radius: 4px;
   color: var(--code-color);
@@ -214,6 +237,12 @@ pre code {
   color: inherit;
   padding: 0;
   white-space: inherit;
+}
+
+kbd {
+  border: 1px solid #ccc;
+  white-space: nowrap;
+  margin: 0 1px;
 }
 
 table {

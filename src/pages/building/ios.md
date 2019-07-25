@@ -105,7 +105,11 @@ To boot up a live-reload server, build, and deploy the app, run the following:
 $ ionic cordova run ios -l --address=0.0.0.0
 ```
 
-## Using Safari Web Inspector
+## Debugging iOS Apps
+
+Once an app is running on an iOS device or simulator, it can be debugged in Safari.
+
+### Using Safari Web Inspector
 
 Safari has Web Inspector support for iOS simulators and devices. Open the **Develop** menu and select the simulator or device, then select the Ionic App to open Web Inspector. 
 
@@ -113,9 +117,9 @@ Safari has Web Inspector support for iOS simulators and devices. Open the **Deve
 
 ![Safari Web Inspector](/docs/assets/img/running/ios-safari-web-inspector-timelines.png)
 
-## Viewing Native Logs
+### Viewing Native Logs
 
-Native logs can be found in Xcode in the **Console**.
+If running with Xcode, native logs can be found in in the Xcode **Console**.
 
 > If the **Console** is hidden, enable it in **View** &raquo; **Debug Area** &raquo; **Activate Console**.
 

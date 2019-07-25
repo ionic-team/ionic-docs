@@ -3,7 +3,7 @@ import { slugify } from '../../src/utils';
 import fs from 'fs-extra';
 import { createDocument } from '@stencil/core/mock-doc';
 import Listr from 'listr';
-import Static, { toPage as toStaticPage } from './page-types/static';
+import Static, { ToStaticPageOptions, toPage as toStaticPage } from './page-types/static';
 import API from './page-types/api';
 import CLI from './page-types/cli';
 import Native from './page-types/native';
@@ -45,8 +45,8 @@ export async function buildPages(getter: PageGetter) {
   );
 }
 
-export async function buildStaticPage(path: string) {
-  const page = await toStaticPage(path);
+export async function buildStaticPage(path: string, options: ToStaticPageOptions = {}) {
+  const page = await toStaticPage(path, options);
   return writePage(updatePageHtmlToHypertext(patchBody(page)));
 }
 

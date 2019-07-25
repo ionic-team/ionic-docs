@@ -31,6 +31,7 @@ export namespace Components {
   interface ColorAccordion {}
   interface ColorGenCssText {
     'cssText': string;
+    'header': boolean;
   }
   interface ColorGenPreview {
     'cssText': string;
@@ -41,6 +42,7 @@ export namespace Components {
   }
   interface ColorGenVariableSelector {
     'editable': boolean;
+    'isNew': boolean;
     'isParentOpen': boolean;
     'name': string;
     'property': string;
@@ -141,6 +143,7 @@ export namespace Components {
     'mobile': boolean;
   }
   interface LayeredColorsSelect {}
+  interface NewColorGenerator {}
   interface SmsForm {}
   interface SteppedColorGenerator {}
   interface WistiaVideo {
@@ -373,6 +376,12 @@ declare global {
     new (): HTMLLayeredColorsSelectElement;
   };
 
+  interface HTMLNewColorGeneratorElement extends Components.NewColorGenerator, HTMLStencilElement {}
+  var HTMLNewColorGeneratorElement: {
+    prototype: HTMLNewColorGeneratorElement;
+    new (): HTMLNewColorGeneratorElement;
+  };
+
   interface HTMLSmsFormElement extends Components.SmsForm, HTMLStencilElement {}
   var HTMLSmsFormElement: {
     prototype: HTMLSmsFormElement;
@@ -428,6 +437,7 @@ declare global {
     'hubspot-form': HTMLHubspotFormElement;
     'ionic-search': HTMLIonicSearchElement;
     'layered-colors-select': HTMLLayeredColorsSelectElement;
+    'new-color-generator': HTMLNewColorGeneratorElement;
     'sms-form': HTMLSmsFormElement;
     'stepped-color-generator': HTMLSteppedColorGeneratorElement;
     'wistia-video': HTMLWistiaVideoElement;
@@ -443,6 +453,7 @@ declare namespace LocalJSX {
   interface ColorAccordion extends JSXBase.HTMLAttributes<HTMLColorAccordionElement> {}
   interface ColorGenCssText extends JSXBase.HTMLAttributes<HTMLColorGenCssTextElement> {
     'cssText'?: string;
+    'header'?: boolean;
     'onCssTextChange'?: (event: CustomEvent<any>) => void;
   }
   interface ColorGenPreview extends JSXBase.HTMLAttributes<HTMLColorGenPreviewElement> {
@@ -454,9 +465,11 @@ declare namespace LocalJSX {
   }
   interface ColorGenVariableSelector extends JSXBase.HTMLAttributes<HTMLColorGenVariableSelectorElement> {
     'editable'?: boolean;
+    'isNew'?: boolean;
     'isParentOpen'?: boolean;
     'name'?: string;
     'onColorChange'?: (event: CustomEvent<any>) => void;
+    'onNameChange'?: (event: CustomEvent<any>) => void;
     'property'?: string;
     'value'?: string;
   }
@@ -555,6 +568,7 @@ declare namespace LocalJSX {
     'mobile'?: boolean;
   }
   interface LayeredColorsSelect extends JSXBase.HTMLAttributes<HTMLLayeredColorsSelectElement> {}
+  interface NewColorGenerator extends JSXBase.HTMLAttributes<HTMLNewColorGeneratorElement> {}
   interface SmsForm extends JSXBase.HTMLAttributes<HTMLSmsFormElement> {}
   interface SteppedColorGenerator extends JSXBase.HTMLAttributes<HTMLSteppedColorGeneratorElement> {}
   interface WistiaVideo extends JSXBase.HTMLAttributes<HTMLWistiaVideoElement> {
@@ -599,6 +613,7 @@ declare namespace LocalJSX {
     'hubspot-form': HubspotForm;
     'ionic-search': IonicSearch;
     'layered-colors-select': LayeredColorsSelect;
+    'new-color-generator': NewColorGenerator;
     'sms-form': SmsForm;
     'stepped-color-generator': SteppedColorGenerator;
     'wistia-video': WistiaVideo;

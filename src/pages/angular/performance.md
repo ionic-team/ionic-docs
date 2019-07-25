@@ -5,13 +5,14 @@ previousUrl: '/docs/angular/navigation'
 
 # Angular Performance
 
-Coming soon.
-
-## More From Ionic
+## From the Ionic Team
 
 [How to Lazy Load in Ionic Angular](https://ionicframework.com/blog/how-to-lazy-load-in-ionic-angular/)
 
 [Improved Perceived Performance with Skeleton Screens](https://ionicframework.com/blog/improved-perceived-performance-with-skeleton-screens/)
+
+## From the Angular Team
+[Build performant and progressive Angular apps](https://web.dev/angular) - web.dev
 
 ## From the Community
 

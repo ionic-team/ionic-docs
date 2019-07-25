@@ -79,7 +79,7 @@ docs-header docs-menu-toggle {
 }
 
 .SectionNav .Dropdown-button {
-  border: solid 1px transparent;
+  border: solid 1px #DEE3EA;
   border-radius: 6px;
   color: var(--text-color--dark);
   padding: 10px;

@@ -12,7 +12,7 @@ watcher.on('change', handleChange);
 async function handleChange(path) {
   try {
     spinner.text = `Rebuilding ${path}`;
-    await buildStaticPage(path);
+    await buildStaticPage(path, { prod: false });
     spinner.succeed(`Rebuilt ${path}`);
     spinner.start('Watching pages');
   } catch (err) {
