@@ -1,7 +1,7 @@
 ---
 title: Identity Vault
 template: enterprise-plugin
-version: 3.4.2
+version: 3.4.4
 minor: 3.4.X
 otherVersions:
   - 2.0.X
@@ -1770,6 +1770,18 @@ The possible values returned by [getBiometricType](#identityvault.getbiometricty
 * * *
 
 ## Change Log
+
+### \[3.4.4\] (2019-07-25)
+
+### Bug Fixes
+
+* **Android:** Fixes an issue on Android where getBiometricType would return none if Biometrics was not enabled even though the device had biometric hardware. 
+
+### \[3.4.3\] (2019-06-14)
+
+### Bug Fixes
+
+* **Android:** Fixed issue where when hideScreenInBackground feature was enabled screenshots would be disabled. 
 
 ### \[3.4.2\] (2019-06-14)
 
