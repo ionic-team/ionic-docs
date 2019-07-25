@@ -19,9 +19,10 @@
     "watch-pages": "ts-node -P scripts/tsconfig.json scripts/watch-pages"
   },
   "dependencies": {
-    "@ionic/docs": "^4.6.2",
+    "@ionic/core": "^4.7.0",
+    "@ionic/docs": "^4.7.0",
     "@sentry/node": "^5.5.0",
-    "@stencil/router": "^1.0.0",
+    "@stencil/router": "^1.0.1",
     "compression": "^1.7.4",
     "express": "^4.16.4",
     "helmet": "^3.16.0",
@@ -29,7 +30,7 @@
     "throng": "^4.0.0"
   },
   "devDependencies": {
-    "@stencil/core": "^1.2.0-1",
+    "@stencil/core": "^1.2.1",
     "@types/prismjs": "^1.9.1",
     "chokidar": "^3.0.2",
     "fast-glob": "^3.0.4",
