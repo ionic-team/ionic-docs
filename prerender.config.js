@@ -1,5 +1,8 @@
 
 module.exports = {
+  canonicalUrl() {
+    return null;
+  },
 
   filterUrl(url) {
     if (url.pathname.startsWith('/docs/v3')) {
