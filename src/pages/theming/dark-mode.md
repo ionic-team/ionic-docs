@@ -67,7 +67,7 @@ In this case, the color steps are generated based on the background color and te
 
 ## Class Fallback
 
-Currently, the `prefers-color-scheme` media query is only supported in desktop Safari and mobile Firebox, so users will not able to benefit from having the dark mode applied automatically in other browsers. However, the dark mode can still be applied by styling a CSS selector and applying the class to our document body
+Currently, the `prefers-color-scheme` media query has [limited browser support](https://caniuse.com/#feat=prefers-color-scheme), so users will not be able to benefit from having the dark mode applied using this media query in certain browsers. However, the dark mode can still be applied by styling a CSS selector and applying the class to our document body
 
 ```css
 @media (prefers-color-scheme: dark) {...}
