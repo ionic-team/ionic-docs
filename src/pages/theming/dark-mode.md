@@ -7,7 +7,7 @@ contributors:
 
 # Dark Mode
 
-Dark Mode is a specific theme that developers can add to their app in two ways. There's the new `prefers-color-scheme` media query or the fallback method of targeting a class. To create a dark mode for an app, all that's needed are a few changes to different CSS variables.
+Dark mode is a specific theme that developers can add to their app in two ways. Developers can use the new `prefers-color-scheme` media query or use the fallback method of targeting a class. To add a dark mode version of an app, all that's needed are a few custom CSS variables.
 
 ## Using Media Queries
 
