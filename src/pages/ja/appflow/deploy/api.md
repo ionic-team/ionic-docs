@@ -397,7 +397,7 @@ async performManualUpdate() {
 ```typescript
 async performAutomaticUpdate() {
   try {
-    const currentVersion = Deploy.getCurrentVersion();
+    const currentVersion = await Deploy.getCurrentVersion();
     const resp = await Deploy.sync({updateMethod: 'auto'}, percentDone => {
       console.log(`Update is ${percentDone}% done!`);
     });
