@@ -65,7 +65,7 @@ export class DocsPage {
     const metaEls = {
       title: document.head.querySelectorAll('.meta-title'),
       description: document.head.querySelectorAll('.meta-description'),
-      url: document.head.querySelectorAll('.meta-url'),
+      url: document.head.querySelectorAll('.meta-url, link[rel="canonical"]'),
       image: document.head.querySelectorAll('.meta-image')
     };
 
