@@ -13,7 +13,7 @@ Dark Mode is a specific theme that developers can add to their app in two ways. 
 
 The first method available is the CSS media query for the user's preferred color scheme. This media query will hook into the system setting of the user's device and apply the changes if a dark mode is enabled.
 
-The fist values that will need to change are the text color and background color. As the name "dark mode" implies, the background of an app should be dark, with lighter text.
+The first values that need to change are the text color and background color. As the name "dark mode" implies, the background color of an app should be dark with a lighter text color.
 
 ```css
 @media (prefers-color-scheme: dark) {
