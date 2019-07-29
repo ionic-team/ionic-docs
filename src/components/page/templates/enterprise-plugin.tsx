@@ -6,12 +6,14 @@ export default (props) => {
   const headings = [...page.headings];
 
   let pluginId = page.path.split('/')[3];
+  let variables = '';
   if (pluginId === 'auth-connect') {
     pluginId = 'auth';
+    variables = '--variable AUTH_URL_SCHEME =mycustomscheme';
   }
   const otherVersions = page.otherVersions || [];
 
-  const installation = renderInstallation(pluginId);
+  const installation = renderInstallation(pluginId, variables);
 
   if (installation) {
     headings.unshift({
@@ -42,7 +44,7 @@ export default (props) => {
   );
 };
 
-const renderInstallation = (pluginId: string) => {
+const renderInstallation = (pluginId: string, variables?: string) => {
   if (!pluginId) {
     return null;
   }
@@ -67,7 +69,7 @@ const renderInstallation = (pluginId: string) => {
       </p>
       <command-line>
         <command-prompt>{`ionic enterprise register --key=YOURPRODUCTKEY`}</command-prompt>
-        <command-prompt>{`ionic cordova plugin add @ionic-enterprise/${pluginId}`}</command-prompt>
+        <command-prompt>{`ionic cordova plugin add @ionic-enterprise/${pluginId} ${variables}`}</command-prompt>
       </command-line>
     </section>
   );
