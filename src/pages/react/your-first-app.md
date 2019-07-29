@@ -55,7 +55,8 @@ If we open `App.tsx`, we should see the following.
 ```typescript
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { IonPage, IonRouterOutlet, IonReactRouter } from '@ionic/react';
+import { IonPage, IonRouterOutlet } from '@ionic/react';
+import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 
 /* Core CSS required for Ionic components to work properly */
@@ -63,14 +64,14 @@ import '@ionic/core/css/core.css';
 
 const App: React.FunctionComponent = () => (
   <IonApp>
-    <IonReactRouter>
+    <IonReactRouter.Router>
       <IonPage>
         <IonRouterOutlet>
           <Route path="/home" component={Home} exact={true} />
           <Route exact path="/" render={() => <Redirect to="/home" />} />
         </IonRouterOutlet>
       </IonPage>
-    </IonReactRouter>
+    </IonReactRouter.Router>
   </IonApp>
 );
 ```
@@ -80,7 +81,8 @@ At first glance it may look like there's a lot going on, so let's break it down,
 ```typescript
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { IonPage, IonRouterOutlet, IonReactRouter } from '@ionic/react';
+import { IonPage, IonRouterOutlet } from '@ionic/react';
+import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 ```
 
@@ -90,7 +92,7 @@ The next import is from `react-router-dom`. We're importing Route, which is how 
 
 Following ReactRouter, we next have our first imports for Ionic. To use a component in React, you must first import it. So for Ionic, this means anytime we want to use a Button or a Card, it must be added to our imports. In the case of our App component, we're only using `IonPage`, `IonRouterOutlet`, and `IonReactRouter`.
 
-`IonReactRouter` is a component that wraps ReactRouter’s BrowserRouter component. It more or less behaves the same as BrowserRouter with a few differences. We have deeper guide that goes over these differences in our [React Navigation Docs](/docs/react/navigation).
+`IonReactRouter.Router` is a component that wraps ReactRouter’s BrowserRouter component. It more or less behaves the same as BrowserRouter with a few differences. We have deeper guide that goes over these differences in our [React Navigation Docs](/docs/react/navigation).
 
 The last important import is the `Home` component import. This is a component that we will be able to navigate to in our app. We'll look at the navigation part a bit later.
 
@@ -101,14 +103,14 @@ After reviewing all of the imports, we now get to our first look at a React Comp
 ```typescript
 const App: React.FunctionComponent = () => (
   <IonApp>
-    <IonReactRouter>
+    <IonReactRouter.Router>
       <IonPage>
         <IonRouterOutlet>
           <Route path="/home" component={Home} exact={true} />
           <Route exact path="/" render={() => <Redirect to="/home" />} />
         </IonRouterOutlet>
       </IonPage>
-    </IonReactRouter>
+    </IonReactRouter.Router>
   </IonApp>
 );
 ```
@@ -265,7 +267,7 @@ import NewItem from './pages/NewItem';
 ...
 export default function App() {
   return (
-    <IonReactRouter>
+    <IonReactRouter.Router>
       <Route exact path="/" render={() => <Redirect to="/home" />} />
       <IonPage>
         <IonRouterOutlet>
@@ -275,7 +277,7 @@ export default function App() {
 
         </IonRouterOutlet>
       </IonPage>
-    </IonReactRouter>
+    </IonReactRouter.Router>
   );
 }```
 ````

@@ -9,7 +9,7 @@ nextUrl: '/docs/react/performance'
 
 This guide covers how routing works in an app built with Ionic and React.
 
-Ionic React uses the popular [React Router](https://github.com/ReactTraining/react-router) library under the hood. With Ionic and React Router, you can create multi-page apps with rich page transitions.
+`IonicReactRouter` uses the popular [React Router](https://github.com/ReactTraining/react-router) library under the hood. With Ionic and React Router, you can create multi-page apps with rich page transitions.
 
 Everything you know about routing using React Router carries over into Ionic React. Let's take a look at the basics of an Ionic React app and how routing works with it.
 
@@ -22,12 +22,12 @@ Here is a sample `App` component that defines a single route to the "/dashboard"
 const App: React.FC = () => {
   return (
     <IonApp>
-      <IonReactRouter>
+      <IonReactRouter.Router>
         <IonPage>
           <Route path="/dashboard" component={DashboardPage} />
           <Redirect exact from="/" to="/dashboard" />
         </IonPage>
-      </IonReactRouter>
+      </IonReactRouter.Router>
     </IonApp>
   );
 };
@@ -51,7 +51,7 @@ You can also programmatically redirect from a Route's render method based on a c
 
 ## IonReactRouter
 
-The `IonReactRouter` component wraps the traditional [`BrowserRouter`](https://reacttraining.com/react-router/web/api/BrowserRouter) component from React Router, and sets the app up for routing. Therefore, use `IonReactRouter` in place of `BrowserRouter`. You can pass in any props to `IonReactRouter` and they will be passed down to the underlying `BrowserRouter`.
+The `IonReactRouter.Router` component wraps the traditional [`BrowserRouter`](https://reacttraining.com/react-router/web/api/BrowserRouter) component from React Router, and sets the app up for routing. Therefore, use `IonReactRouter.Router` in place of `BrowserRouter`. You can pass in any props to `IonReactRouter.Router` and they will be passed down to the underlying `BrowserRouter`.
 
 ## Nested Routes
 
