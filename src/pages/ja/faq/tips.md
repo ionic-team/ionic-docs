@@ -13,13 +13,13 @@ contributors:
 
 `EACCES` permission errors can occur when packages are installed globally. If this is the case, npm may need to be set up to operate without elevated permissions.
 
-> Using `sudo` with npm is **not recommended**, because it lead to further complications.
+> Using `sudo` with npm is **not recommended** because it can lead to further complications.
 
 This guide offers two options for resolving permission issues. See the [npm docs](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally) for full documentation and additional options.
 
 ### Option 1
 
-The best way to avoid permission issues is to reinstall npm using a node version manager.
+The best way to avoid permission issues is to reinstall NodeJS and npm using a node version manager.
 
 This guide will document [nvm](https://github.com/nvm-sh/nvm) installation and usage. See the [nvm docs](https://github.com/nvm-sh/nvm#installation-and-update) for full documentation. See the [npm docs](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm#using-a-node-version-manager-to-install-nodejs-and-npm) for additional options and instructions for Windows.
 
