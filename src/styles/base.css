@@ -166,6 +166,13 @@ h3 + h4 {
   margin-top: -1em;
 }
 
+h2 + p > small,
+h3 + p > small,
+h4 + p > small {
+  display: block;
+  margin-top: -2em;
+}
+
 blockquote {
   background: rgba(255, 250, 237, 0.8);
   border-left: 4px solid #ffcc5f;

@@ -31,6 +31,8 @@ $ node --version
 $ npm --version
 ```
 
+> Permission errors are common on macOS when installing global packages with `npm`. If you get an `EACCES` error, see [Resolving Permission Errors](/docs/faq/tips#resolving-permission-errors).
+
 ## Git
 
 Although not required, the version control system [Git](/docs/faq/glossary#git) is highly recommended.
