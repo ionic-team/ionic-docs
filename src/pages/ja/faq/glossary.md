@@ -380,7 +380,7 @@ nextUrl: '/docs/faq/build'
     The <a href="https://www.w3.org/" target="_blank">World Wide Web Consortium</a> (W3C) is the standards organization for the Web. Together, industry leaders and the public work together to develop <a href="https://www.w3.org/standards/" target="_blank">web standards</a>, which are a set of protocols, specifications, and technologies that define the Web Platform.
   </p></section> <section id="xcode"> 
   
-  <a href="#protractor">
+  <a href="#xcode">
   
   <h3>
     Xcode
