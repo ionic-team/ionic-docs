@@ -17,7 +17,7 @@ Everything you know about routing using React Router carries over into Ionic Rea
 
 Here is a sample `App` component that defines a single route to the "/dashboard" URL. When you visit "/dashboard", the route renders the `DashboardPage` component.
 
-`App.tsx`:
+**App.tsx**
 
 ```tsx
 const App: React.FC = () => {
@@ -58,7 +58,7 @@ The `IonReactRouter` component wraps the traditional [`BrowserRouter`](https://r
 
 Inside the Dashboard page, we define more routes related to this specific section of the app:
 
-`DashboardPage.tsx`:
+**DashboardPage.tsx**
 
 ```tsx
 const DashboardPage: React.FC = () => {
@@ -108,7 +108,7 @@ An `IonRouterOutlet` should also not be a descendant from another `IonRouterOutl
 
 There are several options available when routing to different views in an Ionic React app. Here, the `UsersListPage` uses `IonItem`'s `href` prop to specify the route to go to when the item is tapped/clicked:
 
-`UsersListPage.tsx`:
+**UsersListPage.tsx**
 
 ```tsx
 const UsersListPage: React.FC = () => {
@@ -144,7 +144,7 @@ We recommend using one of the above methods whenever possible for routing. The a
 
 A programmatic option for navigation is using the [`history`](https://reacttraining.com/react-router/web/api/history) prop that React Router provides to the components it renders via routes.
 
-```html
+```jsx
 <IonButton
   onClick={e => {
     e.preventDefault();
@@ -160,7 +160,7 @@ A programmatic option for navigation is using the [`history`](https://reacttrain
 
 The second route defined in the Dashboard Page has a URL parameter defined (the ":id" portion in the path). URL parameters are dynamic portions of the `path`, and when the user navigates to a URL such as "/dashboard/users/1", the "1" is saved to a parameter named "id", which can be accessed in the component the route renders. Let's see how that's done.
 
-`UserDetailPage.tsx`:
+**UserDetailPage.tsx**
 
 ```tsx
 interface UserDetailPageProps extends RouteComponentProps<{
