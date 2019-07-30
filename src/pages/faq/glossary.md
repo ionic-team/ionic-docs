@@ -202,7 +202,7 @@ nextUrl: '/docs/faq/build'
   </section>
 
   <section id="xcode">
-    <a href="#protractor"><h3>Xcode</h3></a>
+    <a href="#xcode"><h3>Xcode</h3></a>
     <p>
       <a href="https://developer.apple.com/xcode/" target="_blank">Xcode</a> is an Apple IDE (integrated
       development environment) for software development on Apple operating systems
