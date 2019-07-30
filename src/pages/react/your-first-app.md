@@ -64,14 +64,14 @@ import '@ionic/core/css/core.css';
 
 const App: React.FunctionComponent = () => (
   <IonApp>
-    <IonReactRouter.Router>
+    <IonReactRouter>
       <IonPage>
         <IonRouterOutlet>
           <Route path="/home" component={Home} exact={true} />
           <Route exact path="/" render={() => <Redirect to="/home" />} />
         </IonRouterOutlet>
       </IonPage>
-    </IonReactRouter.Router>
+    </IonReactRouter>
   </IonApp>
 );
 ```
@@ -92,7 +92,7 @@ The next import is from `react-router-dom`. We're importing Route, which is how 
 
 Following ReactRouter, we next have our first imports for Ionic. To use a component in React, you must first import it. So for Ionic, this means anytime we want to use a Button or a Card, it must be added to our imports. In the case of our App component, we're only using `IonPage`, `IonRouterOutlet`, and `IonReactRouter`.
 
-`IonReactRouter.Router` is a component that wraps ReactRouter’s BrowserRouter component. It more or less behaves the same as BrowserRouter with a few differences. We have deeper guide that goes over these differences in our [React Navigation Docs](/docs/react/navigation).
+`IonReactRouter` is a component that wraps ReactRouter’s BrowserRouter component. It more or less behaves the same as BrowserRouter with a few differences. We have deeper guide that goes over these differences in our [React Navigation Docs](/docs/react/navigation).
 
 The last important import is the `Home` component import. This is a component that we will be able to navigate to in our app. We'll look at the navigation part a bit later.
 
@@ -103,14 +103,14 @@ After reviewing all of the imports, we now get to our first look at a React Comp
 ```typescript
 const App: React.FunctionComponent = () => (
   <IonApp>
-    <IonReactRouter.Router>
+    <IonReactRouter>
       <IonPage>
         <IonRouterOutlet>
           <Route path="/home" component={Home} exact={true} />
           <Route exact path="/" render={() => <Redirect to="/home" />} />
         </IonRouterOutlet>
       </IonPage>
-    </IonReactRouter.Router>
+    </IonReactRouter>
   </IonApp>
 );
 ```
@@ -267,7 +267,7 @@ import NewItem from './pages/NewItem';
 ...
 export default function App() {
   return (
-    <IonReactRouter.Router>
+    <IonReactRouter>
       <Route exact path="/" render={() => <Redirect to="/home" />} />
       <IonPage>
         <IonRouterOutlet>
@@ -277,7 +277,7 @@ export default function App() {
 
         </IonRouterOutlet>
       </IonPage>
-    </IonReactRouter.Router>
+    </IonReactRouter>
   );
 }```
 ````

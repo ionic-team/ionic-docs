@@ -22,12 +22,12 @@ Here is a sample `App` component that defines a single route to the "/dashboard"
 const App: React.FC = () => {
   return (
     <IonApp>
-      <IonReactRouter.Router>
+      <IonReactRouter>
         <IonPage>
           <Route path="/dashboard" component={DashboardPage} />
           <Redirect exact from="/" to="/dashboard" />
         </IonPage>
-      </IonReactRouter.Router>
+      </IonReactRouter>
     </IonApp>
   );
 };
@@ -51,7 +51,7 @@ You can also programmatically redirect from a Route's render method based on a c
 
 ## IonReactRouter
 
-The `IonReactRouter.Router` component wraps the traditional [`BrowserRouter`](https://reacttraining.com/react-router/web/api/BrowserRouter) component from React Router, and sets the app up for routing. Therefore, use `IonReactRouter.Router` in place of `BrowserRouter`. You can pass in any props to `IonReactRouter.Router` and they will be passed down to the underlying `BrowserRouter`.
+The `IonReactRouter` component wraps the traditional [`BrowserRouter`](https://reacttraining.com/react-router/web/api/BrowserRouter) component from React Router, and sets the app up for routing. Therefore, use `IonReactRouter` in place of `BrowserRouter`. You can pass in any props to `IonReactRouter` and they will be passed down to the underlying `BrowserRouter`.
 
 ## Nested Routes
 
