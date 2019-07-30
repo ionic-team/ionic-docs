@@ -36,6 +36,8 @@ First, ensure you are running the latest release of the Ionic CLI. Run `npm inst
 
 Once the latest CLI is installed, run `ionic serve --devapp` in the app of your choice on your computer and let it finish building. Next, open your iOS or Android device and connect to _the same network_ as your computer (through Wi-Fi). Open the DevApp, and you should see your local app show up in the list.
 
+> Note that currently you might need to run `ionic cordova prepare` with th default project before running `ionic serve --devapp` in order to copy the cordova assets to prepare the native build for the mobile platform.
+
 ## CORS
 
 If your web requests are failing, you may be running into issues with
