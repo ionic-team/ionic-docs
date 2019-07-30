@@ -14,7 +14,7 @@ To get started with Ionic Framework, the only requirement is a [Node & npm](#nod
 Of course, a code editor is also required:
 
 <ul class="intro">
-  <li><a href="https://ionicframework.com/studio">Ionic Studio</a>: the fastest and easiest way to build Ionic apps</li>
+  <li><a href="https://ionicframework.com/studio?utm_source=docs&utm_medium=website&utm_campaign=studio%20launch">Ionic Studio</a>: the fastest and easiest way to build Ionic apps</li>
   <li><a href="https://code.visualstudio.com/">VS Code</a>: a popular and free text editor made by Microsoft</li>
 </ul>
 
@@ -30,6 +30,8 @@ To verify the installation, open a new terminal window and run:
 $ node --version
 $ npm --version
 ```
+
+> Permission errors are common on macOS when installing global packages with `npm`. If you get an `EACCES` error, see [Resolving Permission Errors](/docs/faq/tips#resolving-permission-errors).
 
 ## Git
 
