@@ -29,11 +29,10 @@ It is recommended that packages get updated through the CLI since npm will now r
 
 There are a lots of editors to choose from. Here are some of our favorites:
 
-- [VSCode](https://code.visualstudio.com)
-- [Atom](https://atom.io)
-- [Webstorm](https://www.jetbrains.com/webstorm/)
-
-VSCode is highly recommended as it includes many features and plugins out-of-the-box.
+- [Ionic Studio](https://ionicframework.com/studio?utm_source=docs&utm_medium=website&utm_campaign=studio%20launch): the fastest and easiest way to build Ionic apps
+- [VS Code](https://code.visualstudio.com): a popular and free text editor made by Microsoft
+- [Atom](https://atom.io): a hackable text editor made by GitHub
+- [WebStorm](https://www.jetbrains.com/webstorm/): a powerful non-free editor by JetBrains
 
 ## Using a Debugger
 
@@ -111,7 +110,7 @@ To inspect an emulator or physical device, go to `chrome://inspect/#devices` in 
 
 ## Remote Debugging - VS Code Plugin
 
-VSCode has a dedicated plugin for debugging apps built with Cordova.
+VS Code has a dedicated plugin for debugging apps built with Cordova.
 
-[The plugin](https://marketplace.visualstudio.com/items?itemName=vsmobile.cordova-tools) creates a bridge between the device and the VSCode Devtools and allows debugging to be done right in the editor.
+[The plugin](https://marketplace.visualstudio.com/items?itemName=vsmobile.cordova-tools) creates a bridge between the device and the VS Code Devtools and allows debugging to be done right in the editor.
 
