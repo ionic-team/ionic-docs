@@ -91,7 +91,7 @@ module.exports = function(ctx) {
 
 ## Multi-app Projects
 
-<small>_Available in CLI 4.3.0+_</small>
+<small><em>Available in CLI 4.3.0+</em></small>
 
 The Ionic CLI supports a multi-app configuration setup, which involves multiple Ionic apps and shared code within a single repository, or [monorepo](/docs/faq/glossary#monorepo).
 
@@ -102,11 +102,11 @@ Multi-app projects are a new feature in the Ionic CLI. The setup is still partly
 1. Create a directory and initialize a monorepo (see [Project Structure](#project-structure) for full details).
 2. Create an `ionic.config.json` file at the root of the repository with the following contents (see [Config File](#config-file) for full details):
 
-```json
+    ```json
     {
       "projects": {}
     }
-```
+    ```
 
 1. Use `ionic start` within the monorepo to create Ionic apps in a multi-app project (see [Adding an App](#adding-an-app) for full details).
 
