@@ -9,7 +9,7 @@ nextUrl: '/docs/react/performance'
 
 This guide covers how routing works in an app built with Ionic and React.
 
-`IonicReactRouter` uses the popular [React Router](https://github.com/ReactTraining/react-router) library under the hood. With Ionic and React Router, you can create multi-page apps with rich page transitions.
+`IonReactRouter` uses the popular [React Router](https://github.com/ReactTraining/react-router) library under the hood. With Ionic and React Router, you can create multi-page apps with rich page transitions.
 
 Everything you know about routing using React Router carries over into Ionic React. Let's take a look at the basics of an Ionic React app and how routing works with it.
 
