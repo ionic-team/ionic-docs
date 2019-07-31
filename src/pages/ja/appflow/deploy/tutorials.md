@@ -24,7 +24,7 @@ Here are the steps in order to successfully upgrade to the new version of the Pr
 You'll need specific versions of each of the following libraries:
 
 * `cordova-plugin-ionic-webview >= 2.0.0`
-* `cordoava-plugin-ionic >= 5.0.0`
+* `cordova-plugin-ionic >= 5.0.0`
 * `@ionic/pro >= 2.0.0`
 
 The following commands inside the root of you Ionic app should remove the old versions and install the new ones for you:
