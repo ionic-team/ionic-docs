@@ -1,8 +1,8 @@
 ---
 title: Auth Connect
 template: enterprise-plugin
-version: 1.0.6
-minor: 1.0.X
+version: 1.1.1
+minor: 1.1.X
 ---
 
 Overview
@@ -47,6 +47,10 @@ OAuth/OpenId Connect from the following providers:
 * [IonicAuthOptions](#ionicauthoptions)
 * [TokenStorageProvider](#tokenstorageprovider)
 
+### Variables
+
+* [ready](#ready)
+
 ---
 
 ## Interfaces
@@ -55,7 +59,7 @@ OAuth/OpenId Connect from the following providers:
 
 ###  IHandlers
 
-**IHandlers**:
+**IHandlers**: 
 
 <a id="ihandlers.onloginsuccess"></a>
 
@@ -72,13 +76,22 @@ OAuth/OpenId Connect from the following providers:
 **Returns:** `void`
 
 ___
+<a id="ihandlers.onlogout"></a>
+
+###  onLogout
+
+▸ **onLogout**(): `void`
+
+**Returns:** `void`
+
+___
 
 ___
 <a id="iionicauth"></a>
 
 ###  IIonicAuth
 
-**IIonicAuth**:
+**IIonicAuth**: 
 
 <a id="iionicauth.expire"></a>
 
@@ -100,6 +113,17 @@ ___
 get the access token, once logged in, for API calls
 
 **Returns:** `Promise`<`string` \| `undefined`>
+
+___
+<a id="iionicauth.getauthresponse"></a>
+
+###  getAuthResponse
+
+▸ **getAuthResponse**(): `Promise`<`any` \| `undefined`>
+
+get the full original auth response
+
+**Returns:** `Promise`<`any` \| `undefined`>
 
 ___
 <a id="iionicauth.getidtoken"></a>
@@ -167,15 +191,26 @@ ___
 
 ###  onLoginSuccess
 
-▸ **onLoginSuccess**(result: *`AuthResult`*): `void`
+▸ **onLoginSuccess**(response: *`any`*): `void`
 
-Event handler which can be overriden to handle successful events
+Event handler which can be overriden to handle successful login events
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| result | `AuthResult` |  the auth result from a successful login |
+| Name | Type |
+| ------ | ------ |
+| response | `any` |
+
+**Returns:** `void`
+
+___
+<a id="iionicauth.onlogout"></a>
+
+###  onLogout
+
+▸ **onLogout**(): `void`
+
+Event handler which can be overriden to handle successful logout events
 
 **Returns:** `void`
 
@@ -186,7 +221,7 @@ ___
 
 ###  IonicAuthOptions
 
-**IonicAuthOptions**:
+**IonicAuthOptions**: 
 
 Provided by the hosting app, this interface allows the hosting app to configure, and provide information needed to login, logout.
 
@@ -221,6 +256,15 @@ ___
 Provided Application ID
 
 ___
+<a id="ionicauthoptions.clientsecret"></a>
+
+### `<Optional>` clientSecret
+
+**● clientSecret**: *`undefined` \| `string`*
+
+The client secret, optional only required for Cognito/Web
+
+___
 <a id="ionicauthoptions.discoveryurl"></a>
 
 ### `<Optional>` discoveryUrl
@@ -228,6 +272,24 @@ ___
 **● discoveryUrl**: *`undefined` \| `string`*
 
 Location of the Auth Server's discovery endpoint, can be null for Azure
+
+___
+<a id="ionicauthoptions.ioswebview"></a>
+
+### `<Optional>` iosWebView
+
+**● iosWebView**: *"private" \| "shared"*
+
+setting the option to `shared` allows for sharing a session between Safari and other applications for a true SSO experience between apps but on iOS 11 and higher it will prompt the user for permission to share the website data with the application. Using `private` avoids the prompt but the session will only be shared with Safari on iOS 10 or lower.
+
+___
+<a id="ionicauthoptions.loglevel"></a>
+
+### `<Optional>` logLevel
+
+**● logLevel**: *"DEBUG" \| "ERROR" \| "NONE"*
+
+The log level for the module
 
 ___
 <a id="ionicauthoptions.logouturl"></a>
@@ -270,9 +332,9 @@ ___
 
 ### `<Optional>` tokenStorageProvider
 
-**● tokenStorageProvider**: *[TokenStorageProvider](#tokenstorageprovider)*
+**● tokenStorageProvider**: *"localStorage" \| `IdentityVaultUser`<`any`> \| [TokenStorageProvider](#tokenstorageprovider)*
 
-Token Storage Provider for secure storage of tokens.
+The type of storage to use for the tokens
 
 ___
 
@@ -281,10 +343,19 @@ ___
 
 ###  TokenStorageProvider
 
-**TokenStorageProvider**:
+**TokenStorageProvider**: 
 
 This interface should be implemented by the hosting app, and set in the options it should be a wrapper around access to a secure storage solution, such as Ionic Enterprise Identity Vault
 
+<a id="tokenstorageprovider.clear"></a>
+
+### `<Optional>` clear
+
+**● clear**: *`undefined` \| `function`*
+
+clear storage
+
+___
 <a id="tokenstorageprovider.getaccesstoken"></a>
 
 ### `<Optional>` getAccessToken
@@ -294,13 +365,22 @@ This interface should be implemented by the hosting app, and set in the options 
 get the saved access token
 
 ___
-<a id="tokenstorageprovider.getclientsecret"></a>
+<a id="tokenstorageprovider.getauthresponse"></a>
 
-### `<Optional>` getClientSecret
+### `<Optional>` getAuthResponse
 
-**● getClientSecret**: *`undefined` \| `function`*
+**● getAuthResponse**: *`undefined` \| `function`*
 
-get the client secret, optional only required for Cognito
+get the full auth result
+
+___
+<a id="tokenstorageprovider.getidtoken"></a>
+
+### `<Optional>` getIdToken
+
+**● getIdToken**: *`undefined` \| `function`*
+
+get the id token
 
 ___
 <a id="tokenstorageprovider.getrefreshtoken"></a>
@@ -321,13 +401,22 @@ ___
 save the access token
 
 ___
-<a id="tokenstorageprovider.setclientsecret"></a>
+<a id="tokenstorageprovider.setauthresponse"></a>
 
-### `<Optional>` setClientSecret
+### `<Optional>` setAuthResponse
 
-**● setClientSecret**: *`undefined` \| `function`*
+**● setAuthResponse**: *`undefined` \| `function`*
 
-save the client secret, this should be set by the app, optional only required for Cognito
+save the full auth response
+
+___
+<a id="tokenstorageprovider.setidtoken"></a>
+
+### `<Optional>` setIdToken
+
+**● setIdToken**: *`undefined` \| `function`*
+
+save the id token
 
 ___
 <a id="tokenstorageprovider.setrefreshtoken"></a>
@@ -342,4 +431,36 @@ ___
 
 ___
 
+## Variables
+
+<a id="ready"></a>
+
+### `<Const>` ready
+
+**● ready**: *`Promise`<`Object`>* =  new Promise(resolve => {
+  document.addEventListener('deviceready', () => {
+    resolve();
+  });
+})
+
+___
+
 ## Change Log
+
+
+
+### [1.1.1] (2019-07-29)
+
+
+### Bug Fixes
+
+* **Android, iOS:** fix incorrect package.json dependency 
+
+
+
+### [1.1.0] (2019-07-29)
+
+
+### Features
+
+* **iOS, Android:** Remove extra plugin dependencies and unify flow across Android and all iOS webviews.
