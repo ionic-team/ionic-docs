@@ -92,7 +92,7 @@ module.exports = function(ctx) {
 
 ## Multi-app Projects
 
-<small>_Available in CLI 4.3.0+_</small>
+<small><em>Available in CLI 4.3.0+</em></small>
 
 The Ionic CLI supports a multi-app configuration setup, which involves multiple Ionic apps and shared code within a single repository, or [monorepo](/docs/faq/glossary#monorepo).
 

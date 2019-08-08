@@ -55,7 +55,8 @@ If we open `App.tsx`, we should see the following.
 ```typescript
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { IonPage, IonRouterOutlet, IonReactRouter } from '@ionic/react';
+import { IonPage, IonRouterOutlet } from '@ionic/react';
+import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 
 /* Core CSS required for Ionic components to work properly */
@@ -80,7 +81,8 @@ At first glance it may look like there's a lot going on, so let's break it down,
 ```typescript
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { IonPage, IonRouterOutlet, IonReactRouter } from '@ionic/react';
+import { IonPage, IonRouterOutlet } from '@ionic/react';
+import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 ```
 

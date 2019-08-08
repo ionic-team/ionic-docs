@@ -1,7 +1,7 @@
 ---
 title: Filesystem
 template: enterprise-plugin
-version: 1.0.0
+version: 1.0.2
 minor: 1.0.X
 ---
 
@@ -11,7 +11,7 @@ Ionic Filesystem
 This plugin presents a simple and intuitive interface for common filesytem operations such as reading/writing and listing the contents of directories.
 
 Usage
-----------------------
+-----
 
 The Filesystem plugin ship with a native Angular & es2015+/Typescript wrappers as well as being available on window.
 
@@ -666,3 +666,13 @@ ___
 
 ___
 
+## Change Log
+
+
+
+### [1.0.2] (2019-08-02)
+
+
+### Bug Fixes
+
+* **iOS:** Update iOS deleteFile method bug where deleteFile would actually make a directory.

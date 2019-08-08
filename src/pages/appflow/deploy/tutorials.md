@@ -23,7 +23,7 @@ You can follow the guide below or watch this video:
 ### Deploy Upgrade Guide
 You'll need specific versions of each of the following libraries:
 * `cordova-plugin-ionic-webview >= 2.0.0`
-* `cordoava-plugin-ionic >= 5.0.0`
+* `cordova-plugin-ionic >= 5.0.0`
 * `@ionic/pro >= 2.0.0`
 
 The following commands inside the root of you Ionic app should remove the old versions and install the new ones for you:

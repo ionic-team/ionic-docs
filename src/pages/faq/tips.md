@@ -9,6 +9,66 @@ contributors:
 
 # Developer Tips
 
+## Resolving Permission Errors
+
+`EACCES` permission errors can occur when packages are installed globally. If this is the case, npm may need to be set up to operate without elevated permissions.
+
+> Using `sudo` with npm is **not recommended** because it can lead to further complications.
+
+This guide offers two options for resolving permission issues. See the [npm docs](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally) for full documentation and additional options.
+
+### Option 1
+
+The best way to avoid permission issues is to reinstall NodeJS and npm using a node version manager.
+
+This guide will document [nvm](https://github.com/nvm-sh/nvm) installation and usage. See the [nvm docs](https://github.com/nvm-sh/nvm#installation-and-update) for full documentation. See the [npm docs](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm#using-a-node-version-manager-to-install-nodejs-and-npm) for additional options and instructions for Windows.
+
+1. Install nvm.
+
+    ```shell
+    $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+    ```
+
+1. New terminals will now use nvm. To verify, open a new terminal and run the following. If something prints, the installation was successful.
+
+    ```shell
+    $ command -v nvm
+    ```
+
+1. To download and install the latest LTS release of NodeJS, run:
+
+    ```shell
+    $ nvm install --lts
+    ```
+
+1. Set the newly installed NodeJS as the default environment:
+
+    ```shell
+    $ nvm alias default lts/*
+    ```
+
+1. New terminals will now use the nvm-controlled NodeJS. To verify:
+
+    ```shell
+    $ node -v  # will print the version installed above
+    $ which npm  # will print a path somewhere within the ~/.nvm folder
+    ```
+
+Global packages will now be installed in the `~/.nvm` directory, so permission errors should no longer occur as long as `npm` is used _without_ `sudo`.
+
+### Option 2
+
+<small><em>Does not apply to Windows</em></small>
+
+Change the owner of npm's directories to the current user:
+
+```shell
+$ sudo chown -R $(whoami) /usr/local/{lib/node_modules,bin,share}
+$ sudo chown -R $(whoami) ~/.npm ~/.npmrc
+```
+
+Since these global directories are no longer owned by `root`, packages can be installed globally _without_ `sudo`.
+
 ## Updating Dependencies
 
 To update an [npm](https://www.npmjs.com/) dependency, run the following, where `<package-name>` is the package to update:
@@ -17,7 +77,7 @@ To update an [npm](https://www.npmjs.com/) dependency, run the following, where 
 $ npm install <package-name>@<version|latest> --save
 ```
 
-For instance, to update the `@ionic/angular` package to the release tagged `latest`, run:
+For example, to update the `@ionic/angular` package to the release tagged `latest`, run:
 
 ```shell
 $ npm install @ionic/angular@latest --save
@@ -29,11 +89,10 @@ It is recommended that packages get updated through the CLI since npm will now r
 
 There are a lots of editors to choose from. Here are some of our favorites:
 
-- [VSCode](https://code.visualstudio.com)
-- [Atom](https://atom.io)
-- [Webstorm](https://www.jetbrains.com/webstorm/)
-
-VSCode is highly recommended as it includes many features and plugins out-of-the-box.
+- [Ionic Studio](https://ionicframework.com/studio?utm_source=docs&utm_medium=website&utm_campaign=studio%20launch): the fastest and easiest way to build Ionic apps
+- [VS Code](https://code.visualstudio.com): a popular and free text editor made by Microsoft
+- [Atom](https://atom.io): a hackable text editor made by GitHub
+- [WebStorm](https://www.jetbrains.com/webstorm/): a powerful non-free editor by JetBrains
 
 ## Using a Debugger
 
@@ -111,7 +170,7 @@ To inspect an emulator or physical device, go to `chrome://inspect/#devices` in 
 
 ## Remote Debugging - VS Code Plugin
 
-VSCode has a dedicated plugin for debugging apps built with Cordova.
+VS Code has a dedicated plugin for debugging apps built with Cordova.
 
-[The plugin](https://marketplace.visualstudio.com/items?itemName=vsmobile.cordova-tools) creates a bridge between the device and the VSCode Devtools and allows debugging to be done right in the editor.
+[The plugin](https://marketplace.visualstudio.com/items?itemName=vsmobile.cordova-tools) creates a bridge between the device and the VS Code Devtools and allows debugging to be done right in the editor.
 

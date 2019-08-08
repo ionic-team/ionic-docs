@@ -25,10 +25,16 @@ export class DocsMenu {
           <Logo class="MenuLogo"/>
         </stencil-route-link>
       </header>,
-      <section class="MenuControls">
-        <FrameworkSelect/>
-      </section>,
-      <stencil-route-switch scrollTopOffset={0}>
+      <stencil-route-switch>
+        <stencil-route url="/docs/appflow"></stencil-route>
+        <stencil-route url="/docs/studio"></stencil-route>
+        <stencil-route>
+          <section class="MenuControls">
+            <FrameworkSelect/>
+          </section>
+        </stencil-route>
+      </stencil-route-switch>,
+      <stencil-route-switch scrollTopOffset={0} class="Menu">
         <stencil-route url="/docs/(components|api)" routeRender={componentsTemplate}/>
         <stencil-route url="/docs/cli" routeRender={cliTemplate}/>
         <stencil-route url="/docs/studio" routeRender={studioTemplate}/>

@@ -1,7 +1,7 @@
 ---
 title: Identity Vault
 template: enterprise-plugin
-version: 3.4.4
+version: 3.4.6
 minor: 3.4.X
 otherVersions:
   - 2.0.X
@@ -837,13 +837,13 @@ ___
 
 ###  getSession
 
-▸ **getSession**(): `Promise`<`T`>
+▸ **getSession**(): `Promise`<`T` \| `undefined`>
 
 ▸ **getSession**(): `Promise`<`T` \| `undefined`>
 
 The stored session data
 
-**Returns:** `Promise`<`T`>
+**Returns:** `Promise`<`T` \| `undefined`>
 
 Get the session from memory (without checking the vault for it)
 
@@ -1679,6 +1679,24 @@ The possible values returned by [getBiometricType](#identityvault.getbiometricty
 ___
 
 ## Change Log
+
+
+
+### [3.4.6] (2019-08-07)
+
+
+### Bug Fixes
+
+* **Android:** fix an issue where adding a fingerprint to device after the app was open would not refresh whether biometrics was available or not 
+
+
+
+### [3.4.5] (2019-07-27)
+
+
+### Bug Fixes
+
+* **Android, iOS:** getSession return type and default IonicIdentityVaultUser generic to DefaultSession 
 
 
 
