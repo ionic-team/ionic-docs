@@ -19,7 +19,7 @@ Here is a sample `App` component that defines a single route to the "/dashboard"
 
 **App.tsx**
 
-```tsx
+```typescript
 const App: React.FC = () => {
   return (
     <IonApp>
@@ -40,7 +40,7 @@ The redirect also has the `exact` prop set, which means the URL has to match the
 
 You can also programmatically redirect from a Route's render method based on a condition, like checking if a user is authed or not:
 
-```tsx
+```typescript
 <Route
   exact
   path="/dashboard"
@@ -60,7 +60,7 @@ Inside the Dashboard page, we define more routes related to this specific sectio
 
 **DashboardPage.tsx**
 
-```tsx
+```typescript
 const DashboardPage: React.FC = () => {
   return (
     <>
@@ -77,7 +77,7 @@ Here, there are a couple more routes defined to point to pages from within the d
 
 However, we can use the [`match`](https://reacttraining.com/react-router/web/api/match) objects `url` property to provide the URL that was matched to render a component, which helps when working with nested routes:
 
-```tsx
+```typescript
 const DashboardPage: React.FC<RouteComponentProps> = ({match}) => {
   return (
     <>
@@ -110,7 +110,7 @@ There are several options available when routing to different views in an Ionic 
 
 **UsersListPage.tsx**
 
-```tsx
+```typescript
 const UsersListPage: React.FC = () => {
   return (
     <>
@@ -144,7 +144,7 @@ We recommend using one of the above methods whenever possible for routing. The a
 
 A programmatic option for navigation is using the [`history`](https://reacttraining.com/react-router/web/api/history) prop that React Router provides to the components it renders via routes.
 
-```jsx
+```typescript
 <IonButton
   onClick={e => {
     e.preventDefault();
@@ -162,7 +162,7 @@ The second route defined in the Dashboard Page has a URL parameter defined (the 
 
 **UserDetailPage.tsx**
 
-```tsx
+```typescript
 interface UserDetailPageProps extends RouteComponentProps<{
   id: string;
 }> {}
@@ -195,7 +195,7 @@ While the syntax looks a bit strange, it is reasonably straightforward once you 
 
 For example, the routes for a view with two tabs (sessions and speakers) can be set up as such:
 
-```tsx
+```typescript
 <IonRouterOutlet>
   <Route path="/:tab(sessions)" component={SessionsPage} exact={true} />
   <Route path="/:tab(sessions)/:id" component={SessionDetail} />
