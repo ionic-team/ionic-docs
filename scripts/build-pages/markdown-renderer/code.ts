@@ -7,19 +7,26 @@ export default (code: string, info: string) => {
   const language = isShell ? 'shell' : lang;
 
   if (Prism.languages[language] == null) {
-    return `<docs-code language=${language}>${escape(code)}</docs-code>`;
+    return `
+<docs-code language=${language}>
+  <pre><code>${escape(code)}</code></pre>
+</docs-code>
+`;
   }
 
-  return (
-    `<docs-code language="${language}">${Prism.highlight(code, Prism.languages[language])}</docs-code>`
-  );
+  return `
+<docs-code language="${language}">
+  <pre><code>${Prism.highlight(code, language ? Prism.languages[language] : null, language)}</code></pre>
+</docs-code>
+`;
 };
 
 loadLanguages([
   'bash',
   'json',
   'tsx',
-  'typescript'
+  'typescript',
+  'scss'
 ]);
 
 // `shell` is an alias of `bash`, so we have to extend `bash`.

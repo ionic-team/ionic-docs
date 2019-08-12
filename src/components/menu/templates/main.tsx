@@ -1,11 +1,15 @@
+import { h } from '@stencil/core';
+
 export default () => <docs-nav items={items}/>;
 
 const items = {
   'Introduction': {
     'What is Ionic Framework?': '/docs/intro',
     'Core Concepts': '/docs/intro/concepts',
+    'Build your First App': '/docs/angular/your-first-app',
     'Browser Support': '/docs/intro/browser-support',
     'Versioning': '/docs/intro/versioning',
+    'Release Notes': '/docs/release-notes',
     'Support': '/docs/intro/support'
   },
   'Installation': {
@@ -38,14 +42,29 @@ const items = {
     'Basics': '/docs/theming/basics',
     'Platform Styles': '/docs/theming/platform-styles',
     'CSS Variables': '/docs/theming/css-variables',
-    'Color Generator': '/docs/theming/color-generator',
+    'Colors': '/docs/theming/colors',
+    'Themes': '/docs/theming/themes',
     'Advanced': '/docs/theming/advanced',
+    'Color Generator 🎨': '/docs/theming/color-generator'
   },
-  'Life Cycle': {
-    'Angular': '/docs/lifecycle/angular'
+  'Angular': {
+    'Overview': '/docs/angular/overview',
+    'Build Your First App': '/docs/angular/your-first-app',
+    'Lifecycle': '/docs/angular/lifecycle',
+    'Navigation/Routing': '/docs/angular/navigation',
+    'Performance': '/docs/angular/performance'
   },
-  'Navigation': {
-    'Angular': '/docs/navigation/angular'
+  'React': {
+    'Overview': '/docs/react/overview',
+    'Build Your First App': '/docs/react/your-first-app',
+    'Lifecycle': '/docs/react/lifecycle',
+    'Navigation/Routing': '/docs/react/navigation'
+  },
+  'Vue': {
+    'Overview': '/docs/vue/overview',
+    'Build Your First App': '/docs/vue/your-first-app',
+    'Lifecycle': '/docs/vue/lifecycle',
+    'Navigation/Routing': '/docs/vue/navigation'
   },
   'Utilities': {
     'Config': '/docs/utilities/config',
@@ -63,6 +82,7 @@ const items = {
     'Runtime Errors': '/docs/faq/runtime',
     'Native Errors': '/docs/faq/native',
     'CORS Errors': '/docs/faq/cors',
+    'Security': '/docs/faq/security',
     'Developer Tips': '/docs/faq/tips',
     'Changelog': 'https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md'
   },

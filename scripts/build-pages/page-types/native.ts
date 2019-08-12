@@ -22,7 +22,7 @@ async function getNativePages(): Promise<Page[]> {
       body: renderMarkdown(description),
       repo,
       platforms,
-      usage: usage ? renderMarkdown(usage) : null,
+      codeUsage: usage ? renderMarkdown(usage) : null,
       package: plugin.packageName,
       cordova: plugin.cordovaPlugin.name,
       template: 'native'

@@ -1,3 +1,5 @@
+import { h } from '@stencil/core';
+
 export default () => <docs-nav items={items}/>;
 
 const items = {
@@ -126,6 +128,7 @@ const items = {
   },
   'Routing': {
     'ion-router': '/docs/api/router',
+    'ion-router-link': '/docs/api/router-link',
     'ion-router-outlet': '/docs/api/router-outlet',
     'ion-route': '/docs/api/route',
     'ion-route-redirect': '/docs/api/route-redirect'
@@ -167,7 +170,6 @@ const items = {
     'ion-back-button': '/docs/api/back-button'
   },
   'Typography': {
-    'ion-anchor': '/docs/api/anchor',
     'ion-text': '/docs/api/text'
   },
   'Resources': {

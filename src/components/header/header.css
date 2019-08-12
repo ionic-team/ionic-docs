@@ -41,6 +41,11 @@ docs-header a {
   padding: 10px 0;
 }
 
+docs-header ion-icon {
+  font-size: 16px;
+  color: #B2BECD;
+}
+
 docs-header .link-active {
   color: var(--text-color--dark);
 }
@@ -74,7 +79,7 @@ docs-header docs-menu-toggle {
 }
 
 .SectionNav .Dropdown-button {
-  border: solid 1px transparent;
+  border: solid 1px #DEE3EA;
   border-radius: 6px;
   color: var(--text-color--dark);
   padding: 10px;
@@ -83,12 +88,6 @@ docs-header docs-menu-toggle {
 
 .SectionNav .Dropdown.is-open .Dropdown-button {
   border-color: var(--line-rule-color);
-}
-
-@media (hover: hover) {
-  .SectionNav .Dropdown-button:hover {
-    border-color: var(--line-rule-color);
-  }
 }
 
 .SectionNav .Dropdown-panel {

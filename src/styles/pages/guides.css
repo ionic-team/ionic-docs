@@ -1,3 +1,8 @@
 .page-index docs-cards {
   font-size: 14px;
 }
+
+.page-building-migration figure,
+.page-building-migration figure file-tree {
+  height: 100%;
+}

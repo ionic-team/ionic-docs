@@ -1,7 +1,8 @@
 import {
   PAGES_DIR,
   Page,
-  buildPages
+  buildPages,
+  updatePageHtmlToHypertext
 } from '../index';
 
 import fs from 'fs-extra';
@@ -18,7 +19,8 @@ export default {
 
 async function getStaticPages(): Promise<Page[]> {
   const paths = await getMarkdownPaths(PAGES_DIR);
-  return Promise.all(paths.map(toPage));
+
+  return Promise.all(paths.map(path => toPage(path)));
 }
 
 const getMarkdownPaths = (cwd: string): Promise<string[]> =>
@@ -27,10 +29,14 @@ const getMarkdownPaths = (cwd: string): Promise<string[]> =>
     cwd
   });
 
-export const toPage = async (path: string) => {
+export interface ToStaticPageOptions {
+  prod?: boolean;
+}
+
+export const toPage = async (path: string, { prod = true }: ToStaticPageOptions = {}) => {
   return {
-    path: path.replace(PAGES_DIR, '/docs').replace(/\.md$/, ''),
-    github: await getGitHubData(path),
+    path: path.replace(PAGES_DIR, '/docs').replace(/(\/index)?\.md$/i, ''),
+    github: prod ? await getGitHubData(path) : null,
     ...renderMarkdown(await readMarkdown(path))
   };
 };

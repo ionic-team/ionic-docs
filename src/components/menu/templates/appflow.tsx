@@ -1,3 +1,5 @@
+import { h } from '@stencil/core';
+
 export default () => <docs-nav items={items}/>;
 
 const items = {
@@ -5,7 +7,7 @@ const items = {
   'Quickstart': {
     'Overview': '/docs/appflow/quickstart',
     'Connect your Repo': '/docs/appflow/quickstart/connect',
-    'Services': {
+    '': {
       'GitHub': '/docs/appflow/quickstart/github',
       'Bitbucket': '/docs/appflow/quickstart/bitbucket',
       'Bitbucket Server': '/docs/appflow/quickstart/bitbucket-server',

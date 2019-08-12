@@ -1,0 +1,15 @@
+hubspot-form {
+  border: 2px solid #eee;
+  border-radius: 8px;
+  display: block;
+  padding: 16px 12px 4px 16px;
+  background: rgb(250, 250, 250);
+}
+
+
+hubspot-form iframe {
+  box-shadow: none;
+  background-color: transparent;
+  max-width: 100%;
+}
+

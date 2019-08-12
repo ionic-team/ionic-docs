@@ -1,4 +1,4 @@
-import { Component, Element, Prop } from '@stencil/core';
+import { Build, Component, Element, Prop, h } from '@stencil/core';
 import { Outbound } from '../../icons';
 import { MenuItems } from '../../definitions';
 
@@ -8,7 +8,6 @@ import { MenuItems } from '../../definitions';
 })
 export class DocsNav {
   @Element() element: HTMLElement;
-  @Prop({ context: 'isServer' }) private isServer: boolean;
   @Prop() items: MenuItems;
 
   private normalizeItems(items) {
@@ -19,10 +18,14 @@ export class DocsNav {
     return href.indexOf('http') === 0;
   }
 
-  toItem = (item, level) => {
-    const [, value] = item;
+  toItem = (item, level = 0) => {
+    const [title , value] = item;
     switch (typeof value) {
       case 'string':
+        // Go ahead...git blame...I know you want TWO :-)
+        if (title.match(/Show all [EC]E plugins/)) {
+         return <li style={{ 'font-style': 'italic' }} key={item}>{this.toLink(item)}</li>;
+        }
         return <li key={item}>{this.toLink(item)}</li>;
       case 'object':
         return <li key={item}>{this.toSection(item, level + 1)}</li>;
@@ -61,7 +64,7 @@ export class DocsNav {
     const items = this.normalizeItems(value);
     return (
       <section>
-        <header class="Nav-header">{text}</header>
+        { text !== '' && text !== undefined ? <header class="Nav-header">{text}</header> : null }
         <ul
           class="Nav-subnav"
           style={{ '--level': level }}>
@@ -83,7 +86,7 @@ export class DocsNav {
   }
 
   componentDidLoad() {
-    if (!this.isServer) {
+    if (Build.isBrowser) {
       requestAnimationFrame(this.setScroll);
     }
   }
@@ -97,7 +100,7 @@ export class DocsNav {
   render() {
     return (
       <ul class="Nav">
-        {this.normalizeItems(this.items).map(item => this.toItem(item, 1))}
+        {this.normalizeItems(this.items).map(item => this.toItem(item))}
       </ul>
     );
   }
