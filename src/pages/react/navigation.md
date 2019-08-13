@@ -1,8 +1,8 @@
 ---
 previousText: 'Lifecycle'
 previousUrl: '/docs/react/lifecycle'
-nextText: 'Performance'
-nextUrl: '/docs/react/performance'
+nextText: 'Config'
+nextUrl: '/docs/react/config'
 ---
 
 # React Navigation
