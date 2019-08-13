@@ -58,7 +58,9 @@ const items = {
     'Overview': '/docs/react/overview',
     'Build Your First App': '/docs/react/your-first-app',
     'Lifecycle': '/docs/react/lifecycle',
-    'Navigation/Routing': '/docs/react/navigation'
+    'Navigation/Routing': '/docs/react/navigation',
+    'Config': '/docs/react/config',
+    'Platform Utils': '/docs/react/platform'
   },
   'Vue': {
     'Overview': '/docs/vue/overview',
