@@ -30,7 +30,7 @@
     "throng": "^4.0.0"
   },
   "devDependencies": {
-    "@stencil/core": "^1.2.4",
+    "@stencil/core": "^1.2.5",
     "@types/prismjs": "^1.9.1",
     "chokidar": "^3.0.2",
     "fast-glob": "^3.0.4",
