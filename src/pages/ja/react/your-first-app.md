@@ -55,7 +55,7 @@ If we open `App.tsx`, we should see the following.
 ```typescript
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { IonPage, IonRouterOutlet } from '@ionic/react';
+import { IonApp, IonPage, IonRouterOutlet } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 
@@ -81,7 +81,7 @@ At first glance it may look like there's a lot going on, so let's break it down,
 ```typescript
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { IonPage, IonRouterOutlet } from '@ionic/react';
+import { IonApp, IonPage, IonRouterOutlet } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 ```
@@ -90,7 +90,7 @@ Similar to `index.tsx`, we first must import React in order to use JSX.
 
 The next import is from `react-router-dom`. We're importing Route, which is how we’ll match the app’s URL with the components we want to render
 
-Following ReactRouter, we next have our first imports for Ionic. To use a component in React, you must first import it. So for Ionic, this means anytime we want to use a Button or a Card, it must be added to our imports. In the case of our App component, we're only using `IonPage`, `IonRouterOutlet`, and `IonReactRouter`.
+Following ReactRouter, we next have our first imports for Ionic. To use a component in React, you must first import it. So for Ionic, this means anytime we want to use a Button or a Card, it must be added to our imports. In the case of our App component, we're only using `IonApp`, `IonPage`, `IonRouterOutlet`, and `IonReactRouter`.
 
 `IonReactRouter` is a component that wraps ReactRouter’s BrowserRouter component. It more or less behaves the same as BrowserRouter with a few differences. We have deeper guide that goes over these differences in our [React Navigation Docs](/docs/react/navigation).
 
