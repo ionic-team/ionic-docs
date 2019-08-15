@@ -16,7 +16,8 @@
     "build-data": "ts-node -P scripts/tsconfig.json scripts/build-data",
     "build-pages": "ts-node -P scripts/tsconfig.json scripts/build-pages",
     "build-menus": "ts-node -P scripts/tsconfig.json scripts/build-menus",
-    "watch-pages": "ts-node -P scripts/tsconfig.json scripts/watch-pages"
+    "watch-pages": "ts-node -P scripts/tsconfig.json scripts/watch-pages",
+    "heroku-postbuild": "npm run build.ci"
   },
   "dependencies": {
     "@ionic/core": "^4.7.4",
@@ -50,6 +51,5 @@
     "hooks": {
       "pre-commit": "npm run lint"
     }
-  },
-  "heroku-run-build-script": true
+  }
 }
