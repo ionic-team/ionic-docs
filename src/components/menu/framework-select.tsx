@@ -37,5 +37,5 @@ export const FrameworkSelect = () => (
     options={frameworks}
     optionRenderer={renderOption}
     initializer={getFramework}
-    onSelect={setFramework}/>
+    onSelection={(ev) => setFramework(ev.detail)}/>
 );

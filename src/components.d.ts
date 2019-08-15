@@ -115,7 +115,6 @@ export namespace Components {
   interface DocsRoot {}
   interface DocsSelect {
     'initializer': (options: string[]) => string;
-    'onSelect': (option: string) => any;
     'optionRenderer': (option: string) => any;
     'options': string[];
   }
@@ -148,7 +147,7 @@ export namespace Components {
   interface SmsForm {}
   interface SteppedColorGenerator {}
   interface WistiaVideo {
-    'id': string;
+    'videoId': string;
   }
 }
 
@@ -540,7 +539,7 @@ declare namespace LocalJSX {
   interface DocsRoot extends JSXBase.HTMLAttributes<HTMLDocsRootElement> {}
   interface DocsSelect extends JSXBase.HTMLAttributes<HTMLDocsSelectElement> {
     'initializer'?: (options: string[]) => string;
-    'onSelect'?: (option: string) => any;
+    'onSelection'?: (event: CustomEvent<string>) => void;
     'optionRenderer'?: (option: string) => any;
     'options'?: string[];
   }
@@ -573,7 +572,7 @@ declare namespace LocalJSX {
   interface SmsForm extends JSXBase.HTMLAttributes<HTMLSmsFormElement> {}
   interface SteppedColorGenerator extends JSXBase.HTMLAttributes<HTMLSteppedColorGeneratorElement> {}
   interface WistiaVideo extends JSXBase.HTMLAttributes<HTMLWistiaVideoElement> {
-    'id'?: string;
+    'videoId'?: string;
   }
 
   interface IntrinsicElements {
