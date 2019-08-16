@@ -27,7 +27,7 @@
     "compression": "^1.7.4",
     "express": "^4.16.4",
     "helmet": "^3.16.0",
-    "ionicons": "^4.6.1",
+    "ionicons": "^4.6.2",
     "throng": "^4.0.0"
   },
   "devDependencies": {
