@@ -23,7 +23,7 @@ $ ng add @angular/pwa
 
 Once this package has been added run `ionic build --prod` and the `www` directory will be ready to deploy as a PWA.
 
-> By default, the `@angular/pwa` package comes with Angular logo for the app icons. Be sure to update the manifest to use the correct app name and also replace the icons.
+> By default, the `@angular/pwa` package comes with the Angular logo for the app icons. Be sure to update the manifest to use the correct app name and also replace the icons.
 
 If an app is being deployed to other channels such as Cordova or Electron, you can remove the `"serviceWorker": true` flag from the `angular.json` file.
 
