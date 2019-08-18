@@ -62,7 +62,7 @@ const items = {
     'Config': '/docs/react/config',
     'Platform Utils': '/docs/react/platform'
   },
-  'Vue': {
+  'Vue (Beta)': {
     'Overview': '/docs/vue/overview',
     'Build Your First App': '/docs/vue/your-first-app',
     'Lifecycle': '/docs/vue/lifecycle',
