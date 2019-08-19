@@ -89,7 +89,7 @@ multiple channels need to be specified; more infos about channels are available 
 
 ### Customize the Deploy build with Advanced Options
 
-The Advanced Options available to customize the build:
+The Advanced Options available to customize the build include:
 
 * `--commit=<sha1>` The commit defaults to HEAD; to use a different commit you can use this option with the full SHA1 of the commit.
 
