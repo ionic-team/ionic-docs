@@ -128,6 +128,7 @@ const items = {
   },
   'menu-api-routing': {
     'ion-router': '/docs/api/router',
+    'ion-router-link': '/docs/api/router-link',
     'ion-router-outlet': '/docs/api/router-outlet',
     'ion-route': '/docs/api/route',
     'ion-route-redirect': '/docs/api/route-redirect'

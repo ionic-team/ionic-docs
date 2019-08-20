@@ -45,6 +45,13 @@ docs-card {
   margin-bottom: 1.2em;
 }
 
+.Card-ionicon {
+  width: 48px;
+  height: 48px;
+  float: left;
+  margin-right: 1em;
+}
+
 @media (hover: hover) {
   .Card[href]:hover {
     box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1), 0 0.175em 0.5em rgba(2, 8, 20, 0.08);
@@ -133,4 +140,8 @@ aside .Card-content {
 
 aside .Card-icon + .Card-content {
   margin-top: -6px;
+}
+
+.markdown-content p docs-card {
+  margin-top: 1em;
 }

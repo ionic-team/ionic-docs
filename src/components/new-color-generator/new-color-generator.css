@@ -1,0 +1,26 @@
+color-gen-variable-selector {
+  display: block;
+
+  width: 100%;
+  margin: 0 0 20px 0;
+
+  border: 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.08);
+  border-radius: 4px;
+}
+
+color-gen-css-text .css-text__code {
+  margin-top: 0;
+  height: 430px;
+}
+
+color-gen-css-text code-color code {
+  background: transparent;
+  color: inherit;
+  margin: 0 0 0 6px;
+  padding: 0;
+}
+
+new-color-generator .new-color-header h3 {
+  margin-bottom: 1.5em;
+}

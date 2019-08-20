@@ -1,8 +1,8 @@
 ---
 previousText: 'Platform Styles'
 previousUrl: '/docs/theming/platform-styles'
-nextText: 'Color Generator'
-nextUrl: '/docs/theming/color-generator'
+nextText: 'Colors'
+nextUrl: '/docs/theming/colors'
 contributors:
   - brandyscarney
   - iget-master
@@ -97,4 +97,4 @@ Ionic provides variables that exist at the component level, such as `--backgroun
 
 ### Global Variables
 
-There are several global variables that Ionic provides in order to make theming an entire application easier. For more information, including a list of all of the global variables, see [Advanced Theming](/docs/theming/advanced).
+There are several global variables that Ionic provides in order to make theming an entire application easier. For more information, see [Colors](/docs/theming/colors), [Themes](/docs/theming/themes) and [Advanced Theming](/docs/theming/advanced).

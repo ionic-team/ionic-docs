@@ -9,7 +9,7 @@ nextUrl: '/docs/appflow/deploy/cli'
 
 ## Setup and Deploy on iOS
 
-<wistia-video id="2702mkf530"></wistia-video>
+<wistia-video videoId="2702mkf530"></wistia-video>
 
 Learn how to install, configure, and deploy your first live update.
 
@@ -18,12 +18,12 @@ Learn how to install, configure, and deploy your first live update.
 Here are the steps in order to successfully upgrade to the new version of the Pro Client, Deploy Plugin, and Webview Plugin.
 You can follow the guide below or watch this video:
 
-<wistia-video id="0o27tfvoam"></wistia-video>
+<wistia-video videoId="0o27tfvoam"></wistia-video>
 
 ### Deploy Upgrade Guide
 You'll need specific versions of each of the following libraries:
 * `cordova-plugin-ionic-webview >= 2.0.0`
-* `cordoava-plugin-ionic >= 5.0.0`
+* `cordova-plugin-ionic >= 5.0.0`
 * `@ionic/pro >= 2.0.0`
 
 The following commands inside the root of you Ionic app should remove the old versions and install the new ones for you:

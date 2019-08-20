@@ -1,6 +1,6 @@
 command-output span.bold a,
 command-output span.bold {
-  font-family: var(--font-family-code-medium);
+  font-family: var(--code-font-family);
   font-weight: bold;
   color: #fff;
 }

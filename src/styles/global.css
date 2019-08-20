@@ -1,5 +1,4 @@
 @import './base.css';
-@import './ionic.css';
 @import './pages/index.css';
 @import './pages/components.css';
 @import './pages/guides.css';
@@ -8,3 +7,4 @@
 @import './pages/native.css';
 @import './pages/native-ee.css';
 @import './pages/release-notes.css';
+@import './pages/studio.css';

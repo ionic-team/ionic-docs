@@ -22,50 +22,30 @@ Download/install these right away to ensure an optimal Ionic development experie
 * <strong>Command-line terminal (CLI)</strong>: FYI <strong>Windows</strong> users, for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode. For <strong>Mac/Linux</strong> users, virtually any terminal will work.
 
 ## Install Ionic and Cordova
-Run the following in the command line (you may need to prepend “sudo” on a Mac):
+Run the following in the command line:
 
 ```shell
 $ npm install -g ionic cordova
 ```
 
+> The `-g` option means _install globally_. When packages are installed globally, permission errors can occur. Consider [setting up npm](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally) to operate globally without elevated permissions. Running the command prompt as an Admin (or using `sudo` on Mac & Linux) with npm is not recommended.
+
 ## Create an App
-Next, create an Ionic v4 app using our “Tabs” app template:
+Next, create an Ionic Angular app using our “Tabs” app template:
 
 ```shell
-$ ionic start photo-gallery tabs --type=angular
+$ ionic start photo-gallery tabs
 ```
 
 This starter project comes complete with three pre-built pages and best practices for Ionic development. With common building blocks already in place, we can add more features easily!
 
-<strong>“Install the free Ionic Appflow SDK and connect your app?”</strong>
-
-Type “y” and press Enter. [Ionic Appflow](https://ionicframework.com/Appflow) is a powerful set of services and features built on top of the flagship Ionic Framework. This includes updating your app instantly (skipping the app store review process!), packaging apps in the cloud, and error monitoring.
-
-<strong>Log into your Ionic Account</strong>
-
-Sign in now to easily access awesome features like building native apps in the cloud and Live Deploys later in this tutorial.
-
-<strong>What would you like to do?</strong>
-
-Choose “Create a new app on Ionic Appflow.”
-
-<strong>Which git host would you like to use?</strong>
-
-Choose “Ionic Appflow.”
-
-<strong>“How would you like to connect to Ionic Appflow?”</strong>
-
-* Choose “Automatically setup a new SSH key pair for Ionic Appflow” if you haven’t used SSH before.
-* Choose “Use an existing SSH key pair” if you’ve used SSH before.
-
-Next, change into the app folder, then push your code to Ionic Appflow:
+Next, change into the app folder:
 
 ```shell
 $ cd photo-gallery
-$ git push ionic master
 ```
 
-That’s it! Now for the fun part - let’s see it in action.
+That’s it! Now for the fun part - let’s see the app in action.
 
 ## Run the App
 Run this command next:
@@ -108,15 +88,7 @@ Next, open `src/app/tabs/tabs.page.html`. Change the label to “Gallery” and 
 </ion-tab-button>
 ```
 
-Now, back up your changes to Ionic Appflow:
-
-```shell
-$ git add .
-$ git commit -m "converting tab2 page to photo gallery"
-$ git push ionic master
-```
-
-That’s just the start of all the cool things we can do with Ionic. Up next, we’ll deploy the app to iOS and Android, then continue building the photo gallery.
+That’s just the start of all the cool things we can do with Ionic. Up next, we’ll deploy the app to your iOS or Android device, then continue building the photo gallery.
 
 <div style="text-align:right;">
   <docs-button href="/docs/angular/your-first-app/ios-android-camera">Continue <svg viewBox="0 0 512 512"><path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path></svg></docs-button>

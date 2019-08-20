@@ -196,14 +196,6 @@ ngOnInit() {
 
 Sweet! Photos are now saved to your device. To demonstrate that they are indeed being saved, force close DevApp, reopen it, and open the Tab2 page.  Or, shake your device to have the Control Menu pop up, then tap “Exit preview.” Afterwards, reload this app to view the photos.
 
-Finally, back up your changes to Ionic Pro:
-
-```shell
-git add .
-git commit -m "implemented photo gallery"
-git push ionic master
-```
-
 Next up, we’ll look at how to apply a custom theme to an Ionic app.
 
 <div style="text-align:right;">

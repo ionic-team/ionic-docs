@@ -32,6 +32,29 @@ export class DocsHeader {
     };
   }
 
+  renderMenu(section: 'Framework' | 'Appflow' | 'Studio') {
+    return [
+      <docs-dropdown label={section}>
+        <section>
+          <stencil-route-link url="/docs/">Framework {section === 'Framework' ? <Checkmark/> : null}</stencil-route-link>
+          <stencil-route-link url="/docs/appflow">Appflow {section === 'Appflow' ? <Checkmark/> : null}</stencil-route-link>
+          <stencil-route-link url="/docs/studio">Studio {section === 'Studio' ? <Checkmark/> : null}</stencil-route-link>
+        </section>
+        {section === 'Framework' ? <section>
+          <a href="https://ionicframework.com/docs/v3">Framework v3</a>
+          <a href="https://stenciljs.com">Stencil</a>
+          <a href="https://capacitor.ionicframework.com">Capacitor</a>
+        </section> : null}
+      </docs-dropdown>,
+      section === 'Framework' ? <div class="SectionNav-tabs">
+        <stencil-route-link url="/docs/" urlMatch={[/^\/docs(?!\/(api|components|cli|native|enterprise)).*$/]}>Guide</stencil-route-link>
+        <stencil-route-link url="/docs/components" urlMatch={['/docs/api', '/docs/components']}>Components</stencil-route-link>
+        <stencil-route-link url="/docs/cli">CLI</stencil-route-link>
+        <stencil-route-link url="/docs/native" urlMatch={['/docs/native', '/docs/enterprise']}>Native</stencil-route-link>
+      </div> : null,
+    ];
+  }
+
   render() {
     const { getString } = l10n;
     return (
@@ -44,37 +67,14 @@ export class DocsHeader {
 
         <nav class="SectionNav">
           <stencil-route-switch>
-            <stencil-route url="/docs/:lang([a-z]{2})?/appflow">
-              <docs-dropdown label="Appflow">
-                <section>
-                  <stencil-route-link url="/docs/" urlMatch={/^\/docs\/(?!(appflow)).*$/}>{getString('brand-framework')}</stencil-route-link>
-                  <stencil-route-link url="/docs/appflow">{getString('brand-appflow')} <Checkmark/></stencil-route-link>
-                </section>
-                <section>
-                  <a href="https://ionicframework.com/docs/v3">Framework v3</a>
-                  <a href="https://stenciljs.com">Stencil</a>
-                  <a href="https://capacitor.ionicframework.com">Capacitor</a>
-                </section>
-              </docs-dropdown>
+            <stencil-route url="/docs/appflow">
+              {this.renderMenu('Appflow')}
+            </stencil-route>
+            <stencil-route url="/docs/studio">
+              {this.renderMenu('Studio')}
             </stencil-route>
             <stencil-route>
-              <docs-dropdown label="Framework">
-                <section>
-                  <stencil-route-link url="/docs/" urlMatch={/^\/docs\/(?!(appflow)).*$/}>{getString('brand-framework')} <Checkmark/></stencil-route-link>
-                  <stencil-route-link url="/docs/appflow">{getString('brand-appflow')}</stencil-route-link>
-                </section>
-                <section>
-                  <a href="https://ionicframework.com/docs/v3">Framework v3</a>
-                  <a href="https://stenciljs.com">Stencil</a>
-                  <a href="https://capacitor.ionicframework.com">Capacitor</a>
-                </section>
-              </docs-dropdown>
-              <div class="SectionNav-tabs">
-                <stencil-route-link url="/docs/" urlMatch={[/^\/docs(?!\/(api|components|cli|native|enterprise)).*$/]}>{getString('header-guide')}</stencil-route-link>
-                <stencil-route-link url="/docs/components" urlMatch={['/docs/api', '/docs/components']}>{getString('header-components')}</stencil-route-link>
-                <stencil-route-link url="/docs/cli">{getString('header-cli')}</stencil-route-link>
-                <stencil-route-link url="/docs/native" urlMatch={['/docs/native', '/docs/enterprise']}>{getString('header-native')}</stencil-route-link>
-              </div>
+              {this.renderMenu('Framework')}
             </stencil-route>
           </stencil-route-switch>
         </nav>

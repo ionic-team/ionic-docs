@@ -19,3 +19,7 @@ docs-code:before {
   text-transform: uppercase;
   top: 0;
 }
+
+docs-code[language="shell"] pre {
+  white-space: pre-wrap;
+}

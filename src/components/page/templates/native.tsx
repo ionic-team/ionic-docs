@@ -84,11 +84,8 @@ const renderInstallation = (cordova: string, npm: string) => {
           </command-line>
         </docs-tab>
         <docs-tab tab="Enterprise">
-          <blockquote>Ionic EE comes with fully supported and maintained plugins from the Ionic Team. <a class="btn" href="/docs/native#enterprise-edition">Learn More</a> or <a class="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a></blockquote>
-          <command-line>
-            <command-prompt>{`ionic enterprise register --key=YOURPRODUCTKEY`}</command-prompt>
-            <command-prompt>{`npm install @ionic-enterprise/${npm.split('/')[1]}`}</command-prompt>
-          </command-line>
+          <blockquote>Ionic Native Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
+            <a class="btn" href="/docs/native#enterprise-edition">Learn More</a> or if you're interested in an enterprise version of this plugin <a class="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a></blockquote>
         </docs-tab>
       </docs-tabs>
     </section>
