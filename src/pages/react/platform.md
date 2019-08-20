@@ -10,7 +10,7 @@ previousUrl: '/docs/react/config'
 The `isPlatform` method can be used to test if your app is running on a certain platform:
 
 ```typescript
-import { isPlatform } from '@ionic/react';
+import { isPlatform } from '@ionic/core';
 
 isPlatform('ios'); // returns true when running on a iOS device
 ```
@@ -22,7 +22,7 @@ Depending on the platform the user is on, isPlatform(platformName) will return t
 The `getPlatforms` method can be used to determine which platforms your app is currently running on.
 
 ```typescript
-import { getPlatforms } from '@ionic/react';
+import { getPlatforms } from '@ionic/core';
 
 getPlatforms(); // returns ["iphone", "ios", "mobile", "mobileweb"] from an iPhone
 ```
