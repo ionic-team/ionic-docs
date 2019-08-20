@@ -38,23 +38,14 @@ const items = {
     'menu-layout-global-stylesheets': '/docs/layout/global-stylesheets',
     'menu-layout-css-utilities': '/docs/layout/css-utilities',
   },
-<<<<<<< HEAD
   'menu-theming': {
     'menu-theming-basics': '/docs/theming/basics',
     'menu-theming-platform-styles': '/docs/theming/platform-styles',
     'menu-theming-css-variables': '/docs/theming/css-variables',
-    'menu-theming-color-generator': '/docs/theming/color-generator',
-    'menu-theming-advanced': '/docs/theming/advanced',
-=======
-  'Theming': {
-    'Basics': '/docs/theming/basics',
-    'Platform Styles': '/docs/theming/platform-styles',
-    'CSS Variables': '/docs/theming/css-variables',
     'Colors': '/docs/theming/colors',
     'Themes': '/docs/theming/themes',
-    'Advanced': '/docs/theming/advanced',
-    'Color Generator 🎨': '/docs/theming/color-generator'
->>>>>>> 7f8a42cab2e2040755d5d372c512ae5f256e8da8
+    'menu-theming-advanced': '/docs/theming/advanced',
+    'menu-theming-color-generator': '/docs/theming/color-generator',
   },
   'menu-angular': {
     'menu-angular-overview': '/docs/angular/overview',
@@ -63,33 +54,19 @@ const items = {
     'menu-angular-navigation': '/docs/angular/navigation',
     'menu-angular-performance': '/docs/angular/performance'
   },
-<<<<<<< HEAD
   'menu-react': {
     'menu-react-overview': '/docs/react/overview',
     'menu-react-your-first-app': '/docs/react/your-first-app',
     'menu-react-lifecycle': '/docs/react/lifecycle',
-    'menu-react-navigation': '/docs/react/navigation'
+    'menu-react-navigation': '/docs/react/navigation',
+    'Config': '/docs/react/config',
+    'Platform Utils': '/docs/react/platform'
   },
   'menu-vue': {
     'menu-vue-overview': '/docs/vue/overview',
     'menu-vue-your-first-app': '/docs/vue/your-first-app',
     'menu-vue-lifecycle': '/docs/vue/lifecycle',
     'menu-vue-navigation': '/docs/vue/navigation'
-=======
-  'React': {
-    'Overview': '/docs/react/overview',
-    'Build Your First App': '/docs/react/your-first-app',
-    'Lifecycle': '/docs/react/lifecycle',
-    'Navigation/Routing': '/docs/react/navigation',
-    'Config': '/docs/react/config',
-    'Platform Utils': '/docs/react/platform'
-  },
-  'Vue (Beta)': {
-    'Overview': '/docs/vue/overview',
-    'Build Your First App': '/docs/vue/your-first-app',
-    'Lifecycle': '/docs/vue/lifecycle',
-    'Navigation/Routing': '/docs/vue/navigation'
->>>>>>> 7f8a42cab2e2040755d5d372c512ae5f256e8da8
   },
   'menu-utilities': {
     'menu-utilities-config': '/docs/utilities/config',
