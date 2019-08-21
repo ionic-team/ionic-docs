@@ -19,8 +19,7 @@ export default {
 };
 
 async function getStaticPages(): Promise<Page[]> {
-  const paths = await getMarkdownPaths([PAGES_DIR, L10N_PAGES_DIR]);
-
+  const paths = await getMarkdownPaths([L10N_PAGES_DIR, PAGES_DIR]);
   return Promise.all(paths.map(path => toPage(path)));
 }
 
@@ -42,7 +41,7 @@ export const toPage = async (path: string, { prod = true }: ToStaticPageOptions 
   return {
     path: path.indexOf('l10n') === -1 ?
       path.replace(PAGES_DIR, '/docs').replace(/(\/index)?\.md$/i, '') :
-      path.replace(L10N_PAGES_DIR, '/docs').replace(/(\/index)?\.md$/i, ''),
+      path.replace(L10N_PAGES_DIR, '/../l10n/pages/docs').replace(/(\/index)?\.md$/i, ''),
     github: prod ? await getGitHubData(path) : null,
     ...renderMarkdown(await readMarkdown(path))
   };

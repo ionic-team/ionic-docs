@@ -125,7 +125,9 @@ function writePage(page: Page): Promise<any> {
   });
 }
 
-const toFilePath = (urlPath: string) =>
-  urlPath.indexOf('l10n') === -1 ?
+const toFilePath = (urlPath: string) => {
+  return urlPath.indexOf('l10n') === -1 ?
     `${resolve(PAGES_DIR, urlPath.slice(6) || 'index')}.json` :
-    `${resolve(L10N_PAGES_DIR, urlPath.slice(6) || 'index')}.json`;
+    `${resolve(PAGES_DIR, urlPath.replace('/docs', '').slice(1))}.json`;
+};
+
