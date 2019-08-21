@@ -24,6 +24,7 @@ if (!module.parent) {
 }
 
 export const PAGES_DIR = resolve(__dirname, '../../src/pages');
+export const L10N_PAGES_DIR = resolve(__dirname, '../../src/l10n/pages');
 
 export interface Page {
   title: string;
@@ -119,10 +120,13 @@ export function updatePageHtmlToHypertext(page: Page) {
 }
 
 function writePage(page: Page): Promise<any> {
+  // console.log(page.path, 'ooooo', page)
   return fs.outputJson(toFilePath(page.path), page, {
     spaces: 2
   });
 }
 
 const toFilePath = (urlPath: string) =>
-  `${resolve(PAGES_DIR, urlPath.slice(6) || 'index')}.json`;
+  urlPath.indexOf('l10n') === -1 ?
+    `${resolve(PAGES_DIR, urlPath.slice(6) || 'index')}.json` :
+    `${resolve(L10N_PAGES_DIR, urlPath.slice(6) || 'index')}.json`;
