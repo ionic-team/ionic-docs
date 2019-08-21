@@ -24,9 +24,6 @@ export class DocsPage {
     path = /^\/docs\/pages\/[a-z]{2}\.json$/.test(path)
       ? path.replace('.json', '/index.json')
       : path;
-    path = /^\/docs\/pages\/[a-z]{2}\//.test(path)
-      ? path
-      : path.replace(/^\/docs\/pages\//, '/docs/pages/en/');
     return fetch(path)
       .then(this.validateFetch)
       .then(this.handleNewPage)

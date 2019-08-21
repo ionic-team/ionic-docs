@@ -76,9 +76,9 @@ function patchBody(page: Page): Page {
 
   // remove /docs/ and language tag
   const prefix = /^\/docs\/([a-z]{2}\b)?/;
-  const pageClass = `page-${slugify(page.path.replace(prefix, ''))}`;
+  const pageClass = `page-${slugify(page.path)}`;
 
-  const [, language] = prefix.exec(page.path);
+  const [, language] = prefix.exec(page.path) || 'en';
   if (language && language !== 'en') {
     if (page.previousUrl) {
       page.previousUrl = page.previousUrl.replace(prefix, `/docs/${language}/`);
@@ -125,4 +125,4 @@ function writePage(page: Page): Promise<any> {
 }
 
 const toFilePath = (urlPath: string) =>
-  `${resolve(PAGES_DIR, urlPath.slice(6))}.json`;
+  `${resolve(PAGES_DIR, urlPath.slice(6) || 'index')}.json`;
