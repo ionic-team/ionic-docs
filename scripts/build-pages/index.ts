@@ -120,7 +120,6 @@ export function updatePageHtmlToHypertext(page: Page) {
 }
 
 function writePage(page: Page): Promise<any> {
-  // console.log(page.path, 'ooooo', page)
   return fs.outputJson(toFilePath(page.path), page, {
     spaces: 2
   });

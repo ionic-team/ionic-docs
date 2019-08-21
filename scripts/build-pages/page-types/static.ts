@@ -39,9 +39,6 @@ export interface ToStaticPageOptions {
 }
 
 export const toPage = async (path: string, { prod = true }: ToStaticPageOptions = {}) => {
-  if (path.indexOf('ja') !== -1) {
-    // console.log('yo', path)
-  }
   return {
     path: path.indexOf('l10n') === -1 ?
       path.replace(PAGES_DIR, '/docs').replace(/(\/index)?\.md$/i, '') :
