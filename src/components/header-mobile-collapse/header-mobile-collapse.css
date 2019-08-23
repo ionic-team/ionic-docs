@@ -1,0 +1,39 @@
+header-mobile-collapse .ionic-sub-header__mobile-toggle {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  header-mobile-collapse .header-mobile-collapse__content {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 0;
+    width: 100vw;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0,0,0, .1), 0 6px 16px rgba(0,0,0, .06);
+    top: 56px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    padding: 16px 0;
+  }
+
+  header-mobile-collapse .docs-dropdown {
+    align-self: stretch;
+  }
+
+  header-mobile-collapse .docs-dropdown .Dropdown-button {
+    width: 100%;
+  }
+
+  header-mobile-collapse .SectionNav stencil-route,
+  header-mobile-collapse .SectionNav-tabs,
+  header-mobile-collapse .UtilNav {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+    align-items: stretch;
+  }
+}
+
+
+
