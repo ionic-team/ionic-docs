@@ -138,16 +138,6 @@ export class DocsPage {
       );
     }
 
-    const shouldShowPagination = (
-      page.previousText && page.previousUrl || page.nextText && page.nextUrl
-    );
-
-    if (shouldShowPagination) {
-      content.push(
-        <docs-pagination page={page}/>
-      );
-    }
-
     return content;
   }
 }

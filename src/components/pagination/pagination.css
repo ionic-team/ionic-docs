@@ -1,9 +1,9 @@
 docs-pagination {
   border-color: var(--line-rule-color);
   border-style: solid;
-  border-width: 1px 0;
+  border-width: 0 0 1px;
   display: flex;
-  padding: var(--page-padding, 2rem 3rem);
+  padding: var(--page-padding, 2rem 0rem);
 }
 
 docs-pagination .next,
@@ -26,8 +26,18 @@ docs-pagination .previous {
 docs-pagination a {
   align-items: center;
   border-radius: 4px;
-  display: flex;
+  display: inline-flex;
+  flex-wrap: wrap;
   padding: 1em 1.5em;
+}
+
+docs-pagination .previous a {
+  margin-left: -1.5rem;
+}
+
+docs-pagination .next a {
+  margin-right: -1.5rem;
+  text-align: right;
 }
 
 @media (hover: hover) {
@@ -38,6 +48,12 @@ docs-pagination a {
   docs-pagination a:active {
     background-color: rgba(0, 0, 0, 0.035);
   }
+}
+
+docs-pagination .paggination__title {
+  color: var(--text-color--lighter);
+  font-size: 12px;
+  flex: 100%;
 }
 
 docs-pagination span {

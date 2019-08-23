@@ -29,6 +29,7 @@ export class DocsPagination {
           key="previous"
           class="previous"
           anchorTitle={previousText}>
+            <div class="paggination__title">Previous</div>
             <BackArrow/>
             <span>{previousText}</span>
         </stencil-route-link>
@@ -42,6 +43,7 @@ export class DocsPagination {
           key="next"
           class="next"
           anchorTitle={nextText}>
+            <div class="paggination__title">Next</div>
             <span>{nextText}</span>
             <ForwardArrow/>
         </stencil-route-link>
