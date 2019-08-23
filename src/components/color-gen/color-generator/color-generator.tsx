@@ -6,7 +6,7 @@ import { convertCssToColors, generateColor, updateCssText } from '../parse-css';
 @Component({
   tag: 'color-generator',
   styleUrl: 'color-generator.css',
-  shadow: true
+  // shadow: true
 })
 export class ColorGenerator {
 
