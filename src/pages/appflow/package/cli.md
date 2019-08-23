@@ -23,7 +23,7 @@ To use Environments, a proper subscription that allows the usage of Automations 
 
 ### Authentication
 
-The Ionic CLI has to be authenticated on Appflow to be able to trigger a Deploy build.
+The Ionic CLI has to be authenticated on Appflow to be able to trigger a Package build.
 
 To login type:
 ```bash
