@@ -30,8 +30,10 @@ export class DocsPagination {
           class="previous"
           anchorTitle={previousText}>
             <div class="paggination__title">Previous</div>
-            <BackArrow/>
-            <span>{previousText}</span>
+            <div class="paggination__text">
+              <BackArrow/>
+              <span>{previousText}</span>
+            </div>
         </stencil-route-link>
       );
     }
@@ -44,8 +46,10 @@ export class DocsPagination {
           class="next"
           anchorTitle={nextText}>
             <div class="paggination__title">Next</div>
-            <span>{nextText}</span>
-            <ForwardArrow/>
+            <div class="paggination__text">
+              <span>{nextText}</span>
+              <ForwardArrow/>
+            </div>
         </stencil-route-link>
       );
     }
