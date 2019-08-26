@@ -1,7 +1,4 @@
 docs-page-footer {
-  align-items: center;
-  display: flex;
-  font-size: 12px;
   margin-top: 6rem;
 }
 
@@ -14,4 +11,11 @@ docs-page-footer .last-updated {
   font-weight: normal;
   margin-left: auto;
   text-decoration: underline;
+}
+
+docs-page-footer .page-footer__row {
+  align-items: center;
+  display: flex;
+  font-size: 12px;
+  margin-top: 2rem;
 }

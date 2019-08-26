@@ -4,7 +4,7 @@ import { Component, Event, EventEmitter, Prop, State, h } from '@stencil/core';
 @Component({
   tag: 'color-gen-variable-selector',
   styleUrl: 'color-gen-variable-selector.css',
-  shadow: true
+  // shadow: true
 })
 export class VariableSelector {
 

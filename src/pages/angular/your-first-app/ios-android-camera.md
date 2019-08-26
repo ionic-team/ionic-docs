@@ -163,24 +163,30 @@ export class Tab2Page {
 }
 ```
 
-Finally, add the “takePicture” method, already wired up to execute once the camera button has been tapped:
+Finally, add the “takePicture” method in `tab2.page.ts`. It is already wired up to execute once the camera button has been tapped:
 
 ```Javascript
-takePicture() {
+export class Tab2Page {
+  currentImage: any;
+
+  constructor(private camera: Camera) { }
+
+  takePicture() {
     const options: CameraOptions = {
       quality: 100,
       destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE
-    }
+    };
 
     this.camera.getPicture(options).then((imageData) => {
       this.currentImage = 'data:image/jpeg;base64,' + imageData;
     }, (err) => {
-     // Handle error
-     console.log("Camera issue:" + err);
+      // Handle error
+      console.log("Camera issue:" + err);
     });
   }
+}
 ```
 
 Take notice: there’s no mention of iOS or Android! This is the awesome power of plugins: you use one API (`camera.getPicture()` in this case) and the plugin takes care of the platform differences for you. Write once, run everywhere. 😀
