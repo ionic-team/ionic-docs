@@ -18,7 +18,7 @@ export class DocsLocalization {
 
   constructor() {
     const prefix = /^\/docs\/([a-z]{2}\b)?/;
-    const [, language] = prefix.exec(window.location.pathname);
+    const [, language] = prefix ? prefix.exec(window.location.pathname) : null;
     this.locale = language && MESSAGES_ALL.hasOwnProperty(language) ? language : 'en';
     this.bundle = MESSAGES_ALL[this.locale];
   }
