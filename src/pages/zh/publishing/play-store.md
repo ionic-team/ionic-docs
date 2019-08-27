@@ -19,7 +19,7 @@ This will generate a release build based on the settings in the `config.xml` in 
 
 ## Signing an APK
 
-First, the unsigned APK must be signed. If a signing key has already been generated, skip these steps and use that one instead. Generate a private key using the keytool command that comes with the the Android SDK:
+First, the unsigned APK must be signed. If a signing key has already been generated, skip these steps and use that one instead. Generate a private key using the keytool command that comes with the Android SDK:
 
 ```shell
 $ keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000
