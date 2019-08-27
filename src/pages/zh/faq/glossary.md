@@ -203,7 +203,7 @@ nextUrl: '/docs/faq/build'
   </h3></a> 
   
   <p>
-    <a href="https://karma-runner.github.io/0.13/index.html" target="_blank">Karma</a> is a test runner that will run an app's test inside a real browser. It executes test cases, written in any testing framework, in a real browser. Karma was originally written for use with Angular 1.
+    <a href="https://karma-runner.github.io/latest/index.html" target="_blank">Karma</a> is a test runner that will run an app's test inside a real browser. It executes test cases, written in any testing framework, in a real browser. Karma was originally written for use with Angular 1.
   </p></section> <section id="module"> 
   
   <a href="#module">
@@ -233,7 +233,11 @@ nextUrl: '/docs/faq/build'
   </h3></a> 
   
   <p>
-    <strong>Live Reload</strong> is a tool that automatically reloads the browser when it detects changes. It watches a specific path and when a file or directory is updated, it will trigger a full browser reload. In cases where CSS is changed, livereload will inject the changed CSS instead of reloading the entire page.
+    <strong>Live Reload</strong> (or <strong>live-reload</strong>) is a tool that automatically reloads the browser or <a href="/docs/building/webview">Web View</a> when it detects changes in your app. In some cases, it can replace parts of your app without having to reload the entire window.
+  </p>
+  
+  <p>
+    Since live-reload requires a running development server, thus requiring the Web View to load a URL instead of simply reading deployed files, using live-reload on a separate device can be tricky. This may require additional configuration. It can also cause issues such as <a href="#cors">CORS</a> errors.
   </p></section> <section id="node"> 
   
   <a href="#node">
@@ -273,7 +277,7 @@ nextUrl: '/docs/faq/build'
   </h3></a> 
   
   <p>
-    Referred to by Apple as **Bundle ID** and by Android as **Application ID**, the **Package ID** is used for identifying apps published to the App Store/Play Store. It is a string formatted in <a href="https://en.wikipedia.org/wiki/Reverse_domain_name_notation" target="_blank">reverse-DNS notation</a>.
+    Referred to by Apple as <strong>Bundle ID</strong> and by Android as <strong>Application ID</strong>, the <strong>Package ID</strong> is used for identifying apps published to the App Store/Play Store. It is a string formatted in <a href="https://en.wikipedia.org/wiki/Reverse_domain_name_notation" target="_blank">reverse-DNS notation</a>.
   </p></section> <section id="polyfill"> 
   
   <a href="#polyfill">
@@ -376,7 +380,7 @@ nextUrl: '/docs/faq/build'
     The <a href="https://www.w3.org/" target="_blank">World Wide Web Consortium</a> (W3C) is the standards organization for the Web. Together, industry leaders and the public work together to develop <a href="https://www.w3.org/standards/" target="_blank">web standards</a>, which are a set of protocols, specifications, and technologies that define the Web Platform.
   </p></section> <section id="xcode"> 
   
-  <a href="#protractor">
+  <a href="#xcode">
   
   <h3>
     Xcode
