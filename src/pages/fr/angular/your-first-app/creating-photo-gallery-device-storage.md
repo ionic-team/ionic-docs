@@ -78,7 +78,7 @@ this.camera.getPicture(options).then((imageData) => {
 });
 ```
 
-In `tab2.page.ts`, remove the currentImage variable and the reference to Camera in the constructor, leaving only PhotoService:
+Dans `tab2.page.ts`, supprimez la variable currentImage et la référence à Camera dans le constructeur, laissant seulement PhotoService :
 
 ```Javascript
 export class Tab2Page {
@@ -86,7 +86,7 @@ export class Tab2Page {
 }
 ```
 
-Next, in `tab2.page.html`, remove the currentImage img tag. In its place, use an ion-grid component, which provides a great way to arrange elements on a page. In this case, we’ll use it to display 2 photos per row.
+Ensuite, dans `tab2.page.html`, supprimez la balise img contenant currentImage. À sa place, utilisez le composant appelé ion-grid, qui fournit une excellente façon d'organiser des éléments sur une page. Dans ce cas, nous l’utiliserons pour afficher 2 photos par ligne.
 
 ```html
 <ion-grid>
