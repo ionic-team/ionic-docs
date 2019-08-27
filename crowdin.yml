@@ -3,5 +3,5 @@ files:
     translation: /src/assets/locales/%two_letters_code%/messages.json
   - source: /src/pages/**/*.md
     translation: /src/pages/%two_letters_code%/**/%original_file_name%
-    ignore :
+    ignore:
       - /src/pages/%two_letters_code%/**/%original_file_name%
