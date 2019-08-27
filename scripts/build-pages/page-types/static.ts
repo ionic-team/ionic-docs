@@ -14,7 +14,7 @@ import markdownRenderer from '../markdown-renderer';
 
 export default {
   title: 'Build static pages',
-  task: () => buildPages(getStaticPages)
+  task: (_, status) => buildPages(getStaticPages, status)
 };
 
 async function getStaticPages(): Promise<Page[]> {

@@ -1,9 +1,15 @@
 import en from './assets/locales/en/messages.json';
-import ja from './assets/locales/ja/messages.json';
+import es from './assets/locales/es/messages.json';
+import fr from './assets/locales/fr/messages.json';
+import pt from './assets/locales/pt/messages.json';
+import zh from './assets/locales/zh/messages.json';
 
 const MESSAGES_ALL = {
   'en': en,
-  'ja': ja
+  'es': es,
+  'fr': fr,
+  'pt': pt,
+  'zh': zh,
 };
 
 export class DocsLocalization {
@@ -14,6 +20,7 @@ export class DocsLocalization {
     const prefix = /^\/docs\/([a-z]{2}\b)?/;
     const [, language] = prefix.exec(window.location.pathname);
     this.locale = language && MESSAGES_ALL.hasOwnProperty(language) ? language : 'en';
+    console.log(language, this.locale);
     this.bundle = MESSAGES_ALL[this.locale];
   }
 
