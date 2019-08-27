@@ -124,7 +124,7 @@ export function updatePageHtmlToHypertext(page: Page) {
 }
 
 function writePage(page: Page): Promise<any> {
-  listrStatus.output = `Writing Pages`;
+  listrStatus.output = `Writing Page: ${page.path}`;
   return fs.outputJson(toFilePath(page.path), page, {
     spaces: 2
   });
