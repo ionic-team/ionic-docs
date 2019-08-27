@@ -47,9 +47,9 @@ If you want consistency, you can tell Ionic to use the same mode regardless of p
 ```Javascript
 imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp, {
+    IonicModule.forRoot({
       mode: "md"
-    }, null),
+    }),
     IonicStorageModule.forRoot()
   ],
 ```
