@@ -64,7 +64,11 @@ $ ionic cordova run android -l
 
 Now, when changes are made to the app's source files, web assets are rebuilt and the changes are reflected on the simulator or device without having to deploy again.
 
-## Using Chrome DevTools
+## Debugging Android Apps
+
+Once an app is running on an Android device or emulator, it can be debugged with Chrome DevTools.
+
+### Using Chrome DevTools
 
 Chrome has web developer tool support for Android simulators and devices. Go to `chrome://inspect` in Chrome while the simulator is running or a device is connected to the computer and **Inspect** the app that needs to be debugged.
 
@@ -72,10 +76,16 @@ Chrome has web developer tool support for Android simulators and devices. Go to 
 
 ![Android Chrome DevTools](/docs/assets/img/running/android-chrome-devtools.png)
 
-## Viewing Native Logs
+### Viewing Native Logs
 
-Native logs can be found in Android Studio in **Logcat**.
+If running with Android Studio, native logs can be found in **Logcat**.
 
 > If the **Logcat** window is hidden, you can enable it in **View** &raquo; **Tool Windows** &raquo; **Logcat**.
 
 ![Android Studio Logcat](/docs/assets/img/running/android-studio-logcat.png)
+
+You can also access **Logcat** with [ADB](https://developer.android.com/studio/command-line/adb).
+
+```shell
+$ adb logcat
+```
