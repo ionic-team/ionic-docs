@@ -22,6 +22,13 @@ const start = () => {
   app.use(compress());
   app.use(helmet());
 
+  if (process.env.index !== 'TRUE') {
+    app.use(function(_, res, next) {
+      res.setHeader('X-Robots-Tag', 'noindex')
+      next();
+    });
+  }
+
   app.get('/', (_, res) => res.redirect(301, '/docs/'));
 
   app.use((req, res, next) => {
