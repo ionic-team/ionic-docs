@@ -24,7 +24,6 @@ if (!module.parent) {
 }
 
 export const PAGES_DIR = resolve(__dirname, '../../src/pages');
-export const L10N_PAGES_DIR = resolve(__dirname, '../../src/l10n/pages');
 
 export interface Page {
   title: string;
@@ -126,8 +125,5 @@ function writePage(page: Page): Promise<any> {
 }
 
 const toFilePath = (urlPath: string) => {
-  return urlPath.indexOf('l10n') === -1 ?
-    `${resolve(PAGES_DIR, urlPath.slice(6) || 'index')}.json` :
-    `${resolve(PAGES_DIR, urlPath.replace('/docs', '').slice(1))}.json`;
+  return `${resolve(PAGES_DIR, urlPath.slice(6) || 'index')}.json`;
 };
-

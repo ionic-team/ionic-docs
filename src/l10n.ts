@@ -1,5 +1,5 @@
-import en from './locales/en/messages.json';
-import ja from './locales/ja/messages.json';
+import en from './assets/locales/en/messages.json';
+import ja from './assets/locales/ja/messages.json';
 
 const MESSAGES_ALL = {
   'en': en,
