@@ -6,7 +6,7 @@ Ionic Native Community Edition (CE) is a collection of open source Cordova plugi
 
 The plugins in Ionic Native CE are submitted and maintained by the Ionic community. While community members are generally quick to find and fix issues, certain plugins may not function properly. For teams that require dedicated native plugin support, please explore Ionic Native Enterprise Edition and request a free trial.
 
-Note: These docs are for apps built with Ionic Framework 4.0.0 and greater. For older Ionic v3 projects, please see here.
+> Note: These docs are for apps built with Ionic Framework 4.0.0 and greater. For older Ionic v3 projects, please [see here](/docs/v3/native).
 
 ## Usage
 
