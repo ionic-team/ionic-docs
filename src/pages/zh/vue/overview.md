@@ -23,4 +23,4 @@ While there are no known technical limitations to using `Ionic Vue` with [Cordov
 
 ## From the Community
 
-[How to use Ionic 4 with Vue.js](https://ionicworkshop.com/posts/ionic-4-vue-js) - Paul Halliday
+[How to use Ionic 4 with Vue.js](https://alligator.io/vuejs/vue-ionic/) - Paul Halliday
