@@ -7,7 +7,7 @@ meta:
 
 <docs-cards> <docs-card header="Components" href="/docs/components" img="/docs/assets/icons/feature-guide-components-icon.png"> 
 
-A comprehensive look at Ionic Framework's beautifully designed UI component library.</docs-card>
+Una mirada exhaustiva a la biblioteca de componentes de IU de Ionic Framework bellamente diseñada.</docs-card>
 
 <docs-card header="Introduction" href="/docs/intro" icon="/docs/assets/icons/guide-introduction-icon.png"> 
 
@@ -31,8 +31,8 @@ Aprende cómo personalizar y modificar fácilmente el diseño de tu aplicación 
 
 <docs-card header="Resources" href="/docs/developer-resources/books" icon="/docs/assets/icons/guide-resources-icon.png"> 
 
-Aprende Iónico con guías oficiales, videos, libros, cursos y más.</docs-card>
+Aprende Ionic con guías oficiales, videos, libros, cursos y más.</docs-card>
 
 <docs-card header="FAQ" href="/docs/faq/glossary" icon="/docs/assets/icons/guide-faq-icon.png"> 
 
-Get answers to some of the most commonly asked questions about the framework.</docs-card> </docs-cards>
+Obtenga respuestas a algunas de las preguntas más frecuentes sobre el marco.</docs-card> </docs-cards>
