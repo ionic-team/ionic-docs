@@ -1,9 +1,9 @@
 {
   "brand-framework": "Framework",
   "brand-appflow": "Appflow",
-  "header-guide": "Guide",
-  "header-components": "Components",
-  "header-cli": "CLI",
+  "header-guide": "Aide",
+  "header-components": "Composants",
+  "header-cli": "Invité de commande",
   "header-native": "Native",
   "header-community": "Community",
   "header-support": "Support",
