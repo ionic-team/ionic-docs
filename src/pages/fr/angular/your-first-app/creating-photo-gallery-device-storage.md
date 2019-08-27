@@ -1,5 +1,5 @@
 ---
-previousText: 'Android, iOS, and the Camera - Oh My!'
+previousText: 'Android, iOS et la caméra de votre smartphone - Impressionnant !'
 previousUrl: '/docs/angular/your-first-app/ios-android-camera'
 nextText: 'Theming'
 nextUrl: '/docs/angular/your-first-app/theming'
