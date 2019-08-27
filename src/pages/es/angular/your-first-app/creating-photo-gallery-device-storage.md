@@ -9,17 +9,17 @@ contributors:
 
 # Creando una galería de fotos con almacenamiento de dispositivos
 
-La última vez, agregamos con éxito el puglin de la cámara a la página Tab2 de nuestra aplicación Tabs. Actualmente, la foto se reemplaza cada vez que se toma una nueva. ¿Qué pasa si queremos mostrar varias fotos juntas? Vamos a crear una galería de fotos. You can follow along with the complete code for this [on GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4).
+La última vez, agregamos con éxito el puglin de la cámara a la página Tab2 de nuestra aplicación Tabs. Actualmente, la foto se reemplaza cada vez que se toma una nueva. ¿Qué pasa si queremos mostrar varias fotos juntas? Vamos a crear una galería de fotos. Puedes ver el código completo para esto [en GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4).
 
-## Creating a Dedicated Photo Service
+## Creando un Servicio de Fotos Dedicado
 
-From a terminal window, navigate to your Ionic project and run:
+Desde una terminal, navegue a su proyecto Ionic y ejecute:
 
 ```shell
 $ ionic g service services/Photo
 ```
 
-This creates a PhotoService class in a dedicated "services" folder:
+Esto crea una clase llamada PhotoService en una carpeta dedicada de "servicios":
 
 ```Javascript
 import { Injectable } from '@angular/core';
