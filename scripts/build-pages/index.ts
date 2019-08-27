@@ -38,6 +38,8 @@ export interface Page {
 export type PageGetter = (status?) => Promise<Page[]>;
 
 export async function buildPages(getter: PageGetter, status?) {
+  // if not passed a listr status var, just set the output of an unused object
+  // might be helpful for debugging
   listrStatus = status || {};
   listrStatus.output = 'Parsing Markdown';
   const pages = await getter();
