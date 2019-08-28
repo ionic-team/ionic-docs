@@ -5,19 +5,19 @@ nextText: 'Environments'
 nextUrl: '/docs/appflow/automation/environments'
 ---
 
-# Usando automatizaciones
+# Using Automations
 
 ## Managing Automations
 
-Creating and customizing automations is simple. Para empezar, navegue a la pestaña `Automatizar` dentro de la aplicación deseada.
+Creating and customizing automations is simple. To get started, navigate to the `Automate` tab within the desired app.
 
 To **create a new automation**, click the `New Automation` button on the top right of the `Automate` dashboard. When clicked, the automation customization form will appear, which has several fields available to customize the automation (Read more about these [below](#customizing-automations)).
 
-Para editar **una automatización**, haga clic en los tres puntos junto a los que desea modificar.
+To **edit an automation**, click the three dots next to the one you'd like to modify.
 
-## Personalizando Automatizaciones
+## Customizing Automations
 
-Hay una serie de personalizaciones disponibles para especificar el comportamiento específico de una automatización determinada. Se muestran en el formulario de creación/edición de automatización a continuación.
+There are a number of customizations available to specify the specific behavior of a given automation. They are shown on the create/edit automation form below.
 
 ### Basic Automation Info
 
