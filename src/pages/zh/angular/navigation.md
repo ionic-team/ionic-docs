@@ -111,11 +111,11 @@ export class LoginComponent {
 }
 ```
 
-Both options provide the same navigation mechanism, just fitting different use cases.
+这两种方式的导航机制相同，只是作用的场景不同。
 
-> A note on navigation with relative URLs: Currently, to support multiple navigation stacks, relative URLs are something not supported
+> 关于使用相对URL的说明：在当前版本中，为了支持多重导航栈，相对URL不受支持。
 
-## Lazy loading routes
+## 懒加载路由
 
 Now the current way our routes are setup makes it so they are included in the same chunk as the root app.module, which is not ideal. Instead, the router has a setup that allows the components to be isolated to their own chunks.
 
