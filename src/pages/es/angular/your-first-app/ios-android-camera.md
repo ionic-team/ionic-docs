@@ -18,9 +18,9 @@ $ ionic cordova platform add ios
 $ ionic cordova platform add android
 ```
 
-These commands will create a `config.xml` file, which is used to define Cordova iOS and Android settings. Cordova reads this file and applies each setting as it builds each native app binary.
+Estos comandos crearán un archivo `config.xml`, que sirve para definir las caracteristícas y configuraciones de Cordova iOS y Android. Cordova lee este archivo y aplica las configuraciónes cada vez que construye un binario de la aplicación nativa.
 
-To run your app on DevApp, you will first need to add a reference to `cordova.js` in your `index.html` file. Open up the file at `src/index.html` and add the following tag into the `head` section:
+Para correr la aplicación en DevApp, primero debes agregar la referencia de `cordova.js` en el archivo `index.html`. Abre el archivo que se encuentra en `src/index.html` y agrega la siguiente etiqueta en el `head`:
 
 ```html
 <head>
