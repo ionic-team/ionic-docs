@@ -9,13 +9,13 @@ contributors:
 
 # Angular 导航
 
-This guide covers how routing works in an app built with Ionic and Angular.
+本章主要讲述Ionic和Angular构建APP的路由如何工作。
 
-The Angular Router is one of the most important libraries in an Angular application. Without it, apps would be single view/single context apps or would not be able to maintain their navigation state on browser reloads. With Angular Router, we can create rich apps that are linkable and have rich animations (when paired with Ionic of course). Let's look at the basics of the Angular Router and how we can configure it for Ionic apps.
+Angular路由是Angular应用中最重要的库之一。 没有它，就只能做单一视图/单一上下文的APP，也无法在浏览器重新加载时维持其导航状态。 使用Angular路由，我们可以创建有链接的、有动画的富应用(当然也需要Ionic的帮助)。 让我们研究Angular路由的基本知识以及如何为Ionic配置路由。
 
-## A simple Route
+## 一个简单的路由
 
-For most apps, having some sort of route is often required. The most basic configuration looks a bit like this:
+对大多数应用来说，路由不可或缺。 最基本的配置大概是这样：
 
 ```typescript
 <br />import { RouterModule } from '@angular/router';
@@ -31,7 +31,7 @@ For most apps, having some sort of route is often required. The most basic confi
 })
 ```
 
-The simplest breakdown for what we have here is a path/component lookup. When our app loads, the router kicks things off by reading the URL the user is trying to load. In our sample, our route looks for `''`, which is essentially our index route. So for this, we load the `LoginComponent`. Fairly straight forward. This pattern of matching paths with a component continues for every entry we have in the router config. But what if we wanted to load a different path on our initial load?
+这里路由分解到最小的粒度，是路径/组件的查找。 当我们的应用程序加载时，路由器通过读取用户正在加载的 URL 来启动内容。 In our sample, our route looks for `''`, which is essentially our index route. So for this, we load the `LoginComponent`. Fairly straight forward. This pattern of matching paths with a component continues for every entry we have in the router config. But what if we wanted to load a different path on our initial load?
 
 ## Handling Redirects
 
