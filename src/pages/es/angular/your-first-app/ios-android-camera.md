@@ -1,30 +1,30 @@
 ---
-previousText: 'Your First Ionic App'
+previousText: 'Tu primera aplicación con Ionic'
 previousUrl: '/docs/angular/your-first-app'
-nextText: 'Creating a Photo Gallery'
+nextText: 'Crear una galería de fotos'
 nextUrl: '/docs/angular/your-first-app/creating-photo-gallery-device-storage'
 ---
 
-# Android, iOS, and the Camera - Oh My!
+# Android, iOS y la Cámara, otra vez!
 
-Previously, we got an Ionic app up and running locally in a web browser. Now, let’s get it onto your iOS or Android device, then start building the photo gallery feature.
+Anteriormente creamos una aplicación Ionic que se encuentra corriendo localmente y en el navegador. Ahora, dirígete a tu dispositivo iOS o Android y comienza a crear la galería de fotos.
 
-## Add Cordova iOS and Android Platforms
+## Agregar a Cordova las plataformas iOS y Android
 
-Ionic leverages the open source [Cordova project](https://cordova.apache.org/docs/en/latest/guide/overview/) to provide native hardware support. We begin by adding the iOS and Android *platforms* then will add specific *plugins* like the Camera afterwards:
+Ionic hace uso del proyecto open source [Cordova](https://cordova.apache.org/docs/en/latest/guide/overview/) para proveer un soporte del hardware nativo. Comenzaremos por agregar las *plataformas* iOS y Android y luego agregaremos *plugins* especifícos como la Cámara:
 
 ```shell
 $ ionic cordova platform add ios
 $ ionic cordova platform add android
 ```
 
-These commands will create a `config.xml` file, which is used to define Cordova iOS and Android settings. Cordova reads this file and applies each setting as it builds each native app binary.
+Estos comandos crearán un archivo `config.xml`, que sirve para definir las caracteristícas y configuraciones de Cordova iOS y Android. Cordova lee este archivo y aplica las configuraciónes cada vez que construye un binario de la aplicación nativa.
 
-To run your app on DevApp, you will first need to add a reference to `cordova.js` in your `index.html` file. Open up the file at `src/index.html` and add the following tag into the `head` section:
+Para correr la aplicación en DevApp, primero debes agregar la referencia de `cordova.js` en el archivo `index.html`. Abre el archivo que se encuentra en `src/index.html` y agrega la siguiente etiqueta en el `head`:
 
 ```html
 <head>
-  <!-- ... Other HTML tags... -->
+  <!-- ... Otras etiquetas HTML... -->
 
   <script src="cordova.js"></script>
 </head>
