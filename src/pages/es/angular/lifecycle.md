@@ -37,15 +37,15 @@ Además de los eventos del ciclo de vida de Angular, Ionic Angular proporciona a
 | `ionViewDidLeave`  | Se dispara cuando el component Routing ha terminado de realizar la animación luego de abandonar la View en cuestión. |
 
 
-La diferencia entre `ionViewWillEnter` y `ionViewDidEnter` es cuando son ejecutadas. The former fires right after `ngOnInit` but before the page transition begins, and the latter directly after the transition ends.
+La diferencia entre `ionViewWillEnter` y `ionViewDidEnter` es cuando son ejecutadas. El primero se ejecuta justo después de `ngOnInit` pero antes que la transición de la pagina empiece, y el ultimo justo antes de que la animación termine.
 
-For `ionViewWillLeave` and `ionViewDidLeave`, `ionViewWillLeave` gets called directly before the transition away from the current page begins, and `ionViewDidLeave` does not get called until after the new page gets successfully transitioned into (after the new pages `ionViewDidEnter` fires).
+Para `ionViewWillLeave` y `ionViewDidLeave`, `ionViewWillLeave` es llamada directamente antes de que comience la transición fuera de la página actual, y `ionViewDidLeave` no se llama hasta después de que haga la transición con éxito hacia una nueva página (después de las nuevas páginas el método `ionViewDidEnter` es ejecutado).
 
 ![Ionic life cycle events demo](/docs/assets/img/guides/lifecycle/ioniclifecycle.gif)
 
-## How Ionic Handles the Life of a Page
+## Cómo Ionic maneja el ciclo de vida de un component Page
 
-Ionic has its router outlet, called `<ion-router-outlet />`. This outlet extends Angular's `<router-outlet />` with some additional functionality to enable better experiences for mobile devices.
+Ionic tiene su propios router outlet, llamado `<ion-router-outlet />`. This outlet extends Angular's `<router-outlet />` with some additional functionality to enable better experiences for mobile devices.
 
 When an app is wrapped in `<ion-router-outlet />`, Ionic treats navigation a bit differently. When you navigate to a new page, Ionic will keep the old page in the existing DOM, but hide it from your view and transition the new page. The reason we do this is two-fold:
 
