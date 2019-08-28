@@ -1,11 +1,11 @@
 ---
-nextText: 'Crie Sua Primeira Aplicação'
+nextText: 'Build Your First App'
 nextUrl: '/docs/angular/your-first-app'
 ---
 
 # Ionic Angular Overview
 
-`@ionic/angular` combina o essencial da experiência do Ionic com as ferramentas e APIs adaptadas para os Desenvolvedores de Angular.
+`@ionic/angular` combines the core Ionic experience with the tooling and APIs that are tailored to Angular Developers.
 
 ## Angular Version Support
 
