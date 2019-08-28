@@ -13,4 +13,4 @@ Ionic支持 `Angular 6.0.0`及以上版本。 作为其升级策略的一部分�
 
 ## Angular 工具
 
-With Ionic 4+, the official Angular stack for building an app and routing are used, so your app can fall in-line with the rest of the great Angular ecosystem. In cases where more opinionated features are needed, Ionic provides `@ionic/angular-toolkit`, which builds and integrates with the [official Angular CLI](https://angular.io/cli) and provides features that are specific to `@ionic/angular` apps.
+Ionic 4+ 使用了Angular官方的CLI与路由，因此你的应用可以与Angular生态系统的其余部分保持一致。 在需要更多功能的情况下，Ionic 提供了 `@ionicc/angular-toolkit`, 它构建并融入 [官方的 Angolar CLI](https://angular.io/cli) 并提供 `@ionic/angular` 的应用特有的功能。
