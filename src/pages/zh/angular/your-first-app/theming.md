@@ -19,10 +19,10 @@ Ionic有九种定义成CSS变量的默认色调，可以用于改变其UI组件�
 
 你可以在 `src/theme/variables.scss`里面找到这些样式定义。
 
-By changing these variables here and there, you can easily update the entire theme of the application! Try changing a few of them and watch the app update in DevApp. For example, change the default blue color for Primary to purple:
+通过改变各处的这些变量，你可以轻松地修改整个应用的主题。 尝试改变其中的一些以观察开发版应用程序的变化。例如：将Primary的默认蓝色更改为紫色：
 
 ```css
-/** Ionic CSS Variables **/
+/** Ionic CSS 变量 **/
 :root {
   /** primary **/
   --ion-color-primary: #b36bff;
