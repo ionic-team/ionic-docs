@@ -65,20 +65,20 @@ constructor(private camera: Camera, public photoService: PhotoService) {  }
 
 Em seguida, mova todo o código relacionado ao plugin Câmera para a classe PhotoService. Isto inclui o método de "takePicture", os imports de "Camera" e CameraOptions", e o construtor de página "Tab2Page".
 
-Continuing on, we need to convert currentImage variable references to the new photos array. Start by adding the captured photo data into the photos array:
+Continuando, precisamos converter a variável "currentImage" para o novo array de fotos. Comece adicionando os dados das fotos capturadas no array de fotos:
 
 ```Javascript
 this.camera.getPicture(options).then((imageData) => {
-    // Add new photo to gallery
+    // Adiciona uma nova foto à galeria
     this.photos.unshift({
         data: 'data:image/jpeg;base64,' + imageData
     }); }, (err) => {
     // Handle error
-    console.log("Camera issue: " + err);
+    console.log("Erro na Camera: " + err);
 });
 ```
 
-In `tab2.page.ts`, remove the currentImage variable and the reference to Camera in the constructor, leaving only PhotoService:
+No `tab2.page.ts.`, remova a variável "currentImage" e a referência "Camera" no construtor, deixando apenas o "PhotoService":
 
 ```Javascript
 export class Tab2Page {
@@ -86,7 +86,7 @@ export class Tab2Page {
 }
 ```
 
-Next, in `tab2.page.html`, remove the currentImage img tag. In its place, use an ion-grid component, which provides a great way to arrange elements on a page. In this case, we’ll use it to display 2 photos per row.
+Em seguida, em `tab2.page.html`, remova a tag img com bind para currentImage e em seu lugar, use um componente de ion-grid, que fornece uma ótima maneira de organizar elementos em uma página. Neste caso, usaremos para exibir 2 fotos por linha.
 
 ```html
 <ion-grid>
