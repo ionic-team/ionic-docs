@@ -7,7 +7,7 @@ contributors:
   - mhartington
 ---
 
-# Angular Navigation
+# Angular 导航
 
 This guide covers how routing works in an app built with Ionic and Angular.
 
