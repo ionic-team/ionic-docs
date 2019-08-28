@@ -1,7 +1,7 @@
 ---
-previousText: 'Lifecycle'
+previousText: '生命周期'
 previousUrl: '/docs/angular/lifecycle'
-nextText: 'Performance'
+nextText: '性能'
 nextUrl: '/docs/angular/performance'
 contributors:
   - mhartington
@@ -206,4 +206,4 @@ const routes: Routes = [
 &lt;/ion-tabs&gt;
 ```
 
-If you've built apps with Ionic before, this should feel familiar. We create a `ion-tabs` component, and provide a `ion-tab-bar`. The `ion-tab-bar` provides a `ion-tab-button` with a `tab` property that is associated with the tab "outlet" in the router config. Note that the latest version of `@ionic/angular` no longer requires `<ion-tab>`, but instead allows developers to fully customize the tab bar, and the single source of truth lives within the router configuration.
+如果你以前构建过Ionic应用，你应该就很熟悉了。 我们创建了一个 `ion-tabs`组件，然后提供了一个 `ion-tab-bar`。 这个`ion-tab-bar`包括一个`ion-tab-button`，它存在一个与路由器配置中tab的“出口”相关联的`tab`属性。注意，最新版本的`@ionic/angular`中不再需要`<ion-tab>`，开发者完全可以自定义标签栏，它唯一的真实来源在路由器配置中。
