@@ -2,6 +2,6 @@
 template: api-index
 ---
 
-# Índice da API
+# API Index
 
-Cada [componente](/docs/components) do Ionic é composto de um ou mais [elementos customizados](https://developer.mozilla.org/pt-BR/docs/Web/Web_Components/Usando_elementos_customizados). Cada elemento customizado, por sua vez, pode expor propriedades, métodos, eventos e propriedades customizadas de CSS.
+Each Ionic [component](/docs/components) consists of one or more [custom elements](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements). Each custom element, in turn, may expose properties, methods, events, and CSS custom properties.
