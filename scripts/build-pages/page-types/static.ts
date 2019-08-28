@@ -14,16 +14,15 @@ import markdownRenderer from '../markdown-renderer';
 
 export default {
   title: 'Build static pages',
-  task: () => buildPages(getStaticPages)
+  task: (_, status) => buildPages(getStaticPages, status)
 };
 
 async function getStaticPages(): Promise<Page[]> {
   const paths = await getMarkdownPaths(PAGES_DIR);
-
   return Promise.all(paths.map(path => toPage(path)));
 }
 
-const getMarkdownPaths = (cwd: string): Promise<string[]> =>
+export const getMarkdownPaths = (cwd: string): Promise<string[]> =>
   glob('**/*.md', {
     absolute: true,
     cwd
@@ -35,7 +34,7 @@ export interface ToStaticPageOptions {
 
 export const toPage = async (path: string, { prod = true }: ToStaticPageOptions = {}) => {
   return {
-    path: path.replace(PAGES_DIR, '/docs').replace(/(\/index)?\.md$/i, ''),
+    path: path.replace(PAGES_DIR, '/docs').replace(/\.md$/i, ''),
     github: prod ? await getGitHubData(path) : null,
     ...renderMarkdown(await readMarkdown(path))
   };
@@ -55,7 +54,7 @@ const readMarkdown = (path: string): Promise<string> =>
   });
 
 const getGitHubData = async (filePath: string) => {
-  const [, path] = /^.+\/(src\/pages\/.+\.md)$/.exec(filePath);
+  const [, path] = /^.+\/(src\/(l10n\/)?pages\/.+\.md)$/.exec(filePath);
   const since = new Date('2019-01-23').toISOString();
 
   try {

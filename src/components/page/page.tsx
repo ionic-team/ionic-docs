@@ -21,6 +21,9 @@ export class DocsPage {
   @Watch('path')
   fetchPage(path, oldPath?) {
     if (path == null || path === oldPath) return;
+    path = /^\/docs\/pages\/[a-z]{2}\.json$/.test(path)
+      ? path.replace('.json', '/index.json')
+      : path;
     return fetch(path)
       .then(this.validateFetch)
       .then(this.handleNewPage)
