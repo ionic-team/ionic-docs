@@ -5,6 +5,7 @@ Thanks for your interest in contributing to Ionic's documentation! :tada: Check 
 * [Development Workflow](#development-workflow)
 * [Project Structure](#project-structure)
 * [Authoring Content](#authoring-content)
+* [Translation](#translation)
 * [Reporting Issues](#reporting-issues)
 * [Pull Request Guidelines](#pull-request-guidelines)
 * [Project Management](#project-management)
@@ -99,6 +100,17 @@ The Markdown in `src/pages` does not contain all of the Ionic documentation's co
 - Paths matching `/docs/cli/commands/*` are built from the [Ionic CLI](https://github.com/ionic-team/ionic-cli) source code
 
 ---
+
+## Translation
+
+Ionic docs have been translated in to Japanese and are in the process of being translated in to Chinese, French, Portuguese, and Spanish. These languages we chosen because we believe they have the greatest number of developers where English-only documentation would be a barrier. 
+
+We use Crowdin for our translation service, and you can participate and contribute to the translation effort on the [Ionic Crowdin page](https://crowdin.com/project/ionic-docs). 
+
+_Please submit translation issues to the Crowdin page and not the Ionic Docs GitHub repo_
+
+The Japanese translation of the docs were built by an independent team, lead by [rdlabo](https://github.com/rdlabo) and can be found and contributed to on the [ionic-jp group's `ionic-docs` project page](https://github.com/ionic-jp/ionic-docs).
+
 
 ## Reporting Issues
 

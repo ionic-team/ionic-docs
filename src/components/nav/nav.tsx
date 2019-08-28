@@ -1,6 +1,7 @@
 import { Build, Component, Element, Prop, h } from '@stencil/core';
 import { Outbound } from '../../icons';
 import { MenuItems } from '../../definitions';
+import { l10n } from '../../l10n';
 
 @Component({
   tag: 'docs-nav',
@@ -19,11 +20,11 @@ export class DocsNav {
   }
 
   toItem = (item, level = 0) => {
-    const [title , value] = item;
+    const [id, value] = item;
     switch (typeof value) {
       case 'string':
         // Go ahead...git blame...I know you want TWO :-)
-        if (title.match(/Show all [EC]E plugins/)) {
+        if (id.match(/menu-native-[ce]e-show-all/)) {
          return <li style={{ 'font-style': 'italic' }} key={item}>{this.toLink(item)}</li>;
         }
         return <li key={item}>{this.toLink(item)}</li>;
@@ -35,7 +36,8 @@ export class DocsNav {
   }
 
   toLink = (item) => {
-    const [text, href] = item;
+    const [id, href] = item;
+    const text = l10n.getString(id) || id;
     const isExternal = this.isExternalLink(href);
 
     if (isExternal) {
@@ -48,9 +50,15 @@ export class DocsNav {
       );
     }
 
+    const prefix = /^\/docs(\/[a-z]{2})?\//;
+    const language = l10n.getLocale();
+    const url = language !== 'en'
+      ? `/docs/${language}/${href.replace(prefix, '')}`
+      : href;
+
     return (
       <stencil-route-link
-        url={href}
+        url={url}
         strict={false}
         exact
         activeClass="Nav-link--active"
@@ -60,11 +68,12 @@ export class DocsNav {
     );
   }
 
-  toSection = ([text, value], level) => {
+  toSection = ([id, value], level) => {
+    const text = l10n.getString(id);
     const items = this.normalizeItems(value);
     return (
       <section>
-        { text !== '' && text !== undefined ? <header class="Nav-header">{text}</header> : null }
+        { id !== '' && text !== undefined ? <header class="Nav-header">{text}</header> : null }
         <ul
           class="Nav-subnav"
           style={{ '--level': level }}>

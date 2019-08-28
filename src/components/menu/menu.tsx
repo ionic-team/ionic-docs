@@ -35,13 +35,13 @@ export class DocsMenu {
         </stencil-route>
       </stencil-route-switch>,
       <stencil-route-switch scrollTopOffset={0} class="Menu">
-        <stencil-route url="/docs/(components|api)" routeRender={componentsTemplate}/>
-        <stencil-route url="/docs/cli" routeRender={cliTemplate}/>
-        <stencil-route url="/docs/studio" routeRender={studioTemplate}/>
-        <stencil-route url="/docs/native/:plugin" routeRender={nativeTemplate}/>
-        <stencil-route url="/docs/native" routeRender={nativeLandingTemplate}/>
-        <stencil-route url="/docs/appflow" routeRender={appflowTemplate}/>
-        <stencil-route url="/docs/enterprise" routeRender={enterpriseTemplate}/>
+        <stencil-route url="/docs/:lang([a-z]{2})?/(components|api)" routeRender={componentsTemplate}/>
+        <stencil-route url="/docs/:lang([a-z]{2})?/cli" routeRender={cliTemplate}/>
+        <stencil-route url="/docs/:lang([a-z]{2})?/studio" routeRender={studioTemplate}/>
+        <stencil-route url="/docs/:lang([a-z]{2})?/native/:plugin" routeRender={nativeTemplate}/>
+        <stencil-route url="/docs/:lang([a-z]{2})?/native" routeRender={nativeLandingTemplate}/>
+        <stencil-route url="/docs/:lang([a-z]{2})?/appflow" routeRender={appflowTemplate}/>
+        <stencil-route url="/docs/:lang([a-z]{2})?/enterprise" routeRender={enterpriseTemplate}/>
         <stencil-route routeRender={mainTemplate}/>
       </stencil-route-switch>
     ];
