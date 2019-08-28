@@ -7,17 +7,17 @@ nextUrl: '/docs/angular/lifecycle'
 
 # 自定义！ Ionic主题
 
-Previously, we converted our single use Camera app into an epic photo gallery. Now, let’s explore how to make the photo gallery our own with Ionic theming. The visual design of the app is incredibly important - fortunately, Ionic provides a lot for us out-of-the-box.
+Previously, we converted our single use Camera app into an epic photo gallery. Now, let’s explore how to make the photo gallery our own with Ionic theming. 视觉设计对一款应用来说是非常重要的——幸运的是，Ionic为我们提供了很多开箱即用的东西。
 
-Ionic has nine default colors, defined as CSS variables, that can be used to change the color of its UI components:
+Ionic有九种定义成CSS变量的默认色调，可以用于改变其UI组件的颜色。
 
 ![v4-theming-defaults](/docs/assets/img/guides/first-app-v4/theming-defaults.png)
 
-You can customize each color further by supplying a base, contrast, shade, and tint properties. These provide flexible control over your styles:
+你可以通过base（基础）、contrast（对比度）、shade（阴影）和tint（色调）属性来进一步定义每种颜色。 这使得样式管理变得更加灵活。
 
 ![v4-theming-properties](/docs/assets/img/guides/first-app-v4/theming-properties.png)
 
-You can find these colors defined in `src/theme/variables.scss`.
+你可以在 `src/theme/variables.scss`里面找到这些样式定义。
 
 By changing these variables here and there, you can easily update the entire theme of the application! Try changing a few of them and watch the app update in DevApp. For example, change the default blue color for Primary to purple:
 
