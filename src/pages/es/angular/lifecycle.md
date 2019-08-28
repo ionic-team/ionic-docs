@@ -15,29 +15,29 @@ Esta guía cubre cómo funciona el ciclo de vida de un component de tipo Page en
 
 ## Eventos Life Cycle de Angular
 
-Ionic embraces the life cycle events provided by Angular. The two Angular events you will find using the most are:
+Ionic adopta los mismo eventos de ciclo de vida proveídos por Angular. Los dos eventos de Angular mas utilizados que encontrarás son los siguientes:
 
-| Event Name    | Description                                                                                                                                                 |
-| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ngOnInit`    | Fired once during component initialization. This event can be used to initialize local members and make calls into services that only need to be done once. |
-| `ngOnDestroy` | Fired right before Angular destroys the view. Useful for cleanup like unsubscribing from observables.                                                       |
+| Nombre del Evento | Descripción                                                                                                                                                                                                           |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ngOnInit`        | Se dispara cuando un componente es inicializado. Este evento puede ser utilizado para inicializar propiedades privadas y realizar llamadas a servicios que solo deban ejecutarse una sola vez.                        |
+| `ngOnDestroy`     | Se dispara justo antes de que Angular destruya el component View en cuestión. Útil para realizar una limpieza una vez que el component te ha destruido, tal como la desuscripción a diferentes eventos u observables. |
 
 
 For more info on the Angular Component Life Cycle events, visit their [component lifecycle docs](https://angular.io/guide/lifecycle-hooks).
 
 ## Ionic Page Events
 
-In addition to the Angular life cycle events, Ionic Angular provides a few additional events that you can use:
+Además de los eventos del ciclo de vida de Angular, Ionic Angular proporciona algunos eventos adicionales que puedes usar:
 
-| Event Name         | Description                                                        |
-| ------------------ | ------------------------------------------------------------------ |
-| `ionViewWillEnter` | Fired when the component routing to is about to animate into view. |
-| `ionViewDidEnter`  | Fired when the component routing to has finished animating.        |
-| `ionViewWillLeave` | Fired when the component routing from is about to animate.         |
-| `ionViewDidLeave`  | Fired when the component routing to has finished animating.        |
+| Nombre del Evento  | Descripción                                                                                                          |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------- |
+| `ionViewWillEnter` | Se dispara cuando el component Routing esta a punto de animar la nueva View.                                         |
+| `ionViewDidEnter`  | Se dispara cuando el component Routing ha terminado de animar la nueva View.                                         |
+| `ionViewWillLeave` | Se dispara cuando el component Routing esta a punto de animar para abandonar la View en cuestión.                    |
+| `ionViewDidLeave`  | Se dispara cuando el component Routing ha terminado de realizar la animación luego de abandonar la View en cuestión. |
 
 
-The difference between `ionViewWillEnter` and `ionViewDidEnter` is when they fire. The former fires right after `ngOnInit` but before the page transition begins, and the latter directly after the transition ends.
+La diferencia entre `ionViewWillEnter` y `ionViewDidEnter` es cuando son ejecutadas. The former fires right after `ngOnInit` but before the page transition begins, and the latter directly after the transition ends.
 
 For `ionViewWillLeave` and `ionViewDidLeave`, `ionViewWillLeave` gets called directly before the transition away from the current page begins, and `ionViewDidLeave` does not get called until after the new page gets successfully transitioned into (after the new pages `ionViewDidEnter` fires).
 
