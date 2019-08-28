@@ -1,9 +1,9 @@
 ---
-nextText: 'Build Your First App'
+nextText: '创建您的第一个应用程序'
 nextUrl: '/docs/angular/your-first-app'
 ---
 
-# Ionic Angular Overview
+# Ionic Angular 概览
 
 `@ionic/angular` combines the core Ionic experience with the tooling and APIs that are tailored to Angular Developers.
 
