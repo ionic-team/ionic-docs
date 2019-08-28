@@ -1,19 +1,19 @@
 ---
-previousText: 'Your First App: Theming'
+previousText: 'Tu primera aplicación: Tema'
 previousUrl: '/docs/angular/your-first-app/theming'
-nextText: 'Navigation'
+nextText: 'Navegación'
 nextUrl: '/docs/angular/navigation'
 contributors:
   - elylucas
 ---
 
-# Ionic Page Life Cycle
+# Ciclo de Vida de una Ionic Page
 
-This guide covers how the page life cycle works in an app built with Ionic and Angular.
+Esta guía cubre cómo funciona el ciclo de vida de un component de tipo Page en una aplicación construida con Ionic y Angular.
 
 ![Ionic life cycle events demo](/docs/assets/img/guides/lifecycle/ioniclifecycle.png)
 
-## Angular Life Cycle Events
+## Eventos Life Cycle de Angular
 
 Ionic embraces the life cycle events provided by Angular. The two Angular events you will find using the most are:
 
