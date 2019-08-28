@@ -7,13 +7,13 @@ contributors:
   - elylucas
 ---
 
-# Ionic Page Life Cycle
+# ionic页面的生命周期
 
-This guide covers how the page life cycle works in an app built with Ionic and Angular.
+本指南涵盖生命周期钩子如何在ionic和angular的应用程序中工作。
 
 ![Ionic life cycle events demo](/docs/assets/img/guides/lifecycle/ioniclifecycle.png)
 
-## Angular Life Cycle Events
+## angular的生命周期事件
 
 Ionic embraces the life cycle events provided by Angular. The two Angular events you will find using the most are:
 
