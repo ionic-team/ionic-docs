@@ -56,18 +56,18 @@ Angular路由器是Angular应用中最重要的库之一。 没有它，就只�
 
 然后加载`/route1/route2/route3`，就会重定向。 但是如果我们加载的是`/route1/route2/route4`，就不会重定向，因为路径没有完全匹配。
 
-Alternatively, if we used:
+或者，我们这么写：
 
 ```typescript
 { path: '/route1/route2', redirectTo: 'login', pathMatch: 'prefix' },
 { path: 'login', component: LoginComponent },
 ```
 
-Then load both `/route1/route2/route3` and `/route1/route2/route4`, we'll be redirected for both routes. This is because `pathMatch: 'prefix'` will match only part of the path.
+然后加载 `/route1/route2/route3` 以及`/route1/route2/route4`，都可以进行重定向。 这是因为`pathMatch: 'prefix'` 将只匹配路径的一部分。
 
-## Navigating to different routes
+## 导航到不同的路由
 
-Talking about routes is good and all, but how does one actually navigate to said routes? For this, we can use the `routerLink` directive. Let's go back and take our simple router setup from earlier:
+诚然，熟悉路由是好事，但是如何实际导航到上述的路由呢？ 为此，我们使用`routerLink`指令。 我们回到之前设定的简单路由：
 
 ```ts
 RouterModule.forRoot([
@@ -76,7 +76,7 @@ RouterModule.forRoot([
 ]);
 ```
 
-Now from the `LoginComponent`, we can use the following HTML to navigate to the detail route.
+接下来从`LoginComponent`出发，我们可以用以下的HTML代码导航到详情的路由上去。
 
 ```html
 <ion-header>
@@ -90,9 +90,9 @@ Now from the `LoginComponent`, we can use the following HTML to navigate to the 
 </ion-content>
 ```
 
-The important part here is the `ion-button` and `routerLink` directive. RouterLink works on a similar idea as typical `href`s, but instead of building out the URL as a string, it can be built as an array, which can provide more complicated paths.
+这里的重中之重是`ion-button`和`routerLink`指令。 RouterLink的运作方式与我们常用的`href`类似，不过跟URL只能用作字符串不同，它可以作为数组构建，这样就可以提供更加复杂的路径。
 
-We also can programmatically navigate in our app by using the router API.
+我们也可以用路由器的API在操作层实现应用程序的导航。
 
 ```typescript
 import { Component } from '@angular/core';
