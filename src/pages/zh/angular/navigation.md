@@ -117,7 +117,7 @@ export class LoginComponent {
 
 ## 懒加载路由
 
-Now the current way our routes are setup makes it so they are included in the same chunk as the root app.module, which is not ideal. Instead, the router has a setup that allows the components to be isolated to their own chunks.
+我们现在是将所有的路由设置在同一个根模块app.module上的，不够理想。 换种方式，路由器的设置可以让我们将组件单独划归到属于它的块中。
 
 ```typescript
 <br />import { RouterModule } from '@angular/router';
@@ -134,7 +134,7 @@ Now the current way our routes are setup makes it so they are included in the sa
 })
 ```
 
-While similar, the `loadChildren` property is a way to reference a module by string instead of a component directly. In order to do this though, we need to create a module for each of the components.
+类似的，`loadChildren`属性是个通过字符串而不是直接写组件来引用模块的方法。 不过，为了做到这一点，我们需要为每个组件创建一个模块。
 
 ```typescript
 ...
@@ -151,9 +151,9 @@ import { LoginComponent } from './login.component';
 })
 ```
 
-> We're excluding some additional content and only including the necessary parts.
+> 我们排除了一些无关内容，只包括必要的部分。
 
-Here, we have a typical Angular Module setup, along with a RouterModule import, but we're now using `forChild` and declaring the component in that setup. With this setup, when we run our build, we will produce separate chunks for both the app component, the login component, and the detail component.
+在这里，我们进行了一个典型的Angular模块的设置和一个路由模块的引入，但我们现在使用 `forChild`，并在设置中声明组件。 With this setup, when we run our build, we will produce separate chunks for both the app component, the login component, and the detail component.
 
 ## Working with Tabs
 
