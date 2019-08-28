@@ -1,5 +1,5 @@
 ---
-previousText: 'Android, iOS et la caméra de votre smartphone - Impressionnant !'
+previousText: 'Android, iOS, and the Camera - Oh My!'
 previousUrl: '/docs/angular/your-first-app/ios-android-camera'
 nextText: 'Theming'
 nextUrl: '/docs/angular/your-first-app/theming'
@@ -7,19 +7,19 @@ contributors:
   - jsonMartin
 ---
 
-# Création d'une galerie de photos en utilisant le stockage interne de l'appareil
+# Creating a Photo Gallery with Device Storage
 
-La dernière fois, nous avons ajouté le plugin Camera à la page Tab2 de notre application Tabs. Actuellement, la photo précédente est remplacée chaque fois qu'une nouvelle photo est prise. Que se passe-t-il si nous voulions afficher plusieurs photos ensemble ? Créeons une galerie de photos. Vous pouvez obtenir le code complet pour ce projet [sur GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4).
+Last time, we successfully added the Camera plugin to the Tab2 page of our Tabs app. Currently, the photo is replaced each time a new one is taken. What if we wanted to display multiple photos together? Let’s create a photo gallery. You can follow along with the complete code for this [on GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4).
 
-## Création d'un service appelé Photo
+## Creating a Dedicated Photo Service
 
-Depuis une fenêtre de terminal, naviguez vers votre projet Ionic et exécutez :
+From a terminal window, navigate to your Ionic project and run:
 
 ```shell
 $ ionic g service services/Photo
 ```
 
-Ceci crée une classe PhotoService dans un dossier dédié "services" :
+This creates a PhotoService class in a dedicated "services" folder:
 
 ```Javascript
 import { Injectable } from '@angular/core';
@@ -32,7 +32,7 @@ export class PhotoService {
 }
 ```
 
-Dans ce fichier, ajoutez une classe Photo. La propriété « data » représente les données d'image base64 d'une photo capturée :
+Within this file, add a Photo class. The “data” property represents the base64 image data of a captured photo:
 
 ```Javascript
 class Photo {
@@ -40,7 +40,7 @@ class Photo {
 }
 ```
 
-Ensuite, créez un tableau Photos pour représenter notre galerie photo :
+Then, create a Photos array to represent our photo gallery:
 
 ```Javascript
 export class PhotoService {
@@ -51,21 +51,21 @@ export class PhotoService {
 }
 ```
 
-Retour dans `tab2.page.ts` et importer PhotoService :
+Back in `tab2.page.ts`, import PhotoService:
 
 ```Javascript
 import { PhotoService } from '../services/photo.service';
 ```
 
-Ajouter au Constructeur :
+Add it to the Constructor:
 
 ```Javascript
 constructor(private camera: Camera, public photoService: PhotoService) {  }
 ```
 
-Ensuite, déplacez tout le code relatif au plugin Camera dans la classe PhotoService. Cela inclut la méthode takePicture, les importations de Camera, de CameraOptions et le constructeur de page Tab2Page.
+Next, move all code pertaining to the Camera plugin to the PhotoService class. This includes the takePicture method, the Camera and CameraOptions imports, and the Tab2Page page constructor.
 
-En continuant, nous devons convertir les références de variables currentImage vers le nouveau tableau de photos. Commencez par ajouter les données de photos capturées dans le tableau de photos :
+Continuing on, we need to convert currentImage variable references to the new photos array. Start by adding the captured photo data into the photos array:
 
 ```Javascript
 this.camera.getPicture(options).then((imageData) => {
@@ -78,7 +78,7 @@ this.camera.getPicture(options).then((imageData) => {
 });
 ```
 
-Dans `tab2.page.ts`, supprimez la variable currentImage et la référence à Camera dans le constructeur, laissant seulement PhotoService :
+In `tab2.page.ts`, remove the currentImage variable and the reference to Camera in the constructor, leaving only PhotoService:
 
 ```Javascript
 export class Tab2Page {
@@ -86,7 +86,7 @@ export class Tab2Page {
 }
 ```
 
-Ensuite, dans `tab2.page.html`, supprimez la balise img contenant currentImage. À sa place, utilisez le composant appelé ion-grid, qui fournit une excellente façon d'organiser des éléments sur une page. Dans ce cas, nous l’utiliserons pour afficher 2 photos par ligne.
+Next, in `tab2.page.html`, remove the currentImage img tag. In its place, use an ion-grid component, which provides a great way to arrange elements on a page. In this case, we’ll use it to display 2 photos per row.
 
 ```html
 <ion-grid>
