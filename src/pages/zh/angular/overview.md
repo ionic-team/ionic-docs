@@ -5,11 +5,11 @@ nextUrl: '/docs/angular/your-first-app'
 
 # Ionic Angular 概览
 
-`@ionic/angular` combines the core Ionic experience with the tooling and APIs that are tailored to Angular Developers.
+`@ionic/angular` 将ionic核心体验与针对Angular开发者的工具和 API 结合起来。
 
-## Angular Version Support
+## Angular 版本支持
 
-Ionic supports `Angular 6.0.0 and up`. As part of their upgrade strategy, Angular has built-in tooling to help automate upgrades and provide feedback to developers whenever changes to an API occurred. This reduces update friction and keeps the ecosystem in a evergreen state.
+Ionic支持 `Angular 6.0.0`以上版本。 As part of their upgrade strategy, Angular has built-in tooling to help automate upgrades and provide feedback to developers whenever changes to an API occurred. This reduces update friction and keeps the ecosystem in a evergreen state.
 
 ## Angular Tooling
 
