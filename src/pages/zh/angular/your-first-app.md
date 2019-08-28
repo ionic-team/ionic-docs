@@ -1,11 +1,11 @@
 ---
-previousText: 'Overview'
+previousText: '概览'
 previousUrl: '/docs/angular/overview'
-nextText: 'iOS, Android, and the Camera'
+nextText: 'iOS, Android, 以及相机'
 nextUrl: '/docs/angular/your-first-app/ios-android-camera'
 ---
 
-# Your First Ionic App: Angular
+# 您的第一个 Ionic App： Angular
 
 The great thing about Ionic is that with one codebase, you can build for any platform using familiar web tools and languages. Follow along as we create a working Photo Gallery. Here’s the before and after:
 
