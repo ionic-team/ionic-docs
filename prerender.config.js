@@ -5,6 +5,13 @@ module.exports = {
       return false;
     }
     return true;
+  },
+
+  hydrateOptions() {
+    const hydrate = {
+      timeout: 150000
+    }
+    return hydrate;
   }
 
 };
