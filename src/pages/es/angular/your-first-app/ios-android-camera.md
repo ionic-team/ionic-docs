@@ -1,7 +1,7 @@
 ---
-previousText: 'Your First Ionic App'
+previousText: 'Tu primera aplicación con Ionic'
 previousUrl: '/docs/angular/your-first-app'
-nextText: 'Creating a Photo Gallery'
+nextText: 'Crear una galería de fotos'
 nextUrl: '/docs/angular/your-first-app/creating-photo-gallery-device-storage'
 ---
 
