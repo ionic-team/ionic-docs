@@ -133,6 +133,7 @@ Running the register command should generate a `.npmrc` file in you app director
 - [Filesystem](/docs/enterprise/filesystem)
 - [Geolocation](/docs/enterprise/geolocation)
 - [Haptics & Vibration](/docs/enterprise/vibration)
+- [Keyboard](/docs/enterprise/keyboard)
 - [Media](/docs/enterprise/media)
 - [Media Capture](/docs/enterprise/media-capture)
 - [Native Storage](/docs/enterprise/nativestorage)
