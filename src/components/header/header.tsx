@@ -158,6 +158,13 @@ export class DocsHeader {
             <section>
               <a href="https://ionicframework.com/translate" target="_blank">Translate</a>
             </section>
+            {/* WIP Languages - included for pre-rendering, but hidden */}
+            <div style={{ display: 'none' }}>
+              <a href="/docs/zh">Chinese</a>
+              <a href="/docs/fr">French</a>
+              <a href="/docs/pt">Portuguese</a>
+              <a href="/docs/es">Spanish</a>
+            </div>
           </docs-dropdown>
           <a href="https://github.com/ionic-team/ionic" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
           <a href="https://twitter.com/ionicframework" target="_blank"><ion-icon name="logo-twitter"></ion-icon></a>
