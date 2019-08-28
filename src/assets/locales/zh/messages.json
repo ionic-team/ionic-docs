@@ -1,6 +1,6 @@
 {
   "brand-framework": "框架",
-  "brand-appflow": "Appflow",
+  "brand-appflow": "工作流",
   "header-guide": "学习指南",
   "header-components": "组件",
   "header-cli": "CLI",
@@ -26,7 +26,7 @@
   "menu-building-scaffolding": "脚手架",
   "menu-building-migration": "迁移",
   "menu-building-cross-platform": "跨平台",
-  "menu-building-running": "运行概览",
+  "menu-building-running": "运行预览",
   "menu-building-ios": "在 iOS 上运行",
   "menu-building-android": "在 Android 上运行",
   "menu-building-testing": "测试",
