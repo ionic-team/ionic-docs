@@ -11,7 +11,7 @@ contributors:
 
 Esta guía cubre cómo funciona el ciclo de vida de un component de tipo Page en una aplicación construida con Ionic y Angular.
 
-![Ionic life cycle events demo](/docs/assets/img/guides/lifecycle/ioniclifecycle.png)
+![Demo sobre los distintos eventos de ciclo de vida de Ionic](/docs/assets/img/guides/lifecycle/ioniclifecycle.png)
 
 ## Eventos Life Cycle de Angular
 
@@ -41,30 +41,30 @@ La diferencia entre `ionViewWillEnter` y `ionViewDidEnter` es cuando son ejecuta
 
 Para `ionViewWillLeave` y `ionViewDidLeave`, `ionViewWillLeave` es llamada directamente antes de que comience la transición fuera de la página actual, y `ionViewDidLeave` no se llama hasta después de que haga la transición con éxito hacia una nueva página (después de las nuevas páginas el método `ionViewDidEnter` es ejecutado).
 
-![Ionic life cycle events demo](/docs/assets/img/guides/lifecycle/ioniclifecycle.gif)
+![Demo de eventos de ciclo de vida de Ionic](/docs/assets/img/guides/lifecycle/ioniclifecycle.gif)
 
 ## Cómo Ionic maneja el ciclo de vida de un component Page
 
-Ionic tiene su propios router outlet, llamado `<ion-router-outlet />`. This outlet extends Angular's `<router-outlet />` with some additional functionality to enable better experiences for mobile devices.
+Ionic tiene su propios router outlet, llamado `<ion-router-outlet />`. El outlet extiende el funcionamiento del `<router-outlet />` de Angular, con algunas funcionales extras con el fin de proveer una mejor experiencia para dispositivos móviles.
 
-When an app is wrapped in `<ion-router-outlet />`, Ionic treats navigation a bit differently. When you navigate to a new page, Ionic will keep the old page in the existing DOM, but hide it from your view and transition the new page. The reason we do this is two-fold:
+Cuando la aplicación es encapsulada en un `<ion-router-outlet />`, Ionic maneja la navegación de una manera un poco diferente. Cuando navegues a una nueva página, Ionic mantendrá la página antigua en el DOM, pero la ocultará de tu vista y procederá a ejecutar la transición de la nueva página. La razón por la cual hacemos esto tiene dos motivos:
 
-1) We can maintain the state of the old page (data on the screen, scroll position, etc..)  
-2) We can provide a smoother transition back to the page since it is already there and doesn't need to be recreated.
+1) Podemos mantener el estado de la página anterior (datos en la pantalla, posición del scroll, etc.)  
+2) Podemos proporcionar una transición más suave de vuelta a la página ya que ya está ahí y no necesita ser recreada.
 
-Pages are only removed from the DOM when they are "popped", for instance, by pressing the back button in the UI or the browsers back button.
+Las páginas sólo se eliminan del DOM cuando se hace "pop" en la navegación, por ejemplo, pulsando el botón volver en la interfaz de usuario o el botón volver de los navegadores.
 
-Because of this special handling, the `ngOnInit` and `ngOnDestroy` methods might not fire when you would usually think they should.
+Debido a este manejo especial, los métodos `ngOnInit` y `ngOnDestroy` podrían no dispararse cuando normalmente crees que deberían.
 
-`ngOnInit` will only fire each time the page is freshly created, but not when navigated back to the page. For instance, navigating between each page in a tabs interface will only call each page's `ngOnInit` method once, but not on subsequent visits. `ngOnDestroy` will only fire when a page "popped".
+. `ngOnInit` sólo se disparará cada vez que la página se haya creado desde cero, pero no cuando se navegue de nuevo a la página. Por ejemplo, navegar entre distintas páginas en una interfaz de pestañas sólo llamará al método de cada página `ngOnInit` una vez, pero no en las visitas posteriores. `ngOnDestroy` sólo se disparará cuando una página es removida de la navegación mediante un "pop".
 
 ## Route Guards
 
-In Ionic 3, there were a couple of additional life cycle methods that were useful to control when a page could be entered (`ionViewCanEnter`) and left (`ionViewCanLeave`). These could be used to protect pages from unauthorized users and to keep a user on a page when you don't want them to leave (like during a form fill).
+En Ionic 3, había algunos métodos de ciclo de vida adicionales que fueron útiles para controlar cuando una página podía ser ingresada (`ionViewCanEnter`) y abandonada (`ionViewCanLeave`). Estos podrían utilizarse para proteger las páginas de los usuarios no autorizados y para mantener a un usuario en una página cuando no quiera que salgan (como durante cargado de un formulario).
 
-These methods were removed in Ionic 4 in favor of using Angular's Route Guards.
+Estos métodos fueron eliminados en Ionic 4 a favor de usar los Route Guards de Angular.
 
-A route guard helps determine if a particular action can be taken against a route. They are classes that implement a certain interface. The `CanActivate` and `CanDeactivate` interfaces can be used to implement the same type of logic that the removed events `ionViewCanEnter` and `ionViewCanLeave` did.
+Un Route Guard ayuda a determinar si se puede tomar una acción en particular hacia una ruta. Son clases que implementan una cierta interfaz. El ` CanActivate ` y `CanDeactivate` interfaces pueden ser utilizadas para implementar el mismo tipo de lógica que los eventos eliminados `ionViewCanEnter` y `ionViewCanLeave` hacían.
 
 ```typescript
 @Injectable()
@@ -77,21 +77,21 @@ export class AuthGuard implements CanActivate {
 }
 ```
 
-To use this guard, add it to the appropriate param in the route definition:
+Para usar este guard, debemos agregarlo al parámetro apropiado en la definición de ruta:
 
 ```typescript
 { path: 'settings', canActivate: [AuthGuard], loadChildren: '...',  }
 ```
 
-For more info on how to use route guards, go to Angular's [router documentation](https://angular.io/guide/router).
+Para más información acerca de cómo utilizar los route guards, puedes visitar la documentación oficial de Angular [Documentation del Router de Angular](https://angular.io/guide/router).
 
-## Guidance for Each Life Cycle Method
+## Guía sobra cada método de ciclo de vida
 
-Below are some tips on uses cases for each of the life cycle events.
+A continuación se pueden ver algunos consejos sobre los casos de uso para cada uno de los eventos del ciclo de vida.
 
-- `ngOnInit` - Initialize your component and load data from services that don't need refreshing on each subsequent visit.
-- `ionViewWillEnter` - Since `ionViewWillEnter` is called every time the view is navigated to (regardless if initialized or not), it's a good method to load data from services. However, if your data comes back during the animation, it can start lots of DOM manipulation, which can cause some janky animations.
-- `ionViewDidEnter` - If you see performance problems from using `ionViewWillEnter` when loading data, you can do your data calls in `ionViewDidEnter` instead. This event won't fire until after the page is visible by the user, however, so you might want to use either a loading indicator or a skeleton screen, so content doesn't flash in un-naturally after the transition is complete.
-- `ionViewWillLeave` - Can be used for cleanup, like unsubscribing from observables. Since `ngOnDestroy` might not fire when you navigate from the current page, put your cleanup code here if you don't want it active while the screen is not in view.
-- `ionViewDidLeave` - When this event fires, you know the new page has fully transitioned in, so any logic you might not normally do when the view is visible can go here.
-- `ngOnDestroy` - Cleanup logic for your pages that you don't want to clean up in `ionViewWillLeave`.
+- `ngOnInit` - Inicializa el componente y carga los datos desde servicios que no necesitan ser actualizados en cada visita posterior al componente.
+- `ionViewWillEnter` - Desde `ionViewWillEnter` se llama cada vez que se navega hacia la View (independientemente de que haya sido inicializada o no), es un buen método cargar datos de los servicios. Sin embargo, si tus datos son cargados durante la animación, puede generar distintas manipulaciones en el DOM, lo que puede causar algunas animaciones se vean lentas o trabadas.
+- `ionViewDidEnter` - Si ves problemas de performance usando `ionViewWillEnter` al cargar datos, puedes hacer tus llamadas de datos en `ionViewDidEnter` en su lugar. Este evento no se disparará hasta que la página sea visible por el usuario, sin embargo, es posible que quieras usar un indicador de loading o componente de tipo skeleton, para que el contenido no sea visible por un instante de forma no natural después de que la transición esté completa.
+- `ionViewWillLeave` - Se puede utilizar para limpiar el contenido del component, como así también para desusbscribirse a distintos eventos y/o observables. Puesto que `ngOnDestroy` podría no dispararse cuando navegues desde la página actual, es posible realizar un cleanup aquí si es que no quieres que esté activo mientras la pantalla no está en vista.
+- `ionViewDidLeave` - Cuando este evento se ejecute, debes saber que la nueva página ha realizado su transición completamente, por lo que cualquier lógica que no pueda hacer normalmente cuando la vista sea visible puede ir en este lugar.
+- `ngOnDestroy` - La lógica de clean up de tus páginas, de las cuales no deseas hacer un clean up `ionViewWillLeave`.
