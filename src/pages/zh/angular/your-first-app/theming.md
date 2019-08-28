@@ -1,28 +1,28 @@
 ---
-previousText: '用设备储存创建一个图片库'
+previousText: 'Creating a Photo Gallery with Device Storage'
 previousUrl: '/docs/angular/your-first-app/creating-photo-gallery-device-storage'
-nextText: '生命周期'
+nextText: 'Lifecycle'
 nextUrl: '/docs/angular/lifecycle'
 ---
 
-# 自定义！ Ionic主题
+# Make It Your Own! Ionic Theming
 
-Previously, we converted our single use Camera app into an epic photo gallery. Now, let’s explore how to make the photo gallery our own with Ionic theming. 视觉设计对一款应用来说是非常重要的——幸运的是，Ionic为我们提供了很多开箱即用的东西。
+Previously, we converted our single use Camera app into an epic photo gallery. Now, let’s explore how to make the photo gallery our own with Ionic theming. The visual design of the app is incredibly important - fortunately, Ionic provides a lot for us out-of-the-box.
 
-Ionic有九种定义成CSS变量的默认色调，可以用于改变其UI组件的颜色。
+Ionic has nine default colors, defined as CSS variables, that can be used to change the color of its UI components:
 
 ![v4-theming-defaults](/docs/assets/img/guides/first-app-v4/theming-defaults.png)
 
-你可以通过base（基础）、contrast（对比度）、shade（阴影）和tint（色调）属性来进一步定义每种颜色。 这使得样式管理变得更加灵活。
+You can customize each color further by supplying a base, contrast, shade, and tint properties. These provide flexible control over your styles:
 
 ![v4-theming-properties](/docs/assets/img/guides/first-app-v4/theming-properties.png)
 
-你可以在 `src/theme/variables.scss`里面找到这些样式定义。
+You can find these colors defined in `src/theme/variables.scss`.
 
-通过改变各处的这些变量，你可以轻松地修改整个应用的主题。 尝试改变其中的一些以观察开发版应用程序的变化。例如：将Primary的默认蓝色更改为紫色：
+By changing these variables here and there, you can easily update the entire theme of the application! Try changing a few of them and watch the app update in DevApp. For example, change the default blue color for Primary to purple:
 
 ```css
-/** Ionic CSS 变量 **/
+/** Ionic CSS Variables **/
 :root {
   /** primary **/
   --ion-color-primary: #b36bff;
@@ -34,9 +34,9 @@ Ionic有九种定义成CSS变量的默认色调，可以用于改变其UI组件�
 }
 ```
 
-Ionic的 [颜色生成器](/docs/theming/color-generator)。是为应用程序的用户界面创建自定义调色板的最简单和最强大的工具。 当您改变颜色的十六进制值时，应用将自动嵌入式地反映出新的颜色。 当您完成更改时，只需复制并直接粘贴生成的代码到您的 Ionic 项目。
+The easiest and most powerful way to create custom color palettes for your app’s UI is Ionic's [Color Generator tool](/docs/theming/color-generator). As you change a color’s hex values, the embedded demo app automatically reflects the new colors. When you've finished making changes, simply copy and paste the generated code directly into your Ionic project.
 
-等等，还没完呢！ Ionic automatically provides platform specific styles based on the device the application is running on, giving that native look and feel your users are used to:
+But wait, there’s more! Ionic automatically provides platform specific styles based on the device the application is running on, giving that native look and feel your users are used to:
 
 ![ios and android comparison](/docs/assets/img/guides/first-app-v3/ion-lab-comparison.png)
 
