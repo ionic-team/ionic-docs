@@ -1,5 +1,5 @@
 ---
-previousText: 'Your First App: Theming'
+previousText: 'Votre première application : Stylisation'
 previousUrl: '/docs/angular/your-first-app/theming'
 nextText: 'Navigation'
 nextUrl: '/docs/angular/navigation'
@@ -7,20 +7,20 @@ contributors:
   - elylucas
 ---
 
-# Ionic Page Life Cycle
+# Cycle de vie d'une page Ionic
 
-This guide covers how the page life cycle works in an app built with Ionic and Angular.
+Ce guide couvre la façon dont le cycle de vie de la page fonctionne dans une application construite avec Ionic et Angular.
 
-![Ionic life cycle events demo](/docs/assets/img/guides/lifecycle/ioniclifecycle.png)
+![Démo des événements du cycle de vie avec Ionic](/docs/assets/img/guides/lifecycle/ioniclifecycle.png)
 
-## Angular Life Cycle Events
+## Événements du Cycle de vie avec Angular
 
-Ionic embraces the life cycle events provided by Angular. The two Angular events you will find using the most are:
+Ionic s'engage dans les événements de cycle de vie fournis par Angular. Les deux événements d'Angular les plus couramment utilisés sont :
 
-| Event Name    | Description                                                                                                                                                 |
-| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ngOnInit`    | Fired once during component initialization. This event can be used to initialize local members and make calls into services that only need to be done once. |
-| `ngOnDestroy` | Fired right before Angular destroys the view. Useful for cleanup like unsubscribing from observables.                                                       |
+| Nom de l'événement | Description                                                                                                                                                                                                          |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ngOnInit`         | Démarré une fois lors de l'initialisation du composant. Cet événement peut être utilisé pour initialiser les variables de classe et faire des appels à des services qui ne doivent être effectués qu'une seule fois. |
+| `ngOnDestroy`      | Fired right before Angular destroys the view. Useful for cleanup like unsubscribing from observables.                                                                                                                |
 
 
 For more info on the Angular Component Life Cycle events, visit their [component lifecycle docs](https://angular.io/guide/lifecycle-hooks).
