@@ -11,14 +11,14 @@ Ionic强大的地方是，拥有一个代码库，你可以利用熟悉的网络
 
 ![Before and after going through this tutorial](/docs/assets/img/guides/first-app-v3/gallery-combined.png)
 
-开始时很容易。 Note that all code referenced in this guide can be [found on GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4/).
+开始时很容易。 本章引用的所有代码都可以在[GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4/)上找到。
 
-## Required Tools
+## 所需工具
 
-Download/install these right away to ensure an optimal Ionic development experience:
+下载/安装这些以确保最佳的 Ionic 开发体验：
 
-* [Git](https://git-scm.com/downloads) for version control.
-* **SSH client**, such as [PuTTy](https://www.putty.org/), for secure login to Ionic Appflow.
+* [Git](https://git-scm.com/downloads) 用于版本控制。
+* **SSH 客户端**，例如 [PuTTy](https://www.putty.org/)，用于安全登录 Ionic Appflow。
 * **Node.js** for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
 * **A code editor** for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
 * **Command-line terminal (CLI)**: FYI **Windows** users, for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode. For **Mac/Linux** users, virtually any terminal will work.
