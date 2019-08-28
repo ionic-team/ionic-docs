@@ -31,7 +31,7 @@ Angular路由是Angular应用中最重要的库之一。 没有它，就只能�
 })
 ```
 
-这里路由分解到最小的粒度，是路径/组件的查找。 当我们的应用程序加载时，路由器通过读取用户正在加载的 URL 来启动内容。 In our sample, our route looks for `''`, which is essentially our index route. So for this, we load the `LoginComponent`. Fairly straight forward. This pattern of matching paths with a component continues for every entry we have in the router config. But what if we wanted to load a different path on our initial load?
+这里路由分解到最小的粒度，是路径/组件的查找。 当我们的应用程序加载时，路由器通过读取用户正在加载的 URL 来启动内容。 在我们的例子中，我们的路由从 `''`查找，它是我们的基础索引路由。 因此，我们加载 `LoginComponent`。 Fairly straight forward. This pattern of matching paths with a component continues for every entry we have in the router config. But what if we wanted to load a different path on our initial load?
 
 ## Handling Redirects
 
