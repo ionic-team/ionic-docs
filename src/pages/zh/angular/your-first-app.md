@@ -1,24 +1,24 @@
 ---
-previousText: '概览'
+previousText: 'Overview'
 previousUrl: '/docs/angular/overview'
-nextText: 'iOS, Android, 以及相机'
+nextText: 'iOS, Android, and the Camera'
 nextUrl: '/docs/angular/your-first-app/ios-android-camera'
 ---
 
-# 您的第一个 Ionic App： Angular
+# Your First Ionic App: Angular
 
-Ionic强大的地方是，拥有一个代码库，你可以利用熟悉的网络工具和语言建立任何平台的App。 跟随我们创建一个可以工作的照片库。 这是前后对比：
+The great thing about Ionic is that with one codebase, you can build for any platform using familiar web tools and languages. Follow along as we create a working Photo Gallery. Here’s the before and after:
 
 ![Before and after going through this tutorial](/docs/assets/img/guides/first-app-v3/gallery-combined.png)
 
-开始时很容易。 本章引用的所有代码都可以在[GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4/)上找到。
+It’s easy to get started. Note that all code referenced in this guide can be [found on GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4/).
 
-## 所需工具
+## Required Tools
 
-下载/安装这些以确保最佳的 Ionic 开发体验：
+Download/install these right away to ensure an optimal Ionic development experience:
 
-* [Git](https://git-scm.com/downloads) 用于版本控制。
-* **SSH 客户端**，例如 [PuTTy](https://www.putty.org/)，用于安全登录 Ionic Appflow。
+* [Git](https://git-scm.com/downloads) for version control.
+* **SSH client**, such as [PuTTy](https://www.putty.org/), for secure login to Ionic Appflow.
 * **Node.js** for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
 * **A code editor** for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
 * **Command-line terminal (CLI)**: FYI **Windows** users, for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode. For **Mac/Linux** users, virtually any terminal will work.
