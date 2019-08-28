@@ -9,17 +9,17 @@ contributors:
 
 # Criando uma Galeria de Fotos com o Armazenamento do Dispositivo
 
-Da última vez, adicionamos com sucesso o plugin Câmera à página Tab2 de nosso aplicativo Tabs. Atualmente, a foto é substituída cada vez que uma nova é tirada. E se quiséssemos exibir várias fotos juntas? Vamos criar uma galeria de fotos. You can follow along with the complete code for this [on GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4).
+Da última vez, adicionamos com sucesso o plugin Câmera à página Tab2 de nosso aplicativo Tabs. Atualmente, a foto é substituída cada vez que uma nova é tirada. E se quiséssemos exibir várias fotos juntas? Vamos criar uma galeria de fotos. Você pode acompanhar com o código completo para este tutorial [no GitHub](https://github. com/ionic-team/photo-gallery-tutorial-ionic4).
 
-## Creating a Dedicated Photo Service
+## Criando um Serviço de Foto Dedicado
 
-From a terminal window, navigate to your Ionic project and run:
+Em um terminal, navegue até seu projeto Ionic e execute:
 
 ```shell
 $ ionic g service services/Photo
 ```
 
-This creates a PhotoService class in a dedicated "services" folder:
+Isto cria uma classe PhotoService em uma pasta dedicada "services":
 
 ```Javascript
 import { Injectable } from '@angular/core';
@@ -32,7 +32,7 @@ export class PhotoService {
 }
 ```
 
-Within this file, add a Photo class. The “data” property represents the base64 image data of a captured photo:
+Dentro deste arquivo, adicione uma classe de fotos. A propriedade "data" representa os dados da imagem base64 da foto capturada:
 
 ```Javascript
 class Photo {
