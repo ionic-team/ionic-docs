@@ -24,7 +24,7 @@ Para correr la aplicación en DevApp, primero debes agregar la referencia de `co
 
 ```html
 <head>
-  <!-- ... Other HTML tags... -->
+  <!-- ... Otras etiquetas HTML... -->
 
   <script src="cordova.js"></script>
 </head>
