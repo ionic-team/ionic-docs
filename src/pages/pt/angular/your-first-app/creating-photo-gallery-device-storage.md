@@ -7,9 +7,9 @@ contributors:
   - jsonMartin
 ---
 
-# Creating a Photo Gallery with Device Storage
+# Criando uma Galeria de Fotos com o Armazenamento do Dispositivo
 
-Last time, we successfully added the Camera plugin to the Tab2 page of our Tabs app. Currently, the photo is replaced each time a new one is taken. What if we wanted to display multiple photos together? Let’s create a photo gallery. You can follow along with the complete code for this [on GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4).
+Da última vez, adicionamos com sucesso o plugin Câmera à página Tab2 de nosso aplicativo Tabs. Atualmente, a foto é substituída cada vez que uma nova é tirada. E se quiséssemos exibir várias fotos juntas? Vamos criar uma galeria de fotos. You can follow along with the complete code for this [on GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4).
 
 ## Creating a Dedicated Photo Service
 
