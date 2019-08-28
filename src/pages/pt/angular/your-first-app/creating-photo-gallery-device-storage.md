@@ -7,19 +7,19 @@ contributors:
   - jsonMartin
 ---
 
-# Criando uma Galeria de Fotos com o Armazenamento do Dispositivo
+# Creating a Photo Gallery with Device Storage
 
-Da última vez, adicionamos com sucesso o plugin Câmera à página Tab2 de nosso aplicativo Tabs. Atualmente, a foto é substituída cada vez que uma nova é tirada. E se quiséssemos exibir várias fotos juntas? Vamos criar uma galeria de fotos. Você pode acompanhar com o código completo para este tutorial [no GitHub](https://github. com/ionic-team/photo-gallery-tutorial-ionic4).
+Last time, we successfully added the Camera plugin to the Tab2 page of our Tabs app. Currently, the photo is replaced each time a new one is taken. What if we wanted to display multiple photos together? Let’s create a photo gallery. You can follow along with the complete code for this [on GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4).
 
-## Criando um Serviço de Foto Dedicado
+## Creating a Dedicated Photo Service
 
-Em um terminal, navegue até seu projeto Ionic e execute:
+From a terminal window, navigate to your Ionic project and run:
 
 ```shell
 $ ionic g service services/Photo
 ```
 
-Isto cria uma classe PhotoService em uma pasta dedicada "services":
+This creates a PhotoService class in a dedicated "services" folder:
 
 ```Javascript
 import { Injectable } from '@angular/core';
@@ -32,7 +32,7 @@ export class PhotoService {
 }
 ```
 
-Dentro deste arquivo, adicione uma classe de fotos. A propriedade "data" representa os dados da imagem base64 da foto capturada:
+Within this file, add a Photo class. The “data” property represents the base64 image data of a captured photo:
 
 ```Javascript
 class Photo {
@@ -40,7 +40,7 @@ class Photo {
 }
 ```
 
-Agora, crie um array de fotos para representar nossa galeria de fotos:
+Then, create a Photos array to represent our photo gallery:
 
 ```Javascript
 export class PhotoService {
@@ -51,19 +51,19 @@ export class PhotoService {
 }
 ```
 
-Volte ao arquivo `tab2.page.ts`, e importe o serviço "PhotoService":
+Back in `tab2.page.ts`, import PhotoService:
 
 ```Javascript
 import { PhotoService } from '../services/photo.service';
 ```
 
-Adicione-o ao Construtor:
+Add it to the Constructor:
 
 ```Javascript
 constructor(private camera: Camera, public photoService: PhotoService) {  }
 ```
 
-Em seguida, mova todo o código relacionado ao plugin Câmera para a classe PhotoService. Isto inclui o método de "takePicture", os imports de "Camera" e CameraOptions", e o construtor de página "Tab2Page".
+Next, move all code pertaining to the Camera plugin to the PhotoService class. This includes the takePicture method, the Camera and CameraOptions imports, and the Tab2Page page constructor.
 
 Continuing on, we need to convert currentImage variable references to the new photos array. Start by adding the captured photo data into the photos array:
 
@@ -197,7 +197,7 @@ ngOnInit() {
 
 Sweet! Photos are now saved to your device. To demonstrate that they are indeed being saved, force close DevApp, reopen it, and open the Tab2 page. Or, shake your device to have the Control Menu pop up, then tap “Exit preview.” Afterwards, reload this app to view the photos.
 
-Em seguida, veremos como aplicar um tema personalizado à um aplicativo Ionic.
+Next up, we’ll look at how to apply a custom theme to an Ionic app.
 
 <div style="text-align:right;">
   <docs-button href="/docs/angular/your-first-app/theming">Continue <svg viewBox="0 0 512 512"><path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path></svg></docs-button>
