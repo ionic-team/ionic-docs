@@ -1,12 +1,12 @@
 ---
-title: Ionic Native edición Enterprise
+title: Ionic Native Enterprise Edition
 ---
 
-Acelerar el desarrollo con soluciones poderosas a casos de uso comunes de empresas - todo construido y respaldado por el equipo Ionic. La creciente biblioteca de soluciones de Ionic está lista para desplegar en cualquiera de las aplicaciones que construyas con Ionic Native edición Enterprise
+Accelerate development with powerful solutions to common enterprise use cases - all built and supported by the Ionic team. Ionic’s growing library of solutions are ready to deploy in any of the apps you build with Native Enterprise Edition
 
-Ionic Native edición Enterprise incluye un conjunto fiable de APIs nativas y funcionalidades que puedes usar en tu aplicación Ionic, controlada y mantenida por el equipo Ionic.
+Ionic Native Enterprise Edition includes a reliable set of Native APIs & functionality that you can use in your Ionic app, quality controlled and maintained by the Ionic Team.
 
-## ¿Qué es Ionic Native edición Enterprise?
+## What is Ionic Native Enterprise Edition
 
 <div class="native-ee-pricing">
   <div class="table-wrap">
@@ -14,19 +14,19 @@ Ionic Native edición Enterprise incluye un conjunto fiable de APIs nativas y fu
       <thead>
         <tr>
           <td>
-            <span class="native-ee-pricing-table">Características</span>
+            <span class="native-ee-pricing-table">Features</span>
           </td>
           <th>
             <div class="plan-wrap">
-              <span class="native-ee-pricing-table">Edición comunitaria</span>
-              <div class="price">$0/mes </div>
+              <span class="native-ee-pricing-table">Community Edition</span>
+              <div class="price">$0/mo </div>
             </div>
           </th>
           <th>
             <div class="plan-wrap">
-              <span class="native-ee-pricing-table">Edición Enterprise</span>
+              <span class="native-ee-pricing-table">Enterprise Edition</span>
               <div class="price" data-toggle="billing-team">
-                Contáctanos</div>
+                Contact Us</div>
             </div>
           </th>
         </tr>
@@ -34,49 +34,49 @@ Ionic Native edición Enterprise incluye un conjunto fiable de APIs nativas y fu
       <tbody>
         <tr class="stripe">
           <th>
-            Mantenedor
+            Maintainer
           </th>
-          <td>Comunidad de Software Libre</td>
+          <td>OSS Community</td>
           <td>Ionic</td>
         </tr>
         <tr>
           <th>
-            Ciclos de lanzamiento regular y actualizaciones
+            Regular Release Cycles & Updates
           </th>
           <td>No</td>
           <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
         </tr>
         <tr class="stripe">
           <th>
-            Soporte SLA y sistema de Ticketing
+            Support SLA & Ticketing System
           </th>
           <td>No</td>
           <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
         </tr>
         <tr>
           <th>
-            Asesoramiento y soporte
+            Advisory & Support
           </th>
           <td>No</td>
           <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
         </tr>
         <tr class="stripe">
           <th>
-            Seguridad y corrección de errores
+            Security & Bug fixes
           </th>
-          <td>Comunidad de Software Libre</td>
+          <td>OSS Community</td>
           <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
         </tr>
         <tr>
           <th>
-            Asistencia en la implementación
+            Implementation Guidance
           </th>
           <td>No</td>
           <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
         </tr>
         <tr class="stripe">
           <th>
-            SLA garantizado
+            Guaranteed SLA
           </th>
           <td>No</td>
           <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
@@ -84,26 +84,26 @@ Ionic Native edición Enterprise incluye un conjunto fiable de APIs nativas y fu
           <th></th>
           <td></td>
           <td><a class="btn"
-                href="https://ionicframework.com/enterprise-edition">Aprende más</a></td>
+                href="https://ionicframework.com/enterprise-edition">Learn More</a></td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
 
-## Regístrate para acceder a Ionic Native edición Enterprise
+## Sign Up for Ionic Native Enterprise Edition
 
 <hubspot-form form-id="7c2c6529-48c0-4d17-86a0-bfd40c849bb1"></hubspot-form>
 
-## Configuración
+## Setup
 
-Para proporcionar la mejor experiencia, debes asegurarte de que estás usando la CLI de Ionic Enterprise Cordova, ya que la versión regular puede tener problemas con algunos plugins.
+In order to provide the best experience you should make sure you're using the Ionic Enterprise Cordova CLI as the regular version can have issues with scoped plugins.
 
 <command-line> <command-prompt>npm uninstall -g cordova</command-prompt> <command-prompt>npm install -g @ionic-enterprise/cordova</command-prompt> </command-line>
 
-## Registra tu clave de producto
+## Register Your Product Key
 
-Si ya tienes una app, puedes simplemente registrar la clave de producto para tu aplicación usando la CLI de Ionic y siguiendo las instrucciones proporcionadas.
+If you already have an app you can simply register the product key for your application using the Ionic CLI and following the provided prompts.
 
 <command-line> <command-prompt># in your app root</command-prompt> <command-prompt>ionic enterprise register</command-prompt> </command-line>
 
@@ -133,6 +133,7 @@ Running the register command should generate a `.npmrc` file in you app director
 - [Filesystem](/docs/enterprise/filesystem)
 - [Geolocation](/docs/enterprise/geolocation)
 - [Haptics & Vibration](/docs/enterprise/vibration)
+- [Keyboard](/docs/enterprise/keyboard)
 - [Media](/docs/enterprise/media)
 - [Media Capture](/docs/enterprise/media-capture)
 - [Native Storage](/docs/enterprise/nativestorage)
