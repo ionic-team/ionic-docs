@@ -9,8 +9,8 @@ nextUrl: '/docs/angular/your-first-app'
 
 ## Angular 版本支持
 
-Ionic支持 `Angular 6.0.0`以上版本。 As part of their upgrade strategy, Angular has built-in tooling to help automate upgrades and provide feedback to developers whenever changes to an API occurred. This reduces update friction and keeps the ecosystem in a evergreen state.
+Ionic支持 `Angular 6.0.0`及以上版本。 作为其升级策略的一部分，Angular已经建立了一套内置工具，帮助自动升级，并在发生对 API 进行修改时向开发者提供反馈。 这样做减少了更新摩擦，并使生态系统保持在常绿状态。
 
-## Angular Tooling
+## Angular 工具
 
 With Ionic 4+, the official Angular stack for building an app and routing are used, so your app can fall in-line with the rest of the great Angular ecosystem. In cases where more opinionated features are needed, Ionic provides `@ionic/angular-toolkit`, which builds and integrates with the [official Angular CLI](https://angular.io/cli) and provides features that are specific to `@ionic/angular` apps.
