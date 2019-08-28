@@ -23,7 +23,7 @@ To link your local repo, simply run `ionic link` in the root directory of your e
 
 You can learn more about git remotes [here](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes).
 
-## Configure suas chaves SSH
+## Configure your SSH keys
 
 Ionic remote authentication is done via public/private SSH key pairs for the most secure authentication possible. You'll need to upload a public key to Ionic Appflow to authenticate yourself. This can be automatically done during the `ionic link` process or manually.
 
