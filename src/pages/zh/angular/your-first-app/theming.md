@@ -34,9 +34,9 @@ Ionic有九种定义成CSS变量的默认色调，可以用于改变其UI组件�
 }
 ```
 
-The easiest and most powerful way to create custom color palettes for your app’s UI is Ionic's [Color Generator tool](/docs/theming/color-generator). As you change a color’s hex values, the embedded demo app automatically reflects the new colors. When you've finished making changes, simply copy and paste the generated code directly into your Ionic project.
+Ionic的 [颜色生成器](/docs/theming/color-generator)。是为应用程序的用户界面创建自定义调色板的最简单和最强大的工具。 当您改变颜色的十六进制值时，应用将自动嵌入式地反映出新的颜色。 当您完成更改时，只需复制并直接粘贴生成的代码到您的 Ionic 项目。
 
-But wait, there’s more! Ionic automatically provides platform specific styles based on the device the application is running on, giving that native look and feel your users are used to:
+等等，还没完呢！ Ionic automatically provides platform specific styles based on the device the application is running on, giving that native look and feel your users are used to:
 
 ![ios and android comparison](/docs/assets/img/guides/first-app-v3/ion-lab-comparison.png)
 
