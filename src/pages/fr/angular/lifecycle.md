@@ -1,5 +1,5 @@
 ---
-previousText: 'Your First App: Theming'
+previousText: 'Votre première application : Stylisation'
 previousUrl: '/docs/angular/your-first-app/theming'
 nextText: 'Navigation'
 nextUrl: '/docs/angular/navigation'
@@ -7,7 +7,7 @@ contributors:
   - elylucas
 ---
 
-# Ionic Page Life Cycle
+# Cycle de vie d'une page Ionic
 
 This guide covers how the page life cycle works in an app built with Ionic and Angular.
 
