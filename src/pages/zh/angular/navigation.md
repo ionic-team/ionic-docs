@@ -9,9 +9,9 @@ contributors:
 
 # Angular 导航
 
-本章主要讲述Ionic和Angular构建APP的路由如何工作。
+本章主要讲述Ionic和Angular构建APP的路由器如何工作。
 
-Angular路由是Angular应用中最重要的库之一。 没有它，就只能做单一视图/单一上下文的APP，也无法在浏览器重新加载时维持其导航状态。 使用Angular路由，我们可以创建有链接的、有动画的富应用(当然也需要Ionic的帮助)。 让我们研究Angular路由的基本知识以及如何为Ionic配置路由。
+Angular路由器是Angular应用中最重要的库之一。 没有它，就只能生成单一视图/单一上下文的APP，也无法在浏览器重新加载时维持其导航状态。 使用Angular路由器，我们可以创建有链接的、有动画的富应用(当然也需要Ionic的帮助)。 我们来研究Angular路由器的基本知识以及如何为Ionic配置路由。
 
 ## 一个简单的路由
 
@@ -31,11 +31,11 @@ Angular路由是Angular应用中最重要的库之一。 没有它，就只能�
 })
 ```
 
-这里路由分解到最小的粒度，是路径/组件的查找。 当我们的应用程序加载时，路由器通过读取用户正在加载的 URL 来启动内容。 在我们的例子中，我们的路由从 `''`查找，它是我们的基础索引路由。 因此，我们加载 `LoginComponent`。 Fairly straight forward. This pattern of matching paths with a component continues for every entry we have in the router config. But what if we wanted to load a different path on our initial load?
+这里路由分解到最小的粒度，是路径/组件的查找。 当我们的应用程序加载时，路由器通过读取用户正在加载的 URL 来启动内容。 在我们的例子中，我们的路由从 `''`查找，它是我们的最基础的主页路由。 因此，我们加载 `LoginComponent`。 直截了当。 这个与组件匹配路径的模式将继续作用于我们在路由器配置的每一个条目。但如果我们想在初始加载时加载一条不同的路径呢？
 
-## Handling Redirects
+## 重定向处理
 
-For this we can use router redirects. Redirects work the same way that a typical route object does, but just includes a few different keys.
+为此，我们可以使用路由器重定向。 重定向和普通的路由方式基本相同，但区别是它包含几个不同的key
 
 ```typescript
 [
@@ -45,16 +45,16 @@ For this we can use router redirects. Redirects work the same way that a typical
 ];
 ```
 
-In our redirect, we look for the index path of our app. Then if we load that, we redirect to the `login` route. The last key of `pathMatch` is required to tell the router how it should look up the path.
+在这个重定向中，查找应用程序的主页路径。如果我们加载这个路径，就会重定向到 `Login` 。 最后一个key`pathMatch`告诉路由器如何寻找路径。
 
-Since we use `full`, we're telling the router that we should compare the full path, even if ends up being something like `/route1/route2/route3`. Meaning that if we have:
+因为我们用了 `full`，路由器就会对路径进行完全匹配，即使最终结果是 `/roution 1/routrout2/roution 3`。 也就是说如果我们这么写：
 
 ```typescript
 { path: '/route1/route2/route3', redirectTo: 'login', pathMatch: 'full' },
 { path: 'login', component: LoginComponent },
 ```
 
-And load `/route1/route2/route3` we'll redirect. But if we loaded `/route1/route2/route4`, we won't redirect, as the paths don't match fully.
+然后加载`/route1/route2/route3`，就会重定向。 但是如果我们加载的是`/route1/route2/route4`，就不会重定向，因为路径没有完全匹配。
 
 Alternatively, if we used:
 
