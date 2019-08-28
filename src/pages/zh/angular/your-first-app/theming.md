@@ -1,11 +1,11 @@
 ---
-previousText: 'Creating a Photo Gallery with Device Storage'
+previousText: '用设备储存创建一个图片库'
 previousUrl: '/docs/angular/your-first-app/creating-photo-gallery-device-storage'
-nextText: 'Lifecycle'
+nextText: '生命周期'
 nextUrl: '/docs/angular/lifecycle'
 ---
 
-# Make It Your Own! Ionic Theming
+# 自定义！ Ionic主题
 
 Previously, we converted our single use Camera app into an epic photo gallery. Now, let’s explore how to make the photo gallery our own with Ionic theming. The visual design of the app is incredibly important - fortunately, Ionic provides a lot for us out-of-the-box.
 
