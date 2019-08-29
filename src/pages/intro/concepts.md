@@ -2,7 +2,7 @@
 previousText: 'What is Ionic Framework'
 previousUrl: '/docs/intro'
 nextText: 'Build Your First App'
-nextUrl: '/docs/angular/your-first-app'
+nextUrl: '/docs/intro/first-app'
 ---
 
 # Core Concepts

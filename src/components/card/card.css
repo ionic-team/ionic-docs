@@ -92,6 +92,23 @@ docs-card {
   width: auto;
 }
 
+docs-card.disabled,
+docs-card[disabled] {
+  position: relative;
+}
+
+docs-card.disabled::after,
+docs-card[disabled]::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(232, 232, 232, 0.5);
+  pointer-events: none;
+  content: '';
+}
+
 aside docs-card {
   max-width: 240px;
 }

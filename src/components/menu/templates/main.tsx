@@ -6,7 +6,7 @@ const items = {
   'menu-intro': {
     'menu-intro-what-is': '/docs/intro',
     'menu-intro-concepts': '/docs/intro/concepts',
-    'menu-intro-your-first-app': '/docs/angular/your-first-app',
+    'menu-intro-your-first-app': '/docs/intro/first-app',
     'menu-intro-browser-support': '/docs/intro/browser-support',
     'menu-intro-versioning': '/docs/intro/versioning',
     'menu-intro-release-notes': '/docs/release-notes',
