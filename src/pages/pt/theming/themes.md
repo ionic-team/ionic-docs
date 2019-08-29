@@ -15,19 +15,19 @@ O Ionic fornece muitas variáveis globais que são usadas em todos os componente
 
 As cores do aplicativo são usadas em vários lugares em Ionic. Elas são úteis para criar facilmente, seja temas escuros ou temas que correspondem a uma marca.
 
-É importante notar que as variáveis para "background" e "text-color" também exigem que uma variável rgb seja definida em <a href="https://developer.mozilla.org/en-US/docs/Glossary/RGB" target="_blank">rgb</a>. Veja [O problema de cores com Transparência](./advanced#the-alpha-problem) para entender por quê a propriedade `rgb` também é necessária.
+É importante notar que as variáveis para "background" e "text-color" também exigem que uma variável RGB seja definida em <a href="https://developer.mozilla.org/en-US/docs/Glossary/RGB" target="_blank">RGB</a>. Veja [O problema de cores com Transparência](./advanced#the-alpha-problem) para entender por quê a propriedade `rgb` também é necessária.
 
-| Name                               | Description                                      |
+| Nome                               | Descrição                                        |
 | ---------------------------------- | ------------------------------------------------ |
-| `--ion-background-color`           | Background color of entire app                   |
-| `--ion-background-color-rgb`       | Background color of entire app, rgb format       |
-| `--ion-text-color`                 | Text color of entire app                         |
-| `--ion-text-color-rgb`             | Text color of entire app, rgb format             |
-| `--ion-backdrop-color`             | Color of the Backdrop component                  |
-| `--ion-overlay-background-color`   | Background color of the overlays                 |
-| `--ion-border-color`               | Border color                                     |
-| `--ion-box-shadow-color`           | Box shadow color                                 |
-| `--ion-tab-bar-background`         | Background of the Tab bar                        |
+| `--ion-background-color`           | Cor de fundo de todo o app                       |
+| `--ion-background-color-rgb`       | Cor de fundo de todo o app em formato RGB        |
+| `--ion-text-color`                 | Cor do texto de todo o app                       |
+| `--ion-text-color-rgb`             | Cor do texto de todo o app em formato RGB        |
+| `--ion-backdrop-color`             | Cor do componente Backdrop                       |
+| `--ion-overlay-background-color`   | Cor de fundo das camadas de sobreposições        |
+| `--ion-border-color`               | Cor da borda                                     |
+| `--ion-box-shadow-color`           | Cor da sombra                                    |
+| `--ion-tab-bar-background`         | Cor de fundo da barra de abas                    |
 | `--ion-tab-bar-background-focused` | Background of the focused Tab bar                |
 | `--ion-tab-bar-border-color`       | Border color of the Tab bar                      |
 | `--ion-tab-bar-color`              | Color of the Tab bar                             |
