@@ -1,5 +1,5 @@
 ---
-previousText: 'Lifecycle'
+previousText: 'Cycle de Vie'
 previousUrl: '/docs/angular/lifecycle'
 nextText: 'Performance'
 nextUrl: '/docs/angular/performance'
@@ -7,15 +7,15 @@ contributors:
   - mhartington
 ---
 
-# Angular Navigation
+# Navigation Angular
 
-This guide covers how routing works in an app built with Ionic and Angular.
+Ce guide couvre la façon dont le cycle de vie de la page fonctionne dans une application construite avec Ionic et Angular.
 
-The Angular Router is one of the most important libraries in an Angular application. Without it, apps would be single view/single context apps or would not be able to maintain their navigation state on browser reloads. With Angular Router, we can create rich apps that are linkable and have rich animations (when paired with Ionic of course). Let's look at the basics of the Angular Router and how we can configure it for Ionic apps.
+Le Routage d'Angular est l'une des bibliothèques les plus importantes d'une application Angular. Sans cela, les applications seraient une seule vue/une seule application contextuelle ou ne seraient pas en mesure de maintenir leur état de navigation lors du rafraîchissement du navigateur. Avec Angular Router, nous pouvons créer des applications riches qui sont linkables et ont des animations riches (quand elles sont jumelées avec Ionic bien sûr). Regardons les bases du routage avec Angular et comment nous pouvons le configurer pour les applications Ionic.
 
-## A simple Route
+## Une simple route
 
-For most apps, having some sort of route is often required. The most basic configuration looks a bit like this:
+Pour la plupart des applications, il est souvent nécessaire d'avoir une configuration de l'arborescence des routes. La configuration la plus basique ressemble à ceci :
 
 ```typescript
 <br />import { RouterModule } from '@angular/router';
@@ -31,11 +31,11 @@ For most apps, having some sort of route is often required. The most basic confi
 })
 ```
 
-The simplest breakdown for what we have here is a path/component lookup. When our app loads, the router kicks things off by reading the URL the user is trying to load. In our sample, our route looks for `''`, which is essentially our index route. So for this, we load the `LoginComponent`. Fairly straight forward. This pattern of matching paths with a component continues for every entry we have in the router config. But what if we wanted to load a different path on our initial load?
+La plus simple répartition de ce que nous avons ici est une recherche de chemin/composant. Lorsque notre application se charge, le routeur démarre les vues en lisant l'URL que l'utilisateur essaie de charger. Dans notre exemple, notre système de routage recherche `''`, qui est essentiellement notre route index. Pour cela, nous chargeons la vue `LoginComponent`. Juste en avant. Ce modèle de chemins correspond à une seule et unique vue pour chaque entrée que nous avons dans la configuration du routeur. Mais que se passe-t-il si nous voulions charger un chemin différent sur notre vue initiale ?
 
-## Handling Redirects
+## Gestion des redirections
 
-For this we can use router redirects. Redirects work the same way that a typical route object does, but just includes a few different keys.
+Pour cela, nous pouvons utiliser les redirections de l'objet routeur. Les redirections fonctionnent de la même manière qu'un objet de route typique, mais ne contiennent que quelques clés différentes.
 
 ```typescript
 [
