@@ -5,18 +5,18 @@ nextText: 'Navigateurs supportés'
 nextUrl: '/docs/intro/browser-support'
 ---
 
-# Build Your First App Tutorial
+# Construire votre premier tutoriel d'application
 
-Pick the JavaScript framework you plan to use while building your Ionic app:
+Choisissez le framework JavaScript que vous prévoyez utiliser pendant le développement de votre application Ionic :
 
 <docs-cards> <docs-card header="Start with Angular" href="/docs/angular/your-first-app" icon="/docs/assets/icons/logo-angular-icon.png"> 
 
-A complete guide to get you up to speed with the basics of building Ionic apps with Angular.</docs-card>
+Un guide complet pour vous assurer une meilleure prise en main sur les bases du développement d'applications Ionic avec Angular.</docs-card>
 
 <docs-card header="Start with React" href="/docs/react/your-first-app" icon="/docs/assets/icons/logo-react-icon.png"> 
 
-A complete guide to get you up to speed with the basics of building Ionic apps with React.</docs-card>
+Un guide complet pour vous assurer une meilleure prise en main sur les bases du développement d'applications Ionic avec React.</docs-card>
 
 <docs-card class="disabled" header="Start with Vue (soon)" href="" icon="/docs/assets/icons/logo-vue-icon.png"> 
 
-A complete guide to get you up to speed with the basics of building Ionic apps with Vue.</docs-card> </docs-cards>
+Un guide complet pour vous assurer une meilleure prise en main sur les bases du développement d'applications Ionic avec Vue.</docs-card> </docs-cards>
