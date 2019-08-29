@@ -5,7 +5,7 @@ nextText: 'Navigateurs supportés'
 nextUrl: '/docs/intro/browser-support'
 ---
 
-# Construire votre premier tutoriel d'application
+# Créer votre première application en suivant le tutoriel
 
 Choisissez le framework JavaScript que vous prévoyez utiliser pendant le développement de votre application Ionic :
 
