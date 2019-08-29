@@ -1,9 +1,12 @@
+import dotenv from 'dotenv';
 import { resolve } from 'path';
 import { outputJson } from 'fs-extra';
 import renderMarkdown from '../build-pages/markdown-renderer';
 import fetch from 'node-fetch';
 import url from 'url';
 import { convertHtmlToHypertextData } from '../build-pages/html-to-hypertext-data';
+
+dotenv.config();
 
 const OUTPUT_PATH = resolve(
   __dirname,
@@ -12,7 +15,12 @@ const OUTPUT_PATH = resolve(
 
 export default {
   title: 'Build Release Notes data',
-  task: async () => outputJson(OUTPUT_PATH, await getReleases(), { spaces: 2 })
+  task: async () => {
+    const releases = await getReleases();
+    if (releases.length > 0) {
+      return outputJson(OUTPUT_PATH, releases, { spaces: 2 });
+    }
+  }
 };
 
 // Get the GitHub Releases from Ionic
