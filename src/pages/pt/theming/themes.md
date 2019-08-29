@@ -28,7 +28,7 @@ As cores do aplicativo são usadas em vários lugares em Ionic. Elas são úteis
 | `--ion-border-color`               | Cor da borda                                     |
 | `--ion-box-shadow-color`           | Cor da sombra                                    |
 | `--ion-tab-bar-background`         | Cor de fundo da barra de abas                    |
-| `--ion-tab-bar-background-focused` | Background of the focused Tab bar                |
+| `--ion-tab-bar-background-focused` | Cor de fundo da barra de abas em foco            |
 | `--ion-tab-bar-border-color`       | Border color of the Tab bar                      |
 | `--ion-tab-bar-color`              | Color of the Tab bar                             |
 | `--ion-tab-bar-color-activated`    | Color of the activated Tab                       |
