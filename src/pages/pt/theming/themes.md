@@ -7,15 +7,15 @@ nextText: 'Advanced Theming'
 nextUrl: '/docs/theming/advanced'
 ---
 
-# Themes
+# Temas
 
-Ionic provides several global variables that are used throughout components to change the default theme of an entire application. [Application Colors](#application-colors) are useful to change the look of most of the Ionic components, and [Stepped Colors](#stepped-colors) are used as variations in some of the Ionic components.
+O Ionic fornece muitas variáveis globais que são usadas em todos os componentes para alterar o tema padrão de todo o aplicativo. [Cores do Aplicativo](#application-colors) são úteis para alterar a aparência da maioria dos componentes Ionic, e [Stepped Colors](#stepped-colors) são usadas como variações em alguns dos componentes Ionic.
 
-## Application Colors
+## Cores do aplicativo
 
-The application colors are used in multiple places in Ionic. These are useful for easily creating dark themes or themes that match a brand.
+As cores do aplicativo são usadas em vários lugares em Ionic. Elas são úteis para criar facilmente, seja temas escuros ou temas que correspondem a uma marca.
 
-It is important to note that the background and text color variables also require a rgb variable to be set in <a href="https://developer.mozilla.org/en-US/docs/Glossary/RGB" target="_blank">rgb format</a>. See [The Alpha Problem](./advanced#the-alpha-problem) for an explanation of why the `rgb` property is also needed.
+É importante notar que as variáveis para "background" e "text-color" também exigem que uma variável rgb seja definida em <a href="https://developer.mozilla.org/en-US/docs/Glossary/RGB" target="_blank">rgb</a>. Veja [O problema de cores com Transparência](./advanced#the-alpha-problem) para entender por quê a propriedade `rgb` também é necessária.
 
 | Name                               | Description                                      |
 | ---------------------------------- | ------------------------------------------------ |
