@@ -22,20 +22,6 @@ const start = () => {
   app.use(compress());
   app.use(helmet());
 
-  // Don't index languages that aren't fully translated yet
-  app.use((req, res, next) => {
-    const WIP_LANGUAGES = ['es','fr', 'pt', 'zh'];
-
-    WIP_LANGUAGES.forEach(lang => {
-      if (parseurl(req).pathname.indexOf(`docs/${lang}/`) !== -1) {
-        res.setHeader('X-Robots-Tag', 'noindex');
-        next();
-      }
-    });
-
-    next();
-  });
-
   app.get('/', (_, res) => res.redirect(301, '/docs/'));
 
   app.use((req, res, next) => {
