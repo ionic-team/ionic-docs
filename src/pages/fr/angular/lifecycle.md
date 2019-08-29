@@ -37,7 +37,7 @@ En plus des événements du cycle de vie de Angular, Ionic Angular fournit quelq
 | `ionViewDidLeave`  | Déclenché lorsque le routage du composant a fini d'être exécuté.         |
 
 
-La différence entre `ionViewWillEnter` et `ionViewDidEnter` réside dans le moment d'exécution. The former fires right after `ngOnInit` but before the page transition begins, and the latter directly after the transition ends.
+La différence entre `ionViewWillEnter` et `ionViewDidEnter` réside dans le moment d'exécution. Le premier se déclenche juste après `ngOnInit` mais avant le début de la transition de page et le second directement après la fin de la transition.
 
 Pour `ionViewWillLeave` et `ionViewDidLeave`, `ionViewWillLeave` est directement exécuté avant le début de la transition de la page actuelle, et `ionViewDidLeave` ne se fait appeler qu'après que la nouvelle page soit transitée avec succès (après les nouvelles pages `ionViewDidEnter` exécutées).
 
@@ -54,9 +54,9 @@ Quand une application est encapsulée dans `<ion-router-outlet />`, Ionic traite
 
 Les pages ne sont supprimées que du DOM lorsqu'on utilise la méthode "pop()", par exemple, en appuyant sur le bouton retour dans l'interface ou sur le bouton retour des navigateurs.
 
-Because of this special handling, the `ngOnInit` and `ngOnDestroy` methods might not fire when you would usually think they should.
+En raison de ce traitement spécial, les méthodes `ngOnInit` et `ngOnDestroy` risquent de ne pas se déclencher alors que vous le pensez normalement.
 
-`ngOnInit` ne s'exécutera que chaque fois que la page est fraîchement créée, mais pas lorsque vous naviguez à nouveau vers la page. For instance, navigating between each page in a tabs interface will only call each page's `ngOnInit` method once, but not on subsequent visits. `ngOnDestroy` ne s'exécute que lorsqu'on fait appel à la méthode "pop()" dans une page.
+`ngOnInit` ne s'exécutera que chaque fois que la page est fraîchement créée, mais pas lorsque vous naviguez à nouveau vers la page. Par exemple, la navigation entre chaque page dans une interface à onglets n'appelle la méthode `ngOnInit` de chaque page qu'une seule fois, mais pas lors de visites ultérieures. `ngOnDestroy` ne s'exécute que lorsqu'on fait appel à la méthode "pop()" dans une page.
 
 ## Gardes-routes
 
