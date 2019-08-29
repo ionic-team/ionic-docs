@@ -60,11 +60,11 @@ Because of this special handling, the `ngOnInit` and `ngOnDestroy` methods might
 
 ## Gardes-routes
 
-In Ionic 3, there were a couple of additional life cycle methods that were useful to control when a page could be entered (`ionViewCanEnter`) and left (`ionViewCanLeave`). These could be used to protect pages from unauthorized users and to keep a user on a page when you don't want them to leave (like during a form fill).
+En Ionic 3, il y avait quelques méthodes de cycle de vie supplémentaires qui étaient utiles pour contrôler lorsqu'une page peut s'exécuter (`ionViewCanEnter`) et est entrain de finir son exécution(`ionViewCanLeave`). Ces pages peuvent être utilisées pour protéger les pages des utilisateurs non autorisés et pour garder un utilisateur sur une page lorsque vous ne voulez pas qu'ils quittent (comme pendant le remplissage d'un formulaire).
 
-These methods were removed in Ionic 4 in favor of using Angular's Route Guards.
+Ces méthodes ont été supprimées d'Ionic 4 en faveur de l'utilisation des gardes-routes d'Angular.
 
-A route guard helps determine if a particular action can be taken against a route. They are classes that implement a certain interface. The `CanActivate` and `CanDeactivate` interfaces can be used to implement the same type of logic that the removed events `ionViewCanEnter` and `ionViewCanLeave` did.
+Un gardien de route permet de déterminer si une action particulière peut être prise contre la navigation vers une route. Ce sont des classes qui implémentent une certaine interface. Les interfaces `CanActivate` et ` CanDeactivate ` peuvent être utilisées pour implémenter le même type de logique que les événements supprimés `ionViewCanEnter` et `ionViewCanLeave`.
 
 ```typescript
 @Injectable()
@@ -77,20 +77,20 @@ export class AuthGuard implements CanActivate {
 }
 ```
 
-To use this guard, add it to the appropriate param in the route definition:
+Pour utiliser cette garde, ajoutez-le au paramètre approprié dans la définition de la route :
 
 ```typescript
 { path: 'settings', canActivate: [AuthGuard], loadChildren: '...',  }
 ```
 
-For more info on how to use route guards, go to Angular's [router documentation](https://angular.io/guide/router).
+Pour plus d'informations sur la façon d'utiliser les gardes-routes, allez à la documentation du routeur Angular [](https://angular.io/guide/router).
 
-## Guidance for Each Life Cycle Method
+## Guide d'utilisation pour chaque mode de cycle de vie
 
-Below are some tips on uses cases for each of the life cycle events.
+Voici quelques conseils sur l'utilisation de chacun des événements liés au cycle de vie.
 
-- `ngOnInit` - Initialize your component and load data from services that don't need refreshing on each subsequent visit.
-- `ionViewWillEnter` - Since `ionViewWillEnter` is called every time the view is navigated to (regardless if initialized or not), it's a good method to load data from services. However, if your data comes back during the animation, it can start lots of DOM manipulation, which can cause some janky animations.
+- `ngOnInit` - Initialisez votre composant et chargez les données des services qui n'ont pas besoin de se rafraîchir lors de chaque visite ultérieure.
+- `ionViewWillEnter` - `ionViewWillEnter` est appelée à chaque fois que la vue apparaît (indépendamment de si elle est initialisée ou non). C'est une bonne méthode de chargement des données à partir des services. Cependant, si vos données reviennent pendant l'animation, il peut démarrer beaucoup de manipulation DOM, ce qui peut causer des animations de janky.
 - `ionViewDidEnter` - If you see performance problems from using `ionViewWillEnter` when loading data, you can do your data calls in `ionViewDidEnter` instead. This event won't fire until after the page is visible by the user, however, so you might want to use either a loading indicator or a skeleton screen, so content doesn't flash in un-naturally after the transition is complete.
 - `ionViewWillLeave` - Can be used for cleanup, like unsubscribing from observables. Since `ngOnDestroy` might not fire when you navigate from the current page, put your cleanup code here if you don't want it active while the screen is not in view.
 - `ionViewDidLeave` - When this event fires, you know the new page has fully transitioned in, so any logic you might not normally do when the view is visible can go here.
