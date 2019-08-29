@@ -932,6 +932,12 @@ ___
 
 ## Change Log
 
+## 5.4.4
+* Fix issue where too many network requests at once could fire and cause performance issues.
+
+## 5.4.3
+* Fix issue where types caused incompatability with Ionic v3 (Typescript 2.x)
+
 ### 5.4.0
 * Added Deploy API Imports
 * Removed dependency on `cordova-plugin-file`
