@@ -1,5 +1,5 @@
 ---
-previousText: 'Build Your First App'
+previousText: 'Créer votre première application mobile'
 previousUrl: '/docs/intro/first-app'
 nextText: 'Versioning'
 nextUrl: '/docs/intro/versioning'
