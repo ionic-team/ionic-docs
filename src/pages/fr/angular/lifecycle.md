@@ -49,16 +49,16 @@ Ionic utilise un composant de routage, appelée `<ion-router-outlet />`. C'est c
 
 Quand une application est encapsulée dans `<ion-router-outlet />`, Ionic traite la navigation un peu différemment. Lorsque vous naviguez vers une nouvelle page, Ionic conservera l'ancienne page dans le DOM existant, mais la masquera de votre vue et la transition de la nouvelle page. Nous le faisons suite à deux raisons:
 
-1) We can maintain the state of the old page (data on the screen, scroll position, etc..)  
-2) We can provide a smoother transition back to the page since it is already there and doesn't need to be recreated.
+1) Nous pouvons maintenir l'état de l'ancienne page (données sur l'écran, la position du défilement, etc..)  
+2) Nous pouvons fournir une transition plus douce vers la page précédente car elle est déjà là et n'a pas besoin d'être recréée.
 
-Pages are only removed from the DOM when they are "popped", for instance, by pressing the back button in the UI or the browsers back button.
+Les pages ne sont supprimées que du DOM lorsqu'on utilise la méthode "pop()", par exemple, en appuyant sur le bouton retour dans l'interface ou sur le bouton retour des navigateurs.
 
 Because of this special handling, the `ngOnInit` and `ngOnDestroy` methods might not fire when you would usually think they should.
 
-`ngOnInit` will only fire each time the page is freshly created, but not when navigated back to the page. For instance, navigating between each page in a tabs interface will only call each page's `ngOnInit` method once, but not on subsequent visits. `ngOnDestroy` will only fire when a page "popped".
+`ngOnInit` ne s'exécutera que chaque fois que la page est fraîchement créée, mais pas lorsque vous naviguez à nouveau vers la page. For instance, navigating between each page in a tabs interface will only call each page's `ngOnInit` method once, but not on subsequent visits. `ngOnDestroy` ne s'exécute que lorsqu'on fait appel à la méthode "pop()" dans une page.
 
-## Route Guards
+## Gardes-routes
 
 In Ionic 3, there were a couple of additional life cycle methods that were useful to control when a page could be entered (`ionViewCanEnter`) and left (`ionViewCanLeave`). These could be used to protect pages from unauthorized users and to keep a user on a page when you don't want them to leave (like during a form fill).
 
