@@ -1,21 +1,21 @@
 ---
-previousText: '生命周期'
+previousText: 'Lifecycle'
 previousUrl: '/docs/angular/lifecycle'
-nextText: '性能'
+nextText: 'Performance'
 nextUrl: '/docs/angular/performance'
 contributors:
   - mhartington
 ---
 
-# Angular 导航
+# Angular Navigation
 
-本章主要讲述Ionic和Angular构建APP的路由器如何工作。
+This guide covers how routing works in an app built with Ionic and Angular.
 
-Angular路由器是Angular应用中最重要的库之一。 没有它，就只能生成单一视图/单一上下文的APP，也无法在浏览器重新加载时维持其导航状态。 使用Angular路由器，我们可以创建有链接的、有动画的富应用(当然也需要Ionic的帮助)。 我们来研究Angular路由器的基本知识以及如何为Ionic配置路由。
+The Angular Router is one of the most important libraries in an Angular application. Without it, apps would be single view/single context apps or would not be able to maintain their navigation state on browser reloads. With Angular Router, we can create rich apps that are linkable and have rich animations (when paired with Ionic of course). Let's look at the basics of the Angular Router and how we can configure it for Ionic apps.
 
-## 一个简单的路由
+## A simple Route
 
-对大多数应用来说，路由不可或缺。 最基本的配置大概是这样：
+For most apps, having some sort of route is often required. The most basic configuration looks a bit like this:
 
 ```typescript
 <br />import { RouterModule } from '@angular/router';
@@ -31,11 +31,11 @@ Angular路由器是Angular应用中最重要的库之一。 没有它，就只�
 })
 ```
 
-这里路由分解到最小的粒度，是路径/组件的查找。 当我们的应用程序加载时，路由器通过读取用户正在加载的 URL 来启动内容。 在我们的例子中，我们的路由从 `''`查找，它是我们的最基础的主页路由。 因此，我们加载 `LoginComponent`。 直截了当。 这个与组件匹配路径的模式将继续作用于我们在路由器配置的每一个条目。但如果我们想在初始加载时加载一条不同的路径呢？
+The simplest breakdown for what we have here is a path/component lookup. When our app loads, the router kicks things off by reading the URL the user is trying to load. In our sample, our route looks for `''`, which is essentially our index route. So for this, we load the `LoginComponent`. Fairly straight forward. This pattern of matching paths with a component continues for every entry we have in the router config. But what if we wanted to load a different path on our initial load?
 
-## 重定向处理
+## Handling Redirects
 
-为此，我们可以使用路由器重定向。 重定向和普通的路由方式基本相同，但区别是它包含几个不同的key
+For this we can use router redirects. Redirects work the same way that a typical route object does, but just includes a few different keys.
 
 ```typescript
 [
@@ -45,29 +45,29 @@ Angular路由器是Angular应用中最重要的库之一。 没有它，就只�
 ];
 ```
 
-在这个重定向中，查找应用程序的主页路径。如果我们加载这个路径，就会重定向到 `Login` 。 最后一个key`pathMatch`告诉路由器如何寻找路径。
+In our redirect, we look for the index path of our app. Then if we load that, we redirect to the `login` route. The last key of `pathMatch` is required to tell the router how it should look up the path.
 
-因为我们用了 `full`，路由器就会对路径进行完全匹配，即使最终结果是 `/roution 1/routrout2/roution 3`。 也就是说如果我们这么写：
+Since we use `full`, we're telling the router that we should compare the full path, even if ends up being something like `/route1/route2/route3`. Meaning that if we have:
 
 ```typescript
 { path: '/route1/route2/route3', redirectTo: 'login', pathMatch: 'full' },
 { path: 'login', component: LoginComponent },
 ```
 
-然后加载`/route1/route2/route3`，就会重定向。 但是如果我们加载的是`/route1/route2/route4`，就不会重定向，因为路径没有完全匹配。
+And load `/route1/route2/route3` we'll redirect. But if we loaded `/route1/route2/route4`, we won't redirect, as the paths don't match fully.
 
-或者，我们这么写：
+Alternatively, if we used:
 
 ```typescript
 { path: '/route1/route2', redirectTo: 'login', pathMatch: 'prefix' },
 { path: 'login', component: LoginComponent },
 ```
 
-然后加载 `/route1/route2/route3` 以及`/route1/route2/route4`，都可以进行重定向。 这是因为`pathMatch: 'prefix'` 将只匹配路径的一部分。
+Then load both `/route1/route2/route3` and `/route1/route2/route4`, we'll be redirected for both routes. This is because `pathMatch: 'prefix'` will match only part of the path.
 
-## 导航到不同的路由
+## Navigating to different routes
 
-诚然，熟悉路由是好事，但是如何实际导航到上述的路由呢？ 为此，我们使用`routerLink`指令。 我们回到之前设定的简单路由：
+Talking about routes is good and all, but how does one actually navigate to said routes? For this, we can use the `routerLink` directive. Let's go back and take our simple router setup from earlier:
 
 ```ts
 RouterModule.forRoot([
@@ -76,7 +76,7 @@ RouterModule.forRoot([
 ]);
 ```
 
-接下来从`LoginComponent`出发，我们可以用以下的HTML代码导航到详情的路由上去。
+Now from the `LoginComponent`, we can use the following HTML to navigate to the detail route.
 
 ```html
 <ion-header>
@@ -90,9 +90,9 @@ RouterModule.forRoot([
 </ion-content>
 ```
 
-这里的重中之重是`ion-button`和`routerLink`指令。 RouterLink的运作方式与我们常用的`href`类似，不过跟URL只能用作字符串不同，它可以作为数组构建，这样就可以提供更加复杂的路径。
+The important part here is the `ion-button` and `routerLink` directive. RouterLink works on a similar idea as typical `href`s, but instead of building out the URL as a string, it can be built as an array, which can provide more complicated paths.
 
-我们也可以用路由器的API在操作层实现应用程序的导航。
+We also can programmatically navigate in our app by using the router API.
 
 ```typescript
 import { Component } from '@angular/core';
@@ -111,13 +111,13 @@ export class LoginComponent {
 }
 ```
 
-这两种方式的导航机制相同，只是作用的场景不同。
+Both options provide the same navigation mechanism, just fitting different use cases.
 
-> 关于使用相对URL的说明：在当前版本中，为了支持多重导航栈，相对URL不受支持。
+> A note on navigation with relative URLs: Currently, to support multiple navigation stacks, relative URLs are something not supported
 
-## 懒加载路由
+## Lazy loading routes
 
-我们现在是将所有的路由设置在同一个根模块app.module上的，不够理想。 换种方式，路由器的设置可以让我们将组件单独划归到属于它的块中。
+Now the current way our routes are setup makes it so they are included in the same chunk as the root app.module, which is not ideal. Instead, the router has a setup that allows the components to be isolated to their own chunks.
 
 ```typescript
 <br />import { RouterModule } from '@angular/router';
@@ -134,7 +134,7 @@ export class LoginComponent {
 })
 ```
 
-类似的，`loadChildren`属性是个通过字符串而不是直接写组件来引用模块的方法。 不过，为了做到这一点，我们需要为每个组件创建一个模块。
+While similar, the `loadChildren` property is a way to reference a module by string instead of a component directly. In order to do this though, we need to create a module for each of the components.
 
 ```typescript
 ...
@@ -151,13 +151,13 @@ import { LoginComponent } from './login.component';
 })
 ```
 
-> 我们排除了一些无关内容，只包括必要的部分。
+> We're excluding some additional content and only including the necessary parts.
 
-在这里，我们进行了一个典型的Angular模块的设置和一个路由模块的引入，但我们现在使用 `forChild`，并在设置中声明组件。 设置完成，当我们运行编译时，程序就会为login组件和detail组件分别生成单独的块。
+Here, we have a typical Angular Module setup, along with a RouterModule import, but we're now using `forChild` and declaring the component in that setup. With this setup, when we run our build, we will produce separate chunks for both the app component, the login component, and the detail component.
 
-## 使用标签页
+## Working with Tabs
 
-使用标签页时，Angular为Ionic提供了机制，以确定哪些组件有应该被加载，但主要工作是有tabs组件完成的。 我们来看一个简单的例子：
+With Tabs, the Angular Router provides Ionic the mechanism to know what components should be loaded, but the heavy lifting is actually done by the tabs component. Let's look at a simple example.
 
 ```ts
 const routes: Routes = [
@@ -189,7 +189,7 @@ const routes: Routes = [
 ];
 ```
 
-我们这里设置了一个"tabs"路径，然后加载它。 在这个例子中我们称路径为"tabs"，不过路径的名字可以随意更改。 也可以用你认为合适于自己APP的名字来命名。在这个路由对象中，我们可以定义一个子路由。 在这个例子中，最上层的子路由"tab1"可以作为我们的“出口”，可以用来加载额外的子路由。 距离来说，我们有一个单一子路由，可以加载一个新的组件。 标签标记如下：
+Here we have a "tabs" path that we load. In this example we call the path “tabs”, but the name of the paths are open to be changed. They can be called whatever fits your app. In that route object, we can define a child route as well. In this example, the top level child route "tab1" acts as our "outlet", and can load additional child routes. For this example, we have a single sub-child-route, which just loads a new component. The markup for the tab is as followed:
 
 ```html
 <br />&lt;ion-tabs&gt;
@@ -206,4 +206,4 @@ const routes: Routes = [
 &lt;/ion-tabs&gt;
 ```
 
-如果你以前构建过Ionic应用，你应该就很熟悉了。 我们创建了一个 `ion-tabs`组件，然后提供了一个 `ion-tab-bar`。 这个`ion-tab-bar`包括一个`ion-tab-button`，它存在一个与路由器配置中tab的“出口”相关联的`tab`属性。注意，最新版本的`@ionic/angular`中不再需要`<ion-tab>`，开发者完全可以自定义标签栏，它唯一的真实来源在路由器配置中。
+If you've built apps with Ionic before, this should feel familiar. We create a `ion-tabs` component, and provide a `ion-tab-bar`. The `ion-tab-bar` provides a `ion-tab-button` with a `tab` property that is associated with the tab "outlet" in the router config. Note that the latest version of `@ionic/angular` no longer requires `<ion-tab>`, but instead allows developers to fully customize the tab bar, and the single source of truth lives within the router configuration.

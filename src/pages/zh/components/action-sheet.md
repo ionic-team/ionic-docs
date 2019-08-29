@@ -1,8 +1,8 @@
 # Action Sheet
 
-Action Sheet 是一个设置选项的对话框 他会出现在应用的内容的最顶层, 而且用户选择过后才会消失, 没选择前无法使用app其它内容. 关闭action sheet的方式也很多, 包括按手机上的返回键或者回到桌面键 Action Sheets不应用于导航
+An Action Sheet is a dialog that displays a set of options. It appears on top of the app's content, and must be manually dismissed by the user before they can resume interaction with the app. There are multiple ways to dismiss the action sheet, including tapping the backdrop or hitting the escape key on desktop. <mark>Action Sheets should not be used for navigation.</mark>
 
-## 基本用法
+## Basic Usage
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed lacus eu purus viverra egestas. Nunc porta, elit ut finibus gravida, dui orci feugiat leo, tincidunt fermentum urna eros vel elit. Phasellus convallis, tellus eu volutpat facilisis, ipsum mauris luctus diam, sodales tincidunt quam turpis at leo.
 
@@ -51,7 +51,7 @@ async function presentActionSheet() {
 }
 ```
 
-### 取消按钮文本
+### Cancel Button
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed lacus eu purus viverra egestas. Nunc porta, elit ut finibus gravida, dui orci feugiat leo, tincidunt fermentum urna eros vel elit. Phasellus convallis, tellus eu volutpat facilisis, ipsum mauris luctus diam, sodales tincidunt quam turpis at leo.
 

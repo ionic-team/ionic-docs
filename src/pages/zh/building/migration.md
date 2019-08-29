@@ -1,7 +1,7 @@
 ---
-previousText: '脚手架'
+previousText: 'Scaffolding'
 previousUrl: '/docs/building/scaffolding'
-nextText: '跨平台'
+nextText: 'Cross Platform'
 nextUrl: '/docs/building/cross-platform'
 contributors:
   - mhartington
@@ -9,11 +9,11 @@ contributors:
   - elylucas
 ---
 
-# 迁移指南
+# Migration Guide
 
-> 要查看Ionic4中**版本更新的完整内容**，请访问位于Ionic核心仓库中的[ 版本更新文档](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md)
+> For a **complete list of breaking changes** from Ionic 3 to Ionic 4, please refer to [the breaking changes document](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md) in the Ionic core repo.
 
-## 从Ionic3.0迁移至Ionic4.0-概览
+## Migrating from Ionic 3.0 to Ionic 4.0 - Overview
 
 We suggest the following general process when migrating an existing application from Ionic 3 to 4:
 
