@@ -45,25 +45,25 @@ Pour cela, nous pouvons utiliser les redirections de l'objet routeur. Les redire
 ];
 ```
 
-Dans notre redirection, nous recherchons le chemin de l'index de notre application. Si nous chargeons cela, nous redirigeons vers la route de `login`. La dernière clé de ` pathMatch ` est nécessaire pour dire au routeur comment il devrait regarder le chemin.
+Dans notre redirection, nous recherchons le chemin de l'index de notre application. Si nous chargeons cela, nous redirigeons vers la route de `login`. La dernière clé de ` pathMatch ` est nécessaire pour dire au routeur comment il doit regarder le chemin.
 
-Since we use `full`, we're telling the router that we should compare the full path, even if ends up being something like `/route1/route2/route3`. Meaning that if we have:
+Lorsque nous indiquons `full`, nous disons au routeur que nous devons comparer avec le chemin complet, même si cela finit par ressembler à `/route1/route2/route3`. C'est à dire que si nous avons :
 
 ```typescript
 { path: '/route1/route2/route3', redirectTo: 'login', pathMatch: 'full' },
 { path: 'login', component: LoginComponent },
 ```
 
-And load `/route1/route2/route3` we'll redirect. But if we loaded `/route1/route2/route4`, we won't redirect, as the paths don't match fully.
+Et chargeons `/route1/route2/route3`, nous serons redirigés. Mais si nous chargeons `/route1/route2/route4`, il n'y aura pas de redirection, car les chemins ne sont pas totalement identiques.
 
-Alternatively, if we used:
+Alternativement, si nous utilisons :
 
 ```typescript
 { path: '/route1/route2', redirectTo: 'login', pathMatch: 'prefix' },
 { path: 'login', component: LoginComponent },
 ```
 
-Then load both `/route1/route2/route3` and `/route1/route2/route4`, we'll be redirected for both routes. This is because `pathMatch: 'prefix'` will match only part of the path.
+Alors si nous chargeons `/route1/route2/route3` et `/route1/route2/route4`, nous serons redirigés pour les deux routes. This is because `pathMatch: 'prefix'` will match only part of the path.
 
 ## Navigating to different routes
 
