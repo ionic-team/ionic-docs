@@ -1,28 +1,86 @@
+header-mobile-collapse,
+header-mobile-collapse .header-mobile-collapse__content {
+  flex: 1;
+  display: flex;
+}
+
 header-mobile-collapse .ionic-sub-header__mobile-toggle {
   display: none;
+  padding-top: 14px;
+  pointer-events: none;
+  padding-left: 8px;
+  margin-left: auto;
+}
+
+header-mobile-collapse .ionic-sub-header__mobile-toggle svg {
+  height: 20px;
+  width: 20px;
+}
+
+header-mobile-collapse .UtilNav {
+  margin-left: auto;
 }
 
 @media (max-width: 700px) {
+  header-mobile-collapse .ionic-sub-header__mobile-toggle {
+    display: block;
+    cursor: pointer;
+    pointer-events: all;
+    transition: .2s transform ease .1s;
+    transform-origin: 66% 50%;
+  }
+
+  header-mobile-collapse.ionic-sub-header--mobile-active .ionic-sub-header__mobile-toggle {
+    transform: rotate(180deg);
+  }
+
   header-mobile-collapse .header-mobile-collapse__content {
     display: flex;
     flex-direction: column;
     position: fixed;
-    right: 0;
-    width: 100vw;
+    right: 4px;
+    width: calc(100vw - 8px);
     background: white;
     box-shadow: 0 4px 8px rgba(0,0,0, .1), 0 6px 16px rgba(0,0,0, .06);
     top: 56px;
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
-    padding: 16px 0;
+    padding: 16px 16px;
+    max-height: calc(100vh - 64px);
+    overflow: auto;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: 
+      transform .2s cubic-bezier(.36,.66,.04,1),
+      opacity .2s linear;
   }
 
-  header-mobile-collapse .docs-dropdown {
+  header-mobile-collapse.ionic-sub-header--mobile-active .header-mobile-collapse__content {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+    transition: 
+      transform .25s cubic-bezier(.17,.67,.52,1),
+      opacity .1s linear;
+  }
+
+  header-mobile-collapse .docs-dropdown,
+  header-mobile-collapse .SectionNav .Dropdown {
     align-self: stretch;
   }
 
-  header-mobile-collapse .docs-dropdown .Dropdown-button {
+  header-mobile-collapse .Dropdown-button {
     width: 100%;
+  }
+
+  header-mobile-collapse .SectionNav .Dropdown,
+  header-mobile-collapse .SectionNav-tabs > *  {
+    margin-right: 0;
+  }
+
+  header-mobile-collapse .Dropdown--right .Dropdown-button {
+    text-align: left;
   }
 
   header-mobile-collapse .SectionNav stencil-route,
@@ -32,6 +90,15 @@ header-mobile-collapse .ionic-sub-header__mobile-toggle {
     flex-direction: column;
     margin-left: 0;
     align-items: stretch;
+  }
+
+  header-mobile-collapse .UtilNav > * {
+    margin-left: 0;
+  }
+
+  header-mobile-collapse .Dropdown-panel {
+    position: static;
+    border-bottom: 1px solid var(--text-color--lighter);
   }
 }
 
