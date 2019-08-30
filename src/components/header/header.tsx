@@ -77,7 +77,7 @@ export class DocsHeader {
               </stencil-route>
             </stencil-route-switch>
           </nav>
-  
+
           <nav class="UtilNav">
             <ionic-search>
               <div class="Search__Defaults">
