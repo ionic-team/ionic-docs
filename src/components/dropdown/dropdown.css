@@ -28,7 +28,7 @@
   fill: #CED6E0;
   vertical-align: 2px;
 } 
-
+.Dropdown:focus,
 .Dropdown-button:focus {
   outline: none;
 }
