@@ -54,8 +54,7 @@ const items = {
     'Badge': '/docs/enterprise/badge',
   },
   'menu-enterprise-offline-data': {
-    'Couchbase Lite': 'https://ionicframework.com/integrations/couchbase-lite',
-    'Offline Support': 'https://ionicframework.com/integrations/couchbase-lite',
+    'Couchbase Lite': '/docs/enterprise/couchbase-lite',
   },
   'menu-enterprise-payments': {
     'Apple Payment Pass': '/docs/enterprise/apple-payment-pass',
