@@ -127,6 +127,7 @@ Running the register command should generate a `.npmrc` file in you app director
 - [Calendar](/docs/enterprise/calendar)
 - [Camera](/docs/enterprise/camera)
 - [Clipboard](/docs/enterprise/clipboard)
+- [Contacts](/docs/enterprise/contacts)
 - [Device](/docs/enterprise/device)
 - [Dialogs](/docs/enterprise/dialogs)
 - [Email Composer](/docs/enterprise/email-composer)
@@ -147,10 +148,9 @@ Running the register command should generate a `.npmrc` file in you app director
 - [Active Directory](https://ionicframework.com/integrations/ms-activedirectory-ms-adal)
 - [mParticle](/docs/enterprise/mparticle)
 
-### Offline & Data
+### Offline & Storage
 
-- [Couchbase Lite](https://ionicframework.com/integrations/couchbase-lite)
-- [Offline Support](https://ionicframework.com/integrations/couchbase-lite)
+- [Couchbase Lite](/docs/enterprise/couchbase-lite)
 
 ### Payments
 
