@@ -45,7 +45,7 @@ Pour cela, nous pouvons utiliser les redirections de l'objet routeur. Les redire
 ];
 ```
 
-Dans notre redirection, nous recherchons le chemin de l'index de notre application. Si nous chargeons cela, nous redirigeons vers la route de `login`. La dernière clé de ` pathMatch ` est nécessaire pour dire au routeur comment il doit regarder le chemin.
+Dans notre redirection, nous recherchons le chemin de la page index de notre application. Si nous chargeons cela, nous serons redirigés vers la route `login`. La dernière clé de ` pathMatch ` est nécessaire pour dire au routeur comment il doit regarder le chemin.
 
 Lorsque nous indiquons `full`, nous disons au routeur que nous devons comparer avec le chemin complet, même si cela finit par ressembler à `/route1/route2/route3`. C'est à dire que si nous avons :
 
