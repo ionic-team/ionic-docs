@@ -31,7 +31,7 @@ Pour la plupart des applications, il est souvent nécessaire d'avoir une configu
 })
 ```
 
-La plus simple répartition de ce que nous avons ici est une recherche de chemin/composant. Lorsque notre application se charge, le routeur démarre les vues en lisant l'URL que l'utilisateur essaie de charger. Dans notre exemple, notre système de routage recherche `''`, qui est essentiellement notre route index. Pour cela, nous chargeons la vue `LoginComponent`. Juste en avant. Ce modèle de chemins correspond à une seule et unique vue pour chaque entrée que nous avons dans la configuration du routeur. Mais que se passe-t-il si nous voulions charger un chemin différent sur notre vue initiale ?
+La plus simple répartition de ce que nous avons ici est une recherche de chemin/composant. Lorsque notre application se charge, le routeur démarre les vues en lisant l'URL que l'utilisateur essaie de charger. Dans notre exemple, notre système de routage recherche `''`, qui est essentiellement notre route index. Pour cela, nous chargeons la vue `LoginComponent`. Juste avant. Cette route correspond à une seule et unique vue pour chaque entrée que nous avons dans la configuration du routeur. Mais que se passe-t-il si nous voulions charger un chemin différent sur notre vue initiale ?
 
 ## Gestion des redirections
 
@@ -47,14 +47,14 @@ Pour cela, nous pouvons utiliser les redirections de l'objet routeur. Les redire
 
 Dans notre redirection, nous recherchons le chemin de la page index de notre application. Si nous chargeons cela, nous serons redirigés vers la route `login`. Le paramètre ` pathMatch ` est nécessaire pour dire au système de routage comment il doit faire le routing.
 
-Lorsque nous indiquons `full`, nous disons au routeur que nous devons comparer avec le chemin complet, même si cela finit par ressembler à `/route1/route2/route3`. C'est à dire que si nous avons :
+Lorsque nous indiquons `full`, nous disons à l'objet Router que nous devons le comparer avec le chemin complet, même si cela finit par ressembler à `/route1/route2/route3`. C'est à dire que si nous avons :
 
 ```typescript
 { path: '/route1/route2/route3', redirectTo: 'login', pathMatch: 'full' },
 { path: 'login', component: LoginComponent },
 ```
 
-Et chargeons `/route1/route2/route3`, nous serons redirigés. Mais si nous chargeons `/route1/route2/route4`, il n'y aura pas de redirection, car les chemins ne sont pas totalement identiques.
+Et nous serons donc redirigés vers `/route1/route2/route3`. Mais si nous chargeons `/route1/route2/route4`, il n'y aura pas de redirection, car les chemins ne sont pas identiques.
 
 Alternativement, si nous utilisons :
 
@@ -63,7 +63,7 @@ Alternativement, si nous utilisons :
 { path: 'login', component: LoginComponent },
 ```
 
-Alors si nous chargeons `/route1/route2/route3` et `/route1/route2/route4`, nous serons redirigés pour les deux routes. This is because `pathMatch: 'prefix'` will match only part of the path.
+Alors si nous chargeons `/route1/route2/route3` et `/route1/route2/route4`, nous serons bel et bien redirigés vers les deux routes. This is because `pathMatch: 'prefix'` will match only part of the path.
 
 ## Navigating to different routes
 
