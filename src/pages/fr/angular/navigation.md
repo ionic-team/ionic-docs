@@ -63,11 +63,11 @@ Alternativement, si nous utilisons :
 { path: 'login', component: LoginComponent },
 ```
 
-Alors si nous chargeons `/route1/route2/route3` et `/route1/route2/route4`, nous serons bel et bien redirigés vers les deux routes. This is because `pathMatch: 'prefix'` will match only part of the path.
+Alors si nous chargeons `/route1/route2/route3` et `/route1/route2/route4`, nous serons bel et bien redirigés vers les deux routes. Ceci est possible parce que `pathMatch : 'prefix'` ne correspondra qu'à une partie du chemin.
 
-## Navigating to different routes
+## Naviguer vers différentes routes
 
-Talking about routes is good and all, but how does one actually navigate to said routes? For this, we can use the `routerLink` directive. Let's go back and take our simple router setup from earlier:
+Parler de routes est bon et tout, mais comment naviguer réellement pour ces routes? Pour cela, nous pouvons utiliser la directive `'routerLink'`. Revenons-en et reprenons notre configuration de l'objet Router utilisé depuis le début :
 
 ```ts
 RouterModule.forRoot([
@@ -76,7 +76,7 @@ RouterModule.forRoot([
 ]);
 ```
 
-Now from the `LoginComponent`, we can use the following HTML to navigate to the detail route.
+Maintenant depuis le `LoginComponent`, nous pouvons utiliser le code HTML suivant pour naviguer vers la route `detail`.
 
 ```html
 <ion-header>
@@ -90,7 +90,7 @@ Now from the `LoginComponent`, we can use the following HTML to navigate to the 
 </ion-content>
 ```
 
-The important part here is the `ion-button` and `routerLink` directive. RouterLink works on a similar idea as typical `href`s, but instead of building out the URL as a string, it can be built as an array, which can provide more complicated paths.
+La partie importante ici est `ion-button` et la directive `routerLink`. RouterLink works on a similar idea as typical `href`s, but instead of building out the URL as a string, it can be built as an array, which can provide more complicated paths.
 
 We also can programmatically navigate in our app by using the router API.
 
