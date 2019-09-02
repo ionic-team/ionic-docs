@@ -33,6 +33,10 @@ export namespace Components {
     'cssText': string;
     'header': boolean;
   }
+  interface ColorGenJsText {
+    'header': boolean;
+    'jsText': string;
+  }
   interface ColorGenPreview {
     'cssText': string;
     'demoMode': string;
@@ -170,6 +174,12 @@ declare global {
   var HTMLColorGenCssTextElement: {
     prototype: HTMLColorGenCssTextElement;
     new (): HTMLColorGenCssTextElement;
+  };
+
+  interface HTMLColorGenJsTextElement extends Components.ColorGenJsText, HTMLStencilElement {}
+  var HTMLColorGenJsTextElement: {
+    prototype: HTMLColorGenJsTextElement;
+    new (): HTMLColorGenJsTextElement;
   };
 
   interface HTMLColorGenPreviewElement extends Components.ColorGenPreview, HTMLStencilElement {}
@@ -403,6 +413,7 @@ declare global {
     'code-color': HTMLCodeColorElement;
     'color-accordion': HTMLColorAccordionElement;
     'color-gen-css-text': HTMLColorGenCssTextElement;
+    'color-gen-js-text': HTMLColorGenJsTextElement;
     'color-gen-preview': HTMLColorGenPreviewElement;
     'color-gen-select-colors': HTMLColorGenSelectColorsElement;
     'color-gen-variable-selector': HTMLColorGenVariableSelectorElement;
@@ -455,6 +466,11 @@ declare namespace LocalJSX {
     'cssText'?: string;
     'header'?: boolean;
     'onCssTextChange'?: (event: CustomEvent<any>) => void;
+  }
+  interface ColorGenJsText extends JSXBase.HTMLAttributes<HTMLColorGenJsTextElement> {
+    'header'?: boolean;
+    'jsText'?: string;
+    'onJsTextChange'?: (event: CustomEvent<any>) => void;
   }
   interface ColorGenPreview extends JSXBase.HTMLAttributes<HTMLColorGenPreviewElement> {
     'cssText'?: string;
@@ -579,6 +595,7 @@ declare namespace LocalJSX {
     'code-color': CodeColor;
     'color-accordion': ColorAccordion;
     'color-gen-css-text': ColorGenCssText;
+    'color-gen-js-text': ColorGenJsText;
     'color-gen-preview': ColorGenPreview;
     'color-gen-select-colors': ColorGenSelectColors;
     'color-gen-variable-selector': ColorGenVariableSelector;

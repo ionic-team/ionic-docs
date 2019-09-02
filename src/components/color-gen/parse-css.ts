@@ -53,12 +53,12 @@ export function updateCssText(colorAttr: string, cssText: string, newColorValue:
 }
 
 
-function parseColorVar(colorAttr: any, cssText: string) {
+export function parseColorVar(colorAttr: any, cssText: string) {
   const attrKeyVal = getCssKeyVal(colorAttr, cssText);
   return attrKeyVal.trim().split(':')[1].trim();
 }
 
-function getCssKeyVal(colorAttr: any, cssText: string) {
+export function getCssKeyVal(colorAttr: any, cssText: string) {
   const startIndex = cssText.indexOf(colorAttr);
   const valueSplt = cssText.substring(startIndex + colorAttr.length);
   const bracketIndex = valueSplt.indexOf('}');
