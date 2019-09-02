@@ -1,4 +1,4 @@
-import { Component, Listen, Prop, State } from '@stencil/core';
+import { Component, Listen, Prop, State, h } from '@stencil/core';
 
 @Component({
   tag: 'docs-demo',
@@ -13,8 +13,8 @@ export class DocsDemo {
   iframeLoaded = false;
   messageQueue: CustomEvent[] = [];
 
-  @Listen('window:demoMessage')
-  handleMessage(msg: CustomEvent) {
+  @Listen('demoMessage', { target: 'window' })
+  async handleMessage(msg: CustomEvent) {
     this.iframeLoaded
       ? this.postMessage(msg)
       : this.messageQueue.push(msg);
@@ -51,7 +51,7 @@ export class DocsDemo {
          class="docs-demo-source"
          target="_blank"
          title="Demo Source">
-        <ion-icon name="code"></ion-icon>
+        <ion-icon name="open"/> View Source
       </a> : null;
   }
 
@@ -68,6 +68,8 @@ export class DocsDemo {
             <path d="M0 1V0h219v1a5 5 0 0 0-5 5v3c0 12.15-9.85 22-22 22H27C14.85 31 5 21.15 5 9V6a5 5 0 0 0-5-5z" fill-rule="evenodd"/>
           </svg>
           <iframe
+            loading="lazy"
+            importance="low"
             onLoad={this.onIframeLoad}
             src={`${this.url}?ionic:mode=${this.ionicMode}`}
             ref={node => { this.iframe = node as HTMLIFrameElement; }}/>
@@ -82,9 +84,9 @@ export class DocsDemo {
     }
 
     return [
-      this.renderSourceLink(),
       this.renderModeToggle(),
-      this.renderDevice()
+      this.renderDevice(),
+      this.renderSourceLink()
     ];
   }
 }

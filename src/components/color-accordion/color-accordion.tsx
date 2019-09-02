@@ -1,4 +1,4 @@
-import { Component, Element, State } from '@stencil/core';
+import { Build, Component, Element, State, h } from '@stencil/core';
 
 
 @Component({
@@ -6,6 +6,7 @@ import { Component, Element, State } from '@stencil/core';
   styleUrl: 'color-accordion.css'
 })
 export class ColorAccordion {
+
   colors = ['primary', 'secondary', 'tertiary', 'success', 'warning', 'danger', 'dark', 'medium', 'light'];
 
   @State() activeColor = '';
@@ -21,6 +22,9 @@ export class ColorAccordion {
   }
 
   render() {
+    if (!Build.isBrowser) {
+      return null;
+    }
     const listItems = this.colors.map(color => {
       const isActive = (this.activeColor === color) ? true : false;
 

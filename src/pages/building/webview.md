@@ -16,7 +16,7 @@ Ionic apps are built using [web technologies](/docs/faq/glossary#web-standards) 
 
 Modern Web Views offer many built-in <a href="https://whatwebcando.today" target="_blank">HTML5 APIs</a> for hardware functionality such as cameras, sensors, GPS, speakers, and Bluetooth, but sometimes it may also be necessary to access platform-specific hardware APIs. In Ionic apps, hardware APIs can be accessed through a bridge layer, typically by using native plugins which expose JavaScript APIs.
 
-![webview architecture](/docs/assets/img/webview-architecture.png)
+![webview architecture](/docs/assets/img/building/webview-architecture.png)
 
 The Ionic Web View plugin is specialized for modern JavaScript apps. For both iOS and Android, app files are always hosted using the `http://` protocol with an optimized HTTP server that runs on the local device.
 
@@ -41,7 +41,13 @@ Cordova and Capacitor apps are hosted on a local HTTP server and are served with
 
 For Cordova apps, the [Ionic Web View plugin](https://github.com/ionic-team/cordova-plugin-ionic-webview) provides a utility function for converting File URIs: `window.Ionic.WebView.convertFileSrc()`. There is also a corresponding Ionic Native plugin: [`@ionic-native/ionic-webview`](/docs/native/ionic-webview/).
 
-For Capacitor apps, the File URIs are converted automatically.
+For Capacitor apps, converting file URIs is very similar:
+
+```javascript
+import { Capacitor } from '@capacitor/core';
+
+Capacitor.convertFileSrc(filePath);
+```
 
 ### Implementations
 

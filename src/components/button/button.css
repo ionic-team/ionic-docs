@@ -1,12 +1,10 @@
 docs-button {
-  background-color: var(--background);
-  border: solid 1px rgba(0,0,0,0.1);
+  background-color: rgba(var(--accent-color-rgb), var(--bg-alpha, 0.06));
   border-radius: 6px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.02);
   color: var(--accent-color);
   display: inline-block;
   font-weight: 600;
-  transition: all 50ms ease-out;
+  white-space: nowrap;
 }
 
 docs-button a,
@@ -25,19 +23,23 @@ docs-button button {
   line-height: inherit;
 }
 
-docs-button[primary] {
-  background-color: var(--accent-color);
-  color: white;
+docs-button svg {
+  fill: currentColor;
+  height: 1em;
+  margin-bottom: -0.125em;
+  width: 1em;
+}
+
+docs-button[round] {
+  border-radius: 2em;
 }
 
 @media (hover: hover) {
   docs-button:hover {
-    box-shadow: 0 6px 12px rgba(0,0,0,0.04);
-    transform: translateY(-1px);
+    --bg-alpha: 0.08;
   }
 
   docs-button:active {
-    box-shadow: none;
-    transform: translateY(0);
+    --bg-alpha: 0.10;
   }
 }

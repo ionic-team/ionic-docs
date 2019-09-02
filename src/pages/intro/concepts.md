@@ -1,8 +1,8 @@
 ---
 previousText: 'What is Ionic Framework'
 previousUrl: '/docs/intro'
-nextText: 'Browser Support'
-nextUrl: '/docs/intro/browser-support'
+nextText: 'Build Your First App'
+nextUrl: '/docs/intro/first-app'
 ---
 
 # Core Concepts
@@ -41,7 +41,7 @@ An amazing feature of apps built with web technologies (such as Ionic apps!) is 
 
 One of the most common use cases for Ionic is to build an app which can be downloaded from both the <a href="https://www.apple.com/ios/app-store/" target="_blank">App Store</a> and <a href="https://play.google.com/" target="_blank">Play Store</a>. Both iOS and Android software development kits (SDKs) provide "[web views](/docs/building/webview)" which render any Ionic app, while still allowing for <i>full</i> Native SDK access.
 
-Projects such as <a href="https://capacitor.ionicframework.com/" target="_blank">Capacitor</a> and <a href="https://cordova.apache.org/" target="_blank">Cordova</a> are commonly used to give Ionic apps this access to Native SDKs. This means developers can quickly build out an app using common web development tools, and still have access to native features such as the device's accelerometer, camera, GPS, and more. 
+Projects such as <a href="https://capacitor.ionicframework.com/" target="_blank">Capacitor</a> and <a href="https://cordova.apache.org/" target="_blank">Cordova</a> are commonly used to give Ionic apps this access to Native SDKs. This means developers can quickly build out an app using common web development tools, and still have access to native features such as the device's accelerometer, camera, GPS, and more.
 
 ## Theming
 

@@ -1,23 +1,25 @@
 ---
 initialTab: 'preview'
 inlineHtmlPreviews: true
-previousText: 'Responsive Grid'
-previousUrl: '/docs/layout/grid'
+previousText: 'Global Stylesheets'
+previousUrl: '/docs/layout/global-stylesheets'
 nextText: 'Theming'
 nextUrl: '/docs/theming/basics'
 contributors:
   - brandyscarney
 ---
 
-<link rel="stylesheet" href="https://unpkg.com/@ionic/core/css/text-alignment.css">
-<link rel="stylesheet" href="https://unpkg.com/@ionic/core/css/text-transformation.css">
-<link rel="stylesheet" href="https://unpkg.com/@ionic/core/css/float-elements.css">
-<link rel="stylesheet" href="https://unpkg.com/@ionic/core/css/padding.css">
-<link rel="stylesheet" href="https://unpkg.com/@ionic/core/css/flex-utils.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/css/utils.bundle.css"/> -->
 
 # CSS Utilities
 
-Ionic provides a set of CSS utility classes that can be used on any element in order to modify the text, element placement or adjust the padding and margin.
+Ionic Framework provides a set of CSS utility classes that can be used on any element in order to modify the text, element placement or adjust the padding and margin.
+
+<blockquote>
+  <p>
+    If your app was not started using an available Ionic Framework starter, the stylesheets listed in the <a href="./global-stylesheets#optional">optional section of the global stylesheets</a> will need to be included in order for these styles to work.
+  </p>
+</blockquote>
 
 
 ## Text Modification
@@ -204,7 +206,7 @@ The display CSS property determines if an element should be visible or not. The 
 
 | Class         | Style Rule                      | Description                                                                                               |
 |---------------|---------------------------------|-----------------------------------------------------------------------------------------------------------|
-| `.ion-hide`   | `display: none`                 | The element will be hidden. 
+| `.ion-hide`   | `display: none`                 | The element will be hidden.
 
 ### Responsive Display Attributes
 
@@ -599,17 +601,17 @@ The default amount of `margin` to be applied is `16px` and is set by the `--ion-
 ```html
 <ion-grid>
   <ion-row>
-    <ion-col align-self-start>
+    <ion-col class="ion-align-self-start">
       <div>
         1 of 4
       </div>
     </ion-col>
-    <ion-col align-self-center>
+    <ion-col class="ion-align-self-center">
       <div>
         2 of 4
       </div>
     </ion-col>
-    <ion-col align-self-end>
+    <ion-col class="ion-align-self-end">
       <div>
         3 of 4
       </div>

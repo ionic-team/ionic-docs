@@ -48,59 +48,63 @@ One of the major changes between an Ionic 3 app and an Ionic 4 app is the overal
 
 For example, if an app is using Angular, that project structure will be exactly what an Angular CLI app would be. This change, while not too difficult to accommodate, helps to keep common patterns and documentation consistent.
 
-<div style="display: flex;">
-    <figure style="display: flex; flex-direction: column; width: 50%; margin-right: 5px;">
-        <file-tree style="flex: 1">
-            <file-tree-directory name="src">
-                <file-tree-directory name="app">
-                    <file-tree-directory name="about" collapsed></file-tree-directory>
-                    <file-tree-directory name="home" collapsed></file-tree-directory>
-                    <file-tree-file name="app-routing.module.ts"></file-tree-file>
-                    <file-tree-file name="app.component.html"></file-tree-file>
-                    <file-tree-file name="app.component.spec.ts"></file-tree-file>
-                    <file-tree-file name="app.component.ts"></file-tree-file>
-                    <file-tree-file name="app.module.ts"></file-tree-file>
-                </file-tree-directory>
-                <file-tree-directory name="assets" collapsed></file-tree-directory>
-                <file-tree-directory name="environments" collapsed></file-tree-directory>
-                <file-tree-directory name="theme" collapsed></file-tree-directory>
-                <file-tree-file name="global.scss"></file-tree-file>
-                <file-tree-file name="index.html"></file-tree-file>
-                <file-tree-file name="karma.conf.js"></file-tree-file>
-                <file-tree-file name="main.ts"></file-tree-file>
-                <file-tree-file name="polyfills.ts"></file-tree-file>
-                <file-tree-file name="test.ts"></file-tree-file>
-                <file-tree-file name="tsconfig.app.json"></file-tree-file>
-                <file-tree-file name="tsconfig.spec.json"></file-tree-file>
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <figure>
+        <file-tree>
+          <file-tree-directory name="src">
+            <file-tree-directory name="app">
+              <file-tree-directory name="about" collapsed></file-tree-directory>
+              <file-tree-directory name="home" collapsed></file-tree-directory>
+              <file-tree-file name="app-routing.module.ts"></file-tree-file>
+              <file-tree-file name="app.component.html"></file-tree-file>
+              <file-tree-file name="app.component.spec.ts"></file-tree-file>
+              <file-tree-file name="app.component.ts"></file-tree-file>
+              <file-tree-file name="app.module.ts"></file-tree-file>
             </file-tree-directory>
-            <file-tree-file name=".gitignore"></file-tree-file>
-            <file-tree-file name="angular.json"></file-tree-file>
-            <file-tree-file name="ionic.config.json"></file-tree-file>
-            <file-tree-file name="package.json"></file-tree-file>
-            <file-tree-file name="tsconfig.json"></file-tree-file>
-            <file-tree-file name="tslint.json"></file-tree-file>
+            <file-tree-directory name="assets" collapsed></file-tree-directory>
+            <file-tree-directory name="environments" collapsed></file-tree-directory>
+            <file-tree-directory name="theme" collapsed></file-tree-directory>
+            <file-tree-file name="global.scss"></file-tree-file>
+            <file-tree-file name="index.html"></file-tree-file>
+            <file-tree-file name="karma.conf.js"></file-tree-file>
+            <file-tree-file name="main.ts"></file-tree-file>
+            <file-tree-file name="polyfills.ts"></file-tree-file>
+            <file-tree-file name="test.ts"></file-tree-file>
+            <file-tree-file name="tsconfig.app.json"></file-tree-file>
+            <file-tree-file name="tsconfig.spec.json"></file-tree-file>
+          </file-tree-directory>
+          <file-tree-file name=".gitignore"></file-tree-file>
+          <file-tree-file name="angular.json"></file-tree-file>
+          <file-tree-file name="ionic.config.json"></file-tree-file>
+          <file-tree-file name="package.json"></file-tree-file>
+          <file-tree-file name="tsconfig.json"></file-tree-file>
+          <file-tree-file name="tslint.json"></file-tree-file>
         </file-tree>
         <figcaption>Ionic 4</figcaption>
-    </figure>
-    <figure style="display: flex; flex-direction: column; width: 50%; margin-left: 5px;">
-        <file-tree style="flex: 1">
-            <file-tree-directory name="src">
-                <file-tree-directory name="app">
-                    <file-tree-file name="app.component.html"></file-tree-file>
-                    <file-tree-file name="app.html"></file-tree-file>
-                    <file-tree-file name="app.module.ts"></file-tree-file>
-                    <file-tree-file name="app.scss"></file-tree-file>
-                    <file-tree-file name="main.ts"></file-tree-file>
-                </file-tree-directory>
-                <file-tree-directory name="assets" collapsed></file-tree-directory>
-                <file-tree-directory name="pages">
-                    <file-tree-directory name="about" collapsed></file-tree-directory>
-                    <file-tree-directory name="home" collapsed></file-tree-directory>
-                </file-tree-directory>
-                <file-tree-directory name="theme" collapsed></file-tree-directory>
-                <file-tree-file name="index.html"></file-tree-file>
-                <file-tree-file name="manifest.json"></file-tree-file>
-                <file-tree-file name="service-worker.js"></file-tree-file>
+      </figure>
+    </ion-col>
+    <ion-col>
+      <figure>
+        <file-tree>
+          <file-tree-directory name="src">
+              <file-tree-directory name="app">
+                <file-tree-file name="app.component.html"></file-tree-file>
+                <file-tree-file name="app.html"></file-tree-file>
+                <file-tree-file name="app.module.ts"></file-tree-file>
+                <file-tree-file name="app.scss"></file-tree-file>
+                <file-tree-file name="main.ts"></file-tree-file>
+              </file-tree-directory>
+              <file-tree-directory name="assets" collapsed></file-tree-directory>
+              <file-tree-directory name="pages">
+                <file-tree-directory name="about" collapsed></file-tree-directory>
+                <file-tree-directory name="home" collapsed></file-tree-directory>
+              </file-tree-directory>
+              <file-tree-directory name="theme" collapsed></file-tree-directory>
+              <file-tree-file name="index.html"></file-tree-file>
+              <file-tree-file name="manifest.json"></file-tree-file>
+              <file-tree-file name="service-worker.js"></file-tree-file>
             </file-tree-directory>
             <file-tree-file name=".gitignore"></file-tree-file>
             <file-tree-file name="ionic.config.json"></file-tree-file>
@@ -109,8 +113,10 @@ For example, if an app is using Angular, that project structure will be exactly 
             <file-tree-file name="tslint.json"></file-tree-file>
         </file-tree>
         <figcaption>Ionic 3</figcaption>
-    </figure>
-</div>
+      </figure>
+    </ion-col>
+  </ion-row>
+</ion-grid>
 
 The above comparison is an example of a v4 app's project structure. For developers with experience in a vanilla Angular project, this should feel really familiar.
 
@@ -131,7 +137,7 @@ See the following `ionic.config.json` as an example:
 
 ## RxJS Changes
 
-Between V3 and V4, RxJS was updated to version 6. This changes many of the import paths of operators and core RxJS functions. Please see the <a href="https://github.com/ReactiveX/rxjs/blob/master/MIGRATION.md" target="_blank">RxJS Migration Guide</a> for details.
+Between V3 and V4, RxJS was updated to version 6. This changes many of the import paths of operators and core RxJS functions. Please see the <a href="https://github.com/ReactiveX/rxjs/blob/master/docs_app/content/guide/v6/migration.md" target="_blank">RxJS Migration Guide</a> for details.
 
 ## Lifecycle Events
 
@@ -183,9 +189,9 @@ async showAlert() {
 
 In V4, navigation received the most changes. Now, instead of using Ionic's own `NavController`, we integrate with the official Angular Router. This not only provides a consistent routing experience across apps, but is much more dependable. The Angular team has an <a href="http://angular.io/guide/router" target="_blank">excellent guide</a> on their docs site that covers the Router in great detail.
 
-To provide the platform specific animations that users are used to, we have created `ion-router-outlet` for Angular Apps. This behaves in a similar manor to Angular's `router-outlet` but provides a stack-based navigation (tabs) and animations.
+To provide the platform specific animations that users are used to, we have created `ion-router-outlet` for Angular Apps. This behaves in a similar manner to Angular's `router-outlet` but provides a stack-based navigation (tabs) and animations.
 
-For a detailed explanation in navigation works in a V4 project, checkout the [Angular navigation guide](/docs/navigation/angular).
+For a detailed explanation in navigation works in a V4 project, checkout the [Angular navigation guide](/docs/angular/navigation).
 
 
 ## Lazy Loading
@@ -243,7 +249,7 @@ For a detailed explanation of lazy loading in V4 project, check out the [Angular
 
 ## Markup Changes
 
-Since v4 moved to Custom Elements, there's been a significant change to the markup for each component. These changes have all been made to follow the Custom Elements spec, and have been documented in a <a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#breaking-changes" target="_blank">dedicated file on Github</a>.
+Since v4 moved to Custom Elements, there's been a significant change to the markup for each component. These changes have all been made to follow the Custom Elements spec, and have been documented in a <a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#breaking-changes" target="_blank">dedicated file on GitHub</a>.
 
 To help with these markup changes, we've released a TSLint-based <a href="https://github.com/ionic-team/v4-migration-tslint" target="_blank">Migration Tool</a>, which detects issues and can even fix some of them automatically.
 
@@ -271,7 +277,7 @@ Once the team is comfortable that the Ionic 4.0 app has become stable and has fu
 Please reference official [Angular upgrade guide](https://angular.io/guide/upgrade) information.
 
 ### Ionic Changes
-Our Ionic 3.0 to Ionic 4.0 migration sections above may prove to be a useful reference. Generate a new Ionic 4.0 project using the blank starter (see [Starting an App](/docs/building/starting). Spend time getting familiar with Ionic 4.0 components. Happy building!
+Our Ionic 3.0 to Ionic 4.0 migration sections above may prove to be a useful reference. Generate a new Ionic 4.0 project using the blank starter (see [Starting an App](/docs/building/starting)). Spend time getting familiar with Ionic 4.0 components. Happy building!
 
 ### Need Assistance?
 If your team would like assistance with the migration, please [reach out to us](https://ionicframework.com/enterprise-engine)! Ionic offers Advisory Services, which includes Ionic 4.0 training, architecture reviews, and migration assistance.

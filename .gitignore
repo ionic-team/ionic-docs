@@ -1,8 +1,12 @@
 .DS_Store
 node_modules/
 .stencil/
+dist/
 www/
 src/pages/**/*.json
+src/l10n/pages/**/*.json
 src/components/menu/data/
 src/components/page/data/
 src/components/search/data/
+.idea
+/.env

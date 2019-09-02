@@ -5,362 +5,154 @@
  */
 
 
-import '@stencil/core';
-
-import '@ionic/core';
-import '@stencil/router';
-import '@stencil/state-tunnel';
-import 'ionicons';
+import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import {
   ColorVariable,
 } from './components/color-gen/color-variables';
+import {
+  JSX,
+} from '@stencil/core';
 import {
   Link,
   MenuItems,
   Page,
   ReferenceKeys,
 } from './definitions';
-
+import {
+  RouterHistory,
+} from '@stencil/router';
 
 export namespace Components {
-
-  interface DocsButton {
-    'href': string;
-    'primary': boolean;
-  }
-  interface DocsButtonAttributes extends StencilHTMLAttributes {
-    'href'?: string;
-    'primary'?: boolean;
-  }
-
-  interface DocsCard {
-    'header': string;
-    'href': string;
-    'icon': string;
-    'img': string;
-  }
-  interface DocsCardAttributes extends StencilHTMLAttributes {
-    'header'?: string;
-    'href'?: string;
-    'icon'?: string;
-    'img'?: string;
-  }
-
-  interface DocsCards {}
-  interface DocsCardsAttributes extends StencilHTMLAttributes {}
-
   interface CodeColor {
     'display': string;
     'mode': string;
     'value': string;
   }
-  interface CodeColorAttributes extends StencilHTMLAttributes {
-    'display'?: string;
-    'mode'?: string;
-    'value'?: string;
-  }
-
-  interface DocsCode {
-    'language': string;
-  }
-  interface DocsCodeAttributes extends StencilHTMLAttributes {
-    'language'?: string;
-  }
-
   interface ColorAccordion {}
-  interface ColorAccordionAttributes extends StencilHTMLAttributes {}
-
-  interface ColorGenerator {}
-  interface ColorGeneratorAttributes extends StencilHTMLAttributes {
-    'onDemoMessage'?: (event: CustomEvent) => void;
-  }
-
   interface ColorGenCssText {
     'cssText': string;
+    'header': boolean;
   }
-  interface ColorGenCssTextAttributes extends StencilHTMLAttributes {
-    'cssText'?: string;
-    'onCssTextChange'?: (event: CustomEvent) => void;
-  }
-
   interface ColorGenPreview {
     'cssText': string;
     'demoMode': string;
   }
-  interface ColorGenPreviewAttributes extends StencilHTMLAttributes {
-    'cssText'?: string;
-    'demoMode'?: string;
-  }
-
   interface ColorGenSelectColors {
     'colors': ColorVariable[];
   }
-  interface ColorGenSelectColorsAttributes extends StencilHTMLAttributes {
-    'colors'?: ColorVariable[];
-  }
-
   interface ColorGenVariableSelector {
     'editable': boolean;
+    'isNew': boolean;
     'isParentOpen': boolean;
     'name': string;
     'property': string;
     'value': string;
   }
-  interface ColorGenVariableSelectorAttributes extends StencilHTMLAttributes {
-    'editable'?: boolean;
-    'isParentOpen'?: boolean;
-    'name'?: string;
-    'onColorChange'?: (event: CustomEvent) => void;
-    'property'?: string;
-    'value'?: string;
-  }
-
+  interface ColorGenerator {}
   interface CommandCursor {
     'blink': boolean;
   }
-  interface CommandCursorAttributes extends StencilHTMLAttributes {
-    'blink'?: boolean;
-  }
-
   interface CommandLine {
     'nobuttons': boolean;
   }
-  interface CommandLineAttributes extends StencilHTMLAttributes {
-    'nobuttons'?: boolean;
-  }
-
   interface CommandOutput {}
-  interface CommandOutputAttributes extends StencilHTMLAttributes {}
-
   interface CommandPrompt {}
-  interface CommandPromptAttributes extends StencilHTMLAttributes {}
-
   interface ContributorList {
     'contributors': string[];
-    'path': string;
+    'link': (contributor: string) => string;
   }
-  interface ContributorListAttributes extends StencilHTMLAttributes {
-    'contributors'?: string[];
-    'path'?: string;
+  interface DocsButton {
+    'href': string;
+    'round': boolean;
   }
-
+  interface DocsCard {
+    'header': string;
+    'href': string;
+    'icon': string;
+    'img': string;
+    'ionicon': string;
+  }
+  interface DocsCards {}
+  interface DocsCode {
+    'language': string;
+  }
   interface DocsDemo {
     'source': string;
     'url': string;
   }
-  interface DocsDemoAttributes extends StencilHTMLAttributes {
-    'source'?: string;
-    'url'?: string;
-  }
-
   interface DocsDropdown {
-    'close': () => void;
+    'align': 'left' | 'right' | 'center';
+    'close': () => Promise<void>;
+    'icon': (props: any) => JSX.Element;
     'label': string;
-    'open': () => void;
-    'toggle': () => void;
+    'open': () => Promise<void>;
+    'toggle': () => Promise<void>;
   }
-  interface DocsDropdownAttributes extends StencilHTMLAttributes {
-    'label'?: string;
+  interface DocsHeader {
+    'onToggleClick': (e: Event) => void;
   }
-
-  interface FileTreeDirectory {
-    'collapsed': boolean;
-    'name': string;
+  interface DocsMenu {
+    'onToggleClick': (e: Event) => void;
   }
-  interface FileTreeDirectoryAttributes extends StencilHTMLAttributes {
-    'collapsed'?: boolean;
-    'name'?: string;
-  }
-
-  interface FileTreeFile {
-    'name': string;
-  }
-  interface FileTreeFileAttributes extends StencilHTMLAttributes {
-    'name'?: string;
-  }
-
-  interface FileTree {}
-  interface FileTreeAttributes extends StencilHTMLAttributes {}
-
-  interface DocsHeader {}
-  interface DocsHeaderAttributes extends StencilHTMLAttributes {}
-
-  interface LayeredColorsSelect {}
-  interface LayeredColorsSelectAttributes extends StencilHTMLAttributes {}
-
-  interface DocsMenu {}
-  interface DocsMenuAttributes extends StencilHTMLAttributes {}
-
+  interface DocsMenuToggle {}
   interface DocsNav {
     'items': MenuItems;
   }
-  interface DocsNavAttributes extends StencilHTMLAttributes {
-    'items'?: MenuItems;
-  }
-
   interface DocsPage {
+    'history': RouterHistory;
     'path': string;
   }
-  interface DocsPageAttributes extends StencilHTMLAttributes {
-    'path'?: string;
+  interface DocsPageFooter {
+    'page': Page;
   }
-
   interface DocsPagination {
     'page': Page;
   }
-  interface DocsPaginationAttributes extends StencilHTMLAttributes {
-    'page'?: Page;
-  }
-
   interface DocsReference {
     'data': any[];
     'keys': ReferenceKeys;
   }
-  interface DocsReferenceAttributes extends StencilHTMLAttributes {
-    'data'?: any[];
-    'keys'?: ReferenceKeys;
-  }
-
   interface DocsRoot {}
-  interface DocsRootAttributes extends StencilHTMLAttributes {}
-
-  interface DocsSearch {}
-  interface DocsSearchAttributes extends StencilHTMLAttributes {}
-
-  interface DocsSectionNav {}
-  interface DocsSectionNavAttributes extends StencilHTMLAttributes {}
-
-  interface SmsForm {}
-  interface SmsFormAttributes extends StencilHTMLAttributes {}
-
-  interface SteppedColorGenerator {}
-  interface SteppedColorGeneratorAttributes extends StencilHTMLAttributes {}
-
+  interface DocsSelect {
+    'initializer': (options: string[]) => string;
+    'optionRenderer': (option: string) => any;
+    'options': string[];
+  }
+  interface DocsTab {
+    'selected': boolean;
+    'tab': string;
+  }
   interface DocsTableOfContents {
     'basepath': string;
     'label': string;
     'links': Link[];
   }
-  interface DocsTableOfContentsAttributes extends StencilHTMLAttributes {
-    'basepath'?: string;
-    'label'?: string;
-    'links'?: Link[];
+  interface DocsTabs {}
+  interface FileTree {}
+  interface FileTreeDirectory {
+    'collapsed': boolean;
+    'name': string;
   }
-
-  interface DocsTabs {
-    'initial': string;
-    'tabs': string;
+  interface FileTreeFile {
+    'name': string;
   }
-  interface DocsTabsAttributes extends StencilHTMLAttributes {
-    'initial'?: string;
-    'tabs'?: string;
+  interface HubspotForm {
+    'formId': string;
   }
-
+  interface IonicSearch {
+    'mobile': boolean;
+  }
+  interface LayeredColorsSelect {}
+  interface NewColorGenerator {}
+  interface SmsForm {}
+  interface SteppedColorGenerator {}
   interface WistiaVideo {
-    'id': string;
-  }
-  interface WistiaVideoAttributes extends StencilHTMLAttributes {
-    'id'?: string;
+    'videoId': string;
   }
 }
 
 declare global {
-  interface StencilElementInterfaces {
-    'DocsButton': Components.DocsButton;
-    'DocsCard': Components.DocsCard;
-    'DocsCards': Components.DocsCards;
-    'CodeColor': Components.CodeColor;
-    'DocsCode': Components.DocsCode;
-    'ColorAccordion': Components.ColorAccordion;
-    'ColorGenerator': Components.ColorGenerator;
-    'ColorGenCssText': Components.ColorGenCssText;
-    'ColorGenPreview': Components.ColorGenPreview;
-    'ColorGenSelectColors': Components.ColorGenSelectColors;
-    'ColorGenVariableSelector': Components.ColorGenVariableSelector;
-    'CommandCursor': Components.CommandCursor;
-    'CommandLine': Components.CommandLine;
-    'CommandOutput': Components.CommandOutput;
-    'CommandPrompt': Components.CommandPrompt;
-    'ContributorList': Components.ContributorList;
-    'DocsDemo': Components.DocsDemo;
-    'DocsDropdown': Components.DocsDropdown;
-    'FileTreeDirectory': Components.FileTreeDirectory;
-    'FileTreeFile': Components.FileTreeFile;
-    'FileTree': Components.FileTree;
-    'DocsHeader': Components.DocsHeader;
-    'LayeredColorsSelect': Components.LayeredColorsSelect;
-    'DocsMenu': Components.DocsMenu;
-    'DocsNav': Components.DocsNav;
-    'DocsPage': Components.DocsPage;
-    'DocsPagination': Components.DocsPagination;
-    'DocsReference': Components.DocsReference;
-    'DocsRoot': Components.DocsRoot;
-    'DocsSearch': Components.DocsSearch;
-    'DocsSectionNav': Components.DocsSectionNav;
-    'SmsForm': Components.SmsForm;
-    'SteppedColorGenerator': Components.SteppedColorGenerator;
-    'DocsTableOfContents': Components.DocsTableOfContents;
-    'DocsTabs': Components.DocsTabs;
-    'WistiaVideo': Components.WistiaVideo;
-  }
 
-  interface StencilIntrinsicElements {
-    'docs-button': Components.DocsButtonAttributes;
-    'docs-card': Components.DocsCardAttributes;
-    'docs-cards': Components.DocsCardsAttributes;
-    'code-color': Components.CodeColorAttributes;
-    'docs-code': Components.DocsCodeAttributes;
-    'color-accordion': Components.ColorAccordionAttributes;
-    'color-generator': Components.ColorGeneratorAttributes;
-    'color-gen-css-text': Components.ColorGenCssTextAttributes;
-    'color-gen-preview': Components.ColorGenPreviewAttributes;
-    'color-gen-select-colors': Components.ColorGenSelectColorsAttributes;
-    'color-gen-variable-selector': Components.ColorGenVariableSelectorAttributes;
-    'command-cursor': Components.CommandCursorAttributes;
-    'command-line': Components.CommandLineAttributes;
-    'command-output': Components.CommandOutputAttributes;
-    'command-prompt': Components.CommandPromptAttributes;
-    'contributor-list': Components.ContributorListAttributes;
-    'docs-demo': Components.DocsDemoAttributes;
-    'docs-dropdown': Components.DocsDropdownAttributes;
-    'file-tree-directory': Components.FileTreeDirectoryAttributes;
-    'file-tree-file': Components.FileTreeFileAttributes;
-    'file-tree': Components.FileTreeAttributes;
-    'docs-header': Components.DocsHeaderAttributes;
-    'layered-colors-select': Components.LayeredColorsSelectAttributes;
-    'docs-menu': Components.DocsMenuAttributes;
-    'docs-nav': Components.DocsNavAttributes;
-    'docs-page': Components.DocsPageAttributes;
-    'docs-pagination': Components.DocsPaginationAttributes;
-    'docs-reference': Components.DocsReferenceAttributes;
-    'docs-root': Components.DocsRootAttributes;
-    'docs-search': Components.DocsSearchAttributes;
-    'docs-section-nav': Components.DocsSectionNavAttributes;
-    'sms-form': Components.SmsFormAttributes;
-    'stepped-color-generator': Components.SteppedColorGeneratorAttributes;
-    'docs-table-of-contents': Components.DocsTableOfContentsAttributes;
-    'docs-tabs': Components.DocsTabsAttributes;
-    'wistia-video': Components.WistiaVideoAttributes;
-  }
-
-
-  interface HTMLDocsButtonElement extends Components.DocsButton, HTMLStencilElement {}
-  var HTMLDocsButtonElement: {
-    prototype: HTMLDocsButtonElement;
-    new (): HTMLDocsButtonElement;
-  };
-
-  interface HTMLDocsCardElement extends Components.DocsCard, HTMLStencilElement {}
-  var HTMLDocsCardElement: {
-    prototype: HTMLDocsCardElement;
-    new (): HTMLDocsCardElement;
-  };
-
-  interface HTMLDocsCardsElement extends Components.DocsCards, HTMLStencilElement {}
-  var HTMLDocsCardsElement: {
-    prototype: HTMLDocsCardsElement;
-    new (): HTMLDocsCardsElement;
-  };
 
   interface HTMLCodeColorElement extends Components.CodeColor, HTMLStencilElement {}
   var HTMLCodeColorElement: {
@@ -368,22 +160,10 @@ declare global {
     new (): HTMLCodeColorElement;
   };
 
-  interface HTMLDocsCodeElement extends Components.DocsCode, HTMLStencilElement {}
-  var HTMLDocsCodeElement: {
-    prototype: HTMLDocsCodeElement;
-    new (): HTMLDocsCodeElement;
-  };
-
   interface HTMLColorAccordionElement extends Components.ColorAccordion, HTMLStencilElement {}
   var HTMLColorAccordionElement: {
     prototype: HTMLColorAccordionElement;
     new (): HTMLColorAccordionElement;
-  };
-
-  interface HTMLColorGeneratorElement extends Components.ColorGenerator, HTMLStencilElement {}
-  var HTMLColorGeneratorElement: {
-    prototype: HTMLColorGeneratorElement;
-    new (): HTMLColorGeneratorElement;
   };
 
   interface HTMLColorGenCssTextElement extends Components.ColorGenCssText, HTMLStencilElement {}
@@ -408,6 +188,12 @@ declare global {
   var HTMLColorGenVariableSelectorElement: {
     prototype: HTMLColorGenVariableSelectorElement;
     new (): HTMLColorGenVariableSelectorElement;
+  };
+
+  interface HTMLColorGeneratorElement extends Components.ColorGenerator, HTMLStencilElement {}
+  var HTMLColorGeneratorElement: {
+    prototype: HTMLColorGeneratorElement;
+    new (): HTMLColorGeneratorElement;
   };
 
   interface HTMLCommandCursorElement extends Components.CommandCursor, HTMLStencilElement {}
@@ -440,6 +226,30 @@ declare global {
     new (): HTMLContributorListElement;
   };
 
+  interface HTMLDocsButtonElement extends Components.DocsButton, HTMLStencilElement {}
+  var HTMLDocsButtonElement: {
+    prototype: HTMLDocsButtonElement;
+    new (): HTMLDocsButtonElement;
+  };
+
+  interface HTMLDocsCardElement extends Components.DocsCard, HTMLStencilElement {}
+  var HTMLDocsCardElement: {
+    prototype: HTMLDocsCardElement;
+    new (): HTMLDocsCardElement;
+  };
+
+  interface HTMLDocsCardsElement extends Components.DocsCards, HTMLStencilElement {}
+  var HTMLDocsCardsElement: {
+    prototype: HTMLDocsCardsElement;
+    new (): HTMLDocsCardsElement;
+  };
+
+  interface HTMLDocsCodeElement extends Components.DocsCode, HTMLStencilElement {}
+  var HTMLDocsCodeElement: {
+    prototype: HTMLDocsCodeElement;
+    new (): HTMLDocsCodeElement;
+  };
+
   interface HTMLDocsDemoElement extends Components.DocsDemo, HTMLStencilElement {}
   var HTMLDocsDemoElement: {
     prototype: HTMLDocsDemoElement;
@@ -452,40 +262,22 @@ declare global {
     new (): HTMLDocsDropdownElement;
   };
 
-  interface HTMLFileTreeDirectoryElement extends Components.FileTreeDirectory, HTMLStencilElement {}
-  var HTMLFileTreeDirectoryElement: {
-    prototype: HTMLFileTreeDirectoryElement;
-    new (): HTMLFileTreeDirectoryElement;
-  };
-
-  interface HTMLFileTreeFileElement extends Components.FileTreeFile, HTMLStencilElement {}
-  var HTMLFileTreeFileElement: {
-    prototype: HTMLFileTreeFileElement;
-    new (): HTMLFileTreeFileElement;
-  };
-
-  interface HTMLFileTreeElement extends Components.FileTree, HTMLStencilElement {}
-  var HTMLFileTreeElement: {
-    prototype: HTMLFileTreeElement;
-    new (): HTMLFileTreeElement;
-  };
-
   interface HTMLDocsHeaderElement extends Components.DocsHeader, HTMLStencilElement {}
   var HTMLDocsHeaderElement: {
     prototype: HTMLDocsHeaderElement;
     new (): HTMLDocsHeaderElement;
   };
 
-  interface HTMLLayeredColorsSelectElement extends Components.LayeredColorsSelect, HTMLStencilElement {}
-  var HTMLLayeredColorsSelectElement: {
-    prototype: HTMLLayeredColorsSelectElement;
-    new (): HTMLLayeredColorsSelectElement;
-  };
-
   interface HTMLDocsMenuElement extends Components.DocsMenu, HTMLStencilElement {}
   var HTMLDocsMenuElement: {
     prototype: HTMLDocsMenuElement;
     new (): HTMLDocsMenuElement;
+  };
+
+  interface HTMLDocsMenuToggleElement extends Components.DocsMenuToggle, HTMLStencilElement {}
+  var HTMLDocsMenuToggleElement: {
+    prototype: HTMLDocsMenuToggleElement;
+    new (): HTMLDocsMenuToggleElement;
   };
 
   interface HTMLDocsNavElement extends Components.DocsNav, HTMLStencilElement {}
@@ -498,6 +290,12 @@ declare global {
   var HTMLDocsPageElement: {
     prototype: HTMLDocsPageElement;
     new (): HTMLDocsPageElement;
+  };
+
+  interface HTMLDocsPageFooterElement extends Components.DocsPageFooter, HTMLStencilElement {}
+  var HTMLDocsPageFooterElement: {
+    prototype: HTMLDocsPageFooterElement;
+    new (): HTMLDocsPageFooterElement;
   };
 
   interface HTMLDocsPaginationElement extends Components.DocsPagination, HTMLStencilElement {}
@@ -518,28 +316,16 @@ declare global {
     new (): HTMLDocsRootElement;
   };
 
-  interface HTMLDocsSearchElement extends Components.DocsSearch, HTMLStencilElement {}
-  var HTMLDocsSearchElement: {
-    prototype: HTMLDocsSearchElement;
-    new (): HTMLDocsSearchElement;
+  interface HTMLDocsSelectElement extends Components.DocsSelect, HTMLStencilElement {}
+  var HTMLDocsSelectElement: {
+    prototype: HTMLDocsSelectElement;
+    new (): HTMLDocsSelectElement;
   };
 
-  interface HTMLDocsSectionNavElement extends Components.DocsSectionNav, HTMLStencilElement {}
-  var HTMLDocsSectionNavElement: {
-    prototype: HTMLDocsSectionNavElement;
-    new (): HTMLDocsSectionNavElement;
-  };
-
-  interface HTMLSmsFormElement extends Components.SmsForm, HTMLStencilElement {}
-  var HTMLSmsFormElement: {
-    prototype: HTMLSmsFormElement;
-    new (): HTMLSmsFormElement;
-  };
-
-  interface HTMLSteppedColorGeneratorElement extends Components.SteppedColorGenerator, HTMLStencilElement {}
-  var HTMLSteppedColorGeneratorElement: {
-    prototype: HTMLSteppedColorGeneratorElement;
-    new (): HTMLSteppedColorGeneratorElement;
+  interface HTMLDocsTabElement extends Components.DocsTab, HTMLStencilElement {}
+  var HTMLDocsTabElement: {
+    prototype: HTMLDocsTabElement;
+    new (): HTMLDocsTabElement;
   };
 
   interface HTMLDocsTableOfContentsElement extends Components.DocsTableOfContents, HTMLStencilElement {}
@@ -554,97 +340,293 @@ declare global {
     new (): HTMLDocsTabsElement;
   };
 
+  interface HTMLFileTreeElement extends Components.FileTree, HTMLStencilElement {}
+  var HTMLFileTreeElement: {
+    prototype: HTMLFileTreeElement;
+    new (): HTMLFileTreeElement;
+  };
+
+  interface HTMLFileTreeDirectoryElement extends Components.FileTreeDirectory, HTMLStencilElement {}
+  var HTMLFileTreeDirectoryElement: {
+    prototype: HTMLFileTreeDirectoryElement;
+    new (): HTMLFileTreeDirectoryElement;
+  };
+
+  interface HTMLFileTreeFileElement extends Components.FileTreeFile, HTMLStencilElement {}
+  var HTMLFileTreeFileElement: {
+    prototype: HTMLFileTreeFileElement;
+    new (): HTMLFileTreeFileElement;
+  };
+
+  interface HTMLHubspotFormElement extends Components.HubspotForm, HTMLStencilElement {}
+  var HTMLHubspotFormElement: {
+    prototype: HTMLHubspotFormElement;
+    new (): HTMLHubspotFormElement;
+  };
+
+  interface HTMLIonicSearchElement extends Components.IonicSearch, HTMLStencilElement {}
+  var HTMLIonicSearchElement: {
+    prototype: HTMLIonicSearchElement;
+    new (): HTMLIonicSearchElement;
+  };
+
+  interface HTMLLayeredColorsSelectElement extends Components.LayeredColorsSelect, HTMLStencilElement {}
+  var HTMLLayeredColorsSelectElement: {
+    prototype: HTMLLayeredColorsSelectElement;
+    new (): HTMLLayeredColorsSelectElement;
+  };
+
+  interface HTMLNewColorGeneratorElement extends Components.NewColorGenerator, HTMLStencilElement {}
+  var HTMLNewColorGeneratorElement: {
+    prototype: HTMLNewColorGeneratorElement;
+    new (): HTMLNewColorGeneratorElement;
+  };
+
+  interface HTMLSmsFormElement extends Components.SmsForm, HTMLStencilElement {}
+  var HTMLSmsFormElement: {
+    prototype: HTMLSmsFormElement;
+    new (): HTMLSmsFormElement;
+  };
+
+  interface HTMLSteppedColorGeneratorElement extends Components.SteppedColorGenerator, HTMLStencilElement {}
+  var HTMLSteppedColorGeneratorElement: {
+    prototype: HTMLSteppedColorGeneratorElement;
+    new (): HTMLSteppedColorGeneratorElement;
+  };
+
   interface HTMLWistiaVideoElement extends Components.WistiaVideo, HTMLStencilElement {}
   var HTMLWistiaVideoElement: {
     prototype: HTMLWistiaVideoElement;
     new (): HTMLWistiaVideoElement;
   };
-
   interface HTMLElementTagNameMap {
-    'docs-button': HTMLDocsButtonElement
-    'docs-card': HTMLDocsCardElement
-    'docs-cards': HTMLDocsCardsElement
-    'code-color': HTMLCodeColorElement
-    'docs-code': HTMLDocsCodeElement
-    'color-accordion': HTMLColorAccordionElement
-    'color-generator': HTMLColorGeneratorElement
-    'color-gen-css-text': HTMLColorGenCssTextElement
-    'color-gen-preview': HTMLColorGenPreviewElement
-    'color-gen-select-colors': HTMLColorGenSelectColorsElement
-    'color-gen-variable-selector': HTMLColorGenVariableSelectorElement
-    'command-cursor': HTMLCommandCursorElement
-    'command-line': HTMLCommandLineElement
-    'command-output': HTMLCommandOutputElement
-    'command-prompt': HTMLCommandPromptElement
-    'contributor-list': HTMLContributorListElement
-    'docs-demo': HTMLDocsDemoElement
-    'docs-dropdown': HTMLDocsDropdownElement
-    'file-tree-directory': HTMLFileTreeDirectoryElement
-    'file-tree-file': HTMLFileTreeFileElement
-    'file-tree': HTMLFileTreeElement
-    'docs-header': HTMLDocsHeaderElement
-    'layered-colors-select': HTMLLayeredColorsSelectElement
-    'docs-menu': HTMLDocsMenuElement
-    'docs-nav': HTMLDocsNavElement
-    'docs-page': HTMLDocsPageElement
-    'docs-pagination': HTMLDocsPaginationElement
-    'docs-reference': HTMLDocsReferenceElement
-    'docs-root': HTMLDocsRootElement
-    'docs-search': HTMLDocsSearchElement
-    'docs-section-nav': HTMLDocsSectionNavElement
-    'sms-form': HTMLSmsFormElement
-    'stepped-color-generator': HTMLSteppedColorGeneratorElement
-    'docs-table-of-contents': HTMLDocsTableOfContentsElement
-    'docs-tabs': HTMLDocsTabsElement
-    'wistia-video': HTMLWistiaVideoElement
-  }
-
-  interface ElementTagNameMap {
-    'docs-button': HTMLDocsButtonElement;
-    'docs-card': HTMLDocsCardElement;
-    'docs-cards': HTMLDocsCardsElement;
     'code-color': HTMLCodeColorElement;
-    'docs-code': HTMLDocsCodeElement;
     'color-accordion': HTMLColorAccordionElement;
-    'color-generator': HTMLColorGeneratorElement;
     'color-gen-css-text': HTMLColorGenCssTextElement;
     'color-gen-preview': HTMLColorGenPreviewElement;
     'color-gen-select-colors': HTMLColorGenSelectColorsElement;
     'color-gen-variable-selector': HTMLColorGenVariableSelectorElement;
+    'color-generator': HTMLColorGeneratorElement;
     'command-cursor': HTMLCommandCursorElement;
     'command-line': HTMLCommandLineElement;
     'command-output': HTMLCommandOutputElement;
     'command-prompt': HTMLCommandPromptElement;
     'contributor-list': HTMLContributorListElement;
+    'docs-button': HTMLDocsButtonElement;
+    'docs-card': HTMLDocsCardElement;
+    'docs-cards': HTMLDocsCardsElement;
+    'docs-code': HTMLDocsCodeElement;
     'docs-demo': HTMLDocsDemoElement;
     'docs-dropdown': HTMLDocsDropdownElement;
-    'file-tree-directory': HTMLFileTreeDirectoryElement;
-    'file-tree-file': HTMLFileTreeFileElement;
-    'file-tree': HTMLFileTreeElement;
     'docs-header': HTMLDocsHeaderElement;
-    'layered-colors-select': HTMLLayeredColorsSelectElement;
     'docs-menu': HTMLDocsMenuElement;
+    'docs-menu-toggle': HTMLDocsMenuToggleElement;
     'docs-nav': HTMLDocsNavElement;
     'docs-page': HTMLDocsPageElement;
+    'docs-page-footer': HTMLDocsPageFooterElement;
     'docs-pagination': HTMLDocsPaginationElement;
     'docs-reference': HTMLDocsReferenceElement;
     'docs-root': HTMLDocsRootElement;
-    'docs-search': HTMLDocsSearchElement;
-    'docs-section-nav': HTMLDocsSectionNavElement;
-    'sms-form': HTMLSmsFormElement;
-    'stepped-color-generator': HTMLSteppedColorGeneratorElement;
+    'docs-select': HTMLDocsSelectElement;
+    'docs-tab': HTMLDocsTabElement;
     'docs-table-of-contents': HTMLDocsTableOfContentsElement;
     'docs-tabs': HTMLDocsTabsElement;
+    'file-tree': HTMLFileTreeElement;
+    'file-tree-directory': HTMLFileTreeDirectoryElement;
+    'file-tree-file': HTMLFileTreeFileElement;
+    'hubspot-form': HTMLHubspotFormElement;
+    'ionic-search': HTMLIonicSearchElement;
+    'layered-colors-select': HTMLLayeredColorsSelectElement;
+    'new-color-generator': HTMLNewColorGeneratorElement;
+    'sms-form': HTMLSmsFormElement;
+    'stepped-color-generator': HTMLSteppedColorGeneratorElement;
     'wistia-video': HTMLWistiaVideoElement;
   }
-
-
-  export namespace JSX {
-    export interface Element {}
-    export interface IntrinsicElements extends StencilIntrinsicElements {
-      [tagName: string]: any;
-    }
-  }
-  export interface HTMLAttributes extends StencilHTMLAttributes {}
-
 }
+
+declare namespace LocalJSX {
+  interface CodeColor extends JSXBase.HTMLAttributes<HTMLCodeColorElement> {
+    'display'?: string;
+    'mode'?: string;
+    'value'?: string;
+  }
+  interface ColorAccordion extends JSXBase.HTMLAttributes<HTMLColorAccordionElement> {}
+  interface ColorGenCssText extends JSXBase.HTMLAttributes<HTMLColorGenCssTextElement> {
+    'cssText'?: string;
+    'header'?: boolean;
+    'onCssTextChange'?: (event: CustomEvent<any>) => void;
+  }
+  interface ColorGenPreview extends JSXBase.HTMLAttributes<HTMLColorGenPreviewElement> {
+    'cssText'?: string;
+    'demoMode'?: string;
+  }
+  interface ColorGenSelectColors extends JSXBase.HTMLAttributes<HTMLColorGenSelectColorsElement> {
+    'colors'?: ColorVariable[];
+  }
+  interface ColorGenVariableSelector extends JSXBase.HTMLAttributes<HTMLColorGenVariableSelectorElement> {
+    'editable'?: boolean;
+    'isNew'?: boolean;
+    'isParentOpen'?: boolean;
+    'name'?: string;
+    'onColorChange'?: (event: CustomEvent<any>) => void;
+    'onNameChange'?: (event: CustomEvent<any>) => void;
+    'property'?: string;
+    'value'?: string;
+  }
+  interface ColorGenerator extends JSXBase.HTMLAttributes<HTMLColorGeneratorElement> {
+    'onDemoMessage'?: (event: CustomEvent<any>) => void;
+  }
+  interface CommandCursor extends JSXBase.HTMLAttributes<HTMLCommandCursorElement> {
+    'blink'?: boolean;
+  }
+  interface CommandLine extends JSXBase.HTMLAttributes<HTMLCommandLineElement> {
+    'nobuttons'?: boolean;
+  }
+  interface CommandOutput extends JSXBase.HTMLAttributes<HTMLCommandOutputElement> {}
+  interface CommandPrompt extends JSXBase.HTMLAttributes<HTMLCommandPromptElement> {}
+  interface ContributorList extends JSXBase.HTMLAttributes<HTMLContributorListElement> {
+    'contributors'?: string[];
+    'link'?: (contributor: string) => string;
+  }
+  interface DocsButton extends JSXBase.HTMLAttributes<HTMLDocsButtonElement> {
+    'href'?: string;
+    'round'?: boolean;
+  }
+  interface DocsCard extends JSXBase.HTMLAttributes<HTMLDocsCardElement> {
+    'header'?: string;
+    'href'?: string;
+    'icon'?: string;
+    'img'?: string;
+    'ionicon'?: string;
+  }
+  interface DocsCards extends JSXBase.HTMLAttributes<HTMLDocsCardsElement> {}
+  interface DocsCode extends JSXBase.HTMLAttributes<HTMLDocsCodeElement> {
+    'language'?: string;
+  }
+  interface DocsDemo extends JSXBase.HTMLAttributes<HTMLDocsDemoElement> {
+    'source'?: string;
+    'url'?: string;
+  }
+  interface DocsDropdown extends JSXBase.HTMLAttributes<HTMLDocsDropdownElement> {
+    'align'?: 'left' | 'right' | 'center';
+    'icon'?: (props: any) => JSX.Element;
+    'label'?: string;
+  }
+  interface DocsHeader extends JSXBase.HTMLAttributes<HTMLDocsHeaderElement> {
+    'onToggleClick'?: (e: Event) => void;
+  }
+  interface DocsMenu extends JSXBase.HTMLAttributes<HTMLDocsMenuElement> {
+    'onToggleClick'?: (e: Event) => void;
+  }
+  interface DocsMenuToggle extends JSXBase.HTMLAttributes<HTMLDocsMenuToggleElement> {}
+  interface DocsNav extends JSXBase.HTMLAttributes<HTMLDocsNavElement> {
+    'items'?: MenuItems;
+  }
+  interface DocsPage extends JSXBase.HTMLAttributes<HTMLDocsPageElement> {
+    'history'?: RouterHistory;
+    'path'?: string;
+  }
+  interface DocsPageFooter extends JSXBase.HTMLAttributes<HTMLDocsPageFooterElement> {
+    'page'?: Page;
+  }
+  interface DocsPagination extends JSXBase.HTMLAttributes<HTMLDocsPaginationElement> {
+    'page'?: Page;
+  }
+  interface DocsReference extends JSXBase.HTMLAttributes<HTMLDocsReferenceElement> {
+    'data'?: any[];
+    'keys'?: ReferenceKeys;
+  }
+  interface DocsRoot extends JSXBase.HTMLAttributes<HTMLDocsRootElement> {}
+  interface DocsSelect extends JSXBase.HTMLAttributes<HTMLDocsSelectElement> {
+    'initializer'?: (options: string[]) => string;
+    'onSelection'?: (event: CustomEvent<string>) => void;
+    'optionRenderer'?: (option: string) => any;
+    'options'?: string[];
+  }
+  interface DocsTab extends JSXBase.HTMLAttributes<HTMLDocsTabElement> {
+    'selected'?: boolean;
+    'tab'?: string;
+  }
+  interface DocsTableOfContents extends JSXBase.HTMLAttributes<HTMLDocsTableOfContentsElement> {
+    'basepath'?: string;
+    'label'?: string;
+    'links'?: Link[];
+  }
+  interface DocsTabs extends JSXBase.HTMLAttributes<HTMLDocsTabsElement> {}
+  interface FileTree extends JSXBase.HTMLAttributes<HTMLFileTreeElement> {}
+  interface FileTreeDirectory extends JSXBase.HTMLAttributes<HTMLFileTreeDirectoryElement> {
+    'collapsed'?: boolean;
+    'name'?: string;
+  }
+  interface FileTreeFile extends JSXBase.HTMLAttributes<HTMLFileTreeFileElement> {
+    'name'?: string;
+  }
+  interface HubspotForm extends JSXBase.HTMLAttributes<HTMLHubspotFormElement> {
+    'formId'?: string;
+  }
+  interface IonicSearch extends JSXBase.HTMLAttributes<HTMLIonicSearchElement> {
+    'mobile'?: boolean;
+  }
+  interface LayeredColorsSelect extends JSXBase.HTMLAttributes<HTMLLayeredColorsSelectElement> {}
+  interface NewColorGenerator extends JSXBase.HTMLAttributes<HTMLNewColorGeneratorElement> {}
+  interface SmsForm extends JSXBase.HTMLAttributes<HTMLSmsFormElement> {}
+  interface SteppedColorGenerator extends JSXBase.HTMLAttributes<HTMLSteppedColorGeneratorElement> {}
+  interface WistiaVideo extends JSXBase.HTMLAttributes<HTMLWistiaVideoElement> {
+    'videoId'?: string;
+  }
+
+  interface IntrinsicElements {
+    'code-color': CodeColor;
+    'color-accordion': ColorAccordion;
+    'color-gen-css-text': ColorGenCssText;
+    'color-gen-preview': ColorGenPreview;
+    'color-gen-select-colors': ColorGenSelectColors;
+    'color-gen-variable-selector': ColorGenVariableSelector;
+    'color-generator': ColorGenerator;
+    'command-cursor': CommandCursor;
+    'command-line': CommandLine;
+    'command-output': CommandOutput;
+    'command-prompt': CommandPrompt;
+    'contributor-list': ContributorList;
+    'docs-button': DocsButton;
+    'docs-card': DocsCard;
+    'docs-cards': DocsCards;
+    'docs-code': DocsCode;
+    'docs-demo': DocsDemo;
+    'docs-dropdown': DocsDropdown;
+    'docs-header': DocsHeader;
+    'docs-menu': DocsMenu;
+    'docs-menu-toggle': DocsMenuToggle;
+    'docs-nav': DocsNav;
+    'docs-page': DocsPage;
+    'docs-page-footer': DocsPageFooter;
+    'docs-pagination': DocsPagination;
+    'docs-reference': DocsReference;
+    'docs-root': DocsRoot;
+    'docs-select': DocsSelect;
+    'docs-tab': DocsTab;
+    'docs-table-of-contents': DocsTableOfContents;
+    'docs-tabs': DocsTabs;
+    'file-tree': FileTree;
+    'file-tree-directory': FileTreeDirectory;
+    'file-tree-file': FileTreeFile;
+    'hubspot-form': HubspotForm;
+    'ionic-search': IonicSearch;
+    'layered-colors-select': LayeredColorsSelect;
+    'new-color-generator': NewColorGenerator;
+    'sms-form': SmsForm;
+    'stepped-color-generator': SteppedColorGenerator;
+    'wistia-video': WistiaVideo;
+  }
+}
+
+export { LocalJSX as JSX };
+
+
+declare module "@stencil/core" {
+  export namespace JSX {
+    interface IntrinsicElements extends LocalJSX.IntrinsicElements {}
+  }
+}
+
+

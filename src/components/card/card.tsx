@@ -1,4 +1,4 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Prop, h } from '@stencil/core';
 import { Outbound } from '../../icons';
 
 @Component({
@@ -9,6 +9,7 @@ export class DocsCard {
   @Prop() href: string;
   @Prop() header: string;
   @Prop() icon: string;
+  @Prop() ionicon: string;
   @Prop() img: string;
 
   hostData() {
@@ -33,6 +34,7 @@ export class DocsCard {
       this.img && <img src={this.img} class="Card-image"/>,
       <div class="Card-container">
         { this.icon && <img src={this.icon} class="Card-icon"/> }
+        { this.ionicon && <ion-icon name={this.ionicon} class="Card-ionicon"></ion-icon>}
         { header }
         <div class="Card-content"><slot/></div>
       </div>

@@ -1,5 +1,5 @@
 @import './prismjs-theme.css';
-@import './prismjs-bash-theme.css';
+@import './prismjs-shell-theme.css';
 
 docs-code {
   display: block;
@@ -18,4 +18,8 @@ docs-code:before {
   right: 0;
   text-transform: uppercase;
   top: 0;
+}
+
+docs-code[language="shell"] pre {
+  white-space: pre-wrap;
 }

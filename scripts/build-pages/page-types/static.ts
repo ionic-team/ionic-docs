@@ -1,7 +1,8 @@
 import {
   PAGES_DIR,
   Page,
-  buildPages
+  buildPages,
+  updatePageHtmlToHypertext
 } from '../index';
 
 import fs from 'fs-extra';
@@ -13,24 +14,28 @@ import markdownRenderer from '../markdown-renderer';
 
 export default {
   title: 'Build static pages',
-  task: () => buildPages(getStaticPages)
+  task: (_, status) => buildPages(getStaticPages, status)
 };
 
 async function getStaticPages(): Promise<Page[]> {
   const paths = await getMarkdownPaths(PAGES_DIR);
-  return Promise.all(paths.map(toPage));
+  return Promise.all(paths.map(path => toPage(path)));
 }
 
-const getMarkdownPaths = (cwd: string): Promise<string[]> =>
+export const getMarkdownPaths = (cwd: string): Promise<string[]> =>
   glob('**/*.md', {
     absolute: true,
     cwd
   });
 
-export const toPage = async (path: string) => {
+export interface ToStaticPageOptions {
+  prod?: boolean;
+}
+
+export const toPage = async (path: string, { prod = true }: ToStaticPageOptions = {}) => {
   return {
-    path: path.replace(PAGES_DIR, '/docs').replace(/\.md$/, ''),
-    github: await getGitHubData(path),
+    path: path.replace(PAGES_DIR, '/docs').replace(/\.md$/i, ''),
+    github: prod ? await getGitHubData(path) : null,
     ...renderMarkdown(await readMarkdown(path))
   };
 };
@@ -49,7 +54,7 @@ const readMarkdown = (path: string): Promise<string> =>
   });
 
 const getGitHubData = async (filePath: string) => {
-  const [, path] = /^.+\/(src\/pages\/.+\.md)$/.exec(filePath);
+  const [, path] = /^.+\/(src\/(l10n\/)?pages\/.+\.md)$/.exec(filePath);
   const since = new Date('2019-01-23').toISOString();
 
   try {
@@ -58,7 +63,7 @@ const getGitHubData = async (filePath: string) => {
       hostname: 'api.github.com',
       pathname: 'repos/ionic-team/ionic-docs/commits',
       query: {
-        access_token: process.env.GITHUB_API_TOKEN,
+        access_token: process.env.GITHUB_TOKEN,
         since,
         path
       }

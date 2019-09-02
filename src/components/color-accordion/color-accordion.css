@@ -21,7 +21,7 @@ color-accordion {
   margin-bottom: 5px;
   list-style-type: none;
 
-  font-family: var(--font-family-code-medium);
+  font-family: var(--code-font-family);
   font-size: 14px;
 }
 
@@ -56,7 +56,7 @@ color-accordion {
 
   margin: 0;
 
-  font-family: var(--font-family-code);
+  font-family: var(--code-font-family);
   font-size: 13px;
 
   pointer-events: none;

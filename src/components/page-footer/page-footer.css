@@ -1,0 +1,21 @@
+docs-page-footer {
+  margin-top: 6rem;
+}
+
+docs-page-footer contributor-list {
+  margin-right: 0.5em;
+}
+
+docs-page-footer .last-updated {
+  color: var(--text-color--light);
+  font-weight: normal;
+  margin-left: auto;
+  text-decoration: underline;
+}
+
+docs-page-footer .page-footer__row {
+  align-items: center;
+  display: flex;
+  font-size: 12px;
+  margin-top: 2rem;
+}

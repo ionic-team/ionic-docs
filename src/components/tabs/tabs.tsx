@@ -1,64 +1,64 @@
-import { Component, Prop, State } from '@stencil/core';
+import { Component, Element, State, h } from '@stencil/core';
 
 @Component({
   tag: 'docs-tabs',
   styleUrl: 'tabs.css'
 })
-export class TabGroup {
-  @Prop() tabs: string;
-  @Prop() initial: string;
-  @State() selected: string;
+export class DocsTabs {
+  @State() selected: HTMLDocsTabElement = null;
+  @State() tabs: HTMLDocsTabElement[] = [];
+  @Element() element: HTMLDocsTabElement;
 
-  private tabList: string[];
+  componentDidLoad() {
+    this.tabs = Array.from(this.element.querySelectorAll('docs-tab'));
+    this.select(this.tabs.find(t => t.hasAttribute('selected')) || this.tabs[0]);
+  }
 
-  componentWillLoad() {
-    if (this.tabs && this.tabs.trim().length) {
-      this.tabList = this.tabs.split(/[^\w/-\s]+/);
-      this.selected = this.tabList.indexOf(this.initial) >= 0
-        ? this.initial
-        : this.tabList[0];
+  select(tab: HTMLDocsTabElement) {
+    if (tab != null) {
+      if (this.selected != null) {
+        this.selected.removeAttribute('selected');
+      }
+
+      this.selected = tab;
+      this.selected.setAttribute('selected', '');
     }
   }
 
-  selectTab(tabName: string) {
-    this.selected = tabName;
-  }
+  toTabButton = (tab: HTMLDocsTabElement) => {
+    const label = tab.getAttribute('tab');
+    const isSelected = this.selected === tab;
+    const buttonClass = {
+      'Tabs-button': true,
+      'is-selected': isSelected
+    };
 
-  toTabLink = (tabName: string) => {
     return (
-      <a
-        onClick={() => this.selectTab(tabName)}
-        class={{
-          'tab-link': true,
-          'is-selected': this.selected === tabName
-        }}>
-          {tabName}
-      </a>
+      <button
+        role="tab"
+        aria-selected={isSelected ? 'true' : 'false'}
+        onClick={() => this.select(tab)}
+        class={buttonClass}>
+          {label}
+      </button>
     );
   }
 
-  toTabSlot = (tabName: string) => {
-    return (
-      <div
-        class={{
-        'tab': true,
-        'is-selected': this.selected === tabName
-        }}>
-          <slot name={tabName.replace(/[\s/]/g, '')}/>
-      </div>
-    );
+  hostData() {
+    return {
+      role: 'tablist',
+      class: {
+        'Tabs': true
+      }
+    };
   }
 
   render() {
-    if (!this.tabList) {
-      return <slot/>;
-    }
-
     return [
-      <header>
-        {this.tabList.map(this.toTabLink)}
+      <header class="Tabs-header">
+        {this.tabs.map(this.toTabButton)}
       </header>,
-      ...this.tabList.map(this.toTabSlot)
+      <slot/>
     ];
   }
 }

@@ -15,12 +15,29 @@ contributors:
 
 There are several different reasons this can happen. If you are unable to find a solution on the [Ionic forums](https://forum.ionicframework.com), make sure:
 
-- Root `@Component` has a `template` or `templateUrl`.
-- Root `@Component` template has an `<ion-nav>` with a `root` property:
+- Polyfills are not included for older browser/versions of android
 
-  ```html
-  <ion-nav [root]="rootPage"></ion-nav>
-  ```
+For projects with `@angular/cli@7.3` or above, polyfills will automatically be included. For project created before that, polyfills need to be manually enabled.
+
+In `src/polyfills.ts`, you must enabled all ES6 polyfills for Android 4.4 support.
+
+Alternatively, a project could be updated to use the latest release of the `@angular/cli` package & `@angular-devkit` packages and include the `es5BrowserSupport` option in the `angular.json`'s build options object:
+
+```diff
+        "input": "src/global.scss"
+      }
+    ],
+-   "scripts": []
++   "scripts": [],
++   "es5BrowserSupport": true
+  },
+  "configurations": {
+    "production": {
+```
+
+This will automatically include the polyfills for older browsers that need them.
+
+
 
 ## Directive Not Working
 
@@ -28,10 +45,9 @@ There are several different reasons this can happen. If you are unable to find a
 
 There are a few things you can check. Make sure:
 
-- You include it in the `directives` array of the `@Component` you want to use it in (only if your ionic-angular version is below RC0).
 - Your selector doesn't have any misspellings.
 - You're using the selector correctly as an attribute, element or class.
-- Your selector has the [proper syntax](http://learnangular2.com/components/):
+- Your selector has the proper syntax:
   - `[attr]` if it's an attribute selector
   - `element` if it's an element selector
   - `.class` if it's a class selector

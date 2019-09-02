@@ -27,6 +27,8 @@ You'll then see a form that allows you to create two types of environment variab
 * <b>Secrets</b> - These values are encypted and only available at build time. Once you save a secret, *you will be unable to edit or see it again*.
 * <b>Variables</b> - These values are available at build time. Variables are visible and editable.
 
+Let's create a new Environment called "Development". For this environment, create a variable named `BUILD_ENV` with the value `development`. This variable will allow us to customize the way our builds are configured.
+
 ![New Environment Form](/docs/assets/img/appflow/gif-new-environment.gif)
 
 ## Add the Environment to an Automation
@@ -47,8 +49,8 @@ variable we created above in order to connect to a different API url to fetch th
 developing locally vs. in your `development` environment.
 
 
-<docs-tabs tabs="Ionic v4, Ionic v3">
-<div slot="Ionicv4">
+<docs-tabs>
+<docs-tab tab="Ionic v4">
 First, you can modify the <code>build</code> script in your <code>package.json</code> to either use the <code>BUILD_ENV</code> variable if it
 exists or to default it to <code>local</code> and then choose the configuration from the <code>angular.json</code> file that matches the value
 of <code>BUILD_ENV</code> (<code>development</code> in Appflow & <code>local</code> locally).
@@ -101,8 +103,8 @@ export const environment = {
 
 ```
 
-</div>
-<div slot="Ionicv3">
+</docs-tab>
+<docs-tab tab="Ionic v3">
 First you can modify the <code>build</code> script in your <code>package.json</code> to either use the <code>BUILD_ENV</code> variable if it
 exists or default to <code>local</code>.
 
@@ -139,7 +141,7 @@ export const environment = {
 
 ```
 
-</div>
+</docs-tab>
 </docs-tabs>
 
 Now your apps will automatically use a different API to fetch data locally vs in your development builds! 💪

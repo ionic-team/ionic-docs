@@ -7,7 +7,7 @@ previousUrl: '/docs/appflow/cookbook/private_npm_modules'
 
 The Ionic DevApp is a free app that makes it easy to run your Ionic app directly on your iOS or Android device.
 
-Skip dealing with frustrating Native SDK installation issues, just run `ionic serve -c`, open the DevApp, connect to the same network, and the app will automatically load
+Skip dealing with frustrating Native SDK installation issues, just run `ionic serve --devapp`, open the DevApp, connect to the same network, and the app will automatically load
 and run your app.
 
 The DevApp comes with many native plugins built right in, so you don't need to worry about installing plugins.
@@ -30,19 +30,13 @@ Enter your phone number below to text yourself an install link, or find the app 
 
 ## Using DevApp
 
-The DevApp finds `ionic serve` instances running on the local network and requires the latest release of the Ionic CLI (at least version 3.13.2).
+The DevApp finds `ionic serve` instances running on your local Wi-Fi network.
 
-First, ensure you are running the latest release of the Ionic CLI. Run `npm install -g ionic`. If that doesn't work, try uninstalling and re-installing using `npm uninstall -g ionic` then running the install command again.
+First, ensure you are running the latest release of the Ionic CLI. Run `npm install -g ionic`.
 
-Once the latest CLI is installed, run `ionic serve -c` in the app of your choice on your computer and let it finish building. Next, open your iOS or Android device and connect to _the same network_ as your computer (through wifi). Open the DevApp, and you should see your local app show up in the list.
+Once the latest CLI is installed, run `ionic serve --devapp` in the app of your choice on your computer and let it finish building. Next, open your iOS or Android device and connect to _the same network_ as your computer (through Wi-Fi). Open the DevApp, and you should see your local app show up in the list.
 
-## Capturing console logs
-
-To make sure you receive console logs generated from the app, which will be displayed in the terminal window where `ionic serve` was run, add the `-c` flag to `ionic serve`:
-
-```bash
-ionic serve -c
-```
+> Note: Cordova must be installed in your project before DevApp can be used, so you may need to run `ionic cordova prepare [platform]` before running `ionic serve --devapp`.
 
 ## CORS
 
@@ -59,25 +53,18 @@ header on the server.  The Origin of your request is the IP that your app is ser
 You can also set the Origin as `*` (wildcard), but be aware that requests from any origin will be able to see responses from your server.
 Wildcard is a common setting for any API, or any other endpoint that is expected to be accessed from various origins.
 
-### Use a proxy
+### Use the Advanced HTTP plugin
 
-The [Ionic CLI can proxy requests](/docs/cli/configuring.html#service-proxies) you make to it. Since CORS is enforced by the
-browser (in this case the Android or iOS web view), by having the Ionic CLI make the request for you, it won't care
-whether there is an `Access-Control-Allow-Origin` header in the server response and will simply pass the response back
-to your app.
-
-### Use a plugin
-
-Similarly to using the Ionic CLI proxy, you can use the [Advanced HTTP plugin](https://ionicframework.com/docs/native/http/) to make
+You can use the [Advanced HTTP plugin](https://ionicframework.com/docs/native/http/) to make
 requests. The plugin receives responses natively and passes the response back to JavaScript.
 
 ## Troubleshooting
 
 If you don't see your app in the list, try these things to resolve it:
 
-1. First, make sure your are on the same network as the app. Double check your wifi connection settings.
+1. First, make sure your are on the same network as the app. Double check your Wi-Fi connection settings.
 2. Try force-quitting the DevApp and restarting it
-3. Try restarting `ionic serve -c` on your computer.
+3. Try restarting `ionic serve --devapp` on your computer.
 
 If those things still didn't resolve the issue, make sure you don't have any custom network settings that could cause the app to fail to discover the serve instance.
 
