@@ -31,7 +31,7 @@ Pour la plupart des applications, il est souvent nécessaire d'avoir une configu
 })
 ```
 
-La plus simple répartition de ce que nous avons ici est une recherche de chemin/composant. Lorsque notre application se charge, le routeur démarre les vues en lisant l'URL que l'utilisateur essaie de charger. Dans notre exemple, notre système de routage recherche `''`, qui est essentiellement notre route index. Pour cela, nous chargeons la vue `LoginComponent`. Juste en avant. Ce modèle de chemins correspond à une seule et unique vue pour chaque entrée que nous avons dans la configuration du routeur. Mais que se passe-t-il si nous voulions charger un chemin différent sur notre vue initiale ?
+La plus simple répartition de ce que nous avons ici est une recherche de chemin/composant. Lorsque notre application se charge, le routeur démarre les vues en lisant l'URL que l'utilisateur essaie de charger. Dans notre exemple, notre système de routage recherche `''`, qui est essentiellement notre route index. Pour cela, nous chargeons la vue `LoginComponent`. Juste avant. Cette route correspond à une seule et unique vue pour chaque entrée que nous avons dans la configuration du routeur. Mais que se passe-t-il si nous voulions charger un chemin différent sur notre vue initiale ?
 
 ## Gestion des redirections
 
@@ -45,16 +45,16 @@ Pour cela, nous pouvons utiliser les redirections de l'objet routeur. Les redire
 ];
 ```
 
-Dans notre redirection, nous recherchons le chemin de l'index de notre application. Si nous chargeons cela, nous redirigeons vers la route de `login`. La dernière clé de ` pathMatch ` est nécessaire pour dire au routeur comment il doit regarder le chemin.
+Dans notre redirection, nous recherchons le chemin de la page index de notre application. Si nous chargeons cela, nous serons redirigés vers la route `login`. Le paramètre ` pathMatch ` est nécessaire pour dire au système de routage comment il doit faire le routing.
 
-Lorsque nous indiquons `full`, nous disons au routeur que nous devons comparer avec le chemin complet, même si cela finit par ressembler à `/route1/route2/route3`. C'est à dire que si nous avons :
+Lorsque nous indiquons `full`, nous disons à l'objet Router que nous devons le comparer avec le chemin complet, même si cela finit par ressembler à `/route1/route2/route3`. C'est à dire que si nous avons :
 
 ```typescript
 { path: '/route1/route2/route3', redirectTo: 'login', pathMatch: 'full' },
 { path: 'login', component: LoginComponent },
 ```
 
-Et chargeons `/route1/route2/route3`, nous serons redirigés. Mais si nous chargeons `/route1/route2/route4`, il n'y aura pas de redirection, car les chemins ne sont pas totalement identiques.
+Et nous serons donc redirigés vers `/route1/route2/route3`. Mais si nous chargeons `/route1/route2/route4`, il n'y aura pas de redirection, car les chemins ne sont pas identiques.
 
 Alternativement, si nous utilisons :
 
@@ -63,11 +63,11 @@ Alternativement, si nous utilisons :
 { path: 'login', component: LoginComponent },
 ```
 
-Alors si nous chargeons `/route1/route2/route3` et `/route1/route2/route4`, nous serons redirigés pour les deux routes. This is because `pathMatch: 'prefix'` will match only part of the path.
+Alors si nous chargeons `/route1/route2/route3` et `/route1/route2/route4`, nous serons bel et bien redirigés vers les deux routes. Ceci est possible parce que `pathMatch : 'prefix'` ne correspondra qu'à une partie du chemin.
 
-## Navigating to different routes
+## Naviguer vers différentes routes
 
-Talking about routes is good and all, but how does one actually navigate to said routes? For this, we can use the `routerLink` directive. Let's go back and take our simple router setup from earlier:
+Parler de routes est bon et tout, mais comment naviguer réellement pour ces routes? Pour cela, nous pouvons utiliser la directive `'routerLink'`. Revenons-en et reprenons notre configuration de l'objet Router utilisé depuis le début :
 
 ```ts
 RouterModule.forRoot([
@@ -76,7 +76,7 @@ RouterModule.forRoot([
 ]);
 ```
 
-Now from the `LoginComponent`, we can use the following HTML to navigate to the detail route.
+Maintenant depuis le `LoginComponent`, nous pouvons utiliser le code HTML suivant pour naviguer vers la route `detail`.
 
 ```html
 <ion-header>
@@ -90,7 +90,7 @@ Now from the `LoginComponent`, we can use the following HTML to navigate to the 
 </ion-content>
 ```
 
-The important part here is the `ion-button` and `routerLink` directive. RouterLink works on a similar idea as typical `href`s, but instead of building out the URL as a string, it can be built as an array, which can provide more complicated paths.
+La partie importante ici est `ion-button` et la directive `routerLink`. RouterLink works on a similar idea as typical `href`s, but instead of building out the URL as a string, it can be built as an array, which can provide more complicated paths.
 
 We also can programmatically navigate in our app by using the router API.
 
