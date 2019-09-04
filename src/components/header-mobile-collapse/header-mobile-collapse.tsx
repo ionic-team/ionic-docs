@@ -30,6 +30,8 @@ export class HeaderMobileCollapse {
   }
 
   componentDidLoad() {
+    if (!this.el.before) return;
+
     this.el.before(this.getTriggerEl());
     this.init();
     requestAnimationFrame(() => {
