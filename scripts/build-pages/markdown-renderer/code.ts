@@ -2,7 +2,7 @@ import Prism from 'prismjs';
 import loadLanguages from 'prismjs/components/';
 
 export default (code: string, info: string) => {
-  const [lang] = info.split(/\s+/).map(s => s.toLowerCase());
+  const [lang] = info ? info.split(/\s+/).map(s => s.toLowerCase()) : [null];
   const isShell = shells.includes(lang);
   const language = isShell ? 'shell' : lang;
 

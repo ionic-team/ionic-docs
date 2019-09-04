@@ -33,10 +33,19 @@ export class DocsPageFooter {
     const updatedText = new Date(lastUpdated).toISOString().slice(0, 10);
     const contributorHref = (contributor) => `${updatedHref}?author=${contributor}`;
 
+    const paggination = (
+      page.previousText && page.previousUrl || page.nextText && page.nextUrl
+    ) ? <docs-pagination page={page}/> : '';
+
+    console.log(paggination);
+
     return [
-      contributors.length ? <contributor-list contributors={contributors} link={contributorHref}/> : null,
-      <docs-button round href={editHref}>Edit this page <ForwardArrow/></docs-button>,
-      <a class="last-updated" href={updatedHref}>Updated {updatedText}</a>
+      paggination,
+      <div class="page-footer__row">
+        {contributors.length ? <contributor-list contributors={contributors} link={contributorHref}/> : null}
+        <docs-button round href={editHref}>Contribute <ForwardArrow/></docs-button>
+        <a class="last-updated" href={updatedHref}>Updated {updatedText}</a>
+      </div>
     ];
   }
 }

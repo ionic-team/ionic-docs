@@ -16,6 +16,8 @@ tasks.add(CLI);
 tasks.add(Native);
 export default tasks;
 
+let listrStatus = null;
+
 if (!module.parent) {
   tasks.run().catch(err => {
     console.error(err);
@@ -33,10 +35,15 @@ export interface Page {
   [key: string]: any;
 }
 
-export type PageGetter = () => Promise<Page[]>;
+export type PageGetter = (status?) => Promise<Page[]>;
 
-export async function buildPages(getter: PageGetter) {
+export async function buildPages(getter: PageGetter, status?) {
+  // if not passed a listr status var, just set the output of an unused object
+  // might be helpful for debugging
+  listrStatus = status || {};
+  listrStatus.output = 'Parsing Markdown';
   const pages = await getter();
+  listrStatus.output = 'Optimizing';
   return Promise.all(
     pages
       .map(patchBody)
@@ -74,7 +81,19 @@ function patchBody(page: Page): Page {
     href: `#${heading.getAttribute('id')}`
   }));
 
-  const pageClass = `page-${slugify(page.path.slice(6) || 'index')}`;
+  // remove /docs/ and language tag
+  const prefix = /^\/docs\/([a-z]{2}\b)?/;
+  const pageClass = `page-${slugify(page.path.replace(prefix, ''))}`;
+
+  const [, language] = prefix.exec(page.path) || 'en';
+  if (language && language !== 'en') {
+    if (page.previousUrl) {
+      page.previousUrl = page.previousUrl.replace(prefix, `/docs/${language}/`);
+    }
+    if (page.nextUrl) {
+      page.nextUrl = page.nextUrl.replace(prefix, `/docs/${language}/`);
+    }
+  }
 
   return {
     ...page,
@@ -107,10 +126,12 @@ export function updatePageHtmlToHypertext(page: Page) {
 }
 
 function writePage(page: Page): Promise<any> {
+  listrStatus.output = `Writing Page: ${page.path}`;
   return fs.outputJson(toFilePath(page.path), page, {
     spaces: 2
   });
 }
 
-const toFilePath = (urlPath: string) =>
-  `${resolve(PAGES_DIR, urlPath.slice(6) || 'index')}.json`;
+const toFilePath = (urlPath: string) => {
+  return `${resolve(PAGES_DIR, urlPath.slice(6) || 'index')}.json`;
+};

@@ -1,5 +1,6 @@
 import { Component, Listen, Prop, State, h } from '@stencil/core';
 import { Checkmark, ForwardArrow, Logo, Translation } from '../../icons';
+import { l10n } from '../../l10n';
 
 @Component({
   tag: 'docs-header',
@@ -46,15 +47,16 @@ export class DocsHeader {
         </section> : null}
       </docs-dropdown>,
       section === 'Framework' ? <div class="SectionNav-tabs">
-        <stencil-route-link url="/docs/" urlMatch={[/^\/docs(?!\/(api|components|cli|native|enterprise)).*$/]}>Guide</stencil-route-link>
-        <stencil-route-link url="/docs/components" urlMatch={['/docs/api', '/docs/components']}>Components</stencil-route-link>
-        <stencil-route-link url="/docs/cli">CLI</stencil-route-link>
-        <stencil-route-link url="/docs/native" urlMatch={['/docs/native', '/docs/enterprise']}>Native</stencil-route-link>
+        <stencil-route-link url="/docs/" urlMatch={[/^\/docs(?!\/(api|components|cli|native|enterprise)).*$/]}>{l10n.getString('header-guide')}</stencil-route-link>
+        <stencil-route-link url="/docs/components" urlMatch={['/docs/api', '/docs/components']}>{l10n.getString('header-components')}</stencil-route-link>
+        <stencil-route-link url="/docs/cli">{l10n.getString('header-cli')}</stencil-route-link>
+        <stencil-route-link url="/docs/native" urlMatch={['/docs/native', '/docs/enterprise']}>{l10n.getString('header-native')}</stencil-route-link>
       </div> : null,
     ];
   }
 
   render() {
+    const { getString } = l10n;
     return (
       <header>
         <docs-menu-toggle onClick={this.onToggleClick}/>
@@ -80,7 +82,7 @@ export class DocsHeader {
 
           <nav class="UtilNav">
             <ionic-search></ionic-search>
-            <docs-dropdown label="Community" align="right">
+            <docs-dropdown label={getString('header-community')} align="right">
               <section>
                 <a href="https://ionicframework.com/community" target="_blank">Community Hub</a>
               </section>
@@ -96,7 +98,7 @@ export class DocsHeader {
                 <a href="https://shop.ionicframework.com/" target="_blank">Swag</a>
               </section>
             </docs-dropdown>
-            <docs-dropdown label="Support" align="right">
+            <docs-dropdown label={getString('header-support')} align="right">
               <section>
                 <a href="https://ionicframework.com/support" target="_blank">Help Center</a>
               </section>
@@ -118,9 +120,22 @@ export class DocsHeader {
               <section>
                 <a href="https://ionicframework.com/translate" target="_blank">Translate</a>
               </section>
+              {/* WIP Languages - included for pre-rendering, but hidden */}
+              <div style={{ display: 'none' }}>
+                <a href="/docs/zh">Chinese</a>
+                <a href="/docs/fr">French</a>
+                <a href="/docs/pt">Portuguese</a>
+                <a href="/docs/es">Spanish</a>
+              </div>
             </docs-dropdown>
-            <a href="https://github.com/ionic-team/ionic" target="_blank"><ion-icon name="logo-github" class="lg-only"></ion-icon><span class="sm-only">GitHub <ForwardArrow class="Dropdown-arrow"/></span></a>
-            <a href="https://twitter.com/ionicframework" target="_blank"><ion-icon name="logo-twitter" class="lg-only"></ion-icon><span class="sm-only">Twitter <ForwardArrow class="Dropdown-arrow"/></span></a>
+            <a href="https://github.com/ionic-team/ionic" target="_blank">
+              <ion-icon name="logo-github" class="lg-only"></ion-icon>
+              <span class="sm-only">GitHub <ForwardArrow class="Dropdown-arrow"/></span>
+            </a>
+            <a href="https://twitter.com/ionicframework" target="_blank">
+              <ion-icon name="logo-twitter" class="lg-only"></ion-icon>
+              <span class="sm-only">Twitter <ForwardArrow class="Dropdown-arrow"/></span>
+            </a>
           </nav>
         </header-mobile-collapse>
       </header>

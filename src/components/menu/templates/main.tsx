@@ -3,97 +3,97 @@ import { h } from '@stencil/core';
 export default () => <docs-nav items={items}/>;
 
 const items = {
-  'Introduction': {
-    'What is Ionic Framework?': '/docs/intro',
-    'Core Concepts': '/docs/intro/concepts',
-    'Build your First App': '/docs/angular/your-first-app',
-    'Browser Support': '/docs/intro/browser-support',
-    'Versioning': '/docs/intro/versioning',
-    'Release Notes': '/docs/release-notes',
-    'Support': '/docs/intro/support'
+  'menu-intro': {
+    'menu-intro-what-is': '/docs/intro',
+    'menu-intro-concepts': '/docs/intro/concepts',
+    'menu-intro-your-first-app': '/docs/intro/first-app',
+    'menu-intro-browser-support': '/docs/intro/browser-support',
+    'menu-intro-versioning': '/docs/intro/versioning',
+    'menu-intro-release-notes': '/docs/release-notes',
+    'menu-intro-support': '/docs/intro/support'
   },
-  'Installation': {
-    'CLI Installation': '/docs/installation/cli',
-    'Packages & CDN': '/docs/installation/cdn',
-    'Environment Setup': '/docs/installation/environment',
-    'iOS Setup': '/docs/installation/ios',
-    'Android Setup': '/docs/installation/android',
+  'menu-installation': {
+    'menu-installation-cli': '/docs/installation/cli',
+    'menu-installation-cdn': '/docs/installation/cdn',
+    'menu-installation-environment': '/docs/installation/environment',
+    'menu-installation-ios': '/docs/installation/ios',
+    'menu-installation-android': '/docs/installation/android',
   },
-  'Building': {
-    'Starting': '/docs/building/starting',
-    'Scaffolding': '/docs/building/scaffolding',
-    'Migration': '/docs/building/migration',
-    'Cross Platform': '/docs/building/cross-platform',
-    'Running Overview': '/docs/building/running',
-    'Running on iOS': '/docs/building/ios',
-    'Running on Android': '/docs/building/android',
-    'Testing': '/docs/building/testing',
-    'Contributing': '/docs/building/contributing',
-    'Web View': '/docs/building/webview',
-    'Ionic Storage': '/docs/building/storage'
+  'menu-building': {
+    'menu-building-starting': '/docs/building/starting',
+    'menu-building-scaffolding': '/docs/building/scaffolding',
+    'menu-building-migration': '/docs/building/migration',
+    'menu-building-cross-platform': '/docs/building/cross-platform',
+    'menu-building-running': '/docs/building/running',
+    'menu-building-ios': '/docs/building/ios',
+    'menu-building-android': '/docs/building/android',
+    'menu-building-testing': '/docs/building/testing',
+    'menu-building-contributing': '/docs/building/contributing',
+    'menu-building-webview': '/docs/building/webview',
+    'menu-building-storage': '/docs/building/storage'
   },
-  'Layout': {
-    'Structure': '/docs/layout/structure',
-    'Responsive Grid': '/docs/layout/grid',
-    'Global Stylesheets': '/docs/layout/global-stylesheets',
-    'CSS Utilities': '/docs/layout/css-utilities',
+  'menu-layout': {
+    'menu-layout-structure': '/docs/layout/structure',
+    'menu-layout-grid': '/docs/layout/grid',
+    'menu-layout-global-stylesheets': '/docs/layout/global-stylesheets',
+    'menu-layout-css-utilities': '/docs/layout/css-utilities',
   },
-  'Theming': {
-    'Basics': '/docs/theming/basics',
-    'Platform Styles': '/docs/theming/platform-styles',
-    'CSS Variables': '/docs/theming/css-variables',
+  'menu-theming': {
+    'menu-theming-basics': '/docs/theming/basics',
+    'menu-theming-platform-styles': '/docs/theming/platform-styles',
+    'menu-theming-css-variables': '/docs/theming/css-variables',
     'Colors': '/docs/theming/colors',
     'Themes': '/docs/theming/themes',
-    'Advanced': '/docs/theming/advanced',
-    'Color Generator 🎨': '/docs/theming/color-generator'
+    'menu-theming-advanced': '/docs/theming/advanced',
+    'menu-theming-color-generator': '/docs/theming/color-generator',
   },
-  'Angular': {
-    'Overview': '/docs/angular/overview',
-    'Build Your First App': '/docs/angular/your-first-app',
-    'Lifecycle': '/docs/angular/lifecycle',
-    'Navigation/Routing': '/docs/angular/navigation',
-    'Performance': '/docs/angular/performance'
+  'menu-angular': {
+    'menu-angular-overview': '/docs/angular/overview',
+    'menu-angular-your-first-app': '/docs/angular/your-first-app',
+    'menu-angular-lifecycle': '/docs/angular/lifecycle',
+    'menu-angular-navigation': '/docs/angular/navigation',
+    'menu-angular-performance': '/docs/angular/performance'
   },
-  'React': {
-    'Overview': '/docs/react/overview',
-    'Build Your First App': '/docs/react/your-first-app',
-    'Lifecycle': '/docs/react/lifecycle',
-    'Navigation/Routing': '/docs/react/navigation',
+  'menu-react': {
+    'menu-react-overview': '/docs/react/overview',
+    'menu-react-your-first-app': '/docs/react/your-first-app',
+    'menu-react-lifecycle': '/docs/react/lifecycle',
+    'menu-react-navigation': '/docs/react/navigation',
     'Config': '/docs/react/config',
     'Platform Utils': '/docs/react/platform'
   },
-  'Vue (Beta)': {
-    'Overview': '/docs/vue/overview',
-    'Build Your First App': '/docs/vue/your-first-app',
-    'Lifecycle': '/docs/vue/lifecycle',
-    'Navigation/Routing': '/docs/vue/navigation'
+  'menu-vue': {
+    'menu-vue-overview': '/docs/vue/overview',
+    'menu-vue-your-first-app': '/docs/vue/your-first-app',
+    'menu-vue-lifecycle': '/docs/vue/lifecycle',
+    'menu-vue-navigation': '/docs/vue/navigation'
   },
-  'Utilities': {
-    'Config': '/docs/utilities/config',
-    'Platform': '/docs/utilities/platform'
+  'menu-utilities': {
+    'menu-utilities-config': '/docs/utilities/config',
+    'menu-utilities-platform': '/docs/utilities/platform'
   },
-  'Publishing': {
-    'Progressive Web App': '/docs/publishing/progressive-web-app',
-    'iOS App Store': '/docs/publishing/app-store',
-    'Android Play Store': '/docs/publishing/play-store',
-    'Electron Desktop App': '/docs/publishing/desktop-app'
+  'menu-publishing': {
+    'menu-publishing-progressive-web-app': '/docs/publishing/progressive-web-app',
+    'menu-publishing-app-store': '/docs/publishing/app-store',
+    'menu-publishing-play-store': '/docs/publishing/play-store',
+    'menu-publishing-desktop-app': '/docs/publishing/desktop-app'
   },
-  'FAQ': {
-    'Glossary': '/docs/faq/glossary',
-    'Build Errors': '/docs/faq/build',
-    'Runtime Errors': '/docs/faq/runtime',
-    'Native Errors': '/docs/faq/native',
-    'CORS Errors': '/docs/faq/cors',
-    'Security': '/docs/faq/security',
-    'Developer Tips': '/docs/faq/tips',
-    'Changelog': 'https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md'
+  'menu-faq': {
+    'menu-faq-glossary': '/docs/faq/glossary',
+    'menu-faq-build': '/docs/faq/build',
+    'menu-faq-runtime': '/docs/faq/runtime',
+    'menu-faq-native': '/docs/faq/native',
+    'menu-faq-cors': '/docs/faq/cors',
+    'menu-faq-security': '/docs/faq/security',
+    'menu-faq-tips': '/docs/faq/tips',
+    'menu-faq-changelog': 'https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md'
   },
-  'Resources': {
-    'Books': '/docs/developer-resources/books',
-    'Courses': '/docs/developer-resources/courses',
-    'Guides': '/docs/developer-resources/guides',
-    'Posts': '/docs/developer-resources/posts',
-    'Tools': '/docs/developer-resources/tools',
-    'Videos': '/docs/developer-resources/videos'
+  'menu-resources': {
+    'menu-resources-books': '/docs/developer-resources/books',
+    'menu-resources-courses': '/docs/developer-resources/courses',
+    'menu-resources-guides': '/docs/developer-resources/guides',
+    'menu-resources-posts': '/docs/developer-resources/posts',
+    'menu-resources-tools': '/docs/developer-resources/tools',
+    'menu-resources-videos': '/docs/developer-resources/videos'
   }
 };
