@@ -139,6 +139,8 @@ CODEPEN WITH LIVE DEMO SHOULD GO HERE
 
 Animations can be chained to run one after the other. The recommended approach is to use the `playAsync` method, but chaining via an `onFinish` callback can be used as well.
 
+### Usage
+
 ```javascript
 const squareA = createAnimation()
   .addElement(document.querySelector('.square-a'))
@@ -183,8 +185,6 @@ squareA.play();
 
 CODEPEN WITH LIVE DEMO SHOULD GO HERE
 
-### Usage
-
 ## Gesture Animations
 
 Info on how to create a gesture based animation using `createGesture` (maybe link to a Gesture utility doc?)
@@ -196,4 +196,127 @@ Info on how to create a gesture based animation using `createGesture` (maybe lin
 
 Info on performance considerations
 
+## Types
+
+```typescript
+AnimationDirection = 'normal' | 'reverse' | 'alternate' | 'alternate-reverse';
+AnimationFill = 'auto' | 'none' | 'forwards' | 'backwards' | 'both';
+```
+
+## Properties
+
+#### `childAnimations: Animation[]`
+
+All child animations of a given parent animation.
+
+#### `elements: HTMLElement[]`
+
+All elements attached to an animation.
+
+
+#### `parentAnimation: Animation | undefined`
+
+The parent animation of a given animation object.
+
 ## Methods
+
+#### `addAnimation(animationToAdd: Animation | Animation[] | undefined | null) => Animation`
+
+Group one or more animations together to be controlled by a parent animation.
+
+#### `addElement(el: Element | Element[] | Node | Node[] | NodeList | undefined | null) => Animation`
+
+Add one or more elements to the animation.
+
+#### `afterAddClass(className: string | string[] | undefined) => Animation`
+
+Add a class or array of classes to be added to all elements in an animation after the animation ends.
+
+#### `afterAddRead(readFn: () => void) => Animation`
+
+Add a function that performs a DOM read to be run after the animation ends.
+
+#### `afterAddWrite(writeFn: () => void) => Animation`
+
+Add a function that performs a DOM write to be run after the animation ends.
+
+#### `afterClearStyles(propertyNames: string[]) => Animation`
+
+Add an array of property names to be cleared from the inline styles on all elements in an animation after the animation ends.
+
+#### `afterRemoveClass(className: string | string[] | undefined) => Animation`
+
+Add a class or an array of classes to be removed from all elements in an animation after the animation ends.
+
+#### `afterStyles(styles: { [property: string]: any }) => Animation`
+
+Add an object of styles to be applied to all elements in an animation after the animation ends.
+
+#### `animationFinish() => Animation`
+
+Need docs for this.
+
+#### `beforeAddClass(className: string | string[] | undefined) => Animation`
+
+Add a class or array of classes to be added to all elements in an animation befpre the animation starts.
+
+#### `beforeAddRead(readFn: () => void) => Animation`
+
+Add a function that performs a DOM read to be run before the animation starts.
+
+#### `beforeAddWrite(writeFn: () => void) => Animation`
+
+Add a function that performs a DOM write to be run before the animation starts.
+
+#### `beforeClearStyles(propertyNames: string[]) => Animation`
+
+Add an array of property names to be cleared from the inline styles on all elements in an animation before the animation starts.
+
+#### `beforeRemoveClass(className: string | string[] | undefined) => Animation`
+
+Add a class or an array of classes to be removed from all elements in an animation before the animation starts.
+
+#### `beforeStyles(styles: { [property: string]: any }) => Animation`
+
+Add an object of styles to be applied to all elements in an animation before the animation starts.
+
+#### `direction(direction: AnimationDirection | undefined) => Animation`
+
+Set the direction the animation should play in.
+
+#### `delay() => Animation`
+
+Set the delay for the start of the animation in milliseconds.
+
+#### `destroy() => Animation`
+
+Destroy the animation and clear all elements, child animations, and keyframes.
+
+#### `duration(duration: number) => Animation`
+
+Set the duration of the animation in milliseconds.
+
+#### `easing(easing: string) => Animation`
+
+Set the easing of the animation in milliseconds. See [Easing Effects](https://developer.mozilla.org/en-US/docs/Web/API/EffectTiming/easing#Value) for a list of accepted easing values.
+
+#### `pause() => Animation`
+
+Pause the animation.
+
+#### `play() => Animation`
+
+Play the animation.
+
+#### `playAsync() => Promise<Animation>`
+
+Play the animation asynchronously. Returns a promise that resolves when the animation is done.
+
+#### `playSync() => Animation`
+
+Play the animation synchronously. This is the equivalent of playing an animation with a duration of 0.
+
+#### `stop() => Animation`
+
+Stop the animation and reset all elements to their initial state.
+
