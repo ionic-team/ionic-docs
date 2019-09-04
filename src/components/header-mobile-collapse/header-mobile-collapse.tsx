@@ -1,5 +1,5 @@
 import { Component, Element, Prop, State, h } from '@stencil/core';
-import { DownArrow } from '../../icons';
+import { MoreDots } from '../../icons';
 
 @Component({
   tag: 'header-mobile-collapse',
@@ -19,6 +19,7 @@ export class HeaderMobileCollapse {
 
   constructor() {
     this.handleMobileToggleClick = this.handleMobileToggleClick.bind(this);
+    this.deactivate = this.deactivate.bind(this);
   }
 
   getTriggerEl() {
@@ -73,11 +74,18 @@ export class HeaderMobileCollapse {
     this.el.classList.toggle('ionic-sub-header--mobile-active');
   }
 
+  deactivate() {
+    this.el.classList.remove('ionic-sub-header--mobile-active');
+  }
+
   render() {
     return ([
+      <div class="header-mobile-collapse__backdrop"
+           onClick={this.deactivate}></div>,
+      <ionic-search></ionic-search>,
       <a class="ionic-sub-header__mobile-toggle"
          onClick={this.handleMobileToggleClick}>
-        <DownArrow/>
+        <MoreDots/>
       </a>,
       <div class="header-mobile-collapse__content">
         <slot/>
