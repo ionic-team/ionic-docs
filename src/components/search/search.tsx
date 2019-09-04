@@ -214,6 +214,49 @@ export class IonicSearch {
     window.location = result.url;
   }
 
+  getDefaultContent() {
+    return (
+      <div class="Search__Defaults">
+        <div class="Search__Defaults__Section">
+          <h4>Getting Started</h4>
+          <ul>
+            <li><a href="/docs/installation/cli"><Book/><strong>Installation Guide</strong> | Installation</a></li>
+            <li><a href="/docs/building/running"><Book/><strong>Running an App</strong> | Building</a></li>
+            <li><a href="/docs/layout/structure"><Book/><strong>App Structure</strong> | Layout</a></li>
+            <li><a href="/docs/theming/basics"><Book/><strong>Theming Basics</strong> | Theming</a></li>
+          </ul>
+        </div>
+        <div class="Search__Defaults__Section">
+          <h4>Common topics</h4>
+          <ul>
+            <li><a href="/docs/building/testing"><Book/><strong>Testing</strong> | Building</a></li>
+            <li><a href="/docs/building/cross-platform#storage"><Book/><strong>Storage</strong> | Building</a></li>
+            <li><a href="/docs/lifecycle/angular"><Book/><strong>Life Cycle Events</strong> | Angular</a></li>
+            <li><a href="/docs/navigation/angular"><Book/><strong>Navigation</strong> | Angular</a></li>
+          </ul>
+        </div>
+        <div class="Search__Defaults__Section">
+          <h4>UI Components</h4>
+          <ul>
+            <li><a href="/docs/api/button"><Book/><strong>ion-button</strong> | Buttons</a></li>
+            <li><a href="/docs/api/card"><Book/><strong>ion-card</strong> | Cards</a></li>
+            <li><a href="/docs/api/loading"><Book/><strong>ion-loading</strong> | Progress Indicators</a></li>
+            <li><a href="/docs/api/tabs"><Book/><strong>ion-tabs</strong> | Tabs</a></li>
+          </ul>
+        </div>
+        <div class="Search__Defaults__Section">
+          <h4>Native</h4>
+          <ul>
+            <li><a href="/docs/enterprise/camera"><Book/><strong>Camera</strong> | Native EE</a></li>
+            <li><a href="/docs/enterprise/identity-vault"><Book/><strong>Identity Vault</strong> | Native EE</a></li>
+            <li><a href="/docs/native/firebase"><Book/><strong>Firebase</strong> | Native CE</a></li>
+            <li><a href="/docs/native/barcode-scanner"><Book/><strong>Barcode Scanner</strong> | Native CE</a></li>
+          </ul>
+        </div>
+      </div>
+    );
+  }
+
   render() {
     return [
       <div class={`search-box${this.active ? ' active' : ''}`}
@@ -240,7 +283,7 @@ export class IonicSearch {
         }
 
         <div class={`slot ${this.results === null ? '' : 'hidden'}`}>
-          <slot/>
+          {this.getDefaultContent()}
         </div>
 
         {this.results !== null ?

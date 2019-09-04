@@ -1,0 +1,264 @@
+header-mobile-collapse,
+header-mobile-collapse .header-mobile-collapse__content {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center; 
+}
+
+header-mobile-collapse .ionic-sub-header__mobile-toggle {
+  display: none;
+  padding-top: 14px;
+  pointer-events: none;
+  padding-left: 8px;
+}
+
+header-mobile-collapse .ionic-sub-header__mobile-toggle svg {
+  height: 20px;
+  width: 20px;
+}
+
+header-mobile-collapse .UtilNav {
+  margin-left: auto;
+}
+
+header-mobile-collapse > ionic-search {
+  padding-right: 8px;
+  padding-top: 4px;
+  display: none;
+}
+
+header-mobile-collapse .label-sm-only .Dropdown-button-label,
+header-mobile-collapse .sm-only {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  header-mobile-collapse .ionic-sub-header__mobile-toggle {
+    display: block;
+    cursor: pointer;
+    padding-top: 14px;
+    pointer-events: all;
+    transition: .2s transform ease .1s;
+    transform-origin: 66% 50%;
+  }
+
+  header-mobile-collapse .header-mobile-collapse__backdrop {
+    position: fixed;
+    top: 100%;
+    height: 100vh;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,.1);
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: .4s opacity;
+  }
+
+  header-mobile-collapse.ionic-sub-header--mobile-active .header-mobile-collapse__backdrop  {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  header-mobile-collapse > ionic-search {
+    display: block;
+  }
+
+  header-mobile-collapse .header-mobile-collapse__content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: fixed;
+    width: 100vw;
+    left: 0;
+    background: white;
+    box-shadow: 
+      0px 1px 3px rgba(2, 8, 20, 0.06), 
+      0px 1px 2px rgba(2, 8, 20, 0.04);
+    top: 56px;
+    padding: 16px 16px 8px;
+    max-height: calc(100vh - 64px);
+    overflow: auto;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: 
+      transform .2s cubic-bezier(.36,.66,.04,1),
+      opacity .2s linear;
+  }
+
+  header-mobile-collapse.ionic-sub-header--mobile-active .header-mobile-collapse__content {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+    transition: 
+      transform .25s cubic-bezier(.17,.67,.52,1),
+      opacity .1s linear;
+  }
+
+  header-mobile-collapse .docs-dropdown,
+  header-mobile-collapse .SectionNav .Dropdown {
+    align-self: stretch;
+  }
+
+  header-mobile-collapse .Dropdown .Dropdown-button,
+  header-mobile-collapse .UtilNav .sm-only  {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: #5B708B;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.03em;
+    padding: 13px 0 14px;
+  }
+
+  header-mobile-collapse .Dropdown--left .Dropdown-button {
+    padding-left: 16px;
+    padding-right: 14px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    height: 44px;
+    box-shadow: 0px 1px 2px rgba(2, 8, 20, 0.04);
+  }
+
+  header-mobile-collapse .Dropdown .Dropdown-button .Dropdown-arrow {
+    height: 26px;
+    width: 20px;
+    margin-right: -4px;
+  }
+
+  header-mobile-collapse .SectionNav .Dropdown,
+  header-mobile-collapse .SectionNav-tabs > *  {
+    margin-right: 0;
+  }
+
+  header-mobile-collapse .Dropdown:focus {
+    outline: none;
+  }
+
+  header-mobile-collapse .SectionNav-tabs stencil-route-link {
+    height: 45px;
+  }
+
+  header-mobile-collapse .Dropdown--right .Dropdown-button {
+    text-align: left;
+  }
+
+  header-mobile-collapse .SectionNav stencil-route,
+  header-mobile-collapse .SectionNav-tabs,
+  header-mobile-collapse .UtilNav {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+    align-items: stretch;
+  }
+
+  header-mobile-collapse .UtilNav > * {
+    margin-left: 0;
+    border-bottom: 1px solid #E6E6E8;
+  }
+
+  header-mobile-collapse .UtilNav > :last-child  {
+    border-bottom: none;
+  }
+
+  header-mobile-collapse .Dropdown-panel {
+    position: static;
+    border-bottom: 1px solid var(--text-color--lighter);
+  }
+
+  header-mobile-collapse .SectionNav-tabs a {
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    color: #5B708B;
+    padding-left: 16px;
+    padding-right: 14px;
+    font-weight: 400;
+  }
+
+  header-mobile-collapse .UtilNav a {
+    padding: 0;
+  }
+
+  header-mobile-collapse .SectionNav-tabs .link-active {
+    background: rgba(81,167,255, .12);
+    color: #3880FF;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  header-mobile-collapse .SectionNav-tabs .link-active::after {
+    content:  "\2713";
+    position: static;
+    background: none;
+    width: auto;
+    font-size: 16px;
+  }
+
+  header-mobile-collapse .SectionNav-tabs {
+    position: relative;
+    padding-bottom: 8px;
+    margin-bottom: 18px;
+    margin-top: 5px;
+  }
+
+  header-mobile-collapse .SectionNav-tabs::after {
+    position: absolute;
+    bottom: 0;
+    left: -16px;
+    width: 100vw;
+    border-bottom: 1px solid #E6E6E8;
+    content: '';
+  }
+
+  header-mobile-collapse .header-mobile-collapse__content ionic-search {
+    display: none;
+  }
+
+  header-mobile-collapse .UtilNav::before {
+    content: 'More';
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    color: #000;
+    padding: 6px 2px 8px;
+  }
+
+  header-mobile-collapse .label-sm-only .Dropdown-button-label,
+  header-mobile-collapse .sm-only {
+    display: block;
+  }
+
+  header-mobile-collapse .label-sm-only .Dropdown-icon,
+  header-mobile-collapse .lg-only {
+    display: none;
+  }
+
+  header-mobile-collapse .label-sm-only .Dropdown-icon + .Dropdown-arrow {
+    fill: #5B708B;
+  }
+
+  header-mobile-collapse .UtilNav .sm-only .Dropdown-arrow {
+    height: 26px;
+    width: 20px;
+    margin-right: -4px;
+    fill: #B2BECD;
+  }
+
+  header-mobile-collapse .Dropdown-panel a {
+    padding: 8px;
+    font-size: 16px;
+  }
+
+  header-mobile-collapse .Dropdown.is-open .Dropdown-panel {
+    position: static;
+  }
+}
+
+
+
