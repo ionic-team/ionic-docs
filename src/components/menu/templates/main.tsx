@@ -69,6 +69,7 @@ const items = {
     'menu-vue-navigation': '/docs/vue/navigation'
   },
   'menu-utilities': {
+    'menu-utilities-animations': '/docs/utilities/animations',
     'menu-utilities-config': '/docs/utilities/config',
     'menu-utilities-platform': '/docs/utilities/platform'
   },
