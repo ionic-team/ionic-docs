@@ -198,25 +198,18 @@ Info on performance considerations
 
 ## Types
 
-```typescript
-AnimationDirection = 'normal' | 'reverse' | 'alternate' | 'alternate-reverse';
-AnimationFill = 'auto' | 'none' | 'forwards' | 'backwards' | 'both';
-```
+| Name                 | Value                                                         |
+| ---------------------| ------------------------------------------------------------- |
+| `AnimationDirection` | `'normal' \| 'reverse' \| 'alternate' \| 'alternate-reverse'` |
+| `AnimationFill`      | `'auto' \| 'none' \| 'forwards' \| 'backwards' \| 'both'`     |                                                       
 
 ## Properties
 
-#### `childAnimations: Animation[]`
-
-All child animations of a given parent animation.
-
-#### `elements: HTMLElement[]`
-
-All elements attached to an animation.
-
-
-#### `parentAnimation: Animation | undefined`
-
-The parent animation of a given animation object.
+| Name                                      | Description                                       |
+| ------------------------------------------| ------------------------------------------------- |
+| `childAnimations: Animation[]`            | All child animations of a given parent animation. |
+| `elements: HTMLElement[]`                 | All elements attached to an animation.            |                                                       
+| `parentAnimation: Animation \| undefined` | The parent animation of a given animation object. |
 
 ## Methods
 
