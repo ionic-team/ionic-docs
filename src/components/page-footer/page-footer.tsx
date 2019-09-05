@@ -37,7 +37,7 @@ export class DocsPageFooter {
       page.previousText && page.previousUrl || page.nextText && page.nextUrl
     ) ? <docs-pagination page={page}/> : '';
 
-    console.log(paggination);
+    // console.log(paggination);
 
     return [
       paggination,
