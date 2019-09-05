@@ -26,7 +26,7 @@ export class HeaderMobileCollapse {
   deactivate() {
     setTimeout(() => {
       this.el.classList.remove('ionic-sub-header--mobile-active');
-    }, 200);
+    }, 200); // give the page a chance to load in the background so it's pretty
   }
 
   getTriggerEl() {
