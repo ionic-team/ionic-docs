@@ -11,6 +11,7 @@ import glob from 'fast-glob';
 import fetch from 'node-fetch';
 import frontMatter from 'front-matter';
 import markdownRenderer from '../markdown-renderer';
+import simplegit from 'simple-git/promise';
 
 export default {
   title: 'Build static pages',
@@ -54,7 +55,7 @@ const readMarkdown = (path: string): Promise<string> =>
   });
 
 const getGitHubData = async (filePath: string) => {
-  const [, path] = /^.+\/(src\/(l10n\/)?pages\/.+\.md)$/.exec(filePath);
+  const [, path] = /^.+\/(src\/pages\/.+\.md)$/.exec(filePath);
   const since = new Date('2019-01-23').toISOString();
 
   try {
@@ -70,7 +71,7 @@ const getGitHubData = async (filePath: string) => {
     }));
 
     const commits = await request.json();
-    const contributors = Array.from(new Set(commits.map(commit => commit.author.login)));
+    const contributors = await getFileContributors(filePath);
     const lastUpdated = commits.length ? commits[0].commit.author.date : since;
     return {
       path,
@@ -85,3 +86,12 @@ const getGitHubData = async (filePath: string) => {
     };
   }
 };
+
+async function getFileContributors(filename) {
+  console.log(filename);
+  const git = simplegit();
+  return git.log({ file: filename }).then(status =>
+    // strip out unecessary data
+    Array.from(new Set(status.all.map(commit => commit.author_email)))
+  );
+}

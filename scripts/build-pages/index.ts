@@ -9,11 +9,11 @@ import CLI from './page-types/cli';
 import Native from './page-types/native';
 import { convertHtmlToHypertextData } from './html-to-hypertext-data';
 
-const tasks = new Listr();
+const tasks = new Listr({ renderer: 'verbose' });
 tasks.add(Static);
-tasks.add(API);
-tasks.add(CLI);
-tasks.add(Native);
+// tasks.add(API);
+// tasks.add(CLI);
+// tasks.add(Native);
 export default tasks;
 
 let listrStatus = null;
