@@ -95,7 +95,7 @@ function toggleTheme() {
 
 ## Ionic Dark Theme
 
-Ionic has some recommendations for variables to use based on the mode the app is using. We've created a set of new Ionic Colors for dark mode. Most of the colors are barely changed, but it's important to note that we switch the `dark` and `light` colors.
+Ionic has some recommendations for variables to use based on the device the app is using. We've created a set of new Ionic Colors for dark mode that should be applied to both iOS and Material Design. Most of the colors are barely changed, but it's important to note that we switch the `dark` and `light` colors in dark mode.
 
 In the below examples, we are only applying the variables to the `body.dark` selector and adding the `dark` class to the document body using JavaScript as mentioned in the [combining with JavaScript](#combining-with-javascript) section.
 
