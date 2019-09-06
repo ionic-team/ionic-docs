@@ -128,12 +128,12 @@ Currently, the `Home` component looks like so:
 ![React home component](/docs/assets/img/guides/react/first-app/home-route.png)
 
 ```typescript
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonPage } from '@ionic/react';
 import React from 'react';
 
 const Home: React.FunctionComponent = () => {
   return (
-    <>
+    <IonPage>
       <IonHeader>
         <IonToolbar>
           <IonTitle>Ionic Blank</IonTitle>
@@ -153,12 +153,14 @@ const Home: React.FunctionComponent = () => {
           will be your guide.
         </p>
       </IonContent>
-    </>
+    </IonPage>
   );
 };
 ```
 
 Much like the `App` component we started off with, we have some imports for specific Ionic components, an import for React, and then our React component itself. This component represents what Ionic considers a page (a component with a route/URL), and includes some common building blocks of a full screen component, like header, title, and content components.
+
+`IonPage` Is our page wrapper and root element for the tsx file.
 
 `IonHeader` is a bit self explanatory. It's a component that is meant to exist at the top of the page. `IonHeader` itself doesn't really do much by itself, aside from handling some flexbox-based layout. It's meant to hold other components, like `IonToolbar` or `IonSearchbar`.
 
@@ -169,7 +171,7 @@ Our current content is fairly simple, but does not contain anything that could b
 > Note: For brevity, we're excluding repeating part of our component, like the function declaration or import statements for other components.
 
 ```typescript
-<>
+<IonPage>
   ...
   <IonContent>
     <IonList>
@@ -185,7 +187,7 @@ Our current content is fairly simple, but does not contain anything that could b
       </IonItem>
     </IonList>
   </IonContent>
-</>
+</IonPage>
 ```
 
 Here in our `IonContent`, we're adding an `IonList` and a much more involved `IonItem` component. Let's look at `IonItem`, as it's really the centerpiece here.
@@ -234,7 +236,7 @@ Now let's wire up a click handler to this. What we want to do is when we click t
 ```typescript
 export default function Home(props: RouteComponentProps) {
   return (
-    <>
+    <IonPage>
       <IonHeader>...</IonHeader>
       <IonContent>
         <IonList>...</IonList>
@@ -244,7 +246,7 @@ export default function Home(props: RouteComponentProps) {
           </IonFabButton>
         </IonFab>
       </IonContent>
-    </>
+    </IonPage>
   );
 }
 ```
@@ -293,13 +295,14 @@ import {
   IonContent,
   IonHeader,
   IonTitle,
-  IonToolbar
+  IonToolbar,
+  IonPage
 } from '@ionic/react';
 import React from 'react';
 
 export default function NewItem(props: any) {
   return (
-    <>
+    <IonPage>
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
@@ -309,7 +312,7 @@ export default function NewItem(props: any) {
         </IonToolbar>
       </IonHeader>
       <IonContent />
-    </>
+    </IonPage>
   );
 }
 ```
@@ -320,7 +323,7 @@ Well in this case, the in-memory history is lost, so the back button disappears.
 
 ```typescript
 return (
-  <>
+  <IonPage>
     <IonHeader>
       <IonToolbar>
         <IonButtons slot="start">
@@ -330,7 +333,7 @@ return (
       </IonToolbar>
     </IonHeader>
     <IonContent />
-  </>
+  </IonPage>
 );
 ```
 
