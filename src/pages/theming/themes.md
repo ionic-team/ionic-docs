@@ -3,8 +3,8 @@ initialTab: 'preview'
 inlineHtmlPreviews: true
 previousText: 'Colors'
 previousUrl: '/docs/theming/colors'
-nextText: 'Advanced Theming'
-nextUrl: '/docs/theming/advanced'
+nextText: 'Dark Mode'
+nextUrl: '/docs/theming/dark-mode'
 ---
 
 # Themes

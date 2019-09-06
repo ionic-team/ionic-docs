@@ -1,0 +1,254 @@
+---
+initialTab: 'preview'
+inlineHtmlPreviews: true
+previousText: 'Themes'
+previousUrl: '/docs/theming/themes'
+nextText: 'Advanced Theming'
+nextUrl: '/docs/theming/advanced'
+---
+
+# Dark Mode
+
+Ionic makes it easy to change the themes of your app, including supporting dark color schemes. With growing support for dark mode in native apps, developers are now looking to add it to their apps to support user preferences.
+
+## Using Media Queries
+
+The first way to enable dark mode is by using the CSS media query for the user's preferred color scheme. This media query will hook into the system setting of the user's device and apply the theme if a dark mode is enabled.
+
+```css
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* dark mode variables go here */
+  }
+}
+```
+
+Currently, the `prefers-color-scheme` media query has [limited browser support](https://caniuse.com/#feat=prefers-color-scheme), so users will not be able to benefit from having the dark mode applied using this media query in certain browsers. However, the dark mode can still be applied by using a [class fallback](#class-fallback).
+
+
+## Class Fallback
+
+As a fallback method for devices that don't support the media query, the dark mode can be applied by styling a CSS selector and applying the class to the document body.
+
+```css
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* dark mode variables go here */
+  }
+}
+
+/* Fallback for older browsers or manual mode */
+body.dark {
+  /* dark mode variables go here */
+}
+```
+
+With the variables targeting the `body.dark` selector, all that is needed now is to add the class to the `<body>` in the app. This can be done in a variety of ways depending on the framework your app is built with.
+
+Notice that the variables should be in both places in this example. We can [use JavaScript](#combining-with-javascript) in order to avoid setting the variables in two places.
+
+
+## Combining with JavaScript
+
+In order to keep the CSS variables written once and avoid having to update them in multiple places, the fallback and class can be combined by setting a variable in the media query and using it in the JavaScript to set the class on the document body based on the media query. Here's what the CSS would look like:
+
+```css
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ion-color-scheme: dark;
+  }
+}
+
+body.dark {
+  /* dark mode variables go here */
+}
+```
+
+Notice that the variables above are only in the `body.dark` selector now, and the media query has one variable set. Now, in the JavaScript, the class can be added to the body based on the existence of this variable. This function should be called on load of an application, based on the framework being used:
+
+```javascript
+function onLoad() {
+  const theme = getComputedStyle(document.body).getPropertyValue('--ion-color-scheme').trim();
+
+  if (theme === 'dark') {
+    document.body.classList.toggle('dark');
+  }
+}
+```
+
+This could be improved upon by adding a toggle in the application that calls a `toggleTheme()` method to toggle the class:
+
+```javascript
+function onLoad() {
+  const theme = getComputedStyle(document.body).getPropertyValue('--ion-color-scheme').trim();
+
+  if (theme === 'dark') {
+    toggleTheme();
+  }
+}
+
+function toggleTheme() {
+  document.body.classList.toggle('dark');
+}
+```
+
+
+## Ionic Dark Theme
+
+Ionic has some recommendations for variables to use based on the mode the app is using. We've created a set of new Ionic Colors for dark mode. Most of the colors are barely changed, but it's important to note that we switch the `dark` and `light` colors.
+
+In the below examples, we are only applying the variables to the `body.dark` selector and adding the `dark` class to the document body using JavaScript as mentioned in the [combining with JavaScript](#combining-with-javascript) section.
+
+```css
+/*
+ * Dark Colors
+ * -------------------------------------------
+ */
+
+body.dark {
+  --ion-color-primary: #428cff;
+  --ion-color-primary-rgb: 66,140,255;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255,255,255;
+  --ion-color-primary-shade: #3a7be0;
+  --ion-color-primary-tint: #5598ff;
+
+  --ion-color-secondary: #50c8ff;
+  --ion-color-secondary-rgb: 80,200,255;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255,255,255;
+  --ion-color-secondary-shade: #46b0e0;
+  --ion-color-secondary-tint: #62ceff;
+
+  --ion-color-tertiary: #6a64ff;
+  --ion-color-tertiary-rgb: 106,100,255;
+  --ion-color-tertiary-contrast: #ffffff;
+  --ion-color-tertiary-contrast-rgb: 255,255,255;
+  --ion-color-tertiary-shade: #5d58e0;
+  --ion-color-tertiary-tint: #7974ff;
+
+  --ion-color-success: #2fdf75;
+  --ion-color-success-rgb: 47,223,117;
+  --ion-color-success-contrast: #000000;
+  --ion-color-success-contrast-rgb: 0,0,0;
+  --ion-color-success-shade: #29c467;
+  --ion-color-success-tint: #44e283;
+
+  --ion-color-warning: #ffd534;
+  --ion-color-warning-rgb: 255,213,52;
+  --ion-color-warning-contrast: #000000;
+  --ion-color-warning-contrast-rgb: 0,0,0;
+  --ion-color-warning-shade: #e0bb2e;
+  --ion-color-warning-tint: #ffd948;
+
+  --ion-color-danger: #ff4961;
+  --ion-color-danger-rgb: 255,73,97;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255,255,255;
+  --ion-color-danger-shade: #e04055;
+  --ion-color-danger-tint: #ff5b71;
+
+  --ion-color-dark: #f4f5f8;
+  --ion-color-dark-rgb: 244,245,248;
+  --ion-color-dark-contrast: #000000;
+  --ion-color-dark-contrast-rgb: 0,0,0;
+  --ion-color-dark-shade: #d7d8da;
+  --ion-color-dark-tint: #f5f6f9;
+
+  --ion-color-medium: #989aa2;
+  --ion-color-medium-rgb: 152,154,162;
+  --ion-color-medium-contrast: #000000;
+  --ion-color-medium-contrast-rgb: 0,0,0;
+  --ion-color-medium-shade: #86888f;
+  --ion-color-medium-tint: #a2a4ab;
+
+  --ion-color-light: #222428;
+  --ion-color-light-rgb: 34,36,40;
+  --ion-color-light-contrast: #ffffff;
+  --ion-color-light-contrast-rgb: 255,255,255;
+  --ion-color-light-shade: #1e2023;
+  --ion-color-light-tint: #383a3e;
+}
+```
+
+### Mode Specific Dark Theme
+
+In addition to changing the default Ionic colors, there are some differences between iOS and Material Design in terms of the colors for their dark mode. We've created the following variables to closely match native devices. Our stepped colors are generated using our [stepped color generator](/docs/theming/themes#stepped-color-generator) and should go from the new background color to the text color. Any of these variables can be modified for your use case and there are [many more variables](/docs/theming/themes#application-colors) that can be added if desired, but these are our recommendations for a dark mode.
+
+```css
+/*
+ * iOS Dark Theme
+ * -------------------------------------------
+ */
+
+.ios body.dark {
+  --ion-background-color: #000000;
+  --ion-background-color-rgb: 0,0,0;
+
+  --ion-text-color: #ffffff;
+  --ion-text-color-rgb: 255,255,255;
+
+  --ion-color-step-50: #0d0d0d;
+  --ion-color-step-100: #1a1a1a;
+  --ion-color-step-150: #262626;
+  --ion-color-step-200: #333333;
+  --ion-color-step-250: #404040;
+  --ion-color-step-300: #4d4d4d;
+  --ion-color-step-350: #595959;
+  --ion-color-step-400: #666666;
+  --ion-color-step-450: #737373;
+  --ion-color-step-500: #808080;
+  --ion-color-step-550: #8c8c8c;
+  --ion-color-step-600: #999999;
+  --ion-color-step-650: #a6a6a6;
+  --ion-color-step-700: #b3b3b3;
+  --ion-color-step-750: #bfbfbf;
+  --ion-color-step-800: #cccccc;
+  --ion-color-step-850: #d9d9d9;
+  --ion-color-step-900: #e6e6e6;
+  --ion-color-step-950: #f2f2f2;
+
+  --ion-toolbar-background: #0d0d0d;
+
+  --ion-item-background: #1c1c1c;
+  --ion-item-background-activated: #313131;
+}
+
+
+/*
+ * Material Design Dark Theme
+ * -------------------------------------------
+ */
+
+.md body.dark {
+  --ion-background-color: #121212;
+  --ion-background-color-rgb: 18,18,18;
+
+  --ion-text-color: #ffffff;
+  --ion-text-color-rgb: 255,255,255;
+
+  --ion-border-color: #222222;
+
+  --ion-color-step-50: #1e1e1e;
+  --ion-color-step-100: #2a2a2a;
+  --ion-color-step-150: #363636;
+  --ion-color-step-200: #414141;
+  --ion-color-step-250: #4d4d4d;
+  --ion-color-step-300: #595959;
+  --ion-color-step-350: #656565;
+  --ion-color-step-400: #717171;
+  --ion-color-step-450: #7d7d7d;
+  --ion-color-step-500: #898989;
+  --ion-color-step-550: #949494;
+  --ion-color-step-600: #a0a0a0;
+  --ion-color-step-650: #acacac;
+  --ion-color-step-700: #b8b8b8;
+  --ion-color-step-750: #c4c4c4;
+  --ion-color-step-800: #d0d0d0;
+  --ion-color-step-850: #dbdbdb;
+  --ion-color-step-900: #e7e7e7;
+  --ion-color-step-950: #f3f3f3;
+
+  --ion-item-background: #1A1B1E;
+}
+```
