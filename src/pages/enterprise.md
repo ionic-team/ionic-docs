@@ -106,7 +106,7 @@ packages and the regular Cordova CLI does not work with scoped packages.
 <command-prompt>npm install -g @ionic-enterprise/cordova</command-prompt>
 </command-line>
 
-The Ioinc Enterprise Cordova CLI should be installed on each developer's machine.
+The Ionic Enterprise Cordova CLI should be installed on each developer's machine.
 This is also true for any development build servers that you may use.
 
 ## Register Your Product Key
