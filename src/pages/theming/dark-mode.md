@@ -64,19 +64,7 @@ body.dark {
 }
 ```
 
-Notice that the variables above are only in the `body.dark` selector now, and the media query has one variable set. Now, in the JavaScript, the class can be added to the body based on the existence of this variable. This function should be called on load of an application, based on the framework being used:
-
-```javascript
-function onLoad() {
-  const theme = getComputedStyle(document.body).getPropertyValue('--ion-color-scheme').trim();
-
-  if (theme === 'dark') {
-    document.body.classList.toggle('dark');
-  }
-}
-```
-
-This could be improved upon by adding a toggle in the application that calls a `toggleTheme()` method to toggle the class:
+Notice that the variables above are only in the `body.dark` selector now, and the media query has one variable set. Now, in the JavaScript, the class can be added to the body based on the existence of this variable. The `onLoad()` function should be called on load of an application, based on the framework being used:
 
 ```javascript
 function onLoad() {
@@ -91,6 +79,9 @@ function toggleTheme() {
   document.body.classList.toggle('dark');
 }
 ```
+
+In addition to calling `onLoad()` when the app loads, the `toggleTheme()` function could be called by the app, such as when a user changes a toggle, to switch between the light and dark themes.
+
 
 
 ## Ionic Dark Theme
