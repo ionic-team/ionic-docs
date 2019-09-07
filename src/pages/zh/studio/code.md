@@ -40,7 +40,7 @@ App files can be searched using the search bar at the top of the file tree panel
 
 ### Search and Replace
 
-Search and replace functionality is available by using the dropdown error when searching.
+Search and replace functionality is available by using the dropdown arrow when searching.
 
 <figure>
   <img alt="Search and Replace" src="/docs/assets/img/studio/ss-search-and-replace.png" />
