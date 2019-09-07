@@ -39,7 +39,7 @@ At a high level, the production documentation works like this:
    ```
 2. At runtime, the `docs-page` component receives the current path (e.g. `/docs/intro`)
 3. The `docs-page` component fetches and parses the [JSON representation](https://ionicframework.com/docs/pages/intro.json) of that page
-4. The `docs-page` component renders that data using a [template](https://github.com/ionic-team/ionic-docs/tree/master/src/components/page/templates)
+4. The `docs-page` component renders that data using a [template](/components/page/templates)
 
 > **Note**: most reference content (e.g. APIs, native plugins, CLI commands) is not stored as Markdown. Those pages are created using data provided by other repositories to the `build-pages` script.
 
@@ -47,7 +47,6 @@ At a high level, the production documentation works like this:
 
 - `scripts/` - build scripts used to generate JSON representations of each page and other data used in the docs
 - `src/` - source code and content of the docs
-
   - `assets/` - static assets used on the site, like images and fonts
   - `components/` - Stencil components used in the documentation UI
   - `demos/` - Self-contained demos, optionally presented by pages via `demoUrl` YAML frontmatter
@@ -104,9 +103,9 @@ The Markdown in `src/pages` does not contain all of the Ionic documentation's co
 
 ## Translation
 
-Ionic docs have been translated in to Japanese and are in the process of being translated in to Chinese, French, Portuguese, and Spanish. These languages we chosen because we believe they have the greatest number of developers where English-only documentation would be a barrier.
+The Ionic docs have been translated into Japanese and are in the process of being translated into Chinese, French, Portuguese, and Spanish. We've chosen these languages because we believe they have the greatest number of developers where English-only documentation would be a barrier.
 
-We use Crowdin for our translation service, and you can participate and contribute to the translation effort on the [Ionic Crowdin page](https://crowdin.com/project/ionic-docs).
+We use Crowdin for our translation service. You can participate in the translation effort on the [Ionic Crowdin page](https://crowdin.com/project/ionic-docs).
 
 _Please submit translation issues to the Crowdin page and not the Ionic Docs GitHub repo_
 
