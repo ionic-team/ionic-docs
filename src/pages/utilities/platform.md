@@ -18,7 +18,7 @@ import { Platform } from '@ionic/angular';
 
 @Component({...})
 export class MyPage {
-  constructor(public plt: Platform) {
+  constructor(public platform: Platform) {
 
   }
 }
