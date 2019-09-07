@@ -10,11 +10,11 @@ import { PAGES_DIR } from '../build-pages';
 
 dotenv.config();
 
-let GH_COMMITS = [];
+const GH_COMMITS = {};
 
 const OUTPUT_PATH = resolve(
   __dirname,
-  '../../scripts/build-data/output.json'
+  '../../dist/gitHubCommits.json'
 );
 
 export default {
@@ -46,9 +46,11 @@ async function getReleases() {
   // console.log('hit', data);
   // return data;
 
+  // console.log(await getFileContributors('package.json'));
+
   await getAllGHCommits();
   // console.log(GH_COMMITS);
-  console.log('gets here', GH_COMMITS.length);
+  console.log('gets here', Object.keys(GH_COMMITS).length);
   return GH_COMMITS;
 
   // return getFileContributors('package.json');
@@ -77,16 +79,27 @@ async function getAllGHCommits(page = 1) {
     pathname: 'repos/ionic-team/ionic-docs/commits',
     query: {
       access_token: process.env.GITHUB_TOKEN,
-      since: new Date('2019-01-23').toISOString(),
+      // since: new Date('2019-01-23').toISOString(),
       per_page: 100,
       page
     }
   }));
   const commits = await request.json();
+  commits.forEach(commit => {
+    // console.log(commit)
+    GH_COMMITS[commit.sha] = {
+      id: commit.author.login,
+      avatar: commit.author.avatar_url,
+      gravatar: commit.author.gravatar_id,
+      profile: commit.author.html_url,
+      admin: commit.author.site_admin,
+      time: commit.commit.committer.date
+    };
+  });
   // json.items = null;
-  GH_COMMITS = [...GH_COMMITS, ...commits];
+  // GH_COMMITS = [...GH_COMMITS, ...commits];
   console.log(commits.length);
-  if (commits.length === 100) {
+  if (commits.length === 100 && page < 20) {
     await getAllGHCommits(page + 1);
   }
 }
