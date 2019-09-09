@@ -49,8 +49,11 @@
   "menu-theming-basics": "Basics",
   "menu-theming-platform-styles": "Platform Styles",
   "menu-theming-css-variables": "CSS Variables",
-  "menu-theming-color-generator": "Color Generator",
+  "menu-theming-colors": "Colors",
+  "menu-theming-themes": "Themes",
+  "menu-theming-dark-mode": "Dark Mode",
   "menu-theming-advanced": "Advanced",
+  "menu-theming-color-generator": "Color Generator",
 
   "menu-angular": "Angular",
   "menu-angular-overview": "Overview",
