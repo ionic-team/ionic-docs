@@ -18,6 +18,7 @@ const items = {
     'Theming': '/docs/studio/theming',
     'Settings': '/docs/studio/settings',
     'Running Apps': '/docs/studio/running',
+    'Terminal': '/docs/studio/terminal',
   },
   'Guides': {
     'Quickstart': '/docs/studio/guides/quickstart',
