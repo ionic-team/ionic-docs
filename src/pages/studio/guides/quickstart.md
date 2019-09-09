@@ -6,9 +6,7 @@
 
 The quickstart tutorial walks you through starting a new app, the basics of Compose and Code, and serving your app.
 
-<blockquote>
-🚧 These docs are a work-in-progress. Check back frequently for updates!
-</blockquote>
+> 🚧 These docs are a work-in-progress. Check back frequently for updates!
 
 ## Start a New App
 
