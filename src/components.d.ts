@@ -546,7 +546,9 @@ declare namespace LocalJSX {
     'data'?: any[];
     'keys'?: ReferenceKeys;
   }
-  interface DocsRoot extends JSXBase.HTMLAttributes<HTMLDocsRootElement> {}
+  interface DocsRoot extends JSXBase.HTMLAttributes<HTMLDocsRootElement> {
+    'onPageChanged'?: (event: CustomEvent<any>) => void;
+  }
   interface DocsSelect extends JSXBase.HTMLAttributes<HTMLDocsSelectElement> {
     'initializer'?: (options: string[]) => string;
     'onSelection'?: (event: CustomEvent<string>) => void;

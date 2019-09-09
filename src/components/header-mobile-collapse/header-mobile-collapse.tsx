@@ -1,4 +1,4 @@
-import { Component, Element, Prop, State, h } from '@stencil/core';
+import { Component, Element, Listen, Prop, State, h } from '@stencil/core';
 import { MoreDots } from '../../icons';
 
 @Component({
@@ -20,6 +20,13 @@ export class HeaderMobileCollapse {
   constructor() {
     this.handleMobileToggleClick = this.handleMobileToggleClick.bind(this);
     this.deactivate = this.deactivate.bind(this);
+  }
+
+  @Listen('pageChanged', { target: 'body' })
+  deactivate() {
+    setTimeout(() => {
+      this.el.classList.remove('ionic-sub-header--mobile-active');
+    }, 200); // give the page a chance to load in the background so it's pretty
   }
 
   getTriggerEl() {
@@ -67,17 +74,14 @@ export class HeaderMobileCollapse {
       this.observer.observe(document.getElementById('ionic-sub-header__trigger'));
       setTimeout(() => {
         this.el.classList.add('ionic-sub-header--initialized');
-        document.querySelector('.navbar-default').classList.add('navbar--not-fixed');
+        const navBar = document.querySelector('.navbar-default');
+        if (navBar) navBar.classList.add('navbar--not-fixed');
       }, 405);
     }
   }
 
   handleMobileToggleClick() {
     this.el.classList.toggle('ionic-sub-header--mobile-active');
-  }
-
-  deactivate() {
-    this.el.classList.remove('ionic-sub-header--mobile-active');
   }
 
   render() {

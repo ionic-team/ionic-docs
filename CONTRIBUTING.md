@@ -2,13 +2,13 @@
 
 Thanks for your interest in contributing to Ionic's documentation! :tada: Check the guidelines below for suggestions and requirements before submitting your contribution.
 
-* [Development Workflow](#development-workflow)
-* [Project Structure](#project-structure)
-* [Authoring Content](#authoring-content)
-* [Translation](#translation)
-* [Reporting Issues](#reporting-issues)
-* [Pull Request Guidelines](#pull-request-guidelines)
-* [Project Management](#project-management)
+- [Development Workflow](#development-workflow)
+- [Project Structure](#project-structure)
+- [Authoring Content](#authoring-content)
+- [Translation](#translation)
+- [Reporting Issues](#reporting-issues)
+- [Pull Request Guidelines](#pull-request-guidelines)
+- [Project Management](#project-management)
 
 ---
 
@@ -31,15 +31,15 @@ Ionic's documentation is built using [Stencil](https://stenciljs.com). The conte
 
 At a high level, the production documentation works like this:
 
-1. At build time, the `build-pages` script reads the Markdown in `src/pages/` and creates a JSON representation of each page at the same path 
-    ```
-    pages/
-    ├── intro.json
-    └── intro.md
-    ```
+1. At build time, the `build-pages` script reads the Markdown in `src/pages/` and creates a JSON representation of each page at the same path
+   ```
+   pages/
+   ├── intro.json
+   └── intro.md
+   ```
 2. At runtime, the `docs-page` component receives the current path (e.g. `/docs/intro`)
 3. The `docs-page` component fetches and parses the [JSON representation](https://ionicframework.com/docs/pages/intro.json) of that page
-4. The `docs-page` component renders that data using a [template](../src/components/page/templates)
+4. The `docs-page` component renders that data using a [template](/components/page/templates)
 
 > **Note**: most reference content (e.g. APIs, native plugins, CLI commands) is not stored as Markdown. Those pages are created using data provided by other repositories to the `build-pages` script.
 
@@ -52,14 +52,14 @@ At a high level, the production documentation works like this:
   - `demos/` - Self-contained demos, optionally presented by pages via `demoUrl` YAML frontmatter
   - `pages/` - Markdown content organized by route and uncommitted JSON representation of each page
   - `styles/` - Global and page-specific styles (non-component styles)
-  
+
 ### Page Templates
 
 The [`docs-page`](https://github.com/ionic-team/ionic-docs/blob/master/src/components/page/page.tsx) component is responsible for loading and rendering page content. Page content is rendered using one of the templates exported [here](https://github.com/ionic-team/ionic-docs/blob/master/src/components/page/templates/index.ts). Pages can specify a template via the `template` key in their frontmatter, or the default template will be used.
 
 ```tsx
 const Template = templates[page.template] || template.default;
-return <Template page={page}/>;
+return <Template page={page} />;
 ```
 
 ### Menu Templates
@@ -103,14 +103,13 @@ The Markdown in `src/pages` does not contain all of the Ionic documentation's co
 
 ## Translation
 
-Ionic docs have been translated in to Japanese and are in the process of being translated in to Chinese, French, Portuguese, and Spanish. These languages we chosen because we believe they have the greatest number of developers where English-only documentation would be a barrier. 
+The Ionic docs have been translated into Japanese and are in the process of being translated into Chinese, French, Portuguese, and Spanish. We've chosen these languages because we believe they have the greatest number of developers where English-only documentation would be a barrier.
 
-We use Crowdin for our translation service, and you can participate and contribute to the translation effort on the [Ionic Crowdin page](https://crowdin.com/project/ionic-docs). 
+We use Crowdin for our translation service. You can participate in the translation effort on the [Ionic Crowdin page](https://crowdin.com/project/ionic-docs).
 
 _Please submit translation issues to the Crowdin page and not the Ionic Docs GitHub repo_
 
 The Japanese translation of the docs were built by an independent team, lead by [rdlabo](https://github.com/rdlabo) and can be found and contributed to on the [ionic-jp group's `ionic-docs` project page](https://github.com/ionic-jp/ionic-docs).
-
 
 ## Reporting Issues
 
