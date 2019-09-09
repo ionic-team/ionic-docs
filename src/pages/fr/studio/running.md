@@ -5,9 +5,7 @@
 
 Ionic Studio offers support for serving, running, and deploying apps.
 
-<blockquote>
-🚧 These docs are a work-in-progress. Check back frequently for updates!
-</blockquote>
+> 🚧 These docs are a work-in-progress. Check back frequently for updates!
 
 Serving, running, and deploying each have pros and cons.
 
