@@ -11,6 +11,7 @@ const items = {
   },
   'menu-enterprise-common-device-features': {
     'Android Permissions': '/docs/enterprise/android-permissions',
+    'App Rate': '/docs/enterprise/app-rate',
     'App Version': '/docs/enterprise/app-version',
     'Badge': '/docs/enterprise/badge',
     'Browser': '/docs/enterprise/inappbrowser',

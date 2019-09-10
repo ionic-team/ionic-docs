@@ -139,6 +139,7 @@ docs page.
 
 ### Common Device Features
 - [Android Permissions](/docs/enterprise/android-permissions)
+- [App Rate](/docs/enterprise/app-rate)
 - [App Version](/docs/enterprise/app-version)
 - [Badge](/docs/enterprise/badge)
 - [Browser](/docs/enterprise/inappbrowser)
