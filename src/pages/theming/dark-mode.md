@@ -86,11 +86,39 @@ In addition to calling `onLoad()` when the app loads, the `toggleTheme()` functi
 
 ## Ionic Dark Theme
 
-Ionic has some recommendations for variables to use based on the device the app is using. We've created a set of new Ionic Colors for dark mode that should be applied to both iOS and Material Design. Most of the colors are barely changed, but it's important to note that we switch the `dark` and `light` colors in dark mode.
+Ionic has a recommended theme for variables to use in order to get a dark mode based on the device running the app. It can be broken down into the following parts:
 
-In the below examples, we are only applying the variables to the `body.dark` selector and adding the `dark` class to the document body using JavaScript as mentioned in the [combining with JavaScript](#combining-with-javascript) section.
+1. Changing the default [Ionic colors](/docs/theming/colors) for all [modes](/docs/theming/platform-styles#ionic-modes) to complement the dark background in the `body.dark` selector.
+  ```css
+    body.dark {
+      /* Variables for setting Ionic colors */
+    }
+  ```
+1. Creating a dark theme for `ios` devices.
+  ```css
+    .ios body.dark {
+      /* Variables for iOS only */
+    }
+  ```
+1. Creating a dark theme for `md` devices.
+  ```css
+    .md body.dark {
+      /* Variables for Material Design only */
+    }
+  ```
+
+The following code can be copied and pasted into an app to get Ionic's dark theme. We set the `--ion-color-scheme` variable in the `prefers-color-scheme` media query in order to add the `dark` class to the document body using JavaScript as mentioned in the [combining with JavaScript](#combining-with-javascript) section. The dark mode will not be enabled until the `dark` class is added to the document body.
+
+> For more information on the variables that are being changed, including other variables that can be added to further customize, see [Themes](/docs/theming/themes).
+
 
 ```css
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ion-color-scheme: dark;
+  }
+}
+
 /*
  * Dark Colors
  * -------------------------------------------
@@ -160,13 +188,7 @@ body.dark {
   --ion-color-light-shade: #1e2023;
   --ion-color-light-tint: #383a3e;
 }
-```
 
-### Mode Specific Dark Theme
-
-In addition to changing the default Ionic colors, there are some differences between iOS and Material Design in terms of the colors for their dark mode. We've created the following variables to closely match native devices. Our stepped colors are generated using our [stepped color generator](/docs/theming/themes#stepped-color-generator) and should go from the new background color to the text color. Any of these variables can be modified for your use case and there are [many more variables](/docs/theming/themes#application-colors) that can be added if desired, but these are our recommendations for a dark mode.
-
-```css
 /*
  * iOS Dark Theme
  * -------------------------------------------
