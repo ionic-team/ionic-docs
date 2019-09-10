@@ -23,23 +23,23 @@ The first way to enable dark mode is by using the CSS media query for the user's
 }
 ```
 
-Currently, the `prefers-color-scheme` media query has [limited browser support](https://caniuse.com/#feat=prefers-color-scheme), so users will not be able to benefit from having the dark mode applied using this media query in certain browsers. However, the dark mode can still be applied by using a [class fallback](#class-fallback).
+Currently, the `prefers-color-scheme` media query has [limited browser support](https://caniuse.com/#feat=prefers-color-scheme), so users will not be able to benefit from having the dark mode applied using this media query in certain browsers. However, the dark mode can still be applied by using a [CSS class fallback](#css-class-fallback).
 
 
-## Class Fallback
+## CSS Class Fallback
 
 As a fallback method for devices that don't support the media query, the dark mode can be applied by styling a CSS selector and applying the class to the document body.
 
 ```css
 @media (prefers-color-scheme: dark) {
   :root {
-    /* dark mode variables go here */
+    /* Dark mode variables go here */
   }
 }
 
 /* Fallback for older browsers or manual mode */
 body.dark {
-  /* dark mode variables go here */
+  /* Dark mode variables go here */
 }
 ```
 
@@ -60,7 +60,7 @@ In order to keep the CSS variables written once and avoid having to update them 
 }
 
 body.dark {
-  /* dark mode variables go here */
+  /* Dark mode variables go here */
 }
 ```
 
@@ -71,11 +71,11 @@ function onLoad() {
   const theme = getComputedStyle(document.body).getPropertyValue('--ion-color-scheme').trim();
 
   if (theme === 'dark') {
-    toggleTheme();
+    toggleDarkTheme();
   }
 }
 
-function toggleTheme() {
+function toggleDarkTheme() {
   document.body.classList.toggle('dark');
 }
 ```
@@ -91,19 +91,19 @@ Ionic has a recommended theme for variables to use in order to get a dark mode b
 1. Changing the default [Ionic colors](/docs/theming/colors) for all [modes](/docs/theming/platform-styles#ionic-modes) to complement the dark background in the `body.dark` selector.
   ```css
     body.dark {
-      /* Variables for setting Ionic colors */
+      /* Dark mode variables for setting Ionic colors */
     }
   ```
 1. Creating a dark theme for `ios` devices.
   ```css
     .ios body.dark {
-      /* Variables for iOS only */
+      /* Dark mode variables for iOS only */
     }
   ```
 1. Creating a dark theme for `md` devices.
   ```css
     .md body.dark {
-      /* Variables for Material Design only */
+      /* Dark mode variables for Material Design only */
     }
   ```
 
