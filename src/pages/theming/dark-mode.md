@@ -79,6 +79,7 @@ function toggleDarkTheme(shouldAdd) {
 ```
 
 <!-- Codepen https://codepen.io/ionic/pen/jONzJpG -->
+<code-pen user="ionic" slug="jONzJpG"></code-pen>
 
 In addition to calling `toggleDarkTheme()` from `loadApp()` and when the media query changes, the `toggleDarkTheme()` function could be called by the app, such as when a user changes a toggle, to switch between the light and dark themes:
 
@@ -108,6 +109,7 @@ function checkToggle(shouldCheck) {
 ```
 
 <!-- Codepen https://codepen.io/ionic/pen/zYOpQLj -->
+<code-pen user="ionic" slug="zYOpQLj"></code-pen>
 
 
 ## Ionic Dark Theme
