@@ -127,7 +127,9 @@ export namespace Components {
     'label': string;
     'links': Link[];
   }
-  interface DocsTabs {}
+  interface DocsTabs {
+    'listenFor': string;
+  }
   interface FileTree {}
   interface FileTreeDirectory {
     'collapsed': boolean;
@@ -564,7 +566,9 @@ declare namespace LocalJSX {
     'label'?: string;
     'links'?: Link[];
   }
-  interface DocsTabs extends JSXBase.HTMLAttributes<HTMLDocsTabsElement> {}
+  interface DocsTabs extends JSXBase.HTMLAttributes<HTMLDocsTabsElement> {
+    'listenFor'?: string;
+  }
   interface FileTree extends JSXBase.HTMLAttributes<HTMLFileTreeElement> {}
   interface FileTreeDirectory extends JSXBase.HTMLAttributes<HTMLFileTreeDirectoryElement> {
     'collapsed'?: boolean;

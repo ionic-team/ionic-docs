@@ -87,7 +87,7 @@ const renderUsage = (usage = {}, path: string) => {
       <h2 id="usage">
         <a href="#usage">Usage</a>
       </h2>
-      <docs-tabs key={path}>
+      <docs-tabs key={path} listen-for="ionic-docs:framework">
           {keys.map(key =>
             <docs-tab
               tab={key}
