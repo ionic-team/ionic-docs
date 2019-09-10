@@ -13,6 +13,10 @@ import frontMatter from 'front-matter';
 import markdownRenderer from '../markdown-renderer';
 import simplegit from 'simple-git/promise';
 
+// ingored by git
+// generated in build-data/file-contrbutors.ts by build-data npm task
+import * as GITHUB_COMMITS from '../../data/github-commits.json';
+
 export default {
   title: 'Build static pages',
   task: (_, status) => buildPages(getStaticPages, status)
@@ -56,23 +60,9 @@ const readMarkdown = (path: string): Promise<string> =>
 
 const getGitHubData = async (filePath: string) => {
   const [, path] = /^.+\/(src\/pages\/.+\.md)$/.exec(filePath);
-  const since = new Date('2019-01-23').toISOString();
 
   try {
-    const request = await fetch(url.format({
-      protocol: 'https',
-      hostname: 'api.github.com',
-      pathname: 'repos/ionic-team/ionic-docs/commits',
-      query: {
-        access_token: process.env.GITHUB_TOKEN,
-        since,
-        path
-      }
-    }));
-
-    const commits = await request.json();
-    const contributors = await getFileContributors(filePath);
-    const lastUpdated = commits.length ? commits[0].commit.author.date : since;
+    const { contributors, lastUpdated } = await getFileContributors(filePath);
     return {
       path,
       contributors,
@@ -82,16 +72,19 @@ const getGitHubData = async (filePath: string) => {
     return {
       path,
       contributors: [],
-      lastUpdated: since
+      lastUpdated: new Date('2019-01-23').toISOString()
     };
   }
 };
 
 async function getFileContributors(filename) {
-  console.log(filename);
-  const git = simplegit();
-  return git.log({ file: filename }).then(status =>
-    // strip out unecessary data
-    Array.from(new Set(status.all.map(commit => commit.author_email)))
+  return simplegit().log({ file: filename }).then(status => ({
+      contributors: Array.from(new Set(status.all.map(commit =>
+        // only add the user ID if we can find it based on the commit hash
+        GITHUB_COMMITS[commit.hash] ? GITHUB_COMMITS[commit.hash].id : null
+      // filter out null users
+      ).filter(user => !!user))),
+      lastUpdated: status.latest.date
+    })
   );
 }

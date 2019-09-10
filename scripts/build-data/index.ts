@@ -5,11 +5,13 @@ import buildSearchIndex from './search-index';
 import buildContributors from './file-contributors';
 
 const tasks = new Listr([
-  // buildApiReference,
-  // buildReleaseNotes,
-  // buildSearchIndex,
-  buildContributors
-], { renderer: 'verbose' });
+  buildApiReference,
+  buildContributors,
+  buildReleaseNotes,
+  buildSearchIndex,
+],
+  // { renderer: 'verbose' }
+);
 
 export default tasks;
 

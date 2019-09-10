@@ -11,9 +11,9 @@ import { convertHtmlToHypertextData } from './html-to-hypertext-data';
 
 const tasks = new Listr({ renderer: 'verbose' });
 tasks.add(Static);
-// tasks.add(API);
-// tasks.add(CLI);
-// tasks.add(Native);
+tasks.add(API);
+tasks.add(CLI);
+tasks.add(Native);
 export default tasks;
 
 let listrStatus = null;
@@ -126,7 +126,9 @@ export function updatePageHtmlToHypertext(page: Page) {
 }
 
 function writePage(page: Page): Promise<any> {
-  listrStatus.output = `Writing Page: ${page.path}`;
+  if (listrStatus && listrStatus._task && listrStatus._task.output !== 'Writing Pages') {
+    listrStatus.output = 'Writing Pages';
+  }
   return fs.outputJson(toFilePath(page.path), page, {
     spaces: 2
   });
