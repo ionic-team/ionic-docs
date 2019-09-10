@@ -146,6 +146,7 @@ docs page.
 - [Camera](/docs/enterprise/camera)
 - [Clipboard](/docs/enterprise/clipboard)
 - [Contacts](/docs/enterprise/contacts)
+- [Deeplinks](/docs/enterprise/deeplinks)
 - [Device](/docs/enterprise/device)
 - [Dialogs](/docs/enterprise/dialogs)
 - [Email Composer](/docs/enterprise/email-composer)
