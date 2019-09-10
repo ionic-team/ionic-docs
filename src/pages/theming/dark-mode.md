@@ -13,7 +13,7 @@ Ionic makes it easy to change the themes of your app, including supporting dark 
 
 ## Using Media Queries
 
-The first way to enable dark mode is by using the CSS media query for the user's preferred color scheme. This media query will hook into the system setting of the user's device and apply the theme if a dark mode is enabled.
+The first way to enable dark mode is by using the [CSS media query for the user's preferred color scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme). This media query will hook into the system setting of the user's device and apply the theme if a dark mode is enabled.
 
 ```css
 @media (prefers-color-scheme: dark) {
@@ -50,38 +50,64 @@ Notice that the variables should be in both places in this example. We can [use 
 
 ## Combining with JavaScript
 
-In order to keep the CSS variables written once and avoid having to update them in multiple places, the fallback and class can be combined by setting a variable in the media query and using it in the JavaScript to set the class on the document body based on the media query. Here's what the CSS would look like:
+In order to keep the CSS variables written once and avoid having to update them in multiple places, the fallback and class can be combined by using JavaScript to check the value of the `prefers-color-scheme` media query and adding the `dark` class if the preference is `dark`. Here's what the CSS would look like:
 
 ```css
-@media (prefers-color-scheme: dark) {
-  :root {
-    --ion-color-scheme: dark;
-  }
-}
-
 body.dark {
   /* Dark mode variables go here */
 }
 ```
 
-Notice that the variables above are only in the `body.dark` selector now, and the media query has one variable set. Now, in the JavaScript, the class can be added to the body based on the existence of this variable. The `onLoad()` function should be called on load of an application, based on the framework being used:
+Notice that the variables above are only in the `body.dark` selector now, and the `prefers-color-scheme` media query has been removed. Now, in the JavaScript, the `dark` class can be added to the `<body>` by checking if the document matches the media query using [matchMedia()](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia). The `loadApp()` function should be called on the load of an application, based on the framework being used:
 
 ```javascript
-function onLoad() {
-  const theme = getComputedStyle(document.body).getPropertyValue('--ion-color-scheme').trim();
+// Use matchMedia to check the user preference
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-  if (theme === 'dark') {
-    toggleDarkTheme();
-  }
+// Listen for changes to the prefers-color-scheme media query
+prefersDark.addListener((mediaQuery) => toggleDarkTheme(mediaQuery.matches));
+
+// Called when the app loads
+function loadApp() {
+  toggleDarkTheme(prefersDark.matches);
 }
 
-function toggleDarkTheme() {
-  document.body.classList.toggle('dark');
+// Add or remove the "dark" class based on if the media query matches
+function toggleDarkTheme(shouldAdd) {
+  document.body.classList.toggle('dark', shouldAdd);
 }
 ```
 
-In addition to calling `onLoad()` when the app loads, the `toggleTheme()` function could be called by the app, such as when a user changes a toggle, to switch between the light and dark themes.
+<!-- Codepen https://codepen.io/ionic/pen/jONzJpG -->
 
+In addition to calling `toggleDarkTheme()` from `loadApp()` and when the media query changes, the `toggleDarkTheme()` function could be called by the app, such as when a user changes a toggle, to switch between the light and dark themes:
+
+```javascript
+// Query for the toggle that is used to change between themes
+const toggle = document.querySelector('#themeToggle');
+
+// Listen for the toggle check/uncheck to toggle the dark class on the <body>
+toggle.addEventListener('ionChange', (ev) => {
+  document.body.classList.toggle('dark', ev.detail.checked);
+});
+
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+// Listen for changes to the prefers-color-scheme media query
+prefersDark.addListener((e) => checkToggle(e.matches));
+
+// Called when the app loads
+function loadApp() {
+  checkToggle(prefersDark.matches);
+}
+
+// Called by the media query to check/uncheck the toggle
+function checkToggle(shouldCheck) {
+  toggle.checked = shouldCheck;
+}
+```
+
+<!-- Codepen https://codepen.io/ionic/pen/zYOpQLj -->
 
 
 ## Ionic Dark Theme
@@ -89,36 +115,15 @@ In addition to calling `onLoad()` when the app loads, the `toggleTheme()` functi
 Ionic has a recommended theme for variables to use in order to get a dark mode based on the device running the app. It can be broken down into the following parts:
 
 1. Changing the default [Ionic colors](/docs/theming/colors) for all [modes](/docs/theming/platform-styles#ionic-modes) to complement the dark background in the `body.dark` selector.
-  ```css
-    body.dark {
-      /* Dark mode variables for setting Ionic colors */
-    }
-  ```
-1. Creating a dark theme for `ios` devices.
-  ```css
-    .ios body.dark {
-      /* Dark mode variables for iOS only */
-    }
-  ```
-1. Creating a dark theme for `md` devices.
-  ```css
-    .md body.dark {
-      /* Dark mode variables for Material Design only */
-    }
-  ```
+1. Setting variables for the dark theme on `ios` devices.
+1. Setting variables for the dark theme on `md` devices.
 
-The following code can be copied and pasted into an app to get Ionic's dark theme. We set the `--ion-color-scheme` variable in the `prefers-color-scheme` media query in order to add the `dark` class to the document body using JavaScript as mentioned in the [combining with JavaScript](#combining-with-javascript) section. The dark mode will not be enabled until the `dark` class is added to the document body.
+The following code can be copied and pasted into an app to get Ionic's dark theme. We add the `dark` class to the document body using JavaScript as mentioned in the [combining with JavaScript](#combining-with-javascript) section. The dark mode will not be enabled until the `dark` class is added to the document body.
 
 > For more information on the variables that are being changed, including other variables that can be added to further customize, see [Themes](/docs/theming/themes).
 
 
 ```css
-@media (prefers-color-scheme: dark) {
-  :root {
-    --ion-color-scheme: dark;
-  }
-}
-
 /*
  * Dark Colors
  * -------------------------------------------
