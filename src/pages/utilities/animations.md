@@ -32,7 +32,7 @@ createAnimation()
 
 In the example above, an animation that changes the transform and opacity on the `.square` element has been created.
 
-CODEPEN WITH LIVE DEMO SHOULD GO HERE
+<code-pen user="liamdebeasi" slug="jjzZMV"></code-pen>
 
 ## Keyframe Animations
 
@@ -194,7 +194,11 @@ Info on how to create a gesture based animation using `createGesture` (maybe lin
 
 ## Performance Considerations
 
-Info on performance considerations
+CSS and Web Animations are usually handled on the compositor thread. This is different than the main thread where layout, painting, styling, and your JavaScript is executed. It is recommended that you prefer animate properties that can be handled on the compositor thread for optimal animation performance.
+
+Animating properties such as `height` and `width` cause additional layouts and paints which can cause jank and degrade animation performance. On the other hand, animation properties such as `transform` and `opacity` are highly optimizable by the browser and typically do not cause much jank.
+
+For information on which CSS properties cause layouts or paints to occur, see [CSS Triggers](https://csstriggers.com/).
 
 ## Types
 
