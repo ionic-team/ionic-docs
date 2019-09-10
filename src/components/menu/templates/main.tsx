@@ -60,8 +60,8 @@ const items = {
     'menu-react-your-first-app': '/docs/react/your-first-app',
     'menu-react-lifecycle': '/docs/react/lifecycle',
     'menu-react-navigation': '/docs/react/navigation',
-    'Config': '/docs/react/config',
-    'Platform Utils': '/docs/react/platform'
+    'menu-react-config': '/docs/react/config',
+    'menu-react-platform': '/docs/react/platform'
   },
   'menu-vue': {
     'menu-vue-overview': '/docs/vue/overview',
