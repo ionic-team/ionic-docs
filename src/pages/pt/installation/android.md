@@ -29,6 +29,8 @@ Native Android apps are compiled with the <a href="https://java.com/en/" target=
 
 Android Studio is also used to [create Android virtual devices](/docs/installation/android#creating-an-android-virtual-device), which are required for the Android emulator. Ionic apps can also be [launched to a device](/docs/installation/android#set-up-an-android-device).
 
+> We don't recommend using Android Studio for *developing* Ionic apps. Instead, it should only really be used to build and run your apps for the native Android platform and to manage the Android SDK and virtual devices.
+
 ### Installing Android Studio
 
 Download Android Studio from the <a href="https://developer.android.com/studio/" target="_blank">Android website</a>. More detailed installation instructions can be found in the <a href="https://developer.android.com/studio/install" target="_blank">User Guide</a>.
@@ -41,10 +43,7 @@ Once installed, open Android Studio. The IDE should detect that the Android SDK 
 
 By default, the latest stable SDK Platform is installed, which includes a collection of packages required to target that version of Android.
 
-<blockquote>
-    📝 <strong>Note</strong>: To install system images and other minor SDK platform packages, you may need to ensure <strong>Show Package Details</strong> is checked at the bottom of the SDK Manager.
-    <img alt="Android Studio SDK Manager" src="/docs/assets/img/installation/android-studio-sdk.png" />
-</blockquote>
+> To install system images and other minor SDK platform packages, you may need to ensure **Show Package Details** is checked at the bottom of the SDK Manager. ![Android Studio SDK Manager](/docs/assets/img/installation/android-studio-sdk.png)
 
 For future reference, the Android SDK can be managed with Android Studio in the **Configure** &raquo; **SDK Manager** menu of the Android Studio welcome screen or **Tools** &raquo; **SDK Manager** inside Android projects.
 
