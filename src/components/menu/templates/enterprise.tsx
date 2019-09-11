@@ -37,22 +37,6 @@ const items = {
     'Active Directory': 'https://ionicframework.com/integrations/ms-activedirectory-ms-adal',
     'mParticle': '/docs/enterprise/mparticle',
   },
-  'menu-enterprise-inter-app-communication': {
-    'Email Composer': '/docs/enterprise/email-composer',
-  },
-  'menu-enterprise-maps-navigation': {
-    'Geolocation': '/docs/enterprise/geolocation',
-  },
-  'menu-enterprise-media': {
-    'Media': '/docs/enterprise/media',
-    'Media Capture': '/docs/enterprise/media-capture',
-  },
-  'menu-enterprise-native-ui': {
-    'Dialogs': '/docs/enterprise/dialogs',
-  },
-  'menu-enterprise-notifications': {
-    'Badge': '/docs/enterprise/badge',
-  },
   'menu-enterprise-offline-data': {
     'Couchbase Lite': '/docs/enterprise/couchbase-lite',
   },

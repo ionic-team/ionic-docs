@@ -69,7 +69,7 @@ ionic-search .SearchBtn__lg__key {
 
 ionic-search .SearchBtn__sm {
   fill: rgb(115, 132, 154);
-  height:  16px;
+  height:  20px;
   cursor: pointer;
   transition: .2s color;
 }

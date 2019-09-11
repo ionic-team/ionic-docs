@@ -1,5 +1,5 @@
 import { Component, Listen, Prop, State, h } from '@stencil/core';
-import { Book, Checkmark, Logo, Translation } from '../../icons';
+import { Checkmark, ForwardArrow, Logo, Translation } from '../../icons';
 import { l10n } from '../../l10n';
 
 @Component({
@@ -65,110 +65,79 @@ export class DocsHeader {
           <Logo class="HeaderLogo"/>
         </stencil-route-link>
 
-        <nav class="SectionNav">
-          <stencil-route-switch>
-            <stencil-route url="/docs/appflow">
-              {this.renderMenu('Appflow')}
-            </stencil-route>
-            <stencil-route url="/docs/studio">
-              {this.renderMenu('Studio')}
-            </stencil-route>
-            <stencil-route>
-              {this.renderMenu('Framework')}
-            </stencil-route>
-          </stencil-route-switch>
-        </nav>
+        <header-mobile-collapse>
+          <nav class="SectionNav">
+            <stencil-route-switch>
+              <stencil-route url="/docs/appflow">
+                {this.renderMenu('Appflow')}
+              </stencil-route>
+              <stencil-route url="/docs/studio">
+                {this.renderMenu('Studio')}
+              </stencil-route>
+              <stencil-route>
+                {this.renderMenu('Framework')}
+              </stencil-route>
+            </stencil-route-switch>
+          </nav>
 
-        <nav class="UtilNav">
-          <ionic-search>
-            <div class="Search__Defaults">
-              <div class="Search__Defaults__Section">
-                <h4>Getting Started</h4>
-                <ul>
-                  <li><a href="/docs/installation/cli"><Book/><strong>Installation Guide</strong> | Installation</a></li>
-                  <li><a href="/docs/building/running"><Book/><strong>Running an App</strong> | Building</a></li>
-                  <li><a href="/docs/layout/structure"><Book/><strong>App Structure</strong> | Layout</a></li>
-                  <li><a href="/docs/theming/basics"><Book/><strong>Theming Basics</strong> | Theming</a></li>
-                </ul>
+          <nav class="UtilNav">
+            <ionic-search></ionic-search>
+            <docs-dropdown label={getString('header-community')} align="right">
+              <section>
+                <a href="https://ionicframework.com/community" target="_blank">Community Hub</a>
+              </section>
+              <section>
+                <a href="https://forum.ionicframework.com/" target="_blank">Forum</a>
+                <a href="http://ionicworldwide.herokuapp.com/" target="_blank">Slack</a>
+                <a href="https://spectrum.chat/ionic" target="_blank">Spectrum</a>
+                <a href="https://www.meetup.com/topics/ionic-framework/" target="_blank">Meetups</a>
+              </section>
+              <section>
+                <a href="https://blog.ionicframework.com/" target="_blank">Blog</a>
+                <a href="https://twitter.com/ionicframework" target="_blank">Twitter</a>
+                <a href="https://shop.ionicframework.com/" target="_blank">Swag</a>
+              </section>
+            </docs-dropdown>
+            <docs-dropdown label={getString('header-support')} align="right">
+              <section>
+                <a href="https://ionicframework.com/support" target="_blank">Help Center</a>
+              </section>
+              <section>
+                <a href="https://ionic.zendesk.com/" target="_blank">Customer Support</a>
+                <a href="https://ionicframework.com/advisory" target="_blank">Enterprise Advisory</a>
+              </section>
+            </docs-dropdown>
+            <docs-dropdown icon={Translation} align="right" label="Translations" class="label-sm-only">
+              <section>
+                <a href="https://ionicframework.com/en/docs/" class="link-active">
+                  English
+                  <svg viewBox="0 0 512 512" width="14">
+                    <path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"></path>
+                  </svg>
+                </a>
+                <a href="https://ionicframework.com/jp/docs/" target="_blank">日本語</a>
+              </section>
+              <section>
+                <a href="https://ionicframework.com/translate" target="_blank">Translate</a>
+              </section>
+              {/* WIP Languages - included for pre-rendering, but hidden */}
+              <div style={{ display: 'none' }}>
+                <a href="/docs/zh">Chinese</a>
+                <a href="/docs/fr">French</a>
+                <a href="/docs/pt">Portuguese</a>
+                <a href="/docs/es">Spanish</a>
               </div>
-              <div class="Search__Defaults__Section">
-                <h4>Common topics</h4>
-                <ul>
-                  <li><a href="/docs/building/testing"><Book/><strong>Testing</strong> | Building</a></li>
-                  <li><a href="/docs/building/cross-platform#storage"><Book/><strong>Storage</strong> | Building</a></li>
-                  <li><a href="/docs/lifecycle/angular"><Book/><strong>Life Cycle Events</strong> | Angular</a></li>
-                  <li><a href="/docs/navigation/angular"><Book/><strong>Navigation</strong> | Angular</a></li>
-                </ul>
-              </div>
-              <div class="Search__Defaults__Section">
-                <h4>UI Components</h4>
-                <ul>
-                  <li><a href="/docs/api/button"><Book/><strong>ion-button</strong> | Buttons</a></li>
-                  <li><a href="/docs/api/card"><Book/><strong>ion-card</strong> | Cards</a></li>
-                  <li><a href="/docs/api/loading"><Book/><strong>ion-loading</strong> | Progress Indicators</a></li>
-                  <li><a href="/docs/api/tabs"><Book/><strong>ion-tabs</strong> | Tabs</a></li>
-                </ul>
-              </div>
-              <div class="Search__Defaults__Section">
-                <h4>Native</h4>
-                <ul>
-                  <li><a href="/docs/enterprise/camera"><Book/><strong>Camera</strong> | Native EE</a></li>
-                  <li><a href="/docs/enterprise/identity-vault"><Book/><strong>Identity Vault</strong> | Native EE</a></li>
-                  <li><a href="/docs/native/firebase"><Book/><strong>Firebase</strong> | Native CE</a></li>
-                  <li><a href="/docs/native/barcode-scanner"><Book/><strong>Barcode Scanner</strong> | Native CE</a></li>
-                </ul>
-              </div>
-            </div>
-          </ionic-search>
-          <docs-dropdown label={getString('header-community')} align="right">
-            <section>
-              <a href="https://ionicframework.com/community" target="_blank">Community Hub</a>
-            </section>
-            <section>
-              <a href="https://forum.ionicframework.com/" target="_blank">Forum</a>
-              <a href="http://ionicworldwide.herokuapp.com/" target="_blank">Slack</a>
-              <a href="https://spectrum.chat/ionic" target="_blank">Spectrum</a>
-              <a href="https://www.meetup.com/topics/ionic-framework/" target="_blank">Meetups</a>
-            </section>
-            <section>
-              <a href="https://blog.ionicframework.com/" target="_blank">Blog</a>
-              <a href="https://twitter.com/ionicframework" target="_blank">Twitter</a>
-              <a href="https://shop.ionicframework.com/" target="_blank">Swag</a>
-            </section>
-          </docs-dropdown>
-          <docs-dropdown label={getString('header-support')} align="right">
-            <section>
-              <a href="https://ionicframework.com/support" target="_blank">Help Center</a>
-            </section>
-            <section>
-              <a href="https://ionic.zendesk.com/" target="_blank">Customer Support</a>
-              <a href="https://ionicframework.com/advisory" target="_blank">Enterprise Advisory</a>
-            </section>
-          </docs-dropdown>
-          <docs-dropdown icon={Translation} align="right">
-            <section>
-              <a href="/docs/" class="link-active">
-                English
-                <svg viewBox="0 0 512 512" width="14">
-                  <path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"></path>
-                </svg>
-              </a>
-              <a href="/docs/ja" target="_blank">日本語</a>
-            </section>
-            <section>
-              <a href="https://ionicframework.com/translate" target="_blank">Translate</a>
-            </section>
-            {/* WIP Languages - included for pre-rendering, but hidden */}
-            <div style={{ display: 'none' }}>
-              <a href="/docs/zh">Chinese</a>
-              <a href="/docs/fr">French</a>
-              <a href="/docs/pt">Portuguese</a>
-              <a href="/docs/es">Spanish</a>
-            </div>
-          </docs-dropdown>
-          <a href="https://github.com/ionic-team/ionic" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
-          <a href="https://twitter.com/ionicframework" target="_blank"><ion-icon name="logo-twitter"></ion-icon></a>
-        </nav>
+            </docs-dropdown>
+            <a href="https://github.com/ionic-team/ionic" target="_blank">
+              <ion-icon name="logo-github" class="lg-only"></ion-icon>
+              <span class="sm-only">GitHub <ForwardArrow class="Dropdown-arrow"/></span>
+            </a>
+            <a href="https://twitter.com/ionicframework" target="_blank">
+              <ion-icon name="logo-twitter" class="lg-only"></ion-icon>
+              <span class="sm-only">Twitter <ForwardArrow class="Dropdown-arrow"/></span>
+            </a>
+          </nav>
+        </header-mobile-collapse>
       </header>
     );
   }
