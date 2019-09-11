@@ -28,6 +28,7 @@
     "express": "^4.16.4",
     "helmet": "^3.16.0",
     "ionicons": "^4.6.1",
+    "simple-git": "^1.126.0",
     "throng": "^4.0.0"
   },
   "devDependencies": {
