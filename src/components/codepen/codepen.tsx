@@ -1,7 +1,7 @@
 import { Component, Host, Prop, h } from '@stencil/core';
 
 @Component({
-  tag: 'code-pen',
+  tag: 'docs-codepen',
   shadow: true
 })
 export class CodePen {

@@ -28,15 +28,6 @@ export namespace Components {
     'mode': string;
     'value': string;
   }
-  interface CodePen {
-    'defaultTab': string;
-    'height': string | number;
-    'penTitle': string;
-    'preview': boolean;
-    'slug': string;
-    'theme': string;
-    'user': string;
-  }
   interface ColorAccordion {}
   interface ColorGenCssText {
     'cssText': string;
@@ -84,6 +75,15 @@ export namespace Components {
   interface DocsCards {}
   interface DocsCode {
     'language': string;
+  }
+  interface DocsCodepen {
+    'defaultTab': string;
+    'height': string | number;
+    'penTitle': string;
+    'preview': boolean;
+    'slug': string;
+    'theme': string;
+    'user': string;
   }
   interface DocsDemo {
     'source': string;
@@ -174,12 +174,6 @@ declare global {
     new (): HTMLCodeColorElement;
   };
 
-  interface HTMLCodePenElement extends Components.CodePen, HTMLStencilElement {}
-  var HTMLCodePenElement: {
-    prototype: HTMLCodePenElement;
-    new (): HTMLCodePenElement;
-  };
-
   interface HTMLColorAccordionElement extends Components.ColorAccordion, HTMLStencilElement {}
   var HTMLColorAccordionElement: {
     prototype: HTMLColorAccordionElement;
@@ -268,6 +262,12 @@ declare global {
   var HTMLDocsCodeElement: {
     prototype: HTMLDocsCodeElement;
     new (): HTMLDocsCodeElement;
+  };
+
+  interface HTMLDocsCodepenElement extends Components.DocsCodepen, HTMLStencilElement {}
+  var HTMLDocsCodepenElement: {
+    prototype: HTMLDocsCodepenElement;
+    new (): HTMLDocsCodepenElement;
   };
 
   interface HTMLDocsDemoElement extends Components.DocsDemo, HTMLStencilElement {}
@@ -427,7 +427,6 @@ declare global {
   };
   interface HTMLElementTagNameMap {
     'code-color': HTMLCodeColorElement;
-    'code-pen': HTMLCodePenElement;
     'color-accordion': HTMLColorAccordionElement;
     'color-gen-css-text': HTMLColorGenCssTextElement;
     'color-gen-preview': HTMLColorGenPreviewElement;
@@ -443,6 +442,7 @@ declare global {
     'docs-card': HTMLDocsCardElement;
     'docs-cards': HTMLDocsCardsElement;
     'docs-code': HTMLDocsCodeElement;
+    'docs-codepen': HTMLDocsCodepenElement;
     'docs-demo': HTMLDocsDemoElement;
     'docs-dropdown': HTMLDocsDropdownElement;
     'docs-header': HTMLDocsHeaderElement;
@@ -477,15 +477,6 @@ declare namespace LocalJSX {
     'display'?: string;
     'mode'?: string;
     'value'?: string;
-  }
-  interface CodePen extends JSXBase.HTMLAttributes<HTMLCodePenElement> {
-    'defaultTab'?: string;
-    'height'?: string | number;
-    'penTitle'?: string;
-    'preview'?: boolean;
-    'slug'?: string;
-    'theme'?: string;
-    'user'?: string;
   }
   interface ColorAccordion extends JSXBase.HTMLAttributes<HTMLColorAccordionElement> {}
   interface ColorGenCssText extends JSXBase.HTMLAttributes<HTMLColorGenCssTextElement> {
@@ -539,6 +530,15 @@ declare namespace LocalJSX {
   interface DocsCards extends JSXBase.HTMLAttributes<HTMLDocsCardsElement> {}
   interface DocsCode extends JSXBase.HTMLAttributes<HTMLDocsCodeElement> {
     'language'?: string;
+  }
+  interface DocsCodepen extends JSXBase.HTMLAttributes<HTMLDocsCodepenElement> {
+    'defaultTab'?: string;
+    'height'?: string | number;
+    'penTitle'?: string;
+    'preview'?: boolean;
+    'slug'?: string;
+    'theme'?: string;
+    'user'?: string;
   }
   interface DocsDemo extends JSXBase.HTMLAttributes<HTMLDocsDemoElement> {
     'source'?: string;
@@ -621,7 +621,6 @@ declare namespace LocalJSX {
 
   interface IntrinsicElements {
     'code-color': CodeColor;
-    'code-pen': CodePen;
     'color-accordion': ColorAccordion;
     'color-gen-css-text': ColorGenCssText;
     'color-gen-preview': ColorGenPreview;
@@ -637,6 +636,7 @@ declare namespace LocalJSX {
     'docs-card': DocsCard;
     'docs-cards': DocsCards;
     'docs-code': DocsCode;
+    'docs-codepen': DocsCodepen;
     'docs-demo': DocsDemo;
     'docs-dropdown': DocsDropdown;
     'docs-header': DocsHeader;
