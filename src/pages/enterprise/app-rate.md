@@ -1,7 +1,7 @@
 ---
 title: AppRate
 template: enterprise-plugin
-version: 1.4.0
+version: 1.4.1
 minor: 1.4.X
 ---
 
