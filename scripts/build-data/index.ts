@@ -6,7 +6,7 @@ import buildContributors from './file-contributors';
 
 const tasks = new Listr([
   buildApiReference,
-  buildContributors,
+  // buildContributors,
   buildReleaseNotes,
   buildSearchIndex,
 ],
