@@ -30,7 +30,7 @@ export class DocsPageFooter {
 
     // merge and dedupe contributor data
     const contributors = Array.from(
-      new Set([...page.github.contributors, ...page.contributors])
+      new Set([...page.github.contributors || [], ...page.contributors || []])
     );
 
     const editHref = `https://github.com/ionic-team/ionic-docs/edit/master/${path}`;
