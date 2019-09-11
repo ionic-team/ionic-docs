@@ -10,3 +10,4 @@ src/components/page/data/
 src/components/search/data/
 .idea
 /.env
+/scripts/data/github-commits.json

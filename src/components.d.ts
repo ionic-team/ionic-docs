@@ -76,6 +76,15 @@ export namespace Components {
   interface DocsCode {
     'language': string;
   }
+  interface DocsCodepen {
+    'defaultTab': string;
+    'height': string | number;
+    'penTitle': string;
+    'preview': boolean;
+    'slug': string;
+    'theme': string;
+    'user': string;
+  }
   interface DocsDemo {
     'source': string;
     'url': string;
@@ -255,6 +264,12 @@ declare global {
     new (): HTMLDocsCodeElement;
   };
 
+  interface HTMLDocsCodepenElement extends Components.DocsCodepen, HTMLStencilElement {}
+  var HTMLDocsCodepenElement: {
+    prototype: HTMLDocsCodepenElement;
+    new (): HTMLDocsCodepenElement;
+  };
+
   interface HTMLDocsDemoElement extends Components.DocsDemo, HTMLStencilElement {}
   var HTMLDocsDemoElement: {
     prototype: HTMLDocsDemoElement;
@@ -427,6 +442,7 @@ declare global {
     'docs-card': HTMLDocsCardElement;
     'docs-cards': HTMLDocsCardsElement;
     'docs-code': HTMLDocsCodeElement;
+    'docs-codepen': HTMLDocsCodepenElement;
     'docs-demo': HTMLDocsDemoElement;
     'docs-dropdown': HTMLDocsDropdownElement;
     'docs-header': HTMLDocsHeaderElement;
@@ -514,6 +530,15 @@ declare namespace LocalJSX {
   interface DocsCards extends JSXBase.HTMLAttributes<HTMLDocsCardsElement> {}
   interface DocsCode extends JSXBase.HTMLAttributes<HTMLDocsCodeElement> {
     'language'?: string;
+  }
+  interface DocsCodepen extends JSXBase.HTMLAttributes<HTMLDocsCodepenElement> {
+    'defaultTab'?: string;
+    'height'?: string | number;
+    'penTitle'?: string;
+    'preview'?: boolean;
+    'slug'?: string;
+    'theme'?: string;
+    'user'?: string;
   }
   interface DocsDemo extends JSXBase.HTMLAttributes<HTMLDocsDemoElement> {
     'source'?: string;
@@ -611,6 +636,7 @@ declare namespace LocalJSX {
     'docs-card': DocsCard;
     'docs-cards': DocsCards;
     'docs-code': DocsCode;
+    'docs-codepen': DocsCodepen;
     'docs-demo': DocsDemo;
     'docs-dropdown': DocsDropdown;
     'docs-header': DocsHeader;
