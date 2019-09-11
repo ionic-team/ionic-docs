@@ -69,6 +69,7 @@ const getGitHubData = async (filePath: string) => {
       lastUpdated
     };
   } catch (error) {
+    console.warn(error);
     return {
       path,
       contributors: [],
