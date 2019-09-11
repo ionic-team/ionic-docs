@@ -1,7 +1,7 @@
 ---
 title: SocialSharing
 template: enterprise-plugin
-version: 5.6.0
+version: 5.6.1
 minor: 5.6.X
 ---
 
