@@ -39,9 +39,6 @@ async function getAllGHCommits(task, page = 1) {
       obj[commit.sha] = {
         id: commit.author.login,
         avatar: commit.author.avatar_url,
-        gravatar: commit.author.gravatar_id,
-        profile: commit.author.html_url,
-        admin: commit.author.site_admin,
         time: commit.commit.committer.date
       };
       return obj;
