@@ -151,6 +151,7 @@ docs page.
 - [Email Composer](/docs/enterprise/email-composer)
 - [Filesystem](/docs/enterprise/filesystem)
 - [Geolocation](/docs/enterprise/geolocation)
+- [Globalization](/docs/enterprise/globalization)
 - [Haptics & Vibration](/docs/enterprise/vibration)
 - [Keyboard](/docs/enterprise/keyboard)
 - [Media](/docs/enterprise/media)
