@@ -35,7 +35,7 @@ minor: 1.11.X
 
 *__usage__*:
  ```typescript
-import { Globalization } from '@ionic-native/globalization/ngx';
+import { Globalization } from '@ionic-enterprise/globalization/ngx';
 
 constructor(private globalization: Globalization) { }
 
