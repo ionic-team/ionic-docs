@@ -51,8 +51,9 @@
   "menu-theming-css-variables": "CSS Variables",
   "menu-theming-colors": "Colors",
   "menu-theming-themes": "Themes",
-  "menu-theming-color-generator": "Color Generator",
+  "menu-theming-dark-mode": "Dark Mode",
   "menu-theming-advanced": "Advanced",
+  "menu-theming-color-generator": "Color Generator",
 
   "menu-angular": "Angular",
   "menu-angular-overview": "Overview",

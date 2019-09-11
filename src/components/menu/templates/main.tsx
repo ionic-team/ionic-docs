@@ -44,6 +44,7 @@ const items = {
     'menu-theming-css-variables': '/docs/theming/css-variables',
     'menu-theming-colors': '/docs/theming/colors',
     'menu-theming-themes': '/docs/theming/themes',
+    'menu-theming-dark-mode': '/docs/theming/dark-mode',
     'menu-theming-advanced': '/docs/theming/advanced',
     'menu-theming-color-generator': '/docs/theming/color-generator',
   },
