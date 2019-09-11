@@ -28,15 +28,6 @@ export namespace Components {
     'mode': string;
     'value': string;
   }
-  interface CodePen {
-    'defaultTab': string;
-    'height': string;
-    'penTitle': string;
-    'preview': boolean;
-    'slug': string;
-    'theme': string;
-    'user': string;
-  }
   interface ColorAccordion {}
   interface ColorGenCssText {
     'cssText': string;
@@ -181,12 +172,6 @@ declare global {
   var HTMLCodeColorElement: {
     prototype: HTMLCodeColorElement;
     new (): HTMLCodeColorElement;
-  };
-
-  interface HTMLCodePenElement extends Components.CodePen, HTMLStencilElement {}
-  var HTMLCodePenElement: {
-    prototype: HTMLCodePenElement;
-    new (): HTMLCodePenElement;
   };
 
   interface HTMLColorAccordionElement extends Components.ColorAccordion, HTMLStencilElement {}
@@ -442,7 +427,6 @@ declare global {
   };
   interface HTMLElementTagNameMap {
     'code-color': HTMLCodeColorElement;
-    'code-pen': HTMLCodePenElement;
     'color-accordion': HTMLColorAccordionElement;
     'color-gen-css-text': HTMLColorGenCssTextElement;
     'color-gen-preview': HTMLColorGenPreviewElement;
@@ -493,15 +477,6 @@ declare namespace LocalJSX {
     'display'?: string;
     'mode'?: string;
     'value'?: string;
-  }
-  interface CodePen extends JSXBase.HTMLAttributes<HTMLCodePenElement> {
-    'defaultTab'?: string;
-    'height'?: string;
-    'penTitle'?: string;
-    'preview'?: boolean;
-    'slug'?: string;
-    'theme'?: string;
-    'user'?: string;
   }
   interface ColorAccordion extends JSXBase.HTMLAttributes<HTMLColorAccordionElement> {}
   interface ColorGenCssText extends JSXBase.HTMLAttributes<HTMLColorGenCssTextElement> {
@@ -646,7 +621,6 @@ declare namespace LocalJSX {
 
   interface IntrinsicElements {
     'code-color': CodeColor;
-    'code-pen': CodePen;
     'color-accordion': ColorAccordion;
     'color-gen-css-text': ColorGenCssText;
     'color-gen-preview': ColorGenPreview;

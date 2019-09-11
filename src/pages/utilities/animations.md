@@ -23,8 +23,6 @@ Ionic Animations uses the [Web Animations API](https://developer.mozilla.org/en-
 createAnimation()
   .addElement(document.querySelector('.square'))
   .duration(3000)
-  .easing('linear')
-  .fill('both')
   .iterations(Infinity)
   .fromTo('transform', 'translateX(100px)')
   .fromTo('opacity', 1, 0.5);
@@ -32,7 +30,7 @@ createAnimation()
 
 In the example above, an animation that changes the transform and opacity on the `.square` element has been created.
 
-<code-pen user="liamdebeasi" slug="jjzZMV"></code-pen>
+<docs-codepen user="ionic" slug="bGbMojP"></docs-codepen>
 
 ## Keyframe Animations
 
@@ -44,8 +42,6 @@ Ionic Animations allow you to control the intermediate steps in an animation usi
 createAnimation()
   .addElement(document.querySelector('.square'))
   .duration(3000)
-  .easing('linear')
-  .fill('both')
   .iterations(Infinity)
   .keyframes([
     { offset: 0, background: 'red' },
@@ -58,7 +54,7 @@ In the example above, the `.square` element will transition from a red backgroun
 
 Each keyframe object contains an `offset` property. `offset` is a value between 0 and 1 that defined the keyframe step.
 
-CODEPEN WITH LIVE DEMO SHOULD GO HERE
+<docs-codepen user="ionic" slug="YzKLEzR"></docs-codepen>
 
 ## Grouped Animations
 
@@ -95,14 +91,12 @@ const squareC = createAnimation()
 const parent = createAnimation()
   .duration(2000)
   .iterations(Infinity)
-  .easing('linear')
-  .addAnimation([squareA, squareB, squareC])
-  .play();
+  .addAnimation([squareA, squareB, squareC]);
 ```
 
 This example shows 3 child animations controlled by a single parent animation. Animations `squareA` and `squareB` inherit the parent animation's duration of 2000ms, but animation `squareC` has a duration of 5000ms since it was explicitly set.
 
-CODEPEN WITH LIVE DEMO SHOULD GO HERE
+<docs-codepen user="ionic" slug="oNvdogM" height="460"></docs-codepen>
 
 ## Before and After Hooks
 
@@ -114,7 +108,6 @@ Ionic Animations provides hooks that let you alter an element before and animati
 createAnimation()
   .addElement(document.querySelector('.square'))
   .duration(2000)
-  .easing('linear')
   .beforeStyles({
     opacity: 0.2
   })
@@ -133,7 +126,7 @@ In this example, an inline opacity of 0.2 is set on the `.square` element prior 
 
 See [Methods](#methods) for a complete list of hooks.
 
-CODEPEN WITH LIVE DEMO SHOULD GO HERE
+<docs-codepen user="ionic" slug="BaBxmwo"></docs-codepen>
 
 ## Chained Animations
 
@@ -183,7 +176,7 @@ squareB.onFinish(() => squareC.play());
 squareA.play();
 ```
 
-CODEPEN WITH LIVE DEMO SHOULD GO HERE
+<docs-codepen user="ionic" slug="MWgGrwX" height="460"></docs-codepen>
 
 ## Gesture Animations
 
