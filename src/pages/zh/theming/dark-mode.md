@@ -76,11 +76,11 @@ function toggleDarkTheme(shouldAdd) {
 }
 ```
 
-<!-- Codepen https://codepen.io/ionic/pen/jONzJpG -->
+> Tip: make sure to view the Codepen below in a [supported browser]((https://caniuse.com/#feat=prefers-color-scheme)) and then try changing the system preferences on your device between light & dark mode. Here's [how to enable dark mode on Windows 10](https://blogs.windows.com/windowsexperience/2016/08/08/windows-10-tip-personalize-your-pc-by-enabling-the-dark-theme/) and [how to enable it on a Mac](https://support.apple.com/en-us/HT208976).
 
-<code-pen user="ionic" slug="jONzJpG">&lt;/code-pen>&lt;/p>
+<!-- Codepen https://codepen.io/ionic/pen/jONzJpG --><docs-codepen preview="false" user="ionic" slug="jONzJpG" height="550px" default-tab="js,result"></docs-codepen>
 
-&lt;p>In addition to calling &lt;code>toggleDarkTheme()</code> from `loadApp()` and when the media query changes, the `toggleDarkTheme()` function could be called by the app, such as when a user changes a toggle, to switch between the light and dark themes:
+In addition to calling `toggleDarkTheme()` from `loadApp()` and when the media query changes, the `toggleDarkTheme()` function could be called by the app, such as when a user changes a toggle, to switch between the light and dark themes:
 
 ```javascript
 // Query for the toggle that is used to change between themes
@@ -107,19 +107,15 @@ function checkToggle(shouldCheck) {
 }
 ```
 
-<!-- Codepen https://codepen.io/ionic/pen/zYOpQLj -->
+<!-- Codepen https://codepen.io/ionic/pen/zYOpQLj --><docs-codepen preview="false" user="ionic" slug="zYOpQLj" height="600px" default-tab="js,result"></docs-codepen>
 
-<code-pen user="ionic" slug="zYOpQLj">&lt;/code-pen>&lt;/p>
+## Ionic Dark Theme
 
-&lt;h2>Ionic Dark Theme&lt;/h2>
+Ionic has a recommended theme for variables to use in order to get a dark mode based on the device running the app. It can be broken down into the following parts:
 
-&lt;p>Ionic has a recommended theme for variables to use in order to get a dark mode based on the device running the app. It can be broken down into the following parts:&lt;/p>
-
-&lt;ol start="1" spaces="0" level="0">
-&lt;li level="0">Changing the default &lt;a href="/docs/theming/colors">Ionic colors&lt;/a> for all &lt;a href="/docs/theming/platform-styles#ionic-modes">modes&lt;/a> to complement the dark background in the &lt;code>body.dark</code> selector.</li> 
-
-- Setting variables for the dark theme on `ios` devices.
-- Setting variables for the dark theme on `md` devices.</ol> 
+1. Changing the default [Ionic colors](/docs/theming/colors) for all [modes](/docs/theming/platform-styles#ionic-modes) to complement the dark background in the `body.dark` selector.
+2. Setting variables for the dark theme on `ios` devices.
+3. Setting variables for the dark theme on `md` devices.
 
 The following code can be copied and pasted into an app to get Ionic's dark theme. We add the `dark` class to the document body using JavaScript as mentioned in the [combining with JavaScript](#combining-with-javascript) section. The dark mode will not be enabled until the `dark` class is added to the document body.
 
