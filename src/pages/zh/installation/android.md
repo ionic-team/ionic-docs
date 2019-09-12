@@ -41,9 +41,9 @@ Android Studio 也用于 [创建Android 虚拟设备](/docs/installation/android
 
 ![Android Studio SDK Setup](/docs/assets/img/installation/android-studio-sdk-setup.png)
 
-By default, the latest stable SDK Platform is installed, which includes a collection of packages required to target that version of Android.
+默认情况下，安装了最新的稳定版 Android SDK，其中包括了对应版本所需的一系列软件包。
 
-> To install system images and other minor SDK platform packages, you may need to ensure **Show Package Details** is checked at the bottom of the SDK Manager. ![Android Studio SDK Manager](/docs/assets/img/installation/android-studio-sdk.png)
+> 要安装SDK系统镜像和其他次要的SDK包，您可能需要确保勾选了在 SDK 管理器底部的 **显示软件包详细信息** 选项框。 ![Android Studio SDK Manager](/docs/assets/img/installation/android-studio-sdk.png)
 
 For future reference, the Android SDK can be managed with Android Studio in the **Configure** &raquo; **SDK Manager** menu of the Android Studio welcome screen or **Tools** &raquo; **SDK Manager** inside Android projects.
 
