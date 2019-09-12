@@ -13,12 +13,12 @@ This guide discusses how to use the Ionic Lifecycle events in an Ionic React app
 
 Ionic provides a few lifecycle methods that you can use in your apps:
 
-| Event Name | Description |
-|--------------------|------------------------------------------------------------------|
+| Event Name         | Description                                                        |
+| ------------------ | ------------------------------------------------------------------ |
 | `ionViewWillEnter` | Fired when the component routing to is about to animate into view. |
-| `ionViewDidEnter` | Fired when the component routing to has finished animating. |
-| `ionViewWillLeave` | Fired when the component routing from is about to animate. |
-| `ionViewDidLeave` | Fired when the component routing to has finished animating. |
+| `ionViewDidEnter`  | Fired when the component routing to has finished animating.        |
+| `ionViewWillLeave` | Fired when the component routing from is about to animate.         |
+| `ionViewDidLeave`  | Fired when the component routing to has finished animating.        |
 
 The way you access these methods varies based on if you are using class-based components or functional components. We cover both methods below.
 
@@ -35,39 +35,38 @@ You can then create the appropriate lifecycle method on your class component, an
 
 ```typescript
 import React from 'react';
-import { IonHeader, IonToolbar, IonTitle, IonContent, withIonLifeCycle } from '@ionic/react';
+import { IonHeader, IonPage, IonToolbar, IonTitle, IonContent, withIonLifeCycle } from '@ionic/react';
 
 class HomePage extends React.Component {
 
- ionViewWillEnter() {
- console.log('ionViewWillEnter event fired')
- }
+  ionViewWillEnter() {
+    console.log('ionViewWillEnter event fired')
+  }
 
- ionViewWillLeave() {
- console.log('ionViewWillLeave event fired')
- }
+  ionViewWillLeave() {
+    console.log('ionViewWillLeave event fired')
+  }
 
- ionViewDidEnter() {
- console.log('ionViewDidEnter event fired')
- }
+  ionViewDidEnter() {
+    console.log('ionViewDidEnter event fired')
+  }
 
- ionViewDidLeave() {
- console.log('ionViewDidLeave event fired')
- }
+  ionViewDidLeave() {
+    console.log('ionViewDidLeave event fired')
+  }
 
- render() {
- return (
- <>
- <IonHeader>
- <IonToolbar>
- <IonTitle>Home</IonTitle>
- </IonToolbar>
- </IonHeader>
- <IonContent></IonContent>
- </>
- );
- }
-}
+  render() {
+    return (
+      <IonPage>
+        <IonHeader>
+          <IonToolbar>
+            <IonTitle>Home</IonTitle>
+          </IonToolbar>
+        </IonHeader>
+        <IonContent></IonContent>
+      </IonPage>
+    );
+  }
 
 export default withIonLifeCycle(HomePage);
 ```
@@ -78,45 +77,45 @@ Ionic React exports hooks for each of the lifecycle methods that you can use in 
 
 ```typescript
 import {
- IonContent,
- IonHeader,
- IonTitle,
- IonToolbar,
- useIonViewDidEnter,
- useIonViewDidLeave,
- useIonViewWillEnter,
- useIonViewWillLeave
+  IonContent,
+  IonHeader,
+  IonTitle,
+  IonToolbar,
+  useIonViewDidEnter,
+  useIonViewDidLeave,
+  useIonViewWillEnter,
+  useIonViewWillLeave
 } from '@ionic/react';
 import React from 'react';
 
 const HomePage: React.FC = () => {
 
- useIonViewDidEnter(() => {
- console.log('ionViewDidEnter event fired');
- });
+  useIonViewDidEnter(() => {
+    console.log('ionViewDidEnter event fired');
+  });
 
- useIonViewDidLeave(() => {
- console.log('ionViewDidLeave event fired');
- });
+  useIonViewDidLeave(() => {
+    console.log('ionViewDidLeave event fired');
+  });
 
- useIonViewWillEnter(() => {
- console.log('ionViewWillEnter event fired');
- });
+  useIonViewWillEnter(() => {
+    console.log('ionViewWillEnter event fired');
+  });
 
- useIonViewWillLeave(() => {
- console.log('ionViewWillLeave event fired');
- });
+  useIonViewWillLeave(() => {
+    console.log('ionViewWillLeave event fired');
+  });
 
- return (
- <>
- <IonHeader>
- <IonToolbar>
- <IonTitle>Home</IonTitle>
- </IonToolbar>
- </IonHeader>
- <IonContent></IonContent>
- </>
- );
+  return (
+    <IonPage>
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>Home</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent></IonContent>
+    </IonPage>
+  );
 };
 
 export default HomePage;

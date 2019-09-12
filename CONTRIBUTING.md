@@ -2,13 +2,21 @@
 
 Thanks for your interest in contributing to Ionic's documentation! :tada: Check the guidelines below for suggestions and requirements before submitting your contribution.
 
-- [Development Workflow](#development-workflow)
-- [Project Structure](#project-structure)
-- [Authoring Content](#authoring-content)
-- [Translation](#translation)
-- [Reporting Issues](#reporting-issues)
-- [Pull Request Guidelines](#pull-request-guidelines)
-- [Project Management](#project-management)
+- [Contributing Guide](#contributing-guide)
+  - [Development Workflow](#development-workflow)
+  - [Project Structure](#project-structure)
+    - [Directories](#directories)
+    - [Page Templates](#page-templates)
+    - [Menu Templates](#menu-templates)
+  - [Authoring Content](#authoring-content)
+    - [Authoring Locally](#authoring-locally)
+    - [Reference Content](#reference-content)
+  - [Translation](#translation)
+  - [Reporting Issues](#reporting-issues)
+  - [Pull Request Guidelines](#pull-request-guidelines)
+  - [Project Management](#project-management)
+  - [Deploying](#deploying)
+  - [License](#license)
 
 ---
 
