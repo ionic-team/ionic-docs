@@ -5,9 +5,7 @@
 
 The latest downloads for Ionic Studio are available in the [Ionic Dashboard](https://dashboard.ionicframework.com/personal/downloads).
 
-<blockquote>
-🚧 These docs are a work-in-progress. Check back frequently for updates!
-</blockquote>
+> 🚧 These docs are a work-in-progress. Check back frequently for updates!
 
 ## Prerequisites
 

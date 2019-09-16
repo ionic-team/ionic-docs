@@ -20,18 +20,17 @@ Here is a sample `App` component that defines a single route to the "/dashboard"
 **App.tsx**
 
 ```typescript
-const App: React.FC = () => {
-  return (
+const App: React.FC = () =>
+  (
     <IonApp>
       <IonReactRouter>
-        <IonPage>
+        <IonRouterOutlet>
           <Route path="/dashboard" component={DashboardPage} />
           <Redirect exact from="/" to="/dashboard" />
-        </IonPage>
+        </IonRouterOutlet>
       </IonReactRouter>
     </IonApp>
   );
-};
 ```
 
 Directly after the `Route`, we define our default `Redirect`, which, when a user visits the root URL of the app ("/"), it redirects them to the "/dashboard" URL.
@@ -63,12 +62,10 @@ Inside the Dashboard page, we define more routes related to this specific sectio
 ```typescript
 const DashboardPage: React.FC = () => {
   return (
-    <>
-      <IonRouterOutlet>
-        <Route exact path="/dashboard" component={UsersListPage} />
-        <Route path="/dashboard/users/:id" component={UserDetailPage} />
-      </IonRouterOutlet>
-    </>
+    <IonRouterOutlet>
+      <Route exact path="/dashboard" component={UsersListPage} />
+      <Route path="/dashboard/users/:id" component={UserDetailPage} />
+    </IonRouterOutlet>
   );
 };
 ```
@@ -80,12 +77,10 @@ However, we can use the [`match`](https://reacttraining.com/react-router/web/api
 ```typescript
 const DashboardPage: React.FC<RouteComponentProps> = ({match}) => {
   return (
-    <>
-      <IonRouterOutlet>
-        <Route exact path={match.url} component={UsersListPage} />
-        <Route path={`${match.url}/users/:id`} component={UserDetailPage} />
-      </IonRouterOutlet>
-    </>
+    <IonRouterOutlet>
+      <Route exact path={match.url} component={UsersListPage} />
+      <Route path={`${match.url}/users/:id`} component={UserDetailPage} />
+    </IonRouterOutlet>
   );
 };
 ```
@@ -113,7 +108,7 @@ There are several options available when routing to different views in an Ionic 
 ```typescript
 const UsersListPage: React.FC = () => {
   return (
-    <>
+    <IonPage>
       <IonHeader>
         <IonToolbar>
           <IonTitle>Users</IonTitle>
@@ -129,7 +124,7 @@ const UsersListPage: React.FC = () => {
           </IonItem>
         </IonList>
       </IonContent>
-    </>
+    </IonPage>
   );
 };
 ```
@@ -169,7 +164,7 @@ interface UserDetailPageProps extends RouteComponentProps<{
 
 const UserDetailPage: React.FC<UserDetailPageProps> = ({match}) => {
   return (
-    <>
+    <IonPage>
       <IonHeader>
         <IonToolbar>
           <IonTitle>User Detail</IonTitle>
@@ -178,7 +173,7 @@ const UserDetailPage: React.FC<UserDetailPageProps> = ({match}) => {
       <IonContent>
         User {match.params.id}
       </IonContent>
-    </>
+    </IonPage>
   );
 };
 ```
