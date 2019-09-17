@@ -1,8 +1,8 @@
 ---
 title: Auth Connect
 template: enterprise-plugin
-version: 1.1.2
-minor: 1.1.X
+version: 1.2.0
+minor: 1.2.X
 ---
 
 Overview
@@ -12,7 +12,7 @@ The Auth Plugin handles logging in and/or registering a user with an authenticat
 
 When used with the [Ionic Identity Vault](/docs/enterprise/identity-vault) plugin it provides a complete secure solution for authentication and storage of logged in credentials.
 
-Auth Plugin also allows you app to support multiple authentication providers, or allow you to switch from one to another without having to develop a new solution.
+Auth Plugin also allows your app to support multiple authentication providers, or allow you to switch from one to another without having to develop a new solution.
 
 Configuring Auth Connect
 ------------------------
@@ -53,6 +53,51 @@ OAuth/OpenId Connect from the following providers:
 *   Cognito (AWS)
 *   Azure Active Directory v.2 (Microsoft)
 *   Auth0
+
+**Important Note**
+
+> If you're upgrading from the `1.1.1` to `>=1.1.2` versions there are fewer dependencies required to install with the plugin. Simply run the commands below to upgrade. Imports and usage should remain identical.
+
+Upgrade from v1.1.1 to >=v1.1.2
+-------------------------------
+
+NOTE: {your url scheme} is the app specific url schemes the plugin was installed with.
+
+First remove v1.1.1 of the plugin
+
+```shell
+ionic cordova plugin rm @ionic-enterprise/auth --variable AUTH_URL_SCHEME={your url scheme}
+```
+
+You should make sure `@ionic-enterprise/auth` and `cordova-plugin-advanced-http` are completely removed from your package.json in all locations.
+
+```javascript
+...
+  "dependencies": {
+    ...
+     // Make sure both these are gone from the dependencies
+    "@ionic-enterprise/auth": "1.1.1",
+    "cordova-plugin-advanced-http": "^2.0.9",
+    ...
+  }
+  "cordova": {
+    "plugins": {
+      ...
+      // Make sure both these are gone from the cordova plugins section as well
+      "@ionic-enterprise/auth": {},
+      "cordova-plugin-advanced-http": {}
+      ...
+    },
+    ...
+  }
+...
+```
+
+It should now be safe to add >=v1.1.2 of the plugin
+
+```shell
+ionic cordova plugin add @ionic-enterprise/auth@latest --variable AUTH_URL_SCHEME={your url scheme}
+```
 
 API Documentation
 -----------------
@@ -133,9 +178,16 @@ ___
 
 ###  getAccessToken
 
-▸ **getAccessToken**(): `Promise`<`string` \| `undefined`>
+▸ **getAccessToken**(tokenName?: *`undefined` \| `string`*, scopes?: *`undefined` \| `string`*): `Promise`<`string` \| `undefined`>
 
 get the access token, once logged in, for API calls
+
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| `Optional` tokenName | `undefined` \| `string` |
+| `Optional` scopes | `undefined` \| `string` |
 
 **Returns:** `Promise`<`string` \| `undefined`>
 
@@ -488,6 +540,31 @@ ___
 ___
 
 ## Change Log
+
+
+
+### [1.2.0] (2019-09-16)
+
+
+### Bug Fixes
+
+* **all:** remove unneeded plugin deps 
+* **ios, web, android:** make sure the access token is valid before returning it 
+* **web:** password reset error was being ignored and needed to check  (hash) not  (query params) for value 
+* **Web:** Fix issue with IE 11 not working. 
+
+
+### Features
+
+* **ios,android,web:** support acquiring multiple tokens from an oauth source (especially azure ad), also fix some issues with refresh for the web path. The major change is that getToken now has two optional paramters, they both must be passed in or neither. The parameters are an id for the token being acquired and the specific scope for the token being acquired. 
+
+
+
+### [1.1.4] (2019-08-28)
+
+
+
+### [1.1.3] (2019-08-21)
 
 
 
