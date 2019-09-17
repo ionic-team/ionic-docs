@@ -30,8 +30,8 @@ Appflow是一个面向Ionic开发团队的持续集成(CI) 和持续部署(CD) �
 
 <docs-card header="Deploy FAQ" href="https://ionic.zendesk.com/hc/en-us/categories/360000409113-Deploy" icon="/docs/assets/icons/guide-faq-icon.png"> 
 
-Find answers to common questions about live updates.</docs-card>
+找出关于实时更新的常见问题的答案。</docs-card>
 
 <docs-card header="Billing FAQ" href="https://ionic.zendesk.com/hc/en-us/categories/360000410574-Billing-Support" icon="/docs/assets/icons/guide-faq-icon.png"> 
 
-Find answers to common billing questions.</docs-card> </docs-cards>
+找出常见帐单问题的答案。</docs-card> </docs-cards>
