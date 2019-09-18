@@ -130,6 +130,7 @@
   "menu-cli": "Documentation liée à l'Invité de commande",
   "menu-cli-overview": "Vue d'ensemble",
   "menu-cli-configuration": "Configuration",
+  "menu-cli-livereload": "Live Reload",
   "menu-cli-using-a-proxy": "Utiliser un proxy",
   "menu-cli-changelog": "Changer le journal des modifications",
   "menu-cli-commands": "Référence de commande",
