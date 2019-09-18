@@ -130,6 +130,7 @@
   "menu-cli": "CLI Documentation",
   "menu-cli-overview": "Visão Geral",
   "menu-cli-configuration": "Configuração",
+  "menu-cli-livereload": "Live Reload",
   "menu-cli-using-a-proxy": "Usando um Proxy",
   "menu-cli-changelog": "Change Log",
   "menu-cli-commands": "Command Reference",
