@@ -130,6 +130,7 @@
   "menu-cli": "CLI 文档",
   "menu-cli-overview": "概览",
   "menu-cli-configuration": "配置",
+  "menu-cli-livereload": "Live Reload",
   "menu-cli-using-a-proxy": "使用代理",
   "menu-cli-changelog": "更新日志",
   "menu-cli-commands": "命令参考",
