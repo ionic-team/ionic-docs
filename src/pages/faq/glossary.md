@@ -121,8 +121,7 @@ nextUrl: '/docs/faq/build'
 
   <section id="livereload">
     <a href="#livereload"><h3>Live Reload</h3></a>
-    <p><strong>Live Reload</strong> (or <strong>live-reload</strong>) is a tool that automatically reloads the browser or <a href="/docs/building/webview">Web View</a> when it detects changes in your app. In some cases, it can replace parts of your app without having to reload the entire window.</p>
-    <p>Since live-reload requires a running development server, thus requiring the Web View to load a URL instead of simply reading deployed files, using live-reload on a separate device can be tricky. This may require additional configuration. It can also cause issues such as <a href="#cors">CORS</a> errors.</p>
+    <p><strong>Live Reload</strong> (or <strong>live-reload</strong>) is a tool that automatically reloads the browser or <a href="/docs/building/webview">Web View</a> when it detects changes in your app. In some cases, it can replace parts of your app without having to reload the entire window. See the <a href="/docs/cli/livereload">Live Reload docs</a> for more information.</p>
   </section>
 
   <section id="node">

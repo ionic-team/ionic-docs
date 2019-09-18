@@ -8,6 +8,7 @@ const items = {
   'menu-cli': {
     'menu-cli-overview': '/docs/cli',
     'menu-cli-configuration': '/docs/cli/configuration',
+    'menu-cli-livereload': '/docs/cli/livereload',
     'menu-cli-using-a-proxy': '/docs/cli/using-a-proxy',
     'menu-cli-changelog': 'https://github.com/ionic-team/ionic-cli/blob/master/packages/ionic/CHANGELOG.md'
   },
