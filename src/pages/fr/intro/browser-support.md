@@ -31,6 +31,3 @@ Because Ionic is based on web technologies, it works just as well on desktop bro
 | **Safari**  | ✔         |
 | **Edge**    | ✔         |
 | **Firefox** | ✔         |
-
-
-> Because Ionic is built with Stencil, see [Stencil's browser support](https://stenciljs.com/docs/browser-support) for a more detailed breakdown of support.
