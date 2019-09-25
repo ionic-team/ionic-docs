@@ -8,6 +8,7 @@ const items = {
   'menu-enterprise-authentication-security': {
     'Auth Connect': '/docs/enterprise/auth-connect',
     'Identity Vault': '/docs/enterprise/identity-vault',
+    'Offline Storage': '/docs/enterprise/offline-storage'
   },
   'menu-enterprise-common-device-features': {
     'Android Permissions': '/docs/enterprise/android-permissions',
@@ -36,9 +37,6 @@ const items = {
   'menu-enterprise-integrated-services': {
     'Active Directory': 'https://ionicframework.com/integrations/ms-activedirectory-ms-adal',
     'mParticle': '/docs/enterprise/mparticle',
-  },
-  'menu-enterprise-offline-data': {
-    'Couchbase Lite': '/docs/enterprise/couchbase-lite',
   },
   'menu-enterprise-payments': {
     'Apple Payment Pass': '/docs/enterprise/apple-payment-pass',
