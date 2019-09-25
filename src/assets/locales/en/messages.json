@@ -210,10 +210,9 @@
 
   "menu-appflow-devapp": "DevApp: Local Development",
 
-  "menu-enterprise-authentication-security": "Authentication & Security",
+  "menu-enterprise-authentication-security": "Authentication, Security, Storage",
   "menu-enterprise-common-device-features": "Common Device Features",
   "menu-enterprise-integrated-services": "Integrated Services",
-  "menu-enterprise-offline-data": "Offline & Data",
   "menu-enterprise-payments": "Payments",
 
   "menu-studio-introduction": "Introduction",

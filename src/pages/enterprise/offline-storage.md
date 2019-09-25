@@ -1,14 +1,15 @@
 ---
-title: Couchbase Lite
+title: Offline Storage
 template: enterprise-plugin
 version: 1.0.1
 minor: 1.0.X
 ---
 
-# Ionic Couchbase Lite
+# Ionic Offline Storage
 
-Ionic Couchbase Lite is a cross-platform data storage system that works on iOS and Android using Couchbase Lit's simple yet powerful query, replication, and sync APIs.
+Ionic Offline Storage is a cross-platform data storage system that works on iOS and Android. Powered by [Couchbase Lite](https://docs.couchbase.com/couchbase-lite/2.6/index.html), a NoSQL database engine that provides simple yet powerful query, replication, and sync APIs.
 
+This solution makes it easy to add offline storage to Ionic apps that are secure (encrypted on device), highly performant, and provide advanced data querying.
 
 ## Project Requirements
 
@@ -17,6 +18,12 @@ Couchbase Lite requires a min SDK target for Android of at least 19. Make sure y
 ```xml
 <preference name="android-minSdkVersion" value="19" />
 ```
+
+To use additional features such as cloud data sync, data replication, conflict resolution, and delta sync, a subscription to Couchbase Server is required.
+
+## Reference App
+
+A complete [advanced offline search experience](https://github.com/ionic-team/demo-offlinestorage-search) demo that includes multiple filters and wildcard searches.
 
 ## Importing code
 To use the Couchbase Lite API, import from `@ionic-enterprise/couchbase-lite`.
