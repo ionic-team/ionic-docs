@@ -180,9 +180,56 @@ squareA.play();
 
 ## Gesture Animations
 
-Info on how to create a gesture based animation using `createGesture` (maybe link to a Gesture utility doc?)
+Ionic Animations gives developers the ability to create powerful gesture-based animations by integrating seamlessly with [Ionic Gestures](#).
 
 ### Usage
+
+```javascript
+let initialStep = 0;
+const square = document.querySelector('.square');
+const animation = createAnimation()
+  .addElement(square)
+  .duration(1000)
+  .fromTo('transform', 'translateX(0)', 'translateX(500px)');
+
+const gesture = createGesture({
+  el: square,
+  threshold: 10,
+  onStart: () => onStart(),
+  onMove: ev => onMove(ev),
+  onEnd: ev => onEnd(ev)
+});
+
+gesture.setDisabled(false);
+
+const onStart = () => {
+  animation.progressStart();
+}
+
+const onMove = (ev) => {
+  animation.progressStep(getStep(ev));
+}
+
+const onEnd = (ev) => {
+  const step = getStep(ev);
+  const shouldComplete = step > 0.5;
+
+  animation.progressEnd((shouldComplete) ? 1 : 0, step);  
+  
+  initialStep = (shouldComplete) ? MAX_TRANSLATE : 0;
+}
+
+const clamp = (min, n, max) => {
+  return Math.max(min, Math.min(n, max));
+};
+
+const getStep = (ev) => {
+  const delta = initialStep + ev.deltaX;
+  return clamp(0, delta / MAX_TRANSLATE, 1);
+}
+```
+
+<docs-codepen user="ionic" slug="jONxzRL"></docs-codepen>
 
 
 ## Performance Considerations
@@ -193,12 +240,27 @@ Animating properties such as `height` and `width` cause additional layouts and p
 
 For information on which CSS properties cause layouts or paints to occur, see [CSS Triggers](https://csstriggers.com/).
 
+## Browser Support
+
+| Browser/Platform     | Supported Versions |
+| -------------------- | ------------------ |
+| **Chrome**           | 43+  |
+| **Safari**           | 9+   |   
+| **Firefox**          | 32+  |     
+| **IE/Edge**          | 11+  |    
+| **Opera**            | 30+  |
+| **iOS**              | 9+   |
+| **Android**          | 5.0+ |      
+
+> Due to a bug in Safari versions 9-11, stepping through animations via `progressStep` is not supported. This is supported on Safari 12+.
+
 ## Types
 
 | Name                 | Value                                                         |
 | ---------------------| ------------------------------------------------------------- |
 | `AnimationDirection` | `'normal' \| 'reverse' \| 'alternate' \| 'alternate-reverse'` |
-| `AnimationFill`      | `'auto' \| 'none' \| 'forwards' \| 'backwards' \| 'both'`     |                                                       
+| `AnimationFill`      | `'auto' \| 'none' \| 'forwards' \| 'backwards' \| 'both'`     |  
+| `AnimationOnFinishOptions` | `{ oneTimeCallback: boolean }` |                                                     
 
 ## Properties
 
