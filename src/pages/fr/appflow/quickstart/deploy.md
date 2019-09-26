@@ -36,7 +36,6 @@ Once the build begins you will be able to watch it's progress and look at the lo
 ## Assign the Build to a Channel
 
 <blockquote>
-  
 <b>Note:</b> If you have trouble getting a successful build in the previous step, you can find answers to common Deploy build errors in
 <a href="https://ionic.zendesk.com/hc/en-us/categories/360000410474-Deploy-Builds-Git-" target="_blank">this section of our knowledge base</a>.
 </blockquote>
