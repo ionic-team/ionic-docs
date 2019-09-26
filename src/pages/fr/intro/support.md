@@ -23,4 +23,4 @@ The current status of each Ionic Framework version is:
 * **Ionic 2** (Angular 2+): No new feature development.
 * **Ionic 1** (Angular 1 aka AngularJS): No new feature development.
 
-For teams and organizations that require additional support for any Framework version, Ionic has options available.
+For teams and organizations that require additional support, Ionic has options available. To learn more, see our [Enterprise offerings](https://ionicframework.com/enterprise).
