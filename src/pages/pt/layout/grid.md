@@ -399,9 +399,9 @@ All columns can be vertically aligned inside of a row by adding different classe
     </ion-col>
     <ion-col>
       <div>
-        4 of 4 <br>
-        # <br>
-        # <br>
+        4 of 4 <br >
+        # <br >
+        # <br >
         #
       </div>
     </ion-col>
@@ -425,9 +425,9 @@ All columns can be vertically aligned inside of a row by adding different classe
     </ion-col>
     <ion-col>
       <div>
-        4 of 4 <br>
-        # <br>
-        # <br>
+        4 of 4 <br >
+        # <br >
+        # <br >
         #
       </div>
     </ion-col>
@@ -451,9 +451,9 @@ All columns can be vertically aligned inside of a row by adding different classe
     </ion-col>
     <ion-col>
       <div>
-        4 of 4 <br>
-        # <br>
-        # <br>
+        4 of 4 <br >
+        # <br >
+        # <br >
         #
       </div>
     </ion-col>
@@ -483,9 +483,9 @@ Columns can also align themselves differently than other columns by adding the a
     </ion-col>
     <ion-col>
       <div>
-        4 of 4 <br>
-        # <br>
-        # <br>
+        4 of 4 <br >
+        # <br >
+        # <br >
         #
       </div>
     </ion-col>
