@@ -5,6 +5,13 @@ export default () => <docs-nav items={ items } />;
 const items = {
   'menu-native-ce': '/docs/native/overview',
   'menu-native-ee': '/docs/enterprise',
+  'menu-enterprise-getting-started': {
+    'Quickstart': '/docs/quickstart',
+    'Installation': 'temp'
+  },
+  'menu-enterprise-guides': {
+    'Auth Connect: Configurations': '/docs/'
+  },
   'menu-enterprise-authentication-security': {
     'Auth Connect': '/docs/enterprise/auth-connect',
     'Identity Vault': '/docs/enterprise/identity-vault',
