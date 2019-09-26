@@ -31,7 +31,6 @@ In Compose mode, pages and components are brought to life from the collection of
 When first loaded, the page index is shown. This list comprises the pages that Ionic Studio found in the app.
 
 <blockquote>
-  
 <p>Since the difference between pages and components is conceptual, Ionic Studio relies on convention to differentiate them. If there are pages missing, make sure each page follows the convention Ionic Studio is expecting:</p>
 <p>The files that represent each page must have the proper suffixes (e.g. <code>.page.ts</code>, <code>.page.html</code>, <code>.page.scss</code>). See the <a href="https://angular.io/guide/styleguide#naming">Angular style guide</a> for additional information about naming conventions.</p>
 </blockquote>
