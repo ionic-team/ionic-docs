@@ -169,4 +169,4 @@ docs page.
 - [Couchbase Lite](/docs/enterprise/couchbase-lite)
 
 ### Payments
-- [Apple Wallet](/docs/enterprise/apple-wallet)
+- [Apple Payment Pass](/docs/enterprise/apple-payment-pass)
