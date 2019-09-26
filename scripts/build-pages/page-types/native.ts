@@ -15,7 +15,7 @@ async function getNativePages(): Promise<Page[]> {
   return plugins.map(plugin => {
     const title = plugin.displayName.trim();
     const path = `/docs/native/${plugin.packageName.slice(14)}`;
-    const { description, usage, repo, platforms } = plugin;
+    const { capacitorIncompatible, description, usage, repo, platforms } = plugin;
     return {
       title,
       path,
@@ -25,6 +25,7 @@ async function getNativePages(): Promise<Page[]> {
       codeUsage: usage ? renderMarkdown(usage) : null,
       package: plugin.packageName,
       cordova: plugin.cordovaPlugin.name,
+      capacitorIncompatible: capacitorIncompatible ? capacitorIncompatible : false,
       template: 'native'
     };
   });

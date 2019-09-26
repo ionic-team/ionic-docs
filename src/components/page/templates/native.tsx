@@ -9,6 +9,7 @@ export default (props) => {
   const installation = renderInstallation(page.cordova, page.package);
   const platforms = renderPlatforms(page.platforms);
   const usage = renderUsage(page.codeUsage);
+  const capIncompat = renderCapIncompat(page.capacitorIncompatible);
 
   if (installation) {
     headings.push({
@@ -21,6 +22,13 @@ export default (props) => {
     headings.push({
       text: 'Supported Platforms',
       href: '#platforms'
+    });
+  }
+
+  if (capIncompat) {
+    headings.push({
+      text: 'Capacitor',
+      href: '#capacitor'
     });
   }
 
@@ -41,6 +49,7 @@ export default (props) => {
       { repo }
       { installation }
       { platforms }
+      { capIncompat }
       { usage }
     </article>
   );
@@ -122,6 +131,21 @@ const renderUsage = (usage: any) => {
         <a href="#usage">Usage</a>
       </h2>
       {toHypertext(h, usage)}
+    </section>
+  );
+};
+
+const renderCapIncompat = (capacitorIncompatible: boolean) => {
+  if (!capacitorIncompatible) {
+    return null;
+  }
+
+  return (
+    <section>
+      <h2 id="capacitor">
+        <a href="#capacitor">Capacitor</a>
+      </h2>
+      Not compatible
     </section>
   );
 };
