@@ -461,9 +461,9 @@ The default amount of `margin` to be applied is `16px` and is set by the `--ion-
     </ion-col>
     <ion-col>
       <div>
-        4 of 4 <br>
-        # <br>
-        # <br>
+        4 of 4 <br >
+        # <br >
+        # <br >
         #
       </div>
     </ion-col>
@@ -487,9 +487,9 @@ The default amount of `margin` to be applied is `16px` and is set by the `--ion-
     </ion-col>
     <ion-col>
       <div>
-        4 of 4 <br>
-        # <br>
-        # <br>
+        4 of 4 <br >
+        # <br >
+        # <br >
         #
       </div>
     </ion-col>
@@ -513,9 +513,9 @@ The default amount of `margin` to be applied is `16px` and is set by the `--ion-
     </ion-col>
     <ion-col>
       <div>
-        4 of 4 <br>
-        # <br>
-        # <br>
+        4 of 4 <br >
+        # <br >
+        # <br >
         #
       </div>
     </ion-col>
@@ -539,9 +539,9 @@ The default amount of `margin` to be applied is `16px` and is set by the `--ion-
     </ion-col>
     <ion-col>
       <div>
-        4 of 4 <br>
-        # <br>
-        # <br>
+        4 of 4 <br >
+        # <br >
+        # <br >
         #
       </div>
     </ion-col>
@@ -565,9 +565,9 @@ The default amount of `margin` to be applied is `16px` and is set by the `--ion-
     </ion-col>
     <ion-col>
       <div>
-        4 of 4 <br>
-        # <br>
-        # <br>
+        4 of 4 <br >
+        # <br >
+        # <br >
         #
       </div>
     </ion-col>
@@ -615,9 +615,9 @@ The default amount of `margin` to be applied is `16px` and is set by the `--ion-
     </ion-col>
     <ion-col>
       <div>
-        4 of 4 <br>
-        # <br>
-        # <br>
+        4 of 4 <br >
+        # <br >
+        # <br >
         #
       </div>
     </ion-col>
