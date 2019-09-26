@@ -5,6 +5,7 @@ nextText: 'Installing Ionic'
 nextUrl: '/docs/installation/cli'
 contributors:
   - dotNetkow
+  - mhartington
 ---
 
 # Ionic Framework Support Policy
@@ -17,15 +18,9 @@ Given the reality of time and resource restraints as well as the desire to keep 
 
 The current status of each Ionic Framework version is:
 
-* **Ionic 4 [Active]** (Angular, React, Vue, and more): Latest version in active development. 
+* **Ionic 4 [Active]** (Angular, React, Vue, and more): Latest version in active development.
 * **Ionic 3** (Angular 2+): No new feature development, but actively shipping major bug fixes.
 * **Ionic 2** (Angular 2+): No new feature development.
 * **Ionic 1** (Angular 1 aka AngularJS): No new feature development.
 
 For teams and organizations that require additional support for any Framework version, Ionic has options available.
-
-## Long Term Support (Premium)
-
-Long Term Support (LTS) provides developers and organizations with additional stability and reliability in the apps they’re developing, including guaranteed support level agreements (SLAs) and advisory services. Take the preparation time you need before upgrading to the latest version of the Ionic Framework or remain confident in your app’s long-term success by staying on whichever version you’re most comfortable with.
-
-LTS is available as part of Ionic Enterprise Edition and extends to Ionic 1 implementations and higher. For more information, visit the [Ionic Enterprise Edition](https://ionicframework.com/enterprise-edition) page or schedule a [Strategy Session](https://ionicframework.com/strategysession) with one of our Solutions Engineers.
