@@ -77,7 +77,9 @@
   "menu-vue-navigation": "Navigation/Routing",
 
   "menu-utilities": "Utilities",
+  "menu-utilities-animations": "Animations",
   "menu-utilities-config": "Config",
+  "menu-utilities-gestures": "Gestures",
   "menu-utilities-platform": "Platform",
 
   "menu-publishing": "Publishing",
