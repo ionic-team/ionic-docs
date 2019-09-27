@@ -5,9 +5,7 @@
 
 Manage app configuration and settings.
 
-<blockquote>
-🚧 These docs are a work-in-progress. Check back frequently for updates!
-</blockquote>
+> 🚧 These docs are a work-in-progress. Check back frequently for updates!
 
 ## Config
 

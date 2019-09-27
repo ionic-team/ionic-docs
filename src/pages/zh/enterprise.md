@@ -158,4 +158,4 @@ Running the register command will generate a `.npmrc` file in you app directory 
 
 ### Payments
 
-- [Apple Wallet](/docs/enterprise/apple-wallet)
+- [Apple Payment Pass](/docs/enterprise/apple-payment-pass)

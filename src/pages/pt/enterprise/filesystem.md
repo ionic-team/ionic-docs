@@ -1,8 +1,10 @@
 ---
 title: Filesystem
 template: enterprise-plugin
-version: 1.0.2
-minor: 1.0.X
+version: 1.1.0
+minor: 1.1.X
+otherVersions:
+  - 1.0.X
 ---
 
 # Ionic Filesystem
@@ -67,6 +69,7 @@ You can find the API and interface documentation for everything below. The main 
 
 ### Interfaces
 
+* [CopyOptions](#copyoptions)
 * [EmptyResult](#emptyresult)
 * [FileReadOptions](#filereadoptions)
 * [FileReadResult](#filereadresult)
@@ -75,6 +78,8 @@ You can find the API and interface documentation for everything below. The main 
 * [MkdirOptions](#mkdiroptions)
 * [PathOptions](#pathoptions)
 * [ReaddirResult](#readdirresult)
+* [RenameOptions](#renameoptions)
+* [RmdirOptions](#rmdiroptions)
 * [StatResult](#statresult)
 
 * * *
@@ -275,6 +280,25 @@ Append to a file on disk in the specified location on device
 
 * * *
 
+<a id="filesystem.copy"></a>
+
+### copy
+
+▸ **copy**(options: *[CopyOptions](#copyoptions)*): `Promise`<[EmptyResult](#emptyresult)>
+
+Copy a file or directory
+
+**Parameters:**
+
+| Name    | Type                        | Description                        |
+| ------- | --------------------------- | ---------------------------------- |
+| options | [CopyOptions](#copyoptions) | the options for the copy operation |
+
+
+**Returns:** `Promise`<[EmptyResult](#emptyresult)>
+
+* * *
+
 <a id="filesystem.deletefile"></a>
 
 ### deleteFile
@@ -370,19 +394,38 @@ Return a list of files from the directory (not recursive)
 
 * * *
 
+<a id="filesystem.rename"></a>
+
+### rename
+
+▸ **rename**(options: *[RenameOptions](#renameoptions)*): `Promise`<[EmptyResult](#emptyresult)>
+
+Rename a file or directory
+
+**Parameters:**
+
+| Name    | Type                            | Description                          |
+| ------- | ------------------------------- | ------------------------------------ |
+| options | [RenameOptions](#renameoptions) | the options for the rename operation |
+
+
+**Returns:** `Promise`<[EmptyResult](#emptyresult)>
+
+* * *
+
 <a id="filesystem.rmdir"></a>
 
 ### rmdir
 
-▸ **rmdir**(options: *[PathOptions](#pathoptions)*): `Promise`<[EmptyResult](#emptyresult)>
+▸ **rmdir**(options: *[RmdirOptions](#rmdiroptions)*): `Promise`<[EmptyResult](#emptyresult)>
 
 Remove a directory
 
 **Parameters:**
 
-| Name    | Type                        | Description                          |
-| ------- | --------------------------- | ------------------------------------ |
-| options | [PathOptions](#pathoptions) | the options for the directory remove |
+| Name    | Type                          | Description                          |
+| ------- | ----------------------------- | ------------------------------------ |
+| options | [RmdirOptions](#rmdiroptions) | the options for the directory remove |
 
 
 **Returns:** `Promise`<[EmptyResult](#emptyresult)>
@@ -430,6 +473,54 @@ Write a file to disk in the specified location on device
 * * *
 
 ## Interfaces
+
+<a id="copyoptions"></a>
+
+### CopyOptions
+
+**CopyOptions**:
+
+<a id="copyoptions.directory"></a>
+
+### `<Optional>` directory
+
+**● directory**: *[Directories](#directories)*
+
+The system directory containing the existing file or directory
+
+* * *
+
+<a id="copyoptions.from"></a>
+
+### from
+
+**● from**: *`string`*
+
+The existing file or directory
+
+* * *
+
+<a id="copyoptions.to"></a>
+
+### to
+
+**● to**: *`string`*
+
+The destination file or directory
+
+* * *
+
+<a id="copyoptions.todirectory"></a>
+
+### `<Optional>` toDirectory
+
+**● toDirectory**: *[Directories](#directories)*
+
+The system directory containing the destination file or directory. If not supplied will use the 'directory' parameter as the destination
+
+* * *
+
+* * *
 
 <a id="emptyresult"></a>
 
@@ -645,6 +736,92 @@ the list of files in the directory
 
 * * *
 
+<a id="renameoptions"></a>
+
+### RenameOptions
+
+**RenameOptions**:
+
+<a id="renameoptions.directory"></a>
+
+### `<Optional>` directory
+
+**● directory**: *[Directories](#directories)*
+
+The system directory containing the existing file or directory
+
+* * *
+
+<a id="renameoptions.from"></a>
+
+### from
+
+**● from**: *`string`*
+
+The existing file or directory
+
+* * *
+
+<a id="renameoptions.to"></a>
+
+### to
+
+**● to**: *`string`*
+
+The destination file or directory
+
+* * *
+
+<a id="renameoptions.todirectory"></a>
+
+### `<Optional>` toDirectory
+
+**● toDirectory**: *[Directories](#directories)*
+
+The system directory containing the destination file or directory. If not supplied will use the 'directory' parameter as the destination
+
+* * *
+
+* * *
+
+<a id="rmdiroptions"></a>
+
+### RmdirOptions
+
+**RmdirOptions**:
+
+<a id="rmdiroptions.directory"></a>
+
+### `<Optional>` directory
+
+**● directory**: *[Directories](#directories)*
+
+The directory to start in
+
+* * *
+
+<a id="rmdiroptions.path"></a>
+
+### path
+
+**● path**: *`string`*
+
+The path to the file or directory with one of the [Directories](#directories)
+
+* * *
+
+<a id="rmdiroptions.recursive"></a>
+
+### recursive
+
+**● recursive**: *`boolean`*
+
+Whether to recursively remove the contents of the directory (defaults to false)
+
+* * *
+
+* * *
+
 <a id="statresult"></a>
 
 ### StatResult
@@ -704,6 +881,21 @@ The size of the item
 * * *
 
 ## Change Log
+
+### \[1.1.0\] (2019-09-03)
+
+### Bug Fixes
+
+* Free saved call after permission result 
+* **android:** remove incorrect trailing newline in readFile when using encoding 
+* **ios:** make readdir return only file names 
+* **iOS:** Update iOS deleteFile method bug where deleteFile would actually make a directory. 
+* **iOS:** use proper getUri method 
+
+### Features
+
+* Add recursive option for rmdir 
+* add rename and copy implementations 
 
 ### \[1.0.2\] (2019-08-02)
 

@@ -5,9 +5,7 @@
 
 Compose is the powerhouse of Ionic app development, offering a powerful side-by-side coupling of component code and an interactive canvas for building components.
 
-<blockquote>
-🚧 These docs are a work-in-progress. Check back frequently for updates!
-</blockquote>
+> 🚧 These docs are a work-in-progress. Check back frequently for updates!
 
 ## Introduction
 
@@ -97,13 +95,13 @@ Compose mode offers drag & drop support when adding new elements and rearranging
 
 ### Adding New Elements
 
-To add new elements to a template, open the **Add Element** menu by clicking the button at the top left of Ionic Studio.
+To add new elements to a template, first open the element insertion dropdowns by clicking one of the buttons near the top of Compose.
 
 <figure>
   <img alt="Add Element Menu" src="/docs/assets/img/studio/ss-add-element-menu.png" />
 </figure>
 
-The menu contains HTML elements, Ionic components, and the custom components in the app.
+These menus contains HTML elements, Ionic components, and the custom components in the app.
 
 To insert an element, click and hold on it, then drag it into place in either canvas or code (in **Template** mode).
 

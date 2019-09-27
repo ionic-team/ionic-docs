@@ -3,9 +3,7 @@
 
 # Asset Management
 
-<blockquote>
-🚧 These docs are a work-in-progress. Check back frequently for updates!
-</blockquote>
+> 🚧 These docs are a work-in-progress. Check back frequently for updates!
 
 The **Assets** section is a quick and easy way to add images or other media to Ionic apps.
 

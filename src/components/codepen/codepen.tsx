@@ -24,6 +24,7 @@ export class CodePen {
         data-slug-hash={this.slug}
         data-preview={(this.preview) ? 'true' : 'false'}
         data-pen-title={this.penTitle}
+        no-prerender
       >
         <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
       </Host>
