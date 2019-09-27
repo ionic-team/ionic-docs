@@ -1,12 +1,12 @@
 ---
-title: Ionic Native Enterprise Edition
+title: Ionic Native
 ---
 
-Accelerate development with powerful solutions to common enterprise use cases - all built and supported by the Ionic team. Ionic’s growing library of solutions are ready to deploy in any of the apps you build with Native Enterprise Edition
+Accelerate development with powerful solutions to common enterprise use cases - all built and supported by the Ionic team. Ionic’s growing library of solutions are ready to deploy in any of the apps you build with Native.
 
-Ionic Native Enterprise Edition includes a reliable set of Native APIs & functionality that you can use in your Ionic app, quality controlled and maintained by the Ionic Team.
+Ionic Native includes a reliable set of Native APIs & functionality that you can use in your Ionic app, quality controlled and maintained by the Ionic Team.
 
-## What is Ionic Native Enterprise Edition
+## What is Ionic Native
 
 <div class="native-ee-pricing">
   <div class="table-wrap">
@@ -18,13 +18,13 @@ Ionic Native Enterprise Edition includes a reliable set of Native APIs & functio
           </td>
           <th>
             <div class="plan-wrap">
-              <span class="native-ee-pricing-table">Community Edition</span>
+              <span class="native-ee-pricing-table">Community Plugins</span>
               <div class="price">$0/mo </div>
             </div>
           </th>
           <th>
             <div class="plan-wrap">
-              <span class="native-ee-pricing-table">Enterprise Edition</span>
+              <span class="native-ee-pricing-table">Ionic Native</span>
               <div class="price" data-toggle="billing-team">
                 Contact Us</div>
             </div>
@@ -91,13 +91,13 @@ Ionic Native Enterprise Edition includes a reliable set of Native APIs & functio
   </div>
 </div>
 
-## Sign Up for Ionic Native Enterprise Edition
+## Sign Up for Ionic Native
 
 <hubspot-form form-id="7c2c6529-48c0-4d17-86a0-bfd40c849bb1"></hubspot-form>
 
 ## Setup
 
-In order to use the Ionic Native Enterprise Edition plugins you need to install the Ionic Enterprise Cordova CLI. Ionic Native Enterprise Edition plugins use scoped packages and the regular Cordova CLI does not work with scoped packages.
+In order to use the Ionic Native plugins you need to install the Ionic Enterprise Cordova CLI. Ionic Native plugins use scoped packages and the regular Cordova CLI does not work with scoped packages.
 
 <command-line> <command-prompt>npm uninstall -g cordova</command-prompt> <command-prompt>npm install -g @ionic-enterprise/cordova</command-prompt> </command-line>
 
@@ -105,7 +105,7 @@ The Ionic Enterprise Cordova CLI should be installed on each developer's machine
 
 ## Register Your Product Key
 
-In order to use the Ionic Native Enterprise Edition plugins in your application you will need to register your key with the application. Each application that you create will need to have its own key.
+In order to use the Ionic Native plugins in your application you will need to register your key with the application. Each application that you create will need to have its own key.
 
 Register the product key for your application using the Ionic CLI. Follow the provided prompts. This only needs to be run once per application.
 
