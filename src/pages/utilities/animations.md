@@ -208,11 +208,6 @@ const gesture = createGesture({
 
 gesture.setDisabled(false);
 
-const stop = () => {
-  initialStep = 0;
-  animation.stop();
-}
-
 const onMove = (ev) => {
   if (!started) {
     animation.progressStart();
@@ -292,6 +287,8 @@ For information on which CSS properties cause layouts or paints to occur, see [C
 | `parentAnimation: Animation \| undefined` | The parent animation of a given animation object. |
 
 ## Methods
+
+TODO: This section needs to be revised with latest API changes
 
 #### `addAnimation(animationToAdd: Animation | Animation[] | undefined | null) => Animation`
 
