@@ -119,6 +119,26 @@ _Please submit translation issues to the Crowdin page and not the Ionic Docs Git
 
 The Japanese translation of the docs were built by an independent team, lead by [rdlabo](https://github.com/rdlabo) and can be found and contributed to on the [ionic-jp group's `ionic-docs` project page](https://github.com/ionic-jp/ionic-docs).
 
+### Add new pages / Updating sidebar menus
+
+When adding new pages to the docs, add a new token representing the page name to the appropriate Menu template (`src/components/menu/templates`).
+
+For example, in `src/components/menu/templates/main.tsx`:
+
+```javascript
+// 'token': 'path'
+'menu-installation-cli': '/docs/installation/cli',
+```
+
+Then, add the token and its translation to each file within the `src/assets/locales` folder:
+
+For example, in `src/assets/locales/en/messages.json`:
+
+```javascript
+// 'token': 'translated text'
+"menu-installation-cli": "CLI Installation",
+```
+
 ## Reporting Issues
 
 Before submitting an issue to the Ionic docs repo, please search [existing issues](https://github.com/ionic-team/ionic-docs/issues) to avoid duplicate reports.
