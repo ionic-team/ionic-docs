@@ -12,7 +12,7 @@ contributors:
 
 ## Community Maintenance
 
-The Ionic Framework CE (Community Edition) has been 100% open source (MIT) since the very beginning, and always will be. Developers can ensure Ionic is the right choice for their cross-platform apps through Ionic’s community maintenance strategy. The Ionic team regularly ships new releases, bug fixes, and is very welcoming to community pull requests.
+The Ionic Framework has been 100% open source (MIT) since the very beginning, and always will be. Developers can ensure Ionic is the right choice for their cross-platform apps through Ionic’s community maintenance strategy. The Ionic team regularly ships new releases, bug fixes, and is very welcoming to community pull requests.
 
 Given the reality of time and resource restraints as well as the desire to keep innovating in the frontend development space, over time it becomes necessary for the Ionic team to shift focus to newer versions of the Framework. However, Ionic will do everything it can to make the transition to newer versions as smooth as possible, including but not limited to publishing migration guides such as [this one for Ionic 4](/docs/building/migration). The open source community is always welcome to submit new features and bug fixes as well.
 

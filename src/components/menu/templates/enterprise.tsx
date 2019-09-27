@@ -3,8 +3,8 @@ import { h } from '@stencil/core';
 export default () => <docs-nav items={ items } />;
 
 const items = {
-  'menu-native-ce': '/docs/native/overview',
-  'menu-native-ee': '/docs/enterprise',
+  'menu-native-paid': '/docs/enterprise',
+  'menu-native-community': '/docs/native/overview',
   'menu-enterprise-authentication-security': {
     'Auth Connect': '/docs/enterprise/auth-connect',
     'Identity Vault': '/docs/enterprise/identity-vault',
