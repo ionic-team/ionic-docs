@@ -72,6 +72,7 @@ const items = {
   'menu-utilities': {
     'menu-utilities-animations': '/docs/utilities/animations',
     'menu-utilities-config': '/docs/utilities/config',
+    'menu-utilities-gestures': '/docs/utilities/gestures',
     'menu-utilities-platform': '/docs/utilities/platform'
   },
   'menu-publishing': {

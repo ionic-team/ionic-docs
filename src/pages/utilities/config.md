@@ -1,8 +1,8 @@
 ---
 previousText: ''
 previousUrl: ''
-nextText: 'Platform'
-nextUrl: '/docs/utilities/platform'
+nextText: 'Gestures'
+nextUrl: '/docs/utilities/gestures'
 contributors:
   - liamdebeasi
   - mhartington
