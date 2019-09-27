@@ -205,4 +205,4 @@ Enable or disable the gesture.
 
 #### `destroy() => void`
 
-Destroys the gesture instance and stops listening on the target element.
+Destroy the gesture instance and stop listening on the target element.
