@@ -140,8 +140,6 @@ This example demonstrates a long press gesture. When the user touches the screen
 
 See our guide on implementing gesture animations: [Gesture Animations with Ionic Animations](/docs/utilities/animations#gesture-animations)
 
-## Types
-
 ## Browser Support
 
 | Browser/Platform     | Supported Versions |
@@ -152,4 +150,59 @@ See our guide on implementing gesture animations: [Gesture Animations with Ionic
 | **IE/Edge**          | 11+  |    
 | **Opera**            | 30+  |
 | **iOS**              | 9+   |
-| **Android**          | 5.0+ |      
+| **Android**          | 5+   |      
+
+## Types
+
+| Name              | Value                                        |
+| ------------------| -------------------------------------------- |
+| `GestureCallback` | `(detail: GestureDetail) => boolean \| void` |
+
+## Interfaces
+
+### GestureConfig
+
+| Property        | Type                                       | Default     | Description |
+| --------------- | ------------------------------------------ | ----------- | ----------- |
+| el              | `Node`                                     | `undefined` | The element to listen on for gestures. |
+| disableScroll   | `boolean \| undefined`                     | `false`     | If true, scrolling will be disabled on `el` while the gesture is enabled. |
+| direction       | `'x' \| 'y' \| undefined`                  | `'x'`       | Limit gesture detection to movements along a certain axis. |
+| gestureName     | `string`                                   | `undefined` | The name of the gesture to create. |
+| gesturePriority | `number \| undefined`                      | `0`         | Gestures with higher priorities will override gestures with lower priorities. Useful for ensuring the multiple gestures do not collide with one another. |
+| passive         | `boolean \| undefined`                     | `true`      | NEEDS DEFINITION. |
+| maxAngle        | `number \| undefined`                      | `40`        | NEEDS DEFINITION. |
+| threshold       | `number \| undefined`                      | `10`        | Defines how much a pointer must move before the gesture kicks in. |
+| canStart        | `GestureCallback \| undefined`             | `undefined` | A callback that returns true if a gesture is allowed to start. |
+| onWillStart     | `(detail: GestureDetail) => Promise<void>` | `undefined` | A callback that is fires when a gesture is about to start. This is fired after `canStart` but before `onStart`. |
+| onStart         | `GestureCallback \| undefined`             | `undefined` | A callback that fires when a gesture has started. |
+| onMove          | `GestureCallback \| undefined`             | `undefined` | A callback that fires when a gesture movement was detected. |
+| onEnd           | `GestureCallback \| undefined`             | `undefined` | A callback that fires when a gesture has ended. This is usually when a pointer has been released. |
+| notCaptured     | `GestureCallback \| undefined`             | `undefined` | NEEDS DEFINITION. |
+
+### GestureDetail
+
+| Property       | Type               | Description |
+| -------------- | ------------------ | ----------- |
+| type           | `string`           | The type of gesture that was detected. |
+| startX         | `number`           | The starting x coordinate of the gesture. |
+| startY         | `number`           | The starting y coordinate of the gesture. |
+| startTimeStamp | `number`           | The timestamp at which the gesture was started. |
+| currentX       | `number`           | The current x coordinate of the gesture. |
+| currentY       | `number`           | The current y coordinate of the gesture. |
+| velocityX      | `number`           | How fast the gesture is currently moving on the x axis. |
+| velocityY      | `number`           | How fast the gesture is currently moving on the y axis. |
+| deltaX         | `number`           | How much the gesture has moved on the x axis since it started. |
+| deltaY         | `number`           | How much the gesture has moved on the y axis since it started. |
+| timeStamp      | `number`           | The current timestamp of the gesture. |
+| event          | `UIEvent`          | The native event dispatched by the browser. See [UIEvent](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent) for more information. |
+| data           | `any \| undefined` | NEEDS DEFINITION. |
+
+## Methods 
+
+#### `setDisabled(disabled: boolean) => void`
+
+Enable or disable the gesture.
+
+#### `destroy() => void`
+
+Destroys the gesture instance and stops listening on the target element.
