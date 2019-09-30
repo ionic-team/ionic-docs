@@ -1,7 +1,7 @@
 ---
-title: Ionic Native
+title: Native Plugins
 ---
-<p class='intro'>Ionic Native is a library of Cordova plugins and integrations that make it easy to add native functionality to any Ionic app, Cordova project, or WebView. Ionic offers two sets of native plugins: Ionic Native and Community Plugins</p>
+<p class='intro'>Build native-powered app experiences with a collection of open source and premium plugins and integrations that make it easy to add native device functionality to any Ionic app, Cordova project, or WebView.</p>
 
 <docs-cards class="static-width">
   <docs-card header="Community Plugins" href="/docs/native/overview" img="/docs/assets/img/native/community-edition.png">
