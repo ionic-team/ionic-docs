@@ -9,6 +9,6 @@ title: Ionic Native
   </docs-card>
 
   <docs-card header="Ionic Native" href="/docs/enterprise" img="/docs/assets/img/native/enterprise-edition.png">
-    <p>For teams building mission-critical apps, Ionic Native EE is a curated collection of plugins and integrations that are built and supported by Ionic, with stability assurances and guaranteed to work on all major platforms and versions.</p>
+    <p>For teams building mission-critical apps, Ionic Native is a curated collection of plugins and integrations that are built and supported by Ionic, with stability assurances and guaranteed to work on all major platforms and versions.</p>
   </docs-card>
 </docs-cards>
