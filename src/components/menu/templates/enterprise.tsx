@@ -3,8 +3,8 @@ import { h } from '@stencil/core';
 export default () => <docs-nav items={ items } />;
 
 const items = {
-  'menu-native-ce': '/docs/native/overview',
-  'menu-native-ee': '/docs/enterprise',
+  'menu-native-paid': '/docs/native/overview',
+  'menu-native-community': '/docs/enterprise',
   'menu-enterprise-getting-started': {
     'Quickstart': '/docs/quickstart',
     'Installation': 'temp'

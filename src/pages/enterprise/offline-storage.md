@@ -946,11 +946,11 @@ The concurrency control parameter has two possible values:
 
 ## Database Replicas
 
-Database replicas is available in the <strong>Enterprise Edition</strong> only (<a href="https://www.couchbase.com/downloads" class="bare">https://www.couchbase.com/downloads</a>).
+Database replicas is available in the <strong>Ionic Native</strong> only (<a href="https://www.couchbase.com/downloads" class="bare">https://www.couchbase.com/downloads</a>).
 Starting in Couchbase Lite 2.0, replication between two local databases is now supported.
 It allows a Couchbase Lite replicator to store data on secondary storage.
 It would be especially useful in scenarios where a user’s device is damaged and the data needs to be moved to a different device.
-Note that the code below won’t compile if you’re running the <strong>Community Edition</strong> of Couchbase Lite.
+Note that the code below won’t compile if you’re running the <strong>Community Plugin</strong> of Couchbase Lite.
 
 <!--
 ## Certificate Pinning

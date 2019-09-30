@@ -3,23 +3,37 @@ previousText: 'Web View'
 previousUrl: '/docs/building/webview'
 ---
 
-# Storage
+# Data Storage
 
-Storage is an easy way to store key/value pairs and JSON objects.
-Storage uses a variety of storage engines underneath, picking the best one available
-depending on the platform.
+There are variety of options available for storing data within an Ionic app.
 
-When running in a native app context, Storage will prioritize using SQLite, as it's one of
+## Ionic Offline Storage
+
+[Ionic Offline Storage](/docs/enterprise/offline-storage) is a cross-platform data 
+storage system that works on iOS and Android.
+It makes it easy to add offline storage to Ionic apps that is secure (encrypted on device), 
+highly performant, and provides advanced NoSQL data querying.
+
+Created for teams building complex, data-driven apps, apps managing sensitive data, or apps used in
+areas with unreliable cell service/internet connections. 
+Interested? [Start here.](https://ionicframework.com/offline-storage#get-started)
+
+## Ionic Storage
+
+Ionic Storage is a free, open source alternative for indie devs, students & hobbyists.
+It provides an easy way to store key/value pairs and JSON objects.
+
+It uses a variety of storage engines underneath, picking the best one available
+depending on the platform: 
+
+* When running in a native app context, Storage will prioritize using SQLite, as it's one of
 the most stable and widely used file-based databases, and avoids some of the
 pitfalls of things like localstorage and IndexedDB, such as the OS deciding to clear out such
 data in low disk-space situations.
-
-When running in the web or as a Progressive Web App, Storage will attempt to use
+* When running in the web or as a Progressive Web App, Storage will attempt to use
 IndexedDB, WebSQL, and localstorage, in that order.
 
-
-## Usage
-
+### Usage
 
 First, if you'd like to use SQLite, install the cordova-sqlite-storage plugin:
 ```bash
@@ -102,10 +116,10 @@ export class AppModule { }
 ```
 
 
-## Instance Members
+### Instance Members
 
 
-### constructor
+#### constructor
 
 Create a new Storage instance using the order of drivers and any additional config
 options to pass to LocalForage.
@@ -120,7 +134,7 @@ default is that exact ordering.
 
 
 
-### driver
+#### driver
 
 Get the name of the driver being used.
 
@@ -129,7 +143,7 @@ Get the name of the driver being used.
 
 
 
-### clear()
+#### clear()
 Clear the entire key value store. WARNING: HOT!
 
 __Returns:__ Returns a promise that resolves when the store is cleared
@@ -141,7 +155,7 @@ __Returns:__ Returns a promise that resolves when the store is cleared
 
 
 
-### forEach()
+#### forEach()
 Iterate through each key,value pair.
 
 __Returns:__ Returns a promise that resolves when the iteration has finished.
@@ -154,7 +168,7 @@ __Returns:__ Returns a promise that resolves when the iteration has finished.
 
 
 
-### get()
+#### get()
 Get the value associated with the given key.
 
 __Returns:__ Returns a promise with the value of the given key
@@ -167,7 +181,7 @@ __Returns:__ Returns a promise with the value of the given key
 
 
 
-### keys()
+#### keys()
 
 
 __Returns:__ Returns a promise that resolves with the keys in the store.
@@ -179,7 +193,7 @@ __Returns:__ Returns a promise that resolves with the keys in the store.
 
 
 
-### length()
+#### length()
 
 
 __Returns:__ Returns a promise that resolves with the number of keys stored.
@@ -191,7 +205,7 @@ __Returns:__ Returns a promise that resolves with the number of keys stored.
 
 
 
-### ready()
+#### ready()
 Reflect the readiness of the store.
 
 __Returns:__ Returns a promise that resolves when the store is ready
@@ -203,7 +217,7 @@ __Returns:__ Returns a promise that resolves when the store is ready
 
 
 
-### remove()
+#### remove()
 Remove any value associated with this key.
 
 __Returns:__ Returns a promise that resolves when the value is removed
@@ -216,7 +230,7 @@ __Returns:__ Returns a promise that resolves when the value is removed
 
 
 
-### set()
+#### set()
 Set the value for the given key.
 
 __Returns:__ Returns a promise that resolves when the key and value are set
