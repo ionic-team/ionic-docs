@@ -1,5 +1,5 @@
 ---
-title: Native Plugins
+title: Plugins Nativos
 ---
 
 <p class='intro'>Native Plugins are integrations that make it easy to add native functionality to any Ionic app, Cordova project, or WebView. Ionic offers two sets of native plugins: Ionic Native and Community Plugins</p>
@@ -10,4 +10,4 @@ A collection of free Cordova plugins, built and maintained by the OSS community,
 
 <docs-card header="Ionic Native" href="/docs/enterprise" img="/docs/assets/img/native/enterprise-edition.png"> 
 
-For teams building mission-critical apps, Ionic Native is a curated collection of plugins and integrations that are built and supported by Ionic, with stability assurances and guaranteed to work on all major platforms and versions.</docs-card> </docs-cards>
+Para los equipos que crean aplicaciones de misión crítica, Ionic Native es una colección curada de complementos e integraciones que Ionic crea y admite, con garantías de estabilidad y garantizadas para funcionar en todas las plataformas y versiones principales.</docs-card> </docs-cards>
