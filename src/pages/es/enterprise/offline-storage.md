@@ -188,7 +188,7 @@ The following example persists a few documents in batch. </p>
     database.inBatch(<span class="hljs-keyword">new</span> Runnable() {
         <span class="hljs-meta">@Override</span>
         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
-            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++) {
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i < <span class="hljs-number">10</span>; i++) {
                 let doc = <span class="hljs-keyword">new</span> MutableDocument();
                 doc.setValue(<span class="hljs-string">"type"</span>, <span class="hljs-string">"user"</span>);
                 doc.setValue(<span class="hljs-string">"name"</span>, String.format(<span class="hljs-string">"user %d"</span>, i));
@@ -927,7 +927,7 @@ Similarly to the save operation, the delete operation also has two method signat
 
 ## Database Replicas
 
-Database replicas is available in the **Enterprise Edition** only (<https://www.couchbase.com/downloads>{.bare}). Starting in Couchbase Lite 2.0, replication between two local databases is now supported. It allows a Couchbase Lite replicator to store data on secondary storage. It would be especially useful in scenarios where a user’s device is damaged and the data needs to be moved to a different device. Note that the code below won’t compile if you’re running the **Community Edition** of Couchbase Lite.
+Database replicas is available in the **Ionic Native** only (<https://www.couchbase.com/downloads>{.bare}). Starting in Couchbase Lite 2.0, replication between two local databases is now supported. It allows a Couchbase Lite replicator to store data on secondary storage. It would be especially useful in scenarios where a user’s device is damaged and the data needs to be moved to a different device. Note that the code below won’t compile if you’re running the **Community Plugin** of Couchbase Lite.
 
 <!--
 ## Certificate Pinning
