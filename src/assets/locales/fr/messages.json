@@ -182,6 +182,8 @@
   "menu-appflow-cookbook-private_git": "Utiliser les dépôts GIT privés",
   "menu-appflow-cookbook-private_npm_modules": "Utiliser les modules NPM privés",
   "menu-appflow-devapp": "DevApp : Développement local",
+  "menu-enterprise-getting-started": "Getting Started",
+  "menu-enterprise-guides": "Guides",
   "menu-enterprise-authentication-security": "Authentication, Security, Storage",
   "menu-enterprise-common-device-features": "Fonctions communes des appareils cibles",
   "menu-enterprise-integrated-services": "Services intégrés",
