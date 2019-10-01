@@ -44,7 +44,8 @@ For iOS you have to add this configuration to your configuration.xml file
 </edit-config>
 ```
 
-*__usage__*: ```typescript
+*__usage__*: 
+```typescript
 import { Geolocation } from '@ionic-enterprise/geolocation/ngx';
 
 ...
