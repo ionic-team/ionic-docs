@@ -182,6 +182,8 @@
   "menu-appflow-cookbook-private_git": "Usando repositórios GIT privados",
   "menu-appflow-cookbook-private_npm_modules": "Usando Módulos NPM Privados",
   "menu-appflow-devapp": "DevApp: Desenvolvimento local",
+  "menu-enterprise-getting-started": "Getting Started",
+  "menu-enterprise-guides": "Guides",
   "menu-enterprise-authentication-security": "Authentication, Security, Storage",
   "menu-enterprise-common-device-features": "Recursos Comuns de Dispositivo",
   "menu-enterprise-integrated-services": "Serviços Integrados",
