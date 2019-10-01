@@ -2,6 +2,18 @@
 
 In order to use the Ionic Native plugins, there's just a few quick steps.
 
+## Create an App in the Ionic Hub
+
+First, log into the [Ionic Hub](https://dashboard.ionicframework.com), then navigate to the Native Plugins Keys page. Click `Assign to App`, then `New App`.
+
+Enter a name, then click `Create App`.
+
+Hover over a Native Plugin Key, then click to copy it to your clipboard:
+
+![test](/docs/assets/img/native/native-setup-keys.png)
+
+Next, open up a terminal on your computer.
+
 ## Install Tooling
 
 First, ensure that you have the latest Ionic CLI installed:
@@ -22,18 +34,21 @@ functionality will still work as expected.
 The Ionic Enterprise Cordova CLI should be installed on each developer's machine.
 This is also true for any development build servers that you may use.
 
-## Obtain Your Product Key
+## Setup the Ionic App Locally
 
-In order to use Ionic Native plugins in your application, you need to register one product key
-per app.
+Log into CLI
 
-Log into the [Ionic Hub](https://dashboard.ionicframework.com) and navigate to the `Native Plugin Keys` section.
-Assign the Product Key to an App, then copy the entire Key shown.
+ionic login
+
+
+ionic start
+
+Follow the prompts to name the app, pick your preferred JavaScript framework, then choose the "blank" template.
+
 
 ## Register Your Product Key
 
-Register the product key for your application using the Ionic CLI. This only needs to be run once per application. From within your app's root directory, run 
-the following, then paste in the Product Key when prompted:
+Register the product key for your application. This only needs to be run once per app. From within your app's root directory, paste in the `Product Key`, previously copied from the Ionic Hub site, when prompted:
 
 <command-line>
 <command-prompt>ionic enterprise register</command-prompt>
