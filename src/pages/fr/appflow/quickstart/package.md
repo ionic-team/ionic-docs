@@ -10,6 +10,7 @@ nextUrl: '/docs/appflow/quickstart/automation'
 Next we'll build an Android `Debug` binary using the [Ionic Package](/docs/appflow/package/intro) service.
 
 <blockquote>
+  
 <b>Note:</b> If you'd like to build an Android <b>Release</b> binary or <b>any</b> iOS binary, you'll need to
 <a href="/docs/appflow/package/credentials">generate signing credentials</a>
 and <a href="/docs/appflow/package/adding-credentials">add them to a security profile</a> in the Appflow Dashboard.
@@ -40,6 +41,7 @@ For the quickstart tutorial, select the `Android` platfrom and the `Debug` type 
 ## Downloading the Build
 
 <blockquote>
+  
 <b>Note:</b> If you have trouble getting a successful build in the previous step, you can find answers to common Package build errors in
 <a href="https://ionic.zendesk.com/hc/en-us/categories/360000410494-Package" target="_blank">this section of our knowledge base</a>.
 </blockquote>
