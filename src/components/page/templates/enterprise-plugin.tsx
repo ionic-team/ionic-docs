@@ -9,7 +9,7 @@ export default (props) => {
   let variables = '';
   if (pluginId === 'auth-connect') {
     pluginId = 'auth';
-    variables = '--variable AUTH_URL_SCHEME =mycustomscheme';
+    variables = '--variable AUTH_URL_SCHEME=mycustomscheme';
   }
   const otherVersions = page.otherVersions || [];
 
