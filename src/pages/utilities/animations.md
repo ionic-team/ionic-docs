@@ -173,8 +173,8 @@ await squareC.playAsync();
 The example above plays animation `squareA` first, then plays animation `squareB`, and finally plays animation `squareC`. An alternative way of writing this would be to use the `onFinish` method as follows:
 
 ```javascript
-squareA.onFinish(() => squareB.play());
-squareB.onFinish(() => squareC.play());
+squareA.onFinish((): squareB.play());
+squareB.onFinish((): squareC.play());
 
 squareA.play();
 ```
@@ -202,13 +202,13 @@ const animation = createAnimation()
 const gesture = createGesture({
   el: square,
   threshold: 0,
-  onMove: ev => onMove(ev),
-  onEnd: ev => onEnd(ev)
+  onMove: ev: onMove(ev),
+  onEnd: ev: onEnd(ev)
 })
 
 gesture.setDisabled(false);
 
-const onMove = (ev) => {
+const onMove = (ev): {
   if (!started) {
     animation.progressStart();
     started = true;
@@ -217,7 +217,7 @@ const onMove = (ev) => {
   animation.progressStep(getStep(ev));
 }
 
-const onEnd = (ev) => {
+const onEnd = (ev): {
   if (!started) { return; }
   
   gesture.setDisabled(true);
@@ -227,17 +227,17 @@ const onEnd = (ev) => {
 
   animation
     .progressEnd((shouldComplete) ? 1 : 0, step)
-    .onFinish(() => { gesture.setDisabled(false); });  
+    .onFinish((): { gesture.setDisabled(false); });  
   
   initialStep = (shouldComplete) ? MAX_TRANSLATE : 0;
   started = false;
 }
 
-const clamp = (min, n, max) => {
+const clamp = (min, n, max): {
   return Math.max(min, Math.min(n, max));
 };
 
-const getStep = (ev) => {
+const getStep = (ev): {
   const delta = initialStep + ev.deltaX;
   return clamp(0, delta / MAX_TRANSLATE, 1);
 }
@@ -276,7 +276,26 @@ For information on which CSS properties cause layouts or paints to occur, see [C
 | ---------------------| ------------------------------------------------------------- |
 | `AnimationDirection` | `'normal' \| 'reverse' \| 'alternate' \| 'alternate-reverse'` |
 | `AnimationFill`      | `'auto' \| 'none' \| 'forwards' \| 'backwards' \| 'both'`     |  
-| `AnimationOnFinishOptions` | `{ oneTimeCallback: boolean }` |                                                     
+
+## Interfaces
+
+```typescript
+interface AnimationOnFinishOptions {
+  /**
+   * If true, the associated callback will only be fired once.
+   */
+  oneTimeCallback: boolean;
+}
+
+interface AnimationPlayOptions {
+  /**
+   * If true, the animation will play synchronously. 
+   * This is the equivalent of running the animation
+   * with a duration of 0ms.
+   */ 
+  sync: boolean;
+}
+```
 
 ## Properties
 
@@ -284,48 +303,42 @@ For information on which CSS properties cause layouts or paints to occur, see [C
 | ------------------------------------------| ------------------------------------------------- |
 | `childAnimations: Animation[]`            | All child animations of a given parent animation. |
 | `elements: HTMLElement[]`                 | All elements attached to an animation.            |                                                       
-| `parentAnimation: Animation \| undefined` | The parent animation of a given animation object. |
+| `parentAnimation?: Animation` | The parent animation of a given animation object. |
 
 ## Methods
 
-TODO: This section needs to be revised with latest API changes
-
 | Name                                      | Description                                       |
 | ------------------------------------------| ------------------------------------------------- |
-| `addAnimation(animationToAdd: Animation \| Animation[] \| undefined \| null) => Animation`            | Group one or more animations together to be controlled by a parent animation. |
-| `addElement(el: Element \| Element[] \| Node \| Node[] \| NodeList \| undefined \| null) => Animation`                 | Add one or more elements to the animation.            |                                                       
-| `afterAddClass(className: string \| string[] \| undefined) => Animation` | Add a class or array of classes to be added to all elements in an animation after the animation ends. |
-| `afterAddRead(readFn: () => void) => Animation` | Add a function that performs a DOM read to be run after the animation ends. |
-| `afterAddWrite(writeFn: () => void) => Animation` | Add a function that performs a DOM write to be run after the animation ends. |
-| `afterClearStyles(propertyNames: string[]) => Animation` | Add an array of property names to be cleared from the inline styles on all elements in an animation after the animation ends. |
-| `afterRemoveClass(className: string \| string[] \| undefined) => Animation` | Add a class or an array of classes to be removed from all elements in an animation after the animation ends. |
-| `afterStyles(styles: { [property: string]: any }) => Animation` | Add an object of styles to be applied to all elements in an animation after the animation ends. |
-| `beforeAddClass(className: string \| string[] \| undefined) => Animation` |Add a class or array of classes to be added to all elements in an animation before the animation starts. |
-| `beforeAddRead(readFn: () => void) => Animation` | Add a function that performs a DOM read to be run before the animation starts. |
-| `beforeAddWrite(writeFn: () => void) => Animation` | Add a function that performs a DOM write to be run before the animation starts. |
-| `beforeClearStyles(propertyNames: string[]) => Animation` | Add an array of property names to be cleared from the inline styles on all elements in an animation before the animation starts. |
-| `beforeRemoveClass(className: string \| string[] \| undefined) => Animation` | Add a class or an array of classes to be removed from all elements in an animation before the animation starts. |
-| `beforeStyles(styles: { [property: string]: any }) => Animation` | Add an object of styles to be applied to all elements in an animation before the animation starts. |
-| `clearOnFinish(): Animation` | TODO |
-| `direction(direction: AnimationDirection \| undefined) => Animation` | Set the direction the animation should play in.
-| `delay() => Animation` | Set the delay for the start of the animation in milliseconds. |
-| `destroy() => Animation` | Destroy the animation and clear all elements, child animations, and keyframes. |
-| `duration(duration: number) => Animation` | Set the duration of the animation in milliseconds. |
-| `easing(easing: string) => Animation` | Set the easing of the animation in milliseconds. See [Easing Effects](https://developer.mozilla.org/en-US/docs/Web/API/EffectTiming/easing#Value) for a list of accepted easing values. |
-| `from(property: string, value: any): Animation` | TODO |
-| `fromTo(property: string, fromValue: any, toValue: any): Animation` | TODO |
-| `fill(fill: AnimationFill \| undefined): Animation` | TODO |
-| `iterations(iterations: number): Animation` | TODO |
-| `keyframes(keyframes: any[]): Animation` | TODO |
-| `onFinish(callback: (didComplete: boolean, animation: Animation) => void, opts?: AnimationOnFinishOptions): Animation` | TODO |
-| `parent(animation: Animation): Animation` | TODO |
-| `pause() => Animation` | Pause the animation. |
-| `play() => Animation` | Play the animation. |
-| `playAsync() => Promise<Animation>` | Play the animation asynchronously. Returns a promise that resolves when the animation is done. |
-| `playSync() => Animation` | Play the animation synchronously. This is the equivalent of playing an animation with a duration of 0. |
-| `progressEnd(shouldComplete: boolean, step: number, dur: number \| undefined): Animation` | TODO |
-| `progressStart(forceLinearEasing: boolean): Animation` | TODO |
-| `progressStep(step: number): Animation` | TODO |
-| `stop() => Animation` | Stop the animation and reset all elements to their initial state. |
-| 
+| `addAnimation(animationToAdd: Animation \| Animation[]): Animation`            | Group one or more animations together to be controlled by a parent animation. |
+| `addElement(el: Element \| Element[] \| Node \| Node[] \| NodeList): Animation`                 | Add one or more elements to the animation.            |                                                       
+| `afterAddClass(className: string \| string[]): Animation` | Add a class or array of classes to be added to all elements in an animation after the animation ends. |
+| `afterAddRead(readFn: (): void): Animation` | Add a function that performs a DOM read to be run after the animation ends. |
+| `afterAddWrite(writeFn: (): void): Animation` | Add a function that performs a DOM write to be run after the animation ends. |
+| `afterClearStyles(propertyNames: string[]): Animation` | Add an array of property names to be cleared from the inline styles on all elements in an animation after the animation ends. |
+| `afterRemoveClass(className: string \| string[]): Animation` | Add a class or an array of classes to be removed from all elements in an animation after the animation ends. |
+| `afterStyles(styles: { [property: string]: any }): Animation` | Add an object of styles to be applied to all elements in an animation after the animation ends. |
+| `beforeAddClass(className: string \| string[]): Animation` |Add a class or array of classes to be added to all elements in an animation before the animation starts. |
+| `beforeAddRead(readFn: (): void): Animation` | Add a function that performs a DOM read to be run before the animation starts. |
+| `beforeAddWrite(writeFn: (): void): Animation` | Add a function that performs a DOM write to be run before the animation starts. |
+| `beforeClearStyles(propertyNames: string[]): Animation` | Add an array of property names to be cleared from the inline styles on all elements in an animation before the animation starts. |
+| `beforeRemoveClass(className: string \| string[]): Animation` | Add a class or an array of classes to be removed from all elements in an animation before the animation starts. |
+| `beforeStyles(styles: { [property: string]: any }): Animation` | Add an object of styles to be applied to all elements in an animation before the animation starts. |
+| `direction(direction?: AnimationDirection): Animation` | Set the direction the animation should play in.
+| `delay(delay?: number): Animation` | Set the delay for the start of the animation in milliseconds. |
+| `destroy(): Animation` | Destroy the animation and clear all elements, child animations, and keyframes. |
+| `duration(duration?: number): Animation` | Set the duration of the animation in milliseconds. |
+| `easing(easing?: string): Animation` | Set the easing of the animation in milliseconds. See [Easing Effects](https://developer.mozilla.org/en-US/docs/Web/API/EffectTiming/easing#Value) for a list of accepted easing values. |
+| `from(property: string, value: any): Animation` | Set the initial styles of the animation. |
+| `fromTo(property: string, fromValue: any, toValue: any): Animation` | Set the initial and end styles of the animation. |
+| `fill(fill?: AnimationFill): Animation` | Set how the animation applies styles to its elements before and after the animation's execution. |
+| `iterations(iterations: number): Animation` | Set the number of times the animation cycle should be played before stopping. |
+| `keyframes(keyframes: any[]): Animation` | Set the keyframes for an animation. |
+| `onFinish(callback: (didComplete: boolean, animation: Animation): void, opts?: AnimationOnFinishOptions): Animation` | Add a callback to be run upon the animation ending. |
+| `pause(): Animation` | Pause the animation. |
+| `play(opts?: AnimationPlayOptions): Promise<void>` | Play the animation. |
+| `progressEnd(playTo?: 0 \| 1, step: number, dur?: number): Animation` | Stop seeking through an animation. |
+| `progressStart(forceLinearEasing: boolean): Animation` | Begin seeking through an animation. |
+| `progressStep(step: number): Animation` | Seek through an animation. |
+| `stop(): Animation` | Stop the animation and reset all elements to their initial state. |
+| `to(property: string, value: any): Animation` | Set the end styles of the animation. |
 
