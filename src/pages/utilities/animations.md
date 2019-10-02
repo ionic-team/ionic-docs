@@ -133,7 +133,7 @@ See [Methods](#methods) for a complete list of hooks.
 
 ## Chained Animations
 
-Animations can be chained to run one after the other. The recommended approach is to use the `playAsync` method, but chaining via an `onFinish` callback can be used as well.
+Animations can be chained to run one after the other. The `play` method returns a Promise that resolves when the animation has completed.
 
 ### Usage
 
@@ -165,18 +165,9 @@ const squareC = createAnimation()
     { offset: 1, transform: 'scale(1)', opacity: 0.5 }
   ]);
 
-await squareA.playAsync();
-await squareB.playAsync();
-await squareC.playAsync();
-```
-
-The example above plays animation `squareA` first, then plays animation `squareB`, and finally plays animation `squareC`. An alternative way of writing this would be to use the `onFinish` method as follows:
-
-```javascript
-squareA.onFinish((): squareB.play());
-squareB.onFinish((): squareC.play());
-
-squareA.play();
+await squareA.play();
+await squareB.play();
+await squareC.play();
 ```
 
 <docs-codepen user="ionic" slug="MWgGrwX" height="460"></docs-codepen>
