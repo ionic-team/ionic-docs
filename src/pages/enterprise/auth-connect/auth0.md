@@ -104,4 +104,4 @@ The audience field comes from your custom API of choice &mdash; the API Audience
 
 ### What's Next?
 
-Implement the [other steps](/docs/enterprise/auth-connect#workflow) in the Auth Connect workflow. A complete working example can be found [on GitHub](https://github.com/ionic-team/demo-authconnect-auth0).
+Check out the full list of [configuration options](/docs/enterprise/auth-connect#ionicauthoptions) available, then implement the [other steps](/docs/enterprise/auth-connect#workflow) in the Auth Connect workflow. A complete working example can be found [on GitHub](https://github.com/ionic-team/demo-authconnect-auth0).
