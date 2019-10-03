@@ -84,7 +84,8 @@
     "repo": "https://github.com/floatinghotpot/cordova-admob-pro",
     "cordovaPlugin": {
       "name": "cordova-plugin-admobpro"
-    }
+    },
+    "capacitorIncompatible": true
   },
   {
     "packageName": "@ionic-native/admob",
@@ -699,7 +700,8 @@
     "installVariables": [],
     "cordovaPlugin": {
       "name": "cordova-plugin-braintree"
-    }
+    },
+    "capacitorIncompatible": true
   },
   {
     "packageName": "@ionic-native/branch-io",
@@ -1594,7 +1596,8 @@
     "repo": "https://github.com/arnesson/cordova-plugin-firebase",
     "cordovaPlugin": {
       "name": "cordova-plugin-firebase"
-    }
+    },
+    "capacitorIncompatible": true
   },
   {
     "packageName": "@ionic-native/flashlight",
@@ -2131,7 +2134,8 @@
     "repo": "https://github.com/ionic-team/cordova-plugin-ionic-webview",
     "cordovaPlugin": {
       "name": "cordova-plugin-ionic-webview"
-    }
+    },
+    "capacitorIncompatible": true
   },
   {
     "packageName": "@ionic-native/is-debug",
@@ -2190,7 +2194,8 @@
     "repo": "https://github.com/ionic-team/cordova-plugin-ionic-keyboard",
     "cordovaPlugin": {
       "name": "cordova-plugin-ionic-keyboard"
-    }
+    },
+    "capacitorIncompatible": true
   },
   {
     "packageName": "@ionic-native/keychain-touch-id",
@@ -2455,7 +2460,8 @@
     "repo": "https://github.com/homerours/cordova-music-controls-plugin",
     "cordovaPlugin": {
       "name": "cordova-plugin-music-controls"
-    }
+    },
+    "capacitorIncompatible": true
   },
   {
     "packageName": "@ionic-native/native-audio",
@@ -2910,7 +2916,8 @@
     "repo": "https://github.com/bitpay/cordova-plugin-qrscanner",
     "cordovaPlugin": {
       "name": "cordova-plugin-qrscanner"
-    }
+    },
+    "capacitorIncompatible": true
   },
   {
     "packageName": "@ionic-native/quikkly",
@@ -3206,7 +3213,8 @@
     "repo": "https://github.com/apache/cordova-plugin-splashscreen",
     "cordovaPlugin": {
       "name": "cordova-plugin-splashscreen"
-    }
+    },
+    "capacitorIncompatible": true
   },
   {
     "packageName": "@ionic-native/spotify-auth",
@@ -3315,7 +3323,8 @@
     "repo": "https://github.com/apache/cordova-plugin-statusbar",
     "cordovaPlugin": {
       "name": "cordova-plugin-statusbar"
-    }
+    },
+    "capacitorIncompatible": true
   },
   {
     "packageName": "@ionic-native/stepcounter",
