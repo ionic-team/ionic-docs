@@ -40,6 +40,7 @@ const items = {
     'Native Storage': '/docs/enterprise/nativestorage',
     'Network Information': '/docs/enterprise/network-information',
     'Screen Orientation': '/docs/enterprise/screen-orientation',
+    'Social Sharing': '/docs/enterprise/social-sharing',
     'Splashscreen': '/docs/enterprise/splashscreen',
     'Statusbar': '/docs/enterprise/statusbar',
   },

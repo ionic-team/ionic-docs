@@ -123,6 +123,7 @@ Accelerate your app development with powerful solutions to common enterprise use
 - [Native Storage](/docs/enterprise/nativestorage)
 - [Network Information](/docs/enterprise/network-information)
 - [Screen Orientation](/docs/enterprise/screen-orientation)
+- [Social Sharing](/docs/enterprise/social-sharing)
 - [Splash Screen](/docs/enterprise/splashscreen)
 - [Status Bar](/docs/enterprise/statusbar)
 
