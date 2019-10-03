@@ -105,6 +105,7 @@ Accelerate your app development with powerful solutions to common enterprise use
 ### Common Device Features
 
 - [Android Permissions](/docs/enterprise/android-permissions)
+- [App Rate](/docs/enterprise/app-rate)
 - [App Version](/docs/enterprise/app-version)
 - [Badge](/docs/enterprise/badge)
 - [Browser](/docs/enterprise/inappbrowser)
@@ -112,11 +113,13 @@ Accelerate your app development with powerful solutions to common enterprise use
 - [Camera](/docs/enterprise/camera)
 - [Clipboard](/docs/enterprise/clipboard)
 - [Contacts](/docs/enterprise/contacts)
+- [Deeplinks](/docs/enterprise/deeplinks)
 - [Device](/docs/enterprise/device)
 - [Dialogs](/docs/enterprise/dialogs)
 - [Email Composer](/docs/enterprise/email-composer)
 - [Filesystem](/docs/enterprise/filesystem)
 - [Geolocation](/docs/enterprise/geolocation)
+- [Globalization](/docs/enterprise/globalization)
 - [Haptics & Vibration](/docs/enterprise/vibration)
 - [Keyboard](/docs/enterprise/keyboard)
 - [Media](/docs/enterprise/media)
@@ -124,6 +127,7 @@ Accelerate your app development with powerful solutions to common enterprise use
 - [Native Storage](/docs/enterprise/nativestorage)
 - [Network Information](/docs/enterprise/network-information)
 - [Screen Orientation](/docs/enterprise/screen-orientation)
+- [Social Sharing](/docs/enterprise/social-sharing)
 - [Splash Screen](/docs/enterprise/splashscreen)
 - [Status Bar](/docs/enterprise/statusbar)
 
