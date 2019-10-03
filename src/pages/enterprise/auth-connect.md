@@ -29,7 +29,7 @@ Supported Providers
 Leveraging the OAuth/OpenId Connect protocols, Auth Connect supports:
 
 * [Auth0](/docs/enterprise/auth-connect/auth0)
-* Azure Active Directory v.2 (Microsoft)
+* [Azure Active Directory v2](/docs/enterprise/auth-connect/azure-ad) (Microsoft)
 * Cognito (AWS)  
 
 ### Handling password reset cases from Azure AD with custom user flows/policies
