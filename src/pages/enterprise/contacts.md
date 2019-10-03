@@ -1,7 +1,7 @@
 ---
 title: Contacts
 template: enterprise-plugin
-version: 1.0.0
+version: 1.0.2
 minor: 1.0.X
 ---
 
@@ -213,7 +213,7 @@ ___
 
 **● note**: *`string` \| `null`*
 
-A note about the contact.
+A note about the contact on Android.
 
 ___
 <a id="contact.organizations"></a>
@@ -907,3 +907,20 @@ ___
 
 ___
 
+# Changelog
+
+
+
+### [1.0.2] (2019-10-02)
+
+
+### Bug Fixes
+
+* **ios:** remove contact notes code to work on iOS 13 
+
+### 1.0.1 (2019-09-20)
+
+
+### Bug Fixes
+
+* plugin files not included on published package 
