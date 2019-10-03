@@ -91,7 +91,7 @@ constructor() {
         clientSecret: ''
     };
     
-    super(auth0Config);
+    super(azureConfig);
     }
 }
 ```
