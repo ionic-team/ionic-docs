@@ -102,6 +102,7 @@ Accelerate your app development with powerful solutions to common enterprise use
 
 ### Common Device Features
 - [Android Permissions](/docs/enterprise/android-permissions)
+- [App Rate](/docs/enterprise/app-rate)
 - [App Version](/docs/enterprise/app-version)
 - [Badge](/docs/enterprise/badge)
 - [Browser](/docs/enterprise/inappbrowser)
