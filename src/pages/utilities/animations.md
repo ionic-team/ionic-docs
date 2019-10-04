@@ -271,7 +271,7 @@ For information on which CSS properties cause layouts or paints to occur, see [C
 ## Interfaces
 
 ```typescript
-interface AnimationOnFinishOptions {
+interface AnimationCallbackOptions {
   /**
    * If true, the associated callback will only be fired once.
    */
@@ -319,12 +319,12 @@ interface AnimationPlayOptions {
 | `destroy(): Animation` | Destroy the animation and clear all elements, child animations, and keyframes. |
 | `duration(duration?: number): Animation` | Set the duration of the animation in milliseconds. |
 | `easing(easing?: string): Animation` | Set the easing of the animation in milliseconds. See [Easing Effects](https://developer.mozilla.org/en-US/docs/Web/API/EffectTiming/easing#Value) for a list of accepted easing values. |
-| `from(property: string, value: any): Animation` | Set the initial styles of the animation. |
-| `fromTo(property: string, fromValue: any, toValue: any): Animation` | Set the initial and end styles of the animation. |
+| `from(property: string, value: any): Animation` | Set the start styles of the animation. |
+| `fromTo(property: string, fromValue: any, toValue: any): Animation` | Set the start and end styles of the animation. |
 | `fill(fill?: AnimationFill): Animation` | Set how the animation applies styles to its elements before and after the animation's execution. |
 | `iterations(iterations: number): Animation` | Set the number of times the animation cycle should be played before stopping. |
 | `keyframes(keyframes: any[]): Animation` | Set the keyframes for an animation. |
-| `onFinish(callback: (didComplete: boolean, animation: Animation): void, opts?: AnimationOnFinishOptions): Animation` | Add a callback to be run upon the animation ending. |
+| `onFinish(callback: (didComplete: boolean, animation: Animation): void, opts?: AnimationCallbackOptions): Animation` | Add a callback to be run upon the animation ending. |
 | `pause(): Animation` | Pause the animation. |
 | `play(opts?: AnimationPlayOptions): Promise<void>` | Play the animation. |
 | `progressEnd(playTo?: 0 \| 1, step: number, dur?: number): Animation` | Stop seeking through an animation. |
