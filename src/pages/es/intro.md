@@ -13,15 +13,15 @@ Ionic Framework se enfoca en la experiencia frontend del usuario, o la interacci
 
 Actualmente, Ionic Framework tiene integración oficial con <a href="https://angular.io/" target="_blank">Angular</a>, sin embargo el soporte para **Vue** y **React** ya está en desarrollo. Si quieres aprender más sobre Ionic Framework antes de sumergirte en él, hemos <a href="https://youtu.be/p3AN3igqiRc" target="_blank">creado un vídeo</a> para que des un paseo por los conceptos básicos.
 
-## Goals
+## Objetivos
 
 ### Multiplataforma (Cross-platform)
 
-Build and deploy apps that work across multiple platforms, such as native iOS, Android, desktop, and the web as a Progressive Web App - all with one code base. Write once, run anywhere.
+Construye y despliega aplicaciones que funcionen a través de múltiples plataformas, como iOS nativo, Android, escritorio y la web como una Aplicación Web Progresiva - todo con un único código base. Write once, run anywhere.
 
-### Web Standards-based
+### Basado en Estándares Web
 
-Ionic Framework is built on top of reliable, [standardized web technologies](/docs/faq/glossary#web-standards): HTML, CSS, and JavaScript, using modern Web APIs such as Custom Elements and Shadow DOM. Because of this, Ionic components have a stable API, and aren't at the whim of a single platform vendor.
+Ionic Framework está construido sobre la base de [tecnologías web estandarizadas](/docs/faq/glossary#web-standards) y confiables: HTML, CSS y JavaScript, utilizando modernas API Web tales como Custom Elements y Shadow DOM. Debido a ello, los componentes Ionic tienen una API estable, y no están al servicio de un único proveedor de plataforma.
 
 ### Beautiful Design
 
