@@ -17,17 +17,17 @@ Actualmente, Ionic Framework tiene integración oficial con <a href="https://ang
 
 ### Multiplataforma (Cross-platform)
 
-Construye y despliega aplicaciones que funcionen a través de múltiples plataformas, como iOS nativo, Android, escritorio y la web como una Aplicación Web Progresiva - todo con un único código base. Write once, run anywhere.
+Construye y despliega aplicaciones que funcionen a través de múltiples plataformas, como iOS nativo, Android, escritorio y la web como una Aplicación Web Progresiva - todo con un único código base. Escriba una vez, ejecute en cualquier lugar.
 
 ### Basado en Estándares Web
 
 Ionic Framework está construido sobre la base de [tecnologías web estandarizadas](/docs/faq/glossary#web-standards) y confiables: HTML, CSS y JavaScript, utilizando modernas API Web tales como Custom Elements y Shadow DOM. Debido a ello, los componentes Ionic tienen una API estable, y no están al servicio de un único proveedor de plataforma.
 
-### Beautiful Design
+### Diseño hermoso
 
-Clean, simple, and functional. Ionic Framework is designed to work and display beautifully out-of-the-box across all platforms. Start with pre-designed components, typography, interactive paradigms, and a gorgeous (yet extensible) base theme.
+Limpio, simple y funcional. Ionic Framework está diseñado para trabajar y mostrar bellamente fuera de la caja a través de todas las plataformas. Comience con componentes predefinidos, tipografía, paradigmas interactivos y un vistoso (aunque extensible) tema básico.
 
-### Simplicity
+### Simplicidad
 
 Ionic Framework is built with simplicity in mind, so that creating Ionic apps is enjoyable, easy to learn, and accessible to just about anyone with web development skills.
 
