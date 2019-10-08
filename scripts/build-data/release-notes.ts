@@ -5,6 +5,7 @@ import renderMarkdown from '../build-pages/markdown-renderer';
 import fetch from 'node-fetch';
 import url from 'url';
 import { convertHtmlToHypertextData } from '../build-pages/html-to-hypertext-data';
+import semver from 'semver';
 
 dotenv.config();
 
@@ -57,14 +58,7 @@ async function getReleases() {
           version
         };
       }).sort((a, b) => {
-        if (a.tag_name < b.tag_name) {
-          return 1;
-        }
-        if (a.tag_name > b.tag_name) {
-          return -1;
-        }
-        // a must be equal to b
-        return 0;
+        return -semver.compare(a.tag_name, b.tag_name);
       }).filter((release) => {
         const releasePattern = /^v(\d+)\.(\d+)\.(\d+)$/;
 
