@@ -36,7 +36,7 @@ After filling in all details above, click the Create button.
 
 #### Create User Flows (Policies)
 
-Create at least one [User Flow](https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-user-flows), the series of pages your users will interact with to sign up/sign into their account. Once the User Flow has been created, select it from the User Flow list, then click "Run user flow" from the Overview tab. Note the URL at the top of the page, used to configure Auth Connect's `Discovery URL` property.
+Create at least one [User Flow](https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-user-flows), the series of pages that define the entire authentication experience for your app. At a minimum, create a `Sign up and sign in` flow. Once the User Flow has been created, select it from the User Flow list, then click "Run user flow" from the Overview tab. Note the URL at the top of the page, used to configure Auth Connect's `Discovery URL` property. Also consider creating a `Password reset` flow ([detailed below](#implementing-password-reset)).
 
 Azure AD B2C is now ready to use with Auth Connect.
 
@@ -119,23 +119,24 @@ Where `B2C-TENANT-NAME` is your tenant name and the `POLICY-NAME` is the name of
 
 Check out the full list of [configuration options](/docs/enterprise/auth-connect#ionicauthoptions) available, then implement the [other steps](/docs/enterprise/auth-connect#workflow) in the Auth Connect workflow.
 
-## Implementing password reset using custom user flows/policies
+## Implementing Password Reset
 
 To implement password reset functionality, a custom User Flow needs to be created. Navigate to the `User flows (policies)` page, then click the "New user flow" button. Next, select the "Password reset" user flow type. As part of the `Application claims` section, choose "Email Addresses" at a minimum. After the user flow has been created, select it from the User Flow list, then click "Run user flow" from the Overview tab. Note the URL at the top of the page - use it as the discovery url for password reset.
 
-Within your app, implement the following:
+Within your app, implement the following logic:
 
-If an error is thrown after the [Login](/docs/enterprise/auth-connect#iionicauth.login) function is called, the hosting app should inspect the `message` property. If it starts with the string `AADB2C90118` (part of the error message returned by Azure AD),
-then the app should call [Login](#iionicauth.login) again, this time specifying the location of the password reset endpoint.
+If an error is thrown after the [Login](/docs/enterprise/auth-connect#iionicauth.login) function is called, inspect the `message` property. If it starts with the string `AADB2C90118` (part of the error message returned by Azure AD),
+then call [Login](#iionicauth.login) again, this time specifying the location of the password reset endpoint.
 
 ```typescript
-// Snippet example
+// Snippet example: Password reset
 async login() {
     try {
         await super.login();
     }
     catch (error) {
         // Handle password reset (only applicable for Azure AD B2C)
+        const message: string = error.message;
         if (message && message.startsWith('AADB2C90118')) {
             await super.login("DISCOVERY_URL_FOR_PASSWORD_RESET");
         } else {
