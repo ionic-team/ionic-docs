@@ -93,6 +93,22 @@ A great deal can be accomplished with the interactive canvas and the properties 
 
 Compose mode offers drag & drop support when adding new elements and rearranging existing elements.
 
+### Selecting Elements
+
+The selection system in the canvas works by restricting selection to elements at the same level in the document structure. That means elements in the immediate Content container on the screen will be selectable, but deeply nested elements will not (by default).
+
+This makes it easy to work with container elements without accidentally selecting child elements. For example, dragging a Card element is as easy as selecting the Card and dragging. There's no risk of accidentally dragging an inner child element.
+
+To select deeper elements, double click on that element while hovered over its container element. This "drill-down" operation takes the selection level one level deeper in the document structure. Elements at the same level are now selectable, along with any parent elements. To edit the text of an element, continue to double click until the text element is selected along with the relevant content in the editor pane.
+
+Sometimes it's helpful to select the deepest child under the mouse cursor. To do this, hold down the Command key on Mac or Control key on Windows. The selection mode will then highlight the most deeply nested element at that position.
+
+Additionally, it's possible to select any element on the screen by opening the context menu (commonly accessed by right clicking) and choosing an element from the `Select Element` dropdown:
+
+<figure>
+  <img alt="Editing Templates" src="/docs/assets/img/studio/ss-select-element-menu.png" />
+</figure>
+
 ### Adding New Elements
 
 To add new elements to a template, first open the element insertion dropdowns by clicking one of the buttons near the top of Compose.
@@ -106,6 +122,14 @@ These menus contains HTML elements, Ionic components, and the custom components 
 To insert an element, click and hold on it, then drag it into place in either canvas or code (in **Template** mode).
 
 Dragging an element into code allows more precise placement, but dragging it into the canvas may be easier and offers intelligent `slot` usage when using Ionic components.
+
+### Quick Adding New Elements
+
+Some elements support quickly adding relevant child elements from the context menu (commonly accessed with a right-click on a mouse). Some components that support quickly adding new elements include List, List Item, Grid, Segment Button, and more.
+
+<figure>
+  <img alt="Quick Add Element Menu" src="/docs/assets/img/studio/ss-quick-add-element-menu.png" />
+</figure>
 
 ### Rearranging Existing Elements
 
