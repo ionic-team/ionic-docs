@@ -95,18 +95,22 @@ Compose mode offers drag & drop support when adding new elements and rearranging
 
 ### Selecting Elements
 
-The selection system in the canvas works by restricting selection to elements at the same level in the document structure. That means elements in the immediate Content container on the screen will be selectable, but deeply nested elements will not (by default).
+To select an element, click on it in the canvas. To select a child element, double click on its parent. Continue to double click to select deeper child elements and to edit text.
 
-This makes it easy to work with container elements without accidentally selecting child elements. For example, dragging a Card element is as easy as selecting the Card and dragging. There's no risk of accidentally dragging an inner child element.
+To exit the current selection, use the Escape key shortcut.
 
-To select deeper elements, double click on that element while hovered over its container element. This "drill-down" operation takes the selection level one level deeper in the document structure. Elements at the same level are now selectable, along with any parent elements. To edit the text of an element, continue to double click until the text element is selected along with the relevant content in the editor pane.
+To enable selecting the deepest child under the mouse cursor, hold down the Command key on Mac or Control key on Windows and hover over an element.
 
-Sometimes it's helpful to select the deepest child under the mouse cursor. To do this, hold down the Command key on Mac or Control key on Windows. The selection mode will then highlight the most deeply nested element at that position.
-
-Additionally, it's possible to select any element on the screen by opening the context menu (commonly accessed by right clicking) and choosing an element from the `Select Element` dropdown:
+To select any element under the cursor, right clicking and choose an element from the `Select Element` dropdown:
 
 <figure>
-  <img alt="Editing Templates" src="/docs/assets/img/studio/ss-select-element-menu.png" />
+  <img alt="Selecting elements" src="/docs/assets/img/studio/ss-select-element-menu.png" />
+</figure>
+
+To select any element in the current document, access the element tree and click on the element to select:
+
+<figure>
+  <img alt="Editing Templates" src="/docs/assets/img/studio/ss-element-tree.png" />
 </figure>
 
 ### Adding New Elements
@@ -167,4 +171,12 @@ The **Scripts** and **Module** modes are for making changes to the controller an
 
 <figure>
   <img alt="Editing Scripts" src="/docs/assets/img/studio/ss-compose-scripts.png" />
+</figure>
+
+## Troubleshooting the Canvas
+
+If the canvas gets into an inconsistent or incorrect state, click the reload icon from the canvas utility bar to cause the canvas to reload its current contents:
+
+<figure>
+  <img alt="Editing Scripts" src="/docs/assets/img/studio/ss-canvas-reload.png" />
 </figure>
