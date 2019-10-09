@@ -1,7 +1,7 @@
 ---
 title: Offline Storage
 template: enterprise-plugin
-version: 1.0.1
+version: 1.0.0
 minor: 1.0.X
 ---
 
@@ -26,7 +26,7 @@ To use additional features such as cloud data sync, data replication, conflict r
 A complete [advanced offline search experience](https://github.com/ionic-team/demo-offlinestorage-search) demo that includes multiple filters and wildcard searches.
 
 ## Importing code
-To use the Couchbase Lite API, import from `@ionic-enterprise/couchbase-lite`.
+To use the Couchbase Lite API, import from `@ionic-enterprise/offline-storage`.
 For example:
 ```typescript
 import {
@@ -51,7 +51,7 @@ import {
     ArrayFunction,
     PropertyExpression,
     Join
-} from '@ionic-enterprise/couchbase-lite';
+} from '@ionic-enterprise/offline-storage';
 ```
 
 ## Starter Code
@@ -113,7 +113,7 @@ let database = new Database("my-database", config);
 ```
 
 Just as before, the database will be created in a default location.
-Alternatively, the `Database(name: string, config: DatabaseConfiguration) initializer can be used to provide specific options in the <a href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-java/db022/com/couchbase/lite/DatabaseConfiguration.html"><code>DatabaseConfiguration</code></a> object such as the database directory.
+Alternatively, the `Database(name: string, config: DatabaseConfiguration)` initializer can be used to provide specific options in the <a href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-java/db022/com/couchbase/lite/DatabaseConfiguration.html"><code>DatabaseConfiguration</code></a> object such as the database directory.
 
 ### Loading a pre-built Database
 
@@ -986,14 +986,5 @@ config.setPinnedServerCertificate(cert);</code></pre>
 <div class="paragraph">
 <p>The Couchbase Lite API is thread safe except for calls to mutable objects: <code>MutableDocument</code>, <code>MutableDictionary</code> and <code>MutableArray</code>.</p>
 -->
-
 # Changelog
 
-
-
-### 1.0.1 (2019-09-03)
-
-
-### Bug Fixes
-
-* correct plugin id in plugin.xml
