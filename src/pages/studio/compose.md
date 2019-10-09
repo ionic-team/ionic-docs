@@ -129,7 +129,7 @@ Dragging an element into code allows more precise placement, but dragging it int
 
 ### Quick Adding New Elements
 
-Some elements support quickly adding relevant child elements from the context menu (commonly accessed with a right-click on a mouse). Some components that support quickly adding new elements include List, List Item, Grid, Segment Button, and more.
+Certain elements support quickly adding child elements by right-clicking and selecting an element in the Quick Add menu. Some components that support quickly adding new elements include List, List Item, Grid, Segment Button, and more.
 
 <figure>
   <img alt="Quick Add Element Menu" src="/docs/assets/img/studio/ss-quick-add-element-menu.png" />
