@@ -97,11 +97,11 @@ Compose mode offers drag & drop support when adding new elements and rearranging
 
 To select an element, click on it in the canvas. To select a child element, double click on its parent. Continue to double click to select deeper child elements and to edit text.
 
-To exit the current selection, use the Escape key shortcut.
+To exit the current selection, use the <kbd>Esc</kbd> key.
 
-To enable selecting the deepest child under the mouse cursor, hold down the Command key on Mac or Control key on Windows and hover over an element.
+To enable fine-selection, which selects the deepest child under the mouse cursor, hold down the <kbd>Ctrl</kbd> key (or <kbd>Command</kbd> for macOS) and hover over an element.
 
-To select any element under the cursor, right clicking and choose an element from the `Select Element` dropdown:
+To select any element under the cursor, right click and choose an element from the `Select Element` dropdown:
 
 <figure>
   <img alt="Selecting elements" src="/docs/assets/img/studio/ss-select-element-menu.png" />
@@ -129,7 +129,7 @@ Dragging an element into code allows more precise placement, but dragging it int
 
 ### Quick Adding New Elements
 
-Certain elements support quickly adding child elements by right-clicking and selecting an element in the Quick Add menu. Some components that support quickly adding new elements include List, List Item, Grid, Segment Button, and more.
+Certain elements support quickly adding child elements by right-clicking and selecting an element in the `Quick Add` menu. Some components that support quickly adding new elements include List, List Item, Grid, Segment Button, and more.
 
 <figure>
   <img alt="Quick Add Element Menu" src="/docs/assets/img/studio/ss-quick-add-element-menu.png" />
