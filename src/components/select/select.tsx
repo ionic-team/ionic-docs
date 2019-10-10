@@ -56,13 +56,9 @@ export class DocsSelect {
   }
 
   componentWillLoad() {
-    this.selected = this.options[0];
-  }
-
-  componentDidLoad() {
-    if (typeof this.initializer === 'function') {
-      this.selected = this.initializer(this.options);
-    }
+    this.selected = typeof this.initializer === 'function'
+      ? this.initializer(this.options)
+      : this.options[0];
   }
 
   hostData() {
