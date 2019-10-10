@@ -8,7 +8,7 @@ export class DocsSelect {
   private dropdown;
 
   @State() selected: string;
-  @Prop() options: string[];
+  @Prop({ mutable: true }) options: string[];
   @Prop() initializer: (options: string[]) => string;
   @Prop() optionRenderer: (option: string) => any = (option: string) => option;
 
@@ -59,16 +59,11 @@ export class DocsSelect {
     this.selected = typeof this.initializer === 'function'
       ? this.initializer(this.options)
       : this.options[0];
-  }
-
-  componentDidLoad() {
-    // double check in case the pre-rendered selection is incorrect
-    if (typeof this.initializer === 'function') {
-      this.selected = null;
-      setTimeout(() => {
-        this.selected = this.initializer(this.options);
-      }, 200);
-    }
+    const temp = this.options;
+    this.options = [];
+    setTimeout(() => {
+      this.options = temp;
+    }, 50);
   }
 
   hostData() {
