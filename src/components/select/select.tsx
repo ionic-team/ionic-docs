@@ -64,7 +64,10 @@ export class DocsSelect {
   componentDidLoad() {
     // double check in case the pre-rendered selection is incorrect
     if (typeof this.initializer === 'function') {
-      this.selected = this.initializer(this.options);
+      this.selected = null;
+      setTimeout(() => {
+        this.selected = this.initializer(this.options);
+      }, 200);
     }
   }
 
