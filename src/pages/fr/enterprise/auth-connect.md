@@ -26,14 +26,8 @@ To access callbacks, and override behavior as needed, it is recommended to subcl
 Leveraging the OAuth/OpenId Connect protocols, Auth Connect supports:
 
 * [Auth0](/docs/enterprise/auth-connect/auth0)
-* Azure Active Directory v.2 (Microsoft)
-* Cognito (AWS) 
-
-### Handling password reset cases from Azure AD with custom user flows/policies
-
-When using custom user flows/policies with Azure AD, password reset functionality needs to be handled by a separate endpoint. To handle this:
-
-If an error is thrown after the [Login](#iionicauth.login) function is called, the hosting app should inspect the `message` property. If it starts with the string `AADB2C90118` (an error message returned by Azure AD), then the app should call [Login](#iionicauth.login) again, this time specifying the location of the password reset endpoint.
+* [Azure Active Directory B2C](/docs/enterprise/auth-connect/azure-ad-b2c) (Microsoft)
+* Cognito (AWS)
 
 ## Workflow
 
