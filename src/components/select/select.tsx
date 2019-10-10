@@ -56,14 +56,13 @@ export class DocsSelect {
   }
 
   componentWillLoad() {
-    this.selected = typeof this.initializer === 'function'
-      ? this.initializer(this.options)
-      : this.options[0];
-    const temp = this.options;
-    this.options = [];
-    setTimeout(() => {
-      this.options = temp;
-    }, 50);
+    this.selected = this.options[0];
+  }
+
+  componentDidLoad() {
+    if (typeof this.initializer === 'function') {
+      this.selected = this.initializer(this.options);
+    }
   }
 
   hostData() {
