@@ -8,6 +8,8 @@ Adding Auth0 to an Ionic Angular App Using Auth Connect - Auth0 Blog
 
 In the tutorial, you’ll use the Ionic Framework’s UI components to create a Login page and a Home page within an Ionic Angular app. With just a few lines of code, you’ll secure the Home page by adding Auth0 login/logout functionality using the Auth Connect native plugin.
 
+## Demo App
+
 For reference, a [complete demo app](https://github.com/ionic-team/demo-authconnect-auth0) is available that serves as a companion to the Auth0 article.
 
 ## Configuration Details
