@@ -12,7 +12,8 @@ const items = {
   'menu-enterprise-authentication-security': {
     'Auth Connect': '/docs/enterprise/auth-connect',
     '': {
-      'Auth0': '/docs/enterprise/auth-connect/auth0'
+      'Auth0': '/docs/enterprise/auth-connect/auth0',
+      'Azure AD B2C': '/docs/enterprise/auth-connect/azure-ad-b2c'
     },
     'Identity Vault': '/docs/enterprise/identity-vault',
     'Offline Storage': '/docs/enterprise/offline-storage'
