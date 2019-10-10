@@ -1,4 +1,4 @@
-import { Build, Component, Event, EventEmitter, Prop, State, Watch, h } from '@stencil/core';
+import { Component, Event, EventEmitter, Prop, State, Watch, h } from '@stencil/core';
 
 @Component({
   tag: 'docs-select',
