@@ -51,21 +51,21 @@ export class PhotoService {
 }
 ```
 
-Back in `tab2.page.ts`, import PhotoService:
+返回 `tab2.page.ts`, 导入PhotoService:
 
 ```Javascript
 import { PhotoService } from '../services/photo.service';
 ```
 
-Add it to the Constructor:
+将其添加到Constructor：
 
 ```Javascript
 constructor(private camera: Camera, public photoService: PhotoService) {  }
 ```
 
-Next, move all code pertaining to the Camera plugin to the PhotoService class. This includes the takePicture method, the Camera and CameraOptions imports, and the Tab2Page page constructor.
+下一步，将Camera插件的所有代码移动到 PhotoService 类。 这包括takePicture方法、Camera和CameraOptions导入以及Tab2Page页面构造函数。
 
-Continuing on, we need to convert currentImage variable references to the new photos array. Start by adding the captured photo data into the photos array:
+继续，我们需要将currentImage变量引用转换为新的photos数组。 开始，将捕获的照片数据添加到photos数组里：
 
 ```Javascript
 this.camera.getPicture(options).then((imageData) => {
@@ -78,15 +78,14 @@ this.camera.getPicture(options).then((imageData) => {
 });
 ```
 
-In `tab2.page.ts`, remove the currentImage variable and the reference to Camera in the constructor, leaving only PhotoService:
+在 `tab2.page.ts`, 移除 the currentImage 变量以及构造函数中对Camera的引用, 只留下 PhotoService:
 
 ```Javascript
-export class Tab2Page {
-  constructor(public photoService: PhotoService) {  }
-}
-```
+下一步， <code>tab2.page.html</code>，移除当前图像标签。
+```，移除当前图像标签。
+</code>
 
-Next, in `tab2.page.html`, remove the currentImage img tag. In its place, use an ion-grid component, which provides a great way to arrange elements on a page. In this case, we’ll use it to display 2 photos per row.
+下一步， `tab2.page.html`，移除当前图像标签。 取而代之的是使用一个ion-grid组件，它提供了在页面上排列元素的好方法。 在这种情况下，我们将使用它来显示每行2张照片。
 
 ```html
 <ion-grid>
