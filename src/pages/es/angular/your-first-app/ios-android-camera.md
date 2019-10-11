@@ -132,7 +132,7 @@ Ahora puede ser utilizado en cualquiera de nuestras páginas.
 
 ## Añadir la cámara a la página de la galería
 
-Our camera button doesn’t do anything yet. Over in `tab2.page.html`, add a click handler to the button:
+Nuestro botón de cámara no hace nada todavía. En la página `tab2.page.html`, añade un clic handler al botón:
 
 ```html
 <ion-fab vertical="bottom" horizontal="center" slot="fixed">
@@ -142,19 +142,19 @@ Our camera button doesn’t do anything yet. Over in `tab2.page.html`, add a cli
 </ion-fab>
 ```
 
-Then, update the image placeholder. The following binds the “currentImage” variable (which we’ll work on next) to the image to display to the user.
+Luego, actualiza el placeholder de la imagen. Lo siguiente enlaza la variable “currentImage” (que trabajaremos a continuación) a la imagen para mostrar al usuario.
 
 ```html
 <img [src]="currentImage" *ngIf="currentImage">
 ```
 
-Open `tab2.page.ts` next and import the Camera library:
+A continuación, abre `tab2.page.ts` e importa la biblioteca de la cámara:
 
 ```Javascript
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 ```
 
-Next, define the “currentImage” variable and inject the Camera into this class via the constructor:
+A continuación, define la variable “currentImage” e inyecta la cámara a esta clase a través del constructor:
 
 ```Javascript
 export class Tab2Page {
@@ -164,7 +164,7 @@ export class Tab2Page {
 }
 ```
 
-Finally, add the “takePicture” method in `tab2.page.ts`. It is already wired up to execute once the camera button has been tapped:
+Por último, añade el método "takePicture" en `tab2.page.ts`. Ya está enlazado para que se ejecute una vez que el botón de la cámara sea pulsado:
 
 ```Javascript
 export class Tab2Page {
@@ -190,12 +190,12 @@ export class Tab2Page {
 }
 ```
 
-Take notice: there’s no mention of iOS or Android! This is the awesome power of plugins: you use one API (`camera.getPicture()` in this case) and the plugin takes care of the platform differences for you. Write once, run everywhere. 😀
+¡Tome nota: no hay ninguna referencia a iOS o Android! Esta es la impresionante potencia de los plugins: utilizás una API (`camera.getPicture()` en este caso) y el plugin se encarga de las diferencias de plataforma por vos. Escribe una vez, ejecuta en todas partes. 😀
 
-Save this file then tap the Camera button in DevApp. Voila! The camera should open on your device. Once a photo has been taken, it displays on the Photo Gallery page.
+Guarda este archivo y pulsa el botón de la cámara en DevApp. ¡Voila! La cámara debe abrirse en tu dispositivo. Una vez que se ha tomado una foto, se muestra en la página de la Galería de Fotos.
 
-Next, we’ll look at how to transform the app into a photo gallery, as well as how to save the photos to your device!
+A continuación, veremos cómo transformar la aplicación en una galería de fotos, así como cómo guardar las fotos en tu dispositivo!
 
 <div style="text-align:right;">
-  <docs-button href="/docs/angular/your-first-app/creating-photo-gallery-device-storage">Continue <svg viewBox="0 0 512 512"><path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path></svg></docs-button>
+  <docs-button href="/docs/angular/your-first-app/creating-photo-gallery-device-storage">Continuar <svg viewBox="0 0 512 512"><path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path></svg></docs-button>
 </div>
