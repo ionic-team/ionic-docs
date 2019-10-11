@@ -1,11 +1,11 @@
 ---
-previousText: 'Introduction'
+previousText: 'Introducción'
 previousUrl: '/docs/appflow/automation/intro'
-nextText: 'Environments'
+nextText: 'Ambientes'
 nextUrl: '/docs/appflow/automation/environments'
 ---
 
-# Using Automations
+# Usando automatizaciones
 
 ## Managing Automations
 
@@ -15,9 +15,9 @@ To **create a new automation**, click the `New Automation` button on the top rig
 
 To **edit an automation**, click the three dots next to the one you'd like to modify.
 
-## Customizing Automations
+## Personalizando Automatizaciones
 
-There are a number of customizations available to specify the specific behavior of a given automation. They are shown on the create/edit automation form below.
+Hay una serie de personalizaciones disponibles para especificar el comportamiento específico de una automatización determinada. Se muestran en el formulario de creación/edición de automatización a continuación.
 
 ### Basic Automation Info
 
