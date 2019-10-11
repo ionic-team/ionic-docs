@@ -107,28 +107,27 @@ this.camera.getPicture(options).then((imageData) => {
 </ion-fab-button>
 ```
 
-Excellent! We now have a basic photo gallery working.
+非常好！ 我们现在有一个基本可用的photo gallery。
 
-## Saving photos to the device
+## 保存照片到设备
 
-Having a working photo gallery is pretty cool, but you’ll likely notice that when the app is closed, the photos are lost forever. That’s no good, so let’s add the [Ionic Storage plugin](https://ionicframework.com/docs/storage/), as easy way to store key/value pairs and JSON objects. When running in a native app context, Storage will prioritize using SQLite, one of the most stable and widely used file-based databases. When running on the web or as a Progressive Web App, Storage will attempt to use IndexedDB, WebSQL, and localstorage, in that order.
+拥有一个可用的photo gallery非常酷，但你可能会注意到，当应用程序关闭时，这些照片将永远丢失。 这样不行，所以让我们添加[Ionic Storage 插件](https://ionicframework.com/docs/storage/)，作为存储键/值对和JSON对象的简单方法。 当在本机应用程序上下文中运行时，Storage将优先使用SQLite，SQLite是最稳定和使用最广泛的基于文件的数据库之一。 当运行在web上或渐进的web应用程序时，Storage将尝试按照IndexedDB、WebSQL和localstorage这个顺序使用。
 
-The Storage plugin works perfectly for our base64 image data. To begin, add the SQLite plugin for native:
+Storage插件对于base64图像数据非常有效。 首先，为native添加SQLite插件:
 
 ```shell
 $ ionic cordova plugin add cordova-sqlite-storage
 ```
 
-Next, add the JavaScript library for the web:
+下面，添加 JavaScript 库：
 
 ```shell
 $ npm install --save @ionic/storage
 ```
 
-Last, import the Storage module and add it to the imports list in `app.module.ts`:
+最后，导入Storage模块，并将其添加到`app.module.ts`的imports列表中:`</p>
 
-```Javascript
-import { IonicStorageModule } from '@ionic/storage';
+<pre><code class="Javascript">import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [AppComponent],
@@ -145,21 +144,21 @@ import { IonicStorageModule } from '@ionic/storage';
   bootstrap: [AppComponent]
 })
 export class AppModule {}
-```
+`</pre> 
 
-It’s now ready to be used in our PhotoService class. Import it:
+现在可以在PhotoService类中使用了。 导入它：
 
 ```Javascript
 import { Storage } from '@ionic/storage';
 ```
 
-Then inject it via the constructor:
+然后通过构造函数注入它：
 
 ```Javascript
 constructor(private camera: Camera, private storage: Storage) { }
 ```
 
-To add the capability to save photos, there’s only a couple steps left. Update the `takePicture()` method to save the entire photos array after each photo is taken using the storage.set method:
+要添加保存照片的能力，只剩下几个步骤。 更新`takePicture()` 方法，以便在拍摄每张照片后使用storage.set方法保存整个照片数组：
 
 ```Javascript
 this.camera.getPicture(options).then((imageData) => {
@@ -176,7 +175,7 @@ this.camera.getPicture(options).then((imageData) => {
 });
 ```
 
-We still need to load the saved photos when the app is first opened. This is simple enough - retrieve the “photos” key then assign its value to the photos array:
+当应用程序首次打开时，我们仍然需要加载已保存的照片。 这足够简单 - 检索“photos”键，然后将其值分配给照片数组：
 
 ```Javascript
 loadSaved() {
@@ -186,7 +185,7 @@ loadSaved() {
 }
 ```
 
-Over in the Tab2 page, call the loadSaved method once it begins loading:
+在Tab2页面中，当开始加载时，调用loadSaved方法：
 
 ```Javascript
 ngOnInit() {
@@ -194,10 +193,10 @@ ngOnInit() {
 }
 ```
 
-Sweet! Photos are now saved to your device. To demonstrate that they are indeed being saved, force close DevApp, reopen it, and open the Tab2 page. Or, shake your device to have the Control Menu pop up, then tap “Exit preview.” Afterwards, reload this app to view the photos.
+好极了！ 照片现在已保存到您的设备。 为了证明它们确实已经保存，强制关闭 DevApp，重新打开它，打开Tab2 页。 或者，摇动你的设备，弹出控制菜单，然后点击“Exit preview”。然后，重新加载这个应用程序来查看照片。
 
-Next up, we’ll look at how to apply a custom theme to an Ionic app.
+接下来，我们将研究如何将自定义主题应用于Ionic 应用程序。
 
 <div style="text-align:right;">
-  <docs-button href="/docs/angular/your-first-app/theming">Continue <svg viewBox="0 0 512 512"><path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path></svg></docs-button>
+  <docs-button href="/docs/angular/your-first-app/theming">继续 <svg viewBox="0 0 512 512"><path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path></svg></docs-button>
 </div>
