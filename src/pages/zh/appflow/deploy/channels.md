@@ -1,35 +1,35 @@
 ---
-title: 'Channels'
+title: '渠道'
 previousText: 'Deploy Builds'
 previousUrl: '/docs/appflow/deploy/builds'
 nextText: 'Deploy API'
 nextUrl: '/docs/appflow/deploy/api'
 ---
 
-A channel points to a specific deploy build of your app that will be shared with any devices configured to listen to that channel for updates. You can change the build a channel points to whenever you'd like, and can rollback changes as well.
+Channel指向应用程序的特定部署构建，该构建将与任何配置为侦听该channel进行更新的设备共享。 您可以随时更改channel指向的构建，也可以回滚更改。
 
-When you [install the Appflow SDK](/docs/appflow/quickstart/installation) in your app (by clicking Install Instructions on a channel), any native binary configured to that channel will check the channel for available updates whenever it is loaded.
+当你在应用程序中(通过点击channel中的下载介绍)[下载了Appflow SDK](/docs/appflow/quickstart/installation)，任何配置到该channel的本机二进制文件都将在加载通道时检查该通道是否有可用的更新
 
-## Setting up a Channel
+## 设置Channel
 
-Every app comes with two default channels: **Master**, and **Production**.
+每个应用都有两个默认channel： **Master**和**Production**。
 
-Common use cases are using a **Production** Channel for your App Store binaries, and the **Master** channel to run a native binary on your phone during development that gets automatically updated.
+常见的用例是将**Production** Channel 用于App Store二进制文件，并使用** Master ** Channel 是在开发过程中自动在手机上运行本机二进制文件。
 
-Once you've set up a Channel, just click **Set Up Deploy** next to that Channel and it will walk you through the options available and generate the Command Line command that you should run.
+设置好通道后，只需单击该通道旁边的**Set Up Deploy**，它将显示可用选项并生成应该运行的命令行命令。
 
-To create new channels beyond these two, you must have a paid Ionic Appflow membership. To add new channels, simply view the channels list by going to Deploy -> Channels, and then click the New Channel button.
+要创建这两个以上的新channel，必须拥有付费的Ionic Appflow成员资格。 要添加新通道，只需通过Deploy ->Channels查看channel列表，然后单击new Channel按钮。
 
-## Assigning a Build to a Channel
+## 构建Channel
 
-Once you have created a Channel, go back to the **Builds** section of your app. On the right side of each Build, you'll see a "Assign to Channel" icon.
+一旦您创建了一个Channel，回到应用的 **Builds**部分。 在每个Build的正面侧，您将看到一个“Assign to Channel”图标。
 
-![Assign build to a channel](/docs/assets/img/appflow/assign-to-channel.png)
+![构建Channel](/docs/assets/img/appflow/assign-to-channel.png)
 
-Click this to set the Build as active for a Channel.
+点击此处设置 Build为Channel的活动。
 
-Once a Build is set as active for a Channel any native binaries that have been set up with Ionic Deploy for this Channel will receive the new update next time they check in.
+将Build设置为Channel激活后，使用Ionic Deploy设置的所有本机二进制文件 该Channel将在他们下次签入时收到新的更新。
 
-## Automating Deployment from a Git Branch
+## 从Git分支自动部署
 
-If your interested in automating your deploys from git push all the way to deploying to a channel you can take advantage or our [Automation](/docs/appflow/automation/intro) features if your [plan](/pricing) includes them.
+如果您有兴趣从git自动化部署到将其部署到某个channel，请使用我们的[Automation](/docs/appflow/automation/intro)功能，如果您的[计划](/pricing)包含这些功能，。
