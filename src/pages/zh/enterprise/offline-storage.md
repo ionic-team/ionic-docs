@@ -1,7 +1,7 @@
 ---
 title: Offline Storage
 template: enterprise-plugin
-version: 1.0.1
+version: 1.0.0
 minor: 1.0.X
 ---
 
@@ -27,7 +27,7 @@ A complete [advanced offline search experience](https://github.com/ionic-team/de
 
 ## Importing code
 
-To use the Couchbase Lite API, import from `@ionic-enterprise/couchbase-lite`. For example:
+To use the Couchbase Lite API, import from `@ionic-enterprise/offline-storage`. For example:
 
 ```typescript
 import {
@@ -52,7 +52,7 @@ import {
     ArrayFunction,
     PropertyExpression,
     Join
-} from '@ionic-enterprise/couchbase-lite';
+} from '@ionic-enterprise/offline-storage';
 ```
 
 ## Starter Code
@@ -112,7 +112,7 @@ let config = new DatabaseConfiguration();
 let database = new Database("my-database", config);
 ```
 
-Just as before, the database will be created in a default location. Alternatively, the `Database(name: string, config: DatabaseConfiguration) initializer can be used to provide specific options in the [`DatabaseConfiguration`](http://docs.couchbase.com/mobile/2.0/couchbase-lite-java/db022/com/couchbase/lite/DatabaseConfiguration.html) object such as the database directory.
+Just as before, the database will be created in a default location. Alternatively, the `Database(name: string, config: DatabaseConfiguration)` initializer can be used to provide specific options in the [`DatabaseConfiguration`](http://docs.couchbase.com/mobile/2.0/couchbase-lite-java/db022/com/couchbase/lite/DatabaseConfiguration.html) object such as the database directory.
 
 ### Loading a pre-built Database
 
@@ -965,9 +965,3 @@ config.setPinnedServerCertificate(cert);</code></pre>
 -->
 
 # Changelog
-
-### 1.0.1 (2019-09-03)
-
-### Bug Fixes
-
-* correct plugin id in plugin.xml
