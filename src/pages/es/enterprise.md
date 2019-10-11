@@ -1,10 +1,10 @@
 ---
-title: Ionic Native
+title: Ionic Nativo
 ---
 
-For teams building mission-critical apps, Ionic Native is a curated collection of plugins and integrations that are built and supported by Ionic, with stability assurances and guaranteed to work on all major platforms and versions.
+Para los equipos que crean aplicaciones de misión crítica, Ionic Native es una colección curada de complementos e integraciones que Ionic crea y admite, con garantías de estabilidad y garantizadas para funcionar en todas las plataformas y versiones principales.
 
-## What is Ionic Native?
+## ¿Qué es Ionic Nativo?
 
 <div class="native-ee-pricing">
   <div class="table-wrap">
@@ -12,19 +12,19 @@ For teams building mission-critical apps, Ionic Native is a curated collection o
       <thead>
         <tr>
           <td>
-            <span class="native-ee-pricing-table">Features</span>
+            <span class="native-ee-pricing-table">Características</span>
           </td>
           <th>
             <div class="plan-wrap">
               <span class="native-ee-pricing-table">Community Plugins</span>
-              <div class="price">$0/mo </div>
+              <div class="price">$0/mes </div>
             </div>
           </th>
           <th>
             <div class="plan-wrap">
-              <span class="native-ee-pricing-table">Ionic Native</span>
+              <span class="native-ee-pricing-table">Ionic Nativo</span>
               <div class="price" data-toggle="billing-team">
-                Contact Us</div>
+                Contáctanos</div>
             </div>
           </th>
         </tr>
@@ -32,49 +32,49 @@ For teams building mission-critical apps, Ionic Native is a curated collection o
       <tbody>
         <tr class="stripe">
           <th>
-            Maintainer
+            Mantenedor
           </th>
-          <td>OSS Community</td>
+          <td>Comunidad de Software Libre</td>
           <td>Ionic</td>
         </tr>
         <tr>
           <th>
-            Regular Release Cycles & Updates
+            Ciclos de lanzamiento regular y actualizaciones
           </th>
           <td>No</td>
           <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
         </tr>
         <tr class="stripe">
           <th>
-            Support SLA & Ticketing System
+            Soporte SLA y sistema de Ticketing
           </th>
           <td>No</td>
           <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
         </tr>
         <tr>
           <th>
-            Advisory & Support
+            Asesoramiento y soporte
           </th>
           <td>No</td>
           <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
         </tr>
         <tr class="stripe">
           <th>
-            Security & Bug fixes
+            Seguridad y corrección de errores
           </th>
-          <td>OSS Community</td>
+          <td>Comunidad de Software Libre</td>
           <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
         </tr>
         <tr>
           <th>
-            Implementation Guidance
+            Asistencia en la implementación
           </th>
           <td>No</td>
           <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
         </tr>
         <tr class="stripe">
           <th>
-            Guaranteed SLA
+            SLA garantizado
           </th>
           <td>No</td>
           <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
@@ -82,7 +82,7 @@ For teams building mission-critical apps, Ionic Native is a curated collection o
           <th></th>
           <td></td>
           <td><a class="btn"
-                href="https://ionicframework.com/enterprise-edition">Learn More</a></td>
+                href="https://ionicframework.com/enterprise-edition">Aprende más</a></td>
         </tr>
       </tbody>
     </table>
@@ -93,19 +93,19 @@ For teams building mission-critical apps, Ionic Native is a curated collection o
 
 <hubspot-form form-id="7c2c6529-48c0-4d17-86a0-bfd40c849bb1"></hubspot-form>
 
-## Plugin List
+## Lista de complementos
 
 Accelerate your app development with powerful solutions to common enterprise use cases. Ionic’s growing library are ready to deploy into any of the apps you build.
 
-### Authentication & Security
+### Autenticación y Seguridad
 
 - [Auth Connect](/docs/enterprise/auth-connect)
 - [Identity Vault](/docs/enterprise/identity-vault)
 
-### Common Device Features
+### Características comunes del dispositivo
 
 - [Android Permissions](/docs/enterprise/android-permissions)
-- [App Rate](/docs/enterprise/app-rate)
+- [Tasa de App](/docs/enterprise/app-rate)
 - [App Version](/docs/enterprise/app-version)
 - [Badge](/docs/enterprise/badge)
 - [Browser](/docs/enterprise/inappbrowser)
