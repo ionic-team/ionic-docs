@@ -1,25 +1,25 @@
 ---
-title: 'Quickstart'
-previousText: 'Welcome'
+title: 'Inicio rápido'
+previousText: 'Bienvenido'
 previousUrl: '/docs/appflow'
-nextText: 'Connect Your Repo'
+nextText: 'Conéctate a tu Repositorio'
 nextUrl: '/docs/appflow/quickstart/connect'
 ---
 
-The quickstart tutorial walks you through the process of setting up your application with Ionic Appflow, including how to connect your application to Appflow, how to set up the Appflow SDK (Deploy plugin) for live updates, and how to configure your first automated Android and iOS builds using native build environments. Simply follow the guide step-by-step, or navigate directly to the documentation for the component that interests you.
+El tutorial de inicio rápido te recorre a través del proceso de configuración de tu aplicación con Ionic Appflow, incluyendo cómo conectar tu aplicación a Appflow, cómo configurar el SDK de Appflow (plugin de lanzamiento) para actualizaciones en vivo, y cómo configurar tus primeras versiones automatizadas de Android e iOS usando entornos de construcción nativos. Simplemente siga la guía paso a paso, o navegue directamente a la documentación para el componente que le interesa.
 
 <docs-cards> <docs-card header="Start the Tutorial" href="/docs/appflow/quickstart/connect" icon="/docs/assets/icons/guide-quickstart-icon.png"> 
 
-Follow the quickstart tutorial and get up and running with Appflow in no time!</docs-card>
+¡Sigue el tutorial de inicio rápido y ponte en marcha con Appflow en poco tiempo!</docs-card>
 
 <docs-card header="Deploy Docs" href="/docs/appflow/deploy/intro" icon="/docs/assets/icons/guide-deploy-icon.png"> 
 
-Update your app remotely in real-time without app store delays.</docs-card>
+Actualiza tu aplicación remotamente en tiempo real sin retrasos en la tienda de aplicaciones.</docs-card>
 
 <docs-card header="Package Docs" href="/docs/appflow/package/intro" icon="/docs/assets/icons/guide-package-icon.png"> 
 
-Build app binaries in the cloud for iOS and Android.</docs-card>
+Construir binarios de aplicación en la nube para iOS y Android.</docs-card>
 
 <docs-card header="Automation Docs" href="/docs/appflow/automation/intro" icon="/docs/assets/icons/guide-automate-icon.png"> 
 
-Automate the building, testing, and distribution of Package & Deploy builds to ship better updates faster.</docs-card> </docs-cards>
+Automatice la construcción, prueba y distribución de paquete e implemente compilaciones para enviar mejores actualizaciones más rápido.</docs-card> </docs-cards>
