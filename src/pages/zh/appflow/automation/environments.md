@@ -1,24 +1,24 @@
 ---
-previousText: 'Create Automations'
+previousText: '自动化'
 previousUrl: '/docs/appflow/automation/create'
 nextText: 'Webhooks'
 nextUrl: '/docs/appflow/automation/webhooks'
 ---
 
-# Build Environments
+# 构建环境
 
-## Introduction
+## 简介
 
-Environments give you a way to customize the build process for your application in order to produce different versions of your applications for different environments from the same code base. All environment variables are accessible to any build scripts that run during the `npm run install` and `npm run build` portion of your builds.
+环境为您提供了一种自定义应用程序构建过程的方法，以便从相同的代码库为不同的环境生成不同版本的应用程序。 在npm运行期间运行的任何构建脚本都可以访问所有环境变量`npm run install`和`npm run build`构建部分。
 
-There are two types of Enviornment variables available to use:
+有两种类型的环境变量可用:
 
-* [Predefined Environments](#predefined-environments) (Available on all Builds)
-* [Custom Environments](#custom-environments) (Available on select plans)
+* [Predefined Environments](#predefined-environments) (所有内置都可用)
+* [Custom Environments](#custom-environments) (可选计划中可用)
 
-## Predefined Environments
+## 预定义的环境
 
-Every time a Build occurs, it's done in a secure environment where we provide some predefined variables which are key/value pairs that are made available in the environment and are available by using [process.env.MY_VAR](https://nodejs.org/docs/latest-v8.x/api/process.html#process_process_env) syntax in NodeJS or via `$MY_VAR` syntax in a standard shell script. These variables can be leveraged to [customize the build and outputs](#usage).
+每次构建发生时,它是在一个安全的环境中,我们提供了一些预定义的变量是键/值对可用的环境,可通过使用< a href = " https://nodejs.org/docs/latest-v8.x/api/process.html process_process_env " > process.env.MY_VAR < / >语法NodeJS或通过<代码>美元MY_VAR > < /代码语法标准shell脚本。 These variables can be leveraged to [customize the build and outputs](#usage).
 
 The following environment variables are provided in every build, which can be accessed in build scripts:
 
