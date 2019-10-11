@@ -1,13 +1,13 @@
 ---
-previousText: 'Overview'
+previousText: '概览'
 previousUrl: '/docs/angular/overview'
-nextText: 'iOS, Android, and the Camera'
+nextText: 'iOS, Android, 以及相机'
 nextUrl: '/docs/angular/your-first-app/ios-android-camera'
 ---
 
-# Your First Ionic App: Angular
+# 您的第一个 Ionic App： Angular
 
-The great thing about Ionic is that with one codebase, you can build for any platform using familiar web tools and languages. Follow along as we create a working Photo Gallery. Here’s the before and after:
+Ionic强大的地方是，拥有一个代码库，你可以利用熟悉的网络工具和语言建立任何平台的App。 跟随我们创建一个可以工作的照片库。 这是前后对比：
 
 ![Before and after going through this tutorial](/docs/assets/img/guides/first-app-v3/gallery-combined.png)
 
