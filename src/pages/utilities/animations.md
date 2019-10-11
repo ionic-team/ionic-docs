@@ -238,6 +238,43 @@ In this example we are creating a track along which we can drag the `.square` el
 
 <docs-codepen user="ionic" slug="jONxzRL"></docs-codepen>
 
+## Preference-Based Animations
+
+Developers can also tailor their animations to user preferences such as `prefers-reduced-motion` and `prefers-color-scheme` using CSS Variables:
+
+```css
+.square {
+  width: 100px;
+  height: 100px;
+  opacity: 0.5;
+  background: blue;
+  margin: 10px;
+  
+  --background: red;
+}
+
+@media (prefers-color-scheme: dark) {
+  .square {
+    --background: green;
+  }
+}
+```
+
+```javascript
+createAnimation()
+   .addElement(document.querySelector('.square'))
+   .duration(1500)
+   .iterations(Infinity)
+   .direction('alternate')
+   .fromTo('background', 'blue', 'var(--background)');
+```
+
+This method works in all supported browsers when creating animations for the first time. Most browsers are also capable of dynamically updating keyframe animations as the CSS Variables change.
+
+Safari does not currently support dynamically updating keyframe animations. For developers who need this kind of support in Safari, they can use [MediaQueryList.addListener()](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/addListener).
+
+<docs-codepen user="ionic" slug="JjjYVKj"></docs-codepen>
+
 
 ## Performance Considerations
 
