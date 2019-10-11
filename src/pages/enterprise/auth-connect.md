@@ -45,28 +45,33 @@ The typical Auth Connect workflow consists of:
 5. The [IsAuthenticated](#iionicauth.isauthenticated) method can be called at any point to refresh the access token.
 6. Use [GetAccessToken](#getaccesstoken) to retrieve the access token if making any API requests to the auth provider.
 
-Implicit/Web Flow Notes
+Web Configuration Options
 -----------------------
 
-The redirect URL for the auth service needs to be a local path that the hosting app can navigate to, as the auth plugin needs to read the tokens from the redirect URL. The auth service needs to support returning the authorization and id tokens back to the implicit path (for Azure, this is under App registrations/Authentication in the 'Implicit Grants' section).
+### Login UX Options
 
-### OAuth login within the app
+Login can occur either within the current tab/window or a separate pop-up window (the default). Here's a visual comparison:
 
-Optionally, the OAuth login can occur within the current app (rather than opening up in the default pop-up). This is a great option for developers supporting IE11.
+<wistia-video videoId="zk3ys1615x"></wistia-video>
 
-Within the `IonicAuthOptions` configuration, set `implicit_login` to "TABBED". Next, in the login page (or whichever page is navigated to after login - the `redirectUri` in the config options) implement:
+The current tab option is great for developers supporting IE11. Within the `IonicAuthOptions` configuration, set `implicit_login` to "CURRENT". Next, in the login page (or whichever page is navigated to after login - the `redirectUri` in the config options) implement:
 
 ```typescript  
-  async ngOnInit() {
-    // If there's a hash value in the URL
-    if (window.location.hash) {
-      // Pass it to Auth Connect
-      await this.authentication.handleCallback(window.location.href);
-      // Navigate to another page
-      this.navController.navigateRoot('/tabs/home');
+async ngOnInit() {
+  // If coming back after logging into the auth provider,
+  // grab the token from the URL and pass it to Auth Connect
+  if (window.location.hash) {
+    // Pass it to Auth Connect
+    await this.authentication.handleCallback(window.location.href);
+    // Navigate to another page
+    this.navController.navigateRoot('/tabs/home');
     }
-  }
+}
 ```
+
+### Testing Locally
+
+To test an Ionic app using Auth Connect locally, configure `IonicAuthOptions` to use `http://localhost:8100/` as the base URL for properties such as `redirectUri` and `logoutUrl`. Then, run the `ionic serve` command.
 
 Upgrade from v1.1.1 to >=v1.1.2
 -------------------------------
