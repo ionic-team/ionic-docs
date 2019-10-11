@@ -1,11 +1,11 @@
 ---
-previousText: 'Introduction'
+previousText: 'Introducción'
 previousUrl: '/docs/appflow/automation/intro'
-nextText: 'Environments'
+nextText: 'Ambientes'
 nextUrl: '/docs/appflow/automation/environments'
 ---
 
-# Using Automations
+# Usando automatizaciones
 
 ## Managing Automations
 
@@ -15,9 +15,9 @@ To **create a new automation**, click the `New Automation` button on the top rig
 
 To **edit an automation**, click the three dots next to the one you'd like to modify.
 
-## Customizing Automations
+## Personalizando Automatizaciones
 
-There are a number of customizations available to specify the specific behavior of a given automation. They are shown on the create/edit automation form below.
+Hay una serie de personalizaciones disponibles para especificar el comportamiento específico de una automatización determinada. Se muestran en el formulario de creación/edición de automatización a continuación.
 
 ### Basic Automation Info
 
@@ -25,7 +25,7 @@ All automations need a name and git branch to trigger from. Whenever code is pus
 
 ![Choosing an Automation Type](/docs/assets/img/appflow/ss-automation-create-type.png)
 
-#### Fields
+#### Campos
 
 * **Name:** A name to identify the automation task.
 * **Git Branch:** The branch which will trigger the automation. This will run a build any time a `git push` is made to the specified branch.
@@ -47,7 +47,7 @@ Package automations create native builds which can be downloaded and run on devi
 
 ![Creating a package automation](/docs/assets/img/appflow/ss-automation-create-package.png)
 
-#### Fields
+#### Campos
 
 * **Environment:** The [custom build environment](/docs/appflow/environments/#custom-environments) (if any) to use when this automations is triggered.
 * **Native Config:** The [native config](/docs/appflow/package/intro#native-configs) (if any) to use when this automations is triggered.
@@ -62,7 +62,7 @@ Web automations build the javascript portion of an application and interface wit
 
 ![Creating a web automation](/docs/assets/img/appflow/ss-automation-create-web.png)
 
-#### Fields
+#### Campos
 
 * **Environment:** The [custom build environment](/docs/appflow/environments/#custom-environments) (if any) to use when this automations is triggered.
 * **Channel:** The [Deploy Channel](/docs/appflow/deploy/channels) where web builds from this automation will be assigned.

@@ -1,17 +1,17 @@
 ---
-previousText: 'Deploy API'
+previousText: 'API de Deploy'
 previousUrl: '/docs/appflow/deploy/api'
-nextText: 'Using Ionic CLI'
+nextText: 'Como usar el CLI de Ionic'
 nextUrl: '/docs/appflow/deploy/cli'
 ---
 
-# Tutorials and Videos
+# Tutoriales y videos
 
-## Setup and Deploy on iOS
+## Configurar e implementar en iOS
 
 <wistia-video videoId="2702mkf530"></wistia-video>
 
-Learn how to install, configure, and deploy your first live update.
+Aprenda a instalar, configurar e implementar su primera actualización en vivo.
 
 ## Upgrading to the New Deploy Plugin
 

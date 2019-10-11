@@ -1,105 +1,105 @@
 ---
-previousText: 'Tutorials and Videos'
+previousText: '教程和视频'
 previousUrl: '/docs/appflow/deploy/tutorials'
-nextText: 'Package'
+nextText: '原生工具包'
 nextUrl: '/docs/appflow/package/intro'
 ---
 
-# Deploy builds on Appflow using the Ionic CLI
+# 在Appflow上使用 Ionic CLI 的 部署构建
 
 <blockquote>
-  <p><b>Note:</b> This feature is only available on our <b>Scale</b> plan. Please <a href="/sales">contact us</a> to enable this feature.</p>
+  <p><b>注:</b>此功能仅适用于我们的<b>Scale</b>计划。 要启用此功能请 <a href="/sales">联系我们</a>。</p>
 </blockquote>
 
-It is possible to trigger Deploy builds on Appflow directly from the CLI. This is extremely useful if you need to integrate the Deploy build step inside an existing external CI/CD process.
+可以直接从CLI触发基于Appflow的部署构建。 如果您需要将部署构建步骤集成到现有的外部CI/CD进程中，这将非常有用。
 
-### Prerequisites
+### 基本要求
 
-Upgrade the Ionic CLI to at least version `4.8.0`.
+将Ionic CLI升级到版本 `4.8.0`以上。
 
-To use environments, a proper Appflow subscription that allows the usage of Automations is needed.
+要使用环境，需要一个允许使用自动化的Appflow订阅。
 
-### Authentication
+### 身份验证
 
-The Ionic CLI has to be authenticated on Appflow to be able to trigger a Deploy build.
+必须在Appflow上对Ionic CLI进行身份验证，才能触发部署构建。
 
-To login type:
-
-```bash
-$ ionic login <email> <password>
-```
-
-This will prompt for the Appflow username/password.
-
-The CLI can also be authenticated via an environment variable (for example, if it is used during a CI/CD task).
-
-To set up the authentication via environment variable, first login via the CLI with an Appflow user who has access to the app you want to trigger Deploy builds for:
+登录类型：
 
 ```bash
 $ ionic login <email> <password>
 ```
 
-Then, export the authentication token:
+这将提示输入Appflow的用户名/密码。
+
+CLI还可以通过环境变量进行身份验证(例如，如果在CI/CD任务期间使用它)。
+
+要设置通过环境变量的身份验证，首先通过CLI以Appflow用户登录，该用户可以访问您想要触发部署构建的应用程序:
+
+```bash
+$ ionic login <email> <password>
+```
+
+然后导出验证令牌：
 
 ```bash
 $ ionic config get -g tokens.user
 ```
 
-Finally, export the token in an environment variable of your shell or your CI/CD service.
+最后，导出令牌到你的 shell 或你的 CI/CD 服务的环境变量。
 
 ```bash
 $ export IONIC_TOKEN=<your token>
 ```
 
-### Link the app
+### 链接应用程序
 
-Your app must be linked to the remote app on Appflow. If the app is not linked yet, run:
+应用程序必须链接到Appflow上的远程应用程序。 如果应用尚未链接，请运行：
 
 ```bash
 $ ionic link <app id>
 ```
 
-and commit the changes to `ionic.config.json`.
+并且将修改提交到 `ionic.config.json`。
 
-### Trigger a deploy build
+### 触发部署构建
 
-Currently, a Deploy build can be triggered only from the root project directory:
+目前，只能从根项目目录触发部署构建：
 
 ```bash
 $ cd /path/to/your/app
 ```
 
-Assuming the CLI is authenticated, to trigger a Deploy build, run:
+假设 CLI 被验证，触发部署构建，运行：
 
 ```bash
 $ ionic deploy build
 ```
 
-Once the build is successfully triggered, the CLI will automatically start tailing the logs from Appflow.
+一旦成功触发构建，CLI将自动开始跟踪Appflow中的日志。
 
-### Customize the Deploy build with Options
+### 自定义部署构建选项
 
-The Options available to customize the build include:
+自定义构建选项包括：
 
-* `--environment=<name>` to specify the group of environment variables to be exposed to the build (available only with Automation; more info about environments are available [here](/docs/appflow/environments/))
-* `--channel=<name>` to specify the channel you want to auto deploy the build to. This can be repeated multiple times if multiple channels need to be specified; more infos about channels are available [here](/docs/appflow/deploy/channels/)
+* `--environment=<name>` 指定要公开给构建的环境变量组 (仅可用于自动化; 更多有关环境的信息可以看 [这里](/docs/appflow/environments/))
+* `--channel=<name>` 指定您想自动部署到构建的channel 。 如果需要指定多个频道，可以重复多次；更多有关频道的信息可以查看 [这里](/docs/appflow/deploy/channels/)
 
-### Customize the Deploy build with Advanced Options
+### 使用高级选项自定义部署构建
 
-The Advanced Options available to customize the build include:
+可以自定义构建的高级选项包括：
 
-* `--commit=<sha1>` The commit defaults to HEAD; to use a different commit you can use this option with the full SHA1 of the commit.
+* `--commit=<sha1>` 提交默认为HEAD;要使用不同的提交，可以将此选项与提交的完整SHA1一起使用。
 
-### Note about referencing Options values by name
+### 请注意按名称引用选项值
 
-Names are case sensitive and need to be specified including spaces, for instance:
+名称是大小写敏感的，需要指定包括空格，例如:
 
 ```bash
 $ ionic deploy build --channel="My Custom Channel"
 ```
 
-Apart from the `--commit` option, all others require the full name setup within the Appflow Dashboard.
+除了`--commit`选项外，其他所有选项都需要在Appflow Dashboard中设置全名。
 
-Look for the name on the Environments and Channels pages in Appflow:
+在Appflow的Environments 和Channels页面中查找名称:
 
-![CLI Environments List](/docs/assets/img/appflow/cli-environments-list.png) ![CLI Channels List](/docs/assets/img/appflow/cli-channels-list.png)
+![CLI 环境列表](/docs/assets/img/appflow/cli-environments-list.png) ![CLI Channel列表](/docs/assets/img/appflow/cli-channels-list.png)

@@ -1,25 +1,24 @@
 ---
-previousText: 'Introduction'
+previousText: '简介'
 previousUrl: '/docs/appflow/deploy/intro'
-nextText: 'Deploy Builds'
+nextText: '部署构建任务'
 nextUrl: '/docs/appflow/deploy/builds'
 ---
 
-# Using Ionic Deploy
+# 使用Ionic部署
 
-Ionic Appflow's Deploy feature makes it easy to deploy app updates in real time without going through a traditional app store submission process for the vast majority of business logic, UI, and style changes.
+Ionic Appflow的Deploy 部署特性使得实时部署应用程序更新变得很容易，而无需通过传统的应用商店提交流程来处理绝大多数业务逻辑、UI和样式更改。
 
-The Deploy feature works with the Ionic Appflow and requires you app is [connected to a git repo](/docs/appflow/quickstart/connect/) in order for Appflow to access your source code and deploy new code updates..
+Deploy 特性与Ionic Appflow一起工作，要求您的应用程序 [连接到一个 git 仓库](/docs/appflow/quickstart/connect/)，以便Appflow访问您的源代码并部署新的代码更新。
 
 <blockquote>
-  
-<b>Note:</b> The Deploy feature only works on binary compatible changes (HTML, CSS, JS), meaning if you rely on native code updates you must resubmit to the app store first before using Deploy.
+<b>注:</b> Deploy功能只适用于二进制兼容更改(HTML, CSS, JS)，这意味着如果你依赖原生代码更新，你必须先重新提交到app store再使用部署。
 </blockquote>
 
-## Installation
+## 安装
 
-In order to use Ionic Appflow's Deploy feature you'll need to [install and configure the Appflow SDK](/docs/appflow/quickstart/installation).
+为了使用 Ionic Approck 的部署功能，您需要 [安装并配置 Appflow SDK](/docs/appflow/quickstart/installation)。
 
-## Advanced Usage
+## 高级用法。
 
-Want to do something sweet, like allow users to [subscribe to a special Beta Channel](/docs/appflow/deploy/tutorials/#setting-up-a-beta-channel) instead of the default Production one? Do some split testing? Customize the way updates are applied (like checking every 30 minutes, or on login/logout)? Check out our detailed [Deploy API Documentation](/docs/appflow/deploy/api)!
+想要做一些东西，比如允许用户 [订阅一个特殊的 Beta Channel](/docs/appflow/deploy/tutorials/#setting-up-a-beta-channel) 而不是默认Production Channel？ 是否进行了一些分割测试？ 自定义更新方式(如每30分钟检查，或在登录/登出)? 查看详细的 [Deploy API 文档](/docs/appflow/deploy/api)！

@@ -1,25 +1,25 @@
 ---
-previousText: 'Android, iOS, and the Camera - Oh My!'
+previousText: 'Android, iOS y la Cámara, otra vez!'
 previousUrl: '/docs/angular/your-first-app/ios-android-camera'
-nextText: 'Theming'
+nextText: 'Tema'
 nextUrl: '/docs/angular/your-first-app/theming'
 contributors:
   - jsonMartin
 ---
 
-# Creating a Photo Gallery with Device Storage
+# Creando una galería de fotos con almacenamiento de dispositivos
 
-Last time, we successfully added the Camera plugin to the Tab2 page of our Tabs app. Currently, the photo is replaced each time a new one is taken. What if we wanted to display multiple photos together? Let’s create a photo gallery. You can follow along with the complete code for this [on GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4).
+La última vez, agregamos con éxito el puglin de la cámara a la página Tab2 de nuestra aplicación Tabs. Actualmente, la foto se reemplaza cada vez que se toma una nueva. ¿Qué pasa si queremos mostrar varias fotos juntas? Vamos a crear una galería de fotos. Puedes ver el código completo para esto [en GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4).
 
-## Creating a Dedicated Photo Service
+## Creando un Servicio de Fotos Dedicado
 
-From a terminal window, navigate to your Ionic project and run:
+Desde una terminal, navegue a su proyecto Ionic y ejecute:
 
 ```shell
 $ ionic g service services/Photo
 ```
 
-This creates a PhotoService class in a dedicated "services" folder:
+Esto crea una clase llamada PhotoService en una carpeta dedicada de "servicios":
 
 ```Javascript
 import { Injectable } from '@angular/core';
@@ -32,7 +32,7 @@ export class PhotoService {
 }
 ```
 
-Within this file, add a Photo class. The “data” property represents the base64 image data of a captured photo:
+Dentro de este archivo, agregue una clase de fotografía. La propiedad "data" representa los datos de la imagen base64 de una foto capturada:
 
 ```Javascript
 class Photo {
@@ -40,7 +40,7 @@ class Photo {
 }
 ```
 
-Then, create a Photos array to represent our photo gallery:
+Luego, cree una matriz de fotos para representar nuestra galería de fotos:
 
 ```Javascript
 export class PhotoService {
@@ -51,21 +51,21 @@ export class PhotoService {
 }
 ```
 
-Back in `tab2.page.ts`, import PhotoService:
+De vuelta en `tab2.page.ts`, importe PhotoService:
 
 ```Javascript
 import { PhotoService } from '../services/photo.service';
 ```
 
-Add it to the Constructor:
+Añádelo al Constructor:
 
 ```Javascript
 constructor(private camera: Camera, public photoService: PhotoService) {  }
 ```
 
-Next, move all code pertaining to the Camera plugin to the PhotoService class. This includes the takePicture method, the Camera and CameraOptions imports, and the Tab2Page page constructor.
+A continuación, mueva todo el código correspondiente al plugin de la cámara a la clase PhotoService. Esto incluye el método takePicture, las importaciones de Camera y CameraOptions, y el constructor de páginas Tab2Page.
 
-Continuing on, we need to convert currentImage variable references to the new photos array. Start by adding the captured photo data into the photos array:
+Continuando, necesitamos convertir las referencias de la variable currentImage a la nueva matriz de fotos. Comience añadiendo los datos de la foto capturada en la matriz de fotos:
 
 ```Javascript
 this.camera.getPicture(options).then((imageData) => {
@@ -78,7 +78,7 @@ this.camera.getPicture(options).then((imageData) => {
 });
 ```
 
-In `tab2.page.ts`, remove the currentImage variable and the reference to Camera in the constructor, leaving only PhotoService:
+En `tab2.page.ts`, elimine la variable currentImage y la referencia a la cámara en el constructor, dejando sólo PhotoService:
 
 ```Javascript
 export class Tab2Page {
@@ -86,7 +86,7 @@ export class Tab2Page {
 }
 ```
 
-Next, in `tab2.page.html`, remove the currentImage img tag. In its place, use an ion-grid component, which provides a great way to arrange elements on a page. In this case, we’ll use it to display 2 photos per row.
+A continuación, en `tab2.page.html`, elimine la etiqueta currentImage img. En su lugar, utilice un componente de red de iones, que proporciona una gran manera de organizar los elementos en una página. En este caso, lo usaremos para mostrar 2 fotos por fila.
 
 ```html
 <ion-grid>
@@ -98,9 +98,9 @@ Next, in `tab2.page.html`, remove the currentImage img tag. In its place, use an
 </ion-grid>
 ```
 
-Here, we loop through each photo in the PhotoServices photos array, adding a new column for each. Since an ion-row consists of 12 “blocks” of space, and we’re setting the size to 6 (`size="6"`), only 2 photos are displayed per row.
+Aquí, hacemos un bucle a través de cada foto en la matriz de fotos de PhotoServices, añadiendo una nueva columna para cada una. Como una fila de iones consiste en 12 "bloques" de espacio, y estamos ajustando el tamaño a 6 (`size="6"`), sólo se muestran 2 fotos por fila.
 
-Last, update the Fab button to call the PhotoService’s `takePicture` method:
+Por último, actualice el botón Fab para llamar al método `takePicture` del PhotoService:
 
 ```Html
 <ion-fab-button (click)="photoService.takePicture()">
@@ -108,25 +108,25 @@ Last, update the Fab button to call the PhotoService’s `takePicture` method:
 </ion-fab-button>
 ```
 
-Excellent! We now have a basic photo gallery working.
+¡Estupendo! Ahora tenemos una galería de fotos básica funcionando.
 
-## Saving photos to the device
+## Guardar fotos en el dispositivo
 
-Having a working photo gallery is pretty cool, but you’ll likely notice that when the app is closed, the photos are lost forever. That’s no good, so let’s add the [Ionic Storage plugin](https://ionicframework.com/docs/storage/), as easy way to store key/value pairs and JSON objects. When running in a native app context, Storage will prioritize using SQLite, one of the most stable and widely used file-based databases. When running on the web or as a Progressive Web App, Storage will attempt to use IndexedDB, WebSQL, and localstorage, in that order.
+Tener una galería de fotos que funcione está bastante bien, pero es probable que te des cuenta de que cuando la aplicación se cierra, las fotos se pierden para siempre. Esto no es bueno, así que añadamos el [Ionic Storage plugin](https://ionicframework.com/docs/storage/), como una forma fácil de almacenar pares clave/valor y objetos JSON. Cuando se ejecuta en un contexto de aplicación nativo, Storage prioriza el uso de SQLite, una de las bases de datos basadas en archivos más estables y ampliamente utilizadas. Cuando se ejecuta en la Web o como una aplicación Web progresiva, Storage intentará utilizar IndexedDB, WebSQL y localstorage, en ese orden.
 
-The Storage plugin works perfectly for our base64 image data. To begin, add the SQLite plugin for native:
+El plugin de almacenamiento funciona perfectamente para nuestros datos de imagen base64. Para empezar, añada el plugin SQLite para nativo:
 
 ```shell
 $ ionic cordova plugin add cordova-sqlite-storage
 ```
 
-Next, add the JavaScript library for the web:
+A continuación, agregue la biblioteca JavaScript para la Web:
 
 ```shell
 $ npm install --save @ionic/storage
 ```
 
-Last, import the Storage module and add it to the imports list in `app.module.ts`:
+Por último, importe el módulo Storage y añádalo a la lista de importaciones en `app.module.ts`:
 
 ```Javascript
 import { IonicStorageModule } from '@ionic/storage';
@@ -148,19 +148,19 @@ import { IonicStorageModule } from '@ionic/storage';
 export class AppModule {}
 ```
 
-It’s now ready to be used in our PhotoService class. Import it:
+Ahora está listo para ser utilizado en nuestra clase de PhotoService. Impórtate:
 
 ```Javascript
 import { Storage } from '@ionic/storage';
 ```
 
-Then inject it via the constructor:
+Luego insertar a través del constructor:
 
 ```Javascript
 constructor(private camera: Camera, private storage: Storage) { }
 ```
 
-To add the capability to save photos, there’s only a couple steps left. Update the `takePicture()` method to save the entire photos array after each photo is taken using the storage.set method:
+Para añadir la capacidad de guardar fotos, sólo quedan un par de pasos. Actualice el método `takePicture()` para guardar toda la matriz de fotos después de tomar cada foto utilizando el método storage.set:
 
 ```Javascript
 this.camera.getPicture(options).then((imageData) => {
@@ -177,7 +177,7 @@ this.camera.getPicture(options).then((imageData) => {
 });
 ```
 
-We still need to load the saved photos when the app is first opened. This is simple enough - retrieve the “photos” key then assign its value to the photos array:
+Todavía tenemos que cargar las fotos guardadas cuando se abre la aplicación por primera vez. Esto es bastante simple - recuperar la tecla "photos" y luego asignar su valor a la matriz de fotos:
 
 ```Javascript
 loadSaved() {
@@ -187,7 +187,7 @@ loadSaved() {
 }
 ```
 
-Over in the Tab2 page, call the loadSaved method once it begins loading:
+En la página Tab2, llame al método loadSaved una vez que comience a cargarse:
 
 ```Javascript
 ngOnInit() {
@@ -195,10 +195,10 @@ ngOnInit() {
 }
 ```
 
-Sweet! Photos are now saved to your device. To demonstrate that they are indeed being saved, force close DevApp, reopen it, and open the Tab2 page. Or, shake your device to have the Control Menu pop up, then tap “Exit preview.” Afterwards, reload this app to view the photos.
+¡Genial! Las fotos se guardan ahora en su dispositivo. Para demostrar que están siendo efectivamente guardados, forzaremos el cierre de DevApp, reabrirlo y abrir la página Tab2. O, agita tu dispositivo para que el menú de control se apague, y luego pulsa “Salir de vista previa”. Después, recarga esta aplicación para ver las fotos.
 
-Next up, we’ll look at how to apply a custom theme to an Ionic app.
+Seguidamente, estudiaremos cómo aplicar un tema personalizado a una aplicación Ionic.
 
 <div style="text-align:right;">
-  <docs-button href="/docs/angular/your-first-app/theming">Continue <svg viewBox="0 0 512 512"><path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path></svg></docs-button>
+  <docs-button href="/docs/angular/your-first-app/theming">Continuar <svg viewBox="0 0 512 512"><path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path></svg></docs-button>
 </div>

@@ -1,5 +1,5 @@
 ---
-previousText: 'Creating a Photo Gallery with Device Storage'
+previousText: 'Creando una galería de fotos con almacenamiento de dispositivos'
 previousUrl: '/docs/angular/your-first-app/creating-photo-gallery-device-storage'
 nextText: 'Lifecycle'
 nextUrl: '/docs/angular/lifecycle'

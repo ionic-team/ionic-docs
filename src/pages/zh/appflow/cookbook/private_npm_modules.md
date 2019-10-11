@@ -1,13 +1,13 @@
 ---
-previousText: 'Using private GIT repositories'
-previousUrl: '/docs/appflow/cookbook/private_git'
-nextText: 'DevApp: Local Development'
-nextUrl: '/docs/appflow/devapp'
+previousText: '使用 GIT 私人仓库'
+previousUrl: '/docs/appollow/cookbook/private_git'
+nextText: 'DevApp：本地开发'
+nextUrl: '/docs/apport/devapp'
 ---
 
-# Using private NPM modules
+# 使用私有 NPM 模块
 
-Get an authentication token using the npm CLI:
+使用 npm CLI 获取验证码：
 
     $ npm token create --read-only
     npm password:
@@ -22,10 +22,10 @@ Get an authentication token using the npm CLI:
     └────────────────┴──────────────────────────────────────┘
     
 
-Configure an `NPM_TOKEN` secret in your Appflow environment using the generated token as value:
+在Appflow环境中配置一个`NPM_TOKEN`密钥，使用生成的令牌作为值:
 
-![NPM token secret](/docs/assets/img/appflow/cookbook/npm-token-secret.png)
+![NPM 令牌密钥](/docs/assets/img/appflow/cookbook/npm-token-secret.png)
 
-Check in a `.npmrc` file in the root of your project directory with the following line:
+在项目目录根目录中检查`.npmrc`文件如下行：
 
     //registry.npmjs.org/:_authToken=${NPM_TOKEN}
