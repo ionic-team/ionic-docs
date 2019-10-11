@@ -1,14 +1,15 @@
 ---
-title: Couchbase Lite
+title: Offline Storage
 template: enterprise-plugin
-version: 1.0.1
+version: 1.0.0
 minor: 1.0.X
 ---
 
-# Ionic Couchbase Lite
+# Ionic Offline Storage
 
-Ionic Couchbase Lite is a cross-platform data storage system that works on iOS and Android using Couchbase Lit's simple yet powerful query, replication, and sync APIs.
+Ionic Offline Storage is a cross-platform data storage system that works on iOS and Android. Powered by [Couchbase Lite](https://docs.couchbase.com/couchbase-lite/2.6/index.html), a NoSQL database engine that provides simple yet powerful query, replication, and sync APIs.
 
+This solution makes it easy to add offline storage to Ionic apps that are secure (encrypted on device), highly performant, and provide advanced data querying.
 
 ## Project Requirements
 
@@ -18,8 +19,14 @@ Couchbase Lite requires a min SDK target for Android of at least 19. Make sure y
 <preference name="android-minSdkVersion" value="19" />
 ```
 
+To use additional features such as cloud data sync, data replication, conflict resolution, and delta sync, a subscription to Couchbase Server is required.
+
+## Reference App
+
+A complete [advanced offline search experience](https://github.com/ionic-team/demo-offlinestorage-search) demo that includes multiple filters and wildcard searches.
+
 ## Importing code
-To use the Couchbase Lite API, import from `@ionic-enterprise/couchbase-lite`.
+To use the Couchbase Lite API, import from `@ionic-enterprise/offline-storage`.
 For example:
 ```typescript
 import {
@@ -44,7 +51,7 @@ import {
     ArrayFunction,
     PropertyExpression,
     Join
-} from '@ionic-enterprise/couchbase-lite';
+} from '@ionic-enterprise/offline-storage';
 ```
 
 ## Starter Code
@@ -106,7 +113,7 @@ let database = new Database("my-database", config);
 ```
 
 Just as before, the database will be created in a default location.
-Alternatively, the `Database(name: string, config: DatabaseConfiguration) initializer can be used to provide specific options in the <a href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-java/db022/com/couchbase/lite/DatabaseConfiguration.html"><code>DatabaseConfiguration</code></a> object such as the database directory.
+Alternatively, the `Database(name: string, config: DatabaseConfiguration)` initializer can be used to provide specific options in the <a href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-java/db022/com/couchbase/lite/DatabaseConfiguration.html"><code>DatabaseConfiguration</code></a> object such as the database directory.
 
 ### Loading a pre-built Database
 
@@ -939,11 +946,11 @@ The concurrency control parameter has two possible values:
 
 ## Database Replicas
 
-Database replicas is available in the <strong>Enterprise Edition</strong> only (<a href="https://www.couchbase.com/downloads" class="bare">https://www.couchbase.com/downloads</a>).
+Database replicas is available in the <strong>Ionic Native</strong> only (<a href="https://www.couchbase.com/downloads" class="bare">https://www.couchbase.com/downloads</a>).
 Starting in Couchbase Lite 2.0, replication between two local databases is now supported.
 It allows a Couchbase Lite replicator to store data on secondary storage.
 It would be especially useful in scenarios where a user’s device is damaged and the data needs to be moved to a different device.
-Note that the code below won’t compile if you’re running the <strong>Community Edition</strong> of Couchbase Lite.
+Note that the code below won’t compile if you’re running the <strong>Community Plugin</strong> of Couchbase Lite.
 
 <!--
 ## Certificate Pinning
@@ -979,14 +986,5 @@ config.setPinnedServerCertificate(cert);</code></pre>
 <div class="paragraph">
 <p>The Couchbase Lite API is thread safe except for calls to mutable objects: <code>MutableDocument</code>, <code>MutableDictionary</code> and <code>MutableArray</code>.</p>
 -->
-
 # Changelog
 
-
-
-### 1.0.1 (2019-09-03)
-
-
-### Bug Fixes
-
-* correct plugin id in plugin.xml
