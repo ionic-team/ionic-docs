@@ -31,7 +31,7 @@ Limpio, simple y funcional. Ionic Framework está diseñado para trabajar y most
 
 Ionic Framework is built with simplicity in mind, so that creating Ionic apps is enjoyable, easy to learn, and accessible to just about anyone with web development skills.
 
-## License
+## Licencia
 
 Ionic Framework is a free and open source project, released under the permissable <a href="https://opensource.org/licenses/MIT" target="_blank">MIT license</a>. This means it can be used in personal or commercial projects for free. MIT is the same license used by such popular projects as jQuery and Ruby on Rails.
 
@@ -41,7 +41,7 @@ This documentation content (found in the <a href="https://github.com/ionic-team/
 
 The official [Ionic CLI](/docs/cli), or Command Line Interface, is a tool that quickly scaffolds Ionic apps and provides a number of helpful commands to Ionic developers. In addition to installing and updating Ionic, the CLI comes with a built-in development server, build and debugging tools, and much more. If you are an [Ionic Appflow](#ionic-appflow) member, the CLI can be used to perform cloud builds and deployments, and administer your account.
 
-## Framework Compatibility
+## Compatibilidad de Framework
 
 While past releases of Ionic were tightly coupled to Angular, V4 of the framework was re-engineered to work as a standalone Web Component library, with integrations for the latest JavaScript frameworks, like Angular. Ionic can be used in most frontend frameworks with success, including React and Vue, though some frameworks need a shim for full Web Component support.
 
@@ -53,7 +53,7 @@ One of the main goals with Ionic 4 was to remove any hard requirement on a singl
 
 Angular has always been at the center of what makes Ionic great. While the core components have been written to work as a standalone Web Component library, the `@ionic/angular` package makes integration with the Angular ecosystem a breeze. `@ionic/angular` includes all the functionality that Angular developers would expect coming from Ionic 2/3, and integrates with core Angular libraries, like the Angular router.
 
-### Future Support
+### Soporte futuro
 
 Support for other frameworks are expected in future release. Currently official bindings for Vue and React are being developed, though some components Just Work out of the box in those frameworks.
 
@@ -71,11 +71,11 @@ Ionic Appflow helps developers and teams compile native app builds and deploy li
 
 Appflow requires an <a href="https://dashboard.ionicframework.com/signup" target="_blank">Ionic Account</a> and comes with a free “Starter” plan for those interested in playing around with some of its features.
 
-## Ecosystem
+## Ecosistema
 
 Ionic Framework is actively developed and maintained full-time by a core team, and its ecosystem is guided by an international community of developers and contributors fueling its growth and adoption. Developers and companies small and large use Ionic to build and ship amazing apps that run everywhere.
 
-### Join the Community
+### Únete a la Comunidad
 
 There are millions of Ionic developers in over 200 countries worldwide. Here are some ways to join:
 
