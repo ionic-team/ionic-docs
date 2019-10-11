@@ -305,7 +305,7 @@ console.log(versions);
 
 ***用法***: `` ` ``typescript const info = Deploy.getConfiguration() console.log(info) // { // 'appId': 'abcd1234', // 'channel': 'MY\_CHANNEL\_NAME', // 'binaryVersionName': 'X.X.X', // 'binaryVersionCode': 'X.X.X', (string on iOS number on Android) // 'disabled': false, // 'updateMethod': 'auto', // 'maxVersions': 3, // 'minBackgroundDuration': 30, // 'currentVersionId': 'xxxx-xxxx-xxxx-xxxx' // 'currentBuildId' : 'xxxxxxx' // }
 
-**Returns:** `Promise`<[ICurrentConfig](#icurrentconfig)> The current configuration of the plugin.
+**Returns:** `Promise`<[ICurrentConfig](#icurrentconfig)>插件当前配置。
 
 * * *
 
@@ -313,13 +313,13 @@ console.log(versions);
 
 ### getCurrentVersion
 
-▸ **getCurrentVersion**(): `Promise`<[ISnapshotInfo](#isnapshotinfo) \| `undefined`>
+▸ **getCurrentVersion**(): `Promise`<[ISnapshotInfo](#isnapshotinfo) | `undefined`>
 
-***description***: Get info about the currently deployed update or undefined if none are applied.
+***描述***: 获取有关当前部署的更新的信息，如果没有应用更新，则获取未定义的更新。
 
-***since***: v5.0.0
+***自***: v5.0.0
 
-***usage***:
+***用法***:
 
 ```typescript
 const info = await Deploy.getCurrentVersion()
@@ -331,7 +331,7 @@ console.log(info)
 // }
 ```
 
-**Returns:** `Promise`<[ISnapshotInfo](#isnapshotinfo) \| `undefined`> The info about the currently applied update or undefined if none is applied.
+**返回：** `Promise`<[ISnapshotIn](#isnapshotinfo) | `undefined`> 获取有关当前部署的更新的信息，如果没有应用更新，则获取未定义的更新。
 
 * * *
 
@@ -341,18 +341,18 @@ console.log(info)
 
 ▸ **getVersionById**(versionId: *`string`*): `Promise`<[ISnapshotInfo](#isnapshotinfo)>
 
-***description***: Get info about the update by its versionId
+***描述***: 获取其版本ID的更新信息
 
-***since***: v5.0.0
+***自***: v5.0.0
 
-**Parameters:**
+**参数**
 
-| Name      | Type     |
-| --------- | -------- |
-| versionId | `string` |
+| 名称   | 类型（Type） |
+| ---- | -------- |
+| 版本ID | `string` |
 
 
-**Returns:** `Promise`<[ISnapshotInfo](#isnapshotinfo)> The info about the currently applied update or undefined if none is applied.
+**返回：** `Promise`<[ISnapshotIn](#isnapshotinfo) | `undefined`> 获取有关当前部署的更新的信息，如果没有应用更新，则获取未定义的更新。
 
 * * *
 
@@ -362,11 +362,11 @@ console.log(info)
 
 ▸ **reloadApp**(): `Promise`<`boolean`>
 
-***description***: Reload the app if a more recent version of the app is available.
+***描述***: 如果应用程序的最新版本可用，重新加载应用程序。
 
-***since***: v5.0.0
+***自***: v5.0.0
 
-***usage***:
+***用法***:
 
 ```typescript
 async performManualUpdate() {
@@ -383,7 +383,7 @@ async performManualUpdate() {
 }
 ```
 
-**Returns:** `Promise`<`boolean`> true if the reload succeeded
+**返回：** `Promise`<`boolean`> 如果重新加载成功为true。
 
 * * *
 
@@ -391,13 +391,13 @@ async performManualUpdate() {
 
 ### sync
 
-▸ **sync**(syncOptions?: *[ISyncOptions](#isyncoptions)*, progress?: *[CallbackFunction](#callbackfunction)<`number`>*): `Promise`<[ISnapshotInfo](#isnapshotinfo) \| `undefined`>
+▸ **sync**(syncOptions?: *[ISyncOptions](#isyncoptions)*, progress?: *[CallbackFunction](#callbackfunction)<`number`>*): `Promise`<[ISnapshotInfo](#isnapshotinfo) | `undefined`>
 
-***description***: Check for an update, download it, and apply it in one step.
+***描述***: 一步检查更新、下载并部署它。
 
-***since***: v5.0.0
+***自***: v5.0.0
 
-***usage***:
+***用法***:
 
 ```typescript
 async performAutomaticUpdate() {
