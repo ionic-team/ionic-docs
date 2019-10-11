@@ -20,6 +20,7 @@ const items = {
   },
   'menu-enterprise-common-device-features': {
     'Android Permissions': '/docs/enterprise/android-permissions',
+    'Apple Payment Pass': '/docs/enterprise/apple-payment-pass',
     'App Rate': '/docs/enterprise/app-rate',
     'App Version': '/docs/enterprise/app-version',
     'Badge': '/docs/enterprise/badge',
@@ -47,10 +48,7 @@ const items = {
     'Statusbar': '/docs/enterprise/statusbar',
   },
   'menu-enterprise-integrated-services': {
-    'Active Directory': 'https://ionicframework.com/integrations/ms-activedirectory-ms-adal',
-    'mParticle': '/docs/enterprise/mparticle',
-  },
-  'menu-enterprise-payments': {
-    'Apple Payment Pass': '/docs/enterprise/apple-payment-pass',
-  },
+    'AWS Amplify': 'https://ionicframework.com/integrations/aws-amplify',
+    'mParticle': '/docs/enterprise/mparticle'
+  }
 };

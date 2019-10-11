@@ -4,7 +4,10 @@ title: Ionic Native
 
 For teams building mission-critical apps, Ionic Native is a curated collection of plugins and integrations that are built and supported by Ionic, with stability assurances and guaranteed to work on all major platforms and versions.
 
-## What is Ionic Native?
+## Why Ionic Native?
+
+Take on mobile projects with peace of mind, knowing the native features, security, and performance you need will just work - now and in the future.
+
 <div class="native-ee-pricing">
   <div class="table-wrap">
     <table>
@@ -21,7 +24,7 @@ For teams building mission-critical apps, Ionic Native is a curated collection o
           </th>
           <th>
             <div class="plan-wrap">
-              <span class="native-ee-pricing-table">Ionic Native</span>
+              <span class="native-ee-pricing-table">Premier Plugins</span>
               <div class="price" data-toggle="billing-team">
                 Contact Us</div>
             </div>
@@ -92,7 +95,7 @@ For teams building mission-critical apps, Ionic Native is a curated collection o
 
 <hubspot-form form-id="7c2c6529-48c0-4d17-86a0-bfd40c849bb1"></hubspot-form>
 
-## Plugin List
+## Solution List
 
 Accelerate your app development with powerful solutions to common enterprise use cases. Ionic’s growing library are ready to deploy into any of the apps you build.
 
@@ -133,7 +136,7 @@ Accelerate your app development with powerful solutions to common enterprise use
 - [mParticle](/docs/enterprise/mparticle)
 
 ### Offline & Storage
-- [Couchbase Lite](/docs/enterprise/couchbase-lite)
+- [Offline Storage](/docs/enterprise/offline-storage)
 
 ### Payments
 - [Apple Payment Pass](/docs/enterprise/apple-payment-pass)
