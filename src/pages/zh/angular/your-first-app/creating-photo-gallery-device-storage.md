@@ -97,9 +97,9 @@ this.camera.getPicture(options).then((imageData) => {
 </ion-grid>
 ```
 
-Here, we loop through each photo in the PhotoServices photos array, adding a new column for each. Since an ion-row consists of 12 “blocks” of space, and we’re setting the size to 6 (`size="6"`), only 2 photos are displayed per row.
+在这里，我们循环遍历PhotoServices photos数组中的每张照片，为每张照片添加一个新列。 因为一个ion-row包含12个“blocks”空间，我们将大小设置为6 (`size="6"`)，所以每一行只显示2张照片。
 
-Last, update the Fab button to call the PhotoService’s `takePicture` method:
+最后，更新Fab按钮调用PhotoService的`takePicture`方法:
 
 ```Html
 <ion-fab-button (click)="photoService.takePicture()">
