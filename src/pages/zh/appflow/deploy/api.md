@@ -1,21 +1,21 @@
 ---
-title: Ionic Deploy
-previousText: 'Channels'
-previousUrl: '/docs/appflow/deploy/channels'
-nextText: 'Tutorials and Videos'
+title: Ionic部署
+previousText: '频道'
+previousUrl: '/docs/appflow/sport/screcisions'
+nextText: '教程和视频'
 nextUrl: '/docs/appflow/deploy/tutorials'
 ---
 
 
-## Installation and Usage
+## 安装和使用
 
-In order to use the Deploy API inside of your app. You need to install the latest version of the Appflow SDK and set the `UPDATE_METHOD` to `none`:
+为了在您的应用程序中使用部署API。您需要安装Apploret SDK 的最新版本，并且设置 `UPDATE_METHD` 为`none`：
 
 ```shell
 ionic deploy add --update-method=none --app-id="YOUR_APP_ID" --channel-name="YOUR_CHANNEL_NAME"
 ```
 
-Then you can import the Deploy API in order to it in your code:
+然后您可以导入Deploy API，以便在您的代码中导入：
 
 ```typescript
 // ES2015/Typescript
@@ -46,13 +46,13 @@ async changeToBetaChannel() {
 
 ```
 
-## Index
+## 索引
 
-### Classes
+### 类
 
 * [IonicDeploy](#ionicdeploy)
 
-### Interfaces
+### 接口
 
 * [CallbackFunction](#callbackfunction)
 * [CheckForUpdateResponse](#checkforupdateresponse)
@@ -64,7 +64,7 @@ async changeToBetaChannel() {
 
 * * *
 
-## Classes
+## 类
 
 <a id="ionicdeploy"></a>
 
@@ -72,9 +72,9 @@ async changeToBetaChannel() {
 
 **IonicDeploy**:
 
-The Ionic Deploy Plugin API
+Ionic Deploy插件 API
 
-***usage***:
+***用法***:
 
 ```typescript
 async performManualUpdate() {
@@ -85,9 +85,9 @@ async performManualUpdate() {
 }
 ```
 
-## Methods
+## 方法
 
-The plugin contains many functions that can help you utilize Deploy inside of your app.
+这个插件包含许多功能，可以帮助您在应用程序中使用Deploy。
 
 * [configure](#ionicdeploy.configure)
 * [getConfiguration](#ionicdeploy.getconfiguration)
@@ -107,11 +107,11 @@ The plugin contains many functions that can help you utilize Deploy inside of yo
 
 ▸ **checkForUpdate**(): `Promise`<[CheckForUpdateResponse](#checkforupdateresponse)>
 
-***description***: Check for available updates for the currently configured app id and channel.
+***说明***: 检查当前配置的应用程序id和channel的可用更新。
 
 ***since***: v5.0.0
 
-***usage***:
+***用法***:
 
 ```typescript
 async performManualUpdate() {
@@ -122,21 +122,21 @@ async performManualUpdate() {
 }
 ```
 
-**Returns:** `Promise`<[CheckForUpdateResponse](#checkforupdateresponse)> A response describing an update if one is available.
+**Returns：** `Promise`<[CheckForUpdateResponse](#checkforupdateresponse)> 如果更新可用，则描述更新的响应。
 
 * * *
 
 <a id="ionicdeploy.configure"></a>
 
-### configure
+### 配置
 
 ▸ **configure**(config: *[IDeployConfig](#ideployconfig)*): `Promise`<`void`>
 
-***description***: Update the default configuration for the plugin on the current device. The new configuration will be persisted across app close and binary updates.
+***描述***: 更新当前设备上插件的默认配置。 新的配置将在应用程序关闭和二进制更新之间保持。
 
 ***since***: v5.0.0
 
-***usage***:
+***用法***:
 
 ```typescript
 async configureDeploy() {
@@ -148,14 +148,14 @@ async configureDeploy() {
 }
 ```
 
-**Parameters:**
+**参数**
 
-| Name   | Type                            | Description                                          |
-| ------ | ------------------------------- | ---------------------------------------------------- |
-| config | [IDeployConfig](#ideployconfig) | The new configuration for the plugin on this device. |
+| 名称     | 类型（Type）                        | 描述          |
+| ------ | ------------------------------- | ----------- |
+| config | [IDeployConfig](#ideployconfig) | 此设备上插件的新配置。 |
 
 
-**Returns:** `Promise`<`void`>
+**返回：** `Promise`<`void`>
 
 * * *
 
@@ -165,9 +165,9 @@ async configureDeploy() {
 
 ▸ **deleteVersionById**(version: *`string`*): `Promise`<`boolean`>
 
-***description***: Remove the files specific to a snapshot from the device.
+***描述***: 从设备中删除快照的文件。
 
-***usage***:
+***用法***:
 
 ```typescript
 async deleteVersion() {
@@ -176,14 +176,14 @@ async deleteVersion() {
 }
 ```
 
-**Parameters:**
+**参数**
 
-| Name    | Type     | Description   |
-| ------- | -------- | ------------- |
-| version | `string` | The versionId |
+| 名称      | 类型（Type） | 描述   |
+| ------- | -------- | ---- |
+| version | `string` | 版本ID |
 
 
-**Returns:** `Promise`<`boolean`> true if the update was deleted.
+**返回：** `Promise`<`boolean`> 如果更新已经删除为true。
 
 * * *
 
@@ -193,11 +193,11 @@ async deleteVersion() {
 
 ▸ **downloadUpdate**(progress?: *[CallbackFunction](#callbackfunction)<`number`>*): `Promise`<`boolean`>
 
-***description***: Download the new files from an available update found by the checkForUpdate method and prepare the update.
+***描述***: 从checkForUpdate方法找到的可用更新下载新文件并准备更新。
 
 ***since***: v5.0.0
 
-***usage***:
+***用法***:
 
 ```typescript
 async performManualUpdate() {
@@ -210,14 +210,14 @@ async performManualUpdate() {
 }
 ```
 
-**Parameters:**
+**参数**
 
-| Name                | Type                                            | Description                                                                                                                         |
-| ------------------- | ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| `Optional` progress | [CallbackFunction](#callbackfunction)<`number`> | A progress callback function which will be called with a number representing the percent of completion of the download and prepare. |
+| 名称                  | 类型（Type）                                        | 描述                                 |
+| ------------------- | ----------------------------------------------- | ---------------------------------- |
+| `Optional` progress | [CallbackFunction](#callbackfunction)<`number`> | 一个进度回调函数，将使用一个表示下载和准备完成百分比的数字进行调用。 |
 
 
-**Returns:** `Promise`<`boolean`> true if the download succeeded
+**返回：** `Promise`<`boolean`> 如果更新被成功删除为true。
 
 * * *
 
@@ -227,11 +227,11 @@ async performManualUpdate() {
 
 ▸ **extractUpdate**(progress?: *[CallbackFunction](#callbackfunction)<`number`>*): `Promise`<`boolean`>
 
-***description***: Extract a downloaded bundle of updated files.
+***描述***: 提取一个已下载的更新文件包。
 
 ***since***: v5.0.0
 
-***usage***:
+***用法***:
 
 ```typescript
 async performManualUpdate() {
@@ -247,14 +247,14 @@ async performManualUpdate() {
 }
 ```
 
-**Parameters:**
+**参数**
 
-| Name                | Type                                            | Description                                                                                                            |
-| ------------------- | ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `Optional` progress | [CallbackFunction](#callbackfunction)<`number`> | A progress callback function which will be called with a number representing the percent of completion of the extract. |
+| 名称                  | 类型（Type）                                        | 描述                                 |
+| ------------------- | ----------------------------------------------- | ---------------------------------- |
+| `Optional` progress | [CallbackFunction](#callbackfunction)<`number`> | 一个进度回调函数，将使用一个表示下载和准备完成百分比的数字进行调用。 |
 
 
-**Returns:** `Promise`<`boolean`> true if the extract succeeded
+**返回：** `Promise`<`boolean`> 如果提取成功为true。
 
 * * *
 
@@ -264,11 +264,11 @@ async performManualUpdate() {
 
 ▸ **getAvailableVersions**(): `Promise`<[ISnapshotInfo](#isnapshotinfo)[]>
 
-***description***: Get a list of the snapshots available on the device.
+***描述***: 获取设备上可用的快照列表。
 
-***since***: v5.0.0
+***自***: v5.0.0
 
-***usage***:
+***使用***:
 
 ```typescript
 async checkVersions() {
@@ -289,7 +289,7 @@ console.log(versions);
 
 ```
 
-**Returns:** `Promise`<[ISnapshotInfo](#isnapshotinfo)[]> a list of available updates.
+**返回：** `Promise`<[ISnapshotIn](#isnapshotinfo)>可用的更新列表。
 
 * * *
 
@@ -299,11 +299,11 @@ console.log(versions);
 
 ▸ **getConfiguration**(): `Promise`<[ICurrentConfig](#icurrentconfig)>
 
-***description***: Get the current configuration for the plugin on the current device.
+***描述***: 更新当前设备上插件的默认配置。
 
 ***since***: v5.0.0
 
-***usage***: `` ` ``typescript const info = Deploy.getConfiguration() console.log(info) // { // 'appId': 'abcd1234', // 'channel': 'MY\_CHANNEL\_NAME', // 'binaryVersionName': 'X.X.X', // 'binaryVersionCode': 'X.X.X', (string on iOS number on Android) // 'disabled': false, // 'updateMethod': 'auto', // 'maxVersions': 3, // 'minBackgroundDuration': 30, // 'currentVersionId': 'xxxx-xxxx-xxxx-xxxx' // 'currentBuildId' : 'xxxxxxx' // }
+***用法***: `` ` ``typescript const info = Deploy.getConfiguration() console.log(info) // { // 'appId': 'abcd1234', // 'channel': 'MY\_CHANNEL\_NAME', // 'binaryVersionName': 'X.X.X', // 'binaryVersionCode': 'X.X.X', (string on iOS number on Android) // 'disabled': false, // 'updateMethod': 'auto', // 'maxVersions': 3, // 'minBackgroundDuration': 30, // 'currentVersionId': 'xxxx-xxxx-xxxx-xxxx' // 'currentBuildId' : 'xxxxxxx' // }
 
 **Returns:** `Promise`<[ICurrentConfig](#icurrentconfig)> The current configuration of the plugin.
 
