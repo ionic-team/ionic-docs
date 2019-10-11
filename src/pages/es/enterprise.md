@@ -109,29 +109,29 @@ Accelerate your app development with powerful solutions to common enterprise use
 - [App Version](/docs/enterprise/app-version)
 - [Badge](/docs/enterprise/badge)
 - [Browser](/docs/enterprise/inappbrowser)
-- [Calendar](/docs/enterprise/calendar)
-- [Camera](/docs/enterprise/camera)
-- [Clipboard](/docs/enterprise/clipboard)
-- [Contacts](/docs/enterprise/contacts)
+- [Calendario](/docs/enterprise/calendar)
+- [Cámara](/docs/enterprise/camera)
+- [Portapapeles](/docs/enterprise/clipboard)
+- [Contactos](/docs/enterprise/contacts)
 - [Deeplinks](/docs/enterprise/deeplinks)
-- [Device](/docs/enterprise/device)
-- [Dialogs](/docs/enterprise/dialogs)
-- [Email Composer](/docs/enterprise/email-composer)
-- [Filesystem](/docs/enterprise/filesystem)
-- [Geolocation](/docs/enterprise/geolocation)
-- [Globalization](/docs/enterprise/globalization)
-- [Haptics & Vibration](/docs/enterprise/vibration)
-- [Keyboard](/docs/enterprise/keyboard)
+- [Dispositivo](/docs/enterprise/device)
+- [Diálogos](/docs/enterprise/dialogs)
+- [Mensaje nuevo](/docs/enterprise/email-composer)
+- [Sistema de archivos](/docs/enterprise/filesystem)
+- [Geolocalización](/docs/enterprise/geolocation)
+- [Globalización](/docs/enterprise/globalization)
+- [Haptics & Vibración](/docs/enterprise/vibration)
+- [Teclado](/docs/enterprise/keyboard)
 - [Media](/docs/enterprise/media)
-- [Media Capture](/docs/enterprise/media-capture)
+- [Captura del Medio](/docs/enterprise/media-capture)
 - [Native Storage](/docs/enterprise/nativestorage)
-- [Network Information](/docs/enterprise/network-information)
-- [Screen Orientation](/docs/enterprise/screen-orientation)
-- [Social Sharing](/docs/enterprise/social-sharing)
-- [Splash Screen](/docs/enterprise/splashscreen)
-- [Status Bar](/docs/enterprise/statusbar)
+- [Información de Red](/docs/enterprise/network-information)
+- [Orientación de pantalla](/docs/enterprise/screen-orientation)
+- [Redes sociales](/docs/enterprise/social-sharing)
+- [Pantalla de bienvenida](/docs/enterprise/splashscreen)
+- [Barra de Estado](/docs/enterprise/statusbar)
 
-### Integrated Services
+### Servicios Integrados
 
 - [Active Directory](https://ionicframework.com/integrations/ms-activedirectory-ms-adal)
 - [mParticle](/docs/enterprise/mparticle)
@@ -140,6 +140,6 @@ Accelerate your app development with powerful solutions to common enterprise use
 
 - [Couchbase Lite](/docs/enterprise/couchbase-lite)
 
-### Payments
+### Pagos
 
 - [Apple Payment Pass](/docs/enterprise/apple-payment-pass)
