@@ -4,7 +4,9 @@ title: Ionic Nativo
 
 Para los equipos que crean aplicaciones de misión crítica, Ionic Native es una colección curada de complementos e integraciones que Ionic crea y admite, con garantías de estabilidad y garantizadas para funcionar en todas las plataformas y versiones principales.
 
-## ¿Qué es Ionic Nativo?
+## Why Ionic Native?
+
+Take on mobile projects with peace of mind, knowing the native features, security, and performance you need will just work - now and in the future.
 
 <div class="native-ee-pricing">
   <div class="table-wrap">
@@ -22,7 +24,7 @@ Para los equipos que crean aplicaciones de misión crítica, Ionic Native es una
           </th>
           <th>
             <div class="plan-wrap">
-              <span class="native-ee-pricing-table">Ionic Nativo</span>
+              <span class="native-ee-pricing-table">Premier Plugins</span>
               <div class="price" data-toggle="billing-team">
                 Contáctanos</div>
             </div>
@@ -93,7 +95,7 @@ Para los equipos que crean aplicaciones de misión crítica, Ionic Native es una
 
 <hubspot-form form-id="7c2c6529-48c0-4d17-86a0-bfd40c849bb1"></hubspot-form>
 
-## Lista de complementos
+## Solution List
 
 Accelerate your app development with powerful solutions to common enterprise use cases. Ionic’s growing library are ready to deploy into any of the apps you build.
 
@@ -138,7 +140,7 @@ Accelerate your app development with powerful solutions to common enterprise use
 
 ### Offline & Storage
 
-- [Couchbase Lite](/docs/enterprise/couchbase-lite)
+- [Offline Storage](/docs/enterprise/offline-storage)
 
 ### Pagos
 
