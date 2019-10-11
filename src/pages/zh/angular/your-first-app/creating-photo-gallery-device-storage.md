@@ -1,25 +1,25 @@
 ---
-previousText: 'Android, iOS, and the Camera - Oh My!'
+previousText: 'Android, iOS相机'
 previousUrl: '/docs/angular/your-first-app/ios-android-camera'
-nextText: 'Theming'
+nextText: '主题'
 nextUrl: '/docs/angular/your-first-app/theming'
 contributors:
   - jsonMartin
 ---
 
-# Creating a Photo Gallery with Device Storage
+# 用设备储存创建一个图片库
 
-Last time, we successfully added the Camera plugin to the Tab2 page of our Tabs app. Currently, the photo is replaced each time a new one is taken. What if we wanted to display multiple photos together? Let’s create a photo gallery. You can follow along with the complete code for this [on GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4).
+最后，我们成功地将Camera插件添加到我们的标签页的Tab2 页。目前，每当拍摄一个新的照片时，该照片将被替换。 如果我们想要一起显示多个照片，我们怎么办？ 让我们创建一个照片库。 您可以按照[在 GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4)上的完整代码进行操作 。
 
-## Creating a Dedicated Photo Service
+## 创建专用Photo Service
 
-From a terminal window, navigate to your Ionic project and run:
+从终端窗口，导航到您的 Ionic 项目并运行：
 
 ```shell
 $ ionic g service services/Photo
 ```
 
-This creates a PhotoService class in a dedicated "services" folder:
+这将在专用的“services”文件夹中创建一个PhotoService类:
 
 ```Javascript
 import { Injectable } from '@angular/core';
@@ -32,7 +32,7 @@ export class PhotoService {
 }
 ```
 
-Within this file, add a Photo class. The “data” property represents the base64 image data of a captured photo:
+在此文件内添加Photo类。 “data”属性表示捕获的照片的base64格式的图像数据:
 
 ```Javascript
 class Photo {
@@ -40,7 +40,7 @@ class Photo {
 }
 ```
 
-Then, create a Photos array to represent our photo gallery:
+然后，创建一个Photos数组来代表我们的照片库：
 
 ```Javascript
 export class PhotoService {
