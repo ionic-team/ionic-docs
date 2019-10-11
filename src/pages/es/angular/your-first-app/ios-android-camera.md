@@ -1,42 +1,42 @@
 ---
-previousText: 'Your First Ionic App'
+previousText: 'Tu primera aplicación con Ionic'
 previousUrl: '/docs/angular/your-first-app'
-nextText: 'Creating a Photo Gallery'
+nextText: 'Crear una galería de fotos'
 nextUrl: '/docs/angular/your-first-app/creating-photo-gallery-device-storage'
 ---
 
-# Android, iOS, and the Camera - Oh My!
+# Android, iOS y la Cámara, otra vez!
 
-Previously, we got an Ionic app up and running locally in a web browser. Now, let’s get it onto your iOS or Android device, then start building the photo gallery feature.
+Anteriormente creamos una aplicación Ionic que se encuentra corriendo en el navegador localmente. Ahora, dirígete a tu dispositivo iOS o Android y comienza a crear la galería de fotos.
 
-## Add Cordova iOS and Android Platforms
+## Agregar a Cordova las plataformas iOS y Android
 
-Ionic leverages the open source [Cordova project](https://cordova.apache.org/docs/en/latest/guide/overview/) to provide native hardware support. We begin by adding the iOS and Android *platforms* then will add specific *plugins* like the Camera afterwards:
+Ionic hace uso del proyecto open source [Cordova](https://cordova.apache.org/docs/en/latest/guide/overview/) para proveer un soporte del hardware nativo. Comenzaremos por agregar las *plataformas* iOS y Android y luego agregaremos *plugins* especifícos como la Cámara:
 
 ```shell
 $ ionic cordova platform add ios
 $ ionic cordova platform add android
 ```
 
-These commands will create a `config.xml` file, which is used to define Cordova iOS and Android settings. Cordova reads this file and applies each setting as it builds each native app binary.
+Estos comandos crearán un archivo `config.xml`, que sirve para definir las caracteristícas y configuraciones de Cordova iOS y Android. Cordova lee este archivo y aplica las configuraciones cada vez que construye un binario de la aplicación nativa.
 
-To run your app on DevApp, you will first need to add a reference to `cordova.js` in your `index.html` file. Open up the file at `src/index.html` and add the following tag into the `head` section:
+Para correr la aplicación en DevApp, primero debes agregar la referencia de `cordova.js` en el archivo `index.html`. Abre el archivo que se encuentra en `src/index.html` y agrega la siguiente etiqueta en el `head`:
 
 ```html
 <head>
-  <!-- ... Other HTML tags... -->
+  <!-- ... Otras etiquetas HTML... -->
 
   <script src="cordova.js"></script>
 </head>
 ```
 
-> Note: Usually, building the app with Cordova will add this script tag into the index.html file for us. Since we are skipping that step and using DevApp instead, we have to do it manually ourselves.
+> Nota: Generalmente, al construir la aplicación con Cordova, este script se agregará automáticamente. Puesto que estamos saltando ese paso y usando DevApp, en su lugar tenemos que hacerlo manualmente nosotros mismos.
 
-## Install DevApp
+## Instalar DevApp
 
-There are more steps to configure [iOS](/docs/installation/ios) and [Android](/docs/installation/android) native tooling. Let's skip that for now. Fortunately, Ionic provides a way to bypass the frustration of dealing with native SDK tooling: Ionic DevApp!
+Quedan una serie de pasos para configurar las herramientas nativas de [iOS](/docs/installation/ios) y [Android](/docs/installation/android). Vamos a saltarnos eso por ahora. Por suerte, Ionic provee una manera de esquivar esa frustración de lidiar con las herramientas de los SDK nativos: Si, Ionic DevApp!
 
-The Ionic DevApp is a free app that makes it easy to run your Ionic app directly on your iOS or Android device. Download it from one of the app stores, then open it on your device:
+Ionic DevApp es una aplicación gratuita que permite de manera fácil correr tus aplicaciones Ionic directamente en tus dispositivos iOS o Android. Descárgala de una de las app stores, y abrela en tu dispositivo:
 
 <a href="https://itunes.apple.com/us/app/ionic-devapp/id1233447133?ls=1&mt=8"><img src="/docs/assets/img/guides/first-app-v3/appstore.png"></a>
 
@@ -44,23 +44,23 @@ The Ionic DevApp is a free app that makes it easy to run your Ionic app directly
 
 <a href="https://play.google.com/store/apps/details?id=io.ionic.devapp&hl=en"><img src="/docs/assets/img/guides/first-app-v3/playstore.png"></a>
 
-Next, sign into your Ionic account.
+Luego, inicia sesión en tu cuenta Ionic.
 
-> Don't have an Ionic account? Tap the `Sign Up` link at the bottom of the screen. Creating an account not only gives you access to DevApp, but also the latest Ionic news, live events, and tutorials. Also, it unlocks access to live code updates (deliver bug fixes and new features faster) and native cloud builds (skip complicated build steps).
+> No tienes una cuenta Ionic? Toca el link de `Sign Up` que se encuentra abajo en la pantalla. Crear una cuenta no sólo te da acceso a DevApp, sino también a las últimas noticias de ionic, eventos en vivo y tutoriales. Además, desbloquea el acceso a actualizaciones de código en vivo (proporciona correcciones de errores y nuevas características más rápido) y compila en la nube nativa (salta pasos de compilación complicados).
 
-Afterwards, open a terminal and navigate to your Ionic project. Execute the following:
+Después, abre una terminal y navega a tu proyecto Ionic. Ejecutar lo siguiente:
 
 ```shell
 $ ionic serve --devapp
 ```
 
-In DevApp, you should now see the app appear. Tap on it to load the app.
+En DevApp, ahora deberías ver la aplicación. Pulsa sobre ella para cargar la aplicación.
 
-> If it doesn't appear, or you have any issues throughout creating this app, [see here](https://ionicframework.com/docs/appflow/devapp/).
+> Si no aparece, o tienes problemas durante la creación de esta aplicación, [vea aquí](https://ionicframework.com/docs/appflow/devapp/).
 
-Much better! Now we can add the camera functionality. By the way, you can find reference code for this [on GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4).
+// ¡Mucho mejor! Ahora puedes añadir la funcionalidad de la cámara. Por cierto, puedes encontrar código de referencia para esto [en GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4).
 
-Back in `tab2.page.html`, add the following:
+Volver a `tab2.page.html`, añadir lo siguiente:
 
 ```html
 <ion-content>
@@ -74,33 +74,33 @@ Back in `tab2.page.html`, add the following:
 </ion-content>
 ```
 
-Save the file and watch - a camera button appears! Tap on it and notice that it doesn’t do anything. Let’s fix that next.
+Guarda el archivo y mira - apareció un botón de cámara! Tócalo y nota que no hace nada. Vamos a arreglarlo a continuación.
 
-## Add the Camera Dependencies via the CLI
+## Añadir dependencias de la cámara a través del CLI
 
-In order to use the Camera, we need to bring in its JavaScript and native library dependencies. Back over in your Terminal window, run the following command, which adds the JavaScript library to the project, thus exposing the Camera API in TypeScript code:
+Para usar la cámara, necesitamos introducir sus dependencias nativas y Javascript. Vuelve a la ventana de tu terminal, ejecuta el siguiente comando, que añade la biblioteca JavaScript al proyecto, exponiendo así la API de la cámara en el código TypeScript:
 
 ```shell
 $ npm install @ionic-native/camera
 ```
 
-In `package.json`, you’ll notice a new JavaScript dependency has been added, with a version number similar to the following:
+En el archivo `package.json`, notarás que se ha añadido una nueva dependencia JavaScript, con un número de versión similar a lo siguiente:
 
 `"@ionic-native/camera": "^5.4.0"`
 
-Next, run this command to add the native iOS and Android code, effectively allowing the Camera to work on a mobile device. For more info on how this works, read up on [Cordova](https://cordova.apache.org/docs/en/latest/guide/overview/) and [Ionic Native](https://ionicframework.com/docs/native).
+A continuación, ejecuta este comando para añadir el código iOS nativo y Android, permitiendo que la cámara funcione en un dispositivo móvil. Para más información sobre cómo funciona esto, lee en [Cordova](https://cordova.apache.org/docs/en/latest/guide/overview/) y [Nativo Ionic](https://ionicframework.com/docs/native).
 
 ```shell
 $ ionic cordova plugin add cordova-plugin-camera
 ```
 
-The `config.xml` file is now updated with an entry similar to the following for the native camera code:
+El archivo `config.xml` ahora se encuentra actualizado para usar la cámara nativa con un código similar al siguiente:
 
 ```xml
 <plugin name="cordova-plugin-camera" spec="^4.0.3" />
 ```
 
-The next step is only required for iOS users. As of iOS 10, developers must provide a reason for why the app wishes to access the device camera. Add this to the bottom of `config.xml`:
+El siguiente paso sólo es necesario para los usuarios de iOS. A partir de iOS 10, los desarrolladores deben proporcionar una explicación de por qué la aplicación desea acceder a la cámara del dispositivo. Añade esto al fondo de `config.xml`:
 
 ```xml
 <!-- Required for iOS 10: Camera permission prompt -->
@@ -109,28 +109,28 @@ The next step is only required for iOS users. As of iOS 10, developers must prov
 </edit-config>
 ```
 
-## Add Camera plugin to Angular App Module
+## Añadir el plugin de la cámara al módulo de la aplicación angular
 
-There’s one more step we need to do since this is an Angular project: register the Camera in the App Module (`src/app/app.module.ts`). First, import the Camera module:
+Hay un paso más que debemos hacer ya que este es un proyecto Angular: registrar la cámara en el módulo de la aplicación (`src/app/app.module.ts`). Primero, importar el módulo de cámara:
 
 ```Javascript
-import { Camera } from '@ionic-native/camera/ngx';
+importar { Camera } desde '@ionic-native/camera/ngx';
 ```
 
-Then, add it as a Provider:
+Luego, agregarlo en los providers:
 
 ```Javascript
-providers: [
+proveedores: [
     StatusBar,
     SplashScreen,
-    Camera,
+    Cámara,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ],
 ```
 
-It can now be used on any of our App pages.
+Ahora puede ser utilizado en cualquiera de nuestras páginas.
 
-## Add the Camera to the Gallery page
+## Añadir la cámara a la página de la galería
 
 Our camera button doesn’t do anything yet. Over in `tab2.page.html`, add a click handler to the button:
 
