@@ -20,7 +20,7 @@ Ensure that you have the latest Ionic CLI installed:
 
 <command-line> <command-prompt>npm install -g ionic@latest</command-prompt> </command-line>
 
-Next, install the Ionic Enterprise Cordova CLI. Ionic Native plugins use scoped packages, which the regular Cordova CLI does not support. All Cordova functionality will still work as expected.
+Next, install the Ionic Enterprise Cordova CLI (even if you're using Capacitor). Ionic Native plugins use scoped packages, which the regular Cordova CLI does not support. All Cordova functionality will still work as expected.
 
 <command-line> <command-prompt>npm uninstall -g cordova</command-prompt> <command-prompt>npm install -g @ionic-enterprise/cordova</command-prompt> </command-line>
 
@@ -46,9 +46,15 @@ This only needs to be run once per app. Within the app's directory, a `.npmrc` f
 
 ## Start Using Plugins
 
-Now you are able to install any of the Ionic Native plugins that you have access to by following the instructions on each plugin's documentation page. There's just one command to install and configure each plugin.
+Now you are able to install any of the Ionic Native plugins that you have access to by following the instructions on each plugin's documentation page.
+
+### Cordova
 
 <command-line> <command-prompt>ionic cordova plugin add @ionic-enterprise/plugin-name</command-prompt> </command-line>
+
+### Capacitor
+
+<command-line> <command-prompt>npm install @ionic-enterprise/plugin-name</command-prompt> <command-prompt>npx cap sync</command-prompt> </command-line>
 
 That's it! Time to add Ionic Native plugins to your app. There's lots to choose from, including [authentication](/docs/enterprise/auth-connect), [biometric security](/docs/enterprise/identity-vault), [offline storage](/docs/enterprise/offline-storage), or one of the [common device features](/docs/enterprise/camera).
 
