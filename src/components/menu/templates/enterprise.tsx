@@ -13,7 +13,8 @@ const items = {
     'Auth Connect': '/docs/enterprise/auth-connect',
     '': {
       'Auth0': '/docs/enterprise/auth-connect/auth0',
-      'Azure AD B2C': '/docs/enterprise/auth-connect/azure-ad-b2c'
+      'Azure AD B2C': '/docs/enterprise/auth-connect/azure-ad-b2c',
+      'AWS Cognito': '/docs/enterprise/auth-connect/aws-cognito'
     },
     'Identity Vault': '/docs/enterprise/identity-vault',
     'Offline Storage': '/docs/enterprise/offline-storage'
