@@ -1,36 +1,36 @@
 ---
-previousText: 'Running on iOS'
+previousText: 'Exécution sur iOS'
 previousUrl: '/docs/building/ios'
-nextText: 'Testing'
+nextText: 'Réaliser des tests'
 nextUrl: '/docs/building/testing'
 ---
 
-# Android Development
+# Développement sur Android
 
-This guide covers how to deploy Ionic apps to Android simulators and devices using [Capacitor](/docs/faq/glossary#capacitor) or [Cordova](/docs/faq/glossary#cordova).
+Ce guide explique comment déployer des applications Ionic sur des simulateurs Android ou des appareils en utilisant [Capacitor](/docs/faq/glossary#capacitor) ou [Cordova](/docs/faq/glossary#cordova).
 
-> To deploy and debug apps on an Android device, you must follow these [environment setup](/docs/installation/android) steps.
+> Pour déployer et déboguer des applications sur un appareil Android, vous devez suivre ces étapes de [mise en place de l'environnement](/docs/installation/android).
 
-## Project Setup
+## Configuration du projet
 
-Before apps can be deployed to Android simulators and devices, the native project must be configured.
+Avant que les applications puissent être déployées sur les simulateurs et les appareils Android, le projet natif doit être configuré.
 
-1. **Generate the native project, if it does not already exist.**
+1. **Générer le projet natif, si il n'existe pas déjà.**
     
-    For Capacitor, run the following:
+    Pour Capacitor, exécutez :
 
     ```shell
     $ ionic capacitor add android
     ```
 
-     For Cordova, run the following:
+     Pour Cordova, exécutez :
     
 
     ```shell
     $ ionic cordova prepare android
     ```
 
-2. **Set the [Package ID](/docs/faq/glossary#package-id).**
+2. **Définir l'[ID du package](/docs/faq/glossary#package-id).**
     
     For Capacitor, open the `capacitor.config.json` file and modify the `appId` property.
     

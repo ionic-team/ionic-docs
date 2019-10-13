@@ -1,21 +1,21 @@
 ---
-title: Ionic Deploy
-previousText: 'Channels'
-previousUrl: '/docs/appflow/deploy/channels'
-nextText: 'Tutorials and Videos'
+title: Ionic部署
+previousText: '频道'
+previousUrl: '/docs/appflow/sport/screcisions'
+nextText: '教程和视频'
 nextUrl: '/docs/appflow/deploy/tutorials'
 ---
 
 
-## Installation and Usage
+## 安装和使用
 
-In order to use the Deploy API inside of your app. You need to install the latest version of the Appflow SDK and set the `UPDATE_METHOD` to `none`:
+为了在您的应用程序中使用部署API。您需要安装Apploret SDK 的最新版本，并且设置 `UPDATE_METHD` 为`none`：
 
 ```shell
 ionic deploy add --update-method=none --app-id="YOUR_APP_ID" --channel-name="YOUR_CHANNEL_NAME"
 ```
 
-Then you can import the Deploy API in order to it in your code:
+然后您可以导入Deploy API，以便在您的代码中导入：
 
 ```typescript
 // ES2015/Typescript
@@ -46,13 +46,13 @@ async changeToBetaChannel() {
 
 ```
 
-## Index
+## 索引
 
-### Classes
+### 类
 
 * [IonicDeploy](#ionicdeploy)
 
-### Interfaces
+### 接口
 
 * [CallbackFunction](#callbackfunction)
 * [CheckForUpdateResponse](#checkforupdateresponse)
@@ -64,7 +64,7 @@ async changeToBetaChannel() {
 
 * * *
 
-## Classes
+## 类
 
 <a id="ionicdeploy"></a>
 
@@ -72,9 +72,9 @@ async changeToBetaChannel() {
 
 **IonicDeploy**:
 
-The Ionic Deploy Plugin API
+Ionic Deploy插件 API
 
-***usage***:
+***用法***:
 
 ```typescript
 async performManualUpdate() {
@@ -85,9 +85,9 @@ async performManualUpdate() {
 }
 ```
 
-## Methods
+## 方法
 
-The plugin contains many functions that can help you utilize Deploy inside of your app.
+这个插件包含许多功能，可以帮助您在应用程序中使用Deploy。
 
 * [configure](#ionicdeploy.configure)
 * [getConfiguration](#ionicdeploy.getconfiguration)
@@ -107,11 +107,11 @@ The plugin contains many functions that can help you utilize Deploy inside of yo
 
 ▸ **checkForUpdate**(): `Promise`<[CheckForUpdateResponse](#checkforupdateresponse)>
 
-***description***: Check for available updates for the currently configured app id and channel.
+***说明***: 检查当前配置的应用程序id和channel的可用更新。
 
 ***since***: v5.0.0
 
-***usage***:
+***用法***:
 
 ```typescript
 async performManualUpdate() {
@@ -122,21 +122,21 @@ async performManualUpdate() {
 }
 ```
 
-**Returns:** `Promise`<[CheckForUpdateResponse](#checkforupdateresponse)> A response describing an update if one is available.
+**Returns：** `Promise`<[CheckForUpdateResponse](#checkforupdateresponse)> 如果更新可用，则描述更新的响应。
 
 * * *
 
 <a id="ionicdeploy.configure"></a>
 
-### configure
+### 配置
 
 ▸ **configure**(config: *[IDeployConfig](#ideployconfig)*): `Promise`<`void`>
 
-***description***: Update the default configuration for the plugin on the current device. The new configuration will be persisted across app close and binary updates.
+***描述***: 更新当前设备上插件的默认配置。 新的配置将在应用程序关闭和二进制更新之间保持。
 
 ***since***: v5.0.0
 
-***usage***:
+***用法***:
 
 ```typescript
 async configureDeploy() {
@@ -148,14 +148,14 @@ async configureDeploy() {
 }
 ```
 
-**Parameters:**
+**参数**
 
-| Name   | Type                            | Description                                          |
-| ------ | ------------------------------- | ---------------------------------------------------- |
-| config | [IDeployConfig](#ideployconfig) | The new configuration for the plugin on this device. |
+| 名称     | 类型（Type）                        | 描述          |
+| ------ | ------------------------------- | ----------- |
+| config | [IDeployConfig](#ideployconfig) | 此设备上插件的新配置。 |
 
 
-**Returns:** `Promise`<`void`>
+**返回：** `Promise`<`void`>
 
 * * *
 
@@ -165,9 +165,9 @@ async configureDeploy() {
 
 ▸ **deleteVersionById**(version: *`string`*): `Promise`<`boolean`>
 
-***description***: Remove the files specific to a snapshot from the device.
+***描述***: 从设备中删除快照的文件。
 
-***usage***:
+***用法***:
 
 ```typescript
 async deleteVersion() {
@@ -176,14 +176,14 @@ async deleteVersion() {
 }
 ```
 
-**Parameters:**
+**参数**
 
-| Name    | Type     | Description   |
-| ------- | -------- | ------------- |
-| version | `string` | The versionId |
+| 名称      | 类型（Type） | 描述   |
+| ------- | -------- | ---- |
+| version | `string` | 版本ID |
 
 
-**Returns:** `Promise`<`boolean`> true if the update was deleted.
+**返回：** `Promise`<`boolean`> 如果更新已经删除为true。
 
 * * *
 
@@ -193,11 +193,11 @@ async deleteVersion() {
 
 ▸ **downloadUpdate**(progress?: *[CallbackFunction](#callbackfunction)<`number`>*): `Promise`<`boolean`>
 
-***description***: Download the new files from an available update found by the checkForUpdate method and prepare the update.
+***描述***: 从checkForUpdate方法找到的可用更新下载新文件并准备更新。
 
 ***since***: v5.0.0
 
-***usage***:
+***用法***:
 
 ```typescript
 async performManualUpdate() {
@@ -210,14 +210,14 @@ async performManualUpdate() {
 }
 ```
 
-**Parameters:**
+**参数**
 
-| Name                | Type                                            | Description                                                                                                                         |
-| ------------------- | ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| `Optional` progress | [CallbackFunction](#callbackfunction)<`number`> | A progress callback function which will be called with a number representing the percent of completion of the download and prepare. |
+| 名称                  | 类型（Type）                                        | 描述                                 |
+| ------------------- | ----------------------------------------------- | ---------------------------------- |
+| `Optional` progress | [CallbackFunction](#callbackfunction)<`number`> | 一个进度回调函数，将使用一个表示下载和准备完成百分比的数字进行调用。 |
 
 
-**Returns:** `Promise`<`boolean`> true if the download succeeded
+**返回：** `Promise`<`boolean`> 如果更新被成功删除为true。
 
 * * *
 
@@ -227,11 +227,11 @@ async performManualUpdate() {
 
 ▸ **extractUpdate**(progress?: *[CallbackFunction](#callbackfunction)<`number`>*): `Promise`<`boolean`>
 
-***description***: Extract a downloaded bundle of updated files.
+***描述***: 提取一个已下载的更新文件包。
 
 ***since***: v5.0.0
 
-***usage***:
+***用法***:
 
 ```typescript
 async performManualUpdate() {
@@ -247,14 +247,14 @@ async performManualUpdate() {
 }
 ```
 
-**Parameters:**
+**参数**
 
-| Name                | Type                                            | Description                                                                                                            |
-| ------------------- | ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `Optional` progress | [CallbackFunction](#callbackfunction)<`number`> | A progress callback function which will be called with a number representing the percent of completion of the extract. |
+| 名称                  | 类型（Type）                                        | 描述                                 |
+| ------------------- | ----------------------------------------------- | ---------------------------------- |
+| `Optional` progress | [CallbackFunction](#callbackfunction)<`number`> | 一个进度回调函数，将使用一个表示下载和准备完成百分比的数字进行调用。 |
 
 
-**Returns:** `Promise`<`boolean`> true if the extract succeeded
+**返回：** `Promise`<`boolean`> 如果提取成功为true。
 
 * * *
 
@@ -264,11 +264,11 @@ async performManualUpdate() {
 
 ▸ **getAvailableVersions**(): `Promise`<[ISnapshotInfo](#isnapshotinfo)[]>
 
-***description***: Get a list of the snapshots available on the device.
+***描述***: 获取设备上可用的快照列表。
 
-***since***: v5.0.0
+***自***: v5.0.0
 
-***usage***:
+***使用***:
 
 ```typescript
 async checkVersions() {
@@ -289,7 +289,7 @@ console.log(versions);
 
 ```
 
-**Returns:** `Promise`<[ISnapshotInfo](#isnapshotinfo)[]> a list of available updates.
+**返回：** `Promise`<[ISnapshotIn](#isnapshotinfo)>可用的更新列表。
 
 * * *
 
@@ -299,13 +299,13 @@ console.log(versions);
 
 ▸ **getConfiguration**(): `Promise`<[ICurrentConfig](#icurrentconfig)>
 
-***description***: Get the current configuration for the plugin on the current device.
+***描述***: 更新当前设备上插件的默认配置。
 
 ***since***: v5.0.0
 
-***usage***: `` ` ``typescript const info = Deploy.getConfiguration() console.log(info) // { // 'appId': 'abcd1234', // 'channel': 'MY\_CHANNEL\_NAME', // 'binaryVersionName': 'X.X.X', // 'binaryVersionCode': 'X.X.X', (string on iOS number on Android) // 'disabled': false, // 'updateMethod': 'auto', // 'maxVersions': 3, // 'minBackgroundDuration': 30, // 'currentVersionId': 'xxxx-xxxx-xxxx-xxxx' // 'currentBuildId' : 'xxxxxxx' // }
+***用法***: `` ` ``typescript const info = Deploy.getConfiguration() console.log(info) // { // 'appId': 'abcd1234', // 'channel': 'MY\_CHANNEL\_NAME', // 'binaryVersionName': 'X.X.X', // 'binaryVersionCode': 'X.X.X', (string on iOS number on Android) // 'disabled': false, // 'updateMethod': 'auto', // 'maxVersions': 3, // 'minBackgroundDuration': 30, // 'currentVersionId': 'xxxx-xxxx-xxxx-xxxx' // 'currentBuildId' : 'xxxxxxx' // }
 
-**Returns:** `Promise`<[ICurrentConfig](#icurrentconfig)> The current configuration of the plugin.
+**Returns:** `Promise`<[ICurrentConfig](#icurrentconfig)>插件当前配置。
 
 * * *
 
@@ -313,13 +313,13 @@ console.log(versions);
 
 ### getCurrentVersion
 
-▸ **getCurrentVersion**(): `Promise`<[ISnapshotInfo](#isnapshotinfo) \| `undefined`>
+▸ **getCurrentVersion**(): `Promise`<[ISnapshotInfo](#isnapshotinfo) | `undefined`>
 
-***description***: Get info about the currently deployed update or undefined if none are applied.
+***描述***: 获取有关当前部署的更新的信息，如果没有应用更新，则获取未定义的更新。
 
-***since***: v5.0.0
+***自***: v5.0.0
 
-***usage***:
+***用法***:
 
 ```typescript
 const info = await Deploy.getCurrentVersion()
@@ -331,7 +331,7 @@ console.log(info)
 // }
 ```
 
-**Returns:** `Promise`<[ISnapshotInfo](#isnapshotinfo) \| `undefined`> The info about the currently applied update or undefined if none is applied.
+**返回：** `Promise`<[ISnapshotIn](#isnapshotinfo) | `undefined`> 获取有关当前部署的更新的信息，如果没有应用更新，则获取未定义的更新。
 
 * * *
 
@@ -341,18 +341,18 @@ console.log(info)
 
 ▸ **getVersionById**(versionId: *`string`*): `Promise`<[ISnapshotInfo](#isnapshotinfo)>
 
-***description***: Get info about the update by its versionId
+***描述***: 获取其版本ID的更新信息
 
-***since***: v5.0.0
+***自***: v5.0.0
 
-**Parameters:**
+**参数**
 
-| Name      | Type     |
-| --------- | -------- |
-| versionId | `string` |
+| 名称   | 类型（Type） |
+| ---- | -------- |
+| 版本ID | `string` |
 
 
-**Returns:** `Promise`<[ISnapshotInfo](#isnapshotinfo)> The info about the currently applied update or undefined if none is applied.
+**返回：** `Promise`<[ISnapshotIn](#isnapshotinfo) | `undefined`> 获取有关当前部署的更新的信息，如果没有应用更新，则获取未定义的更新。
 
 * * *
 
@@ -362,11 +362,11 @@ console.log(info)
 
 ▸ **reloadApp**(): `Promise`<`boolean`>
 
-***description***: Reload the app if a more recent version of the app is available.
+***描述***: 如果应用程序的最新版本可用，重新加载应用程序。
 
-***since***: v5.0.0
+***自***: v5.0.0
 
-***usage***:
+***用法***:
 
 ```typescript
 async performManualUpdate() {
@@ -383,7 +383,7 @@ async performManualUpdate() {
 }
 ```
 
-**Returns:** `Promise`<`boolean`> true if the reload succeeded
+**返回：** `Promise`<`boolean`> 如果重新加载成功为true。
 
 * * *
 
@@ -391,13 +391,13 @@ async performManualUpdate() {
 
 ### sync
 
-▸ **sync**(syncOptions?: *[ISyncOptions](#isyncoptions)*, progress?: *[CallbackFunction](#callbackfunction)<`number`>*): `Promise`<[ISnapshotInfo](#isnapshotinfo) \| `undefined`>
+▸ **sync**(syncOptions?: *[ISyncOptions](#isyncoptions)*, progress?: *[CallbackFunction](#callbackfunction)<`number`>*): `Promise`<[ISnapshotInfo](#isnapshotinfo) | `undefined`>
 
-***description***: Check for an update, download it, and apply it in one step.
+***描述***: 一步检查更新、下载并部署它。
 
-***since***: v5.0.0
+***自***: v5.0.0
 
-***usage***:
+***用法***:
 
 ```typescript
 async performAutomaticUpdate() {
@@ -417,37 +417,37 @@ async performAutomaticUpdate() {
 }
 ```
 
-**Parameters:**
+**参数**
 
-| Name                        | Type                          | Default value | Description                              |
-| --------------------------- | ----------------------------- | ------------- | ---------------------------------------- |
-| `Default value` syncOptions | [ISyncOptions](#isyncoptions) | {}            | (Optional) Application update overrides. |
+| 名称                          | 类型（Type）                      | 默认值 | 描述             |
+| --------------------------- | ----------------------------- | --- | -------------- |
+| `Default value` syncOptions | [ISyncOptions](#isyncoptions) | {}  | (可选) 应用程序更新覆盖。 |
 
 
-**Returns:** `Promise`<[ISnapshotInfo](#isnapshotinfo) \| `undefined`> The info about the currently applied update or undefined if none is applied.
-
-* * *
+**返回：** `Promise`<[ISnapshotIn](#isnapshotinfo) | `undefined`> 获取有关当前部署的更新的信息，如果没有应用更新，则获取未定义的更新。
 
 * * *
 
-## Interfaces
+* * *
+
+## 接口
 
 <a id="callbackfunction"></a>
 
-### CallbackFunction
+### 回调函数
 
 ▸ **__call**(result?: *[T]()*): `void`
 
-A callback function to handle the result.
+处理result的回调函数。
 
-**Parameters:**
+**参数**
 
-| Name              | Type  |
-| ----------------- | ----- |
-| `Optional` result | [T]() |
+| 名称                | 类型（Type） |
+| ----------------- | -------- |
+| `Optional` result | [T]()    |
 
 
-**Returns:** `void`
+**返回：** `void`
 
 * * *
 
@@ -457,7 +457,7 @@ A callback function to handle the result.
 
 **CheckForUpdateResponse**:
 
-The response object describing if an update is available.
+可用更新响应对象的描述。
 
 <a id="checkforupdateresponse.available"></a>
 
@@ -465,7 +465,7 @@ The response object describing if an update is available.
 
 **● available**: *`boolean`*
 
-Whether or not an update is available.
+是否可以更新。
 
 * * *
 
@@ -473,9 +473,9 @@ Whether or not an update is available.
 
 ### `<Optional>` build
 
-**● build**: *`undefined` \| `string`*
+**● build**: *`undefined` | `string`*
 
-The id of the build if available.
+如果可用的话构建id。
 
 * * *
 
@@ -485,9 +485,9 @@ The id of the build if available.
 
 **● compatible**: *`boolean`*
 
-Equivalent to available since v5 this can be ignored in favor of available
+与v5以来的可用版本等效，因此可以忽略它，而使用可用版本
 
-***deprecated***:
+***已废弃***:
 
 * * *
 
@@ -495,9 +495,9 @@ Equivalent to available since v5 this can be ignored in favor of available
 
 ### `<Optional>` incompatibleUpdateAvailable
 
-**● incompatibleUpdateAvailable**: *`undefined` \| `false` \| `true`*
+**● incompatibleUpdateAvailable**: *`undefined` | `false` | `true`*
 
-Whether or not there is an update available that is not compatible with this device.
+是否存在与该设备不相容的更新。
 
 * * *
 
@@ -507,9 +507,9 @@ Whether or not there is an update available that is not compatible with this dev
 
 **● partial**: *`false`*
 
-Legacy indicator of whether the update is a partial one. This will always be false and can be ignored
+更新是否是部分更新的旧版本。 这将永远是false，可以忽略
 
-***deprecated***:
+***已废弃***:
 
 * * *
 
@@ -519,7 +519,7 @@ Legacy indicator of whether the update is a partial one. This will always be fal
 
 **● snapshot**: *`undefined` \| `string`*
 
-The id of the snapshot if available.
+如果可用，快照的 id。
 
 * * *
 
@@ -529,7 +529,7 @@ The id of the snapshot if available.
 
 **● url**: *`undefined` \| `string`*
 
-The url to fetch the manifest of files in the update.
+获取更新文件manifest的 url。
 
 * * *
 
@@ -541,15 +541,15 @@ The url to fetch the manifest of files in the update.
 
 **IAppInfo**:
 
-Information about the application.
+应用的信息
 
 <a id="iappinfo.binaryversioncode"></a>
 
 ### binaryVersionCode
 
-**● binaryVersionCode**: *`string` \| `number`*
+**● binaryVersionCode**: *`string` | `number`*
 
-The versionCode on Android or CFBundleVersion on iOS this should be changed every time you do a new build debug or otherwise.
+Android上的versionCode或iOS上的CFBundleVersion应该在每次执行新的构建调试或其他操作时更改。
 
 * * *
 
@@ -559,7 +559,7 @@ The versionCode on Android or CFBundleVersion on iOS this should be changed ever
 
 **● binaryVersionName**: *`string`*
 
-The versionName on Android or CFBundleShortVersionString on iOS this is the end user readable version listed on the stores.
+Android上的versionName或iOS上的CFBundleShortVersionString这是应用商店中列出的最终用户可读版本。
 
 * * *
 
@@ -569,7 +569,7 @@ The versionName on Android or CFBundleShortVersionString on iOS this is the end 
 
 **● bundleName**: *`string`*
 
-The bundle name.
+Bundle名称。
 
 * * *
 
@@ -579,7 +579,7 @@ The bundle name.
 
 **● bundleVersion**: *`string`*
 
-***deprecated***: The versionName on Android or CFBundleShortVersionString on iOS this is the end user readable version listed on the stores.
+***已废弃***: Android上的versionName或iOS上的CFBundleShortVersionString这是应用商店中列出的最终用户可读版本。
 
 * * *
 
@@ -589,7 +589,7 @@ The bundle name.
 
 **● dataDirectory**: *`string`*
 
-Directory where the snapshots are stored
+存储快照的目录
 
 * * *
 
@@ -599,7 +599,7 @@ Directory where the snapshots are stored
 
 **● device**: *`string`*
 
-A generated device ID (NOT a native device ID)
+生成的设备 ID (不是本地设备 ID)
 
 * * *
 
@@ -607,9 +607,9 @@ A generated device ID (NOT a native device ID)
 
 ### platform
 
-**● platform**: *"ios" \| "android"*
+**● platform**: *"ios" | "android"*
 
-The platform that the app is currently installed on.
+当前应用程序安装的平台。
 
 * * *
 
@@ -619,7 +619,7 @@ The platform that the app is currently installed on.
 
 **● platformVersion**: *`string`*
 
-The version of the native platform.
+本地平台的版本。
 
 * * *
 
@@ -629,7 +629,7 @@ The version of the native platform.
 
 **● version**: *`string`*
 
-***deprecated***: The versionCode on Android or CFBundleVersion on iOS this should be changed every time you do a new build debug or otherwise.
+***已废弃***: Android上的versionCode或iOS上的CFBundleVersion应该在每次执行新的构建调试或其他操作时更改。
 
 * * *
 
@@ -641,7 +641,7 @@ The version of the native platform.
 
 **ICurrentConfig**:
 
-The current configuration for the deploy plugin on the device.
+设备上部署插件当前配置。
 
 <a id="icurrentconfig.appid"></a>
 
@@ -649,7 +649,7 @@ The current configuration for the deploy plugin on the device.
 
 **● appId**: *`string`*
 
-The [Ionic Pro](https://ionicframework.com/docs/pro/) app id.
+[Ionic Pro](https://ionicframework.com/docs/pro/) app id。
 
 * * *
 
@@ -659,7 +659,7 @@ The [Ionic Pro](https://ionicframework.com/docs/pro/) app id.
 
 **● binaryVersion**: *`string`*
 
-***deprecated***: The binary version of the native bundle versionName on Android or CFBundleShortVersionString on iOS deprecated in favor of versionName
+***已废弃***: Android上原生bundle versionName的二进制版本或iOS上CFBundleShortVersionString的二进制版本都不支持versionName
 
 * * *
 
@@ -669,7 +669,7 @@ The [Ionic Pro](https://ionicframework.com/docs/pro/) app id.
 
 **● binaryVersionCode**: *`string`*
 
-The build version code of the native bundle versionCode on Android or CFBundleVersion on iOS
+Android上原生bundle versionCode或iOS上CFBundleVersion的构建版本代码
 
 * * *
 
@@ -679,7 +679,7 @@ The build version code of the native bundle versionCode on Android or CFBundleVe
 
 **● binaryVersionName**: *`string`*
 
-The binary version of the native bundle versionName on Android or CFBundleShortVersionString on iOS
+Android上原生bundle versionName或iOS上的CFBundleShortVersionString的二进制版本
 
 * * *
 
@@ -689,7 +689,7 @@ The binary version of the native bundle versionName on Android or CFBundleShortV
 
 **● channel**: *`string`*
 
-The [channel](https://ionicframework.com/docs/pro/deploy/channels) that the plugin should listen for updates on.
+[channel](https://ionicframework.com/docs/pro/deploy/channels) 插件应该监听更新。
 
 * * *
 
@@ -697,9 +697,9 @@ The [channel](https://ionicframework.com/docs/pro/deploy/channels) that the plug
 
 ### `<Optional>` currentBuildId
 
-**● currentBuildId**: *`undefined` \| `string`*
+**● currentBuildId**: *`undefined` | `string`*
 
-The id of the currently applied build or undefined if none is applied.
+当前应用程序构建的id，如果没有应用，则为未定义的id。
 
 * * *
 
@@ -707,9 +707,9 @@ The id of the currently applied build or undefined if none is applied.
 
 ### `<Optional>` currentVersionId
 
-**● currentVersionId**: *`undefined` \| `string`*
+**● currentVersionId**: *`undefined` | `string`*
 
-The id of the currently applied updated or undefined if none is applied.
+当前应用程序构建的id，如果没有应用，则为未定义的id。
 
 * * *
 
@@ -719,7 +719,7 @@ The id of the currently applied updated or undefined if none is applied.
 
 **● disabled**: *`boolean`*
 
-Whether the user disabled deploy updates or not.
+用户是否禁用部署更新。
 
 * * *
 
@@ -729,7 +729,7 @@ Whether the user disabled deploy updates or not.
 
 **● host**: *`string`*
 
-The host API the plugin is configured to check for updates from.
+此插件的host API设置是为了检查更新。
 
 * * *
 
@@ -739,7 +739,7 @@ The host API the plugin is configured to check for updates from.
 
 **● maxVersions**: *`number`*
 
-The maximum number of updates to be stored locally on the device.
+设备上存储的最大更新数量。
 
 * * *
 
@@ -749,7 +749,7 @@ The maximum number of updates to be stored locally on the device.
 
 **● minBackgroundDuration**: *`number`*
 
-The number of seconds the app needs to be in the background before the plugin considers it closed for the purposes of fetching and applying a new update.
+为了获取和应用新的更新，插件认为应用程序已经关闭，在此之前，应用程序需要在后台停留的秒数。
 
 * * *
 
@@ -757,9 +757,9 @@ The number of seconds the app needs to be in the background before the plugin co
 
 ### updateMethod
 
-**● updateMethod**: *"none" \| "auto" \| "background"*
+**● updateMethod**: *"none" | "auto" | "background"*
 
-The currently configured updateMethod for the plugin.
+插件当前配置的updateMethod。
 
 * * *
 
@@ -771,15 +771,15 @@ The currently configured updateMethod for the plugin.
 
 **IDeployConfig**:
 
-The configuration for the deploy plugin on the device.
+设备上部署插件配置。
 
 <a id="ideployconfig.appid"></a>
 
 ### `<Optional>` appId
 
-**● appId**: *`undefined` \| `string`*
+**● appId**: *`undefined` | `string`*
 
-The [Ionic](https://ionicframework.com/docs/appflow/) app id.
+[Ionic](https://ionicframework.com/docs/appflow/) app id.
 
 * * *
 
@@ -787,9 +787,9 @@ The [Ionic](https://ionicframework.com/docs/appflow/) app id.
 
 ### `<Optional>` channel
 
-**● channel**: *`undefined` \| `string`*
+**● channel**: *`undefined` | `string`*
 
-The [channel](https://ionicframework.com/docs/pro/deploy/channels) that the plugin should listen for updates on.
+[channel](https://ionicframework.com/docs/pro/deploy/channels) 插件应该监听更新。
 
 * * *
 
@@ -797,9 +797,9 @@ The [channel](https://ionicframework.com/docs/pro/deploy/channels) that the plug
 
 ### `<Optional>` debug
 
-**● debug**: *`undefined` \| `false` \| `true`*
+**● debug**: *`undefined` | `false` | `true`*
 
-whether or not the app should in debug mode
+是否应用程序应该在debug模式中
 
 * * *
 
@@ -807,9 +807,9 @@ whether or not the app should in debug mode
 
 ### `<Optional>` maxVersions
 
-**● maxVersions**: *`undefined` \| `number`*
+**● maxVersions**: *`undefined` | `number`*
 
-The number of previous updates to be cached on the device
+设备上缓存的之前更新的次数
 
 * * *
 
@@ -817,9 +817,9 @@ The number of previous updates to be cached on the device
 
 ### `<Optional>` minBackgroundDuration
 
-**● minBackgroundDuration**: *`undefined` \| `number`*
+**● minBackgroundDuration**: *`undefined` | `number`*
 
-The number of seconds the app should be in the background for before the plugin considers it closed and checks for an updated on resume of the app.
+在插件认为关闭并检查更新的应用程序之前，应用程序应该处于后台的秒数。
 
 * * *
 
@@ -827,9 +827,9 @@ The number of seconds the app should be in the background for before the plugin 
 
 ### `<Optional>` updateMethod
 
-**● updateMethod**: *"none" \| "auto" \| "background"*
+**● updateMethod**: *"none" | "auto" | "background"*
 
-The update method the app should use when checking for available updates
+检查可用更新时应使用的更新方法
 
 * * *
 
@@ -841,7 +841,7 @@ The update method the app should use when checking for available updates
 
 **ISnapshotInfo**:
 
-Information about a snapshot
+快照的信息
 
 <a id="isnapshotinfo.binaryversion"></a>
 
@@ -849,7 +849,7 @@ Information about a snapshot
 
 **● binaryVersion**: *`string`*
 
-***deprecated***: The binary version the snapshot was downloaded for. The versionName on Android or CFBundleShortVersionString on iOS this is the end user readable version listed on the stores.
+***已废弃***：下载快照的二进制版本。 Android上的versionName或iOS上的CFBundleShortVersionString这是应用商店中列出的最终用户可读版本。
 
 * * *
 
@@ -859,7 +859,7 @@ Information about a snapshot
 
 **● binaryVersionCode**: *`string`*
 
-The binary version build code the snapshot was downloaded for. The versionCode on Android or CFBundleVersion on iOS this should be changed every time you do a new build debug or otherwise.
+下载快照的二进制版本构建代码。 Android上的versionCode或iOS上的CFBundleVersion应该在每次执行新的构建调试或其他操作时更改。
 
 * * *
 
@@ -869,7 +869,7 @@ The binary version build code the snapshot was downloaded for. The versionCode o
 
 **● binaryVersionName**: *`string`*
 
-The binary version name the snapshot was downloaded for. The versionName on Android or CFBundleShortVersionString on iOS this is the end user readable version listed on the stores.
+该快照已下载二进制版本名称。 Android上的versionName或iOS上的CFBundleShortVersionString这是应用商店中列出的最终用户可读版本。
 
 * * *
 
@@ -879,9 +879,9 @@ The binary version name the snapshot was downloaded for. The versionName on Andr
 
 **● binary_version**: *`string`*
 
-***deprecated***: in favor of [binaryVersion](#binaryversion)
+***已废弃***: 支持的 [二进制版本](#binaryversion)
 
-The binary version the snapshot was downloaded for.
+快照下载的二进制版本。
 
 * * *
 
@@ -891,7 +891,7 @@ The binary version the snapshot was downloaded for.
 
 **● buildId**: *`string`*
 
-The id for the snapshot.
+快照的 id。
 
 * * *
 
@@ -901,7 +901,7 @@ The id for the snapshot.
 
 **● channel**: *`string`*
 
-The channel that the snapshot was downloaded for..
+该快照下载的channel..
 
 * * *
 
@@ -911,9 +911,9 @@ The channel that the snapshot was downloaded for..
 
 **● deploy_uuid**: *`string`*
 
-***deprecated***: in favor of [versionId](#versionid)
+***已废弃***: 支持的 [版本ID](#versionid)
 
-The id for the snapshot.
+快照的 id。
 
 * * *
 
@@ -923,7 +923,7 @@ The id for the snapshot.
 
 **● versionId**: *`string`*
 
-The id for the snapshot.
+快照的 id。
 
 * * *
 
@@ -935,67 +935,68 @@ The id for the snapshot.
 
 **ISyncOptions**:
 
-Configuration options for the call to `sync`
+`同步`配置选项
 
 <a id="isyncoptions.updatemethod"></a>
 
 ### `<Optional>` updateMethod
 
-**● updateMethod**: *"background" \| "auto"*
+**● updateMethod**: *"background" | "auto"*
 
-Whether the update should be applied immediately or on the next app start.
+更新是否应该立即应用，还是在下一个应用程序启动时应用。
 
 * * *
 
-## Plugin Variables
+## 插件变量
 
-The deploy plugin uses variables to configure the way in which the plugin behaves. You can set these values when you add the plugin using flags (if using the `ionic deploy add` command) or using cordova variables (if using `ionic cordova plugin add`). The available variables are as follows:
+部署插件使用变量来配置插件的行为。 您可以在使用标记添加插件时设置这些值 (如果使用 `ionic deploy
+add` 命令) 或使用 cordova 变量 (如果使用 `ionic cordova plugin add`)。 可用的变量如下：
 
 ### App ID
 
-* **Required**
-* The app id is required to recieve updates for an app in the Appflow dashboard.
+* **必需**
+* 要在Appflow信息中心中接收应用程序更新，必须提供应用程序ID。
 * `ionic deploy add --app-id=abcdef12`
 * `ionic cordova plugin add cordova-plugin-ionic --variable APP_ID=abcdef12`
 
 ### Channel Name
 
-* **Required**
-* The channel name is required to recieve updates for an app in the Appflow dashboard and indicates the channel from which the device will recieve updates. Note this can also be updated programatically at runtime for advanced use cases.
+* **必需**
+* Channel名称是接收Appflow仪表板上的应用程序更新所必需的，并指示设备将从其接收更新的channel。 注意，对于高级用例，也可以在运行时以编程方式进行更新。
 * `ionic deploy add --channel-name=Production`
 * `ionic cordova plugin add cordova-plugin-ionic --variable CHANNEL_NAME=Production`
 
 ### Update Method
 
-* **Default** `background`
-* The update method determines how the app will check for and apply updates. Possible values are: 
-  * `background` (Recommended) - The app will check for updates in the background and not prolong the amount of time the splash screen is shown. If an update is available it will be downloaded and installed while the user is using the older version. The next time they launch the app or the app has been in background for the duration specified my `min-background-duration` the new version will be loaded.
-  * `auto` - The app will delay the launch of the app by extending how long the splash screen is shown while downloading any available updates. Once the update is available the new version will be immediately shown and the splash screen will be hidden. We generally don't recommend this mode since it can lead to the splash screen showing for a long time particularly if the user is on a poor network connection.
-  * `none` - Setting the update method to `none` indicates that you will manually perform all update logic programatically and the plugin will not check for or apply updates on its own.
+* **默认值：** `background`
+* Update method确定应用程序如何检查和应用更新。 可选值有： 
+  * `background` (推荐)- 应用程序将在后台检查更新，而不延长显示启动画面的时间。 如果更新可用，用户使用旧版本时将下载和安装。 下一次启动应用程序或应用程序在后台处于指定的时间`min-background-duration` 新的版本将被载入。
+  * `自动` - 该应用程序将通过延长下载任何可用更新时启动画面的时间来延迟应用程序的启动。 一旦更新可用，将会立即显示新版本，并隐藏启动画面。 我们一般不推荐这种模式，因为它会导致启动画面显示很长时间，特别是当用户的网络连接很差时。
+  * `none` - 设置update method为 `none` 表示你将手动执行所有更新的逻辑，插件将不会自动检查和应用更新。
 * `ionic deploy add --updated-method=Production`
 * `ionic cordova plugin add cordova-plugin-ionic --variable UPDATE_METHOD=background`
 
 ### Max Versions
 
-* **Default** `2`
-* This tells the plugin the number of previous updates it should keep on the device in order to speed up the rollback process if ever needed.
+* **默认值：** `2`
+* 这将告诉插件它应该在设备上保持的先前更新的版本号，以便在需要时加速回滚过程。
 * `ionic deploy add --max-versions=Production`
 * `ionic cordova plugin add cordova-plugin-ionic --variable MAX_VERSIONS=Production`
 
 ### Min Background Duration
 
-* **Default** `30`
-* This tells the plugin the number of seconds the app needs to be in the background for it to have been considered "closed". If the app has been in the background for at least this duration the plugin will check for and apply updates according to the update method as if the app were opened from a fully closed state. This is helpful for triggering updates even when a user never fully closes the app but also allowing them to page over to another app or password manager for short periods of time without triggering an update.
+* **默认值：** `30`
+* 这告诉插件程序需要在后台运行多少秒才能被认为是“关闭”的。 如果应用程序在后台运行了至少这段时间，插件将根据更新方法检查并应用更新，就好像应用程序是从完全关闭状态打开的一样。 这有助于触发更新，即使用户从未完全关闭应用程序，但也允许他们在短时间内切换到另一个应用程序或密码管理器，而无需触发更新。
 * `ionic deploy add --min-background-duration=60`
 * `ionic cordova plugin add cordova-plugin-ionic --variable MIN_BACKGROUND_DURATION=60`
 
 * * *
 
-## Change Log
+## 更新日志
 
 ## 5.4.4
 
-* Fix issue where too many network requests at once could fire and cause performance issues.
+* 解决网络请求过多可能引发并引发业绩问题的问题。
 
 ## 5.4.3
 
@@ -1003,73 +1004,73 @@ The deploy plugin uses variables to configure the way in which the plugin behave
 
 ### 5.4.0
 
-* Added Deploy API Imports
-* Removed dependency on `cordova-plugin-file`
+* 添加Deploy API引用
+* 移除了依赖 `cordova-plugin-file`
 
 ### 5.3.0
 
-* Added an 'incompatibleUpdateAvailable' property to the 'CheckForUpdateResponse' (\[#204\] (https://github.com/ionic-team/cordova-plugin-ionic/pull/204))
-* 'ConfigurationInfo' now contains the 'BuildId' in addition to the 'SnapshotId' (\[#204\] (https://github.com/ionic-team/cordova-plugin-ionic/pull/204))
+* 添加了一个“incompatibleUpdateAvailable”属性到“CheckForUpdateResponse” (\[#204\] (https://github.com/ionic-back/cordova-pluginc-ionic/lapp/204))
+* “ConfigurationInfo”现在包含“BuildId”以及“SnapshotId” (\[#204\] (https://github.com/ionic-back/cordova-pluginc-ionic/lapp/204))
 
 ### 5.2.9
 
-* Get dataDirectory from getAppInfo function ([#197](https://github.com/ionic-team/cordova-plugin-ionic/pull/197))
-* Add proxy for browser platform to support it ([#199](https://github.com/ionic-team/cordova-plugin-ionic/pull/199))
+* 从getAppInfo函数中获取dataDirectory([#197](https://github.com/ionic-team/cordova-plugin-ionic/pull/197))
+* 添加支持浏览器平台的代理服务器 ([#199](https://github.com/ionic-team/cordova-plugin-ionic/pull/199))
 
 ### 5.2.8
 
-* Fix Type Error in IDeployConfig ([#196](https://github.com/ionic-team/cordova-plugin-ionic/pull/196))
+* 修复IDeployConfig类型错误 ([#196](https://github.com/ionic-team/cordova-plugin-ionic/pull/196))
 
 ### 5.2.7
 
-* Change hook to run before_prepare and make it async ([#178](https://github.com/ionic-team/cordova-plugin-ionic/pull/178))
-* Fixed bug where the a new binary update would load an older cached version of the app ([#179)](https://github.com/ionic-team/cordova-plugin-ionic/issues/179))
+* 更改钩子到运行before_prepare，并使之变得异步 ([#178](https://github.com/ionic-team/cordova-plugin-ionic/pull/178))
+* 修复错误，新的二进制更新将会加载一个较早的缓存应用版本 ([#179)](https://github.com/ionic-team/cordova-plugin-ionic/issues/179))
 
 ### 5.2.6
 
-* Check for Capacitor and switch folder ([#164](https://github.com/ionic-team/cordova-plugin-ionic/pull/164))
-* Remove unused import ([#163](https://github.com/ionic-team/cordova-plugin-ionic/pull/163))
-* Delay device ready until pro checks are done ([#161](https://github.com/ionic-team/cordova-plugin-ionic/pull/161))
+* 检查Capacitor和switch文件夹 ([#164](https://github.com/ionic-team/cordova-plugin-ionic/pull/164))
+* 删除未使用的导入 ([#163](https://github.com/ionic-team/cordova-plugin-ionic/pull/163))
+* 延迟设备准备好直到进行检查 ([#161](https://github.com/ionic-team/cordova-plugin-ionic/pull/161))
 
 ### 5.2.5
 
-* Fix bug where binaryVersionName and binaryVersionCode are not returned from getConfiguation call
-* Fix bug where downloadUpdate progress call back would go from 0 to 50 rather than 100 ([#156](https://github.com/ionic-team/cordova-plugin-ionic/pull/156]))
-* Check if the device is online before checking for updates ([#154](https://github.com/ionic-team/cordova-plugin-ionic/pull/154))
+* 修复了在getConfiguation调用中没有返回binaryVersionName和binaryVersionCode的错误
+* 修正了下载更新进度回调从0到50而不是100的错误([#156](https://github.com/ionic-team/cordova-plugin-ionic/pull/156]))
+* 在检查更新之前检查设备是否是在线 ([#154](https://github.com/ionic-team/cordova-plugin-ionic/pull/154))
 
 ### 5.2.4
 
-* update check device resp to be accurate ([#148](https://github.com/ionic-team/cordova-plugin-ionic/pull/148))
+* 更新检查设备以确保准确 ([#148](https://github.com/ionic-team/cordova-plugin-ionic/pull/148))
 
 ### 5.2.3
 
-* Fixed bug with AndroidManifest.xml syntax for real since our release script kept breaking it
+* 修正了AndroidManifest.xml语法的错误，因为我们的发布脚本一直破坏它
 
 ### 5.2.2
 
-* Fixed bug with AndroidManifest.xml syntax
+* 修复 AndroidManist.xml 语法的错误
 
 ### 5.2.1
 
-* Add ACCESS_NETWORK_STATE permission to make navigator.onLine work on android
+* 添加 ACCESS_NETWORK_STATE 权限，以便使navigator.onLine在 android 上工作
 
 ### 5.2.0
 
-* Added `DisableDeploy` Cordova preference allowing disabling of the plugin
-* Requires `cordova-plugin-ionic-webview@^2.1.4` for `DisableDeploy` support to work correctly
+* 添加 `DisableDeploy`Cordova 首选项，允许禁用插件的
+* 需要 `cordova-plugin-ionic-webview@^2.1.4` 支持`DisableDeploy` 正常工作
 
 ### 5.1.6
 
-* Fixed a bug with none update method strategy that could cause background updates upon resume of the app from background
+* 修正了一个错误，没有更新方法策略，可能导致后台更新时，从后台恢复的应用程序
 
 ### 5.0.6
 
-* Fixed a bug with version rebulds that could make some initial redirects take up to 15 seconds.
+* 修正了一个版本重新引导的错误，可能使一些初始重定向需要15秒。
 
 ### 5.0.5
 
-* Rebuild a deploy directory in the case where the binary version has changed since the update was downloaded.
+* 更新下载后更新后的二进制版本已经改变，在此情况下重建一个部署目录。
 
 ### 5.0.0
 
-* Release!
+* 发布！

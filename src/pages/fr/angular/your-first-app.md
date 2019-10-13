@@ -76,7 +76,7 @@ Open the photo-gallery app folder in your favorite code editor of choice, then n
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding></ion-content>
+<ion-content class="ion-padding"></ion-content>
 ```
 
 `ion-header` represents the top navigation and toolbar, with "Tab 2" as the title. We put our app code into `ion-content`. In this case, it’s where we’ll add a button that opens the device’s camera and shows the image captured by the camera. But first, let’s start with something obvious: renaming the Tab Two page:

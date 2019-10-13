@@ -8,6 +8,8 @@ Adding Auth0 to an Ionic Angular App Using Auth Connect - Auth0 Blog
 
 In the tutorial, you’ll use the Ionic Framework’s UI components to create a Login page and a Home page within an Ionic Angular app. With just a few lines of code, you’ll secure the Home page by adding Auth0 login/logout functionality using the Auth Connect native plugin.
 
+## Demo App
+
 For reference, a [complete demo app](https://github.com/ionic-team/demo-authconnect-auth0) is available that serves as a companion to the Auth0 article.
 
 ## Configuration Details
@@ -30,8 +32,17 @@ Auth0 is now ready to use in your Ionic app.
 
 Run the following command to install the Auth Connect plugin. For the `AUTH_URL_SCHEME` variable, use the globally unique App Id (ex: `com.company.app`) you decided on when configuring the Auth0 app above.
 
+If using Cordova, run:
+
 <command-line>
 <command-prompt>ionic cordova plugin add @ionic-enterprise/auth --variable AUTH_URL_SCHEME=com.company.app</command-prompt>
+</command-line>
+
+If using Capacitor, run:
+
+<command-line>
+<command-prompt>npm install @ionic-enterprise/auth --variable AUTH_URL_SCHEME=com.company.app</command-prompt>
+<command-prompt>npx cap sync</command-prompt>
 </command-line>
 
 ### Configure Auth Connect
@@ -76,9 +87,7 @@ constructor() {
         // to share site data with the app. 'private' uses a webview which will
         // not prompt the user but will not be able to share session/cookie data
         // either for true SSO across multiple apps.
-        iosWebView: 'private',
-        // required if running on the Web
-        clientSecret: ''
+        iosWebView: 'private'
     };
 
     super(auth0Config);

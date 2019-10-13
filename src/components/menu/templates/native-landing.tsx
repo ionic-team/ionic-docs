@@ -8,12 +8,14 @@ communityPlugins.push(['menu-native-community-show-all', '/docs/native/overview'
 const items = {
   'menu-native-paid': {
     'menu-native-paid-overview': '/docs/enterprise',
+    'Biometric Security': '/docs/enterprise/identity-vault',
+    'Offline Storage': '/docs/enterprise/offline-storage',
+    'Single Sign-on': '/docs/enterprise/auth-connect',
     'Browser': '/docs/enterprise/inappbrowser',
     'Camera': '/docs/enterprise/camera',
-    'Device': '/docs/enterprise/device',
+    'Deeplinks': '/docs/enterprise/deeplinks',
     'Filesystem': '/docs/enterprise/filesystem',
     'Geolocation': '/docs/enterprise/geolocation',
-    'Identity Vault': '/docs/enterprise/identity-vault',
     'Network Information': '/docs/enterprise/network-information',
     'menu-native-paid-show-all': '/docs/enterprise',
   },

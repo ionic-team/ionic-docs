@@ -58,8 +58,14 @@ const renderInstallation = (pluginId: string, variables?: string) => {
         After following the one-time <stencil-route-link url="/docs/enterprise/setup">setup steps</stencil-route-link>,
         simply install the plugin:
       </p>
+      <strong>Cordova:</strong>
       <command-line>
         <command-prompt>{`ionic cordova plugin add @ionic-enterprise/${pluginId} ${variables}`}</command-prompt>
+      </command-line>
+      <strong>Capacitor:</strong>
+      <command-line>
+        <command-prompt>{`npm install @ionic-enterprise/${pluginId} ${variables}`}</command-prompt>
+        <command-prompt>npx cap sync</command-prompt>
       </command-line>
     </section>
   );

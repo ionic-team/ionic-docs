@@ -12,13 +12,15 @@ const items = {
   'menu-enterprise-authentication-security': {
     'Auth Connect': '/docs/enterprise/auth-connect',
     '': {
-      'Auth0': '/docs/enterprise/auth-connect/auth0'
+      'Auth0': '/docs/enterprise/auth-connect/auth0',
+      'Azure AD B2C': '/docs/enterprise/auth-connect/azure-ad-b2c'
     },
     'Identity Vault': '/docs/enterprise/identity-vault',
     'Offline Storage': '/docs/enterprise/offline-storage'
   },
   'menu-enterprise-common-device-features': {
     'Android Permissions': '/docs/enterprise/android-permissions',
+    'Apple Payment Pass': '/docs/enterprise/apple-payment-pass',
     'App Rate': '/docs/enterprise/app-rate',
     'App Version': '/docs/enterprise/app-version',
     'Badge': '/docs/enterprise/badge',
@@ -46,10 +48,7 @@ const items = {
     'Statusbar': '/docs/enterprise/statusbar',
   },
   'menu-enterprise-integrated-services': {
-    'Active Directory': 'https://ionicframework.com/integrations/ms-activedirectory-ms-adal',
-    'mParticle': '/docs/enterprise/mparticle',
-  },
-  'menu-enterprise-payments': {
-    'Apple Payment Pass': '/docs/enterprise/apple-payment-pass',
-  },
+    'AWS Amplify': 'https://ionicframework.com/integrations/aws-amplify',
+    'mParticle': '/docs/enterprise/mparticle'
+  }
 };

@@ -1,28 +1,28 @@
 ---
-previousText: 'Navigation'
+previousText: '导航'
 previousUrl: '/docs/angular/navigation'
 ---
 
-# Angular Performance
+# Angular 性能
 
-## From the Ionic Team
+## 来自Ionic团队
 
-[How to Lazy Load in Ionic Angular](https://ionicframework.com/blog/how-to-lazy-load-in-ionic-angular/)
+[在 Ionic Angular 中如何使用懒加载](https://ionicframework.com/blog/how-to-lazy-load-in-ionic-angular/)
 
-[Improved Perceived Performance with Skeleton Screens](https://ionicframework.com/blog/improved-perceived-performance-with-skeleton-screens/)
+[用骨架屏提高感官性能](https://ionicframework.com/blog/improved-perceived-performance-with-skeleton-screens/)
 
-## From the Angular Team
+## 来自Angular团队
 
-[Build performant and progressive Angular apps](https://web.dev/angular) - web.dev
+[构建性能和渐进式Angular应用程序](https://web.dev/angular) - web.dev
 
-## From the Community
+## 来自社区
 
-[High Performance Animations in Ionic](https://www.joshmorony.com/high-performance-animations-in-ionic/) - Josh Morony
+[Ionic 中的高性能动画](https://www.joshmorony.com/high-performance-animations-in-ionic/) - Josh Morony
 
-[High Performance List Filtering in Ionic](https://www.joshmorony.com/high-performance-list-filtering-in-ionic-2/) - Josh Morony
+[高性能列表过滤 Ionic](https://www.joshmorony.com/high-performance-list-filtering-in-ionic-2/) - Josh Morony
 
-[Increasing Performance with Efficient DOM Writes in Ionic](https://www.joshmorony.com/increasing-performance-with-efficient-dom-writes-in-ionic-2/) - Josh Morony
+[使用Ionic高效的 DOM 写法提高性能](https://www.joshmorony.com/increasing-performance-with-efficient-dom-writes-in-ionic-2/) - Josh Morony
 
-[Ionic Framework is Fast (But Your Code Might Not Be)](https://www.joshmorony.com/ionic-framework-is-fast-but-your-code-might-not-be/) - Josh Morony
+[Ionic框架很快 (但你的代码可能不是)](https://www.joshmorony.com/ionic-framework-is-fast-but-your-code-might-not-be/) - Josh Morony
 
-> Do you have a guide you'd like to share? Click the *Edit this page* button below.
+> 您有一个想要分享的指南吗？ 点击如下 *编辑此页面* 按钮。

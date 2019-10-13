@@ -1,7 +1,7 @@
 ---
 title: Inappbrowser
 template: enterprise-plugin
-version: 3.2.0
+version: 3.2.1
 minor: 3.2.X
 ---
 
@@ -62,54 +62,6 @@ browser.close();
 
 ***interfaces***: InAppBrowserEvent InAppBrowserOptions
 
-<a id="inappbrowser.install"></a>
-
-### `<Static>` install
-
-**● install**: *`string`*
-
-* * *
-
-<a id="inappbrowser.platforms"></a>
-
-### `<Static>` platforms
-
-**● platforms**: *`string`[]*
-
-* * *
-
-<a id="inappbrowser.plugin"></a>
-
-### `<Static>` plugin
-
-**● plugin**: *`string`*
-
-* * *
-
-<a id="inappbrowser.pluginname"></a>
-
-### `<Static>` pluginName
-
-**● pluginName**: *`string`*
-
-* * *
-
-<a id="inappbrowser.pluginref"></a>
-
-### `<Static>` pluginRef
-
-**● pluginRef**: *`string`*
-
-* * *
-
-<a id="inappbrowser.repo"></a>
-
-### `<Static>` repo
-
-**● repo**: *`string`*
-
-* * *
-
 <a id="inappbrowser.create"></a>
 
 ### create
@@ -128,78 +80,6 @@ Opens a URL in a new InAppBrowser instance, the current browser instance, or the
 
 
 **Returns:** `InAppBrowserObject`
-
-* * *
-
-<a id="inappbrowser.getplugin"></a>
-
-### `<Static>` getPlugin
-
-▸ **getPlugin**(): `any`
-
-Returns the original plugin object
-
-**Returns:** `any`
-
-* * *
-
-<a id="inappbrowser.getplugininstallname"></a>
-
-### `<Static>` getPluginInstallName
-
-▸ **getPluginInstallName**(): `string`
-
-Returns the plugin's install name
-
-**Returns:** `string`
-
-* * *
-
-<a id="inappbrowser.getpluginname"></a>
-
-### `<Static>` getPluginName
-
-▸ **getPluginName**(): `string`
-
-Returns the plugin's name
-
-**Returns:** `string`
-
-* * *
-
-<a id="inappbrowser.getpluginref"></a>
-
-### `<Static>` getPluginRef
-
-▸ **getPluginRef**(): `string`
-
-Returns the plugin's reference
-
-**Returns:** `string`
-
-* * *
-
-<a id="inappbrowser.getsupportedplatforms"></a>
-
-### `<Static>` getSupportedPlatforms
-
-▸ **getSupportedPlatforms**(): `string`[]
-
-Returns the plugin's supported platforms
-
-**Returns:** `string`[]
-
-* * *
-
-<a id="inappbrowser.installed"></a>
-
-### `<Static>` installed
-
-▸ **installed**(): `boolean`
-
-Returns a boolean that indicates whether the plugin is installed
-
-**Returns:** `boolean`
 
 * * *
 
@@ -668,6 +548,16 @@ Set to yes to create the browser and load the page, but not show it. The loadsto
 
 * * *
 
+<a id="inappbrowseroptions.keyboarddisplayrequiresuseraction"></a>
+
+### `<Optional>` keyboardDisplayRequiresUserAction
+
+**● keyboardDisplayRequiresUserAction**: *"yes" \| "no"*
+
+(iOS Only) Set to yes or no to open the keyboard when form elements receive focus via JavaScript's focus() call (defaults to yes).
+
+* * *
+
 <a id="inappbrowseroptions.lefttoright"></a>
 
 ### `<Optional>` lefttoright
@@ -725,6 +615,16 @@ Set to yes to prevent HTML5 audio or video from autoplaying (defaults to no).
 **● shouldPauseOnSuspend**: *"yes" \| "no"*
 
 (Android Only) Set to yes to make InAppBrowser WebView to pause/resume with the app to stop background audio (this may be required to avoid Google Play issues)
+
+* * *
+
+<a id="inappbrowseroptions.suppressesincrementalrendering"></a>
+
+### `<Optional>` suppressesIncrementalRendering
+
+**● suppressesIncrementalRendering**: *"yes" \| "no"*
+
+(iOS Only) Set to yes or no to wait until all new view content is received before being rendered (defaults to no).
 
 * * *
 
@@ -832,6 +732,10 @@ Set to yes to prevent HTML5 audio or video from autoplaying (defaults to no).
 -->
 
 # Release Notes
+
+### 3.2.1 (Oct 01, 2019)
+
+- fix(ios): make create work on iOS 13
 
 ### 3.2.0 (Sept 06, 2019)
 

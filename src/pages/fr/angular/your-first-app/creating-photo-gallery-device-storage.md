@@ -1,25 +1,25 @@
 ---
-previousText: 'Android, iOS, and the Camera - Oh My!'
+previousText: 'Android, iOS et la caméra de votre smartphone - Impressionnant !'
 previousUrl: '/docs/angular/your-first-app/ios-android-camera'
-nextText: 'Theming'
+nextText: 'Thématisation'
 nextUrl: '/docs/angular/your-first-app/theming'
 contributors:
   - jsonMartin
 ---
 
-# Creating a Photo Gallery with Device Storage
+# Création d'une galerie de photos en utilisant le stockage interne de l'appareil
 
-Last time, we successfully added the Camera plugin to the Tab2 page of our Tabs app. Currently, the photo is replaced each time a new one is taken. What if we wanted to display multiple photos together? Let’s create a photo gallery. You can follow along with the complete code for this [on GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4).
+La dernière fois, nous avons ajouté le plugin Camera à la page Tab2 de notre application Tabs. Actuellement, la photo précédente est remplacée chaque fois qu'une nouvelle photo est prise. Que se passe-t-il si nous voulions afficher plusieurs photos ensemble ? Créeons une galerie de photos. Vous pouvez obtenir le code complet pour ce projet [sur GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4).
 
-## Creating a Dedicated Photo Service
+## Création d'un service appelé Photo
 
-From a terminal window, navigate to your Ionic project and run:
+Depuis une fenêtre de terminal, naviguez vers votre projet Ionic et exécutez :
 
 ```shell
 $ ionic g service services/Photo
 ```
 
-This creates a PhotoService class in a dedicated "services" folder:
+Ceci crée une classe PhotoService dans un dossier dédié "services" :
 
 ```Javascript
 import { Injectable } from '@angular/core';
@@ -32,7 +32,7 @@ export class PhotoService {
 }
 ```
 
-Within this file, add a Photo class. The “data” property represents the base64 image data of a captured photo:
+Dans ce fichier, ajoutez une classe Photo. La propriété « data » représente les données d'image base64 d'une photo capturée :
 
 ```Javascript
 class Photo {
@@ -40,7 +40,7 @@ class Photo {
 }
 ```
 
-Then, create a Photos array to represent our photo gallery:
+Ensuite, créez un tableau Photos pour représenter notre galerie photo :
 
 ```Javascript
 export class PhotoService {
@@ -51,21 +51,21 @@ export class PhotoService {
 }
 ```
 
-Back in `tab2.page.ts`, import PhotoService:
+Retour dans `tab2.page.ts` et importer PhotoService :
 
 ```Javascript
 import { PhotoService } from '../services/photo.service';
 ```
 
-Add it to the Constructor:
+Ajouter au Constructeur :
 
 ```Javascript
 constructor(private camera: Camera, public photoService: PhotoService) {  }
 ```
 
-Next, move all code pertaining to the Camera plugin to the PhotoService class. This includes the takePicture method, the Camera and CameraOptions imports, and the Tab2Page page constructor.
+Ensuite, déplacez tout le code relatif au plugin Camera dans la classe PhotoService. Cela inclut la méthode takePicture, les importations de Camera, de CameraOptions et le constructeur de page Tab2Page.
 
-Continuing on, we need to convert currentImage variable references to the new photos array. Start by adding the captured photo data into the photos array:
+En continuant, nous devons convertir les références de variables currentImage vers le nouveau tableau de photos. Commencez par ajouter les données de photos capturées dans le tableau de photos :
 
 ```Javascript
 this.camera.getPicture(options).then((imageData) => {
@@ -78,7 +78,7 @@ this.camera.getPicture(options).then((imageData) => {
 });
 ```
 
-In `tab2.page.ts`, remove the currentImage variable and the reference to Camera in the constructor, leaving only PhotoService:
+Dans `tab2.page.ts`, supprimez la variable currentImage et la référence à Camera dans le constructeur, laissant seulement PhotoService :
 
 ```Javascript
 export class Tab2Page {
@@ -86,7 +86,7 @@ export class Tab2Page {
 }
 ```
 
-Next, in `tab2.page.html`, remove the currentImage img tag. In its place, use an ion-grid component, which provides a great way to arrange elements on a page. In this case, we’ll use it to display 2 photos per row.
+Ensuite, dans `tab2.page.html`, supprimez la balise img contenant currentImage. À sa place, utilisez le composant appelé ion-grid, qui fournit une excellente façon d'organiser des éléments sur une page. Dans ce cas, nous l’utiliserons pour afficher 2 photos par ligne.
 
 ```html
 <ion-grid>
@@ -98,9 +98,9 @@ Next, in `tab2.page.html`, remove the currentImage img tag. In its place, use an
 </ion-grid>
 ```
 
-Here, we loop through each photo in the PhotoServices photos array, adding a new column for each. Since an ion-row consists of 12 “blocks” of space, and we’re setting the size to 6 (`size="6"`), only 2 photos are displayed per row.
+Ici, nous parcourons le tableau photos du service PhotoServices en ajoutant une colonne pour chaque photo. Puisque le composant ion-row consiste en 12 "blocs" d'espace, et que nous fixons la taille à 6 (`size="6"`), seules 2 photos sont affichées sur chaque ligne.
 
-Last, update the Fab button to call the PhotoService’s `takePicture` method:
+Enfin, mettez à jour le bouton Fab pour appeler la méthode `takePicture` de PhotoService :
 
 ```Html
 <ion-fab-button (click)="photoService.takePicture()">
@@ -108,11 +108,11 @@ Last, update the Fab button to call the PhotoService’s `takePicture` method:
 </ion-fab-button>
 ```
 
-Excellent! We now have a basic photo gallery working.
+Super ! Nous avons à présent une galerie de photo basique fonctionnelle.
 
-## Saving photos to the device
+## Sauvegarde des photos sur l'appareil
 
-Having a working photo gallery is pretty cool, but you’ll likely notice that when the app is closed, the photos are lost forever. That’s no good, so let’s add the [Ionic Storage plugin](https://ionicframework.com/docs/storage/), as easy way to store key/value pairs and JSON objects. When running in a native app context, Storage will prioritize using SQLite, one of the most stable and widely used file-based databases. When running on the web or as a Progressive Web App, Storage will attempt to use IndexedDB, WebSQL, and localstorage, in that order.
+Avoir une galerie de photo fonctionnelle est plutôt cool, mais vous remarquerez probablement que quand l'application est fermée, les photos sont perdues à jamais. That’s no good, so let’s add the [Ionic Storage plugin](https://ionicframework.com/docs/storage/), as easy way to store key/value pairs and JSON objects. When running in a native app context, Storage will prioritize using SQLite, one of the most stable and widely used file-based databases. When running on the web or as a Progressive Web App, Storage will attempt to use IndexedDB, WebSQL, and localstorage, in that order.
 
 The Storage plugin works perfectly for our base64 image data. To begin, add the SQLite plugin for native:
 
