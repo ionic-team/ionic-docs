@@ -27,7 +27,7 @@ Leveraging the OAuth/OpenId Connect protocols, Auth Connect supports:
 
 * [Auth0](/docs/enterprise/auth-connect/auth0)
 * [Azure Active Directory B2C](/docs/enterprise/auth-connect/azure-ad-b2c) (Microsoft)
-* Cognito (AWS)
+* [Cognito](/docs/enterprise/auth-connect/aws-cognito) (AWS)
 
 ## Workflow
 
