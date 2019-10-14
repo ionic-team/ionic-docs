@@ -5,8 +5,6 @@
 
 Ionic Studio offers a full code editor for diving deep into the non-visual aspects of Ionic apps.
 
-> 🚧 These docs are a work-in-progress. Check back frequently for updates!
-
 ## Introduction
 
 Code mode features include:
