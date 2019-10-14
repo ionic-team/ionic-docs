@@ -6,8 +6,6 @@
 
 The quickstart tutorial walks you through starting a new app, the basics of Compose and Code, and serving your app.
 
-> 🚧 These docs are a work-in-progress. Check back frequently for updates!
-
 ## Start a New App
 
 To create a new Ionic project:
