@@ -1,192 +1,85 @@
 ---
 title: Keyboard
 template: enterprise-plugin
-version: 2.1.3
-minor: 2.1.X
+version: 2.2.0
+minor: 2.2.X
 ---
 
-Keyboard
-========
 
-This plugin allows you to configure the app's behavior when the keyboard shows/hides.
-
-Usage
-=====
-
-```typescript
-// Angular
-import { Keyboard } from '@ionic-enterprise/keyboard/ngx';
-
-...
-
-constructor(private keyboard: Keyboard) {
-  this.keyboard.setResizeMode('body');
-  window.addEventListener('keyboardWillShow', () => console.log('keyboard showing'));
-}
-
-...
-
-// ES2015+/TypeScript
-import { Keyboard } from '@ionic-enterprise/keyboard';
-
-Keyboard.setResizeMode('body');
-window.addEventListener('keyboardWillShow', () => console.log('keyboard showing'));
-
-...
-
-// Vanilla JS
-document.addEventListener('deviceready', () => {
-  Keyboard.setResizeMode('body');
-  window.addEventListener('keyboardWillShow', () => console.log('keyboard showing'));
-});
-```
-
-Preferences
------------
-
-### KeyboardResize
-
-> Boolean (true by default)
-
-#### Possible values
-
-*   `true`: Showing/hiding the keyboard will trigger some kind of resizing of the app (see KeyboardResizeMode)
-*   `false`: Web will not be resized when the keyboard shows up.
-
-```xml
-<preference name="KeyboardResize" value="true" />
-```
-
-### KeyboardResizeMode
-
-> String ('native' by default)
-
-#### Possible values
-
-*   `native`: The whole native webview will be resized when the keyboard shows/hides, it will affect the `vh` relative unit.
-*   `body`: Only the html `<body>` element will be resized. Relative units are not affected, because the viewport does not change.
-*   `ionic`: Only the html `ion-app` element will be resized. Only for ionic apps.
-
-```xml
-<preference name="KeyboardResizeMode" value="native" />
-```
-
-Methods
--------
-
-### Keyboard.hideFormAccessoryBar
-
-> Hide the keyboard toolbar.
-
-Set to true to hide the additional toolbar that is on top of the keyboard. This toolbar features the Prev, Next, and Done buttons.
-
-```js
-Keyboard.hideFormAccessoryBar(value, successCallback);
-```
-
-##### Quick Example
-
-```js
-Keyboard.hideFormAccessoryBar(true);
-Keyboard.hideFormAccessoryBar(false);
-Keyboard.hideFormAccessoryBar(null, (currentValue) => { console.log(currentValue); });
-```
-
-### Keyboard.hide
-
-> Hide the keyboard
-
-Call this method to hide the keyboard
-
-```js
-Keyboard.hide();
-```
-
-### Keyboard.show
-
-> Show the keyboard
-
-Call this method to show the keyboard.
-
-```js
-Keyboard.show();
-```
-
-Properties
-----------
-
-### Keyboard.isVisible
-
-> Determine if the keyboard is visible.
-
-Read this property to determine if the keyboard is visible.
-
-```js
-if (Keyboard.isVisible) {
-    // do something
-}
-```
-
-Events
-------
-
-### keyboardDidHide
-
-> This event is fired when the keyboard is fully closed.
-
-Attach handler to this event to be able to receive notification when keyboard is closed.
-
-```js
-window.addEventListener('keyboardDidHide', () => {
-    // Describe your logic which will be run each time keyboard is closed.
-});
-```
-
-### keyboardDidShow
-
-> This event is fired when the keyboard is fully open.
-
-Attach handler to this event to be able to receive notification when keyboard is opened.
-
-```js
-window.addEventListener('keyboardDidShow', (event) => {
-    // Describe your logic which will be run each time when keyboard is about to be shown.
-    console.log(event.keyboardHeight);
-});
-```
-
-### keyboardWillShow
-
-> This event fires before keyboard will be shown.
-
-Attach handler to this event to be able to receive notification when keyboard is about to be shown on the screen.
-
-```js
-window.addEventListener('keyboardWillShow', (event) => {
-    // Describe your logic which will be run each time when keyboard is about to be shown.
-    console.log(event.keyboardHeight);
-});
-```
-
-### keyboardWillHide
-
-> This event is fired when the keyboard is fully closed.
-
-Attach handler to this event to be able to receive notification when keyboard is about to be closed.
-
-```js
-window.addEventListener('keyboardWillHide', () => {
-    // Describe your logic which will be run each time when keyboard is about to be closed.
-});
-```
 
 ## Index
 
+### Enumerations
+
+* [KeyboardResizeMode](../#keyboardresizemode)
+* [KeyboardStyle](../#keyboardstyle)
+
 ### Classes
 
-* [Keyboard](#keyboard)
+* [Keyboard](../#keyboard)
 
 ---
+
+## Enumerations
+
+<a id="keyboardresizemode"></a>
+
+###  KeyboardResizeMode
+
+**KeyboardResizeMode**: 
+
+<a id="keyboardresizemode.body"></a>
+
+###  Body
+
+**Body**:  = "body"
+
+___
+<a id="keyboardresizemode.ionic"></a>
+
+###  Ionic
+
+**Ionic**:  = "ionic"
+
+___
+<a id="keyboardresizemode.native"></a>
+
+###  Native
+
+**Native**:  = "native"
+
+___
+<a id="keyboardresizemode.none"></a>
+
+###  None
+
+**None**:  = "none"
+
+___
+
+___
+<a id="keyboardstyle"></a>
+
+###  KeyboardStyle
+
+**KeyboardStyle**: 
+
+<a id="keyboardstyle.dark"></a>
+
+###  Dark
+
+**Dark**:  = "dark"
+
+___
+<a id="keyboardstyle.light"></a>
+
+###  Light
+
+**Light**:  = "light"
+
+___
+
+___
 
 ## Classes
 
@@ -194,112 +87,215 @@ window.addEventListener('keyboardWillHide', () => {
 
 ###  Keyboard
 
-**Keyboard**:
+**Keyboard**: 
 
-*__description__*: Provides an API for customizing keyboard behavior.
+*__name__*: Keyboard
+
+*__description__*: Keyboard plugin for Cordova.
 
 *__usage__*:
  ```typescript
-// Angular
 import { Keyboard } from '@ionic-enterprise/keyboard/ngx';
 
-...
-
-constructor(private keyboard: Keyboard) {
-  this.keyboard.setResizeMode('body');
-  window.addEventListener('keyboardWillShow', () => console.log('keyboard showing'));
-}
+constructor(private keyboard: Keyboard) { }
 
 ...
 
-// ES2015+/TypeScript
-import { Keyboard } from '@ionic-enterprise/keyboard';
+this.keyboard.show();
 
-Keyboard.setResizeMode('body');
-window.addEventListener('keyboardWillShow', () => console.log('keyboard showing'));
+this.keyboard.hide();
 
-...
-
-// Vanilla JS
-document.addEventListener('deviceready', () => {
-  Keyboard.setResizeMode('body');
-  window.addEventListener('keyboardWillShow', () => console.log('keyboard showing'));
-});
 ```
 
 <a id="keyboard.isvisible"></a>
 
 ###  isVisible
 
-**get isVisible**(): `boolean`
+**● isVisible**: *`boolean`*
 
-Whether the keyboard is visible or not
+Check keyboard status visible or not.
 
-**Returns:** `boolean`
+*__returns__*: 
+
+___
+<a id="keyboard.disablescroll"></a>
+
+###  disableScroll
+
+▸ **disableScroll**(disable: *`boolean`*): `void`
+
+Programatically enable or disable the WebView scroll
+
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| disable | `boolean` |
+
+**Returns:** `void`
 
 ___
 <a id="keyboard.hide"></a>
 
 ###  hide
 
-▸ **hide**(): `Promise`<`void`>
+▸ **hide**(): `void`
 
-Hide the keyboard
+Hide the keyboard if shown.
 
-**Returns:** `Promise`<`void`>
-a promise that resolves once the keyboard has been hidden
+**Returns:** `void`
 
 ___
 <a id="keyboard.hideformaccessorybar"></a>
 
 ###  hideFormAccessoryBar
 
-▸ **hideFormAccessoryBar**(hide: *`boolean`*): `Promise`<`boolean` \| `void`>
+▸ **hideFormAccessoryBar**(hide: *`boolean`*): `void`
 
-Hide the keyboard accessory bar
+Hide the keyboard accessory bar with the next, previous and done buttons.
 
 **Parameters:**
 
 | Name | Type | Description |
 | ------ | ------ | ------ |
-| hide | `boolean` |  whether to show or hide the form accessory bar if supported |
+| hide | `boolean` |   |
 
-**Returns:** `Promise`<`boolean` \| `void`>
-a promise that resolves with the current setting (true if bar
-will be hidden).
+**Returns:** `void`
+
+___
+<a id="keyboard.onkeyboarddidhide"></a>
+
+###  onKeyboardDidHide
+
+▸ **onKeyboardDidHide**(): `Observable`<`any`>
+
+Creates an observable that notifies you when the keyboard did hide. Unsubscribe to observable to cancel event watch.
+
+**Returns:** `Observable`<`any`>
+
+___
+<a id="keyboard.onkeyboarddidshow"></a>
+
+###  onKeyboardDidShow
+
+▸ **onKeyboardDidShow**(): `Observable`<`any`>
+
+Creates an observable that notifies you when the keyboard did show. Unsubscribe to observable to cancel event watch.
+
+**Returns:** `Observable`<`any`>
+
+___
+<a id="keyboard.onkeyboardhide"></a>
+
+###  onKeyboardHide
+
+▸ **onKeyboardHide**(): `Observable`<`any`>
+
+Creates an observable that notifies you when the keyboard is hidden. Unsubscribe to observable to cancel event watch.
+
+**Returns:** `Observable`<`any`>
+
+___
+<a id="keyboard.onkeyboardshow"></a>
+
+###  onKeyboardShow
+
+▸ **onKeyboardShow**(): `Observable`<`any`>
+
+Creates an observable that notifies you when the keyboard is shown. Unsubscribe to observable to cancel event watch.
+
+**Returns:** `Observable`<`any`>
+
+___
+<a id="keyboard.onkeyboardwillhide"></a>
+
+###  onKeyboardWillHide
+
+▸ **onKeyboardWillHide**(): `Observable`<`any`>
+
+Creates an observable that notifies you when the keyboard will hide. Unsubscribe to observable to cancel event watch.
+
+**Returns:** `Observable`<`any`>
+
+___
+<a id="keyboard.onkeyboardwillshow"></a>
+
+###  onKeyboardWillShow
+
+▸ **onKeyboardWillShow**(): `Observable`<`any`>
+
+Creates an observable that notifies you when the keyboard will show. Unsubscribe to observable to cancel event watch.
+
+**Returns:** `Observable`<`any`>
+
+___
+<a id="keyboard.setkeyboardstyle"></a>
+
+###  setKeyboardStyle
+
+▸ **setKeyboardStyle**(style: *[KeyboardStyle](../#keyboardstyle)*): `void`
+
+Programatically set Keyboard style
+
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| style | [KeyboardStyle](../#keyboardstyle) |
+
+**Returns:** `void`
 
 ___
 <a id="keyboard.setresizemode"></a>
 
 ###  setResizeMode
 
-▸ **setResizeMode**(mode: *"native" \| "body" \| "ionic"*): `Promise`<`void`>
+▸ **setResizeMode**(mode: *[KeyboardResizeMode](../#keyboardresizemode)*): `void`
 
-Sets the resize behavior of the app when the keyboard shows. 'native' attempts to resize the enter native window, 'body' the webview's document.body, and 'ionic' the root Ionic app element ('ion-app'), if there is one.
+Programatically set the resize mode
 
 **Parameters:**
 
 | Name | Type | Description |
 | ------ | ------ | ------ |
-| mode | "native" \| "body" \| "ionic" |  The resize mode. |
+| mode | [KeyboardResizeMode](../#keyboardresizemode) |   |
 
-**Returns:** `Promise`<`void`>
-a promise that resolves once the value has been set.
+**Returns:** `void`
 
 ___
 <a id="keyboard.show"></a>
 
 ###  show
 
-▸ **show**(): `Promise`<`void`>
+▸ **show**(): `void`
 
-Show the keyboard, if supported
+Force keyboard to be shown.
 
-**Returns:** `Promise`<`void`>
-a promise that resolves when the keyboard has been shown
-
-___
+**Returns:** `void`
 
 ___
 
-## Change Log
+___
+
+# Changelog
+
+
+## [2.2.0](https://github.com/ionic-team/cordova-plugin-ionic-keyboard/compare/2.1.3...v2.2.0) (2019-09-03)
+
+
+### Features
+
+* **windows:** add windows implementation
+* **android:** add resizeOnFullScreen preference for Android
+* **ios:** Added Keyboard.setKeyboardStyle method
+* **ios:** reimplement disableScroll method
+
+
+### Bug Fixes
+
+* **android:** Avoid conflicts when ionic-plugin-keyboard is installed
+* **ios:** respect KeyboardAppearanceDark preference from webview plugin
+* **ios:** Delay resize until keyboard animation finish
+* **ios:** Avoid duplicate hide event when user changes field
+
+
