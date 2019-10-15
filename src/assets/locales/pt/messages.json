@@ -140,7 +140,7 @@
   "menu-native-community-show-all": "Show all Community plugins...",
   "menu-native-paid": "Ionic Native",
   "menu-native-paid-overview": "Visão Geral",
-  "menu-native-paid-show-all": "Show all Ionic Native plugins...",
+  "menu-native-paid-show-all": "Mostrar todos os plugins Ionic Native...",
   "menu-appflow": "Bem-vindo ao Appflow",
   "menu-appflow-quickstart": "Início Rápido",
   "menu-appflow-quickstart-overview": "Visão Geral",
@@ -192,7 +192,7 @@
   "menu-studio-introduction-welcome": "Bem-vindo",
   "menu-studio-introduction-support": "Suporte",
   "menu-studio-setup": "Instalação",
-  "menu-studio-setup-installation": "Installing Studio",
+  "menu-studio-setup-installation": "Instalando Studio",
   "menu-studio-setup-native": "Native iOS & Android",
   "menu-studio-documentation": "Documentação",
   "menu-studio-documentation-compose": "Escrever",
@@ -204,7 +204,7 @@
   "menu-studio-documentation-terminal": "Terminal",
   "menu-studio-guides": "Guias",
   "menu-studio-guides-quickstart": "Início Rápido",
-  "menu-studio-guides-routing": "Routing and Navigation",
+  "menu-studio-guides-routing": "Rotas e Navegação",
   "menu-studio-guides-functionality": "Utilizando Funcionalidade Nativa",
   "menu-studio-faq": "Perguntas Frequentes"
 }
