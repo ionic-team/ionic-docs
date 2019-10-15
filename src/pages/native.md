@@ -1,5 +1,5 @@
 ---
-title: Ionic Native Plugins
+title: Ionic Native
 ---
 <p class='intro'>Build native-powered app experiences with a collection of open source and premium plugins and solutions that make it easy to add native device functionality to any Ionic app, Cordova project, or Capacitor project.</p>
 
