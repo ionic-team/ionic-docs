@@ -155,11 +155,12 @@
 
   "menu-native-community": "Community Plugins",
   "menu-native-community-overview": "Overview",
+  "menu-native-community-oss": "Open Source",
   "menu-native-community-all": "All Community Plugins",
   "menu-native-community-show-all": "Show all Community plugins...",
   "menu-native-paid": "Ionic Native",
   "menu-native-paid-overview": "Overview",
-  "menu-native-paid-show-all": "Show all Ionic Native plugins...",
+  "menu-native-paid-show-all": "Show all Premier Plugins...",
 
   "menu-appflow": "Welcome to Appflow",
 
