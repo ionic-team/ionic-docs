@@ -15,7 +15,7 @@ Comece criando um novo aplicativo e entre de cabeça no conjunto de recursos ofe
 
 <docs-card header="News & Updates" icon="/docs/assets/icons/guide-news-icon.png"> 
 
-Delivered within Studio as well as over email.</docs-card>
+Entregue dentro do Studio, bem como por e-mail.</docs-card>
 
 <docs-card header="Studio FAQ" href="/docs/studio/faq" icon="/docs/assets/icons/guide-faq-icon.png"> 
 
