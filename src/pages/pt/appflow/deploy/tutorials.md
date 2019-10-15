@@ -9,7 +9,7 @@ nextUrl: '/docs/appflow/deploy/cli'
 
 ## Setup and Deploy on iOS
 
-<wistia-video videoId="2702mkf530"></wistia-video>
+<wistia-video video-id="2702mkf530"></wistia-video>
 
 Learn how to install, configure, and deploy your first live update.
 
@@ -17,7 +17,7 @@ Learn how to install, configure, and deploy your first live update.
 
 Here are the steps in order to successfully upgrade to the new version of the Pro Client, Deploy Plugin, and Webview Plugin. You can follow the guide below or watch this video:
 
-<wistia-video videoId="0o27tfvoam"></wistia-video>
+<wistia-video video-id="0o27tfvoam"></wistia-video>
 
 ### Deploy Upgrade Guide
 
