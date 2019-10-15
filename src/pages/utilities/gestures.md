@@ -24,7 +24,7 @@ const gesture = createGesture({
   onMove: (detail) => { onMove(detail); }
 })
 
-gesture.setDisabled(false);
+gesture.enable();
 
 const onMove = (detail) => {
   const type = detail.type;
@@ -59,7 +59,7 @@ const gesture = createGesture({
   onStart: () => { onStart(); }
 });
 
-gesture.setDisabled(false);
+gesture.enable();
 
 let lastOnStart = 0;
 let currentColor = 'rgba(0, 0, 255, 0.5)';
@@ -102,7 +102,7 @@ const gesture = createGesture({
   onEnd: () => { clearGestureTimeout(); }
 });
 
-gesture.setDisabled(false);
+gesture.enable();
 
 let timeout;
 
@@ -169,15 +169,15 @@ See our guide on implementing gesture animations: [Gesture Animations with Ionic
 | direction       | `'x' \| 'y' \| undefined`                  | `'x'`       | Limit gesture detection to movements along a certain axis. |
 | gestureName     | `string`                                   | `undefined` | The name of the gesture to create. |
 | gesturePriority | `number \| undefined`                      | `0`         | Gestures with higher priorities will override gestures with lower priorities. Useful for ensuring the multiple gestures do not collide with one another. |
-| passive         | `boolean \| undefined`                     | `true`      | NEEDS DEFINITION. |
-| maxAngle        | `number \| undefined`                      | `40`        | NEEDS DEFINITION. |
+| passive         | `boolean \| undefined`                     | `true`      | If true, this will indicate that the gesture will never call `preventDefault()`. This can be used to improve scrolling performance. See [Passive Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Improving_scrolling_performance_with_passive_listeners) for more information. |
+| maxAngle        | `number \| undefined`                      | `40`        | The maximum angle to allow when detecting a gesture. |
 | threshold       | `number \| undefined`                      | `10`        | Defines how much a pointer must move before the gesture kicks in. |
 | canStart        | `GestureCallback \| undefined`             | `undefined` | A callback that returns true if a gesture is allowed to start. |
 | onWillStart     | `(detail: GestureDetail) => Promise<void>` | `undefined` | A callback that is fires when a gesture is about to start. This is fired after `canStart` but before `onStart`. |
 | onStart         | `GestureCallback \| undefined`             | `undefined` | A callback that fires when a gesture has started. |
 | onMove          | `GestureCallback \| undefined`             | `undefined` | A callback that fires when a gesture movement was detected. |
 | onEnd           | `GestureCallback \| undefined`             | `undefined` | A callback that fires when a gesture has ended. This is usually when a pointer has been released. |
-| notCaptured     | `GestureCallback \| undefined`             | `undefined` | NEEDS DEFINITION. |
+| notCaptured     | `GestureCallback \| undefined`             | `undefined` | A callback that fires when a gesture has not been captured. This usually happens when there is a conflicting gesture with a higher priority. |
 
 ### GestureDetail
 
@@ -195,11 +195,11 @@ See our guide on implementing gesture animations: [Gesture Animations with Ionic
 | deltaY         | `number`           | How much the gesture has moved on the y axis since it started. |
 | timeStamp      | `number`           | The current timestamp of the gesture. |
 | event          | `UIEvent`          | The native event dispatched by the browser. See [UIEvent](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent) for more information. |
-| data           | `any \| undefined` | NEEDS DEFINITION. |
+| data           | `any \| undefined` | Any data specified by the user. This can be set and read in any of the callbacks. |
 
 ## Methods 
 
-#### `setDisabled(disabled: boolean) => void`
+#### `enable(enable: boolean = true) => void`
 
 Enable or disable the gesture.
 
