@@ -50,7 +50,9 @@ Web Configuration Options
 
 ### Login UX Options
 
-Login can occur either within the current tab/window or a separate pop-up window (the default).
+Login can occur either within the current tab/window or a separate pop-up window (the default). Here's a visual comparison:
+
+<wistia-video video-id="zk3ys1615x"></wistia-video>
 
 The current tab option is great for developers supporting IE11. Within the `IonicAuthOptions` configuration, set `implicit_login` to "CURRENT". Next, in the login page (or whichever page is navigated to after login - the `redirectUri` in the config options) implement:
 
