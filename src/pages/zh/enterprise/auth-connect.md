@@ -5,13 +5,15 @@ version: 1.2.0
 minor: 1.2.X
 ---
 
-## Overview
-
 The Auth Plugin handles logging in and/or registering a user with an authentication provider (such as Auth0, Azure AD, or AWS Cognito) using industry standard OAuth/OpenId Connect on iOS and Android, or on the web.
 
 When used with the [Ionic Identity Vault](/docs/enterprise/identity-vault) plugin, it provides a complete secure solution for authentication and storage of logged-in credentials.
 
 The Auth Plugin also allows your app to support multiple authentication providers. Should you need to change providers, easily switch between them without having to develop a new solution.
+
+## Reference App
+
+A [complete login/logout experience](https://github.com/ionic-team/demo-authconnect-auth0) using Auth0. Simply swap the Auth0 configuration in the `IonicAuthOptions` object to switch to a different auth provider.
 
 ## Configuring Auth Connect
 
