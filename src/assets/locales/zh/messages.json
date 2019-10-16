@@ -60,7 +60,7 @@
   "menu-react-navigation": "导航/路由",
   "menu-react-config": "配置",
   "menu-react-platform": "Platform Utils",
-  "menu-vue": "Vue",
+  "menu-vue": "Vue (beta)",
   "menu-vue-overview": "概览",
   "menu-vue-your-first-app": "创建您的第一个应用程序",
   "menu-vue-lifecycle": "生命周期",
