@@ -5,7 +5,7 @@ nextUrl: '/docs/angular/your-first-app'
 
 # Visión General Ionic Angular
 
-`@ionic/angular` combina la experiencia central de Ionic con las herramientas y API que se adaptan a los desarrolladores angulares.
+`@ionic/angular` combina la experiencia central de Ionic con las herramientas y API que se adaptan a los desarrolladores de Angular.
 
 ## Soporte de versión angular
 
