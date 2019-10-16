@@ -7,7 +7,7 @@ minor: 1.0.X
 
 # Ionic Offline Storage
 
-Ionic Offline Storage is a cross-platform data storage system that works on iOS and Android. Powered by [Couchbase Lite](https://docs.couchbase.com/couchbase-lite/2.6/index.html), a NoSQL database engine that provides simple yet powerful query, replication, and sync APIs.
+Ionic Offline Storage is a cross-platform data storage system that works on iOS and Android, and Electron on desktop. Powered by [Couchbase Lite](https://docs.couchbase.com/couchbase-lite/2.6/index.html), a NoSQL database engine that provides simple yet powerful query, replication, and sync APIs.
 
 This solution makes it easy to add offline storage to Ionic apps that are secure (encrypted on device), highly performant, and provide advanced data querying.
 
@@ -19,15 +19,17 @@ Couchbase Lite requires a min SDK target for Android of at least 19. Make sure y
 <preference name="android-minSdkVersion" value="19" />
 ```
 
-To use additional features such as cloud data sync, data replication, conflict resolution, and delta sync, a subscription to Couchbase Server is required.
+To use additional features such as cloud data sync, data replication, conflict resolution, and delta sync, a subscription to Couchbase Server is required. To learn more, please [get in touch](https://ionicframework.com/enterprise/contact).
 
-## Reference App
+## Reference Apps
 
-A complete [advanced offline search experience](https://github.com/ionic-team/demo-offlinestorage-search) demo that includes multiple filters and wildcard searches.
+1) A full [CRUD implementation](https://github.com/ionic-team/cs-demo-couchbase-lite), including querying, responding to data changes, and deleting documents. Follow along with the corresponding [blog post](https://ionicframework.com/blog/build-secure-offline-apps-with-ionic-couchbase-lite/).
 
-## Importing code
+2) A complete [offline search experience](https://github.com/ionic-team/demo-offlinestorage-search) that includes advanced querying examples, multiple filters, and wildcard searches. Follow along with the corresponding [webinar video](https://youtu.be/_2C047pQwxU?t=1003).
 
-To use the Couchbase Lite API, import from `@ionic-enterprise/offline-storage`. For example:
+## Getting Started
+
+After installing the plugin, import `@ionic-enterprise/offline-storage` into the desired class (A dedicated service class that encapsulates Offline Storage logic is recommended).
 
 ```typescript
 import {
@@ -55,31 +57,67 @@ import {
 } from '@ionic-enterprise/offline-storage';
 ```
 
-## Starter Code
-
-This snippet demonstrates how to run basic CRUD operations, a simple Query and running bi-directional replications with Sync Gateway.
+Next, initialize the database:
 
 ```typescript
-// Get the database (and create it if it doesn’t exist).
-let database = new Database("mydb");
+/*  
+    Note about encryption: In a real-world app, the encryption key 
+    should not be hardcoded like it is here. One strategy is to 
+    auto generate a unique encryption key per user on initial app 
+    load, then store it securely in the device's keychain for later
+    retrieval. Ionic's Identity Vault plugin is an option. Using 
+    IV’s storage API, you can ensure that the key cannot be read
+    or accessed without the user being authenticated first.
+*/
+private async initializeDatabase(): Promise<void> {
+    return new Promise(resolve => {
+        IonicCBL.onReady(async () => {
+            const config = new DatabaseConfiguration();
+            config.setEncryptionKey('8e31f8f6-60bd-482a-9c70-69855dd02c38');
+            this.database = new Database('DATABASE_NAME', config);
+            this.database.setEngine(
+            new CordovaEngine({
+                allResultsChunkSize: 9999
+            }));
+            await this.database.open();
 
+            resolve();
+        });
+    });
+}
+```
+
+Create a new document and save it to the database:
+
+```typescript
 // Create a new document (i.e. a record) in the database.
 let mutableDoc = new MutableDocument()
     .setFloat("version", 2.0)
-    .setString("type", "SDK");
+    .setString("type", "SDK")
+    .setString("company", "Ionic");
 
 // Save it to the database.
-await database.save(mutableDoc);
+await this.database.save(mutableDoc);
+```
 
+Run a simple Query:
 
-
+```typescript
 // Create a query to fetch documents of type SDK.
-let query = QueryBuilder.select(SelectResult.all())
+let query = QueryBuilder.select(SelectResult.property("version"),
+        SelectResult.property("type"),
+        SelectResult.property("company"))
     .from(DataSource.database(database))
     .where(Expression.property("type").equalTo(Expression.string("SDK")));
-let result = await query.execute();
-console.log("Number of rows ::  " + result.allResults().size());
+const result = await (await query.execute()).allResults();
+console.log("Number of rows:  " + result.size());
+```
 
+Build and run. You should see a row count of one printed to the console, as the document was successfully persisted to the database.
+
+Bi-directional replications with Sync Gateway:
+
+```typescript
 // Create replicators to push and pull changes to and from the cloud.
 let targetEndpoint = new URLEndpoint(new URI("ws://localhost:4984/example_sg_db"));
 let replConfig = new ReplicatorConfiguration(database, targetEndpoint);
@@ -99,7 +137,7 @@ replicator.addChangeListener((status) => {
 replicator.start();
 ```
 
-Build and run. You should see the document ID and property printed to the console. The document was successfully persisted to the database.
+Beyond these docs, reference [Couchbase Lite's documentation](https://docs.couchbase.com/couchbase-lite/current/swift.html#blobs) for more functionality details and examples.
 
 ## Database
 
@@ -112,7 +150,7 @@ let config = new DatabaseConfiguration();
 let database = new Database("my-database", config);
 ```
 
-Just as before, the database will be created in a default location. Alternatively, the `Database(name: string, config: DatabaseConfiguration)` initializer can be used to provide specific options in the [`DatabaseConfiguration`](http://docs.couchbase.com/mobile/2.0/couchbase-lite-java/db022/com/couchbase/lite/DatabaseConfiguration.html) object such as the database directory.
+The database will be created on the device. Alternatively, the `Database(name: string, config: DatabaseConfiguration)` initializer can be used to provide specific options in the [`DatabaseConfiguration`](http://docs.couchbase.com/mobile/2.0/couchbase-lite-java/db022/com/couchbase/lite/DatabaseConfiguration.html) object such as the database directory.
 
 ### Loading a pre-built Database
 
@@ -163,7 +201,7 @@ Changes to the document are persisted to the database when the `save` method is 
 
 ### Typed Accessors
 
-The `Document` class now offers a set of `property accessors` for various scalar types, including boolean, integers, floating-point and strings. These accessors take care of converting to/from JSON encoding, and make sure you get the type you’re expecting.
+The `Document` class offers a set of `property accessors` for various scalar types, including boolean, integers, floating-point and strings. These accessors take care of converting to/from JSON encoding, and make sure you get the type you’re expecting.
 
 In addition, as a convenience we offer `Date` accessors. Dates are a common data type, but JSON doesn’t natively support them, so the convention is to store them as strings in ISO-8601 format. The following example sets the date on the `createdAt` property and reads it back using the `document.getDate(String key)` accessor method.
 
@@ -176,7 +214,9 @@ If the property doesn’t exist in the document it will return the default value
 
 ### Batch Operations
 
-Not yet supported. Please let us know if you need this feature and we will work to add it ASAP <!--
+Grouping together multiple changes to the database at once.
+
+*Not yet supported.* Please [reach out](https://ionicframework.com/enterprise/contact) if you need this feature. <!--
 <h3 id="batch-operations"><a class="anchor" href="#batch-operations"></a>Batch operations</h3>
 <div class="paragraph">
 <p>If you’re making multiple changes to a database at once, it’s faster to group them together.
@@ -211,7 +251,9 @@ But Couchbase Mobile is a distributed system, and due to the way replication wor
 
 ## Blobs
 
-Not yet supported. Please let us know if you need this feature and we will work to add it ASAP.
+Storing large data, such as images.
+
+*Not yet supported.* Please [reach out](https://ionicframework.com/enterprise/contact) if you need this feature.
 
 <!--
 We’ve renamed "attachments" to "blobs".
@@ -258,7 +300,7 @@ Notice that the blob identifier in the URL path is "blob_1" (not "avatar").
 
 ## Query
 
-Database queries have changed significantly. Instead of the map/reduce views used in 1.x, they’re now based on expressions, of the form "return ____ from documents where ____, ordered by ____", with semantics based on Couchbase’s N1QL query language.
+Database queries are based on expressions, of the form "return __ from documents where __, ordered by __", with semantics based on Couchbase’s N1QL query language.
 
 There are several parts to specifying a query:
 
@@ -269,11 +311,11 @@ There are several parts to specifying a query:
 * GROUP BY: specifies the query criteria to group rows by.
 * ORDER BY: specifies the query criteria to sort the rows in the result.
 
-### SELECT statement</h3> 
+### SELECT statement
 
 With the SELECT statement, you can query and manipulate JSON data. With projections, you retrieve just the fields that you need and not the entire document.
 
-A `SelectResult` represents a single return value of the query statement. You can specify a comma separated list of `SelectResult` expressions in the select statement of your query. For instance the following select statement queries for the document `_id` as well as the `type` and `name` properties of all documents in the database. In the query result, we print the `_id` and `name` properties of each row using the property name getter method.
+A `SelectResult` represents a single return value of the query statement. You can specify a comma separated list of `SelectResult` expressions in the select statement of your query. For instance, the following select statement queries for the document `_id` as well as the `type` and `name` properties of all documents in the database. In the query result, we print the `_id` and `name` properties of each row using the property name getter method.
 
 ```json
 {
@@ -293,8 +335,8 @@ let query = QueryBuilder
     .orderBy(Ordering.expression(Meta.id));
 
 try {
-    let rs = await query.execute();
-    for (let result of rs) {
+    const resultSet = await (await query.execute()).allResults();
+    for (let result of resultSet) {
         console.log("Sample", String.format("hotel id -> %s", result.getString("id")));
         console.log("Sample", String.format("hotel name -> %s", result.getString("name")));
     }
@@ -309,13 +351,24 @@ The `SelectResult.all()` method can be used to query all the properties of a doc
 let query = QueryBuilder
     .select(SelectResult.all())
     .from(DataSource.database(database))
-    .where(Expression.property("type").equalTo(Expression.string("hotel")));
+    .where(Expression.property("type").equalTo(Expression.string("airline")));
+
+const results = await (await query.execute()).allResults();
+
+for (var key in results) {
+    // SelectResult.all() returns all properties, but puts them into this JSON format:
+    // [ { "*": { version: "2.0", type: "SDK", company: "Ionic" } } ]
+    // Couchbase can query multiple databases at once, so "*" represents just this single database.
+    let singleResult = results[key]["*"];
+
+    // do something with the data
+}
 ```
 
 ```json
 [
     {
-        "travel-sample": {
+        "*": {
             "callsign": "MILE-AIR",
             "country": "United States",
             "iata": "Q5",
@@ -326,7 +379,7 @@ let query = QueryBuilder
         }
     },
     {
-        "travel-sample": {
+        "*": {
             "callsign": "TXW",
             "country": "United States",
             "iata": "TQ",
@@ -337,6 +390,44 @@ let query = QueryBuilder
         }
     }
 ]
+```
+
+#### Retrieve nested document objects
+
+```json
+{
+    "_id": "airport123",
+    "type": "airport",
+    "country": "United States",
+    "geo": { "altitude": 456 },
+    "tz": "America/Anchorage"
+}
+```
+
+In the above example, access nested objects like `altitude` using periods (`geo.altitude`):
+
+```typescript
+let query = QueryBuilder
+    .select(SelectResult.property("geo.altitude"))
+    .from(DataSource.database(database));
+```
+
+#### Retrieve All Unique Values for One Column
+
+Retrieve all unique values in the database for one specific column of data. Useful for populating [dropdown controls](https://ionicframework.com/docs/api/select) as part of a search interface, for example.
+
+```typescript
+// Find all unique Hotel names, for example
+// documentPropertyName = "hotel"
+public async getAllUniqueValues(documentPropertyName: string) {
+    const query = QueryBuilder.selectDistinct(
+        SelectResult.property(documentPropertyName))
+      .from(DataSource.database(this.database))
+      .orderBy(Ordering.property(documentPropertyName).ascending());
+
+    const results = await (await query.execute()).allResults();
+    return results.map(x => x[documentPropertyName]);
+}
 ```
 
 ### WHERE Statement
@@ -361,7 +452,7 @@ let query = QueryBuilder
     .from(DataSource.database(database))
     .where(Expression.property("type").equalTo(Expression.string("hotel")))
     .limit(Expression.intValue(10));
-let rs = await query.execute();
+let rs = await (await query.execute()).allResults();
 for (let result of rs) {
     let all = result.getDictionary(DATABASE_NAME);
     console.log("Sample", String.format("name -> %s", all.getString("name")));
@@ -393,7 +484,7 @@ let query = QueryBuilder
     .from(DataSource.database(database))
     .where(Expression.property("type").equalTo(Expression.string("hotel"))
         .and(ArrayFunction.contains(Expression.property("public_likes"), Expression.string("Armani Langworth"))));
-let rs = await query.execute();
+let rs = await (await query.execute()).allResults();
 for (let result of rs)
     console.log("Sample", String.format("public_likes -> %s", result.getArray("public_likes").toList()));
 ```
@@ -428,20 +519,17 @@ let query = QueryBuilder
     .from(DataSource.database(database))
     .where(Expression.property("type").equalTo(Expression.string("landmark"))
         .and(Expression.property("name").like(Expression.string("Royal Engineers Museum"))));
-let rs = await query.execute();
+let rs = await (await query.execute()).allResults();
 for (let result of rs) {
     console.log("Sample", `name -> ${result.getString("name")}`);
 }
-````
+```
 
 #### Wildcard Match
 
-We can use <code>%</code> sign within a <code>like</code> expression to do a wildcard match against zero or more characters.
-Using wildcards allows you to have some fuzziness in your search string.
+We can use `%` sign within a `like` expression to do a wildcard match against zero or more characters. Using wildcards allows you to have some fuzziness in your search string.
 
-In the example below, we are looking for documents of <code>type</code> "landmark" where the name property matches any string that begins with "eng" followed by zero or more characters, the letter "e", followed by zero or more characters.
-The following query will return "landmark" type documents with name matching "Engineers", "engine", "english egg" , "England Eagle" and so on.
-Notice that the matches may span word boundaries.
+In the example below, we are looking for documents of `type` "landmark" where the name property matches any string that begins with "eng" followed by zero or more characters, the letter "e", followed by zero or more characters. The following query will return "landmark" type documents with name matching "Engineers", "engine", "english egg" , "England Eagle" and so on. Notice that the matches may span word boundaries.
 
 ```typescript
 let query = QueryBuilder
@@ -451,9 +539,27 @@ let query = QueryBuilder
     .from(DataSource.database(database))
     .where(Expression.property("type").equalTo(Expression.string("landmark"))
         .and(Expression.property("name").like(Expression.string("Eng%e%"))));
-let rs = await query.execute();
+let rs = await (await query.execute()).allResults();
 for (let result of rs)
     console.log("Sample", `name -> ${result.getString("name")}`);
+```
+
+A reusable function can easily be created that formats an expression, usable in a Where clause, for fuzzy searching:
+
+```typescript
+// Specify a reserved word
+private EMPTY_PLACEHOLDER = "Any";
+
+private formatWildcardExpression(propValue) {
+    return Expression.string(
+        `%${propValue === this.EMPTY_PLACEHOLDER ? "" : propValue}%`);
+}
+```
+
+```typescript
+// snippet:
+.where(Expression.property("office").like(
+    this.formatWildcardExpression(office))
 ```
 
 #### Wildcard Character Match
@@ -470,7 +576,7 @@ let query = QueryBuilder
     .from(DataSource.database(database))
     .where(Expression.property("type").equalTo(Expression.string("landmark"))
         .and(Expression.property("name").like(Expression.string("Eng____r"))));
-let rs = await query.execute();
+let rs = await (await query.execute()).allResults();
 for (let result of rs)
     console.log("Sample", `name -> ${result.getString("name")}`);
 ```
@@ -489,7 +595,7 @@ let query = QueryBuilder
     .from(DataSource.database(database))
     .where(Expression.property("type").equalTo(Expression.string("landmark"))
         .and(Expression.property("name").regex(Expression.string("\\bEng.*r\\b"))));
-let rs = await query.execute();
+let rs = await (await query.execute()).allResults();
 for (let result of rs)
     console.log("Sample", `name -> ${result.getString("name")}`);
 ```
@@ -513,7 +619,7 @@ let query = QueryBuilder.select(
     .where(Expression.property("type").from("route").equalTo(Expression.string("route"))
         .and(Expression.property("type").from("airline").equalTo(Expression.string("airline")))
         .and(Expression.property("sourceairport").from("route").equalTo(Expression.string("RIX"))));
-let rs = await query.execute();
+let rs = await (await query.execute()).allResults();
 for (let result of rs)
     console.log("Sample", String.format("%s", result.toMap().toString()));
 ```
@@ -543,7 +649,7 @@ let query = QueryBuilder.select(
     .groupBy(Expression.property("country"),
         Expression.property("tz"))
     .orderBy(Ordering.expression(Function.count(Expression.string("*"))).descending());
-let rs = await query.execute();
+let rs = await (await query.execute()).allResults();
 for (let result of rs)
     console.log("Sample",
         String.format("There are %d airports on the %s timezone located in %s and above 300ft",
@@ -571,7 +677,7 @@ let query = QueryBuilder
     .where(Expression.property("type").equalTo(Expression.string("hotel")))
     .orderBy(Ordering.property("name").ascending())
     .limit(Expression.intValue(10));
-let rs = await query.execute();
+let rs = await (await query.execute()).allResults();
 for (let result of rs)
     console.log("Sample", result.toMap());
 ```
@@ -627,7 +733,7 @@ let whereClause = FullTextExpression.index("nameFTSIndex").match("buy");
 let ftsQuery = QueryBuilder.select(SelectResult.expression(Meta.id))
     .from(DataSource.database(database))
     .where(whereClause);
-let ftsQueryResult = await ftsQuery.execute();
+let ftsQueryResult = await (await ftsQuery.execute()).allResults();
 for (let result of ftsQueryResult)
     console.log(String.format("document properties %s", result.getString(0)));
 ```
