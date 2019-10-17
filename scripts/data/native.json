@@ -1267,6 +1267,20 @@
     }
   },
   {
+    "packageName": "@ionic-native/emm-app-config",
+    "displayName": "Emm App Config",
+    "description": "\n\nThis plugin provides information on EMM application configuration.\n\nRequires the Cordova plugin: `cordova-plugin-emm-app-config`. For more info, please see the [Cordova EMM App Config Plugin Docs](https://github.com/oracle/cordova-plugin-emm-app-config).\n\n",
+    "usage": "\n```typescript\nimport { EmmAppConfig } from '@ionic-native/emm-app-config/ngx';\n\nconstructor(private readonly emmAppConfig: EmmAppConfig) {}\n\n...\n\n// Get all the values of the emm app configuration\nconst values = this.emmAppConfig.getValue();\n\n// Get specific value of the emm app configuration\nconst value = this.emmAppConfig.getValue('serverUrl');\n\n// Get an event every time the emm app config changes\nthis.emmAppConfig.registerChangedListener().subscribe(() => console.log('App config changes'));\n```",
+    "platforms": [
+      "Android",
+      "iOS"
+    ],
+    "repo": "https://github.com/oracle/cordova-plugin-emm-app-config",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-emm-app-config"
+    }
+  },
+  {
     "packageName": "@ionic-native/estimote-beacons",
     "displayName": "Estimote Beacons\n",
     "description": "\nThis plugin enables communication between a phone and Estimote Beacons peripherals.\n",
