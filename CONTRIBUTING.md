@@ -107,6 +107,27 @@ The Markdown in `src/pages` does not contain all of the Ionic documentation's co
 - Paths matching `/docs/native/*` are built from the [Ionic Native](https://github.com/ionic-team/ionic-native) source code
 - Paths matching `/docs/cli/commands/*` are built from the [Ionic CLI](https://github.com/ionic-team/ionic-cli) source code
 
+#### Updating Ionic Native Community Plugins
+
+To add or update an Ionic Native [community plugin](/docs/native/overview):
+1) Open a pull request on the [Ionic Native](https://github.com/ionic-team/ionic-native) repository (both code or documentation).
+2) Once the change has been approved and merged into master by the Ionic team, do the following steps:
+
+```shell
+# Clone Ionic Native repo
+git clone git@github.com:ionic-team/ionic-native.git
+cd ionic-native
+
+# Run scripts to generate the plugin JSON file
+npm ci
+npm run docs-json
+
+# Overwrite the ionic-docs native.json file with the new changes
+mv scripts/docs-json/native/plugins.json /path/to/docs/scripts/data/native.json
+```
+
+3) Open a PR in the `ionic-docs` repo, submitting the new `native.json` file.
+
 ---
 
 ## Translation
