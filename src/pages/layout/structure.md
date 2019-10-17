@@ -200,7 +200,7 @@ By default, the split pane view will show when the screen is larger than `768px`
       </ion-content>
     </ion-menu>
 
-    <ion-page class="ion-page" main>
+    <div class="ion-page" main>
       <ion-header>
         <ion-toolbar>
           <ion-buttons slot="start">
@@ -216,7 +216,7 @@ By default, the split pane view will show when the screen is larger than `768px`
       <ion-content class="ion-padding">
         <h1>Main Content</h1>
       </ion-content>
-    </ion-page>
+    </div>
 
   </ion-split-pane>
 </ion-app>
