@@ -118,12 +118,15 @@ To add or update an Ionic Native [community plugin](/docs/native/overview):
 git clone git@github.com:ionic-team/ionic-native.git
 cd ionic-native
 
+# Build the Ionic Native project
+npm run build
+
 # Run scripts to generate the plugin JSON file
 npm ci
 npm run docs-json
 
 # Overwrite the ionic-docs native.json file with the new changes
-mv scripts/docs-json/native/plugins.json /path/to/docs/scripts/data/native.json
+mv scripts/docs-json/plugins.json /path/to/docs/scripts/data/native.json
 ```
 
 3) Open a PR in the `ionic-docs` repo, submitting the new `native.json` file.
