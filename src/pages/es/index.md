@@ -19,7 +19,7 @@ Una guía paso a paso para instalar y configurar su sistema para crear aplicacio
 
 <docs-card header="CLI" href="/docs/cli" icon="/docs/assets/icons/guide-cli-icon.png"> 
 
-La interfaz de línea de comandos de Ionic es su herramienta de acceso para desarrollar aplicaciones de Ionic.</docs-card>
+The Ionic command-line interface is your go-to tool for developing Ionic apps.</docs-card>
 
 <docs-card header="Native APIs" href="/docs/native" icon="/docs/assets/icons/guide-nativeapis-icon.png"> 
 
