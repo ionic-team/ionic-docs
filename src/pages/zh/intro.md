@@ -53,9 +53,13 @@ One of the main goals with Ionic 4 was to remove any hard requirement on a singl
 
 Angular has always been at the center of what makes Ionic great. While the core components have been written to work as a standalone Web Component library, the `@ionic/angular` package makes integration with the Angular ecosystem a breeze. `@ionic/angular` includes all the functionality that Angular developers would expect coming from Ionic 2/3, and integrates with core Angular libraries, like the Angular router.
 
+### React
+
+Ionic now has official support for the popular React library. Ionic React lets React developers use their existing web skills to build apps that target iOS, Android, the web, and the desktop. With `@ionic/react`, you can use all the core Ionic components, but in a way that feels like using native React components.
+
 ### Future Support
 
-Support for other frameworks are expected in future release. Currently official bindings for Vue and React are being developed, though some components Just Work out of the box in those frameworks.
+Support for other frameworks are expected in future release. Currently official bindings for Vue are being developed, though some components just work out of the box in those frameworks.
 
 ## Ionic Framework V4+
 
