@@ -15,11 +15,11 @@ contributors:
 
 ## 从Ionic3.0迁移至Ionic4.0-概览
 
-We suggest the following general process when migrating an existing application from Ionic 3 to 4:
+我们建议将目前的申请从Ionic 3迁移到4时，采用下列步骤：
 
-1. Generate a new project using the `blank` starter (see [Starting an App](/docs/building/starting))
-2. Copy any Angular services from `src/providers` to `src/app/services` 
-   - Services should include `{ providedIn: 'root' }` in the `@Injectable()` decorator. For details, please see Angular [provider docs](https://angular.io/guide/providers).
+1. 使用 `blank`模版开始生成一个新项目 (参见 [开始应用](/docs/building/starting))
+2. 将所有Angular的provider从`src/providers`复制到`src/app/services` 
+   - 在装饰器的`@injectable()`中，服务应包括 `{ providedIn: 'root' }` 详情请查看 Angular的 [provider文档](https://angular.io/guide/providers)。
 3. Copy the app's other root-level items (pipes, components, etc) keeping in mind that the directory structure changes from `src/components` to `src/app/components`, etc.
 4. Copy global Sass styling from `src/app/app.scss` to `src/global.scss`
 5. Copy the rest of the application, page by page or feature by feature, keeping the following items in mind: 
