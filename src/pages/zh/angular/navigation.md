@@ -85,7 +85,7 @@ RouterModule.forRoot([
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="ion-padding">
   <ion-button [routerLink]="['/detail']">Go to detail</ion-button>
 </ion-content>
 ```

@@ -85,7 +85,7 @@ Maintenant depuis le `LoginComponent`, nous pouvons utiliser le code HTML suivan
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="ion-padding">
   <ion-button [routerLink]="['/detail']">Go to detail</ion-button>
 </ion-content>
 ```
