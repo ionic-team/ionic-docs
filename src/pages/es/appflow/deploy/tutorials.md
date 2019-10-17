@@ -62,7 +62,7 @@ Here's an example template/JS for a page where we allow users to toggle to pull 
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="ion-padding">
   <h3>Settings</h3>
 
   <p>I'm connected to the {{ deployChannel }}.</p>
