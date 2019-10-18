@@ -2,7 +2,7 @@
 title: Ionic Nativo
 ---
 
-Para los equipos que crean aplicaciones de misión crítica, Ionic Native es una colección curada de complementos e integraciones que Ionic crea y admite, con garantías de estabilidad y garantizadas para funcionar en todas las plataformas y versiones principales.
+For teams building mission-critical apps, Ionic Native is a curated collection of plugins and solutions that are built and supported by Ionic, with stability assurances and guaranteed to work on all major platforms and versions.
 
 ## Why Ionic Native?
 
