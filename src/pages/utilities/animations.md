@@ -9,7 +9,7 @@ nextUrl: '/docs/utilities/config'
 
 ## Overview
 
-Ionic Animations is a utility that allows developers to build complex animations in a platform agnostic manner. Developers do not need to be using a particular framework such as React or Angular, nor do they even need to be building an Ionic app. As long as developers have access to `@ionic/core`, they will have access to all of Ionic Animations. Ionic Animations is available starting in `@ionic/core@5+`.
+Ionic Animations is a utility that allows developers to build complex animations in a platform agnostic manner. Developers do not need to be using a particular framework such as React or Angular, nor do they even need to be building an Ionic app. As long as developers have access to v5.0 or greater of `@ionic/core`, they will have access to all of Ionic Animations.
 
 Building efficient animations can be tricky. Developers are often limited by the libraries available to them as well as the hardware that their apps run on. On top of that, many animation libraries use a JavaScript-driven approach to running animations where they handle the calculation of your animation's values at every step in a `requestAnimationFrame` loop. This reduces the scalability of your animations as the library is constantly computing values and using up CPU time.
 
