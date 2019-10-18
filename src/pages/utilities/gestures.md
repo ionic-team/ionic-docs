@@ -144,13 +144,13 @@ See our guide on implementing gesture animations: [Gesture Animations with Ionic
 
 | Browser/Platform     | Supported Versions |
 | -------------------- | ------------------ |
-| **Chrome**           | 22+  |
-| **Safari**           | 9+   |   
-| **Firefox**          | 32+  |     
-| **IE/Edge**          | 11+  |    
-| **Opera**            | 30+  |
-| **iOS**              | 9+   |
-| **Android**          | 5+   |      
+| **Chrome**           | 22+                |
+| **Safari**           | 9+                 |   
+| **Firefox**          | 32+                |     
+| **IE/Edge**          | 11+                |    
+| **Opera**            | 30+                |
+| **iOS**              | 9+                 |
+| **Android**          | 5+                 |      
 
 ## Types
 

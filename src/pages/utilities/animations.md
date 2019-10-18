@@ -9,7 +9,7 @@ nextUrl: '/docs/utilities/config'
 
 ## Overview
 
-Ionic Animations is a utility that allows developers to build complex animations in a platform agnostic manner. Developers do not need to be using a particular framework such as React or Angular, nor do they even need to be building an Ionic app. As long as developers have access to `@ionic/core`, they will have access to all of Ionic Animations.
+Ionic Animations is a utility that allows developers to build complex animations in a platform agnostic manner. Developers do not need to be using a particular framework such as React or Angular, nor do they even need to be building an Ionic app. As long as developers have access to `@ionic/core`, they will have access to all of Ionic Animations. Ionic Animations is available starting in `@ionic/core@5+`.
 
 Building efficient animations can be tricky. Developers are often limited by the libraries available to them as well as the hardware that their apps run on. On top of that, many animation libraries use a JavaScript-driven approach to running animations where they handle the calculation of your animation's values at every step in a `requestAnimationFrame` loop. This reduces the scalability of your animations as the library is constantly computing values and using up CPU time.
 
@@ -28,7 +28,7 @@ createAnimation()
   .fromTo('opacity', 1, 0.2);
 ```
 
-In the example above, an animation that changes the transform and opacity on the `.square` element has been created. This animation will run an infinite number of times, and each iteration of the animation will last 1500ms.
+In the example above, an animation that changes the opacity on the `.square` element and moves it from left to right along the X axis has been created. This animation will run an infinite number of times, and each iteration of the animation will last 1500ms.
 
 <docs-codepen user="ionic" slug="bGbMojP"></docs-codepen>
 
@@ -288,13 +288,13 @@ For information on which CSS properties cause layouts or paints to occur, see [C
 
 | Browser/Platform     | Supported Versions |
 | -------------------- | ------------------ |
-| **Chrome**           | 43+  |
-| **Safari**           | 9+   |   
-| **Firefox**          | 32+  |     
-| **IE/Edge**          | 11+  |    
-| **Opera**            | 30+  |
-| **iOS**              | 9+   |
-| **Android**          | 5+ |      
+| **Chrome**           | 43+                |
+| **Safari**           | 9+                 |   
+| **Firefox**          | 32+                |     
+| **IE/Edge**          | 11+                |    
+| **Opera**            | 30+                |
+| **iOS**              | 9+                 |
+| **Android**          | 5+                 |      
 
 > Due to a bug in Safari versions 9-11, stepping through animations via `progressStep` is not supported. This is supported on Safari 12+.
 
