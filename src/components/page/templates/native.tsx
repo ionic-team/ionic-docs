@@ -7,14 +7,23 @@ export default (props) => {
   const headings = [...page.headings];
   const repo = renderRepo(page.repo);
   const installation = renderInstallation(page.cordova, page.package);
+  const cordovaPromo = renderCordovaPromotion(page.premierSlug);
   const platforms = renderPlatforms(page.platforms);
   const usage = renderUsage(page.codeUsage);
   const capIncompat = renderCapIncompat(page.capacitorIncompatible);
+  const isPremier = renderPremier(page.premierSlug);
 
   if (installation) {
     headings.push({
       text: 'Installation',
       href: '#installation'
+    });
+  }
+
+  if (isPremier) {
+    headings.push({
+      text: 'Premier Version Available',
+      href: '#premier'
     });
   }
 
@@ -47,6 +56,8 @@ export default (props) => {
         {toHypertext(h, page.body)}
       </section>
       { repo }
+      { isPremier }
+      { cordovaPromo }
       { installation }
       { platforms }
       { capIncompat }
@@ -63,11 +74,23 @@ const renderRepo = (repo: string) => {
   return (
     <section>
       <a href={repo} class="outbound" target="_blank"><GitBranch/> { repo }</a>
+    </section>
+  );
+};
+
+const renderCordovaPromotion = (isPremier: string) => {
+  // Only show one promo message
+  if (isPremier) {
+    return;
+  }
+
+  return (
+    <section>
       <h2>Stuck on a Cordova issue?</h2>
-      <docs-card class="cordova-ee-card" header="Don't waste precious time on plugin issues." href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">
+      <docs-card class="cordova-ee-card" header="Don't waste precious time on plugin issues." href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native">
         <div>
           <img src="/docs/assets/icons/native-cordova-bot.png" class="cordova-ee-img" />
-          <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic's experts offer official maintenance, support, and integration help.</p>
+          <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
           <docs-button class="native-ee-detail">Contact Us Today!</docs-button>
         </div>
       </docs-card>
@@ -94,7 +117,7 @@ const renderInstallation = (cordova: string, npm: string) => {
         </docs-tab>
         <docs-tab tab="Enterprise">
           <blockquote>Ionic Native Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
-            <a class="btn" href="/docs/native#enterprise-edition">Learn More</a> or if you're interested in an enterprise version of this plugin <a class="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a></blockquote>
+            <a class="btn" href="/docs/enterprise">Learn More</a> or if you're interested in an enterprise version of this plugin <a class="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a></blockquote>
         </docs-tab>
       </docs-tabs>
     </section>
@@ -146,6 +169,28 @@ const renderCapIncompat = (capacitorIncompatible: boolean) => {
         <a href="#capacitor">Capacitor</a>
       </h2>
       Not compatible
+    </section>
+  );
+};
+
+const renderPremier = (premierSlug: string) => {
+  if (!premierSlug) {
+    return null;
+  }
+
+  return (
+    <section>
+      <h2 id="premier">
+        <a href="#premier">Premier Version Available</a>
+      </h2>
+      <docs-card class="cordova-ee-card"
+        header="Plugins and solutions built and supported by Ionic." href={`/docs/enterprise/${premierSlug}`}>
+        <div>
+          <img src="/docs/assets/icons/native-enterprise.png" class="cordova-ee-img" />
+          <p>Featuring regular release cycles, security and bug fixes, and guaranteed SLAs.</p>
+          <docs-button class="native-ee-detail">Available here</docs-button>
+        </div>
+      </docs-card>
     </section>
   );
 };
