@@ -110,6 +110,7 @@ function getVersionSymbol(version) {
   const filteredVersions = versions.filter(
     v => version.startsWith(`${v.minor}.`)
   );
+  filteredVersions.unshift(fallbackVersion);
 
   return filteredVersions[filteredVersions.length - 1].symbol;
 }
@@ -119,6 +120,7 @@ function getVersionElement(version) {
   const filteredVersions = versions.filter(
     v => version.startsWith(`${v.minor}.`)
   );
+  filteredVersions.unshift(fallbackVersion);
 
   return filteredVersions[filteredVersions.length - 1].element;
 }
@@ -275,3 +277,5 @@ const versions = [
     'element': 'Copper'
   }
 ];
+
+const fallbackVersion = { 'minor': '9201', 'symbol': 'Uo', 'element': 'Unobtainium' };
