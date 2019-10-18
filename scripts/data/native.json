@@ -196,7 +196,8 @@
     "repo": "https://github.com/NeoLSN/cordova-plugin-android-permissions",
     "cordovaPlugin": {
       "name": "cordova-plugin-android-permissions"
-    }
+    },
+    "premierSlug": "android-permissions"
   },
   {
     "packageName": "@ionic-native/anyline",
@@ -328,7 +329,8 @@
     "repo": "https://github.com/pushandplay/cordova-plugin-apprate",
     "cordovaPlugin": {
       "name": "cordova-plugin-apprate"
-    }
+    },
+    "premierSlug": "app-rate"
   },
   {
     "packageName": "@ionic-native/app-update",
@@ -356,7 +358,8 @@
     "repo": "https://github.com/whiteoctober/cordova-plugin-app-version",
     "cordovaPlugin": {
       "name": "cordova-plugin-app-version"
-    }
+    },
+    "premierSlug": "app-version"
   },
   {
     "packageName": "@ionic-native/apple-pay",
@@ -382,7 +385,8 @@
     "repo": "https://github.com/tomavic/cordova-apple-wallet",
     "cordovaPlugin": {
       "name": "cordova-apple-wallet"
-    }
+    },
+    "premierSlug": "apple-payment-pass"
   },
   {
     "packageName": "@ionic-native/appodeal",
@@ -509,7 +513,8 @@
     "repo": "https://github.com/katzer/cordova-plugin-badge",
     "cordovaPlugin": {
       "name": "cordova-plugin-badge"
-    }
+    },
+    "premierSlug": "badge"
   },
   {
     "packageName": "@ionic-native/baidu-push",
@@ -772,7 +777,8 @@
     "repo": "https://github.com/EddyVerbruggen/Calendar-PhoneGap-Plugin",
     "cordovaPlugin": {
       "name": "cordova-plugin-calendar"
-    }
+    },
+    "premierSlug": "calendar"
   },
   {
     "packageName": "@ionic-native/call-directory",
@@ -846,7 +852,8 @@
     "repo": "https://github.com/apache/cordova-plugin-camera",
     "cordovaPlugin": {
       "name": "cordova-plugin-camera"
-    }
+    },
+    "premierSlug": "camera"
   },
   {
     "packageName": "@ionic-native/card-io",
@@ -916,7 +923,8 @@
     "repo": "https://github.com/ihadeed/cordova-clipboard",
     "cordovaPlugin": {
       "name": "cordova-clipboard"
-    }
+    },
+    "premierSlug": "clipboard"
   },
   {
     "packageName": "@ionic-native/cloud-settings",
@@ -982,7 +990,8 @@
     "repo": "https://github.com/apache/cordova-plugin-contacts",
     "cordovaPlugin": {
       "name": "cordova-plugin-contacts"
-    }
+    },
+    "premierSlug": "contacts"
   },
   {
     "packageName": "@ionic-native/couchbase-lite",
@@ -1060,7 +1069,8 @@
     ],
     "cordovaPlugin": {
       "name": "ionic-plugin-deeplinks"
-    }
+    },
+    "premierSlug": "deeplinks"
   },
   {
     "packageName": "@ionic-native/device-accounts",
@@ -1086,7 +1096,8 @@
     "repo": "https://github.com/VVelda/device-feedback",
     "cordovaPlugin": {
       "name": "cordova-plugin-velda-devicefeedback"
-    }
+    },
+    "premierSlug": "vibration"
   },
   {
     "packageName": "@ionic-native/device-motion",
@@ -1146,7 +1157,8 @@
     "repo": "https://github.com/apache/cordova-plugin-device",
     "cordovaPlugin": {
       "name": "cordova-plugin-device"
-    }
+    },
+    "premierSlug": "device"
   },
   {
     "packageName": "@ionic-native/diagnostic",
@@ -1178,7 +1190,8 @@
     "repo": "https://github.com/apache/cordova-plugin-dialogs",
     "cordovaPlugin": {
       "name": "cordova-plugin-dialogs"
-    }
+    },
+    "premierSlug": "dialogs"
   },
   {
     "packageName": "@ionic-native/dns",
@@ -1264,7 +1277,8 @@
     "repo": "https://github.com/katzer/cordova-plugin-email-composer",
     "cordovaPlugin": {
       "name": "cordova-plugin-email-composer"
-    }
+    },
+    "premierSlug": "email-composer"
   },
   {
     "packageName": "@ionic-native/emm-app-config",
@@ -1412,7 +1426,8 @@
     "repo": "https://github.com/hiddentao/cordova-plugin-filepath",
     "cordovaPlugin": {
       "name": "cordova-plugin-filepath"
-    }
+    },
+    "premierSlug": "filesystem"
   },
   {
     "packageName": "@ionic-native/file-picker",
@@ -1460,7 +1475,8 @@
     "repo": "https://github.com/apache/cordova-plugin-file",
     "cordovaPlugin": {
       "name": "cordova-plugin-file"
-    }
+    },
+    "premierSlug": "filesystem"
   },
   {
     "packageName": "@ionic-native/fingerprint-aio",
@@ -1735,7 +1751,8 @@
     ],
     "cordovaPlugin": {
       "name": "cordova-plugin-geolocation"
-    }
+    },
+    "premierSlug": "geolocation"
   },
   {
     "packageName": "@ionic-native/globalization",
@@ -1752,7 +1769,8 @@
     "repo": "https://github.com/apache/cordova-plugin-globalization",
     "cordovaPlugin": {
       "name": "cordova-plugin-globalization"
-    }
+    },
+    "premierSlug": "globalization"
   },
   {
     "packageName": "@ionic-native/google-analytics",
@@ -2017,7 +2035,8 @@
     "repo": "https://github.com/apache/cordova-plugin-inappbrowser",
     "cordovaPlugin": {
       "name": "cordova-plugin-inappbrowser"
-    }
+    },
+    "premierSlug": "inappbrowser"
   },
   {
     "packageName": "@ionic-native/in-app-purchase-2",
@@ -2209,7 +2228,8 @@
     "cordovaPlugin": {
       "name": "cordova-plugin-ionic-keyboard"
     },
-    "capacitorIncompatible": true
+    "capacitorIncompatible": true,
+    "premierSlug": "keyboard"
   },
   {
     "packageName": "@ionic-native/keychain-touch-id",
@@ -2397,7 +2417,8 @@
     "repo": "https://github.com/apache/cordova-plugin-media-capture",
     "cordovaPlugin": {
       "name": "cordova-plugin-media-capture"
-    }
+    },
+    "premierSlug": "media-capture"
   },
   {
     "packageName": "@ionic-native/media",
@@ -2413,7 +2434,8 @@
     "repo": "https://github.com/apache/cordova-plugin-media",
     "cordovaPlugin": {
       "name": "cordova-plugin-media"
-    }
+    },
+    "premierSlug": "media"
   },
   {
     "packageName": "@ionic-native/mixpanel",
@@ -2564,7 +2586,8 @@
     "repo": "https://github.com/TheCocoaProject/cordova-plugin-nativestorage",
     "cordovaPlugin": {
       "name": "cordova-plugin-nativestorage"
-    }
+    },
+    "premierSlug": "nativestorage"
   },
   {
     "packageName": "@ionic-native/navigation-bar",
@@ -2612,7 +2635,8 @@
     "repo": "https://github.com/apache/cordova-plugin-network-information",
     "cordovaPlugin": {
       "name": "cordova-plugin-network-information"
-    }
+    },
+    "premierSlug": "network-information"
   },
   {
     "packageName": "@ionic-native/nfc",
@@ -3005,7 +3029,8 @@
     "repo": "https://github.com/apache/cordova-plugin-screen-orientation",
     "cordovaPlugin": {
       "name": "cordova-plugin-screen-orientation"
-    }
+    },
+    "premierSlug": "screen-orientation"
   },
   {
     "packageName": "@ionic-native/screenshot",
@@ -3167,7 +3192,8 @@
     "repo": "https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin",
     "cordovaPlugin": {
       "name": "cordova-plugin-x-socialsharing"
-    }
+    },
+    "premierSlug": "social-sharing"
   },
   {
     "packageName": "@ionic-native/speech-recognition",
@@ -3228,7 +3254,8 @@
     "cordovaPlugin": {
       "name": "cordova-plugin-splashscreen"
     },
-    "capacitorIncompatible": true
+    "capacitorIncompatible": true,
+    "premierSlug": "splashscreen"
   },
   {
     "packageName": "@ionic-native/spotify-auth",
@@ -3338,7 +3365,8 @@
     "cordovaPlugin": {
       "name": "cordova-plugin-statusbar"
     },
-    "capacitorIncompatible": true
+    "capacitorIncompatible": true,
+    "premierSlug": "statusbar"
   },
   {
     "packageName": "@ionic-native/stepcounter",
@@ -3666,7 +3694,8 @@
     "repo": "https://github.com/apache/cordova-plugin-vibration",
     "cordovaPlugin": {
       "name": "cordova-plugin-vibration"
-    }
+    },
+    "premierSlug": "vibration"
   },
   {
     "packageName": "@ionic-native/video-capture-plus",
