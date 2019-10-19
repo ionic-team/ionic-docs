@@ -6,17 +6,37 @@ nextUrl: '/docs/utilities/platform'
 contributors:
   - liamdebeasi
   - mhartington
+  - nigelbpeck
 ---
 
 # Config
 
-The Config service provides a way to change the properties of components globally across an app. It can set the app mode, tab button layout, animations, and more.
+The Config service provides a way to change the properties of components. This can be done globally, at a platform level, or at a component level. To change a setting for testing, a parameter can be added to the URL. It can set the app mode, tab button layout, animations, and more.
 
 ## Usage
 
-### Global
+Any value can be added to config, and looked up at a later time in any component. A config value can come from anywhere and be anything, but there are default values for each mode (see "Config Options" later in this document). The theming documentation has a chart of the default mode configuration.
 
-#### Basic example
+### Checking Active Config
+
+The config that is currently in force can be checked using the `Config` API.
+
+```typescript
+import { Component } from '@angular/core';
+import { Config } from '@ionic/angular';
+@Component({...})
+export class HomePage {
+  constructor(private config: Config) {
+    const text = this.config.get('backButtonText', 'Default back button text.');
+  }
+}
+```
+
+Other options include `getBoolean` and `getNumber`. All support an optional fallback value as the second parameter. See API details at the end of this document for details.
+
+### Setting Globally
+
+Here we are passing our settings while importing the `IonicModule` module. This will disable the Material Design ripple effect across the app, as well as forcing the mode to be Material Design.
 
 ```typescript
 import { IonicModule } from '@ionic/angular';
@@ -35,9 +55,70 @@ import { IonicModule } from '@ionic/angular';
 })
 ```
 
-In the above example, we are disabling the Material Design ripple effect across the app, as well as forcing the mode to be Material Design.
+Here we are making the same change using the `Config` API. This can only be used to make changes globally.
 
-#### Customizing Animations
+```typescript
+import { Config } from '@ionic/angular';
+...
+this.config.set('rippleEffect', false);
+this.config.set('mode', 'md');
+```
+
+#### Per Platform
+
+Here is an example where settings can be overridden based on platform. This will specify that tabs should be placed at the top for the `ios` platform, and otherwise at the bottom.
+
+```typescript
+import { IonicModule } from 'ionic-angular';
+
+@NgModule({
+  ...
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot({
+      tabsPlacement: 'bottom',
+      platforms: {
+        ios: {
+          tabsPlacement: 'top',
+        }
+      }
+    }),
+    AppRoutingModule
+  ],
+  ...
+})
+```
+
+Here we are making the same change using the `Config` API. This can only be used to make changes globally. The platform is an optional first parameter for `config.set()`.
+
+```typescript
+import { Config } from '@ionic/angular';
+...
+this.config.set('tabsPlacement', 'bottom');
+this.config.set('ios', 'tabsPlacement', 'top');
+```
+
+### Setting for Components
+
+We can configure values at a component level. Take `tabsPlacement`, we can configure this as a property on our `ion-tabs`.
+
+```
+<ion-tabs tabsPlacement="top">
+  <ion-tab tabTitle="Dash" tabIcon="pulse" [root]="tabRoot"></ion-tab>
+</ion-tabs>
+```
+
+To set dynamically at a component level, `@ViewChild` can be used.
+
+### Testing with URL Parameters
+
+We can configure settings using URL parameters. This is useful for testing while in the browser. Simply add `?ionic<PROPERTYNAME>=<value>` to the url.
+
+```
+http://localhost:8100/?ionicTabsPlacement=bottom
+```
+
+### Customizing Animations
 
 ```typescript
 import { IonicModule } from '@ionic/angular';
@@ -93,28 +174,10 @@ import { IonicModule } from '@ionic/angular';
 
 In the above example, we are customizing the "enter" animation for the `ion-toast` component. When an `ion-toast` component is presented from the top, it will slide down instead of fading in.
 
-
-
-### By Component
-
-#### Basic Example
-
-```typescript
-import { Component } from '@angular/core';
-import { Config } from '@ionic/angular';
-@Component({...})
-export class HomePage {
-  constructor(private config: Config) {
-    const text = this.config.get('backButtonText');
-    this.config.set('backButtonIcon', 'home');
-  }
-}
-```
-
 ## Config Options
 
-Below is a list of config options that Ionic uses.
-
+The following chart displays each property with a description of what it controls.
+ 
 | Config                   | Type               | Description                                                                                              |
 |--------------------------|--------------------|----------------------------------------------------------------------------------------------------------|
 | `actionSheetEnter`       | `AnimationBuilder` | Provides a custom enter animation for all `ion-action-sheet`, overriding the default "animation".
@@ -147,3 +210,43 @@ Below is a list of config options that Ionic uses.
 | `tabButtonLayout`        | `TabButtonLayout`  | Overrides the default "layout" of all `ion-bar-button` across the whole application.
 | `toastEnter`             | `AnimationBuilder` | Provides a custom enter animation for all `ion-toast`, overriding the default "animation".
 | `toastLeave`             | `AnimationBuilder` | Provides a custom leave animation for all `ion-toast`, overriding the default "animation".
+
+## API
+
+### `get(key, fallbackValue)`
+  
+Returns a single config value, given a key.
+
+| Param             | Type               | Details                                                                                              |
+|-------------------------|--------------|------------------------------------------------------------------------------------------------------|
+| `key`             | `string`           | the key for the config value **Optional**
+| `fallbackValue`   | `any`              | a fallback value to use when the config value was not found, or is config value is `null`. Fallback value defaults to `null`. **Optional**
+| `key`             | `string`           | the key for the config value **Optional**
+
+### `getBoolean(key, fallbackValue)`
+  
+Same as `get()`, however always returns a boolean value. If the value from `get()` is `null`, then it'll return the `fallbackValue` which defaults to `false`. Otherwise, `getBoolean()` will return if the config value is truthy or not. It also returns `true` if the config value was the string value `true`.
+
+| Param             | Type               | Details                                                                                              |
+|-------------------|--------------------|------------------------------------------------------------------------------------------------------|
+| `key`             | `string`           | the key for the config value **Optional**
+| `fallbackValue`   | `boolean`          | a fallback value to use when the config value was `null`. Fallback value defaults to `false`. **Optional**
+
+### `getNumber(key, fallbackValue)`
+  
+Same as `get()`, however always returns a number value. Uses `parseFloat()` on the value received from `get()`. If the result from the parse is `NaN`, then it will return the value passed to `fallbackValue`. If no fallback value was provided then it’ll default to returning `NaN` when the result is not a valid number.
+
+| Param             | Type               | Details                                                                                              |
+|-------------------|--------------------|------------------------------------------------------------------------------------------------------|
+| `key`             | `string`           | the key for the config value **Optional**
+| `fallbackValue`   | `number`           | a fallback value to use when the config value turned out to be `NaN`. Fallback value defaults to `NaN`. **Optional**
+
+### `set(platform, key, value)`
+  
+Sets a single config value.
+
+| Param             | Type               | Details                                                                                              |
+|-------------------|--------------------|------------------------------------------------------------------------------------------------------|
+| `platform`        | `string`           | The platform (either 'ios' or 'android') that the config value should apply to. Leaving this blank will apply the config value to all platforms. **Optional**
+| `key`             | `string`           | The key used to look up the value at a later point in time. **Optional**
+| `value`           | `string`           | The config value being stored. **Optional**
