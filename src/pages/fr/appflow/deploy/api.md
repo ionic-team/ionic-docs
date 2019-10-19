@@ -406,7 +406,7 @@ async performAutomaticUpdate() {
     const resp = await Deploy.sync({updateMethod: 'auto'}, percentDone => {
       console.log(`Update is ${percentDone}% done!`);
     });
-    if (currentVersion.versionId !== resp.versionId){
+    if (!currentVersion || currentVersion.versionId !== resp.versionId){
       // We found an update, and are in process of redirecting you since you put auto!
     }else{
       // No update available
