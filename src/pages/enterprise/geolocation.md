@@ -36,7 +36,7 @@ minor: 4.0.X
 
 This API is based on the W3C Geolocation API Specification, and only executes on devices that don't already provide an implementation.
 
-For iOS you have to add this configuration to your configuration.xml file
+For iOS you have to add this configuration to your config.xml file
 
 ```xml
 <edit-config file="*-Info.plist" mode="merge" target="NSLocationWhenInUseUsageDescription">
