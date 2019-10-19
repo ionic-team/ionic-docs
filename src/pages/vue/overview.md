@@ -5,7 +5,7 @@ nextUrl: '/docs/vue/your-first-app'
 
 # Ionic Vue Overview
 
-`@ionic/vue` combines the core Ionic experience with the tooling and APIs that are tailored to Vue Developers.
+`@ionic/vue` combines the core Ionic experience with the tooling and APIs that are tailored to Vue Developers. Currently in beta.
 
 ## Vue Version Support
 

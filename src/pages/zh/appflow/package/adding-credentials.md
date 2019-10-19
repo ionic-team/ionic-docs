@@ -1,28 +1,28 @@
 ---
-title: 'Adding Credentials'
-previousText: 'Generating Credentials'
+title: '添加证书'
+previousText: '生成证书'
 previousUrl: '/docs/appflow/package/credentials'
-nextText: 'Native Configurations'
+nextText: '原生配置'
 nextUrl: '/docs/appflow/package/native-configs'
 ---
 
-After you have generated your Security Profile, you must upload it to Ionic Appflow.
+在生成安全配置文件后，必须上传到 Ionic Appflow。
 
-## Uploading Credentials
+## 上传证书
 
-Navigate to your App, then to the `Package > Certificates` tab on the left hand side.
+导航到应用程序，然后到左侧标签的 `Package > 证书`。
 
-Click the `Add Profile` button to create a new Profile.Both iOS and Android certifications can be used with one Profile, so we recommend making things like "Real App Store Profile", etc.
+点击 `添加个人资料` 按钮，创建一个iOS和安卓认证都可以使用 的配置文件，所以我们建议制作“Real App Store Profile”等。
 
 <blockquote>
   
-<b>Note:</b> Profiles are created as either `Production` of `Development` and can only house the the
-<a href="/docs/appflow/package/build-types">build types</a> associated with the profile type. </br>
-<b>For example:</b> <a href="/docs/appflow/package/build-types#app-store">App Store builds</a> require an iOS production certificate & distribution provisioning profile and therefore must use a </b>Production</b> type profile.
+<b>注意：</b> 配置文件创建为`Development` 的`生产`并只能拥有
+<a href="/docs/appflow/package/build-types">构建类型</a> 与配置文件类型关联。 </br>
+<b>例如:</b> <a href="/docs/appflow/package/build-types#app-store">App Store构建</a>需要iOS生产证书和分配配置配置文件，因此必须使用</b>Production</b>类型配置文件。
 </blockquote>
 
-![Add Profile](/docs/assets/img/appflow/ss-add-profile.png)
+![添加配置文件](/docs/assets/img/appflow/ss-add-profile.png)
 
-You'll need to choose the [certificate files you generated](/docs/appflow/package/credentials) and upload them as well as put in any passwords needed to access the credentials.
+您需要选择上传 [生成的证书文件](/docs/appflow/package/credentials)，并输入访问证书所需的任何密码。
 
-Once that Profile has been created, can click the `Edit` button to remove and/or upload your iOS and Android certs.
+一旦配置文件创建，可以点击 `编辑` 按钮来删除和/或上传您的 iOS 和 Android 证书。

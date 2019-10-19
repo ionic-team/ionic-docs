@@ -84,7 +84,8 @@
     "repo": "https://github.com/floatinghotpot/cordova-admob-pro",
     "cordovaPlugin": {
       "name": "cordova-plugin-admobpro"
-    }
+    },
+    "capacitorIncompatible": true
   },
   {
     "packageName": "@ionic-native/admob",
@@ -124,6 +125,9 @@
       "iOS"
     ],
     "repo": "https://github.com/jing-zhou/cordova-plugin-alipay",
+    "installVariables": [
+      "APP_ID"
+    ],
     "cordovaPlugin": {
       "name": "cordova-plugin-gubnoi-alipay"
     }
@@ -192,6 +196,21 @@
     "repo": "https://github.com/NeoLSN/cordova-plugin-android-permissions",
     "cordovaPlugin": {
       "name": "cordova-plugin-android-permissions"
+    },
+    "premierSlug": "android-permissions"
+  },
+  {
+    "packageName": "@ionic-native/anyline",
+    "displayName": "Anyline",
+    "description": "\nAnyline provides an easy-to-use SDK for applications to enable Optical Character Recognition (OCR) on mobile devices.\n",
+    "usage": "\n```typescript\nimport { Anyline } from '@ionic-native/anyline/ngx';\n\n\nconstructor(private anyline: Anyline) { }\n\n...\n\n\nthis.anyline.scan(options)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+    "platforms": [
+      "Android",
+      "iOS"
+    ],
+    "repo": "https://github.com/Anyline/anyline-ocr-cordova-module",
+    "cordovaPlugin": {
+      "name": "io-anyline-cordova"
     }
   },
   {
@@ -310,7 +329,8 @@
     "repo": "https://github.com/pushandplay/cordova-plugin-apprate",
     "cordovaPlugin": {
       "name": "cordova-plugin-apprate"
-    }
+    },
+    "premierSlug": "app-rate"
   },
   {
     "packageName": "@ionic-native/app-update",
@@ -338,7 +358,8 @@
     "repo": "https://github.com/whiteoctober/cordova-plugin-app-version",
     "cordovaPlugin": {
       "name": "cordova-plugin-app-version"
-    }
+    },
+    "premierSlug": "app-version"
   },
   {
     "packageName": "@ionic-native/apple-pay",
@@ -364,7 +385,8 @@
     "repo": "https://github.com/tomavic/cordova-apple-wallet",
     "cordovaPlugin": {
       "name": "cordova-apple-wallet"
-    }
+    },
+    "premierSlug": "apple-payment-pass"
   },
   {
     "packageName": "@ionic-native/appodeal",
@@ -437,7 +459,7 @@
     "packageName": "@ionic-native/background-geolocation",
     "displayName": "Background Geolocation",
     "description": "\nThis plugin provides foreground and background geolocation with battery-saving \"circular region monitoring\" and \"stop detection\". For\nmore detail, please see https://github.com/mauron85/cordova-plugin-background-geolocation\n",
-    "usage": "\n\nBackgroundGeolocation must be called within app.ts and or before Geolocation. Otherwise the platform will not ask you for background tracking permission.\n\n```typescript\nimport { BackgroundGeolocation, BackgroundGeolocationConfig, BackgroundGeolocationResponse } from '@ionic-native/background-geolocation';\n\nconstructor(private backgroundGeolocation: BackgroundGeolocation) { }\n\n...\n\nconst config: BackgroundGeolocationConfig = {\n            desiredAccuracy: 10,\n            stationaryRadius: 20,\n            distanceFilter: 30,\n            debug: true, //  enable this hear sounds for background-geolocation life-cycle.\n            stopOnTerminate: false, // enable this to clear background location settings when the app terminates\n    };\n\nthis.backgroundGeolocation.configure(config)\n  .then(() => {\n\n    this.backgroundGeolocation.on('location').subscribe((location: BackgroundGeolocationResponse) => {\n      console.log(location);\n\n      // IMPORTANT:  You must execute the finish method here to inform the native plugin that you're finished,\n      // and the background-task may be completed.  You must do this regardless if your operations are successful or not.\n      // IF YOU DON'T, ios will CRASH YOUR APP for spending too much time in the background.\n      this.backgroundGeolocation.finish(); // FOR IOS ONLY\n    });\n\n  });\n\n// start recording location\nthis.backgroundGeolocation.start();\n\n// If you wish to turn OFF background-tracking, call the #stop method.\nthis.backgroundGeolocation.stop();\n\n```",
+    "usage": "\n\nBackgroundGeolocation must be called within app.ts and or before Geolocation. Otherwise the platform will not ask you for background tracking permission.\n\n```typescript\nimport { BackgroundGeolocation, BackgroundGeolocationConfig, BackgroundGeolocationEvents, BackgroundGeolocationResponse } from '@ionic-native/background-geolocation';\n\nconstructor(private backgroundGeolocation: BackgroundGeolocation) { }\n\n...\n\nconst config: BackgroundGeolocationConfig = {\n            desiredAccuracy: 10,\n            stationaryRadius: 20,\n            distanceFilter: 30,\n            debug: true, //  enable this hear sounds for background-geolocation life-cycle.\n            stopOnTerminate: false, // enable this to clear background location settings when the app terminates\n    };\n\nthis.backgroundGeolocation.configure(config)\n  .then(() => {\n\n    this.backgroundGeolocation.on(BackgroundGeolocationEvents.location).subscribe((location: BackgroundGeolocationResponse) => {\n      console.log(location);\n\n      // IMPORTANT:  You must execute the finish method here to inform the native plugin that you're finished,\n      // and the background-task may be completed.  You must do this regardless if your operations are successful or not.\n      // IF YOU DON'T, ios will CRASH YOUR APP for spending too much time in the background.\n      this.backgroundGeolocation.finish(); // FOR IOS ONLY\n    });\n\n  });\n\n// start recording location\nthis.backgroundGeolocation.start();\n\n// If you wish to turn OFF background-tracking, call the #stop method.\nthis.backgroundGeolocation.stop();\n\n```",
     "platforms": [
       "Android",
       "iOS"
@@ -491,7 +513,8 @@
     "repo": "https://github.com/katzer/cordova-plugin-badge",
     "cordovaPlugin": {
       "name": "cordova-plugin-badge"
-    }
+    },
+    "premierSlug": "badge"
   },
   {
     "packageName": "@ionic-native/baidu-push",
@@ -575,9 +598,10 @@
     "description": "\nBioCatch SDK Cordova support\n",
     "usage": "\n```typescript\nimport { BioCatch } from '@ionic-native/biocatch';\n\n\nconstructor(private biocatch: BioCatch) { }\n\n...\n\n\nthis.biocatch.start('customer-session-1', 'http://example.com', 'some-public-key')\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
     "platforms": [
-      "iOS"
+      "iOS",
+      "Android"
     ],
-    "repo": "https://bitbucket.org/whisprnd/biocatch-cordova-plugin",
+    "repo": "https://bitbucket.org/carlos_orellana/ionic-plugin",
     "cordovaPlugin": {
       "name": "cordova-plugin-biocatch"
     }
@@ -591,6 +615,7 @@
       "Android"
     ],
     "repo": "",
+    "installVariables": [],
     "cordovaPlugin": {
       "name": "cordova-plugin-biometric"
     }
@@ -647,6 +672,7 @@
       "iOS"
     ],
     "repo": "https://github.com/randdusing/cordova-plugin-bluetoothle",
+    "installVariables": [],
     "cordovaPlugin": {
       "name": "cordova-plugin-bluetoothle"
     }
@@ -676,9 +702,11 @@
       "iOS"
     ],
     "repo": "https://github.com/taracque/cordova-plugin-braintree",
+    "installVariables": [],
     "cordovaPlugin": {
       "name": "cordova-plugin-braintree"
-    }
+    },
+    "capacitorIncompatible": true
   },
   {
     "packageName": "@ionic-native/branch-io",
@@ -749,7 +777,8 @@
     "repo": "https://github.com/EddyVerbruggen/Calendar-PhoneGap-Plugin",
     "cordovaPlugin": {
       "name": "cordova-plugin-calendar"
-    }
+    },
+    "premierSlug": "calendar"
   },
   {
     "packageName": "@ionic-native/call-directory",
@@ -760,6 +789,10 @@
       "iOS"
     ],
     "repo": "https://github.com/GEDYSIntraWare/cordova-plugin-call-directory",
+    "installVariables": [
+      "EXT_NAME",
+      "ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES"
+    ],
     "cordovaPlugin": {
       "name": "cordova-plugin-call-directory"
     }
@@ -819,7 +852,8 @@
     "repo": "https://github.com/apache/cordova-plugin-camera",
     "cordovaPlugin": {
       "name": "cordova-plugin-camera"
-    }
+    },
+    "premierSlug": "camera"
   },
   {
     "packageName": "@ionic-native/card-io",
@@ -889,7 +923,8 @@
     "repo": "https://github.com/ihadeed/cordova-clipboard",
     "cordovaPlugin": {
       "name": "cordova-clipboard"
-    }
+    },
+    "premierSlug": "clipboard"
   },
   {
     "packageName": "@ionic-native/cloud-settings",
@@ -901,6 +936,9 @@
       "iOS"
     ],
     "repo": "https://github.com/dpa99c/cordova-plugin-cloud-settings",
+    "installVariables": [
+      "ANDROID_BACKUP_SERVICE_KEY"
+    ],
     "cordovaPlugin": {
       "name": "cordova-plugin-cloud-settings"
     }
@@ -952,7 +990,8 @@
     "repo": "https://github.com/apache/cordova-plugin-contacts",
     "cordovaPlugin": {
       "name": "cordova-plugin-contacts"
-    }
+    },
+    "premierSlug": "contacts"
   },
   {
     "packageName": "@ionic-native/couchbase-lite",
@@ -1014,7 +1053,7 @@
   {
     "packageName": "@ionic-native/deeplinks",
     "displayName": "Deeplinks",
-    "description": "This plugin handles deeplinks on iOS and Android for both custom URL scheme links\nand Universal App Links.\n",
+    "description": "This plugin handles deeplinks on iOS and Android for both custom URL scheme links\nand Universal App Links.\n\nPlease read the [ionic plugin deeplinks docs](https://github.com/ionic-team/ionic-plugin-deeplinks) for iOS and Android integration.\nYou must add `universal-links` to your `config.xml` and set up Apple App Site Association (AASA) for iOS and Asset Links for Android.\n",
     "usage": "\n```typescript\nimport { Deeplinks } from '@ionic-native/deeplinks/ngx';\n\nconstructor(private deeplinks: Deeplinks) { }\n\nthis.deeplinks.route({\n     '/about-us': AboutPage,\n     '/universal-links-test': AboutPage,\n     '/products/:productId': ProductPage\n   }).subscribe(match => {\n     // match.$route - the route we matched, which is the matched entry from the arguments to route()\n     // match.$args - the args passed in the link\n     // match.$link - the full link data\n     console.log('Successfully matched route', match);\n   }, nomatch => {\n     // nomatch.$link - the full link data\n     console.error('Got a deeplink that didn\\'t match', nomatch);\n   });\n```\n\nAlternatively, if you're using Ionic, there's a convenience method that takes a reference to a `NavController` and handles\nthe actual navigation for you:\n\n```typescript\nthis.deeplinks.routeWithNavController(this.navController, {\n  '/about-us': AboutPage,\n  '/products/:productId': ProductPage\n}).subscribe(match => {\n    // match.$route - the route we matched, which is the matched entry from the arguments to route()\n    // match.$args - the args passed in the link\n    // match.$link - the full link data\n    console.log('Successfully matched route', match);\n  }, nomatch => {\n    // nomatch.$link - the full link data\n    console.error('Got a deeplink that didn\\'t match', nomatch);\n  });\n```\n\nSee the [Ionic Deeplinks Demo](https://github.com/ionic-team/ionic2-deeplinks-demo/blob/master/app/app.ts) for an example of how to\nretrieve the `NavController` reference at runtime.\n",
     "platforms": [
       "Android",
@@ -1022,9 +1061,16 @@
       "iOS"
     ],
     "repo": "https://github.com/ionic-team/ionic-plugin-deeplinks",
+    "installVariables": [
+      "URL_SCHEME",
+      "DEEPLINK_SCHEME",
+      "DEEPLINK_HOST",
+      "ANDROID_PATH_PREFIX"
+    ],
     "cordovaPlugin": {
       "name": "ionic-plugin-deeplinks"
-    }
+    },
+    "premierSlug": "deeplinks"
   },
   {
     "packageName": "@ionic-native/device-accounts",
@@ -1050,7 +1096,8 @@
     "repo": "https://github.com/VVelda/device-feedback",
     "cordovaPlugin": {
       "name": "cordova-plugin-velda-devicefeedback"
-    }
+    },
+    "premierSlug": "vibration"
   },
   {
     "packageName": "@ionic-native/device-motion",
@@ -1110,7 +1157,8 @@
     "repo": "https://github.com/apache/cordova-plugin-device",
     "cordovaPlugin": {
       "name": "cordova-plugin-device"
-    }
+    },
+    "premierSlug": "device"
   },
   {
     "packageName": "@ionic-native/diagnostic",
@@ -1142,7 +1190,8 @@
     "repo": "https://github.com/apache/cordova-plugin-dialogs",
     "cordovaPlugin": {
       "name": "cordova-plugin-dialogs"
-    }
+    },
+    "premierSlug": "dialogs"
   },
   {
     "packageName": "@ionic-native/dns",
@@ -1228,6 +1277,21 @@
     "repo": "https://github.com/katzer/cordova-plugin-email-composer",
     "cordovaPlugin": {
       "name": "cordova-plugin-email-composer"
+    },
+    "premierSlug": "email-composer"
+  },
+  {
+    "packageName": "@ionic-native/emm-app-config",
+    "displayName": "Emm App Config",
+    "description": "\n\nThis plugin provides information on EMM application configuration.\n\nRequires the Cordova plugin: `cordova-plugin-emm-app-config`. For more info, please see the [Cordova EMM App Config Plugin Docs](https://github.com/oracle/cordova-plugin-emm-app-config).\n\n",
+    "usage": "\n```typescript\nimport { EmmAppConfig } from '@ionic-native/emm-app-config/ngx';\n\nconstructor(private readonly emmAppConfig: EmmAppConfig) {}\n\n...\n\n// Get all the values of the emm app configuration\nconst values = this.emmAppConfig.getValue();\n\n// Get specific value of the emm app configuration\nconst value = this.emmAppConfig.getValue('serverUrl');\n\n// Get an event every time the emm app config changes\nthis.emmAppConfig.registerChangedListener().subscribe(() => console.log('App config changes'));\n```",
+    "platforms": [
+      "Android",
+      "iOS"
+    ],
+    "repo": "https://github.com/oracle/cordova-plugin-emm-app-config",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-emm-app-config"
     }
   },
   {
@@ -1267,6 +1331,10 @@
       "iOS"
     ],
     "repo": "https://www.npmjs.com/package/cordova-fabric-plugin",
+    "installVariables": [
+      "FABRIC_API_KEY",
+      "FABRIC_API_SECRET"
+    ],
     "cordovaPlugin": {
       "name": "cordova-fabric-plugin"
     }
@@ -1282,6 +1350,10 @@
       "Browser"
     ],
     "repo": "https://github.com/jeduan/cordova-plugin-facebook4",
+    "installVariables": [
+      "APP_ID",
+      "APP_NAME"
+    ],
     "cordovaPlugin": {
       "name": "cordova-plugin-facebook4"
     }
@@ -1304,7 +1376,7 @@
     "packageName": "@ionic-native/file-chooser",
     "displayName": "File Chooser",
     "description": "\n\nOpens the file picker on Android for the user to select a file, returns a file URI.\n",
-    "usage": "\n```typescript\nimport { FileChooser } from '@ionic-native/file-chooser/ngx';\n\nconstructor(private fileChooser: FileChooser) { }\n\n...\n\nthis.fileChooser.open()\n  .then(uri => console.log(uri))\n  .catch(e => console.log(e));\n\n```\n",
+    "usage": "\n```typescript\nimport { FileChooser } from '@ionic-native/file-chooser/ngx';\n\nconstructor(private fileChooser: FileChooser) { }\n\n...\n\nthis.fileChooser.open()\n  .then(uri => console.log(uri))\n  .catch(e => console.log(e));\n\n```",
     "platforms": [
       "Android"
     ],
@@ -1354,7 +1426,8 @@
     "repo": "https://github.com/hiddentao/cordova-plugin-filepath",
     "cordovaPlugin": {
       "name": "cordova-plugin-filepath"
-    }
+    },
+    "premierSlug": "filesystem"
   },
   {
     "packageName": "@ionic-native/file-picker",
@@ -1402,7 +1475,8 @@
     "repo": "https://github.com/apache/cordova-plugin-file",
     "cordovaPlugin": {
       "name": "cordova-plugin-file"
-    }
+    },
+    "premierSlug": "filesystem"
   },
   {
     "packageName": "@ionic-native/fingerprint-aio",
@@ -1442,6 +1516,9 @@
       "iOS"
     ],
     "repo": "https://github.com/chemerisuk/cordova-plugin-firebase-authentication",
+    "installVariables": [
+      "FIREBASE_AUTH_VERSION"
+    ],
     "cordovaPlugin": {
       "name": "cordova-plugin-firebase-authentication"
     }
@@ -1484,6 +1561,9 @@
       "iOS"
     ],
     "repo": "https://github.com/ReallySmallSoftware/cordova-plugin-firebase-crashlytics",
+    "installVariables": [
+      "ANDROID_FIREBASE_CORE_VERSION"
+    ],
     "cordovaPlugin": {
       "name": "cordova-plugin-firebase-crashlytics"
     }
@@ -1498,6 +1578,10 @@
       "iOS"
     ],
     "repo": "https://github.com/chemerisuk/cordova-plugin-firebase-dynamiclinks",
+    "installVariables": [
+      "APP_DOMAIN",
+      "APP_PATH"
+    ],
     "cordovaPlugin": {
       "name": " cordova-plugin-firebase-dynamiclinks"
     }
@@ -1517,6 +1601,20 @@
     }
   },
   {
+    "packageName": "@ionic-native/firebase-x",
+    "displayName": "Firebase X",
+    "description": "\nThis plugin brings push notifications, analytics, event tracking, crash reporting and more from Google Firebase to your Cordova project! Android and iOS supported.\nIt is a maintained fork from unmaintained ionic-navite plugin called Firebase.\n",
+    "usage": "\n```typescript\nimport { FirebaseX } from '@ionic-native/firebase-x';\n\n\nconstructor(private firebaseX: FirebaseX) { }\n\n...\n\n\nthis.firebaseX.getToken()\n  .then(token => console.log(`The token is ${token}`)) // save the token server-side and use it to push notifications to this device\n  .catch(error => console.error('Error getting token', error));\n\nthis.firebaseX.onMessageReceived()\n  .subscribe(data => console.log(`User opened a notification ${data}`));\n\nthis.firebaseX.onTokenRefresh()\n  .subscribe((token: string) => console.log(`Got a new token ${token}`));\n```",
+    "platforms": [
+      "Android",
+      "iOS"
+    ],
+    "repo": "https://github.com/dpa99c/cordova-plugin-firebasex",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-firebasex"
+    }
+  },
+  {
     "packageName": "@ionic-native/firebase",
     "displayName": "Firebase",
     "description": "\nThis plugin brings push notifications, analytics, event tracking, crash reporting and more from Google Firebase to your Cordova project! Android and iOS supported (including iOS 10).\n",
@@ -1528,7 +1626,8 @@
     "repo": "https://github.com/arnesson/cordova-plugin-firebase",
     "cordovaPlugin": {
       "name": "cordova-plugin-firebase"
-    }
+    },
+    "capacitorIncompatible": true
   },
   {
     "packageName": "@ionic-native/flashlight",
@@ -1610,6 +1709,10 @@
       "iOS"
     ],
     "repo": "https://github.com/waliu/cordova-plugin-gaodelocation-chenyu.git",
+    "installVariables": [
+      "ANDROID_API_KEY",
+      "IOS_API_KEY"
+    ],
     "cordovaPlugin": {
       "name": "cordova-plugin-gaodelocation-chenyu"
     }
@@ -1643,9 +1746,13 @@
       "Windows"
     ],
     "repo": "https://github.com/apache/cordova-plugin-geolocation",
+    "installVariables": [
+      "GEOLOCATION_USAGE_DESCRIPTION"
+    ],
     "cordovaPlugin": {
       "name": "cordova-plugin-geolocation"
-    }
+    },
+    "premierSlug": "geolocation"
   },
   {
     "packageName": "@ionic-native/globalization",
@@ -1662,7 +1769,8 @@
     "repo": "https://github.com/apache/cordova-plugin-globalization",
     "cordovaPlugin": {
       "name": "cordova-plugin-globalization"
-    }
+    },
+    "premierSlug": "globalization"
   },
   {
     "packageName": "@ionic-native/google-analytics",
@@ -1689,6 +1797,9 @@
       "Android"
     ],
     "repo": "https://github.com/hahahannes/cordova-plugin-google-nearby",
+    "installVariables": [
+      "API_KEY"
+    ],
     "cordovaPlugin": {
       "name": "cordova-plugin-google-nearby"
     }
@@ -1697,7 +1808,7 @@
     "packageName": "@ionic-native/google-play-games-services",
     "displayName": "Google Play Games Services",
     "description": "\nA Cordova plugin that let's you interact with Google Play Games Services.\n",
-    "usage": "\n```typescript\nimport { GooglePlayGamesServices } from '@ionic-native/google-play-games-services/ngx';\n\n\nconstructor(private googlePlayGamesServices: GooglePlayGamesServices) { }\n\n...\n\n// Authenticate with Play Games Services\nthis.googlePlayGamesServices.auth()\n    .then(() => console.log('Logged in to Play Games Services'))\n    .catch(e) => console.log('Error logging in Play Games Services', e);\n\n// Sign out of Play Games Services.\nthis.googlePlayGamesServices.signOut()\n    .then(() => console.log('Logged out of Play Games Services'))\n    .catch(e => console.log('Error logging out of Play Games Services', e);\n\n// Check auth status.\nthis.googlePlayGamesServices.isSignedIn()\n    .then((signedIn: SignedInResponse) => {\n        if (signedIn.isSignedIn) {\n            hideLoginButton();\n        }\n    });\n\n// Fetch currently authenticated user's data.\nthis.googlePlayGamesServices.showPlayer().then((data: Player) => {\n   console.log('Player data', data);\n});\n\n// Submit a score.\nthis.googlePlayGamesServices.submitScore({\n    score: 100,\n    leaderboardId: 'SomeLeaderboardId'\n});\n\n// Get the player score on a leaderboard.\nthis.googlePlayGamesServices.getPlayerScore({\n    leaderboardId: 'SomeLeaderBoardId'\n}).then((data: PlayerScoreData) => {\n   console.log('Player score', data);\n});\n\n// Show the native leaderboards window.\nthis.googlePlayGamesServices.showAllLeaderboards()\n    .then(() => console.log('The leaderboard window is visible.'));\n\n// Show a signle native leaderboard window.\nthis.googlePlayGamesServices.showLeaderboard({\n    leaderboardId: 'SomeLeaderBoardId'\n}).then(() => console.log('The leaderboard window is visible.'));\n\n// Unlock an achievement.\nthis.googlePlayGamesServices.unlockAchievement({\n    achievementId: 'SomeAchievementId'\n}).then(() => console.log('Achievement unlocked'));\n\n// Incremement an achievement.\nthis.googlePlayGamesServices.incrementAchievement({\n    step: 1,\n    achievementId: 'SomeAchievementId'\n}).then(() => console.log('Achievement incremented'));\n\n// Show the native achievements window.\nthis.googlePlayGamesServices.showAchivements()\n   .then(() => console.log('The achievements window is visible.'));\n\n```\n",
+    "usage": "\n```typescript\nimport { GooglePlayGamesServices } from '@ionic-native/google-play-games-services/ngx';\n\n\nconstructor(private googlePlayGamesServices: GooglePlayGamesServices) { }\n\n...\n\n// Authenticate with Play Games Services\nthis.googlePlayGamesServices.auth()\n    .then(() => console.log('Logged in to Play Games Services'))\n    .catch(e) => console.log('Error logging in Play Games Services', e);\n\n// Sign out of Play Games Services.\nthis.googlePlayGamesServices.signOut()\n    .then(() => console.log('Logged out of Play Games Services'))\n    .catch(e => console.log('Error logging out of Play Games Services', e);\n\n// Check auth status.\nthis.googlePlayGamesServices.isSignedIn()\n    .then((signedIn: SignedInResponse) => {\n        if (signedIn.isSignedIn) {\n            hideLoginButton();\n        }\n    });\n\n// Fetch currently authenticated user's data.\nthis.googlePlayGamesServices.showPlayer().then((data: Player) => {\n   console.log('Player data', data);\n});\n\n// Submit a score.\nthis.googlePlayGamesServices.submitScore({\n    score: 100,\n    leaderboardId: 'SomeLeaderboardId'\n});\n\n// Submit a score and wait for reponse.\nthis.googlePlayGamesServices.submitScoreNow({\n    score: 100,\n    leaderboardId: 'SomeLeaderboardId'\n}).then((data: SubmittedScoreData) => {\n   console.log('Score related data', data);\n});\n\n// Get the player score on a leaderboard.\nthis.googlePlayGamesServices.getPlayerScore({\n    leaderboardId: 'SomeLeaderBoardId'\n}).then((data: PlayerScoreData) => {\n    console.log('Player score', data);\n});\n\n// Show the native leaderboards window.\nthis.googlePlayGamesServices.showAllLeaderboards()\n    .then(() => console.log('The leaderboard window is visible.'));\n\n// Show a signle native leaderboard window.\nthis.googlePlayGamesServices.showLeaderboard({\n    leaderboardId: 'SomeLeaderBoardId'\n}).then(() => console.log('The leaderboard window is visible.'));\n\n// Unlock an achievement.\nthis.googlePlayGamesServices.unlockAchievement({\n    achievementId: 'SomeAchievementId'\n}).then(() => console.log('Achievement sent'));\n\n// Unlock an achievement and wait for response.\nthis.googlePlayGamesServices.unlockAchievementNow({\n    achievementId: 'SomeAchievementId'\n}).then(() => console.log('Achievement unlocked'));\n\n// Incremement an achievement.\nthis.googlePlayGamesServices.incrementAchievement({\n    step: 1,\n    achievementId: 'SomeAchievementId'\n}).then(() => console.log('Achievement increment sent'));\n\n// Incremement an achievement and wait for response.\nthis.googlePlayGamesServices.incrementAchievementNow({\n    step: 1,\n    achievementId: 'SomeAchievementId'\n}).then(() => console.log('Achievement incremented'));\n\n// Show the native achievements window.\nthis.googlePlayGamesServices.showAchivements()\n   .then(() => console.log('The achievements window is visible.'));\n\n```\n",
     "platforms": [
       "Android"
     ],
@@ -1716,6 +1827,9 @@
       "iOS"
     ],
     "repo": "https://github.com/EddyVerbruggen/cordova-plugin-googleplus",
+    "installVariables": [
+      "REVERSED_CLIENT_ID"
+    ],
     "cordovaPlugin": {
       "name": "cordova-plugin-googleplus"
     }
@@ -1743,6 +1857,9 @@
       "Android"
     ],
     "repo": "https://github.com/don/cordova-plugin-hce",
+    "installVariables": [
+      "AID_FILTER"
+    ],
     "cordovaPlugin": {
       "name": "cordova-plugin-hce"
     }
@@ -1873,13 +1990,16 @@
   {
     "packageName": "@ionic-native/image-picker",
     "displayName": "Image Picker",
-    "description": "\nCordova Plugin For Multiple Image Selection\n\nRequires Cordova plugin: `cordova-plugin-image-picker`.\nFor more info, please see the https://github.com/wymsee/cordova-imagePicker\n",
+    "description": "\nCordova Plugin For Multiple Image Selection\n\nRequires Cordova plugin: `cordova-plugin-image-picker`.\nFor more info, please see the https://github.com/Telerik-Verified-Plugins/ImagePicker\n",
     "usage": "\n```typescript\nimport { ImagePicker } from '@ionic-native/image-picker/ngx';\n\n\nconstructor(private imagePicker: ImagePicker) { }\n\n...\n\nthis.imagePicker.getPictures(options).then((results) => {\n  for (var i = 0; i < results.length; i++) {\n      console.log('Image URI: ' + results[i]);\n  }\n}, (err) => { });\n\n```",
     "platforms": [
       "Android",
       "iOS"
     ],
     "repo": "https://github.com/Telerik-Verified-Plugins/ImagePicker",
+    "installVariables": [
+      "PHOTO_LIBRARY_USAGE_DESCRIPTION"
+    ],
     "cordovaPlugin": {
       "name": "cordova-plugin-telerik-imagepicker"
     }
@@ -1915,7 +2035,8 @@
     "repo": "https://github.com/apache/cordova-plugin-inappbrowser",
     "cordovaPlugin": {
       "name": "cordova-plugin-inappbrowser"
-    }
+    },
+    "premierSlug": "inappbrowser"
   },
   {
     "packageName": "@ionic-native/in-app-purchase-2",
@@ -2046,7 +2167,8 @@
     "repo": "https://github.com/ionic-team/cordova-plugin-ionic-webview",
     "cordovaPlugin": {
       "name": "cordova-plugin-ionic-webview"
-    }
+    },
+    "capacitorIncompatible": true
   },
   {
     "packageName": "@ionic-native/is-debug",
@@ -2072,6 +2194,9 @@
       "iOS"
     ],
     "repo": "https://github.com/jpush/cordova-plugin-janalytics",
+    "installVariables": [
+      "APP_KEY"
+    ],
     "cordovaPlugin": {
       "name": "cordova-plugin-janalytics"
     }
@@ -2102,7 +2227,9 @@
     "repo": "https://github.com/ionic-team/cordova-plugin-ionic-keyboard",
     "cordovaPlugin": {
       "name": "cordova-plugin-ionic-keyboard"
-    }
+    },
+    "capacitorIncompatible": true,
+    "premierSlug": "keyboard"
   },
   {
     "packageName": "@ionic-native/keychain-touch-id",
@@ -2183,6 +2310,9 @@
       "iOS"
     ],
     "repo": "https://github.com/nrikiji/cordova-line-login-plugin",
+    "installVariables": [
+      "LINE_CHANNEL_ID"
+    ],
     "cordovaPlugin": {
       "name": "cordova-line-login-plugin"
     }
@@ -2226,6 +2356,7 @@
       "iOS"
     ],
     "repo": "https://github.com/timbru31/cordova-plugin-lottie-splashscreen",
+    "installVariables": [],
     "cordovaPlugin": {
       "name": "cordova-plugin-lottie-splashscreen"
     }
@@ -2286,7 +2417,8 @@
     "repo": "https://github.com/apache/cordova-plugin-media-capture",
     "cordovaPlugin": {
       "name": "cordova-plugin-media-capture"
-    }
+    },
+    "premierSlug": "media-capture"
   },
   {
     "packageName": "@ionic-native/media",
@@ -2302,7 +2434,8 @@
     "repo": "https://github.com/apache/cordova-plugin-media",
     "cordovaPlugin": {
       "name": "cordova-plugin-media"
-    }
+    },
+    "premierSlug": "media"
   },
   {
     "packageName": "@ionic-native/mixpanel",
@@ -2363,7 +2496,8 @@
     "repo": "https://github.com/homerours/cordova-music-controls-plugin",
     "cordovaPlugin": {
       "name": "cordova-plugin-music-controls"
-    }
+    },
+    "capacitorIncompatible": true
   },
   {
     "packageName": "@ionic-native/native-audio",
@@ -2452,7 +2586,8 @@
     "repo": "https://github.com/TheCocoaProject/cordova-plugin-nativestorage",
     "cordovaPlugin": {
       "name": "cordova-plugin-nativestorage"
-    }
+    },
+    "premierSlug": "nativestorage"
   },
   {
     "packageName": "@ionic-native/navigation-bar",
@@ -2500,7 +2635,8 @@
     "repo": "https://github.com/apache/cordova-plugin-network-information",
     "cordovaPlugin": {
       "name": "cordova-plugin-network-information"
-    }
+    },
+    "premierSlug": "network-information"
   },
   {
     "packageName": "@ionic-native/nfc",
@@ -2520,9 +2656,9 @@
   },
   {
     "packageName": "@ionic-native/ocr",
-    "displayName": "MobileOCR",
+    "displayName": "OCR",
     "description": "\nThis plugin attempts to identify and extract text from an image.\n",
-    "usage": "\n```typescript\nimport { MobileOCR, OCRSourceType } from '@ionic-native/ocr/ngx';\n\n\nconstructor(private ocr: MobileOCR) { }\n\n...\n\nthis.ocr.recText(OCRSourceType.NORMFILEURL, \"file://path/to/image.png\")\n  .then((res: OCRResult) => console.log(JSON.stringify(res)))\n  .catch((error: any) => console.error(error));\n\n```\n",
+    "usage": "\n```typescript\nimport { OCR, OCRSourceType } from '@ionic-native/ocr/ngx';\n\n\nconstructor(private ocr: OCR) { }\n\n...\n\nthis.ocr.recText(OCRSourceType.NORMFILEURL, \"file://path/to/image.png\")\n  .then((res: OCRResult) => console.log(JSON.stringify(res)))\n  .catch((error: any) => console.error(error));\n\n```\n",
     "platforms": [
       "Android",
       "iOS"
@@ -2631,6 +2767,9 @@
       "iOS"
     ],
     "repo": "https://github.com/terikon/cordova-plugin-photo-library",
+    "installVariables": [
+      "PHOTO_LIBRARY_USAGE_DESCRIPTION"
+    ],
     "cordovaPlugin": {
       "name": "cordova-plugin-photo-library"
     }
@@ -2687,6 +2826,9 @@
       "iOS"
     ],
     "repo": "https://github.com/zyramedia/cordova-plugin-pinterest",
+    "installVariables": [
+      "APP_ID"
+    ],
     "cordovaPlugin": {
       "name": "cordova-plugin-pinterest"
     }
@@ -2705,6 +2847,21 @@
     "repo": "https://github.com/Viras-/cordova-plugin-powermanagement",
     "cordovaPlugin": {
       "name": "cordova-plugin-powermanagement-orig"
+    }
+  },
+  {
+    "packageName": "@ionic-native/preview-any-file",
+    "displayName": "PreviewAnyFile",
+    "description": "\nWhatever the file is PDF document, Word document, Excel, office document,zip archive file, image, text, html or anything else, you can perform a preview by this cordova Plugin to preview any file in native mode by providing the local or external URL.\n\n Requires Cordova plugin: `cordova-plugin-preview-any-file`. For more info, please see the [previewAnyFile plugin docs](https://github.com/mostafa-mansour1/previewAnyFile).\n",
+    "usage": "\n```typescript\nimport { PreviewAnyFile } from '@ionic-native/preview-any-file';\n\n\nconstructor(private previewAnyFile: PreviewAnyFile) { }\n\n...\n\n\nthis.previewAnyFile.preview('file://filepath.ext')\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+    "platforms": [
+      "Android",
+      "iOS"
+    ],
+    "repo": "https://github.com/mostafa-mansour1/previewAnyFile",
+    "installVariables": [],
+    "cordovaPlugin": {
+      "name": "cordova-plugin-preview-any-file"
     }
   },
   {
@@ -2776,6 +2933,9 @@
       "iOS"
     ],
     "repo": "https://github.com/iVanPan/Cordova_QQ",
+    "installVariables": [
+      "QQ_APP_ID"
+    ],
     "cordovaPlugin": {
       "name": "cordova-plugin-qqsdk"
     }
@@ -2794,7 +2954,8 @@
     "repo": "https://github.com/bitpay/cordova-plugin-qrscanner",
     "cordovaPlugin": {
       "name": "cordova-plugin-qrscanner"
-    }
+    },
+    "capacitorIncompatible": true
   },
   {
     "packageName": "@ionic-native/quikkly",
@@ -2833,6 +2994,10 @@
       "iOS"
     ],
     "repo": "https://github.com/Resgrid/cordova-plugins-rollbar",
+    "installVariables": [
+      "ROLLBAR_ACCESS_TOKEN",
+      "ROLLBAR_ENVIRONMENT"
+    ],
     "cordovaPlugin": {
       "name": "resgrid-cordova-plugins-rollbar"
     }
@@ -2864,7 +3029,8 @@
     "repo": "https://github.com/apache/cordova-plugin-screen-orientation",
     "cordovaPlugin": {
       "name": "cordova-plugin-screen-orientation"
-    }
+    },
+    "premierSlug": "screen-orientation"
   },
   {
     "packageName": "@ionic-native/screenshot",
@@ -2967,6 +3133,19 @@
     }
   },
   {
+    "packageName": "@ionic-native/smartlook",
+    "displayName": "Smartlook",
+    "description": "\nOfficial Smartlook SDK plugin. For more information visit (www.smartlook.com).\n",
+    "usage": "\n```typescript\nimport { Smartlook } from '@ionic-native/smartlook/ngx';\n\n\nconstructor(private smartlook: Smartlook) { }\n\n...\n\n\nthis.smartlook.setupAndStartRecording(new SmartlookSetupConfig(\"key\"));\n\n```",
+    "platforms": [
+      "Android"
+    ],
+    "repo": "https://github.com/smartlook/cordova-smartlook.git",
+    "cordovaPlugin": {
+      "name": "https://github.com/smartlook/cordova-smartlook.git"
+    }
+  },
+  {
     "packageName": "@ionic-native/sms-retriever",
     "displayName": "Sms Retriever",
     "description": "\nThis plugin retrives the SMS which arrive without requiring READ permissions.\n",
@@ -2975,6 +3154,9 @@
       "Android"
     ],
     "repo": "https://github.com/hanatharesh2712/ionic-native-sms-retriever-plugin-master",
+    "installVariables": [
+      "PLAY_SERVICES_VERSION"
+    ],
     "cordovaPlugin": {
       "name": "cordova-plugin-sms-retriever-manager"
     }
@@ -3010,7 +3192,8 @@
     "repo": "https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin",
     "cordovaPlugin": {
       "name": "cordova-plugin-x-socialsharing"
-    }
+    },
+    "premierSlug": "social-sharing"
   },
   {
     "packageName": "@ionic-native/speech-recognition",
@@ -3070,7 +3253,9 @@
     "repo": "https://github.com/apache/cordova-plugin-splashscreen",
     "cordovaPlugin": {
       "name": "cordova-plugin-splashscreen"
-    }
+    },
+    "capacitorIncompatible": true,
+    "premierSlug": "splashscreen"
   },
   {
     "packageName": "@ionic-native/spotify-auth",
@@ -3082,6 +3267,9 @@
       "iOS"
     ],
     "repo": "https://github.com/Festify/cordova-spotify-oauth",
+    "installVariables": [
+      "LOCAL_STORAGE_KEY"
+    ],
     "cordovaPlugin": {
       "name": "cordova-spotify-oauth"
     }
@@ -3131,9 +3319,22 @@
       "macOS",
       "Windows"
     ],
-    "repo": "https://github.com/xpbrew/Cordova-sqlite-storage",
+    "repo": "https://github.com/litehelpers/Cordova-sqlite-storage",
     "cordovaPlugin": {
       "name": "cordova-sqlite-storage"
+    }
+  },
+  {
+    "packageName": "@ionic-native/ssh-connect",
+    "displayName": "SSH Connect",
+    "description": "\nCordova plugin to make connections and execute commands through SSH\n",
+    "usage": "\n```typescript\nimport { SSHConnect } from '@ionic-native/ssh-connect/ngx';\n\n\nconstructor(private sshConnect: SSHConnect) { }\n\n...\n\n\nthis.sshConnect.connect('user', 'password', 'host', port)\n  .then(resp => console.log(resp))\n  .catch(error => console.error(error));\n\nthis.sshConnect.executeCommand('command')\n  .then(resp => console.log(resp))\n  .catch(error => console.error(error));\n\nthis.sshConnect.disconnect()\n  .then(resp => console.log(resp))\n  .catch(error => console.error(error));\n\n```\n",
+    "platforms": [
+      "Android"
+    ],
+    "repo": "https://github.com/JosePerez27/cordova-plugin-ssh-connect",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-ssh-connect"
     }
   },
   {
@@ -3163,7 +3364,9 @@
     "repo": "https://github.com/apache/cordova-plugin-statusbar",
     "cordovaPlugin": {
       "name": "cordova-plugin-statusbar"
-    }
+    },
+    "capacitorIncompatible": true,
+    "premierSlug": "statusbar"
   },
   {
     "packageName": "@ionic-native/stepcounter",
@@ -3206,6 +3409,23 @@
     "repo": "https://github.com/zyramedia/cordova-plugin-stripe",
     "cordovaPlugin": {
       "name": "cordova-plugin-stripe"
+    }
+  },
+  {
+    "packageName": "@ionic-native/sum-up",
+    "displayName": "SumUp",
+    "description": "\nPlugin to communicate with a SumUp payment terminal\n",
+    "usage": "\n```typescript\nimport { SumUp } from '@ionic-native/sum-up';\n\n\nconstructor(private sumUp: SumUp) { }\n\nthis.sumUp.login(\"ACCESS_TOKEN\")\n  .then((res: SumUpResponse) => console.log(res))\n  .catch((error: SumUpResponse) => console.error(error));\n\n this.sumUp.auth(\"ACCESS_TOKEN\")\n  .then((res: SumUpResponse) => console.log(res))\n  .catch((error: SumUpResponse) => console.error(error));\n\n this.sumUp.getSettings()\n  .then((res: SumUpResponse) => console.log(res))\n  .catch((error: SumUpResponse) => console.error(error));\n\n this.sumUp.logout()\n  .then((res: SumUpResponse) => console.log(res))\n  .catch((error: SumUpResponse) => console.error(error));\n\n this.sumUp.isLoggedIn()\n  .then((res: SumUpLoginStatus) => console.log(res))\n  .catch((error: SumUpLoginStatus) => console.error(error));\n\n this.sumUp.prepare()\n  .then((res: SumUpResponse) => console.log(res))\n  .catch((error: SumUpResponse) => console.error(error));\n\nthis.sumUp.closeConnection()\n  .then((res: SumUpResponse) => console.log(res))\n  .catch((error: SumUpResponse) => console.error(error));\n\nthis.sumUp.pay(10.0, \"EUR\")\n  .then((res: SumUpPayment) => console.log(res))\n  .catch((error: SumUpPayment) => console.error(error));\n\n```\n",
+    "platforms": [
+      "Android",
+      "iOS"
+    ],
+    "repo": "https://github.com/mariusbackes/cordova-plugin-sumup",
+    "installVariables": [
+      "SUMUP_API_KEY"
+    ],
+    "cordovaPlugin": {
+      "name": "cordova-sumup-plugin"
     }
   },
   {
@@ -3275,6 +3495,21 @@
     "repo": "https://github.com/vilic/cordova-plugin-tts",
     "cordovaPlugin": {
       "name": "cordova-plugin-tts"
+    }
+  },
+  {
+    "packageName": "@ionic-native/theme-detection",
+    "displayName": "Theme Detection",
+    "description": "\nCordova plugin to detect whether dark mode is enabled or not\n",
+    "usage": "\n```typescript\nimport { ThemeDetection } from '@ionic-native/theme-detection';\n\n\nconstructor(private themeDetection: ThemeDetection) { }\n\n...\n\nthis.themeDetection.isAvailable()\n  .then((res: ThemeDetectionResponse) => {\n     if(res.value) {\n       this.themeDetection.isDarkModeEnabled().then((res: ThemeDetectionResponse) => {\n         console.log(res);\n       })\n       .catch((error: any) => console.error(error));\n     }\n  })\n  .catch((error: any) => console.error(error));\n\n```\n",
+    "platforms": [
+      "iOS",
+      "Android"
+    ],
+    "repo": "https://github.com/mariusbackes/cordova-plugin-theme-detection",
+    "installVariables": [],
+    "cordovaPlugin": {
+      "name": "cordova-plugin-theme-detection"
     }
   },
   {
@@ -3350,6 +3585,11 @@
       "iOS"
     ],
     "repo": "https://github.com/chroa/twitter-connect-plugin",
+    "installVariables": [
+      "FABRIC_KEY",
+      "TWITTER_KEY",
+      "TWITTER_SECRET"
+    ],
     "cordovaPlugin": {
       "name": "twitter-connect-plugin"
     }
@@ -3383,6 +3623,23 @@
     }
   },
   {
+    "packageName": "@ionic-native/unvired-cordova-sdk",
+    "displayName": "Unvired Cordova SDK",
+    "description": "\nThis plugin lets you build apps which connect to Unvired Mobile Platform (UMP).\n-\niOS Requirements\n-\nThis plugin uses Cocoapods to install dependent libraries. Please make sure you have a valid Cocoapods installation.\nOnce you have it ready, do update the cocoapods repo by running the following command before you install this plugin.\n```\npod repo update\n```",
+    "usage": "\n```typescript\nimport { UnviredCordovaSDK } from '@ionic-native/unvired-cordova-sdk/ngx';\n\n\nconstructor(private unviredSDK: UnviredCordovaSDK) { }\n\n...\n// This is usually done in app.component.ts of your app.\n// Before you can interact with UMP, you need to initialize the SDK and authenticate with UMP.\n// SDK Initialization\nlet loginParameters = new LoginParameters()\nloginParameters.appName = 'UNVIRED_DIGITAL_FORMS'\nloginParameters.metadataPath = '../assets/metadata.json'\nlet loginResult: LoginResult\ntry {\n  loginResult = await this.unviredSDK.login(loginParameters)\n}\ncatch (error) {\n  this.unviredSDK.logError(\"AppComponent\", \"Initialize\", \"Error during login: \" + error)\n}\n\n\nswitch (loginResult.type) {\ncase LoginListenerType.auth_activation_required:\n// App is not activated. i.e, User is using the app for the very first time.\n// App needs to be activated before it can interact with UMP.\n// At this point of time, you basically navigate to a login screen & accept username / password from the user.\n// Set the username & password to loginParameters object and call authenticateAndActivate\ntry {\n // Execute this block of code in a login screen.\nlet loginParameters = new LoginParameters();\nloginParameters.url = '<UMP_URL>';\nloginParameters.company = '<Company>';\nloginParameters.username = '<Username>';\nloginParameters.password = '<Password>';\nloginParameters.loginType = LoginType.unvired;\nlet authenticateActivateResult: AuthenticateActivateResult = await this.unviredSDK.authenticateAndActivate(loginParameters);\nif (authenticateActivateResult.type === AuthenticateAndActivateResultType.auth_activation_success) {\n// App is fully setup. Navigate to your app's home screen.\n} else if (authenticateActivateResult.type === AuthenticateAndActivateResultType.auth_activation_error) {\nconsole.log(\"Error during login: \" + authenticateActivateResult.error)\n} catch (error) {\nthis.unviredSDK.logError('LoginPage', 'auth_activation_required', 'ERROR: ' + error);\n}\nbreak;\n\n\n\ncase LoginListenerType.app_requires_login:\n// App is already activated. But, the user needs to enter credentials because the setting LOCAL_PASSWORD is set to YES in Unvired Admin Cockpit.\n// To set LOCAL_PASSWORD property for your app, contact your administrator.\ntry {\n // Execute this block of code in a login screen.\n let loginParameters = new LoginParameters()\n loginParameters.username = '<Username>';\n loginParameters.password = '<Password>';\n let authenticateLocalResult: AuthenticateLocalResult = await this.unviredSDK.authenticateLocal(loginParameters);\n if (authenticateLocalResult.type === AuthenticateLocalResultType.login_success) {\n // App is fully setup. Navigate to your app's home screen.\n } else if (authenticateLocalResult.type === AuthenticateLocalResultType.login_error) {\n  console.log(\"Error during local login: \" + authenticateActivateResult.error)\n } catch (error) {\n  this.unviredSDK.logError('LoginPage', 'app_requires_login', 'ERROR: ' + error);\n}\nbreak;\n\n\n\ncase login_success:\n// The setting LOCAL_PASSWORD is set to false.\n// App is fully initialized. Users can interact with the UMP\n// Navigate to Home screen\nbreak;\n}\n\n\n\n\n\n// Synchronization APIs\n// Make sync call.\nlet result = await this.unviredSDK.syncForeground(RequestType.QUERY, null, {\"CUSTOMER_HEADER\": {\"field1\" : \"value1\", \"field2\" : \"value2\"}}, 'UNVIRED_DIGITAL_FORMS_PA_MOBILE_GET_USERS', true)\n\n// Make async call.\nlet result = await this.unviredSDK.syncBackground(RequestType.QUERY, null, inputObj, 'UNVIRED_DIGITAL_FORMS_PA_MOBILE_GET_USERS', 'INPUT_GET_USERS', 'GUID', false)\n// Note: Subscribe to NotificationListener to get updates on data processing in background\n// However, only one screen can listen to background data updates at any point of time.\nthis.unviredSDK.registerNotifListener().subscribe( data => {\nswitch (data.type) {\ncase NotificationListenerType.dataSend:\nbreak;\ncase NotificationListenerType.dataChanged:\nbreak;\ncase NotificationListenerType.dataReceived:\nbreak;\n.\n.\n.\n}})\n\n\n\n\n\n// Database APIs\n// Insert a record onto database\nthis.unviredsdk.dbInsert(\"CUSTOMER_HEADER\", {\"NAME\":\"USER\",\"NO\":\"0039\"}, true);\n\n// Update a record in database\nthis.unviredSDK.dbUpdate('CUSTOMER_HEADER', {\"NAME\":\"UPDATED_USER\",\"NO\":\"UPDATED_NO\"}, \"FORM_ID = '5caed815892215034dacad56'\")\n\n// Delete a record in database\nthis.unviredSDK.dbDelete('CUSTOMER_HEADER', \"FORM_ID = '5caed815892215034dacad56'\")\n\n// Execute a SQL Query\nthis.unviredSDK.dbExecuteStatement('SELECT * FROM CUSTOMER_HEADER WHERE CUSTOMER_ID = \"0039\"')\n",
+    "platforms": [
+      "iOS",
+      "Android",
+      "Windows",
+      "Browser"
+    ],
+    "repo": "https://github.com/unvired/cordova-plugin-unvired-sdk/",
+    "installVariables": [],
+    "cordovaPlugin": {
+      "name": "https://github.com/unvired/cordova-plugin-unvired-sdk"
+    }
+  },
+  {
     "packageName": "@ionic-native/uptime",
     "displayName": "Uptime",
     "description": "\nThis plugin provides the time spent in milliseconds since boot (uptime).\n",
@@ -3394,6 +3651,20 @@
     "repo": "https://github.com/s1lviu/cordova-plugin-uptime",
     "cordovaPlugin": {
       "name": "cordova-plugin-uptime"
+    }
+  },
+  {
+    "packageName": "@ionic-native/urbanairship",
+    "displayName": "UrbanAirShip",
+    "description": "\nThis plugin does something\n",
+    "usage": "\n```typescript\nimport { UrbanAirShip } from '@ionic-native/urbanairship/ngx';\n\n\nconstructor(private urbanAirShip: UrbanAirShip) { }\n\n...\n\n\nthis.urbanAirShip.takeOff(config)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+    "platforms": [
+      "Android",
+      "iOS"
+    ],
+    "repo": "https://www.npmjs.com/package/urbanairship-cordova",
+    "cordovaPlugin": {
+      "name": "urbanairship-cordova"
     }
   },
   {
@@ -3423,7 +3694,8 @@
     "repo": "https://github.com/apache/cordova-plugin-vibration",
     "cordovaPlugin": {
       "name": "cordova-plugin-vibration"
-    }
+    },
+    "premierSlug": "vibration"
   },
   {
     "packageName": "@ionic-native/video-capture-plus",
@@ -3519,6 +3791,9 @@
       "iOS"
     ],
     "repo": "https://github.com/xu-li/cordova-plugin-wechat.git",
+    "installVariables": [
+      "wechatappid"
+    ],
     "cordovaPlugin": {
       "name": "cordova-plugin-wechat"
     }
@@ -3535,6 +3810,24 @@
     "repo": "https://github.com/jasonmamy/cordova-wheel-selector-plugin",
     "cordovaPlugin": {
       "name": "cordova-wheel-selector-plugin"
+    }
+  },
+  {
+    "packageName": "@ionic-native/wonderpush",
+    "displayName": "WonderPush",
+    "description": "\n\nPush notification delivery with the WonderPush service.\n\nGet started in minutes: [Ionic Quickstart Guide](https://docs.wonderpush.com/docs/ionic-quickstart).\n\nRequires the Cordova plugin `wonderpush-cordova-sdk`.\n\n[WonderPush](https://www.wonderpush.com) is the most effective way\nto retain your users and grow your audience while remaining fully GDPR compliant.\n",
+    "usage": "\n```typescript\nimport { WonderPush } from '@ionic-native/wonderpush';\n\n\nconstructor(private wonderPush: WonderPush) { }\n\n...\n\n// Subscribe user\nthis.wonderPush.subscribeToNotifications()\n  .then(() => console.log(\"User subscribed to notifications\"))\n  .catch((error: any) => console.error(error));\n\n\n// Send an event (a purchase in this example)\nthis.wonderPush.sendEvent('purchase', {\n  float_price: 12.99,\n  string_sku: \"X123456\"\n});\n\n// Tag users (as customers)\nthis.wonderPush.addTag('customer');\n\n// Personalize\n1. Store user details.\n2. Use those details to create segments.\n3. Include those details in your notifications.\nthis.wonderPush.putProperties({\n  string_name: 'John D.',\n  int_age: 24\n});\n\n// GDPR\n1. set REQUIRES_USER_CONSENT=true to enable GDPR compliance.\n2. WonderPush doesn't start until setUserConsent(true) is called.\nconst onClick = (userConsent: boolean) => this.wonderPush.setUserConsent(userConsent);\n\n// Listen to notification clicks\ndocument.addEventListener('wonderpush.notificationOpen', function(event) {\n  console.log('Notification opened', event.notification);\n  if (event.notificationType === 'data') {\n    console.log('Silent notification', event.notification);\n  }\n});\n```\n",
+    "platforms": [
+      "Android",
+      "iOS"
+    ],
+    "repo": "https://github.com/wonderpush/wonderpush-cordova-sdk",
+    "installVariables": [
+      "CLIENT_ID",
+      "CLIENT_SECRET"
+    ],
+    "cordovaPlugin": {
+      "name": "wonderpush-cordova-sdk"
     }
   },
   {

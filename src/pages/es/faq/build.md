@@ -1,47 +1,47 @@
 ---
-previousText: 'Glossary'
-previousUrl: '/docs/faq/glossary'
-nextText: 'Runtime Errors'
+previousText: 'Glosario'
+previousUrl: '/docs/faq/glosario'
+nextText: 'Errores en tiempo de ejecución'
 nextUrl: '/docs/faq/runtime'
 disableHtmlPreviews: true
 contributors:
   - brandyscarney
 ---
 
-# Build Errors
+# Errores en el Build
 
-## Common mistakes
+## Errores comunes
 
-### Forgetting Parentheses on a Decorator
+### Olvidarse paréntesis en un Decorator
 
-Decorators should have parentheses `()` after an annotation. Some examples include: `@Injectable()`, `@Optional()`, `@Input()`, etc.
+Los Decorators deben tener paréntesis `()` después de una anotación. Algunos ejemplos incluyen: `@Injectable()`, `@Optional()`, `@Input()`, etc.
 
 ```typescript
 @Directive({
   selector: 'my-dir'
 })
 class MyDirective {
-  // Wrong, should be @Optional()
-  // @Optional does nothing here, so MyDirective will error if parent is undefined
+  // Mal, debería ser @Optional()
+  // @Optional no hace nada aquí, entonces MyDirective arrojará error si parent es undefined
   constructor( @Optional parent: ParentComponent) { }
 }
 ```
 
-## Common Errors
+## Errores comunes
 
-### Cannot Resolve all Parameters
+### "Cannot Resolve all Parameters"
 
 ```shell
-Cannot resolve all parameters for 'YourClass'(?). Make sure that all the parameters are decorated with Inject or have valid type annotations and that 'YourClass' is decorated with Injectable.
+Si te encuentras con el error "Cannot resolve all parameters for 'TuClase'(?).". Asegúrate de que todos los parámetros están decorados con Inject o tengan anotaciones de tipo válidas y que 'TuClase' está decorada con Injectable.
 ```
 
-This exception means that Angular is confused about one or more of the parameters for `YourClass`'s constructor. In order to do [dependency injection](https://angular.io/docs/ts/latest/guide/dependency-injection.html) Angular needs to know the type of the parameter to inject. You let Angular know this by specifying the class of the parameter. Make sure:
+Esta excepción significa que Angular está confundido con uno o más de los parámetros para el constructor de `TuClase`. Para hacer una [inyección de dependencia](https://angular.io/docs/ts/latest/guide/dependency-injection.html) Angular necesita saber el tipo de parámetro a inyectar. La manera de hacerlo es especificando la clase del parámetro. Asegúrate de:
 
-- You are importing the parameter's class.
-- You have properly annotated the parameter or specified its type.
+- Estás importando la clase del parámetro.
+- Has anotado correctamente el parámetro o has especificado su tipo.
 
 ```typescript
-import { MyService } from 'my-service'; // Don't forget to import me!
+import { MyService } from 'my-service'; // No te olvides de importarlo!
 
 @Component({
   template: `Hello World`
@@ -54,7 +54,7 @@ export class MyClass {
 }
 ```
 
-Sometimes circular references within your code can cause this error. Circular references mean that two objects depend on each other, and so there is no way to declare both of them before each other. To get around this, we can use the [`forwardRef`](https://angular.io/docs/ts/latest/api/core/index/forwardRef-function.html) function built in to Angular.
+Algunas veces las referencias circulares dentro de tu código pueden causar este error. Las referencias circulares significan que dos objetos dependen unos de otros, y por lo tanto no hay forma de declarar ambos antes que los otros. Para solucionar esto se puede hacer uso de la función [`forwardRef`](https://angular.io/docs/ts/latest/api/core/index/forwardRef-function.html) de Angular.
 
 ```ts
 import { forwardRef } from '@angular/core';
@@ -65,8 +65,8 @@ import { forwardRef } from '@angular/core';
                <icon></icon>
                <input type="button" />
              </div>`,
-  directives: [forwardRef(() => MyIcon)] // MyIcon has not been defined yet
-})                                       // forwardRef resolves as MyIcon when MyIcon is needed
+  directives: [forwardRef(() => MyIcon)] // MyIcon no ha sido definido aún
+})                                       // forwardRef resuelve MyIcon cuando se requiera
 class MyButton {
   constructor() { }
 }
@@ -75,28 +75,28 @@ class MyButton {
   selector: 'icon'
 })
 class MyIcon {
-  constructor(containerButton: MyButton) { } // MyButton has been defined
+  constructor(containerButton: MyButton) { } // MyButton ha sido definido
 }
 ```
 
-### No provider for ParamType
+### "No provider for ParamType"
 
 ```shell
-No provider for ParamType! (MyClass -> ParamType)
+Error "No provider for ParamType!" (MiClase -> ParamType)
 ```
 
-This means Angular knows the type of parameter it is supposed to inject, but it doesn't know how to inject it.
+Esto significa que Angular sabe el tipo de parámetro que se supone que inyecta, pero no sabe cómo inyectarlo.
 
-If the parameter is a service, make sure you have added the specified class to the list of providers available to your app:
+Si el parámetro es un servicio, asegúrese de haber añadido la clase especificada a la lista de proveedores disponibles en su aplicación:
 
 ```typescript
-import { MyService } from 'my-service';
+importar { MiServicio } de 'mi-servicio';
 
 @Component({
   templateUrl: 'app/app.html',
-  providers: [MyService] // Don't forget me!
+  proveedores: [MiServicio] // No te olvides!
 })
-class MyApp { }
+clase MiApp { }
 ```
 
 If the parameter is another component or directive (for example, a parent component), adding it to your list of providers will make the error go away, but this will have the same effect as the [Multiple instances of a provider](#multiple_instances) above. You'll be creating a new instance of the component class, and you won't get a reference to the component instance you want. Instead, make sure that the directive or component you expect to be injected is available to your component (e.g. that it is actually a parent if you are expecting it to be a parent). This is probably easiest understood with an example:

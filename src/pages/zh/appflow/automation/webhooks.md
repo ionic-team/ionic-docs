@@ -1,17 +1,17 @@
 ---
-previousText: 'Environments'
+previousText: '环境'
 previousUrl: '/docs/appflow/automation/environments'
-nextText: 'Cookbook'
-nextUrl: '/docs/appflow/cookbook/intro'
+nextText: '参考手册'
+nextUrl: '/docs/apport/commodbook/intro'
 ---
 
-# Understanding Webhooks
+# 了解 Webhooks
 
-When a webhook URL is specified for an automation, a POST is made every time a build completes. Information is included about the build, as well as the user who triggered it and the commit that it was built from.
+当为自动化指定webhook URL时，每次构建完成都会生成一个POST。 其中包括关于构建的信息，以及触发构建的用户和构建的提交。
 
-## Webhook Body
+## Webhook 内容
 
-Below are example webhook json payloads:
+下面是webhook json的例子:
 
 ### Package Automation Webhook
 
@@ -101,7 +101,7 @@ Below are example webhook json payloads:
 }
 ```
 
-### Web Automation Webhook
+### Package Automation Webhook
 
 ```json
 {
@@ -187,14 +187,14 @@ Below are example webhook json payloads:
 }
 ```
 
-## Responding to Webhooks
+## Webhooks响应
 
-The server will automatically attempt a retry if the webhook request does not receive a status code of **200**.
+如果 webhook 请求没有收到 **200** 的状态代码，服务器会自动尝试重试。
 
-## Retries
+## 重试
 
-The server will retry the hook up to 5 times with an increasing delay between attempts (up to a delay of one hour) in the case where it does not receive a 200 response code.
+没有收到200个响应代码的情况下，服务器将重试连接最多5次，每次尝试之间的延迟不断增加(最多延迟1小时)。
 
-## Signed Download URLs (Package Automations Only)
+## 已签名下载url(仅Package Automations)
 
-The `downloadUrl` field in the webhook allows only this specific build to be downloaded, and will be signed with a token that is valid for 24 hours. There is no limit on the number of downloads, but after the time limit the endpoint will no longer function.
+Webhook中的`downloadUrl`字段只允许下载这个特定的构建，并且将使用24小时有效的令牌进行签名。 下载次数没有限制，但是超过时间限制后端点将不再运行。

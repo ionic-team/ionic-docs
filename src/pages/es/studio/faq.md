@@ -5,7 +5,7 @@
 
 ## Which versions of Ionic Framework are supported?
 
-Ionic Studio currently supports apps using **Ionic 4** and **Angular**. We plan to add support for other versions such as **React** and **Vue** in the future.
+Ionic Studio currently supports apps using **Ionic 4** and **Angular**.
 
 Ionic 3 is not supported. We encourage you to [migrate to Ionic 4](https://ionicframework.com/docs/building/migration).
 

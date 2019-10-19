@@ -6,8 +6,6 @@
 
 The quickstart tutorial walks you through starting a new app, the basics of Compose and Code, and serving your app.
 
-> 🚧 These docs are a work-in-progress. Check back frequently for updates!
-
 ## Start a New App
 
 To create a new Ionic project:
@@ -28,8 +26,9 @@ For this quickstart tutorial, we are going to focus on using Compose to update a
 
 1. Open Compose mode by clicking the cursor icon in the navigation menu. ![Compose Page Index](/docs/assets/img/studio/ss-page-index.png)
 1. Open the **Tab1Page** provided by the **tabs** starter template. ![Compose](/docs/assets/img/studio/ss-compose.png)
-1. **Change text** by double-clicking in the canvas. Change "Tab One" to "My New Page".
-1. **Delete elements** by clicking on them and pressing the Delete or Backspace key. Delete the `<ion-img>` inside the card that shows `shapes.svg`.
+1. **Select elements** by hovering over the canvas and double-clicking into the layers OR holding <kbd>Ctrl</kbd> (or <kbd>Command</kbd> for macOS) to fine-select.
+1. **Change text** by selecting the containing element and double-clicking it. Change the title text from "Tab One" to "My New Page".
+1. **Delete elements** by selecting them and pressing the Delete or Backspace key. Delete the `<ion-img>` inside the card that shows `shapes.svg`.
 1. **Insert elements** by opening the dropdown menus in the header and dragging elements into the canvas or code. Add a button at the bottom of the card.
 1. **Modify component properties** by clicking on the component and using the properties panel. Change the **Theme Color** of your button to **Secondary**.
 1. **Save your changes** with <kbd>Ctrl</kbd>+<kbd>S</kbd> (or <kbd>Command</kbd>+<kbd>S</kbd> for macOS), or with **File** &raquo; **Save**.

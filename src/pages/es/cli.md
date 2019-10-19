@@ -5,7 +5,7 @@
 
 The Ionic command-line interface ([CLI](/docs/faq/glossary#cli)) is your go-to tool for developing Ionic apps.
 
-## Installation
+## Instalación
 
 The Ionic CLI can be installed globally with npm:
 
@@ -13,7 +13,7 @@ The Ionic CLI can be installed globally with npm:
 $ npm install -g ionic
 ```
 
-## Help
+## Ayuda
 
 The Ionic CLI ships with command documentation that is accessible with the `--help` flag.
 

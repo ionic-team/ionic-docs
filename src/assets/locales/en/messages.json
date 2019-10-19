@@ -37,7 +37,7 @@
   "menu-building-testing": "Testing",
   "menu-building-contributing": "Contributing",
   "menu-building-webview": "Web View",
-  "menu-building-storage": "Ionic Storage",
+  "menu-building-storage": "Data Storage",
 
   "menu-layout": "Layout",
   "menu-layout-structure": "Structure",
@@ -70,7 +70,7 @@
   "menu-react-config": "Config",
   "menu-react-platform": "Platform Utils",
 
-  "menu-vue": "Vue",
+  "menu-vue": "Vue (beta)",
   "menu-vue-overview": "Overview",
   "menu-vue-your-first-app": "Build Your First App",
   "menu-vue-lifecycle": "Lifecycle",
@@ -153,14 +153,14 @@
 
   "menu-cli-commands": "Command Reference",
 
-  "menu-native-ce": "Community Edition",
-  "menu-native-ce-overview": "Overview",
-  "menu-native-ce-show-all": "Show all CE plugins...",
-  "menu-native-ee": "Enterprise Edition",
-  "menu-native-ee-overview": "Overview",
-  "menu-native-ee-show-all": "Show all EE plugins...",
-
-  "menu-native-plugins": "Community Plugins",
+  "menu-native-community": "Community Plugins",
+  "menu-native-community-overview": "Overview",
+  "menu-native-community-oss": "Open Source",
+  "menu-native-community-all": "All Community Plugins",
+  "menu-native-community-show-all": "Show all Community plugins...",
+  "menu-native-paid": "Ionic Native",
+  "menu-native-paid-overview": "Overview",
+  "menu-native-paid-show-all": "Show all Premier Plugins...",
 
   "menu-appflow": "Welcome to Appflow",
 
@@ -210,10 +210,11 @@
 
   "menu-appflow-devapp": "DevApp: Local Development",
 
-  "menu-enterprise-authentication-security": "Authentication & Security",
-  "menu-enterprise-common-device-features": "Common Device Features",
-  "menu-enterprise-integrated-services": "Integrated Services",
-  "menu-enterprise-offline-data": "Offline & Data",
+  "menu-enterprise-getting-started": "Getting Started",
+  "menu-enterprise-guides": "Guides",
+  "menu-enterprise-authentication-security": "Pre-built Solutions",
+  "menu-enterprise-common-device-features": "Premier Plugins",
+  "menu-enterprise-integrated-services": "Service Integrations",
   "menu-enterprise-payments": "Payments",
 
   "menu-studio-introduction": "Introduction",

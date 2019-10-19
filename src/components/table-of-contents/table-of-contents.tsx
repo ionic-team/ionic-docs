@@ -17,16 +17,23 @@ export class DocsTableOfContents {
   @State() itemOffsets: ItemOffset[] = [];
   @State() selectedId: string = null;
 
-  @Listen('scroll', { target: 'window' })
+  @Listen('scroll', { target: 'window', passive: true })
   function() {
-    const itemIndex = this.itemOffsets.findIndex(item => item.topOffset > window.scrollY);
-    if (itemIndex === 0 || this.itemOffsets[this.itemOffsets.length - 1] === undefined) {
-      this.selectedId = null;
-    } else if (itemIndex === -1) {
-      this.selectedId = this.itemOffsets[this.itemOffsets.length - 1].id;
-    } else {
-      this.selectedId = this.itemOffsets[itemIndex - 1].id;
-    }
+    this.debounce(() => {
+      requestAnimationFrame(() => {
+        const itemIndex = this.itemOffsets.findIndex(item => item.topOffset > window.scrollY);
+        if (
+          itemIndex === 0 ||
+          this.itemOffsets[this.itemOffsets.length - 1] === undefined
+        ) {
+          this.selectedId = null;
+        } else if (itemIndex === -1) {
+          this.selectedId = this.itemOffsets[this.itemOffsets.length - 1].id;
+        } else {
+          this.selectedId = this.itemOffsets[itemIndex - 1].id;
+        }
+      });
+    }, 500);
   }
 
   @Watch('links')
@@ -45,6 +52,17 @@ export class DocsTableOfContents {
 
   componentDidLoad() {
     this.updateItemOffsets();
+  }
+
+  debounce = (fn, time) => {
+    let timeout;
+
+    return function() {
+      const functionCall = () => fn.apply(this, arguments);
+
+      clearTimeout(timeout);
+      timeout = setTimeout(functionCall, time);
+    };
   }
 
   toItem = ({ text, href }: Link) => {
