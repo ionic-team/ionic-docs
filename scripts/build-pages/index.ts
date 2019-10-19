@@ -9,7 +9,9 @@ import CLI from './page-types/cli';
 import Native from './page-types/native';
 import { convertHtmlToHypertextData } from './html-to-hypertext-data';
 
-const tasks = new Listr();
+const tasks = new Listr(
+  // { renderer: 'verbose' }
+);
 tasks.add(Static);
 tasks.add(API);
 tasks.add(CLI);
@@ -126,7 +128,9 @@ export function updatePageHtmlToHypertext(page: Page) {
 }
 
 function writePage(page: Page): Promise<any> {
-  listrStatus.output = `Writing Page: ${page.path}`;
+  if (listrStatus && listrStatus._task && listrStatus._task.output !== 'Writing Pages') {
+    listrStatus.output = 'Writing Pages';
+  }
   return fs.outputJson(toFilePath(page.path), page, {
     spaces: 2
   });

@@ -6,10 +6,6 @@
 
 Manage app configuration and settings.
 
-<blockquote>
-🚧 These docs are a work-in-progress. Check back frequently for updates!
-</blockquote>
-
 ## Config
 
 The **Config** section is for managing the common settings in `config.xml` such as the name and version of the app, as well as the Bundle ID (aka [Package ID](/docs/faq/glossary#package-id)).

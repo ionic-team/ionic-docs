@@ -96,6 +96,10 @@ As of `@ionic/app-scripts@3.2.0` you can also use
 [environment variables directly in your source code](https://github.com/ionic-team/ionic-app-scripts#environments)
 and they will be replaced at build time so that you can customize your code based on the environment.
 
+<blockquote>
+  <p><b>Note:</b>`@ionic/app-scripts` is only for use with Ionic Framework v3 applications. The above does not apply to other versions.</p>
+</blockquote>
+
 For example:
 
 ```typescript

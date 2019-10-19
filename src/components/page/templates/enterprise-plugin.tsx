@@ -9,7 +9,7 @@ export default (props) => {
   let variables = '';
   if (pluginId === 'auth-connect') {
     pluginId = 'auth';
-    variables = '--variable AUTH_URL_SCHEME =mycustomscheme';
+    variables = '--variable AUTH_URL_SCHEME=mycustomscheme';
   }
   const otherVersions = page.otherVersions || [];
 
@@ -55,21 +55,17 @@ const renderInstallation = (pluginId: string, variables?: string) => {
         <a href="#installation">Installation</a>
       </h2>
       <p>
-        In order to use <a href="https://ionicframework.com/enterprise-edition">
-        Ionic Enterprise Edition</a> plugins you should make sure you're using
-        the Ionic Enterprise Cordova CLI as the regular version can have issues
-        with scoped plugins.
+        After following the one-time <stencil-route-link url="/docs/enterprise/setup">setup steps</stencil-route-link>,
+        simply install the plugin:
       </p>
+      <strong>Cordova:</strong>
       <command-line>
-        <command-prompt>{'npm uninstall -g cordova'}</command-prompt>
-        <command-prompt>{'npm install -g @ionic-enterprise/cordova'}</command-prompt>
-      </command-line>
-      <p>
-        Once you've installed the Ionic Enterprise Cordova CLI you can install the plugin.
-      </p>
-      <command-line>
-        <command-prompt>{`ionic enterprise register --key=YOURPRODUCTKEY`}</command-prompt>
         <command-prompt>{`ionic cordova plugin add @ionic-enterprise/${pluginId} ${variables}`}</command-prompt>
+      </command-line>
+      <strong>Capacitor:</strong>
+      <command-line>
+        <command-prompt>{`npm install @ionic-enterprise/${pluginId} ${variables}`}</command-prompt>
+        <command-prompt>npx cap sync</command-prompt>
       </command-line>
     </section>
   );

@@ -1,7 +1,7 @@
 ---
-previousText: 'Scaffolding'
+previousText: '脚手架'
 previousUrl: '/docs/building/scaffolding'
-nextText: 'Cross Platform'
+nextText: '跨平台'
 nextUrl: '/docs/building/cross-platform'
 contributors:
   - mhartington
@@ -9,18 +9,18 @@ contributors:
   - elylucas
 ---
 
-# Migration Guide
+# 迁移指南
 
-> For a **complete list of breaking changes** from Ionic 3 to Ionic 4, please refer to [the breaking changes document](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md) in the Ionic core repo.
+> 要查看Ionic4中**版本更新的完整内容**，请访问位于Ionic核心仓库中的[ 版本更新文档](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md)
 
-## Migrating from Ionic 3.0 to Ionic 4.0 - Overview
+## 从Ionic3.0迁移至Ionic4.0-概览
 
 We suggest the following general process when migrating an existing application from Ionic 3 to 4:
 
 1. Generate a new project using the `blank` starter (see [Starting an App](/docs/building/starting))
 2. Copy any Angular services from `src/providers` to `src/app/services` 
    - Services should include `{ providedIn: 'root' }` in the `@Injectable()` decorator. For details, please see Angular [provider docs](https://angular.io/guide/providers).
-3. Copy the app's other root level items (pipes, components, etc) keeping in mind that the directory structure changes from `src/components` to `src/app/components`, etc.
+3. Copy the app's other root-level items (pipes, components, etc) keeping in mind that the directory structure changes from `src/components` to `src/app/components`, etc.
 4. Copy global Sass styling from `src/app/app.scss` to `src/global.scss`
 5. Copy the rest of the application, page by page or feature by feature, keeping the following items in mind: 
    - Emulated Shadow DOM is turned on by default
@@ -29,7 +29,7 @@ We suggest the following general process when migrating an existing application 
    - Certain lifecycle hooks should be replaced by Angular's hooks (see [Lifecycle Events](#lifecycle-events))
    - Markup changes may be required (migration tool available, see [Markup Changes](#markup-changes))
 
-In many cases, using the Ionic CLI to generate a new object and then copying the code also works very well. For example: `ionic g service weather` will create a shell `Weather` service and test. The code can then be copied from the older project with minor modifications as needed. This helps to ensure proper structure is followed. This also generates shells for unit tests.
+In many cases, using the Ionic CLI to generate a new object and then copying the code also works very well. For example: `ionic g service weather` will create a shell `Weather` service and test. The code can then be copied from the older project with minor modifications as needed. This helps to ensure the proper structure is followed. This also generates shells for unit tests.
 
 ## Changes in Package Name
 
@@ -44,7 +44,7 @@ While migrating an app, update the imports from `ionic-angular` to `@ionic/angul
 
 ## Project structure
 
-One of the major changes between an Ionic 3 app and an Ionic 4 app is the overall project layout and structure. In v3, Ionic apps had a custom convention for how an app should be setup and what that folder structure should look like. In v4, this has been changed to follow the recommended setup of each supported framework.
+One of the major changes between an Ionic 3 app and an Ionic 4 app is the overall project layout and structure. In v3, Ionic apps had a custom convention for how an app should be set up and what that folder structure should look like. In v4, this has been changed to follow the recommended setup of each supported framework.
 
 For example, if an app is using Angular, that project structure will be exactly what an Angular CLI app would be. This change, while not too difficult to accommodate, helps to keep common patterns and documentation consistent.
 
@@ -52,7 +52,7 @@ For example, if an app is using Angular, that project structure will be exactly 
 
 The above comparison is an example of a v4 app's project structure. For developers with experience in a vanilla Angular project, this should feel really familiar.
 
-There is a `src/` directory that acts as the home for the app. This includes the `index.html`, any assets, environment configuration, and any app specific config files.
+There is a `src/` directory that acts as the home for the app. This includes the `index.html`, any assets, environment configuration, and any app-specific config files.
 
 While migrating an app to take advantage of this new layout, it is suggested that a new project "base" is made with the CLI. Then, with the new project layout, migrate the features of the app piece by piece. Pages/components/etc. should be moved into the `src/app/` folder.
 
@@ -73,11 +73,11 @@ Between V3 and V4, RxJS was updated to version 6. This changes many of the impor
 
 ## Lifecycle Events
 
-With V4, we're now able to utilize the typical events provided by [Angular](https://angular.io/guide/lifecycle-hooks). But for certain cases, you might want to have access to the events fired when a component has finished animating during it's route change. In this case, the `ionViewWillEnter`, `ionViewDidEnter`, `ionViewWillLeave`, and `ionViewDidLeave` have been ported over from V3. Use these events to coordinate actions with Ionic's own animations system.
+With V4, we're now able to utilize the typical events provided by [Angular](https://angular.io/guide/lifecycle-hooks). But for certain cases, you might want to have access to the events fired when a component has finished animating during its route change. In this case, the `ionViewWillEnter`, `ionViewDidEnter`, `ionViewWillLeave`, and `ionViewDidLeave` have been ported over from V3. Use these events to coordinate actions with Ionic's own animations system.
 
 Older events like `ionViewDidLoad`, `ionViewCanLeave`, and `ionViewCanEnter` have been removed, and the proper Angular alternatives should be used.
 
-For more details, checkout the [router-outlet docs](/docs/api/router-outlet)
+For more details, check out the [router-outlet docs](/docs/api/router-outlet)
 
 ## Overlay Components
 
@@ -121,9 +121,9 @@ async showAlert() {
 
 In V4, navigation received the most changes. Now, instead of using Ionic's own `NavController`, we integrate with the official Angular Router. This not only provides a consistent routing experience across apps, but is much more dependable. The Angular team has an <a href="http://angular.io/guide/router" target="_blank">excellent guide</a> on their docs site that covers the Router in great detail.
 
-To provide the platform specific animations that users are used to, we have created `ion-router-outlet` for Angular Apps. This behaves in a similar manner to Angular's `router-outlet` but provides a stack-based navigation (tabs) and animations.
+To provide the platform-specific animations that users are used to, we have created `ion-router-outlet` for Angular Apps. This behaves in a similar manner to Angular's `router-outlet` but provides a stack-based navigation (tabs) and animations.
 
-For a detailed explanation in navigation works in a V4 project, checkout the [Angular navigation guide](/docs/angular/navigation).
+For a detailed explanation in navigation works in a V4 project, check out the [Angular navigation guide](/docs/angular/navigation).
 
 ## Lazy Loading
 
@@ -195,7 +195,7 @@ One upside is that for the most part, the Ionic UI components you know and love 
 Here are some considerations to review before beginning the upgrade:
 
 - **App complexity**: Naturally, the larger and more complex the app is, the longer it will take to migrate.
-- **Framework support**: In 2019, Ionic will release full support for React and Vue. You can also use Ionic Framework components [without a framework](/docs/installation/cdn/). Since these are not production ready yet, we recommend sticking with Angular or waiting until the other framework support is available.
+- **Framework support**: In 2019, Ionic will release full support for React and Vue. You can also use Ionic Framework components [without a framework](/docs/installation/cdn/). Since these are not production-ready yet, we recommend sticking with Angular or waiting until the other framework support is available.
 - **Budget and team makeup**: The length of a migration project will vary based on the size of your team, the complexity of the app, and the amount of time allotted to make the transition.
 
 ### Suggested Strategy

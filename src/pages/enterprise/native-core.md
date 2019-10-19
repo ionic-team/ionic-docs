@@ -1,7 +1,7 @@
 # Native Core
 Native Core is a reliable set of Native APIs & functionality that you can use in your Ionic app, available within a single plugin, that is written and maintained by the Ionic Team.
 
-Native Core is included in Ionic EE (Enterprise Edition):
+Native Core is included in Ionic Native:
 
 <div class="native-ee-pricing">
   <div class="table-wrap">
@@ -13,13 +13,13 @@ Native Core is included in Ionic EE (Enterprise Edition):
           </td>
           <th>
             <div class="plan-wrap">
-              <span class="native-ee-pricing-table">Community Edition</span>
+              <span class="native-ee-pricing-table">Community Plugins</span>
               <div class="price">$0/mo </div>
             </div>
           </th>
           <th>
             <div class="plan-wrap">
-              <span class="native-ee-pricing-table">Enterprise Edition</span>
+              <span class="native-ee-pricing-table">Ionic Native</span>
               <div class="price" data-toggle="billing-team">
                 Contact Us</div>
             </div>

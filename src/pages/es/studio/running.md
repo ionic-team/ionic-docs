@@ -5,9 +5,7 @@
 
 Ionic Studio offers support for serving, running, and deploying apps.
 
-<blockquote>
-🚧 These docs are a work-in-progress. Check back frequently for updates!
-</blockquote>
+> 🚧 These docs are a work-in-progress. Check back frequently for updates!
 
 Serving, running, and deploying each have pros and cons.
 
@@ -69,4 +67,4 @@ To debug running apps, see the docs for debugging [iOS Apps](/docs/building/ios#
 
 To install a standalone version of an app, use *Run* and then switch off the *Live Reload* option.
 
-This will copy app assets onto the target device or emulator, instead of using a Dev Server, which allows the app to continue working when the device to be disconnected from the computer.
+This will copy app assets onto the target device or emulator, instead of using a Dev Server, which allows the app to continue working when the device is disconnected from the computer.

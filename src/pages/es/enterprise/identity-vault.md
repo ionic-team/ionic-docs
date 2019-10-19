@@ -1,7 +1,7 @@
 ---
 title: Identity Vault
 template: enterprise-plugin
-version: 3.4.6
+version: 3.4.7
 minor: 3.4.X
 otherVersions:
   - 2.0.X
@@ -1797,6 +1797,12 @@ The possible values returned by [getBiometricType](#identityvault.getbiometricty
 * * *
 
 ## Change Log
+
+### \[3.4.7\] (2019-09-09)
+
+### Bug Fixes
+
+* **Android:** Fix an issue where the vault would not be cleared when fingerprints were added or all fingerprints were removed on Android.. 
 
 ### \[3.4.6\] (2019-08-07)
 

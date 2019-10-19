@@ -80,6 +80,15 @@ export namespace Components {
   interface DocsCode {
     'language': string;
   }
+  interface DocsCodepen {
+    'defaultTab': string;
+    'height': string | number;
+    'penTitle': string;
+    'preview': boolean;
+    'slug': string;
+    'theme': string;
+    'user': string;
+  }
   interface DocsDemo {
     'source': string;
     'url': string;
@@ -131,7 +140,9 @@ export namespace Components {
     'label': string;
     'links': Link[];
   }
-  interface DocsTabs {}
+  interface DocsTabs {
+    'listenFor': string;
+  }
   interface FileTree {}
   interface FileTreeDirectory {
     'collapsed': boolean;
@@ -139,6 +150,9 @@ export namespace Components {
   }
   interface FileTreeFile {
     'name': string;
+  }
+  interface HeaderMobileCollapse {
+    'darkMode': boolean;
   }
   interface HubspotForm {
     'formId': string;
@@ -260,6 +274,12 @@ declare global {
     new (): HTMLDocsCodeElement;
   };
 
+  interface HTMLDocsCodepenElement extends Components.DocsCodepen, HTMLStencilElement {}
+  var HTMLDocsCodepenElement: {
+    prototype: HTMLDocsCodepenElement;
+    new (): HTMLDocsCodepenElement;
+  };
+
   interface HTMLDocsDemoElement extends Components.DocsDemo, HTMLStencilElement {}
   var HTMLDocsDemoElement: {
     prototype: HTMLDocsDemoElement;
@@ -368,6 +388,12 @@ declare global {
     new (): HTMLFileTreeFileElement;
   };
 
+  interface HTMLHeaderMobileCollapseElement extends Components.HeaderMobileCollapse, HTMLStencilElement {}
+  var HTMLHeaderMobileCollapseElement: {
+    prototype: HTMLHeaderMobileCollapseElement;
+    new (): HTMLHeaderMobileCollapseElement;
+  };
+
   interface HTMLHubspotFormElement extends Components.HubspotForm, HTMLStencilElement {}
   var HTMLHubspotFormElement: {
     prototype: HTMLHubspotFormElement;
@@ -427,6 +453,7 @@ declare global {
     'docs-card': HTMLDocsCardElement;
     'docs-cards': HTMLDocsCardsElement;
     'docs-code': HTMLDocsCodeElement;
+    'docs-codepen': HTMLDocsCodepenElement;
     'docs-demo': HTMLDocsDemoElement;
     'docs-dropdown': HTMLDocsDropdownElement;
     'docs-header': HTMLDocsHeaderElement;
@@ -445,6 +472,7 @@ declare global {
     'file-tree': HTMLFileTreeElement;
     'file-tree-directory': HTMLFileTreeDirectoryElement;
     'file-tree-file': HTMLFileTreeFileElement;
+    'header-mobile-collapse': HTMLHeaderMobileCollapseElement;
     'hubspot-form': HTMLHubspotFormElement;
     'ionic-search': HTMLIonicSearchElement;
     'layered-colors-select': HTMLLayeredColorsSelectElement;
@@ -519,6 +547,15 @@ declare namespace LocalJSX {
   interface DocsCode extends JSXBase.HTMLAttributes<HTMLDocsCodeElement> {
     'language'?: string;
   }
+  interface DocsCodepen extends JSXBase.HTMLAttributes<HTMLDocsCodepenElement> {
+    'defaultTab'?: string;
+    'height'?: string | number;
+    'penTitle'?: string;
+    'preview'?: boolean;
+    'slug'?: string;
+    'theme'?: string;
+    'user'?: string;
+  }
   interface DocsDemo extends JSXBase.HTMLAttributes<HTMLDocsDemoElement> {
     'source'?: string;
     'url'?: string;
@@ -552,7 +589,9 @@ declare namespace LocalJSX {
     'data'?: any[];
     'keys'?: ReferenceKeys;
   }
-  interface DocsRoot extends JSXBase.HTMLAttributes<HTMLDocsRootElement> {}
+  interface DocsRoot extends JSXBase.HTMLAttributes<HTMLDocsRootElement> {
+    'onPageChanged'?: (event: CustomEvent<any>) => void;
+  }
   interface DocsSelect extends JSXBase.HTMLAttributes<HTMLDocsSelectElement> {
     'initializer'?: (options: string[]) => string;
     'onSelection'?: (event: CustomEvent<string>) => void;
@@ -568,7 +607,9 @@ declare namespace LocalJSX {
     'label'?: string;
     'links'?: Link[];
   }
-  interface DocsTabs extends JSXBase.HTMLAttributes<HTMLDocsTabsElement> {}
+  interface DocsTabs extends JSXBase.HTMLAttributes<HTMLDocsTabsElement> {
+    'listenFor'?: string;
+  }
   interface FileTree extends JSXBase.HTMLAttributes<HTMLFileTreeElement> {}
   interface FileTreeDirectory extends JSXBase.HTMLAttributes<HTMLFileTreeDirectoryElement> {
     'collapsed'?: boolean;
@@ -576,6 +617,9 @@ declare namespace LocalJSX {
   }
   interface FileTreeFile extends JSXBase.HTMLAttributes<HTMLFileTreeFileElement> {
     'name'?: string;
+  }
+  interface HeaderMobileCollapse extends JSXBase.HTMLAttributes<HTMLHeaderMobileCollapseElement> {
+    'darkMode'?: boolean;
   }
   interface HubspotForm extends JSXBase.HTMLAttributes<HTMLHubspotFormElement> {
     'formId'?: string;
@@ -609,6 +653,7 @@ declare namespace LocalJSX {
     'docs-card': DocsCard;
     'docs-cards': DocsCards;
     'docs-code': DocsCode;
+    'docs-codepen': DocsCodepen;
     'docs-demo': DocsDemo;
     'docs-dropdown': DocsDropdown;
     'docs-header': DocsHeader;
@@ -627,6 +672,7 @@ declare namespace LocalJSX {
     'file-tree': FileTree;
     'file-tree-directory': FileTreeDirectory;
     'file-tree-file': FileTreeFile;
+    'header-mobile-collapse': HeaderMobileCollapse;
     'hubspot-form': HubspotForm;
     'ionic-search': IonicSearch;
     'layered-colors-select': LayeredColorsSelect;

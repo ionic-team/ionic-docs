@@ -5,7 +5,7 @@ nextText: 'Lifecycle'
 nextUrl: '/docs/react/lifecycle'
 ---
 
-# Ionic React
+# Build Your First Ionic React App
 
 ## What is Ionic Framework?
 
@@ -13,7 +13,7 @@ First off, if you're new here, welcome! Ionic is a free and open source componen
 
 Along with the UI components, Ionic also provides a command line tool for creating new apps, as well as deploying to the various platforms we support.
 
-In this guide, we'll go over the basics of both React and Ionic, including any Ionic specific features. If you're familiar already with React, enjoy the guide and learn something new about Ionic. If you're not familiar with either, no worries! This guide will cover the basics and provide enough information to get an app up and running.
+In this guide, we'll go over the basics of both React and Ionic, including any Ionic specific features. If you're familiar with React, enjoy the guide and learn something new about Ionic. If you're not familiar with either, no worries! This guide will cover the basics and provide enough information to get an app up and running.
 
 ## Creating a project with the Ionic CLI
 
@@ -44,7 +44,7 @@ import App from './App';
 ReactDOM.render(<App />, document.getElementById('root'));
 ```
 
-So what's going on here? Well, the first three lines are pulling in some dependencies. The first being React itself. This allows us to write components in an HTML-like syntax called JSX. We'll talk about JSX a bit more later on.
+So what's going on here? Well, the first three lines are pulling in some dependencies. The first being React itself. This allows us to write components in an HTML-like syntax called JSX. We'll talk about JSX a bit later on.
 
 The second import is for ReactDOM. The `ReactDOM.render` method is the browser/DOM specific way of taking our components and rendering it to a specified DOM node.
 
@@ -55,44 +55,42 @@ If we open `App.tsx`, we should see the following.
 ```typescript
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { IonApp, IonPage, IonRouterOutlet } from '@ionic/react';
+import { IonApp, IonRouterOutlet } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 
 /* Core CSS required for Ionic components to work properly */
-import '@ionic/core/css/core.css';
+import '@ionic/react/css/core.css';
 
-const App: React.FunctionComponent = () => (
+const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
-      <IonPage>
-        <IonRouterOutlet>
-          <Route path="/home" component={Home} exact={true} />
-          <Route exact path="/" render={() => <Redirect to="/home" />} />
-        </IonRouterOutlet>
-      </IonPage>
+      <IonRouterOutlet>
+        <Route path="/home" component={Home} exact={true} />
+        <Route exact path="/" render={() => <Redirect to="/home" />} />
+      </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
 );
 ```
 
-At first glance it may look like there's a lot going on, so let's break it down, starting with the first group of imports.
+At first glance, it may look like a lot is going on, so let's break it down, starting with the first group of imports.
 
 ```typescript
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { IonApp, IonPage, IonRouterOutlet } from '@ionic/react';
+import { IonApp, IonRouterOutlet } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 ```
 
-Similar to `index.tsx`, we first must import React in order to use JSX.
+Similar to `index.tsx`, we first must import React to use JSX.
 
 The next import is from `react-router-dom`. We're importing Route, which is how we’ll match the app’s URL with the components we want to render
 
-Following ReactRouter, we next have our first imports for Ionic. To use a component in React, you must first import it. So for Ionic, this means anytime we want to use a Button or a Card, it must be added to our imports. In the case of our App component, we're only using `IonApp`, `IonPage`, `IonRouterOutlet`, and `IonReactRouter`.
+Following ReactRouter, we next have our first imports for Ionic. To use a component in React, you must first import it. So for Ionic, this means anytime we want to use a Button or a Card, it must be added to our imports. In the case of our App component, we're only using `IonApp`, `IonRouterOutlet`, and `IonReactRouter`.
 
-`IonReactRouter` is a component that wraps ReactRouter’s BrowserRouter component. It more or less behaves the same as BrowserRouter with a few differences. We have deeper guide that goes over these differences in our [React Navigation Docs](/docs/react/navigation).
+`IonReactRouter` is a component that wraps ReactRouter’s BrowserRouter component. It more or less behaves the same as BrowserRouter with a few differences. We have a deeper guide that goes over these differences in our [React Navigation Docs](/docs/react/navigation).
 
 The last important import is the `Home` component import. This is a component that we will be able to navigate to in our app. We'll look at the navigation part a bit later.
 
@@ -101,15 +99,13 @@ The CSS import is pulling in the utility styles from Ionic for things like paddi
 After reviewing all of the imports, we now get to our first look at a React Component:
 
 ```typescript
-const App: React.FunctionComponent = () => (
+const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
-      <IonPage>
-        <IonRouterOutlet>
-          <Route path="/home" component={Home} exact={true} />
-          <Route exact path="/" render={() => <Redirect to="/home" />} />
-        </IonRouterOutlet>
-      </IonPage>
+      <IonRouterOutlet>
+        <Route path="/home" component={Home} exact={true} />
+        <Route exact path="/" render={() => <Redirect to="/home" />} />
+      </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
 );
@@ -128,12 +124,12 @@ Currently, the `Home` component looks like so:
 ![React home component](/docs/assets/img/guides/react/first-app/home-route.png)
 
 ```typescript
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import React from 'react';
 
-const Home: React.FunctionComponent = () => {
+const Home: React.FC = () => {
   return (
-    <>
+    <IonPage>
       <IonHeader>
         <IonToolbar>
           <IonTitle>Ionic Blank</IonTitle>
@@ -153,23 +149,27 @@ const Home: React.FunctionComponent = () => {
           will be your guide.
         </p>
       </IonContent>
-    </>
+    </IonPage>
   );
 };
 ```
 
-Much like the `App` component we started off with, we have some imports for specific Ionic components, an import for React, and then our React component itself. This component represents what Ionic considers a page (a component with a route/URL), and includes some common building blocks of a full screen component, like header, title, and content components.
+Much like the `App` component we started with, we have some imports for specific Ionic components, an import for React, and then our React component itself. 
 
-`IonHeader` is a bit self explanatory. It's a component that is meant to exist at the top of the page. `IonHeader` itself doesn't really do much by itself, aside from handling some flexbox-based layout. It's meant to hold other components, like `IonToolbar` or `IonSearchbar`.
+`IonPage` is the base component for all pages (a component with a route/URL), and includes some common building blocks of a full-screen component, like header, title, and content components.
+
+> When creating your own pages, don't forget to have `IonPage` be the root component for them. Having `IonPage` be the root component is important because it helps ensure transitions work properly as well as provides the base CSS the Ionic components rely on.
+
+`IonHeader` is a bit self explanatory. It's a component that is meant to exist at the top of the page. `IonHeader` itself doesn't do much by itself, aside from handling some flexbox-based layout. It's meant to hold other components, like `IonToolbar` or `IonSearchbar`.
 
 `IonContent` is, as its name suggests, the main content area for our page. It's responsible for providing the scrollable content that users will interact with, plus any scroll events that could be used in an app.
 
-Our current content is fairly simple, but does not contain anything that could be used in a real app, so let's change that.
+Our current content is relatively simple but does not contain anything that could be used in a real app, so let's change that.
 
 > Note: For brevity, we're excluding repeating part of our component, like the function declaration or import statements for other components.
 
 ```typescript
-<>
+<IonPage>
   ...
   <IonContent>
     <IonList>
@@ -185,10 +185,10 @@ Our current content is fairly simple, but does not contain anything that could b
       </IonItem>
     </IonList>
   </IonContent>
-</>
+</IonPage>
 ```
 
-Here in our `IonContent`, we're adding an `IonList` and a much more involved `IonItem` component. Let's look at `IonItem`, as it's really the centerpiece here.
+Here in our `IonContent`, we're adding an `IonList` and a much more involved `IonItem` component. Let's look at `IonItem`, as it's the centerpiece here.
 
 ```typescript
 <IonItem>
@@ -207,7 +207,7 @@ Item is important as it clearly shows the mix of React concepts and Web Componen
 
 From the Web Components side, we have a special attribute called `slot`. This is key for letting the `IonItem` know where to place the `IonCheckbox` when it renders. This is not a React API, but a web standards API.
 
-Let's look at another component from Ionic, FAB. Floating Action Buttons are a nice way to provide a main action that is elevated from the rest of an app. For this FAB, we'll need 3 components: a FAB, a FAB Button, and an Icon.
+Let's look at another component from Ionic, FAB. Floating Action Buttons are a nice way to provide a main action that is elevated from the rest of an app. For this FAB, we'll need three components: a FAB, a FAB Button, and an Icon.
 
 ```typescript
 import { add } from ‘ionicons/icons’;
@@ -232,9 +232,9 @@ On our main `IonFab`, we're setting its positioning with the vertical and horizo
 Now let's wire up a click handler to this. What we want to do is when we click the button, we'll navigate to a new page (which we'll create in a moment). To do this, we'll need to get access to React Router's navigation API. Thankfully since this is rendered in a Router/Route context, we have access to React Routers APIs via Props passed to our Home component.
 
 ```typescript
-export default function Home(props: RouteComponentProps) {
+const Home: React.FC<RouteComponentProps> = (props) => {
   return (
-    <>
+    <IonPage>
       <IonHeader>...</IonHeader>
       <IonContent>
         <IonList>...</IonList>
@@ -244,12 +244,13 @@ export default function Home(props: RouteComponentProps) {
           </IonFabButton>
         </IonFab>
       </IonContent>
-    </>
+    </IonPage>
   );
 }
+export default Home;
 ```
 
-So in our function declaration, we're passing in `props` and giving it a type of `RouteComponentProps`. This `props` object gives us access to the history API from React Router, allowing us to push a new route onto the navigation stack. On our `IonFabButton`, we can add a click handler, and just call `props.history.push` and pass in the new route. In this case, we'll navigate to `new`.
+In our component declaration, we're passing in `props` which is of type `RouteComponentProps` (imported from `react-router`). This `props` object gives us access to the history API from React Router, allowing us to push a new route onto the navigation stack. On our `IonFabButton`, we can add a click handler, and just call `props.history.push` and pass in the new route. In this case, we'll navigate to `new`.
 
 ```typescript
 <IonFabButton onClick={() => props.history.push('/new')} >
@@ -265,21 +266,21 @@ import Home from './pages/Home';
 
 import NewItem from './pages/NewItem';
 ...
-export default function App() {
+const App: React.FC = () => {
+  const isAuthed = true;
   return (
-    <IonReactRouter>
-      <Route exact path="/" render={() => <Redirect to="/home" />} />
-      <IonPage>
+    <IonApp>
+      <IonReactRouter>
         <IonRouterOutlet>
-          <Route path="/home" component={Home}  />
-
+          <Route path="/home" component={Home} />
           <Route path="/new" component={NewItem} />
-
+          <Redirect exact from="/" to="/home" />
         </IonRouterOutlet>
-      </IonPage>
-    </IonReactRouter>
+      </IonReactRouter>
+    </IonApp>
   );
-}```
+}
+export default App;
 ````
 
 With our router now having an entry for the route `/new`, we'll create the component needed, `NewItem`. This will exist in `src/pages/NewItem.tsx`
@@ -292,14 +293,15 @@ import {
   IonButtons,
   IonContent,
   IonHeader,
+  IonPage,
   IonTitle,
   IonToolbar
 } from '@ionic/react';
 import React from 'react';
 
-export default function NewItem(props: any) {
+const NewItem: React.FC = () => {
   return (
-    <>
+    <IonPage>
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
@@ -308,19 +310,20 @@ export default function NewItem(props: any) {
           <IonTitle>New Item</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent />
-    </>
+      <IonContent></IonContent>
+    </IonPage>
   );
-}
+};
+export default NewItem;
 ```
 
-The content here is pretty straight forward, and should look familiar to the `Home` component. What is new is the `IonBackButton` component. This is used to navigate back to the previous route. Pretty straight forward? Ok, but what if we reload the page?
+The content here is pretty straight forward and should look similar to the `Home` component. What is new is the `IonBackButton` component. This is used to navigate back to the previous route. Pretty straight forward? Ok, but what if we reload the page?
 
-Well in this case, the in-memory history is lost, so the back button disappears. To address this, we can set the `defaultHref` attribute value to the URL we want to navigate to if there is no history.
+Well, in this case, the in-memory history is lost, so the back button disappears. To address this, we can set the `defaultHref` attribute value to the URL we want to navigate to if there is no history.
 
 ```typescript
 return (
-  <>
+  <IonPage>
     <IonHeader>
       <IonToolbar>
         <IonButtons slot="start">
@@ -330,7 +333,7 @@ return (
       </IonToolbar>
     </IonHeader>
     <IonContent />
-  </>
+  </IonPage>
 );
 ```
 

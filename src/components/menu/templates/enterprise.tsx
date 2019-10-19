@@ -3,14 +3,26 @@ import { h } from '@stencil/core';
 export default () => <docs-nav items={ items } />;
 
 const items = {
-  'menu-native-ce': '/docs/native/overview',
-  'menu-native-ee': '/docs/enterprise',
+  'menu-native-community': '/docs/native/overview',
+  'menu-native-paid': '/docs/enterprise',
+  'menu-enterprise-getting-started': {
+    'Quickstart': '/docs/enterprise/quickstart',
+    'Setup': '/docs/enterprise/setup'
+  },
   'menu-enterprise-authentication-security': {
     'Auth Connect': '/docs/enterprise/auth-connect',
+    '': {
+      'Auth0': '/docs/enterprise/auth-connect/auth0',
+      'Azure AD B2C': '/docs/enterprise/auth-connect/azure-ad-b2c',
+      'AWS Cognito': '/docs/enterprise/auth-connect/aws-cognito'
+    },
     'Identity Vault': '/docs/enterprise/identity-vault',
+    'Offline Storage': '/docs/enterprise/offline-storage'
   },
   'menu-enterprise-common-device-features': {
     'Android Permissions': '/docs/enterprise/android-permissions',
+    'Apple Payment Pass': '/docs/enterprise/apple-payment-pass',
+    'App Rate': '/docs/enterprise/app-rate',
     'App Version': '/docs/enterprise/app-version',
     'Badge': '/docs/enterprise/badge',
     'Browser': '/docs/enterprise/inappbrowser',
@@ -18,11 +30,13 @@ const items = {
     'Camera': '/docs/enterprise/camera',
     'Clipboard': '/docs/enterprise/clipboard',
     'Contacts': '/docs/enterprise/contacts',
+    'Deeplinks': '/docs/enterprise/deeplinks',
     'Device': '/docs/enterprise/device',
     'Dialogs': '/docs/enterprise/dialogs',
     'Email Composer': '/docs/enterprise/email-composer',
     'Filesystem': '/docs/enterprise/filesystem',
     'Geolocation': '/docs/enterprise/geolocation',
+    'Globalization': '/docs/enterprise/globalization',
     'Haptics & Vibration': '/docs/enterprise/vibration',
     'Keyboard': '/docs/enterprise/keyboard',
     'Media': '/docs/enterprise/media',
@@ -30,33 +44,12 @@ const items = {
     'Native Storage': '/docs/enterprise/nativestorage',
     'Network Information': '/docs/enterprise/network-information',
     'Screen Orientation': '/docs/enterprise/screen-orientation',
+    'Social Sharing': '/docs/enterprise/social-sharing',
     'Splashscreen': '/docs/enterprise/splashscreen',
     'Statusbar': '/docs/enterprise/statusbar',
   },
   'menu-enterprise-integrated-services': {
-    'Active Directory': 'https://ionicframework.com/integrations/ms-activedirectory-ms-adal',
-    'mParticle': '/docs/enterprise/mparticle',
-  },
-  'menu-enterprise-inter-app-communication': {
-    'Email Composer': '/docs/enterprise/email-composer',
-  },
-  'menu-enterprise-maps-navigation': {
-    'Geolocation': '/docs/enterprise/geolocation',
-  },
-  'menu-enterprise-media': {
-    'Media': '/docs/enterprise/media',
-    'Media Capture': '/docs/enterprise/media-capture',
-  },
-  'menu-enterprise-native-ui': {
-    'Dialogs': '/docs/enterprise/dialogs',
-  },
-  'menu-enterprise-notifications': {
-    'Badge': '/docs/enterprise/badge',
-  },
-  'menu-enterprise-offline-data': {
-    'Couchbase Lite': '/docs/enterprise/couchbase-lite',
-  },
-  'menu-enterprise-payments': {
-    'Apple Payment Pass': '/docs/enterprise/apple-payment-pass',
-  },
+    'AWS Amplify': 'https://ionicframework.com/integrations/aws-amplify',
+    'mParticle': '/docs/enterprise/mparticle'
+  }
 };

@@ -6,6 +6,11 @@ import buildData from '../build-data';
 const tasks = new Listr({ collapse: false });
 
 tasks.add({
+  title: 'Data',
+  task: () => buildData
+});
+
+tasks.add({
   title: 'Pages',
   task: () => buildPages
 });
@@ -13,11 +18,6 @@ tasks.add({
 tasks.add({
   title: 'Menus',
   task: () => buildMenus
-});
-
-tasks.add({
-  title: 'Data',
-  task: () => buildData
 });
 
 tasks.run().catch(err => {

@@ -1,16 +1,16 @@
 ---
-nextText: 'Build Your First App'
+nextText: 'Desarrolla tu primera app'
 nextUrl: '/docs/angular/your-first-app'
 ---
 
-# Ionic Angular Overview
+# Visión General Ionic Angular
 
-`@ionic/angular` combines the core Ionic experience with the tooling and APIs that are tailored to Angular Developers.
+`@ionic/angular` combina la experiencia central de Ionic con las herramientas y API que se adaptan a los desarrolladores angulares.
 
-## Angular Version Support
+## Soporte de versión angular
 
-Ionic supports `Angular 6.0.0 and up`. As part of their upgrade strategy, Angular has built-in tooling to help automate upgrades and provide feedback to developers whenever changes to an API occurred. This reduces update friction and keeps the ecosystem in a evergreen state.
+Ionic soporta `Angular 6.0.0 en adelante`. Como parte de su estrategia de actualización, Angular tiene herramientas integradas para ayudar a automatizar las actualizaciones y proporcionar retroalimentación a los desarrolladores cada vez que se producen cambios en una API. Esto reduce la fricción de actualización y mantiene el ecosistema en un estado de hoja perenne.
 
 ## Angular Tooling
 
-With Ionic 4+, the official Angular stack for building an app and routing are used, so your app can fall in-line with the rest of the great Angular ecosystem. In cases where more opinionated features are needed, Ionic provides `@ionic/angular-toolkit`, which builds and integrates with the [official Angular CLI](https://angular.io/cli) and provides features that are specific to `@ionic/angular` apps.
+Con Ionic 4+, se utiliza la pila Angular oficial para construir una aplicación y enrutamiento, de modo que tu aplicación puede estar en línea con el resto del gran ecosistema Angular. En los casos en que se necesitan características más obstinadas, Ionic proporciona ` @ionic/angular-toolkit`, que se construye e integra con el [CLI angular oficial](https://angular.io/cli) y proporciona funciones que son específicas de las aplicaciones `@Ionic/angular`.

@@ -17,6 +17,7 @@ export class DocsPageFooter {
 
   render() {
     const { page } = this;
+    console.log(page);
 
     if (page == null || !page.github) {
       return null;
@@ -24,9 +25,13 @@ export class DocsPageFooter {
 
     const {
       path,
-      contributors,
       lastUpdated
     } = page.github;
+
+    // merge and dedupe contributor data
+    const contributors = Array.from(
+      new Set([...page.github.contributors || [], ...page.contributors || []])
+    );
 
     const editHref = `https://github.com/ionic-team/ionic-docs/edit/master/${path}`;
     const updatedHref = `https://github.com/ionic-team/ionic-docs/commits/master/${path}`;
@@ -37,7 +42,7 @@ export class DocsPageFooter {
       page.previousText && page.previousUrl || page.nextText && page.nextUrl
     ) ? <docs-pagination page={page}/> : '';
 
-    console.log(paggination);
+    // console.log(paggination);
 
     return [
       paggination,

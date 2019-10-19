@@ -3,15 +3,26 @@ previousText: 'Web View'
 previousUrl: '/docs/building/webview'
 ---
 
-# Storage
+# Data Storage
 
-Storage is an easy way to store key/value pairs and JSON objects. Storage uses a variety of storage engines underneath, picking the best one available depending on the platform.
+There are variety of options available for storing data within an Ionic app.
 
-When running in a native app context, Storage will prioritize using SQLite, as it's one of the most stable and widely used file-based databases, and avoids some of the pitfalls of things like localstorage and IndexedDB, such as the OS deciding to clear out such data in low disk-space situations.
+## Ionic Offline Storage
 
-When running in the web or as a Progressive Web App, Storage will attempt to use IndexedDB, WebSQL, and localstorage, in that order.
+[Ionic Offline Storage](/docs/enterprise/offline-storage) is a cross-platform data storage system that works on iOS and Android. It makes it easy to add offline storage to Ionic apps that is secure (encrypted on device), highly performant, and provides advanced NoSQL data querying.
 
-## Usage
+Created for teams building complex, data-driven apps, apps managing sensitive data, or apps used in areas with unreliable cell service/internet connections. Interested? [Start here.](https://ionicframework.com/offline-storage#get-started)
+
+## Ionic Storage
+
+Ionic Storage is a free, open source alternative for indie devs, students & hobbyists. It provides an easy way to store key/value pairs and JSON objects.
+
+It uses a variety of storage engines underneath, picking the best one available depending on the platform:
+
+* When running in a native app context, Storage will prioritize using SQLite, as it's one of the most stable and widely used file-based databases, and avoids some of the pitfalls of things like localstorage and IndexedDB, such as the OS deciding to clear out such data in low disk-space situations.
+* When running in the web or as a Progressive Web App, Storage will attempt to use IndexedDB, WebSQL, and localstorage, in that order.
+
+### Usage
 
 First, if you'd like to use SQLite, install the cordova-sqlite-storage plugin:
 
@@ -94,9 +105,9 @@ driverOrder: ['indexeddb', 'sqlite', 'websql']
 export class AppModule { }
 ```
 
-## Instance Members
+### Instance Members
 
-### constructor
+#### constructor
 
 Create a new Storage instance using the order of drivers and any additional config options to pass to LocalForage.
 
@@ -105,14 +116,14 @@ Possible driver options are: ['sqlite', 'indexeddb', 'websql', 'localstorage'] a
 <br />  
 
 
-### driver
+#### driver
 
 Get the name of the driver being used.
 
 <br />  
 
 
-### clear()
+#### clear()
 
 Clear the entire key value store. WARNING: HOT!
 
@@ -121,7 +132,7 @@ Clear the entire key value store. WARNING: HOT!
 <br />  
 
 
-### forEach()
+#### forEach()
 
 Iterate through each key,value pair.
 
@@ -135,7 +146,7 @@ Iterate through each key,value pair.
   
 
 
-### get()
+#### get()
 
 Get the value associated with the given key.
 
@@ -149,21 +160,21 @@ Get the value associated with the given key.
   
 
 
-### keys()
+#### keys()
 
 **Returns:** Returns a promise that resolves with the keys in the store.
 
 <br />  
 
 
-### length()
+#### length()
 
 **Returns:** Returns a promise that resolves with the number of keys stored.
 
 <br />  
 
 
-### ready()
+#### ready()
 
 Reflect the readiness of the store.
 
@@ -172,7 +183,7 @@ Reflect the readiness of the store.
 <br />  
 
 
-### remove()
+#### remove()
 
 Remove any value associated with this key.
 
@@ -186,7 +197,7 @@ Remove any value associated with this key.
   
 
 
-### set()
+#### set()
 
 Set the value for the given key.
 

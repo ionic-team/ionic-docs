@@ -5,6 +5,7 @@ import renderMarkdown from '../build-pages/markdown-renderer';
 import fetch from 'node-fetch';
 import url from 'url';
 import { convertHtmlToHypertextData } from '../build-pages/html-to-hypertext-data';
+import semver from 'semver';
 
 dotenv.config();
 
@@ -37,7 +38,12 @@ async function getReleases() {
     // Check that the response is an array in case it was
     // successful but returned an object
     if (Array.isArray(releases)) {
-      return releases.map(release => {
+      return releases.filter(release => {
+        const releasePattern = /^v(\d+)\.(\d+)\.(\d+)$/;
+
+        // All non-prerelease, non-alpha, non-beta, non-rc release
+        return releasePattern.test(release.tag_name);
+      }).map(release => {
         const body = parseMarkdown(release.body);
         const published_at = parseDate(release.published_at);
         const version = release.tag_name.replace('v', '');
@@ -57,19 +63,7 @@ async function getReleases() {
           version
         };
       }).sort((a, b) => {
-        if (a.tag_name < b.tag_name) {
-          return 1;
-        }
-        if (a.tag_name > b.tag_name) {
-          return -1;
-        }
-        // a must be equal to b
-        return 0;
-      }).filter((release) => {
-        const releasePattern = /^v(\d+)\.(\d+)\.(\d+)$/;
-
-        // All non-prerelease, non-alpha, non-beta, non-rc release
-        return releasePattern.test(release.tag_name);
+        return -semver.compare(a.tag_name, b.tag_name);
       });
     } else {
       return [];
@@ -116,6 +110,7 @@ function getVersionSymbol(version) {
   const filteredVersions = versions.filter(
     v => version.startsWith(`${v.minor}.`)
   );
+  filteredVersions.unshift(fallbackVersion);
 
   return filteredVersions[filteredVersions.length - 1].symbol;
 }
@@ -125,6 +120,7 @@ function getVersionElement(version) {
   const filteredVersions = versions.filter(
     v => version.startsWith(`${v.minor}.`)
   );
+  filteredVersions.unshift(fallbackVersion);
 
   return filteredVersions[filteredVersions.length - 1].element;
 }
@@ -281,3 +277,5 @@ const versions = [
     'element': 'Copper'
   }
 ];
+
+const fallbackVersion = { 'minor': '9201', 'symbol': 'Uo', 'element': 'Unobtainium' };

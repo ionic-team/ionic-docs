@@ -1,37 +1,37 @@
 ---
-nextText: 'Core concepts'
+nextText: 'Conceptos básicos'
 nextUrl: '/docs/intro/concepts'
 ---
 
-# What is Ionic Framework?
+# ¿Que es Ionic Framework?
 
 <!-- TOC goes here -->
 
-Ionic Framework is an open source UI toolkit for building performant, high-quality mobile and desktop apps using web technologies (HTML, CSS, and JavaScript).
+Ionic Framework es un conjunto de herramientas de interfaz de usuario de código abierto para crear aplicaciones móviles y de escritorio de alta calidad utilizando tecnologías web (HTML, CSS y JavaScript).
 
-Ionic Framework is focused on the frontend user experience, or UI interaction of an app (controls, interactions, gestures, animations). It’s easy to learn, and integrates nicely with other libraries or frameworks, such as Angular, or can be used standalone without a frontend framework using a simple script include.
+Ionic Framework se enfoca en la experiencia frontend del usuario, o la interacción de la interfaz de usuario de una aplicación (controles, interacciones, gestos, animaciones). Es fácil de aprender, y se integra bien con otras bibliotecas o frameworks, tales como Angular, o puede ser usado sin un framework frontend utilizando un simple script incluido.
 
-Currently, Ionic Framework has official integration with <a href="https://angular.io/" target="_blank">Angular</a>, but support for **Vue** and **React** are in development. If you’d like to learn more about Ionic Framework before diving in, we <a href="https://youtu.be/p3AN3igqiRc" target="_blank">created a video</a> to walk you through the basics.
+Actualmente, Ionic Framework tiene integración oficial con <a href="https://angular.io/" target="_blank">Angular</a>, sin embargo el soporte para **Vue** y **React** ya está en desarrollo. Si quieres aprender más sobre Ionic Framework antes de sumergirte en él, hemos <a href="https://youtu.be/p3AN3igqiRc" target="_blank">creado un vídeo</a> para que des un paseo por los conceptos básicos.
 
-## Goals
+## Objetivos
 
-### Cross-platform
+### Multiplataforma (Cross-platform)
 
-Build and deploy apps that work across multiple platforms, such as native iOS, Android, desktop, and the web as a Progressive Web App - all with one code base. Write once, run anywhere.
+Construye y despliega aplicaciones que funcionen a través de múltiples plataformas, como iOS nativo, Android, escritorio y la web como una Aplicación Web Progresiva - todo con un único código base. Escriba una vez, ejecute en cualquier lugar.
 
-### Web Standards-based
+### Basado en Estándares Web
 
-Ionic Framework is built on top of reliable, [standardized web technologies](/docs/faq/glossary#web-standards): HTML, CSS, and JavaScript, using modern Web APIs such as Custom Elements and Shadow DOM. Because of this, Ionic components have a stable API, and aren't at the whim of a single platform vendor.
+Ionic Framework está construido sobre la base de [tecnologías web estandarizadas](/docs/faq/glossary#web-standards) y confiables: HTML, CSS y JavaScript, utilizando modernas API Web tales como Custom Elements y Shadow DOM. Debido a ello, los componentes Ionic tienen una API estable, y no están al servicio de un único proveedor de plataforma.
 
-### Beautiful Design
+### Diseño hermoso
 
-Clean, simple, and functional. Ionic Framework is designed to work and display beautifully out-of-the-box across all platforms. Start with pre-designed components, typography, interactive paradigms, and a gorgeous (yet extensible) base theme.
+Limpio, simple y funcional. Ionic Framework está diseñado para trabajar y mostrar bellamente fuera de la caja a través de todas las plataformas. Comience con componentes predefinidos, tipografía, paradigmas interactivos y un vistoso (aunque extensible) tema básico.
 
-### Simplicity
+### Simplicidad
 
 Ionic Framework is built with simplicity in mind, so that creating Ionic apps is enjoyable, easy to learn, and accessible to just about anyone with web development skills.
 
-## License
+## Licencia
 
 Ionic Framework is a free and open source project, released under the permissable <a href="https://opensource.org/licenses/MIT" target="_blank">MIT license</a>. This means it can be used in personal or commercial projects for free. MIT is the same license used by such popular projects as jQuery and Ruby on Rails.
 
@@ -41,7 +41,7 @@ This documentation content (found in the <a href="https://github.com/ionic-team/
 
 The official [Ionic CLI](/docs/cli), or Command Line Interface, is a tool that quickly scaffolds Ionic apps and provides a number of helpful commands to Ionic developers. In addition to installing and updating Ionic, the CLI comes with a built-in development server, build and debugging tools, and much more. If you are an [Ionic Appflow](#ionic-appflow) member, the CLI can be used to perform cloud builds and deployments, and administer your account.
 
-## Framework Compatibility
+## Compatibilidad de Framework
 
 While past releases of Ionic were tightly coupled to Angular, V4 of the framework was re-engineered to work as a standalone Web Component library, with integrations for the latest JavaScript frameworks, like Angular. Ionic can be used in most frontend frameworks with success, including React and Vue, though some frameworks need a shim for full Web Component support.
 
@@ -53,7 +53,7 @@ One of the main goals with Ionic 4 was to remove any hard requirement on a singl
 
 Angular has always been at the center of what makes Ionic great. While the core components have been written to work as a standalone Web Component library, the `@ionic/angular` package makes integration with the Angular ecosystem a breeze. `@ionic/angular` includes all the functionality that Angular developers would expect coming from Ionic 2/3, and integrates with core Angular libraries, like the Angular router.
 
-### Future Support
+### Soporte futuro
 
 Support for other frameworks are expected in future release. Currently official bindings for Vue and React are being developed, though some components Just Work out of the box in those frameworks.
 
@@ -71,11 +71,11 @@ Ionic Appflow helps developers and teams compile native app builds and deploy li
 
 Appflow requires an <a href="https://dashboard.ionicframework.com/signup" target="_blank">Ionic Account</a> and comes with a free “Starter” plan for those interested in playing around with some of its features.
 
-## Ecosystem
+## Ecosistema
 
 Ionic Framework is actively developed and maintained full-time by a core team, and its ecosystem is guided by an international community of developers and contributors fueling its growth and adoption. Developers and companies small and large use Ionic to build and ship amazing apps that run everywhere.
 
-### Join the Community
+### Únete a la Comunidad
 
 There are millions of Ionic developers in over 200 countries worldwide. Here are some ways to join:
 

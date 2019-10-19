@@ -1,6 +1,6 @@
 import '@ionic/core';
 
-import { Build, Component, State, Watch, h } from '@stencil/core';
+import { Build, Component, Event, EventEmitter, State, Watch, h } from '@stencil/core';
 import { LocationSegments, RouterHistory } from '@stencil/router';
 
 @Component({
@@ -15,10 +15,14 @@ export class DocsRoot {
   setHistory = ({ history }: { history: RouterHistory }) => {
     if (!this.history) {
       this.history = history;
-      this.history.listen((location: LocationSegments) => {
-        (window as any).gtag('config', 'UA-44023830-1', { 'page_path': location.pathname + location.search });
-      });
+      this.history.listen(this.newPage);
     }
+  }
+
+  @Event() pageChanged: EventEmitter;
+  newPage(location: LocationSegments) {
+    (window as any).gtag('config', 'UA-44023830-1', { 'page_path': location.pathname + location.search });
+    this.pageChanged.emit(location);
   }
 
   @Watch('isMenuToggled')
@@ -26,6 +30,10 @@ export class DocsRoot {
     if (Build.isBrowser && this.isSmallViewport()) {
       document.body.classList.toggle('scroll-lock', isMenuToggled);
     }
+  }
+
+  constructor() {
+    this.newPage = this.newPage.bind(this);
   }
 
   toggleMenu = () => {

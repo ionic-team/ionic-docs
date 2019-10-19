@@ -5,9 +5,7 @@
 
 Utilizing native functionality in your app may require additional setup.
 
-<blockquote>
-🚧 These docs are a work-in-progress. Check back frequently for updates!
-</blockquote>
+> 🚧 These docs are a work-in-progress. Check back frequently for updates!
 
 Additional setup is required to utilize native functionality, such as the following:
 

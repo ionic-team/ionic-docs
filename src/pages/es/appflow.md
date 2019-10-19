@@ -1,8 +1,8 @@
 ---
-title: Welcome to Appflow
+title: Bienvenido a Appflow
 ---
 
-Appflow is a continuous integration (CI) and continuous deployment (CD) platform for Ionic development teams. Appflow helps development teams continuously build and ship their iOS, Android, and web apps faster than ever.
+Appflow es una plataforma de integración continua (CI) y despliegue continuo (CD) para equipos de desarrollo con Ionic. Appflow ayuda a los desarrolladores a compilar y desplegar sus aplicaciones iOS, Android y web más rápido que nunca.
 
 <docs-cards class="static-width"> <docs-card header="Quickstart" href="/docs/appflow/quickstart/connect" img="/docs/assets/icons/guide-quickstart.png"> 
 
@@ -26,12 +26,12 @@ Learn about recent Appflow updates & announcements.</docs-card>
 
 <docs-card header="Package FAQ" href="https://ionic.zendesk.com/hc/en-us/categories/360000410494-Package" icon="/docs/assets/icons/guide-faq-icon.png"> 
 
-Find answers to common questions about building native binaries.</docs-card>
+Busca respuestas a preguntas habituales acerca de cómo compilar binarios nativos.</docs-card>
 
 <docs-card header="Deploy FAQ" href="https://ionic.zendesk.com/hc/en-us/categories/360000409113-Deploy" icon="/docs/assets/icons/guide-faq-icon.png"> 
 
-Find answers to common questions about live updates.</docs-card>
+Busca respuestas a preguntas habituales acerca de actualizaciones en tiempo real.</docs-card>
 
 <docs-card header="Billing FAQ" href="https://ionic.zendesk.com/hc/en-us/categories/360000410574-Billing-Support" icon="/docs/assets/icons/guide-faq-icon.png"> 
 
-Find answers to common billing questions.</docs-card> </docs-cards>
+Busca respuestas a preguntas habituales sobre facturación.</docs-card> </docs-cards>

@@ -7,7 +7,7 @@ import { updateJsText } from '../parse-js';
 @Component({
   tag: 'color-generator',
   styleUrl: 'color-generator.css',
-  // shadow: true
+  shadow: true
 })
 export class ColorGenerator {
 

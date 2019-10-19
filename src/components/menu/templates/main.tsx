@@ -42,8 +42,9 @@ const items = {
     'menu-theming-basics': '/docs/theming/basics',
     'menu-theming-platform-styles': '/docs/theming/platform-styles',
     'menu-theming-css-variables': '/docs/theming/css-variables',
-    'Colors': '/docs/theming/colors',
-    'Themes': '/docs/theming/themes',
+    'menu-theming-colors': '/docs/theming/colors',
+    'menu-theming-themes': '/docs/theming/themes',
+    'menu-theming-dark-mode': '/docs/theming/dark-mode',
     'menu-theming-advanced': '/docs/theming/advanced',
     'menu-theming-color-generator': '/docs/theming/color-generator',
   },
@@ -59,8 +60,8 @@ const items = {
     'menu-react-your-first-app': '/docs/react/your-first-app',
     'menu-react-lifecycle': '/docs/react/lifecycle',
     'menu-react-navigation': '/docs/react/navigation',
-    'Config': '/docs/react/config',
-    'Platform Utils': '/docs/react/platform'
+    'menu-react-config': '/docs/react/config',
+    'menu-react-platform': '/docs/react/platform'
   },
   'menu-vue': {
     'menu-vue-overview': '/docs/vue/overview',

@@ -20,18 +20,19 @@
     "heroku-postbuild": "npm run build.ci"
   },
   "dependencies": {
-    "@ionic/core": "^4.7.4",
-    "@ionic/docs": "^4.7.4",
+    "@ionic/core": "^4.9.0",
+    "@ionic/docs": "^4.10.1",
     "@sentry/node": "^5.5.0",
     "@stencil/router": "^1.0.1",
     "compression": "^1.7.4",
     "express": "^4.16.4",
     "helmet": "^3.16.0",
     "ionicons": "^4.6.1",
+    "simple-git": "^1.126.0",
     "throng": "^4.0.0"
   },
   "devDependencies": {
-    "@stencil/core": "^1.2.5",
+    "@stencil/core": "^1.4.0",
     "@types/prismjs": "^1.9.1",
     "chokidar": "^3.0.2",
     "dotenv": "^8.1.0",

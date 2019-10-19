@@ -6,10 +6,6 @@
 
 Manage app themes to tweak look and feel.
 
-<blockquote>
-🚧 These docs are a work-in-progress. Check back frequently for updates!
-</blockquote>
-
 The Ionic Framework docs have [great documentation](/docs/theming/basics) on theming Ionic apps.
 
 ## Theme Colors

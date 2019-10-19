@@ -1,39 +1,39 @@
 ---
-previousText: 'Introduction'
+previousText: '简介'
 previousUrl: '/docs/appflow/cookbook/intro'
-nextText: 'Using private NPM modules'
+nextText: '使用私有 NPM 模块'
 nextUrl: '/docs/appflow/cookbook/private_npm_modules'
 ---
 
-# Using private GIT repositories
+# 使用 GIT 私人仓库
 
-During the build process, it might be necessary to access other private repositories containing, for instance, libraries.
+在构建过程中，可能需要访问其他包含libraries的私有存储库。
 
-In case such repositories do not belong to the same user that can clone the main application codebase, it is possible to use git credentials codebase.
+如果这些存储库不属于可以克隆主应用程序代码库的同一用户，则可以使用git证书代码库。
 
-### How to use GIT Credentials
+### 如何使用 GIT 证书
 
-The first step is to generate a personal access token: see the [github](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/) or [bitbucket](https://confluence.atlassian.com/bitbucket/app-passwords-828781300.html) documentation.
+第一步是生成个人访问令牌： [github](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/) 或 [bitbucket](https://confluence.atlassian.com/bitbucket/app-passwords-828781300.html) 文档。
 
-Then build an url for the Git Credentials.
+然后为Git 证书创建一个url。
 
-The URL for github looks like:
+Github 的 URL 看起来像这样：
 
     https://<username>:<token>@github.com
     
 
-while for bitbucket looks like:
+bitbucket看起来像这样：
 
     https://<username>:<token>@bitbucket.org
     
 
-where the `username` is the username of the account used to generate the token.
+`用户名` 是创建令牌帐户的用户名。
 
-Finally add a secret inside an [environment](/docs/appflow/environments/#custom-environments) with key called `GIT_CREDENTIALS` and for the value use the url created before.
+最后在 [环境中添加一个密码](/docs/appflow/environments/#custom-environments)，密钥叫 `GIT_CREDINSTL` ，并且使用之前创建的url。
 
-![Git credentials token secret](/docs/assets/img/appflow/cookbook/git-credentials-token-secret.png)
+![Git 凭据令牌密钥](/docs/assets/img/appflow/cookbook/git-credentials-token-secret.png)
 
-At this point, if you use this environment during a build, you can access your repository specifying the `https` clone url without any token. For instance, if your private repo contains an npm library, the `package.json` would reference it in this way:
+在此，如果你在构建过程中使用这个环境，您可以访问您的仓库，指定 `https`克隆url不需要任何token。 例如，如果你的私人仓库包含 npm 库， `package.json` 将以此方式引用它：
 
 ```json
 {

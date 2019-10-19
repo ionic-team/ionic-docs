@@ -1,7 +1,7 @@
 ---
 title: Couchbase Lite
 template: enterprise-plugin
-version: 1.0.0
+version: 1.0.1
 minor: 1.0.X
 ---
 
@@ -955,3 +955,11 @@ config.setPinnedServerCertificate(cert);</code></pre>
 <div class="paragraph">
 <p>The Couchbase Lite API is thread safe except for calls to mutable objects: <code>MutableDocument</code>, <code>MutableDictionary</code> and <code>MutableArray</code>.</p>
 -->
+
+# Changelog
+
+### 1.0.1 (2019-09-03)
+
+### Bug Fixes
+
+* correct plugin id in plugin.xml

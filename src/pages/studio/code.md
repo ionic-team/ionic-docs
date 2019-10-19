@@ -6,10 +6,6 @@
 
 Ionic Studio offers a full code editor for diving deep into the non-visual aspects of Ionic apps.
 
-<blockquote>
-🚧 These docs are a work-in-progress. Check back frequently for updates!
-</blockquote>
-
 ## Introduction
 
 Code mode features include:
@@ -42,7 +38,7 @@ App files can be searched using the search bar at the top of the file tree panel
 
 ### Search and Replace
 
-Search and replace functionality is available by using the dropdown error when searching.
+Search and replace functionality is available by using the dropdown arrow when searching.
 
 <figure>
   <img alt="Search and Replace" src="/docs/assets/img/studio/ss-search-and-replace.png" />

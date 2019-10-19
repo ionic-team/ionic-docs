@@ -1,13 +1,13 @@
 ---
-title: Ionic Native Enterprise Edition
+title: Ionic Native
 ---
 
-Accelerate development with powerful solutions to common enterprise use cases - all built and supported by the Ionic team. Ionic’s growing library of solutions are ready to deploy in any of the apps you build with Native Enterprise Edition
+For teams building mission-critical apps, Ionic Native is a curated collection of plugins and solutions that are built and supported by Ionic, with stability assurances and guaranteed to work on all major platforms and versions.
 
-Ionic Native Enterprise Edition includes a reliable set of Native APIs & functionality that you can use in your Ionic app,
-quality controlled and maintained by the Ionic Team.
+## Why Ionic Native?
 
-## What is Ionic Native Enterprise Edition
+Take on mobile projects with peace of mind, knowing the native features, security, and performance you need will just work - now and in the future.
+
 <div class="native-ee-pricing">
   <div class="table-wrap">
     <table>
@@ -18,13 +18,13 @@ quality controlled and maintained by the Ionic Team.
           </td>
           <th>
             <div class="plan-wrap">
-              <span class="native-ee-pricing-table">Community Edition</span>
+              <span class="native-ee-pricing-table">Community Plugins</span>
               <div class="price">$0/mo </div>
             </div>
           </th>
           <th>
             <div class="plan-wrap">
-              <span class="native-ee-pricing-table">Enterprise Edition</span>
+              <span class="native-ee-pricing-table">Premier Plugins</span>
               <div class="price" data-toggle="billing-team">
                 Contact Us</div>
             </div>
@@ -91,38 +91,13 @@ quality controlled and maintained by the Ionic Team.
   </div>
 </div>
 
-## Sign Up for Ionic Native Enterprise Edition
+## Sign Up for Ionic Native
 
 <hubspot-form form-id="7c2c6529-48c0-4d17-86a0-bfd40c849bb1"></hubspot-form>
 
-## Setup
-In order to provide the best experience you should make sure you're using the
-Ionic Enterprise Cordova CLI as the regular version can have issues with scoped plugins.
+## Solution List
 
-<command-line>
-<command-prompt>npm uninstall -g cordova</command-prompt>
-<command-prompt>npm install -g @ionic-enterprise/cordova</command-prompt>
-</command-line>
-
-## Register Your Product Key
-If you already have an app you can simply register the product key for your application using the Ionic CLI and following
-the provided prompts.
-
-<command-line>
-<command-prompt># in your app root</command-prompt>
-<command-prompt>ionic enterprise register</command-prompt>
-</command-line>
-
-Running the register command should generate a `.npmrc` file in you app directory and update your `ionic.config.json` it is safe
-to commit both these changes to version control so that CI and other team members can restore the plugins from a fresh clone of the
-repo. Now you should be able to install Ionic Enterprise plugins that you have access to by following the instructions on the plugin
-docs page.
-
-<command-line>
-<command-prompt>ionic cordova plugin add @ionic-enterprise/plugin-name</command-prompt>
-</command-line>
-
-## Plugins
+Accelerate your app development with powerful solutions to common enterprise use cases. Ionic’s growing library are ready to deploy into any of the apps you build.
 
 ### Authentication & Security
 - [Auth Connect](/docs/enterprise/auth-connect)
@@ -130,6 +105,7 @@ docs page.
 
 ### Common Device Features
 - [Android Permissions](/docs/enterprise/android-permissions)
+- [App Rate](/docs/enterprise/app-rate)
 - [App Version](/docs/enterprise/app-version)
 - [Badge](/docs/enterprise/badge)
 - [Browser](/docs/enterprise/inappbrowser)
@@ -137,11 +113,13 @@ docs page.
 - [Camera](/docs/enterprise/camera)
 - [Clipboard](/docs/enterprise/clipboard)
 - [Contacts](/docs/enterprise/contacts)
+- [Deeplinks](/docs/enterprise/deeplinks)
 - [Device](/docs/enterprise/device)
 - [Dialogs](/docs/enterprise/dialogs)
 - [Email Composer](/docs/enterprise/email-composer)
 - [Filesystem](/docs/enterprise/filesystem)
 - [Geolocation](/docs/enterprise/geolocation)
+- [Globalization](/docs/enterprise/globalization)
 - [Haptics & Vibration](/docs/enterprise/vibration)
 - [Keyboard](/docs/enterprise/keyboard)
 - [Media](/docs/enterprise/media)
@@ -149,6 +127,7 @@ docs page.
 - [Native Storage](/docs/enterprise/nativestorage)
 - [Network Information](/docs/enterprise/network-information)
 - [Screen Orientation](/docs/enterprise/screen-orientation)
+- [Social Sharing](/docs/enterprise/social-sharing)
 - [Splash Screen](/docs/enterprise/splashscreen)
 - [Status Bar](/docs/enterprise/statusbar)
 
@@ -157,7 +136,7 @@ docs page.
 - [mParticle](/docs/enterprise/mparticle)
 
 ### Offline & Storage
-- [Couchbase Lite](/docs/enterprise/couchbase-lite)
+- [Offline Storage](/docs/enterprise/offline-storage)
 
 ### Payments
-- [Apple Wallet](/docs/enterprise/apple-wallet)
+- [Apple Payment Pass](/docs/enterprise/apple-payment-pass)

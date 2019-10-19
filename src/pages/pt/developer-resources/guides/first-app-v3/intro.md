@@ -3,27 +3,27 @@ nextText: 'iOS, Android, and the Camera'
 nextUrl: '/docs/developer-resources/guides/first-app-v3/ios-android-camera'
 ---
 
-# Your First Ionic App - Framework v3
+# Sua Primeira Aplicação Ionic - Framework v3
 
-The great thing about Ionic is that with one codebase, you can build for any platform using familiar web tools and languages. Follow along as we create a working Photo Gallery. Here’s the before and after:
+O ótimo do Ionic é que com uma base de código, você pode criar para qualquer plataforma usando ferramentas web e linguagens familiares. Acompanhe enquanto criamos uma Galeria de Fotos funcional. Aqui está o antes e depois:
 
 ![Before and after going through this tutorial](/docs/assets/img/guides/first-app-v3/gallery-combined.png)
 
-It’s easy to get started. Reference code for this guide can be [found on GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic3/).
+É fácil começar. O código de referência para esse guia pode ser [encontrado no GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic3/).
 
-## Install Node.js
+## Instale Node.js
 
-If you don’t have Node.js installed already, [download the LTS version](https://nodejs.org/en/).
+Se você ainda não tem Node.js instalado, [baixe a versão LTS](https://nodejs.org/en/).
 
-## Install Ionic
+## Instale Ionic
 
-Run the following in the command line (you may need to prepend “sudo” on a Mac):
+Execute o seguinte na linha de comando (você pode precisar adicionar "sudo" em um Mac):
 
 ```shell
 $ npm install -g ionic
 ```
 
-## Create an App
+## Crie uma Aplicação
 
 Next, create an Ionic app using our “Tabs” app template:
 
@@ -56,7 +56,7 @@ Choose “Ionic Pro.”
 <strong>“How would you like to connect to Ionic Pro?”</strong>
 
 * Choose “Automatically setup a new SSH key pair for Ionic Pro” if you haven’t used SSH before.
-* Choose “Use an existing SSH key pair” if you’ve used SSH before. 
+* Choose “Use an existing SSH key pair” if you’ve used SSH before.
 
 Next, change into the app folder, then push your code to Ionic Pro:
 
@@ -92,7 +92,7 @@ Open the photo-gallery app folder in your favorite code editor of choice, then n
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding></ion-content>
+<ion-content class="ion-padding"></ion-content>
 ```
 
 `ion-header` represents the top navigation and toolbar, with “About” as the title. We put our app code into `ion-content`. In this case, it’s where we’ll add a button that opens the device’s camera and shows the image captured by the camera. But first, let’s start with something obvious: renaming the About page:

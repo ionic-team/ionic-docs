@@ -4,10 +4,6 @@
 
 # Support
 
-<blockquote>
-🚧 These docs are a work-in-progress. Check back frequently for updates!
-</blockquote>
-
 Support is available within Ionic Studio by clicking **Help & Support** from the account menu, which is opened by clicking the user icon at the top right of Ionic Studio.
 
 If you cannot open Ionic Studio, please open a [support request](http://ionicframework.com/support/request).

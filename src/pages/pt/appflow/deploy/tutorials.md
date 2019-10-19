@@ -46,7 +46,7 @@ That's it! You should be all configured to start taking advanatage of the new de
 
 ## Setting up a Beta Channel
 
-In the following video tutorial, and code snippets we use the Deploy API to set up a custom Beta Channel that users can subscribe to in order to get updates early! <iframe width="560" height="315" src="https://www.youtube.com/embed/I7PC3O4q1ug?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen mark="crwd-mark"></iframe> 
+In the following video tutorial, and code snippets we use the Deploy API to set up a custom Beta Channel that users can subscribe to in order to get updates early! <iframe width="560" height="315" src="https://www.youtube.com/embed/I7PC3O4q1ug?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen mark="crwd-mark"></iframe>
 
 ### Choose your Integration Type:
 
@@ -62,7 +62,7 @@ Here's an example template/JS for a page where we allow users to toggle to pull 
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="ion-padding">
   <h3>Settings</h3>
 
   <p>I'm connected to the {{ deployChannel }}.</p>
