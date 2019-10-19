@@ -55,7 +55,6 @@ At a high level, the production documentation works like this:
 
 - `scripts/` - build scripts used to generate JSON representations of each page and other data used in the docs
 - `src/` - source code and content of the docs
-
   - `assets/` - static assets used on the site, like images and fonts
   - `components/` - Stencil components used in the documentation UI
   - `demos/` - Self-contained demos, optionally presented by pages via `demoUrl` YAML frontmatter
