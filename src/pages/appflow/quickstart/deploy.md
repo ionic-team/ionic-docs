@@ -40,11 +40,11 @@ progress and look at the logs if you encounter errors.
 
  ## Web Build Versioning
 
- Once the Web Build has been completed it can be retricted as to a specific native build number. To do that you can assign in the Web Build details a minimum, a maximum an equivalent build version compatible or not with the update. By doing that, new native builds that are distributed within an app store does not conflict with current available update from AppFlow.
+Once the Web Build completed, it can be restricted to a specific native build number assigned in the Web Build details. A minimum and maximum equivalent build version number are specified, which designates whether or not the update is compatible. After doing this, new native builds that are distributed within an app store do not conflict with the current available update from AppFlow.
 
 ![Web build versioning](/docs/assets/img/appflow/web-build-versioning.png)
 
-For more details and a simple use case see this article: https://ionic.zendesk.com/hc/en-us/articles/360003567694-How-to-restrict-Deploy-updates-by-native-version.
+For more details and a simple use case see [this article](https://ionic.zendesk.com/hc/en-us/articles/360003567694-How-to-restrict-Deploy-updates-by-native-version).
   
 ## Assign the Build to a Channel
 
