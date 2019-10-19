@@ -980,8 +980,8 @@ add` 命令) 或使用 cordova 变量 (如果使用 `ionic cordova plugin add`)�
 
 * **默认值：** `2`
 * 这将告诉插件它应该在设备上保持的先前更新的版本号，以便在需要时加速回滚过程。
-* `ionic deploy add --max-versions=Production`
-* `ionic cordova plugin add cordova-plugin-ionic --variable MAX_VERSIONS=Production`
+* `ionic deploy add --max-versions=2`
+* `ionic cordova plugin add cordova-plugin-ionic --variable MAX_STORE=2`
 
 ### Min Background Duration
 
