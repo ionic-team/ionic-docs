@@ -1,4 +1,4 @@
-import { Component, Element, Event, EventEmitter, Listen, State } from '@stencil/core';
+import { Component, Element, Event, EventEmitter, Listen, State, h } from '@stencil/core';
 import { ColorVariable } from '../color-variables';
 import { convertCssToColors, generateColor, updateCssText } from '../parse-css';
 

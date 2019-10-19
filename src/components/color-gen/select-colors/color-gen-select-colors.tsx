@@ -1,4 +1,4 @@
-import { Component, Prop, State } from '@stencil/core';
+import { Component, Prop, State, h } from '@stencil/core';
 import { ColorVariable } from '../color-variables';
 
 

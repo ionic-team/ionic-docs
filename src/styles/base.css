@@ -8,6 +8,17 @@
 :root {
   --accent-color: #3880ff;
   --accent-color-rgb: 56, 128, 255;
+
+  --accent-color-100: #4d8dff;
+  --accent-color-200: #639cff;
+  --accent-color-300: #4d8dff;
+  --accent-color-400: #7cabff;
+  --accent-color-500: #97bdff;
+  --accent-color-600: #b2ceff;
+  --accent-color-700: #cddfff;
+  --accent-color-800: #e3edff;
+  --accent-color-900: #f0f6ff;
+
   --background: #ffffff;
   --code-background: #f5f7fa;
   --code-color: var(--text-color--dark);
@@ -39,11 +50,34 @@ body {
   text-size-adjust: none;
   margin: 0;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html,
 body {
   height: 100%;
+}
+
+ion-grid {
+  margin: 1em 0;
+}
+
+figure {
+  margin: 0;
+}
+
+figure > * {
+  display: block;
+  margin: 0 auto;
+}
+
+figure.device {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+figcaption {
+  text-align: center;
 }
 
 img {
@@ -132,6 +166,13 @@ h3 + h4 {
   margin-top: -1em;
 }
 
+h2 + p > small,
+h3 + p > small,
+h4 + p > small {
+  display: block;
+  margin-top: -2em;
+}
+
 blockquote {
   background: rgba(255, 250, 237, 0.8);
   border-left: 4px solid #ffcc5f;
@@ -139,7 +180,7 @@ blockquote {
   color: #736545;
   font-size: 14px;
   line-height: 1.8;
-  margin: 1em;
+  margin: 1em 0;
   padding: 2em;
 }
 
@@ -150,10 +191,12 @@ blockquote a {
 
 blockquote > *:first-child {
   margin-top: 0;
+  padding-top: 0;
 }
 
 blockquote > *:last-child {
   margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 blockquote code {
@@ -174,7 +217,8 @@ hr {
   margin: 3rem 0;
 }
 
-code {
+code,
+kbd {
   background-color: var(--code-background);
   border-radius: 4px;
   color: var(--code-color);
@@ -200,6 +244,12 @@ pre code {
   color: inherit;
   padding: 0;
   white-space: inherit;
+}
+
+kbd {
+  border: 1px solid #ccc;
+  white-space: nowrap;
+  margin: 0 1px;
 }
 
 table {

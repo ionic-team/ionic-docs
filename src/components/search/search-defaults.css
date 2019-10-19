@@ -1,0 +1,66 @@
+.Search__Defaults {
+  padding-bottom: 32px;
+  max-height: calc(100vh - 160px);
+  overflow-y: auto;
+  border-top: 1px solid #E6E7E9;
+}
+
+.Search__Defaults::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.Search__Defaults__Section {
+  padding: 32px 44px 0;
+  float: left;
+  width: 49%;
+}
+
+.Search__Defaults__Section h4 {
+  font-size: 11px;
+  line-height: 160%;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #92A1B3;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.Search__Defaults__Section strong {
+  display: inline-block;
+  font-weight: 500;
+  color: #1A232F;
+  font-size: 14px;
+  margin-bottom: .4em;
+}
+
+.Search__Defaults__Section ul {
+  padding: 0;
+  border-top: none;
+}
+
+.Search__Defaults__Section ul a {
+  display: inline-block;
+  padding: 11px 10px 9px 40px;
+  margin-left: -16px;
+  margin-right: -16px;
+  width: calc(100% + 32px);
+  border-radius: 6px;
+  transition: .2s background-color;
+  position: relative;
+  color: #B2BECD;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.Search__Defaults__Section ul li a:hover {
+  color: var(--accent-color-500);
+}
+
+@media (max-width: 660px) {
+  .Search__Defaults__Section {
+    width: 100%;
+    float: none;
+  }
+}

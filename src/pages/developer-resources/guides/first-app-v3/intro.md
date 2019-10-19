@@ -40,7 +40,7 @@ Type “y” and press Enter. [Ionic Pro](https://ionicframework.com/pro) is a p
 
 <strong>Log into your Ionic Account</strong>
 
-Sign in now to easily access awesome features like Live Deploys later in this tutorial. 
+Sign in now to easily access awesome features like Live Deploys later in this tutorial.
 
 <strong>What would you like to do?</strong>
 
@@ -53,7 +53,7 @@ Choose “Ionic Pro.”
 <strong>“How would you like to connect to Ionic Pro?”</strong>
 
 * Choose “Automatically setup a new SSH key pair for Ionic Pro” if you haven’t used SSH before.
-* Choose “Use an existing SSH key pair” if you’ve used SSH before. 
+* Choose “Use an existing SSH key pair” if you’ve used SSH before.
 
 Next, change into the app folder, then push your code to Ionic Pro:
 
@@ -87,7 +87,7 @@ Open the photo-gallery app folder in your favorite code editor of choice, then n
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding></ion-content>
+<ion-content class="ion-padding"></ion-content>
 ```
 
 `ion-header` represents the top navigation and toolbar, with “About” as the title. We put our app code into `ion-content`. In this case, it’s where we’ll add a button that opens the device’s camera and shows the image captured by the camera. But first, let’s start with something obvious: renaming the About page:

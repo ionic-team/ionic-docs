@@ -7,7 +7,7 @@ nextUrl: '/docs/appflow/quickstart/github'
 ---
 
 Appflow works directly with Git version control and uses your code base
-as the source of truth for Deploy and Package builds. In order for Appflow to access your code, you can choose to integrate directly using a hosting service like Github or Bitbucket, or you can push your code directly to Appflow.
+as the source of truth for Deploy and Package builds. In order for Appflow to access your code, you can choose to integrate directly using a hosting service like GitHub or Bitbucket, or you can push your code directly to Appflow.
 
 ## Prerequisites
 Before you can connect your application to Appflow, make sure you have done the following:
@@ -31,7 +31,7 @@ get some additional benefits like being able view the commits your builds came f
 Git remote.
 
 If you're not using one of these providers, you can also choose to push directly to Ionic.
-Ionic git is *not* intended to be a Git host and we strongly suggest using Github, Bitbucket or another official git hosting service to backup your source code repository.
+Ionic git is *not* intended to be a Git host and we strongly suggest using GitHub, Bitbucket or another official git hosting service to backup your source code repository.
 
 <docs-cards>
   <docs-card header="Connect using GitHub" href="/docs/appflow/quickstart/github" icon="/docs/assets/icons/guide-github-icon.png">

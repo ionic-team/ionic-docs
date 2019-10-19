@@ -14,6 +14,12 @@ Ionic Framework provides several different layouts that can be used to structure
 
 ### Header
 
+<aside>
+  <docs-card href="/docs/api/header" header="Learn More" icon="/docs/assets/icons/component-header-icon.png">
+    <code>ion-header</code> API docs
+  </docs-card>
+</aside>
+
 The most simple layout available consists of a [header](/docs/api/header) and [content](/docs/api/content). Most pages in an app generally have both of these, but a header is not required in order to use content.
 
 ```html
@@ -24,7 +30,7 @@ The most simple layout available consists of a [header](/docs/api/header) and [c
     </ion-toolbar>
   </ion-header>
 
-  <ion-content padding>
+  <ion-content class="ion-padding">
     <h1>Main Content</h1>
   </ion-content>
 </ion-app>
@@ -32,11 +38,17 @@ The most simple layout available consists of a [header](/docs/api/header) and [c
 
 ### Footer
 
+<aside>
+  <docs-card href="/docs/api/footer" header="Learn More" icon="/docs/assets/icons/component-footer-icon.png">
+    <code>ion-footer</code> API docs
+  </docs-card>
+</aside>
+
 As you can see, a toolbar in a header appears above the content. Sometimes an app needs to have a toolbar below the content, which is when a footer is used.
 
 ```html
 <ion-app>
-  <ion-content padding>
+  <ion-content class="ion-padding">
     <h1>Main Content</h1>
   </ion-content>
 
@@ -60,7 +72,7 @@ These can also be combined on one page to have a toolbar above *and* below the c
     </ion-toolbar>
   </ion-header>
 
-  <ion-content padding>
+  <ion-content class="ion-padding">
     <h1>Main Content</h1>
   </ion-content>
 
@@ -143,7 +155,7 @@ A standard layout among mobile apps includes the ability to toggle a side [menu]
         <ion-title>Header</ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content padding>
+    <ion-content class="ion-padding">
       <h1>Main Content</h1>
       <p>Click the icon in the top left to toggle the menu.</p>
     </ion-content>
@@ -188,7 +200,7 @@ By default, the split pane view will show when the screen is larger than `768px`
       </ion-content>
     </ion-menu>
 
-    <ion-page class="ion-page" main>
+    <div class="ion-page" main>
       <ion-header>
         <ion-toolbar>
           <ion-buttons slot="start">
@@ -201,10 +213,10 @@ By default, the split pane view will show when the screen is larger than `768px`
           <ion-title>Header</ion-title>
         </ion-toolbar>
       </ion-header>
-      <ion-content padding>
+      <ion-content class="ion-padding">
         <h1>Main Content</h1>
       </ion-content>
-    </ion-page>
+    </div>
 
   </ion-split-pane>
 </ion-app>

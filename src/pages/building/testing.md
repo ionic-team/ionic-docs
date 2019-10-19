@@ -9,11 +9,11 @@ contributors:
 
 # Testing
 
-When an `@ionic/angular` application is generated using the Ionic CLI, it is automatically set up for unit testing and end-to-end testing the application. This is the same setup that is used by the Angular CLI. Refer to the <a href="https://angular.io/guide/testing" target="_blank">Angular Testing Guide</a> for detailed information on testing Angular applications.
+When an `@ionic/angular` application is generated using the Ionic CLI, it is automatically set up for unit testing and end-to-end testing of the application. This is the same setup that is used by the Angular CLI. Refer to the <a href="https://angular.io/guide/testing" target="_blank">Angular Testing Guide</a> for detailed information on testing Angular applications.
 
 ## Testing Principles
 
-When testing an application, it is best to keep in mind that testing can show if defects are present in a system. However, it is impossible to prove that any non-trivial system is completely free of defects. For this reason, the goal of testing is not to verify that the code is correct but is to find problems within the code. This is a subtle but important distinction.
+When testing an application, it is best to keep in mind that testing can show if defects are present in a system. However, it is impossible to prove that any non-trivial system is completely free of defects. For this reason, the goal of testing is not to verify that the code is correct but to find problems within the code. This is a subtle but important distinction.
 
 If we set out to prove that the code is correct, we are more likely to stick to the happy path through the code. If we set out to find problems, we are more likely to more fully exercise the code and find the bugs that are lurking there.
 
@@ -23,13 +23,13 @@ It is also best to begin testing an application from the very start. This allows
 
 Unit tests exercise a single unit of code (component, page, service, pipe, etc) in isolation from the rest of the system. Isolation is achieved through the injection of mock objects in place of the code's dependencies. The mock objects allow the test to have fine-grained control of the outputs of the dependencies. The mocks also allow the test to determine which dependencies have been called and what has been passed to them.
 
-Well written unit tests are structured such that the unit of code and the features it contains are described via `describe()` callbacks. The requirements for the unit of code and its features are tested via `it()` callbacks. When the descriptions for the `describe()` and `it()` callbacks are read, they make sense as a phrase. When the descriptions for nested `describe()`s and a final `it()` are concatenated together, they form a sentence that fully describes the test case.
+Well-written unit tests are structured such that the unit of code and the features it contains are described via `describe()` callbacks. The requirements for the unit of code and its features are tested via `it()` callbacks. When the descriptions for the `describe()` and `it()` callbacks are read, they make sense as a phrase. When the descriptions for nested `describe()`s and a final `it()` are concatenated together, they form a sentence that fully describes the test case.
 
 Since unit tests exercise the code in isolation, they are fast, robust, and allow for a high degree of code coverage.
 
 ### Using Mocks
 
-Unit tests exercise a code module in isolation. To facilitate this, mock objects (which Jasmine calls "spies") are used in place of dependencies. When a mock object is used, the test can control the values returned by calls to that dependency, making the current test independent of changes made to the dependency. This also makes the test setup easier, allowing the test to only be concerned with the code within the module under test.
+Unit tests exercise a code module in isolation. To facilitate this, we recommend using Jasmine (https://jasmine.github.io/). Jasmine creates mock objects (which Jasmine calls "spies") to take the place of dependencies while testing. When a mock object is used, the test can control the values returned by calls to that dependency, making the current test independent of changes made to the dependency. This also makes the test setup easier, allowing the test to only be concerned with the code within the module under test.
 
 Using mocks also allows the test to query the mock to determine if it was called and how it was called via the `toHaveBeenCalled*` set of functions. Tests should be as specific as possible with these functions, favoring calls to `toHaveBeenCalledTimes` over calls to `toHaveBeenCalled` when testing that a method has been called. That is `expect(mock.foo).toHaveBeenCalledTimes(1)` is better than `expect(mock.foo).toHaveBeenCalled()`. The opposite advice should be followed when testing that something has not been called (`expect(mock.foo).not.toHaveBeenCalled()`).
 

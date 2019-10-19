@@ -49,4 +49,4 @@ There are also many global CSS variables that can be used to override the styles
 }
 ```
 
-For a list of all global CSS variables to override, see [Advanced Theming](/docs/theming/advanced).
+There are many global variables that can be overridden by mode, including [Ionic's color variables](/docs/theming/colors), [theme variables](/docs/theming/themes) and [global component variables](/docs/theming/advanced).

@@ -1,3 +1,6 @@
+import { h } from '@stencil/core';
+import { toHypertext } from '../to-hypertext';
+
 export default (props) => {
   const { page } = props;
   const headings = [...page.headings];
@@ -38,9 +41,13 @@ export default (props) => {
     <article>
       <h1>{ page.title }</h1>
       <docs-table-of-contents links={headings} basepath={page.path} />
-      <section class="summary intro" innerHTML={page.summary} />
+      <section class="summary intro">
+        {toHypertext(h, page.summary)}
+      </section>
       { renderUsage(page) }
-      <section class="description" innerHTML={page.body} />
+      <section class="description">
+        {toHypertext(h, page.body)}
+      </section>
       { examples }
       { inputs }
       { options }
@@ -132,14 +139,14 @@ const renderOptionList = (options = []) => {
 
 const renderOptionSpec = option => {
   return (
-    <span>
+    <a href={`#option-${option.name}`} id={`option-${option.name}`}>
       --{ option.type === 'boolean' && option.default === true ? `no-${option.name}` : option.name }
       { option.type === 'string' ?
         <span class="option-spec">
           { `=<${option.spec.value}>` }
         </span> :
         null }
-    </span>
+    </a>
   );
 };
 

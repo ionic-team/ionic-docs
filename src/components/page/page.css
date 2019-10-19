@@ -12,16 +12,24 @@ docs-page {
   transition: transform 200ms cubic-bezier(0.2, 1, 0.2, 1);
 }
 
+@media (min-width: 1234px) {
+  docs-page {
+    grid-template-columns: 1fr minmax(0, var(--page-width, 720px)) 3fr;
+  }
+}
+
 @media (min-width: 1800px) {
   docs-page {
-    grid-template-columns: 1fr minmax(0, var(--page-width, 720px)) 1fr var(--page-margin-left);
+    grid-template-columns: 1fr minmax(0, var(--page-width, 720px)) 1fr 240px;
   }
 }
 
 docs-page > main {
+  position: relative;
   grid-column: 2;
   margin-bottom: 3rem;
   padding: var(--page-padding, 2rem 3rem);
+  position: relative;
 }
 
 docs-page docs-demo {
@@ -42,6 +50,7 @@ docs-page .full-screen {
 
 docs-page h1 {
   margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 docs-page h2 a[href^="#"],
@@ -82,3 +91,33 @@ docs-page h6 code {
   background: none;
   font-size: inherit;
 }
+
+docs-page aside {
+  float: right;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 1234px) {
+  docs-page main.no-demo docs-table-of-contents {
+    position: fixed;
+    right: 0;
+    top: 100px;
+    width: 240px;
+    transition: .2s transform ease;
+  }
+
+  docs-header.hidden ~ stencil-route docs-page main.no-demo docs-table-of-contents {
+    transform: translateY(-60px);
+  }
+}
+/* 
+@media (min-width: 1440px) {
+  docs-page aside {
+    position: absolute;
+    right: -240px;
+    width: 240px;
+    float: none;
+    margin-left: 0;
+  }
+} */

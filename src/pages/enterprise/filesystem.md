@@ -1,8 +1,10 @@
 ---
 title: Filesystem
 template: enterprise-plugin
-version: 1.0.0
-minor: 1.0.X
+version: 1.1.0
+minor: 1.1.X
+otherVersions:
+  - 1.0.X
 ---
 
 Ionic Filesystem
@@ -11,7 +13,7 @@ Ionic Filesystem
 This plugin presents a simple and intuitive interface for common filesytem operations such as reading/writing and listing the contents of directories.
 
 Usage
-----------------------
+-----
 
 The Filesystem plugin ship with a native Angular & es2015+/Typescript wrappers as well as being available on window.
 
@@ -70,6 +72,7 @@ You can find the API and interface documentation for everything below. The main 
 
 ### Interfaces
 
+* [CopyOptions](#copyoptions)
 * [EmptyResult](#emptyresult)
 * [FileReadOptions](#filereadoptions)
 * [FileReadResult](#filereadresult)
@@ -78,6 +81,8 @@ You can find the API and interface documentation for everything below. The main 
 * [MkdirOptions](#mkdiroptions)
 * [PathOptions](#pathoptions)
 * [ReaddirResult](#readdirresult)
+* [RenameOptions](#renameoptions)
+* [RmdirOptions](#rmdiroptions)
 * [StatResult](#statresult)
 
 ---
@@ -88,7 +93,7 @@ You can find the API and interface documentation for everything below. The main 
 
 ###  Directories
 
-**Directories**:
+**Directories**: 
 
 The avaiable directories on the system
 
@@ -152,7 +157,7 @@ ___
 
 ###  Encodings
 
-**Encodings**:
+**Encodings**: 
 
 The possible encoding types
 
@@ -192,7 +197,7 @@ ___
 
 ###  Filesystem
 
-**Filesystem**:
+**Filesystem**: 
 
 *__description__*: Provides API to read/write to the file sytems
 
@@ -264,6 +269,23 @@ Append to a file on disk in the specified location on device
 
 **Returns:** `Promise`<[EmptyResult](#emptyresult)>
 a promise that resolves with the file write result
+
+___
+<a id="filesystem.copy"></a>
+
+###  copy
+
+▸ **copy**(options: *[CopyOptions](#copyoptions)*): `Promise`<[EmptyResult](#emptyresult)>
+
+Copy a file or directory
+
+**Parameters:**
+
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| options | [CopyOptions](#copyoptions) |  the options for the copy operation |
+
+**Returns:** `Promise`<[EmptyResult](#emptyresult)>
 
 ___
 <a id="filesystem.deletefile"></a>
@@ -356,11 +378,28 @@ Return a list of files from the directory (not recursive)
 a promise that resolves with the readdir directory listing result
 
 ___
+<a id="filesystem.rename"></a>
+
+###  rename
+
+▸ **rename**(options: *[RenameOptions](#renameoptions)*): `Promise`<[EmptyResult](#emptyresult)>
+
+Rename a file or directory
+
+**Parameters:**
+
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| options | [RenameOptions](#renameoptions) |  the options for the rename operation |
+
+**Returns:** `Promise`<[EmptyResult](#emptyresult)>
+
+___
 <a id="filesystem.rmdir"></a>
 
 ###  rmdir
 
-▸ **rmdir**(options: *[PathOptions](#pathoptions)*): `Promise`<[EmptyResult](#emptyresult)>
+▸ **rmdir**(options: *[RmdirOptions](#rmdiroptions)*): `Promise`<[EmptyResult](#emptyresult)>
 
 Remove a directory
 
@@ -368,7 +407,7 @@ Remove a directory
 
 | Name | Type | Description |
 | ------ | ------ | ------ |
-| options | [PathOptions](#pathoptions) |  the options for the directory remove |
+| options | [RmdirOptions](#rmdiroptions) |  the options for the directory remove |
 
 **Returns:** `Promise`<[EmptyResult](#emptyresult)>
 
@@ -414,18 +453,62 @@ ___
 
 ## Interfaces
 
+<a id="copyoptions"></a>
+
+###  CopyOptions
+
+**CopyOptions**: 
+
+<a id="copyoptions.directory"></a>
+
+### `<Optional>` directory
+
+**● directory**: *[Directories](#directories)*
+
+The system directory containing the existing file or directory
+
+___
+<a id="copyoptions.from"></a>
+
+###  from
+
+**● from**: *`string`*
+
+The existing file or directory
+
+___
+<a id="copyoptions.to"></a>
+
+###  to
+
+**● to**: *`string`*
+
+The destination file or directory
+
+___
+<a id="copyoptions.todirectory"></a>
+
+### `<Optional>` toDirectory
+
+**● toDirectory**: *[Directories](#directories)*
+
+The system directory containing the destination file or directory. If not supplied will use the 'directory' parameter as the destination
+
+___
+
+___
 <a id="emptyresult"></a>
 
 ###  EmptyResult
 
-**EmptyResult**:
+**EmptyResult**: 
 
 ___
 <a id="filereadoptions"></a>
 
 ###  FileReadOptions
 
-**FileReadOptions**:
+**FileReadOptions**: 
 
 <a id="filereadoptions.directory"></a>
 
@@ -462,7 +545,7 @@ ___
 
 ###  FileReadResult
 
-**FileReadResult**:
+**FileReadResult**: 
 
 <a id="filereadresult.data"></a>
 
@@ -479,7 +562,7 @@ ___
 
 ###  FileWriteOptions
 
-**FileWriteOptions**:
+**FileWriteOptions**: 
 
 <a id="filewriteoptions.data"></a>
 
@@ -523,7 +606,7 @@ ___
 
 ###  GetUriResult
 
-**GetUriResult**:
+**GetUriResult**: 
 
 <a id="geturiresult.uri"></a>
 
@@ -538,7 +621,7 @@ ___
 
 ###  MkdirOptions
 
-**MkdirOptions**:
+**MkdirOptions**: 
 
 <a id="mkdiroptions.createintermediatedirectories"></a>
 
@@ -573,7 +656,7 @@ ___
 
 ###  PathOptions
 
-**PathOptions**:
+**PathOptions**: 
 
 <a id="pathoptions.directory"></a>
 
@@ -599,7 +682,7 @@ ___
 
 ###  ReaddirResult
 
-**ReaddirResult**:
+**ReaddirResult**: 
 
 <a id="readdirresult.files"></a>
 
@@ -612,11 +695,90 @@ the list of files in the directory
 ___
 
 ___
+<a id="renameoptions"></a>
+
+###  RenameOptions
+
+**RenameOptions**: 
+
+<a id="renameoptions.directory"></a>
+
+### `<Optional>` directory
+
+**● directory**: *[Directories](#directories)*
+
+The system directory containing the existing file or directory
+
+___
+<a id="renameoptions.from"></a>
+
+###  from
+
+**● from**: *`string`*
+
+The existing file or directory
+
+___
+<a id="renameoptions.to"></a>
+
+###  to
+
+**● to**: *`string`*
+
+The destination file or directory
+
+___
+<a id="renameoptions.todirectory"></a>
+
+### `<Optional>` toDirectory
+
+**● toDirectory**: *[Directories](#directories)*
+
+The system directory containing the destination file or directory. If not supplied will use the 'directory' parameter as the destination
+
+___
+
+___
+<a id="rmdiroptions"></a>
+
+###  RmdirOptions
+
+**RmdirOptions**: 
+
+<a id="rmdiroptions.directory"></a>
+
+### `<Optional>` directory
+
+**● directory**: *[Directories](#directories)*
+
+The directory to start in
+
+___
+<a id="rmdiroptions.path"></a>
+
+###  path
+
+**● path**: *`string`*
+
+The path to the file or directory with one of the [Directories](#directories)
+
+___
+<a id="rmdiroptions.recursive"></a>
+
+###  recursive
+
+**● recursive**: *`boolean`*
+
+Whether to recursively remove the contents of the directory (defaults to false)
+
+___
+
+___
 <a id="statresult"></a>
 
 ###  StatResult
 
-**StatResult**:
+**StatResult**: 
 
 <a id="statresult.ctime"></a>
 
@@ -666,3 +828,32 @@ ___
 
 ___
 
+## Change Log
+
+
+
+### [1.1.0] (2019-09-03)
+
+
+### Bug Fixes
+
+* Free saved call after permission result 
+* **android:** remove incorrect trailing newline in readFile when using encoding 
+* **ios:** make readdir return only file names 
+* **iOS:** Update iOS deleteFile method bug where deleteFile would actually make a directory. 
+* **iOS:** use proper getUri method 
+
+
+### Features
+
+* Add recursive option for rmdir 
+* add rename and copy implementations 
+
+
+
+### [1.0.2] (2019-08-02)
+
+
+### Bug Fixes
+
+* **iOS:** Update iOS deleteFile method bug where deleteFile would actually make a directory.

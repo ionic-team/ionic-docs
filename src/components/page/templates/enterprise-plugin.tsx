@@ -1,11 +1,19 @@
+import { h } from '@stencil/core';
+import { toHypertext } from '../to-hypertext';
+
 export default (props) => {
   const { page } = props;
   const headings = [...page.headings];
 
-  const pluginId = page.path.split('/')[3];
+  let pluginId = page.path.split('/')[3];
+  let variables = '';
+  if (pluginId === 'auth-connect') {
+    pluginId = 'auth';
+    variables = '--variable AUTH_URL_SCHEME=mycustomscheme';
+  }
   const otherVersions = page.otherVersions || [];
 
-  const installation = renderInstallation(pluginId);
+  const installation = renderInstallation(pluginId, variables);
 
   if (installation) {
     headings.unshift({
@@ -20,7 +28,9 @@ export default (props) => {
       <h4>v{page.version}</h4>
       <docs-table-of-contents links={headings.concat([{ 'href': '#previous-versions', text: 'Other Versions' }])} basepath={page.path}/>
       { installation }
-      <section class="markdown-content" innerHTML={page.body}/>
+      <section class="markdown-content">
+        {toHypertext(h, page.body)}
+      </section>
       <section id="previous-versions">
       <h2>Other Versions</h2>
       <ul>
@@ -34,7 +44,7 @@ export default (props) => {
   );
 };
 
-const renderInstallation = (pluginId: string) => {
+const renderInstallation = (pluginId: string, variables?: string) => {
   if (!pluginId) {
     return null;
   }
@@ -45,19 +55,17 @@ const renderInstallation = (pluginId: string) => {
         <a href="#installation">Installation</a>
       </h2>
       <p>
-        In order to use Ionic Enterprise Edition plugins you should make sure you're using the
-        Ionic Enterprise Cordova CLI as the regular version can have issues with scoped plugins.
+        After following the one-time <stencil-route-link url="/docs/enterprise/setup">setup steps</stencil-route-link>,
+        simply install the plugin:
       </p>
+      <strong>Cordova:</strong>
       <command-line>
-        <command-prompt>{'npm uninstall -g cordova'}</command-prompt>
-        <command-prompt>{'npm install -g @ionic-enterprise/cordova'}</command-prompt>
+        <command-prompt>{`ionic cordova plugin add @ionic-enterprise/${pluginId} ${variables}`}</command-prompt>
       </command-line>
-      <p>
-        Once you've installed the Ionic Enterprise Cordova CLI you can install the plugin.
-      </p>
+      <strong>Capacitor:</strong>
       <command-line>
-        <command-prompt>{`ionic enterprise register --key=YOURPRODUCTKEY`}</command-prompt>
-        <command-prompt>{`ionic cordova plugin add @ionic-enterprise/${pluginId}`}</command-prompt>
+        <command-prompt>{`npm install @ionic-enterprise/${pluginId} ${variables}`}</command-prompt>
+        <command-prompt>npx cap sync</command-prompt>
       </command-line>
     </section>
   );

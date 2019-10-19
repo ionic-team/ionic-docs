@@ -6,6 +6,9 @@ template: enterprise-plugin
 otherVersions:
   - 2.0.X
   - 3.0.X
+  - 3.1.X
+  - 3.2.X
+  - 3.3.X
 ---
 
 # Ionic Enterprise Identity Vault

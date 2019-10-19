@@ -1,0 +1,52 @@
+.Select {
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 500;
+}
+
+.Select .Dropdown-button {
+  align-items: center;
+  border: solid 1px #DEE3EA;
+  border-radius: 6px;
+  display: inline-flex;
+  justify-content: space-between;
+  min-width: 100px;
+  padding: 0.5em 1em;
+}
+
+.Select .Dropdown-panel {
+  padding: 0.5em 0;
+}
+
+.Select .Dropdown-arrow {
+  margin-left: 0.5em;
+}
+
+.Select-option {
+  --bg-alpha: 0;
+  background-color: rgba(0, 0, 0, var(--bg-alpha));
+  padding: 0.5em 1.5em;
+}
+
+.Select-option:focus {
+  --bg-alpha: 0.025;
+  outline: none;
+}
+
+.Select-option--selected {
+  --bg-alpha: 0.05;
+}
+
+.Select-option--selected:focus {
+  --bg-alpha: 0.075;
+}
+
+@media (hover: hover) {
+  .Select-option:hover {
+    --bg-alpha: 0.025;
+  }
+
+  .Select-option--selected:hover {
+    --bg-alpha: 0.075;
+  }
+}

@@ -1,6 +1,6 @@
 ---
-previousText: 'Core concepts'
-previousUrl: '/docs/intro/concepts'
+previousText: 'Build Your First App'
+previousUrl: '/docs/intro/first-app'
 nextText: 'Versioning'
 nextUrl: '/docs/intro/versioning'
 ---
@@ -33,7 +33,3 @@ Because Ionic is based on web technologies, it works just as well on desktop bro
 | **Safari**  | ✔         |
 | **Edge**    | ✔         |
 | **Firefox** | ✔         |
-| **IE**      | 11+       |
-
-
-> Because Ionic is built with Stencil, see [Stencil's browser support](https://stenciljs.com/docs/browser-support) for a more detailed breakdown of support.

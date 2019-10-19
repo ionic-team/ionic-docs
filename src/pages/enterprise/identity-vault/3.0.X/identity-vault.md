@@ -6,6 +6,9 @@ minor: 3.0.X
 otherVersions:
   - 2.0.X
   - 3.0.X
+  - 3.1.X
+  - 3.2.X
+  - 3.3.X
 ---
 
 Ionic Identity Vault
@@ -62,7 +65,7 @@ constructor(private http: HttpClient, private router: Router, platform: Platform
 Automatically adding your token to requests
 -------------------------------------------
 
-If you'd like to automatically add your authorization token from your user service to every request, you can see a simple example at in our [demo repo](https://github.com/ionic-team/cs-demo-iv/blob/feature/identityVault/src/app/services/http-interceptors/auth-interceptor.ts).
+If you'd like to automatically add your authorization token from your user service to every request, you can see a simple example at in our [demo repo](https://github.com/ionic-team/cs-demo-iv/blob/master/src/app/services/http-interceptors/auth-interceptor.ts).
 
 API Documentation
 -----------------

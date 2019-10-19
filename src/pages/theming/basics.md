@@ -16,7 +16,7 @@ Ionic Framework is built to be a blank slate that can easily be customized and m
 
 Ionic has nine default colors that can be used to change the color of many components. Each color is actually a collection of multiple properties, including a `shade` and `tint`, used throughout Ionic.
 
-When changing a color, it is important to set all of the related properties. This can be done easily with the [Color Generator](/docs/theming/color-generator) tool, but these can also be manually written if desired. For more information on Ionic colors, see [Advanced Colors](/docs/theming/advanced#colors).
+When changing a color, it is important to set all of the related properties. This can be done easily with the [Color Generator](/docs/theming/color-generator) tool, but these can also be manually written if desired. For more information on Ionic colors, see [Colors](/docs/theming/colors).
 
 <color-accordion></color-accordion>
 
@@ -35,4 +35,4 @@ All of the Ionic components are themed using <a href="https://developer.mozilla.
 
 ## Branding
 
-Ionic provides application colors that can be used to theme an application to match a brand or color scheme. The default theme uses a light background, but everything from the background color to the text color is fully customizable. For more information on branding, see [Advanced Theming](/docs/theming/advanced).
+Ionic provides application colors that can be used to theme an application to match a brand or color scheme. The default theme uses a light background, but everything from the background color to the text color is fully customizable. For more information on branding, see [Themes](/docs/theming/themes).

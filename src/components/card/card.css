@@ -45,6 +45,13 @@ docs-card {
   margin-bottom: 1.2em;
 }
 
+.Card-ionicon {
+  width: 48px;
+  height: 48px;
+  float: left;
+  margin-right: 1em;
+}
+
 @media (hover: hover) {
   .Card[href]:hover {
     box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1), 0 0.175em 0.5em rgba(2, 8, 20, 0.08);
@@ -83,4 +90,75 @@ docs-card {
   height: 1em;
   margin-bottom: -0.125em;
   width: auto;
+}
+
+docs-card.disabled,
+docs-card[disabled] {
+  position: relative;
+}
+
+docs-card.disabled::after,
+docs-card[disabled]::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(232, 232, 232, 0.5);
+  pointer-events: none;
+  content: '';
+}
+
+aside docs-card {
+  max-width: 240px;
+}
+
+aside .Card-container {
+  display: grid;
+  grid-template-columns: minmax(0, max-content) 1fr;
+  grid-template-rows: minmax(0, min-content);
+  grid-template-areas: 
+    "icon title"
+    "icon body";
+}
+
+aside .Card-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 16px;
+  margin-bottom: 0;
+  grid-area: icon;
+}
+
+aside .Card-header {
+  grid-area: title;
+}
+
+aside .Card-header::after {
+  background-image: url("/docs/assets/img/new-tab.svg");
+  display: inline-block;
+  height: 13px;
+  width: 13px;
+  background-size: 13px 13px;
+  margin-left: 4px;
+  content: '';
+}
+
+aside .Card-content {
+  grid-area: body;
+  /* https://stackoverflow.com/questions/5269713/css-ellipsis-on-second-line */
+  max-height: 42px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+aside .Card-icon + .Card-content {
+  margin-top: -6px;
+}
+
+.markdown-content p docs-card {
+  margin-top: 1em;
 }

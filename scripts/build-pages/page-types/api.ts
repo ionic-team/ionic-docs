@@ -22,7 +22,7 @@ async function getAPIPages(): Promise<Page[]> {
     return {
       title,
       path,
-      demoUrl,
+      ...demoUrl,
       body: markdownRenderer(readme, path),
       usage: renderUsage(usage, path),
       props: renderDocsKey(props, path),
@@ -50,6 +50,9 @@ const getDemoUrl = async (component) => {
   const demoPath = `api/${component.tag.slice(4)}/index.html`;
   const hasDemo = await fs.pathExists(join(DEMOS_PATH, demoPath));
   if (hasDemo) {
-    return `/docs/demos/${demoPath}`;
+    return {
+      demoUrl: `/docs/demos/${demoPath}`,
+      demoSourceUrl: `https://github.com/ionic-team/ionic-docs/tree/master/src/demos/${demoPath}`
+    };
   }
 };

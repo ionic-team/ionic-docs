@@ -67,3 +67,11 @@ layered-colors-select {
 .color-description {
   width: 35%;
 }
+
+/**
+ * This only applies to the alert, change if the interface
+ * is changed to a popover
+ */
+.layered-colors-select-interface .alert-sub-title {
+  font-family: var(--font-family);
+}

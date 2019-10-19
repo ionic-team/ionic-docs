@@ -54,11 +54,12 @@
   align-items: center;
 }
 
-.color-selector__input input[type="text"] {
+.color-selector__input-name input,
+.color-selector__input-value input {
   -webkit-appearance: none;
   border: 0;
   outline: none;
-  font-family: var(--font-family-code);
+  font-family: var(--code-font-family);
   font-size: 12px;
   width: 60px;
   color: var(--text-color--light);
@@ -68,9 +69,20 @@
   border-color: #7eafff;
 }
 
-.color-selector--error .color-selector__input,
-.color-selector--error .color-selector__input--focused .color-selector__input {
+.color-selector--name-error .color-selector__input-name,
+.color-selector--name-error .color-selector__input--focused .color-selector__input-name,
+.color-selector--value-error .color-selector__input-value,
+.color-selector--value-error .color-selector__input--focused .color-selector__input-value {
   border-color: #f04141;
+}
+
+.color-selector__input-name {
+  max-width: 150px;
+}
+
+.color-selector__input-name input {
+  padding: 0 15px;
+  width: 110px;
 }
 
 .color-selector__color-wrap {
@@ -98,13 +110,14 @@
   font-size: 11px;
   line-height: 13px;
   display: block;
-  max-width: 100px;
-  padding-right: 10px;
+  max-width: 120px;
+  padding: 0 10px;
   color: #f04141;
+  font-weight: normal;
 }
 
 @media (max-width: 700px) {
-  .color-selector--error {
+  .color-selector--value-error {
     padding-bottom: 24px;
   }
 
@@ -124,7 +137,7 @@
 }
 
 .color-selector__hex span {
-  font-family: var(--font-family-code);
+  font-family: var(--code-font-family);
   font-size: 12px;
   background-color: var(--line-rule-color);
   color: var(--text-color--dark);

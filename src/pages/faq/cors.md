@@ -1,8 +1,8 @@
 ---
 previousText: 'Native Errors'
 previousUrl: '/docs/faq/native'
-nextText: 'Developer Tips'
-nextUrl: '/docs/faq/tips'
+nextText: 'Security'
+nextUrl: '/docs/faq/security'
 contributors:
   - FdezRomero
 ---

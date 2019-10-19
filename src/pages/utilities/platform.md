@@ -17,8 +17,8 @@ The Platform service can be used to get information about your current device. Y
 import { Platform } from '@ionic/angular';
 
 @Component({...})
-export MyPage {
-  constructor(public plt: Platform) {
+export class MyPage {
+  constructor(public platform: Platform) {
 
   }
 }

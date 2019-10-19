@@ -1,11 +1,17 @@
 import Listr from 'listr';
 import buildApiReference from './api-reference';
+import buildReleaseNotes from './release-notes';
 import buildSearchIndex from './search-index';
+import buildContributors from './file-contributors';
 
 const tasks = new Listr([
   buildApiReference,
-  buildSearchIndex
-]);
+  // buildContributors,
+  buildReleaseNotes,
+  buildSearchIndex,
+],
+  // { renderer: 'verbose' }
+);
 
 export default tasks;
 

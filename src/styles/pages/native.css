@@ -1,0 +1,29 @@
+.page-native {
+  --page-width: 1000px;
+}
+
+.page-native h1 {
+  margin-bottom: -10px;
+}
+
+.page-native docs-cards {
+  margin-top: 40px;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  color: #5B708B;
+}
+
+.page-native blockquote {
+  margin-top: 40px;
+  padding: 1em;
+}
+
+[class^='page-native'] .Card[href] docs-button button, 
+[class*=' page-native'] .Card[href] docs-button button {
+  cursor: pointer;
+}
+
+[class^='page-native'] ion-icon[aria-label="alert"], 
+[class*=' page-native'] ion-icon[aria-label="alert"] {
+  color: var(--ion-color-danger);
+}

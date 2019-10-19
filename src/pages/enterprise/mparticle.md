@@ -1,13 +1,14 @@
 # Ionic mParticle Integration for Capacitor
 
-This plugin provides for easy integration with the [mParticle](https://www.mparticle.com/) SDK in your capacitor app.
+This plugin provides for easy integration with the [mParticle](https://www.mparticle.com/) SDK in your Capacitor app.
 
 
 ## Installation
 
 <command-line>
-<command-prompt>ionic enterprise register --key=MY_PRODUCT_KEY</command-prompt>
+<command-prompt>ionic enterprise register</command-prompt>
 <command-prompt>npm install @ionic-enterprise/capacitor-mparticle-integration</command-prompt>
+<command-prompt>npx cap sync</command-prompt>
 </command-line>
 
 ## Configuration
@@ -44,5 +45,4 @@ add(CapacitorMparticleIntegration.class);
 
 ## Register plugin for iOS
 
-Plugin is auto-registered on iOS
-
+Plugin is auto-registered on iOS.

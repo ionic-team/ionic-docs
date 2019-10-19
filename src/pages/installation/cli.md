@@ -20,9 +20,9 @@ Before proceeding, make sure the latest version of [Node.js](/docs/faq/glossary#
 $ npm install -g ionic
 ```
 
-<blockquote>
-  <p>The <code>-g</code> means it is a global install. For Window’s it's recommended to open an Admin command prompt. For Mac/Linux, run the command with <code>sudo</code>.</p>
-</blockquote>
+> The `-g` option means _install globally_. When packages are installed globally, `EACCES` permission errors can occur.
+>
+> Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](/docs/faq/tips#resolving-permission-errors) for more information.
 
 ## Start an App
 

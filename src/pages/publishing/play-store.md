@@ -22,7 +22,7 @@ An Ionic app will have preset default values in this file but this can be change
 ## Signing an APK
 
 First, the unsigned APK must be signed. If a signing key has already been generated, skip these steps and use that one instead.
-Generate a private key using the keytool command that comes with the the Android SDK:
+Generate a private key using the keytool command that comes with the Android SDK:
 
 ```shell
 $ keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000

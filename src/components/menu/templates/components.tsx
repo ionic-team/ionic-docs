@@ -1,65 +1,67 @@
+import { h } from '@stencil/core';
+
 export default () => <docs-nav items={items}/>;
 
 const items = {
-  'Action Sheet': {
+  'menu-api-action-sheet': {
     'ion-action-sheet': '/docs/api/action-sheet',
     'ion-action-sheet-controller': '/docs/api/action-sheet-controller'
   },
-  'Alert': {
+  'menu-api-alert': {
     'ion-alert': '/docs/api/alert',
     'ion-alert-controller': '/docs/api/alert-controller'
   },
-  'Badge': {
+  'menu-api-badge': {
     'ion-badge': '/docs/api/badge'
   },
-  'Button': {
+  'menu-api-button': {
     'ion-button': '/docs/api/button',
     'ion-ripple-effect': '/docs/api/ripple-effect'
   },
-  'Card': {
+  'menu-api-card': {
     'ion-card': '/docs/api/card',
     'ion-card-content': '/docs/api/card-content',
     'ion-card-header': '/docs/api/card-header',
     'ion-card-subtitle': '/docs/api/card-subtitle',
     'ion-card-title': '/docs/api/card-title'
   },
-  'Checkbox': {
+  'menu-api-checkbox': {
     'ion-checkbox': '/docs/api/checkbox'
   },
-  'Chip': {
+  'menu-api-chip': {
     'ion-chip': '/docs/api/chip'
   },
-  'Content': {
+  'menu-api-content': {
     'ion-app': '/docs/api/app',
     'ion-content': '/docs/api/content',
   },
-  'Date & Time Pickers': {
+  'menu-api-datetime': {
     'ion-datetime': '/docs/api/datetime',
     'ion-picker': '/docs/api/picker',
     'ion-picker-controller': '/docs/api/picker-controller'
   },
-  'Floating Action Button': {
+  'menu-api-fab': {
     'ion-fab': '/docs/api/fab',
     'ion-fab-button': '/docs/api/fab-button',
     'ion-fab-list': '/docs/api/fab-list'
   },
-  'Grid': {
+  'menu-api-grid': {
     'ion-grid': '/docs/api/grid',
     'ion-col': '/docs/api/col',
     'ion-row': '/docs/api/row'
   },
-  'Infinite Scroll': {
+  'menu-api-infinite-scroll': {
     'ion-infinite-scroll': '/docs/api/infinite-scroll',
     'ion-infinite-scroll-content': '/docs/api/infinite-scroll-content'
   },
-  'Icons': {
+  'menu-api-icons': {
     'ion-icon': 'https://ionicons.com'
   },
-  'Input': {
+  'menu-api-input': {
     'ion-input': '/docs/api/input',
     'ion-textarea': '/docs/api/textarea'
   },
-  'Item': {
+  'menu-api-item': {
     'ion-item': '/docs/api/item',
     'ion-item-divider': '/docs/api/item-divider',
     'ion-item-group': '/docs/api/item-group',
@@ -69,96 +71,97 @@ const items = {
     'ion-label': '/docs/api/label',
     'ion-note': '/docs/api/note'
   },
-  'List': {
+  'menu-api-list': {
     'ion-list': '/docs/api/list',
     'ion-list-header': '/docs/api/list-header',
     'ion-virtual-scroll': '/docs/api/virtual-scroll'
   },
-  'Media': {
+  'menu-api-media': {
     'ion-avatar': '/docs/api/avatar',
     'ion-icon': 'https://ionicons.com',
     'ion-img': '/docs/api/img',
     'ion-thumbnail': '/docs/api/thumbnail'
   },
-  'Menu': {
+  'menu-api-menu': {
     'ion-menu': '/docs/api/menu',
     'ion-menu-button': '/docs/api/menu-button',
     'ion-menu-controller': '/docs/api/menu-controller',
     'ion-menu-toggle': '/docs/api/menu-toggle',
     'ion-split-pane': '/docs/api/split-pane'
   },
-  'Modal': {
+  'menu-api-modal': {
     'ion-modal': '/docs/api/modal',
     'ion-modal-controller': '/docs/api/modal-controller',
     'ion-backdrop': '/docs/api/backdrop'
   },
-  'Navigation': {
+  'menu-api-nav': {
     'ion-nav': '/docs/api/nav',
     'ion-nav-pop': '/docs/api/nav-pop',
     'ion-nav-push': '/docs/api/nav-push',
     'ion-nav-set-root': '/docs/api/nav-set-root'
   },
-  'Popover': {
+  'menu-api-popover': {
     'ion-popover': '/docs/api/popover',
     'ion-popover-controller': '/docs/api/popover-controller'
   },
-  'Progress Indicators': {
+  'menu-api-progress-indicators': {
     'ion-loading': '/docs/api/loading',
     'ion-loading-controller': '/docs/api/loading-controller',
     'ion-progress-bar': '/docs/api/progress-bar',
     'ion-skeleton-text': '/docs/api/skeleton-text',
     'ion-spinner': '/docs/api/spinner'
   },
-  'Radio': {
+  'menu-api-radio': {
     'ion-radio': '/docs/api/radio',
     'ion-radio-group': '/docs/api/radio-group'
   },
-  'Range': {
+  'menu-api-range': {
     'ion-range': '/docs/api/range'
   },
-  'Refresher': {
+  'menu-api-refresher': {
     'ion-refresher': '/docs/api/refresher',
     'ion-refresher-content': '/docs/api/refresher-content'
   },
-  'Reorder': {
+  'menu-api-reorder': {
     'ion-reorder': '/docs/api/reorder',
     'ion-reorder-group': '/docs/api/reorder-group'
   },
-  'Routing': {
+  'menu-api-routing': {
     'ion-router': '/docs/api/router',
+    'ion-router-link': '/docs/api/router-link',
     'ion-router-outlet': '/docs/api/router-outlet',
     'ion-route': '/docs/api/route',
     'ion-route-redirect': '/docs/api/route-redirect'
   },
-  'Searchbar': {
+  'menu-api-searchbar': {
     'ion-searchbar': '/docs/api/searchbar'
   },
-  'Segment': {
+  'menu-api-segment': {
     'ion-segment': '/docs/api/segment',
     'ion-segment-button': '/docs/api/segment-button'
   },
-  'Select': {
+  'menu-api-select': {
     'ion-select': '/docs/api/select',
     'ion-select-option': '/docs/api/select-option'
   },
-  'Slides': {
+  'menu-api-slides': {
     'ion-slides': '/docs/api/slides',
     'ion-slide': '/docs/api/slide'
   },
-  'Tabs': {
+  'menu-api-tabs': {
     'ion-tabs': '/docs/api/tabs',
     'ion-tab': '/docs/api/tab',
     'ion-tab-bar': '/docs/api/tab-bar',
     'ion-tab-button': '/docs/api/tab-button'
   },
-  'Toast': {
+  'menu-api-toast': {
     'ion-toast': '/docs/api/toast',
     'ion-toast-controller': '/docs/api/toast-controller'
   },
-  'Toggle': {
+  'menu-api-toggle': {
     'ion-toggle': '/docs/api/toggle'
   },
-  'Toolbar': {
+  'menu-api-toolbar': {
     'ion-toolbar': '/docs/api/toolbar',
     'ion-header': '/docs/api/header',
     'ion-footer': '/docs/api/footer',
@@ -166,11 +169,11 @@ const items = {
     'ion-buttons': '/docs/api/buttons',
     'ion-back-button': '/docs/api/back-button'
   },
-  'Typography': {
+  'menu-api-typography': {
     'ion-anchor': '/docs/api/anchor',
     'ion-text': '/docs/api/text'
   },
-  'Resources': {
-    'API Index': '/docs/api'
+  'menu-api-resources': {
+    'menu-api-index': '/docs/api'
   }
 };

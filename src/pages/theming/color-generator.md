@@ -1,10 +1,10 @@
 ---
 hideTOC: true
 demoUrl: '/docs/pages/theming/color-generator/index.html'
-previousText: 'CSS Variables'
-previousUrl: '/docs/theming/css-variables'
-nextText: 'Advanced Theming'
-nextUrl: '/docs/theming/advanced'
+previousText: 'Advanced Theming'
+previousUrl: '/docs/theming/advanced'
+nextText: 'Publishing an app'
+nextUrl: '/docs/publishing/app-store'
 contributors:
   - brandyscarney
   - kevinports

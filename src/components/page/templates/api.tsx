@@ -1,7 +1,13 @@
+import { h } from '@stencil/core';
+import { useLocalStorage } from '../../../local-storage';
+import { toHypertext } from '../to-hypertext';
+
+const [getFramework] = useLocalStorage('ionic-docs:framework');
+
 export default (props) => {
   const { page } = props;
   const headings = [...page.headings];
-  const usage = renderUsage(page.usage);
+  const usage = renderUsage(page.usage, page.path);
   const properties = renderProperties(page.props);
   const events = renderEvents(page.events);
   const methods = renderMethods(page.methods);
@@ -54,7 +60,9 @@ export default (props) => {
     <article>
       <h1>{ page.title }</h1>
       <docs-table-of-contents links={headings} basepath={page.path}/>
-      <section class="markdown-content" innerHTML={page.body}/>
+      <section class="markdown-content">
+        {toHypertext(h, page.body)}
+      </section>
       { usage }
       { properties }
       { events }
@@ -65,8 +73,10 @@ export default (props) => {
   );
 };
 
-const renderUsage = (usage = {}) => {
+const renderUsage = (usage = {}, path: string) => {
   const keys = Object.keys(usage);
+  const frameworkPref = getFramework();
+  const framework = frameworkPref ? frameworkPref.toLowerCase() : null;
 
   if (!keys.length) {
     return null;
@@ -77,8 +87,14 @@ const renderUsage = (usage = {}) => {
       <h2 id="usage">
         <a href="#usage">Usage</a>
       </h2>
-      <docs-tabs tabs={keys.join(',')}>
-        { keys.map(key => <div slot={key} innerHTML={usage[key]}/>) }
+      <docs-tabs key={path} listen-for="ionic-docs:framework">
+          {keys.map(key =>
+            <docs-tab
+              tab={key}
+              selected={framework === key.toLowerCase()}>
+                {toHypertext(h, usage[key])}
+            </docs-tab>
+          )}
       </docs-tabs>
     </section>
   );

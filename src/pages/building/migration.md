@@ -20,7 +20,7 @@ We suggest the following general process when migrating an existing application 
 1. Generate a new project using the `blank` starter (see [Starting an App](/docs/building/starting))
 1. Copy any Angular services from `src/providers` to `src/app/services`
    - Services should include `{ providedIn: 'root' }` in the `@Injectable()` decorator. For details, please see Angular [provider docs](https://angular.io/guide/providers).
-1. Copy the app's other root level items (pipes, components, etc) keeping in mind that the directory structure changes from `src/components` to `src/app/components`, etc.
+1. Copy the app's other root-level items (pipes, components, etc) keeping in mind that the directory structure changes from `src/components` to `src/app/components`, etc.
 1. Copy global Sass styling from `src/app/app.scss` to `src/global.scss`
 1. Copy the rest of the application, page by page or feature by feature, keeping the following items in mind:
    - Emulated Shadow DOM is turned on by default
@@ -29,7 +29,7 @@ We suggest the following general process when migrating an existing application 
    - Certain lifecycle hooks should be replaced by Angular's hooks (see [Lifecycle Events](#lifecycle-events))
    - Markup changes may be required (migration tool available, see [Markup Changes](#markup-changes))
 
-In many cases, using the Ionic CLI to generate a new object and then copying the code also works very well. For example: `ionic g service weather` will create a shell `Weather` service and test. The code can then be copied from the older project with minor modifications as needed. This helps to ensure proper structure is followed. This also generates shells for unit tests.
+In many cases, using the Ionic CLI to generate a new object and then copying the code also works very well. For example: `ionic g service weather` will create a shell `Weather` service and test. The code can then be copied from the older project with minor modifications as needed. This helps to ensure the proper structure is followed. This also generates shells for unit tests.
 
 ## Changes in Package Name
 
@@ -44,63 +44,67 @@ While migrating an app, update the imports from `ionic-angular` to `@ionic/angul
 
 ## Project structure
 
-One of the major changes between an Ionic 3 app and an Ionic 4 app is the overall project layout and structure. In v3, Ionic apps had a custom convention for how an app should be setup and what that folder structure should look like. In v4, this has been changed to follow the recommended setup of each supported framework.
+One of the major changes between an Ionic 3 app and an Ionic 4 app is the overall project layout and structure. In v3, Ionic apps had a custom convention for how an app should be set up and what that folder structure should look like. In v4, this has been changed to follow the recommended setup of each supported framework.
 
 For example, if an app is using Angular, that project structure will be exactly what an Angular CLI app would be. This change, while not too difficult to accommodate, helps to keep common patterns and documentation consistent.
 
-<div style="display: flex;">
-    <figure style="display: flex; flex-direction: column; width: 50%; margin-right: 5px;">
-        <file-tree style="flex: 1">
-            <file-tree-directory name="src">
-                <file-tree-directory name="app">
-                    <file-tree-directory name="about" collapsed></file-tree-directory>
-                    <file-tree-directory name="home" collapsed></file-tree-directory>
-                    <file-tree-file name="app-routing.module.ts"></file-tree-file>
-                    <file-tree-file name="app.component.html"></file-tree-file>
-                    <file-tree-file name="app.component.spec.ts"></file-tree-file>
-                    <file-tree-file name="app.component.ts"></file-tree-file>
-                    <file-tree-file name="app.module.ts"></file-tree-file>
-                </file-tree-directory>
-                <file-tree-directory name="assets" collapsed></file-tree-directory>
-                <file-tree-directory name="environments" collapsed></file-tree-directory>
-                <file-tree-directory name="theme" collapsed></file-tree-directory>
-                <file-tree-file name="global.scss"></file-tree-file>
-                <file-tree-file name="index.html"></file-tree-file>
-                <file-tree-file name="karma.conf.js"></file-tree-file>
-                <file-tree-file name="main.ts"></file-tree-file>
-                <file-tree-file name="polyfills.ts"></file-tree-file>
-                <file-tree-file name="test.ts"></file-tree-file>
-                <file-tree-file name="tsconfig.app.json"></file-tree-file>
-                <file-tree-file name="tsconfig.spec.json"></file-tree-file>
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <figure>
+        <file-tree>
+          <file-tree-directory name="src">
+            <file-tree-directory name="app">
+              <file-tree-directory name="about" collapsed></file-tree-directory>
+              <file-tree-directory name="home" collapsed></file-tree-directory>
+              <file-tree-file name="app-routing.module.ts"></file-tree-file>
+              <file-tree-file name="app.component.html"></file-tree-file>
+              <file-tree-file name="app.component.spec.ts"></file-tree-file>
+              <file-tree-file name="app.component.ts"></file-tree-file>
+              <file-tree-file name="app.module.ts"></file-tree-file>
             </file-tree-directory>
-            <file-tree-file name=".gitignore"></file-tree-file>
-            <file-tree-file name="angular.json"></file-tree-file>
-            <file-tree-file name="ionic.config.json"></file-tree-file>
-            <file-tree-file name="package.json"></file-tree-file>
-            <file-tree-file name="tsconfig.json"></file-tree-file>
-            <file-tree-file name="tslint.json"></file-tree-file>
+            <file-tree-directory name="assets" collapsed></file-tree-directory>
+            <file-tree-directory name="environments" collapsed></file-tree-directory>
+            <file-tree-directory name="theme" collapsed></file-tree-directory>
+            <file-tree-file name="global.scss"></file-tree-file>
+            <file-tree-file name="index.html"></file-tree-file>
+            <file-tree-file name="karma.conf.js"></file-tree-file>
+            <file-tree-file name="main.ts"></file-tree-file>
+            <file-tree-file name="polyfills.ts"></file-tree-file>
+            <file-tree-file name="test.ts"></file-tree-file>
+            <file-tree-file name="tsconfig.app.json"></file-tree-file>
+            <file-tree-file name="tsconfig.spec.json"></file-tree-file>
+          </file-tree-directory>
+          <file-tree-file name=".gitignore"></file-tree-file>
+          <file-tree-file name="angular.json"></file-tree-file>
+          <file-tree-file name="ionic.config.json"></file-tree-file>
+          <file-tree-file name="package.json"></file-tree-file>
+          <file-tree-file name="tsconfig.json"></file-tree-file>
+          <file-tree-file name="tslint.json"></file-tree-file>
         </file-tree>
         <figcaption>Ionic 4</figcaption>
-    </figure>
-    <figure style="display: flex; flex-direction: column; width: 50%; margin-left: 5px;">
-        <file-tree style="flex: 1">
-            <file-tree-directory name="src">
-                <file-tree-directory name="app">
-                    <file-tree-file name="app.component.html"></file-tree-file>
-                    <file-tree-file name="app.html"></file-tree-file>
-                    <file-tree-file name="app.module.ts"></file-tree-file>
-                    <file-tree-file name="app.scss"></file-tree-file>
-                    <file-tree-file name="main.ts"></file-tree-file>
-                </file-tree-directory>
-                <file-tree-directory name="assets" collapsed></file-tree-directory>
-                <file-tree-directory name="pages">
-                    <file-tree-directory name="about" collapsed></file-tree-directory>
-                    <file-tree-directory name="home" collapsed></file-tree-directory>
-                </file-tree-directory>
-                <file-tree-directory name="theme" collapsed></file-tree-directory>
-                <file-tree-file name="index.html"></file-tree-file>
-                <file-tree-file name="manifest.json"></file-tree-file>
-                <file-tree-file name="service-worker.js"></file-tree-file>
+      </figure>
+    </ion-col>
+    <ion-col>
+      <figure>
+        <file-tree>
+          <file-tree-directory name="src">
+              <file-tree-directory name="app">
+                <file-tree-file name="app.component.html"></file-tree-file>
+                <file-tree-file name="app.html"></file-tree-file>
+                <file-tree-file name="app.module.ts"></file-tree-file>
+                <file-tree-file name="app.scss"></file-tree-file>
+                <file-tree-file name="main.ts"></file-tree-file>
+              </file-tree-directory>
+              <file-tree-directory name="assets" collapsed></file-tree-directory>
+              <file-tree-directory name="pages">
+                <file-tree-directory name="about" collapsed></file-tree-directory>
+                <file-tree-directory name="home" collapsed></file-tree-directory>
+              </file-tree-directory>
+              <file-tree-directory name="theme" collapsed></file-tree-directory>
+              <file-tree-file name="index.html"></file-tree-file>
+              <file-tree-file name="manifest.json"></file-tree-file>
+              <file-tree-file name="service-worker.js"></file-tree-file>
             </file-tree-directory>
             <file-tree-file name=".gitignore"></file-tree-file>
             <file-tree-file name="ionic.config.json"></file-tree-file>
@@ -109,12 +113,14 @@ For example, if an app is using Angular, that project structure will be exactly 
             <file-tree-file name="tslint.json"></file-tree-file>
         </file-tree>
         <figcaption>Ionic 3</figcaption>
-    </figure>
-</div>
+      </figure>
+    </ion-col>
+  </ion-row>
+</ion-grid>
 
 The above comparison is an example of a v4 app's project structure. For developers with experience in a vanilla Angular project, this should feel really familiar.
 
-There is a `src/` directory that acts as the home for the app. This includes the `index.html`, any assets, environment configuration, and any app specific config files.
+There is a `src/` directory that acts as the home for the app. This includes the `index.html`, any assets, environment configuration, and any app-specific config files.
 
 While migrating an app to take advantage of this new layout, it is suggested that a new project "base" is made with the CLI. Then, with the new project layout, migrate the features of the app piece by piece. Pages/components/etc. should be moved into the `src/app/` folder.
 
@@ -135,11 +141,11 @@ Between V3 and V4, RxJS was updated to version 6. This changes many of the impor
 
 ## Lifecycle Events
 
-With V4, we're now able to utilize the typical events provided by [Angular](https://angular.io/guide/lifecycle-hooks). But for certain cases, you might want to have access to the events fired when a component has finished animating during it's route change. In this case, the `ionViewWillEnter`, `ionViewDidEnter`, `ionViewWillLeave`, and `ionViewDidLeave` have been ported over from V3. Use these events to coordinate actions with Ionic's own animations system.
+With V4, we're now able to utilize the typical events provided by [Angular](https://angular.io/guide/lifecycle-hooks). But for certain cases, you might want to have access to the events fired when a component has finished animating during its route change. In this case, the `ionViewWillEnter`, `ionViewDidEnter`, `ionViewWillLeave`, and `ionViewDidLeave` have been ported over from V3. Use these events to coordinate actions with Ionic's own animations system.
 
 Older events like `ionViewDidLoad`, `ionViewCanLeave`, and `ionViewCanEnter` have been removed, and the proper Angular alternatives should be used.
 
-For more details, checkout the [router-outlet docs](/docs/api/router-outlet)
+For more details, check out the [router-outlet docs](/docs/api/router-outlet)
 
 ## Overlay Components
 
@@ -183,9 +189,9 @@ async showAlert() {
 
 In V4, navigation received the most changes. Now, instead of using Ionic's own `NavController`, we integrate with the official Angular Router. This not only provides a consistent routing experience across apps, but is much more dependable. The Angular team has an <a href="http://angular.io/guide/router" target="_blank">excellent guide</a> on their docs site that covers the Router in great detail.
 
-To provide the platform specific animations that users are used to, we have created `ion-router-outlet` for Angular Apps. This behaves in a similar manner to Angular's `router-outlet` but provides a stack-based navigation (tabs) and animations.
+To provide the platform-specific animations that users are used to, we have created `ion-router-outlet` for Angular Apps. This behaves in a similar manner to Angular's `router-outlet` but provides a stack-based navigation (tabs) and animations.
 
-For a detailed explanation in navigation works in a V4 project, checkout the [Angular navigation guide](/docs/navigation/angular).
+For a detailed explanation in navigation works in a V4 project, check out the [Angular navigation guide](/docs/angular/navigation).
 
 
 ## Lazy Loading
@@ -243,7 +249,7 @@ For a detailed explanation of lazy loading in V4 project, check out the [Angular
 
 ## Markup Changes
 
-Since v4 moved to Custom Elements, there's been a significant change to the markup for each component. These changes have all been made to follow the Custom Elements spec, and have been documented in a <a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#breaking-changes" target="_blank">dedicated file on Github</a>.
+Since v4 moved to Custom Elements, there's been a significant change to the markup for each component. These changes have all been made to follow the Custom Elements spec, and have been documented in a <a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#breaking-changes" target="_blank">dedicated file on GitHub</a>.
 
 To help with these markup changes, we've released a TSLint-based <a href="https://github.com/ionic-team/v4-migration-tslint" target="_blank">Migration Tool</a>, which detects issues and can even fix some of them automatically.
 
@@ -257,7 +263,7 @@ One upside is that for the most part, the Ionic UI components you know and love 
 
 Here are some considerations to review before beginning the upgrade:
 - **App complexity**: Naturally, the larger and more complex the app is, the longer it will take to migrate.
-- **Framework support**: In 2019, Ionic will release full support for React and Vue. You can also use Ionic Framework components [without a framework](/docs/installation/cdn/). Since these are not production ready yet, we recommend sticking with Angular or waiting until the other framework support is available.
+- **Framework support**: In 2019, Ionic will release full support for React and Vue. You can also use Ionic Framework components [without a framework](/docs/installation/cdn/). Since these are not production-ready yet, we recommend sticking with Angular or waiting until the other framework support is available.
 - **Budget and team makeup**: The length of a migration project will vary based on the size of your team, the complexity of the app, and the amount of time allotted to make the transition.
 
 ### Suggested Strategy
@@ -271,7 +277,7 @@ Once the team is comfortable that the Ionic 4.0 app has become stable and has fu
 Please reference official [Angular upgrade guide](https://angular.io/guide/upgrade) information.
 
 ### Ionic Changes
-Our Ionic 3.0 to Ionic 4.0 migration sections above may prove to be a useful reference. Generate a new Ionic 4.0 project using the blank starter (see [Starting an App](/docs/building/starting). Spend time getting familiar with Ionic 4.0 components. Happy building!
+Our Ionic 3.0 to Ionic 4.0 migration sections above may prove to be a useful reference. Generate a new Ionic 4.0 project using the blank starter (see [Starting an App](/docs/building/starting)). Spend time getting familiar with Ionic 4.0 components. Happy building!
 
 ### Need Assistance?
 If your team would like assistance with the migration, please [reach out to us](https://ionicframework.com/enterprise-engine)! Ionic offers Advisory Services, which includes Ionic 4.0 training, architecture reviews, and migration assistance.

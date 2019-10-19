@@ -1,4 +1,4 @@
-import { Component, Element, Event, EventEmitter, Prop, State } from '@stencil/core';
+import { Component, Element, Event, EventEmitter, Prop, State, h } from '@stencil/core';
 
 
 @Component({
@@ -6,12 +6,15 @@ import { Component, Element, Event, EventEmitter, Prop, State } from '@stencil/c
   styleUrl: 'color-gen-css-text.css'
 })
 export class CssText {
+  @Element() el: HTMLElement;
 
   @Prop({ mutable: true }) cssText = '';
-  @State() showCopyConfirmation = false;
-  @Event() cssTextChange: EventEmitter;
 
-  @Element() el: HTMLElement;
+  @Prop() header = true;
+
+  @State() showCopyConfirmation = false;
+
+  @Event() cssTextChange: EventEmitter;
 
   onCssTextChange(ev: UIEvent) {
     if ((ev.target as HTMLTextAreaElement).value !== this.cssText) {
@@ -49,7 +52,10 @@ export class CssText {
     return [
       <div>
         <div class="css-text__header">
-          <h3>CSS Variables</h3>
+          {this.header
+            ? <h3>CSS Variables</h3>
+            : <h3></h3>
+          }
 
           <div class={{ 'css-text__copy': true, 'show-confirmation': this.showCopyConfirmation }} >
             <a class="css-text__copy-link" onClick={this.copyCssText.bind(this)}>Copy</a>

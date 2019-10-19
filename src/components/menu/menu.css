@@ -33,15 +33,39 @@ docs-menu .MenuLogo {
   height: 25px;
 }
 
-docs-menu > docs-search {
-  flex: none;
-  margin: 1rem 0.5rem 0;
-}
-
-docs-menu > stencil-route-switch {
+docs-menu > .Menu {
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 docs-menu nav {
   padding: 2rem 1.5rem;
+}
+
+.MenuControls {
+  border-bottom: solid 1px var(--line-rule-color);
+  box-shadow: 0 5px 10px -10px rgba(0, 0, 0, 0.1);
+  font-size: 13px;
+  padding: 1em;
+}
+
+.FrameworkSelect,
+.FrameworkSelect .Dropdown,
+.FrameworkSelect .Dropdown-button {
+  width: 100%;
+}
+
+.FrameworkSelect-framework {
+  align-items: center;
+  display: flex;
+}
+
+.FrameworkSelect-icon {
+  height: 14px;
+  width: 14px;
+  margin-right: 0.5em;
+}
+
+.FrameworkSelect .Select-option {
+  padding-left: 0.75em;
 }

@@ -2,6 +2,7 @@
 
 .native-ee-detail {
   float: right;
+  cursor: pointer;
 }
 
 .cordova-ee-img{
@@ -21,6 +22,11 @@
     fill:#00d287;
 }
 
+.native-ee-pricing .table-wrap {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
 .native-ee-pricing-table {
   font-size: 18px;
   color: #020814;
@@ -32,7 +38,6 @@
 .native-ee-pricing table,
 .native-ee-pricing .table {
   margin-bottom: 0;
-  min-width: 800px;
   border-style: none;
 }
 .native-ee-pricing thead tr td:first-child,
@@ -238,6 +243,7 @@
   border-radius: 6px;
   padding: 12px 18px 14px;
   width: 100%;
+  white-space: nowrap;
   box-shadow: 0 1px 3px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.12);
 }
 

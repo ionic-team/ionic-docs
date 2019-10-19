@@ -1,33 +1,47 @@
 docs-pagination {
   border-color: var(--line-rule-color);
   border-style: solid;
-  border-width: 1px 0;
+  border-width: 0 0 1px;
   display: flex;
-  padding: var(--page-padding, 2rem 3rem);
+  flex-wrap: wrap-reverse;
+  padding: var(--page-padding, 2rem 0rem) 0;
 }
 
 docs-pagination .next,
 docs-pagination .previous {
-  max-width: 40%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 docs-pagination .next {
   margin-left: auto;
 }
 
-docs-pagination .next a {
-  justify-content: flex-end;
-}
-
-docs-pagination .previous {
-  margin-right: auto;
-}
-
 docs-pagination a {
-  align-items: center;
   border-radius: 4px;
   display: flex;
+  align-items: flex-start;
+  flex-direction: column;
   padding: 1em 1.5em;
+}
+
+docs-pagination .previous a {
+  padding-left: 0;
+}
+
+docs-pagination .next a {
+  padding-right: 0;
+  align-items: flex-end;
+}
+
+@media (max-width: 700px) {
+  docs-pagination .previous a {
+    padding-right: .5rem;
+  }
+  
+  docs-pagination .next a {
+    padding-left: .5rem;
+  }
 }
 
 @media (hover: hover) {
@@ -38,6 +52,19 @@ docs-pagination a {
   docs-pagination a:active {
     background-color: rgba(0, 0, 0, 0.035);
   }
+}
+
+docs-pagination .paggination__title {
+  color: var(--text-color--lighter);
+  font-size: 12px;
+  display: block;
+}
+
+docs-pagination .paggination__text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
 }
 
 docs-pagination span {

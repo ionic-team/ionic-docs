@@ -41,7 +41,13 @@ Cordova and Capacitor apps are hosted on a local HTTP server and are served with
 
 For Cordova apps, the [Ionic Web View plugin](https://github.com/ionic-team/cordova-plugin-ionic-webview) provides a utility function for converting File URIs: `window.Ionic.WebView.convertFileSrc()`. There is also a corresponding Ionic Native plugin: [`@ionic-native/ionic-webview`](/docs/native/ionic-webview/).
 
-For Capacitor apps, the File URIs are converted automatically.
+For Capacitor apps, converting file URIs is very similar:
+
+```javascript
+import { Capacitor } from '@capacitor/core';
+
+Capacitor.convertFileSrc(filePath);
+```
 
 ### Implementations
 

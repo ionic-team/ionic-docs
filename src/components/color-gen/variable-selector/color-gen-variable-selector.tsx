@@ -1,10 +1,10 @@
-import { Component, Event, EventEmitter, Prop, State } from '@stencil/core';
+import { Component, Event, EventEmitter, Prop, State, h } from '@stencil/core';
 
 
 @Component({
   tag: 'color-gen-variable-selector',
   styleUrl: 'color-gen-variable-selector.css',
-  shadow: true
+  // shadow: true
 })
 export class VariableSelector {
 
@@ -12,12 +12,35 @@ export class VariableSelector {
   @Prop() property: string;
   @Prop() editable = true;
   @Prop() isParentOpen = false;
+  @Prop() isNew = false;
   @Prop({ mutable: true }) value: string;
 
-  @State() showInputError = false;
-  @State() isInputFocused = false;
+  @State() showNameError = false;
+  @State() showValueError = false;
+  @State() isValueInputFocused = false;
+  @State() isNameInputFocused = false;
 
   @Event() colorChange: EventEmitter;
+  @Event() nameChange: EventEmitter;
+
+  onNameChange(ev: UIEvent) {
+    const input = ev.currentTarget as any;
+    const name = input.value.trim();
+
+    if (name.length === 0) {
+      return;
+    }
+
+    if (!this.isValidName(name)) {
+      return;
+    }
+
+    this.name = name;
+    this.nameChange.emit({
+      name: this.name,
+      value: this.value
+    });
+  }
 
   onColorChange(ev: UIEvent) {
     const input = ev.currentTarget as any;
@@ -42,43 +65,82 @@ export class VariableSelector {
     });
   }
 
-  onInputFocus() {
-    this.isInputFocused = true;
+  onValueInputFocus() {
+    this.isValueInputFocused = true;
   }
 
-  onInputBlur(ev: UIEvent) {
+  onValueInputBlur(ev: UIEvent) {
     const input = ev.currentTarget as any;
     this.value = input.value.trim();
-    this.isInputFocused = false;
+    this.isValueInputFocused = false;
+  }
+
+  onNameInputFocus() {
+    this.isNameInputFocused = true;
+  }
+
+  onNameInputBlur(ev: UIEvent) {
+    const input = ev.currentTarget as any;
+    this.name = input.value.trim();
+    this.isNameInputFocused = false;
+  }
+
+  isValidName(str) {
+    return /^[A-Z\-\_]+$/i.test(str);
+  }
+
+  validateName() {
+    const isValidName = this.isValidName(this.name);
+    this.showNameError = (isValidName && this.name.length > 0) ? false : true;
   }
 
   isValidHex(str) {
     return /^#[0-9A-F]{6}$/i.test(str);
   }
 
-  validate() {
+  validateValue() {
     const isValidHex = this.isValidHex(this.value);
-    this.showInputError = (isValidHex && this.value.length === 7) ? false : true;
+    this.showValueError = (isValidHex && this.value.length === 7) ? false : true;
   }
 
   render() {
-    this.validate();
+    this.validateName();
+    this.validateValue();
 
     return [
       <div class={{
         'color-selector': true,
-        'color-selector--error': this.showInputError
+        'color-selector--name-error': this.showNameError,
+        'color-selector--value-error': this.showValueError
         }}>
         <div class="color-selector__name">
           <i class="color-selector__swatch" style={{ 'backgroundColor': this.value }}></i>
-          {this.name}
+          { (this.isNew)
+            ? <div class={{
+                'color-selector__input': true,
+                'color-selector__input-name': true,
+                'color-selector__input--focused': this.isNameInputFocused
+              }}>
+                <input
+                type="text"
+                value={this.name}
+                onInput={this.onNameChange.bind(this)}
+                onFocus={this.onNameInputFocus.bind(this)}
+                onBlur={this.onNameInputBlur.bind(this)}/>
+              </div>
+            : <span>{this.name}</span>
+          }
+          {this.showNameError ?
+              <span class="color-selector__error">Please enter a valid name without special characters.</span>
+            : ''}
         </div>
         {(this.editable)
         ?
           <div class="color-selector__form-group">
             <div class={{
                 'color-selector__input': true,
-                'color-selector__input--focused': this.isInputFocused
+                'color-selector__input-value': true,
+                'color-selector__input--focused': this.isValueInputFocused
               }}
               onClick={ev => { if (this.isParentOpen) ev.stopPropagation(); }}>
               <div class="color-selector__color-wrap" style={{ 'backgroundColor': this.value }}>
@@ -91,11 +153,11 @@ export class VariableSelector {
                 type="text"
                 value={this.value}
                 onInput={this.onColorChange.bind(this)}
-                onFocus={this.onInputFocus.bind(this)}
-                onBlur={this.onInputBlur.bind(this)}/>
+                onFocus={this.onValueInputFocus.bind(this)}
+                onBlur={this.onValueInputBlur.bind(this)}/>
             </div>
 
-            {this.showInputError ?
+            {this.showValueError ?
               <span class="color-selector__error">Please enter a valid six digit hex code.</span>
             : ''}
           </div>

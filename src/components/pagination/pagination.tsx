@@ -1,4 +1,4 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Prop, h } from '@stencil/core';
 import { BackArrow, ForwardArrow } from '../../icons';
 import { Page } from '../../definitions';
 
@@ -29,8 +29,11 @@ export class DocsPagination {
           key="previous"
           class="previous"
           anchorTitle={previousText}>
-            <BackArrow/>
-            <span>{previousText}</span>
+            <div class="paggination__title">Previous</div>
+            <div class="paggination__text">
+              <BackArrow/>
+              <span>{previousText}</span>
+            </div>
         </stencil-route-link>
       );
     }
@@ -42,8 +45,11 @@ export class DocsPagination {
           key="next"
           class="next"
           anchorTitle={nextText}>
-            <span>{nextText}</span>
-            <ForwardArrow/>
+            <div class="paggination__title">Next</div>
+            <div class="paggination__text">
+              <span>{nextText}</span>
+              <ForwardArrow/>
+            </div>
         </stencil-route-link>
       );
     }

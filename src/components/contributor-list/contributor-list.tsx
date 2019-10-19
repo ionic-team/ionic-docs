@@ -1,4 +1,4 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Prop, h } from '@stencil/core';
 
 @Component({
   tag: 'contributor-list',
@@ -18,7 +18,7 @@ export class ContributorList {
         {this.contributors.reverse().map(contributor => (
           <li>
             <a target="_blank" href={this.link(contributor)}>
-              <img src={`https://github.com/${contributor}.png?size=90`} title={`Contributor ${contributor}`}/>
+              <img width="40" height="40" src={`https://github.com/${contributor}.png?size=90`} title={`Contributor ${contributor}`} loading="lazy" importance="low"/>
             </a>
           </li>
         ))}

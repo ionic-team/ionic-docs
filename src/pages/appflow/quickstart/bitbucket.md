@@ -23,3 +23,5 @@ Then you can choose the repository to link from the list of available repos.
 When you link the repository a webhook will be created for the repository
 and events will be sent to Appflow so that we have access to any commits you
 push to your repository.
+
+Only new commits will be shown. Historical commits prior to establishing a connection with BitBucket will not be displayed.

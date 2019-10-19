@@ -16,7 +16,7 @@
   border-radius: 4px;
   border: 0;
   outline: none;
-  font-family: var(--font-family-code);
+  font-family: var(--code-font-family);
   font-size: 12px;
   line-height: 18px;
   margin: 1.5em 0;

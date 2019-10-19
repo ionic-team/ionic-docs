@@ -1,4 +1,4 @@
-import { Component, Element, Listen, State } from '@stencil/core';
+import { Component, Element, Listen, State, h } from '@stencil/core';
 import { generateSteppedColors } from './parse-css';
 import { Color } from '../color-gen/color';
 

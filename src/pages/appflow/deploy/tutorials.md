@@ -9,7 +9,7 @@ nextUrl: '/docs/appflow/deploy/cli'
 
 ## Setup and Deploy on iOS
 
-<wistia-video id="2702mkf530"></wistia-video>
+<wistia-video video-id="2702mkf530"></wistia-video>
 
 Learn how to install, configure, and deploy your first live update.
 
@@ -18,12 +18,12 @@ Learn how to install, configure, and deploy your first live update.
 Here are the steps in order to successfully upgrade to the new version of the Pro Client, Deploy Plugin, and Webview Plugin.
 You can follow the guide below or watch this video:
 
-<wistia-video id="0o27tfvoam"></wistia-video>
+<wistia-video video-id="0o27tfvoam"></wistia-video>
 
 ### Deploy Upgrade Guide
 You'll need specific versions of each of the following libraries:
 * `cordova-plugin-ionic-webview >= 2.0.0`
-* `cordoava-plugin-ionic >= 5.0.0`
+* `cordova-plugin-ionic >= 5.0.0`
 * `@ionic/pro >= 2.0.0`
 
 The following commands inside the root of you Ionic app should remove the old versions and install the new ones for you:
@@ -52,8 +52,8 @@ In the following video tutorial, and code snippets we use the Deploy API to set 
 ### Choose your Integration Type:
 Here's an example template/JS for a page where we allow users to toggle to pull from a Beta Channel instead of Production and apply updates immediately when they toggle:
 
-<docs-tabs tabs="Ionic 2/3, Ionic 1">
-<div slot="Ionic23">
+<docs-tabs>
+<docs-tab tab="Ionic 2/3">
 <!-- HERE IS WHERE IONIC 2+ CONTENT GOES -->
 
 ```html
@@ -64,7 +64,7 @@ Here's an example template/JS for a page where we allow users to toggle to pull 
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="ion-padding">
   <h3>Settings</h3>
 
   <p>I'm connected to the {{ deployChannel }}.</p>
@@ -165,8 +165,8 @@ export class SettingsPage {
 
 }
 ```
-</div>
-<div slot="Ionic1">
+</docs-tab>
+<docs-tab tab="Ionic 1">
 
 ```html
 <!-- settings.html -->
@@ -267,5 +267,5 @@ export class SettingsPage {
 
 })
 ```
-</div>
+</docs-tab>
 </docs-tabs>
