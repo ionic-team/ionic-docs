@@ -1,5 +1,5 @@
 ---
-previousText: 'Overview'
+previousText: 'Vue d''ensemble'
 previousUrl: '/docs/angular/overview'
 nextText: 'iOS, Android, et la camera'
 nextUrl: '/docs/angular/your-first-app/ios-android-camera'
@@ -21,17 +21,17 @@ Téléchargez/Installez-les immédiatement afin d'assurer une expérience de dé
 * **Client SSH**, comme [PuTTy](https://www.putty.org/), pour une connexion sécurisée à l'Appflow Ionic.
 * **Node.js** pour interagir avec l’écosystème Ionic. [Téléchargez la version LTS ici](https://nodejs.org/en/).
 * **Un éditeur de code** pour... écrire du code! Nous sommes fans de [Visual Studio Code](https://code.visualstudio.com/).
-* **Un terminal de ligne de commande (CLI)**: Utilisateurs de **Windows**, pour une meilleure expérience Ionic, nous vous recommandons le terminal pré-installé (cmd) ou Powershell, lancés en mode Administrateur. For **Mac/Linux** users, virtually any terminal will work.
+* **Un terminal de ligne de commande (CLI)**: Utilisateurs de **Windows**, pour une meilleure expérience Ionic, nous vous recommandons le terminal pré-installé (cmd) ou Powershell, lancés en mode Administrateur. Pour les utilisateurs de **Mac/Linux**, pratiquement tous les terminaux fonctionneront.
 
-## Install Ionic and Cordova
+## Installer Ionic et Cordova
 
-Run the following in the command line:
+Lancez la commande suivante:
 
 ```shell
 $ npm install -g ionic cordova
 ```
 
-> The `-g` option means *install globally*. When packages are installed globally, permission errors can occur. Consider [setting up npm](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally) to operate globally without elevated permissions. Running the command prompt as an Admin (or using `sudo` on Mac & Linux) with npm is not recommended.
+> Le `-g` signifie *installer globalement*. When packages are installed globally, permission errors can occur. Consider [setting up npm](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally) to operate globally without elevated permissions. Running the command prompt as an Admin (or using `sudo` on Mac & Linux) with npm is not recommended.
 
 ## Create an App
 
