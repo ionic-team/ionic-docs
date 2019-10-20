@@ -11,14 +11,14 @@ The great thing about Ionic is that with one codebase, you can build for any pla
 
 ![Before and after going through this tutorial](/docs/assets/img/guides/first-app-v3/gallery-combined.png)
 
-It’s easy to get started. Note that all code referenced in this guide can be [found on GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4/).
+C'est facile de commencer. Notez que tous les codes référencés dans ce guide sont [ retrouvables sur GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4/).
 
 ## Outils requis
 
 Téléchargez/Installez-les immédiatement afin d'assurer une expérience de développement sur Ionic optimale:
 
 * [Git](https://git-scm.com/downloads) for version control.
-* **SSH client**, such as [PuTTy](https://www.putty.org/), for secure login to Ionic Appflow.
+* **Client SSH**, comme [PuTTy](https://www.putty.org/), pour une connexion sécurisée à l'Appflow Ionic.
 * **Node.js** for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
 * **A code editor** for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
 * **Command-line terminal (CLI)**: FYI **Windows** users, for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode. For **Mac/Linux** users, virtually any terminal will work.
