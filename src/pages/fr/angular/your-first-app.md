@@ -17,7 +17,7 @@ C'est facile de commencer. Notez que tous les codes référencés dans ce guide 
 
 Téléchargez/Installez-les immédiatement afin d'assurer une expérience de développement sur Ionic optimale:
 
-* [Git](https://git-scm.com/downloads) for version control.
+* [Git](https://git-scm.com/downloads) pour le contrôle de version.
 * **Client SSH**, comme [PuTTy](https://www.putty.org/), pour une connexion sécurisée à l'Appflow Ionic.
 * **Node.js** pour interagir avec l’écosystème Ionic. [Téléchargez la version LTS ici](https://nodejs.org/en/).
 * **Un éditeur de code** pour... écrire du code! Nous sommes fans de [Visual Studio Code](https://code.visualstudio.com/).
