@@ -7,7 +7,7 @@ nextUrl: '/docs/angular/your-first-app/ios-android-camera'
 
 # Votre première application Ionic: Angular
 
-La meilleure chose à propos de Ionic est qu'avec une base de code, vous pouvez créer sur toutes les plateformes utilisant les outils et languages familier au web. Suivez-nous dans la création d'une Galerie Photo. Here’s the before and after:
+La meilleure chose à propos de Ionic est qu'avec une base de code, vous pouvez créer sur toutes les plateformes utilisant les outils et languages familier au web. Suivez-nous dans la création d'une Galerie Photo. Voici l'avant et l'après:
 
 ![Before and after going through this tutorial](/docs/assets/img/guides/first-app-v3/gallery-combined.png)
 
@@ -85,7 +85,7 @@ Ouvrez le dossier de l'application galerie photo dans votre éditeur de code fav
 <ion-title>Photo Gallery</ion-title>
 ```
 
-Next, open `src/app/tabs/tabs.page.html`. Change the label to “Gallery” and the icon name to “images”:
+Ensuite, ouvrez `src/app/tabs/tabs.page.html`. Changez le nom "Galerie" et le nom de l’icône pour "images":
 
 ```html
 <ion-tab-button tab="tab2">
@@ -94,8 +94,8 @@ Next, open `src/app/tabs/tabs.page.html`. Change the label to “Gallery” and 
 </ion-tab-button>
 ```
 
-That’s just the start of all the cool things we can do with Ionic. Up next, we’ll deploy the app to your iOS or Android device, then continue building the photo gallery.
+Ce n'est que le début d'un tas de choses cool que nous pouvons faire avec Ionic. Ensuite, nous allons déployer l'application sur votre appareil iOS ou Android, alors continuons à construire notre galerie photo.
 
 <div style="text-align:right;">
-  <docs-button href="/docs/angular/your-first-app/ios-android-camera">Continue <svg viewBox="0 0 512 512"><path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path></svg></docs-button>
+  <docs-button href="/docs/angular/your-first-app/ios-android-camera">Continuer <svg viewBox="0 0 512 512"><path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path></svg></docs-button>
 </div>
