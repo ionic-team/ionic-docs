@@ -1231,7 +1231,7 @@ ___
 
 ▸ **onConfig**(event: *[PluginConfiguration](#pluginconfiguration)*): `any`
 
-A handler that will recieve events any time the vault is configuration is changed
+A handler that will receive events any time the vault is configuration is changed
 
 **Parameters:**
 
@@ -1265,7 +1265,7 @@ ___
 
 ▸ **onLock**(event: *[LockEvent](#lockevent)*): `any`
 
-A handler that will recieve events any time the vault is locked
+A handler that will receive events any time the vault is locked
 
 **Parameters:**
 
@@ -1299,7 +1299,7 @@ ___
 
 ▸ **onUnlock**(event: *[PluginConfiguration](#pluginconfiguration)*): `any`
 
-A handler that will recieve events any time the vault is unlocked
+A handler that will receive events any time the vault is unlocked
 
 **Parameters:**
 
