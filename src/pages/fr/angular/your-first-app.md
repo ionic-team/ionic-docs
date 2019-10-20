@@ -35,7 +35,7 @@ $ npm install -g ionic cordova
 
 ## Créer une application
 
-Next, create an Ionic Angular app using our “Tabs” app template:
+Ensuite, créer une application Ionic Angular en utilisant notre modèle "Tabs":
 
 ```shell
 $ ionic start photo-gallery tabs
@@ -49,19 +49,19 @@ Next, change into the app folder:
 $ cd photo-gallery
 ```
 
-That’s it! Now for the fun part - let’s see the app in action.
+C'est fait! Maintenant la partie amusante - voyons l'application en action.
 
-## Run the App
+## Lancer l'application
 
-Run this command next:
+Lancez la commande suivante:
 
 ```shell
 ionic serve
 ```
 
-And voilà! Your Ionic app is now running in a web browser. Most of your app can be built right in the browser, greatly increasing development speed.
+Et voilà! Votre application Ionic est maintenant entrain de tourner sur le navigateur web. Most of your app can be built right in the browser, greatly increasing development speed.
 
-## Photo Gallery!!!
+## Galerie Photo!!!
 
 There are three tabs. Click on the Tab2 tab. It’s a blank canvas, aka the perfect spot to add camera functionality. Let’s begin to transform this page into a Photo Gallery. Ionic features LiveReload, so when you make changes and save them, the app is updated immediately!
 
