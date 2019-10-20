@@ -9,7 +9,7 @@ nextUrl: '/docs/angular/your-first-app/ios-android-camera'
 
 La meilleure chose à propos de Ionic est qu'avec une base de code, vous pouvez créer sur toutes les plateformes utilisant les outils et languages familier au web. Suivez-nous dans la création d'une Galerie Photo. Voici l'avant et l'après:
 
-![Before and after going through this tutorial](/docs/assets/img/guides/first-app-v3/gallery-combined.png)
+![Avant et après avoir suivi ce tutoriel](/docs/assets/img/guides/first-app-v3/gallery-combined.png)
 
 C'est facile de commencer. Notez que tous les codes référencés dans ce guide sont [ retrouvables sur GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4/).
 
@@ -31,7 +31,7 @@ Lancez la commande suivante:
 $ npm install -g ionic cordova
 ```
 
-> Le `-g` signifie *installer globalement*. When packages are installed globally, permission errors can occur. Consider [setting up npm](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally) to operate globally without elevated permissions. Running the command prompt as an Admin (or using `sudo` on Mac & Linux) with npm is not recommended.
+> Le `-g` signifie *installer globalement*. Lorsque les paquets sont installés globalement, des erreurs de permission peuvent se produire. [Configurez npm](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally) pour fonctionner globalement sans droits élevés. Exécuter l'invite de commande en tant qu'Administrateur (ou utiliser `sudo` sur Mac et Linux) avec npm n'est pas recommandé.
 
 ## Créer une application
 
@@ -41,9 +41,9 @@ Ensuite, créer une application Ionic Angular en utilisant notre modèle "Tabs":
 $ ionic start photo-gallery tabs
 ```
 
-This starter project comes complete with three pre-built pages and best practices for Ionic development. With common building blocks already in place, we can add more features easily!
+Ce projet de départ est complété par trois pages pré-construites et les meilleures pratiques pour le développement de Ionic. Avec des blocs de construction communs déjà en place, nous pouvons ajouter plus de fonctionnalités facilement!
 
-Next, change into the app folder:
+Ensuite, changeons dans le dossier de l'application:
 
 ```shell
 $ cd photo-gallery
@@ -59,13 +59,13 @@ Lancez la commande suivante:
 ionic serve
 ```
 
-Et voilà! Votre application Ionic est maintenant entrain de tourner sur le navigateur web. Most of your app can be built right in the browser, greatly increasing development speed.
+Et voilà! Votre application Ionic est maintenant entrain de tourner sur le navigateur web. La plupart de votre application peut être construite directement dans le navigateur, ce qui augmente considérablement la vitesse de développement.
 
 ## Galerie Photo!!!
 
 Il y a trois onglets. Cliquez sur l'onglet "Tab2". C'est un écran blanc, aka l'endroit parfait pour ajouter la fonctionnalité caméra. Commençons par transformer cette page en Galerie Photo. Ionic dispose de LiveReload, alors lorsque vous faites des changements et les sauvegardez, l'application s'actualise immédiatement!
 
-![Before and after going through this tutorial](/docs/assets/img/guides/first-app-v3/email-photogallery.gif)
+![Avant et après avoir suivi ce tutoriel](/docs/assets/img/guides/first-app-v3/email-photogallery.gif)
 
 Ouvrez le dossier de l'application galerie photo dans votre éditeur de code favori, puis naviguer dans `/src/app/tab2/tab2.page.html`. Nous verrons:
 
