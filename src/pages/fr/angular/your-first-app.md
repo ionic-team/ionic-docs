@@ -79,7 +79,7 @@ Ouvrez le dossier de l'application galerie photo dans votre éditeur de code fav
 <ion-content class="ion-padding"></ion-content>
 ```
 
-`ion-header` représente le haut de la navigation et la barre d'outils, avec "Tab2" comme titre. Nous ajoutons à notre code de l'application dans `ion-content`. In this case, it’s where we’ll add a button that opens the device’s camera and shows the image captured by the camera. But first, let’s start with something obvious: renaming the Tab Two page:
+`ion-header` représente le haut de la navigation et la barre d'outils, avec "Tab2" comme titre. Nous ajoutons à notre code de l'application dans `ion-content`. Dans ce cas, c'est là que nous ajouterons un bouton qui ouvre l'appareil photo de l'appareil et montre l'image capturée par l'appareil. Mais premièrement, commençons avec quelque chose d'évident: renommer la page de l'onglet 2:
 
 ```html
 <ion-title>Photo Gallery</ion-title>
