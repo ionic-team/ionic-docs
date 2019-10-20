@@ -63,7 +63,7 @@ Et voilà! Votre application Ionic est maintenant entrain de tourner sur le navi
 
 ## Galerie Photo!!!
 
-Il y a trois onglets. Cliquez sur l'onglet "Tab2". C'est un écran blanc, aka l'endroit parfait pour ajouter la fonctionnalité caméra. Commençons par transformer cette page en Galerie Photo. Ionic features LiveReload, so when you make changes and save them, the app is updated immediately!
+Il y a trois onglets. Cliquez sur l'onglet "Tab2". C'est un écran blanc, aka l'endroit parfait pour ajouter la fonctionnalité caméra. Commençons par transformer cette page en Galerie Photo. Ionic dispose de LiveReload, alors lorsque vous faites des changements et les sauvegardez, l'application s'actualise immédiatement!
 
 ![Before and after going through this tutorial](/docs/assets/img/guides/first-app-v3/email-photogallery.gif)
 
