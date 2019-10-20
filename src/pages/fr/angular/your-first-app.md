@@ -63,7 +63,7 @@ Et voilà! Votre application Ionic est maintenant entrain de tourner sur le navi
 
 ## Galerie Photo!!!
 
-There are three tabs. Click on the Tab2 tab. It’s a blank canvas, aka the perfect spot to add camera functionality. Let’s begin to transform this page into a Photo Gallery. Ionic features LiveReload, so when you make changes and save them, the app is updated immediately!
+Il y a trois onglets. Cliquez sur l'onglet "Tab2". C'est un écran blanc, aka l'endroit parfait pour ajouter la fonctionnalité caméra. Commençons par transformer cette page en Galerie Photo. Ionic features LiveReload, so when you make changes and save them, the app is updated immediately!
 
 ![Before and after going through this tutorial](/docs/assets/img/guides/first-app-v3/email-photogallery.gif)
 
@@ -79,7 +79,7 @@ Open the photo-gallery app folder in your favorite code editor of choice, then n
 <ion-content class="ion-padding"></ion-content>
 ```
 
-`ion-header` represents the top navigation and toolbar, with "Tab 2" as the title. We put our app code into `ion-content`. In this case, it’s where we’ll add a button that opens the device’s camera and shows the image captured by the camera. But first, let’s start with something obvious: renaming the Tab Two page:
+`ion-header` représente le haut de la navigation et la barre d'outils, avec "Tab2" comme titre. Nous ajoutons à notre code de l'application dans `ion-content`. In this case, it’s where we’ll add a button that opens the device’s camera and shows the image captured by the camera. But first, let’s start with something obvious: renaming the Tab Two page:
 
 ```html
 <ion-title>Photo Gallery</ion-title>
