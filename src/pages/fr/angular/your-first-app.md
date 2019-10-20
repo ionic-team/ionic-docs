@@ -7,7 +7,7 @@ nextUrl: '/docs/angular/your-first-app/ios-android-camera'
 
 # Votre première application Ionic: Angular
 
-The great thing about Ionic is that with one codebase, you can build for any platform using familiar web tools and languages. Follow along as we create a working Photo Gallery. Here’s the before and after:
+La meilleure chose à propos de Ionic est qu'avec une base de code, vous pouvez créer sur toutes les plateformes utilisant les outils et languages familier au web. Suivez-nous dans la création d'une Galerie Photo. Here’s the before and after:
 
 ![Before and after going through this tutorial](/docs/assets/img/guides/first-app-v3/gallery-combined.png)
 
