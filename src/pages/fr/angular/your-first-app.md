@@ -1,11 +1,11 @@
 ---
 previousText: 'Overview'
 previousUrl: '/docs/angular/overview'
-nextText: 'iOS, Android, and the Camera'
+nextText: 'iOS, Android, et la camera'
 nextUrl: '/docs/angular/your-first-app/ios-android-camera'
 ---
 
-# Your First Ionic App: Angular
+# Votre première application Ionic: Angular
 
 The great thing about Ionic is that with one codebase, you can build for any platform using familiar web tools and languages. Follow along as we create a working Photo Gallery. Here’s the before and after:
 
@@ -13,9 +13,9 @@ The great thing about Ionic is that with one codebase, you can build for any pla
 
 It’s easy to get started. Note that all code referenced in this guide can be [found on GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4/).
 
-## Required Tools
+## Outils requis
 
-Download/install these right away to ensure an optimal Ionic development experience:
+Téléchargez/Installez-les immédiatement afin d'assurer une expérience de développement sur Ionic optimale:
 
 * [Git](https://git-scm.com/downloads) for version control.
 * **SSH client**, such as [PuTTy](https://www.putty.org/), for secure login to Ionic Appflow.
