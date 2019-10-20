@@ -33,7 +33,7 @@ $ npm install -g ionic cordova
 
 > Le `-g` signifie *installer globalement*. When packages are installed globally, permission errors can occur. Consider [setting up npm](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally) to operate globally without elevated permissions. Running the command prompt as an Admin (or using `sudo` on Mac & Linux) with npm is not recommended.
 
-## Create an App
+## Créer une application
 
 Next, create an Ionic Angular app using our “Tabs” app template:
 
