@@ -67,7 +67,7 @@ Il y a trois onglets. Cliquez sur l'onglet "Tab2". C'est un écran blanc, aka l'
 
 ![Before and after going through this tutorial](/docs/assets/img/guides/first-app-v3/email-photogallery.gif)
 
-Open the photo-gallery app folder in your favorite code editor of choice, then navigate to `/src/app/tab2/tab2.page.html`. We see:
+Ouvrez le dossier de l'application galerie photo dans votre éditeur de code favori, puis naviguer dans `/src/app/tab2/tab2.page.html`. Nous verrons:
 
 ```html
 <ion-header>
