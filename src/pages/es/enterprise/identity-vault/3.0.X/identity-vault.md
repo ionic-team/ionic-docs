@@ -1317,7 +1317,7 @@ The vaultId for the vault you wish to access
 
 ▸ **onConfig**(event: *[PluginConfiguration](#pluginconfiguration)*): `any`
 
-A handler that will recieve events any time the vault is configuration is changed
+A handler that will receive events any time the vault is configuration is changed
 
 **Parameters:**
 
@@ -1355,7 +1355,7 @@ Called when there is an error during vault setup
 
 ▸ **onLock**(event: *[LockEvent](#lockevent)*): `any`
 
-A handler that will recieve events any time the vault is locked
+A handler that will receive events any time the vault is locked
 
 **Parameters:**
 
@@ -1393,7 +1393,7 @@ Called when the vault is configured and available.
 
 ▸ **onUnlock**(event: *[PluginConfiguration](#pluginconfiguration)*): `any`
 
-A handler that will recieve events any time the vault is unlocked
+A handler that will receive events any time the vault is unlocked
 
 **Parameters:**
 
