@@ -7,11 +7,11 @@ nextUrl: '/docs/intro/first-app'
 
 # Conceptos principales
 
-For those completely new to Ionic app development, it can be helpful to get a high-level understanding of the core philosophy, concepts, and tools behind the project. Before diving into complex topics, we'll cover the basics of what Ionic Framework is, and how it works.
+Para aquellos completamente nuevos en el desarrollo de aplicaciones Ionic puede ser útil obtener un buen conocimiento de los conceptos básicos y las herramientas que hay detrás del proyecto. Antes de profundizar en temas complejos cubriremos los conceptos básicos de que es Ionic Framework y como funciona.
 
 ## UI Components
 
-Ionic Framework is a library of UI Components, which are reusable elements that serve as the building blocks for an application. Ionic Components are built with [web standards](/docs/faq/glossary#web-standards) using HTML, CSS, and JavaScript. Though the components are pre-built, they're designed from the ground up to be highly customizable so apps can make each component their own, allowing each app to have its own look and feel. More specifically, Ionic components can be easily themed to globally change appearance across an entire app. For more information about customizing the look, please see [Theming](/docs/theming/basics).
+Ionic Framework es una librería de componentes UI, la cual es un conjunto de elementos reutilizables que sirven como bloques de construcción para una aplicación. Los componentes de Ionic están construidos con los [estándares web](/docs/faq/glossary#web-standards) usando HTML, CSS y JavaScript. Aunque los componentes están pre-construidos, están diseñados desde el principio para ser altamente personalizables de manera que las apps puedan hacer de cada componente el suyo propio, permitiendo que cada app tenga su propia apariencia. More specifically, Ionic components can be easily themed to globally change appearance across an entire app. For more information about customizing the look, please see [Theming](/docs/theming/basics).
 
 ## Platform Continuity
 
