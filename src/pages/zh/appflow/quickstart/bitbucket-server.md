@@ -31,7 +31,7 @@ If this is your first time connecting you'll need to:
   <p>
     <b>Note:</b> If the personal access token you use has read-only access,
     you will need to <a href="https://confluence.atlassian.com/bitbucketserver/managing-webhooks-in-bitbucket-server-938025878.html" target="_blank">
-    create the webhook yourself</a> so that Appflow recieves push events.
+    create the webhook yourself</a> so that Appflow receives push events.
     A modal will pop up after you connect to your repo giving you the details you need to create the webhook.
     If you use a personal access token with admin privileges, this will be done
     automatically for you.
