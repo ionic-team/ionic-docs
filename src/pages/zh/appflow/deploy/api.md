@@ -955,14 +955,14 @@ add` 命令) 或使用 cordova 变量 (如果使用 `ionic cordova plugin add`)�
 ### App ID
 
 * **必需**
-* 要在Appflow信息中心中接收应用程序更新，必须提供应用程序ID。
+* The app id is required to receive updates for an app in the Appflow dashboard.
 * `ionic deploy add --app-id=abcdef12`
 * `ionic cordova plugin add cordova-plugin-ionic --variable APP_ID=abcdef12`
 
 ### Channel Name
 
 * **必需**
-* Channel名称是接收Appflow仪表板上的应用程序更新所必需的，并指示设备将从其接收更新的channel。 注意，对于高级用例，也可以在运行时以编程方式进行更新。
+* The channel name is required to receive updates for an app in the Appflow dashboard and indicates the channel from which the device will receive updates. 注意，对于高级用例，也可以在运行时以编程方式进行更新。
 * `ionic deploy add --channel-name=Production`
 * `ionic cordova plugin add cordova-plugin-ionic --variable CHANNEL_NAME=Production`
 
