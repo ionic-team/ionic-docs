@@ -34,7 +34,7 @@ export class DocsPageFooter {
 
     const editHref = `https://github.com/ionic-team/ionic-docs/edit/master/${path}`;
     const updatedHref = `https://github.com/ionic-team/ionic-docs/commits/master/${path}`;
-    const updatedText = new Date(lastUpdated).toISOString().slice(0, 10);
+    const updatedText = lastUpdated ? new Date(lastUpdated).toISOString().slice(0, 10) : null;
     const contributorHref = (contributor) => `${updatedHref}?author=${contributor}`;
 
     const paggination = (
@@ -48,7 +48,7 @@ export class DocsPageFooter {
       <div class="page-footer__row">
         {contributors.length ? <contributor-list contributors={contributors} link={contributorHref}/> : null}
         <docs-button round href={editHref}>Contribute <ForwardArrow/></docs-button>
-        <a class="last-updated" href={updatedHref}>Updated {updatedText}</a>
+        {updatedText ? <a class="last-updated" href={updatedHref}>Updated {updatedText}</a> : ''}
       </div>
     ];
   }

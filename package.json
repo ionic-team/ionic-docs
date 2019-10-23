@@ -22,12 +22,13 @@
   "dependencies": {
     "@ionic/core": "^4.9.0",
     "@ionic/docs": "^4.10.1",
-    "@sentry/node": "^5.5.0",
+    "@sentry/node": "^5.7.1",
     "@stencil/router": "^1.0.1",
     "compression": "^1.7.4",
     "express": "^4.16.4",
-    "helmet": "^3.16.0",
+    "helmet": "^3.21.2",
     "ionicons": "^4.6.1",
+    "moment": "^2.24.0",
     "simple-git": "^1.126.0",
     "throng": "^4.0.0"
   },
