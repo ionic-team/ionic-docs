@@ -10,7 +10,7 @@ For reference, a [complete demo app](https://github.com/ionic-team/cs-demo-iv/tr
 
 Before integrating Auth Connect into your Ionic app, you’ll need to get Azure Active Directory (AD) up and running.
 
-> Note: For complete information on configuring Azure AD, consult the [official B2C documentation](https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant) which includes tutorials on creating a B2C tenant, registering applications, and more.
+> **Note:** For complete information on configuring Azure AD, consult the [official B2C documentation](https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant) which includes tutorials on creating a B2C tenant, registering applications, and more.
 
 #### Create an Azure AD B2C Tenant
 
@@ -44,13 +44,7 @@ Azure AD B2C is now ready to use with Auth Connect.
 
 Run the following command to install the Auth Connect plugin. For the `AUTH_URL_SCHEME` variable, use the globally unique App Id (ex: `com.company.app`) you decided on when configuring the Azure AD app above.
 
-If using Cordova, run:
-
-<command-line> <command-prompt>ionic cordova plugin add @ionic-enterprise/auth --variable AUTH_URL_SCHEME=com.company.app</command-prompt> </command-line>
-
-If using Capacitor, run:
-
-<command-line> <command-prompt>npm install @ionic-enterprise/auth --variable AUTH_URL_SCHEME=com.company.app</command-prompt> <command-prompt>npx cap sync</command-prompt> </command-line>
+<native-ent-install plugin-id="auth-connect" variables="--variable AUTH_URL_SCHEME=com.company.app"></native-ent-install>
 
 ### Configure Auth Connect
 
