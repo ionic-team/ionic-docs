@@ -17,7 +17,6 @@ export class DocsPageFooter {
 
   render() {
     const { page } = this;
-    console.log(page);
 
     if (page == null || !page.github) {
       return null;
