@@ -5,7 +5,7 @@ version: 2.0.1
 minor: 2.0.X
 ---
 
-
+<native-ent-install plugin-id="dialogs" variables=""></native-ent-install>
 
 ## Index
 

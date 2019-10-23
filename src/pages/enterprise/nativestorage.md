@@ -5,7 +5,7 @@ version: 2.3.2
 minor: 2.3.X
 ---
 
-
+<native-ent-install plugin-id="nativestorage" variables=""></native-ent-install>
 
 ## Index
 

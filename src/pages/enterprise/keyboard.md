@@ -10,6 +10,8 @@ Keyboard
 
 This plugin allows you to configure the app's behavior when the keyboard shows/hides.
 
+<native-ent-install plugin-id="keyboard" variables=""></native-ent-install>
+
 Usage
 =====
 

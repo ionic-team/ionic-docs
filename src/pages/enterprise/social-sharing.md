@@ -5,7 +5,7 @@ version: 5.6.1
 minor: 5.6.X
 ---
 
-
+<native-ent-install plugin-id="social-sharing" variables=""></native-ent-install>
 
 ## Index
 

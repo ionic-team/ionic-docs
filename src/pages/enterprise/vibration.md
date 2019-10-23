@@ -5,7 +5,7 @@ version: 3.1.0
 minor: 3.1.X
 ---
 
-
+<native-ent-install plugin-id="vibration" variables=""></native-ent-install>
 
 ## Index
 

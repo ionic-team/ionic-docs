@@ -10,11 +10,9 @@ minor: 1.0.X
 Ionic Contacts
 ==============
 
-](#ionic-contacts)
-
 This plugin allows to read, write and pick contacts.
 
-[
+<native-ent-install plugin-id="contacts" variables=""></native-ent-install>
 
 Usage
 -----

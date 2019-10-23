@@ -5,7 +5,7 @@ version: 3.2.1
 minor: 3.2.X
 ---
 
-
+<native-ent-install plugin-id="inappbrowser" variables=""></native-ent-install>
 
 ## Index
 

@@ -5,7 +5,7 @@ version: 0.1.9
 minor: 0.1.X
 ---
 
-
+<native-ent-install plugin-id="app-version" variables=""></native-ent-install>
 
 ## Index
 

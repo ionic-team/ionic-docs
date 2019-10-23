@@ -5,7 +5,7 @@ version: 3.0.1
 minor: 3.0.X
 ---
 
-
+<native-ent-install plugin-id="screen-orientation" variables=""></native-ent-install>
 
 ## Index
 

@@ -5,7 +5,7 @@ version: 2.4.2
 minor: 2.4.X
 ---
 
-
+<native-ent-install plugin-id="statusbar" variables=""></native-ent-install>
 
 ## Index
 

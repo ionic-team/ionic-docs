@@ -5,7 +5,7 @@ version: 4.0.3
 minor: 4.0.X
 ---
 
-
+<native-ent-install plugin-id="camera" variables=""></native-ent-install>
 
 ## Index
 

@@ -5,7 +5,7 @@ version: 0.11.0
 minor: 0.11.X
 ---
 
-
+<native-ent-install plugin-id="android-permissions" variables=""></native-ent-install>
 
 ## Index
 

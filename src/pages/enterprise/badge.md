@@ -6,6 +6,7 @@ minor: 0.8.X
 ---
 
 
+<native-ent-install plugin-id="badge" variables=""></native-ent-install>
 
 ## Index
 

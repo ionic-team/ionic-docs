@@ -5,7 +5,7 @@ version: 0.9.2
 minor: 0.9.X
 ---
 
-
+<native-ent-install plugin-id="email-composer" variables=""></native-ent-install>
 
 ## Index
 

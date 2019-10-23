@@ -5,7 +5,7 @@ version: 4.0.1
 minor: 4.0.X
 ---
 
-
+<native-ent-install plugin-id="geolocation" variables=""></native-ent-install>
 
 ## Index
 

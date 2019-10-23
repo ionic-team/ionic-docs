@@ -5,7 +5,7 @@ version: 3.0.2
 minor: 3.0.X
 ---
 
-
+<native-ent-install plugin-id="media-capture" variables=""></native-ent-install>
 
 ## Index
 

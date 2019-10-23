@@ -5,7 +5,7 @@ version: 1.4.1
 minor: 1.4.X
 ---
 
-
+<native-ent-install plugin-id="app-rate" variables=""></native-ent-install>
 
 ## Index
 

@@ -20,6 +20,8 @@ The Vault manages secure user identity and session tokens, ensuring sensitive to
 
 Without Ionic Identity Vault, Ionic developers have to resort to combining third party Cordova plugins, often resulting in insecure setups due to the lack of correct implementation of biometric and at-rest encryption strategies.
 
+<native-ent-install plugin-id="identity-vault" variables=""></native-ent-install>
+
 #### Configuring the Vault
 
 The IonicIdentityVaultUser class takes a generic session type which represents the type of the session you'll store in teh vault. You can use the [DefaultSession](#defaultsession) or extend the class to create a custom session. In the constructor of your `User` service, the vault is configured by providing options to the `super()` call:

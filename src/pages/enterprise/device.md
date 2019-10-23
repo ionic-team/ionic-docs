@@ -5,7 +5,7 @@ version: 2.0.2
 minor: 2.0.X
 ---
 
-
+<native-ent-install plugin-id="device" variables=""></native-ent-install>
 
 ## Index
 

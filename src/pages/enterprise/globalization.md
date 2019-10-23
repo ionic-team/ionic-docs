@@ -5,7 +5,7 @@ version: 1.11.0
 minor: 1.11.X
 ---
 
-
+<native-ent-install plugin-id="globalization" variables=""></native-ent-install>
 
 ## Index
 

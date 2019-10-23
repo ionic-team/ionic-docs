@@ -5,7 +5,7 @@ version: 1.2.0
 minor: 1.2.X
 ---
 
-
+<native-ent-install plugin-id="clipboard" variables=""></native-ent-install>
 
 ## Index
 

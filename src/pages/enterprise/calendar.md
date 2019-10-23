@@ -5,7 +5,7 @@ version: 5.1.4
 minor: 5.1.X
 ---
 
-
+<native-ent-install plugin-id="calendar" variables=""></native-ent-install>
 
 ## Index
 
