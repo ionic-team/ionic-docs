@@ -999,7 +999,7 @@ The deploy plugin uses variables to configure the way in which the plugin behave
 
 ## 5.4.3
 
-* Fix issue where types caused incompatibility with Ionic v3 (Typescript 2.x)
+* Fix issue where types caused incompatability with Ionic v3 (Typescript 2.x)
 
 ### 5.4.0
 
@@ -1064,7 +1064,7 @@ The deploy plugin uses variables to configure the way in which the plugin behave
 
 ### 5.0.6
 
-* Fixed a bug with version rebuilds that could make some initial redirects take up to 15 seconds.
+* Fixed a bug with version rebulds that could make some initial redirects take up to 15 seconds.
 
 ### 5.0.5
 
