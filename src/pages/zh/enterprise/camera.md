@@ -5,7 +5,9 @@ version: 4.0.3
 minor: 4.0.X
 ---
 
+The Camera plugin offers the ability to take a photo or capture video.
 
+<native-ent-install plugin-id="camera" variables=""></native-ent-install>
 
 ## Index
 
@@ -230,10 +232,6 @@ minor: 4.0.X
 ### Camera
 
 **Camera**:
-
-***name***: Camera
-
-***description***: Take a photo or capture video.
 
 \[Warning\] Since IOS 10 the camera requires permissions to be placed in your config.xml add
 
