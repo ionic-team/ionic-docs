@@ -56,7 +56,6 @@ export class DocsTableOfContents {
   }
 
   toItem = ({ text, href }: Link) => {
-    // console.log(href);
     return (
     <li>
       <stencil-route-link
