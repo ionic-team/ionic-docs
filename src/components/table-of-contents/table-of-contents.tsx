@@ -34,7 +34,6 @@ export class DocsTableOfContents {
         this.selectedId = this.itemOffsets[itemIndex - 1].id;
       }
     });
-    // }, 500);
   }
 
   @Watch('links')
@@ -54,17 +53,6 @@ export class DocsTableOfContents {
 
   componentDidLoad() {
     this.updateItemOffsets();
-  }
-
-  debounce = (fn, time) => {
-    let timeout;
-
-    return function() {
-      const functionCall = () => fn.apply(this, arguments);
-
-      clearTimeout(timeout);
-      timeout = setTimeout(functionCall, time);
-    };
   }
 
   toItem = ({ text, href }: Link) => {
