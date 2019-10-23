@@ -9,11 +9,86 @@ nextUrl: '/docs/utilities/config'
 
 ## Overview
 
-Ionic Animations is a utility that allows developers to build complex animations in a platform agnostic manner. Developers do not need to be using a particular framework such as React or Angular, nor do they even need to be building an Ionic app. As long as developers have access to v5.0 or greater of `@ionic/core`, they will have access to all of Ionic Animations.
+Ionic Animations is a utility that allows developers to build complex animations in a platform agnostic manner. Developers do not need to be using a particular framework such as React or Angular, nor do they even need to be building an Ionic app. As long as developers have access to v5.0 or greater of Ionic Framework, they will have access to all of Ionic Animations.
 
 Building efficient animations can be tricky. Developers are often limited by the libraries available to them as well as the hardware that their apps run on. On top of that, many animation libraries use a JavaScript-driven approach to running animations where they handle the calculation of your animation's values at every step in a `requestAnimationFrame` loop. This reduces the scalability of your animations as the library is constantly computing values and using up CPU time.
 
 Ionic Animations uses the [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API) to build and run your animations. In doing this, we offload all work required to compute and run your animations to the browser. As a result, this allows the browser to make any optimizations it needs and ensures your animations run as smoothly as possible. While most browsers support a basic implementation of Web Animations, we fallback to [CSS Animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations) for browsers that do not support Web Animations. The performance difference in switching between these two should typically be negligible.
+
+## Installation
+
+### Angular
+
+Developers using Angular should install the latest version of `@ionic/angular`.
+
+```typescript
+
+import { IonicAnimation, Animation } from '@ionic/angular';
+
+...
+
+constructor(private animation: IonicAnimation) {
+  const animation: Animation = this.animation.create()
+    .addElement(myElementRef)
+    .duration(1000)
+    .fromTo('opacity', '1', '0.5');
+}
+
+```
+
+### React
+
+Developers using React should install the latest version of `@ionic/react`. Full React wrappers are coming soon!
+
+```typescript
+
+import { createAnimation, Animation } from '@ionic/react';
+
+...
+
+const animation: Animation = createAnimation()
+  .addElement(myElementRef)
+  .duration(1000)
+  .fromTo('opacity', '1', '0.5');
+}
+
+```
+
+### Ionic Core (TypeScript)
+
+Developers using Ionic Core and TypeScript should install the latest version of `@ionic/core`.
+
+```typescript
+
+import { createAnimation, Animation } from '@ionic/core';
+
+...
+
+const animation: Animation = createAnimation()
+  .addElement(myElementRef)
+  .duration(1000)
+  .fromTo('opacity', '1', '0.5');
+}
+
+```
+
+### Ionic Core (JavaScript)
+
+Developers using Ionic Core and JavaScript should install the latest version of `@ionic/core`.
+
+```javascript
+
+import { createAnimation } from 'https://cdn.jsdelivr.net/npm/@ionic/core@latest/dist/esm/index.mjs';
+
+...
+
+const animation = createAnimation()
+  .addElement(myElementRef)
+  .duration(1000)
+  .fromTo('opacity', '1', '0.5');
+}
+
+```
 
 ## Basic Animations
 
