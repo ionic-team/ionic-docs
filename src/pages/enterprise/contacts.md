@@ -5,21 +5,12 @@ version: 1.0.2
 minor: 1.0.X
 ---
 
-[
+The Contacts plugin provides access to read, write, or select device contacts.
 
-Ionic Contacts
-==============
-
-](#ionic-contacts)
-
-This plugin allows to read, write and pick contacts.
-
-[
+<native-ent-install plugin-id="contacts" variables=""></native-ent-install>
 
 Usage
 -----
-
-](#usage)
 
 The Contacts plugin ship with a native Angular & es2015+/Typescript wrappers as well as being available on window.
 

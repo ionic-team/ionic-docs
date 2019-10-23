@@ -5,7 +5,9 @@ version: 0.8.8
 minor: 0.8.X
 ---
 
+The Badge plugin enables an application to inform its users that it has something for them — for example, unread messages — when the application isn’t running in the foreground.
 
+<native-ent-install plugin-id="badge" variables=""></native-ent-install>
 
 ## Index
 
@@ -21,11 +23,7 @@ minor: 0.8.X
 
 ###  Badge
 
-**Badge**: 
-
-*__name__*: Badge
-
-*__description__*: The essential purpose of badge numbers is to enable an application to inform its users that it has something for them — for example, unread messages — when the application isn’t running in the foreground.
+**Badge**:
 
 *__usage__*:
  ```typescript

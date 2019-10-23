@@ -1,11 +1,13 @@
 ---
-title: AppRate
+title: App Rate
 template: enterprise-plugin
 version: 1.4.1
 minor: 1.4.X
 ---
 
+The App Rate plugin makes it easy to prompt the user to rate your app - either now, later, or never.
 
+<native-ent-install plugin-id="app-rate" variables=""></native-ent-install>
 
 ## Index
 
@@ -27,12 +29,6 @@ minor: 1.4.X
 <a id="apprate"></a>
 
 ###  AppRate
-
-**AppRate**: 
-
-*__name__*: App Rate
-
-*__description__*: The AppRate plugin makes it easy to prompt the user to rate your app, either now, later, or never.
 
 *__usage__*:
  ```typescript

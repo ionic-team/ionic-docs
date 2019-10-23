@@ -19,6 +19,8 @@ The Vault manages secure user identity and session tokens, ensuring sensitive to
 
 Without Ionic Enterprise Identity Vault, Ionic developers have to resort to combining third party Cordova plugins, often resulting in insecure setups due to the lack of correct implementation of biometric and at-rest encryption strategies.
 
+<native-ent-install plugin-id="identity-vault" variables=""></native-ent-install>
+
 ## Overview
 
 <iframe src="https://fast.wistia.net/embed/iframe/1drqkhh5sb" title="Wistia video player" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="640" height="360"></iframe>

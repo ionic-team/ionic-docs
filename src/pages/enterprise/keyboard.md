@@ -8,7 +8,9 @@ minor: 2.1.X
 Keyboard
 ========
 
-This plugin allows you to configure the app's behavior when the keyboard shows/hides.
+The Keyboard plugin allows you to configure the keyboard behavior (show/hide) and display (sizing/visibility).
+
+<native-ent-install plugin-id="keyboard" variables=""></native-ent-install>
 
 Usage
 =====
@@ -193,10 +195,6 @@ window.addEventListener('keyboardWillHide', () => {
 <a id="keyboard"></a>
 
 ###  Keyboard
-
-**Keyboard**:
-
-*__description__*: Provides an API for customizing keyboard behavior.
 
 *__usage__*:
  ```typescript
