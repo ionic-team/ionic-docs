@@ -6,7 +6,7 @@
 
 Before integrating Auth Connect into your Ionic app, you’ll need to get AWS Cognito up and running.
 
-> Note: For complete information on configuring AWS Cognito, consult the [official documentation](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-getting-started.html) which includes tutorials on creating user and identity pools and more.
+> **Note:** For complete information on configuring AWS Cognito, consult the [official documentation](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-getting-started.html) which includes tutorials on creating user and identity pools and more.
 
 When creating a User Pool, be sure to add an app client. Additional Auth Connect-related configurations can be found under the App integration and Federation sections.
 

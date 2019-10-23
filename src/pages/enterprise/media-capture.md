@@ -5,6 +5,8 @@ version: 3.0.2
 minor: 3.0.X
 ---
 
+The Media Capture plugin provides access to the device's audio, image, and video capture capabilities.
+
 <native-ent-install plugin-id="media-capture" variables=""></native-ent-install>
 
 ## Index
@@ -30,12 +32,6 @@ minor: 3.0.X
 <a id="mediacapture"></a>
 
 ###  MediaCapture
-
-**MediaCapture**: 
-
-*__name__*: Media Capture
-
-*__description__*: This plugin provides access to the device's audio, image, and video capture capabilities.
 
 *__usage__*:
  ```typescript

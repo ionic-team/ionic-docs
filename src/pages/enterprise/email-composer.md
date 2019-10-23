@@ -5,6 +5,8 @@ version: 0.9.2
 minor: 0.9.X
 ---
 
+The Email Composer plugin provides the ability to programmatically create and send emails from within an app.
+
 <native-ent-install plugin-id="email-composer" variables=""></native-ent-install>
 
 ## Index
@@ -24,12 +26,6 @@ minor: 0.9.X
 <a id="emailcomposer"></a>
 
 ###  EmailComposer
-
-**EmailComposer**: 
-
-*__name__*: Email Composer
-
-*__description__*: 
 
 *__usage__*:
  ```typescript

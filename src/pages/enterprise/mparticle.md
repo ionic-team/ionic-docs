@@ -1,7 +1,6 @@
 # Ionic mParticle Integration for Capacitor
 
-This plugin provides for easy integration with the [mParticle](https://www.mparticle.com/) SDK in your Capacitor app.
-
+The mParticle plugin provides easy integration with the [mParticle](https://www.mparticle.com/) SDK in your Capacitor app.
 
 ## Installation
 

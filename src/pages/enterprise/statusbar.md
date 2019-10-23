@@ -1,9 +1,11 @@
 ---
-title: Statusbar
+title: Status Bar
 template: enterprise-plugin
 version: 2.4.2
 minor: 2.4.X
 ---
+
+The Status Bar plugin provides the ability to customize the appearance of the native mobile status bar, including setting visibility, background color, and more.
 
 <native-ent-install plugin-id="statusbar" variables=""></native-ent-install>
 
@@ -20,12 +22,6 @@ minor: 2.4.X
 <a id="statusbar"></a>
 
 ###  StatusBar
-
-**StatusBar**: 
-
-*__name__*: Status Bar
-
-*__description__*: Manage the appearance of the native status bar.
 
 *__usage__*:
  ```typescript

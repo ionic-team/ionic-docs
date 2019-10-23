@@ -7,10 +7,7 @@ otherVersions:
   - 1.0.X
 ---
 
-Ionic Filesystem
-================
-
-This plugin presents a simple and intuitive interface for common filesytem operations such as reading/writing and listing the contents of directories.
+The Filesystem plugin presents a simple and intuitive interface for common file operations such as reading/writing and listing the contents of directories.
 
 <native-ent-install plugin-id="filesystem" variables=""></native-ent-install>
 
@@ -198,10 +195,6 @@ ___
 <a id="filesystem"></a>
 
 ###  Filesystem
-
-**Filesystem**: 
-
-*__description__*: Provides API to read/write to the file sytems
 
 *__usage__*:
  ```typescript

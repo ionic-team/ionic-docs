@@ -5,6 +5,8 @@ version: 5.0.2
 minor: 5.0.X
 ---
 
+The Media plugin provides the ability to record and play back audio files on a device.
+
 <native-ent-install plugin-id="media" variables=""></native-ent-install>
 
 ## Index
@@ -116,12 +118,6 @@ ___
 <a id="media"></a>
 
 ###  Media
-
-**Media**: 
-
-*__name__*: Media
-
-*__description__*: This plugin provides the ability to record and play back audio files on a device.
 
 *__usage__*:
  ```typescript

@@ -1,9 +1,15 @@
 ---
-title: Deeplinks
+title: Deep Links
 template: enterprise-plugin
 version: 1.0.21
 minor: 1.0.X
 ---
+
+The Deep Links plugin provides deep linking support for both Android App Links and iOS Universal Links. 
+
+Deep links point to a page inside of a mobile app. For example, if you had an online store selling products, upon navigating to a website link (https://yoursite.com/product/cool-beans) the app could open and navigate to display the Cool Beans product.
+
+The mobile app can also be opened directly to the Cool Beans product page using a custom URL scheme, like `coolbeans://product/cool-beans`.
 
 <native-ent-install plugin-id="deeplinks" variables=""></native-ent-install>
 
@@ -27,10 +33,6 @@ minor: 1.0.X
 ###  Deeplinks
 
 **Deeplinks**: 
-
-*__name__*: Deeplinks
-
-*__description__*: This plugin handles deeplinks on iOS and Android for both custom URL scheme links and Universal App Links.
 
 Please read the [ionic plugin deeplinks docs](https://github.com/ionic-team/ionic-plugin-deeplinks) for iOS and Android integration. You must add `universal-links` to your `config.xml` and set up Apple App Site Association (AASA) for iOS and Asset Links for Android.
 

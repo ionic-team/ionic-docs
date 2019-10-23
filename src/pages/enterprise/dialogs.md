@@ -5,6 +5,8 @@ version: 2.0.1
 minor: 2.0.X
 ---
 
+The Dialogs plugin provides access to customize the native device dialogs.
+
 <native-ent-install plugin-id="dialogs" variables=""></native-ent-install>
 
 ## Index
@@ -24,12 +26,6 @@ minor: 2.0.X
 <a id="dialogs"></a>
 
 ###  Dialogs
-
-**Dialogs**: 
-
-*__name__*: Dialogs
-
-*__description__*: This plugin gives you ability to access and customize the device native dialogs.
 
 *__usage__*:
  ```typescript

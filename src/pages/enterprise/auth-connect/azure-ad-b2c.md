@@ -10,7 +10,7 @@ For reference, a [complete demo app](https://github.com/ionic-team/cs-demo-iv/tr
 
 Before integrating Auth Connect into your Ionic app, you’ll need to get Azure Active Directory (AD) up and running.
 
-> Note: For complete information on configuring Azure AD, consult the [official B2C documentation](https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant) which includes tutorials on creating a B2C tenant, registering applications, and more.
+> **Note:** For complete information on configuring Azure AD, consult the [official B2C documentation](https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant) which includes tutorials on creating a B2C tenant, registering applications, and more.
 
 #### Create an Azure AD B2C Tenant
 

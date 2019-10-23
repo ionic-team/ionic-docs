@@ -5,6 +5,8 @@ version: 5.1.4
 minor: 5.1.X
 ---
 
+The Calendar plugin allows you to add events to the system calendar of the mobile device.
+
 <native-ent-install plugin-id="calendar" variables=""></native-ent-install>
 
 ## Index
@@ -25,12 +27,6 @@ minor: 5.1.X
 <a id="calendar"></a>
 
 ###  Calendar
-
-**Calendar**: 
-
-*__name__*: Calendar
-
-*__description__*: This plugin allows you to add events to the Calendar of the mobile device.
 
 *__usage__*:
  ```typescript
