@@ -9,7 +9,9 @@ minor: 1.0.X
 
 Ionic Offline Storage is a cross-platform data storage system that works on iOS and Android, and Electron on desktop. Powered by [Couchbase Lite](https://docs.couchbase.com/couchbase-lite/2.6/index.html), a NoSQL database engine that provides simple yet powerful query, replication, and sync APIs.
 
-This solution makes it easy to add offline storage to Ionic apps that are secure (encrypted on device), highly performant, and provide advanced data querying.
+This solution makes it easy to add offline storage to Ionic apps that are secure (encrypted on device), highly performant, and provide advanced data querying. [Learn more.](https://ionicframework.com/offline-storage)
+
+<native-ent-install plugin-id="offline-storage" variables=""></native-ent-install>
 
 ## Project Requirements
 
