@@ -46,7 +46,7 @@ npm install @ionic/pro@latest
 
 ## 设置Beta Channel
 
-在下面的视频教程和代码片段中，我们将使用Deploy API设置用户可以订阅的自定义Beta Channel，以便尽早获得更新! <iframe width="560" height="315" src="https://www.youtube.com/embed/I7PC3O4q1ug?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen mark="crwd-mark"></iframe>
+在下面的视频教程和代码片段中，我们将使用Deploy API设置用户可以订阅的自定义Beta Channel，以便尽早获得更新! <iframe width="560" height="315" src="https://www.youtube.com/embed/I7PC3O4q1ug?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen mark="crwd-mark"></iframe> 
 
 ### 选择你的集成类型：
 
