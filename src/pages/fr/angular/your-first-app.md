@@ -1,73 +1,73 @@
 ---
-previousText: 'Overview'
+previousText: 'Vue d''ensemble'
 previousUrl: '/docs/angular/overview'
-nextText: 'iOS, Android, and the Camera'
+nextText: 'iOS, Android, et la camera'
 nextUrl: '/docs/angular/your-first-app/ios-android-camera'
 ---
 
-# Your First Ionic App: Angular
+# Votre première application Ionic: Angular
 
-The great thing about Ionic is that with one codebase, you can build for any platform using familiar web tools and languages. Follow along as we create a working Photo Gallery. Here’s the before and after:
+La meilleure chose à propos de Ionic est qu'avec une base de code, vous pouvez créer sur toutes les plateformes utilisant les outils et languages familier au web. Suivez-nous dans la création d'une Galerie Photo. Voici l'avant et l'après:
 
-![Before and after going through this tutorial](/docs/assets/img/guides/first-app-v3/gallery-combined.png)
+![Avant et après avoir suivi ce tutoriel](/docs/assets/img/guides/first-app-v3/gallery-combined.png)
 
-It’s easy to get started. Note that all code referenced in this guide can be [found on GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4/).
+C'est facile de commencer. Notez que tous les codes référencés dans ce guide sont [ retrouvables sur GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4/).
 
-## Required Tools
+## Outils requis
 
-Download/install these right away to ensure an optimal Ionic development experience:
+Téléchargez/Installez-les immédiatement afin d'assurer une expérience de développement sur Ionic optimale:
 
-* [Git](https://git-scm.com/downloads) for version control.
-* **SSH client**, such as [PuTTy](https://www.putty.org/), for secure login to Ionic Appflow.
-* **Node.js** for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
-* **A code editor** for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
-* **Command-line terminal (CLI)**: FYI **Windows** users, for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode. For **Mac/Linux** users, virtually any terminal will work.
+* [Git](https://git-scm.com/downloads) pour le contrôle de version.
+* **Client SSH**, comme [PuTTy](https://www.putty.org/), pour une connexion sécurisée à l'Appflow Ionic.
+* **Node.js** pour interagir avec l’écosystème Ionic. [Téléchargez la version LTS ici](https://nodejs.org/en/).
+* **Un éditeur de code** pour... écrire du code! Nous sommes fans de [Visual Studio Code](https://code.visualstudio.com/).
+* **Un terminal de ligne de commande (CLI)**: Utilisateurs de **Windows**, pour une meilleure expérience Ionic, nous vous recommandons le terminal pré-installé (cmd) ou Powershell, lancés en mode Administrateur. Pour les utilisateurs de **Mac/Linux**, pratiquement tous les terminaux fonctionneront.
 
-## Install Ionic and Cordova
+## Installer Ionic et Cordova
 
-Run the following in the command line:
+Lancez la commande suivante:
 
 ```shell
 $ npm install -g ionic cordova
 ```
 
-> The `-g` option means *install globally*. When packages are installed globally, permission errors can occur. Consider [setting up npm](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally) to operate globally without elevated permissions. Running the command prompt as an Admin (or using `sudo` on Mac & Linux) with npm is not recommended.
+> Le `-g` signifie *installer globalement*. Lorsque les paquets sont installés globalement, des erreurs de permission peuvent se produire. [Configurez npm](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally) pour fonctionner globalement sans droits élevés. Exécuter l'invite de commande en tant qu'Administrateur (ou utiliser `sudo` sur Mac et Linux) avec npm n'est pas recommandé.
 
-## Create an App
+## Créer une application
 
-Next, create an Ionic Angular app using our “Tabs” app template:
+Ensuite, créer une application Ionic Angular en utilisant notre modèle "Tabs":
 
 ```shell
 $ ionic start photo-gallery tabs
 ```
 
-This starter project comes complete with three pre-built pages and best practices for Ionic development. With common building blocks already in place, we can add more features easily!
+Ce projet de départ est complété par trois pages pré-construites et les meilleures pratiques pour le développement de Ionic. Avec des blocs de construction communs déjà en place, nous pouvons ajouter plus de fonctionnalités facilement!
 
-Next, change into the app folder:
+Ensuite, changeons dans le dossier de l'application:
 
 ```shell
 $ cd photo-gallery
 ```
 
-That’s it! Now for the fun part - let’s see the app in action.
+C'est fait! Maintenant la partie amusante - voyons l'application en action.
 
-## Run the App
+## Lancer l'application
 
-Run this command next:
+Lancez la commande suivante:
 
 ```shell
 ionic serve
 ```
 
-And voilà! Your Ionic app is now running in a web browser. Most of your app can be built right in the browser, greatly increasing development speed.
+Et voilà! Votre application Ionic est maintenant entrain de tourner sur le navigateur web. La plupart de votre application peut être construite directement dans le navigateur, ce qui augmente considérablement la vitesse de développement.
 
-## Photo Gallery!!!
+## Galerie Photo!!!
 
-There are three tabs. Click on the Tab2 tab. It’s a blank canvas, aka the perfect spot to add camera functionality. Let’s begin to transform this page into a Photo Gallery. Ionic features LiveReload, so when you make changes and save them, the app is updated immediately!
+Il y a trois onglets. Cliquez sur l'onglet "Tab2". C'est un écran blanc, aka l'endroit parfait pour ajouter la fonctionnalité caméra. Commençons par transformer cette page en Galerie Photo. Ionic dispose de LiveReload, alors lorsque vous faites des changements et les sauvegardez, l'application s'actualise immédiatement!
 
-![Before and after going through this tutorial](/docs/assets/img/guides/first-app-v3/email-photogallery.gif)
+![Avant et après avoir suivi ce tutoriel](/docs/assets/img/guides/first-app-v3/email-photogallery.gif)
 
-Open the photo-gallery app folder in your favorite code editor of choice, then navigate to `/src/app/tab2/tab2.page.html`. We see:
+Ouvrez le dossier de l'application galerie photo dans votre éditeur de code favori, puis naviguer dans `/src/app/tab2/tab2.page.html`. Nous verrons:
 
 ```html
 <ion-header>
@@ -79,13 +79,13 @@ Open the photo-gallery app folder in your favorite code editor of choice, then n
 <ion-content class="ion-padding"></ion-content>
 ```
 
-`ion-header` represents the top navigation and toolbar, with "Tab 2" as the title. We put our app code into `ion-content`. In this case, it’s where we’ll add a button that opens the device’s camera and shows the image captured by the camera. But first, let’s start with something obvious: renaming the Tab Two page:
+`ion-header` représente le haut de la navigation et la barre d'outils, avec "Tab2" comme titre. Nous ajoutons à notre code de l'application dans `ion-content`. Dans ce cas, c'est là que nous ajouterons un bouton qui ouvre l'appareil photo de l'appareil et montre l'image capturée par l'appareil. Mais premièrement, commençons avec quelque chose d'évident: renommer la page de l'onglet 2:
 
 ```html
 <ion-title>Photo Gallery</ion-title>
 ```
 
-Next, open `src/app/tabs/tabs.page.html`. Change the label to “Gallery” and the icon name to “images”:
+Ensuite, ouvrez `src/app/tabs/tabs.page.html`. Changez le nom "Galerie" et le nom de l’icône pour "images":
 
 ```html
 <ion-tab-button tab="tab2">
@@ -94,8 +94,8 @@ Next, open `src/app/tabs/tabs.page.html`. Change the label to “Gallery” and 
 </ion-tab-button>
 ```
 
-That’s just the start of all the cool things we can do with Ionic. Up next, we’ll deploy the app to your iOS or Android device, then continue building the photo gallery.
+Ce n'est que le début d'un tas de choses cool que nous pouvons faire avec Ionic. Ensuite, nous allons déployer l'application sur votre appareil iOS ou Android, alors continuons à construire notre galerie photo.
 
 <div style="text-align:right;">
-  <docs-button href="/docs/angular/your-first-app/ios-android-camera">Continue <svg viewBox="0 0 512 512"><path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path></svg></docs-button>
+  <docs-button href="/docs/angular/your-first-app/ios-android-camera">Continuer <svg viewBox="0 0 512 512"><path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path></svg></docs-button>
 </div>

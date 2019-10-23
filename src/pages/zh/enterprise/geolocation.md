@@ -44,7 +44,10 @@ For iOS you have to add this configuration to your config.xml file
 </edit-config>
 ```
 
-***usage***: ```typescript import { Geolocation } from '@ionic-enterprise/geolocation/ngx';
+***usage***:
+
+```typescript
+import { Geolocation } from '@ionic-enterprise/geolocation/ngx';
 
 ...
 
@@ -52,48 +55,60 @@ constructor(private geolocation: Geolocation) {}
 
 ...
 
-this.geolocation.getCurrentPosition().then((resp) => { // resp.coords.latitude // resp.coords.longitude }).catch((error) => { console.log('Error getting location', error); });
+this.geolocation.getCurrentPosition().then((resp) => {
+ // resp.coords.latitude
+ // resp.coords.longitude
+}).catch((error) => {
+  console.log('Error getting location', error);
+});
 
-let watch = this.geolocation.watchPosition(); watch.subscribe((data) => { // data can be a set of coordinates, or an error (if an error occurred). // data.coords.latitude // data.coords.longitude });
+let watch = this.geolocation.watchPosition();
+watch.subscribe((data) => {
+ // data can be a set of coordinates, or an error (if an error occurred).
+ // data.coords.latitude
+ // data.coords.longitude
+});
+```
 
-    <br />*__interfaces__*: Coordinates Geoposition PositionError GeolocationOptions
-    
-    <a id="geolocation.getcurrentposition"></a>
-    
-    ###  getCurrentPosition
-    
-    ▸ **getCurrentPosition**(options?: *[GeolocationOptions](#geolocationoptions)*): `Promise`<[Geoposition](#geoposition)>
-    
-    Get the device's current position.
-    
-    **Parameters:**
-    
-    | Name | Type | Description |
-    | ------ | ------ | ------ |
-    | `Optional` options | [GeolocationOptions](#geolocationoptions) |  The [geolocation options](https://developer.mozilla.org/en-US/docs/Web/API/PositionOptions). |
-    
-    **Returns:** `Promise`<[Geoposition](#geoposition)>
-    Returns a Promise that resolves with the [position](https://developer.mozilla.org/en-US/docs/Web/API/Position) of the device, or rejects with an error.
-    
-    ___
-    <a id="geolocation.watchposition"></a>
-    
-    ###  watchPosition
-    
-    ▸ **watchPosition**(options?: *[GeolocationOptions](#geolocationoptions)*): `Observable`<[Geoposition](#geoposition)>
-    
-    Watch the current device's position. Clear the watch by unsubscribing from Observable changes.
-    
-    ```typescript
-    const subscription = this.geolocation.watchPosition()
-                                  .filter((p) => p.coords !== undefined) //Filter Out Errors
-                                  .subscribe(position => {
-      console.log(position.coords.longitude + ' ' + position.coords.latitude);
-    });
-    
-    // To stop notifications
-    subscription.unsubscribe();
-    
+***interfaces***: Coordinates Geoposition PositionError GeolocationOptions
+
+<a id="geolocation.getcurrentposition"></a>
+
+### getCurrentPosition
+
+▸ **getCurrentPosition**(options?: *[GeolocationOptions](#geolocationoptions)*): `Promise`<[Geoposition](#geoposition)>
+
+Get the device's current position.
+
+**Parameters:**
+
+| Name               | Type                                      | Description                                                                                  |
+| ------------------ | ----------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `Optional` options | [GeolocationOptions](#geolocationoptions) | The [geolocation options](https://developer.mozilla.org/en-US/docs/Web/API/PositionOptions). |
+
+
+**Returns:** `Promise`<[Geoposition](#geoposition)> Returns a Promise that resolves with the [position](https://developer.mozilla.org/en-US/docs/Web/API/Position) of the device, or rejects with an error.
+
+* * *
+
+<a id="geolocation.watchposition"></a>
+
+### watchPosition
+
+▸ **watchPosition**(options?: *[GeolocationOptions](#geolocationoptions)*): `Observable`<[Geoposition](#geoposition)>
+
+Watch the current device's position. Clear the watch by unsubscribing from Observable changes.
+
+```typescript
+const subscription = this.geolocation.watchPosition()
+                              .filter((p) => p.coords !== undefined) //Filter Out Errors
+                              .subscribe(position => {
+  console.log(position.coords.longitude + ' ' + position.coords.latitude);
+});
+
+// To stop notifications
+subscription.unsubscribe();
+```
 
 **Parameters:**
 

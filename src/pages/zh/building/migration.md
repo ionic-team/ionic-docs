@@ -15,18 +15,18 @@ contributors:
 
 ## 从Ionic3.0迁移至Ionic4.0-概览
 
-We suggest the following general process when migrating an existing application from Ionic 3 to 4:
+我们建议将目前的申请从Ionic 3迁移到4时，采用下列步骤：
 
-1. Generate a new project using the `blank` starter (see [Starting an App](/docs/building/starting))
-2. Copy any Angular services from `src/providers` to `src/app/services` 
-   - Services should include `{ providedIn: 'root' }` in the `@Injectable()` decorator. For details, please see Angular [provider docs](https://angular.io/guide/providers).
-3. Copy the app's other root-level items (pipes, components, etc) keeping in mind that the directory structure changes from `src/components` to `src/app/components`, etc.
-4. Copy global Sass styling from `src/app/app.scss` to `src/global.scss`
-5. Copy the rest of the application, page by page or feature by feature, keeping the following items in mind: 
+1. 使用 `blank`模版开始生成一个新项目 (参见 [开始应用](/docs/building/starting))
+2. 将所有Angular的provider从`src/providers`复制到`src/app/services` 
+   - 在装饰器的`@injectable()`中，服务应包括 `{ providedIn: 'root' }` 详情请查看 Angular的 [provider文档](https://angular.io/guide/providers)。
+3. 复制该应用的其他根级项目 (管道, 组件等)，记住，是从 `src/components` 到`src/app/components`，以此类推
+4. 从 `src/app/app.scss` 复制全局Sass 到 `src/global.scss`
+5. 按照页面或功能复制应用的其余部分，记住以下几点： 
    - Emulated Shadow DOM is turned on by default
-   - Page/component Sass should no longer be wrapped in the page/component tag and should use Angular's [`styleUrls`](https://angular.io/api/core/Component#styleUrls) option of the `@Component` decorator
-   - RxJS has been updated from v5 to v6 (see [RxJS Changes](#rxjs-changes))
-   - Certain lifecycle hooks should be replaced by Angular's hooks (see [Lifecycle Events](#lifecycle-events))
+   - 页面（或组件）的SASS不要再包括页面（或组件）的标签，另外，应该在`@Component`修饰器中使用Angular的的 [ `styleUrls` ](https://angular.io/api/core/Component#styleUrls)选项
+   - RxJS 已经从v5更新到 v6 (见 [RxJS 更新](#rxjs-changes))
+   - 某些生命周期钩子应该被Angular生命周期钩子替换 (见 [生命周期事件](#lifecycle-events))
    - Markup changes may be required (migration tool available, see [Markup Changes](#markup-changes))
 
 In many cases, using the Ionic CLI to generate a new object and then copying the code also works very well. For example: `ionic g service weather` will create a shell `Weather` service and test. The code can then be copied from the older project with minor modifications as needed. This helps to ensure the proper structure is followed. This also generates shells for unit tests.

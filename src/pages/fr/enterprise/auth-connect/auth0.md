@@ -32,7 +32,13 @@ Auth0 is now ready to use in your Ionic app.
 
 Run the following command to install the Auth Connect plugin. For the `AUTH_URL_SCHEME` variable, use the globally unique App Id (ex: `com.company.app`) you decided on when configuring the Auth0 app above.
 
+If using Cordova, run:
+
 <command-line> <command-prompt>ionic cordova plugin add @ionic-enterprise/auth --variable AUTH_URL_SCHEME=com.company.app</command-prompt> </command-line>
+
+If using Capacitor, run:
+
+<command-line> <command-prompt>npm install @ionic-enterprise/auth --variable AUTH_URL_SCHEME=com.company.app</command-prompt> <command-prompt>npx cap sync</command-prompt> </command-line>
 
 ### Configure Auth Connect
 

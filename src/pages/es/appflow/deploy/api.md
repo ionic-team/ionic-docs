@@ -406,7 +406,7 @@ async performAutomaticUpdate() {
     const resp = await Deploy.sync({updateMethod: 'auto'}, percentDone => {
       console.log(`Update is ${percentDone}% done!`);
     });
-    if (currentVersion.versionId !== resp.versionId){
+    if (!currentVersion || currentVersion.versionId !== resp.versionId){
       // We found an update, and are in process of redirecting you since you put auto!
     }else{
       // No update available
@@ -979,8 +979,8 @@ The deploy plugin uses variables to configure the way in which the plugin behave
 
 * **Default** `2`
 * This tells the plugin the number of previous updates it should keep on the device in order to speed up the rollback process if ever needed.
-* `ionic deploy add --max-versions=Production`
-* `ionic cordova plugin add cordova-plugin-ionic --variable MAX_VERSIONS=Production`
+* `ionic deploy add --max-versions=2`
+* `ionic cordova plugin add cordova-plugin-ionic --variable MAX_STORE=2`
 
 ### Min Background Duration
 

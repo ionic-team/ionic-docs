@@ -101,7 +101,7 @@ An `IonRouterOutlet` should also not be a descendant from another `IonRouterOutl
 
 ## Navigation
 
-There are several options available when routing to different views in an Ionic React app. Here, the `UsersListPage` uses `IonItem`'s `href` prop to specify the route to go to when the item is tapped/clicked:
+There are several options available when routing to different views in an Ionic React app. Here, the `UsersListPage` uses `IonItem`'s `routerLink` prop to specify the route to go to when the item is tapped/clicked:
 
 **UsersListPage.tsx**
 
@@ -116,10 +116,10 @@ const UsersListPage: React.FC = () => {
       </IonHeader>
       <IonContent>
         <IonList>
-          <IonItem href="/dashboard/users/1">
+          <IonItem routerLink="/dashboard/users/1">
             <IonLabel>User 1</IonLabel>
           </IonItem>
-          <IonItem href="/dashboard/users/2">
+          <IonItem routerLink="/dashboard/users/2">
             <IonLabel>User 2</IonLabel>
           </IonItem>
         </IonList>
@@ -129,7 +129,11 @@ const UsersListPage: React.FC = () => {
 };
 ```
 
-Outside of an `IonItem`, you can also use React Routers [`Link`](https://reacttraining.com/react-router/web/api/Link) component to navigate between views:
+Other components that have the `routerLink` prop are `IonButton`, `IonCard`, `IonRouterLink`, `IonFabButton`, and `IonItemOption`.
+
+Each of these components also have a `routerDirection` prop to explicitly set the type of page transition to use ("back", "forward", or "none").
+
+Outside of these components that have the `routerLink` prop, you can also use React Routers [`Link`](https://reacttraining.com/react-router/web/api/Link) component to navigate between views:
 
 ```html
 <Link to="/dashboard/users/1">User 1</Link>
