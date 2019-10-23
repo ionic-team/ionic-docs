@@ -2,6 +2,8 @@
 
 In order to use the Ionic Native plugins, there's just a few quick steps.
 
+<wistia-video video-id="7higisvn9t"></wistia-video>
+
 ## Create an App in the Ionic Hub
 
 First, log into the [Ionic Hub](https://dashboard.ionicframework.com), then navigate to the Native Plugins Keys page. 
