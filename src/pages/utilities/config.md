@@ -40,17 +40,16 @@ In the above example, we are disabling the Material Design ripple effect across 
 #### Customizing Animations
 
 ```typescript
-import { IonicModule } from '@ionic/angular';
+import { createAnimation, IonicModule } from '@ionic/angular';
 
 @NgModule({
   ...
   imports: [
     BrowserModule,
     IonicModule.forRoot({
-      toastEnter: (AnimationC: Animation, baseEl: ShadowRoot, position: string): Promise<Animation> => {
-        const baseAnimation = new AnimationC();
-
-        const wrapperAnimation = new AnimationC();
+      toastEnter: (baseEl: ShadowRoot, position: string): Animation => {
+        const baseAnimation = createAnimation();
+        const wrapperAnimation = createAnimation();
 
         const hostEl = (baseEl.host || baseEl) as HTMLElement;
         const wrapperEl = baseEl.querySelector('.toast-wrapper') as HTMLElement;
@@ -71,18 +70,18 @@ import { IonicModule } from '@ionic/angular';
               hostEl.clientHeight / 2 - wrapperEl.clientHeight / 2
             );
             wrapperEl.style.top = `${topPosition}px`;
-            wrapperAnimation.fromTo('opacity', 0.01, 1);
+            wrapperAnimation.fromTo('opacity', '0.01', '1');
             break;
           default:
             wrapperEl.style.bottom = bottom;
-            wrapperAnimation.fromTo('opacity', 0.01, 1);
+            wrapperAnimation.fromTo('opacity', '0.01', '1');
             break;
         }
-        return Promise.resolve(baseAnimation
+        return baseAnimation
           .addElement(hostEl)
           .easing('cubic-bezier(.36,.66,.04,1)')
           .duration(400)
-          .add(wrapperAnimation));
+          .addAnimation(wrapperAnimation);
       },
     }),
     AppRoutingModule
