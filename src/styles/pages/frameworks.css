@@ -1,0 +1,62 @@
+.page-react,
+.page-angular {
+  --page-width: 1040px;
+}
+
+
+command-line {
+  max-width: 720px;
+  margin: auto;
+}
+strong {
+  color: #44b4ff;
+}
+.pull-left h3 {
+  font-size: 4rem;
+  padding-top: 0;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 50px 0px;
+}
+.main-flex .pull-right img {
+  width: 150px;
+}
+.pull-right img {
+  display: block;
+  max-width: 450px;
+  width: 100%;
+  margin: auto;
+}
+
+@media (min-width: 1058px) {
+  .flex {
+    flex-direction: row;
+    align-items: center;
+    padding: 75px 0;
+  }
+  .flex.reverse {
+    flex-direction: row-reverse;
+  }
+  .pull-left {
+    width: 475px;
+  }
+  .pull-right {
+    flex: 1;
+    text-align: center;
+  }
+  .pull-right img {
+    display: initial;
+    max-width: 300px;
+  }
+  .main-flex .pull-right img {
+    max-width: 375px;
+    width: 100%;
+  }
+  h2 {
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
