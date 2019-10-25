@@ -226,53 +226,30 @@ If the property doesn’t exist in the document it will return the default value
 
 ### Batch Operations
 
-Grouping together multiple changes to the database at once.
+If you need to make multiple changes to a database at once, it’s faster to group them together.
 
-*Not yet supported.* Please [reach out](https://ionicframework.com/enterprise/contact) if you need this feature.
-<!--
-<h3 id="batch-operations"><a class="anchor" href="#batch-operations"></a>Batch operations</h3>
-<div class="paragraph">
-<p>If you’re making multiple changes to a database at once, it’s faster to group them together.
-The following example persists a few documents in batch. </p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="hljs-keyword">try</span> {
-    database.inBatch(<span class="hljs-keyword">new</span> Runnable() {
-        <span class="hljs-meta">@Override</span>
-        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
-            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++) {
-                let doc = <span class="hljs-keyword">new</span> MutableDocument();
-                doc.setValue(<span class="hljs-string">"type"</span>, <span class="hljs-string">"user"</span>);
-                doc.setValue(<span class="hljs-string">"name"</span>, String.format(<span class="hljs-string">"user %d"</span>, i));
-                doc.setBoolean(<span class="hljs-string">"admin"</span>, <span class="hljs-keyword">false</span>);
-                <span class="hljs-keyword">try</span> {
-                    database.save(doc);
-                } <span class="hljs-keyword">catch</span> (e) {
-                    console.log(e.toString());
-                }
-                console.log(String.format(<span class="hljs-string">"saved user document %s"</span>, doc.getString(<span class="hljs-string">"name"</span>)));
-            }
-        }
-    });
-} 
-<div class="paragraph">
-<p>At the <strong>local</strong> level this operation is still transactional: no other <code>Database</code> instances, including ones managed by the replicator can make changes during the execution of the block, and other instances will not see partial changes.
-But Couchbase Mobile is a distributed system, and due to the way replication works, there’s no guarantee that Sync Gateway or other devices will receive your changes all at once.</p>
-</div>
--->
+The following example persists a few documents in batch:
+
+```typescript
+await this.database.inBatch(() => {
+  for (let sdk of sdkDataToLoad) {
+    let doc = new MutableDocument()
+      .setNumber('version', sdk.version)
+      .setString('type', sdk.type)
+      .setString('company', sdk.company);
+
+    this.database.save(doc);
+ }
+});
+```
+
+At the <strong>local</strong> level this operation is still transactional: no other <code>Database</code> instances, including ones managed by the replicator can make changes during the execution of the block, and other instances will not see partial changes. But Couchbase Mobile is a distributed system, and due to the way replication works, there’s no guarantee that Sync Gateway or other devices will receive your changes all at once.
 
 ## Blobs
 
-Storing large data, such as images.
+Used to store large data, such as images.
 
-*Not yet supported.* Please [reach out](https://ionicframework.com/enterprise/contact) if you need this feature.
-
-<!--
-We’ve renamed "attachments" to "blobs".
-The new behavior should be clearer too: a <code>Blob</code> is now a normal object that can appear in a document as a property value.
-In other words, you just instantiate a <code>Blob</code> and set it as the value of a property, and then later you can get the property value, which will be a <code>Blob</code> object.
-The following code example adds a blob to the document under the <code>avatar</code> property.</p>
+The following code example adds a blob to the document under the <code>avatar</code> property.
 
 ```typescript
 let is = getAsset("avatar.jpg");
@@ -302,14 +279,9 @@ That key can be used to retrieve the <code>Blob</code> object at a later time.
 
 When a document is synchronized, the Couchbase Lite replicator will add an <code>_attachments</code> dictionary to the document’s properties if it contains a blob.
 A random access name will be generated for each <code>Blob</code> which is different to the "avatar" key that was used in the example above.
-On the image below, the document now contains the <code>_attachments</code> dictionary when viewed in the Couchbase Server Admin Console.
 
 A blob also has properties such as <code>"digest"</code> (a SHA-1 digest of the data), <code>"length"</code> (the length in bytes), and optionally <code>"content_type"</code> (the MIME type).
 The data is not stored in the document, but in a separate content-addressable store, indexed by the digest.
-
-This <code>Blob</code> can be retrieved on the Sync Gateway REST API at <a href="http://localhost:4984/justdoit/user.david/blob_1" class="bare">http://localhost:4984/justdoit/user.david/blob_1</a>.
-Notice that the blob identifier in the URL path is "blob_1" (not "avatar").
--->
 
 ## Query
 
