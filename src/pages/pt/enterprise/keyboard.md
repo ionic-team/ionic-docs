@@ -11,7 +11,7 @@ The Keyboard plugin allows you to configure the keyboard behavior (show/hide) an
 
 <native-ent-install plugin-id="keyboard" variables=""></native-ent-install>
 
-# Usage
+## Usage
 
 ```typescript
 // Angular
