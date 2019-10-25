@@ -7,6 +7,7 @@ contributors:
   - liamdebeasi
 ---
 
+
 # Platform
 
 The Platform service can be used to get information about your current device. You can get all of the platforms associated with the device using the `platforms` method, including whether the app is being viewed from a tablet, if it's on a mobile device or browser, and the exact platform (iOS, Android, etc). You can also get the orientation of the device, if it uses right-to-left language direction, and much much more. With this information you can completely customize your app to fit any device.
@@ -22,6 +23,21 @@ export class MyPage {
 
   }
 }
+```
+
+## Properties
+
+### `resume`
+
+The `resume` event fires when the native platform pulls the application out from the background.
+
+#### Usage
+
+```typescript
+this.platform.resume.subscribe(async () => {
+  alert('Resume event detected');
+  this.badgeService.clearAppBadge();
+});
 ```
 
 ## Methods
