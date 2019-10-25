@@ -36,7 +36,6 @@ The `resume` event fires when the native platform pulls the application out from
 ```typescript
 this.platform.resume.subscribe(async () => {
   alert('Resume event detected');
-  this.badgeService.clearAppBadge();
 });
 ```
 
