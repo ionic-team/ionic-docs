@@ -1,13 +1,13 @@
 ---
 previousText: 'Criando uma Galeria de Fotos com Armazenamento no Dispositivo'
 previousUrl: '/docs/angular/your-first-app/creating-photo-gallery-device-storage'
-nextText: 'Lifecycle'
+nextText: 'Ciclo de vida'
 nextUrl: '/docs/angular/lifecycle'
 ---
 
-# Make It Your Own! Ionic Theming
+# Com sua cara! Temas no Ionic
 
-Previously, we converted our single use Camera app into an epic photo gallery. Now, let’s explore how to make the photo gallery our own with Ionic theming. The visual design of the app is incredibly important - fortunately, Ionic provides a lot for us out-of-the-box.
+Anteriormente, nós convertemos nosso aplicativo de apenas câmera para uma épica galeria de fotos. Agora, vamos explorar como personalizar a nossa galeria de fotos com temas Ionic. The visual design of the app is incredibly important - fortunately, Ionic provides a lot for us out-of-the-box.
 
 Ionic has nine default colors, defined as CSS variables, that can be used to change the color of its UI components:
 
