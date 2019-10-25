@@ -80,10 +80,6 @@ At the end of the day, it's just React. Choose any of the millions of libraries 
 ## Resources
 
 <docs-cards>
-  <docs-card header="Overview" href="/docs/react/overview" icon="/docs/assets/icons/feature-guide-components-icon.png">
-    <p>Learn about setting up your system for working with Ionic and React</p>
-  </docs-card>
-
   <docs-card header="Getting Started" href="/docs/react/your-first-app" icon="/docs/assets/icons/feature-component-actionsheet-icon.png">
     <p>Learn the fundamentals you need to know to start building amazing apps with Ionic Framework.</p>
   </docs-card>
@@ -91,5 +87,10 @@ At the end of the day, it's just React. Choose any of the millions of libraries 
   <docs-card header="Navigation" href="/docs/react/navigation" icon="/docs/assets/icons/feature-component-navigation-icon.png">
     <p>Learn the basics of navigation inside your app with Ionic and React Router</p>
   </docs-card>
+
+  <docs-card header="Lifecycle" href="/docs/react/lifecycle" icon="/docs/assets/icons/feature-guide-components-icon.png">
+    <p>Learn about using Ionic lifecycle events in class components and with hooks</p>
+  </docs-card>
+
 
 </docs-cards>
