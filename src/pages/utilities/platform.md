@@ -7,6 +7,7 @@ contributors:
   - liamdebeasi
 ---
 
+
 # Platform
 
 The Platform service can be used to get information about your current device. You can get all of the platforms associated with the device using the `platforms` method, including whether the app is being viewed from a tablet, if it's on a mobile device or browser, and the exact platform (iOS, Android, etc). You can also get the orientation of the device, if it uses right-to-left language direction, and much much more. With this information you can completely customize your app to fit any device.
@@ -98,3 +99,41 @@ Returns `true` if the expression is included in the user agent string.
 | Name       | Type   | Description                           |
 |------------|--------|---------------------------------------|
 | expression | string | The string to check in the user agent |
+
+## Events
+
+### `pause`
+
+The `pause` event emits when the native platform puts the application into the background, typically when the user switches to a different application. This event emits when a Cordova/Capacitor app is put into the background but doesn't fire in a standard web browser.
+
+#### Usage
+
+```typescript
+this.platform.pause.subscribe(async () => {
+  alert('Pause event detected');
+});
+```
+
+### `resize`
+
+The `resize` event emits when the browser window has changed dimensions. This could be from a browser window being physically resized, or from a device changing orientation.
+
+#### Usage
+
+```typescript
+this.platform.resize.subscribe(async () => {
+  alert('Resize event detected');
+});
+```
+
+### `resume`
+
+The `resume` event fires when the native platform pulls the application out from the background. This event emits when a Cordova/Capacitor app comes out from the background but doesn't fire in a standard web browser.
+
+#### Usage
+
+```typescript
+this.platform.resume.subscribe(async () => {
+  alert('Resume event detected');
+});
+```
