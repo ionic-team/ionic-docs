@@ -25,20 +25,6 @@ export class MyPage {
 }
 ```
 
-## Properties
-
-### `resume`
-
-The `resume` event fires when the native platform pulls the application out from the background.
-
-#### Usage
-
-```typescript
-this.platform.resume.subscribe(async () => {
-  alert('Resume event detected');
-});
-```
-
 ## Methods
 
 ### `is(platformName: Platforms) => boolean`
@@ -113,3 +99,41 @@ Returns `true` if the expression is included in the user agent string.
 | Name       | Type   | Description                           |
 |------------|--------|---------------------------------------|
 | expression | string | The string to check in the user agent |
+
+## Events
+
+### `pause`
+
+The `pause` event emits when the native platform puts the application into the background, typically when the user switches to a different application. This event emits when a Cordova/Capacitor app is put into the background but doesn't fire in a standard web browser.
+
+#### Usage
+
+```typescript
+this.platform.pause.subscribe(async () => {
+  alert('Pause event detected');
+});
+```
+
+### `resize`
+
+The `resize` event emits when the browser window has changed dimensions. This could be from a browser window being physically resized, or from a device changing orientation.
+
+#### Usage
+
+```typescript
+this.platform.resize.subscribe(async () => {
+  alert('Resize event detected');
+});
+```
+
+### `resume`
+
+The `resume` event fires when the native platform pulls the application out from the background. This event emits when a Cordova/Capacitor app comes out from the background but doesn't fire in a standard web browser.
+
+#### Usage
+
+```typescript
+this.platform.resume.subscribe(async () => {
+  alert('Resume event detected');
+});
+```
