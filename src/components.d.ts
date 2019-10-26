@@ -147,6 +147,9 @@ export namespace Components {
   interface FileTreeFile {
     'name': string;
   }
+  interface FrameworkSelect {
+    'onToggleClick': (e: Event) => void;
+  }
   interface HeaderMobileCollapse {
     'darkMode': boolean;
   }
@@ -382,6 +385,12 @@ declare global {
     new (): HTMLFileTreeFileElement;
   };
 
+  interface HTMLFrameworkSelectElement extends Components.FrameworkSelect, HTMLStencilElement {}
+  var HTMLFrameworkSelectElement: {
+    prototype: HTMLFrameworkSelectElement;
+    new (): HTMLFrameworkSelectElement;
+  };
+
   interface HTMLHeaderMobileCollapseElement extends Components.HeaderMobileCollapse, HTMLStencilElement {}
   var HTMLHeaderMobileCollapseElement: {
     prototype: HTMLHeaderMobileCollapseElement;
@@ -471,6 +480,7 @@ declare global {
     'file-tree': HTMLFileTreeElement;
     'file-tree-directory': HTMLFileTreeDirectoryElement;
     'file-tree-file': HTMLFileTreeFileElement;
+    'framework-select': HTMLFrameworkSelectElement;
     'header-mobile-collapse': HTMLHeaderMobileCollapseElement;
     'hubspot-form': HTMLHubspotFormElement;
     'ionic-search': HTMLIonicSearchElement;
@@ -613,6 +623,9 @@ declare namespace LocalJSX {
   interface FileTreeFile extends JSXBase.HTMLAttributes<HTMLFileTreeFileElement> {
     'name'?: string;
   }
+  interface FrameworkSelect extends JSXBase.HTMLAttributes<HTMLFrameworkSelectElement> {
+    'onToggleClick'?: (e: Event) => void;
+  }
   interface HeaderMobileCollapse extends JSXBase.HTMLAttributes<HTMLHeaderMobileCollapseElement> {
     'darkMode'?: boolean;
   }
@@ -670,6 +683,7 @@ declare namespace LocalJSX {
     'file-tree': FileTree;
     'file-tree-directory': FileTreeDirectory;
     'file-tree-file': FileTreeFile;
+    'framework-select': FrameworkSelect;
     'header-mobile-collapse': HeaderMobileCollapse;
     'hubspot-form': HubspotForm;
     'ionic-search': IonicSearch;

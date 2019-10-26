@@ -1,6 +1,6 @@
 import { Component, Prop, h } from '@stencil/core';
 import { Logo } from '../../icons';
-import { FrameworkSelect } from './framework-select';
+// import { FrameworkSelect } from './framework-select';
 import componentsTemplate from './templates/components';
 import cliTemplate from './templates/cli';
 import studioTemplate from './templates/studio';
@@ -30,7 +30,7 @@ export class DocsMenu {
         <stencil-route url="/docs/studio"></stencil-route>
         <stencil-route>
           <section class="MenuControls">
-            <FrameworkSelect/>
+            <framework-select/>
           </section>
         </stencil-route>
       </stencil-route-switch>,

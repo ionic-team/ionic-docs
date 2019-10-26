@@ -1,41 +1,67 @@
-import { h } from '@stencil/core';
+import { Component, Element, Prop, h } from '@stencil/core';
 import { Angular, JavaScript, React, Vue } from '../../icons';
 import { useLocalStorage } from '../../local-storage';
 
-const frameworks = [
-  'Angular',
-  'JavaScript',
-  'React',
-  'Vue'
-];
+@Component({
+  tag: 'framework-select'
+})
+export class DocsMenu {
+  @Prop() onToggleClick: (e: Event) => void;
+  @Element() el;
 
-const [
-  getFramework,
-  setFramework
-] = useLocalStorage('ionic-docs:framework', frameworks[0]);
+  getFramework: () => string;
+  setFramework: (framework: string) => void;
 
-const frameworkIcons = {
-  Angular,
-  JavaScript,
-  React,
-  Vue
-};
+  frameworks = [
+    'Angular',
+    'JavaScript',
+    'React',
+    'Vue'
+  ];
 
-const renderOption = (framework: string) => {
-  const Icon = frameworkIcons[framework];
-  return (
-    <div class="FrameworkSelect-framework">
-      <Icon class="FrameworkSelect-icon"/>
-      <span>{framework}</span>
-    </div>
-  );
-};
+  frameworkIcons = {
+    Angular,
+    JavaScript,
+    React,
+    Vue
+  };
 
-export const FrameworkSelect = () => (
-  <docs-select
-    class="FrameworkSelect"
-    options={frameworks}
-    optionRenderer={renderOption}
-    initializer={getFramework}
-    onSelection={(ev) => setFramework(ev.detail)}/>
-);
+  constructor() {
+    const [
+      getFramework,
+      setFramework
+    ] = useLocalStorage('ionic-docs:framework', this.frameworks[0]);
+    this.getFramework = getFramework;
+    this.setFramework = setFramework;
+  }
+
+  componentDidLoad() {
+    this.el.querySelectorAll('.Select-option--selected').forEach(menuItem => {
+      if (this.getFramework() !== menuItem.innerText) {
+        menuItem.classList.remove('Select-option--selected');
+      }
+    });
+  }
+
+  renderOption = (framework: string) => {
+    const Icon = this.frameworkIcons[framework];
+    return (
+      <div class="FrameworkSelect-framework">
+        <Icon class="FrameworkSelect-icon"/>
+        <span>{framework}</span>
+      </div>
+    );
+  }
+
+  render() {
+    console.log('rendering!');
+    return (
+      <docs-select
+        class="FrameworkSelect"
+        options={this.frameworks}
+        optionRenderer={this.renderOption}
+        initializer={this.getFramework}
+        onSelection={(ev) => this.setFramework(ev.detail)}/>
+    );
+  }
+}
