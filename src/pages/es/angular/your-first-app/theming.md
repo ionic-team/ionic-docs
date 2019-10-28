@@ -34,15 +34,15 @@ Cambiando estas variables aquí y allá, puedes modificar fácilmente todo el te
 }
 ```
 
-The easiest and most powerful way to create custom color palettes for your app’s UI is Ionic's [Color Generator tool](/docs/theming/color-generator). As you change a color’s hex values, the embedded demo app automatically reflects the new colors. When you've finished making changes, simply copy and paste the generated code directly into your Ionic project.
+La forma más fácil y poderosa de crear paletas de color personalizadas para la interfaz de usuario de tu aplicación es la herramienta Ionic [Color Generator](/docs/theming/color-generator). A medida que cambia los valores hexadecimales de un color, la aplicación de demostración embebida refleja automáticamente los nuevos colores. Cuando hayas terminado de hacer cambios, simplemente copia y pega el código generado directamente en tu proyecto Ionic.
 
-But wait, there’s more! Ionic automatically provides platform specific styles based on the device the application is running on, giving that native look and feel your users are used to:
+Pero espere, ¡hay más! Ionic proporciona automáticamente estilos específicos de la plataforma basados en el dispositivo en el que la aplicación se está ejecutando, dándole ese aspecto nativo y sienta que sus usuarios están acostumbrados a usar:
 
 ![ios and android comparison](/docs/assets/img/guides/first-app-v3/ion-lab-comparison.png)
 
-In our app, this is clearly visible in how the header and the icons are styled.
+En nuestra aplicación, esto es claramente visible en cómo la cabecera y los iconos están estilizados.
 
-If you want consistency, you can tell Ionic to use the same mode regardless of platform. For example, to apply Material Design (Android’s platform style), set it globally in the App Module class. Open `src/app/app.module.ts`, then set the `mode` property:
+Si quieres consistencia, puedes decirle a Ionic que use el mismo modo independientemente de la plataforma. Por ejemplo, para aplicar Material Design (el estilo de plataforma de Android), establecerlo globalmente en la clase App Module. Abre `src/app/app.module.ts`, luego establece el modo `` propiedad:
 
 ```Javascript
 imports: [
