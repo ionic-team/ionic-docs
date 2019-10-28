@@ -121,7 +121,7 @@ The `zone-flags.ts` file then needs to be imported into your application's
 ```typescript
 ...
 
-import './zone-flag.ts';
+import './zone-flags.ts';
 import 'zone.js/dist/zone'; // Included with Angular CLI
 
 ...
