@@ -5,21 +5,21 @@ nextText: 'Lifecycle'
 nextUrl: '/docs/angular/lifecycle'
 ---
 
-# Make It Your Own! Ionic Theming
+# Personalizalo! Temática Ionic
 
-Previously, we converted our single use Camera app into an epic photo gallery. Now, let’s explore how to make the photo gallery our own with Ionic theming. The visual design of the app is incredibly important - fortunately, Ionic provides a lot for us out-of-the-box.
+Anteriormente, convertimos nuestra aplicación de cámara de un solo uso en una épica galería de fotos. Ahora, exploremos cómo personalizar nuestra galería de fotos con temas de Ionic. El diseño visual de la aplicación es realmente importante - afortunadamente, Ionic nos proporciona muchas funciones.
 
-Ionic has nine default colors, defined as CSS variables, that can be used to change the color of its UI components:
+Ionic tiene nueve colores por defecto, definidos como variables CSS, que pueden ser usados para cambiar el color de sus componentes de la interfaz de usuario:
 
 ![v4-theming-defaults](/docs/assets/img/guides/first-app-v4/theming-defaults.png)
 
-You can customize each color further by supplying a base, contrast, shade, and tint properties. These provide flexible control over your styles:
+Puedes personalizar cada color más adelante proporcionando una base, contraste, sombra y propiedades de capa. Estos proporcionan un control flexible sobre tus estilos:
 
 ![v4-theming-properties](/docs/assets/img/guides/first-app-v4/theming-properties.png)
 
-You can find these colors defined in `src/theme/variables.scss`.
+Puede encontrar estos colores definidos en `src/theme/variables.scss`.
 
-By changing these variables here and there, you can easily update the entire theme of the application! Try changing a few of them and watch the app update in DevApp. For example, change the default blue color for Primary to purple:
+Cambiando estas variables aquí y allá, puedes modificar fácilmente todo el tema de la aplicación! Intenta cambiar algunas de estas variables y ver la actualización de la aplicación en DevApp. Por ejemplo, cambia el color primario azul predeterminado a morado:
 
 ```css
 /** Ionic CSS Variables **/
@@ -54,10 +54,10 @@ imports: [
   ],
 ```
 
-Now, the iOS version of our app has a Material Design skin!
+¡Ahora, la versión de iOS de nuestra aplicación tiene una skin Material Design!
 
 ![ios and android comparison](/docs/assets/img/guides/first-app-v3/ion-lab-md-styling.png)
 
-Creating gorgeous-looking Ionic apps is easy with CSS variables and platform-specific styling. You now have everything you need to get started with Ionic.
+Crear magníficas aplicaciones Ionic es fácil con variables CSS y estilo específico de la plataforma. Ahora tienes todo lo que necesitas para empezar con Iónic.
 
-Go forth and build great apps!
+¡Ve y construye grandes aplicaciones!
