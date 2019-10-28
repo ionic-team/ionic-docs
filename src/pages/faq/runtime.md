@@ -100,7 +100,7 @@ add the `tappable` attribute to your element.
 
 > Why does Angular change detection run very frequently when my components are initializing?
 
-Angular uses a library called [zone.js](https://github.com/angular/zone.js/) 
+Angular uses a library called [zone.js](https://github.com/angular/angular/tree/master/packages/zone.js/) 
 which helps it determine when to run change detection. 
 
 As of zone.js `0.8.27`, certain APIs for Web Components also cause change 
