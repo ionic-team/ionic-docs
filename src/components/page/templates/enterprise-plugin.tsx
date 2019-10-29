@@ -7,19 +7,15 @@ export default (props) => {
 
   const pluginId = page.path.split('/')[3];
   const otherVersions = page.otherVersions || [];
-
-  headings.unshift({
-    text: 'Installation',
-    href: '#installation'
-  });
+  const { capacitorConfig, cordovaVariables } = page;
 
   return (
     <article>
       <h1>{ page.title }</h1>
       <h4>v{page.version}</h4>
       <docs-table-of-contents links={headings.concat([{ 'href': '#previous-versions', text: 'Other Versions' }])} basepath={page.path}/>
-
-      <section class="markdown-content">
+      <section class="markdown-content enterprise-markdown-content">
+        <native-ent-install plugin-id={pluginId} cordova={cordovaVariables} capacitor={capacitorConfig} />
         {toHypertext(h, page.body)}
       </section>
       <section id="previous-versions">

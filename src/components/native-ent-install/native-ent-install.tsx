@@ -5,7 +5,8 @@ import { Component, Prop, h } from '@stencil/core';
 })
 export class NativeEnterpriseInstall {
   @Prop() pluginId: string;
-  @Prop() variables?: string;
+  @Prop() cordova?: string;
+  @Prop() capacitor?: { android?: string; ios?: string; } = {};
 
   render() {
     if (!this.pluginId) {
@@ -20,15 +21,36 @@ export class NativeEnterpriseInstall {
         <p>
           After following the one-time <stencil-route-link url="/docs/enterprise/setup"> setup steps</stencil-route-link>, simply install the plugin:
         </p>
-        <strong>Cordova:</strong>
-        <command-line>
-          <command-prompt>{`ionic cordova plugin add @ionic-enterprise/${this.pluginId} ${this.variables}`}</command-prompt>
-        </command-line>
-        <strong>Capacitor:</strong>
-        <command-line>
-          <command-prompt>{`npm install @ionic-enterprise/${this.pluginId} ${this.variables}`}</command-prompt>
-          <command-prompt>npx cap sync</command-prompt>
-        </command-line>
+        <docs-tabs>
+        <docs-tab tab="Capacitor">
+            <command-line>
+              <command-prompt>{`npm install @ionic-enterprise/${this.pluginId}`}</command-prompt>
+              <command-prompt>npx cap sync</command-prompt>
+            </command-line>
+
+            { this.capacitor.android
+              ? <section>
+                  <p>Next, add the following to
+                  <a href="https://capacitor.ionicframework.com/docs/android/configuration" target="_blank"> AndroidManifest.xml</a>:</p>
+                <docs-code language="xml"><pre><code>{this.capacitor.android}</code></pre></docs-code>
+                </section>
+              : null
+            }
+
+            { this.capacitor.ios
+              ? <section>
+                  And the following to <a href="https://capacitor.ionicframework.com/docs/ios/configuration" target="_blank">Info.plist</a> on iOS:
+                  <docs-code language="xml"><pre><code>{this.capacitor.ios}</code></pre></docs-code>
+                </section>
+              : null
+            }
+          </docs-tab>
+          <docs-tab tab="Cordova">
+            <command-line slot="Cordova">
+            <command-prompt>{`ionic cordova plugin add @ionic-enterprise/${this.pluginId} ${this.cordova ? this.cordova : ''}`}</command-prompt>
+            </command-line>
+          </docs-tab>
+        </docs-tabs>
       </section>
     );
   }

@@ -3,11 +3,30 @@ title: Email Composer
 template: enterprise-plugin
 version: 0.9.2
 minor: 0.9.X
+capacitorConfig:
+  android: >
+    <intent-filter>
+        <data android:scheme="$AUTH_URL_SCHEME"/>
+        <action android:name="android.intent.action.VIEW"/>
+        <category android:name="android.intent.category.DEFAULT"/>
+        <category android:name="android.intent.category.BROWSABLE"/>
+    </intent-filter>
+    <intent-filter>
+        <action android:name="android.intent.action.SEND"/>
+        <category android:name="android.intent.category.DEFAULT"/>
+        <data android:mimeType="text/*"/>
+    </intent-filter>
+  ios: >
+    <dict>
+      <key>CFBundleURLSchemes</key>
+      <array>
+        <string>$AUTH_URL_SCHEME</string>
+      </array>
+    </>
 ---
 
 The Email Composer plugin provides the ability to programmatically create and send emails from within an app.
 
-<native-ent-install plugin-id="email-composer" variables=""></native-ent-install>
 
 ## Index
 

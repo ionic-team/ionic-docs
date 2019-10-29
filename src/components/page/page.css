@@ -121,3 +121,22 @@ docs-page aside {
     margin-left: 0;
   }
 } */
+
+
+/**
+ * This reorders the installation instructions so that the Enterprise Native Plugin 
+   description is displayed first, at the top of the page.
+ */
+
+docs-page .enterprise-markdown-content {
+  display: flex;
+  flex-direction: column;
+}
+
+docs-page .enterprise-markdown-content > div {
+  display: contents;
+}
+
+docs-page .enterprise-markdown-content p.intro {
+  order: -1;
+}

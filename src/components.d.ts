@@ -161,8 +161,9 @@ export namespace Components {
   }
   interface LayeredColorsSelect {}
   interface NativeEntInstall {
+    'capacitor'?: { android?: string; ios?: string; };
+    'cordova'?: string;
     'pluginId': string;
-    'variables'?: string;
   }
   interface NewColorGenerator {}
   interface SmsForm {}
@@ -637,8 +638,9 @@ declare namespace LocalJSX {
   }
   interface LayeredColorsSelect extends JSXBase.HTMLAttributes<HTMLLayeredColorsSelectElement> {}
   interface NativeEntInstall extends JSXBase.HTMLAttributes<HTMLNativeEntInstallElement> {
+    'capacitor'?: { android?: string; ios?: string; };
+    'cordova'?: string;
     'pluginId'?: string;
-    'variables'?: string;
   }
   interface NewColorGenerator extends JSXBase.HTMLAttributes<HTMLNewColorGeneratorElement> {}
   interface SmsForm extends JSXBase.HTMLAttributes<HTMLSmsFormElement> {}
