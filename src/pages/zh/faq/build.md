@@ -10,29 +10,29 @@ contributors:
 
 # Build Errors
 
-## Common mistakes
+## 常见错误
 
-### Forgetting Parentheses on a Decorator
+### 装饰器后忘了加括号
 
-Decorators should have parentheses `()` after an annotation. Some examples include: `@Injectable()`, `@Optional()`, `@Input()`, etc.
+装饰器后面需要跟上一对括号`()`。 例如： `@Injectable()`, `@Optional()`, `@Input()`.
 
 ```typescript
 @Directive({
   selector: 'my-dir'
 })
 class MyDirective {
-  // Wrong, should be @Optional()
-  // @Optional does nothing here, so MyDirective will error if parent is undefined
+  // 错误，应该是 @Optional()
+  // @Optional 不做任何事情, 所以如果 <code>parent<code/> 为undefined  MyDirective 就会报错
   constructor( @Optional parent: ParentComponent) { }
 }
 ```
 
-## Common Errors
+## 常见异常
 
-### Cannot Resolve all Parameters
+### 无法解析所有参数
 
 ```shell
-Cannot resolve all parameters for 'YourClass'(?). Make sure that all the parameters are decorated with Inject or have valid type annotations and that 'YourClass' is decorated with Injectable.
+无法解析'YourClass'(?) 的所有参数。 Make sure that all the parameters are decorated with Inject or have valid type annotations and that 'YourClass' is decorated with Injectable.
 ```
 
 This exception means that Angular is confused about one or more of the parameters for `YourClass`'s constructor. In order to do [dependency injection](https://angular.io/docs/ts/latest/guide/dependency-injection.html) Angular needs to know the type of the parameter to inject. You let Angular know this by specifying the class of the parameter. Make sure:
