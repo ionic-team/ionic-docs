@@ -8,11 +8,6 @@ export default (props) => {
   const pluginId = page.path.split('/')[3];
   const otherVersions = page.otherVersions || [];
 
-  headings.unshift({
-    text: 'Installation',
-    href: '#installation'
-  });
-
   return (
     <article>
       <h1>{ page.title }</h1>
