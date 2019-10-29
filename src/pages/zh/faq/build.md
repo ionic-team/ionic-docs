@@ -32,10 +32,10 @@ class MyDirective {
 ### 无法解析所有参数
 
 ```shell
-无法解析'YourClass'(?) 的所有参数。 Make sure that all the parameters are decorated with Inject or have valid type annotations and that 'YourClass' is decorated with Injectable.
+无法解析'YourClass'(?) 的所有参数。 确保所有参数都以 Inject 标记或有有效的类型注释，并且'YourClass' 被注入标记。
 ```
 
-This exception means that Angular is confused about one or more of the parameters for `YourClass`'s constructor. In order to do [dependency injection](https://angular.io/docs/ts/latest/guide/dependency-injection.html) Angular needs to know the type of the parameter to inject. You let Angular know this by specifying the class of the parameter. Make sure:
+这个异常是由于Angular无法确定 `YourClass` 的构造函数的一个或者多个参数 In order to do [dependency injection](https://angular.io/docs/ts/latest/guide/dependency-injection.html) Angular needs to know the type of the parameter to inject. You let Angular know this by specifying the class of the parameter. Make sure:
 
 - You are importing the parameter's class.
 - You have properly annotated the parameter or specified its type.
