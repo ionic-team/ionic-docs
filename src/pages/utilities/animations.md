@@ -19,15 +19,15 @@ Ionic Animations uses the [Web Animations API](https://developer.mozilla.org/en-
 
 ### Angular
 
-Developers using Angular should install the latest version of `@ionic/angular`.
+Developers using Angular should install the latest version of `@ionic/angular`. Animations can be created via the `AnimationController` dependency injection. 
 
 ```typescript
 
-import { IonicAnimation, Animation } from '@ionic/angular';
+import { Animation, AnimationController } from '@ionic/angular';
 
 ...
 
-constructor(private animation: IonicAnimation) {
+constructor(private animation: AnimationController) {
   const animation: Animation = this.animation.create()
     .addElement(myElementRef)
     .duration(1000)
@@ -64,7 +64,7 @@ import { createAnimation, Animation } from '@ionic/core';
 
 ...
 
-const animation: Animation = createAnimation()
+const animation: Animation = createAnimation('')
   .addElement(myElementRef)
   .duration(1000)
   .fromTo('opacity', '1', '0.5');
@@ -358,6 +358,23 @@ CSS and Web Animations are usually handled on the compositor thread. This is dif
 Animating properties such as `height` and `width` cause additional layouts and paints which can cause jank and degrade animation performance. On the other hand, animating properties such as `transform` and `opacity` are highly optimizable by the browser and typically do not cause much jank.
 
 For information on which CSS properties cause layouts or paints to occur, see [CSS Triggers](https://csstriggers.com/).
+
+## Debugging
+
+For debugging animations in Chrome, there is a great blog post about inspecting animations using the Chrome DevTools: https://developers.google.com/web/tools/chrome-devtools/inspect-styles/animations.
+
+It is also recommended to assign unique identifiers to your animations. These identifiers will show up in the Animations inspector in Chrome and should make it easier to debug:
+
+```javascript
+/**
+ * The animation for the .square element should
+ * show "my-animation-identifier" in Chrome DevTools.
+ */
+const animation = createAnimation('my-animation-identifier')
+  .addElement(document.querySelector('.square'))
+  .duration(1000)
+  .fromTo('opacity', '1', '0');
+```
 
 ## Browser Support
 
