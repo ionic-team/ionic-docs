@@ -64,7 +64,7 @@ import { createAnimation, Animation } from '@ionic/core';
 
 ...
 
-const animation: Animation = createAnimation('')
+const animation: Animation = createAnimation()
   .addElement(myElementRef)
   .duration(1000)
   .fromTo('opacity', '1', '0.5');
