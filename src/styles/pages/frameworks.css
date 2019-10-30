@@ -1,12 +1,11 @@
 .page-react,
 .page-angular {
-  --page-width: 1040px;
+  --page-width: 900px;
 }
-
 
 command-line {
   max-width: 720px;
-  margin: auto;
+  margin: 50px auto;
 }
 strong {
   color: #44b4ff;
@@ -20,6 +19,14 @@ strong {
   display: flex;
   flex-direction: column-reverse;
   padding: 50px 0px;
+}
+.main-flex h1 {
+  margin-botton: 0px;
+}
+.main-flex ul {
+  padding-left: 0;
+  list-style: none;
+  line-height: 1;
 }
 .main-flex .pull-right img {
   width: 150px;
@@ -41,7 +48,7 @@ strong {
     flex-direction: row-reverse;
   }
   .pull-left {
-    width: 475px;
+    width: 450px;
   }
   .pull-right {
     flex: 1;

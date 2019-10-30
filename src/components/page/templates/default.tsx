@@ -6,7 +6,7 @@ export default props => {
 
   return (
     <article>
-      <h1>{page.title}</h1>
+      {page.renderTitle !== false ? <h1>{page.title}</h1> : null}
       {page.tableOfContents !== false ? (
         <docs-table-of-contents links={page.headings} basepath={page.path} />
       ) : null}

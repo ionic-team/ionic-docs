@@ -1,5 +1,6 @@
 ---
 title: Ionic React
+renderTitle: false
 tableOfContents: false
 meta:
   image: /docs/assets/img/meta/open-graph.png
@@ -9,6 +10,13 @@ meta:
 <div class='flex main-flex'>
   <div class="pull-left">
   <h3>One Codebase <br/> Any Platform <br/> <strong>Just React</strong></h3>
+
+ - ✓ 100+ mobile optimized React UI components
+ - ✓ Standard React tooling with react-dom
+ - ✓ iOS / Android / Electron / PWA
+
+  [Get Started](#installation)
+
   </div>
 
   <div class="pull-right">
@@ -16,31 +24,46 @@ meta:
   </div>
 </div>
 
-<p>The best parts of React meets Ionic</p>
 
-Ionic and React take the flexibility of `react-dom` and adds the components that you know and love from Ionic. If you're just getting started, take a look at a few guides below.
+### Build awesome apps across mobile, desktop, and web, with the React you know and love.
 
-## Installation
 
-<command-line>
-    <command-prompt>npm install -g ionic@latest</command-prompt>
-    <command-prompt>ionic start myApp tabs --type react</command-prompt>
-    <br/>
-    <command-prompt>ionic serve <command-cursor blink></command-cursor></command-prompt>
-</command-line>
+Ionic React is native React version of Ionic Framework, the free, open source SDK powering millions of mission-critical apps all over the world.
+
+It's everything you need to ship award-winning apps for any platform, with React.
+
+
+<div class="flex" >
+
+<div class="pull-left">
+
+## Fast, beautiful apps
+
+Choose from over 100 beautiful, mobile-ready UI components, animations, and gestures, lightweight and customized to fit your brand.
+
+[Explore UI components](/docs/components)
+
+</div>
+
+<div class="pull-right">
+  <img src="/docs/assets/icons/feature-guide-components-icon.png" />
+</div>
+
+</div>
+
+
 
 <div class="flex reverse" >
 
 <div class="pull-left">
 
-## Standard React tools
+## Familiar tooling
 
 Ionic React projects are just like React projects, leveraging [react-dom](https://reactjs.org/docs/react-dom.html) and with setup normally found in a [Create React App (CRA)](https://github.com/facebook/create-react-app) app. For [routing and navigation](/docs/react/navigation), React Router is used under the hood.
 
 </div>
 
 <div class="pull-right">
-  <!-- <img src="/docs/assets/img/frameworks/react.svg" /> -->
   <img src="/docs/assets/img/frameworks/react-cli.png" class="cli" />
 </div>
 
@@ -50,9 +73,9 @@ Ionic React projects are just like React projects, leveraging [react-dom](https:
 
 <div class="pull-left">
 
-## Native Tools
+## More than mobile
 
-Ionic React officially supports [Capacitor](https://capacitor.ionicframework.com) as it's native runtime. This means it's possible to deploy to native iOS, native Android, Electron, and the web with PWAs.
+Deploy your Ionic React projects to native iOS, Android, Electron, and the web as a Progressive Web App, using [Capacitor](https://capacitor.ionicframework.com), a modern native runtime. All with one shared codebase.
 
 </div>
 
@@ -68,7 +91,7 @@ Ionic React officially supports [Capacitor](https://capacitor.ionicframework.com
 
 ## Just React
 
-At the end of the day, it's just React. Choose any of the millions of libraries that exist that work in the browser. Taking the ideas of "learn one, write anywhere" and "write once, run anywhere" to it's full potential.
+At the end of the day, it's just React. Ionic React uses open web standards and built-in browser capabilities, so it's compatible with any of the millions of web libraries out there.
 
   </div>
 
@@ -77,6 +100,16 @@ At the end of the day, it's just React. Choose any of the millions of libraries 
   </div>
 
 </div>
+
+## Installation
+
+<command-line>
+    <command-prompt>npm install -g ionic@latest</command-prompt>
+    <command-prompt>ionic start myApp tabs --type react</command-prompt>
+    <br/>
+    <command-prompt>ionic serve <command-cursor blink></command-cursor></command-prompt>
+</command-line>
+
 
 ## Resources
 
