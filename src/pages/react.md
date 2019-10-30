@@ -40,7 +40,8 @@ Ionic React projects are just like React projects, leveraging [react-dom](https:
 </div>
 
 <div class="pull-right">
-  <img src="/docs/assets/img/frameworks/react.svg" />
+  <!-- <img src="/docs/assets/img/frameworks/react.svg" /> -->
+  <img src="/docs/assets/img/frameworks/react-cli.png" class="cli" />
 </div>
 
 </div>

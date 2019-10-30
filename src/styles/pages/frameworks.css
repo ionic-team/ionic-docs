@@ -26,7 +26,7 @@ strong {
 }
 .pull-right img {
   display: block;
-  max-width: 450px;
+  max-width: 250px;
   width: 100%;
   margin: auto;
 }
@@ -49,7 +49,7 @@ strong {
   }
   .pull-right img {
     display: initial;
-    max-width: 300px;
+    max-width: 250px;
   }
   .main-flex .pull-right img {
     max-width: 375px;
@@ -59,4 +59,8 @@ strong {
     margin-top: 0;
     padding-top: 0;
   }
+}
+
+.cli {
+  width: 150px !important;
 }
