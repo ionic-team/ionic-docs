@@ -13,6 +13,30 @@ Auth Connect also allows your app to support multiple authentication providers. 
 
 <native-ent-install plugin-id="auth" variables="--variable AUTH_URL_SCHEME=mycustomscheme"></native-ent-install>
 
+Update the native project config files:
+```xml
+// Android - AndroidManifest.xml
+<intent-filter>
+    <data android:scheme="$AUTH_URL_SCHEME"/>
+    <action android:name="android.intent.action.VIEW"/>
+    <category android:name="android.intent.category.DEFAULT"/>
+    <category android:name="android.intent.category.BROWSABLE"/>
+</intent-filter>
+<intent-filter>
+    <action android:name="android.intent.action.SEND"/>
+    <category android:name="android.intent.category.DEFAULT"/>
+    <data android:mimeType="text/*"/>
+</intent-filter>
+
+// iOS - Info.plist (inside existing CFBundleURLTypes)
+<dict>
+    <key>CFBundleURLSchemes</key>
+    <array>
+        <string>$AUTH_URL_SCHEME</string>
+    </array>
+</dict>
+```
+
 ## Reference App
 
 A [complete login/logout experience](https://github.com/ionic-team/demo-authconnect-auth0) using Auth0. Simply swap the Auth0 configuration in the `IonicAuthOptions` object to switch to a different auth provider.

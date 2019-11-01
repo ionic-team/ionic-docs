@@ -26,7 +26,7 @@ export class NativeEnterpriseInstall {
         </command-line>
         <strong>Capacitor:</strong>
         <command-line>
-          <command-prompt>{`npm install @ionic-enterprise/${this.pluginId} ${this.variables}`}</command-prompt>
+          <command-prompt>{`npm install @ionic-enterprise/${this.pluginId}`}</command-prompt>
           <command-prompt>npx cap sync</command-prompt>
         </command-line>
       </section>
