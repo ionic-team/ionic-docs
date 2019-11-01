@@ -11,7 +11,31 @@ When used with [Ionic Identity Vault](/docs/enterprise/identity-vault), it provi
 
 Auth Connect also allows your app to support multiple authentication providers. Should you need to change providers, easily switch between them without having to develop a new solution. [Learn more.](https://ionicframework.com/auth-connect)
 
-<native-ent-install plugin-id="auth" variables="--variable AUTH_URL_SCHEME=mycustomscheme"></native-ent-install>
+<native-ent-install plugin-id="auth" variables="--variable AUTH_URL_SCHEME='mycustomscheme'"></native-ent-install>
+
+Update the native project config files:
+```xml
+// Android - AndroidManifest.xml
+<intent-filter>
+    <data android:scheme="$AUTH_URL_SCHEME"/>
+    <action android:name="android.intent.action.VIEW"/>
+    <category android:name="android.intent.category.DEFAULT"/>
+    <category android:name="android.intent.category.BROWSABLE"/>
+</intent-filter>
+<intent-filter>
+    <action android:name="android.intent.action.SEND"/>
+    <category android:name="android.intent.category.DEFAULT"/>
+    <data android:mimeType="text/*"/>
+</intent-filter>
+
+// iOS - Info.plist (inside existing CFBundleURLTypes)
+<dict>
+    <key>CFBundleURLSchemes</key>
+    <array>
+        <string>$AUTH_URL_SCHEME</string>
+    </array>
+</dict>
+```
 
 ## Reference App
 
