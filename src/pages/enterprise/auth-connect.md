@@ -11,7 +11,7 @@ When used with [Ionic Identity Vault](/docs/enterprise/identity-vault), it provi
 
 Auth Connect also allows your app to support multiple authentication providers. Should you need to change providers, easily switch between them without having to develop a new solution. [Learn more.](https://ionicframework.com/auth-connect)
 
-<native-ent-install plugin-id="auth" variables="--variable AUTH_URL_SCHEME=mycustomscheme"></native-ent-install>
+<native-ent-install plugin-id="auth" variables="--variable AUTH_URL_SCHEME='mycustomscheme'"></native-ent-install>
 
 Update the native project config files:
 ```xml
