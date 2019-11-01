@@ -56,7 +56,7 @@ const items = {
     'menu-angular-performance': '/docs/angular/performance'
   },
   'menu-react': {
-    'menu-react-overview': '/docs/react/overview',
+    'menu-react-overview': '/docs/react',
     'menu-react-your-first-app': '/docs/react/your-first-app',
     'menu-react-lifecycle': '/docs/react/lifecycle',
     'menu-react-navigation': '/docs/react/navigation',
