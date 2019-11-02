@@ -5,13 +5,13 @@ nextText: 'Package Build Types'
 nextUrl: '/docs/appflow/package/build-types'
 ---
 
-# Package Builds
+# 构建原生工具包
 
-## Overview
+## 概览
 
-A package build is a native build of your application that is platform specific and can run on a physical device. Package builds produce `apk` files for Android and `ipa` files for iOS. Currently package builds are only available to customers on one of the paid plans and must manually be triggered from the dashboard. The basic steps of the package build are as follows:
+构建原生工具包可以构建为特定平台原生工具包. 软件包构建为 Android 生成 `apk` 文件和 `ipa` iOS 文件。 当前软件包构建只能在付费计划中为客户提供，且只能在面板手动触发。 构建的基本步骤如下：
 
-* `npm install` will run to install any dependencies you have.
+* `npm install` 安装依赖包。
 * `npm run build` will run if a `build` script is detected in the `scripts` section of your `package.json` in order to build the web assets for your application.
 * `cordova platform add [ios|android]` will run with the platform you have configured `NOTE:` *DO NOT* commit your `platforms` directory as this will cause your build to fail.
 * `cordova build [ios|android]` will run with the platform and options you have configured and generate the `ipa` or `apk` file
