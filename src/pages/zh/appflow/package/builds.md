@@ -20,9 +20,9 @@ nextUrl: '/docs/appflow/package/build-types'
 
 ## 开始构建
 
-Click on the **Code** tab of your App, you should be at your **Builds** list. Click on the **Package** button for the Build you'd like to get a Native binary for.
+点击您应用中 **Code** 标签，在 **Builds** 列表中. 点击 **Package** 按钮,编译并获你想要的本地二进制包 。
 
-In the Package GUI you'll be able to choose the type of Build you want to perform, and the Cert you'd like to use. You'll then be taken to the History tab while the build completes. After the build completes, click Download and you'll get your native binary!
+在Package界面中,你可以选择你要构建的类型进行构建以及您要使用的证书。 You'll then be taken to the History tab while the build completes. After the build completes, click Download and you'll get your native binary!
 
 ## Concurrency limits
 
