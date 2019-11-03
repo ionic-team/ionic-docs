@@ -9,6 +9,8 @@ nextUrl: '/docs/angular/your-first-app/creating-photo-gallery-device-storage'
 
 Previously, we got an Ionic app up and running locally in a web browser. Now, let’s get it onto your iOS or Android device, then start building the photo gallery feature. 
 
+(If you are building for Android on MacOS then [this GitHub README](https://github.com/doughazell/ionic-camera-swipe) will be useful.)
+
 ## Add Cordova iOS and Android Platforms
 
 Ionic leverages the open source [Cordova project](https://cordova.apache.org/docs/en/latest/guide/overview/) to provide native hardware support. We begin by adding the iOS and Android _platforms_ then will add specific _plugins_ like the Camera afterwards:
