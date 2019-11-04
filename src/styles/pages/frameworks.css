@@ -2,72 +2,84 @@
 .page-angular {
   --page-width: 900px;
 }
-
-command-line {
+.page-react command-line,
+.page-angular command-line {
   max-width: 720px;
   margin: 50px auto;
 }
-strong {
+.page-react strong,
+.page-angular strong {
   color: #44b4ff;
 }
-.pull-left h3 {
+.page-react .pull-left h3,
+.page-angular .pull-left h3 {
   font-size: 4rem;
   padding-top: 0;
 }
-
-.flex {
+.page-react .flex,
+.page-angular .flex {
   display: flex;
   flex-direction: column-reverse;
   padding: 50px 0px;
 }
-.main-flex h1 {
+.page-react .main-flex h1,
+.page-angular .main-flex h1 {
   margin-botton: 0px;
 }
-.main-flex ul {
+.page-react .main-flex ul,
+.page-angular .main-flex ul {
   padding-left: 0;
   list-style: none;
   line-height: 1;
 }
-.main-flex .pull-right img {
+.page-react .main-flex .pull-right img,
+.page-angular .main-flex .pull-right img {
   width: 150px;
 }
-.pull-right img {
+.page-react .pull-right img,
+.page-angular .pull-right img {
   display: block;
   max-width: 250px;
   width: 100%;
   margin: auto;
 }
-
 @media (min-width: 1058px) {
-  .flex {
+  .page-react .flex,
+  .page-angular .flex {
     flex-direction: row;
     align-items: center;
     padding: 75px 0;
   }
-  .flex.reverse {
+  .page-react .flex.reverse,
+  .page-angular .flex.reverse {
     flex-direction: row-reverse;
   }
-  .pull-left {
+  .page-react .pull-left,
+  .page-angular .pull-left {
     width: 450px;
   }
-  .pull-right {
+  .page-react .pull-right,
+  .page-angular .pull-right {
     flex: 1;
     text-align: center;
   }
-  .pull-right img {
+  .page-react .pull-right img,
+  .page-angular .pull-right img {
     display: initial;
     max-width: 250px;
   }
-  .main-flex .pull-right img {
+  .page-react .main-flex .pull-right img,
+  .page-angular .main-flex .pull-right img {
     max-width: 375px;
     width: 100%;
   }
-  h2 {
+  .page-react h2,
+  .page-angular h2 {
     margin-top: 0;
     padding-top: 0;
   }
 }
-
-.cli {
+.page-react .cli,
+.page-angular .cli {
   width: 150px !important;
 }
