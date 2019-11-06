@@ -7,7 +7,7 @@ minor: 5.0.X
 
 The Splash Screen plugin provides control options for displaying and hiding a splash screen, commonly during application launch.
 
-<native-ent-install plugin-id="splashscreen" variables=""></native-ent-install>
+<native-ent-install plugin-id="splashscreen" variables="" capacitor-slug="splash-screen"></native-ent-install>
 
 ## Index
 
