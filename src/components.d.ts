@@ -161,6 +161,7 @@ export namespace Components {
   }
   interface LayeredColorsSelect {}
   interface NativeEntInstall {
+    'capacitorSlug'?: string;
     'pluginId': string;
     'variables'?: string;
   }
@@ -637,6 +638,7 @@ declare namespace LocalJSX {
   }
   interface LayeredColorsSelect extends JSXBase.HTMLAttributes<HTMLLayeredColorsSelectElement> {}
   interface NativeEntInstall extends JSXBase.HTMLAttributes<HTMLNativeEntInstallElement> {
+    'capacitorSlug'?: string;
     'pluginId'?: string;
     'variables'?: string;
   }

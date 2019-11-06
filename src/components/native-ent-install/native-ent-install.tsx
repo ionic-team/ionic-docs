@@ -6,6 +6,7 @@ import { Component, Prop, h } from '@stencil/core';
 export class NativeEnterpriseInstall {
   @Prop() pluginId: string;
   @Prop() variables?: string;
+  @Prop() capacitorSlug?: string;
 
   render() {
     if (!this.pluginId) {
@@ -25,10 +26,17 @@ export class NativeEnterpriseInstall {
           <command-prompt>{`ionic cordova plugin add @ionic-enterprise/${this.pluginId} ${this.variables}`}</command-prompt>
         </command-line>
         <strong>Capacitor:</strong>
-        <command-line>
-          <command-prompt>{`npm install @ionic-enterprise/${this.pluginId}`}</command-prompt>
+        {
+          this.capacitorSlug ?
+            <div>Available as a
+              <a href={`https://capacitor.ionicframework.com/docs/apis/${this.capacitorSlug}`}> core Capacitor plugin</a>.
+            </div>
+          :
+          <command-line>
+            <command-prompt>{`npm install @ionic-enterprise/${this.pluginId}`}</command-prompt>
           <command-prompt>npx cap sync</command-prompt>
-        </command-line>
+          </command-line>
+        }
       </section>
     );
   }
