@@ -7,7 +7,7 @@ minor: 2.5.X
 
 The Status Bar plugin provides the ability to customize the appearance of the native mobile status bar, including setting visibility, background color, and more.
 
-<native-ent-install plugin-id="statusbar" variables="" capacitor="false"></native-ent-install>
+<native-ent-install plugin-id="statusbar" variables="" capacitor-slug="status-bar"></native-ent-install>
 
 ### Preferences
 

@@ -9,7 +9,7 @@ otherVersions:
 
 The Filesystem plugin presents a simple and intuitive interface for common file operations such as reading/writing and listing the contents of directories.
 
-<native-ent-install plugin-id="filesystem" variables=""></native-ent-install>
+<native-ent-install plugin-id="filesystem" variables="" capacitor-slug="filesystem"></native-ent-install>
 
 Usage
 -----

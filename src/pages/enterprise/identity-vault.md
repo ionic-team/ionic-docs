@@ -22,6 +22,16 @@ Without Ionic Identity Vault, Ionic developers have to resort to combining third
 
 <native-ent-install plugin-id="identity-vault" variables=""></native-ent-install>
 
+Update the native project config files:
+
+```xml
+// iOS - Info.plist
+<key>NSFaceIDUsageDescription</key>
+<string>Use Face ID to authenticate yourself and login</string>
+
+// Android - No additional changes needed
+```
+
 ## Reference App
 
 A complete [login/logout experience](https://github.com/ionic-team/cs-demo-iv) that includes biometrics (Face ID with passcode as a fallback), secure token storage, background data hiding, and session timeouts.

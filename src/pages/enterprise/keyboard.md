@@ -10,7 +10,7 @@ Keyboard
 
 The Keyboard plugin allows you to configure the keyboard behavior (show/hide) and display (sizing/visibility).
 
-<native-ent-install plugin-id="keyboard" variables=""></native-ent-install>
+<native-ent-install plugin-id="keyboard" variables="" capacitor-slug="keyboard"></native-ent-install>
 
 Usage
 -----
