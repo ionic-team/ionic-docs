@@ -11,55 +11,45 @@ The Splash Screen plugin provides control options for displaying and hiding a sp
 
 ### Preferences
 
+You can add the following preferences in your `config.xml`:
 
-- `AutoHideSplashScreen` (boolean, default to `true`). Indicates whether to hide splash screen automatically or not. The splash screen is hidden after the amount of time specified in the `SplashScreenDelay` preference.
+- __AutoHideSplashScreen__ (boolean, default to `true`). Indicates whether to hide splash screen automatically or not. The splash screen is hidden after the amount of time specified in the `SplashScreenDelay` preference.
 
-- `SplashScreenDelay` (number, default to 3000). Amount of time in milliseconds to wait before automatically hide splash screen.
-    This value used to be in seconds (but is now milliseconds) so values less than 30 will continue to be treated as seconds. (Consider this a deprecated patch that will disapear in some future version.)
+        <preference name="AutoHideSplashScreen" value="true" />
 
-- `FadeSplashScreen` (boolean, defaults to `true`): Set to `false` to
-  prevent the splash screen from fading in and out when its display
-  state changes.
+- __SplashScreenDelay__ (number, default to 3000). Amount of time in milliseconds to wait before automatically hide splash screen.
+This value used to be in seconds (but is now milliseconds) so values less than 30 will continue to be treated as seconds. (Consider this a deprecated patch that will disapear in some future version.)
 
-- `FadeSplashScreenDuration` (float, defaults to `500`): Specifies the
-  number of milliseconds for the splash screen fade effect to execute.
+        <preference name="SplashScreenDelay" value="3000" />
 
-- `ShowSplashScreenSpinner` (boolean, defaults to `true`): Set to `false`
-  to hide the splash screen spinner.
 
+- __FadeSplashScreen__ (boolean, defaults to `true`): Set to `false` to prevent the splash screen from fading in and out when its display state changes.
+
+        <preference name="FadeSplashScreen" value="false"/>
+
+- __FadeSplashScreenDuration__ (float, defaults to `500`): Specifies the number of milliseconds for the splash screen fade effect to execute.
+
+        <preference name="FadeSplashScreenDuration" value="750"/>
+
+- __ShowSplashScreenSpinner__ (boolean, defaults to `true`): Set to `false` to hide the splash screen spinner.
+
+        <preference name="ShowSplashScreenSpinner" value="false"/>
 
 #### Android Only Preferences
 
 
-- `SplashMaintainAspectRatio` preference is optional. If set to `true`, the splash screen drawable is not stretched to fit the full screen,
-  but instead simply "covers" the screen, like CSS "background-size:cover". This is very useful when splash screen images cannot be distorted in any way, for example when they contain scenery or text. This setting works best with images that have large margins (safe areas) that can be safely cropped on screens with different aspect ratios.
-  The splash screen plugin reloads the splash screen whenever the orientation changes so that you can specify different splash screen images for portrait and landscape orientations.
+- __SplashMaintainAspectRatio__ preference is optional. If set to `true`, the splash screen drawable is not stretched to fit the full screen, but instead simply "covers" the screen, like CSS "background-size:cover". This is very useful when splash screen images cannot be distorted in any way, for example when they contain scenery or text. This setting works best with images that have large margins (safe areas) that can be safely cropped on screens with different aspect ratios. The splash screen plugin reloads the splash screen whenever the orientation changes so that you can specify different splash screen images for portrait and landscape orientations.
 
-- `SplashShowOnlyFirstTime` preference is  optional and defaults to `true`. When set to `true` the splash screen will only appear on
-  application launch. However, if you plan to use `navigator.app.exitApp()` to close the application and force the splash screen appear on the application's next launch, you should set this property to `false` (this also applies to closing the application with the Back button).
+        <preference name="SplashMaintainAspectRatio" value="true" />
 
-- `SplashScreenSpinnerColor` preference is also optional and is ignored when not set. Setting it to a valid color name or HEX color code
-  will change the color of the spinner on Android 5.0+ devices.
+- __SplashShowOnlyFirstTime__ preference is  optional and defaults to `true`. When set to `true` the splash screen will only appear on application launch. However, if you plan to use `navigator.app.exitApp()` to close the application and force the splash screen appear on the application's next launch, you should set this property to `false` (this also applies to closing the application with the Back button).
 
-#### Using Preferences in Cordova
+        <preference name="SplashShowOnlyFirstTime" value="true" />
 
-You can add the following preferences in your `config.xml`:
+- __SplashScreenSpinnerColor__ preference is also optional and is ignored when not set. Setting it to a valid color name or HEX color code will change the color of the spinner on Android 5.0+ devices.
 
-```xml
-<preference name="AutoHideSplashScreen" value="true" />
-<preference name="SplashScreenDelay" value="3000" />
-<preference name="FadeSplashScreen" value="false"/>
-<preference name="FadeSplashScreenDuration" value="750"/>
-<preference name="ShowSplashScreenSpinner" value="false"/>
-<!-- Android only -->
-<preference name="SplashMaintainAspectRatio" value="true" />
-<preference name="SplashShowOnlyFirstTime" value="true" />
-<preference name="SplashScreenSpinnerColor" value="white" />
-```
+        <preference name="SplashScreenSpinnerColor" value="white" />
 
-#### Using Preferences in Capacitor
-
-This plugin is not compatible with Capacitor. Use Capacitor's [Splash Screen plugin](https://capacitor.ionicframework.com/docs/apis/splash-screen) instead.
 
 ## Index
 
