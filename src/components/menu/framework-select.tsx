@@ -13,9 +13,9 @@ export class DocsMenu {
   setFramework: (framework: string) => void;
 
   frameworks = [
+    'React',
     'Angular',
     'JavaScript',
-    'React',
     'Vue'
   ];
 
