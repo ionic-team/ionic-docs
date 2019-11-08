@@ -1,7 +1,7 @@
 ---
 title: Identity Vault
 template: enterprise-plugin
-version: 3.4.7
+version: 3.4.8
 minor: 3.4.X
 otherVersions:
   - 2.0.X
@@ -11,8 +11,7 @@ otherVersions:
   - 3.3.X
 ---
 
-Ionic Identity Vault
-====================
+# Ionic Identity Vault
 
 Ionic Identity Vault is an all-in-one frontend identity management system that combines security best practices and the latest in biometric authentication options available on iOS and Android.
 
@@ -135,6 +134,7 @@ You can find the API and interface documentation for everything below. The main 
 *   [IonicIdentityVaultUser](#identityvaultuser) - Subclass this when creating your identity service.
 *   [DefaultSession](#defaultsession) - This is the generic type that represents your session. Extend this to implement a custom session.
 *   [IdentityVault](#identityvault) - This is the lower level vault API. You can use this to implement advanced workflows including multi-tenant vaults.
+
 
 ## Index
 
@@ -1402,7 +1402,7 @@ ___
 
 ▸ **onConfig**(event: *[PluginConfiguration](#pluginconfiguration)*): `any`
 
-A handler that will receive events any time the vault is configuration is changed
+A handler that will recieve events any time the vault is configuration is changed
 
 **Parameters:**
 
@@ -1436,7 +1436,7 @@ ___
 
 ▸ **onLock**(event: *[LockEvent](#lockevent)*): `any`
 
-A handler that will receive events any time the vault is locked
+A handler that will recieve events any time the vault is locked
 
 **Parameters:**
 
@@ -1470,7 +1470,7 @@ ___
 
 ▸ **onUnlock**(event: *[PluginConfiguration](#pluginconfiguration)*): `any`
 
-A handler that will receive events any time the vault is unlocked
+A handler that will recieve events any time the vault is unlocked
 
 **Parameters:**
 
@@ -1698,6 +1698,15 @@ ___
 
 
 
+### [3.4.8] (2019-11-08)
+
+
+### Bug Fixes
+
+* **vault-user:** use the vault user methods to set the auth mode  
+
+
+
 ### [3.4.7] (2019-09-09)
 
 
@@ -1823,7 +1832,7 @@ ___
 
 ### Features
 
-- Added [getPlugin](#identityvaultuser.getplugin) method which can be overridden in advanced use cases to provide custom implementations for PWA compatibility etc.
+- Added [getPlugin](#identityvaultuser.getplugin) method which can be overridden in advanced use cases to provide custom implementations for PWA compatability etc.
 
 ### Bug Fixes
 
