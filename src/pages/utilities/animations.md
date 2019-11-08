@@ -17,7 +17,41 @@ Ionic Animations uses the [Web Animations API](https://developer.mozilla.org/en-
 
 ## Installation
 
-### Angular
+<docs-tabs>
+<docs-tab tab="javascript">
+
+Developers using Ionic Core and JavaScript should install the latest version of `@ionic/core`.
+
+```javascript
+import { createAnimation } from 'https://cdn.jsdelivr.net/npm/@ionic/core@latest/dist/esm/index.mjs';
+
+...
+
+const animation = createAnimation()
+  .addElement(myElementRef)
+  .duration(1000)
+  .fromTo('opacity', '1', '0.5');
+}
+
+```
+</docs-tab>
+<docs-tab tab="typescript">
+
+Developers using Ionic Core and TypeScript should install the latest version of `@ionic/core`.
+
+```typescript
+import { createAnimation, Animation } from '@ionic/core';
+
+...
+
+const animation: Animation = createAnimation('')
+  .addElement(myElementRef)
+  .duration(1000)
+  .fromTo('opacity', '1', '0.5');
+}
+```
+</docs-tab>
+<docs-tab tab="angular">
 
 Developers using Angular should install the latest version of `@ionic/angular`. Animations can be created via the `AnimationController` dependency injection. 
 
@@ -27,16 +61,16 @@ import { Animation, AnimationController } from '@ionic/angular';
 
 ...
 
-constructor(private animation: AnimationController) {
-  const animation: Animation = this.animation.create()
+constructor(private animationCtrl: AnimationController) {
+  const animation: Animation = this.animationCtrl.create()
     .addElement(myElementRef)
     .duration(1000)
     .fromTo('opacity', '1', '0.5');
 }
 
 ```
-
-### React
+</docs-tab>
+<docs-tab tab="react">
 
 Developers using React should install the latest version of `@ionic/react`. Full React wrappers are coming soon!
 
@@ -53,46 +87,15 @@ const animation: Animation = createAnimation()
 }
 
 ```
-
-### Ionic Core (TypeScript)
-
-Developers using Ionic Core and TypeScript should install the latest version of `@ionic/core`.
-
-```typescript
-
-import { createAnimation, Animation } from '@ionic/core';
-
-...
-
-const animation: Animation = createAnimation('')
-  .addElement(myElementRef)
-  .duration(1000)
-  .fromTo('opacity', '1', '0.5');
-}
-
-```
-
-### Ionic Core (JavaScript)
-
-Developers using Ionic Core and JavaScript should install the latest version of `@ionic/core`.
-
-```javascript
-
-import { createAnimation } from 'https://cdn.jsdelivr.net/npm/@ionic/core@latest/dist/esm/index.mjs';
-
-...
-
-const animation = createAnimation()
-  .addElement(myElementRef)
-  .duration(1000)
-  .fromTo('opacity', '1', '0.5');
-}
-
-```
+</docs-tab>
+</docs-tabs>
 
 ## Basic Animations
 
 ### Usage
+
+<docs-tabs>
+<docs-tab tab="javascript">
 
 ```javascript
 createAnimation()
@@ -102,6 +105,30 @@ createAnimation()
   .fromTo('transform', 'translateX(0px)', 'translateX(100px)')
   .fromTo('opacity', 1, 0.2);
 ```
+</docs-tab>
+<docs-tab tab="angular">
+
+```javascript
+this.animationCtrl.create()
+  .addElement(document.querySelector('.square'))
+  .duration(1500)
+  .iterations(Infinity)
+  .fromTo('transform', 'translateX(0px)', 'translateX(100px)')
+  .fromTo('opacity', 1, 0.2);
+```
+</docs-tab>
+<docs-tab tab="react">
+
+```javascript
+createAnimation()
+  .addElement(document.querySelector('.square'))
+  .duration(1500)
+  .iterations(Infinity)
+  .fromTo('transform', 'translateX(0px)', 'translateX(100px)')
+  .fromTo('opacity', 1, 0.2);
+```
+</docs-tab>
+</docs-tabs>
 
 In the example above, an animation that changes the opacity on the `.square` element and moves it from left to right along the X axis has been created. This animation will run an infinite number of times, and each iteration of the animation will last 1500ms.
 
@@ -112,6 +139,9 @@ In the example above, an animation that changes the opacity on the `.square` ele
 Ionic Animations allows you to control the intermediate steps in an animation using keyframes. Any valid CSS property can be used here, and you can even use CSS Variables as values.
 
 ### Usage
+
+<docs-tabs>
+<docs-tab tab="javascript">
 
 ```javascript
 createAnimation()
@@ -124,6 +154,36 @@ createAnimation()
     { offset: 1, background: 'green' }
   ]);
 ```
+</docs-tab>
+<docs-tab tab="angular">
+
+```javascript
+this.animationCtrl.create()
+  .addElement(this.square.nativeElement)
+  .duration(3000)
+  .iterations(Infinity)
+  .keyframes([
+    { offset: 0, background: 'red' },
+    { offset: 0.72, background: 'var(--background)' },
+    { offset: 1, background: 'green' }
+  ]);
+```
+</docs-tab>
+<docs-tab tab="react">
+
+```javascript
+createAnimation()
+  .addElement(document.querySelector('.square'))
+  .duration(3000)
+  .iterations(Infinity)
+  .keyframes([
+    { offset: 0, background: 'red' },
+    { offset: 0.72, background: 'var(--background)' },
+    { offset: 1, background: 'green' }
+  ]);
+```
+</docs-tab>
+</docs-tabs>
 
 In the example above, the `.square` element will transition from a red background color, to a background color defined by the `--background` variable, and then transition on to a green background color.
 
@@ -136,6 +196,9 @@ Each keyframe object contains an `offset` property. `offset` is a value between 
 Multiple elements can be animated at the same time and controlled via a single parent animation object. Child animations inherit properties such as duration, easing, and iterations unless otherwise specified. A parent animation's `onFinish` callback will not be called until all child animations have completed.
 
 ### Usage
+
+<docs-tabs>
+<docs-tab tab="javascript">
 
 ```javascript
 const squareA = createAnimation()
@@ -172,6 +235,85 @@ const parent = createAnimation()
   .addAnimation([squareA, squareB, squareC]);
 ```
 
+</docs-tab>
+<docs-tab tab="angular">
+
+```javascript
+const squareA = this.animationCtrl.create()
+  .addElement(this.squareA.nativeElement)
+  .fill('none')
+  .keyframes([
+    { offset: 0, transform: 'scale(1) rotate(0)' },
+    { offset: 0.5, transform: 'scale(1.2) rotate(45deg)' },
+    { offset: 1, transform: 'scale(1) rotate(45deg) '}
+  ]);
+  
+const squareB = this.animationCtrl.create()
+  .addElement(this.squareB.nativeElement)
+  .fill('none')
+  .keyframes([
+    { offset: 0, transform: 'scale(1))', opacity: 1 },
+    { offset: 0.5, transform: 'scale(1.2)', opacity: 0.3 },
+    { offset: 1, transform: 'scale(1)', opacity: 1 }
+  ]);
+  
+const squareC = this.animationCtrl.create()
+  .addElement(this.squareC.nativeElement)
+  .fill('none')
+  .duration(5000)
+  .keyframes([
+    { offset: 0, transform: 'scale(1))', opacity: 0.5 },
+    { offset: 0.5, transform: 'scale(0.8)', opacity: 1 },
+    { offset: 1, transform: 'scale(1)', opacity: 0.5 }
+  ]);
+
+const parent = this.animationCtrl.create()
+  .duration(2000)
+  .iterations(Infinity)
+  .addAnimation([squareA, squareB, squareC]);
+```
+
+</docs-tab>
+<docs-tab tab="react">
+
+```javascript
+const squareA = createAnimation()
+  .addElement(document.querySelector('.square-a'))
+  .fill('none')
+  .keyframes([
+    { offset: 0, transform: 'scale(1) rotate(0)' },
+    { offset: 0.5, transform: 'scale(1.2) rotate(45deg)' },
+    { offset: 1, transform: 'scale(1) rotate(45deg) '}
+  ]);
+  
+const squareB = createAnimation()
+  .addElement(document.querySelector('.square-b'))
+  .fill('none')
+  .keyframes([
+    { offset: 0, transform: 'scale(1))', opacity: 1 },
+    { offset: 0.5, transform: 'scale(1.2)', opacity: 0.3 },
+    { offset: 1, transform: 'scale(1)', opacity: 1 }
+  ]);
+  
+const squareC = createAnimation()
+  .addElement(document.querySelector('.square-c'))
+  .fill('none')
+  .duration(5000)
+  .keyframes([
+    { offset: 0, transform: 'scale(1))', opacity: 0.5 },
+    { offset: 0.5, transform: 'scale(0.8)', opacity: 1 },
+    { offset: 1, transform: 'scale(1)', opacity: 0.5 }
+  ]);
+
+const parent = createAnimation()
+  .duration(2000)
+  .iterations(Infinity)
+  .addAnimation([squareA, squareB, squareC]);
+```
+
+</docs-tab>
+</docs-tabs>
+
 This example shows 3 child animations controlled by a single parent animation. Animations `squareA` and `squareB` inherit the parent animation's duration of 2000ms, but animation `squareC` has a duration of 5000ms since it was explicitly set.
 
 <docs-codepen user="ionic" slug="oNvdogM" height="460"></docs-codepen>
@@ -181,6 +323,9 @@ This example shows 3 child animations controlled by a single parent animation. A
 Ionic Animations provides hooks that let you alter an element before an animation runs and after an animation completes. These hooks can be used to perform DOM reads and writes as well as add or remove classes and inline styles.
 
 ### Usage
+
+<docs-tabs>
+<docs-tab tab="javascript">
 
 ```javascript
 createAnimation()
@@ -199,6 +344,48 @@ createAnimation()
     { offset: 1, transform: 'scale(1)' }
   ])
 ```
+</docs-tab>
+<docs-tab tab="angular">
+
+```javascript
+this.animationCtrl.create()
+  .addElement(this.square.nativeElement)
+  .duration(2000)
+  .beforeStyles({
+    opacity: 0.2
+  })
+  .afterStyles({
+    background: 'rgba(0, 255, 0, 0.5)'
+  })
+  .afterClearStyles(['opacity'])
+  .keyframes([
+    { offset: 0, transform: 'scale(1)' },
+    { offset: 0.5, transform: 'scale(1.5)' },
+    { offset: 1, transform: 'scale(1)' }
+  ])
+```
+</docs-tab>
+<docs-tab tab="react">
+
+```javascript
+createAnimation()
+  .addElement(document.querySelector('.square'))
+  .duration(2000)
+  .beforeStyles({
+    opacity: 0.2
+  })
+  .afterStyles({
+    background: 'rgba(0, 255, 0, 0.5)'
+  })
+  .afterClearStyles(['opacity'])
+  .keyframes([
+    { offset: 0, transform: 'scale(1)' },
+    { offset: 0.5, transform: 'scale(1.5)' },
+    { offset: 1, transform: 'scale(1)' }
+  ])
+```
+</docs-tab>
+</docs-tabs>
 
 In this example, an inline opacity of 0.2 is set on the `.square` element prior to the animation starting. Once the animation finishes, the background color of the element is set to `rgba(0, 255, 0, 0.5)`, and the inline opacity is cleared.
 
@@ -212,9 +399,13 @@ Animations can be chained to run one after the other. The `play` method returns 
 
 ### Usage
 
+<docs-tabs>
+<docs-tab tab="javascript">
+
 ```javascript
 const squareA = createAnimation()
   .addElement(document.querySelector('.square-a'))
+  .fill('none')
   .duration(1000)
   .keyframes([
     { offset: 0, transform: 'scale(1) rotate(0)' },
@@ -224,6 +415,7 @@ const squareA = createAnimation()
   
 const squareB = createAnimation()
   .addElement(document.querySelector('.square-b'))
+  .fill('none')
   .duration(1000)
   .keyframes([
     { offset: 0, transform: 'scale(1)', opacity: 1 },
@@ -233,6 +425,7 @@ const squareB = createAnimation()
   
 const squareC = createAnimation()
   .addElement(document.querySelector('.square-c'))
+  .fill('none')
   .duration(1000)
   .keyframes([
     { offset: 0, transform: 'scale(1)', opacity: 0.5 },
@@ -244,6 +437,84 @@ await squareA.play();
 await squareB.play();
 await squareC.play();
 ```
+</docs-tab>
+<docs-tab tab="angular">
+
+```javascript
+const squareA = this.animationCtrl.create()
+  .addElement(this.squareA.nativeElement)
+  .fill('none')
+  .duration(1000)
+  .keyframes([
+    { offset: 0, transform: 'scale(1) rotate(0)' },
+    { offset: 0.5, transform: 'scale(1.2) rotate(45deg)' },
+    { offset: 1, transform: 'scale(1) rotate(0) '}
+  ]);
+  
+const squareB = this.animationCtrl.create()
+  .addElement(this.squareB.nativeElement)
+  .fill('none')
+  .duration(1000)
+  .keyframes([
+    { offset: 0, transform: 'scale(1)', opacity: 1 },
+    { offset: 0.5, transform: 'scale(1.2)', opacity: 0.3 },
+    { offset: 1, transform: 'scale(1)', opacity: 1 }
+  ]);
+  
+const squareC = this.animationCtrl.create()
+  .addElement(this.squareC.nativeElement)
+  .fill('none')
+  .duration(1000)
+  .keyframes([
+    { offset: 0, transform: 'scale(1)', opacity: 0.5 },
+    { offset: 0.5, transform: 'scale(0.8)', opacity: 1 },
+    { offset: 1, transform: 'scale(1)', opacity: 0.5 }
+  ]);
+
+await squareA.play();
+await squareB.play();
+await squareC.play();
+```
+</docs-tab>
+<docs-tab tab="react">
+
+```javascript
+const squareA = createAnimation()
+  .addElement(document.querySelector('.square-a'))
+  .fill('none')
+  .duration(1000)
+  .keyframes([
+    { offset: 0, transform: 'scale(1) rotate(0)' },
+    { offset: 0.5, transform: 'scale(1.2) rotate(45deg)' },
+    { offset: 1, transform: 'scale(1) rotate(0) '}
+  ]);
+  
+const squareB = createAnimation()
+  .addElement(document.querySelector('.square-b'))
+  .fill('none')
+  .duration(1000)
+  .keyframes([
+    { offset: 0, transform: 'scale(1)', opacity: 1 },
+    { offset: 0.5, transform: 'scale(1.2)', opacity: 0.3 },
+    { offset: 1, transform: 'scale(1)', opacity: 1 }
+  ]);
+  
+const squareC = createAnimation()
+  .addElement(document.querySelector('.square-c'))
+  .fill('none')
+  .duration(1000)
+  .keyframes([
+    { offset: 0, transform: 'scale(1)', opacity: 0.5 },
+    { offset: 0.5, transform: 'scale(0.8)', opacity: 1 },
+    { offset: 1, transform: 'scale(1)', opacity: 0.5 }
+  ]);
+
+await squareA.play();
+await squareB.play();
+await squareC.play();
+```
+</docs-tab>
+</docs-tabs>
 
 <docs-codepen user="ionic" slug="MWgGrwX" height="460"></docs-codepen>
 
@@ -252,6 +523,9 @@ await squareC.play();
 Ionic Animations gives developers the ability to create powerful gesture-based animations by integrating seamlessly with [Ionic Gestures](/docs/utilities/gestures).
 
 ### Usage
+
+<docs-tabs>
+<docs-tab tab="javascript">
 
 ```javascript
 let initialStep = 0;
@@ -308,6 +582,127 @@ const getStep = (ev): {
   return clamp(0, delta / MAX_TRANSLATE, 1);
 }
 ```
+</docs-tab>
+<docs-tab tab="angular">
+
+```typescript
+private animation?: Animation;
+private gesture?: Gesture;
+
+private started: boolean = false;
+private initialStep: number = 0;
+private MAX_TRANSLATE: number = 400;
+
+ngOnInit() {    
+  this.animation = this.animationCtrl.create()
+    .addElement(this.square.nativeElement)
+    .duration(1000)
+    .fromTo('transform', 'translateX(0)', `translateX(${this.MAX_TRANSLATE}px)`);
+  
+  this.gesture = this.gestureCtrl.create({
+    el: this.square.nativeElement,
+    threshold: 0,
+    onMove: ev: this.onMove(ev),
+    onEnd: ev: this.onEnd(ev)
+  })
+  
+  this.gesture.setDisabled(false);
+}
+
+private onMove(ev) {
+  if (!started) {
+    this.animation.progressStart();
+    this.started = true;
+  }
+  
+  this.animation.progressStep(this.getStep(ev));
+}
+
+private onEnd(ev) {
+  if (!this.started) { return; }
+  
+  this.gesture.setDisabled(true);
+  
+  const step = this.getStep(ev);
+  const shouldComplete = step > 0.5;
+
+  this.animation
+    .progressEnd((shouldComplete) ? 1 : 0, step)
+    .onFinish((): { this.gesture.setDisabled(false); });  
+  
+  this.initialStep = (shouldComplete) ? this.MAX_TRANSLATE : 0;
+  this.started = false;
+}
+
+private clamp(min, n, max) {
+  return Math.max(min, Math.min(n, max));
+}
+
+private getStep(ev) {
+  const delta = this.initialStep + ev.deltaX;
+  return this.clamp(0, delta / this.MAX_TRANSLATE, 1);
+}
+```
+</docs-tab>
+<docs-tab tab="react">
+
+```javascript
+let initialStep = 0;
+let started = false;
+
+const square = document.querySelector('.square');
+const MAX_TRANSLATE = 400;
+
+const animation = createAnimation()
+  .addElement(square)
+  .duration(1000)
+  .fromTo('transform', 'translateX(0)', `translateX(${MAX_TRANSLATE}px)`);
+
+const gesture = createGesture({
+  el: square,
+  threshold: 0,
+  onMove: ev: onMove(ev),
+  onEnd: ev: onEnd(ev)
+})
+
+gesture.setDisabled(false);
+
+const onMove = (ev): {
+  if (!started) {
+    animation.progressStart();
+    started = true;
+  }
+  
+  animation.progressStep(getStep(ev));
+}
+
+const onEnd = (ev): {
+  if (!started) { return; }
+  
+  gesture.setDisabled(true);
+  
+  const step = getStep(ev);
+  const shouldComplete = step > 0.5;
+
+  animation
+    .progressEnd((shouldComplete) ? 1 : 0, step)
+    .onFinish((): { gesture.setDisabled(false); });  
+  
+  initialStep = (shouldComplete) ? MAX_TRANSLATE : 0;
+  started = false;
+}
+
+const clamp = (min, n, max): {
+  return Math.max(min, Math.min(n, max));
+};
+
+const getStep = (ev): {
+  const delta = initialStep + ev.deltaX;
+  return clamp(0, delta / MAX_TRANSLATE, 1);
+}
+```
+</docs-tab>
+</docs-tabs>
 
 In this example we are creating a track along which we can drag the `.square` element. Our `animation` object will take care of moving the `.square` element either left or right, and our `gesture` object will instruct the `animation` object which direction to move in.
 
@@ -315,7 +710,9 @@ In this example we are creating a track along which we can drag the `.square` el
 
 ## Preference-Based Animations
 
-Developers can also tailor their animations to user preferences such as `prefers-reduced-motion` and `prefers-color-scheme` using CSS Variables:
+Developers can also tailor their animations to user preferences such as `prefers-reduced-motion` and `prefers-color-scheme` using CSS Variables.
+
+### Usage
 
 ```css
 .square {
@@ -335,6 +732,9 @@ Developers can also tailor their animations to user preferences such as `prefers
 }
 ```
 
+<docs-tabs>
+<docs-tab tab="javascript">
+
 ```javascript
 createAnimation()
    .addElement(document.querySelector('.square'))
@@ -343,6 +743,30 @@ createAnimation()
    .direction('alternate')
    .fromTo('background', 'blue', 'var(--background)');
 ```
+</docs-tab>
+<docs-tab tab="angular">
+
+```javascript
+this.animationCtrl.create()
+   .addElement(this.square.nativeElement)
+   .duration(1500)
+   .iterations(Infinity)
+   .direction('alternate')
+   .fromTo('background', 'blue', 'var(--background)');
+```
+</docs-tab>
+<docs-tab tab="react">
+
+```javascript
+createAnimation()
+   .addElement(document.querySelector('.square'))
+   .duration(1500)
+   .iterations(Infinity)
+   .direction('alternate')
+   .fromTo('background', 'blue', 'var(--background)');
+```
+</docs-tab>
+</docs-tabs>
 
 This method works in all supported browsers when creating animations for the first time. Most browsers are also capable of dynamically updating keyframe animations as the CSS Variables change.
 

@@ -9,13 +9,94 @@ nextUrl: '/docs/utilities/platform'
 
 ## Overview
 
-Ionic Gestures is a utility that allows developers to build custom gestures and interactions for their application in a platform agnostic manner. Developers do not need to be using a particular framework such as React or Angular, nor do they even need to be building an Ionic app! As long as developers have access to `@ionic/core`, they will have access to all of Ionic Gestures.
+Ionic Gestures is a utility that allows developers to build custom gestures and interactions for their application in a platform agnostic manner. Developers do not need to be using a particular framework such as React or Angular, nor do they even need to be building an Ionic app! As long as developers have access to v5.0 or greater of Ionic Framework, they will have access to all of Ionic Animations.
 
 Building complex gestures can be time consuming. Other libraries that provide custom gestures are often times too heavy handed and end up capturing mouse or touch events and not letting them propagate. This can result in other elements no longer being scrollable or clickable.
+
+## Installation
+
+<docs-tabs>
+<docs-tab tab="javascript">
+
+Developers using Ionic Core and JavaScript should install the latest version of `@ionic/core`.
+
+```javascript
+import { createGesture } from 'https://cdn.jsdelivr.net/npm/@ionic/core@latest/dist/esm/index.mjs';
+
+...
+
+const gesture = createGesture({
+  el: elementRef,
+  threshold: 15,
+  gestureName: 'my-gesture',
+  onMove: ev: onMoveHandler(ev)
+});
+
+```
+</docs-tab>
+<docs-tab tab="typescript">
+
+Developers using Ionic Core and TypeScript should install the latest version of `@ionic/core`.
+
+```typescript
+import { createGesture, Gesture } from '@ionic/core';
+
+...
+
+const gesture: Gesture = createGesture({
+  el: elementRef,
+  threshold: 15,
+  gestureName: 'my-gesture',
+  onMove: ev: onMoveHandler(ev)
+});
+```
+</docs-tab>
+<docs-tab tab="angular">
+
+Developers using Angular should install the latest version of `@ionic/angular`. Animations can be created via the `AnimationController` dependency injection. 
+
+```typescript
+import { Gesture, GestureController } from '@ionic/angular';
+
+...
+
+constructor(private gestureCtrl: GestureController) {
+  const gesture: Gesture = this.gestureCtrl.create({
+    el: this.element.nativeElement,
+    threshold: 15,
+    gestureName: 'my-gesture',
+    onMove: ev: this.onMoveHandler(ev)
+  });
+}
+
+```
+</docs-tab>
+<docs-tab tab="react">
+
+Developers using React should install the latest version of `@ionic/react`. Full React wrappers are coming soon!
+
+```typescript
+import { createGesture, Gesture } from '@ionic/react';
+
+...
+
+const gesture: Gesture = createGesture({
+  el: elementRef,
+  threshold: 15,
+  gestureName: 'my-gesture',
+  onMove: ev: onMoveHandler(ev)
+});
+```
+</docs-tab>
+</docs-tabs>
+
 
 ## Basic Gestures
 
 ### Usage
+
+<docs-tabs>
+<docs-tab tab="javascript">
 
 ```javascript
 let p = document.querySelector('p');
@@ -40,6 +121,63 @@ const onMove = (detail) => {
   `
 }
 ```
+</docs-tab>
+<docs-tab tab="angular">
+
+```javascript
+@ViewChild('paragraph') p: ElementRef;
+
+ngOnInit() {
+  const gesture = this.gestureCtrl.create({
+    el: this.rectangle.nativeElement,
+    onMove: (detail) => { this.onMove(detail); }
+  })
+  
+  gesture.enable();
+}
+
+private onMove(detail) {
+  const type = detail.type;
+  const currentX = detail.currentX;
+  const deltaX = detail.deltaX;
+  const velocityX = detail.velocityX;
+    
+  this.p.innerHTML = `
+    <div>Type: ${type}</div>
+    <div>Current X: ${currentX}</div>
+    <div>Delta X: ${deltaX}</div>
+    <div>Velocity X: ${velocityX}</div>
+  `
+}
+```
+</docs-tab>
+<docs-tab tab="react">
+
+```javascript
+let p = document.querySelector('p');
+const gesture = createGesture({
+  el: document.querySelector('.rectangle'),
+  onMove: (detail) => { onMove(detail); }
+})
+
+gesture.enable();
+
+const onMove = (detail) => {
+  const type = detail.type;
+  const currentX = detail.currentX;
+  const deltaX = detail.deltaX;
+  const velocityX = detail.velocityX;
+    
+  p.innerHTML = `
+    <div>Type: ${type}</div>
+    <div>Current X: ${currentX}</div>
+    <div>Delta X: ${deltaX}</div>
+    <div>Velocity X: ${velocityX}</div>
+  `
+}
+```
+</docs-tab>
+</docs-tabs>
 
 In this example, our app listens for gestures on the `.rectangle` element. When a gesture movement is detected, the `onMove` function is called, and our app logs the current gesture information.
 
@@ -48,6 +186,9 @@ In this example, our app listens for gestures on the `.rectangle` element. When 
 ## Double Click Gesture
 
 ### Usage
+
+<docs-tabs>
+<docs-tab tab="javascript">
 
 ```javascript
 const backgrounds = ['rgba(0, 0, 255, 0.5)', 'rgba(0, 255, 0.5)', 'rgba(255, 0, 0, 0.5)', 'rgba(255, 255, 0, 0.5)', 'rgba(255, 0, 255, 0.5)', 'rgba(0, 255, 255, 0.5)'];
@@ -82,59 +223,87 @@ const getRandomBackground = () => {
   return currentColor;
 }
 ```
+</docs-tab>
+<docs-tab tab="angular">
 
-In the example above, we want to be able to detect double clicks on an element. By setting our `threshold` to `0`, we can ensure our gesture object can detect clicks. Additionally, we define a click threshold so that only 2 clicks that occur in quick succession count as a double click.
+```typescript
+@ViewChild('rectangle') rectangle: ElementRef;
 
-<docs-codepen user="ionic" slug="oNvVEwE"></docs-codepen>
+private backgrounds: string[] = ['rgba(0, 0, 255, 0.5)', 'rgba(0, 255, 0.5)', 'rgba(255, 0, 0, 0.5)', 'rgba(255, 255, 0, 0.5)', 'rgba(255, 0, 255, 0.5)', 'rgba(0, 255, 255, 0.5)'];
+private currentColor: string = 'rgba(0, 0, 255, 0.5)';
+private lastOnStart: number = 0;
+private DOUBLE_CLICK_THRESHOLD: number = 500;
 
-## Long Press Gesture
+ngOnInit() {
+  const gesture = this.gestureCtrl.create({
+    el: this.rectangle.nativeElement,
+    threshold: 0,
+    onStart: () => { this.onStart(); }
+  });
+  
+  gesture.enable();
+}
 
-### Usage
+private onStart() {
+  const now = Date.now();
+  
+  if (Math.abs(now - this.lastOnStart) <= this.DOUBLE_CLICK_THRESHOLD) {
+    this.rectangle.nativeElement.style.setProperty('background', this.getRandomBackground());
+    this.lastOnStart = 0;
+  } else {
+    this.lastOnStart = now;
+  }
+}
+
+private getRandomBackground() {
+  const options = this.backgrounds.filter(bg => bg !== this.currentColor);
+  this.currentColor = options[Math.floor(Math.random() * options.length)];
+  
+  return this.currentColor;
+}
+```
+</docs-tab>
+<docs-tab tab="react">
 
 ```javascript
-const square = document.querySelector('.square');
-const TIMEOUT = 500;
+const backgrounds = ['rgba(0, 0, 255, 0.5)', 'rgba(0, 255, 0.5)', 'rgba(255, 0, 0, 0.5)', 'rgba(255, 255, 0, 0.5)', 'rgba(255, 0, 255, 0.5)', 'rgba(0, 255, 255, 0.5)'];
+const DOUBLE_CLICK_THRESHOLD = 500;
+const rectangle = document.querySelector('.rectangle');
 const gesture = createGesture({
-  el: square,
+  el: rectangle,
   threshold: 0,
-  onStart: () => { onStart(); },
-  onMove: (detail) => { onMove(detail); },
-  onEnd: () => { clearGestureTimeout(); }
+  onStart: () => { onStart(); }
 });
 
 gesture.enable();
 
-let timeout;
+let lastOnStart = 0;
+let currentColor = 'rgba(0, 0, 255, 0.5)';
 
 const onStart = () => {
-  clearGestureTimeout();
+  const now = Date.now();
   
-  timeout = setTimeout(() => {
-    classList.toggle('scale');
-    timeout = undefined;
-  }, TIMEOUT);
+  if (Math.abs(now - lastOnStart) <= DOUBLE_CLICK_THRESHOLD) {
+    rectangle.style.setProperty('background', getRandomBackground());
+    lastOnStart = 0;
+  } else {
+    lastOnStart = now;
+  }
 }
 
-const onMove = (detail) => {
-  // Allow a little bit of movement
-  if (detail.deltaX <= 10 && detail.deltaY <= 10) {
-     return;
-  }
-
-  clearGestureTimeout();
-}
-
-const clearGestureTimeout = () => {
-  if (timeout) {
-    clearTimeout(timeout);
-    timeout = undefined;
-  }
+const getRandomBackground = () => {
+  const options = backgrounds.filter(bg => bg !== currentColor);
+  currentColor = options[Math.floor(Math.random() * options.length)];
+  
+  return currentColor;
 }
 ```
+</docs-tab>
+</docs-tabs>
 
-This example demonstrates a long press gesture. When the user touches the screen or clicks their mouse, the `onStart` function will create a timeout. If the timeout is interrupted by the user removing their finger or releasing the mouse button, the timeout is cleared. If the user moves their finger or mouse by more than the allowed amount we also clear the timeout. Once the timeout has completed, we add a class to the `.square` element to give a visual indication that the long press has succeeded.
+In the example above, we want to be able to detect double clicks on an element. By setting our `threshold` to `0`, we can ensure our gesture object can detect clicks. Additionally, we define a click threshold so that only 2 clicks that occur in quick succession count as a double click.
 
-<docs-codepen user="ionic" slug="BaBbYZE"></docs-codepen>
+<docs-codepen user="ionic" slug="oNvVEwE"></docs-codepen>
 
 ## Gesture Animations
 
