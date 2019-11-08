@@ -1,7 +1,7 @@
 ---
 title: Contacts
 template: enterprise-plugin
-version: 1.0.3
+version: 1.0.4
 minor: 1.0.X
 ---
 
@@ -901,6 +901,13 @@ ___
 # Changelog
 
 
+
+### [1.0.4] (2019-11-08)
+
+
+### Bug Fixes
+
+* **ios:** make pickContact prompt for permission if not granted 
 
 ### [1.0.3] (2019-11-04)
 
