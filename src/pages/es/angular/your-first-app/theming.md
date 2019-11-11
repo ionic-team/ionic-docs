@@ -58,6 +58,6 @@ imports: [
 
 ![ios and android comparison](/docs/assets/img/guides/first-app-v3/ion-lab-md-styling.png)
 
-Crear magníficas aplicaciones Ionic es fácil con variables CSS y estilo específico de la plataforma. Ahora tienes todo lo que necesitas para empezar con Iónic.
+Crear magníficas aplicaciones Ionic es fácil con variables CSS y estilo específico de la plataforma. Ahora tienes todo lo que necesitas para empezar con Ionic.
 
 ¡Ve y construye grandes aplicaciones!
