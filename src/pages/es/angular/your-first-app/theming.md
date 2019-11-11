@@ -5,21 +5,21 @@ nextText: 'Lifecycle'
 nextUrl: '/docs/angular/lifecycle'
 ---
 
-# Make It Your Own! Ionic Theming
+# Personalizalo! Temática Ionic
 
-Previously, we converted our single use Camera app into an epic photo gallery. Now, let’s explore how to make the photo gallery our own with Ionic theming. The visual design of the app is incredibly important - fortunately, Ionic provides a lot for us out-of-the-box.
+Anteriormente, convertimos nuestra aplicación de cámara de un solo uso en una épica galería de fotos. Ahora, exploremos cómo personalizar nuestra galería de fotos con temas de Ionic. El diseño visual de la aplicación es realmente importante - afortunadamente, Ionic nos proporciona muchas funciones.
 
-Ionic has nine default colors, defined as CSS variables, that can be used to change the color of its UI components:
+Ionic tiene nueve colores por defecto, definidos como variables CSS, que pueden ser usados para cambiar el color de sus componentes de la interfaz de usuario:
 
 ![v4-theming-defaults](/docs/assets/img/guides/first-app-v4/theming-defaults.png)
 
-You can customize each color further by supplying a base, contrast, shade, and tint properties. These provide flexible control over your styles:
+Puedes personalizar cada color más adelante proporcionando una base, contraste, sombra y propiedades de capa. Estos proporcionan un control flexible sobre tus estilos:
 
 ![v4-theming-properties](/docs/assets/img/guides/first-app-v4/theming-properties.png)
 
-You can find these colors defined in `src/theme/variables.scss`.
+Puede encontrar estos colores definidos en `src/theme/variables.scss`.
 
-By changing these variables here and there, you can easily update the entire theme of the application! Try changing a few of them and watch the app update in DevApp. For example, change the default blue color for Primary to purple:
+Cambiando estas variables aquí y allá, puedes modificar fácilmente todo el tema de la aplicación! Intenta cambiar algunas de estas variables y ver la actualización de la aplicación en DevApp. Por ejemplo, cambia el color primario azul predeterminado a morado:
 
 ```css
 /** Ionic CSS Variables **/
@@ -34,15 +34,15 @@ By changing these variables here and there, you can easily update the entire the
 }
 ```
 
-The easiest and most powerful way to create custom color palettes for your app’s UI is Ionic's [Color Generator tool](/docs/theming/color-generator). As you change a color’s hex values, the embedded demo app automatically reflects the new colors. When you've finished making changes, simply copy and paste the generated code directly into your Ionic project.
+La forma más fácil y poderosa de crear paletas de color personalizadas para la interfaz de usuario de tu aplicación es la herramienta Ionic [Color Generator](/docs/theming/color-generator). A medida que cambia los valores hexadecimales de un color, la aplicación de demostración embebida refleja automáticamente los nuevos colores. Cuando hayas terminado de hacer cambios, simplemente copia y pega el código generado directamente en tu proyecto Ionic.
 
-But wait, there’s more! Ionic automatically provides platform specific styles based on the device the application is running on, giving that native look and feel your users are used to:
+Pero espere, ¡hay más! Ionic proporciona automáticamente estilos específicos de la plataforma basados en el dispositivo en el que la aplicación se está ejecutando, dándole ese aspecto nativo y sienta que sus usuarios están acostumbrados a usar:
 
 ![ios and android comparison](/docs/assets/img/guides/first-app-v3/ion-lab-comparison.png)
 
-In our app, this is clearly visible in how the header and the icons are styled.
+En nuestra aplicación, esto es claramente visible en cómo la cabecera y los iconos están estilizados.
 
-If you want consistency, you can tell Ionic to use the same mode regardless of platform. For example, to apply Material Design (Android’s platform style), set it globally in the App Module class. Open `src/app/app.module.ts`, then set the `mode` property:
+Si quieres consistencia, puedes decirle a Ionic que use el mismo modo independientemente de la plataforma. Por ejemplo, para aplicar Material Design (el estilo de plataforma de Android), establecerlo globalmente en la clase App Module. Abre `src/app/app.module.ts`, luego establece el modo `` propiedad:
 
 ```Javascript
 imports: [
@@ -54,10 +54,10 @@ imports: [
   ],
 ```
 
-Now, the iOS version of our app has a Material Design skin!
+¡Ahora, la versión de iOS de nuestra aplicación tiene una skin Material Design!
 
 ![ios and android comparison](/docs/assets/img/guides/first-app-v3/ion-lab-md-styling.png)
 
-Creating gorgeous-looking Ionic apps is easy with CSS variables and platform-specific styling. You now have everything you need to get started with Ionic.
+Crear magníficas aplicaciones Ionic es fácil con variables CSS y estilo específico de la plataforma. Ahora tienes todo lo que necesitas para empezar con Ionic.
 
-Go forth and build great apps!
+¡Ve y construye grandes aplicaciones!

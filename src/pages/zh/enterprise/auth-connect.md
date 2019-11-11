@@ -5,11 +5,38 @@ version: 1.2.0
 minor: 1.2.X
 ---
 
-The Auth Plugin handles logging in and/or registering a user with an authentication provider (such as Auth0, Azure AD, or AWS Cognito) using industry standard OAuth/OpenId Connect on iOS and Android, or on the web.
+Ionic Auth Connect handles logging in and/or registering a user with an authentication provider (such as Auth0, Azure AD, or AWS Cognito) using industry standard OAuth/OpenId Connect on iOS, Android, or on the web.
 
-When used with the [Ionic Identity Vault](/docs/enterprise/identity-vault) plugin, it provides a complete secure solution for authentication and storage of logged-in credentials.
+When used with [Ionic Identity Vault](/docs/enterprise/identity-vault), it provides a complete security solution for authentication and storage of logged-in credentials.
 
-The Auth Plugin also allows your app to support multiple authentication providers. Should you need to change providers, easily switch between them without having to develop a new solution.
+Auth Connect also allows your app to support multiple authentication providers. Should you need to change providers, easily switch between them without having to develop a new solution. [Learn more.](https://ionicframework.com/auth-connect)
+
+<native-ent-install plugin-id="auth" variables="--variable AUTH_URL_SCHEME='mycustomscheme'"></native-ent-install>
+
+Update the native project config files:
+
+```xml
+// Android - AndroidManifest.xml
+<intent-filter>
+    <data android:scheme="$AUTH_URL_SCHEME"/>
+    <action android:name="android.intent.action.VIEW"/>
+    <category android:name="android.intent.category.DEFAULT"/>
+    <category android:name="android.intent.category.BROWSABLE"/>
+</intent-filter>
+<intent-filter>
+    <action android:name="android.intent.action.SEND"/>
+    <category android:name="android.intent.category.DEFAULT"/>
+    <data android:mimeType="text/*"/>
+</intent-filter>
+
+// iOS - Info.plist (inside existing CFBundleURLTypes)
+<dict>
+    <key>CFBundleURLSchemes</key>
+    <array>
+        <string>$AUTH_URL_SCHEME</string>
+    </array>
+</dict>
+```
 
 ## Reference App
 

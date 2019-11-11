@@ -972,7 +972,7 @@ The deploy plugin uses variables to configure the way in which the plugin behave
   * `background` (Recommended) - The app will check for updates in the background and not prolong the amount of time the splash screen is shown. If an update is available it will be downloaded and installed while the user is using the older version. The next time they launch the app or the app has been in background for the duration specified my `min-background-duration` the new version will be loaded.
   * `auto` - The app will delay the launch of the app by extending how long the splash screen is shown while downloading any available updates. Once the update is available the new version will be immediately shown and the splash screen will be hidden. We generally don't recommend this mode since it can lead to the splash screen showing for a long time particularly if the user is on a poor network connection.
   * `none` - Setting the update method to `none` indicates that you will manually perform all update logic programatically and the plugin will not check for or apply updates on its own.
-* `ionic deploy add --updated-method=Production`
+* `ionic deploy add --update-method=background`
 * `ionic cordova plugin add cordova-plugin-ionic --variable UPDATE_METHOD=background`
 
 ### Max Versions
@@ -999,7 +999,7 @@ The deploy plugin uses variables to configure the way in which the plugin behave
 
 ## 5.4.3
 
-* Fix issue where types caused incompatibility with Ionic v3 (Typescript 2.x)
+* Fix issue where types caused incompatability with Ionic v3 (Typescript 2.x)
 
 ### 5.4.0
 
@@ -1064,7 +1064,7 @@ The deploy plugin uses variables to configure the way in which the plugin behave
 
 ### 5.0.6
 
-* Fixed a bug with version rebuilds that could make some initial redirects take up to 15 seconds.
+* Fixed a bug with version rebulds that could make some initial redirects take up to 15 seconds.
 
 ### 5.0.5
 

@@ -5,7 +5,9 @@ version: 2.0.2
 minor: 2.0.X
 ---
 
+The Device plugin provides access to information about the underlying device and platform that the app is running on.
 
+<native-ent-install plugin-id="device" variables=""></native-ent-install>
 
 ## Index
 
@@ -20,12 +22,6 @@ minor: 2.0.X
 <a id="device"></a>
 
 ### Device
-
-**Device**:
-
-***name***: Device
-
-***description***: Access information about the underlying device and platform.
 
 ***usage***:
 

@@ -11,6 +11,8 @@ otherVersions:
 
 This plugin presents a simple and intuitive interface for common filesytem operations such as reading/writing and listing the contents of directories.
 
+<native-ent-install plugin-id="filesystem" variables=""></native-ent-install>
+
 ## Usage
 
 The Filesystem plugin ship with a native Angular & es2015+/Typescript wrappers as well as being available on window.

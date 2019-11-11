@@ -5,7 +5,9 @@ version: 1.11.0
 minor: 1.11.X
 ---
 
+The Globalization plugin provides access to user information including locale, language, and time zone.
 
+<native-ent-install plugin-id="globalization" variables=""></native-ent-install>
 
 ## Index
 
@@ -24,14 +26,6 @@ minor: 1.11.X
 <a id="globalization"></a>
 
 ### Globalization
-
-**Globalization**:
-
-*__name__*: Globalization
-
-*__description__*: This plugin obtains information and performs operations specific to the user's locale, language, and timezone.
-
-*__deprecated__*: With the [ECMA Internationalization API](https://www.ecma-international.org/ecma-402/1.0/) now supported on iOS, Android and Windows devices, this plugin is not required any more. Migrating from this plugin to the [ECMA Internationalization API](https://www.ecma-international.org/ecma-402/1.0/) is explained in this [Cordova blog post](https://cordova.apache.org/news/2017/11/20/migrate-from-cordova-globalization-plugin.html).
 
 *__usage__*:
  ```typescript

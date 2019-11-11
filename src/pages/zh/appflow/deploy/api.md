@@ -973,7 +973,7 @@ add` 命令) 或使用 cordova 变量 (如果使用 `ionic cordova plugin add`)�
   * `background` (推荐)- 应用程序将在后台检查更新，而不延长显示启动画面的时间。 如果更新可用，用户使用旧版本时将下载和安装。 下一次启动应用程序或应用程序在后台处于指定的时间`min-background-duration` 新的版本将被载入。
   * `自动` - 该应用程序将通过延长下载任何可用更新时启动画面的时间来延迟应用程序的启动。 一旦更新可用，将会立即显示新版本，并隐藏启动画面。 我们一般不推荐这种模式，因为它会导致启动画面显示很长时间，特别是当用户的网络连接很差时。
   * `none` - 设置update method为 `none` 表示你将手动执行所有更新的逻辑，插件将不会自动检查和应用更新。
-* `ionic deploy add --updated-method=Production`
+* `ionic deploy add --update-method=background`
 * `ionic cordova plugin add cordova-plugin-ionic --variable UPDATE_METHOD=background`
 
 ### Max Versions

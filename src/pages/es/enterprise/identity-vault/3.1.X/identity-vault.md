@@ -19,6 +19,8 @@ The Vault manages secure user identity and session tokens, ensuring sensitive to
 
 Without Ionic Identity Vault, Ionic developers have to resort to combining third party Cordova plugins, often resulting in insecure setups due to the lack of correct implementation of biometric and at-rest encryption strategies.
 
+<native-ent-install plugin-id="identity-vault" variables=""></native-ent-install>
+
 **Important Note**
 
 > If you're upgrading from the `3.0.0` to `>=3.1.0` versions you no longer need to install 2 packages. The plugin now ships under the `@ionic-enterprise/identity-vault` package. Simply run the commands below to upgrade. Imports and usage should remain identical.

@@ -1,7 +1,7 @@
 ---
 title: Identity Vault
 template: enterprise-plugin
-version: 3.4.7
+version: 3.4.8
 minor: 3.4.X
 otherVersions:
   - 2.0.X
@@ -13,11 +13,23 @@ otherVersions:
 
 # Ionic Identity Vault
 
-The Ionic Identity Vault is an all-in-one frontend identity management system that combines security best practices and the latest in biometric authentication options available on iOS and Android.
+Ionic Identity Vault is an all-in-one frontend identity management system that combines security best practices and the latest in biometric authentication options available on iOS and Android.
 
 The Vault manages secure user identity and session tokens, ensuring sensitive tokens are encrypted at rest, stored only in secure locations on the device, and unlocked only with biometric identity (TouchID/FaceID).
 
-Without Ionic Identity Vault, Ionic developers have to resort to combining third party Cordova plugins, often resulting in insecure setups due to the lack of correct implementation of biometric and at-rest encryption strategies.
+Without Ionic Identity Vault, Ionic developers have to resort to combining third party Cordova plugins, often resulting in insecure setups due to the lack of correct implementation of biometric and at-rest encryption strategies. [Learn more.](https://ionicframework.com/identity-vault)
+
+<native-ent-install plugin-id="identity-vault" variables=""></native-ent-install>
+
+Update the native project config files:
+
+```xml
+// iOS - Info.plist
+<key>NSFaceIDUsageDescription</key>
+<string>Use Face ID to authenticate yourself and login</string>
+
+// Android - No additional changes needed
+```
 
 ## Reference App
 
@@ -1484,7 +1496,7 @@ The vaultId for the vault you wish to access
 
 ▸ **onConfig**(event: *[PluginConfiguration](#pluginconfiguration)*): `any`
 
-A handler that will receive events any time the vault is configuration is changed
+A handler that will recieve events any time the vault is configuration is changed
 
 **Parameters:**
 
@@ -1522,7 +1534,7 @@ Called when there is an error during vault setup
 
 ▸ **onLock**(event: *[LockEvent](#lockevent)*): `any`
 
-A handler that will receive events any time the vault is locked
+A handler that will recieve events any time the vault is locked
 
 **Parameters:**
 
@@ -1560,7 +1572,7 @@ Called when the vault is configured and available.
 
 ▸ **onUnlock**(event: *[PluginConfiguration](#pluginconfiguration)*): `any`
 
-A handler that will receive events any time the vault is unlocked
+A handler that will recieve events any time the vault is unlocked
 
 **Parameters:**
 
@@ -1802,6 +1814,12 @@ The possible values returned by [getBiometricType](#identityvault.getbiometricty
 
 ## Change Log
 
+### \[3.4.8\] (2019-11-08)
+
+### Bug Fixes
+
+* **vault-user:** use the vault user methods to set the auth mode 
+
 ### \[3.4.7\] (2019-09-09)
 
 ### Bug Fixes
@@ -1889,7 +1907,7 @@ The possible values returned by [getBiometricType](#identityvault.getbiometricty
 
 ### Features
 
-- Added [getPlugin](#identityvaultuser.getplugin) method which can be overridden in advanced use cases to provide custom implementations for PWA compatibility etc.
+- Added [getPlugin](#identityvaultuser.getplugin) method which can be overridden in advanced use cases to provide custom implementations for PWA compatability etc.
 
 ### Bug Fixes
 

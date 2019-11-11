@@ -7,13 +7,13 @@ otherVersions:
   - 1.0.X
 ---
 
-# Ionic Filesystem
+The Filesystem plugin presents a simple and intuitive interface for common file operations such as reading/writing and listing the contents of directories.
 
-This plugin presents a simple and intuitive interface for common filesytem operations such as reading/writing and listing the contents of directories.
+<native-ent-install plugin-id="filesystem" variables="" capacitor-slug="filesystem"></native-ent-install>
 
 ## Usage
 
-The Filesystem plugin ship with a native Angular & es2015+/Typescript wrappers as well as being available on window.
+The Filesystem plugin ships with a native Angular & es2015+/Typescript wrappers as well as being available on window.
 
 ```typescript
 // Angular
@@ -201,10 +201,6 @@ UTF8 encoding
 <a id="filesystem"></a>
 
 ### Filesystem
-
-**Filesystem**:
-
-***description***: Provides API to read/write to the file sytems
 
 ***usage***:
 

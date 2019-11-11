@@ -1,17 +1,17 @@
 ---
-previousText: 'Navigation'
+previousText: '导航'
 previousUrl: '/docs/react/navigation'
-nextText: 'Platform'
+nextText: '平台'
 nextUrl: '/docs/react/platform'
 ---
 
-# Config
+# 配置
 
-Ionic Config provides a way to change the properties of components globally across an app. It can set the app mode, tab button layout, animations, and more.
+Ionic 提供了一种全局配置组件属性的方法。可以设置app的模式、选项卡、按钮布局、动画等。
 
-## Usage
+## 使用方法
 
-To override the initial Ionic config for the app, import the `setupConfig` method from `@ionic/react` and call it before you render any Ionic components:
+要覆盖应用的初始Ionic 配置， 从 `@ionic/action` 导入 `setupConfig` 方法并在您渲染任何Ionic 组件之前调用它：
 
 ```typescript
 setupConfig({
@@ -24,13 +24,13 @@ setupConfig({
 </IonApp>
 ```
 
-In the above example, we are disabling the Material Design ripple effect across the app, as well as forcing the mode to be Material Design.
+在上面的例子中，我们正在禁用整个应用的Material Design的波纹效果，并设置模式成为Material Design。
 
-## Config Options
+## 配置选项
 
-Below is a list of config options that Ionic uses.
+下面是 Ionic 使用的配置选项列表。
 
-| Config                   | Type               | Description                                                                                              |
+| 配置项（Config）              | 类型（Type）           | 描述                                                                                                       |
 | ------------------------ | ------------------ | -------------------------------------------------------------------------------------------------------- |
 | `actionSheetEnter`       | `AnimationBuilder` | Provides a custom enter animation for all `ion-action-sheet`, overriding the default "animation".        |
 | `actionSheetLeave`       | `AnimationBuilder` | Provides a custom leave animation for all `ion-action-sheet`, overriding the default "animation".        |

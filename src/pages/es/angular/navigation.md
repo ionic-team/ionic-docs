@@ -11,7 +11,7 @@ contributors:
 
 Esta guía cubre cómo funciona el enrutamiento en una aplicación construida con Ionic y Angular.
 
-El enrutador de Angular (Angular Router) es una de las librerías más importantes de una aplicación Angular. Without it, apps would be single view/single context apps or would not be able to maintain their navigation state on browser reloads. With Angular Router, we can create rich apps that are linkable and have rich animations (when paired with Ionic of course). Let's look at the basics of the Angular Router and how we can configure it for Ionic apps.
+El enrutador de Angular (Angular Router) es una de las librerías más importantes de una aplicación Angular. español With Angular Router, we can create rich apps that are linkable and have rich animations (when paired with Ionic of course). Let's look at the basics of the Angular Router and how we can configure it for Ionic apps.
 
 ## A simple Route
 
