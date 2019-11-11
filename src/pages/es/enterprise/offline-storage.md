@@ -9,7 +9,9 @@ minor: 1.0.X
 
 Ionic Offline Storage is a cross-platform data storage system that works on iOS and Android, and Electron on desktop. Powered by [Couchbase Lite](https://docs.couchbase.com/couchbase-lite/2.6/index.html), a NoSQL database engine that provides simple yet powerful query, replication, and sync APIs.
 
-This solution makes it easy to add offline storage to Ionic apps that are secure (encrypted on device), highly performant, and provide advanced data querying.
+This solution makes it easy to add offline storage to Ionic apps that are secure (encrypted on device), highly performant, and provide advanced data querying. [Learn more.](https://ionicframework.com/offline-storage)
+
+<native-ent-install plugin-id="offline-storage" variables=""></native-ent-install>
 
 ## Project Requirements
 
@@ -214,52 +216,30 @@ If the property doesn’t exist in the document it will return the default value
 
 ### Batch Operations
 
-Grouping together multiple changes to the database at once.
+If you need to make multiple changes to a database at once, it’s faster to group them together.
 
-*Not yet supported.* Please [reach out](https://ionicframework.com/enterprise/contact) if you need this feature. <!--
-<h3 id="batch-operations"><a class="anchor" href="#batch-operations"></a>Batch operations</h3>
-<div class="paragraph">
-<p>If you’re making multiple changes to a database at once, it’s faster to group them together.
-The following example persists a few documents in batch. </p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="hljs-keyword">try</span> {
-    database.inBatch(<span class="hljs-keyword">new</span> Runnable() {
-        <span class="hljs-meta">@Override</span>
-        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
-            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i < <span class="hljs-number">10</span>; i++) {
-                let doc = <span class="hljs-keyword">new</span> MutableDocument();
-                doc.setValue(<span class="hljs-string">"type"</span>, <span class="hljs-string">"user"</span>);
-                doc.setValue(<span class="hljs-string">"name"</span>, String.format(<span class="hljs-string">"user %d"</span>, i));
-                doc.setBoolean(<span class="hljs-string">"admin"</span>, <span class="hljs-keyword">false</span>);
-                <span class="hljs-keyword">try</span> {
-                    database.save(doc);
-                } <span class="hljs-keyword">catch</span> (e) {
-                    console.log(e.toString());
-                }
-                console.log(String.format(<span class="hljs-string">"saved user document %s"</span>, doc.getString(<span class="hljs-string">"name"</span>)));
-            }
-        }
-    });
-} 
-<div class="paragraph">
-<p>At the <strong>local</strong> level this operation is still transactional: no other <code>Database</code> instances, including ones managed by the replicator can make changes during the execution of the block, and other instances will not see partial changes.
-But Couchbase Mobile is a distributed system, and due to the way replication works, there’s no guarantee that Sync Gateway or other devices will receive your changes all at once.</p>
-</div>
--->
+The following example persists a few documents in batch:
+
+```typescript
+await this.database.inBatch(() => {
+  for (let sdk of sdkDataToLoad) {
+    let doc = new MutableDocument()
+      .setNumber('version', sdk.version)
+      .setString('type', sdk.type)
+      .setString('company', sdk.company);
+
+    this.database.save(doc);
+ }
+});
+```
+
+At the **local** level this operation is still transactional: no other `Database` instances, including ones managed by the replicator can make changes during the execution of the block, and other instances will not see partial changes. But Couchbase Mobile is a distributed system, and due to the way replication works, there’s no guarantee that Sync Gateway or other devices will receive your changes all at once.
 
 ## Blobs
 
-Storing large data, such as images.
+Used to store large data, such as images.
 
-*Not yet supported.* Please [reach out](https://ionicframework.com/enterprise/contact) if you need this feature.
-
-<!--
-We’ve renamed "attachments" to "blobs".
-The new behavior should be clearer too: a <code>Blob</code> is now a normal object that can appear in a document as a property value.
-In other words, you just instantiate a <code>Blob</code> and set it as the value of a property, and then later you can get the property value, which will be a <code>Blob</code> object.
-The following code example adds a blob to the document under the <code>avatar</code> property.</p>
+The following code example adds a blob to the document under the `avatar` property.
 
 ```typescript
 let is = getAsset("avatar.jpg");
@@ -281,22 +261,13 @@ try {
 }
 ```
 
-The `Blob` API lets you access the contents as in-memory data (a <code>Data</code> object) or as a <code>InputStream</code>.
-It also supports an optional <code>type</code> property that by convention stores the MIME type of the contents.
+The `Blob` API lets you access the contents as in-memory data (a `Data` object) or as a `InputStream`. It also supports an optional `type` property that by convention stores the MIME type of the contents.
 
-In the example above, "image/jpeg" is the MIME type and "avatar" is the key which references that <code>Blob</code>.
-That key can be used to retrieve the <code>Blob</code> object at a later time.
+In the example above, "image/jpeg" is the MIME type and "avatar" is the key which references that `Blob`. That key can be used to retrieve the `Blob` object at a later time.
 
-When a document is synchronized, the Couchbase Lite replicator will add an <code>_attachments</code> dictionary to the document’s properties if it contains a blob.
-A random access name will be generated for each <code>Blob</code> which is different to the "avatar" key that was used in the example above.
-On the image below, the document now contains the <code>_attachments</code> dictionary when viewed in the Couchbase Server Admin Console.
+When a document is synchronized, the Couchbase Lite replicator will add an `_attachments` dictionary to the document’s properties if it contains a blob. A random access name will be generated for each `Blob` which is different to the "avatar" key that was used in the example above.
 
-A blob also has properties such as <code>"digest"</code> (a SHA-1 digest of the data), <code>"length"</code> (the length in bytes), and optionally <code>"content_type"</code> (the MIME type).
-The data is not stored in the document, but in a separate content-addressable store, indexed by the digest.
-
-This <code>Blob</code> can be retrieved on the Sync Gateway REST API at <a href="http://localhost:4984/justdoit/user.david/blob_1" class="bare">http://localhost:4984/justdoit/user.david/blob_1</a>.
-Notice that the blob identifier in the URL path is "blob_1" (not "avatar").
--->
+A blob also has properties such as `"digest"` (a SHA-1 digest of the data), `"length"` (the length in bytes), and optionally `"content_type"` (the MIME type). The data is not stored in the document, but in a separate content-addressable store, indexed by the digest.
 
 ## Query
 
@@ -871,63 +842,32 @@ The following table lists the different activity levels in the API and the meani
 
 <table class="tableblock frame-all grid-all spread">
   <colgroup> <col style="width: 50%;"> <col style="width: 50%;"> </colgroup> <tr>
-    <th class="tableblock halign-left valign-top">
-      State
-    </th>
     
-    <th class="tableblock halign-left valign-top">
-      Meaning
-    </th>
+<th class="tableblock halign-left valign-top">State</th>
+<th class="tableblock halign-left valign-top">Meaning</th>
   </tr>
   
   <tr>
-    <td class="tableblock halign-left valign-top">
-      <p class="tableblock">
-        <code>STOPPED</code>
-      </p>
-    </td>
     
-    <td class="tableblock halign-left valign-top">
-      <p class="tableblock">
-        The replication is finished or hit a fatal error.
-      </p>
-    </td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STOPPED</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The replication is finished or hit a fatal error.</p></td>
   </tr>
   
   <tr>
-    <td class="tableblock halign-left valign-top">
-      <p class="tableblock">
-        <code>OFFLINE</code>
-      </p>
-    </td>
     
-    <td class="tableblock halign-left valign-top">
-      <p class="tableblock">
-        The replicator is offline as the remote host is unreachable.
-      </p>
-    </td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>OFFLINE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The replicator is offline as the remote host is unreachable.</p></td>
   </tr>
   
   <tr>
-    <td class="tableblock halign-left valign-top">
-      <p class="tableblock">
-        <code>CONNECTING</code>
-      </p>
-    </td>
     
-    <td class="tableblock halign-left valign-top">
-      <p class="tableblock">
-        The replicator is connecting to the remote host.
-      </p>
-    </td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CONNECTING</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The replicator is connecting to the remote host.</p></td>
   </tr>
   
   <tr>
-    <td class="tableblock halign-left valign-top">
-      <p class="tableblock">
-        <code>IDLE</code>
-      </p>
-    </td>
+    
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>IDLE</code></p></td>
     
     <td class="tableblock halign-left valign-top">
       <p class="tableblock">
@@ -937,17 +877,9 @@ The following table lists the different activity levels in the API and the meani
   </tr>
   
   <tr>
-    <td class="tableblock halign-left valign-top">
-      <p class="tableblock">
-        <code>BUSY</code>
-      </p>
-    </td>
     
-    <td class="tableblock halign-left valign-top">
-      <p class="tableblock">
-        The replication is actively transferring data.
-      </p>
-    </td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BUSY</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The replication is actively transferring data.</p></td>
   </tr>
 </table>
 
@@ -967,41 +899,28 @@ replication.start();
 When a permanent error occurs (i.e., `404`: not found, `401`: unauthorized), the replicator (continuous or one-shot) will stop permanently. If the error is temporary (i.e., waiting for the network to recover), a continuous replication will retry to connect indefinitely and if the replication is one-shot it will retry for a limited number of times. The following error codes are considered temporary by the Couchbase Lite replicator and thus will trigger a connection retry.
 
 <ul>
-  <li>
-    <p>
-      <code>408</code>: Request Timeout
-    </p>
-  </li>
-  <li>
-    <p>
-      <code>429</code>: Too Many Requests
-    </p>
-  </li>
-  <li>
-    <p>
-      <code>500</code>: Internal Server Error
-    </p>
-  </li>
-  <li>
-    <p>
-      <code>502</code>: Bad Gateway
-    </p>
-  </li>
-  <li>
-    <p>
-      <code>503</code>: Service Unavailable
-    </p>
-  </li>
-  <li>
-    <p>
-      <code>504</code>: Gateway Timeout
-    </p>
-  </li>
-  <li>
-    <p>
-      <code>1001</code>: DNS resolution error
-    </p>
-  </li>
+  
+<li>
+<p><code>408</code>: Request Timeout</p>
+</li>
+<li>
+<p><code>429</code>: Too Many Requests</p>
+</li>
+<li>
+<p><code>500</code>: Internal Server Error</p>
+</li>
+<li>
+<p><code>502</code>: Bad Gateway</p>
+</li>
+<li>
+<p><code>503</code>: Service Unavailable</p>
+</li>
+<li>
+<p><code>504</code>: Gateway Timeout</p>
+</li>
+<li>
+<p><code>1001</code>: DNS resolution error</p>
+</li>
 </ul>
 
 ### Custom Headers

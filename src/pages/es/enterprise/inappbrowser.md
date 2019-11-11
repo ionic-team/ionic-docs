@@ -1,11 +1,13 @@
 ---
-title: Inappbrowser
+title: InAppBrowser
 template: enterprise-plugin
 version: 3.2.1
 minor: 3.2.X
 ---
 
+The InAppBrowser plugin provides the ability to launch a web browser within the app.
 
+<native-ent-install plugin-id="inappbrowser" variables=""></native-ent-install>
 
 ## Index
 
@@ -29,12 +31,6 @@ minor: 3.2.X
 <a id="inappbrowser"></a>
 
 ### InAppBrowser
-
-**InAppBrowser**:
-
-***name***: In App Browser
-
-***description***: Launches in app Browser
 
 ***usage***:
 

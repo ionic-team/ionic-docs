@@ -23,7 +23,7 @@ Ionic adopta los mísmos eventos de ciclo de vida proveídos por Angular. Los do
 | `ngOnDestroy`     | Se ejecuta justo antes de que Angular destruya la vista. Es útil para la limpieza, como darse de baja de los observables.                                         |
 
 
-Para más infromación sobre los eventos de cliclo de vida en angular, visita esto [documentación de ciclos de vida](https://angular.io/guide/lifecycle-hooks).
+Para más información sobre los eventos de cliclo de vida en angular, visita esto [documentación de ciclos de vida](https://angular.io/guide/lifecycle-hooks).
 
 ## Eventos de Página en Ionic
 
@@ -89,9 +89,9 @@ Para más información acerca de cómo utilizar los route guards, puedes visitar
 
 A continuación se pueden ver algunos consejos sobre los casos de uso para cada uno de los eventos del ciclo de vida.
 
-- `ngOnInit` - Inicializa el componente y carga los datos desde servicios que no necesitan ser actualizados en cada visita posterior al componente.
+- `ngOnInit` - Inicializar el componente y carga los datos desde servicios que no necesitan ser actualizados en cada visita posterior al componente.
 - `ionViewWillEnter` - Desde `ionViewWillEnter` se llama cada vez que se navega hacia la View (independientemente de que haya sido inicializada o no), es un buen método cargar datos de los servicios. Sin embargo, si tus datos son cargados durante la animación, puede generar distintas manipulaciones en el DOM, lo que puede causar algunas animaciones se vean lentas o trabadas.
 - `ionViewDidEnter` - Si ves problemas de performance usando `ionViewWillEnter` al cargar datos, puedes hacer tus llamadas de datos en `ionViewDidEnter` en su lugar. Este evento no se disparará hasta que la página sea visible por el usuario, sin embargo, es posible que quieras usar un indicador de loading o componente de tipo skeleton, para que el contenido no sea visible por un instante de forma no natural después de que la transición esté completa.
-- `ionViewWillLeave` - Se puede utilizar para limpiar el contenido del component, como así también para desusbscribirse a distintos eventos y/o observables. Puesto que `ngOnDestroy` podría no dispararse cuando navegues desde la página actual, es posible realizar un cleanup aquí si es que no quieres que esté activo mientras la pantalla no está en vista.
+- `ionViewWillLeave` - Se puede utilizar para limpiar el contenido del componente, como así también para desusbscribirse a distintos eventos y/o observables. Puesto que `ngOnDestroy` podría no dispararse cuando navegues desde la página actual, es posible realizar un cleanup aquí si es que no quieres que esté activo mientras la pantalla no está en vista.
 - `ionViewDidLeave` - Cuando este evento se ejecute, debes saber que la nueva página ha realizado su transición completamente, por lo que cualquier lógica que no pueda hacer normalmente cuando la vista sea visible puede ir en este lugar.
 - `ngOnDestroy` - La lógica de clean up de tus páginas, de las cuales no deseas hacer un clean up `ionViewWillLeave`.

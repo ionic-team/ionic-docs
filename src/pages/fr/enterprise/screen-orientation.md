@@ -5,7 +5,9 @@ version: 3.0.1
 minor: 3.0.X
 ---
 
+The Screen Orientation plugin provides the ability to set or lock the screen orientation (landscape or portrait), as well as detect when the orientation has changed.
 
+<native-ent-install plugin-id="screen-orientation" variables=""></native-ent-install>
 
 ## Index
 
@@ -20,12 +22,6 @@ minor: 3.0.X
 <a id="screenorientation"></a>
 
 ### ScreenOrientation
-
-**ScreenOrientation**:
-
-***name***: Screen Orientation
-
-***description***: Cordova plugin to set/lock the screen orientation in a common way.
 
 ***usage***:
 

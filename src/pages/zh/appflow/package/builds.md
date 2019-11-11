@@ -5,24 +5,24 @@ nextText: 'Package Build Types'
 nextUrl: '/docs/appflow/package/build-types'
 ---
 
-# Package Builds
+# 构建原生工具包
 
-## Overview
+## 概览
 
-A package build is a native build of your application that is platform specific and can run on a physical device. Package builds produce `apk` files for Android and `ipa` files for iOS. Currently package builds are only available to customers on one of the paid plans and must manually be triggered from the dashboard. The basic steps of the package build are as follows:
+构建原生工具包可以构建为特定平台原生工具包. 软件包构建为 Android 生成 `apk` 文件和 `ipa` iOS 文件。 当前软件包构建只能在付费计划中为客户提供，且只能在面板手动触发。 构建的基本步骤如下：
 
-* `npm install` will run to install any dependencies you have.
-* `npm run build` will run if a `build` script is detected in the `scripts` section of your `package.json` in order to build the web assets for your application.
-* `cordova platform add [ios|android]` will run with the platform you have configured `NOTE:` *DO NOT* commit your `platforms` directory as this will cause your build to fail.
-* `cordova build [ios|android]` will run with the platform and options you have configured and generate the `ipa` or `apk` file
-* The generated `ipa` or `apk` will be stored and available for you to download from the dashboard
-* You can find the history and status of your package builds as well as download successful builds in the side menu under `Builds` in the `Package` tab.
+* `npm install` 安装依赖包。
+* `npm run build` 如果 `build` 脚本在您的 `package.json` `scripts`中检测到，以便为您的应用程序构建web资源。
+* `cordova platform add [ios|android]` 添加你要的平台 `注意：` *不要* 提交您的 `platforms` 目录，因为这将导致您的构建失败。
+* `cordova build[ios|android]` 编译并生成您配置的平台，并生成 `ipa` 或 `apk` 文件
+* 生成的 `ipa` 或 `apk` 将被存储并可供您从仪表盘下载
+* 您可以在侧菜单中找到你的部署版本的历史和状态，在`Builds`的 `Deploy` 选项中。
 
-## Performing a Build
+## 开始构建
 
-Click on the **Code** tab of your App, you should be at your **Builds** list. Click on the **Package** button for the Build you'd like to get a Native binary for.
+点击您应用中 **Code** 标签，在 **Builds** 列表中. 点击 **Package** 按钮,编译并获你想要的本地二进制包 。
 
-In the Package GUI you'll be able to choose the type of Build you want to perform, and the Cert you'd like to use. You'll then be taken to the History tab while the build completes. After the build completes, click Download and you'll get your native binary!
+在Package界面中,你可以选择你要构建的类型进行构建以及您要使用的证书。 You'll then be taken to the History tab while the build completes. After the build completes, click Download and you'll get your native binary!
 
 ## Concurrency limits
 

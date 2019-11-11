@@ -1,11 +1,13 @@
 ---
-title: AppVersion
+title: App Version
 template: enterprise-plugin
 version: 0.1.9
 minor: 0.1.X
 ---
 
+The App Version plugin provides access to your app's metadata, including app name, package name, and version number.
 
+<native-ent-install plugin-id="app-version" variables=""></native-ent-install>
 
 ## Index
 
@@ -20,12 +22,6 @@ minor: 0.1.X
 <a id="appversion"></a>
 
 ### AppVersion
-
-**AppVersion**:
-
-***name***: App Version
-
-***description***: Reads the version of your app from the target build settings.
 
 ***usage***:
 

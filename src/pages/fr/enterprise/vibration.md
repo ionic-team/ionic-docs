@@ -5,7 +5,9 @@ version: 3.1.0
 minor: 3.1.X
 ---
 
+The Vibration plugin provides the ability to vibrate the device for a given amount of time.
 
+<native-ent-install plugin-id="vibration" variables=""></native-ent-install>
 
 ## Index
 
@@ -20,12 +22,6 @@ minor: 3.1.X
 <a id="vibration"></a>
 
 ### Vibration
-
-**Vibration**:
-
-***name***: Vibration
-
-***description***: Vibrates the device
 
 ***usage***:
 
@@ -43,11 +39,11 @@ this.vibration.vibrate(1000);
 // Vibrate 2 seconds
 // Pause for 1 second
 // Vibrate for 2 seconds
-// Patterns work on Android and Windows only
+// Patterns work on Android only
 this.vibration.vibrate([2000,1000,2000]);
 
 // Stop any current vibrations immediately
-// Works on Android and Windows only
+// Works on Android only
 this.vibration.vibrate(0);
 ```
 

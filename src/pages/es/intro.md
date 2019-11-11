@@ -11,7 +11,7 @@ Ionic Framework es un conjunto de herramientas de interfaz de usuario de código
 
 Ionic Framework se enfoca en la experiencia frontend del usuario, o la interacción de la interfaz de usuario de una aplicación (controles, interacciones, gestos, animaciones). Es fácil de aprender, y se integra bien con otras bibliotecas o frameworks, tales como Angular, o puede ser usado sin un framework frontend utilizando un simple script incluido.
 
-Currently, Ionic Framework has official integrations with <a href="https://angular.io/" target="_blank">Angular</a> and <a href="https://reactjs.org" target="_blank">React</a>, and support for **Vue** is in development. Si quieres aprender más sobre Ionic Framework antes de sumergirte en él, hemos <a href="https://youtu.be/p3AN3igqiRc" target="_blank">creado un vídeo</a> para que des un paseo por los conceptos básicos.
+Currently, Ionic Framework has official integrations with [Angular](/docs/angular/overview) and [React](/docs/react), and support for [Vue](/docs/vue/overview) is in development. Si quieres aprender más sobre Ionic Framework antes de sumergirte en él, hemos <a href="https://youtu.be/p3AN3igqiRc" target="_blank">creado un vídeo</a> para que des un paseo por los conceptos básicos.
 
 ## Objetivos
 
