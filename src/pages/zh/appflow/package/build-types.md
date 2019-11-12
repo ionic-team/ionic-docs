@@ -22,10 +22,10 @@ Android 构建Debug类型不需要签名证书或安全配置文件，可以直�
 
 ### 开发
 
-开发型号代码签名允许您的应用通过Xcode 在设备上运行。 Development type iOS builds require [generating signing credentials and a provisioning profile](/docs/appflow/package/credentials#android-credentials) using:
+开发型号代码签名允许您的应用通过Xcode 在设备上运行。 开发类型 iOS 构建需要 [生成签名凭据和预配配置](/docs/appflow/package/credentials#android-credentials)：
 
-* iOS development provisioning profile
-* iOS development signing certificate and should be stored in a `Development` type [security profile](/docs/appflow/package/adding-credentials#uploading-credentials)
+* iOS 开发预配配置文件
+* iOS 开发签名证书 并应存储在一个 `开发` 类型 [安全配置](/docs/appflow/package/adding-credentials#uploading-credentials)
 
 ### 特別
 
