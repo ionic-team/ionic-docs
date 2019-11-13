@@ -60,6 +60,8 @@
   "menu-angular-your-first-app": "Build Your First App",
   "menu-angular-lifecycle": "Lifecycle",
   "menu-angular-navigation": "Navigation/Routing",
+  "menu-angular-config": "Config",
+  "menu-angular-platform": "Platform",
   "menu-angular-performance": "Performance",
 
   "menu-react": "React",
@@ -75,10 +77,6 @@
   "menu-vue-your-first-app": "Build Your First App",
   "menu-vue-lifecycle": "Lifecycle",
   "menu-vue-navigation": "Navigation/Routing",
-
-  "menu-utilities": "Utilities",
-  "menu-utilities-config": "Config",
-  "menu-utilities-platform": "Platform",
 
   "menu-publishing": "Publishing",
   "menu-publishing-progressive-web-app": "Progressive Web App",
