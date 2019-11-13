@@ -64,7 +64,7 @@ This will set the default text for `ion-back-button` to `Go Back`. However, if y
 <ion-back-button [text]="getBackButtonText()"></ion-back-button>
 ```
 
-In this example we have used our `ion-back-button` in such a way that it can dynamically update the text if there were to be a change that warranted it, such as language or locale change. Your `getBackButtonText` method would be responsible for returning the correct text.
+In this example we have used our `ion-back-button` in such a way that the text can be dynamically updated if there were to be a change that warranted it, such as a language or locale change. The `getBackButtonText` method would be responsible for returning the correct text.
 
 
 ## Config Options
