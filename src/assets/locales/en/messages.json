@@ -61,6 +61,7 @@
   "menu-angular-lifecycle": "Lifecycle",
   "menu-angular-navigation": "Navigation/Routing",
   "menu-angular-performance": "Performance",
+  "menu-angular-pwa": "Progressive Web Apps",
 
   "menu-react": "React",
   "menu-react-overview": "Overview",
@@ -69,6 +70,7 @@
   "menu-react-navigation": "Navigation/Routing",
   "menu-react-config": "Config",
   "menu-react-platform": "Platform Utils",
+  "menu-react-pwa": "Progressive Web Apps",
 
   "menu-vue": "Vue (beta)",
   "menu-vue-overview": "Overview",
