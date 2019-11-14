@@ -11,11 +11,11 @@ contributors:
 
 Esta guía cubre cómo funciona el enrutamiento en una aplicación construida con Ionic y Angular.
 
-El enrutador de Angular (Angular Router) es una de las librerías más importantes de una aplicación Angular. español With Angular Router, we can create rich apps that are linkable and have rich animations (when paired with Ionic of course). Let's look at the basics of the Angular Router and how we can configure it for Ionic apps.
+El enrutador de Angular (Angular Router) es una de las librerías más importantes de una aplicación Angular. español Con Angular Router, podemos crear aplicaciones ricas que son enlazables y tienen animaciones ricas (cuando se emparejan con Ionic por supuesto). Echemos un vistazo a los conceptos básicos de Angular Router y cómo podemos configurarlo para aplicaciones de Ionic.
 
-## A simple Route
+## Una ruta simple
 
-For most apps, having some sort of route is often required. The most basic configuration looks a bit like this:
+Para la mayoría de las aplicaciones, a menudo se requiere tener algún tipo de ruta. La configuración más básica parece un poco así:
 
 ```typescript
 <br />import { RouterModule } from '@angular/router';
@@ -31,11 +31,11 @@ For most apps, having some sort of route is often required. The most basic confi
 })
 ```
 
-The simplest breakdown for what we have here is a path/component lookup. When our app loads, the router kicks things off by reading the URL the user is trying to load. In our sample, our route looks for `''`, which is essentially our index route. So for this, we load the `LoginComponent`. Fairly straight forward. This pattern of matching paths with a component continues for every entry we have in the router config. But what if we wanted to load a different path on our initial load?
+El desglose más simple de lo que tenemos aquí es una búsqueda de ruta/componente. Cuando nuestra aplicación se carga, el router lanza las cosas leyendo la URL que el usuario está intentando cargar. En nuestra muestra, nuestra ruta busca `''`, que es esencialmente nuestra ruta de índice. Así que para esto, cargamos el `LoginComponent`. Justo hacia delante. Este patrón de rutas coincidentes con un componente continúa por cada entrada que tenemos en la configuración del router. Pero ¿qué pasa si queríamos cargar un camino diferente en nuestra carga inicial?
 
-## Handling Redirects
+## Manejo de redirecciones
 
-For this we can use router redirects. Redirects work the same way that a typical route object does, but just includes a few different keys.
+Para esto podemos usar redirecciones de router. Redirecciones funcionan de la misma manera que un objeto de ruta típico, pero sólo incluye algunas teclas diferentes.
 
 ```typescript
 [
@@ -45,9 +45,9 @@ For this we can use router redirects. Redirects work the same way that a typical
 ];
 ```
 
-In our redirect, we look for the index path of our app. Then if we load that, we redirect to the `login` route. The last key of `pathMatch` is required to tell the router how it should look up the path.
+En nuestra redirección, buscamos la ruta de índice de nuestra aplicación. Entonces si cargamos eso, redirigiremos a la ruta `login`. Se necesita la última clave de `pathMatch` para decirle al router cómo debería buscar la ruta.
 
-Since we use `full`, we're telling the router that we should compare the full path, even if ends up being something like `/route1/route2/route3`. Meaning that if we have:
+Puesto que utilizamos `full`, le decimos al router que deberíamos comparar la ruta completa, incluso si termina siendo algo como `/route1/route2/route3`. Significando que si tenemos:
 
 ```typescript
 { path: '/route1/route2/route3', redirectTo: 'login', pathMatch: 'full' },
