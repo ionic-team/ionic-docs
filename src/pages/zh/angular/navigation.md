@@ -1,8 +1,8 @@
 ---
 previousText: '生命周期'
 previousUrl: '/docs/angular/lifecycle'
-nextText: '性能'
-nextUrl: '/docs/angular/performance'
+nextText: 'Config'
+nextUrl: '/docs/angular/config'
 contributors:
   - mhartington
 ---
