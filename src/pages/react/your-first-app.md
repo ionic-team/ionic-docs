@@ -359,7 +359,7 @@ ionic cap add android
 
 We use the standard native IDEs (Xcode and Android Studio) to open, build, and run the iOS and Android projects:
 
-```
+```shell
 ionic cap open ios
 ionic cap open android
 ```
