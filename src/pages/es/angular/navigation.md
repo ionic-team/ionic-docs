@@ -54,20 +54,20 @@ Puesto que utilizamos `full`, le decimos al router que deberíamos comparar la r
 { path: 'login', component: LoginComponent },
 ```
 
-And load `/route1/route2/route3` we'll redirect. But if we loaded `/route1/route2/route4`, we won't redirect, as the paths don't match fully.
+Y cargar `/route1/route2/route3` redirigiremos. Pero si hemos cargado `/route1/route2/route4`, no redireccionaremos, ya que las rutas no coinciden completamente.
 
-Alternatively, if we used:
+Alternativamente, si utilizamos:
 
 ```typescript
 { path: '/route1/route2', redirectTo: 'login', pathMatch: 'prefix' },
 { path: 'login', component: LoginComponent },
 ```
 
-Then load both `/route1/route2/route3` and `/route1/route2/route4`, we'll be redirected for both routes. This is because `pathMatch: 'prefix'` will match only part of the path.
+Luego cargar `/route1/route2/route3` y `/route1/route2/route4`, seremos redirigidos por ambas rutas. Esto es porque `pathMatch: 'prefix'` sólo coincidirá con una parte de la ruta.
 
-## Navigating to different routes
+## Navegando a diferentes rutas
 
-Talking about routes is good and all, but how does one actually navigate to said routes? For this, we can use the `routerLink` directive. Let's go back and take our simple router setup from earlier:
+Hablar de rutas es bueno y todo, pero ¿cómo se navega hasta esas rutas? Para esto, podemos usar la directiva `routerLink`. Volvamos atrás y tomemos nuestra sencilla configuración del router desde antes:
 
 ```ts
 RouterModule.forRoot([
@@ -76,7 +76,7 @@ RouterModule.forRoot([
 ]);
 ```
 
-Now from the `LoginComponent`, we can use the following HTML to navigate to the detail route.
+Ahora desde el `LoginComponent`, podemos utilizar el siguiente HTML para navegar a la ruta detallada.
 
 ```html
 <ion-header>
@@ -90,9 +90,9 @@ Now from the `LoginComponent`, we can use the following HTML to navigate to the 
 </ion-content>
 ```
 
-The important part here is the `ion-button` and `routerLink` directive. RouterLink works on a similar idea as typical `href`s, but instead of building out the URL as a string, it can be built as an array, which can provide more complicated paths.
+La parte importante aquí es la directiva `ion-button` y `routerLink`. RouterLink funciona con una idea similar a la típica `href`s, pero en lugar de construir la URL como una cadena, se puede construir como una matriz, que puede proporcionar rutas más complicadas.
 
-We also can programmatically navigate in our app by using the router API.
+También podemos navegar programáticamente en nuestra aplicación usando la API del router.
 
 ```typescript
 import { Component } from '@angular/core';
@@ -111,13 +111,13 @@ export class LoginComponent {
 }
 ```
 
-Both options provide the same navigation mechanism, just fitting different use cases.
+Ambas opciones proporcionan el mismo mecanismo de navegación, sólo ajustando diferentes casos de uso.
 
-> A note on navigation with relative URLs: Currently, to support multiple navigation stacks, relative URLs are something not supported
+> Una nota en la navegación con URLs relativas: Actualmente, para soportar múltiples pilas de navegación, las URLs relativas son algo no soportado
 
-## Lazy loading routes
+## Rutas de carga lentas
 
-Now the current way our routes are setup makes it so they are included in the same chunk as the root app.module, which is not ideal. Instead, the router has a setup that allows the components to be isolated to their own chunks.
+Ahora la forma actual de configurar nuestras rutas lo hace así que se incluyen en el mismo chunk que la aplicación raíz.module, que no es ideal. En cambio, el router tiene una configuración que permite que los componentes se aislan a sus propias chunks.
 
 ```typescript
 <br />import { RouterModule } from '@angular/router';
@@ -134,7 +134,7 @@ Now the current way our routes are setup makes it so they are included in the sa
 })
 ```
 
-While similar, the `loadChildren` property is a way to reference a module by string instead of a component directly. In order to do this though, we need to create a module for each of the components.
+Si bien es similar, la propiedad `loadChildren` es una forma de hacer referencia a un módulo por string en lugar de a un componente directamente. Sin embargo, para ello necesitamos crear un módulo para cada uno de los componentes.
 
 ```typescript
 ...
