@@ -33,7 +33,7 @@
     "throng": "^4.0.0"
   },
   "devDependencies": {
-    "@stencil/core": "^1.4.0",
+    "@stencil/core": "^1.8.0",
     "@types/prismjs": "^1.9.1",
     "chokidar": "^3.0.2",
     "dotenv": "^8.1.0",
