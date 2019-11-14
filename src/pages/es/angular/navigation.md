@@ -1,8 +1,8 @@
 ---
 previousText: 'Lifecycle'
 previousUrl: '/docs/angular/lifecycle'
-nextText: 'Performance'
-nextUrl: '/docs/angular/performance'
+nextText: 'Config'
+nextUrl: '/docs/angular/config'
 contributors:
   - mhartington
 ---
