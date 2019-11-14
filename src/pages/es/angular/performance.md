@@ -1,6 +1,6 @@
 ---
-previousText: 'Navigation'
-previousUrl: '/docs/angular/navigation'
+previousText: 'Platform'
+previousUrl: '/docs/angular/platform'
 ---
 
 # Rendimiento angular
