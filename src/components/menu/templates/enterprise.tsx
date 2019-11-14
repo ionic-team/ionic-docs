@@ -49,7 +49,8 @@ const items = {
   },
   'menu-enterprise-integrated-services': {
     'Apple Payment Pass': '/docs/enterprise/apple-payment-pass',
-    'AWS Amplify': 'https://ionicframework.com/integrations/aws-amplify',
+    'AWS Amplify': '/docs/enterprise/aws-amplify',
+    'Couchbase Lite': '/docs/enterprise/couchbase-lite',
     'mParticle': '/docs/enterprise/mparticle'
   }
 };
