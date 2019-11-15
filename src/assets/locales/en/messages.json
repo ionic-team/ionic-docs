@@ -205,6 +205,7 @@
   "menu-appflow-cookbook-intro": "Overview",
   "menu-appflow-cookbook-private_git": "Using Private GIT repositories",
   "menu-appflow-cookbook-private_npm_modules": "Using Private NPM modules",
+  "menu-appflow-cookbook-switch_node_version": "Use different Node in builds",
 
   "menu-appflow-devapp": "DevApp: Local Development",
 
