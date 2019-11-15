@@ -46,7 +46,7 @@
     "node-fetch": "^2.3.0",
     "ora": "^3.1.0",
     "prismjs": "~1.16.0",
-    "ts-node": "^8.3.0",
+    "ts-node": "^8.5.2",
     "tslint": "^5.18.0",
     "tslint-ionic-rules": "0.0.21"
   },
