@@ -1,7 +1,7 @@
 ---
 title: Contacts
 template: enterprise-plugin
-version: 1.0.2
+version: 1.0.4
 minor: 1.0.X
 ---
 
@@ -58,6 +58,8 @@ document.addEventListener('deviceready', () => {
   );
 });
 ```
+
+# Contacts
 
 ## Index
 
@@ -972,6 +974,18 @@ This function picks contact from phone using contact picker UI
 * * *
 
 # Changelog
+
+### \[1.0.4\] (2019-11-08)
+
+### Bug Fixes
+
+* **ios:** make pickContact prompt for permission if not granted 
+
+### \[1.0.3\] (2019-11-04)
+
+### Bug Fixes
+
+* make plugin don't break web context 
 
 ### \[1.0.2\] (2019-10-02)
 
