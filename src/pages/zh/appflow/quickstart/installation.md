@@ -1,8 +1,8 @@
 ---
-title: 'Install the Appflow SDK'
-previousText: 'Connect your Repo'
+title: '安装 Appflow SDK'
+previousText: '连接你的仓库'
 previousUrl: '/docs/appflow/quickstart/connect'
-nextText: 'Push a Commit'
+nextText: '推送提交'
 nextUrl: '/docs/appflow/quickstart/push'
 ---
 
