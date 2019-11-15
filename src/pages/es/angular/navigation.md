@@ -1,7 +1,7 @@
 ---
 previousText: 'Lifecycle'
 previousUrl: '/docs/angular/lifecycle'
-nextText: 'Config'
+nextText: 'Configuración'
 nextUrl: '/docs/angular/config'
 contributors:
   - mhartington
@@ -21,8 +21,8 @@ Para la mayoría de las aplicaciones, a menudo se requiere tener algún tipo de 
 <br />import { RouterModule } from '@angular/router';
 
 @NgModule({
-  imports: [
-  ...
+  importaciones: [
+...
   RouterModule.forRoot([
     { path: '', component: LoginComponent },
     { path: 'detail', component: DetailComponent },
@@ -50,7 +50,7 @@ En nuestra redirección, buscamos la ruta de índice de nuestra aplicación. Ent
 Puesto que utilizamos `full`, le decimos al router que deberíamos comparar la ruta completa, incluso si termina siendo algo como `/route1/route2/route3`. Significando que si tenemos:
 
 ```typescript
-{ path: '/route1/route2/route3', redirectTo: 'login', pathMatch: 'full' },
+{ ruta: '/route1/route2/route3', redirectTo: 'login', pathMatch: 'full' },
 { path: 'login', component: LoginComponent },
 ```
 
