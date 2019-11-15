@@ -368,8 +368,9 @@ Additional details can be found [here](https://capacitor.ionicframework.com/docs
 
 Next, check out [all the APIs](https://capacitor.ionicframework.com/docs/apis) that are available. There’s some great stuff, including the [Camera API](https://capacitor.ionicframework.com/docs/apis/camera). We can implement photo capture functionality in just a few lines of code:
 
-```tsx
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton } from '@ionic/react';
+```typescript
+import { IonContent, IonHeader, IonPage, IonTitle, 
+         IonToolbar, IonButton } from '@ionic/react';
 import React, { useState } from 'react';
 import { Plugins, CameraResultType } from '@capacitor/core';
 
