@@ -1,16 +1,16 @@
 ---
 title: '安装 Appflow SDK'
-previousText: '连接你的仓库'
+previousText: '连接您的代码仓库'
 previousUrl: '/docs/appflow/quickstart/connect'
 nextText: '推送提交'
 nextUrl: '/docs/appflow/quickstart/push'
 ---
 
-In order to take advantage of some of the best Appflow features, like deploying live updates to your app and bypassing the app stores, you'll need to install the Appflow SDK (also known as the Ionic Deploy plugin). The Appflow SDK comes with Ionic Appflow's Deploy feature for detecting and syncing your app with updates that you've pushed to channels.
+为了利用一些最好的 Appflow 功能，如部署您的 应用程序的实时更新和绕过应用商店， 您需要安装 Appflow SDK (又称 Ionic Deploy 插件)。 Appflow SDK 带有Ionic Appflow 的部署功能，用于检测和同步 您的应用程序与您推送到频道的更新。
 
-## Installing the Appflow SDK from the Dashboard (Recommended)
+## 从仪表盘板安装 Appflow SDK (推荐)
 
-To install the Appflow SDK plugin from the Dashboard, follow the instructions provided by clicking "Install Instructions" on the Channels list in the Appflow Dashboard.
+点击应用流程控制面板中的频道列表中的 "安装说明"，以从仪表板安装 Appflow SDK 插件。
 
 ![Install Instructions](/docs/assets/img/appflow/ss-appflow-sdk-install.png)
 
