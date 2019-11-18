@@ -86,7 +86,7 @@ async function getFileContributors(filename) {
         GITHUB_COMMITS[commit.hash] ? GITHUB_COMMITS[commit.hash].id : null
       // filter out null users
       ).filter(user => !!user))),
-      lastUpdated: moment(status.latest.date, 'YYYY-MM-DD HH-mm-ss ZZ').toISOString()
+      lastUpdated: status.latest ? moment(status.latest.date, 'YYYY-MM-DD HH-mm-ss ZZ').toISOString() : ''
     })
   );
 }
