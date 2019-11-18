@@ -55,7 +55,8 @@ const items = {
     'menu-angular-navigation': '/docs/angular/navigation',
     'menu-angular-config': '/docs/angular/config',
     'menu-angular-platform': '/docs/angular/platform',
-    'menu-angular-performance': '/docs/angular/performance'
+    'menu-angular-performance': '/docs/angular/performance',
+    'menu-angular-pwa': '/docs/angular/pwa'
   },
   'menu-react': {
     'menu-react-overview': '/docs/react',
@@ -63,7 +64,9 @@ const items = {
     'menu-react-lifecycle': '/docs/react/lifecycle',
     'menu-react-navigation': '/docs/react/navigation',
     'menu-react-config': '/docs/react/config',
-    'menu-react-platform': '/docs/react/platform'
+    'menu-react-platform': '/docs/react/platform',
+    'menu-react-pwa': '/docs/react/pwa'
+
   },
   'menu-vue': {
     'menu-vue-overview': '/docs/vue/overview',
