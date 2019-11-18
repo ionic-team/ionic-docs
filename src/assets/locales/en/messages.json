@@ -60,6 +60,8 @@
   "menu-angular-your-first-app": "Build Your First App",
   "menu-angular-lifecycle": "Lifecycle",
   "menu-angular-navigation": "Navigation/Routing",
+  "menu-angular-config": "Config",
+  "menu-angular-platform": "Platform",
   "menu-angular-performance": "Performance",
   "menu-angular-pwa": "Progressive Web Apps",
 
@@ -77,10 +79,6 @@
   "menu-vue-your-first-app": "Build Your First App",
   "menu-vue-lifecycle": "Lifecycle",
   "menu-vue-navigation": "Navigation/Routing",
-
-  "menu-utilities": "Utilities",
-  "menu-utilities-config": "Config",
-  "menu-utilities-platform": "Platform",
 
   "menu-publishing": "Publishing",
   "menu-publishing-progressive-web-app": "Progressive Web App",
@@ -209,6 +207,7 @@
   "menu-appflow-cookbook-intro": "Overview",
   "menu-appflow-cookbook-private_git": "Using Private GIT repositories",
   "menu-appflow-cookbook-private_npm_modules": "Using Private NPM modules",
+  "menu-appflow-cookbook-switch_node_version": "Use different Node in builds",
 
   "menu-appflow-devapp": "DevApp: Local Development",
 

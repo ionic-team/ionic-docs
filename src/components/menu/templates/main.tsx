@@ -53,6 +53,8 @@ const items = {
     'menu-angular-your-first-app': '/docs/angular/your-first-app',
     'menu-angular-lifecycle': '/docs/angular/lifecycle',
     'menu-angular-navigation': '/docs/angular/navigation',
+    'menu-angular-config': '/docs/angular/config',
+    'menu-angular-platform': '/docs/angular/platform',
     'menu-angular-performance': '/docs/angular/performance',
     'menu-angular-pwa': '/docs/angular/pwa'
   },
@@ -71,10 +73,6 @@ const items = {
     'menu-vue-your-first-app': '/docs/vue/your-first-app',
     'menu-vue-lifecycle': '/docs/vue/lifecycle',
     'menu-vue-navigation': '/docs/vue/navigation'
-  },
-  'menu-utilities': {
-    'menu-utilities-config': '/docs/utilities/config',
-    'menu-utilities-platform': '/docs/utilities/platform'
   },
   'menu-publishing': {
     'menu-publishing-progressive-web-app': '/docs/publishing/progressive-web-app',

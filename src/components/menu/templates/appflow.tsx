@@ -48,7 +48,8 @@ const items = {
   'menu-appflow-cookbook': {
     'menu-appflow-cookbook-intro': '/docs/appflow/cookbook/intro',
     'menu-appflow-cookbook-private_git': '/docs/appflow/cookbook/private_git',
-    'menu-appflow-cookbook-private_npm_modules': '/docs/appflow/cookbook/private_npm_modules'
+    'menu-appflow-cookbook-private_npm_modules': '/docs/appflow/cookbook/private_npm_modules',
+    'menu-appflow-cookbook-switch_node_version': '/docs/appflow/cookbook/switch_node_version'
   },
   'menu-appflow-devapp': '/docs/appflow/devapp'
 };
