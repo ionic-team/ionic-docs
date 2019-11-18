@@ -9,7 +9,7 @@ module.exports = {
 
   hydrateOptions() {
     const hydrate = {
-      timeout: 150000 // 10x increase
+      timeout: 15000
     }
     return hydrate;
   }
