@@ -5,19 +5,19 @@ version: 5.1.5
 minor: 5.1.X
 ---
 
-The Calendar plugin allows you to add events to the system calendar of the mobile device.
+O plugin Calendário permite que você adicione eventos ao calendário do dispositivo móvel.
 
 <native-ent-install plugin-id="calendar" variables=""></native-ent-install>
 
-## Index
+## Índice
 
 ### Classes
 
-* [Calendar](#calendar)
+* [Calendário](#calendar)
 
 ### Interfaces
 
-* [CalendarOptions](#calendaroptions)
+* [Opções de calendário](#calendaroptions)
 * [NameOrOptions](#nameoroptions)
 
 * * *
@@ -32,9 +32,9 @@ The Calendar plugin allows you to add events to the system calendar of the mobil
 
 ***name***: Calendar
 
-***description***: This plugin allows you to add events to the Calendar of the mobile device.
+***Descrição***: Este plugin permite adicionar eventos ao calendário do dispositivo móvel.
 
-***usage***:
+***uso***:
 
 ```typescript
 import { Calendar } from '@ionic-enterprise/calendar/ngx';
@@ -57,9 +57,9 @@ this.calendar.createCalendar('MyCalendar').then(
 
 Create a calendar. (iOS only)
 
-**Parameters:**
+**Parâmetros:**
 
-| Name          | Type        | Description                                                                                                                                                                                                        |
+| Nome          | Tipo        | Descrição                                                                                                                                                                                                          |
 | ------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | nameOrOptions | `string` \ | [NameOrOptions](#nameoroptions) | either a string name or a options object. If string, provide the calendar name. IF an object, provide a calendar name as a string and a calendar color in hex format as a string |
 
