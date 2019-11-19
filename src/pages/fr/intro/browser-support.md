@@ -1,6 +1,6 @@
 ---
-previousText: 'Créer votre première application mobile'
-previousUrl: '/docs/intro/first-app'
+previousText: 'What Are Progressive Web Apps'
+previousUrl: '/docs/intro/what-are-progressive-web-apps'
 nextText: 'Versioning'
 nextUrl: '/docs/intro/versioning'
 ---
