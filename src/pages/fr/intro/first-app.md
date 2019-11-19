@@ -1,8 +1,8 @@
 ---
 previousText: 'Concepts'
 previousUrl: '/docs/intro/concepts'
-nextText: 'Navigateurs supportés'
-nextUrl: '/docs/intro/browser-support'
+nextText: 'What Are Progressive Web Apps'
+nextUrl: '/docs/intro/what-are-progressive-web-apps'
 ---
 
 # Créer votre première application en suivant le tutoriel
