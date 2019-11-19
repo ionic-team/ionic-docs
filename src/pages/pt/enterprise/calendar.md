@@ -26,9 +26,9 @@ O plugin Calendário permite que você adicione eventos ao calendário do dispos
 
 <a id="calendar"></a>
 
-### Calendar
+### Calendário
 
-**Calendar**:
+**Calendário**:
 
 ***name***: Calendar
 
@@ -481,9 +481,9 @@ Open the calendar at the specified date.
 
 **Parameters:**
 
-| Name | Type   | Description                               |
-| ---- | ------ | ----------------------------------------- |
-| date | `Date` | The date you want to open the calendar on |
+| Nome | Tipo   | Descrição                                    |
+| ---- | ------ | -------------------------------------------- |
+| date | `Date` | A data em que você deseja abrir o calendário |
 
 
 **Returns:** `Promise`<`any`> Promise returns a promise
