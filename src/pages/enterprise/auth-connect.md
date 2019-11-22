@@ -1,8 +1,8 @@
 ---
 title: Auth Connect
 template: enterprise-plugin
-version: 1.2.0
-minor: 1.2.X
+version: 1.3.3
+minor: 1.3.X
 ---
 
 Ionic Auth Connect handles logging in and/or registering a user with an authentication provider (such as Auth0, Azure AD, or AWS Cognito) using industry standard OAuth/OpenId Connect on iOS, Android, or on the web.
@@ -153,6 +153,7 @@ You can find the API and interface documentation for everything below. The main 
 *   [IIonicAuth](#iionicauth)
 *   [IonicAuthOptions](#ionicauthoptions)
 *   [TokenStorageProvider](#tokenstorageprovider) (if [Ionic Identity Vault](/docs/enterprise/identity-vault) is not being used.)
+#  Auth Connect
 
 ## Index
 
@@ -160,8 +161,11 @@ You can find the API and interface documentation for everything below. The main 
 
 * [IHandlers](#ihandlers)
 * [IIonicAuth](#iionicauth)
+* [IVConfig](#ivconfig)
+* [IVUserInterface](#ivuserinterface)
 * [IonicAuthOptions](#ionicauthoptions)
 * [TokenStorageProvider](#tokenstorageprovider)
+* [VaultInterface](#vaultinterface)
 
 ### Variables
 
@@ -209,6 +213,21 @@ ___
 
 **IIonicAuth**: 
 
+<a id="iionicauth.additionalloginparameters"></a>
+
+###  additionalLoginParameters
+
+▸ **additionalLoginParameters**(parameters: *`object`*): `void`
+
+**Parameters:**
+
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| parameters | `object` |  any additional parameters that should be added to the login request examples: \`login\_hint\`, \`domain\_hint\` |
+
+**Returns:** `void`
+
+___
 <a id="iionicauth.expire"></a>
 
 ###  expire
@@ -324,7 +343,7 @@ ___
 
 ▸ **onLoginSuccess**(response: *`any`*): `void`
 
-Event handler which can be overriden to handle successful login events
+Event handler which can be overridden to handle successful login events
 
 **Parameters:**
 
@@ -341,9 +360,50 @@ ___
 
 ▸ **onLogout**(): `void`
 
-Event handler which can be overriden to handle successful logout events
+Event handler which can be overridden to handle successful logout events
 
 **Returns:** `void`
+
+___
+
+___
+<a id="ivconfig"></a>
+
+###  IVConfig
+
+**IVConfig**: 
+
+<a id="ivconfig.ispasscodesetupneeded"></a>
+
+###  isPasscodeSetupNeeded
+
+**● isPasscodeSetupNeeded**: *`boolean`*
+
+___
+
+___
+<a id="ivuserinterface"></a>
+
+###  IVUserInterface
+
+**IVUserInterface**: 
+
+<a id="ivuserinterface.getvault"></a>
+
+###  getVault
+
+▸ **getVault**(): `Promise`<[VaultInterface](#vaultinterface)>
+
+**Returns:** `Promise`<[VaultInterface](#vaultinterface)>
+
+___
+<a id="ivuserinterface.setpasscode"></a>
+
+###  setPasscode
+
+▸ **setPasscode**(): `Promise`<`void`>
+
+**Returns:** `Promise`<`void`>
 
 ___
 
@@ -383,7 +443,7 @@ ___
 The type of the Auth Server, currently only the following are supported:
 
 *   Auth0
-*   Azure Active Directory v2
+*   Azure Active Directory
 *   Cognito (AWS)
 
 ___
@@ -412,6 +472,15 @@ ___
 **● discoveryUrl**: *`undefined` \| `string`*
 
 Location of the Auth Server's discovery endpoint, can be null for Azure
+
+___
+<a id="ionicauthoptions.implicitlogin"></a>
+
+### `<Optional>` implicitLogin
+
+**● implicitLogin**: *"CURRENT" \| "POPUP"*
+
+for implicit login (aka web) should the auth window be opened in a new popup window/tab or the current windwow/tab defaults to: `POPUP` for `CURRENT` to work the app will need to call `IIonicAuth::handleCallback` when the auth service navigates to the url set in `redirect_url`
 
 ___
 <a id="ionicauthoptions.ioswebview"></a>
@@ -465,14 +534,14 @@ ___
 
 **● scope**: *`undefined` \| `string`*
 
-User details requested from the Authintication provider, each provider may support standard {e.g. openid, profile, email, etc.}, or cutom scopes.
+User details requested from the Authentication provider, each provider may support standard {e.g. openid, profile, email, etc.}, or custom scopes.
 
 ___
 <a id="ionicauthoptions.tokenstorageprovider"></a>
 
 ### `<Optional>` tokenStorageProvider
 
-**● tokenStorageProvider**: *"localStorage" \| `IdentityVaultUser`<`any`> \| [TokenStorageProvider](#tokenstorageprovider)*
+**● tokenStorageProvider**: *"localStorage" \| [TokenStorageProvider](#tokenstorageprovider) \| [IVUserInterface](#ivuserinterface)*
 
 The type of storage to use for the tokens
 
@@ -570,6 +639,63 @@ save the refresh token
 ___
 
 ___
+<a id="vaultinterface"></a>
+
+###  VaultInterface
+
+**VaultInterface**: 
+
+<a id="vaultinterface.clear"></a>
+
+###  clear
+
+▸ **clear**(): `Promise`<`void`>
+
+**Returns:** `Promise`<`void`>
+
+___
+<a id="vaultinterface.getconfig"></a>
+
+###  getConfig
+
+▸ **getConfig**(): `Promise`<[IVConfig](#ivconfig)>
+
+**Returns:** `Promise`<[IVConfig](#ivconfig)>
+
+___
+<a id="vaultinterface.getvalue"></a>
+
+###  getValue
+
+▸ **getValue**(name: *`string`*): `Promise`<`any`>
+
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| name | `string` |
+
+**Returns:** `Promise`<`any`>
+
+___
+<a id="vaultinterface.storevalue"></a>
+
+###  storeValue
+
+▸ **storeValue**(name: *`string`*, value: *`any`*): `Promise`<`any`>
+
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| name | `string` |
+| value | `any` |
+
+**Returns:** `Promise`<`any`>
+
+___
+
+___
 
 ## Variables
 
@@ -589,6 +715,37 @@ ___
 
 
 
+### [1.3.3] (2019-11-08)
+
+
+### Bug Fixes
+
+* **ios:** rename AFNetworking symbols that conflic with advanced-http plugin 
+
+
+
+### [1.3.2] (2019-11-01)
+
+
+
+### [1.3.1] (2019-10-29)
+
+
+
+### [1.3.0] (2019-10-09)
+
+
+### Bug Fixes
+
+* make sure interfaces are not snake cased, move some parameters off to method to make them more dynmaic, clean up some parameter checking to be more clear, make some dictionary combines clearer. 
+
+
+### Features
+
+* **ios,android,web:** changes for supporting implicit path (aka web) in window rather than in tabs. allow pass through of login_hint value for azure/auth0 and domain_hint for azure. fixes for param handling 
+
+
+
 ### [1.2.0] (2019-09-16)
 
 
@@ -602,7 +759,7 @@ ___
 
 ### Features
 
-* **ios,android,web:** support acquiring multiple tokens from an oauth source (especially azure ad), also fix some issues with refresh for the web path. The major change is that getToken now has two optional paramters, they both must be passed in or neither. The parameters are an id for the token being acquired and the specific scope for the token being acquired. 
+* **ios,android,web:** support acquiring multiple tokens from an oauth source (especially azure ad), also fix some issues with refresh for the web path. The major change is that getToken now has two optional paramters, they both must be passed in or neither. The parameters are a  and id for the token bein acquired and  the specific scope for the token being acquired. 
 
 
 
