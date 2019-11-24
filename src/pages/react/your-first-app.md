@@ -232,6 +232,8 @@ On our main `IonFab`, we're setting its positioning with the vertical and horizo
 Now let's wire up a click handler to this. What we want to do is when we click the button, we'll navigate to a new page (which we'll create in a moment). To do this, we'll need to get access to React Router's navigation API. Thankfully since this is rendered in a Router/Route context, we have access to React Routers APIs via Props passed to our Home component.
 
 ```typescript
+import { add } from 'ionicons/icons';
+...
 const Home: React.FC<RouteComponentProps> = (props) => {
   return (
     <IonPage>
