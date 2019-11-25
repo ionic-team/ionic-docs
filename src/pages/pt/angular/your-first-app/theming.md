@@ -54,10 +54,10 @@ imports: [
   ],
 ```
 
-Now, the iOS version of our app has a Material Design skin!
+Agora, a versão iOS do seu app tem uma aparência com Material Design!
 
 ![ios and android comparison](/docs/assets/img/guides/first-app-v3/ion-lab-md-styling.png)
 
-Creating gorgeous-looking Ionic apps is easy with CSS variables and platform-specific styling. You now have everything you need to get started with Ionic.
+Creating gorgeous-looking Ionic apps is easy with CSS variables and platform-specific styling. Você agora tem tudo que precisa para começar com Ionic.
 
 Go forth and build great apps!
