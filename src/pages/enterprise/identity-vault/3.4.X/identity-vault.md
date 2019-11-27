@@ -1,8 +1,8 @@
 ---
 title: Identity Vault
 template: enterprise-plugin
-version: 3.3.0
-minor: 3.3.X
+version: 3.4.8
+minor: 3.4.X
 otherVersions:
   - 2.0.X
   - 3.0.X
@@ -12,62 +12,33 @@ otherVersions:
   - 3.4.X
 ---
 
-Ionic Identity Vault
-====================
+# Ionic Identity Vault
 
-The Ionic Identity Vault is a all-in-one frontend identity management system that uses security best practices and uses the latest in biometric authentication options available on iOS and Android.
+Ionic Identity Vault is an all-in-one frontend identity management system that combines security best practices and the latest in biometric authentication options available on iOS and Android.
 
 The Vault manages secure user identity and session tokens, ensuring sensitive tokens are encrypted at rest, stored only in secure locations on the device, and unlocked only with biometric identity (TouchID/FaceID).
 
-Without Ionic Identity Vault, Ionic developers have to resort to combining third party Cordova plugins, often resulting in insecure setups due to the lack of correct implementation of biometric and at-rest encryption strategies.
+Without Ionic Identity Vault, Ionic developers have to resort to combining third party Cordova plugins, often resulting in insecure setups due to the lack of correct implementation of biometric and at-rest encryption strategies. [Learn more.](https://ionicframework.com/identity-vault)
 
-**Important Note**
+<native-ent-install plugin-id="identity-vault" variables=""></native-ent-install>
 
-> If you're upgrading from the `3.0.0` to `>=3.1.0` versions you no longer need to install 2 packages. The plugin now ships under the `@ionic-enterprise/identity-vault` package. Simply run the commands below to upgrade. Imports and usage should remain identical.
+Update the native project config files:
 
-Upgrade from v3.0.0 to >=v3.1.0
--------------------------------
+```xml
+// iOS - Info.plist
+<key>NSFaceIDUsageDescription</key>
+<string>Use Face ID to authenticate yourself and login</string>
 
-First remove v3.0.0 of the plugin
-
-```shell
-# NOTE do not prepend @ionic-enterprise to the plugin name when removing v3.0.0
-ionic cordova plugin rm cordova-plugin-identity-vault
+// Android - No additional changes needed
 ```
 
-You should make sure `@ionic-enterprise/cordova-plugin-identity-vault` and `cordova-plugin-identity-vault` are completely removed from your package.json in all locations.
+## Reference App
 
-```javascript
-...
-  "dependencies": {
-    ...
-     // Make sure both these are gone from the dependencies
-    "@ionic-enterprise/cordova-plugin-identity-vault": "3.0.0",
-    "@ionic-enterprise/identity-vault": "3.0.0",
-    ...
-  }
-  "cordova": {
-    "plugins": {
-      ...
-      // Make sure both these are gone from the cordova plugins section as well
-      "@ionic-enterprise/cordova-plugin-identity-vault": {},
-      "cordova-plugin-identity-vault": {}
-      ...
-    },
-    ...
-  }
-...
-```
+A complete [login/logout experience](https://github.com/ionic-team/cs-demo-iv) that includes biometrics (Face ID with passcode as a fallback), secure token storage, background data hiding, and session timeouts.
 
-It should now be safe to add >=v3.1.0 of the plugin
+## Configuring the Vault
 
-```shell
-ionic cordova plugin add @ionic-enterprise/identity-vault@latest
-```
-
-#### Configuring the Vault
-
-The IonicIdentityVaultUser class takes a generic session type which represents the type of the session you'll store in teh vault. You can use the [DefaultSession](#defaultsession) or extend the class to create a custom session. In the constructor of your `User` service, the vault is configured by providing options to the `super()` call:
+The `IonicIdentityVaultUser` class takes a generic session type which represents the type of the session you'll store in the vault. You can use the [DefaultSession](#defaultsession) or extend the class to create a custom session. In the constructor of your `Identity` service, the vault is configured by providing options to the `super()` call:
 
 ```typescript
 interface MyCustomSession extends DefaultSession {
@@ -93,13 +64,13 @@ constructor(private http: HttpClient, private router: Router, platform: Platform
     //Route to my home page
   }
 
-  onVaultLocked(event: LockEvent) {
+  onVaultLocked() {
     //Route to my login page
   }
 
-  async onPasscodeRequest(isSetupRequest: boolean) {
+  async onPasscodeRequest(isPasscodeSetRequest: boolean) {
     // Display a custom Passcode prompt and return the passcode as a string
-    // or return undefined to use the build in native prompts. isSetupRequest
+    // or return undefined to use the build in native prompts. isPasscodeSetRequest
     // is true when attempting to set a new passcode on the vault, you can use
     // it to do something like prompt the user twice for the pin.
   }
@@ -110,7 +81,51 @@ constructor(private http: HttpClient, private router: Router, platform: Platform
 Automatically adding your token to requests
 -------------------------------------------
 
-If you'd like to automatically add your authorization token from your user service to every request, you can see a simple example at in our [demo repo](https://github.com/ionic-team/cs-demo-iv/blob/feature/identityVault/src/app/services/http-interceptors/auth-interceptor.ts).
+If you'd like to automatically add your authorization token from your identity service to every request, you can see a simple example at in our [demo repo](https://github.com/ionic-team/cs-demo-iv/blob/master/src/app/services/http-interceptors/auth-interceptor.ts).
+
+**Important Note**
+
+> If you're upgrading from the `3.0.0` to `>=3.1.0` versions you no longer need to install 2 packages. The plugin now ships under the `@ionic-enterprise/identity-vault` package. Simply run the commands below to upgrade. Imports and usage should remain identical.
+
+Upgrading from v3.0.0 to >=v3.1.0
+-------------------------------
+
+First, remove v3.0.0 of the plugin:
+
+```shell
+# NOTE: do not prepend @ionic-enterprise to the plugin name when removing v3.0.0
+ionic cordova plugin rm cordova-plugin-identity-vault
+```
+
+Make sure `@ionic-enterprise/cordova-plugin-identity-vault` and `cordova-plugin-identity-vault` are completely removed from your package.json in all locations.
+
+```javascript
+...
+  "dependencies": {
+    ...
+     // Make sure both of these are gone from the dependencies
+    "@ionic-enterprise/cordova-plugin-identity-vault": "3.0.0",
+    "@ionic-enterprise/identity-vault": "3.0.0",
+    ...
+  }
+  "cordova": {
+    "plugins": {
+      ...
+      // Make sure both of these are gone from the cordova plugins section as well
+      "@ionic-enterprise/cordova-plugin-identity-vault": {},
+      "cordova-plugin-identity-vault": {}
+      ...
+    },
+    ...
+  }
+...
+```
+
+It should now be safe to add >=v3.1.0 of the plugin:
+
+```shell
+ionic cordova plugin add @ionic-enterprise/identity-vault@latest
+```
 
 API Documentation
 -----------------
@@ -119,7 +134,8 @@ You can find the API and interface documentation for everything below. The main 
 
 *   [IonicIdentityVaultUser](#identityvaultuser) - Subclass this when creating your identity service.
 *   [DefaultSession](#defaultsession) - This is the generic type that represents your session. Extend this to implement a custom session.
-*   [IdentityVault](#identityvault) - This is the lower level vault API. You can used this to implement advanced workflows including multi tenant vaults.
+*   [IdentityVault](#identityvault) - This is the lower level vault API. You can use this to implement advanced workflows including multi-tenant vaults.
+
 
 ## Index
 
@@ -201,6 +217,15 @@ ___
 **PasscodeOnly**: 
 
 Passcode authentication should only be allowed
+
+___
+<a id="authmode.securestorage"></a>
+
+###  SecureStorage
+
+**SecureStorage**: 
+
+Both biometric and passcode authentication will be disabled but any stored values will persist and be stored securely at rest using the keychain and will be available without needing to authenticate via passcode or biometrics when the device is unlocked.
 
 ___
 
@@ -556,6 +581,18 @@ Check whether or not a passcode needs to be set for the vault using [setPasscode
 whether or not the passcode needs to be set
 
 ___
+<a id="identityvault.issecurestoragemodeenabled"></a>
+
+###  isSecureStorageModeEnabled
+
+▸ **isSecureStorageModeEnabled**(): `Promise`<`boolean`>
+
+Check if [AuthMode.SecureStorage](#authmode.securestorage) is enabled for the vault
+
+**Returns:** `Promise`<`boolean`>
+whether or not the secure storage mode is enabled
+
+___
 <a id="identityvault.lock"></a>
 
 ###  lock
@@ -632,6 +669,25 @@ Enable/Disable passcode authentication for the vault
 | Name | Type | Description |
 | ------ | ------ | ------ |
 | isPasscodeEnabled | `boolean` |  whether or not passcode should be enabled |
+
+**Returns:** `Promise`<`void`>
+
+___
+<a id="identityvault.setsecurestoragemodeenabled"></a>
+
+###  setSecureStorageModeEnabled
+
+▸ **setSecureStorageModeEnabled**(isSecureStorageModeEnabled: *`boolean`*): `Promise`<`void`>
+
+Enable/Disable secure storage mode for the vault. Setting [AuthMode.SecureStorage](#authmode.securestorage) automatically disables passcode and biometric authentication and allows for session values to be stored persistently and securely at rest using the keychain but allowing the user to access the data without authenticating as long as the device is unlocked.
+
+*__throws__*: [VaultError](#vaulterror) - if the vault is locked
+
+**Parameters:**
+
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| isSecureStorageModeEnabled | `boolean` |  whether or not secure storage mode should be enabled |
 
 **Returns:** `Promise`<`void`>
 
@@ -798,13 +854,13 @@ ___
 
 ###  getSession
 
-▸ **getSession**(): `Promise`<`T`>
+▸ **getSession**(): `Promise`<`T` \| `undefined`>
 
 ▸ **getSession**(): `Promise`<`T` \| `undefined`>
 
 The stored session data
 
-**Returns:** `Promise`<`T`>
+**Returns:** `Promise`<`T` \| `undefined`>
 
 Get the session from memory (without checking the vault for it)
 
@@ -867,6 +923,18 @@ Check if passcode authentication is enabled for the vault
 
 **Returns:** `Promise`<`boolean`>
 whether or not the passcode is enabled
+
+___
+<a id="identityvaultuser.issecurestoragemodeenabled"></a>
+
+###  isSecureStorageModeEnabled
+
+▸ **isSecureStorageModeEnabled**(): `Promise`<`boolean`>
+
+Check if [AuthMode.SecureStorage](#authmode.securestorage) is enabled for the vault
+
+**Returns:** `Promise`<`boolean`>
+whether or not the secure storage mode is enabled
 
 ___
 <a id="identityvaultuser.lockout"></a>
@@ -1265,6 +1333,15 @@ ___
 Whether a passcode needs to be set with [setPasscode](#identityvault.setpasscode)
 
 ___
+<a id="pluginconfiguration.issecurestoragemodeenabled"></a>
+
+###  isSecureStorageModeEnabled
+
+**● isSecureStorageModeEnabled**: *`boolean`*
+
+Whether [AuthMode.SecureStorage](#authmode.securestorage) is enabled for the vault
+
+___
 <a id="pluginconfiguration.lockafter"></a>
 
 ###  lockAfter
@@ -1619,6 +1696,95 @@ The possible values returned by [getBiometricType](#identityvault.getbiometricty
 ___
 
 ## Change Log
+
+
+
+### [3.4.8] (2019-11-08)
+
+
+### Bug Fixes
+
+* **vault-user:** use the vault user methods to set the auth mode  
+
+
+
+### [3.4.7] (2019-09-09)
+
+
+### Bug Fixes
+
+* **Android:** Fix an issue where the vault would not be cleared when fingerprints were added or all fingerprints were removed on Android.. 
+
+
+
+### [3.4.6] (2019-08-07)
+
+
+### Bug Fixes
+
+* **Android:** fix an issue where adding a fingerprint to device after the app was open would not refresh whether biometrics was available or not 
+
+
+
+### [3.4.5] (2019-07-27)
+
+
+### Bug Fixes
+
+* **Android, iOS:** getSession return type and default IonicIdentityVaultUser generic to DefaultSession 
+
+
+
+### [3.4.4] (2019-07-25)
+
+
+### Bug Fixes
+
+* **Android:** Fixes an issue on Android where getBiometricType would return none if Biometrics was not enabled even though the device had biometric hardware. 
+
+
+
+### [3.4.3] (2019-06-14)
+
+
+### Bug Fixes
+
+* **Android:** Fixed issue where when hideScreenInBackground feature was enabled screenshots would be disabled. 
+
+
+
+### [3.4.2] (2019-06-14)
+
+
+### Bug Fixes
+
+* **iOS:** Fixed an issue where the hide screen in background functionality was broken 
+
+
+
+### [3.4.1] (2019-06-06)
+
+
+### Bug Fixes
+
+* **Android:** fix issue where setBiometricsEnabled(false) would throw an error if biometrics was unavailable  
+
+
+
+### [3.4.0] (2019-06-06)
+
+
+### Bug Fixes
+
+* **iOS:** fix an issue where if a user removed fingerprints after authentication storing the session would return an error rather than default to passcode only mode 
+* **iOS:** Fix issue where `getBiometricType` would return `none` if TouchID or FaceID was present on device but the user was not enrolled.  
+* **iOS:** fix issue with getBiometricType and issue where lock event was triggered when lock was called in secure storage mode 
+
+
+### Features
+
+* Added android side of Secure Storage Mode 
+* update Typescript/JS layer to support Secure Storage mode 
 
 
 

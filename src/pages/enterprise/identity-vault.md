@@ -1,14 +1,15 @@
 ---
 title: Identity Vault
 template: enterprise-plugin
-version: 3.4.8
-minor: 3.4.X
+version: 3.5.0
+minor: 3.5.X
 otherVersions:
   - 2.0.X
   - 3.0.X
   - 3.1.X
   - 3.2.X
   - 3.3.X
+  - 3.4.X
 ---
 
 # Ionic Identity Vault
@@ -134,6 +135,7 @@ You can find the API and interface documentation for everything below. The main 
 *   [IonicIdentityVaultUser](#identityvaultuser) - Subclass this when creating your identity service.
 *   [DefaultSession](#defaultsession) - This is the generic type that represents your session. Extend this to implement a custom session.
 *   [IdentityVault](#identityvault) - This is the lower level vault API. You can use this to implement advanced workflows including multi-tenant vaults.
+
 
 
 ## Index
@@ -532,6 +534,18 @@ Check whether or not biometrics is enabled on the vault
 whether or not biometrics is enabled
 
 ___
+<a id="identityvault.isbiometricssupported"></a>
+
+###  isBiometricsSupported
+
+▸ **isBiometricsSupported**(): `Promise`<`boolean`>
+
+Check whether or not biometrics is supported on the device
+
+**Returns:** `Promise`<`boolean`>
+whether or not biometrics is supported
+
+___
 <a id="identityvault.isinuse"></a>
 
 ###  isInUse
@@ -910,6 +924,18 @@ Check whether or not biometrics is enabled on the vault
 
 **Returns:** `Promise`<`boolean`>
 whether or not biometrics is enabled
+
+___
+<a id="identityvaultuser.isbiometricssupported"></a>
+
+###  isBiometricsSupported
+
+▸ **isBiometricsSupported**(): `Promise`<`boolean`>
+
+Check whether or not biometrics is supported on the device
+
+**Returns:** `Promise`<`boolean`>
+whether or not biometrics is supported
 
 ___
 <a id="identityvaultuser.ispasscodeenabled"></a>
@@ -1695,6 +1721,21 @@ The possible values returned by [getBiometricType](#identityvault.getbiometricty
 ___
 
 ## Change Log
+
+
+
+### [3.5.0] (2019-11-27)
+
+
+### Bug Fixes
+
+* **Android:** Fix issue where vault would crash if Android device only supported FaceMatch 
+* **vault-user:** use the vault user methods to set the auth mode  
+
+
+### Features
+
+* add isBiometricsSupported function 
 
 
 

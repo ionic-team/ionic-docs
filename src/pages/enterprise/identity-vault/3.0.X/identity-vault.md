@@ -9,6 +9,7 @@ otherVersions:
   - 3.1.X
   - 3.2.X
   - 3.3.X
+  - 3.4.X
 ---
 
 Ionic Identity Vault
@@ -19,8 +20,6 @@ The Ionic Identity Vault is a all-in-one frontend identity management system tha
 The Vault manages secure user identity and session tokens, ensuring sensitive tokens are encrypted at rest, stored only in secure locations on the device, and unlocked only with biometric identity (TouchID/FaceID).
 
 Without Ionic Identity Vault, Ionic developers have to resort to combining third party Cordova plugins, often resulting in insecure setups due to the lack of correct implementation of biometric and at-rest encryption strategies.
-
-<native-ent-install plugin-id="identity-vault" variables=""></native-ent-install>
 
 #### Configuring the Vault
 
@@ -67,7 +66,7 @@ constructor(private http: HttpClient, private router: Router, platform: Platform
 Automatically adding your token to requests
 -------------------------------------------
 
-If you'd like to automatically add your authorization token from your user service to every request, you can see a simple example at in our [demo repo](https://github.com/ionic-team/cs-demo-iv/blob/master/src/app/services/http-interceptors/auth-interceptor.ts).
+If you'd like to automatically add your authorization token from your user service to every request, you can see a simple example at in our [demo repo](https://github.com/ionic-team/cs-demo-iv/blob/feature/identityVault/src/app/services/http-interceptors/auth-interceptor.ts).
 
 API Documentation
 -----------------
@@ -1233,7 +1232,7 @@ ___
 
 ▸ **onConfig**(event: *[PluginConfiguration](#pluginconfiguration)*): `any`
 
-A handler that will receive events any time the vault is configuration is changed
+A handler that will recieve events any time the vault is configuration is changed
 
 **Parameters:**
 
@@ -1267,7 +1266,7 @@ ___
 
 ▸ **onLock**(event: *[LockEvent](#lockevent)*): `any`
 
-A handler that will receive events any time the vault is locked
+A handler that will recieve events any time the vault is locked
 
 **Parameters:**
 
@@ -1301,7 +1300,7 @@ ___
 
 ▸ **onUnlock**(event: *[PluginConfiguration](#pluginconfiguration)*): `any`
 
-A handler that will receive events any time the vault is unlocked
+A handler that will recieve events any time the vault is unlocked
 
 **Parameters:**
 
