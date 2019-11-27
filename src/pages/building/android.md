@@ -52,6 +52,14 @@ Capacitor uses Android Studio to build and run apps to simulators and devices.
 
 ![Android Studio Run Button Area](/docs/assets/img/running/android-studio-run-button-area.png)
 
+### Live reload
+To start a live-reload server run the following command.
+
+```shell
+$ ionic capacitor run android -l --address=YOUR_IP_ADDRESS
+```
+When running on a device make sure the device and your development machine are connected to the same network.
+
 ## Running with Cordova
 
 The Ionic CLI can build, copy, and deploy Ionic apps to Android simulators and devices with a single command. It can also spin up a development server, like the one used in `ionic serve`, to provide [live-reload](/docs/faq/glossary#livereload) functionality.
