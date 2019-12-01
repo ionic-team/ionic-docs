@@ -1,7 +1,7 @@
 ---
 previousText: '生命周期'
 previousUrl: '/docs/angular/lifecycle'
-nextText: 'Config'
+nextText: '配置'
 nextUrl: '/docs/angular/config'
 contributors:
   - mhartington
