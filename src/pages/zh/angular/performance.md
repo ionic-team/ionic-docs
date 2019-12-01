@@ -1,5 +1,5 @@
 ---
-previousText: 'Platform'
+previousText: '平台'
 previousUrl: '/docs/angular/platform'
 ---
 
