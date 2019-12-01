@@ -151,11 +151,11 @@ import { LoginComponent } from './login.component';
 })
 ```
 
-> We're excluding some additional content and only including the necessary parts.
+> Excluimos contenido adicional y solo colocamos las partes necesarias.
 
-Here, we have a typical Angular Module setup, along with a RouterModule import, but we're now using `forChild` and declaring the component in that setup. With this setup, when we run our build, we will produce separate chunks for both the app component, the login component, and the detail component.
+Tenemos aquí una configuración típica de un módulo de Angular con "RouterModule", ahora usando `forChild` y declarando el componente en esa configuración. With this setup, when we run our build, we will produce separate chunks for both the app component, the login component, and the detail component.
 
-## Working with Tabs
+## Trabajando con pestañas
 
 With Tabs, the Angular Router provides Ionic the mechanism to know what components should be loaded, but the heavy lifting is actually done by the tabs component. Let's look at a simple example.
 
