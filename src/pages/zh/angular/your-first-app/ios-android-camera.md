@@ -1,5 +1,5 @@
 ---
-previousText: 'Your First Ionic App'
+previousText: '你的第一个Ionic应用'
 previousUrl: '/docs/angular/your-first-app'
 nextText: '创建一个照片墙app'
 nextUrl: '/docs/angular/your-first-app/creating-photo-gallery-device-storage'
