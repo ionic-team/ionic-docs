@@ -71,8 +71,10 @@ Hablar de rutas es bueno y todo, pero ¿cómo se navega hasta esas rutas? Para e
 
 ```ts
 RouterModule.forRoot([
-  { path: '', component: LoginComponent },
-  { path: 'detail', component: DetailComponent }
+    { path: '', component: LoginComponent },
+    { path: 'detail', component: DetailComponent },
+  ])
+  ],
 ]);
 ```
 
@@ -153,11 +155,11 @@ import { LoginComponent } from './login.component';
 
 > Excluimos contenido adicional y solo colocamos las partes necesarias.
 
-Tenemos aquí una configuración típica de un módulo de Angular con "RouterModule", ahora usando `forChild` y declarando el componente en esa configuración. With this setup, when we run our build, we will produce separate chunks for both the app component, the login component, and the detail component.
+Tenemos aquí una configuración típica de un módulo de Angular con "RouterModule", ahora usando `forChild` y declarando el componente en esa configuración. Con esta configuración, cuando ejecutemos nuestra compilación, produciremos fragmentos separados para el componente de aplicación, el componente de inicio de sesión y el componente de detalle.
 
 ## Trabajando con pestañas
 
-With Tabs, the Angular Router provides Ionic the mechanism to know what components should be loaded, but the heavy lifting is actually done by the tabs component. Let's look at a simple example.
+Con pestañas, el Router de Angular proporciona a Ionic el mecanismo para saber qué componentes se deben cargar, pero la elevación pesada se hace por el componente de las pestañas. Consideremos un ejemplo sencillo.
 
 ```ts
 const routes: Routes = [
