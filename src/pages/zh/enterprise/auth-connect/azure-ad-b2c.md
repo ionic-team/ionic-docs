@@ -2,7 +2,7 @@
 
 ## Demo App
 
-For reference, a [complete demo app](https://github.com/ionic-team/cs-demo-iv/tree/identity-vault-with-auth-connect) is available. To view the Azure AD configuration details, see `authentication.service.ts` [here](https://github.com/ionic-team/cs-demo-iv/blob/identity-vault-with-auth-connect/src/app/services/authentication/authentication.service.ts).
+For reference, a [complete demo app](https://github.com/ionic-team/cs-demo-ac-iv) is available. To view the Azure AD configuration details, see `authentication.service.ts` [here](https://github.com/ionic-team/cs-demo-ac-iv/blob/master/src/app/services/authentication/authentication.service.ts).
 
 ## Configuration Details
 
