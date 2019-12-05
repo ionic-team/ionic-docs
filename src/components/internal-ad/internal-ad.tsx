@@ -18,8 +18,13 @@ export class InternalAd {
   // force an update on page change in case the component is reused
   @Listen('pageChanged', { target: 'body' })
   async update() {
+    console.log('calling update');
     this.ad = await getAd();
     trackView(this.ad.ad_id);
+  }
+
+  componentDidUnload() {
+    console.log('unloading');
   }
 
   render() {
@@ -29,6 +34,7 @@ export class InternalAd {
       <a href={this.ad.ad_url.url}
          target={this.ad.ad_url.target}
          onClick={e => trackClick(this.ad.ad_id, e)}>
+        {/* Reponsive image since Prismic supports it out of the box */}
         <picture>
           <source media="(min-width: 37.5em)" src={this.ad.ad_image.url}/>
           <source src={this.ad.ad_image['1x'].url}/>

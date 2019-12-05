@@ -12,7 +12,10 @@ export default (props) => {
     <article>
       <h1>{ page.title }</h1>
       <h4>v{page.version}</h4>
-      <docs-table-of-contents links={headings.concat([{ 'href': '#previous-versions', text: 'Other Versions' }])} basepath={page.path}/>
+      <div class="page-meta">
+        <docs-table-of-contents links={headings.concat([{ 'href': '#previous-versions', text: 'Other Versions' }])} basepath={page.path}/>
+        <internal-ad></internal-ad>
+      </div>
 
       <section class="markdown-content">
         {toHypertext(h, page.body)}

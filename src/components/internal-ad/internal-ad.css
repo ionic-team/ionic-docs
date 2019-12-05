@@ -18,8 +18,7 @@ internal-ad a:hover p  {
   color: var(--text-color);
 }
 
-
-@media (max-width: 1232px) {
+@media (max-width: 1233px) {
   internal-ad {
     display: none;
   }

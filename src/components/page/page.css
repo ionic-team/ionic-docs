@@ -99,7 +99,7 @@ docs-page aside {
 }
 
 @media (min-width: 1234px) {
-  docs-page main.no-demo docs-table-of-contents {
+  docs-page main.no-demo .page-meta {
     position: fixed;
     right: 0;
     top: 100px;
@@ -107,9 +107,13 @@ docs-page aside {
     transition: .2s transform ease;
   }
 
-  docs-header.hidden ~ stencil-route docs-page main.no-demo docs-table-of-contents {
+  docs-header.hidden ~ stencil-route docs-page main.no-demo .page-meta {
     transform: translateY(-60px);
   }
+}
+
+docs-page main.has-demo .page-meta internal-ad {
+  display:  none;
 }
 /* 
 @media (min-width: 1440px) {
