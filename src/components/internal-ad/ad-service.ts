@@ -6,13 +6,12 @@ let ads: {}[];
 let lastFetch: number = null;
 
 const getLatest = async () => {
-  console.log('getting latest ad');
   const api = await Prismic.getApi(apiURL);
-  const single = await api.query(
+  const response = await api.query(
     Prismic.Predicates.at('document.type', 'docs_ad'),
     {}
   );
-  ads = single.results;
+  ads = response.results;
   lastFetch = Date.now();
 };
 
