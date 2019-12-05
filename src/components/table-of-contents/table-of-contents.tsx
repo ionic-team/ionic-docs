@@ -76,7 +76,8 @@ export class DocsTableOfContents {
       <strong class="Nav-header">{ this.label }</strong>,
       <nav>
         <ul class="Nav-subnav">{ this.links.map(this.toItem) }</ul>
-      </nav>
+      </nav>,
+      <internal-ad></internal-ad>
     ];
   }
 }

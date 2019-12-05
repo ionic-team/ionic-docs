@@ -54,7 +54,6 @@ export class DocsMenu {
   }
 
   render() {
-    console.log('rendering!');
     return (
       <docs-select
         class="FrameworkSelect"

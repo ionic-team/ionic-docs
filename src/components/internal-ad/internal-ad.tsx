@@ -1,40 +1,38 @@
 import { Component, State, h } from '@stencil/core';
-import Prismic from 'prismic-javascript';
-import PrismicDOM from 'prismic-dom';
+import { getAd } from './ad-service';
 
 @Component({
   tag: 'internal-ad',
-  styleUrl: 'internal-ad.scss'
+  styleUrl: 'internal-ad.css'
 })
 export class InternalAd {
 
   apiURL = 'https://ionicframeworkcom.prismic.io/api/v2';
 
-  @State() data: any;
+  @State() ad: any;
 
   constructor() {
-    this.getLatest();
+    this.update();
   }
 
-  async getLatest() {
-    const api = await Prismic.getApi(this.apiURL);
-    const single = await api.getSingle('docs_ad');
-    // console.log(single)
-    this.data = single.data;
-
+  async update() {
+    this.ad = await getAd();
+    console.log(this.ad);
   }
 
   render() {
-    if (!this.data || Object.keys(this.data).length === 0) return;
+    if (!this.ad || Object.keys(this.ad).length === 0) return;
 
     return (
-      <nav class={this.data.theme === 'Studio' ? 'announcement-bar--studio' : ''}>
-        <div class="container">
-          <div innerHTML={PrismicDOM.RichText.asHtml(this.data.text)}></div>
-          <a href={this.data.link.url}
-             target="_blank">{this.data.button_text}</a>
-        </div>
-      </nav>
+      <picture>
+        <source media="(min-width: 37.5em)" src={this.ad.ad_image.url}/>
+        <source src={this.ad.ad_image['1x'].url}/>
+        <img src={this.ad.ad_image.url}
+             alt={this.ad.ad_image.alt}
+             height={this.ad.ad_image['1x'].dimensions.height}
+             width={this.ad.ad_image['1x'].dimensions.width} />
+        <p>{this.ad.ad_image.alt}</p>
+      </picture>
     );
   }
 }
