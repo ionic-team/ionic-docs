@@ -1,5 +1,5 @@
 ---
-
+tableOfContents: false
 ---
 
 # Welcome to Studio

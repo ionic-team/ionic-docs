@@ -11,6 +11,8 @@ import { getAd } from './ad-service';
 export class InternalAd {
   @State() ad: any;
 
+  timeout: ReturnType<typeof setTimeout>;
+
   constructor() {
     this.update();
   }
@@ -18,13 +20,16 @@ export class InternalAd {
   // force an update on page change in case the component is reused
   @Listen('pageChanged', { target: 'body' })
   async update() {
-    console.log('calling update');
     this.ad = await getAd();
-    trackView(this.ad.ad_id);
+    // give the page a chance to reflow
+    this.timeout = setTimeout(() => {
+      trackView(this.ad.ad_id);
+    }, 50);
   }
 
-  componentDidUnload() {
-    console.log('unloading');
+  disconnectedCallback() {
+    // if the reflowed page doesn't have an ad, don't fire view events
+    clearTimeout(this.timeout);
   }
 
   render() {
