@@ -4,12 +4,23 @@ export const trackView = (adId: string) => {
 };
 
 export const trackClick = (adId: string, event?: MouseEvent) => {
+  const timeForTrackingRequests = 150; // ms
   if (event) {
     event.preventDefault();
   }
 
   hubspotTrack('Click', adId);
   googleAnalyticsTrack('Click', adId);
+
+  // give tracking request time to complete
+  setTimeout(() => {
+    const link = hrefClimber(event.target as Node);
+    if (link.target && link.target.toLowerCase() === '_blank') {
+      window.open(link.href);
+    } else if (link.href) {
+      document.location = link.href;
+    }
+  }, timeForTrackingRequests);
 };
 
 const hubspotTrack = (type: 'Click' | 'View', adId: string) => {
@@ -35,4 +46,13 @@ const googleAnalyticsTrack = (type: 'Click' | 'View', adId: string) => {
     'event_category': `Docs ad - ${type}`,
     'event_label': adId
   });
+};
+
+// recursive function to climb the DOM looking for href tags
+const hrefClimber = (el: Node) => {
+  if (el['href']) {
+    return el;
+  } else if (el.parentNode) {
+    return hrefClimber(el.parentNode);
+  }
 };
