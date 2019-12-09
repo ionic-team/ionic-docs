@@ -1,5 +1,6 @@
 ---
 title: Ionic Native
+tableOfContents: false
 ---
 
 For teams building mission-critical apps, Ionic Native is a curated collection of plugins and solutions that are built and supported by Ionic, with stability assurances and guaranteed to work on all major platforms and versions.

@@ -3,6 +3,7 @@ previousText: 'Deploy'
 previousUrl: '/docs/appflow/deploy/cli'
 nextText: 'Package Builds'
 nextUrl: '/docs/appflow/package/builds'
+tableOfContents: false
 ---
 
 # Packaging Native Binaries
