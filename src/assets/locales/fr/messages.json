@@ -184,7 +184,7 @@
   "menu-appflow-cookbook-intro": "Vue d'ensemble",
   "menu-appflow-cookbook-private_git": "Utiliser les dépôts GIT privés",
   "menu-appflow-cookbook-private_npm_modules": "Utiliser les modules NPM privés",
-  "menu-appflow-cookbook-switch_node_version": "Use different Node in builds",
+  "menu-appflow-cookbook-switch_node_version": "Utiliser une version différente de Node",
   "menu-appflow-devapp": "DevApp : Développement local",
   "menu-enterprise-getting-started": "Premiers pas",
   "menu-enterprise-guides": "Manuels",
