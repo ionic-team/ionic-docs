@@ -3,6 +3,7 @@ previousText: 'Concepts'
 previousUrl: '/docs/intro/concepts'
 nextText: 'What Are Progressive Web Apps'
 nextUrl: '/docs/intro/what-are-progressive-web-apps'
+tableOfContents: false
 ---
 
 # Créer votre première application en suivant le tutoriel
