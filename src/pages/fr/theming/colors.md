@@ -7,9 +7,9 @@ nextText: 'Themes'
 nextUrl: '/docs/theming/themes'
 ---
 
-# Colors
+# Couleurs
 
-Ionic has nine default colors that can be used to change the color of many components. Each color is actually a collection of multiple properties, including a `shade` and `tint`, used throughout Ionic.
+Ionic a neuf couleurs par défaut qui peuvent être utilisées pour modifier la couleur de vos composants. Chaque couleur est en fait une collection de différentes propriétés, y compris un `nuance` et `teintes`, utilisé dans Ionic.
 
 A color can be applied to an Ionic component in order to change the default colors using the `color` attribute. Notice in the buttons below that the text and background changes based on the `color` set. When there is no `color` set on the button it uses the `primary` color by default.
 
