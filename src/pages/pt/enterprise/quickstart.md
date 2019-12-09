@@ -1,3 +1,6 @@
+- - -
+tableOfContents: false
+- - -
 # Quickstart
 
 Accelerate your app development with powerful solutions to common enterprise use cases - all built and supported by the Ionic team.
