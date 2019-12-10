@@ -8,6 +8,8 @@ For reference, a [complete demo app](https://github.com/ionic-team/cs-demo-ac-iv
 
 ### Azure Configuration
 
+**Note**: This setup uses Azure AD 2.0 B2C. For existing customers who need details on how to use AuthConnect with Azure AD 1.0, please [contact us](https://ionic.zendesk.com/hc/en-us/requests/new).
+
 Before integrating Auth Connect into your Ionic app, you’ll need to get Azure Active Directory (AD) up and running.
 
 > **Note:** For complete information on configuring Azure AD, consult the [official B2C documentation](https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant) which includes tutorials on creating a B2C tenant, registering applications, and more.
