@@ -1,6 +1,6 @@
 # Azure Active Directory B2C Configuration
 
-> **Note:** The following demo app and configuration uses Azure AD 2.0 B2C. For Enterprise customers who need details on how to configure AuthConnect with Azure AD 1.0, please [contact us](https://ionic.zendesk.com/hc/en-us/requests/new).
+> **Note:** The following demo app and configuration uses Azure AD 2.0 B2C. For Enterprise customers who need details on how to configure Auth Connect with Azure AD 1.0, please [contact us](https://ionic.zendesk.com/hc/en-us/requests/new).
 
 ## Demo App
 
