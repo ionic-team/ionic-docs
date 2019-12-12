@@ -9,22 +9,22 @@ nextUrl: '/docs/appflow/quickstart/installation'
 Si no está utilizando una de las integraciones de repositorio de git soportadas, puede enviar su código fuente directamente a Ionic Appflow usando Git.
 
 <blockquote>
-  <b>Ionic Appflow is <i>not a replacement</i> for a git hosting service.</b></br>
-  It is recommended that you use a git hosting service to manage your primary app source code
-  (GitHub, Bitbucket, etc.)!<br /><br />
-  The <code>ionic</code> remote is used only for interacting with the Ionic Appflow services.
+  <b>Ionic Appflow <i>no es un reemplazo</i> para un servicio de alojamiento git.</b></br>
+  Se recomienda utilizar un servicio de alojamiento git para administrar el código fuente principal de tu aplicación
+  (GitHub, Bitbucket, etc.) !<br /><br />
+  El <code>iónico</code> remoto se utiliza solo para interactuar con los servicios de Ionic Appflow.
 </blockquote>
 
-## Link your Repository
+## Vincula tu repositorio
 
 ![Ionic Link Command](/docs/assets/img/appflow/ionic-link.gif)
 
-To link your local repo, simply run `ionic link` in the root directory of your existing project and choose `Ionic Appflow` as your git remote. This will allow you to select the Dashboard app you'd like to link to, create an `ionic` remote in your local git configuration, and create or use an existing SSH key pair for authentication when pushing changes to Ionic Appflow.
+Para vincular su repositorio local, simplemente ejecuta `enlace ionic` en el directorio root de tu proyecto existente y elige `Ionic Appflow` como tu git remoto. Esto te permitirá seleccionar la aplicación de panel a la que quieres enlazar, crea un mando `ionic` en tu configuración local de git, y crear o usar un par de claves SSH existente para la autenticación al enviar cambios a Ionic Appflow.
 
-You can learn more about git remotes [here](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes).
+Puedes aprender más sobre git remotes [aquí](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes).
 
-## Configure your SSH keys
+## Configurar sus claves SSH
 
-Ionic remote authentication is done via public/private SSH key pairs for the most secure authentication possible. You'll need to upload a public key to Ionic Appflow to authenticate yourself. This can be automatically done during the `ionic link` process or manually.
+La autenticación remota Ionica se realiza atraver de claves SSH públicas/privadas para la autenticación más segura posible. Necesitarás subir una clave pública a Ionic Appflow para autenticarte. Esto se puede hacer automáticamente durante el proceso de `enlace iónico` o manualmente.
 
-Once you've selected the correct app and the `Ionic Appflow` remote, you will be prompted to create an SSH key pair or use an existing one. If you're not familiar with SSH keys we suggest letting the CLI automatically create and add them for you. Otherwise, you can choose to use an existing key and provide the CLI with a path to the public key on your local machine. You can also upload an existing public key in the Appflow Dashboard in the personal Settings area, which you can find by clicking your profile icon on the lower left side of the Dashboard.
+Una vez que hayas seleccionado la aplicación correcta y el mando `Ionic Appflow` , se le pedirá que cree un par de claves SSH o que utilice una existente. Si no estás familiarizado con las claves SSH, te recomendamos que dejes que la CLI cree automáticamente y las añada para ti. De lo contrario, puede elegir usar una clave existente y proporcionar a la CLI una ruta a la clave pública en su máquina local. You can also upload an existing public key in the Appflow Dashboard in the personal Settings area, which you can find by clicking your profile icon on the lower left side of the Dashboard.
