@@ -60,6 +60,7 @@ Choose from over 100 beautiful, mobile-ready UI components, animations, and gest
 ## Familiar tooling
 
 Ionic React projects are just like React projects, leveraging [react-dom](https://reactjs.org/docs/react-dom.html) and with setup normally found in a [Create React App (CRA)](https://github.com/facebook/create-react-app) app. For [routing and navigation](/docs/react/navigation), React Router is used under the hood.
+Compatible with React version 16.8 and above.
 
 </div>
 
@@ -116,6 +117,10 @@ At the end of the day, it's just React. Ionic React uses open web standards and 
 <docs-cards>
   <docs-card header="Getting Started" href="/docs/react/your-first-app" icon="/docs/assets/icons/feature-component-actionsheet-icon.png">
     <p>Learn the fundamentals you need to know to start building amazing apps with Ionic Framework.</p>
+  </docs-card>
+
+  <docs-card header="Add Ionic to Existing React App" href="https://dev.to/ionic/adding-ionic-react-to-an-existing-react-project-4kib" icon="/docs/assets/icons/logo-react-icon.png">
+    <p>Use individual components or the complete app experience.</p>
   </docs-card>
 
   <docs-card header="Navigation" href="/docs/react/navigation" icon="/docs/assets/icons/feature-component-navigation-icon.png">
