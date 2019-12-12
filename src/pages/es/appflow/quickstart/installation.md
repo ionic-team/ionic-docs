@@ -12,7 +12,7 @@ Para aprovechar algunas de las mejores características de Appflow, como impleme
 
 Para instalar el plugin SDK de Appflow desde el Dashboard, sigue las instrucciones proporcionadas haciendo clic en "Instalar instrucciones" en la lista de canales en el panel de control de la aplicación.
 
-![Install Instructions](/docs/assets/img/appflow/ss-appflow-sdk-install.png)
+![Guía de instalación](/docs/assets/img/appflow/ss-appflow-sdk-install.png)
 
 ## Instalar el SDK de Appflow manualmente
 
@@ -39,10 +39,10 @@ También puedes ejecutar `Iónico deploy add` y el CLI te pedirá los valores ne
  * ¡Asegúrate de usar el *nombre exacto de tu canal*, incluyendo el caso exacto!
 * `--update-method` es uno de `background | auto | none`. Esto determina cómo responde su aplicación cuando una nueva actualización en vivo está disponible para su descarga.
 
-You can read more about the available [plugin variables in our API documentation](/docs/appflow/deploy/api#plugin-variables).
+Puede leer más sobre las [variables de plugin disponibles en nuestra documentación de API](/docs/appflow/deploy/api#plugin-variables).
 
-## Commit your changes
+## Commit de los cambios
 
-After you've installed the plugin, be sure to commit the changes made to your `config.xml` and `package.json` files.
+Después de instalar el plugin, asegúrese de confirmar los cambios realizados en los archivos `config.xml` y `package.json`.
 
-<command-line> <command-prompt>git add . # stage any changes</command-prompt> <command-prompt>git commit -m "added appflow sdk" # commit staged changes</command-prompt> </command-line>
+<command-line> <command-prompt>git add . # organizar cualquier cambio</command-prompt> <command-prompt>git commit -m "appflow sdk" # commit escalonados</command-prompt> </command-line>
