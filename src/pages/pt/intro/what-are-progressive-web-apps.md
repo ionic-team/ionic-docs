@@ -16,7 +16,7 @@ contributors:
 
 A Progressive Web App (PWA) is a web app that uses modern web capabilities to deliver an app-like experience to users. These apps meet certain requirements (see below), are deployed to servers, accessible through URLs, and indexed by search engines.
 
-This can work in conjunction with Cordova to provide a multiple deploy targets for all your users. You can deploy your app as a PWA as well as Native app and take advantage of both channels.
+This can work in conjunction with [Capacitor](https://capacitor.ionicframework.com) to provide a multiple deploy targets for all your users. You can deploy your app as a PWA as well as Native app and take advantage of both channels.
 
 Ionic allows you to ship your app to not only the app store, but also deploy to the mobile web as a PWA.
 
