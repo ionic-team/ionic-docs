@@ -1,32 +1,44 @@
 import { h } from '@stencil/core';
+import plugins from '../data/native-plugins.json';
 
-export default () => <docs-nav items={ items } />;
+export default () => [
+  <docs-nav items={ intro } />,
+  <div class="collapseable">
+    <docs-nav items={ nativeSolutions } />
+  </div>,
+  <div class="collapseable">
+    <strong>Core Device</strong>
+    <ion-segment>
+      <ion-segment-button value="community">
+        <ion-label>Community</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="premier">
+        <ion-label>Premier</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    <docs-nav items={ corePlugins } />
+  </div>
+];
 
-const items = {
-  'menu-native-paid': '/docs/enterprise',
-  'menu-enterprise-authentication-security': {
-    'Auth Connect': '/docs/enterprise/auth-connect',
-    'Identity Vault': '/docs/enterprise/identity-vault',
-    'Offline Storage': '/docs/enterprise/offline-storage'
-  },
-  'menu-enterprise-common-device-features': {
-    'Apple Payment Pass': '/docs/enterprise/apple-payment-pass',
-    'Browser': '/docs/enterprise/inappbrowser',
-    'Camera': '/docs/enterprise/camera',
-    'Contacts': '/docs/enterprise/contacts',
-    'Device': '/docs/enterprise/device',
-    'Filesystem': '/docs/enterprise/filesystem',
-    'Geolocation': '/docs/enterprise/geolocation',
-    'Media Capture': '/docs/enterprise/media-capture',
-    'Network Information': '/docs/enterprise/network-information',
-    'Statusbar': '/docs/enterprise/statusbar',
-    'menu-native-paid-show-all': '/docs/enterprise'
-  },
-  'menu-native-community': '/docs/native/overview',
-  'menu-native-community-oss': {
-    '3D Touch': '/docs/native/three-dee-touch',
-    'Backlight': '/docs/native/backlight',
-    'Health': '/docs/native/health',
-    'menu-native-community-show-all': '/docs/native/overview'
+const intro = {
+  'menu-native-paid': {
+    'Home': '/docs/enterprise',
+    'Community vs Premier': '/docs/enterprise'
   }
 };
+
+const nativeSolutions = {
+  'menu-native-solutions': {
+    'Identity Vault': '/docs/enterprise/identity-vault',
+    'Auth Connect': '/docs/enterprise/auth-connect',
+    'Secure Storage': '/docs/enterprise/offline-storage'
+  }
+};
+
+const corePlugins = {
+  'menu-native-getting-started': {
+    'Quickstart': '/docs/enterprise/quickstart'
+  },
+  'menu-native-plugins': Object.entries(plugins).sort()
+};
+
