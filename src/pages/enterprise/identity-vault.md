@@ -177,7 +177,7 @@ The type of authentication the vault should be configured to allow.
 
 <a id="authmode.biometricandpasscode"></a>
 
-###  BiometricAndPasscode
+####  BiometricAndPasscode
 
 **BiometricAndPasscode**: 
 
@@ -186,7 +186,7 @@ Both biometric and passcode authentication should be allowed
 ___
 <a id="authmode.biometriconly"></a>
 
-###  BiometricOnly
+####  BiometricOnly
 
 **BiometricOnly**: 
 
@@ -195,7 +195,7 @@ Biometrics authentication should only be allowed
 ___
 <a id="authmode.biometricorpasscode"></a>
 
-###  BiometricOrPasscode
+####  BiometricOrPasscode
 
 **BiometricOrPasscode**: 
 
@@ -204,7 +204,7 @@ Use biometrics if it is available, otherwise use passcode
 ___
 <a id="authmode.inmemoryonly"></a>
 
-###  InMemoryOnly
+####  InMemoryOnly
 
 **InMemoryOnly**: 
 
@@ -213,7 +213,7 @@ Both biometric and passcode authentication should be disabled. With this setting
 ___
 <a id="authmode.passcodeonly"></a>
 
-###  PasscodeOnly
+####  PasscodeOnly
 
 **PasscodeOnly**: 
 
@@ -222,7 +222,7 @@ Passcode authentication should only be allowed
 ___
 <a id="authmode.securestorage"></a>
 
-###  SecureStorage
+####  SecureStorage
 
 **SecureStorage**: 
 
@@ -241,43 +241,43 @@ The meaning of the error code in the thrown [VaultError](#vaulterror)
 
 <a id="vaulterrorcodes.authfailed"></a>
 
-###  AuthFailed
+####  AuthFailed
 
 **AuthFailed**: 
 
-User authentication failed
+User authentication failed.
 
 ___
 <a id="vaulterrorcodes.biometricsnotenabled"></a>
 
-###  BiometricsNotEnabled
+####  BiometricsNotEnabled
 
 **BiometricsNotEnabled**: 
 
-The operation failed because biometric authentication is not enabled
+The operation failed because biometric authentication is not enabled. This can occur when biometrics is not supported by the device or when biometrics has not been configured for the device or vault.
 
 ___
 <a id="vaulterrorcodes.invalidarguments"></a>
 
-###  InvalidArguments
+####  InvalidArguments
 
 **InvalidArguments**: 
 
-The operation failed because the provided arguments were invalid
+The operation failed because the some of the vault provided arguments were invalid.
 
 ___
 <a id="vaulterrorcodes.invalidauthmode"></a>
 
-###  InvalidAuthMode
+####  InvalidAuthMode
 
 **InvalidAuthMode**: 
 
-The AuthMode is invalid
+The provided AuthMode is invalid. Should be one of [AuthMode](#authmode).
 
 ___
 <a id="vaulterrorcodes.invalidatedcredential"></a>
 
-###  InvalidatedCredential
+####  InvalidatedCredential
 
 **InvalidatedCredential**: 
 
@@ -286,7 +286,7 @@ The credentials were invalidated. This can happen when a user changes biometrics
 ___
 <a id="vaulterrorcodes.keynotfound"></a>
 
-###  KeyNotFound
+####  KeyNotFound
 
 **KeyNotFound**: 
 
@@ -295,16 +295,16 @@ The key was not found. This can happen when a user changes biometrics or passcod
 ___
 <a id="vaulterrorcodes.mismatchedpasscode"></a>
 
-###  MismatchedPasscode
+####  MismatchedPasscode
 
 **MismatchedPasscode**: 
 
-The user provided mismatched passcodes
+The user provided mismatched passcodes.
 
 ___
 <a id="vaulterrorcodes.missingpasscode"></a>
 
-###  MissingPasscode
+####  MissingPasscode
 
 **MissingPasscode**: 
 
@@ -313,65 +313,65 @@ The operation requires passcode to be setup but it isn't set yet. Call [setPassc
 ___
 <a id="vaulterrorcodes.passcodenotenabled"></a>
 
-###  PasscodeNotEnabled
+####  PasscodeNotEnabled
 
 **PasscodeNotEnabled**: 
 
-The operation failed because passcode authentication is not enabled
+The operation failed because the application tried to unlock the vault with passcode authentication, but the vault is not configured to allow passcode authentication.
 
 ___
 <a id="vaulterrorcodes.securitynotavailable"></a>
 
-###  SecurityNotAvailable
+####  SecurityNotAvailable
 
 **SecurityNotAvailable**: 
 
-Biometric security is unavailable
+Biometric security is unavailable due to a passcode not being set up at the system level. In order to use biometric identification on the device a system level passcode must be set up by the user.
 
 ___
 <a id="vaulterrorcodes.toomanyfailedattempts"></a>
 
-###  TooManyFailedAttempts
+####  TooManyFailedAttempts
 
 **TooManyFailedAttempts**: 
 
-Too many failed authentication attempts so the vault was cleared an user will need to login again
+Too many failed authentication attempts so the vault was cleared an user will need to login again.
 
 ___
 <a id="vaulterrorcodes.unknown"></a>
 
-###  Unknown
+####  Unknown
 
 **Unknown**: 
 
-An unknown error happened
+An unknown error happened.
 
 ___
 <a id="vaulterrorcodes.usercanceledinteraction"></a>
 
-###  UserCanceledInteraction
+####  UserCanceledInteraction
 
 **UserCanceledInteraction**: 
 
-The user cancelled the native authentication dialog
+The user cancelled the native authentication dialog.
 
 ___
 <a id="vaulterrorcodes.vaultlocked"></a>
 
-###  VaultLocked
+####  VaultLocked
 
 **VaultLocked**: 
 
-The operation failed because the vault was locked
+The operation failed because the vault was locked.
 
 ___
 <a id="vaulterrorcodes.vaultunavailable"></a>
 
-###  VaultUnavailable
+####  VaultUnavailable
 
 **VaultUnavailable**: 
 
-The operation failed because the vault was unavailable
+The operation failed because the vault was unavailable. The most likely cause of this error is that a vault has not been configured.
 
 ___
 
@@ -516,7 +516,7 @@ ___
 
 ▸ **isBiometricsAvailable**(): `Promise`<`boolean`>
 
-Check whether or not biometrics is available on the device
+Check whether or not biometrics is supported by the device and has been configured by the current user of the device
 
 **Returns:** `Promise`<`boolean`>
 whether or not biometrics is available
@@ -540,7 +540,7 @@ ___
 
 ▸ **isBiometricsSupported**(): `Promise`<`boolean`>
 
-Check whether or not biometrics is supported on the device
+Check whether or not biometrics is supported by the device
 
 **Returns:** `Promise`<`boolean`>
 whether or not biometrics is supported
@@ -908,7 +908,7 @@ ___
 
 ▸ **isBiometricsAvailable**(): `Promise`<`boolean`>
 
-Check whether or not biometrics is available on the device
+Check whether or not biometrics is supported by the device and has been configured by the current user of the device
 
 **Returns:** `Promise`<`boolean`>
 whether or not biometrics is available
@@ -932,7 +932,7 @@ ___
 
 ▸ **isBiometricsSupported**(): `Promise`<`boolean`>
 
-Check whether or not biometrics is supported on the device
+Check whether or not biometrics is supported by the device
 
 **Returns:** `Promise`<`boolean`>
 whether or not biometrics is supported
@@ -1428,7 +1428,7 @@ ___
 
 ▸ **onConfig**(event: *[PluginConfiguration](#pluginconfiguration)*): `any`
 
-A handler that will recieve events any time the vault is configuration is changed
+A handler that will receive events any time the vault is configuration is changed
 
 **Parameters:**
 
@@ -1462,7 +1462,7 @@ ___
 
 ▸ **onLock**(event: *[LockEvent](#lockevent)*): `any`
 
-A handler that will recieve events any time the vault is locked
+A handler that will receive events any time the vault is locked
 
 **Parameters:**
 
@@ -1496,7 +1496,7 @@ ___
 
 ▸ **onUnlock**(event: *[PluginConfiguration](#pluginconfiguration)*): `any`
 
-A handler that will recieve events any time the vault is unlocked
+A handler that will receive events any time the vault is unlocked
 
 **Parameters:**
 
@@ -1873,7 +1873,7 @@ ___
 
 ### Features
 
-- Added [getPlugin](#identityvaultuser.getplugin) method which can be overridden in advanced use cases to provide custom implementations for PWA compatability etc.
+- Added [getPlugin](#identityvaultuser.getplugin) method which can be overridden in advanced use cases to provide custom implementations for PWA compatibility etc.
 
 ### Bug Fixes
 
