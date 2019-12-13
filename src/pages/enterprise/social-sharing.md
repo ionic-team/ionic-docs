@@ -1,7 +1,7 @@
 ---
 title: Social Sharing
 template: enterprise-plugin
-version: 5.6.1
+version: 5.6.3
 minor: 5.6.X
 ---
 
@@ -22,6 +22,12 @@ The Social Sharing plugin provides the ability to share text, files, images, and
 <a id="socialsharing"></a>
 
 ###  SocialSharing
+
+**SocialSharing**: 
+
+*__name__*: Social Sharing
+
+*__description__*: Share text, files, images, and links via social networks, sms, and email.
 
 For Browser usage check out the Web Share API docs: [https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin#5-web-share-api](https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin#5-web-share-api)
 
