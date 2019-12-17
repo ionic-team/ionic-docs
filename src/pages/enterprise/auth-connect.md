@@ -1,7 +1,7 @@
 ---
 title: Auth Connect
 template: enterprise-plugin
-version: 1.3.3
+version: 1.3.5
 minor: 1.3.X
 ---
 
@@ -705,7 +705,7 @@ ___
 
 ### `<Const>` ready
 
-**● ready**: *`Promise`<`Object`>* =  new Promise(resolve => {
+**● ready**: *`Promise`<`unknown`>* =  new Promise(resolve => {
   document.addEventListener('deviceready', () => {
     resolve();
   });
@@ -713,9 +713,24 @@ ___
 
 ___
 
-## Change Log
+# Changelog
 
 
+
+### [1.3.5] (2019-12-17)
+
+
+### Bug Fixes
+
+* **ios:** prevent blank screen on SFSafariViewController presentation 
+
+### [1.3.4] (2019-12-04)
+
+
+### Bug Fixes
+
+* **android:** implement IonicSecureWebView.hide() to avoid invalid action 
+* **ios:** add in new interface for ios 13 when using ASWebAuthenticationPresentationContextProviding 
 
 ### [1.3.3] (2019-11-08)
 
@@ -761,7 +776,7 @@ ___
 
 ### Features
 
-* **ios,android,web:** support acquiring multiple tokens from an oauth source (especially azure ad), also fix some issues with refresh for the web path. The major change is that getToken now has two optional paramters, they both must be passed in or neither. The parameters are a  and id for the token bein acquired and  the specific scope for the token being acquired. 
+* **ios,android,web:** support acquiring multiple tokens from an oauth source (especially azure ad), also fix some issues with refresh for the web path. The major change is that getToken now has two optional paramters, they both must be passed in or neither. The parameters are an id for the token being acquired and the specific scope for the token being acquired.
 
 
 
