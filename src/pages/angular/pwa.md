@@ -11,10 +11,6 @@ The two main requirements of a PWA are a <a href="https://developers.google.com/
 The `@angular/pwa` package will automatically add a service worker and an app manifest to the app.
 To add this package to the app, run:
 
-
-The `@angular/pwa` package will automatically add a service worker and an app manifest to the app.
-To add this package to the app, run:
-
 ```shell
 $ ng add @angular/pwa
 ```
