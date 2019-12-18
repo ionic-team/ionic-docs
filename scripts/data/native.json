@@ -2880,20 +2880,6 @@
     }
   },
   {
-    "packageName": "@ionic-native/pro",
-    "displayName": "Pro",
-    "description": "\nThis plugin enables Ionic Pro services like live updates and error monitoring\n",
-    "usage": "\n```typescript\nimport { Pro, AppInfo, DeployInfo } from '@ionic-native/pro/ngx';\n\n\nconstructor(private pro: Pro) { }\n\n// Get app info\nthis.pro.getAppInfo().then((res: AppInfo) => {\n  console.log(res)\n})\n\n// Get live update info\nthis.pro.deploy.info().then((res: DeployInfo) => {\n  console.log(res)\n})\n```\n",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/ionic-team/cordova-plugin-ionic",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-ionic"
-    }
-  },
-  {
     "packageName": "@ionic-native/purchases",
     "displayName": "Purchases",
     "description": "\nPurchases is a cross platform solution for managing in-app subscriptions. A backend is also provided via [RevenueCat](https://www.revenuecat.com)\n\n## Features\n|     | RevenueCat                                                                                                                                                   |\n| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |\n| ✅  | Server-side receipt validation                                                                                                                               |\n| ➡️  | [Webhooks](https://docs.revenuecat.com/docs/webhooks) - enhanced server-to-server communication with events for purchases, renewals, cancellations, and more |\n| 🎯  | Subscription status tracking - know whether a user is subscribed whether they're on iOS, Android or web                                                      |\n| 📊  | Analytics - automatic calculation of metrics like conversion, mrr, and churn                                                                                 |\n| 📝  | [Online documentation](https://docs.revenuecat.com/docs) up to date                                                                                          |\n| 🔀  | [Integrations](https://www.revenuecat.com/integrations) - over a dozen integrations to easily send purchase data where you need it                           |\n| 💯  | Well maintained - [frequent releases](https://github.com/RevenueCat/purchases-ios/releases)                                                                  |\n| 📮  | Great support - [Help Center](https://docs.revenuecat.com/discuss)                                                                                           |\n| 🤩  | Awesome [new features](https://trello.com/b/RZRnWRbI/revenuecat-product-roadmap)                                                                             |\n\n## Getting Started\n\nFor more detailed information, you can view our complete documentation at [docs.revenuecat.com](https://docs.revenuecat.com/docs).\n",
