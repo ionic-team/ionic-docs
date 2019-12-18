@@ -1,7 +1,7 @@
 ---
 title: Identity Vault
 template: enterprise-plugin
-version: 3.5.0
+version: 3.5.1
 minor: 3.5.X
 otherVersions:
   - 2.0.X
@@ -1838,6 +1838,13 @@ The possible values returned by [getBiometricType](#identityvault.getbiometricty
 * * *
 
 ## Change Log
+
+### \[3.5.1\] (2019-12-18)
+
+### Bug Fixes
+
+* **android:** properly call onVaultLocked after lock 
+* **ios:** add screenProtectView on top window 
 
 ### \[3.5.0\] (2019-11-27)
 
