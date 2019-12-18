@@ -26,9 +26,9 @@ an existing SSH key pair for authentication when pushing changes to Ionic Appflo
 
 You can learn more about git remotes [here](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes).
 
-## Connecting to an Existing Appflow-Linked Repository
+## Establishing Ionic Remote Connection to an  Appflow-Linked Repository
 
-If your repository has previously been linked to Appflow using the Ionic Remote and you simply need to re-establish the connection on a new machine or as a team member for an app, you can run the following command:ß
+If your repository has previously been linked to Appflow using the Ionic Remote and you simply need to re-establish the connection on a new machine or as a team member for an app, you can run the following command:
 
 ```bash
 $ ionic git remote
