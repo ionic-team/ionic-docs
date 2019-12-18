@@ -23,8 +23,16 @@ Para vincular su repositorio local, simplemente ejecuta `enlace ionic` en el dir
 
 Puedes aprender más sobre git remotes [aquí](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes).
 
-## Configurar sus claves SSH
+## Establishing Ionic Remote Connection to an Appflow-Linked Repository
 
-La autenticación remota Ionica se realiza atraver de claves SSH públicas/privadas para la autenticación más segura posible. Necesitarás subir una clave pública a Ionic Appflow para autenticarte. Esto se puede hacer automáticamente durante el proceso de `enlace iónico` o manualmente.
+If your repository has previously been linked to Appflow using the Ionic Remote and you simply need to re-establish the connection on a new machine or as a team member for an app, you can run the following command:
 
-Una vez que hayas seleccionado la aplicación correcta y el mando `Ionic Appflow` , se le pedirá que cree un par de claves SSH o que utilice una existente. Si no estás familiarizado con las claves SSH, te recomendamos que dejes que la CLI cree automáticamente y las añada para ti. De lo contrario, puede elegir usar una clave existente y proporcionar a la CLI una ruta a la clave pública en su máquina local. También puede subir una clave pública existente en el panel de control de la aplicación en el área de configuración personal. que puedes encontrar haciendo clic en el icono de tu perfil en la parte inferior izquierda del panel.
+```bash
+$ ionic git remote
+```
+
+## Configure your SSH keys
+
+Ionic remote authentication is done via public/private SSH key pairs for the most secure authentication possible. You'll need to upload a public key to Ionic Appflow to authenticate yourself. This can be automatically done during the `ionic link` process or manually.
+
+Once you've selected the correct app and the `Ionic Appflow` remote, you will be prompted to create an SSH key pair or use an existing one. If you're not familiar with SSH keys we suggest letting the CLI automatically create and add them for you. Otherwise, you can choose to use an existing key and provide the CLI with a path to the public key on your local machine. You can also upload an existing public key in the Appflow Dashboard in the personal Settings area, which you can find by clicking your profile icon on the lower left side of the Dashboard.
