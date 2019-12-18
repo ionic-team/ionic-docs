@@ -1,14 +1,32 @@
-import { h } from '@stencil/core';
-import plugins from '../data/native-plugins.json';
+import { Component, Prop, h } from '@stencil/core';
+import communityPlugins from '../data/native-plugins.json';
+import EnterprisePlugins from './native-enterprise';
 
-export default () => [
-  <docs-nav items={ intro } />,
-  <div class="collapseable">
-    <docs-nav items={ nativeSolutions } />
-  </div>,
-  <div class="collapseable">
-    <strong>Core Device</strong>
-    <ion-segment>
+@Component({
+  tag: 'docs-menu-native',
+  styleUrl: 'native.css'
+})
+export class DocsMenuNative {
+
+@Prop() category: 'community' | 'premier' = 'premier';
+
+toggle(e: CustomEvent) {
+  this.category = e.detail.value;
+}
+
+render() { return [
+  <docs-nav items={ this.intro } />,
+
+  <docs-menu-collapsible heading="Native Solutions">
+    <docs-nav items={ this.nativeSolutions } />
+  </docs-menu-collapsible>,
+
+  <docs-menu-collapsible heading="Core Device">
+
+    <ion-segment mode="ios"
+                 value={this.category}
+                 onIonChange={e => this.toggle(e) }
+                 color="medium">
       <ion-segment-button value="community">
         <ion-label>Community</ion-label>
       </ion-segment-button>
@@ -16,29 +34,33 @@ export default () => [
         <ion-label>Premier</ion-label>
       </ion-segment-button>
     </ion-segment>
-    <docs-nav items={ corePlugins } />
-  </div>
-];
 
-const intro = {
+    {this.category === 'community' ?
+      <docs-nav items={this.communityPlugins} /> :
+      <EnterprisePlugins/>
+    }
+  </docs-menu-collapsible>
+]; }
+
+intro = {
   'menu-native-paid': {
     'Home': '/docs/enterprise',
     'Community vs Premier': '/docs/enterprise'
   }
 };
 
-const nativeSolutions = {
-  'menu-native-solutions': {
+nativeSolutions = {
+  '': {
     'Identity Vault': '/docs/enterprise/identity-vault',
     'Auth Connect': '/docs/enterprise/auth-connect',
     'Secure Storage': '/docs/enterprise/offline-storage'
   }
 };
 
-const corePlugins = {
+communityPlugins = {
   'menu-native-getting-started': {
     'Quickstart': '/docs/enterprise/quickstart'
   },
-  'menu-native-plugins': Object.entries(plugins).sort()
+  'menu-native-plugins': Object.entries(communityPlugins).sort()
 };
-
+}

@@ -20,14 +20,13 @@
     "heroku-postbuild": "npm run build.ci"
   },
   "dependencies": {
-    "@ionic/core": "^4.11.4",
-    "@ionic/docs": "^4.11.4",
+    "@ionic/core": "next",
+    "@ionic/docs": "^4.11.7",
     "@sentry/node": "^5.7.1",
     "@stencil/router": "^1.0.1",
     "compression": "^1.7.4",
     "express": "^4.16.4",
     "helmet": "^3.21.2",
-    "ionicons": "^4.6.1",
     "moment": "^2.24.0",
     "prismic-dom": "^2.1.0",
     "prismic-javascript": "^2.1.3",

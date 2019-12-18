@@ -104,6 +104,12 @@ export namespace Components {
   interface DocsMenu {
     'onToggleClick': (e: Event) => void;
   }
+  interface DocsMenuCollapsible {
+    'heading': string;
+  }
+  interface DocsMenuNative {
+    'category': 'community' | 'premier';
+  }
   interface DocsMenuToggle {}
   interface DocsNav {
     'items': MenuItems;
@@ -304,6 +310,18 @@ declare global {
     new (): HTMLDocsMenuElement;
   };
 
+  interface HTMLDocsMenuCollapsibleElement extends Components.DocsMenuCollapsible, HTMLStencilElement {}
+  var HTMLDocsMenuCollapsibleElement: {
+    prototype: HTMLDocsMenuCollapsibleElement;
+    new (): HTMLDocsMenuCollapsibleElement;
+  };
+
+  interface HTMLDocsMenuNativeElement extends Components.DocsMenuNative, HTMLStencilElement {}
+  var HTMLDocsMenuNativeElement: {
+    prototype: HTMLDocsMenuNativeElement;
+    new (): HTMLDocsMenuNativeElement;
+  };
+
   interface HTMLDocsMenuToggleElement extends Components.DocsMenuToggle, HTMLStencilElement {}
   var HTMLDocsMenuToggleElement: {
     prototype: HTMLDocsMenuToggleElement;
@@ -475,6 +493,8 @@ declare global {
     'docs-dropdown': HTMLDocsDropdownElement;
     'docs-header': HTMLDocsHeaderElement;
     'docs-menu': HTMLDocsMenuElement;
+    'docs-menu-collapsible': HTMLDocsMenuCollapsibleElement;
+    'docs-menu-native': HTMLDocsMenuNativeElement;
     'docs-menu-toggle': HTMLDocsMenuToggleElement;
     'docs-nav': HTMLDocsNavElement;
     'docs-page': HTMLDocsPageElement;
@@ -586,6 +606,12 @@ declare namespace LocalJSX {
   interface DocsMenu {
     'onToggleClick'?: (e: Event) => void;
   }
+  interface DocsMenuCollapsible {
+    'heading'?: string;
+  }
+  interface DocsMenuNative {
+    'category'?: 'community' | 'premier';
+  }
   interface DocsMenuToggle {}
   interface DocsNav {
     'items'?: MenuItems;
@@ -681,6 +707,8 @@ declare namespace LocalJSX {
     'docs-dropdown': DocsDropdown;
     'docs-header': DocsHeader;
     'docs-menu': DocsMenu;
+    'docs-menu-collapsible': DocsMenuCollapsible;
+    'docs-menu-native': DocsMenuNative;
     'docs-menu-toggle': DocsMenuToggle;
     'docs-nav': DocsNav;
     'docs-page': DocsPage;
@@ -736,6 +764,8 @@ declare module "@stencil/core" {
       'docs-dropdown': LocalJSX.DocsDropdown & JSXBase.HTMLAttributes<HTMLDocsDropdownElement>;
       'docs-header': LocalJSX.DocsHeader & JSXBase.HTMLAttributes<HTMLDocsHeaderElement>;
       'docs-menu': LocalJSX.DocsMenu & JSXBase.HTMLAttributes<HTMLDocsMenuElement>;
+      'docs-menu-collapsible': LocalJSX.DocsMenuCollapsible & JSXBase.HTMLAttributes<HTMLDocsMenuCollapsibleElement>;
+      'docs-menu-native': LocalJSX.DocsMenuNative & JSXBase.HTMLAttributes<HTMLDocsMenuNativeElement>;
       'docs-menu-toggle': LocalJSX.DocsMenuToggle & JSXBase.HTMLAttributes<HTMLDocsMenuToggleElement>;
       'docs-nav': LocalJSX.DocsNav & JSXBase.HTMLAttributes<HTMLDocsNavElement>;
       'docs-page': LocalJSX.DocsPage & JSXBase.HTMLAttributes<HTMLDocsPageElement>;

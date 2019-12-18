@@ -15,7 +15,7 @@ export const config: Config = {
         { src: 'components/color-gen/demo/index.html', dest: 'pages/theming/color-generator/index.html' },
         { src: 'assets', dest: 'assets' },
         { src: 'manifest.json', dest: 'manifest.json' },
-        { src: '../node_modules/@ionic/core', dest: 'assets/ionic' },
+        { src: '../node_modules/@ionic/core/dist', dest: 'assets/ionic' },
       ]
     }
   ]

@@ -3,21 +3,18 @@ import { h } from '@stencil/core';
 export default () => <docs-nav items={ items } />;
 
 const items = {
-  'menu-native-community': '/docs/native/overview',
-  'menu-native-paid': '/docs/enterprise',
   'menu-enterprise-getting-started': {
     'Quickstart': '/docs/enterprise/quickstart',
     'Setup': '/docs/enterprise/setup'
   },
-  'menu-enterprise-authentication-security': {
-    'Auth Connect': '/docs/enterprise/auth-connect',
-    '': {
-      'Auth0': '/docs/enterprise/auth-connect/auth0',
-      'Azure AD B2C': '/docs/enterprise/auth-connect/azure-ad-b2c',
-      'AWS Cognito': '/docs/enterprise/auth-connect/aws-cognito'
-    },
-    'Identity Vault': '/docs/enterprise/identity-vault',
-    'Offline Storage': '/docs/enterprise/offline-storage'
+  'menu-enterprise-integrated-services': {
+    'Apple Payment Pass': '/docs/enterprise/apple-payment-pass',
+    'Auth0': '/docs/enterprise/auth-connect/auth0',
+    'AWS Amplify': '/docs/enterprise/aws-amplify',
+    'AWS Cognito': '/docs/enterprise/auth-connect/aws-cognito',
+    'Azure AD B2C': '/docs/enterprise/auth-connect/azure-ad-b2c',
+    'Couchbase Lite': '/docs/enterprise/couchbase-lite',
+    'mParticle': '/docs/enterprise/mparticle'
   },
   'menu-enterprise-common-device-features': {
     'Android Permissions': '/docs/enterprise/android-permissions',
@@ -47,10 +44,4 @@ const items = {
     'Status Bar': '/docs/enterprise/statusbar',
     'Vibration': '/docs/enterprise/vibration'
   },
-  'menu-enterprise-integrated-services': {
-    'Apple Payment Pass': '/docs/enterprise/apple-payment-pass',
-    'AWS Amplify': '/docs/enterprise/aws-amplify',
-    'Couchbase Lite': '/docs/enterprise/couchbase-lite',
-    'mParticle': '/docs/enterprise/mparticle'
-  }
 };
