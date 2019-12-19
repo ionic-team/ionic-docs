@@ -5,9 +5,9 @@ contributors:
   - dwieeb
 ---
 
-# Starting an App
+# 构建一个新的应用
 
-Starting a new Ionic app is incredibly simple. From the command line, run the `ionic start` command and the CLI will handle the rest.
+构建一个全新的Ionic应用非常容易 在命令行中，只需运行命令 `ionic start` ，CLI将替你完成剩下的事
 
 <command-line> <command-prompt>ionic start</command-prompt> <command-output>   
 <span class="bold">Every great app needs a name! 😍</span>  
