@@ -10,9 +10,9 @@ contributors:
 构建一个全新的Ionic应用非常容易 在命令行中，只需运行命令 `ionic start` ，CLI将替你完成剩下的事
 
 <command-line> <command-prompt>ionic start</command-prompt> <command-output>   
-<span class="bold">Every great app needs a name! 😍</span>  
+<span class="bold">每一个伟大的应用都需要起个名字！ 😍</span>  
   
-Please enter the full name of your app. You can change this at any time. To bypass this prompt next time, supply <span class="green">name</span>, the first argument to <span class="green">ionic start</span>.  
+请输入应用全称，之后你可以随时更改。 To bypass this prompt next time, supply <span class="green">name</span>, the first argument to <span class="green">ionic start</span>.  
   
 <span class="bold green">?</span> <span class="bold">Project name:</span> <command-cursor blink></command-cursor>  
 </command-output> </command-line>
