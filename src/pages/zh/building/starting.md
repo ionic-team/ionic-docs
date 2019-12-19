@@ -7,7 +7,7 @@ contributors:
 
 # 构建一个新的应用
 
-构建一个全新的Ionic应用非常容易 在命令行中，只需运行命令 `ionic start` ，CLI将替你完成剩下的事
+构建一个全新的Ionic应用非常容易。 只需在命令行中运行 `ionic start` ，CLI将替你完成剩下的事
 
 <command-line> <command-prompt>ionic start</command-prompt> <command-output>   
 <span class="bold">每一个伟大的应用都需要起个名字！ 😍</span>  
@@ -37,4 +37,4 @@ $ ionic start myApp tabs
 $ ionic start --list
 ```
 
-These templates provide a great starting point for any app and include all the best practices for making a code base scale.
+这些模板为所有应用提供了一个很好的开始，并包含了基础代码的最佳实践。
