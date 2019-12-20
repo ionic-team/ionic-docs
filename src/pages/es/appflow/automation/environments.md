@@ -1,5 +1,5 @@
 ---
-previousText: 'Create Automations'
+previousText: 'Crear Automatizaciones'
 previousUrl: '/docs/appflow/automation/create'
 nextText: 'Webhooks'
 nextUrl: '/docs/appflow/automation/webhooks'
