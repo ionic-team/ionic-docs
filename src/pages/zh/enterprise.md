@@ -35,7 +35,7 @@ Take on mobile projects with peace of mind, knowing the native features, securit
       <tbody>
         <tr class="stripe">
           <th>
-            Maintainer
+            维护者
           </th>
           <td>OSS Community</td>
           <td>Ionic</td>
