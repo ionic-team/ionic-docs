@@ -40,7 +40,7 @@ Las siguientes variables de entorno se proporcionan en cada compilación, a las 
 
 Además de los [ entornos predefinidos ](#predefined-environments), los clientes en los planes [ con acceso a automatizaciones ](/pricing) tendrán acceso para crear entornos personalizados. Con entornos personalizados, es fácil crear y administrar conjuntos personalizados de pares clave/valor para personalizar aún más las compilaciones en Ionic Appflow. Los casos de uso comunes incluyen la personalización de su proceso de compilación & para crear versiones de control de calidad de su aplicación que se conectan a diferentes API o para crear diferentes versiones de su aplicación con etiqueta blanca. Para comenzar con entornos personalizados, abra la aplicación en la que desea trabajar y navegue en la barra lateral para ** Automatizar -> Entornos **, luego haga clic en ** Nuevo entorno ** en la parte superior derecha. Deberá ver algo como esto:
 
-![Create Environment Form](/docs/assets/img/appflow/ss-environments-create.png)
+![Crear formulario de entorno](/docs/assets/img/appflow/ss-environments-create.png)
 
 Como se puede notar, hay dos diferentes conjuntos de secciones de variables de entorno que se pueden utilizar:
 
@@ -51,7 +51,7 @@ La única diferencia es que los secretos están ocultos y nunca se muestran en e
 
 El dashboard de entornos también muestra los entornos personalizados disponibles junto con sus pares clave/valor configurados y claves secretas.
 
-![Environments List View](/docs/assets/img/appflow/ss-environments-list.png)
+![Vista de lista de entornos](/docs/assets/img/appflow/ss-environments-list.png)
 
 ## Uso
 
@@ -78,13 +78,13 @@ Por ejemplo, podría reemplazar su script `compilación` en `package.json` con u
     fi
     
 
-As of `@ionic/app-scripts@3.2.0` you can also use [environment variables directly in your source code](https://github.com/ionic-team/ionic-app-scripts#environments) and they will be replaced at build time so that you can customize your code based on the environment.
+A partir de `@ionic/app-scripts@3.2.0` también puede usar [ variables de entorno directamente en su código fuente ](https://github.com/ionic-team/ionic-app-scripts#environments) y se reemplazarán en el momento de la compilación para que pueda personalizar su código según el entorno.
 
 <blockquote>
-  <p><b>Note:</b>`@ionic/app-scripts` is only for use with Ionic Framework v3 applications. The above does not apply to other versions.</p>
+  <p><b>Nota:</b>`@ionic/app-scripts` es sólo para uso con aplicaciones Ionic Framework v3. Lo anterior no se aplica a otras versiones.</p>
 </blockquote>
 
-For example:
+Por ejemplo:
 
 ```typescript
 productionConfig = {
@@ -92,7 +92,7 @@ productionConfig = {
   analyticsKey: 'my-production-key'
 }
 stagingConfig = {
-  api: 'https://my.staging.api.com',
+  api: 'https://my.staging.api. om',
   analyticsKey: 'my-staging-key'
 }
 
@@ -101,12 +101,12 @@ localConfig = {
   analyticsKey: 'my-local-key'
 }
 
-switch (process.env.CI_GIT_REF) {
+switch (process. nv.CI_GIT_REF) {
   case 'master':
     return productionConfig;
-  case 'staging':
+  caso 'staging':
     return stagingConfig;
-  default:
+  por defecto:
     return localConfig;
 }
 ```
