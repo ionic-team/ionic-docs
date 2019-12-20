@@ -52,7 +52,9 @@ private async initializeDatabase() {
   this.sqlite.create({
     name: "images.db",
     location: "default",
-    key: "password" // Key/Password used to encrypt the database
+    // Key/Password used to encrypt the database
+    // Strongly recommended to use Identity Vault to manage this
+    key: "password"
   }).then((db: SQLiteObject) => {
     this.database = db;
 
