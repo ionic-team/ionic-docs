@@ -55,10 +55,10 @@ El dashboard de entornos también muestra los entornos personalizados disponible
 
 ## Uso
 
-For example you could replace your `build` script in the `package.json` with a custom shell script that reads the branch and triggers a custom build.
+Por ejemplo, podría reemplazar su script `compilación` en `package.json` con un script de shell personalizado que lee la rama y desencadena una compilación personalizada.
 
 ```json
-// customize the build script in the package.json
+// personalizar el script de compilación en el package.json
 {
 ...
     "scripts": {
