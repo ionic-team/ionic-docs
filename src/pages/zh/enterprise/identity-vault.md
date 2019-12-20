@@ -1,8 +1,8 @@
 ---
 title: Identity Vault
 template: enterprise-plugin
-version: 3.5.1
-minor: 3.5.X
+version: 3.6.0
+minor: 3.6.X
 otherVersions:
   - 2.0.X
   - 3.0.X
@@ -10,6 +10,7 @@ otherVersions:
   - 3.2.X
   - 3.3.X
   - 3.4.X
+  - 3.5.X
 ---
 
 # Ionic Identity Vault
@@ -484,6 +485,20 @@ Get the current configuration of the vault
 
 * * *
 
+<a id="identityvault.getkeys"></a>
+
+### getKeys
+
+▸ **getKeys**(): `Promise`<`string`[]>
+
+Get all keys with stored values.
+
+***throws***: [VaultError](#vaulterror) - if vault is locked
+
+**Returns:** `Promise`<`string`[]> array with all keys
+
+* * *
+
 <a id="identityvault.gettoken"></a>
 
 ### getToken
@@ -648,6 +663,27 @@ Lock the vault clearing the contents from memory and requiring biometrics or pas
 Check how many remaining failed attempts are left until vault clears
 
 **Returns:** `Promise`<`number`> the number of remaining attempts
+
+* * *
+
+<a id="identityvault.removevalue"></a>
+
+### removeValue
+
+▸ **removeValue**(key: *`string`*): `Promise`<`void`>
+
+Removes data under the given key.
+
+***throws***: [VaultError](#vaulterror) - if vault is locked, or if passcode is enabled but passcode has not been setup
+
+**Parameters:**
+
+| Name | Type     | Description                      |
+| ---- | -------- | -------------------------------- |
+| key  | `string` | the key to remove the value from |
+
+
+**Returns:** `Promise`<`void`>
 
 * * *
 
@@ -1838,6 +1874,13 @@ The possible values returned by [getBiometricType](#identityvault.getbiometricty
 * * *
 
 ## Change Log
+
+### \[3.6.0\] (2019-12-20)
+
+### Features
+
+* add getKeys to IdentityVault 
+* add removeValue to IdentityVault 
 
 ### \[3.5.1\] (2019-12-18)
 
