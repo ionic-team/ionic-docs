@@ -32,8 +32,6 @@ To do so, run `ionic serve` from the command line in the project's directory:
         <br />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;External: <span class="bold">http://192.168.1.169:8100</span>
         <br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DevApp: <span class="bold">StarTrack-ng@8100</span> on <span class="bold">ionic-home-router.network</span>
-        <br />
         <br />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="yellow">Use Ctrl+C to quit this process</span>
         <br />
@@ -44,5 +42,5 @@ To do so, run `ionic serve` from the command line in the project's directory:
 
 With `ionic serve` running, continue developing your app. As you save changes, the app reloads with those changes applied.
 
-Use [Platform Detection](/docs/building/cross-platform) for native functionality.
-When you're ready to test on a real device, see here for iOS and Android.
+When implementing native functionality, use [Platform Detection](/docs/building/cross-platform).
+When you're ready to test on a real device, see here for [iOS](/docs/building/ios) and [Android](/docs/building/android).
