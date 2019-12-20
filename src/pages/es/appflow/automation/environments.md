@@ -18,19 +18,19 @@ Hay dos tipos de variables de Entorno disponibles para usar:
 
 ## Entornos Predefinidos
 
-Every time a Build occurs, it's done in a secure environment where we provide some predefined variables which are key/value pairs that are made available in the environment and are available by using [process.env.MY_VAR](https://nodejs.org/docs/latest-v8.x/api/process.html#process_process_env) syntax in NodeJS or via `$MY_VAR` syntax in a standard shell script. These variables can be leveraged to [customize the build and outputs](#usage).
+Cada vez que se produce una compilación, se realiza en un entorno seguro donde proporcionamos algunas variables predefinidas que son pares clave/valor que están disponibles en el entorno y están disponibles mediante el uso de la sistaxis [process.env.MY_VAR](https://nodejs.org/docs/latest-v8.x/api/process.html#process_process_env) en NodeJS o via sintaxis `$MY_VAR` en un standard shell script. Estas variables se pueden aprovechar para [ personalizar la compilación y las salidas ](#usage).
 
-The following environment variables are provided in every build, which can be accessed in build scripts:
+Las siguientes variables de entorno se proporcionan en cada compilación, a las que se puede acceder en scripts de compilación:
 
-* `CI_APP_ID` **(string):** Your Ionic app's unique ID.
-* `CI_APP_NAME` **(string):** Your Ionic app's name.
-* `CI_AUTOMATED_BUILD` **(int):** Whether this build occurred as a result of an automation (`0` for `false`, `1` for `true`).
-* `CI_AUTOMATION_ID` **(optional int):** The unique ID of the automation which created this build.
-* `CI_AUTOMATION_NAME` **(optional string):** The name of the automation which created this build.
-* `CI_GIT_COMMIT_SHA` **(string):** The SHA for the commit on which the build was run.
-* `CI_GIT_COMMIT_MSG` **(string):** The message for the commit on which the build was run.
-* `CI_GIT_REF` **(string):** The git ref from which the build was created (i.e. `master`).
-* `CI_GIT_REF_TYPE` **(string):** The git ref type (i.e. `branch`).
+* `CI_APP_ID` **(string):** Tu ID único de aplicación ionic.
+* `CI_APP_NAME` **(string):** Tu nombre único de aplicación ionic.
+* `CI_AUTOMATED_BUILD` **(int):** Si esta compilación se produjo como resultado de una automatización (`0` para `falso`, `1` para `verdadero`).
+* `CI_AUTOMATION_ID` **(optional int):** El ID único de la automatización que creó esta compilación.
+* `CI_AUTOMATION_NAME` **(optional string):** El nombre de la automatización que creó esta compilación.
+* `CI_GIT_COMMIT_SHA` **(string):** El SHA para la confirmación en la que se ejecutó la compilación.
+* `CI_GIT_COMMIT_MSG` **(string):** El mensaje para la confirmación en la que se ejecutó la compilación.
+* `CI_GIT_REF` **(string):** La referencia git a partir de la cual se creó la compilación (i.e. `master`).
+* `CI_GIT_REF_TYPE` **(string):** El tipo de referencia git (i.e. `branch`).
 
 ## Custom Environments
 
