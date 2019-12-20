@@ -32,10 +32,10 @@ Las siguientes variables de entorno se proporcionan en cada compilación, a las 
 * `CI_GIT_REF` **(string):** La referencia git a partir de la cual se creó la compilación (i.e. `master`).
 * `CI_GIT_REF_TYPE` **(string):** El tipo de referencia git (i.e. `branch`).
 
-## Custom Environments
+## Entornos Personalizados
 
 <blockquote>
-  <p><b>Note:</b>This feature is only available on our <a href="/pricing">Growth plans</a> and above.</p>
+  <p><b>Note:</b>Esta función solo está disponible en nuestros <a href="/pricing">Planes de crecimiento</a> y superiores.</p>
 </blockquote>
 
 In addition to the [predefined environments](#predefined-environments), customers on the [plans with access to automations](/pricing) will have access to create custom environments. With custom environments it's easy to create and manage custom sets of key/value pairs to further customize builds on Ionic Appflow. Common use cases include customizing your build process in order to build staging & QA versions of your app that connect to different APIs or to build different white labeled versions of your application. To get started with custom environments, open the app you wish to work on and navigate in the sidebar to **Automate -> Environments**, then click **New Environment** on the top right. You should see a form like this:
