@@ -38,22 +38,22 @@ Las siguientes variables de entorno se proporcionan en cada compilación, a las 
   <p><b>Note:</b>Esta función solo está disponible en nuestros <a href="/pricing">Planes de crecimiento</a> y superiores.</p>
 </blockquote>
 
-Además de los [ entornos predefinidos ](#predefined-environments), los clientes en los planes [ con acceso a automatizaciones ](/pricing) tendrán acceso para crear entornos personalizados. Con entornos personalizados, es fácil crear y administrar conjuntos personalizados de pares clave/valor para personalizar aún más las compilaciones en Ionic Appflow. Common use cases include customizing your build process in order to build staging & QA versions of your app that connect to different APIs or to build different white labeled versions of your application. To get started with custom environments, open the app you wish to work on and navigate in the sidebar to **Automate -> Environments**, then click **New Environment** on the top right. You should see a form like this:
+Además de los [ entornos predefinidos ](#predefined-environments), los clientes en los planes [ con acceso a automatizaciones ](/pricing) tendrán acceso para crear entornos personalizados. Con entornos personalizados, es fácil crear y administrar conjuntos personalizados de pares clave/valor para personalizar aún más las compilaciones en Ionic Appflow. Los casos de uso comunes incluyen la personalización de su proceso de compilación & para crear versiones de control de calidad de su aplicación que se conectan a diferentes API o para crear diferentes versiones de su aplicación con etiqueta blanca. Para comenzar con entornos personalizados, abra la aplicación en la que desea trabajar y navegue en la barra lateral para ** Automatizar -> Entornos **, luego haga clic en ** Nuevo entorno ** en la parte superior derecha. Deberá ver algo como esto:
 
 ![Create Environment Form](/docs/assets/img/appflow/ss-environments-create.png)
 
-As can be noticed, there are 2 different sets of environment variables sections that can be utilized:
+Como se puede notar, hay dos diferentes conjuntos de secciones de variables de entorno que se pueden utilizar:
 
-* Secrets
+* Secretas
 * Variables
 
-The only difference is that the secrets are hidden and never shown in the dashboard after they have been added, while the variables are always available to be read.
+La única diferencia es que los secretos están ocultos y nunca se muestran en el panel de control después de añadirlos, mientras que las variables están siempre disponibles para ser leídas.
 
-The environments dashboard also lists available custom environments along with their configured key/value pairs and secrets keys.
+El dashboard de entornos también muestra los entornos personalizados disponibles junto con sus pares clave/valor configurados y claves secretas.
 
 ![Environments List View](/docs/assets/img/appflow/ss-environments-list.png)
 
-## Usage
+## Uso
 
 For example you could replace your `build` script in the `package.json` with a custom shell script that reads the branch and triggers a custom build.
 
