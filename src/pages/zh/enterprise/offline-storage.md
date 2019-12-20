@@ -3,6 +3,8 @@ title: Ionic Offline Storage
 template: enterprise-plugin
 version: 2.0.0
 minor: 2.0.X
+otherVersions:
+  - 1.0.X
 ---
 
 Ionic Offline Storage is a cross-platform data storage system that works on iOS and Android. Powered by [SQLite](https://www.sqlite.org/index.html), a SQL database engine for building powerful, data-driven apps entirely in JavaScript.
@@ -50,7 +52,9 @@ private async initializeDatabase() {
   this.sqlite.create({
     name: "images.db",
     location: "default",
-    key: "password" // Key/Password used to encrypt the database
+    // Key/Password used to encrypt the database
+    // Strongly recommended to use Identity Vault to manage this
+    key: "password"
   }).then((db: SQLiteObject) => {
     this.database = db;
 
