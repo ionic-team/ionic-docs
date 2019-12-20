@@ -1,15 +1,15 @@
 ---
 previousText: 'Crear Automatizaciones'
-previousUrl: '/docs/appflow/automation/create'
-nextText: 'Webhooks'
-nextUrl: '/docs/appflow/automation/webhooks'
+previousUrl: '/documentación/flujoDeAplicación/automatización/crear'
+nextText: 'Retrollamada Http'
+nextUrl: '/documentación/flujoDeAplicacion/automatización/RetrollamadaHttp'
 ---
 
-# Build Environments
+# Entornos de compilación
 
-## Introduction
+## Introducción
 
-Environments give you a way to customize the build process for your application in order to produce different versions of your applications for different environments from the same code base. All environment variables are accessible to any build scripts that run during the `npm run install` and `npm run build` portion of your builds.
+Los entornos le brindan una forma de personalizar el proceso de compilación de su aplicación para producir diferentes versiones de sus aplicaciones para diferentes entornos desde la misma base de código. All environment variables are accessible to any build scripts that run during the `npm run install` and `npm run build` portion of your builds.
 
 There are two types of Enviornment variables available to use:
 
