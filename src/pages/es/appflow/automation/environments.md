@@ -9,14 +9,14 @@ nextUrl: '/documentación/flujoDeAplicacion/automatización/RetrollamadaHttp'
 
 ## Introducción
 
-Los entornos le brindan una forma de personalizar el proceso de compilación de su aplicación para producir diferentes versiones de sus aplicaciones para diferentes entornos desde la misma base de código. All environment variables are accessible to any build scripts that run during the `npm run install` and `npm run build` portion of your builds.
+Los entornos le brindan una forma de personalizar el proceso de compilación de su aplicación para producir diferentes versiones de sus aplicaciones para diferentes entornos desde la misma base de código. Todas las variables de entorno son accesibles para construir scrips que corren durante la porción `npm run install` y `npm run buil` de tus compilaciones.
 
-There are two types of Enviornment variables available to use:
+Hay dos tipos de variables de Entorno disponibles para usar:
 
-* [Predefined Environments](#predefined-environments) (Available on all Builds)
-* [Custom Environments](#custom-environments) (Available on select plans)
+* [ Entornos Predefinidos ](#predefined-environments) (Disponibles en todas las Compilaciones)
+* [Entornos Personalizados](#custom-environments) (Disponible en planes seleccionados)
 
-## Predefined Environments
+## Entornos Predefinidos
 
 Every time a Build occurs, it's done in a secure environment where we provide some predefined variables which are key/value pairs that are made available in the environment and are available by using [process.env.MY_VAR](https://nodejs.org/docs/latest-v8.x/api/process.html#process_process_env) syntax in NodeJS or via `$MY_VAR` syntax in a standard shell script. These variables can be leveraged to [customize the build and outputs](#usage).
 
