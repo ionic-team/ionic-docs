@@ -77,20 +77,20 @@ contributors:
 
 下面的表格中定义了默认断点。 目前无法自定义断点。 欲了解更多关于为什么不能定制的信息，请在媒体查询中查看 [变量](/docs/theming/advanced#variables-in-media-queries)。
 
-| 名称 | 值      | Width Prefix | Offset Prefix | Push Prefix | Pull Prefix | Description                          |
-| -- | ------ | ------------ | ------------- | ----------- | ----------- | ------------------------------------ |
-| xs | 0      | `size-`      | `offset-`     | `push-`     | `pull-`     | Set columns when (min-width: 0)      |
-| sm | 576px  | `size-sm-`   | `offset-sm-`  | `push-sm-`  | `pull-sm-`  | Set columns when (min-width: 576px)  |
-| md | 768px  | `size-md-`   | `offset-md-`  | `push-md-`  | `pull-md-`  | Set columns when (min-width: 768px)  |
-| lg | 992px  | `size-lg-`   | `offset-lg-`  | `push-lg-`  | `pull-lg-`  | Set columns when (min-width: 992px)  |
-| xl | 1200px | `size-xl-`   | `offset-xl-`  | `push-xl-`  | `pull-xl-`  | Set columns when (min-width: 1200px) |
+| 名称 | 值      | 宽度前缀       | Offset Prefix | Push Prefix | 下拉前缀       | 说明                                   |
+| -- | ------ | ---------- | ------------- | ----------- | ---------- | ------------------------------------ |
+| xs | 0      | `size-`    | `offset-`     | `push-`     | `pull-`    | Set columns when (min-width: 0)      |
+| sm | 576px  | `size-sm-` | `offset-sm-`  | `push-sm-`  | `pull-sm-` | Set columns when (min-width: 576px)  |
+| md | 768px  | `size-md-` | `offset-md-`  | `push-md-`  | `pull-md-` | Set columns when (min-width: 768px)  |
+| lg | 992px  | `size-lg-` | `offset-lg-`  | `push-lg-`  | `pull-lg-` | Set columns when (min-width: 992px)  |
+| xl | 1200px | `size-xl-` | `offset-xl-`  | `push-xl-`  | `pull-xl-` | Set columns when (min-width: 1200px) |
 
 
-## Auto-layout columns
+## 自动布局列
 
-### Equal-width
+### 等宽
 
-By default, columns will take up equal width inside of a row for all devices and screen sizes.
+默认情况下，列将占用所有设备和屏幕大小行内的等宽。
 
 ```html
 <ion-grid>
@@ -126,7 +126,7 @@ By default, columns will take up equal width inside of a row for all devices and
 </ion-grid>
 ```
 
-### Setting one column width
+### 设置一个列宽度
 
 Set the width of one column and the others will automatically resize around it. This can be done using our predefined grid attributes. In the example below, the other columns will resize no matter the width of the center column.
 
@@ -169,7 +169,7 @@ Set the width of one column and the others will automatically resize around it. 
 </ion-grid>
 ```
 
-### Variable-width
+### 可变的容器宽度
 
 By setting the `size-{breakpoint}` properties to `"auto"` the column can size itself based on the natural width of its content. This is extremely useful for setting a column width using pixels. The columns next to the variable-width column will resize to fill the row.
 
@@ -217,7 +217,7 @@ By setting the `size-{breakpoint}` properties to `"auto"` the column can size it
 </ion-grid>
 ```
 
-## Responsive attributes
+## 响应属性
 
 ### All breakpoints
 
