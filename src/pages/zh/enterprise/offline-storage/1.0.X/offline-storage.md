@@ -1,37 +1,37 @@
 ---
-title: Offline Storage
-template: enterprise-plugin
+title: 离线存储
+template: 企业插件
 version: 1.0.0
 minor: 1.0.X
 ---
 
-# Ionic Offline Storage
+# Ionic 离线存储
 
-Ionic Offline Storage is a cross-platform data storage system that works on iOS and Android, and Electron on desktop. Powered by [Couchbase Lite](https://docs.couchbase.com/couchbase-lite/2.6/index.html), a NoSQL database engine that provides simple yet powerful query, replication, and sync APIs.
+Ionic 离线存储是一个跨平台数据存储系统，用于iOS 和 Android 以及 Electron 桌面上。 由 [Couchbase Lite](https://docs.couchbase.com/couchbase-lite/2.6/index.html)驱动，一个 NoSQL 数据库引擎提供简单但强大的查询、复制和同步 API。
 
-This solution makes it easy to add offline storage to Ionic apps that are secure (encrypted on device), highly performant, and provide advanced data querying. [Learn more.](https://ionicframework.com/offline-storage)
+这个解决方案可以轻松地将离线存储添加到具有安全性(在设备上加密)、高度性能并提供高级数据查询的 Ionic 应用中。 [了解更多](https://ionicframework.com/offline-storage)
 
 <native-ent-install plugin-id="offline-storage" variables=""></native-ent-install>
 
-## Project Requirements
+## 项目要求
 
-Couchbase Lite requires a min SDK target for Android of at least 19. Make sure you have this in your `config.xml` at a minimum:
+Couchbase Lite 需要 Android 至少 19 的 SDK。 请确保您至少在 `config.xml` 中有这样做：
 
 ```xml
 <preference name="android-minSdkVersion" value="19" />
 ```
 
-To use additional features such as cloud data sync, data replication, conflict resolution, and delta sync, a subscription to Couchbase Server is required. To learn more, please [get in touch](https://ionicframework.com/enterprise/contact).
+为了使用云数据同步、数据复制、冲突解决和delta sync等其他功能，需要订阅Couchbase Server。 若要了解更多信息，请 [取得联系](https://ionicframework.com/enterprise/contact)。
 
-## Reference Apps
+## 参考
 
-1) A full [CRUD implementation](https://github.com/ionic-team/cs-demo-couchbase-lite), including querying, responding to data changes, and deleting documents. Follow along with the corresponding [blog post](https://ionicframework.com/blog/build-secure-offline-apps-with-ionic-couchbase-lite/).
+1) 完整的 [CRUD 实现](https://github.com/ionic-team/cs-demo-couchbase-lite)，包括查询、响应数据更改和删除文档。 跟随相应的 [博客文章](https://ionicframework.com/blog/build-secure-offline-apps-with-ionic-couchbase-lite/)。
 
-2) A complete [offline search experience](https://github.com/ionic-team/demo-offlinestorage-search) that includes advanced querying examples, multiple filters, and wildcard searches. Follow along with the corresponding [webinar video](https://youtu.be/_2C047pQwxU?t=1003).
+2) 完整的 [离线搜索体验](https://github.com/ionic-team/demo-offlinestorage-search) 个搜索体验，包括高级查询示例、多个过滤器和通配符搜索。 跟随相应的 [博客文章](https://youtu.be/_2C047pQwxU?t=1003)。
 
-## Getting Started
+## 开始使用
 
-After installing the plugin, import `@ionic-enterprise/offline-storage` into the desired class (A dedicated service class that encapsulates Offline Storage logic is recommended).
+安装插件后，将 `@ionic-enterprise/offline-storage` 导入到所需的类 (推荐一个专用的服务类封装离线存储逻辑)。
 
 ```typescript
 import {
@@ -59,7 +59,7 @@ import {
 } from '@ionic-enterprise/offline-storage';
 ```
 
-Next, initialize the database:
+接下来，初始化数据库：
 
 ```typescript
 /*  
@@ -89,7 +89,7 @@ private async initializeDatabase(): Promise<void> {
 }
 ```
 
-Create a new document and save it to the database:
+创建一个新文档并保存到数据库：
 
 ```typescript
 // Create a new document (i.e. a record) in the database.
@@ -102,7 +102,7 @@ let mutableDoc = new MutableDocument()
 await this.database.save(mutableDoc);
 ```
 
-Run a simple Query:
+运行一个简单查询：
 
 ```typescript
 // Create a query to fetch documents of type SDK.
@@ -115,7 +115,7 @@ const result = await (await query.execute()).allResults();
 console.log("Number of rows:  " + result.size());
 ```
 
-Build and run. You should see a row count of one printed to the console, as the document was successfully persisted to the database.
+构建并运行。 You should see a row count of one printed to the console, as the document was successfully persisted to the database.
 
 Bi-directional replications with Sync Gateway:
 
