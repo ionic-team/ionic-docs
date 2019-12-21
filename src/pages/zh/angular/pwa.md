@@ -1,14 +1,14 @@
 ---
-title: "Progressive Web Apps in Angular"
+title: "Angualr 的渐进网络应用程序"
 ---
 
 
-## Making your Angular app a PWA
+## 创建你的 Angular 渐进式应用
 
 
-The two main requirements of a PWA are a <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> and a <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Manifest</a>. While it's possible to add both of these to an app manually, the Angular team has an `@angular/pwa` package that can be used to automate this.
+PWA的两项主要要求是： <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> 和 <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">网页Manifest</a>。 虽然可以手动将这两者添加到应用程序中， Angular 团队有一个 `@angular/pwa` 软件包，可以用于实现自动化。
 
-The `@angular/pwa` package will automatically add a service worker and an app manifest to the app. To add this package to the app, run:
+`@angular/pwa` 软件包将自动添加一个 service worker 和一个应用 Minifest 到应用程序。 要将此软件包添加到应用程序，请执行：
 
 ```shell
 $ ng add @angular/pwa
@@ -20,7 +20,7 @@ $ ng add @angular/pwa
 </blockquote>
 
 <blockquote spaces-before="0">
-  <p spaces-before="0">Note: Features like Service Workers and many JavaScript APIs (such as geolocation) require the app be hosted in a secure context. When deploying an app through a hosting service, be aware that HTTPS will be required to take full advantage of Service Workers.</p>
+  <p spaces-before="0">注意：像 Service Workers 和许多 JavaScript API（如地理定位）这样的功能需要应用程序在安全环境中托管。 当通过托管服务部署应用时，需要使用 HTTPS 来使用 Service Workers。</p>
 </blockquote>
 
 <h2 spaces-before="0">Service Worker 配置</h2>
