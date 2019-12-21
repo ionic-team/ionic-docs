@@ -14,16 +14,20 @@ The `@angular/pwa` package will automatically add a service worker and an app ma
 $ ng add @angular/pwa
 ```
 
-Once this package has been added run `ionic build --prod` and the `www` directory will be ready to deploy as a PWA.
+一旦此软件包被添加，运行 `ionic build--prod` and `www` 目录将准备好部署为 PWA。
 
-> By default, the `@angular/pwa` package comes with the Angular logo for the app icons. Be sure to update the manifest to use the correct app name and also replace the icons.
+> 默认情况下， `@angular/pwa` 包带有Augular标识的应用图标。 请务必更新 ` manifest <code> 以使用正确的应用名称，并替换图标。</p>
+</blockquote>
 
+<blockquote spaces-before="0">
+  <p spaces-before="0">Note: Features like Service Workers and many JavaScript APIs (such as geolocation) require the app be hosted in a secure context. When deploying an app through a hosting service, be aware that HTTPS will be required to take full advantage of Service Workers.</p>
+</blockquote>
 
-> Note: Features like Service Workers and many JavaScript APIs (such as geolocation) require the app be hosted in a secure context. When deploying an app through a hosting service, be aware that HTTPS will be required to take full advantage of Service Workers.
+<h2 spaces-before="0">Service Worker 配置</h2>
 
-## Service Worker 配置
-
-After `@angular/pwa` has been added, a new `ngsw-config.json` file will be created at the root of the project. This file is responsible for configuring how Angular's service worker mechanism will handle caching assets. By default, the following will be provided:
+<p spaces-before="0">在 <code>@angular/pwa` 被添加之后，一个新的 `ngsw-config.json` 文件将在项目的根目录创建。 此文件负责配置Angular的服务工人机制如何处理缓存资源。 默认情况下，将提供以下内容：
+> 
+>
 
 ```json
 {
@@ -56,8 +60,8 @@ After `@angular/pwa` has been added, a new `ngsw-config.json` file will be creat
 }
 ```
 
-There are two sections in here, one for app specific resources (JS, CSS, HTML) and assets the app will load on demand. Depending on you app, these options can be customized. For a more detailed guide, read [the official guide from the Angular Team.](https://angular.io/guide/service-worker-config)
 
+这里有两个部分，一个是应用特定资源 (JS, CSS, HTML) 和应用程序需要时加载的资源。 根据您的应用，可以自定义这些选项。 更详细的指南，请阅读 [来自Augular的官方指南](https://angular.io/guide/service-worker-config)
 
 ## 应用部署
 
@@ -72,6 +76,7 @@ Firebase主机为渐进网络应用提供了许多好处，包括由于CDN提供
 ```shell
 $ npm install -g firebase-tools
 ```
+
 
 安装Firebase CLI后, 在你的Ionic目录下执行 `firebase init` 。 指令终端会提示：
 
@@ -130,6 +135,7 @@ $ npm install -g firebase-tools
 }
 ```
 
+
 关于 `firebase.json` 特性的更多信息，请参阅 [ Firebase文档](https://firebase.google.com/docs/hosting/full-config#section-firebase-json)。
 
 接下来，执行下列指令来打包你的应用程序：
@@ -138,10 +144,12 @@ $ npm install -g firebase-tools
 $ ionic build --prod
 ```
 
+
 最后, 执行下列指令来部署应用程序:
 
 ```shell
 $ firebase deploy
 ```
+
 
 完成后，应用程序将生效。
