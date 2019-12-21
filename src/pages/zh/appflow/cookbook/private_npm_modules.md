@@ -1,7 +1,7 @@
 ---
 previousText: '使用 GIT 私人仓库'
 previousUrl: '/docs/appollow/cookbook/private_git'
-nextText: 'Use different Node in builds'
+nextText: '在构建中使用不同的 Node'
 nextUrl: '/docs/appflow/cookbook/switch_node_version'
 ---
 
