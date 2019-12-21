@@ -115,9 +115,9 @@ const result = await (await query.execute()).allResults();
 console.log("Number of rows:  " + result.size());
 ```
 
-构建并运行。 You should see a row count of one printed to the console, as the document was successfully persisted to the database.
+构建并运行。 您应该看到打印到控制台的一行计数，因为文档已成功保存到数据库。
 
-Bi-directional replications with Sync Gateway:
+双向复制同步网关：
 
 ```typescript
 // Create replicators to push and pull changes to and from the cloud.
@@ -143,7 +143,7 @@ Beyond these docs, reference [Couchbase Lite's documentation](https://docs.couch
 
 ## Database
 
-### New Database
+### 新建数据库
 As the top-level entity in the API, new databases can be created using the `Database` class by passing in a name, configuration, or both. The following example creates a database using the `Database(name: string)` constructor:
 
 ```typescript
@@ -153,7 +153,7 @@ let database = new Database("my-database", config);
 
 The database will be created on the device. Alternatively, the `Database(name: string, config: DatabaseConfiguration)` initializer can be used to provide specific options in the <a href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-java/db022/com/couchbase/lite/DatabaseConfiguration.html"><code>DatabaseConfiguration</code></a> object such as the database directory.
 
-### Loading a pre-built Database
+### 加载预建数据库
 
 If your app needs to sync a lot of data initially, but that data is fairly static and won’t change much, it can be a lot more efficient to bundle a database in your application and install it on the first launch. Even if some of the content changes on the server after you create the app, the app’s first pull replication will bring the database up to date.
 
@@ -170,11 +170,11 @@ try {
 }
 ```
 
-## Document
+## 文档
 
 In Couchbase Lite, a document’s body takes the form of a JSON object — a collection of key/value pairs where the values can be different types of data such as numbers, strings, arrays or even nested objects. Every document is identified by a document ID, which can be automatically generated (as a UUID) or specified programmatically; the only constraints are that it must be unique within the database, and it can’t be changed.
 
-### Initializers
+### 初始化
 
 The following methods/initializers can be used:
 
@@ -200,7 +200,7 @@ try {
 
 Changes to the document are persisted to the database when the <code>save</code> method is called.
 
-### Typed Accessors
+### 输入存取器
 
 The `Document` class offers a set of <code>property accessors</code> for various scalar types, including boolean, integers, floating-point and strings. These accessors take care of converting to/from JSON encoding, and make sure you get the type you’re expecting.
 
@@ -268,7 +268,7 @@ When a document is synchronized, the Couchbase Lite replicator will add an <code
 
 A blob also has properties such as <code>"digest"</code> (a SHA-1 digest of the data), <code>"length"</code> (the length in bytes), and optionally <code>"content_type"</code> (the MIME type). The data is not stored in the document, but in a separate content-addressable store, indexed by the digest.
 
-## Query
+## 查询
 
 Database queries are based on expressions, of the form "return __ from documents where __, ordered by __", with semantics based on Couchbase’s N1QL query language.
 
@@ -929,7 +929,7 @@ config.setHeaders({
 });
 ```
 
-## Handling Conflicts
+## 处理冲突
 
 In Couchbase Lite 2.0, document conflicts are automatically resolved. This functionality aims to simplify the default behavior of conflict handling and save disk space (conflicting revisions will no longer be stored in the database). There are 2 different <code>save</code> method signatures to specify how to handle a possible conflict:
 
