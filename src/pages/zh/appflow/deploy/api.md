@@ -955,7 +955,7 @@ add` 命令) 或使用 cordova 变量 (如果使用 `ionic cordova plugin add`)�
 ### App ID
 
 * **必需**
-* The app id is required to receive updates for an app in the Appflow dashboard.
+* 要在Appflow信息中心中接收应用程序更新，必须提供应用程序ID。
 * `ionic deploy add --app-id=abcdef12`
 * `ionic cordova plugin add cordova-plugin-ionic --variable APP_ID=abcdef12`
 
@@ -1000,7 +1000,7 @@ add` 命令) 或使用 cordova 变量 (如果使用 `ionic cordova plugin add`)�
 
 ## 5.4.3
 
-* Fix issue where types caused incompatability with Ionic v3 (Typescript 2.x)
+* 修复那些类型会导致不兼容Ionic v3 (Typescript 2.x)
 
 ### 5.4.0
 
