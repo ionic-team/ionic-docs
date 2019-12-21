@@ -1,5 +1,5 @@
 ---
-title: Ionic Native
+title: Ionic原生插件
 tableOfContents: false
 ---
 
@@ -77,7 +77,7 @@ Take on mobile projects with peace of mind, knowing the native features, securit
         </tr>
         <tr class="stripe">
           <th>
-            Guaranteed SLA
+            保证
           </th>
           <td>否</td>
           <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
@@ -85,7 +85,7 @@ Take on mobile projects with peace of mind, knowing the native features, securit
           <th></th>
           <td></td>
           <td><a class="btn"
-                href="https://ionicframework.com/enterprise-edition">Learn More</a></td>
+                href="https://ionicframework.com/enterprise-edition">了解更多</a></td>
         </tr>
       </tbody>
     </table>
@@ -105,7 +105,7 @@ Accelerate your app development with powerful solutions to common enterprise use
 - [Auth Connect](/docs/enterprise/auth-connect)
 - [Identity Vault](/docs/enterprise/identity-vault)
 
-### Common Device Features
+### 常用设备功能
 
 - [Android 权限](/docs/enterprise/android-permissions)
 - [应用评分](/docs/enterprise/app-rate)
