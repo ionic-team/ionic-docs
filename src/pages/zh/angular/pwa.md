@@ -132,16 +132,16 @@ The last thing needed is to make sure caching headers are being set correctly. T
 
 For more information about the `firebase.json` properties, see the [Firebase documentation](https://firebase.google.com/docs/hosting/full-config#section-firebase-json).
 
-Next, build an optimized version of the app by running:
+接下来，通过运行来构建一个优化的应用程序版本：
 
 ```shell
 $ ionic build --prod
 ```
 
-Last, deploy the app by running:
+最后, 执行下列指令来部署应用程序:
 
 ```shell
 $ firebase deploy
 ```
 
-After this completes, the app will be live.
+完成后，应用程序将生效。
