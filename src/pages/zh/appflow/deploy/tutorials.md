@@ -7,4 +7,4 @@ nextUrl: '/docs/appflow/deploy/cli'
 
 # 教程和视频
 
-**Coming Soon! This page is currently under construction.**
+**敬请期待 这个页面正在建造中。**
