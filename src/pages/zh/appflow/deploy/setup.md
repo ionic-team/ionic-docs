@@ -21,4 +21,4 @@ Deploy 特性与Ionic Appflow一起工作，要求您的应用程序 [连接到�
 
 ## 高级用法。
 
-Want to do something sweet, like allow users to subscribe to a special Beta Channel instead of the default Production one? 是否进行了一些分割测试？ 自定义更新方式(如每30分钟检查，或在登录/登出)? 查看详细的 [Deploy API 文档](/docs/appflow/deploy/api)！
+想要做些什么，比如允许用户订阅一个特殊的 Beta 频道而不是默认的生产频道？ 是否进行了一些分割测试？ 自定义更新方式(如每30分钟检查，或在登录/登出)? 查看详细的 [Deploy API 文档](/docs/appflow/deploy/api)！
