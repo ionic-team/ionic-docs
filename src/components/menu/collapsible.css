@@ -2,7 +2,7 @@ docs-menu-collapsible {
   display: block;
   outline: none;
   border-top: 1px solid #DEE3EA;
-  padding-bottom: 1rem;
+  padding-bottom: .35rem;;
 }
 
 docs-menu-collapsible .docs-menu-collapsible__title {
@@ -17,6 +17,7 @@ docs-menu-collapsible .docs-menu-collapsible__title {
   padding-top: 16px;
   padding-right: 20px;
   padding-left: calc(14px + 1 * 10px);
+  letter-spacing: .085em;
 }
 
 docs-menu-collapsible .docs-menu-collapsible__title svg {
@@ -38,4 +39,9 @@ docs-menu-collapsible.docs-menu-collapsible--status-closed .docs-menu-collapsibl
 
 docs-menu-collapsible .docs-menu-collapsible__contents .Nav {
   padding-bottom: 0;
+  padding-top: .6rem;
+}
+
+docs-menu-collapsible .docs-menu-collapsible__contents ion-segment-button {
+  
 }
