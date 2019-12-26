@@ -1,5 +1,6 @@
 import { Component, Prop, h } from '@stencil/core';
 import communityPlugins from '../data/native-plugins.json';
+import { l10n } from '../../../l10n';
 
 @Component({
   tag: 'docs-menu-native',
@@ -16,21 +17,21 @@ toggle(e: CustomEvent) {
 render() { return [
   <docs-nav items={ this.intro } />,
 
-  <docs-menu-collapsible heading="Native Solutions">
+  <docs-menu-collapsible heading={l10n.getString('menu-native-solutions')}>
     <docs-nav items={ this.nativeSolutions } />
   </docs-menu-collapsible>,
 
-  <docs-menu-collapsible heading="Core Device">
+  <docs-menu-collapsible heading={l10n.getString('menu-native-core-device')}>
 
     <ion-segment mode="ios"
                  value={this.category}
                  onIonChange={e => this.toggle(e) }
                  color="medium">
       <ion-segment-button value="community">
-        <ion-label>Community</ion-label>
+        <ion-label>{l10n.getString('menu-native-community')}</ion-label>
       </ion-segment-button>
       <ion-segment-button value="premier">
-        <ion-label>Premier</ion-label>
+        <ion-label>{l10n.getString('menu-native-premier')}</ion-label>
       </ion-segment-button>
     </ion-segment>
 
@@ -43,8 +44,8 @@ render() { return [
 
 intro = {
   'menu-native-paid': {
-    'Home': '/docs/enterprise',
-    'Community vs Premier': '/docs/enterprise'
+    'menu-native-home': '/docs/enterprise',
+    'menu-native-community-v-premier': '/docs/enterprise'
   }
 };
 
@@ -58,15 +59,15 @@ nativeSolutions = {
 
 communityPlugins = {
   'menu-native-getting-started': {
-    'Quickstart': '/docs/enterprise/quickstart'
+    'menu-native-quickstart': '/docs/enterprise/quickstart'
   },
   'menu-native-plugins': Object.entries(communityPlugins).sort()
 };
 
 nativePlugins = {
   'menu-enterprise-getting-started': {
-    'Quickstart': '/docs/enterprise/quickstart',
-    'Setup': '/docs/enterprise/setup'
+    'menu-native-quickstart': '/docs/enterprise/quickstart',
+    'menu-native-setup': '/docs/enterprise/setup'
   },
   'menu-enterprise-integrated-services': {
     'Apple Payment Pass': '/docs/enterprise/apple-payment-pass',
