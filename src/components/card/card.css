@@ -95,6 +95,20 @@ docs-card {
   width: auto;
 }
 
+.Card-size-lg {
+  font-size: 1em;
+}
+
+.Card-size-lg .Card-icon,
+.Card-size-lg .Card-ionicon {
+  width: 80px;
+  height: 80px;
+}
+
+.Card-size-lg.Card-without-image .Card-header {
+  font-size: 1.25em;
+}
+
 docs-card.disabled,
 docs-card[disabled] {
   position: relative;

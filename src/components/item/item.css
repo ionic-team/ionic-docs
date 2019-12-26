@@ -1,0 +1,87 @@
+docs-item {
+  display: block;
+  font-size: 12px;
+  max-width: 30em;
+}
+
+.Item {
+  background-color: var(--background);
+  border-radius: 4px;
+  color: var(--text-color--light);
+  display: flex;
+  flex-direction: row;
+  font-size: 1em;
+  font-weight: normal;
+  height: 100%;
+  justify-content: flex-start;
+  line-height: 1.6;
+  transition: box-shadow 150ms ease, transform 150ms ease;
+  width: 100%;
+  overflow: hidden;
+  padding: 1.65em 0 1.65em;
+}
+
+.Item-container {
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.Item-icon {
+  width: 48px;
+  height: 48px;
+
+  margin-bottom: 1.2em;
+
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.Item-ionicon {
+  width: 48px;
+  height: 48px;
+  float: left;
+  margin-right: 1em;
+}
+
+@media (hover: hover) {
+  .Item[href]:hover {
+    transform: translateY(-1px);
+  }
+}
+
+.Item-content > *:first-child {
+  margin-top: 0;
+}
+
+.Item-content > *:last-child {
+  margin-bottom: 0;
+}
+
+.Item-content > * {
+  margin: 0 0 0.65em;
+}
+
+.Item-header {
+  color: var(--text-color--dark);
+  font-size: 1.25em;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 0.45em;
+}
+
+.Item-without-image .Item-header {
+  font-size: 1.2em;
+  margin-bottom: 0.3em;
+
+}
+
+.Item-header > svg {
+  fill: currentColor;
+  height: 1em;
+  margin-bottom: -0.125em;
+  width: auto;
+}
+
+.markdown-content p docs-item {
+  margin-top: 1em;
+}

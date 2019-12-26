@@ -2,23 +2,18 @@ import { Component, Prop, h } from '@stencil/core';
 import { Outbound } from '../../icons';
 
 @Component({
-  tag: 'docs-card',
-  styleUrl: 'card.css'
+  tag: 'docs-item',
+  styleUrl: 'item.css'
 })
-export class DocsCard {
+export class DocsItem {
   @Prop() href: string;
   @Prop() header: string;
   @Prop() icon: string;
   @Prop() ionicon: string;
-  @Prop() img: string;
-  @Prop() size: 'md' | 'lg';
 
   hostData() {
     return {
       class: {
-        'Card-with-image': !!this.img,
-        'Card-without-image': !this.img,
-        'Card-size-lg': this.size === 'lg',
       }
     };
   }
@@ -27,24 +22,23 @@ export class DocsCard {
     const isStatic = !this.href;
     const isOutbound = /^http/.test(this.href);
     const header = !this.header ? null : (
-      <header class="Card-header">
+      <header class="Item-header">
         { this.header } { isOutbound ? <Outbound/> : null }
       </header>
     );
 
     const content = [
-      this.img && <img src={this.img} class="Card-image"/>,
-      <div class="Card-container">
-        { this.icon && <img src={this.icon} class="Card-icon"/> }
-        { this.ionicon && <ion-icon name={this.ionicon} class="Card-ionicon"></ion-icon>}
+      this.icon && <img src={this.icon} class="Item-icon"/>,
+      <div class="Item-container">
+        { this.ionicon && <ion-icon name={this.ionicon} class="Item-ionicon"></ion-icon>}
         { header }
-        <div class="Card-content"><slot/></div>
+        <div class="Item-content"><slot/></div>
       </div>
     ];
 
     if (isStatic) {
       return (
-        <div class="Card">
+        <div class="Item">
           { content }
         </div>
       );
@@ -52,14 +46,14 @@ export class DocsCard {
 
     if (isOutbound) {
       return (
-        <a class="Card" href={this.href}>
+        <a class="Item" href={this.href}>
           { content }
         </a>
       );
     }
 
     return (
-      <stencil-route-link url={this.href} anchorClass="Card">
+      <stencil-route-link url={this.href} anchorClass="Item">
         { content }
       </stencil-route-link>
     );
