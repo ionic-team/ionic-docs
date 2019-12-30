@@ -10,12 +10,12 @@ docs-item {
   color: var(--text-color--light);
   display: flex;
   flex-direction: row;
-  font-size: 1em;
+  font-size: 14px;
   font-weight: normal;
   height: 100%;
   justify-content: flex-start;
   line-height: 1.6;
-  transition: box-shadow 150ms ease, transform 150ms ease;
+  transition: box-shadow 250ms ease-out, transform 250ms ease-out;
   width: 100%;
   overflow: hidden;
   padding: 1.65em 0 1.65em;
@@ -27,25 +27,33 @@ docs-item {
 }
 
 .Item-icon {
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
 
   margin-bottom: 1.2em;
 
   border-radius: 50%;
   object-fit: cover;
+
+  transition: 250ms transform ease-out;
+  transform-origin: 100% 50%;
 }
 
 .Item-ionicon {
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
   float: left;
   margin-right: 1em;
 }
 
 @media (hover: hover) {
   .Item[href]:hover {
-    transform: translateY(-1px);
+    box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1), 0 0.175em 0.5em rgba(2, 8, 20, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .Item[href]:hover .Item-icon {
+    transform: scale(.8, .8);
   }
 }
 
@@ -63,7 +71,7 @@ docs-item {
 
 .Item-header {
   color: var(--text-color--dark);
-  font-size: 1.25em;
+  font-size: 16px;
   font-weight: 600;
   line-height: 1.4;
   margin-bottom: 0.45em;

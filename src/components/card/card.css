@@ -96,7 +96,7 @@ docs-card {
 }
 
 .Card-size-lg {
-  font-size: 1em;
+  font-size: 14px;
 }
 
 .Card-size-lg .Card-icon,
@@ -106,7 +106,7 @@ docs-card {
 }
 
 .Card-size-lg.Card-without-image .Card-header {
-  font-size: 1.25em;
+  font-size: 20px;
 }
 
 docs-card.disabled,
