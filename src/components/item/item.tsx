@@ -10,10 +10,12 @@ export class DocsItem {
   @Prop() header: string;
   @Prop() icon: string;
   @Prop() ionicon: string;
+  @Prop() rounded = false;
 
   hostData() {
     return {
       class: {
+        'Item-rounded': this.rounded,
       }
     };
   }

@@ -107,6 +107,7 @@ export namespace Components {
     'href': string;
     'icon': string;
     'ionicon': string;
+    'rounded': boolean;
   }
   interface DocsItemList {}
   interface DocsMenu {
@@ -631,6 +632,7 @@ declare namespace LocalJSX {
     'href'?: string;
     'icon'?: string;
     'ionicon'?: string;
+    'rounded'?: boolean;
   }
   interface DocsItemList {}
   interface DocsMenu {

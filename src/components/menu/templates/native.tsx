@@ -44,7 +44,7 @@ render() { return [
 
 intro = {
   'menu-native-paid': {
-    'menu-native-home': '/docs/enterprise',
+    'menu-native-home': '/docs/native',
     'menu-native-community-v-premier': '/docs/enterprise'
   }
 };

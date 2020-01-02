@@ -19,15 +19,15 @@ tableOfContents: false
 ## Featured Native Solutions
 
 <docs-item-list class="static-width">
-  <docs-item header="Identity Vault" href="/docs/enterprise/identity-vault" icon="/docs/assets/icons/logo-identity-vault.png">
+  <docs-item header="Identity Vault" href="/docs/enterprise/identity-vault" icon="/docs/assets/icons/logo-identity-vault.png" rounded="false">
     <p>Buttons are a common action type in most apps.</p>
   </docs-item>
 
-  <docs-item header="Auth Connect" href="/docs/enterprise/auth-connect" icon="/docs/assets/icons/logo-auth-connect.png">
+  <docs-item header="Auth Connect" href="/docs/enterprise/auth-connect" icon="/docs/assets/icons/logo-auth-connect.png" rounded="false">
     <p>Buttons are a common action type in most apps.</p>
   </docs-item>
 
-  <docs-item header="Secure Storage" href="/docs/enterprise/offline-storage" icon="/docs/assets/icons/logo-offline-storage.png">
+  <docs-item header="Secure Storage" href="/docs/enterprise/offline-storage" icon="/docs/assets/icons/logo-offline-storage.png" rounded="false">
     <p>Buttons are a common action type in most apps.</p>
   </docs-item>
 </docs-item-list>
