@@ -25,13 +25,11 @@ nextUrl: '/文档/Appflow/快速开始/安装'
 如果这是您第一次连接，您需要：
 
 * 输入Bitbucket服务器实例地址
-* Enter the [personal access token](https://confluence.atlassian.com/bitbucketserver/personal-access-tokens-939515499.html) for you repo
+* 为你的个人仓库输入[个人访问令牌](https://confluence.atlassian.com/bitbucketserver/personal-access-tokens-939515499.html)
 
 <blockquote>
   <p>
-    <b>Note:</b> If the personal access token you use has read-only access,
-    you will need to <a href="https://confluence.atlassian.com/bitbucketserver/managing-webhooks-in-bitbucket-server-938025878.html" target="_blank">
-    create the webhook yourself</a> so that Appflow receives push events.
+    <b>注意：</b>如果您的个人访问令牌具有只读权限，您需要 <a href="https://confluence.atlassian.com/bitbucketserver/managing-webhooks-in-bitbucket-server-938025878.html" target="_blank">创建您自己的 webhook</a>才能让Appfliow接受推送事件。
     A modal will pop up after you connect to your repo giving you the details you need to create the webhook.
     If you use a personal access token with admin privileges, this will be done
     automatically for you.
