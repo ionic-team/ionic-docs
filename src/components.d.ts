@@ -70,6 +70,7 @@ export namespace Components {
     'header': string;
     'href': string;
     'icon': string;
+    'iconset': string;
     'img': string;
     'ionicon': string;
     'size': 'md' | 'lg';
@@ -107,6 +108,7 @@ export namespace Components {
     'href': string;
     'icon': string;
     'ionicon': string;
+    'rounded': boolean;
   }
   interface DocsItemList {}
   interface DocsMenu {
@@ -597,6 +599,7 @@ declare namespace LocalJSX {
     'header'?: string;
     'href'?: string;
     'icon'?: string;
+    'iconset'?: string;
     'img'?: string;
     'ionicon'?: string;
     'size'?: 'md' | 'lg';
@@ -631,6 +634,7 @@ declare namespace LocalJSX {
     'href'?: string;
     'icon'?: string;
     'ionicon'?: string;
+    'rounded'?: boolean;
   }
   interface DocsItemList {}
   interface DocsMenu {

@@ -29,14 +29,14 @@ docs-item {
 .Item-icon {
   width: 56px;
   height: 56px;
-
   margin-bottom: 1.2em;
-
-  border-radius: 50%;
   object-fit: cover;
-
   transition: 250ms transform ease-out;
   transform-origin: 100% 50%;
+}
+
+.Item-rounded .Item-icon {
+  border-radius: 50%;
 }
 
 .Item-ionicon {
