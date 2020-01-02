@@ -29,17 +29,14 @@ nextUrl: '/文档/Appflow/快速开始/安装'
 
 <blockquote>
   <p>
-    <b>注意：</b>如果您的个人访问令牌具有只读权限，您需要 <a href="https://confluence.atlassian.com/bitbucketserver/managing-webhooks-in-bitbucket-server-938025878.html" target="_blank">创建您自己的 webhook</a>才能让Appfliow接受推送事件。
-    A modal will pop up after you connect to your repo giving you the details you need to create the webhook.
-    If you use a personal access token with admin privileges, this will be done
-    automatically for you.
+    <b>注意：</b>如果您的个人访问令牌具有只读权限，您需要 <a href="https://confluence.atlassian.com/bitbucketserver/managing-webhooks-in-bitbucket-server-938025878.html" target="_blank">创建您自己的 webhook</a>才能让Appfliow接受推送事件。 当您连接到您的仓库，将弹出模态窗并给您提供创建webhook 所需的的详细信息。 如果您使用具有管理员权限的个人访问令牌，这将自动为您完成 。
   </p>
 </blockquote>
 
-* Click the `Connect to Bitbucket Server` button
+* 点击 `连接到 Bitbucket 服务器` 按钮
 
-![Bitbucket Server Connect](/docs/assets/img/appflow/bitbucket-server-connect-app.png)
+![Bitbucket 服务器连接](/docs/assets/img/appflow/bitbucket-server-connect-app.png)
 
-Then you can choose the repository to link from the list of available repos.
+然后您可以从可用仓库列表中选择要链接的存储库。
 
-When you link to the repository, a webhook will be created and your commits will be sent to Appflow.
+当您连接到远程仓库时，将创建 webhook, 您的提交将被推送到Appflow。
