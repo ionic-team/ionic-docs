@@ -18,13 +18,13 @@ nextUrl: '/文档/Appflow/快速开始/安装'
 
 为了启用与Appflow的集成，您需要在Bitbucket 服务器远程仓库上有一个实例。
 
-## Setting up the Integration
+## 集成配置
 
-Navigate to the `Git` section of the Settings tab in your app on the Appflow Dashboard and select the Bitbucket Server tab.
+在Appflow面板上导航到你的应用程序设置选项卡中的`Git`区域并选择Bitbucket服务器选项卡
 
-If this is your first time connecting you'll need to:
+如果这是您第一次连接，您需要：
 
-* Enter the URL for your Bitbucket Server instance
+* 输入Bitbucket服务器实例地址
 * Enter the [personal access token](https://confluence.atlassian.com/bitbucketserver/personal-access-tokens-939515499.html) for you repo
 
 <blockquote>
