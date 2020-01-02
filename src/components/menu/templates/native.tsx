@@ -64,7 +64,7 @@ nativeSolutions = {
 
 communityPlugins = {
   'menu-native-getting-started': {
-    'menu-native-quickstart': '/docs/community/quickstart'
+    'menu-native-quickstart': '/docs/native/community'
   },
   'menu-native-plugins': Object.entries(communityPlugins).sort()
 };
