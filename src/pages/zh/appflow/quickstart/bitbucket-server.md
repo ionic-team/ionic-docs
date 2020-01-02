@@ -1,22 +1,22 @@
 ---
-title: 'Connect Using Bitbucket Server'
+title: '使用 Bitbucket 服务器连接'
 previousText: '连接你的仓库'
 previousUrl: '/文档/Appflow/快速开始/连接'
-nextText: 'Install the Appflow SDK'
+nextText: '安装 Appflow SDK'
 nextUrl: '/文档/Appflow/快速开始/安装'
 ---
 
 <blockquote>
-  <p>The Bitbucket Server integration is only available on our **Scale** plan.
-  Please <a href="/sales">contact us</a> if you require this feature.
+  <p>Bitbucket 服务器集成仅适用于我们的 **Scale** 计划。
+  如果您需要此功能，请<a href="/sales">联系我们</a>。
   </p>
 </blockquote>
 
-If you are already using Bitbucket Server you can link your repository with Appflow to push code automatically.
+如果您已使用Bitbucket服务器，您可以将你的本地仓库与Appflow连接以自动推送代码。
 
-## Prerequisites
+## 基础要求
 
-In order to enable the integration with Appflow, you will need an existing repository on your Bitbucket Server instance.
+为了启用与Appflow的集成，您需要在Bitbucket 服务器远程仓库上有一个实例。
 
 ## Setting up the Integration
 
