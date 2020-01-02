@@ -16,7 +16,7 @@ export class DocsCard {
   @State() activeIndex = 0;
 
   interval: number;
-  rotationTime = 4000; // 4 seconds
+  rotationTime = 6000; // 4 seconds
 
   hostData() {
     return {
@@ -31,7 +31,7 @@ export class DocsCard {
   componentWillLoad() {
     if (!this.iconset) return;
     this.activeIndex = 0;
-    this.rotationTime = 2000 + (Math.random() * 2000); // 2 - 4 seconds - randomize it a bit
+    this.rotationTime = 4000 + (Math.random() * 2000); // 4 - 6 seconds - randomize it a bit
     setInterval(this.tic.bind(this), this.rotationTime);
   }
 
