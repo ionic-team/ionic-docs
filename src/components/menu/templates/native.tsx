@@ -44,7 +44,7 @@ render() { return [
 
 intro = {
   'menu-native-paid': {
-    'menu-native-home': '/docs/enterprise',
+    'menu-native-home': '/docs/native',
     'menu-native-community-v-premier': '/docs/enterprise'
   }
 };
@@ -53,13 +53,18 @@ nativeSolutions = {
   '': {
     'Identity Vault': '/docs/enterprise/identity-vault',
     'Auth Connect': '/docs/enterprise/auth-connect',
+    '': {
+      'Auth0': '/docs/enterprise/auth-connect/auth0',
+      'Azure AD B2C': '/docs/enterprise/auth-connect/azure-ad-b2c',
+      'AWS Cognito': '/docs/enterprise/auth-connect/aws-cognito'
+    },
     'Secure Storage': '/docs/enterprise/offline-storage'
   }
 };
 
 communityPlugins = {
   'menu-native-getting-started': {
-    'menu-native-quickstart': '/docs/enterprise/quickstart'
+    'menu-native-quickstart': '/docs/community/quickstart'
   },
   'menu-native-plugins': Object.entries(communityPlugins).sort()
 };
