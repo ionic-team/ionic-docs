@@ -5,13 +5,13 @@ tableOfContents: false
 <p class='intro'>Build native-powered app experiences with pre-built solutions and a growing library of over 250 Pro and Community plugins that make it easy to add native device functionality to any Ionic app, Cordova project, or Capactior project.</p>
 
 <docs-cards class="static-width">
-  <docs-card size="lg" header="Native solutions" href="" icon="/docs/assets/icons/face-id-icon.png">
+  <docs-card size="lg" header="Native solutions" href="" iconset="/docs/assets/icons/face-id.png,/docs/assets/icons/touch-id.png,/docs/assets/icons/auth0.png,/docs/assets/icons/active-directory.png">
     <p>Ionic’s complete native solutions for  single sign-on, biometrics, and secure offline storage.</p>
   </docs-card>
-  <docs-card size="lg" header="Core Device Features" href="" icon="/docs/assets/icons/camera-icon.png">
+  <docs-card size="lg" header="Core Device Features" href="" iconset="/docs/assets/icons/camera.png,/docs/assets/icons/geolocation.png,/docs/assets/icons/file.png,/docs/assets/icons/keyboard.png">
     <p>Core device features like camera, geolocation, keyboard access, contacts, calendar, and more.</p>
   </docs-card>
-  <docs-card size="lg" header="3rd Party Integrations" href="" icon="/docs/assets/icons/aws-amplify-icon.png">
+  <docs-card size="lg" header="3rd Party Integrations" href="" iconset="/docs/assets/icons/aws-amplify.png,/docs/assets/icons/firebase.png,/docs/assets/icons/couchbase.png,/docs/assets/icons/apple-pay.png">
     <p>Connect to third-party services and cloud providers like Firebase, AWS, and Apple Payment Pass.</p>
   </docs-card>
 </docs-cards>
@@ -35,11 +35,11 @@ tableOfContents: false
 ## Popular Device Features
 
 <docs-item-list class="static-width">
-  <docs-item header="Camera" href="/docs/enterprise/camera" icon="/docs/assets/icons/camera-icon.png">
+  <docs-item header="Camera" href="/docs/enterprise/camera" icon="/docs/assets/icons/camera.png">
     <p>Buttons are a common action type in most apps.</p>
   </docs-item>
   
-  <docs-item header="Keyboard" href="/docs/enterprise/keyboard" icon="/docs/assets/icons/keyboard-icon.png">
+  <docs-item header="Keyboard" href="/docs/enterprise/keyboard" icon="/docs/assets/icons/keyboard.png">
     <p>Buttons are a common action type in most apps.</p>
   </docs-item>
   
@@ -51,11 +51,11 @@ tableOfContents: false
     <p>Buttons are a common action type in most apps.</p>
   </docs-item>
 
-  <docs-item header="Geolocation" href="/docs/enterprise/geolocation" icon="/docs/assets/icons/geolocation-icon.png">
+  <docs-item header="Geolocation" href="/docs/enterprise/geolocation" icon="/docs/assets/icons/geolocation.png">
     <p>Buttons are a common action type in most apps.</p>
   </docs-item>
 
-  <docs-item header="File" href="/docs/enterprise/filesystem" icon="/docs/assets/icons/file-icon.png">
+  <docs-item header="File" href="/docs/enterprise/filesystem" icon="/docs/assets/icons/file.png">
     <p>Buttons are a common action type in most apps.</p>
   </docs-item>
 </docs-item-list>
@@ -64,15 +64,15 @@ tableOfContents: false
 
 <docs-item-list class="static-width">
 
-  <docs-item header="Firebase" href="/docs/native/firebase" icon="/docs/assets/icons/firebase-icon.png">
+  <docs-item header="Firebase" href="/docs/native/firebase" icon="/docs/assets/icons/firebase.png">
     <p>Buttons are a common action type in most apps.</p>
   </docs-item>
 
-  <docs-item header="AWS Amplify" href="/docs/enterprise/aws-amplify" icon="/docs/assets/icons/aws-amplify-icon.png">
+  <docs-item header="AWS Amplify" href="/docs/enterprise/aws-amplify" icon="/docs/assets/icons/aws-amplify.png">
     <p>Buttons are a common action type in most apps.</p>
   </docs-item>
 
-  <docs-item header="Couchbase" href="/docs/enterprise/couchbase-lite" icon="/docs/assets/icons/couchbase-icon.png">
+  <docs-item header="Couchbase" href="/docs/enterprise/couchbase-lite" icon="/docs/assets/icons/couchbase.png">
     <p>Buttons are a common action type in most apps.</p>
   </docs-item>
 
