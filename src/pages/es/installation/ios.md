@@ -31,7 +31,7 @@ Open Xcode and navigate to **Xcode** &raquo; **Preferences** &raquo; **Accounts*
 
 The iOS simulator emulates iOS devices on Macs. The following documentation is a quick way to get the iOS simulator set up. For more information, see [Apple's documentation](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/simulator_help_topics/Chapter/Chapter.html).
 
-Open Xcode and navigate to **Window** &raquo; **Devices and Simulators**. Create an **iPhone 11** simulator if one does not already exist.
+Open Xcode and navigate to **Window** &raquo; **Devices and Simulators**. Cree un simulador **iPhone 11** si no existe.
 
 ![iOS Simulators](/docs/assets/img/installation/ios-xcode-simulators-setup.png)
 
