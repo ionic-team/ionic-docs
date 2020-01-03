@@ -3,7 +3,7 @@ title: Ionic Native
 tableOfContents: false
 ---
 
-<p class='intro'>Build native-powered app experiences with pre-built solutions and a growing library of over 250 Premier and Community plugins that make it easy to add native device functionality to any Ionic app leveraging Cordova or Capacitor.</p>
+<p class='intro'>Build native-powered app experiences with pre-built solutions and a growing library of over 250 Premier and Community plugins. Ionic Native makes it easy to add native device functionality to any Ionic app leveraging Cordova or Capacitor.</p>
 
 <docs-cards class="static-width"> <docs-card size="lg" header="Native solutions" href="/docs/native#featured-native-solutions" iconset="/docs/assets/icons/face-id.png,/docs/assets/icons/touch-id.png,/docs/assets/icons/auth0.png,/docs/assets/icons/active-directory.png"> 
 
