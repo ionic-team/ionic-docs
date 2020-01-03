@@ -37,7 +37,7 @@ render() { return [
 
     {this.category === 'community' ?
       <docs-nav items={this.communityPlugins} /> :
-      <docs-nav items={this.nativePlugins} />
+      <docs-nav items={this.premierPlugins} />
     }
   </docs-menu-collapsible>
 ]; }
@@ -69,7 +69,7 @@ communityPlugins = {
   'menu-native-plugins': Object.entries(communityPlugins).sort()
 };
 
-nativePlugins = {
+premierPlugins = {
   'menu-enterprise-getting-started': {
     'menu-native-quickstart': '/docs/enterprise/quickstart',
     'menu-native-setup': '/docs/enterprise/setup'
