@@ -108,6 +108,7 @@ Accelerate your app development with powerful solutions to common enterprise use
 
 - [Auth Connect](/docs/enterprise/auth-connect)
 - [Identity Vault](/docs/enterprise/identity-vault)
+- [Secure Storage](/docs/enterprise/offline-storage)
 
 ### Common Device Features
 
