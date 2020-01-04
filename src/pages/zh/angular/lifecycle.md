@@ -11,7 +11,7 @@ contributors:
 
 本指南涵盖生命周期钩子如何在ionic和angular的应用程序中工作。
 
-![Ionic 生命周期事件demo](/docs/assets/img/guides/lifecycle/ioniclifecycle.png)
+![Ionic 生命周期事件演示](/docs/assets/img/guides/lifecycle/ioniclifecycle.png)
 
 ## Angular的生命周期事件
 
