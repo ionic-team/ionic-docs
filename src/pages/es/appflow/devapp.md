@@ -5,11 +5,13 @@ previousUrl: '/docs/appflow/cookbook/private_npm_modules'
 
 # Ionic DevApp
 
-The Ionic DevApp is a free app that makes it easy to run your Ionic app directly on your iOS or Android device.
+The Ionic DevApp is a free app that makes it easy to run your Ionic app directly on your iOS or Android device. **Built for use with Cordova applications only.**
 
 Skip dealing with frustrating Native SDK installation issues, just run `ionic serve --devapp`, open the DevApp, connect to the same network, and the app will automatically load and run your app.
 
 The DevApp comes with many native plugins built right in, so you don't need to worry about installing plugins.
+
+> NOTE: Ionic DevApp is no longer actively maintained. We recommend using the native tooling provided by each platform ([iOS](/docs/building/ios), [Android](/docs/building/android)) alongside [Capacitor](https://capacitor.ionicframework.com) for the best experience.
 
 ## Download the DevApp
 
