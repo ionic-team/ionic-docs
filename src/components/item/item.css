@@ -15,7 +15,7 @@ docs-item {
   height: 100%;
   justify-content: flex-start;
   line-height: 1.6;
-  transition: box-shadow 250ms ease-out, transform 250ms ease-out;
+  transition: box-shadow 150ms ease-out, transform 150ms ease-out;
   width: 100%;
   overflow: hidden;
   padding: 1.65em 0 1.65em;
@@ -31,7 +31,7 @@ docs-item {
   height: 56px;
   margin-bottom: 1.2em;
   object-fit: cover;
-  transition: 250ms transform ease-out;
+  transition: 150ms transform ease-out;
   transform-origin: 100% 50%;
 }
 
