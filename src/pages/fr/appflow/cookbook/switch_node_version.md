@@ -1,8 +1,6 @@
 ---
 previousText: 'Using private NPM moduless'
 previousUrl: '/docs/appflow/cookbook/private_npm_modules'
-nextText: 'DevApp: Local Development'
-nextUrl: '/docs/appflow/devapp'
 ---
 
 # Use different Node in builds
