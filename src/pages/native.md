@@ -5,7 +5,7 @@ tableOfContents: false
 <p class='intro'>Build native-powered app experiences with pre-built solutions and a growing library of over 250 Premier and Community plugins. Ionic Native makes it easy to add native device functionality to any Ionic app leveraging Cordova or Capacitor.</p>
 
 <docs-cards class="static-width">
-  <docs-card size="lg" header="Native solutions" href="/docs/native#featured-native-solutions" iconset="/docs/assets/icons/face-id.png,/docs/assets/icons/touch-id.png,/docs/assets/icons/auth0.png,/docs/assets/icons/active-directory.png">
+  <docs-card size="lg" header="Native solutions" href="/docs/enterprise/solutions" iconset="/docs/assets/icons/face-id.png,/docs/assets/icons/touch-id.png,/docs/assets/icons/auth0.png,/docs/assets/icons/active-directory.png">
     <p>Complete native solutions for single sign-on, biometrics, and secure offline storage.</p>
   </docs-card>
   <docs-card size="lg" header="Core Device Features" href="/docs/native#popular-device-features" iconset="/docs/assets/icons/camera.png,/docs/assets/icons/geolocation.png,/docs/assets/icons/file.png,/docs/assets/icons/keyboard.png">

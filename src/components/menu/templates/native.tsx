@@ -51,6 +51,7 @@ intro = {
 
 nativeSolutions = {
   '': {
+    'Overview': '/docs/enterprise/solutions',
     'Identity Vault': '/docs/enterprise/identity-vault',
     'Auth Connect': '/docs/enterprise/auth-connect',
     '': {
@@ -58,7 +59,7 @@ nativeSolutions = {
       'Azure AD B2C': '/docs/enterprise/auth-connect/azure-ad-b2c',
       'AWS Cognito': '/docs/enterprise/auth-connect/aws-cognito'
     },
-    'Secure Storage': '/docs/enterprise/offline-storage'
+    'Offline Storage': '/docs/enterprise/offline-storage'
   }
 };
 
