@@ -184,7 +184,6 @@ export namespace Components {
     'variables'?: string;
   }
   interface NewColorGenerator {}
-  interface SmsForm {}
   interface SteppedColorGenerator {}
   interface WistiaVideo {
     'videoId': string;
@@ -476,12 +475,6 @@ declare global {
     new (): HTMLNewColorGeneratorElement;
   };
 
-  interface HTMLSmsFormElement extends Components.SmsForm, HTMLStencilElement {}
-  var HTMLSmsFormElement: {
-    prototype: HTMLSmsFormElement;
-    new (): HTMLSmsFormElement;
-  };
-
   interface HTMLSteppedColorGeneratorElement extends Components.SteppedColorGenerator, HTMLStencilElement {}
   var HTMLSteppedColorGeneratorElement: {
     prototype: HTMLSteppedColorGeneratorElement;
@@ -541,7 +534,6 @@ declare global {
     'layered-colors-select': HTMLLayeredColorsSelectElement;
     'native-ent-install': HTMLNativeEntInstallElement;
     'new-color-generator': HTMLNewColorGeneratorElement;
-    'sms-form': HTMLSmsFormElement;
     'stepped-color-generator': HTMLSteppedColorGeneratorElement;
     'wistia-video': HTMLWistiaVideoElement;
   }
@@ -713,7 +705,6 @@ declare namespace LocalJSX {
     'variables'?: string;
   }
   interface NewColorGenerator {}
-  interface SmsForm {}
   interface SteppedColorGenerator {}
   interface WistiaVideo {
     'videoId'?: string;
@@ -767,7 +758,6 @@ declare namespace LocalJSX {
     'layered-colors-select': LayeredColorsSelect;
     'native-ent-install': NativeEntInstall;
     'new-color-generator': NewColorGenerator;
-    'sms-form': SmsForm;
     'stepped-color-generator': SteppedColorGenerator;
     'wistia-video': WistiaVideo;
   }
@@ -826,7 +816,6 @@ declare module "@stencil/core" {
       'layered-colors-select': LocalJSX.LayeredColorsSelect & JSXBase.HTMLAttributes<HTMLLayeredColorsSelectElement>;
       'native-ent-install': LocalJSX.NativeEntInstall & JSXBase.HTMLAttributes<HTMLNativeEntInstallElement>;
       'new-color-generator': LocalJSX.NewColorGenerator & JSXBase.HTMLAttributes<HTMLNewColorGeneratorElement>;
-      'sms-form': LocalJSX.SmsForm & JSXBase.HTMLAttributes<HTMLSmsFormElement>;
       'stepped-color-generator': LocalJSX.SteppedColorGenerator & JSXBase.HTMLAttributes<HTMLSteppedColorGeneratorElement>;
       'wistia-video': LocalJSX.WistiaVideo & JSXBase.HTMLAttributes<HTMLWistiaVideoElement>;
     }

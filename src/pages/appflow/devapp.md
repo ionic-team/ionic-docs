@@ -5,80 +5,17 @@ previousUrl: '/docs/appflow/cookbook/private_npm_modules'
 
 # Ionic DevApp
 
-The Ionic DevApp is a free app that makes it easy to run your Ionic app directly on your iOS or Android device. **Built for use with Cordova applications only.**
+The Ionic DevApp was a free app used to run your Ionic app directly on your iOS or Android device. 
 
-Skip dealing with frustrating Native SDK installation issues, just run `ionic serve --devapp`, open the DevApp, connect to the same network, and the app will automatically load
-and run your app.
+On January 1st, 2020, DevApp was retired as we move toward embracing native tooling and building apps with [Capacitor](http://capacitor.ionicframework.com/), Ionic's official native app runtime.
 
-The DevApp comes with many native plugins built right in, so you don't need to worry about installing plugins.
+One of the key mantras of Capacitor is that developers should embrace native tools like Android Studio and Xcode when building their app. While using native tooling may initially seem daunting, we think this is the right approach, because it makes it easy to follow existing Native iOS/Android guides, get help on Stack Overflow, and have full control over your project. The reality is that DevApp only got in the way of building an app, delaying developers from seeing their app run on a simulator or phone.
 
-> NOTE: Ionic DevApp is no longer actively maintained. We recommend using the native tooling provided by each platform ([iOS](/docs/building/ios), [Android](/docs/building/android)) alongside [Capacitor](https://capacitor.ionicframework.com) for the best experience.
-
-## Download the DevApp
-
-The DevApp is available on iOS and Android.
-
-Enter your phone number below to text yourself an install link, or find the app on your app store of choice:
-
-<sms-form></sms-form>
-<div style="display:flex;">
-  <a href="https://itunes.apple.com/us/app/ionic-devapp/id1233447133?ls=1&amp;mt=8" target="_blank">
-    <img style="width: 160px" src="/docs/assets/img/appstore.png" id="appstore-image">
-  </a>
-  <a href="https://play.google.com/store/apps/details?id=io.ionic.devapp&amp;hl=en" target="_blank">
-    <img style="width: 160px" alt="Get it on Google Play" src="/docs/assets/img/playstore.png" id="playstore-image">
-  </a>
-</div>
-
-## Using DevApp
-
-The DevApp finds `ionic serve` instances running on your local Wi-Fi network.
-
-First, ensure you are running the latest release of the Ionic CLI. Run `npm install -g ionic`.
-
-Once the latest CLI is installed, run `ionic serve --devapp` in the app of your choice on your computer and let it finish building. Next, open your iOS or Android device and connect to _the same network_ as your computer (through Wi-Fi). Open the DevApp, and you should see your local app show up in the list.
-
-> Note: Cordova must be installed in your project before DevApp can be used, so you may need to run `ionic cordova prepare [platform]` before running `ionic serve --devapp`.
-
-## CORS
-
-If your web requests are failing, you may be running into issues with
-[CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS).  Unfortunately, CORS errors only show in the console of
-your browser, so they won't appear as a runtime error modal or in the logs printed to your `ionic serve` instance.
-
-There are a few things you can do to resolve the issue.
-
-### Set the appropriate headers
-
-If you control the server responding to the failing requests, you can set the appropriate `Access-Control-Allow-Origin`
-header on the server.  The Origin of your request is the IP that your app is served from, for example `192.168.1.1:8100`.
-You can also set the Origin as `*` (wildcard), but be aware that requests from any origin will be able to see responses from your server.
-Wildcard is a common setting for any API, or any other endpoint that is expected to be accessed from various origins.
-
-### Use the Advanced HTTP plugin
-
-You can use the [Advanced HTTP plugin](https://ionicframework.com/docs/native/http/) to make
-requests. The plugin receives responses natively and passes the response back to JavaScript.
-
-## Troubleshooting
-
-If you don't see your app in the list, try these things to resolve it:
-
-1. First, make sure your are on the same network as the app. Double check your Wi-Fi connection settings.
-2. Try force-quitting the DevApp and restarting it
-3. Try restarting `ionic serve --devapp` on your computer.
-
-If those things still didn't resolve the issue, make sure you don't have any custom network settings that could cause the app to fail to discover the serve instance.
-
-## Reporting issues and feedback
-
-If the above steps don't work, or you want to share feedback, please post in the [DevApp Feedback Megathread](https://forum.ionicframework.com/t/ionic-devapp-feedback-mega-thread/109842) on the Ionic forum. Please avoid contacting support for this first release of the DevApp as we'd like direct feedback and would like to aggregate it to help others.
-
-We cannot guarantee support on this post but we will monitor it and use it to make DevApp better.
+In practice, native tooling is quite easy to use: see our [iOS](/docs/building/ios) and [Android](/docs/building/android) documentation for details on how to build native apps using Cordova or Capacitor.
 
 ## Native Cordova Plugin Support
 
-Ionic DevApp currently supports the following plugins:
+For reference, Ionic DevApp previously supported the following plugins:
 
 <pre>
 card.io.cordova.mobilesdk 2.1.0 "CardIO"
