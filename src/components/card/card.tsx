@@ -32,7 +32,9 @@ export class DocsCard {
     if (!this.iconset) return;
     this.activeIndex = 0;
     this.rotationTime = 4000 + (Math.random() * 2000); // 4 - 6 seconds - randomize it a bit
+    // make the first transiton happen a bit faster
     setInterval(this.tic.bind(this), this.rotationTime);
+    setTimeout(this.tic.bind(this), this.rotationTime / 3);
   }
 
   componentWillUnload() {
