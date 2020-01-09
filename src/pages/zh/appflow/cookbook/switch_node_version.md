@@ -12,7 +12,7 @@ To switch Node version simply add a variable called `OVERRIDE_NODE_VERSION` insi
 
 ![Use different Node](/docs/assets/img/appflow/cookbook/switch-node-version.png)
 
-#### Notes
+#### 注意
 
 The environment variable `OVERRIDE_NODE_VERSION` can only be set to an integer representing the major version: `8`, `10` and `12` are currently allowed.
 
