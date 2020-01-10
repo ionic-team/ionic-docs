@@ -75,6 +75,7 @@ Update your project's plugins one at a time, ideally in separate code branches. 
 
 ### When should I update?
 
-* When a new feature/bug is released: Follow official blogs and news, such as the [Cordova blog](https://cordova.apache.org/blog/) and [Ionic blog](https://ionicframework.com/blog/), to determine when a plugin has a new release.
+* When a new feature/bug is released: Run `npm outdated` to see a list of available updates.
+* When new major versions are released: Official blogs, such as the [Cordova blog](https://cordova.apache.org/blog/) and [Ionic blog](https://ionicframework.com/blog/), will publish announcements and news.
 * Evaluate the nature of the update: is it a shiny new feature or critical security fix?
 * Timing: Where does it fit in against your team's project goals?
