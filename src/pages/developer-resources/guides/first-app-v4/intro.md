@@ -1,6 +1,6 @@
 ---
 nextText: 'iOS, Android, and the Camera'
-nextUrl: '/docs/developer-resources/guides/first-app-v4-cordova/ios-android-camera'
+nextUrl: '/docs/developer-resources/guides/first-app-v4/ios-android-camera'
 ---
 
 # Your First Ionic App: Angular

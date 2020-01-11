@@ -53,7 +53,7 @@ const items = {
     'menu-angular-overview': '/docs/angular/overview',
     'menu-angular-your-first-app': '/docs/angular/your-first-app',
     '': {
-      'menu-angular-yfa-camera-web': '/docs/angular/your-first-app/2-camera-web',
+      'menu-angular-yfa-taking-photos': '/docs/angular/your-first-app/2-taking-photos',
       'menu-angular-yfa-saving-photos': '/docs/angular/your-first-app/3-saving-photos',
       'menu-angular-yfa-loading-photos': '/docs/angular/your-first-app/4-loading-photos',
       'menu-angular-yfa-adding-mobile': '/docs/angular/your-first-app/5-adding-mobile',

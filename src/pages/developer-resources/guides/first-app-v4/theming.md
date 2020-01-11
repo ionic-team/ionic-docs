@@ -1,6 +1,6 @@
 ---
 previousText: 'Creating a Photo Gallery with Device Storage'
-previousUrl: '/docs/developer-resources/guides/first-app-v4-cordova/creating-photo-gallery-device-storage'
+previousUrl: '/docs/developer-resources/guides/first-app-v4/creating-photo-gallery-device-storage'
 ---
 
 # Make It Your Own! Ionic Theming
