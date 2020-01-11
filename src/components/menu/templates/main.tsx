@@ -52,6 +52,14 @@ const items = {
   'menu-angular': {
     'menu-angular-overview': '/docs/angular/overview',
     'menu-angular-your-first-app': '/docs/angular/your-first-app',
+    '': {
+      'menu-angular-yfa-taking-photos': '/docs/angular/your-first-app/2-taking-photos',
+      'menu-angular-yfa-saving-photos': '/docs/angular/your-first-app/3-saving-photos',
+      'menu-angular-yfa-loading-photos': '/docs/angular/your-first-app/4-loading-photos',
+      'menu-angular-yfa-adding-mobile': '/docs/angular/your-first-app/5-adding-mobile',
+      'menu-angular-yfa-deploying-mobile': '/docs/angular/your-first-app/6-deploying-mobile',
+      'menu-angular-yfa-live-reload': '/docs/angular/your-first-app/7-live-reload'
+    },
     'menu-angular-lifecycle': '/docs/angular/lifecycle',
     'menu-angular-navigation': '/docs/angular/navigation',
     'menu-angular-config': '/docs/angular/config',
