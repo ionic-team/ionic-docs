@@ -94,7 +94,18 @@ Scroll to the `Permissions` section and ensure these entries are included:
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 ```
 
-Save the file. With permissions in place, we are ready to try out the app on a real device! Connect an Android device to your computer. Within Android Studio, click the "Run" button, select the attached Android device, then click OK to build, install, and launch the app on your device.
+As the application will - for the time of development - most likely run on your local machine, we need to override Android's strict SSL requirement policy. For that, in the `Application` section, add 
+```xml
+android:usesCleartextTraffic="true"
+```
+or android might block your request.
+
+Should your screen remain white, open the `config.xml` in your project's root folder and set the [Spash Screen](https://capacitor.ionicframework.com/docs/apis/splash-screen/ " 'Splash Screen' in Capacitor Docs") explicitly to automatically disappear:
+```
+<preference name="AutoHideSplashScreen" value="true" />
+```
+
+Save the changed files. With permissions and settings in place, we are ready to try out the app on a real device! Connect an Android device to your computer. Within Android Studio, click the "Run" button, select the attached Android device, then click OK to build, install, and launch the app on your device.
 
 ![Launching app on Android](/docs/assets/img/guides/first-app-cap-ng/android-device.png)
 
