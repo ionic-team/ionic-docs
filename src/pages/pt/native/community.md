@@ -9,8 +9,21 @@ Community Plugins are submitted and maintained by the Ionic community. While com
 
 > Note: These docs are for apps built with Ionic Framework 4.0.0 and greater. For older Ionic v3 projects, please [see here](/docs/v3/native).
 
+## Capacitor Support
+
+Ionic Native also works with [Capacitor](https://capacitor.ionicframework.com), Ionic's official native app runtime and spiritual Cordova successor. For details, [see here](https://capacitor.ionicframework.com/docs/cordova/using-cordova-plugins).
+
 ## Usage
-All plugins have two components - the native code (Cordova) and the JavaScript code. Cordova plugins are also wrapped in a `Promise` or `Observable` in order to provide a common plugin interface. Below are various framework options using the Camera plugin as an example.
+All plugins have two components - the native code (Cordova) and the TypeScript code (Ionic Native). Cordova plugins are also wrapped in a `Promise` or `Observable` in order to provide a common plugin interface and modernized development approach.
+
+Using the [Camera plugin](/docs/native/camera) as an example, first install it:
+
+```shell
+$ ionic cordova plugin add cordova-plugin-camera
+$ npm install @ionic-native/camera
+```
+
+Next, begin using the plugin, using the various framework usage options below. For FAQ, see [here](/docs/native/faq).
 
 ## Angular
 Import the plugin in a `@NgModule` and add it to the list of Providers. For Angular, the import path should end with `/ngx`.  Angular's change detection is automatically handled.
