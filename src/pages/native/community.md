@@ -9,7 +9,7 @@ Community Plugins are submitted and maintained by the Ionic community. While com
 
 > Note: These docs are for apps built with Ionic Framework 4.0.0 and greater. For older Ionic v3 projects, please [see here](/docs/v3/native).
 
-## Using With Capacitor
+## Capacitor Support
 
 Ionic Native also works with [Capacitor](https://capacitor.ionicframework.com), Ionic's official native app runtime and spiritual Cordova successor. For details, [see here](https://capacitor.ionicframework.com/docs/cordova/using-cordova-plugins).
 
