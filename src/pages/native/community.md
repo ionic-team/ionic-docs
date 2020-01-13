@@ -11,7 +11,7 @@ Community Plugins are submitted and maintained by the Ionic community. While com
 
 ## Using With Capacitor
 
-Ionic Native works with [Capacitor](https://capacitor.ionicframework.com), Ionic's official native app runtime and spiritual Cordova successor. For details, [see here](https://capacitor.ionicframework.com/docs/cordova/using-cordova-plugins).
+Ionic Native also works with [Capacitor](https://capacitor.ionicframework.com), Ionic's official native app runtime and spiritual Cordova successor. For details, [see here](https://capacitor.ionicframework.com/docs/cordova/using-cordova-plugins).
 
 ## Usage
 All plugins have two components - the native code (Cordova) and the TypeScript code (Ionic Native).
@@ -79,10 +79,6 @@ export class PhotoService {
   }
 }
 ```
-
-## React
-
-
 
 ## Vanilla JavaScript
 Ionic Native can also be used in a vanilla JavaScript app targeting ES2015+ and/or TypeScript. To use any plugin, import the class from the appropriate package and use its static methods:
