@@ -774,6 +774,164 @@ Safari does not currently support dynamically updating keyframe animations. For 
 
 <docs-codepen user="ionic" slug="JjjYVKj"></docs-codepen>
 
+## Overriding Ionic Component Animations
+
+Certain Ionic components allow developers to provide custom animations. All animations are provided as either properties on the component or are set via a global config.
+
+### Modals
+
+<docs-tabs>
+<docs-tab tab="javascript">
+
+```javascript
+customElements.define('modal-page', class extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = `
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Modal Header</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        Modal Content
+      </ion-content>
+    `;
+  }
+});
+
+function presentModal() {
+  const enterAnimation = (baseEl: any) => {
+    const backdropAnimation = createAnimation()
+      .addElement(baseEl.querySelector('ion-backdrop')!)
+      .fromTo('opacity', '0.01', 'var(--backdrop-opacity)');
+    
+    const wrapperAnimation = createAnimation()
+      .addElement(baseEl.querySelector('.modal-wrapper')!)
+      .keyframes([
+        { offset: 0, opacity: '0', transform: 'scale(0)' },
+        { offset: 1, opacity: '0.99', transform: 'scale(1)' }
+      ]);
+      
+    return createAnimation()
+      .addElement(baseEl)
+      .easing('ease-out')
+      .duration(500)
+      .addAnimation([backdropAnimation, wrapperAnimation]);
+  }
+  
+  const leaveAnimation = (baseEl: any) => {
+    return enterAnimation(baseEl).direction('reverse');
+  }
+    
+  // create the modal with the `modal-page` component
+  const modalElement = document.createElement('ion-modal');
+  modalElement.component = 'modal-page';
+  modalElement.enterAnimation = enterAnimation;
+  modalElement.leaveAnimation = leaveAnimation;
+
+  // present the modal
+  document.body.appendChild(modalElement);
+  return modalElement.present();
+}
+```
+</docs-tab>
+<docs-tab tab="angular">
+
+```typescript
+import { Component } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { ModalPage } from '../modal/modal.page';
+
+@Component({
+  selector: 'modal-example',
+  templateUrl: 'modal-example.html',
+  styleUrls: ['./modal-example.css']
+})
+export class ModalExample {
+  constructor(public modalController: ModalController) { }
+
+  async presentModal() {
+    const enterAnimation = (baseEl: any) => {
+      const backdropAnimation = this.animationCtrl.create()
+        .addElement(baseEl.querySelector('ion-backdrop')!)
+        .fromTo('opacity', '0.01', 'var(--backdrop-opacity)');
+      
+      const wrapperAnimation = this.animationCtrl.create()
+        .addElement(baseEl.querySelector('.modal-wrapper')!)
+        .keyframes([
+          { offset: 0, opacity: '0', transform: 'scale(0)' },
+          { offset: 1, opacity: '0.99', transform: 'scale(1)' }
+        ]);
+        
+      return this.animationCtrl.create()
+        .addElement(baseEl)
+        .easing('ease-out')
+        .duration(500)
+        .addAnimation([backdropAnimation, wrapperAnimation]);
+    }
+    
+    const leaveAnimation = (baseEl: any) => {
+      return enterAnimation(baseEl).direction('reverse');
+    }
+    
+    const modal = await this.modalController.create({
+      component: ModalPage,
+      enterAnimation,
+      leaveAnimation
+    });
+    return await modal.present();
+  }
+}
+```
+</docs-tab>
+<docs-tab tab="react">
+
+```javascript
+import React, { useState } from 'react';
+import { createAnimation, IonModal, IonButton, IonContent } from '@ionic/react';
+
+export const ModalExample: React.FC = () => {
+  const [showModal, setShowModal] = useState(false);
+  
+  const enterAnimation = (baseEl: any) => {
+    const backdropAnimation = createAnimation()
+      .addElement(baseEl.querySelector('ion-backdrop')!)
+      .fromTo('opacity', '0.01', 'var(--backdrop-opacity)');
+    
+    const wrapperAnimation = createAnimation()
+      .addElement(baseEl.querySelector('.modal-wrapper')!)
+      .keyframes([
+        { offset: 0, opacity: '0', transform: 'scale(0)' },
+        { offset: 1, opacity: '0.99', transform: 'scale(1)' }
+      ]);
+      
+    return createAnimation()
+      .addElement(baseEl)
+      .easing('ease-out')
+      .duration(500)
+      .addAnimation([backdropAnimation, wrapperAnimation]);
+  }
+  
+  const leaveAnimation = (baseEl: any) => {
+    return enterAnimation(baseEl).direction('reverse');
+  }
+
+  return (
+    <IonContent>
+      <IonModal isOpen={showModal} enterAnimation={enterAnimation} leaveAnimation={leaveAnimation}>
+        <p>This is modal content</p>
+        <IonButton onClick={() => setShowModal(false)}>Close Modal</IonButton>
+      </IonModal>
+      <IonButton onClick={() => setShowModal(true)}>Show Modal</IonButton>
+    </IonContent>
+  );
+};
+```
+</docs-tab>
+</docs-tabs>
+
+<docs-codepen user="ionic" slug="ExapZBZ"></docs-codepen>
+
 
 ## Performance Considerations
 
