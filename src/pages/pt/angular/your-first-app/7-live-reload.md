@@ -22,7 +22,7 @@ Let’s use Live Reload to implement photo deletion, the missing piece of our Ph
 ```shell
 $ ionic cap run ios -l --external
 
-$ ionic cap run android -l
+$ ionic cap run android -l --external
 ```
 
 The Live Reload server will start up, and the native IDE of choice will open if not opened already. Within the IDE, click the Play button to launch the app onto your device.
