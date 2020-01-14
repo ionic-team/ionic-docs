@@ -25,23 +25,45 @@ Learn Ionic with step-by-step video courses & quick wins from one of the Ionic c
 
 by Mathieu Chauvinc
 
-### [Building Progressive Web Apps with Ionic](https://www.pluralsight.com/courses/progressive-web-apps-ionic)
+### [Building Deskop Apps with Ionic and Electron](https://pluralsight.pxf.io/VeMXO)
 
-by Michael Callaghan at  Pluralsight
+by Michael Callaghan at Pluralsight
+ 
+Desktop development has historically required dramatically different skills than those required for web
+development. The two disciplines don't mesh well. In this course, Building Desktop Apps with Ionic and Electron,
+you will gain the ability to apply your hard-earned web development skills to build amazing desktop
+applications. First, you will learn how to build a functional and attractive UI with Ionic and Angular. Next,
+you will discover how to wrap that UI into an Electron application shell. Finally, you will explore how to
+package your app and make it ready for distribution. When you are finished with this course, you will have the
+skills and knowledge of Ionic and Electron development needed to deploy and distribute a beautiful app to both
+Windows and macOS users.
 
-Everything changed when Google created the concept of Progressive Web Applications or PWA. A PWA is a pure web application that you can install on devices, that can function with limited network functionality, through its use of intelligent caching.
+### [Building Progressive Web Apps with Ionic](https://pluralsight.pxf.io/Ly2EY)
 
-### [Ionic CLI](https://app.pluralsight.com/library/courses/ionic-cli/)
+by Michael Callaghan at Pluralsight
 
-by Michael Callaghan at  Pluralsight
+Everything changed when Google created the concept of Progressive Web Applications or PWA. A PWA is a pure web
+application that you can install on devices, that can function with limited network functionality, through its
+use of intelligent caching. Build a Progressive Web App that will run anywhere. In this course, Building
+Progressive Web Apps with Ionic, you will learn foundational knowledge and gain the ability to create a web
+application that will run anywhere: the browser, desktop, or mobile clients. First, you will learn what a
+Progressive Web App (or PWA) is. Next, you will discover how to use the Ionic Framework, Angular, and Firebase
+to create, deploy, and optimize a basic web application into a full-blown PWA. Finally, you will explore how to
+configure the application to make it installable and runnable on Androids and iPhones. When you’re finished with
+this course, you will have the skills and knowledge of Ionic and PWAs needed to create and deploy your own
+Progressive Web Application anywhere you desire.
 
-This course will start at the top and explore the Ionic CLI. First, you'll see how to create projects and components. Next, you will learn how to build and serve apps. Finally, you'll discover how to share projects with others, and even integrate with other build tools. Whether you’re just starting to explore Ionic, or have been using it since its pre-beta days, there is something here for you. By the end of the course, you’ll have the confidence to use the Ionic CLI as part of your everyday Ionic development.
+### [Ionic CLI](https://pluralsight.pxf.io/ionic-cli)
 
-### [Creating Cross-platform Apps with Ionic and Electron](https://app.pluralsight.com/library/courses/ionic-electron-building-cross-platform-apps)
+by Michael Callaghan at Pluralsight
 
-by Michael Callaghan at  Pluralsight
-
-In this course, you'll learn how to create cross-platform apps with Ionic and Electron. Electron is the technology behind Visual Studio Code, Slack, GitKraken, and countless others. This course will provide a better understanding of how to create cross-platform apps with Iconic and Electron. Whether you aspire to create the next iTunes, or just want to port your mobile app to run on Windows, this is the technology you need in your toolbox.
+Since its inception, the Ionic Framework has included a rudimentary command line interface. Though only a few
+years old, it has matured into a powerful tool that should be part of every developer’s toolbox. This course,
+Ionic CLI, will start at the top and explore the Ionic CLI. First, you'll see how to create projects and
+components. Next, you will learn how to build and serve apps. Finally, you'll discover how to share projects
+with others, and even integrate with other build tools. Whether you’re just starting to explore Ionic, or have
+been using it since its pre-beta days, there is something here for you. By the end of the course, you’ll have
+the confidence to use the Ionic CLI as part of your everyday Ionic development. 
 
 ### [Building Mobile Apps with Ionic 2, Angular 2, and TypeScript](https://app.pluralsight.com/library/courses/ionic2-angular2-typescript-mobile-apps/table-of-contents)
 

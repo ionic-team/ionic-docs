@@ -6,8 +6,6 @@
 
 Compose is the powerhouse of Ionic app development, offering a powerful side-by-side coupling of component code and an interactive canvas for building components.
 
-> 🚧 These docs are a work-in-progress. Check back frequently for updates!
-
 ## Introduction
 
 Pages and components are opened in a split view, bringing code and canvas together.
@@ -93,6 +91,26 @@ A great deal can be accomplished with the interactive canvas and the properties 
 
 Compose mode offers drag & drop support when adding new elements and rearranging existing elements.
 
+### Selecting Elements
+
+To select an element, click on it in the canvas. To select a child element, double click on its parent. Continue to double click to select deeper child elements and to edit text.
+
+To exit the current selection, use the <kbd>Esc</kbd> key.
+
+To enable fine-selection, which selects the deepest child under the mouse cursor, hold down the <kbd>Ctrl</kbd> key (or <kbd>Command</kbd> for macOS) and hover over an element.
+
+To select any element under the cursor, right click and choose an element from the `Select Element` dropdown:
+
+<figure>
+  <img alt="Selecting elements" src="/docs/assets/img/studio/ss-select-element-menu.png" />
+</figure>
+
+To select any element in the current document, access the element tree and click on the element to select:
+
+<figure>
+  <img alt="Editing Templates" src="/docs/assets/img/studio/ss-element-tree.png" />
+</figure>
+
 ### Adding New Elements
 
 To add new elements to a template, first open the element insertion dropdowns by clicking one of the buttons near the top of Compose.
@@ -106,6 +124,14 @@ These menus contains HTML elements, Ionic components, and the custom components 
 To insert an element, click and hold on it, then drag it into place in either canvas or code (in **Template** mode).
 
 Dragging an element into code allows more precise placement, but dragging it into the canvas may be easier and offers intelligent `slot` usage when using Ionic components.
+
+### Quick Adding New Elements
+
+Certain elements support quickly adding child elements by right-clicking and selecting an element in the `Quick Add` menu. Some components that support quickly adding new elements include List, List Item, Grid, Segment Button, and more.
+
+<figure>
+  <img alt="Quick Add Element Menu" src="/docs/assets/img/studio/ss-quick-add-element-menu.png" />
+</figure>
 
 ### Rearranging Existing Elements
 
@@ -143,4 +169,12 @@ The **Scripts** and **Module** modes are for making changes to the controller an
 
 <figure>
   <img alt="Editing Scripts" src="/docs/assets/img/studio/ss-compose-scripts.png" />
+</figure>
+
+## Troubleshooting the Canvas
+
+If the canvas gets into an inconsistent or incorrect state, click the reload icon from the canvas utility bar to cause the canvas to reload its current contents:
+
+<figure>
+  <img alt="Editing Scripts" src="/docs/assets/img/studio/ss-canvas-reload.png" />
 </figure>

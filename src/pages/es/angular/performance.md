@@ -3,26 +3,26 @@ previousText: 'Navigation'
 previousUrl: '/docs/angular/navigation'
 ---
 
-# Angular Performance
+# Rendimiento angular
 
-## From the Ionic Team
+## Desde el equipo Ionic
 
-[How to Lazy Load in Ionic Angular](https://ionicframework.com/blog/how-to-lazy-load-in-ionic-angular/)
+[Como Lazy Load en Ionic Angular](https://ionicframework.com/blog/how-to-lazy-load-in-ionic-angular/)
 
-[Improved Perceived Performance with Skeleton Screens](https://ionicframework.com/blog/improved-perceived-performance-with-skeleton-screens/)
+[Rendimiento percibido mejorado con Skeleton Screens](https://ionicframework.com/blog/improved-perceived-performance-with-skeleton-screens/)
 
-## From the Angular Team
+## Desde el equipo angular
 
-[Build performant and progressive Angular apps](https://web.dev/angular) - web.dev
+[Cree aplicaciones Angular progresivas y con rendimiento ](https://web.dev/angular) - web.dev
 
-## From the Community
+## Desde la Comunidad
 
-[High Performance Animations in Ionic](https://www.joshmorony.com/high-performance-animations-in-ionic/) - Josh Morony
+[Animaciones de Alto Rendimiento en Ionic](https://www.joshmorony.com/high-performance-animations-in-ionic/) - Josh Morony
 
-[High Performance List Filtering in Ionic](https://www.joshmorony.com/high-performance-list-filtering-in-ionic-2/) - Josh Morony
+[Filtro de Lista de Alto Rendimiento en Ionic](https://www.joshmorony.com/high-performance-list-filtering-in-ionic-2/) - Josh Morony
 
-[Increasing Performance with Efficient DOM Writes in Ionic](https://www.joshmorony.com/increasing-performance-with-efficient-dom-writes-in-ionic-2/) - Josh Morony
+[Incrementamdo el rendimiento de el DOM con escrituras eficientes en Ionic](https://www.joshmorony.com/increasing-performance-with-efficient-dom-writes-in-ionic-2/) - Josh Morony
 
-[Ionic Framework is Fast (But Your Code Might Not Be)](https://www.joshmorony.com/ionic-framework-is-fast-but-your-code-might-not-be/) - Josh Morony
+. [Ionic Framework es rápido (Pero su código podría no serlo)](https://www.joshmorony.com/ionic-framework-is-fast-but-your-code-might-not-be/) - Josh Morony
 
-> Do you have a guide you'd like to share? Click the *Edit this page* button below.
+> ¿Tienes una guía que te gustaría compartir? Haga clic en el botón *Editar esta página* abajo.

@@ -1,5 +1,6 @@
 ---
 title: Welcome to Appflow
+tableOfContents: false
 ---
 
 Appflow is a continuous integration (CI) and continuous deployment (CD) platform

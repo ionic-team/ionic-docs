@@ -42,6 +42,7 @@
   height: 0.8em;
   margin-bottom: -0.0875em;
   width: 0.8em;
+  margin-left: .8em;
 }
 
 .Dropdown.is-open .Dropdown-arrow {

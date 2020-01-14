@@ -11,6 +11,7 @@
       "args": [
         "${workspaceFolder}/node_modules/.bin/stencil",
         "build",
+        "--debug",
         "--prerender",
         "--max-workers=1"
       ],

@@ -1,56 +1,56 @@
 ---
-previousText: 'Deploy API'
+previousText: '部署 API'
 previousUrl: '/docs/appflow/deploy/api'
-nextText: 'Using Ionic CLI'
+nextText: '使用 Ionic CLI'
 nextUrl: '/docs/appflow/deploy/cli'
 ---
 
-# Tutorials and Videos
+# 教程和视频
 
-## Setup and Deploy on iOS
+## iOS设置和部署
 
-<wistia-video videoId="2702mkf530"></wistia-video>
+<wistia-video video-id="2702mkf530"></wistia-video>
 
-Learn how to install, configure, and deploy your first live update.
+了解如何安装、配置和部署您的第一个实时更新。
 
-## Upgrading to the New Deploy Plugin
+## 升级到新的部署插件
 
-Here are the steps in order to successfully upgrade to the new version of the Pro Client, Deploy Plugin, and Webview Plugin. You can follow the guide below or watch this video:
+下面是成功升级到新版本的Pro Client、Deploy Plugin和Webview Plugin的步骤。 你可以跟随下面的指南或观看此视频：
 
-<wistia-video videoId="0o27tfvoam"></wistia-video>
+<wistia-video video-id="0o27tfvoam"></wistia-video>
 
-### Deploy Upgrade Guide
+### 部署升级指南
 
-You'll need specific versions of each of the following libraries:
+你需要以下每个库的特定版本:
 
 * `cordova-plugin-ionic-webview >= 2.0.0`
 * `cordova-plugin-ionic >= 5.0.0`
 * `@ionic/pro >= 2.0.0`
 
-The following commands inside the root of you Ionic app should remove the old versions and install the new ones for you:
+Ionic应用程序根目录中的以下命令应删除旧版本并为您安装新版本：
 
 ```bash
-// remove the old version of the webview plugin
+// 移除旧版本的webview插件
 cordova plugin rm cordova-plugin-ionic-webview
-// add the the new webview plugin
+// 添加新的webview插件
 cordova plugin add cordova-plugin-ionic-webview@latest
-// remove the old deploy plugin
+// 移除旧的deploy插件
 cordova plugin rm cordova-plugin-ionic
-// install the new deploy plugin
+// 下载新的deploy插件
 cordova plugin add cordova-plugin-ionic@latest --variable APP_ID=YOUR_APP_ID --variable CHANNEL_NAME=YOUR_CHANNEL_NAME
-// install the new Pro SDK
+// 下载新版本的Pro SDK
 npm install @ionic/pro@latest
 ```
 
-That's it! You should be all configured to start taking advanatage of the new deploy features! The new plugin
+设置完成！ 你应该配置好开始利用新的部署特性! 新插件
 
-## Setting up a Beta Channel
+## 设置Beta Channel
 
-In the following video tutorial, and code snippets we use the Deploy API to set up a custom Beta Channel that users can subscribe to in order to get updates early! <iframe width="560" height="315" src="https://www.youtube.com/embed/I7PC3O4q1ug?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen mark="crwd-mark"></iframe> 
+在下面的视频教程和代码片段中，我们将使用Deploy API设置用户可以订阅的自定义Beta Channel，以便尽早获得更新! <iframe width="560" height="315" src="https://www.youtube.com/embed/I7PC3O4q1ug?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen mark="crwd-mark"></iframe> 
 
-### Choose your Integration Type:
+### 选择你的集成类型：
 
-Here's an example template/JS for a page where we allow users to toggle to pull from a Beta Channel instead of Production and apply updates immediately when they toggle:
+这是一个示例页面的template/JS，我们允许用户从一个测试版渠道，而不是生产和应用更新时立即切换:
 
 <docs-tabs> <docs-tab tab="Ionic 2/3"> <!-- HERE IS WHERE IONIC 2+ CONTENT GOES -->
 
@@ -62,7 +62,7 @@ Here's an example template/JS for a page where we allow users to toggle to pull 
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="ion-padding">
   <h3>Settings</h3>
 
   <p>I'm connected to the {{ deployChannel }}.</p>
@@ -104,8 +104,8 @@ export class SettingsPage {
       this.deployChannel = res.channel;
       this.isBeta = (this.deployChannel === 'Beta')
     } catch (err) {
-      // We encountered an error.
-      // Here's how we would log it to Ionic Pro Monitoring while also catching:
+      // 错误
+      // 下面是我们如何在捕获错误的同时将其记录到Ionic Pro Monitoring：
 
       // Pro.monitoring.exception(err);
     }
@@ -119,10 +119,10 @@ export class SettingsPage {
     try {
       await Pro.deploy.configure(config);
       await this.checkChannel();
-      await this.sync({updateMethod: 'auto'}); // Alternatively, to customize how this works, use performManualUpdate()
+      await this.sync({updateMethod: 'auto'}); // 或者，使用performManualUpdate()自定义其工作方式
     } catch (err) {
-      // We encountered an error.
-      // Here's how we would log it to Ionic Pro Monitoring while also catching:
+      // 错误
+      // 下面是我们如何在捕获错误的同时将其记录到Ionic Pro Monitoring：
 
       // Pro.monitoring.exception(err);
     }
@@ -132,12 +132,10 @@ export class SettingsPage {
   async performManualUpdate() {
 
     /*
-      Here we are going through each manual step of the update process:
-      Check, Download, Extract, and Redirect.
+      在这里，我们将通过每一个手动步骤的更新过程:
+检查、下载、解压缩和重定向。
 
-      Ex: Check, Download, Extract when a user logs into your app,
-        but Redirect when they logout for an app that is always running
-        but used with multiple users (like at a doctors office).
+      例如: 当用户登录你的应用时，检查、下载、解压，但当他们注销一个总是在运行的应用程序时，他们会重新定向，用于多个用户(如在医生办公室)。
     */
 
     try {
@@ -153,8 +151,8 @@ export class SettingsPage {
         await Pro.deploy.reloadApp();
       }
     } catch (err) {
-      // We encountered an error.
-      // Here's how we would log it to Ionic Pro Monitoring while also catching:
+      // 错误
+      // 下面是我们如何在捕获错误的同时将其记录到Ionic Pro Monitoring：
 
       // Pro.monitoring.exception(err);
     }
@@ -209,12 +207,9 @@ export class SettingsPage {
   function performManualUpdate(){
 
     /*
-      Here we are going through each manual step of the update process:
-      Check, Download, Extract, and Redirect.
+      在这里，我们将通过每一个手动步骤的更新过程: 检查、下载、解压缩和重定向。
 
-      Ex: Check, Download, Extract when a user logs into your app,
-        but Redirect when they logout for an app that is always running
-        but used with multiple users (like at a doctors office).
+      例如: 当用户登录你的应用时，检查、下载、解压，但当他们注销一个总是在运行的应用程序时，他们会重新定向，用于多个用户(如在医生办公室)。
     */
 
     Pro.deploy.checkForUpdate().then(function(update){
@@ -228,19 +223,19 @@ export class SettingsPage {
         Pro.deploy.extractUpdate().then(function(res){
           Pro.deploy.reloadApp();
         }, function(err){
-          // We encountered an error.
-          // Here's how we would log it to Ionic Pro Monitoring while also catching:
+          // 我错误
+          // 下面是我们如何在捕获错误的同时将其记录到Ionic Pro Monitoring：
           Pro.monitoring.exception(err);
         })
       }, function(err){
-        // We encountered an error.
-        // Here's how we would log it to Ionic Pro Monitoring while also catching:
+        // 错误
+        // 下面是我们如何在捕获错误的同时将其记录到Ionic Pro Monitoring：
         Pro.monitoring.exception(err);
       })
     }
     }, function(err){
-      // We encountered an error.
-      // Here's how we would log it to Ionic Pro Monitoring while also catching:
+      // 错误
+      // 下面是我们如何在捕获错误的同时将其记录到Ionic Pro Monitoring：
       Pro.monitoring.exception(err);
     })
 
@@ -254,10 +249,10 @@ export class SettingsPage {
 
     Pro.deploy.configure(config).then(function(res){
       checkChannel();
-      Pro.deploy.sync({updateMethod: 'auto'}); // Alternatively, to customize how this works, use performManualUpdate()
+      Pro.deploy.sync({updateMethod: 'auto'}); // 或者，使用performManualUpdate()自定义其工作方式
     }, function(err){
-      // We encountered an error.
-      // Here's how we would log it to Ionic Pro Monitoring while also catching:
+      // 错误
+      // 下面是我们如何在捕获错误的同时将其记录到Ionic Pro Monitoring：
       Pro.monitoring.exception(err);
     });
 

@@ -1,7 +1,7 @@
 ---
 title: Identity Vault
 template: enterprise-plugin
-version: 3.4.7
+version: 3.4.8
 minor: 3.4.X
 otherVersions:
   - 2.0.X
@@ -13,58 +13,31 @@ otherVersions:
 
 # Ionic Identity Vault
 
-The Ionic Identity Vault is a all-in-one frontend identity management system that uses security best practices and uses the latest in biometric authentication options available on iOS and Android.
+Ionic Identity Vault is an all-in-one frontend identity management system that combines security best practices and the latest in biometric authentication options available on iOS and Android.
 
 The Vault manages secure user identity and session tokens, ensuring sensitive tokens are encrypted at rest, stored only in secure locations on the device, and unlocked only with biometric identity (TouchID/FaceID).
 
-Without Ionic Identity Vault, Ionic developers have to resort to combining third party Cordova plugins, often resulting in insecure setups due to the lack of correct implementation of biometric and at-rest encryption strategies.
+Without Ionic Identity Vault, Ionic developers have to resort to combining third party Cordova plugins, often resulting in insecure setups due to the lack of correct implementation of biometric and at-rest encryption strategies. [Learn more.](https://ionicframework.com/identity-vault)
 
-**Important Note**
+<native-ent-install plugin-id="identity-vault" variables=""></native-ent-install>
 
-> If you're upgrading from the `3.0.0` to `>=3.1.0` versions you no longer need to install 2 packages. The plugin now ships under the `@ionic-enterprise/identity-vault` package. Simply run the commands below to upgrade. Imports and usage should remain identical.
+Update the native project config files:
 
-## Upgrade from v3.0.0 to >=v3.1.0
+```xml
+// iOS - Info.plist
+<key>NSFaceIDUsageDescription</key>
+<string>Use Face ID to authenticate yourself and login</string>
 
-First remove v3.0.0 of the plugin
-
-```shell
-# NOTE do not prepend @ionic-enterprise to the plugin name when removing v3.0.0
-ionic cordova plugin rm cordova-plugin-identity-vault
+// Android - No additional changes needed
 ```
 
-You should make sure `@ionic-enterprise/cordova-plugin-identity-vault` and `cordova-plugin-identity-vault` are completely removed from your package.json in all locations.
+## Reference App
 
-```javascript
-...
-  "dependencies": {
-    ...
-     // Make sure both these are gone from the dependencies
-    "@ionic-enterprise/cordova-plugin-identity-vault": "3.0.0",
-    "@ionic-enterprise/identity-vault": "3.0.0",
-    ...
-  }
-  "cordova": {
-    "plugins": {
-      ...
-      // Make sure both these are gone from the cordova plugins section as well
-      "@ionic-enterprise/cordova-plugin-identity-vault": {},
-      "cordova-plugin-identity-vault": {}
-      ...
-    },
-    ...
-  }
-...
-```
+A complete [login/logout experience](https://github.com/ionic-team/cs-demo-iv) that includes biometrics (Face ID with passcode as a fallback), secure token storage, background data hiding, and session timeouts.
 
-It should now be safe to add >=v3.1.0 of the plugin
+## Configuring the Vault
 
-```shell
-ionic cordova plugin add @ionic-enterprise/identity-vault@latest
-```
-
-#### Configuring the Vault
-
-The IonicIdentityVaultUser class takes a generic session type which represents the type of the session you'll store in teh vault. You can use the [DefaultSession](#defaultsession) or extend the class to create a custom session. In the constructor of your `User` service, the vault is configured by providing options to the `super()` call:
+The `IonicIdentityVaultUser` class takes a generic session type which represents the type of the session you'll store in the vault. You can use the [DefaultSession](#defaultsession) or extend the class to create a custom session. In the constructor of your `Identity` service, the vault is configured by providing options to the `super()` call:
 
 ```typescript
 interface MyCustomSession extends DefaultSession {
@@ -90,13 +63,13 @@ constructor(private http: HttpClient, private router: Router, platform: Platform
     //Route to my home page
   }
 
-  onVaultLocked(event: LockEvent) {
+  onVaultLocked() {
     //Route to my login page
   }
 
-  async onPasscodeRequest(isSetupRequest: boolean) {
+  async onPasscodeRequest(isPasscodeSetRequest: boolean) {
     // Display a custom Passcode prompt and return the passcode as a string
-    // or return undefined to use the build in native prompts. isSetupRequest
+    // or return undefined to use the build in native prompts. isPasscodeSetRequest
     // is true when attempting to set a new passcode on the vault, you can use
     // it to do something like prompt the user twice for the pin.
   }
@@ -106,7 +79,50 @@ constructor(private http: HttpClient, private router: Router, platform: Platform
 
 ## Automatically adding your token to requests
 
-If you'd like to automatically add your authorization token from your user service to every request, you can see a simple example at in our [demo repo](https://github.com/ionic-team/cs-demo-iv/blob/feature/identityVault/src/app/services/http-interceptors/auth-interceptor.ts).
+If you'd like to automatically add your authorization token from your identity service to every request, you can see a simple example at in our [demo repo](https://github.com/ionic-team/cs-demo-iv/blob/master/src/app/services/http-interceptors/auth-interceptor.ts).
+
+**Important Note**
+
+> If you're upgrading from the `3.0.0` to `>=3.1.0` versions you no longer need to install 2 packages. The plugin now ships under the `@ionic-enterprise/identity-vault` package. Simply run the commands below to upgrade. Imports and usage should remain identical.
+
+## Upgrading from v3.0.0 to >=v3.1.0
+
+First, remove v3.0.0 of the plugin:
+
+```shell
+# NOTE: do not prepend @ionic-enterprise to the plugin name when removing v3.0.0
+ionic cordova plugin rm cordova-plugin-identity-vault
+```
+
+Make sure `@ionic-enterprise/cordova-plugin-identity-vault` and `cordova-plugin-identity-vault` are completely removed from your package.json in all locations.
+
+```javascript
+...
+  "dependencies": {
+    ...
+     // Make sure both of these are gone from the dependencies
+    "@ionic-enterprise/cordova-plugin-identity-vault": "3.0.0",
+    "@ionic-enterprise/identity-vault": "3.0.0",
+    ...
+  }
+  "cordova": {
+    "plugins": {
+      ...
+      // Make sure both of these are gone from the cordova plugins section as well
+      "@ionic-enterprise/cordova-plugin-identity-vault": {},
+      "cordova-plugin-identity-vault": {}
+      ...
+    },
+    ...
+  }
+...
+```
+
+It should now be safe to add >=v3.1.0 of the plugin:
+
+```shell
+ionic cordova plugin add @ionic-enterprise/identity-vault@latest
+```
 
 ## API Documentation
 
@@ -114,7 +130,7 @@ You can find the API and interface documentation for everything below. The main 
 
 * [IonicIdentityVaultUser](#identityvaultuser) - Subclass this when creating your identity service.
 * [DefaultSession](#defaultsession) - This is the generic type that represents your session. Extend this to implement a custom session.
-* [IdentityVault](#identityvault) - This is the lower level vault API. You can used this to implement advanced workflows including multi tenant vaults.
+* [IdentityVault](#identityvault) - This is the lower level vault API. You can use this to implement advanced workflows including multi-tenant vaults.
 
 ## Index
 
@@ -1797,6 +1813,12 @@ The possible values returned by [getBiometricType](#identityvault.getbiometricty
 * * *
 
 ## Change Log
+
+### \[3.4.8\] (2019-11-08)
+
+### Bug Fixes
+
+* **vault-user:** use the vault user methods to set the auth mode 
 
 ### \[3.4.7\] (2019-09-09)
 

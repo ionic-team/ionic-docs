@@ -19,7 +19,7 @@ docs-nav a {
   font-size: 14px;
   font-weight: 500;
   line-height: 1.25;
-  padding: 1rem 0 2rem;
+  padding: 1rem 0 .3rem;
 }
 
 .Nav-subnav {
@@ -33,7 +33,7 @@ docs-nav a {
   font-weight: 600;
   color: #b2becd;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
 }
 
 .Nav-link,
@@ -86,6 +86,7 @@ docs-nav a {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  letter-spacing: .01em;
 }
 
 @media (max-width: 768px), (pointer: coarse) {

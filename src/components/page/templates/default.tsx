@@ -1,17 +1,20 @@
 import { h } from '@stencil/core';
 import { toHypertext } from '../to-hypertext';
 
-export default (props) => {
+export default props => {
   const { page } = props;
 
   return (
     <article>
-      <h1>{ page.title }</h1>
-      <docs-table-of-contents links={page.headings} basepath={page.path}/>
-      <section class="markdown-content">
-        {toHypertext(h, page.body)}
-      </section>
-      <docs-page-footer page={page}/>
+      {page.renderTitle !== false ? <h1>{page.title}</h1> : null}
+      {page.tableOfContents !== false ? (
+        <div class="page-meta">
+          <docs-table-of-contents links={page.headings} basepath={page.path}/>
+          <internal-ad></internal-ad>
+        </div>
+      ) : null}
+      <section class="markdown-content">{toHypertext(h, page.body)}</section>
+      <docs-page-footer page={page} />
     </article>
   );
 };

@@ -3,8 +3,6 @@
 
 # Using Native Functionality
 
-> 🚧 These docs are a work-in-progress. Check back frequently for updates!
-
 Depending on which Cordova Plugin you're using, you may need to run your app on a physical or virtual device in order to test out that feature.
 
 For instance, a plugin for utilizing the Gyroscope will only work on a physical device, while a plugin for Storage will work in Serve as well.

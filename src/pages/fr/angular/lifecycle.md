@@ -11,9 +11,9 @@ contributors:
 
 Ce guide couvre la façon dont le cycle de vie de la page fonctionne dans une application construite avec Ionic et Angular.
 
-![Démo des événements du cycle de vie avec Ionic](/docs/assets/img/guides/lifecycle/ioniclifecycle.png)
+![Démo des événements du cycle de vie Ionic](/docs/assets/img/guides/lifecycle/ioniclifecycle.png)
 
-## Événements du Cycle de vie avec Angular
+## Evénements du cycle de vie d'Angular
 
 Ionic s'engage dans les événements de cycle de vie fournis par Angular. Les deux événements d'Angular les plus couramment utilisés sont :
 

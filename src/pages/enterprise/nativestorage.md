@@ -1,11 +1,13 @@
 ---
-title: NativeStorage
+title: Native Storage
 template: enterprise-plugin
 version: 2.3.2
 minor: 2.3.X
 ---
 
+The Native Storage plugin provides native storage of variables in Android (SharedPreferences) and iOS (UserDefaults).
 
+<native-ent-install plugin-id="nativestorage" variables=""></native-ent-install>
 
 ## Index
 
@@ -20,12 +22,6 @@ minor: 2.3.X
 <a id="nativestorage"></a>
 
 ###  NativeStorage
-
-**NativeStorage**: 
-
-*__name__*: Native Storage
-
-*__description__*: Native storage of variables in Android and iOS
 
 *__usage__*:
  ```typescript

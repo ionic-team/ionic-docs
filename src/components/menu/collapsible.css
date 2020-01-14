@@ -1,0 +1,47 @@
+docs-menu-collapsible {
+  display: block;
+  outline: none;
+  border-top: 1px solid #DEE3EA;
+  padding-bottom: .35rem;;
+}
+
+docs-menu-collapsible .docs-menu-collapsible__title {
+  --item-spacing: 10px;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #020814;
+  display: flex;
+  padding-top: 16px;
+  padding-right: 20px;
+  padding-left: calc(14px + 1 * 10px);
+  letter-spacing: .085em;
+}
+
+docs-menu-collapsible .docs-menu-collapsible__title svg {
+  width: 14px;
+  fill: #5B708B;
+  margin-left: auto;
+  height: 18px;
+  display: inline-block;
+  transition: .2s transform ease;
+}
+
+docs-menu-collapsible.docs-menu-collapsible--status-closed .docs-menu-collapsible__title svg {
+  transform: rotate(180deg);
+}
+
+docs-menu-collapsible.docs-menu-collapsible--status-closed .docs-menu-collapsible__contents {
+  display: none;
+}
+
+docs-menu-collapsible .docs-menu-collapsible__contents .Nav {
+  padding-bottom: 0;
+  padding-top: .6rem;
+}
+
+docs-menu-collapsible .docs-menu-collapsible__contents ion-segment-button {
+  
+}

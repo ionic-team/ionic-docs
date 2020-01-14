@@ -5,7 +5,9 @@ version: 2.0.1
 minor: 2.0.X
 ---
 
+The Network Information plugin provides access to network data on a device, such as connection type or when the device comes online or offline.
 
+<native-ent-install plugin-id="network-information" variables=""></native-ent-install>
 
 ## Index
 
@@ -98,12 +100,6 @@ minor: 2.0.X
 <a id="network"></a>
 
 ### Network
-
-**Network**:
-
-***name***: Network
-
-***description***:
 
 ***usage***:
 

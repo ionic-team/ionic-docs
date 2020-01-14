@@ -1,8 +1,8 @@
 ---
 previousText: 'Using private GIT repositories'
 previousUrl: '/docs/appflow/cookbook/private_git'
-nextText: 'DevApp: Local Development'
-nextUrl: '/docs/appflow/devapp'
+nextText: 'Use different Node in builds'
+nextUrl: '/docs/appflow/cookbook/switch_node_version'
 ---
 
 # Using private NPM modules

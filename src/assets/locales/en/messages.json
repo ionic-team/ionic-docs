@@ -14,6 +14,7 @@
   "menu-intro-what-is": "What is Ionic Framework?",
   "menu-intro-concepts": "Core Concepts",
   "menu-intro-your-first-app": "Build your First App",
+  "menu-intro-what-are-progressive-web-apps": "What are PWAs?",
   "menu-intro-browser-support": "Browser Support",
   "menu-intro-versioning": "Versioning",
   "menu-intro-release-notes": "Release Notes",
@@ -58,9 +59,18 @@
   "menu-angular": "Angular",
   "menu-angular-overview": "Overview",
   "menu-angular-your-first-app": "Build Your First App",
+  "menu-angular-yfa-taking-photos": "Taking Photos",
+  "menu-angular-yfa-saving-photos": "Saving Photos",
+  "menu-angular-yfa-loading-photos": "Loading Photos",
+  "menu-angular-yfa-adding-mobile": "Adding Mobile",
+  "menu-angular-yfa-deploying-mobile": "Deploying Mobile",
+  "menu-angular-yfa-live-reload": "Live Reload",
   "menu-angular-lifecycle": "Lifecycle",
   "menu-angular-navigation": "Navigation/Routing",
+  "menu-angular-config": "Config",
+  "menu-angular-platform": "Platform",
   "menu-angular-performance": "Performance",
+  "menu-angular-pwa": "Progressive Web Apps",
 
   "menu-react": "React",
   "menu-react-overview": "Overview",
@@ -69,8 +79,9 @@
   "menu-react-navigation": "Navigation/Routing",
   "menu-react-config": "Config",
   "menu-react-platform": "Platform Utils",
+  "menu-react-pwa": "Progressive Web Apps",
 
-  "menu-vue": "Vue",
+  "menu-vue": "Vue (beta)",
   "menu-vue-overview": "Overview",
   "menu-vue-your-first-app": "Build Your First App",
   "menu-vue-lifecycle": "Lifecycle",
@@ -78,9 +89,7 @@
 
   "menu-utilities": "Utilities",
   "menu-utilities-animations": "Animations",
-  "menu-utilities-config": "Config",
   "menu-utilities-gestures": "Gestures",
-  "menu-utilities-platform": "Platform",
 
   "menu-publishing": "Publishing",
   "menu-publishing-progressive-web-app": "Progressive Web App",
@@ -155,14 +164,18 @@
 
   "menu-cli-commands": "Command Reference",
 
-  "menu-native-ce": "Community Edition",
-  "menu-native-ce-overview": "Overview",
-  "menu-native-ce-show-all": "Show all CE plugins...",
-  "menu-native-ee": "Enterprise Edition",
-  "menu-native-ee-overview": "Overview",
-  "menu-native-ee-show-all": "Show all EE plugins...",
 
-  "menu-native-plugins": "Community Plugins",
+  "menu-native-solutions": "Native Solutions",
+  "menu-native-core-device": "Core Device",
+  "menu-native-getting-started": "Getting Started",
+  "menu-native-plugins": "Plugins",
+  "menu-native-community": "Community",
+  "menu-native-premier": "Premier",
+  "menu-native-home": "Home",
+  "menu-native-community-v-premier": "Community vs Premier",
+  "menu-native-quickstart": "Quickstart",
+  "menu-native-setup": "Setup",
+  "menu-native-faq": "FAQ",
 
   "menu-appflow": "Welcome to Appflow",
 
@@ -209,12 +222,15 @@
   "menu-appflow-cookbook-intro": "Overview",
   "menu-appflow-cookbook-private_git": "Using Private GIT repositories",
   "menu-appflow-cookbook-private_npm_modules": "Using Private NPM modules",
+  "menu-appflow-cookbook-switch_node_version": "Use different Node in builds",
 
   "menu-appflow-devapp": "DevApp: Local Development",
 
-  "menu-enterprise-authentication-security": "Authentication, Security, Storage",
-  "menu-enterprise-common-device-features": "Common Device Features",
-  "menu-enterprise-integrated-services": "Integrated Services",
+  "menu-enterprise-getting-started": "Getting Started",
+  "menu-enterprise-guides": "Guides",
+  "menu-enterprise-authentication-security": "Pre-built Solutions",
+  "menu-enterprise-common-device-features": "Premier Plugins",
+  "menu-enterprise-integrated-services": "Service Integrations",
   "menu-enterprise-payments": "Payments",
 
   "menu-studio-introduction": "Introduction",

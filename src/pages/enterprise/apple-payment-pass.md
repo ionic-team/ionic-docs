@@ -8,11 +8,13 @@ minor: 1.0.X
 Apple Payment Pass
 ==================
 
-This plugin provides support for adding credit/debit cards to Apple Wallet. It also can check if the credit/debit card exists in Wallet.
+The Apple Payment Pass plugin provides support for adding credit/debit cards to Apple Wallet. It also can check if the credit/debit card exists in Wallet.
 
-**Important Note**
+**Important Note:**
 
-> Adding payment passes requires a special entitlement issued by Apple. Your app must include this entitlement before you can use this class. For more information on requesting this entitlement, see the Card Issuers section at developer.apple.com/apple-pay/.
+> Adding payment passes requires a special entitlement issued by Apple. Your app must include this entitlement before you can use this class. For more information on requesting this entitlement, see the Apple Pay [implementation details](https://developer.apple.com/apple-pay/implementation/).
+
+<native-ent-install plugin-id="apple-payment-pass" variables=""></native-ent-install>
 
 Usage
 -----

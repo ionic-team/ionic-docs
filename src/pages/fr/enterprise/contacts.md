@@ -1,23 +1,15 @@
 ---
 title: Contacts
 template: enterprise-plugin
-version: 1.0.0
+version: 1.0.2
 minor: 1.0.X
 ---
 
-[
+The Contacts plugin provides access to read, write, or select device contacts.
 
-# Ionic Contacts
-
-](#ionic-contacts)
-
-This plugin allows to read, write and pick contacts.
-
-[
+<native-ent-install plugin-id="contacts" variables=""></native-ent-install>
 
 ## Usage
-
-](#usage)
 
 The Contacts plugin ship with a native Angular & es2015+/Typescript wrappers as well as being available on window.
 
@@ -222,7 +214,7 @@ A casual name by which to address the contact.
 
 **● note**: *`string` \| `null`*
 
-A note about the contact.
+A note about the contact on Android.
 
 * * *
 
@@ -978,3 +970,17 @@ This function picks contact from phone using contact picker UI
 **Ƭ ContactFieldType**: *"*" \| "addresses" \| "birthday" \| "categories" \| "country" \| "department" \| "displayName" \| "emails" \| "name.familyName" \| "name.formatted" \| "name.givenName" \| "name.honorificPrefix" \| "name.honorificSuffix" \| "id" \| "ims" \| "locality" \| "name.middleName" \| "name" \| "nickname" \| "note" \| "organizations" \| "phoneNumbers" \| "photos" \| "postalCode" \| "region" \| "streetAddress" \| "title" \| "urls"*
 
 * * *
+
+# Changelog
+
+### \[1.0.2\] (2019-10-02)
+
+### Bug Fixes
+
+* **ios:** remove contact notes code to work on iOS 13 
+
+### 1.0.1 (2019-09-20)
+
+### Bug Fixes
+
+* plugin files not included on published package

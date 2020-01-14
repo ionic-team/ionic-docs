@@ -1,9 +1,9 @@
 ---
 template: release-notes
-previousText: 'Versioning'
+previousText: 'Versiones'
 previousUrl: '/docs/intro/versioning'
-nextText: 'Support'
+nextText: 'Soporte'
 nextUrl: '/docs/intro/support'
 ---
 
-# Release Notes
+# Notas de la Versión

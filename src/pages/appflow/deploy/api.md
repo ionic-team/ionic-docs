@@ -393,7 +393,7 @@ async performAutomaticUpdate() {
     const resp = await Deploy.sync({updateMethod: 'auto'}, percentDone => {
       console.log(`Update is ${percentDone}% done!`);
     });
-    if (currentVersion.versionId !== resp.versionId){
+    if (!currentVersion || currentVersion.versionId !== resp.versionId){
       // We found an update, and are in process of redirecting you since you put auto!
     }else{
       // No update available
@@ -897,13 +897,13 @@ You can set these values when you add the plugin using flags (if using the `ioni
 
 ### App ID
 * **Required**
-* The app id is required to recieve updates for an app in the Appflow dashboard.
+* The app id is required to receive updates for an app in the Appflow dashboard.
 * `ionic deploy add --app-id=abcdef12`
 * `ionic cordova plugin add cordova-plugin-ionic --variable APP_ID=abcdef12`
 
 ### Channel Name
 * **Required**
-* The channel name is required to recieve updates for an app in the Appflow dashboard and indicates the channel from which the device will recieve updates. Note this can also be updated programatically at runtime for advanced use cases.
+* The channel name is required to receive updates for an app in the Appflow dashboard and indicates the channel from which the device will receive updates. Note this can also be updated programatically at runtime for advanced use cases.
 * `ionic deploy add --channel-name=Production`
 * `ionic cordova plugin add cordova-plugin-ionic --variable CHANNEL_NAME=Production`
 
@@ -913,14 +913,14 @@ You can set these values when you add the plugin using flags (if using the `ioni
   * `background` (Recommended) - The app will check for updates in the background and not prolong the amount of time the splash screen is shown. If an update is available it will be downloaded and installed while the user is using the older version. The next time they launch the app or the app has been in background for the duration specified my `min-background-duration` the new version will be loaded.
   * `auto` - The app will delay the launch of the app by extending how long the splash screen is shown while downloading any available updates. Once the update is available the new version will be immediately shown and the splash screen will be hidden. We generally don't recommend this mode since it can lead to the splash screen showing for a long time particularly if the user is on a poor network connection.
   * `none` - Setting the update method to `none` indicates that you will manually perform all update logic programatically and the plugin will not check for or apply updates on its own.
-* `ionic deploy add --updated-method=Production`
+* `ionic deploy add --update-method=background`
 * `ionic cordova plugin add cordova-plugin-ionic --variable UPDATE_METHOD=background`
 
 ### Max Versions
 * **Default** `2`
 * This tells the plugin the number of previous updates it should keep on the device in order to speed up the rollback process if ever needed.
-* `ionic deploy add --max-versions=Production`
-* `ionic cordova plugin add cordova-plugin-ionic --variable MAX_VERSIONS=Production`
+* `ionic deploy add --max-versions=2`
+* `ionic cordova plugin add cordova-plugin-ionic --variable MAX_STORE=2`
 
 ### Min Background Duration
 * **Default** `30`

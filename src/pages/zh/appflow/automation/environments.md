@@ -1,64 +1,64 @@
 ---
-previousText: 'Create Automations'
+previousText: '自动化'
 previousUrl: '/docs/appflow/automation/create'
 nextText: 'Webhooks'
 nextUrl: '/docs/appflow/automation/webhooks'
 ---
 
-# Build Environments
+# 构建环境
 
-## Introduction
+## 简介
 
-Environments give you a way to customize the build process for your application in order to produce different versions of your applications for different environments from the same code base. All environment variables are accessible to any build scripts that run during the `npm run install` and `npm run build` portion of your builds.
+环境为您提供了一种自定义应用程序构建过程的方法，以便从相同的代码库为不同的环境生成不同版本的应用程序。 在npm运行期间运行的任何构建脚本都可以访问所有环境变量`npm run install`和`npm run build`构建部分。
 
-There are two types of Enviornment variables available to use:
+有两种类型的环境变量可用:
 
-* [Predefined Environments](#predefined-environments) (Available on all Builds)
-* [Custom Environments](#custom-environments) (Available on select plans)
+* [Predefined Environments](#predefined-environments) (所有内置都可用)
+* [Custom Environments](#custom-environments) (可选计划中可用)
 
-## Predefined Environments
+## 预定义的环境
 
-Every time a Build occurs, it's done in a secure environment where we provide some predefined variables which are key/value pairs that are made available in the environment and are available by using [process.env.MY_VAR](https://nodejs.org/docs/latest-v8.x/api/process.html#process_process_env) syntax in NodeJS or via `$MY_VAR` syntax in a standard shell script. These variables can be leveraged to [customize the build and outputs](#usage).
+每次构建发生时,它是在一个安全的环境中,我们提供了一些预定义的变量是键/值对可用的环境,可通过使用[process.env.MY_VAR](https://nodejs.org/docs/latest-v8.x/api/process.html#process_process_env)语法NodeJS或通过<代码>美元`$MY_VAR` 代码语法标准shell脚本。 这些变量可以用于自定义构建和输出。
 
-The following environment variables are provided in every build, which can be accessed in build scripts:
+每个构建都提供了以下环境变量，可以在构建脚本中访问:
 
-* `CI_APP_ID` **(string):** Your Ionic app's unique ID.
-* `CI_APP_NAME` **(string):** Your Ionic app's name.
-* `CI_AUTOMATED_BUILD` **(int):** Whether this build occurred as a result of an automation (`0` for `false`, `1` for `true`).
-* `CI_AUTOMATION_ID` **(optional int):** The unique ID of the automation which created this build.
-* `CI_AUTOMATION_NAME` **(optional string):** The name of the automation which created this build.
-* `CI_GIT_COMMIT_SHA` **(string):** The SHA for the commit on which the build was run.
-* `CI_GIT_COMMIT_MSG` **(string):** The message for the commit on which the build was run.
-* `CI_GIT_REF` **(string):** The git ref from which the build was created (i.e. `master`).
-* `CI_GIT_REF_TYPE` **(string):** The git ref type (i.e. `branch`).
+* `CI_APP_ID` **(string)：** Ionic 应用程序的独特ID。
+* `CI_APP_NAME` **(string):** Ionic 应用程序的名称。
+* `CI_AUTOMATED_BUILD` **(int):** 此构建是否由于自动化而发生 (`0` `false`, `1` `true`)。
+* `CI_AUTOMATION_ID` **(可选 int)：** 创建此版本的自动化唯一ID。
+* `CI_AUTOMATION_NAME` **(可选string)：** 创建此构建的自动化名称。
+* `CI_GIT_COMIT_SHA` **(string)：** 用于运行构建的提交的SHA。
+* `CI_GIT_COMIIT_MSG` **(string)：** 用于运行构建的提交的消息。
+* `CI_GIT_REF` **(string):** 创建构建的git ref (即. `master`)。
+* `CI_GIT_REF_TYPE` **(string)：** git ref 类型 (例如. `branch`)。
 
-## Custom Environments
+## 自定义环境
 
 <blockquote>
-  <p><b>Note:</b>This feature is only available on our <a href="/pricing">Growth plans</a> and above.</p>
+  <p><b>注:</b>此功能仅适用于我们的<a href="/pricing">Growth plans</a>及以上。</p>
 </blockquote>
 
-In addition to the [predefined environments](#predefined-environments), customers on the [plans with access to automations](/pricing) will have access to create custom environments. With custom environments it's easy to create and manage custom sets of key/value pairs to further customize builds on Ionic Appflow. Common use cases include customizing your build process in order to build staging & QA versions of your app that connect to different APIs or to build different white labeled versions of your application. To get started with custom environments, open the app you wish to work on and navigate in the sidebar to **Automate -> Environments**, then click **New Environment** on the top right. You should see a form like this:
+除了 [预定义的环境](#predefined-environments)之外，在 [计划中用户访问自动化](/pricing) 将有权限创建自定义环境。 使用自定义环境，很容易创建和管理自定义密钥/值配对 以进一步自定义构建 Ionic Appflow。 常见的用例包括定制您的构建过程，以便构建staging &您的应用程序的QA版本，可以连接到不同的api，或者构建应用程序的不同的标记版本。 要开始使用自定义环境，请打开您希望使用的应用程序，并在侧栏中导航到**automation -> Environment**，然后单击右上角的**New Environment**。 你应该看到类似的内容：
 
-![Create Environment Form](/docs/assets/img/appflow/ss-environments-create.png)
+![创建环境表单](/docs/assets/img/appflow/ss-environments-create.png)
 
-As can be noticed, there are 2 different sets of environment variables sections that can be utilized:
+可以注意到，有两种不同的环境变量部分可以使用：
 
 * Secrets
 * Variables
 
-The only difference is that the secrets are hidden and never shown in the dashboard after they have been added, while the variables are always available to be read.
+唯一的不同之处在于，secrets是隐藏的，并且在添加后从未显示在仪表板中，而variables总是可以读取的。
 
-The environments dashboard also lists available custom environments along with their configured key/value pairs and secrets keys.
+环境面板还列出了可用的自定义环境及其配置的键/值对和密钥。
 
-![Environments List View](/docs/assets/img/appflow/ss-environments-list.png)
+![环境列表](/docs/assets/img/appflow/ss-environments-list.png)
 
-## Usage
+## 使用方法
 
-For example you could replace your `build` script in the `package.json` with a custom shell script that reads the branch and triggers a custom build.
+例如，您可以使用自定义的Shell脚本替换` package.json `中的` build `脚本。读取分支并触发自定义构建。
 
 ```json
-// customize the build script in the package.json
+// package.json中的自定义构建脚本
 {
 ...
     "scripts": {
@@ -78,13 +78,13 @@ For example you could replace your `build` script in the `package.json` with a c
     fi
     
 
-As of `@ionic/app-scripts@3.2.0` you can also use [environment variables directly in your source code](https://github.com/ionic-team/ionic-app-scripts#environments) and they will be replaced at build time so that you can customize your code based on the environment.
+从`@ionic/app-scripts@3.2.0`开始，您还可以使用 [环境变量直接在您的源代码中](https://github.com/ionic-team/ionic-app-scripts#environments) 并且它们会在构建时被替换，以便您可以根据环境自定义代码。
 
 <blockquote>
   <p><b>Note:</b>`@ionic/app-scripts` is only for use with Ionic Framework v3 applications. The above does not apply to other versions.</p>
 </blockquote>
 
-For example:
+例如:
 
 ```typescript
 productionConfig = {

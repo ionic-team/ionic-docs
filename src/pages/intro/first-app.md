@@ -1,8 +1,9 @@
 ---
 previousText: 'Concepts'
 previousUrl: '/docs/intro/concepts'
-nextText: 'Browser Support'
-nextUrl: '/docs/intro/browser-support'
+nextText: 'What Are Progressive Web Apps'
+nextUrl: '/docs/intro/what-are-progressive-web-apps'
+tableOfContents: false
 ---
 
 # Build Your First App Tutorial

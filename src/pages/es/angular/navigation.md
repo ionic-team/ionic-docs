@@ -7,11 +7,11 @@ contributors:
   - mhartington
 ---
 
-# Angular Navigation
+# Navegación en Angular
 
-This guide covers how routing works in an app built with Ionic and Angular.
+Esta guía cubre cómo funciona el enrutamiento en una aplicación construida con Ionic y Angular.
 
-The Angular Router is one of the most important libraries in an Angular application. Without it, apps would be single view/single context apps or would not be able to maintain their navigation state on browser reloads. With Angular Router, we can create rich apps that are linkable and have rich animations (when paired with Ionic of course). Let's look at the basics of the Angular Router and how we can configure it for Ionic apps.
+El enrutador de Angular (Angular Router) es una de las librerías más importantes de una aplicación Angular. español With Angular Router, we can create rich apps that are linkable and have rich animations (when paired with Ionic of course). Let's look at the basics of the Angular Router and how we can configure it for Ionic apps.
 
 ## A simple Route
 
@@ -85,7 +85,7 @@ Now from the `LoginComponent`, we can use the following HTML to navigate to the 
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="ion-padding">
   <ion-button [routerLink]="['/detail']">Go to detail</ion-button>
 </ion-content>
 ```
@@ -192,18 +192,18 @@ const routes: Routes = [
 Here we have a "tabs" path that we load. In this example we call the path “tabs”, but the name of the paths are open to be changed. They can be called whatever fits your app. In that route object, we can define a child route as well. In this example, the top level child route "tab1" acts as our "outlet", and can load additional child routes. For this example, we have a single sub-child-route, which just loads a new component. The markup for the tab is as followed:
 
 ```html
-<br />&lt;ion-tabs&gt;
+<br /><ion-tabs>
 
-  &lt;ion-tab-bar slot="bottom"&gt;
+  <ion-tab-bar slot="bottom">
 
-    &lt;ion-tab-button tab="tab1"&gt;
-      &lt;ion-icon name="flash"&gt;&lt;/ion-icon&gt;
-      &lt;ion-label&gt;Tab One&lt;/ion-label&gt;
-    &lt;/ion-tab-button&gt;
+    <ion-tab-button tab="tab1">
+      <ion-icon name="flash"></ion-icon>
+      <ion-label>Tab One</ion-label>
+    </ion-tab-button>
 
-  &lt;/ion-tab-bar&gt;
+  </ion-tab-bar>
 
-&lt;/ion-tabs&gt;
+</ion-tabs>
 ```
 
 If you've built apps with Ionic before, this should feel familiar. We create a `ion-tabs` component, and provide a `ion-tab-bar`. The `ion-tab-bar` provides a `ion-tab-button` with a `tab` property that is associated with the tab "outlet" in the router config. Note that the latest version of `@ionic/angular` no longer requires `<ion-tab>`, but instead allows developers to fully customize the tab bar, and the single source of truth lives within the router configuration.

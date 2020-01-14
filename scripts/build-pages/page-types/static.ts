@@ -12,6 +12,7 @@ import fetch from 'node-fetch';
 import frontMatter from 'front-matter';
 import markdownRenderer from '../markdown-renderer';
 import simplegit from 'simple-git/promise';
+import moment from 'moment';
 
 // ingored by git
 // generated in build-data/file-contrbutors.ts by build-data npm task
@@ -85,7 +86,7 @@ async function getFileContributors(filename) {
         GITHUB_COMMITS[commit.hash] ? GITHUB_COMMITS[commit.hash].id : null
       // filter out null users
       ).filter(user => !!user))),
-      lastUpdated: status.latest.date
+      lastUpdated: status.latest ? moment(status.latest.date, 'YYYY-MM-DD HH-mm-ss ZZ').toISOString() : ''
     })
   );
 }

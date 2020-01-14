@@ -19,7 +19,7 @@ A step-by-step guide to installing and setting up your system to build Ionic Fra
 
 <docs-card header="CLI" href="/docs/cli" icon="/docs/assets/icons/guide-cli-icon.png"> 
 
-The Ionic command-line interface is your go-to tool for for developing Ionic apps.</docs-card>
+The Ionic command-line interface is your go-to tool for developing Ionic apps.</docs-card>
 
 <docs-card header="Native APIs" href="/docs/native" icon="/docs/assets/icons/guide-nativeapis-icon.png"> 
 

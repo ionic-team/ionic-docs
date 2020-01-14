@@ -1,23 +1,23 @@
 ---
-previousText: 'Deploy API'
+previousText: 'API de Deploy'
 previousUrl: '/docs/appflow/deploy/api'
-nextText: 'Using Ionic CLI'
+nextText: 'Como usar el CLI de Ionic'
 nextUrl: '/docs/appflow/deploy/cli'
 ---
 
-# Tutorials and Videos
+# Tutoriales y videos
 
-## Setup and Deploy on iOS
+## Configurar e implementar en iOS
 
-<wistia-video videoId="2702mkf530"></wistia-video>
+<wistia-video video-id="2702mkf530"></wistia-video>
 
-Learn how to install, configure, and deploy your first live update.
+Aprenda a instalar, configurar e implementar su primera actualización en vivo.
 
 ## Upgrading to the New Deploy Plugin
 
 Here are the steps in order to successfully upgrade to the new version of the Pro Client, Deploy Plugin, and Webview Plugin. You can follow the guide below or watch this video:
 
-<wistia-video videoId="0o27tfvoam"></wistia-video>
+<wistia-video video-id="0o27tfvoam"></wistia-video>
 
 ### Deploy Upgrade Guide
 
@@ -62,7 +62,7 @@ Here's an example template/JS for a page where we allow users to toggle to pull 
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="ion-padding">
   <h3>Settings</h3>
 
   <p>I'm connected to the {{ deployChannel }}.</p>

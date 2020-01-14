@@ -45,7 +45,7 @@ Devices must be explicitly registered with Apple for sending push notifications 
 
 ![iOS Register Device](/docs/assets/img/appflow/ss-profiles-ios-device-register-1.png)
 
-* Give your device a name and enter the device's UDID. [Find your UDID](/services/profiles/ios-udid.html).
+* Give your device a name and enter the device's UDID. [Find your UDID](ios-udid).
 
 ### Certificate Signing Request
 

@@ -6,8 +6,6 @@
 
 Ionic Studio has an integrated terminal for running commands within an Ionic app.
 
-> 🚧 These docs are a work-in-progress. Check back frequently for updates!
-
 ## Introduction
 
 > If you're new to the command line, you can check out [our blog post](https://ionicframework.com/blog/new-to-the-command-line/) on the basics.

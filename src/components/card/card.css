@@ -38,11 +38,29 @@ docs-card {
   height: auto;
 }
 
-.Card-icon {
+.Card-icon,
+.Card-iconset__container  {
   width: 48px;
   height: 48px;
 
   margin-bottom: 1.2em;
+
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.Card-iconset__container {
+  position: relative;
+}
+
+.Card-iconset__container .Card-icon {
+  position: absolute;
+  opacity: 0;
+  transition: .8s opacity;
+}
+
+.Card-iconset__container .Card-icon--active {
+  opacity: 1;
 }
 
 .Card-ionicon {
@@ -90,6 +108,21 @@ docs-card {
   height: 1em;
   margin-bottom: -0.125em;
   width: auto;
+}
+
+.Card-size-lg {
+  font-size: 14px;
+}
+
+.Card-size-lg .Card-icon,
+.Card-size-lg .Card-ionicon,
+.Card-size-lg .Card-iconset__container {
+  width: 80px;
+  height: 80px;
+}
+
+.Card-size-lg.Card-without-image .Card-header {
+  font-size: 20px;
 }
 
 docs-card.disabled,

@@ -7,7 +7,7 @@ command-line {
   font-size: 13px;
   letter-spacing: normal;
   line-height: 1.5;
-  margin: 2rem 0;
+  margin: 0 0 2rem 0;
   overflow: scroll;
   padding: 1.25em 2em 2em;
 }

@@ -8,7 +8,7 @@ export class DocsSelect {
   private dropdown;
 
   @State() selected: string;
-  @Prop() options: string[];
+  @Prop({ mutable: true }) options: string[];
   @Prop() initializer: (options: string[]) => string;
   @Prop() optionRenderer: (option: string) => any = (option: string) => option;
 

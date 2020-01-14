@@ -3,6 +3,7 @@ title: Ionic Framework
 meta:
   image: /docs/assets/img/meta/open-graph.png
   description: Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards
+tableOfContents: false
 ---
 
 <docs-cards>
@@ -19,7 +20,7 @@ meta:
   </docs-card>
 
   <docs-card header="CLI" href="/docs/cli" icon="/docs/assets/icons/guide-cli-icon.png">
-    <p>The Ionic command-line interface is your go-to tool for for developing Ionic apps.</p>
+    <p>The Ionic command-line interface is your go-to tool for developing Ionic apps.</p>
   </docs-card>
 
   <docs-card header="Native APIs" href="/docs/native" icon="/docs/assets/icons/guide-nativeapis-icon.png">

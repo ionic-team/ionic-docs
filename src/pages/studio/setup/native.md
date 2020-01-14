@@ -4,11 +4,7 @@
 
 # Native iOS & Android
 
-Utilizing native functionality in your app may require additional setup.
-
-> 🚧 These docs are a work-in-progress. Check back frequently for updates!
-
-Additional setup is required to utilize native functionality, such as the following:
+Utilizing native functionality in your app may require additional setup, including:
 
 * Using Cordova Plugins to access Hardware APIs
 * Running the app on hardware or virtual devices

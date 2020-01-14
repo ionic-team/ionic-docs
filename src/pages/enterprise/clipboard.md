@@ -5,7 +5,9 @@ version: 1.2.0
 minor: 1.2.X
 ---
 
+The Clipboard plugin provides access to the device clipboard, including copy and paste functionality.
 
+<native-ent-install plugin-id="clipboard" variables=""></native-ent-install>
 
 ## Index
 
@@ -20,12 +22,6 @@ minor: 1.2.X
 <a id="clipboard"></a>
 
 ###  Clipboard
-
-**Clipboard**: 
-
-*__name__*: Clipboard
-
-*__description__*: Clipboard management plugin for Cordova that supports iOS, Android, and Windows Phone 8.
 
 *__usage__*:
  ```typescript

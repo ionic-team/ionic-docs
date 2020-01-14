@@ -1,5 +1,5 @@
 ---
-previousText: 'Config'
+previousText: '配置'
 previousUrl: '/docs/react/config'
 ---
 

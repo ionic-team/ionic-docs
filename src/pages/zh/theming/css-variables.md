@@ -91,7 +91,7 @@ const color = el.style.getPropertyValue('--charcoal');
 
 ### Component Variables
 
-Ionic provides variables that exist at the component level, such as `--background` and `--color`. For a list of the custom properties a component accepts, view the `Custom Properties` section of its [API reference](/docs/api/). For example, see the [Button Custom Properties](/docs/api/button#css-custom-properties).
+Ionic provides variables that exist at the component level, such as `--background` and `--color`. For a list of the custom properties a component accepts, view the `CSS Custom Properties` section of its [API reference](/docs/api/). For example, see the [Button CSS Custom Properties](/docs/api/button#css-custom-properties).
 
 ### Global Variables
 

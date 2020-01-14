@@ -33,6 +33,14 @@ Once the build begins you will be able to watch it's progress and look at the lo
 
 ![Running Web Build](/docs/assets/img/appflow/gif-start-web-build.gif)
 
+## Web Build Versioning
+
+Once the Web Build completed, it can be restricted to a specific native build number assigned in the Web Build details. A minimum and maximum equivalent build version number are specified, which designates whether or not the update is compatible. After doing this, new native builds that are distributed within an app store do not conflict with the current available update from AppFlow.
+
+![Web build versioning](/docs/assets/img/appflow/web-build-versioning.png)
+
+For more details and a simple use case see [this article](https://ionic.zendesk.com/hc/en-us/articles/360003567694-How-to-restrict-Deploy-updates-by-native-version).
+
 ## Assign the Build to a Channel
 
 <blockquote>
@@ -41,9 +49,7 @@ Once the build begins you will be able to watch it's progress and look at the lo
 <a href="https://ionic.zendesk.com/hc/en-us/categories/360000410474-Deploy-Builds-Git-" target="_blank">this section of our knowledge base</a>.
 </blockquote>
 
-Once you have a successful Deploy build, you can assign it to the same Channel you configured the Appflow SDK to listen to when you installed it by clicking the `Assign to channel` button in the top right of the build detail page. You can also click the `Assign to channel` icon on the build in the `Deploy > Builds` tab and select the Channel from the dropdown.
-
-![Assign to Channel](/docs/assets/img/appflow/gif-assign-to-channel.gif)
+Once you have a successful Deploy build, you can assign it to the same Channel you configured the Appflow SDK to listen to when you installed it by clicking the `Assign to channel` button in the top right of the build detail page. You can also click the `Assign to channel` icon on the build in the `Deploy > Builds` tab and select the Channel from the dropdown. ![Assign to Channel](/docs/assets/img/appflow/gif-assign-to-channel.gif)
 
 ## Receiving a Live Update on a Device
 

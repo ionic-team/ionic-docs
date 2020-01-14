@@ -5,7 +5,7 @@ nextText: 'Lifecycle'
 nextUrl: '/docs/react/lifecycle'
 ---
 
-# Ionic React
+# Build Your First Ionic React App
 
 ## What is Ionic Framework?
 
@@ -232,6 +232,8 @@ On our main `IonFab`, we're setting its positioning with the vertical and horizo
 Now let's wire up a click handler to this. What we want to do is when we click the button, we'll navigate to a new page (which we'll create in a moment). To do this, we'll need to get access to React Router's navigation API. Thankfully since this is rendered in a Router/Route context, we have access to React Routers APIs via Props passed to our Home component.
 
 ```typescript
+import { add } from 'ionicons/icons';
+...
 const Home: React.FC<RouteComponentProps> = (props) => {
   return (
     <IonPage>
@@ -339,6 +341,72 @@ return (
 
 Here, when we reload, if there is no app history present, we'll be able to navigate back to our home route.
 
+## Build a Native App
+
+We now have the basics of an Ionic React app down, including some UI components and navigation. The great thing about Ionic’s components is that they work anywhere, including iOS, Android, and PWAs. To deploy to mobile, desktop, and beyond, we use Ionic’s cross-platform app runtime [Capacitor](https://capacitor.ionicframework.com). It provides a consistent, web-focused set of APIs that enable an app to stay as close to web-standards as possible while accessing rich native device features on platforms that support them.
+
+Adding native functionality is easy. First, add Capacitor to your project:
+
+```shell
+ionic integrations enable capacitor
+```
+
+Next, build the project, then add your platform of choice:
+
+```shell
+ionic build
+ionic cap add ios
+ionic cap add android
+```
+
+We use the standard native IDEs (Xcode and Android Studio) to open, build, and run the iOS and Android projects:
+
+```shell
+ionic cap open ios
+ionic cap open android
+```
+
+Additional details can be found [here](https://capacitor.ionicframework.com/docs/getting-started/with-ionic). 
+
+Next, check out [all the APIs](https://capacitor.ionicframework.com/docs/apis) that are available. There’s some great stuff, including the [Camera API](https://capacitor.ionicframework.com/docs/apis/camera). We can implement photo capture functionality in just a few lines of code:
+
+```typescript
+import { IonContent, IonHeader, IonPage, IonTitle, 
+         IonToolbar, IonButton } from '@ionic/react';
+import React, { useState } from 'react';
+import { Plugins, CameraResultType } from '@capacitor/core';
+
+const Home: React.FC = () => {
+  const { Camera } = Plugins;
+  const [photo, setPhoto] = useState();
+  const takePhoto = async () => {
+    const image = await Camera.getPhoto({
+      quality: 90,
+      allowEditing: true,
+      resultType: CameraResultType.Uri
+    });
+    setPhoto(image.webPath);
+  };
+  return (
+    <IonPage>
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>Ionic Blank</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent className="ion-padding">
+        <img src={photo} />
+        <IonButton onClick={takePhoto}>Take Photo</IonButton>
+      </IonContent>
+    </IonPage>
+  );
+};
+
+export default Home;
+```
+
 ## Where to go from here
 
-This guide covers the basics of creating an Ionic React app and adding some basic navigation. For a more detailed look at Ionic’s components, check out the [component API pages](/docs/components). For more details on React, review the [React Docs](https://reactjs.org).
+This guide covered the basics of creating an Ionic React app, adding some basic navigation, and introducing Capacitor as a way of building native apps. For a more detailed look at Ionic’s components, check out the [component API pages](https://ionicframework.com/docs/components). For more details on React, review the [React Docs](https://reactjs.org/). To keep building native features, see the [Capacitor docs](https://capacitor.ionicframework.com/docs/).
+
+Happy app building! 🎉
