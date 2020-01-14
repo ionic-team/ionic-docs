@@ -124,7 +124,15 @@ Open `/src/pages/Tab2.tsx	`. We see:
 <IonTitle>Photo Gallery</IonTitle>
 ```
 
-We put the visual aspects of our app into `<IonContent>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. Start by adding a [floating action button](https://ionicframework.com/docs/api/fab) (FAB) to the bottom of the page. Use the camera image as the icon, and call the `takePhoto()` function when this button is clicked (to be implemented soon):
+We put the visual aspects of our app into `<IonContent>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. Start by adding a [floating action button](https://ionicframework.com/docs/api/fab) (FAB). First, update the imports at the top of the page to include the Camera icon as well as the `IonFab`, `IonFabButton`, and `IonIcon` components:
+
+```typescript
+import { camera } from 'ionicons/icons';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, 
+         IonFab, IonFabButton, IonIcon } from '@ionic/react';
+```
+
+Then, add the FAB to the bottom of the page. Use the camera image as the icon, and call the `takePhoto()` function when this button is clicked (to be implemented soon):
 
 ```typescript
 <IonContent>
@@ -138,7 +146,13 @@ We put the visual aspects of our app into `<IonContent>`. In this case, it’s w
 
 We’ll be creating the `takePhoto` method and the logic to use the Camera and other native features in a moment.
 
-Next, open `src/App.tsx`. In the tab bar, change the label to “Photos” and the icon to `images` for the middle tab button:
+Next, open `src/App.tsx` then import the `images` icon:
+
+```typescript
+import { images, flash, send } from 'ionicons/icons';
+```
+
+Within the tab bar (`<IonTabBar>`), change the label to “Photos” and the icon to `images` for the middle tab button:
 
 ```typescript
 <IonTabButton tab="tab2" href="/tab2">
