@@ -11,7 +11,9 @@ We’ve implemented photo taking and saving to the filesystem. There’s one las
 
 Fortunately, this is easy: we’ll leverage the Capacitor [Storage API](https://capacitor.ionicframework.com/docs/apis/storage) to store our array of Photos in a key-value store. 
 
-Begin by defining a constant variable that will act as the key for the store before the `usePhotoGallery` function definition:
+## Storage API
+
+Begin by defining a constant variable that will act as the key for the store before the `usePhotoGallery` function definition in `src/hooks/usePhotoGallery.ts`:
 
 ```typescript
 const PHOTO_STORAGE = "photos";
@@ -36,7 +38,7 @@ set(PHOTO_STORAGE, JSON.stringify(newPhotos.map(p => {
 })));
 ```
 
-With the photo array data saved, we will create a method that will retrieve the data when the hook loads. We will do so by using React's `useEffect` hook. Here is the code, and we will break it down:
+With the photo array data saved, we will create a method that will retrieve the data when the hook loads. We will do so by using React's `useEffect` hook. Insert this above the `takePhoto` declaration. Here is the code, and we will break it down:
 
 ```typescript
 useEffect(() => {
@@ -72,6 +74,6 @@ Since are photos are either displayed with base64 encoded content, or a file pat
 <IonImg src={photo.base64 ?? photo.webviewPath} />
 ```
 
-> The `??` is the new null coalescing operator in JavaScript. and will return the first operand if it is not null or undefined, else it will return the second operand.
+> The `??` is the new JavaScript null coalescing operator. It will return the first operand if it is not null or undefined, otherwise it will return the second operand.
 
 That’s it! We’ve built a complete Photo Gallery feature in our Ionic app that works on the web. Next up, we’ll transform it into a mobile app for iOS and Android!
