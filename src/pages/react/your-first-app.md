@@ -127,10 +127,10 @@ Open `/src/pages/Tab2.tsx	`. We see:
 We put the visual aspects of our app into `<IonContent>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. Start by adding a [floating action button](https://ionicframework.com/docs/api/fab) (FAB). First, update the imports at the top of the page to include the Camera icon as well as the some Ionic components we'll use shortly:
 
 ```typescript
-import { camera } from 'ionicons/icons';
+import { camera, trash, close } from 'ionicons/icons';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, 
          IonFab, IonFabButton, IonIcon, IonGrid, IonRow, 
-         IonCol, IonImg } from '@ionic/react';
+         IonCol, IonImg, IonActionSheet } from '@ionic/react';
 ```
 
 Then, add the FAB to the bottom of the page. Use the camera image as the icon, and call the `takePhoto()` function when this button is clicked (to be implemented soon):
