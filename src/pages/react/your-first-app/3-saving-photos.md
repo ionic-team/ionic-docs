@@ -9,6 +9,8 @@ nextUrl: '/docs/react/your-first-app/4-loading-photos'
 
 We’re now able to take multiple photos and display them in a photo gallery on the second tab of our app. These photos, however, are not currently being stored permanently, so when the app is closed, they will be lost.
 
+## Filesystem API
+
 Fortunately, saving them to the filesystem only takes a few steps. Begin by opening the `usePhotoGallery` hook (`src/hooks/usePhotoGallery.ts`), and get access to the `writeFile` method from the `useFileSystem` hook:
 
 ```typescript
