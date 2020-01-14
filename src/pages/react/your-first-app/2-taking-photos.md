@@ -11,7 +11,7 @@ Now for the fun part - adding the ability to take photos with the device’s cam
 
 To do so, we will create our own custom React hook that will manage the photos for the gallery.
 
-> If you are not familiar with React Hooks, the React docs [Introducing React Hooks](https://reactjs.org/docs/hooks-intro.html) is a good resource to start with.
+> If you are not familiar with React Hooks, [Introducing React Hooks](https://reactjs.org/docs/hooks-intro.html) from the official React docs is a good resource to start with.
 
 Create a new file at `src/hooks/usePhotoGallery.ts` and open it up.
 
@@ -59,7 +59,10 @@ import { usePhotoGallery } from '../hooks/usePhotoGallery';
 And right before the return statement in the functional component, get access to the `takePhoto` method by using the hook:
 
 ```typescript
-const { takePhoto } = usePhotoGallery();
+const Tab2: React.FC = () => {
+  const { takePhoto } = usePhotoGallery();
+  
+  // snip - rest of code
 ```
 
 Save the file, and if you’re not already, restart the development server in your browser by running `ionic serve`. On the Photo Gallery tab, click the Camera button. If your computer has a webcam of any sort, a modal window appears. Take a selfie!
@@ -84,7 +87,7 @@ export interface Photo {
 
 Back at the top of the function (right after the call to `useCamera`, we will define a state variable to store the array of each photo captured with the Camera. 
 
-```
+```typescript
 const [photos, setPhotos] = useState<Photo[]>([]);
 ```
 
@@ -96,7 +99,7 @@ const newPhotos = [{
   filepath: fileName,
   webviewPath: cameraPhoto.webPath
 }, ...photos];
-setPhotos(newPhotos);
+setPhotos(newPhotos)
 ```
 
 Next, let's expose the photos array from our hook. Update the return statement to include the photos:
