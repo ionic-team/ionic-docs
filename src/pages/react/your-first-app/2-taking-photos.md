@@ -69,7 +69,7 @@ Save the file, and if you’re not already, restart the development server in yo
 
 ![Camera API on the web](/docs/assets/img/guides/first-app-cap-ng/camera-web.png)
 
-Your selfie is probably much better than mine
+_(Your selfie is probably much better than mine)_
 
 After taking a photo, it disappears. We still need to display it within our app and save it for future access.
 
