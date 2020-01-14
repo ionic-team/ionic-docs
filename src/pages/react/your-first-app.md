@@ -72,7 +72,7 @@ Some Capacitor plugins, including the Camera API, provide the web-based function
 Both packages are separate dependencies, so install them next:
 
 ```shell
-npm install @ionic/react-hooks @ionic/pwa-elements
+$ npm install @ionic/react-hooks @ionic/pwa-elements
 ```
 
 After installation, open up the project in your code editor of choice.
@@ -92,7 +92,7 @@ That’s it! Now for the fun part - let’s see the app in action.
 Run this command in your shell:
 
 ```shell
-ionic serve
+$ ionic serve
 ```
 
 And voilà! Your Ionic app is now running in a web browser. Most of your app can be built and tested right in the browser, greatly increasing development and testing speed.
