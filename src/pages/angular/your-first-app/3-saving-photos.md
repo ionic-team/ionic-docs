@@ -48,7 +48,7 @@ private async readAsBase64(cameraPhoto: CameraPhoto) {
   return await this.convertBlobToBase64(blob) as string;  
 }
 
-convertBlobToBase64 = (blog: Blob) => new Promise((resolve, reject) => {
+convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
   const reader = new FileReader;
   reader.onerror = reject;
   reader.onload = () => {
