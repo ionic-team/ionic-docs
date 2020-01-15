@@ -10,7 +10,7 @@ previousUrl: '/docs/react/config'
 The `isPlatform` method can be used to test if your app is running on a certain platform:
 
 ```typescript
-import { isPlatform } from '@ionic/react';
+import { isPlatform } from '@ionic/core';
 
 isPlatform('ios'); // returns true when running on a iOS device
 ```
