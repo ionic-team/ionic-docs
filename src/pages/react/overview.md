@@ -1,6 +1,6 @@
 ---
-nextText: 'Build Your First App'
-nextUrl: '/docs/react/your-first-app'
+nextText: 'Quickstart'
+nextUrl: '/docs/react/quickstart'
 ---
 
 # Ionic React Overview
