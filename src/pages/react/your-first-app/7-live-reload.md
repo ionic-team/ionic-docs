@@ -20,32 +20,45 @@ We can also use it when developing on iOS and Android devices. This is particula
 Let’s use Live Reload to implement photo deletion, the missing piece of our Photo Gallery feature. Select your platform of choice (iOS or Android) and connect a device to your computer. Next, run either command in a terminal, based on your chosen platform:
 
 ```shell
-ionic cap run ios -l --external
+$ ionic cap run ios -l --external
 
-ionic cap run android -l
+$ ionic cap run android -l --external
 ```
 
 The Live Reload server will start up, and the native IDE of choice will open if not opened already. Within the IDE, click the Play button to launch the app onto your device.
 
 ## Deleting Photos
 
-With Live Reload running and the app is open on your device, let’s implement photo deletion functionality. Open `Tab2` and add a state value to store information about the photo to delete:
+With Live Reload running and the app is open on your device, let’s implement photo deletion functionality. Open `Tab2.tsx` then import `useState` from React and `Photo` from the `usePhotoGallery` hook:
+
+```typescript
+import React, { useState } from 'react';
+import { usePhotoGallery, Photo } from '../hooks/usePhotoGallery';
+// other imports
+```
+
+Next, reference the `deletePhoto` function, which we'll create soon:
+
+```typescript
+const { photos, takePhoto, deletePhoto } = usePhotoGallery();
+```
+
+Next, add a state value to store information about the photo to delete:
 
 ```typescript
 const [photoToDelete, setPhotoToDelete] = useState<Photo>();
 ```
 
-> `useState` will be imported from `react`, and Photo will be imported from '../hooks/usePhotoGallery'.
-
-When a user clicks on an image, we will show the action sheet by changing the state value to the photo:
+When a user clicks on an image, we will show the action sheet by changing the state value to the photo. Update the `<IonImg>` element to:
 
 ```typescript
-<IonImg onClick={() => setPhotoToDelete(photo)} src={photo.base64 ?? photo.webviewPath} />
+<IonImg onClick={() => setPhotoToDelete(photo)} 
+        src={photo.base64 ?? photo.webviewPath} />
 ```
 
 Next, add an [IonActionSheet](https://ionicframework.com/docs/api/action-sheet) dialog with the option to either delete the selected photo or cancel (close) the dialog. We will set the isOpen property based on if photoToDelete has a value or not.
 
- In the JSX, put the following component before the closing `</IonContent>` tag.
+In the JSX, put the following component before the closing `</IonContent>` tag.
 
 ```typescript
 <IonActionSheet
@@ -68,8 +81,6 @@ Next, add an [IonActionSheet](https://ionicframework.com/docs/api/action-sheet) 
   onDidDismiss={() => setPhotoToDelete(undefined)}
 />
 ```
-
-> Make sure the `trash` and `close` icons get imported from `ionicons/icons`.
 
 Above, we added two options: `Delete` that calls `deletePhoto` function (to be added next) and `Cancel`, which when given the role of “cancel” will automatically close the action sheet. It's also important to set the onDidDismiss function and set our photoToDelete back to undefined when the modal goes away. That way, when another image is clicked, the action sheet notices the change in the value of photoToDelete.
 
