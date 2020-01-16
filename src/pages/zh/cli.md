@@ -33,6 +33,6 @@ Ionic CLI 由 [TypeScript](/docs/faq/glossary#typescript) 和 [Node.js](/docs/fa
 
 - 请确保已安装 Ionic CLI 的最新版本。 使用 `npm install -g ionic@latest` 更新至最新版本。
 - 请确保已安装最新的 Node LTS。 查看 [Node & npm](/docs/installation/environment#node-npm) 环境设置。
-- The `--verbose` flag prints debugging messages, which may narrow down the issue.
-- Connection issues may be due to improperly configured proxy settings. See [Using a Proxy](/docs/cli/using-a-proxy) to configure request proxying.
-- The global Ionic CLI configuration directory is `~/.ionic` on all platforms. It can safely be deleted and the Ionic CLI will repopulate it, but all configuration (including user sessions) will be lost. Configure this directory with [CLI environment variables](/docs/cli/configuration#environment-variables).
+- `--verbose` 标志会打印调试消息，这可能会缩小问题的范围。
+- Connection issues may be due to improperly configured proxy settings. 查看 [使用代理](/docs/cli/using-a-proxy) 来设置代理。
+- 所有平台的 Ionic CLI 全局配置目录均为 `~/.ionic`。 It can safely be deleted and the Ionic CLI will repopulate it, but all configuration (including user sessions) will be lost. Configure this directory with [CLI environment variables](/docs/cli/configuration#environment-variables).
