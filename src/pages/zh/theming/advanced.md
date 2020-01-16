@@ -16,7 +16,7 @@ contributors:
 
 ## 全局设定
 
-While the application and stepped variables in the themes section are useful for changing the colors of an application, often times there is a need for variables that are used in multiple components. 以下变量在组件之间共享以更改全局填充设置。
+主题部分中的应用程序变量和分变量对于更改应用程序的颜色非常有用，这些变量常常会在多个组件中使用。 以下变量在组件之间共享以更改全局填充设置。
 
 ### 应用变量
 
@@ -34,9 +34,9 @@ While the application and stepped variables in the themes section are useful for
 
 ### 网格变量
 
-| Name                           | Description                                    |
+| 名称                             | 说明                                             |
 | ------------------------------ | ---------------------------------------------- |
-| `--ion-grid-columns`           | Number of columns in the grid                  |
+| `--ion-grid-columns`           | 网格列数                                           |
 | `--ion-grid-padding-xs`        | Padding of the grid for xs breakpoints         |
 | `--ion-grid-padding-sm`        | Padding of the grid for sm breakpoints         |
 | `--ion-grid-padding-md`        | Padding of the grid for md breakpoints         |
