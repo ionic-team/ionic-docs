@@ -76,4 +76,10 @@ ngOnInit() {
 }
 ```
 
+Finally you will need to update the `tab2.page.html` file to make sure you make good use of this and display saved photos:
+
+```html
+<ion-img src="{{ photo.base64 ? photo.base64 : photo.webviewPath}}"></ion-img>
+```
+
 That’s it! We’ve built a complete Photo Gallery feature in our Ionic app that works on the web. Next up, we’ll transform it into a mobile app for iOS and Android!
