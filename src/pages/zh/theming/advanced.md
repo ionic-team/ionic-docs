@@ -1,7 +1,7 @@
 ---
 initialTab: '预览'
 inlineHtmlPreviews: true
-previousText: 'Themes'
+previousText: '主题'
 previousUrl: '/docs/theming/themes'
 nextText: 'Color Generator'
 nextUrl: '/docs/theming/color-generator'
@@ -12,24 +12,24 @@ contributors:
 
 # 高级主题
 
-CSS-based theming enables apps to customize the colors quickly by loading a CSS file or changing a few CSS property values.
+基于 CSS 的主题可以通过加载一个 CSS 文件或更改少数 CSS 属性值来快速自定义颜色。
 
 ## 全局设定
 
-While the application and stepped variables in the themes section are useful for changing the colors of an application, often times there is a need for variables that are used in multiple components. The following variables are shared across components to change global padding settings and more.
+While the application and stepped variables in the themes section are useful for changing the colors of an application, often times there is a need for variables that are used in multiple components. 以下变量在组件之间共享以更改全局填充设置。
 
 ### 应用变量
 
-| Name                      | Description                                                                                |
-| ------------------------- | ------------------------------------------------------------------------------------------ |
-| `--ion-font-family`       | Font family of the app                                                                     |
-| `--ion-statusbar-padding` | Statusbar padding top of the app                                                           |
-| `--ion-safe-area-top`     | Adjust the safe area inset top of the app                                                  |
-| `--ion-safe-area-right`   | Adjust the safe area inset right of the app                                                |
-| `--ion-safe-area-bottom`  | Adjust the safe area inset bottom of the app                                               |
-| `--ion-safe-area-left`    | Adjust the safe area inset left of the app                                                 |
-| `--ion-margin`            | Adjust the margin of the [Margin attributes](/docs/layout/css-utilities#element-margin)    |
-| `--ion-padding`           | Adjust the padding of the [Padding attributes](/docs/layout/css-utilities#element-padding) |
+| 名称                        | 说明                                                          |
+| ------------------------- | ----------------------------------------------------------- |
+| `--ion-font-family`       | 应用程序的字体类                                                    |
+| `--ion-statusbar-padding` | 应用顶部的状态栏填充                                                  |
+| `--ion-safe-area-top`     | 调整应用顶部的安全区域                                                 |
+| `--ion-safe-area-right`   | 调整应用右侧的安全区域                                                 |
+| `--ion-safe-area-bottom`  | 调整应用底部的安全区域                                                 |
+| `--ion-safe-area-left`    | 调整应用左侧的安全区域                                                 |
+| `--ion-margin`            | 调整 [Margin 属性](/docs/layout/css-utilities#element-margin)   |
+| `--ion-padding`           | 调整 [Padding 属性](/docs/layout/css-utilities#element-padding) |
 
 
 ### 网格变量
