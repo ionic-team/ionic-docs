@@ -37,7 +37,7 @@ contributors:
 | 名称                             | 说明                                             |
 | ------------------------------ | ---------------------------------------------- |
 | `--ion-grid-columns`           | 网格列数                                           |
-| `--ion-grid-padding-xs`        | Padding of the grid for xs breakpoints         |
+| `--ion-grid-padding-xs`        | xs 断点的网格 padding                               |
 | `--ion-grid-padding-sm`        | Padding of the grid for sm breakpoints         |
 | `--ion-grid-padding-md`        | Padding of the grid for md breakpoints         |
 | `--ion-grid-padding-lg`        | Padding of the grid for lg breakpoints         |
