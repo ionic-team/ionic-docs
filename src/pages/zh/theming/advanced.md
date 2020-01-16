@@ -1,5 +1,5 @@
 ---
-initialTab: 'preview'
+initialTab: '预览'
 inlineHtmlPreviews: true
 previousText: 'Themes'
 previousUrl: '/docs/theming/themes'
@@ -10,15 +10,15 @@ contributors:
   - marcjulian
 ---
 
-# Advanced Theming
+# 高级主题
 
 CSS-based theming enables apps to customize the colors quickly by loading a CSS file or changing a few CSS property values.
 
-## Globals
+## 全局设定
 
 While the application and stepped variables in the themes section are useful for changing the colors of an application, often times there is a need for variables that are used in multiple components. The following variables are shared across components to change global padding settings and more.
 
-### Application Variables
+### 应用变量
 
 | Name                      | Description                                                                                |
 | ------------------------- | ------------------------------------------------------------------------------------------ |
@@ -32,7 +32,7 @@ While the application and stepped variables in the themes section are useful for
 | `--ion-padding`           | Adjust the padding of the [Padding attributes](/docs/layout/css-utilities#element-padding) |
 
 
-### Grid Variables
+### 网格变量
 
 | Name                           | Description                                    |
 | ------------------------------ | ---------------------------------------------- |
