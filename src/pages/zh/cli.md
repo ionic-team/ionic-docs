@@ -3,9 +3,9 @@
 
 # Ionic CLI
 
-The Ionic command-line interface ([CLI](/docs/faq/glossary#cli)) is your go-to tool for developing Ionic apps.
+Ionic 命令行界面 ([CLI](/docs/faq/glossary#cli))，是开发者开发 Ionic 应用的首选工具。
 
-## Installation
+## 安装方式
 
 The Ionic CLI can be installed globally with npm:
 
