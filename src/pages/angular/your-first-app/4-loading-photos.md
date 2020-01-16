@@ -75,5 +75,4 @@ ngOnInit() {
   this.photoService.loadSaved();
 }
 ```
-
 That’s it! We’ve built a complete Photo Gallery feature in our Ionic app that works on the web. Next up, we’ll transform it into a mobile app for iOS and Android!
