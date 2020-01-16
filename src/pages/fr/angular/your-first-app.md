@@ -7,15 +7,15 @@ nextUrl: '/docs/angular/your-first-app/2-taking-photos'
 
 # Votre première application Ionic: Angular
 
-The great thing about Ionic is that with one codebase, you can build for any platform using just HTML, CSS, and JavaScript. Follow along as we learn the fundamentals of Ionic app development by creating a realistic app step by step.
+La grande chose à propos d'Ionic est qu'avec une base de code, vous pouvez construire pour n'importe quelle plate-forme en utilisant uniquement HTML, CSS et JavaScript. Suivez-nous pendant que nous apprenons les principes fondamentaux du développement d'applications ioniques en créant une application réaliste étape par étape.
 
-Here’s the finished app running on all 3 platforms: <iframe width="560" height="315" src="https://www.youtube.com/embed/0ASQ13Y1Rk4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+Voici l'application terminée fonctionnant sur les 3 plates-formes: <iframe width="560" height="315" src="https://www.youtube.com/embed/0ASQ13Y1Rk4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
 > Looking for the previous version of this guide that covered Ionic 4 and Cordova? [See here.](/docs/developer-resources/guides/first-app-v4/intro)
 
-## What We'll Build
+## Ce que nous allons construire
 
-We'll create a Photo Gallery app that offers the ability to take photos with your device's camera, display them in a grid, and store them permanently on the device.
+Nous allons créer une application Galerie de photos qui offre la possibilité de prendre des photos avec l'appareil photo de votre appareil, de les afficher dans une grille et de les stocker en permanence sur l'appareil.
 
 Highlights include:
 
