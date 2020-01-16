@@ -17,9 +17,9 @@ Voici l'application terminée fonctionnant sur les 3 plates-formes: <iframe widt
 
 Nous allons créer une application Galerie de photos qui offre la possibilité de prendre des photos avec l'appareil photo de votre appareil, de les afficher dans une grille et de les stocker en permanence sur l'appareil.
 
-Highlights include:
+Les points saillants comprennent:
 
-* One Angular-based codebase that runs on the web, iOS, and Android using Ionic Framework [UI components](https://ionicframework.com/docs/components).
+* Une base de code angulaire qui s'exécute sur le Web, iOS et Android à l'aide de Ionic Framework.
 * Deployed as a native iOS and Android mobile app using [Capacitor](https://capacitor.ionicframework.com), Ionic's official native app runtime.
 * Photo Gallery functionality powered by the Capacitor [Camera](https://capacitor.ionicframework.com/docs/apis/camera), [Filesystem](https://capacitor.ionicframework.com/docs/apis/filesystem), and [Storage](https://capacitor.ionicframework.com/docs/apis/storage) APIs.
 
