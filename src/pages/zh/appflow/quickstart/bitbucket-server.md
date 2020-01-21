@@ -1,47 +1,42 @@
 ---
-title: 'Connect Using Bitbucket Server'
-previousText: 'Connect your Repo'
-previousUrl: '/docs/appflow/quickstart/connect'
-nextText: 'Install the Appflow SDK'
-nextUrl: '/docs/appflow/quickstart/installation'
+title: '使用 Bitbucket 服务器连接'
+previousText: '连接你的仓库'
+previousUrl: '/文档/Appflow/快速开始/连接'
+nextText: '安装 Appflow SDK'
+nextUrl: '/文档/Appflow/快速开始/安装'
 ---
 
 <blockquote>
-  <p>The Bitbucket Server integration is only available on our **Scale** plan.
-  Please <a href="/sales">contact us</a> if you require this feature.
+  <p>Bitbucket 服务器集成仅适用于我们的 **Scale** 计划。
+  如果您需要此功能，请<a href="/sales">联系我们</a>。
   </p>
 </blockquote>
 
-If you are already using Bitbucket Server you can link your repository with Appflow to push code automatically.
+如果您已使用Bitbucket服务器，您可以将你的本地仓库与Appflow连接以自动推送代码。
 
-## Prerequisites
+## 基础要求
 
-In order to enable the integration with Appflow, you will need an existing repository on your Bitbucket Server instance.
+为了启用与Appflow的集成，您需要在Bitbucket 服务器远程仓库上有一个实例。
 
-## Setting up the Integration
+## 集成配置
 
-Navigate to the `Git` section of the Settings tab in your app on the Appflow Dashboard and select the Bitbucket Server tab.
+在Appflow面板上导航到你的应用程序设置选项卡中的`Git`区域并选择Bitbucket服务器选项卡
 
-If this is your first time connecting you'll need to:
+如果这是您第一次连接，您需要：
 
-* Enter the URL for your Bitbucket Server instance
-* Enter the [personal access token](https://confluence.atlassian.com/bitbucketserver/personal-access-tokens-939515499.html) for you repo
+* 输入Bitbucket服务器实例地址
+* 为你的个人仓库输入[个人访问令牌](https://confluence.atlassian.com/bitbucketserver/personal-access-tokens-939515499.html)
 
 <blockquote>
   <p>
-    <b>Note:</b> If the personal access token you use has read-only access,
-    you will need to <a href="https://confluence.atlassian.com/bitbucketserver/managing-webhooks-in-bitbucket-server-938025878.html" target="_blank">
-    create the webhook yourself</a> so that Appflow receives push events.
-    A modal will pop up after you connect to your repo giving you the details you need to create the webhook.
-    If you use a personal access token with admin privileges, this will be done
-    automatically for you.
+    <b>注意：</b>如果您的个人访问令牌具有只读权限，您需要 <a href="https://confluence.atlassian.com/bitbucketserver/managing-webhooks-in-bitbucket-server-938025878.html" target="_blank">创建您自己的 webhook</a>才能让Appfliow接受推送事件。 当您连接到您的仓库，将弹出模态窗并给您提供创建webhook 所需的的详细信息。 如果您使用具有管理员权限的个人访问令牌，这将自动为您完成 。
   </p>
 </blockquote>
 
-* Click the `Connect to Bitbucket Server` button
+* 点击 `连接到 Bitbucket 服务器` 按钮
 
-![Bitbucket Server Connect](/docs/assets/img/appflow/bitbucket-server-connect-app.png)
+![Bitbucket 服务器连接](/docs/assets/img/appflow/bitbucket-server-connect-app.png)
 
-Then you can choose the repository to link from the list of available repos.
+然后您可以从可用仓库列表中选择要链接的存储库。
 
-When you link to the repository, a webhook will be created and your commits will be sent to Appflow.
+当您连接到远程仓库时，将创建 webhook, 您的提交将被推送到Appflow。

@@ -1,8 +1,8 @@
 ---
 previousText: 'Cycle de Vie'
 previousUrl: '/docs/angular/lifecycle'
-nextText: 'Performance'
-nextUrl: '/docs/angular/performance'
+nextText: 'Configuration'
+nextUrl: '/docs/angular/config'
 contributors:
   - mhartington
 ---
@@ -90,7 +90,7 @@ Maintenant depuis le `LoginComponent`, nous pouvons utiliser le code HTML suivan
 </ion-content>
 ```
 
-La partie importante ici est `ion-button` et la directive `routerLink`. RouterLink works on a similar idea as typical `href`s, but instead of building out the URL as a string, it can be built as an array, which can provide more complicated paths.
+La partie importante ici est `ion-button` et la directive `routerLink`. RouterLink fonctionne sur une idée similaire à celle typique de `href`s, mais au lieu de compiler l'URL en tant que chaîne, elle peut être compilée comme un tableau, ce qui peut fournir des chemins plus compliqués.
 
 We also can programmatically navigate in our app by using the router API.
 

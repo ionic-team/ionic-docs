@@ -7,11 +7,11 @@ nextUrl: '/docs/appflow/automation/environments'
 
 # Usando automatizaciones
 
-## Managing Automations
+## Automatización minera
 
-Creating and customizing automations is simple. To get started, navigate to the `Automate` tab within the desired app.
+Crear y personalizar las automatizaciones es sencillo. Para empezar, navegue a la pestaña `Automatizar` dentro de la aplicación deseada.
 
-To **create a new automation**, click the `New Automation` button on the top right of the `Automate` dashboard. When clicked, the automation customization form will appear, which has several fields available to customize the automation (Read more about these [below](#customizing-automations)).
+Para **crear una nueva automatización**, haz clic en el botón `Nueva automatización` en la parte superior derecha del panel de control `Automatizar`. When clicked, the automation customization form will appear, which has several fields available to customize the automation (Read more about these [below](#customizing-automations)).
 
 To **edit an automation**, click the three dots next to the one you'd like to modify.
 

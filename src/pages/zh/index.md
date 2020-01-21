@@ -1,8 +1,9 @@
 ---
-title: Ionic Framework
+title: Ionic 框架
 meta:
   image: /docs/assets/img/meta/open-graph.png
-  description: Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards
+  description: Ionic是一个针对网页开发者的应用平台。 使用一套共享的代码基础和开放的网络标准来构建非常棒的移动端、网页端和电脑端应用
+tableOfContents: false
 ---
 
 <docs-cards> <docs-card header="Components" href="/docs/components" img="/docs/assets/icons/feature-guide-components-icon.png"> 

@@ -10,22 +10,22 @@ nextUrl: '/docs/appflow/package/credentials'
 
 ## Android 构建类型
 
-### Debug
+### 调试
 
 Android 构建Debug类型不需要签名证书或安全配置文件，可以直接安装到 Android 设备。
 
-### Release
+### 发布
 
 如果您想要在谷歌Play商店发布 `apk` ，请使用Android构建Release类型 。 他们需要创建 [android签名证书](/docs/appflow/package/credentials#android-credentials) 并将他们上传到`Production` 类型 [安全资料](/docs/appflow/package/adding-credentials#uploading-credentials)。
 
 ## iOS 构建类型
 
-### Development
+### 开发
 
-Code Signing with a development type builds allows your app to run on device through Xcode. Development type iOS builds require [generating signing credentials and a provisioning profile](/docs/appflow/package/credentials#android-credentials) using:
+开发型号代码签名允许您的应用通过Xcode 在设备上运行。 开发类型 iOS 构建需要 [生成签名凭据和预配配置](/docs/appflow/package/credentials#android-credentials)：
 
-* iOS development provisioning profile
-* iOS development signing certificate and should be stored in a `Development` type [security profile](/docs/appflow/package/adding-credentials#uploading-credentials)
+* iOS 开发预配配置文件
+* iOS 开发签名证书 并应存储在一个 `开发` 类型 [安全配置](/docs/appflow/package/adding-credentials#uploading-credentials)
 
 ### 特別
 

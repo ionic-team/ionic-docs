@@ -9,17 +9,16 @@ otherVersions:
   - 3.1.X
   - 3.2.X
   - 3.3.X
+  - 3.4.X
 ---
 
 # Ionic Enterprise Identity Vault
 
-The Ionic Enterprise Identity Vault ("the Vault") is a all-in-one frontend identity management system that uses security best practices and uses the latest in biometric authentication options available on iOS and Android.
+The Ionic Enterprise Identity Vault ("the Vault") is a all-in-one frontend identity management system that uses security best practices and the latest in biometric authentication options available on iOS and Android.
 
 The Vault manages secure user identity and session tokens, ensuring sensitive tokens are encrypted at rest, stored only in secure locations on the device, and unlocked only with biometric identity (TouchID/FaceID/fingerprint).
 
 Without Ionic Enterprise Identity Vault, Ionic developers have to resort to combining third party Cordova plugins, often resulting in insecure setups due to the lack of correct implementation of biometric and at-rest encryption strategies.
-
-<native-ent-install plugin-id="identity-vault" variables=""></native-ent-install>
 
 ## Overview <iframe src="https://fast.wistia.net/embed/iframe/1drqkhh5sb" title="Wistia video player" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="640" height="360" mark="crwd-mark"></iframe>
 

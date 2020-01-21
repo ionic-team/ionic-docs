@@ -1,48 +1,48 @@
 ---
-title: 'Install the Appflow SDK'
-previousText: 'Connect your Repo'
+title: 'Instale el SDK de Appflow'
+previousText: 'Conecta tu Repo'
 previousUrl: '/docs/appflow/quickstart/connect'
-nextText: 'Push a Commit'
+nextText: 'Hacer Push de un Commit'
 nextUrl: '/docs/appflow/quickstart/push'
 ---
 
-In order to take advantage of some of the best Appflow features, like deploying live updates to your app and bypassing the app stores, you'll need to install the Appflow SDK (also known as the Ionic Deploy plugin). The Appflow SDK comes with Ionic Appflow's Deploy feature for detecting and syncing your app with updates that you've pushed to channels.
+Para aprovechar algunas de las mejores características de Appflow, como implementar actualizaciones en vivo en tu aplicación y omitir las tiendas de aplicaciones, necesitará instalar el SDK de Appflow (también conocido como Ionic Deploy plugin). El SDK de Appflow viene con la función Desploy de Ionic Appflow para detectar y sincronizar tu aplicación con actualizaciones que has enviado a canales.
 
-## Installing the Appflow SDK from the Dashboard (Recommended)
+## Instalar el SDK de Appflow desde el Dashboard (Recomendado)
 
-To install the Appflow SDK plugin from the Dashboard, follow the instructions provided by clicking "Install Instructions" on the Channels list in the Appflow Dashboard.
+Para instalar el plugin SDK de Appflow desde el Dashboard, sigue las instrucciones proporcionadas haciendo clic en "Instalar instrucciones" en la lista de canales en el panel de control de la aplicación.
 
-![Install Instructions](/docs/assets/img/appflow/ss-appflow-sdk-install.png)
+![Guía de instalación](/docs/assets/img/appflow/ss-appflow-sdk-install.png)
 
-## Installing the Appflow SDK Manually
+## Instalar el SDK de Appflow manualmente
 
-To install the plugin manually, run the following command in the root directory of your Ionic app, making sure to substitute the correct values for your app:
+Para instalar el plugin manualmente, ejecute el siguiente comando en el directorio raíz de su aplicación Ionica asegurándose de sustituir los valores correctos de tu aplicación:
 
 ```shell
-ionic deploy add  \
+despliegue ionic add \
     --app-id="YOUR_APP_ID" \
     --channel-name="YOUR_CHANNEL_NAME" \
-    --update-method="background|auto|none" \
+  --update-method="background|auto|none" \
 ```
 
-You can also run `ionic deploy add` and the CLI will prompt you for the neccessary values.
+También puedes ejecutar `Iónico deploy add` y el CLI te pedirá los valores necesarios.
 
 <blockquote>
-  NOTE: The plugin delays the cordova ready event until it finish checking for updates and sets the preference <b>AutoHideSplashScreen</b> cordova preference to false in the config.xml which makes the Splash Screen to not go away automatically. All Ionic templates run
-<code>this.splashScreen.hide();</code> on cordova ready event by default, but if it was removed it should be added back. Alternatively the app can set the <b>AutoHideSplashScreen</b> cordova preference to true in you config.xml to override the value added by the plugin, but that can lead to the Splash Screen going away before the download is complete.
+  NOTA: El plugin retrasa el evento listo de cordova hasta que termine de comprobar las actualizaciones y establezca la preferencia <b>AutoHideSplashScreen</b> preferencia cordova a falso en la configuración. ml que hace que la pantalla de Splash no desaparezca automáticamente. Todas las plantillas Ionic ejecutan
+<code>this.splashScreen.hide();</code> en el evento listo cordova de forma predeterminada, pero si fue removido, debe ser añadido. Alternativamente, la aplicación puede establecer la preferencia cordova de <b>AutoHideSplashScreen</b> a true en su config.xml para reemplazar el valor añadido por el plugin, pero eso puede llevar a que la pantalla de Splash desaparezca antes de que la descarga se haya completado.
 </blockquote>
 
-### Plugin Variables
+### Variables de Plugin
 
-* `--app-id` is the ID of the app in Ionic Appflow.
-* `--channel-name` is the name of the [Channel](/docs/appflow/deploy/channels) you'd like the app to listen to for updates. 
- * Make sure to use the *exact* name of your Channel, including the exact casing!
-* `--update-method` is one of `background | auto | none`. This determines how your application responds when a new live update is available for download.
+* `--app-id` es el ID de la aplicación en Ionic Appflow.
+* `--channel-name` es el nombre del canal [Channel](/docs/appflow/deploy/channels) que te gustaría que la aplicación escuchara para las actualizaciones. 
+ * ¡Asegúrate de usar el *nombre exacto de tu canal*, incluyendo el caso exacto!
+* `--update-method` es uno de `background | auto | none`. Esto determina cómo responde su aplicación cuando una nueva actualización en vivo está disponible para su descarga.
 
-You can read more about the available [plugin variables in our API documentation](/docs/appflow/deploy/api#plugin-variables).
+Puede leer más sobre las [variables de plugin disponibles en nuestra documentación de API](/docs/appflow/deploy/api#plugin-variables).
 
-## Commit your changes
+## Commit de los cambios
 
-After you've installed the plugin, be sure to commit the changes made to your `config.xml` and `package.json` files.
+Después de instalar el plugin, asegúrese de confirmar los cambios realizados en los archivos `config.xml` y `package.json`.
 
-<command-line> <command-prompt>git add . # stage any changes</command-prompt> <command-prompt>git commit -m "added appflow sdk" # commit staged changes</command-prompt> </command-line>
+<command-line> <command-prompt>git add . # organizar cualquier cambio</command-prompt> <command-prompt>git commit -m "appflow sdk" # commit escalonados</command-prompt> </command-line>

@@ -69,6 +69,7 @@ class HomePage extends React.Component {
       </IonPage>
     );
   }
+}
 
 export default withIonLifeCycle(HomePage);
 ```

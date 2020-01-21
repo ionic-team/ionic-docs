@@ -1,8 +1,8 @@
 ---
 previousText: '使用 GIT 私人仓库'
 previousUrl: '/docs/appollow/cookbook/private_git'
-nextText: 'DevApp：本地开发'
-nextUrl: '/docs/apport/devapp'
+nextText: '在构建中使用不同的 Node'
+nextUrl: '/docs/appflow/cookbook/switch_node_version'
 ---
 
 # 使用私有 NPM 模块

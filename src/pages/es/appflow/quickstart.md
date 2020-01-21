@@ -4,6 +4,7 @@ previousText: 'Bienvenido'
 previousUrl: '/docs/appflow'
 nextText: 'Conéctate a tu Repositorio'
 nextUrl: '/docs/appflow/quickstart/connect'
+tableOfContents: false
 ---
 
 El tutorial de inicio rápido te recorre a través del proceso de configuración de tu aplicación con Ionic Appflow, incluyendo cómo conectar tu aplicación a Appflow, cómo configurar el SDK de Appflow (plugin de lanzamiento) para actualizaciones en vivo, y cómo configurar tus primeras versiones automatizadas de Android e iOS usando entornos de construcción nativos. Simplemente siga la guía paso a paso, o navegue directamente a la documentación para el componente que le interesa.
