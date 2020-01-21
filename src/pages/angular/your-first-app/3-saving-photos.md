@@ -89,4 +89,9 @@ private async getPhotoFile(cameraPhoto: CameraPhoto,
 }
 ```
 
+Finally, change the way pictures become visible in the template file `tab2.page.html`.
+```html
+<ion-img src="{{ photo.base64 ? photo.base64 : photo.webviewPath }}"></ion-img>
+```
+
 There we go! Each time a new photo is taken, it’s now automatically saved to the filesystem.
