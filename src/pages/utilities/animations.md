@@ -138,6 +138,8 @@ In the example above, an animation that changes the opacity on the `.square` ele
 
 Ionic Animations allows you to control the intermediate steps in an animation using keyframes. Any valid CSS property can be used here, and you can even use CSS Variables as values.
 
+Hyphenated CSS properties should be written using camel case when writing keyframes. For example, `border-radius` should be written as `borderRadius`. This also applies to the `fromTo()`, `from(),` and `to()` methods.
+
 ### Usage
 
 <docs-tabs>
