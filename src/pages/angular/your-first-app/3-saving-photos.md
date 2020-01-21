@@ -17,14 +17,20 @@ Fortunately, saving them to the filesystem only takes a few steps. Begin by crea
 private async savePicture(cameraPhoto: CameraPhoto) { }
 ```
 
-You can now already use this new function to benefit from it:
+We can use this new function immediately in `addNewToGallery()`:
 
 ```typescript
 public async addNewToGallery() {
-    //...
-    // Save the picture and adds it to collection
-    const savedImageFile = await this.savePicture(capturedPhoto);
-    this.photos.unshift(savedImageFile);
+  // Take a photo
+  const capturedPhoto = await Camera.getPhoto({
+    resultType: CameraResultType.Uri, // file-based data; provides best performance
+    source: CameraSource.Camera, // automatically take a new photo with the camera
+    quality: 100 // highest quality (0 to 100)
+  });
+  
+  // Save the picture and add it to photo collection
+  const savedImageFile = await this.savePicture(capturedPhoto);
+  this.photos.unshift(savedImageFile);
 }
 ```
 
@@ -77,7 +83,7 @@ Obtaining the camera photo as base64 format on the web appears to be a bit trick
 private async getPhotoFile(cameraPhoto: CameraPhoto, 
                            fileName: string): Promise<Photo> {
   return {
-    filePath: fileName,
+    filepath: fileName,
     webviewPath: cameraPhoto.webPath
   };
 }
