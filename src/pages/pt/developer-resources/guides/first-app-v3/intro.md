@@ -119,4 +119,4 @@ $ git commit -m “converting about page to photo gallery”
 $ git push ionic master
 ```
 
-Isso é apenas o início de todas as coisas legais que podemos fazer com Ionice. Em seguida, vamos implantar o app para iOS e Android, e depois continuar a construir a galeria de fotos.
+Isso é apenas o início de todas as coisas legais que podemos fazer com Ionic. Em seguida, vamos implantar o app para iOS e Android, e depois continuar a construir a galeria de fotos.
