@@ -1,5 +1,5 @@
 ---
-previousText: 'Your First App'
+previousText: 'Tu primera Aplicacion'
 previousUrl: '/docs/angular/your-first-app'
 nextText: 'Saving Photos on Filesystem'
 nextUrl: '/docs/angular/your-first-app/3-saving-photos'
