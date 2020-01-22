@@ -6,7 +6,7 @@
 
 Before integrating Auth Connect into your Ionic app, you’ll need to get AWS Cognito up and running.
 
-> Note: For complete information on configuring AWS Cognito, consult the [official documentation](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-getting-started.html) which includes tutorials on creating user and identity pools and more.
+> **Note:** For complete information on configuring AWS Cognito, consult the [official documentation](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-getting-started.html) which includes tutorials on creating user and identity pools and more.
 
 When creating a User Pool, be sure to add an app client. Additional Auth Connect-related configurations can be found under the App integration and Federation sections.
 
@@ -14,13 +14,7 @@ When creating a User Pool, be sure to add an app client. Additional Auth Connect
 
 Run the following command to install the Auth Connect plugin. For the `AUTH_URL_SCHEME` variable, use the globally unique App Id (ex: `com.company.app`) you decided on when configuring the Azure AD app above.
 
-If using Cordova, run:
-
-<command-line> <command-prompt>ionic cordova plugin add @ionic-enterprise/auth --variable AUTH_URL_SCHEME=com.company.app</command-prompt> </command-line>
-
-If using Capacitor, run:
-
-<command-line> <command-prompt>npm install @ionic-enterprise/auth --variable AUTH_URL_SCHEME=com.company.app</command-prompt> <command-prompt>npx cap sync</command-prompt> </command-line>
+<native-ent-install plugin-id="auth" variables="--variable AUTH_URL_SCHEME=com.company.app"></native-ent-install>
 
 ### Configure Auth Connect
 

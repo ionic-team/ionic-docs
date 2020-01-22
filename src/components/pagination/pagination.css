@@ -23,6 +23,7 @@ docs-pagination a {
   align-items: flex-start;
   flex-direction: column;
   padding: 1em 1.5em;
+  color: rgb(var(--accent-color-rgb));
 }
 
 docs-pagination .previous a {
@@ -45,12 +46,9 @@ docs-pagination .next a {
 }
 
 @media (hover: hover) {
-  docs-pagination a:hover {
-    background-color: rgba(0, 0, 0, 0.025);
-  }
-
+  docs-pagination a:hover,
   docs-pagination a:active {
-    background-color: rgba(0, 0, 0, 0.035);
+    filter: brightness(0.8);
   }
 }
 

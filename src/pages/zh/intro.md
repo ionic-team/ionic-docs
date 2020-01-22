@@ -1,17 +1,17 @@
 ---
-nextText: 'Core concepts'
+nextText: '核心概念'
 nextUrl: '/docs/intro/concepts'
 ---
 
-# What is Ionic Framework?
+# Ionic 框架是什么？
 
 <!-- TOC goes here -->
 
-Ionic Framework is an open source UI toolkit for building performant, high-quality mobile and desktop apps using web technologies (HTML, CSS, and JavaScript).
+Ionic Framework 是一个开源的 UI 工具包，用于使用 Web 技术构建性能高质量的移动和桌面应用 (HTML、CSS 和 JavaScript).
 
-Ionic Framework is focused on the frontend user experience, or UI interaction of an app (controls, interactions, gestures, animations). It’s easy to learn, and integrates nicely with other libraries or frameworks, such as Angular, or can be used standalone without a frontend framework using a simple script include.
+Ionic 框架侧重于前端用户体验或应用程序的 UI 交互(控制、互动、手势、动画)。 Ionic 很容易学习，并且能很好地融入其他库或框架，例如 Angular。 Ionic 也可以在没有前端框架的情况下单独使用。
 
-Currently, Ionic Framework has official integrations with <a href="https://angular.io/" target="_blank">Angular</a> and <a href="https://reactjs.org" target="_blank">React</a>, and support for **Vue** is in development. If you’d like to learn more about Ionic Framework before diving in, we <a href="https://youtu.be/p3AN3igqiRc" target="_blank">created a video</a> to walk you through the basics.
+Currently, Ionic Framework has official integrations with [Angular](/docs/angular/overview) and [React](/docs/react), and support for [Vue](/docs/vue/overview) is in development. If you’d like to learn more about Ionic Framework before diving in, we <a href="https://youtu.be/p3AN3igqiRc" target="_blank">created a video</a> to walk you through the basics.
 
 ## Goals
 

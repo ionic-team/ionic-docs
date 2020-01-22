@@ -4,6 +4,7 @@ previousText: '快速入门'
 previousUrl: '/docs/appflow/quickstart'
 nextText: '设置'
 nextUrl: '/docs/appflow/deploy/setup'
+tableOfContents: false
 ---
 
 Ionic Appflow的Live Deploy特性允许你远程实时更新应用程序的UI和业务逻辑。 直接向用户推送HTML、JS和CSS更新，而无需通过app store立即修复bug并发布新功能。

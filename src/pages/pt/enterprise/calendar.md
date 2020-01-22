@@ -1,21 +1,23 @@
 ---
 title: Calendar
 template: enterprise-plugin
-version: 5.1.4
+version: 5.1.5
 minor: 5.1.X
 ---
 
+O plugin Calendário permite que você adicione eventos ao calendário do dispositivo móvel.
 
+<native-ent-install plugin-id="calendar" variables=""></native-ent-install>
 
-## Index
+## Índice
 
 ### Classes
 
-* [Calendar](#calendar)
+* [Calendário](#calendar)
 
 ### Interfaces
 
-* [CalendarOptions](#calendaroptions)
+* [Opções de calendário](#calendaroptions)
 * [NameOrOptions](#nameoroptions)
 
 * * *
@@ -24,15 +26,15 @@ minor: 5.1.X
 
 <a id="calendar"></a>
 
-### Calendar
+### Calendário
 
-**Calendar**:
+**Calendário**:
 
 ***name***: Calendar
 
-***description***: This plugin allows you to add events to the Calendar of the mobile device.
+***Descrição***: Este plugin permite adicionar eventos ao calendário do dispositivo móvel.
 
-***usage***:
+***uso***:
 
 ```typescript
 import { Calendar } from '@ionic-enterprise/calendar/ngx';
@@ -55,9 +57,9 @@ this.calendar.createCalendar('MyCalendar').then(
 
 Create a calendar. (iOS only)
 
-**Parameters:**
+**Parâmetros:**
 
-| Name          | Type        | Description                                                                                                                                                                                                        |
+| Nome          | Tipo        | Descrição                                                                                                                                                                                                          |
 | ------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | nameOrOptions | `string` \ | [NameOrOptions](#nameoroptions) | either a string name or a options object. If string, provide the calendar name. IF an object, provide a calendar name as a string and a calendar color in hex format as a string |
 
@@ -196,6 +198,26 @@ Delete an event.
 | `Optional` notes     | `string` |
 | `Optional` startDate | `Date`   |
 | `Optional` endDate   | `Date`   |
+
+
+**Returns:** `Promise`<`any`> Returns a Promise
+
+* * *
+
+<a id="calendar.deleteeventbyid"></a>
+
+### deleteEventById
+
+▸ **deleteEventById**(id: *`string`*, fromDate?: *`Date`*): `Promise`<`any`>
+
+Delete an event by id.
+
+**Parameters:**
+
+| Name                | Type     |
+| ------------------- | -------- |
+| id                  | `string` |
+| `Optional` fromDate | `Date`   |
 
 
 **Returns:** `Promise`<`any`> Returns a Promise
@@ -459,9 +481,9 @@ Open the calendar at the specified date.
 
 **Parameters:**
 
-| Name | Type   | Description                               |
-| ---- | ------ | ----------------------------------------- |
-| date | `Date` | The date you want to open the calendar on |
+| Nome | Tipo   | Descrição                                    |
+| ---- | ------ | -------------------------------------------- |
+| date | `Date` | A data em que você deseja abrir o calendário |
 
 
 **Returns:** `Promise`<`any`> Promise returns a promise

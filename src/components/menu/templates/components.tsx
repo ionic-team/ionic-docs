@@ -126,7 +126,7 @@ const items = {
     'ion-reorder': '/docs/api/reorder',
     'ion-reorder-group': '/docs/api/reorder-group'
   },
-  'menu-api-routing': {
+  'menu-api-router': {
     'ion-router': '/docs/api/router',
     'ion-router-link': '/docs/api/router-link',
     'ion-router-outlet': '/docs/api/router-outlet',

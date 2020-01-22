@@ -1,8 +1,8 @@
 ---
 previousText: 'Lifecycle'
 previousUrl: '/docs/angular/lifecycle'
-nextText: 'Performance'
-nextUrl: '/docs/angular/performance'
+nextText: 'Configuración'
+nextUrl: '/docs/angular/config'
 contributors:
   - mhartington
 ---
@@ -11,18 +11,18 @@ contributors:
 
 Esta guía cubre cómo funciona el enrutamiento en una aplicación construida con Ionic y Angular.
 
-El enrutador de Angular (Angular Router) es una de las librerías más importantes de una aplicación Angular. Without it, apps would be single view/single context apps or would not be able to maintain their navigation state on browser reloads. With Angular Router, we can create rich apps that are linkable and have rich animations (when paired with Ionic of course). Let's look at the basics of the Angular Router and how we can configure it for Ionic apps.
+El enrutador de Angular (Angular Router) es una de las librerías más importantes de una aplicación Angular. español Con Angular Router, podemos crear aplicaciones ricas que son enlazables y tienen animaciones ricas (cuando se emparejan con Ionic por supuesto). Echemos un vistazo a los conceptos básicos de Angular Router y cómo podemos configurarlo para aplicaciones de Ionic.
 
-## A simple Route
+## Una ruta simple
 
-For most apps, having some sort of route is often required. The most basic configuration looks a bit like this:
+Para la mayoría de las aplicaciones, a menudo se requiere tener algún tipo de ruta. La configuración más básica parece un poco así:
 
 ```typescript
 <br />import { RouterModule } from '@angular/router';
 
 @NgModule({
-  imports: [
-  ...
+  importaciones: [
+...
   RouterModule.forRoot([
     { path: '', component: LoginComponent },
     { path: 'detail', component: DetailComponent },
@@ -31,11 +31,11 @@ For most apps, having some sort of route is often required. The most basic confi
 })
 ```
 
-The simplest breakdown for what we have here is a path/component lookup. When our app loads, the router kicks things off by reading the URL the user is trying to load. In our sample, our route looks for `''`, which is essentially our index route. So for this, we load the `LoginComponent`. Fairly straight forward. This pattern of matching paths with a component continues for every entry we have in the router config. But what if we wanted to load a different path on our initial load?
+El desglose más simple de lo que tenemos aquí es una búsqueda de ruta/componente. Cuando nuestra aplicación se carga, el router lanza las cosas leyendo la URL que el usuario está intentando cargar. En nuestra muestra, nuestra ruta busca `''`, que es esencialmente nuestra ruta de índice. Así que para esto, cargamos el `LoginComponent`. Justo hacia delante. Este patrón de rutas coincidentes con un componente continúa por cada entrada que tenemos en la configuración del router. Pero ¿qué pasa si queríamos cargar un camino diferente en nuestra carga inicial?
 
-## Handling Redirects
+## Manejo de redirecciones
 
-For this we can use router redirects. Redirects work the same way that a typical route object does, but just includes a few different keys.
+Para esto podemos usar redirecciones de router. Redirecciones funcionan de la misma manera que un objeto de ruta típico, pero sólo incluye algunas teclas diferentes.
 
 ```typescript
 [
@@ -45,38 +45,40 @@ For this we can use router redirects. Redirects work the same way that a typical
 ];
 ```
 
-In our redirect, we look for the index path of our app. Then if we load that, we redirect to the `login` route. The last key of `pathMatch` is required to tell the router how it should look up the path.
+En nuestra redirección, buscamos la ruta de índice de nuestra aplicación. Entonces si cargamos eso, redirigiremos a la ruta `login`. Se necesita la última clave de `pathMatch` para decirle al router cómo debería buscar la ruta.
 
-Since we use `full`, we're telling the router that we should compare the full path, even if ends up being something like `/route1/route2/route3`. Meaning that if we have:
+Puesto que utilizamos `full`, le decimos al router que deberíamos comparar la ruta completa, incluso si termina siendo algo como `/route1/route2/route3`. Significando que si tenemos:
 
 ```typescript
-{ path: '/route1/route2/route3', redirectTo: 'login', pathMatch: 'full' },
+{ ruta: '/route1/route2/route3', redirectTo: 'login', pathMatch: 'full' },
 { path: 'login', component: LoginComponent },
 ```
 
-And load `/route1/route2/route3` we'll redirect. But if we loaded `/route1/route2/route4`, we won't redirect, as the paths don't match fully.
+Y cargar `/route1/route2/route3` redirigiremos. Pero si hemos cargado `/route1/route2/route4`, no redireccionaremos, ya que las rutas no coinciden completamente.
 
-Alternatively, if we used:
+Alternativamente, si utilizamos:
 
 ```typescript
 { path: '/route1/route2', redirectTo: 'login', pathMatch: 'prefix' },
 { path: 'login', component: LoginComponent },
 ```
 
-Then load both `/route1/route2/route3` and `/route1/route2/route4`, we'll be redirected for both routes. This is because `pathMatch: 'prefix'` will match only part of the path.
+Luego cargar `/route1/route2/route3` y `/route1/route2/route4`, seremos redirigidos por ambas rutas. Esto es porque `pathMatch: 'prefix'` sólo coincidirá con una parte de la ruta.
 
-## Navigating to different routes
+## Navegando a diferentes rutas
 
-Talking about routes is good and all, but how does one actually navigate to said routes? For this, we can use the `routerLink` directive. Let's go back and take our simple router setup from earlier:
+Hablar de rutas es bueno y todo, pero ¿cómo se navega hasta esas rutas? Para esto, podemos usar la directiva `routerLink`. Volvamos atrás y tomemos nuestra sencilla configuración del router desde antes:
 
 ```ts
 RouterModule.forRoot([
-  { path: '', component: LoginComponent },
-  { path: 'detail', component: DetailComponent }
+    { path: '', component: LoginComponent },
+    { path: 'detail', component: DetailComponent },
+  ])
+  ],
 ]);
 ```
 
-Now from the `LoginComponent`, we can use the following HTML to navigate to the detail route.
+Ahora desde el `LoginComponent`, podemos utilizar el siguiente HTML para navegar a la ruta detallada.
 
 ```html
 <ion-header>
@@ -90,9 +92,9 @@ Now from the `LoginComponent`, we can use the following HTML to navigate to the 
 </ion-content>
 ```
 
-The important part here is the `ion-button` and `routerLink` directive. RouterLink works on a similar idea as typical `href`s, but instead of building out the URL as a string, it can be built as an array, which can provide more complicated paths.
+La parte importante aquí es la directiva `ion-button` y `routerLink`. RouterLink funciona con una idea similar a la típica `href`s, pero en lugar de construir la URL como una cadena, se puede construir como una matriz, que puede proporcionar rutas más complicadas.
 
-We also can programmatically navigate in our app by using the router API.
+También podemos navegar programáticamente en nuestra aplicación usando la API del router.
 
 ```typescript
 import { Component } from '@angular/core';
@@ -111,13 +113,13 @@ export class LoginComponent {
 }
 ```
 
-Both options provide the same navigation mechanism, just fitting different use cases.
+Ambas opciones proporcionan el mismo mecanismo de navegación, sólo ajustando diferentes casos de uso.
 
-> A note on navigation with relative URLs: Currently, to support multiple navigation stacks, relative URLs are something not supported
+> Una nota en la navegación con URLs relativas: Actualmente, para soportar múltiples pilas de navegación, las URLs relativas son algo no soportado
 
-## Lazy loading routes
+## Rutas de carga lentas
 
-Now the current way our routes are setup makes it so they are included in the same chunk as the root app.module, which is not ideal. Instead, the router has a setup that allows the components to be isolated to their own chunks.
+Ahora la forma actual de configurar nuestras rutas lo hace así que se incluyen en el mismo chunk que la aplicación raíz.module, que no es ideal. En cambio, el router tiene una configuración que permite que los componentes se aislan a sus propias chunks.
 
 ```typescript
 <br />import { RouterModule } from '@angular/router';
@@ -134,7 +136,7 @@ Now the current way our routes are setup makes it so they are included in the sa
 })
 ```
 
-While similar, the `loadChildren` property is a way to reference a module by string instead of a component directly. In order to do this though, we need to create a module for each of the components.
+Si bien es similar, la propiedad `loadChildren` es una forma de hacer referencia a un módulo por string en lugar de a un componente directamente. Sin embargo, para ello necesitamos crear un módulo para cada uno de los componentes.
 
 ```typescript
 ...
@@ -151,13 +153,13 @@ import { LoginComponent } from './login.component';
 })
 ```
 
-> We're excluding some additional content and only including the necessary parts.
+> Excluimos contenido adicional y solo colocamos las partes necesarias.
 
-Here, we have a typical Angular Module setup, along with a RouterModule import, but we're now using `forChild` and declaring the component in that setup. With this setup, when we run our build, we will produce separate chunks for both the app component, the login component, and the detail component.
+Tenemos aquí una configuración típica de un módulo de Angular con "RouterModule", ahora usando `forChild` y declarando el componente en esa configuración. Con esta configuración, cuando ejecutemos nuestra compilación, produciremos fragmentos separados para el componente de aplicación, el componente de inicio de sesión y el componente de detalle.
 
-## Working with Tabs
+## Trabajando con pestañas
 
-With Tabs, the Angular Router provides Ionic the mechanism to know what components should be loaded, but the heavy lifting is actually done by the tabs component. Let's look at a simple example.
+Con pestañas, el Router de Angular proporciona a Ionic el mecanismo para saber qué componentes se deben cargar, pero la elevación pesada se hace por el componente de las pestañas. Consideremos un ejemplo sencillo.
 
 ```ts
 const routes: Routes = [
@@ -189,7 +191,7 @@ const routes: Routes = [
 ];
 ```
 
-Here we have a "tabs" path that we load. In this example we call the path “tabs”, but the name of the paths are open to be changed. They can be called whatever fits your app. In that route object, we can define a child route as well. In this example, the top level child route "tab1" acts as our "outlet", and can load additional child routes. For this example, we have a single sub-child-route, which just loads a new component. The markup for the tab is as followed:
+Aquí tenemos unas "tabs" que cargamos. In this example we call the path “tabs”, but the name of the paths are open to be changed. They can be called whatever fits your app. In that route object, we can define a child route as well. In this example, the top level child route "tab1" acts as our "outlet", and can load additional child routes. For this example, we have a single sub-child-route, which just loads a new component. The markup for the tab is as followed:
 
 ```html
 <br /><ion-tabs>

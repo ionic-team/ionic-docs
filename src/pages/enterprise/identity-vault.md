@@ -1,18 +1,19 @@
 ---
 title: Identity Vault
 template: enterprise-plugin
-version: 3.4.7
-minor: 3.4.X
+version: 3.6.0
+minor: 3.6.X
 otherVersions:
   - 2.0.X
   - 3.0.X
   - 3.1.X
   - 3.2.X
   - 3.3.X
+  - 3.4.X
+  - 3.5.X
 ---
 
-Ionic Identity Vault
-====================
+# Ionic Identity Vault
 
 Ionic Identity Vault is an all-in-one frontend identity management system that combines security best practices and the latest in biometric authentication options available on iOS and Android.
 
@@ -136,6 +137,8 @@ You can find the API and interface documentation for everything below. The main 
 *   [DefaultSession](#defaultsession) - This is the generic type that represents your session. Extend this to implement a custom session.
 *   [IdentityVault](#identityvault) - This is the lower level vault API. You can use this to implement advanced workflows including multi-tenant vaults.
 
+
+
 ## Index
 
 ### Enumerations
@@ -175,7 +178,7 @@ The type of authentication the vault should be configured to allow.
 
 <a id="authmode.biometricandpasscode"></a>
 
-###  BiometricAndPasscode
+####  BiometricAndPasscode
 
 **BiometricAndPasscode**: 
 
@@ -184,7 +187,7 @@ Both biometric and passcode authentication should be allowed
 ___
 <a id="authmode.biometriconly"></a>
 
-###  BiometricOnly
+####  BiometricOnly
 
 **BiometricOnly**: 
 
@@ -193,7 +196,7 @@ Biometrics authentication should only be allowed
 ___
 <a id="authmode.biometricorpasscode"></a>
 
-###  BiometricOrPasscode
+####  BiometricOrPasscode
 
 **BiometricOrPasscode**: 
 
@@ -202,7 +205,7 @@ Use biometrics if it is available, otherwise use passcode
 ___
 <a id="authmode.inmemoryonly"></a>
 
-###  InMemoryOnly
+####  InMemoryOnly
 
 **InMemoryOnly**: 
 
@@ -211,7 +214,7 @@ Both biometric and passcode authentication should be disabled. With this setting
 ___
 <a id="authmode.passcodeonly"></a>
 
-###  PasscodeOnly
+####  PasscodeOnly
 
 **PasscodeOnly**: 
 
@@ -220,7 +223,7 @@ Passcode authentication should only be allowed
 ___
 <a id="authmode.securestorage"></a>
 
-###  SecureStorage
+####  SecureStorage
 
 **SecureStorage**: 
 
@@ -239,43 +242,43 @@ The meaning of the error code in the thrown [VaultError](#vaulterror)
 
 <a id="vaulterrorcodes.authfailed"></a>
 
-###  AuthFailed
+####  AuthFailed
 
 **AuthFailed**: 
 
-User authentication failed
+User authentication failed.
 
 ___
 <a id="vaulterrorcodes.biometricsnotenabled"></a>
 
-###  BiometricsNotEnabled
+####  BiometricsNotEnabled
 
 **BiometricsNotEnabled**: 
 
-The operation failed because biometric authentication is not enabled
+The operation failed because biometric authentication is not enabled. This can occur when biometrics is not supported by the device or when biometrics has not been configured for the device or vault.
 
 ___
 <a id="vaulterrorcodes.invalidarguments"></a>
 
-###  InvalidArguments
+####  InvalidArguments
 
 **InvalidArguments**: 
 
-The operation failed because the provided arguments were invalid
+The operation failed because the some of the vault provided arguments were invalid.
 
 ___
 <a id="vaulterrorcodes.invalidauthmode"></a>
 
-###  InvalidAuthMode
+####  InvalidAuthMode
 
 **InvalidAuthMode**: 
 
-The AuthMode is invalid
+The provided AuthMode is invalid. Should be one of [AuthMode](#authmode).
 
 ___
 <a id="vaulterrorcodes.invalidatedcredential"></a>
 
-###  InvalidatedCredential
+####  InvalidatedCredential
 
 **InvalidatedCredential**: 
 
@@ -284,7 +287,7 @@ The credentials were invalidated. This can happen when a user changes biometrics
 ___
 <a id="vaulterrorcodes.keynotfound"></a>
 
-###  KeyNotFound
+####  KeyNotFound
 
 **KeyNotFound**: 
 
@@ -293,16 +296,16 @@ The key was not found. This can happen when a user changes biometrics or passcod
 ___
 <a id="vaulterrorcodes.mismatchedpasscode"></a>
 
-###  MismatchedPasscode
+####  MismatchedPasscode
 
 **MismatchedPasscode**: 
 
-The user provided mismatched passcodes
+The user provided mismatched passcodes.
 
 ___
 <a id="vaulterrorcodes.missingpasscode"></a>
 
-###  MissingPasscode
+####  MissingPasscode
 
 **MissingPasscode**: 
 
@@ -311,65 +314,65 @@ The operation requires passcode to be setup but it isn't set yet. Call [setPassc
 ___
 <a id="vaulterrorcodes.passcodenotenabled"></a>
 
-###  PasscodeNotEnabled
+####  PasscodeNotEnabled
 
 **PasscodeNotEnabled**: 
 
-The operation failed because passcode authentication is not enabled
+The operation failed because the application tried to unlock the vault with passcode authentication, but the vault is not configured to allow passcode authentication.
 
 ___
 <a id="vaulterrorcodes.securitynotavailable"></a>
 
-###  SecurityNotAvailable
+####  SecurityNotAvailable
 
 **SecurityNotAvailable**: 
 
-Biometric security is unavailable
+Biometric security is unavailable due to a passcode not being set up at the system level. In order to use biometric identification on the device a system level passcode must be set up by the user.
 
 ___
 <a id="vaulterrorcodes.toomanyfailedattempts"></a>
 
-###  TooManyFailedAttempts
+####  TooManyFailedAttempts
 
 **TooManyFailedAttempts**: 
 
-Too many failed authentication attempts so the vault was cleared an user will need to login again
+Too many failed authentication attempts so the vault was cleared an user will need to login again.
 
 ___
 <a id="vaulterrorcodes.unknown"></a>
 
-###  Unknown
+####  Unknown
 
 **Unknown**: 
 
-An unknown error happened
+An unknown error happened.
 
 ___
 <a id="vaulterrorcodes.usercanceledinteraction"></a>
 
-###  UserCanceledInteraction
+####  UserCanceledInteraction
 
 **UserCanceledInteraction**: 
 
-The user cancelled the native authentication dialog
+The user cancelled the native authentication dialog.
 
 ___
 <a id="vaulterrorcodes.vaultlocked"></a>
 
-###  VaultLocked
+####  VaultLocked
 
 **VaultLocked**: 
 
-The operation failed because the vault was locked
+The operation failed because the vault was locked.
 
 ___
 <a id="vaulterrorcodes.vaultunavailable"></a>
 
-###  VaultUnavailable
+####  VaultUnavailable
 
 **VaultUnavailable**: 
 
-The operation failed because the vault was unavailable
+The operation failed because the vault was unavailable. The most likely cause of this error is that a vault has not been configured.
 
 ___
 
@@ -462,6 +465,20 @@ Get the current configuration of the vault
 the configuration
 
 ___
+<a id="identityvault.getkeys"></a>
+
+###  getKeys
+
+▸ **getKeys**(): `Promise`<`string`[]>
+
+Get all keys with stored values.
+
+*__throws__*: [VaultError](#vaulterror) - if vault is locked
+
+**Returns:** `Promise`<`string`[]>
+array with all keys
+
+___
 <a id="identityvault.gettoken"></a>
 
 ###  getToken
@@ -514,7 +531,7 @@ ___
 
 ▸ **isBiometricsAvailable**(): `Promise`<`boolean`>
 
-Check whether or not biometrics is available on the device
+Check whether or not biometrics is supported by the device and has been configured by the current user of the device
 
 **Returns:** `Promise`<`boolean`>
 whether or not biometrics is available
@@ -530,6 +547,18 @@ Check whether or not biometrics is enabled on the vault
 
 **Returns:** `Promise`<`boolean`>
 whether or not biometrics is enabled
+
+___
+<a id="identityvault.isbiometricssupported"></a>
+
+###  isBiometricsSupported
+
+▸ **isBiometricsSupported**(): `Promise`<`boolean`>
+
+Check whether or not biometrics is supported by the device
+
+**Returns:** `Promise`<`boolean`>
+whether or not biometrics is supported
 
 ___
 <a id="identityvault.isinuse"></a>
@@ -613,6 +642,25 @@ Check how many remaining failed attempts are left until vault clears
 
 **Returns:** `Promise`<`number`>
 the number of remaining attempts
+
+___
+<a id="identityvault.removevalue"></a>
+
+###  removeValue
+
+▸ **removeValue**(key: *`string`*): `Promise`<`void`>
+
+Removes data under the given key.
+
+*__throws__*: [VaultError](#vaulterror) - if vault is locked, or if passcode is enabled but passcode has not been setup
+
+**Parameters:**
+
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| key | `string` |  the key to remove the value from |
+
+**Returns:** `Promise`<`void`>
 
 ___
 <a id="identityvault.setbiometricsenabled"></a>
@@ -894,7 +942,7 @@ ___
 
 ▸ **isBiometricsAvailable**(): `Promise`<`boolean`>
 
-Check whether or not biometrics is available on the device
+Check whether or not biometrics is supported by the device and has been configured by the current user of the device
 
 **Returns:** `Promise`<`boolean`>
 whether or not biometrics is available
@@ -910,6 +958,18 @@ Check whether or not biometrics is enabled on the vault
 
 **Returns:** `Promise`<`boolean`>
 whether or not biometrics is enabled
+
+___
+<a id="identityvaultuser.isbiometricssupported"></a>
+
+###  isBiometricsSupported
+
+▸ **isBiometricsSupported**(): `Promise`<`boolean`>
+
+Check whether or not biometrics is supported by the device
+
+**Returns:** `Promise`<`boolean`>
+whether or not biometrics is supported
 
 ___
 <a id="identityvaultuser.ispasscodeenabled"></a>
@@ -1695,6 +1755,50 @@ The possible values returned by [getBiometricType](#identityvault.getbiometricty
 ___
 
 ## Change Log
+
+
+
+### [3.6.0] (2019-12-20)
+
+
+### Features
+
+* add getKeys to IdentityVault 
+* add removeValue to IdentityVault 
+
+
+
+### [3.5.1] (2019-12-18)
+
+
+### Bug Fixes
+
+* **android:** properly call onVaultLocked after lock  
+* **ios:** add screenProtectView on top window  
+
+
+
+### [3.5.0] (2019-11-27)
+
+
+### Bug Fixes
+
+* **Android:** Fix issue where vault would crash if Android device only supported FaceMatch 
+* **vault-user:** use the vault user methods to set the auth mode  
+
+
+### Features
+
+* add isBiometricsSupported function 
+
+
+
+### [3.4.8] (2019-11-08)
+
+
+### Bug Fixes
+
+* **vault-user:** use the vault user methods to set the auth mode  
 
 
 

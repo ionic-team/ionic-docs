@@ -1,8 +1,8 @@
 ---
-title: 'Create an Automation'
-previousText: 'Build a Native Binary'
+title: '创建自动化脚本'
+previousText: '打包原生APP'
 previousUrl: '/docs/appflow/quickstart/package'
-nextText: 'Create an Environment'
+nextText: '环境构建'
 nextUrl: '/docs/appflow/quickstart/environment'
 ---
 

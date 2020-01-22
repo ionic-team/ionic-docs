@@ -1,12 +1,17 @@
 ---
-title: Ionic Native
+title: Community vs. Premier
+tableOfContents: false
 ---
 
-For teams building mission-critical apps, Ionic Native is a curated collection of plugins and solutions that are built and supported by Ionic, with stability assurances and guaranteed to work on all major platforms and versions.
+Community Plugins are a collection of open source Cordova plugins that make it easy to add native functionality to any Ionic app.
 
-## Why Ionic Native?
+Community Plugins are submitted and maintained by the Ionic community. While community members are generally quick to find and fix issues, certain plugins may not function properly. For teams that require dedicated native plugin support, please explore Ionic Native and request a free trial.
+
+## Why Ionic Native Premier?
 
 Take on mobile projects with peace of mind, knowing the native features, security, and performance you need will just work - now and in the future.
+
+For teams building mission-critical apps, Ionic Native is a curated collection of plugins and solutions that are built and supported by Ionic, with stability assurances and guaranteed to work on all major platforms and versions.
 
 <div class="native-ee-pricing">
   <div class="table-wrap">
@@ -102,6 +107,7 @@ Accelerate your app development with powerful solutions to common enterprise use
 ### Authentication & Security
 - [Auth Connect](/docs/enterprise/auth-connect)
 - [Identity Vault](/docs/enterprise/identity-vault)
+- [Secure Storage](/docs/enterprise/offline-storage)
 
 ### Common Device Features
 - [Android Permissions](/docs/enterprise/android-permissions)

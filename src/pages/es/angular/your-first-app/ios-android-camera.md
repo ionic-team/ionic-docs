@@ -190,7 +190,7 @@ export class Tab2Page {
 }
 ```
 
-¡Tome nota: no hay ninguna referencia a iOS o Android! Esta es la impresionante potencia de los plugins: utilizás una API (`camera.getPicture()` en este caso) y el plugin se encarga de las diferencias de plataforma por vos. Escribe una vez, ejecuta en todas partes. 😀
+¡Tome nota: no hay ninguna referencia a iOS o Android! Esta es la impresionante potencia de los plugins: utiliza una API (`camera.getPicture()` en este caso) y el plugin se encarga de las diferencias de plataforma por vos. Escribe una vez, ejecuta en todas partes. 😀
 
 Guarda este archivo y pulsa el botón de la cámara en DevApp. ¡Voila! La cámara debe abrirse en tu dispositivo. Una vez que se ha tomado una foto, se muestra en la página de la Galería de Fotos.
 

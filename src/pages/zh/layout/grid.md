@@ -1,9 +1,9 @@
 ---
-initialTab: 'preview'
+initialTab: '预览'
 inlineHtmlPreviews: true
-previousText: 'Structure'
+previousText: '构造'
 previousUrl: '/docs/layout/structure'
-nextText: 'Global Stylesheets'
+nextText: '全局样式'
 nextUrl: '/docs/layout/global-stylesheets'
 contributors:
   - brandyscarney
@@ -11,11 +11,11 @@ contributors:
 
 <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/css/utils.bundle.css"/> -->
 
-# Responsive Grid
+# 响应式网格
 
-The grid is a powerful mobile-first flexbox system for building custom layouts. It is composed of three units — a [grid](/docs/api/grid), [row(s)](/docs/api/row) and [column(s)](/docs/api/col). Columns will expand to fill their row, and will resize to fit additional columns. It is based on a 12 column layout with different breakpoints based on the screen size. The number of columns can be customized using CSS.
+网格是一个强大的移动端优先的弹性盒子系统，用于构建自定义布局。 它由三个单位组成：一个 [格子](/docs/api/grid), [行](/docs/api/row) 和 [列(s)](/docs/api/col)。 列将展开以填充它们的行，并将调整大小以适应额外的列。 它基于12列布局，基于屏幕大小不同的断点。 可以使用 CSS 自定义列数。
 
-## How it works
+## 如何运行
 
 ```html
 <ion-grid>
@@ -39,58 +39,58 @@ The grid is a powerful mobile-first flexbox system for building custom layouts. 
 </ion-grid>
 ```
 
-- Grids act as a container for all rows and columns. Grids take up the full width of their container, but adding the `fixed` attribute will specify the width per screen size, see [grid size](#grid-size) below.
-- Rows are horizontal groups of columns that line the columns up properly.
-- Content should be placed within columns, and only columns may be immediate children of rows.
-- The `size-{breakpoint}` attributes indicate the number of columns to use out of the default 12 per row. So, `size="4"` can be added to a column in order to take up 1/3 of the grid, or 4 of the 12 columns.
-- Columns without a value for size will automatically have equal widths. For example, four instances of `size-sm` will each automatically be 25% wide for the small breakpoint and up.
-- Column widths are set as a percentage, so they’re always fluid and sized relative to their parent element.
+- 网格作为所有行和列的容器。 网格占用容器的全宽， 但添加 ` fixed ` 属性将指定每个屏幕大小的宽度，请参阅下面的 [网格大小](#grid-size)。
+- 行是列正确上行的水平组列。
+- 内容应该放在列中，只有列可能是行的子项。
+- ` size-{breakpoint}` 属性表示每行默认的12列数。 所以, `size="4"` 可以添加到列中, 以便占用格子的1/3, 或 12 列中的4。
+- 没有大小值的列将自动具有相同的宽度。 例如，对于小断点和小断点来说， `size-sm` 的四个实例都会自动宽度为 25%。
+- 列宽度以百分比设置，因此它们总是相对于其父元素是流动的和变换大小的。
 - Columns have padding between individual columns, however, the padding can be removed from the grid and columns by adding `no-padding` on the grid.
 - There are five grid tiers, one for each responsive breakpoint: all breakpoints (extra small), small, medium, large, and extra large.
 - Grid tiers are based on minimum widths, meaning they apply to their tier and all those larger than them (e.g., `size-sm="4"` applies to small, medium, large, and extra large devices).
 - Grids can easily be customized via CSS variables. See [customizing the grid](#customizing-the-grid).
 
-## Grid size
+## 网格大小
 
-By default, the grid will take up 100% width. To set a specific width based on the screen size, add the `fixed` attribute. The width of the grid for each breakpoint is defined in the `--ion-grid-width-{breakpoint}` CSS variables. For more information, see [customizing the grid](#customizing-the-grid).
+默认情况下，网格将占用100%宽度。 要根据屏幕大小设置特定宽度，请添加 `fixed` 属性。 每个断点的网格宽度在 `--ion-grid-wid-{breakpoint}` CSS 变量中定义。 欲了解更多信息，请参阅 [自定义网格](#customizing-the-grid)。
 
-| Name | Value  | Description                                       |
-| ---- | ------ | ------------------------------------------------- |
-| xs   | 100%   | Don't set the grid width for xs screens           |
-| sm   | 540px  | Set grid width to 540px when (min-width: 576px)   |
-| md   | 720px  | Set grid width to 720px when (min-width: 768px)   |
-| lg   | 960px  | Set grid width to 960px when (min-width: 992px)   |
-| xl   | 1140px | Set grid width to 1140px when (min-width: 1200px) |
-
-
-## Grid attributes
-
-The grid takes up full width and has padding added to it based on the screen size. There are two attributes that can be used to adjust this behavior.
-
-| Property   | Description                                                   |
-| ---------- | ------------------------------------------------------------- |
-| no-padding | Removes padding from the grid and immediate children columns. |
-| fixed      | Set a max width based on the screen size.                     |
+| 名称 | 值      | 说明                              |
+| -- | ------ | ------------------------------- |
+| xs | 100%   | 不设置Xs屏幕的网格宽度                    |
+| sm | 540px  | 当(最小宽度：576px) 时，网格宽度设置为 540px   |
+| md | 720px  | 当(最小宽度：768px) 时，网格宽度设置为 720px   |
+| lg | 960px  | 当(最小宽度：992px) 时，网格宽度设置为 960px   |
+| xl | 1140px | 当(最小宽度：1200px) 时，网格宽度设置为 1140px |
 
 
-## Default breakpoints
+## 网格属性
 
-The default breakpoints are defined in the table below. Breakpoints can not be customized at this time. For more information on why they can't be customized, see [Variables in Media Queries](/docs/theming/advanced#variables-in-media-queries).
+网格占用全宽，并根据屏幕大小添加了填充。 有两个 属性可用来调整此行为。
 
-| Name | Value  | Width Prefix | Offset Prefix | Push Prefix | Pull Prefix | Description                          |
-| ---- | ------ | ------------ | ------------- | ----------- | ----------- | ------------------------------------ |
-| xs   | 0      | `size-`      | `offset-`     | `push-`     | `pull-`     | Set columns when (min-width: 0)      |
-| sm   | 576px  | `size-sm-`   | `offset-sm-`  | `push-sm-`  | `pull-sm-`  | Set columns when (min-width: 576px)  |
-| md   | 768px  | `size-md-`   | `offset-md-`  | `push-md-`  | `pull-md-`  | Set columns when (min-width: 768px)  |
-| lg   | 992px  | `size-lg-`   | `offset-lg-`  | `push-lg-`  | `pull-lg-`  | Set columns when (min-width: 992px)  |
-| xl   | 1200px | `size-xl-`   | `offset-xl-`  | `push-xl-`  | `pull-xl-`  | Set columns when (min-width: 1200px) |
+| 属性         | 说明             |
+| ---------- | -------------- |
+| no-padding | 从网格和直接子列中删除填充。 |
+| fixed      | 根据屏幕大小设置最大宽度。  |
 
 
-## Auto-layout columns
+## 默认断点
 
-### Equal-width
+下面的表格中定义了默认断点。 目前无法自定义断点。 欲了解更多关于为什么不能定制的信息，请在媒体查询中查看 [变量](/docs/theming/advanced#variables-in-media-queries)。
 
-By default, columns will take up equal width inside of a row for all devices and screen sizes.
+| 名称 | 值      | 宽度前缀       | Offset Prefix | Push Prefix | 下拉前缀       | 说明                                   |
+| -- | ------ | ---------- | ------------- | ----------- | ---------- | ------------------------------------ |
+| xs | 0      | `size-`    | `offset-`     | `push-`     | `pull-`    | Set columns when (min-width: 0)      |
+| sm | 576px  | `size-sm-` | `offset-sm-`  | `push-sm-`  | `pull-sm-` | Set columns when (min-width: 576px)  |
+| md | 768px  | `size-md-` | `offset-md-`  | `push-md-`  | `pull-md-` | Set columns when (min-width: 768px)  |
+| lg | 992px  | `size-lg-` | `offset-lg-`  | `push-lg-`  | `pull-lg-` | Set columns when (min-width: 992px)  |
+| xl | 1200px | `size-xl-` | `offset-xl-`  | `push-xl-`  | `pull-xl-` | Set columns when (min-width: 1200px) |
+
+
+## 自动布局列
+
+### 等宽
+
+默认情况下，列将占用所有设备和屏幕大小行内的等宽。
 
 ```html
 <ion-grid>
@@ -126,7 +126,7 @@ By default, columns will take up equal width inside of a row for all devices and
 </ion-grid>
 ```
 
-### Setting one column width
+### 设置一个列宽度
 
 Set the width of one column and the others will automatically resize around it. This can be done using our predefined grid attributes. In the example below, the other columns will resize no matter the width of the center column.
 
@@ -169,7 +169,7 @@ Set the width of one column and the others will automatically resize around it. 
 </ion-grid>
 ```
 
-### Variable-width
+### 可变的容器宽度
 
 By setting the `size-{breakpoint}` properties to `"auto"` the column can size itself based on the natural width of its content. This is extremely useful for setting a column width using pixels. The columns next to the variable-width column will resize to fill the row.
 
@@ -217,7 +217,7 @@ By setting the `size-{breakpoint}` properties to `"auto"` the column can size it
 </ion-grid>
 ```
 
-## Responsive attributes
+## 响应属性
 
 ### All breakpoints
 

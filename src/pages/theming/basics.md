@@ -23,7 +23,7 @@ When changing a color, it is important to set all of the related properties. Thi
 
 ## Platform Standards
 
-Ionic components adapt their look and behavior based on the platform the app is running on. We call this <strong>Platform Continuity</strong>. This allows developers to build apps that use the same codebase for multiple platforms, while still looking "native" to those particular platforms.
+Ionic components adapt their look and behavior based on the platform the app is running on. We call this <strong>Adaptive Styling</strong>. This allows developers to build apps that use the same codebase for multiple platforms, while still looking "native" to those particular platforms.
 
 Ionic has two **modes** that are used to customize the look of components based on the **platform**: `ios` and `md`. Each platform has a default mode, but this can easily be configured. For more information on customizing an application based on the platform, see [Platform Styles](/docs/theming/platform-styles).
 

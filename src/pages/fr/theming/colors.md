@@ -7,23 +7,23 @@ nextText: 'Themes'
 nextUrl: '/docs/theming/themes'
 ---
 
-# Colors
+# Couleurs
 
-Ionic has nine default colors that can be used to change the color of many components. Each color is actually a collection of multiple properties, including a `shade` and `tint`, used throughout Ionic.
+Ionic a neuf couleurs par défaut qui peuvent être utilisées pour modifier la couleur de vos composants. Chaque couleur est en fait une collection de différentes propriétés, y compris un `nuance` et `teintes`, utilisé dans Ionic.
 
-A color can be applied to an Ionic component in order to change the default colors using the `color` attribute. Notice in the buttons below that the text and background changes based on the `color` set. When there is no `color` set on the button it uses the `primary` color by default.
+Une couleur peut être appliquée à un composant Ionic afin de changer les couleurs par défaut en utilisant l'attribut `couleur`. Remarquez dans les boutons ci-dessous que le texte et l'arrière-plan changent en fonction de la couleur `de` définie. Quand il n'y a pas de `couleur` définie sur le bouton, il utilise par défaut la `couleur primaire`.
 
 ```html
-<ion-button>Default</ion-button>
-<ion-button color="primary">Primary</ion-button>
-<ion-button color="secondary">Secondary</ion-button>
-<ion-button color="tertiary">Tertiary</ion-button>
-<ion-button color="success">Success</ion-button>
-<ion-button color="warning">Warning</ion-button>
+<ion-button>Défaut</ion-button>
+<ion-button color="primary">Primaire</ion-button>
+<ion-button color="secondary">Secondaire</ion-button>
+<ion-button color="tertiary">Tertiaire</ion-button>
+<ion-button color="success">Succès</ion-button>
+<ion-button color="warning">Alerte</ion-button>
 <ion-button color="danger">Danger</ion-button>
-<ion-button color="light">Light</ion-button>
-<ion-button color="medium">Medium</ion-button>
-<ion-button color="dark">Dark</ion-button>
+<ion-button color="light">Lumière</ion-button>
+<ion-button color="medium">Moyen</ion-button>
+Noir<ion-button color="dark">Noir</ion-button>
 ```
 
 ## Layered Colors

@@ -1,10 +1,13 @@
 ---
-title: AppRate
+title: App Rate
 template: enterprise-plugin
-version: 1.4.1
-minor: 1.4.X
+version: 1.5.0
+minor: 1.5.X
 ---
 
+The App Rate plugin makes it easy to prompt the user to rate your app - either now, later, or never.
+
+<native-ent-install plugin-id="app-rate" variables=""></native-ent-install>
 
 
 ## Index
@@ -153,6 +156,16 @@ ___
 
 **AppRateCustomLocale**: 
 
+<a id="appratecustomlocale.appratepromptmessage"></a>
+
+### `<Optional>` appRatePromptMessage
+
+**● appRatePromptMessage**: *`string`*
+
+Feedback prompt message
+
+___
+
 <a id="appratecustomlocale.apprateprompttitle"></a>
 
 ### `<Optional>` appRatePromptTitle
@@ -170,6 +183,16 @@ ___
 **● cancelButtonLabel**: *`string`*
 
 Cancel button label
+
+___
+
+<a id="appratecustomlocale.feedbackpromptmessage"></a>
+
+### `<Optional>` feedbackPromptMessage
+
+**● feedbackPromptMessage**: *`string`*
+
+Feedback prompt message
 
 ___
 
@@ -412,6 +435,17 @@ ___
 ___
 
 # Changelog
+
+- 1.5.0
+  - [PR #253](https://github.com/pushandplay/cordova-plugin-apprate/pull/253) - Remove iOS rating counter in favor of native approach
+  - [PR #252](https://github.com/pushandplay/cordova-plugin-apprate/pull/252) - Postpone initial AppRate.init() until `deviceready`
+  - [PR #239](https://github.com/pushandplay/cordova-plugin-apprate/pull/239) - Remove inappbrowser dependency adding support to choose between inappbrowser and safariviewcontroller
+  - [PR #244](https://github.com/pushandplay/cordova-plugin-apprate/pull/244) - Use ES5 var instead of ES6 const for better browser compatibility
+  - [PR #231](https://github.com/pushandplay/cordova-plugin-apprate/pull/231) - Displaying store view page before it loads for improved UX
+  - [PR #228](https://github.com/pushandplay/cordova-plugin-apprate/pull/228) - Add native support for windows platform rating
+  - [PR #220](https://github.com/pushandplay/cordova-plugin-apprate/pull/220) - Remove dependency on deprecated cordova-plugin-globalization in favor of browser `Intl` api
+  - Various language fixes and improvements
+  - [View All Merged PR's](https://github.com/pushandplay/cordova-plugin-apprate/compare/v1.4.0...master)
 
 - 1.4.0
   - [Merged PR's](https://github.com/pushandplay/cordova-plugin-apprate/pulls?utf8=%E2%9C%93&q=is%3Apr+is%3Aclosed+merged%3A2017-06-24..2018-06-13)

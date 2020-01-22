@@ -4,6 +4,7 @@ previousText: 'Quickstart Home'
 previousUrl: '/docs/appflow/quickstart'
 nextText: 'Connect Using GitHub'
 nextUrl: '/docs/appflow/quickstart/github'
+tableOfContents: false
 ---
 
 Appflow works directly with Git version control and uses your code base

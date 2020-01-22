@@ -9,12 +9,13 @@ otherVersions:
   - 3.1.X
   - 3.2.X
   - 3.3.X
+  - 3.4.X
 ---
 
 Ionic Identity Vault
 ====================
 
-The Ionic Identity Vault is a all-in-one frontend identity management system that uses security best practices and uses the latest in biometric authentication options available on iOS and Android.
+The Ionic Identity Vault is an all-in-one frontend identity management system that uses security best practices and the latest in biometric authentication options available on iOS and Android.
 
 The Vault manages secure user identity and session tokens, ensuring sensitive tokens are encrypted at rest, stored only in secure locations on the device, and unlocked only with biometric identity (TouchID/FaceID).
 
@@ -482,7 +483,7 @@ ___
 
 ▸ **isBiometricsAvailable**(): `Promise`<`boolean`>
 
-Check whether or not biometrics is available on the device
+Check whether or not biometrics is supported by the device and has been configured by the current user of the device
 
 **Returns:** `Promise`<`boolean`>
 whether or not biometrics is available
@@ -831,7 +832,7 @@ ___
 
 ▸ **isBiometricsAvailable**(): `Promise`<`boolean`>
 
-Check whether or not biometrics is available on the device
+Check whether or not biometrics is supported by the device and has been configured by the current user of the device
 
 **Returns:** `Promise`<`boolean`>
 whether or not biometrics is available

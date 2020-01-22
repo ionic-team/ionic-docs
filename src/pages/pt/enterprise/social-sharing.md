@@ -1,11 +1,13 @@
 ---
-title: SocialSharing
+title: Social Sharing
 template: enterprise-plugin
-version: 5.6.1
+version: 5.6.3
 minor: 5.6.X
 ---
 
+The Social Sharing plugin provides the ability to share text, files, images, and links via social networks, SMS, and email.
 
+<native-ent-install plugin-id="social-sharing" variables=""></native-ent-install>
 
 ## Index
 

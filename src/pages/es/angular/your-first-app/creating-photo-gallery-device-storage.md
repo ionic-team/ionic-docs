@@ -9,7 +9,7 @@ contributors:
 
 # Creando una galería de fotos con almacenamiento de dispositivos
 
-La última vez, agregamos con éxito el puglin de la cámara a la página Tab2 de nuestra aplicación Tabs. Actualmente, la foto se reemplaza cada vez que se toma una nueva. ¿Qué pasa si queremos mostrar varias fotos juntas? Vamos a crear una galería de fotos. Puedes ver el código completo para esto [en GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4).
+La última vez, agregamos con éxito el plugin de la cámara a la página Tab2 de nuestra aplicación Tabs. Actualmente, la foto se reemplaza cada vez que se toma una nueva. ¿Qué pasa si queremos mostrar varias fotos juntas? Vamos a crear una galería de fotos. Puedes ver el código completo para esto [en GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4).
 
 ## Creando un Servicio de Fotos Dedicado
 
@@ -126,7 +126,7 @@ A continuación, agregue la biblioteca JavaScript para la Web:
 $ npm install --save @ionic/storage
 ```
 
-Por último, importe el módulo Storage y añádalo a la lista de importaciones en `app.module.ts`:
+Por último, importe el módulo Storage y añádelo a la lista de importaciones en `app.module.ts`:
 
 ```Javascript
 import { IonicStorageModule } from '@ionic/storage';

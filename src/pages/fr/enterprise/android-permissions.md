@@ -5,7 +5,9 @@ version: 0.11.0
 minor: 0.11.X
 ---
 
+The Android Permissions plugin is designed to support Android's new permissions checking mechanism, introduced in Android 8.0 (API level 26). Permissions are requested at time of use rather than at runtime. You can find all permissions [here](https://developer.android.com/reference/android/Manifest.permission.html).
 
+<native-ent-install plugin-id="android-permissions" variables=""></native-ent-install>
 
 ## Index
 
@@ -21,32 +23,22 @@ minor: 0.11.X
 
 ### AndroidPermissions
 
-**AndroidPermissions**:
-
-***name***: Android Permissions
-
-***description***: This plugin is designed to support Android new permissions checking mechanism.
-
-You can find all permissions here: <https://developer.android.com/reference/android/Manifest.permission.html>
-
 ***usage***:
 
-    import { AndroidPermissions } from '@ionic-enterprise/android-permissions/ngx';
-    
-    constructor(private androidPermissions: AndroidPermissions) { }
-    
-    ...
-    
-    this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.CAMERA).then(
-      result => console.log('Has permission?',result.hasPermission),
-      err => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.CAMERA)
-    );
-    
-    this.androidPermissions.requestPermissions([this.androidPermissions.PERMISSION.CAMERA, this.androidPermissions.PERMISSION.GET_ACCOUNTS]);
-    
-    
+```typescript
+import { AndroidPermissions } from '@ionic-enterprise/android-permissions/ngx';
 
-Android 26 and above: due to Android 26's changes to permissions handling (permissions are requested at time of use rather than at runtime,) if your app does not include any functions (eg. other Ionic Native plugins) that utilize a particular permission, then `requestPermission()` and `requestPermissions()` will resolve immediately with no prompt shown to the user. Thus, you must include a function utilizing the feature you would like to use before requesting permission for it.
+constructor(private androidPermissions: AndroidPermissions) { }
+
+...
+
+this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.CAMERA).then(
+  result => console.log('Has permission?',result.hasPermission),
+  err => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.CAMERA)
+);
+
+this.androidPermissions.requestPermissions([this.androidPermissions.PERMISSION.CAMERA, this.androidPermissions.PERMISSION.GET_ACCOUNTS]);
+```
 
 <a id="androidpermissions.permission"></a>
 

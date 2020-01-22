@@ -40,7 +40,10 @@ export default (props) => {
   return (
     <article>
       <h1>{ page.title }</h1>
-      <docs-table-of-contents links={headings} basepath={page.path} />
+      <div class="page-meta">
+        <docs-table-of-contents links={headings} basepath={page.path}/>
+        <internal-ad></internal-ad>
+      </div>
       <section class="summary intro">
         {toHypertext(h, page.summary)}
       </section>

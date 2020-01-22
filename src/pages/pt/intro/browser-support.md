@@ -1,6 +1,6 @@
 ---
-previousText: 'Build Your First App'
-previousUrl: '/docs/intro/first-app'
+previousText: 'What Are Progressive Web Apps'
+previousUrl: '/docs/intro/what-are-progressive-web-apps'
 nextText: 'Versioning'
 nextUrl: '/docs/intro/versioning'
 ---
@@ -11,7 +11,7 @@ Ionic's earliest goal was to make it easy to develop mobile apps using web techn
 
 ## Mobile
 
-In pursuit of [platform continuity](/docs/intro/concepts#platform-continuity), Ionic fully supports and is well tested on the mobile platforms listed below:
+In pursuit of [adaptive styling](/docs/intro/concepts#adaptive-styling), Ionic fully supports and is well tested on the mobile platforms listed below:
 
 | Platform    | Supported Versions |
 | ----------- | ------------------ |

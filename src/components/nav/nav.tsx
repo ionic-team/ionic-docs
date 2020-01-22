@@ -90,7 +90,9 @@ export class DocsNav {
           block: 'center'
         });
     } catch (err) {
-      this.element.scrollIntoView();
+      this.element.offsetParent ?
+        this.element.offsetParent.scrollIntoView() :
+        this.element.scrollIntoView();
     }
   }
 

@@ -1,0 +1,95 @@
+docs-item {
+  display: block;
+  font-size: 12px;
+  max-width: 30em;
+}
+
+.Item {
+  background-color: var(--background);
+  border-radius: 4px;
+  color: var(--text-color--light);
+  display: flex;
+  flex-direction: row;
+  font-size: 14px;
+  font-weight: normal;
+  height: 100%;
+  justify-content: flex-start;
+  line-height: 1.6;
+  transition: box-shadow 150ms ease-out, transform 150ms ease-out;
+  width: 100%;
+  overflow: hidden;
+  padding: 1.65em 0 1.65em;
+}
+
+.Item-container {
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.Item-icon {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 1.2em;
+  object-fit: cover;
+  transition: 150ms transform ease-out;
+  transform-origin: 100% 50%;
+}
+
+.Item-rounded .Item-icon {
+  border-radius: 50%;
+}
+
+.Item-ionicon {
+  width: 56px;
+  height: 56px;
+  float: left;
+  margin-right: 1em;
+}
+
+@media (hover: hover) {
+  .Item[href]:hover {
+    box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1), 0 0.175em 0.5em rgba(2, 8, 20, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .Item[href]:hover .Item-icon {
+    transform: scale(.8, .8);
+  }
+}
+
+.Item-content > *:first-child {
+  margin-top: 0;
+}
+
+.Item-content > *:last-child {
+  margin-bottom: 0;
+}
+
+.Item-content > * {
+  margin: 0 0 0.65em;
+}
+
+.Item-header {
+  color: var(--text-color--dark);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 0.45em;
+}
+
+.Item-without-image .Item-header {
+  font-size: 1.2em;
+  margin-bottom: 0.3em;
+
+}
+
+.Item-header > svg {
+  fill: currentColor;
+  height: 1em;
+  margin-bottom: -0.125em;
+  width: auto;
+}
+
+.markdown-content p docs-item {
+  margin-top: 1em;
+}

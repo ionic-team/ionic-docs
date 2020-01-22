@@ -1,6 +1,6 @@
 ---
-previousText: '导航'
-previousUrl: '/docs/angular/navigation'
+previousText: '平台'
+previousUrl: '/docs/angular/platform'
 ---
 
 # Angular 性能

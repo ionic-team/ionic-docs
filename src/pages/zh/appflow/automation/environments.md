@@ -18,7 +18,7 @@ nextUrl: '/docs/appflow/automation/webhooks'
 
 ## 预定义的环境
 
-每次构建发生时,它是在一个安全的环境中,我们提供了一些预定义的变量是键/值对可用的环境,可通过使用<a href = " https://nodejs.org/docs/latest-v8.x/api/process.html#process_process_env">process.env.MY_VAR</a>语法NodeJS或通过<代码>美元`MY_VAR` 代码语法标准shell脚本。 这些变量可以用于自定义构建和输出。
+每次构建发生时,它是在一个安全的环境中,我们提供了一些预定义的变量是键/值对可用的环境,可通过使用[process.env.MY_VAR](https://nodejs.org/docs/latest-v8.x/api/process.html#process_process_env)语法NodeJS或通过<代码>美元`$MY_VAR` 代码语法标准shell脚本。 这些变量可以用于自定义构建和输出。
 
 每个构建都提供了以下环境变量，可以在构建脚本中访问:
 
@@ -55,9 +55,10 @@ nextUrl: '/docs/appflow/automation/webhooks'
 
 ## 使用方法
 
-例如，您可以使用自定义的Shell脚本替换` package.json </ code>中的<code> build </ code>脚本。读取分支并触发自定义构建。</p>
+例如，您可以使用自定义的Shell脚本替换` package.json `中的` build `脚本。读取分支并触发自定义构建。
 
-<pre><code class="json">// package.json中的自定义构建脚本
+```json
+// package.json中的自定义构建脚本
 {
 ...
     "scripts": {
@@ -67,7 +68,7 @@ nextUrl: '/docs/appflow/automation/webhooks'
         "lint": "ionic-app-scripts lint"
     },
 ...
-`</pre> 
+```
 
     #!/bin/bash
     if [ "$CI_GIT_REF" = "master" ]; then
@@ -77,17 +78,16 @@ nextUrl: '/docs/appflow/automation/webhooks'
     fi
     
 
-从` @ ionic / app-scripts @ 3.2.0 </ code>开始，您还可以使用
-<a href="https://github.com/ionic-team/ionic-app-scripts#environments">环境变量直接在您的源代码中</a>
-并且它们会在构建时被替换，以便您可以根据环境自定义代码。</p>
+从`@ionic/app-scripts@3.2.0`开始，您还可以使用 [环境变量直接在您的源代码中](https://github.com/ionic-team/ionic-app-scripts#environments) 并且它们会在构建时被替换，以便您可以根据环境自定义代码。
 
 <blockquote>
-  <p><b>Note:</b>`@ionic/app-scripts` is only for use with Ionic Framework v3 applications. The above does not apply to other versions.</p>
+  <p><b>注意：</b>`@ionic/app-scripts` 仅用于Ionic Framework v3 应用程序。 上述内容不适用于其他版本。</p>
 </blockquote>
 
-<p>例如:</p>
+例如:
 
-<pre><code class="typescript">productionConfig = {
+```typescript
+productionConfig = {
   api: 'https://my.production.api.com',
   analyticsKey: 'my-production-key'
 }
@@ -109,4 +109,4 @@ switch (process.env.CI_GIT_REF) {
   default:
     return localConfig;
 }
-`</pre>
+```

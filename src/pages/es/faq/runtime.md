@@ -7,7 +7,7 @@ contributors:
   - brandyscarney
 ---
 
-# Runtime Errors
+# Runtime Issues
 
 ## Blank App
 
@@ -88,7 +88,36 @@ However, you may need to add a `(click)` event to an element that is not normall
  <div tappable (click)="doClick()">I am clickable!</div>
 ```
 
-### Cordova plugins not working in the browser
+## Angular Change Detection
+
+> Why does Angular change detection run very frequently when my components are initializing?
+
+Angular uses a library called [zone.js](https://github.com/angular/angular/tree/master/packages/zone.js/) which helps it determine when to run change detection.
+
+As of zone.js `0.8.27`, certain APIs for Web Components also cause change detection to run. This can have the undesirable side effect of your app slowing down when a large number of components are initializing.
+
+To prevent this from happening, the zone.js flag that manages this portion of change detection can be disabled. In the `src` directory of your application, create a file called `zone-flags.ts`. Place the following code into the file:
+
+```typescript
+(window as any).__Zone_disable_customElements = true;
+```
+
+The `zone-flags.ts` file then needs to be imported into your application's `polyfills.ts` file. Be sure to import it *before* `zone.js` is imported:
+
+```typescript
+...
+
+import './zone-flags.ts';
+import 'zone.js/dist/zone'; // Included with Angular CLI
+
+...
+```
+
+This change will only affect applications that depend on zone.js `0.8.27` or newer. Older versions will not be affected by this change.
+
+> Note: This flag is automatically included when creating an Ionic app via the Ionic CLI.
+
+## Cordova plugins not working in the browser
 
 At some point in your development you may, try to call Cordova plugin, but get a warning:
 
@@ -109,7 +138,7 @@ EXCEPTION: Error: Uncaught (in promise): TypeError: undefined is not an object
 
 If this happens, test the plugin on a real device or simulator.
 
-### Multiple instances of a provider
+## Multiple instances of a provider
 
 If you inject a provider in every component because you want it available to all of them you will end up with multiple instances of the provider. You should inject the provider once in the parent component if you want it to be available to the child components.
 

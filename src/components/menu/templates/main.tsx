@@ -7,6 +7,7 @@ const items = {
     'menu-intro-what-is': '/docs/intro',
     'menu-intro-concepts': '/docs/intro/concepts',
     'menu-intro-your-first-app': '/docs/intro/first-app',
+    'menu-intro-what-are-progressive-web-apps': '/docs/intro/what-are-progressive-web-apps',
     'menu-intro-browser-support': '/docs/intro/browser-support',
     'menu-intro-versioning': '/docs/intro/versioning',
     'menu-intro-release-notes': '/docs/release-notes',
@@ -51,27 +52,45 @@ const items = {
   'menu-angular': {
     'menu-angular-overview': '/docs/angular/overview',
     'menu-angular-your-first-app': '/docs/angular/your-first-app',
+    '': {
+      'menu-angular-yfa-taking-photos': '/docs/angular/your-first-app/2-taking-photos',
+      'menu-angular-yfa-saving-photos': '/docs/angular/your-first-app/3-saving-photos',
+      'menu-angular-yfa-loading-photos': '/docs/angular/your-first-app/4-loading-photos',
+      'menu-angular-yfa-adding-mobile': '/docs/angular/your-first-app/5-adding-mobile',
+      'menu-angular-yfa-deploying-mobile': '/docs/angular/your-first-app/6-deploying-mobile',
+      'menu-angular-yfa-live-reload': '/docs/angular/your-first-app/7-live-reload'
+    },
     'menu-angular-lifecycle': '/docs/angular/lifecycle',
     'menu-angular-navigation': '/docs/angular/navigation',
-    'menu-angular-performance': '/docs/angular/performance'
+    'menu-angular-config': '/docs/angular/config',
+    'menu-angular-platform': '/docs/angular/platform',
+    'menu-angular-performance': '/docs/angular/performance',
+    'menu-angular-pwa': '/docs/angular/pwa'
   },
   'menu-react': {
     'menu-react-overview': '/docs/react',
+    'menu-react-quickstart': '/docs/react/quickstart',
     'menu-react-your-first-app': '/docs/react/your-first-app',
+    '': {
+      'menu-react-yfa-taking-photos': '/docs/react/your-first-app/2-taking-photos',
+      'menu-react-yfa-saving-photos': '/docs/react/your-first-app/3-saving-photos',
+      'menu-react-yfa-loading-photos': '/docs/react/your-first-app/4-loading-photos',
+      'menu-react-yfa-adding-mobile': '/docs/react/your-first-app/5-adding-mobile',
+      'menu-react-yfa-deploying-mobile': '/docs/react/your-first-app/6-deploying-mobile',
+      'menu-react-yfa-live-reload': '/docs/react/your-first-app/7-live-reload'
+    },
     'menu-react-lifecycle': '/docs/react/lifecycle',
     'menu-react-navigation': '/docs/react/navigation',
     'menu-react-config': '/docs/react/config',
-    'menu-react-platform': '/docs/react/platform'
+    'menu-react-platform': '/docs/react/platform',
+    'menu-react-pwa': '/docs/react/pwa'
+
   },
   'menu-vue': {
     'menu-vue-overview': '/docs/vue/overview',
     'menu-vue-your-first-app': '/docs/vue/your-first-app',
     'menu-vue-lifecycle': '/docs/vue/lifecycle',
     'menu-vue-navigation': '/docs/vue/navigation'
-  },
-  'menu-utilities': {
-    'menu-utilities-config': '/docs/utilities/config',
-    'menu-utilities-platform': '/docs/utilities/platform'
   },
   'menu-publishing': {
     'menu-publishing-progressive-web-app': '/docs/publishing/progressive-web-app',

@@ -1,7 +1,7 @@
 ---
 title: Contacts
 template: enterprise-plugin
-version: 1.0.2
+version: 1.0.4
 minor: 1.0.X
 ---
 
@@ -13,7 +13,6 @@ Usage
 -----
 
 The Contacts plugin ship with a native Angular & es2015+/Typescript wrappers as well as being available on window.
-
 ```typescript
 // Angular
 import { Contacts } from '@ionic-enterprise/contacts/ngx';
@@ -59,6 +58,7 @@ document.addEventListener('deviceready', () => {
   );
 });
 ```
+#  Contacts
 
 ## Index
 
@@ -901,6 +901,20 @@ ___
 # Changelog
 
 
+
+### [1.0.4] (2019-11-08)
+
+
+### Bug Fixes
+
+* **ios:** make pickContact prompt for permission if not granted 
+
+### [1.0.3] (2019-11-04)
+
+
+### Bug Fixes
+
+* make plugin don't break web context 
 
 ### [1.0.2] (2019-10-02)
 
