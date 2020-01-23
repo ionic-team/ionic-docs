@@ -72,7 +72,7 @@ constructor(private animationCtrl: AnimationController) {
 </docs-tab>
 <docs-tab tab="react">
 
-Developers using React should install the latest version of `@ionic/react`. Full React wrappers are coming soon!
+Developers using React should install the latest version of `@ionic/react`. React wrappers are in beta. Please report any issues on GitHub!
 
 ```typescript
 
@@ -80,11 +80,16 @@ import { createAnimation, Animation } from '@ionic/react';
 
 ...
 
-const animation: Animation = createAnimation()
-  .addElement(myElementRef)
-  .duration(1000)
-  .fromTo('opacity', '1', '0.5');
-}
+<CreateAnimation
+  duration={1000}
+  fromTo={{
+    property: 'opacity', 
+    fromValue: '1', 
+    toValue: '0.5'
+  }}
+>
+...
+</CreateAnimation>
 
 ```
 </docs-tab>
@@ -103,7 +108,7 @@ createAnimation()
   .duration(1500)
   .iterations(Infinity)
   .fromTo('transform', 'translateX(0px)', 'translateX(100px)')
-  .fromTo('opacity', 1, 0.2);
+  .fromTo('opacity', '1', '0.2');
 ```
 </docs-tab>
 <docs-tab tab="angular">
@@ -114,18 +119,22 @@ this.animationCtrl.create()
   .duration(1500)
   .iterations(Infinity)
   .fromTo('transform', 'translateX(0px)', 'translateX(100px)')
-  .fromTo('opacity', 1, 0.2);
+  .fromTo('opacity', '1', '0.2');
 ```
 </docs-tab>
 <docs-tab tab="react">
 
-```javascript
-createAnimation()
-  .addElement(document.querySelector('.square'))
-  .duration(1500)
-  .iterations(Infinity)
-  .fromTo('transform', 'translateX(0px)', 'translateX(100px)')
-  .fromTo('opacity', 1, 0.2);
+```typescript
+<CreateAnimation
+  duration={1500}
+  iterations={Infinity}
+  fromTo={[
+    { property: 'transform', fromValue: 'translateX(0px)', toValue: 'translateX(100px)' },
+    { property: 'opacity', fromValue: '1', toValue: '0.2' }
+  ]}
+>
+  ...
+</CreateAnimation>
 ```
 </docs-tab>
 </docs-tabs>
@@ -173,16 +182,18 @@ this.animationCtrl.create()
 </docs-tab>
 <docs-tab tab="react">
 
-```javascript
-createAnimation()
-  .addElement(document.querySelector('.square'))
-  .duration(3000)
-  .iterations(Infinity)
-  .keyframes([
+```typescript
+<CreateAnimation
+  duration={3000}
+  iterations={Infinity}
+  keyframes={[
     { offset: 0, background: 'red' },
     { offset: 0.72, background: 'var(--background)' },
     { offset: 1, background: 'green' }
-  ]);
+  ]}
+>
+...
+</CreateAnimation>
 ```
 </docs-tab>
 </docs-tabs>
@@ -205,7 +216,6 @@ Multiple elements can be animated at the same time and controlled via a single p
 ```javascript
 const squareA = createAnimation()
   .addElement(document.querySelector('.square-a'))
-  .fill('none')
   .keyframes([
     { offset: 0, transform: 'scale(1) rotate(0)' },
     { offset: 0.5, transform: 'scale(1.2) rotate(45deg)' },
@@ -214,21 +224,19 @@ const squareA = createAnimation()
   
 const squareB = createAnimation()
   .addElement(document.querySelector('.square-b'))
-  .fill('none')
   .keyframes([
-    { offset: 0, transform: 'scale(1))', opacity: 1 },
-    { offset: 0.5, transform: 'scale(1.2)', opacity: 0.3 },
-    { offset: 1, transform: 'scale(1)', opacity: 1 }
+    { offset: 0, transform: 'scale(1))', opacity: '1' },
+    { offset: 0.5, transform: 'scale(1.2)', opacity: '0.3' },
+    { offset: 1, transform: 'scale(1)', opacity: '1' }
   ]);
   
 const squareC = createAnimation()
   .addElement(document.querySelector('.square-c'))
-  .fill('none')
   .duration(5000)
   .keyframes([
-    { offset: 0, transform: 'scale(1))', opacity: 0.5 },
-    { offset: 0.5, transform: 'scale(0.8)', opacity: 1 },
-    { offset: 1, transform: 'scale(1)', opacity: 0.5 }
+    { offset: 0, transform: 'scale(1))', opacity: '0.5' },
+    { offset: 0.5, transform: 'scale(0.8)', opacity: '1' },
+    { offset: 1, transform: 'scale(1)', opacity: '0.5' }
   ]);
 
 const parent = createAnimation()
@@ -243,7 +251,6 @@ const parent = createAnimation()
 ```javascript
 const squareA = this.animationCtrl.create()
   .addElement(this.squareA.nativeElement)
-  .fill('none')
   .keyframes([
     { offset: 0, transform: 'scale(1) rotate(0)' },
     { offset: 0.5, transform: 'scale(1.2) rotate(45deg)' },
@@ -252,21 +259,19 @@ const squareA = this.animationCtrl.create()
   
 const squareB = this.animationCtrl.create()
   .addElement(this.squareB.nativeElement)
-  .fill('none')
   .keyframes([
-    { offset: 0, transform: 'scale(1))', opacity: 1 },
-    { offset: 0.5, transform: 'scale(1.2)', opacity: 0.3 },
-    { offset: 1, transform: 'scale(1)', opacity: 1 }
+    { offset: 0, transform: 'scale(1))', opacity: '1' },
+    { offset: 0.5, transform: 'scale(1.2)', opacity: '0.3' },
+    { offset: 1, transform: 'scale(1)', opacity: '1' }
   ]);
   
 const squareC = this.animationCtrl.create()
   .addElement(this.squareC.nativeElement)
-  .fill('none')
   .duration(5000)
   .keyframes([
-    { offset: 0, transform: 'scale(1))', opacity: 0.5 },
-    { offset: 0.5, transform: 'scale(0.8)', opacity: 1 },
-    { offset: 1, transform: 'scale(1)', opacity: 0.5 }
+    { offset: 0, transform: 'scale(1))', opacity: '0.5' },
+    { offset: 0.5, transform: 'scale(0.8)', opacity: '1' },
+    { offset: 1, transform: 'scale(1)', opacity: '0.5' }
   ]);
 
 const parent = this.animationCtrl.create()
@@ -278,39 +283,68 @@ const parent = this.animationCtrl.create()
 </docs-tab>
 <docs-tab tab="react">
 
-```javascript
-const squareA = createAnimation()
-  .addElement(document.querySelector('.square-a'))
-  .fill('none')
-  .keyframes([
-    { offset: 0, transform: 'scale(1) rotate(0)' },
-    { offset: 0.5, transform: 'scale(1.2) rotate(45deg)' },
-    { offset: 1, transform: 'scale(1) rotate(45deg) '}
-  ]);
-  
-const squareB = createAnimation()
-  .addElement(document.querySelector('.square-b'))
-  .fill('none')
-  .keyframes([
-    { offset: 0, transform: 'scale(1))', opacity: 1 },
-    { offset: 0.5, transform: 'scale(1.2)', opacity: 0.3 },
-    { offset: 1, transform: 'scale(1)', opacity: 1 }
-  ]);
-  
-const squareC = createAnimation()
-  .addElement(document.querySelector('.square-c'))
-  .fill('none')
-  .duration(5000)
-  .keyframes([
-    { offset: 0, transform: 'scale(1))', opacity: 0.5 },
-    { offset: 0.5, transform: 'scale(0.8)', opacity: 1 },
-    { offset: 1, transform: 'scale(1)', opacity: 0.5 }
-  ]);
+```typescript
+private parentRef: React.RefObject<CreateAnimation> = React.createRef();
+private squareARef: React.RefObject<CreateAnimation> = React.createRef();
+private squareBRef: React.RefObject<CreateAnimation> = React.createRef();
+private squareCRef: React.RefObject<CreateAnimation> = React.createRef();
 
-const parent = createAnimation()
-  .duration(2000)
-  .iterations(Infinity)
-  .addAnimation([squareA, squareB, squareC]);
+...
+
+componentDidMount() {
+  const parent = this.parentRef.current!.animation;
+  const squareA = this.squareARef.current!.animation;
+  const squareB = this.squareBRef.current!.animation;
+  const squareC = this.squareCRef.current!.animation;
+  
+  parent.addAnimation([squareA, squareB, squareC]);
+}
+
+render() {
+  return (
+    <>
+      <CreateAnimation
+        ref={this.parentRef}
+        duration={2000}
+        iterations={Infinity}
+      ></CreateAnimation>
+      
+      <CreateAnimation
+        ref={this.squareARef}
+        keyframes={[
+          { offset: 0, transform: 'scale(1) rotate(0)' },
+          { offset: 0.5, transform: 'scale(1.2) rotate(45deg)' },
+          { offset: 1, transform: 'scale(1) rotate(0deg) '}
+        ]}
+      >
+        <div className="square"></div>
+      </CreateAnimation>
+      
+      <CreateAnimation
+        ref={this.squareBRef}
+        keyframes={[
+          { offset: 0, transform: 'scale(1)', opacity: '1' },
+          { offset: 0.5, transform: 'scale(1.2)', opacity: '0.3' },
+          { offset: 1, transform: 'scale(1)', opacity: '1' }
+        ]}
+      >
+        <div className="square"></div>
+      </CreateAnimation>
+      
+      <CreateAnimation
+        ref={this.squareCRef}
+        duration={5000}
+        keyframes={[
+          { offset: 0, transform: 'scale(1)', opacity: '0.5' },
+          { offset: 0.5, transform: 'scale(0.8)', opacity: '1' },
+          { offset: 1, transform: 'scale(1)', opacity: '0.5' }
+        ]}
+      >
+        <div className="square"></div>
+      </CreateAnimation>
+    </>
+  )
+}
 ```
 
 </docs-tab>
@@ -369,22 +403,24 @@ this.animationCtrl.create()
 </docs-tab>
 <docs-tab tab="react">
 
-```javascript
-createAnimation()
-  .addElement(document.querySelector('.square'))
-  .duration(2000)
-  .beforeStyles({
+```typescript
+<CreateAnimation
+  duration={2000}
+  beforeStyles={{
     opacity: 0.2
-  })
-  .afterStyles({
+  }}
+  afterStyles={{
     background: 'rgba(0, 255, 0, 0.5)'
-  })
-  .afterClearStyles(['opacity'])
-  .keyframes([
+  }}
+  afterClearStyles={['opacity']}
+  keyframes={[
     { offset: 0, transform: 'scale(1)' },
     { offset: 0.5, transform: 'scale(1.5)' },
     { offset: 1, transform: 'scale(1)' }
-  ])
+  ]}
+>
+  ...
+</CreateAnimation>
 ```
 </docs-tab>
 </docs-tabs>
@@ -420,9 +456,9 @@ const squareB = createAnimation()
   .fill('none')
   .duration(1000)
   .keyframes([
-    { offset: 0, transform: 'scale(1)', opacity: 1 },
-    { offset: 0.5, transform: 'scale(1.2)', opacity: 0.3 },
-    { offset: 1, transform: 'scale(1)', opacity: 1 }
+    { offset: 0, transform: 'scale(1)', opacity: '1' },
+    { offset: 0.5, transform: 'scale(1.2)', opacity: '0.3' },
+    { offset: 1, transform: 'scale(1)', opacity: '1' }
   ]);
   
 const squareC = createAnimation()
@@ -430,9 +466,9 @@ const squareC = createAnimation()
   .fill('none')
   .duration(1000)
   .keyframes([
-    { offset: 0, transform: 'scale(1)', opacity: 0.5 },
-    { offset: 0.5, transform: 'scale(0.8)', opacity: 1 },
-    { offset: 1, transform: 'scale(1)', opacity: 0.5 }
+    { offset: 0, transform: 'scale(1)', opacity: '0.5' },
+    { offset: 0.5, transform: 'scale(0.8)', opacity: '1' },
+    { offset: 1, transform: 'scale(1)', opacity: '0.5' }
   ]);
 
 await squareA.play();
@@ -458,9 +494,9 @@ const squareB = this.animationCtrl.create()
   .fill('none')
   .duration(1000)
   .keyframes([
-    { offset: 0, transform: 'scale(1)', opacity: 1 },
-    { offset: 0.5, transform: 'scale(1.2)', opacity: 0.3 },
-    { offset: 1, transform: 'scale(1)', opacity: 1 }
+    { offset: 0, transform: 'scale(1)', opacity: '1' },
+    { offset: 0.5, transform: 'scale(1.2)', opacity: '0.3' },
+    { offset: 1, transform: 'scale(1)', opacity: '1' }
   ]);
   
 const squareC = this.animationCtrl.create()
@@ -468,9 +504,9 @@ const squareC = this.animationCtrl.create()
   .fill('none')
   .duration(1000)
   .keyframes([
-    { offset: 0, transform: 'scale(1)', opacity: 0.5 },
-    { offset: 0.5, transform: 'scale(0.8)', opacity: 1 },
-    { offset: 1, transform: 'scale(1)', opacity: 0.5 }
+    { offset: 0, transform: 'scale(1)', opacity: '0.5' },
+    { offset: 0.5, transform: 'scale(0.8)', opacity: '1' },
+    { offset: 1, transform: 'scale(1)', opacity: '0.5' }
   ]);
 
 await squareA.play();
@@ -480,40 +516,67 @@ await squareC.play();
 </docs-tab>
 <docs-tab tab="react">
 
-```javascript
-const squareA = createAnimation()
-  .addElement(document.querySelector('.square-a'))
-  .fill('none')
-  .duration(1000)
-  .keyframes([
-    { offset: 0, transform: 'scale(1) rotate(0)' },
-    { offset: 0.5, transform: 'scale(1.2) rotate(45deg)' },
-    { offset: 1, transform: 'scale(1) rotate(0) '}
-  ]);
-  
-const squareB = createAnimation()
-  .addElement(document.querySelector('.square-b'))
-  .fill('none')
-  .duration(1000)
-  .keyframes([
-    { offset: 0, transform: 'scale(1)', opacity: 1 },
-    { offset: 0.5, transform: 'scale(1.2)', opacity: 0.3 },
-    { offset: 1, transform: 'scale(1)', opacity: 1 }
-  ]);
-  
-const squareC = createAnimation()
-  .addElement(document.querySelector('.square-c'))
-  .fill('none')
-  .duration(1000)
-  .keyframes([
-    { offset: 0, transform: 'scale(1)', opacity: 0.5 },
-    { offset: 0.5, transform: 'scale(0.8)', opacity: 1 },
-    { offset: 1, transform: 'scale(1)', opacity: 0.5 }
-  ]);
+```typescript
+private squareARef: React.RefObject<CreateAnimation> = React.createRef();
+private squareBRef: React.RefObject<CreateAnimation> = React.createRef();
+private squareCRef: React.RefObject<CreateAnimation> = React.createRef();
 
-await squareA.play();
-await squareB.play();
-await squareC.play();
+...
+
+async componentDidMount() {
+  const squareA = this.squareARef.current!.animation;
+  const squareB = this.squareBRef.current!.animation;
+  const squareC = this.squareCRef.current!.animation;
+  
+  await squareA.play();
+  await squareB.play();
+  await squareC.play();
+}
+
+render() {
+  return (
+    <>
+      <CreateAnimation
+        ref={this.squareARef}
+        fill="none"
+        duration={1000}
+        keyframes={[
+          { offset: 0, transform: 'scale(1) rotate(0)' },
+          { offset: 0.5, transform: 'scale(1.2) rotate(45deg)' },
+          { offset: 1, transform: 'scale(1) rotate(0deg) '}
+        ]}
+      >
+        <div className="square"></div>
+      </CreateAnimation>
+      
+      <CreateAnimation
+        ref={this.squareBRef}
+        fill="none"
+        duration={1000}
+        keyframes={[
+          { offset: 0, transform: 'scale(1)', opacity: '1' },
+          { offset: 0.5, transform: 'scale(1.2)', opacity: '0.3' },
+          { offset: 1, transform: 'scale(1)', opacity: '1' }
+        ]}
+      >
+        <div className="square"></div>
+      </CreateAnimation>
+      
+      <CreateAnimation
+        ref={this.squareCRef}
+        fill="none"
+        duration={1000}
+        keyframes={[
+          { offset: 0, transform: 'scale(1)', opacity: '0.5' },
+          { offset: 0.5, transform: 'scale(0.8)', opacity: '1' },
+          { offset: 1, transform: 'scale(1)', opacity: '0.5' }
+        ]}
+      >
+        <div className="square"></div>
+      </CreateAnimation>
+    </>
+  )
+}
 ```
 </docs-tab>
 </docs-tabs>
@@ -759,13 +822,19 @@ this.animationCtrl.create()
 </docs-tab>
 <docs-tab tab="react">
 
-```javascript
-createAnimation()
-   .addElement(document.querySelector('.square'))
-   .duration(1500)
-   .iterations(Infinity)
-   .direction('alternate')
-   .fromTo('background', 'blue', 'var(--background)');
+```typescript
+<CreateAnimation
+  duration={1500}
+  iterations={Infinity}
+  direction='alternate'
+  fromTo={{
+    property: 'background',
+    fromValue: 'blue',
+    toValue: 'var(--background)'
+  }}
+>
+  <div className="square"></div>
+</CreateAnimation>
 ```
 </docs-tab>
 </docs-tabs>
