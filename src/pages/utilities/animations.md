@@ -219,7 +219,7 @@ const squareA = createAnimation()
   .keyframes([
     { offset: 0, transform: 'scale(1) rotate(0)' },
     { offset: 0.5, transform: 'scale(1.2) rotate(45deg)' },
-    { offset: 1, transform: 'scale(1) rotate(45deg) '}
+    { offset: 1, transform: 'scale(1) rotate(45deg)' }
   ]);
   
 const squareB = createAnimation()
@@ -254,7 +254,7 @@ const squareA = this.animationCtrl.create()
   .keyframes([
     { offset: 0, transform: 'scale(1) rotate(0)' },
     { offset: 0.5, transform: 'scale(1.2) rotate(45deg)' },
-    { offset: 1, transform: 'scale(1) rotate(45deg) '}
+    { offset: 1, transform: 'scale(1) rotate(45deg)' }
   ]);
   
 const squareB = this.animationCtrl.create()
@@ -314,7 +314,7 @@ render() {
         keyframes={[
           { offset: 0, transform: 'scale(1) rotate(0)' },
           { offset: 0.5, transform: 'scale(1.2) rotate(45deg)' },
-          { offset: 1, transform: 'scale(1) rotate(0deg) '}
+          { offset: 1, transform: 'scale(1) rotate(0deg)' }
         ]}
       >
         <div className="square"></div>
@@ -448,7 +448,7 @@ const squareA = createAnimation()
   .keyframes([
     { offset: 0, transform: 'scale(1) rotate(0)' },
     { offset: 0.5, transform: 'scale(1.2) rotate(45deg)' },
-    { offset: 1, transform: 'scale(1) rotate(0) '}
+    { offset: 1, transform: 'scale(1) rotate(0)' }
   ]);
   
 const squareB = createAnimation()
@@ -486,7 +486,7 @@ const squareA = this.animationCtrl.create()
   .keyframes([
     { offset: 0, transform: 'scale(1) rotate(0)' },
     { offset: 0.5, transform: 'scale(1.2) rotate(45deg)' },
-    { offset: 1, transform: 'scale(1) rotate(0) '}
+    { offset: 1, transform: 'scale(1) rotate(0)' }
   ]);
   
 const squareB = this.animationCtrl.create()
@@ -543,7 +543,7 @@ render() {
         keyframes={[
           { offset: 0, transform: 'scale(1) rotate(0)' },
           { offset: 0.5, transform: 'scale(1.2) rotate(45deg)' },
-          { offset: 1, transform: 'scale(1) rotate(0deg) '}
+          { offset: 1, transform: 'scale(1) rotate(0deg)' }
         ]}
       >
         <div className="square"></div>
