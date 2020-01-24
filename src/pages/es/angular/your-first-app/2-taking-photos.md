@@ -5,14 +5,14 @@ nextText: 'Saving Photos on Filesystem'
 nextUrl: '/docs/angular/your-first-app/3-saving-photos'
 ---
 
-# Taking Photos with the Camera
+# Capturando fotos con la cámara
 
 Now for the fun part - adding the ability to take photos with the device’s camera using the Capacitor [Camera API](https://capacitor.ionicframework.com/docs/apis/camera). We’ll begin with building it for the web, then make some small tweaks to make it work on mobile (iOS and Android).
 
 All Capacitor logic will be encapsulated in a service class. Create `PhotoService` using the `ionic generate` command:
 
 ```bash
-$ ionic g service servicios/foto
+$ ionic g service services/photo
 ```
 
 Open the newly created `services/photo.service.ts` file, and let’s add the logic that will power the camera functionality. First, import Capacitor dependencies and get references to the Camera, Filesystem, and Storage plugins:
