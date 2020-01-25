@@ -15,25 +15,25 @@ Pour **créer une nouvelle automatisation**, cliquez sur le bouton `Nouvelle aut
 
 Pour **modifier une automatisation**, cliquez sur les trois points à côté de celui que vous souhaitez modifier.
 
-## Customizing Automations
+## Personnalisation des automatisations
 
-There are a number of customizations available to specify the specific behavior of a given automation. They are shown on the create/edit automation form below.
+Il existe un certain nombre de personnalisations disponibles pour spécifier le comportement spécifique d'une automatisation donnée. Ils sont indiqués sur le formulaire d'automatisation de création / modification ci-dessous.
 
-### Basic Automation Info
+### Informations d'automatisation de base
 
-All automations need a name and git branch to trigger from. Whenever code is pushed to the selected branch, the automation will run.
+Toutes les automatisations nécessitent un nom et une branche git pour déclencher. Chaque fois que le code est poussé vers la branche sélectionnée, l'automatisation s'exécute.
 
 ![Choosing an Automation Type](/docs/assets/img/appflow/ss-automation-create-type.png)
 
-#### Fields
+#### Des champs
 
-* **Name:** A name to identify the automation task.
-* **Git Branch:** The branch which will trigger the automation. This will run a build any time a `git push` is made to the specified branch.
-* **Automation Type:** The type of job this automation will run.
+* ** Name: ** un nom pour identifier la tâche d'automatisation.
+* ** Git Branch: ** la branche qui déclenchera l'automatisation. Cela exécutera une génération chaque fois qu'un ` git push ` est effectué sur la branche spécifiée.
+* ** Type d'automatisation **: type de travail exécuté par cette automatisation.
 
-In addition to name and git branches, automations have a number of customizations available depending on the type of job selected.
+En plus des branches nom et git, les automatisations ont un certain nombre de personnalisations disponibles selon le type de travail sélectionné.
 
-##### Note about Git Branch naming
+##### Remarque sur la dénomination de Git Branch
 
 It is possible to specify one or multiple `*` wildcards character to match multiple branches within a single automation; for instance:
 
