@@ -5,7 +5,7 @@ version: 3.1.0
 minor: 3.1.X
 ---
 
-The Vibration plugin provides the ability to vibrate the device for a given amount of time.
+Le plugin Vibration offre la possibilité de faire vibrer l'appareil pendant une durée donnée.
 
 <native-ent-install plugin-id="vibration" variables=""></native-ent-install>
 
@@ -32,37 +32,37 @@ constructor(private vibration: Vibration) { }
 
 ...
 
-// Vibrate the device for a second
-// Duration is ignored on iOS.
+// Vibrer l'appareil pendant une seconde
+// La durée est ignorée sur iOS.
 this.vibration.vibrate(1000);
 
-// Vibrate 2 seconds
-// Pause for 1 second
-// Vibrate for 2 seconds
-// Patterns work on Android only
+// Vibre 2 secondes
+// Pause pendant 1 seconde
+// Vibre pendant 2 secondes
+// Les modèles fonctionnent uniquement sur Android
 this.vibration.vibrate([2000,1000,2000]);
 
-// Stop any current vibrations immediately
-// Works on Android only
+// Arrête immédiatement les vibrations actuelles
+// Fonctionne sur Android uniquement
 this.vibration.vibrate(0);
 ```
 
 <a id="vibration.vibrate"></a>
 
-### vibrate
+### vibrer
 
-▸ **vibrate**(time: *`number` \| `number`[]*): `void`
+▸ ** vibrer ** (heure: * ` numéro ` \ | ` numéro ` [] *): ` void `
 
-Vibrates the device for given amount of time.
+Fait vibrer l'appareil pendant une durée donnée.
 
-**Parameters:**
+**Paramètres :**
 
-| Name | Type        | Description                                                                                                                                                   |
-| ---- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| time | `number` \ | `number`[] | Milliseconds to vibrate the device. If passed an array of numbers, it will define a vibration pattern. Pass 0 to stop any vibration immediately. |
+| Nom   | Type          | Description                                                                                                                                                                          |
+| ----- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| temps | ` numéro ` \ | ` numéro ` [] | Millisecondes pour faire vibrer l'appareil. Si passé un tableau de nombres, il définira un modèle de vibration. Passez 0 pour arrêter immédiatement toute vibration. |
 
 
-**Returns:** `void`
+** Renvoie: ** ` void `
 
 * * *
 
