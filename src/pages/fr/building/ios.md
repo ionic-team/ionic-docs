@@ -117,6 +117,8 @@ Once an app is running on an iOS device or simulator, it can be debugged in Safa
 Safari has Web Inspector support for iOS simulators and devices. Open the **Develop** menu and select the simulator or device, then select the Ionic App to open Web Inspector.
 
 > If the **Develop** menu is hidden, enable it in **Safari** &raquo; **Preferences** &raquo; **Advanced** &raquo; **Show Develop menu in menu bar**.
+> 
+> If the app isn't listed, the Web Inspector may need to be enabled on the device in **Settings** &raquo; **Safari** &raquo; **Advanced** &raquo; **Web Inspector**.
 
 ![Safari Web Inspector](/docs/assets/img/running/ios-safari-web-inspector-timelines.png)
 
