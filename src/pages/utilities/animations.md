@@ -714,14 +714,14 @@ private getStep(ev) {
 <docs-tab tab="react">
 
 ```javascript
-import { createGesture, CreateAnimation, GestureDetail } from '@ionic/react';
+import { createGesture, CreateAnimation, Gesture, GestureDetail } from '@ionic/react';
 import React from 'react';
 
 const MAX_TRANSLATE = 400;
 
 class MyComponent extends React.Component<{}, any> {
   private animation: React.RefObject<CreateAnimation> = React.createRef();
-  private gesture: any;
+  private gesture?: Gesture;
   private started: boolean = false;
   private initialStep: number = 0;
   
@@ -768,7 +768,7 @@ class MyComponent extends React.Component<{}, any> {
   private onEnd(ev: GestureDetail) {
     if (!this.started) { return; }
   
-    this.gesture.enable(false);
+    this.gesture!.enable(false);
   
     const step = this.getStep(ev);
     const shouldComplete = step > 0.5;
@@ -777,7 +777,7 @@ class MyComponent extends React.Component<{}, any> {
       ...this.state,
       progressEnd: { playTo: (shouldComplete) ? 1 : 0, step },
       onFinish: { callback: () => {
-        this.gesture.enable(true);
+        this.gesture!.enable(true);
         this.setState({
           progressStart: undefined,
           progressStep: undefined,
