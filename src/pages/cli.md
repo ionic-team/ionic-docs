@@ -11,7 +11,7 @@ The Ionic command-line interface ([CLI](/docs/faq/glossary#cli)) is your go-to t
 The Ionic CLI can be installed globally with npm:
 
 ```shell
-$ npm install -g ionic
+$ npm install -g @ionic/cli
 ```
 
 ## Help
