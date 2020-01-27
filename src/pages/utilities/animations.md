@@ -814,7 +814,7 @@ class MyComponent extends React.Component<{}, any> {
               property: 'transform',
               fromValue: 'translateX(0)',
               toValue: `translateX(${MAX_TRANSLATE}px)`
-            }}>
+          }}>
             <div className="square"></div>
           </CreateAnimation>
         </div>
