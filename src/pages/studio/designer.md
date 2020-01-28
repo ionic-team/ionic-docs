@@ -2,32 +2,30 @@
 
 ---
 
-# Compose Overview
+# Designer Overview
 
-Compose is the powerhouse of Ionic app development, offering a powerful side-by-side coupling of component code and an interactive canvas for building components.
+The Designer is the powerhouse of Studio, offering a drag-and-drop page builder for pages and components, with a code-behind editor for the template, styles, and scripts (TypeScript)
 
 ## Introduction
 
-Pages and components are opened in a split view, bringing code and canvas together.
+With the Designer, developers can:
 
-Compose mode features include:
-
-* Quickly navigate and hone in on code
-* Immediate feedback upon even the smallest of changes
-* Select from a rich library of elements right at your fingertips
-* Reorganize the structure of components simply by dragging them around
-* Deep understanding of the elements that make up app components
-* Focus on building the app, not fighting with the file tree
+* Drag and drop to build pages and components
+* Select from the entire library of Ionic elements for drag-and-drop *and* code editing.
+* Switch between visual and code editing for pages and components
+* View and work with most supported Ionic element properties, saving a trip checking the Documentation
 
 <figure>
-  <img alt="Compose Mode" src="/docs/assets/img/studio/ss-compose.png" />
+  <img alt="Designer Mode" src="/docs/assets/img/studio/ss-compose.png" />
 </figure>
 
 ## Pages and Components
 
-In Compose mode, pages and components are brought to life from the collection of files (such as TypeScript, HTML, CSS, Module, and Spec files) that represent them.
+In the Designer, pages and components work directly off of the files powering them (TypeScript, HTML, CSS).
 
-When first loaded, the page index is shown. This list comprises the pages that Ionic Studio found in the app.
+When first loaded, the page index is shown. This list comprises the pages that Studio detected in the app. Components detected can be seen by switching to the components tab.
+
+Studio finds pages and components by scanning your project looking for Component source files, so works on a variety of project file layouts.
 
 <blockquote>
 <p>Since the difference between pages and components is conceptual, Ionic Studio relies on convention to differentiate them. If there are pages missing, make sure each page follows the convention Ionic Studio is expecting:</p>
@@ -38,34 +36,25 @@ When first loaded, the page index is shown. This list comprises the pages that I
   <img alt="Page Index" src="/docs/assets/img/studio/ss-page-index.png" />
 </figure>
 
-Switching to the component index reveals all the components found in the app.
+Switching to the component section on the Designer index reveals all the components found in the app.
 
 <figure>
   <img alt="Component Index" src="/docs/assets/img/studio/ss-component-index.png" />
 </figure>
 
-See [Adding Features](#adding-features) to create new pages and components.
+See [Adding Pages and Components](#adding-pages-and-components) to create new pages and components.
 
-## Adding Features
+## Adding Pages and Components
 
-To add features to an app, click the **Add Feature** button at the top left of Ionic Studio.
+To add pages or components to an app, click the **New** button in the top right of the page index.
 
 <figure>
   <img alt="New Feature Button" src="/docs/assets/img/studio/ss-new-feature-button.png" />
 </figure>
 
-There are several types of features available:
-
-* **Pages**
-* **Components**
-* **Services**
-* **Directives**
-* **Route Guards**
-* **Pipes**
-
 ### Adding Components
 
-When adding a component, Ionic Studio will prompt for the name and a page in which to register it.
+When adding a component, Studio will prompt for the name and a page in which to register it.
 
 <figure>
   <img alt="New Component Modal" src="/docs/assets/img/studio/ss-new-component-modal.png" />
@@ -77,27 +66,17 @@ This adds the component as a _import_ in the NgModule of the selected page, whic
 The same code changes are necessary to use the component in other pages. See <a href="/docs/studio/faq#using-a-custom-component-in-additional-pages">this FAQ</a> for details.
 </blockquote>
 
-## Template Mode
-
-In **Template** mode, the code on the left and canvas on the right are synchronized. Navigating or making changes in one will update the other. The [properties panel](#properties-panels) is also updated each time the selected element changes.
-
-A great deal can be accomplished with the interactive canvas and the properties panel alone, but template code may need to be manually edited when extensive dynamic template logic is used, or other complex use cases.
-
-<figure>
-  <img alt="Editing Templates" src="/docs/assets/img/studio/ss-compose-template.png" />
-</figure>
-
 ## Drag & Drop
 
-Compose mode offers drag & drop support when adding new elements and rearranging existing elements.
+The Designer offers a drag & drop canvas for quickly adding new elements and rearranging existing elements.
 
 ### Selecting Elements
 
 To select an element, click on it in the canvas. To select a child element, double click on its parent. Continue to double click to select deeper child elements and to edit text.
 
-To exit the current selection, use the <kbd>Esc</kbd> key.
-
 To enable fine-selection, which selects the deepest child under the mouse cursor, hold down the <kbd>Ctrl</kbd> key (or <kbd>Command</kbd> for macOS) and hover over an element.
+
+To exit the current selection, use the <kbd>Esc</kbd> key.
 
 To select any element under the cursor, right click and choose an element from the `Select Element` dropdown:
 
@@ -113,17 +92,14 @@ To select any element in the current document, access the element tree and click
 
 ### Adding New Elements
 
-To add new elements to a template, first open the element insertion dropdowns by clicking one of the buttons near the top of Compose.
+To add new elements to a page or component, drag and drop a new element from the Elements list, or use right click and "Quick Add" to 
+add context-specific elements easily.
 
 <figure>
   <img alt="Add Element Menu" src="/docs/assets/img/studio/ss-add-element-menu.png" />
 </figure>
 
-These menus contains HTML elements, Ionic components, and the custom components in the app.
-
-To insert an element, click and hold on it, then drag it into place in either canvas or code (in **Template** mode).
-
-Dragging an element into code allows more precise placement, but dragging it into the canvas may be easier and offers intelligent `slot` usage when using Ionic components.
+Elements may also be dragged into the HTML for a page or component, and will result in a new code snippet being inserted at the cursor position.
 
 ### Quick Adding New Elements
 
@@ -141,31 +117,42 @@ Remember, it is also possible to drag and drop code selections in the code edito
 
 ## Properties Panel
 
-When the cursor is inside of an element in the code editor, or selected in canvas, the properties panel will update to reflect the selected element.
+When an element is selected in the Designer canvas, the properties panel will update to reflect the selected element.
 
 <figure>
   <img alt="Properties Panel" src="/docs/assets/img/studio/ss-properties-panel.png" />
 </figure>
 
-In the properties panel, the properties for the selected element are listed. Properties can be changed, as well.
+In the properties panel, the properties that can be modified are listed.
 
-For Ionic components, the properties panel contains a link to the component's documentation at the top, next to its name.
+For Ionic components, the properties panel contains a link to the component's documentation at the bottom.
 
 <blockquote>
 Unfortunately, the properties panel does not show properties for custom components in your app, but this is a feature we'll be adding!
 </blockquote>
 
-## Styles Mode
+## Code Editing
 
-In **Styles** mode, changes to the component's styles are reflected in the canvas when saved. The styles in this mode are only applicable to the current page or component.
+The HTML, CSS, and JS (TypeScript) for a page or company can be edited by switching to Code mode.
+
+## Template Editing
+
+Each page or component has an HTML template that makes up its structure. Template editing makes it easy to make quick edits to the template, such as changing text or dragging in new element code snippets from the Elements list.
+
+## Styles Editing
+
+The Styles editor contains the CSS (Sass) for that page or component.
+
+Any changes to the styles are reflected in the canvas when saved. The styles in this mode are only applicable to the current page or component.
 
 <figure>
   <img alt="Editing Styles" src="/docs/assets/img/studio/ss-compose-styles.png" />
 </figure>
 
-## Other Compose Modes
+## Scripts Editing
 
-The **Scripts** and **Module** modes are for making changes to the controller and NgModule, respectively. These modes are mostly here for convenience and do not actively change the canvas or properties panel.
+The **Scripts** editor is for making changes to the controller, or logic, behind a page or component. This editor is used for making
+quick changes to logic for the page or component. For more complicated changes we recommend opening the project in a full-fledged code editor.
 
 <figure>
   <img alt="Editing Scripts" src="/docs/assets/img/studio/ss-compose-scripts.png" />
