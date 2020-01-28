@@ -43,7 +43,9 @@ Run the following in the command line terminal to install the Ionic CLI (`ionic`
 $ npm install -g @ionic/cli native-run cordova-res
 ```
 
-> The `-g` option means install globally. When packages are installed globally, permission errors can occur. Consider [setting up npm](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally) to operate globally without elevated permissions. Running the command prompt as an Admin (or using `sudo` on Mac & Linux) with npm is not recommended.
+> The `-g` option means _install globally_. When packages are installed globally, `EACCES` permission errors can occur.
+>
+> Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](/docs/faq/tips#resolving-permission-errors) for more information.
 
 
 ## Create an App
