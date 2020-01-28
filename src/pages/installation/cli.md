@@ -14,7 +14,7 @@ Ionic apps are created and developed primarily through the Ionic [command-line](
 
 ## Install the Ionic CLI
 
-Before proceeding, make sure the latest LTS version of [Node.js](/docs/faq/glossary#node) and [npm](/docs/faq/glossary#npm) are installed. See [Environment Setup](/docs/installation/environment) for details. Install the Ionic CLI globally with npm:
+Before proceeding, make sure the latest LTS version of [Node.js](/docs/faq/glossary#node) and [npm](/docs/faq/glossary#npm) are installed. See [Environment Setup](/docs/installation/environment) for details. Install the Ionic CLI with npm:
 
 ```shell
 $ npm install -g @ionic/cli
