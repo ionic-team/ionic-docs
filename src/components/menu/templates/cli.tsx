@@ -10,7 +10,7 @@ const items = {
     'menu-cli-configuration': '/docs/cli/configuration',
     'menu-cli-livereload': '/docs/cli/livereload',
     'menu-cli-using-a-proxy': '/docs/cli/using-a-proxy',
-    'menu-cli-changelog': 'https://github.com/ionic-team/ionic-cli/blob/master/packages/ionic/CHANGELOG.md'
+    'menu-cli-changelog': 'https://github.com/ionic-team/ionic-cli/blob/develop/packages/@ionic/cli/CHANGELOG.md'
   },
   'menu-cli-commands': Object.entries(commands).sort()
 };
