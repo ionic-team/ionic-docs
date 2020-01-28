@@ -20,35 +20,31 @@ It is important to note that the background and text color variables also requir
 
 | Name                                          | Description                                                |
 | ----------------------------------------------| -----------------------------------------------------------|
-| `--ion-background-color`                      | Background color of entire app                             |
-| `--ion-background-color-rgb`                  | Background color of entire app, rgb format                 |
-| `--ion-text-color`                            | Text color of entire app                                   |
-| `--ion-text-color-rgb`                        | Text color of entire app, rgb format                       |
+| `--ion-background-color`                      | Background color of the entire app                         |
+| `--ion-background-color-rgb`                  | Background color of the entire app, rgb format             |
+| `--ion-text-color`                            | Text color of the entire app                               |
+| `--ion-text-color-rgb`                        | Text color of the entire app, rgb format                   |
 | `--ion-backdrop-color`                        | Color of the Backdrop component                            |
 | `--ion-overlay-background-color`              | Background color of the overlays                           |
 | `--ion-border-color`                          | Border color                                               |
 | `--ion-box-shadow-color`                      | Box shadow color                                           |
-| `--ion-tab-bar-background`                    | Background of the Tab bar                                  |
-| `--ion-tab-bar-background-focused`            | Background of the focused Tab bar                          |
-| `--ion-tab-bar-border-color`                  | Border color of the Tab bar                                |
-| `--ion-tab-bar-color`                         | Color of the Tab bar                                       |
-| `--ion-tab-bar-color-activated`               | Color of the activated Tab                                 |
+| `--ion-tab-bar-background`                    | Background of the Tab Bar                                  |
+| `--ion-tab-bar-background-focused`            | Background of the focused Tab Bar                          |
+| `--ion-tab-bar-border-color`                  | Border color of the Tab Bar                                |
+| `--ion-tab-bar-color`                         | Color of the Tab Bar                                       |
+| `--ion-tab-bar-color-selected`                | Color of the selected Tab Button                           |
 | `--ion-toolbar-background`                    | Background of the Toolbar                                  |
 | `--ion-toolbar-border-color`                  | Border color of the Toolbar                                |
 | `--ion-toolbar-color`                         | Color of the components in the Toolbar                     |
-| `--ion-toolbar-color-activated`               | Color of the activated components in the Toolbar           |
 | `--ion-toolbar-segment-color`                 | Color of the Segment Buttons in the Toolbar                |
 | `--ion-toolbar-segment-color-checked`         | Color of the checked Segment Buttons in the Toolbar        |
-| `--ion-toolbar-segment-color-hover`           | Color of the Segment Buttons on hover in the Toolbar       |
 | `--ion-toolbar-segment-background`            | Background of the Segment Buttons in the Toolbar           |
 | `--ion-toolbar-segment-background-checked`    | Background of the Segment Buttons in the Toolbar           |
-| `--ion-toolbar-segment-background-hover`      | Background of the Segment Buttons on hover in the Toolbar  |
-| `--ion-toolbar-segment-indicator-color`       | Color of the Segment checked indicator in the Toolbar      |
-| `--ion-item-background-activated`             | Background of the activated Item                           |
+| `--ion-toolbar-segment-indicator-color`       | Color of the Segment Button indicator in the Toolbar       |
 | `--ion-item-background`                       | Background of the Item                                     |
 | `--ion-item-border-color`                     | Border color of the Item                                   |
 | `--ion-item-color`                            | Color of the components in the Item                        |
-| `--ion-placeholder-color`                     | Color of the placeholder in inputs                         |
+| `--ion-placeholder-color`                     | Color of the placeholder in Inputs                         |
 
 
 ## Stepped Colors
