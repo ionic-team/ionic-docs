@@ -52,9 +52,7 @@ To add pages or components to an app, click the **New** button in the top right 
   <img alt="New Feature Button" src="/docs/assets/img/studio/ss-new-feature-button.png" />
 </figure>
 
-### Adding Components
-
-When adding a component, Studio will prompt for the name and a page in which to register it.
+When adding a component (rather than a page), Studio will prompt for the name and a page in which to register it.
 
 <figure>
   <img alt="New Component Modal" src="/docs/assets/img/studio/ss-new-component-modal.png" />
