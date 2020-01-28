@@ -28,7 +28,7 @@ It’s easy to get started. Find the complete app code referenced in this guide 
 
 Download and install these right away to ensure an optimal Ionic development experience:
 * <strong>Node.js</strong> for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
-* <strong>A code editor</strong> for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/) or [Ionic Studio](https://ionicframework.com/studio).
+* <strong>A code editor</strong> for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
 * <strong>Command-line interface/terminal (CLI)</strong>: 
  * <strong>Windows</strong> users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode. 
  * <strong>Mac/Linux</strong> users, virtually any terminal will work.
@@ -37,7 +37,7 @@ Download and install these right away to ensure an optimal Ionic development exp
 ## Install Ionic Tooling
 Run the following in the command line terminal to install the Ionic CLI (`ionic`), `native-run`, used to run native binaries on devices and simulators/emulators, and `cordova-res`, used to generate native app icons and splash screens:
 
-> To open a terminal in either Visual Studio Code or Ionic Studio, go to Terminal -> New Terminal.
+> To open a terminal in Visual Studio Code, go to Terminal -> New Terminal.
 
 ```shell
 $ npm install -g @ionic/cli native-run cordova-res
