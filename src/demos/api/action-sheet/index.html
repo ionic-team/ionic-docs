@@ -13,6 +13,10 @@
       --ion-safe-area-bottom: 22px;
     }
   </style>
+  <script type="module">
+    import { actionSheetController } from 'https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/index.esm.js';
+    window.actionSheetController = actionSheetController;
+  </script>
 </head>
 <body>
   <ion-app>
@@ -22,18 +26,16 @@
       </ion-toolbar>
     </ion-header>
     <ion-content fullscreen class="ion-padding">
-      <ion-action-sheet-controller></ion-action-sheet-controller>
       <ion-button expand="block">Show Action Sheet</ion-button>
     </ion-content>
   </ion-app>
 
   <script>
-    const controller = document.querySelector('ion-action-sheet-controller');
     const button = document.querySelector('ion-button');
     button.addEventListener('click', handleButtonClick);
 
-    function handleButtonClick() {
-      controller.create({
+    async function handleButtonClick() {
+      const actionSheet = await actionSheetController.create({
         header: 'Albums',
         buttons: [
           { text: 'Delete', role: 'destructive' },
@@ -42,9 +44,9 @@
           { text: 'Favorite' },
           { text: 'Cancel', role: 'cancel' }
         ]
-      }).then(actionSheet => {
-        actionSheet.present();
       });
+
+      await actionSheet.present();
     }
   </script>
 </body>

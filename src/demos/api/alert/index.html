@@ -13,6 +13,10 @@
       --ion-safe-area-bottom: 22px;
     }
   </style>
+  <script type="module">
+    import { alertController } from 'https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/index.esm.js';
+    window.alertController = alertController;
+  </script>
 </head>
 <body>
   <ion-app>
@@ -28,18 +32,17 @@
   </ion-app>
 
   <script>
-    const controller = document.querySelector('ion-alert-controller');
     const button = document.querySelector('ion-button');
     button.addEventListener('click', handleButtonClick);
 
-    function handleButtonClick() {
-      controller.create({
+    async function handleButtonClick() {
+      const alert = await alertController.create({
         header: 'Use this lightsaber?',
         message: 'Do you agree to use this lightsaber to do good across the galaxy?',
         buttons: ['Disagree', 'Agree']
-      }).then(alert => {
-        alert.present();
       });
+
+      await alert.present();
     }
   </script>
 </body>

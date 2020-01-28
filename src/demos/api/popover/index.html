@@ -13,8 +13,11 @@
       --ion-safe-area-top: 20px;
       --ion-safe-area-bottom: 22px;
     }
-
   </style>
+  <script type="module">
+    import { popoverController } from 'https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/index.esm.js';
+    window.popoverController = popoverController;
+  </script>
 </head>
 
 <body>
@@ -23,21 +26,25 @@
       <ion-toolbar>
         <ion-title>Popover</ion-title>
 
-        <ion-popover-controller></ion-popover-controller>
-        <ion-button slot="end">Show</ion-button>
+        <ion-buttons slot="end">
+          <ion-button>
+            <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+          </ion-button>
+        </ion-buttons>
       </ion-toolbar>
     </ion-header>
 
     <ion-content fullscreen class="ion-padding">
-      <p>The "Show" button will activate the <code>ion-popover</code></p>
+      <ion-button expand="block">Show Popover</ion-button>
     </ion-content>
   </ion-app>
   <script>
-    const popoverController = document.querySelector('ion-popover-controller');
     let currentPopover = null;
 
-    const button = document.querySelector('ion-button');
-    button.addEventListener('click', handleButtonClick);
+    const buttons = document.querySelectorAll('ion-button');
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener('click', handleButtonClick);
+    }
 
     async function handleButtonClick(ev) {
       popover = await popoverController.create({
@@ -64,8 +71,8 @@
             <ion-item button>Documentation</ion-item>
             <ion-item button>Showcase</ion-item>
             <ion-item button>GitHub Repo</ion-item>
+            <ion-item lines="none" detail="false" button onClick="dismissPopover()">Close</ion-item>
           </ion-list>
-          <ion-button expand="block" onClick="dismissPopover()">Close</ion-button>
         `;
       }
     });

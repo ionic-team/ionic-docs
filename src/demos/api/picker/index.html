@@ -13,8 +13,11 @@
       --ion-safe-area-top: 20px;
       --ion-safe-area-bottom: 22px;
     }
-
   </style>
+  <script type="module">
+    import { pickerController } from 'https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/index.esm.js';
+    window.pickerController = pickerController;
+  </script>
 </head>
 
 <body>
@@ -26,13 +29,11 @@
     </ion-header>
 
     <ion-content fullscreen class="ion-padding">
-      <ion-picker-controller></ion-picker-controller>
-      <ion-button onclick="openPicker()">Open Single Column Picker</ion-button>
-      <ion-button onclick="openPicker(2, 5, multiColumnOptions)">Open Multi Column Picker</ion-button>
+      <ion-button expand="block" onclick="openPicker()">Show Single Column Picker</ion-button>
+      <ion-button expand="block" onclick="openPicker(2, 5, multiColumnOptions)">Show Multi Column Picker</ion-button>
     </ion-content>
   </ion-app>
   <script>
-    const pickerController = document.querySelector('ion-picker-controller');
     const defaultColumnOptions = [
       [
         'Dog',
