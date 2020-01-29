@@ -20,7 +20,7 @@ If you don’t have Node.js installed already, [download the LTS version](https:
 Run the following in the command line (you may need to prepend “sudo” on a Mac):
 
 ```shell
-$ npm install -g ionic
+$ npm install -g @ionic/cli
 ```
 
 ## Create an App
