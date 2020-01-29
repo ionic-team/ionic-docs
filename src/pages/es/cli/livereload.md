@@ -19,7 +19,7 @@ As with regular device deploys, you will need a cable to connect your device to 
 
 For Android devices, the Ionic CLI will automatically forward ports. This means you can use a `localhost` address and it will refer to your computer when loaded in the Web View, not the device.
 
-The following all-in-one command will start a live-reload server on `localhost` and deploy the app to an Android device:
+The following all-in-one command will start a live-reload server on `localhost` and deploy the app to an Android device using Cordova:
 
 ```shell
 $ ionic cordova run android -l
@@ -33,7 +33,7 @@ For iOS devices, port forwarding is not yet an option. This means you'll need to
 
 In some cases, the Ionic CLI won't know the address with which to configure the Web View, so you may be prompted to select one. Be sure to select the address of your computer on your Wi-Fi network.
 
-The following all-in-one command will start a live-reload server on **all addresses** and deploy the app to an iOS device:
+The following all-in-one command will start a live-reload server on **all addresses** and deploy the app to an iOS device using Cordova:
 
 ```shell
 $ ionic cordova run ios -l --external
