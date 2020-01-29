@@ -29,7 +29,7 @@ With this it's possible to use all of the Ionic Framework core components withou
 > This does not install Angular or any other frameworks. This allows use of the Ionic Framework core components without a framework.
 
 
-## Angular + Ionic Framework
+## Ionic + Angular
 
 When using Ionic Framework in an Angular project, install the latest `@ionic/angular` package from [npm](/docs/faq/glossary#npm). This comes with all of the Ionic Framework components and Angular specific services and features.
 
@@ -39,84 +39,45 @@ $ npm install @ionic/angular@latest --save
 
 Each time there is a new Ionic Framework release, this [version](/docs/intro/versioning) will need to be updated to get the latest features and fixes. The version can be [updated using npm](/docs/faq/tips#updating-dependencies), as well.
 
-
-### CSS
-
-Create a global stylesheet file and add it to the `styles` object in the [Angular workspace config](https://angular.io/guide/workspace-config). Add the following imports to that file:
-
-```css
-/* Core CSS required for Ionic components to work properly */
-@import "~@ionic/angular/css/core.css";
-
-/* Basic CSS for apps built with Ionic */
-@import "~@ionic/angular/css/normalize.css";
-@import "~@ionic/angular/css/structure.css";
-@import "~@ionic/angular/css/typography.css";
-
-/* Optional CSS utils that can be commented out */
-@import "~@ionic/angular/css/padding.css";
-@import "~@ionic/angular/css/float-elements.css";
-@import "~@ionic/angular/css/text-alignment.css";
-@import "~@ionic/angular/css/text-transformation.css";
-@import "~@ionic/angular/css/flex-utils.css";
-@import "~@ionic/angular/css/display.css";
-```
-
-See [Global Stylesheets](../layout/global-stylesheets) for the styles that each of these files contain.
-
-
-## Stencil + Ionic Framework
-
-When using Ionic Framework in a Stencil project, install the latest `@ionic/core` package from [npm](/docs/faq/glossary#npm). This comes with all of the Ionic Framework components.
+For adding Ionic to an already existing Angular project, use the Angular CLI's `ng add` feature.
 
 ```shell
-$ npm install @ionic/core@latest --save
+$ ng add @ionic/angular
 ```
 
-### JS
+This will add the necessary imports to the `@ionic/angular` package as well as add the styles needed.
 
-Include an import of `@ionic/core` in the root app file:
 
-```typescript
-import '@ionic/core';
+## Ionic + React
+
+To add Ionic to an already existing React project, install the `@ionic/rect` and `@ionic/react-router` package.
+
+```sell
+$ npm install @ionic/react
+$ npm install @ionic/react-router
 ```
 
 ### CSS
 
-Create a global stylesheet file and add it to the `config` object in the [Stencil Config](https://stenciljs.com/docs/config).
+To include the necessary CSS in a React project, add the following to the root App component.
 
 ```javascript
-exports.config = {
-  // ...
-
-  globalStyle: 'src/global.css'
-
-  // ...
-};
-```
-
-Add the following imports to that file:
-
-```css
 /* Core CSS required for Ionic components to work properly */
-@import "~@ionic/core/css/core.css";
+import '@ionic/react/css/core.css';
 
 /* Basic CSS for apps built with Ionic */
-@import "~@ionic/core/css/normalize.css";
-@import "~@ionic/core/css/structure.css";
-@import "~@ionic/core/css/typography.css";
+import '@ionic/react/css/normalize.css';
+import '@ionic/react/css/structure.css';
+import '@ionic/react/css/typography.css';
 
 /* Optional CSS utils that can be commented out */
-@import "~@ionic/core/css/padding.css";
-@import "~@ionic/core/css/float-elements.css";
-@import "~@ionic/core/css/text-alignment.css";
-@import "~@ionic/core/css/text-transformation.css";
-@import "~@ionic/core/css/flex-utils.css";
-@import "~@ionic/core/css/display.css";
+import '@ionic/react/css/padding.css';
+import '@ionic/react/css/float-elements.css';
+import '@ionic/react/css/text-alignment.css';
+import '@ionic/react/css/text-transformation.css';
+import '@ionic/react/css/flex-utils.css';
+import '@ionic/react/css/display.css';
 ```
-
-See [Global Stylesheets](../layout/global-stylesheets) for the styles that each of these files contain.
-
 
 ## Ionicons CDN
 

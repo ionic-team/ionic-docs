@@ -17,11 +17,17 @@ Ionic apps are created and developed primarily through the Ionic [command-line](
 Before proceeding, make sure the latest version of [Node.js](/docs/faq/glossary#node) and [npm](/docs/faq/glossary#npm) are installed. See [Environment Setup](/docs/installation/environment) for details. Install the Ionic CLI globally with npm:
 
 ```shell
-$ npm install -g ionic
+$ npm install -g @ionic/cli
+```
+
+If there was a previous installation of the Ionic CLI, it will need to be uninstalled due to a change in package name.
+
+```shell
+$ npm uninstall -g ionic
+$ npm install -g @ionic/cli
 ```
 
 > The `-g` option means _install globally_. When packages are installed globally, `EACCES` permission errors can occur.
->
 > Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](/docs/faq/tips#resolving-permission-errors) for more information.
 
 ## Start an App
