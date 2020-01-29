@@ -40,11 +40,11 @@ After a selection is made, the Ionic CLI will prompt for a name. The name can be
 > Any level of nesting is allowed, such as `portfolio/intro`. You can easily scope components to pages by using `ionic g component "portfolio/intro/About Me"`, for example.
 
 <command-line> <command-prompt>ionic generate</command-prompt> <command-output> <span class="green">?</span> <span class="bold">What would you like to generate? <span class="cyan">page</span></span>   
-<span class="green">?</span> <span class="bold">Name/path of <span class="green">page</span>:</span> portfolio </command-output> <command-cursor blink></command-cursor> </command-line>
+<span class="green">?</span> <span class="bold">Name/path of <span class="cyan">page</span>:</span> portfolio </command-output> <command-cursor blink></command-cursor> </command-line>
 
 Alternatively, the `type` and `name` of the generated feature can be entered on the command line:
 
-<command-line> <command-prompt>ionic g page "User Detail"</command-prompt> <command-output> &gt; <span class="green">ng generate page "User Detail"</span>   
+<command-line> <command-prompt>ionic g page "User Detail"</command-prompt> <command-output> &gt; <span class="cyan">ng generate page "User Detail"</span>   
 <span class="green">CREATE</span> src/app/user-detail/user-detail.module.ts (564 bytes)   
 <span class="green">CREATE</span> src/app/user-detail/user-detail.page.scss (0 bytes)   
 <span class="green">CREATE</span> src/app/user-detail/user-detail.page.html (138 bytes)   
