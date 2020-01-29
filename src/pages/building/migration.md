@@ -11,9 +11,36 @@ contributors:
 
 # Migration Guide
 
-> For a **complete list of breaking changes** from Ionic 3 to Ionic 4, please refer to [the breaking changes document](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md) in the Ionic core repo.
+
+## Migrating from Ionic 4.x to Ionic 5.x - Overview
+
+Migrating an app from 4.x to 5.x requires a few updates to the API properties, CSS utilities, and the installed package dependencies.
+
+### API and CSS Updates
+
+For a complete list of breaking changes from 4.x to 5.x, please refer to [the breaking changes document](https://github.com/ionic-team/ionic/blob/master/BREAKING.md#version-5x) in the Ionic core repo.
+
+### Packages and Dependencies
+
+For Angular based projects, you can simply run:
+
+```shell
+npm install @ionic/angular@latest @ionic/angular-toolkit@latest --save
+```
+
+For React projects, you can run:
+
+```shell
+npm install @ionic/react@latest @ionic/react-router@latest ionicons@latest
+```
+
+If you would like a fresh project starter, a new project base can be created from the CLI and an existing app can be migrated over manually.
+
 
 ## Migrating from Ionic 3.0 to Ionic 4.0 - Overview
+
+> For a **complete list of breaking changes** from Ionic 3 to Ionic 4, please refer to [the breaking changes document](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md) in the Ionic core repo.
+
 
 We suggest the following general process when migrating an existing application from Ionic 3 to 4:
 
