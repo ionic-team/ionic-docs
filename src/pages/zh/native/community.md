@@ -11,7 +11,7 @@ Community Plugins are submitted and maintained by the Ionic community. While com
 
 ## Capacitor Support
 
-Ionic Native also works with [Capacitor](https://capacitor.ionicframework.com), Ionic's official native app runtime and spiritual Cordova successor. For details, [see here](https://capacitor.ionicframework.com/docs/cordova/using-cordova-plugins).
+Ionic Native also works with [Capacitor](https://capacitor.ionicframework.com), Ionic's official native runtime. For details, [see the Capacitor documentation](https://capacitor.ionicframework.com/docs/cordova/using-cordova-plugins).
 
 ## Usage
 All plugins have two components - the native code (Cordova) and the TypeScript code (Ionic Native). Cordova plugins are also wrapped in a `Promise` or `Observable` in order to provide a common plugin interface and modernized development approach.
