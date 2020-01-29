@@ -30,7 +30,7 @@ It’s easy to get started. Find the complete app code referenced in this guide 
 
 Download and install these right away to ensure an optimal Ionic development experience:
 * <strong>Node.js</strong> for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
-* <strong>A code editor</strong> for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/) or [Ionic Studio](https://ionicframework.com/studio).
+* <strong>A code editor</strong> for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
 * <strong>Command-line interface/terminal (CLI)</strong>: 
  * <strong>Windows</strong> users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode. 
  * <strong>Mac/Linux</strong> users, virtually any terminal will work.
@@ -38,13 +38,15 @@ Download and install these right away to ensure an optimal Ionic development exp
 ## Install Ionic Tooling
 Run the following in the command line terminal to install the Ionic CLI (`ionic`), `native-run`, used to run native binaries on devices and simulators/emulators, and `cordova-res`, used to generate native app icons and splash screens:
 
-> To open a terminal in either Visual Studio Code or Ionic Studio, go to Terminal -> New Terminal.
+> To open a terminal in Visual Studio Code, go to Terminal -> New Terminal.
 
 ```shell
-$ npm install -g ionic native-run cordova-res
+$ npm install -g @ionic/cli native-run cordova-res
 ```
 
-> The `-g` option means install globally. When packages are installed globally, permission errors can occur. Consider [setting up npm](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally) to operate globally without elevated permissions. Running the command prompt as an Admin (or using `sudo` on Mac & Linux) with npm is not recommended.
+> The `-g` option means _install globally_. When packages are installed globally, `EACCES` permission errors can occur.
+>
+> Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](/docs/faq/tips#resolving-permission-errors) for more information.
 
 ## Create an App
 Next, create an Ionic Angular app that uses the “Tabs” starter template and adds Capacitor for native functionality:

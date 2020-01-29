@@ -20,7 +20,7 @@ In this guide, we'll go over the basics of both React and Ionic, including any I
 To begin, let's install the latest version of the Ionic CLI.
 
 ```shell
-npm install -g ionic@latest
+npm install -g @ionic/cli
 ```
 
 From here, the global command `ionic` will allow for the creation of a React project with Ionic and any other dependencies. To create a new project, run the following command:

@@ -29,7 +29,7 @@ $ npm install
 $ npm start
 ```
 
-> **Note**: recent versions of npm (5+) and Node.js (8+) are required to run certain scripts.
+> **Note**: recent versions of npm (5+) and Node.js (10+) are required to run certain scripts.
 
 ---
 
