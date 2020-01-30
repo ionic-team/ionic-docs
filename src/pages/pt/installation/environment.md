@@ -13,6 +13,17 @@ To get started with Ionic Framework, the only requirement is a [Node & npm](#nod
 
 Of course, a code editor is also required. [VS Code](https://code.visualstudio.com/) is recommended. VS Code is a free, batteries-included text editor made by Microsoft.
 
+## Terminal
+
+> Much of Ionic development requires familiarity with the command line. If you're new to the command line, see [this Blog Post](https://ionicframework.com/blog/new-to-the-command-line/) for a quick introduction.
+
+In general, we recommend using the built-in terminals. Many third-party terminals work well with Ionic, but may not be supported.
+
+* For Windows, **Command Prompt** and **PowerShell** are supported. <a href="https://docs.microsoft.com/en-us/windows/wsl/faq" target="_blank">WSL</a> is known to work with Ionic, but may not be supported.
+* For macOS, the built-in **Terminal** app is supported.
+
+Git Bash (from <a href="https://git-scm.com" target="_blank">git-scm.com</a>) does not support TTY interactivity and is **not supported** by Ionic.
+
 ## Node & npm
 
 Almost all tooling for modern JavaScript projects is based in [Node.js](/docs/faq/glossary#node). The [download page](https://nodejs.org/en/download/) has prebuilt installation packages for all platforms. We recommend selecting the LTS version to ensure best compatibility.
