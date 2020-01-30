@@ -82,6 +82,13 @@ import { defineCustomElements } from '@ionic/pwa-elements/loader';
 defineCustomElements(window);
 ```
 
+
+All Capacitor logic will be encapsulated in a service class. Create `PhotoService` using the `ionic generate` command:
+
+```bash
+$ ionic g service services/photo
+```
+
 That’s it! Now for the fun part - let’s see the app in action.
 
 ## Run the App
