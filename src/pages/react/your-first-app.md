@@ -28,7 +28,7 @@ It’s easy to get started. Find the complete app code referenced in this guide 
 
 Download and install these right away to ensure an optimal Ionic development experience:
 * <strong>Node.js</strong> for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
-* <strong>A code editor</strong> for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/) or [Ionic Studio](https://ionicframework.com/studio).
+* <strong>A code editor</strong> for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
 * <strong>Command-line interface/terminal (CLI)</strong>: 
  * <strong>Windows</strong> users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode. 
  * <strong>Mac/Linux</strong> users, virtually any terminal will work.
@@ -109,7 +109,7 @@ Open `/src/pages/Tab2.tsx	`. We see:
 <IonPage>
   <IonHeader>
     <IonToolbar>
-      <IonTitle>Tab Two</IonTitle>
+      <IonTitle>Tab 2</IonTitle>
     </IonToolbar>
   </IonHeader>
   <IonContent>
@@ -150,7 +150,7 @@ We’ll be creating the `takePhoto` method and the logic to use the Camera and o
 Next, open `src/App.tsx` then import the `images` icon:
 
 ```typescript
-import { images, flash, send } from 'ionicons/icons';
+import { images, square, triangle } from 'ionicons/icons';
 ```
 
 Within the tab bar (`<IonTabBar>`), change the label to “Photos” and the icon to `images` for the middle tab button:

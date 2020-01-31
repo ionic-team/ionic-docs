@@ -30,7 +30,7 @@ It’s easy to get started. Find the complete app code referenced in this guide 
 
 Download and install these right away to ensure an optimal Ionic development experience:
 * <strong>Node.js</strong> for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
-* <strong>A code editor</strong> for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/) or [Ionic Studio](https://ionicframework.com/studio).
+* <strong>A code editor</strong> for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
 * <strong>Command-line interface/terminal (CLI)</strong>: 
  * <strong>Windows</strong> users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode. 
  * <strong>Mac/Linux</strong> users, virtually any terminal will work.
@@ -38,13 +38,15 @@ Download and install these right away to ensure an optimal Ionic development exp
 ## Install Ionic Tooling
 Run the following in the command line terminal to install the Ionic CLI (`ionic`), `native-run`, used to run native binaries on devices and simulators/emulators, and `cordova-res`, used to generate native app icons and splash screens:
 
-> To open a terminal in either Visual Studio Code or Ionic Studio, go to Terminal -> New Terminal.
+> To open a terminal in Visual Studio Code, go to Terminal -> New Terminal.
 
 ```shell
-$ npm install -g ionic native-run cordova-res
+$ npm install -g @ionic/cli native-run cordova-res
 ```
 
-> The `-g` option means install globally. When packages are installed globally, permission errors can occur. Consider [setting up npm](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally) to operate globally without elevated permissions. Running the command prompt as an Admin (or using `sudo` on Mac & Linux) with npm is not recommended.
+> The `-g` option means _install globally_. When packages are installed globally, `EACCES` permission errors can occur.
+>
+> Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](/docs/faq/tips#resolving-permission-errors) for more information.
 
 ## Create an App
 Next, create an Ionic Angular app that uses the “Tabs” starter template and adds Capacitor for native functionality:
@@ -102,37 +104,41 @@ Open the photo-gallery app folder in your code editor of choice, then navigate t
 ```html
 <ion-header>
   <ion-toolbar>
-    <ion-title>Tab Two</ion-title>
+    <ion-title>Tab 2</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 2</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-content>
 ```
 
-`ion-header` represents the top navigation and toolbar, with "Tab 2" as the title. Let’s rename it:
+`ion-header` represents the top navigation and toolbar, with "Tab 2" as the title (there are two of them due to iOS [Collapsible Large Title](https://ionicframework.com/docs/api/title#collapsible-large-titles) support). Rename both `ion-title` elements to:
 
 ```html
 <ion-title>Photo Gallery</ion-title>
 ```
 
-We put the visual aspects of our app into `<ion-content>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. Start by adding a [floating action button](https://ionicframework.com/docs/api/fab) (FAB) to the bottom of the page. Use the camera image as the icon, and call the `addNewToGallery()` function when this button is clicked (to be implemented soon):
+We put the visual aspects of our app into `<ion-content>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. Begin by replacing the `<app-explore-container>` element with a [floating action button](https://ionicframework.com/docs/api/fab) (FAB) and set the camera image as the icon:
 
 ```html
 <ion-content>
-<ion-fab vertical="bottom" horizontal="center" slot="fixed">
-    <ion-fab-button (click)="photoService.addNewToGallery()">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 2</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button>
       <ion-icon name="camera"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 </ion-content>
-```
-
-We’ll be creating a service class in a moment, that will hold all of the logic to use the Camera and other native features. For now, open up `tab2.page.ts` and import the PhotoService class:
-
-```typescript
-import { PhotoService } from '../services/photo.service';
-
-constructor(public photoService: PhotoService) { }
 ```
 
 Next, open `src/app/tabs/tabs.page.html`. Change the label to “Photos” and the icon name to “images”:
