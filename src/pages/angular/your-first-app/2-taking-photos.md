@@ -8,9 +8,16 @@ nextUrl: '/docs/angular/your-first-app/3-saving-photos'
 # Taking Photos with the Camera
 
 Now for the fun part - adding the ability to take photos with the device’s camera using the Capacitor [Camera API](https://capacitor.ionicframework.com/docs/apis/camera). We’ll begin with building it for the web, then make some small tweaks to make it work on mobile (iOS and Android).
- 
 
-Open the `services/photo.service.ts` file, and let’s add the logic that will power the camera functionality. First, import Capacitor dependencies and get references to the Camera, Filesystem, and Storage plugins:
+## Photo Service
+
+All Capacitor logic (Camera usage and other native features) will be encapsulated in a service class. Create `PhotoService` using the `ionic generate` command:
+
+```bash
+$ ionic g service services/photo
+```
+
+Open the new `services/photo.service.ts` file, and let’s add the logic that will power the camera functionality. First, import Capacitor dependencies and get references to the Camera, Filesystem, and Storage plugins:
 
 ```typescript
 import { Plugins, CameraResultType, Capacitor, FilesystemDirectory, 
@@ -33,6 +40,26 @@ public async addNewToGallery() {
 ```
 
 Notice the magic here: there's no platform-specific code (web, iOS, or Android)! The Capacitor Camera plugin abstracts that away for us, leaving just one method call - `Camera.getPhoto()` - that will open up the device's camera and allow us to take photos. 
+
+Next, open up `tab2.page.ts` and import the PhotoService class:
+
+```typescript
+import { PhotoService } from '../services/photo.service';
+
+constructor(public photoService: PhotoService) { }
+```
+
+Then, open `tab2.page.html` and call the `addNewToGallery()` function when the FAB is tapped/clicked: 
+
+```html
+<ion-content>
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="photoService.addNewToGallery()">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+```
 
 Save the file, and if it's not running already, restart the development server in your browser by running `ionic serve`. On the Photo Gallery tab, click the Camera button. If your computer has a webcam of any sort, a modal window appears. Take a selfie!
 
