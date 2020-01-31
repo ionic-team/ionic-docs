@@ -82,13 +82,6 @@ import { defineCustomElements } from '@ionic/pwa-elements/loader';
 defineCustomElements(window);
 ```
 
-
-All Capacitor logic will be encapsulated in a service class. Create `PhotoService` using the `ionic generate` command:
-
-```bash
-$ ionic g service services/photo
-```
-
 That’s it! Now for the fun part - let’s see the app in action.
 
 ## Run the App
@@ -124,24 +117,16 @@ Open the photo-gallery app folder in your code editor of choice, then navigate t
 <ion-title>Photo Gallery</ion-title>
 ```
 
-We put the visual aspects of our app into `<ion-content>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. Start by adding a [floating action button](https://ionicframework.com/docs/api/fab) (FAB) to the bottom of the page. Use the camera image as the icon, and call the `addNewToGallery()` function when this button is clicked (to be implemented soon):
+We put the visual aspects of our app into `<ion-content>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. Start by adding a [floating action button](https://ionicframework.com/docs/api/fab) (FAB) to the bottom of the page and set the camera image as the icon.
 
 ```html
 <ion-content>
 <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-    <ion-fab-button (click)="photoService.addNewToGallery()">
+    <ion-fab-button>
       <ion-icon name="camera"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 </ion-content>
-```
-
-We’ll be creating a service class in a moment, that will hold all of the logic to use the Camera and other native features. For now, open up `tab2.page.ts` and import the PhotoService class:
-
-```typescript
-import { PhotoService } from '../services/photo.service';
-
-constructor(public photoService: PhotoService) { }
 ```
 
 Next, open `src/app/tabs/tabs.page.html`. Change the label to “Photos” and the icon name to “images”:
