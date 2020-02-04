@@ -244,6 +244,7 @@
   "menu-studio-setup-native": "Native iOS & Android",
   "menu-studio-documentation": "Documentation",
   "menu-studio-documentation-designer": "Designer",
+  "menu-studio-documentation-code": "Working with Code",
   "menu-studio-documentation-assets": "Asset Management",
   "menu-studio-documentation-theming": "Theming",
   "menu-studio-documentation-settings": "Settings",
