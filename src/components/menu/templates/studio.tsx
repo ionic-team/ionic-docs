@@ -12,6 +12,7 @@ const items = {
     'menu-studio-setup-native': '/docs/studio/setup/native',
   },
   'menu-studio-documentation': {
+    'menu-studio-documentation-start': '/docs/studio/start',
     'menu-studio-documentation-designer': '/docs/studio/designer',
     'menu-studio-documentation-code': '/docs/studio/code',
     'menu-studio-documentation-assets': '/docs/studio/assets',

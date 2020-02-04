@@ -243,6 +243,7 @@
   "menu-studio-setup-installation": "Installing Studio",
   "menu-studio-setup-native": "Native iOS & Android",
   "menu-studio-documentation": "Documentation",
+  "menu-studio-documentation-start": "Getting Started",
   "menu-studio-documentation-designer": "Designer",
   "menu-studio-documentation-code": "Working with Code",
   "menu-studio-documentation-assets": "Asset Management",
