@@ -5,7 +5,7 @@ nextText: 'Loading Photos on Filesystem'
 nextUrl: '/docs/angular/your-first-app/4-loading-photos'
 ---
 
-# Saving Photos to the Filesystem
+# Guardando fotos en el sistema de archivos
 
 We’re now able to take multiple photos and display them in a photo gallery on the second tab of our app. These photos, however, are not currently being stored permanently, so when the app is closed, they will be deleted.
 
@@ -21,14 +21,14 @@ We can use this new function immediately in `addNewToGallery()`:
 
 ```typescript
 public async addNewToGallery() {
-  // Take a photo
+  // Hacer una foto
   const capturedPhoto = await Camera.getPhoto({
-    resultType: CameraResultType.Uri, // file-based data; provides best performance
-    source: CameraSource.Camera, // automatically take a new photo with the camera
-    quality: 100 // highest quality (0 to 100)
+    resultType: CameraResultType.Uri, // datos basados en archivos; proporciona el mejor rendimiento
+    source: CameraSource.Camera, // tomar automáticamente una nueva foto con la cámara
+    quality: 100 // la calidad más alta (0 a 100)
   });
 
-  // Save the picture and add it to photo collection
+  // Guardar la imagen y añadirla a la colección de fotos
   const savedImageFile = await this.savePicture(capturedPhoto);
   this.photos.unshift(savedImageFile);
 }
