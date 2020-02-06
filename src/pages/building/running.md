@@ -22,7 +22,7 @@ To do so, run `ionic serve` from the command line in the project's directory:
 <command-line>
     <command-prompt>ionic serve</command-prompt>
     <command-output>
-        > <span class="green">ng run app:serve --host=0.0.0.0 --port=8100</span>
+        > <span class="cyan">ng run app:serve --host=0.0.0.0 --port=8100</span>
         <br />
         <br />
         [<span class="bold">INFO</span>] <span class="bold">Development server running!</span>

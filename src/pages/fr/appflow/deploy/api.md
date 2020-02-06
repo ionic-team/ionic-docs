@@ -7,7 +7,7 @@ nextUrl: '/docs/appflow/deploy/tutorials'
 ---
 
 
-## Installation and Usage
+## Installation et utilisation
 
 In order to use the Deploy API inside of your app. You need to install the latest version of the Appflow SDK and set the `UPDATE_METHOD` to `none`:
 

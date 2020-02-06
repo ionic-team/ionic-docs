@@ -635,6 +635,30 @@ The default amount of `margin` to be applied is `16px` and is set by the `--ion-
 | `.ion-align-self-auto`     | `align-self: auto`       | Item is positioned according to the parent's `align-items` value.      |
 
 
+## Border Display
+
+The border display CSS property determines if the border should be visible or not. The property can be applied to the ion-header and the ion-footer.
+
+```html
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Header - No Border</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Footer - No Border</ion-title>
+  </ion-toolbar>
+</ion-footer>
+```
+
+| Class            | Description                      |
+| ---------------- | -------------------------------- |
+| `.ion-no-border` | The element will have no border. |
+
+
 ## Ionic Breakpoints
 
 Ionic uses breakpoints in media queries in order to style an application differently based on the screen size. The following breakpoint names are used in the utility classes listed above, where the class will apply when the width is met.

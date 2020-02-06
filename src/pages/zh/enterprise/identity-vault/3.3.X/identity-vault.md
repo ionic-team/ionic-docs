@@ -9,6 +9,7 @@ otherVersions:
   - 3.1.X
   - 3.2.X
   - 3.3.X
+  - 3.4.X
 ---
 
 # Ionic Identity Vault
@@ -512,7 +513,7 @@ Get a value stored under the given key.
 
 ▸ **isBiometricsAvailable**(): `Promise`<`boolean`>
 
-Check whether or not biometrics is available on the device
+Check whether or not biometrics is supported by the device and has been configured by the current user of the device
 
 **Returns:** `Promise`<`boolean`> whether or not biometrics is available
 
@@ -882,7 +883,7 @@ Check if there are any saved sessions in the vault
 
 ▸ **isBiometricsAvailable**(): `Promise`<`boolean`>
 
-Check whether or not biometrics is available on the device
+Check whether or not biometrics is supported by the device and has been configured by the current user of the device
 
 **Returns:** `Promise`<`boolean`> whether or not biometrics is available
 

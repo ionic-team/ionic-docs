@@ -15,3 +15,7 @@ nextUrl: '/docs/appollow/cookbook/private_git'
 ### [使用私有 NPM 模块](/docs/appflow/cookbook/private_npm)
 
 了解如何访问依赖项中使用的私有NPM模块。
+
+### [切换 Node 版本](/docs/appflow/cookbook/switch_node_version)
+
+学习如何在构建中使用不同的 Node。

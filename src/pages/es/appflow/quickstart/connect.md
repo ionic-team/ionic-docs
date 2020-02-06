@@ -4,6 +4,7 @@ previousText: 'Quickstart Home'
 previousUrl: '/docs/appflow/quickstart'
 nextText: 'Connect Using GitHub'
 nextUrl: '/docs/appflow/quickstart/github'
+tableOfContents: false
 ---
 
 Appflow works directly with Git version control and uses your code base as the source of truth for Deploy and Package builds. In order for Appflow to access your code, you can choose to integrate directly using a hosting service like GitHub or Bitbucket, or you can push your code directly to Appflow.

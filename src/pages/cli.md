@@ -4,14 +4,14 @@
 
 # Ionic CLI
 
-The Ionic command-line interface ([CLI](/docs/faq/glossary#cli)) is your go-to tool for developing Ionic apps.
+The Ionic command-line interface ([CLI](/docs/faq/glossary#cli)) is the go-to tool for developing Ionic apps.
 
 ## Installation
 
 The Ionic CLI can be installed globally with npm:
 
 ```shell
-$ npm install -g ionic
+$ npm install -g @ionic/cli
 ```
 
 ## Help
@@ -19,20 +19,26 @@ $ npm install -g ionic
 The Ionic CLI ships with command documentation that is accessible with the `--help` flag.
 
 ```shell
+$ ionic --help
 $ ionic <command> --help
+$ ionic <command> <subcommand> --help
 ```
+
+> Be sure to run `ionic <command> --help` in your project directory.
+>
+> For some commands, such as `ionic serve`, the help documentation is contextual to the type of your project, e.g. React vs Angular.
 
 <!-- TODO: image? -->
 
 ## Architecture
 
-The Ionic CLI is built with [TypeScript](/docs/faq/glossary#typescript) and [Node.js](/docs/faq/glossary#node). It supports Node 6+, but the latest Node LTS is always recommended. Follow development on the open source <a href="https://github.com/ionic-team/ionic-cli" target="_blank">GitHub repository</a>.
+The Ionic CLI is built with [TypeScript](/docs/faq/glossary#typescript) and [Node.js](/docs/faq/glossary#node). It supports Node 10.3+, but the latest Node LTS is always recommended. Follow development on the open source <a href="https://github.com/ionic-team/ionic-cli" target="_blank">GitHub repository</a>.
 
 ## Troubleshooting
 
 To troubleshoot issues with the Ionic CLI, the following may be useful:
 
-- Make sure the latest version of the Ionic CLI is installed. Update with `npm install -g ionic@latest`.
+- Make sure the latest version of the Ionic CLI is installed. Get the installed version by running `ionic --version`.
 - Make sure the latest Node LTS is installed. See [Node & npm](/docs/installation/environment#node-npm) environment setup.
 - The `--verbose` flag prints debugging messages, which may narrow down the issue.
 - Connection issues may be due to improperly configured proxy settings. See [Using a Proxy](/docs/cli/using-a-proxy) to configure request proxying.

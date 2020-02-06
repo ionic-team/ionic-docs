@@ -1,4 +1,5 @@
 ---
+tableOfContents: false
 ---
 
 # Bem vindo ao Studio

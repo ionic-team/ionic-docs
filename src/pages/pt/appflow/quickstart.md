@@ -4,6 +4,7 @@ previousText: 'Welcome'
 previousUrl: '/docs/appflow'
 nextText: 'Connect Your Repo'
 nextUrl: '/docs/appflow/quickstart/connect'
+tableOfContents: false
 ---
 
 The quickstart tutorial walks you through the process of setting up your application with Ionic Appflow, including how to connect your application to Appflow, how to set up the Appflow SDK (Deploy plugin) for live updates, and how to configure your first automated Android and iOS builds using native build environments. Simply follow the guide step-by-step, or navigate directly to the documentation for the component that interests you.

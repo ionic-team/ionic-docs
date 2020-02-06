@@ -22,4 +22,4 @@ In order to use Ionic Appflow's Deploy feature you'll need to [install and confi
 
 ## Advanced Usage
 
-Want to do something sweet, like allow users to [subscribe to a special Beta Channel](/docs/appflow/deploy/tutorials/#setting-up-a-beta-channel) instead of the default Production one? Do some split testing? Customize the way updates are applied (like checking every 30 minutes, or on login/logout)? Check out our detailed [Deploy API Documentation](/docs/appflow/deploy/api)!
+Want to do something sweet, like allow users to subscribe to a special Beta Channel instead of the default Production one? Do some split testing? Customize the way updates are applied (like checking every 30 minutes, or on login/logout)? Check out our detailed [Deploy API Documentation](/docs/appflow/deploy/api)!

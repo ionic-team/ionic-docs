@@ -112,7 +112,7 @@ Super ! Nous avons à présent une galerie de photo basique fonctionnelle.
 
 ## Sauvegarde des photos sur l'appareil
 
-Avoir une galerie de photo fonctionnelle est plutôt cool, mais vous remarquerez probablement que quand l'application est fermée, les photos sont perdues à jamais. That’s no good, so let’s add the [Ionic Storage plugin](https://ionicframework.com/docs/storage/), as easy way to store key/value pairs and JSON objects. When running in a native app context, Storage will prioritize using SQLite, one of the most stable and widely used file-based databases. When running on the web or as a Progressive Web App, Storage will attempt to use IndexedDB, WebSQL, and localstorage, in that order.
+Avoir une galerie de photo fonctionnelle est plutôt cool, mais vous remarquerez probablement que quand l'application est fermée, les photos sont perdues à jamais. Pour éviter cela, il faut ajouter le [plugin de stockage ionic](https://ionicframework.com/docs/storage/), facilement avec le stockage clef/valeur et objets JSON. When running in a native app context, Storage will prioritize using SQLite, one of the most stable and widely used file-based databases. When running on the web or as a Progressive Web App, Storage will attempt to use IndexedDB, WebSQL, and localstorage, in that order.
 
 The Storage plugin works perfectly for our base64 image data. To begin, add the SQLite plugin for native:
 

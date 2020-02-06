@@ -8,7 +8,7 @@ contributors:
   - brandyscarney
 ---
 
-# Build Errors
+# 编译错误
 
 ## 常见错误
 

@@ -1,10 +1,10 @@
-# Concurrency limits
+# 并行限制
 
-Each account plan has a defined maximum amount of concurrent builds allowed (see [Plans Details](/pricing)). This limit is enforced at the account level across different apps.
+每个账户计划都有允许的并行构建的最大数量 (见 [详细计划信息](/pricing))。 这一限制是在不同应用程序的账户一级强制执行的。
 
-When you trigger a build, in the Appflow Dashboard you will notice that a build can have different statuses before it is processed:
+当您触发构建时，在Appflow Dashboard 将会注意到，构建在处理之前可能有不同的状态：
 
-* **Queued**: this means that your build is queued for the next available runner. Usually your build should not be in this state for more than few seconds.
+* **Queued**：这意味着您的构建将排队等待下一个可用的运行程序。 Usually your build should not be in this state for more than few seconds.
 * **Pending**: this means that you have reached your concurrent build limit and your build will continue when your current builds are completed.
 
 After the build starts to be processed the statuses are:

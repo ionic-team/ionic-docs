@@ -1,64 +1,64 @@
 ---
-previousText: 'Create Automations'
-previousUrl: '/docs/appflow/automation/create'
-nextText: 'Webhooks'
-nextUrl: '/docs/appflow/automation/webhooks'
+previousText: 'Crear Automatizaciones'
+previousUrl: '/documentación/flujoDeAplicación/automatización/crear'
+nextText: 'Retrollamada Http'
+nextUrl: '/documentación/flujoDeAplicacion/automatización/RetrollamadaHttp'
 ---
 
-# Build Environments
+# Entornos de compilación
 
-## Introduction
+## Introducción
 
-Environments give you a way to customize the build process for your application in order to produce different versions of your applications for different environments from the same code base. All environment variables are accessible to any build scripts that run during the `npm run install` and `npm run build` portion of your builds.
+Los entornos le brindan una forma de personalizar el proceso de compilación de su aplicación para producir diferentes versiones de sus aplicaciones para diferentes entornos desde la misma base de código. Todas las variables de entorno son accesibles para construir scrips que corren durante la porción `npm run install` y `npm run buil` de tus compilaciones.
 
-There are two types of Enviornment variables available to use:
+Hay dos tipos de variables de Entorno disponibles para usar:
 
-* [Predefined Environments](#predefined-environments) (Available on all Builds)
-* [Custom Environments](#custom-environments) (Available on select plans)
+* [ Entornos Predefinidos ](#predefined-environments) (Disponibles en todas las Compilaciones)
+* [Entornos Personalizados](#custom-environments) (Disponible en planes seleccionados)
 
-## Predefined Environments
+## Entornos Predefinidos
 
-Every time a Build occurs, it's done in a secure environment where we provide some predefined variables which are key/value pairs that are made available in the environment and are available by using [process.env.MY_VAR](https://nodejs.org/docs/latest-v8.x/api/process.html#process_process_env) syntax in NodeJS or via `$MY_VAR` syntax in a standard shell script. These variables can be leveraged to [customize the build and outputs](#usage).
+Cada vez que se produce una compilación, se realiza en un entorno seguro donde proporcionamos algunas variables predefinidas que son pares clave/valor que están disponibles en el entorno y están disponibles mediante el uso de la sistaxis [process.env.MY_VAR](https://nodejs.org/docs/latest-v8.x/api/process.html#process_process_env) en NodeJS o via sintaxis `$MY_VAR` en un standard shell script. Estas variables se pueden aprovechar para [ personalizar la compilación y las salidas ](#usage).
 
-The following environment variables are provided in every build, which can be accessed in build scripts:
+Las siguientes variables de entorno se proporcionan en cada compilación, a las que se puede acceder en scripts de compilación:
 
-* `CI_APP_ID` **(string):** Your Ionic app's unique ID.
-* `CI_APP_NAME` **(string):** Your Ionic app's name.
-* `CI_AUTOMATED_BUILD` **(int):** Whether this build occurred as a result of an automation (`0` for `false`, `1` for `true`).
-* `CI_AUTOMATION_ID` **(optional int):** The unique ID of the automation which created this build.
-* `CI_AUTOMATION_NAME` **(optional string):** The name of the automation which created this build.
-* `CI_GIT_COMMIT_SHA` **(string):** The SHA for the commit on which the build was run.
-* `CI_GIT_COMMIT_MSG` **(string):** The message for the commit on which the build was run.
-* `CI_GIT_REF` **(string):** The git ref from which the build was created (i.e. `master`).
-* `CI_GIT_REF_TYPE` **(string):** The git ref type (i.e. `branch`).
+* `CI_APP_ID` **(string):** Tu ID único de aplicación ionic.
+* `CI_APP_NAME` **(string):** Tu nombre único de aplicación ionic.
+* `CI_AUTOMATED_BUILD` **(int):** Si esta compilación se produjo como resultado de una automatización (`0` para `falso`, `1` para `verdadero`).
+* `CI_AUTOMATION_ID` **(optional int):** El ID único de la automatización que creó esta compilación.
+* `CI_AUTOMATION_NAME` **(optional string):** El nombre de la automatización que creó esta compilación.
+* `CI_GIT_COMMIT_SHA` **(string):** El SHA para la confirmación en la que se ejecutó la compilación.
+* `CI_GIT_COMMIT_MSG` **(string):** El mensaje para la confirmación en la que se ejecutó la compilación.
+* `CI_GIT_REF` **(string):** La referencia git a partir de la cual se creó la compilación (i.e. `master`).
+* `CI_GIT_REF_TYPE` **(string):** El tipo de referencia git (i.e. `branch`).
 
-## Custom Environments
+## Entornos Personalizados
 
 <blockquote>
-  <p><b>Note:</b>This feature is only available on our <a href="/pricing">Growth plans</a> and above.</p>
+  <p><b>Note:</b>Esta función solo está disponible en nuestros <a href="/pricing">Planes de crecimiento</a> y superiores.</p>
 </blockquote>
 
-In addition to the [predefined environments](#predefined-environments), customers on the [plans with access to automations](/pricing) will have access to create custom environments. With custom environments it's easy to create and manage custom sets of key/value pairs to further customize builds on Ionic Appflow. Common use cases include customizing your build process in order to build staging & QA versions of your app that connect to different APIs or to build different white labeled versions of your application. To get started with custom environments, open the app you wish to work on and navigate in the sidebar to **Automate -> Environments**, then click **New Environment** on the top right. You should see a form like this:
+Además de los [ entornos predefinidos ](#predefined-environments), los clientes en los planes [ con acceso a automatizaciones ](/pricing) tendrán acceso para crear entornos personalizados. Con entornos personalizados, es fácil crear y administrar conjuntos personalizados de pares clave/valor para personalizar aún más las compilaciones en Ionic Appflow. Los casos de uso comunes incluyen la personalización de su proceso de compilación & para crear versiones de control de calidad de su aplicación que se conectan a diferentes API o para crear diferentes versiones de su aplicación con etiqueta blanca. Para comenzar con entornos personalizados, abra la aplicación en la que desea trabajar y navegue en la barra lateral para ** Automatizar -> Entornos **, luego haga clic en ** Nuevo entorno ** en la parte superior derecha. Deberá ver algo como esto:
 
-![Create Environment Form](/docs/assets/img/appflow/ss-environments-create.png)
+![Crear formulario de entorno](/docs/assets/img/appflow/ss-environments-create.png)
 
-As can be noticed, there are 2 different sets of environment variables sections that can be utilized:
+Como se puede notar, hay dos diferentes conjuntos de secciones de variables de entorno que se pueden utilizar:
 
-* Secrets
+* Secretas
 * Variables
 
-The only difference is that the secrets are hidden and never shown in the dashboard after they have been added, while the variables are always available to be read.
+La única diferencia es que los secretos están ocultos y nunca se muestran en el panel de control después de añadirlos, mientras que las variables están siempre disponibles para ser leídas.
 
-The environments dashboard also lists available custom environments along with their configured key/value pairs and secrets keys.
+El dashboard de entornos también muestra los entornos personalizados disponibles junto con sus pares clave/valor configurados y claves secretas.
 
-![Environments List View](/docs/assets/img/appflow/ss-environments-list.png)
+![Vista de lista de entornos](/docs/assets/img/appflow/ss-environments-list.png)
 
-## Usage
+## Uso
 
-For example you could replace your `build` script in the `package.json` with a custom shell script that reads the branch and triggers a custom build.
+Por ejemplo, podría reemplazar su script `compilación` en `package.json` con un script de shell personalizado que lee la rama y desencadena una compilación personalizada.
 
 ```json
-// customize the build script in the package.json
+// personalizar el script de compilación en el package.json
 {
 ...
     "scripts": {
@@ -78,13 +78,13 @@ For example you could replace your `build` script in the `package.json` with a c
     fi
     
 
-As of `@ionic/app-scripts@3.2.0` you can also use [environment variables directly in your source code](https://github.com/ionic-team/ionic-app-scripts#environments) and they will be replaced at build time so that you can customize your code based on the environment.
+A partir de `@ionic/app-scripts@3.2.0` también puede usar [ variables de entorno directamente en su código fuente ](https://github.com/ionic-team/ionic-app-scripts#environments) y se reemplazarán en el momento de la compilación para que pueda personalizar su código según el entorno.
 
 <blockquote>
-  <p><b>Note:</b>`@ionic/app-scripts` is only for use with Ionic Framework v3 applications. The above does not apply to other versions.</p>
+  <p><b>Nota:</b>`@ionic/app-scripts` es sólo para uso con aplicaciones Ionic Framework v3. Lo anterior no se aplica a otras versiones.</p>
 </blockquote>
 
-For example:
+Por ejemplo:
 
 ```typescript
 productionConfig = {
@@ -92,7 +92,7 @@ productionConfig = {
   analyticsKey: 'my-production-key'
 }
 stagingConfig = {
-  api: 'https://my.staging.api.com',
+  api: 'https://my.staging.api. om',
   analyticsKey: 'my-staging-key'
 }
 
@@ -101,12 +101,12 @@ localConfig = {
   analyticsKey: 'my-local-key'
 }
 
-switch (process.env.CI_GIT_REF) {
+switch (process. nv.CI_GIT_REF) {
   case 'master':
     return productionConfig;
-  case 'staging':
+  caso 'staging':
     return stagingConfig;
-  default:
+  por defecto:
     return localConfig;
 }
 ```

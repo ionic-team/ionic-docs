@@ -81,7 +81,7 @@ nextUrl: '/docs/appflow/automation/webhooks'
 从`@ionic/app-scripts@3.2.0`开始，您还可以使用 [环境变量直接在您的源代码中](https://github.com/ionic-team/ionic-app-scripts#environments) 并且它们会在构建时被替换，以便您可以根据环境自定义代码。
 
 <blockquote>
-  <p><b>Note:</b>`@ionic/app-scripts` is only for use with Ionic Framework v3 applications. The above does not apply to other versions.</p>
+  <p><b>注意：</b>`@ionic/app-scripts` 仅用于Ionic Framework v3 应用程序。 上述内容不适用于其他版本。</p>
 </blockquote>
 
 例如:
