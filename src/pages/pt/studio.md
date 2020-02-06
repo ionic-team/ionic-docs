@@ -4,20 +4,26 @@ tableOfContents: false
 
 # Bem vindo ao Studio
 
-O Ionic Studio é um poderoso construtor de aplicativos que oferece uma experiência de desenvolvimento tranquila para equipes que trabalham com o Ionic.
+Ionic Studio is a fast and easy app builder that helps teams build and prototype apps with minimal coding.
+
+Studio is designed to integrate into an existing developer workflow, rather than replace it, enabling developers and architects to build visually *or* drop down to code using their favorite tools.
+
+Studio fully supports bringing code back into the tool, something virtually unheard of in the app development tools market.
+
+Studio is a desktop tool and requires a subscription, and is only for Ionic Angular 4.x+ projects. To get started, sign up below:
 
 <docs-cards class="static-width"> <docs-card header="Get Studio" href="https://ionicframework.com/studio?utm_source=docs&utm_medium=website&utm_campaign=studio%20launch" icon="/docs/assets/icons/guide-installation-icon.png"> 
 
-Cadastre-se no Studio e comece a construir hoje.</docs-card>
+Sign up for Studio and start building today.</docs-card>
 
 <docs-card header="Quickstart" href="/docs/studio/guides/quickstart" img="/docs/assets/icons/guide-quickstart.png"> 
 
-Comece criando um novo aplicativo e entre de cabeça no conjunto de recursos oferecidos pelo Ionic Studio.</docs-card>
+Get started by creating a new app and diving head-first into the suite of features offered by Ionic Studio.</docs-card>
 
 <docs-card header="News & Updates" icon="/docs/assets/icons/guide-news-icon.png"> 
 
-Entregue dentro do Studio, bem como por e-mail.</docs-card>
+Delivered within Studio as well as over email.</docs-card>
 
 <docs-card header="Studio FAQ" href="/docs/studio/faq" icon="/docs/assets/icons/guide-faq-icon.png"> 
 
-Encontre respostas para perguntas frequentes sobre o Ionic Studio.</docs-card> </docs-cards>
+Find answers to common questions about Ionic Studio.</docs-card> </docs-cards>
