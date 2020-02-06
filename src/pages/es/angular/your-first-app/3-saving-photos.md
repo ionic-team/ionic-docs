@@ -38,10 +38,10 @@ We’ll use the Capacitor [Filesystem API](https://capacitor.ionicframework.com/
 
 ```typescript
 private async savePicture(cameraPhoto: CameraPhoto) {
-  // Convert photo to base64 format, required by Filesystem API to save
+  // Convierte foto a formato base64, requerido por la API del sistema de archivos para guardar
   const base64Data = await this.readAsBase64(cameraPhoto);
 
-  // Write the file to the data directory
+  // Escribe el archivo en el directorio de datos
   const fileName = new Date().getTime() + '.jpeg';
   await Filesystem.writeFile({
     path: fileName,
@@ -49,7 +49,7 @@ private async savePicture(cameraPhoto: CameraPhoto) {
     directory: FilesystemDirectory.Data
   });
 
-  // Get platform-specific photo filepaths
+  // Obtener rutas de archivos de fotos específicas de la plataforma
   return await this.getPhotoFile(cameraPhoto, fileName);
 }
 ```
@@ -58,9 +58,9 @@ private async savePicture(cameraPhoto: CameraPhoto) {
 
 ```typescript
 private async readAsBase64(cameraPhoto: CameraPhoto) {
-  // Fetch the photo, read as a blob, then convert to base64 format
+  // Obtener la foto, leer como un blob, luego convertir a formato base64
   const response = await fetch(cameraPhoto.webPath!);
-  const blob = await response.blob();
+ const blob = await response.blob();
 
   return await this.convertBlobToBase64(blob) as string;  
 }
