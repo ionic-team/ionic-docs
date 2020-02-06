@@ -1,53 +1,39 @@
 ---
 ---
 
-# Code Overview
+# Working with Code
 
-Ionic Studio offers a full code editor for diving deep into the non-visual aspects of Ionic apps.
+Ionic Studio works alongside your code editor of choice to enable more complex development workflows that go beyond Studio's UI development features.
 
-## Introduction
+## Launching your Editor
 
-Code mode features include:
-
-* Multi-language support
-* Collapsible file tree
-* Search/replace
-* Go-to definition and find all references for TypeScript
-* Autocompletion and TypeScript intellisense
-* Visualized compile errors inside the editor
+To launch your Studio app project in your editor of choice, navigate to the Designer index and click "Open in editor." Alternatively, the Project -> Open in Editor menu bar item may be used.
 
 <figure>
-  <img alt="Code Mode" src="/docs/assets/img/studio/ss-code.png" />
+  <img alt="New Feature Button" src="/docs/assets/img/studio/2/ss-designer-index.png" />
 </figure>
 
-## File Tree Panel
+## Configuring your Editor
 
-The file tree panel on the left contains a list of all the files and directories in the app.
+Studio detects a number of popular code editors, such as Visual Studio Code, Sublime Text, and more.
 
-Right click on a file or directory to rename it, delete it, etc. Drag and drop to move files and directories is also supported.
+If Studio is not able to detect your editor, ensure that one is installed and configured in the default manner.
 
-### Search Project
+Studio will automatically detect one of
 
-App files can be searched using the search bar at the top of the file tree panel.
+* Sublime Text
+* Atom
+* Visual Studio Code
+* WebStorm
+* TextMate
+* Vim
+* NeoVim
+* IntelliJ
+* GNU nano
+* GNU Emacs
 
-<figure>
-  <img alt="Search Bar" src="/docs/assets/img/studio/ss-search-bar.png" />
-</figure>
+## Opening in another editor
 
-### Search and Replace
+If Studio does not automatically detect your editor or your editor is not on the list of supported editors, the app project can always be opened directly.
 
-Search and replace functionality is available by using the dropdown arrow when searching.
-
-<figure>
-  <img alt="Search and Replace" src="/docs/assets/img/studio/ss-search-and-replace.png" />
-</figure>
-
-## Editor
-
-The code editor itself behaves similar to other modern editors.
-
-* Right click on symbols to **Go to Definition** or **Find all References** in TypeScript files
-* **Find in File** with <kbd>Ctrl</kbd>+<kbd>F</kbd> (or <kbd>Cmd</kbd>+<kbd>F</kbd> for macOS)
-* Enjoy intelligent autocompletion of TypeScript code
-* See TypeScript compile errors right inside the editor
-* **Bracket matching** when the cursor is near bracket characters
+To find the project path, use the Project -> Open in Finder (or Explorer) option to navigate to the project directory on disk and navigate to that path in your editor's project open dialog.
