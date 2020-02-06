@@ -168,7 +168,7 @@ class MyDir {
 }
 ```
 
-### Can't bind to 'propertyName' since it isn't a known property
+### "Can't bind to 'propertyName' since it isn't a known property"
 
 ```shell
 Can't bind to 'propertyName' since it isn't a known property of the 'elementName' element and there are no matching directives with a corresponding property
@@ -181,7 +181,7 @@ This happens when you try and bind a property on an element that doesn't have th
 <div [foo]="bar"></div>
 ```
 
-### No provider for ControlContainer
+### "No provider for ControlContainer"
 
 ```shell
 No provider for ControlContainer! (NgControlName -> ControlContainer)
@@ -198,7 +198,7 @@ This error is a more specific version of the `No provider` error above. It happe
 })
 ```
 
-### No Component Factory Found
+### "No Component Factory Found"
 
 ```shell
 No component factory found for <component name>
