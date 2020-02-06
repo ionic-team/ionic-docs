@@ -1,7 +1,7 @@
 ---
 previousText: 'Tu primera Aplicación'
 previousUrl: '/docs/angular/your-first-app'
-nextText: 'Saving Photos on Filesystem'
+nextText: 'Guardando fotos en el sistema de archivos'
 nextUrl: '/docs/angular/your-first-app/3-saving-photos'
 ---
 
@@ -11,7 +11,7 @@ Now for the fun part - adding the ability to take photos with the device’s cam
 
 ## Photo Service
 
-All Capacitor logic (Camera usage and other native features) will be encapsulated in a service class. Create `PhotoService` using the `ionic generate` command:
+Toda la lógica de Capacitor (uso de la cámara y otras características nativas) se encapsulará en un servicio. Create `PhotoService` using the `ionic generate` command:
 
 ```bash
 $ ionic g service services/photo
@@ -20,8 +20,8 @@ $ ionic g service services/photo
 Open the new `services/photo.service.ts` file, and let’s add the logic that will power the camera functionality. First, import Capacitor dependencies and get references to the Camera, Filesystem, and Storage plugins:
 
 ```typescript
-import { Plugins, CameraResultType, Capacitor, FilesystemDirectory, 
-         CameraPhoto, CameraSource } from '@capacitor/core';
+importar { Plugins, CameraResultType, Capacitor, FilesystemDirectory, 
+         CameraPhoto, Cámara de Cámara } de '@capacitor/core';
 
 const { Camera, Filesystem, Storage } = Plugins;
 ```
@@ -30,8 +30,8 @@ Next, define a new function, `addNewToGallery`, that will contain the core logic
 
 ```typescript
 public async addNewToGallery() {
-  // Take a photo
-  const capturedPhoto = await Camera.getPhoto({
+  // Hacer una foto
+  const capturedPhoto = await Camera.getPhoto ({
     resultType: CameraResultType.Uri, 
     source: CameraSource.Camera, 
     quality: 100 
@@ -44,9 +44,9 @@ Notice the magic here: there's no platform-specific code (web, iOS, or Android)!
 Next, open up `tab2.page.ts` and import the PhotoService class:
 
 ```typescript
-import { PhotoService } from '../services/photo.service';
+importar { PhotoService } de '../services/photo.service';
 
-constructor(public photoService: PhotoService) { }
+constructor (public photoService: Photo Service) { }
 ```
 
 Then, open `tab2.page.html` and call the `addNewToGallery()` function when the FAB is tapped/clicked:
@@ -65,11 +65,11 @@ Save the file, and if it's not running already, restart the development server i
 
 ![Camera API on the web](/docs/assets/img/guides/first-app-cap-ng/camera-web.png)
 
-_(Your selfie is probably much better than mine)_
+_(Probablemente tu selfie sea mucho mejor que el mío)_
 
-After taking a photo, it disappears right away. We need to display it within our app and save it for future access.
+Después de tomar una foto, desaparece de inmediato. We need to display it within our app and save it for future access.
 
-## Displaying Photos
+## Mostrando fotos
 
 Outside of the `PhotoService` class definition (the very bottom of the file), create a new interface, `Photo`, to hold our photo metadata:
 
@@ -87,22 +87,22 @@ Back at the top of the file, define an array of Photos, which will contain a ref
 export class PhotoService {
   public photos: Photo[] = [];
 
-  // other code
+  // otro código
 }
 ```
 
 Over in the `addNewToGallery` function, add the newly captured photo to the beginning of the Photos array.
 
 ```typescript
-  const capturedPhoto = await Camera.getPhoto({
+  const capturedPhoto = await Camera.getPhoto ({
     resultType: CameraResultType.Uri, 
     source: CameraSource.Camera, 
     quality: 100 
   });
 
   this.photos.unshift({
-    filepath: "soon...",
-    webviewPath: capturedPhoto.webPath
+    filepath: "pronto...",
+    webviewPath: capturedPhoto .webPath
   });
 }
 ```
@@ -124,6 +124,6 @@ With the photo(s) stored into the main array, move over to `tab2.page.html` so w
 </ion-content>
 ```
 
-Save all files. Within the web browser, click the Camera button and take another photo. This time, the photo is displayed in the Photo Gallery!
+Save all files. Dentro del navegador web, haga clic en el botón Cámara y haga otra foto. Esta vez, la foto se muestra en la Galería de Fotos!
 
 Up next, we’ll add support for saving the photos to the filesystem, so they can be retrieved and displayed in our app at a later time.
