@@ -47,7 +47,11 @@ the `Native Config` dropdown and click `Save`.
 
 ![Add Native Config to Automation](/docs/assets/img/appflow/gif-add-native-config.gif)
 
-Now your apps should automatically use a different `bundle id`, app name, and deploy channel between your development and production
+Now your apps should automatically have a different `bundle id`, app name, and deploy channel between your development and production
 builds. This means you can install both your development and production applications on the same device and easily tell them apart! 🔥
+
+<blockquote>
+  <b>Note:</b> If you plan to use Native Configurations to modify Bundle IDs with your iOS Package builds, you will need to setup code signing credentials using those alternate Bundle IDs. See our section on <a href="/docs/appflow/package/credentials">Generating Credentials</a> for more information.
+</blockquote>
 
 ![Multiple Enviroments on a Device](/docs/assets/img/appflow/ss-multiple-envs-device.png)
