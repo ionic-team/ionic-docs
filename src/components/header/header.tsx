@@ -42,7 +42,7 @@ export class DocsHeader {
           <stencil-route-link url="/docs/studio">Studio {section === 'Studio' ? <Checkmark/> : null}</stencil-route-link>
         </section>
         {section === 'Framework' ? <section>
-          <a href="https://ionicframework.com/docs/v4">Framework v4</a>
+          <a href="https://ionicframework.com/docs/v4/components">Framework v4</a>
           <a href="https://ionicframework.com/docs/v3">Framework v3</a>
           <a href="https://stenciljs.com">Stencil</a>
         </section> : null}
