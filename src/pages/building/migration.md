@@ -11,9 +11,36 @@ contributors:
 
 # Migration Guide
 
+
+## Migrating from Ionic 4.x to Ionic 5.x
+
+Migrating an app from 4.x to 5.x requires a few updates to the API properties, CSS utilities, and the installed package dependencies.
+
+### API and CSS Updates
+
+For a complete list of breaking changes from 4.x to 5.x, please refer to [the breaking changes document](https://github.com/ionic-team/ionic/blob/master/BREAKING.md#version-5x) in the Ionic core repo.
+
+### Packages and Dependencies
+
+For Angular based projects, you can simply run:
+
+```shell
+npm install @ionic/angular@latest @ionic/angular-toolkit@latest --save
+```
+
+For React projects, you can run:
+
+```shell
+npm install @ionic/react@latest @ionic/react-router@latest ionicons@latest
+```
+
+If you would like a fresh project starter, a new project base can be created from the CLI and an existing app can be migrated over manually.
+
+
+## Migrating from Ionic 3.0 to Ionic 4.0
+
 > For a **complete list of breaking changes** from Ionic 3 to Ionic 4, please refer to [the breaking changes document](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md) in the Ionic core repo.
 
-## Migrating from Ionic 3.0 to Ionic 4.0 - Overview
 
 We suggest the following general process when migrating an existing application from Ionic 3 to 4:
 
@@ -253,7 +280,7 @@ Since v4 moved to Custom Elements, there's been a significant change to the mark
 
 To help with these markup changes, we've released a TSLint-based <a href="https://github.com/ionic-team/v4-migration-tslint" target="_blank">Migration Tool</a>, which detects issues and can even fix some of them automatically.
 
-## Migrating from Ionic 1.0 to Ionic 4.0 - Overview
+## Migrating from Ionic 1.0 to Ionic 4.0
 
 ### Ionic 1.0 to Ionic 4.0: What’s Involved?
 
@@ -263,7 +290,7 @@ One upside is that for the most part, the Ionic UI components you know and love 
 
 Here are some considerations to review before beginning the upgrade:
 - **App complexity**: Naturally, the larger and more complex the app is, the longer it will take to migrate.
-- **Framework support**: In 2019, Ionic will release full support for React and Vue. You can also use Ionic Framework components [without a framework](/docs/installation/cdn/). Since these are not production-ready yet, we recommend sticking with Angular or waiting until the other framework support is available.
+- **Framework support**: In 2019, Ionic will release full support for React. You can also use Ionic Framework components [without a framework](/docs/installation/cdn/). Since these are not production-ready yet, we recommend sticking with Angular or waiting until the other framework support is available.
 - **Budget and team makeup**: The length of a migration project will vary based on the size of your team, the complexity of the app, and the amount of time allotted to make the transition.
 
 ### Suggested Strategy

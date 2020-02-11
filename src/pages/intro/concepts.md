@@ -32,7 +32,6 @@ In contrast, mobile apps often utilize parallel, "non-linear" navigation. For ex
 Ionic apps embrace this mobile navigation approach, supporting parallel navigation histories that can also be nested, all while maintaining the familiar browser-style navigation concepts web developers are familiar with.
 
 For apps that are built with Angular and `@ionic/angular`, we recommend using the <a href="https://angular.io/guide/router" target="_blank">Angular Router</a> which comes out of the box for every new Ionic 4 Angular app.
-Previous versions of Ionic shipped with our own custom router, but in order to provide the best tooling and developer experience we have since moved to using the framework's recommended router.
 
 
 ## Native Access

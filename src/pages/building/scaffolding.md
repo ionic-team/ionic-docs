@@ -22,12 +22,10 @@ Once an app is created by the Ionic CLI, the next step is to start building out 
         <file-tree-directory name="theme" collapsed></file-tree-directory>
         <file-tree-file name="global.scss"></file-tree-file>
         <file-tree-file name="index.html"></file-tree-file>
-        <file-tree-file name="karma.conf.js"></file-tree-file>
         <file-tree-file name="main.ts"></file-tree-file>
         <file-tree-file name="polyfills.ts"></file-tree-file>
         <file-tree-file name="test.ts"></file-tree-file>
-        <file-tree-file name="tsconfig.app.json"></file-tree-file>
-        <file-tree-file name="tsconfig.spec.json"></file-tree-file>
+        <file-tree-file name="zone-flags.ts"></file-tree-file>
     </file-tree-directory>
 </file-tree>
 

@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fab</title>
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/dist/ionic/ionic.esm.js"></script>
-  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/dist/ionic/ionic.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/css/ionic.bundle.css"/>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/ionic.bundle.css"/>
   <style>
     :root {
       --ion-safe-area-top: 20px;
@@ -48,7 +48,7 @@
 
       <ion-fab horizontal="end" vertical="bottom" slot="fixed">
         <ion-fab-button color="light">
-          <ion-icon name="arrow-dropleft"></ion-icon>
+          <ion-icon md="caret-back" ios="chevron-back-circle-outline"></ion-icon>
         </ion-fab-button>
         <ion-fab-list side="start">
           <ion-fab-button color="light">
@@ -65,7 +65,7 @@
 
       <ion-fab horizontal="start" vertical="bottom" slot="fixed">
         <ion-fab-button color="dark">
-          <ion-icon name="arrow-dropup"></ion-icon>
+          <ion-icon md="caret-up" ios="chevron-up-circle-outline"></ion-icon>
         </ion-fab-button>
         <ion-fab-list side="top">
           <ion-fab-button color="light">
@@ -85,7 +85,7 @@
 
       <ion-fab horizontal="start" vertical="top" slot="fixed">
         <ion-fab-button color="secondary">
-          <ion-icon name="arrow-dropright"></ion-icon>
+          <ion-icon md="caret-forward" ios="chevron-forward-circle-outline"></ion-icon>
         </ion-fab-button>
         <ion-fab-list side="end">
           <ion-fab-button color="light">

@@ -16,8 +16,8 @@ In pursuit of [adaptive styling](/docs/intro/concepts#adaptive-styling), Ionic f
 
 | Platform     | Supported Versions |
 | ------------ | ------------------ |
-| **Android**  | 4.4+               |
-| **iOS**      | 10+                |
+| **Android**  | 5.0+               |
+| **iOS**      | 11+                |
 
 > Check the [latest Android stats](https://developer.android.com/about/dashboards/) and the [latest iOS stats](https://developer.apple.com/support/app-store/) for up-to-date platform information.
 
@@ -33,3 +33,4 @@ Because Ionic is based on web technologies, it works just as well on desktop bro
 | **Safari**  | ✔         |
 | **Edge**    | ✔         |
 | **Firefox** | ✔         |
+| **IE 11**   | **X**     |

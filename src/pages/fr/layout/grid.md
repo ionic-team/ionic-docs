@@ -9,7 +9,7 @@ contributors:
   - brandyscarney
 ---
 
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/css/utils.bundle.css"/> -->
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/utils.bundle.css"/> -->
 
 # Responsive Grid
 

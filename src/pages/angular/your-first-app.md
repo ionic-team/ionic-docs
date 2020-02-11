@@ -104,14 +104,20 @@ Open the photo-gallery app folder in your code editor of choice, then navigate t
 ```html
 <ion-header>
   <ion-toolbar>
-    <ion-title>Tab Two</ion-title>
+    <ion-title>Tab 2</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 2</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-content>
 ```
 
-`ion-header` represents the top navigation and toolbar, with "Tab 2" as the title. Let’s rename it:
+`ion-header` represents the top navigation and toolbar, with "Tab 2" as the title (there are two of them due to iOS [Collapsible Large Title](https://ionicframework.com/docs/api/title#collapsible-large-titles) support). Rename both `ion-title` elements to:
 
 ```html
 <ion-title>Photo Gallery</ion-title>
@@ -122,6 +128,7 @@ We put the visual aspects of our app into `<ion-content>`. In this case, it’s 
 ```html
 <ion-content>
 <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+
     <ion-fab-button>
       <ion-icon name="camera"></ion-icon>
     </ion-fab-button>
