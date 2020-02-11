@@ -1,6 +1,6 @@
 ---
-nextText: 'Build Your First App'
-nextUrl: '/docs/react/your-first-app'
+nextText: 'Quickstart'
+nextUrl: '/docs/react/quickstart'
 ---
 
 # Ionic React Overview
@@ -12,7 +12,7 @@ nextUrl: '/docs/react/your-first-app'
 First, install the Ionic CLI:
 
 ```shell
-$ npm install ionic -g
+$ npm install -g @ionic/cli
 ```
 
 then run:

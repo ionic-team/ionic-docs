@@ -43,15 +43,15 @@ Type “y” and press Enter. [Ionic Pro](https://ionicframework.com/pro) is a p
 
 <strong>Log into your Ionic Account</strong>
 
-Sign in now to easily access awesome features like Live Deploys later in this tutorial.
+Entre agora para acessar facilmente recursos incríveis como Live Deploys mais tarde neste tutorial.
 
-<strong>What would you like to do?</strong>
+<strong>O que gostaria de fazer?</strong>
 
-Choose “Create a new app on Ionic Pro.”
+Escolha "Criar um novo aplicativo no Iônic Pro."
 
-<strong>Which git host would you like to use?</strong>
+<strong>Qual conta você gostaria de usar?</strong>
 
-Choose “Ionic Pro.”
+Escolha o Ionic “Pro”
 
 <strong>“How would you like to connect to Ionic Pro?”</strong>
 
@@ -75,11 +75,11 @@ Run this command next:
 ionic serve
 ```
 
-And voilà! Your Ionic app is now running in a web browser. Most of your app can be built right in the browser, greatly increasing development speed.
+E voilà! Seu aplicativo Iônico agora está rodando em um navegador web. Most of your app can be built right in the browser, greatly increasing development speed.
 
 ## Photo Gallery!!!
 
-There are three tabs: “Home”, “About”, and “Contact.” Click on the About tab. It’s a blank canvas, aka the perfect spot to add camera functionality. Let’s begin to transform the About page into a Photo Gallery. Ionic features LiveReload, so when you make changes and save them, the app is updated immediately!
+Há três abas: "Casa", "Sobre" e "Contato". Clique na guia Sobre a página. É um canvas em branco, como o ponto perfeito para adicionar a funcionalidade da câmera. Vamos começar a transformar a página Sobre em uma Galeria de Fotos. Iônico recursos LiveReload, então quando você fizer alterações e salvá-las, o aplicativo é atualizado imediatamente!
 
 ![Before and after going through this tutorial](/docs/assets/img/guides/first-app-v3/email-photogallery.gif)
 
@@ -95,13 +95,13 @@ Open the photo-gallery app folder in your favorite code editor of choice, then n
 <ion-content class="ion-padding"></ion-content>
 ```
 
-`ion-header` represents the top navigation and toolbar, with “About” as the title. We put our app code into `ion-content`. In this case, it’s where we’ll add a button that opens the device’s camera and shows the image captured by the camera. But first, let’s start with something obvious: renaming the About page:
+`ionheader` representa a barra de navegação superior e ferramentas, com "Sobre" como título. Nós colocamos nosso código do aplicativo em `ion-content`. Neste caso, é onde vamos adicionar um botão que abre a câmera do dispositivo e mostra a imagem capturada pela câmera. But first, let’s start with something obvious: renaming the About page:
 
 ```html
 <ion-title>Photo Gallery</ion-title>
 ```
 
-Next, open `src/pages/tabs/tabs.html`. Change the tabTitle to “Gallery” and the tabIcon to “images”:
+Em seguida, abra `src/pages/tabs/tabs/tabs.html`. Alterar o título da aba "Galeria" e o ícone de guia para "imagens":
 
 ```html
 <ion-tabs>
@@ -111,7 +111,7 @@ Next, open `src/pages/tabs/tabs.html`. Change the tabTitle to “Gallery” and 
 </ion-tabs>
 ```
 
-Now, back up your changes to Ionic Pro:
+Agora, faça backup de suas alterações para Iônico Pro:
 
 ```shell
 $ git add .
@@ -119,4 +119,4 @@ $ git commit -m “converting about page to photo gallery”
 $ git push ionic master
 ```
 
-That’s just the start of all the cool things we can do with Ionic. Up next, we’ll deploy the app to iOS and Android, then continue building the photo gallery.
+Isso é apenas o início de todas as coisas legais que podemos fazer com Ionic. Em seguida, vamos implantar o app para iOS e Android, e depois continuar a construir a galeria de fotos.

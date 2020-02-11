@@ -1,7 +1,7 @@
 ---
 title: Calendar
 template: enterprise-plugin
-version: 5.1.4
+version: 5.1.5
 minor: 5.1.X
 ---
 
@@ -27,6 +27,12 @@ The Calendar plugin allows you to add events to the system calendar of the mobil
 <a id="calendar"></a>
 
 ### Calendar
+
+**Calendar**:
+
+***name***: Calendar
+
+***description***: This plugin allows you to add events to the Calendar of the mobile device.
 
 ***usage***:
 
@@ -192,6 +198,26 @@ Delete an event.
 | `Optional` notes     | `string` |
 | `Optional` startDate | `Date`   |
 | `Optional` endDate   | `Date`   |
+
+
+**Returns:** `Promise`<`any`> Returns a Promise
+
+* * *
+
+<a id="calendar.deleteeventbyid"></a>
+
+### deleteEventById
+
+▸ **deleteEventById**(id: *`string`*, fromDate?: *`Date`*): `Promise`<`any`>
+
+Delete an event by id.
+
+**Parameters:**
+
+| Name                | Type     |
+| ------------------- | -------- |
+| id                  | `string` |
+| `Optional` fromDate | `Date`   |
 
 
 **Returns:** `Promise`<`any`> Returns a Promise

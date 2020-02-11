@@ -69,7 +69,16 @@ const items = {
   },
   'menu-react': {
     'menu-react-overview': '/docs/react',
+    'menu-react-quickstart': '/docs/react/quickstart',
     'menu-react-your-first-app': '/docs/react/your-first-app',
+    '': {
+      'menu-react-yfa-taking-photos': '/docs/react/your-first-app/2-taking-photos',
+      'menu-react-yfa-saving-photos': '/docs/react/your-first-app/3-saving-photos',
+      'menu-react-yfa-loading-photos': '/docs/react/your-first-app/4-loading-photos',
+      'menu-react-yfa-adding-mobile': '/docs/react/your-first-app/5-adding-mobile',
+      'menu-react-yfa-deploying-mobile': '/docs/react/your-first-app/6-deploying-mobile',
+      'menu-react-yfa-live-reload': '/docs/react/your-first-app/7-live-reload'
+    },
     'menu-react-lifecycle': '/docs/react/lifecycle',
     'menu-react-navigation': '/docs/react/navigation',
     'menu-react-config': '/docs/react/config',

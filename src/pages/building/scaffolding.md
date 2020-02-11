@@ -22,12 +22,10 @@ Once an app is created by the Ionic CLI, the next step is to start building out 
         <file-tree-directory name="theme" collapsed></file-tree-directory>
         <file-tree-file name="global.scss"></file-tree-file>
         <file-tree-file name="index.html"></file-tree-file>
-        <file-tree-file name="karma.conf.js"></file-tree-file>
         <file-tree-file name="main.ts"></file-tree-file>
         <file-tree-file name="polyfills.ts"></file-tree-file>
         <file-tree-file name="test.ts"></file-tree-file>
-        <file-tree-file name="tsconfig.app.json"></file-tree-file>
-        <file-tree-file name="tsconfig.spec.json"></file-tree-file>
+        <file-tree-file name="zone-flags.ts"></file-tree-file>
     </file-tree-directory>
 </file-tree>
 
@@ -81,7 +79,7 @@ After a selection is made, the Ionic CLI will prompt for a name. The name can be
     <command-output>
         <span class="green">?</span> <span class="bold">What would you like to generate? <span class="cyan">page</span></span>
         <br />
-        <span class="green">?</span> <span class="bold">Name/path of <span class="green">page</span>:</span> portfolio
+        <span class="green">?</span> <span class="bold">Name/path of <span class="cyan">page</span>:</span> portfolio
     </command-output>
     <command-cursor blink></command-cursor>
 </command-line>
@@ -91,7 +89,7 @@ Alternatively, the `type` and `name` of the generated feature can be entered on 
 <command-line>
     <command-prompt>ionic g page "User Detail"</command-prompt>
     <command-output>
-        &gt; <span class="green">ng generate page "User Detail"</span>
+        &gt; <span class="cyan">ng generate page "User Detail"</span>
         <br />
         <span class="green">CREATE</span> src/app/user-detail/user-detail.module.ts (564 bytes)
         <br />

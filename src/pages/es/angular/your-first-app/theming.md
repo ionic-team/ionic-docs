@@ -7,7 +7,7 @@ nextUrl: '/docs/angular/lifecycle'
 
 # Personalizalo! Temática Ionic
 
-Anteriormente, convertimos nuestra aplicación de cámara de un solo uso en una épica galería de fotos. Ahora, exploremos cómo personalizar nuestra galería de fotos con temas de Ionic. El diseño visual de la aplicación es realmente importante - afortunadamente, Ionic nos proporciona muchas funciones.
+Anteriormente, convertimos nuestra aplicación de cámara de único uso en una galería de fotos épica. Ahora, exploremos cómo personalizar nuestra galería de fotos con temas de Ionic. El diseño visual de la aplicación es realmente importante - afortunadamente, Ionic nos proporciona muchas funciones.
 
 Ionic tiene nueve colores por defecto, definidos como variables CSS, que pueden ser usados para cambiar el color de sus componentes de la interfaz de usuario:
 

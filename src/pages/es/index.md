@@ -3,6 +3,7 @@ title: Ionic Framework
 meta:
   image: /docs/assets/img/meta/open-graph.png
   description: Ionic es la plataforma de aplicaciones para desarrolladores web. Cree increíbles aplicaciones móviles, web y de escritorio, todo con una base de código compartido y estándares web abiertos
+tableOfContents: false
 ---
 
 <docs-cards> <docs-card header="Components" href="/docs/components" img="/docs/assets/icons/feature-guide-components-icon.png"> 

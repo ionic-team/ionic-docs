@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Select</title>
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/dist/ionic/ionic.esm.js"></script>
-  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/dist/ionic/ionic.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/css/ionic.bundle.css"/>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/ionic.bundle.css"/>
   <style>
     :root {
       --ion-safe-area-top: 20px;
@@ -26,7 +26,7 @@
       <ion-list>
         <ion-item>
           <ion-label>Pet</ion-label>
-          <ion-select>
+          <ion-select value="dog">
             <ion-select-option value="cat">Cat</ion-select-option>
             <ion-select-option value="dog">Dog</ion-select-option>
           </ion-select>
@@ -69,20 +69,20 @@
 
         <ion-item>
           <ion-label>Music</ion-label>
-          <ion-select>
-            <ion-select-option>Alice in Chains</ion-select-option>
-            <ion-select-option>Green Day</ion-select-option>
-            <ion-select-option selected>Nirvana</ion-select-option>
-            <ion-select-option>Pearl Jam</ion-select-option>
-            <ion-select-option>Smashing Pumpkins</ion-select-option>
-            <ion-select-option>Soundgarden</ion-select-option>
-            <ion-select-option>Stone Temple Pilots</ion-select-option>
+          <ion-select value="03">
+            <ion-select-option value="01">Alice in Chains</ion-select-option>
+            <ion-select-option value="02">Green Day</ion-select-option>
+            <ion-select-option value="03">Nirvana</ion-select-option>
+            <ion-select-option value="04">Pearl Jam</ion-select-option>
+            <ion-select-option value="05">Smashing Pumpkins</ion-select-option>
+            <ion-select-option value="06">Soundgarden</ion-select-option>
+            <ion-select-option value="07">Stone Temple Pilots</ion-select-option>
           </ion-select>
         </ion-item>
 
         <ion-item>
           <ion-label>Month</ion-label>
-          <ion-select>
+          <ion-select value="12">
             <ion-select-option value="01">January</ion-select-option>
             <ion-select-option value="02">February</ion-select-option>
             <ion-select-option value="03">March</ion-select-option>
@@ -94,24 +94,24 @@
             <ion-select-option value="09">September</ion-select-option>
             <ion-select-option value="10">October</ion-select-option>
             <ion-select-option value="11">November</ion-select-option>
-            <ion-select-option value="12" selected>December</ion-select-option>
+            <ion-select-option value="12">December</ion-select-option>
           </ion-select>
         </ion-item>
 
         <ion-item>
           <ion-label>Year</ion-label>
-          <ion-select>
-            <ion-select-option>1989</ion-select-option>
-            <ion-select-option>1990</ion-select-option>
-            <ion-select-option>1991</ion-select-option>
-            <ion-select-option>1992</ion-select-option>
-            <ion-select-option>1993</ion-select-option>
-            <ion-select-option selected>1994</ion-select-option>
-            <ion-select-option>1995</ion-select-option>
-            <ion-select-option>1996</ion-select-option>
-            <ion-select-option>1997</ion-select-option>
-            <ion-select-option>1998</ion-select-option>
-            <ion-select-option>1999</ion-select-option>
+          <ion-select value="1996">
+            <ion-select-option value="1989">1989</ion-select-option>
+            <ion-select-option value="1990">1990</ion-select-option>
+            <ion-select-option value="1991">1991</ion-select-option>
+            <ion-select-option value="1992">1992</ion-select-option>
+            <ion-select-option value="1993">1993</ion-select-option>
+            <ion-select-option value="1994">1994</ion-select-option>
+            <ion-select-option value="1995">1995</ion-select-option>
+            <ion-select-option value="1996">1996</ion-select-option>
+            <ion-select-option value="1997">1997</ion-select-option>
+            <ion-select-option value="1998">1998</ion-select-option>
+            <ion-select-option value="1999">1999</ion-select-option>
           </ion-select>
         </ion-item>
       </ion-list>

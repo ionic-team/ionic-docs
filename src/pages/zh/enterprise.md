@@ -1,12 +1,17 @@
 ---
-title: Ionic Native
+title: Community vs. Premier
+tableOfContents: false
 ---
 
-For teams building mission-critical apps, Ionic Native is a curated collection of plugins and solutions that are built and supported by Ionic, with stability assurances and guaranteed to work on all major platforms and versions.
+Community Plugins are a collection of open source Cordova plugins that make it easy to add native functionality to any Ionic app.
 
-## Why Ionic Native?
+Community Plugins are submitted and maintained by the Ionic community. While community members are generally quick to find and fix issues, certain plugins may not function properly. For teams that require dedicated native plugin support, please explore Ionic Native and request a free trial.
+
+## Why Ionic Native Premier?
 
 Take on mobile projects with peace of mind, knowing the native features, security, and performance you need will just work - now and in the future.
+
+For teams building mission-critical apps, Ionic Native is a curated collection of plugins and solutions that are built and supported by Ionic, with stability assurances and guaranteed to work on all major platforms and versions.
 
 <div class="native-ee-pricing">
   <div class="table-wrap">
@@ -14,19 +19,19 @@ Take on mobile projects with peace of mind, knowing the native features, securit
       <thead>
         <tr>
           <td>
-            <span class="native-ee-pricing-table">Features</span>
+            <span class="native-ee-pricing-table">功能</span>
           </td>
           <th>
             <div class="plan-wrap">
-              <span class="native-ee-pricing-table">Community Plugins</span>
-              <div class="price">$0/mo </div>
+              <span class="native-ee-pricing-table">第三方插件</span>
+              <div class="price">$0/月 </div>
             </div>
           </th>
           <th>
             <div class="plan-wrap">
-              <span class="native-ee-pricing-table">Premier Plugins</span>
+              <span class="native-ee-pricing-table">付费插件</span>
               <div class="price" data-toggle="billing-team">
-                Contact Us</div>
+                联系我们</div>
             </div>
           </th>
         </tr>
@@ -34,114 +39,115 @@ Take on mobile projects with peace of mind, knowing the native features, securit
       <tbody>
         <tr class="stripe">
           <th>
-            Maintainer
+            维护者
           </th>
-          <td>OSS Community</td>
+          <td>OSS 社区</td>
           <td>Ionic</td>
         </tr>
         <tr>
           <th>
-            Regular Release Cycles & Updates
+            定期维护与更新
           </th>
-          <td>No</td>
+          <td>否</td>
           <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
         </tr>
         <tr class="stripe">
           <th>
             Support SLA & Ticketing System
           </th>
-          <td>No</td>
+          <td>否</td>
           <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
         </tr>
         <tr>
           <th>
-            Advisory & Support
+            意见和支援
           </th>
-          <td>No</td>
+          <td>否</td>
           <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
         </tr>
         <tr class="stripe">
           <th>
-            Security & Bug fixes
+            安全和问题修复
           </th>
-          <td>OSS Community</td>
+          <td>OSS 社区</td>
           <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
         </tr>
         <tr>
           <th>
-            Implementation Guidance
+            集成指南
           </th>
-          <td>No</td>
+          <td>否</td>
           <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
         </tr>
         <tr class="stripe">
           <th>
-            Guaranteed SLA
+            保证
           </th>
-          <td>No</td>
+          <td>否</td>
           <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
         </tr>
           <th></th>
           <td></td>
           <td><a class="btn"
-                href="https://ionicframework.com/enterprise-edition">Learn More</a></td>
+                href="https://ionicframework.com/enterprise-edition">了解更多</a></td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
 
-## Sign Up for Ionic Native
+## 注册Ionic
 
 <hubspot-form form-id="7c2c6529-48c0-4d17-86a0-bfd40c849bb1"></hubspot-form>
 
-## Solution List
+## 解决方案
 
 Accelerate your app development with powerful solutions to common enterprise use cases. Ionic’s growing library are ready to deploy into any of the apps you build.
 
-### Authentication & Security
+### 身份验证和安全
 
 - [Auth Connect](/docs/enterprise/auth-connect)
 - [Identity Vault](/docs/enterprise/identity-vault)
+- [Secure Storage](/docs/enterprise/offline-storage)
 
-### Common Device Features
+### 常用设备功能
 
-- [Android Permissions](/docs/enterprise/android-permissions)
-- [App Rate](/docs/enterprise/app-rate)
-- [App Version](/docs/enterprise/app-version)
-- [Badge](/docs/enterprise/badge)
-- [Browser](/docs/enterprise/inappbrowser)
-- [Calendar](/docs/enterprise/calendar)
-- [Camera](/docs/enterprise/camera)
-- [Clipboard](/docs/enterprise/clipboard)
-- [Contacts](/docs/enterprise/contacts)
-- [Deeplinks](/docs/enterprise/deeplinks)
-- [Device](/docs/enterprise/device)
+- [Android 权限](/docs/enterprise/android-permissions)
+- [应用评分](/docs/enterprise/app-rate)
+- [应用版本](/docs/enterprise/app-version)
+- [徽标](/docs/enterprise/badge)
+- [浏览器](/docs/enterprise/inappbrowser)
+- [日历](/docs/enterprise/calendar)
+- [相机](/docs/enterprise/camera)
+- [剪贴板](/docs/enterprise/clipboard)
+- [联系人](/docs/enterprise/contacts)
+- [深度链接](/docs/enterprise/deeplinks)
+- [设备](/docs/enterprise/device)
 - [Dialogs](/docs/enterprise/dialogs)
 - [Email Composer](/docs/enterprise/email-composer)
-- [Filesystem](/docs/enterprise/filesystem)
-- [Geolocation](/docs/enterprise/geolocation)
+- [文件系统](/docs/enterprise/filesystem)
+- [地理位置](/docs/enterprise/geolocation)
 - [Globalization](/docs/enterprise/globalization)
 - [Haptics & Vibration](/docs/enterprise/vibration)
-- [Keyboard](/docs/enterprise/keyboard)
+- [键盘](/docs/enterprise/keyboard)
 - [Media](/docs/enterprise/media)
 - [Media Capture](/docs/enterprise/media-capture)
-- [Native Storage](/docs/enterprise/nativestorage)
+- [数据存储](/docs/enterprise/nativestorage)
 - [Network Information](/docs/enterprise/network-information)
-- [Screen Orientation](/docs/enterprise/screen-orientation)
-- [Social Sharing](/docs/enterprise/social-sharing)
-- [Splash Screen](/docs/enterprise/splashscreen)
-- [Status Bar](/docs/enterprise/statusbar)
+- [屏幕旋转](/docs/enterprise/screen-orientation)
+- [社交分享](/docs/enterprise/social-sharing)
+- [首屏](/docs/enterprise/splashscreen)
+- [状态栏​​​​​​​](/docs/enterprise/statusbar)
 
-### Integrated Services
+### 集成服务
 
 - [Active Directory](https://ionicframework.com/integrations/ms-activedirectory-ms-adal)
 - [mParticle](/docs/enterprise/mparticle)
 
-### Offline & Storage
+### 脱机存储
 
-- [Offline Storage](/docs/enterprise/offline-storage)
+- [脱机存储](/docs/enterprise/offline-storage)
 
-### Payments
+### 支付
 
 - [Apple Payment Pass](/docs/enterprise/apple-payment-pass)

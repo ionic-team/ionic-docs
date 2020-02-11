@@ -9,7 +9,7 @@ contributors:
   - brandyscarney
 ---
 
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/css/utils.bundle.css"/> -->
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/utils.bundle.css"/> -->
 
 # CSS Utilities
 
@@ -633,6 +633,30 @@ The default amount of `margin` to be applied is `16px` and is set by the `--ion-
 | `.ion-align-self-baseline` | `align-self: baseline`   | Item is aligned so that its baseline aligns with other item baselines. |
 | `.ion-align-self-stretch`  | `align-self: stretch`    | Item is stretched to fill the container.                               |
 | `.ion-align-self-auto`     | `align-self: auto`       | Item is positioned according to the parent's `align-items` value.      |
+
+
+## Border Display
+
+The border display CSS property determines if the border should be visible or not. The property can be applied to the ion-header and the ion-footer.
+
+```html
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Header - No Border</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Footer - No Border</ion-title>
+  </ion-toolbar>
+</ion-footer>
+```
+
+| Class            | Description                      |
+| ---------------- | -------------------------------- |
+| `.ion-no-border` | The element will have no border. |
 
 
 ## Ionic Breakpoints

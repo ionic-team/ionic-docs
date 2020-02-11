@@ -5,36 +5,36 @@ contributors:
   - dwieeb
 ---
 
-# Starting an App
+# 构建一个新的应用
 
-Starting a new Ionic app is incredibly simple. From the command line, run the `ionic start` command and the CLI will handle the rest.
+构建一个全新的Ionic应用非常容易。 只需在命令行中运行 `ionic start` ，CLI将替你完成剩下的事
 
 <command-line> <command-prompt>ionic start</command-prompt> <command-output>   
-<span class="bold">Every great app needs a name! 😍</span>  
+<span class="bold">每一个伟大的应用都需要起个名字！ 😍</span>  
   
-Please enter the full name of your app. You can change this at any time. To bypass this prompt next time, supply <span class="green">name</span>, the first argument to <span class="green">ionic start</span>.  
+请输入应用全称，之后你可以随时更改。 为了绕过此提示, 需提供<span class="green">名称</span>参数给 <span class="green">ionic start</span>.  
   
-<span class="bold green">?</span> <span class="bold">Project name:</span> <command-cursor blink></command-cursor>  
+<span class="bold green">?</span> <span class="bold">项目名称:</span> <command-cursor blink></command-cursor>  
 </command-output> </command-line>
 
-The Ionic CLI will display prompts asking for the new project's name and which template to use. These details can be provided as command arguments:
+Ionic CLI 将显示提示询问新项目名称，以及使用哪个模板。 这些细节可作为命令参数提供：
 
 ```shell
 $ ionic start myApp tabs
 ```
 
-Here, `myApp` is the name of the project, `tabs` is the starter template, and the project type is `angular`.
+其中， `myApp` 是项目名称。 `tabs` 是starter模板，项目类型为 ` angular `。
 
-`tabs` is not the only project template available. Between all project types, there are three templates available:
+`tabs` 不是唯一可用的项目模板。 在所有项目类型之间，有三个模板可用：
 
-- `tabs`: A tabs based layout
+- `标签`: 基于标签的布局
 - `sidemenu`: A sidemenu based layout
-- `blank`: An empty project with a single page
+- `空白`: 一个单一页面的空项目
 
-See all available templates with the following command:
+使用以下命令查看所有可用模板：
 
 ```shell
 $ ionic start --list
 ```
 
-These templates provide a great starting point for any app and include all the best practices for making a code base scale.
+这些模板为所有应用提供了一个很好的开始，并包含了基础代码的最佳实践。

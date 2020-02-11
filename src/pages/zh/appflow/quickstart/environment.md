@@ -67,7 +67,7 @@ Here's what your `angular.json` configurations section might look like.
       }
     ],
   },
-  "local" {}, // leave this blank to use the default src/environments/environment.ts file
+  "local": {}, // leave this blank to use the default src/environments/environment.ts file
   ...
 }
 

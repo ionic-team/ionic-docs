@@ -1,13 +1,13 @@
 ---
-title: 'Create a Native Configuration'
-previousText: 'Create an Environment'
+title: 'Crear una Configuración Nativa'
+previousText: 'Crear un entorno'
 previousUrl: '/docs/appflow/quickstart/environment'
-nextText: 'Ionic Deploy'
+nextText: 'Despliegue Iónico'
 nextUrl: '/docs/appflow/deploy/intro'
 ---
 
 <blockquote>
-  <p><b>Note:</b> This feature is only available on our <a href="/pricing">Growth plans</a> and above.</p>
+  <p><b>Nota:</b> Esta característica solo está disponible en nuestros <a href="/pricing">planes de crecimiento</a> y superiores.</p>
 </blockquote>
 
 [Native Configurations](/docs/appflow/package/native-configs) allow you to easily modify common configuration values that can change between different environments (development, production, staging, etc.) so you don't need to use extra logic or manually commit them to version control. Native configurations can be attached to any [Package build](/doc/appflow/package) or [Automation](/doc/appflow/automation).

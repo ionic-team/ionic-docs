@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Radio</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/css/ionic.bundle.css" />
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/dist/ionic/ionic.esm.js"></script>
-  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/dist/ionic/ionic.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/ionic.bundle.css" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.js"></script>
   <style>
     :root {
       --ion-safe-area-top: 20px;
@@ -27,7 +27,7 @@
 
     <ion-content fullscreen>
       <ion-list>
-        <ion-radio-group>
+        <ion-radio-group value="grape">
           <ion-list-header>
             <ion-label>Fruit</ion-label>
           </ion-list-header>
@@ -38,7 +38,7 @@
 
           <ion-item>
             <ion-label>Grape</ion-label>
-            <ion-radio slot="start" color="tertiary" value="grape" checked></ion-radio>
+            <ion-radio slot="start" color="tertiary" value="grape"></ion-radio>
           </ion-item>
 
           <ion-item>
@@ -47,23 +47,23 @@
           </ion-item>
         </ion-radio-group>
 
-        <ion-radio-group allow-empty-selection>
+        <ion-radio-group allow-empty-selection value="anchovies">
           <ion-list-header>
             <ion-label>Pizza Topping</ion-label>
           </ion-list-header>
           <ion-item>
             <ion-label>Beef</ion-label>
-            <ion-radio slot="end" color="primary"></ion-radio>
+            <ion-radio slot="end" color="primary" value="beef"></ion-radio>
           </ion-item>
 
           <ion-item>
             <ion-label>Anchovies</ion-label>
-            <ion-radio slot="end" color="secondary" checked></ion-radio>
+            <ion-radio slot="end" color="secondary" value="anchovies"></ion-radio>
           </ion-item>
 
           <ion-item>
             <ion-label>Sausage</ion-label>
-            <ion-radio slot="end" color="tertiary" name="sausage"></ion-radio>
+            <ion-radio slot="end" color="tertiary" value="sausage"></ion-radio>
           </ion-item>
 
           <ion-item>
@@ -78,7 +78,7 @@
 
           <ion-item>
             <ion-label>Pepperoni</ion-label>
-            <ion-radio slot="end" color="danger" checked></ion-radio>
+            <ion-radio slot="end" color="danger" value="pepperoni"></ion-radio>
           </ion-item>
         </ion-radio-group>
       </ion-list>

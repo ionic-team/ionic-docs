@@ -11,18 +11,6 @@ contributors:
 
 To target the Android platform, some additional environment setup is required. Android apps can be created on Windows, macOS, and Linux.
 
-## Java
-
-Native Android apps are compiled with the <a href="https://java.com/en/" target="_blank">Java</a> programming language. Download JDK8 from the <a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank">download page</a>.
-
-<blockquote>
-  <p>Cordova is not compatible with the latest version of Java. You must install JDK8 to build Android apps with Cordova.</p>
-</blockquote>
-
-## Gradle
-
-<a href="https://gradle.org/" target="_blank">Gradle</a> is the build tool used in Android apps and must be installed separately. See the <a href="https://gradle.org/install/" target="_blank">install page</a> for details.
-
 ## Android Studio
 
 <a href="https://developer.android.com/studio/" target="_blank">Android Studio</a> is the IDE for creating native Android apps. It includes the [Android SDK](/docs/faq/glossary#android-sdk), which will need to be configured for use in the command line.
@@ -43,8 +31,8 @@ Once installed, open Android Studio. The IDE should detect that the Android SDK 
 
 By default, the latest stable SDK Platform is installed, which includes a collection of packages required to target that version of Android.
 
-> To install system images and other minor SDK platform packages, you may need to ensure **Show Package Details** is checked at the bottom of the SDK Manager.
-> <img alt="Android Studio SDK Manager" src="/docs/assets/img/installation/android-studio-sdk.png" />
+To install system images and other minor SDK platform packages, you may need to ensure **Show Package Details** is checked at the bottom of the SDK Manager.
+<img alt="Android Studio SDK Manager" src="/docs/assets/img/installation/android-studio-sdk.png" />
 
 For future reference, the Android SDK can be managed with Android Studio in the **Configure** &raquo; **SDK Manager** menu of the Android Studio welcome screen or **Tools** &raquo; **SDK Manager** inside Android projects.
 
@@ -107,3 +95,17 @@ $ adb devices
 ```
 
 The device should be listed. See the full <a href="https://developer.android.com/studio/command-line/adb" target="_blank">`adb` documentation</a> for troubleshooting and detailed information.
+
+## Cordova Setup
+
+Additional setup is required for Cordova to support programmatic builds. This section is not necessary for Capacitor.
+
+### Java
+
+Native Android apps are compiled with the <a href="https://java.com/en/" target="_blank">Java</a> programming language. Download JDK8 from the <a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank">download page</a>.
+
+> Unfortunately, Cordova is not compatible with the latest version of Java.
+
+### Gradle
+
+<a href="https://gradle.org/" target="_blank">Gradle</a> is the build tool used in Android apps and must be installed separately. See the <a href="https://gradle.org/install/" target="_blank">install page</a> for details.

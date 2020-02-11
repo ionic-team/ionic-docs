@@ -16,8 +16,8 @@ Starting a new Ionic app is incredibly simple. From the command line, run the `i
         <span class="bold">Every great app needs a name! 😍</span><br />
         <br />
         Please enter the full name of your app. You can change this at any time.
-        To bypass this prompt next time, supply <span class="green">name</span>,
-        the first argument to <span class="green">ionic start</span>.<br />
+        To bypass this prompt next time, supply <span class="cyan">name</span>,
+        the first argument to <span class="cyan">ionic start</span>.<br />
         <br />
         <span class="bold green">?</span> <span class="bold">Project name:</span> <command-cursor blink></command-cursor><br />
     </command-output>

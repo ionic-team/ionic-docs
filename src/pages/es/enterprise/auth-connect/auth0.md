@@ -30,7 +30,7 @@ Auth0 is now ready to use in your Ionic app.
 
 Run the following command to install the Auth Connect plugin. For the `AUTH_URL_SCHEME` variable, use the globally unique App Id (ex: `com.company.app`) you decided on when configuring the Auth0 app above.
 
-<native-ent-install plugin-id="auth-connect" variables="--variable AUTH_URL_SCHEME=com.company.app"></native-ent-install>
+<native-ent-install plugin-id="auth" variables="--variable AUTH_URL_SCHEME=com.company.app"></native-ent-install>
 
 ### Configure Auth Connect
 

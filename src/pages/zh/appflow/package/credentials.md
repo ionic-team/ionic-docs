@@ -1,45 +1,45 @@
 ---
-previousText: 'Package Build Types'
+previousText: '软件包构建类型'
 previousUrl: '/docs/appflow/package/build-types'
-nextText: 'Adding Credentials'
+nextText: '添加证书'
 nextUrl: '/docs/appflow/package/adding-credentials'
 ---
 
-# Generating Credentials
+# 生成证书
 
-Security Profiles securely store your credentials so you can easily reference them when building your app in the cloud.
+安全配置文件安全地存储您的证书，以便您能够在云端构建应用程序时轻松引用 。
 
-## Overview
+## 综述
 
-You'll need two sets of Apple certificates when your app goes to production, which means you'll eventually need two Security Profiles: one for development and one for production.
+当您的应用投入生产时，您需要两套苹果证书。 这意味着你最终需要两个安全配置文件：一个用于开发 和一个用于生产。
 
-We'll guide you through creating a development profile with the credentials that you need for the desired platform below.
+我们将引导您创建一个包含您需要的下面平台的 证书的开发配置文件。
 
-## Android Credentials
+## Android 证书
 
-The [Android keystore](https://developer.android.com/training/articles/keystore.html), used for signing apps, can be generated using keytool, which is included in the [Java JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html). Change `MY-RELEASE-KEY` and `MY_ALIAS_NAME` to be relevant to your app. The tool will ask you to enter a keystore password and a key password.
+[Android keystore](https://developer.android.com/training/articles/keystore.html)用于签名应用，可以使用包含在 [Java JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) 中的键盘工具来生成。 更改 `MY-RELEASE-KEY` and `MY_ALIAS_NAME` 以便与您的应用相关。 工具将要求您输入密钥存储密码和密钥密码。
 
 ```bash
 $ keytool -genkey -v -keystore MY-RELEASE-KEY.keystore -alias MY_ALIAS_NAME -keyalg RSA -keysize 2048 -validity 10000
 ```
 
-## iOS Credentials
+## iOS 证书
 
-You'll need an Apple Developer account (Individual or Organization). See [comparing memberships](https://developer.apple.com/support/compare-memberships/).
+您将需要 Apple Developer 帐户(个人或组织)。 查看 [会员对比](https://developer.apple.com/support/compare-memberships/)。
 
-### Registering your App ID
+### 注册您的苹果账户
 
-Every app must register an ID with Apple.
+每个应用必须注册苹果的 ID。
 
-* Navigate to [Certificates, Identifiers & Profiles › Identifiers › App IDs](https://developer.apple.com/account/ios/identifier/bundle) in the [Apple Developer Center](https://developer.apple.com/account) and register a new App ID.
+* 导航到 [证书 ID ](https://developer.apple.com/account/ios/identifier/bundle)& [苹果开发者中心](https://developer.apple.com/account) 中注册一个新的应用ID。
 
 ![iOS App id](/docs/assets/img/appflow/ss-profiles-ios-app-id.png)
 
-* Under Explicit App ID, set the Bundle ID to the ID you've specified in your app's `config.xml` file. iOS Bundle IDs are represented as a reversed address, such as `com.ionicframework.MyIonicApp`.
+* 在明确应用ID下，将Bundle ID设置为您在应用 `config.xml` 文件中指定的 ID。 iOS Bundle ID 是一个反转地址，例如 `com.ionicframework.MyIonicApp`。
 
-### Device Registration
+### 设备绑定
 
-Devices must be explicitly registered with Apple for sending push notifications during development.
+开发过程中发送推送通知的设备必须在 Apple 中明确注册。
 
 * Navigate to [Certificates, Identifiers & Profiles › Devices › All](https://developer.apple.com/account/ios/device/) in the [Apple Developer Center](https://developer.apple.com/account) and register a new Device.
 
@@ -102,7 +102,7 @@ Next, we'll need to convert the certificate from a `.cer` file to a `.p12` file.
 * Select Personal Information Exchange (.p12) for File Format.
 * Save the certificate, giving it a strong password.
 
-#### Using OpenSSL
+#### 使用 OpenSSL
 
 * Download your iOS certificate to the same directory as your private RSA key.
 * Change the format of the iOS certificate to PEM.
@@ -117,7 +117,7 @@ $ openssl x509 -inform DER -outform PEM -in ios_development.cer -out ios_develop
 $ openssl pkcs12 -export -inkey keyname.key -in ios_development.cer.pem -out Certificates.p12
 ```
 
-### Provisioning Profile
+### 置备配置文件
 
 Provisioning profiles give your app access to be installed, or *provisioned*, on specific devices. For iOS App Development provisioning profiles, devices are selected manually.
 

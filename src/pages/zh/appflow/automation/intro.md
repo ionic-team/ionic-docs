@@ -4,6 +4,7 @@ previousText: 'Package'
 previousUrl: '/docs/appflow/package/cli'
 nextText: '自动化'
 nextUrl: '/docs/appflow/automation/create'
+tableOfContents: false
 ---
 
 <blockquote>

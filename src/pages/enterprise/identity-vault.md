@@ -1,7 +1,7 @@
 ---
 title: Identity Vault
 template: enterprise-plugin
-version: 3.6.0
+version: 3.6.1
 minor: 3.6.X
 otherVersions:
   - 2.0.X
@@ -1071,6 +1071,23 @@ Called when attempting passcode unlock to allow for user defined passcode prompt
 - a string to use as the passcode of undefined to use native prompts
 
 ___
+<a id="identityvaultuser.onsessionrestoreerror"></a>
+
+###  onSessionRestoreError
+
+▸ **onSessionRestoreError**(err: *[VaultError](#vaulterror)*): `any`
+
+Called when the session fails to auto restore
+
+**Parameters:**
+
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| err | [VaultError](#vaulterror) |  The [VaultError](#vaulterror) or that occurred.<br><br> |
+
+**Returns:** `any`
+
+___
 <a id="identityvaultuser.onsessionrestored"></a>
 
 ###  onSessionRestored
@@ -1101,6 +1118,23 @@ Called when there is an error during vault setup
 | Name | Type | Description |
 | ------ | ------ | ------ |
 | error | [VaultError](#vaulterror) |  The [VaultError](#vaulterror) that occurred.<br><br> |
+
+**Returns:** `any`
+
+___
+<a id="identityvaultuser.onunlockonreadyerror"></a>
+
+###  onUnlockOnReadyError
+
+▸ **onUnlockOnReadyError**(err: *[VaultError](#vaulterror)*): `any`
+
+Called when the automatically unlocking the vault after it is ready fails.
+
+**Parameters:**
+
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| err | [VaultError](#vaulterror) |  The [VaultError](#vaulterror) or that occurred.<br><br> |
 
 **Returns:** `any`
 
@@ -1755,6 +1789,15 @@ The possible values returned by [getBiometricType](#identityvault.getbiometricty
 ___
 
 ## Change Log
+
+
+
+### [3.6.1] (2020-02-05)
+
+
+### Bug Fixes
+
+* **Android, iOS:** fix an issue where if auto unlock or restore session fails the vault fails to fire the onVaultReady event 
 
 
 

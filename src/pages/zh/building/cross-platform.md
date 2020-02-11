@@ -26,7 +26,8 @@ In an app’s logic, whenever it is needed to make a native API call, it is reco
 
 ```typescript
 this.platform.ready().then(() => {
-  if (this.platform.is('cordova')) {
+  // 'hybrid' detects both Cordova and Capacitor
+  if (this.platform.is('hybrid')) {
     // make your native API calls
   } else {
     // fallback to browser APIs

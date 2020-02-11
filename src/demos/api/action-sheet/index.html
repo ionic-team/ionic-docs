@@ -4,15 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Action Sheet</title>
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/dist/ionic/ionic.esm.js"></script>
-  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/dist/ionic/ionic.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/css/ionic.bundle.css"/>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/ionic.bundle.css"/>
   <style>
     :root {
       --ion-safe-area-top: 20px;
       --ion-safe-area-bottom: 22px;
     }
   </style>
+  <script type="module">
+    import { actionSheetController } from 'https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/index.esm.js';
+    window.actionSheetController = actionSheetController;
+  </script>
 </head>
 <body>
   <ion-app>
@@ -22,18 +26,16 @@
       </ion-toolbar>
     </ion-header>
     <ion-content fullscreen class="ion-padding">
-      <ion-action-sheet-controller></ion-action-sheet-controller>
       <ion-button expand="block">Show Action Sheet</ion-button>
     </ion-content>
   </ion-app>
 
   <script>
-    const controller = document.querySelector('ion-action-sheet-controller');
     const button = document.querySelector('ion-button');
     button.addEventListener('click', handleButtonClick);
 
-    function handleButtonClick() {
-      controller.create({
+    async function handleButtonClick() {
+      const actionSheet = await actionSheetController.create({
         header: 'Albums',
         buttons: [
           { text: 'Delete', role: 'destructive' },
@@ -42,9 +44,9 @@
           { text: 'Favorite' },
           { text: 'Cancel', role: 'cancel' }
         ]
-      }).then(actionSheet => {
-        actionSheet.present();
       });
+
+      await actionSheet.present();
     }
   </script>
 </body>
