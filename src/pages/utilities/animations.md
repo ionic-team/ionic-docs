@@ -612,7 +612,7 @@ const gesture = createGesture({
   onEnd: ev: onEnd(ev)
 })
 
-gesture.setDisabled(false);
+gesture.enable(true);
 
 const onMove = (ev): {
   if (!started) {
@@ -626,14 +626,14 @@ const onMove = (ev): {
 const onEnd = (ev): {
   if (!started) { return; }
   
-  gesture.setDisabled(true);
+  gesture.enable(false);
   
   const step = getStep(ev);
   const shouldComplete = step > 0.5;
 
   animation
     .progressEnd((shouldComplete) ? 1 : 0, step)
-    .onFinish((): { gesture.setDisabled(false); });  
+    .onFinish((): { gesture.enable(true); });
   
   initialStep = (shouldComplete) ? MAX_TRANSLATE : 0;
   started = false;
@@ -673,7 +673,7 @@ ngOnInit() {
     onEnd: ev: this.onEnd(ev)
   })
   
-  this.gesture.setDisabled(false);
+  this.gesture.enable(true);
 }
 
 private onMove(ev) {
@@ -688,14 +688,14 @@ private onMove(ev) {
 private onEnd(ev) {
   if (!this.started) { return; }
   
-  this.gesture.setDisabled(true);
+  this.gesture.enable(false);
   
   const step = this.getStep(ev);
   const shouldComplete = step > 0.5;
 
   this.animation
     .progressEnd((shouldComplete) ? 1 : 0, step)
-    .onFinish((): { this.gesture.setDisabled(false); });  
+    .onFinish((): { this.gesture.enable(true); });
   
   this.initialStep = (shouldComplete) ? this.MAX_TRANSLATE : 0;
   this.started = false;
