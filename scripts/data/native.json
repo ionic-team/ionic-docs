@@ -1223,7 +1223,7 @@
     "packageName": "@ionic-native/document-scanner",
     "displayName": "Document Scanner",
     "description": "\nThis plugin processes images of documents, compensating for perspective.\n",
-    "usage": "\n```typescript\nimport { DocumentScanner, DocumentScannerOptions } from '@ionic-native/document-scanner';\n\n\nconstructor(private documentScanner: DocumentScanner) { }\n\n...\n\nlet opts: DocumentScannerOptions = {};\nthis.documentScanner.scanDocument(opts)\n  .then((res: string) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+    "usage": "\n```typescript\nimport { DocumentScanner, DocumentScannerOptions } from '@ionic-native/document-scanner';\n\n\nconstructor(private documentScanner: DocumentScanner) { }\n\n...\n\nlet opts: DocumentScannerOptions = {};\nthis.documentScanner.scanDoc(opts)\n  .then((res: string) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
     "platforms": [
       "Android",
       "iOS"
