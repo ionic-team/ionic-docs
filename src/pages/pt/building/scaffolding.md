@@ -14,7 +14,7 @@ Once an app is created by the Ionic CLI, the next step is to start building out 
 
 ## Project Structure
 
-<file-tree> <file-tree-directory name="src"> <file-tree-directory name="app" collapsed></file-tree-directory> <file-tree-directory name="assets" collapsed></file-tree-directory> <file-tree-directory name="environments" collapsed></file-tree-directory> <file-tree-directory name="theme" collapsed></file-tree-directory> <file-tree-file name="global.scss"></file-tree-file> <file-tree-file name="index.html"></file-tree-file> <file-tree-file name="karma.conf.js"></file-tree-file> <file-tree-file name="main.ts"></file-tree-file> <file-tree-file name="polyfills.ts"></file-tree-file> <file-tree-file name="test.ts"></file-tree-file> <file-tree-file name="tsconfig.app.json"></file-tree-file> <file-tree-file name="tsconfig.spec.json"></file-tree-file> </file-tree-directory> </file-tree>
+<file-tree> <file-tree-directory name="src"> <file-tree-directory name="app" collapsed></file-tree-directory> <file-tree-directory name="assets" collapsed></file-tree-directory> <file-tree-directory name="environments" collapsed></file-tree-directory> <file-tree-directory name="theme" collapsed></file-tree-directory> <file-tree-file name="global.scss"></file-tree-file> <file-tree-file name="index.html"></file-tree-file> <file-tree-file name="main.ts"></file-tree-file> <file-tree-file name="polyfills.ts"></file-tree-file> <file-tree-file name="test.ts"></file-tree-file> <file-tree-file name="zone-flags.ts"></file-tree-file> </file-tree-directory> </file-tree>
 
 The `src/` directory has items such as the `index.html` file, configuration files for tests, an asset folder for images, and the main `app/` directory for the app's code.
 
