@@ -8,9 +8,9 @@ contributors:
   - brandyscarney
 ---
 
-# Scaffolding out an App
+# 创建应用程序
 
-Once an app is created by the Ionic CLI, the next step is to start building out features and components. The majority of the app will be developed in the `src/app/` directory.
+Ionic CLI创建应用程序后，下一步是开始构建功能和组件。 大部分应用程序将在`src/app/`目录中开发。
 
 ## Project Structure
 
