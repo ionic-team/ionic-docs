@@ -120,7 +120,7 @@ With the photo(s) stored into the main array, move over to `tab2.page.html` so w
     </ion-row>
   </ion-grid>
 
-   <!-- <ion-fab> markup  -->
+  <!-- ion-fab markup  -->
 </ion-content>
 ```
 
