@@ -5,10 +5,13 @@ nextText: 'Ionic Storage'
 nextUrl: '/docs/building/storage'
 ---
 
-
 # Web View
 
-The Web View powers web apps in native devices. Ionic maintains a <a href="https://github.com/ionic-team/cordova-plugin-ionic-webview" target="_blank">Web View plugin</a> for apps integrated with [Cordova](/docs/faq/glossary#cordova). The plugin is provided by default when using the Ionic CLI. For apps integrated with [Capacitor](/docs/faq/glossary#capacitor), the Web View is automatically provided.
+Web Views power web apps on native devices.
+
+The Web View is automatically provided for apps integrated with [Capacitor](/docs/faq/glossary#capacitor).
+
+For [Cordova](/docs/faq/glossary#cordova), Ionic maintains a <a href="https://github.com/ionic-team/cordova-plugin-ionic-webview" target="_blank">Web View plugin</a>. The plugin is provided by default when using the Ionic CLI.
 
 ## What is a Web View?
 
@@ -22,32 +25,21 @@ The Ionic Web View plugin is specialized for modern JavaScript apps. For both iO
 
 ### CORS
 
-Web Views enforce [CORS](/docs/faq/glossary#cors), so it's important that external services properly handle cross-origin requests. See <a href="https://enable-cors.org/" target="_blank">enable-cors.org</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" target="_blank">MDN</a> for more details.
-
-If CORS is not implemented on the server, there is [a native plugin](/docs/native/http/) that performs HTTP requests in the native layer which bypasses CORS.
-
-#### Server Checklist
-
-Many web frameworks may have support for CORS built in or as official add-ons, such as the <a href="https://github.com/expressjs/cors" target="_blank">`cors`</a> package for Express. If this is not an option, the following must be implemented for CORS:
-
-1. Allow `http://localhost:8080` as an origin (see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin" target="_blank">`Access-Control-Allow-Origin`</a>)
-1. Allow any necessary HTTP methods (see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Methods" target="_blank">`Access-Control-Allow-Methods`</a>)
-1. Allow any necessary HTTP headers (see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers" target="_blank">`Access-Control-Allow-Headers`</a>)
-1. Ensure the server can handle <a href="https://developer.mozilla.org/en-US/docs/Glossary/Preflight_request" target="_blank">preflight requests</a>
+Web Views enforce [CORS](/docs/faq/glossary#cors), so it's important that external services properly handle cross-origin requests. See the [CORS FAQs](/docs/faq/cors) for information on dealing with CORS in Ionic apps.
 
 ### File Protocol
 
-Cordova and Capacitor apps are hosted on a local HTTP server and are served with the `http://` protocol. Some plugins, however, attempt to access device files via the `file://` protocol. To avoid difficulties between `http://` and `file://`, paths to device files must be rewritten to use the local HTTP server. For example, `file:///path/to/device/file` must be rewritten as `http://<host>:<port>/<prefix>/path/to/device/file` before being rendered in the app.
+Capacitor and Cordova apps are hosted on a local HTTP server and are served with the `http://` protocol. Some plugins, however, attempt to access device files via the `file://` protocol. To avoid difficulties between `http://` and `file://`, paths to device files must be rewritten to use the local HTTP server. For example, `file:///path/to/device/file` must be rewritten as `http://<host>:<port>/<prefix>/path/to/device/file` before being rendered in the app.
 
-For Cordova apps, the [Ionic Web View plugin](https://github.com/ionic-team/cordova-plugin-ionic-webview) provides a utility function for converting File URIs: `window.Ionic.WebView.convertFileSrc()`. There is also a corresponding Ionic Native plugin: [`@ionic-native/ionic-webview`](/docs/native/ionic-webview/).
-
-For Capacitor apps, converting file URIs is very similar:
+For Capacitor apps, convert file URIs like so:
 
 ```javascript
 import { Capacitor } from '@capacitor/core';
 
 Capacitor.convertFileSrc(filePath);
 ```
+
+For Cordova apps, the [Ionic Web View plugin](https://github.com/ionic-team/cordova-plugin-ionic-webview) provides a utility function for converting File URIs: `window.Ionic.WebView.convertFileSrc()`. There is also a corresponding Ionic Native plugin: [`@ionic-native/ionic-webview`](/docs/native/ionic-webview/).
 
 ### Implementations
 

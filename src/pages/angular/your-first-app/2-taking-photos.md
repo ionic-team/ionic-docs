@@ -53,8 +53,6 @@ Then, open `tab2.page.html` and call the `addNewToGallery()` function when the F
 
 ```html
 <ion-content>
-  <!-- ion-header block -->
-
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
     <ion-fab-button (click)="photoService.addNewToGallery()">
       <ion-icon name="camera"></ion-icon>

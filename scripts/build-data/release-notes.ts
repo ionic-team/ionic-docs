@@ -187,92 +187,92 @@ const versions = [
     'element': 'Sodium'
   },
   {
-    'minor': '4.12',
+    'minor': '5.0',
     'symbol': 'Mg',
     'element': 'Magnesium'
   },
   {
-    'minor': '4.13',
+    'minor': '5.1',
     'symbol': 'Al',
     'element': 'Aluminium'
   },
   {
-    'minor': '4.14',
+    'minor': '5.2',
     'symbol': 'Si',
     'element': 'Silicon'
   },
   {
-    'minor': '4.15',
+    'minor': '5.3',
     'symbol': 'P',
     'element': 'Phosphorus'
   },
   {
-    'minor': '4.16',
+    'minor': '5.4',
     'symbol': 'S',
     'element': 'Sulfur'
   },
   {
-    'minor': '4.17',
+    'minor': '5.5',
     'symbol': 'Cl',
     'element': 'Chlorine'
   },
   {
-    'minor': '4.18',
+    'minor': '5.6',
     'symbol': 'Ar',
     'element': 'Argon'
   },
   {
-    'minor': '4.19',
+    'minor': '5.7',
     'symbol': 'K',
     'element': 'Potassium'
   },
   {
-    'minor': '4.20',
+    'minor': '5.8',
     'symbol': 'Ca',
     'element': 'Calcium'
   },
   {
-    'minor': '4.21',
+    'minor': '5.9',
     'symbol': 'Sc',
     'element': 'Scandium'
   },
   {
-    'minor': '4.22',
+    'minor': '5.10',
     'symbol': 'Ti',
     'element': 'Titanium'
   },
   {
-    'minor': '4.23',
+    'minor': '5.11',
     'symbol': 'V',
     'element': 'Vanadium'
   },
   {
-    'minor': '4.24',
+    'minor': '5.12',
     'symbol': 'Cr',
     'element': 'Chromium'
   },
   {
-    'minor': '4.25',
+    'minor': '5.13',
     'symbol': 'Mn',
     'element': 'Manganese'
   },
   {
-    'minor': '4.26',
+    'minor': '5.14',
     'symbol': 'Fe',
     'element': 'Iron'
   },
   {
-    'minor': '4.27',
+    'minor': '5.15',
     'symbol': 'Co',
     'element': 'Cobalt'
   },
   {
-    'minor': '4.28',
+    'minor': '5.16',
     'symbol': 'Ni',
     'element': 'Nickel'
   },
   {
-    'minor': '4.29',
+    'minor': '5.17',
     'symbol': 'Cu',
     'element': 'Copper'
   }

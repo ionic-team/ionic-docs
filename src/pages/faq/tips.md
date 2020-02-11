@@ -89,7 +89,6 @@ It is recommended that packages get updated through the CLI since npm will now r
 
 There are a lots of editors to choose from. Here are some of our favorites:
 
-- [Ionic Studio](https://ionicframework.com/studio?utm_source=docs&utm_medium=website&utm_campaign=studio%20launch): the fastest and easiest way to build Ionic apps
 - [VS Code](https://code.visualstudio.com): a popular and free text editor made by Microsoft
 - [Atom](https://atom.io): a hackable text editor made by GitHub
 - [WebStorm](https://www.jetbrains.com/webstorm/): a powerful non-free editor by JetBrains

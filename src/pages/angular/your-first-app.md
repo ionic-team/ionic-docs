@@ -123,17 +123,12 @@ Open the photo-gallery app folder in your code editor of choice, then navigate t
 <ion-title>Photo Gallery</ion-title>
 ```
 
-We put the visual aspects of our app into `<ion-content>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. Begin by replacing the `<app-explore-container>` element with a [floating action button](https://ionicframework.com/docs/api/fab) (FAB) and set the camera image as the icon:
+We put the visual aspects of our app into `<ion-content>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. Start by adding a [floating action button](https://ionicframework.com/docs/api/fab) (FAB) to the bottom of the page and set the camera image as the icon.
 
 ```html
 <ion-content>
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-fab vertical="bottom" horizontal="center" slot="fixed">
 
-  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
     <ion-fab-button>
       <ion-icon name="camera"></ion-icon>
     </ion-fab-button>

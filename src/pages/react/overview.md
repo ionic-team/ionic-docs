@@ -12,7 +12,7 @@ nextUrl: '/docs/react/quickstart'
 First, install the Ionic CLI:
 
 ```shell
-$ npm install ionic -g
+$ npm install -g @ionic/cli
 ```
 
 then run:

@@ -50,7 +50,7 @@ So, `size="4"` can be added to a column in order to take up 1/3 of the grid, or 
 - Columns without a value for size will automatically have equal widths. For example, four instances of `size-sm` will each automatically be 25% wide for the small breakpoint and up.
 - Column widths are set as a percentage, so they’re always fluid and sized relative to their parent element.
 - Columns have padding between individual columns, however, the padding can be removed from the grid and
-columns by adding `no-padding` on the grid.
+columns by adding the `ion-no-padding` class to the grid. See the [CSS Utilities](/docs/layout/css-utilities) for more styles that can be applied to the grid.
 - There are five grid tiers, one for each responsive breakpoint: all breakpoints (extra small), small, medium, large, and extra large.
 - Grid tiers are based on minimum widths, meaning they apply to their tier and all those larger than them
 (e.g., `size-sm="4"` applies to small, medium, large, and extra large devices).
@@ -72,13 +72,11 @@ By default, the grid will take up 100% width. To set a specific width based on t
 
 ## Grid attributes
 
-The grid takes up full width and has padding added to it based on the screen size. There are two
-attributes that can be used to adjust this behavior.
+The grid takes up the entire width of the screen by default. This can be modified using the attribute below.
 
 | Property        | Description                                                                      |
 |-----------------|----------------------------------------------------------------------------------|
-| no-padding      | Removes padding from the grid and immediate children columns.                    |
-| fixed           | Set a max width based on the screen size.                                        |
+| fixed           | Set a max width based on the current screen size.                                |
 
 
 ## Default breakpoints
