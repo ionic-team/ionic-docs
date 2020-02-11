@@ -4,12 +4,10 @@ export default () => <docs-nav items={items}/>;
 
 const items = {
   'menu-api-action-sheet': {
-    'ion-action-sheet': '/docs/api/action-sheet',
-    'ion-action-sheet-controller': '/docs/api/action-sheet-controller'
+    'ion-action-sheet': '/docs/api/action-sheet'
   },
   'menu-api-alert': {
-    'ion-alert': '/docs/api/alert',
-    'ion-alert-controller': '/docs/api/alert-controller'
+    'ion-alert': '/docs/api/alert'
   },
   'menu-api-badge': {
     'ion-badge': '/docs/api/badge'
@@ -37,8 +35,7 @@ const items = {
   },
   'menu-api-datetime': {
     'ion-datetime': '/docs/api/datetime',
-    'ion-picker': '/docs/api/picker',
-    'ion-picker-controller': '/docs/api/picker-controller'
+    'ion-picker': '/docs/api/picker'
   },
   'menu-api-fab': {
     'ion-fab': '/docs/api/fab',
@@ -85,13 +82,11 @@ const items = {
   'menu-api-menu': {
     'ion-menu': '/docs/api/menu',
     'ion-menu-button': '/docs/api/menu-button',
-    'ion-menu-controller': '/docs/api/menu-controller',
     'ion-menu-toggle': '/docs/api/menu-toggle',
     'ion-split-pane': '/docs/api/split-pane'
   },
   'menu-api-modal': {
     'ion-modal': '/docs/api/modal',
-    'ion-modal-controller': '/docs/api/modal-controller',
     'ion-backdrop': '/docs/api/backdrop'
   },
   'menu-api-nav': {
@@ -102,11 +97,9 @@ const items = {
   },
   'menu-api-popover': {
     'ion-popover': '/docs/api/popover',
-    'ion-popover-controller': '/docs/api/popover-controller'
   },
   'menu-api-progress-indicators': {
     'ion-loading': '/docs/api/loading',
-    'ion-loading-controller': '/docs/api/loading-controller',
     'ion-progress-bar': '/docs/api/progress-bar',
     'ion-skeleton-text': '/docs/api/skeleton-text',
     'ion-spinner': '/docs/api/spinner'
@@ -156,7 +149,6 @@ const items = {
   },
   'menu-api-toast': {
     'ion-toast': '/docs/api/toast',
-    'ion-toast-controller': '/docs/api/toast-controller'
   },
   'menu-api-toggle': {
     'ion-toggle': '/docs/api/toggle'
