@@ -94,6 +94,10 @@
   "menu-vue-lifecycle": "Lifecycle",
   "menu-vue-navigation": "Navigation/Routing",
 
+  "menu-utilities": "Utilities",
+  "menu-utilities-animations": "Animations",
+  "menu-utilities-gestures": "Gestures",
+
   "menu-publishing": "Publishing",
   "menu-publishing-progressive-web-app": "Progressive Web App",
   "menu-publishing-app-store": "iOS App Store",

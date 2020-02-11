@@ -92,6 +92,10 @@ const items = {
     'menu-vue-lifecycle': '/docs/vue/lifecycle',
     'menu-vue-navigation': '/docs/vue/navigation'
   },
+  'menu-utilities': {
+    'menu-utilities-animations': '/docs/utilities/animations',
+    'menu-utilities-gestures': '/docs/utilities/gestures'
+  },
   'menu-publishing': {
     'menu-publishing-progressive-web-app': '/docs/publishing/progressive-web-app',
     'menu-publishing-app-store': '/docs/publishing/app-store',
