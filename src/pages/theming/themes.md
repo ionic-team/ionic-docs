@@ -25,6 +25,7 @@ It is important to note that the background and text color variables also requir
 | `--ion-text-color`                            | Text color of the entire app                               |
 | `--ion-text-color-rgb`                        | Text color of the entire app, rgb format                   |
 | `--ion-backdrop-color`                        | Color of the Backdrop component                            |
+| `--ion-backdrop-opacity`                      | Opacity of the Backdrop component                            |
 | `--ion-overlay-background-color`              | Background color of the overlays                           |
 | `--ion-border-color`                          | Border color                                               |
 | `--ion-box-shadow-color`                      | Box shadow color                                           |
