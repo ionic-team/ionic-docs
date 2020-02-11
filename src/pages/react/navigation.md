@@ -13,6 +13,14 @@ This guide covers how routing works in an app built with Ionic and React.
 
 Everything you know about routing using React Router carries over into Ionic React. Let's take a look at the basics of an Ionic React app and how routing works with it.
 
+## Adding Ionic React Router Integration
+
+To install React Router into your application, you will need react router as well as the `IonReactRouter` integration provided by the `@ionic/react-router` npm package.  Install the dependencies into your project using:
+
+```
+npm i react-router react-router-dom @ionic/react-router
+```
+
 ## Routing in Ionic React
 
 Here is a sample `App` component that defines a single route to the "/dashboard" URL. When you visit "/dashboard", the route renders the `DashboardPage` component.
@@ -20,6 +28,7 @@ Here is a sample `App` component that defines a single route to the "/dashboard"
 **App.tsx**
 
 ```typescript
+
 const App: React.FC = () =>
   (
     <IonApp>
