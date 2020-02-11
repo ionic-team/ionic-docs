@@ -112,7 +112,7 @@ Open `/src/pages/Tab2.tsx`. We see:
 <IonPage>
   <IonHeader>
     <IonToolbar>
-      <IonTitle>Tab Two</IonTitle>
+      <IonTitle>Tab 2</IonTitle>
     </IonToolbar>
   </IonHeader>
   <IonContent>
@@ -153,7 +153,7 @@ We’ll be creating the `takePhoto` method and the logic to use the Camera and o
 Next, open `src/App.tsx` then import the `images` icon:
 
 ```typescript
-import { images, flash, send } from 'ionicons/icons';
+import { images, square, triangle } from 'ionicons/icons';
 ```
 
 Within the tab bar (`<IonTabBar>`), change the label to “Photos” and the icon to `images` for the middle tab button:
