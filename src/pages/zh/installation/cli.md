@@ -22,9 +22,15 @@ Install the Ionic CLI with npm:
 $ npm install -g @ionic/cli
 ```
 
-> The `-g` option means *install globally*. When packages are installed globally, `EACCES` permission errors can occur.
-> 
-> Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](/docs/faq/tips#resolving-permission-errors) for more information.
+If there was a previous installation of the Ionic CLI, it will need to be uninstalled due to a change in package name.
+
+```shell
+$ npm uninstall -g ionic
+$ npm install -g @ionic/cli
+
+```
+
+> The `-g` option means *install globally*. When packages are installed globally, `EACCES` permission errors can occur. Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](/docs/faq/tips#resolving-permission-errors) for more information.
 
 ## Start an App
 
