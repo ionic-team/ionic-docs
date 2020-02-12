@@ -72,6 +72,54 @@ The typical Auth Connect workflow consists of:
 6. The [IsAuthenticated](#iionicauth.isauthenticated) method can be called at any point to refresh the access token.
 7. Use [GetAccessToken](#getaccesstoken) to retrieve the access token if making any API requests to the auth provider.
 
+## Edge Support
+
+It is common to create a class that extends `IonicAuth` like this:
+
+```typescript
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthenticationService extends IonicAuth {
+  private vaultService: VaultService;
+
+  ...
+
+  async isAuthenticated(): Promise<boolean> {
+    const isVaultLocked = await this.vaultService.isLocked();
+    return !isVaultLocked && (await super.isAuthenticated());
+  }
+
+  ...
+
+}
+```
+
+However, due to a bug in the pre-Chromium version of Edge, you cannot overide a method like that in the subclass. If you need to support the pre-Chromium version of Edge, you will need to write that code as follows:
+
+```typescript
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthenticationService extends IonicAuth {
+  private vaultService: VaultService;
+
+  ...
+
+  async myAppIsAuthenticated(): Promise<boolean> {
+    const isVaultLocked = await this.vaultService.isLocked();
+    return !isVaultLocked && (await super.isAuthenticated());
+  }
+
+  ...
+
+}
+```
+
+You will then need to change external references from `this.authentication.isAuthenticated()` to `this.authentication.myAppIsAuthenticated()` (the name is not important so much as the fact that you are not overriding the base class method, pick a name that makes sense to you). You will also need to use the `CURRENT` behavior for `implicitLogin` on Edge.
+
+**Note:** this is *only* required if you need to support pre-Chromium Edge browsers. If you are creating a pure hybrid-native app or otherwise have no reason to support pre-Chromium Edge, then you can override methods like `isAuthenticated()` in the usual manner.
+
 ## Web Configuration Options
 
 ### Login UX Options
