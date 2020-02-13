@@ -1,17 +1,17 @@
 ---
-previousText: 'Taking Photos'
+previousText: 'Tomar fotos'
 previousUrl: '/docs/angular/your-first-app/2-taking-photos'
-nextText: 'Loading Photos on Filesystem'
+nextText: 'Guardando fotos en el sistema de archivos'
 nextUrl: '/docs/angular/your-first-app/4-loading-photos'
 ---
 
 # Guardando fotos en el sistema de archivos
 
-We’re now able to take multiple photos and display them in a photo gallery on the second tab of our app. These photos, however, are not currently being stored permanently, so when the app is closed, they will be deleted.
+Ahora podemos tomar varias fotos y mostrarlas en una galería de fotos en la segunda pestaña de nuestra aplicación. Sin embargo, estas fotos no se almacenan de forma permanente, por lo que cuando la aplicación se cierre, se eliminarán.
 
-## Filesystem API
+## API FileSystem
 
-Fortunately, saving them to the filesystem only takes a few steps. Begin by creating a new function, `savePicture()`, in the `PhotoService` class (`src/app/services/photo.service.ts`). We pass in the `cameraPhoto` object, which represents the newly captured device photo:
+Afortunadamente, guardarlos en el sistema de archivos sólo toma unos pocos pasos. Comience creando una nueva función, `savePicture()`, en la clase `Photo Service` (`src/app/services/photo.service.ts`). We pass in the `cameraPhoto` object, which represents the newly captured device photo:
 
 ```typescript
 private async savePicture(cameraPhoto: CameraPhoto) { }
