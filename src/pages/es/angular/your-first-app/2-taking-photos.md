@@ -20,8 +20,8 @@ $ ionic g service services/photo
 Abre el nuevo archivo `services/photo.service.ts`, y añadamos la lógica que iniciará la funcionalidad de la cámara. Primero, importa las dependencias de Capacitor y obtén las referencias a los plugins de Camera, Filesystem, and Storage:
 
 ```typescript
-importar { Plugins, CameraResultType, Capacitor, FilesystemDirectory, 
-         CameraPhoto, Cámara de Cámara } de '@capacitor/core';
+import { Plugins, CameraResultType, Capacitor, FilesystemDirectory, 
+         CameraPhoto, CameraSource } from '@capacitor/core';
 
 const { Camera, Filesystem, Storage } = Plugins;
 ```
@@ -39,17 +39,17 @@ public async addNewToGallery() {
 }
 ```
 
-Observe la magia aquí: no hay un código específico para cada plataforma (web, iOS o Android)! The Capacitor Camera plugin abstracts that away for us, leaving just one method call - `Camera.getPhoto()` - that will open up the device's camera and allow us to take photos.
+Observe la magia aquí: no hay un código específico para cada plataforma (web, iOS o Android)! El plugin de Capacitor Camera lo obtiene para nosotros, dejandolo a solo una llamada al método - `Camera.getPhoto()` - que abrirá la cámara del dispositivo y nos permitirá tomar fotos.
 
-Next, open up `tab2.page.ts` and import the PhotoService class:
+A continuación, abra `tab2.page.ts` e importe la clase PhotoService:
 
 ```typescript
-importar { PhotoService } de '../services/photo.service';
+import { PhotoService } from '../services/photo.service';
 
-constructor (public photoService: Photo Service) { }
+constructor(public photoService: PhotoService) { }
 ```
 
-Then, open `tab2.page.html` and call the `addNewToGallery()` function when the FAB is tapped/clicked:
+Luego, abra `tab2.page.html` y llame a la función `addNewToGallery()` cuando se toque o de clic en FAB:
 
 ```html
 <ion-content>
