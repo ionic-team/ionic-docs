@@ -1,5 +1,5 @@
 ---
-previousText: 'Your First App'
+previousText: 'Votre première application'
 previousUrl: '/docs/vue/your-first-app'
 nextText: 'Navigation'
 nextUrl: '/docs/vue/navigation'
