@@ -21,20 +21,20 @@ Podemos utilizar esta nueva función inmediatamente en `addNewToGallery()`:
 
 ```typescript
 public async addNewToGallery() {
-  // Hacer una foto
+  // Tomar una foto
   const capturedPhoto = await Camera.getPhoto({
-    resultType: CameraResultType.Uri, // datos basados en archivos; proporciona el mejor rendimiento
-    source: CameraSource.Camera, // tomar automáticamente una nueva foto con la cámara
-    quality: 100 // la calidad más alta (0 a 100)
+    resultType: CameraResultType.Uri, // file-based data; provides best performance
+    source: CameraSource.Camera, // automatically take a new photo with the camera
+    quality: 100 // highest quality (0 to 100)
   });
 
-  // Guardar la imagen y añadirla a la colección de fotos
+  // Guardar la foto y agregarla a la colección de fotos.
   const savedImageFile = await this.savePicture(capturedPhoto);
   this.photos.unshift(savedImageFile);
 }
 ```
 
-We’ll use the Capacitor [Filesystem API](https://capacitor.ionicframework.com/docs/apis/filesystem) to save the photo to the filesystem. To start, convert the photo to base64 format, then feed the data to the Filesystem’s `writeFile` function. Finally, make a call to getPhotoFile (which we will implement in a moment), which returns a Photo object.
+Utilizaremos el Capacitor [Filesystem API](https://capacitor.ionicframework.com/docs/apis/filesystem) para guardar la foto en el sistema de archivos. To start, convert the photo to base64 format, then feed the data to the Filesystem’s `writeFile` function. Finally, make a call to getPhotoFile (which we will implement in a moment), which returns a Photo object.
 
 ```typescript
 private async savePicture(cameraPhoto: CameraPhoto) {
