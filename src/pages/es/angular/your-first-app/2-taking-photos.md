@@ -63,7 +63,7 @@ Luego, abra `tab2.page.html` y llame a la función `addNewToGallery()` cuando se
 
 Guarda el archivo, y si no se está ejecutando, reinicia el servidor de desarrollo en tu navegador ejecutando `ionic serve`. En la pestaña Galería de fotos, haga clic en el botón de la cámara. Si su computadora tiene una webcam de cualquier tipo, aparece una ventana modal. ¡Toma una selfie!
 
-![Camera API on the web](/docs/assets/img/guides/first-app-cap-ng/camera-web.png)
+![API de cámara en la web](/docs/assets/img/guides/first-app-cap-ng/camera-web.png)
 
 _(Probablemente tu selfie sea mucho mejor que el mío)_
 
@@ -107,7 +107,7 @@ Terminada la función `addNewToGallery`, añade la nueva foto capturada al princ
 }
 ```
 
-With the photo(s) stored into the main array, move over to `tab2.page.html` so we can display the image on the screen. Add a [Grid component](https://ionicframework.com/docs/api/grid) so that each photo will display nicely as photos are added to the gallery, and loop through each photo in the Photos array, adding an Image component (`<ion-img>`) for each. Point the `src` (source) at the photo’s path:
+Con las fotos almacenadas en el arreglo principal, muévete a `tab2.page.html` para que podamos mostrar la imagen en la pantalla. Añade [ Grid component](https://ionicframework.com/docs/api/grid) para que cada foto se muestre de forma agradable como se agregan fotos a la galería, y bucle por cada foto en la matriz fotos, añadiendo un componente Image (`<ion-img>`) para cada una. Apunte la `src` (fuente) a la ruta de la foto:
 
 ```html
 <ion-content>
@@ -124,6 +124,6 @@ With the photo(s) stored into the main array, move over to `tab2.page.html` so w
 </ion-content>
 ```
 
-Save all files. Dentro del navegador web, haga clic en el botón Cámara y haga otra foto. Esta vez, la foto se muestra en la Galería de Fotos!
+Guardar todos los archivos. Dentro del navegador web, haga clic en el botón Cámara y haga otra foto. Esta vez, la foto se muestra en la Galería de Fotos!
 
-Up next, we’ll add support for saving the photos to the filesystem, so they can be retrieved and displayed in our app at a later time.
+A continuación, añadiremos soporte para guardar las fotos en el sistema de archivos, para que puedan ser recuperados y mostrados en nuestra aplicación más adelante.
