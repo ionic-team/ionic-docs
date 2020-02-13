@@ -91,7 +91,7 @@ export class PhotoService {
 }
 ```
 
-Over in the `addNewToGallery` function, add the newly captured photo to the beginning of the Photos array.
+Terminada la función `addNewToGallery`, añade la nueva foto capturada al principio del arreglo de fotos.
 
 ```typescript
   const capturedPhoto = await Camera.getPhoto ({
