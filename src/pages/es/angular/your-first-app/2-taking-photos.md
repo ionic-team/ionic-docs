@@ -7,17 +7,17 @@ nextUrl: '/docs/angular/your-first-app/3-saving-photos'
 
 # Capturando fotos con la cámara
 
-Now for the fun part - adding the ability to take photos with the device’s camera using the Capacitor [Camera API](https://capacitor.ionicframework.com/docs/apis/camera). We’ll begin with building it for the web, then make some small tweaks to make it work on mobile (iOS and Android).
+Ahora por la parte divertida: añadiendo la capacidad de tomar fotos con la cámara del dispositivo usando el Capacitor [API de cámara](https://capacitor.ionicframework.com/docs/apis/camera). Empezaremos por construirlo para la web, luego haremos algunos pequeños ajustes para que funcione en móviles (iOS y Android).
 
-## Photo Service
+## Servicio de fotos
 
-Toda la lógica de Capacitor (uso de la cámara y otras características nativas) se encapsulará en un servicio. Create `PhotoService` using the `ionic generate` command:
+Toda la lógica de Capacitor (uso de la cámara y otras características nativas) se encapsulará en un servicio. Crea `Photo Service` usando el comando `ionic generate`:
 
 ```bash
 $ ionic g service services/photo
 ```
 
-Open the new `services/photo.service.ts` file, and let’s add the logic that will power the camera functionality. First, import Capacitor dependencies and get references to the Camera, Filesystem, and Storage plugins:
+Abre el nuevo archivo `services/photo.service.ts`, y añadamos la lógica que iniciará la funcionalidad de la cámara. Primero, importa las dependencias de Capacitor y obtén las referencias a los plugins de Camera, Filesystem, and Storage:
 
 ```typescript
 importar { Plugins, CameraResultType, Capacitor, FilesystemDirectory, 
@@ -26,7 +26,7 @@ importar { Plugins, CameraResultType, Capacitor, FilesystemDirectory,
 const { Camera, Filesystem, Storage } = Plugins;
 ```
 
-Next, define a new function, `addNewToGallery`, that will contain the core logic to take a device photo and save it to the filesystem. Let’s start by opening the device camera:
+A continuación, defina una nueva función, `addNewToGallery`, que contendrá la lógica para tomar una foto del dispositivo y guardarla en los archivos del sistema. Comencemos abriendo la cámara de dispositivo:
 
 ```typescript
 public async addNewToGallery() {
@@ -39,7 +39,7 @@ public async addNewToGallery() {
 }
 ```
 
-Notice the magic here: there's no platform-specific code (web, iOS, or Android)! The Capacitor Camera plugin abstracts that away for us, leaving just one method call - `Camera.getPhoto()` - that will open up the device's camera and allow us to take photos.
+Observe la magia aquí: no hay un código específico para cada plataforma (web, iOS o Android)! The Capacitor Camera plugin abstracts that away for us, leaving just one method call - `Camera.getPhoto()` - that will open up the device's camera and allow us to take photos.
 
 Next, open up `tab2.page.ts` and import the PhotoService class:
 
