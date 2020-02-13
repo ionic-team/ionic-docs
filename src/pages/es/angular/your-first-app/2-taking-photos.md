@@ -61,13 +61,13 @@ Luego, abra `tab2.page.html` y llame a la función `addNewToGallery()` cuando se
 </ion-content>
 ```
 
-Save the file, and if it's not running already, restart the development server in your browser by running `ionic serve`. On the Photo Gallery tab, click the Camera button. If your computer has a webcam of any sort, a modal window appears. Take a selfie!
+Guarda el archivo, y si no se está ejecutando, reinicia el servidor de desarrollo en tu navegador ejecutando `ionic serve`. En la pestaña Galería de fotos, haga clic en el botón de la cámara. Si su computadora tiene una webcam de cualquier tipo, aparece una ventana modal. ¡Toma una selfie!
 
 ![Camera API on the web](/docs/assets/img/guides/first-app-cap-ng/camera-web.png)
 
 _(Probablemente tu selfie sea mucho mejor que el mío)_
 
-Después de tomar una foto, desaparece de inmediato. We need to display it within our app and save it for future access.
+Después de tomar una foto, desaparece de inmediato. Necesitamos mostrarlo en nuestra aplicación y guardarlo para un acceso futuro.
 
 ## Mostrando fotos
 
