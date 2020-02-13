@@ -72,9 +72,9 @@ The typical Auth Connect workflow consists of:
 6. The [IsAuthenticated](#iionicauth.isauthenticated) method can be called at any point to refresh the access token.
 7. Use [GetAccessToken](#getaccesstoken) to retrieve the access token if making any API requests to the auth provider.
 
-## Edge Support
+## Support du navigateur Edge
 
-It is common to create a class that extends `IonicAuth` like this:
+Il est courant de créer une classe qui étend `IonicAuth` comme ceci :
 
 ```typescript
 @Injectable({
@@ -83,19 +83,19 @@ It is common to create a class that extends `IonicAuth` like this:
 export class AuthenticationService extends IonicAuth {
   private vaultService: VaultService;
 
-  ...
+...
 
   async isAuthenticated(): Promise<boolean> {
-    const isVaultLocked = await this.vaultService.isLocked();
-    return !isVaultLocked && (await super.isAuthenticated());
+    const isVaultLocked = wait this.vaultService.isLocked();
+    return !isVaultLocked && (wait super.isAuthenticated());
   }
 
-  ...
+...
 
 }
 ```
 
-However, due to a bug in the pre-Chromium version of Edge, you cannot overide a method like that in the subclass. If you need to support the pre-Chromium version of Edge, you will need to write that code as follows:
+Cependant, à cause d'un bogue dans la version pré-Chromium de Edge, vous ne pouvez pas surcharger une méthode comme celle cela dans une sous-classe. Si vous avez besoin de supporter la version pré-Chromium de Edge, vous devrez écrire le code comme suit:
 
 ```typescript
 @Injectable({
@@ -104,14 +104,14 @@ However, due to a bug in the pre-Chromium version of Edge, you cannot overide a 
 export class AuthenticationService extends IonicAuth {
   private vaultService: VaultService;
 
-  ...
+...
 
-  async myAppIsAuthenticated(): Promise<boolean> {
-    const isVaultLocked = await this.vaultService.isLocked();
-    return !isVaultLocked && (await super.isAuthenticated());
+  async isAuthenticated(): Promise<boolean> {
+    const isVaultLocked = wait this.vaultService.isLocked();
+    return !isVaultLocked && (wait super.isAuthenticated());
   }
 
-  ...
+...
 
 }
 ```
