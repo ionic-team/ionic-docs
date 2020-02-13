@@ -116,19 +116,19 @@ export class AuthenticationService extends IonicAuth {
 }
 ```
 
-You will then need to change external references from `this.authentication.isAuthenticated()` to `this.authentication.myAppIsAuthenticated()` (the name is not important so much as the fact that you are not overriding the base class method, pick a name that makes sense to you). You will also need to use the `CURRENT` behavior for `implicitLogin` on Edge.
+Vous devrez ensuite changer les références externes de `this.authentication.isAuthenticated()` en `this.authentication. yAppIsAuthenticated()` (le nom n'est pas important autant que le fait que vous ne remplacez pas la méthode de la classe de base, choisissez un nom qui a un sens pour vous). Vous devrez également utiliser le comportement `CURRENT` pour `implicitLogin` sur Edge.
 
-**Note:** this is *only* required if you need to support pre-Chromium Edge browsers. If you are creating a pure hybrid-native app or otherwise have no reason to support pre-Chromium Edge, then you can override methods like `isAuthenticated()` in the usual manner.
+**Remarque :** ceci est *seulement* requis si vous avez besoin de prendre en charge les navigateurs pré-Chromium Edge. Si vous êtes en train de créer une application hybride native ou si vous n'avez aucune raison de prendre en charge pré-Chromium Edge, alors vous pouvez remplacer les méthodes comme `isAuthenticated()` de la manière habituelle.
 
-## Web Configuration Options
+## Options de configuration Web
 
 ### Login UX Options
 
-Login can occur either within the current tab/window or a separate pop-up window (the default). Here's a visual comparison:
+L'identification peut se produire soit dans l'onglet courant/fenêtre, soit dans une fenêtre pop-up séparée (par défaut). Voici une comparaison visuelle :
 
 <wistia-video video-id="zk3ys1615x"></wistia-video>
 
-The current tab option is great for developers supporting IE11. Within the `IonicAuthOptions` configuration, set `implicit_login` to "CURRENT". Next, in the login page (or whichever page is navigated to after login - the `redirectUri` in the config options) implement:
+L'option par onglet est idéale pour les développeurs qui supportent IE11. Dans la configuration de `IonicAuthOptions` , mettez `implicit_login` à "CURRENT". Next, in the login page (or whichever page is navigated to after login - the `redirectUri` in the config options) implement:
 
 ```typescript
 async ngOnInit() {
@@ -175,10 +175,10 @@ You should make sure `@ionic-enterprise/auth` and `cordova-plugin-advanced-http`
   "cordova": {
     "plugins": {
       ...
-      // Make sure both these are gone from the cordova plugins section as well
+      // Assurez-vous que les deux sont aussi retirés de la section des plugins cordova
       "@ionic-enterprise/auth": {},
       "cordova-plugin-advanced-http": {}
-      ...
+...
     },
     ...
   }
@@ -191,7 +191,7 @@ It should now be safe to add >=v1.1.2 of the plugin:
 ionic cordova plugin add @ionic-enterprise/auth@latest --variable AUTH_URL_SCHEME={your url scheme}
 ```
 
-## API Documentation
+## Documentation de l'API
 
 You can find the API and interface documentation for everything below. The main classes to pay attention to are:
 
@@ -231,16 +231,16 @@ You can find the API and interface documentation for everything below. The main 
 
 ### onLoginSuccess
 
-▸ **onLoginSuccess**(result: *`AuthResult`*): `void`
+★ **onLoginSuccess**(résultat : *`AuthResult`*): `void`
 
-**Parameters:**
+**Paramètres :**
 
 | Name   | Type         |
 | ------ | ------------ |
 | result | `AuthResult` |
 
 
-**Returns:** `void`
+** Renvoie: ** ` void `
 
 * * *
 
@@ -268,14 +268,14 @@ You can find the API and interface documentation for everything below. The main 
 
 ▸ **additionalLoginParameters**(parameters: *`object`*): `void`
 
-**Parameters:**
+**Paramètres :**
 
 | Name       | Type     | Description                                                                                                             |
 | ---------- | -------- | ----------------------------------------------------------------------------------------------------------------------- |
 | parameters | `object` | any additional parameters that should be added to the login request examples: `login\_hint`, `domain\_hint` |
 
 
-**Returns:** `void`
+** Renvoie: ** ` void `
 
 * * *
 
