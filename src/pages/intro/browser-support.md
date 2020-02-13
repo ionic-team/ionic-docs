@@ -16,8 +16,8 @@ In pursuit of [adaptive styling](/docs/intro/concepts#adaptive-styling), Ionic f
 
 | Framework | Android | iOS   |
 |:---------:|:-------:|:-----:|
-| Ionic V5  | 5.0+    | 11.X+ |
-| Ionic V4  | 4.4.X+  | 10.X+ |
+| Ionic V5  | 5.0+    | 11.0+ |
+| Ionic V4  | 4.4+  | 10.0+ |
 
 > Check the [latest Android stats](https://developer.android.com/about/dashboards/) and the [latest iOS stats](https://developer.apple.com/support/app-store/) for up-to-date platform information.
 
