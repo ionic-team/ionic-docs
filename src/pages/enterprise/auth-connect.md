@@ -1,8 +1,8 @@
 ---
 title: Auth Connect
 template: enterprise-plugin
-version: 1.3.5
-minor: 1.3.X
+version: 1.4.0
+minor: 1.4.X
 ---
 
 Ionic Auth Connect handles logging in and/or registering a user with an authentication provider (such as Auth0, Azure AD, or AWS Cognito) using industry standard OAuth/OpenId Connect on iOS, Android, or on the web.
@@ -85,16 +85,12 @@ It is common to create a class that extends `IonicAuth` like this:
 })
 export class AuthenticationService extends IonicAuth {
   private vaultService: VaultService;
-
   ...
-
   async isAuthenticated(): Promise<boolean> {
     const isVaultLocked = await this.vaultService.isLocked();
     return !isVaultLocked && (await super.isAuthenticated());
   }
-
   ...
-
 }
 ```
 
@@ -106,16 +102,12 @@ However, due to a bug in the pre-Chromium version of Edge, you cannot overide a 
 })
 export class AuthenticationService extends IonicAuth {
   private vaultService: VaultService;
-
   ...
-
   async myAppIsAuthenticated(): Promise<boolean> {
     const isVaultLocked = await this.vaultService.isLocked();
     return !isVaultLocked && (await super.isAuthenticated());
   }
-
   ...
-
 }
 ```
 
@@ -216,6 +208,7 @@ You can find the API and interface documentation for everything below. The main 
 * [IVConfig](#ivconfig)
 * [IVUserInterface](#ivuserinterface)
 * [IonicAuthOptions](#ionicauthoptions)
+* [IonicGeneralAuthOptions](#ionicgeneralauthoptions)
 * [TokenStorageProvider](#tokenstorageprovider)
 * [VaultInterface](#vaultinterface)
 
@@ -490,7 +483,7 @@ ___
 
 ### `<Optional>` authConfig
 
-**● authConfig**: *"auth0" \| "azure" \| "cognito"*
+**● authConfig**: *"auth0" \| "azure" \| "cognito" \| "general"*
 
 The type of the Auth Server, currently only the following are supported:
 
@@ -590,6 +583,153 @@ User details requested from the Authentication provider, each provider may suppo
 
 ___
 <a id="ionicauthoptions.tokenstorageprovider"></a>
+
+### `<Optional>` tokenStorageProvider
+
+**● tokenStorageProvider**: *"localStorage" \| [TokenStorageProvider](#tokenstorageprovider) \| [IVUserInterface](#ivuserinterface)*
+
+The type of storage to use for the tokens
+
+___
+
+___
+<a id="ionicgeneralauthoptions"></a>
+
+###  IonicGeneralAuthOptions
+
+**IonicGeneralAuthOptions**: 
+
+<a id="ionicgeneralauthoptions.alwayssendclientsecretonlogin"></a>
+
+### `<Optional>` alwaysSendClientSecretOnLogin
+
+**● alwaysSendClientSecretOnLogin**: *`undefined` \| `false` \| `true`*
+
+should the 'client\_secret' value always be passed in for login calls, regardless of implict(web) or not defaults to: true
+
+___
+<a id="ionicgeneralauthoptions.androidtoolbarcolor"></a>
+
+### `<Optional>` androidToolbarColor
+
+**● androidToolbarColor**: *`undefined` \| `string`*
+
+setting to allow the toolbar color of the android webview control to be set. Takes a string that can be parsed as a color by `android.graphics.Color.parseColor`
+
+___
+<a id="ionicgeneralauthoptions.audience"></a>
+
+### `<Optional>` audience
+
+**● audience**: *`undefined` \| `string`*
+
+Provided audience (aud) value
+
+___
+<a id="ionicgeneralauthoptions.authconfig"></a>
+
+### `<Optional>` authConfig
+
+**● authConfig**: *"auth0" \| "azure" \| "cognito" \| "general"*
+
+The type of the Auth Server, currently only the following are supported:
+
+*   Auth0
+*   Azure Active Directory
+*   Cognito (AWS)
+
+___
+<a id="ionicgeneralauthoptions.clientid"></a>
+
+###  clientID
+
+**● clientID**: *`string`*
+
+Provided Application ID
+
+___
+<a id="ionicgeneralauthoptions.clientsecret"></a>
+
+### `<Optional>` clientSecret
+
+**● clientSecret**: *`undefined` \| `string`*
+
+The client secret, optional only required for Cognito/Web
+
+___
+<a id="ionicgeneralauthoptions.discoveryurl"></a>
+
+### `<Optional>` discoveryUrl
+
+**● discoveryUrl**: *`undefined` \| `string`*
+
+Location of the Auth Server's discovery endpoint, can be null for Azure
+
+___
+<a id="ionicgeneralauthoptions.implicitlogin"></a>
+
+### `<Optional>` implicitLogin
+
+**● implicitLogin**: *"CURRENT" \| "POPUP"*
+
+for implicit login (aka web) should the auth window be opened in a new popup window/tab or the current windwow/tab defaults to: `POPUP` for `CURRENT` to work the app will need to call `IIonicAuth::handleCallback` when the auth service navigates to the url set in `redirect_url`
+
+___
+<a id="ionicgeneralauthoptions.ioswebview"></a>
+
+### `<Optional>` iosWebView
+
+**● iosWebView**: *"private" \| "shared"*
+
+setting the option to `shared` allows for sharing a session between Safari and other applications for a true SSO experience between apps but on iOS 11 and higher it will prompt the user for permission to share the website data with the application. Using `private` avoids the prompt but the session will only be shared with Safari on iOS 10 or lower.
+
+___
+<a id="ionicgeneralauthoptions.loglevel"></a>
+
+### `<Optional>` logLevel
+
+**● logLevel**: *"DEBUG" \| "ERROR" \| "NONE"*
+
+The log level for the module
+
+___
+<a id="ionicgeneralauthoptions.logouturl"></a>
+
+###  logoutUrl
+
+**● logoutUrl**: *`string`*
+
+Location that the hosting app expects logout callbacks to navigate to.
+
+___
+<a id="ionicgeneralauthoptions.platform"></a>
+
+### `<Optional>` platform
+
+**● platform**: *"web" \| "cordova" \| "capacitor"*
+
+Are we hosted in cordova, web, capacitor
+
+___
+<a id="ionicgeneralauthoptions.redirecturi"></a>
+
+### `<Optional>` redirectUri
+
+**● redirectUri**: *`undefined` \| `string`*
+
+Location that the hosting app expects callbacks to navigate to.
+
+___
+<a id="ionicgeneralauthoptions.scope"></a>
+
+### `<Optional>` scope
+
+**● scope**: *`undefined` \| `string`*
+
+User details requested from the Authentication provider, each provider may support standard {e.g. openid, profile, email, etc.}, or custom scopes.
+
+___
+<a id="ionicgeneralauthoptions.tokenstorageprovider"></a>
 
 ### `<Optional>` tokenStorageProvider
 
@@ -766,6 +906,20 @@ ___
 # Changelog
 
 
+
+### [1.4.0] (2020-02-13)
+
+
+### Features
+
+* reject if user closed the auth browser  
+
+
+### Bug Fixes
+
+* **ios, android, web:** SE-132: allow client_secret to be passed into authorization calls. 
+* propagate network errors on login 
+* update to general to send client secret in payload of token call 
 
 ### [1.3.5] (2019-12-17)
 
