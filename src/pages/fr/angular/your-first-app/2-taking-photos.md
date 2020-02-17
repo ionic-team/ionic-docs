@@ -39,7 +39,7 @@ public async addNewToGallery() {
 }
 ```
 
-Remarquez la magie ici: il n'y a pas de code spécifique à la plateforme (web, iOS, ou Android)! Le plugin Capacitor Camera résume cela pour nous, laissant un seul appel de méthode - `Caméra. etPhoto()` - qui ouvrira la caméra de l'appareil et nous permettra de prendre des photos.
+Remarquez la magie ici: il n'y a pas de code spécifique à la plateforme (web, iOS, ou Android)! Le plugin Capacitor Camera résume cela pour nous, laissant un seul appel de méthode - `Caméra. getPhoto()` - qui ouvrira la caméra de l'appareil et nous permettra de prendre des photos.
 
 Ensuite, ouvrez `tab2.page.ts` et importez la classe PhotoService :
 
