@@ -9,7 +9,7 @@ nextUrl: '/documentación/flujoDeAplicacion/automatización/RetrollamadaHttp'
 
 ## Introducción
 
-Los entornos le brindan una forma de personalizar el proceso de compilación de su aplicación para producir diferentes versiones de sus aplicaciones para diferentes entornos desde la misma base de código. Todas las variables de entorno son accesibles para construir scrips que corren durante la porción `npm run install` y `npm run buil` de tus compilaciones.
+Los entornos le brindan una forma de personalizar el proceso de compilación de su aplicación para producir diferentes versiones de sus aplicaciones para diferentes entornos desde la misma base de código. Todas las variables de entorno son accesibles para construir scrips que corren durante la porción `npm run install` y `npm run build` de tus compilaciones.
 
 Hay dos tipos de variables de Entorno disponibles para usar:
 
