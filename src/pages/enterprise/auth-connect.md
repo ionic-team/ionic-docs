@@ -1,8 +1,8 @@
 ---
 title: Auth Connect
 template: enterprise-plugin
-version: 1.4.0
-minor: 1.4.X
+version: 1.5.0
+minor: 1.5.X
 ---
 
 Ionic Auth Connect handles logging in and/or registering a user with an authentication provider (such as Auth0, Azure AD, or AWS Cognito) using industry standard OAuth/OpenId Connect on iOS, Android, or on the web.
@@ -591,6 +591,15 @@ ___
 The type of storage to use for the tokens
 
 ___
+<a id="ionicauthoptions.webauthflow"></a>
+
+### `<Optional>` webAuthFlow
+
+**● webAuthFlow**: *"implicit" \| "PKCE"*
+
+Authentication flow to use on web defaults to: `implicit` `PKCE` is not supported by Azure, if `authConfig` is set to `azure` the plugin will use `implicit` despite `webAuthFlow` value
+
+___
 
 ___
 <a id="ionicgeneralauthoptions"></a>
@@ -736,6 +745,15 @@ ___
 **● tokenStorageProvider**: *"localStorage" \| [TokenStorageProvider](#tokenstorageprovider) \| [IVUserInterface](#ivuserinterface)*
 
 The type of storage to use for the tokens
+
+___
+<a id="ionicgeneralauthoptions.webauthflow"></a>
+
+### `<Optional>` webAuthFlow
+
+**● webAuthFlow**: *"implicit" \| "PKCE"*
+
+Authentication flow to use on web defaults to: `implicit` `PKCE` is not supported by Azure, if `authConfig` is set to `azure` the plugin will use `implicit` despite `webAuthFlow` value
 
 ___
 
@@ -906,6 +924,13 @@ ___
 # Changelog
 
 
+
+### [1.5.0] (2020-02-17)
+
+
+### Features
+
+* **web:** add PKCE auth flow option  
 
 ### [1.4.0] (2020-02-13)
 
