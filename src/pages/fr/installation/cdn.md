@@ -48,7 +48,7 @@ This will add the necessary imports to the `@ionic/angular` package as well as a
 
 ## Ionic + React
 
-To add Ionic to an already existing React project, install the `@ionic/rect` and `@ionic/react-router` package.
+To add Ionic to an already existing React project, install the `@ionic/react` and `@ionic/react-router` package.
 
 ```sell
 $ npm install @ionic/react
