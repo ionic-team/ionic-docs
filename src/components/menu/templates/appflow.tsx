@@ -27,7 +27,6 @@ const items = {
     'menu-appflow-deploy-builds': '/docs/appflow/deploy/builds',
     'menu-appflow-deploy-channels': '/docs/appflow/deploy/channels',
     'menu-appflow-deploy-api': '/docs/appflow/deploy/api',
-    'menu-appflow-deploy-tutorials': '/docs/appflow/deploy/tutorials',
     'menu-appflow-deploy-cli': '/docs/appflow/deploy/cli'
   },
   'menu-appflow-package': {

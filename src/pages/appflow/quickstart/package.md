@@ -19,10 +19,10 @@ and <a href="/docs/appflow/package/adding-credentials">add them to a security pr
 In order to download a binary of your application, you will first need to create a [Package build](/docs/appflow/package/builds).
 
 There are two ways to do this:
-* Click the `Start package build` icon from the `Commits` tab
-![Start Package Build from Commits](/docs/assets/img/appflow/ss-start-package-build-commits.png)
-* Click the `New package build` button in the top right from the `Package > Builds` tab
-![New Web Build](/docs/assets/img/appflow/ss-new-package-build.png)
+* Click the `Start build` icon from the `Commits` tab
+![Start Build from Commits](/docs/assets/img/appflow/ss-start-package-build-commits.png)
+* Click the `New build` button in the top right from the `Build > Builds` tab
+![New Build](/docs/assets/img/appflow/ss-new-package-build.png)
 
 Select the proper commit for your build. There are several required and
 optional fields you can specify:
@@ -47,7 +47,7 @@ logs if you encounter errors.
 </blockquote>
 
 A successful Package build yields an iOS binary (`.ipa` or IPA) or an Android binary (`.apk` or APK) file. Once you have a successful build, you can download it so that you can install it on a device by 
-clicking the `Download IPA/APK` button in the top right of the build detail page or clicking the 
-`Download IPA/APK` icon on the build in the `Package > Builds` tab.
+clicking the file name in the `Artifacts` section in the right of the build detail page or clicking the 
+`Download IPA/APK` icon on the build in the `Build > Builds` tab.
 
 ![Download Package Build](/docs/assets/img/appflow/ss-download-package-build.png)

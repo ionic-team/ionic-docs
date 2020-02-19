@@ -13,7 +13,7 @@ your app with updates that you've pushed to channels.
 
 ## Installing the Appflow SDK from the Dashboard (Recommended)
 To install the Appflow SDK plugin from the Dashboard, follow the instructions provided by clicking "Install Instructions"
-on the Channels list in the Appflow Dashboard.
+on the Destinations list in the Appflow Dashboard.
 
 ![Install Instructions](/docs/assets/img/appflow/ss-appflow-sdk-install.png)
 
