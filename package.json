@@ -37,7 +37,7 @@
     "@stencil/core": "1.8.8",
     "@types/prismjs": "^1.9.1",
     "chokidar": "^3.3.1",
-    "dotenv": "^8.1.0",
+    "dotenv": "^8.2.0",
     "fast-glob": "^3.1.1",
     "front-matter": "^3.0.2",
     "fs-extra": "^8.1.0",
