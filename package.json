@@ -39,7 +39,7 @@
     "chokidar": "^3.3.1",
     "dotenv": "^8.2.0",
     "fast-glob": "^3.1.1",
-    "front-matter": "^3.0.2",
+    "front-matter": "^3.1.0",
     "fs-extra": "^8.1.0",
     "husky": "^4.2.3",
     "listr": "^0.14.3",
