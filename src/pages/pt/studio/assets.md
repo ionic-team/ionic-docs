@@ -6,7 +6,7 @@
 The **Assets** section is a quick and easy way to add images or other media to Ionic apps.
 
 <figure>
-  <img alt="Assets" src="/docs/assets/img/studio/ss-assets.png" />
+  <img alt="Assets" src="/docs/assets/img/studio/2/ss-assets.png" />
 </figure>
 
 The files listed are all contained in the `src/assets` directory, which makes them available in the Ionic app.

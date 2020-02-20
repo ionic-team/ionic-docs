@@ -7,9 +7,9 @@ nextUrl: '/docs/building/testing'
 
 # Développement sur Android
 
-Ce guide explique comment déployer des applications Ionic sur des simulateurs Android ou des appareils en utilisant [Capacitor](/docs/faq/glossary#capacitor) ou [Cordova](/docs/faq/glossary#cordova).
+This guide covers how to run and debug Ionic apps on Android emulators and devices using [Capacitor](/docs/faq/glossary#capacitor) or [Cordova](/docs/faq/glossary#cordova).
 
-> Pour déployer et déboguer des applications sur un appareil Android, vous devez suivre ces étapes de [mise en place de l'environnement](/docs/installation/android).
+> To develop for Android, make sure you have followed the [Android Environment Setup](/docs/installation/android).
 
 ## Configuration du projet
 
@@ -51,6 +51,16 @@ Capacitor uses Android Studio to build and run apps to simulators and devices.
 2. **In Android Studio, click the Run button and then select the target simulator or device.**
 
 ![Android Studio Run Button Area](/docs/assets/img/running/android-studio-run-button-area.png)
+
+### Live reload
+
+To start a live-reload server run the following command.
+
+```shell
+$ ionic capacitor run android -l --address=YOUR_IP_ADDRESS
+```
+
+When running on a device make sure the device and your development machine are connected to the same network.
 
 ## Running with Cordova
 

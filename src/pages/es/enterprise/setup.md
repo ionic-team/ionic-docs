@@ -20,7 +20,7 @@ Next, open up a terminal on your computer.
 
 Ensure that you have the latest Ionic CLI installed:
 
-<command-line> <command-prompt>npm install -g ionic@latest</command-prompt> </command-line>
+<command-line> <command-prompt>npm install -g @ionic/cli</command-prompt> </command-line>
 
 Next, install the Ionic Enterprise Cordova CLI (even if you're using Capacitor). Ionic Native plugins use scoped packages, which the regular Cordova CLI does not support. All Cordova functionality will still work as expected.
 

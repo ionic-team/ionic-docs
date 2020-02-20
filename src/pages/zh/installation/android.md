@@ -11,39 +11,27 @@ contributors:
 
 要在Android平台使用，需要进行一些额外的设置。 可以在Windows, macOS, 和Linux系统上创建Android应用。
 
-## Java
-
-原生Android应用是由 <a href="https://java.com/en/" target="_blank">Java</a>语言编译产生的。 从 <a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank">此处</a>下载JDK8.
-
-<blockquote>
-  <p>Cordova与最新的Java版本不兼容。 你必须安装JDK8来使用Cordova构建Android应用。</p>
-</blockquote>
-
-## Gradle
-
-<a href="https://gradle.org/" target="_blank">Gradle</a> 是构建Android应用的工具，必须要单独安装。 详情请查看 <a href="https://gradle.org/install/" target="_blank">安装说明</a>。
-
 ## Android Studio
 
-<a href="https://developer.android.com/studio/" target="_blank">Android Studio</a> 是创建原生 Android 应用的 IDE。 它包含 <a href="/docs/faq/glossary#android-sdk">Android SDK</a>, 需要配置才能在命令行中使用。
+<a href="https://developer.android.com/studio/" target="_blank">Android Studio</a> is the IDE for creating native Android apps. It includes the <a href="/docs/faq/glossary#android-sdk">Android SDK</a>, which will need to be configured for use in the command line.
 
-Android Studio 也用于 [创建Android 虚拟设备](/docs/installation/android#creating-an-android-virtual-device)，这是安卓模拟器所需要的。 Ionic应用也可以 [在虚拟设备上运行](/docs/installation/android#set-up-an-android-device)。
+Android Studio is also used to [create Android virtual devices](/docs/installation/android#creating-an-android-virtual-device), which are required for the Android emulator. Ionic apps can also be [launched to a device](/docs/installation/android#set-up-an-android-device).
 
-> 我们不建议使用 Android Studio *开发* 的 Ionic 应用。 相反，它应只用于为构建和运行原生 Android应用，并管理 Android SDK 和虚拟设备。
+> We don't recommend using Android Studio for *developing* Ionic apps. Instead, it should only really be used to build and run your apps for the native Android platform and to manage the Android SDK and virtual devices.
 
 ### 安装 Android Studio
 
-从 <a href="https://developer.android.com/studio/" target="_blank">Android 网站</a> 下载Android Studio。 更多详细的安装说明可以在 <a href="https://developer.android.com/studio/install" target="_blank">用户指南</a> 中找到。
+Download Android Studio from the <a href="https://developer.android.com/studio/" target="_blank">Android website</a>. More detailed installation instructions can be found in the <a href="https://developer.android.com/studio/install" target="_blank">User Guide</a>.
 
 ### 安装 Android SDK
 
-安装后，打开 Android Studio。 IDE 应该检测到 Android SDK 需要安装。 在 **SDK 组件设置** 界面，进行SDK的安装。 记下 **Android SDK 的位置**。
+Once installed, open Android Studio. The IDE should detect that the Android SDK needs to be installed. In the **SDK Components Setup** screen, finish installing the SDK. Keep note of the **Android SDK Location**.
 
 ![Android Studio SDK Setup](/docs/assets/img/installation/android-studio-sdk-setup.png)
 
-默认情况下，安装了最新的稳定版 Android SDK，其中包括了对应版本所需的一系列软件包。
+By default, the latest stable SDK Platform is installed, which includes a collection of packages required to target that version of Android.
 
-> 要安装SDK系统镜像和其他次要的SDK包，您可能需要确保勾选了在 SDK 管理器底部的 **显示软件包详细信息** 选项框。 ![Android Studio SDK Manager](/docs/assets/img/installation/android-studio-sdk.png)
+To install system images and other minor SDK platform packages, you may need to ensure **Show Package Details** is checked at the bottom of the SDK Manager. ![Android Studio SDK Manager](/docs/assets/img/installation/android-studio-sdk.png)
 
 For future reference, the Android SDK can be managed with Android Studio in the **Configure** &raquo; **SDK Manager** menu of the Android Studio welcome screen or **Tools** &raquo; **SDK Manager** inside Android projects.
 
@@ -97,3 +85,17 @@ $ adb devices
 ```
 
 The device should be listed. See the full <a href="https://developer.android.com/studio/command-line/adb" target="_blank"><code>adb</code> documentation</a> for troubleshooting and detailed information.
+
+## Cordova Setup
+
+Additional setup is required for Cordova to support programmatic builds. This section is not necessary for Capacitor.
+
+### Java
+
+Native Android apps are compiled with the <a href="https://java.com/en/" target="_blank">Java</a> programming language. Download JDK8 from the <a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank">download page</a>.
+
+> Unfortunately, Cordova is not compatible with the latest version of Java.
+
+### Gradle
+
+<a href="https://gradle.org/" target="_blank">Gradle</a> is the build tool used in Android apps and must be installed separately. See the <a href="https://gradle.org/install/" target="_blank">install page</a> for details.

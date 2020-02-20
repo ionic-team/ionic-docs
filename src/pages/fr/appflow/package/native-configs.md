@@ -17,12 +17,16 @@ Native configs allow you overwrite certain configurations without having to comm
 * overwrite the App Name as it will appear on the home screen
 * overwrite the [Appflow SDK or Deploy Plugin variables and preferences](/docs/appflow/deploy/api#plugin-variables)
 
-This makes it easy to build your app for multiple environments from the same version of the code. If using an [automation](/docs/appflow/automation/intro) you can trigger multiple automations from the same branch that will produce different builds.
+This makes it easy to build your app for multiple environments from the same version of the code. If using an [Automation](/docs/appflow/automation/intro), you can trigger multiple automations from the same branch that will produce different builds.
 
 Common use cases are:
 
-* making Staging, QA, and Production versions of you app with different Bundle IDs, App names, and Deploy Channels so that you can install all the environments on a single device and easily tell the apart
-* leaving the [DisableDeploy](/docs/appflow/deploy/api#disabledeploy) `true` for development and automatically setting it back to `false` when building binaries for release
+* Making Staging, QA, and Production versions of you app with different Bundle IDs, App names, and Deploy Channels so that you can install all the environments on a single device and easily tell the apart
+* Leaving the [DisableDeploy](/docs/appflow/deploy/api#disabledeploy) `true` for development and automatically setting it back to `false` when building binaries for release
+
+<blockquote>
+  <b>Note:</b> If you plan to use Native Configurations to modify Bundle IDs with your iOS Package builds, you will need to setup code signing credentials using those alternate Bundle IDs. See our section on <a href="/docs/appflow/package/credentials">Generating Credentials</a> for more information.
+</blockquote>
 
 To create one go to the `Package > Native Configs` tab in the sidebar and click `New native config`.
 

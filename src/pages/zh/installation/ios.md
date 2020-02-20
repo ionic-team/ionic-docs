@@ -35,11 +35,15 @@ Open Xcode and navigate to **Window** &raquo; **Devices and Simulators**. Create
 
 ![iOS Simulators](/docs/assets/img/installation/ios-xcode-simulators-setup.png)
 
-## ios-sim & ios-deploy
+## Cordova Setup
 
-The [`ios-sim`](https://github.com/phonegap/ios-sim) and [`ios-deploy`](https://github.com/phonegap/ios-deploy) are utilities that deploy apps to the iOS simulator and iOS devices during development. They can be installed globally with [npm](/docs/faq/glossary#npm).
+Additional setup is required for Cordova to support programmatic builds. This section is not necessary for Capacitor.
+
+### ios-sim & ios-deploy
+
+The [`ios-sim`](https://github.com/ios-control/ios-sim) and [`ios-deploy`](https://github.com/ios-control/ios-deploy) are utilities that deploy apps to the iOS simulator and iOS devices during development. They can be installed globally with [npm](/docs/faq/glossary#npm).
 
 ```shell
 $ npm install -g ios-sim
-$ npm install -g ios-deploy
+$ brew install ios-deploy
 ```

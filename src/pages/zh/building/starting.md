@@ -12,9 +12,9 @@ contributors:
 <command-line> <command-prompt>ionic start</command-prompt> <command-output>   
 <span class="bold">每一个伟大的应用都需要起个名字！ 😍</span>  
   
-请输入应用全称，之后你可以随时更改。 为了绕过此提示, 需提供<span class="green">名称</span>参数给 <span class="green">ionic start</span>.  
+请输入应用全称，之后你可以随时更改。 To bypass this prompt next time, supply <span class="cyan">name</span>, the first argument to <span class="cyan">ionic start</span>.  
   
-<span class="bold green">?</span> <span class="bold">项目名称:</span> <command-cursor blink></command-cursor>  
+<span class="bold green">?</span> <span class="bold">Project name:</span> <command-cursor blink></command-cursor>  
 </command-output> </command-line>
 
 Ionic CLI 将显示提示询问新项目名称，以及使用哪个模板。 这些细节可作为命令参数提供：

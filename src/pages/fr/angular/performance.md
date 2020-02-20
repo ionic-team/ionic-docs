@@ -1,15 +1,15 @@
 ---
-previousText: 'Platform'
+previousText: 'Plate-forme'
 previousUrl: '/docs/angular/platform'
 ---
 
-# Angular Performance
+# Performance Angular
 
-## From the Ionic Team
+## De l'équipe Ionic
 
-[How to Lazy Load in Ionic Angular](https://ionicframework.com/blog/how-to-lazy-load-in-ionic-angular/)
+[Comment faire pour charger Ionic à la demande dans Angular](https://ionicframework.com/blog/how-to-lazy-load-in-ionic-angular/)
 
-[Improved Perceived Performance with Skeleton Screens](https://ionicframework.com/blog/improved-perceived-performance-with-skeleton-screens/)
+[Amélioration des performances réalisées avec les squelettes ( file de fer ) d'écrans](https://ionicframework.com/blog/improved-perceived-performance-with-skeleton-screens/)
 
 ## From the Angular Team
 
@@ -21,8 +21,8 @@ previousUrl: '/docs/angular/platform'
 
 [High Performance List Filtering in Ionic](https://www.joshmorony.com/high-performance-list-filtering-in-ionic-2/) - Josh Morony
 
-[Increasing Performance with Efficient DOM Writes in Ionic](https://www.joshmorony.com/increasing-performance-with-efficient-dom-writes-in-ionic-2/) - Josh Morony
+[Augmentation des performances par des accès DOM efficace avec Ionic](https://www.joshmorony.com/increasing-performance-with-efficient-dom-writes-in-ionic-2/) - Josh Morony
 
-[Ionic Framework is Fast (But Your Code Might Not Be)](https://www.joshmorony.com/ionic-framework-is-fast-but-your-code-might-not-be/) - Josh Morony
+[Le framework Ionic est rapide (Mais votre code ne l'est peut être pas)](https://www.joshmorony.com/ionic-framework-is-fast-but-your-code-might-not-be/) - Josh Morony
 
-> Do you have a guide you'd like to share? Click the *Edit this page* button below.
+> Avez-vous un guide que vous souhaiteriez partager ? Cliquez sur le bouton *Modifier cette page* ci-dessous.

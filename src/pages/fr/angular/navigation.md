@@ -92,14 +92,14 @@ Maintenant depuis le `LoginComponent`, nous pouvons utiliser le code HTML suivan
 
 La partie importante ici est `ion-button` et la directive `routerLink`. RouterLink fonctionne sur une idée similaire à celle typique de `href`s, mais au lieu de compiler l'URL en tant que chaîne, elle peut être compilée comme un tableau, ce qui peut fournir des chemins plus compliqués.
 
-We also can programmatically navigate in our app by using the router API.
+Nous pouvons également naviguer par la programmation dans notre application en utilisant L'API du routeur.
 
 ```typescript
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Composant } from '@angular/core';
+import { Routeur } from '@angular/router';
 
 @Component({
-  ...
+...
 })
 export class LoginComponent {
 
@@ -111,7 +111,7 @@ export class LoginComponent {
 }
 ```
 
-Both options provide the same navigation mechanism, just fitting different use cases.
+Les deux options fournissent le même mécanisme de navigation, juste en ajustant différents cas d'utilisation.
 
 > A note on navigation with relative URLs: Currently, to support multiple navigation stacks, relative URLs are something not supported
 

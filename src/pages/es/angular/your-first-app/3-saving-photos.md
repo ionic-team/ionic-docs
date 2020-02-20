@@ -1,30 +1,47 @@
 ---
-previousText: 'Taking Photos'
+previousText: 'Tomar fotos'
 previousUrl: '/docs/angular/your-first-app/2-taking-photos'
-nextText: 'Loading Photos on Filesystem'
+nextText: 'Guardando fotos en el sistema de archivos'
 nextUrl: '/docs/angular/your-first-app/4-loading-photos'
 ---
 
-# Saving Photos to the Filesystem
+# Guardando fotos en el sistema de archivos
 
-We’re now able to take multiple photos and display them in a photo gallery on the second tab of our app. These photos, however, are not currently being stored permanently, so when the app is closed, they will be deleted.
+Ahora podemos tomar varias fotos y mostrarlas en una galería de fotos en la segunda pestaña de nuestra aplicación. Sin embargo, estas fotos no se almacenan de forma permanente, por lo que cuando la aplicación se cierre, se eliminarán.
 
-## Filesystem API
+## API FileSystem
 
-Fortunately, saving them to the filesystem only takes a few steps. Begin by creating a new function, `savePicture()`, in the `PhotoService` class (`src/app/services/photo.service.ts`). We pass in the `cameraPhoto` object, which represents the newly captured device photo:
+Afortunadamente, guardarlos en el sistema de archivos sólo toma unos pocos pasos. Comience creando una nueva función, `savePicture()`, en la clase `Photo Service` (`src/app/services/photo.service.ts`). Pasamos al objeto `cameraPhoto`, que representa la foto del dispositivo recién capturado:
 
 ```typescript
 private async savePicture(cameraPhoto: CameraPhoto) { }
 ```
 
-We’ll use the Capacitor [Filesystem API](https://capacitor.ionicframework.com/docs/apis/filesystem) to save the photo to the filesystem. To start, convert the photo to base64 format, then feed the data to the Filesystem’s `writeFile` function. Finally, make a call to getPhotoFile (which we will implement in a moment), which returns a Photo object.
+Podemos utilizar esta nueva función inmediatamente en `addNewToGallery()`:
+
+```typescript
+public async addNewToGallery() {
+  // Tomar una foto
+  const capturedPhoto = await Camera.getPhoto({
+    resultType: CameraResultType.Uri, // file-based data; provides best performance
+    source: CameraSource.Camera, // automatically take a new photo with the camera
+    quality: 100 // highest quality (0 to 100)
+  });
+
+  // Guardar la foto y agregarla a la colección de fotos.
+  const savedImageFile = await this.savePicture(capturedPhoto);
+  this.photos.unshift(savedImageFile);
+}
+```
+
+Utilizaremos el Capacitor [Filesystem API](https://capacitor.ionicframework.com/docs/apis/filesystem) para guardar la foto en el sistema de archivos. Para empezar, convierte la foto en formato base64, luego envía los datos a la función `writeFile` de Filesystem. Finalmente, haz una llamada a getPhotoFile (que implementaremos en un momento), que devuelve un objeto Photo.
 
 ```typescript
 private async savePicture(cameraPhoto: CameraPhoto) {
-  // Convert photo to base64 format, required by Filesystem API to save
+  // Convierte foto a formato base64, requerido por la API del sistema de archivos para guardar
   const base64Data = await this.readAsBase64(cameraPhoto);
 
-  // Write the file to the data directory
+  // Escribe el archivo en el directorio de datos
   const fileName = new Date().getTime() + '.jpeg';
   await Filesystem.writeFile({
     path: fileName,
@@ -32,18 +49,18 @@ private async savePicture(cameraPhoto: CameraPhoto) {
     directory: FilesystemDirectory.Data
   });
 
-  // Get platform-specific photo filepaths
+  // Obtener rutas de archivos de fotos específicas de la plataforma
   return await this.getPhotoFile(cameraPhoto, fileName);
 }
 ```
 
-`readAsBase64()` and `getPhotoFile()` are two helper functions we’ll define next. They are split into separate methods because they require a small amount of platform-specific (web vs. mobile) logic - more on that in a bit.  For now, implement them for running on the web:
+`readAsBase64()` y `getPhoto File()` son dos funciones ayudantes que definiremos a continuación. Se dividen en métodos separados porque requieren una pequeña cantidad de plataforma específica (web vs. mobile) lógica - más sobre eso en un poco.  Por ahora, implementarlos para ejecutarse en la web:
 
 ```typescript
 private async readAsBase64(cameraPhoto: CameraPhoto) {
-  // Fetch the photo, read as a blob, then convert to base64 format
+  // Obtener la foto, leer como un blob, luego convertir a formato base64
   const response = await fetch(cameraPhoto.webPath!);
-  const blob = await response.blob();
+ const blob = await response.blob();
 
   return await this.convertBlobToBase64(blob) as string;  
 }
@@ -58,7 +75,7 @@ convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
 });
 ```
 
-Obtaining the camera photo as base64 format on the web appears to be a bit trickier than on mobile. In reality, we’re just using built-in web APIs: [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) as a neat way to read the file into blob format, then FileReader’s [readAsDataURl()](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL) to convert the photo blob to base64.
+Obtaining the camera photo as base64 format on the web appears to be a bit trickier than on mobile. In reality, we’re just using built-in web APIs: [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) as a neat way to read the file into blob format, then FileReader’s [readAsDataURL()](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL) to convert the photo blob to base64.
 
 `getPhotoFile()` is much simpler. As you’ll recall, we display each photo on the screen by setting each image’s source path (`src` attribute) in `tab2.page.html` to the webviewPath property. So, it gets set here:
 
@@ -70,6 +87,11 @@ private async getPhotoFile(cameraPhoto: CameraPhoto,
     webviewPath: cameraPhoto.webPath
   };
 }
+```
+
+Finally, change the way pictures become visible in the template file `tab2.page.html`.
+```html
+<ion-img src="{{ photo.base64 ? photo.base64 : photo.webviewPath }}"></ion-img>
 ```
 
 There we go! Each time a new photo is taken, it’s now automatically saved to the filesystem.

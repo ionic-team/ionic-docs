@@ -1,21 +1,21 @@
 ---
-title: 'Cookbook'
+title: 'Livre de recettes'
 previousText: 'Webhooks'
 previousUrl: '/docs/appflow/automation/webhooks'
-nextText: 'Using Private Git Repos'
+nextText: 'Utilisation de dépôts Git privés'
 nextUrl: '/docs/appflow/cookbook/private_git'
 ---
 
-# Cookbook
+# Livre de recettes
 
-### [Using Private Git Repos](/docs/appflow/cookbook/private_git)
+### [Utilisation de dépôts Git privés](/docs/appflow/cookbook/private_git)
 
-Learn how to access private Git repos used in npm dependencies.
+Découvrez comment accéder aux dépôts Git privés utilisés dans les dépendances npm.
 
-### [Using Private NPM Modules](/docs/appflow/cookbook/private_npm)
+### [Utilisation de modules NPM privés](/docs/appflow/cookbook/private_npm)
 
-Learn how to access private NPM modules used in dependencies.
+Découvrez comment accéder aux modules NPM privés utilisés dans les dépendances.
 
-### [Switching Node Version](/docs/appflow/cookbook/switch_node_version)
+### [Version Node de commutation](/docs/appflow/cookbook/switch_node_version)
 
-Learn how to use a different Node in builds.
+Apprenez à utiliser un nœud différent dans les versions.

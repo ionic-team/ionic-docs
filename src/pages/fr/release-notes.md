@@ -1,5 +1,5 @@
 ---
-template: release-notes
+template: Notes de version
 previousText: 'Versioning'
 previousUrl: '/docs/intro/versioning'
 nextText: 'Support'

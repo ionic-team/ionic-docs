@@ -5,19 +5,36 @@ nextText: 'Loading Photos on Filesystem'
 nextUrl: '/docs/angular/your-first-app/4-loading-photos'
 ---
 
-# Saving Photos to the Filesystem
+# Enregistrement des photos dans le système de fichiers
 
-We’re now able to take multiple photos and display them in a photo gallery on the second tab of our app. These photos, however, are not currently being stored permanently, so when the app is closed, they will be deleted.
+Nous sommes maintenant en mesure de prendre plusieurs photos et de les afficher dans une galerie de photos dans le deuxième onglet de notre application. Cependant, ces photos ne sont pas stockées de façon permanente, donc lorsque l'application est fermée, elles seront supprimées.
 
-## Filesystem API
+## API du système de fichiers
 
-Fortunately, saving them to the filesystem only takes a few steps. Begin by creating a new function, `savePicture()`, in the `PhotoService` class (`src/app/services/photo.service.ts`). We pass in the `cameraPhoto` object, which represents the newly captured device photo:
+Heureusement, les enregistrer dans le système de fichiers ne prend que quelques étapes. Commencez par créer une nouvelle fonction, `savePicture()`, dans la classe `PhotoService` (`src/app/services/photo.service.ts`). Nous passons l'objet `cameraPhoto` , qui représente la photo du nouvel appareil capturé :
 
 ```typescript
 private async savePicture(cameraPhoto: CameraPhoto) { }
 ```
 
-We’ll use the Capacitor [Filesystem API](https://capacitor.ionicframework.com/docs/apis/filesystem) to save the photo to the filesystem. To start, convert the photo to base64 format, then feed the data to the Filesystem’s `writeFile` function. Finally, make a call to getPhotoFile (which we will implement in a moment), which returns a Photo object.
+Nous pouvons utiliser cette nouvelle fonction immédiatement dans ` addNewToGallery () `:
+
+```typescript
+public async addNewToGallery() {
+  // Take a photo
+  const capturedPhoto = await Camera.getPhoto({
+    resultType: CameraResultType.Uri, // file-based data; provides best performance
+    source: CameraSource.Camera, // automatically take a new photo with the camera
+    quality: 100 // highest quality (0 to 100)
+  });
+
+  // Save the picture and add it to photo collection
+  const savedImageFile = await this.savePicture(capturedPhoto);
+  this.photos.unshift(savedImageFile);
+}
+```
+
+Nous utiliserons l'API du système de fichiers [Capacitor](https://capacitor.ionicframework.com/docs/apis/filesystem) pour enregistrer la photo dans le système de fichiers. Pour commencer, convertissez la photo au format base64, puis donnez les données à la fonction `writeFile` du système de fichiers. Enfin, faites un appel à getPhotoFile (que nous allons implémenter dans un moment), qui renvoie un objet Photo.
 
 ```typescript
 private async savePicture(cameraPhoto: CameraPhoto) {
@@ -37,7 +54,7 @@ private async savePicture(cameraPhoto: CameraPhoto) {
 }
 ```
 
-`readAsBase64()` and `getPhotoFile()` are two helper functions we’ll define next. They are split into separate methods because they require a small amount of platform-specific (web vs. mobile) logic - more on that in a bit.  For now, implement them for running on the web:
+`readAsBase64()` et `getPhotoFile()` sont deux fonctions auxiliaires que nous allons définir ensuite. Ils sont divisés en méthodes séparées car ils nécessitent une petite quantité de plates-formes spécifiques (web vs. mobile) logique - plus sur cela dans un peu.  Pour l'instant, implémentez-les pour fonctionner sur le web:
 
 ```typescript
 private async readAsBase64(cameraPhoto: CameraPhoto) {
@@ -58,9 +75,9 @@ convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
 });
 ```
 
-Obtaining the camera photo as base64 format on the web appears to be a bit trickier than on mobile. In reality, we’re just using built-in web APIs: [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) as a neat way to read the file into blob format, then FileReader’s [readAsDataURl()](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL) to convert the photo blob to base64.
+Obtenir la photo de l'appareil au format base64 sur le web semble être un peu plus difficile que sur mobile. En réalité, nous utilisons simplement des API Web intégrées: [ fetch () ](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) comme une bonne façon de lire le fichier au format blob, puis [ readAsDataURL () ](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL) de FileReader pour convertir le blob photo en base64.
 
-`getPhotoFile()` is much simpler. As you’ll recall, we display each photo on the screen by setting each image’s source path (`src` attribute) in `tab2.page.html` to the webviewPath property. So, it gets set here:
+`getPhotoFile()` est beaucoup plus simple. Comme vous vous en souviendrez, nous affichons chaque photo à l’écran en définissant le chemin source de chaque image ( attribut`src` ) dans l’onglet `. age.html` à la propriété webviewPath. Il est donc défini ici :
 
 ```typescript
 private async getPhotoFile(cameraPhoto: CameraPhoto, 
@@ -72,4 +89,9 @@ private async getPhotoFile(cameraPhoto: CameraPhoto,
 }
 ```
 
-There we go! Each time a new photo is taken, it’s now automatically saved to the filesystem.
+Enfin, changez la façon dont les images deviennent visibles dans le fichier de template `tab2.page.html`.
+```html
+<ion-img src="{{ photo.base64 ? photo.base64 : photo.webviewPath }}"></ion-img>
+```
+
+Nous y sommes ! Chaque fois qu'une nouvelle photo est prise, elle est maintenant automatiquement enregistrée dans le système de fichiers.

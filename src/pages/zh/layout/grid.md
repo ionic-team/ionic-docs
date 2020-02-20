@@ -45,7 +45,7 @@ contributors:
 - ` size-{breakpoint}` 属性表示每行默认的12列数。 所以, `size="4"` 可以添加到列中, 以便占用格子的1/3, 或 12 列中的4。
 - 没有大小值的列将自动具有相同的宽度。 例如，对于小断点和小断点来说， `size-sm` 的四个实例都会自动宽度为 25%。
 - 列宽度以百分比设置，因此它们总是相对于其父元素是流动的和变换大小的。
-- Columns have padding between individual columns, however, the padding can be removed from the grid and columns by adding `no-padding` on the grid.
+- Columns have padding between individual columns, however, the padding can be removed from the grid and columns by adding the `ion-no-padding` class to the grid. See the [CSS Utilities](/docs/layout/css-utilities) for more styles that can be applied to the grid.
 - There are five grid tiers, one for each responsive breakpoint: all breakpoints (extra small), small, medium, large, and extra large.
 - Grid tiers are based on minimum widths, meaning they apply to their tier and all those larger than them (e.g., `size-sm="4"` applies to small, medium, large, and extra large devices).
 - Grids can easily be customized via CSS variables. See [customizing the grid](#customizing-the-grid).
@@ -65,12 +65,11 @@ contributors:
 
 ## 网格属性
 
-网格占用全宽，并根据屏幕大小添加了填充。 有两个 属性可用来调整此行为。
+The grid takes up the entire width of the screen by default. This can be modified using the attribute below.
 
-| 属性         | 说明             |
-| ---------- | -------------- |
-| no-padding | 从网格和直接子列中删除填充。 |
-| fixed      | 根据屏幕大小设置最大宽度。  |
+| 属性    | 说明                                                |
+| ----- | ------------------------------------------------- |
+| fixed | Set a max width based on the current screen size. |
 
 
 ## 默认断点

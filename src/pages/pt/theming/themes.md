@@ -17,32 +17,34 @@ As cores do aplicativo são usadas em vários lugares em Ionic. Elas são úteis
 
 É importante notar que as variáveis para "background" e "text-color" também exigem que uma variável RGB seja definida em <a href="https://developer.mozilla.org/en-US/docs/Glossary/RGB" target="_blank">RGB</a>. Veja [O problema de cores com Transparência](./advanced#the-alpha-problem) para entender por quê a propriedade `rgb` também é necessária.
 
-| Nome                               | Descrição                                   |
-| ---------------------------------- | ------------------------------------------- |
-| `--ion-background-color`           | Cor de fundo de todo o app                  |
-| `--ion-background-color-rgb`       | Cor de fundo de todo o app em formato RGB   |
-| `--ion-text-color`                 | Cor do texto de todo o app                  |
-| `--ion-text-color-rgb`             | Cor do texto de todo o app em formato RGB   |
-| `--ion-backdrop-color`             | Cor do componente Backdrop                  |
-| `--ion-overlay-background-color`   | Cor de fundo das camadas de sobreposições   |
-| `--ion-border-color`               | Cor da borda                                |
-| `--ion-box-shadow-color`           | Cor da sombra                               |
-| `--ion-tab-bar-background`         | Cor de fundo da Tab bar                     |
-| `--ion-tab-bar-background-focused` | Cor de fundo da Tab bar em foco             |
-| `--ion-tab-bar-border-color`       | Cor da borda da Tab bar                     |
-| `--ion-tab-bar-color`              | Cor da Tab bar                              |
-| `--ion-tab-bar-color-activated`    | Cor da Tab ativa                            |
-| `--ion-toolbar-background`         | Fundo da barra de Toolbar                   |
-| `--ion-toolbar-border-color`       | Cor da borda da Toolbar                     |
-| `--ion-toolbar-color`              | Cor dos componentes Toolbar                 |
-| `--ion-toolbar-color-activated`    | Cor dos componentes ativados Toolbar        |
-| `--ion-toolbar-color-unchecked`    | Cor dos componentes não checados na Toolbar |
-| `--ion-toolbar-color-checked`      | Cor dos componentes verificados na Toolbar  |
-| `--ion-item-background`            | Cor de fundo do Item                        |
-| `--ion-item-background-activated`  | Cor de fundo do Item ativado                |
-| `--ion-item-border-color`          | Cor da borda do Item                        |
-| `--ion-item-color`                 | Cor dos componentes do Item                 |
-| `--ion-placeholder-color`          | Cor do placeholder do Item                  |
+| Nome                                       | Descrição                                            |
+| ------------------------------------------ | ---------------------------------------------------- |
+| `--ion-background-color`                   | Background color of the entire app                   |
+| `--ion-background-color-rgb`               | Background color of the entire app, rgb format       |
+| `--ion-text-color`                         | Text color of the entire app                         |
+| `--ion-text-color-rgb`                     | Text color of the entire app, rgb format             |
+| `--ion-backdrop-color`                     | Cor do componente Backdrop                           |
+| `--ion-backdrop-opacity`                   | Opacity of the Backdrop component                    |
+| `--ion-overlay-background-color`           | Background color of the overlays                     |
+| `--ion-border-color`                       | Border color                                         |
+| `--ion-box-shadow-color`                   | Box shadow color                                     |
+| `--ion-tab-bar-background`                 | Background of the Tab Bar                            |
+| `--ion-tab-bar-background-focused`         | Background of the focused Tab Bar                    |
+| `--ion-tab-bar-border-color`               | Border color of the Tab Bar                          |
+| `--ion-tab-bar-color`                      | Color of the Tab Bar                                 |
+| `--ion-tab-bar-color-selected`             | Color of the selected Tab Button                     |
+| `--ion-toolbar-background`                 | Background of the Toolbar                            |
+| `--ion-toolbar-border-color`               | Border color of the Toolbar                          |
+| `--ion-toolbar-color`                      | Color of the components in the Toolbar               |
+| `--ion-toolbar-segment-color`              | Color of the Segment Buttons in the Toolbar          |
+| `--ion-toolbar-segment-color-checked`      | Color of the checked Segment Buttons in the Toolbar  |
+| `--ion-toolbar-segment-background`         | Background of the Segment Buttons in the Toolbar     |
+| `--ion-toolbar-segment-background-checked` | Background of the Segment Buttons in the Toolbar     |
+| `--ion-toolbar-segment-indicator-color`    | Color of the Segment Button indicator in the Toolbar |
+| `--ion-item-background`                    | Background of the Item                               |
+| `--ion-item-border-color`                  | Border color of the Item                             |
+| `--ion-item-color`                         | Color of the components in the Item                  |
+| `--ion-placeholder-color`                  | Color of the placeholder in Inputs                   |
 
 
 ## Stepped Colors

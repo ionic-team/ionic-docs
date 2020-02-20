@@ -14,7 +14,7 @@ Once an app is created by the Ionic CLI, the next step is to start building out 
 
 ## Project Structure
 
-<file-tree> <file-tree-directory name="src"> <file-tree-directory name="app" collapsed></file-tree-directory> <file-tree-directory name="assets" collapsed></file-tree-directory> <file-tree-directory name="environments" collapsed></file-tree-directory> <file-tree-directory name="theme" collapsed></file-tree-directory> <file-tree-file name="global.scss"></file-tree-file> <file-tree-file name="index.html"></file-tree-file> <file-tree-file name="karma.conf.js"></file-tree-file> <file-tree-file name="main.ts"></file-tree-file> <file-tree-file name="polyfills.ts"></file-tree-file> <file-tree-file name="test.ts"></file-tree-file> <file-tree-file name="tsconfig.app.json"></file-tree-file> <file-tree-file name="tsconfig.spec.json"></file-tree-file> </file-tree-directory> </file-tree>
+<file-tree> <file-tree-directory name="src"> <file-tree-directory name="app" collapsed></file-tree-directory> <file-tree-directory name="assets" collapsed></file-tree-directory> <file-tree-directory name="environments" collapsed></file-tree-directory> <file-tree-directory name="theme" collapsed></file-tree-directory> <file-tree-file name="global.scss"></file-tree-file> <file-tree-file name="index.html"></file-tree-file> <file-tree-file name="main.ts"></file-tree-file> <file-tree-file name="polyfills.ts"></file-tree-file> <file-tree-file name="test.ts"></file-tree-file> <file-tree-file name="zone-flags.ts"></file-tree-file> </file-tree-directory> </file-tree>
 
 The `src/` directory has items such as the `index.html` file, configuration files for tests, an asset folder for images, and the main `app/` directory for the app's code.
 
@@ -40,11 +40,11 @@ After a selection is made, the Ionic CLI will prompt for a name. The name can be
 > Any level of nesting is allowed, such as `portfolio/intro`. You can easily scope components to pages by using `ionic g component "portfolio/intro/About Me"`, for example.
 
 <command-line> <command-prompt>ionic generate</command-prompt> <command-output> <span class="green">?</span> <span class="bold">What would you like to generate? <span class="cyan">page</span></span>   
-<span class="green">?</span> <span class="bold">Name/path of <span class="green">page</span>:</span> portfolio </command-output> <command-cursor blink></command-cursor> </command-line>
+<span class="green">?</span> <span class="bold">Name/path of <span class="cyan">page</span>:</span> portfolio </command-output> <command-cursor blink></command-cursor> </command-line>
 
 Alternatively, the `type` and `name` of the generated feature can be entered on the command line:
 
-<command-line> <command-prompt>ionic g page "User Detail"</command-prompt> <command-output> &gt; <span class="green">ng generate page "User Detail"</span>   
+<command-line> <command-prompt>ionic g page "User Detail"</command-prompt> <command-output> &gt; <span class="cyan">ng generate page "User Detail"</span>   
 <span class="green">CREATE</span> src/app/user-detail/user-detail.module.ts (564 bytes)   
 <span class="green">CREATE</span> src/app/user-detail/user-detail.page.scss (0 bytes)   
 <span class="green">CREATE</span> src/app/user-detail/user-detail.page.html (138 bytes)   

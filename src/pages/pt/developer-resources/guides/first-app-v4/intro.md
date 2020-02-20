@@ -23,10 +23,12 @@ Download/install these right away to ensure an optimal Ionic development experie
 Run the following in the command line:
 
 ```shell
-$ npm install -g ionic cordova
+$ npm install -g @ionic/cli cordova
 ```
 
-> The `-g` option means _install globally_. When packages are installed globally, permission errors can occur. Consider [setting up npm](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally) to operate globally without elevated permissions. Running the command prompt as an Admin (or using `sudo` on Mac & Linux) with npm is not recommended.
+> The `-g` option means _install globally_. When packages are installed globally, `EACCES` permission errors can occur.
+> 
+> Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](/docs/faq/tips#resolving-permission-errors) for more information.
 
 ## Create an App
 Next, create an Ionic Angular app using our “Tabs” app template:
