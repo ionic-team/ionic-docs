@@ -11,7 +11,7 @@ Community Plugins are submitted and maintained by the Ionic community. While com
 
 ## Capacitor Support
 
-In addition to Cordova, Ionic Native also works with [Capacitor](https://capacitor.ionicframework.com), Ionic's official native runtime. For details, [see the Capacitor documentation](https://capacitor.ionicframework.com/docs/cordova/using-cordova-plugins).
+In addition to Cordova, Ionic Native also works with [Capacitor](https://capacitor.ionicframework.com), Ionic's official native runtime. Basic usage below. For complete details, [see the Capacitor documentation](https://capacitor.ionicframework.com/docs/cordova/using-cordova-plugins).
 
 ## Usage
 All plugins have two components - the native code (Cordova) and the TypeScript code (Ionic Native).
@@ -28,6 +28,9 @@ $ ionic cordova plugin add cordova-plugin-camera
 
 // Install Ionic Native TypeScript wrapper
 $ npm install @ionic-native/camera
+
+// Install Ionic Native core library (once per project) 
+$ npm install @ionic-native/core
 ```
 
 </docs-tab>
@@ -110,7 +113,7 @@ export class PhotoService {
 React apps must use Capacitor to build native mobile apps. However, Ionic Native (and therefore, Cordova plugins) can still be used.
 
 <command-line>
-  <div>// Install once per project</div>
+  <div>// Install Core library (once per project)</div>
   <command-prompt>npm install @ionic-native/core</command-prompt>
   <br />
   <div>// Install Ionic Native TypeScript wrapper</div>
