@@ -7,13 +7,13 @@ nextUrl: '/docs/angular/your-first-app/5-adding-mobile'
 
 # Cargando fotos desde el sistema de archivos
 
-We’ve implemented photo taking and saving to the filesystem. There’s one last piece of functionality missing: the photos are stored in the filesystem, but we need a way to save pointers to each file so that they can be displayed again in the photo gallery.
+Hemos implementado la toma de fotos y guardarlas en el sistema de archivos. Falta una última pieza de funcionalidad: las fotos se almacenan en el sistema de archivos, pero necesitamos una forma de guardar punteros en cada archivo para que puedan mostrarse nuevamente en la galería de fotos.
 
-Fortunately, this is easy: we’ll leverage the Capacitor [Storage API](https://capacitor.ionicframework.com/docs/apis/storage) to store our array of Photos in a key-value store.
+Afortunadamente, esto es fácil: aprovecharemos la API de Capacitor Storage para almacenar nuestra variedad de fotos en una tienda de valor clave.
 
-## Storage API
+## API de almacenamiento
 
-Begin by defining a constant variable that will act as the key for the store:
+Comience definiendo una variable constante que actuará como la clave para la tienda:
 
 ```typescript
 export class PhotoService {
