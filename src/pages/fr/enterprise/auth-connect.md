@@ -1,8 +1,8 @@
 ---
 title: Auth Connect
 template: enterprise-plugin
-version: 1.3.5
-minor: 1.3.X
+version: 1.5.0
+minor: 1.5.X
 ---
 
 Ionic Auth Connect handles logging in and/or registering a user with an authentication provider (such as Auth0, Azure AD, or AWS Cognito) using industry standard OAuth/OpenId Connect on iOS, Android, or on the web.
@@ -82,16 +82,12 @@ Il est courant de créer une classe qui étend `IonicAuth` comme ceci :
 })
 export class AuthenticationService extends IonicAuth {
   private vaultService: VaultService;
-
-...
-
+  ...
   async isAuthenticated(): Promise<boolean> {
-    const isVaultLocked = wait this.vaultService.isLocked();
-    return !isVaultLocked && (wait super.isAuthenticated());
+    const isVaultLocked = await this.vaultService.isLocked();
+    return !isVaultLocked && (await super.isAuthenticated());
   }
-
-...
-
+  ...
 }
 ```
 
@@ -103,16 +99,12 @@ Cependant, à cause d'un bogue dans la version pré-Chromium de Edge, vous ne po
 })
 export class AuthenticationService extends IonicAuth {
   private vaultService: VaultService;
-
-...
-
-  async isAuthenticated(): Promise<boolean> {
-    const isVaultLocked = wait this.vaultService.isLocked();
-    return !isVaultLocked && (wait super.isAuthenticated());
+  ...
+  async myAppIsAuthenticated(): Promise<boolean> {
+    const isVaultLocked = await this.vaultService.isLocked();
+    return !isVaultLocked && (await super.isAuthenticated());
   }
-
-...
-
+  ...
 }
 ```
 
@@ -210,6 +202,7 @@ You can find the API and interface documentation for everything below. The main 
 * [IVConfig](#ivconfig)
 * [IVUserInterface](#ivuserinterface)
 * [IonicAuthOptions](#ionicauthoptions)
+* [IonicGeneralAuthOptions](#ionicgeneralauthoptions)
 * [TokenStorageProvider](#tokenstorageprovider)
 * [VaultInterface](#vaultinterface)
 
@@ -508,7 +501,7 @@ Provided audience (aud) value
 
 ### `<Optional>` authConfig
 
-**● authConfig**: *"auth0" \| "azure" \| "cognito"*
+**● authConfig**: *"auth0" \| "azure" \| "cognito" \| "general"*
 
 The type of the Auth Server, currently only the following are supported:
 
@@ -625,6 +618,188 @@ User details requested from the Authentication provider, each provider may suppo
 **● tokenStorageProvider**: *"localStorage" \| [TokenStorageProvider](#tokenstorageprovider) \| [IVUserInterface](#ivuserinterface)*
 
 The type of storage to use for the tokens
+
+* * *
+
+<a id="ionicauthoptions.webauthflow"></a>
+
+### `<Optional>` webAuthFlow
+
+**● webAuthFlow**: *"implicit" \| "PKCE"*
+
+Authentication flow to use on web defaults to: `implicit` `PKCE` is not supported by Azure, if `authConfig` is set to `azure` the plugin will use `implicit` despite `webAuthFlow` value
+
+* * *
+
+* * *
+
+<a id="ionicgeneralauthoptions"></a>
+
+### IonicGeneralAuthOptions
+
+**IonicGeneralAuthOptions**:
+
+<a id="ionicgeneralauthoptions.alwayssendclientsecretonlogin"></a>
+
+### `<Optional>` alwaysSendClientSecretOnLogin
+
+**● alwaysSendClientSecretOnLogin**: *`undefined` \| `false` \| `true`*
+
+should the 'client\_secret' value always be passed in for login calls, regardless of implict(web) or not defaults to: true
+
+* * *
+
+<a id="ionicgeneralauthoptions.androidtoolbarcolor"></a>
+
+### `<Optional>` androidToolbarColor
+
+**● androidToolbarColor**: *`undefined` \| `string`*
+
+setting to allow the toolbar color of the android webview control to be set. Takes a string that can be parsed as a color by `android.graphics.Color.parseColor`
+
+* * *
+
+<a id="ionicgeneralauthoptions.audience"></a>
+
+### `<Optional>` audience
+
+**● audience**: *`undefined` \| `string`*
+
+Provided audience (aud) value
+
+* * *
+
+<a id="ionicgeneralauthoptions.authconfig"></a>
+
+### `<Optional>` authConfig
+
+**● authConfig**: *"auth0" \| "azure" \| "cognito" \| "general"*
+
+The type of the Auth Server, currently only the following are supported:
+
+* Auth0
+* Azure Active Directory
+* Cognito (AWS)
+
+* * *
+
+<a id="ionicgeneralauthoptions.clientid"></a>
+
+### clientID
+
+**● clientID**: *`string`*
+
+Provided Application ID
+
+* * *
+
+<a id="ionicgeneralauthoptions.clientsecret"></a>
+
+### `<Optional>` clientSecret
+
+**● clientSecret**: *`undefined` \| `string`*
+
+The client secret, optional only required for Cognito/Web
+
+* * *
+
+<a id="ionicgeneralauthoptions.discoveryurl"></a>
+
+### `<Optional>` discoveryUrl
+
+**● discoveryUrl**: *`undefined` \| `string`*
+
+Location of the Auth Server's discovery endpoint, can be null for Azure
+
+* * *
+
+<a id="ionicgeneralauthoptions.implicitlogin"></a>
+
+### `<Optional>` implicitLogin
+
+**● implicitLogin**: *"CURRENT" \| "POPUP"*
+
+for implicit login (aka web) should the auth window be opened in a new popup window/tab or the current windwow/tab defaults to: `POPUP` for `CURRENT` to work the app will need to call `IIonicAuth::handleCallback` when the auth service navigates to the url set in `redirect_url`
+
+* * *
+
+<a id="ionicgeneralauthoptions.ioswebview"></a>
+
+### `<Optional>` iosWebView
+
+**● iosWebView**: *"private" \| "shared"*
+
+setting the option to `shared` allows for sharing a session between Safari and other applications for a true SSO experience between apps but on iOS 11 and higher it will prompt the user for permission to share the website data with the application. Using `private` avoids the prompt but the session will only be shared with Safari on iOS 10 or lower.
+
+* * *
+
+<a id="ionicgeneralauthoptions.loglevel"></a>
+
+### `<Optional>` logLevel
+
+**● logLevel**: *"DEBUG" \| "ERROR" \| "NONE"*
+
+The log level for the module
+
+* * *
+
+<a id="ionicgeneralauthoptions.logouturl"></a>
+
+### logoutUrl
+
+**● logoutUrl**: *`string`*
+
+Location that the hosting app expects logout callbacks to navigate to.
+
+* * *
+
+<a id="ionicgeneralauthoptions.platform"></a>
+
+### `<Optional>` platform
+
+**● platform**: *"web" \| "cordova" \| "capacitor"*
+
+Are we hosted in cordova, web, capacitor
+
+* * *
+
+<a id="ionicgeneralauthoptions.redirecturi"></a>
+
+### `<Optional>` redirectUri
+
+**● redirectUri**: *`undefined` \| `string`*
+
+Location that the hosting app expects callbacks to navigate to.
+
+* * *
+
+<a id="ionicgeneralauthoptions.scope"></a>
+
+### `<Optional>` scope
+
+**● scope**: *`undefined` \| `string`*
+
+User details requested from the Authentication provider, each provider may support standard {e.g. openid, profile, email, etc.}, or custom scopes.
+
+* * *
+
+<a id="ionicgeneralauthoptions.tokenstorageprovider"></a>
+
+### `<Optional>` tokenStorageProvider
+
+**● tokenStorageProvider**: *"localStorage" \| [TokenStorageProvider](#tokenstorageprovider) \| [IVUserInterface](#ivuserinterface)*
+
+The type of storage to use for the tokens
+
+* * *
+
+<a id="ionicgeneralauthoptions.webauthflow"></a>
+
+### `<Optional>` webAuthFlow
+
+**● webAuthFlow**: *"implicit" \| "PKCE"*
+
+Authentication flow to use on web defaults to: `implicit` `PKCE` is not supported by Azure, if `authConfig` is set to `azure` the plugin will use `implicit` despite `webAuthFlow` value
 
 * * *
 
@@ -804,6 +979,24 @@ save the refresh token
 * * *
 
 # Changelog
+
+### \[1.5.0\] (2020-02-17)
+
+### Features
+
+* **web:** add PKCE auth flow option 
+
+### \[1.4.0\] (2020-02-13)
+
+### Features
+
+* reject if user closed the auth browser 
+
+### Bug Fixes
+
+* **ios, android, web:** SE-132: allow client_secret to be passed into authorization calls. 
+* propagate network errors on login 
+* update to general to send client secret in payload of token call 
 
 ### \[1.3.5\] (2019-12-17)
 
