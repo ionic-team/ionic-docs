@@ -35,19 +35,19 @@ Download and install these right away to ensure an optimal Ionic development exp
  * **Windows** users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode. 
  * **Mac/Linux** users, virtually any terminal will work.
 
-## Install Ionic Tooling
+## Installer l'outillage ionic
 
-Run the following in the command line terminal to install the Ionic CLI (`ionic`), `native-run`, used to run native binaries on devices and simulators/emulators, and `cordova-res`, used to generate native app icons and splash screens:
+Exécutez ce qui suit dans le terminal de ligne de commande pour installer l'Ionic CLI (`ionic`), `native-run`, utilisé pour exécuter des binaires natifs sur les appareils et les simulateurs / émulateurs, et `cordova-res`, utilisé pour générer des icônes d'applications natives et des écrans de démarrage:
 
-> To open a terminal in Visual Studio Code, go to Terminal -> New Terminal.
+> Pour ouvrir un terminal dans Visual Studio Code, accédez à Terminal -> Nouveau Terminal.
 
 ```shell
 $ npm install -g @ionic/cli native-run cordova-res
 ```
 
-> The `-g` option means *install globally*. When packages are installed globally, `EACCES` permission errors can occur.
+> L'option ` -g ` signifie * installer globalement *. Lorsque les packages sont installés globalement, des erreurs d'autorisation ` EACCES ` peuvent se produire.
 > 
-> Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](/docs/faq/tips#resolving-permission-errors) for more information.
+> Pensez à configurer npm pour qu'il fonctionne globalement sans autorisations élevées. Voir [ Résolution des erreurs d'autorisation ](/docs/faq/tips#resolving-permission-errors) pour plus d'informations.
 
 ## Create an App
 
