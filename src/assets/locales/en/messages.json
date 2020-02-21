@@ -87,6 +87,7 @@
   "menu-react-config": "Config",
   "menu-react-platform": "Platform Utils",
   "menu-react-pwa": "Progressive Web Apps",
+  "menu-react-testing": "Testing",
 
   "menu-vue": "Vue (beta)",
   "menu-vue-overview": "Overview",

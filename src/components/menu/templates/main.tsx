@@ -83,7 +83,8 @@ const items = {
     'menu-react-navigation': '/docs/react/navigation',
     'menu-react-config': '/docs/react/config',
     'menu-react-platform': '/docs/react/platform',
-    'menu-react-pwa': '/docs/react/pwa'
+    'menu-react-pwa': '/docs/react/pwa',
+    'menu-react-testing': '/docs/react/testing'
 
   },
   'menu-vue': {

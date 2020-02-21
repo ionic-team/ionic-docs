@@ -1,6 +1,8 @@
 ---
 previousText: 'Config'
 previousUrl: '/docs/react/config'
+nextText: 'Progressive Web Apps in React'
+nextUrl: '/docs/react/pwa'
 ---
 
 # Platform Utils
