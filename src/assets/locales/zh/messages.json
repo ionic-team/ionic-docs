@@ -78,6 +78,7 @@
   "menu-react-config": "配置",
   "menu-react-platform": "平台工具",
   "menu-react-pwa": "渐进式Web应用",
+  "menu-react-testing": "Testing",
   "menu-vue": "Vue (beta)",
   "menu-vue-overview": "概览",
   "menu-vue-your-first-app": "创建您的第一个应用程序",
