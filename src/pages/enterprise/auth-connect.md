@@ -1,7 +1,7 @@
 ---
 title: Auth Connect
 template: enterprise-plugin
-version: 1.5.0
+version: 1.5.1
 minor: 1.5.X
 ---
 
@@ -924,6 +924,13 @@ ___
 # Changelog
 
 
+
+### [1.5.1] (2020-02-21)
+
+
+### Bug Fixes
+
+* **web:** properly refresh token when using PKCE 
 
 ### [1.5.0] (2020-02-17)
 
