@@ -49,7 +49,7 @@ $ npm install -g @ionic/cli native-run cordova-res
 > 
 > Pensez à configurer npm pour qu'il fonctionne globalement sans autorisations élevées. Voir [ Résolution des erreurs d'autorisation ](/docs/faq/tips#resolving-permission-errors) pour plus d'informations.
 
-## Create an App
+## Créer une application
 
 Next, create an Ionic Angular app that uses the “Tabs” starter template and adds Capacitor for native functionality:
 
