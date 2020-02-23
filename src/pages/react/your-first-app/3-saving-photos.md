@@ -11,7 +11,7 @@ We’re now able to take multiple photos and display them in a photo gallery on 
 
 ## Filesystem API
 
-Fortunately, saving them to the filesystem only takes a few steps. Begin by opening the `usePhotoGallery` hook (`src/hooks/usePhotoGallery.ts`), and get access to the `writeFile` method from the `useFileSystem` hook:
+Fortunately, saving them to the filesystem only takes a few steps. Begin by opening the `usePhotoGallery` hook (`src/hooks/usePhotoGallery.ts`), and get access to the `writeFile` method from the `useFileSystem` hook. Place the following line after your import statements but before your `usePhotoGallery` function:
 
 ```typescript
 const { deleteFile, getUri, readFile, writeFile } = useFilesystem();
