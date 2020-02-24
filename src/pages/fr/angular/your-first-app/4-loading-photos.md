@@ -5,22 +5,22 @@ nextText: 'Adding Mobile'
 nextUrl: '/docs/angular/your-first-app/5-adding-mobile'
 ---
 
-# Loading Photos from the Filesystem
+# Enregistrement des photos dans le système de fichiers
 
-We’ve implemented photo taking and saving to the filesystem. There’s one last piece of functionality missing: the photos are stored in the filesystem, but we need a way to save pointers to each file so that they can be displayed again in the photo gallery.
+Nous avons implémenté la prise de photos et l'enregistrement sur le système de fichiers. Il y a une dernière fonctionnalité manquante : les photos sont stockées dans le système de fichiers, mais nous avons besoin d'un moyen d'enregistrer des pointeurs vers chaque fichier afin qu'ils puissent être affichés à nouveau dans la galerie de photos.
 
-Fortunately, this is easy: we’ll leverage the Capacitor [Storage API](https://capacitor.ionicframework.com/docs/apis/storage) to store our array of Photos in a key-value store.
+Heureusement, c'est facile : nous allons mettre à profit le [Storage API](https://capacitor.ionicframework.com/docs/apis/storage) de Capacitor pour stocker notre tableau de photos dans un tableau clé/valeur.
 
 ## Storage API
 
-Begin by defining a constant variable that will act as the key for the store:
+Commencez par définir une variable constante qui servira de clé pour le tableau :
 
 ```typescript
 export class PhotoService {
-  public photos: Photo[] = [];
+  photos publiques : Photo[] = [];
   private PHOTO_STORAGE: string = "photos";
 
-  // other code
+  // autre code
 }
 ```
 
