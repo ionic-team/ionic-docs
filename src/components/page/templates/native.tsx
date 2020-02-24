@@ -112,10 +112,17 @@ const renderInstallation = (cordova: string, npm: string) => {
         <a href="#installation">Installation</a>
       </h2>
       <docs-tabs>
-        <docs-tab tab="Community">
+        <docs-tab tab="Cordova">
           <command-line>
             <command-prompt>{`ionic cordova plugin add ${cordova}`}</command-prompt>
             <command-prompt>{`npm install ${npm}`}</command-prompt>
+          </command-line>
+        </docs-tab>
+        <docs-tab tab="Capacitor">
+          <command-line>
+            <command-prompt>{`npm install ${cordova}`}</command-prompt>
+            <command-prompt>{`npm install ${npm}`}</command-prompt>
+            <command-prompt>{`ionic cap sync`}</command-prompt>
           </command-line>
         </docs-tab>
         <docs-tab tab="Enterprise">
