@@ -17,21 +17,21 @@ Commencez par définir une variable constante qui servira de clé pour le tablea
 
 ```typescript
 export class PhotoService {
-  photos publiques : Photo[] = [];
+  public photos : Photo[] = [];
   private PHOTO_STORAGE: string = "photos";
 
   // autre code
 }
 ```
 
-Next, at the end of the `addNewToGallery` function, add a call to `Storage.set()` to save the Photos array. By adding it here, the Photos array is stored each time a new photo is taken. This way, it doesn’t matter when the app user closes or switches to a different app - all photo data is saved.
+Ensuite, à la fin de la fonction `addNewToGallery` , ajoutez un appel à `Storage.set()` pour enregistrer le tableau Photos. En l'ajoutant ici, le tableau Photos est stocké chaque fois qu'une nouvelle photo est prise. De cette façon, peu importe si l'utilisateur de l'application ferme ou passe à une autre application, toutes les données photo sont enregistrées.
 
 ```typescript
 Storage.set({
   key: this.PHOTO_STORAGE,
   value: JSON.stringify(this.photos.map(p => {
-          // Don't save the base64 representation of the photo data, 
-          // since it's already saved on the Filesystem
+          // Ne sauvegardez pas la représentation en base64 de la photo, 
+          // puisqu'elle est déjà sauvegardée dans le système de fichiers
           const photoCopy = { ...p };
           delete photoCopy.base64;
 
@@ -40,7 +40,7 @@ Storage.set({
 });
 ```
 
-With the photo array data saved, create a function called `loadSaved()` that can retrieve that data. We use the same key to retrieve the photos array in JSON format, then parse it into an array:
+Avec le tableau de photos enregistré, créez une fonction appelée `loadSaved()` qui peut récupérer ces données. We use the same key to retrieve the photos array in JSON format, then parse it into an array:
 
 ```typescript
 public async loadSaved() {
