@@ -1,7 +1,7 @@
 ---
 title: Auth Connect
 template: enterprise-plugin
-version: 1.5.1
+version: 1.5.2
 minor: 1.5.X
 ---
 
@@ -924,6 +924,13 @@ ___
 # Changelog
 
 
+
+### [1.5.2] (2020-02-24)
+
+
+### Bug Fixes
+
+* **web:** throw error if POST to token endpoint failed 
 
 ### [1.5.1] (2020-02-21)
 
