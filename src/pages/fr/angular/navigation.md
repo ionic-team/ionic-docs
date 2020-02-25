@@ -189,7 +189,7 @@ const routes: Routes = [
 ];
 ```
 
-Ici nous avons un chemin "tabs" que nous chargeons. In this example we call the path “tabs”, but the name of the paths are open to be changed. They can be called whatever fits your app. In that route object, we can define a child route as well. In this example, the top level child route "tab1" acts as our "outlet", and can load additional child routes. For this example, we have a single sub-child-route, which just loads a new component. The markup for the tab is as followed:
+Ici nous avons un chemin "tabs" que nous chargeons. Dans cet exemple, nous appelons le chemin «tabs», mais le nom des chemins peut être modifié. Ils peuvent être appelés selon ce qui convient à votre application. Dans cet objet route, nous pouvons également définir une route enfant. Dans cet exemple, la route enfant de niveau supérieur "tab1" agit comme notre "outlet" et peut charger des routes enfant supplémentaires. For this example, we have a single sub-child-route, which just loads a new component. The markup for the tab is as followed:
 
 ```html
 <br /><ion-tabs>
