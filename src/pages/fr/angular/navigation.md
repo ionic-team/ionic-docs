@@ -81,12 +81,12 @@ Maintenant depuis le `LoginComponent`, nous pouvons utiliser le code HTML suivan
 ```html
 <ion-header>
   <ion-toolbar>
-    <ion-title>Login</ion-title>
+    <ion-title>Se connecter</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-button [routerLink]="['/detail']">Go to detail</ion-button>
+  <ion-button [routerLink]="['/detail']">Aller au détail</ion-button>
 </ion-content>
 ```
 
@@ -113,11 +113,11 @@ export class LoginComponent {
 
 Les deux options fournissent le même mécanisme de navigation, juste en ajustant différents cas d'utilisation.
 
-> A note on navigation with relative URLs: Currently, to support multiple navigation stacks, relative URLs are something not supported
+> Remarque sur la navigation avec des URL relatives: actuellement, pour prendre en charge plusieurs piles de navigation, les URL relatives ne sont pas prises en charge
 
 ## Lazy loading routes
 
-Now the current way our routes are setup makes it so they are included in the same chunk as the root app.module, which is not ideal. Instead, the router has a setup that allows the components to be isolated to their own chunks.
+Maintenant, la façon dont nos routes sont configurés fait en sorte qu'ils sont inclus dans le même morceau que le module d'application racine, ce qui n'est pas idéal. Instead, the router has a setup that allows the components to be isolated to their own chunks.
 
 ```typescript
 <br />import { RouterModule } from '@angular/router';
