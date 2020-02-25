@@ -115,9 +115,9 @@ Les deux options fournissent le même mécanisme de navigation, juste en ajustan
 
 > Remarque sur la navigation avec des URL relatives: actuellement, pour prendre en charge plusieurs piles de navigation, les URL relatives ne sont pas prises en charge
 
-## Lazy loading routes
+## Routes de chargement paresseux
 
-Maintenant, la façon dont nos routes sont configurés fait en sorte qu'ils sont inclus dans le même morceau que le module d'application racine, ce qui n'est pas idéal. Instead, the router has a setup that allows the components to be isolated to their own chunks.
+Maintenant, la façon dont nos routes sont configurés fait en sorte qu'ils sont inclus dans le même morceau que le module d'application racine, ce qui n'est pas idéal. Au lieu de cela, le routeur a une configuration qui permet aux composants d'être isolés dans leurs propres morceaux.
 
 ```typescript
 <br />import { RouterModule } from '@angular/router';
@@ -134,7 +134,7 @@ Maintenant, la façon dont nos routes sont configurés fait en sorte qu'ils sont
 })
 ```
 
-While similar, the `loadChildren` property is a way to reference a module by string instead of a component directly. In order to do this though, we need to create a module for each of the components.
+Bien que similaire, la propriété `loadChildren` est un moyen de référencer un module par chaîne au lieu d'un composant directement. Pour ce faire, nous devons cependant créer un module pour chacun des composants.
 
 ```typescript
 ...
@@ -151,9 +151,9 @@ import { LoginComponent } from './login.component';
 })
 ```
 
-> We're excluding some additional content and only including the necessary parts.
+> Nous excluons du contenu supplémentaire et n'incluons que les parties nécessaires.
 
-Here, we have a typical Angular Module setup, along with a RouterModule import, but we're now using `forChild` and declaring the component in that setup. With this setup, when we run our build, we will produce separate chunks for both the app component, the login component, and the detail component.
+Ici, nous avons une configuration typique de Module Angular, avec une importation de RouterModule, mais nous utilisons maintenant `forChild` et déclarons le composant dans cette configuration. Avec cette configuration, lorsque nous exécuterons notre build, nous produirons des morceaux distincts pour le composant d'application, le composant de connexion et le composant de détail.
 
 ## Working with Tabs
 
