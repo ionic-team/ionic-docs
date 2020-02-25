@@ -35,6 +35,7 @@
   "menu-building-running": "Running Overview",
   "menu-building-ios": "Running on iOS",
   "menu-building-android": "Running on Android",
+  "menu-building-hardware-back-button": "Hardware Back Button",
   "menu-building-testing": "Testing",
   "menu-building-contributing": "Contributing",
   "menu-building-webview": "Web View",

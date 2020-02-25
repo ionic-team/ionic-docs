@@ -28,6 +28,7 @@ const items = {
     'menu-building-running': '/docs/building/running',
     'menu-building-ios': '/docs/building/ios',
     'menu-building-android': '/docs/building/android',
+    'menu-building-hardware-back-button': '/docs/building/hardware-back-button',
     'menu-building-testing': '/docs/building/testing',
     'menu-building-contributing': '/docs/building/contributing',
     'menu-building-webview': '/docs/building/webview',
