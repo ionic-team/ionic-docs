@@ -64,7 +64,7 @@ document.addEventListener('ionBackButton', (ev) => {
 
 In this example, we are registering a handler to be called when the hardware back button is pressed. We have set the priority to be 10, and we have not indicated to the framework that we want the next handler to be called. As a result, any handlers with a priority less than 10 will not be called. A handler that has a priority greater than 10 will be called first.
 
-In the event that there are handlers with the same priority value, the handler that was registered _last_ will be called. See [#handlers-with-the-same-priorities](andlers with the Same Priorities) for more information.
+In the event that there are handlers with the same priority value, the handler that was registered _last_ will be called. See [Handlers with the Same Priorities](#handlers-with-the-same-priorities) for more information.
 
 ## Calling Multiple Handlers
 
@@ -117,7 +117,7 @@ This example shows how to indicate to Ionic Framework that you want the next han
 
 ## Handlers with the Same Priorities
 
-Internally, Ionic Framework uses a [stack](https://en.wikipedia.org/wiki/Stack_(abstract_data_type)) to manage hardware back button handlers. In the event that there are multiple handlers with the same priority value, the _last_ handler to be added to this stack will be the first handler to be called.
+Internally, Ionic Framework uses something similar to a priority queue to manage hardware back button handlers. The handler with the largest priority value will be called first. In the event that there are multiple handlers with the same priority value, the _last_ handler added to this queue will be the first handler to be called.
 
 ```javascript
 document.addEventListener('ionBackButton', (ev) => {
