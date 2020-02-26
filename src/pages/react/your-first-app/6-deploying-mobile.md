@@ -66,11 +66,11 @@ Next, click on `App` in the Project Navigator on the left-hand side, then within
 
 ![Xcode - Selecting Development Team](/docs/assets/img/guides/first-app-cap-ng/xcode-signing.png)
 
-
 With permissions in place and Development Team selected, we are ready to try out the app on a real device! Connect an iOS device to your Mac computer, select it (`App -> Matthew’s iPhone` for me) then click the "Build" button to build, install, and launch the app on your device:
 
 ![Xcode build button](/docs/assets/img/guides/first-app-cap-ng/xcode-build-button.png)
 
+> Unfortunately, free Apple Development accounts can't be used to run apps on external devices when using certain frameworks, one of which is Capacitor. If you get errors about [invalid code signatures](https://github.com/ionic-team/capacitor/issues/2458) for the Capacitor.framework Bundle in XCode, consider [enrolling](https://developer.apple.com/programs/enroll/) for an Apple Developer account.
 
 Upon tapping the Camera button on the Photo Gallery tab, the permission prompt will display. Tap OK, then take a picture with the Camera. Afterward, the photo shows in the app!
 
