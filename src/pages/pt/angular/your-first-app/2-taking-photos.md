@@ -7,11 +7,11 @@ nextUrl: '/docs/angular/seu-primeiro-app/salvando-fotos'
 
 # Tirando fotos com a câmera
 
-Agora vamos para a parte divertida - adicione permissão para tirar fotos com a câmera do seu dispositivo usando o Capacitor [Câmera API](https://capacitor.ionicframework.com/docs/apis/camera). De início iremos começar com a criação para Web, porém, em seguida faremos pequenos ajustes para que funcionem no celular (IOS e Android).
+Agora vamos para a parte divertida - adicione permissão para tirar fotos com a câmera do seu dispositivo usando o Capacitor [Camera API](https://capacitor.ionicframework.com/docs/apis/camera). De início iremos começar com a criação para Web, porém em seguida faremos pequenos ajustes para que funcionem no celular (IOS e Android).
 
-## Photo Service
+## Serviço de Fotos (Photo Service)
 
-All Capacitor logic (Camera usage and other native features) will be encapsulated in a service class. Create `PhotoService` using the `ionic generate` command:
+Toda a lógica usando o Capacitor (uso da câmera e outros recursos nativos) será encapsulada em uma classe de serviços. Create `PhotoService` using the `ionic generate` command:
 
 ```bash
 $ ionic g service services/photo
