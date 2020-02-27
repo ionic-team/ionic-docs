@@ -1,13 +1,13 @@
 ---
-previousText: 'Your First App'
-previousUrl: '/docs/angular/your-first-app'
-nextText: 'Saving Photos on Filesystem'
-nextUrl: '/docs/angular/your-first-app/3-saving-photos'
+previousText: 'Seu primeiro App'
+previousUrl: '/docs/angular/seu-primeiro-app'
+nextText: 'Salvando fotos nos arquivos do Sistema'
+nextUrl: '/docs/angular/seu-primeiro-app/salvando-fotos'
 ---
 
-# Taking Photos with the Camera
+# Tirando fotos com a câmera
 
-Now for the fun part - adding the ability to take photos with the device’s camera using the Capacitor [Camera API](https://capacitor.ionicframework.com/docs/apis/camera). We’ll begin with building it for the web, then make some small tweaks to make it work on mobile (iOS and Android).
+Agora vamos para a parte divertida - adicione permissão para tirar fotos com a câmera do seu dispositivo usando o Capacitor [Câmera API](https://capacitor.ionicframework.com/docs/apis/camera). De início iremos começar com a criação para Web, porém, em seguida faremos pequenos ajustes para que funcionem no celular (IOS e Android).
 
 ## Photo Service
 
