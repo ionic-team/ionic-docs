@@ -139,6 +139,9 @@ In the example above, both handlers A and B have a priority of 10. Since handler
 
 
 ## Exiting the App
+
+In some scenarios, it may be desirable to quit the app when pressing the hardware back button. This can be achieved through the use of the `ionBackButton` event and methods that Capacitor/Cordova provide.
+
 <docs-tabs>
 <docs-tab tab="javascript">
 
@@ -175,6 +178,8 @@ TODO
 ```
 </docs-tab>
 </docs-tabs>
+
+This examples shows the application exiting when the user presses the hardware back button and there is nothing left in the navigation stack. It is also possible to display an quit confirmation dialog before quitting the app.
 
 ## Internal Framework Handlers
 
