@@ -11,10 +11,12 @@ Agora vamos para a parte divertida - adicione permissão para tirar fotos com a 
 
 ## Serviço de Fotos (Photo Service)
 
-Toda a lógica usando o Capacitor (uso da câmera e outros recursos nativos) será encapsulada em uma classe de serviços. Create `PhotoService` using the `ionic generate` command:
+Toda a lógica usando o Capacitor (uso da câmera e outros recursos nativos) será encapsulada em uma classe de serviços. Crie um  `Photo Service` usando o comando `Ionic Generate`:
 
 ```bash
-$ ionic g service services/photo
+$ ionic g service services/photo 
+ou
+$ ionic generate service services/photo
 ```
 
 Open the new `services/photo.service.ts` file, and let’s add the logic that will power the camera functionality. First, import Capacitor dependencies and get references to the Camera, Filesystem, and Storage plugins:
