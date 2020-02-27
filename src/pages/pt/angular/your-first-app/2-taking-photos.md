@@ -19,7 +19,7 @@ ou
 $ ionic generate service services/photo
 ```
 
-Open the new `services/photo.service.ts` file, and let’s add the logic that will power the camera functionality. First, import Capacitor dependencies and get references to the Camera, Filesystem, and Storage plugins:
+Abra o novo arquivo criado `services/photo.service.ts` e agora adicione a lógica que irá ativar a funcionalidade da câmera. First, import Capacitor dependencies and get references to the Camera, Filesystem, and Storage plugins:
 
 ```typescript
 import { Plugins, CameraResultType, Capacitor, FilesystemDirectory, 
