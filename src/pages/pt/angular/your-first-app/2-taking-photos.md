@@ -65,7 +65,7 @@ Then, open `tab2.page.html` and call the `addNewToGallery()` function when the F
 
 Salve o arquivo e, se ele ainda não estiver executando, reinicie o servidor de desenvolvimento digitando `ionic serve` no seu navegador ou terminal. Na aba Galeria de Fotos, clique no botão câmera. Se o seu pc/notebook possui webcam, uma janela de alerta aparece pedindo permissão. Agora tire seu selfie!
 
-![Camera API on the web](/docs/assets/img/guides/first-app-cap-ng/camera-web.png)
+![API da câmera na web.](/docs/assets/img/guides/first-app-cap-ng/camera-web.png)
 
 _(Sua selfie provavelmente é muito melhor que a minha)_
 
@@ -109,7 +109,7 @@ No começo da função `AddFotoNaGaleria()`, adicione a foto capturada à matriz
 }
 ```
 
-With the photo(s) stored into the main array, move over to `tab2.page.html` so we can display the image on the screen. Add a [Grid component](https://ionicframework.com/docs/api/grid) so that each photo will display nicely as photos are added to the gallery, and loop through each photo in the Photos array, adding an Image component (`<ion-img>`) for each. Point the `src` (source) at the photo’s path:
+Utilizando a(s) foto(s) armazenada(s), referencie esse array para o arquivo `tab2.page.html` para que possamos exibir a imagem na tela. Adicione um [Grid Component](https://ionicframework.com/docs/api/grid) para que cada foto seja exibida no mesmo estilo que são adicionadas em apps de galeria, depois repita cada foto do array Fotos, adicionando um componente de Imagem (`<ion-img>`) para cada um. Aponte a `src` (fonte) para o caminho da foto:
 
 ```html
 <ion-content>
@@ -126,6 +126,6 @@ With the photo(s) stored into the main array, move over to `tab2.page.html` so w
 </ion-content>
 ```
 
-Save all files. Within the web browser, click the Camera button and take another photo. This time, the photo is displayed in the Photo Gallery!
+Salvar todos os arquivos. No navegador da Web, clique no botão Câmera e tire outra foto. Desta vez, a foto é exibida na Galeria de Fotos!
 
-Up next, we’ll add support for saving the photos to the filesystem, so they can be retrieved and displayed in our app at a later time.
+Em seguida, adicionaremos suporte para salvar as fotos no sistema de arquivos, para que possam ser recuperadas e exibidas em nosso aplicativo mais tarde.
