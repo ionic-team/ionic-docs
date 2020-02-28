@@ -1,7 +1,7 @@
 ---
 title: Identity Vault
 template: enterprise-plugin
-version: 3.6.1
+version: 3.6.2
 minor: 3.6.X
 otherVersions:
   - 2.0.X
@@ -1912,6 +1912,12 @@ The possible values returned by [getBiometricType](#identityvault.getbiometricty
 * * *
 
 ## Change Log
+
+### \[3.6.2\] (2020-02-28)
+
+### Bug Fixes
+
+* **ios:** clear the vault on lock when using InMemoryOnly mode 
 
 ### \[3.6.1\] (2020-02-05)
 
