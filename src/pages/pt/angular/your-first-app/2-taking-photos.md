@@ -67,13 +67,13 @@ Salve o arquivo e, se ele ainda não estiver executando, reinicie o servidor de 
 
 ![Camera API on the web](/docs/assets/img/guides/first-app-cap-ng/camera-web.png)
 
-_(Your selfie is probably much better than mine)_
+_(Sua selfie provavelmente é muito melhor que a minha)_
 
-After taking a photo, it disappears right away. We need to display it within our app and save it for future access.
+Depois de tirar uma foto, ela desaparece imediatamente. Por isso, precisamos exibi-lo em nosso app e salvá-lo para um acesso futuro.
 
-## Displaying Photos
+## Mostrando uma foto (Displaying Photos)
 
-Outside of the `PhotoService` class definition (the very bottom of the file), create a new interface, `Photo`, to hold our photo metadata:
+Abaixo da classe `PhotoService` (porém fora dela), crie uma nova interface, chamada `Photo`, para guardar nossos metadados da foto:
 
 ```typescript
 interface Photo {
@@ -83,20 +83,20 @@ interface Photo {
 }
 ```
 
-Back at the top of the file, define an array of Photos, which will contain a reference to each photo captured with the Camera.
+Vá ao topo do arquivo e defina uma matriz de Fotos, que conterá uma referência a cada foto capturada com a Câmera.
 
 ```typescript
 export class PhotoService {
   public photos: Photo[] = [];
 
-  // other code
+  // outro código
 }
 ```
 
-Over in the `addNewToGallery` function, add the newly captured photo to the beginning of the Photos array.
+No começo da função `AddFotoNaGaleria()`, adicione a foto capturada à matriz que armazena as fotos.
 
 ```typescript
-  const capturedPhoto = await Camera.getPhoto({
+  const capturarFoto = await Camera.getPhoto({
     resultType: CameraResultType.Uri, 
     source: CameraSource.Camera, 
     quality: 100 
@@ -104,7 +104,7 @@ Over in the `addNewToGallery` function, add the newly captured photo to the begi
 
   this.photos.unshift({
     filepath: "soon...",
-    webviewPath: capturedPhoto.webPath
+    webviewPath: capturarPhoto.webPath
   });
 }
 ```
