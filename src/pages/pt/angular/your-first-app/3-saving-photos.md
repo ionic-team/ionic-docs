@@ -1,13 +1,13 @@
 ---
-previousText: 'Taking Photos'
+previousText: 'Tirando fotos'
 previousUrl: '/docs/angular/your-first-app/2-taking-photos'
-nextText: 'Loading Photos on Filesystem'
+nextText: 'Carregando fotos do Filesystem'
 nextUrl: '/docs/angular/your-first-app/4-loading-photos'
 ---
 
-# Saving Photos to the Filesystem
+# Salvando fotos no Filesystem
 
-We’re now able to take multiple photos and display them in a photo gallery on the second tab of our app. These photos, however, are not currently being stored permanently, so when the app is closed, they will be deleted.
+Agora podemos tirar várias fotos e exibí-las em uma galeria de fotos na segunda guia do nosso aplicativo. No entanto, essas fotos não estão sendo armazenadas permanentemente, portanto, quando o aplicativo for fechado, elas serão excluídas.
 
 ## Filesystem API
 
