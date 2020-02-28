@@ -51,7 +51,7 @@ import { PhotoService } from '../services/photo.service';
 constructor(public photoService: PhotoService) { }
 ```
 
-Then, open `tab2.page.html` and call the `addNewToGallery()` function when the FAB is tapped/clicked:
+Após, abra o arquivo `tab2.page.html` e chame a função `addFotoNaGaleria()` quando o FAB for acionado/clicado:
 
 ```html
 <ion-content>
