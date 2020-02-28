@@ -43,7 +43,7 @@ public async addFotoNaGaleria() {
 
 Veja a mágica aqui: não há nenhum código específico para plataforma (Web, IOS ou Android)!  O `Capacitor Camera plugin` abstrai isso para nós, ofertando o método `Camera.getPhoto()` para abrir a câmera do dispositivo e permitir que seja tirado fotos.
 
-Next, open up `tab2.page.ts` and import the PhotoService class:
+Em seguida, abra o arquivo `tab2.page.ts` e importe a classe `Photo Service`:
 
 ```typescript
 import { PhotoService } from '../services/photo.service';
@@ -56,14 +56,14 @@ Then, open `tab2.page.html` and call the `addNewToGallery()` function when the F
 ```html
 <ion-content>
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-    <ion-fab-button (click)="photoService.addNewToGallery()">
+    <ion-fab-button (click)="photoService.addFotoNaGaleria()">
       <ion-icon name="camera"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 </ion-content>
 ```
 
-Save the file, and if it's not running already, restart the development server in your browser by running `ionic serve`. On the Photo Gallery tab, click the Camera button. If your computer has a webcam of any sort, a modal window appears. Take a selfie!
+Salve o arquivo e, se ele ainda não estiver executando, reinicie o servidor de desenvolvimento digitando `ionic serve` no seu navegador ou terminal. Na aba Galeria de Fotos, clique no botão câmera. Se o seu pc/notebook possui webcam, uma janela de alerta aparece pedindo permissão. Agora tire seu selfie!
 
 ![Camera API on the web](/docs/assets/img/guides/first-app-cap-ng/camera-web.png)
 
