@@ -34,6 +34,11 @@ For React projects, you can run:
 npm install @ionic/react@latest @ionic/react-router@latest ionicons@latest
 ```
 
+For Stencil / vanilla JS projects, you can run:
+```shell
+npm i @ionic/core@latest --save
+```
+
 If you would like a fresh project starter, a new project base can be created from the CLI and an existing app can be migrated over manually.
 
 
