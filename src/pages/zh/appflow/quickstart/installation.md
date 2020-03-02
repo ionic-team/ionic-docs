@@ -10,7 +10,7 @@ nextUrl: '/docs/appflow/quickstart/push'
 
 ## 从仪表盘板安装 Appflow SDK (推荐)
 
-点击应用流程控制面板中的频道列表中的 "安装说明"，以从仪表板安装 Appflow SDK 插件。
+To install the Appflow SDK plugin from the Dashboard, follow the instructions provided by clicking "Install Instructions" on the Destinations list in the Appflow Dashboard.
 
 ![Install Instructions](/docs/assets/img/appflow/ss-appflow-sdk-install.png)
 
