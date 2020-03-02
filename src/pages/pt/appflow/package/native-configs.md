@@ -28,6 +28,6 @@ Common use cases are:
   <b>Note:</b> If you plan to use Native Configurations to modify Bundle IDs with your iOS Package builds, you will need to setup code signing credentials using those alternate Bundle IDs. See our section on <a href="/docs/appflow/package/credentials">Generating Credentials</a> for more information.
 </blockquote>
 
-To create one go to the `Package > Native Configs` tab in the sidebar and click `New native config`.
+To create one go to the `Build > Native Configs` tab in the sidebar and click `New native config`.
 
 ![Native configs](/docs/assets/img/appflow/ss-native-configs.png)
