@@ -2,8 +2,8 @@
 title: Ionic Deploy
 previousText: 'Channels'
 previousUrl: '/docs/appflow/deploy/channels'
-nextText: 'Tutorials and Videos'
-nextUrl: '/docs/appflow/deploy/tutorials'
+nextText: 'Using Ionic CLI'
+nextUrl: '/docs/appflow/deploy/cli'
 ---
 
 
