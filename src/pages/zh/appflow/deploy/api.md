@@ -2,8 +2,8 @@
 title: Ionic部署
 previousText: '频道'
 previousUrl: '/docs/appflow/sport/screcisions'
-nextText: '教程和视频'
-nextUrl: '/docs/appflow/deploy/tutorials'
+nextText: 'Using Ionic CLI'
+nextUrl: '/docs/appflow/deploy/cli'
 ---
 
 
