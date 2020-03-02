@@ -10,9 +10,9 @@ Now that we've [installed the Appflow SDK ](/docs/appflow/quickstart/installatio
 
 ## Overview
 
-The Ionic Deploy feature works by using the installed Appflow SDK in your native application to listen to a particular Deploy [Channel](/docs/appflow/deploy/channels).
+The Ionic Deploy feature works by using the installed Appflow SDK in your native application to listen to a particular Deploy [Channel](/docs/appflow/deploy/channels) Destination.
 
-When a Deploy build is assigned to a Channel, that update will be deployed to user devices running binaries that are configured to listen to the specified Channel.
+When a Deploy build is assigned to a Channel Destination, that update will be deployed to user devices running binaries that are configured to listen to the specified Channel Destination.
 
 <blockquote>
 <b>Nomenclature note:</b> The terms "Deploy build", "web build", "live deploy" and "live update" can be used interchangeably. They all refer to an update provided to your user's device by Appflow's Deploy feature.
@@ -24,10 +24,10 @@ In order to deploy a live update, you will first need to create a [Deploy build]
 
 There are two ways to do this:
 
-* Click the `Start web build` icon from the `Commits` tab ![Start Web Build from Commits](/docs/assets/img/appflow/ss-start-web-build-commits.png)
-* Click the `New web build` button in the top right from the `Deploy > Builds` tab ![New Web Build](/docs/assets/img/appflow/ss-new-web-build.png)
+* Click the `Start build` icon from the `Commits` tab ![Start Web Build from Commits](/docs/assets/img/appflow/ss-start-web-build-commits.png)
+* Click the `New build` button in the top right from the `Build > Builds` tab ![New Web Build](/docs/assets/img/appflow/ss-new-web-build.png)
 
-You will need to make sure you've selected the correct commit to deploy. If your plan includes [custom environments](/docs/appflow/automation/environments#custom-environments) and you have configured at least one, you can select one from the provided dropdown list. Finally, you can also pick a [Channel](/docs/appflow/deploy/channels) to automatically assign the build to once it completes successfully. For the purposes of this tutorial, we will leave both options blank.
+You will need to make sure you've selected the correct commit to deploy. Then select the `Web Deploy` target platform. If your plan includes [custom environments](/docs/appflow/automation/environments#custom-environments) and you have configured at least one, you can select one from the provided dropdown list. Finally, you can also pick a [Channel](/docs/appflow/deploy/channels) to automatically assign the build to once it completes successfully. For the purposes of this tutorial, we will leave both options blank.
 
 Once the build begins you will be able to watch it's progress and look at the logs if you encounter errors.
 
@@ -49,7 +49,9 @@ For more details and a simple use case see [this article](https://ionic.zendesk.
 <a href="https://ionic.zendesk.com/hc/en-us/categories/360000410474-Deploy-Builds-Git-" target="_blank">this section of our knowledge base</a>.
 </blockquote>
 
-Once you have a successful Deploy build, you can assign it to the same Channel you configured the Appflow SDK to listen to when you installed it by clicking the `Assign to channel` button in the top right of the build detail page. You can also click the `Assign to channel` icon on the build in the `Deploy > Builds` tab and select the Channel from the dropdown. ![Assign to Channel](/docs/assets/img/appflow/gif-assign-to-channel.gif)
+Once you have a successful Deploy build, you can assign it to the same Channel you configured the Appflow SDK to listen to when you installed it by clicking the `Deploy live updates` button in the build detail page. You can also click the `Deploy live updates` icon on the build in the `Build > Builds` tab and select the Channel from the dropdown.
+
+![Assign to Channel](/docs/assets/img/appflow/gif-assign-to-channel.gif)
 
 ## Receiving a Live Update on a Device
 
