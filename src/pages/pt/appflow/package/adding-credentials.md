@@ -10,14 +10,14 @@ After you have generated your Security Profile, you must upload it to Ionic Appf
 
 ## Uploading Credentials
 
-Navigate to your App, then to the `Package > Certificates` tab on the left hand side.
+Navigate to your App, then to the `Build > Certificates` tab on the left hand side.
 
 Click the `Add Profile` button to create a new Profile.Both iOS and Android certifications can be used with one Profile, so we recommend making things like "Real App Store Profile", etc.
 
 <blockquote>
   
 <b>Note:</b> Profiles are created as either `Production` of `Development` and can only house the the
-<a href="/docs/appflow/package/build-types">build types</a> associated with the profile type. </br>
+<a href="/docs/appflow/package/build-types">build types</a> associated with the profile type. <br />
 <b>For example:</b> <a href="/docs/appflow/package/build-types#app-store">App Store builds</a> require an iOS production certificate & distribution provisioning profile and therefore must use a </b>Production</b> type profile.
 </blockquote>
 
