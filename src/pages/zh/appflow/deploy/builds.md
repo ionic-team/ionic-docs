@@ -9,7 +9,7 @@ nextUrl: '/docs/appflow/deploy/channels'
 
 ## 概览
 
-部署构建是你的应用程序构建，其中仅包括静态资源 (JavaScript, HTML, 字体和图像)，可以通过 [部署](/docs/appflow/deploy/intro) 发送给客户。 部署构建可以通过在侧边栏的 **Builds**部分下的under **Deploy**Ionic Dashboard面板手动创建。 您将能够从Appflow知道的可用提交列表中进行选择。 如果有可用的提交，您将需要向Git远程推送一个新的提交，以便它在Appflow中显示。
+部署构建是你的应用程序构建，其中仅包括静态资源 (JavaScript, HTML, 字体和图像)，可以通过 [部署](/docs/appflow/deploy/intro) 发送给客户。 Deploy builds can be created manually from the Ionic Dashboard, in the **Builds** section under **Build** in the sidebar. 您将能够从Appflow知道的可用提交列表中进行选择。 如果有可用的提交，您将需要向Git远程推送一个新的提交，以便它在Appflow中显示。 After picking the commit, select `Web Deploy` from the `Target platform` dropdown menu.
 
 ![导航到部署构建](/docs/assets/img/appflow/deploy-builds-create-location.png)
 
@@ -18,7 +18,7 @@ nextUrl: '/docs/appflow/deploy/channels'
 * `npm install` 运行以安装任何依赖。
 * `npm run build` 如果 `build` 脚本在您的 `package.json` `scripts`中检测到，以便为您的应用程序构建web资源。
 * 您构建的应用程序的`www`目录将被存储，并通过[Deploy](/docs/appflow/deploy/intro)进行实时更新
-* 您可以在侧菜单中找到你的部署版本的历史和状态，在`Builds`的 `Deploy` 选项中。
+* You can find the history and status of your deploy builds in the side menu under `Builds` in the `Build` tab.
 
 ## 并行限制
 
