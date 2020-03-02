@@ -26,7 +26,7 @@ In this part of the tutorial, we'll setup a native configuration for `Developmen
 
 ## Create a Native Configuration
 
-To create a native config, go to the `Package > Native Configs` tab in the Appflow Dashboard sidebar and click `New native config` in the top right.
+To create a native config, go to the `Build > Native Configs` tab in the Appflow Dashboard sidebar and click `New native config` in the top right.
 
 Next:
 
