@@ -91,9 +91,7 @@ const items = {
   },
   'menu-api-nav': {
     'ion-nav': '/docs/api/nav',
-    'ion-nav-pop': '/docs/api/nav-pop',
-    'ion-nav-push': '/docs/api/nav-push',
-    'ion-nav-set-root': '/docs/api/nav-set-root'
+    'ion-nav-link': '/docs/api/nav-link'
   },
   'menu-api-popover': {
     'ion-popover': '/docs/api/popover',
@@ -162,7 +160,6 @@ const items = {
     'ion-back-button': '/docs/api/back-button'
   },
   'menu-api-typography': {
-    'ion-anchor': '/docs/api/anchor',
     'ion-text': '/docs/api/text'
   },
   'menu-api-resources': {
