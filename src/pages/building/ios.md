@@ -90,7 +90,7 @@ The Ionic CLI can build, copy, and deploy Ionic apps to iOS simulators and devic
 
 With live-reload, changes made to the app's source files trigger a rebuild of web assets and the changes are reflected on the simulator or device without having to deploy again.
 
-> **Warning**: For iOS devices, the device and the computer need to be on the same Wi-Fi network. An external URL for the dev server is also required so the device can connect to it. Use `--external` (or `--address=0.0.0.0`) to bind to external addresses.
+> **Warning**: For iOS devices, the device and the computer need to be on the same Wi-Fi network. An external URL for the dev server is also required so the device can connect to it. Use `--external` (or `--host=0.0.0.0`) to bind to external addresses.
 
 ### Live-reload with Capacitor
 
