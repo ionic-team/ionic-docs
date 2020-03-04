@@ -7,7 +7,7 @@ nextUrl: '/docs/angular/your-first-app/3-saving-photos'
 
 # 用相机拍照
 
-现在来点好玩的吧 —— 增加用设备的[相机](https://capacitor.ionicframework.com/docs/apis/camera)拍照的能力。 We’ll begin with building it for the web, then make some small tweaks to make it work on mobile (iOS and Android).
+现在来点好玩的吧 —— 增加用设备的[相机](https://capacitor.ionicframework.com/docs/apis/camera)拍照的能力。 我们将从为web构建它开始，然后做一些小的调整，使其在移动设备（iOS和Android）上工作。
 
 ## Photo Service
 
