@@ -21,6 +21,12 @@ by Simon Grimm
 
 Learn Ionic with step-by-step video courses & quick wins from one of the Ionic community leaders. Covers beginner, intermediate and advanced topics. Get access to a community of developers just like you.
 
+### [Ionic Framework: Tips, Tricks & Techniques](https://www.packtpub.com/mobile/ionic-framework-tips-tricks-and-techniques-video)
+
+by Charles Muzonzini
+
+In this course, you will master tips and best practices for Ionic 4 & Ionic 5 that you can immediately implement to build high quality apps. This course covers a wide variety of topics from increasing app performance, building custom native plugins to securing your apps. It's a practical, hands-on course that will take you app building skills to the next level 
+
 ### [Introducing Ionic 2](http://shop.oreilly.com/product/0636920050353.do)
 
 by Mathieu Chauvinc
