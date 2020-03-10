@@ -1,11 +1,11 @@
 ---
-previousText: 'Quickstart'
+previousText: 'Inicio rápido'
 previousUrl: '/docs/react/quickstart'
 nextText: 'Taking Photos'
 nextUrl: '/docs/react/your-first-app/2-taking-photos'
 ---
 
-# Your First Ionic App: React
+# Tu primera App Ionic: React
 
 The great thing about Ionic is that with one codebase, you can build for any platform using just HTML, CSS, and JavaScript. Follow along as we learn the fundamentals of Ionic app development by creating a realistic app step by step.
 
@@ -15,21 +15,21 @@ Here’s the finished app running on all 3 platforms: <iframe width="560" height
 
 We'll create a Photo Gallery app that offers the ability to take photos with your device's camera, display them in a grid, and store them permanently on the device.
 
-Highlights include:
+Novedades destacadas incluyen:
 
-* One React-based codebase that runs on the web, iOS, and Android using Ionic Framework [UI components](https://ionicframework.com/docs/components).
+* Un código base basado en React que se ejecuta en la web, iOS y Android usando componentes de Ionic Framework [UI](https://ionicframework.com/docs/components).
 * Deployed as a native iOS and Android mobile app using [Capacitor](https://capacitor.ionicframework.com), Ionic's official native app runtime.
 * Photo Gallery functionality powered by the Capacitor [Camera](https://capacitor.ionicframework.com/docs/apis/camera), [Filesystem](https://capacitor.ionicframework.com/docs/apis/filesystem), and [Storage](https://capacitor.ionicframework.com/docs/apis/storage) APIs.
 
 It’s easy to get started. Find the complete app code referenced in this guide [on GitHub](https://github.com/ionic-team/photo-gallery-capacitor-react).
 
-## Download Required Tools
+## Descargar herramientas requeridas
 
-Download and install these right away to ensure an optimal Ionic development experience:
+Descarga e instala las siguientes herramientas para asegurar que tengas un ambiente óptimo para el desarrollo con Ionic:
 
-* **Node.js** for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
-* **A code editor** for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
-* **Command-line interface/terminal (CLI)**: 
+* **Node.js** para interactuar con el ecosistema Ionic. [Descarga la versión LTS (soporte a largo plazo) aquí](https://nodejs.org/en/).
+* **Un editor de código** para... escribir código! Somos fans de [Visual Studio Code](https://code.visualstudio.com/).
+* **Terminal de línea de comandos (CLI) **: 
  * **Windows** users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode. 
  * **Mac/Linux** users, virtually any terminal will work.
 
@@ -47,7 +47,7 @@ $ npm install -g @ionic/cli native-run cordova-res
 > 
 > Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](/docs/faq/tips#resolving-permission-errors) for more information.
 
-## Create an App
+## Crear una App
 
 Next, create an Ionic React app that uses the “Tabs” starter template and adds Capacitor for native functionality:
 
@@ -90,9 +90,9 @@ defineCustomElements(window);
 
 That’s it! Now for the fun part - let’s see the app in action.
 
-## Run the App
+## Ejecutar la App
 
-Run this command in your shell:
+Ejecutar este comando en tu shell:
 
 ```shell
 $ ionic serve
