@@ -5,6 +5,6 @@ nextText: ''
 nextUrl: ''
 ---
 
-# Your First Ionic App: Vue
+# Tu primera App Ionic: Vue
 
-Coming soon!
+¡Próximamente!
