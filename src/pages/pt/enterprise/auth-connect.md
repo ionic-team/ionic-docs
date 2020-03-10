@@ -1,7 +1,7 @@
 ---
 title: Auth Connect
 template: enterprise-plugin
-version: 1.5.0
+version: 1.5.4
 minor: 1.5.X
 ---
 
@@ -979,6 +979,30 @@ save the refresh token
 * * *
 
 # Changelog
+
+### \[1.5.4\] (2020-03-10)
+
+### Bug Fixes
+
+* **web:** catch error on refresh frame creation 
+
+### \[1.5.3\] (2020-03-09)
+
+### Bug Fixes
+
+* **web, cognito:** fix for SE-150. Added logout_uri to list of valid params. 
+
+### \[1.5.2\] (2020-02-24)
+
+### Bug Fixes
+
+* **web:** throw error if POST to token endpoint failed 
+
+### \[1.5.1\] (2020-02-21)
+
+### Bug Fixes
+
+* **web:** properly refresh token when using PKCE 
 
 ### \[1.5.0\] (2020-02-17)
 
