@@ -84,7 +84,7 @@ const gesture: Gesture = createGesture({
   el: elementRef,
   threshold: 15,
   gestureName: 'my-gesture',
-  onMove: ev: onMoveHandler(ev)
+  onMove: (ev) => onMoveHandler(ev)
 });
 ```
 </docs-tab>
