@@ -4,7 +4,6 @@ meta:
   image: /docs/assets/img/meta/open-graph.png
   description: Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards
 tableOfContents: false
-template: api
 demoUrl: https://ionic-docs-demo.herokuapp.com/
 demoSourceUrl: https://github.com/ionic-team/docs-demo
 ---
