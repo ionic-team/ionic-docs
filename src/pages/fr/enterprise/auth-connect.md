@@ -1,8 +1,8 @@
 ---
 title: Auth Connect
 template: enterprise-plugin
-version: 1.5.4
-minor: 1.5.X
+version: 1.6.0
+minor: 1.6.X
 ---
 
 Ionic Auth Connect handles logging in and/or registering a user with an authentication provider (such as Auth0, Azure AD, or AWS Cognito) using industry standard OAuth/OpenId Connect on iOS, Android, or on the web.
@@ -501,7 +501,7 @@ Provided audience (aud) value
 
 ### `<Optional>` authConfig
 
-**● authConfig**: *"auth0" \| "azure" \| "cognito" \| "general"*
+**● authConfig**: *"auth0" \| "azure" \| "cognito" \| "salesforce" \| "general"*
 
 The type of the Auth Server, currently only the following are supported:
 
@@ -673,7 +673,7 @@ Provided audience (aud) value
 
 ### `<Optional>` authConfig
 
-**● authConfig**: *"auth0" \| "azure" \| "cognito" \| "general"*
+**● authConfig**: *"auth0" \| "azure" \| "cognito" \| "salesforce" \| "general"*
 
 The type of the Auth Server, currently only the following are supported:
 
@@ -979,6 +979,16 @@ save the refresh token
 * * *
 
 # Changelog
+
+### \[1.6.0\] (2020-03-13)
+
+### Features
+
+* Add support for Saleforce 
+
+### Bug Fixes
+
+* Fix a bug where if a provider doesn't return when the access token expires it defaults to be immediately expired. 
 
 ### \[1.5.4\] (2020-03-10)
 
