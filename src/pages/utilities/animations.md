@@ -76,7 +76,7 @@ Developers using React should install the latest version of `@ionic/react`. Reac
 
 ```typescript
 
-import { createAnimation, Animation } from '@ionic/react';
+import { CreateAnimation, Animation } from '@ionic/react';
 
 ...
 
@@ -140,6 +140,8 @@ this.animationCtrl.create()
 </docs-tabs>
 
 In the example above, an animation that changes the opacity on the `.square` element and moves it from left to right along the X axis has been created. This animation will run an infinite number of times, and each iteration of the animation will last 1500ms.
+
+By default, all Ionic Animations are paused until the `play` method is called.
 
 <docs-codepen user="ionic" slug="bGbMojP"></docs-codepen>
 
@@ -1016,7 +1018,7 @@ export class ModalExample {
 
 ```javascript
 import React, { useState } from 'react';
-import { createAnimation, IonModal, IonButton, IonContent } from '@ionic/react';
+import { CreateAnimation, IonModal, IonButton, IonContent } from '@ionic/react';
 
 export const ModalExample: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
