@@ -1,7 +1,7 @@
 ---
 title: Auth Connect
 template: enterprise-plugin
-version: 1.6.1
+version: 1.6.2
 minor: 1.6.X
 ---
 
@@ -979,6 +979,12 @@ save the refresh token
 * * *
 
 # Changelog
+
+### \[1.6.2\] (2020-03-17)
+
+### Bug Fixes
+
+* **Android:** Fix an issue where Auth Connect didn't work on Android 10. 
 
 ### \[1.6.1\] (2020-03-16)
 
