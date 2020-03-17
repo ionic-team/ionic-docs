@@ -8,7 +8,7 @@ nextUrl: '/docs/appflow/package/credentials'
 
 对于具有不同特征和需求的每个平台(iOS、Android)，您可以选择几种不同类型的构建。
 
-## Android 构建类型
+## 构建Android类型
 
 ### 调试
 
@@ -18,7 +18,7 @@ Android 构建Debug类型不需要签名证书或安全配置文件，可以直�
 
 如果您想要在谷歌Play商店发布 `apk` ，请使用Android构建Release类型 。 他们需要创建 [android签名证书](/docs/appflow/package/credentials#android-credentials) 并将他们上传到`Production` 类型 [安全资料](/docs/appflow/package/adding-credentials#uploading-credentials)。
 
-## iOS 构建类型
+## 构建iOS类型
 
 ### 开发
 
