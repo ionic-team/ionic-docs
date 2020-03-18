@@ -9,7 +9,7 @@ nextUrl: '/docs/angular/your-first-app/4-loading-photos'
 
 我们现在可以拍摄多张照片，并且在我们应用程序第二个选项卡上的照片库中显示它们。 然而， 目前并未永久存储，因此在关闭应用程序时，它们将会被删除。
 
-## Filesystem API
+## 文件系统 API
 
 幸运的是，将它们保存到文件系统只需要几个步骤。 首先，在 `PhotoService` (`src/app/services/photo.service.ts`) 类中创建一个新函数 `savePicture()` 。 我们传入 `cameraPhoto` 对象，该对象代表新捕获的设备照片：
 
@@ -77,7 +77,7 @@ convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
 
 在 web 上以 base64 格式获取相机照片似乎比在移动设备上更为棘手。 实际上，我们只需使用内置 web APIs: [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) 一种将文件读取为Blob格式的简洁方法，然后使用 FileReader 的 [ readAsDataURL()](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL) 将Blob格式照片转换为base64格式。
 
-` getPhotoFile()`简单得多。 As you’ll recall, we display each photo on the screen by setting each image’s source path (`src` attribute) in `tab2.page.html` to the webviewPath property. 因此，它在这里设置：
+` getPhotoFile()`简单得多。 要记得，我们将在 `tab2.page.html` 中通过 webviewPath 属性设置每张图片的源路径(`src`属性)，以便在屏幕上显示每张照片。 因此，它在这里设置：
 
 ```typescript
 private async getPhotoFile(cameraPhoto: CameraPhoto, 
@@ -89,9 +89,9 @@ private async getPhotoFile(cameraPhoto: CameraPhoto,
 }
 ```
 
-Finally, change the way pictures become visible in the template file `tab2.page.html`.
+最后，在模板文件 ` tab2.page.html ` 中更改图片的显示方式。
 ```html
 <ion-img src="{{ photo.base64 ? photo.base64 : photo.webviewPath }}"></ion-img>
 ```
 
-There we go! Each time a new photo is taken, it’s now automatically saved to the filesystem.
+好了！ 每当拍摄新照片时，都会自动将其保存到文件系统中。
