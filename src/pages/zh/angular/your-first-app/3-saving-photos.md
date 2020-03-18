@@ -54,7 +54,7 @@ private async savePicture(cameraPhoto: CameraPhoto) {
 }
 ```
 
-`readAsBase64()` 和 `getPhotoFile()` 是我们接下来要定义的两个帮助函数。 由于它们需要少量特定于平台的（Web与 移动）逻辑，因此将它们划分为单独的方法-稍后对此进行更多介绍。  现在，实现它们在 Web 上的运行：
+`readAsBase64()` 和 `getPhotoFile()` 是我们接下来要定义的两个帮助函数。 由于它们需要少量的特定于平台的内容（Web 与 移动）逻辑，因此将它们划分为单独的方法-对此进行了更多介绍。  现在，实现它们在 Web 上的运行：
 
 ```typescript
 private async readAsBase64(cameraPhoto: CameraPhoto) {
@@ -75,7 +75,7 @@ convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
 });
 ```
 
-Obtaining the camera photo as base64 format on the web appears to be a bit trickier than on mobile. In reality, we’re just using built-in web APIs: [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) as a neat way to read the file into blob format, then FileReader’s [readAsDataURL()](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL) to convert the photo blob to base64.
+在 web 上以 base64 格式获取相机照片似乎比在移动设备上更为棘手。 In reality, we’re just using built-in web APIs: [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) as a neat way to read the file into blob format, then FileReader’s [readAsDataURL()](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL) to convert the photo blob to base64.
 
 `getPhotoFile()` is much simpler. As you’ll recall, we display each photo on the screen by setting each image’s source path (`src` attribute) in `tab2.page.html` to the webviewPath property. So, it gets set here:
 
