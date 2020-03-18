@@ -34,7 +34,7 @@ public async addNewToGallery() {
 }
 ```
 
-我们将使用 Capacitor [Filesystem API](https://capacitor.ionicframework.com/docs/apis/filesystem) 将照片保存到文件系统中。 首先，将照片转换为 base64 格式，然后将数据输入文件系统的 ` writeFile ` 函数。 Finally, make a call to getPhotoFile (which we will implement in a moment), which returns a Photo object.
+我们将使用 Capacitor [Filesystem API](https://capacitor.ionicframework.com/docs/apis/filesystem) 将照片保存到文件系统中。 首先，将照片转换为 base64 格式，然后将数据输入文件系统的 ` writeFile ` 函数。 最后，调用 getPhotoFile (我们稍后将实现此方法)，该方法返回一个Photo对象。
 
 ```typescript
 private async savePicture(cameraPhoto: CameraPhoto) {
@@ -54,7 +54,7 @@ private async savePicture(cameraPhoto: CameraPhoto) {
 }
 ```
 
-`readAsBase64()` and `getPhotoFile()` are two helper functions we’ll define next. They are split into separate methods because they require a small amount of platform-specific (web vs. mobile) logic - more on that in a bit.  For now, implement them for running on the web:
+`readAsBase64()` 和 `getPhotoFile()` 是我们接下来要定义的两个帮助函数。 由于它们需要少量特定于平台的（Web与 移动）逻辑，因此将它们划分为单独的方法-稍后对此进行更多介绍。  现在，实现它们在 Web 上的运行：
 
 ```typescript
 private async readAsBase64(cameraPhoto: CameraPhoto) {
