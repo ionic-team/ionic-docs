@@ -5,30 +5,30 @@ nextText: 'Loading Photos on Filesystem'
 nextUrl: '/docs/angular/your-first-app/4-loading-photos'
 ---
 
-# Saving Photos to the Filesystem
+# 保存照片到文件系统
 
-We’re now able to take multiple photos and display them in a photo gallery on the second tab of our app. These photos, however, are not currently being stored permanently, so when the app is closed, they will be deleted.
+我们现在可以拍摄多张照片，并且在我们应用程序第二个选项卡上的照片库中显示它们。 然而， 目前并未永久存储，因此在关闭应用程序时，它们将会被删除。
 
 ## Filesystem API
 
-Fortunately, saving them to the filesystem only takes a few steps. Begin by creating a new function, `savePicture()`, in the `PhotoService` class (`src/app/services/photo.service.ts`). We pass in the `cameraPhoto` object, which represents the newly captured device photo:
+幸运的是，将它们保存到文件系统只需要几个步骤。 首先，在 `PhotoService`类(`src/app/services/photo.service.ts`)中创建一个新函数`savePicture()`。 我们传入`cameraPhoto`对象，该对象代表新捕获的设备照片：
 
 ```typescript
 private async savePicture(cameraPhoto: CameraPhoto) { }
 ```
 
-We can use this new function immediately in `addNewToGallery()`:
+我们可以在`addNewToGallery()`中立即使用这个新函数：
 
 ```typescript
 public async addNewToGallery() {
-  // Take a photo
+  // Take a photo 拍照
   const capturedPhoto = await Camera.getPhoto({
     resultType: CameraResultType.Uri, // file-based data; provides best performance
-    source: CameraSource.Camera, // automatically take a new photo with the camera
-    quality: 100 // highest quality (0 to 100)
+    source: CameraSource.Camera, // automatically take a new photo with the camera 用相机自动拍摄新照片
+    quality: 100 // highest quality (0 to 100)  图片质量
   });
 
-  // Save the picture and add it to photo collection
+  // Save the picture and add it to photo collection  保存图片并将其添加到照片集
   const savedImageFile = await this.savePicture(capturedPhoto);
   this.photos.unshift(savedImageFile);
 }
