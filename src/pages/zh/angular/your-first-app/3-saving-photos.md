@@ -11,13 +11,13 @@ nextUrl: '/docs/angular/your-first-app/4-loading-photos'
 
 ## Filesystem API
 
-幸运的是，将它们保存到文件系统只需要几个步骤。 首先，在 `PhotoService`类(`src/app/services/photo.service.ts`)中创建一个新函数`savePicture()`。 我们传入`cameraPhoto`对象，该对象代表新捕获的设备照片：
+幸运的是，将它们保存到文件系统只需要几个步骤。 首先，在 `PhotoService` (`src/app/services/photo.service.ts`) 类中创建一个新函数 `savePicture()` 。 我们传入 `cameraPhoto` 对象，该对象代表新捕获的设备照片：
 
 ```typescript
 private async savePicture(cameraPhoto: CameraPhoto) { }
 ```
 
-我们可以在`addNewToGallery()`中立即使用这个新函数：
+我们可以在 `addNewToGallery()` 中立即使用这个新函数：
 
 ```typescript
 public async addNewToGallery() {
@@ -34,7 +34,7 @@ public async addNewToGallery() {
 }
 ```
 
-We’ll use the Capacitor [Filesystem API](https://capacitor.ionicframework.com/docs/apis/filesystem) to save the photo to the filesystem. To start, convert the photo to base64 format, then feed the data to the Filesystem’s `writeFile` function. Finally, make a call to getPhotoFile (which we will implement in a moment), which returns a Photo object.
+我们将使用 Capacitor [Filesystem API](https://capacitor.ionicframework.com/docs/apis/filesystem) 将照片保存到文件系统中。 首先，将照片转换为 base64 格式，然后将数据输入文件系统的 ` writeFile ` 函数。 Finally, make a call to getPhotoFile (which we will implement in a moment), which returns a Photo object.
 
 ```typescript
 private async savePicture(cameraPhoto: CameraPhoto) {
