@@ -32,7 +32,7 @@ Learn what Ionic is all about on our <a href="/">homepage</a>, or start building
 
 ## Overview
 
-Ionic Framework focuses on the frontend UX and UI interaction of an app — UI controls, interactions, gestures, animations. It's easy to learn, and integrates with other libraries or frameworks, such as <a href="">Angular</a>, <a href="">React</a>, or <a href="">Vue</a>. Alternatively, it can be used standalone without any frontend framework using a simple <a href="">script include</a>.
+Ionic Framework focuses on the frontend UX and UI interaction of an app — UI controls, interactions, gestures, animations. It's easy to learn, and integrates with other libraries or frameworks, such as <a href="/docs/angular/overview">Angular</a>, <a href="/docs/react/overview">React</a>, or <a href="/docs/vue/overview">Vue</a>. Alternatively, it can be used standalone without any frontend framework using a simple <a href="/docs/installation/cdn">script include</a>.
 
 ### One codebase, running everywhere
 
