@@ -1,5 +1,7 @@
 .page-index docs-cards {
   font-size: 14px;
+
+  grid-template-columns: repeat(auto-fit, minmax(240px, 45%));
 }
 
 .page-building-migration figure,
