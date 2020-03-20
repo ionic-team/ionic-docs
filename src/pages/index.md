@@ -13,19 +13,19 @@ Ionic Framework is an open source UI toolkit for building performant, high-quali
 Learn what Ionic is all about on our <a href="/">homepage</a>, or start building by <a href="/docs/installation/cli">Installing Ionic</a> or following our <a href="/docs/intro/first-app">First App Tutorial</a>.
 
 <docs-cards>
-  <docs-card header="Installation Guide" href="/docs/installation/cli" icon="/docs/assets/icons/guide-installation-icon.png">
+  <docs-card header="Installation Guide" href="/docs/installation/cli" icon="/docs/assets/icons/guide-installation-icon.svg" hover-icon="/docs/assets/icons/guide-installation-icon-hover.svg">
     <p>Step-by-step guides to setting up your system and installing the framework.</p>
   </docs-card>
 
-  <docs-card header="UI Components" href="/docs/components" icon="/docs/assets/icons/feature-guide-components-icon.png">
+  <docs-card header="UI Components" href="/docs/components" icon="/docs/assets/icons/guide-components-icon.svg" hover-icon="/docs/assets/icons/guide-components-icon-hover.svg">
     <p>Dive into Ionic Framework's beautifully designed UI component library.</p>
   </docs-card>
 
-  <docs-card header="Native Functionality" href="/docs/native" icon="/docs/assets/icons/guide-nativeapis-icon.png">
+  <docs-card header="Native Functionality" href="/docs/native" icon="/docs/assets/icons/guide-native-icon.svg" hover-icon="/docs/assets/icons/guide-native-icon-hover.svg">
     <p>Integrate native device plugins, like Bluetooth, Maps, HealthKit, and more.</p>
   </docs-card>
 
-  <docs-card header="Theming" href="/docs/theming/basics" icon="/docs/assets/icons/guide-theming-icon.png">
+  <docs-card header="Theming" href="/docs/theming/basics" icon="/docs/assets/icons/guide-theming-icon.svg" hover-icon="/docs/assets/icons/guide-theming-icon-hover.svg">
     <p>Learn to easily customize and modify your Ionic app's visual design to fit your brand.</p>
   </docs-card>
 </docs-cards>

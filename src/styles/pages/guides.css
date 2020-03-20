@@ -4,6 +4,16 @@
   grid-template-columns: repeat(auto-fit, minmax(240px, 45%));
 }
 
+.page-index docs-card .Card-icon {
+  background: #f6f8fb;
+
+  object-fit: none;
+}
+
+.page-index docs-card .Card-icon-hover {
+  background: #e7f4ff;
+}
+
 .page-building-migration figure,
 .page-building-migration figure file-tree {
   height: 100%;
