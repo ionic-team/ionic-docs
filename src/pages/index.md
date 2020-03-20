@@ -36,7 +36,7 @@ Ionic Framework focuses on the frontend UX and UI interaction of an app — UI c
 
 ### One codebase, running everywhere
 
-Ionic is the only mobile app stack that enables web developers to build apps for all major app stores and the mobile web from a single codebase. And with <a href="">Adaptive Styling</a>, Ionic apps look and feel at home on every device.
+Ionic is the only mobile app stack that enables web developers to build apps for all major app stores and the mobile web from a single codebase. And with <a href="/docs/theming/platform-styles">Adaptive Styling</a>, Ionic apps look and feel at home on every device.
 
 #### A focus on performance
 
