@@ -137,8 +137,7 @@
 
 .docs-demo-device.md .docs-demo-device__md-bar {
   display: block;
-  fill: #090a0d;
-  opacity: 0.1;
+  fill: rgba(125, 125, 125, 0.3);
   padding: 0.5rem 0.75rem;
   position: relative;
   width: 100%;
