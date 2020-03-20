@@ -22,7 +22,7 @@
   "dependencies": {
     "@ionic/core": "^5.0.0",
     "@ionic/docs": "^5.0.4",
-    "@sentry/node": "^5.7.1",
+    "@sentry/node": "^5.15.0",
     "@stencil/router": "^1.0.1",
     "compression": "^1.7.4",
     "express": "^4.16.4",
