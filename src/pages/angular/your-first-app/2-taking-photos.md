@@ -69,6 +69,13 @@ _(Your selfie is probably much better than mine)_
 
 After taking a photo, it disappears right away. We need to display it within our app and save it for future access.
 
+>***Quick Note:** if you encounter an error that mentions `cameraModal.componentOnReady is not a function`, then add this to your `index.html` file:*
+>```html
+><script type="module" 
+>src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.esm.js">
+></script>
+>```
+
 ## Displaying Photos
 
 Outside of the `PhotoService` class definition (the very bottom of the file), create a new interface, `Photo`, to hold our photo metadata:
