@@ -1,21 +1,21 @@
 ---
-title: Ionic React
-renderTitle: false
-tableOfContents: false
+title: React Iónico
+renderTitle: falso
+tableOfContents: falso
 meta:
   image: /docs/assets/img/meta/open-graph.png
-  description: Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards
+  description: Ionic es la plataforma de aplicaciones para desarrolladores web. Cree increíbles aplicaciones móviles, web y de escritorio, todo con una base de código compartido y estándares web abiertos
 ---
 
 <div class='flex main-flex'>
   <div class="pull-left">
-  <h3>One Codebase <br/> Any Platform <br/> <strong>Just React</strong></h3>
+  <h3>Un código base <br/> Cualquier plataforma <br/> <strong>Solo React</strong></h3>
 
- - ✓ 100+ mobile optimized React UI components
- - ✓ Standard React tooling with react-dom
+ - ✓ 100+ componentes de React optimizados para móviles
+ - ✓ Herramienta estándar de React con react-dom
  - ✓ iOS / Android / Electron / PWA
 
-  [Get Started](#installation)
+  [Comencemos](#installation)
 
   </div>
 
@@ -24,22 +24,22 @@ meta:
   </div>
 </div>
 
-### Build awesome apps across mobile, desktop, and web, with the React you know and love.
+### Construye increíbles aplicaciones a través de móvil, escritorio y web, con el React que conoces y amas.
 
 
-Ionic React is native React version of Ionic Framework, the free, open source SDK powering millions of mission-critical apps all over the world.
+Ionic React es la versión nativa de React de Ionic Framework, el SDK de código abierto que potencia millones de aplicaciones de misión críticas en todo el mundo.
 
-It's everything you need to ship award-winning apps for any platform, with React.
+Es todo lo que necesitas para enviar aplicaciones ganadoras de premios para cualquier plataforma, con React.
 
 <div class="flex">
 
 <div class="pull-left">
 
-## Fast, beautiful apps
+## Aplicaciones rápidas y hermosas
 
-Choose from over 100 beautiful, mobile-ready UI components, animations, and gestures, lightweight and customized to fit your brand.
+Elige entre más de 100 bellos componentes de IU listos para móviles, animaciones y gestos, ligeros y personalizados para adaptarse a tu marca.
 
-[Explore UI components](/docs/components)
+[Explorar componentes de la interfaz](/docs/components)
 
 </div>
 
@@ -53,10 +53,10 @@ Choose from over 100 beautiful, mobile-ready UI components, animations, and gest
 
 <div class="pull-left">
 
-## Familiar tooling
+## Herramientas familiares
 
-Ionic React projects are just like React projects, leveraging [react-dom](https://reactjs.org/docs/react-dom.html) and with setup normally found in a [Create React App (CRA)](https://github.com/facebook/create-react-app) app. For [routing and navigation](/docs/react/navigation), React Router is used under the hood.
-Compatible with React version 16.8 and above.
+Los proyectos React Ionic son como los proyectos React, apalancando [react-dom](https://reactjs.org/docs/react-dom. tml) y con la configuración normalmente encontrada en una aplicación [Create React App (CRA)](https://github.com/facebook/create-react-app). Para [enrutamiento y navegación](/docs/react/navigation), React Router se usa bajo el capó.
+Compatible con React versión 16.8 y superior.
 
 </div>
 
@@ -70,9 +70,9 @@ Compatible with React version 16.8 and above.
 
 <div class="pull-left">
 
-## More than mobile
+## Más que móvil
 
-Deploy your Ionic React projects to native iOS, Android, Electron, and the web as a Progressive Web App, using [Capacitor](https://capacitor.ionicframework.com), a modern native runtime. All with one shared codebase.
+Despliegue sus proyectos Ionic React a iOS nativo, Android, Electron, y la web como una aplicación web progresiva, usando [Capacitor](https://capacitor. onicframework.com), un tiempo de ejecución nativo moderno. Todo con un código compartido.
 
 </div>
 
@@ -86,9 +86,9 @@ Deploy your Ionic React projects to native iOS, Android, Electron, and the web a
 
   <div class="pull-left">
 
-## Just React
+## Solo React
 
-At the end of the day, it's just React. Ionic React uses open web standards and built-in browser capabilities, so it's compatible with any of the millions of web libraries out there.
+Al final del día, es solo React. Ionic React utiliza estándares web abiertos y capacidades integradas del navegador, por lo que es compatible con cualquiera de los millones de librerías web que hay ahí.
 
   </div>
 
@@ -98,25 +98,25 @@ At the end of the day, it's just React. Ionic React uses open web standards and 
 
 </div>
 
-## Installation
+## Instalación
 
-<command-line> <command-prompt>npm install -g @ionic/cli</command-prompt> <command-prompt>ionic start myApp tabs --type react</command-prompt>
+<command-line> <command-prompt>npm install -g @ionic/cli </command-prompt> <command-prompt>ionic start myApp tabs --type react </command-prompt>
     <br/>
     <command-prompt>ionic serve <command-cursor blink></command-cursor></command-prompt> </command-line>
 
 
-## Resources
+## Recursos
 
-<docs-cards> <docs-card header="Getting Started" href="/docs/react/your-first-app" icon="/docs/assets/icons/feature-component-actionsheet-icon.png"> <p>Learn the fundamentals you need to know to start building amazing apps with Ionic Framework.</p>
+<docs-cards> <docs-card header="Getting Started" href="/docs/react/your-first-app" icon="/docs/assets/icons/feature-component-actionsheet-icon.png"> <p>Aprenda los fundamentos que necesita saber para comenzar a crear aplicaciones increíbles con Ionic Framework.</p>
   </docs-card>
 
-  <docs-card header="Add Ionic to Existing React App" href="https://dev.to/ionic/adding-ionic-react-to-an-existing-react-project-4kib" icon="/docs/assets/icons/logo-react-icon.png"> <p>Use individual components or the complete app experience.</p>
+  <docs-card header="Add Ionic to Existing React App" href="https://dev.to/ionic/adding-ionic-react-to-an-existing-react-project-4kib" icon="/docs/assets/icons/logo-react-icon.png"> <p>Utilice componentes individuales o la experiencia completa de la aplicación.</p>
   </docs-card>
 
-  <docs-card header="Navigation" href="/docs/react/navigation" icon="/docs/assets/icons/feature-component-navigation-icon.png"> <p>Learn the basics of navigation inside your app with Ionic and React Router</p>
+  <docs-card header="Navigation" href="/docs/react/navigation" icon="/docs/assets/icons/feature-component-navigation-icon.png"> <p>Aprende los conceptos básicos de navegación dentro de tu aplicación con Ionic y React Router</p>
   </docs-card>
 
-  <docs-card header="Lifecycle" href="/docs/react/lifecycle" icon="/docs/assets/icons/feature-guide-components-icon.png"> <p>Learn about using Ionic lifecycle events in class components and with hooks</p>
+  <docs-card header="Lifecycle" href="/docs/react/lifecycle" icon="/docs/assets/icons/feature-guide-components-icon.png"> <p>Aprende sobre el uso de eventos de ciclo de vida Ionic en componentes de clase y con ganchos</p>
   </docs-card>
 
 
