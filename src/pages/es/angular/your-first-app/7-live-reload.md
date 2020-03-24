@@ -1,5 +1,5 @@
 ---
-previousText: 'Implementación de dispositivos móviles'
+previousText: 'Desplegando Móvil'
 previousUrl: '/docs/angular/your-first-app/6-deploying-mobile'
 nextText: 'Ciclo de vida'
 nextUrl: '/docs/angular/lifecycle'
@@ -25,11 +25,11 @@ $ ionic cap run ios -l --external
 $ ionic cap run android -l --external
 ```
 
-The Live Reload server will start up, and the native IDE of choice will open if not opened already. Within the IDE, click the Play button to launch the app onto your device.
+El servidor Live Reload se iniciará, y el IDE nativo elegido se abrirá si no se abre ya. Dentro del IDE, haga clic en el botón Reproducir para iniciar la aplicación en su dispositivo.
 
-## Deleting Photos
+## Borrando fotos
 
-With Live Reload running and the app open on your device, let’s implement photo deletion functionality. Open `tab2.page.html` and add a new click handler to each `<ion-img>` element. When the app user taps on a photo in our gallery, we’ll display an [Action Sheet](https://ionicframework.com/docs/api/action-sheet) dialog with the option to either delete the selected photo or cancel (close) the dialog.
+Con Live Reload funcionando y la aplicación abierta en tu dispositivo, implementemos la funcionalidad de eliminación de fotos. Abre `tab2.page.html` y añade un nuevo manejador de clic a cada elemento `<ion-img>`. When the app user taps on a photo in our gallery, we’ll display an [Action Sheet](https://ionicframework.com/docs/api/action-sheet) dialog with the option to either delete the selected photo or cancel (close) the dialog.
 
 ```html
 <ion-col size="6" 
@@ -74,7 +74,7 @@ public async showActionSheet(photo, position) {
 }
 ```
 
-Save both of the files we just edited. The Photo Gallery app will reload automatically, and now when we tap on one of the photos in the gallery, the action sheet displays. Tapping “Delete” doesn’t do anything yet, so head back into your code editor.
+Guarda ambos archivos que acabamos de editar. La aplicación Galería de Fotos se recargará automáticamente, y ahora cuando toquemos una de las fotos de la galería, la hoja de acción se muestra. Toque “Eliminar” no hace nada todavía, así que vuelva a su editor de código.
 
 In `src/app/services/photo.service.ts`, add the `deletePicture()` function:
 
@@ -100,12 +100,12 @@ public async deletePicture(photo: Photo, position: number) {
 }
 ```
 
-The selected photo is removed from the Photos array first. Then, we use the Capacitor Storage API to update the cached version of the Photos array. Finally, we delete the actual photo file itself using the Filesystem API.
+La foto seleccionada se elimina de la matriz Photos primero. Luego, utilizamos la API de almacenamiento en caché para actualizar la versión de la matriz Photos. Finalmente, eliminamos el archivo fotográfico en sí mismo utilizando la API Filesystem .
 
-Save this file, then tap on a photo again and choose the “Delete” option. This time, the photo is deleted! Implemented much faster using Live Reload. 💪
+Guarde este archivo, luego pulse sobre una foto de nuevo y elija la opción “Eliminar”. Esta vez, la foto es eliminada! Implementado mucho más rápido usando Live Reload. 💪
 
-## What’s Next?
+## ¿Qué sigue?
 
-Congratulations! You built a complete cross-platform Photo Gallery app that runs on the web, iOS, and Android. There are many paths to follow from here. Try adding another [Ionic UI component](https://ionicframework.com/docs/components) to the app, or more [native functionality](https://capacitor.ionicframework.com/docs/apis). The sky’s the limit.
+¡Felicidades! Construyó una aplicación multiplataforma completa de Galería de Fotos que se ejecuta en la web, iOS y Android. Desde aquí hay muchos caminos por recorrer. Intenta añadir otro componente Ionic a la aplicación, o más funcionalidades nativas The sky’s the limit.
 
-Happy app building! 💙
+¡Feliz construcción de aplicaciones! 💙
