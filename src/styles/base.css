@@ -32,7 +32,7 @@
   --offset-background--dark: #f7f7ff;
   --page-margin-left: var(--menu-width);
 
-  --text-color: #4e5b6a;
+  --text-color: #303943;
   --text-color--darker: #24282e;
   --text-color--dark: #020814;
   --text-color--lighter: #abb2bf;
@@ -87,7 +87,7 @@ img {
 
 a {
   color: var(--accent-color);
-  font-weight: 500;
+  font-weight: 400;
   text-decoration: none;
 }
 

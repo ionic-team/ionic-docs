@@ -103,16 +103,14 @@ docs-card {
 
 .Card-header {
   color: var(--text-color--dark);
-  font-size: 1.25em;
-  font-weight: 600;
+  font-size: 1.4em;
+  font-weight: 500;
   line-height: 1.4;
   margin-bottom: 0.45em;
 }
 
 .Card-without-image .Card-header {
-  font-size: 1.2em;
   margin-bottom: 0.3em;
-
 }
 
 .Card-header > svg {
