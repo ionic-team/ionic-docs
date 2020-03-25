@@ -54,7 +54,7 @@
   color: #5b708b;
 
   cursor: pointer;
-  font-family: SF Pro Text;
+  font-family: var(--font-family);
   font-size: 11px;
   letter-spacing: -0.02em;
   width: calc(50% - 2px);
