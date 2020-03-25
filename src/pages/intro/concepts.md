@@ -1,6 +1,6 @@
 ---
-previousText: 'What is Ionic Framework'
-previousUrl: '/docs/intro'
+previousText: 'Overview'
+previousUrl: '/docs'
 nextText: 'Build Your First App'
 nextUrl: '/docs/intro/first-app'
 ---
