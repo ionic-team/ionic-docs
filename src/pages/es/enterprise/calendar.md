@@ -1,5 +1,5 @@
 ---
-title: Calendar
+title: Calendario
 template: enterprise-plugin
 version: 5.1.5
 minor: 5.1.X
