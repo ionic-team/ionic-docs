@@ -100,11 +100,11 @@ The official [Ionic CLI](/docs/cli), or Command Line Interface, is a tool that q
 
 ## Ionic Appflow
 
-To help manage Ionic apps throughout their lifecycle, we also offer a commercial app platform for production apps called <a href="https://ionicframework.com/appflow" target="_blank">Ionic Appflow</a>, which is <strong>separate from the open source Framework.</strong>
+To help build, deploy, and manage Ionic apps throughout their lifecycle, we offer a commercial service for production apps called <a href="https://ionicframework.com/appflow" target="_blank">Ionic Appflow</a>, which is <strong>separate from the open source Framework.</strong>
 
-Ionic Appflow helps developers and teams compile native app builds and deploy live code updates to Ionic apps from a centralized dashboard. Optional paid upgrades are available for more advanced capabilities like workflow automation, single sign-on (SSO) and access to connected services and integrations.
+Appflow helps developers and teams compile native app builds and deploy live code updates to Ionic apps from a centralized dashboard. Optional paid upgrades are available for more advanced capabilities like publishing directly to app stores, workflow automation, single sign-on (SSO) and access to connected services and integrations.
 
-Appflow requires an <a href="https://dashboard.ionicframework.com/signup" target="_blank">Ionic Account</a> and comes with a free “Starter” plan for those interested in playing around with some of its features.
+Appflow requires an <a href="https://dashboard.ionicframework.com/signup" target="_blank">Ionic Account</a> and comes with a free “Hobby” plan for those interested in playing around with some of its features.
 
 
 ## Ecosystem
