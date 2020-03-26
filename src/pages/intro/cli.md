@@ -1,8 +1,8 @@
 ---
-previousText: 'Getting Started'
-previousUrl: '/docs'
+previousText: 'Environment Setup'
+previousUrl: '/docs/intro/environment'
 nextText: 'Packages & CDN'
-nextUrl: '/docs/installation/cdn'
+nextUrl: '/docs/intro/cdn'
 contributors:
   - rtpHarry
   - dwieeb
@@ -10,11 +10,11 @@ contributors:
 
 # Installing Ionic
 
-Ionic apps are created and developed primarily through the Ionic [command-line](/docs/faq/glossary#cli) utility. The Ionic CLI is the preferred method of installation, as it offers a wide range of dev tools and help options along the way. It is also the main tool through which to run the app and connect it to other services, such as Ionic Appflow.
+Ionic apps are created and developed primarily through the Ionic [command-line](/docs/reference/glossary#cli) utility. The Ionic CLI is the preferred method of installation, as it offers a wide range of dev tools and help options along the way. It is also the main tool through which to run the app and connect it to other services, such as Ionic Appflow.
 
 ## Install the Ionic CLI
 
-Before proceeding, make sure your computer has [Node.js](/docs/faq/glossary#node) installed. See [these instructions](/docs/installation/environment) to set up an environment for Ionic.
+Before proceeding, make sure your computer has [Node.js](/docs/reference/glossary#node) installed. See [these instructions](/docs/intro/environment) to set up an environment for Ionic.
 
 Install the Ionic CLI with npm:
 

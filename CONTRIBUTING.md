@@ -82,7 +82,7 @@ The content of the Ionic docs is written as [Markdown](https://commonmark.org/) 
 
 ```
 /docs/                  =>  src/pages/index.md
-/docs/installation/cli  =>  src/pages/installation/cli.md
+/docs/intro/cli         =>  src/pages/intro/cli.md
 /docs/theming/advanced  =>  src/pages/theming/advanced.md
 /docs/theming           =>  src/pages/theming.md
 ```
@@ -151,7 +151,7 @@ For example, in `src/components/menu/templates/main.tsx`:
 
 ```javascript
 // 'token': 'path'
-'menu-installation-cli': '/docs/installation/cli',
+'menu-intro-cli': '/docs/intro/cli',
 ```
 
 Then, add the token and its translation to each file within the `src/assets/locales` folder:
@@ -160,7 +160,7 @@ For example, in `src/assets/locales/en/messages.json`:
 
 ```javascript
 // 'token': 'translated text'
-"menu-installation-cli": "CLI Installation",
+"menu-intro-cli": "CLI Installation",
 ```
 
 ## Reporting Issues

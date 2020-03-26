@@ -6,14 +6,16 @@ meta:
 tableOfContents: false
 demoUrl: https://ionic-docs-demo.herokuapp.com/
 demoSourceUrl: https://github.com/ionic-team/docs-demo
+nextText: 'Environment Setup'
+nextUrl: '/docs/intro/environment'
 ---
 
 Ionic Framework is an open source UI toolkit for building performant, high-quality mobile and desktop apps using web technologies — HTML, CSS, and JavaScript.
 
-Learn what Ionic is all about on our <a href="/">homepage</a>, or start building by <a href="/docs/installation/cli">Installing Ionic</a> or following our <a href="/docs/intro/first-app">First App Tutorial</a>.
+Learn what Ionic is all about on our <a href="/">homepage</a>, or start building by <a href="/docs/intro/cli">Installing Ionic</a> or following our <a href="/docs/intro/next#build-your-first-app">First App Tutorial</a>.
 
 <docs-cards>
-  <docs-card header="Installation Guide" href="/docs/installation/cli" icon="/docs/assets/icons/guide-installation-icon.svg" hover-icon="/docs/assets/icons/guide-installation-icon-hover.svg">
+  <docs-card header="Installation Guide" href="/docs/intro/cli" icon="/docs/assets/icons/guide-installation-icon.svg" hover-icon="/docs/assets/icons/guide-installation-icon-hover.svg">
     <p>Step-by-step guides to setting up your system and installing the framework.</p>
   </docs-card>
 
@@ -32,7 +34,7 @@ Learn what Ionic is all about on our <a href="/">homepage</a>, or start building
 
 ## Overview
 
-Ionic Framework focuses on the frontend UX and UI interaction of an app — UI controls, interactions, gestures, animations. It's easy to learn, and integrates with other libraries or frameworks, such as <a href="/docs/angular/overview">Angular</a>, <a href="/docs/react/overview">React</a>, or <a href="/docs/vue/overview">Vue</a>. Alternatively, it can be used standalone without any frontend framework using a simple <a href="/docs/installation/cdn">script include</a>. If you’d like to learn more about Ionic Framework before diving in, we <a href="https://youtu.be/p3AN3igqiRc" target="_blank">created a video</a> to walk you through the basics.
+Ionic Framework focuses on the frontend UX and UI interaction of an app — UI controls, interactions, gestures, animations. It's easy to learn, and integrates with other libraries or frameworks, such as <a href="/docs/angular/overview">Angular</a>, <a href="/docs/react/overview">React</a>, or <a href="/docs/vue/overview">Vue</a>. Alternatively, it can be used standalone without any frontend framework using a simple <a href="/docs/intro/cdn">script include</a>. If you’d like to learn more about Ionic Framework before diving in, we <a href="https://youtu.be/p3AN3igqiRc" target="_blank">created a video</a> to walk you through the basics.
 
 ### One codebase, running everywhere
 
@@ -59,7 +61,7 @@ Build and deploy apps that work across multiple platforms, such as native iOS, A
 
 ### Web Standards-based
 
-Ionic Framework is built on top of reliable, [standardized web technologies](/docs/faq/glossary#web-standards): HTML, CSS, and JavaScript, using
+Ionic Framework is built on top of reliable, [standardized web technologies](/docs/reference/glossary#web-standards): HTML, CSS, and JavaScript, using
 modern Web APIs such as Custom Elements and Shadow DOM. Because of this, Ionic components have a stable API, and aren't at the whim of a single platform vendor.
 
 ### Beautiful Design

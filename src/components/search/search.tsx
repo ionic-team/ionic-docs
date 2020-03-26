@@ -220,7 +220,7 @@ export class IonicSearch {
         <div class="Search__Defaults__Section">
           <h4>Getting Started</h4>
           <ul>
-            <li><a href="/docs/installation/cli"><Book/><strong>Installation Guide</strong> | Installation</a></li>
+            <li><a href="/docs/intro/cli"><Book/><strong>Installation Guide</strong> | Installation</a></li>
             <li><a href="/docs/building/running"><Book/><strong>Running an App</strong> | Building</a></li>
             <li><a href="/docs/layout/structure"><Book/><strong>App Structure</strong> | Layout</a></li>
             <li><a href="/docs/theming/basics"><Book/><strong>Theming Basics</strong> | Theming</a></li>

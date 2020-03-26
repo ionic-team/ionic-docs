@@ -1,8 +1,8 @@
 ---
 previousText: 'Build Your First App'
-previousUrl: '/docs/intro/first-app'
-nextText: 'Browser Support'
-nextUrl: '/docs/intro/browser-support'
+previousUrl: '/docs/intro/next#build-your-first-app'
+nextText: ''
+nextUrl: ''
 contributors:
   - perrygovier
   - mhartington

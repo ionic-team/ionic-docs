@@ -2,7 +2,7 @@
 previousText: 'Overview'
 previousUrl: '/docs'
 nextText: 'Build Your First App'
-nextUrl: '/docs/intro/first-app'
+nextUrl: '/docs/intro/next#build-your-first-app'
 ---
 
 # Core Concepts
@@ -12,7 +12,7 @@ For those completely new to Ionic app development, it can be helpful to get a hi
 
 ## UI Components
 
-Ionic Framework is a library of UI Components, which are reusable elements that serve as the building blocks for an application. Ionic Components are built with [web standards](/docs/faq/glossary#web-standards) using HTML, CSS, and JavaScript. Though the components are pre-built, they're designed from the ground up to be highly customizable so apps can make each component their own, allowing each app to have its own look and feel. More specifically, Ionic components can be easily themed to globally change appearance across an entire app. For more information about customizing the look, please see [Theming](/docs/theming/basics).
+Ionic Framework is a library of UI Components, which are reusable elements that serve as the building blocks for an application. Ionic Components are built with [web standards](/docs/reference/glossary#web-standards) using HTML, CSS, and JavaScript. Though the components are pre-built, they're designed from the ground up to be highly customizable so apps can make each component their own, allowing each app to have its own look and feel. More specifically, Ionic components can be easily themed to globally change appearance across an entire app. For more information about customizing the look, please see [Theming](/docs/theming/basics).
 
 
 ## Adaptive Styling

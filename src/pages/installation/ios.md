@@ -41,7 +41,7 @@ Additional setup is required for Cordova to support programmatic builds. This se
 
 ### ios-sim & ios-deploy
 
-The [`ios-sim`](https://github.com/ios-control/ios-sim) and [`ios-deploy`](https://github.com/ios-control/ios-deploy) are utilities that deploy apps to the iOS simulator and iOS devices during development. They can be installed globally with [npm](/docs/faq/glossary#npm).
+The [`ios-sim`](https://github.com/ios-control/ios-sim) and [`ios-deploy`](https://github.com/ios-control/ios-deploy) are utilities that deploy apps to the iOS simulator and iOS devices during development. They can be installed globally with [npm](/docs/reference/glossary#npm).
 
 ```shell
 $ npm install -g ios-sim

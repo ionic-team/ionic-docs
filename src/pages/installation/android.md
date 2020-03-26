@@ -13,7 +13,7 @@ To target the Android platform, some additional environment setup is required. A
 
 ## Android Studio
 
-<a href="https://developer.android.com/studio/" target="_blank">Android Studio</a> is the IDE for creating native Android apps. It includes the [Android SDK](/docs/faq/glossary#android-sdk), which will need to be configured for use in the command line.
+<a href="https://developer.android.com/studio/" target="_blank">Android Studio</a> is the IDE for creating native Android apps. It includes the [Android SDK](/docs/reference/glossary#android-sdk), which will need to be configured for use in the command line.
 
 Android Studio is also used to [create Android virtual devices](/docs/installation/android#creating-an-android-virtual-device), which are required for the Android emulator. Ionic apps can also be [launched to a device](/docs/installation/android#set-up-an-android-device).
 
