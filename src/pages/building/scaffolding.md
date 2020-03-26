@@ -2,7 +2,7 @@
 previousText: 'Starting'
 previousUrl: '/docs/building/starting'
 nextText: 'Migration'
-nextUrl: '/docs/building/migration'
+nextUrl: '/docs/reference/migration'
 contributors:
   - mhartington
   - brandyscarney

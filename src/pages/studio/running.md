@@ -14,7 +14,7 @@ Serving, running, and deploying each have pros and cons.
 
 ## Serving Apps
 
-When an app is served, Ionic Studio starts a Dev Server with [Live Reload](/docs/faq/glossary#livereload) and displays the app in a separate browser window, called a _Serve Window_.
+When an app is served, Ionic Studio starts a Dev Server with [Live Reload](/docs/reference/glossary#livereload) and displays the app in a separate browser window, called a _Serve Window_.
 
 To serve an app, click the Play button in the upper right-hand corner of Ionic Studio. Then choose _Serve_ from the dropdown.
 

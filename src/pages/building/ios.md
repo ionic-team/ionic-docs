@@ -8,13 +8,13 @@ skipIntros: true
 
 # iOS Development
 
-<p class="intro">This guide covers how to run and debug Ionic apps on iOS simulators and devices using <a href="/docs/faq/glossary#capacitor">Capacitor</a> or <a href="/docs/faq/glossary#cordova">Cordova</a>.</p>
+<p class="intro">This guide covers how to run and debug Ionic apps on iOS simulators and devices using <a href="/docs/reference/glossary#capacitor">Capacitor</a> or <a href="/docs/reference/glossary#cordova">Cordova</a>.</p>
 
 There are two workflows for running Ionic apps on iOS:
 * [Running with Xcode](#running-with-xcode)
 * [Running with the Ionic CLI](#running-with-the-ionic-cli)
 
-The Xcode approach is generally more stable, but the Ionic CLI approach offers [live-reload](/docs/faq/glossary#livereload) functionality.
+The Xcode approach is generally more stable, but the Ionic CLI approach offers [live-reload](/docs/reference/glossary#livereload) functionality.
 
 > To develop for iOS, make sure you have followed the [iOS Environment Setup](/docs/installation/ios).
 
@@ -36,7 +36,7 @@ Before apps can be deployed to iOS simulators and devices, the native project mu
     $ ionic cordova prepare ios
     ```
 
-1. <strong>Set the [Package ID](/docs/faq/glossary#package-id).</strong>
+1. <strong>Set the [Package ID](/docs/reference/glossary#package-id).</strong>
 
     For Capacitor, open the `capacitor.config.json` file and modify the `appId` property.
 
@@ -86,7 +86,7 @@ In this workflow, Xcode can automatically fix common compilation and signing iss
 
 ## Running with the Ionic CLI
 
-The Ionic CLI can build, copy, and deploy Ionic apps to iOS simulators and devices with a single command. It can also spin up a development server, like the one used in `ionic serve`, to provide [live-reload](/docs/faq/glossary#livereload) functionality.
+The Ionic CLI can build, copy, and deploy Ionic apps to iOS simulators and devices with a single command. It can also spin up a development server, like the one used in `ionic serve`, to provide [live-reload](/docs/reference/glossary#livereload) functionality.
 
 With live-reload, changes made to the app's source files trigger a rebuild of web assets and the changes are reflected on the simulator or device without having to deploy again.
 

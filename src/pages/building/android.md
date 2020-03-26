@@ -7,7 +7,7 @@ nextUrl: '/docs/building/testing'
 
 # Android Development
 
-This guide covers how to run and debug Ionic apps on Android emulators and devices using [Capacitor](/docs/faq/glossary#capacitor) or [Cordova](/docs/faq/glossary#cordova).
+This guide covers how to run and debug Ionic apps on Android emulators and devices using [Capacitor](/docs/reference/glossary#capacitor) or [Cordova](/docs/reference/glossary#cordova).
 
 > To develop for Android, make sure you have followed the [Android Environment Setup](/docs/installation/android).
 
@@ -29,7 +29,7 @@ Before apps can be deployed to Android simulators and devices, the native projec
     $ ionic cordova prepare android
     ```
 
-2. **Set the [Package ID](/docs/faq/glossary#package-id).**
+2. **Set the [Package ID](/docs/reference/glossary#package-id).**
 
     For Capacitor, open the `capacitor.config.json` file and modify the `appId` property.
 
@@ -62,7 +62,7 @@ When running on a device make sure the device and your development machine are c
 
 ## Running with Cordova
 
-The Ionic CLI can build, copy, and deploy Ionic apps to Android simulators and devices with a single command. It can also spin up a development server, like the one used in `ionic serve`, to provide [live-reload](/docs/faq/glossary#livereload) functionality.
+The Ionic CLI can build, copy, and deploy Ionic apps to Android simulators and devices with a single command. It can also spin up a development server, like the one used in `ionic serve`, to provide [live-reload](/docs/reference/glossary#livereload) functionality.
 
 Run the following to start a long-running CLI process that boots up a live-reload server:
 

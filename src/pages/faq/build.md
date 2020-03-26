@@ -1,6 +1,6 @@
 ---
 previousText: 'Glossary'
-previousUrl: '/docs/faq/glossary'
+previousUrl: '/docs/reference/glossary'
 nextText: 'Runtime Errors'
 nextUrl: '/docs/faq/runtime'
 disableHtmlPreviews: true

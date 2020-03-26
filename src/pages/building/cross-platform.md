@@ -1,6 +1,6 @@
 ---
 previousText: 'Migration'
-previousUrl: '/docs/building/migration'
+previousUrl: '/docs/reference/migration'
 nextText: 'Running Overview'
 nextUrl: '/docs/building/running'
 disableHtmlPreviews: true
