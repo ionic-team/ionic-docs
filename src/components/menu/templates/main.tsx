@@ -82,9 +82,9 @@ const items = {
     'menu-utilities-gestures': '/docs/utilities/gestures'
   },
   'menu-publishing': {
-    'menu-publishing-progressive-web-app': '/docs/publishing/progressive-web-app',
     'menu-publishing-app-store': '/docs/publishing/app-store',
     'menu-publishing-play-store': '/docs/publishing/play-store',
+    'menu-publishing-progressive-web-app': '/docs/publishing/progressive-web-app',
     'menu-publishing-desktop-app': '/docs/publishing/desktop-app'
   },
   'menu-faq': {

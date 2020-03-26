@@ -1,6 +1,6 @@
 ---
-previousText: 'Progressive Web App'
-previousUrl: 'docs/publishing/progressive-web-app'
+previousText: ''
+previousUrl: ''
 nextText: 'Android Play Store'
 nextUrl: '/docs/publishing/play-store'
 contributors:

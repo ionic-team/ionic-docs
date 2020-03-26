@@ -1,6 +1,8 @@
 ---
-nextText: 'Publishing to the iOS App Store'
-nextUrl: '/docs/publishing/app-store'
+previousText: 'Android Play Store'
+previousUrl: '/docs/publishing/play-store'
+nextText: 'Electron Desktop App'
+nextUrl: '/docs/publishing/desktop-app'
 contributors:
   - MustaRohman
   - mhartington

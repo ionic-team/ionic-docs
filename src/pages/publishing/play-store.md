@@ -1,8 +1,8 @@
 ---
-previousText: 'App Store'
+previousText: 'iOS App Store'
 previousUrl: 'docs/publishing/app-store'
-nextText: 'Desktop Electron App'
-nextUrl: '/docs/publishing/desktop-app'
+nextText: 'Progressive Web App (PWA)'
+nextUrl: '/docs/publishing/progressive-web-app'
 ---
 
 # Android Play Store

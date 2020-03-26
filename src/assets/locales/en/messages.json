@@ -94,10 +94,10 @@
   "menu-utilities-animations": "Animations",
   "menu-utilities-gestures": "Gestures",
 
-  "menu-publishing": "Publishing",
-  "menu-publishing-progressive-web-app": "Progressive Web App",
+  "menu-publishing": "Deployment",
   "menu-publishing-app-store": "iOS App Store",
   "menu-publishing-play-store": "Android Play Store",
+  "menu-publishing-progressive-web-app": "Progressive Web App (PWA)",
   "menu-publishing-desktop-app": "Electron Desktop App",
 
   "menu-faq": "FAQ",

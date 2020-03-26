@@ -1,6 +1,6 @@
 ---
-previousText: 'Android Play Store'
-previousUrl: 'docs/publishing/play-store'
+previousText: 'Progressive Web App (PWA)'
+previousUrl: 'docs/publishing/progressive-web-app'
 contributors:
   - mhartington
 ---
