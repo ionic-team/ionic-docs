@@ -1,6 +1,6 @@
 ---
-previousText: 'Build Your First App'
-previousUrl: '/docs/intro/next#build-your-first-app'
+previousText: 'Core Concepts'
+previousUrl: '/docs/core-concepts/fundamentals'
 nextText: ''
 nextUrl: ''
 contributors:

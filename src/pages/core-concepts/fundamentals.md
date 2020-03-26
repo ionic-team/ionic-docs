@@ -1,8 +1,8 @@
 ---
-previousText: 'Overview'
-previousUrl: '/docs'
-nextText: 'Build Your First App'
-nextUrl: '/docs/intro/next#build-your-first-app'
+previousText: ''
+previousUrl: ''
+nextText: 'What are PWAs?'
+nextUrl: '/docs/core-concepts/what-are-progressive-web-apps'
 ---
 
 # Core Concepts

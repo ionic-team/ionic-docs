@@ -12,7 +12,7 @@ Ionic's earliest goal was to make it easy to develop mobile apps using web techn
 
 ## Mobile Browsers
 
-In pursuit of [adaptive styling](/docs/intro/concepts#adaptive-styling), Ionic fully supports and is well tested on the mobile platforms listed below:
+In pursuit of [adaptive styling](/docs/core-concepts/fundamentals#adaptive-styling), Ionic fully supports and is well tested on the mobile platforms listed below:
 
 | Framework | Android | iOS   |
 |:---------:|:-------:|:-----:|
