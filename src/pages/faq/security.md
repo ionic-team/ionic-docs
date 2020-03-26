@@ -78,7 +78,6 @@ Developers can also choose to eject from the sanitizer in certain scenarios. Ion
 <docs-tab tab="angular">
 
 ```typescript
-
 import { IonicSafeString, ToastController } from '@ionic/angular';
 
 ...
@@ -116,7 +115,6 @@ const async presentToast = () => {
 <docs-tab tab="react">
 
 ```typescript
-
 import React, { useState } from 'react';
 import { Animation, IonButton, IonContent, IonicSafeString, IonToast } from '@ionic/react';
 
