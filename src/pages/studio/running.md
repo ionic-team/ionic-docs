@@ -60,7 +60,7 @@ Choose a platform and a target device, which can be an emulator or hardware devi
 
 With the Live Reload option, Ionic Studio will use the same Dev Server as in _Serve_, which enables quick development while working with actual devices.
 
-To debug running apps, see the docs for debugging [iOS Apps](/docs/building/ios#debugging-ios-apps) and [Android Apps](/docs/building/android#debugging-android-apps).
+To debug running apps, see the docs for debugging [iOS Apps](/docs/developing/ios#debugging-ios-apps) and [Android Apps](/docs/developing/android#debugging-android-apps).
 
 ## Installing Apps
 

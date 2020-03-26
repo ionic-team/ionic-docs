@@ -10,20 +10,13 @@ const items = {
     'menu-intro-cdn': '/docs/intro/cdn',
     'menu-intro-next': '/docs/intro/next',
   },
-  'menu-installation': {
-    'menu-installation-ios': '/docs/installation/ios',
-    'menu-installation-android': '/docs/installation/android',
-  },
-  'menu-building': {
-    'menu-building-starting': '/docs/building/starting',
-    'menu-building-scaffolding': '/docs/building/scaffolding',
-    'menu-building-migration': '/docs/reference/migration',
-    'menu-building-running': '/docs/building/running',
-    'menu-building-ios': '/docs/building/ios',
-    'menu-building-android': '/docs/building/android',
-    'menu-building-testing': '/docs/building/testing',
-    'menu-building-contributing': '/docs/building/contributing',
-    'menu-building-storage': '/docs/building/storage'
+  'menu-developing': {
+    'menu-developing-starting': '/docs/developing/starting',
+    'menu-developing-previewing': '/docs/developing/previewing',
+    'menu-developing-scaffolding': '/docs/developing/scaffolding',
+    'menu-developing-ios': '/docs/developing/ios',
+    'menu-developing-android': '/docs/developing/android',
+    'menu-developing-tips': '/docs/developing/tips',
   },
   'menu-layout': {
     'menu-layout-structure': '/docs/layout/structure',
@@ -100,7 +93,6 @@ const items = {
     'menu-faq-native': '/docs/faq/native',
     'menu-faq-cors': '/docs/faq/cors',
     'menu-faq-security': '/docs/faq/security',
-    'menu-faq-tips': '/docs/faq/tips',
   },
   'menu-core-concepts': {
     'menu-core-concepts-fundamentals': '/docs/core-concepts/fundamentals',
@@ -124,5 +116,12 @@ const items = {
     'menu-resources-posts': '/docs/developer-resources/posts',
     'menu-resources-tools': '/docs/developer-resources/tools',
     'menu-resources-videos': '/docs/developer-resources/videos'
-  }
+  },
+  'menu-todo': {
+    'menu-building-testing': '/docs/building/testing',
+    'menu-building-contributing': '/docs/building/contributing',
+    'menu-building-storage': '/docs/building/storage',
+    'menu-installation-ios': '/docs/installation/ios',
+    'menu-installation-android': '/docs/installation/android',
+  },
 };

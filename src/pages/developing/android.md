@@ -1,8 +1,8 @@
 ---
 previousText: 'Running on iOS'
-previousUrl: '/docs/building/ios'
-nextText: 'Testing'
-nextUrl: '/docs/building/testing'
+previousUrl: '/docs/developing/ios'
+nextText: 'Development Tips'
+nextUrl: '/docs/developing/tips'
 ---
 
 # Android Development

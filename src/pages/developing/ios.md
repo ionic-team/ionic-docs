@@ -1,8 +1,8 @@
 ---
-previousText: 'Running Overview'
-previousUrl: '/docs/building/running'
-nextText: 'Running on Android'
-nextUrl: '/docs/building/android'
+previousText: 'Scaffolding'
+previousUrl: '/docs/developing/scaffolding'
+nextText: 'Developing for Android'
+nextUrl: '/docs/developing/android'
 skipIntros: true
 ---
 

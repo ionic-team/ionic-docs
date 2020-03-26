@@ -31,7 +31,7 @@ $ npm install -g @ionic/cli
 ```
 
 > The `-g` option means _install globally_. When packages are installed globally, `EACCES` permission errors can occur.
-> Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](/docs/faq/tips#resolving-permission-errors) for more information.
+> Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](/docs/developing/tips#resolving-permission-errors) for more information.
 
 ## Start an App
 
@@ -44,7 +44,7 @@ $ ionic start myApp tabs
 ![start app thumbnails](/docs/assets/img/installation/start-app-thumbnails.png)
 
 
-To learn more about starting Ionic apps, see the [Starting Guide](/docs/building/starting).
+To learn more about starting Ionic apps, see the [Starting Guide](/docs/developing/starting).
 
 ## Run the App
 
@@ -55,4 +55,4 @@ $ cd myApp
 $ ionic serve
 ```
 
-There are a number of other ways to run an app, it's recommended to start with this workflow. To develop and test apps on devices and emulators, see the [Running an App Guide](/docs/building/running).
+There are a number of other ways to run an app, it's recommended to start with this workflow. To develop and test apps on devices and emulators, see the [Running an App Guide](/docs/developing/previewing).

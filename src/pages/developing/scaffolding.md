@@ -1,14 +1,14 @@
 ---
-previousText: 'Starting'
-previousUrl: '/docs/building/starting'
-nextText: 'Migration'
-nextUrl: '/docs/reference/migration'
+previousText: 'Previewing'
+previousUrl: '/docs/developing/previewing'
+nextText: 'Developing for iOS'
+nextUrl: '/docs/developing/ios'
 contributors:
   - mhartington
   - brandyscarney
 ---
 
-# Scaffolding out an App
+# Scaffolding
 
 Once an app is created by the Ionic CLI, the next step is to start building out features and components. The majority of the app will be developed in the `src/app/` directory.
 

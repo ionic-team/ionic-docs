@@ -2,7 +2,7 @@
 previousText: 'CORS Errors'
 previousUrl: '/docs/faq/cors'
 nextText: 'Developer Tips'
-nextUrl: '/docs/faq/tips'
+nextUrl: '/docs/developing/tips'
 disableHtmlPreviews: true
 contributors:
   - liamdebeasi
@@ -48,12 +48,12 @@ const userInput = 'javascript:alert("Oh no!")';
 const element = <a href={userInput}>Click Me!</a>
 ```
 
-If the developer needs to achieve more comprehensive sanitization, they can use the [sanitize-html](<https://www.npmjs.com/package/sanitize-html>) package. 
+If the developer needs to achieve more comprehensive sanitization, they can use the [sanitize-html](<https://www.npmjs.com/package/sanitize-html>) package.
 
 To learn more about the built-in protections that React and JSX provide, see the [React JSX Documentation](https://reactjs.org/docs/introducing-jsx.html#jsx-prevents-injection-attacks).
 
 ### Vue
 
-Vue does not provide any type of sanitizing methods built in. It is recommended that developers use a package such as [sanitize-html](<https://www.npmjs.com/package/sanitize-html>). 
+Vue does not provide any type of sanitizing methods built in. It is recommended that developers use a package such as [sanitize-html](<https://www.npmjs.com/package/sanitize-html>).
 
 To learn more about the security recommendations for binding to directives such as `v-html`, see the [Vue Syntax Guide](https://vuejs.org/v2/guide/syntax.html#Raw-HTML).

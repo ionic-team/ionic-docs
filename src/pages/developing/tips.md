@@ -1,13 +1,13 @@
 ---
-previousText: 'Security'
-previousUrl: '/docs/faq/security'
+previousText: 'Developing for Android'
+previousUrl: '/docs/developing/android'
 contributors:
   - rtpHarry
   - FdezRomero
   - brandyscarney
 ---
 
-# Developer Tips
+# Development Tips
 
 ## Resolving Permission Errors
 
@@ -95,7 +95,7 @@ There are a lots of editors to choose from. Here are some of our favorites:
 
 ## Using a Debugger
 
-The `debugger` keyword can be used to debug an app. When most browsers encounters a `debugger` statement, running of JavaScript is stopped, and the browser will load its debugger. This can be used to set "breakpoints" in the app. 
+The `debugger` keyword can be used to debug an app. When most browsers encounters a `debugger` statement, running of JavaScript is stopped, and the browser will load its debugger. This can be used to set "breakpoints" in the app.
 
 For example, if a function is not returning the correct value, the debugger can be used to step through the code and inspect variables.
 
@@ -120,9 +120,9 @@ Selecting devices from the device dropdown will change the user-agent, as well a
 
 ## Using the iOS Simulator
 
-The iOS simulator enables testing and debugging of an app before it reaches an actual device. 
+The iOS simulator enables testing and debugging of an app before it reaches an actual device.
 
-Before it can be used, [Xcode](https://developer.apple.com/xcode/download/), Apple's IDE, must be installed. 
+Before it can be used, [Xcode](https://developer.apple.com/xcode/download/), Apple's IDE, must be installed.
 
 The [Ionic CLI](/docs/cli) can then be used to run the app in the current directory on the simulator:
 
@@ -140,7 +140,7 @@ After the app loads, console output and device logs will be printed inside of Xc
 
 ## Using the Genymotion Android Emulator
 
-While the Android SDK comes with a stock emulator, it can be slow and unresponsive at times. 
+While the Android SDK comes with a stock emulator, it can be slow and unresponsive at times.
 
 [Genymotion](https://www.genymotion.com) is an alternate emulator that is faster, and still allows access to native functionality like GPS and camera.
 
