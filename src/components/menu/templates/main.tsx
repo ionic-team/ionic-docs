@@ -5,25 +5,19 @@ export default () => <docs-nav items={items}/>;
 const items = {
   'menu-intro': {
     'menu-intro-overview': '/docs',
-    'menu-intro-concepts': '/docs/intro/concepts',
-    'menu-intro-your-first-app': '/docs/intro/first-app',
-    'menu-intro-what-are-progressive-web-apps': '/docs/intro/what-are-progressive-web-apps',
-    'menu-intro-browser-support': '/docs/intro/browser-support',
-    'menu-intro-versioning': '/docs/intro/versioning',
-    'menu-intro-release-notes': '/docs/release-notes',
-    'menu-intro-support': '/docs/intro/support'
+    'menu-intro-environment': '/docs/intro/environment',
+    'menu-intro-cli': '/docs/intro/cli',
+    'menu-intro-cdn': '/docs/intro/cdn',
+    'menu-intro-next': '/docs/intro/next',
   },
   'menu-installation': {
-    'menu-installation-cli': '/docs/installation/cli',
-    'menu-installation-cdn': '/docs/installation/cdn',
-    'menu-installation-environment': '/docs/installation/environment',
     'menu-installation-ios': '/docs/installation/ios',
     'menu-installation-android': '/docs/installation/android',
   },
   'menu-building': {
     'menu-building-starting': '/docs/building/starting',
     'menu-building-scaffolding': '/docs/building/scaffolding',
-    'menu-building-migration': '/docs/building/migration',
+    'menu-building-migration': '/docs/reference/migration',
     'menu-building-cross-platform': '/docs/building/cross-platform',
     'menu-building-running': '/docs/building/running',
     'menu-building-ios': '/docs/building/ios',
@@ -104,7 +98,6 @@ const items = {
     'menu-publishing-desktop-app': '/docs/publishing/desktop-app'
   },
   'menu-faq': {
-    'menu-faq-glossary': '/docs/faq/glossary',
     'menu-faq-build': '/docs/faq/build',
     'menu-faq-runtime': '/docs/faq/runtime',
     'menu-faq-native': '/docs/faq/native',
@@ -120,5 +113,17 @@ const items = {
     'menu-resources-posts': '/docs/developer-resources/posts',
     'menu-resources-tools': '/docs/developer-resources/tools',
     'menu-resources-videos': '/docs/developer-resources/videos'
+  },
+  'menu-core-concepts': {
+    'menu-core-concepts-fundamentals': '/docs/core-concepts/fundamentals',
+    'menu-core-concepts-what-are-progressive-web-apps': '/docs/core-concepts/what-are-progressive-web-apps',
+  },
+  'menu-reference': {
+    'menu-reference-glossary': '/docs/reference/glossary',
+    'menu-reference-versioning': '/docs/reference/versioning',
+    'menu-reference-release-notes': '/docs/reference/release-notes',
+    'menu-reference-support': '/docs/reference/support',
+    'menu-reference-browser-support': '/docs/reference/browser-support',
+    'menu-reference-migration': '/docs/reference/migration'
   }
 };
