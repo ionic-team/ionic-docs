@@ -1,8 +1,8 @@
 ---
-previousText: 'CORS Errors'
-previousUrl: '/docs/troubleshooting/cors'
-nextText: 'Developer Tips'
-nextUrl: '/docs/developing/tips'
+previousText: ''
+previousUrl: ''
+nextText: ''
+nextUrl: ''
 disableHtmlPreviews: true
 contributors:
   - liamdebeasi

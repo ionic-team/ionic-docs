@@ -93,8 +93,8 @@ const items = {
     'menu-troubleshooting-native': '/docs/troubleshooting/native',
     'menu-troubleshooting-cors': '/docs/troubleshooting/cors',
   },
-  'menu-faq': {
-    'menu-faq-security': '/docs/faq/security',
+  'menu-techniques': {
+    'menu-techniques-security': '/docs/techniques/security',
   },
   'menu-core-concepts': {
     'menu-core-concepts-fundamentals': '/docs/core-concepts/fundamentals',

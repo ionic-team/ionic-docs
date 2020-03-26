@@ -106,9 +106,8 @@
   "menu-troubleshooting-native": "Native Errors",
   "menu-troubleshooting-cors": "CORS Errors",
 
-  "menu-faq": "FAQ",
-  "menu-faq-glossary": "Glossary",
-  "menu-faq-security": "Security",
+  "menu-techniques": "Techniques",
+  "menu-techniques-security": "Security",
 
   "menu-resources": "Resources",
   "menu-resources-books": "Books",
