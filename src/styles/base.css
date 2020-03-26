@@ -146,10 +146,14 @@ h1 {
 
 h2 {
   font-size: 1.825rem;
+
+  margin-bottom: 0.2em;
 }
 
 h3 {
   font-size: 1.375rem;
+
+  margin-bottom: 0.2em;
 }
 
 h4 {
