@@ -1,8 +1,8 @@
 ---
 previousText: 'Runtime Errors'
-previousUrl: '/docs/faq/runtime'
+previousUrl: '/docs/troubleshooting/runtime'
 nextText: 'CORS Errors'
-nextUrl: '/docs/faq/cors'
+nextUrl: '/docs/troubleshooting/cors'
 contributors:
   - FdezRomero
   - brandyscarney

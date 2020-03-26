@@ -87,11 +87,13 @@ const items = {
     'menu-publishing-progressive-web-app': '/docs/publishing/progressive-web-app',
     'menu-publishing-desktop-app': '/docs/publishing/desktop-app'
   },
+  'menu-troubleshooting': {
+    'menu-troubleshooting-build': '/docs/troubleshooting/build',
+    'menu-troubleshooting-runtime': '/docs/troubleshooting/runtime',
+    'menu-troubleshooting-native': '/docs/troubleshooting/native',
+    'menu-troubleshooting-cors': '/docs/troubleshooting/cors',
+  },
   'menu-faq': {
-    'menu-faq-build': '/docs/faq/build',
-    'menu-faq-runtime': '/docs/faq/runtime',
-    'menu-faq-native': '/docs/faq/native',
-    'menu-faq-cors': '/docs/faq/cors',
     'menu-faq-security': '/docs/faq/security',
   },
   'menu-core-concepts': {

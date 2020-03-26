@@ -1,8 +1,8 @@
 ---
-previousText: 'Glossary'
-previousUrl: '/docs/reference/glossary'
+previousText: ''
+previousUrl: ''
 nextText: 'Runtime Errors'
-nextUrl: '/docs/faq/runtime'
+nextUrl: '/docs/troubleshooting/runtime'
 disableHtmlPreviews: true
 contributors:
   - brandyscarney

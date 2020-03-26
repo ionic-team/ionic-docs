@@ -1,6 +1,6 @@
 ---
 previousText: 'CORS Errors'
-previousUrl: '/docs/faq/cors'
+previousUrl: '/docs/troubleshooting/cors'
 nextText: 'Developer Tips'
 nextUrl: '/docs/developing/tips'
 disableHtmlPreviews: true

@@ -100,12 +100,14 @@
   "menu-publishing-progressive-web-app": "Progressive Web App (PWA)",
   "menu-publishing-desktop-app": "Electron Desktop App",
 
+  "menu-troubleshooting": "Troubleshooting",
+  "menu-troubleshooting-build": "Build Errors",
+  "menu-troubleshooting-runtime": "Runtime Errors",
+  "menu-troubleshooting-native": "Native Errors",
+  "menu-troubleshooting-cors": "CORS Errors",
+
   "menu-faq": "FAQ",
   "menu-faq-glossary": "Glossary",
-  "menu-faq-build": "Build Errors",
-  "menu-faq-runtime": "Runtime Errors",
-  "menu-faq-native": "Native Errors",
-  "menu-faq-cors": "CORS Errors",
   "menu-faq-security": "Security",
 
   "menu-resources": "Resources",
