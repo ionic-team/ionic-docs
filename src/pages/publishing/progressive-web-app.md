@@ -8,7 +8,7 @@ contributors:
   - mhartington
 ---
 
-# Publishing a Progressive Web App
+# Deploying a Progressive Web App
 
 Because Ionic Apps are built with web technologies, they can run just as well as a Progressive Web App as they can a native app. Not sure what PWAs are? Check out Ionic's <a href="https://ionicframework.com/pwa" target="_blank">PWA Overview</a> or the <a href="/docs/core-concepts/what-are-progressive-web-apps">What are Progressive Web Apps</a> page for more info.
 

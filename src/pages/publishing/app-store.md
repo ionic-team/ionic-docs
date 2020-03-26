@@ -7,7 +7,7 @@ contributors:
   - zaarheed
 ---
 
-# Publishing to app store
+# iOS App Store Deployment
 
 ## Requirements
 

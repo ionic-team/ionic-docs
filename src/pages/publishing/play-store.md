@@ -5,7 +5,7 @@ nextText: 'Progressive Web App (PWA)'
 nextUrl: '/docs/publishing/progressive-web-app'
 ---
 
-# Android Play Store
+# Android Play Store Deployment
 
 
 ## Generating a release build of an app
