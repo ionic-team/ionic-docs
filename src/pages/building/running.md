@@ -1,6 +1,6 @@
 ---
 previousText: 'Cross Platform'
-previousUrl: '/docs/building/cross-platform'
+previousUrl: '/docs/core-concepts/cross-platform'
 nextText: 'Running on iOS'
 nextUrl: '/docs/building/ios'
 ---
@@ -9,7 +9,7 @@ nextUrl: '/docs/building/ios'
 
 There are many different options to test native functionality depending on your target platforms and needs.
 
-* Run locally in a web browser (using [Platform Detection](/docs/building/cross-platform) for native functionality)
+* Run locally in a web browser (using [Platform Detection](/docs/core-concepts/cross-platform) for native functionality)
 * [Deploy to iOS](/docs/building/ios)
 * [Deploy to Android](/docs/building/android)
 
@@ -42,5 +42,5 @@ To do so, run `ionic serve` from the command line in the project's directory:
 
 With `ionic serve` running, continue developing your app. As you save changes, the app reloads with those changes applied.
 
-When implementing native functionality, use [Platform Detection](/docs/building/cross-platform).
+When implementing native functionality, use [Platform Detection](/docs/core-concepts/cross-platform).
 When you're ready to test on a real device, see here for [iOS](/docs/building/ios) and [Android](/docs/building/android).

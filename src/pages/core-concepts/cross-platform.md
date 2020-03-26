@@ -1,8 +1,8 @@
 ---
-previousText: 'Migration'
-previousUrl: '/docs/reference/migration'
-nextText: 'Running Overview'
-nextUrl: '/docs/building/running'
+previousText: 'Fundamentals'
+previousUrl: '/docs/core-concepts/fundamentals'
+nextText: 'Web View'
+nextUrl: '/docs/core-concepts/webview'
 disableHtmlPreviews: true
 contributors:
   - rtpHarry

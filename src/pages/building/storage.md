@@ -1,6 +1,6 @@
 ---
 previousText: 'Web View'
-previousUrl: '/docs/building/webview'
+previousUrl: '/docs/core-concepts/webview'
 ---
 
 # Data Storage
@@ -9,13 +9,13 @@ There are variety of options available for storing data within an Ionic app.
 
 ## Ionic Offline Storage
 
-[Ionic Offline Storage](/docs/enterprise/offline-storage) is a cross-platform data 
+[Ionic Offline Storage](/docs/enterprise/offline-storage) is a cross-platform data
 storage system that works on iOS and Android.
-It makes it easy to add offline storage to Ionic apps that is secure (encrypted on device), 
+It makes it easy to add offline storage to Ionic apps that is secure (encrypted on device),
 highly performant, and provides advanced NoSQL data querying.
 
 Created for teams building complex, data-driven apps, apps managing sensitive data, or apps used in
-areas with unreliable cell service/internet connections. 
+areas with unreliable cell service/internet connections.
 Interested? [Start here.](https://ionicframework.com/offline-storage#get-started)
 
 ## Ionic Storage
@@ -24,7 +24,7 @@ Ionic Storage is a free, open source alternative for indie devs, students & hobb
 It provides an easy way to store key/value pairs and JSON objects.
 
 It uses a variety of storage engines underneath, picking the best one available
-depending on the platform: 
+depending on the platform:
 
 * When running in a native app context, Storage will prioritize using SQLite, as it's one of
 the most stable and widely used file-based databases, and avoids some of the

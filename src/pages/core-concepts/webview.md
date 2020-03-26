@@ -1,8 +1,8 @@
 ---
-previousText: 'Contributing'
-previousUrl: '/docs/building/contributing'
-nextText: 'Ionic Storage'
-nextUrl: '/docs/building/storage'
+previousText: 'Cross Platform'
+previousUrl: '/docs/core-concepts/cross-platform'
+nextText: 'What are PWAs?'
+nextUrl: '/docs/core-concepts/what-are-progressive-web-apps'
 ---
 
 # Web View

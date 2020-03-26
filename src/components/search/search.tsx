@@ -230,7 +230,7 @@ export class IonicSearch {
           <h4>Common topics</h4>
           <ul>
             <li><a href="/docs/building/testing"><Book/><strong>Testing</strong> | Building</a></li>
-            <li><a href="/docs/building/cross-platform#storage"><Book/><strong>Storage</strong> | Building</a></li>
+            <li><a href="/docs/core-concepts/cross-platform#storage"><Book/><strong>Storage</strong> | Building</a></li>
             <li><a href="/docs/lifecycle/angular"><Book/><strong>Life Cycle Events</strong> | Angular</a></li>
             <li><a href="/docs/navigation/angular"><Book/><strong>Navigation</strong> | Angular</a></li>
           </ul>

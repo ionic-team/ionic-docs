@@ -1,6 +1,6 @@
 ---
-previousText: 'Core Concepts'
-previousUrl: '/docs/core-concepts/fundamentals'
+previousText: 'Web View'
+previousUrl: '/docs/core-concepts/webview'
 nextText: ''
 nextUrl: ''
 contributors:

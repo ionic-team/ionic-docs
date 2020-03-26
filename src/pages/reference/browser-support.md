@@ -24,7 +24,7 @@ In pursuit of [adaptive styling](/docs/core-concepts/fundamentals#adaptive-styli
 
 ## Desktop Browsers
 
-Because Ionic is based on web technologies, it works just as well on desktop browsers as it does on mobile devices. For more information on desktop layouts, see [Cross Platform](/docs/building/cross-platform#desktop).
+Because Ionic is based on web technologies, it works just as well on desktop browsers as it does on mobile devices. For more information on desktop layouts, see [Cross Platform](/docs/core-concepts/cross-platform#desktop).
 
 
 | Browser     | Ionic v5 | Ionic V4 |

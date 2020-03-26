@@ -18,13 +18,11 @@ const items = {
     'menu-building-starting': '/docs/building/starting',
     'menu-building-scaffolding': '/docs/building/scaffolding',
     'menu-building-migration': '/docs/reference/migration',
-    'menu-building-cross-platform': '/docs/building/cross-platform',
     'menu-building-running': '/docs/building/running',
     'menu-building-ios': '/docs/building/ios',
     'menu-building-android': '/docs/building/android',
     'menu-building-testing': '/docs/building/testing',
     'menu-building-contributing': '/docs/building/contributing',
-    'menu-building-webview': '/docs/building/webview',
     'menu-building-storage': '/docs/building/storage'
   },
   'menu-layout': {
@@ -79,7 +77,6 @@ const items = {
     'menu-react-platform': '/docs/react/platform',
     'menu-react-pwa': '/docs/react/pwa',
     'menu-react-testing': '/docs/react/testing'
-
   },
   'menu-vue': {
     'menu-vue-overview': '/docs/vue/overview',
@@ -105,16 +102,10 @@ const items = {
     'menu-faq-security': '/docs/faq/security',
     'menu-faq-tips': '/docs/faq/tips',
   },
-  'menu-resources': {
-    'menu-resources-books': '/docs/developer-resources/books',
-    'menu-resources-courses': '/docs/developer-resources/courses',
-    'menu-resources-guides': '/docs/developer-resources/guides',
-    'menu-resources-posts': '/docs/developer-resources/posts',
-    'menu-resources-tools': '/docs/developer-resources/tools',
-    'menu-resources-videos': '/docs/developer-resources/videos'
-  },
   'menu-core-concepts': {
     'menu-core-concepts-fundamentals': '/docs/core-concepts/fundamentals',
+    'menu-core-concepts-cross-platform': '/docs/core-concepts/cross-platform',
+    'menu-core-concepts-webview': '/docs/core-concepts/webview',
     'menu-core-concepts-what-are-progressive-web-apps': '/docs/core-concepts/what-are-progressive-web-apps',
   },
   'menu-reference': {
@@ -125,5 +116,13 @@ const items = {
     'menu-reference-support': '/docs/reference/support',
     'menu-reference-browser-support': '/docs/reference/browser-support',
     'menu-reference-migration': '/docs/reference/migration'
+  },
+  'menu-resources': {
+    'menu-resources-books': '/docs/developer-resources/books',
+    'menu-resources-courses': '/docs/developer-resources/courses',
+    'menu-resources-guides': '/docs/developer-resources/guides',
+    'menu-resources-posts': '/docs/developer-resources/posts',
+    'menu-resources-tools': '/docs/developer-resources/tools',
+    'menu-resources-videos': '/docs/developer-resources/videos'
   }
 };
