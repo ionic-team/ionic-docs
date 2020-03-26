@@ -104,7 +104,6 @@ const items = {
     'menu-faq-cors': '/docs/faq/cors',
     'menu-faq-security': '/docs/faq/security',
     'menu-faq-tips': '/docs/faq/tips',
-    'menu-faq-changelog': 'https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md'
   },
   'menu-resources': {
     'menu-resources-books': '/docs/developer-resources/books',
@@ -122,6 +121,7 @@ const items = {
     'menu-reference-glossary': '/docs/reference/glossary',
     'menu-reference-versioning': '/docs/reference/versioning',
     'menu-reference-release-notes': '/docs/reference/release-notes',
+    'menu-reference-changelog': 'https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md',
     'menu-reference-support': '/docs/reference/support',
     'menu-reference-browser-support': '/docs/reference/browser-support',
     'menu-reference-migration': '/docs/reference/migration'
