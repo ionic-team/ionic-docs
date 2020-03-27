@@ -87,20 +87,24 @@ const items = {
     'menu-publishing-progressive-web-app': '/docs/publishing/progressive-web-app',
     'menu-publishing-desktop-app': '/docs/publishing/desktop-app'
   },
+  'menu-techniques': {
+    'menu-techniques-security': '/docs/techniques/security',
+  },
   'menu-troubleshooting': {
     'menu-troubleshooting-build': '/docs/troubleshooting/build',
     'menu-troubleshooting-runtime': '/docs/troubleshooting/runtime',
     'menu-troubleshooting-native': '/docs/troubleshooting/native',
     'menu-troubleshooting-cors': '/docs/troubleshooting/cors',
   },
-  'menu-techniques': {
-    'menu-techniques-security': '/docs/techniques/security',
-  },
   'menu-core-concepts': {
     'menu-core-concepts-fundamentals': '/docs/core-concepts/fundamentals',
     'menu-core-concepts-cross-platform': '/docs/core-concepts/cross-platform',
     'menu-core-concepts-webview': '/docs/core-concepts/webview',
     'menu-core-concepts-what-are-progressive-web-apps': '/docs/core-concepts/what-are-progressive-web-apps',
+  },
+  'menu-contributing': {
+    'menu-contributing-contributing': '/docs/contributing/contributing',
+    'menu-contributing-coc': '/docs/contributing/coc',
   },
   'menu-reference': {
     'menu-reference-glossary': '/docs/reference/glossary',
@@ -121,7 +125,6 @@ const items = {
   },
   'menu-todo': {
     'menu-building-testing': '/docs/building/testing',
-    'menu-building-contributing': '/docs/building/contributing',
     'menu-building-storage': '/docs/building/storage',
     'menu-installation-ios': '/docs/installation/ios',
     'menu-installation-android': '/docs/installation/android',

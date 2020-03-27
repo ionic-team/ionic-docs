@@ -1,8 +1,8 @@
 ---
-previousText: 'Running on Android'
-previousUrl: '/docs/developing/android'
-nextText: 'Contributing'
-nextUrl: '/docs/building/contributing'
+previousText: ''
+previousUrl: ''
+nextText: ''
+nextUrl: ''
 contributors:
   - kensodemann
 ---

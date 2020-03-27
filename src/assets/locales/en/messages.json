@@ -13,7 +13,6 @@
   "TODO": "-------- UNDER THIS LINE --------",
   "menu-todo": "TODO",
   "menu-building-testing": "Testing",
-  "menu-building-contributing": "Contributing",
   "menu-building-storage": "Data Storage",
   "menu-installation": "Installation",
   "menu-installation-ios": "iOS Setup",
@@ -100,28 +99,24 @@
   "menu-publishing-progressive-web-app": "Progressive Web App (PWA)",
   "menu-publishing-desktop-app": "Electron Desktop App",
 
+  "menu-techniques": "Techniques",
+  "menu-techniques-security": "Security",
+
   "menu-troubleshooting": "Troubleshooting",
   "menu-troubleshooting-build": "Build Errors",
   "menu-troubleshooting-runtime": "Runtime Errors",
   "menu-troubleshooting-native": "Native Errors",
   "menu-troubleshooting-cors": "CORS Errors",
 
-  "menu-techniques": "Techniques",
-  "menu-techniques-security": "Security",
-
-  "menu-resources": "Resources",
-  "menu-resources-books": "Books",
-  "menu-resources-courses": "Courses",
-  "menu-resources-guides": "Guides",
-  "menu-resources-posts": "Posts",
-  "menu-resources-tools": "Tools",
-  "menu-resources-videos": "Videos",
-
   "menu-core-concepts": "Core Concepts",
   "menu-core-concepts-fundamentals": "Fundamentals",
   "menu-core-concepts-cross-platform": "Cross Platform",
   "menu-core-concepts-webview": "Web View",
   "menu-core-concepts-what-are-progressive-web-apps": "What are PWAs?",
+
+  "menu-contributing": "Contributing",
+  "menu-contributing-contributing": "How to Contribute",
+  "menu-contributing-coc": "Code of Conduct",
 
   "menu-reference": "Reference",
   "menu-reference-glossary": "Glossary",
@@ -131,6 +126,14 @@
   "menu-reference-support": "Support Policy",
   "menu-reference-browser-support": "Browser Support",
   "menu-reference-migration": "Migration",
+
+  "menu-resources": "Resources",
+  "menu-resources-books": "Books",
+  "menu-resources-courses": "Courses",
+  "menu-resources-guides": "Guides",
+  "menu-resources-posts": "Posts",
+  "menu-resources-tools": "Tools",
+  "menu-resources-videos": "Videos",
 
   "menu-api-action-sheet": "Action Sheet",
   "menu-api-alert": "Alert",

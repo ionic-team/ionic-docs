@@ -1,10 +1,6 @@
 ---
-previousText: 'Testing'
-previousUrl: '/docs/building/testing'
-nextText: 'Web View'
+nextText: 'Code of Conduct'
 nextUrl: '/docs/core-concepts/webview'
-contributors:
-  - brandyscarney
 ---
 
 # Contributing to Ionic
@@ -13,7 +9,7 @@ Thanks for the interest in contributing to Ionic Framework!
 
 ## Contributing Etiquette
 
-Please see the [Contributor Code of Conduct](https://github.com/ionic-team/ionic/blob/master/CODE_OF_CONDUCT.md) for information on the rules of conduct.
+Please see the [Contributor Code of Conduct](/docs/contributing/coc) for information on the rules of conduct.
 
 
 ## Creating an Issue
