@@ -68,6 +68,8 @@ In the event that there are handlers with the same priority value, the handler t
 
 ## Calling Multiple Handlers
 
+Each hardware back button callback has a `processNextHandler` parameter. Calling this function allows you to continue calling hardware back button handlers.
+
 <docs-tabs>
 <docs-tab tab="javascript">
 
@@ -117,7 +119,7 @@ This example shows how to indicate to Ionic Framework that you want the next han
 
 ## Handlers with the Same Priorities
 
-Internally, Ionic Framework uses something similar to a priority queue to manage hardware back button handlers. The handler with the largest priority value will be called first. In the event that there are multiple handlers with the same priority value, the _last_ handler added to this queue will be the first handler to be called.
+Internally, Ionic Framework uses something similar to a priority queue to manage hardware back button handlers. The handler with the largest priority value will be called first. In the event that there are multiple handlers with the same priority value, the _last_ handler of the same priority added to this queue will be the first handler to be called.
 
 ```javascript
 document.addEventListener('ionBackButton', (ev) => {
@@ -179,7 +181,7 @@ TODO
 </docs-tab>
 </docs-tabs>
 
-This examples shows the application exiting when the user presses the hardware back button and there is nothing left in the navigation stack. It is also possible to display an quit confirmation dialog before quitting the app.
+This examples shows the application exiting when the user presses the hardware back button and there is nothing left in the navigation stack. It is also possible to display a quit confirmation dialog before quitting the app.
 
 ## Internal Framework Handlers
 
