@@ -1,6 +1,8 @@
 ---
-previousText: 'Web View'
-previousUrl: '/docs/core-concepts/webview'
+previousText: 'Testing'
+previousUrl: '/docs/angular/testing'
+nextText: 'Performance'
+nextUrl: '/docs/angular/performance'
 ---
 
 # Data Storage

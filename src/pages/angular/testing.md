@@ -1,8 +1,8 @@
 ---
-previousText: ''
-previousUrl: ''
-nextText: ''
-nextUrl: ''
+previousText: 'Platform'
+previousUrl: '/docs/angular/platform'
+nextText: 'Storage'
+nextUrl: '/docs/angular/storage'
 contributors:
   - kensodemann
 ---

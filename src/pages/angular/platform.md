@@ -1,8 +1,8 @@
 ---
 previousText: 'Config'
 previousUrl: '/docs/angular/config'
-nextText: 'Performance'
-nextUrl: '/docs/angular/performance'
+nextText: 'Testing'
+nextUrl: '/docs/angular/testing'
 contributors:
   - liamdebeasi
 ---

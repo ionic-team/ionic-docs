@@ -49,6 +49,8 @@ const items = {
     'menu-angular-navigation': '/docs/angular/navigation',
     'menu-angular-config': '/docs/angular/config',
     'menu-angular-platform': '/docs/angular/platform',
+    'menu-angular-testing': '/docs/angular/testing',
+    'menu-angular-storage': '/docs/angular/storage',
     'menu-angular-performance': '/docs/angular/performance',
     'menu-angular-pwa': '/docs/angular/pwa'
   },
@@ -124,8 +126,6 @@ const items = {
     'menu-resources-videos': '/docs/developer-resources/videos'
   },
   'menu-todo': {
-    'menu-building-testing': '/docs/building/testing',
-    'menu-building-storage': '/docs/building/storage',
     'menu-installation-ios': '/docs/installation/ios',
     'menu-installation-android': '/docs/installation/android',
   },

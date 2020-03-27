@@ -11,9 +11,6 @@
   "header-support": "Support",
 
   "TODO": "-------- UNDER THIS LINE --------",
-  "menu-todo": "TODO",
-  "menu-building-testing": "Testing",
-  "menu-building-storage": "Data Storage",
   "menu-installation": "Installation",
   "menu-installation-ios": "iOS Setup",
   "menu-installation-android": "Android Setup",
@@ -63,6 +60,8 @@
   "menu-angular-navigation": "Navigation/Routing",
   "menu-angular-config": "Config",
   "menu-angular-platform": "Platform",
+  "menu-angular-testing": "Testing",
+  "menu-angular-storage": "Storage",
   "menu-angular-performance": "Performance",
   "menu-angular-pwa": "Progressive Web Apps",
 
@@ -183,7 +182,6 @@
   "menu-cli-changelog": "Change Log",
 
   "menu-cli-commands": "Command Reference",
-
 
   "menu-native-solutions": "Native Solutions",
   "menu-native-core-device": "Core Device",
