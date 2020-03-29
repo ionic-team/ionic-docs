@@ -5,13 +5,13 @@ nextText: 'Adding Mobile'
 nextUrl: '/docs/angular/your-first-app/5-adding-mobile'
 ---
 
-# Loading Photos from the Filesystem
+# 从文件系统中加载图片
 
-We’ve implemented photo taking and saving to the filesystem. There’s one last piece of functionality missing: the photos are stored in the filesystem, but we need a way to save pointers to each file so that they can be displayed again in the photo gallery.
+我们已经实现拍照并保存的功能， 现在还剩最后一步了：把照片存储后我们需要指定存储的位置，以便他们能够正确的显示在照片库中。
 
-Fortunately, this is easy: we’ll leverage the Capacitor [Storage API](https://capacitor.ionicframework.com/docs/apis/storage) to store our array of Photos in a key-value store.
+幸运的是，这很容易：我们可以通过调用 [存储 API](https://capacitor.ionicframework.com/docs/apis/storage) 来将我们的数组照片存储在一个密钥值存储器中。
 
-## Storage API
+## 存储 API
 
 Begin by defining a constant variable that will act as the key for the store:
 
