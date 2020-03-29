@@ -13,7 +13,7 @@ nextUrl: '/docs/angular/your-first-app/5-adding-mobile'
 
 ## 存储 API
 
-Begin by defining a constant variable that will act as the key for the store:
+首先定义一个常变量作为商店的密钥：
 
 ```typescript
 export class PhotoService {
@@ -24,7 +24,7 @@ export class PhotoService {
 }
 ```
 
-Next, at the end of the `addNewToGallery` function, add a call to `Storage.set()` to save the Photos array. By adding it here, the Photos array is stored each time a new photo is taken. This way, it doesn’t matter when the app user closes or switches to a different app - all photo data is saved.
+接下来，在 `addNewToGallery` 函数的末尾，调用 `Storage.set()` 来保存照片数组。 每次拍摄新照片时，都会在这里添加照片。 这样的话，无论是用户关闭应用程序还是切换到另一个应用程序时，所有照片数据都已经保存了。
 
 ```typescript
 Storage.set({
@@ -40,7 +40,7 @@ Storage.set({
 });
 ```
 
-With the photo array data saved, create a function called `loadSaved()` that can retrieve that data. We use the same key to retrieve the photos array in JSON format, then parse it into an array:
+保存照片后，创建一个名为 `loadSaved()` 的能够检索该数据的方法。 然后我们使用同一密钥以JSON格式检索照片阵列，然后解析为数组：
 
 ```typescript
 public async loadSaved() {
