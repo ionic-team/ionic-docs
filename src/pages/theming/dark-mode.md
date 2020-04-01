@@ -132,6 +132,10 @@ This allows the page to indicate which color scheme it is comfortable being rend
 color-scheme: light dark;
 ```
 
+| Default scrollbar | Scrollbar with `color-scheme` |
+| ----------------- | ----------------------------- |
+| <figure><img alt="Application without color-scheme" src="/docs/assets/img/theming/color-scheme-light.png" /></figure> | <figure><img alt="Application with color-scheme" src="/docs/assets/img/theming/color-scheme-dark.png" /></figure> |
+
 ## Ionic Dark Theme
 
 Ionic has a recommended theme for variables to use in order to get a dark mode based on the device running the app. It can be broken down into the following parts:
