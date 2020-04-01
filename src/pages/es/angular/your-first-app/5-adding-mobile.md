@@ -1,5 +1,5 @@
 ---
-previousText: 'Loading Photos on Filesystem'
+previousText: 'Cargando fotos desde el sistema de archivos'
 previousUrl: '/docs/angular/your-first-app/4-loading-photos'
 nextText: 'Deploying Mobile'
 nextUrl: '/docs/angular/your-first-app/6-deploying-mobile'
