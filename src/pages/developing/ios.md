@@ -8,7 +8,7 @@ skipIntros: true
 
 # iOS Development
 
-<p class="intro">This guide covers how to run and debug Ionic apps on iOS simulators and devices using <a href="/docs/reference/glossary#capacitor">Capacitor</a> or <a href="/docs/reference/glossary#cordova">Cordova</a>.</p>
+This guide covers how to run and debug Ionic apps on iOS simulators and devices using <a href="/docs/reference/glossary#capacitor">Capacitor</a> or <a href="/docs/reference/glossary#cordova">Cordova</a>. iOS apps can only be developed on macOS with Xcode installed.
 
 There are two workflows for running Ionic apps on iOS:
 * [Running with Xcode](#running-with-xcode)
@@ -16,7 +16,46 @@ There are two workflows for running Ionic apps on iOS:
 
 The Xcode approach is generally more stable, but the Ionic CLI approach offers [live-reload](/docs/reference/glossary#livereload) functionality.
 
-> To develop for iOS, make sure you have followed the [iOS Environment Setup](/docs/installation/ios).
+## Xcode Setup
+
+[Xcode](https://developer.apple.com/xcode/) is the IDE for creating native iOS apps. It includes the iOS SDK and Xcode command-line tools. Xcode can be [downloaded for free](https://developer.apple.com/download/) with an Apple account or it can be installed through the App Store.
+
+Once Xcode is installed, make sure the command-line tools are selected for use:
+
+```shell
+$ xcode-select --install
+```
+
+### Setting up a Development Team
+
+All iOS apps must be code signed, even for development. Luckily, Xcode makes this easy with automatic code signing. The only prerequisite is an Apple ID.
+
+Open Xcode and navigate to **Xcode** &raquo; **Preferences** &raquo; **Accounts**. Add an Apple ID if none are listed. Once logged in, a Personal Team will appear in the team list of the Apple ID.
+
+![Xcode Accounts](/docs/assets/img/installation/ios-xcode-accounts.png)
+
+### Creating an iOS Simulator
+
+The iOS simulator emulates iOS devices on Macs. The following documentation is a quick way to get the iOS simulator set up. For more information, see [Apple's documentation](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/simulator_help_topics/Chapter/Chapter.html).
+
+Open Xcode and navigate to **Window** &raquo; **Devices and Simulators**. Create an **iPhone 11** simulator if one does not already exist.
+
+![iOS Simulators](/docs/assets/img/installation/ios-xcode-simulators-setup.png)
+
+
+## Cordova Setup
+
+Additional setup is required for Cordova to support programmatic builds. This section is not necessary for Capacitor.
+
+### ios-sim & ios-deploy
+
+The [`ios-sim`](https://github.com/ios-control/ios-sim) and [`ios-deploy`](https://github.com/ios-control/ios-deploy) are utilities that deploy apps to the iOS simulator and iOS devices during development. They can be installed globally with [npm](/docs/reference/glossary#npm).
+
+```shell
+$ npm install -g ios-sim
+$ brew install ios-deploy
+```
+
 
 ## Project Setup
 

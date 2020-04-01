@@ -126,8 +126,4 @@ const items = {
     'menu-resources-tools': '/docs/developer-resources/tools',
     'menu-resources-videos': '/docs/developer-resources/videos'
   },
-  'menu-todo': {
-    'menu-installation-ios': '/docs/installation/ios',
-    'menu-installation-android': '/docs/installation/android',
-  },
 };

@@ -7,7 +7,7 @@ nextUrl: '/docs/developer-resources/guides/first-app-v4/creating-photo-gallery-d
 
 # Android, iOS, and the Camera - Oh My!
 
-Previously, we got an Ionic app up and running locally in a web browser. Now, let’s get it onto your iOS or Android device, then start building the photo gallery feature. 
+Previously, we got an Ionic app up and running locally in a web browser. Now, let’s get it onto your iOS or Android device, then start building the photo gallery feature.
 
 ## Add Cordova iOS and Android Platforms
 
@@ -20,7 +20,7 @@ $ ionic cordova platform add android
 
 These commands will create a `config.xml` file, which is used to define Cordova iOS and Android settings. Cordova reads this file and applies each setting as it builds each native app binary.
 
-There are more steps to configure [iOS](/docs/installation/ios) and [Android](/docs/installation/android) native tooling.
+There are more steps to configure [iOS](/docs/developing/ios) and [Android](/docs/developing/android) native tooling.
 
 
 

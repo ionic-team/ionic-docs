@@ -85,11 +85,11 @@ $ npm install @ionic/angular@latest --save
 
 It is recommended that packages get updated through the CLI since npm will now read package versions from the `package-lock.json` first.
 
-## Editors
+## Code Editors
 
-There are a lots of editors to choose from. Here are some of our favorites:
+There are a lot of code editors to choose from. Here are some of our favorites:
 
-- [VS Code](https://code.visualstudio.com): a popular and free text editor made by Microsoft
+- [Visual Studio Code](https://code.visualstudio.com): a popular and free text editor made by Microsoft
 - [Atom](https://atom.io): a hackable text editor made by GitHub
 - [WebStorm](https://www.jetbrains.com/webstorm/): a powerful non-free editor by JetBrains
 
@@ -110,9 +110,9 @@ When an app runs, it will pause at this function. From there, the developer tool
 
 ## Changing Mode
 
-By default, when an app is viewed in the browser, Ionic will apply the `md` mode. However, since Ionic components adapt according to their platform, it is helpful to be able to view what this app looks like on iOS. To do this, add `?ionic:mode=ios` to the URL where the app is being served: `http://localhost:8100/?ionic:mode=ios`.
+By default, when an app is viewed in the browser, Ionic will apply the `md` mode. However, since Ionic components adapt according to their platform, it is helpful to be able to view what the app will look like on iOS. To do this, add `?ionic:mode=ios` to the URL where the app is being served. For example, if the app is served on port `8100`, the url would be: `http://localhost:8100/?ionic:mode=ios`.
 
-> However, this will not change how the browser sees which platform is currently being used. Platform is determined by device detection and inspecting the user-agent. So to change the platform, the user-agent must be changed. To do this, open up Chrome DevTools with <kbd>Ctrl+Shift+I</kbd>(<kbd>Cmd+Option+I</kbd> on Mac), and then toggle device mode on with <kbd>Ctrl+Shift+M</kbd>(<kbd>Cmd+Option+M</kbd> on Mac).
+> This will not change which platform the browser sees being used. The platform is determined by device detection and inspecting the user-agent. To change the platform, the user-agent must be changed. To do this, open up Chrome DevTools with <kbd>Ctrl+Shift+I</kbd>(<kbd>Cmd+Option+I</kbd> on Mac), and then toggle device mode on with <kbd>Ctrl+Shift+M</kbd>(<kbd>Cmd+Option+M</kbd> on Mac).
 
 ![app with a different mode](/docs/assets/img/faq/tips/change-device-platform.png)
 
