@@ -229,8 +229,7 @@ body.dark {
 
   --ion-toolbar-background: #0d0d0d;
 
-  --ion-item-background: #1c1c1c;
-  --ion-item-background-activated: #313131;
+  --ion-item-background: #000000;
 }
 
 
@@ -268,6 +267,10 @@ body.dark {
   --ion-color-step-900: #e7e7e7;
   --ion-color-step-950: #f3f3f3;
 
-  --ion-item-background: #1A1B1E;
+  --ion-item-background: #1e1e1e;
+
+  --ion-toolbar-background: #1f1f1f;
+
+  --ion-tab-bar-background: #1f1f1f;
 }
 ```
