@@ -1,6 +1,6 @@
 ---
-previousText: ''
-previousUrl: ''
+previousText: 'Remote Debugging'
+previousUrl: '/docs/troubleshooting/debugging'
 nextText: 'Runtime Errors'
 nextUrl: '/docs/troubleshooting/runtime'
 disableHtmlPreviews: true

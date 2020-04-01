@@ -83,16 +83,17 @@ const items = {
     'menu-utilities-animations': '/docs/utilities/animations',
     'menu-utilities-gestures': '/docs/utilities/gestures'
   },
-  'menu-publishing': {
-    'menu-publishing-app-store': '/docs/publishing/app-store',
-    'menu-publishing-play-store': '/docs/publishing/play-store',
-    'menu-publishing-progressive-web-app': '/docs/publishing/progressive-web-app',
-    'menu-publishing-desktop-app': '/docs/publishing/desktop-app'
+  'menu-deployment': {
+    'menu-deployment-app-store': '/docs/deployment/app-store',
+    'menu-deployment-play-store': '/docs/deployment/play-store',
+    'menu-deployment-progressive-web-app': '/docs/deployment/progressive-web-app',
+    'menu-deployment-desktop-app': '/docs/deployment/desktop-app'
   },
   'menu-techniques': {
     'menu-techniques-security': '/docs/techniques/security',
   },
   'menu-troubleshooting': {
+    'menu-troubleshooting-debugging': '/docs/troubleshooting/debugging',
     'menu-troubleshooting-build': '/docs/troubleshooting/build',
     'menu-troubleshooting-runtime': '/docs/troubleshooting/runtime',
     'menu-troubleshooting-native': '/docs/troubleshooting/native',

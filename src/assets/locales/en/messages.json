@@ -92,16 +92,17 @@
   "menu-utilities-animations": "Animations",
   "menu-utilities-gestures": "Gestures",
 
-  "menu-publishing": "Deployment",
-  "menu-publishing-app-store": "iOS App Store",
-  "menu-publishing-play-store": "Android Play Store",
-  "menu-publishing-progressive-web-app": "Progressive Web App (PWA)",
-  "menu-publishing-desktop-app": "Electron Desktop App",
+  "menu-deployment": "Deployment",
+  "menu-deployment-app-store": "iOS App Store",
+  "menu-deployment-play-store": "Android Play Store",
+  "menu-deployment-progressive-web-app": "Progressive Web App (PWA)",
+  "menu-deployment-desktop-app": "Electron Desktop App",
 
   "menu-techniques": "Techniques",
   "menu-techniques-security": "Security",
 
   "menu-troubleshooting": "Troubleshooting",
+  "menu-troubleshooting-debugging": "Remote Debugging",
   "menu-troubleshooting-build": "Build Errors",
   "menu-troubleshooting-runtime": "Runtime Errors",
   "menu-troubleshooting-native": "Native Errors",

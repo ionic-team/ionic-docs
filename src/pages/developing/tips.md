@@ -143,33 +143,3 @@ After the app loads, console output and device logs will be printed inside of Xc
 While the Android SDK comes with a stock emulator, it can be slow and unresponsive at times.
 
 [Genymotion](https://www.genymotion.com) is an alternate emulator that is faster, and still allows access to native functionality like GPS and camera.
-
-## Remote Debugging - iOS and Safari
-
-Safari can be used to debug an Ionic app on a connected iOS device.
-
-First, Web Inspector needs to be enabled on the connected device.
-
-Web Inspector can be found under `Settings > Safari > Advanced`.
-
-Next, head over to the Safari on a Mac and enable **Show Develop menu in menu bar** under `Safari > Preferences > Advanced`.
-
-The connected device should now appear in the **Develop** menu.
-
-From there, Safari's developer tools can be used to inspect and debug the app.
-
-## Remote Debugging - Android and Chrome
-
-Chrome DevTools can be used to debug an app when it is running in the browser through `ionic serve`, deployed to an emulator, or a physical device.
-
-To inspect an emulator or physical device, go to `chrome://inspect/#devices` in Chrome, and select the remote target which has the running app.
-
-> Note: Physical devices might need to have developer mode enabled in order to debug from Chrome.
-
-
-## Remote Debugging - VS Code Plugin
-
-VS Code has a dedicated plugin for debugging apps built with Cordova.
-
-[The plugin](https://marketplace.visualstudio.com/items?itemName=vsmobile.cordova-tools) creates a bridge between the device and the VS Code Devtools and allows debugging to be done right in the editor.
-
