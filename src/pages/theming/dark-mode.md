@@ -118,7 +118,7 @@ function checkToggle(shouldCheck) {
 
 ## Adjusting System UI Components
 
-When developing a dark theme, you may notice that certain system UI components are not adjusting to dark mode properly. To fix this you will need to specify the `color-scheme`. At the time of writing, this is supported in Safari and will be implemented in Chrome soon.
+When developing a dark theme, you may notice that certain system UI components are not adjusting to dark mode properly. To fix this you will need to specify the `color-scheme`. See [color-scheme Browser Compatibility](https://caniuse.com/#feat=mdn-html_elements_meta_name_color-scheme) for details on cross browser support.
 
 While you may be using Ionic components instead of just the native components, `color-scheme` can also affect aspects of your application such as the scrollbar. In order to use `color-scheme` you will need to add the following HTML to the `head` of your application:
 
@@ -131,8 +131,6 @@ This allows the page to indicate which color scheme it is comfortable being rend
 ```css
 color-scheme: light dark;
 ```
-
-<docs-codepen preview="false" user="ionic" slug="dyorvLd" height="300px" default-tab="result"></docs-codepen>
 
 ## Ionic Dark Theme
 
