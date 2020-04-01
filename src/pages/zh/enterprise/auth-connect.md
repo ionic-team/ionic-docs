@@ -1,8 +1,8 @@
 ---
 title: Auth Connect
 template: enterprise-plugin
-version: 1.6.2
-minor: 1.6.X
+version: 1.8.1
+minor: 1.8.X
 ---
 
 Ionic Auth Connect handles logging in and/or registering a user with an authentication provider (such as Auth0, Azure AD, or AWS Cognito) using industry standard OAuth/OpenId Connect on iOS, Android, or on the web.
@@ -294,10 +294,10 @@ get the access token, once logged in, for API calls
 
 **Parameters:**
 
-| Name                 | Type                     |
-| -------------------- | ------------------------ |
-| `Optional` tokenName | `undefined` \| `string` |
-| `Optional` scopes    | `undefined` \| `string` |
+| Name                 | Type           | Description                                                                                           |
+| -------------------- | -------------- | ----------------------------------------------------------------------------------------------------- |
+| `Optional` tokenName | `undefined` \ | `string` | Optional token name, only used when multiple tokens are required (Azure specific feature). |
+| `Optional` scopes    | `undefined` \ | `string` | The scopes for the access token.                                                           |
 
 
 **Returns:** `Promise`<`string` \| `undefined`>
@@ -328,6 +328,18 @@ get the parsed id token, includes requested scope values
 
 * * *
 
+<a id="iionicauth.getrefreshtoken"></a>
+
+### getRefreshToken
+
+▸ **getRefreshToken**(): `Promise`<`string` \| `undefined`>
+
+get the refresh token if available
+
+**Returns:** `Promise`<`string` \| `undefined`>
+
+* * *
+
 <a id="iionicauth.handlecallback"></a>
 
 ### handleCallback
@@ -347,6 +359,37 @@ called by the hosting app when callbacks happen, these will be to the URL specif
 
 * * *
 
+<a id="iionicauth.isaccesstokenavailable"></a>
+
+### isAccessTokenAvailable
+
+▸ **isAccessTokenAvailable**(tokenName?: *`undefined` \| `string`*): `Promise`<`boolean`>
+
+check to see if the access token is available
+
+**Parameters:**
+
+| Name                 | Type           | Description                                                                                           |
+| -------------------- | -------------- | ----------------------------------------------------------------------------------------------------- |
+| `Optional` tokenName | `undefined` \ | `string` | Optional token name, only used when multiple tokens are required (Azure specific feature). |
+
+
+**Returns:** `Promise`<`boolean`>
+
+* * *
+
+<a id="iionicauth.isaccesstokenexpired"></a>
+
+### isAccessTokenExpired
+
+▸ **isAccessTokenExpired**(): `Promise`<`boolean`>
+
+check to see if the access token is expired
+
+**Returns:** `Promise`<`boolean`>
+
+* * *
+
 <a id="iionicauth.isauthenticated"></a>
 
 ### isAuthenticated
@@ -354,6 +397,18 @@ called by the hosting app when callbacks happen, these will be to the URL specif
 ▸ **isAuthenticated**(): `Promise`<`boolean`>
 
 check to see if the user is logged in, and refresh the token if needed
+
+**Returns:** `Promise`<`boolean`>
+
+* * *
+
+<a id="iionicauth.isrefreshtokenavailable"></a>
+
+### isRefreshTokenAvailable
+
+▸ **isRefreshTokenAvailable**(): `Promise`<`boolean`>
+
+check to see if the refresh token is available
 
 **Returns:** `Promise`<`boolean`>
 
@@ -420,6 +475,25 @@ Event handler which can be overridden to handle successful login events
 Event handler which can be overridden to handle successful logout events
 
 **Returns:** `void`
+
+* * *
+
+<a id="iionicauth.refreshsession"></a>
+
+### refreshSession
+
+▸ **refreshSession**(tokenName?: *`undefined` \| `string`*): `Promise`<`void`>
+
+refresh the session, throws if refresh token is invalid or missing
+
+**Parameters:**
+
+| Name                 | Type           | Description                                                                                           |
+| -------------------- | -------------- | ----------------------------------------------------------------------------------------------------- |
+| `Optional` tokenName | `undefined` \ | `string` | Optional token name, only used when multiple tokens are required (Azure specific feature). |
+
+
+**Returns:** `Promise`<`void`>
 
 * * *
 
@@ -831,6 +905,8 @@ clear storage
 
 get the saved access token
 
+***param***: Optional token name, only used when multiple tokens are required (Azure specific feature).
+
 * * *
 
 <a id="tokenstorageprovider.getauthresponse"></a>
@@ -870,6 +946,8 @@ get the saved refresh token
 **● setAccessToken**: *`undefined` \| `function`*
 
 save the access token
+
+***param***: Optional token name, only used when multiple tokens are required (Azure specific feature).
 
 * * *
 
@@ -979,6 +1057,24 @@ save the refresh token
 * * *
 
 # Changelog
+
+### \[1.8.1\] (2020-04-01)
+
+### Bug Fixes
+
+* await the access token from storage 
+
+### \[1.8.0\] (2020-04-01)
+
+### Features
+
+* isAccessTokenAvailable 
+
+### \[1.7.0\] (2020-03-27)
+
+### Features
+
+* add isAccessTokenExpired, isRefreshTokenAvailable, getRefreshToken, refreshSession 
 
 ### \[1.6.2\] (2020-03-17)
 
