@@ -242,6 +242,7 @@ pre {
 pre code {
   background-color: transparent;
   color: inherit;
+  font-size: 13px;
   padding: 0;
   white-space: inherit;
 }
