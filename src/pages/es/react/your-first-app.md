@@ -30,7 +30,7 @@ Descarga e instala las siguientes herramientas para asegurar que tengas un ambie
 * **Node.js** para interactuar con el ecosistema Ionic. [Descarga la versión LTS (soporte a largo plazo) aquí](https://nodejs.org/en/).
 * **Un editor de código** para... escribir código! Somos fans de [Visual Studio Code](https://code.visualstudio.com/).
 * **Terminal de línea de comandos (CLI) **: 
- * **Windows** users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode. 
+ * **Windows** users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode.
  * **Mac/Linux** users, virtually any terminal will work.
 
 ## Install Ionic Tooling
@@ -45,7 +45,7 @@ $ npm install -g @ionic/cli native-run cordova-res
 
 > The `-g` option means *install globally*. When packages are installed globally, `EACCES` permission errors can occur.
 > 
-> Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](/docs/faq/tips#resolving-permission-errors) for more information.
+> Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](/docs/developing/tips#resolving-permission-errors) for more information.
 
 ## Crear una App
 
@@ -131,8 +131,8 @@ We put the visual aspects of our app into `<IonContent>`. In this case, it’s w
 
 ```typescript
 import { camera, trash, close } from 'ionicons/icons';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, 
-         IonFab, IonFabButton, IonIcon, IonGrid, IonRow, 
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar,
+         IonFab, IonFabButton, IonIcon, IonGrid, IonRow,
          IonCol, IonImg, IonActionSheet } from '@ionic/react';
 ```
 
