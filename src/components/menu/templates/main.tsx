@@ -106,7 +106,7 @@ const items = {
     'menu-core-concepts-what-are-progressive-web-apps': '/docs/core-concepts/what-are-progressive-web-apps',
   },
   'menu-contributing': {
-    'menu-contributing-contributing': '/docs/contributing/contributing',
+    'menu-contributing-how-to-contribute': '/docs/contributing/how-to-contribute',
     'menu-contributing-coc': '/docs/contributing/coc',
   },
   'menu-reference': {

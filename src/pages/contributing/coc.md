@@ -1,6 +1,6 @@
 ---
 previousText: 'How to Contribute'
-previousUrl: '/docs/contributing/contributing'
+previousUrl: '/docs/contributing/how-to-contribute'
 ---
 
 # Code of Conduct
