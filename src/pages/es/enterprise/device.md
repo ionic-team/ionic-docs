@@ -9,21 +9,21 @@ The Device plugin provides access to information about the underlying device and
 
 <native-ent-install plugin-id="device" variables=""></native-ent-install>
 
-## Index
+## Índice
 
-### Classes
+### Clases
 
 * [Device](#device)
 
 * * *
 
-## Classes
+## Clases
 
 <a id="device"></a>
 
 ### Device
 
-***usage***:
+***uso***:
 
 ```typescript
 import { Device } from '@ionic-enterprise/device/ngx';
@@ -41,7 +41,7 @@ console.log('Device UUID is: ' + this.device.uuid);
 
 **● cordova**: *`string`*
 
-Get the version of Cordova running on the device.
+Obtiene la versión de Cordova que se ejecuta en el dispositivo.
 
 * * *
 
@@ -51,7 +51,7 @@ Get the version of Cordova running on the device.
 
 **● isVirtual**: *`boolean`*
 
-Whether the device is running on a simulator.
+Determina si el dispositivo se ejecuta en un simulador.
 
 * * *
 
@@ -61,7 +61,7 @@ Whether the device is running on a simulator.
 
 **● manufacturer**: *`string`*
 
-Get the device's manufacturer.
+Obtiene el fabricante del dispositivo.
 
 * * *
 
@@ -91,7 +91,7 @@ Get the device's operating system name.
 
 **● serial**: *`string`*
 
-Get the device hardware serial number.
+Obtiene el número de serie del hardware del dispositivo.
 
 * * *
 
@@ -111,7 +111,7 @@ Get the device's Universally Unique Identifier (UUID).
 
 **● version**: *`string`*
 
-Get the operating system version.
+Obtiene la versión del sistema operativo.
 
 * * *
 
