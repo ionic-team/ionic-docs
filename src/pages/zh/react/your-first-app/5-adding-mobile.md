@@ -36,7 +36,7 @@ const savePicture = async (photo: CameraPhoto, fileName: string) => {
 };
 ```
 
-Next, update the `getPhotoFile` method. When running on mobile, return the complete file path to the photo using the Filesystem API. When setting the `webviewPath`, use the special `Capacitor.convertFileSrc` method ([details here](https://ionicframework.com/docs/building/webview#file-protocol)). Replace the existing `getPhotoFile` function with:
+Next, update the `getPhotoFile` method. When running on mobile, return the complete file path to the photo using the Filesystem API. When setting the `webviewPath`, use the special `Capacitor.convertFileSrc` method ([details here](https://ionicframework.com/docs/core-concepts/webview#file-protocol)). Replace the existing `getPhotoFile` function with:
 
 ```typescript
 const getPhotoFile = async (cameraPhoto: CameraPhoto, fileName: string): Promise<Photo> => {
@@ -48,14 +48,14 @@ const getPhotoFile = async (cameraPhoto: CameraPhoto, fileName: string): Promise
     });
 
     // Display the new image by rewriting the 'file://' path to HTTP
-    // Details: https://ionicframework.com/docs/building/webview#file-protocol
+    // Details: https://ionicframework.com/docs/core-concepts/webview#file-protocol
     return {
       filepath: fileUri.uri,
       webviewPath: Capacitor.convertFileSrc(fileUri.uri),
     };
   }
   else {
-    // Use webPath to display the new image instead of base64 since it's 
+    // Use webPath to display the new image instead of base64 since it's
     // already loaded into memory
     return {
       filepath: fileName,
@@ -93,7 +93,7 @@ set(PHOTO_STORAGE,
   isPlatform('hybrid')
     ? JSON.stringify(newPhotos)
     : JSON.stringify(newPhotos.map(p => {
-      // Don't save the base64 representation of the photo data, 
+      // Don't save the base64 representation of the photo data,
       // since it's already saved on the Filesystem
       const photoCopy = { ...p };
       delete photoCopy.base64;
