@@ -1,6 +1,6 @@
 ---
 nextText: 'Code of Conduct'
-nextUrl: '/docs/core-concepts/webview'
+nextUrl: '/docs/contributing/coc'
 ---
 
 # Contributing to Ionic
