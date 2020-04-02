@@ -48,7 +48,7 @@ CLI buscara las siguientes variables de entorno:
 * `IONIC_HTTP_PROXY`: Set a URL for proxying all CLI requests through. See [Using a Proxy](./using-a-proxy).
 * `IONIC_TOKEN`: Automatically authenticates with [Ionic Appflow](https://ionicframework.com/appflow).
 
-## Banderas
+## Flags
 
 CLI flags are global options that alter the behavior of a CLI command.
 
