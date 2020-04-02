@@ -1,21 +1,21 @@
 ---
 ---
 
-# Configuration
+# Configuración
 
-## Files
+## Archivos
 
-Configuration values are stored in JSON files. The Ionic CLI maintains a global configuration file, usually located at `~/.ionic/config.json`, and project configuration files, usually at the project's root directory as `ionic.config.json`.
+Los valores de configuración son guardados en archivos JSON. The Ionic CLI maintains a global configuration file, usually located at `~/.ionic/config.json`, and project configuration files, usually at the project's root directory as `ionic.config.json`.
 
-The CLI provides commands for setting and printing config values from project config files and the global CLI config file. See `ionic config --help` or see the documentation for usage of [`ionic config get`](/docs/cli/commands/config-get) and [`ionic config set`](/docs/cli/commands/config-set).
+The CLI provides commands for setting and printing config values from project config files and the global CLI config file. Vea `ionic config --help` o vea la documentación para el uso de [`ionic config get`](/docs/cli/commands/config-get) y [`ionic config set`](/docs/cli/commands/config-set).
 
-### Project Configuration File
+### Configuración del Proyecto
 
-Each Ionic project has a project configuration file, usually at the project's root directory. The following is an annotated `ionic.config.json` file.
+Cada proyecto Ionic tiene un archivo de configuración de proyecto, ubicado normalmente en el directorio raíz del proyecto. The following is an annotated `ionic.config.json` file.
 
 ```json
 {
-  // The human-readable name of the app.
+  // El nombre legible por humanos de la aplicación.
   "name": "My App",
 
   // The project type of the app. The CLI uses this value to determine which
@@ -40,15 +40,15 @@ Each Ionic project has a project configuration file, usually at the project's ro
 }
 ```
 
-## Environment Variables
+## Variables de entorno
 
-The CLI will look for the following environment variables:
+CLI buscara las siguientes variables de entorno:
 
 * `IONIC_CONFIG_DIRECTORY`: The directory of the global CLI config. Defaults to `~/.ionic`.
 * `IONIC_HTTP_PROXY`: Set a URL for proxying all CLI requests through. See [Using a Proxy](./using-a-proxy).
 * `IONIC_TOKEN`: Automatically authenticates with [Ionic Appflow](https://ionicframework.com/appflow).
 
-## Flags
+## Banderas
 
 CLI flags are global options that alter the behavior of a CLI command.
 
@@ -110,7 +110,7 @@ The Ionic CLI supports a multi-app configuration setup, which involves multiple 
 
 1. Use `ionic start` to create Ionic apps or `ionic init` to initialize existing apps (see [Adding an App](#adding-an-app) for full details).
 
-### Project Structure
+### Estructura del proyecto
 
 In a multi-app project, project structure is flexible. The only requirement is a multi-app `ionic.config.json` file at the root of the repository.
 
@@ -118,7 +118,7 @@ Below is an example setup, where apps in the `apps/` directory are separated fro
 
 <file-tree> <file-tree-directory name="apps"> <file-tree-directory name="myApp" collapsed></file-tree-directory> <file-tree-directory name="myOtherApp" collapsed></file-tree-directory> </file-tree-directory> <file-tree-directory name="lib" collapsed></file-tree-directory> <file-tree-file name="ionic.config.json"></file-tree-file> <file-tree-file name="package.json"></file-tree-file> </file-tree>
 
-### Config File
+### Archivo de configuración
 
 In a multi-app project, apps share a single `ionic.config.json` file at the root of the repository instead of each app having their own. The multi-app config file contains the configuration for each app by nesting configuration objects in a `projects` object. A default app can be specified using `defaultProject`.
 
@@ -154,7 +154,7 @@ When a multi-app project is detected, the Ionic CLI will operate under the conte
 
 Apps can be registered in a multi-app project either by using `ionic start` to create new apps or `ionic init` to initialize existing apps.
 
-#### Using `ionic start`
+#### Usando `ionic start`
 
 If a multi-app project is detected during `ionic start`, the CLI will add the app configuration to the root `ionic.config.json` file instead of creating a project-specific one.
 
