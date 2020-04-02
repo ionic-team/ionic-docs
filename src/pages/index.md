@@ -8,9 +8,9 @@ demoUrl: https://ionic-docs-demo.herokuapp.com/
 demoSourceUrl: https://github.com/ionic-team/docs-demo
 ---
 
-Ionic Framework is an open source UI toolkit for building performant, high-quality mobile and desktop apps using web technologies — HTML, CSS, and JavaScript.
+Ionic Framework is an open source UI toolkit for building performant, high-quality mobile and desktop apps using web technologies — HTML, CSS, and JavaScript — with integrations for popular frameworks like <a href="/docs/angular/overview" target="_blank"> Angular</a> and <a href="/react" target="_blank">React</a>.
 
-Learn what Ionic is all about on our <a href="/">homepage</a>, or start building by <a href="/docs/installation/cli">Installing Ionic</a> or following our <a href="/docs/intro/first-app">First App Tutorial</a>.
+Get started building by <a href="/docs/installation/cli">installing Ionic</a> or following our <a href="/docs/intro/first-app">First App Tutorial</a> to learn the main concepts.
 
 <docs-cards>
   <docs-card header="Installation Guide" href="/docs/installation/cli" icon="/docs/assets/icons/guide-installation-icon.svg" hover-icon="/docs/assets/icons/guide-installation-icon-hover.svg">
