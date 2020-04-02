@@ -1,4 +1,6 @@
 .page-index docs-cards {
+  margin-top: 48px;
+
   font-size: 14px;
 
   grid-template-columns: repeat(auto-fit, minmax(240px, 45%));
