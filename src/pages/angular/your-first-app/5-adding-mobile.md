@@ -51,12 +51,12 @@ private async readAsBase64(cameraPhoto: CameraPhoto) {
     const response = await fetch(cameraPhoto.webPath);
     const blob = await response.blob();
 
-    return await this.convertBlobToBase64(blob) as string;  
+    return await this.convertBlobToBase64(blob) as string;
   }
 }
 ```
 
-Next, update the `getPhotoFile()` method. When running on mobile, return the complete file path to the photo using the Filesystem API. When setting the `webviewPath`, use the special `Capacitor.convertFileSrc()` method ([details here](https://ionicframework.com/docs/building/webview#file-protocol)).
+Next, update the `getPhotoFile()` method. When running on mobile, return the complete file path to the photo using the Filesystem API. When setting the `webviewPath`, use the special `Capacitor.convertFileSrc()` method ([details here](https://ionicframework.com/docs/core-concepts/webview#file-protocol)).
 
 ```typescript
 private async getPhotoFile(cameraPhoto, fileName) {
@@ -68,14 +68,14 @@ private async getPhotoFile(cameraPhoto, fileName) {
     });
 
     // Display the new image by rewriting the 'file://' path to HTTP
-    // Details: https://ionicframework.com/docs/building/webview#file-protocol
+    // Details: https://ionicframework.com/docs/core-concepts/webview#file-protocol
     return {
       filepath: fileUri.uri,
       webviewPath: Capacitor.convertFileSrc(fileUri.uri),
     };
   }
   else {
-    // Use webPath to display the new image instead of base64 since it's 
+    // Use webPath to display the new image instead of base64 since it's
     // already loaded into memory
     return {
       filepath: fileName,
@@ -93,7 +93,7 @@ public async loadSaved() {
   const photos = await Storage.get({ key: this.PHOTO_STORAGE });
   this.photos = JSON.parse(photos.value) || [];
 
-  // Easiest way to detect when running on the web: 
+  // Easiest way to detect when running on the web:
   // “when the platform is NOT hybrid, do this”
   if (!this.platform.is('hybrid')) {
     // Display the photo by reading into base64 format
@@ -103,7 +103,7 @@ public async loadSaved() {
           path: photo.filepath,
           directory: FilesystemDirectory.Data
       });
-    
+
       // Web platform only: Save the photo into the base64 field
       photo.base64 = `data:image/jpeg;base64,${readFile.data}`;
     }
@@ -117,9 +117,9 @@ At the bottom of the `addNewtoGallery()` function, update the Storage API logic.
 Storage.set({
   key: this.PHOTO_STORAGE,
   value: this.platform.is('hybrid')
-          ? JSON.stringify(this.photos)  
+          ? JSON.stringify(this.photos)
           : JSON.stringify(this.photos.map(p => {
-            // Don't save the base64 representation of the photo data, 
+            // Don't save the base64 representation of the photo data,
             // since it's already saved on the Filesystem
             const photoCopy = { ...p };
             delete photoCopy.base64;
@@ -131,7 +131,7 @@ Storage.set({
 Finally, a small change to `tab2.page.html` is required to support both web and mobile. If running the app on the web, the `base64` property will contain the photo data to display. If on mobile, the `webviewPath` will be used:
 
 ```html
-<ion-col size="6" 
+<ion-col size="6"
     *ngFor="let photo of photoService.photos; index as position">
   <ion-img src="{{ photo.base64 ? photo.base64 : photo.webviewPath }}">
   </ion-img>

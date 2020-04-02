@@ -38,6 +38,7 @@ docs-header header {
 
 docs-header a {
   color: inherit;
+  font-weight: 500;
   padding: 10px 0;
 }
 
