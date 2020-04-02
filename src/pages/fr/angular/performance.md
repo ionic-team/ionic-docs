@@ -1,6 +1,6 @@
 ---
-previousText: 'Plate-forme'
-previousUrl: '/docs/angular/platform'
+previousText: 'Storage'
+previousUrl: '/docs/angular/storage'
 ---
 
 # Performance Angular
