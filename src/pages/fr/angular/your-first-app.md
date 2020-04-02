@@ -32,7 +32,7 @@ Download and install these right away to ensure an optimal Ionic development exp
 * **Node.js** for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
 * **A code editor** for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
 * **Command-line interface/terminal (CLI)**: 
- * **Windows** users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode. 
+ * **Windows** users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode.
  * **Mac/Linux** users, virtually any terminal will work.
 
 ## Installer l'outillage ionic
@@ -47,7 +47,7 @@ $ npm install -g @ionic/cli native-run cordova-res
 
 > L'option ` -g ` signifie * installer globalement *. Lorsque les packages sont installés globalement, des erreurs d'autorisation ` EACCES ` peuvent se produire.
 > 
-> Pensez à configurer npm pour qu'il fonctionne globalement sans autorisations élevées. Voir [ Résolution des erreurs d'autorisation ](/docs/faq/tips#resolving-permission-errors) pour plus d'informations.
+> Pensez à configurer npm pour qu'il fonctionne globalement sans autorisations élevées. See [Resolving Permission Errors](/docs/developing/tips#resolving-permission-errors) for more information.
 
 ## Créer une application
 
