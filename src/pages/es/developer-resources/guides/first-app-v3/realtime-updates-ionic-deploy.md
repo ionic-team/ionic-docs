@@ -77,7 +77,7 @@ Next, create a local, native build of the app.
 
 ## Android Builds
 
-Follow the [Android Setup instructions](/docs/installation/android), which includes installing Java 8 and Android Studio on your machine. Then, in your Terminal run:
+Follow the [Android Setup instructions](/docs/developing/android), which includes installing Java 8 and Android Studio on your machine. Then, in your Terminal run:
 
 ```shell
 ionic cordova build android --prod
@@ -87,13 +87,13 @@ This will generate a unsigned debug build (meaning the app can run on any Androi
 
 ## iOS Builds
 
-iOS is [a bit trickier to set up](/docs/installation/ios) than Android and requires a Mac computer. Ensure XCode is updated to the latest version and set up a development team. Then, in your Terminal, run:
+iOS is [a bit trickier to set up](/docs/developing/ios) than Android and requires a Mac computer. Ensure XCode is updated to the latest version and set up a development team. Then, in your Terminal, run:
 
 ```shell
 ionic cordova build ios --prod
 ```
 
-Then, continue to [follow the instructions here](/docs/publishing/app-store) regarding signing certificates, etc. With a native version of your app built, let’s copy it to your device of choice.
+Then, continue to [follow the instructions here](/docs/deploying/app-store) regarding signing certificates, etc. With a native version of your app built, let’s copy it to your device of choice.
 
 ## Add the Native App to Your Local Device
 
