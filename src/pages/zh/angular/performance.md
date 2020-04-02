@@ -1,6 +1,6 @@
 ---
-previousText: '平台'
-previousUrl: '/docs/angular/platform'
+previousText: 'Storage'
+previousUrl: '/docs/angular/storage'
 ---
 
 # Angular 性能
