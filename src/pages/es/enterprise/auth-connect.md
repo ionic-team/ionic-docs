@@ -1,7 +1,7 @@
 ---
 title: Auth Connect
 template: enterprise-plugin
-version: 1.8.1
+version: "1.8.1 Elemento de bloque de texto(div)\nXPath: /div[@id=front-matter]/ul/li[3]/div[2]\nFile: auth-connect. md"
 minor: 1.8.X
 ---
 
