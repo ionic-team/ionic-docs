@@ -86,6 +86,10 @@
 
   border: none;
 
+  overflow: hidden;
+
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+
   z-index: 1;
 }
 
