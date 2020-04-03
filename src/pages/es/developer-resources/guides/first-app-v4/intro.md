@@ -1,9 +1,9 @@
 ---
-nextText: 'iOS, Android, and the Camera'
+nextText: 'iOS, Android, y la Cámara'
 nextUrl: '/docs/developer-resources/guides/first-app-v4/ios-android-camera'
 ---
 
-# Your First Ionic App: Angular
+# Tu primera App Ionic: Angular
 
 The great thing about Ionic is that with one codebase, you can build for any platform using familiar web tools and languages. Follow along as we create a working Photo Gallery. Here’s the before and after:
 
@@ -11,22 +11,22 @@ The great thing about Ionic is that with one codebase, you can build for any pla
 
 It’s easy to get started. Note that all code referenced in this guide can be [found on GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4/).
 
-## Required Tools
-Download/install these right away to ensure an optimal Ionic development experience:
-* [Git](https://git-scm.com/downloads) for version control.
+## Herramientas necesarias
+Descarga e instala las siguientes herramientas para asegurar que tengas un ambiente óptimo para el desarrollo con Ionic:
+* [Git](https://git-scm.com/downloads) para el control de versiones.
 * <strong>SSH client</strong>, such as [PuTTy](https://www.putty.org/), for secure login to Ionic Appflow.
 * <strong>Node.js</strong> for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
 * <strong>A code editor</strong> for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
 * <strong>Command-line terminal (CLI)</strong>: FYI <strong>Windows</strong> users, for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode. For <strong>Mac/Linux</strong> users, virtually any terminal will work.
 
-## Install Ionic and Cordova
-Run the following in the command line:
+## Instalar Ionic y Cordova
+Ejecute las siguientes líneas en el terminal de comandos:
 
 ```shell
 $ npm install -g @ionic/cli cordova
 ```
 
-> The `-g` option means _install globally_. When packages are installed globally, `EACCES` permission errors can occur.
+> La opción `-g` significa _instalar globalmente_. When packages are installed globally, `EACCES` permission errors can occur.
 > 
 > Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](/docs/developing/tips#resolving-permission-errors) for more information.
 
