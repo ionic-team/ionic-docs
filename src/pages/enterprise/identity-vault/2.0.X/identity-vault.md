@@ -10,6 +10,8 @@ otherVersions:
   - 3.2.X
   - 3.3.X
   - 3.4.X
+  - 3.5.X
+  - 3.6.X
 ---
 
 # Ionic Enterprise Identity Vault

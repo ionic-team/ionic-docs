@@ -1,8 +1,8 @@
 ---
 title: Identity Vault
 template: enterprise-plugin
-version: 3.5.1
-minor: 3.5.X
+version: 3.6.3
+minor: 3.6.X
 otherVersions:
   - 2.0.X
   - 3.0.X
@@ -80,57 +80,19 @@ constructor(private http: HttpClient, private router: Router, platform: Platform
 }
 ```
 
-Automatically adding your token to requests
--------------------------------------------
+## Automatically adding your token to requests
 
 If you'd like to automatically add your authorization token from your identity service to every request, you can see a simple example at in our [demo repo](https://github.com/ionic-team/cs-demo-iv/blob/master/src/app/services/http-interceptors/auth-interceptor.ts).
 
-**Important Note**
+## Upgrading to v4.0.0
 
-> If you're upgrading from the `3.0.0` to `>=3.1.0` versions you no longer need to install 2 packages. The plugin now ships under the `@ionic-enterprise/identity-vault` package. Simply run the commands below to upgrade. Imports and usage should remain identical.
+If you have Identity Vault **<3.1.0**, please see [Upgrading from v3.0.0 to >=v3.1.0](https://ionicframework.com/docs/enterprise/identity-vault/3.6.X/identity-vault#upgrading-from-v3-0-0-to-v3-1-0) before following these upgrade instructions.
 
-Upgrading from v3.0.0 to >=v3.1.0
--------------------------------
+* Upgrade your app to use `cordova-android` 9.x (see the [9.0.0 milestone](https://github.com/apache/cordova-android/milestone/2) for progress) or Capacitor 2.x
+  * For Capacitor, please see the upgrade guide for [Android](https://capacitor.ionicframework.com/docs/android/updating) and [iOS](https://capacitor.ionicframework.com/docs/ios/updating).
+* Install the new plugin version.
 
-First, remove v3.0.0 of the plugin:
-
-```shell
-# NOTE: do not prepend @ionic-enterprise to the plugin name when removing v3.0.0
-ionic cordova plugin rm cordova-plugin-identity-vault
-```
-
-Make sure `@ionic-enterprise/cordova-plugin-identity-vault` and `cordova-plugin-identity-vault` are completely removed from your package.json in all locations.
-
-```javascript
-...
-  "dependencies": {
-    ...
-     // Make sure both of these are gone from the dependencies
-    "@ionic-enterprise/cordova-plugin-identity-vault": "3.0.0",
-    "@ionic-enterprise/identity-vault": "3.0.0",
-    ...
-  }
-  "cordova": {
-    "plugins": {
-      ...
-      // Make sure both of these are gone from the cordova plugins section as well
-      "@ionic-enterprise/cordova-plugin-identity-vault": {},
-      "cordova-plugin-identity-vault": {}
-      ...
-    },
-    ...
-  }
-...
-```
-
-It should now be safe to add >=v3.1.0 of the plugin:
-
-```shell
-ionic cordova plugin add @ionic-enterprise/identity-vault@latest
-```
-
-API Documentation
------------------
+## API Documentation
 
 You can find the API and interface documentation for everything below. The main classes to pay attention to are:
 
@@ -466,6 +428,20 @@ Get the current configuration of the vault
 the configuration
 
 ___
+<a id="identityvault.getkeys"></a>
+
+###  getKeys
+
+▸ **getKeys**(): `Promise`<`string`[]>
+
+Get all keys with stored values.
+
+*__throws__*: [VaultError](#vaulterror) - if vault is locked
+
+**Returns:** `Promise`<`string`[]>
+array with all keys
+
+___
 <a id="identityvault.gettoken"></a>
 
 ###  getToken
@@ -629,6 +605,25 @@ Check how many remaining failed attempts are left until vault clears
 
 **Returns:** `Promise`<`number`>
 the number of remaining attempts
+
+___
+<a id="identityvault.removevalue"></a>
+
+###  removeValue
+
+▸ **removeValue**(key: *`string`*): `Promise`<`void`>
+
+Removes data under the given key.
+
+*__throws__*: [VaultError](#vaulterror) - if vault is locked, or if passcode is enabled but passcode has not been setup
+
+**Parameters:**
+
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| key | `string` |  the key to remove the value from |
+
+**Returns:** `Promise`<`void`>
 
 ___
 <a id="identityvault.setbiometricsenabled"></a>
@@ -1039,6 +1034,23 @@ Called when attempting passcode unlock to allow for user defined passcode prompt
 - a string to use as the passcode of undefined to use native prompts
 
 ___
+<a id="identityvaultuser.onsessionrestoreerror"></a>
+
+###  onSessionRestoreError
+
+▸ **onSessionRestoreError**(err: *[VaultError](#vaulterror)*): `any`
+
+Called when the session fails to auto restore
+
+**Parameters:**
+
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| err | [VaultError](#vaulterror) |  The [VaultError](#vaulterror) or that occurred.<br><br> |
+
+**Returns:** `any`
+
+___
 <a id="identityvaultuser.onsessionrestored"></a>
 
 ###  onSessionRestored
@@ -1069,6 +1081,23 @@ Called when there is an error during vault setup
 | Name | Type | Description |
 | ------ | ------ | ------ |
 | error | [VaultError](#vaulterror) |  The [VaultError](#vaulterror) that occurred.<br><br> |
+
+**Returns:** `any`
+
+___
+<a id="identityvaultuser.onunlockonreadyerror"></a>
+
+###  onUnlockOnReadyError
+
+▸ **onUnlockOnReadyError**(err: *[VaultError](#vaulterror)*): `any`
+
+Called when the automatically unlocking the vault after it is ready fails.
+
+**Parameters:**
+
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| err | [VaultError](#vaulterror) |  The [VaultError](#vaulterror) or that occurred.<br><br> |
 
 **Returns:** `any`
 
@@ -1388,6 +1417,50 @@ ___
 
 The options passed the the [IonicNativeAuthPlugin](#ionicnativeauthplugin) when creating a vault with [getVault](#identityvaultuser.getvault)
 
+<a id="pluginoptions.androidpromptdescription"></a>
+
+### `<Optional>` androidPromptDescription
+
+**● androidPromptDescription**: *`string`*
+
+The description text for the Android authentication prompt.
+
+*__default__*: null
+
+___
+<a id="pluginoptions.androidpromptnegativebuttontext"></a>
+
+### `<Optional>` androidPromptNegativeButtonText
+
+**● androidPromptNegativeButtonText**: *`string`*
+
+The cancel text for the Android authentication prompt.
+
+*__default__*: "Cancel"
+
+___
+<a id="pluginoptions.androidpromptsubtitle"></a>
+
+### `<Optional>` androidPromptSubtitle
+
+**● androidPromptSubtitle**: *`string`*
+
+The subtitle text for the Android authentication prompt.
+
+*__default__*: null
+
+___
+<a id="pluginoptions.androidprompttitle"></a>
+
+### `<Optional>` androidPromptTitle
+
+**● androidPromptTitle**: *`string`*
+
+The title text for the Android authentication prompt.
+
+*__default__*: "Please Authenticate"
+
+___
 <a id="pluginoptions.hidescreenonbackground"></a>
 
 ### `<Optional>` hideScreenOnBackground
@@ -1519,6 +1592,50 @@ ___
 
 The configuration file returned to event handlers such as [onConfigChange](#identityvaultuser.onconfigchange) and [onVaultReady](#identityvaultuser.onvaultready).
 
+<a id="vaultconfig.androidpromptdescription"></a>
+
+### `<Optional>` androidPromptDescription
+
+**● androidPromptDescription**: *`string`*
+
+The description text for the Android authentication prompt.
+
+*__default__*: null
+
+___
+<a id="vaultconfig.androidpromptnegativebuttontext"></a>
+
+### `<Optional>` androidPromptNegativeButtonText
+
+**● androidPromptNegativeButtonText**: *`string`*
+
+The cancel text for the Android authentication prompt.
+
+*__default__*: "Cancel"
+
+___
+<a id="vaultconfig.androidpromptsubtitle"></a>
+
+### `<Optional>` androidPromptSubtitle
+
+**● androidPromptSubtitle**: *`string`*
+
+The subtitle text for the Android authentication prompt.
+
+*__default__*: null
+
+___
+<a id="vaultconfig.androidprompttitle"></a>
+
+### `<Optional>` androidPromptTitle
+
+**● androidPromptTitle**: *`string`*
+
+The title text for the Android authentication prompt.
+
+*__default__*: "Please Authenticate"
+
+___
 <a id="vaultconfig.authmode"></a>
 
 ### `<Optional>` authMode
@@ -1641,6 +1758,50 @@ ___
 
 The options passed in to initialize the vault.
 
+<a id="vaultoptions.androidpromptdescription"></a>
+
+### `<Optional>` androidPromptDescription
+
+**● androidPromptDescription**: *`string`*
+
+The description text for the Android authentication prompt.
+
+*__default__*: null
+
+___
+<a id="vaultoptions.androidpromptnegativebuttontext"></a>
+
+### `<Optional>` androidPromptNegativeButtonText
+
+**● androidPromptNegativeButtonText**: *`string`*
+
+The cancel text for the Android authentication prompt.
+
+*__default__*: "Cancel"
+
+___
+<a id="vaultoptions.androidpromptsubtitle"></a>
+
+### `<Optional>` androidPromptSubtitle
+
+**● androidPromptSubtitle**: *`string`*
+
+The subtitle text for the Android authentication prompt.
+
+*__default__*: null
+
+___
+<a id="vaultoptions.androidprompttitle"></a>
+
+### `<Optional>` androidPromptTitle
+
+**● androidPromptTitle**: *`string`*
+
+The title text for the Android authentication prompt.
+
+*__default__*: "Please Authenticate"
+
+___
 <a id="vaultoptions.authmode"></a>
 
 ### `<Optional>` authMode
@@ -1723,6 +1884,43 @@ The possible values returned by [getBiometricType](#identityvault.getbiometricty
 ___
 
 ## Change Log
+
+
+
+### [3.6.3] (2020-04-01)
+
+
+### Bug Fixes
+
+* **ios:** remove old vault upon reinstall  
+
+
+
+### [3.6.2] (2020-02-28)
+
+
+### Bug Fixes
+
+* **ios:** clear the vault on lock when using InMemoryOnly mode  
+
+
+
+### [3.6.1] (2020-02-05)
+
+
+### Bug Fixes
+
+* **Android, iOS:** fix an issue where if auto unlock or restore session fails the vault fails to fire the onVaultReady event 
+
+
+
+### [3.6.0] (2019-12-20)
+
+
+### Features
+
+* add getKeys to IdentityVault 
+* add removeValue to IdentityVault 
 
 
 
