@@ -1,87 +1,87 @@
 ---
 previousText: 'Tirando fotos'
-previousUrl: '/docs/angular/your-first-app/2-taking-photos'
+previousUrl: '/docs/angular/seu-primeiro-app/salvando-fotos'
 nextText: 'Carregando fotos do Filesystem'
-nextUrl: '/docs/angular/your-first-app/4-loading-photos'
+nextUrl: '/docs/angular/seu-primeiro-app/salvando-fotos'
 ---
 
 # Salvando fotos no Filesystem
 
 Agora podemos tirar várias fotos e exibí-las em uma galeria de fotos na segunda guia do nosso aplicativo. No entanto, essas fotos não estão sendo armazenadas permanentemente, portanto, quando o aplicativo for fechado, elas serão excluídas.
 
-## Filesystem API
+## Sistema de arquivos raiz
 
-Fortunately, saving them to the filesystem only takes a few steps. Begin by creating a new function, `savePicture()`, in the `PhotoService` class (`src/app/services/photo.service.ts`). We pass in the `cameraPhoto` object, which represents the newly captured device photo:
+Felizmente, salvá-los no sistema de arquivos só dá alguns passos. Comece criando uma nova função, `savePicture()`, na classe `PhotoService` (`src/app/services/photo.service.ts`). Passamos no objeto `cameraPhoto` , que representa a foto recém-capturada do dispositivo:
 
 ```typescript
-private async savePicture(cameraPhoto: CameraPhoto) { }
+salvamento assíncrono privado (imagem de câmera: CameraPhoto) { }
 ```
 
-We can use this new function immediately in `addNewToGallery()`:
+Podemos usar esta nova função imediatamente em `addNewToGallery()`:
 
 ```typescript
 public async addNewToGallery() {
-  // Take a photo
-  const capturedPhoto = await Camera.getPhoto({
-    resultType: CameraResultType.Uri, // file-based data; provides best performance
-    source: CameraSource.Camera, // automatically take a new photo with the camera
-    quality: 100 // highest quality (0 to 100)
+  // Tire uma fotografia
+  const capturedPhoto = await Camera. etPhoto({
+    resultType: CameraResultType.Uri, // dados baseados em arquivo; fornece a melhor fonte de desempenho
+    : CameraSource. munição, // tira automaticamente uma nova foto com a qualidade da câmera
+    : 100 // a mais alta qualidade (0 a 100)
   });
 
-  // Save the picture and add it to photo collection
-  const savedImageFile = await this.savePicture(capturedPhoto);
+  // Salve a imagem e adicione-a à coleção de fotos
+  const savedImageFile = aguarda isso. avePicture(capturedPhoto);
   this.photos.unshift(savedImageFile);
 }
 ```
 
-We’ll use the Capacitor [Filesystem API](https://capacitor.ionicframework.com/docs/apis/filesystem) to save the photo to the filesystem. To start, convert the photo to base64 format, then feed the data to the Filesystem’s `writeFile` function. Finally, make a call to getPhotoFile (which we will implement in a moment), which returns a Photo object.
+Usaremos a Capacitor [API do sistema de arquivos](https://capacitor.ionicframework.com/docs/apis/filesystem) para salvar a foto no sistema de arquivos. Para começar, converta a foto para o formato base64 e, em seguida, utilize a função `writeFile` para alimentar os dados para a função </code>. Finalmente, faça uma chamada para getPhotoFile (que vamos implementar em instantes), que retorna um objeto Foto.
 
 ```typescript
 private async savePicture(cameraPhoto: CameraPhoto) {
-  // Convert photo to base64 format, required by Filesystem API to save
-  const base64Data = await this.readAsBase64(cameraPhoto);
+  // Converter a foto para formato base64, Necessário pela API do sistema de arquivos para salvar
+  const base64Data = aguarde isso. eadAsBase64(cameraPhoto);
 
-  // Write the file to the data directory
-  const fileName = new Date().getTime() + '.jpeg';
-  await Filesystem.writeFile({
+  // Escreva o arquivo para o diretório de dados
+  const fileName = new Date(). etTime() + '.jpeg';
+  aguarda Filesystem.writeFile({
     path: fileName,
     data: base64Data,
     directory: FilesystemDirectory.Data
   });
 
-  // Get platform-specific photo filepaths
-  return await this.getPhotoFile(cameraPhoto, fileName);
+  // Obter caminhos de arquivos de fotos específicos de plataforma
+  retornar aguardando isso. etPhotoFile(cameraPhoto, fileName);
 }
 ```
 
-`readAsBase64()` and `getPhotoFile()` are two helper functions we’ll define next. They are split into separate methods because they require a small amount of platform-specific (web vs. mobile) logic - more on that in a bit.  For now, implement them for running on the web:
+`readAsBase64()` e `getPhotoFile()` são duas funções auxiliares que definimos em seguida. Eles são divididos em métodos separados porque eles exigem uma pequena quantidade de uma plataforma específica (web vs. lógica móvel) - mais sobre isso um pouco.  Por enquanto, implemente-os para serem executados na web:
 
 ```typescript
 private async readAsBase64(cameraPhoto: CameraPhoto) {
-  // Fetch the photo, read as a blob, then convert to base64 format
-  const response = await fetch(cameraPhoto.webPath!);
+  // Buscar a foto, leia como um blob, então converta em formato base64
+  const response = await fetch(cameraPhoto. ebPath!);
   const blob = await response.blob();
 
-  return await this.convertBlobToBase64(blob) as string;  
+  return aguarda isso. onvertBlobToBase64(blob) como string;  
 }
 
-convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
-  const reader = new FileReader;
-  reader.onerror = reject;
+convertBlobToBase64 = (blob: Blob) => nova Promise((resolve, rejeitar) => {
+  const reader = new FileReader; leitor de
+  . nerror = rejeitar;
   reader.onload = () => {
-      resolve(reader.result);
+      resolve(leitor. esult);
   };
   reader.readAsDataURL(blob);
 });
 ```
 
-Obtaining the camera photo as base64 format on the web appears to be a bit trickier than on mobile. In reality, we’re just using built-in web APIs: [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) as a neat way to read the file into blob format, then FileReader’s [readAsDataURL()](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL) to convert the photo blob to base64.
+Na realidade, estamos apenas usando APIs web embutidas: [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) como uma maneira legal de ler o arquivo no formato blob então o bloco do FileReader [readAsDataURL()](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL) para converter as fotos para base64. Na realidade, estamos apenas usando APIs web embutidas: [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) como uma maneira legal de ler o arquivo no formato blob então o bloco do FileReader [readAsDataURL()](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL) para converter as fotos para base64.
 
-`getPhotoFile()` is much simpler. As you’ll recall, we display each photo on the screen by setting each image’s source path (`src` attribute) in `tab2.page.html` to the webviewPath property. So, it gets set here:
+`getPhotoFile()` é muito mais simples. Como você se lembra, nós exibimos cada foto na tela, definindo o caminho de origem de cada imagem (atributo`src` de imagem) em `tab2. age.html` para a propriedade webviewPay. Então, isso é definido aqui:
 
 ```typescript
 private async getPhotoFile(cameraPhoto: CameraPhoto, 
-                           fileName: string): Promise<Photo> {
+                           fileName: string): Promessa<Photo> {
   return {
     filepath: fileName,
     webviewPath: cameraPhoto.webPath
@@ -89,9 +89,9 @@ private async getPhotoFile(cameraPhoto: CameraPhoto,
 }
 ```
 
-Finally, change the way pictures become visible in the template file `tab2.page.html`.
+Finalmente, altere a forma como as imagens se tornam visíveis no arquivo de template `tab2.page.html`.
 ```html
 <ion-img src="{{ photo.base64 ? photo.base64 : photo.webviewPath }}"></ion-img>
 ```
 
-There we go! Each time a new photo is taken, it’s now automatically saved to the filesystem.
+E aí! Cada vez que uma nova foto for tirada, ela agora é salva automaticamente no sistema de arquivos.
