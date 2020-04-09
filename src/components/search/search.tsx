@@ -220,8 +220,8 @@ export class IonicSearch {
         <div class="Search__Defaults__Section">
           <h4>Getting Started</h4>
           <ul>
-            <li><a href="/docs/installation/cli"><Book/><strong>Installation Guide</strong> | Installation</a></li>
-            <li><a href="/docs/building/running"><Book/><strong>Running an App</strong> | Building</a></li>
+            <li><a href="/docs/intro/cli"><Book/><strong>Installation Guide</strong> | Installation</a></li>
+            <li><a href="/docs/developing/previewing"><Book/><strong>Running an App</strong> | Building</a></li>
             <li><a href="/docs/layout/structure"><Book/><strong>App Structure</strong> | Layout</a></li>
             <li><a href="/docs/theming/basics"><Book/><strong>Theming Basics</strong> | Theming</a></li>
           </ul>
@@ -229,8 +229,8 @@ export class IonicSearch {
         <div class="Search__Defaults__Section">
           <h4>Common topics</h4>
           <ul>
-            <li><a href="/docs/building/testing"><Book/><strong>Testing</strong> | Building</a></li>
-            <li><a href="/docs/building/cross-platform#storage"><Book/><strong>Storage</strong> | Building</a></li>
+            <li><a href="/docs/angular/testing"><Book/><strong>Testing</strong> | Building</a></li>
+            <li><a href="/docs/core-concepts/cross-platform#storage"><Book/><strong>Storage</strong> | Building</a></li>
             <li><a href="/docs/lifecycle/angular"><Book/><strong>Life Cycle Events</strong> | Angular</a></li>
             <li><a href="/docs/navigation/angular"><Book/><strong>Navigation</strong> | Angular</a></li>
           </ul>

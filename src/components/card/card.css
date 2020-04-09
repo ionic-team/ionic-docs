@@ -49,6 +49,10 @@ docs-card {
   object-fit: cover;
 }
 
+.Card-icon-hover {
+  display: none;
+}
+
 .Card-iconset__container {
   position: relative;
 }
@@ -75,6 +79,14 @@ docs-card {
     box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1), 0 0.175em 0.5em rgba(2, 8, 20, 0.08);
     transform: translateY(-1px);
   }
+
+  .Card[href]:hover .Card-icon-default {
+    display: none;
+  }
+
+  .Card[href]:hover .Card-icon-hover {
+    display: block;
+  }
 }
 
 .Card-content > *:first-child {
@@ -91,16 +103,14 @@ docs-card {
 
 .Card-header {
   color: var(--text-color--dark);
-  font-size: 1.25em;
-  font-weight: 600;
+  font-size: 1.4em;
+  font-weight: 500;
   line-height: 1.4;
   margin-bottom: 0.45em;
 }
 
 .Card-without-image .Card-header {
-  font-size: 1.2em;
   margin-bottom: 0.3em;
-
 }
 
 .Card-header > svg {
@@ -150,7 +160,7 @@ aside .Card-container {
   display: grid;
   grid-template-columns: minmax(0, max-content) 1fr;
   grid-template-rows: minmax(0, min-content);
-  grid-template-areas: 
+  grid-template-areas:
     "icon title"
     "icon body";
 }

@@ -4,34 +4,19 @@ export default () => <docs-nav items={items}/>;
 
 const items = {
   'menu-intro': {
-    'menu-intro-what-is': '/docs/intro',
-    'menu-intro-concepts': '/docs/intro/concepts',
-    'menu-intro-your-first-app': '/docs/intro/first-app',
-    'menu-intro-what-are-progressive-web-apps': '/docs/intro/what-are-progressive-web-apps',
-    'menu-intro-browser-support': '/docs/intro/browser-support',
-    'menu-intro-versioning': '/docs/intro/versioning',
-    'menu-intro-release-notes': '/docs/release-notes',
-    'menu-intro-support': '/docs/intro/support'
+    'menu-intro-overview': '/docs',
+    'menu-intro-environment': '/docs/intro/environment',
+    'menu-intro-cli': '/docs/intro/cli',
+    'menu-intro-cdn': '/docs/intro/cdn',
+    'menu-intro-next': '/docs/intro/next',
   },
-  'menu-installation': {
-    'menu-installation-cli': '/docs/installation/cli',
-    'menu-installation-cdn': '/docs/installation/cdn',
-    'menu-installation-environment': '/docs/installation/environment',
-    'menu-installation-ios': '/docs/installation/ios',
-    'menu-installation-android': '/docs/installation/android',
-  },
-  'menu-building': {
-    'menu-building-starting': '/docs/building/starting',
-    'menu-building-scaffolding': '/docs/building/scaffolding',
-    'menu-building-migration': '/docs/building/migration',
-    'menu-building-cross-platform': '/docs/building/cross-platform',
-    'menu-building-running': '/docs/building/running',
-    'menu-building-ios': '/docs/building/ios',
-    'menu-building-android': '/docs/building/android',
-    'menu-building-testing': '/docs/building/testing',
-    'menu-building-contributing': '/docs/building/contributing',
-    'menu-building-webview': '/docs/building/webview',
-    'menu-building-storage': '/docs/building/storage'
+  'menu-developing': {
+    'menu-developing-starting': '/docs/developing/starting',
+    'menu-developing-previewing': '/docs/developing/previewing',
+    'menu-developing-scaffolding': '/docs/developing/scaffolding',
+    'menu-developing-ios': '/docs/developing/ios',
+    'menu-developing-android': '/docs/developing/android',
+    'menu-developing-tips': '/docs/developing/tips',
   },
   'menu-layout': {
     'menu-layout-structure': '/docs/layout/structure',
@@ -64,6 +49,8 @@ const items = {
     'menu-angular-navigation': '/docs/angular/navigation',
     'menu-angular-config': '/docs/angular/config',
     'menu-angular-platform': '/docs/angular/platform',
+    'menu-angular-testing': '/docs/angular/testing',
+    'menu-angular-storage': '/docs/angular/storage',
     'menu-angular-performance': '/docs/angular/performance',
     'menu-angular-pwa': '/docs/angular/pwa'
   },
@@ -85,7 +72,6 @@ const items = {
     'menu-react-platform': '/docs/react/platform',
     'menu-react-pwa': '/docs/react/pwa',
     'menu-react-testing': '/docs/react/testing'
-
   },
   'menu-vue': {
     'menu-vue-overview': '/docs/vue/overview',
@@ -97,21 +83,40 @@ const items = {
     'menu-utilities-animations': '/docs/utilities/animations',
     'menu-utilities-gestures': '/docs/utilities/gestures'
   },
-  'menu-publishing': {
-    'menu-publishing-progressive-web-app': '/docs/publishing/progressive-web-app',
-    'menu-publishing-app-store': '/docs/publishing/app-store',
-    'menu-publishing-play-store': '/docs/publishing/play-store',
-    'menu-publishing-desktop-app': '/docs/publishing/desktop-app'
+  'menu-deployment': {
+    'menu-deployment-app-store': '/docs/deployment/app-store',
+    'menu-deployment-play-store': '/docs/deployment/play-store',
+    'menu-deployment-progressive-web-app': '/docs/deployment/progressive-web-app',
+    'menu-deployment-desktop-app': '/docs/deployment/desktop-app'
   },
-  'menu-faq': {
-    'menu-faq-glossary': '/docs/faq/glossary',
-    'menu-faq-build': '/docs/faq/build',
-    'menu-faq-runtime': '/docs/faq/runtime',
-    'menu-faq-native': '/docs/faq/native',
-    'menu-faq-cors': '/docs/faq/cors',
-    'menu-faq-security': '/docs/faq/security',
-    'menu-faq-tips': '/docs/faq/tips',
-    'menu-faq-changelog': 'https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md'
+  'menu-techniques': {
+    'menu-techniques-security': '/docs/techniques/security',
+  },
+  'menu-troubleshooting': {
+    'menu-troubleshooting-debugging': '/docs/troubleshooting/debugging',
+    'menu-troubleshooting-build': '/docs/troubleshooting/build',
+    'menu-troubleshooting-runtime': '/docs/troubleshooting/runtime',
+    'menu-troubleshooting-native': '/docs/troubleshooting/native',
+    'menu-troubleshooting-cors': '/docs/troubleshooting/cors',
+  },
+  'menu-core-concepts': {
+    'menu-core-concepts-fundamentals': '/docs/core-concepts/fundamentals',
+    'menu-core-concepts-cross-platform': '/docs/core-concepts/cross-platform',
+    'menu-core-concepts-webview': '/docs/core-concepts/webview',
+    'menu-core-concepts-what-are-progressive-web-apps': '/docs/core-concepts/what-are-progressive-web-apps',
+  },
+  'menu-contributing': {
+    'menu-contributing-how-to-contribute': '/docs/contributing/how-to-contribute',
+    'menu-contributing-coc': '/docs/contributing/coc',
+  },
+  'menu-reference': {
+    'menu-reference-glossary': '/docs/reference/glossary',
+    'menu-reference-versioning': '/docs/reference/versioning',
+    'menu-reference-release-notes': '/docs/reference/release-notes',
+    'menu-reference-changelog': 'https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md',
+    'menu-reference-support': '/docs/reference/support',
+    'menu-reference-browser-support': '/docs/reference/browser-support',
+    'menu-reference-migration': '/docs/reference/migration'
   },
   'menu-resources': {
     'menu-resources-books': '/docs/developer-resources/books',
@@ -120,5 +125,5 @@ const items = {
     'menu-resources-posts': '/docs/developer-resources/posts',
     'menu-resources-tools': '/docs/developer-resources/tools',
     'menu-resources-videos': '/docs/developer-resources/videos'
-  }
+  },
 };

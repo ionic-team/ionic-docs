@@ -76,7 +76,7 @@ git push ionic master
 Next, create a local, native build of the app.
 
 ## Android Builds
-Follow the [Android Setup instructions](/docs/installation/android), which includes installing Java 8 and Android Studio on your machine. Then, in your Terminal run:
+Follow the [Android Setup instructions](/docs/developing/android), which includes installing Java 8 and Android Studio on your machine. Then, in your Terminal run:
 
 ```shell
 ionic cordova build android --prod
@@ -85,13 +85,13 @@ ionic cordova build android --prod
 This will generate a unsigned debug build (meaning the app can run on any Android device).
 
 ## iOS Builds
-iOS is [a bit trickier to set up](/docs/installation/ios) than Android and requires a Mac computer. Ensure XCode is updated to the latest version and set up a development team. Then, in your Terminal, run:
+iOS is [a bit trickier to set up](/docs/developing/ios) than Android and requires a Mac computer. Ensure XCode is updated to the latest version and set up a development team. Then, in your Terminal, run:
 
 ```shell
 ionic cordova build ios --prod
 ```
 
-Then, continue to [follow the instructions here](/docs/publishing/app-store) regarding signing certificates, etc. With a native version of your app built, let’s copy it to your device of choice.
+Then, continue to [follow the instructions here](/docs/deploying/app-store) regarding signing certificates, etc. With a native version of your app built, let’s copy it to your device of choice.
 
 ## Add the Native App to Your Local Device
 Now comes the fun part: testing out the native app on your device! For iOS, the easiest way (that works for both PC and Mac) involves using iTunes. Connect your iOS device, locate your IPA file, then drag and drop the IPA file from the file system onto your device in iTunes. The app will install immediately and be ready for use:
@@ -129,7 +129,7 @@ Log into the [Ionic Pro dashboard](https://dashboard.ionicframework.com) and nav
 
 ![deploy channel](/docs/assets/img/guides/first-app-v3/deploy-channel.png)
 
-A Channel points to a specific JavaScript Build or Snapshot of your app that will be shared with devices listening to that channel for updates. You can change which Build a Channel points to whenever you’d like. 
+A Channel points to a specific JavaScript Build or Snapshot of your app that will be shared with devices listening to that channel for updates. You can change which Build a Channel points to whenever you’d like.
 
 Each time a user launches our Photo Gallery app, it will poll for updates from Ionic Pro. If new code is available, the update is downloaded in the background. There are [a handful of ways](/docs/pro/deploy/api/#update_method) to control how updates are performed, but by default they will be applied the next time the user closes then opens the app.
 

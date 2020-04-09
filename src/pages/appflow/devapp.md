@@ -5,13 +5,13 @@ previousUrl: '/docs/appflow/cookbook/private_npm_modules'
 
 # Ionic DevApp
 
-The Ionic DevApp was a free app used to run your Ionic app directly on your iOS or Android device. 
+The Ionic DevApp was a free app used to run your Ionic app directly on your iOS or Android device.
 
 On January 1st, 2020, DevApp was retired as we move toward embracing native tooling and building apps with [Capacitor](http://capacitor.ionicframework.com/), Ionic's official native app runtime.
 
 One of the key mantras of Capacitor is that developers should embrace native tools like Android Studio and Xcode when building their app. While using native tooling may initially seem daunting, we think this is the right approach, because it makes it easy to follow existing Native iOS/Android guides, get help on Stack Overflow, and have full control over your project. The reality is that DevApp only got in the way of building an app, delaying developers from seeing their app run on a simulator or phone.
 
-In practice, native tooling is quite easy to use: see our [iOS](/docs/building/ios) and [Android](/docs/building/android) documentation for details on how to build native apps using Cordova or Capacitor.
+In practice, native tooling is quite easy to use: see our [iOS](/docs/developing/ios) and [Android](/docs/developing/android) documentation for details on how to build native apps using Cordova or Capacitor.
 
 ## Native Cordova Plugin Support
 

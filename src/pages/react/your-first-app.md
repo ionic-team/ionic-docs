@@ -29,8 +29,8 @@ It’s easy to get started. Find the complete app code referenced in this guide 
 Download and install these right away to ensure an optimal Ionic development experience:
 * <strong>Node.js</strong> for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
 * <strong>A code editor</strong> for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
-* <strong>Command-line interface/terminal (CLI)</strong>: 
- * <strong>Windows</strong> users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode. 
+* <strong>Command-line interface/terminal (CLI)</strong>:
+ * <strong>Windows</strong> users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode.
  * <strong>Mac/Linux</strong> users, virtually any terminal will work.
 
 
@@ -45,7 +45,7 @@ $ npm install -g @ionic/cli native-run cordova-res
 
 > The `-g` option means _install globally_. When packages are installed globally, `EACCES` permission errors can occur.
 >
-> Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](/docs/faq/tips#resolving-permission-errors) for more information.
+> Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](/docs/developing/tips#resolving-permission-errors) for more information.
 
 
 ## Create an App
@@ -69,7 +69,7 @@ Next, we will install a couple of helper libraries for working with Capacitor.
 
 The React Hooks library makes working with Capacitor in React a breeze by providing some custom hooks for each of the specific plugins.
 
-Some Capacitor plugins, including the Camera API, provide the web-based functionality and UI via the Ionic [PWA Elements library](https://github.com/ionic-team/ionic-pwa-elements). 
+Some Capacitor plugins, including the Camera API, provide the web-based functionality and UI via the Ionic [PWA Elements library](https://github.com/ionic-team/ionic-pwa-elements).
 
 Both packages are separate dependencies, so install them next:
 
@@ -79,7 +79,7 @@ $ npm install @ionic/react-hooks @ionic/pwa-elements
 
 After installation, open up the project in your code editor of choice.
 
-Next, import `@ionic/pwa-elements` by editing `src/index.tsx`. 
+Next, import `@ionic/pwa-elements` by editing `src/index.tsx`.
 
 ```typescript
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
@@ -130,8 +130,8 @@ We put the visual aspects of our app into `<IonContent>`. In this case, it’s w
 
 ```typescript
 import { camera, trash, close } from 'ionicons/icons';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, 
-         IonFab, IonFabButton, IonIcon, IonGrid, IonRow, 
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar,
+         IonFab, IonFabButton, IonIcon, IonGrid, IonRow,
          IonCol, IonImg, IonActionSheet } from '@ionic/react';
 ```
 

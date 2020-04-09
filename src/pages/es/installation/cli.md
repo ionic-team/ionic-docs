@@ -1,6 +1,6 @@
 ---
-previousText: 'What is Ionic Framework'
-previousUrl: '/docs/intro'
+previousText: 'Getting Started'
+previousUrl: '/docs'
 nextText: 'Packages & CDN'
 nextUrl: '/docs/installation/cdn'
 contributors:
