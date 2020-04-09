@@ -84,17 +84,17 @@ constructor(private http: HttpClient, private router: Router, platform: Platform
 
 If you'd like to automatically add your authorization token from your identity service to every request, you can see a simple example at in our [demo repo](https://github.com/ionic-team/cs-demo-iv/blob/master/src/app/services/http-interceptors/auth-interceptor.ts).
 
-## Upgrading to v4.0.0
+## Actualización a v4.0.0
 
-If you have Identity Vault **<3.1.0**, please see [Upgrading from v3.0.0 to >=v3.1.0](https://ionicframework.com/docs/enterprise/identity-vault/3.6.X/identity-vault#upgrading-from-v3-0-0-to-v3-1-0) before following these upgrade instructions.
+Si tienes Identity Vault **<3.1.0**, consulta [Actualización de v3.0.0 a >=v3.1.0](https://ionicframework.com/docs/enterprise/identity-vault/3.6.X/identity-vault#upgrading-from-v3-0-0-to-v3-1-0) antes de seguir estas instrucciones de actualización.
 
 * Upgrade your app to use `cordova-android` 9.x (see the [9.0.0 milestone](https://github.com/apache/cordova-android/milestone/2) for progress) or Capacitor 2.x. 
-  * For Capacitor, please see the upgrade guide for [Android](https://capacitor.ionicframework.com/docs/android/updating) and [iOS](https://capacitor.ionicframework.com/docs/ios/updating).
+  * Para Capacitor, por favor consulte la guía de actualización para [Android](https://capacitor.ionicframework.com/docs/android/updating) e [iOS](https://capacitor.ionicframework.com/docs/ios/updating).
 * Install the new plugin version.
 
 ## API Documentation
 
-You can find the API and interface documentation for everything below. The main classes to pay attention to are:
+You can find the API and interface documentation for everything below. Las clases principales a las que prestar atención son:
 
 * [IonicIdentityVaultUser](#identityvaultuser) - Subclass this when creating your identity service.
 * [DefaultSession](#defaultsession) - This is the generic type that represents your session. Extend this to implement a custom session.
