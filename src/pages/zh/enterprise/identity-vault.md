@@ -84,13 +84,13 @@ constructor(private http: HttpClient, private router: Router, platform: Platform
 
 If you'd like to automatically add your authorization token from your identity service to every request, you can see a simple example at in our [demo repo](https://github.com/ionic-team/cs-demo-iv/blob/master/src/app/services/http-interceptors/auth-interceptor.ts).
 
-## Upgrading to v4.0.0
+## 升级到 v4.0.0
 
 If you have Identity Vault **<3.1.0**, please see [Upgrading from v3.0.0 to >=v3.1.0](https://ionicframework.com/docs/enterprise/identity-vault/3.6.X/identity-vault#upgrading-from-v3-0-0-to-v3-1-0) before following these upgrade instructions.
 
 * Upgrade your app to use `cordova-android` 9.x (see the [9.0.0 milestone](https://github.com/apache/cordova-android/milestone/2) for progress) or Capacitor 2.x. 
   * For Capacitor, please see the upgrade guide for [Android](https://capacitor.ionicframework.com/docs/android/updating) and [iOS](https://capacitor.ionicframework.com/docs/ios/updating).
-* Install the new plugin version.
+* 安装新插件版本。
 
 ## API Documentation
 
