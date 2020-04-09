@@ -2,7 +2,7 @@
 
 docs-page {
   display: grid;
-  font-size: 15px;
+  font-size: 16px;
   grid-template-columns: 1fr minmax(0, var(--page-width, 720px)) 1fr;
   line-height: 2;
   margin-left: var(--page-margin-left);
@@ -115,7 +115,7 @@ docs-page aside {
 docs-page main.has-demo .page-meta internal-ad {
   display:  none;
 }
-/* 
+/*
 @media (min-width: 1440px) {
   docs-page aside {
     position: absolute;

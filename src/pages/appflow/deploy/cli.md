@@ -1,6 +1,6 @@
 ---
-previousText: 'Tutorials and Videos'
-previousUrl: '/docs/appflow/deploy/tutorials'
+previousText: 'Deploy API'
+previousUrl: '/docs/appflow/deploy/api'
 nextText: 'Package'
 nextUrl: '/docs/appflow/package/intro'
 ---
@@ -103,7 +103,7 @@ $ ionic deploy build --channel="My Custom Channel"
 
 Apart from the `--commit` option, all others require the full name setup within the Appflow Dashboard.
 
-Look for the name on the Environments and Channels pages in Appflow:
+Look for the name on the Environments and Destinations pages in Appflow:
 
 ![CLI Environments List](/docs/assets/img/appflow/cli-environments-list.png)
 ![CLI Channels List](/docs/assets/img/appflow/cli-channels-list.png)

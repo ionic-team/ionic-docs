@@ -42,11 +42,11 @@ At a high level, the production documentation works like this:
 1. At build time, the `build-pages` script reads the Markdown in `src/pages/` and creates a JSON representation of each page at the same path
    ```
    pages/
-   ├── intro.json
-   └── intro.md
+   ├── index.json
+   └── index.md
    ```
-2. At runtime, the `docs-page` component receives the current path (e.g. `/docs/intro`)
-3. The `docs-page` component fetches and parses the [JSON representation](https://ionicframework.com/docs/pages/intro.json) of that page
+2. At runtime, the `docs-page` component receives the current path (e.g. `/docs`)
+3. The `docs-page` component fetches and parses the [JSON representation](https://ionicframework.com/docs/pages/index.json) of that page
 4. The `docs-page` component renders that data using a [template](https://github.com/ionic-team/ionic-docs/tree/master/src/components/page/templates)
 
 > **Note**: most reference content (e.g. APIs, native plugins, CLI commands) is not stored as Markdown. Those pages are created using data provided by other repositories to the `build-pages` script.
@@ -81,8 +81,8 @@ The [`docs-menu`](https://github.com/ionic-team/ionic-docs/blob/master/src/compo
 The content of the Ionic docs is written as [Markdown](https://commonmark.org/) in `src/pages`. Each Markdown file corresponds to a route.
 
 ```
-/docs/intro             =>  src/pages/intro.md
-/docs/installation/cli  =>  src/pages/installation/cli.md
+/docs/                  =>  src/pages/index.md
+/docs/intro/cli         =>  src/pages/intro/cli.md
 /docs/theming/advanced  =>  src/pages/theming/advanced.md
 /docs/theming           =>  src/pages/theming.md
 ```
@@ -151,7 +151,7 @@ For example, in `src/components/menu/templates/main.tsx`:
 
 ```javascript
 // 'token': 'path'
-'menu-installation-cli': '/docs/installation/cli',
+'menu-intro-cli': '/docs/intro/cli',
 ```
 
 Then, add the token and its translation to each file within the `src/assets/locales` folder:
@@ -160,7 +160,7 @@ For example, in `src/assets/locales/en/messages.json`:
 
 ```javascript
 // 'token': 'translated text'
-"menu-installation-cli": "CLI Installation",
+"menu-intro-cli": "CLI Installation",
 ```
 
 ## Reporting Issues

@@ -32,7 +32,7 @@
   --offset-background--dark: #f7f7ff;
   --page-margin-left: var(--menu-width);
 
-  --text-color: #4e5b6a;
+  --text-color: #303943;
   --text-color--darker: #24282e;
   --text-color--dark: #020814;
   --text-color--lighter: #abb2bf;
@@ -87,7 +87,7 @@ img {
 
 a {
   color: var(--accent-color);
-  font-weight: 500;
+  font-weight: 400;
   text-decoration: none;
 }
 
@@ -146,10 +146,14 @@ h1 {
 
 h2 {
   font-size: 1.825rem;
+
+  margin-bottom: 0.2em;
 }
 
 h3 {
   font-size: 1.375rem;
+
+  margin-bottom: 0.2em;
 }
 
 h4 {
@@ -223,7 +227,7 @@ kbd {
   border-radius: 4px;
   color: var(--code-color);
   font-family: var(--code-font-family);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 500;
   letter-spacing: 0;
   padding: 4px 6px;
@@ -242,6 +246,7 @@ pre {
 pre code {
   background-color: transparent;
   color: inherit;
+  font-size: 13px;
   padding: 0;
   white-space: inherit;
 }

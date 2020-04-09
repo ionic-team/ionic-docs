@@ -10,7 +10,9 @@ nextUrl: '/docs/appflow/deploy/intro'
   <p><b>Note:</b> This feature is only available on our <a href="/pricing">Growth plans</a> and above.</p>
 </blockquote>
 
-[Native Configurations](/docs/appflow/package/native-configs) allow you to easily modify common configuration values that can change between different environments (development, production, staging, etc.) so you don't need to use extra logic or manually commit them to version control. Native configurations can be attached to any [Package build](/doc/appflow/package)
+[Native Configurations](/docs/appflow/package/native-configs) allow you to easily modify common configuration values that can change 
+between different environments (development, production, staging, etc.) so you don't need to use extra logic or manually commit them 
+to version control. Native configurations can be attached to any [Package build](/doc/appflow/package)
 or [Automation](/doc/appflow/automation).
 
 You can use native configs to:
@@ -27,7 +29,7 @@ assign them to the `production` Channel)
 
 ## Create a Native Configuration
 
-To create a native config, go to the `Package > Native Configs` tab in the Appflow Dashboard sidebar and click `New native config` in the top right.
+To create a native config, go to the `Build > Native Configs` tab in the Appflow Dashboard sidebar and click `New native config` in the top right.
 
 Next:
 * Name the configuration `Development`

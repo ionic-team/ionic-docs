@@ -1,8 +1,8 @@
 ---
 title: Auth Connect
 template: enterprise-plugin
-version: 1.5.0
-minor: 1.5.X
+version: 1.8.1
+minor: 1.8.X
 ---
 
 Ionic Auth Connect handles logging in and/or registering a user with an authentication provider (such as Auth0, Azure AD, or AWS Cognito) using industry standard OAuth/OpenId Connect on iOS, Android, or on the web.
@@ -294,10 +294,10 @@ get the access token, once logged in, for API calls
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| `Optional` tokenName | `undefined` \| `string` |
-| `Optional` scopes | `undefined` \| `string` |
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| `Optional` tokenName | `undefined` \| `string` |  Optional token name, only used when multiple tokens are required (Azure specific feature). |
+| `Optional` scopes | `undefined` \| `string` |  The scopes for the access token. |
 
 **Returns:** `Promise`<`string` \| `undefined`>
 
@@ -324,6 +324,17 @@ get the parsed id token, includes requested scope values
 **Returns:** `Promise`<`IDTokenType` \| `undefined`>
 
 ___
+<a id="iionicauth.getrefreshtoken"></a>
+
+###  getRefreshToken
+
+▸ **getRefreshToken**(): `Promise`<`string` \| `undefined`>
+
+get the refresh token if available
+
+**Returns:** `Promise`<`string` \| `undefined`>
+
+___
 <a id="iionicauth.handlecallback"></a>
 
 ###  handleCallback
@@ -341,6 +352,34 @@ called by the hosting app when callbacks happen, these will be to the URL specif
 **Returns:** `Promise`<`AuthResult`>
 
 ___
+<a id="iionicauth.isaccesstokenavailable"></a>
+
+###  isAccessTokenAvailable
+
+▸ **isAccessTokenAvailable**(tokenName?: *`undefined` \| `string`*): `Promise`<`boolean`>
+
+check to see if the access token is available
+
+**Parameters:**
+
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| `Optional` tokenName | `undefined` \| `string` |  Optional token name, only used when multiple tokens are required (Azure specific feature). |
+
+**Returns:** `Promise`<`boolean`>
+
+___
+<a id="iionicauth.isaccesstokenexpired"></a>
+
+###  isAccessTokenExpired
+
+▸ **isAccessTokenExpired**(): `Promise`<`boolean`>
+
+check to see if the access token is expired
+
+**Returns:** `Promise`<`boolean`>
+
+___
 <a id="iionicauth.isauthenticated"></a>
 
 ###  isAuthenticated
@@ -348,6 +387,17 @@ ___
 ▸ **isAuthenticated**(): `Promise`<`boolean`>
 
 check to see if the user is logged in, and refresh the token if needed
+
+**Returns:** `Promise`<`boolean`>
+
+___
+<a id="iionicauth.isrefreshtokenavailable"></a>
+
+###  isRefreshTokenAvailable
+
+▸ **isRefreshTokenAvailable**(): `Promise`<`boolean`>
+
+check to see if the refresh token is available
 
 **Returns:** `Promise`<`boolean`>
 
@@ -408,6 +458,23 @@ ___
 Event handler which can be overridden to handle successful logout events
 
 **Returns:** `void`
+
+___
+<a id="iionicauth.refreshsession"></a>
+
+###  refreshSession
+
+▸ **refreshSession**(tokenName?: *`undefined` \| `string`*): `Promise`<`void`>
+
+refresh the session, throws if refresh token is invalid or missing
+
+**Parameters:**
+
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| `Optional` tokenName | `undefined` \| `string` |  Optional token name, only used when multiple tokens are required (Azure specific feature). |
+
+**Returns:** `Promise`<`void`>
 
 ___
 
@@ -483,7 +550,7 @@ ___
 
 ### `<Optional>` authConfig
 
-**● authConfig**: *"auth0" \| "azure" \| "cognito" \| "general"*
+**● authConfig**: *"auth0" \| "azure" \| "cognito" \| "salesforce" \| "general"*
 
 The type of the Auth Server, currently only the following are supported:
 
@@ -639,7 +706,7 @@ ___
 
 ### `<Optional>` authConfig
 
-**● authConfig**: *"auth0" \| "azure" \| "cognito" \| "general"*
+**● authConfig**: *"auth0" \| "azure" \| "cognito" \| "salesforce" \| "general"*
 
 The type of the Auth Server, currently only the following are supported:
 
@@ -783,6 +850,8 @@ ___
 
 get the saved access token
 
+*__param__*: Optional token name, only used when multiple tokens are required (Azure specific feature).
+
 ___
 <a id="tokenstorageprovider.getauthresponse"></a>
 
@@ -818,6 +887,8 @@ ___
 **● setAccessToken**: *`undefined` \| `function`*
 
 save the access token
+
+*__param__*: Optional token name, only used when multiple tokens are required (Azure specific feature).
 
 ___
 <a id="tokenstorageprovider.setauthresponse"></a>
@@ -924,6 +995,81 @@ ___
 # Changelog
 
 
+
+### [1.8.1] (2020-04-01)
+
+
+### Bug Fixes
+
+* await the access token from storage  
+
+### [1.8.0] (2020-04-01)
+
+
+### Features
+
+* isAccessTokenAvailable  
+
+### [1.7.0] (2020-03-27)
+
+
+### Features
+
+* add isAccessTokenExpired, isRefreshTokenAvailable, getRefreshToken, refreshSession  
+
+### [1.6.2] (2020-03-17)
+
+
+### Bug Fixes
+
+* **Android:** Fix an issue where Auth Connect didn't work on Android 10. 
+
+### [1.6.1] (2020-03-16)
+
+
+### Bug Fixes
+
+* Fix an issue where if refresh failed isAuthenticated still returned true 
+
+### [1.6.0] (2020-03-13)
+
+
+### Features
+
+* Add support for Saleforce 
+
+
+### Bug Fixes
+
+* Fix a bug where if a provider doesn't return when the access token expires it defaults to be immediately expired. 
+
+### [1.5.4] (2020-03-10)
+
+
+### Bug Fixes
+
+* **web:** catch error on refresh frame creation 
+
+### [1.5.3] (2020-03-09)
+
+
+### Bug Fixes
+
+* **web, cognito:** fix for SE-150. Added logout_uri to list of valid params. 
+
+### [1.5.2] (2020-02-24)
+
+
+### Bug Fixes
+
+* **web:** throw error if POST to token endpoint failed 
+
+### [1.5.1] (2020-02-21)
+
+
+### Bug Fixes
+
+* **web:** properly refresh token when using PKCE 
 
 ### [1.5.0] (2020-02-17)
 

@@ -22,7 +22,7 @@ const items = {
     'menu-studio-documentation-terminal': '/docs/studio/terminal',
   },
   'menu-studio-guides': {
-    'menu-studio-guides-quickstart': '/docs/studio/guides/quickstart',
+    // 'menu-studio-guides-quickstart': '/docs/studio/guides/quickstart',
     'menu-studio-guides-routing': '/docs/studio/guides/routing-and-navigation',
     'menu-studio-guides-functionality': '/docs/studio/guides/using-native-functionality',
   },

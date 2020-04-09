@@ -39,7 +39,7 @@ export class DocsDemo {
           <button
             class={ mode === this.ionicMode ? 'is-selected' : null }
             title={`Toggle ${mode === 'ios' ? 'iOS' : 'Android'} mode`}
-            onClick={() => { this.ionicMode = mode; }}>{ mode }</button>
+            onClick={() => { this.ionicMode = mode; }}>{mode === 'ios' ? 'iOS' : 'Android'}</button>
         ))}
       </div>
     );

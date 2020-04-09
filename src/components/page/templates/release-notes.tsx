@@ -8,13 +8,21 @@ export default (props) => {
   if (releases.length === 0) {
     return [
       <h1>{page.title}</h1>,
-      <p>Unable to load Releases. Please see all releases on <a href="https://github.com/ionic-team/ionic/releases/" target="_blank">GitHub</a>.</p>
+      <p>Unable to load Releases. Please see all releases <a href="https://github.com/ionic-team/ionic/releases" target="_blank">on GitHub</a>.</p>
     ];
   }
 
   return (
     <article>
       <h1>{page.title}</h1>
+      <p class="intro">
+        A complete release history for Ionic Framework is available <a href="https://github.com/ionic-team/ionic/releases" target="_blank">on GitHub</a>.
+        Documentation for recent releases can also be found below.
+      </p>
+
+      <p>
+        See versioning for information about our <a href="/docs/reference/versioning">policy and commitment to stability</a>.
+      </p>
       <section class="markdown-content">
         {toHypertext(h, page.body)}
       </section>
