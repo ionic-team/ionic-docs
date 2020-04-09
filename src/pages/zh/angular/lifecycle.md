@@ -9,7 +9,7 @@ contributors:
 
 # Ionic页面的生命周期
 
-本指南涵盖生命周期钩子如何在ionic和angular的应用程序中工作。
+本指南涵盖生命周期钩子如何在 ionic 和 angular 的应用程序中工作。
 
 ![Ionic 生命周期事件演示](/docs/assets/img/guides/lifecycle/ioniclifecycle.png)
 
