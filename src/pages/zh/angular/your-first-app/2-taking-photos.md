@@ -1,5 +1,5 @@
 ---
-previousText: 'Your First App'
+previousText: '你的第一个 APP'
 previousUrl: '/docs/angular/your-first-app'
 nextText: 'Saving Photos on Filesystem'
 nextUrl: '/docs/angular/your-first-app/3-saving-photos'
@@ -11,7 +11,7 @@ nextUrl: '/docs/angular/your-first-app/3-saving-photos'
 
 ## Photo Service
 
-All Capacitor logic (Camera usage and other native features) will be encapsulated in a service class. Create `PhotoService` using the `ionic generate` command:
+All Capacitor logic (Camera usage and other native features) will be encapsulated in a service class. 使用 `ionic generate` 命令创建 `照片服务`：
 
 ```bash
 $ ionic g service services/photo
