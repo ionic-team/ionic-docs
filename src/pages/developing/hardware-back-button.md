@@ -1,8 +1,6 @@
 ---
-previousText: 'Running on Android'
-previousUrl: '/docs/building/android'
-nextText: 'Testing'
-nextUrl: '/docs/building/testing'
+previousText: 'Development Tips'
+previousUrl: '/docs/developing/tips'
 ---
 
 # Hardware Back Button
