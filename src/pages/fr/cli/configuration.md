@@ -3,7 +3,7 @@
 
 # Configuration
 
-## Files
+## Fichiers
 
 Les valeurs de configuration sont stockées dans des fichiers JSON. Le CLI Ionic se base sur un fichier de configuration global, généralement situé ici `~/.ionic/config. son`, et des fichiers de configuration du projet, généralement situé à la racine du projet dans `ionic.config.json`.
 
@@ -45,16 +45,16 @@ Chaque projet Ionic a un fichier de configuration de projet, généralement situ
 Le CLI cherchera les variables d'environnement suivantes :
 
 * `IONIC_CONFIG_DIRECTORY`: Le répertoire de la configuration globale du CLI. Par défaut `~/.ionic`.
-* `IONIC_HTTP_PROXY`: Set a URL for proxying all CLI requests through. See [Using a Proxy](./using-a-proxy).
-* `IONIC_TOKEN`: Automatically authenticates with [Ionic Appflow](https://ionicframework.com/appflow).
+* `IONIC_HTTP_PROXY`: Si vous êtes derrière un proxy, ceci est l'URL par laquelle toutes les requêtes du CLI vont passer. Voir la section [Utiliser un proxy](./using-a-proxy).
+* `IONIC_TOKEN`: Token d'authentification pour [Ionic Appflow](https://ionicframework.com/appflow).
 
-## Flags
+## Options
 
-CLI flags are global options that alter the behavior of a CLI command.
+Les options suivantes modifient le comportement d'une commande exécutée par le CLI.
 
-* `--help`: Instead of running the command, view its help page.
-* `--verbose`: Show all log messages for debugging purposes.
-* `--quiet`: Only show `WARN` and `ERROR` log messages.
+* `--help`: Au lieu d'exécuter la commande, consultez sa page d'aide.
+* `--verbose`: Affiche tous les messages de log à des fins de débogage.
+* `--quiet`: N'afficher que les messages de log `WARN` et `ERROR`.
 * `--no-interactive`: Turn off interactive prompts and fancy outputs. If CI or a non-TTY terminal is detected, the CLI is automatically non-interactive.
 * `--confirm`: Turn on auto-confirmation of confirmation prompts. Careful: the CLI prompts before doing something potentially harmful. Auto-confirming may have unintended results.
 
