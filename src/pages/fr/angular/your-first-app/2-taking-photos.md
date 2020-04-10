@@ -107,7 +107,7 @@ Fini dans la fonction `addNewToGallery` , ajoutez la nouvelle photo capturée au
 }
 ```
 
-With the photo(s) stored into the main array, move over to `tab2.page.html` so we can display the image on the screen. Ajouter un composant de la grille [](https://ionicframework.com/docs/api/grid) pour que chaque photo s'affiche bien lorsque des photos sont ajoutées à la galerie, et boucler chaque photo dans le tableau Photos, en ajoutant un composant Image (`<ion-img>`) pour chacune. Pointez le `src` (source) sur le chemin de la photo :
+Avec les photos stockées dans le tableau principal, passez à `tab2.page.html` pour que nous puissions afficher l'image à l'écran. Ajouter un composant de la grille [](https://ionicframework.com/docs/api/grid) pour que chaque photo s'affiche bien lorsque des photos sont ajoutées à la galerie, et boucler chaque photo dans le tableau Photos, en ajoutant un composant Image (`<ion-img>`) pour chacune. Pointez le `src` (source) sur le chemin de la photo :
 
 ```html
 <ion-content>
