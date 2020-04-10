@@ -5,46 +5,46 @@
 
 ## Files
 
-Configuration values are stored in JSON files. The Ionic CLI maintains a global configuration file, usually located at `~/.ionic/config.json`, and project configuration files, usually at the project's root directory as `ionic.config.json`.
+Les valeurs de configuration sont stockées dans des fichiers JSON. Le CLI Ionic se base sur un fichier de configuration global, généralement situé ici `~/.ionic/config. son`, et des fichiers de configuration du projet, généralement situé à la racine du projet dans `ionic.config.json`.
 
-The CLI provides commands for setting and printing config values from project config files and the global CLI config file. See `ionic config --help` or see the documentation for usage of [`ionic config get`](/docs/cli/commands/config-get) and [`ionic config set`](/docs/cli/commands/config-set).
+Le CLI fournit des commandes pour définir et afficher les valeurs de configuration à partir des fichiers de configuration du projet et du fichier de configuration global CLI. Voir `ionic config --help` ou voir la documentation pour l'utilisation des commandes [`configuration ionic get`](/docs/cli/commands/config-get) et [`configuration ionic set`](/docs/cli/commands/config-set).
 
-### Project Configuration File
+### Fichier de configuration du projet
 
-Each Ionic project has a project configuration file, usually at the project's root directory. The following is an annotated `ionic.config.json` file.
+Chaque projet Ionic a un fichier de configuration de projet, généralement situé à la racine. Voir ci-après le fichier `ionic.config.json` commenté.
 
 ```json
 {
-  // The human-readable name of the app.
+  // Nom de l'application.
   "name": "My App",
 
-  // The project type of the app. The CLI uses this value to determine which
-  // commands and command options are available, what to output for help
-  // documentation, and what to use for web asset builds and the dev server.
+  // Le type de projet de l'application. Le CLI utilise cette valeur pour déterminer les commandes
+  // et les options disponibles, quoi afficher pour la documentation d'aide
+  // et ce qu'il faut utiliser pour les compilations de ressources web et le serveur de développement.
   "type": "angular",
 
-  // The App ID for Ionic Appflow.
+  // L'ID de l'application pour Ionic Appflow.
   "id": "abc123",
 
-  // Configuration object for integrations such as Cordova and Capacitor.
+  // Objet de configuration pour des intégrations telles que Cordova et Capacitor.
   "integrations": {
     "cordova": {
       ...
     }
   },
 
-  // Hook configuration--see the Hooks section below for details.
+  // Configuration des hooks --voir la section des hooks ci-dessous pour plus de détails.
   "hooks": {
     ...
   }
 }
 ```
 
-## Environment Variables
+## Variables d'environnement
 
-The CLI will look for the following environment variables:
+Le CLI cherchera les variables d'environnement suivantes :
 
-* `IONIC_CONFIG_DIRECTORY`: The directory of the global CLI config. Defaults to `~/.ionic`.
+* `IONIC_CONFIG_DIRECTORY`: Le répertoire de la configuration globale du CLI. Par défaut `~/.ionic`.
 * `IONIC_HTTP_PROXY`: Set a URL for proxying all CLI requests through. See [Using a Proxy](./using-a-proxy).
 * `IONIC_TOKEN`: Automatically authenticates with [Ionic Appflow](https://ionicframework.com/appflow).
 
