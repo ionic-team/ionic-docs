@@ -136,6 +136,8 @@ color-scheme: light dark;
 | ----------------- | ----------------------------- |
 | <figure><img alt="Application without color-scheme" src="/docs/assets/img/theming/color-scheme-light.png" /></figure> | <figure><img alt="Application with color-scheme" src="/docs/assets/img/theming/color-scheme-dark.png" /></figure> |
 
+For more information regarding `color-scheme` please see https://web.dev/color-scheme/.
+
 ## Ionic Dark Theme
 
 Ionic has a recommended theme for variables to use in order to get a dark mode based on the device running the app. It can be broken down into the following parts:
