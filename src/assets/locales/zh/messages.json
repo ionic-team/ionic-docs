@@ -83,7 +83,7 @@
   "menu-techniques": "Techniques",
   "menu-techniques-security": "Security",
   "menu-troubleshooting": "Troubleshooting",
-  "menu-troubleshooting-debugging": "Remote Debugging",
+  "menu-troubleshooting-debugging": "Debugging",
   "menu-troubleshooting-build": "Build Errors",
   "menu-troubleshooting-runtime": "Runtime Errors",
   "menu-troubleshooting-native": "Native Errors",
