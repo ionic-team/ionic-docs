@@ -1,11 +1,11 @@
 ---
-previousText: 'Deploying Mobile'
+previousText: '部署移动应用'
 previousUrl: '/docs/angular/your-first-app/6-deploying-mobile'
-nextText: 'Lifecycle'
+nextText: '生命周期'
 nextUrl: '/docs/angular/lifecycle'
 ---
 
-# Rapid App Development with Live Reload
+# 利用实时重载进行应用的快速开发
 
 So far, we’ve seen how easy it is to develop a cross-platform app that works everywhere. The development experience is pretty quick, but what if I told you there was a way to go faster?
 
