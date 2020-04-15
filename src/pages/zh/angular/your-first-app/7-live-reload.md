@@ -7,13 +7,13 @@ nextUrl: '/docs/angular/lifecycle'
 
 # 利用实时重载进行应用的快速开发
 
-到目前为止，我们了解到开发一款跨平台应用是很容易的。 开发过程十分快速，不过你知道我接下来要说的一种能让开发变得更快捷的方式吗？
+到目前为止，我们了解到开发一款跨平台应用是很容易的。 开发过程十分迅速，不过接下来我要介绍一种能让开发变得更快的方式。
 
-We can use the Ionic CLI’s [Live Reload functionality](https://ionicframework.com/docs/cli/livereload) to boost our productivity when building Ionic apps. When active, Live Reload will reload the browser and/or WebView when changes in the app are detected.
+我们可以使用Ionic CLI的实时重载功能来提升我们在开发Ionic应用时的效率。 当激活该选项时，浏览器或是WebView会检测到应用的修改，从而实时刷新并应用最新代码。
 
-## Live Reload
+## 实时重载
 
-Remember `ionic serve`? That was Live Reload working in the browser, allowing us to iterate quickly.
+还记得`ionic serve`这条命令吗？ 它可以让实时重载在浏览器中运行，使得我们可以对代码进行快速迭代。
 
 We can also use it when developing on iOS and Android devices. This is particularly useful when writing code that interacts with native plugins - we must run it on a device to verify that it works. Therefore, being able to quickly write, build, test, and deploy code is crucial to keeping up our development speed.
 
