@@ -1,3 +1,7 @@
+docs-demo {
+  padding-top: 56px;
+}
+
 .docs-demo-device {
   --device-padding: 1rem;
   --device-width: 344px;
