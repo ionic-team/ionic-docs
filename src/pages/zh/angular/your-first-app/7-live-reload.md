@@ -15,7 +15,7 @@ nextUrl: '/docs/angular/lifecycle'
 
 还记得`ionic serve`这条命令吗？ 它可以让实时重载在浏览器中运行，使得我们可以对代码进行快速迭代。
 
-We can also use it when developing on iOS and Android devices. This is particularly useful when writing code that interacts with native plugins - we must run it on a device to verify that it works. Therefore, being able to quickly write, build, test, and deploy code is crucial to keeping up our development speed.
+实时重载不仅能在浏览器中使用，我们还能在开发IOS和Android应用中用到。 This is particularly useful when writing code that interacts with native plugins - we must run it on a device to verify that it works. Therefore, being able to quickly write, build, test, and deploy code is crucial to keeping up our development speed.
 
 Let’s use Live Reload to implement photo deletion, the missing piece of our Photo Gallery feature. Select your platform of choice (iOS or Android) and connect a device to your computer. Next, run either command in a terminal, based on your chosen platform:
 
@@ -80,16 +80,16 @@ In `src/app/services/photo.service.ts`, add the `deletePicture()` function:
 
 ```typescript
 public async deletePicture(photo: Photo, position: number) {
-  // Remove this photo from the Photos reference data array
+  // 从保存照片的数组中移除一条照片记录
   this.photos.splice(position, 1);
 
-  // Update photos array cache by overwriting the existing photo array
+  // 通过修改照片数组数据更新缓存
   Storage.set({
     key: this.PHOTO_STORAGE,
     value: JSON.stringify(this.photos)
   });
 
-  // delete photo file from filesystem
+  // 从文件系统中删除照片
   const filename = photo.filepath
                       .substr(photo.filepath.lastIndexOf('/') + 1);
 
@@ -98,6 +98,9 @@ public async deletePicture(photo: Photo, position: number) {
     directory: FilesystemDirectory.Data
   });
 }
+ 
+Text
+XPath: /pre[5]/code
 ```
 
 The selected photo is removed from the Photos array first. Then, we use the Capacitor Storage API to update the cached version of the Photos array. Finally, we delete the actual photo file itself using the Filesystem API.
