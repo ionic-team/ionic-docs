@@ -112,6 +112,37 @@ function checkToggle(shouldCheck) {
 
 <!-- Codepen https://codepen.io/ionic/pen/zYOpQLj --><docs-codepen preview="false" user="ionic" slug="zYOpQLj" height="600px" default-tab="js,result"></docs-codepen>
 
+## Adjusting System UI Components
+
+When developing a dark theme, you may notice that certain system UI components are not adjusting to dark mode properly. To fix this you will need to specify the `color-scheme`. See the <a href="https://caniuse.com/#feat=mdn-html_elements_meta_name_color-scheme" target="_blank">browser compatibility for color-scheme</a> for details on cross browser support.
+
+While you may be mainly using Ionic components instead of only native components, `color-scheme` can also affect aspects of your application such as the scrollbar. In order to use `color-scheme` you will need to add the following HTML to the `head` of your application:
+
+```html
+<meta name="color-scheme" content="light dark" />
+```
+
+This allows the page to indicate which color scheme it is comfortable being rendered with. Alternatively, you can add the following CSS to do this on a per-element basis:
+
+```css
+color-scheme: light dark;
+```
+
+| Default scrollbar | Scrollbar with `color-scheme` |
+| ----------------- | ----------------------------- |
+|                   |                               |
+<figure>
+
+![Application without color-scheme](/docs/assets/img/theming/color-scheme-light.png)</figure> 
+
+|<figure>
+
+![Application with color-scheme](/docs/assets/img/theming/color-scheme-dark.png)</figure> 
+
+|
+
+For more information regarding `color-scheme` please see https://web.dev/color-scheme/.
+
 ## Ionic Dark Theme
 
 Ionic has a recommended theme for variables to use in order to get a dark mode based on the device running the app. It can be broken down into the following parts:
