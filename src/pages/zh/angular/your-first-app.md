@@ -13,7 +13,7 @@ Ionic强大之处在于，你只需要用HTML，CSS和JavaScript一套代码，�
 
 > 如果你正在寻找之前的Ionic 4和Cordova版本指南， [看看这里](/docs/developer-resources/guides/first-app-v4/intro)。
 
-## What We'll Build
+## 我们要做哪些事
 
 我们会创建一个图库应用，它能够调用设备进行拍照，在网格中显示所有已拍摄的照片，持久化数据。
 
@@ -23,53 +23,53 @@ Ionic强大之处在于，你只需要用HTML，CSS和JavaScript一套代码，�
 * 使用官方提供的原生应用运行环境[Capacitor](https://capacitor.ionicframework.com)发布原生iOS和Android移动应用。
 * 图库应用的功能由[相机](https://capacitor.ionicframework.com/docs/apis/camera)，[文件系统](https://capacitor.ionicframework.com/docs/apis/filesystem)和[存储](https://capacitor.ionicframework.com/docs/apis/storage)几个API实现。
 
-It’s easy to get started. Find the complete app code referenced in this guide [on GitHub](https://github.com/ionic-team/photo-gallery-capacitor-ng).
+起步非常容易， 本章引用的所有代码都可以在[GitHub](https://github.com/ionic-team/photo-gallery-capacitor-ng)上找到。
 
-## Download Required Tools
+## 下载必要的工具
 
-Download and install these right away to ensure an optimal Ionic development experience:
+下载安装如下工具，以保障你的Ionic应用开发体验保持最佳：
 
-* **Node.js** for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
-* **A code editor** for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
-* **Command-line interface/terminal (CLI)**: 
- * **Windows** users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode.
- * **Mac/Linux** users, virtually any terminal will work.
+* **Node.js**与Ionic进行交互。 [下载永久支持版本](https://nodejs.org/en/)
+* **一款代码编辑器** 用于编写代码 我们强烈推荐[Visual Studio Code](https://code.visualstudio.com/)。
+* **命令行工具/终端（CLI）** 
+ * **Windows**用户：为了保证体验，我们建议使用管理员权限启动命令行（cmd）或者Powershell CLI。
+ * **Mac/Linux**用户，可以使用任意终端。
 
-## Install Ionic Tooling
+## 安装Ionic工具
 
-Run the following in the command line terminal to install the Ionic CLI (`ionic`), `native-run`, used to run native binaries on devices and simulators/emulators, and `cordova-res`, used to generate native app icons and splash screens:
+在命令行工具或终端中运行以下命令以安装Ionic CLI（`ionic`），`native-run`用于在设备以及模拟器/仿真器上运行本地二进制文件，还有`cordova-res`用于生成本地应用图标以及落地页：
 
-> To open a terminal in Visual Studio Code, go to Terminal -> New Terminal.
+> 若要在Visual Studio中打开终端，可以通过 Terminal -> New Terminal。
 
 ```shell
 $ npm install -g @ionic/cli native-run cordova-res
 ```
 
-> The `-g` option means *install globally*. When packages are installed globally, `EACCES` permission errors can occur.
+> `-g`的选项代表*全局安装*， 当我们通过全局进行安装包的时候，有可能会发生`无读取权限`的错误。
 > 
-> Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](/docs/developing/tips#resolving-permission-errors) for more information.
+> 这时候我们应该排查npm是否有设置能操作全局的权限， 可以查看[解决权限错误](/docs/developing/tips#resolving-permission-errors)以获取更多解决问题的信息。
 
-## Create an App
+## 创建应用
 
-Next, create an Ionic Angular app that uses the “Tabs” starter template and adds Capacitor for native functionality:
+接下来，我们要创建一个带有“Tabs”的Ionic Angular模板应用，并且为与原生交互的功能添加Capacitor：
 
 ```shell
 $ ionic start photo-gallery tabs --type=angular --capacitor
 ```
 
-This starter project comes complete with three pre-built pages and best practices for Ionic development. With common building blocks already in place, we can add more features easily!
+这个初始项目创建完成后，预置了三个页面，这是Ionic开发推崇的模式。 有了可以遵循的构建模式，我们可以很轻松地添加其他更多功能进去。
 
-Next, change into the app folder:
+接下来，我们在命令行工具或者终端中切换到应用文件夹：
 
 ```shell
 $ cd photo-gallery
 ```
 
-### PWA Elements
+### PWA模块
 
-Some Capacitor plugins, including the Camera API, provide the web-based functionality and UI via the Ionic [PWA Elements library](https://github.com/ionic-team/ionic-pwa-elements).
+某些例如相机的Capacitor插件，通过Ionic的[PWA模块库](https://github.com/ionic-team/ionic-pwa-elements)提供基于web功能和用户界面。
 
-It's a separate dependency, so install it next:
+这是一个单独的依赖，接下来我们安装它：
 
 ```shell
 $ npm install @ionic/pwa-elements
