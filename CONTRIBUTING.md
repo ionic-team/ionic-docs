@@ -4,6 +4,7 @@ Thanks for your interest in contributing to Ionic's documentation! :tada: Check 
 
 - [Contributing Guide](#contributing-guide)
   - [Development Workflow](#development-workflow)
+  - [Using VS Code on Windows](#using-vs-code-on-windows)
   - [Project Structure](#project-structure)
     - [Directories](#directories)
     - [Page Templates](#page-templates)
