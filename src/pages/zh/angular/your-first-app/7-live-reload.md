@@ -98,9 +98,7 @@ public async deletePicture(photo: Photo, position: number) {
     directory: FilesystemDirectory.Data
   });
 }
- 
-Text
-XPath: /pre[5]/code
+
 ```
 
 The selected photo is removed from the Photos array first. Then, we use the Capacitor Storage API to update the cached version of the Photos array. Finally, we delete the actual photo file itself using the Filesystem API.
@@ -109,6 +107,6 @@ Save this file, then tap on a photo again and choose the “Delete” option. Th
 
 ## 下一步呢？
 
-祝贺您！ You built a complete cross-platform Photo Gallery app that runs on the web, iOS, and Android. There are many paths to follow from here. Try adding another [Ionic UI component](https://ionicframework.com/docs/components) to the app, or more [native functionality](https://capacitor.ionicframework.com/docs/apis). The sky’s the limit.
+祝贺您！ 您已经构建了一个可以在web、iOS以及Android上跨平台运行的图库应用。 There are many paths to follow from here. 试试在你的应用中添加其他的[Ionic UI 组件](https://ionicframework.com/docs/components), 或者是 [原生功能](https://capacitor.ionicframework.com/docs/apis) The sky’s the limit.
 
-Happy app building! 💙
+祝您编码愉快！ 💙
