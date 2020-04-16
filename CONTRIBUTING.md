@@ -33,6 +33,14 @@ $ npm start
 
 ---
 
+## Using VS Code on Windows
+
+The Ionic docs were originally built in a Mac-based environment, so Mac-focused linting rules apply when committing changes. To contribute on Windows, do the following:
+
+- Configure VS Code to read/save files using line breaks (LF) instead of carriage returns (CRLF). Set it globally by navigating to: Settings -> Text Editor -> Files -> Eol. Set to `\n`.
+- Check that the Git setting `core.autocrlf` is set to `false`: run `git config -l | grep autocrlf`. Switch it to false using: `git config --global core.autocrlf false`.
+- If you've already cloned the `ionic-docs` repo, the files may already be cached as LF. To undo this, you need to clean the cache files of the repository. Run the following (make sure you stage or commit your changes first): `git rm --cached -r .` then `git reset --hard`.
+
 ## Project Structure
 
 Ionic's documentation is built using [Stencil](https://stenciljs.com). The content is written as Markdown or pulled in as JSON data from other Ionic repositories.
