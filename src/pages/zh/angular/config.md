@@ -64,31 +64,31 @@ import { createAnimation, IonicModule } from '@ionic/angular';
 <ion-back-button [text]="getBackButtonText()"></ion-back-button>
 ```
 
-在示例中，我们使用到了`ion-back-button`的动态更新文本，这个方式在语言或地区改变时十分有用。 The `getBackButtonText` method would be responsible for returning the correct text.
+在示例中，我们使用到了`ion-back-button`的动态更新文本，这个方式在语言或地区改变时十分有用。 `getBackButtonText`方法将负责返回正确的文本内容。
 
 
-## Config Options
+## 配置选项
 
-Below is a list of config options that Ionic uses.
+以下是使用ionic的配置列表。
 
-| Config                   | Type               | Description                                                                                              |
+| 配置                       | 类型                 | 描述                                                                                                       |
 | ------------------------ | ------------------ | -------------------------------------------------------------------------------------------------------- |
-| `actionSheetEnter`       | `AnimationBuilder` | Provides a custom enter animation for all `ion-action-sheet`, overriding the default "animation".        |
-| `actionSheetLeave`       | `AnimationBuilder` | Provides a custom leave animation for all `ion-action-sheet`, overriding the default "animation".        |
-| `alertEnter`             | `AnimationBuilder` | Provides a custom enter animation for all `ion-alert`, overriding the default "animation".               |
-| `alertLeave`             | `AnimationBuilder` | Provides a custom leave animation for all `ion-alert`, overriding the default "animation".               |
-| `animated`               | `boolean`          | If `true`, Ionic will enable all animations and transitions across the app.                              |
-| `backButtonIcon`         | `string`           | Overrides the default icon in all `<ion-back-button>` components.                                  |
-| `backButtonText`         | `string`           | Overrides the default text in all `<ion-back-button>` components.                                  |
-| `hardwareBackButton`     | `boolean`          | If `true`, Ionic will respond to the hardware back button in an Android device.                          |
-| `infiniteLoadingSpinner` | `SpinnerTypes`     | Overrides the default spinner type in all `<ion-infinite-scroll-content>` components.              |
-| `loadingEnter`           | `AnimationBuilder` | Provides a custom enter animation for all `ion-loading`, overriding the default "animation".             |
-| `loadingLeave`           | `AnimationBuilder` | Provides a custom leave animation for all `ion-loading`, overriding the default "animation".             |
-| `loadingSpinner`         | `SpinnerTypes`     | Overrides the default spinner for all `ion-loading` overlays.                                            |
-| `menuIcon`               | `string`           | Overrides the default icon in all `<ion-menu-button>` components.                                  |
-| `menuType`               | `string`           | Overrides the default menu type for all `<ion-menu>` components.                                   |
-| `modalEnter`             | `AnimationBuilder` | Provides a custom enter animation for all `ion-modal`, overriding the default "animation".               |
-| `modalLeave`             | `AnimationBuilder` | Provides a custom leave animation for all `ion-modal`, overriding the default "animation".               |
+| `actionSheetEnter`       | `AnimationBuilder` | 为所有`ion-action-sheet`提供自定义进场动画。                                                                          |
+| `actionSheetLeave`       | `AnimationBuilder` | 为所有`ion-action-sheet`提供自定义离场动画。                                                                          |
+| `alertEnter`             | `AnimationBuilder` | 为所有`ion-alert`提供自定义进场动画。                                                                                 |
+| `alertLeave`             | `AnimationBuilder` | 为所有`ion-alert`提供自定义离场动画。                                                                                 |
+| `animated`               | `boolean`          | 如果为`true`，Ionic将会为应用启用动画和过渡。                                                                             |
+| `backButtonIcon`         | `string`           | 覆盖`<ion-back-button>`默认图标。                                                                         |
+| `backButtonText`         | `string`           | 覆盖`<ion-back-button>`默认文本。                                                                         |
+| `hardwareBackButton`     | `boolean`          | 如果为`true`，Ionic将会处理Android设备的返回按钮。                                                                       |
+| `infiniteLoadingSpinner` | `SpinnerTypes`     | 覆盖`<ion-infinite-scroll-content>`的旋转图标类型。                                                          |
+| `loadingEnter`           | `AnimationBuilder` | 为所有`ion-loading`提供自定义的进场动画。                                                                              |
+| `loadingLeave`           | `AnimationBuilder` | 为所有`ion-loading`提供自定义的离场动画。                                                                              |
+| `loadingSpinner`         | `SpinnerTypes`     | 覆盖`<ion-loading>`的旋转图标类型。                                                                          |
+| `menuIcon`               | `string`           | 覆盖`<ion-menu-button>`默认图标。                                                                         |
+| `menuType`               | `string`           | 覆盖`<ion-menu>`默认菜单类型。                                                                              |
+| `modalEnter`             | `AnimationBuilder` | 为所有`ion-modal`提供自定义进场动画。                                                                                 |
+| `modalLeave`             | `AnimationBuilder` | 为所有`ion-modal`提供自定义离场动画。                                                                                 |
 | `mode`                   | `Mode`             | The mode determines which platform styles to use for the whole application.                              |
 | `navAnimation`           | `AnimationBuilder` | Overrides the default "animation" of all `ion-nav` and `ion-router-outlet` across the whole application. |
 | `pickerEnter`            | `AnimationBuilder` | Provides a custom enter animation for all `ion-picker`, overriding the default "animation".              |
