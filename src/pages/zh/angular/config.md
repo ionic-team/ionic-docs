@@ -1,22 +1,22 @@
 ---
-previousText: 'Navigation/Routing'
+previousText: '导航/路由'
 previousUrl: '/docs/angular/navigation'
-nextText: 'Platform'
+nextText: '设备平台'
 nextUrl: '/docs/angular/platform'
 contributors:
   - liamdebeasi
   - mhartington
 ---
 
-# Config
+# 配置
 
-Ionic Config provides a way to change the properties of components globally across an app. It can set the app mode, tab button layout, animations, and more.
+Ionic Config提供了应用全局配置的方式。你可以设置应用的模式、tab按钮的布局、动画以及其他选项。
 
-## Usage
+## 使用方法
 
-### Global
+### 全局
 
-To override the initial Ionic config for the app, provide a config in `IonicModule.forRoot` in the `app.module.ts` file.
+如果要覆盖Ionic默认的全局配置，可以在`app.module.ts`文件中添加`IonicModule.forRoot`。
 
 ```typescript
 import { IonicModule } from '@ionic/angular';
@@ -35,10 +35,10 @@ import { IonicModule } from '@ionic/angular';
 })
 ```
 
-In the above example, we are disabling the Material Design ripple effect across the app, as well as forcing the mode to be Material Design.
+在上面的示例中，我们强制应用使用Material Design风格，并且禁用了他的涟漪效果。
 
 
-### By Component
+### 通过组件
 
 Ionic Config is not reactive, so it is recommended to use a component's properties when you want to override its default behavior rather than set its config globally.
 
