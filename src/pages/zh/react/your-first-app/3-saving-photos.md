@@ -24,18 +24,17 @@ Next, create a couple of new functions in `usePhotoGallery`:
 ```typescript
 const savePicture = async (photo: CameraPhoto, fileName: string) => {
   const base64Data = await base64FromPath(photo.webPath!);
-  await writeFile({
+  const savedFile = await writeFile({
     path: fileName,
     data: base64Data,
     directory: FilesystemDirectory.Data
   });
-  return getPhotoFile(photo, fileName);
-};
 
-const getPhotoFile = async (cameraPhoto: CameraPhoto, fileName: string): Promise<Photo> => {
+  // Use webPath to display the new image instead of base64 since it's
+  // already loaded into memory
   return {
     filepath: fileName,
-    webviewPath: cameraPhoto.webPath
+    webviewPath: photo.webPath
   };
 };
 ```
@@ -45,8 +44,6 @@ const getPhotoFile = async (cameraPhoto: CameraPhoto, fileName: string): Promise
 We pass in the `cameraPhoto` object, which represents the newly captured device photo, as well as the fileName, which will provide a path for the file to be stored to.
 
 Next we use the Capacitor [Filesystem API](https://capacitor.ionicframework.com/docs/apis/filesystem) to save the photo to the filesystem. We start by converting the photo to base64 format, then feed the data to the Filesystem’s `writeFile` function.
-
-`getPhotoFile` is much simpler. As you’ll recall, we display each photo on the screen by setting each image’s source path (`src` attribute in the `Tab2` component) to the webviewPath property.
 
 Last, call `savePicture` and pass in the cameraPhoto object and filename directly underneath the call to `setPhotos` in the `takePhoto` method. Here is the full method:
 
