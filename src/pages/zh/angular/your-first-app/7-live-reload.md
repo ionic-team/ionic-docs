@@ -17,7 +17,7 @@ nextUrl: '/docs/angular/lifecycle'
 
 实时重载不仅能在浏览器中使用，我们还能在开发IOS和Android应用中用到。 在编写与原生插件交互的代码时，我们必须要在真实设备上运行，以验证这些相关代码是否可以正常运行。 因此，能够快速编码、构建、测试以及发布，对于保持我们的开发效率至关重要。
 
-Let’s use Live Reload to implement photo deletion, the missing piece of our Photo Gallery feature. Select your platform of choice (iOS or Android) and connect a device to your computer. Next, run either command in a terminal, based on your chosen platform:
+我们的图库应用还缺少删除功能，现在用实时重载来实现他。 首先选择好平台（iOS或者Android），然后将设备与电脑连接好。 接下来，根据你选择好的平台，在命令行或是终端中运行其中的一条命令：
 
 ```shell
 $ ionic cap run ios -l --external
