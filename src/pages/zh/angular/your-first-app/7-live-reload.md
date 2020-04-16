@@ -76,7 +76,7 @@ public async showActionSheet(photo, position) {
 
 Save both of the files we just edited. The Photo Gallery app will reload automatically, and now when we tap on one of the photos in the gallery, the action sheet displays. Tapping “Delete” doesn’t do anything yet, so head back into your code editor.
 
-In `src/app/services/photo.service.ts`, add the `deletePicture()` function:
+在`src/app/services/photo.service.ts`里面，我们将`deletePicture()`函数添加进去：
 
 ```typescript
 public async deletePicture(photo: Photo, position: number) {
@@ -107,8 +107,8 @@ The selected photo is removed from the Photos array first. Then, we use the Capa
 
 Save this file, then tap on a photo again and choose the “Delete” option. This time, the photo is deleted! Implemented much faster using Live Reload. 💪
 
-## What’s Next?
+## 下一步呢？
 
-Congratulations! You built a complete cross-platform Photo Gallery app that runs on the web, iOS, and Android. There are many paths to follow from here. Try adding another [Ionic UI component](https://ionicframework.com/docs/components) to the app, or more [native functionality](https://capacitor.ionicframework.com/docs/apis). The sky’s the limit.
+祝贺您！ You built a complete cross-platform Photo Gallery app that runs on the web, iOS, and Android. There are many paths to follow from here. Try adding another [Ionic UI component](https://ionicframework.com/docs/components) to the app, or more [native functionality](https://capacitor.ionicframework.com/docs/apis). The sky’s the limit.
 
 Happy app building! 💙
