@@ -51,7 +51,7 @@ $ npm install -g @ionic/cli native-run cordova-res
 
 ## 创建应用
 
-接下来，我们要创建一个带有“Tabs”的Ionic Angular模板应用，并且为与原生交互的功能添加Capacitor：
+接下来，我们要创建一个带有“标签”的Ionic Angular模板应用，并且为与原生交互的功能添加Capacitor：
 
 ```shell
 $ ionic start photo-gallery tabs --type=angular --capacitor
@@ -75,34 +75,34 @@ $ cd photo-gallery
 $ npm install @ionic/pwa-elements
 ```
 
-Next, import `@ionic/pwa-elements` by editing `src/main.ts`.
+然后，我们编辑`src/main.ts`文件，导入`@ionic/pwa-elements`
 
 ```typescript
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
-// Call the element loader after the platform has been bootstrapped
+// 在平台被引导后，调用模块加载器
 defineCustomElements(window);
 ```
 
-That’s it! Now for the fun part - let’s see the app in action.
+就这么多！ 接下来是比较有意思的时候，我们看看应用究竟是什么样子的。
 
-## Run the App
+## 运行应用
 
-Run this command next:
+运行这个命令：
 
 ```shell
 $ ionic serve
 ```
 
-And voilà! Your Ionic app is now running in a web browser. Most of your app can be built and tested right in the browser, greatly increasing development and testing speed.
+看吧， 你的Ionic应用现在已经运行在浏览器里面了。 大多数应用开发构建以及测试你都可以放在浏览器里面进行，这可以大大提升开发和测试的速度。
 
-## Photo Gallery!!!
+## 图库应用
 
-There are three tabs. Click on the Tab2 tab. It’s a blank canvas, aka the perfect spot to transform into a Photo Gallery. The Ionic CLI features Live Reload, so when you make changes and save them, the app is updated immediately!
+这里有三个标签， 点击Tab2标签， 这个画布上一片空白，我们可以将它变成一个图库。 Ionic的实时重载功能，可以让你修改代码并保存时，应用能够立即更新！
 
 ![Before and after going through this tutorial](/docs/assets/img/guides/first-app-cap-ng/email-photogallery.gif)
 
-Open the photo-gallery app folder in your code editor of choice, then navigate to `/src/app/tab2/tab2.page.html`. We see:
+在你选择的代码编辑器中打开图库应用的文件夹，然后转到`/src/app/tab2/tab2.page.html`文件。 我们看到：
 
 ```html
 <ion-header>
@@ -120,13 +120,13 @@ Open the photo-gallery app folder in your code editor of choice, then navigate t
 </ion-content>
 ```
 
-`ion-header` represents the top navigation and toolbar, with "Tab 2" as the title (there are two of them due to iOS [Collapsible Large Title](https://ionicframework.com/docs/api/title#collapsible-large-titles) support). Rename both `ion-title` elements to:
+`ion-header` 表示顶部导航和工具栏，标题为 "Tab 2"(其余两个因为iOS [可折叠大标题](https://ionicframework.com/docs/api/title#collapsible-large-titles) 支持而被折叠)。 将两个`ion-title`模块重命名为：
 
 ```html
 <ion-title>Photo Gallery</ion-title>
 ```
 
-We put the visual aspects of our app into `<ion-content>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. Start by adding a [floating action button](https://ionicframework.com/docs/api/fab) (FAB) to the bottom of the page and set the camera image as the icon.
+我们将看到的主要内容放到`<ion-content>`中， 接下来，我们会添加一个按钮，通过这个按钮打开设备相机并显示摄像头所捕捉到的画面。 Start by adding a [floating action button](https://ionicframework.com/docs/api/fab) (FAB) to the bottom of the page and set the camera image as the icon.
 
 ```html
 <ion-content>
