@@ -34,7 +34,7 @@ public async addNewToGallery() {
 }
 ```
 
-我们将使用 Capacitor [Filesystem API](https://capacitor.ionicframework.com/docs/apis/filesystem) 将照片保存到文件系统中。 首先，将照片转换为 base64 格式，然后将数据输入文件系统的 ` writeFile ` 函数。 最后，调用 getPhotoFile (我们稍后将实现此方法)，该方法返回一个Photo对象。
+我们将使用 Capacitor [Filesystem API](https://capacitor.ionicframework.com/docs/apis/filesystem) 将照片保存到文件系统中。 首先，将照片转换为 base64 格式，然后将数据输入文件系统的 ` writeFile ` 函数。 As you’ll recall, we display each photo on the screen by setting each image’s source path (`src` attribute) in `tab2.page.html` to the webviewPath property. So, set it then return the new Photo object.
 
 ```typescript
 private async savePicture(cameraPhoto: CameraPhoto) {
@@ -43,18 +43,22 @@ private async savePicture(cameraPhoto: CameraPhoto) {
 
   // Write the file to the data directory
   const fileName = new Date().getTime() + '.jpeg';
-  await Filesystem.writeFile({
+  const savedFile = await Filesystem.writeFile({
     path: fileName,
     data: base64Data,
     directory: FilesystemDirectory.Data
   });
 
-  // Get platform-specific photo filepaths
-  return await this.getPhotoFile(cameraPhoto, fileName);
+  // Use webPath to display the new image instead of base64 since it's
+  // already loaded into memory
+  return {
+    filepath: fileName,
+    webviewPath: cameraPhoto.webPath
+  };
 }
 ```
 
-`readAsBase64()` 和 `getPhotoFile()` 是我们接下来要定义的两个帮助函数。 由于它们需要少量的特定于平台的内容（Web 与 移动）逻辑，因此将它们划分为单独的方法-对此进行了更多介绍。  现在，实现它们在 Web 上的运行：
+`readAsBase64()` is a helper function we’ll define next. It's useful to organize via a separate method since it requires a small amount of platform-specific (web vs. 移动）逻辑，因此将它们划分为单独的方法-对此进行了更多介绍。 For now, implement the logic for running on the web:
 
 ```typescript
 private async readAsBase64(cameraPhoto: CameraPhoto) {
@@ -77,21 +81,10 @@ convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
 
 在 web 上以 base64 格式获取相机照片似乎比在移动设备上更为棘手。 实际上，我们只需使用内置 web APIs: [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) 一种将文件读取为Blob格式的简洁方法，然后使用 FileReader 的 [ readAsDataURL()](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL) 将Blob格式照片转换为base64格式。
 
-` getPhotoFile()`简单得多。 要记得，我们将在 `tab2.page.html` 中通过 webviewPath 属性设置每张图片的源路径(`src`属性)，以便在屏幕上显示每张照片。 因此，它在这里设置：
+Finally, change the way pictures become visible in the template file `tab2.page.html`.
 
-```typescript
-private async getPhotoFile(cameraPhoto: CameraPhoto, 
-                           fileName: string): Promise<Photo> {
-  return {
-    filepath: fileName,
-    webviewPath: cameraPhoto.webPath
-  };
-}
-```
-
-最后，在模板文件 ` tab2.page.html ` 中更改图片的显示方式。
 ```html
 <ion-img src="{{ photo.base64 ? photo.base64 : photo.webviewPath }}"></ion-img>
 ```
 
-好了！ 每当拍摄新照片时，都会自动将其保存到文件系统中。
+There we go! Each time a new photo is taken, it’s now automatically saved to the filesystem.
