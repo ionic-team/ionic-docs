@@ -34,27 +34,31 @@ public async addNewToGallery() {
 }
 ```
 
-Usaremos a Capacitor [API do sistema de arquivos](https://capacitor.ionicframework.com/docs/apis/filesystem) para salvar a foto no sistema de arquivos. Para começar, converta a foto para o formato base64 e, em seguida, utilize a função `writeFile` para alimentar os dados para a função </code>. Finalmente, faça uma chamada para getPhotoFile (que vamos implementar em instantes), que retorna um objeto Foto.
+Usaremos a Capacitor [API do sistema de arquivos](https://capacitor.ionicframework.com/docs/apis/filesystem) para salvar a foto no sistema de arquivos. Para começar, converta a foto para o formato base64 e, em seguida, utilize a função `writeFile` para alimentar os dados para a função </code>. As you’ll recall, we display each photo on the screen by setting each image’s source path (`src` attribute) in `tab2.page.html` to the webviewPath property. So, set it then return the new Photo object.
 
 ```typescript
 private async savePicture(cameraPhoto: CameraPhoto) {
-  // Converter a foto para formato base64, Necessário pela API do sistema de arquivos para salvar
-  const base64Data = aguarde isso. eadAsBase64(cameraPhoto);
+  // Convert photo to base64 format, required by Filesystem API to save
+  const base64Data = await this.readAsBase64(cameraPhoto);
 
-  // Escreva o arquivo para o diretório de dados
-  const fileName = new Date(). etTime() + '.jpeg';
-  aguarda Filesystem.writeFile({
+  // Write the file to the data directory
+  const fileName = new Date().getTime() + '.jpeg';
+  const savedFile = await Filesystem.writeFile({
     path: fileName,
     data: base64Data,
     directory: FilesystemDirectory.Data
   });
 
-  // Obter caminhos de arquivos de fotos específicos de plataforma
-  retornar aguardando isso. etPhotoFile(cameraPhoto, fileName);
+  // Use webPath to display the new image instead of base64 since it's
+  // already loaded into memory
+  return {
+    filepath: fileName,
+    webviewPath: cameraPhoto.webPath
+  };
 }
 ```
 
-`readAsBase64()` e `getPhotoFile()` são duas funções auxiliares que definimos em seguida. Eles são divididos em métodos separados porque eles exigem uma pequena quantidade de uma plataforma específica (web vs. lógica móvel) - mais sobre isso um pouco.  Por enquanto, implemente-os para serem executados na web:
+`readAsBase64()` is a helper function we’ll define next. It's useful to organize via a separate method since it requires a small amount of platform-specific (web vs. lógica móvel) - mais sobre isso um pouco. For now, implement the logic for running on the web:
 
 ```typescript
 private async readAsBase64(cameraPhoto: CameraPhoto) {
@@ -77,21 +81,10 @@ convertBlobToBase64 = (blob: Blob) => nova Promise((resolve, rejeitar) => {
 
 Na realidade, estamos apenas usando APIs web embutidas: [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) como uma maneira legal de ler o arquivo no formato blob então o bloco do FileReader [readAsDataURL()](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL) para converter as fotos para base64. Na realidade, estamos apenas usando APIs web embutidas: [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) como uma maneira legal de ler o arquivo no formato blob então o bloco do FileReader [readAsDataURL()](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL) para converter as fotos para base64.
 
-`getPhotoFile()` é muito mais simples. Como você se lembra, nós exibimos cada foto na tela, definindo o caminho de origem de cada imagem (atributo`src` de imagem) em `tab2. age.html` para a propriedade webviewPay. Então, isso é definido aqui:
+Finally, change the way pictures become visible in the template file `tab2.page.html`.
 
-```typescript
-private async getPhotoFile(cameraPhoto: CameraPhoto, 
-                           fileName: string): Promessa<Photo> {
-  return {
-    filepath: fileName,
-    webviewPath: cameraPhoto.webPath
-  };
-}
-```
-
-Finalmente, altere a forma como as imagens se tornam visíveis no arquivo de template `tab2.page.html`.
 ```html
 <ion-img src="{{ photo.base64 ? photo.base64 : photo.webviewPath }}"></ion-img>
 ```
 
-E aí! Cada vez que uma nova foto for tirada, ela agora é salva automaticamente no sistema de arquivos.
+There we go! Each time a new photo is taken, it’s now automatically saved to the filesystem.
