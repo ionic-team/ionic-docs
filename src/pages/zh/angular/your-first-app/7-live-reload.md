@@ -46,9 +46,10 @@ import { ActionSheetController } from '@ionic/angular';
 
 constructor(public photoService: PhotoService, 
             public actionSheetController: ActionSheetController) {}
+
 ```
 
-Next, implement the `showActionSheet()` function. We add two options: `Delete` that calls PhotoService’s `deletePicture()` function (to be added next) and `Cancel`, which when given the role of “cancel” will automatically close the action sheet:
+接下来，实现`showActionSheet()`函数。 我们往ActionSheet里面添加两个选项：`Delete`和`Cancel`，`Delete`选项可以调用照片服务的`deletePicture()`函数（我们后面要添加的功能），当按钮的`role`属性被赋值为"cancel"时，它将具有能关闭ActionSheet的功能。
 
 ```typescript
 public async showActionSheet(photo, position) {
@@ -66,7 +67,7 @@ public async showActionSheet(photo, position) {
       icon: 'close',
       role: 'cancel',
       handler: () => {
-        // Nothing to do, action sheet is automatically closed
+        // 不处理任何逻辑，Action Sheet会自动关闭
         }
     }]
   });
@@ -74,7 +75,7 @@ public async showActionSheet(photo, position) {
 }
 ```
 
-Save both of the files we just edited. The Photo Gallery app will reload automatically, and now when we tap on one of the photos in the gallery, the action sheet displays. Tapping “Delete” doesn’t do anything yet, so head back into your code editor.
+保存好我们刚刚编辑的那两个文件后， 应用将自动刷新，现在我们在图库的照片上面单击，Action Sheet按照预期显示了出来。 点击“Delete”选项之后，并没有触发任何效果，所以再回到编辑器中。
 
 在`src/app/services/photo.service.ts`里面，我们将`deletePicture()`函数添加进去：
 
