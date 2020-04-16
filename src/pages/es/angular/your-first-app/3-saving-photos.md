@@ -34,27 +34,31 @@ public async addNewToGallery() {
 }
 ```
 
-Utilizaremos el Capacitor [Filesystem API](https://capacitor.ionicframework.com/docs/apis/filesystem) para guardar la foto en el sistema de archivos. Para empezar, convierte la foto en formato base64, luego envía los datos a la función `writeFile` de Filesystem. Finalmente, haz una llamada a getPhotoFile (que implementaremos en un momento), que devuelve un objeto Photo.
+Utilizaremos el Capacitor [Filesystem API](https://capacitor.ionicframework.com/docs/apis/filesystem) para guardar la foto en el sistema de archivos. Para empezar, convierte la foto en formato base64, luego envía los datos a la función `writeFile` de Filesystem. As you’ll recall, we display each photo on the screen by setting each image’s source path (`src` attribute) in `tab2.page.html` to the webviewPath property. So, set it then return the new Photo object.
 
 ```typescript
 private async savePicture(cameraPhoto: CameraPhoto) {
-  // Convierte foto a formato base64, requerido por la API del sistema de archivos para guardar
+  // Convert photo to base64 format, required by Filesystem API to save
   const base64Data = await this.readAsBase64(cameraPhoto);
 
-  // Escribe el archivo en el directorio de datos
+  // Write the file to the data directory
   const fileName = new Date().getTime() + '.jpeg';
-  await Filesystem.writeFile({
+  const savedFile = await Filesystem.writeFile({
     path: fileName,
     data: base64Data,
     directory: FilesystemDirectory.Data
   });
 
-  // Obtener rutas de archivos de fotos específicas de la plataforma
-  return await this.getPhotoFile(cameraPhoto, fileName);
+  // Use webPath to display the new image instead of base64 since it's
+  // already loaded into memory
+  return {
+    filepath: fileName,
+    webviewPath: cameraPhoto.webPath
+  };
 }
 ```
 
-`readAsBase64()` y `getPhoto File()` son dos funciones ayudantes que definiremos a continuación. Se dividen en métodos separados porque requieren una pequeña cantidad de plataforma específica (web vs. mobile) lógica - más sobre eso en un poco.  Por ahora, implementarlos para ejecutarse en la web:
+`readAsBase64()` is a helper function we’ll define next. It's useful to organize via a separate method since it requires a small amount of platform-specific (web vs. mobile) lógica - más sobre eso en un poco. For now, implement the logic for running on the web:
 
 ```typescript
 private async readAsBase64(cameraPhoto: CameraPhoto) {
@@ -77,19 +81,8 @@ convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
 
 Obtaining the camera photo as base64 format on the web appears to be a bit trickier than on mobile. In reality, we’re just using built-in web APIs: [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) as a neat way to read the file into blob format, then FileReader’s [readAsDataURL()](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL) to convert the photo blob to base64.
 
-`getPhotoFile()` is much simpler. As you’ll recall, we display each photo on the screen by setting each image’s source path (`src` attribute) in `tab2.page.html` to the webviewPath property. So, it gets set here:
-
-```typescript
-private async getPhotoFile(cameraPhoto: CameraPhoto, 
-                           fileName: string): Promise<Photo> {
-  return {
-    filepath: fileName,
-    webviewPath: cameraPhoto.webPath
-  };
-}
-```
-
 Finally, change the way pictures become visible in the template file `tab2.page.html`.
+
 ```html
 <ion-img src="{{ photo.base64 ? photo.base64 : photo.webviewPath }}"></ion-img>
 ```
