@@ -25,9 +25,9 @@ $ ionic cap run ios -l --external
 $ ionic cap run android -l --external
 ```
 
-The Live Reload server will start up, and the native IDE of choice will open if not opened already. Within the IDE, click the Play button to launch the app onto your device.
+当实时重载服务启动之后，所选平台的本地开发工具将会自动打开，即使没有启动。 在开发工具中，点击启动按钮，应用将会在你的设备中运行。
 
-## Deleting Photos
+## 删除照片
 
 With Live Reload running and the app open on your device, let’s implement photo deletion functionality. Open `tab2.page.html` and add a new click handler to each `<ion-img>` element. When the app user taps on a photo in our gallery, we’ll display an [Action Sheet](https://ionicframework.com/docs/api/action-sheet) dialog with the option to either delete the selected photo or cancel (close) the dialog.
 
