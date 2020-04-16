@@ -40,7 +40,7 @@ import { IonicModule } from '@ionic/angular';
 
 ### 通过组件
 
-Ionic Config is not reactive, so it is recommended to use a component's properties when you want to override its default behavior rather than set its config globally.
+由于Ionic Config并不是响应式的，所以我们建议当你要覆盖默认配置的时候去通过组件属性更改，而不是全局配置。
 
 ```typescript
 import { createAnimation, IonicModule } from '@ionic/angular';
@@ -58,13 +58,13 @@ import { createAnimation, IonicModule } from '@ionic/angular';
 })
 ```
 
-This will set the default text for `ion-back-button` to `Go Back`. However, if you were to change the value of the `backButtonText` config to `Do Not Go Back`, the `ion-back-button` default text would still default to `Go Back` as the component has already been initialized and rendered. Instead, it is recommended to use the `text` property on `ion-back-button`.
+这些代码会让`ion-back-button`的默认显示文本为`Go Back`。 然而，假如你要将`backButtonText`改为`Do Not Go Back`，你会发现`ion-back-button`的默认显示文本还是`Go Back`，因为组件已经被初始化并且渲染了。 我们建议用`ion-back-button`的`text`属性来替代。
 
 ```html
 <ion-back-button [text]="getBackButtonText()"></ion-back-button>
 ```
 
-In this example we have used our `ion-back-button` in such a way that the text can be dynamically updated if there were to be a change that warranted it, such as a language or locale change. The `getBackButtonText` method would be responsible for returning the correct text.
+在示例中，我们使用到了`ion-back-button`的动态更新文本，这个方式在语言或地区改变时十分有用。 The `getBackButtonText` method would be responsible for returning the correct text.
 
 
 ## Config Options
