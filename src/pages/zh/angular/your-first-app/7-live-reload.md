@@ -15,7 +15,7 @@ nextUrl: '/docs/angular/lifecycle'
 
 还记得`ionic serve`这条命令吗？ 它可以让实时重载在浏览器中运行，使得我们可以对代码进行快速迭代。
 
-实时重载不仅能在浏览器中使用，我们还能在开发IOS和Android应用中用到。 在编写与原生插件交互的代码时，我们必须要在真实设备上运行，以验证这些相关代码是否可以正常运行。 Therefore, being able to quickly write, build, test, and deploy code is crucial to keeping up our development speed.
+实时重载不仅能在浏览器中使用，我们还能在开发IOS和Android应用中用到。 在编写与原生插件交互的代码时，我们必须要在真实设备上运行，以验证这些相关代码是否可以正常运行。 因此，能够快速编码、构建、测试以及发布，对于保持我们的开发效率至关重要。
 
 Let’s use Live Reload to implement photo deletion, the missing piece of our Photo Gallery feature. Select your platform of choice (iOS or Android) and connect a device to your computer. Next, run either command in a terminal, based on your chosen platform:
 
