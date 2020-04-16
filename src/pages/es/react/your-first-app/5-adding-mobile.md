@@ -13,10 +13,10 @@ Let’s start with making some small code changes - then our app will “just wo
 
 ## Platform-specific Logic
 
-First, we’ll update the photo saving functionality to support mobile. In the `savePicture` function, check which platform the app is running on. If it’s “hybrid” (Capacitor or Cordova, the two native runtimes), then read the photo file into base64 format using the `readFile` method. Otherwise, use the same logic as before when running the app on the web:
+First, we’ll update the photo saving functionality to support mobile. In the `savePicture` function, check which platform the app is running on. If it’s “hybrid” (Capacitor or Cordova, the two native runtimes), then read the photo file into base64 format using the `readFile` method. Also, return the complete file path to the photo using the Filesystem API. When setting the `webviewPath`, use the special `Capacitor.convertFileSrc` method ([details here](https://ionicframework.com/docs/core-concepts/webview#file-protocol)). Otherwise, use the same logic as before when running the app on the web.
 
 ```typescript
-const savePicture = async (photo: CameraPhoto, fileName: string) => {
+const savePicture = async (photo: CameraPhoto, fileName: string): Promise<Photo> => {
   let base64Data: string;
   // "hybrid" will detect Cordova or Capacitor;
   if (isPlatform('hybrid')) {
@@ -27,31 +27,18 @@ const savePicture = async (photo: CameraPhoto, fileName: string) => {
   } else {
     base64Data = await base64FromPath(photo.webPath!);
   }
-  await writeFile({
+  const savedFile = await writeFile({
     path: fileName,
     data: base64Data,
     directory: FilesystemDirectory.Data
   });
-  return getPhotoFile(photo, fileName);
-};
-```
 
-Next, update the `getPhotoFile` method. When running on mobile, return the complete file path to the photo using the Filesystem API. When setting the `webviewPath`, use the special `Capacitor.convertFileSrc` method ([details here](https://ionicframework.com/docs/core-concepts/webview#file-protocol)). Replace the existing `getPhotoFile` function with:
-
-```typescript
-const getPhotoFile = async (cameraPhoto: CameraPhoto, fileName: string): Promise<Photo> => {
   if (isPlatform('hybrid')) {
-    // Get the new, complete filepath of the photo saved on filesystem
-    const fileUri = await getUri({
-      directory: FilesystemDirectory.Data,
-      path: fileName
-    });
-
     // Display the new image by rewriting the 'file://' path to HTTP
-    // Details: https://ionicframework.com/docs/core-concepts/webview#file-protocol
+    // Details: https://ionicframework.com/docs/building/webview#file-protocol
     return {
-      filepath: fileUri.uri,
-      webviewPath: Capacitor.convertFileSrc(fileUri.uri),
+      filepath: savedFile.uri,
+      webviewPath: Capacitor.convertFileSrc(savedFile.uri),
     };
   }
   else {
@@ -59,7 +46,7 @@ const getPhotoFile = async (cameraPhoto: CameraPhoto, fileName: string): Promise
     // already loaded into memory
     return {
       filepath: fileName,
-      webviewPath: cameraPhoto.webPath
+      webviewPath: photo.webPath
     };
   }
 };
