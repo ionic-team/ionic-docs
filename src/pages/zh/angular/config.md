@@ -71,35 +71,35 @@ import { createAnimation, IonicModule } from '@ionic/angular';
 
 以下是使用ionic的配置列表。
 
-| 配置                       | 类型                 | 描述                                                                                                       |
-| ------------------------ | ------------------ | -------------------------------------------------------------------------------------------------------- |
-| `actionSheetEnter`       | `AnimationBuilder` | 为所有`ion-action-sheet`提供自定义进场动画。                                                                          |
-| `actionSheetLeave`       | `AnimationBuilder` | 为所有`ion-action-sheet`提供自定义离场动画。                                                                          |
-| `alertEnter`             | `AnimationBuilder` | 为所有`ion-alert`提供自定义进场动画。                                                                                 |
-| `alertLeave`             | `AnimationBuilder` | 为所有`ion-alert`提供自定义离场动画。                                                                                 |
-| `animated`               | `boolean`          | 如果为`true`，Ionic将会为应用启用动画和过渡。                                                                             |
-| `backButtonIcon`         | `string`           | 覆盖`<ion-back-button>`默认图标。                                                                         |
-| `backButtonText`         | `string`           | 覆盖`<ion-back-button>`默认文本。                                                                         |
-| `hardwareBackButton`     | `boolean`          | 如果为`true`，Ionic将会处理Android设备的返回按钮。                                                                       |
-| `infiniteLoadingSpinner` | `SpinnerTypes`     | 覆盖`<ion-infinite-scroll-content>`的旋转图标类型。                                                          |
-| `loadingEnter`           | `AnimationBuilder` | 为所有`ion-loading`提供自定义的进场动画。                                                                              |
-| `loadingLeave`           | `AnimationBuilder` | 为所有`ion-loading`提供自定义的离场动画。                                                                              |
-| `loadingSpinner`         | `SpinnerTypes`     | 覆盖`<ion-loading>`的旋转图标类型。                                                                          |
-| `menuIcon`               | `string`           | 覆盖`<ion-menu-button>`默认图标。                                                                         |
-| `menuType`               | `string`           | 覆盖`<ion-menu>`默认菜单类型。                                                                              |
-| `modalEnter`             | `AnimationBuilder` | 为所有`ion-modal`提供自定义进场动画。                                                                                 |
-| `modalLeave`             | `AnimationBuilder` | 为所有`ion-modal`提供自定义离场动画。                                                                                 |
-| `mode`                   | `Mode`             | The mode determines which platform styles to use for the whole application.                              |
-| `navAnimation`           | `AnimationBuilder` | Overrides the default "animation" of all `ion-nav` and `ion-router-outlet` across the whole application. |
-| `pickerEnter`            | `AnimationBuilder` | Provides a custom enter animation for all `ion-picker`, overriding the default "animation".              |
-| `pickerLeave`            | `AnimationBuilder` | Provides a custom leave animation for all `ion-picker`, overriding the default "animation".              |
-| `popoverEnter`           | `AnimationBuilder` | Provides a custom enter animation for all `ion-popover`, overriding the default "animation".             |
-| `popoverLeave`           | `AnimationBuilder` | Provides a custom leave animation for all `ion-popover`, overriding the default "animation".             |
-| `refreshingIcon`         | `string`           | Overrides the default icon in all `<ion-refresh-content>` components.                              |
-| `refreshingSpinner`      | `SpinnerTypes`     | Overrides the default spinner type in all `<ion-refresh-content>` components.                      |
-| `spinner`                | `SpinnerTypes`     | Overrides the default spinner in all `<ion-spinner>` components.                                   |
-| `statusTap`              | `boolean`          | If `true`, clicking or tapping the status bar will cause the content to scroll to the top.               |
-| `swipeBackEnabled`       | `boolean`          | If `true`, Ionic will enable the "swipe-to-go-back" gesture across the application.                      |
-| `tabButtonLayout`        | `TabButtonLayout`  | Overrides the default "layout" of all `ion-bar-button` across the whole application.                     |
-| `toastEnter`             | `AnimationBuilder` | Provides a custom enter animation for all `ion-toast`, overriding the default "animation".               |
-| `toastLeave`             | `AnimationBuilder` | Provides a custom leave animation for all `ion-toast`, overriding the default "animation".               |
+| 配置                       | 类型                 | 描述                                              |
+| ------------------------ | ------------------ | ----------------------------------------------- |
+| `actionSheetEnter`       | `AnimationBuilder` | 为所有`ion-action-sheet`提供自定义进场动画。                 |
+| `actionSheetLeave`       | `AnimationBuilder` | 为所有`ion-action-sheet`提供自定义离场动画。                 |
+| `alertEnter`             | `AnimationBuilder` | 为所有`ion-alert`提供自定义进场动画。                        |
+| `alertLeave`             | `AnimationBuilder` | 为所有`ion-alert`提供自定义离场动画。                        |
+| `animated`               | `boolean`          | 如果为`true`，Ionic将会为应用启用动画和过渡。                    |
+| `backButtonIcon`         | `string`           | 覆盖`<ion-back-button>`默认图标。                |
+| `backButtonText`         | `string`           | 覆盖`<ion-back-button>`默认文本。                |
+| `hardwareBackButton`     | `boolean`          | 如果为`true`，Ionic将会处理Android设备的返回按钮。              |
+| `infiniteLoadingSpinner` | `SpinnerTypes`     | 覆盖`<ion-infinite-scroll-content>`的旋转图标类型。 |
+| `loadingEnter`           | `AnimationBuilder` | 为所有`ion-loading`提供自定义的进场动画。                     |
+| `loadingLeave`           | `AnimationBuilder` | 为所有`ion-loading`提供自定义的离场动画。                     |
+| `loadingSpinner`         | `SpinnerTypes`     | 覆盖`<ion-loading>`的旋转图标类型。                 |
+| `menuIcon`               | `string`           | 覆盖`<ion-menu-button>`默认图标。                |
+| `menuType`               | `string`           | 覆盖`<ion-menu>`默认菜单类型。                     |
+| `modalEnter`             | `AnimationBuilder` | 为所有`ion-modal`提供自定义进场动画。                        |
+| `modalLeave`             | `AnimationBuilder` | 为所有`ion-modal`提供自定义离场动画。                        |
+| `mode`                   | `Mode`             | 设置使用哪个系统平台的风格样式。                                |
+| `navAnimation`           | `AnimationBuilder` | 覆盖`ion-nav`和`ion-router-outlet`的默认动画。           |
+| `pickerEnter`            | `AnimationBuilder` | 为所有`ion-picker`提供自定义进场动画。                       |
+| `pickerLeave`            | `AnimationBuilder` | 为所有`ion-picker`提供自定义离场动画。                       |
+| `popoverEnter`           | `AnimationBuilder` | 为所有`ion-popover`提供自定义进场动画。                      |
+| `popoverLeave`           | `AnimationBuilder` | 为所有`ion-popover`提供自定义离场动画。                      |
+| `refreshingIcon`         | `string`           | 覆盖`<ion-refresh-content>`默认图标。            |
+| `refreshingSpinner`      | `SpinnerTypes`     | 覆盖`<ion-refresh-content>`的旋转图标类型。         |
+| `spinner`                | `SpinnerTypes`     | 覆盖`<ion-spinner>`的旋转图标类型。                 |
+| `statusTap`              | `boolean`          | 如果为`true`，点击状态栏时内容会滚动到顶部。                       |
+| `swipeBackEnabled`       | `boolean`          | 如果为`true`，Ionic将会启用“滑动返回”的手势。                   |
+| `tabButtonLayout`        | `TabButtonLayout`  | 覆盖`ion-bar-button`默认布局。                         |
+| `toastEnter`             | `AnimationBuilder` | 为所有`ion-toast`提供自定义进场动画。                        |
+| `toastLeave`             | `AnimationBuilder` | 为所有`ion-toast`提供自定义离场动画。                        |
