@@ -25,11 +25,11 @@ $ ionic cap run ios -l --external
 $ ionic cap run android -l --external
 ```
 
-当实时重载服务启动之后，所选平台的本地开发工具将会自动打开，即使没有启动。 在开发工具中，点击启动按钮，应用将会在你的设备中运行。
+当实时重载服务启动之后，所选平台原生对应的、开发工具将会被自动打开，即便之前没有启动。 在开发工具中，点击启动按钮，应用将会在你的设备中运行。
 
 ## 删除照片
 
-With Live Reload running and the app open on your device, let’s implement photo deletion functionality. Open `tab2.page.html` and add a new click handler to each `<ion-img>` element. When the app user taps on a photo in our gallery, we’ll display an [Action Sheet](https://ionicframework.com/docs/api/action-sheet) dialog with the option to either delete the selected photo or cancel (close) the dialog.
+实时重载运行后，应用会在你的设备上打开，接下来我们该实现照片的删除功能了。 打开`tab2.page.html`文件，在每个`<ion-img>`标签上添加新的点击事件。 当用户在我们的图库中点击了一张照片，我们会弹出一个[Action Sheet](https://ionicframework.com/docs/api/action-sheet)浮窗，他们可以删除选中的照片或是关闭这个浮窗。
 
 ```html
 <ion-col size="6" 
@@ -39,7 +39,7 @@ With Live Reload running and the app open on your device, let’s implement phot
 </ion-col>
 ```
 
-Over in `tab2.page.ts`, import Action Sheet and add it to the constructor:
+在`tab2.page.ts`文件中，我们把Action Sheet导入并添加到构造函数中。
 
 ```typescript
 import { ActionSheetController } from '@ionic/angular';
