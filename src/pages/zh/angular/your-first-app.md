@@ -19,9 +19,9 @@ Ionic强大之处在于，你只需要用HTML，CSS和JavaScript一套代码，�
 
 重点包括：
 
-* One Angular-based codebase that runs on the web, iOS, and Android using Ionic Framework [UI components](https://ionicframework.com/docs/components).
-* Deployed as a native iOS and Android mobile app using [Capacitor](https://capacitor.ionicframework.com), Ionic's official native app runtime.
-* Photo Gallery functionality powered by the Capacitor [Camera](https://capacitor.ionicframework.com/docs/apis/camera), [Filesystem](https://capacitor.ionicframework.com/docs/apis/filesystem), and [Storage](https://capacitor.ionicframework.com/docs/apis/storage) APIs.
+* 只使用Angular以及Ionic Framework[UI组件](https://ionicframework.com/docs/components)一套代码，构建出能在web、iOS和Android运行的应用。
+* 使用官方提供的原生应用运行环境[Capacitor](https://capacitor.ionicframework.com)发布原生iOS和Android移动应用。
+* 图库应用的功能由[相机](https://capacitor.ionicframework.com/docs/apis/camera)，[文件系统](https://capacitor.ionicframework.com/docs/apis/filesystem)和[存储](https://capacitor.ionicframework.com/docs/apis/storage)几个API实现。
 
 It’s easy to get started. Find the complete app code referenced in this guide [on GitHub](https://github.com/ionic-team/photo-gallery-capacitor-ng).
 
