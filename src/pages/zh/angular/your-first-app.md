@@ -1,23 +1,23 @@
 ---
-previousText: '概览'
+previousText: '概述'
 previousUrl: '/docs/angular/overview'
-nextText: 'Taking Photos'
+nextText: '拍照'
 nextUrl: '/docs/angular/your-first-app/2-taking-photos'
 ---
 
-# 您的第一个 Ionic App： Angular
+# 你的第一个Ionic应用：Angular
 
-The great thing about Ionic is that with one codebase, you can build for any platform using just HTML, CSS, and JavaScript. Follow along as we learn the fundamentals of Ionic app development by creating a realistic app step by step.
+Ionic强大之处在于，你只需要用HTML，CSS和JavaScript一套代码，就能构建任何平台的应用。 通过我们一步一步的指引，来学习如何用Ionic开发出一个完整的应用。
 
-Here’s the finished app running on all 3 platforms: <iframe width="560" height="315" src="https://www.youtube.com/embed/0ASQ13Y1Rk4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+这里有一个已经开发完成并且可以在三个平台上运行的应用。 <iframe width="560" height="315" src="https://www.youtube.com/embed/0ASQ13Y1Rk4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
-> Looking for the previous version of this guide that covered Ionic 4 and Cordova? [See here.](/docs/developer-resources/guides/first-app-v4/intro)
+> 如果你正在寻找之前的Ionic 4和Cordova版本指南， [看看这里](/docs/developer-resources/guides/first-app-v4/intro)。
 
 ## What We'll Build
 
-We'll create a Photo Gallery app that offers the ability to take photos with your device's camera, display them in a grid, and store them permanently on the device.
+我们会创建一个图库应用，它能够调用设备进行拍照，在网格中显示所有已拍摄的照片，持久化数据。
 
-Highlights include:
+重点包括：
 
 * One Angular-based codebase that runs on the web, iOS, and Android using Ionic Framework [UI components](https://ionicframework.com/docs/components).
 * Deployed as a native iOS and Android mobile app using [Capacitor](https://capacitor.ionicframework.com), Ionic's official native app runtime.
