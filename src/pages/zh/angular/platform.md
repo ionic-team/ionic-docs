@@ -1,18 +1,18 @@
 ---
-previousText: 'Config'
+previousText: '配置'
 previousUrl: '/docs/angular/config'
-nextText: 'Testing'
+nextText: '测试'
 nextUrl: '/docs/angular/testing'
 contributors:
   - liamdebeasi
 ---
 
 
-# Platform
+# 设备平台
 
-The Platform service can be used to get information about your current device. You can get all of the platforms associated with the device using the `platforms` method, including whether the app is being viewed from a tablet, if it's on a mobile device or browser, and the exact platform (iOS, Android, etc). You can also get the orientation of the device, if it uses right-to-left language direction, and much much more. With this information you can completely customize your app to fit any device.
+平台服务能用于获取你当前的设备信息， 你可以通过`platforms`方法获取到所支持的所有平台。包括是否在平板上查看，如果是在移动设备浏览器上，还能获取到确切的平台（iOS、Android等）。 你还能获取到设备的方向，如果语言书写方向是从右到左也能获取到，以及其他更多的信息。 利用这些信息，你可以让你的应用完全适配所有设备。
 
-## Usage
+## 用法
 
 ```typescript
 import { Platform } from '@ionic/angular';
@@ -25,7 +25,7 @@ export class MyPage {
 }
 ```
 
-## Methods
+## 方法
 
 ### `is(platformName: Platforms) => boolean`
 
