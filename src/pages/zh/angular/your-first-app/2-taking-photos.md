@@ -69,9 +69,9 @@ _（你的自怕可能会比我好看很多）_
 
 拍摄完成之后，这张照片会立即消失。 我们需要在应用中保存这张照片，以便我们以后查看。
 
-## Displaying Photos
+## 展示照片
 
-Outside of the `PhotoService` class definition (the very bottom of the file), create a new interface, `Photo`, to hold our photo metadata:
+在`PhotoService`文件里的最底部并且类的外边，创建一个名为`Photo`的interface，用于存放我们的照片数据：
 
 ```typescript
 interface Photo {
@@ -81,17 +81,17 @@ interface Photo {
 }
 ```
 
-Back at the top of the file, define an array of Photos, which will contain a reference to each photo captured with the Camera.
+回到文件的顶部，定义一个照片数组，其中包含每张照片的拍摄信息。
 
 ```typescript
 export class PhotoService {
   public photos: Photo[] = [];
 
-  // other code
+  // 其他代码
 }
 ```
 
-Over in the `addNewToGallery` function, add the newly captured photo to the beginning of the Photos array.
+在`addNewToGallery`函数中，将新拍摄的照片放在数组的首位。
 
 ```typescript
   const capturedPhoto = await Camera.getPhoto({
@@ -107,7 +107,7 @@ Over in the `addNewToGallery` function, add the newly captured photo to the begi
 }
 ```
 
-With the photo(s) stored into the main array, move over to `tab2.page.html` so we can display the image on the screen. Add a [Grid component](https://ionicframework.com/docs/api/grid) so that each photo will display nicely as photos are added to the gallery, and loop through each photo in the Photos array, adding an Image component (`<ion-img>`) for each. Point the `src` (source) at the photo’s path:
+当照片存储到数组之后，我们在`tab2.page.html`文件中对其引用，这样我们就能够在屏幕上看到显示的图像了。 在页面上添加一个[网格组件](https://ionicframework.com/docs/api/grid)，以便每张照片都能很好地展示。通过数组的循环，我们为每张照片加上一个图片组件（`<ion-img>`）。 给`src`（源）指定照片的路径：
 
 ```html
 <ion-content>
