@@ -1,5 +1,5 @@
 ---
-previousText: 'Storage'
+previousText: '存储'
 previousUrl: '/docs/angular/storage'
 ---
 
