@@ -61,7 +61,7 @@ constructor(public photoService: PhotoService) { }
 </ion-content>
 ```
 
-Save the file, and if it's not running already, restart the development server in your browser by running `ionic serve`. On the Photo Gallery tab, click the Camera button. If your computer has a webcam of any sort, a modal window appears. Take a selfie!
+保存文件，如果服务还没有运行的话，可以通过`ionic serve`命令运行服务。 在图库标签页里边，点击一下相机按钮。 If your computer has a webcam of any sort, a modal window appears. Take a selfie!
 
 ![Camera API on the web](/docs/assets/img/guides/first-app-cap-ng/camera-web.png)
 
