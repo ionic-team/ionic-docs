@@ -6,7 +6,7 @@ tableOfContents: false
 
 # UI组件
 
-Ionic apps are made of high-level building blocks called Components, which allow you to quickly construct the UI for your app. Ionic comes stock with a number of components, including cards, lists, and tabs. 一旦你熟悉了基础知识，请参阅 [API Index](/docs/api) 以获取每个组件和子组件的完整列表。
+一个Ionic应用是由不同的组件拼合而成，它们可以让你快速搭建起你的应用界面。Ionic组件库包括了例如卡片、列表和标签等一系列的组件。 一旦你熟悉了基础知识，请参阅 [API Index](/docs/api) 以获取每个组件和子组件的完整列表。
 
 <docs-cards> <docs-card header="Action Sheet" href="/docs/api/action-sheet" img="/docs/assets/icons/feature-component-actionsheet-icon.png"> 
 
