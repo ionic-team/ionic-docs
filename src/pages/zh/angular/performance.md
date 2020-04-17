@@ -7,22 +7,22 @@ previousUrl: '/docs/angular/storage'
 
 ## 来自Ionic团队
 
-[在 Ionic Angular 中如何使用懒加载](https://ionicframework.com/blog/how-to-lazy-load-in-ionic-angular/)
+[如何在Ionic Angular中使用懒加载](https://ionicframework.com/blog/how-to-lazy-load-in-ionic-angular/)
 
-[用骨架屏提高感官性能](https://ionicframework.com/blog/improved-perceived-performance-with-skeleton-screens/)
+[用骨架屏提升视觉效果](https://ionicframework.com/blog/improved-perceived-performance-with-skeleton-screens/)
 
 ## 来自Angular团队
 
-[构建性能和渐进式Angular应用程序](https://web.dev/angular) - web.dev
+[构建高性能和渐进式的Angular应用](https://web.dev/angular) - web.dev
 
 ## 来自社区
 
 [Ionic 中的高性能动画](https://www.joshmorony.com/high-performance-animations-in-ionic/) - Josh Morony
 
-[高性能列表过滤 Ionic](https://www.joshmorony.com/high-performance-list-filtering-in-ionic-2/) - Josh Morony
+[Ionic的高性能列表筛查](https://www.joshmorony.com/high-performance-list-filtering-in-ionic-2/) - Josh Morony
 
-[使用Ionic高效的 DOM 写法提高性能](https://www.joshmorony.com/increasing-performance-with-efficient-dom-writes-in-ionic-2/) - Josh Morony
+[在Ionic使用高效DOM提升性能](https://www.joshmorony.com/increasing-performance-with-efficient-dom-writes-in-ionic-2/) - Josh Morony
 
-[Ionic框架很快 (但你的代码可能不是)](https://www.joshmorony.com/ionic-framework-is-fast-but-your-code-might-not-be/) - Josh Morony
+[Ionic框架是很快的(但你的代码可能并非如此)](https://www.joshmorony.com/ionic-framework-is-fast-but-your-code-might-not-be/) - Josh Morony
 
-> 您有一个想要分享的指南吗？ 点击如下 *编辑此页面* 按钮。
+> 或许你有什么建议想要分享？ 可以点击*编辑此页面* 按钮。
