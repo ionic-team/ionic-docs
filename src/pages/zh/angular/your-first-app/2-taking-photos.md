@@ -1,13 +1,13 @@
 ---
-previousText: '你的第一个 APP'
+previousText: '你的第一个应用'
 previousUrl: '/docs/angular/your-first-app'
-nextText: 'Saving Photos on Filesystem'
+nextText: '保存照片到文件系统中'
 nextUrl: '/docs/angular/your-first-app/3-saving-photos'
 ---
 
 # 用相机拍照
 
-现在来点好玩的吧 —— 增加用设备的[相机](https://capacitor.ionicframework.com/docs/apis/camera)拍照的能力。 我们将从为web构建它开始，然后做一些小的调整，使其在移动设备（iOS和Android）上工作。
+接下来是有趣的部分，使用Capacitor的[相机API](https://capacitor.ionicframework.com/docs/apis/camera)调用设备的相机，为你的应用添加拍照功能。 我们将从为web构建它开始，然后做一些小的调整，使其在移动设备（iOS和Android）上工作。
 
 ## Photo Service
 
