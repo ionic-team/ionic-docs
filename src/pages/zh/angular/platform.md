@@ -63,9 +63,9 @@ export class MyPage {
 
 ### `ready() => Promise<string>`
 
-当平台准备就绪并且原生功能可以被调用的时候，会返回一个promise。 If the app is running from within a web browser, then the promise will resolve when the DOM is ready. When the app is running from an application engine such as Cordova, then the promise will resolve when Cordova triggers the `deviceready` event. The resolved value is the `readySource`, which states the platform that was used.
+当平台准备就绪并且原生功能可以被调用的时候，会返回一个promise。 如果应用是运行在web浏览器的时候，那么当DOM准备就绪的时候，promise就会解析。 当应用运行在例如Cordova这样的引擎的时候，promise会在Cordova触发`deviceready`事件的时候解析。 解析的结果是`readySource`，代表正在使用的平台。
 
-For example, when Cordova is ready, the resolved ready source is `cordova`. The default ready source value will be `dom`. The `readySource` is useful if different logic should run depending on the platform the app is running from. For example, only Capacitor and Cordova can execute the status bar plugin, so the web should not run status bar plugin logic.
+例如，当Cordova准备就绪时，解析出来的结果是`cordova`， 默认值是`dom`。 如果应用某些逻辑需要根据平台差异而不同，`readySource`是有作用的。 For example, only Capacitor and Cordova can execute the status bar plugin, so the web should not run status bar plugin logic.
 
 ### `isRTL() => boolean`
 
