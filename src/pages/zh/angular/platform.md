@@ -29,33 +29,33 @@ export class MyPage {
 
 ### `is(platformName: Platforms) => boolean`
 
-Depending on the platform the user is on, `is(platformName)` will return true or false. Note that the same app can return true for more than one platform name. For example, an app running from an iPad would return true for the platform names: `mobile`, `ios`, `ipad`, and `tablet`. Additionally, if the app was running from Cordova then `cordova` would be true.
+根据用户所使用的平台，`is(platformName)`会返回true或者false。 请注意，同一个应用可以为多个平台的名称都返回true。 举个例子，当一个应用运行在iPad的时候，`mobile`, `ios`, `ipad`, and `tablet`都会返回true。 此外，如果应用是运行在Cordova的话，`cordova`也会返回true。
 
-#### Parameters
+#### 参数
 
-| Name           | Type        | Description                                                                                                                                         |
-| -------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `platformName` | `Platforms` | Name of the platform. Available options are android, capacitor, cordova, desktop, electron, hybrid, ios, ipad, iphone, mobile, phablet, pwa, tablet |
+| 名称             | 类型          | 描述                                                                                                                |
+| -------------- | ----------- | ----------------------------------------------------------------------------------------------------------------- |
+| `platformName` | `Platforms` | 平台名称， 可选项有android, capacitor, cordova, desktop, electron, hybrid, ios, ipad, iphone, mobile, phablet, pwa, tablet |
 
 #### Platforms
 
-Below is a table listing all the possible `Platforms` values along with corresponding descriptions.
+以下表格列举了`Platforms`可选项以及对应描述。
 
-| Platform Name | Description                           |
-| ------------- | ------------------------------------- |
-| android       | a device running Android              |
-| capacitor     | a device running Capacitor            |
-| cordova       | a device running Cordova              |
-| desktop       | a desktop device                      |
-| electron      | a desktop device running Electron     |
-| hybrid        | a device running Capacitor or Cordova |
-| ios           | a device running iOS                  |
-| ipad          | an iPad device                        |
-| iphone        | an iPhone device                      |
-| mobile        | a mobile device                       |
-| phablet       | a phablet device                      |
-| pwa           | a PWA app                             |
-| tablet        | a tablet device                       |
+| 平台名称      | 描述                                    |
+| --------- | ------------------------------------- |
+| android   | 设备运行在Android                          |
+| capacitor | 设备运行在Capacitor                        |
+| cordova   | a device running Cordova              |
+| desktop   | a desktop device                      |
+| electron  | a desktop device running Electron     |
+| hybrid    | a device running Capacitor or Cordova |
+| ios       | a device running iOS                  |
+| ipad      | an iPad device                        |
+| iphone    | an iPhone device                      |
+| mobile    | a mobile device                       |
+| phablet   | a phablet device                      |
+| pwa       | a PWA app                             |
+| tablet    | a tablet device                       |
 
 ### `platforms() => string[]`
 
