@@ -74,11 +74,11 @@ List通过行来展示信息，例如联系人列表、播放列表或者菜单�
 
 <docs-card header="Navigation" href="/docs/api/nav" img="/docs/assets/icons/feature-component-navigation-icon.png"> 
 
-Navigation is how users move between different pages in your app.</docs-card>
+Navigation是一个告诉用户如何在不同页面之间切换的组件。</docs-card>
 
 <docs-card header="Menu" href="/docs/api/menu" icon="/docs/assets/icons/component-menu-icon.png"> 
 
-Menus are a common navigation pattern. They can be permanently on-screen, or revealed when needed.</docs-card>
+Menus是一种通用的导航方式， 它们可以在屏幕上常驻，或者当用户需要的时候才显示。</docs-card>
 
 <docs-card header="Modal" href="/docs/api/modal" icon="/docs/assets/icons/component-modal-icon.png"> 
 
