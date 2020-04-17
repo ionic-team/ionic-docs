@@ -126,7 +126,7 @@ $ ionic serve
 <ion-title>Photo Gallery</ion-title>
 ```
 
-我们将看到的主要内容放到`<ion-content>`中， 接下来，我们会添加一个按钮，通过这个按钮打开设备相机并显示摄像头所捕捉到的画面。 Start by adding a [floating action button](https://ionicframework.com/docs/api/fab) (FAB) to the bottom of the page and set the camera image as the icon.
+我们将看到的主要内容放到`<ion-content>`中， 接下来，我们会添加一个按钮，通过这个按钮打开设备相机并显示摄像头所捕捉到的画面。 我们现在页面底部添加一个[悬浮按钮](https://ionicframework.com/docs/api/fab)(FAB)，并且给按钮设置一个摄像头图标。
 
 ```html
 <ion-content>
@@ -139,7 +139,7 @@ $ ionic serve
 </ion-content>
 ```
 
-Next, open `src/app/tabs/tabs.page.html`. Change the label to “Photos” and the icon name to “images”:
+接下来，打开`src/app/tabs/tabs.page.html`文件。 将标签改为“Photos”并将图标名称改为“images”：
 
 ```html
 <ion-tab-button tab="tab2">
@@ -148,4 +148,4 @@ Next, open `src/app/tabs/tabs.page.html`. Change the label to “Photos” and t
 </ion-tab-button>
 ```
 
-Save all changes to see them automatically applied in the browser. That’s just the start of all the cool things we can do with Ionic. Up next, implement camera taking functionality on the web, then build it for iOS and Android.
+保存所有修改过的文件，应用会在浏览器自动应用。 That’s just the start of all the cool things we can do with Ionic. 接下来，我们在web上加上拍照功能，然后在iOS和Android构建。
