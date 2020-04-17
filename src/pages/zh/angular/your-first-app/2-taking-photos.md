@@ -11,13 +11,13 @@ nextUrl: '/docs/angular/your-first-app/3-saving-photos'
 
 ## 照片服务
 
-All Capacitor logic (Camera usage and other native features) will be encapsulated in a service class. 使用 `ionic generate` 命令创建 `照片服务`：
+我们将会把所有有关Capacitor的业务（包括相机的使用以及其他原生特性）封装在一个服务类里面， 使用 `ionic generate` 命令创建 `照片服务`：
 
 ```bash
 $ ionic g service services/photo
 ```
 
-Open the new `services/photo.service.ts` file, and let’s add the logic that will power the camera functionality. First, import Capacitor dependencies and get references to the Camera, Filesystem, and Storage plugins:
+打开新创建的`services/photo.service.ts`文件，然后开始为它添加相机相关的功能。 首先，我们导入Capacitor相关依赖，并获取相机、文件系统以及存储插件的引用：
 
 ```typescript
 import { Plugins, CameraResultType, Capacitor, FilesystemDirectory, 
@@ -26,11 +26,11 @@ import { Plugins, CameraResultType, Capacitor, FilesystemDirectory,
 const { Camera, Filesystem, Storage } = Plugins;
 ```
 
-Next, define a new function, `addNewToGallery`, that will contain the core logic to take a device photo and save it to the filesystem. Let’s start by opening the device camera:
+接下来，定义一个新函数，`addNewToGallery`，用它来做拍照并保存到文件系统的核心逻辑。 我们得从调用设备的相机开始：
 
 ```typescript
 public async addNewToGallery() {
-  // Take a photo
+  // 拍照
   const capturedPhoto = await Camera.getPhoto({
     resultType: CameraResultType.Uri, 
     source: CameraSource.Camera, 
@@ -39,9 +39,9 @@ public async addNewToGallery() {
 }
 ```
 
-Notice the magic here: there's no platform-specific code (web, iOS, or Android)! The Capacitor Camera plugin abstracts that away for us, leaving just one method call - `Camera.getPhoto()` - that will open up the device's camera and allow us to take photos.
+我们注意到这里的神奇之处：代码中没有出现跟平台有关的代码（web、iOS或是安卓）。 Capacitor相机插件为我们抽象出了相关函数，而我们只需要调用`Camera.getPhoto()`便可以开始使用设备的拍照功能。
 
-Next, open up `tab2.page.ts` and import the PhotoService class:
+下一步，打开`tab2.page.ts`文件，并导入PhotoService类：
 
 ```typescript
 import { PhotoService } from '../services/photo.service';
@@ -49,7 +49,7 @@ import { PhotoService } from '../services/photo.service';
 constructor(public photoService: PhotoService) { }
 ```
 
-Then, open `tab2.page.html` and call the `addNewToGallery()` function when the FAB is tapped/clicked:
+然后打开`tab2.page.html`文件，当标签被点击的时候调用`addNewToGallery()`函数：
 
 ```html
 <ion-content>
