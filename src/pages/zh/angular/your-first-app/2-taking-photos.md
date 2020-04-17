@@ -61,11 +61,11 @@ constructor(public photoService: PhotoService) { }
 </ion-content>
 ```
 
-保存文件，如果服务还没有运行的话，可以通过`ionic serve`命令运行服务。 在图库标签页里边，点击一下相机按钮。 If your computer has a webcam of any sort, a modal window appears. Take a selfie!
+保存文件，如果服务还没有运行的话，可以通过`ionic serve`命令运行服务。 在图库标签页里边，点击一下相机按钮。 如果你的电脑有任何类型的摄像头，就会弹出一个窗口。 给自己来张自拍试试吧！
 
 ![Camera API on the web](/docs/assets/img/guides/first-app-cap-ng/camera-web.png)
 
-_(Your selfie is probably much better than mine)_
+_（你的自怕可能会比我好看很多）_
 
 After taking a photo, it disappears right away. We need to display it within our app and save it for future access.
 
