@@ -82,35 +82,35 @@ Menus是一种通用的导航方式， 它们可以在屏幕上常驻，或者�
 
 <docs-card header="Modal" href="/docs/api/modal" icon="/docs/assets/icons/component-modal-icon.png"> 
 
-Modals slide in and off screen to display a temporary UI and are often used for login or sign-up pages.</docs-card>
+Modals是从屏幕最上层进入和退出的临时界面，常用于登录和注册页面。</docs-card>
 
 <docs-card header="Popover" href="/docs/api/popover" icon="/docs/assets/icons/component-popover-icon.png"> 
 
-Popover provides an easy way to present information or options without changing contexts.</docs-card>
+Popover提供了一种不改变上下文的可以展示信息或者选项的简单方法。</docs-card>
 
 <docs-card header="Progress Indicators" href="/docs/api/progress-bar" icon="/docs/assets/icons/component-progress-icon.png"> 
 
-Progress indicators visualize the progression of an operation or activity.</docs-card>
+Progress指示器可以展示操作或者行为的进度。</docs-card>
 
 <docs-card header="Radio" href="/docs/api/radio" icon="/docs/assets/icons/component-radio-icon.png"> 
 
-Radio inputs allow you to present a set of exclusive options.</docs-card>
+Radio输入可以展示一系列选项。</docs-card>
 
 <docs-card header="Refresher" href="/docs/api/refresher" icon="/docs/assets/icons/component-refresher-icon.png"> 
 
-Refresher provides pull-to-refresh functionality on a content component.</docs-card>
+Refresher是一个具备在content组件中下拉刷新的功能。</docs-card>
 
 <docs-card header="Searchbar" href="/docs/api/searchbar" img="/docs/assets/icons/feature-component-search-icon.png"> 
 
-Searchbar is used to search or filter items, usually from a toolbar.</docs-card>
+Searchbar用于搜索或者过滤条目，通常放在toolbar里面。</docs-card>
 
 <docs-card header="Reorder" href="/docs/api/reorder" icon="/docs/assets/icons/component-reorder-icon.png"> 
 
-Reorder lets users drag and drop to reorder a list of items.</docs-card>
+Recorder让用户可以通过拖拽list条目来重新排序。</docs-card>
 
 <docs-card header="Routing" href="/docs/api/router" icon="/docs/assets/icons/component-routing-icon.png"> 
 
-Routing allows navigation based on the current path.</docs-card>
+Routing可以在当前页面进行导航。</docs-card>
 
 <docs-card header="Segment" href="/docs/api/segment" icon="/docs/assets/icons/component-segment-icon.png"> 
 
