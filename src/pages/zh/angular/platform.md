@@ -59,11 +59,11 @@ export class MyPage {
 
 ### `platforms() => string[]`
 
-根据你当前的设备，`platforms`会返回多个值。 每个都是平台不同层面的值。 For example, on an iPhone, it would return `mobile`, `ios`, and `iphone`.
+根据你当前的设备，`platforms`会返回多个值。 每个都是平台不同层面的值。 例如说，在一部iPhone上，会返回`mobile`, `ios`和`iphone`。
 
 ### `ready() => Promise<string>`
 
-Returns a promise when the platform is ready and native functionality can be called. If the app is running from within a web browser, then the promise will resolve when the DOM is ready. When the app is running from an application engine such as Cordova, then the promise will resolve when Cordova triggers the `deviceready` event. The resolved value is the `readySource`, which states the platform that was used.
+当平台准备就绪并且原生功能可以被调用的时候，会返回一个promise。 If the app is running from within a web browser, then the promise will resolve when the DOM is ready. When the app is running from an application engine such as Cordova, then the promise will resolve when Cordova triggers the `deviceready` event. The resolved value is the `readySource`, which states the platform that was used.
 
 For example, when Cordova is ready, the resolved ready source is `cordova`. The default ready source value will be `dom`. The `readySource` is useful if different logic should run depending on the platform the app is running from. For example, only Capacitor and Cordova can execute the status bar plugin, so the web should not run status bar plugin logic.
 
