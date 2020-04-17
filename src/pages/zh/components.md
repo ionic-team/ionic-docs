@@ -6,71 +6,71 @@ tableOfContents: false
 
 # UI组件
 
-一个Ionic应用是由不同的组件拼合而成，它们可以让你快速搭建起你的应用界面。Ionic组件库包括了例如卡片、列表和标签等一系列的组件。 一旦你熟悉了基础知识，请参阅 [API Index](/docs/api) 以获取每个组件和子组件的完整列表。
+一个Ionic应用是由不同的组件拼合而成，它们可以让你快速搭建起你的应用界面。Ionic组件库包括了例如卡片、列表和标签等一系列的组件。 一旦你掌握了使用的基础操作，你就能通过 [API 索引](/docs/api) 来了解到每个组件以及它的子组件的具体信息。
 
 <docs-cards> <docs-card header="Action Sheet" href="/docs/api/action-sheet" img="/docs/assets/icons/feature-component-actionsheet-icon.png"> 
 
-Action Sheets display a set of options with the ability to confirm or cancel an action.</docs-card>
+Action Sheets可以显示一组操作选项，你可以通过这些操作来确认或者是取消这些行为。</docs-card>
 
 <docs-card header="Alert" href="/docs/api/alert" icon="/docs/assets/icons/component-alert-icon.png"> 
 
-Alerts are a great way to offer the user the ability to choose a specific action or list of actions.</docs-card>
+Alerts是一种可以给用户进行选择或是展示列表的方式。</docs-card>
 
 <docs-card header="Badge" href="/docs/api/badge" icon="/docs/assets/icons/component-badge-icon.png"> 
 
-Badges are a small component that typically communicate a numerical value to the user.</docs-card>
+Badges是一个轻型的组件，它可以通过数值直观地向用户传达一些信息。</docs-card>
 
 <docs-card header="Button" href="/docs/api/button" icon="/docs/assets/icons/component-button-icon.png"> 
 
-Buttons let your users take action. They're an essential way to interact with and navigate through an app.</docs-card>
+Buttons让用户具备操作能力， 这是一个用户与应用交互以及导航的重要途径。</docs-card>
 
 <docs-card header="Card" href="/docs/api/card" icon="/docs/assets/icons/component-card-icon.png"> 
 
-Cards are a great way to display an important piece of content, and can contain images, buttons, text, and more.</docs-card>
+Cards常用于显示一些重要内容，你可以在里面放置图像、按钮、文本信息以及其他内容。</docs-card>
 
 <docs-card header="Checkbox" href="/docs/api/checkbox" icon="/docs/assets/icons/component-checkbox-icon.png"> 
 
-Checkboxes can be used to let the user know they need to make a binary decision.</docs-card>
+Checkboxes可以让用户知道他们可以选择哪些内容。</docs-card>
 
 <docs-card header="Chip" href="/docs/api/chip" icon="/docs/assets/icons/component-chip-icon.png"> 
 
-Chips are a compact way to display data or actions.</docs-card>
+Chips是显示数据或是操作的简洁方式。</docs-card>
 
 <docs-card header="Content" href="/docs/api/content" icon="/docs/assets/icons/component-content-icon.png"> 
 
-Content is the quintessential way to interact with and navigate through an app.</docs-card>
+Content是应用中进行交互与导航的最佳途径。</docs-card>
 
 <docs-card header="Date & Time Pickers" href="/docs/api/datetime" icon="/docs/assets/icons/component-datetimepicker-icon.png"> 
 
-Date & time pickers are used to present an interface that makes it easy for users to select dates and times.</docs-card>
+Date & time 选择器可以让用户轻松地选择日期和时间。</docs-card>
 
 <docs-card header="Floating Action Button" href="/docs/api/fab" icon="/docs/assets/icons/component-fab-icon.png"> 
 
-Floating action buttons are circular buttons that perform a primary action on a screen.</docs-card>
+Floating action buttons是浮动在屏幕上的一个圆形按钮。</docs-card>
 
 <docs-card header="Icons" href="https://ionicons.com" img="/docs/assets/icons/feature-component-icons-icon.png"> 
 
-Beautifully designed icons for use in web, iOS, Android, and desktop apps.</docs-card>
+精美设计的图标可以用于web、iOS、Android以及桌面应用。</docs-card>
 
 <docs-card header="Grid" href="/docs/api/grid" icon="/docs/assets/icons/component-grid-icon.png"> 
 
-The grid is a powerful mobile-first system for building custom layouts.</docs-card>
+网格是用于搭建自定义布局的移动端优先的系统。</docs-card>
 
 <docs-card header="Infinite Scroll" href="/docs/api/infinite-scroll" icon="/docs/assets/icons/component-infinitescroll-icon.png"> 
 
-Infinite scroll allows you to load new data as the user scrolls through your app.</docs-card>
+Infinite scroll可以让用户通过滚动来加载新的数据。</docs-card>
 
 <docs-card header="Input" href="/docs/api/input" icon="/docs/assets/icons/component-input-icon.png"> 
 
-Inputs provides a way for users to enter data in your app.</docs-card>
+Inputs提供了录入数据的途径。</docs-card>
 
 <docs-card header="Item" href="/docs/api/item" icon="/docs/assets/icons/component-item-icon.png"> 
 
-Items are an all-purpose UI container that can be used as part of a list.</docs-card>
+Items是能用做列表界面一部分的专用组件。</docs-card>
 
 <docs-card header="List" href="/docs/api/list" icon="/docs/assets/icons/component-lists-icon.png"> 
 
-Lists can display rows of information, such as a contact list, playlist, or menu.</docs-card>
+List通过行来展示信息，例如联系人列表、播放列表或者菜单。</docs-card>
 
 <docs-card header="Navigation" href="/docs/api/nav" img="/docs/assets/icons/feature-component-navigation-icon.png"> 
 
