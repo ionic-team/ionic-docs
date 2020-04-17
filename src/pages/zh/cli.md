@@ -3,7 +3,7 @@
 
 # Ionic CLI
 
-The Ionic command-line interface ([CLI](/docs/reference/glossary#cli)) is the go-to tool for developing Ionic apps.
+Ionic命令行工具（[CLI](/docs/reference/glossary#cli)）是用于开发Ionic应用的首选工具。
 
 ## 安装方式
 
@@ -23,15 +23,15 @@ $ ionic <command> --help
 $ ionic <command> <subcommand> --help
 ```
 
-> Be sure to run `ionic <command> --help` in your project directory.
+> 确保在你的项目文件夹下运行`ionic <command> --help`命令。
 > 
-> For some commands, such as `ionic serve`, the help documentation is contextual to the type of your project, e.g. React vs Angular.
+> 对于一些命令，例如 `ionic server`，帮助文档根据项目类型的不同（例如：React和Angular）会有差异。
 
 <!-- TODO: image? -->
 
-## Architecture
+## 架构
 
-The Ionic CLI is built with [TypeScript](/docs/reference/glossary#typescript) and [Node.js](/docs/reference/glossary#node). It supports Node 10.3+, but the latest Node LTS is always recommended. Follow development on the open source <a href="https://github.com/ionic-team/ionic-cli" target="_blank">GitHub repository</a>.
+Ionic CLI是由[TypeScript](/docs/reference/glossary#typescript)和[Node.js](/docs/reference/glossary#node)构建的。 It supports Node 10.3+, but the latest Node LTS is always recommended. Follow development on the open source <a href="https://github.com/ionic-team/ionic-cli" target="_blank">GitHub repository</a>.
 
 ## 答疑解惑
 
