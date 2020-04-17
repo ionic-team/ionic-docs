@@ -114,28 +114,28 @@ Routing可以在当前页面进行导航。</docs-card>
 
 <docs-card header="Segment" href="/docs/api/segment" icon="/docs/assets/icons/component-segment-icon.png"> 
 
-Segments provide a set of exclusive buttons that can be used as a filter or view switcher.</docs-card>
+Segments提供了一组按钮，可以用来过滤或者作为视图开关。</docs-card>
 
 <docs-card header="Select" href="/docs/api/select" icon="/docs/assets/icons/component-select-icon.png"> 
 
-Select is similar to the native HTML select, with a few improvements to sorting and selecting.</docs-card>
+Select类似于原生HTML的select，不过在排序和选择方面有一些提升。</docs-card>
 
 <docs-card header="Slides" href="/docs/api/slides" icon="/docs/assets/icons/component-slides-icon.png"> 
 
-Slides make it easy to create complex UI such as galleries, tutorials, and page-based layouts.</docs-card>
+Slides可以创建一些复杂的界面，例如图库、教程和基于布局的页面。</docs-card>
 
 <docs-card header="Tabs" href="/docs/api/tabs" img="/docs/assets/icons/feature-component-tabs-icon.png"> 
 
-Tabs enable tabbed navigation, a standard navigation pattern in modern apps.</docs-card>
+Tabs可以开启标签导航，是现代应用中一种标准导航模式。</docs-card>
 
 <docs-card header="Toast" href="/docs/api/toast" icon="/docs/assets/icons/component-toast-icon.png"> 
 
-Toast is used to show a notification over the top of an app's content. It can be temporary or dismissable.</docs-card>
+Toast用于应用顶部显示通知。 它只是短暂显示的，而且是能够被关闭的。</docs-card>
 
 <docs-card header="Toggle" href="/docs/api/toggle" icon="/docs/assets/icons/component-toggle-icon.png"> 
 
-Toggles are an input for binary options, often used for options and switches.</docs-card>
+Toggle是一种只有两种选项的input，常常用于选项切换以及开关。</docs-card>
 
 <docs-card header="Toolbar" href="/docs/api/toolbar" icon="/docs/assets/icons/component-toolbar-icon.png"> 
 
-Toolbars are used to house information and actions relating to your app.</docs-card> </docs-cards>
+Toolbars用于置放信息以及操作。</docs-card> </docs-cards>
