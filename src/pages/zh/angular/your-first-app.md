@@ -100,7 +100,7 @@ $ ionic serve
 
 这里有三个标签， 点击Tab2标签， 这个画布上一片空白，我们可以将它变成一个图库。 Ionic的实时重载功能，可以让你修改代码并保存时，应用能够立即更新！
 
-![Before and after going through this tutorial](/docs/assets/img/guides/first-app-cap-ng/email-photogallery.gif)
+![本教程将头从尾构建好一个完整的应用](/docs/assets/img/guides/first-app-cap-ng/email-photogallery.gif)
 
 在你选择的代码编辑器中打开图库应用的文件夹，然后转到`/src/app/tab2/tab2.page.html`文件。 我们看到：
 
@@ -148,4 +148,4 @@ $ ionic serve
 </ion-tab-button>
 ```
 
-保存所有修改过的文件，应用会在浏览器自动应用。 That’s just the start of all the cool things we can do with Ionic. 接下来，我们在web上加上拍照功能，然后在iOS和Android构建。
+保存所有修改过的文件，应用会在浏览器自动应用。 这仅仅是我们用Ionic做的一些开始， 接下来，我们在web上加上拍照功能，然后在iOS和Android构建。
