@@ -63,7 +63,7 @@ constructor(public photoService: PhotoService) { }
 
 保存文件，如果服务还没有运行的话，可以通过`ionic serve`命令运行服务。 在图库标签页里边，点击一下相机按钮。 如果你的电脑有任何类型的摄像头，就会弹出一个窗口。 给自己来张自拍试试吧！
 
-![Camera API on the web](/docs/assets/img/guides/first-app-cap-ng/camera-web.png)
+![相机API](/docs/assets/img/guides/first-app-cap-ng/camera-web.png)
 
 _（你的自怕可能会比我好看很多）_
 
@@ -118,12 +118,9 @@ export class PhotoService {
         <ion-img src="{{ photo.webviewPath }}"></ion-img>
     </ion-col>
     </ion-row>
-  </ion-grid>
-
-  <!-- ion-fab markup  -->
-</ion-content>
+  </ion-grid><!-- ion-fab 标记  --></ion-content>
 ```
 
-Save all files. Within the web browser, click the Camera button and take another photo. This time, the photo is displayed in the Photo Gallery!
+保存好我们编辑的所有文件， 在网页浏览器中，点击相机按钮开始拍照。 这一次，照片被显示在了图库里面。
 
-Up next, we’ll add support for saving the photos to the filesystem, so they can be retrieved and displayed in our app at a later time.
+下一步，我们要给应用添加一个能将照片保存在文件系统里面的功能，这样照片就能够在应用中检索以及显示了。
