@@ -31,14 +31,14 @@ $ ionic <command> <subcommand> --help
 
 ## 架构
 
-Ionic CLI是由[TypeScript](/docs/reference/glossary#typescript)和[Node.js](/docs/reference/glossary#node)构建的。 It supports Node 10.3+, but the latest Node LTS is always recommended. Follow development on the open source <a href="https://github.com/ionic-team/ionic-cli" target="_blank">GitHub repository</a>.
+Ionic CLI是由[TypeScript](/docs/reference/glossary#typescript)和[Node.js](/docs/reference/glossary#node)构建的。 它能够支持Node10.3以上的版本，不过我们建议使用最新的LTS版本。 具体细则，可以关注我们的开源代码库<a href="https://github.com/ionic-team/ionic-cli" target="_blank">GitHub仓库</a>。
 
 ## 答疑解惑
 
-为了解决有关 Ioncon CLI 的疑问，以下方法可能是有用的：
+如果遇到了有关Ionic CLI的疑问，可以参照以下内容来排查：
 
-- 请确保已安装 Ionic CLI 的最新版本。 Get the installed version by running `ionic --version`.
-- 请确保已安装最新的 Node LTS。 See [Node & npm](/docs/intro/environment#node-npm) environment setup.
-- `--verbose` 标志会打印调试消息，这可能会缩小问题的范围。
-- Connection issues may be due to improperly configured proxy settings. 查看 [使用代理](/docs/cli/using-a-proxy) 来设置代理。
+- 请确保已安装 Ionic CLI 的最新版本。 可以通过运行`ionic --version`命令进行版本信息的查看。
+- 请确保已安装最新的Node LTS版本。 参照[Node & npm](/docs/intro/environment#node-npm)环境配置。
+- 命令接上`--verbose` 标记会打印调试消息，这对排查不容易找到的问题是很有帮助的。
+- 代理设置错误的话会导致一些连接异常， 参照 [使用代理](/docs/cli/using-a-proxy) 来配置请求代理。
 - 所有平台的 Ionic CLI 全局配置目录均为 `~/.ionic`。 你完全可以删除该目录，Ionic CLI 会重新生成新的配置信息。但是所有的配置信息都会丢失 (包括 user sessions)。 使用 [CLI 环境变量](/docs/cli/configuration#environment-variables) 来配置此目录。
