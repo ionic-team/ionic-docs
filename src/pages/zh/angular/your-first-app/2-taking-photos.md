@@ -67,7 +67,7 @@ constructor(public photoService: PhotoService) { }
 
 _（你的自怕可能会比我好看很多）_
 
-After taking a photo, it disappears right away. We need to display it within our app and save it for future access.
+拍摄完成之后，这张照片会立即消失。 我们需要在应用中保存这张照片，以便我们以后查看。
 
 ## Displaying Photos
 
