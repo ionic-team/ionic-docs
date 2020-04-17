@@ -7,9 +7,9 @@ nextUrl: '/docs/angular/your-first-app/3-saving-photos'
 
 # 用相机拍照
 
-接下来是有趣的部分，使用Capacitor的[相机API](https://capacitor.ionicframework.com/docs/apis/camera)调用设备的相机，为你的应用添加拍照功能。 我们将从为web构建它开始，然后做一些小的调整，使其在移动设备（iOS和Android）上工作。
+接下来是有趣的部分，使用Capacitor的[相机API](https://capacitor.ionicframework.com/docs/apis/camera)调用设备的相机，为你的应用添加拍照功能。 我们将从web上开始构建，随后做一些小的调整，使其能在移动设备（iOS和Android）上面运行。
 
-## Photo Service
+## 照片服务
 
 All Capacitor logic (Camera usage and other native features) will be encapsulated in a service class. 使用 `ionic generate` 命令创建 `照片服务`：
 
