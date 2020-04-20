@@ -7,7 +7,7 @@ nextUrl: '/docs/reference/migration'
 
 # Browser Support
 
-Ionic's earliest goal was to make it easy to develop mobile apps using web technologies like HTML, CSS, and JavaScript. Because of this foundation in web technologies, Ionic can run anywhere the web runs — iOS, Android, browsers, Electron, PWAs, and more.
+Ionic's earliest goal was to make it easy to develop mobile apps using web technologies like HTML, CSS, and JavaScript. Because of this foundation in web technologies, Ionic can run anywhere the web runs — iOS, Android, browsers, PWAs, and more.
 
 
 ## Mobile Browsers
@@ -33,7 +33,7 @@ Because Ionic is based on web technologies, it works just as well on desktop bro
 | **Safari**  | ✔        | ✔        |
 | **Edge**    | 79+      | ✔        |
 | **Firefox** | ✔        | ✔        |
-| **IE 11**   | **X**    | ✔        |
+| **IE 11**   | **X**    | **X**        |
 
 
 
