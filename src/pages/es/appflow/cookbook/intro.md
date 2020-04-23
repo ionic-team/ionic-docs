@@ -1,12 +1,16 @@
 ---
-title: 'Cookbook'
-previousText: 'Webhooks'
-previousUrl: '/docs/appflow/automation/webhooks'
-nextText: 'Using Private Git Repos'
-nextUrl: '/docs/appflow/cookbook/private_git'
+title: "Cookbook"
+previousText: "Webhooks"
+previousUrl: "/docs/appflow/automation/webhooks"
+nextText: "Migrating from PhoneGap Build to Ionic Appflow"
+nextUrl: "/docs/appflow/cookbook/phonegap-build-migration"
 ---
 
 # Cookbook
+
+### [Migrating from PhoneGap Build to Ionic Appflow](/docs/appflow/cookbook/migrating-from-phonegap-build)
+
+Learn how to convert your app to use Ionic Appflow.
 
 ### [Using Private Git Repos](/docs/appflow/cookbook/private_git)
 
