@@ -2,7 +2,7 @@
 previousText: ''
 previousUrl: ''
 nextText: 'Android Play Store'
-nextUrl: '/docs/deploying/play-store'
+nextUrl: '/docs/deployment/play-store'
 contributors:
   - zaarheed
 ---
