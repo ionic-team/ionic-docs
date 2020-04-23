@@ -1,8 +1,8 @@
 ---
-previousText: '简介'
-previousUrl: '/docs/appflow/cookbook/intro'
-nextText: '使用私有 NPM 模块'
-nextUrl: '/docs/appflow/cookbook/private_npm_modules'
+previousText: "Migrating from PhoneGap Build"
+previousUrl: "/docs/appflow/cookbook/phonegap-build-migration"
+nextText: "使用私有 NPM 模块"
+nextUrl: "/docs/appflow/cookbook/private_npm_modules"
 ---
 
 # 使用 GIT 私人仓库
