@@ -1,125 +1,44 @@
 ---
-previousText: 'Native Configurations'
-previousUrl: '/docs/appflow/package/native-configs'
-nextText: 'Automations'
-nextUrl: '/docs/appflow/automation/intro'
 ---
 
-# Package builds on Appflow using the Ionic CLI
+# Ionic CLI
 
-<blockquote>
-  <p><b>Note:</b> This feature is only available on our <b>Scale</b> plan. Please <a href="/sales">contact us</a> to enable this feature.</p>
-</blockquote>
+Ionic命令行工具（[CLI](/docs/reference/glossary#cli)）是用于开发Ionic应用的首选工具。
 
-It is possible to trigger Package builds on Appflow directly from the CLI. This is extremely useful if you need to integrate the Package build step as part of an existing external CI/CD process.
+## 安装方式
 
-### Prerequisites
+Ionic CLI 可以使用 npm 全局安装：
 
-Upgrade the Ionic CLI to at least version `4.7.0`.
-
-To trigger Package builds on Appflow from the Ionic CLI, a proper subscription to run Package builds is needed.
-
-To use Environments, a proper subscription that allows the usage of Automations is needed.
-
-### Authentication
-
-The Ionic CLI has to be authenticated on Appflow to be able to trigger a Package build.
-
-To login type:
-
-```bash
-$ ionic login <email> <password>
+```shell
+$ npm install -g @ionic/cli
 ```
 
-This will prompt for the Appflow username/password.
+## 帮助
 
-The CLI can also be authenticated via an environment variable (for example, if it is used during a CI/CD task).
+Ionic CLI 带命令文档，可以使用 `--help` 标志访问。
 
-To set up the authentication via environment variable, first login via the CLI with an Appflow user who has access to the app you want to trigger Deploy builds for:
-
-```bash
-$ ionic login <email> <password>
+```shell
+$ ionic --help
+$ ionic <command> --help
+$ ionic <command> <subcommand> --help
 ```
 
-Then, export the authentication token:
+> 确保在你的项目文件夹下运行`ionic <command> --help`命令。
+> 
+> 对于一些命令，例如 `ionic server`，帮助文档根据项目类型的不同（例如：React和Angular）会有差异。
 
-```bash
-$ ionic config get -g tokens.user
-```
+<!-- TODO: image? -->
 
-Finally, export the token in an environment variable of your shell or your CI/CD service.
+## 架构
 
-```bash
-$ export IONIC_TOKEN=<your token>
-```
+Ionic CLI是由[TypeScript](/docs/reference/glossary#typescript)和[Node.js](/docs/reference/glossary#node)构建的。 它能够支持Node10.3以上的版本，不过我们建议使用最新的LTS版本。 具体细则，可以关注我们的开源代码库<a href="https://github.com/ionic-team/ionic-cli" target="_blank">GitHub仓库</a>。
 
-### Link the app
+## 答疑解惑
 
-Your app must be linked to the remote app on Appflow. If the app is not linked yet, run:
+如果遇到了有关Ionic CLI的疑问，可以参照以下内容来排查：
 
-```bash
-$ ionic link <app id>
-```
-
-and commit the changes to `ionic.config.json`.
-
-### Trigger a package build
-
-Currently, Package builds can only be triggered from the root project directory:
-
-```bash
-$ cd /path/to/your/app
-```
-
-Assuming the CLI is authenticated, to trigger a Package build, run:
-
-```bash
-$ ionic package build
-```
-
-This will prompt for the desired platform (`ios`/`android`) and build type for the platform.
-
-For iOS or Android `release` builds, a valid security profile is required and can be specified using the `--security-profile=<name>` option.
-
-For information on setting up security profiles, see [here](/docs/appflow/package/credentials).
-
-The previous commands can be executed in a single step:
-
-```bash
-$ ionic package build ios development --security-profile="My Security Profile"
-```
-
-Once the build is successfully triggered, the CLI will automatically start tailing the logs from Appflow and, if the build is successful, download the `apk`/`ipa` file in the current directory.
-
-### Customize the package build with Options
-
-The Options available to customize the build include:
-
-* `--environment=<name>` to specify the group of environment variables to be exposed to the build (available only with Automation; more info about environments are available [here](/docs/appflow/environments/))
-* `--native-config=<name>` to specify the group of native config variables to be exposed to your build (more info about native configs are available [here](/docs/appflow/package/intro/#native-configs))
-
-### Customize the package build with Advanced Options
-
-The Advanced Options available to customize the build include:
-
-* `--commit=<sha1>` The commit defaults to HEAD; to use a different commit you can use this option with the full SHA1 of the commit
-* `--target-platform=<name>` This option is mostly useful for iOS builds if for any reason a package build with a specific version of Xcode is needed. If this is omitted the preferred version is used.
-* `--build-file-name=<name>` To override the downloaded file name use this option. This might be useful, for instance, in in a CI build to have a consistent name for the produced artifact.
-
-### Note about referencing Options values by name
-
-Names are case sensitive and need to be specified including spaces, for instance:
-
-```bash
-$ ionic package build ios development --security-profile="iOS Dev"
-```
-
-Apart from the `--commit` option, all others require the full name setup within the Appflow Dashboard.
-
-Look for the name on the Security Profiles, Environments and Native Configs pages in Appflow:
-
-![Security Profiles](/docs/assets/img/appflow/cli-security-profile-list.png) ![Environments](/docs/assets/img/appflow/cli-environments-list.png) ![Native Configs](/docs/assets/img/appflow/cli-native-config-list.png)
-
-For the Target Platform, use one of the strings identifying the platform in the Applflow Package Build form:
-
-![Target Platform](/docs/assets/img/appflow/cli-target-platform.png)
+- 请确保已安装 Ionic CLI 的最新版本。 可以通过运行`ionic --version`命令进行版本信息的查看。
+- 请确保已安装最新的Node LTS版本。 参照[Node & npm](/docs/intro/environment#node-npm)环境配置。
+- 命令接上`--verbose` 标记会打印调试消息，这对排查不容易找到的问题是很有帮助的。
+- 代理设置错误的话会导致一些连接异常， 参照 [使用代理](/docs/cli/using-a-proxy) 来配置请求代理。
+- 所有平台的 Ionic CLI 全局配置目录均为 `~/.ionic`。 你完全可以删除该目录，Ionic CLI 会重新生成新的配置信息。但是所有的配置信息都会丢失 (包括 user sessions)。 使用 [CLI 环境变量](/docs/cli/configuration#environment-variables) 来配置此目录。
