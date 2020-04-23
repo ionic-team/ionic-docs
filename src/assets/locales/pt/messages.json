@@ -205,6 +205,7 @@
   "menu-appflow-automation-webhooks": "Webhooks",
   "menu-appflow-cookbook": "Livro de Receitas",
   "menu-appflow-cookbook-intro": "Visão Geral",
+  "menu-appflow-cookbook-phonegap-build": "PhoneGap Build Migration",
   "menu-appflow-cookbook-private_git": "Usando repositórios GIT privados",
   "menu-appflow-cookbook-private_npm_modules": "Usando Módulos NPM Privados",
   "menu-appflow-cookbook-switch_node_version": "Usar Node diferente nas construções",
