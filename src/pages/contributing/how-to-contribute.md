@@ -20,7 +20,7 @@ Please see the [Contributor Code of Conduct](/docs/contributing/coc) for informa
 
 * The issue list of the [Ionic](https://github.com/ionic-team/ionic) repository is exclusively for bug reports and feature requests. Non-conforming issues will be closed immediately.
 
-* Issues with no clear steps to reproduce will not be triaged. If an issue is labeled with "needs: reply" and receives no further replies from the author of the issue for more than 30 days, it will be closed.
+* Issues with no clear steps to reproduce will not be triaged. If an issue is labeled with "needs: reply" and receives no further replies from the author of the issue for more than 14 days, it will be closed.
 
 * If you think you have found a bug, or have a new feature idea, please start by making sure it hasn't already been [reported](https://github.com/ionic-team/ionic/issues?utf8=%E2%9C%93&q=is%3Aissue). You can search through existing issues to see if there is a similar one reported. Include closed issues as it may have been closed with a solution.
 
