@@ -31,7 +31,7 @@ Please see the [Contributor Code of Conduct](/docs/contributing/coc) for informa
 
 ### What is a code reproduction?
 
-A code reproduction is a small application that is built to demonstrate a particular issue. The code reproduction should contain the minimal amount of code needed to recreate the issue you are experiencing.
+A code reproduction is a small application that is built to demonstrate a particular issue. The code reproduction should contain the minimum amount of code needed to recreate the issue and should focus on a single issue.
 
 ### Why should you create a reproduction?
 
@@ -42,7 +42,7 @@ Without a reliable code reproduction, it is unlikely we will be able to address 
 ### How to create a reproduction
 
 * Create a new Ionic application using one of our starter templates. The `blank` starter application is a great choice for this. You can create one using the following Ionic CLI command: `ionic start myApp blank`
-* Add the minimal amount of code needed to recreate the issue you are experiencing. Do not include anything that is not required to reproduce the issue. This includes any 3rd party plugins you have installed.
+* Add the minimum amount of code needed to recreate the issue you are experiencing. Do not include anything that is not required to reproduce the issue. This includes any 3rd party plugins you have installed.
 * Publish the application on GitHub and include a link to it when [creating an issue](https://github.com/ionic-team/ionic/issues/new/choose).
 * Be sure to include steps to reproduce the issue. These steps should be clear and easy to follow.
 
