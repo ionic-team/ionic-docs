@@ -1,6 +1,6 @@
 import { h } from '@stencil/core';
 
-export default () => <docs-nav items={items}/>;
+export default () => <docs-nav items={items} />;
 
 const items = {
   'menu-appflow': '/docs/appflow',
@@ -46,6 +46,7 @@ const items = {
   },
   'menu-appflow-cookbook': {
     'menu-appflow-cookbook-intro': '/docs/appflow/cookbook/intro',
+    'menu-appflow-cookbook-phonegap-build': '/docs/appflow/cookbook/phonegap-build-migration',
     'menu-appflow-cookbook-private_git': '/docs/appflow/cookbook/private_git',
     'menu-appflow-cookbook-private_npm_modules': '/docs/appflow/cookbook/private_npm_modules',
     'menu-appflow-cookbook-switch_node_version': '/docs/appflow/cookbook/switch_node_version'

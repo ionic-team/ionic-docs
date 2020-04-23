@@ -1,8 +1,8 @@
 ---
-previousText: 'Introduction'
-previousUrl: '/docs/appflow/cookbook/intro'
-nextText: 'Using private NPM modules'
-nextUrl: '/docs/appflow/cookbook/private_npm_modules'
+previousText: "Migrating from PhoneGap Build"
+previousUrl: "/docs/appflow/cookbook/phonegap-build-migration"
+nextText: "Using private NPM modules"
+nextUrl: "/docs/appflow/cookbook/private_npm_modules"
 ---
 
 # Using private GIT repositories
@@ -21,11 +21,13 @@ or [bitbucket](https://confluence.atlassian.com/bitbucket/app-passwords-82878130
 Then build an url for the Git Credentials.
 
 The URL for github looks like:
+
 ```
 https://<username>:<token>@github.com
 ```
 
 while for bitbucket looks like:
+
 ```
 https://<username>:<token>@bitbucket.org
 ```
