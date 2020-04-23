@@ -16,3 +16,6 @@ Learn how to access private NPM modules used in dependencies.
 
 ### [Switching Node Version](/docs/appflow/cookbook/switch_node_version)
 Learn how to use a different Node in builds.
+
+### [Migrating from PhoneGap Build to Ionic Appflow](/docs/appflow/cookbook/phonegap_build)
+Learn how to convert your app to use Ionic Appflow.
