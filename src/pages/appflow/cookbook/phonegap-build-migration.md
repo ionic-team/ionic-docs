@@ -3,8 +3,10 @@ previousText: "Introduction"
 previousUrl: "/docs/appflow/cookbook/intro"
 nextText: "Using private Git Repos"
 nextUrl: "/docs/appflow/cookbook/private_git"
+contributors:
+  - chrisgriffith
 meta:
-  image: /docs/assets/img/meta/open-graph.png
+  image: /docs/assets/img/appflow/cookbook/meta-pgb.png
   description: Migrating from PhoneGap Build to Ionic Appflow involves a few simple steps.
 ---
 
