@@ -1,8 +1,8 @@
 ---
-previousText: 'Introduction'
-previousUrl: '/docs/appflow/cookbook/intro'
-nextText: 'Using private NPM modules'
-nextUrl: '/docs/appflow/cookbook/private_npm_modules'
+previousText: "Migrating from PhoneGap Build"
+previousUrl: "/docs/appflow/cookbook/phonegap-build-migration"
+nextText: "Using private NPM modules"
+nextUrl: "/docs/appflow/cookbook/private_npm_modules"
 ---
 
 # Using private GIT repositories
