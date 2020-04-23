@@ -1,21 +1,25 @@
 ---
-title: '参考手册'
-previousText: 'Webhooks'
-previousUrl: '/docs/appflow/automation/webhooks'
-nextText: '使用私人 Git Repos'
-nextUrl: '/docs/appollow/cookbook/private_git'
+title: "参考手册"
+previousText: "Webhooks"
+previousUrl: "/docs/appflow/automation/webhooks"
+nextText: "Migrating from PhoneGap Build to Ionic Appflow"
+nextUrl: "/docs/appflow/cookbook/phonegap-build-migration"
 ---
 
 # 参考手册
 
-### [使用私人 Git Repos](/docs/appollow/cookbook/private_git)
+### [Migrating from PhoneGap Build to Ionic Appflow](/docs/appflow/cookbook/migrating-from-phonegap-build)
 
-了解如何访问在npm依赖项中使用的私有Git repos。
+Learn how to convert your app to use Ionic Appflow.
 
-### [使用私有 NPM 模块](/docs/appflow/cookbook/private_npm)
+### [Using Private Git Repos](/docs/appflow/cookbook/private_git)
 
-了解如何访问依赖项中使用的私有NPM模块。
+Learn how to access private Git repos used in npm dependencies.
 
-### [切换 Node 版本](/docs/appflow/cookbook/switch_node_version)
+### [Using Private NPM Modules](/docs/appflow/cookbook/private_npm)
 
-学习如何在构建中使用不同的 Node。
+Learn how to access private NPM modules used in dependencies.
+
+### [Switching Node Version](/docs/appflow/cookbook/switch_node_version)
+
+Learn how to use a different Node in builds.
