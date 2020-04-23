@@ -1,21 +1,25 @@
 ---
-title: 'Livre de recettes'
-previousText: 'Webhooks'
-previousUrl: '/docs/appflow/automation/webhooks'
-nextText: 'Utilisation de dépôts Git privés'
-nextUrl: '/docs/appflow/cookbook/private_git'
+title: "Livre de recettes"
+previousText: "Webhooks"
+previousUrl: "/docs/appflow/automation/webhooks"
+nextText: "Migrating from PhoneGap Build to Ionic Appflow"
+nextUrl: "/docs/appflow/cookbook/phonegap-build-migration"
 ---
 
 # Livre de recettes
 
-### [Utilisation de dépôts Git privés](/docs/appflow/cookbook/private_git)
+### [Migrating from PhoneGap Build to Ionic Appflow](/docs/appflow/cookbook/migrating-from-phonegap-build)
 
-Découvrez comment accéder aux dépôts Git privés utilisés dans les dépendances npm.
+Learn how to convert your app to use Ionic Appflow.
 
-### [Utilisation de modules NPM privés](/docs/appflow/cookbook/private_npm)
+### [Using Private Git Repos](/docs/appflow/cookbook/private_git)
 
-Découvrez comment accéder aux modules NPM privés utilisés dans les dépendances.
+Learn how to access private Git repos used in npm dependencies.
 
-### [Version Node de commutation](/docs/appflow/cookbook/switch_node_version)
+### [Using Private NPM Modules](/docs/appflow/cookbook/private_npm)
 
-Apprenez à utiliser un nœud différent dans les versions.
+Learn how to access private NPM modules used in dependencies.
+
+### [Switching Node Version](/docs/appflow/cookbook/switch_node_version)
+
+Learn how to use a different Node in builds.
