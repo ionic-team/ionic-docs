@@ -63,10 +63,6 @@ docs-nav a {
   .Nav-link:not(.Nav-link--active):hover {
     color: var(--text-color);
   }
-
-  .Nav-link:active {
-    background-color: #f3f9fe;
-  }
 }
 
 .Nav-link--active {
