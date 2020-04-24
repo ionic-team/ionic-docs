@@ -1,64 +1,64 @@
 ---
-previousText: '自动化'
-previousUrl: '/docs/appflow/automation/create'
-nextText: 'Webhooks'
-nextUrl: '/docs/appflow/automation/webhooks'
+previousText: 'Crear Automatizaciones'
+previousUrl: '/documentación/flujoDeAplicación/automatización/crear'
+nextText: 'Retrollamada Http'
+nextUrl: '/documentación/flujoDeAplicacion/automatización/RetrollamadaHttp'
 ---
 
-# 构建环境
+# Entornos de compilación
 
-## 简介
+## Introducción
 
-环境为您提供了一种自定义应用程序构建过程的方法，以便从相同的代码库为不同的环境生成不同版本的应用程序。 在npm运行期间运行的任何构建脚本都可以访问所有环境变量`npm run install`和`npm run build`构建部分。
+Los entornos le brindan una forma de personalizar el proceso de compilación de su aplicación para producir diferentes versiones de sus aplicaciones para diferentes entornos desde la misma base de código. Todas las variables de entorno son accesibles para construir scrips que corren durante la porción `npm run install` y `npm run build` de tus compilaciones.
 
-有两种类型的环境变量可用:
+Hay dos tipos de variables de Entorno disponibles para usar:
 
-* [Predefined Environments](#predefined-environments) (所有内置都可用)
-* [Custom Environments](#custom-environments) (可选计划中可用)
+* [ Entornos Predefinidos ](#predefined-environments) (Disponibles en todas las Compilaciones)
+* [Entornos Personalizados](#custom-environments) (Disponible en planes seleccionados)
 
-## 预定义的环境
+## Entornos Predefinidos
 
-每次构建发生时,它是在一个安全的环境中,我们提供了一些预定义的变量是键/值对可用的环境,可通过使用[process.env.MY_VAR](https://nodejs.org/docs/latest-v8.x/api/process.html#process_process_env)语法NodeJS或通过<代码>美元`$MY_VAR` 代码语法标准shell脚本。 这些变量可以用于自定义构建和输出。
+Cada vez que se produce una compilación, se realiza en un entorno seguro donde proporcionamos algunas variables predefinidas que son pares clave/valor que están disponibles en el entorno y están disponibles mediante el uso de la sistaxis [process.env.MY_VAR](https://nodejs.org/docs/latest-v8.x/api/process.html#process_process_env) en NodeJS o via sintaxis `$MY_VAR` en un standard shell script. Estas variables se pueden aprovechar para [ personalizar la compilación y las salidas ](#usage).
 
-每个构建都提供了以下环境变量，可以在构建脚本中访问:
+Las siguientes variables de entorno se proporcionan en cada compilación, a las que se puede acceder en scripts de compilación:
 
-* `CI_APP_ID` **(string)：** Ionic 应用程序的独特ID。
-* `CI_APP_NAME` **(string):** Ionic 应用程序的名称。
-* `CI_AUTOMATED_BUILD` **(int):** 此构建是否由于自动化而发生 (`0` `false`, `1` `true`)。
-* `CI_AUTOMATION_ID` **(可选 int)：** 创建此版本的自动化唯一ID。
-* `CI_AUTOMATION_NAME` **(可选string)：** 创建此构建的自动化名称。
-* `CI_GIT_COMIT_SHA` **(string)：** 用于运行构建的提交的SHA。
-* `CI_GIT_COMIIT_MSG` **(string)：** 用于运行构建的提交的消息。
-* `CI_GIT_REF` **(string):** 创建构建的git ref (即. `master`)。
-* `CI_GIT_REF_TYPE` **(string)：** git ref 类型 (例如. `branch`)。
+* `CI_APP_ID` **(string):** Tu ID único de aplicación ionic.
+* `CI_APP_NAME` **(string):** Tu nombre único de aplicación ionic.
+* `CI_AUTOMATED_BUILD` **(int):** Si esta compilación se produjo como resultado de una automatización (`0` para `falso`, `1` para `verdadero`).
+* `CI_AUTOMATION_ID` **(optional int):** El ID único de la automatización que creó esta compilación.
+* `CI_AUTOMATION_NAME` **(optional string):** El nombre de la automatización que creó esta compilación.
+* `CI_GIT_COMMIT_SHA` **(string):** El SHA para la confirmación en la que se ejecutó la compilación.
+* `CI_GIT_COMMIT_MSG` **(string):** El mensaje para la confirmación en la que se ejecutó la compilación.
+* `CI_GIT_REF` **(string):** La referencia git a partir de la cual se creó la compilación (i.e. `master`).
+* `CI_GIT_REF_TYPE` **(string):** El tipo de referencia git (i.e. `branch`).
 
-## 自定义环境
+## Entornos Personalizados
 
 <blockquote>
-  <p><b>注:</b>此功能仅适用于我们的<a href="/pricing">Growth plans</a>及以上。</p>
+  <p><b>Note:</b>Esta función solo está disponible en nuestros <a href="/pricing">Planes de crecimiento</a> y superiores.</p>
 </blockquote>
 
-除了 [预定义的环境](#predefined-environments)之外，在 [计划中用户访问自动化](/pricing) 将有权限创建自定义环境。 使用自定义环境，很容易创建和管理自定义密钥/值配对 以进一步自定义构建 Ionic Appflow。 常见的用例包括定制您的构建过程，以便构建staging &您的应用程序的QA版本，可以连接到不同的api，或者构建应用程序的不同的标记版本。 要开始使用自定义环境，请打开您希望使用的应用程序，并在侧栏中导航到**automation -> Environment**，然后单击右上角的**New Environment**。 你应该看到类似的内容：
+Además de los [ entornos predefinidos ](#predefined-environments), los clientes en los planes [ con acceso a automatizaciones ](/pricing) tendrán acceso para crear entornos personalizados. Con entornos personalizados, es fácil crear y administrar conjuntos personalizados de pares clave/valor para personalizar aún más las compilaciones en Ionic Appflow. Los casos de uso comunes incluyen la personalización de su proceso de compilación & para crear versiones de control de calidad de su aplicación que se conectan a diferentes API o para crear diferentes versiones de su aplicación con etiqueta blanca. Para comenzar con entornos personalizados, abra la aplicación en la que desea trabajar y navegue en la barra lateral para ** Automatizar -> Entornos **, luego haga clic en ** Nuevo entorno ** en la parte superior derecha. Deberá ver algo como esto:
 
-![创建环境表单](/docs/assets/img/appflow/ss-environments-create.png)
+![Crear formulario de entorno](/docs/assets/img/appflow/ss-environments-create.png)
 
-可以注意到，有两种不同的环境变量部分可以使用：
+Como se puede notar, hay dos diferentes conjuntos de secciones de variables de entorno que se pueden utilizar:
 
-* Secrets
+* Secretas
 * Variables
 
-唯一的不同之处在于，secrets是隐藏的，并且在添加后从未显示在仪表板中，而variables总是可以读取的。
+La única diferencia es que los secretos están ocultos y nunca se muestran en el panel de control después de añadirlos, mientras que las variables están siempre disponibles para ser leídas.
 
-环境面板还列出了可用的自定义环境及其配置的键/值对和密钥。
+El dashboard de entornos también muestra los entornos personalizados disponibles junto con sus pares clave/valor configurados y claves secretas.
 
-![环境列表](/docs/assets/img/appflow/ss-environments-list.png)
+![Vista de lista de entornos](/docs/assets/img/appflow/ss-environments-list.png)
 
-## 使用方法
+## Uso
 
-例如，您可以使用自定义的Shell脚本替换` package.json `中的` build `脚本。读取分支并触发自定义构建。
+Por ejemplo, podría reemplazar su script `compilación` en `package.json` con un script de shell personalizado que lee la rama y desencadena una compilación personalizada.
 
 ```json
-// package.json中的自定义构建脚本
+// personalizar el script de compilación en el package.json
 {
 ...
     "scripts": {
@@ -78,13 +78,13 @@ nextUrl: '/docs/appflow/automation/webhooks'
     fi
     
 
-从`@ionic/app-scripts@3.2.0`开始，您还可以使用 [环境变量直接在您的源代码中](https://github.com/ionic-team/ionic-app-scripts#environments) 并且它们会在构建时被替换，以便您可以根据环境自定义代码。
+A partir de `@ionic/app-scripts@3.2.0` también puede usar [ variables de entorno directamente en su código fuente ](https://github.com/ionic-team/ionic-app-scripts#environments) y se reemplazarán en el momento de la compilación para que pueda personalizar su código según el entorno.
 
 <blockquote>
-  <p><b>注意：</b>`@ionic/app-scripts` 仅用于Ionic Framework v3 应用程序。 上述内容不适用于其他版本。</p>
+  <p><b>Nota:</b>`@ionic/app-scripts` es sólo para uso con aplicaciones Ionic Framework v3. Lo anterior no se aplica a otras versiones.</p>
 </blockquote>
 
-例如:
+Por ejemplo:
 
 ```typescript
 productionConfig = {
@@ -92,7 +92,7 @@ productionConfig = {
   analyticsKey: 'my-production-key'
 }
 stagingConfig = {
-  api: 'https://my.staging.api.com',
+  api: 'https://my.staging.api. om',
   analyticsKey: 'my-staging-key'
 }
 
@@ -101,12 +101,12 @@ localConfig = {
   analyticsKey: 'my-local-key'
 }
 
-switch (process.env.CI_GIT_REF) {
+switch (process. nv.CI_GIT_REF) {
   case 'master':
     return productionConfig;
-  case 'staging':
+  caso 'staging':
     return stagingConfig;
-  default:
+  por defecto:
     return localConfig;
 }
 ```
