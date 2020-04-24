@@ -3,8 +3,10 @@ previousText: "Introduction"
 previousUrl: "/docs/appflow/cookbook/intro"
 nextText: "Using private Git Repos"
 nextUrl: "/docs/appflow/cookbook/private_git"
+contributors:
+  - chrisgriffith
 meta:
-  image: /docs/assets/img/meta/open-graph.png
+  image: /docs/assets/img/appflow/cookbook/meta-pgb.png
   description: Migrating from PhoneGap Build to Ionic Appflow involves a few simple steps.
 ---
 
@@ -233,15 +235,15 @@ This will spin up a virtual machine to perform our build(s) on. Here we can watc
 
 That’s it! <strong>You’ve successfully migrated your app from PhoneGap Build to Ionic Appflow.</strong>
 
-While you can stop here and use Appflow as-is for your native iOS and Android builds, continue reading for details on how to convert your app to an Ionic app. While not required, it unlocks the full power of Ionic Appflow and offers you a modern app development experience.
+While you can stop here and use Appflow as-is for your native iOS and Android builds, continue reading for details on how to convert your app to an Ionic app. While not required, it offers a modern app development experience featuring an [open source UI toolkit](/docs/) with the latest iOS and Android designs, animations, and gestures.
 
 ## Migrating to Ionic
 
-In order to access the advanced features of Ionic Appflow as well as convert your existing app to Ionic, begin by installing the Ionic CLI.
+To begin the process of converting your existing app to Ionic, install the Ionic CLI first.
 
 > If you do not have Node or npm installed on your computer, you will need to do this before proceeding. If you need to install Node, please select the [current LTS version](https://nodejs.org).
 
-If you have not installed the Ionic CLI already, open your command line and run:
+Open your command line and run:
 
 ```shell
 $ npm i -g @ionic/cli
