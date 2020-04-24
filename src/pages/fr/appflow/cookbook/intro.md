@@ -8,7 +8,7 @@ nextUrl: "/docs/appflow/cookbook/phonegap-build-migration"
 
 # Livre de recettes
 
-### [Migrating from PhoneGap Build to Ionic Appflow](/docs/appflow/cookbook/migrating-from-phonegap-build)
+### [Migrating from PhoneGap Build to Ionic Appflow](/docs/appflow/cookbook/phonegap-build-migration)
 
 Learn how to convert your app to use Ionic Appflow.
 
