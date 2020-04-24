@@ -31,7 +31,7 @@ serviceWorker.register();
 
 
 
-Once this package has been added run `ionic build --prod` and the `www` directory will be ready to deploy as a PWA.
+Once this package has been added run `ionic build` and the `build` directory will be ready to deploy as a PWA.
 
 > By default, react apps package comes with the Ionic logo for the app icons. Be sure to update the manifest to use the correct app name and also replace the icons.
 
