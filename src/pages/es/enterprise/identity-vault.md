@@ -1,7 +1,7 @@
 ---
 title: Identity Vault
 template: enterprise-plugin
-version: 4.0.0
+version: 4.0.1
 minor: 4.0.X
 otherVersions:
   - 2.0.X
@@ -2022,6 +2022,14 @@ The possible values returned by [getBiometricType](#identityvault.getbiometricty
 * * *
 
 ## Change Log
+
+### \[4.0.1\] (2020-04-17)
+
+### Bug Fixes
+
+* **android:** clear vault when there are too many failed bio unlock attempts 
+* **ios:** clear vault when there are too many failed bio unlock attempts 
+* allow install in cordova-android 9-dev 
 
 ### \[4.0.0\] (2020-04-08)
 
