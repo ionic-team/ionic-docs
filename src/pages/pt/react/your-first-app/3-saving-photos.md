@@ -22,7 +22,7 @@ const { deleteFile, getUri, readFile, writeFile } = useFilesystem();
 Next, create a couple of new functions in `usePhotoGallery`:
 
 ```typescript
-const savePicture = async (photo: CameraPhoto, fileName: string) => {
+const savePicture = async (photo: CameraPhoto, fileName: string): Promise<Photo> => {
   const base64Data = await base64FromPath(photo.webPath!);
   const savedFile = await writeFile({
     path: fileName,
