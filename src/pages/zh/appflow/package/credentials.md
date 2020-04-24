@@ -20,7 +20,7 @@ nextUrl: '/docs/appflow/package/adding-credentials'
 [Android keystore](https://developer.android.com/training/articles/keystore.html)用于签名应用，可以使用包含在 [Java JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) 中的键盘工具来生成。 更改 `MY-RELEASE-KEY` and `MY_ALIAS_NAME` 以便与您的应用相关。 工具将要求您输入密钥存储密码和密钥密码。
 
 ```bash
-$ keytool -genkey -v -keystore MY-RELEASE-KEY.keystore -alias MY_ALIAS_NAME -keyalg RSA -keysize 2048 -validity 10000
+$ keytool -genkey -v -keystore MY-RELEASE-KEY.keystore -alias MY_ALIAS_NAME -keyalg RSA -keysize 2048 -validity 10000 -storetype jks
 ```
 
 ## iOS 证书
