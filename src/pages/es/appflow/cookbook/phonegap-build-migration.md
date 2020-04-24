@@ -128,27 +128,6 @@ You also might find that you need to generate some additional icons and splash s
 
 The config.xml file might need some additional changes in order to function correctly. I would review each element in your existing config.xml and see if it uses [the latest syntax](https://cordova.apache.org/docs/en/latest/config_ref/index.html). Other changes you will need to be aware of is access to some features, like location, cameras or the microphone require additional elements in order to be used. If your existing application uses any of those functions, you will need to add the new elements to allow them to function.
 
-If you are deploying on Android, you have an additional change you need to make in order to access external assets or APIs. The Android Manifest file must be opened with a Network Security file.
-
-```xml
-<platform name="android">
-    <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application" xmlns:android="http://schemas.android.com/apk/res/android">
-        <application android:networkSecurityConfig="@xml/network_security_config" />
-    </edit-config>
-</platform>
-```
-
-As to the contents of the file, it is:
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<network-security-config>
-    <domain-config cleartextTrafficPermitted="true">
-        <domain includeSubdomains="true">localhost</domain>
-    </domain-config>
-</network-security-config>
-```
-
 Finally, you will want to make sure that whatever Cordova plugins you are using are the latest version to ensure compatibility with the current version of Cordova.
 
 ### Migrate the Code
