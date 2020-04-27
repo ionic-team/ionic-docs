@@ -13,7 +13,7 @@ Afortunadamente, esto es fácil: aprovecharemos la API de Capacitor Storage para
 
 ## API de almacenamiento
 
-Comience definiendo una variable constante que actuará como la clave para la tienda:
+Comience definiendo una variable constante que actuará como la clave para el almacenamiento de las fotografias:
 
 ```typescript
 export class PhotoService {
@@ -24,7 +24,7 @@ export class PhotoService {
 }
 ```
 
-Next, at the end of the `addNewToGallery` function, add a call to `Storage.set()` to save the Photos array. By adding it here, the Photos array is stored each time a new photo is taken. This way, it doesn’t matter when the app user closes or switches to a different app - all photo data is saved.
+Luego, al final de la funcion `addNewToGallery`, hará una llamada a `Storage.set()` para salvar las fotografias en el arreglo Photos. Al añadirlo aquí, en el arreglo Photos se almacenará cada foto que sea tomada con la camara. De esta manera, no importa cuando si el usuario cierra la aplicación o abre otra, todos las fotografias estarán guardadas en el arreglo Photos.
 
 ```typescript
 Storage.set({
@@ -40,7 +40,7 @@ Storage.set({
 });
 ```
 
-With the photo array data saved, create a function called `loadSaved()` that can retrieve that data. We use the same key to retrieve the photos array in JSON format, then parse it into an array:
+Con los datos del arreglo de fotos guardados, cree una función llamada `loadSaved()` que pueda recuperar esos datos. Utilizamos la misma clave para recuperar el array de fotos en formato JSON, luego analizarlo en una matriz:
 
 ```typescript
 public async loadSaved() {
@@ -52,7 +52,7 @@ public async loadSaved() {
 }
 ```
 
-On mobile (coming up next!), we can directly set the source of an image tag - `<img src=”x” />` - to each photo file on the Filesystem, displaying them automatically. On the web, however, we must read each image from the Filesystem into base64 format, using a new `base64` property on the `Photo` object. This is because the Filesystem API uses [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. Below the code you just added in the `loadSaved()` function, add:
+En móvil (¡próximamente! , podemos establecer directamente la fuente de una etiqueta de imagen - `<img src=”x” />` - a cada archivo de foto en el sistema de archivos, mostrarlos automáticamente. En la web, sin embargo, debemos leer cada imagen del sistema de archivos en formato base64, usando una nueva propiedad `base64` en el objeto `Photo`. Esto se debe a que la API Filesystem utiliza [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) bajo el capó. Debajo del código que acabas de añadir en la función `loadSaved()` , añadir:
 
 ```typescript
 // Mostrar la foto leyendo en formato base64
@@ -68,7 +68,7 @@ for (let photo of this.photos) {
 }
 ```
 
-After, call this new method in `tab2.page.ts` so that when the user first navigates to Tab 2 (the Photo Gallery), all photos are loaded and displayed on the screen.
+Después, llama a este nuevo método en `tab2.page. s` de modo que cuando el usuario navega por primera vez a Tab 2 (la Galería de fotos), todas las fotos se cargan y se muestran en la pantalla.
 
 ```typescript
 ngOnInit() {
@@ -76,4 +76,4 @@ ngOnInit() {
 }
 ```
 
-¡Eso es! We’ve built a complete Photo Gallery feature in our Ionic app that works on the web. Next up, we’ll transform it into a mobile app for iOS and Android!
+¡Eso es! Hemos construido una función completa de Galería de Fotos en nuestra aplicación Ionic que funciona en la web. ¡Próximamente, lo transformaremos en una aplicación móvil para iOS y Android!
