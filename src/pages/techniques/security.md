@@ -58,11 +58,11 @@ Vue does not provide any type of sanitizing methods built in. It is recommended 
 
 To learn more about the security recommendations for binding to directives such as `v-html`, see the [Vue Syntax Guide](https://vuejs.org/v2/guide/syntax.html#Raw-HTML).
 
-## Ejecting from the built in sanitizer
+## Ejecting from the built-in sanitizer
 
 For developers who wish to add complex HTML to components such as `ion-toast`, they will need to eject from the sanitizer that is built into Ionic Framework. Developers can either disable the sanitizer across their entire app or bypass it on a case-by-case basis.
 
-> Bypassing sanitization functionality can make your application vulnerable to XSS attacks. Please exercise extreme caution when disabling the sanitizer.
+> Bypassing sanitization functionality can make your application vulnerable to <a href="https://en.wikipedia.org/wiki/Cross-site_scripting" target="_blank" rel="noreferrer">XSS attacks</a>. Please exercise extreme caution when disabling the sanitizer.
 
 ### Disabling the sanitizer via config
 
