@@ -19,19 +19,19 @@ For teams building mission-critical apps, Ionic Native is a curated collection o
       <thead>
         <tr>
           <td>
-            <span class="native-ee-pricing-table">Características</span>
+            <span class="native-ee-pricing-table">Features</span>
           </td>
           <th>
             <div class="plan-wrap">
               <span class="native-ee-pricing-table">Community Plugins</span>
-              <div class="price">$0/mes </div>
+              <div class="price">$0/mo </div>
             </div>
           </th>
           <th>
             <div class="plan-wrap">
               <span class="native-ee-pricing-table">Premier Plugins</span>
               <div class="price" data-toggle="billing-team">
-                Contáctanos</div>
+                Contact Us</div>
             </div>
           </th>
         </tr>
@@ -39,49 +39,49 @@ For teams building mission-critical apps, Ionic Native is a curated collection o
       <tbody>
         <tr class="stripe">
           <th>
-            Mantenedor
+            Maintainer
           </th>
-          <td>Comunidad de Software Libre</td>
+          <td>OSS Community</td>
           <td>Ionic</td>
         </tr>
         <tr>
           <th>
-            Ciclos de lanzamiento regular y actualizaciones
+            Regular Release Cycles & Updates
           </th>
           <td>No</td>
           <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
         </tr>
         <tr class="stripe">
           <th>
-            Soporte SLA y sistema de Ticketing
+            Support SLA & Ticketing System
           </th>
           <td>No</td>
           <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
         </tr>
         <tr>
           <th>
-            Asesoramiento y soporte
+            Advisory & Support
           </th>
           <td>No</td>
           <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
         </tr>
         <tr class="stripe">
           <th>
-            Seguridad y corrección de errores
+            Security & Bug fixes
           </th>
-          <td>Comunidad de Software Libre</td>
+          <td>OSS Community</td>
           <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
         </tr>
         <tr>
           <th>
-            Asistencia en la implementación
+            Implementation Guidance
           </th>
           <td>No</td>
           <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
         </tr>
         <tr class="stripe">
           <th>
-            SLA garantizado
+            Guaranteed SLA
           </th>
           <td>No</td>
           <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg></td>
@@ -89,7 +89,7 @@ For teams building mission-critical apps, Ionic Native is a curated collection o
           <th></th>
           <td></td>
           <td><a class="btn"
-                href="https://ionicframework.com/enterprise-edition">Aprende más</a></td>
+                href="https://ionicframework.com/enterprise-edition">Learn More</a></td>
         </tr>
       </tbody>
     </table>
@@ -104,42 +104,42 @@ For teams building mission-critical apps, Ionic Native is a curated collection o
 
 Accelerate your app development with powerful solutions to common enterprise use cases. Ionic’s growing library are ready to deploy into any of the apps you build.
 
-### Autenticación y Seguridad
+### Authentication & Security
 
 - [Auth Connect](/docs/enterprise/auth-connect)
 - [Identity Vault](/docs/enterprise/identity-vault)
 - [Secure Storage](/docs/enterprise/offline-storage)
 
-### Características comunes del dispositivo
+### Common Device Features
 
 - [Android Permissions](/docs/enterprise/android-permissions)
-- [Tasa de App](/docs/enterprise/app-rate)
+- [App Rate](/docs/enterprise/app-rate)
 - [App Version](/docs/enterprise/app-version)
 - [Badge](/docs/enterprise/badge)
 - [Browser](/docs/enterprise/inappbrowser)
-- [Calendario](/docs/enterprise/calendar)
-- [Cámara](/docs/enterprise/camera)
-- [Portapapeles](/docs/enterprise/clipboard)
-- [Contactos](/docs/enterprise/contacts)
+- [Calendar](/docs/enterprise/calendar)
+- [Camera](/docs/enterprise/camera)
+- [Clipboard](/docs/enterprise/clipboard)
+- [Contacts](/docs/enterprise/contacts)
 - [Deeplinks](/docs/enterprise/deeplinks)
-- [Dispositivo](/docs/enterprise/device)
-- [Diálogos](/docs/enterprise/dialogs)
-- [Mensaje nuevo](/docs/enterprise/email-composer)
-- [Sistema de archivos](/docs/enterprise/filesystem)
-- [Geolocalización](/docs/enterprise/geolocation)
-- [Globalización](/docs/enterprise/globalization)
-- [Haptics & Vibración](/docs/enterprise/vibration)
-- [Teclado](/docs/enterprise/keyboard)
+- [Device](/docs/enterprise/device)
+- [Dialogs](/docs/enterprise/dialogs)
+- [Email Composer](/docs/enterprise/email-composer)
+- [Filesystem](/docs/enterprise/filesystem)
+- [Geolocation](/docs/enterprise/geolocation)
+- [Globalization](/docs/enterprise/globalization)
+- [Haptics & Vibration](/docs/enterprise/vibration)
+- [Keyboard](/docs/enterprise/keyboard)
 - [Media](/docs/enterprise/media)
-- [Captura del Medio](/docs/enterprise/media-capture)
+- [Media Capture](/docs/enterprise/media-capture)
 - [Native Storage](/docs/enterprise/nativestorage)
-- [Información de Red](/docs/enterprise/network-information)
-- [Orientación de pantalla](/docs/enterprise/screen-orientation)
-- [Redes sociales](/docs/enterprise/social-sharing)
-- [Pantalla de bienvenida](/docs/enterprise/splashscreen)
-- [Barra de Estado](/docs/enterprise/statusbar)
+- [Network Information](/docs/enterprise/network-information)
+- [Screen Orientation](/docs/enterprise/screen-orientation)
+- [Social Sharing](/docs/enterprise/social-sharing)
+- [Splash Screen](/docs/enterprise/splashscreen)
+- [Status Bar](/docs/enterprise/statusbar)
 
-### Servicios Integrados
+### Integrated Services
 
 - [Active Directory](https://ionicframework.com/integrations/ms-activedirectory-ms-adal)
 - [mParticle](/docs/enterprise/mparticle)
@@ -148,6 +148,6 @@ Accelerate your app development with powerful solutions to common enterprise use
 
 - [Offline Storage](/docs/enterprise/offline-storage)
 
-### Pagos
+### Payments
 
 - [Apple Payment Pass](/docs/enterprise/apple-payment-pass)
