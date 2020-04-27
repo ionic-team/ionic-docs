@@ -5,15 +5,15 @@ previousUrl: '/docs/developing/tips'
 
 # Hardware Back Button
 
-## Overview
-
 By default, when a user presses the Android hardware back button, the current view will be popped off the navigation stack. If there are no views to pop, nothing will happen. This guide will show you how to customize this behavior.
 
 > The hardware back button refers to the physical back button found on most Android devices and should not be confused with either the browser back button or `ion-back-button`. The information in this guide only applies to Android devices and is not relevant for iOS devices.
 
-## Intro
+## Overview
 
-When running in a Capacitor or Cordova application, Ionic Framework will emit an `ionBackButton` event whenever a user presses the hardware back button. Please note that this event will not be emitted when running an app in a web browser.
+When running in a Capacitor or Cordova application, Ionic Framework will emit an `ionBackButton` event when a user presses the hardware back button.
+
+> The `ionBackButton` event will **not** be emitted when running an app in a web browser.
 
 When listening for the `ionBackButton` event, you can register a handler to be fired. This handler can perform actions such as quitting the app or opening a confirmation dialog. Each handler must be assigned a priority. By default, only one handler is fired per hardware back button press. The priority value is used to determine which callback should be called. This is useful because if you have a modal open, you likely would not want the modal to close _and_ the app to navigate backwards when pressing the hardware back button. Only running one handler at a time allows the modal to close but still requires another press of the hardware back button to navigate backwards.
 
@@ -81,7 +81,7 @@ Each hardware back button callback has a `processNextHandler` parameter. Calling
 document.addEventListener('ionBackButton', (ev) => {
   ev.detail.register(10, (processNextHandler) => {
     console.log('Handler was called!');
-    
+
     processNextHandler();
   });
 });
@@ -98,7 +98,7 @@ import { Platform } from '@ionic/angular';
 constructor(private platform: Platform) {
   this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
     console.log('Handler was called!');
-    
+
     processNextHandler();
   });
 }
@@ -111,7 +111,7 @@ constructor(private platform: Platform) {
 document.addEventListener('ionBackButton', (ev) => {
   ev.detail.register(10, (processNextHandler) => {
     console.log('Handler was called!');
-    
+
     processNextHandler();
   });
 });
@@ -127,15 +127,17 @@ Internally, Ionic Framework uses something similar to a priority queue to manage
 
 ```javascript
 document.addEventListener('ionBackButton', (ev) => {
+  // Handler A
   ev.detail.register(10, (processNextHandler) => {
     console.log('Handler A was called!');
-    
+
     processNextHandler();
   });
-  
+
+  // Handler B
   ev.detail.register(10, (processNextHandler) => {
     console.log('Handler B was called!');
-    
+
     processNextHandler();
   });
 });
@@ -146,7 +148,7 @@ In the example above, both handlers A and B have a priority of 10. Since handler
 
 ## Exiting the App
 
-In some scenarios, it may be desirable to quit the app when pressing the hardware back button. This can be achieved through the use of the `ionBackButton` event and methods that Capacitor/Cordova provide.
+In some scenarios, it may be desirable to quit the app when pressing the hardware back button. This can be achieved through the use of the `ionBackButton` event combined with methods that Capacitor/Cordova provide.
 
 <docs-tabs>
 <docs-tab tab="javascript">
@@ -193,16 +195,16 @@ constructor(
 </docs-tab>
 </docs-tabs>
 
-This examples shows the application exiting when the user presses the hardware back button and there is nothing left in the navigation stack. It is also possible to display a quit confirmation dialog before quitting the app.
+This example shows the application exiting when the user presses the hardware back button and there is nothing left in the navigation stack. It is also possible to display a confirmation dialog before quitting the app.
 
 It is recommended to check whether or not the user is on the root page prior to exiting the application. Developers can use the `canGoBack` method on `IonRouterOutlet` in Ionic Angular. Support for this will be coming to Ionic React soon.
 
 ## Internal Framework Handlers
 
-This table lists all of the internal hardware back button event handlers that Ionic Framework users. The `Propagates` column notes whether or not that particular handler tells Ionic Framework to call the next back button handler.
+Th table below lists all of the internal hardware back button event handlers that Ionic Framework uses. The `Propagates` column notes whether or not that particular handler tells Ionic Framework to call the next back button handler.
 
-| Handler    | Priority | Propagates | Description |
-| ---------- | -------- | ------------------ | ----------- |
+| Handler    | Priority | Propagates         | Description                                                                                                                              |
+| -----------| ---------| -------------------| -----------------------------------------------------------------------------------------------------------------------------------------|
 | Overlays   | 100      | No                 | Applies to overlay components `ion-action-sheet`, `ion-alert`, `ion-loading`, `ion-modal`, `ion-popover`, `ion-picker`, and `ion-toast`. |
-| Menu       | 99       | No                 | Applies to `ion-menu`. |
-| Navigation | 0        | Yes                | Applies to routing navigation (i.e. Angular Routing). |
+| Menu       | 99       | No                 | Applies to `ion-menu`.                                                                                                                   |
+| Navigation | 0        | Yes                | Applies to routing navigation (i.e. Angular Routing).                                                                                    |
