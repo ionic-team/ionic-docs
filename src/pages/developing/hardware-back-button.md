@@ -23,7 +23,7 @@ When running your app in a mobile browser or as a PWA, hardware back button cust
 
 For complete hardware back button support, we recommend using Capacitor or Cordova.
 
-> The `ionBackButton` event is not called when running an app in a browser or as a PWA.
+> The `ionBackButton` event will not be emitted when running an app in a browser or as a PWA.
 
 ## Basic Usage
 
