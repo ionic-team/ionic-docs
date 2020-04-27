@@ -19,6 +19,12 @@ When listening for the `ionBackButton` event, you can register a handler to be f
 
 There are situations where you might want to have multiple handlers fired. Each handler callback passes in a function as a parameter that can be used to tell the framework to call the next handler.
 
+## Hardware Back Button in a Browser
+
+When running your app in a mobile browser or as a PWA, hardware back button customization will be limited. This is because Capacitor and Cordova expose additional features that are not exposed in a normal web browser. For example, closing overlays and menus via the hardware back button are functionalities that are currently not supported when running your app in a mobile browser. These are known limitations and do not currently have straightforward solutions.
+
+For complete hardware back button support, we recommend using Capacitor or Cordova.
+
 ## Basic Usage
 
 <docs-tabs>
