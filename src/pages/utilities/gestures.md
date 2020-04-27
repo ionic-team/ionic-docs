@@ -29,7 +29,7 @@ const gesture = createGesture({
   el: elementRef,
   threshold: 15,
   gestureName: 'my-gesture',
-  onMove: ev: onMoveHandler(ev)
+  onMove: ev => onMoveHandler(ev)
 });
 
 ```
@@ -47,13 +47,16 @@ const gesture: Gesture = createGesture({
   el: elementRef,
   threshold: 15,
   gestureName: 'my-gesture',
-  onMove: ev: onMoveHandler(ev)
+  onMove: ev => onMoveHandler(ev)
 });
 ```
 </docs-tab>
 <docs-tab tab="angular">
 
 Developers using Angular should install the latest version of `@ionic/angular`. Animations can be created via the `AnimationController` dependency injection. 
+
+By default, gesture callbacks do not run inside of NgZone. Developers can either set the `runInsideAngularZone` parameter to `true` when creating a gesture,
+or they can wrap their callbacks in an `NgZone.run()` call.
 
 ```typescript
 import { Gesture, GestureController } from '@ionic/angular';
@@ -65,8 +68,9 @@ constructor(private gestureCtrl: GestureController) {
     el: this.element.nativeElement,
     threshold: 15,
     gestureName: 'my-gesture',
-    onMove: ev: this.onMoveHandler(ev)
-  });
+    onMove: ev => this.onMoveHandler(ev)
+  }, true);
+  // The `true` above ensures that callbacks run inside NgZone.
 }
 
 ```
@@ -84,7 +88,7 @@ const gesture: Gesture = createGesture({
   el: elementRef,
   threshold: 15,
   gestureName: 'my-gesture',
-  onMove: ev: onMoveHandler(ev)
+  onMove: ev => onMoveHandler(ev)
 });
 ```
 </docs-tab>
@@ -340,7 +344,7 @@ See our guide on implementing gesture animations: [Gesture Animations with Ionic
 | gesturePriority | `number \| undefined`                      | `0`         | Gestures with higher priorities will override gestures with lower priorities. Useful for ensuring the multiple gestures do not collide with one another. |
 | passive         | `boolean \| undefined`                     | `true`      | If true, this will indicate that the gesture will never call `preventDefault()`. This can be used to improve scrolling performance. See [Passive Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Improving_scrolling_performance_with_passive_listeners) for more information. |
 | maxAngle        | `number \| undefined`                      | `40`        | The maximum angle to allow when detecting a gesture. |
-| threshold       | `number \| undefined`                      | `10`        | Defines how much a pointer must move before the gesture kicks in. |
+| threshold       | `number \| undefined`                      | `10`        | Defines how much a pointer must move before the gesture starts. |
 | canStart        | `GestureCallback \| undefined`             | `undefined` | A callback that returns true if a gesture is allowed to start. |
 | onWillStart     | `(detail: GestureDetail) => Promise<void>` | `undefined` | A callback that is fires when a gesture is about to start. This is fired after `canStart` but before `onStart`. |
 | onStart         | `GestureCallback \| undefined`             | `undefined` | A callback that fires when a gesture has started. |
