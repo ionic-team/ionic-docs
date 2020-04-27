@@ -5,15 +5,13 @@ previousUrl: '/docs/developing/tips'
 
 # Hardware Back Button
 
-By default, when a user presses the Android hardware back button, the current view will be popped off the navigation stack. If there are no views to pop, nothing will happen. This guide will show you how to customize this behavior.
+The hardware back button is found on most Android devices. In native applications it can be used to close modals, navigate to the previous view, exit an app, and more. By default in Ionic, when the back button is pressed, the current view will be popped off the navigation stack, and the previous view will be displayed. If no previous views exist in the navigation stack, nothing will happen. This guide will show how to customize the behavior of the hardware back button.
 
-> The hardware back button refers to the physical back button found on most Android devices and should not be confused with either the browser back button or `ion-back-button`. The information in this guide only applies to Android devices and is not relevant for iOS devices.
+> The hardware back button refers to the physical back button on an Android device and should not be confused with either the browser back button or `ion-back-button`. The information in this guide only applies to Android devices.
 
-## Overview
+## Hardware Back Button in Capacitor and Cordova
 
 When running in a Capacitor or Cordova application, Ionic Framework will emit an `ionBackButton` event when a user presses the hardware back button.
-
-> The `ionBackButton` event will **not** be emitted when running an app in a web browser.
 
 When listening for the `ionBackButton` event, you can register a handler to be fired. This handler can perform actions such as quitting the app or opening a confirmation dialog. Each handler must be assigned a priority. By default, only one handler is fired per hardware back button press. The priority value is used to determine which callback should be called. This is useful because if you have a modal open, you likely would not want the modal to close _and_ the app to navigate backwards when pressing the hardware back button. Only running one handler at a time allows the modal to close but still requires another press of the hardware back button to navigate backwards.
 
@@ -24,6 +22,8 @@ There are situations where you might want to have multiple handlers fired. Each 
 When running your app in a mobile browser or as a PWA, hardware back button customization will be limited. This is because Capacitor and Cordova expose additional features that are not exposed in a normal web browser. For example, closing overlays and menus via the hardware back button are functionalities that are currently not supported when running your app in a mobile browser. These are known limitations and do not currently have straightforward solutions.
 
 For complete hardware back button support, we recommend using Capacitor or Cordova.
+
+> The `ionBackButton` event is not called when running an app in a browser or as a PWA.
 
 ## Basic Usage
 
@@ -79,6 +79,10 @@ Each hardware back button callback has a `processNextHandler` parameter. Calling
 
 ```javascript
 document.addEventListener('ionBackButton', (ev) => {
+  ev.detail.register(5, () => {
+    console.log('Another handler was called!');
+  });
+  
   ev.detail.register(10, (processNextHandler) => {
     console.log('Handler was called!');
 
@@ -96,6 +100,10 @@ import { Platform } from '@ionic/angular';
 ...
 
 constructor(private platform: Platform) {
+  this.platform.backButton.subscribeWithPriority(5, () => {
+    console.log('Another handler was called!');
+  });
+  
   this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
     console.log('Handler was called!');
 
@@ -109,6 +117,10 @@ constructor(private platform: Platform) {
 
 ```typescript
 document.addEventListener('ionBackButton', (ev) => {
+  ev.detail.register(5, () => {
+    console.log('Another handler was called!');
+  });
+
   ev.detail.register(10, (processNextHandler) => {
     console.log('Handler was called!');
 
