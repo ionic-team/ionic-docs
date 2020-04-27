@@ -35,7 +35,7 @@ It's everything you need to ship award-winning apps for any platform, with React
 
 <div class="pull-left">
 
-## Fast, beautiful apps
+## Amazing Design
 
 Choose from over 100 beautiful, mobile-ready UI components, animations, and gestures, lightweight and customized to fit your brand.
 
