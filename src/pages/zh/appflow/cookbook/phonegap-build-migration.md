@@ -128,15 +128,15 @@ You also might find that you need to generate some additional icons and splash s
 
 The config.xml file might need some additional changes in order to function correctly. I would review each element in your existing config.xml and see if it uses [the latest syntax](https://cordova.apache.org/docs/en/latest/config_ref/index.html). Other changes you will need to be aware of is access to some features, like location, cameras or the microphone require additional elements in order to be used. If your existing application uses any of those functions, you will need to add the new elements to allow them to function.
 
-Finally, you will want to make sure that whatever Cordova plugins you are using are the latest version to ensure compatibility with the current version of Cordova.
+最后。 你还要确定你所使用的Cordova插件都是最新版本，以确保与当前版本的 Cordova兼容。
 
 ### Migrate the Code
 
-Now that we have our icons, splash screens, and config.xml in place, we can turn our attention to the actual app itself. Ionic Appflow expects the entire app to be inside of a directory named `www`. That's it. Create that directory then move all app files into it, including HTML, CSS, JavaScript, images and any other related resources.
+当我们的图标，splash屏幕和config.xml 就绪后，我们就可以将注意力转向应用本身。 Ionic Appflow 期望整个应用程序都在名为 `www` 的目录内。 设置完成！ 创建相应目录，然后将所有相关文件移动到目录中，包括HTML、CSS 、JavaScript、图像和任何其他相关资源文件。
 
-Here is what the app’s directory structure should look like:
+以下是应用的目录结构：
 
-![App Structure](/docs/assets/img/appflow/cookbook/app_structure.png)
+![App应用结构](/docs/assets/img/appflow/cookbook/app_structure.png)
 
 ### Set up a Git Repository
 
