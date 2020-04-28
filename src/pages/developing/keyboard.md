@@ -5,19 +5,17 @@ nextUrl: ''
 
 # Keyboard
 
-## Overview
-
-Customizing and accounting for the presence of an on-screen keyboard are two common roadblocks developers face when building mobile apps and PWAs. This guide will show you provide an introduction to the various tools available for managing the on-screen keyboard in your application.
+Customizing and accounting for the presence of an on-screen keyboard are two common roadblocks developers face when building mobile apps and PWAs. This guide will provide an introduction to the various tools available for managing the on-screen keyboard in your application.
 
 ## inputmode
 
 The `inputmode` attribute allows developers to specify what type of data might be entered into an input. This will prompt the browser to show a keyboard that includes buttons relevant to what the user may enter.
 
-Since `inputmode` is a global attribute, it can be used on `ion-input` and `ion-textarea` in addition to regular input elements such as `input` and `textarea`.
+Since `inputmode` is a global attribute, it can be used on Ionic components such as `ion-input` and `ion-textarea` in addition to regular input elements.
 
 Inputs that _require_ a certain data type should use the `type` attribute instead. For example, inputs that require an email should use `type="email"` rather than specifying an `inputmode.` This is because the data that will be entered is always going to be in the form of an email. On the other hand, if the input accepts an email or a username, using `inputmode=”email”` is appropriate because the data being entered is not always going to be an email address.
 
-For a list of accepted values, see the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode" target="_blank">inputmode Documentation</a>.
+For a list of accepted values, see the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode" target="_blank" rel="noreferrer">inputmode Documentation</a>.
 
 ### Usage
 <docs-tabs>
@@ -73,9 +71,9 @@ For a list of accepted values, see the <a href="https://developer.mozilla.org/en
 
 The `enterkeyhint` attribute allows developers to specify what type of action label or icon should be shown for the "Enter" key. Using `enterkeyhint` lets the user know what will happen when they tap the “Enter” key. The value that should be specified here depends on the context of what the user is doing. For example, if the user is typing into a searchbox, developers should ensure that the input has `enterkeyhint="search"`.
 
-Since `enterkeyhint` is a global attribute, it can be used on `ion-input` and `ion-textarea` in addition to regular input elements such as `input` and `textarea`.
+Since `enterkeyhint` is a global attribute, it can be used on Ionic components such as `ion-input` and `ion-textarea` in addition to regular input elements.
 
-For a list of accepted values, see the <a href="https://html.spec.whatwg.org/dev/interaction.html#input-modalities:-the-enterkeyhint-attribute" target="_blank">enterkeyhint Standard</a>.
+For a list of accepted values, see the <a href="https://html.spec.whatwg.org/dev/interaction.html#input-modalities:-the-enterkeyhint-attribute" target="_blank" rel="noreferrer">enterkeyhint Standard</a>.
 
 ### Usage
 <docs-tabs>
@@ -132,4 +130,54 @@ When running an app in Capacitor or Cordova, it is possible to hide the accessor
 
 ## Keyboard Lifecycle Events
 
-Detecting the presence of an on-screen keyboard is useful for adjusting the positioning of an input that would otherwise be hidden by the keyboard. TODO
+Detecting the presence of an on-screen keyboard is useful for adjusting the positioning of an input that would otherwise be hidden by the keyboard. For Capacitor and Cordova apps, developers typically rely on native keyboard plugins to listen for the keyboard lifecycle events. For apps running in a mobile browser or as a PWA, developers can use the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Visual_Viewport_API" rel="noreferrer" target="_blank">Visual Viewport API</a> where supported. Ionic Framework wraps both of these approaches and emits `ionKeyboardDidShow` and `ionKeyboardDidHide` events on the `window`. The event payload for `ionKeyboardDidShow` contains an approximation of the keyboard height in pixels.
+
+### Usage
+<docs-tabs>
+<docs-tab tab="Javascript">
+
+```javascript
+window.addEventListener('ionKeyboardDidShow', ev => {
+  const { keyboardHeight } = ev.detail;
+  // Do something with the keyboard height such as translating an input above the keyboard.
+});
+
+window.addEventListener('ionKeyboardDidHide', () => {
+  // Move input back to original location
+});
+```
+</docs-tab>
+<docs-tab tab="Angular">
+
+```typescript
+import { Platform } from '@ionic/angular';
+
+...
+
+constructor(private platform: Platform) {
+  this.platform.keyboardDidShow.subscribe(ev => {
+    const { keyboardHeight } = ev.detail;
+    // Do something with the keyboard height such as translating an input above the keyboard.
+  });
+  
+  this.platform.keyboardDidHide.subscribe(() => {
+    // Move input back to original location
+  });
+}
+```
+</docs-tab>
+<docs-tab tab="React">
+
+```tsx
+import { useKeyboardState } from '@ionic/react-hooks/keyboard';
+
+...
+
+const { isOpen, keyboardHeight } = useKeyboardState();
+
+// Do something with the keyboard height such as translating an input above the keyboard
+```
+</docs-tab>
+</docs-tabs>
+
+> For apps running in a mobile web browser or as a PWA, Keyboard Lifecycle Events are only supported on Chrome 62+ and iOS Safari 13.0+.
