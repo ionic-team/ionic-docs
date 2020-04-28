@@ -132,4 +132,4 @@ When running an app in Capacitor or Cordova, it is possible to hide the accessor
 
 ## Keyboard Lifecycle Events
 
-TODO
+Detecting the presence of an on-screen keyboard is useful for adjusting the positioning of an input that would otherwise be hidden by the keyboard. TODO
