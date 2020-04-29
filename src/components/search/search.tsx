@@ -278,7 +278,7 @@ export class IonicSearch {
           </div>
           :
           <ion-icon class={`close ${this.active ? ' active' : ''}`}
-                    name="md-close"
+                    name="close"
                     onClick={this.close}></ion-icon>
         }
 
