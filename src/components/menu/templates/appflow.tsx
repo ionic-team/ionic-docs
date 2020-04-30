@@ -29,6 +29,11 @@ const items = {
     'menu-appflow-deploy-api': '/docs/appflow/deploy/api',
     'menu-appflow-deploy-cli': '/docs/appflow/deploy/cli'
   },
+  'menu-appflow-deployToAppstore': {
+    'menu-appflow-deployToAppstore-intro': '/docs/appflow/deployToAppstore/intro',
+    'menu-appflow-deployToAppstore-apple': '/docs/appflow/deployToAppstore/apple',
+    'menu-appflow-deployToAppstore-google': '/docs/appflow/deployToAppstore/google',
+  },
   'menu-appflow-package': {
     'menu-appflow-package-intro': '/docs/appflow/package/intro',
     'menu-appflow-package-builds': '/docs/appflow/package/builds',
@@ -37,11 +42,6 @@ const items = {
     'menu-appflow-package-adding-credentials': '/docs/appflow/package/adding-credentials',
     'menu-appflow-package-native-configs': '/docs/appflow/package/native-configs',
     'menu-appflow-package-cli': '/docs/appflow/package/cli'
-  },
-  'menu-appflow-deployToAppstore': {
-    'menu-appflow-deployToAppstore-intro': '/docs/appflow/deployToAppstore/intro',
-    'menu-appflow-deployToAppstore-apple': '/docs/appflow/deployToAppstore/apple',
-    'menu-appflow-deployToAppstore-google': '/docs/appflow/deployToAppstore/google',
   },
   'menu-appflow-automation': {
     'menu-appflow-automation-intro': '/docs/appflow/automation/intro',
