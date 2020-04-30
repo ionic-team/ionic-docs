@@ -1,6 +1,6 @@
 ---
-previousText: 'Deploy'
-previousUrl: '/docs/appflow/deploy/cli'
+previousText: 'Deploy To Google Play store'
+previousUrl: '/docs/appflow/deployToAppstore/google'
 nextText: 'Package Builds'
 nextUrl: '/docs/appflow/package/builds'
 tableOfContents: false

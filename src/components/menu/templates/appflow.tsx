@@ -38,6 +38,11 @@ const items = {
     'menu-appflow-package-native-configs': '/docs/appflow/package/native-configs',
     'menu-appflow-package-cli': '/docs/appflow/package/cli'
   },
+  'menu-appflow-deployToAppstore': {
+    'menu-appflow-deployToAppstore-intro': '/docs/appflow/deployToAppstore/intro',
+    'menu-appflow-deployToAppstore-apple': '/docs/appflow/deployToAppstore/apple',
+    'menu-appflow-deployToAppstore-google': '/docs/appflow/deployToAppstore/google',
+  },
   'menu-appflow-automation': {
     'menu-appflow-automation-intro': '/docs/appflow/automation/intro',
     'menu-appflow-automation-create': '/docs/appflow/automation/create',
