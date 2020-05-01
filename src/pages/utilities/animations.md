@@ -1157,7 +1157,7 @@ interface AnimationPlayOptions {
 | `beforeStyles(styles: { [property: string]: any }): Animation` | Add an object of styles to be applied to all elements in an animation before the animation starts. |
 | `direction(direction?: AnimationDirection): Animation` | Set the direction the animation should play in.
 | `delay(delay?: number): Animation` | Set the delay for the start of the animation in milliseconds. |
-| `destroy(): Animation` | Destroy the animation and clear all elements, child animations, and keyframes. |
+| `destroy(clearStyleSheets?: boolean): Animation` | Destroy the animation and clear all elements, child animations, and keyframes. |
 | `duration(duration?: number): Animation` | Set the duration of the animation in milliseconds. |
 | `easing(easing?: string): Animation` | Set the easing of the animation in milliseconds. See [Easing Effects](https://developer.mozilla.org/en-US/docs/Web/API/EffectTiming/easing#Value) for a list of accepted easing values. |
 | `from(property: string, value: any): Animation` | Set the start styles of the animation. |
@@ -1169,7 +1169,7 @@ interface AnimationPlayOptions {
 | `pause(): Animation` | Pause the animation. |
 | `play(opts?: AnimationPlayOptions): Promise<void>` | Play the animation. |
 | `progressEnd(playTo?: 0 \| 1, step: number, dur?: number): Animation` | Stop seeking through an animation. |
-| `progressStart(forceLinearEasing: boolean): Animation` | Begin seeking through an animation. |
+| `progressStart(forceLinearEasing: boolean, step?: number): Animation` | Begin seeking through an animation. |
 | `progressStep(step: number): Animation` | Seek through an animation. |
 | `stop(): Animation` | Stop the animation and reset all elements to their initial state. |
 | `to(property: string, value: any): Animation` | Set the end styles of the animation. |
