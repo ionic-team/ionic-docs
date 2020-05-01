@@ -1,8 +1,8 @@
 ---
 title: Identity Vault
 template: enterprise-plugin
-version: 4.0.1
-minor: 4.0.X
+version: 4.1.0
+minor: 4.1.X
 otherVersions:
   - 2.0.X
   - 3.0.X
@@ -12,6 +12,7 @@ otherVersions:
   - 3.4.X
   - 3.5.X
   - 3.6.X
+  - 4.0.X
 ---
 
 # Ionic Identity Vault
@@ -546,6 +547,18 @@ Check whether the vault is currently locked
 
 **Returns:** `Promise`<`boolean`>
 whether the vault is locked
+
+___
+<a id="identityvault.islockedoutofbiometrics"></a>
+
+###  isLockedOutOfBiometrics
+
+▸ **isLockedOutOfBiometrics**(): `Promise`<`boolean`>
+
+Check whether the biometrics are locked on the device
+
+**Returns:** `Promise`<`boolean`>
+whether biometrics are locked
 
 ___
 <a id="identityvault.ispasscodeenabled"></a>
@@ -1417,6 +1430,17 @@ ___
 
 The options passed the the [IonicNativeAuthPlugin](#ionicnativeauthplugin) when creating a vault with [getVault](#identityvaultuser.getvault)
 
+<a id="pluginoptions.allowsystempinfallback"></a>
+
+### `<Optional>` allowSystemPinFallback
+
+**● allowSystemPinFallback**: *`boolean`*
+
+If biometric auth fails, allow system pin fallback.
+
+*__default__*: false
+
+___
 <a id="pluginoptions.androidpromptdescription"></a>
 
 ### `<Optional>` androidPromptDescription
@@ -1477,6 +1501,17 @@ ___
 **● lockAfter**: *`number`*
 
 The amount of number of milliseconds the app can be in the background for until the vault locks
+
+___
+<a id="pluginoptions.shouldclearvaultaftertoomanyfailedattempts"></a>
+
+### `<Optional>` shouldClearVaultAfterTooManyFailedAttempts
+
+**● shouldClearVaultAfterTooManyFailedAttempts**: *`boolean`*
+
+After too many failed authentication attempts, should the vault be cleared?
+
+*__default__*: true
 
 ___
 <a id="pluginoptions.username"></a>
@@ -1592,6 +1627,17 @@ ___
 
 The configuration file returned to event handlers such as [onConfigChange](#identityvaultuser.onconfigchange) and [onVaultReady](#identityvaultuser.onvaultready).
 
+<a id="vaultconfig.allowsystempinfallback"></a>
+
+### `<Optional>` allowSystemPinFallback
+
+**● allowSystemPinFallback**: *`boolean`*
+
+If biometric auth fails, allow system pin fallback.
+
+*__default__*: false
+
+___
 <a id="vaultconfig.androidpromptdescription"></a>
 
 ### `<Optional>` androidPromptDescription
@@ -1678,6 +1724,17 @@ The amount of number of milliseconds the app can be in the background for until 
 *__default__*: 0
 
 ___
+<a id="vaultconfig.shouldclearvaultaftertoomanyfailedattempts"></a>
+
+### `<Optional>` shouldClearVaultAfterTooManyFailedAttempts
+
+**● shouldClearVaultAfterTooManyFailedAttempts**: *`boolean`*
+
+After too many failed authentication attempts, should the vault be cleared?
+
+*__default__*: true
+
+___
 
 ___
 <a id="vaultdescriptor"></a>
@@ -1758,6 +1815,17 @@ ___
 
 The options passed in to initialize the vault.
 
+<a id="vaultoptions.allowsystempinfallback"></a>
+
+### `<Optional>` allowSystemPinFallback
+
+**● allowSystemPinFallback**: *`boolean`*
+
+If biometric auth fails, allow system pin fallback.
+
+*__default__*: false
+
+___
 <a id="vaultoptions.androidpromptdescription"></a>
 
 ### `<Optional>` androidPromptDescription
@@ -1846,6 +1914,17 @@ Whether or not to attempt to automatically restore the session when the vault is
 *__default__*: false
 
 ___
+<a id="vaultoptions.shouldclearvaultaftertoomanyfailedattempts"></a>
+
+### `<Optional>` shouldClearVaultAfterTooManyFailedAttempts
+
+**● shouldClearVaultAfterTooManyFailedAttempts**: *`boolean`*
+
+After too many failed authentication attempts, should the vault be cleared?
+
+*__default__*: true
+
+___
 <a id="vaultoptions.unlockonaccess"></a>
 
 ### `<Optional>` unlockOnAccess
@@ -1884,6 +1963,20 @@ The possible values returned by [getBiometricType](#identityvault.getbiometricty
 ___
 
 ## Change Log
+
+
+
+### [4.1.0] (2020-04-29)
+
+
+### Bug Fixes
+
+* **cordova:** remove full paths in config file targets  
+
+
+### Features
+
+* `allowSystemPinFallback`, `shouldClearVaultAfterTooManyFailedAttempts`, and `isLockedOutOfBiometrics 
 
 
 
