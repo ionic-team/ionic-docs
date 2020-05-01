@@ -341,6 +341,7 @@ See our guide on implementing gesture animations: [Gesture Animations with Ionic
 | passive         | `boolean \| undefined`                     | `true`      | If true, this will indicate that the gesture will never call `preventDefault()`. This can be used to improve scrolling performance. See [Passive Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Improving_scrolling_performance_with_passive_listeners) for more information. |
 | maxAngle        | `number \| undefined`                      | `40`        | The maximum angle to allow when detecting a gesture. |
 | threshold       | `number \| undefined`                      | `10`        | Defines how much a pointer must move before the gesture kicks in. |
+| blurOnStart     | `boolean \| undefined`                     | `undefined` | If true, the gesture will blur any active selectable element such as an input or a textarea before firing the `onStart` callback. |
 | canStart        | `GestureCallback \| undefined`             | `undefined` | A callback that returns true if a gesture is allowed to start. |
 | onWillStart     | `(detail: GestureDetail) => Promise<void>` | `undefined` | A callback that is fires when a gesture is about to start. This is fired after `canStart` but before `onStart`. |
 | onStart         | `GestureCallback \| undefined`             | `undefined` | A callback that fires when a gesture has started. |
