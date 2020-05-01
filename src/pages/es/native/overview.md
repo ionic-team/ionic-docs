@@ -1,48 +1,82 @@
 ---
-nextText: 'Quickstart'
-nextUrl: '/docs/react/quickstart'
+title: Community Plugins
 ---
 
-# Ionic React Overview
+Community Plugins are a collection of open source Cordova plugins that make it easy to add native functionality to any Ionic app.
 
-`@ionic/react` combines the core Ionic experience with the tooling and APIs that are tailored to React Developers.
+Community Plugins are submitted and maintained by the Ionic community. While community members are generally quick to find and fix issues, certain plugins may not function properly. For teams that require dedicated native plugin support, please explore Ionic Native and request a free trial.
 
-> Note: The first official version of Ionic React is v4.11.
+> Note: These docs are for apps built with Ionic Framework 4.0.0 and greater. For older Ionic v3 projects, please [see here](/docs/v3/native).
 
-First, install the Ionic CLI:
+## Usage
 
-```shell
-$ npm install -g @ionic/cli
+All plugins have two components - the native code (Cordova) and the JavaScript code. Cordova plugins are also wrapped in a `Promise` or `Observable` in order to provide a common plugin interface. Below are various framework options using the Camera plugin as an example.
+
+## Angular
+
+Import the plugin in a `@NgModule` and add it to the list of Providers. For Angular, the import path should end with `/ngx`. Angular's change detection is automatically handled.
+
+```typescript
+// app.module.ts
+import { Camera } from '@ionic-native/camera/ngx';
+
+...
+
+@NgModule({
+  ...
+
+  providers: [
+    ...
+    Camera
+    ...
+  ]
+  ...
+})
+export class AppModule { }
 ```
 
-then run:
+After the plugin has been declared, it can be imported and injected like any other service:
 
-```shell
-$ ionic start myAppName
+```typescript
+// camera.service.ts
+import { Injectable } from '@angular/core';
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class PhotoService {
+  constructor(private camera: Camera) { }
+
+  takePicture() {
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE
+    }
+
+    this.camera.getPicture(options).then((imageData) => {
+      // Do something with the new photo
+
+    }, (err) => {
+     // Handle error
+     console.log("Camera issue: " + err);
+    });
+  }
+}
 ```
 
-The CLI will guide you through the setup process by asking a couple of questions, including the framework to use (React, of course!) and the starter code template.
+## Vanilla JavaScript
 
-After the app has been created, launch the app:
+Ionic Native can also be used in a vanilla JavaScript app targeting ES2015+ and/or TypeScript. To use any plugin, import the class from the appropriate package and use its static methods:
 
-```shell
-ionic serve
+```js
+import { Camera } from '@ionic-native/camera';
+
+document.addEventListener('deviceready', () => {
+  Camera.getPicture()
+    .then(data => console.log('Took a picture!', data))
+    .catch(e => console.log('Error occurred while taking a picture', e));
+});
 ```
-
-Now, start building out the app using some of the [Ionic UI components](/docs/components).
-
-## React Version Support
-
-Compatible with React version 16.8 and above.
-
-## React Tooling
-
-Ionic React projects are just like React projects, leveraging [react-dom](https://reactjs.org/docs/react-dom.html) and with setup normally found in a [Create React App (CRA)](https://github.com/facebook/create-react-app) app. For [routing and navigation](/docs/react/navigation), React Router is used under the hood.
-
-One difference is the usage of [TypeScript](http://www.typescriptlang.org/), which provides a more productive experience. To use plain JavaScript, rename files to use a `.js` extension then remove any of the type annotations with each file.
-
-## Native Tooling
-
-[Capacitor](https://capacitor.ionicframework.com) is the official cross-platform app runtime used to make your `Ionic React` web app run natively on iOS, Android, Electron, and the web.
-
-While there are no known technical limitations to using `Ionic React` with [Cordova](https://cordova.apache.org/) plugins, Capacitor is officially recommended. There are no plans to support a Cordova integration for `Ionic React` in the [Ionic CLI tooling](/docs/cli) at this time. For more details, please [see here](https://capacitor.ionicframework.com/docs/cordova).
