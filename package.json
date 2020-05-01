@@ -20,7 +20,7 @@
     "heroku-postbuild": "npm run build.ci"
   },
   "dependencies": {
-    "@ionic/core": "^5.0.0",
+    "@ionic/core": "^5.1.0",
     "@ionic/docs": "^5.0.4",
     "@sentry/node": "^5.7.1",
     "@stencil/router": "^1.0.1",
