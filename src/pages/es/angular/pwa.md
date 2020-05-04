@@ -1,29 +1,29 @@
 ---
-title: "Progressive Web Apps in Angular"
+title: "Aplicaciones web progresivas en Angular"
 ---
 
 
-## Making your Angular app a PWA
+## Hacer de tu aplicación Angular un PWA
 
 
-The two main requirements of a PWA are a <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> and a <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Manifest</a>. While it's possible to add both of these to an app manually, the Angular team has an `@angular/pwa` package that can be used to automate this.
+Los dos requisitos principales de un PWA son un <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> y un <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Manifest</a>. Mientras sea posible añadir ambos a una aplicación manualmente, el equipo de Angular tiene un paquete `@angular/pwa` que puede ser usado para automatizar esto.
 
-The `@angular/pwa` package will automatically add a service worker and an app manifest to the app. To add this package to the app, run:
+El paquete `@angular/pwa` añadirá automáticamente un service worker y el app manifest de la aplicación. Para añadir este paquete a la aplicación, ejecute:
 
 ```shell
 $ ng add @angular/pwa
 ```
 
-Once this package has been added run `ionic build --prod` and the `www` directory will be ready to deploy as a PWA.
+Una vez añadido este paquete, ejecute `ionic build --prod` y el directorio `www` estará listo para ser implementado como un PWA.
 
-> By default, the `@angular/pwa` package comes with the Angular logo for the app icons. Be sure to update the manifest to use the correct app name and also replace the icons.
+> Por defecto, el paquete `@angular/pwa` viene con el logo de Angular para los iconos de la aplicación. Asegúrese de actualizar el archivo manifest para usar el nombre de la aplicación correcta y también reemplazar los iconos.
 
 
-> Note: Features like Service Workers and many JavaScript APIs (such as geolocation) require the app be hosted in a secure context. When deploying an app through a hosting service, be aware that HTTPS will be required to take full advantage of Service Workers.
+> Nota: Características como (como la geolocalización) de los Service Workers y  muchas API JavaScript requieren que la aplicación se aloje en un contexto seguro. Al desplegar una aplicación en un servicio de hosting, tenga en cuenta que HTTPS será requerido para aprovechar al máximo los del Service Workers.
 
-## Service Worker configuration
+## Configuración del Service Worker
 
-After `@angular/pwa` has been added, a new `ngsw-config.json` file will be created at the root of the project. This file is responsible for configuring how Angular's service worker mechanism will handle caching assets. By default, the following will be provided:
+Después de que `@angular/pwa` haya sido añadido, se creará un nuevo archivo `ngsw-config.json` en la raíz del proyecto. Este archivo es responsable de configurar cómo el mecanismo del Sevices Worker de Angular manejará los activos de caché. De forma predeterminada, se proporcionará lo siguiente:
 
 ```json
 {
@@ -56,14 +56,14 @@ After `@angular/pwa` has been added, a new `ngsw-config.json` file will be creat
 }
 ```
 
-There are two sections in here, one for app specific resources (JS, CSS, HTML) and assets the app will load on demand. Depending on you app, these options can be customized. For a more detailed guide, read [the official guide from the Angular Team.](https://angular.io/guide/service-worker-config)
+Hay dos secciones aquí, una para recursos específicos de la aplicación (JS, CSS, HTML) y assets que la aplicación cargará bajo demanda. Dependiendo de tu aplicación, estas opciones pueden ser personalizadas. Para una guía más detallada, lee [la guía oficial del equipo Angular.](https://angular.io/guide/service-worker-config)
 
 
-## Deploying
+## Desplegando
 
 ### Firebase
 
-Firebase hosting provides many benefits for Progressive Web Apps, including fast response times thanks to CDNs, HTTPS enabled by default, and support for [HTTP2 push](https://firebase.googleblog.com/2016/09/http2-comes-to-firebase-hosting.html).
+El alojamiento Firebase proporciona muchos beneficios para las aplicaciones web progresivas, incluyendo tiempos de respuesta rápidos gracias a los CDNs, HTTPS habilitado por defecto, y soporte para [HTTP2 push](https://firebase.googleblog.com/2016/09/http2-comes-to-firebase-hosting.html).
 
 First, if not already available, [create the project](https://console.firebase.google.com) in Firebase.
 
