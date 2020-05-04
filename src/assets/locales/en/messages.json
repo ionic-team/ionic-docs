@@ -6,6 +6,7 @@
   "header-components": "Components",
   "header-cli": "CLI",
   "header-native": "Native",
+  "header-enterprise": "Enterprise",
 
   "header-community": "Community",
   "header-support": "Support",
@@ -185,7 +186,7 @@
   "menu-native-community": "Community",
   "menu-native-premier": "Premier",
   "menu-native-home": "Home",
-  "menu-native-community-v-premier": "Community vs Premier",
+  "menu-native-community-v-premier": "Community vs. Premier",
   "menu-native-quickstart": "Quickstart",
   "menu-native-setup": "Setup",
   "menu-native-faq": "FAQ",
@@ -240,6 +241,7 @@
 
   "menu-appflow-devapp": "DevApp: Local Development",
 
+  "menu-enterprise-home": "Home",
   "menu-enterprise-getting-started": "Getting Started",
   "menu-enterprise-guides": "Guides",
   "menu-enterprise-authentication-security": "Pre-built Solutions",

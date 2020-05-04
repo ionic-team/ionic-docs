@@ -1,7 +1,11 @@
 ---
-title: Ionic Enterprise
+title: Community vs. Premier
 tableOfContents: false
 ---
+
+Community Plugins are a collection of open source Cordova plugins that make it easy to add native functionality to any Ionic app.
+
+Community Plugins are submitted and maintained by the Ionic community. While community members are generally quick to find and fix issues, certain plugins may not function properly. For teams that require dedicated native plugin support, please explore Ionic Native and request a free trial.
 
 ## Why Ionic Native Premier?
 

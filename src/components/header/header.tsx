@@ -51,7 +51,8 @@ export class DocsHeader {
         <stencil-route-link url="/docs/" urlMatch={[/^\/docs(?!\/(api|components|cli|native|enterprise)).*$/]}>{l10n.getString('header-guide')}</stencil-route-link>
         <stencil-route-link url="/docs/components" urlMatch={['/docs/api', '/docs/components']}>{l10n.getString('header-components')}</stencil-route-link>
         <stencil-route-link url="/docs/cli">{l10n.getString('header-cli')}</stencil-route-link>
-        <stencil-route-link url="/docs/native" urlMatch={['/docs/native', '/docs/enterprise']}>{l10n.getString('header-native')}</stencil-route-link>
+        <stencil-route-link url="/docs/native" urlMatch={['/docs/native']}>{l10n.getString('header-native')}</stencil-route-link>
+        <stencil-route-link url="/docs/enterprise" urlMatch={['/docs/enterprise']}>{l10n.getString('header-enterprise')}</stencil-route-link>
       </div> : null,
     ];
   }

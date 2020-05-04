@@ -1,6 +1,6 @@
-# Ionic Native Setup
+# Ionic Enterprise Setup 
 
-In order to use the Ionic Native plugins, there's just a few quick steps.
+In order to use Ionic Enterprise, there's just a few quick steps.
 
 <wistia-video video-id="7higisvn9t"></wistia-video>
 
