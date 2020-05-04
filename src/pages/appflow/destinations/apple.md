@@ -1,7 +1,7 @@
 ---
 title: 'Apple App Store'
 previousText: 'Deploy To Appstore'
-previousUrl: '/docs/appflow/deployToAppstore/intro'
+previousUrl: '/docs/appflow/destinations/intro'
 nextText: 'Deploy to Google Play store'
 nextUrl: '/docs/appflow/deployToAppStore/google'
 ---
