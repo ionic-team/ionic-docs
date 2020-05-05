@@ -48,7 +48,8 @@ export class DocsHeader {
           <a href="https://stenciljs.com">Stencil</a>
         </section> : null}
       </docs-dropdown>,
-      section === 'Framework' ? <div class="SectionNav-tabs">
+      // show Ionic related links in the top bar
+      ['Framework', 'Enterprise'].indexOf(section) > -1 ? <div class="SectionNav-tabs">
         <stencil-route-link url="/docs/" urlMatch={[/^\/docs(?!\/(api|components|cli|native|enterprise)).*$/]}>{l10n.getString('header-guide')}</stencil-route-link>
         <stencil-route-link url="/docs/components" urlMatch={['/docs/api', '/docs/components']}>{l10n.getString('header-components')}</stencil-route-link>
         <stencil-route-link url="/docs/cli">{l10n.getString('header-cli')}</stencil-route-link>
@@ -76,6 +77,9 @@ export class DocsHeader {
               </stencil-route>
               <stencil-route url="/docs/studio">
                 {this.renderMenu('Studio')}
+              </stencil-route>
+              <stencil-route url="/docs/enterprise">
+                {this.renderMenu('Enterprise')}
               </stencil-route>
               <stencil-route>
                 {this.renderMenu('Framework')}
