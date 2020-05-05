@@ -1,5 +1,5 @@
 ---
-previousText: '你的第一个应用'
+previousText: '你的第一个 APP'
 previousUrl: '/docs/angular/your-first-app'
 nextText: '保存照片到文件系统中'
 nextUrl: '/docs/angular/your-first-app/3-saving-photos'
