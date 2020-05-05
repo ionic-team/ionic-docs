@@ -26,8 +26,8 @@ export class DocsMenuEnterprise {
     gettingStarted = {
         '': {
             'menu-enterprise-home': '/docs/enterprise',
-            'menu-native-quickstart': '/docs/enterprise/quickstart',
-            'menu-native-setup': '/docs/enterprise/setup'
+            'menu-native-setup': '/docs/enterprise/setup',
+            'menu-native-community-v-premier': '/docs/enterprise/community-vs-enterprise'
         }
     };
 

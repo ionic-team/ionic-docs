@@ -1,17 +1,17 @@
 ---
-title: Community vs. Premier
+title: Community vs. Enterprise
 tableOfContents: false
 ---
 
-Community Plugins are a collection of open source Cordova plugins that make it easy to add native functionality to any Ionic app.
+Community Plugins are a collection of open source Cordova plugins that make it easy to add native functionality to any Ionic app. They are submitted and maintained by the Ionic community. While community members are generally quick to find and fix issues, certain plugins may not function properly. 
 
-Community Plugins are submitted and maintained by the Ionic community. While community members are generally quick to find and fix issues, certain plugins may not function properly. For teams that require dedicated native plugin support, please explore Ionic Native and request a free trial.
+For teams that require dedicated native plugin support & SLAs, ongoing maintenance, and security patches, there's <strong>Ionic Enterprise</strong>.
 
-## Why Ionic Native Premier?
+## Why Ionic Enterprise?
 
 Take on mobile projects with peace of mind, knowing the native features, security, and performance you need will just work - now and in the future.
 
-For teams building mission-critical apps, Ionic Native is a curated collection of plugins and solutions that are built and supported by Ionic, with stability assurances and guaranteed to work on all major platforms and versions.
+For teams building mission-critical apps, Ionic Enterprise is a curated collection of plugins and solutions that are built and supported by Ionic, with stability assurances and guaranteed to work on all major platforms and versions.
 
 <div class="native-ee-pricing">
   <div class="table-wrap">
@@ -29,7 +29,7 @@ For teams building mission-critical apps, Ionic Native is a curated collection o
           </th>
           <th>
             <div class="plan-wrap">
-              <span class="native-ee-pricing-table">Premier Plugins</span>
+              <span class="native-ee-pricing-table">Enterprise Plugins</span>
               <div class="price" data-toggle="billing-team">
                 Contact Us</div>
             </div>
@@ -96,7 +96,7 @@ For teams building mission-critical apps, Ionic Native is a curated collection o
   </div>
 </div>
 
-## Sign Up for Ionic Native
+## Sign Up for Ionic Enterprise
 
 <hubspot-form form-id="7c2c6529-48c0-4d17-86a0-bfd40c849bb1"></hubspot-form>
 

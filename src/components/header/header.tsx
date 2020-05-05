@@ -32,7 +32,7 @@ export class DocsHeader {
     };
   }
 
-  renderMenu(section: 'Framework' | 'Framework v4' | 'Appflow' | 'Studio') {
+  renderMenu(section: 'Framework' | 'Framework v4' | 'Appflow' | 'Studio' | 'Enterprise') {
     return [
       <docs-dropdown label={section}>
         <section>
@@ -40,6 +40,7 @@ export class DocsHeader {
           <stencil-route-link url="/docs/appflow">Appflow {section === 'Appflow' ? <Checkmark/> : null}</stencil-route-link>
           <a href="https://capacitor.ionicframework.com">Capacitor</a>
           <stencil-route-link url="/docs/studio">Studio {section === 'Studio' ? <Checkmark/> : null}</stencil-route-link>
+          <stencil-route-link url="/docs/enterprise">Enterprise {section === 'Enterprise' ? <Checkmark/> : null}</stencil-route-link>
         </section>
         {section === 'Framework' ? <section>
           <a href="https://ionicframework.com/docs/v4/components">Framework v4</a>
