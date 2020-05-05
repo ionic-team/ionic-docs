@@ -3,7 +3,7 @@ title: 'Apple App Store'
 previousText: 'Deploy To Appstore'
 previousUrl: '/docs/appflow/destinations/intro'
 nextText: 'Deploy to Google Play store'
-nextUrl: '/docs/appflow/deployToAppStore/google'
+nextUrl: '/docs/appflow/destinations/google'
 ---
 
 The Apple App Store destination allows you to upload your finished binaries to the App Store Connect service for iOS devices.
@@ -15,6 +15,8 @@ For this destination you will need the following:
 
 (Not part of the destination, but to build a binary that you can upload to the Apple App Store you will need a production Security Profile configured in App Flow, details [here](https://ionicframework.com/docs/appflow/package/credentials#ios-credentials))
 
+- **A name for instance of the Apple App Store destination**
+    - Something that users will refer to this configuration as
 - **Your Apple ID**
     - Does not need to be the owner account, but does need to be an account that can upload binaries and update the app
 - **An App-specific password for your Apple ID**

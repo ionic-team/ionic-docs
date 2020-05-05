@@ -3,7 +3,20 @@ title: 'Builds/Automations'
 previousText: 'Deploy To Google Play store'
 previousUrl: '/docs/appflow/destinations/google'
 nextText: 'Command-line Deploy'
-nextUrl: '/docs/appflow/package/cli'
+nextUrl: '/docs/appflow/destinations/cli'
 ---
 
-How to specify the destinations in the builds and automation; also what to expect (for example if the deployment fails, the build might succeed anyway
+A new build, either as the result of a manual build or as a result of an automation, can be deployed to app stores.
+
+Careful selection of build type and security profiles must be made to produce a build that can be properly uploaded to the app store selected.
+
+![/docs/assets/img/appflow/deploy-to-appstore-builds.png](/docs/assets/img/appflow/deploy-to-appstore-builds.png)
+
+- Build Type
+    - Must be `App Store` for iOS Xcode builds and `Release` for Android builds.
+
+- Security Profile
+    - The security profile must the one that will sign the build properly for uploading to the correct app store.
+
+- Destinations
+    - For Xcode builds you can select Apple App store, for Android builds you can select Google Play store.

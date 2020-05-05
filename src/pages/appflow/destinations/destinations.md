@@ -3,7 +3,7 @@ title: 'Destinations'
 previousText: 'Deploy To Appstore'
 previousUrl: '/docs/appflow/destinations/intro'
 nextText: 'Deploy to Apple App Store'
-nextUrl: '/docs/appflow/deployToAppStore/apple'
+nextUrl: '/docs/appflow/destinations/apple'
 ---
 
 We now support 2 new destinations which you can create by navigating to the `Destinations` tab located under the `Deploy` tab.

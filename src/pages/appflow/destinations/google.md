@@ -2,8 +2,8 @@
 title: 'Google Play store'
 previousText: 'Deploy To Apple Appstore'
 previousUrl: '/docs/appflow/destinations/apple'
-nextText: 'Package'
-nextUrl: '/docs/appflow/package/intro'
+nextText: 'Builds/Automations'
+nextUrl: '/docs/appflow/destinations/builds'
 ---
 
 The Google Play destination allows you to upload your finished binaries to the store for Android.
