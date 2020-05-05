@@ -11,6 +11,7 @@ export default (props) => {
   const properties = renderProperties(page.props);
   const events = renderEvents(page.events);
   const methods = renderMethods(page.methods);
+  const parts = renderParts(page.parts);
   const customProps = renderCustomProps(page.styles);
   const slots = renderSlots(page.slots);
 
@@ -42,6 +43,13 @@ export default (props) => {
     });
   }
 
+  if (parts) {
+    headings.push({
+      text: 'CSS Shadow Parts',
+      href: '#css-shadow-parts'
+    });
+  }
+
   if (customProps) {
     headings.push({
       text: 'CSS Custom Properties',
@@ -70,6 +78,7 @@ export default (props) => {
       { properties }
       { events }
       { methods }
+      { parts }
       { customProps }
       { slots }
     </article>
@@ -173,6 +182,36 @@ const renderMethods = (methods = []) => {
           Description: method => <div innerHTML={method.docs}/>,
           Signature: method => <code>{ method.signature }</code>
         }}/>
+    </section>
+  );
+};
+
+const renderParts = (parts = []) => {
+  if (!parts.length) {
+    return null;
+  }
+
+  return (
+    <section>
+      <h2 id="css-shadow-parts">
+        <a href="#css-shadow-parts">CSS Shadow Parts</a>
+      </h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {parts.map(prop => (
+            <tr>
+              <td><code>{ prop.name }</code></td>
+              <td>{ prop.text }</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </section>
   );
 };
