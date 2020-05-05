@@ -1,69 +1,69 @@
 ---
-previousText: 'Introduction'
+previousText: 'Introducción'
 previousUrl: '/docs/appflow/automation/intro'
-nextText: 'Environnements'
+nextText: 'Ambientes'
 nextUrl: '/docs/appflow/automation/environments'
 ---
 
-# Utiliser l'automatisation
+# Usando automatizaciones
 
-## Gestion des automatisations
+## Automatización minera
 
-La création et la personnalisation des automatisations est simple. Pour commencer, naviguez vers l'onglet `Automate` dans l'application désirée.
+Crear y personalizar las automatizaciones es sencillo. Para empezar, navegue a la pestaña `Automatizar` dentro de la aplicación deseada.
 
-Pour **créer une nouvelle automatisation**, cliquez sur le bouton `Nouvelle automatisation` en haut à droite du `Automatisez` tableau de bord. Lorsque vous cliquez sur le bouton, le formulaire de personnalisation de l'automatisation apparaîtra, il dispose de plusieurs champs pour personnaliser l'automatisation (En savoir plus [ci-dessous](#customizing-automations)).
+Para **crear una nueva automatización**, haz clic en el botón `Nueva automatización` en la parte superior derecha del panel de control `Automatizar`. When clicked, the automation customization form will appear, which has several fields available to customize the automation (Read more about these [below](#customizing-automations)).
 
-Pour **modifier une automatisation**, cliquez sur les trois points à côté de celui que vous souhaitez modifier.
+To **edit an automation**, click the three dots next to the one you'd like to modify.
 
-## Personnalisation des automatisations
+## Personalizando Automatizaciones
 
-Il existe un certain nombre de personnalisations disponibles pour spécifier le comportement spécifique d'une automatisation donnée. Ils sont indiqués sur le formulaire d'automatisation de création / modification ci-dessous.
+Hay una serie de personalizaciones disponibles para especificar el comportamiento específico de una automatización determinada. Se muestran en el formulario de creación/edición de automatización a continuación.
 
-### Informations d'automatisation de base
+### Basic Automation Info
 
-Toutes les automatisations nécessitent un nom et une branche git pour déclencher. Chaque fois que le code est poussé vers la branche sélectionnée, l'automatisation s'exécute.
+All automations need a name and git branch to trigger from. Whenever code is pushed to the selected branch, the automation will run.
 
-![Choix d'un type d'automatisation](/docs/assets/img/appflow/ss-automation-create-type.png)
+![Choosing an Automation Type](/docs/assets/img/appflow/ss-automation-create-type.png)
 
-#### Des champs
+#### Campos
 
-* ** Name: ** un nom pour identifier la tâche d'automatisation.
-* ** Git Branch: ** la branche qui déclenchera l'automatisation. Cela exécutera une génération chaque fois qu'un ` git push ` est effectué sur la branche spécifiée.
-* ** Type d'automatisation **: type de travail exécuté par cette automatisation.
+* **Name:** A name to identify the automation task.
+* **Git Branch:** The branch which will trigger the automation. This will run a build any time a `git push` is made to the specified branch.
+* **Automation Type:** The type of job this automation will run.
 
-En plus des branches nom et git, les automatisations ont un certain nombre de personnalisations disponibles selon le type de travail sélectionné.
+In addition to name and git branches, automations have a number of customizations available depending on the type of job selected.
 
-##### Remarque sur la dénomination de Git Branch
+##### Note about Git Branch naming
 
-Il est possible de spécifier un ou plusieurs caractères génériques ` * ` pour faire correspondre plusieurs branches au sein d'une seule automatisation; par exemple:
+It is possible to specify one or multiple `*` wildcards character to match multiple branches within a single automation; for instance:
 
-* une branche simplement définie sur ` * ` correspondra à toutes les branches et déclenchera l'automatisation pour toute poussée Git unique
-* une branche définie sur ` dev * ` correspondra à toute branche dont le nom commence par ` dev `, y compris ` dev ` lui-même
-* une branche définie sur ` dev * autre ` correspondra à n'importe quelle branche avec un nom commençant par ` dev ` et se terminant par ` autre ` y compris ` devother `
+* a branch simply set to `*` will match all the branches and will trigger the automation for any single git push
+* a branch set to `dev*` will match any branch with a name starting with `dev` including `dev` itself
+* a branch set to `dev*other` will match any branch with a name starting with `dev` and ending with `other` including `devother`
 
-### Automatisation des packages
+### Package Automations
 
-Les automatisations de packages créent des versions natives qui peuvent être téléchargées et exécutées sur des appareils. Ils ont les personnalisations suivantes:
+Package automations create native builds which can be downloaded and run on devices. They have the following customizations:
 
-![Création d'une automatisation de package](/docs/assets/img/appflow/ss-automation-create-package.png)
+![Creating a package automation](/docs/assets/img/appflow/ss-automation-create-package.png)
 
-#### Des champs
+#### Campos
 
-* ** Environnement: ** [ environnement de construction personnalisé ](/docs/appflow/environments/#custom-environments) (le cas échéant) à utiliser lorsque cette automatisation est déclenchée.
-* ** Configuration native: ** La [ configuration native ](/docs/appflow/package/intro#native-configs) (le cas échéant) à utiliser lorsque cette automatisation est déclenchée.
-* ** Plateforme cible: ** La plateforme ciblée peut être Android ou iOS (pour Xcode 8 ou 9)
-* ** Type de build: ** Type de build à créer. Les options dépendent de la plate-forme sélectionnée.
-* ** Profil de sécurité **: quel profil de sécurité utiliser. En savoir plus à leur sujet [ ici ](/docs/appflow/package/credentials).
-* ** Webhook: ** (facultatif) Si spécifié, un POST contenant des informations sur les versions terminées sera envoyé à l'URL saisie. En savoir plus sur leur contenu [ ici ](/docs/appflow/automation/webhooks).
+* **Environment:** The [custom build environment](/docs/appflow/environments/#custom-environments) (if any) to use when this automations is triggered.
+* **Native Config:** The [native config](/docs/appflow/package/intro#native-configs) (if any) to use when this automations is triggered.
+* **Target Platform:** The platform being targeted, can be Android or iOS (for either Xcode 8 or 9)
+* **Build Type:** The type of build to create. Options depend on the selected platform.
+* **Security Profile:** Which security profile to use. Learn more about them [here](/docs/appflow/package/credentials).
+* **Webhook:** (optional) If specified, a POST with information about completed builds will be sent to the entered URL. Learn more about their content [here](/docs/appflow/automation/webhooks).
 
 ### Web Automations
 
-Les automatisations Web créent la partie javascript d'une application et une interface avec le service [ Déployer ](/docs/appflow/deploy/intro) pour activer les mises à jour en direct des applications.
+Web automations build the javascript portion of an application and interface with the [Deploy](/docs/appflow/deploy/intro) service to enable live app updates.
 
-![Création d'une automatisation Web](/docs/assets/img/appflow/ss-automation-create-web.png)
+![Creating a web automation](/docs/assets/img/appflow/ss-automation-create-web.png)
 
-#### Des champs
+#### Campos
 
-* ** Environnement: ** [ environnement de construction personnalisé ](/docs/appflow/environments/#custom-environments) (le cas échéant) à utiliser lorsque cette automatisation est déclenchée.
-* ** Canal: ** le [ Déployer le canal ](/docs/appflow/deploy/channels) où les versions Web de cette automatisation seront attribuées.
-* ** Webhook: ** (facultatif) Si spécifié, un POST contenant des informations sur les versions terminées sera envoyé à l'URL saisie. En savoir plus sur leur contenu [ ici ](/docs/appflow/automation/webhooks).
+* **Environment:** The [custom build environment](/docs/appflow/environments/#custom-environments) (if any) to use when this automations is triggered.
+* **Channel:** The [Deploy Channel](/docs/appflow/deploy/channels) where web builds from this automation will be assigned.
+* **Webhook:** (optional) If specified, a POST with information about completed builds will be sent to the entered URL. Learn more about their content [here](/docs/appflow/automation/webhooks).
