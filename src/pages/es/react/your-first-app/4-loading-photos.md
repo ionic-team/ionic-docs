@@ -43,7 +43,7 @@ With the photo array data saved, we will create a method that will retrieve the 
 ```typescript
 useEffect(() => {
   const loadSaved = async () => {
-    const photosString = await get('photos');
+    const photosString = await get(PHOTO_STORAGE);
     const photos = (photosString ? JSON.parse(photosString) : []) as Photo[];
     for (let photo of photos) {
       const file = await readFile({
