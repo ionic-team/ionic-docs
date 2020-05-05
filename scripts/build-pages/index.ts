@@ -85,7 +85,7 @@ function patchBody(page: Page): Page {
 
   // remove /docs/ and language tag
   const prefix = /^\/docs\/([a-z]{2}\b)?/;
-  const pageClass = `page-${slugify(page.path.replace(prefix, ''))}`;
+  const pageClass = `page-${slugify(page.path.replace('\\', '/').replace(prefix, ''))}`;
 
   const [, language] = prefix.exec(page.path) || 'en';
   if (language && language !== 'en') {

@@ -126,7 +126,7 @@ const renderInstallation = (cordova: string, npm: string) => {
           </command-line>
         </docs-tab>
         <docs-tab tab="Enterprise">
-          <blockquote>Ionic Native Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
+          <blockquote>Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
             <a class="btn" href="/docs/enterprise">Learn More</a> or if you're interested in an enterprise version of this plugin <a class="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a></blockquote>
         </docs-tab>
       </docs-tabs>
@@ -163,7 +163,7 @@ const renderUsage = (usage: any) => {
       <h2 id="usage">
         <a href="#usage">Usage</a>
       </h2>
-      <p><strong>Using React?</strong> <stencil-route-link url={`/docs/native/community#react`}>See here.</stencil-route-link></p>
+      <p><h3>Using React?</h3> <stencil-route-link url={`/docs/native#react`}>See here.</stencil-route-link></p>
       {toHypertext(h, usage)}
     </section>
   );
