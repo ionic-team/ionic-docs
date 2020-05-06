@@ -17,8 +17,6 @@ The Google Play destination allows you to upload your finished binaries to the s
 - **Package name**
     - in reverse domain name format.
         - e.g. com.yourdomain.yourappname
-- **Release Status**
-    - Which status to label the upload with.
 - **JSON key**
     - To upload to the Google Play Store you will need to create a service account and download the JSON file containing security info for the service account.
         1. Go to [Google Play Console](https://play.google.com/apps/publish/)

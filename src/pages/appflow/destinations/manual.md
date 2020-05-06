@@ -18,4 +18,4 @@ To deploy an existing binary a build that has the correct security profile selec
 
 - The result will be shown in the `Deployment` page
 
-- Once you have returned to the `Deployment` page you can click on the row to the logs for the Deployment
+- Once you have returned to the `Deployment` page you can click on the row to see the logs for the Deployment
