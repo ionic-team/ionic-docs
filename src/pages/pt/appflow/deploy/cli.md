@@ -1,8 +1,8 @@
 ---
 previousText: 'Deploy API'
 previousUrl: '/docs/appflow/deploy/api'
-nextText: 'Package'
-nextUrl: '/docs/appflow/package/intro'
+nextText: 'Deploy To Appstore'
+nextUrl: '/docs/appflow/destinations/intro'
 ---
 
 # Deploy builds on Appflow using the Ionic CLI
