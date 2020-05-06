@@ -3,7 +3,9 @@ title: Ionic Enterprise
 tableOfContents: false
 ---
 
-<p class='intro'>Build native-powered app experiences with pre-built solutions and a growing library Premier plugins. Ionic Enterprise makes it easy to add native device functionality to any Ionic app leveraging Cordova or Capacitor. Interested? <a href="https://ionicframework.com/enterprise" target="_blank">Get started here.</a></p>
+<p class='intro'>Ionic Enterprise is a subscription service that provides premium software and services for teams building mobile and web applications with Ionic. Ionic Enterprise offerings include enterprise <a href="https://ionicframework.com/enterprise/support" target="_blank">support</a> and customer success, access to app experts and Ionic engineers via our <a href="https://ionicframework.com/advisory" target="_blank">Advisory</a> services, mobile CI/CD with <a href="https://ionicframework.com/appflow" target="_blank">Appflow</a>, as well as premium native solutions to help you reduce risk and accelerate development timelines.
+
+As an Enterprise customer, you have access to a growing library Premier native plugins and pre-built native solutions. The following documentation provides more information on what’s included in your Enterprise subscription and how to get started. For more information, visit the <a href="https://ionicframework.com/enterprise" target="_blank">Ionic Enterprise</a> product page.</p>
 
 <docs-cards class="static-width">
   <docs-card size="lg" header="Native solutions" href="/docs/enterprise/solutions" iconset="/docs/assets/icons/face-id.png,/docs/assets/icons/touch-id.png,/docs/assets/icons/auth0.png,/docs/assets/icons/active-directory.png">
