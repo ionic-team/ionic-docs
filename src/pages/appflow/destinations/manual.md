@@ -17,3 +17,5 @@ To deploy an existing binary a build that has the correct security profile selec
 - Choose the destination for the build from the `2. Configure Deployment` page
 
 - The result will be shown in the `Deployment` page
+
+- Once you have returned to the `Deployment` page you can click on the row to the logs for the Deployment

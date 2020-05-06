@@ -1,12 +1,14 @@
 ---
 title: 'Google Play store'
-previousText: 'Deploy To Apple Appstore'
+previousText: 'Deploy To Apple App store'
 previousUrl: '/docs/appflow/destinations/apple'
 nextText: 'Builds/Automations'
 nextUrl: '/docs/appflow/destinations/builds'
 ---
 
 The Google Play destination allows you to upload your finished binaries to the store for Android.
+
+> **Note:** The first upload for a new Android app <b>must</b> be uploaded from the Google Play store website.
 
 ![/docs/assets/img/appflow/google-overview.png](/docs/assets/img/appflow/google-overview.png)
 

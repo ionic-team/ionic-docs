@@ -1,6 +1,6 @@
 ---
 title: 'Builds/Automations'
-previousText: 'Deploy To Google Play store'
+previousText: 'Deploy To Google Play Store'
 previousUrl: '/docs/appflow/destinations/google'
 nextText: 'Command-line Deploy'
 nextUrl: '/docs/appflow/destinations/cli'
@@ -13,7 +13,7 @@ Careful selection of build type and security profiles must be made to produce a 
 ![/docs/assets/img/appflow/deploy-to-appstore-builds.png](/docs/assets/img/appflow/deploy-to-appstore-builds.png)
 
 - Build Type
-    - Must be `App Store` for iOS Xcode builds and `Release` for Android builds.
+    - Must be `App Store` or `Enterprise` for iOS Xcode builds and `Release` for Android builds.
 
 - Security Profile
     - The security profile must the one that will sign the build properly for uploading to the correct app store.

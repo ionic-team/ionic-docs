@@ -9,7 +9,7 @@ nextUrl: '/docs/appflow/destinations/destinations'
 Ionic Appflow can deploy builds to destinations such as the Apple App Store and the Google Play store, entirely in the cloud.
 Push changes to app stores from anywhere, on any platform.
 
-The feature is only supported in build created manually (via logging into the dashboard and creating a new build) Automations, and as well as builds triggered from the Ionic CLI.
+The feature is supported in builds created manually (via logging into the dashboard and creating a new build) Automations, and as well as builds triggered from the Ionic CLI.
 
 
 ##### Helpful links
