@@ -217,6 +217,15 @@
   "menu-appflow-deploy-tutorials": "Tutorials and Videos",
   "menu-appflow-deploy-cli": "Using Ionic CLI",
 
+  "menu-appflow-destinations": "Deploy to App Stores",
+  "menu-appflow-destinations-intro": "Overview",
+  "menu-appflow-destinations-destinations": "Destinations",
+  "menu-appflow-destinations-apple": "Apple Appstore",
+  "menu-appflow-destinations-google": "Google Play store",
+  "menu-appflow-destinations-builds": "Builds/Automations",
+  "menu-appflow-destinations-cli": "Command-line",
+  "menu-appflow-destinations-manual": "Manual Deploy",
+
   "menu-appflow-package": "Package",
   "menu-appflow-package-intro": "Overview",
   "menu-appflow-package-builds": "Package Builds",
