@@ -1,6 +1,6 @@
 ---
-previousText: '部署'
-previousUrl: '/docs/appflow/deploy/cli'
+previousText: 'Manual Deploy'
+previousUrl: '/docs/appflow/destinations/manual'
 nextText: 'Package Builds'
 nextUrl: '/docs/appflow/package/builds'
 tableOfContents: false
