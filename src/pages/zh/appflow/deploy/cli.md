@@ -1,8 +1,8 @@
 ---
 previousText: 'Deploy API'
 previousUrl: '/docs/appflow/deploy/api'
-nextText: '原生工具包'
-nextUrl: '/docs/appflow/package/intro'
+nextText: 'Deploy To Appstore'
+nextUrl: '/docs/appflow/destinations/intro'
 ---
 
 # 在Appflow上使用 Ionic CLI 的 部署构建
