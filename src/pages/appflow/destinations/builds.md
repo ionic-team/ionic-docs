@@ -19,4 +19,4 @@ Careful selection of build type and security profiles must be made to produce a 
     - The security profile must the one that will sign the build properly for uploading to the correct app store.
 
 - Destinations
-    - For Xcode builds you can select Apple App store, for Android builds you can select Google Play store.
+    - For Xcode builds you can select Apple App store, for Android builds you can select Google Play Store.

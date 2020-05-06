@@ -1,6 +1,6 @@
 ---
 title: 'Google Play store'
-previousText: 'Deploy To Apple App store'
+previousText: 'Deploy To Apple App Store'
 previousUrl: '/docs/appflow/destinations/apple'
 nextText: 'Builds/Automations'
 nextUrl: '/docs/appflow/destinations/builds'
@@ -8,18 +8,18 @@ nextUrl: '/docs/appflow/destinations/builds'
 
 The Google Play destination allows you to upload your finished binaries to the store for Android.
 
-> **Note:** The first upload for a new Android app <b>must</b> be uploaded from the Google Play store website.
+> **Note:** The first upload for a new Android app <b>must</b> be uploaded from the Google Play Store website.
 
 ![/docs/assets/img/appflow/google-overview.png](/docs/assets/img/appflow/google-overview.png)
 
-- Track
+- **Track**
     - Which track on the Google Play Store the app will be upload into.
-- Package name
+- **Package name**
     - in reverse domain name format.
         - e.g. com.yourdomain.yourappname
-- Release Status
+- **Release Status**
     - Which status to label the upload with.
-- JSON key
+- **JSON key**
     - To upload to the Google Play Store you will need to create a service account and download the JSON file containing security info for the service account.
         1. Go to [Google Play Console](https://play.google.com/apps/publish/)
         2. Navigate to **Settings** and then **API access**
