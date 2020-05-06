@@ -3,7 +3,7 @@ title: Ionic Native
 tableOfContents: false
 ---
 
-Ionic Native is a collection of open source Cordova plugins (backward-compatible with Capacitor) that make it easy to add native functionality to any Ionic app.
+Ionic Native is a collection of open source native plugins for Cordova and Capacitor that make it easy to add native functionality to any Ionic app.
 
 These Community Plugins are submitted and maintained by the Ionic community. While community members are generally quick to find and fix issues, certain plugins may not function properly. 
 
