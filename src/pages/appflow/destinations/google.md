@@ -1,5 +1,5 @@
 ---
-title: 'Google Play store'
+title: 'Google Play Store'
 previousText: 'Deploy To Apple App Store'
 previousUrl: '/docs/appflow/destinations/apple'
 nextText: 'Builds/Automations'
