@@ -1,6 +1,8 @@
 ---
 previousText: 'Development Tips'
 previousUrl: '/docs/developing/tips'
+nextText: 'Keyboard'
+nextUrl: '/docs/developing/keyboard'
 ---
 
 # Hardware Back Button
