@@ -11,6 +11,9 @@
   "header-community": "Community",
   "header-support": "Support",
 
+  "header-native-community": "Community",
+  "header-native-enterprise": "Enterprise",
+
   "menu-intro": "Getting Started",
   "menu-intro-overview": "Overview",
   "menu-intro-environment": "Environment Setup",
@@ -183,7 +186,7 @@
   "menu-native-core-device": "Core Device",
   "menu-native-getting-started": "Getting Started",
   "menu-native-plugins": "Plugins",
-  "menu-native-community": "Community",
+  "menu-native-community": "Setup",
   "menu-native-premier": "Premier",
   "menu-native-home": "Home",
   "menu-native-community-v-premier": "Community vs. Enterprise",
