@@ -2,90 +2,167 @@
 title: Ionic Native
 tableOfContents: false
 ---
-<p class='intro'>Build native-powered app experiences with pre-built solutions and a growing library of over 250 Premier and Community plugins. Ionic Native makes it easy to add native device functionality to any Ionic app leveraging Cordova or Capacitor.</p>
 
-<docs-cards class="static-width">
-  <docs-card size="lg" header="Native solutions" href="/docs/enterprise/solutions" iconset="/docs/assets/icons/face-id.png,/docs/assets/icons/touch-id.png,/docs/assets/icons/auth0.png,/docs/assets/icons/active-directory.png">
-    <p>Complete native solutions for single sign-on, biometrics, and secure offline storage.</p>
-  </docs-card>
-  <docs-card size="lg" header="Core Device Features" href="/docs/native#popular-device-features" iconset="/docs/assets/icons/camera.png,/docs/assets/icons/geolocation.png,/docs/assets/icons/file.png,/docs/assets/icons/keyboard.png">
-    <p>Core device features like camera, geolocation, keyboard access, contacts, calendar, and more.</p>
-  </docs-card>
-  <docs-card size="lg" header="3rd Party Integrations" href="/docs/native#popular-3rd-party-integrations" iconset="/docs/assets/icons/aws-amplify.png,/docs/assets/icons/firebase.png,/docs/assets/icons/couchbase.png,/docs/assets/icons/apple-pay.png">
-    <p>Connect to third-party services and cloud providers like Firebase, AWS, and Apple Payment Pass.</p>
-  </docs-card>
-</docs-cards>
-<p><br></p>
+Ionic Native is a collection of open source native plugins for Cordova and Capacitor that make it easy to add native functionality to any Ionic app.
 
-## Featured Native Solutions
+These Community Plugins are submitted and maintained by the Ionic community. While community members are generally quick to find and fix issues, certain plugins may not function properly. 
 
-<docs-item-list class="static-width">
-  <docs-item header="Identity Vault" href="/docs/enterprise/identity-vault" icon="/docs/assets/icons/logo-identity-vault.png" rounded="false">
-    <p>Protect your users and data with multi-layer native security and biometric authentication.</p>
-  </docs-item>
+For teams that require dedicated native plugin support & SLAs, ongoing maintenance, and security patches, please explore [Ionic Enterprise](/docs/enterprise) then [request a free trial](https://ionicframework.com/enterprise/contact).
 
-  <docs-item header="Auth Connect" href="/docs/enterprise/auth-connect" icon="/docs/assets/icons/logo-auth-connect.png" rounded="false">
-    <p>Add single sign-on using a single API and the latest in native security best practices.</p>
-  </docs-item>
+> Note: These docs are for apps built with Ionic Framework 4.0.0 and greater. For older Ionic v3 projects, please [see here](/docs/v3/native).
 
-  <docs-item header="Secure Storage" href="/docs/enterprise/offline-storage" icon="/docs/assets/icons/logo-offline-storage.png" rounded="false">
-    <p>Store and access data locally on a mobile or desktop device, even when users are offline.</p>
-  </docs-item>
-</docs-item-list>
+## Capacitor Support
 
-## Popular Device Features
+In addition to Cordova, Ionic Native also works with [Capacitor](https://capacitor.ionicframework.com), Ionic's official native runtime. Basic usage below. For complete details, [see the Capacitor documentation](https://capacitor.ionicframework.com/docs/cordova/using-cordova-plugins).
 
-<docs-item-list class="static-width">
-  <docs-item header="Camera" href="/docs/enterprise/camera" icon="/docs/assets/icons/camera.png">
-    <p>Take photos, capture video and choose images from the device's image library.</p>
-  </docs-item>
-  
-  <docs-item header="Keyboard" href="/docs/enterprise/keyboard" icon="/docs/assets/icons/keyboard.png">
-    <p>Configure keyboard behavior (show/hide) and display (sizing/visibility).</p>
-  </docs-item>
-  
-  <docs-item header="Calendar" href="/docs/enterprise/calendar" icon="/docs/assets/icons/calendar-icon.png">
-    <p>Manage mobile device calendar events.</p>
-  </docs-item>
+## Usage
+All plugins have two components - the native code (Cordova) and the TypeScript code (Ionic Native).
+Cordova plugins are also wrapped in a `Promise` or `Observable` in order to provide a common plugin interface and modernized development approach.
 
-  <docs-item header="Contacts" href="/docs/enterprise/contacts" icon="/docs/assets/icons/contacts-icon.png">
-    <p>Access to read, write, or select device contacts.</p>
-  </docs-item>
+Using the [Camera plugin](/docs/native/camera) as an example, first install it:
 
-  <docs-item header="Geolocation" href="/docs/enterprise/geolocation" icon="/docs/assets/icons/geolocation.png">
-    <p>Device location information, including latitude and longitude.</p>
-  </docs-item>
+<docs-tabs>
+<docs-tab tab="Cordova">
 
-  <docs-item header="File" href="/docs/enterprise/filesystem" icon="/docs/assets/icons/file.png">
-    <p>Common file operations such as read/write and directory access.</p>
-  </docs-item>
-</docs-item-list>
+```shell
+// Install Cordova plugin
+$ ionic cordova plugin add cordova-plugin-camera
 
-## Popular 3rd Party Integrations
+// Install Ionic Native TypeScript wrapper
+$ npm install @ionic-native/camera
 
-<docs-item-list class="static-width">
+// Install Ionic Native core library (once per project) 
+$ npm install @ionic-native/core
+```
 
-  <docs-item header="Firebase" href="/docs/native/firebase" icon="/docs/assets/icons/firebase.png">
-    <p>Push notifications, analytics, event tracking, crash reporting and more.</p>
-  </docs-item>
+</docs-tab>
+<docs-tab tab="Capacitor">
 
-  <docs-item header="AWS Amplify" href="/docs/enterprise/aws-amplify" icon="/docs/assets/icons/aws-amplify.png">
-    <p>Authentication, analytics, push notifications, AI and ML cloud services, storage, and more.</p>
-  </docs-item>
+For complete details, [see the Capacitor documentation](https://capacitor.ionicframework.com/docs/cordova/using-cordova-plugins).
 
-  <docs-item header="Couchbase" href="/docs/enterprise/couchbase-lite" icon="/docs/assets/icons/couchbase.png">
-    <p>A fully-featured embedded NoSQL database that runs locally on mobile devices.</p>
-  </docs-item>
+```shell
+// Install Ionic Native TypeScript wrapper
+$ npm install @ionic-native/camera
 
-  <docs-item header="Apple Payment Pass" href="/docs/enterprise/apple-payment-pass" icon="/docs/assets/icons/apple-wallet-icon.png">
-    <p>Add credit/debit cards to Apple Wallet.</p>
-  </docs-item>
+// Install Cordova plugin
+$ npm install cordova-plugin-camera
 
-  <docs-item header="Facebook" href="/docs/native/facebook" icon="/docs/assets/icons/facebook-icon.png">
-    <p>Connect to the Facebook platform.</p>
-  </docs-item>
+// Update native platform project(s) to include newly added plugin
+$ ionic cap sync
+```
 
-  <docs-item header="Instagram" href="/docs/native/instagram" icon="/docs/assets/icons/instagram-icon.png">
-    <p>Share photos through the Instagram app.</p>
-  </docs-item>
-</docs-item-list>
+</docs-tab>
+</docs-tabs>
+
+Next, begin using the plugin, following the various framework usage options below. For FAQ, see [here](/docs/native/faq).
+
+## Angular
+Angular apps can use either Cordova or Capacitor to build native mobile apps. Import the plugin in a `@NgModule` and add it to the list of Providers. For Angular, the import path should end with `/ngx`.  Angular's change detection is automatically handled.
+
+```typescript
+// app.module.ts
+import { Camera } from '@ionic-native/camera/ngx';
+
+...
+
+@NgModule({
+  ...
+
+  providers: [
+    ...
+    Camera
+    ...
+  ]
+  ...
+})
+export class AppModule { }
+```
+
+After the plugin has been declared, it can be imported and injected like any other service:
+
+```typescript
+// camera.service.ts
+import { Injectable } from '@angular/core';
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class PhotoService {
+  constructor(private camera: Camera) { }
+
+  takePicture() {
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE
+    }
+
+    this.camera.getPicture(options).then((imageData) => {
+      // Do something with the new photo
+
+    }, (err) => {
+     // Handle error
+     console.log("Camera issue: " + err);
+    });
+  }
+}
+```
+
+## React
+
+React apps must use Capacitor to build native mobile apps. However, Ionic Native (and therefore, Cordova plugins) can still be used.
+
+<command-line>
+  <div>// Install Core library (once per project)</div>
+  <command-prompt>npm install @ionic-native/core</command-prompt>
+  <br />
+  <div>// Install Ionic Native TypeScript wrapper</div>
+  <command-prompt>npm install @ionic-native/barcode-scanner</command-prompt>
+  <br/>
+  <div>// Install Cordova plugin</div>
+  <command-prompt>npm install phonegap-plugin-barcodescanner</command-prompt>
+  <br/>
+  <div>// Update native platform project(s) to include newly added plugin</div>
+  <command-prompt>ionic cap sync</command-prompt>
+</command-line>
+
+Import the plugin object then use its static methods: 
+
+```typescript
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+
+const Tab1: React.FC = () => {
+  const openScanner = async () => {
+    const data = await BarcodeScanner.scan();
+    console.log(`Barcode data: ${data.text}`);
+  };
+  return (
+    <IonPage>
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>Tab 1</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent>
+        <IonButton onClick={openScanner}>Scan barcode</IonButton>
+      </IonContent>
+    </IonPage>
+  );
+};
+```
+
+## Vanilla JavaScript
+Vanilla JavaScript apps, targeting ES2015+ and/or TypeScript, can use either Cordova or Capacitor to build native mobile apps. To use any plugin, import the class from the appropriate package and use its static methods:
+
+```js
+import { Camera } from '@ionic-native/camera';
+
+document.addEventListener('deviceready', () => {
+  Camera.getPicture()
+    .then(data => console.log('Took a picture!', data))
+    .catch(e => console.log('Error occurred while taking a picture', e));
+});
+```
+

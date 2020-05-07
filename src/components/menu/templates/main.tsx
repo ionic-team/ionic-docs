@@ -17,6 +17,7 @@ const items = {
     'menu-developing-ios': '/docs/developing/ios',
     'menu-developing-android': '/docs/developing/android',
     'menu-developing-tips': '/docs/developing/tips',
+    'menu-developing-hardware-back-button': '/docs/developing/hardware-back-button',
     'menu-developing-keyboard': '/docs/developing/keyboard',
   },
   'menu-layout': {

@@ -66,7 +66,7 @@ The `config.xml` file is now updated with an entry similar to the following for 
 <plugin name="cordova-plugin-camera" spec="^4.0.3" />
 ```
 
-The next step is only required for iOS users. As of iOS 10, developers must provide a reason for why the app wishes to access the device camera. Add this to the bottom of `config.xml`:
+The next step is only required for iOS users. As of iOS 10, developers must provide a reason for why the app wishes to access the device camera. Add this inside the ios platform section (<platform name="ios"></platform>) of `config.xml`:
 
 ```xml
 <!-- Required for iOS 10: Camera permission prompt -->

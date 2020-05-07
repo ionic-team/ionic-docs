@@ -56,6 +56,7 @@ Below is a list of config options that Ionic uses.
 | `popoverLeave`           | `AnimationBuilder` | Provides a custom leave animation for all `ion-popover`, overriding the default "animation".
 | `refreshingIcon`         | `string`           | Overrides the default icon in all `<ion-refresh-content>` components.
 | `refreshingSpinner`      | `SpinnerTypes`     | Overrides the default spinner type in all `<ion-refresh-content>` components.
+| `sanitizerEnabled`       | `boolean`          | If `true`, Ionic will enable a basic DOM sanitizer on component properties that accept custom HTML.
 | `spinner`                | `SpinnerTypes`     | Overrides the default spinner in all `<ion-spinner>` components.
 | `statusTap`              | `boolean`          | If `true`, clicking or tapping the status bar will cause the content to scroll to the top.
 | `swipeBackEnabled`       | `boolean`          | If `true`, Ionic will enable the "swipe-to-go-back" gesture across the application.

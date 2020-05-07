@@ -32,7 +32,7 @@ export class DocsHeader {
     };
   }
 
-  renderMenu(section: 'Framework' | 'Framework v4' | 'Appflow' | 'Studio') {
+  renderMenu(section: 'Framework' | 'Framework v4' | 'Appflow' | 'Studio' | 'Enterprise') {
     return [
       <docs-dropdown label={section}>
         <section>
@@ -40,6 +40,7 @@ export class DocsHeader {
           <stencil-route-link url="/docs/appflow">Appflow {section === 'Appflow' ? <Checkmark/> : null}</stencil-route-link>
           <a href="https://capacitor.ionicframework.com">Capacitor</a>
           <stencil-route-link url="/docs/studio">Studio {section === 'Studio' ? <Checkmark/> : null}</stencil-route-link>
+          <stencil-route-link url="/docs/enterprise">Enterprise {section === 'Enterprise' ? <Checkmark/> : null}</stencil-route-link>
         </section>
         {section === 'Framework' ? <section>
           <a href="https://ionicframework.com/docs/v4/components">Framework v4</a>
@@ -47,11 +48,13 @@ export class DocsHeader {
           <a href="https://stenciljs.com">Stencil</a>
         </section> : null}
       </docs-dropdown>,
-      section === 'Framework' ? <div class="SectionNav-tabs">
+      // show Ionic related links in the top bar
+      ['Framework', 'Enterprise'].indexOf(section) > -1 ? <div class="SectionNav-tabs">
         <stencil-route-link url="/docs/" urlMatch={[/^\/docs(?!\/(api|components|cli|native|enterprise)).*$/]}>{l10n.getString('header-guide')}</stencil-route-link>
         <stencil-route-link url="/docs/components" urlMatch={['/docs/api', '/docs/components']}>{l10n.getString('header-components')}</stencil-route-link>
         <stencil-route-link url="/docs/cli">{l10n.getString('header-cli')}</stencil-route-link>
-        <stencil-route-link url="/docs/native" urlMatch={['/docs/native', '/docs/enterprise']}>{l10n.getString('header-native')}</stencil-route-link>
+        <stencil-route-link url="/docs/native" urlMatch={['/docs/native']}>{l10n.getString('header-native')}</stencil-route-link>
+        <stencil-route-link url="/docs/enterprise" urlMatch={['/docs/enterprise']}>{l10n.getString('header-enterprise')}</stencil-route-link>
       </div> : null,
     ];
   }
@@ -74,6 +77,9 @@ export class DocsHeader {
               </stencil-route>
               <stencil-route url="/docs/studio">
                 {this.renderMenu('Studio')}
+              </stencil-route>
+              <stencil-route url="/docs/enterprise">
+                {this.renderMenu('Enterprise')}
               </stencil-route>
               <stencil-route>
                 {this.renderMenu('Framework')}

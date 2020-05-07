@@ -1,29 +1,37 @@
-.page-native {
+.page-native,
+.page-enterprise {
   --page-width: 1000px;
 }
 
-.page-native h1 {
+.page-native h1,
+.page-enterprise h1 {
   margin-bottom: -10px;
 }
 
-.page-native docs-cards {
+.page-native docs-cards,
+.page-enterprise docs-cards {
   margin-top: 40px;
   font-size: 14px;
   letter-spacing: -0.01em;
   color: #5B708B;
 }
 
-.page-native blockquote {
+.page-native blockquote,
+.page-enterprise blockquote {
   margin-top: 40px;
   padding: 1em;
 }
 
 [class^='page-native'] .Card[href] docs-button button, 
-[class*=' page-native'] .Card[href] docs-button button {
+[class*=' page-native'] .Card[href] docs-button button,
+[class^='page-enterprise'] .Card[href] docs-button button, 
+[class*=' page-enterprise'] .Card[href] docs-button button {
   cursor: pointer;
 }
 
 [class^='page-native'] ion-icon[aria-label="alert"], 
-[class*=' page-native'] ion-icon[aria-label="alert"] {
+[class*=' page-native'] ion-icon[aria-label="alert"],
+[class^='page-enterprise'] ion-icon[aria-label="alert"], 
+[class*=' page-enterprise'] ion-icon[aria-label="alert"] {
   color: var(--ion-color-danger);
 }
