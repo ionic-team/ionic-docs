@@ -1,6 +1,6 @@
 ---
-nextText: ''
-nextUrl: ''
+previousText: 'Hardware Back Button'
+previousUrl: '/docs/developing/hardware-back-button'
 ---
 
 # Keyboard
@@ -9,7 +9,7 @@ Customizing and accounting for the presence of an on-screen keyboard are two com
 
 ## inputmode
 
-The `inputmode` attribute allows developers to specify what type of data might be entered into an input. This will prompt the browser to show a keyboard that includes buttons relevant to what the user may enter.
+The `inputmode` attribute allows developers to specify what type of data might be entered into an input. This will prompt the browser to show a keyboard that includes buttons relevant to what the user may enter. For example, `inputmode="email"` will display a keyboard with the `@` key as well as other optimizations for entering emails.
 
 Since `inputmode` is a global attribute, it can be used on Ionic components such as `ion-input` and `ion-textarea` in addition to regular input elements.
 
