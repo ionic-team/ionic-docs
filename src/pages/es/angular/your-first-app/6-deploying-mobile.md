@@ -5,59 +5,65 @@ nextText: 'Rapid App Dev with Live Reload'
 nextUrl: '/docs/angular/your-first-app/7-live-reload'
 ---
 
-# Deploying to iOS and Android
+# Desplegando a iOS y Android
 
-Since we added Capacitor to our project when it was first created, there’s only a handful of steps remaining until the Photo Gallery app is on our device! Remember, you can find the complete source code for this app [here](https://github.com/ionic-team/photo-gallery-capacitor-ng).
+Desde que añadimos el Capacitador a nuestro proyecto cuando fue creado por primera vez, solo quedan unos cuantos pasos hasta que la aplicación Galería de Fotos esté en nuestro dispositivo! Recuerda, puedes encontrar el código fuente completo para esta aplicación [aquí](https://github.com/ionic-team/photo-gallery-capacitor-ng).
 
-## Capacitor Setup
+## Configuración Capacitador
 
-Capacitor is Ionic’s official app runtime that makes it easy to deploy web apps to native platforms like iOS, Android, and more. If you’ve used Cordova in the past, consider reading more about the differences [here](https://capacitor.ionicframework.com/docs/cordova#differences-between-capacitor-and-cordova).
+Capacitor es el tiempo de ejecución oficial de la aplicación de Ionic, que facilita el despliegue de aplicaciones web en plataformas nativas como iOS, Android y más. Si has usado Cordova en el pasado, considera leer más sobre las diferencias [aquí](https://capacitor.ionicframework.com/docs/cordova#differences-between-capacitor-and-cordova).
 
-If you’re still running `ionic serve` in the terminal, cancel it. Complete a fresh build of your Ionic project, fixing any errors that it reports:
+Si todavía estás ejecutando `ionic serve` en el terminal, cancelalo. Completa una nueva construcción de tu proyecto Ionic, corrigiendo cualquier error que informe:
 
 ```shell
-$ ionic build
+<code> $ionic build </code>
 ```
 
-Next, create both the iOS and Android projects:
+</code>
+
+A continuación, crear tanto los proyectos iOS como Android:
 
 ```shell
+<code>
 $ ionic cap add ios
 $ ionic cap add android
+</code>
 ```
 
-Both android and ios folders at the root of the project are created. These are entirely standalone native projects that should be considered part of your Ionic app (i.e., check them into source control, edit them using their native tooling, etc.).
+</code>
 
-Every time you perform a build (e.g. `ionic build`) that updates your web directory (default: `www`), you'll need to copy those changes into your native projects:
+Se crean carpetas android y iOS en la raíz del proyecto. Estos son proyectos nativos totalmente independientes que deben ser considerados parte de tu aplicación Ionic (Ej. compruébalos en el control de fuente, edítalos usando su herramienta nativa, etc.).
+
+Cada vez que realizas una compilación (p. ej. `build ionic`) que actualiza su directorio web (por defecto: `www`), necesitarás copiar esos cambios en tus proyectos nativos:
 
 ```shell
 $ ionic cap copy
 ```
 
-Note: After making updates to the native portion of the code (such as adding a new plugin), use the `sync` command:
+Nota: Después de actualizar la parte nativa del código (como añadir un nuevo plugin), utilice el comando `sync`:
 
 ```shell
 $ ionic cap sync
 ```
 
-## iOS Deployment
+## Desarrollo iOS
 
-> To build an iOS app, you’ll need a Mac computer.
+> Para construir una aplicación iOS, necesitarás una computadora Mac.
 
-Capacitor iOS apps are configured and managed through Xcode (Apple’s iOS/Mac IDE), with dependencies managed by CocoaPods. Before running this app on an iOS device, there's a couple of steps to complete.
+Las aplicaciones iOS de Capacitor están configuradas y gestionadas a través de Xcode (iOS/Mac IDE), con dependencias administradas por CocoaPods. Antes de ejecutar esta aplicación en un dispositivo iOS, hay un par de pasos para completar.
 
-First, run the Capacitor `open` command, which opens the native iOS project in Xcode:
+Primero, ejecuta el comando Capacitor `open` , que abre el proyecto nativo de iOS en Xcode:
 
 ```shell
 $ ionic cap open ios
 ```
 
-In order for some native plugins to work, user permissions must be configured. In our photo gallery app, this includes the Camera plugin: iOS displays a modal dialog automatically after the first time that `Camera.getPhoto()` is called, prompting the user to allow the app to use the Camera. The permission that drives this is labeled “Privacy - Camera Usage.” To set it, the `Info.plist` file must be modified ([more details here](https://capacitor.ionicframework.com/docs/ios/configuration)). To access it, click "Info," then expand "Custom iOS Target Properties."
+Para que algunos plugins nativos funcionen, los permisos de usuario deben ser configurados. En nuestra aplicación de galería de fotos, esto incluye el complemento de cámara: iOS muestra un diálogo modal automáticamente después de la primera vez que `Camera.getPhoto()` es llamado, sugiriendo al usuario que permita a la aplicación usar la cámara. El permiso que hace esto está etiquetado como "Privacidad - Uso de la cámara". Para configurarlo, el `Info.plist` archivo debe ser modificado ([más detalles aquí](https://capacitor.ionicframework.com/docs/ios/configuration)). Para acceder a ella, haz clic en "Info," luego expande "Propiedades objetivo personalizadas de iOS".
 
 ![Xcode Custom iOS Target Properties](/docs/assets/img/guides/first-app-cap-ng/xcode-info-plist.png)
 
 
-Each setting in `Info.plist` has a low-level parameter name and a high-level name. By default, the property list editor shows the high-level names, but it's often useful to switch to showing the raw, low-level names. To do this, right-click anywhere in the property list editor and toggle "Raw Keys/Values."
+Cada ajuste en `Info.plist` tiene un nombre de parámetro de nivel bajo y un nombre de alto nivel. Por defecto, el editor de la lista de propiedades muestra los nombres de alto nivel, pero a menudo es útil cambiar a mostrar los nombres crudos y de bajo nivel. To do this, right-click anywhere in the property list editor and toggle "Raw Keys/Values."
 
 Locate the `NSCameraUsageDescription` Key (it should exist already if you followed along with this tutorial) and set the Value to something that describes why the app needs to use the camera, such as "To Take Photos." The Value field is displayed to the app user when the permission prompt opens.
 
