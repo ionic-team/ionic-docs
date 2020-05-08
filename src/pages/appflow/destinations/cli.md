@@ -5,6 +5,7 @@ previousUrl: '/docs/appflow/destinations/builds'
 nextText: 'Manual'
 nextUrl: '/docs/appflow/destinations/manual'
 ---
+> **NOTE:** To deploy a build you will need to be running `@ionic/cli` of at least version 6.8
 
 You can also create a build that will be deployed to an app store or deploy an already completed build as well.
 
