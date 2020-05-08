@@ -23,6 +23,7 @@ export class DocsMenuNative {
   gettingStarted = {
     '': {
       'menu-native-home': '/docs/native',
+      'menu-native-community': '/docs/native/community',
       'menu-native-faq': '/docs/native/faq',
       'menu-native-community-v-premier': '/docs/enterprise/community-vs-enterprise'
     }

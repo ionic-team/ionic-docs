@@ -105,6 +105,11 @@ docs-header docs-menu-toggle {
   width: 1em;
 }
 
+.SectionNav .Dropdown-panel .Nav-link {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .SectionNav-tabs > * {
   align-items: center;
   display: inline-flex;
