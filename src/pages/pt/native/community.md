@@ -1,13 +1,15 @@
 ---
-title: Community Plugins
+title: Ionic Native Community
 tableOfContents: false
 ---
 
-Community Plugins are a collection of open source Cordova plugins that make it easy to add native functionality to any Ionic app.
+Ionic Native Community is a collection of TypeScript wrappers for open source Cordova and Capacitor plugins that make it easy to add native functionality to any Ionic app.
 
-Community Plugins are submitted and maintained by the Ionic community. While community members are generally quick to find and fix issues, certain plugins may not function properly. For teams that require dedicated native plugin support, please explore Ionic Native then [request a free trial](https://ionicframework.com/enterprise/contact).
+These Community Plugins are submitted and maintained by the Ionic community. While community members are generally quick to find and fix issues, certain plugins may not function properly.
 
-> Note: These docs are for apps built with Ionic Framework 4.0.0 and greater. For older Ionic v3 projects, please [see here](/docs/v3/native).
+For teams that require dedicated native plugin support & SLAs, ongoing maintenance, and security patches, please explore [Ionic Enterprise](/docs/enterprise) then [request a free trial](https://ionicframework.com/enterprise/contact).
+
+> These docs are for apps built with Ionic Framework 4.0.0 and greater. For older Ionic v3 projects, please [see here](/docs/v3/native).
 
 ## Capacitor Support
 
