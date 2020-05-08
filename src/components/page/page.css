@@ -51,10 +51,10 @@ docs-page .full-screen {
 docs-page .page-heading-encapsulation {
   text-transform: uppercase;
 
-  background: var(--accent-color-200);
-  color: #fff;
+  background: transparent;
+  color: #2d4665;
 
-  border: 2px solid var(--accent-color-200);
+  border: 1px solid #dee3ea;
   border-radius: 14px;
   height: 24px;
   padding: 2px 8px;
@@ -72,7 +72,7 @@ docs-page .page-heading-encapsulation {
 }
 
 docs-page .page-heading-encapsulation:hover {
-  background: var(--accent-color-100);
+  border-color: #92a1b3;
 }
 
 docs-page h1 {
