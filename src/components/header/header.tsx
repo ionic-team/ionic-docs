@@ -1,6 +1,7 @@
 import { Component, Listen, Prop, State, h } from '@stencil/core';
 import { Checkmark, ForwardArrow, Logo, Translation } from '../../icons';
 import { l10n } from '../../l10n';
+import { link } from '../nav/link';
 
 @Component({
   tag: 'docs-header',
@@ -43,12 +44,12 @@ export class DocsHeader {
           <stencil-route-link url="/docs/studio">Studio {section === 'Studio' ? <Checkmark/> : null}</stencil-route-link>
         </section>
         <section>
-          <a href="https://capacitor.ionicframework.com/docs/" target="_blank" class="Nav-link outbound">Capacitor</a>
-          <a href="https://stenciljs.com/docs/introduction" target="_blank" class="Nav-link outbound">Stencil</a>
+          {link(['Capacitor', 'https://capacitor.ionicframework.com/docs/' ])}
+          {link(['Stencil', 'https://stenciljs.com' ])}
         </section>
         {section === 'Framework' ? <section>
-          <a href="https://ionicframework.com/docs/v4/components">Framework v4</a>
-          <a href="https://ionicframework.com/docs/v3">Framework v3</a>
+          {link(['Framework v4', 'https://ionicframework.com/docs/v4/components' ])}
+          {link(['Framework v3', 'https://ionicframework.com/docs/v3' ])}
         </section> : null}
       </docs-dropdown>,
       // show Ionic related links in the top bar

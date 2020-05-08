@@ -1,7 +1,8 @@
 import { Build, Component, Element, Prop, h } from '@stencil/core';
-import { Outbound } from '../../icons';
-import { MenuItems } from '../../definitions';
+import { link } from './link';
 import { l10n } from '../../l10n';
+import { MenuItems } from '../../definitions';
+
 
 @Component({
   tag: 'docs-nav',
@@ -15,9 +16,7 @@ export class DocsNav {
     return Array.isArray(items) ? items : Object.entries(items);
   }
 
-  private isExternalLink(href: string) {
-    return href.indexOf('http') === 0;
-  }
+  toLink = link;
 
   toItem = (item, level = 0) => {
     const [id, value] = item;
@@ -33,39 +32,6 @@ export class DocsNav {
       default:
         return null;
     }
-  }
-
-  toLink = (item) => {
-    const [id, href] = item;
-    const text = l10n.getString(id) || id;
-    const isExternal = this.isExternalLink(href);
-
-    if (isExternal) {
-      return (
-        <a href={href}
-          target="_blank"
-          class="Nav-link outbound">
-            <span>{text}</span> <Outbound/>
-        </a>
-      );
-    }
-
-    const prefix = /^\/docs(\/[a-z]{2})?\//;
-    const language = l10n.getLocale();
-    const url = language !== 'en'
-      ? `/docs/${language}/${href.replace(prefix, '')}`
-      : href;
-
-    return (
-      <stencil-route-link
-        url={url}
-        strict={false}
-        exact
-        activeClass="Nav-link--active"
-        anchorClass="Nav-link">
-          <span>{text}</span>
-      </stencil-route-link>
-    );
   }
 
   toSection = ([id, value], level) => {
