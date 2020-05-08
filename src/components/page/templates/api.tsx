@@ -7,6 +7,7 @@ const [getFramework] = useLocalStorage('ionic-docs:framework');
 export default (props) => {
   const { page } = props;
   const headings = [...page.headings];
+  const encapsulation = renderEncapsulation(page.encapsulation);
   const usage = renderUsage(page.usage, page.path);
   const properties = renderProperties(page.props);
   const events = renderEvents(page.events);
@@ -58,7 +59,10 @@ export default (props) => {
 
   return (
     <article>
-      <h1>{ page.title }</h1>
+      <h1>
+        { page.title }
+        { encapsulation }
+      </h1>
       <div class="page-meta">
         <docs-table-of-contents links={headings} basepath={page.path}/>
         <internal-ad></internal-ad>
@@ -73,6 +77,18 @@ export default (props) => {
       { customProps }
       { slots }
     </article>
+  );
+};
+
+const renderEncapsulation = (encapsulation = {}) => {
+  if (encapsulation === 'none') {
+    return;
+  }
+
+  const path = `/docs/reference/glossary#${encapsulation}`;
+
+  return (
+    <a href={path} class="page-heading-encapsulation">{encapsulation}</a>
   );
 };
 
