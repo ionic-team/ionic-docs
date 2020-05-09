@@ -13,7 +13,7 @@ Notre application de galerie de photos ne sera pas complète tant qu'elle ne fon
 
 Commençons par faire quelques petites modifications de code - alors notre application « fonctionnera simplement » lorsque nous la déployerons sur un appareil.
 
-Importez l'API [Plateforme Ionic](https://ionicframework.com/docs/angular/platform) dans `photo.service.ts`, qui est utilisé pour récupérer des informations sur l'appareil actuel. In this case, it’s useful for selecting which code to execute based on the platform the app is running on (web or mobile):
+Importez l'API [Plateforme Ionic](https://ionicframework.com/docs/angular/platform) dans `photo.service.ts`, qui est utilisé pour récupérer des informations sur l'appareil actuel. Dans ce cas, il est utile de sélectionner le code à exécuter en fonction de la plateforme sur laquelle l'application est en cours d'exécution (web ou mobile) :
 
 ```typescript
 import { Platform } from '@ionic/angular';
