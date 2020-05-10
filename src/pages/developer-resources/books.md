@@ -58,3 +58,12 @@ by Hoc Phan
 ### [Mastering Ionic 2](https://www.leanpub.com/masteringionic2)
 
 by James Griffiths
+
+### [Learning Ionic](https://www.packtpub.com/in/application-development/learning-ionic)
+
+by Arvind Ravulavaru
+
+### [Learning Ionic - Second Edition](https://www.packtpub.com/in/web-development/learning-ionic-second-edition)
+
+by Arvind Ravulavaru
+
