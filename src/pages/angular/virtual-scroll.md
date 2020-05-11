@@ -128,6 +128,23 @@ cdk-virtual-scroll-viewport{
 
 Since the viewport is built to fit various use cases, the default sizing is not set and is up to developers to set.
 
+## Working with Collapsible Headers
+
+When utilizing CDK Virtual Scroll and Collapsible headers, your `<ion-content>` header should be contained inside of the `<cdk-virtual-scroll-viewport>` component like so:
+
+```html
+<ion-content [fullscreen]="true">
+<cdk-virtual-scroll-viewport itemSize="56" minBufferPx="900" maxBufferPx="1350">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Title</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  ...
+</ion-content>
+```
+
+
 ## Further Reading
 
 This only covers a small portion of what the CDK Virtual Scroller is capable of. For more details, please see the [Angular CDK Virtual Scrolling docs](https://material.angular.io/cdk/scrolling/overview).
