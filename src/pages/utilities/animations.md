@@ -978,7 +978,8 @@ import { ModalPage } from '../modal/modal.page';
   styleUrls: ['./modal-example.css']
 })
 export class ModalExample {
-  constructor(public modalController: ModalController) { }
+  constructor(public modalController: ModalController,
+              public animationCtrl: AnimationController) { }
 
   async presentModal() {
     const enterAnimation = (baseEl: any) => {
