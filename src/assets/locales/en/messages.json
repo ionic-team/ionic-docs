@@ -185,7 +185,7 @@
   "menu-cli-commands": "Command Reference",
 
   "menu-native-solutions": "Native Solutions",
-  "menu-native-core-device": "Core Device",
+  "menu-native-core-device": "Premier Plugins",
   "menu-native-getting-started": "Getting Started",
   "menu-native-plugins": "Plugins",
   "menu-native-community": "Setup",
@@ -259,8 +259,8 @@
   "menu-enterprise-getting-started": "Getting Started",
   "menu-enterprise-guides": "Guides",
   "menu-enterprise-authentication-security": "Pre-built Solutions",
-  "menu-enterprise-common-device-features": "Premier Plugins",
-  "menu-enterprise-integrated-services": "Service Integrations",
+  "menu-enterprise-common-device-features": "Core Device Features",
+  "menu-enterprise-integrated-services": "3rd Party Integrations",
   "menu-enterprise-payments": "Payments",
 
   "menu-studio-introduction": "Introduction",

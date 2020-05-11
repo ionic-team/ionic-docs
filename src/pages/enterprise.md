@@ -9,10 +9,10 @@ tableOfContents: false
   <docs-card size="lg" header="Native solutions" href="/docs/enterprise/solutions" iconset="/docs/assets/icons/face-id.png,/docs/assets/icons/touch-id.png,/docs/assets/icons/auth0.png,/docs/assets/icons/active-directory.png">
     <p>Complete native solutions for single sign-on, biometrics, and secure offline storage.</p>
   </docs-card>
-  <docs-card size="lg" header="Core Device Features" href="/docs/native#popular-device-features" iconset="/docs/assets/icons/camera.png,/docs/assets/icons/geolocation.png,/docs/assets/icons/file.png,/docs/assets/icons/keyboard.png">
+  <docs-card size="lg" header="Core Device Features" href="/docs/enterprise/android-permissions" iconset="/docs/assets/icons/camera.png,/docs/assets/icons/geolocation.png,/docs/assets/icons/file.png,/docs/assets/icons/keyboard.png">
     <p>Core device features like camera, geolocation, keyboard access, contacts, calendar, and more.</p>
   </docs-card>
-  <docs-card size="lg" header="3rd Party Integrations" href="/docs/native#popular-3rd-party-integrations" iconset="/docs/assets/icons/aws-amplify.png,/docs/assets/icons/firebase.png,/docs/assets/icons/couchbase.png,/docs/assets/icons/apple-pay.png">
+  <docs-card size="lg" header="3rd Party Integrations" href="/docs/enterprise/apple-payment-pass" iconset="/docs/assets/icons/aws-amplify.png,/docs/assets/icons/firebase.png,/docs/assets/icons/couchbase.png,/docs/assets/icons/apple-pay.png">
     <p>Connect to third-party services and cloud providers like Firebase, AWS, and Apple Payment Pass.</p>
   </docs-card>
 </docs-cards>
@@ -34,7 +34,7 @@ tableOfContents: false
   </docs-item>
 </docs-item-list>
 
-## Popular Device Features
+## Popular Core Device Features
 
 <docs-item-list class="static-width">
   <docs-item header="Camera" href="/docs/enterprise/camera" icon="/docs/assets/icons/camera.png">
