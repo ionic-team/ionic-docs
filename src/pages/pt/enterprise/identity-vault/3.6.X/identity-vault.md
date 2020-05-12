@@ -81,19 +81,57 @@ constructor(private http: HttpClient, private router: Router, platform: Platform
 }
 ```
 
-## Automatically adding your token to requests
+Automatically adding your token to requests
+-------------------------------------------
 
 If you'd like to automatically add your authorization token from your identity service to every request, you can see a simple example at in our [demo repo](https://github.com/ionic-team/cs-demo-iv/blob/master/src/app/services/http-interceptors/auth-interceptor.ts).
 
-## Upgrading to v4.0.0
+**Important Note**
 
-If you have Identity Vault **<3.1.0**, please see [Upgrading from v3.0.0 to >=v3.1.0](https://ionicframework.com/docs/enterprise/identity-vault/3.6.X/identity-vault#upgrading-from-v3-0-0-to-v3-1-0) before following these upgrade instructions.
+> If you're upgrading from the `3.0.0` to `>=3.1.0` versions you no longer need to install 2 packages. The plugin now ships under the `@ionic-enterprise/identity-vault` package. Simply run the commands below to upgrade. Imports and usage should remain identical.
 
-* Upgrade your app to use `cordova-android` 9.x (see the [9.0.0 milestone](https://github.com/apache/cordova-android/milestone/2) for progress) or Capacitor 2.x
-  * For Capacitor, please see the upgrade guide for [Android](https://capacitor.ionicframework.com/docs/android/updating) and [iOS](https://capacitor.ionicframework.com/docs/ios/updating).
-* Install the new plugin version.
+Upgrading from v3.0.0 to >=v3.1.0
+-------------------------------
 
-## API Documentation
+First, remove v3.0.0 of the plugin:
+
+```shell
+# NOTE: do not prepend @ionic-enterprise to the plugin name when removing v3.0.0
+ionic cordova plugin rm cordova-plugin-identity-vault
+```
+
+Make sure `@ionic-enterprise/cordova-plugin-identity-vault` and `cordova-plugin-identity-vault` are completely removed from your package.json in all locations.
+
+```javascript
+...
+  "dependencies": {
+    ...
+     // Make sure both of these are gone from the dependencies
+    "@ionic-enterprise/cordova-plugin-identity-vault": "3.0.0",
+    "@ionic-enterprise/identity-vault": "3.0.0",
+    ...
+  }
+  "cordova": {
+    "plugins": {
+      ...
+      // Make sure both of these are gone from the cordova plugins section as well
+      "@ionic-enterprise/cordova-plugin-identity-vault": {},
+      "cordova-plugin-identity-vault": {}
+      ...
+    },
+    ...
+  }
+...
+```
+
+It should now be safe to add >=v3.1.0 of the plugin:
+
+```shell
+ionic cordova plugin add @ionic-enterprise/identity-vault@latest
+```
+
+API Documentation
+-----------------
 
 You can find the API and interface documentation for everything below. The main classes to pay attention to are:
 
@@ -1487,54 +1525,6 @@ ___
 
 The options passed the the [IonicNativeAuthPlugin](#ionicnativeauthplugin) when creating a vault with [getVault](#identityvaultuser.getvault)
 
-<a id="pluginoptions.androidpromptdescription"></a>
-
-### `<Optional>` androidPromptDescription
-
-**● androidPromptDescription**: *`string`*
-
-The description text for the Android authentication prompt.
-
-*__default__*: null
-
-___
-
-<a id="pluginoptions.androidpromptnegativebuttontext"></a>
-
-### `<Optional>` androidPromptNegativeButtonText
-
-**● androidPromptNegativeButtonText**: *`string`*
-
-The cancel text for the Android authentication prompt.
-
-*__default__*: "Cancel"
-
-___
-
-<a id="pluginoptions.androidpromptsubtitle"></a>
-
-### `<Optional>` androidPromptSubtitle
-
-**● androidPromptSubtitle**: *`string`*
-
-The subtitle text for the Android authentication prompt.
-
-*__default__*: null
-
-___
-
-<a id="pluginoptions.androidprompttitle"></a>
-
-### `<Optional>` androidPromptTitle
-
-**● androidPromptTitle**: *`string`*
-
-The title text for the Android authentication prompt.
-
-*__default__*: "Please Authenticate"
-
-___
-
 <a id="pluginoptions.hidescreenonbackground"></a>
 
 ### `<Optional>` hideScreenOnBackground
@@ -1675,54 +1665,6 @@ ___
 
 The configuration file returned to event handlers such as [onConfigChange](#identityvaultuser.onconfigchange) and [onVaultReady](#identityvaultuser.onvaultready).
 
-<a id="vaultconfig.androidpromptdescription"></a>
-
-### `<Optional>` androidPromptDescription
-
-**● androidPromptDescription**: *`string`*
-
-The description text for the Android authentication prompt.
-
-*__default__*: null
-
-___
-
-<a id="vaultconfig.androidpromptnegativebuttontext"></a>
-
-### `<Optional>` androidPromptNegativeButtonText
-
-**● androidPromptNegativeButtonText**: *`string`*
-
-The cancel text for the Android authentication prompt.
-
-*__default__*: "Cancel"
-
-___
-
-<a id="vaultconfig.androidpromptsubtitle"></a>
-
-### `<Optional>` androidPromptSubtitle
-
-**● androidPromptSubtitle**: *`string`*
-
-The subtitle text for the Android authentication prompt.
-
-*__default__*: null
-
-___
-
-<a id="vaultconfig.androidprompttitle"></a>
-
-### `<Optional>` androidPromptTitle
-
-**● androidPromptTitle**: *`string`*
-
-The title text for the Android authentication prompt.
-
-*__default__*: "Please Authenticate"
-
-___
-
 <a id="vaultconfig.authmode"></a>
 
 ### `<Optional>` authMode
@@ -1852,54 +1794,6 @@ ___
 **VaultOptions**:
 
 The options passed in to initialize the vault.
-
-<a id="vaultoptions.androidpromptdescription"></a>
-
-### `<Optional>` androidPromptDescription
-
-**● androidPromptDescription**: *`string`*
-
-The description text for the Android authentication prompt.
-
-*__default__*: null
-
-___
-
-<a id="vaultoptions.androidpromptnegativebuttontext"></a>
-
-### `<Optional>` androidPromptNegativeButtonText
-
-**● androidPromptNegativeButtonText**: *`string`*
-
-The cancel text for the Android authentication prompt.
-
-*__default__*: "Cancel"
-
-___
-
-<a id="vaultoptions.androidpromptsubtitle"></a>
-
-### `<Optional>` androidPromptSubtitle
-
-**● androidPromptSubtitle**: *`string`*
-
-The subtitle text for the Android authentication prompt.
-
-*__default__*: null
-
-___
-
-<a id="vaultoptions.androidprompttitle"></a>
-
-### `<Optional>` androidPromptTitle
-
-**● androidPromptTitle**: *`string`*
-
-The title text for the Android authentication prompt.
-
-*__default__*: "Please Authenticate"
-
-___
 
 <a id="vaultoptions.authmode"></a>
 
