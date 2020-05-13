@@ -23,3 +23,70 @@ docs-code:before {
 docs-code[language="shell"] pre {
   white-space: pre-wrap;
 }
+
+.css-text__copy{
+  position: absolute;
+  right: 0;
+  top: -2rem;
+  height: 20px;
+}
+
+.css-text__copy-link,
+.css-text__copy-confirmation {
+  padding: 4px 5px;
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 600;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.css-text__copy-link {
+  transition:
+    0.2s transform ,
+    0.2s opacity,
+    0.2s color;
+  color: #70A4FF;
+  background-color: #E0EEFF;
+  border-radius: 4px;
+  display: inline-block;
+  cursor: pointer;
+  opacity: 1;
+  transform: translate3d(0,0,0);
+  z-index: 5;
+}
+
+.css-text__copy-link:hover {
+  color: var(--blue);
+}
+
+.css-text__copy-confirmation {
+  transition:
+    0.2s transform ,
+    0.2s opacity;
+  color: #0ec254;
+  opacity: 0;
+  transform: translate3d(0,5px,0);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  height: 20px;
+  padding: 0;
+}
+
+.css-text__copy-confirmation svg {
+  fill: #0ec254;
+  margin-right: -4px;
+}
+
+.show-confirmation .css-text__copy-link {
+  opacity: 0;
+  transform: translate3d(0,-5px,0);
+  pointer-events: none;
+}
+
+.show-confirmation .css-text__copy-confirmation {
+  opacity: 1;
+  transform: translate3d(0,0,0);
+}
