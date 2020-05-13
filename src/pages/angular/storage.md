@@ -42,7 +42,7 @@ First, if you'd like to use SQLite, install the cordova-sqlite-storage plugin:
 ionic cordova plugin add cordova-sqlite-storage
 ```
 
-Next, install the package (comes by default for Ionic apps > Ionic V1):
+Next, install the package:
 ```bash
 npm install --save @ionic/storage
 ```
