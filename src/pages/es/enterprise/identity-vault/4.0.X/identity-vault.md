@@ -13,6 +13,7 @@ otherVersions:
   - 3.5.X
   - 3.6.X
   - 4.0.X
+  - 4.1.X
 ---
 
 # Ionic Identity Vault
@@ -2102,6 +2103,15 @@ ___
 ### BREAKING CHANGES
 
 * **android:** AndroidX is now required in projects with IV v4.
+
+
+### \[3.6.4\] (2020-05-13)
+
+
+### Bug Fixes
+
+* **android:** avoid KeyPermanentlyInvalidatedException problem on SDK 19 [SE-183]
+* **ios:** swift 4.2 compilation issue
 
 
 
