@@ -1,8 +1,8 @@
 ---
 title: Identity Vault
 template: enterprise-plugin
-version: 4.1.0
-minor: 4.1.X
+version: 4.2.0
+minor: 4.2.X
 otherVersions:
   - 2.0.X
   - 3.0.X
@@ -13,6 +13,7 @@ otherVersions:
   - 3.5.X
   - 3.6.X
   - 4.0.X
+  - 4.1.X
 ---
 
 # Ionic Identity Vault
@@ -125,6 +126,7 @@ You can find the API and interface documentation for everything below. The main 
 ### Type aliases
 
 * [BiometricType](#biometrictype)
+* [SupportedBiometricType](#supportedbiometrictype)
 
 * * *
 
@@ -428,6 +430,22 @@ Clear all vault data including stored tokens, values, and passcodes. The vault w
 
 * * *
 
+<a id="identityvault.getavailablehardware"></a>
+
+### getAvailableHardware
+
+▸ **getAvailableHardware**(): `Promise`<[SupportedBiometricType](#supportedbiometrictype)[]>
+
+Gets the types of biometrics the device supports.
+
+Please note, this method only shows the biometrics the device is capable of, and does not reflect whether the biometric methods are enrolled or enabled.
+
+Traditionally Android has only supported fingerprint biometrics through the SDK. As of Android 10 multiple options are supported. Samsung devices can offer iris and face biometrics that exists outside the scope of the Android SDK. Since there is no official Android SDK support to detect those Samsung features, we attempt to determine their presence based on if the device has the Samsung face or iris biometrics software installed.
+
+**Returns:** `Promise`<[SupportedBiometricType](#supportedbiometrictype)[]> the list of biometrics the device supports
+
+* * *
+
 <a id="identityvault.getbiometrictype"></a>
 
 ### getBiometricType
@@ -435,6 +453,8 @@ Clear all vault data including stored tokens, values, and passcodes. The vault w
 ▸ **getBiometricType**(): `Promise`<[BiometricType](#biometrictype)>
 
 Get the type of biometrics the device supports
+
+***deprecated***: this method has been deprecated in favor of [getAvailableHardware](#identityvault.getavailablehardware)
 
 **Returns:** `Promise`<[BiometricType](#biometrictype)> the type of biometrics the device supports
 
@@ -1464,7 +1484,7 @@ The values the uniquely identify the vault
 
 **● hideScreenOnBackground**: *`boolean`*
 
-Obscures the app when backgrounded to avoid leaking sensitive information, such as financial statements or balances
+Obscures the app when backgrounded to avoid leaking sensitive information, such as financial statements or balances. App screenshots won't work on Android 10 devices using gesture navigation if this option is set to true.
 
 * * *
 
@@ -1594,7 +1614,7 @@ The title text for the Android authentication prompt.
 
 **● hideScreenOnBackground**: *`boolean`*
 
-Obscures the app when backgrounded to avoid leaking sensitive information, such as financial statements or balances
+Obscures the app when backgrounded to avoid leaking sensitive information, such as financial statements or balances. App screenshots won't work on Android 10 devices using gesture navigation if this option is set to true.
 
 * * *
 
@@ -1823,7 +1843,7 @@ The [AuthMode](#authmode) to configure a new vault with. Note: This will only af
 
 **● hideScreenOnBackground**: *`boolean`*
 
-Obscures the app when backgrounded to avoid leaking sensitive information, such as financial statements or balances
+Obscures the app when backgrounded to avoid leaking sensitive information, such as financial statements or balances. App screenshots won't work on Android 10 devices using gesture navigation if this option is set to true.
 
 ***default***: false
 
@@ -2026,7 +2046,7 @@ The [AuthMode](#authmode) to configure a new vault with. Note: This will only af
 
 **● hideScreenOnBackground**: *`boolean`*
 
-Obscures the app when backgrounded to avoid leaking sensitive information, such as financial statements or balances
+Obscures the app when backgrounded to avoid leaking sensitive information, such as financial statements or balances. App screenshots won't work on Android 10 devices using gesture navigation if this option is set to true.
 
 ***default***: false
 
@@ -2104,9 +2124,32 @@ Whether or not to attempt to automatically unlock the vault when the vault is re
 
 The possible values returned by [getBiometricType](#identityvault.getbiometrictype)
 
+***deprecated***: these types have been deprecated in favor of {@link SupportedBiometricTypes}
+
+* * *
+
+<a id="supportedbiometrictype"></a>
+
+### SupportedBiometricType
+
+**Ƭ SupportedBiometricType**: *"fingerprint" \| "face" \| "iris"*
+
+The possible values returned by [getAvailableHardware](#identityvault.getavailablehardware)
+
 * * *
 
 ## Change Log
+
+### \[4.2.0\] (2020-05-13)
+
+### Bug Fixes
+
+* **android:** Added transparent theme for biometric auth activity SE-188 
+* **android:** make hideScreen work when using gesture navigation 
+
+### Features
+
+* added method getAvailableHardware to return list of biometrics options 
 
 ### \[4.1.0\] (2020-04-29)
 
@@ -2139,6 +2182,13 @@ The possible values returned by [getBiometricType](#identityvault.getbiometricty
 ### BREAKING CHANGES
 
 * **android:** AndroidX is now required in projects with IV v4.
+
+### \[3.6.4\] (2020-05-13)
+
+### Bug Fixes
+
+* **android:** avoid KeyPermanentlyInvalidatedException problem on SDK 19 [SE-183]
+* **ios:** swift 4.2 compilation issue
 
 ### \[3.6.3\] (2020-04-01)
 
