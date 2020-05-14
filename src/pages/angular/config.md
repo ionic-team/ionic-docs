@@ -12,9 +12,7 @@ contributors:
 
 Ionic Config provides a way to change the properties of components globally across an app. It can set the app mode, tab button layout, animations, and more.
 
-## Usage
-
-### Global
+## Global Config
 
 To override the initial Ionic config for the app, provide a config in `IonicModule.forRoot` in the `app.module.ts` file.
 
@@ -38,12 +36,12 @@ import { IonicModule } from '@ionic/angular';
 In the above example, we are disabling the Material Design ripple effect across the app, as well as forcing the mode to be Material Design.
 
 
-### By Component
+## Per-Component Config
 
 Ionic Config is not reactive, so it is recommended to use a component's properties when you want to override its default behavior rather than set its config globally.
 
 ```typescript
-import { createAnimation, IonicModule } from '@ionic/angular';
+import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   ...
@@ -66,6 +64,99 @@ This will set the default text for `ion-back-button` to `Go Back`. However, if y
 
 In this example we have used our `ion-back-button` in such a way that the text can be dynamically updated if there were to be a change that warranted it, such as a language or locale change. The `getBackButtonText` method would be responsible for returning the correct text.
 
+## Per-Platform Config
+
+Ionic Config can also be set on a per-platform basis. For example, this allows you to disable animations if the app is being run in a browser on a potentially slower device. Developers can take advantage of the Platform utilities to accomplish this.
+
+Since the config is set at runtime, you will not have access to the Platform Dependency Injection. Instead, you can use the underlying functions that it uses directly.
+
+```typescript
+import { getPlatforms, IonicModule } from '@ionic/angular';
+
+const platforms = (typeof (window as any) !== 'undefined') ? getPlatforms(window) : [];
+
+@NgModule({
+  ...
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot({
+      animated: !platforms.includes('mobileweb')
+    }),
+    AppRoutingModule
+  ],
+  ...
+})
+```
+
+The `getPlatforms(window)` call returns an array of platform strings. See the [Platform Documentation](./platform#platforms) for a list of possible values.
+
+In the example above, we are disabling all animations in our Ionic app only if the app is running in a mobile web browser. 
+
+> The `typeof (window as any) !== 'undefined'` check is needed to ensure that your application does not crash when using Server Side Rendering (SSR). If you are not using SSR you can safely remove this check.
+
+```typescript
+import { getPlatforms, IonicModule } from '@ionic/angular';
+
+const platforms = (typeof (window as any) !== 'undefined') ? getPlatforms(window) : [];
+const getConfig = () => {
+  
+  // If running in Capacitor/Cordova
+  if (platforms.includes('hybrid')) {
+    return {
+      backButtonText: 'Previous',
+      tabButtonLayout: 'label-hide'
+    }
+  }
+  
+  // If not Capacitor/Cordova
+  return {
+    menuIcon: 'ellipsis-vertical'
+  }
+}
+@NgModule({
+  ...
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(getConfig()),
+    AppRoutingModule
+  ],
+  ...
+})
+```
+
+This example allows you to set an entirely different configuration based upon the platform, falling back to a default config if no platforms match.
+
+```typescript
+import { getPlatforms, IonicModule } from '@ionic/angular';
+
+const platforms = (typeof (window as any) !== 'undefined') ? getPlatforms(window) : [];
+const getConfig = () => {
+  let config = {
+    animated: false
+  };
+  
+  // If running on an iPhone
+  if (platforms.includes('iphone')) {
+    config = {
+      backButtonText: 'Previous',
+      ...config
+    }
+  }
+  
+  return config;
+}
+@NgModule({
+  ...
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(getConfig()),
+    AppRoutingModule
+  ],
+  ...
+})
+```
+
+This example allows you to accumulate a config object based upon different platform requirements.
 
 ## Config Options
 
