@@ -41,21 +41,22 @@ export class MyPage {
 
 以下表格列举了`Platforms`可选项以及对应描述。
 
-| 平台名称      | 描述                     |
-| --------- | ---------------------- |
-| android   | 设备运行在Android           |
-| capacitor | 设备运行在Capacitor         |
-| cordova   | 设备运行在Cordova           |
-| desktop   | 设备运行在桌面端               |
-| electron  | 设备运行在Electron          |
-| hybrid    | 设备运行在Capacitor或Cordova |
-| ios       | 设备运行在iOS               |
-| ipad      | iPad设备                 |
-| iphone    | iPhone设备               |
-| mobile    | 移动设备                   |
-| phablet   | 平板手机                   |
-| pwa       | 渐进式应用                  |
-| tablet    | 平板电脑                   |
+| 平台名称      | 描述                                       |
+| --------- | ---------------------------------------- |
+| android   | 设备运行在Android                             |
+| capacitor | 设备运行在Capacitor                           |
+| cordova   | 设备运行在Cordova                             |
+| desktop   | 设备运行在桌面端                                 |
+| electron  | 设备运行在Electron                            |
+| hybrid    | 设备运行在Capacitor或Cordova                   |
+| ios       | 设备运行在iOS                                 |
+| ipad      | iPad设备                                   |
+| iphone    | iPhone设备                                 |
+| mobile    | 移动设备                                     |
+| mobileweb | a web browser running in a mobile device |
+| phablet   | a phablet device                         |
+| pwa       | a PWA app                                |
+| tablet    | a tablet device                          |
 
 ### `platforms() => string[]`
 
