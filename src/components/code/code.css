@@ -24,15 +24,15 @@ docs-code[language="shell"] pre {
   white-space: pre-wrap;
 }
 
-.css-text__copy{
+.code-text__copy{
   position: absolute;
   right: 0;
   top: -1.6rem;
   height: 20px;
 }
 
-.css-text__copy-link,
-.css-text__copy-confirmation {
+.code-text__copy-link,
+.code-text__copy-confirmation {
   padding: 4px 5px;
   font-size: 12px;
   line-height: 12px;
@@ -42,7 +42,7 @@ docs-code[language="shell"] pre {
   top: 0;
 }
 
-.css-text__copy-link {
+.code-text__copy-link {
   transition:
     0.2s transform ,
     0.2s opacity,
@@ -57,11 +57,11 @@ docs-code[language="shell"] pre {
   z-index: 5;
 }
 
-.css-text__copy-link:hover {
+.code-text__copy-link:hover {
   color: var(--blue);
 }
 
-.css-text__copy-confirmation {
+.code-text__copy-confirmation {
   transition:
     0.2s transform ,
     0.2s opacity;
@@ -75,18 +75,18 @@ docs-code[language="shell"] pre {
   padding: 0;
 }
 
-.css-text__copy-confirmation svg {
+.code-text__copy-confirmation svg {
   fill: #0ec254;
   margin-right: -4px;
 }
 
-.show-confirmation .css-text__copy-link {
+.show-confirmation .code-text__copy-link {
   opacity: 0;
   transform: translate3d(0,-5px,0);
   pointer-events: none;
 }
 
-.show-confirmation .css-text__copy-confirmation {
+.show-confirmation .code-text__copy-confirmation {
   opacity: 1;
   transform: translate3d(0,0,0);
 }
