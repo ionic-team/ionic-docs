@@ -6,13 +6,13 @@ tableOfContents: false
 <p class='intro'><a href="https://ionicframework.com/native" target="_blank">Ionic Native Enterprise Edition (EE)</a> is a subscription service that provides premium, supported Capacitor and Cordova plugins, third-party integrations, and pre-built solutions for teams building enterprise-grade apps with Ionic.</p>
 
 <docs-cards class="static-width">
-  <docs-card size="lg" header="Native solutions" href="/docs/enterprise/solutions" iconset="/docs/assets/icons/face-id.png,/docs/assets/icons/touch-id.png,/docs/assets/icons/auth0.png,/docs/assets/icons/active-directory.png">
+  <docs-card size="lg" header="Native solutions" href="/docs/enterprise/solutions" iconset="/docs/assets/icons/face-id.png,/docs/assets/icons/touch-id.png,/docs/assets/icons/auth0.png,/docs/assets/icons/active-directory.png" icon-alt="changing icons for Ionic's native solutions">
     <p>Complete native solutions for single sign-on, biometrics, and secure offline storage.</p>
   </docs-card>
-  <docs-card size="lg" header="Core Device Features" href="/docs/enterprise/android-permissions" iconset="/docs/assets/icons/camera.png,/docs/assets/icons/geolocation.png,/docs/assets/icons/file.png,/docs/assets/icons/keyboard.png">
+  <docs-card size="lg" header="Core Device Features" href="/docs/enterprise/android-permissions" iconset="/docs/assets/icons/camera.png,/docs/assets/icons/geolocation.png,/docs/assets/icons/file.png,/docs/assets/icons/keyboard.png" icon-alt="changing icons for Ionic's Core Device Features">
     <p>Core device features like camera, geolocation, keyboard access, contacts, calendar, and more.</p>
   </docs-card>
-  <docs-card size="lg" header="3rd Party Integrations" href="/docs/enterprise/apple-payment-pass" iconset="/docs/assets/icons/aws-amplify.png,/docs/assets/icons/firebase.png,/docs/assets/icons/couchbase.png,/docs/assets/icons/apple-pay.png">
+  <docs-card size="lg" header="3rd Party Integrations" href="/docs/enterprise/apple-payment-pass" iconset="/docs/assets/icons/aws-amplify.png,/docs/assets/icons/firebase.png,/docs/assets/icons/couchbase.png,/docs/assets/icons/apple-pay.png" icon-alt="changing icons for Ionic's 3rd party integrations">
     <p>Connect to third-party services and cloud providers like Firebase, AWS, and Apple Payment Pass.</p>
   </docs-card>
 </docs-cards>

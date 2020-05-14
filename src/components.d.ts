@@ -71,8 +71,10 @@ export namespace Components {
     'hoverIcon': string;
     'href': string;
     'icon': string;
+    'iconAlt': string;
     'iconset': string;
     'img': string;
+    'imgAlt': string;
     'ionicon': string;
     'size': 'md' | 'lg';
   }
@@ -599,8 +601,10 @@ declare namespace LocalJSX {
     'hoverIcon'?: string;
     'href'?: string;
     'icon'?: string;
+    'iconAlt'?: string;
     'iconset'?: string;
     'img'?: string;
+    'imgAlt'?: string;
     'ionicon'?: string;
     'size'?: 'md' | 'lg';
   }
