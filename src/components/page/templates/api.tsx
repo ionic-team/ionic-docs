@@ -59,9 +59,9 @@ export default (props) => {
 
   return (
     <article>
+      { encapsulation }
       <h1>
         { page.title }
-        { encapsulation }
       </h1>
       <div class="page-meta">
         <docs-table-of-contents links={headings} basepath={page.path}/>

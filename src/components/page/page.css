@@ -69,6 +69,7 @@ docs-page .page-heading-encapsulation {
   justify-self: flex-end;
 
   letter-spacing: 0.08em;
+  float: right;
 }
 
 docs-page .page-heading-encapsulation:hover {
