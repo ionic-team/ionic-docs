@@ -97,7 +97,7 @@ When the camera is done taking a picture, the resulting CameraPhoto returned fro
 const fileName = new Date().getTime() + '.jpeg';
 const newPhotos = [{
   filepath: fileName,
-  webviewPath: cameraPhoto.webPath
+  webviewPath: CameraPhoto.webPath
 }, ...photos];
 setPhotos(newPhotos)
 ```
