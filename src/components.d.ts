@@ -110,6 +110,7 @@ export namespace Components {
     'header': string;
     'href': string;
     'icon': string;
+    'iconAlt': string;
     'ionicon': string;
     'rounded': boolean;
   }
@@ -637,6 +638,7 @@ declare namespace LocalJSX {
     'header'?: string;
     'href'?: string;
     'icon'?: string;
+    'iconAlt'?: string;
     'ionicon'?: string;
     'rounded'?: boolean;
   }

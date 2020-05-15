@@ -15,7 +15,7 @@ Ionic Framework provides several different layouts that can be used to structure
 ### Header
 
 <aside>
-  <docs-card href="/docs/api/header" header="Learn More" icon="/docs/assets/icons/component-header-icon.png">
+  <docs-card href="/docs/api/header" header="Learn More" icon="/docs/assets/icons/component-header-icon.png" icon-alt="phone icon">
     <code>ion-header</code> API docs
   </docs-card>
 </aside>
@@ -39,7 +39,7 @@ The most simple layout available consists of a [header](/docs/api/header) and [c
 ### Footer
 
 <aside>
-  <docs-card href="/docs/api/footer" header="Learn More" icon="/docs/assets/icons/component-footer-icon.png">
+  <docs-card href="/docs/api/footer" header="Learn More" icon="/docs/assets/icons/component-footer-icon.png" icon-alt="phone icon">
     <code>ion-footer</code> API docs
   </docs-card>
 </aside>

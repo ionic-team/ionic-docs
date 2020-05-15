@@ -21,15 +21,15 @@ tableOfContents: false
 ## Featured Native Solutions
 
 <docs-item-list class="static-width">
-  <docs-item header="Identity Vault" href="/docs/enterprise/identity-vault" icon="/docs/assets/icons/logo-identity-vault.png" rounded="false">
+  <docs-item header="Identity Vault" href="/docs/enterprise/identity-vault" icon="/docs/assets/icons/logo-identity-vault.png" rounded="false" icon-alt="propeller looking logo">
     <p>Protect your users and data with multi-layer native security and biometric authentication.</p>
   </docs-item>
 
-  <docs-item header="Auth Connect" href="/docs/enterprise/auth-connect" icon="/docs/assets/icons/logo-auth-connect.png" rounded="false">
+  <docs-item header="Auth Connect" href="/docs/enterprise/auth-connect" icon="/docs/assets/icons/logo-auth-connect.png" rounded="false" icon-alt="person outline in front of wheel background">
     <p>Add single sign-on using a single API and the latest in native security best practices.</p>
   </docs-item>
 
-  <docs-item header="Secure Storage" href="/docs/enterprise/offline-storage" icon="/docs/assets/icons/logo-offline-storage.png" rounded="false">
+  <docs-item header="Secure Storage" href="/docs/enterprise/offline-storage" icon="/docs/assets/icons/logo-offline-storage.png" rounded="false" icon-alt="rectangle with lines above depicting motion">
     <p>Store and access data locally on a mobile or desktop device, even when users are offline.</p>
   </docs-item>
 </docs-item-list>
@@ -37,27 +37,27 @@ tableOfContents: false
 ## Popular Core Device Features
 
 <docs-item-list class="static-width">
-  <docs-item header="Camera" href="/docs/enterprise/camera" icon="/docs/assets/icons/camera.png">
+  <docs-item header="Camera" href="/docs/enterprise/camera" icon="/docs/assets/icons/camera.png" icon-alt="camera outline">
     <p>Take photos, capture video and choose images from the device's image library.</p>
   </docs-item>
   
-  <docs-item header="Keyboard" href="/docs/enterprise/keyboard" icon="/docs/assets/icons/keyboard.png">
+  <docs-item header="Keyboard" href="/docs/enterprise/keyboard" icon="/docs/assets/icons/keyboard.png" icon-alt="a b c keys on a keyboard">
     <p>Configure keyboard behavior (show/hide) and display (sizing/visibility).</p>
   </docs-item>
   
-  <docs-item header="Calendar" href="/docs/enterprise/calendar" icon="/docs/assets/icons/calendar-icon.png">
+  <docs-item header="Calendar" href="/docs/enterprise/calendar" icon="/docs/assets/icons/calendar-icon.png" icon-alt="cartoon calendar">
     <p>Manage mobile device calendar events.</p>
   </docs-item>
 
-  <docs-item header="Contacts" href="/docs/enterprise/contacts" icon="/docs/assets/icons/contacts-icon.png">
+  <docs-item header="Contacts" href="/docs/enterprise/contacts" icon="/docs/assets/icons/contacts-icon.png" icon-alt="2 people outlined">
     <p>Access to read, write, or select device contacts.</p>
   </docs-item>
 
-  <docs-item header="Geolocation" href="/docs/enterprise/geolocation" icon="/docs/assets/icons/geolocation.png">
+  <docs-item header="Geolocation" href="/docs/enterprise/geolocation" icon="/docs/assets/icons/geolocation.png" icon-alt="map app icon">
     <p>Device location information, including latitude and longitude.</p>
   </docs-item>
 
-  <docs-item header="File" href="/docs/enterprise/filesystem" icon="/docs/assets/icons/file.png">
+  <docs-item header="File" href="/docs/enterprise/filesystem" icon="/docs/assets/icons/file.png" icon-alt="file folder outline">
     <p>Common file operations such as read/write and directory access.</p>
   </docs-item>
 </docs-item-list>
@@ -66,27 +66,27 @@ tableOfContents: false
 
 <docs-item-list class="static-width">
 
-  <docs-item header="Firebase" href="/docs/native/firebase" icon="/docs/assets/icons/firebase.png">
+  <docs-item header="Firebase" href="/docs/native/firebase" icon="/docs/assets/icons/firebase.png" icon-alt="firebase logo">
     <p>Push notifications, analytics, event tracking, crash reporting and more.</p>
   </docs-item>
 
-  <docs-item header="AWS Amplify" href="/docs/enterprise/aws-amplify" icon="/docs/assets/icons/aws-amplify.png">
+  <docs-item header="AWS Amplify" href="/docs/enterprise/aws-amplify" icon="/docs/assets/icons/aws-amplify.png" icon-alt="amplify logo">
     <p>Authentication, analytics, push notifications, AI and ML cloud services, storage, and more.</p>
   </docs-item>
 
-  <docs-item header="Couchbase" href="/docs/enterprise/couchbase-lite" icon="/docs/assets/icons/couchbase.png">
+  <docs-item header="Couchbase" href="/docs/enterprise/couchbase-lite" icon="/docs/assets/icons/couchbase.png" icon-alt="couchbase logo">
     <p>A fully-featured embedded NoSQL database that runs locally on mobile devices.</p>
   </docs-item>
 
-  <docs-item header="Apple Payment Pass" href="/docs/enterprise/apple-payment-pass" icon="/docs/assets/icons/apple-wallet-icon.png">
+  <docs-item header="Apple Payment Pass" href="/docs/enterprise/apple-payment-pass" icon="/docs/assets/icons/apple-wallet-icon.png" icon-alt="multicolored wallet">
     <p>Add credit/debit cards to Apple Wallet.</p>
   </docs-item>
 
-  <docs-item header="Facebook" href="/docs/native/facebook" icon="/docs/assets/icons/facebook-icon.png">
+  <docs-item header="Facebook" href="/docs/native/facebook" icon="/docs/assets/icons/facebook-icon.png" icon-alt="facebook logo">
     <p>Connect to the Facebook platform.</p>
   </docs-item>
 
-  <docs-item header="Instagram" href="/docs/native/instagram" icon="/docs/assets/icons/instagram-icon.png">
+  <docs-item header="Instagram" href="/docs/native/instagram" icon="/docs/assets/icons/instagram-icon.png" icon-alt="instagram logo">
     <p>Share photos through the Instagram app.</p>
   </docs-item>
 </docs-item-list>

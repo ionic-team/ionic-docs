@@ -527,8 +527,14 @@ async function presentAlertCheckbox() {
 
 ## API
 
-<docs-cards> <docs-card header="ion-alert" href="/docs/api/alert"> 
+<docs-cards>
 
-Display a dialog to present or collect information from a user.</docs-card> <docs-card header="ion-alert-controller" href="/docs/api/alert-controller"> 
+<docs-card header="ion-alert" href="/docs/api/alert"> 
 
-Used to manage the creation, dismissal, and destruction of alerts.</docs-card> </docs-cards>
+Display a dialog to present or collect information from a user.</docs-card>
+
+<docs-card header="ion-alert-controller" href="/docs/api/alert-controller"> 
+
+Used to manage the creation, dismissal, and destruction of alerts.</docs-card>
+
+</docs-cards>

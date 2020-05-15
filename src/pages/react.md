@@ -115,19 +115,19 @@ At the end of the day, it's just React. Ionic React uses open web standards and 
 ## Resources
 
 <docs-cards>
-  <docs-card header="Getting Started" href="/docs/react/your-first-app" icon="/docs/assets/icons/feature-component-actionsheet-icon.png">
+  <docs-card header="Getting Started" href="/docs/react/your-first-app" icon="/docs/assets/icons/feature-component-actionsheet-icon.png" icon-alt="app showing list">
     <p>Learn the fundamentals you need to know to start building amazing apps with Ionic Framework.</p>
   </docs-card>
 
-  <docs-card header="Add Ionic to Existing React App" href="https://dev.to/ionic/adding-ionic-react-to-an-existing-react-project-4kib" icon="/docs/assets/icons/logo-react-icon.png">
+  <docs-card header="Add Ionic to Existing React App" href="https://dev.to/ionic/adding-ionic-react-to-an-existing-react-project-4kib" icon="/docs/assets/icons/logo-react-icon.png" icon-alt="react logo">
     <p>Use individual components or the complete app experience.</p>
   </docs-card>
 
-  <docs-card header="Navigation" href="/docs/react/navigation" icon="/docs/assets/icons/feature-component-navigation-icon.png">
+  <docs-card header="Navigation" href="/docs/react/navigation" icon="/docs/assets/icons/feature-component-navigation-icon.png" icon-alt="multilevel squares">
     <p>Learn the basics of navigation inside your app with Ionic and React Router</p>
   </docs-card>
 
-  <docs-card header="Lifecycle" href="/docs/react/lifecycle" icon="/docs/assets/icons/feature-guide-components-icon.png">
+  <docs-card header="Lifecycle" href="/docs/react/lifecycle" icon="/docs/assets/icons/feature-guide-components-icon.png" icon-alt="different color circle, triangle, and square overlapping">
     <p>Learn about using Ionic lifecycle events in class components and with hooks</p>
   </docs-card>
 

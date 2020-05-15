@@ -22,7 +22,7 @@ so that you can build different versions of your app for development, staging, a
 ##### Helpful links
 
 <docs-cards class="max-measure">
-  <docs-card header="Create an Automation" href="/docs/appflow/quickstart/automation" icon="/docs/assets/icons/guide-quickstart-icon.png">
+  <docs-card header="Create an Automation" href="/docs/appflow/quickstart/automation" icon="/docs/assets/icons/guide-quickstart-icon.png" icon-alt="rocket flying icon">
     <p>Create your first Android development binary automation using our quickstart guide!</p>
   </docs-card>
 </docs-cards>
