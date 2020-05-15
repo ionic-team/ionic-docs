@@ -5,7 +5,7 @@ nextText: 'Progressive Web Apps in React'
 nextUrl: '/docs/react/pwa'
 ---
 
-# Platform Utils
+# Platform
 
 ## isPlatform
 

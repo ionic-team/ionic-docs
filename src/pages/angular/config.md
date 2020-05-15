@@ -68,7 +68,11 @@ In this example we have used our `ion-back-button` in such a way that the text c
 
 Ionic Config can also be set on a per-platform basis. For example, this allows you to disable animations if the app is being run in a browser on a potentially slower device. Developers can take advantage of the Platform utilities to accomplish this.
 
-Since the config is set at runtime, you will not have access to the Platform Dependency Injection. Instead, you can use the underlying functions that it uses directly.
+Since the config is set at runtime, you will not have access to the Platform Dependency Injection. Instead, you can use the underlying functions that the provider uses directly.
+
+In the following example, we are disabling all animations in our Ionic app only if the app is running in a mobile web browser. 
+The `isPlatform()` call returns `true` or `false` based upon the platform that is passed in. See the [Platform Documentation](./platform#platforms) for a list of possible values.
+
 
 ```typescript
 import { isPlatform, IonicModule } from '@ionic/angular';
@@ -86,9 +90,7 @@ import { isPlatform, IonicModule } from '@ionic/angular';
 })
 ```
 
-The `isPlatform()` call returns `true` or `false` based upon the platform that is based in. See the [Platform Documentation](./platform#platforms) for a list of possible values.
-
-In the example above, we are disabling all animations in our Ionic app only if the app is running in a mobile web browser. 
+The next example allows you to set an entirely different configuration based upon the platform, falling back to a default config if no platforms match:
 
 ```typescript
 import { isPlatform, IonicModule } from '@ionic/angular';
@@ -116,7 +118,7 @@ const getConfig = () => {
 })
 ```
 
-This example allows you to set an entirely different configuration based upon the platform, falling back to a default config if no platforms match.
+Finally, this example allows you to accumulate a config object based upon different platform requirements:
 
 ```typescript
 import { isPlatform, IonicModule } from '@ionic/angular';
@@ -146,8 +148,6 @@ const getConfig = () => {
   ...
 })
 ```
-
-This example allows you to accumulate a config object based upon different platform requirements.
 
 ## Config Options
 

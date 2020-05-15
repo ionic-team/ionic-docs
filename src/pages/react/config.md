@@ -30,6 +30,10 @@ In the above example, we are disabling the Material Design ripple effect across 
 
 Ionic Config can also be set on a per-platform basis. For example, this allows you to disable animations if the app is being run in a browser on a potentially slower device. Developers can take advantage of the Platform utilities to accomplish this.
 
+In the following example, we are disabling all animations in our Ionic app only if the app is running in a mobile web browser. 
+The `isPlatform()` call returns `true` or `false` based upon the platform that is passed in. See the [Platform Documentation](./platform#platforms) for a list of possible values.
+
+
 ```typescript
 import { isPlatform, setupConfig } from '@ionic/react';
 
@@ -38,9 +42,7 @@ setupConfig({
 });
 ```
 
-The `isPlatform()` call returns `true` or `false` based upon the platform that is based in. See the [Platform Documentation](./platform#platforms) for a list of possible values.
-
-In the example above, we are disabling all animations in our Ionic app only if the app is running in a mobile web browser. 
+The next example allows you to set an entirely different configuration based upon the platform, falling back to a default config if no platforms match:
 
 ```typescript
 import { isPlatform, setupConfig } from '@ionic/react';
@@ -61,7 +63,8 @@ const getConfig = () => {
 setupConfig(getConfig());
 ```
 
-This example allows you to set an entirely different configuration based upon the platform, falling back to a default config if no platforms match.
+Finally, this example allows you to accumulate a config object based upon different platform requirements:
+
 
 ```typescript
 import { isPlatform, setupConfig } from '@ionic/react';
@@ -83,8 +86,6 @@ const getConfig = () => {
 }
 setupConfig(getConfig());
 ```
-
-This example allows you to accumulate a config object based upon different platform requirements.
 
 ## Config Options
 
