@@ -13,8 +13,7 @@ export class DocsCard {
   @Prop() iconset: string;
   @Prop() ionicon: string;
   @Prop() img: string;
-  @Prop() imgAlt: string;
-  @Prop() iconAlt: string;
+  @Prop() alt: string;
   @Prop() size: 'md' | 'lg';
   @State() activeIndex = 0;
 
@@ -62,17 +61,17 @@ export class DocsCard {
     const hoverIcon = this.hoverIcon || this.icon;
 
     const content = [
-      this.img && <img src={this.img} class="Card-image" alt={this.imgAlt}/>,
+      this.img && <img src={this.img} class="Card-image" alt={this.alt}/>,
       <div class="Card-container">
-        { this.icon && <img src={this.icon} class="Card-icon Card-icon-default" alt={this.iconAlt}/> }
-        { hoverIcon && <img src={hoverIcon} class="Card-icon Card-icon-hover" alt={this.iconAlt}/> }
+        { this.icon && <img src={this.icon} class="Card-icon Card-icon-default" alt={this.alt}/> }
+        { hoverIcon && <img src={hoverIcon} class="Card-icon Card-icon-hover" alt={this.alt}/> }
         { this.ionicon && <ion-icon name={this.ionicon} class="Card-ionicon"></ion-icon>}
         { this.iconset && <div class="Card-iconset__container">
           {this.iconset.split(',').map((icon, index) =>
             <img src={icon}
                  class={`Card-icon ${index === this.activeIndex ? 'Card-icon--active' : ''}`}
                  data-index={index}
-                 alt={this.iconAlt}/>
+                 alt={this.alt}/>
           )}
         </div>}
         { header }

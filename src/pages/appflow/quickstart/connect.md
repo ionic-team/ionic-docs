@@ -35,20 +35,20 @@ If you're not using one of these providers, you can also choose to push directly
 Ionic git is *not* intended to be a Git host and we strongly suggest using GitHub, Bitbucket or another official git hosting service to backup your source code repository.
 
 <docs-cards>
-  <docs-card header="Connect using GitHub" href="/docs/appflow/quickstart/github" icon="/docs/assets/icons/guide-github-icon.png" icon-alt="Github logo">
+  <docs-card header="Connect using GitHub" href="/docs/appflow/quickstart/github" icon="/docs/assets/icons/guide-github-icon.png" alt="Github logo">
     <p>Connect your app to a repo on GitHub.</p>
   </docs-card>
 
-  <docs-card header="Connect using Bitbucket" href="/docs/appflow/quickstart/bitbucket" icon="/docs/assets/icons/guide-bitbucket-icon.png" icon-alt="bitbucket logo">
+  <docs-card header="Connect using Bitbucket" href="/docs/appflow/quickstart/bitbucket" icon="/docs/assets/icons/guide-bitbucket-icon.png" alt="bitbucket logo">
     <p>Connect your app to a repo on Bitbucket.</p>
   </docs-card>
 
-  <docs-card header="Connect using Bitbucket Server" href="/docs/appflow/quickstart/bitbucket-server" icon="/docs/assets/icons/guide-bitbucket-icon.png" icon-alt="bitbucket logo">
+  <docs-card header="Connect using Bitbucket Server" href="/docs/appflow/quickstart/bitbucket-server" icon="/docs/assets/icons/guide-bitbucket-icon.png" alt="bitbucket logo">
     <p>Connect your app to a repo using an on-premise Bitbucket Server instance.</p>
     <b>Note: This feature is only available on our Scale plan.</b>
   </docs-card>
 
-  <docs-card header="Connect using Ionic" href="/docs/appflow/quickstart/ionic-remote" icon="/docs/assets/icons/guide-ionic-icon.png" icon-alt="ionic logo">
+  <docs-card header="Connect using Ionic" href="/docs/appflow/quickstart/ionic-remote" icon="/docs/assets/icons/guide-ionic-icon.png" alt="ionic logo">
     <p>Connect your app directly to Ionic if you are not using one of the supported Git hosting services.</p>
   </docs-card>
 </docs-cards>

@@ -11,15 +11,15 @@ tableOfContents: false
 Pick the JavaScript framework you plan to use while building your Ionic app:
 
 <docs-cards>
-  <docs-card header="Start with Angular" href="/docs/angular/your-first-app" icon="/docs/assets/icons/logo-angular-icon.png" icon-alt="angular logo">
+  <docs-card header="Start with Angular" href="/docs/angular/your-first-app" icon="/docs/assets/icons/logo-angular-icon.png" alt="angular logo">
     <p>A complete guide to get you up to speed with the basics of building Ionic apps with Angular.</p>
   </docs-card>
 
-  <docs-card header="Start with React" href="/docs/react/your-first-app" icon="/docs/assets/icons/logo-react-icon.png" icon-alt="React logo">
+  <docs-card header="Start with React" href="/docs/react/your-first-app" icon="/docs/assets/icons/logo-react-icon.png" alt="React logo">
     <p>A complete guide to get you up to speed with the basics of building Ionic apps with React.</p>
   </docs-card>
 
-  <docs-card class="disabled" header="Start with Vue (soon)" href="" icon="/docs/assets/icons/logo-vue-icon.png" icon-alt="Vue logo">
+  <docs-card class="disabled" header="Start with Vue (soon)" href="" icon="/docs/assets/icons/logo-vue-icon.png" alt="Vue logo">
     <p>A complete guide to get you up to speed with the basics of building Ionic apps with Vue.</p>
   </docs-card>
 </docs-cards>

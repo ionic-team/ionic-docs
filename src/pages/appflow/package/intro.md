@@ -14,15 +14,15 @@ Perfect for automating binary builds and for developers using Windows that want 
 ##### Helpful links
 
 <docs-cards>
-  <docs-card header="Build a Native Binary" href="/docs/appflow/quickstart/package" icon="/docs/assets/icons/guide-quickstart-icon.png" icon-alt="rocket flying icon">
+  <docs-card header="Build a Native Binary" href="/docs/appflow/quickstart/package" icon="/docs/assets/icons/guide-quickstart-icon.png" alt="rocket flying icon">
     <p>Build your very first Android debug build by following our quickstart guide.</p>
   </docs-card>
 
-  <docs-card header="Package FAQ" href="https://ionic.zendesk.com/hc/en-us/categories/360000410494-Package" icon="/docs/assets/icons/guide-faq-icon.png" icon-alt="purple lightbulb">
+  <docs-card header="Package FAQ" href="https://ionic.zendesk.com/hc/en-us/categories/360000410494-Package" icon="/docs/assets/icons/guide-faq-icon.png" alt="purple lightbulb">
     <p>Find answers to common questions about building native binaries</p>
   </docs-card>
 
-  <docs-card header="Managing Plugins using CocoaPods" href="https://ionic.zendesk.com/hc/en-us/articles/360010049673-Managing-plugins-using-CocoaPods-in-Ionic-Appflow-" icon="/docs/assets/icons/guide-faq-icon.png" icon-alt="purple lightbulb">
+  <docs-card header="Managing Plugins using CocoaPods" href="https://ionic.zendesk.com/hc/en-us/articles/360010049673-Managing-plugins-using-CocoaPods-in-Ionic-Appflow-" icon="/docs/assets/icons/guide-faq-icon.png" alt="purple lightbulb">
     <p>Learn about how you can resolve build issues related to plugins using CocoaPods.</p>
   </docs-card>
 

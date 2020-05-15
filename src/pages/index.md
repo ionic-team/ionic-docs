@@ -15,19 +15,19 @@ Ionic Framework is an open source UI toolkit for building performant, high-quali
 Get started building by <a href="/docs/intro/cli">installing Ionic</a> or following our <a href="/docs/intro/next#build-your-first-app">First App Tutorial</a> to learn the main concepts.
 
 <docs-cards>
-  <docs-card header="Installation Guide" href="/docs/intro/cli" icon="/docs/assets/icons/guide-installation-icon.svg" hover-icon="/docs/assets/icons/guide-installation-icon-hover.svg" icon-alt="downward facing arrow">
+  <docs-card header="Installation Guide" href="/docs/intro/cli" icon="/docs/assets/icons/guide-installation-icon.svg" hover-icon="/docs/assets/icons/guide-installation-icon-hover.svg" alt="downward facing arrow">
     <p>Step-by-step guides to setting up your system and installing the framework.</p>
   </docs-card>
 
-  <docs-card header="UI Components" href="/docs/components" icon="/docs/assets/icons/guide-components-icon.svg" hover-icon="/docs/assets/icons/guide-components-icon-hover.svg" icon-alt="triangle and circle overlapping">
+  <docs-card header="UI Components" href="/docs/components" icon="/docs/assets/icons/guide-components-icon.svg" hover-icon="/docs/assets/icons/guide-components-icon-hover.svg" alt="triangle and circle overlapping">
     <p>Dive into Ionic Framework's beautifully designed UI component library.</p>
   </docs-card>
 
-  <docs-card header="Native Functionality" href="/docs/native" icon="/docs/assets/icons/guide-native-icon.svg" hover-icon="/docs/assets/icons/guide-native-icon-hover.svg" icon-alt="square with surrounding marks, resembling a computer chip or integrated circuit">
+  <docs-card header="Native Functionality" href="/docs/native" icon="/docs/assets/icons/guide-native-icon.svg" hover-icon="/docs/assets/icons/guide-native-icon-hover.svg" alt="square with surrounding marks, resembling a computer chip or integrated circuit">
     <p>Integrate native device plugins, like Bluetooth, Maps, HealthKit, and more.</p>
   </docs-card>
 
-  <docs-card header="Theming" href="/docs/theming/basics" icon="/docs/assets/icons/guide-theming-icon.svg" hover-icon="/docs/assets/icons/guide-theming-icon-hover.svg" icon-alt="Paint bucket with liquid coming out">
+  <docs-card header="Theming" href="/docs/theming/basics" icon="/docs/assets/icons/guide-theming-icon.svg" hover-icon="/docs/assets/icons/guide-theming-icon-hover.svg" alt="Paint bucket with liquid coming out">
     <p>Learn to easily customize and modify your Ionic app's visual design to fit your brand.</p>
   </docs-card>
 </docs-cards>

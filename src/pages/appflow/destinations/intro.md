@@ -15,11 +15,11 @@ The feature is supported in builds created manually (via logging into the dashbo
 ##### Helpful links
 
 <docs-cards>
-  <docs-card header="Setup deploy to Apple App Store" href="/docs/appflow/destinations/apple" icon="/docs/assets/icons/guide-quickstart-icon.png" icon-alt="rocket flying icon">
+  <docs-card header="Setup deploy to Apple App Store" href="/docs/appflow/destinations/apple" icon="/docs/assets/icons/guide-quickstart-icon.png" alt="rocket flying icon">
     <p>Configure Appflow to deploy to the Apple App Store!</p>
   </docs-card>
 
-  <docs-card header="Setup deploy to Google Play Store" href="/docs/appflow/destinations/google" icon="/docs/assets/icons/guide-quickstart-icon.png" icon-alt="rocket flying icon">
+  <docs-card header="Setup deploy to Google Play Store" href="/docs/appflow/destinations/google" icon="/docs/assets/icons/guide-quickstart-icon.png" alt="rocket flying icon">
     <p>Configure Appflow to deploy to the Google Play Store!</p>
   </docs-card>
 

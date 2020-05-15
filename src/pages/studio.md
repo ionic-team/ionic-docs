@@ -14,7 +14,7 @@ fully supports bringing code back into the tool, something virtually unheard of 
 Studio is a desktop tool and requires a subscription, and is only for Ionic Angular 4.x+ projects. To get started, sign up below:
 
 <docs-cards class="static-width">
-  <docs-card header="Get Studio" href="https://ionicframework.com/studio?utm_source=docs&utm_medium=website&utm_campaign=studio%20launch" icon="/docs/assets/icons/guide-installation-icon.png" icon-alt="downward facing arrow, download icon">
+  <docs-card header="Get Studio" href="https://ionicframework.com/studio?utm_source=docs&utm_medium=website&utm_campaign=studio%20launch" icon="/docs/assets/icons/guide-installation-icon.png" alt="downward facing arrow, download icon">
     <p>Sign up for Studio and start building today.</p>
   </docs-card>
 
@@ -22,11 +22,11 @@ Studio is a desktop tool and requires a subscription, and is only for Ionic Angu
     <p>Get started by creating a new app and diving head-first into the suite of features offered by Ionic Studio.</p>
   </docs-card> -->
 
-  <docs-card header="News & Updates" icon="/docs/assets/icons/guide-news-icon.png" icon-alt="newspaper icon">
+  <docs-card header="News & Updates" icon="/docs/assets/icons/guide-news-icon.png" alt="newspaper icon">
     <p>Delivered within Studio as well as over email.</p>
   </docs-card>
 
-  <docs-card header="Studio FAQ" href="/docs/studio/faq" icon="/docs/assets/icons/guide-faq-icon.png"  icon-alt="purple lightbulb">
+  <docs-card header="Studio FAQ" href="/docs/studio/faq" icon="/docs/assets/icons/guide-faq-icon.png"  alt="purple lightbulb">
     <p>Find answers to common questions about Ionic Studio.</p>
   </docs-card>
 </docs-cards>

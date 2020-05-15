@@ -67,14 +67,13 @@ export namespace Components {
     'round': boolean;
   }
   interface DocsCard {
+    'alt': string;
     'header': string;
     'hoverIcon': string;
     'href': string;
     'icon': string;
-    'iconAlt': string;
     'iconset': string;
     'img': string;
-    'imgAlt': string;
     'ionicon': string;
     'size': 'md' | 'lg';
   }
@@ -107,10 +106,10 @@ export namespace Components {
     'onToggleClick': (e: Event) => void;
   }
   interface DocsItem {
+    'alt': string;
     'header': string;
     'href': string;
     'icon': string;
-    'iconAlt': string;
     'ionicon': string;
     'rounded': boolean;
   }
@@ -598,14 +597,13 @@ declare namespace LocalJSX {
     'round'?: boolean;
   }
   interface DocsCard {
+    'alt'?: string;
     'header'?: string;
     'hoverIcon'?: string;
     'href'?: string;
     'icon'?: string;
-    'iconAlt'?: string;
     'iconset'?: string;
     'img'?: string;
-    'imgAlt'?: string;
     'ionicon'?: string;
     'size'?: 'md' | 'lg';
   }
@@ -635,10 +633,10 @@ declare namespace LocalJSX {
     'onToggleClick'?: (e: Event) => void;
   }
   interface DocsItem {
+    'alt'?: string;
     'header'?: string;
     'href'?: string;
     'icon'?: string;
-    'iconAlt'?: string;
     'ionicon'?: string;
     'rounded'?: boolean;
   }

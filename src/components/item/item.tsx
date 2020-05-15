@@ -11,7 +11,7 @@ export class DocsItem {
   @Prop() icon: string;
   @Prop() ionicon: string;
   @Prop() rounded = false;
-  @Prop() iconAlt: string;
+  @Prop() alt: string;
 
   hostData() {
     return {
@@ -31,7 +31,7 @@ export class DocsItem {
     );
 
     const content = [
-      this.icon && <img src={this.icon} class="Item-icon" alt={this.iconAlt}/>,
+      this.icon && <img src={this.icon} class="Item-icon" alt={this.alt}/>,
       <div class="Item-container">
         { this.ionicon && <ion-icon name={this.ionicon} class="Item-ionicon"></ion-icon>}
         { header }
