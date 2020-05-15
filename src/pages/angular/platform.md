@@ -42,7 +42,7 @@ Depending on the platform the user is on, `is(platformName)` will return true or
 Below is a table listing all the possible `Platforms` values along with corresponding descriptions.
 
 | Platform Name | Description                              |
-|---------------|------------------------------------------|
+| ------------- | -------------------------------------    |
 | android       | a device running Android                 |
 | capacitor     | a device running Capacitor               |
 | cordova       | a device running Cordova                 |
@@ -53,7 +53,7 @@ Below is a table listing all the possible `Platforms` values along with correspo
 | ipad          | an iPad device                           |
 | iphone        | an iPhone device                         |
 | mobile        | a mobile device                          |
-| mobileweb     | a device running in a mobile web browser |
+| mobileweb     | a web browser running in a mobile device |
 | phablet       | a phablet device                         |
 | pwa           | a PWA app                                |
 | tablet        | a tablet device                          |
