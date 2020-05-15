@@ -31,36 +31,28 @@ In the above example, we are disabling the Material Design ripple effect across 
 Ionic Config can also be set on a per-platform basis. For example, this allows you to disable animations if the app is being run in a browser on a potentially slower device. Developers can take advantage of the Platform utilities to accomplish this.
 
 ```typescript
-import { getPlatforms, setupConfig } from '@ionic/react';
-
-const platforms = (typeof (window as any) !== 'undefined') ? getPlatforms(window) : [];
+import { isPlatform, setupConfig } from '@ionic/react';
 
 setupConfig({
-  animated: !platforms.includes('mobileweb')
+  animated: !isPlatform('mobileweb')
 });
 ```
 
-The `getPlatforms(window)` call returns an array of platform strings. See the [Platform Documentation](./platform#platforms) for a list of possible values.
+The `isPlatform()` call returns `true` or `false` based upon the platform that is based in. See the [Platform Documentation](./platform#platforms) for a list of possible values.
 
 In the example above, we are disabling all animations in our Ionic app only if the app is running in a mobile web browser. 
 
-> The `typeof (window as any) !== 'undefined'` check is needed to ensure that your application does not crash when using Server Side Rendering (SSR). If you are not using SSR you can safely remove this check.
-
 ```typescript
-import { getPlatforms, setupConfig } from '@ionic/react';
+import { isPlatform, setupConfig } from '@ionic/react';
 
-const platforms = (typeof (window as any) !== 'undefined') ? getPlatforms(window) : [];
 const getConfig = () => {
-  
-  // If running in Capacitor/Cordova
-  if (platforms.includes('hybrid')) {
+  if (isPlatform('hybrid')) {
     return {
       backButtonText: 'Previous',
       tabButtonLayout: 'label-hide'
     }
   }
   
-  // If not Capacitor/Cordova
   return {
     menuIcon: 'ellipsis-vertical'
   }
@@ -72,16 +64,15 @@ setupConfig(getConfig());
 This example allows you to set an entirely different configuration based upon the platform, falling back to a default config if no platforms match.
 
 ```typescript
-import { getPlatforms, setupConfig } from '@ionic/react';
+import { isPlatform, setupConfig } from '@ionic/react';
 
-const platforms = (typeof (window as any) !== 'undefined') ? getPlatforms(window) : [];
 const getConfig = () => {
   let config = {
     animated: false
   };
   
   // If running on an iPhone
-  if (platforms.includes('iphone')) {
+  if (isPlatform('iphone')) {
     config = {
       backButtonText: 'Previous',
       ...config

@@ -71,16 +71,14 @@ Ionic Config can also be set on a per-platform basis. For example, this allows y
 Since the config is set at runtime, you will not have access to the Platform Dependency Injection. Instead, you can use the underlying functions that it uses directly.
 
 ```typescript
-import { getPlatforms, IonicModule } from '@ionic/angular';
-
-const platforms = (typeof (window as any) !== 'undefined') ? getPlatforms(window) : [];
+import { isPlatform, IonicModule } from '@ionic/angular';
 
 @NgModule({
   ...
   imports: [
     BrowserModule,
     IonicModule.forRoot({
-      animated: !platforms.includes('mobileweb')
+      animated: !isPlatform('mobileweb')
     }),
     AppRoutingModule
   ],
@@ -88,27 +86,21 @@ const platforms = (typeof (window as any) !== 'undefined') ? getPlatforms(window
 })
 ```
 
-The `getPlatforms(window)` call returns an array of platform strings. See the [Platform Documentation](./platform#platforms) for a list of possible values.
+The `isPlatform()` call returns `true` or `false` based upon the platform that is based in. See the [Platform Documentation](./platform#platforms) for a list of possible values.
 
 In the example above, we are disabling all animations in our Ionic app only if the app is running in a mobile web browser. 
 
-> The `typeof (window as any) !== 'undefined'` check is needed to ensure that your application does not crash when using Server Side Rendering (SSR). If you are not using SSR you can safely remove this check.
-
 ```typescript
-import { getPlatforms, IonicModule } from '@ionic/angular';
+import { isPlatform, IonicModule } from '@ionic/angular';
 
-const platforms = (typeof (window as any) !== 'undefined') ? getPlatforms(window) : [];
 const getConfig = () => {
-  
-  // If running in Capacitor/Cordova
-  if (platforms.includes('hybrid')) {
+  if (isPlatform('hybrid')) {
     return {
       backButtonText: 'Previous',
       tabButtonLayout: 'label-hide'
     }
   }
   
-  // If not Capacitor/Cordova
   return {
     menuIcon: 'ellipsis-vertical'
   }
@@ -127,16 +119,15 @@ const getConfig = () => {
 This example allows you to set an entirely different configuration based upon the platform, falling back to a default config if no platforms match.
 
 ```typescript
-import { getPlatforms, IonicModule } from '@ionic/angular';
+import { isPlatform, IonicModule } from '@ionic/angular';
 
-const platforms = (typeof (window as any) !== 'undefined') ? getPlatforms(window) : [];
 const getConfig = () => {
   let config = {
     animated: false
   };
   
   // If running on an iPhone
-  if (platforms.includes('iphone')) {
+  if (isPlatform('iphone')) {
     config = {
       backButtonText: 'Previous',
       ...config
