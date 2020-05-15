@@ -41,21 +41,22 @@ Depending on the platform the user is on, `is(platformName)` will return true or
 
 Below is a table listing all the possible `Platforms` values along with corresponding descriptions.
 
-| Platform Name | Description                           |
-| ------------- | ------------------------------------- |
-| android       | a device running Android              |
-| capacitor     | a device running Capacitor            |
-| cordova       | a device running Cordova              |
-| desktop       | a desktop device                      |
-| electron      | a desktop device running Electron     |
-| hybrid        | a device running Capacitor or Cordova |
-| ios           | a device running iOS                  |
-| ipad          | an iPad device                        |
-| iphone        | an iPhone device                      |
-| mobile        | a mobile device                       |
-| phablet       | a phablet device                      |
-| pwa           | a PWA app                             |
-| tablet        | a tablet device                       |
+| Platform Name | Description                              |
+| ------------- | ---------------------------------------- |
+| android       | a device running Android                 |
+| capacitor     | a device running Capacitor               |
+| cordova       | a device running Cordova                 |
+| desktop       | a desktop device                         |
+| electron      | a desktop device running Electron        |
+| hybrid        | a device running Capacitor or Cordova    |
+| ios           | a device running iOS                     |
+| ipad          | an iPad device                           |
+| iphone        | an iPhone device                         |
+| mobile        | a mobile device                          |
+| mobileweb     | a web browser running in a mobile device |
+| phablet       | a phablet device                         |
+| pwa           | a PWA app                                |
+| tablet        | a tablet device                          |
 
 ### `platforms() => string[]`
 
