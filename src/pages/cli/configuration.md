@@ -72,7 +72,8 @@ The CLI can run scripts during certain events, such as before and after builds. 
 
 The capacitor hooks are executed after the `ionic:serve` and `ionic:build` hooks, they will only be executed when using the `ionic capacitor build` or the `ionic capacitor run` command. When using a shell script for any of the hooks, several environment variables are set containing context information.
 
-The following example, shows environment variables set for the `ionic:capacitor:build:before` hook.
+The following example shows the environment variables that are set for the `ionic:capacitor:run:before` and `ionic:capacitor:build:before` hooks.
+
 ```shell
 IONIC_CLI_HOOK_CTX_NAME=capacitor:build:before
 IONIC_CLI_HOOK_CTX_BUILD_CORDOVA_ASSETS=true
