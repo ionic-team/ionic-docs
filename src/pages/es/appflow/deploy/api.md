@@ -1,13 +1,13 @@
 ---
 title: Despliegue en Ionic
-previousText: 'Channels'
-previousUrl: '/docs/appflow/deploy/channels'
-nextText: 'Using Ionic CLI'
-nextUrl: '/docs/appflow/deploy/cli'
+previousText: 'Canales'
+previousUrl: '/docs/appflow/deploy/cli'
+nextText: 'Usando Ionic CLI'
+nextUrl: '/docs/appflow/deploy/api'
 ---
 
 
-## Installation and Usage
+## Instalación y Uso
 
 In order to use the Deploy API inside of your app. You need to install the latest version of the Appflow SDK and set the `UPDATE_METHOD` to `none`:
 
