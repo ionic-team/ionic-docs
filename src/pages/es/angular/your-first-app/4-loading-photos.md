@@ -1,6 +1,6 @@
 ---
 previousText: 'Guardando fotos en el sistema de archivos'
-previousUrl: '/docs/angular/your-first-app/3-saving-photos'
+previousUrl: '/docs/angular/your-first-app/3-loading-photos'
 nextText: 'Añadiendo soporte móvil'
 nextUrl: '/docs/angular/your-first-app/5-deploying-mobile'
 ---
@@ -11,7 +11,7 @@ Hemos implementado la toma de fotos y su guardado en el sistema de archivos. Fal
 
 Afortunadamente, esto es fácil: aprovecharemos la [API Storage ](https://capacitor.ionicframework.com/docs/apis/storage) de Capacitor para almacenar nuestro arreglo de fotos en un formato clave-valor.
 
-## API de almacenamiento
+## API Storage
 
 Comience definiendo una variable constante que actuará como la clave para el almacenamiento de las fotografias:
 
