@@ -34,7 +34,7 @@ public async addNewToGallery() {
 }
 ```
 
-Utilizaremos el Capacitor [Filesystem API](https://capacitor.ionicframework.com/docs/apis/filesystem) para guardar la foto en el sistema de archivos. Para empezar, convierte la foto en formato base64, luego envía los datos a la función `writeFile` de Filesystem. Como recordarás, mostramos cada foto en la pantalla configurando cada ruta origen de la imagen (atributo *src*) en *tab2.page.html* a la propiedad webviewPath. So, set it then return the new Photo object.
+Utilizaremos el Capacitor [Filesystem API](https://capacitor.ionicframework.com/docs/apis/filesystem) para guardar la foto en el sistema de archivos. Para empezar, convierte la foto en formato base64, luego envía los datos a la función `writeFile` de Filesystem. Como recordarás, mostramos cada foto en la pantalla configurando cada ruta origen de la imagen (atributo *src*) en *tab2.page.html* a la propiedad webviewPath. Entonces, configúrelo y luego devuelva el nuevo objeto Photo.
 
 ```typescript
 private async savePicture(cameraPhoto: CameraPhoto) {
@@ -58,7 +58,7 @@ private async savePicture(cameraPhoto: CameraPhoto) {
 }
 ```
 
-`readAsBase64()` is a helper function we’ll define next. It's useful to organize via a separate method since it requires a small amount of platform-specific (web vs. mobile) lógica - más sobre eso en un poco. For now, implement the logic for running on the web:
+`readAsBase64()` es una función ayudante que definiremos a continuación. It's useful to organize via a separate method since it requires a small amount of platform-specific (web vs. mobile) lógica - más sobre eso en un poco. For now, implement the logic for running on the web:
 
 ```typescript
 private async readAsBase64(cameraPhoto: CameraPhoto) {
