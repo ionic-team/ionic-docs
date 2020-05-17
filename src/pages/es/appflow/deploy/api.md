@@ -1,5 +1,5 @@
 ---
-title: Ionic Deploy
+title: Despliegue en Ionic
 previousText: 'Channels'
 previousUrl: '/docs/appflow/deploy/channels'
 nextText: 'Using Ionic CLI'
