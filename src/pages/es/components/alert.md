@@ -8,15 +8,15 @@ tableOfContents: false
 
 Las alertas son una excelente manera de ofrecer al usuario la posibilidad de elegir una acción específica o una lista de acciones. Las alertas pueden contener texto, entradas y botones. Pueden proporcionar al usuario información importante, o requerirle que tome una decisión (o múltiples decisiones). Las alertas solo deben utilizarse para acciones rápidas como la verificación de contraseñas, pequeñas notificaciones de aplicaciones o opciones rápidas.
 
-## Creating
+## Creando
 
-Alerts can be created using a [Alert Controller](../../alert-controller/AlertController). They can be customized by passing alert options in the alert controller's create method.
+Las alertas se pueden crear usando un [Controlador de alertas](../../alert-controller/AlertController). Se pueden personalizar pasando las opciones de alerta en el método de creación del controlador de alertas.
 
-## Buttons
+## Botones
 
-In the array of `buttons`, each button includes properties for its `text`, and optionally a `handler`. If a handler returns `false` then the alert will not automatically be dismissed when the button is clicked. All buttons will show up in the order they have been added to the `buttons` array from left to right. Note: The right most button (the last one in the array) is the main button.
+En la matriz de `buttons`, cada botón incluye propiedades para su `text`, y opcionalmente un `handler`. Si un manejador devuelve `false` entonces la alerta no se descartará automáticamente cuando se haga clic en el botón. Todos los botones se mostrarán en el orden en que se han añadido a la matriz `buttons` de izquierda a derecha. Nota: El botón en la extrema derecha (el último en la matriz) es el botón principal.
 
-Optionally, a `role` property can be added to a button, such as `cancel`. If a `cancel` role is on one of the buttons, then if the alert is dismissed by tapping the backdrop, then it will fire the handler from the button with a cancel role.
+Opcionalmente, una propiedad `role` puede ser añadida a un botón, como `cancel`. Si un rol `cancel` está en uno de los botones, entonces si la alerta se descarta tocando el fondo, entonces disparará el manejador desde el botón con un rol de cancelación.
 
 ## Inputs
 
