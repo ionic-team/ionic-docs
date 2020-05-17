@@ -24,7 +24,7 @@ export class PhotoService {
 }
 ```
 
-Luego, al final de la funcion `addNewToGallery`, hará una llamada a `Storage.set()` para guardar el arreglo de fotografias "photos". Al añadirlo aquí, en el arreglo Photos se almacenará cada foto que sea tomada con la camara. De esta manera, no importa cuando si el usuario cierra la aplicación o abre otra, todos las fotografias estarán guardadas en el arreglo Photos.
+Luego, al final de la funcion `addNewToGallery`, hará una llamada a `Storage.set()` para guardar el arreglo de fotografias "photos". Al agregarlo aquí, la matriz de Fotos se almacena cada vez que se toma una nueva foto. De esta forma, no importa cuando el usuario, cierre la app o se cambie a una app distinta todas las fotografias estan guardadas.
 
 ```typescript
 Storage.set({
@@ -40,7 +40,7 @@ Storage.set({
 });
 ```
 
-Con los datos del arreglo de fotos guardados, cree una función llamada `loadSaved()` que pueda recuperar esos datos. Utilizamos la misma clave para recuperar el array de fotos en formato JSON, luego analizarlo en una matriz:
+Con los datos del arreglo de fotos guardados, crearemos una función llamada `loadSaved()` que pueda recuperar esos datos. Utilizamos la misma clave para recuperar el array de fotos en formato JSON, luego analizarlo en una matriz:
 
 ```typescript
 public async loadSaved() {
