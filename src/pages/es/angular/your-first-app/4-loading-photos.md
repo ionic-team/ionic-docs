@@ -1,8 +1,8 @@
 ---
 previousText: 'Guardando fotos en el sistema de archivos'
 previousUrl: '/docs/angular/your-first-app/3-saving-photos'
-nextText: 'Adding Mobile'
-nextUrl: '/docs/angular/your-first-app/5-adding-mobile'
+nextText: 'Añadiendo soporte móvil'
+nextUrl: '/docs/angular/your-first-app/5-deploying-mobile'
 ---
 
 # Cargando fotos desde el sistema de archivos
