@@ -58,7 +58,7 @@ private async savePicture(cameraPhoto: CameraPhoto) {
 }
 ```
 
-`readAsBase64()` es una función ayudante que definiremos a continuación. It's useful to organize via a separate method since it requires a small amount of platform-specific (web vs. mobile) lógica - más sobre eso en un poco. For now, implement the logic for running on the web:
+`readAsBase64()` es una función ayudante que definiremos a continuación. It's useful to organize via a separate method since it requires a small amount of platform-specific (web vs. en breve profundizaremos de ello.  Por ahora, implementaremos la lógica para la plataforma web.
 
 ```typescript
 private async readAsBase64(cameraPhoto: CameraPhoto) {
