@@ -66,6 +66,24 @@ The CLI can run scripts during certain events, such as before and after builds. 
 * `ionic:serve:after`: executed after the dev server is terminated
 * `ionic:build:before`: executed before a web asset build begins
 * `ionic:build:after`: executed after a web asset build finishes
+* `ionic:capacitor:run:before` : executed on capacitor run before capacitor open is executed
+* `ionic:capacitor:build:before` : executed on capacitor build before capacitor open is executed
+
+The Capacitor hooks are executed after the `ionic:serve` and `ionic:build` hooks. They will only be executed when using the `ionic capacitor build` or `ionic capacitor run` commands. When using a shell script for any of the hooks, several environment variables are set containing context information.
+
+The following example shows the environment variables that are set for the `ionic:capacitor:run:before` and `ionic:capacitor:build:before` hooks.
+
+```shell
+IONIC_CLI_HOOK_CTX_NAME=capacitor:build:before
+IONIC_CLI_HOOK_CTX_BUILD_CORDOVA_ASSETS=true
+IONIC_CLI_HOOK_CTX_BUILD_ENGINE=browser
+IONIC_CLI_HOOK_CTX_BUILD_PROJECT=app
+IONIC_CLI_HOOK_CTX_BUILD_TYPE=angular
+IONIC_CLI_HOOK_CTX_BUILD_VERBOSE=false
+IONIC_CLI_HOOK_CTX_CAPACITOR_APP_ID=io.ionic.starter
+IONIC_CLI_HOOK_CTX_CAPACITOR_APP_NAME=ionic-starter-app
+IONIC_CLI_HOOK_CTX_CAPACITOR_VERBOSE=false
+```
 
 Hooks can also be defined in `ionic.config.json`. Define a `hooks` object within the project, where each key is the name of the hook (without the `ionic:` prefix), and the value is a path to a JavaScript file or an array of paths.
 
