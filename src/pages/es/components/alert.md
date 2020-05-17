@@ -6,7 +6,7 @@ tableOfContents: false
 
 # Alert
 
-Alerts are a great way to offer the user the ability to choose a specific action or list of actions. Alerts can include contain text, inputs and buttons. They can provide the user with important information, or require them to make a decision (or multiple decisions). Alerts should only be used for quick actions like password verification, small app notifications, or quick options.
+Las alertas son una excelente manera de ofrecer al usuario la posibilidad de elegir una acción específica o una lista de acciones. Las alertas pueden contener texto, entradas y botones. Pueden proporcionar al usuario información importante, o requerirle que tome una decisión (o múltiples decisiones). Las alertas solo deben utilizarse para acciones rápidas como la verificación de contraseñas, pequeñas notificaciones de aplicaciones o opciones rápidas.
 
 ## Creating
 
