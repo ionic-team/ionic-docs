@@ -58,7 +58,7 @@ private async savePicture(cameraPhoto: CameraPhoto) {
 }
 ```
 
-`readAsBase64()` es una función ayudante que definiremos a continuación. It's useful to organize via a separate method since it requires a small amount of platform-specific (web vs. en breve profundizaremos de ello.  Por ahora, implementaremos la lógica para la plataforma web.
+`readAsBase64()` es una función ayudante que definiremos a continuación. Es util organizar un método por separado, ya que requiere un poco de lógica especifica de la plataforma (web vs. mobile) -  en breve profundizaremos en ello.  Por ahora, implementaremos la lógica para la plataforma web.
 
 ```typescript
 private async readAsBase64(cameraPhoto: CameraPhoto) {
@@ -79,7 +79,7 @@ convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
 });
 ```
 
-Obtaining the camera photo as base64 format on the web appears to be a bit trickier than on mobile. In reality, we’re just using built-in web APIs: [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) as a neat way to read the file into blob format, then FileReader’s [readAsDataURL()](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL) to convert the photo blob to base64.
+Obtener la foto de la camara en formato base64, parece ser más complicado en web que en mobile. In reality, we’re just using built-in web APIs: [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) as a neat way to read the file into blob format, then FileReader’s [readAsDataURL()](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL) to convert the photo blob to base64.
 
 Finally, change the way pictures become visible in the template file `tab2.page.html`.
 
