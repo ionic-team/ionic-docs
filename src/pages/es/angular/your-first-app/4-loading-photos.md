@@ -7,9 +7,9 @@ nextUrl: '/docs/angular/your-first-app/5-adding-mobile'
 
 # Cargando fotos desde el sistema de archivos
 
-Hemos implementado la toma de fotos y guardarlas en el sistema de archivos. Falta una última pieza de funcionalidad: las fotos se almacenan en el sistema de archivos, pero necesitamos una forma de guardar punteros en cada archivo para que puedan mostrarse nuevamente en la galería de fotos.
+Hemos implementado la toma de fotos y su guardado en el sistema de archivos. Falta una última pieza de funcionalidad: las fotos se almacenan en el sistema de archivos, pero necesitamos una forma de guardar punteros en cada archivo para que puedan mostrarse nuevamente en la galería de fotos.
 
-Afortunadamente, esto es fácil: aprovecharemos la API de Capacitor Storage para almacenar nuestra variedad de fotos en una tienda de valor clave.
+Afortunadamente, esto es fácil: aprovecharemos la [API Storage ](https://capacitor.ionicframework.com/docs/apis/storage) de Capacitor para almacenar nuestro arreglo de fotos en un formato clave-valor.
 
 ## API de almacenamiento
 
@@ -24,7 +24,7 @@ export class PhotoService {
 }
 ```
 
-Luego, al final de la funcion `addNewToGallery`, hará una llamada a `Storage.set()` para salvar las fotografias en el arreglo Photos. Al añadirlo aquí, en el arreglo Photos se almacenará cada foto que sea tomada con la camara. De esta manera, no importa cuando si el usuario cierra la aplicación o abre otra, todos las fotografias estarán guardadas en el arreglo Photos.
+Luego, al final de la funcion `addNewToGallery`, hará una llamada a `Storage.set()` para guardar el arreglo de fotografias "photos". Al añadirlo aquí, en el arreglo Photos se almacenará cada foto que sea tomada con la camara. De esta manera, no importa cuando si el usuario cierra la aplicación o abre otra, todos las fotografias estarán guardadas en el arreglo Photos.
 
 ```typescript
 Storage.set({
