@@ -1,14 +1,14 @@
 * * *
 
-tableOfContents: false
+table-contenido: falso
 
 * * *
 
-# Action Sheet
+# Hoja de acción
 
-An Action Sheet is a dialog that displays a set of options. It appears on top of the app's content, and must be manually dismissed by the user before they can resume interaction with the app. There are multiple ways to dismiss the action sheet, including tapping the backdrop or hitting the escape key on desktop. <mark>Action Sheets should not be used for navigation.</mark>
+Una hoja de acción es un cuadro de diálogo que muestra un conjunto de opciones. Aparece en la parte superior del contenido de la aplicación, y el usuario debe descartar manualmente antes de que pueda reanudar la interacción con la aplicación. Hay varias maneras de descartar la hoja de acción, incluyendo tocar el fondo o pulsar la tecla de escape en el escritorio. <mark>Las hojas de acción no deben utilizarse para la navegación.</mark>
 
-## Basic Usage
+## Uso básico
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed lacus eu purus viverra egestas. Nunc porta, elit ut finibus gravida, dui orci feugiat leo, tincidunt fermentum urna eros vel elit. Phasellus convallis, tellus eu volutpat facilisis, ipsum mauris luctus diam, sodales tincidunt quam turpis at leo.
 
