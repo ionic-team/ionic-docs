@@ -128,7 +128,6 @@ const getConfig = () => {
     animated: false
   };
   
-  // If running on an iPhone
   if (isPlatform('iphone')) {
     config = {
       backButtonText: 'Previous',
