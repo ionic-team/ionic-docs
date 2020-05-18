@@ -30,7 +30,7 @@
     "moment": "^2.24.0",
     "prismic-dom": "^2.1.0",
     "prismic-javascript": "^2.1.5",
-    "simple-git": "^1.126.0",
+    "simple-git": "^2.5.0",
     "throng": "^4.0.0"
   },
   "devDependencies": {
