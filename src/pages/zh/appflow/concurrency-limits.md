@@ -4,12 +4,12 @@
 
 当您触发构建时，在Appflow Dashboard 将会注意到，构建在处理之前可能有不同的状态：
 
-* **Queued**：这意味着您的构建将排队等待下一个可用的运行程序。 Usually your build should not be in this state for more than few seconds.
-* **Pending**: this means that you have reached your concurrent build limit and your build will continue when your current builds are completed.
+* **Queued**：这意味着您的构建将排队等待下一个可用的运行程序。 通常您的构建不应该处于此状态时间超过几秒。
+* **Pending**：这意味着您已达到了您的同时建造限制，当您当前版本完成时，你的构建将会继续。
 
-After the build starts to be processed the statuses are:
+在构建开始处理后，状态为：
 
-* **Running**: the build is currently being processed. You can read the logs in the build details.
+* **Running**：正在处理构建。 您可以在构建细节中读取日志。
 * **Successful**: the build terminated in a correct state.
 * **Failed**: the build terminated in an incorrect state.
 
