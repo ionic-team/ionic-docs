@@ -1,19 +1,19 @@
 ---
-previousText: 'Deploying Mobile'
-previousUrl: '/docs/react/your-first-app/6-deploying-mobile'
-nextText: 'Lifecycle'
+previousText: '部署移动应用'
+previousUrl: '/docs/react/your-first app/6-depling-mobile'
+nextText: '生命周期'
 nextUrl: '/docs/react/lifecycle'
 ---
 
-# Rapid App Development with Live Reload
+# 利用实时重载进行应用的快速开发
 
-So far, we’ve seen how easy it is to develop a cross-platform app that works everywhere. The development experience is pretty quick, but what if I told you there was a way to go faster?
+到目前为止，我们看到开发一个在任何地方都能运行的跨平台应用程序是多么容易。 开发过程十分迅速，不过接下来我要介绍一种能让开发变得更快的方式。
 
-We can use the Ionic CLI’s [Live Reload functionality](https://ionicframework.com/docs/cli/livereload) to boost our productivity when building Ionic apps. When active, Live Reload will reload the browser and/or WebView when changes in the app are detected.
+我们可以使用 Ionic CLI 的 [实时重新加载功能](https://ionicframework.com/docs/cli/livereload) 来提高我们在构建Ion应用程序时的生产率。 当激活时，当检测到应用程序中的更改时，实时重新加载将重新加载浏览器和/或WebView。
 
-## Live Reload
+## 实时重载
 
-Remember `ionic serve`? That was Live Reload working in the browser, allowing us to iterate quickly.
+还记得`ionic serve`这条命令吗？ 它可以让实时重载在浏览器中运行，使得我们可以对代码进行快速迭代。
 
 We can also use it when developing on iOS and Android devices. This is particularly useful when writing code that interacts with native plugins. Since we need to run native plugin code on a device in order to verify that it works, having a way to quickly write code, build and deploy it, then test it is crucial to keeping up our development speed.
 
