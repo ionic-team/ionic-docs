@@ -1508,6 +1508,8 @@ The options passed the the [IonicNativeAuthPlugin](#ionicnativeauthplugin) when 
 
 If biometric auth fails, allow system pin fallback.
 
+Please note: when Android devices are set to allow system pin fallback, the behavior of the biometrics prompt changes. The OS biometric prompt will not report that biometrics failed nor that the user has been locked out of biometrics. It is only currently possible to know the user either canceled the authentication prompt, or was successful in verifying.
+
 *__default__*: false
 
 ___
