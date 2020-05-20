@@ -130,8 +130,8 @@ const getConfig = () => {
   
   if (isPlatform('iphone')) {
     config = {
-      backButtonText: 'Previous',
-      ...config
+      ...config,
+      backButtonText: 'Previous'
     }
   }
   
