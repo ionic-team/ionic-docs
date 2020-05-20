@@ -9,19 +9,15 @@ nextUrl: '/docs/react/platform'
 
 Ionic Config provides a way to change the properties of components globally across an app. It can set the app mode, tab button layout, animations, and more.
 
-## Usage
+## Global Config
 
-To override the initial Ionic config for the app, import the `setupConfig` method from `@ionic/react` and call it before you render any Ionic components:
+To override the initial Ionic config for the app, import the `setupConfig` method from `@ionic/react`, and call it before you render any Ionic components (including `IonApp`).
 
 ```typescript
 setupConfig({
   rippleEffect: false,
   mode: 'md'
 });
-
-<IonApp>
-  // more components
-</IonApp>
 ```
 
 In the above example, we are disabling the Material Design ripple effect across the app, as well as forcing the mode to be Material Design.
