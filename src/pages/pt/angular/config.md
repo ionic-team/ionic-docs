@@ -77,12 +77,12 @@ Abaixo está uma lista das opções de configuração que o Ionic usa.
 | `actionSheetLeave`       | `AnimationBuilder` | Fornece uma animação customizada para todos os `ion-action-sheet`, substituindo o padrão "animation".    |
 | `alertEnter`             | `AnimationBuilder` | Fornece uma animação customizada para todos os `ion-action-sheet`, substituindo o padrão "animation".    |
 | `alertLeave`             | `AnimationBuilder` | Fornece uma animação customizada para todos os `ion-action-sheet`, substituindo o padrão "animation".    |
-| `animated`               | `boolean`          | If `true`, Ionic will enable all animations and transitions across the app.                              |
-| `backButtonIcon`         | `string`           | Overrides the default icon in all `<ion-back-button>` components.                                  |
-| `backButtonText`         | `string`           | Overrides the default text in all `<ion-back-button>` components.                                  |
-| `hardwareBackButton`     | `boolean`          | If `true`, Ionic will respond to the hardware back button in an Android device.                          |
-| `infiniteLoadingSpinner` | `SpinnerTypes`     | Overrides the default spinner type in all `<ion-infinite-scroll-content>` components.              |
-| `loadingEnter`           | `AnimationBuilder` | Provides a custom enter animation for all `ion-loading`, overriding the default "animation".             |
+| `animated`               | `boolean`          | Se `true`, o Ionic habilitará todas as animações e transições no aplicativo.                             |
+| `backButtonIcon`         | `string`           | Sobrepõe o ícone padrão em todos os componentes `<ion-back-button>`.                               |
+| `backButtonText`         | `string`           | Sobrepõe o texto padrão em todos os componentes `<ion-back-button>`.                               |
+| `hardwareBackButton`     | `boolean`          | Se `true`, o Ionic responderá ao botão Voltar para o hardware em um dispositivo Android.                 |
+| `infiniteLoadingSpinner` | `SpinnerTypes`     | Substitui o tipo padrão spinner em todos os componentes `<ion-infinite-scroll-content>`.           |
+| `loadingEnter`           | `AnimationBuilder` | Fornece uma animação customizada para todos os `ion-action-sheet`, substituindo o padrão "animation".    |
 | `loadingLeave`           | `AnimationBuilder` | Provides a custom leave animation for all `ion-loading`, overriding the default "animation".             |
 | `loadingSpinner`         | `SpinnerTypes`     | Overrides the default spinner for all `ion-loading` overlays.                                            |
 | `menuIcon`               | `string`           | Overrides the default icon in all `<ion-menu-button>` components.                                  |
