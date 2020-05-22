@@ -2,17 +2,17 @@
 previousText: 'Navegação/Rota'
 previousUrl: '/docs/angular/navegação'
 nextText: 'Plataforma'
-nextUrl: '/docs/angular/platform'
+nextUrl: '/docs/angular/plataforma'
 contributors:
   - liamdebeasi
   - mhartington
 ---
 
-# Config
+# Configuração
 
-Ionic Config provides a way to change the properties of components globally across an app. It can set the app mode, tab button layout, animations, and more.
+A Configuração do Ionic fornece uma maneira de alterar as propriedades dos componentes globalmente através de um aplicativo. Isto pode definir o modo de aplicativo, guia o layout do botão, animações e muito mais.
 
-## Usage
+## Utilização
 
 ### Global
 
