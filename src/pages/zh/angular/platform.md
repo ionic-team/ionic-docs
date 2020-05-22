@@ -37,26 +37,26 @@ export class MyPage {
 | -------------- | ----------- | ----------------------------------------------------------------------------------------------------------------- |
 | `platformName` | `Platforms` | 平台名称， 可选项有android, capacitor, cordova, desktop, electron, hybrid, ios, ipad, iphone, mobile, phablet, pwa, tablet |
 
-#### Platforms
+#### 平台
 
 以下表格列举了`Platforms`可选项以及对应描述。
 
-| 平台名称      | 描述                                       |
-| --------- | ---------------------------------------- |
-| android   | 设备运行在Android                             |
-| capacitor | 设备运行在Capacitor                           |
-| cordova   | 设备运行在Cordova                             |
-| desktop   | 设备运行在桌面端                                 |
-| electron  | 设备运行在Electron                            |
-| hybrid    | 设备运行在Capacitor或Cordova                   |
-| ios       | 设备运行在iOS                                 |
-| ipad      | iPad设备                                   |
-| iphone    | iPhone设备                                 |
-| mobile    | 移动设备                                     |
-| mobileweb | a web browser running in a mobile device |
-| phablet   | a phablet device                         |
-| pwa       | a PWA app                                |
-| tablet    | a tablet device                          |
+| 平台名称      | 描述                     |
+| --------- | ---------------------- |
+| android   | 设备运行在Android           |
+| capacitor | 设备运行在Capacitor         |
+| cordova   | 设备运行在Cordova           |
+| desktop   | 设备运行在桌面端               |
+| electron  | 设备运行在Electron          |
+| hybrid    | 设备运行在Capacitor或Cordova |
+| ios       | 设备运行在iOS               |
+| ipad      | iPad设备                 |
+| iphone    | iPhone设备               |
+| mobile    | 移动设备                   |
+| mobileweb | 在移动设备上运行的 web 浏览器      |
+| phablet   | 平板设备                   |
+| pwa       | 渐进式应用                  |
+| tablet    | 平板电脑设备                 |
 
 ### `platforms() => string[]`
 
@@ -66,27 +66,27 @@ export class MyPage {
 
 当平台准备就绪并且原生功能可以被调用的时候，会返回一个promise。 如果应用是运行在web浏览器的时候，那么当DOM准备就绪的时候，promise就会解析。 当应用运行在例如Cordova这样的引擎的时候，promise会在Cordova触发`deviceready`事件的时候解析。 解析的结果是`readySource`，代表正在使用的平台。
 
-例如，当Cordova准备就绪时，解析出来的结果是`cordova`， 默认值是`dom`。 如果应用某些逻辑需要根据平台差异而不同，`readySource`是有作用的。 For example, only Capacitor and Cordova can execute the status bar plugin, so the web should not run status bar plugin logic.
+例如，当Cordova准备就绪时，解析出来的结果是`cordova`， 默认值是`dom`。 如果应用某些逻辑需要根据平台差异而不同，`readySource`是有作用的。 例如，只有Capacitor 和 Cordova 可以执行状态栏插件，所以web不应该运行状态栏插件逻辑。
 
 ### `isRTL() => boolean`
 
-Returns if this app is using right-to-left language direction or not. We recommend the app's `index.html` file already has the correct `dir` attribute value set, such as `<html dir="ltr">` or `<html dir="rtl">`. [W3C: Structural markup and right-to-left text in HTML](http://www.w3.org/International/questions/qa-html-dir)
+返回此应用程序是否使用右向左语言方向。 我们建议应用程序的`index.html`文件已经设置了正确的`dir`属性值，例如`<html dir="ltr">`或`<html dir="rtl">`。 [ W3C：HTML中的结构标记和从右到左的文本](http://www.w3.org/International/questions/qa-html-dir)
 
 ### `isLandscape() => boolean`
 
-Returns `true` if the app is in landscape mode.
+如果应用程序处于横屏模式下，返回 `true`。
 
 ### `isPortrait() => boolean`
 
-Returns `true` if the app is in portrait mode.
+如果应用程序处于竖屏模式下，返回 `true`。
 
 ### `width() => number`
 
-Gets the width of the platform's viewport using `window.innerWidth`.
+使用 `window.innerWidth` 获取平台视图的宽度。
 
 ### `height() => number`
 
-Gets the height of the platform's viewport using `window.innerHeight`.
+使用 `window.innerhight` 获取平台视图的高度。
 
 ### `url() => string`
 
@@ -96,18 +96,18 @@ Get the current url.
 
 Returns `true` if the expression is included in the user agent string.
 
-### Parameters
-| Name       | Type   | Description                           |
-| ---------- | ------ | ------------------------------------- |
-| expression | string | The string to check in the user agent |
+### 参数
+| 名称         | 类型     | 描述           |
+| ---------- | ------ | ------------ |
+| expression | string | 在用户代理中检查的字符串 |
 
-## Events
+## 事件
 
 ### `pause`
 
-The `pause` event emits when the native platform puts the application into the background, typically when the user switches to a different application. This event emits when a Cordova/Capacitor app is put into the background but doesn't fire in a standard web browser.
+`pause` 事件在本地平台将应用程序置于后台时会发出，通常当用户切换到另一个应用程序时。 当将Cordova/Capacitor应用程序置于后台但在标准Web浏览器中不触发时，将触发此事件。
 
-#### Usage
+#### 用法
 
 ```typescript
 this.platform.pause.subscribe(async () => {
@@ -117,9 +117,9 @@ this.platform.pause.subscribe(async () => {
 
 ### `resize`
 
-The `resize` event emits when the browser window has changed dimensions. This could be from a browser window being physically resized, or from a device changing orientation.
+当浏览器窗口更改尺寸时，会发出`resize`事件。 这可以是从正在调整的浏览器窗口大小，也可以是改变方向的设备。
 
-#### Usage
+#### 用法
 
 ```typescript
 this.platform.resize.subscribe(async () => {
@@ -129,9 +129,9 @@ this.platform.resize.subscribe(async () => {
 
 ### `resume`
 
-The `resume` event fires when the native platform pulls the application out from the background. This event emits when a Cordova/Capacitor app comes out from the background but doesn't fire in a standard web browser.
+当本机平台从后台拉出应用时，将触发 `resume` 事件。 当将Cordova/Capacitor应用程序置于后台但在标准Web浏览器中不触发时，将触发此事件。
 
-#### Usage
+#### 用法
 
 ```typescript
 this.platform.resume.subscribe(async () => {
