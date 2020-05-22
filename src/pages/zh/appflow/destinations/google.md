@@ -24,13 +24,13 @@ Google Play 目的地允许您上传您已完成的二进制文件到Android商�
         3. 点击**`创建服务账户`**
         4. 在对话框中导航到**Google 开发者控制台**链接，打开一个新标签/窗口：
             1. 点击**创建服务**按钮**谷歌开发者控制台**
-            2. Enter a `Service account name`
-            3. Click **Select a role** and choose **Service Accounts > Service Account User**
-            4. Check the **Furnish a new private key** checkbox
-            5. Make sure **JSON** is selected as the `Key type`
-            6. Click **SAVE** to close the dialog
-            7. Download the JSON file to your computer
-        5. Back on the **Google Play Console**, click **DONE** to close the dialog
-        6. Click on **Grant Access** for the newly added service account
-        7. Choose **Release Manager** (or **Project Lead**) from the `Role` dropdown. (Note that choosing **Release Manager** grants access to the production track and all other tracks. Choosing **Project Lead** grants access to update all tracks *except* the production track.)
-        8. Click **ADD USER** to close the dialog
+            2. 输入`服务账户名称`
+            3. 点击**选择一个角色**并选择**服务账户 > 服务账户**
+            4. 检查**为一个新的私钥**复选框
+            5. 请确认**JSON**被选为`密钥类型`
+            6. 点击**保存**关闭对话框
+            7. 下载JSON文件到您的计算机
+        5. 返回**Google Play 控制台**，点击**下载**关闭对话框
+        6. 点击新添加的服务帐户的**授予访问**
+        7. 选择**发行管理器**(或**Project Leader**)，从`角色`下拉菜单。 (请注意，选择**发布管理器**允许访问生产轨迹和所有其他轨迹。 选择<strong x-id =“ 1”>项目负责人</strong>将授予更新所有轨道<em x-id =“ 3”>除</em>生产轨道的访问权限。）
+        8. 点击**添加用户**关闭对话框
