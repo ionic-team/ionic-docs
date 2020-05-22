@@ -1,8 +1,8 @@
 ---
-previousText: 'Adding Mobile'
-previousUrl: '/docs/angular/your-first-app/5-adding-mobile'
-nextText: 'Rapid App Dev with Live Reload'
-nextUrl: '/docs/angular/your-first-app/7-live-reload'
+previousText: '添加移动版'
+previousUrl: '/docs/angular/your-first app/5-adding-mobile'
+nextText: '使用实时重载快速开发应用程序'
+nextUrl: '/docs/angular/your-firstapp/7-live-reload'
 ---
 
 # Deploying to iOS and Android
