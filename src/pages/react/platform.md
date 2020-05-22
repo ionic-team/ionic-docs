@@ -33,7 +33,7 @@ Depending on what device you are on, `getPlatforms` can return multiple values. 
 
 ## Platforms
 
-Below is a table listing all the possible `Platforms` values along with corresponding descriptions.
+Below is a table listing all the possible platform values along with corresponding descriptions.
 
 | Platform Name | Description                              |
 |---------------|------------------------------------------|
