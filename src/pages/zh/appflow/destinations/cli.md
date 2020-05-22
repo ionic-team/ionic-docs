@@ -1,6 +1,6 @@
 ---
-title: 'Command-line Deploy'
-previousText: 'Builds/Automations'
+title: '命令行部署'
+previousText: '编译/自动化'
 previousUrl: '/docs/appflow/destinations/builds'
 nextText: 'Manual'
 nextUrl: '/docs/appflow/destinations/manual'
