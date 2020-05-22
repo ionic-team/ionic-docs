@@ -58,25 +58,25 @@ import { createAnimation, IonicModule } from '@ionic/angular';
 })
 ```
 
-Isto definirá o texto padrão para o `ion-back-button` para `Go Back`. However, if you were to change the value of the `backButtonText` config to `Do Not Go Back`, the `ion-back-button` default text would still default to `Go Back` as the component has already been initialized and rendered. Instead, it is recommended to use the `text` property on `ion-back-button`.
+Isto definirá o texto padrão para o `ion-back-button` para `Go Back`. No entanto, se você alterar o valor da configuração do `backButtonText` para `Não Volte`, o `ion-back-button` o texto padrão ainda será `Go Back` como o componente já foi inicializado e renderizado. Em vez disso, é recomendado usar o `text` em propriedade do `ion-back-button`.
 
 ```html
 <ion-back-button [text]="getBackButtonText()"></ion-back-button>
 ```
 
-In this example we have used our `ion-back-button` in such a way that the text can be dynamically updated if there were to be a change that warranted it, such as a language or locale change. The `getBackButtonText` method would be responsible for returning the correct text.
+Neste exemplo nós usamos nosso `ion-back-button` de tal forma que o texto pode ser atualizado dinamicamente se houver uma mudança que mereça ser feita tais como uma mudança de idioma ou de localidade. O método `getBackButtonText` seria responsável por retornar o texto correto.
 
 
-## Config Options
+## Opções de configuração
 
-Below is a list of config options that Ionic uses.
+Abaixo está uma lista das opções de configuração que o Ionic usa.
 
-| Config                   | Type               | Description                                                                                              |
+| Configuração             | Tipo               | Descrição                                                                                                |
 | ------------------------ | ------------------ | -------------------------------------------------------------------------------------------------------- |
-| `actionSheetEnter`       | `AnimationBuilder` | Provides a custom enter animation for all `ion-action-sheet`, overriding the default "animation".        |
-| `actionSheetLeave`       | `AnimationBuilder` | Provides a custom leave animation for all `ion-action-sheet`, overriding the default "animation".        |
-| `alertEnter`             | `AnimationBuilder` | Provides a custom enter animation for all `ion-alert`, overriding the default "animation".               |
-| `alertLeave`             | `AnimationBuilder` | Provides a custom leave animation for all `ion-alert`, overriding the default "animation".               |
+| `actionSheetEnter`       | `AnimationBuilder` | Fornece uma animação customizada para todos os `ion-action-sheet`, substituindo o padrão "animation".    |
+| `actionSheetLeave`       | `AnimationBuilder` | Fornece uma animação customizada para todos os `ion-action-sheet`, substituindo o padrão "animation".    |
+| `alertEnter`             | `AnimationBuilder` | Fornece uma animação customizada para todos os `ion-action-sheet`, substituindo o padrão "animation".    |
+| `alertLeave`             | `AnimationBuilder` | Fornece uma animação customizada para todos os `ion-action-sheet`, substituindo o padrão "animation".    |
 | `animated`               | `boolean`          | If `true`, Ionic will enable all animations and transitions across the app.                              |
 | `backButtonIcon`         | `string`           | Overrides the default icon in all `<ion-back-button>` components.                                  |
 | `backButtonText`         | `string`           | Overrides the default text in all `<ion-back-button>` components.                                  |
