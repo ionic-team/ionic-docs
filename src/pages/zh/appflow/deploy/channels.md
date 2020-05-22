@@ -16,13 +16,13 @@ Channel指向应用程序的特定部署构建，该构建将与任何配置为�
 
 常见的用例是将**Production** Channel 用于App Store二进制文件，并使用** Master ** Channel 是在开发过程中自动在手机上运行本机二进制文件。
 
-Once you've set up a Channel, just click **Install Instructions** next to that Channel and it will walk you through the options available and generate the Command Line command that you should run.
+设置频道后，只需单击该频道旁边的**安装说明**，它将引导您完成可用的选项并生成应运行的命令行命令。
 
-要创建这两个以上的新channel，必须拥有付费的Ionic Appflow成员资格。 To add new channels, simply view the channels list by going to Deploy -> Destinations, and then click the `New destination` button.
+要创建这两个以上的新channel，必须拥有付费的Ionic Appflow成员资格。 要添加新频道，只需前往部署 -> 目标来查看频道列表，然后点击 `New destination` 按钮。
 
 ## 构建Channel
 
-Once you have created a Channel, go back to the **Builds** section of your app. On the right side of each Build, you'll see a "Deploy live updates" button.
+创建频道后，请返回到应用的**Builds**部分。 在每个内部版本的右侧，您将看到一个"Deploy live updates"按钮。
 
 ![构建Channel](/docs/assets/img/appflow/assign-to-channel.png)
 
