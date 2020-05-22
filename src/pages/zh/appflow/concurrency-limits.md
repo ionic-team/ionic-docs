@@ -10,7 +10,7 @@
 在构建开始处理后，状态为：
 
 * **Running**：正在处理构建。 您可以在构建细节中读取日志。
-* **Successful**: the build terminated in a correct state.
-* **Failed**: the build terminated in an incorrect state.
+* **Successful**：构建以正确的状态终止。
+* **失败**：构建以不正确的状态终止。
 
-More concurrent builds can be added to your plan. If you have a Starter or Developer plan, you can get more builds by [upgrading plan](https://dashboard.ionicframework.com/settings/billing). If you have a Teams or Business plan, please [contact us](https://ionic.zendesk.com/hc/en-us/requests/new).
+可以将更多并行构建添加到您的计划。 如果您有一个启动者或开发者计划，您可以通过[升级计划](https://dashboard.ionicframework.com/settings/billing)获得更多构建。 如果您有团队或业务计划，请[联系我们](https://ionic.zendesk.com/hc/en-us/requests/new)。
