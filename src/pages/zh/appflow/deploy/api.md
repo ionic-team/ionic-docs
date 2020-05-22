@@ -2,7 +2,7 @@
 title: Ionic部署
 previousText: '频道'
 previousUrl: '/docs/appflow/sport/screcisions'
-nextText: 'Using Ionic CLI'
+nextText: '使用 Ionic CLI'
 nextUrl: '/docs/appflow/deploy/cli'
 ---
 
@@ -962,7 +962,7 @@ add` 命令) 或使用 cordova 变量 (如果使用 `ionic cordova plugin add`)�
 ### Channel Name
 
 * **必需**
-* The channel name is required to receive updates for an app in the Appflow dashboard and indicates the channel from which the device will receive updates. 注意，对于高级用例，也可以在运行时以编程方式进行更新。
+* 频道名称必需填写才能在 Appflow 控制面板中接收应用程序的更新，并指明设备将从哪个频道接收更新。 注意，对于高级用例，也可以在运行时以编程方式进行更新。
 * `ionic deploy add --channel-name=Production`
 * `ionic cordova plugin add cordova-plugin-ionic --variable CHANNEL_NAME=Production`
 
