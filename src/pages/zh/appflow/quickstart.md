@@ -1,8 +1,8 @@
 ---
-title: 'Quickstart'
-previousText: 'Welcome'
+title: '快速入门'
+previousText: '欢迎使用'
 previousUrl: '/docs/appflow'
-nextText: 'Connect Your Repo'
+nextText: '连接你的仓库'
 nextUrl: '/docs/appflow/quickstart/connect'
 tableOfContents: false
 ---
