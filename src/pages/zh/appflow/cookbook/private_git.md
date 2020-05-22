@@ -1,11 +1,11 @@
 ---
-previousText: "Migrating from PhoneGap Build"
+previousText: "从 PhoneGap 构建迁移"
 previousUrl: "/docs/appflow/cookbook/phonegap-build-migration"
 nextText: "使用私有 NPM 模块"
 nextUrl: "/docs/appflow/cookbook/private_npm_modules"
 ---
 
-# 使用 GIT 私人仓库
+# 使用 GIT 私有仓库
 
 在构建过程中，可能需要访问其他包含libraries的私有存储库。
 
@@ -27,7 +27,7 @@ bitbucket看起来像这样：
     https://<username>:<token>@bitbucket.org
     
 
-`用户名` 是创建令牌帐户的用户名。
+`username` 是创建令牌帐户的用户名。
 
 最后在 [环境中添加一个密码](/docs/appflow/environments/#custom-environments)，密钥叫 `GIT_CREDINSTL` ，并且使用之前创建的url。
 
