@@ -16,41 +16,41 @@ meta:
 
 ## 迁移摘要
 
-- Appflow is Ionic’s mobile DevOps service that helps development teams build, ship, and manage their iOS, Android and web apps. Featuring continuous native builds, live app deploys, 1-click deploy to App Stores, and CI/CD automation.
-- PhoneGap/Cordova apps written in jQuery Mobile, Framework 7, Sencha, KendoUI, or even your own custom solution can be migrated. <strong>An existing Ionic app is not required.</strong>
-- Ionic has [Advisory services](https://ionicframework.com/advisory) available if you need migration assistance.
+- Appflow是Ionic的移动DevOps服务，可帮助开发团队构建，发布和管理其iOS，Android和Web应用程序。 具有连续的本机版本，实时应用程序部署，一键式部署到App Store和CI/CD自动化的功能。
+- PhoneGap/Cordova 应用程序以 jQuery Mobile, Framework 7, Sencha, KendoUI, 或者甚至您自己的自定义解决方案都可以迁移。 <strong>不需要现有的Ionic应用程序。</strong>
+- 如果您需要迁移援助，Ionic提供[咨询服务](https://ionicframework.com/advisory)
 
-## About PhoneGap Build
+## 关于 PhoneGap 版本
 
-One of the challenges when developing a PhoneGap/Cordova based application is that in order for you to create native applications for iOS and Android using your web application, you also need to install all the same tooling that traditional mobile developers need. For example, if you want to create an iOS application, you have to download and install Xcode, assuming you have a Macintosh to run it on. If you are also planning to create an Android version of your application, then not only are you installing Android Studio but the Java SDK, as well as other tools. The challenge of learning and using these complex IDEs, making sure they are properly configured (and updated) can be daunting.
+开发基于 PhoneGap/Cordova 的应用程序时遇到的挑战之一是，为了让您使用您的 web 应用程序为iOS 和 Android 创建本机应用程序。 您还需要安装所有与传统移动开发者相同的工具。 例如，如果您想要创建 iOS 应用程序 您必须下载并安装 Xcode ，假定您有一个Mac电脑来运行它。 如果您也在计划创建您的应用程序的 Android 版本， 然后您不仅安装了 Android Studio ，而且安装 Java SDK 以及其他工具。 学习和使用这些复杂的注重成果的企业，确保它们得到适当的配置(和更新)，可能是一项艰巨的挑战。
 
-This challenge of installation, configuration and running these tools was one of the reasons back in 2012 that Adobe introduced a new service known as PhoneGap Build. This cloud-hosted platform allows users to simply zip their web application, include an xml file that defines various application elements, like icons and splash screens, and have it compile and create native applications. While it did not give the same level of controls as building locally, for many this was a great solution, especially for those developers without a Mac that want to compile native iOS applications. It also meant that no longer did you have a special build machine, but rather use a service that allowed for any authorized team member the ability to create their apps.
+此安装挑战 早在2012年，这些工具的配置和运行就是Adobe引入一个称为“PhoneGap Build”的新服务的原因之一。 这个云托管平台允许用户只需压缩他们的网页应用程序，包括一个定义各种应用程序元素的 xml 文件 像图标和初始屏幕一样，让它编译和创建本机应用程序。 虽然它没有给予与当地建筑相同程度的控制，但对许多人来说，这是一个很好的解决办法。 尤其是对于那些不想编译本机iOS应用程序的 Mac 开发者。 这也意味着你不再有特殊的编译器， 而是使用允许任何获得授权的团队成员能够创建他们的应用的服务。
 
-However, PhoneGap Build has some limitations, most notably the lack of access to some of the modern configuration options available today. A great example of this issue is when you try to integrate push notifications. As Adobe shifted its focus away from developers and toward creatives, resources supporting PhoneGap Build also dwindled. This has left many to wonder what solutions might exist to allow for cloud-based native mobile application compiling.
+然而，PhoneGap 构建有一些局限性，最突出的是无法获得今天可用的一些现代配置选项。 这个问题的一个很好的例子是当你尝试整合推送通知时。 由于Adobe将其焦点从开发者转向创造者，支持PhoneGap 构建的资源也在减少。 这使许多人想知道可能存在哪些解决方案以允许基于云的本机移动应用程序编译。
 
-### Enter Ionic Appflow
+### 输入Ionic Appflow
 
-Thankfully, Ionic's Appflow service has evolved to answer this need. For a number of years, Ionic has been exploring various cloud services that can assist in the development of Ionic-based applications. The basic idea behind Ionic Appflow is the same as PhoneGap Build; take your local web application, transfer it to the cloud and have it generate the native applications for you. This short article will walk you through the process needed to use Ionic Appflow for both those just getting started or looking to migrate from PhoneGap Build. While we'd love it if you use the Ionic Framework to develop your mobile application, Ionic Appflow is solution independent.
+所幸的是，Ionic的Appflow服务已经发展到满足这一需要。 多年来，Ionic公司一直在探索各种云服务，这些服务可以帮助开发基于Ionic的应用。 Ionic Appflow背后的基本思想与 PhoneGap 相同； 使用您的本地Web应用程序，将其传输到云端并为您生成本地应用程序。 这篇短篇文章将让你走过为刚刚开始的人或想要从 PhoneGap 建筑迁移的人使用Ionic Appflow所需的过程。 如果您使用 Ionc Framework 开发您的移动应用程序，那么我们很喜欢它，但 IonAppflow 是独立的解决方案。
 
-This means <strong>you can migrate an app written in jQuery Mobile, Framework 7, KendoUI, or even your own custom solution.</strong>
+这意味着 <strong>您可以迁移一个 jQuery Mobile，Framework 7, KendoUI，甚至您自己的自定义解决方案。</strong>
 
-## Appflow Preparation
+## Appflow 准备
 
-To get started with Ionic Appflow, we’ll make some simple updates to your existing app’s directory structure and config.xml file, then configure source control with Git.
+要开始使用Ionic Appflow，我们将对您现有应用的目录结构和config.xml文件进行一些简单的更新，然后使用Git配置源代码控制。
 
-### Migrate your config.xml file
+### 迁移您的 config.xml 文件
 
-In this step, we’ll relocate some files then update the config.xml file to reflect the changes.
+在这个步骤中，我们将迁移一些文件，然后更新config.xml 文件以反映更改。
 
-<strong>First, move the config.xml file to the root level of the project.</strong>
+<strong>首先，将 config.xml 文件移动到项目的根目录。</strong>
 
-As a result of this, the various paths pointing to icon and splash screen files might need to be adjusted. In addition, depending on the last time you might have worked with your config.xml file, there have been some changes that you might want to apply. For example, in older versions, we might have used the gap: prefix when defining the platform or density of our asset.
+因此，可能需要调整指向图标和启动屏幕文件的各种路径。 另外，根据您上次使用config.xml文件的时间，可能需要进行一些更改。 例如，在较旧的版本中，当定义资产的平台或密度时，我们可能使用了 gap: 前缀。
 
 ```xml
 <icon src="icons/icon_36.png" gap:platform="android" gap:density="ldpi" />
 ```
 
-Now, we can wrap all the assets that are used by a particular platform in the `<platform name="X"> </platform>` tag. In this example, the “resources” folder is at the root of the project. Folder names don’t have to match exactly like this, just ensure that the `src` path matches the directory structure.
+现在，我们可以将特定平台使用的所有资产包装在 `<platform name="X"></platform>` 标签中。 在这个例子中，"resources"文件夹是该项目的根源。 文件夹名称不必完全匹配，只需确认 `src` 路径符合目录结构。
 
 ```xml
 <platform name="android">
@@ -122,11 +122,11 @@ Now, we can wrap all the assets that are used by a particular platform in the `<
 </platform>
 ```
 
-You also might find that you need to generate some additional icons and splash screens to support the latest devices.
+您可能还会发现您需要生成一些额外的图标和启动屏幕来支持最新的设备。
 
-> Ionic offers a helpful tool that generates icons and splash screens from a single source Icon and Splash Screen image. [See here](https://github.com/ionic-team/cordova-res) for details.
+> Ionic提供了一个有用的工具，可以从单个源图标和启动屏幕生成图标和初始屏幕。 [查看这里](https://github.com/ionic-team/cordova-res) 了解详情。
 
-The config.xml file might need some additional changes in order to function correctly. I would review each element in your existing config.xml and see if it uses [the latest syntax](https://cordova.apache.org/docs/en/latest/config_ref/index.html). Other changes you will need to be aware of is access to some features, like location, cameras or the microphone require additional elements in order to be used. If your existing application uses any of those functions, you will need to add the new elements to allow them to function.
+Config.xml 文件可能需要一些额外的更改才能正常运行。 我会查看您现有的 config.xml 中的每个元素，看看它是否使用 [最新的语法](https://cordova.apache.org/docs/en/latest/config_ref/index.html)。 您需要意识到的其他更改是访问某些功能，如位置、 摄像机或麦克风需要额外的元素才能使用。 If your existing application uses any of those functions, you will need to add the new elements to allow them to function.
 
 最后。 你还要确定你所使用的Cordova插件都是最新版本，以确保与当前版本的 Cordova兼容。
 
