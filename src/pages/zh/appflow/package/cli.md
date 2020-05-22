@@ -1,125 +1,125 @@
 ---
-previousText: 'Native Configurations'
+previousText: '原生配置'
 previousUrl: '/docs/appflow/package/native-configs'
-nextText: 'Automations'
+nextText: '自动化'
 nextUrl: '/docs/appflow/automation/intro'
 ---
 
-# Package builds on Appflow using the Ionic CLI
+# 软件包在应用程序流上使用 Ionic CLI
 
 <blockquote>
-  <p><b>Note:</b> This feature is only available on our <b>Scale</b> plan. Please <a href="/sales">contact us</a> to enable this feature.</p>
+  <p><b>注意：</b> 此功能仅适用于我们的 <b>等级</b> 计划。 请 <a href="/sales">联系我们</a> 来启用此功能。</p>
 </blockquote>
 
-It is possible to trigger Package builds on Appflow directly from the CLI. This is extremely useful if you need to integrate the Package build step as part of an existing external CI/CD process.
+直接从 CLI 的 Appflow触发软件包是可能的。 如果您需要整合软件包构建步骤作为现有外部CI/CD进程的一部分，这将是极为有用的。
 
-### Prerequisites
+### 必备条件
 
-Upgrade the Ionic CLI to at least version `4.7.0`.
+将 Ionic CLI 升级到至少版本 `4.7.0`。
 
-To trigger Package builds on Appflow from the Ionic CLI, a proper subscription to run Package builds is needed.
+要触发软件包依赖于Ionic CLI的Appflow，需要正确订阅运行软件包构建。
 
-To use Environments, a proper subscription that allows the usage of Automations is needed.
+为了使用环境，需要一个允许使用自动化的适当订阅。
 
-### Authentication
+### 认证
 
-The Ionic CLI has to be authenticated on Appflow to be able to trigger a Package build.
+Ionic CLI 必须在 Appflow上进行身份验证才能触发软件包构建。
 
-To login type:
-
-```bash
-$ ionic login <email> <password>
-```
-
-This will prompt for the Appflow username/password.
-
-The CLI can also be authenticated via an environment variable (for example, if it is used during a CI/CD task).
-
-To set up the authentication via environment variable, first login via the CLI with an Appflow user who has access to the app you want to trigger Deploy builds for:
+登录类型：
 
 ```bash
 $ ionic login <email> <password>
 ```
 
-Then, export the authentication token:
+这将提示Appflow用户名/密码。
+
+CLI 也可以通过环境变量进行身份验证(例如，如果它是在 CI/CD 任务中使用的)。
+
+通过环境变量建立身份验证， 第一次通过 CLI 登录 Appflow用户，用户可以访问您想要触发部署的应用程序构建：
 
 ```bash
-$ ionic config get -g tokens.user
+$ ionic login <email> <password>
 ```
 
-Finally, export the token in an environment variable of your shell or your CI/CD service.
+然后导出认证令牌：
+
+```bash
+$ ionic config get tokens.user
+```
+
+最后，导出令牌到您的 shell 或CI/CD 服务的环境变量。
 
 ```bash
 $ export IONIC_TOKEN=<your token>
 ```
 
-### Link the app
+### 链接应用程序
 
-Your app must be linked to the remote app on Appflow. If the app is not linked yet, run:
+您的应用必须链接到Appflow上的远程应用。 如果应用程序尚未链接，请运行：
 
 ```bash
 $ ionic link <app id>
 ```
 
-and commit the changes to `ionic.config.json`.
+并将更改提交到 `ionic.config.json`。
 
-### Trigger a package build
+### 触发软件包构建。
 
-Currently, Package builds can only be triggered from the root project directory:
+目前，软件包构建只能从根项目目录触发：
 
 ```bash
 $ cd /path/to/your/app
 ```
 
-Assuming the CLI is authenticated, to trigger a Package build, run:
+假定CLI 已被身份验证，以触发软件包构建，运行：
 
 ```bash
-$ ionic package build
+$ ionic package Building
 ```
 
-This will prompt for the desired platform (`ios`/`android`) and build type for the platform.
+这将会提示所需的平台 (`ios`/`android`) 并构建平台的类型。
 
-For iOS or Android `release` builds, a valid security profile is required and can be specified using the `--security-profile=<name>` option.
+对于iOS 或 Android `版本` 版本，需要一个有效的安全配置文件，可以使用 `--security-profile=<name>` 选项。
 
-For information on setting up security profiles, see [here](/docs/appflow/package/credentials).
+关于设置安全配置文件的信息，请参阅 [这里](/docs/appflow/package/credentials)。
 
-The previous commands can be executed in a single step:
+上一个命令可以单步执行：
 
 ```bash
-$ ionic package build ios development --security-profile="My Security Profile"
+$ ionic package buildios development --security profile="My Security Profile"
 ```
 
-Once the build is successfully triggered, the CLI will automatically start tailing the logs from Appflow and, if the build is successful, download the `apk`/`ipa` file in the current directory.
+一旦构建成功触发，CLI将自动开始从 Appflow 尾随日志， 如果构建成功，请下载当前目录中的 `apk`/`ipa` 文件。
 
-### Customize the package build with Options
+### 自定义软件包构建选项
 
-The Options available to customize the build include:
+可自定义构建的选项包括：
 
-* `--environment=<name>` to specify the group of environment variables to be exposed to the build (available only with Automation; more info about environments are available [here](/docs/appflow/environments/))
-* `--native-config=<name>` to specify the group of native config variables to be exposed to your build (more info about native configs are available [here](/docs/appflow/package/intro/#native-configs))
+* `--environment=<name>` 指定要接触构建的环境变量组 (仅自动可用)； 更多关于环境的信息 [这里](/docs/appflow/environments/))
+* `--native-config=<name>` 来指定要暴露于您的 编译的本地配置变量组 [这里](/docs/appflow/package/intro/#native-configs))
 
-### Customize the package build with Advanced Options
+### 自定义软件包构建高级选项
 
-The Advanced Options available to customize the build include:
+可自定义构建的高级选项包括：
 
-* `--commit=<sha1>` The commit defaults to HEAD; to use a different commit you can use this option with the full SHA1 of the commit
-* `--target-platform=<name>` This option is mostly useful for iOS builds if for any reason a package build with a specific version of Xcode is needed. If this is omitted the preferred version is used.
-* `--build-file-name=<name>` To override the downloaded file name use this option. This might be useful, for instance, in in a CI build to have a consistent name for the produced artifact.
+* `--commit=<sha1>` 提交默认值为 HEAD; 使用不同的提交，您可以使用此选项 与提交的完整的 SHA1
+* `--target-platform=<name>` 如果基于任何原因需要使用 特定版本的 Xcode ，这个选项对iOS 构建非常有用。 如果省略，则使用首选版本。
+* `--build-file-name=<name>` 要覆盖下载的文件名使用此选项。 例如，在一个 CI 构建中，这可能是有用的，可以为制作的艺术品提供一个一致的名称。
 
-### Note about referencing Options values by name
+### 按名称说明引用选项值
 
-Names are case sensitive and need to be specified including spaces, for instance:
+名称是区分大小写的，需要指定包含空格，例如：
 
 ```bash
-$ ionic package build ios development --security-profile="iOS Dev"
+$ ionic package buildios development --security-profile="iOS Dev"
 ```
 
-Apart from the `--commit` option, all others require the full name setup within the Appflow Dashboard.
+除了 `--commit` 选项以外，所有其他选项都需要在 Appflow 控制面板中设置全名。
 
-Look for the name on the Security Profiles, Environments and Native Configs pages in Appflow:
+在 Appflow中在 Security Profiles, Environments and Native Configs 页面上查找名字：
 
-![Security Profiles](/docs/assets/img/appflow/cli-security-profile-list.png) ![Environments](/docs/assets/img/appflow/cli-environments-list.png) ![Native Configs](/docs/assets/img/appflow/cli-native-config-list.png)
+![安全配置](/docs/assets/img/appflow/cli-security-profile-list.png) ![环境](/docs/assets/img/appflow/cli-environments-list.png) ![原生配置](/docs/assets/img/appflow/cli-native-config-list.png)
 
-For the Target Platform, use one of the strings identifying the platform in the Applflow Package Build form:
+对于目标平台，请在应用流程包构建表格中使用用于识别平台的字符串之一：
 
-![Target Platform](/docs/assets/img/appflow/cli-target-platform.png)
+![目标平台](/docs/assets/img/appflow/cli-target-platform.png)
