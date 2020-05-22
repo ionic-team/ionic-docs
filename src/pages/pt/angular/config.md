@@ -1,7 +1,7 @@
 ---
-previousText: 'Navigation/Routing'
-previousUrl: '/docs/angular/navigation'
-nextText: 'Platform'
+previousText: 'Navegação/Rota'
+previousUrl: '/docs/angular/navegação'
+nextText: 'Plataforma'
 nextUrl: '/docs/angular/platform'
 contributors:
   - liamdebeasi
