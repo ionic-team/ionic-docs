@@ -1,19 +1,19 @@
 ---
-previousText: 'Testing'
+previousText: '测试'
 previousUrl: '/docs/angular/testing'
-nextText: 'Performance'
+nextText: '性能'
 nextUrl: '/docs/angular/performance'
 ---
 
-# Data Storage
+# 数据存储
 
-There are variety of options available for storing data within an Ionic app.
+有多种选项可用于在Ionic应用程序中存储数据。
 
-## Ionic Offline Storage
+## Ionic 离线存储
 
-[Ionic Offline Storage](/docs/enterprise/offline-storage) is a cross-platform data storage system that works on iOS and Android. It makes it easy to add offline storage to Ionic apps that is secure (encrypted on device), highly performant, and provides advanced NoSQL data querying.
+[Ionic离线存储](/docs/enterprise/offline-storage) 是一个可在 iOS 和 Android 上运行的跨平台数据 存储系统。 它使得将离线存储添加到安全的离线应用(在设备上加密)，表现良好，并提供高级的 NoSQL 数据查询。
 
-Created for teams building complex, data-driven apps, apps managing sensitive data, or apps used in areas with unreliable cell service/internet connections. Interested? [Start here.](https://ionicframework.com/offline-storage#get-started)
+为团队创建复杂的，数据驱动的应用程序，管理敏感数据的应用程序或在小区服务/互联网连接不可靠的区域中使用的应用程序而创建。 感兴趣吗？ [Start here.](https://ionicframework.com/offline-storage#get-started)
 
 ## Ionic Storage
 
