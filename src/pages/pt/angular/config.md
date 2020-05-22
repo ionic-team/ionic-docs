@@ -95,12 +95,12 @@ Abaixo está uma lista das opções de configuração que o Ionic usa.
 | `pickerLeave`            | `AnimationBuilder` | Fornece uma animação customizada de saída para todos os `<ion-picker>`, substituindo o padrão "animation".         |
 | `popoverEnter`           | `AnimationBuilder` | Fornece uma animação customizada de entrada para todos os `<ion-popover>`, substituindo o padrão "animation".      |
 | `popoverLeave`           | `AnimationBuilder` | Fornece uma animação customizada de saída para todos os `<ion-popover>`, substituindo o padrão "animation".        |
-| `refreshingIcon`         | `string`           | Overrides the default icon in all `<ion-refresh-content>` components.                                              |
-| `refreshingSpinner`      | `SpinnerTypes`     | Overrides the default spinner type in all `<ion-refresh-content>` components.                                      |
-| `sanitizerEnabled`       | `boolean`          | If `true`, Ionic will enable a basic DOM sanitizer on component properties that accept custom HTML.                      |
-| `spinner`                | `SpinnerTypes`     | Overrides the default spinner in all `<ion-spinner>` components.                                                   |
-| `statusTap`              | `boolean`          | If `true`, clicking or tapping the status bar will cause the content to scroll to the top.                               |
-| `swipeBackEnabled`       | `boolean`          | If `true`, Ionic will enable the "swipe-to-go-back" gesture across the application.                                      |
-| `tabButtonLayout`        | `TabButtonLayout`  | Overrides the default "layout" of all `ion-bar-button` across the whole application.                                     |
-| `toastEnter`             | `AnimationBuilder` | Provides a custom enter animation for all `ion-toast`, overriding the default "animation".                               |
-| `toastLeave`             | `AnimationBuilder` | Provides a custom leave animation for all `ion-toast`, overriding the default "animation".                               |
+| `refreshingIcon`         | `string`           | Sobrepõe o ícone padrão em todos os componentes `<ion-refresh-content>`.                                           |
+| `refreshingSpinner`      | `SpinnerTypes`     | Substitui o tipo padrão spinner em todos os componentes `<ion-refresh-content>`.                                   |
+| `sanitizerEnabled`       | `boolean`          | Se `true`, o Ionic ativará um sanitizador básico do DOM em propriedades de componente que aceitam HTML personalizado.    |
+| `spinner`                | `SpinnerTypes`     | Substitui o tipo padrão spinner em todos os componentes `<ion-spinner>`.                                           |
+| `statusTap`              | `boolean`          | Se `true`, clicar ou tocar na barra de status fará com que o conteúdo role para o topo.                                  |
+| `swipeBackEnabled`       | `boolean`          | Se `true`, o Ionic vai ativar o gesto &ltswipe-to-go-back&gt "deslizar para trás" em todo o aplicativo.                  |
+| `tabButtonLayout`        | `TabButtonLayout`  | Substitui o "layout" padrão de todos os botões `ion-bar-bar` em todo o aplicativo.                                       |
+| `toastEnter`             | `AnimationBuilder` | Fornece uma animação customizada de entrada para todos os `<ion-toast>`, substituindo o padrão "animation".        |
+| `toastLeave`             | `AnimationBuilder` | Fornece uma animação customizada de saída para todos os `<ion-toast>`, substituindo o padrão "animation".          |
