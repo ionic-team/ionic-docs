@@ -1,20 +1,20 @@
 ---
-previousText: "Introduction"
+previousText: "简介"
 previousUrl: "/docs/appflow/cookbook/intro"
-nextText: "Using private Git Repos"
-nextUrl: "/docs/appflow/cookbook/private_git"
+nextText: "使用私有的Git仓库"
+nextUrl: "/docs/appollow/cookbook/private_git"
 contributors:
   - chrisgriffith
 meta:
   image: /docs/assets/img/appflow/cookbook/meta-pgb.png
-  description: Migrating from PhoneGap Build to Ionic Appflow involves a few simple steps.
+  description: 从 PhoneGap 构建迁移到 Ionic Appflow 涉及几个简单步骤。
 ---
 
-# Migrating from PhoneGap Build to Ionic Appflow
+# 从 PhoneGap 构建迁移到 Ionic Appflow
 
-Migrating from Adobe’s [PhoneGap Build](https://build.phonegap.com) to Ionic Appflow involves just a few simple steps. In this guide, we’ll walk through the complete migration process from start to finish. Optionally, you can migrate the app to Ionic Framework as well.
+从Adobe的 [PhoneGap 构建](https://build.phonegap.com) 迁移到 Ionic Appflow 只涉及几个简单的步骤。 在本指南中，我们将从开始到完成整个迁移过程。 还可以选择的是，您也可以将应用程序迁移到Ionic框架。
 
-## Migration Summary
+## 迁移摘要
 
 - Appflow is Ionic’s mobile DevOps service that helps development teams build, ship, and manage their iOS, Android and web apps. Featuring continuous native builds, live app deploys, 1-click deploy to App Stores, and CI/CD automation.
 - PhoneGap/Cordova apps written in jQuery Mobile, Framework 7, Sencha, KendoUI, or even your own custom solution can be migrated. <strong>An existing Ionic app is not required.</strong>
