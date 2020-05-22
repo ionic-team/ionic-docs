@@ -5,48 +5,48 @@ nextText: '使用实时重载快速开发应用程序'
 nextUrl: '/docs/angular/your-firstapp/7-live-reload'
 ---
 
-# Deploying to iOS and Android
+# 部署到 iOS 和 Android
 
-Since we added Capacitor to our project when it was first created, there’s only a handful of steps remaining until the Photo Gallery app is on our device! Remember, you can find the complete source code for this app [here](https://github.com/ionic-team/photo-gallery-capacitor-ng).
+由于我们是在首次创建Capacitor时将其添加到项目中的，因此只有几步之遥，直到在我们的设备上使用Photo Gallery应用程序为止！ 请记住，您可以在这里找到此应用的完整源代码 [](https://github.com/ionic-team/photo-gallery-capacitor-ng)。
 
-## Capacitor Setup
+## Capacitor 设置
 
-Capacitor is Ionic’s official app runtime that makes it easy to deploy web apps to native platforms like iOS, Android, and more. If you’ve used Cordova in the past, consider reading more about the differences [here](https://capacitor.ionicframework.com/docs/cordova#differences-between-capacitor-and-cordova).
+Capacitor是Ionic的官方运行时，它使得在本地平台如iOS、Android等安装网络应用变得容易。 如果您以前使用过Cordova，请考虑阅读更多 [差异的信息](https://capacitor.ionicframework.com/docs/cordova#differences-between-capacitor-and-cordova) 。
 
-If you’re still running `ionic serve` in the terminal, cancel it. Complete a fresh build of your Ionic project, fixing any errors that it reports:
+如果您仍在终端中运行 `ionic service` ，请取消它。 完成你的Ionic项目的新构建，修复它报告的错误：
 
 ```shell
 $ ionic build
 ```
 
-Next, create both the iOS and Android projects:
+接下来，创建iOS和Android项目：
 
 ```shell
 $ ionic cap add ios
 $ ionic cap add android
 ```
 
-Both android and ios folders at the root of the project are created. These are entirely standalone native projects that should be considered part of your Ionic app (i.e., check them into source control, edit them using their native tooling, etc.).
+项目根目录下的 android 和 ios 文件夹都已创建。 这些是完全独立的本地项目，应被视为你的Ionic应用程序的一部分(即：将其检入源代码管理，使用其本机工具进行编辑等)。
 
-Every time you perform a build (e.g. `ionic build`) that updates your web directory (default: `www`), you'll need to copy those changes into your native projects:
+每次您执行构建(例如`ionic build`)来更新您的Web目录(默认值：`www`)时，都需要将这些更改复制到本地项目中：
 
 ```shell
 $ ionic cap copy
 ```
 
-Note: After making updates to the native portion of the code (such as adding a new plugin), use the `sync` command:
+注意：对代码的本机部分进行更新 (例如添加新插件) 后，请使用`sync`命令：
 
 ```shell
 $ ionic cap sync
 ```
 
-## iOS Deployment
+## iOS 部署
 
-> To build an iOS app, you’ll need a Mac computer.
+> 要构建一个 iOS 应用程序，您将需要一个 Mac 苹果电脑。
 
-Capacitor iOS apps are configured and managed through Xcode (Apple’s iOS/Mac IDE), with dependencies managed by CocoaPods. Before running this app on an iOS device, there's a couple of steps to complete.
+Capacitor iOS 应用程序是通过Xcode (Apple's iOS/Mac IDE) 配置和管理的，依赖关系由CocoaPod 管理。 在 iOS 设备上运行此应用程序之前，有几个步骤要完成。
 
-First, run the Capacitor `open` command, which opens the native iOS project in Xcode:
+首先，运行 Capacitor `open` 命令，打开Xcode中的原生iOS项目：
 
 ```shell
 $ ionic cap open ios
