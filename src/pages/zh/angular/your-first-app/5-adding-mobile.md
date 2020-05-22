@@ -59,12 +59,12 @@ private async readAsBase64(cameraPhoto: CameraPhoto) {
 接下来，更新 `savePicture()` 方法。 在移动设备上运行时，将`filepath`设置为`writeFile()`操作的结果 - `savedFile.uri`。 设置`webviewPath`时，请使用特殊的`Capacitor.convertFileSrc()`方法([详细信息](https://ionicframework.com/docs/core-concepts/webview# file-protocol))。
 
 ```typescript
-// Save picture to file on device
+// 将图片保存到设备上的文件
   private async savePicture(cameraPhoto: CameraPhoto) {
-    // Convert photo to base64 format, required by Filesystem API to save
+    // 将照片转换为Filesystem API要求保存的base64格式
     const base64Data = await this.readAsBase64(cameraPhoto);
 
-    // Write the file to the data directory
+    // 将文件写入数据目录
     const fileName = new Date().getTime() + '.jpeg';
     const savedFile = await Filesystem.writeFile({
       path: fileName,
@@ -73,16 +73,15 @@ private async readAsBase64(cameraPhoto: CameraPhoto) {
     });
 
     if (this.platform.is('hybrid')) {
-      // Display the new image by rewriting the 'file://' path to HTTP
-      // Details: https://ionicframework.com/docs/building/webview#file-protocol
+      // 通过重写HTTP的'file://'路径来显示新图像
+      // 详细信息：https://ionicframework.com/docs/building/webview#file-protocol
       return {
         filepath: savedFile.uri,
         webviewPath: Capacitor.convertFileSrc(savedFile.uri),
       };
     }
     else {
-      // Use webPath to display the new image instead of base64 since it's
-      // already loaded into memory
+      // 使用webPath来显示新图像而不是base64，因为它已经加载到内存中
       return {
         filepath: fileName,
         webviewPath: cameraPhoto.webPath
@@ -91,33 +90,33 @@ private async readAsBase64(cameraPhoto: CameraPhoto) {
   }
 ```
 
-Next, head back over to the `loadSaved()` function we implemented for the web earlier. On mobile, we can directly set the source of an image tag - `<img src=”x” />` - to each photo file on the Filesystem, displaying them automatically. Thus, only the web requires reading each image from the Filesystem into base64 format. Update this function to add an _if statement_ around the Filesystem code:
+接下来，回到我们之前为web实现的` loadSaved()`函数。 在移动设备上，我们可以直接将图像标签的来源 - `<img src=”x” />` - 设置为Filesystem上的每个照片文件，并自动显示它们。 因此，只有Web才需要将每个图像从Filesystem中读取为base64格式。 更新此函数以在文件系统代码周围添加<em x-id =“ 4”> if语句</em>：
 
 ```typescript
 public async loadSaved() {
-  // Retrieve cached photo array data
+  // 检索缓存的照片阵列数据
   const photos = await Storage.get({ key: this.PHOTO_STORAGE });
   this.photos = JSON.parse(photos.value) || [];
 
-  // Easiest way to detect when running on the web:
-  // “when the platform is NOT hybrid, do this”
+  // 检测在网络上运行时最简单的方法：
+  // “当平台不是'hybrid'时，执行此操作”
   if (!this.platform.is('hybrid')) {
-    // Display the photo by reading into base64 format
+    // 通过读取为base64格式显示照片
     for (let photo of this.photos) {
-      // Read each saved photo's data from the Filesystem
+      // 从文件系统读取每张保存的照片数据
       const readFile = await Filesystem.readFile({
           path: photo.filepath,
           directory: FilesystemDirectory.Data
       });
 
-      // Web platform only: Save the photo into the base64 field
+      // 仅限Web平台：将照片保存到base64字段中
       photo.base64 = `data:image/jpeg;base64,${readFile.data}`;
     }
   }
 }
 ```
 
-At the bottom of the `addNewtoGallery()` function, update the Storage API logic. If running on the web, there’s a slight optimization we can add. Even though we must read the photo data in base64 format in order to display it, there’s no need to save in that form, since it’s already saved on the Filesystem:
+在`addNewtoGallery()`函数的底部，更新Storage API逻辑。 如果在web上运行，我们可以添加一个轻微的优化。 即使我们必须读取base64格式的照片数据才能显示它，也无需保存该表单，因为它已经保存在文件系统中：
 
 ```typescript
 Storage.set({
@@ -125,8 +124,8 @@ Storage.set({
   value: this.platform.is('hybrid')
           ? JSON.stringify(this.photos)
           : JSON.stringify(this.photos.map(p => {
-            // Don't save the base64 representation of the photo data,
-            // since it's already saved on the Filesystem
+            // 不要保存照片数据的base64表示形式，
+            // 因为它已经保存在文件系统中
             const photoCopy = { ...p };
             delete photoCopy.base64;
 
@@ -134,7 +133,7 @@ Storage.set({
         }))
 ```
 
-Finally, a small change to `tab2.page.html` is required to support both web and mobile. If running the app on the web, the `base64` property will contain the photo data to display. If on mobile, the `webviewPath` will be used:
+最后，需要对`tab2.page.html`进行少量更改，以支持Web和移动设备。 如果在web上运行应用， `base64` 属性将包含要显示的照片数据。 如果在手机上，将使用 `webviewPath`
 
 ```html
 <ion-col size="6"
@@ -144,4 +143,4 @@ Finally, a small change to `tab2.page.html` is required to support both web and 
 </ion-col>
 ```
 
-Our Photo Gallery now consists of one codebase that runs on the web, Android, and iOS. Next up, the part you’ve been waiting for - deploying the app to a device.
+我们的照片库现在包括一个在web、Android和iOS上运行的代码库。 下一步，您一直在等待的部分 - 将应用程序部署到设备。
