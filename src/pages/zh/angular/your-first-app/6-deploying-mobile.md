@@ -52,20 +52,20 @@ Capacitor iOS 应用程序是通过Xcode (Apple's iOS/Mac IDE) 配置和管理�
 $ ionic cap open ios
 ```
 
-In order for some native plugins to work, user permissions must be configured. In our photo gallery app, this includes the Camera plugin: iOS displays a modal dialog automatically after the first time that `Camera.getPhoto()` is called, prompting the user to allow the app to use the Camera. The permission that drives this is labeled “Privacy - Camera Usage.” To set it, the `Info.plist` file must be modified ([more details here](https://capacitor.ionicframework.com/docs/ios/configuration)). To access it, click "Info," then expand "Custom iOS Target Properties."
+为了使一些本地插件能够工作，必须配置用户权限。 在我们的照片库应用中，其中包括相机插件：首次调用`Camera.getPhoto()`后，iOS会自动显示一个模式对话框，提示用户允许该应用使用相机。 驱动此操作的权限标记为“隐私-相机使用情况”。 要进行设置，必须修改`Info.plist`文件([更多详细信息](https://capacitor.ionicframework.com/docs/ios/configuration)) 。 要访问它，请点击"Info"，然后展开"Custom iOS Target Properties"。
 
 ![Xcode Custom iOS Target Properties](/docs/assets/img/guides/first-app-cap-ng/xcode-info-plist.png)
 
 
-Each setting in `Info.plist` has a low-level parameter name and a high-level name. By default, the property list editor shows the high-level names, but it's often useful to switch to showing the raw, low-level names. To do this, right-click anywhere in the property list editor and toggle "Raw Keys/Values."
+`Info.plist`中的每个设置都有一个低级参数名称和一个高级名称。 默认情况下，属性列表编辑器会显示高级别的名称，但切换到显示低级名称往往是有用的。 要做到这一点，请右键单击属性列表编辑器中的任何位置，并切换"Raw Keys/Values"。
 
-Locate the `NSCameraUsageDescription` Key (it should exist already if you followed along with this tutorial) and set the Value to something that describes why the app needs to use the camera, such as "To Take Photos." The Value field is displayed to the app user when the permission prompt opens.
+定位到`NSCameraUsageDescription`键 (如果你一直跟随着本教程，它应该已经存在) 并设置值来描述应用程序需要使用相机的原因， 例如"拍摄照片"。当权限提示打开时，值的字段将显示给App用户。
 
-Next, click on `App` in the Project Navigator on the left-hand side, then within the `Signing & Capabilities` section, select your Development Team.
+接着，点击左侧项目导航器中的 `App` 然后在 `Signing & Capabilities` 部分中选择您的开发团队.
 
 ![Xcode - Selecting Development Team](/docs/assets/img/guides/first-app-cap-ng/xcode-signing.png)
 
-With permissions in place and Development Team selected, we are ready to try out the app on a real device! Connect an iOS device to your Mac computer, select it (`App -> Matthew’s iPhone` for me) then click the "Build" button to build, install, and launch the app on your device:
+我们已经准备好在一个真正的设备上试用这个应用程序，并且已经选择了开发团队！ Connect an iOS device to your Mac computer, select it (`App -> Matthew’s iPhone` for me) then click the "Build" button to build, install, and launch the app on your device:
 
 ![Xcode build button](/docs/assets/img/guides/first-app-cap-ng/xcode-build-button.png)
 
