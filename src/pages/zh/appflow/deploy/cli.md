@@ -1,7 +1,7 @@
 ---
-previousText: 'Deploy API'
+previousText: '部署 API'
 previousUrl: '/docs/appflow/deploy/api'
-nextText: 'Deploy To Appstore'
+nextText: '部署到应用商店'
 nextUrl: '/docs/appflow/destinations/intro'
 ---
 
@@ -100,6 +100,6 @@ $ ionic deploy build --channel="My Custom Channel"
 
 除了`--commit`选项外，其他所有选项都需要在Appflow Dashboard中设置全名。
 
-Look for the name on the Environments and Destinations pages in Appflow:
+在 Appflow中的环境和目标页面上寻找名称:
 
 ![CLI 环境列表](/docs/assets/img/appflow/cli-environments-list.png) ![CLI Channel列表](/docs/assets/img/appflow/cli-channels-list.png)
