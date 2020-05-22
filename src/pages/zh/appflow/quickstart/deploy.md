@@ -1,70 +1,69 @@
 ---
-title: 'Deploy a Live Update'
-previousText: 'Push a Commit'
+title: '部署实时更新'
+previousText: '推送提交'
 previousUrl: '/docs/appflow/quickstart/push'
-nextText: 'Build a Native Binary'
+nextText: '构建一个本地二进制文件'
 nextUrl: '/docs/appflow/quickstart/package'
 ---
 
-Now that we've [installed the Appflow SDK ](/docs/appflow/quickstart/installation) and [pushed a commit](/docs/appflow/quickstart/push) to the Dashboard, we'll walk through the process of deploying a live update to a device.
+现在，我们已经[安装了Appflow SDK ](/docs/appflow/quickstart/installation)，并[按下了提交](/docs/appflow/quickstart/push)对于仪表板，我们将逐步完成将实时更新部署到设备的过程。
 
-## Overview
+## 概述
 
-The Ionic Deploy feature works by using the installed Appflow SDK in your native application to listen to a particular Deploy [Channel](/docs/appflow/deploy/channels) Destination.
+通过在您的本地应用程序中使用已安装的 Appflows SDK 来监听一个特定的部署 [频道](/docs/appflow/deploy/channels) 目的地功能可以起作用。
 
-When a Deploy build is assigned to a Channel Destination, that update will be deployed to user devices running binaries that are configured to listen to the specified Channel Destination.
+当部署构建被分配到频道目标时， 该更新将部署到运行二进制文件的用户设备，这些文件被配置为监听指定的频道目标。
 
 <blockquote>
-<b>Nomenclature note:</b> The terms "Deploy build", "web build", "live deploy" and "live update" can be used interchangeably. They all refer to an update provided to your user's device by Appflow's Deploy feature.
+<b>术语注释：</b> “部署构建”、“网页构建”、“实时部署”和“实时更新”等术语可以互换使用。 他们都引用了通过Appflow的部署功能向您的设备提供的更新。
 </blockquote>
 
-## Triggering a Deploy Build
+## 触发部署版本
 
-In order to deploy a live update, you will first need to create a [Deploy build](/docs/appflow/deploy/builds).
+为了部署实时更新，您将首先需要创建 [部署版本](/docs/appflow/deploy/builds)。
 
-There are two ways to do this:
+这样做有两种方法：
 
-* Click the `Start build` icon from the `Commits` tab ![Start Web Build from Commits](/docs/assets/img/appflow/ss-start-web-build-commits.png)
-* Click the `New build` button in the top right from the `Build > Builds` tab ![New Web Build](/docs/assets/img/appflow/ss-new-web-build.png)
+* 点击 `开始从 <code>提交` 选项卡生成</code> 图标 ![从提交开始Web Building](/docs/assets/img/appflow/ss-start-web-build-commits.png)
+* 点击右上角的 `新版本` 按钮 `构建 > 版本` 标签页 ![新建Web 版本](/docs/assets/img/appflow/ss-new-web-build.png)
 
-You will need to make sure you've selected the correct commit to deploy. Then select the `Web Deploy` target platform. If your plan includes [custom environments](/docs/appflow/automation/environments#custom-environments) and you have configured at least one, you can select one from the provided dropdown list. Finally, you can also pick a [Channel](/docs/appflow/deploy/channels) to automatically assign the build to once it completes successfully. For the purposes of this tutorial, we will leave both options blank.
+您将需要确保您选择了正确的部署承诺。 然后选择 `Web 部署` 目标平台。 如果您的计划包含 [个自定义环境](/docs/appflow/automation/environments#custom-environments) 并且您至少配置了一个，您可以从提供的下拉列表中选择一个。 最后，您也可以选择 [频道](/docs/appflow/deploy/channels) 来自动指派构建完成后的构建。 为了本教程的目的，我们将留空两个选项。
 
-Once the build begins you will be able to watch it's progress and look at the logs if you encounter errors.
+一旦构建开始，您将能够观看它的 进度，在遇到错误时查看日志。
 
-![Running Web Build](/docs/assets/img/appflow/gif-start-web-build.gif)
+![正在运行 Web 版本](/docs/assets/img/appflow/gif-start-web-build.gif)
 
-## Web Build Versioning
+## 网页构建版本
 
-Once the Web Build completed, it can be restricted to a specific native build number assigned in the Web Build details. A minimum and maximum equivalent build version number are specified, which designates whether or not the update is compatible. After doing this, new native builds that are distributed within an app store do not conflict with the current available update from AppFlow.
+Web 构建完成后，它可以被限制在 Web 构建详细信息中指定的本地构建号码。 指定了最小和最大等效的构建版本号，指的是更新是否兼容。 在这么做之后，新的本地构建在应用商店中分布，与当前从 AppFlow中可用的更新没有冲突。
 
-![Web build versioning](/docs/assets/img/appflow/web-build-versioning.png)
+![网页构建版本](/docs/assets/img/appflow/web-build-versioning.png)
 
-For more details and a simple use case see [this article](https://ionic.zendesk.com/hc/en-us/articles/360003567694-How-to-restrict-Deploy-updates-by-native-version).
+欲了解更多详细信息和简单的使用情况，请参阅 [此文章](https://ionic.zendesk.com/hc/en-us/articles/360003567694-How-to-restrict-Deploy-updates-by-native-version)。
 
-## Assign the Build to a Channel
+## 将构建分配给频道
 
 <blockquote>
   
-<b>Note:</b> If you have trouble getting a successful build in the previous step, you can find answers to common Deploy build errors in
-<a href="https://ionic.zendesk.com/hc/en-us/categories/360000410474-Deploy-Builds-Git-" target="_blank">this section of our knowledge base</a>.
+<b>注意：</b> 如果您在上一步中无法成功地完成构建。 您可以在 找到常见部署系统构建错误的答案<a href="https://ionic.zendesk.com/hc/en-us/categories/360000410474-Deploy-Builds-Git-" target="_blank">我们知识库的这一部分</a>。
 </blockquote>
 
-Once you have a successful Deploy build, you can assign it to the same Channel you configured the Appflow SDK to listen to when you installed it by clicking the `Deploy live updates` button in the build detail page. You can also click the `Deploy live updates` icon on the build in the `Build > Builds` tab and select the Channel from the dropdown.
+一旦你有一个成功的部署版本， 您可以将其分配到您配置了 Appflow SDK 的同一频道。当您安装了 时，您可以在构建详细信息 页面中点击 `部署实时更新` 按钮来监听。 您也可以点击 `部署实时更新` 图标在 `构建 > 版本` 标签页上选择频道 按钮。
 
-![Assign to Channel](/docs/assets/img/appflow/gif-assign-to-channel.gif)
+![分配到频道](/docs/assets/img/appflow/gif-assign-to-channel.gif)
 
-## Receiving a Live Update on a Device
+## 在设备上接收实时更新
 
-For your application to receive a live update from Deploy, you'll need to run the app on a device or an emulator. The easiest way to do this is simply to use the [ionic cordova run](/docs/cli/commands/cordova-run) command to launch your local app in an emulator or a device connected to your computer.
+您的应用程序需要在设备上或仿真器上运行应用程序才能收到来自痛惜的实时更新。 最简单的 方法就是只需使用 [ionic cordova 运行](/docs/cli/commands/cordova-run) 命令就能在仿真器或连接到您计算机的设备中启动 您的本地应用程序。
 
-<command-line> <command-prompt> ionic cordova run \[ios | android\] \[options\] </command-prompt> </command-line>
+<command-line> <command-prompt> ionic cordova 运行 \[ios | android\] \[options\] </command-prompt> </command-line>
 
-If the app is configured correctly to listen to the channel you deployed it to, the application should update immediately on startup if you're using the [auto update method](/docs/appflow/deploy/api#update_method).
+如果应用正确配置为 倾听您部署的频道， 如果您正在使用 [自动更新方法](/docs/appflow/deploy/api#update_method) 程序启动时应立即更新。
 
-If you're using the [background update method](/docs/appflow/deploy/api#update_method), just stay in the app for 30 seconds or so while the update is downloaded in the background. Then, close the application, reopen it again and you should see your update applied 🎉.
+如果您正在使用 [背景更新方法](/docs/appflow/deploy/api#update_method)， 仅在应用程序中保持30秒左右，更新 在后台下载。 然后关闭应用程序，重新打开它，你应该看到你的更新应用 🎉。
 
-## Disabling Deploy for Development
+## 禁用开发部署
 
-Generally speaking, if you are developing using an emulator and live reload you probably do not want Deploy to be active, as it can intefere with your local development.
+一般来说，如果你正在使用仿真器开发并在线重新加载，你可能不希望部署处于活动状态。 因为它可以与你的本地开发整数。
 
-We recommend setting the [DisableDeploy](/docs/appflow/deploy/api#disabledeploy) preference to `true` in the `config.xml` file during local development. You can then set it back to `false` before building your binary for release by either manually setting it back or using the [native config feature](/docs/appflow/package/native-configs) if you're building your binaries with [Ionic Package](/docs/appflow/package/intro).
+我们建议在本地开发过程中设置 [禁用部署](/docs/appflow/deploy/api#disabledeploy) 首选为 `true` 的 `config.xml` 文件。 然后您可以在构建您的二进制文件之前先将其设置为 `fals` ，方法是手动设置 还是使用 [本机配置功能](/docs/appflow/package/native-configs) 如果您正在构建您的二进制文件包 [](/docs/appflow/package/intro)
