@@ -1,21 +1,21 @@
 ---
-title: 'Manual Deploy'
-previousText: 'Command-line Deploy'
+title: '手动部署'
+previousText: '命令行部署'
 previousUrl: '/docs/appflow/destinations/cli'
-nextText: 'Package'
+nextText: '包'
 nextUrl: '/docs/appflow/package/intro'
 ---
 
-To deploy an existing binary a build that has the correct security profile selected for the app store destination must be built.
+要部署一个现有的二进制构建，必须为应用商店的目的地选择正确的安全配置文件。
 
-- From the `Deployment` page `New Deployment` should be selected.
+- 从 `部署` 页面 `应该选择新部署`
 
 ![/docs/assets/img/appflow/appflow-deploy-existing.png](/docs/assets/img/appflow/appflow-deploy-existing.png)
 
-- Select the build from the `1. Select build` page
+- 从中选择构建` 选择构建` 页面
 
-- Choose the destination for the build from the `2. Configure Deployment` page
+- 从 `2中选择构建的目标。 配置部署` 页面
 
-- The result will be shown in the `Deployment` page
+- 结果将显示在 `部署` 页面
 
-- Once you have returned to the `Deployment` page you can click on the row to see the logs for the Deployment
+- 返回 `部署` 页面后，您可以点击行查看部署日志
