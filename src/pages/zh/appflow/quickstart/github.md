@@ -1,8 +1,8 @@
 ---
-title: 'Connect Using GitHub'
-previousText: 'Connect Your Repo'
+title: '使用 GitHub 连接'
+previousText: '连接您的仓库...'
 previousUrl: '/docs/appflow/quickstart/connect'
-nextText: 'Install the Appflow SDK'
+nextText: '安装 Appflow SDK'
 nextUrl: '/docs/appflow/quickstart/installation'
 ---
 
