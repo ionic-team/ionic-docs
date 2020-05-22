@@ -9,34 +9,34 @@ nextUrl: '/docs/angular/performance'
 
 有多种选项可用于在Ionic应用程序中存储数据。
 
-## Ionic 离线存储
+## Ionic Offline Storage
 
-[Ionic离线存储](/docs/enterprise/offline-storage) 是一个可在 iOS 和 Android 上运行的跨平台数据 存储系统。 它使得将离线存储添加到安全的离线应用(在设备上加密)，表现良好，并提供高级的 NoSQL 数据查询。
+[Ionic Offline Storage](/docs/enterprise/offline-storage) 是一个可在 iOS 和 Android 上运行的跨平台数据 存储系统。 它使得将离线存储添加到安全的离线应用(在设备上加密)，表现良好，并提供高级的 NoSQL 数据查询。
 
-为团队创建复杂的，数据驱动的应用程序，管理敏感数据的应用程序或在小区服务/互联网连接不可靠的区域中使用的应用程序而创建。 感兴趣吗？ [Start here.](https://ionicframework.com/offline-storage#get-started)
+为团队创建复杂的，数据驱动的应用程序，管理敏感数据的应用程序或在小区服务/互联网连接不可靠的区域中使用的应用程序而创建。 感兴趣吗？ [点击这里开始](https://ionicframework.com/offline-storage#get-started)
 
 ## Ionic Storage
 
-Ionic Storage is a free, open source alternative for indie devs, students & hobbyists. It provides an easy way to store key/value pairs and JSON objects.
+Ionic Storage 是独立开发者，学生和业余爱好者的免费开源替代方案。 它为存储密钥/值对和 JSON 对象提供了一个容易的方法。
 
-It uses a variety of storage engines underneath, picking the best one available depending on the platform:
+它在下方使用各种存储引擎，根据平台选择最好的引擎：
 
-* When running in a native app context, Storage will prioritize using SQLite, as it's one of the most stable and widely used file-based databases, and avoids some of the pitfalls of things like localstorage and IndexedDB, such as the OS deciding to clear out such data in low disk-space situations.
-* When running in the web or as a Progressive Web App, Storage will attempt to use IndexedDB, WebSQL, and localstorage, in that order.
+* 在本机应用程序中运行时，存储将使用 SQLite 进行优先级排序，因为它是最稳定且使用最广泛的基于文件的数据库之一，并且避免了诸如 localstorage 和 IndexedDB 之类的某些陷阱，例如OS决定清除磁盘空间不足情况下的此类数据。
+* 在网络中运行或作为渐进式Web应用程序运行时，Storage会尝试按该顺序使用IndexedDB，WebSQL和localstorage。
 
-### Usage
+### 用法
 
-First, if you'd like to use SQLite, install the cordova-sqlite-storage plugin:
+首先，如果你想要使用 SQLite，请安装 cordova-sqlite-stockage 插件：
 ```bash
 ionic cordova plugin add cordova-sqlite-storage
 ```
 
-Next, install the package:
+接下来，安装软件包：
 ```bash
 npm install --save @ionic/storage
 ```
 
-Next, add it to the imports list in your `NgModule` declaration (for example, in `src/app/app.module.ts`):
+接下来，在您的 `NgModule` 声明中将其添加到导入列表中(例如，在 `src/app/app.module.ts` 中)：
 
 ```typescript
 import { IonicStorageModule } from '@ionic/storage';
@@ -61,7 +61,7 @@ import { IonicStorageModule } from '@ionic/storage';
 export class AppModule {}
 ```
 
-Finally, inject it into any of your components or pages:
+最后，注入到您的任何组件或页面：
 ```typescript
 import { Storage } from '@ionic/storage';
 
@@ -70,10 +70,10 @@ export class MyApp {
 
   ...
 
-  // set a key/value
+  // 设置键/值
   storage.set('name', 'Max');
 
-  // Or to get a key/value pair
+  // 或获取键/值对
   storage.get('age').then((val) => {
     console.log('Your age is', val);
   });
@@ -81,11 +81,11 @@ export class MyApp {
 ```
 
 
-### Configuring Storage
+### 配置存储
 
-The Storage engine can be configured both with specific storage engine priorities, or custom configuration options to pass to localForage. See the localForage config docs for possible options: https://github.com/localForage/localForage#configuration
+可以使用特定的存储引擎优先级或自定义配置选项来配置存储引擎，以传递给localForage。 请参阅localForage配置文档以获取可能的选项：https://github.com/localForage/localForage#configation
 
-Note: Any custom configurations will be merged with the default configuration
+注意：任何自定义配置都将与默认配置合并
 
 ```typescript
 import { IonicStorageModule } from '@ionic/storage';
@@ -106,12 +106,12 @@ export class AppModule { }
 ```
 
 
-### Instance Members
+### 实例成员
 
 
-#### constructor
+#### 构造器
 
-Create a new Storage instance using the order of drivers and any additional config options to pass to LocalForage.
+创建一个新的存储实例使用驱动程序的顺序和任何附加配置选项传递到 LocalForage。
 
 Possible driver options are: ['sqlite', 'indexeddb', 'websql', 'localstorage'] and the default is that exact ordering.
 
