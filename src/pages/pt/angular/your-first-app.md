@@ -1,11 +1,11 @@
 ---
-previousText: 'Overview'
+previousText: 'Visão Geral'
 previousUrl: '/docs/angular/overview'
 nextText: 'Taking Photos'
 nextUrl: '/docs/angular/your-first-app/2-taking-photos'
 ---
 
-# Your First Ionic App: Angular
+# Seu Primeiro Aplicativo Iônico: Angular
 
 The great thing about Ionic is that with one codebase, you can build for any platform using just HTML, CSS, and JavaScript. Follow along as we learn the fundamentals of Ionic app development by creating a realistic app step by step.
 
