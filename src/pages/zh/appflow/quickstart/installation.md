@@ -10,13 +10,13 @@ nextUrl: '/docs/appflow/quickstart/push'
 
 ## 从仪表盘板安装 Appflow SDK (推荐)
 
-To install the Appflow SDK plugin from the Dashboard, follow the instructions provided by clicking "Install Instructions" on the Destinations list in the Appflow Dashboard.
+从 Dashboard 安装 Appflow SDK 插件。 按照应用流程面板中目标列表中点击“安装说明” 提供的说明。
 
-![Install Instructions](/docs/assets/img/appflow/ss-appflow-sdk-install.png)
+![安装说明](/docs/assets/img/appflow/ss-appflow-sdk-install.png)
 
-## Installing the Appflow SDK Manually
+## 手动安装 Appflow SDK
 
-To install the plugin manually, run the following command in the root directory of your Ionic app, making sure to substitute the correct values for your app:
+要手动安装插件，请在您的Ion应用程序的根目录中运行以下命令。 确保为您的应用替换正确的值：
 
 ```shell
 ionic deploy add  \
@@ -25,24 +25,24 @@ ionic deploy add  \
     --update-method="background|auto|none" \
 ```
 
-You can also run `ionic deploy add` and the CLI will prompt you for the neccessary values.
+您也可以运行 `离子部署添加` 并且CLI 会促使您获得花蜜值。
 
 <blockquote>
-  NOTE: The plugin delays the cordova ready event until it finish checking for updates and sets the preference <b>AutoHideSplashScreen</b> cordova preference to false in the config.xml which makes the Splash Screen to not go away automatically. All Ionic templates run
-<code>this.splashScreen.hide();</code> on cordova ready event by default, but if it was removed it should be added back. Alternatively the app can set the <b>AutoHideSplashScreen</b> cordova preference to true in you config.xml to override the value added by the plugin, but that can lead to the Splash Screen going away before the download is complete.
+  注意： 插件延迟了 cordova 准备好的事件直到它完成更新检查 并设置首选项 <b>AutoHideSplashScreen</b> cordova 首选项在配置中设置为 false。 ml 使闪烁屏幕不会自动消失。 所有的音效模板都运行
+<code>this.splashScreen.hide();</code> 默认情况下在 cordova 准备好的事件中，但如果它被删除，它应该被添加。 或者，应用程序可以在您的配置中将 <b>自动隐藏屏幕</b> cordova 首选项设置为 true。 ml 将覆盖插件添加的值，但这可能导致在下载完成之前跳过屏幕。
 </blockquote>
 
-### Plugin Variables
+### 插件变量
 
-* `--app-id` is the ID of the app in Ionic Appflow.
-* `--channel-name` is the name of the [Channel](/docs/appflow/deploy/channels) you'd like the app to listen to for updates. 
- * Make sure to use the *exact* name of your Channel, including the exact casing!
-* `--update-method` is one of `background | auto | none`. This determines how your application responds when a new live update is available for download.
+* `--app-id` 是IonAppflow应用的ID。
+* `--channel-name` 是 [Channel](/docs/appflow/deploy/channels) 你喜欢应用程序听取更新。 
+ * 确保使用您的频道的 *精确* 个名字，包括确切的外壳！
+* `--update-method` 是 `background | auto | none`其中的一个。 这决定了当新的实时更新可供下载时您的应用程序是如何响应的。
 
-You can read more about the available [plugin variables in our API documentation](/docs/appflow/deploy/api#plugin-variables).
+您可以在我们的 API 文档</a> 中阅读更多关于可用的 插件变量的信息。</p> 
 
-## Commit your changes
+## 提交您的更改
 
-After you've installed the plugin, be sure to commit the changes made to your `config.xml` and `package.json` files.
+安装插件后，一定要提交对您的 `config.xml` 和 `package.json` 文件的更改。
 
-<command-line> <command-prompt>git add . # stage any changes</command-prompt> <command-prompt>git commit -m "added appflow sdk" # commit staged changes</command-prompt> </command-line>
+<command-line> <command-prompt>git add . # 阶段任何更改</command-prompt> <command-prompt>git commit -m "添加appflow sdk" # 提交了分阶段更改</command-prompt> </command-line>
