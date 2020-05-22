@@ -90,11 +90,11 @@ export class MyPage {
 
 ### `url() => string`
 
-Get the current url.
+获取当前网址。
 
 ### `testUserAgent(expression: string) => boolean`
 
-Returns `true` if the expression is included in the user agent string.
+如果表达式包含在用户代理字符串中，返回 `true`。
 
 ### 参数
 | 名称         | 类型     | 描述           |
