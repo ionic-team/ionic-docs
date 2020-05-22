@@ -20,7 +20,7 @@ export class PhotoService {
   public photos: Photo[] = [];
   private PHOTO_STORAGE: string = "photos";
 
-  // other code
+  // 其他代码
 }
 ```
 
@@ -30,8 +30,8 @@ export class PhotoService {
 Storage.set({
   key: this.PHOTO_STORAGE,
   value: JSON.stringify(this.photos.map(p => {
-          // Don't save the base64 representation of the photo data, 
-          // since it's already saved on the Filesystem
+          // 不要保存照片数据的base64表示形式，
+          // 因为它已经保存在文件系统中
           const photoCopy = { ...p };
           delete photoCopy.base64;
 
@@ -44,31 +44,31 @@ Storage.set({
 
 ```typescript
 public async loadSaved() {
-  // Retrieve cached photo array data
+  // 检索缓存的照片阵列数据
   const photos = await Storage.get({ key: this.PHOTO_STORAGE });
   this.photos = JSON.parse(photos.value) || [];
 
-  // more to come...
+  // 还有更多...
 }
 ```
 
-On mobile (coming up next!), we can directly set the source of an image tag - `<img src=”x” />` - to each photo file on the Filesystem, displaying them automatically. On the web, however, we must read each image from the Filesystem into base64 format, using a new `base64` property on the `Photo` object. This is because the Filesystem API uses [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. Below the code you just added in the `loadSaved()` function, add:
+接下来在手机上 , 我们可以直接将图像标签- `<img src=”x” />` - 的源设置为文件系统上的每个照片文件，并自动显示它们。 但在网上，我们必须从文件系统读取每张图像到base64格式。 在` Photo `对象上使用新的` base64 `属性。 这是因为文件系统 API 使用了 [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)。 在你刚刚在 `loadSaved()` 函数中添加的代码下，添加：
 
 ```typescript
-// Display the photo by reading into base64 format
+// 通过读取为base64格式显示照片
 for (let photo of this.photos) {
-  // Read each saved photo's data from the Filesystem
+  // 从文件系统读取每张保存的照片数据
   const readFile = await Filesystem.readFile({
       path: photo.filepath,
       directory: FilesystemDirectory.Data
   });
 
-  // Web platform only: Save the photo into the base64 field
+  // 仅限Web平台：将照片保存到base64字段中
   photo.base64 = `data:image/jpeg;base64,${readFile.data}`;
 }
 ```
 
-After, call this new method in `tab2.page.ts` so that when the user first navigates to Tab 2 (the Photo Gallery), all photos are loaded and displayed on the screen.
+然后在` tab2.page.ts `中调用此新方法，以便当用户首次导航至选项卡2 (照片库)时，所有照片均被加载并显示在屏幕上。
 
 ```typescript
 ngOnInit() {
@@ -76,4 +76,4 @@ ngOnInit() {
 }
 ```
 
-That’s it! We’ve built a complete Photo Gallery feature in our Ionic app that works on the web. Next up, we’ll transform it into a mobile app for iOS and Android!
+就是这样！ 我们已经在web上运行的Ionic应用程序中建立了完整的Photo Gallery功能。 下一步，我们将把它变成iOS和Android移动应用！
