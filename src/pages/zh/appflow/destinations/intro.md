@@ -1,22 +1,22 @@
 ---
-title: 'Deploy To App Stores'
-previousText: 'Deploy'
+title: '部署到苹果应用商店'
+previousText: '部署'
 previousUrl: '/docs/appflow/deploy/cli'
-nextText: 'Destinations'
+nextText: '目标'
 nextUrl: '/docs/appflow/destinations/destinations'
 ---
 
-Ionic Appflow can deploy builds to destinations such as the Apple App Store and the Google Play Store, entirely in the cloud. Push changes to app stores from anywhere, on any platform.
+Iond Appflow可以将构建部署到诸如Apple App Store和Google Play Store等目的地，完全在云端。 将更改推送到任何平台上的任何地方的应用商店。
 
-The feature is supported in builds created manually (via logging into the dashboard and creating a new build) Automations, and as well as builds triggered from the Ionic CLI.
+在人工创建的版本 (通过登录仪表盘和创建新版本) 自动化支持该功能， 和从Ionic CLI触发的构建。
 
 
-##### Helpful links
+##### 有用的链接
 
-<docs-cards> <docs-card header="Setup deploy to Apple App Store" href="/docs/appflow/destinations/apple" icon="/docs/assets/icons/guide-quickstart-icon.png"> <p>Configure Appflow to deploy to the Apple App Store!</p>
+<docs-cards> <docs-card header="Setup deploy to Apple App Store" href="/docs/appflow/destinations/apple" icon="/docs/assets/icons/guide-quickstart-icon.png"> <p>配置 Appflow 部署到苹果应用商店 ！</p>
   </docs-card>
 
-  <docs-card header="Setup deploy to Google Play Store" href="/docs/appflow/destinations/google" icon="/docs/assets/icons/guide-quickstart-icon.png"> <p>Configure Appflow to deploy to the Google Play Store!</p>
+  <docs-card header="Setup deploy to Google Play Store" href="/docs/appflow/destinations/google" icon="/docs/assets/icons/guide-quickstart-icon.png"> <p>配置 Appflow 以部署到 Google Play 商店！</p>
   </docs-card>
 
 </docs-cards>
