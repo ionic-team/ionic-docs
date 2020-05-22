@@ -1,19 +1,19 @@
 ---
-previousText: 'Loading Photos on Filesystem'
+previousText: '在文件系统上加载照片'
 previousUrl: '/docs/angular/your-first-app/4-loading-photos'
-nextText: 'Deploying Mobile'
+nextText: '部署移动设备'
 nextUrl: '/docs/angular/your-first-app/6-deploying-mobile'
 ---
 
 # 添加移动版
 
-我们的照片库应用还不能完美运行在iOS、Android和网页中，因为现在所有的照片库都使用了同一个代码。 我们需要改变一些小的逻辑来支持移动平台，安装一些本地工具，就可以在设备上运行这些应用程序了。 Let’s go!
+我们的照片库应用还不能完美运行在iOS、Android和网页中，因为现在所有的照片库都使用了同一个代码。 我们需要改变一些小的逻辑来支持移动平台，安装一些本地工具，就可以在设备上运行这些应用程序了。 让我们开始吧！
 
 ## 导入平台 API
 
-让我们先修改一些小代码——让他先跑起来。
+让我们开始进行一些小的代码更改-然后，当我们将其部署到设备上时，我们的应用程序将“正常运行”。
 
-Import the Ionic [Platform API](https://ionicframework.com/docs/angular/platform) into `photo.service.ts`, which is used to retrieve information about the current device. In this case, it’s useful for selecting which code to execute based on the platform the app is running on (web or mobile):
+将Ionic [平台API ](https://ionicframework.com/docs/angular/platform)导入到` photo.service.ts `中，该信息用于检索有关 当前设备。 在这种情况下，它有助于根据应用程序运行的平台选择要执行的代码 (web 或 mobile):
 
 ```typescript
 import { Platform } from '@ionic/angular';
@@ -27,19 +27,19 @@ export class PhotoService {
     this.platform = platform;
   }
 
-  // other code
+  // 其他代码
 }
 ```
 
-## Platform-specific Logic
+## 平台特定逻辑：
 
-First, we’ll update the photo saving functionality to support mobile. In the `readAsBase64()` function, check which platform the app is running on. If it’s “hybrid” (Capacitor or Cordova, two native runtimes), then read the photo file into base64 format using the Filesystem `readFile()` method. Otherwise, use the same logic as before when running the app on the web:
+首先，我们将更新照片保存功能以支持移动设备。 在 `readAsBase64()` 函数中，检查应用程序正在运行哪个平台。 如果是“混合型”(Capacitor或Cordova，两个本机运行时)，则使用Filesystem ` readFile()`方法将照片文件读取为base64格式。 否则，在网络上运行应用程序时使用与以前相同的逻辑：
 
 ```typescript
 private async readAsBase64(cameraPhoto: CameraPhoto) {
-  // "hybrid" will detect Cordova or Capacitor
+  // “hybrid”将检测Cordova或Capacitor
   if (this.platform.is('hybrid')) {
-    // Read the file into base64 format
+    // 将文件读取为base64格式
     const file = await Filesystem.readFile({
       path: cameraPhoto.path
     });
@@ -47,7 +47,7 @@ private async readAsBase64(cameraPhoto: CameraPhoto) {
     return file.data;
   }
   else {
-    // Fetch the photo, read as a blob, then convert to base64 format
+    // 提取照片，读取为blob，然后转换为base64格式
     const response = await fetch(cameraPhoto.webPath);
     const blob = await response.blob();
 
@@ -56,7 +56,7 @@ private async readAsBase64(cameraPhoto: CameraPhoto) {
 }
 ```
 
-Next, update the `savePicture()` method. When running on mobile, set `filepath` to the result of the `writeFile()` operation - `savedFile.uri`. When setting the `webviewPath`, use the special `Capacitor.convertFileSrc()` method ([details here](https://ionicframework.com/docs/core-concepts/webview#file-protocol)).
+接下来，更新 `savePicture()` 方法。 在移动设备上运行时，将`filepath`设置为`writeFile()`操作的结果 - `savedFile.uri`。 设置`webviewPath`时，请使用特殊的`Capacitor.convertFileSrc()`方法([详细信息](https://ionicframework.com/docs/core-concepts/webview# file-protocol))。
 
 ```typescript
 // Save picture to file on device
