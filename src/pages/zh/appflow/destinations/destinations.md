@@ -1,15 +1,15 @@
 ---
-title: 'Destinations'
-previousText: 'Overview'
+title: '目标'
+previousText: '概述'
 previousUrl: '/docs/appflow/destinations/intro'
-nextText: 'Deploy to Apple App Store'
+nextText: '部署到苹果应用商店'
 nextUrl: '/docs/appflow/destinations/apple'
 ---
 
-Destinations represent services where you can send your build artifacts (Web Assets, IPAs, or APKs). You can create one by navigating to the `Destinations` tab located under the `Deploy` tab.
+目标代表可以将构建工件 (Web资产，IPA或APK) 发送到的服务。 您可以通过导航到` Deploy `标签下的` Destinations `标签来创建一个。
 
 ![/docs/assets/img/appflow/deploy-to-appstore-destinations-tab.png](/docs/assets/img/appflow/deploy-to-appstore-destinations-tab.png)
 
-To create a new destination click the `New Destination` button in the top right and then choose from `Web Deploy Channel` (Live Updates Channel) `Apple App Store` or `Google Play` from the dropdown.
+若要创建一个新的目标，请点击右上角的 `New Destination` 按钮，然后从 `Web Deploy Channel` (在线更新频道) `Apple App Store` 或 `Google Play` 从下拉列表中选择。
 
 ![/docs/assets/img/appflow/deploy-to-appstore-destinations.png](/docs/assets/img/appflow/deploy-to-appstore-destinations.png)
