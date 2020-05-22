@@ -1,21 +1,21 @@
 ---
-previousText: 'Cookbook'
+previousText: '参考手册'
 previousUrl: '/docs/appflow/cookbook/private_npm_modules'
 ---
 
 # Ionic DevApp
 
-The Ionic DevApp was a free app used to run your Ionic app directly on your iOS or Android device.
+Iond DevApp 是一个免费应用，用于直接在您的 iOS 或 Android 设备上运行您的Ionic应用程序。
 
-On January 1st, 2020, DevApp was retired as we move toward embracing native tooling and building apps with [Capacitor](http://capacitor.ionicframework.com/), Ionic's official native app runtime.
+2020年1月1日，DevApp退休，因为我们朝着拥抱原生工具和使用Ionic官方原生应用运行时[ Capacitor ](http://capacitor.ionicframework.com/)构建应用程序迈进了一步。
 
-One of the key mantras of Capacitor is that developers should embrace native tools like Android Studio and Xcode when building their app. While using native tooling may initially seem daunting, we think this is the right approach, because it makes it easy to follow existing Native iOS/Android guides, get help on Stack Overflow, and have full control over your project. The reality is that DevApp only got in the way of building an app, delaying developers from seeing their app run on a simulator or phone.
+Capacitor的关键方法之一是，开发者在构建他们的应用程序时应该支持本地工具，如Android Studio和Xcode 。 虽然使用本土工具最初看起来可能很生畏，但我们认为这是正确的做法。 因为它可以很容易地遵循现有的 iOS/Android 指南，在堆栈溢出时获得帮助，并完全控制您的项目。 现实是 DevApp 仅仅是构建应用程序， 推迟开发者在模拟器或手机上看到他们的应用运行。
 
-In practice, native tooling is quite easy to use: see our [iOS](/docs/developing/ios) and [Android](/docs/developing/android) documentation for details on how to build native apps using Cordova or Capacitor.
+实践中， 本机工具很容易使用：查看我们的 [iOS](/docs/developing/ios) 和 [Android](/docs/developing/android) 文档以了解如何使用 Cordova 或 Capacitor 构建本机应用的详情。
 
-## Native Cordova Plugin Support
+## 原生的 Cordova 插件支持
 
-For reference, Ionic DevApp previously supported the following plugins:
+用于参考，Ionic DevApp 先前支持以下插件：
 
 <pre>card.io.cordova.mobilesdk 2.1.0 "CardIO"
 com-intel-security-cordova-plugin 2.0.3 "APP Security API"
