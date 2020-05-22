@@ -316,7 +316,7 @@ $ git push origin master
 
 如果你还没有进行构建，它将促使我们创建我们的第一个，所以继续前进并点击按钮！ 接下来，我们必须选择我们想要使用哪个承诺来构建。 目前，我们只有一项承诺，因此选择很简单。
 
-现在我们可以选择我们想要构建的平台： iOS (使用 Xcode 11 或 10) 或 Android 。 接下来，我们可以选择构建类型，在我们的情况下，它将是调试的。 The other options require a signing certificate. With those choices selected, click the blue Build button.
+现在我们可以选择我们想要构建的平台： iOS (使用 Xcode 11 或 10) 或 Android 。 接下来，我们可以选择构建类型，在我们的情况下，它将是Debug。 The other options require a signing certificate. With those choices selected, click the blue Build button.
 
 This will spin up a virtual machine to perform our build(s) on. Here we can watch in great detail the various build steps that are being executed for us. It will take a few minutes for the build to complete. The nice thing about seeing all these details of the process is when something goes amiss, you have far better insight into the issue. Once the process is done, you can download your native application and install it on your mobile device.
 
