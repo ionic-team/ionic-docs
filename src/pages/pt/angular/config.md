@@ -1,5 +1,5 @@
 ---
-previousText: 'Navegação/Rota'
+previousText: 'Navegação/Roteamento'
 previousUrl: '/docs/angular/navegação'
 nextText: 'Plataforma'
 nextUrl: '/docs/angular/plataforma'
