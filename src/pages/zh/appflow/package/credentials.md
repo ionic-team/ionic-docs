@@ -121,9 +121,9 @@ $ openssl pkcs12 -export -inkey keyname.key -in ios_development.cer.pem out 证�
 
 配置配置文件可以让您的应用访问被安装，或者 *在特定设备上预配了*。 对于iOS 应用程序开发预配文件，设备是手动选择的。
 
-* Navigate to [Certificates, Identifiers & Profiles › Provisioning Profiles › Development](https://developer.apple.com/account/ios/profile/limited) in the [Apple Developer Center](https://developer.apple.com/account) and create a new provisioning profile.
+* 导航到 [证书 标识符 & 在 [苹果开发中 心](https://developer.apple.com/account) 中的释义赤纬开发](https://developer.apple. com/ac count/ios/profile/limited) 并创建一个新的配套配置文件。
 
-![iOS Provisioning Profile](/docs/assets/img/appflow/ss-profiles-ios-pp-1.png)
+![iOS 预置配置文件](/docs/assets/img/appflow/ss-profiles-ios-pp-1.png)
 
 * 在 **开发**之下，选择 **iOS 应用程序开发**。
 * 选择正确的App ID (与你的应用程序的 `config.xml` 文件匹配)
