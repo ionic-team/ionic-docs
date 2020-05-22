@@ -1,7 +1,7 @@
 ---
-previousText: 'Introduction'
+previousText: '简介'
 previousUrl: '/docs/appflow/package/intro'
-nextText: 'Package Build Types'
+nextText: '构建不同类型原生包'
 nextUrl: '/docs/appflow/package/build-types'
 ---
 
@@ -22,21 +22,21 @@ nextUrl: '/docs/appflow/package/build-types'
 
 点击您应用中 **Code** 标签，在 **Builds** 列表中. 点击 **Package** 按钮,编译并获你想要的本地二进制包 。
 
-在Package界面中,你可以选择你要构建的类型进行构建以及您要使用的证书。 You'll then be taken to the History tab while the build completes. After the build completes, click Download and you'll get your native binary!
+在Package界面中,你可以选择你要构建的类型进行构建以及您要使用的证书。 在构建完成后，您将被带到历史选项卡。 在构建完成后，点击下载，你会得到你的本地二进制！
 
-## Concurrency limits
+## 并行限制
 
-Each account plan has a defined maximum amount of concurrent builds allowed (see [Plans Details](/pricing)). This limit is enforced at the account level across different apps.
+每个账户计划都有一个定义的允许并行构建的最大数量(见 [Plans details](/pricing))。 这个限制是在不同应用的账户级别强制执行的。
 
-When you trigger a build, in the Appflow Dashboard you will notice that a build can have different statuses before it is processed:
+当您触发构建时，在Appflow仪表盘中，您会注意到构建在处理之前可能有不同的状态：
 
-* **Queued**: this means that your build is queued for the next available runner. Usually your build should not be in this state for more than few seconds.
-* **Pending**: this means that you have reached your concurrent build limit and your build will continue when your current builds are completed.
+* **队列**: 这意味着你的构建已排队到下一个可用的运行器。 通常您的构建不应超过几秒钟。
+* **挂起**: 这意味着您已经达到了同时构建的上限，您的构建将在您当前构建完成后继续。
 
-After the build starts to be processed the statuses are:
+在构建开始处理后，状态为：
 
-* **Running**: the build is currently being processed. You can read the logs in the build details.
-* **Successful**: the build terminated in a correct state.
-* **Failed**: the build terminated in an incorrect state.
+* **运行**: 目前正在处理构建。 您可以在构建详细信息中读取日志。
+* **成功**: 构建在正确状态下终止。
+* **失败**: 构建以不正确的状态终止。
 
-More concurrent builds can be added to your plan. If you have a Starter or Developer plan, you can get more builds by [upgrading plan](https://dashboard.ionicframework.com/settings/billing). If you have a Teams or Business plan, please [contact us](https://ionic.zendesk.com/hc/en-us/requests/new).
+可以将更多并行构建添加到您的计划。 如果您有一个启动者或开发者计划，您可以通过[升级计划](https://dashboard.ionicframework.com/settings/billing)获得更多构建。 如果您有团队或业务计划，请 [联系我们](https://ionic.zendesk.com/hc/en-us/requests/new)。
