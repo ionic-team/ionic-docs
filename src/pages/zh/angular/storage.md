@@ -109,11 +109,11 @@ export class AppModule { }
 ### 实例成员
 
 
-#### 构造器
+#### constructor
 
 创建一个新的存储实例使用驱动程序的顺序和任何附加配置选项传递到 LocalForage。
 
-Possible driver options are: ['sqlite', 'indexeddb', 'websql', 'localstorage'] and the default is that exact ordering.
+可能的驱动选项是：['sqlite'', 'indexeddb', 'websql', 'localstorage'] ，默认值是确切的顺序。。
 
 <br><br>
 
@@ -124,7 +124,7 @@ Possible driver options are: ['sqlite', 'indexeddb', 'websql', 'localstorage'] a
 
 #### driver
 
-Get the name of the driver being used.
+获取所使用的驱动程序的名称。
 
 
 <br><br>
@@ -132,9 +132,9 @@ Get the name of the driver being used.
 
 
 #### clear()
-Clear the entire key value store. WARNING: HOT!
+清除整个密钥存储。 警告: HOT!
 
-__Returns:__ Returns a promise that resolves when the store is cleared
+__返回：__ 返回一个在清除存储时解析的承诺
 
 
 
@@ -144,29 +144,29 @@ __Returns:__ Returns a promise that resolves when the store is cleared
 
 
 #### forEach()
-Iterate through each key,value pair.
+通过每个键值对齐。
 
-__Returns:__ Returns a promise that resolves when the iteration has finished.
+__返回：__ 返回一个在迭代完成后解析的承诺。
 
-<h4>Parameters</h4>
-<dl><dt><h5>iteratorCallback</h5></dt><dd>a callback of the form (value, key, iterationNumber)</dd></dl><br><br>
+<h4>参数</h4>
+<dl><dt><h5>iteratorCallback</h5></dt><dd>表单的回调(值、键、迭代编号)</dd></dl><br><br>
 
 
 
 #### get()
-Get the value associated with the given key.
+获取与给定键相关联的值。
 
-__Returns:__ Returns a promise with the value of the given key
+__返回：__ 返回一个具有给定键值的承诺
 
-<h4>Parameters</h4>
-<dl><dt><h5>key</h5><strong>Type:</strong> <code>string</code></dt><dd>the key to identify this value</dd></dl><br><br>
+<h4>参数</h4>
+<dl><dt><h5>key</h5><strong>类型:</strong> <code>string</code></dt><dd>要识别此值的密钥</dd></dl><br><br>
 
 
 
 #### keys()
 
 
-__Returns:__ Returns a promise that resolves with the keys in the store.
+__返回：__ 返回使用存储中的键解析的承诺。
 
 
 
@@ -178,7 +178,7 @@ __Returns:__ Returns a promise that resolves with the keys in the store.
 #### length()
 
 
-__Returns:__ Returns a promise that resolves with the number of keys stored.
+__返回：__ 返回一个用存储密钥数解析的承诺。
 
 
 
@@ -188,9 +188,9 @@ __Returns:__ Returns a promise that resolves with the number of keys stored.
 
 
 #### ready()
-Reflect the readiness of the store.
+反映存储的准备情况。
 
-__Returns:__ Returns a promise that resolves when the store is ready
+__返回：__ 返回一个在存储准备就绪时解析的承诺
 
 
 
@@ -200,19 +200,19 @@ __Returns:__ Returns a promise that resolves when the store is ready
 
 
 #### remove()
-Remove any value associated with this key.
+删除与此密钥相关的任何值。
 
-__Returns:__ Returns a promise that resolves when the value is removed
+__返回：__ 返回一个当该值被删除时解析的承诺
 
-<h4>Parameters</h4>
-<dl><dt><h5>key</h5><strong>Type:</strong> <code>string</code></dt><dd>the key to identify this value</dd></dl><br><br>
+<h4>参数</h4>
+<dl><dt><h5>key</h5><strong>类型:</strong> <code>string</code></dt><dd>要识别此值的密钥</dd></dl><br><br>
 
 
 
 #### set()
-Set the value for the given key.
+设置给定键的值。
 
-__Returns:__ Returns a promise that resolves when the key and value are set
+__返回：__ 返回一个在设置密钥和值时解析的承诺
 
-<h4>Parameters</h4>
-<dl><dt><h5>key</h5><strong>Type:</strong> <code>string</code></dt><dd>the key to identify this value</dd><dt><h5>value</h5><strong>Type:</strong> <code>any</code></dt><dd>the value for this key</dd></dl><br><br>
+<h4>参数</h4>
+<dl><dt><h5>key</h5><strong>类型:</strong> <code>string</code></dt><dd>要识别此值的密钥</dd><dt><h5>value</h5><strong>类型:</strong> <code>any</code></dt><dd>此密钥的值</dd></dl><br><br>
