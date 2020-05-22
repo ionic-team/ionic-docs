@@ -1,29 +1,29 @@
 ---
-title: 'Google Play Store'
-previousText: 'Deploy To Apple App Store'
+title: 'Google Play 商店'
+previousText: '部署到苹果应用商店'
 previousUrl: '/docs/appflow/destinations/apple'
-nextText: 'Builds/Automations'
+nextText: '编译/自动化'
 nextUrl: '/docs/appflow/destinations/builds'
 ---
 
-The Google Play destination allows you to upload your finished binaries to the store for Android.
+Google Play 目的地允许您上传您已完成的二进制文件到Android商店。
 
-> **Note:** The first upload for a new Android app <b>must</b> be uploaded from the Google Play Store website.
+> **注意：** 新的 Android 应用程序的第一次上传 <b>必须</b> 从Google Play 商店网站上上传。
 
 ![/docs/assets/img/appflow/google-overview.png](/docs/assets/img/appflow/google-overview.png)
 
 - **Track**
-    - Which track on the Google Play Store the app will be upload into.
-- **Package name**
-    - in reverse domain name format.
-        - e.g. com.yourdomain.yourappname
-- **JSON key**
-    - To upload to the Google Play Store you will need to create a service account and download the JSON file containing security info for the service account.
-        1. Go to [Google Play Console](https://play.google.com/apps/publish/)
-        2. Navigate to **Settings** and then **API access**
-        3. Click **`CREATE SERVICE ACCOUNT`** 
-        4. Navigate to the **Google Developers Console** link in the dialog, which opens a new tab/window:
-            1. Click the **CREATE SERVICE ACCOUNT** button at the top of the **Google Developers Console**
+    - Google Play 商店上传哪个track。
+- **包名**
+    - 反向域名格式。
+        - 例如：com.yourdomain.yourappname
+- **JSON 密钥**
+    - 若要上传到 Google Play 商店，您将需要创建一个服务帐户并下载包含服务帐户安全信息的 JSON 文件。
+        1. 转到 [Google Play 控制台](https://play.google.com/apps/publish/)
+        2. 导航到**设置** 然后**API 访问**
+        3. 点击**`创建服务账户`**
+        4. 在对话框中导航到**Google 开发者控制台**链接，打开一个新标签/窗口：
+            1. 点击**创建服务**按钮**谷歌开发者控制台**
             2. Enter a `Service account name`
             3. Click **Select a role** and choose **Service Accounts > Service Account User**
             4. Check the **Furnish a new private key** checkbox
