@@ -1,33 +1,33 @@
 ---
-previousText: 'Adding Credentials'
+previousText: '添加证书'
 previousUrl: '/docs/appflow/package/adding-credentials'
-nextText: 'Using Ionic CLI'
+nextText: '使用 Ionic CLI'
 nextUrl: '/docs/appflow/package/cli'
 ---
 
-# Native Configurations
+# 原生配置
 
 <blockquote>
-  <p><b>Note:</b>This feature is only available on our <a href="/pricing">Growth plans</a> and above.</p>
+  <p><b>注:</b>此功能仅适用于我们的<a href="/pricing">Growth plans</a>及以上。</p>
 </blockquote>
 
-Native configs allow you overwrite certain configurations without having to commit changes to version control on a per build/automation basis such as:
+本机配置允许您覆盖某些配置，而不必在每个版本/自动化的基础上对版本控制进行更改，如：
 
-* overwrite the unique bundle identifier or [id attribute](https://cordova.apache.org/docs/en/latest/config_ref/#widget) in the `config.xml`
-* overwrite the App Name as it will appear on the home screen
-* overwrite the [Appflow SDK or Deploy Plugin variables and preferences](/docs/appflow/deploy/api#plugin-variables)
+* 覆盖唯一的捆绑包标识符或` config.xml `中的[ id属性](https://cordova.apache.org/docs/en/latest/config_ref/#widget)
+* 覆盖应用名称，因为它会出现在主屏幕上
+* 覆盖 [应用程序流SDK 或部署插件变量和首选项](/docs/appflow/deploy/api#plugin-variables)
 
-This makes it easy to build your app for multiple environments from the same version of the code. If using an [Automation](/docs/appflow/automation/intro), you can trigger multiple automations from the same branch that will produce different builds.
+这使得在同一版本的代码中为多个环境构建您的应用变得容易。 如果使用[自动化](/docs/appflow/automation/intro)，则可以从同一分支触发多个自动化，这将产生不同的版本。
 
-Common use cases are:
+常用案例如下：
 
-* Making Staging, QA, and Production versions of you app with different Bundle IDs, App names, and Deploy Channels so that you can install all the environments on a single device and easily tell the apart
-* Leaving the [DisableDeploy](/docs/appflow/deploy/api#disabledeploy) `true` for development and automatically setting it back to `false` when building binaries for release
+* 使用不同的 Bundle ID，应用程序名称来制作您应用的Staging、QA 和生产版本， 和 部署频道，以便您可以在单个设备上安装所有环境并轻松地告诉拆分
+* 正在离开 [禁用部署](/docs/appflow/deploy/api#disabledeploy) `true` 进行开发，并在构建要发布的二进制文件时自动将其设置为 `false`
 
 <blockquote>
-  <b>Note:</b> If you plan to use Native Configurations to modify Bundle IDs with your iOS Package builds, you will need to setup code signing credentials using those alternate Bundle IDs. See our section on <a href="/docs/appflow/package/credentials">Generating Credentials</a> for more information.
+  <b>注意：</b> 如果您打算使用本地配置来使用您的 iOS 软件包版本修改 Bundle ID， 您需要使用这些备选Bundle ID设置代码签名凭据。 查看我们关于 <a href="/docs/appflow/package/credentials">生成证书的部分</a> 获取更多信息。
 </blockquote>
 
-To create one go to the `Build > Native Configs` tab in the sidebar and click `New native config`.
+若要创建一个，请前往侧边栏中的 `构建 > 本地配置` 标签，然后点击 `新本地配置`。
 
-![Native configs](/docs/assets/img/appflow/ss-native-configs.png)
+![本机配置](/docs/assets/img/appflow/ss-native-configs.png)
