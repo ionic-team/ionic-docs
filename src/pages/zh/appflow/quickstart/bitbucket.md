@@ -1,23 +1,23 @@
 ---
-title: 'Connect Using Bitbucket'
-previousText: 'Connect your Repo'
+title: '使用 Bitbucket 连接'
+previousText: '连接您的代码仓库'
 previousUrl: '/docs/appflow/quickstart/connect'
-nextText: 'Install the Appflow SDK'
+nextText: '安装 Appflow SDK'
 nextUrl: '/docs/appflow/quickstart/installation'
 ---
 
-If you are already using [Bitbucket Cloud](https://bitbucket.org/) you can link your repository with your Appflow app to push code automatically.
+如果您已经在使用 [Bitbucket 云](https://bitbucket.org/) 您可以将您的资源库链接到您的Appflow 应用程序来自动推送代码。
 
-## Prequisites
+## 先决条件
 
-In order to enable the integration with your Appflow app you will need an existing repository on Bitbucket.
+为了启用与您的Appflow应用的集成，您将需要在 Bitbucket 上的现有存储库。
 
-## Setting up the Integration
+## 集成配置
 
-Navigate to the `Git` section of the app settings tab in your app on the Appflow Dashboard choose the Bitbucket Cloud tab. If this is your first time connecting you'll need to click the `Connect` button. Then you can choose the repository to link from the list of available repos.
+在 Appflow 控制面板上的应用程序设置选项卡中导航到 `Git` 部分选择Bitbucket 云选项卡。 如果这是您第一次连接 ，您需要点击 `Connect` 按钮。 然后您可以从可用仓库列表中选择要链接的存储库。
 
-![Bitbucket Connect](/docs/assets/img/appflow/bitbucket-connect-app.png)
+![Bitbucket 连接](/docs/assets/img/appflow/bitbucket-connect-app.png)
 
-When you link the repository a webhook will be created for the repository and events will be sent to Appflow so that we have access to any commits you push to your repository.
+当您链接仓库时，将为仓库 创建 webhook ，并且事件将被发送到 Appflow ，以便我们能够访问任何提交的你 推送到你的仓库中。
 
-Only new commits will be shown. Historical commits prior to establishing a connection with BitBucket will not be displayed.
+只显示新的提交。 建立与 BitBucket 连接之前的历史提交将不会被显示。
