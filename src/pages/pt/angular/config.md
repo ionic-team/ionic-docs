@@ -16,7 +16,7 @@ A Configuração do Ionic fornece uma maneira de alterar as propriedades dos com
 
 ### Global
 
-To override the initial Ionic config for the app, provide a config in `IonicModule.forRoot` in the `app.module.ts` file.
+Para substituir a configuração inicial para o aplicativo Ionic, forneça uma configuração no `IonicModule.forRoot` no arquivo `app.module.ts`.
 
 ```typescript
 import { IonicModule } from '@ionic/angular';
@@ -35,12 +35,12 @@ import { IonicModule } from '@ionic/angular';
 })
 ```
 
-In the above example, we are disabling the Material Design ripple effect across the app, as well as forcing the mode to be Material Design.
+No exemplo acima, estamos desativando o efeito cascata do Design de materiais no aplicativo e forçando o modo a ser Design de materiais.
 
 
-### By Component
+### Por componente
 
-Ionic Config is not reactive, so it is recommended to use a component's properties when you want to override its default behavior rather than set its config globally.
+O Configuração do Ionic não é reativa, portanto, é recomendável usar as propriedades de um componente quando você deseja substituir seu comportamento padrão em vez de definir sua configuração globalmente.
 
 ```typescript
 import { createAnimation, IonicModule } from '@ionic/angular';
@@ -58,7 +58,7 @@ import { createAnimation, IonicModule } from '@ionic/angular';
 })
 ```
 
-This will set the default text for `ion-back-button` to `Go Back`. However, if you were to change the value of the `backButtonText` config to `Do Not Go Back`, the `ion-back-button` default text would still default to `Go Back` as the component has already been initialized and rendered. Instead, it is recommended to use the `text` property on `ion-back-button`.
+Isto definirá o texto padrão para o `ion-back-button` para `Go Back`. However, if you were to change the value of the `backButtonText` config to `Do Not Go Back`, the `ion-back-button` default text would still default to `Go Back` as the component has already been initialized and rendered. Instead, it is recommended to use the `text` property on `ion-back-button`.
 
 ```html
 <ion-back-button [text]="getBackButtonText()"></ion-back-button>
