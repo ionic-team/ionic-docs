@@ -1,8 +1,8 @@
 ---
-previousText: 'Saving Photos on Filesystem'
+previousText: '保存照片到文件系统中'
 previousUrl: '/docs/angular/your-first-app/3-saving-photos'
-nextText: 'Adding Mobile'
-nextUrl: '/docs/angular/your-first-app/5-adding-mobile'
+nextText: '添加移动版'
+nextUrl: '/docs/angular/your-first app/5-adding-mobile'
 ---
 
 # 从文件系统中加载图片
