@@ -316,32 +316,32 @@ $ git push origin master
 
 如果你还没有进行构建，它将促使我们创建我们的第一个，所以继续前进并点击按钮！ 接下来，我们必须选择我们想要使用哪个承诺来构建。 目前，我们只有一项承诺，因此选择很简单。
 
-现在我们可以选择我们想要构建的平台： iOS (使用 Xcode 11 或 10) 或 Android 。 接下来，我们可以选择构建类型，在我们的情况下，它将是Debug。 The other options require a signing certificate. With those choices selected, click the blue Build button.
+现在我们可以选择我们想要构建的平台： iOS (使用 Xcode 11 或 10) 或 Android 。 接下来，我们可以选择构建类型，在我们的情况下，它将是Debug。 其他选项需要签名证书。 在选择这些选项后，点击蓝色构建按钮。
 
-This will spin up a virtual machine to perform our build(s) on. Here we can watch in great detail the various build steps that are being executed for us. It will take a few minutes for the build to complete. The nice thing about seeing all these details of the process is when something goes amiss, you have far better insight into the issue. Once the process is done, you can download your native application and install it on your mobile device.
+这将启动虚拟机以执行构建。 在这里，我们可以非常详细地观察正在为我们执行的各种构建步骤。 构建完成需要几分钟时间。 看到这个进程的所有这些细节的好事是当某些事情发生时，你对这个问题有了更深入的了解。 进程完成后，您可以下载本地应用程序并在您的移动设备上安装它。
 
-That’s it! You’ve migrated your app to Ionic. To learn more about Ionic Framework’s UI components, [see here](/docs/). To explore the Ionic CLI, [see here](/docs/cli).
+就是这样！ 您已将应用迁移到Ionic。 要了解更多关于Ionic Framework的 UI 组件的信息， [请在这里查看](/docs/)。 要探索Ionic CLI, [请在这里查看](/docs/cli)。
 
-## Next Steps
+## 下一步
 
-You’ve created your first native application with Ionic Appflow, but that’s just the tip of the iceberg! Appflow offers many more features for teams building multiple apps quickly and easily. Feel free to explore the rest of the service, which includes Automations (robust CI/CD options including multiple environments and native configurations), Live Deploy (update the UI and business logic of your app remotely in real time) and recently, [1-click publish to app stores](https://ionicframework.com/blog/announcing-1-click-publish-to-app-stores-from-ionic-appflow/).
+您已经创建了第一个带有Ionic Appflow的本地应用程序，但这只是冰山的一角！ Appflow为团队快速轻松地构建多个应用提供了更多功能。 您可以自由地探索其余的服务，包括自动化(包括多个环境和本地配置在内的强大的 CI/CD 选项) 实时部署 (实时更新您的应用程序的 UI 和业务逻辑) 以及最近的 [一键发布到应用商店](https://ionicframework.com/blog/announcing-1-click-publish-to-app-stores-from-ionic-appflow/)。
 
-### Migrating Apple and Google Certificates
+### 迁移苹果和谷歌证书
 
-As seen above, Android debug builds are the easiest to get working, since they do not require a security certificate. However, Android release builds and all iOS build types require the application to be properly signed. If you have your certificates already stored on PhoneGap Build, there is no method to download them from the service. Thankfully, Apple certificates can be regenerated using Apple’s developer portal.
+如上所述，Android 调试构建是最容易工作的，因为它们不需要安全证书。 然而，Android 版本构建和所有 iOS 构建类型需要应用程序签名。 如果您的证书已经存储在 PhoneGap 版本中，没有从服务中下载它们的方法。 非常感谢，Apple 证书可以通过 Apple 开发者门户重新生成。
 
-For Android certificates, since these were originally created locally by you, there is unfortunately no way to regenerate them. Since the Google Play Store requires updates to an app be signed with the same key, creating a new key will not work. If you are unable to locate the original key, a suggestion is to build a version of the app that alerts the current users of the new version and ask them to migrate to it.
+对于Android证书，不幸的是，由于这些证书是由您在本地创建的，因此无法重生它们。 因为 Google Play 商店需要更新，应用程序需要使用相同的密钥签名，所以创建新密钥将无法工作。 如果您无法找到原证书， 一个建议是构建一个程序版本，提醒当前版本的用户并要求他们迁移到它。
 
-For more information about signing certificates and security profiles, please check out the details [here](/docs/appflow/package/credentials).
+欲了解更多关于签名证书和安全配置文件的信息，请查看 [这里](/docs/appflow/package/credentials) 的详细信息。
 
-### Migrate from Cordova to Capacitor
+### 从 Cordova 迁移到 Capacitor
 
-While this article highlighted the steps you need to take to migrate your Cordova/PhoneGap based application to use Ionic's Appflow, there is another option worth considering: [Capacitor](https://capacitor.ionicframework.com/docs/).
+虽然这篇文章突出了您需要采取的步骤来迁移您的Cordova/PhoneGap应用程序来使用 Ionic的Appflow， 还有另一个值得考虑的选项： [Capacitor](https://capacitor.ionicframework.com/docs/)。
 
-For those unfamiliar with this solution, it is in many ways the spiritual successor to Cordova. While still leveraging web technologies to code your application, Capacitor allows the development to move close to the native tooling and capabilities providing an even better user experience and performance.
+对于那些不熟悉这一解决办法的人来说，它在许多方面是Cordova的精神继承者。 在仍然使用 web 技术来编程您的应用程序时， Capacitor使开发能够靠近本土的工具和能力，提供更高的用户体验和性能。
 
-Fortunately, the migration process is easy and the majority of Cordova plugins are backward compatible with Capacitor. [Start migrating here](https://capacitor.ionicframework.com/docs/cordova/migrating-from-cordova-to-capacitor).
+幸运的是，迁移过程很容易，大多数Cordova插件都落后于Capacitor。 [开始迁移到这里](https://capacitor.ionicframework.com/docs/cordova/migrating-from-cordova-to-capacitor)。
 
-### Have Questions? Stuck? Migration Assistance Available
+### 仍然有疑问？ 卡住了吗？ 可用的迁移援助
 
-If you have any questions or run into issues working with Ionic Appflow, visit the [Ionic Forums](https://forum.ionicframework.com/c/ionic-appflow/). If you need migration assistance, Ionic has [Advisory services](https://ionicframework.com/advisory) available as well.
+如果您有任何问题或与Ionic Appflow相关的问题，请访问 [Ionic 论坛](https://forum.ionicframework.com/c/ionic-appflow/)。 如果您需要迁移援助，Ionic支持 [咨询服务](https://ionicframework.com/advisory)。
