@@ -1,51 +1,51 @@
 ---
-title: 'Create a Native Configuration'
-previousText: 'Create an Environment'
+title: '创建本地配置'
+previousText: '创建环境'
 previousUrl: '/docs/appflow/quickstart/environment'
-nextText: 'Ionic Deploy'
+nextText: 'Ionic部署'
 nextUrl: '/docs/appflow/deploy/intro'
 ---
 
 <blockquote>
-  <p><b>Note:</b> This feature is only available on our <a href="/pricing">Growth plans</a> and above.</p>
+  <p><b>注意：</b> 此功能仅在我们 <a href="/pricing">增长计划</a> 及以上版本中可用。</p>
 </blockquote>
 
-[Native Configurations](/docs/appflow/package/native-configs) allow you to easily modify common configuration values that can change between different environments (development, production, staging, etc.) so you don't need to use extra logic or manually commit them to version control. Native configurations can be attached to any [Package build](/doc/appflow/package) or [Automation](/doc/appflow/automation).
+[本机配置](/docs/appflow/package/native-configs) 允许您轻松修改共同的配置值，可以在不同环境之间更改 (开发) 制作、分级等 所以您不需要使用额外逻辑或手动将它们 导入版本控制。 本地配置可以附加到任何 [软件包构建](/doc/appflow/package) 或 [自动化](/doc/appflow/automation)。
 
-You can use native configs to:
+您可以使用本机配置到：
 
-* Overwrite the unique bundle identifier or [id attribute](https://cordova.apache.org/docs/en/latest/config_ref/#widget) in `config.xml`
-* Overwrite the App Name as it will appear on the home screen of a device
-* Overwrite the [Appflow SDK (Deploy Plugin) variables and preferences](/docs/appflow/deploy/api#plugin-variables)
+* 覆盖唯一的捆绑包标识符或` config.xml `中的[ id属性](https://cordova.apache.org/docs/en/latest/config_ref/#widget)
+* 覆盖应用名称，因为它将出现在设备主屏幕上
+* 覆盖 [应用程序流SDK (部署插件) 变量和首选项](/docs/appflow/deploy/api#plugin-variables)
 
-In this part of the tutorial, we'll setup a native configuration for `Development` to:
+在教程的这一部分，我们将为 `开发` 设置一个本地配置：
 
-* Use a unique bundle id so that we can install both the development version of the app and the production version of the app on the same device
-* Change the App Name so we can tell the two installations apart once they're installed on the device
-* We'll also modify the [Deploy Channel](/docs/appflow/deploy/channels) that the development version of the app listens to so that we can assign updates to that channel first to make sure they work (before we assign them to the `production` Channel)
+* 使用唯一的 bundle id 以便我们可以在同一设备上安装应用程序的开发版本和生产版本
+* 更改应用程序名称，以便在设备上安装后我们可以分别告诉这两个安装
+* 我们还将修改应用程序监听的开发版本的 [部署频道](/docs/appflow/deploy/channels) ，以便我们能够先指派更新到该频道以确保它们正常工作(在我们 将它们分配到 `生产` 频道)
 
-## Create a Native Configuration
+## 创建本地配置
 
-To create a native config, go to the `Build > Native Configs` tab in the Appflow Dashboard sidebar and click `New native config` in the top right.
+创建本机配置， 前往应用流程面板侧边栏中的 `构建 > 本地配置` 标签，然后点击 `右上角的新本地配置`
 
-Next:
+下一步：
 
-* Name the configuration `Development`
-* Overwrite the unique bundle id with `com.snapcats.demo.development`
-* Overwrite the app name with `Snapcats - Dev`
-* Overwrite the deploy channel to be `Development`
+* 命名配置 `开发`
+* 用 `com.snapcats.demo.development` 覆盖唯一的捆包id
+* 使用` Snapcats-Dev `覆盖应用名称
+* 覆盖部署频道为 `开发`
 
 ![Create Native Config](/docs/assets/img/appflow/gif-new-native-configs.gif)
 
-## Add the Native Config to an Automation
+## 将本机配置添加到自动化
 
-To take full advantage of automating your development environment, you'll want to add the native config to the automation we created earlier.
+为了充分利用您的开发环境自动化，您将想要将本机配置添加到我们早些时候创建的自动化 中。
 
-In your `Automations` tab, click `Edit` from the `Options` icon on the right of your automation, select the configuration from the `Native Config` dropdown and click `Save`.
+在您的` Automations `标签中，点击自动化右侧的` Options `图标中的` Edit `，从中选择配置 在` Native Config `下拉菜单中，单击` Save `。
 
 ![Add Native Config to Automation](/docs/assets/img/appflow/gif-add-native-config.gif)
 
-Now your apps should automatically have a different `bundle id`, app name, and deploy channel between your development and production builds. This means you can install both your development and production applications on the same device and easily tell them apart! 🔥
+现在，您的应用应该自动有一个不同的 `bundle id`，应用程序名称，并在您的开发与生产 构建之间部署通道。 This means you can install both your development and production applications on the same device and easily tell them apart! 🔥
 
 <blockquote>
   <b>Note:</b> If you plan to use Native Configurations to modify Bundle IDs with your iOS Package builds, you will need to setup code signing credentials using those alternate Bundle IDs. See our section on <a href="/docs/appflow/package/credentials">Generating Credentials</a> for more information.
