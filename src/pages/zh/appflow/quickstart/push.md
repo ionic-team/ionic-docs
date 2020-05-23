@@ -1,27 +1,27 @@
 ---
-title: 'Push a Commit'
-previousText: 'Install the Appflow SDK'
+title: '推送提交'
+previousText: '安装 Appflow SDK'
 previousUrl: '/docs/appflow/quickstart/installation'
-nextText: 'Deploy a Live Update'
+nextText: '部署实时更新'
 nextUrl: '/docs/appflow/quickstart/deploy'
 ---
 
-In order for Appflow to access your code base you'll need to push a commit so that it shows up in your Dashboard.
+为了让Appflow 访问您的代码库，您需要推送一个提交，以便它在您的仪表板中显示。
 
-## Committing to Appflow
+## 提交到 Appflow
 
-If you are using an integration with GitHub, Bitbucket or Bitbucket Server, a new commit will show up every time you push to your git host.
+如果您正在使用 GitHub 、 Bitbucket 或 Bitbucket 服务器集成， 每次推送到git主机时都会显示新的提交。
 
-If you are using Ionic as your git remote, you'll need to push to your commit to Appflow directly to see your commit in the Dashboard.
+如果您正在使用Ion作为您的git远程， 您需要直接推送您对 Appflow 的承诺才能在系统仪表中看到您的承诺。
 
 <docs-tabs> <docs-tab tab="GitHub / Bitbucket">
 
-<command-line> <command-prompt>git add . # stage any changes</command-prompt> <command-prompt>git commit -m "added appflow sdk" # commit staged changes</command-prompt> <command-prompt>git push origin master # push the changes from the master branch to your git host</command-prompt> </command-line>
+<command-line> <command-prompt>git add . # 阶段任何更改</command-prompt> <command-prompt>git commit -m "添加appflow sdk" # 提交了分阶段更改</command-prompt> <command-prompt>git push origin maste # 将更改从主分支推送到您的 git 主机</command-prompt> </command-line>
 
 </docs-tab> <docs-tab tab="Ionic Remote">
 
-<command-line> <command-prompt>git add . # stage any changes</command-prompt> <command-prompt>git commit -m "added appflow sdk" # commit staged changes</command-prompt> <command-prompt>git push ionic master # push the changes from the master branch to the Ionic remote</command-prompt> </command-line> </docs-tab> </docs-tabs>
+<command-line> <command-prompt>git add . # 阶段任何更改</command-prompt> <command-prompt>git commit -m "添加appflow sdk" # 提交了分阶段更改</command-prompt> <command-prompt>git push ionic master # 将更改从主分支推送到Ionic远程仓库</command-prompt> </command-line> </docs-tab> </docs-tabs>
 
-Once you've done a `git push`, you should see your commit available in the `Commits` tab of the Dashboard.
+完成了 `git 推送`后，您应该在仪表盘的 `提交` 选项卡中看到您的承诺。
 
-![Commits List](/docs/assets/img/appflow/ss-commit-list.png)
+![提交列表](/docs/assets/img/appflow/ss-commit-list.png)
