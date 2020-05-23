@@ -7,20 +7,20 @@ nextUrl: '/docs/appflow/quickstart/connect'
 tableOfContents: false
 ---
 
-The quickstart tutorial walks you through the process of setting up your application with Ionic Appflow, including how to connect your application to Appflow, how to set up the Appflow SDK (Deploy plugin) for live updates, and how to configure your first automated Android and iOS builds using native build environments. Simply follow the guide step-by-step, or navigate directly to the documentation for the component that interests you.
+快速启动教程让您在用IonAppflow设置应用程序的过程中走动，包括如何将应用程序连接到Appflow， 如何为实时更新设置 Appflow SDK (部署插件) 如何配置您第一次自动的 Android 和 iOS 使用本机构建环境。 只需按步或直接浏览您感兴趣的组件的文档。
 
 <docs-cards> <docs-card header="Start the Tutorial" href="/docs/appflow/quickstart/connect" icon="/docs/assets/icons/guide-quickstart-icon.png"> 
 
-Follow the quickstart tutorial and get up and running with Appflow in no time!</docs-card>
+跟随快速启动教程，立即开始并使用 Appflow 运行！</docs-card>
 
 <docs-card header="Deploy Docs" href="/docs/appflow/deploy/intro" icon="/docs/assets/icons/guide-deploy-icon.png"> 
 
-Update your app remotely in real-time without app store delays.</docs-card>
+在没有应用存储延迟的情况下实时更新您的应用程序。</docs-card>
 
 <docs-card header="Package Docs" href="/docs/appflow/package/intro" icon="/docs/assets/icons/guide-package-icon.png"> 
 
-Build app binaries in the cloud for iOS and Android.</docs-card>
+在云端为 iOS 和 Android 构建应用二进制程序。</docs-card>
 
 <docs-card header="Automation Docs" href="/docs/appflow/automation/intro" icon="/docs/assets/icons/guide-automate-icon.png"> 
 
-Automate the building, testing, and distribution of Package & Deploy builds to ship better updates faster.</docs-card> </docs-cards>
+自动构建、测试和分发软件包 & 的部署构建以便更快地发送更新信息。</docs-card> </docs-cards>
