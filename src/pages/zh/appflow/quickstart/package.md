@@ -1,51 +1,51 @@
 ---
-title: 'Build a Native Binary'
-previousText: 'Deploy a Live Update'
+title: '构建一个本地二进制文件'
+previousText: '部署实时更新'
 previousUrl: '/docs/appflow/quickstart/deploy'
-nextText: 'Create an Automation'
+nextText: '创建自动化'
 nextUrl: '/docs/appflow/quickstart/automation'
 ---
 
 
-Next we'll build an Android `Debug` binary using the [Ionic Package](/docs/appflow/package/intro) service.
+接下来，我们将使用 [Ionic 软件包](/docs/appflow/package/intro) 服务构建一个 Android `调试` 二进制文件。
 
 <blockquote>
   
-<b>Note:</b> If you'd like to build an Android <b>Release</b> binary or <b>any</b> iOS binary, you'll need to
-<a href="/docs/appflow/package/credentials">generate signing credentials</a>
-and <a href="/docs/appflow/package/adding-credentials">add them to a security profile</a> in the Appflow Dashboard.
+<b>注意：</b> 如果您想要构建一个 Android <b>发布</b> 二进制或 <b>任意</b> iOS 二进制文件 您需要
+<a href="/docs/appflow/package/credentials">生成签名凭据</a>
+和 <a href="/docs/appflow/package/adding-credentials">将它们添加到应用流程仪表盘的安全配置文件</a>
 </blockquote>
 
-## Start a Package Build
+## 开始构建软件包
 
-In order to download a binary of your application, you will first need to create a [Package build](/docs/appflow/package/builds).
+为了部署实时更新，您将首先需要创建 [部署版本](/docs/appflow/package/builds)。
 
-There are two ways to do this:
+这样做有两种方法：
 
-* Click the `Start build` icon from the `Commits` tab ![Start Build from Commits](/docs/assets/img/appflow/ss-start-package-build-commits.png)
-* Click the `New build` button in the top right from the `Build > Builds` tab ![New Build](/docs/assets/img/appflow/ss-new-package-build.png)
+* 点击 `开始从 <code>提交` 选项卡生成</code> 图标 ![从提交开始编译](/docs/assets/img/appflow/ss-start-package-build-commits.png)
+* 点击右上角的 `新版本` 按钮 `构建 > 版本` 标签页 ![新建版本](/docs/assets/img/appflow/ss-new-package-build.png)
 
-Select the proper commit for your build. There are several required and optional fields you can specify:
+为您的构建选择正确的提交。 您可以指定以下几个必填字段和 个可选字段：
 
-* **Target Platform** - The platform for your build (iOS or Android)
-* **Xcode Version (iOS Only)** - The Xcode version used to build your iOS binary (use the recommended version if possible)
-* [Build Type](/docs/appflow/package/build-types) - The type of build for the given platform (See [iOS build types](/docs/appflow/package/build-types#ios-build-types) or [Android build types](/docs/appflow/package/build-types#android-build-types))
-* [Security Profile](/docs/appflow/package/credentials) - The signing credentials for the for the build (if required)
-* [Environment](/docs/appflow/automation/environments#custom-environments) - The environment to use to customize your build process
-* [Native Config](/docs/appflow/package/native-configs) - The Native Config to use to customize your app configuration
+* **目标平台** - 构建的平台 (iOS 或 Android)
+* **Xcode 版本 (iOS only)** - 用于构建您的 iOS 二进制的 Xcode 版本 (尽可能使用推荐版本)
+* [构建类型](/docs/appflow/package/build-types) - 给定平台的构建类型(见 [iOS 构建类型](/docs/appflow/package/build-types#ios-build-types) 或 [Android 构建类型](/docs/appflow/package/build-types#android-build-types))
+* [Security Profile](/docs/appflow/package/credentials) - 构建的签名凭据(如果需要)
+* [环境](/docs/appflow/automation/environments#custom-environments) - 用于自定义构建过程的环境
+* [本机配置](/docs/appflow/package/native-configs) - 用来自定义您的应用程序配置
 
-For the quickstart tutorial, select the `Android` platfrom and the `Debug` type build which requires no other configuration. Once the build begins, you can view the progress and review the logs if you encounter errors.
+对于快速启动教程，请选择 `Android` 平台和 `调试` 类型构建，这些构建需要 不需要其他配置。 一旦构建开始，您可以在遇到错误时查看进度，查看 日志。
 
-![Running Web Build](/docs/assets/img/appflow/gif-start-package-build.gif)
+![正在运行 Web 版本](/docs/assets/img/appflow/gif-start-package-build.gif)
 
-## Downloading the Build
+## 正在下载版本
 
 <blockquote>
   
-<b>Note:</b> If you have trouble getting a successful build in the previous step, you can find answers to common Package build errors in
-<a href="https://ionic.zendesk.com/hc/en-us/categories/360000410494-Package" target="_blank">this section of our knowledge base</a>.
+<b>注意：</b> 如果您在上一步中无法成功地完成构建。 您可以找到常见软件包构建错误的答案
+<a href="https://ionic.zendesk.com/hc/en-us/categories/360000410494-Package" target="_blank">我们知识库的这一部分</a>。
 </blockquote>
 
-A successful Package build yields an iOS binary (`.ipa` or IPA) or an Android binary (`.apk` or APK) file. Once you have a successful build, you can download it so that you can install it on a device by clicking the file name in the `Artifacts` section in the right of the build detail page or clicking the `Download IPA/APK` icon on the build in the `Build > Builds` tab.
+成功的软件包构建生成一个 iOS 二进制(`.ipa` 或 IPA) 或一个 Android 二进制(`.apk` 或 APK) 文件。 一旦你有一个成功的构建， 您可以下载它，以便您可以通过 点击构建页面右侧的 `伪影` 部分中的文件名来在设备上安装它，或者点击 `下载IPA/APK` 图标在 `Building > Builds` 选项卡。
 
-![Download Package Build](/docs/assets/img/appflow/ss-download-package-build.png)
+![下载软件包版本](/docs/assets/img/appflow/ss-download-package-build.png)
