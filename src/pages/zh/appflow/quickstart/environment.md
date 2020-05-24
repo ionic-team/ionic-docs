@@ -41,7 +41,7 @@ nextUrl: '/docs/appflow/quickstart/native-config'
 
 下面是一些示例，说明您可以如何使用 `BUILD_ENV` 自定义您的应用，我们在上面创建的变量可以连接到一个不同的 API URL，当 开发本地对应的时候，获取您应用的数据。 你的 `开发` 环境。
 
-<docs-tabs> <docs-tab tab="Ionic v4"> First, you can modify the `build` script in your `package.json` to either use the `BUILD_ENV` variable if it exists or to default it to `local` and then choose the configuration from the `angular.json` file that matches the value of `BUILD_ENV` (`development` in Appflow & `local` locally).
+<docs-tabs> <docs-tab tab="Ionic v4"> 首先，您可以修改package.json中的构建脚本，以使用BUILD_ENV变量（如果有） 存在或默认为本地，然后从angular.json文件中选择与该值匹配的配置 BUILD_ENV（本地在Appflow中进行开发）。
 
 ```json
 ...
