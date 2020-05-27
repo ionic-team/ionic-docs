@@ -1,7 +1,7 @@
 ---
 title: Identity Vault
 template: enterprise-plugin
-version: 4.2.0
+version: 4.2.1
 minor: 4.2.X
 otherVersions:
   - 2.0.X
@@ -1996,6 +1996,15 @@ The possible values returned by [getAvailableHardware](#identityvault.getavailab
 ___
 
 ## Change Log
+
+
+
+### [4.2.1] (2020-05-27)
+
+
+### Bug Fixes
+
+* **android:** avoid crash on detecting gesture navigation when using hideScreen 
 
 
 
