@@ -1,8 +1,8 @@
 ---
 title: Auth Connect
 template: enterprise-plugin
-version: "1.8.1 Elemento de bloque de texto(div)\nXPath: /div[@id=front-matter]/ul/li[3]/div[2]\nFile: auth-connect. md"
-minor: 1.8.X
+version: 2.2.0
+minor: 2.2.X
 ---
 
 Ionic Auth Connect handles logging in and/or registering a user with an authentication provider (such as Auth0, Azure AD, or AWS Cognito) using industry standard OAuth/OpenId Connect on iOS, Android, or on the web.
@@ -139,49 +139,11 @@ async ngOnInit() {
 
 To test an Ionic app using Auth Connect locally, configure `IonicAuthOptions` to use `http://localhost:8100/` as the base URL for properties such as `redirectUri` and `logoutUrl`. Then, run the `ionic serve` command.
 
-## Upgrade from v1.1.1 to >=v1.1.2
+## Upgrading to v2.0.0
 
-**Important Note**
-
-> If you're upgrading from version `1.1.1` to `>=1.1.2`, there are fewer dependencies required to install with the plugin. Simply run the commands below to upgrade. Imports and usage should remain identical.
-
-NOTE: {your url scheme} is the app specific url schemes the plugin was installed with.
-
-First, remove v1.1.1 of the plugin:
-
-```shell
-ionic cordova plugin rm @ionic-enterprise/auth --variable AUTH_URL_SCHEME={your url scheme}
-```
-
-You should make sure `@ionic-enterprise/auth` and `cordova-plugin-advanced-http` are completely removed from your package.json in all locations.
-
-```javascript
-...
-  "dependencies": {
-    ...
-     // Make sure both these are gone from the dependencies
-    "@ionic-enterprise/auth": "1.1.1",
-    "cordova-plugin-advanced-http": "^2.0.9",
-    ...
-  }
-  "cordova": {
-    "plugins": {
-      ...
-      // Make sure both these are gone from the cordova plugins section as well
-      "@ionic-enterprise/auth": {},
-      "cordova-plugin-advanced-http": {}
-      ...
-    },
-    ...
-  }
-...
-```
-
-It should now be safe to add >=v1.1.2 of the plugin:
-
-```shell
-ionic cordova plugin add @ionic-enterprise/auth@latest --variable AUTH_URL_SCHEME={your url scheme}
-```
+* Upgrade your app to use `cordova-android` 9.x (see the [9.0.0 milestone](https://github.com/apache/cordova-android/milestone/2) for progress) or Capacitor 2.x. 
+  * For Capacitor, please see the upgrade guide for [Android](https://capacitor.ionicframework.com/docs/android/updating) and [iOS](https://capacitor.ionicframework.com/docs/ios/updating).
+* Install the new plugin version.
 
 ## API Documentation
 
@@ -575,13 +537,16 @@ Provided audience (aud) value
 
 ### `<Optional>` authConfig
 
-**● authConfig**: *"auth0" \| "azure" \| "cognito" \| "salesforce" \| "general"*
+**● authConfig**: *"auth0" \| "azure" \| "cognito" \| "salesforce" \| "okta" \| "ping" \| "general"*
 
 The type of the Auth Server, currently only the following are supported:
 
 * Auth0
 * Azure Active Directory
 * Cognito (AWS)
+* Salesforce
+* Okta
+* Ping
 
 * * *
 
@@ -601,7 +566,7 @@ Provided Application ID
 
 **● clientSecret**: *`undefined` \| `string`*
 
-The client secret, optional only required for Cognito/Web
+The client secret, optional
 
 * * *
 
@@ -747,13 +712,16 @@ Provided audience (aud) value
 
 ### `<Optional>` authConfig
 
-**● authConfig**: *"auth0" \| "azure" \| "cognito" \| "salesforce" \| "general"*
+**● authConfig**: *"auth0" \| "azure" \| "cognito" \| "salesforce" \| "okta" \| "ping" \| "general"*
 
 The type of the Auth Server, currently only the following are supported:
 
 * Auth0
 * Azure Active Directory
 * Cognito (AWS)
+* Salesforce
+* Okta
+* Ping
 
 * * *
 
@@ -773,7 +741,7 @@ Provided Application ID
 
 **● clientSecret**: *`undefined` \| `string`*
 
-The client secret, optional only required for Cognito/Web
+The client secret, optional
 
 * * *
 
@@ -1057,6 +1025,58 @@ save the refresh token
 * * *
 
 # Changelog
+
+### \[2.2.0\] (2020-05-27)
+
+### Features
+
+* Okta integration 
+
+### Bug Fixes
+
+* **android:** make source-file target-dir lowercase 
+* **web:** add client secret to postToken body if required 
+
+### \[2.1.0\] (2020-04-23)
+
+### Features
+
+* add support for Ping 
+
+### Bug Fixes
+
+* **web:** add client secret to postToken body if required 
+
+### \[2.0.1\] (2020-04-17)
+
+### Bug Fixes
+
+* make client_secret optional for Cognito 
+
+### \[2.0.0\] (2020-04-17)
+
+### ⚠ BREAKING CHANGES
+
+* AndroidX is now required in projects with auth v2.
+
+### Features
+
+* add isAccessTokenExpired, isRefreshTokenAvailable, getRefreshToken, refreshSession 
+* Add support for Saleforce 
+* isAccessTokenAvailable 
+* **android:** AndroidX upgrade 
+
+### Bug Fixes
+
+* **Android:** Fix an issue where Auth Connect didn't work on Android 10. 
+* await the access token from storage 
+* Fix a bug where if a provider doesn't return when the access token expires it defaults to be immediately expired. 
+* Fix an issue where if refresh failed isAuthenticated still returned true 
+* **ios:** move AuthenticationServices import from .m to .h for Capacitor compat 
+* **web:** catch error on refresh frame creation 
+* **web, cognito:** fix for SE-150. Added logout_uri to list of valid params.
+
+* Add upgrading to v2 instructions
 
 ### \[1.8.1\] (2020-04-01)
 
