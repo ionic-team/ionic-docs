@@ -9,6 +9,17 @@ The Email Composer plugin provides the ability to programmatically create and se
 
 <native-ent-install plugin-id="email-composer" variables=""></native-ent-install>
 
+#### Using with AndroidX Projects (Android)
+
+This plugin relies on the legacy Android Support libraries and will not work in projects using the newer AndroidX libraries without using the [jetifier](https://www.npmjs.com/package/jetifier) tool to patch them.
+
+```bash
+npm install jetifier
+npx jetifier
+```
+
+To run it automatically when dependencies are installed, add `"postinstall": "jetifier"` in the `package.json`.
+
 ## Index
 
 ### Classes
