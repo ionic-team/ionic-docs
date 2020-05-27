@@ -51,4 +51,4 @@ Now, the iOS version of our app has a Material Design skin!
 
 Creating gorgeous-looking Ionic apps is easy with Sass variables and platform-specific styling. You now have everything you need to get started with Ionic. Go forth and build great apps!
 
-If you're interested in taking your Ionic apps to the next level, continue on with our exploration of Ionic Pro next.
+If you're interested in taking your Ionic apps to the next level, continue on with our exploration of Ionic Appflow next.
