@@ -5,9 +5,9 @@ previousUrl: '/docs/developer-resources/guides/first-app-v3/theming'
 
 # Track Bugs in Realtime with Ionic Monitoring
 
-Bugs happen, and can be hard to track down - especially with hundreds of possible combinations of mobile devices and operating systems. Ionic Pro Monitoring allows you to track errors in your app on users’ phones and it sends them directly to you instantly, even if your code is minified!
+Bugs happen, and can be hard to track down - especially with hundreds of possible combinations of mobile devices and operating systems. Ionic Appflow Monitoring allows you to track errors in your app on users’ phones and it sends them directly to you instantly, even if your code is minified!
 
-Reducing customer frustration by fixing major issues quickly in your production apps are a substantial part of providing a high quality app experience. Combined with Ionic Pro Deploy, new updates can be rolled out quickly to address problems in real-time.
+Reducing customer frustration by fixing major issues quickly in your production apps are a substantial part of providing a high quality app experience. Combined with Ionic Appflow Deploy, new updates can be rolled out quickly to address problems in real-time.
 
 To begin, let’s add a global error handler that will catch and report all unhandled exceptions that occur in the app. Open `src/app/app.module.ts`, then add two import statements:
 
@@ -78,7 +78,7 @@ With our intentional error in place, let’s try it out to see what happens. Run
 $ ionic serve
 ```
 
-Tap on the Gallery tab, then the camera button. A runtime error should occur. In a browser, head over to the [Ionic Pro dashboard](https://dashboard.ionicframework.com), then Monitor -> Monitoring. After a few minutes, the error should appear:
+Tap on the Gallery tab, then the camera button. A runtime error should occur. In a browser, head over to the [Ionic Appflow dashboard](https://dashboard.ionicframework.com), then Monitor -> Monitoring. After a few minutes, the error should appear:
 
 ![event monitoring](/docs/assets/img/guides/first-app-v3/monitoring-event.png)
 
@@ -94,4 +94,4 @@ This is a TypeScript bug, meaning a fix can be released using Ionic Deploy. Give
 * Push the fix using Git. Remember, “git push ionic master.”
 * Roll out the fix using Ionic Deploy from the Ionic dashboard.
 
-Supporting hundreds of mobile device types is so much easier with Ionic Pro Monitoring. [Upgrade to the Ionic Pro Developer plan today](https://dashboard.ionicframework.com/settings/billing) to get instant notification when bugs occur, save error history for sixty days (instead of seven), and unlock 10,000 live Deploy updates per month!
+Supporting hundreds of mobile device types is so much easier with Ionic Appflow Monitoring. [Upgrade to the Ionic Appflow Developer plan today](https://dashboard.ionicframework.com/settings/billing) to get instant notification when bugs occur, save error history for sixty days (instead of seven), and unlock 10,000 live Deploy updates per month!
