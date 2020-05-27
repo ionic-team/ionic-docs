@@ -56,7 +56,7 @@ After `@angular/pwa` has been added, a new `ngsw-config.json` file will be creat
 }
 ```
 
-There are two sections in here, one for app specific resources (JS, CSS, HTML) and assets the app will load on demand. Depending on you app, these options can be customized. For a more detailed guide, read [the official guide from the Angular Team.](https://angular.io/guide/service-worker-config)
+There are two sections in here, one for app specific resources (JS, CSS, HTML) and assets the app will load on demand. Depending on your app, these options can be customized. For a more detailed guide, read [the official guide from the Angular Team.](https://angular.io/guide/service-worker-config)
 
 
 ## Deploying
