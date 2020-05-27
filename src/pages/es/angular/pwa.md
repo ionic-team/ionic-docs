@@ -56,7 +56,7 @@ Después de que `@angular/pwa` haya sido añadido, se creará un nuevo archivo `
 }
 ```
 
-Hay dos secciones aquí, una para recursos específicos de la aplicación (JS, CSS, HTML) y assets que la aplicación cargará bajo demanda. Dependiendo de tu aplicación, estas opciones pueden ser personalizadas. Para una guía más detallada, lee [la guía oficial del equipo Angular.](https://angular.io/guide/service-worker-config)
+Hay dos secciones aquí, una para recursos específicos de la aplicación (JS, CSS, HTML) y assets que la aplicación cargará bajo demanda. Depending on your app, these options can be customized. Para una guía más detallada, lee [la guía oficial del equipo Angular.](https://angular.io/guide/service-worker-config)
 
 
 ## Desplegando
