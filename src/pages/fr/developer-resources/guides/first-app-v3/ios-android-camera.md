@@ -148,7 +148,7 @@ Take notice: there’s no mention of iOS or Android! This is the awesome power o
 
 Save this file then tap the Camera button in DevApp. Voila! The camera should open on your device. Once a photo has been taken, it displays on the Photo Gallery page.
 
-Finally, back up your changes to Ionic Pro:
+Finally, back up your changes to Ionic Appflow:
 
 ```shell
 git add .

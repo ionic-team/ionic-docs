@@ -59,6 +59,6 @@ Be sure to fill out the description for the app along with providing screenshots
 
 ## Updating an app
 
-As an app evolves, it will need to be updated with new features and fixes. An app can be updated by either submitting a new version to the Google Play Store, or by using a live update service like Ionic Deploy. Using Ionic Deploy, changes can be pushed directly to users from the Ionic Pro dashboard, without submitting changes to the Play Store. Learn more about Ionic Deploy <a href="https://ionicframework.com/pro/deploy" target="_blank">here</a>.
+As an app evolves, it will need to be updated with new features and fixes. An app can be updated by either submitting a new version to the Google Play Store, or by using a live update service like Ionic Deploy. Using Ionic Deploy, changes can be pushed directly to users from the Ionic Appflow dashboard, without submitting changes to the Play Store. Learn more about Ionic Deploy <a href="https://ionicframework.com/pro/deploy" target="_blank">here</a>.
 
 > In order for the Google Play Store to accept updated APKs, the config.xml file will need to be edited to increment the version value, then rebuild the app for release following the instructions above.

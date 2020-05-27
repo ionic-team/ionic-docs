@@ -37,9 +37,9 @@ This starter project comes complete with three pre-built pages and best practice
 
 Type “y” and press Enter. Project setup may take a few moments.
 
-<strong>“Install the free Ionic Pro SDK and connect your app?”</strong>
+<strong>“Install the free Ionic Appflow SDK and connect your app?”</strong>
 
-Type “y” and press Enter. [Ionic Pro](https://ionicframework.com/pro) is a powerful set of services and features built on top of the flagship Ionic Framework. This includes updating your app instantly (skipping the app store review process!), packaging apps in the cloud, and error monitoring.
+Type “y” and press Enter. [Ionic Appflow](https://ionicframework.com/pro) is a powerful set of services and features built on top of the flagship Ionic Framework. This includes updating your app instantly (skipping the app store review process!), packaging apps in the cloud, and error monitoring.
 
 <strong>Log into your Ionic Account</strong>
 
@@ -53,12 +53,12 @@ Escolha "Criar um novo aplicativo no Iônic Pro."
 
 Escolha o Ionic “Pro”
 
-<strong>“How would you like to connect to Ionic Pro?”</strong>
+<strong>“How would you like to connect to Ionic Appflow?”</strong>
 
-* Choose “Automatically setup a new SSH key pair for Ionic Pro” if you haven’t used SSH before.
+* Choose “Automatically setup a new SSH key pair for Ionic Appflow” if you haven’t used SSH before.
 * Choose “Use an existing SSH key pair” if you’ve used SSH before.
 
-Next, change into the app folder, then push your code to Ionic Pro:
+Next, change into the app folder, then push your code to Ionic Appflow:
 
 ```shell
 $ cd photo-gallery
