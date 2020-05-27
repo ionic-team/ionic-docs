@@ -969,7 +969,7 @@ function presentModal() {
 
 ```typescript
 import { Component } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, AnimationController } from '@ionic/angular';
 import { ModalPage } from '../modal/modal.page';
 
 @Component({
