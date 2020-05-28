@@ -1,12 +1,12 @@
 ---
 title: 'Channels'
-previousText: 'Deploy Builds'
+previousText: 'Live Update Builds'
 previousUrl: '/docs/appflow/deploy/builds'
-nextText: 'Deploy API'
+nextText: 'Live Update API'
 nextUrl: '/docs/appflow/deploy/api'
 ---
 
-A channel points to a specific deploy build of your app that will be shared with any devices configured to listen to that channel for updates. You can change the build a channel points to whenever you'd like, and can rollback changes as well.
+A channel points to a specific Live Update build of your app that will be shared with any devices configured to listen to that channel for updates. You can change the build a channel points to whenever you'd like, and can rollback changes as well.
 
 When you [install the Appflow SDK](/docs/appflow/quickstart/installation) in your app (by clicking Install Instructions on a channel), any native binary configured to that channel will check the channel for available updates whenever it is loaded.
 
@@ -28,7 +28,7 @@ Once you have created a Channel, go back to the **Builds** section of your app. 
 
 Click this to set the Build as active for a Channel.
 
-Once a Build is set as active for a Channel any native binaries that have been set up with Ionic Deploy for this Channel will receive the new update next time they check in.
+Once a Build is set as active for a Channel any native binaries that have been set up with Ionic Live Update for this Channel will receive the new update next time they check in.
 
 ## Automating Deployment from a Git Branch
 
