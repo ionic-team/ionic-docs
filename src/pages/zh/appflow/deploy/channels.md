@@ -1,12 +1,12 @@
 ---
 title: '渠道'
-previousText: 'Deploy Builds'
+previousText: 'Live Update Builds'
 previousUrl: '/docs/appflow/deploy/builds'
-nextText: 'Deploy API'
+nextText: 'Live Update API'
 nextUrl: '/docs/appflow/deploy/api'
 ---
 
-Channel指向应用程序的特定部署构建，该构建将与任何配置为侦听该channel进行更新的设备共享。 您可以随时更改channel指向的构建，也可以回滚更改。
+A channel points to a specific Live Update build of your app that will be shared with any devices configured to listen to that channel for updates. 您可以随时更改channel指向的构建，也可以回滚更改。
 
 当你在应用程序中(通过点击channel中的下载介绍)[下载了Appflow SDK](/docs/appflow/quickstart/installation)，任何配置到该channel的本机二进制文件都将在加载通道时检查该通道是否有可用的更新
 
@@ -28,7 +28,7 @@ Channel指向应用程序的特定部署构建，该构建将与任何配置为�
 
 点击此处设置 Build为Channel的活动。
 
-将Build设置为Channel激活后，使用Ionic Deploy设置的所有本机二进制文件 该Channel将在他们下次签入时收到新的更新。
+Once a Build is set as active for a Channel any native binaries that have been set up with Ionic Live Update for this Channel will receive the new update next time they check in.
 
 ## 从Git分支自动部署
 
