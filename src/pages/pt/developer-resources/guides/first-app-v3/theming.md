@@ -1,7 +1,7 @@
 ---
 previousText: 'Creating a Photo Gallery with Device Storage'
 previousUrl: '/docs/developer-resources/guides/first-app-v3/creating-photo-gallery-device-storage'
-nextText: 'Realtime App Updates with Ionic Deploy'
+nextText: 'Realtime App Updates with Appflow Live Deploys'
 nextUrl: '/docs/developer-resources/guides/first-app-v3/realtime-updates-ionic-deploy'
 ---
 
