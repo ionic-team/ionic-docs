@@ -5,7 +5,7 @@ nextText: 'Track Bugs with Ionic Monitoring'
 nextUrl: '/docs/developer-resources/guides/first-app-v3/track-bugs-ionic-monitoring'
 ---
 
-# Realtime App Updates with Ionic Deploy
+# Realtime App Updates with Appflow Live Updates
 
 As you’ve seen so far, building web and mobile apps is quick and easy with the Ionic Framework. However, nothing disrupts rapid iteration faster than App Store delays. Fortunately, with Ionic Appflow’s Deploy feature, you can send live code changes directly to your users. Paired with seamless background updates, they are always upgraded to the latest version.
 
@@ -147,7 +147,7 @@ On the Deploy Builds page, click the “Assign to Channel” button on the previ
 
 ![deploy channel](/docs/assets/img/guides/first-app-v3/deploy-revertChange.png)
 
-This was just a taste of what you can do with Ionic Deploy! You can also set up multiple deployment channels to send targeted updates to specific groups of users. Use it to run A/B tests, or target the distribution of updates by audience, geography, or test group.
+This was just a taste of what you can do with Appflow Live Updates! You can also set up multiple deployment channels to send targeted updates to specific groups of users. Use it to run A/B tests, or target the distribution of updates by audience, geography, or test group.
 
 ## Stuck on creating local native builds?
 
