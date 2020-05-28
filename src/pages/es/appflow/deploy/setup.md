@@ -5,7 +5,7 @@ nextText: 'Deploy Builds'
 nextUrl: '/docs/appflow/deploy/builds'
 ---
 
-# Using Ionic Deploy
+# Using Live Update
 
 Ionic Appflow's Deploy feature makes it easy to deploy app updates in real time without going through a traditional app store submission process for the vast majority of business logic, UI, and style changes.
 

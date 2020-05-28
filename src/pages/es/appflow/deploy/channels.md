@@ -28,7 +28,7 @@ Once you have created a Channel, go back to the **Builds** section of your app. 
 
 Click this to set the Build as active for a Channel.
 
-Once a Build is set as active for a Channel any native binaries that have been set up with Ionic Deploy for this Channel will receive the new update next time they check in.
+Once a Build is set as active for a Channel any native binaries that have been set up with Live Update for this Channel will receive the new update next time they check in.
 
 ## Automating Deployment from a Git Branch
 

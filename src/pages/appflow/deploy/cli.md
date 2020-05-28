@@ -1,11 +1,11 @@
 ---
-previousText: 'Deploy API'
+previousText: 'Live Update API'
 previousUrl: '/docs/appflow/deploy/api'
 nextText: 'Deploy To Appstore'
 nextUrl: '/docs/appflow/destinations/intro'
 ---
 
-# Deploy builds on Appflow using the Ionic CLI
+# Deploy Builds on Appflow using the Ionic CLI
 
 <blockquote>
   <p><b>Note:</b> This feature is only available on our <b>Scale</b> plan. Please <a href="/sales">contact us</a> to enable this feature.</p>
@@ -23,7 +23,8 @@ To use environments, a proper Appflow subscription that allows the usage of Auto
 
 The Ionic CLI has to be authenticated on Appflow to be able to trigger a Deploy build.
 
-To login type:
+To log in, type:
+
 ```bash
 $ ionic login <email> <password>
 ```
