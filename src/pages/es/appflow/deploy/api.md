@@ -1,5 +1,5 @@
 ---
-title: Despliegue en Ionic
+title: Live Update API
 previousText: 'Canales'
 previousUrl: '/docs/appflow/deploy/cli'
 nextText: 'Usando Ionic CLI'
@@ -9,13 +9,13 @@ nextUrl: '/docs/appflow/deploy/api'
 
 ## Instalación y Uso
 
-In order to use the Deploy API inside of your app. You need to install the latest version of the Appflow SDK and set the `UPDATE_METHOD` to `none`:
+In order to use the Live Update API inside of your app. You need to install the latest version of the Appflow SDK and set the `UPDATE_METHOD` to `none`:
 
 ```shell
 ionic deploy add --update-method=none --app-id="YOUR_APP_ID" --channel-name="YOUR_CHANNEL_NAME"
 ```
 
-Then you can import the Deploy API in order to it in your code:
+Then you can import the Live Update API in order to it in your code:
 
 ```typescript
 // ES2015/Typescript
@@ -72,7 +72,7 @@ async changeToBetaChannel() {
 
 **IonicDeploy**:
 
-The Ionic Deploy Plugin API
+The Ionic Live Update Plugin API
 
 ***usage***:
 
