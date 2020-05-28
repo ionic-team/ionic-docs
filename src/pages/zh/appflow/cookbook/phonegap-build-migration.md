@@ -130,117 +130,168 @@ Config.xml 文件可能需要一些额外的更改才能正常运行。 我会�
 
 最后。 你还要确定你所使用的Cordova插件都是最新版本，以确保与当前版本的 Cordova兼容。
 
-### 迁移代码
-
-当我们的图标，splash屏幕和config.xml 就绪后，我们就可以将注意力转向应用本身。 Ionic Appflow 期望整个应用程序都在名为 `www` 的目录内。 设置完成！ 创建相应目录，然后将所有相关文件移动到目录中，包括HTML、CSS 、JavaScript、图像和任何其他相关资源文件。
-
-以下是应用的目录结构：
-
-![App应用结构](/docs/assets/img/appflow/cookbook/app_structure.png)
-
-### 设置 Git 仓库
+### Set up a Git Repository
 
 > 如果您已经在 Git 仓库中拥有您的应用，您可以跳过此部分。
 
-PhoneGap 构建的一个呼吁是它简单地触发一座建筑，把你的应用压缩进去， 然后上传到 PhoneGap 构建，然后自动开启。 虽然可以将 PhoneGap 构建与 Git 仓库连接，但这是一个可选步骤。 Ionic Appflow 需要使用 Git 作为其工作流程的一部分。
+One of the appeals of PhoneGap Build was its simplicity to trigger a build, zip up your app, and upload it to PhoneGap Build and a build with then automatically kick-off. While it was possible to connect PhoneGap Build with a Git repository, it was an optional step. Ionic Appflow requires the use of Git as part of its workflow.
 
-如果您在 Mac 上，Git 已经安装。 但如果尚未安装 Git ，Windows用户将需要安装 Git 。 我推荐使用 https://gitforwindows.org/ 或者那些不适合使用 CLI 的人，GitHub 的 [桌面应用程序](https://desktop.github.com)。 它使得与 Git 的合作更加容易。
+If you are on a Mac, then Git is already installed, but Windows users will need to install Git if they have not done so already. I recommend using https://gitforwindows.org/ or for those who are uncomfortable working with CLIs, GitHub’s [desktop application](https://desktop.github.com). It makes working with Git much easier.
 
-如果您从一个新项目开始，我们需要通过运行此命令来初始化一个新的仓库：
+If you are starting from a new project, we will need to initialize a new repository by running this command:
 
 ```shell
 $ git init
 ```
 
-当仓库生成时，我们需要将文件添加到它。 如果你的项目包括你不想在源代码控制下的项目, 像一个 node_modules 文件夹，您需要包含一个 。 您的项目文件夹中的简化文件。 一旦准备就绪，运行以下命令：
+With the repository generated, we need to add the files to it. If your project includes items that you do not want to have under source control, like a node_modules folder, you will need to include a .gitignore file in your project's folder. Once you are ready, then run the following command:
 
 ```shell
 $ git add .
 ```
 
-您的文件已经被分阶段提交到仓库中。 要执行实际承诺，我们需要运行git提交命令并提供提交消息：
+Your files are now staged to be committed to the repo. To perform the actual commit, we need to run the git commit command and provide a commit message:
 
 ```shell
 $ git commit -m "初始提交"
 ```
 
-您将会看到在终端中用于仓库的所有文件。
+You will see all the files that are committed to the repo listed in the terminal.
 
-接下来, Ionic建议使用 [GitHub](https://github.com) 或 [BitBucket](https://bitbucket.org) 来托管您的 Git 存储库。 如果您没有帐户， 注册其中任何一种，然后按照所提供的指示在他们的站点中创建一个新的存储库。
+Next, Ionic recommends either [GitHub](https://github.com) or [BitBucket](https://bitbucket.org) to host your Git repository. If you don’t have an account already, sign up for either of them then follow the provided instructions to create a new repository in their site.
 
-有各种方式可以将您的本地存储库添加到他们的站点，但最终您可以从命令行创建一个：
+There are a variety of ways to add your local repository to their sites, but ultimately you can create one from the command line:
 
 ```shell
 $ git push origin master
 ```
+
+### Create package.json and Ionic config files
+
+> If you do not have Node or npm installed on your computer, you will need to do this before proceeding. If you need to install Node, please select the [current LTS version](https://nodejs.org).
+
+Since Ionic Appflow was originally created to automate builds for Ionic apps, it requires two files that your app may not have. First, create a `package.json` file. The easiest way to create it is to run:
+
+```bash
+$ npm init
+```
+
+Answer all the prompts, including package name, version, and description. For `git repository`, enter the path configured in the previous step. The `entry point: (index.js)` can be set to anything since it won't be used.
+
+```json
+{
+  "name": "my-app",
+  "version": "1.0.0",
+  "description": "my cordova app",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://myorg@bitbucket.org/teamname/my-app.git"
+  },
+  "author": "My Name",
+  "license": "ISC",
+  "homepage": "https://myhomepage.com"
+}
+```
+
+Next, create a new file at the root of the project - `ionic.config.json`. Copy in the following, changing only the `name` for your app:
+
+```json
+{
+  "name": "my-app",
+  "type": "custom",
+  "integrations": {
+    "cordova": {}
+  }
+}
+```
+
+Finally, commit the new files to your project:
+
+```bash
+$ git add .
+$ git commit -m "added package json and ionic config"
+$ git push
+```
+
+### Migrate the Code
+
+Now that we have our icons, splash screens, config.xml, and new required Appflow files in place, we can turn our attention to the actual app itself. Ionic Appflow expects the entire app to be inside of a directory named `www`. That's it. Create that directory then move all app files into it, including HTML, CSS, JavaScript, images and any other related resources.
+
+Here is what the app’s directory structure should look like:
+
+![App Structure](/docs/assets/img/appflow/cookbook/app_structure.png)
 
 ## Appflow 配置
 
-随着您的应用程序准备好 Appflow 集成，现在是注册的时候了，链接您的 Git 仓库，然后生成原生的 iOS 和 Android 版本。 由 [开始注册 Appflow 帐户](https://dashboard.ionicframework.com)。
+With your app ready for Appflow integration, it’s time to sign up, link your Git repository, then build the native iOS and Android versions. Begin by [signing up for an Appflow account](https://dashboard.ionicframework.com).
 
-一旦您登录到 Appflow，导航到应用页面，然后点击"New App"按钮。 输入您的应用名称，然后点击"Create App"按钮。
+Once you’re logged into Appflow, navigate to the Apps page then click the “New App” button. Enter your app’s name then click the “Create App” button.
 
-### 连接到 Git 主机
+### Connect to a Git Host
 
-接下来, 导航到 Settings -> Git 页面。 在“GitHub ”或“Bitbucket Cloud”标签下， 点击"连接"按钮将您的GitHub 或 BitBitket 账户连接到Ionic Appflow，然后使用标准的 OAuth 登录过程进行身份验证。
+Next, head to the Settings -> Git page. Under the “GitHub” or “Bitbucket Cloud” tabs that appear, link your GitHub or BitBucket account to Ionic Appflow by clicking the "Connect" button then authenticating using the standard OAuth login process.
 
-在连接您的帐户后，您的代码仓库列表将会出现。 选择您早些时候创建的一个。 一旦被选中，成功信息将出现：“连接到 GitHub/Bitbucket的[仓库名称]。”
+After connecting your account, a list of your code repositories will appear. Choose the one you created earlier. Once it’s selected, a success message will appear: “Connected to [repository name] on GitHub/Bitbucket.”
 
-您的应用程序的 Git 仓库现在已链接到 Appflow，随后的代码提交将自动被检测。
+Your app’s Git repository is now linked to Appflow, and any subsequent code commits will automatically be detected.
 
-### 创建一个本地版本
+### Create a Native Build
 
-只有新的提交到您的资源库才会显示在Appflow中。 在 GitHub/BitBucket 建立连接之前做出的承诺将不会被显示。 因此，我们必须做出新的承诺，才能建立一个 iOS 或 Android 应用程序。
+Only new commits to your repository will be shown in Appflow. Commits made prior to establishing a connection with GitHub/BitBucket will not be displayed. Therefore, we have to make a new commit before we can build an iOS or Android app.
 
-对您的应用文件进行更改，然后将更改推送到您的 Git 主机：
+Make a change to one of your app’s files, then push the change up to your Git host:
 
 ```shell
 $ git add .
-$ git commit -m “准备构建原生应用”
+$ git commit -m “ready to build native app”
 $ git push origin master
 ```
 
-回到 Ionic Appflow 站点，导航到提交页面。 你会看到你刚才推送的新代码提交 - 点击页面右边的"Start build"框图标开始一个新的构建。
+Back over in the Ionic Appflow site, navigate to the Commits page. You’ll see the new code commit that you just pushed - click the “Start build” box icon on the far right of the page to begin a new build.
 
-> 当您推送更多更新时， 您可以导航到提交列表然后通过单击右侧的构建图标来触发某项提交的构建。
+> As you push more updates, you can navigate to the Commits list then trigger a build for a particular commit by simply click the Build icon on the right.
 
-现在我们可以选择我们想要构建的平台：iOS (使用 Xcode 11 或 10)，Android, 或者甚至是一个网络部署 (使用 Appflow's [在线部署](/docs/appflow/deploy/intro) 功能)。 为简单起见，（更详细的证书细节见下文） 选择 Android 作为目标平台 - 它不需要安全证书来生成本地应用文件。
+Now we can choose which platform we want to build for: iOS (using Xcode 11 or 10), Android, or even a web-based deployment (used with Appflow’s [Live Deploy](/docs/appflow/deploy/intro) feature). For simplicity's sake (see below for more advanced certificate details), select Android as the target platform - it doesn’t require a security certificate to generate a native app file.
 
-> 要了解更多关于生成安全配置文件的信息，请在[这里](/docs/appflow/package/credentials)查看。
+> To learn more about generating a security profile, please see [here](/docs/appflow/package/credentials).
 
-接下来，我们可以选择构建类型，在我们的情况下，选择Debug。 其他选项需要签名证书。 在选择这些选项后，点击蓝色构建按钮。
+Next, we can choose the Build Type, in our case, select Debug. The other options require a signing certificate. With those choices selected, click the blue Build button.
 
-这将会旋转一个虚拟机来执行我们的构建。 在这里，我们可以非常详细地观察正在为我们执行的各种构建步骤。 构建完成需要几分钟时间。 看到这个进程的所有这些细节的好事是当某些事情发生时，你对这个问题有了更深入的了解。 完成后，您可以下载本地应用程序并将其安装到您的移动设备上。
+This will spin up a virtual machine to perform our build(s) on. Here we can watch in great detail the various build steps that are being executed for us. It will take a few minutes for the build to complete. The nice thing about seeing all these details of the process is when something goes amiss, you have far better insight into the issue. Once the process is done, you can download your native application and install it onto your mobile device.
 
-就是这样！ <strong>您已成功地将您的应用从 PhoneGap 构建迁移到 Ionic Appflow。</strong>
+That’s it! <strong>You’ve successfully migrated your app from PhoneGap Build to Ionic Appflow.</strong>
 
-当您可以在这里停止并使用Appflow作为您原生的 iOS 和 Android 版本时， 继续阅读关于如何将您的应用转换为Ionic app的详细信息。虽然不是必需的，它提供了一个现代应用开发体验，展示了一个 [开放源码用户界面工具包](/docs/) 与最新的 iOS 和 Android 设计， 动画和手势。
+While you can stop here and use Appflow as-is for your native iOS and Android builds, continue reading for details on how to convert your app to an Ionic app. While not required, it offers a modern app development experience featuring an [open source UI toolkit](/docs/) with the latest iOS and Android designs, animations, and gestures.
 
 ## 迁移到Ionic
 
-要开始将您现有的应用程序转换为 Ionic, 请先安装Ionic CLI
+To begin the process of converting your existing app to Ionic, install the Ionic CLI first.
 
-> 如果您的电脑上没有安装Node或npm，您需要先安装Node或npm，然后再继续。 如果您需要安装Node，请选择[当前的LTS版本](https://nodejs.org)。
+> If you do not have Node or npm installed on your computer, you will need to do this before proceeding. If you need to install Node, please select the [current LTS version](https://nodejs.org).
 
-打开您的命令行并运行：
+Open your command line and run:
 
 ```shell
 $ npm i -g @ionic/cli
 ```
 
-这将安装 Ionic CLI 供全局使用。 我们将使用 Ionic CLI 的命令来创建和初始化我们的项目，然后将它链接到我们的Ionic Appflow 帐户。 说到 Ionic Appflow 帐户，如果您没有创建一个帐户，让我们这样做。 转到 Ionic 仪表盘并 [创建您的帐户](https://dashboard.ionicframework.com/signup)。 完成此操作后，我们可以返回命令行并继续下一步。
+This will install the Ionic CLI for use globally. We are going to use the Ionic CLI's commands to create and initialize our project, then link it to our Ionic Appflow account. Speaking of Ionic Appflow accounts, if you have not created an account, let’s do that. Go to the Ionic Dashboard and [create your account](https://dashboard.ionicframework.com/signup). Once this is completed, we can return to our command line and take our next step.
 
-### 创建一个 Ionic 应用程序
+### Create an Ionic App
 
-随着Ioncon CLI 安装，我们现在可以初始化项目。 如果您正在启动一个新项目，只需创建一个我们将能够工作的新项目目录。 如果你有一个现有的项目，你也可能想要创建一个新的项目目录并将你的项目移动到它。 但是，如果您的项目已经在git的源代码控制下，则建议将项目保留在原位置，并在该目录中运行。
+With the Ionic CLI installed, we can now initialize the project. If you are starting a new project, just create a new project directory that we will work from. If you have an existing project, you might also want to create a new project directory and move your project into it. However, if your project is already under git's source control, then it's recommended to keep the project where it is and work within that directory.
 
-现在我们已经设置了我们的活动目录，我们可以运行 `ionic init` 命令：
+Now that we have set our active directory, we can run the `ionic init` command:
 
 ```shell
 $ ionic init
 ```
 
-此命令将询问您的项目名称，例如"Ionic App Flow Demo"。 然后，它将通知我们它无法确定项目类型。 由于我们正在迁移一个非Ionic应用程序, 请选择自定义选项。 如果您正在将 Ionic Applow 添加到现有的Ionic应用程序中，您将使用 Ionic Appflow [安装指南](/docs/appflow/quickstart)。 CLI 然后会在我们的目录中生成一个 `ionic.config.json`。 内容相当直截了当：
+This command will ask you for your project name, for example, “Ionic App Flow Demo.” Next, it will inform us that it could not determine the project type. Since we are migrating a non-Ionic application, select the custom option. If you are adding Ionic Appflow to an existing Ionic application, you use the Ionic Appflow [installation guide](/docs/appflow/quickstart) instead. The CLI will then generate an `ionic.config.json` in our directory. The contents are fairly straight forward:
 
 ```json
 {
@@ -250,7 +301,7 @@ $ ionic init
 }
 ```
 
-我们将在稍后讨论该集成价值，但让我们完成基础配置的设置。 另一个将需要的元素是 `package.json` 文件。 如果你的项目已经有一个，你可以跳过这个步骤。只需记住你将需要包含在这个目录中。 如果您没有，请运行 `npm init`。 像 `ionic init` 命令一样，它会问您一系列问题，继续前进并使用建议的答复。 `package.json` 看起来类似于：
+We will touch upon that integration value in a moment, but let's finish setting up our base configurations. Another element that will be needed is a `package.json` file. If your project already has one, you can skip this step, just remember you will need to include in this directory. If you do not have one, then run `npm init`. Like the `ionic init` command, it will ask you a series of questions, go ahead and use the suggested responses. The `package.json` will look similar to this:
 
 ```json
 {
@@ -268,80 +319,80 @@ $ ionic init
 
 ## 整合 Cordova
 
-下一步是将 Cordova 添加到我们的项目。 用这个本地运行解决方案来帮助开发者完成他们可能需要解决的一些更常见的复杂任务。 其中包括信息解决、支付系统、认证等等。 由于我们正在迁移一个基于Cordova的现有应用程序，我们需要运行以下命令：
+The next step is adding Cordova to our project. Ionic uses this native runtime solution to assist developers with some of the more common complex tasks that they might need to solve. These include messaging solutions, payment systems, authentication, and so on. Since we are migrating an existing Cordova-based application, we need to run the following command:
 
 ```shell
 $ ionic integrations enable cordova
 ```
 
-现在，如果你没有将你的 config.xml 移动到这个目录，它将为我们生成一个。 这是有用的，因为您现在有一个当前的参考文献，可以与当您将现有的 config.xml 迁移过来时进行比较。 此外，它将生成一个资源文件夹，它将包含占位符应用程序图标和安卓系统的初始屏幕。
+Now if you haven't moved your config.xml into this directory, it will generate one for us. This is useful as you now have a current reference to compare against when you migrate your existing config.xml over. In addition, it will generate a resources folder that will contain placeholder app icons and splash screens for both iOS and Android.
 
 ## 正在连接到Ionic Appflow
 
-通过我们的应用程序配置为使用Ionic Appflow，我们现在可以将它连接到服务上。 从命令行我们需要登录到Ionic Dashboard：
+With our application configured to use Ionic Appflow, we can now connect it to the service. From the command line we need to log into the Ionic Dashboard:
 
 ```shell
 $ ionic login
 ```
 
-请先输入您用来创建 Ionic Appflow 帐户的电子邮件和密码。
+Enter the email and password you used to create your Ionic Appflow account earlier.
 
-现在我们已登录，我们可以将此应用链接到我们的帐户。 要执行这一步，请运行：
+Now that we are logged in, we can link this app to our account. To do this step, run:
 
 ```shell
 $ ionic link
 ```
 
-这会促使我们选择通过使用 Ionic Appflow 控制面板或创建一个新应用程序来连接我们已定义的现有应用程序。 选择"Create new app"选项。
+This prompts us to choose between linking an existing app that we have defined by using the Ionic Appflow dashboard or creating a new app. Select the "Create new app" option.
 
-CLI 现在提示应用程序的名称。这应该是您应用程序的真实名称。 接下来，您将被提示选择您要使用的Git主机，GitHub 或 Ionic。 如果您选择 GitHub，它将引导您完成安全地将您的仓库连接到 Ionic Appflow s服务所需的步骤。 这里我们将选择Ionic Appflow, 但注意此选项不是想要做一个 Git 主机。 Ionic强烈建议使用 GitHub 、 Bitbucket 或其他官方的 git 托管服务备份您的源代码存储库。
+The CLI now prompts for a name for the app. This should be the real name of your app. Next, you will be prompted to select which Git host you are going to use; GitHub or Ionic's. If you choose GitHub, it will guide you through the steps needed to securely connect your repo with the Ionic Appflow service. Here, we’ll choose Ionic Appflow, but note that this option is not intended to be a Git host. Ionic strongly suggests using GitHub, Bitbucket or another official git hosting service to backup your source code repository.
 
-然后，CLI 将询问您的 SSH(Secure SHell) 设置。 这将允许您的系统和Ionic Appflow之间的安全连接。 我将选择自动设置新的 SSH 密钥对的默认选项。 与此相关，我们的应用与Ionic Appflow相连。 如果您跳转到 Appflow控制面板，您现在应该看到我们的应用程序在控制面板中列出(https://dashboard.ionicframework.com)。
+Next, the CLI will ask about your SSH(Secure SHell) settings. This will allow a secure connection between your system and the Ionic Appflow service. I will select the default option of Automatically setting up a new SSH key pair. And with that our app is linked with Ionic Appflow. If you head over to the Appflow dashboard, you should now see our app listed in the dashboard (https://dashboard.ionicframework.com).
 
 ## 最后"推送"
 
-既然我们终于有了我们的所有物品，我们就可以把我们的第一座远距离建筑拆除。 基于 Appflow的构建是由 git 推送事件触发的。 根据哪个git主机，您选择的命令略有不同。 如果你选择Ionic作为你的主机，则命令是：
+Now that we finally have all our items in place, we can kick off our first remote build. Appflow-based builds are triggered by a git push event. Depending on which git host you selected the command is slightly different. If you selected Ionic as your host, then the command is:
 
 ```shell
 $ git push ionic master
 ```
 
-否则，通常是：
+Otherwise, it’s typically:
 
 ```shell
 $ git push origin master
 ```
 
-它应该促使您获取分配给 SSH 密钥的口令，然后开始将文件传输到 Ionic Appflow系统的过程。 现在我们准备告诉Appflow来创建我们的第一个构建。 切换到Ionic Appflow面板，选择您的应用，然后从左侧的选项中选择构建菜单项。
+It should prompt you for the passphrase you assigned to the SSH Key, then begin the process of transferring the files to Ionic Appflow's system. Now we are ready to tell Appflow to create our first build. Switch to the Ionic Appflow Dashboard, select your app and then choose the Build menu item from the options on the left-hand side.
 
-如果你还没有进行构建，它将促使我们创建我们的第一个，所以继续前进并点击按钮！ 接下来，我们必须选择我们想要使用哪个承诺来构建。 目前，我们只有一项承诺，因此选择很简单。
+If you haven't performed a build yet, it will prompt us to create our first, so go ahead and click the button! Next, we have to select which commit we want to use to build from. Currently, we only have one commit, so the choice is simple.
 
-现在我们可以选择我们想要构建的平台： iOS (使用 Xcode 11 或 10) 或 Android 。 接下来，我们可以选择构建类型，在我们的情况下，它将是Debug。 其他选项需要签名证书。 在选择这些选项后，点击蓝色构建按钮。
+Now we can choose which platform we want to build for: iOS (using Xcode 11 or 10) or Android. Next, we can choose the Build Type, in our case, it will be Debug. The other options require a signing certificate. With those choices selected, click the blue Build button.
 
-这将启动虚拟机以执行构建。 在这里，我们可以非常详细地观察正在为我们执行的各种构建步骤。 构建完成需要几分钟时间。 看到这个进程的所有这些细节的好事是当某些事情发生时，你对这个问题有了更深入的了解。 进程完成后，您可以下载本地应用程序并在您的移动设备上安装它。
+This will spin up a virtual machine to perform our build(s) on. Here we can watch in great detail the various build steps that are being executed for us. It will take a few minutes for the build to complete. The nice thing about seeing all these details of the process is when something goes amiss, you have far better insight into the issue. Once the process is done, you can download your native application and install it on your mobile device.
 
-就是这样！ 您已将应用迁移到Ionic。 要了解更多关于Ionic Framework的 UI 组件的信息， [请在这里查看](/docs/)。 要探索Ionic CLI, [请在这里查看](/docs/cli)。
+That’s it! You’ve migrated your app to Ionic. To learn more about Ionic Framework’s UI components, [see here](/docs/). To explore the Ionic CLI, [see here](/docs/cli).
 
 ## 下一步
 
-您已经创建了第一个带有Ionic Appflow的本地应用程序，但这只是冰山的一角！ Appflow为团队快速轻松地构建多个应用提供了更多功能。 您可以自由地探索其余的服务，包括自动化(包括多个环境和本地配置在内的强大的 CI/CD 选项) 实时部署 (实时更新您的应用程序的 UI 和业务逻辑) 以及最近的 [一键发布到应用商店](https://ionicframework.com/blog/announcing-1-click-publish-to-app-stores-from-ionic-appflow/)。
+You’ve created your first native application with Ionic Appflow, but that’s just the tip of the iceberg! Appflow offers many more features for teams building multiple apps quickly and easily. Feel free to explore the rest of the service, which includes Automations (robust CI/CD options including multiple environments and native configurations), Live Deploy (update the UI and business logic of your app remotely in real time) and recently, [1-click publish to app stores](https://ionicframework.com/blog/announcing-1-click-publish-to-app-stores-from-ionic-appflow/).
 
-### 迁移苹果和谷歌证书
+### Migrating Apple and Google Certificates
 
-如上所述，Android 调试构建是最容易工作的，因为它们不需要安全证书。 然而，Android 版本构建和所有 iOS 构建类型需要应用程序签名。 如果您的证书已经存储在 PhoneGap 版本中，没有从服务中下载它们的方法。 非常感谢，Apple 证书可以通过 Apple 开发者门户重新生成。
+As seen above, Android debug builds are the easiest to get working, since they do not require a security certificate. However, Android release builds and all iOS build types require the application to be properly signed. If you have your certificates already stored on PhoneGap Build, there is no method to download them from the service. Thankfully, Apple certificates can be regenerated using Apple’s developer portal.
 
-对于Android证书，不幸的是，由于这些证书是由您在本地创建的，因此无法重生它们。 因为 Google Play 商店需要更新，应用程序需要使用相同的密钥签名，所以创建新密钥将无法工作。 如果您无法找到原证书， 一个建议是构建一个程序版本，提醒当前版本的用户并要求他们迁移到它。
+For Android certificates, since these were originally created locally by you, there is unfortunately no way to regenerate them. Since the Google Play Store requires updates to an app be signed with the same key, creating a new key will not work. If you are unable to locate the original key, a suggestion is to build a version of the app that alerts the current users of the new version and ask them to migrate to it.
 
-欲了解更多关于签名证书和安全配置文件的信息，请查看 [这里](/docs/appflow/package/credentials) 的详细信息。
+For more information about signing certificates and security profiles, please check out the details [here](/docs/appflow/package/credentials).
 
-### 从 Cordova 迁移到 Capacitor
+### Migrate from Cordova to Capacitor
 
-虽然这篇文章突出了您需要采取的步骤来迁移您的Cordova/PhoneGap应用程序来使用 Ionic的Appflow， 还有另一个值得考虑的选项： [Capacitor](https://capacitor.ionicframework.com/docs/)。
+While this article highlighted the steps you need to take to migrate your Cordova/PhoneGap based application to use Ionic's Appflow, there is another option worth considering: [Capacitor](https://capacitor.ionicframework.com/docs/).
 
-对于那些不熟悉这一解决办法的人来说，它在许多方面是Cordova的精神继承者。 在仍然使用 web 技术来编程您的应用程序时， Capacitor使开发能够靠近本土的工具和能力，提供更高的用户体验和性能。
+For those unfamiliar with this solution, it is in many ways the spiritual successor to Cordova. While still leveraging web technologies to code your application, Capacitor allows the development to move close to the native tooling and capabilities providing an even better user experience and performance.
 
-幸运的是，迁移过程很容易，大多数Cordova插件都落后于Capacitor。 [开始迁移到这里](https://capacitor.ionicframework.com/docs/cordova/migrating-from-cordova-to-capacitor)。
+Fortunately, the migration process is easy and the majority of Cordova plugins are backward compatible with Capacitor. [Start migrating here](https://capacitor.ionicframework.com/docs/cordova/migrating-from-cordova-to-capacitor).
 
-### 仍然有疑问？ 卡住了吗？ 可用的迁移援助
+### Have Questions? Stuck? Migration Assistance Available
 
-如果您有任何问题或与Ionic Appflow相关的问题，请访问 [Ionic 论坛](https://forum.ionicframework.com/c/ionic-appflow/)。 如果您需要迁移援助，Ionic支持 [咨询服务](https://ionicframework.com/advisory)。
+If you have any questions or run into issues working with Ionic Appflow, visit the [Ionic Forums](https://forum.ionicframework.com/c/ionic-appflow/). If you need migration assistance, Ionic has [Advisory services](https://ionicframework.com/advisory) available as well.
