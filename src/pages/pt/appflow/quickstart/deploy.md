@@ -10,7 +10,7 @@ Now that we've [installed the Appflow SDK ](/docs/appflow/quickstart/installatio
 
 ## Overview
 
-The Ionic Deploy feature works by using the installed Appflow SDK in your native application to listen to a particular Deploy [Channel](/docs/appflow/deploy/channels) Destination.
+The Live Update feature works by using the installed Appflow SDK in your native application to listen to a particular Deploy [Channel](/docs/appflow/deploy/channels) Destination.
 
 When a Deploy build is assigned to a Channel Destination, that update will be deployed to user devices running binaries that are configured to listen to the specified Channel Destination.
 
