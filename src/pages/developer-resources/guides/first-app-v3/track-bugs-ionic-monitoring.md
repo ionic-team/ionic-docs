@@ -88,9 +88,9 @@ Clicking on the event gives us lots of details surrounding what happened, such a
 
 Given the proliferation of mobile devices and operating systems these days, this is immensely powerful. Armed with these details, we can hone in on the problem and fix it quickly. 
 
-This is a TypeScript bug, meaning a fix can be released using Ionic Deploy. Give it a try!
+This is a TypeScript bug, meaning a fix can be released using Live Updates. Give it a try!
 * Revert the method back to “takePicture.”
 * Push the fix using Git. Remember, “git push ionic master.”
-* Roll out the fix using Ionic Deploy from the Ionic dashboard.
+* Roll out the fix using Live Updates from the Ionic dashboard.
 
 Supporting hundreds of mobile device types is so much easier with Ionic Appflow Monitoring. [Upgrade to the Ionic Appflow Developer plan today](https://dashboard.ionicframework.com/settings/billing) to get instant notification when bugs occur, save error history for sixty days (instead of seven), and unlock 10,000 live Deploy updates per month!
