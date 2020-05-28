@@ -213,12 +213,12 @@
   "menu-appflow-quickstart-environment": "Create an Environment",
   "menu-appflow-quickstart-native-config": "Create a Native Configuration",
 
-  "menu-appflow-deploy": "Deploy",
+  "menu-appflow-deploy": "Live Update",
   "menu-appflow-deploy-intro": "Overview",
   "menu-appflow-deploy-setup": "Setup",
-  "menu-appflow-deploy-builds": "Deploy Builds",
+  "menu-appflow-deploy-builds": "Builds",
   "menu-appflow-deploy-channels": "Channels",
-  "menu-appflow-deploy-api": "Deploy API",
+  "menu-appflow-deploy-api": "API",
   "menu-appflow-deploy-tutorials": "Tutorials and Videos",
   "menu-appflow-deploy-cli": "Using Ionic CLI",
 
