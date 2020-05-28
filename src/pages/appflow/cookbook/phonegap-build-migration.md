@@ -130,14 +130,6 @@ The config.xml file might need some additional changes in order to function corr
 
 Finally, you will want to make sure that whatever Cordova plugins you are using are the latest version to ensure compatibility with the current version of Cordova.
 
-### Migrate the Code
-
-Now that we have our icons, splash screens, and config.xml in place, we can turn our attention to the actual app itself. Ionic Appflow expects the entire app to be inside of a directory named `www`. That's it. Create that directory then move all app files into it, including HTML, CSS, JavaScript, images and any other related resources.
-
-Here is what the app’s directory structure should look like:
-
-![App Structure](/docs/assets/img/appflow/cookbook/app_structure.png)
-
 ### Set up a Git Repository
 
 > If you already have your app in a Git repository, you can skip this section.
@@ -173,6 +165,65 @@ There are a variety of ways to add your local repository to their sites, but ult
 ```shell
 $ git push origin master
 ```
+
+### Create package.json and Ionic config files
+
+> If you do not have Node or npm installed on your computer, you will need to do this before proceeding. If you need to install Node, please select the [current LTS version](https://nodejs.org).
+
+Since Ionic Appflow was originally created to automate builds for Ionic apps, it requires two files that your app may not have. First, create a `package.json` file. The easiest way to create it is to run:
+
+```bash
+$ npm init
+```
+
+Answer all the prompts, including package name, version, and description. For `git repository`, enter the path configured in the previous step. The `entry point: (index.js)` can be set to anything since it won't be used.
+
+```json
+{
+  "name": "my-app",
+  "version": "1.0.0",
+  "description": "my cordova app",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://myorg@bitbucket.org/teamname/my-app.git"
+  },
+  "author": "My Name",
+  "license": "ISC",
+  "homepage": "https://myhomepage.com"
+}
+```
+
+Next, create a new file at the root of the project - `ionic.config.json`. Copy in the following, changing only the `name` for your app:
+
+```json
+{
+  "name": "my-app",
+  "type": "custom",
+  "integrations": {
+    "cordova": {}
+  }
+}
+```
+
+Finally, commit the new files to your project:
+
+```bash
+$ git add .
+$ git commit -m "added package json and ionic config"
+$ git push
+```
+
+### Migrate the Code
+
+Now that we have our icons, splash screens, config.xml, and new required Appflow files in place, we can turn our attention to the actual app itself. Ionic Appflow expects the entire app to be inside of a directory named `www`. That's it. Create that directory then move all app files into it, including HTML, CSS, JavaScript, images and any other related resources.
+
+Here is what the app’s directory structure should look like:
+
+![App Structure](/docs/assets/img/appflow/cookbook/app_structure.png)
 
 ## Appflow Configuration
 
