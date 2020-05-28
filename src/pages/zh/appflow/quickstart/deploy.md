@@ -10,7 +10,7 @@ nextUrl: '/docs/appflow/quickstart/package'
 
 ## 概述
 
-通过在您的本地应用程序中使用已安装的 Appflows SDK 来监听一个特定的部署 [频道](/docs/appflow/deploy/channels) 目的地功能可以起作用。
+The Live Update feature works by using the installed Appflow SDK in your native application to listen to a particular Deploy [Channel](/docs/appflow/deploy/channels) Destination.
 
 当部署构建被分配到频道目标时， 该更新将部署到运行二进制文件的用户设备，这些文件被配置为监听指定的频道目标。
 
