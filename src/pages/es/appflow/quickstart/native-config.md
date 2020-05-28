@@ -2,7 +2,7 @@
 title: 'Crear una Configuración Nativa'
 previousText: 'Crear un entorno'
 previousUrl: '/docs/appflow/quickstart/environment'
-nextText: 'Despliegue Iónico'
+nextText: 'Live Updates'
 nextUrl: '/docs/appflow/deploy/intro'
 ---
 
