@@ -5,20 +5,20 @@ nextText: 'Channels'
 nextUrl: '/docs/appflow/deploy/channels'
 ---
 
-# 部署构建
+# Live Update Builds
 
 ## 概览
 
-部署构建是你的应用程序构建，其中仅包括静态资源 (JavaScript, HTML, 字体和图像)，可以通过 [部署](/docs/appflow/deploy/intro) 发送给客户。 可以从Ionic仪表板的边栏中** Build **下的** Builds **部分中手动创建部署版本。 您将能够从Appflow知道的可用提交列表中进行选择。 如果有可用的提交，您将需要向Git远程推送一个新的提交，以便它在Appflow中显示。 在选择提交后，从 `Target platform` 下拉菜单中选择 `Web Deploy`。
+A Live Update build of your application includes only the web assets (JavaScript, HTML, fonts, and images) which can be shipped out to customer via a [Live Update](/docs/appflow/deploy/intro) deployment. Live Update builds can be created manually from the Ionic Dashboard, in the **Builds** section under **Build** in the sidebar. 您将能够从Appflow知道的可用提交列表中进行选择。 If there are know available commits you will need to push a new commit to your Git remote in order for it to show up in Appflow. 在选择提交后，从 `Target platform` 下拉菜单中选择 `Web Deploy`。
 
-![导航到部署构建](/docs/assets/img/appflow/deploy-builds-create-location.png)
+![Navigating to Live Update Builds](/docs/assets/img/appflow/deploy-builds-create-location.png)
 
-部署构建将做以下工作:
+A Live Update build will do the following:
 
 * `npm install` 运行以安装任何依赖。
 * `npm run build` 如果 `build` 脚本在您的 `package.json` `scripts`中检测到，以便为您的应用程序构建web资源。
-* 您构建的应用程序的`www`目录将被存储，并通过[Deploy](/docs/appflow/deploy/intro)进行实时更新
-* 您可以在 `Builds` 下的侧边菜单中找到您部署版本的历史和状态 `Building` 选项卡。
+* The `www` directory with your built application will be stored and made available for live updates.
+* You can find the history and status of your Live Update builds in the side menu under `Builds` in the `Build` tab.
 
 ## 并行限制
 
