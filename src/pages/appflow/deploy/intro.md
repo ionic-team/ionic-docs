@@ -16,11 +16,11 @@ Ionic Appflow's Live Update feature let you update the UI and business logic of 
     <p>Install and configure the Appflow SDK and quickly ship your first live update!</p>
   </docs-card>
 
-  <docs-card header="Deploy Builds FAQ" href="https://ionic.zendesk.com/hc/en-us/categories/360000410474-Deploy-Builds-Git-" icon="/docs/assets/icons/guide-faq-icon.png">
+  <docs-card header="Builds FAQ" href="https://ionic.zendesk.com/hc/en-us/categories/360000410474-Deploy-Builds-Git-" icon="/docs/assets/icons/guide-faq-icon.png">
     <p>Find answers to common questions about Live Updates.</p>
   </docs-card>
 
-  <docs-card header="Deploy FAQ" href="https://ionic.zendesk.com/hc/en-us/categories/360000409113-Deploy" icon="/docs/assets/icons/guide-faq-icon.png">
+  <docs-card header="Live Update FAQ" href="https://ionic.zendesk.com/hc/en-us/categories/360000409113-Deploy" icon="/docs/assets/icons/guide-faq-icon.png">
     <p>Find answers to common questions about Live Updates.</p>
   </docs-card>
 </docs-cards>
