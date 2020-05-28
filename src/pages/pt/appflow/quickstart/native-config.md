@@ -2,7 +2,7 @@
 title: 'Create a Native Configuration'
 previousText: 'Create an Environment'
 previousUrl: '/docs/appflow/quickstart/environment'
-nextText: 'Ionic Deploy'
+nextText: 'Live Updates'
 nextUrl: '/docs/appflow/deploy/intro'
 ---
 
