@@ -1,5 +1,5 @@
 ---
-title: Ionic部署
+title: Live Update API
 previousText: '频道'
 previousUrl: '/docs/appflow/sport/screcisions'
 nextText: '使用 Ionic CLI'
@@ -9,13 +9,13 @@ nextUrl: '/docs/appflow/deploy/cli'
 
 ## 安装和使用
 
-为了在您的应用程序中使用部署API。您需要安装Apploret SDK 的最新版本，并且设置 `UPDATE_METHD` 为`none`：
+In order to use the Live Update API inside of your app. You need to install the latest version of the Appflow SDK and set the `UPDATE_METHOD` to `none`:
 
 ```shell
 ionic deploy add --update-method=none --app-id="YOUR_APP_ID" --channel-name="YOUR_CHANNEL_NAME"
 ```
 
-然后您可以导入Deploy API，以便在您的代码中导入：
+Then you can import the Live Update API in order to it in your code:
 
 ```typescript
 // ES2015/Typescript
@@ -72,7 +72,7 @@ async changeToBetaChannel() {
 
 **IonicDeploy**:
 
-Ionic Deploy插件 API
+The Ionic Live Update Plugin API
 
 ***用法***:
 
