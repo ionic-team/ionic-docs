@@ -28,16 +28,8 @@ $ ionic package build <platform> <type> --security-profile=<name> --destination=
   - For an iOS build it must be a Apple App store destination
   - For an Android build it must be a Google Play Store destination
 
-The build can be customized further via the following options:
 
-- `--environment=<name>` to specify the group of environment variables to be exposed to the build
-(available only with Automation; more info about environments are available [here](/docs/appflow/environments/))
-- `--native-config=<name>` to specify the group of native config variables to be exposed to your
-build (more info about native configs are available [here](/docs/appflow/package/intro/#native-configs))
-- `--commit=<sha1>` The commit defaults to HEAD; to use a different commit you can use this option
-with the full SHA1 of the commit
-- `--target-platform=<name>` This option is mostly useful for iOS builds if for any reason a package build with a
-specific version of Xcode is needed. If this is omitted the preferred version is used
+For more information about other `ionic package build` options, please refer to the [package build documentation](/docs/cli/commands/package-build).
 
 ## Deploy an existing build to an app store
 
