@@ -201,7 +201,7 @@
   "menu-appflow-destinations-apple": "Apple AppStore",
   "menu-appflow-destinations-google": "Google Play Store",
   "menu-appflow-destinations-builds": "Construcción/Automatización",
-  "menu-appflow-destinations-cli": "Línea de comandos",
+  "menu-appflow-destinations-cli": "Using Ionic CLI",
   "menu-appflow-destinations-manual": "Manual de Despliegue",
   "menu-appflow-package": "Paquete",
   "menu-appflow-package-intro": "Resumen",
