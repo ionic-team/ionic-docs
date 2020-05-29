@@ -12,22 +12,33 @@ nextUrl: '/docs/appflow/destinations/manual'
 
 > **注意：** 要部署构建，您需要有权限才能部署cli的构建。
 
-- **创建将部署到应用商店的新版本**
-    - 命令： `ionic package build <platform> <type> --security-profile=<name> --destination=<name>`
-    - `<platform>`
-        - `android` 或 `ios`
-    - `<type>`
-        - `ios`：`app-store` 或 `enterprise`
-        - `android`：`release`
-    - `--security-profile=<name>`
-        - 所选的配置文件必须是发布或应用存储配置文件
-    - `--destination=<name>`
-        - 为了构建iOS，它必须是苹果应用商店的目标
-        - 若要构建Android，它必须是 Google Play 商店的目标
+## Deploy a new build to an app store
 
-- **部署现有构建到应用商店**
-    - 命令： `ionic包部署 <build-id> <destination>`
-    - `<build-id>`
-        - 在界面中查找的现有版本
-    - `<destination>`
-        - 构建的适当目标名称
+```bash
+$ ionic package build <platform> <type> --security-profile=<name> --destination=<name>
+```
+
+- `<platform>`
+  - `android` or `ios`
+- `<type>`
+  - `app-store` or `enterprise` for `ios`
+  - `release` for `android`
+- `--security-profile=<name>`
+  - The selected profile must be a release or app store profile
+- `--destination=<name>`
+  - For an iOS build it must be a Apple App store destination
+  - For an Android build it must be a Google Play Store destination
+
+
+For more information about other `ionic package build` options, please refer to the [package build documentation](/docs/cli/commands/package-build).
+
+## Deploy an existing build to an app store
+
+```bash
+$ ionic package deploy <build-id> <destination>
+```
+
+- `<build-id>`
+  - An existing build that has been looked up in the UI
+- `<destination>`
+  - The name of an appropriate destination for the build
