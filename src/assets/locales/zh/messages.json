@@ -201,7 +201,7 @@
   "menu-appflow-destinations-apple": "苹果商店",
   "menu-appflow-destinations-google": "谷歌应用商店",
   "menu-appflow-destinations-builds": "编译/自动化",
-  "menu-appflow-destinations-cli": "命令行",
+  "menu-appflow-destinations-cli": "Using Ionic CLI",
   "menu-appflow-destinations-manual": "手动部署",
   "menu-appflow-package": "原生工具包",
   "menu-appflow-package-intro": "概览",
