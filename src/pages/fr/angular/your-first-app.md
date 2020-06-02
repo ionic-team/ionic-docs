@@ -2,7 +2,7 @@
 previousText: 'Vue d''ensemble'
 previousUrl: '/docs/angular/overview'
 nextText: 'Taking Photos'
-nextUrl: '/docs/angular/your-first-app/2-taking-photos'
+nextUrl: '/docs/angular/your-first-app/2-saving-photos'
 ---
 
 # Votre première application Ionic: Angular
