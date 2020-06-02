@@ -5,17 +5,16 @@ previousUrl: '/docs/appflow/cookbook/private_npm_modules'
 
 # 在构建中使用不同的 Node
 
-可以在编译中使用不同于默认版本的Node版本 (当前Node 10)。
+It is possible to override the Node version used during an Appflow build.
 
-
-要切换Node版本，只需在环境中添加一个名为 `OVERRIDE_NODE_VERSION` 的变量，并在构建中使用 这样的环境。
+To switch Node version simply add a variable named `OVERRIDE_NODE_VERSION` inside an Appflow environment. Select the  environment when triggering a build.
 
 ![使用不同的 Node 版本](/docs/assets/img/appflow/cookbook/switch-node-version.png)
 
 #### 注意
 
-环境变量` OVERRIDE_NODE_VERSION `只能设置为表示主要版本的整数：目前允许 ` 8 `，` 10 `和` 12 ` 。
+The environment variable `OVERRIDE_NODE_VERSION` can only be set to an integer representing the major version: `10` and `12` are currently allowed.
 
-即使 `12.13.0` 是一个有效的版本，它不是一个有效的输入。 `13` 目前不可用。
+Even if `12.13.0` is a valid version, it is not a valid input; Future Node LTS releases will be made avaiable when they officially enter LTS status. Only LTS releases are included in the Appflow build system.
 
-如果` OVERRIDE_NODE_VERSION `设置为不好的输入或不可用的版本，则Node版本将默认为` 10 `
+If `OVERRIDE_NODE_VERSION` is set to an invalid or unavailable version the Node version will be defaulted to `12`
