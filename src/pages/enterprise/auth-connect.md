@@ -5,7 +5,7 @@ version: 2.2.0
 minor: 2.2.X
 ---
 
-Ionic Auth Connect handles logging in and/or registering a user with an authentication provider (such as Auth0, Azure AD, or AWS Cognito) using industry standard OAuth/OpenId Connect on iOS, Android, or on the web.
+Ionic Auth Connect handles logging in and/or registering a user with an authentication provider (such as Auth0, Azure AD, AWS Cognito, or Okta) using industry standard OAuth/OpenId Connect on iOS, Android, or on the web.
 
 When used with [Ionic Identity Vault](/docs/enterprise/identity-vault), it provides a complete security solution for authentication and storage of logged-in credentials.
 
@@ -60,6 +60,7 @@ Leveraging the OAuth/OpenId Connect protocols, Auth Connect supports:
     * v1.0
     * v2.0, including [Azure Active Directory B2C](/docs/enterprise/auth-connect/azure-ad-b2c)
 * [Cognito](/docs/enterprise/auth-connect/aws-cognito) (AWS)
+* [Okta](/docs/enterprise/auth-connect/okta)
 
 Workflow
 ----
@@ -195,8 +196,8 @@ You can find the API and interface documentation for everything below. The main 
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
+| Name   | Type         |
+| ------ | ------------ |
 | result | `AuthResult` |
 
 **Returns:** `void`
@@ -227,9 +228,9 @@ ___
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| parameters | `object` |  any additional parameters that should be added to the login request examples: \`login\_hint\`, \`domain\_hint\` |
+| Name       | Type     | Description                                                                                                     |
+| ---------- | -------- | --------------------------------------------------------------------------------------------------------------- |
+| parameters | `object` | any additional parameters that should be added to the login request examples: \`login\_hint\`, \`domain\_hint\` |
 
 **Returns:** `void`
 
@@ -255,10 +256,10 @@ get the access token, once logged in, for API calls
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| `Optional` tokenName | `undefined` \| `string` |  Optional token name, only used when multiple tokens are required (Azure specific feature). |
-| `Optional` scopes | `undefined` \| `string` |  The scopes for the access token. |
+| Name                 | Type                    | Description                                                                                |
+| -------------------- | ----------------------- | ------------------------------------------------------------------------------------------ |
+| `Optional` tokenName | `undefined` \| `string` | Optional token name, only used when multiple tokens are required (Azure specific feature). |
+| `Optional` scopes    | `undefined` \| `string` | The scopes for the access token.                                                           |
 
 **Returns:** `Promise`<`string` \| `undefined`>
 
@@ -306,9 +307,9 @@ called by the hosting app when callbacks happen, these will be to the URL specif
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| url | `string` |  callback url to handle |
+| Name | Type     | Description            |
+| ---- | -------- | ---------------------- |
+| url  | `string` | callback url to handle |
 
 **Returns:** `Promise`<`AuthResult`>
 
@@ -323,9 +324,9 @@ check to see if the access token is available
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| `Optional` tokenName | `undefined` \| `string` |  Optional token name, only used when multiple tokens are required (Azure specific feature). |
+| Name                 | Type                    | Description                                                                                |
+| -------------------- | ----------------------- | ------------------------------------------------------------------------------------------ |
+| `Optional` tokenName | `undefined` \| `string` | Optional token name, only used when multiple tokens are required (Azure specific feature). |
 
 **Returns:** `Promise`<`boolean`>
 
@@ -375,8 +376,8 @@ The overrideUrl parameter should only be used when the default discovery url nee
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
+| Name                   | Type                    |
+| ---------------------- | ----------------------- |
 | `Optional` overrideUrl | `undefined` \| `string` |
 
 **Returns:** `Promise`<`void`>
@@ -403,8 +404,8 @@ Event handler which can be overridden to handle successful login events
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
+| Name     | Type  |
+| -------- | ----- |
 | response | `any` |
 
 **Returns:** `void`
@@ -431,9 +432,9 @@ refresh the session, throws if refresh token is invalid or missing
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| `Optional` tokenName | `undefined` \| `string` |  Optional token name, only used when multiple tokens are required (Azure specific feature). |
+| Name                 | Type                    | Description                                                                                |
+| -------------------- | ----------------------- | ------------------------------------------------------------------------------------------ |
+| `Optional` tokenName | `undefined` \| `string` | Optional token name, only used when multiple tokens are required (Azure specific feature). |
 
 **Returns:** `Promise`<`void`>
 
@@ -919,8 +920,8 @@ ___
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
+| Name | Type     |
+| ---- | -------- |
 | name | `string` |
 
 **Returns:** `Promise`<`any`>
@@ -934,10 +935,10 @@ ___
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| name | `string` |
-| value | `any` |
+| Name  | Type     |
+| ----- | -------- |
+| name  | `string` |
+| value | `any`    |
 
 **Returns:** `Promise`<`any`>
 
