@@ -57,7 +57,7 @@
     0px 4px 12px 0px rgba(0,0,0,0.08), 
     0px 2px 4px 0px rgba(0,0,0,0.08);
   display: none;
-  min-width: 160px;
+  min-width: 100%;
   overflow: hidden;
   pointer-events: none;
   position: absolute;
