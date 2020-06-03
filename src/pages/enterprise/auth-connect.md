@@ -196,8 +196,8 @@ You can find the API and interface documentation for everything below. The main 
 
 **Parameters:**
 
-| Name   | Type         |
-| ------ | ------------ |
+| Name | Type |
+| ------ | ------ |
 | result | `AuthResult` |
 
 **Returns:** `void`
@@ -228,9 +228,9 @@ ___
 
 **Parameters:**
 
-| Name       | Type     | Description                                                                                                     |
-| ---------- | -------- | --------------------------------------------------------------------------------------------------------------- |
-| parameters | `object` | any additional parameters that should be added to the login request examples: \`login\_hint\`, \`domain\_hint\` |
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| parameters | `object` |  any additional parameters that should be added to the login request examples: \`login\_hint\`, \`domain\_hint\` |
 
 **Returns:** `void`
 
@@ -256,10 +256,10 @@ get the access token, once logged in, for API calls
 
 **Parameters:**
 
-| Name                 | Type                    | Description                                                                                |
-| -------------------- | ----------------------- | ------------------------------------------------------------------------------------------ |
-| `Optional` tokenName | `undefined` \| `string` | Optional token name, only used when multiple tokens are required (Azure specific feature). |
-| `Optional` scopes    | `undefined` \| `string` | The scopes for the access token.                                                           |
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| `Optional` tokenName | `undefined` \| `string` |  Optional token name, only used when multiple tokens are required (Azure specific feature). |
+| `Optional` scopes | `undefined` \| `string` |  The scopes for the access token. |
 
 **Returns:** `Promise`<`string` \| `undefined`>
 
@@ -307,9 +307,9 @@ called by the hosting app when callbacks happen, these will be to the URL specif
 
 **Parameters:**
 
-| Name | Type     | Description            |
-| ---- | -------- | ---------------------- |
-| url  | `string` | callback url to handle |
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| url | `string` |  callback url to handle |
 
 **Returns:** `Promise`<`AuthResult`>
 
@@ -324,9 +324,9 @@ check to see if the access token is available
 
 **Parameters:**
 
-| Name                 | Type                    | Description                                                                                |
-| -------------------- | ----------------------- | ------------------------------------------------------------------------------------------ |
-| `Optional` tokenName | `undefined` \| `string` | Optional token name, only used when multiple tokens are required (Azure specific feature). |
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| `Optional` tokenName | `undefined` \| `string` |  Optional token name, only used when multiple tokens are required (Azure specific feature). |
 
 **Returns:** `Promise`<`boolean`>
 
@@ -376,8 +376,8 @@ The overrideUrl parameter should only be used when the default discovery url nee
 
 **Parameters:**
 
-| Name                   | Type                    |
-| ---------------------- | ----------------------- |
+| Name | Type |
+| ------ | ------ |
 | `Optional` overrideUrl | `undefined` \| `string` |
 
 **Returns:** `Promise`<`void`>
@@ -404,8 +404,8 @@ Event handler which can be overridden to handle successful login events
 
 **Parameters:**
 
-| Name     | Type  |
-| -------- | ----- |
+| Name | Type |
+| ------ | ------ |
 | response | `any` |
 
 **Returns:** `void`
@@ -432,9 +432,9 @@ refresh the session, throws if refresh token is invalid or missing
 
 **Parameters:**
 
-| Name                 | Type                    | Description                                                                                |
-| -------------------- | ----------------------- | ------------------------------------------------------------------------------------------ |
-| `Optional` tokenName | `undefined` \| `string` | Optional token name, only used when multiple tokens are required (Azure specific feature). |
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| `Optional` tokenName | `undefined` \| `string` |  Optional token name, only used when multiple tokens are required (Azure specific feature). |
 
 **Returns:** `Promise`<`void`>
 
@@ -920,8 +920,8 @@ ___
 
 **Parameters:**
 
-| Name | Type     |
-| ---- | -------- |
+| Name | Type |
+| ------ | ------ |
 | name | `string` |
 
 **Returns:** `Promise`<`any`>
@@ -935,10 +935,10 @@ ___
 
 **Parameters:**
 
-| Name  | Type     |
-| ----- | -------- |
-| name  | `string` |
-| value | `any`    |
+| Name | Type |
+| ------ | ------ |
+| name | `string` |
+| value | `any` |
 
 **Returns:** `Promise`<`any`>
 
