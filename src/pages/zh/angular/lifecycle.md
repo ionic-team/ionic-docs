@@ -25,6 +25,8 @@ Ionic兼容由Angular提供的生命周期事件。 使用得最多的两个Angu
 
 关于Angular组件生命周期事件的更多信息，访问他们的 [组件生命周期文档](https://angular.io/guide/lifecycle-hooks)。
 
+> Components that use `ion-nav` or `ion-router-outlet` should not use the `OnPush` change detection strategy. Doing so will prevent lifecycle hooks such as `ngOnInit` from firing. Additionally, asynchronous state changes may not render properly.
+
 ## Ionic页面事件
 
 除了Angular生命周期事件外，Ionic Angular提供了一些额外的事件：
