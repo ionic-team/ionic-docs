@@ -13,7 +13,7 @@ Desde que añadimos el Capacitador a nuestro proyecto cuando fue creado por prim
 
 Capacitor es el tiempo de ejecución oficial de la aplicación de Ionic, que facilita el despliegue de aplicaciones web en plataformas nativas como iOS, Android y más. Si has usado Cordova en el pasado, considera leer más sobre las diferencias [aquí](https://capacitor.ionicframework.com/docs/cordova#differences-between-capacitor-and-cordova).
 
-Si todavía estás ejecutando `ionic serve` en el terminal, cancelalo. Completa una nueva construcción de tu proyecto Ionic, corrigiendo cualquier error que informe:
+Si todavía estás ejecutando `ionic serve` en el terminal, páralo. Completa una nueva construcción de tu proyecto Ionic, corrigiendo cualquier error que informe:
 
 ```shell
 <code> $ionic build </code>
