@@ -58,7 +58,7 @@ Primero, ejecuta el comando Capacitor `open` , que abre el proyecto nativo de iO
 $ ionic cap open ios
 ```
 
-Para que algunos plugins nativos funcionen, los permisos de usuario deben ser configurados. En nuestra aplicación de galería de fotos, esto incluye el complemento de cámara: iOS muestra un diálogo modal automáticamente después de la primera vez que `Camera.getPhoto()` es llamado, sugiriendo al usuario que permita a la aplicación usar la cámara. El permiso que hace esto está etiquetado como "Privacidad - Uso de la cámara". Para configurarlo, el `Info.plist` archivo debe ser modificado ([más detalles aquí](https://capacitor.ionicframework.com/docs/ios/configuration)). Para acceder a ella, haz clic en "Info," luego expande "Propiedades objetivo personalizadas de iOS".
+Para que algunos plugins nativos funcionen, los permisos de usuario deben ser configurados. En nuestra aplicación de galería de fotos, esto incluye el complemento de cámara: iOS muestra un diálogo modal automáticamente después de la primera vez que `Camera.getPhoto()` es llamado, sugiriendo al usuario que permita a la aplicación usar la cámara. El permiso que hace esto está etiquetado como "Privacidad - Uso de la cámara". Para configurarlo, el `Info.plist` archivo debe ser modificado ([más detalles aquí](https://capacitor.ionicframework.com/docs/ios/configuration)). Para acceder a ella, haz clic en "Info," luego expande "Propiedades objetivo personalizadas de iOS."
 
 ![Xcode Custom iOS Target Properties](/docs/assets/img/guides/first-app-cap-ng/xcode-info-plist.png)
 
