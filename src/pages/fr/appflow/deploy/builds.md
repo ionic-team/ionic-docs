@@ -9,7 +9,7 @@ nextUrl: '/docs/appflow/deploy/channels'
 
 ## Overview
 
-A Live Update build of your application includes only the web assets (JavaScript, HTML, fonts, and images) which can be shipped out to customer via a [Live Update](/docs/appflow/deploy/intro) deployment. Live Update builds can be created manually from the Ionic Dashboard, in the **Builds** section under **Build** in the sidebar. You will be able to pick from the list of available commits that Appflow knows about. If there are know available commits you will need to push a new commit to your Git remote in order for it to show up in Appflow. After picking the commit, select `Web Deploy` from the `Target platform` dropdown menu.
+A Live Update build of your application includes only the web assets (JavaScript, HTML, fonts, and images) which can be shipped out to customer via a [Live Update](/docs/appflow/deploy/intro) deployment. Live Update builds can be created manually from the Ionic Dashboard, in the **Builds** section under **Build** in the sidebar. You will be able to pick from the list of available commits that Appflow knows about. If there are no available commits you will need to push a new commit to your Git remote in order for it to show up in Appflow. After picking the commit, select `Web Deploy` from the `Target platform` dropdown menu.
 
 ![Navigating to Live Update Builds](/docs/assets/img/appflow/deploy-builds-create-location.png)
 
