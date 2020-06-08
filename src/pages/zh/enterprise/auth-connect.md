@@ -5,7 +5,7 @@ version: 2.2.0
 minor: 2.2.X
 ---
 
-Ionic Auth Connect handles logging in and/or registering a user with an authentication provider (such as Auth0, Azure AD, or AWS Cognito) using industry standard OAuth/OpenId Connect on iOS, Android, or on the web.
+Ionic Auth Connect handles logging in and/or registering a user with an authentication provider (such as Auth0, Azure AD, AWS Cognito, or Okta) using industry standard OAuth/OpenId Connect on iOS, Android, or on the web.
 
 When used with [Ionic Identity Vault](/docs/enterprise/identity-vault), it provides a complete security solution for authentication and storage of logged-in credentials.
 
@@ -59,6 +59,7 @@ Leveraging the OAuth/OpenId Connect protocols, Auth Connect supports:
     * v1.0
     * v2.0, including [Azure Active Directory B2C](/docs/enterprise/auth-connect/azure-ad-b2c)
 * [Cognito](/docs/enterprise/auth-connect/aws-cognito) (AWS)
+* [Okta](/docs/enterprise/auth-connect/okta)
 
 ## Workflow
 
