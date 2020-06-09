@@ -207,7 +207,7 @@ const renderParts = (parts = []) => {
           {parts.map(prop => (
             <tr>
               <td><code>{ prop.name }</code></td>
-              <td>{ prop.text }</td>
+              <td>{ prop.docs }</td>
             </tr>
           ))}
         </tbody>
