@@ -1,7 +1,7 @@
 ---
 title: Identity Vault
 template: enterprise-plugin
-version: 4.2.1
+version: 4.2.2
 minor: 4.2.X
 otherVersions:
   - 2.0.X
@@ -2141,6 +2141,13 @@ The possible values returned by [getAvailableHardware](#identityvault.getavailab
 * * *
 
 ## Change Log
+
+### \[4.2.2\] (2020-06-10)
+
+### Bug Fixes
+
+* add lock call to clean up in-memory mode , closes [#118]
+* **iOS:** ensuring that the screen is always hidden when backgrounded SE-202 
 
 ### \[4.2.1\] (2020-05-27)
 
