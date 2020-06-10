@@ -50,16 +50,6 @@ export class IonicSearch {
   }
 
   constructor() {
-    this.activate = this.activate.bind(this);
-    this.close = this.close.bind(this);
-    this.onKeyUp = this.onKeyUp.bind(this);
-    this.touchStart = this.touchStart.bind(this);
-    this.touchMove = this.touchMove.bind(this);
-    this.touchEnd = this.touchEnd.bind(this);
-    this.keyNavigation = this.keyNavigation.bind(this);
-    this.resultClick = this.resultClick.bind(this);
-    this.search = this.search.bind(this);
-
     this.urls = this.URLS();
   }
 
@@ -125,7 +115,7 @@ export class IonicSearch {
     this.higlightIndex = null;
 
     clearTimeout(this.searchTimeout);
-    this.searchTimeout = setTimeout(this.search, 1500);
+    this.searchTimeout = setTimeout(() => this.search(), 1500);
   }
 
   // Trigger lightweight search after 1.5sec of innactivity
@@ -264,19 +254,19 @@ export class IonicSearch {
         style={this.dragStyles}
         onTouchMove={e => this.results && this.results.length > 5 ?
         null : e.preventDefault()}
-        onKeyDown={this.keyNavigation}
+        onKeyDown={ev => this.keyNavigation(ev)}
       >
-        <input type="text" onKeyUp={this.onKeyUp} placeholder="Search Ionic.."/>
+        <input type="text" onKeyUp={ev => this.onKeyUp(ev)} placeholder="Search Ionic.."/>
 
         <Search class={`search-static ${this.active ? ' active' : ''}`}/>
 
         {this.mobile && !this.isFirefox() ?
           <div
             class="mobile-close"
-            onClick={this.close}
-            onTouchStart={this.touchStart}
-            onTouchMove={this.touchMove}
-            onTouchEnd={this.touchEnd}
+            onClick={() => this.close()}
+            onTouchStart={ev => this.touchStart(ev)}
+            onTouchMove={ev => this.touchMove(ev)}
+            onTouchEnd={() => this.touchEnd()}
           >
             <Close/>
           </div>
@@ -284,7 +274,7 @@ export class IonicSearch {
           <ion-icon
             class={`close ${this.active ? ' active' : ''}`}
             name="close"
-            onClick={this.close}
+            onClick={() => this.close()}
           />
         }
 
@@ -350,10 +340,10 @@ export class IonicSearch {
       <div class={`SearchBtn ${this.active ? ' active' : ''}`}>
         <Search
           class="SearchBtn__sm"
-          onClick={this.active ? null : this.activate}
+          onClick={this.active ? null : this.activate()}
         />
 
-        <div class="SearchBtn__lg" onClick={this.active ? null : this.activate}>
+        <div class="SearchBtn__lg" onClick={this.active ? null : () => this.activate()}>
           <Search class="SearchBtn__lg__icon"/>
           <span class="SearchBtn__lg__text">Search docs</span>
           <span class="SearchBtn__lg__key">/</span>
@@ -362,7 +352,7 @@ export class IonicSearch {
 
       <div
         class={`backdrop ${this.active ? 'active' : null}`}
-        onClick={this.close}
+        onClick={() => this.close()}
       />
     ];
   }
