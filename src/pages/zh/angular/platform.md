@@ -39,7 +39,7 @@ export class MyPage {
 
 #### 平台
 
-以下表格列举了`Platforms`可选项以及对应描述。
+Below is a table listing all the possible platform values along with corresponding descriptions.
 
 | 平台名称      | 描述                     |
 | --------- | ---------------------- |
