@@ -340,7 +340,7 @@ export class IonicSearch {
       <div class={`SearchBtn ${this.active ? ' active' : ''}`}>
         <Search
           class="SearchBtn__sm"
-          onClick={this.active ? null : this.activate()}
+          onClick={this.active ? null : () => this.activate()}
         />
 
         <div class="SearchBtn__lg" onClick={this.active ? null : () => this.activate()}>

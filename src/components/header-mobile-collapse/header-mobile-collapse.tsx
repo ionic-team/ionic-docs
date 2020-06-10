@@ -18,11 +18,6 @@ export class HeaderMobileCollapse {
 
   observer: IntersectionObserver;
 
-  constructor() {
-    this.handleMobileToggleClick = this.handleMobileToggleClick.bind(this);
-    this.deactivate = this.deactivate.bind(this);
-  }
-
   @Listen('pageChanged', { target: 'body' })
   deactivate() {
     setTimeout(() => {
@@ -89,12 +84,12 @@ export class HeaderMobileCollapse {
     return ([
       <div
         class="header-mobile-collapse__backdrop"
-        onClick={this.deactivate}
+        onClick={() => this.deactivate()}
       />,
       <ionic-search></ionic-search>,
       <a
         class="ionic-sub-header__mobile-toggle"
-        onClick={this.handleMobileToggleClick}
+        onClick={() => this.handleMobileToggleClick()}
       >
         <MoreDots/>
       </a>,
