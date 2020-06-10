@@ -14,7 +14,7 @@ export class DocsRoot {
   setHistory = ({ history }: { history: RouterHistory }) => {
     if (!this.history) {
       this.history = history;
-      this.history.listen(this.newPage);
+      this.history.listen(this.newPage.bind(this));
     }
   }
 
@@ -29,10 +29,6 @@ export class DocsRoot {
     if (Build.isBrowser && this.isSmallViewport()) {
       document.body.classList.toggle('scroll-lock', isMenuToggled);
     }
-  }
-
-  constructor() {
-    this.newPage = this.newPage.bind(this);
   }
 
   toggleMenu = () => {
