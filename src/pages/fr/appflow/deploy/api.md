@@ -649,7 +649,7 @@ The current configuration for the deploy plugin on the device.
 
 **● appId**: *`string`*
 
-The [Ionic Pro](https://ionicframework.com/docs/pro/) app id.
+The [Ionic Appflow](https://ionicframework.com/docs/pro/) app id.
 
 * * *
 

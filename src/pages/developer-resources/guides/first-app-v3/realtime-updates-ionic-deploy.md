@@ -5,24 +5,24 @@ nextText: 'Track Bugs with Ionic Monitoring'
 nextUrl: '/docs/developer-resources/guides/first-app-v3/track-bugs-ionic-monitoring'
 ---
 
-# Realtime App Updates with Ionic Deploy
+# Realtime App Updates with Appflow Live Updates
 
-As you’ve seen so far, building web and mobile apps is quick and easy with the Ionic Framework. However, nothing disrupts rapid iteration faster than App Store delays. Fortunately, with Ionic Pro’s Deploy feature, you can send live code changes directly to your users. Paired with seamless background updates, they are always upgraded to the latest version.
+As you’ve seen so far, building web and mobile apps is quick and easy with the Ionic Framework. However, nothing disrupts rapid iteration faster than App Store delays. Fortunately, with Ionic Appflow’s Deploy feature, you can send live code changes directly to your users. Paired with seamless background updates, they are always upgraded to the latest version.
 
-Setting it up is quick and easy. For reference, continue to refer to [the part 3 folder](https://github.com/ionic-team/photo-gallery-tutorial-ionic3/tree/master/part3) on GitHub. First, install the Ionic Pro JavaScript library:
+Setting it up is quick and easy. For reference, continue to refer to [the part 3 folder](https://github.com/ionic-team/photo-gallery-tutorial-ionic3/tree/master/part3) on GitHub. First, install the Ionic Appflow JavaScript library:
 
 ```shell
 $ npm install @ionic/pro@latest --save
 ```
 
-Then, add the Ionic Pro plugin. Here’s the command to install it:
+Then, add the Ionic Appflow plugin. Here’s the command to install it:
 
 ```shell
 $ ionic cordova plugin add cordova-plugin-ionic@latest --save
 --variable APP_ID=YOUR_APP_ID --variable CHANNEL_NAME=YOUR_CHANNEL_NAME
 ```
 
-There are two unique values to provide: your app id and channel name. Sign into Ionic Pro, then find the App Id on your app’s dashboard:
+There are two unique values to provide: your app id and channel name. Sign into Ionic Appflow, then find the App Id on your app’s dashboard:
 
 ![app id location](/docs/assets/img/guides/first-app-v3/app-id-location.png)
 
@@ -47,7 +47,7 @@ After this plugin has been added, you’ll notice that `config.xml` and `package
 </plugin>
 ```
 
-Next, modify `src/app/app.module.ts` to include the initialization of Ionic Pro on app startup:
+Next, modify `src/app/app.module.ts` to include the initialization of Ionic Appflow on app startup:
 
 ```javascript
 import { Pro } from '@ionic/pro';
@@ -65,11 +65,11 @@ Pro.init('381533B9', {
 });
 ```
 
-Next, push the code up to Ionic Pro:
+Next, push the code up to Ionic Appflow:
 
 ```shell
 git add .
-git commit -m “adding ionic pro”
+git commit -m “adding Ionic Appflow”
 git push ionic master
 ```
 
@@ -107,7 +107,7 @@ In the upper right hand corner, click the Play button. Select your connected dev
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
 ## Deploying Changes
-With Ionic Pro Deploy, any JavaScript, HTML, or CSS changes can be pushed automatically to app users. Open the Photo Gallery app in your favorite code editor, then update the title of the Gallery page:
+With Ionic Appflow Deploy, any JavaScript, HTML, or CSS changes can be pushed automatically to app users. Open the Photo Gallery app in your favorite code editor, then update the title of the Gallery page:
 
 ```html
 <ion-header>
@@ -117,7 +117,7 @@ With Ionic Pro Deploy, any JavaScript, HTML, or CSS changes can be pushed automa
 </ion-header>
 ```
 
-Next, push the code up to Ionic Pro:
+Next, push the code up to Ionic Appflow:
 
 ```shell
 $ git add .
@@ -125,28 +125,28 @@ $ git commit -m “change name to Photo Viewer”
 $ git push ionic master
 ```
 
-Log into the [Ionic Pro dashboard](https://dashboard.ionicframework.com) and navigate to Deploy -> Builds. You’ll see this newest commit begin to build immediately. Since we assigned the Ionic Pro plugin to the Master branch (the one we always Git Push to), the Channel label will also point to this commit, effectively auto-deploying this change to all app users:
+Log into the [Ionic Appflow dashboard](https://dashboard.ionicframework.com) and navigate to Deploy -> Builds. You’ll see this newest commit begin to build immediately. Since we assigned the Ionic Appflow plugin to the Master branch (the one we always Git Push to), the Channel label will also point to this commit, effectively auto-deploying this change to all app users:
 
 ![deploy channel](/docs/assets/img/guides/first-app-v3/deploy-channel.png)
 
 A Channel points to a specific JavaScript Build or Snapshot of your app that will be shared with devices listening to that channel for updates. You can change which Build a Channel points to whenever you’d like.
 
-Each time a user launches our Photo Gallery app, it will poll for updates from Ionic Pro. If new code is available, the update is downloaded in the background. There are [a handful of ways](/docs/pro/deploy/api/#update_method) to control how updates are performed, but by default they will be applied the next time the user closes then opens the app.
+Each time a user launches our Photo Gallery app, it will poll for updates from Ionic Appflow. If new code is available, the update is downloaded in the background. There are [a handful of ways](/docs/pro/deploy/api/#update_method) to control how updates are performed, but by default they will be applied the next time the user closes then opens the app.
 
 When the latest Build has been successful, close your local copy of Photo Gallery app or put it in the background for 30 seconds (the [MIN_BACKGROUND_DURATION default](/docs/pro/deploy/api/#min_background_duration)), then reopen it. The title of the Photo Gallery page should change from “Photo Gallery” to “Photo Viewer.”
 
-What if you deploy a change, then realize that there is a bug? Or perhaps you’re just not happy with the name “Photo Viewer?” No problem: Ionic Pro Deploy makes it easy to roll back changes as well!
+What if you deploy a change, then realize that there is a bug? Or perhaps you’re just not happy with the name “Photo Viewer?” No problem: Ionic Appflow Deploy makes it easy to roll back changes as well!
 
 On the Deploy Builds page, click the “Assign to Channel” button on the previous commit, then click “Deploy.”  App users will be reverted to the previous version, and our “Photo Gallery” name has been restored.
 
 ![deploy channel](/docs/assets/img/guides/first-app-v3/deploy-revertChange.png)
 
-This was just a taste of what you can do with Ionic Deploy! You can also set up multiple deployment channels to send targeted updates to specific groups of users. Use it to run A/B tests, or target the distribution of updates by audience, geography, or test group.
+This was just a taste of what you can do with Appflow Live Updates! You can also set up multiple deployment channels to send targeted updates to specific groups of users. Use it to run A/B tests, or target the distribution of updates by audience, geography, or test group.
 
 ## Stuck on creating local native builds?
 
-Building native app binaries for Android and iOS can be painful. The tooling isn’t great, new OS versions often result in challenging upgrades, and creating consistent builds across your dev team can be frustrating. Fortunately, Ionic Pro’s Package feature makes this easy: simply upload your iOS certificate and Android keystore files, then we take care of the rest!
+Building native app binaries for Android and iOS can be painful. The tooling isn’t great, new OS versions often result in challenging upgrades, and creating consistent builds across your dev team can be frustrating. Fortunately, Ionic Appflow’s Package feature makes this easy: simply upload your iOS certificate and Android keystore files, then we take care of the rest!
 
 [Start packaging your app in the cloud](https://dashboard.ionicframework.com/settings/billing) along with 10,000 Ionic Deploys per month.
 
-Up next, we look at Ionic Pro Monitoring - track your app errors in realtime.
+Up next, we look at Ionic Appflow Monitoring - track your app errors in realtime.

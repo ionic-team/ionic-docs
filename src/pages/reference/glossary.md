@@ -53,6 +53,11 @@ nextUrl: '/docs/reference/versioning'
     <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" target="_blank">CORS</a> (Cross-Origin Resource Sharing) is a mechanism for servers to control client access to web assets. See the <a href="/docs/faq/cors">CORS FAQs</a> for more information.</p>
   </section>
 
+  <section id="css-variables">
+    <a href="#css-variables"><h3>CSS Variables</h3></a>
+    <p>You may be familiar with variables from Sass. <a href="https://developers.google.com/web/updates/2016/02/css-variables-why-should-you-care" target="_blank">CSS Variables</a> enable the same functionality but are built into the browser. CSS Variables are available in all evergreen browsers.</p>
+  </section>
+
   <section id="decorators">
     <a href="#decorators"><h3>Decorators</h3></a>
     <p>Decorators are expressions that return a function. They allow you to take an existing function, and extend its behavior. With TypeScript, you can also decorate <i>classes</i> and <i>parameters</i>. When you decorate a <strong>class</strong>, you are wrapping and extending the behavior of its constructor. In other words, the decorator will add some functionality when the constructor is called, and will then return the original constructor. When you decorate a <strong>parameter</strong>, you are wrapping the argument that gets passed in for that parameter. The decorator will add functionality when an argument is passed to the method, and then return the original argument.
@@ -156,14 +161,19 @@ nextUrl: '/docs/reference/versioning'
     <p><a href="https://angular.github.io/protractor/#/" target="_blank">Protractor</a> is a testing framework written for and by the Angular team. Protractor can be used with test runners, like Karma, for end-to-end testing. Test runners allow you to quickly and programmatically verify code quality.</p>
   </section>
 
-  <section id="css-variables">
-    <a href="#css-variables"><h3>CSS Variables</h3></a>
-    <p>You may be familiar with variables from Sass. <a href="https://developers.google.com/web/updates/2016/02/css-variables-why-should-you-care" target="_blank">CSS Variables</a> enable the same functionality but are built into the browser. CSS Variables are available in all evergreen browsers.</p>
-  </section>
-
   <section id="sass">
     <a href="#sass"><h3>Sass</h3></a>
     <p>Sass is a stylesheet language that compiles to CSS and is used by Ionic. Sass is like CSS, but with extra features such as <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#variables_" target="_blank">variables</a>, <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixins" target="_blank">mixins</a>, and <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#_10" target="_blank">loops</a>.</p>
+  </section>
+
+  <section id="scoped">
+    <a href="#scoped"><h3>Scoped Encapsulation</h3></a>
+    <p>A component that uses scoped encapsulation will automatically scope its CSS by appending each of the styles with a data attribute at run time. Overriding scoped selectors in CSS requires a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity" target="_blank">higher specificity</a> selector. Scoped components can also be styled using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">CSS Custom Properties</a>.</p>
+  </section>
+
+  <section id="shadow">
+    <a href="#shadow"><h3>Shadow DOM</h3></a>
+    <p><a href="https://developers.google.com/web/fundamentals/web-components/shadowdom" target="_blank">Shadow DOM</a> is a native browser solution for DOM and style encapsulation of a component. It shields the component from its surrounding environment. To externally style internal elements of a Shadow DOM component you must use <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">CSS Custom Properties</a> or <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::part" target="_blank">CSS Shadow Parts</a>.</p>
   </section>
 
   <section id="shim">

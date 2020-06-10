@@ -29,6 +29,17 @@ const items = {
     'menu-appflow-deploy-api': '/docs/appflow/deploy/api',
     'menu-appflow-deploy-cli': '/docs/appflow/deploy/cli'
   },
+  'menu-appflow-destinations': {
+    'menu-appflow-destinations-intro': '/docs/appflow/destinations/intro',
+    'menu-appflow-destinations-destinations': '/docs/appflow/destinations/destinations',
+    '': {
+        'menu-appflow-destinations-apple': '/docs/appflow/destinations/apple',
+        'menu-appflow-destinations-google': '/docs/appflow/destinations/google',
+    },
+    'menu-appflow-destinations-builds': '/docs/appflow/destinations/builds',
+    'menu-appflow-destinations-cli': '/docs/appflow/destinations/cli',
+    'menu-appflow-destinations-manual': '/docs/appflow/destinations/manual',
+},
   'menu-appflow-package': {
     'menu-appflow-package-intro': '/docs/appflow/package/intro',
     'menu-appflow-package-builds': '/docs/appflow/package/builds',

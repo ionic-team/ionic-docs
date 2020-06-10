@@ -138,6 +138,8 @@ color-scheme: light dark;
 
 For more information regarding `color-scheme` please see https://web.dev/color-scheme/.
 
+> `color-scheme` does not apply to the keyboard. For details on how dark mode works with the keyboard, see [Keyboard Documentation](/docs/developing/keyboard#dark-mode).
+
 ## Ionic Dark Theme
 
 Ionic has a recommended theme for variables to use in order to get a dark mode based on the device running the app. It can be broken down into the following parts:

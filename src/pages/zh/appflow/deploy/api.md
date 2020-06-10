@@ -649,7 +649,7 @@ Bundle名称。
 
 **● appId**: *`string`*
 
-[Ionic Pro](https://ionicframework.com/docs/pro/) app id。
+[Ionic Appflow](https://ionicframework.com/docs/pro/) app id。
 
 * * *
 

@@ -13,6 +13,7 @@ otherVersions:
   - 3.5.X
   - 3.6.X
   - 4.0.X
+  - 4.1.X
 ---
 
 # Ionic Identity Vault
@@ -1438,6 +1439,8 @@ The options passed the the [IonicNativeAuthPlugin](#ionicnativeauthplugin) when 
 
 If biometric auth fails, allow system pin fallback.
 
+Please note: when Android devices are set to allow system pin fallback, the behavior of the biometrics prompt changes. The OS biometric prompt will not report that biometrics failed nor that the user has been locked out of biometrics. It is only currently possible to know the user either canceled the authentication prompt, or was successful in verifying.
+
 *__default__*: false
 
 ___
@@ -1993,6 +1996,15 @@ ___
 ### BREAKING CHANGES
 
 * **android:** AndroidX is now required in projects with IV v4.
+
+
+### [3.6.4] (2020-05-13)
+
+
+### Bug Fixes
+
+* **android:** avoid KeyPermanentlyInvalidatedException problem on SDK 19 [SE-183]
+* **ios:** swift 4.2 compilation issue
 
 
 

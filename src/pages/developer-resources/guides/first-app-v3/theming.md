@@ -1,7 +1,7 @@
 ---
 previousText: 'Creating a Photo Gallery with Device Storage'
 previousUrl: '/docs/developer-resources/guides/first-app-v3/creating-photo-gallery-device-storage'
-nextText: 'Realtime App Updates with Ionic Deploy'
+nextText: 'Realtime App Updates with Appflow Live Deploys'
 nextUrl: '/docs/developer-resources/guides/first-app-v3/realtime-updates-ionic-deploy'
 ---
 
@@ -51,4 +51,4 @@ Now, the iOS version of our app has a Material Design skin!
 
 Creating gorgeous-looking Ionic apps is easy with Sass variables and platform-specific styling. You now have everything you need to get started with Ionic. Go forth and build great apps!
 
-If you're interested in taking your Ionic apps to the next level, continue on with our exploration of Ionic Pro next.
+If you're interested in taking your Ionic apps to the next level, continue on with our exploration of Ionic Appflow next.
