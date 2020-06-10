@@ -22,9 +22,9 @@ export class DocsItem {
   }
 
   render() {
-    const isStatic = !this.href;
+    const isStatic = this.href === undefined;
     const isOutbound = /^http/.test(this.href);
-    const header = !this.header ? null : (
+    const header = this.header === undefined ? null : (
       <header class="Item-header">
         {this.header} {isOutbound ? <Outbound/> : null}
       </header>

@@ -18,7 +18,7 @@ export class CssText {
   onCssTextChange(ev: UIEvent) {
     if ((ev.target as HTMLTextAreaElement).value !== this.cssText) {
       const value = (ev.target as HTMLTextAreaElement).value;
-      if (!value.length) { return; }
+      if (value.length === 0) { return; }
 
       this.cssText = value;
 

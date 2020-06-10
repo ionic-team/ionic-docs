@@ -16,7 +16,7 @@ const getLatest = async () => {
 };
 
 export const getAd = async () => {
-  if (!lastFetch || (Date.now() - lastFetch) > cacheLife) {
+  if (lastFetch === undefined || (Date.now() - lastFetch) > cacheLife) {
     await getLatest();
   }
   return chooseAdByWeight();

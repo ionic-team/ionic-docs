@@ -49,7 +49,7 @@ export class DocsDemo {
   }
 
   renderSourceLink() {
-    return this.source ?
+    return this.source !== undefined ?
       <a
         href={this.source}
         class="docs-demo-source"
@@ -85,7 +85,7 @@ export class DocsDemo {
   }
 
   render() {
-    if (!this.url) {
+    if (this.url === undefined) {
       return null;
     }
 

@@ -70,7 +70,7 @@ export class DocsDropdown {
         aria-expanded={this.isOpen ? 'true' : 'false'}
         onClick={this.toggle.bind(this)}
       >
-        <span class="Dropdown-button-label">{this.label ? this.label : null}</span>
+        <span class="Dropdown-button-label">{this.label !== undefined ? this.label : null}</span>
         {Icon ? <Icon class="Dropdown-icon"/> : null}
         <DownArrow class="Dropdown-arrow"/>
       </button>

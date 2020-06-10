@@ -96,9 +96,9 @@ const renderEncapsulation = (encapsulation = {}) => {
 const renderUsage = (usage = {}, path: string) => {
   const keys = Object.keys(usage);
   const frameworkPref = getFramework();
-  const framework = frameworkPref ? frameworkPref.toLowerCase() : null;
+  const framework = frameworkPref !== undefined ? frameworkPref.toLowerCase() : null;
 
-  if (!keys.length) {
+  if (keys.length === 0) {
     return null;
   }
 
@@ -122,7 +122,7 @@ const renderUsage = (usage = {}, path: string) => {
 };
 
 const renderProperties = (properties = []) => {
-  if (!properties.length) {
+  if (properties.length === 0) {
     return null;
   }
 
@@ -146,7 +146,7 @@ const renderProperties = (properties = []) => {
 };
 
 const renderEvents = (events = []) => {
-  if (!events.length) {
+  if (events.length === 0) {
     return null;
   }
 
@@ -176,7 +176,7 @@ const renderEvents = (events = []) => {
 };
 
 const renderMethods = (methods = []) => {
-  if (!methods.length) {
+  if (methods.length === 0) {
     return null;
   }
 
@@ -198,7 +198,7 @@ const renderMethods = (methods = []) => {
 };
 
 const renderCustomProps = (customProps = []) => {
-  if (!customProps.length) {
+  if (customProps.length === 0) {
     return null;
   }
 
@@ -228,7 +228,7 @@ const renderCustomProps = (customProps = []) => {
 };
 
 const renderSlots = (slots = []) => {
-  if (!slots.length) {
+  if (slots.length === 0) {
     return null;
   }
 

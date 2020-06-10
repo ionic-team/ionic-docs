@@ -47,9 +47,9 @@ export class DocsPageFooter {
     return [
       paggination,
       <div class="page-footer__row">
-        {contributors.length ? <contributor-list contributors={contributors} link={contributorHref}/> : null}
+        {contributors.length > 0 ? <contributor-list contributors={contributors} link={contributorHref}/> : null}
         <docs-button round href={editHref}>Contribute <ForwardArrow/></docs-button>
-        {updatedText ? <a class="last-updated" href={updatedHref}>Updated {updatedText}</a> : ''}
+        {updatedText !== undefined ? <a class="last-updated" href={updatedHref}>Updated {updatedText}</a> : ''}
       </div>
     ];
   }
