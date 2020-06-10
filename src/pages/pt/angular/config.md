@@ -12,9 +12,7 @@ contributors:
 
 A Configuração do Ionic fornece uma maneira de alterar as propriedades dos componentes globalmente através de um aplicativo. Isto pode definir o modo de aplicativo, guia o layout do botão, animações e muito mais.
 
-## Utilização
-
-### Global
+## Global Config
 
 Para substituir a configuração inicial para o aplicativo Ionic, forneça uma configuração no `IonicModule.forRoot` no arquivo `app.module.ts`.
 
@@ -38,12 +36,12 @@ import { IonicModule } from '@ionic/angular';
 No exemplo acima, estamos desativando o efeito cascata do Design de materiais no aplicativo e forçando o modo a ser Design de materiais.
 
 
-### Por componente
+## Per-Component Config
 
 O Configuração do Ionic não é reativa, portanto, é recomendável usar as propriedades de um componente quando você deseja substituir seu comportamento padrão em vez de definir sua configuração globalmente.
 
 ```typescript
-import { createAnimation, IonicModule } from '@ionic/angular';
+import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   ...
@@ -66,10 +64,92 @@ Isto definirá o texto padrão para o `ion-back-button` para `Go Back`. No entan
 
 Neste exemplo nós usamos nosso `ion-back-button` de tal forma que o texto pode ser atualizado dinamicamente se houver uma mudança que mereça ser feita tais como uma mudança de idioma ou de localidade. O método `getBackButtonText` seria responsável por retornar o texto correto.
 
+## Per-Platform Config
 
-## Opções de configuração
+Ionic Config can also be set on a per-platform basis. For example, this allows you to disable animations if the app is being run in a browser on a potentially slower device. Developers can take advantage of the Platform utilities to accomplish this.
 
-Abaixo está uma lista das opções de configuração que o Ionic usa.
+Since the config is set at runtime, you will not have access to the Platform Dependency Injection. Instead, you can use the underlying functions that the provider uses directly.
+
+In the following example, we are disabling all animations in our Ionic app only if the app is running in a mobile web browser. The `isPlatform()` call returns `true` or `false` based upon the platform that is passed in. See the [Platform Documentation](./platform#platforms) for a list of possible values.
+
+
+```typescript
+import { isPlatform, IonicModule } from '@ionic/angular';
+
+@NgModule({
+  ...
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot({
+      animated: !isPlatform('mobileweb')
+    }),
+    AppRoutingModule
+  ],
+  ...
+})
+```
+
+The next example allows you to set an entirely different configuration based upon the platform, falling back to a default config if no platforms match:
+
+```typescript
+import { isPlatform, IonicModule } from '@ionic/angular';
+
+const getConfig = () => {
+  if (isPlatform('hybrid')) {
+    return {
+      backButtonText: 'Previous',
+      tabButtonLayout: 'label-hide'
+    }
+  }
+
+  return {
+    menuIcon: 'ellipsis-vertical'
+  }
+}
+@NgModule({
+  ...
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(getConfig()),
+    AppRoutingModule
+  ],
+  ...
+})
+```
+
+Finally, this example allows you to accumulate a config object based upon different platform requirements:
+
+```typescript
+import { isPlatform, IonicModule } from '@ionic/angular';
+
+const getConfig = () => {
+  let config = {
+    animated: false
+  };
+
+  if (isPlatform('iphone')) {
+    config = {
+      ...config,
+      backButtonText: 'Previous'
+    }
+  }
+
+  return config;
+}
+@NgModule({
+  ...
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(getConfig()),
+    AppRoutingModule
+  ],
+  ...
+})
+```
+
+## Config Options
+
+Below is a list of config options that Ionic uses.
 
 | Configuração             | Tipo               | Descrição                                                                                                                |
 | ------------------------ | ------------------ | ------------------------------------------------------------------------------------------------------------------------ |
