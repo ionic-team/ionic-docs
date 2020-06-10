@@ -9,26 +9,79 @@ nextUrl: '/docs/react/platform'
 
 Ionic 提供了一种全局配置组件属性的方法。可以设置app的模式、选项卡、按钮布局、动画等。
 
-## 使用方法
+## Global Config
 
-要覆盖应用的初始Ionic 配置， 从 `@ionic/action` 导入 `setupConfig` 方法并在您渲染任何Ionic 组件之前调用它：
+To override the initial Ionic config for the app, import the `setupConfig` method from `@ionic/react`, and call it before you render any Ionic components (including `IonApp`).
 
 ```typescript
 setupConfig({
   rippleEffect: false,
   mode: 'md'
 });
-
-<IonApp>
-  // more components
-</IonApp>
 ```
 
 在上面的例子中，我们正在禁用整个应用的Material Design的波纹效果，并设置模式成为Material Design。
 
-## 配置选项
+## Per-Platform Config
 
-下面是 Ionic 使用的配置选项列表。
+Ionic Config can also be set on a per-platform basis. For example, this allows you to disable animations if the app is being run in a browser on a potentially slower device. Developers can take advantage of the Platform utilities to accomplish this.
+
+In the following example, we are disabling all animations in our Ionic app only if the app is running in a mobile web browser. The `isPlatform()` call returns `true` or `false` based upon the platform that is passed in. See the [Platform Documentation](./platform#platforms) for a list of possible values.
+
+```typescript
+import { isPlatform, setupConfig } from '@ionic/react';
+
+setupConfig({
+  animated: !isPlatform('mobileweb')
+});
+```
+
+The next example allows you to set an entirely different configuration based upon the platform, falling back to a default config if no platforms match:
+
+```typescript
+import { isPlatform, setupConfig } from '@ionic/react';
+
+const getConfig = () => {
+  if (isPlatform('hybrid')) {
+    return {
+      backButtonText: 'Previous',
+      tabButtonLayout: 'label-hide'
+    }
+  }
+
+  return {
+    menuIcon: 'ellipsis-vertical'
+  }
+}
+
+setupConfig(getConfig());
+```
+
+Finally, this example allows you to accumulate a config object based upon different platform requirements:
+
+```typescript
+import { isPlatform, setupConfig } from '@ionic/react';
+
+const getConfig = () => {
+  let config = {
+    animated: false
+  };
+
+  if (isPlatform('iphone')) {
+    config = {
+      ...config,
+      backButtonText: 'Previous'
+    }
+  }
+
+  return config;
+}
+setupConfig(getConfig());
+```
+
+## Config Options
+
+Below is a list of config options that Ionic uses.
 
 | 配置项（Config）              | 类型（Type）           | 描述                                                                                                       |
 | ------------------------ | ------------------ | -------------------------------------------------------------------------------------------------------- |
