@@ -68,9 +68,9 @@ export default props => {
   );
 };
 
-function getReleaseClasses(release) {
+const getReleaseClasses = release => {
   return {
     'release-note': true,
     [`release-note-${release.type}`]: true
   };
-}
+};

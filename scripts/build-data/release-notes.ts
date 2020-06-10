@@ -22,7 +22,7 @@ export default {
 // Get the GitHub Releases from Ionic
 // This requires an environment GITHUB_TOKEN
 // otherwise it may fail silently
-async function getReleases() {
+export const getReleases = async () => {
   try {
     const request = await fetch(url.format({
       protocol: 'https',
@@ -71,25 +71,25 @@ async function getReleases() {
   } catch (error) {
     return [];
   }
-}
+};
 
 // Takes the date in format 2019-04-26T18:24:09Z
 // and returns it as April 26 2019
-function parseDate(datetime: string) {
+const parseDate = (datetime: string) => {
   const date = new Date(datetime);
   return date.toLocaleString('en-us', { month: 'long' }) + ' ' + date.getDate() + ' ' + date.getFullYear();
-}
+};
 
-function parseMarkdown(content: any) {
+const parseMarkdown = (content: any) => {
   let html = renderMarkdown(content);
   html = html.replace('<a href=\"#bug-fixes\">Bug Fixes</a>', 'Bug Fixes')
              .replace('<a href=\"#features\">Features</a>', 'Features');
   return convertHtmlToHypertextData(html);
-}
+};
 
 // Given a version, return if it is a
 // major, minor, or patch release
-function getVersionType(version: string) {
+const getVersionType = (version: string) => {
   const releasePattern = /^(\d+)\.(\d+)\.(\d+)$/;
 
   let type = 'patch';
@@ -103,27 +103,27 @@ function getVersionType(version: string) {
   }
 
   return type;
-}
+};
 
 // Given a version, return its element symbol
-function getVersionSymbol(version) {
+const getVersionSymbol = version => {
   const filteredVersions = versions.filter(
     v => version.startsWith(`${v.minor}.`)
   );
   filteredVersions.unshift(fallbackVersion);
 
   return filteredVersions[filteredVersions.length - 1].symbol;
-}
+};
 
 // Given a version, return its element name
-function getVersionElement(version) {
+const getVersionElement = version => {
   const filteredVersions = versions.filter(
     v => version.startsWith(`${v.minor}.`)
   );
   filteredVersions.unshift(fallbackVersion);
 
   return filteredVersions[filteredVersions.length - 1].element;
-}
+};
 
 const versions = [
   {

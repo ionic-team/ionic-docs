@@ -74,7 +74,7 @@ export class DocsPage {
       image: document.head.querySelectorAll('.meta-image')
     };
 
-    function updateMeta(els, update) {
+    const updateMeta = (els, update) => {
       els.forEach(el => {
         ['href', 'content'].forEach(attr => {
           if (el.hasAttribute(attr)) {
@@ -82,7 +82,7 @@ export class DocsPage {
           }
         });
       });
-    }
+    };
 
     // Title
     const getTitle = () => {
