@@ -53,8 +53,9 @@ export class DocsTabs {
         role="tab"
         aria-selected={isSelected ? 'true' : 'false'}
         onClick={() => this.select(tab)}
-        class={buttonClass}>
-          {label}
+        class={buttonClass}
+      >
+        {label}
       </button>
     );
   }

@@ -1,14 +1,11 @@
 import {
   PAGES_DIR,
   Page,
-  buildPages,
-  updatePageHtmlToHypertext
+  buildPages
 } from '../index';
 
 import fs from 'fs-extra';
-import url from 'url';
 import glob from 'fast-glob';
-import fetch from 'node-fetch';
 import frontMatter from 'front-matter';
 import markdownRenderer from '../markdown-renderer';
 import simplegit from 'simple-git/promise';

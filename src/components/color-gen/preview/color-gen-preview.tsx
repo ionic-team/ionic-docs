@@ -1,6 +1,5 @@
 import { Component, Prop, Watch, h } from '@stencil/core';
 
-
 @Component({
   tag: 'color-gen-preview',
   styleUrl: 'color-gen-preview.css',

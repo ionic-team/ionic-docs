@@ -19,7 +19,7 @@ export class FileTreeDirectory {
 
   render() {
     return [
-      <div class="name">{ this.name }/</div>,
+      <div class="name">{this.name}/</div>,
       this.collapsed ? null :
         <div class="children">
           <slot />

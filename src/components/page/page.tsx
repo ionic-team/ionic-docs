@@ -1,6 +1,8 @@
 import { Component, Prop, State, Watch, h } from '@stencil/core';
 import { RouterHistory } from '@stencil/router';
+
 import { Page } from '../../definitions';
+
 import templates from './templates';
 
 @Component({
@@ -20,7 +22,7 @@ export class DocsPage {
 
   @Watch('path')
   fetchPage(path, oldPath?) {
-    if (path == null || path === oldPath) return;
+    if (path == null || path === oldPath) { return; }
     path = /^\/docs\/pages\/[a-z]{2}\.json$/.test(path)
       ? path.replace('.json', '/index.json')
       : path;
@@ -30,12 +32,12 @@ export class DocsPage {
       .catch(this.handleBadFetch);
   }
 
-  validateFetch = (response) => {
-    if (!response.ok) throw response;
+  validateFetch = response => {
+    if (!response.ok) { throw response; }
     return response.json();
   }
 
-  handleNewPage = (page) => {
+  handleNewPage = page => {
     this.badFetch = null;
     this.page = page;
   }

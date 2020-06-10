@@ -37,9 +37,12 @@ export class DocsDemo {
       <div class="docs-demo-mode-toggle">
         {['ios', 'md'].map(mode => (
           <button
-            class={ mode === this.ionicMode ? 'is-selected' : null }
+            class={mode === this.ionicMode ? 'is-selected' : null}
             title={`Toggle ${mode === 'ios' ? 'iOS' : 'Android'} mode`}
-            onClick={() => { this.ionicMode = mode; }}>{mode === 'ios' ? 'iOS' : 'Android'}</button>
+            onClick={() => { this.ionicMode = mode; }}
+          >
+            {mode === 'ios' ? 'iOS' : 'Android'}
+          </button>
         ))}
       </div>
     );
@@ -47,10 +50,12 @@ export class DocsDemo {
 
   renderSourceLink() {
     return this.source ?
-      <a href={this.source}
-         class="docs-demo-source"
-         target="_blank"
-         title="Demo Source">
+      <a
+        href={this.source}
+        class="docs-demo-source"
+        target="_blank"
+        title="Demo Source"
+      >
         <ion-icon name="open"/> View Source
       </a> : null;
   }
@@ -72,7 +77,8 @@ export class DocsDemo {
             importance="low"
             onLoad={this.onIframeLoad}
             src={`${this.url}?ionic:mode=${this.ionicMode}`}
-            ref={node => { this.iframe = node as HTMLIFrameElement; }}/>
+            ref={node => { this.iframe = node as HTMLIFrameElement; }}
+          />
         </figure>
       </div>
     );

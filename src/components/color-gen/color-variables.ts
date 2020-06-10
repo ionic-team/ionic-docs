@@ -10,7 +10,6 @@ export interface ColorVariable {
   shade?: string;
 }
 
-
 export const COLOR_VARS: ColorVariable[] = [
   {
     name: 'Primary',

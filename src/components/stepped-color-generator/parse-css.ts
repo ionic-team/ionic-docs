@@ -1,6 +1,5 @@
 import { Color } from '../color-gen/color';
 
-
 export function generateSteppedColors(background = '#ffffff', text = '#000000') {
   const color = new Color(background);
   let steps = '';

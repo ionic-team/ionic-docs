@@ -7,7 +7,7 @@ export class WistiaVideo {
   @Prop() videoId: string;
 
   componentDidLoad() {
-    if (document.getElementById('wistia_script') || !Build.isBrowser) return;
+    if (document.getElementById('wistia_script') || !Build.isBrowser) { return; }
 
     const wistiaScript = document.createElement('script');
     wistiaScript.id = 'wistia_script';
@@ -18,7 +18,7 @@ export class WistiaVideo {
   }
 
   render() {
-    if (!Build.isBrowser) return;
+    if (!Build.isBrowser) { return; }
     return (
         <div class={`wistia_embed wistia_async_${this.videoId} videoFoam=true`}>&nbsp;</div>
     );

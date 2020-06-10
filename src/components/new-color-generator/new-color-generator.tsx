@@ -61,13 +61,12 @@ ${selector} {
 
   render() {
     return [
-      <color-gen-variable-selector id="base" is-new="true" name={ this.name } value={ this.value }></color-gen-variable-selector>,
+      <color-gen-variable-selector id="base" is-new="true" name={this.name} value={this.value}></color-gen-variable-selector>,
       <color-gen-css-text header={false} cssText={this.cssText}></color-gen-css-text>
     ];
   }
 
 }
-
 
 const DEFAULT_CSS_TEXT = `
 :root {

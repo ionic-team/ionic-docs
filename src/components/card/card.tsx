@@ -1,4 +1,5 @@
 import { Component, Prop, State, h } from '@stencil/core';
+
 import { Outbound } from '../../icons';
 
 @Component({
@@ -30,7 +31,7 @@ export class DocsCard {
   }
 
   componentWillLoad() {
-    if (!this.iconset) return;
+    if (!this.iconset) { return; }
     this.activeIndex = 0;
     this.rotationTime = 4000 + (Math.random() * 2000); // 4 - 6 seconds - randomize it a bit
     // make the first transiton happen a bit faster
@@ -54,7 +55,7 @@ export class DocsCard {
     const isOutbound = /^http/.test(this.href);
     const header = !this.header ? null : (
       <header class="Card-header">
-        { this.header } { isOutbound ? <Outbound/> : null }
+        {this.header} {isOutbound ? <Outbound/> : null}
       </header>
     );
     const hoverIcon = this.hoverIcon || this.icon;
@@ -62,17 +63,19 @@ export class DocsCard {
     const content = [
       this.img && <img src={this.img} class="Card-image"/>,
       <div class="Card-container">
-        { this.icon && <img src={this.icon} class="Card-icon Card-icon-default"/> }
-        { hoverIcon && <img src={hoverIcon} class="Card-icon Card-icon-hover"/> }
-        { this.ionicon && <ion-icon name={this.ionicon} class="Card-ionicon"></ion-icon>}
+        {this.icon && <img src={this.icon} class="Card-icon Card-icon-default"/>}
+        {hoverIcon && <img src={hoverIcon} class="Card-icon Card-icon-hover"/>}
+        {this.ionicon && <ion-icon name={this.ionicon} class="Card-ionicon"></ion-icon>}
         { this.iconset && <div class="Card-iconset__container">
           {this.iconset.split(',').map((icon, index) =>
-            <img src={icon}
-                 class={`Card-icon ${index === this.activeIndex ? 'Card-icon--active' : ''}`}
-                 data-index={index}/>
+            <img
+              src={icon}
+              class={`Card-icon ${index === this.activeIndex ? 'Card-icon--active' : ''}`}
+              data-index={index}
+            />
           )}
         </div>}
-        { header }
+        {header}
         <div class="Card-content"><slot/></div>
       </div>
     ];
@@ -80,7 +83,7 @@ export class DocsCard {
     if (isStatic) {
       return (
         <div class="Card">
-          { content }
+          {content}
         </div>
       );
     }
@@ -88,14 +91,14 @@ export class DocsCard {
     if (isOutbound) {
       return (
         <a class="Card" href={this.href}>
-          { content }
+          {content}
         </a>
       );
     }
 
     return (
       <stencil-route-link url={this.href} anchorClass="Card">
-        { content }
+        {content}
       </stencil-route-link>
     );
   }

@@ -1,10 +1,11 @@
 import { h } from '@stencil/core';
+
 import { useLocalStorage } from '../../../local-storage';
 import { toHypertext } from '../to-hypertext';
 
 const [getFramework] = useLocalStorage('ionic-docs:framework');
 
-export default (props) => {
+export default props => {
   const { page } = props;
   const headings = [...page.headings];
   const encapsulation = renderEncapsulation(page.encapsulation);
@@ -59,9 +60,9 @@ export default (props) => {
 
   return (
     <article>
-      { encapsulation }
+      {encapsulation}
       <h1>
-        { page.title }
+        {page.title}
       </h1>
       <div class="page-meta">
         <docs-table-of-contents links={headings} basepath={page.path}/>
@@ -70,12 +71,12 @@ export default (props) => {
       <section class="markdown-content">
         {toHypertext(h, page.body)}
       </section>
-      { usage }
-      { properties }
-      { events }
-      { methods }
-      { customProps }
-      { slots }
+      {usage}
+      {properties}
+      {events}
+      {methods}
+      {customProps}
+      {slots}
     </article>
   );
 };
@@ -110,8 +111,9 @@ const renderUsage = (usage = {}, path: string) => {
           {keys.map(key =>
             <docs-tab
               tab={key}
-              selected={framework === key.toLowerCase()}>
-                {toHypertext(h, usage[key])}
+              selected={framework === key.toLowerCase()}
+            >
+              {toHypertext(h, usage[key])}
             </docs-tab>
           )}
       </docs-tabs>
@@ -134,10 +136,11 @@ const renderProperties = (properties = []) => {
         keys={{
           Head: prop => prop.name,
           Description: prop => <div innerHTML={prop.docs}/>,
-          Attribute: prop => prop.attr ? <code>{ prop.attr }</code> : null,
-          Type: prop => <code>{ prop.type }</code>,
-          Default: prop => prop.default ? <code>{ prop.default }</code> : null
-        }}/>
+          Attribute: prop => prop.attr ? <code>{prop.attr}</code> : null,
+          Type: prop => <code>{prop.type}</code>,
+          Default: prop => prop.default ? <code>{prop.default}</code> : null
+        }}
+      />
     </section>
   );
 };
@@ -162,8 +165,8 @@ const renderEvents = (events = []) => {
         <tbody>
           {events.map(event => (
             <tr>
-              <td><code>{ event.event }</code></td>
-              <td>{ event.docs }</td>
+              <td><code>{event.event}</code></td>
+              <td>{event.docs}</td>
             </tr>
           ))}
         </tbody>
@@ -187,8 +190,9 @@ const renderMethods = (methods = []) => {
         keys={{
           Head: method => method.name,
           Description: method => <div innerHTML={method.docs}/>,
-          Signature: method => <code>{ method.signature }</code>
-        }}/>
+          Signature: method => <code>{method.signature}</code>
+        }}
+      />
     </section>
   );
 };
@@ -213,8 +217,8 @@ const renderCustomProps = (customProps = []) => {
         <tbody>
           {customProps.map(prop => (
             <tr>
-              <td><code>{ prop.name }</code></td>
-              <td>{ prop.docs }</td>
+              <td><code>{prop.name}</code></td>
+              <td>{prop.docs}</td>
             </tr>
           ))}
         </tbody>
@@ -243,8 +247,8 @@ const renderSlots = (slots = []) => {
         <tbody>
           {slots.map(slot => (
             <tr>
-              <td>{ slot.name && <code>"{ slot.name }"</code>}</td>
-              <td>{ slot.docs }</td>
+              <td>{slot.name && <code>"{slot.name}"</code>}</td>
+              <td>{slot.docs}</td>
             </tr>
           ))}
         </tbody>

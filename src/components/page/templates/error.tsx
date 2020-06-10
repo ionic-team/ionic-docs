@@ -1,11 +1,12 @@
 import { h } from '@stencil/core';
+
 import { sample } from '../../../utils';
 
 export default (response: Response) => (
   <main class="Error full-screen">
-    <div>{ sample(appropriateEmoji) }</div>
-    <h1>{ getHelpfulTitle(response) }</h1>
-    <p>{ getHelpfulMessage(response) }</p>
+    <div>{sample(appropriateEmoji)}</div>
+    <h1>{getHelpfulTitle(response)}</h1>
+    <p>{getHelpfulMessage(response)}</p>
   </main>
 );
 

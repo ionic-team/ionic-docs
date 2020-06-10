@@ -1,4 +1,5 @@
 import { Component, Element, Prop, h } from '@stencil/core';
+
 import { Angular, JavaScript, React, Vue } from '../../icons';
 import { useLocalStorage } from '../../local-storage';
 
@@ -60,7 +61,8 @@ export class DocsMenu {
         options={this.frameworks}
         optionRenderer={this.renderOption}
         initializer={this.getFramework}
-        onSelection={(ev) => this.setFramework(ev.detail)}/>
+        onSelection={ev => this.setFramework(ev.detail)}
+      />
     );
   }
 }

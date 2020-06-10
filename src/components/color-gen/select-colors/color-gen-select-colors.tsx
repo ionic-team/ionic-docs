@@ -1,6 +1,6 @@
 import { Component, Prop, State, h } from '@stencil/core';
-import { ColorVariable } from '../color-variables';
 
+import { ColorVariable } from '../color-variables';
 
 @Component({
   tag: 'color-gen-select-colors',
@@ -35,7 +35,8 @@ export class ColorGenSelectColors {
             isParentOpen={isOpen}
             onClick={() => {
               this.toggleActiveColor(color.name);
-            }}/>
+            }}
+          />
 
           <svg width="10px" height="6px" viewBox="0 0 10 6" version="1.1" xmlns="http://www.w3.org/2000/svg">
               <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
@@ -51,14 +52,16 @@ export class ColorGenSelectColors {
                 name={color.name + '-shade'}
                 property={color.property + '-shade'}
                 value={color.shade}
-                editable={false}/>
+                editable={false}
+              />
             </li>
             <li>
               <color-gen-variable-selector
                 name={color.name + '-tint'}
                 property={color.property + '-tint'}
                 value={color.tint}
-                editable={false}/>
+                editable={false}
+              />
             </li>
           </ul>
         </li>
@@ -67,7 +70,7 @@ export class ColorGenSelectColors {
 
     return (
       <ul class="controls">
-        { listItems }
+        {listItems}
       </ul>
     );
   }

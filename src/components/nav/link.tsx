@@ -1,9 +1,9 @@
-import { Outbound } from '../../icons';
-import { l10n } from '../../l10n';
 import { h } from '@stencil/core';
 
+import { Outbound } from '../../icons';
+import { l10n } from '../../l10n';
 
-export const link = (item) => {
+export const link = item => {
   const isExternalLink = (href: string) => {
     return href.indexOf('http') === 0;
   };
@@ -14,10 +14,12 @@ export const link = (item) => {
 
   if (isExternal) {
     return (
-      <a href={href}
+      <a
+        href={href}
         target="_blank"
-        class="Nav-link outbound">
-          <span>{text}</span> <Outbound/>
+        class="Nav-link outbound"
+      >
+        <span>{text}</span> <Outbound/>
       </a>
     );
   }
@@ -34,8 +36,9 @@ export const link = (item) => {
       strict={false}
       exact
       activeClass="Nav-link--active"
-      anchorClass="Nav-link">
-        <span>{text}</span>
+      anchorClass="Nav-link"
+    >
+      <span>{text}</span>
     </stencil-route-link>
   );
 };

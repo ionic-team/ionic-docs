@@ -1,4 +1,5 @@
 import { Component, Prop, h } from '@stencil/core';
+
 import { Page } from '../../definitions';
 import { ForwardArrow } from '../../icons';
 
@@ -35,7 +36,7 @@ export class DocsPageFooter {
     const editHref = `https://github.com/ionic-team/ionic-docs/edit/master/${path}`;
     const updatedHref = `https://github.com/ionic-team/ionic-docs/commits/master/${path}`;
     const updatedText = lastUpdated ? new Date(lastUpdated).toISOString().slice(0, 10) : null;
-    const contributorHref = (contributor) => `${updatedHref}?author=${contributor}`;
+    const contributorHref = contributor => `${updatedHref}?author=${contributor}`;
 
     const paggination = (
       page.previousText && page.previousUrl || page.nextText && page.nextUrl

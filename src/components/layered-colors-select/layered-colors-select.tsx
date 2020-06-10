@@ -1,6 +1,5 @@
 import { Component, Element, State, h } from '@stencil/core';
 
-
 @Component({
   tag: 'layered-colors-select',
   styleUrl: 'layered-colors-select.css'
@@ -64,23 +63,22 @@ export class ColorBlock {
       }
     ];
 
-
     const blockItems = variations.map(variation => {
       const codeColor = variation.rgb ? `rgb(${variation.value})` : `${variation.value}`;
 
       return (
         <tr>
           <td class="color-name">
-            { variation.name }
+            {variation.name}
           </td>
           <td class="color-property">
-            <code>{ variation.property }</code>
+            <code>{variation.property}</code>
           </td>
           <td class="color-value">
-            <code-color mode="md" display={ variation.value } value={ codeColor }></code-color>
+            <code-color mode="md" display={variation.value} value={codeColor}></code-color>
           </td>
           <td class="color-description">
-            { variation.description }
+            {variation.description}
           </td>
         </tr>
       );
@@ -92,12 +90,13 @@ export class ColorBlock {
           class="color-dot"
           style={{
             'background-color': `var(--ion-color-${this.color})`
-          }}>
-        </span>
+          }}
+        />
         <ion-select
           value={this.color}
           interfaceOptions={selectOptions}
-          onIonChange={ev => this.changeColor(ev)}>
+          onIonChange={ev => this.changeColor(ev)}
+        >
           <ion-select-option value="primary">Primary</ion-select-option>
           <ion-select-option value="secondary">Secondary</ion-select-option>
           <ion-select-option value="tertiary">Tertiary</ion-select-option>
@@ -116,7 +115,7 @@ export class ColorBlock {
           <th>Default Value</th>
           <th>Description</th>
         </tr>
-        { blockItems }
+        {blockItems}
       </table>,
     ];
   }

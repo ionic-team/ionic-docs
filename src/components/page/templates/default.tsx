@@ -1,4 +1,5 @@
 import { h } from '@stencil/core';
+
 import { toHypertext } from '../to-hypertext';
 
 export default props => {

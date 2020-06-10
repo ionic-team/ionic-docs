@@ -10,21 +10,21 @@ export interface HSL {
   s: number;
 }
 
-function componentToHex(c) {
+const componentToHex = c => {
   const hex = c.toString(16);
   return hex.length === 1 ? `0${hex}` : hex;
-}
+};
 
-function expandHex(hex: string): string {
+const expandHex = (hex: string): string => {
   const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
   hex = hex.replace(shorthandRegex, (_m, r, g, b) => {
     return r + r + g + g + b + b;
   });
 
   return `#${hex.replace('#', '')}`;
-}
+};
 
-function hexToRGB(hex: string): RGB {
+const hexToRGB = (hex: string): RGB => {
   hex = expandHex(hex);
   hex = hex.replace('#', '');
   const intValue: number = parseInt(hex, 16);
@@ -34,9 +34,9 @@ function hexToRGB(hex: string): RGB {
     g: (intValue >> 8) & 255,
     b: intValue & 255
   };
-}
+};
 
-function hslToRGB({ h, s, l }: HSL): RGB {
+const hslToRGB = ({ h, s, l }: HSL): RGB => {
   h = h / 360;
   s = s / 100;
   l = l / 100;
@@ -51,50 +51,52 @@ function hslToRGB({ h, s, l }: HSL): RGB {
 
   // tslint:disable-next-line:no-shadowed-variable
   const hue2rgb = (p, q, t) => {
-      if (t < 0) t += 1;
-      if (t > 1) t -= 1;
-      if (t < 1 / 6) return p + (q - p) * 6 * t;
-      if (t < 1 / 2) return q;
-      if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
-      return p;
-    },
-    q = l < 0.5 ? l * (1 + s) : l + s - l * s,
-    p = 2 * l - q,
-    r = hue2rgb(p, q, h + (1 / 3)),
-    g = hue2rgb(p, q, h),
-    b = hue2rgb(p, q, h - (1 / 3));
+    if (t < 0) { t += 1; }
+    if (t > 1) { t -= 1; }
+    if (t < 1 / 6) { return p + (q - p) * 6 * t; }
+    if (t < 1 / 2) { return q; }
+    if (t < 2 / 3) { return p + (q - p) * (2 / 3 - t) * 6; }
+    return p;
+  };
+  const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+  const p = 2 * l - q;
+  const r = hue2rgb(p, q, h + (1 / 3));
+  const g = hue2rgb(p, q, h);
+  const b = hue2rgb(p, q, h - (1 / 3));
 
   return {
     r: Math.round(r * 255),
     g: Math.round(g * 255),
     b: Math.round(b * 255)
   };
-}
+};
 
-function mixColors(color: Color, mixColor: Color, weight = .5): RGB {
-  const colorRGB: RGB = color.rgb,
-    mixColorRGB: RGB = mixColor.rgb,
-    mixColorWeight = 1 - weight;
+const mixColors = (color: Color, mixColor: Color, weight = .5): RGB => {
+  const colorRGB: RGB = color.rgb;
+  const mixColorRGB: RGB = mixColor.rgb;
+  const mixColorWeight = 1 - weight;
 
   return {
     r: Math.round(weight * mixColorRGB.r + mixColorWeight * colorRGB.r),
     g: Math.round(weight * mixColorRGB.g + mixColorWeight * colorRGB.g),
     b: Math.round(weight * mixColorRGB.b + mixColorWeight * colorRGB.b)
   };
-}
+};
 
-function rgbToHex({ r, g, b }: RGB) {
+const rgbToHex = ({ r, g, b }: RGB) => {
   return '#' + componentToHex(r) + componentToHex(g) + componentToHex(b);
-}
+};
 
-function rgbToHSL({ r, g, b }: RGB): HSL {
+const rgbToHSL = ({ r, g, b }: RGB): HSL => {
   r = Math.max(Math.min(r / 255, 1), 0);
   g = Math.max(Math.min(g / 255, 1), 0);
   b = Math.max(Math.min(b / 255, 1), 0);
-  const max = Math.max(r, g, b),
-    min = Math.min(r, g, b),
-    l = Math.min(1, Math.max(0, (max + min) / 2));
-  let d, h, s;
+  const max = Math.max(r, g, b);
+  const min = Math.min(r, g, b);
+  const l = Math.min(1, Math.max(0, (max + min) / 2));
+  let d;
+  let h;
+  let s;
 
   if (max !== min) {
     d = max - min;
@@ -115,11 +117,11 @@ function rgbToHSL({ r, g, b }: RGB): HSL {
     s: Math.round(s * 100),
     l: Math.round(l * 100)
   };
-}
+};
 
-function rgbToYIQ({ r, g, b }: RGB): number {
+const rgbToYIQ = ({ r, g, b }: RGB): number => {
   return ((r * 299) + (g * 587) + (b * 114)) / 1000;
-}
+};
 
 export class Color {
   readonly hex: string;
@@ -135,7 +137,6 @@ export class Color {
       const matches = /hsl\((\d{1,3}), ?(\d{1,3}%), ?(\d{1,3}%)\)/.exec(value);
       value = { h: parseInt(matches[0], 10), s: parseInt(matches[1], 10), l: parseInt(matches[2], 10) };
     }
-
 
     if (typeof(value) === 'string') {
       value = value.replace(/\s/g, '');
@@ -158,7 +159,7 @@ export class Color {
   }
 
   static isColor(value: string): boolean {
-    if (/rgb\((\d{1,3}), ?(\d{1,3}), ?(\d{1,3})\)/.test(value)) return true;
+    if (/rgb\((\d{1,3}), ?(\d{1,3}), ?(\d{1,3})\)/.test(value)) { return true; }
 
     return /(^#[0-9a-fA-F]+)/.test(value.trim());
   }

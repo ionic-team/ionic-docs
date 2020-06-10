@@ -1,7 +1,8 @@
 import { h } from '@stencil/core';
+
 import { toHypertext } from '../to-hypertext';
 
-export default (props) => {
+export default props => {
   const { page } = props;
   const headings = [...page.headings];
   const examples = renderExamples(page.exampleCommands);
@@ -39,7 +40,7 @@ export default (props) => {
 
   return (
     <article>
-      <h1>{ page.title }</h1>
+      <h1>{page.title}</h1>
       <div class="page-meta">
         <docs-table-of-contents links={headings} basepath={page.path}/>
         <internal-ad></internal-ad>
@@ -47,14 +48,14 @@ export default (props) => {
       <section class="summary intro">
         {toHypertext(h, page.summary)}
       </section>
-      { renderUsage(page) }
+      {renderUsage(page)}
       <section class="description">
         {toHypertext(h, page.body)}
       </section>
-      { examples }
-      { inputs }
-      { options }
-      { advancedOptions }
+      {examples}
+      {inputs}
+      {options}
+      {advancedOptions}
     </article>
   );
 };
@@ -63,7 +64,7 @@ const renderUsage = command => {
   return (
     <command-line>
       <command-prompt>
-        { command.title }
+        {command.title}
         { command.inputs.length > 0 ?
           ` ${command.inputs.map(input => input.required ? `<${input.name}>` : `[<${input.name}>]`).join(' ')} ` :
           ' ' }
@@ -88,7 +89,8 @@ const renderInputs = (inputs = []) => {
         keys={{
           Head: input => input.name,
           Description: input => <div innerHTML={input.summary} />,
-        }} />
+        }}
+      />
     </section>
   );
 };
@@ -105,7 +107,7 @@ const renderOptions = (options = []) => {
       <h2 id="options">
         <a href="#options">Options</a>
       </h2>
-      { renderOptionList(options) }
+      {renderOptionList(options)}
     </section>
   );
 };
@@ -122,7 +124,7 @@ const renderAdvancedOptions = (options = []) => {
       <h2 id="advanced-options">
         <a href="#advanced-options">Advanced Options</a>
       </h2>
-      { renderOptionList(options) }
+      {renderOptionList(options)}
     </section>
   );
 };
@@ -136,17 +138,18 @@ const renderOptionList = (options = []) => {
         Description: option => <div innerHTML={option.summary} />,
         Aliases: option => option.aliases.length > 0 ? option.aliases.map(alias => <code>-{alias}</code>) : null,
         Default: option => option.default && option.type === 'string' ? option.default : null
-      }} />
+      }}
+    />
   );
 };
 
 const renderOptionSpec = option => {
   return (
     <a href={`#option-${option.name}`} id={`option-${option.name}`}>
-      --{ option.type === 'boolean' && option.default === true ? `no-${option.name}` : option.name }
+      --{option.type === 'boolean' && option.default === true ? `no-${option.name}` : option.name}
       { option.type === 'string' ?
         <span class="option-spec">
-          { `=<${option.spec.value}>` }
+          {`=<${option.spec.value}>`}
         </span> :
         null }
     </a>

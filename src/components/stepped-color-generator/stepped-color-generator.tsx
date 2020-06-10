@@ -1,7 +1,8 @@
 import { Component, Element, Listen, State, h } from '@stencil/core';
-import { generateSteppedColors } from './parse-css';
+
 import { Color } from '../color-gen/color';
 
+import { generateSteppedColors } from './parse-css';
 
 @Component({
   tag: 'stepped-color-generator',
@@ -48,15 +49,14 @@ ${steppedColors}
   render() {
     return [
       <div class="stepped-color-pickers">
-        <color-gen-variable-selector id="background" name="Background" value={ this.backgroundColor }></color-gen-variable-selector>
-        <color-gen-variable-selector id="text" name="Text" value={ this.textColor }></color-gen-variable-selector>
+        <color-gen-variable-selector id="background" name="Background" value={this.backgroundColor}></color-gen-variable-selector>
+        <color-gen-variable-selector id="text" name="Text" value={this.textColor}></color-gen-variable-selector>
       </div>,
       <color-gen-css-text cssText={this.cssText}></color-gen-css-text>
     ];
   }
 
 }
-
 
 const DEFAULT_CSS_TEXT = `
 :root {

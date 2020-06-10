@@ -1,4 +1,5 @@
 import { Component, h } from '@stencil/core';
+
 import { l10n } from '../../../l10n';
 
 @Component({

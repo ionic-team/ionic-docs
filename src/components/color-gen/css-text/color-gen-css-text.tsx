@@ -1,6 +1,5 @@
 import { Component, Element, Event, EventEmitter, Prop, State, h } from '@stencil/core';
 
-
 @Component({
   tag: 'color-gen-css-text',
   styleUrl: 'color-gen-css-text.css'
@@ -19,7 +18,7 @@ export class CssText {
   onCssTextChange(ev: UIEvent) {
     if ((ev.target as HTMLTextAreaElement).value !== this.cssText) {
       const value = (ev.target as HTMLTextAreaElement).value;
-      if (!value.length) return;
+      if (!value.length) { return; }
 
       this.cssText = value;
 
@@ -74,8 +73,8 @@ export class CssText {
           spellcheck="false"
           onClick={function() { this.select(); }}
           onInput={this.onCssTextChange.bind(this)}
-          innerHTML={this.cssText}>
-        </div>
+          innerHTML={this.cssText}
+        />
       </div>
     ];
   }

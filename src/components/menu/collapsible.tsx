@@ -1,4 +1,5 @@
 import { Component, Element, Prop, State, h } from '@stencil/core';
+
 import { DownArrow } from '../../icons';
 
 @Component({
@@ -29,8 +30,10 @@ export class DocsMenuCollapsible {
 
   render() {
     return [
-      <a onClick={() => this.toggle()}
-         class={`docs-menu-collapsible__title`}>
+      <a
+        onClick={() => this.toggle()}
+        class={`docs-menu-collapsible__title`}
+      >
         {this.heading}
         <DownArrow/>
       </a>,
@@ -40,7 +43,6 @@ export class DocsMenuCollapsible {
     ];
   }
 }
-
 
 const removeClassThatStartWith = (el: HTMLElement, classStart) => {
   el.classList.forEach(className => {

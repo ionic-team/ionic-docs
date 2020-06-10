@@ -1,8 +1,9 @@
 import { Build, Component, Element, Prop, h } from '@stencil/core';
-import { link } from './link';
-import { l10n } from '../../l10n';
-import { MenuItems } from '../../definitions';
 
+import { MenuItems } from '../../definitions';
+import { l10n } from '../../l10n';
+
+import { link } from './link';
 
 @Component({
   tag: 'docs-nav',
@@ -39,11 +40,12 @@ export class DocsNav {
     const items = this.normalizeItems(value);
     return (
       <section>
-        { id !== '' && text !== undefined ? <header class="Nav-header">{text}</header> : null }
+        {id !== '' && text !== undefined ? <header class="Nav-header">{text}</header> : null}
         <ul
           class="Nav-subnav"
-          style={{ '--level': level }}>
-            {items.map(item => this.toItem(item, level))}
+          style={{ '--level': level }}
+        >
+          {items.map(item => this.toItem(item, level))}
         </ul>
       </section>
     );

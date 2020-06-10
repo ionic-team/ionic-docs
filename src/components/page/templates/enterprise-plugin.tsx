@@ -1,7 +1,8 @@
 import { h } from '@stencil/core';
+
 import { toHypertext } from '../to-hypertext';
 
-export default (props) => {
+export default props => {
   const { page } = props;
   const headings = [...page.headings];
 
@@ -10,7 +11,7 @@ export default (props) => {
 
   return (
     <article>
-      <h1>{ page.title }</h1>
+      <h1>{page.title}</h1>
       <h4>v{page.version}</h4>
       <div class="page-meta">
         <docs-table-of-contents links={headings.concat([{ 'href': '#previous-versions', text: 'Other Versions' }])} basepath={page.path}/>

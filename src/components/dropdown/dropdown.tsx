@@ -1,4 +1,5 @@
 import { Component, Element, JSX, Listen, Method, Prop, State, h } from '@stencil/core';
+
 import { DownArrow } from '../../icons';
 
 @Component({
@@ -67,7 +68,8 @@ export class DocsDropdown {
         class="Dropdown-button"
         aria-haspopup="menu"
         aria-expanded={this.isOpen ? 'true' : 'false'}
-        onClick={this.toggle.bind(this)}>
+        onClick={this.toggle.bind(this)}
+      >
         <span class="Dropdown-button-label">{this.label ? this.label : null}</span>
         {Icon ? <Icon class="Dropdown-icon"/> : null}
         <DownArrow class="Dropdown-arrow"/>
@@ -77,7 +79,8 @@ export class DocsDropdown {
     const panel = (
       <div
         role="menu"
-        class="Dropdown-panel">
+        class="Dropdown-panel"
+      >
         <slot/>
       </div>
     );

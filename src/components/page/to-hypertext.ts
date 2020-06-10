@@ -1,5 +1,4 @@
 
-
 export const toHypertext = (h: any, data: any) => {
   const args = [];
   for (let i = 0; i < data.length; i++) {

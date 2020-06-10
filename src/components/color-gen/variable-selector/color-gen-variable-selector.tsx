@@ -1,6 +1,5 @@
 import { Component, Event, EventEmitter, Prop, State, h } from '@stencil/core';
 
-
 @Component({
   tag: 'color-gen-variable-selector',
   styleUrl: 'color-gen-variable-selector.css',
@@ -56,7 +55,7 @@ export class VariableSelector {
       return;
     }
 
-    if (input.matches('[type="text"]') && val.length !== 7) return;
+    if (input.matches('[type="text"]') && val.length !== 7) { return; }
 
     this.value = val;
     this.colorChange.emit({
@@ -108,26 +107,31 @@ export class VariableSelector {
     this.validateValue();
 
     return [
-      <div class={{
-        'color-selector': true,
-        'color-selector--name-error': this.showNameError,
-        'color-selector--value-error': this.showValueError
-        }}>
+      <div
+        class={{
+          'color-selector': true,
+          'color-selector--name-error': this.showNameError,
+          'color-selector--value-error': this.showValueError
+        }}
+      >
         <div class="color-selector__name">
           <i class="color-selector__swatch" style={{ 'backgroundColor': this.value }}></i>
-          { (this.isNew)
-            ? <div class={{
+          { (this.isNew) ?
+            <div
+              class={{
                 'color-selector__input': true,
                 'color-selector__input-name': true,
                 'color-selector__input--focused': this.isNameInputFocused
-              }}>
-                <input
+              }}
+            >
+              <input
                 type="text"
                 value={this.name}
                 onInput={this.onNameChange.bind(this)}
                 onFocus={this.onNameInputFocus.bind(this)}
-                onBlur={this.onNameInputBlur.bind(this)}/>
-              </div>
+                onBlur={this.onNameInputBlur.bind(this)}
+              />
+            </div>
             : <span>{this.name}</span>
           }
           {this.showNameError ?
@@ -137,24 +141,29 @@ export class VariableSelector {
         {(this.editable)
         ?
           <div class="color-selector__form-group">
-            <div class={{
+            <div
+              class={{
                 'color-selector__input': true,
                 'color-selector__input-value': true,
                 'color-selector__input--focused': this.isValueInputFocused
               }}
-              onClick={ev => { if (this.isParentOpen) ev.stopPropagation(); }}>
+              onClick={ev => { if (this.isParentOpen) { ev.stopPropagation(); } }}
+            >
               <div class="color-selector__color-wrap" style={{ 'backgroundColor': this.value }}>
-                <input type="color"
+                <input
+                  type="color"
                   value={this.value}
                   onInput={this.onColorChange.bind(this)}
-                  tabindex="-1"/>
+                  tabindex="-1"
+                />
               </div>
               <input
                 type="text"
                 value={this.value}
                 onInput={this.onColorChange.bind(this)}
                 onFocus={this.onValueInputFocus.bind(this)}
-                onBlur={this.onValueInputBlur.bind(this)}/>
+                onBlur={this.onValueInputBlur.bind(this)}
+              />
             </div>
 
             {this.showValueError ?

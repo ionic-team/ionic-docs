@@ -1,4 +1,5 @@
 import { Component, Listen, Prop, State, Watch, h } from '@stencil/core';
+
 import { Link } from '../../definitions';
 
 interface ItemOffset {
@@ -20,7 +21,7 @@ export class DocsTableOfContents {
 
   @Listen('scroll', { target: 'window', passive: true })
   function() {
-    if (this.pageWidth < 1234) return;
+    if (this.pageWidth < 1234) { return; }
     requestAnimationFrame(() => {
       const itemIndex = this.itemOffsets.findIndex(item => item.topOffset > window.scrollY);
       if (
@@ -60,8 +61,8 @@ export class DocsTableOfContents {
     <li>
       <stencil-route-link
         url={`${this.basepath}${href}`}
-        class={`Nav-link ${this.selectedId === href ? 'selected' : ''}`}>
-
+        class={`Nav-link ${this.selectedId === href ? 'selected' : ''}`}
+      >
         {text}
       </stencil-route-link>
     </li>
@@ -73,9 +74,9 @@ export class DocsTableOfContents {
     }
 
     return [
-      <strong class="Nav-header">{ this.label }</strong>,
+      <strong class="Nav-header">{this.label}</strong>,
       <nav>
-        <ul class="Nav-subnav">{ this.links.map(this.toItem) }</ul>
+        <ul class="Nav-subnav">{this.links.map(this.toItem)}</ul>
       </nav>
     ];
   }

@@ -49,8 +49,9 @@ export class DocsSelect {
         aria-checked={isSelected ? 'true' : 'false'}
         tabindex="0"
         onClick={handleClick}
-        onKeyUp={handleKeyUp}>
-          {this.optionRenderer(option)}
+        onKeyUp={handleKeyUp}
+      >
+        {this.optionRenderer(option)}
       </div>
     );
   }
@@ -73,8 +74,9 @@ export class DocsSelect {
     return (
       <docs-dropdown
         ref={el => { this.dropdown = el; }}
-        label={this.optionRenderer(this.selected)}>
-          {this.options.map(this.toOption)}
+        label={this.optionRenderer(this.selected)}
+      >
+        {this.options.map(this.toOption)}
       </docs-dropdown>
     );
   }

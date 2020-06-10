@@ -26,7 +26,7 @@ const chooseAdByWeight = () => {
   const weightList = []; // Just Checking...
   for (const ad of ads) {
     if (ad['data']) { // Safety
-      if (!ad['data'].ad_weight) ad['data'].ad_weight = 1;
+      if (!ad['data'].ad_weight) { ad['data'].ad_weight = 1; }
       for (let i = 0; i < ad['data'].ad_weight; i++) {
         weightList.push(ad);
       }

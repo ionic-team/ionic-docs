@@ -1,11 +1,13 @@
 import { Component, Prop, h } from '@stencil/core';
+
 import { Logo } from '../../icons';
+
+import appflowTemplate from './templates/appflow';
+import cliTemplate from './templates/cli';
 // import { FrameworkSelect } from './framework-select';
 import componentsTemplate from './templates/components';
-import cliTemplate from './templates/cli';
-import studioTemplate from './templates/studio';
-import appflowTemplate from './templates/appflow';
 import mainTemplate from './templates/main';
+import studioTemplate from './templates/studio';
 
 @Component({
   tag: 'docs-menu',

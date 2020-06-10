@@ -24,7 +24,7 @@ export class FileTreeFile {
 
   render() {
     return (
-      <div class="name">{ this.name }</div>
+      <div class="name">{this.name}</div>
     );
   }
 }

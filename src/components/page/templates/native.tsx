@@ -1,8 +1,9 @@
 import { h } from '@stencil/core';
+
 import { GitBranch } from '../../../icons';
 import { toHypertext } from '../to-hypertext';
 
-export default (props) => {
+export default props => {
   const { page } = props;
   const headings = [...page.headings];
   const repo = renderRepo(page.repo);
@@ -50,7 +51,7 @@ export default (props) => {
 
   return (
     <article>
-      <h1>{ page.title }</h1>
+      <h1>{page.title}</h1>
       <div class="page-meta">
         <docs-table-of-contents links={headings} basepath={page.path}/>
         <internal-ad></internal-ad>
@@ -58,13 +59,13 @@ export default (props) => {
       <section class="markdown-content">
         {toHypertext(h, page.body)}
       </section>
-      { repo }
-      { isPremier }
-      { cordovaPromo }
-      { installation }
-      { platforms }
-      { capIncompat }
-      { usage }
+      {repo}
+      {isPremier}
+      {cordovaPromo}
+      {installation}
+      {platforms}
+      {capIncompat}
+      {usage}
     </article>
   );
 };
@@ -76,7 +77,7 @@ const renderRepo = (repo: string) => {
 
   return (
     <section>
-      <a href={repo} class="outbound" target="_blank"><GitBranch/> { repo }</a>
+      <a href={repo} class="outbound" target="_blank"><GitBranch/> {repo}</a>
     </section>
   );
 };
@@ -194,8 +195,11 @@ const renderPremier = (premierSlug: string) => {
       <h2 id="premier">
         <a href="#premier">Premier Version Available</a>
       </h2>
-      <docs-card class="cordova-ee-card"
-        header="Plugins and solutions built and supported by Ionic." href={`/docs/enterprise/${premierSlug}`}>
+      <docs-card
+        class="cordova-ee-card"
+        header="Plugins and solutions built and supported by Ionic."
+        href={`/docs/enterprise/${premierSlug}`}
+      >
         <div>
           <img src="/docs/assets/icons/native-enterprise.png" class="cordova-ee-img" />
           <p>Featuring regular release cycles, security and bug fixes, and guaranteed SLAs.</p>
