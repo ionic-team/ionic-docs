@@ -1,8 +1,10 @@
 ---
 title: Auth Connect
 template: enterprise-plugin
-version: 2.2.0
-minor: 2.2.X
+version: 3.0.0
+minor: 3.0.X
+otherVersions:
+  - 2.2.X
 ---
 
 Ionic Auth Connect handles logging in and/or registering a user with an authentication provider (such as Auth0, Azure AD, AWS Cognito, or Okta) using industry standard OAuth/OpenId Connect on iOS, Android, or on the web.
@@ -121,7 +123,7 @@ L'identification peut se produire soit dans l'onglet courant/fenêtre, soit dans
 
 <wistia-video video-id="zk3ys1615x"></wistia-video>
 
-L'option par onglet est idéale pour les développeurs qui supportent IE11. Dans la configuration de `IonicAuthOptions` , mettez `implicit_login` à "CURRENT". Next, in the login page (or whichever page is navigated to after login - the `redirectUri` in the config options) implement:
+Within the `IonicAuthOptions` configuration, set `implicit_login` to "CURRENT". Next, in the login page (or whichever page is navigated to after login - the `redirectUri` in the config options) implement:
 
 ```typescript
 async ngOnInit() {
@@ -132,7 +134,7 @@ async ngOnInit() {
     await this.authentication.handleCallback(window.location.href);
     // Navigate to another page
     this.navController.navigateRoot('/tabs/home');
-    }
+  }
 }
 ```
 
@@ -140,13 +142,17 @@ async ngOnInit() {
 
 To test an Ionic app using Auth Connect locally, configure `IonicAuthOptions` to use `http://localhost:8100/` as the base URL for properties such as `redirectUri` and `logoutUrl`. Then, run the `ionic serve` command.
 
+## Upgrading to v3.0.0
+
+3.0.0 drops support for IE11 but otherwise is a drop-in replacement for 2.x.
+
 ## Upgrading to v2.0.0
 
 * Upgrade your app to use `cordova-android` 9.x (see the [9.0.0 milestone](https://github.com/apache/cordova-android/milestone/2) for progress) or Capacitor 2.x. 
   * For Capacitor, please see the upgrade guide for [Android](https://capacitor.ionicframework.com/docs/android/updating) and [iOS](https://capacitor.ionicframework.com/docs/ios/updating).
 * Install the new plugin version.
 
-## Documentation de l'API
+## API Documentation
 
 You can find the API and interface documentation for everything below. The main classes to pay attention to are:
 
@@ -549,6 +555,8 @@ The type of the Auth Server, currently only the following are supported:
 * Okta
 * Ping
 
+'general' is deprecated--please use a specific provider.
+
 * * *
 
 <a id="ionicauthoptions.clientid"></a>
@@ -723,6 +731,8 @@ The type of the Auth Server, currently only the following are supported:
 * Salesforce
 * Okta
 * Ping
+
+'general' is deprecated--please use a specific provider.
 
 * * *
 
@@ -1026,6 +1036,27 @@ save the refresh token
 * * *
 
 # Changelog
+
+### \[3.0.0\] (2020-06-10)
+
+### ⚠ BREAKING CHANGES
+
+* IE 11 is no longer supported.
+* Plugin must be imported and bundled into your app for use. (Code is no longer being exported to window.)
+
+### Bug Fixes
+
+* Properly decode JWTs with non-ASCII characters [SE-200]
+
+* remove shims
+
+* switch to esm 
+
+### \[2.2.1\] (2020-05-29)
+
+### Bug Fixes
+
+* **okta:** fix logout configuration 
 
 ### \[2.2.0\] (2020-05-27)
 
