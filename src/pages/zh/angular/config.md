@@ -12,9 +12,7 @@ contributors:
 
 Ionic Config提供了应用全局配置的方式。你可以设置应用的模式、tab按钮的布局、动画以及其他选项。
 
-## 使用方法
-
-### 全局
+## Global Config
 
 如果要覆盖Ionic默认的全局配置，可以在`app.module.ts`文件中添加`IonicModule.forRoot`。
 
@@ -38,12 +36,12 @@ import { IonicModule } from '@ionic/angular';
 在上面的示例中，我们强制应用使用Material Design风格，并且禁用了他的涟漪效果。
 
 
-### 通过组件
+## Per-Component Config
 
 由于Ionic Config并不是响应式的，所以我们建议当你要覆盖默认配置的时候去通过组件属性更改，而不是全局配置。
 
 ```typescript
-import { createAnimation, IonicModule } from '@ionic/angular';
+import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   ...
@@ -66,10 +64,92 @@ import { createAnimation, IonicModule } from '@ionic/angular';
 
 在示例中，我们使用到了`ion-back-button`的动态更新文本，这个方式在语言或地区改变时十分有用。 `getBackButtonText`方法将负责返回正确的文本内容。
 
+## Per-Platform Config
 
-## 配置选项
+Ionic Config can also be set on a per-platform basis. For example, this allows you to disable animations if the app is being run in a browser on a potentially slower device. Developers can take advantage of the Platform utilities to accomplish this.
 
-以下是使用ionic的配置列表。
+Since the config is set at runtime, you will not have access to the Platform Dependency Injection. Instead, you can use the underlying functions that the provider uses directly.
+
+In the following example, we are disabling all animations in our Ionic app only if the app is running in a mobile web browser. The `isPlatform()` call returns `true` or `false` based upon the platform that is passed in. See the [Platform Documentation](./platform#platforms) for a list of possible values.
+
+
+```typescript
+import { isPlatform, IonicModule } from '@ionic/angular';
+
+@NgModule({
+  ...
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot({
+      animated: !isPlatform('mobileweb')
+    }),
+    AppRoutingModule
+  ],
+  ...
+})
+```
+
+The next example allows you to set an entirely different configuration based upon the platform, falling back to a default config if no platforms match:
+
+```typescript
+import { isPlatform, IonicModule } from '@ionic/angular';
+
+const getConfig = () => {
+  if (isPlatform('hybrid')) {
+    return {
+      backButtonText: 'Previous',
+      tabButtonLayout: 'label-hide'
+    }
+  }
+
+  return {
+    menuIcon: 'ellipsis-vertical'
+  }
+}
+@NgModule({
+  ...
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(getConfig()),
+    AppRoutingModule
+  ],
+  ...
+})
+```
+
+Finally, this example allows you to accumulate a config object based upon different platform requirements:
+
+```typescript
+import { isPlatform, IonicModule } from '@ionic/angular';
+
+const getConfig = () => {
+  let config = {
+    animated: false
+  };
+
+  if (isPlatform('iphone')) {
+    config = {
+      ...config,
+      backButtonText: 'Previous'
+    }
+  }
+
+  return config;
+}
+@NgModule({
+  ...
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(getConfig()),
+    AppRoutingModule
+  ],
+  ...
+})
+```
+
+## Config Options
+
+Below is a list of config options that Ionic uses.
 
 | 配置                       | 类型                 | 描述                                                |
 | ------------------------ | ------------------ | ------------------------------------------------- |
