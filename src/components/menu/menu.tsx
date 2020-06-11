@@ -14,12 +14,12 @@ import studioTemplate from './templates/studio';
   styleUrl: 'menu.css'
 })
 export class DocsMenu {
-  @Prop() onToggleClick: (e: Event) => void;
+  @Prop() toggleClickFn: (e: Event) => void;
 
   render() {
     return [
       <header>
-        <docs-menu-toggle onClick={this.onToggleClick}/>
+        <docs-menu-toggle onClick={this.toggleClickFn}/>
         <stencil-route-link url="/docs/">
           <Logo class="MenuLogo"/>
         </stencil-route-link>

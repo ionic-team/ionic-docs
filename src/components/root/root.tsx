@@ -54,8 +54,8 @@ export class DocsRoot {
     return (
       <stencil-router class={layout}>
         <stencil-route style={{ display: 'none' }} routeRender={this.setHistory}/>
-        <docs-header onToggleClick={this.toggleMenu}/>
-        <docs-menu onToggleClick={this.toggleMenu}/>
+        <docs-header toggleClickFn={this.toggleMenu}/>
+        <docs-menu toggleClickFn={this.toggleMenu}/>
         <stencil-route
           url="/docs/:page*"
           routeRender={props => (

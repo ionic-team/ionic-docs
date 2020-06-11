@@ -7,7 +7,7 @@ import { useLocalStorage } from '../../local-storage';
   tag: 'framework-select'
 })
 export class DocsMenu {
-  @Prop() onToggleClick: (e: Event) => void;
+  @Prop() toggleClickFn: (e: Event) => void;
   @Element() el;
 
   getFramework: () => string;

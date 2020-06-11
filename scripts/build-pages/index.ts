@@ -71,7 +71,7 @@ const patchBody = (page: Page): Page => {
   }
 
   if (!page.skipIntros) {
-    const children = [...body.children];
+    const children: any[] = Array.from(body.children);
     for (const child of children) {
       if (child.tagName === 'P') {
         child.classList.add('intro');
@@ -81,7 +81,7 @@ const patchBody = (page: Page): Page => {
     }
   }
 
-  const headings = [...body.querySelectorAll('h2')].map(heading => ({
+  const headings = Array.from(body.querySelectorAll('h2'), (heading: any) => ({
     text: heading.textContent.trim(),
     href: `#${heading.getAttribute('id')}`
   }));

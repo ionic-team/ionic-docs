@@ -13,7 +13,7 @@ export class DocsHeader {
   private frameRequested = false;
   private prevScroll = 0;
 
-  @Prop() onToggleClick: (e: Event) => void;
+  @Prop() toggleClickFn: (e: Event) => void;
 
   @Listen('scroll', { target: 'window' })
   handleScroll() {
@@ -71,7 +71,7 @@ export class DocsHeader {
     const { getString } = l10n;
     return (
       <header>
-        <docs-menu-toggle onClick={this.onToggleClick}/>
+        <docs-menu-toggle onClick={this.toggleClickFn}/>
 
         <stencil-route-link url="/docs/">
           <Logo class="HeaderLogo"/>
