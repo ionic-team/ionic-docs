@@ -81,15 +81,15 @@ Upon tapping the Camera button on the Photo Gallery tab, the permission prompt w
 
 ## Android Deployment
 
-Capacitor Android apps are configured and managed through Android Studio. Before running this app on an Android device, there's a couple of steps to complete.
+Las aplicaciones Android Capacitor están configuradas y gestionadas a través de Android Studio. Antes de ejecutar esta aplicación en un dispositivo iOS, hay un par de pasos para completar.
 
-First, run the Capacitor `open` command, which opens the native Android project in Android Studio:
+Primero, ejecuta el comando Capacitor `open`, para así abrir el proyecto Android nativo en Android Studio:
 
 ```shell
-$ ionic cap open android
+$ ionic cap open ios
 ```
 
-Similar to iOS, we must enable the correct permissions to use the Camera. Configure these in the `AndroidManifest.xml` file. Android Studio will likely open this file automatically, but in case it doesn't, locate it under `android/app/src/main/`.
+Al igual que en iOS, debemos conceder los permisos correctos para acceder a la cámara. Configure these in the `AndroidManifest.xml` file. Android Studio will likely open this file automatically, but in case it doesn't, locate it under `android/app/src/main/`.
 
 ![Android Manifest location](/docs/assets/img/guides/first-app-cap-ng/android-manifest.png)
 
