@@ -1,5 +1,5 @@
 import glob from 'fast-glob';
-import frontMatter from 'front-matter';
+import frontMatter, { FrontMatterResult } from 'front-matter';
 import fs from 'fs-extra';
 import moment from 'moment';
 import simplegit from 'simple-git/promise';
@@ -44,7 +44,8 @@ export const toPage = async (path: string, { prod = true }: ToStaticPageOptions 
 };
 
 const renderMarkdown = (markdown: string) => {
-  const { body, attributes } = frontMatter(markdown);
+  const { body, attributes } = frontMatter(markdown) as FrontMatterResult<any>;
+
   return {
     ...attributes,
     body: markdownRenderer(body)
