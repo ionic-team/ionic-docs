@@ -65,21 +65,21 @@ Para que algunos plugins nativos funcionen, los permisos de usuario deben ser co
 
 Cada ajuste en `Info.plist` contiene un nombre de parámetro de nivel bajo y un nombre de alto nivel. Por defecto, el editor de la lista de propiedades muestra los nombres de alto nivel, pero a menudo es útil cambiar a mostrar los nombres crudos y de bajo nivel. To do this, right-click anywhere in the property list editor and toggle "Raw Keys/Values."
 
-Locate the `NSCameraUsageDescription` Key (it should exist already if you followed along with this tutorial) and set the Value to something that describes why the app needs to use the camera, such as "To Take Photos." The Value field is displayed to the app user when the permission prompt opens.
+Localice el botón `NSCameraUsageDescription` (si ha seguido el tutorial debería aparecer) y establezca el valor a un texto que describa porque la aplicación necesita acceder a la cámara, como por ejemplo "tomar fotografías". El valor de este campo será mostrado al usuario cuándo la solicitud de permisos aparezca.
 
-Next, click on `App` in the Project Navigator on the left-hand side, then within the `Signing & Capabilities` section, select your Development Team.
+A continuación, haga clic en `App` en el navegador de proyectos en el lado izquierdo, luego, dentro de la sección `Signing & Capabilities`, seleccione su Equipo de Desarrollo.
 
 ![Xcode - Selecting Development Team](/docs/assets/img/guides/first-app-cap-ng/xcode-signing.png)
 
-With permissions in place and Development Team selected, we are ready to try out the app on a real device! Connect an iOS device to your Mac computer, select it (`App -> Matthew’s iPhone` for me) then click the "Build" button to build, install, and launch the app on your device:
+¡Ahora que todos los permisos están en orden, es hora de probar la aplicación en un dispositivo real! Conecta un dispositivo iOS a tu Mac, selecciónalo (`App -> iPhone de Carlos`) luego haz clic en el botón "Compilar" para compilar, instalar y ejecutar la aplicación en tu dispositivo:
 
 ![Xcode build button](/docs/assets/img/guides/first-app-cap-ng/xcode-build-button.png)
 
-Upon tapping the Camera button on the Photo Gallery tab, the permission prompt will display. Tap OK, then take a picture with the Camera. Afterward, the photo shows in the app!
+De nuevo, al hacer click en el botón de Cámara en la pestaña de Galería de fotos, el diálogo de solicitud de permisos debería mostrarse. Pulsa Aceptar y haz una foto con la cámara. Después, la foto aparecerá en la aplicación!
 
 ![iOS Camera permissions](/docs/assets/img/guides/first-app-cap-ng/ios-permissions-photo.png)
 
-## Android Deployment
+## Despliegue en Android
 
 Las aplicaciones Android Capacitor están configuradas y gestionadas a través de Android Studio. Antes de ejecutar esta aplicación en un dispositivo iOS, hay un par de pasos para completar.
 
@@ -104,7 +104,7 @@ Guarda el archivo. ¡Ahora que todos los permisos están en orden, es hora de pr
 
 ![Launching app on Android](/docs/assets/img/guides/first-app-cap-ng/android-device.png)
 
-De nuevo, al hacer click en el botón de Cámara en la pestaña de Galería de fotos, el diálogo de solicitud de permisos debería mostrarse. Pulsa Aceptar y haz una foto con la cámara. Después, la foto debe aparecer en la aplicación.
+De nuevo, al hacer click en el botón de Cámara en la pestaña de Galería de fotos, el diálogo de solicitud de permisos debería mostrarse. Pulsa Aceptar y haz una foto con la cámara. Después, la foto aparecerá en la aplicación.
 
 ![Android Camera permissions](/docs/assets/img/guides/first-app-cap-ng/android-permissions-photo.png)
 
