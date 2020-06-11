@@ -63,7 +63,7 @@ Para que algunos plugins nativos funcionen, los permisos de usuario deben ser co
 ![Xcode Custom iOS Target Properties](/docs/assets/img/guides/first-app-cap-ng/xcode-info-plist.png)
 
 
-Cada ajuste en `Info.plist` tiene un nombre de parámetro de nivel bajo y un nombre de alto nivel. Por defecto, el editor de la lista de propiedades muestra los nombres de alto nivel, pero a menudo es útil cambiar a mostrar los nombres crudos y de bajo nivel. To do this, right-click anywhere in the property list editor and toggle "Raw Keys/Values."
+Cada ajuste en `Info.plist` contiene un nombre de parámetro de nivel bajo y un nombre de alto nivel. Por defecto, el editor de la lista de propiedades muestra los nombres de alto nivel, pero a menudo es útil cambiar a mostrar los nombres crudos y de bajo nivel. To do this, right-click anywhere in the property list editor and toggle "Raw Keys/Values."
 
 Locate the `NSCameraUsageDescription` Key (it should exist already if you followed along with this tutorial) and set the Value to something that describes why the app needs to use the camera, such as "To Take Photos." The Value field is displayed to the app user when the permission prompt opens.
 
@@ -89,25 +89,25 @@ Primero, ejecuta el comando Capacitor `open`, para así abrir el proyecto Androi
 $ ionic cap open ios
 ```
 
-Al igual que en iOS, debemos conceder los permisos correctos para acceder a la cámara. Configure these in the `AndroidManifest.xml` file. Android Studio will likely open this file automatically, but in case it doesn't, locate it under `android/app/src/main/`.
+Al igual que en iOS, debemos conceder los permisos correctos para acceder a la cámara. Para ello, debemos modificar el archivo `AndroidManifest.xml`. Es probable que Android Studio abra este archivo automáticamente, pero en contrario, se podrá abrir manualmente en la ruta `android/app/src/main/`.
 
 ![Android Manifest location](/docs/assets/img/guides/first-app-cap-ng/android-manifest.png)
 
-Scroll to the `Permissions` section and ensure these entries are included:
+Desplácese a la sección de `Permisos` y asegúrese de que las siguentes entradas están incluidas:
 
 ```xml
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 ```
 
-Save the file. With permissions in place, we are ready to try out the app on a real device! Connect an Android device to your computer. Within Android Studio, click the "Run" button, select the attached Android device, then click OK to build, install, and launch the app on your device.
+Guarda el archivo. ¡Ahora que todos los permisos están en orden, es hora de probar la aplicación en un dispositivo real! Conecta un dispositivo Android al equipo. En la interfaz de Android Studio, haz click en el botón de "Ejecutar" (Run), selecciona el dispositivo conectado previamente y haz click en Aceptar para compilar y ejecutar la aplicación en tu dispositivo.
 
 ![Launching app on Android](/docs/assets/img/guides/first-app-cap-ng/android-device.png)
 
-Once again, upon tapping the Camera button on the Photo Gallery tab, the permission prompt should be displayed. Tap OK, then take a picture with the Camera. Afterward, the photo should appear in the app.
+De nuevo, al hacer click en el botón de Cámara en la pestaña de Galería de fotos, el diálogo de solicitud de permisos debería mostrarse. Pulsa Aceptar y haz una foto con la cámara. Después, la foto debe aparecer en la aplicación.
 
 ![Android Camera permissions](/docs/assets/img/guides/first-app-cap-ng/android-permissions-photo.png)
 
-Our Photo Gallery app has just been deployed to Android and iOS devices. 🎉
+Nuestra aplicación Galería de Fotos ya está desplegada en dispositivos Android e iOS. 🎉
 
-In the final portion of this tutorial, we’ll use the Ionic CLI’s Live Reload functionality to quickly implement photo deletion - thus completing our Photo Gallery feature.
+En la última sección de este tutorial, usaremos la funcionalidad Live Reload de Ionic CLI para implementar rápidamente la eliminación de fotos - completando así nuestra función de Galería de Fotos.
