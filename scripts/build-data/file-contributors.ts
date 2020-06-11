@@ -1,8 +1,8 @@
 import dotenv from 'dotenv';
-import { resolve } from 'path';
-import fetch from 'node-fetch';
-import url from 'url';
 import { outputJson } from 'fs-extra';
+import fetch from 'node-fetch';
+import { resolve } from 'path';
+import url from 'url';
 
 dotenv.config();
 
@@ -21,7 +21,7 @@ export default {
   }
 };
 
-async function getAllGHCommits(task, page = 1) {
+const getAllGHCommits = async (task, page = 1) => {
   try {
     task.output = `Getting commits: ${page * 100 - 99} - ${page * 100}`;
     const request = await fetch(url.format({
@@ -53,4 +53,4 @@ async function getAllGHCommits(task, page = 1) {
   } catch {
     return {};
   }
-}
+};

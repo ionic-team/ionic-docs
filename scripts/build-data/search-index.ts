@@ -1,6 +1,6 @@
-import { resolve } from 'path';
-import { outputJson, readJson } from 'fs-extra';
 import glob from 'fast-glob';
+import { outputJson, readJson } from 'fs-extra';
+import { resolve } from 'path';
 
 const PAGES_PATH = resolve(__dirname, '../../src/pages');
 const INDEX_PATH = resolve(__dirname, '../../src/components/search/data/index.json');
@@ -11,7 +11,7 @@ export default {
   skip: () => true
 };
 
-async function buildIndex(dir) {
+const buildIndex = async dir => {
   const paths = await getPaths(dir);
   const records = await Promise.all(paths.map(toRecord));
   return outputJson(
@@ -19,9 +19,9 @@ async function buildIndex(dir) {
     records,
     { spaces: 2 }
   );
-}
+};
 
-async function toRecord(path) {
+const toRecord = async path => {
   const { title } = await readJson(path);
   const href = toHref(path);
   return {
@@ -29,14 +29,14 @@ async function toRecord(path) {
     href,
     type: 'page'
   };
-}
+};
 
-function getPaths(cwd) {
+const getPaths = cwd => {
   return glob('**/*.json', {
     absolute: true,
     cwd
   });
-}
+};
 
 const toHref = (path: string) => {
   const [, page] = /\/pages\/(.+)\.json$/.exec(path);

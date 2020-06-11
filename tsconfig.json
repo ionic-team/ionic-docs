@@ -19,6 +19,7 @@
   },
   "include": [
     "src",
+    "scripts",
     "types/jsx.d.ts"
   ],
   "exclude": [

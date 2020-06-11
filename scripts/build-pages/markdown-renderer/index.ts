@@ -1,6 +1,7 @@
 import marked from 'marked';
-import heading from './heading';
+
 import code from './code';
+import heading from './heading';
 import link from './link';
 
 const renderer = new marked.Renderer();

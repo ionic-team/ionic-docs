@@ -1,29 +1,29 @@
+import glob from 'fast-glob';
+import frontMatter from 'front-matter';
+import fs from 'fs-extra';
+import moment from 'moment';
+import simplegit from 'simple-git/promise';
+
+import * as GITHUB_COMMITS from '../../data/github-commits.json';
 import {
   PAGES_DIR,
   Page,
   buildPages
 } from '../index';
-
-import fs from 'fs-extra';
-import glob from 'fast-glob';
-import frontMatter from 'front-matter';
 import markdownRenderer from '../markdown-renderer';
-import simplegit from 'simple-git/promise';
-import moment from 'moment';
 
 // ingored by git
 // generated in build-data/file-contrbutors.ts by build-data npm task
-import * as GITHUB_COMMITS from '../../data/github-commits.json';
 
 export default {
   title: 'Build static pages',
   task: (_, status) => buildPages(getStaticPages, status)
 };
 
-async function getStaticPages(): Promise<Page[]> {
+const getStaticPages = async (): Promise<Page[]> => {
   const paths = await getMarkdownPaths(PAGES_DIR);
   return Promise.all(paths.map(path => toPage(path)));
-}
+};
 
 export const getMarkdownPaths = (cwd: string): Promise<string[]> =>
   glob('**/*.md', {
@@ -76,7 +76,7 @@ const getGitHubData = async (filePath: string) => {
   }
 };
 
-async function getFileContributors(filename) {
+const getFileContributors = async filename => {
   return simplegit().log({ file: filename }).then(status => ({
       contributors: Array.from(new Set(status.all.map(commit =>
         // only add the user ID if we can find it based on the commit hash
@@ -86,4 +86,4 @@ async function getFileContributors(filename) {
       lastUpdated: status.latest ? moment(status.latest.date, 'YYYY-MM-DD HH-mm-ss ZZ').toISOString() : ''
     })
   );
-}
+};

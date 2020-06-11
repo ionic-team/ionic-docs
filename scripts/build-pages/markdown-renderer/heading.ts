@@ -1,4 +1,5 @@
 import { createDocument } from '@stencil/core/mock-doc';
+
 import { slugify } from '../../../src/utils';
 
 export default (text: string, level: number) => {

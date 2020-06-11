@@ -37,7 +37,7 @@ export const useLocalStorage = (key: string, defaultValue?: string): [
   LocalStorageSetter
 ] => {
 
-  if (defaultValue != null && getItem(key) === null) {
+  if (defaultValue !== undefined && getItem(key) === null) {
     setItem(key, defaultValue);
   }
 

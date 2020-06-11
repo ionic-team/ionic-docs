@@ -1,6 +1,6 @@
 import { components } from '@ionic/docs/core.json';
-import { resolve } from 'path';
 import { outputJson } from 'fs-extra';
+import { resolve } from 'path';
 
 const OUTPUT_PATH = resolve(
   __dirname,
