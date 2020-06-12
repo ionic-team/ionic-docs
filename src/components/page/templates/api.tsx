@@ -207,7 +207,7 @@ const renderMethods = (methods: any[] = []) => {
 };
 
 const renderParts = (parts: any[] = []) => {
-  if (!parts.length) {
+  if (parts.length === 0) {
     return null;
   }
 
@@ -237,7 +237,7 @@ const renderParts = (parts: any[] = []) => {
 };
 
 const renderCustomProps = (customProps: any[] = []) => {
-  if (!customProps.length) {
+  if (customProps.length === 0) {
     return null;
   }
 
