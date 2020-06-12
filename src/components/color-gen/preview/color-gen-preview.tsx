@@ -16,7 +16,7 @@ export class ColorGenPreview {
       const iframeDoc = this.iframe.contentDocument;
       const varStyleId = 'color-gen-style';
 
-      let themerStyle: HTMLStyleElement = iframeDoc.getElementById(varStyleId) as any;
+      let themerStyle: HTMLStyleElement | undefined = iframeDoc.getElementById(varStyleId) as any;
       if (!themerStyle) {
         themerStyle = iframeDoc.createElement('style');
         themerStyle.id = varStyleId;

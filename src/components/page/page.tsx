@@ -21,8 +21,8 @@ export class DocsPage {
   }
 
   @Watch('path')
-  fetchPage(path: string, oldPath?: string) {
-    if (path == null || path === oldPath) { return; }
+  fetchPage(path: string | null, oldPath?: string) {
+    if (path === null || path === oldPath) { return; }
     path = /^\/docs\/pages\/[a-z]{2}\.json$/.test(path)
       ? path.replace('.json', '/index.json')
       : path;
@@ -97,10 +97,7 @@ export class DocsPage {
     // Canonical URL
     updateMeta(metaEls.url, (oldVal: string) => {
       const uri = '\/docs\/';
-      let path = location.pathname.split(uri)[1];
-      if (path === undefined) {
-        path = '';
-      }
+      const path = location.pathname.split(uri)[1];
       return oldVal.split(uri)[0] + uri + path;
     });
 

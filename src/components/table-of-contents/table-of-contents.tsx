@@ -24,10 +24,7 @@ export class DocsTableOfContents {
     if (this.pageWidth < 1234) { return; }
     requestAnimationFrame(() => {
       const itemIndex = this.itemOffsets.findIndex(item => item.topOffset > window.scrollY);
-      if (
-        itemIndex === 0 ||
-        this.itemOffsets[this.itemOffsets.length - 1] === undefined
-      ) {
+      if (itemIndex === 0) {
         this.selectedId = null;
       } else if (itemIndex === -1) {
         this.selectedId = this.itemOffsets[this.itemOffsets.length - 1].id;
@@ -69,7 +66,7 @@ export class DocsTableOfContents {
   ); }
 
   render() {
-    if (!this.links || this.links.length < 1) {
+    if (this.links.length < 1) {
       return null;
     }
 

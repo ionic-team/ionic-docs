@@ -1,12 +1,13 @@
 import Prism from 'prismjs';
 const loadLanguages = require('prismjs/components/'); // tslint:disable-line
 
-export default (code: string, info: string) => {
+export default (code: string, info?: string) => {
   const [lang] = info !== undefined ? info.split(/\s+/).map(s => s.toLowerCase()) : [null];
-  const isShell = lang ? shells.includes(lang) : false;
+  const isShell = lang !== null ? shells.includes(lang) : false;
   const language = isShell ? 'shell' : lang;
 
-  if (!language || Prism.languages[language] == null) {
+  // tslint:disable-next-line
+  if (!language || Prism.languages[language] === undefined) {
     return `
 <docs-code language=${language}>
   <pre><code>${escape(code)}</code></pre>

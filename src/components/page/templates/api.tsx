@@ -96,7 +96,7 @@ const renderEncapsulation = (encapsulation = {}) => {
 const renderUsage = (usage: { [key: string]: string } = {}, path: string) => {
   const keys = Object.keys(usage);
   const frameworkPref = getFramework();
-  const framework = frameworkPref ? frameworkPref.toLowerCase() : null;
+  const framework = frameworkPref !== null ? frameworkPref.toLowerCase() : null;
 
   if (keys.length === 0) {
     return null;

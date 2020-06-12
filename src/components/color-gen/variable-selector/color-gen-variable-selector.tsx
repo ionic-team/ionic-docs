@@ -94,12 +94,12 @@ export class VariableSelector {
   }
 
   isValidHex(str: string | undefined): boolean {
-    return str ? /^#[0-9A-F]{6}$/i.test(str) : false;
+    return typeof str !== 'undefined' ? /^#[0-9A-F]{6}$/i.test(str) : false;
   }
 
   validateValue() {
     const isValidHex = this.isValidHex(this.value);
-    this.showValueError = (isValidHex && this.value && this.value.length === 7) ? false : true;
+    this.showValueError = (isValidHex && typeof this.value !== 'undefined' && this.value.length === 7) ? false : true;
   }
 
   render() {

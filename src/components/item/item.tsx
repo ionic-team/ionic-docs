@@ -7,7 +7,7 @@ import { Outbound } from '../../icons';
   styleUrl: 'item.css'
 })
 export class DocsItem {
-  @Prop() href!: string;
+  @Prop() href?: string;
   @Prop() header!: string;
   @Prop() icon!: string;
   @Prop() ionicon?: string;
@@ -22,9 +22,9 @@ export class DocsItem {
   }
 
   render() {
-    const isStatic = !this.href;
-    const isOutbound = /^http/.test(this.href);
-    const header = !this.header ? null : (
+    const isStatic = typeof this.href === 'undefined';
+    const isOutbound = typeof this.href !== 'undefined' ? /^http/.test(this.href) : false;
+    const header = (
       <header class="Item-header">
         {this.header} {isOutbound ? <Outbound/> : null}
       </header>

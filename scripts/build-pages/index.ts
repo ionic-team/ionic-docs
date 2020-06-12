@@ -65,7 +65,7 @@ const patchBody = (page: Page): Page => {
   const body = createDocument(page.body).body;
 
   const h1 = body.querySelector('h1');
-  if (h1 && h1.textContent) {
+  if (h1 !== null && h1.textContent !== null) {
     page.title = page.title || h1.textContent.trim();
     h1.remove();
   }
@@ -91,7 +91,7 @@ const patchBody = (page: Page): Page => {
   const pageClass = `page-${slugify(page.path.replace(prefix, ''))}`;
 
   const [, language] = prefix.exec(page.path) || 'en';
-  if (language && language !== 'en') {
+  if (language !== 'en') {
     if (page.previousUrl) {
       page.previousUrl = page.previousUrl.replace(prefix, `/docs/${language}/`);
     }

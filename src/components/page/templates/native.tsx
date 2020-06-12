@@ -71,7 +71,7 @@ export default (props: { [key: string]: any }) => {
 };
 
 const renderRepo = (repo?: string) => {
-  if (!repo) {
+  if (typeof repo === 'undefined') {
     return null;
   }
 
@@ -84,7 +84,7 @@ const renderRepo = (repo?: string) => {
 
 const renderCordovaPromotion = (isPremier?: string) => {
   // Only show one promo message
-  if (isPremier) {
+  if (typeof isPremier !== 'undefined') {
     return;
   }
 
@@ -103,7 +103,7 @@ const renderCordovaPromotion = (isPremier?: string) => {
 };
 
 const renderInstallation = (cordova?: string, npm?: string) => {
-  if (!cordova || !npm) {
+  if (typeof cordova === 'undefined' || typeof npm === 'undefined') {
     return null;
   }
 
@@ -186,7 +186,7 @@ const renderCapIncompat = (capacitorIncompatible: boolean) => {
 };
 
 const renderPremier = (premierSlug?: string) => {
-  if (!premierSlug) {
+  if (typeof premierSlug === 'undefined') {
     return null;
   }
 

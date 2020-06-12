@@ -45,7 +45,7 @@ export const convertCssToColors = (cssText: string) => {
 };
 
 export const updateCssText = (colorAttr: string, cssText: string, newColorValue?: string) => {
-  if (!newColorValue) {
+  if (typeof newColorValue === 'undefined') {
     return cssText;
   }
 

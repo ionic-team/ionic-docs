@@ -15,7 +15,7 @@ export class DocsTabs {
   // The original purpose for this is the Framework Selection dropdown
   @Listen('local-storage', { target: 'window' })
   listenForFrameworkSelection(event: any) {
-    if (this.listenFor && event.detail.key === this.listenFor) {
+    if (typeof this.listenFor !== 'undefined' && event.detail.key === this.listenFor) {
       this.tabs.forEach(tab => {
         if (tab.tab.toLowerCase() === event.detail.value.toLowerCase()) {
           this.select(tab);
@@ -30,14 +30,12 @@ export class DocsTabs {
   }
 
   select(tab: HTMLDocsTabElement) {
-    if (tab != null) {
-      if (this.selected != null) {
-        this.selected.removeAttribute('selected');
-      }
-
-      this.selected = tab;
-      this.selected.setAttribute('selected', '');
+    if (this.selected !== null) {
+      this.selected.removeAttribute('selected');
     }
+
+    this.selected = tab;
+    this.selected.setAttribute('selected', '');
   }
 
   toTabButton = (tab: HTMLDocsTabElement) => {

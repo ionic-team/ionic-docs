@@ -10,7 +10,7 @@ export class ColorBlock {
   @Prop() display?: string;
 
   render() {
-    const display = !this.display ? this.value.trim() : this.display.trim();
+    const display = this.display === undefined ? this.value.trim() : this.display.trim();
 
     return [
       <span

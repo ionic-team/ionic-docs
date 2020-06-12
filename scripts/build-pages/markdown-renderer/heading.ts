@@ -8,7 +8,7 @@ export default (text: string, level: number) => {
   const { textContent } = doc.body;
 
   let hash;
-  if (textContent) {
+  if (textContent !== null) {
     hash = slugify(textContent);
   }
 

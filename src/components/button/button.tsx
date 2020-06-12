@@ -9,7 +9,7 @@ export class DocsButton {
   @Prop({ reflectToAttr: true }) round = false;
 
   render() {
-    if (this.href) {
+    if (this.href !== undefined) {
       const isInternal = /^\/docs/.test(this.href);
 
       if (isInternal) {

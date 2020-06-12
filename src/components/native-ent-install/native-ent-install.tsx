@@ -9,7 +9,7 @@ export class NativeEnterpriseInstall {
   @Prop() capacitorSlug?: string;
 
   render() {
-    if (!this.pluginId) {
+    if (typeof this.pluginId === 'undefined') {
       return null;
     }
 
@@ -27,7 +27,7 @@ export class NativeEnterpriseInstall {
         </command-line>
         <strong>Capacitor:</strong>
         {
-          this.capacitorSlug ?
+          typeof this.capacitorSlug !== 'undefined' ?
             <div>Available as a
               <a href={`https://capacitor.ionicframework.com/docs/apis/${this.capacitorSlug}`}> core Capacitor plugin</a>.
             </div>

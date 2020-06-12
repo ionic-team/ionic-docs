@@ -97,7 +97,7 @@ export namespace Components {
     }
     interface DocsItem {
         "header": string;
-        "href": string;
+        "href"?: string;
         "icon": string;
         "ionicon"?: string;
         "rounded": boolean;
@@ -124,7 +124,7 @@ export namespace Components {
         "path": string;
     }
     interface DocsPageFooter {
-        "page": Page;
+        "page": Page | null;
     }
     interface DocsPagination {
         "page": Page;
@@ -633,7 +633,7 @@ declare namespace LocalJSX {
     }
     interface DocsItem {
         "header": string;
-        "href": string;
+        "href"?: string;
         "icon": string;
         "ionicon"?: string;
         "rounded"?: boolean;
@@ -660,7 +660,7 @@ declare namespace LocalJSX {
         "path": string;
     }
     interface DocsPageFooter {
-        "page": Page;
+        "page": Page | null;
     }
     interface DocsPagination {
         "page"?: Page;

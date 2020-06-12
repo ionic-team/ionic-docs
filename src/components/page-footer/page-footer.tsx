@@ -8,7 +8,7 @@ import { ForwardArrow } from '../../icons';
   styleUrl: 'page-footer.css'
 })
 export class DocsPageFooter {
-  @Prop() page!: Page;
+  @Prop() page!: Page | null;
 
   hostData() {
     return {
@@ -19,7 +19,7 @@ export class DocsPageFooter {
   render() {
     const { page } = this;
 
-    if (page == null || !page.github) {
+    if (page === null || !page.github) {
       return null;
     }
 
@@ -49,7 +49,7 @@ export class DocsPageFooter {
       <div class="page-footer__row">
         {contributors.length > 0 ? <contributor-list contributors={contributors} link={contributorHref}/> : null}
         <docs-button round href={editHref}>Contribute <ForwardArrow/></docs-button>
-        {updatedText !== undefined ? <a class="last-updated" href={updatedHref}>Updated {updatedText}</a> : ''}
+        {updatedText !== null ? <a class="last-updated" href={updatedHref}>Updated {updatedText}</a> : ''}
       </div>
     ];
   }

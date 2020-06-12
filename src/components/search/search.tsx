@@ -97,13 +97,13 @@ export class IonicSearch {
   }
 
   async onKeyUp(ev: KeyboardEvent) {
-    if (ev.keyCode === 27) {
+    if (ev.key === 'Escape') {
       this.close();
       return;
     }
 
     // don't search on arrow keypress
-    if ([37, 38, 39, 40].indexOf(ev.keyCode) !== -1) {
+    if (['ArrowLeft', 'ArrowUp', 'ArrowRight', 'ArrowDown'].indexOf(ev.key) !== -1) {
       return;
     }
 
@@ -141,13 +141,13 @@ export class IonicSearch {
       || document.documentElement.clientHeight
       || document.body.clientHeight;
     const y = ev.touches?.item(0)?.screenY;
-    this.startY = y ? Math.round(y) : 0;
+    this.startY = typeof y !== 'undefined' ? Math.round(y) : 0;
   }
 
   touchMove(ev: TouchEvent) {
     ev.preventDefault();
     const y = ev.touches?.item(0)?.screenY;
-    this.dragY = y && this.dragY && this.startY && this.screenHeight ? Math.max(0, Math.round(
+    this.dragY = typeof y !== 'undefined' && this.dragY !== null && this.startY !== null && this.screenHeight !== null ? Math.max(0, Math.round(
       (this.dragY - this.startY) / this.screenHeight * 100
     )) : 0;
     this.dragStyles = {
@@ -166,7 +166,7 @@ export class IonicSearch {
   }
 
   touchEnd() {
-    if (this.dragY && this.dragY > 30) {
+    if (this.dragY !== null && this.dragY > 30) {
       this.close();
     }
     this.dragY = null;
@@ -177,7 +177,7 @@ export class IonicSearch {
   keyNavigation(ev: KeyboardEvent) {
     if (!this.results) { return; }
 
-    if (ev.keyCode === 38) {
+    if (ev.key === 'ArrowUp') {
       ev.preventDefault();
       if (this.highlightIndex === 0) {
         this.el.querySelector('input')?.focus();
@@ -185,13 +185,11 @@ export class IonicSearch {
       } else if (this.highlightIndex !== null && this.highlightIndex > 0) {
         this.highlightIndex--;
       }
-    } else if (ev.keyCode === 40) {
+    } else if (ev.key === 'ArrowDown') {
       ev.preventDefault();
       if (this.highlightIndex === null) {
         this.highlightIndex = 0;
-      } else if (
-        this.highlightIndex !== null &&
-        this.highlightIndex < this.results.length + (this.nonDocsResults ? this.nonDocsResults.length : 0) - 1) {
+      } else if (this.highlightIndex < this.results.length + (this.nonDocsResults ? this.nonDocsResults.length : 0) - 1) {
         this.highlightIndex++;
 
         if (
@@ -201,11 +199,9 @@ export class IonicSearch {
           this.nonDocsResultsActive = true;
         }
       }
-    } else if (ev.keyCode === 13) {
+    } else if (ev.key === 'Enter') {
       const link = this.el.querySelector('ul a.active') as HTMLAnchorElement;
-      if (link) {
-        this.resultClick({ url: link.href, id: link.dataset.id });
-      }
+      this.resultClick({ url: link.href, id: link.dataset.id });
     }
   }
 

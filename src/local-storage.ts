@@ -23,6 +23,7 @@ const setItem = (key: string, value: string): string | null => {
 };
 
 const notify = (key: string, value: string) => {
+  // tslint:disable-next-line
   if (window && typeof window.dispatchEvent === 'function') {
     const detail = { key, value };
     window.dispatchEvent(new CustomEvent('local-storage', { detail }));

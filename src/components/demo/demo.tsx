@@ -55,7 +55,7 @@ export class DocsDemo {
   }
 
   renderSourceLink() {
-    return this.source !== undefined ?
+    return (
       <a
         href={this.source}
         class="docs-demo-source"
@@ -63,7 +63,8 @@ export class DocsDemo {
         title="Demo Source"
       >
         <ion-icon name="open"/> View Source
-      </a> : null;
+      </a>
+    );
   }
 
   renderDevice() {
@@ -91,10 +92,6 @@ export class DocsDemo {
   }
 
   render() {
-    if (!this.url) {
-      return null;
-    }
-
     return [
       this.renderModeToggle(),
       this.renderDevice(),

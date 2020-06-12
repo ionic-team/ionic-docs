@@ -23,15 +23,15 @@ export class DocsCard {
   hostData() {
     return {
       class: {
-        'Card-with-image': this.img,
-        'Card-without-image': !this.img,
+        'Card-with-image': typeof this.img !== 'undefined',
+        'Card-without-image': typeof this.img === 'undefined',
         'Card-size-lg': this.size === 'lg',
       }
     };
   }
 
   componentWillLoad() {
-    if (!this.iconset) { return; }
+    if (typeof this.iconset !== 'undefined') { return; }
     this.activeIndex = 0;
     this.rotationTime = 4000 + (Math.random() * 2000); // 4 - 6 seconds - randomize it a bit
     // make the first transiton happen a bit faster
@@ -44,16 +44,16 @@ export class DocsCard {
   }
 
   tic() {
-    if (this.iconset && this.activeIndex >= this.iconset.split(',').length - 1) {
+    if (typeof this.iconset !== 'undefined' && this.activeIndex >= this.iconset.split(',').length - 1) {
       return this.activeIndex = 0;
     }
     this.activeIndex++;
   }
 
   render() {
-    const isStatic = !this.href;
-    const isOutbound = this.href ? /^http/.test(this.href) : false;
-    const header = !this.header ? null : (
+    const isStatic = typeof this.href === 'undefined';
+    const isOutbound = typeof this.href !== 'undefined' ? /^http/.test(this.href) : false;
+    const header = this.header === 'undefined' ? null : (
       <header class="Card-header">
         {this.header} {isOutbound ? <Outbound/> : null}
       </header>

@@ -57,9 +57,7 @@ export class DocsSelect {
   }
 
   componentWillLoad() {
-    this.selected = typeof this.initializer === 'function'
-      ? this.initializer(this.options)
-      : this.options[0];
+    this.selected = this.initializer(this.options);
   }
 
   hostData() {
