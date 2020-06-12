@@ -85,7 +85,8 @@ const getFileContributors = async (filename: string) => {
         return commits[commit.hash] ? commits[commit.hash].id : null;
       // filter out null users
       }).filter(user => !!user))),
-      lastUpdated: moment(status.latest.date, 'YYYY-MM-DD HH-mm-ss ZZ').toISOString()
+      // tslint:disable-next-line
+      lastUpdated: status.latest ? moment(status.latest.date, 'YYYY-MM-DD HH-mm-ss ZZ').toISOString() : null
     })
   );
 };
