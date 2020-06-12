@@ -39,7 +39,7 @@ Depending on the platform the user is on, `is(platformName)` will return true or
 
 #### Platforms
 
-Below is a table listing all the possible `Platforms` values along with corresponding descriptions.
+Below is a table listing all the possible platform values along with corresponding descriptions.
 
 | Platform Name | Description                              |
 | ------------- | -------------------------------------    |

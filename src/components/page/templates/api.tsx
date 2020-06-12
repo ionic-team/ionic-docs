@@ -13,6 +13,7 @@ export default (props: { [key: string]: any }) => {
   const properties = renderProperties(page.props);
   const events = renderEvents(page.events);
   const methods = renderMethods(page.methods);
+  const parts = renderParts(page.parts);
   const customProps = renderCustomProps(page.styles);
   const slots = renderSlots(page.slots);
 
@@ -41,6 +42,13 @@ export default (props: { [key: string]: any }) => {
     headings.push({
       text: 'Methods',
       href: '#methods'
+    });
+  }
+
+  if (parts) {
+    headings.push({
+      text: 'CSS Shadow Parts',
+      href: '#css-shadow-parts'
     });
   }
 
@@ -75,6 +83,7 @@ export default (props: { [key: string]: any }) => {
       {properties}
       {events}
       {methods}
+      {parts}
       {customProps}
       {slots}
     </article>
@@ -175,7 +184,7 @@ const renderEvents = (events: any[] = []) => {
   );
 };
 
-const renderMethods = (methods = []) => {
+const renderMethods = (methods: any[] = []) => {
   if (methods.length === 0) {
     return null;
   }
@@ -197,8 +206,38 @@ const renderMethods = (methods = []) => {
   );
 };
 
+const renderParts = (parts: any[] = []) => {
+  if (!parts.length) {
+    return null;
+  }
+
+  return (
+    <section>
+      <h2 id="css-shadow-parts">
+        <a href="#css-shadow-parts">CSS Shadow Parts</a>
+      </h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {parts.map(prop => (
+            <tr>
+              <td><code>{prop.name}</code></td>
+              <td>{prop.docs}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+  );
+};
+
 const renderCustomProps = (customProps: any[] = []) => {
-  if (customProps.length === 0) {
+  if (!customProps.length) {
     return null;
   }
 

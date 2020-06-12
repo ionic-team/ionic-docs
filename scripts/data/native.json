@@ -91,7 +91,7 @@
     "packageName": "@ionic-native/admob",
     "displayName": "Admob",
     "description": "\nMost complete Admob plugin with support for [Tappx](http://www.tappx.com/?h=dec334d63287772de859bdb4e977fce6) ads.\nMonetize your apps and games with AdMob ads, using latest Google AdMob SDK. With this plugin you can show AdMob ads easily!\n\n**Supports:**\n- Banner ads (top and bottom)\n- Interstitial ads\n- Rewarded ads\n- [Tappx](http://www.tappx.com/?h=dec334d63287772de859bdb4e977fce6) ads\n",
-    "usage": "\n```typescript\nimport { Admob, AdmobOptions } from '@ionic-native/admob/ngx';\n\n\nconstructor(private admob: Admob) {\n    // Admob options config\n    const admobOptions: AdmobOptions = {\n      publisherId: 'XXX-XXXX-XXXX',\n      interstitialAdId: 'XXX-XXXX-XXXX',\n      rewardedAdId: 'XXX-XXXX-XXXX',\n      isTesting: true,\n      autoShowBanner: false,\n      autoShowInterstitial: false,\n      autoShowRewarded: false,\n      adSize: this.admob.AD_SIZE.BANNER\n    };\n\n    // Set admob options\n    this.admob.setOptions(admobOptions)\n      .then(() => console.log('Admob options have been successfully set'))\n      .catch(err => console.error('Error setting admob options:', err));\n}\n\n\n\n// (Optionally) Load banner ad, in order to have it ready to show\nthis.admob.createBannerView()\n  .then(() => console.log('Banner ad loaded'))\n  .catch(err => console.error('Error loading banner ad:', err));\n\n\n// Show banner ad (createBannerView must be called before and onAdLoaded() event raised)\nthis.admob.onAdLoaded().subscribe((ad) => {\n  if (ad.adType === this.admob.AD_TYPE.BANNER) {\n    this.admob.showBannerAd()\n      .then(() => console.log('Banner ad shown'))\n      .catch(err => console.error('Error showing banner ad:', err));\n  }\n});\n\n\n// Hide banner ad, but do not destroy it, so it can be shown later on\n// See destroyBannerView in order to hide and destroy banner ad\nthis.admob.showBannerAd(false)\n  .then(() => console.log('Banner ad hidden'))\n  .catch(err => console.error('Error hiding banner ad:', err));\n\n\n\n// Request an interstitial ad, in order to be shown later on\n// It is possible to autoshow it via options parameter, see docs\nthis.admob.requestInterstitialAd()\n  .then(() => console.log('Interstitial ad loaded'))\n  .catch(err => console.error('Error loading interstitial ad:', err));\n\n\n// Show an interstitial ad (requestInterstitialAd must be called before)\nthis.admob.onAdLoaded().subscribe((ad) => {\n  if (ad.adType === this.admob.AD_TYPE.INTERSTITIAL) {\n    this.admob.showInterstitialAd()\n      .then(() => console.log('Interstitial ad shown'))\n      .catch(err => console.error('Error showing interstitial ad:', err));\n  }\n});\n\n\n// Request a rewarded ad\nthis.admob.requestRewardedAd()\n  .then(() => console.log('Rewarded ad loaded'))\n  .catch(err => console.error('Error loading rewarded ad:', err));\n\n\n// Show rewarded ad (requestRewardedAd must be called before)\nthis.admob.onAdLoaded().subscribe((ad) => {\n  if (ad.adType === this.admob.AD_TYPE.REWARDED) {\n    this.admob.showRewardedAd()\n      .then(() => console.log('Rewarded ad shown'))\n      .catch(err => console.error('Error showing rewarded ad:', err));\n  }\n});\n\n\n// Hide and destroy banner or interstitial ad\nthis.admob.destroyBannerView()\n  .then(() => console.log('Banner or interstitial ad destroyed'))\n  .catch(err => console.error('Error destroying banner or interstitial ad:', err));\n\n\n\n// On Ad loaded event\nthis.admob.onAdLoaded().subscribe((ad) => {\n  if (ad.adType === this.admob.AD_TYPE.BANNER) {\n    console.log('Banner ad is loaded');\n    this.admob.showBannerAd();\n  } else if (ad.adType === this.admob.AD_TYPE.INTERSTITIAL) {\n    console.log('Interstitial ad is loaded');\n    this.admob.showInterstitialAd();\n  } else if (ad.adType === this.admob.AD_TYPE.REWARDED) {\n    console.log('Rewarded ad is loaded');\n    this.admob.showRewardedAd();\n  }\n});\n\n\n\n// On ad failed to load\nthis.admob.onAdFailedToLoad().subscribe(err => console.log('Error loading ad:', err));\n\n\n\n// On interstitial ad opened\nthis.admob.onAdOpened().subscribe(() => console.log('Interstitial ad opened'));\n\n\n\n// On interstitial ad closed\nthis.admob.onAdClosed().subscribe(() => console.log('Interstitial ad closed'));\n\n\n\n// On ad clicked and left application\nthis.admob.onAdLeftApplication().subscribe(() => console.log('Ad lefted application'));\n\n\n\n// On user ad rewarded\nthis.admob.onRewardedAd().subscribe(() => console.log('The user has been rewarded'));\n\n\n\n// On rewarded ad video started\nthis.admob.onRewardedAdVideoStarted().subscribe(() => console.log('Rewarded ad vieo started'));\n\n\n\n// On rewarded ad video completed\nthis.admob.onRewardedAdVideoCompleted().subscribe(() => console.log('Rewarded ad video completed'));\n\n```\n",
+    "usage": "\n```typescript\nimport { Admob, AdmobOptions } from '@ionic-native/admob/ngx';\n\n\nconstructor(private admob: Admob) {\n    // Admob options config\n    const admobOptions: AdmobOptions = {\n      publisherId: 'XXX-XXXX-XXXX',\n      interstitialId: 'XXX-XXXX-XXXX',\n      rewardedAdId: 'XXX-XXXX-XXXX',\n      isTesting: true,\n      autoShowBanner: false,\n      autoShowInterstitial: false,\n      autoShowRewarded: false,\n      adSize: this.admob.AD_SIZE.BANNER\n    };\n\n    // Set admob options\n    this.admob.setOptions(admobOptions)\n      .then(() => console.log('Admob options have been successfully set'))\n      .catch(err => console.error('Error setting admob options:', err));\n}\n\n\n\n// (Optionally) Load banner ad, in order to have it ready to show\nthis.admob.createBannerView()\n  .then(() => console.log('Banner ad loaded'))\n  .catch(err => console.error('Error loading banner ad:', err));\n\n\n// Show banner ad (createBannerView must be called before and onAdLoaded() event raised)\nthis.admob.onAdLoaded().subscribe((ad) => {\n  if (ad.adType === this.admob.AD_TYPE.BANNER) {\n    this.admob.showBannerAd()\n      .then(() => console.log('Banner ad shown'))\n      .catch(err => console.error('Error showing banner ad:', err));\n  }\n});\n\n\n// Hide banner ad, but do not destroy it, so it can be shown later on\n// See destroyBannerView in order to hide and destroy banner ad\nthis.admob.showBannerAd(false)\n  .then(() => console.log('Banner ad hidden'))\n  .catch(err => console.error('Error hiding banner ad:', err));\n\n\n\n// Request an interstitial ad, in order to be shown later on\n// It is possible to autoshow it via options parameter, see docs\nthis.admob.requestInterstitialAd()\n  .then(() => console.log('Interstitial ad loaded'))\n  .catch(err => console.error('Error loading interstitial ad:', err));\n\n\n// Show an interstitial ad (requestInterstitialAd must be called before)\nthis.admob.onAdLoaded().subscribe((ad) => {\n  if (ad.adType === this.admob.AD_TYPE.INTERSTITIAL) {\n    this.admob.showInterstitialAd()\n      .then(() => console.log('Interstitial ad shown'))\n      .catch(err => console.error('Error showing interstitial ad:', err));\n  }\n});\n\n\n// Request a rewarded ad\nthis.admob.requestRewardedAd()\n  .then(() => console.log('Rewarded ad loaded'))\n  .catch(err => console.error('Error loading rewarded ad:', err));\n\n\n// Show rewarded ad (requestRewardedAd must be called before)\nthis.admob.onAdLoaded().subscribe((ad) => {\n  if (ad.adType === this.admob.AD_TYPE.REWARDED) {\n    this.admob.showRewardedAd()\n      .then(() => console.log('Rewarded ad shown'))\n      .catch(err => console.error('Error showing rewarded ad:', err));\n  }\n});\n\n\n// Hide and destroy banner or interstitial ad\nthis.admob.destroyBannerView()\n  .then(() => console.log('Banner or interstitial ad destroyed'))\n  .catch(err => console.error('Error destroying banner or interstitial ad:', err));\n\n\n\n// On Ad loaded event\nthis.admob.onAdLoaded().subscribe((ad) => {\n  if (ad.adType === this.admob.AD_TYPE.BANNER) {\n    console.log('Banner ad is loaded');\n    this.admob.showBannerAd();\n  } else if (ad.adType === this.admob.AD_TYPE.INTERSTITIAL) {\n    console.log('Interstitial ad is loaded');\n    this.admob.showInterstitialAd();\n  } else if (ad.adType === this.admob.AD_TYPE.REWARDED) {\n    console.log('Rewarded ad is loaded');\n    this.admob.showRewardedAd();\n  }\n});\n\n\n\n// On ad failed to load\nthis.admob.onAdFailedToLoad().subscribe(err => console.log('Error loading ad:', err));\n\n\n\n// On interstitial ad opened\nthis.admob.onAdOpened().subscribe(() => console.log('Interstitial ad opened'));\n\n\n\n// On interstitial ad closed\nthis.admob.onAdClosed().subscribe(() => console.log('Interstitial ad closed'));\n\n\n\n// On ad clicked and left application\nthis.admob.onAdLeftApplication().subscribe(() => console.log('Ad lefted application'));\n\n\n\n// On user ad rewarded\nthis.admob.onRewardedAd().subscribe(() => console.log('The user has been rewarded'));\n\n\n\n// On rewarded ad video started\nthis.admob.onRewardedAdVideoStarted().subscribe(() => console.log('Rewarded ad vieo started'));\n\n\n\n// On rewarded ad video completed\nthis.admob.onRewardedAdVideoCompleted().subscribe(() => console.log('Rewarded ad video completed'));\n\n```\n",
     "platforms": [
       "Android",
       "iOS"
@@ -119,7 +119,7 @@
     "packageName": "@ionic-native/alipay",
     "displayName": "Alipay",
     "description": "\nThis plugin facilitates the usage of Alipay 支付宝 in an Ionic apps with the integrated AlipaySDK dated on 20180601.\n\nRequires Cordova plugin: `cordova-plugin-gubnoi-alipay`. For more info, please see https://github.com/jing-zhou/cordova-plugin-alipay .\n",
-    "usage": "\n```typescript\nimport { Alipay } from '@ionic-native/alipay/ngx';\n\nconstructor(private alipay: Alipay) {\n\n//alipayOrder is a string that has been generated and signed by the server side.\nthis.alipay.pay(alipayOrder)\n   .then(result => {\n      console.log(result); // Success\n   })\n   .catch(error => {\n      console.log(error); // Failed\n   });\n\n}\n\n```\n",
+    "usage": "\n```typescript\nimport { Alipay } from '@ionic-native/alipay/ngx';\n\nconstructor(private alipay: Alipay) {\n\n//alipayOrder is a string that has been generated and signed by the server side.\nthis.alipay.pay(alipayOrder, success, error)\n   .then(result => {\n      console.log(result); // Success\n   })\n   .catch(error => {\n      console.log(error); // Failed\n   });\n\n}\n\n```\n",
     "platforms": [
       "Android",
       "iOS"
@@ -459,7 +459,7 @@
     "packageName": "@ionic-native/background-geolocation",
     "displayName": "Background Geolocation",
     "description": "\nThis plugin provides foreground and background geolocation with battery-saving \"circular region monitoring\" and \"stop detection\". For\nmore detail, please see https://github.com/mauron85/cordova-plugin-background-geolocation\n",
-    "usage": "\n\nBackgroundGeolocation must be called within app.ts and or before Geolocation. Otherwise the platform will not ask you for background tracking permission.\n\n```typescript\nimport { BackgroundGeolocation, BackgroundGeolocationConfig, BackgroundGeolocationEvents, BackgroundGeolocationResponse } from '@ionic-native/background-geolocation';\n\nconstructor(private backgroundGeolocation: BackgroundGeolocation) { }\n\n...\n\nconst config: BackgroundGeolocationConfig = {\n            desiredAccuracy: 10,\n            stationaryRadius: 20,\n            distanceFilter: 30,\n            debug: true, //  enable this hear sounds for background-geolocation life-cycle.\n            stopOnTerminate: false, // enable this to clear background location settings when the app terminates\n    };\n\nthis.backgroundGeolocation.configure(config)\n  .then(() => {\n\n    this.backgroundGeolocation.on(BackgroundGeolocationEvents.location).subscribe((location: BackgroundGeolocationResponse) => {\n      console.log(location);\n\n      // IMPORTANT:  You must execute the finish method here to inform the native plugin that you're finished,\n      // and the background-task may be completed.  You must do this regardless if your operations are successful or not.\n      // IF YOU DON'T, ios will CRASH YOUR APP for spending too much time in the background.\n      this.backgroundGeolocation.finish(); // FOR IOS ONLY\n    });\n\n  });\n\n// start recording location\nthis.backgroundGeolocation.start();\n\n// If you wish to turn OFF background-tracking, call the #stop method.\nthis.backgroundGeolocation.stop();\n\n```",
+    "usage": "\n\nBackgroundGeolocation must be called within app.ts and or before Geolocation. Otherwise the platform will not ask you for background tracking permission.\n\n```typescript\nimport { BackgroundGeolocation, BackgroundGeolocationConfig, BackgroundGeolocationEvents, BackgroundGeolocationResponse } from '@ionic-native/background-geolocation/ngx';\n\nconstructor(private backgroundGeolocation: BackgroundGeolocation) { }\n\n...\n\nconst config: BackgroundGeolocationConfig = {\n            desiredAccuracy: 10,\n            stationaryRadius: 20,\n            distanceFilter: 30,\n            debug: true, //  enable this hear sounds for background-geolocation life-cycle.\n            stopOnTerminate: false, // enable this to clear background location settings when the app terminates\n    };\n\nthis.backgroundGeolocation.configure(config)\n  .then(() => {\n\n    this.backgroundGeolocation.on(BackgroundGeolocationEvents.location).subscribe((location: BackgroundGeolocationResponse) => {\n      console.log(location);\n\n      // IMPORTANT:  You must execute the finish method here to inform the native plugin that you're finished,\n      // and the background-task may be completed.  You must do this regardless if your operations are successful or not.\n      // IF YOU DON'T, ios will CRASH YOUR APP for spending too much time in the background.\n      this.backgroundGeolocation.finish(); // FOR IOS ONLY\n    });\n\n  });\n\n// start recording location\nthis.backgroundGeolocation.start();\n\n// If you wish to turn OFF background-tracking, call the #stop method.\nthis.backgroundGeolocation.stop();\n\n```",
     "platforms": [
       "Android",
       "iOS"
@@ -944,6 +944,20 @@
     }
   },
   {
+    "packageName": "@ionic-native/clover-go",
+    "displayName": "Clover Go",
+    "description": "\nThis plugin connect to Clover Go payment device and process payments.\n",
+    "usage": "\n```typescript\nimport { CloverGo } from '@ionic-native/clover-go/ngx';\n\n\nconstructor(private cloverGo: CloverGo) { }\n\n...\n\n\nthis.cloverGo.init(configuration)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\nthis.cloverGo.connect()\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\nthis.cloverGo.disconnect()\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\nthis.cloverGo.sale(saleInfo)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+    "platforms": [
+      "Android",
+      "iOS"
+    ],
+    "repo": "https://github.com/hotwax/cordova-plugin-clovergo",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-clovergo"
+    }
+  },
+  {
     "packageName": "@ionic-native/code-push",
     "displayName": "Code Push",
     "description": "\nCodePush plugin for Cordova by Microsoft that supports iOS and Android.\n\nFor more info, please see https://github.com/Dellos7/example-cordova-code-push-plugin\n",
@@ -1265,7 +1279,7 @@
     "packageName": "@ionic-native/email-composer",
     "displayName": "Email Composer",
     "description": "\n\nRequires Cordova plugin: cordova-plugin-email-composer. For more info, please see the [Email Composer plugin docs](https://github.com/hypery2k/cordova-email-plugin).\n\n",
-    "usage": "\n```typescript\nimport { EmailComposer } from '@ionic-native/email-composer/ngx';\n\nconstructor(private emailComposer: EmailComposer) { }\n\n...\n\n\nthis.emailComposer.isAvailable().then((available: boolean) =>{\n if(available) {\n   //Now we know we can send\n }\n});\n\nlet email = {\n  to: 'max@mustermann.de',\n  cc: 'erika@mustermann.de',\n  bcc: ['john@doe.com', 'jane@doe.com'],\n  attachments: [\n    'file://img/logo.png',\n    'res://icon.png',\n    'base64:icon.png//iVBORw0KGgoAAAANSUhEUg...',\n    'file://README.pdf'\n  ],\n  subject: 'Cordova Icons',\n  body: 'How are you? Nice greetings from Leipzig',\n  isHtml: true\n}\n\n// Send a text message using default options\nthis.emailComposer.open(email);\n```\n\nYou can also assign aliases to email apps\n```ts\n// add alias\nthis.email.addAlias('gmail', 'com.google.android.gm');\n\n// then use alias when sending email\nthis.email.open({\n  app: 'gmail',\n  ...\n});\n```",
+    "usage": "\n```typescript\nimport { EmailComposer } from '@ionic-native/email-composer/ngx';\n\nconstructor(private emailComposer: EmailComposer) { }\n\n...\n\n\nthis.emailComposer.getClients().then((apps: []) => {\n   // Returns an array of configured email clients for the device\n});\n\nthis.emailComposer.hasClient().then(app, (isValid: boolean) => {\n if (isValid) {\n   // Now we know we have a valid email client configured\n   // Not specifying an app will return true if at least one email client is configured\n }\n});\n\nthis.emailComposer.hasAccount().then((isValid: boolean) => {\n if (isValid) {\n   // Now we know we have a valid email account configured\n }\n});\n\nthis.emailComposer.isAvailable().then(app, (available: boolean) => {\n if(available) {\n   // Now we know we can send an email, calls hasClient and hasAccount\n   // Not specifying an app will return true if at least one email client is configured\n }\n});\n\nlet email = {\n  to: 'max@mustermann.de',\n  cc: 'erika@mustermann.de',\n  bcc: ['john@doe.com', 'jane@doe.com'],\n  attachments: [\n    'file://img/logo.png',\n    'res://icon.png',\n    'base64:icon.png//iVBORw0KGgoAAAANSUhEUg...',\n    'file://README.pdf'\n  ],\n  subject: 'Cordova Icons',\n  body: 'How are you? Nice greetings from Leipzig',\n  isHtml: true\n}\n\n// Send a text message using default options\nthis.emailComposer.open(email);\n```\n\nYou can also assign aliases to email apps\n```ts\n// add alias\nthis.email.addAlias('gmail', 'com.google.android.gm');\n\n// then use alias when sending email\nthis.email.open({\n  app: 'gmail',\n  ...\n});\n```",
     "platforms": [
       "Amazon Fire OS",
       "Android",
@@ -1283,8 +1297,8 @@
   {
     "packageName": "@ionic-native/emm-app-config",
     "displayName": "Emm App Config",
-    "description": "\n\nThis plugin provides information on EMM application configuration.\n\nRequires the Cordova plugin: `cordova-plugin-emm-app-config`. For more info, please see the [Cordova EMM App Config Plugin Docs](https://github.com/oracle/cordova-plugin-emm-app-config).\n\n",
-    "usage": "\n```typescript\nimport { EmmAppConfig } from '@ionic-native/emm-app-config/ngx';\n\nconstructor(private readonly emmAppConfig: EmmAppConfig) {}\n\n...\n\n// Get all the values of the emm app configuration\nconst values = this.emmAppConfig.getValue();\n\n// Get specific value of the emm app configuration\nconst value = this.emmAppConfig.getValue('serverUrl');\n\n// Get an event every time the emm app config changes\nthis.emmAppConfig.registerChangedListener().subscribe(() => console.log('App config changes'));\n```",
+    "description": "\nThis plugin provides information on EMM application configuration\n\nRequires the Cordova plugin: `cordova-plugin-emm-app-config`. For more info, please see the [Cordova EMM App Config Plugin Docs](https://github.com/oracle/cordova-plugin-emm-app-config).\n\n",
+    "usage": "\n```typescript\nimport { EmmAppConfig } from '@ionic-native/emm-app-config/ngx';\n\n\nconstructor(private readonly emmAppConfig: EmmAppConfig) { }\n\n...\n\n// Get all the values of the emm app configuration\nconst values = this.emmAppConfig.getValue();\n\n// Get specific value of the emm app configuration\nconst value = this.emmAppConfig.getValue('serverUrl');\n\n// Get an event every time the emm app config changes\nthis.emmAppConfig.registerChangedListener()\n  .subscribe(() => console.log('App config changes'));\n\n```\n",
     "platforms": [
       "Android",
       "iOS"
@@ -1362,7 +1376,7 @@
     "packageName": "@ionic-native/fcm",
     "displayName": "FCM",
     "description": "\nProvides basic functionality for Firebase Cloud Messaging\n",
-    "usage": "\n```typescript\nimport { FCM } from '@ionic-native/fcm/ngx';\n\nconstructor(private fcm: FCM) {}\n\n...\n\nthis.fcm.subscribeToTopic('marketing');\n\nthis.fcm.getToken().then(token => {\n  backend.registerToken(token);\n});\n\nthis.fcm.onNotification().subscribe(data => {\n  if(data.wasTapped){\n    console.log(\"Received in background\");\n  } else {\n    console.log(\"Received in foreground\");\n  };\n});\n\nthis.fcm.onTokenRefresh().subscribe(token => {\n  backend.registerToken(token);\n});\n\nthis.fcm.unsubscribeFromTopic('marketing');\n\n```",
+    "usage": "\n```typescript\nimport { FCM } from '@ionic-native/fcm/ngx';\n\nconstructor(private fcm: FCM) {}\n\n...\n\nthis.fcm.subscribeToTopic('marketing');\n\nthis.fcm.getToken().then(token => {\n  backend.registerToken(token);\n});\n\nthis.fcm.onNotification().subscribe(data => {\n  if(data.wasTapped){\n    console.log(\"Received in background\");\n  } else {\n    console.log(\"Received in foreground\");\n  };\n});\n\nthis.fcm.onTokenRefresh().subscribe(token => {\n  backend.registerToken(token);\n});\n\nthis.fcm.hasPermission().then(hasPermission => {\n  if (hasPermission) {\n    console.log(\"Has permission!\");\n  }\n})\n\nthis.fcm.clearAllNotifications();\n\nthis.fcm.unsubscribeFromTopic('marketing');\n\n```",
     "platforms": [
       "Android",
       "iOS"
@@ -1370,7 +1384,8 @@
     "repo": "https://github.com/andrehtissot/cordova-plugin-fcm-with-dependecy-updated",
     "cordovaPlugin": {
       "name": "cordova-plugin-fcm-with-dependecy-updated"
-    }
+    },
+    "capacitorIncompatible": true
   },
   {
     "packageName": "@ionic-native/file-chooser",
@@ -1464,7 +1479,7 @@
   {
     "packageName": "@ionic-native/file",
     "displayName": "File",
-    "description": "\nThis plugin implements a File API allowing read/write access to files residing on the device.\n\nThe File class implements static convenience functions to access files and directories.\n\nExample:\n```\nimport { File } from '@ionic-native/file/ngx';\n\nconstructor(private file: File) { }\n\n...\n\nthis.file.checkDir(this.file.dataDirectory, 'mydir').then(_ => console.log('Directory exists')).catch(err =>\n  console.log('Directory doesn't exist'));\n\n```\n\n This plugin is based on several specs, including : The HTML5 File API http: //www.w3.org/TR/FileAPI/\n The (now-defunct) Directories and System extensions Latest: http: //www.w3.org/TR/2012/WD-file-system-api-20120417/\n Although most of the plugin code was written when an earlier spec was current: http:\n  //www.w3.org/TR/2011/WD-file-system-api-20110419/ It also implements the FileWriter spec : http:\n  //dev.w3.org/2009/dap/file-system/file-writer.html\n @interfaces\n IFile\n Entry\n DirectoryEntry\n DirectoryReader\n FileSystem\n",
+    "description": "\nThis plugin implements a File API allowing read/write access to files residing on the device.\n\nThe File class implements static convenience functions to access files and directories.\n\nExample:\n```\nimport { File } from '@ionic-native/file/ngx';\n\nconstructor(private file: File) { }\n\n...\n\nthis.file.checkDir(this.file.dataDirectory, 'mydir').then(_ => console.log('Directory exists')).catch(err =>\n  console.log('Directory doesn't exist'));\n\n```\n\n This plugin is based on several specs, including : The HTML5 File API http: //www.w3.org/TR/FileAPI/\n The (now-defunct) Directories and System extensions Latest: http: //www.w3.org/TR/2012/WD-file-system-api-20120417/\n Although most of the plugin code was written when an earlier spec was current: http:\n  //www.w3.org/TR/2011/WD-file-system-api-20110419/ It also implements the FileWriter spec : http:\n  //dev.w3.org/2009/dap/file-system/file-writer.html",
     "platforms": [
       "Android",
       "Browser",
@@ -1482,7 +1497,7 @@
     "packageName": "@ionic-native/fingerprint-aio",
     "displayName": "Fingerprint AIO",
     "description": "\nUse simple fingerprint authentication on Android and iOS.\nRequires Cordova plugin: cordova-plugin-fingerprint-aio. For more info about plugin, vist: https://github.com/NiklasMerz/cordova-plugin-fingerprint-aio\n",
-    "usage": "\n```typescript\nimport { FingerprintAIO } from '@ionic-native/fingerprint-aio/ngx';\n\nconstructor(private faio: FingerprintAIO) { }\n\n...\n\nthis.faio.show({\n    clientId: 'Fingerprint-Demo', //Android: Used for encryption. iOS: used for dialogue if no `localizedReason` is given.\n    clientSecret: 'o7aoOMYUbyxaD23oFAnJ' //Necessary for Android encrpytion of keys. Use random secret key.\n    disableBackup:true,  //Only for Android(optional)\n    localizedFallbackTitle: 'Use Pin', //Only for iOS\n    localizedReason: 'Please authenticate' //Only for iOS\n})\n.then((result: any) => console.log(result))\n.catch((error: any) => console.log(error));\n\n```",
+    "usage": "\n```typescript\nimport { FingerprintAIO } from '@ionic-native/fingerprint-aio/ngx';\n\nconstructor(private faio: FingerprintAIO) { }\n\n...\n\nthis.faio.show().then((result: any) => console.log(result)).catch((error: any) => console.log(error));\n\n OR with options...\n\nthis.faio.show({\n    title: 'Biometric Authentication', // (Android Only) | optional | Default: \"<APP_NAME> Biometric Sign On\"\n    subtitle: 'Coolest Plugin ever' // (Android Only) | optional | Default: null\n    description: 'Please authenticate' // optional | Default: null\n    fallbackButtonTitle: 'Use Backup', // optional | When disableBackup is false defaults to \"Use Pin\".\n                                       // When disableBackup is true defaults to \"Cancel\"\n    disableBackup:true,  // optional | default: false\n})\n.then((result: any) => console.log(result))\n.catch((error: any) => console.log(error));\n\n```",
     "platforms": [
       "Android",
       "iOS"
@@ -1601,10 +1616,24 @@
     }
   },
   {
+    "packageName": "@ionic-native/firebase-vision",
+    "displayName": "Firebase Vision",
+    "description": "\nCordova plugin for Firebase MLKit Vision\n",
+    "usage": "\n```typescript\nimport { FirebaseVision } from '@ionic-native/firebase-vision/ngx';\n\n\nconstructor(private firebaseVision: FirebaseVision) { }\n\n...\n\n\nthis.firebaseVision.onDeviceTextRecognizer(FILE_URI)\n  .then((res: string) => console.log(res))\n  .catch((error: string) => console.error(error));\n\n```\n",
+    "platforms": [
+      "Android",
+      "iOS"
+    ],
+    "repo": "https://github.com/alon22/cordova-plugin-firebase-mlvision",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-firebase-mlvision"
+    }
+  },
+  {
     "packageName": "@ionic-native/firebase-x",
     "displayName": "Firebase X",
     "description": "\nThis plugin brings push notifications, analytics, event tracking, crash reporting and more from Google Firebase to your Cordova project! Android and iOS supported.\nIt is a maintained fork from unmaintained ionic-navite plugin called Firebase.\n",
-    "usage": "\n```typescript\nimport { FirebaseX } from '@ionic-native/firebase-x';\n\n\nconstructor(private firebaseX: FirebaseX) { }\n\n...\n\n\nthis.firebaseX.getToken()\n  .then(token => console.log(`The token is ${token}`)) // save the token server-side and use it to push notifications to this device\n  .catch(error => console.error('Error getting token', error));\n\nthis.firebaseX.onMessageReceived()\n  .subscribe(data => console.log(`User opened a notification ${data}`));\n\nthis.firebaseX.onTokenRefresh()\n  .subscribe((token: string) => console.log(`Got a new token ${token}`));\n```",
+    "usage": "\n```typescript\nimport { FirebaseX } from '@ionic-native/firebase-x/ngx';\n\n\nconstructor(private firebaseX: FirebaseX) { }\n\n...\n\n\nthis.firebaseX.getToken()\n  .then(token => console.log(`The token is ${token}`)) // save the token server-side and use it to push notifications to this device\n  .catch(error => console.error('Error getting token', error));\n\nthis.firebaseX.onMessageReceived()\n  .subscribe(data => console.log(`User opened a notification ${data}`));\n\nthis.firebaseX.onTokenRefresh()\n  .subscribe((token: string) => console.log(`Got a new token ${token}`));\n```",
     "platforms": [
       "Android",
       "iOS"
@@ -1703,7 +1732,7 @@
     "packageName": "@ionic-native/gao-de-location",
     "displayName": "Gao De Location",
     "description": "\nBecause the original GPS positioning uses Google Browser positioning, and Google withdraws from China, resulting in GPS Android positioning can not be positioned.\nGaode location can directly return address informationGaode location can directly return address information\n",
-    "usage": "\n```typescript\nimport { GaoDeLocation } from '@ionic-native/gao-de-location/ngx';\n\n\nconstructor(private gaoDeLocation: GaoDeLocation) { }\n\nthis.gaoDeLocation.getCurrentPosition()\n.then((res: PositionOptions) => console.log(res))\n.catch((error) => console.error(error));\n\n```\n",
+    "usage": "\n```typescript\nimport { GaoDeLocation } from '@ionic-native/gao-de-location/ngx';\n\n\nconstructor(private gaoDeLocation: GaoDeLocation) { }\n\n\nconst positionOptions: PositionOptions = {\n    androidOption: {\n     locationMode: LocationModeEnum.Hight_Accuracy,\n     gpsFirst: false,\n      HttpTimeOut: 30000,\n      interval: 2000,\n      needAddress: true,\n      onceLocation: false,\n      onceLocationLatest: false,\n      locationProtocol: LocationProtocolEnum.HTTP,\n      sensorEnable: false,\n      wifiScan: true,\n      locationCacheEnable: true\n    }, iosOption: {\n      desiredAccuracy: DesiredAccuracyEnum.kCLLocationAccuracyBest,\n      pausesLocationUpdatesAutomatically: 'YES',\n      allowsBackgroundLocationUpdates: 'NO',\n      locationTimeout: 10,\n      reGeocodeTimeout: 5,\n    }\n  };\nconst positionRes: PositionRes = await this.gaoDeLocation.getCurrentPosition(positionOptions).catch((e: any) => {\n    console.log(e);\n  }) || null;\nconsole.log(JSON.stringify(positionRes));\n\n\nthis.gaoDeLocation.startSerialLocation(positionOptions).subscribe((positionRes: PositionRes) => {\n   console.log(JSON.stringify(positionRes));\n});\n\nconst positionRes: any = this.gaoDeLocation.stopSerialLocation().catch((e) => {\n    console.log(e);\n  }) || null;\nconsole.log(JSON.stringify(positionRes));\n\n```\n",
     "platforms": [
       "Android",
       "iOS"
@@ -1715,6 +1744,25 @@
     ],
     "cordovaPlugin": {
       "name": "cordova-plugin-gaodelocation-chenyu"
+    }
+  },
+  {
+    "packageName": "@ionic-native/ge-tui-sdk-plugin",
+    "displayName": "Ge Tui Sdk Plugin",
+    "description": "\nThis plugin does something\n",
+    "usage": "\n```typescript\nimport { GeTuiSdkPlugin } from '@ionic-native/ge-tui-sdk-plugin';\n\n\nconstructor(private geTuiSdkPlugin: GeTuiSdkPlugin) { }\n\n this.geTuiSdkPlugin.callback_init((res) => { console.log(res)});\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n this.geTuiSdkPlugin.initialize();\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n this.geTuiSdkPlugin.getClientId();\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n this.geTuiSdkPlugin.getVersion();\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+    "platforms": [
+      "Android",
+      "iOS"
+    ],
+    "repo": "git@github.com:GetuiLaboratory/cordova-plugin-getuisdk.git",
+    "installVariables": [
+      "PUSH_APPID",
+      "PUSH_APPKEY",
+      "PUSH_APPSECRET"
+    ],
+    "cordovaPlugin": {
+      "name": "cordova-plugin-getuisdk"
     }
   },
   {
@@ -1934,7 +1982,7 @@
   {
     "packageName": "@ionic-native/http",
     "displayName": "HTTP",
-    "description": "\nCordova / Phonegap plugin for communicating with HTTP servers. Supports iOS and Android.\n\nAdvantages over Javascript requests:\n- Background threading - all requests are done in a background thread\n- SSL Pinning\n",
+    "description": "\nCordova / Phonegap plugin for communicating with HTTP servers. Supports iOS and Android.\n\nAdvantages over Javascript requests:\n- SSL / TLS Pinning\n- CORS restrictions do not apply\n- Handling of HTTP code 401 - read more at [Issue CB-2415](https://issues.apache.org/jira/browse/CB-2415)\n",
     "usage": "\n```typescript\nimport { HTTP } from '@ionic-native/http/ngx';\n\nconstructor(private http: HTTP) {}\n\n...\n\nthis.http.get('http://ionic.io', {}, {})\n  .then(data => {\n\n    console.log(data.status);\n    console.log(data.data); // data received by server\n    console.log(data.headers);\n\n  })\n  .catch(error => {\n\n    console.log(error.status);\n    console.log(error.error); // error message as string\n    console.log(error.headers);\n\n  });\n\n```",
     "platforms": [
       "Android",
@@ -1971,6 +2019,20 @@
     "repo": "https://github.com/hypertrack/hypertrack-cordova",
     "cordovaPlugin": {
       "name": "cordova-plugin-hypertrack"
+    }
+  },
+  {
+    "packageName": "@ionic-native/iamport-cordova",
+    "displayName": "Iamport Cordova",
+    "description": "\nThis plugin does something\n",
+    "usage": "\n```typescript\nimport { IamportCordova } from '@ionic-native/iamport-cordova/ngx';\n\n\nconstructor(private iamportCordova: IamportCordova) { }\n\n...\n\n\nthis.iamportCordova.functionName('Hello', 123)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "repo": "https://github.com/iamport/iamport-cordova",
+    "cordovaPlugin": {
+      "name": "iamport-cordova"
     }
   },
   {
@@ -2216,6 +2278,20 @@
     }
   },
   {
+    "packageName": "@ionic-native/jumio",
+    "displayName": "Jumio",
+    "description": "\n[Jumio mobile-cordova](https://github.com/Jumio/mobile-cordova) Plugin for Ionic\n\nRead this for [Platform Customization](https://github.com/Jumio/mobile-cordova#customization) is possible\n\nTo get Jumio Cordova working on Android check out this [FAQ](https://github.com/Jumio/mobile-cordova#faq)\n",
+    "usage": "\n```typescript\nimport {\n  Jumio,\n  JumioNetverifyConfig,\n  JumioDocVerificationConfig,\n  NetverifyDocumentData\n  DocVerificationDocumentData\n} from '@ionic-native/jumio/ngx';\n\n\nconstructor(private jumio: Jumio) { }\n\n...\n\nthis.jumio.initNetverify(\"API_TOKEN\", \"API_SECRET\", \"US\", {\n  requireVerification: false,\n  userReference: \"USER_REFERENCE\",\n  preselectedCountry: \"USA\",\n  cameraPosition: \"BACK\",\n  documentTypes: [\"DRIVER_LICENSE\", \"PASSPORT\", \"IDENTITY_CARD\", \"VISA\"],\n  enableWatchlistScreening: \"ENABLED\",\n  watchlistSearchProfile: \"YOUR_PROFILE_NAME\"\n});\n\nlet documentData: NetverifyDocumentData = await this.jumio.startNetverify();\n\n```\n",
+    "platforms": [
+      "Android",
+      "iOS"
+    ],
+    "repo": "https://github.com/Jumio/mobile-cordova",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-jumio-mobilesdk"
+    }
+  },
+  {
     "packageName": "@ionic-native/keyboard",
     "displayName": "Keyboard",
     "description": "\nKeyboard plugin for Cordova.\n\nRequires Cordova plugin: `cordova-plugin-ionic-keyboard`. For more info, please see the [Keyboard plugin docs](https://github.com/ionic-team/cordova-plugin-ionic-keyboard).\n",
@@ -2228,8 +2304,8 @@
     "cordovaPlugin": {
       "name": "cordova-plugin-ionic-keyboard"
     },
-    "capacitorIncompatible": true,
-    "premierSlug": "keyboard"
+    "premierSlug": "keyboard",
+    "capacitorIncompatible": true
   },
   {
     "packageName": "@ionic-native/keychain-touch-id",
@@ -2256,6 +2332,21 @@
     "repo": "https://github.com/ionic-team/cordova-plugin-ios-keychain",
     "cordovaPlugin": {
       "name": "cordova-plugin-ios-keychain"
+    }
+  },
+  {
+    "packageName": "@ionic-native/kommunicate",
+    "displayName": "Kommunicate",
+    "description": "\nThe plugin for the Kommunicate SDK.\nWith the help of this plugin, you can easily add human + bot chat support functionality to you app.\nRefer to: TODO: insert site link\nFor documentation: TODO: insert link\n",
+    "usage": "\n```typescript\nimport { Kommunicate } from '@ionic-native/Kommunicate';\n\nconstructor(private kommunicate: Kommunicate) { }\n//also add [..., Kommunicate, ... ] inside the providers array, if required\n\nvar kmUser = {\n   userId : 'randomstring',\n   authenticationTypeId : 1\n};\n\nthis.kommunicate.login(kmUser)\n  .then((res: any) => console.log(\"Sucessfully logged in.\" + res))\n  .catch((error: any) => console.error(\"Error logging in.\" + error));\n\nvar conversationObject = {\n   isUnique : false\n};\n\nthis.kommunicate.conversationBuilder(converationObject)\n  .then((clientChannelKey: any) => console.log(\"Kommunicate create conversation successful the clientChannelKey is : \" + clientChannelKey))\n  .catch((error: any) => console.error(\"Error creating conversation.\" + error));\n\n```\n",
+    "platforms": [
+      "Android",
+      "Browser",
+      "iOS"
+    ],
+    "repo": "https://github.com/Kommunicate-io/Kommunicate-Cordova-Ionic-PhoneGap-Chat-Plugin",
+    "cordovaPlugin": {
+      "name": "kommunicate-cordova-plugin"
     }
   },
   {
@@ -2438,6 +2529,19 @@
     "premierSlug": "media"
   },
   {
+    "packageName": "@ionic-native/metrix",
+    "displayName": "Metrix",
+    "description": "\nThis is the Ionic Cordova SDK of Metrix™. You can read more about Metrix™ at metrix.ir.\n\nRequires Cordova plugin: `ir.metrix.sdk`. For more info, please see the [Metrix Cordova SDK](https://github.com/metrixorg/MetrixSDK-CordovaPlugin)\n",
+    "usage": "\n```typescript\n import { Metrix, MetrixConfig } from '@ionic-native/metrix';\n\n constructor(private metrix: Metrix) { }\n\n ...\n\n const config = new MetrixConfig('APP-ID-HERE');\n // Set other config properties.\n metrix.create(config);\n\n```",
+    "platforms": [
+      "Android"
+    ],
+    "repo": "https://github.com/metrixorg/MetrixSDK-CordovaPlugin",
+    "cordovaPlugin": {
+      "name": "ir.metrix.sdk"
+    }
+  },
+  {
     "packageName": "@ionic-native/mixpanel",
     "displayName": "Mixpanel",
     "description": "\nCordova Plugin that wraps Mixpanel SDK for Android and iOS\n",
@@ -2453,10 +2557,24 @@
     }
   },
   {
+    "packageName": "@ionic-native/mlkit-translate",
+    "displayName": "MLKitTranslate",
+    "description": "\nPlugin that implements MLKit Translation and Language Identification features.\n",
+    "usage": "\n```typescript\nimport { MLKitTranslate } from '@ionic-native/ml-kit-translate';\n\n\nconstructor(private mlkitTranslate: MLKitTranslate) { }\n\n...\n\nthis.mlkitTranslate.translate('Hello', 'en', 'es')\n  .then((resultText: string) => console.log(res))\n  .catch((error: string) => console.error(error));\n\n@interfaces\nLanguageModel\n```\n",
+    "platforms": [
+      "Android",
+      "iOS"
+    ],
+    "repo": "https://github.com/rigelglen/cordova-plugin-mlkit-translate",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-mlkit-translate"
+    }
+  },
+  {
     "packageName": "@ionic-native/mobile-accessibility",
     "displayName": "Mobile Accessibility",
     "description": "\nThis plugin exposes information on the status of various accessibility features of mobile operating systems, including, for example, whether a screen reader is running, invert colors is enabled, and the preferred scaling for text.\nIt also allows an application to send a string to be spoken by the screen reader, or a command to stop the screen reader from speaking.\n",
-    "usage": "\n```typescript\nimport { MobileAccessibility } from '@ionic-native/mobile-ccessibility/ngx';\n\n\nconstructor(private mobileAccessibility: MobileAccessibility) { }\n\n...\n\nif(this.mobileAccessibility.isScreenReaderRunningCallback();\n\n```\n",
+    "usage": "\n```typescript\nimport { MobileAccessibility } from '@ionic-native/mobile-accessibility/ngx';\n\n\nconstructor(private mobileAccessibility: MobileAccessibility) { }\n\n...\n\nif(this.mobileAccessibility.isScreenReaderRunningCallback();\n\n```\n",
     "platforms": [
       "Android Fire OS",
       "Android",
@@ -2466,6 +2584,20 @@
     "repo": "https://github.com/phonegap/phonegap-mobile-accessibility",
     "cordovaPlugin": {
       "name": "phonegap-plugin-mobile-accessibility"
+    }
+  },
+  {
+    "packageName": "@ionic-native/mobile-messaging",
+    "displayName": "Mobile Messaging",
+    "description": "\nMobile Messaging SDK is designed and developed to easily enable push notification channel in your mobile application.\nIn almost no time of implementation you get push notification in your application and access to the features of [Infobip IP Messaging Platform](https://portal.infobip.com/push/).\nThis document describes library integration steps for your Cordova project.\n\nFor more info see [Cordova plugin docs](https://github.com/infobip/mobile-messaging-cordova-plugin)\n",
+    "usage": "\n```typescript\nimport { MobileMessaging } from '@ionic-native/mobile-messaging/ngx';\n\n\nconstructor(private mobileMessaging: MobileMessaging) { }\n\n...\n\n\n this.mobileMessaging.init({\n   applicationCode: '<your_application_code>',\n   geofencingEnabled: '<true/false>',\n   defaultMessageStorage: '<true/false>',\n   ios: {\n     notificationTypes: ['alert', 'badge', 'sound']\n   },\n   android: {\n     notificationIcon: <String; a resource name for a status bar icon (without extension), located in '/platforms/android/app/src/main/res/mipmap'>,\n     multipleNotifications: <Boolean; set to 'true' to enable multiple notifications>,\n     notificationAccentColor: <String; set to hex color value in format '#RRGGBB' or '#AARRGGBB'>\n    }}, (err) => {\n     ...\n   });\n\n this.mobileMessaging.register('messageReceived').subscribe((message: Message) => {\n   ...\n });\n\n```\n",
+    "platforms": [
+      "Android",
+      "iOS"
+    ],
+    "repo": "https://github.com/infobip/mobile-messaging-cordova-plugin",
+    "cordovaPlugin": {
+      "name": "com-infobip-plugins-mobilemessaging"
     }
   },
   {
@@ -2642,12 +2774,13 @@
     "packageName": "@ionic-native/nfc",
     "displayName": "NFC",
     "description": "\nThe NFC plugin allows you to read and write NFC tags. You can also beam to, and receive from, other NFC enabled devices.\n\nUse to\n- read data from NFC tags\n- write data to NFC tags\n- send data to other NFC enabled devices\n- receive data from NFC devices\n\nThis plugin uses NDEF (NFC Data Exchange Format) for maximum compatibilty between NFC devices, tag types, and operating systems.\n",
-    "usage": "\n```typescript\nimport { NFC, Ndef } from '@ionic-native/nfc/ngx';\n\nconstructor(private nfc: NFC, private ndef: Ndef) { }\n\n...\n\nthis.nfc.addNdefListener(() => {\n  console.log('successfully attached ndef listener');\n}, (err) => {\n  console.log('error attaching ndef listener', err);\n}).subscribe((event) => {\n  console.log('received ndef message. the tag contains: ', event.tag);\n  console.log('decoded tag id', this.nfc.bytesToHexString(event.tag.id));\n\n  let message = this.ndef.textRecord('Hello world');\n  this.nfc.share([message]).then(onSuccess).catch(onError);\n});\n\n```\n",
+    "usage": "\n```typescript\nimport { NFC, Ndef } from '@ionic-native/nfc/ngx';\n\nconstructor(private nfc: NFC, private ndef: Ndef) { }\n\n...\n\n// Read NFC Tag - Android\n// Once the reader mode is enabled, any tags that are scanned are sent to the subscriber\n let flags = this.nfc.FLAG_READER_NFC_A | this.nfc.FLAG_READER_NFC_V;\n this.readerMode$ = this.nfc.readerMode(flags).subscribe(\n     tag => console.log(JSON.stringify(tag)),\n     err => console.log('Error reading tag', err)\n );\n\n// Read NFC Tag - iOS\n// On iOS, a NFC reader session takes control from your app while scanning tags then returns a tag\ntry {\n    let tag = await this.nfc.scanNdef();\n    console.log(JSON.stringify(tag));\n } catch (err) {\n     console.log('Error reading tag', err);\n }\n\n```\n\nFor more details on NFC tag operations see https://github.com/chariotsolutions/phonegap-nfc\n",
     "platforms": [
       "Android",
       "BlackBerry 10",
       "Windows",
-      "Windows Phone 8"
+      "Windows Phone 8",
+      "iOS"
     ],
     "repo": "https://github.com/chariotsolutions/phonegap-nfc",
     "cordovaPlugin": {
@@ -2724,6 +2857,20 @@
     "repo": "https://github.com/paypal/PayPal-Cordova-Plugin",
     "cordovaPlugin": {
       "name": "com.paypal.cordova.mobilesdk"
+    }
+  },
+  {
+    "packageName": "@ionic-native/pdf-generator",
+    "displayName": "PDFGenerator",
+    "description": "\nSimple plugin to generate (offline) pdf. The plugin transforms HTML to PDF and also provide the mechanism to share the pdf to other apps like Mail, etc.\n",
+    "usage": "\n```typescript\nimport { PDFGenerator } from '@ionic-native/pdf-generator';\n\nconstructor(private pdfGenerator: PDFGenerator) { }\n\n...\n\nthis.pdfGenerator.fromURL(url, options).then(base64String => console.log(base64String));\n\n```\n",
+    "platforms": [
+      "Android",
+      "iOS"
+    ],
+    "repo": "https://github.com/cesarvr/pdf-generator",
+    "cordovaPlugin": {
+      "name": "cordova-pdf-generator"
     }
   },
   {
@@ -2853,7 +3000,7 @@
     "packageName": "@ionic-native/preview-any-file",
     "displayName": "PreviewAnyFile",
     "description": "\nWhatever the file is PDF document, Word document, Excel, office document,zip archive file, image, text, html or anything else, you can perform a preview by this cordova Plugin to preview any file in native mode by providing the local or external URL.\n\n Requires Cordova plugin: `cordova-plugin-preview-any-file`. For more info, please see the [previewAnyFile plugin docs](https://github.com/mostafa-mansour1/previewAnyFile).\n",
-    "usage": "\n```typescript\nimport { PreviewAnyFile } from '@ionic-native/preview-any-file';\n\n\nconstructor(private previewAnyFile: PreviewAnyFile) { }\n\n...\n\n\nthis.previewAnyFile.preview('file://filepath.ext')\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+    "usage": "\n```typescript\nimport { PreviewAnyFile } from '@ionic-native/preview-any-file/ngx';\n\n\nconstructor(private previewAnyFile: PreviewAnyFile) { }\n\n...\n\n\nthis.previewAnyFile.preview('file://filepath.ext')\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
     "platforms": [
       "Android",
       "iOS"
@@ -2868,7 +3015,7 @@
     "packageName": "@ionic-native/printer",
     "displayName": "Printer",
     "description": "Prints documents or HTML rendered content",
-    "usage": "\n```typescript\nimport { Printer, PrintOptions } from '@ionic-native/printer/ngx';\n\nconstructor(private printer: Printer) { }\n\n...\n\nthis.printer.isAvailable().then(onSuccess, onError);\n\nlet options: PrintOptions = {\n     name: 'MyDocument',\n     printerId: 'printer007',\n     duplex: true,\n     landscape: true,\n     grayscale: true\n   }\n\nthis.printer.print(content, options).then(onSuccess, onError);\n```",
+    "usage": "\n```typescript\nimport { Printer, PrintOptions } from '@ionic-native/printer/ngx';\n\nconstructor(private printer: Printer) { }\n\n...\n\nthis.printer.isAvailable().then(onSuccess, onError);\n\nlet options: PrintOptions = {\n     name: 'MyDocument',\n     duplex: true,\n     orientation: 'landscape',\n     monochrome: true\n}\n\nthis.printer.print(content, options).then(onSuccess, onError);\n```",
     "platforms": [
       "Android",
       "iOS",
@@ -2880,24 +3027,38 @@
     }
   },
   {
+    "packageName": "@ionic-native/pspdfkit-cordova",
+    "displayName": "PSPDFKit-Cordova",
+    "description": "\nThe official plugin to use PSPDFKit with Cordova and Ionic.\n",
+    "usage": "\n```typescript\nimport { PSPDFKit } from '@ionic-native/pspdfkit-cordova/ngx';\n\n\nconstructor(private pspdfkit: PSPDFKit) { }\n\n...\n\n// Set your license key here.\nthis.pspdfkit.setLicenseKey(\"YOUR KEY\");\n\n// Show a PDF in single page mode, with a black background.\nthis.pspdfkit.present('document.pdf', {pageMode: 'single', backgroundColor: \"black\"})\n  .then(result => {\n     console.log(result); // Success\n  })\n  .catch(error => {\n     console.log(error); // Failed\n  });\n}\n\n// Scroll to page at index 1.\nthis.pspdfkit.setPage(1, true);\n\n```\n",
+    "platforms": [
+      "Android",
+      "iOS"
+    ],
+    "repo": "https://github.com/PSPDFKit/PSPDFKit-Cordova",
+    "cordovaPlugin": {
+      "name": "pspdfkit-cordova"
+    }
+  },
+  {
     "packageName": "@ionic-native/purchases",
     "displayName": "Purchases",
-    "description": "\nPurchases is a cross platform solution for managing in-app subscriptions. A backend is also provided via [RevenueCat](https://www.revenuecat.com)\n\n## Features\n|     | RevenueCat                                                                                                                                                   |\n| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |\n| ✅  | Server-side receipt validation                                                                                                                               |\n| ➡️  | [Webhooks](https://docs.revenuecat.com/docs/webhooks) - enhanced server-to-server communication with events for purchases, renewals, cancellations, and more |\n| 🎯  | Subscription status tracking - know whether a user is subscribed whether they're on iOS, Android or web                                                      |\n| 📊  | Analytics - automatic calculation of metrics like conversion, mrr, and churn                                                                                 |\n| 📝  | [Online documentation](https://docs.revenuecat.com/docs) up to date                                                                                          |\n| 🔀  | [Integrations](https://www.revenuecat.com/integrations) - over a dozen integrations to easily send purchase data where you need it                           |\n| 💯  | Well maintained - [frequent releases](https://github.com/RevenueCat/purchases-ios/releases)                                                                  |\n| 📮  | Great support - [Help Center](https://docs.revenuecat.com/discuss)                                                                                           |\n| 🤩  | Awesome [new features](https://trello.com/b/RZRnWRbI/revenuecat-product-roadmap)                                                                             |\n\n## Getting Started\n\nFor more detailed information, you can view our complete documentation at [docs.revenuecat.com](https://docs.revenuecat.com/docs).\n",
-    "usage": "\n#### 1. Get a RevenueCat API key\n\nLog in to the [RevenueCat dashboard](https://app.revenuecat.com) and obtain a free API key for your application.\n\n#### 2. Initialize the SDK\n\nYou should only configure _Purchases_ once (usually on app launch) as soon as your app has a unique user id for your user. This can be when a user logs in if you have accounts or on launch if you can generate a random user identifier.\n\n```typescript\n import { Platform } from \"@ionic/angular\";\n import { Purchases } from \"@ionic-native/purchases/ngx\";\n\n constructor(public platform: Platform, private purchases: Purchases) {\n     platform.ready().then(() => {\n         this.purchases.setDebugLogsEnabled(true); // Enable to get debug logs\n         this.purchases.setup(\"my_api_key\", \"my_app_user_id\");\n     }\n }\n```\n#### 3. Displaying Available Products\n\n_Purchases_ will automatically fetch the latest _active_ entitlements and get the product information from Apple or Google. This means when users launch your purchase screen, products will already be loaded.\n\nBelow is an example of fetching entitlements and launching an upsell screen.\n\n```typescript\nthis.purchases.getEntitlements()\n     .subscribe(entitlements => ,\n                error => );\n```\n\n#### 4. Make a purchase\n\nWhen it comes time to make a purchase, _Purchases_ has a simple method, `makePurchase`. The code sample below shows the process of purchasing a product and confirming it unlocks the \"my_entitlement_identifier\" content.\n\n```typescript\nthis.purchases.makePurchase(\"product_id\")\n     .subscribe(response => {\n         if (response.purchaserInfo.activeEntitlements.includes(\"my_entitlement_identifier\")) {\n             // Unlock content\n         }\n     },\n     ({ error, userCancelled }) => // Error making purchase. You can check error.userCancelled to check if user cancelled the purchase\n     );\n\n```\n\n`makePurchase` handles the underlying framework interaction and automatically validates purchases with Apple and Google through our secure servers. This helps reduce in-app purchase fraud and decreases the complexity of your app. Receipt tokens are stored remotely and always kept up-to-date.\n\n#### 5. Get Subscription Status\n\n_Purchases_ makes it easy to check what active subscriptions the current user has. This can\nbe done two ways within the `.purchaserInfo` method:\n\n1. Checking active Entitlements - this lets you see what entitlements ([from RevenueCat dashboard](https://app.revenuecat.com))\nare active for the user.\n2. Checking the active subscriptions - this lets you see what product ids (from iTunes Connect or Play Store) are active for the user.\n\n```typescript\n this.purchases.getPurchaserInfo()\n     .subscribe(info => {\n         // Option 1: Check if user has access to entitlement (from RevenueCat dashboard)\n         const isPro =\n             info.activeEntitlements !== \"undefined\" &&\n             info.activeEntitlements.includes(\"pro\");\n         // Option 2: Check if user has active subscription (from App Store Connect or Play Store)\n         const isPro =\n             info.activeSubscriptions !== \"undefined\" &&\n             info.activeSubscriptions.includes(\"my_product_identifier\");\n     },\n     error => );\n```\n\n> Since the SDK updates and caches the latest PurchaserInfo when the app becomes active, the completion block in `.purchaserInfo` won't need to make a network request in most cases.\n\n### Restoring Purchases\n\nRestoring purchases is a mechanism by which your user can restore their in-app purchases, reactivating any content that had previously been purchased from the same store account (Apple or Google).\n\nIf two different App User IDs try to restore transactions from the same underlying store account (Apple or Google) RevenueCat will create an alias between the two App User IDs and count them as the same user going forward.\n\nThis is a common if your app does not have accounts and is relying on RevenueCat's random App User IDs.\n\n```typescript\nthis.purchases.restore()\n     .subscribe(info => {\n          //... check purchaserInfo to see if entitlement is now active\n     },\n     error => );\n```\n> If you've provided your own App User ID, calling restoreTransactions could alias the logged in user to another generated App User ID that has made a purchase on the same device.\n\n> By default, RevenueCat will not let you reuse an App or Play Store account that already has an active subscription. If you set allowSharingAppStoreAccount = True the SDK will be permissive in accepting shared accounts, creating aliases as needed.\n\n> By default allowSharingAppStoreAccount is True for RevenueCat random App User IDs but must be enabled manually if you want to allow permissive sharing for your own App User IDs.\n\n## Debugging\n\nYou can enabled detailed debug logs by setting `debugLogsEnabled = true`. You can set this **before** you configure Purchases.\n\n```typescript\nthis.purchases.setDebugLogsEnabled(true);\nthis.purchases.setup(\"my_api_key\", \"my_app_user_id\");\n```\n\n**OS_ACTIVITY_MODE**\n> On iOS, disabling `OS_ACTIVITY_MODE` in your XCode scheme will block debug logs from printing in the console. If you have debug logs enabled, but don't see any output, go to `Product -> Scheme -> Edit Scheme...` in Xcode and uncheck the `OS_ACTIVITY_MODE` environment variable.\n\nExample output:\n```\n[Purchases] - DEBUG: Debug logging enabled.\n[Purchases] - DEBUG: SDK Version - 2.0.0\n[Purchases] - DEBUG: Initial App User ID - (null)\n[Purchases] - DEBUG: GET /v1/subscribers/<APP_USER_ID>\n[Purchases] - DEBUG: GET /v1/subscribers/<APP_USER_ID>/products\n[Purchases] - DEBUG: No cached entitlements, fetching\n[Purchases] - DEBUG: Vending purchaserInfo from cache\n[Purchases] - DEBUG: applicationDidBecomeActive\n[Purchases] - DEBUG: GET /v1/subscribers/<APP_USER_ID>/products 200\n```\n## Entitlements\n\nAn entitlement represents features or content that a user is \"entitled\" to. With Entitlements, you can set up your available in-app products remotely and control their availability without the need to update your app. For more information on configuring entitlements, look at our [entitlements documetation](https://docs.revenuecat.com/docs/entitlements).\n\n## Sample App\n\nWe've added an [example](https://github.com/RevenueCat/purchases-ionic-example) showing a simple example using _Purchases_ with the RevenueCat backend. Note that the pre-registered in app purchases in the demo apps are for illustration purposes only and may not be valid in App Store Connect. [Set up your own purchases](https://docs.revenuecat.com/docs/entitlements) with RevenueCat when running the example.\n\n#### Additional iOS Setup\n\n##### Add Strip Frameworks Phase\nThe App Store, in it's infinite wisdom, still rejects fat frameworks, so we need to strip our framework before it is deployed. To do this, add the following script phase to your build.\n1. In Xcode, in project manager, select your app target.\n2. Open the `Build Phases` tab\n3. Add a new `Run Script`, name it `Strip Frameworks`\n4. Add the following command `\"${PROJECT_DIR}/../../node_modules/cordova-plugin-purchases/src/ios/strip-frameworks.sh\"` (quotes included)\n\n![](https://media.giphy.com/media/39zTmnsW1CIrJNk5AM/giphy.gif)\n\n## Next Steps\n- Head over to our **[online documentation](https://docs.revenuecat.com/docs)** for complete setup guides\n- If you haven't already, make sure your products are configured correctly in the RevenueCat dashboard by checking out our [guide on entitlements](https://docs.revenuecat.com/docs/entitlements)\n- If you want to use your own user identifiers, read about [setting app user ids](https://docs.revenuecat.com/docs/user-ids)\n- If you're moving to RevenueCat from another system, see our guide on [migrating your existing subscriptions](https://docs.revenuecat.com/docs/migrating-existing-subscriptions)\n- Once you're ready to test your integration, you can follow our guides on [testing purchases](https://docs.revenuecat.com/docs/testing-purchases)\n\n## Reporting Issues\n\nYou can use Github Issues to report any bugs and issues with _Purchases_. Here is some advice for users that want to report an issue:\n\n1. Make sure that you are using the latest version of _Purchases_. The issue that you are about to report may be already fixed in the latest master branch version: https://github.com/revenuecat/cordova-plugin-purchases/tree/master.\n2. Providing reproducible steps for the issue will shorten the time it takes for it to be fixed - a Gist is always welcomed!\n3. Since some issues are Sandbox specific, specifying what environment you encountered the issue might help.\n\n## Technical Support or Questions\n\nIf you have questions or need help integrating _Purchases_ please [contact us](https://www.revenuecat.com/contact) or email _support@revenuecat.com_ instead of opening an issue.\n\n## Feature Requests\n\nIf there is something you'd like to see included or feel anything is missing you can add a feature to our [public roadmap](https://trello.com/b/RZRnWRbI/revenuecat-product-roadmap). If the feature already exists, or you see something else you'd like, upvote it.\n\n## Pricing\n\n_Purchases_ SDK is free to use but some features require a paid plan. You can find more about that on our website on the [pricing plan page](https://www.revenuecat.com/pricing).\n",
+    "description": "\nPurchases is a cross platform solution for managing in-app subscriptions. A backend is also provided via [RevenueCat](https://www.revenuecat.com)\n\n## Features\n|     | RevenueCat                                                                                                                                                   |\n| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |\n| ✅  | Server-side receipt validation                                                                                                                               |\n| ➡️  | [Webhooks](https://docs.revenuecat.com/docs/webhooks) - enhanced server-to-server communication with events for purchases, renewals, cancellations, and more |\n| 🎯  | Subscription status tracking - know whether a user is subscribed whether they're on iOS, Android or web                                                      |\n| 📊  | Analytics - automatic calculation of metrics like conversion, mrr, and churn                                                                                 |\n| 📝  | [Online documentation](https://docs.revenuecat.com/docs) up to date                                                                                          |\n| 🔀  | [Integrations](https://www.revenuecat.com/integrations) - over a dozen integrations to easily send purchase data where you need it                           |\n| 💯  | Well maintained - [frequent releases](https://github.com/RevenueCat/cordova-plugin-purchases/releases)                                                                  |\n| 📮  | Great support - [Help Center](https://revenuecat.zendesk.com)                                                                                           |\n| 🤩  | Awesome [new features](https://trello.com/b/RZRnWRbI/revenuecat-product-roadmap)                                                                             |\n\n## Getting Started\n\nFor more detailed information, you can view our complete documentation at [docs.revenuecat.com](https://docs.revenuecat.com/docs).\n",
+    "usage": "\n#### 1. Get a RevenueCat API key\n\nLog in to the [RevenueCat dashboard](https://app.revenuecat.com) and obtain a free API key for your application.\n\n#### 2. Initialize the SDK\n\nYou should only configure _Purchases_ once (usually on app launch) as soon as your app has a unique user id for your user. This can be when a user logs in if you have accounts or on launch if you can generate a random user identifier.\n\n```typescript\n import { Platform } from \"@ionic/angular\";\n import { Purchases } from \"@ionic-native/purchases/ngx\";\n\n constructor(public platform: Platform, private purchases: Purchases) {\n     platform.ready().then(() => {\n         this.purchases.setDebugLogsEnabled(true); // Enable to get debug logs\n         this.purchases.setup(\"my_api_key\", \"my_app_user_id\");\n     }\n }\n```\n\n#### 3. Quickstart\nPlease follow the [Quickstart Guide](https://docs.revenuecat.com/docs/) for more information on how to use the SDK\n\n### Requirements\nRequires XCode 11.0+ and minimum target iOS 9.0+\nThis plugin has been tested with cordova-plugin-purchases@\n",
     "platforms": [
       "Android",
       "iOS"
     ],
     "repo": "https://github.com/RevenueCat/cordova-plugin-purchases",
     "cordovaPlugin": {
-      "name": "cordova-plugin-purchases"
+      "name": "cordova-plugin-purchases@1.1.0"
     }
   },
   {
     "packageName": "@ionic-native/push",
     "displayName": "Push",
     "description": "\nRegister and receive push notifications.\n\nRequires Cordova plugin: `phonegap-plugin-push`. For more info, please see the [Push plugin docs](https://github.com/phonegap/phonegap-plugin-push).\n\nFor TypeScript users, see the [Push plugin docs about using TypeScript for custom notifications](https://github.com/phonegap/phonegap-plugin-push/blob/master/docs/TYPESCRIPT.md).\n",
-    "usage": "\n```typescript\nimport { Push, PushObject, PushOptions } from '@ionic-native/push/ngx';\n\nconstructor(private push: Push) { }\n\n...\n\n\n// to check if we have permission\nthis.push.hasPermission()\n  .then((res: any) => {\n\n    if (res.isEnabled) {\n      console.log('We have permission to send push notifications');\n    } else {\n      console.log('We do not have permission to send push notifications');\n    }\n\n  });\n\n// Create a channel (Android O and above). You'll need to provide the id, description and importance properties.\nthis.push.createChannel({\n id: \"testchannel1\",\n description: \"My first test channel\",\n // The importance property goes from 1 = Lowest, 2 = Low, 3 = Normal, 4 = High and 5 = Highest.\n importance: 3\n}).then(() => console.log('Channel created'));\n\n// Delete a channel (Android O and above)\nthis.push.deleteChannel('testchannel1').then(() => console.log('Channel deleted'));\n\n// Return a list of currently configured channels\nthis.push.listChannels().then((channels) => console.log('List of channels', channels))\n\n// to initialize push notifications\n\nconst options: PushOptions = {\n   android: {},\n   ios: {\n       alert: 'true',\n       badge: true,\n       sound: 'false'\n   },\n   windows: {},\n   browser: {\n       pushServiceURL: 'http://push.api.phonegap.com/v1/push'\n   }\n}\n\nconst pushObject: PushObject = this.push.init(options);\n\n\npushObject.on('notification').subscribe((notification: any) => console.log('Received a notification', notification));\n\npushObject.on('registration').subscribe((registration: any) => console.log('Device registered', registration));\n\npushObject.on('error').subscribe(error => console.error('Error with Push plugin', error));\n\n\n```\n",
+    "usage": "\n```typescript\nimport { Push, PushObject, PushOptions } from '@ionic-native/push/ngx';\n\nconstructor(private push: Push) { }\n\n...\n\n\n// to check if we have permission\nthis.push.hasPermission()\n  .then((res: any) => {\n\n    if (res.isEnabled) {\n      console.log('We have permission to send push notifications');\n    } else {\n      console.log('We do not have permission to send push notifications');\n    }\n\n  });\n\n// Create a channel (Android O and above). You'll need to provide the id, description and importance properties.\nthis.push.createChannel({\n id: \"testchannel1\",\n description: \"My first test channel\",\n // The importance property goes from 1 = Lowest, 2 = Low, 3 = Normal, 4 = High and 5 = Highest.\n importance: 3,\n //badge is used to if badge appears on the app icon see https://developer.android.com/reference/android/app/NotificationChannel.html#setShowBadge(boolean).\n //false = no badge on app icon.\n //true = badge on app icon\n badge: false\n}).then(() => console.log('Channel created'));\n\n// Delete a channel (Android O and above)\nthis.push.deleteChannel('testchannel1').then(() => console.log('Channel deleted'));\n\n// Return a list of currently configured channels\nthis.push.listChannels().then((channels) => console.log('List of channels', channels))\n\n// to initialize push notifications\n\nconst options: PushOptions = {\n   android: {},\n   ios: {\n       alert: 'true',\n       badge: true,\n       sound: 'false'\n   },\n   windows: {},\n   browser: {\n       pushServiceURL: 'http://push.api.phonegap.com/v1/push'\n   }\n}\n\nconst pushObject: PushObject = this.push.init(options);\n\n\npushObject.on('notification').subscribe((notification: any) => console.log('Received a notification', notification));\n\npushObject.on('registration').subscribe((registration: any) => console.log('Device registered', registration));\n\npushObject.on('error').subscribe(error => console.error('Error with Push plugin', error));\n\n\n```\n",
     "platforms": [
       "Android",
       "Browser",
@@ -2907,6 +3068,21 @@
     "repo": "https://github.com/phonegap/phonegap-plugin-push",
     "cordovaPlugin": {
       "name": "phonegap-plugin-push"
+    }
+  },
+  {
+    "packageName": "@ionic-native/pushape-push",
+    "displayName": "PushapePush",
+    "description": "\nRegister and receive push notifications.\nThis plugin extends functionalities of Push native plugin in order to use it with Pushape service.\n\nPushape service: @link https://glue-labs.com/pushape-invio-notifiche-push-ios-android-api-sdk\n\nRequires Cordova plugin: `pushape-cordova-push`. For more info, please see the [Pushape plugin docs](https://github.com/gluelabs/pushape-cordova-push).\n\nFor TypeScript users, see the [Pushape plugin docs about using TypeScript for custom notifications](https://github.com/gluelabs/pushape-cordova-push/blob/master/docs/PUSHAPE_TYPESCRIPT.md).\n",
+    "usage": "\n```typescript\nimport { PushapePush } from '@ionic-native/pushape-push/ngx';\n\n\nconstructor(private readonly pushapePush: PushapePush) { }\n\n...\n\n\n\n```\n",
+    "platforms": [
+      "Android",
+      "Browser",
+      "iOS"
+    ],
+    "repo": "https://github.com/gluelabs/pushape-cordova-push",
+    "cordovaPlugin": {
+      "name": "pushape-cordova-push"
     }
   },
   {
@@ -3034,6 +3210,22 @@
     }
   },
   {
+    "packageName": "@ionic-native/secure-storage-echo",
+    "displayName": "Secure Storage Echo",
+    "description": "\nThis plugin gets, sets and removes key,value pairs from a device's secure storage.\n\nRequires Cordova plugin: `cordova-plugin-secure-storage-echo`. For more info, please see the [Cordova Secure Storage docs](https://github.com/mibrito707/cordova-plugin-secure-storage-echo).\n\nThe browser platform is supported as a mock only. Key/values are stored unencrypted in localStorage.\n",
+    "usage": "\n\n```typescript\nimport { SecureStorageEcho, SecureStorageEchoObject } from '@ionic-native/secure-storage-echo/ngx';\n\nconstructor(private secureStorageEcho: SecureStorageEcho) { }\n\n...\n\nthis.secureStorageEcho.create('my_store_name')\n  .then((storage: SecureStorageEchoObject) => {\n\n     storage.get('key')\n       .then(\n         data => console.log(data),\n         error => console.log(error)\n     );\n\n     storage.set('key', 'value')\n       .then(\n        data => console.log(data),\n         error => console.log(error)\n     );\n\n     storage.remove('key')\n     .then(\n         data => console.log(data),\n         error => console.log(error)\n     );\n\n  });\n\n\n```",
+    "platforms": [
+      "Android",
+      "Browser",
+      "iOS",
+      "Windows"
+    ],
+    "repo": "https://github.com/mibrito707/cordova-plugin-secure-storage-echo",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-secure-storage-echo"
+    }
+  },
+  {
     "packageName": "@ionic-native/secure-storage",
     "displayName": "Secure Storage",
     "description": "\nThis plugin gets, sets and removes key,value pairs from a device's secure storage.\n\nRequires Cordova plugin: `cordova-plugin-secure-storage`. For more info, please see the [Cordova Secure Storage docs](https://github.com/Crypho/cordova-plugin-secure-storage).\n\nThe browser platform is supported as a mock only. Key/values are stored unencrypted in localStorage.\n",
@@ -3044,9 +3236,9 @@
       "iOS",
       "Windows"
     ],
-    "repo": "https://github.com/Crypho/cordova-plugin-secure-storage",
+    "repo": "https://github.com/mibrito707/cordova-plugin-secure-storage-echo",
     "cordovaPlugin": {
-      "name": "cordova-plugin-secure-storage"
+      "name": "cordova-plugin-secure-storage-echo"
     }
   },
   {
@@ -3077,6 +3269,20 @@
     }
   },
   {
+    "packageName": "@ionic-native/service-discovery",
+    "displayName": "ServiceDiscovery",
+    "description": "\nSimple plugin to get any SSDP / UPnP / DLNA service on a local network\n",
+    "usage": "\n```typescript\nimport { ServiceDiscovery } from '@ionic-native/service-discovery';\n\n\nconstructor(private serviceDiscovery: ServiceDiscovery) { }\n\n...\n\n\nthis.serviceDiscovery.getNetworkServices('ssdp:all')\n  .then(devices => console.log(devices))\n  .catch(error => console.error(error));\n\n```\n",
+    "platforms": [
+      "Android",
+      "iOS"
+    ],
+    "repo": "https://github.com/scottdermott/cordova-plugin-discovery",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-discovery"
+    }
+  },
+  {
     "packageName": "@ionic-native/shake",
     "displayName": "Shake",
     "description": "Handles shake gesture",
@@ -3087,6 +3293,32 @@
     "repo": "https://github.com/leecrossley/cordova-plugin-shake",
     "cordovaPlugin": {
       "name": "cordova-plugin-shake"
+    }
+  },
+  {
+    "packageName": "@ionic-native/shop-checkout",
+    "displayName": "ShopCheckout",
+    "description": "\nThis is a plugin that allows your Ionic app to use ShopChecout for Android.\nFollow the offical documentation to setup this plugin correctly: https://developer.shoptopup.com/docs/shoptopup-for-cordovaphonegap\n",
+    "usage": "\n```typescript\nimport { ShopCheckout } from '@ionic-native/shop-checkout/ngx';\n\n\nconstructor(private shopCheckout: ShopCheckout) { }\n\n...\n\nthis.shopCheckout.registerAgent();\n...\nthis.shopCheckout.openProducts();\n\n```\n",
+    "platforms": [
+      "Android"
+    ],
+    "repo": "https://github.com/tradedepot/cordova-shop-checkout",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-shop-checkout"
+    }
+  },
+  {
+    "packageName": "@ionic-native/sign-in-with-apple",
+    "displayName": "Sign In With Apple",
+    "description": "\nSign in with Apple makes it easy for users to sign in to your apps and websites using their Apple ID.\nInstead of filling out forms, verifying email addresses, and choosing new passwords,\nthey can use Sign in with Apple to set up an account and start using your app right away.\nAll accounts are protected with two-factor authentication for superior security,\nand Apple will not track users’ activity in your app or website.\n*Source:* https://developer.apple.com/sign-in-with-apple/\n",
+    "usage": "\n```typescript\nimport { SignInWithApple, AppleSignInResponse, AppleSignInErrorResponse, ASAuthorizationAppleIDRequest } from '@ionic-native/sign-in-with-apple/ngx';\n\n\nconstructor(private signInWithApple: SignInWithApple) { }\n\n...\n\n\n  this.signInWithApple.signin({\n    requestedScopes: [\n      ASAuthorizationAppleIDRequest.ASAuthorizationScopeFullName,\n      ASAuthorizationAppleIDRequest.ASAuthorizationScopeEmail\n    ]\n  })\n  .then((res: AppleSignInResponse) => {\n    // https://developer.apple.com/documentation/signinwithapplerestapi/verifying_a_user\n    alert('Send token to apple for verification: ' + res.identityToken);\n    console.log(res);\n  })\n  .catch((error: AppleSignInErrorResponse) => {\n    alert(error.code + ' ' + error.localizedDescription);\n    console.error(error);\n  });\n\n```\n",
+    "platforms": [
+      "iOS"
+    ],
+    "repo": "https://github.com/twogate/cordova-plugin-sign-in-with-apple",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-sign-in-with-apple"
     }
   },
   {
@@ -3121,10 +3353,11 @@
   {
     "packageName": "@ionic-native/smartlook",
     "displayName": "Smartlook",
-    "description": "\nOfficial Smartlook SDK plugin. For more information visit (www.smartlook.com).\n",
-    "usage": "\n```typescript\nimport { Smartlook } from '@ionic-native/smartlook/ngx';\n\n\nconstructor(private smartlook: Smartlook) { }\n\n...\n\n\nthis.smartlook.setupAndStartRecording(new SmartlookSetupConfig(\"key\"));\n\n```",
+    "description": "\nOfficial Smartlook SDK plugin.\nFull documentation can be found here: https://smartlook.github.io/docs/sdk/ionic/\n",
+    "usage": "\n```typescript\nimport { Smartlook, SmartlookSetupConfig } from '@ionic-native/smartlook/ngx';\n\n...\n\n@Component( ... )\nexport class AppComponent {\n    constructor(private smartlook: Smartlook) {\n       this.platform.ready().then(() => {\n           this.smartlook.setupAndStartRecording(new SmartlookSetupConfig(\"YOUR API KEY\"));\n       }\n    }\n}\n```",
     "platforms": [
-      "Android"
+      "Android",
+      "iOS"
     ],
     "repo": "https://github.com/smartlook/cordova-smartlook.git",
     "cordovaPlugin": {
@@ -3240,8 +3473,8 @@
     "cordovaPlugin": {
       "name": "cordova-plugin-splashscreen"
     },
-    "capacitorIncompatible": true,
-    "premierSlug": "splashscreen"
+    "premierSlug": "splashscreen",
+    "capacitorIncompatible": true
   },
   {
     "packageName": "@ionic-native/spotify-auth",
@@ -3351,8 +3584,8 @@
     "cordovaPlugin": {
       "name": "cordova-plugin-statusbar"
     },
-    "capacitorIncompatible": true,
-    "premierSlug": "statusbar"
+    "premierSlug": "statusbar",
+    "capacitorIncompatible": true
   },
   {
     "packageName": "@ionic-native/stepcounter",
@@ -3401,7 +3634,7 @@
     "packageName": "@ionic-native/sum-up",
     "displayName": "SumUp",
     "description": "\nPlugin to communicate with a SumUp payment terminal\n",
-    "usage": "\n```typescript\nimport { SumUp } from '@ionic-native/sum-up';\n\n\nconstructor(private sumUp: SumUp) { }\n\nthis.sumUp.login(\"ACCESS_TOKEN\")\n  .then((res: SumUpResponse) => console.log(res))\n  .catch((error: SumUpResponse) => console.error(error));\n\n this.sumUp.auth(\"ACCESS_TOKEN\")\n  .then((res: SumUpResponse) => console.log(res))\n  .catch((error: SumUpResponse) => console.error(error));\n\n this.sumUp.getSettings()\n  .then((res: SumUpResponse) => console.log(res))\n  .catch((error: SumUpResponse) => console.error(error));\n\n this.sumUp.logout()\n  .then((res: SumUpResponse) => console.log(res))\n  .catch((error: SumUpResponse) => console.error(error));\n\n this.sumUp.isLoggedIn()\n  .then((res: SumUpLoginStatus) => console.log(res))\n  .catch((error: SumUpLoginStatus) => console.error(error));\n\n this.sumUp.prepare()\n  .then((res: SumUpResponse) => console.log(res))\n  .catch((error: SumUpResponse) => console.error(error));\n\nthis.sumUp.closeConnection()\n  .then((res: SumUpResponse) => console.log(res))\n  .catch((error: SumUpResponse) => console.error(error));\n\nthis.sumUp.pay(10.0, \"EUR\")\n  .then((res: SumUpPayment) => console.log(res))\n  .catch((error: SumUpPayment) => console.error(error));\n\n```\n",
+    "usage": "\n```typescript\nimport { SumUp } from '@ionic-native/sum-up';\n\n\nconstructor(private sumUp: SumUp) { }\n\nconst sumUpKeys: SumUpKeys = new SumUpKeys();\nsumUpKeys.affiliateKey = 'YOUR_API_KEY'; // if not provided in installation\nsumUpKeys.accessToken = 'YOUR_ACCESS_TOKEN';\n\nthis.sumUp.login(sumUpKeys)\n  .then((res: SumUpResponse) => console.log(res))\n  .catch((error: SumUpResponse) => console.error(error));\n\n this.sumUp.auth('YOUR_ACCESS_TOKEN')\n  .then((res: SumUpResponse) => console.log(res))\n  .catch((error: SumUpResponse) => console.error(error));\n\n this.sumUp.getSettings()\n  .then((res: SumUpResponse) => console.log(res))\n  .catch((error: SumUpResponse) => console.error(error));\n\n this.sumUp.logout()\n  .then((res: SumUpResponse) => console.log(res))\n  .catch((error: SumUpResponse) => console.error(error));\n\n this.sumUp.isLoggedIn()\n  .then((res: SumUpLoginStatus) => console.log(res))\n  .catch((error: SumUpLoginStatus) => console.error(error));\n\n this.sumUp.prepare()\n  .then((res: SumUpResponse) => console.log(res))\n  .catch((error: SumUpResponse) => console.error(error));\n\nthis.sumUp.closeConnection()\n  .then((res: SumUpResponse) => console.log(res))\n  .catch((error: SumUpResponse) => console.error(error));\n\nthis.sumUp.pay(10.0, 'EUR')\n  .then((res: SumUpPayment) => console.log(res))\n  .catch((error: SumUpPayment) => console.error(error));\n\n```\n",
     "platforms": [
       "Android",
       "iOS"
@@ -3654,6 +3887,20 @@
     }
   },
   {
+    "packageName": "@ionic-native/usabilla-cordova-sdk",
+    "displayName": "Usabilla",
+    "description": "\nUsabilla SDK is designed and developed to collect feedback from your users with great ease and flexibility through your mobile application.\nThis document describes library integration steps for your Cordova project.\n\nFor more info see [Cordova plugin docs](https://github.com/usabilla/usabilla-u4a-cordova)\n",
+    "usage": "\n```typescript\nimport { Usabilla } from '@ionic-native/usabilla-cordova-sdk/ngx';\n\n\nconstructor(private usabilla: Usabilla) { }\n\n...\n\n\n this.usabilla.initialize(\n   appID: '<your_application_id>',\n   custom_vars: {\n     \"key\": \"value\"\n   });\n\n this.usabilla.loadFeedbackForm(\n   formID : '<your_form_id>'\n   );\n\n```\n",
+    "platforms": [
+      "Android",
+      "iOS"
+    ],
+    "repo": "https://github.com/usabilla/usabilla-u4a-cordova",
+    "cordovaPlugin": {
+      "name": "usabilla-cordova"
+    }
+  },
+  {
     "packageName": "@ionic-native/user-agent",
     "displayName": "User Agent",
     "description": "\nThe UserAgent plugin provides functions to set the HTTP  user-agent header. For more info about User-Agents, please [see the HTTP User-Agent docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent).\n\nRequires Cordova plugin: `cordova-useragent`. For more info, please see the [User-Agent plugin docs](https://github.com/LouisT/cordova-useragent).\n",
@@ -3665,6 +3912,24 @@
     "repo": "https://github.com/danielsogl/cordova-plugin-useragent",
     "cordovaPlugin": {
       "name": "cordova-plugin-useragent"
+    }
+  },
+  {
+    "packageName": "@ionic-native/vibes",
+    "displayName": "Vibes",
+    "description": "\nThis plugin enables integration with the Vibes Push SDK to your Cordova project with Android and iOS supported.\n",
+    "usage": "\n```typescript\nimport { Vibes } from '@ionic-native/vibes/ngx';\n\n\nconstructor(private vibes: Vibes) { }\n\n...\n\n\nthis.vibes.registerDevice()\n  .then((res: any) => console.log(`device registration success: ${res}`)) // retrieve and save the device_id from `res` JSON object\n  .catch((error: any) => console.error('Error registering device', error));\n\nthis.vibes.registerPush()\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error('Error registering push', error));\n\nthis.vibes.getVibesDeviceInfo()\n  .then((res: any) => console.log(res)) // retrieve the `device_id` and `push_token` from the JSON object\n  .catch((error: any) => console.error('Error retrieving deviceinfo push', error));\n\n```\n",
+    "platforms": [
+      "Android",
+      "iOS"
+    ],
+    "repo": "https://github.com/vibes/vibes-cordova.git",
+    "installVariables": [
+      "VIBES_APP_ID",
+      "VIBES_API_URL"
+    ],
+    "cordovaPlugin": {
+      "name": "vibes-cordova"
     }
   },
   {
@@ -3754,6 +4019,20 @@
     }
   },
   {
+    "packageName": "@ionic-native/web-socket-server",
+    "displayName": "WebSocket Server",
+    "description": "\nThis plugin allows you to run a single, lightweight, barebone WebSocket Server.\n",
+    "usage": "\n```typescript\nimport { WebSocketServer } from '@ionic-native/web-socket-server';\n\nconstructor(private wsserver: WebSocketServer) { }\n\n...\n\n// start websocket server\nthis.wsserver.start(8888, {}).subscribe({\n  next: server => console.log(`Listening on ${server.addr}:${server.port}`),\n  error: error => console.log(`Unexpected error`, error);\n});\n\n// watch for any messages\nthis.wsserver.watchMessage().subscribe(result => {\n  console.log(`Received message ${result.msg} from ${result.conn.uuid}`);\n});\n\n// send message to connection with specified uuid\nthis.wsserver.send({ uuid: '8e7c4f48-de68-4b6f-8fca-1067a353968d' }, 'Hello World');\n\n// stop websocket server\nthis.wsserver.stop().then(server => {\n  console.log(`Stop listening on ${server.addr}:${server.port}`);\n});\n\n```\n",
+    "platforms": [
+      "Android",
+      "iOS"
+    ],
+    "repo": "https://github.com/becvert/cordova-plugin-websocket-server",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-websocket-server"
+    }
+  },
+  {
     "packageName": "@ionic-native/webengage",
     "displayName": "Webengage",
     "description": "\nIonic-Native wrapper that wraps Webengage Cordova plugin for Android and iOS\n",
@@ -3796,6 +4075,20 @@
     "repo": "https://github.com/jasonmamy/cordova-wheel-selector-plugin",
     "cordovaPlugin": {
       "name": "cordova-wheel-selector-plugin"
+    }
+  },
+  {
+    "packageName": "@ionic-native/wifi-wizard-2",
+    "displayName": "WifiWizard2",
+    "description": "\nWifiWizard2 enables Wifi management for both Android and iOS applications within Cordova/Phonegap projects.\n\nThis project is a fork of the WifiWizard plugin with fixes and updates, as well as patches taken from the Cordova Network Manager plugin.\n",
+    "usage": "\n```typescript\nimport { WifiWizard2 } from '@ionic-native/wifi-wizard-2/ngx';\n\n\nconstructor(private wifiWizard2: WifiWizard2) { }\n\n\n# Global Functions\n These are functions that can be used by both Android and iOS applications\n ```typescript\n this.wifiWizard2.getConnectedSSID()\n ```\n - Returns connected network SSID (only if connected) in success callback, otherwise fail callback will be called (if not connected or unable to retrieve)\n - This does **NOT** return the BSSID if unable to obtain SSID (like original WifiWizard did)\n ```typescript\n this.wifiWizard2.getConnectedBSSID()\n ```\n - Same as above, except BSSID (mac) is returned\n\n ```typescript\n this.wifiWizard2.timeout(delay)\n ```\n - `delay` should be time in milliseconds to delay\n - Helper async timeout delay, `delay` is optional, default is 2000ms = 2 seconds\n - This method always returns a resolved promise after the delay, it will never reject or throw an error\n\n **Example inside async function**\n ```typescript\n async function example(){\n    await this.wifiWizard2.timeout(4000);\n    // do something after 4 seconds\n}\n ```\n\n **Example inside standard non-async function**\n ```typescript\n function example(){\n    this.wifiWizard2.timeout(4000).then( function(){\n        // do something after waiting 4 seconds\n    }):\n}\n ```\n\n **Thrown Errors**\n\n - `TIMEOUT_WAITING_FOR_SCAN` on timeout waiting for scan 10 seconds +\n - `SCAN_FAILED` if unable to start scan\n\n # iOS Functions\n For functionality, you need to note the following:\n - Connect/Disconnect only works for iOS11+\n - Can't run in the simulator so you need to attach an actual device when building with xCode\n - Will ensure 'HotspotConfiguration' and 'NetworkExtensions' capabilities are added to your xCode project\n - To connect to open network omit `ssidPassword` or call with `false`\n\n ```typescript\n this.wifiWizard2.iOSConnectNetwork(ssid, ssidPassword)\n ```\n ```typescript\n this.wifiWizard2.iOSDisconnectNetwork(ssid)\n ```\n\n # Android Functions\n - **WifiWizard2** *will automagically try to enable WiFi if it's disabled when calling any android related methods that require WiFi to be enabled*\n\n ## Connect vs Enable\n When writing Android Java code, there is no `connect` methods, you basically either `enable` or `disable` a network. In the original versions of WifiWizard the `connect` method would basically just call `enable` in Android.\n I have changed the way this works in WifiWizard2 version 3.0.0+, converting it to a helper method to eliminate having to call `formatWifiConfig` then `add` and then `enable` ... the `connect` method will now automatically call `formatWifiConfig`, then call `add` to either add or update the network configuration, and then call `enable`.\n If the connect method is unable to update existing network configuration (added by user or other apps), but there is a valid network ID, it will still attempt to enable that network ID.\n\n ```typescript\n this.wifiWizard2.connect(ssid, bindAll, password, algorithm, isHiddenSSID)\n ```\n - `ssid` should be the SSID to connect to *required*\n - `bindAll` should be set to `true` to tell Android to route all connections from your Android app, through the wifi connection (default is `false`) *optional*\n - See `WifiWizard2.enable` for more details regarding `bindAll` feature\n - `algorithm` and `password` is not required if connecting to an open network\n - Currently `WPA` and `WEP` are only supported algorithms\n - For `WPA2` just pass `WPA` as the algorithm\n - Set `isHiddenSSID` to `true` if the network you're connecting to is hidden\n - These arguments are the same as for `formatWifiConfig`\n - This method essentially calls `formatWifiConfig` then `add` then `enable`\n - If unable to update network configuration (was added by user or other app), but a valid network ID exists, this method will still attempt to enable the network\n - Promise will not be returned until method has verified that connection to WiFi was in completed state (waits up to 60 seconds)\n\n **Thrown Errors**\n\n\n - `CONNECT_FAILED_TIMEOUT` unable to verify connection, timed out after 60 seconds\n - `INVALID_NETWORK_ID_TO_CONNECT` Unable to connect based on generated wifi config\n - `INTERPUT_EXCEPT_WHILE_CONNECTING` Interupt exception while waiting for connection\n\n\n\n ## Disconnect vs Disable\n Same as above for Connect vs Enable, except in this situation, `disconnect` will first disable the network, and then attempt to remove it (if SSID is passed)\n\n ```typescript\n this.wifiWizard2.disconnect(ssid)\n ```\n - `ssid` can either be an SSID (string) or a network ID (integer)\n - `ssid` is **OPTIONAL** .. if not passed, will disconnect current WiFi (almost all Android versions now will just automatically reconnect to last wifi after disconnecting)\n - If `ssid` is provided, this method will first attempt to `disable` and then `remove` the network\n - If you do not want to remove network configuration, use `disable` instead\n\n **Thrown Errors**\n\n - `DISCONNECT_NET_REMOVE_ERROR` Android returned error when removing wifi configuration\n - `DISCONNECT_NET_DISABLE_ERROR` Unable to connect based on generated wifi config\n - `DISCONNECT_NET_ID_NOT_FOUND` Unable to determine network ID to disconnect/remove (from passed SSID)\n - `ERROR_DISCONNECT` - Android error disconnecting wifi (only when SSID is not passed)\n\n ```typescript\n this.wifiWizard2.formatWifiConfig(ssid, password, algorithm, isHiddenSSID)\n ```\n - `algorithm` and `password` is not required if connecting to an open network\n - Currently `WPA` and `WEP` are only supported algorithms\n - For `WPA2` just pass `WPA` as the algorithm\n - Set `isHiddenSSID` to `true` if the network you're connecting to is hidden\n ```typescript\n this.wifiWizard2.formatWPAConfig(ssid, password, isHiddenSSID)\n ```\n - This is just a helper method that calls `WifiWizard2.formatWifiConfig( ssid, password, 'WPA', isHiddenSSID );`\n\n ```typescript\n this.wifiWizard2.add(wifi)\n ```\n - `wifi` must be an object formatted by `formatWifiConfig`, this **must** be done before calling `enable`\n\n **Thrown Errors**\n\n - `AUTH_TYPE_NOT_SUPPORTED` - Invalid auth type specified\n - `ERROR_ADDING_NETWORK` - Android returned `-1` specifying error adding network\n - `ERROR_UPDATING_NETWORK` - Same as above, except an existing network ID was found, and unable to update it\n\n ```typescript\n this.wifiWizard2.remove(ssid)\n ```\n - `ssid` can either be an SSID (string) or a network ID (integer)\n - Please note, most newer versions of Android will only allow wifi to be removed if created by your application\n\n **Thrown Errors**\n\n - `UNABLE_TO_REMOVE` Android returned failure in removing network\n - `REMOVE_NETWORK_NOT_FOUND` Unable to determine network ID from passed SSID\n\n\n ```typescript\n this.wifiWizard2.listNetworks()\n ```\n\n ```typescript\n this.wifiWizard2.scan([options])\n ```\n - Same as calling `startScan` and then `getScanResults`, except this method will only resolve the promise after the scan completes and returns the results.\n\n ```typescript\n this.wifiWizard2.startScan()\n ```\n - It is recommended to just use the `scan` method instead of `startScan`\n\n **Thrown Errors**\n\n - `STARTSCAN_FAILED` Android returned failure in starting scan\n\n\n ```typescript\n this.wifiWizard2.getScanResults([options])\n ```\n - `getScanResults` should only be called after calling `startScan` (it is recommended to use `scan` instead as this starts the scan, then returns the results)\n - `[options]` is optional, if you do not want to specify, just pass `success` callback as first parameter, and `fail` callback as second parameter\n - Retrieves a list of the available networks as an array of objects and passes them to the function listHandler. The format of the array is:\n ```typescript\n networks = [\n {   \"level\": signal_level, // raw RSSI value\n        \"SSID\": ssid, // SSID as string, with escaped double quotes: \"\\\"ssid name\\\"\"\n        \"BSSID\": bssid // MAC address of WiFi router as string\n        \"frequency\": frequency of the access point channel in MHz\n        \"capabilities\": capabilities // Describes the authentication, key management, and encryption schemes supported by the access point.\n        \"timestamp\": timestamp // timestamp of when the scan was completed\n        \"channelWidth\":\n        \"centerFreq0\":\n        \"centerFreq1\":\n    }\n ]\n ```\n - `channelWidth` `centerFreq0` and `centerFreq1` are only supported on API > 23 (Marshmallow), any older API will return null for these values\n\n An options object may be passed. Currently, the only supported option is `numLevels`, and it has the following behavior:\n\n - if `(n == true || n < 2)`, `*.getScanResults({numLevels: n})` will return data as before, split in 5 levels;\n - if `(n > 1)`, `*.getScanResults({numLevels: n})` will calculate the signal level, split in n levels;\n - if `(n == false)`, `*.getScanResults({numLevels: n})` will use the raw signal level;\n\n ```typescript\n this.wifiWizard2.isWifiEnabled()\n ```\n - Returns boolean value of whether Wifi is enabled or not\n ```typescript\n this.wifiWizard2.setWifiEnabled(enabled)\n ```\n - Pass `true` for `enabled` parameter to set Wifi enabled\n - You do not need to call this function to set WiFi enabled to call other methods that require wifi enabled.  This plugin will automagically enable WiFi if a method is called that requires WiFi to be enabled.\n\n **Thrown Errors**\n\n - `ERROR_SETWIFIENABLED` wifi state does not match call (enable or disable)\n\n ```typescript\n this.wifiWizard2.getConnectedNetworkID()\n ```\n - Returns currently connected network ID in success callback (only if connected), otherwise fail callback will be called\n\n **Thrown Errors**\n\n - `GET_CONNECTED_NET_ID_ERROR` Unable to determine currently connected network ID (may not be connected)\n\n ## New to 3.1.1+\n ```typescript\n this.wifiWizard2.resetBindAll()\n ```\n - Disable bindAll to WiFi network without disconnecting from WiFi\n\n ```typescript\n this.wifiWizard2.setBindAll()\n ```\n - Enable bindAll to WiFi network without disconnecting from WiFi\n\n ```typescript\n this.wifiWizard2.canConnectToInternet()\n ```\n\n - Returns boolean, true or false, if device is able to connect to https://www.google.com via HTTP connection (since ping is unreliable)\n - Unknown errors will still be thrown like all other async functions\n - If you called `connect` or `enable` and passed `true` for `bindAll`, your application will force the ping through wifi connection.\n - If you did not pass `true` (or passed `false`) for `bindAll`, and the wifi does not have internet connection, Android Lollipop+ (API 21+) will use cell connection to ping (due to Android using cell connection when wifi does not have internet) [More Details](https://android-developers.googleblog.com/2016/07/connecting-your-app-to-wi-fi-device.html)\n\n\n ```typescript\n this.wifiWizard2.canConnectToRouter()\n ```\n - As `canPingWifiRouter` is notoriously unreliable, this method uses HTTP connection to test if able to connect to router (as most routers should have web server running on port 80)\n - Unknown errors will still be thrown like all other async functions\n - This is useful for testing to make sure that your Android app is able to connect to the private network after connecting to WiFi\n - This was added for testing the `bindAll` feature to support issues with Android Lollipop+ (API 21+) not routing calls through WiFi if WiFi does not have internet connection [See Android Blog](https://android-developers.googleblog.com/2016/07/connecting-your-app-to-wi-fi-device.html)\n - Attempts to connect router IP HTTP server on port 80 (example: `http://192.168.0.1/` where `192.168.0.1` is the automatically detected IP address)\n\n ## New to 3.0.0+\n ```typescript\n this.wifiWizard2.isConnectedToInternet()\n ```\n\n - Returns boolean, true or false, if device is able to ping 8.8.8.8\n - Unknown errors will still be thrown like all other async functions\n - If you called `connect` or `enable` and passed `true` for `bindAll`, your application will force the ping through wifi connection.\n - If you did not pass `true` (or passed `false`) for `bindAll`, and the wifi does not have internet connection, Android Lollipop+ (API 21+) will use cell connection to ping (due to Android using cell connection when wifi does not have internet) [More Details](https://android-developers.googleblog.com/2016/07/connecting-your-app-to-wi-fi-device.html)\n\n ```typescript\n this.wifiWizard2.canPingWifiRouter()\n ```\n\n - Returns boolean, true or false, if device is able to ping the connected WiFi router IP (obtained from DHCP info)\n - Version 3.1.1+ uses HTTP connection to test if able to connect to router (as ping previous did not work)\n - Unknown errors will still be thrown like all other async functions\n - This is useful for testing to make sure that your Android app is able to connect to the private network after connecting to WiFi\n - This was added for testing the `bindAll` feature to support issues with Android Lollipop+ (API 21+) not routing calls through WiFi if WiFi does not have internet connection [See Android Blog](https://android-developers.googleblog.com/2016/07/connecting-your-app-to-wi-fi-device.html)\n\n ```typescript\n this.wifiWizard2.enableWifi()\n ```\n\n ```typescript\n this.wifiWizard2.disableWifi()\n ```\n\n ```typescript\n this.wifiWizard2.getWifiIP()\n ```\n - Returns IPv4 address of currently connected WiFi, or rejects promise if IP not found or wifi not connected\n\n ```typescript\n this.wifiWizard2.getWifiRouterIP()\n ```\n - Returns IPv4 WiFi router IP from currently connected WiFi, or rejects promise if unable to determine, or wifi not connected\n\n **Thrown Errors**\n\n - `NO_VALID_IP_IDENTIFIED` if unable to determine a valid IP (ip returned from device is `0.0.0.0`)\n\n ```typescript\n this.wifiWizard2.getWifiIPInfo()\n ```\n - Returns a JSON object with IPv4 address and subnet `{\"ip\": \"192.168.1.2\", \"subnet\": \"255.255.255.0\" }` or rejected promise if not found or not connected\n **Thrown Errors**\n\n - `NO_VALID_IP_IDENTIFIED` if unable to determine a valid IP (ip returned from device is `0.0.0.0`)\n\n ```typescript\n this.wifiWizard2.reconnect()\n ```\n - Reconnect to the currently active access point, **if we are currently disconnected.**\n\n **Thrown Errors**\n\n - `ERROR_RECONNECT` Android returned error when reconnecting\n\n ```typescript\n this.wifiWizard2.reassociate()\n ```\n - Reconnect to the currently active access point, **even if we are already connected.**\n\n **Thrown Errors**\n\n - `ERROR_REASSOCIATE` Android returned error when reassociating\n\n\n ```typescript\n this.wifiWizard2.getSSIDNetworkID(ssid)\n ```\n - Get Android Network ID from passed SSID\n\n ```typescript\n this.wifiWizard2.disable(ssid)\n ```\n - `ssid` can either be an SSID (string) or a network ID (integer)\n - Disable the passed SSID network\n - Please note that most newer versions of Android will only allow you to disable networks created by your application\n\n **Thrown Errors**\n\n - `UNABLE_TO_DISABLE` Android returned failure in disabling network\n - `DISABLE_NETWORK_NOT_FOUND` Unable to determine network ID from passed SSID to disable\n\n\n ```typescript\n this.wifiWizard2.requestPermission()\n ```\n - Request `ACCESS_FINE_LOCATION` permssion\n - This Android permission is required to run `scan`, `startStart` and `getScanResults`\n - You can request permission by running this function manually, or WifiWizard2 will automagically request permission when one of the functions above is called\n\n **Thrown Errors**\n\n - `PERMISSION_DENIED` user denied permission on device\n\n\n ```typescript\n this.wifiWizard2.enable(ssid, bindAll, waitForConnection)\n ```\n - `ssid` can either be an SSID (string) or a network ID (integer)\n - `bindAll` should be set to `true` to tell Android to route all connections from your Android app, through the wifi connection\n - Android Lollipop+ (API 21+) will not route connections to the WiFi device if it does not have internet connection.  Passing `true` to `bindAll` will force Android to route connections from your Android app through Wifi, regardless of internet connection.\n - If you are having problems connecting to a local IP through WiFi because it does not have internet, try enabling `bindAll` and this should fix the problem.\n - During my testing, some versions of Android (5.0 - 7.1.2) would still route connections through WiFi without internet, but it was random that some versions would and would not work.\n - Testing Android Oreo+ (8.0.0+) if wifi does not have internet, 100% of the time it would NOT route connections through WiFi, so you *must* enable this for Oreo or newer to route connections from your application through wifi without internet.\n - When `bindAll` is enabled, *ALL* connections from your app will be routed through WiFi, until you call `disconnect` or `disable`\n - See the Google Android Blog for [More Details](https://android-developers.googleblog.com/2016/07/connecting-your-app-to-wi-fi-device.html)\n - This feature *ONLY* works for Android Lollipop+ (API 21+), if device is running API older than 21, `bindall` will be ignored (as API older than 21 does this by default)\n - Enable the passed SSID network\n - You **MUST** call `WifiWizard2.add(wifi)` before calling `enable` as the wifi configuration must exist before you can enable it (or previously used `connect` without calling `disconnect`)\n - This method does NOT wait or verify connection to wifi network, pass `true` to `waitForConnection` to only return promise once connection is verified in COMPLETED state to specific `ssid`\n\n **Thrown Errors**\n\n `UNABLE_TO_ENABLE` - Android returned `-1` signifying failure enabling\n\n # Installation\n\n ## Master\n\n Run ```cordova plugin add https://github.com/tripflex/wifiwizard2```\n\n To install from the master branch (latest on GitHub)\n\n To install a specific branch (add `#tag` replacing `tag` with tag from this repo, example:\n ```cordova plugin add https://github.com/tripflex/wifiwizard2#v3.1.1```\n\n Find available tags here:\n https://github.com/tripflex/WifiWizard2/tags\n\n\n If you are wanting to have the latest and greatest stable version, then run the 'Releases' command below.\n\n ## Releases\n Run ```cordova plugin add cordova-plugin-wifiwizard2```\n\n ## Meteor\n To install and use this plugin in a Meteor project, you have to specify the exact version from NPM repository:\n [https://www.npmjs.com/package/cordova-plugin-wifiwizard2](https://www.npmjs.com/package/cordova-plugin-wifiwizard2)\n\n As of April 4th 2019, the latest version is 3.1.1:\n\n ```meteor add cordova:cordova-plugin-wifiwizard2@3.1.1```\n\n # Errors/Rejections\n Methods now return formatted string errors as detailed below, instead of returning generic error messages.  This allows you to check yourself what specific error was returned, and customize the error message.\n In an upcoming release I may add easy ways to override generic messages, or set your own, but for now, errors returned can be found below each method/function.\n\n ## Generic **Thrown Errors**\n `WIFI_NOT_ENABLED`\n ```\n",
+    "platforms": [
+      "Android",
+      "iOS"
+    ],
+    "repo": "https://github.com/tripflex/WifiWizard2",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-wifiwizard2"
     }
   },
   {

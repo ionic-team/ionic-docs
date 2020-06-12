@@ -140,5 +140,5 @@ const writePage = (page: Page): Promise<any> => {
 };
 
 const toFilePath = (urlPath: string) => {
-  return `${resolve(PAGES_DIR, urlPath.slice(6) || 'index')}.json`;
+  return `${resolve(PAGES_DIR, urlPath.replace(/.*(\/docs\/|\/pages\/)/, '') || 'index')}.json`;
 };
