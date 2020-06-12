@@ -5,9 +5,9 @@ import { Component, Host, Prop, h } from '@stencil/core';
   shadow: true
 })
 export class CodePen {
-  @Prop() user: string;
-  @Prop() slug: string;
-  @Prop() penTitle: string;
+  @Prop() user!: string;
+  @Prop() slug!: string;
+  @Prop() penTitle?: string;
   @Prop() preview = true;
   @Prop() height: string | number = 300;
   @Prop() defaultTab = 'result';

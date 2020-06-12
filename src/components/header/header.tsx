@@ -13,7 +13,7 @@ export class DocsHeader {
   private frameRequested = false;
   private prevScroll = 0;
 
-  @Prop() toggleClickFn: (e: Event) => void;
+  @Prop() toggleClickFn!: (e: Event) => void;
 
   @Listen('scroll', { target: 'window' })
   handleScroll() {

@@ -5,7 +5,7 @@ import { toHypertext } from '../to-hypertext';
 
 const [getFramework] = useLocalStorage('ionic-docs:framework');
 
-export default props => {
+export default (props: { [key: string]: any }) => {
   const { page } = props;
   const headings = [...page.headings];
   const encapsulation = renderEncapsulation(page.encapsulation);
@@ -93,10 +93,10 @@ const renderEncapsulation = (encapsulation = {}) => {
   );
 };
 
-const renderUsage = (usage = {}, path: string) => {
+const renderUsage = (usage: { [key: string]: string } = {}, path: string) => {
   const keys = Object.keys(usage);
   const frameworkPref = getFramework();
-  const framework = frameworkPref !== undefined ? frameworkPref.toLowerCase() : null;
+  const framework = frameworkPref ? frameworkPref.toLowerCase() : null;
 
   if (keys.length === 0) {
     return null;
@@ -145,7 +145,7 @@ const renderProperties = (properties = []) => {
   );
 };
 
-const renderEvents = (events = []) => {
+const renderEvents = (events: any[] = []) => {
   if (events.length === 0) {
     return null;
   }
@@ -197,7 +197,7 @@ const renderMethods = (methods = []) => {
   );
 };
 
-const renderCustomProps = (customProps = []) => {
+const renderCustomProps = (customProps: any[] = []) => {
   if (customProps.length === 0) {
     return null;
   }
@@ -227,7 +227,7 @@ const renderCustomProps = (customProps = []) => {
   );
 };
 
-const renderSlots = (slots = []) => {
+const renderSlots = (slots: any[] = []) => {
   if (slots.length === 0) {
     return null;
   }

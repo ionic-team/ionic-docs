@@ -5,7 +5,7 @@ import { Component, Prop, h } from '@stencil/core';
   styleUrl: 'file-tree-file.css'
 })
 export class FileTreeFile {
-  @Prop() name: string;
+  @Prop() name!: string;
 
   get extname() {
     const dots = this.name.split('.');

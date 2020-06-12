@@ -33,9 +33,10 @@ export const convertCssToColors = (cssText: string) => {
     };
 
     const color: ColorVariable = { ...colorVar };
-    Object.keys(attrMap).forEach(key => {
+    const keys = Object.keys(attrMap) as any as (keyof typeof attrMap)[];
+    for (const key of keys) {
       color[key] = parseColorVar(colorVar.property + attrMap[key], cssText);
-    });
+    }
 
     colors.push(color);
   });
@@ -43,7 +44,11 @@ export const convertCssToColors = (cssText: string) => {
   return colors;
 };
 
-export const updateCssText = (colorAttr: string, cssText: string, newColorValue: string) => {
+export const updateCssText = (colorAttr: string, cssText: string, newColorValue?: string) => {
+  if (!newColorValue) {
+    return cssText;
+  }
+
   const oldKeyValue = getCssKeyVal(colorAttr, cssText);
   const newKeyValue = `${colorAttr}: ${newColorValue}`;
 

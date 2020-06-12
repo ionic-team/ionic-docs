@@ -11,7 +11,7 @@ export default {
   skip: () => true
 };
 
-const buildIndex = async dir => {
+const buildIndex = async (dir: any) => {
   const paths = await getPaths(dir);
   const records = await Promise.all(paths.map(toRecord));
   return outputJson(
@@ -21,7 +21,7 @@ const buildIndex = async dir => {
   );
 };
 
-const toRecord = async path => {
+const toRecord = async (path: any) => {
   const { title } = await readJson(path);
   const href = toHref(path);
   return {
@@ -31,7 +31,7 @@ const toRecord = async path => {
   };
 };
 
-const getPaths = cwd => {
+const getPaths = (cwd: any) => {
   return glob('**/*.json', {
     absolute: true,
     cwd
@@ -39,6 +39,6 @@ const getPaths = cwd => {
 };
 
 const toHref = (path: string) => {
-  const [, page] = /\/pages\/(.+)\.json$/.exec(path);
+  const [, page] = /\/pages\/(.+)\.json$/.exec(path) ?? [];
   return `/docs/${page}`;
 };

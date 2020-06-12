@@ -5,13 +5,13 @@ import { Component, Element, Prop, h } from '@stencil/core';
   styleUrl: 'hubspot-form.css'
 })
 export class HubspotForm {
-  @Prop() formId: string;
-  @Element() el;
+  @Prop() formId!: string;
+  @Element() el!: HTMLElement;
 
   componentWillLoad() {
     const script = document.createElement('script');
     script.onload = () => {
-      window['hbspt'].forms.create({
+      (window as any)['hbspt'].forms.create({
         portalId: '3776657',
         formId: this.formId,
         target: 'hubspot-form'

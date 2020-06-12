@@ -3,7 +3,7 @@ import { h } from '@stencil/core';
 import releases from '../data/release-notes.json';
 import { toHypertext } from '../to-hypertext.js';
 
-export default props => {
+export default (props: { [key: string]: any }) => {
   const { page } = props;
 
   if (releases.length === 0) {
@@ -68,7 +68,7 @@ export default props => {
   );
 };
 
-const getReleaseClasses = release => {
+const getReleaseClasses = (release: any) => {
   return {
     'release-note': true,
     [`release-note-${release.type}`]: true

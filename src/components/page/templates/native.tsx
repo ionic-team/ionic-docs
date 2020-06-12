@@ -3,7 +3,7 @@ import { h } from '@stencil/core';
 import { GitBranch } from '../../../icons';
 import { toHypertext } from '../to-hypertext';
 
-export default props => {
+export default (props: { [key: string]: any }) => {
   const { page } = props;
   const headings = [...page.headings];
   const repo = renderRepo(page.repo);
@@ -70,8 +70,8 @@ export default props => {
   );
 };
 
-const renderRepo = (repo: string) => {
-  if (repo === undefined) {
+const renderRepo = (repo?: string) => {
+  if (!repo) {
     return null;
   }
 
@@ -82,9 +82,9 @@ const renderRepo = (repo: string) => {
   );
 };
 
-const renderCordovaPromotion = (isPremier: string) => {
+const renderCordovaPromotion = (isPremier?: string) => {
   // Only show one promo message
-  if (isPremier !== undefined) {
+  if (isPremier) {
     return;
   }
 
@@ -102,8 +102,8 @@ const renderCordovaPromotion = (isPremier: string) => {
   );
 };
 
-const renderInstallation = (cordova: string, npm: string) => {
-  if (cordova === undefined || npm === undefined) {
+const renderInstallation = (cordova?: string, npm?: string) => {
+  if (!cordova || !npm) {
     return null;
   }
 
@@ -185,8 +185,8 @@ const renderCapIncompat = (capacitorIncompatible: boolean) => {
   );
 };
 
-const renderPremier = (premierSlug: string) => {
-  if (premierSlug === undefined) {
+const renderPremier = (premierSlug?: string) => {
+  if (!premierSlug) {
     return null;
   }
 

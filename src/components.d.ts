@@ -11,7 +11,7 @@ import { Link, MenuItems, Page, ReferenceKeys } from "./definitions";
 import { RouterHistory } from "@stencil/router";
 export namespace Components {
     interface CodeColor {
-        "display": string;
+        "display"?: string;
         "mode": string;
         "value": string;
     }
@@ -33,8 +33,8 @@ export namespace Components {
         "isNew": boolean;
         "isParentOpen": boolean;
         "name": string;
-        "property": string;
-        "value": string;
+        "property"?: string;
+        "value"?: string;
     }
     interface ColorGenerator {
     }
@@ -42,7 +42,7 @@ export namespace Components {
         "blink": boolean;
     }
     interface CommandLine {
-        "nobuttons": boolean;
+        "nobuttons"?: boolean;
     }
     interface CommandOutput {
     }
@@ -53,18 +53,18 @@ export namespace Components {
         "link": (contributor: string) => string;
     }
     interface DocsButton {
-        "href": string;
+        "href"?: string;
         "round": boolean;
     }
     interface DocsCard {
-        "header": string;
-        "hoverIcon": string;
-        "href": string;
-        "icon": string;
-        "iconset": string;
-        "img": string;
-        "ionicon": string;
-        "size": 'md' | 'lg';
+        "header"?: string;
+        "hoverIcon"?: string;
+        "href"?: string;
+        "icon"?: string;
+        "iconset"?: string;
+        "img"?: string;
+        "ionicon"?: string;
+        "size"?: 'md' | 'lg';
     }
     interface DocsCards {
     }
@@ -74,7 +74,7 @@ export namespace Components {
     interface DocsCodepen {
         "defaultTab": string;
         "height": string | number;
-        "penTitle": string;
+        "penTitle"?: string;
         "preview": boolean;
         "slug": string;
         "theme": string;
@@ -87,7 +87,7 @@ export namespace Components {
     interface DocsDropdown {
         "align": 'left' | 'right' | 'center';
         "close": () => Promise<void>;
-        "icon": (props: any) => JSX.Element;
+        "icon"?: (props: any) => JSX.Element;
         "label": string;
         "open": () => Promise<void>;
         "toggle": () => Promise<void>;
@@ -99,7 +99,7 @@ export namespace Components {
         "header": string;
         "href": string;
         "icon": string;
-        "ionicon": string;
+        "ionicon"?: string;
         "rounded": boolean;
     }
     interface DocsItemList {
@@ -136,8 +136,8 @@ export namespace Components {
     interface DocsRoot {
     }
     interface DocsSelect {
-        "initializer": (options: string[]) => string;
-        "optionRenderer": (option: string) => any;
+        "initializer": (options: string[]) => string | null;
+        "optionRenderer": (option: string | null) => any;
         "options": string[];
     }
     interface DocsTab {
@@ -150,7 +150,7 @@ export namespace Components {
         "links": Link[];
     }
     interface DocsTabs {
-        "listenFor": string;
+        "listenFor"?: string;
     }
     interface FileTree {
     }
@@ -162,7 +162,7 @@ export namespace Components {
         "name": string;
     }
     interface FrameworkSelect {
-        "toggleClickFn": (e: Event) => void;
+        "toggleClickFn"?: (e: Event) => void;
     }
     interface HeaderMobileCollapse {
         "darkMode": boolean;
@@ -173,13 +173,13 @@ export namespace Components {
     interface InternalAd {
     }
     interface IonicSearch {
-        "mobile": boolean;
+        "mobile"?: boolean;
     }
     interface LayeredColorsSelect {
     }
     interface NativeEntInstall {
         "capacitorSlug"?: string;
-        "pluginId": string;
+        "pluginId"?: string;
         "variables"?: string;
     }
     interface NewColorGenerator {
@@ -548,7 +548,7 @@ declare namespace LocalJSX {
     interface CodeColor {
         "display"?: string;
         "mode"?: string;
-        "value"?: string;
+        "value": string;
     }
     interface ColorAccordion {
     }
@@ -558,8 +558,8 @@ declare namespace LocalJSX {
         "onCssTextChange"?: (event: CustomEvent<any>) => void;
     }
     interface ColorGenPreview {
-        "cssText"?: string;
-        "demoMode"?: string;
+        "cssText": string;
+        "demoMode": string;
     }
     interface ColorGenSelectColors {
         "colors"?: ColorVariable[];
@@ -568,7 +568,7 @@ declare namespace LocalJSX {
         "editable"?: boolean;
         "isNew"?: boolean;
         "isParentOpen"?: boolean;
-        "name"?: string;
+        "name": string;
         "onColorChange"?: (event: CustomEvent<any>) => void;
         "onNameChange"?: (event: CustomEvent<any>) => void;
         "property"?: string;
@@ -578,7 +578,7 @@ declare namespace LocalJSX {
         "onDemoMessage"?: (event: CustomEvent<any>) => void;
     }
     interface CommandCursor {
-        "blink"?: boolean;
+        "blink": boolean;
     }
     interface CommandLine {
         "nobuttons"?: boolean;
@@ -615,36 +615,36 @@ declare namespace LocalJSX {
         "height"?: string | number;
         "penTitle"?: string;
         "preview"?: boolean;
-        "slug"?: string;
+        "slug": string;
         "theme"?: string;
-        "user"?: string;
+        "user": string;
     }
     interface DocsDemo {
-        "source"?: string;
-        "url"?: string;
+        "source": string;
+        "url": string;
     }
     interface DocsDropdown {
         "align"?: 'left' | 'right' | 'center';
         "icon"?: (props: any) => JSX.Element;
-        "label"?: string;
+        "label": string;
     }
     interface DocsHeader {
-        "toggleClickFn"?: (e: Event) => void;
+        "toggleClickFn": (e: Event) => void;
     }
     interface DocsItem {
-        "header"?: string;
-        "href"?: string;
-        "icon"?: string;
+        "header": string;
+        "href": string;
+        "icon": string;
         "ionicon"?: string;
         "rounded"?: boolean;
     }
     interface DocsItemList {
     }
     interface DocsMenu {
-        "toggleClickFn"?: (e: Event) => void;
+        "toggleClickFn": (e: Event) => void;
     }
     interface DocsMenuCollapsible {
-        "heading"?: string;
+        "heading": string;
     }
     interface DocsMenuEnterprise {
     }
@@ -653,34 +653,34 @@ declare namespace LocalJSX {
     interface DocsMenuToggle {
     }
     interface DocsNav {
-        "items"?: MenuItems;
+        "items": MenuItems;
     }
     interface DocsPage {
-        "history"?: RouterHistory;
-        "path"?: string;
+        "history": RouterHistory;
+        "path": string;
     }
     interface DocsPageFooter {
-        "page"?: Page;
+        "page": Page;
     }
     interface DocsPagination {
         "page"?: Page;
     }
     interface DocsReference {
-        "data"?: any[];
-        "keys"?: ReferenceKeys;
+        "data": any[];
+        "keys": ReferenceKeys;
     }
     interface DocsRoot {
         "onPageChanged"?: (event: CustomEvent<any>) => void;
     }
     interface DocsSelect {
-        "initializer"?: (options: string[]) => string;
+        "initializer": (options: string[]) => string | null;
         "onSelection"?: (event: CustomEvent<string>) => void;
-        "optionRenderer"?: (option: string) => any;
-        "options"?: string[];
+        "optionRenderer"?: (option: string | null) => any;
+        "options": string[];
     }
     interface DocsTab {
         "selected"?: boolean;
-        "tab"?: string;
+        "tab": string;
     }
     interface DocsTableOfContents {
         "basepath"?: string;
@@ -694,10 +694,10 @@ declare namespace LocalJSX {
     }
     interface FileTreeDirectory {
         "collapsed"?: boolean;
-        "name"?: string;
+        "name": string;
     }
     interface FileTreeFile {
-        "name"?: string;
+        "name": string;
     }
     interface FrameworkSelect {
         "toggleClickFn"?: (e: Event) => void;
@@ -706,7 +706,7 @@ declare namespace LocalJSX {
         "darkMode"?: boolean;
     }
     interface HubspotForm {
-        "formId"?: string;
+        "formId": string;
     }
     interface InternalAd {
     }
@@ -725,7 +725,7 @@ declare namespace LocalJSX {
     interface SteppedColorGenerator {
     }
     interface WistiaVideo {
-        "videoId"?: string;
+        "videoId": string;
     }
     interface IntrinsicElements {
         "code-color": CodeColor;

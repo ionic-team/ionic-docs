@@ -14,9 +14,9 @@ export class HeaderMobileCollapse {
   @State() mobileDropdownActive = false;
   @State() stuck = false;
   @State() queued = false;
-  @Element() el;
+  @Element() el!: HTMLElement;
 
-  observer: IntersectionObserver;
+  observer!: IntersectionObserver;
 
   @Listen('pageChanged', { target: 'body' })
   deactivate() {
@@ -66,8 +66,10 @@ export class HeaderMobileCollapse {
       }
     }, { threshold: [0, 1] });
 
-    if (this.el) {
-      this.observer.observe(document.getElementById('ionic-sub-header__trigger'));
+    const headerEl = document.getElementById('ionic-sub-header__trigger');
+
+    if (this.el && headerEl) {
+      this.observer.observe(headerEl);
       setTimeout(() => {
         this.el.classList.add('ionic-sub-header--initialized');
         const navBar = document.querySelector('.navbar-default');

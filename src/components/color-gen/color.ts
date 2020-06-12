@@ -10,7 +10,7 @@ export interface HSL {
   s: number;
 }
 
-const componentToHex = c => {
+const componentToHex = (c: number) => {
   const hex = c.toString(16);
   return hex.length === 1 ? `0${hex}` : hex;
 };
@@ -50,7 +50,7 @@ const hslToRGB = ({ h, s, l }: HSL): RGB => {
   }
 
   // tslint:disable-next-line:no-shadowed-variable
-  const hue2rgb = (p, q, t) => {
+  const hue2rgb = (p: number, q: number, t: number) => {
     if (t < 0) { t += 1; }
     if (t > 1) { t -= 1; }
     if (t < 1 / 6) { return p + (q - p) * 6 * t; }
@@ -131,10 +131,10 @@ export class Color {
 
   constructor(value: string | RGB | HSL) {
     if (typeof(value) === 'string' && /rgb\(/.test(value)) {
-      const matches = /rgb\((\d{1,3}), ?(\d{1,3}), ?(\d{1,3})\)/.exec(value);
+      const matches = /rgb\((\d{1,3}), ?(\d{1,3}), ?(\d{1,3})\)/.exec(value) ?? [];
       value = { r: parseInt(matches[0], 10), g: parseInt(matches[1], 10), b: parseInt(matches[2], 10) };
     } else if (typeof(value) === 'string' && /hsl\(/.test(value)) {
-      const matches = /hsl\((\d{1,3}), ?(\d{1,3}%), ?(\d{1,3}%)\)/.exec(value);
+      const matches = /hsl\((\d{1,3}), ?(\d{1,3}%), ?(\d{1,3}%)\)/.exec(value) ?? [];
       value = { h: parseInt(matches[0], 10), s: parseInt(matches[1], 10), l: parseInt(matches[2], 10) };
     }
 
@@ -152,7 +152,7 @@ export class Color {
       this.rgb = hslToRGB(this.hsl);
       this.hex = rgbToHex(this.rgb);
     } else {
-      return null;
+      throw new Error('Incorrect value passed.');
     }
 
     this.yiq = rgbToYIQ(this.rgb);

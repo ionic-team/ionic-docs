@@ -7,31 +7,31 @@ import { Outbound } from '../../icons';
   styleUrl: 'card.css'
 })
 export class DocsCard {
-  @Prop() href: string;
-  @Prop() header: string;
-  @Prop() icon: string;
-  @Prop() hoverIcon: string;
-  @Prop() iconset: string;
-  @Prop() ionicon: string;
-  @Prop() img: string;
-  @Prop() size: 'md' | 'lg';
+  @Prop() href?: string;
+  @Prop() header?: string;
+  @Prop() icon?: string;
+  @Prop() hoverIcon?: string;
+  @Prop() iconset?: string;
+  @Prop() ionicon?: string;
+  @Prop() img?: string;
+  @Prop() size?: 'md' | 'lg';
   @State() activeIndex = 0;
 
-  interval: number;
+  interval!: number;
   rotationTime = 6000; // 4 seconds
 
   hostData() {
     return {
       class: {
-        'Card-with-image': this.img !== undefined,
-        'Card-without-image': this.img === undefined,
+        'Card-with-image': this.img,
+        'Card-without-image': !this.img,
         'Card-size-lg': this.size === 'lg',
       }
     };
   }
 
   componentWillLoad() {
-    if (this.iconset === undefined) { return; }
+    if (!this.iconset) { return; }
     this.activeIndex = 0;
     this.rotationTime = 4000 + (Math.random() * 2000); // 4 - 6 seconds - randomize it a bit
     // make the first transiton happen a bit faster
@@ -44,16 +44,16 @@ export class DocsCard {
   }
 
   tic() {
-    if (this.activeIndex >= this.iconset.split(',').length - 1) {
+    if (this.iconset && this.activeIndex >= this.iconset.split(',').length - 1) {
       return this.activeIndex = 0;
     }
     this.activeIndex++;
   }
 
   render() {
-    const isStatic = this.href === undefined;
-    const isOutbound = /^http/.test(this.href);
-    const header = this.header === undefined ? null : (
+    const isStatic = !this.href;
+    const isOutbound = this.href ? /^http/.test(this.href) : false;
+    const header = !this.header ? null : (
       <header class="Card-header">
         {this.header} {isOutbound ? <Outbound/> : null}
       </header>

@@ -1,7 +1,7 @@
 
 export interface ColorVariable {
-  property?: string;
-  name?: string;
+  property: string;
+  name: string;
   value?: string;
   valueRgb?: string;
   contrast?: string;

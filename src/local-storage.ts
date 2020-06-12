@@ -1,4 +1,4 @@
-const getItem = (key: string): string => {
+const getItem = (key: string): string | null => {
   try {
     return localStorage.getItem(key);
   } catch (error) {
@@ -7,7 +7,7 @@ const getItem = (key: string): string => {
   }
 };
 
-const setItem = (key: string, value: string): string => {
+const setItem = (key: string, value: string): string | null => {
   try {
     if (localStorage.getItem(key) === value) {
       return value;
@@ -29,8 +29,8 @@ const notify = (key: string, value: string) => {
   }
 };
 
-type LocalStorageGetter = () => string;
-type LocalStorageSetter = (value: string) => string;
+type LocalStorageGetter = () => string | null;
+type LocalStorageSetter = (value: string) => string | null;
 
 export const useLocalStorage = (key: string, defaultValue?: string): [
   LocalStorageGetter,

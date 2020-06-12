@@ -10,7 +10,7 @@ export class ColorAccordion {
 
   @State() activeColor = '';
 
-  @Element() el: HTMLElement;
+  @Element() el!: HTMLElement;
 
   toggleActiveColor(color: string) {
     if (this.activeColor === color) {

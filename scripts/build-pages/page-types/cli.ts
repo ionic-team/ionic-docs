@@ -28,12 +28,12 @@ const getCLIPages = async (): Promise<Page[]> => {
   });
 };
 
-const renderInputs = inputs => inputs.map(input => ({
+const renderInputs = (inputs: any) => inputs.map((input: any) => ({
   ...input,
   summary: renderMarkdown(input.summary),
 }));
 
-const renderOptions = options => options.map(option => ({
+const renderOptions = (options: any) => options.map((option: any) => ({
   ...option,
   summary: renderMarkdown(option.summary),
 }));

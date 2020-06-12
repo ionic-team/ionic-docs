@@ -7,7 +7,7 @@ const OUTPUT_PATH = resolve(
   '../../src/components/page/data/api-reference.json'
 );
 
-const reference = components.map(component => [
+const reference = components.map((component: any) => [
   component.tag,
   `/docs/api/${component.tag.slice(4)}`
 ]);

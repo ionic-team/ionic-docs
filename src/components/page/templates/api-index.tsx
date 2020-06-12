@@ -8,7 +8,7 @@ const listStyle = {
   fontSize: '13px'
 };
 
-export default props => {
+export default (props: { [key: string]: any }) => {
   return (
     <article>
       <h1>{props.page.title}</h1>

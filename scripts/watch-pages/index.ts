@@ -8,7 +8,7 @@ const PAGES_GLOB = `${resolve(__dirname, '../../src/pages')}/**/*.md`;
 const watcher = chokidar.watch(PAGES_GLOB, { ignoreInitial: true });
 const spinner = ora('Watching pages').start();
 
-const handleChange = async path => {
+const handleChange = async (path: any) => {
   try {
     spinner.text = `Building ${path}`;
     await buildStaticPage(path, { prod: false });

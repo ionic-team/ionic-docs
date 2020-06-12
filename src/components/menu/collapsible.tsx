@@ -7,9 +7,9 @@ import { DownArrow } from '../../icons';
   styleUrl: 'collapsible.css'
 })
 export class DocsMenuCollapsible {
-  @Prop() heading: string;
+  @Prop() heading!: string;
   @State() isOpen = true; // default open
-  @Element() el: HTMLElement;
+  @Element() el!: HTMLElement;
 
   hostData() {
     return {
@@ -44,7 +44,7 @@ export class DocsMenuCollapsible {
   }
 }
 
-const removeClassThatStartWith = (el: HTMLElement, classStart) => {
+const removeClassThatStartWith = (el: HTMLElement, classStart: string) => {
   el.classList.forEach(className => {
     if (className.startsWith(classStart)) {
       el.classList.remove(className);

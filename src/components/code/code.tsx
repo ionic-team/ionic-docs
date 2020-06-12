@@ -7,7 +7,7 @@ import { CheckmarkSoft } from '../../icons';
   styleUrl: 'code.css'
 })
 export class DocsCode {
-  @Element() el: HTMLElement;
+  @Element() el!: HTMLElement;
   @Prop({ reflectToAttr: true }) language = '';
   @State() showCopyConfirmation = false;
 
@@ -15,7 +15,7 @@ export class DocsCode {
     this.showCopyConfirmation = true;
 
     const codeEl = this.el.querySelector('code');
-    const codeText = codeEl.textContent || '';
+    const codeText = codeEl && codeEl.textContent || '';
 
     const el = document.createElement('textarea');
     el.value = codeText;

@@ -13,7 +13,7 @@ const OUTPUT_PATH = resolve(
 
 export default {
   title: 'Getting a list of past commits',
-  task: async (_, task) => {
+  task: async (_: any, task: any) => {
     const History = await getAllGHCommits(task);
     if (Object.keys(History).length > 0) {
       outputJson(OUTPUT_PATH, History, { spaces: 2 });
@@ -21,7 +21,7 @@ export default {
   }
 };
 
-const getAllGHCommits = async (task, page = 1) => {
+const getAllGHCommits = async (task: any, page = 1) => {
   try {
     task.output = `Getting commits: ${page * 100 - 99} - ${page * 100}`;
     const request = await fetch(url.format({
@@ -35,7 +35,7 @@ const getAllGHCommits = async (task, page = 1) => {
       }
     }));
 
-    let commits = await request.json().then(list => list.reduce((obj, commit) => {
+    let commits = await request.json().then(list => list.reduce((obj: any, commit: any) => {
       obj[commit.sha] = {
         id: commit.author.login,
         avatar: commit.author.avatar_url,

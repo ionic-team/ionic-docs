@@ -1,12 +1,12 @@
 import Prism from 'prismjs';
-import loadLanguages from 'prismjs/components/';
+const loadLanguages = require('prismjs/components/'); // tslint:disable-line
 
 export default (code: string, info: string) => {
   const [lang] = info !== undefined ? info.split(/\s+/).map(s => s.toLowerCase()) : [null];
-  const isShell = shells.includes(lang);
+  const isShell = lang ? shells.includes(lang) : false;
   const language = isShell ? 'shell' : lang;
 
-  if (Prism.languages[language] == null) {
+  if (!language || Prism.languages[language] == null) {
     return `
 <docs-code language=${language}>
   <pre><code>${escape(code)}</code></pre>
@@ -16,7 +16,7 @@ export default (code: string, info: string) => {
 
   return `
 <docs-code language="${language}">
-  <pre><code>${Prism.highlight(code, language !== undefined ? Prism.languages[language] : null, language)}</code></pre>
+  <pre><code>${Prism.highlight(code, Prism.languages[language], language)}</code></pre>
 </docs-code>
 `;
 };
@@ -41,7 +41,7 @@ const shells = [
 const escape = (code: string) =>
   code.replace(/[&<>"']/g, char => escapeMap[char]);
 
-const escapeMap = {
+const escapeMap: { [key: string]: string; } = {
   '&': '&amp;',
   '<': '&lt;',
   '>': '&gt;',

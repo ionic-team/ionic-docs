@@ -1,7 +1,7 @@
 import Listr from 'listr';
 
 import buildApiReference from './api-reference';
-import buildContributors from './file-contributors';
+// import buildContributors from './file-contributors';
 import buildReleaseNotes from './release-notes';
 import buildSearchIndex from './search-index';
 

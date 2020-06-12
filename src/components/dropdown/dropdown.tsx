@@ -8,15 +8,15 @@ import { DownArrow } from '../../icons';
 })
 export class DocsDropdown {
   @Prop() align: 'left' | 'right' | 'center' = 'left';
-  @Prop() label: string;
-  @Prop() icon: (props: any) => JSX.Element;
+  @Prop() label!: string;
+  @Prop() icon?: (props: any) => JSX.Element;
   @State() isOpen = false;
-  @Element() element: HTMLElement;
+  @Element() el!: HTMLElement;
 
   @Listen('click', { target: 'window' })
   handleClick(event: MouseEvent) {
     const isNode = event.target instanceof Node;
-    const isOurs = isNode && this.element.contains(event.target as Node);
+    const isOurs = isNode && this.el.contains(event.target as Node);
 
     if (!isOurs) {
       this.close();

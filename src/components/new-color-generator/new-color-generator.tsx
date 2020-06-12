@@ -12,7 +12,7 @@ export class ColorGenerator {
   @State() name = 'New';
   @State() value = '#69bb7b';
 
-  @Element() el: HTMLElement;
+  @Element() el!: HTMLElement;
 
   @Listen('nameChange')
   onNameChange(ev: any) {

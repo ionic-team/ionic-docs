@@ -7,10 +7,10 @@ import { ReferenceKeys } from '../../definitions';
   styleUrl: 'reference.css'
 })
 export class DocsReference {
-  @Prop() data: any[];
-  @Prop() keys: ReferenceKeys;
+  @Prop() data!: any[];
+  @Prop() keys!: ReferenceKeys;
 
-  toItem = item => {
+  toItem = (item: any) => {
     const { Head, ...keys } = this.keys;
 
     return [

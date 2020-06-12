@@ -4,7 +4,7 @@ import { Build, Component, Prop, h } from '@stencil/core';
   tag: 'wistia-video'
 })
 export class WistiaVideo {
-  @Prop() videoId: string;
+  @Prop() videoId!: string;
 
   componentDidLoad() {
     if (document.getElementById('wistia_script') || !Build.isBrowser) { return; }

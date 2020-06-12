@@ -5,11 +5,11 @@ import { Component, Element, State, h } from '@stencil/core';
   styleUrl: 'layered-colors-select.css'
 })
 export class ColorBlock {
-  @Element() el: HTMLElement;
+  @Element() el!: HTMLElement;
 
   @State() color = 'primary';
 
-  changeColor(ev) {
+  changeColor(ev: CustomEvent) {
     this.color = ev.detail.value;
   }
 

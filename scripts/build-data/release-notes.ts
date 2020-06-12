@@ -107,7 +107,7 @@ const getVersionType = (version: string) => {
 };
 
 // Given a version, return its element symbol
-const getVersionSymbol = version => {
+const getVersionSymbol = (version: string) => {
   const filteredVersions = versions.filter(
     v => version.startsWith(`${v.minor}.`)
   );
@@ -117,7 +117,7 @@ const getVersionSymbol = version => {
 };
 
 // Given a version, return its element name
-const getVersionElement = version => {
+const getVersionElement = (version: string) => {
   const filteredVersions = versions.filter(
     v => version.startsWith(`${v.minor}.`)
   );

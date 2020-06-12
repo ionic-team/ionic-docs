@@ -34,19 +34,19 @@ const getAPIPages = async (): Promise<Page[]> => {
   return Promise.all(pages);
 };
 
-const renderUsage = (usage, baseUrl) => Object.keys(usage).reduce((out, key) => {
+const renderUsage = (usage: any, baseUrl: any) => Object.keys(usage).reduce((out: any, key: any) => {
   out[key] = markdownRenderer(usage[key], baseUrl);
   return out;
 }, {});
 
-const renderDocsKey = (items, baseUrl) => items.map(item => ({
+const renderDocsKey = (items: any, baseUrl: any) => items.map((item: any) => ({
   ...item,
   docs: markdownRenderer(item.docs, baseUrl)
 }));
 
 const DEMOS_PATH = resolve(__dirname, '../../../src/demos');
 
-const getDemoUrl = async component => {
+const getDemoUrl = async (component: any) => {
   const demoPath = `api/${component.tag.slice(4)}/index.html`;
   const hasDemo = await fs.pathExists(join(DEMOS_PATH, demoPath));
   if (hasDemo) {

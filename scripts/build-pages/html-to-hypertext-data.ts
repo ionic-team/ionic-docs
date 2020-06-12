@@ -7,7 +7,7 @@ export const convertHtmlToHypertextData = (html: string): any => {
   return convertElementToHypertextData(div);
 };
 
-const convertElementToHypertextData = (node: any) => {
+const convertElementToHypertextData = (node: any): any => {
   const data = [];
 
   if (node.nodeType === 1) {
@@ -20,7 +20,7 @@ const convertElementToHypertextData = (node: any) => {
     data.push(tag);
 
     if (node.attributes.length > 0) {
-      const attrs = {};
+      const attrs: { [key: string]: any; } = {};
       for (let j = 0; j < node.attributes.length; j++) {
         const attr = node.attributes.item(j);
         attrs[attr.nodeName] = attr.nodeValue;

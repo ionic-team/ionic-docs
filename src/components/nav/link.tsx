@@ -3,11 +3,11 @@ import { h } from '@stencil/core';
 import { Outbound } from '../../icons';
 import { l10n } from '../../l10n';
 
-export const link = item => {
-  const isExternalLink = (href: string) => {
-    return href.indexOf('http') === 0;
-  };
+const isExternalLink = (href: string) => {
+  return href.indexOf('http') === 0;
+};
 
+export const link = (item: [string, string]) => {
   const [id, href] = item;
   const text = l10n.getString(id) || id;
   const isExternal = isExternalLink(href);

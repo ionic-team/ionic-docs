@@ -11,7 +11,7 @@ import { trackClick, trackView } from './tracking-service';
 export class InternalAd {
   @State() ad: any;
 
-  timeout: ReturnType<typeof setTimeout>;
+  timeout!: ReturnType<typeof setTimeout>;
 
   constructor() {
     this.update();

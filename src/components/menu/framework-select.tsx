@@ -7,10 +7,10 @@ import { useLocalStorage } from '../../local-storage';
   tag: 'framework-select'
 })
 export class DocsMenu {
-  @Prop() toggleClickFn: (e: Event) => void;
-  @Element() el;
+  @Prop() toggleClickFn?: (e: Event) => void;
+  @Element() el!: HTMLElement;
 
-  getFramework: () => string;
+  getFramework: () => string | null;
   setFramework: (framework: string) => void;
 
   frameworks = [
@@ -20,7 +20,7 @@ export class DocsMenu {
     'Vue'
   ];
 
-  frameworkIcons = {
+  frameworkIcons: any = {
     Angular,
     JavaScript,
     React,
@@ -37,15 +37,16 @@ export class DocsMenu {
   }
 
   componentDidLoad() {
-    this.el.querySelectorAll('.Select-option--selected').forEach(menuItem => {
+    const selected: NodeListOf<HTMLElement> = this.el.querySelectorAll('.Select-option--selected');
+    selected.forEach(menuItem => {
       if (this.getFramework() !== menuItem.innerText) {
         menuItem.classList.remove('Select-option--selected');
       }
     });
   }
 
-  renderOption = (framework: string) => {
-    const Icon = this.frameworkIcons[framework];
+  renderOption = (framework: string | null) => {
+    const Icon = framework ? this.frameworkIcons[framework] : null;
     return (
       <div class="FrameworkSelect-framework">
         <Icon class="FrameworkSelect-icon"/>

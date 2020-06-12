@@ -1,6 +1,6 @@
 export interface Page {
-  title: string;
-  body: string;
+  title: string | null;
+  body: string | null;
   [key: string]: any;
 }
 

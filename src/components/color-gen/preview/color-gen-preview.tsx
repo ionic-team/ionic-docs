@@ -7,9 +7,9 @@ import { Component, Prop, Watch, h } from '@stencil/core';
 })
 export class ColorGenPreview {
 
-  @Prop() cssText: string;
-  @Prop() demoMode: string;
-  iframe: HTMLIFrameElement;
+  @Prop() cssText!: string;
+  @Prop() demoMode!: string;
+  iframe!: HTMLIFrameElement;
 
   applyStyles() {
     if (this.iframe && this.iframe.contentDocument && this.iframe.contentDocument.documentElement) {

@@ -7,7 +7,7 @@ import { LocationSegments, RouterHistory } from '@stencil/router';
   styleUrl: 'root.css'
 })
 export class DocsRoot {
-  history: RouterHistory = null;
+  history: RouterHistory | null = null;
 
   @State() isMenuToggled = false;
 
@@ -18,7 +18,7 @@ export class DocsRoot {
     }
   }
 
-  @Event() pageChanged: EventEmitter;
+  @Event() pageChanged!: EventEmitter;
   newPage(location: LocationSegments) {
     (window as any).gtag('config', 'UA-44023830-1', { 'page_path': location.pathname + location.search });
     this.pageChanged.emit(location);

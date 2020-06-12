@@ -5,12 +5,12 @@ import { Component, Event, EventEmitter, Prop, State, Watch, h } from '@stencil/
   styleUrl: 'select.css'
 })
 export class DocsSelect {
-  private dropdown;
+  private dropdown!: any;
 
-  @State() selected: string;
-  @Prop({ mutable: true }) options: string[];
-  @Prop() initializer: (options: string[]) => string;
-  @Prop() optionRenderer: (option: string) => any = (option: string) => option;
+  @State() selected!: string | null;
+  @Prop({ mutable: true }) options!: string[];
+  @Prop() initializer!: (options: string[]) => string | null;
+  @Prop() optionRenderer: (option: string | null) => any = (option: string | null) => option;
 
   select = (option: string) => {
     this.selected = option;

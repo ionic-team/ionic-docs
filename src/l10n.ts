@@ -4,7 +4,7 @@ import fr from './assets/locales/fr/messages.json';
 import pt from './assets/locales/pt/messages.json';
 import zh from './assets/locales/zh/messages.json';
 
-const MESSAGES_ALL = {
+const MESSAGES_ALL: any = {
   'en': en,
   'es': es,
   'fr': fr,
@@ -26,7 +26,7 @@ export class DocsLocalization {
 
   getLocale = () => this.locale;
 
-  getString = (id: string) => this.bundle[id] || en[id];
+  getString = (id: string) => this.bundle[id] || (en as any)[id];
 }
 
 export const l10n = new DocsLocalization();

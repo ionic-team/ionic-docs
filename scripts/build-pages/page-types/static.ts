@@ -17,7 +17,7 @@ import markdownRenderer from '../markdown-renderer';
 
 export default {
   title: 'Build static pages',
-  task: (_, status) => buildPages(getStaticPages, status)
+  task: (_: any, status: any) => buildPages(getStaticPages, status)
 };
 
 const getStaticPages = async (): Promise<Page[]> => {
@@ -58,7 +58,7 @@ const readMarkdown = (path: string): Promise<string> =>
   });
 
 const getGitHubData = async (filePath: string) => {
-  const [, path] = /^.+\/(src\/pages\/.+\.md)$/.exec(filePath);
+  const [, path] = /^.+\/(src\/pages\/.+\.md)$/.exec(filePath) ?? [];
 
   try {
     const { contributors, lastUpdated } = await getFileContributors(filePath);
@@ -77,13 +77,14 @@ const getGitHubData = async (filePath: string) => {
   }
 };
 
-const getFileContributors = async filename => {
+const getFileContributors = async (filename: string) => {
   return simplegit().log({ file: filename }).then(status => ({
-      contributors: Array.from(new Set(status.all.map(commit =>
+      contributors: Array.from(new Set(status.all.map(commit => {
+        const commits: { [key: string]: any } = GITHUB_COMMITS;
         // only add the user ID if we can find it based on the commit hash
-        GITHUB_COMMITS[commit.hash] ? GITHUB_COMMITS[commit.hash].id : null
+        return commits[commit.hash] ? commits[commit.hash].id : null;
       // filter out null users
-      ).filter(user => !!user))),
+      }).filter(user => !!user))),
       lastUpdated: status.latest ? moment(status.latest.date, 'YYYY-MM-DD HH-mm-ss ZZ').toISOString() : ''
     })
   );

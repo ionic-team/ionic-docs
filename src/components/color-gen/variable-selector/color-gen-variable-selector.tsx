@@ -7,22 +7,22 @@ import { Component, Event, EventEmitter, Prop, State, h } from '@stencil/core';
 })
 export class VariableSelector {
 
-  @Prop() name: string;
-  @Prop() property: string;
+  @Prop() name!: string;
+  @Prop() property?: string;
   @Prop() editable = true;
   @Prop() isParentOpen = false;
   @Prop() isNew = false;
-  @Prop({ mutable: true }) value: string;
+  @Prop({ mutable: true }) value?: string;
 
   @State() showNameError = false;
   @State() showValueError = false;
   @State() isValueInputFocused = false;
   @State() isNameInputFocused = false;
 
-  @Event() colorChange: EventEmitter;
-  @Event() nameChange: EventEmitter;
+  @Event() colorChange!: EventEmitter;
+  @Event() nameChange!: EventEmitter;
 
-  onNameChange(ev: UIEvent) {
+  onNameChange(ev: Event) {
     const input = ev.currentTarget as any;
     const name = input.value.trim();
 
@@ -41,7 +41,7 @@ export class VariableSelector {
     });
   }
 
-  onColorChange(ev: UIEvent) {
+  onColorChange(ev: Event) {
     const input = ev.currentTarget as any;
     const val = input.value.trim();
 
@@ -68,7 +68,7 @@ export class VariableSelector {
     this.isValueInputFocused = true;
   }
 
-  onValueInputBlur(ev: UIEvent) {
+  onValueInputBlur(ev: Event) {
     const input = ev.currentTarget as any;
     this.value = input.value.trim();
     this.isValueInputFocused = false;
@@ -78,13 +78,13 @@ export class VariableSelector {
     this.isNameInputFocused = true;
   }
 
-  onNameInputBlur(ev: UIEvent) {
+  onNameInputBlur(ev: FocusEvent) {
     const input = ev.currentTarget as any;
     this.name = input.value.trim();
     this.isNameInputFocused = false;
   }
 
-  isValidName(str) {
+  isValidName(str: string) {
     return /^[A-Z\-\_]+$/i.test(str);
   }
 
@@ -93,13 +93,13 @@ export class VariableSelector {
     this.showNameError = (isValidName && this.name.length > 0) ? false : true;
   }
 
-  isValidHex(str) {
-    return /^#[0-9A-F]{6}$/i.test(str);
+  isValidHex(str: string | undefined): boolean {
+    return str ? /^#[0-9A-F]{6}$/i.test(str) : false;
   }
 
   validateValue() {
     const isValidHex = this.isValidHex(this.value);
-    this.showValueError = (isValidHex && this.value.length === 7) ? false : true;
+    this.showValueError = (isValidHex && this.value && this.value.length === 7) ? false : true;
   }
 
   render() {
@@ -127,9 +127,9 @@ export class VariableSelector {
               <input
                 type="text"
                 value={this.name}
-                onInput={this.onNameChange.bind(this)}
-                onFocus={this.onNameInputFocus.bind(this)}
-                onBlur={this.onNameInputBlur.bind(this)}
+                onInput={ev => this.onNameChange(ev)}
+                onFocus={() => this.onNameInputFocus()}
+                onBlur={ev => this.onNameInputBlur(ev)}
               />
             </div>
             : <span>{this.name}</span>

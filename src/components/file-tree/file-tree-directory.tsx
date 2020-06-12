@@ -6,7 +6,7 @@ import { Component, Prop, h } from '@stencil/core';
 })
 export class FileTreeDirectory {
   @Prop() collapsed = false;
-  @Prop() name: string;
+  @Prop() name!: string;
 
   hostData() {
     return {

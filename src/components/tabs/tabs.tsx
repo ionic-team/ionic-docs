@@ -5,16 +5,16 @@ import { Component, Element, Listen, Prop, State, h } from '@stencil/core';
   styleUrl: 'tabs.css'
 })
 export class DocsTabs {
-  @Prop() listenFor: string;
-  @State() selected: HTMLDocsTabElement = null;
+  @Prop() listenFor?: string;
+  @State() selected: HTMLDocsTabElement | null = null;
   @State() tabs: HTMLDocsTabElement[] = [];
-  @Element() element: HTMLDocsTabElement;
+  @Element() el!: HTMLDocsTabElement;
 
   // if an event with a name that matches the 'listenFor' property is heard,
   // check the tabs to see if the event has a value that matches a tab title
   // The original purpose for this is the Framework Selection dropdown
   @Listen('local-storage', { target: 'window' })
-  listenForFrameworkSelection(event) {
+  listenForFrameworkSelection(event: any) {
     if (this.listenFor && event.detail.key === this.listenFor) {
       this.tabs.forEach(tab => {
         if (tab.tab.toLowerCase() === event.detail.value.toLowerCase()) {
@@ -25,7 +25,7 @@ export class DocsTabs {
   }
 
   componentDidLoad() {
-    this.tabs = Array.from(this.element.querySelectorAll('docs-tab'));
+    this.tabs = Array.from(this.el.querySelectorAll('docs-tab'));
     this.select(this.tabs.find(t => t.hasAttribute('selected')) || this.tabs[0]);
   }
 

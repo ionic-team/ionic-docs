@@ -14,7 +14,7 @@ export class ColorGenerator {
   @State() backgroundColor = '#ffffff';
   @State() textColor = '#000000';
 
-  @Element() el: HTMLElement;
+  @Element() el!: HTMLElement;
 
   @Listen('colorChange')
   onColorChange() {

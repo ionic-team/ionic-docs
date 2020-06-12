@@ -20,7 +20,7 @@ tasks.add(CLI);
 tasks.add(Native);
 export default tasks;
 
-let listrStatus = null;
+let listrStatus: any = null;
 
 if (!module.parent) {
   tasks.run().catch(err => {
@@ -39,9 +39,9 @@ export interface Page {
   [key: string]: any;
 }
 
-export type PageGetter = (status?) => Promise<Page[]>;
+export type PageGetter = (status?: any) => Promise<Page[]>;
 
-export const buildPages = async (getter: PageGetter, status?) => {
+export const buildPages = async (getter: PageGetter, status?: any) => {
   // if not passed a listr status var, just set the output of an unused object
   // might be helpful for debugging
   listrStatus = status || {};
@@ -65,7 +65,7 @@ const patchBody = (page: Page): Page => {
   const body = createDocument(page.body).body;
 
   const h1 = body.querySelector('h1');
-  if (h1) {
+  if (h1 && h1.textContent) {
     page.title = page.title || h1.textContent.trim();
     h1.remove();
   }
@@ -120,7 +120,7 @@ export const updatePageHtmlToHypertext = (page: Page) => {
     page.codeUsage = convertHtmlToHypertextData(page.codeUsage);
   }
   if (page.usage) {
-    const hypertextUsage = {};
+    const hypertextUsage: { [key: string]: any } = {};
     Object.keys(page.usage).forEach(key => {
       const usageContent = page.usage[key];
       hypertextUsage[key] = convertHtmlToHypertextData(usageContent);

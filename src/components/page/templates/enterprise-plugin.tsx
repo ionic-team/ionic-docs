@@ -2,7 +2,7 @@ import { h } from '@stencil/core';
 
 import { toHypertext } from '../to-hypertext';
 
-export default props => {
+export default (props: { [key: string]: any }) => {
   const { page } = props;
   const headings = [...page.headings];
 
@@ -25,7 +25,7 @@ export default props => {
       <h2>Other Versions</h2>
       <ul>
       <li><stencil-route-link url={`/docs/enterprise/${pluginId}`}>Latest</stencil-route-link></li>
-      {otherVersions.filter(v => v !== page.minor).map(version => (
+      {otherVersions.filter((v: any) => v !== page.minor).map((version: any) => (
         <li><stencil-route-link url={`/docs/enterprise/${pluginId}/${version}/${pluginId}`}>{version}</stencil-route-link></li>
       ))}
     </ul>

@@ -2,8 +2,8 @@ import Prismic from 'prismic-javascript';
 
 const apiURL = 'https://ionicframeworkcom.prismic.io/api/v2';
 const cacheLife = 20 * 60 * 1000; // 20 mins
-let ads: {}[];
-let lastFetch: number = null;
+let ads: any[];
+let lastFetch: number | null = null;
 
 const getLatest = async () => {
   const api = await Prismic.getApi(apiURL);
@@ -16,7 +16,7 @@ const getLatest = async () => {
 };
 
 export const getAd = async () => {
-  if (lastFetch === undefined || (Date.now() - lastFetch) > cacheLife) {
+  if (lastFetch === null || (Date.now() - lastFetch) > cacheLife) {
     await getLatest();
   }
   return chooseAdByWeight();

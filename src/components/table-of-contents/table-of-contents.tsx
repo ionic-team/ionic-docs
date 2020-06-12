@@ -16,7 +16,7 @@ export class DocsTableOfContents {
   @Prop() label = 'Contents';
   @Prop() basepath = '';
   @State() itemOffsets: ItemOffset[] = [];
-  @State() selectedId: string = null;
+  @State() selectedId: string | null = null;
   @State() pageWidth = document.body.offsetWidth;
 
   @Listen('scroll', { target: 'window', passive: true })
@@ -43,7 +43,7 @@ export class DocsTableOfContents {
     requestAnimationFrame(() => {
       this.pageWidth = document.body.offsetWidth;
       this.itemOffsets = this.links.map(link => {
-        const item = document.getElementById(link.href.substring(1));
+        const item = document.getElementById(link.href.substring(1))!;
         return {
           id: link.href,
           topOffset: item.getBoundingClientRect().top + window.scrollY

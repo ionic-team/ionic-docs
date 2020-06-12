@@ -5,11 +5,11 @@ import { Component, Listen, Prop, State, h } from '@stencil/core';
   styleUrl: 'demo.css'
 })
 export class DocsDemo {
-  @Prop() url: string;
-  @Prop() source: string;
+  @Prop() url!: string;
+  @Prop() source!: string;
   @State() ionicMode = 'ios';
 
-  iframe: HTMLIFrameElement;
+  iframe!: HTMLIFrameElement;
   iframeLoaded = false;
   messageQueue: CustomEvent[] = [];
 
@@ -22,8 +22,12 @@ export class DocsDemo {
 
   postMessage({ detail }: CustomEvent) {
     try {
-      this.iframe.contentWindow.postMessage(detail, '*');
-    } catch (e) {} // tslint:disable-line
+      if (this.iframe && this.iframe.contentWindow) {
+        this.iframe.contentWindow.postMessage(detail, '*');
+      }
+    } catch (e) {
+      // ignore
+    }
   }
 
   onIframeLoad = () => {
@@ -37,7 +41,9 @@ export class DocsDemo {
       <div class="docs-demo-mode-toggle">
         {['ios', 'md'].map(mode => (
           <button
-            class={mode === this.ionicMode ? 'is-selected' : null}
+            class={{
+              'is-selected': mode === this.ionicMode
+            }}
             title={`Toggle ${mode === 'ios' ? 'iOS' : 'Android'} mode`}
             onClick={() => { this.ionicMode = mode; }}
           >
@@ -85,7 +91,7 @@ export class DocsDemo {
   }
 
   render() {
-    if (this.url === undefined) {
+    if (!this.url) {
       return null;
     }
 

@@ -16,23 +16,24 @@ import { Book, Close, ForwardArrow, Search } from '../../icons';
   shadow: false
 })
 export class IonicSearch {
+  @Element() el!: HTMLElement;
 
   @State() active = false;
   @State() query = '';
-  @State() higlightIndex: number = null;
+  @State() highlightIndex: number | null = null;
   @State() pending = 0;
-  @State() results: any[] = null;
-  @State() nonDocsResults: any[] = null;
+  @State() results: any[] | null = null;
+  @State() nonDocsResults: any[] | null = null;
   @State() nonDocsResultsActive = false;
-  @State() dragStyles: {};
-  @State() searchTimeout: NodeJS.Timeout = null;
+  @State() dragStyles!: {};
+  @State() searchTimeout!: NodeJS.Timeout;
   // @State() pane: HTMLDivElement;
-  @Prop() mobile: boolean;
-  @Element() el;
 
-  dragY: number = null;
-  startY: number = null;
-  screenHeight: number = null;
+  @Prop() mobile?: boolean;
+
+  dragY: number | null = null;
+  startY: number | null = null;
+  screenHeight: number | null = null;
 
   urls: any;
   URLS = () => {
@@ -54,7 +55,7 @@ export class IonicSearch {
   }
 
   @Listen('keydown', { target: 'window' })
-  handleKeyDown(ev) {
+  handleKeyDown(ev: KeyboardEvent) {
     if (
       ev.key === '/' ||
       ev.code === 'Slash' ||
@@ -69,10 +70,14 @@ export class IonicSearch {
   // }
 
   activate() {
+    if (this.active) {
+      return;
+    }
+
     this.active = true;
     this.el.classList.add('active');
     setTimeout(() => {
-      this.el.querySelector('input').focus();
+      this.el.querySelector('input')?.focus();
     }, 220, this);
   }
 
@@ -80,63 +85,71 @@ export class IonicSearch {
     clearTimeout(this.searchTimeout);
     this.active = false;
     this.el.classList.remove('active');
-    this.el.querySelector('input').blur();
+
+    const input = this.el.querySelector('input');
+    input?.blur();
     setTimeout(() => {
-      this.el.querySelector('input').value = '';
-      this.results = this.nonDocsResults = this.higlightIndex = null;
+      if (input) {
+        input.value = '';
+      }
+      this.results = this.nonDocsResults = this.highlightIndex = null;
     }, 220, this);
   }
 
-  async onKeyUp(e) {
-    if (e.keyCode === 27) {
+  async onKeyUp(ev: KeyboardEvent) {
+    if (ev.keyCode === 27) {
       this.close();
       return;
     }
 
     // don't search on arrow keypress
-    if ([37, 38, 39, 40].indexOf(e.keyCode) !== -1) {
+    if ([37, 38, 39, 40].indexOf(ev.keyCode) !== -1) {
       return;
     }
 
-    if (e.target.value.length < 3) {
-      this.results = this.nonDocsResults = this.higlightIndex = null;
+    const el = (ev.target as HTMLInputElement);
+
+    if (el.value.length < 3) {
+      this.results = this.nonDocsResults = this.highlightIndex = null;
       return;
     }
 
-    this.query = e.target.value;
+    this.query = el.value;
     this.pending++;
     const resp = await fetch(this.urls.autocomplete(this.query));
     const res = await resp.json();
     this.pending--;
     this.results = res.records.page.filter(
-      item => item.url.indexOf('\/docs\/') !== -1);
+      (item: any) => item.url.indexOf('\/docs\/') !== -1);
     this.nonDocsResults = res.records.page.filter(
-      item => item.url.indexOf('\/docs\/') === -1);
-    this.higlightIndex = null;
+      (item: any) => item.url.indexOf('\/docs\/') === -1);
+    this.highlightIndex = null;
 
     clearTimeout(this.searchTimeout);
     this.searchTimeout = setTimeout(() => this.search(), 1500);
   }
 
-  // Trigger lightweight search after 1.5sec of innactivity
+  // Trigger lightweight search after 1.5sec of inactivity
   // but we'll stick with auto-complete results
   async search() {
     await fetch(this.urls.search(this.query));
     // console.log(result);
   }
 
-  touchStart(e) {
+  touchStart(ev: TouchEvent) {
     this.screenHeight = window.innerHeight
       || document.documentElement.clientHeight
       || document.body.clientHeight;
-    this.startY = Math.round(e.touches.item(0).screenY);
+    const y = ev.touches?.item(0)?.screenY;
+    this.startY = y ? Math.round(y) : 0;
   }
 
-  touchMove(e) {
-    e.preventDefault();
-    this.dragY = Math.max(0, Math.round(
-      (e.touches.item(0).screenY - this.startY) / this.screenHeight * 100
-    ));
+  touchMove(ev: TouchEvent) {
+    ev.preventDefault();
+    const y = ev.touches?.item(0)?.screenY;
+    this.dragY = y && this.dragY && this.startY && this.screenHeight ? Math.max(0, Math.round(
+      (this.dragY - this.startY) / this.screenHeight * 100
+    )) : 0;
     this.dragStyles = {
       transitionDuration: '.1s',
       transform: `translate3d(0, ${this.dragY}%, 0)`
@@ -153,7 +166,7 @@ export class IonicSearch {
   }
 
   touchEnd() {
-    if (this.dragY > 30) {
+    if (this.dragY && this.dragY > 30) {
       this.close();
     }
     this.dragY = null;
@@ -161,42 +174,42 @@ export class IonicSearch {
     this.dragStyles = {};
   }
 
-  keyNavigation(ev) {
+  keyNavigation(ev: KeyboardEvent) {
     if (!this.results) { return; }
 
     if (ev.keyCode === 38) {
       ev.preventDefault();
-      if (this.higlightIndex === 0) {
-        this.el.querySelector('input').focus();
-        this.higlightIndex = null;
-      } else if (this.higlightIndex !== null && this.higlightIndex > 0) {
-        this.higlightIndex--;
+      if (this.highlightIndex === 0) {
+        this.el.querySelector('input')?.focus();
+        this.highlightIndex = null;
+      } else if (this.highlightIndex !== null && this.highlightIndex > 0) {
+        this.highlightIndex--;
       }
     } else if (ev.keyCode === 40) {
       ev.preventDefault();
-      if (this.higlightIndex === null) {
-        this.higlightIndex = 0;
+      if (this.highlightIndex === null) {
+        this.highlightIndex = 0;
       } else if (
-        this.higlightIndex !== null &&
-        this.higlightIndex < this.results.length + this.nonDocsResults.length - 1) {
-        this.higlightIndex++;
+        this.highlightIndex !== null &&
+        this.highlightIndex < this.results.length + (this.nonDocsResults ? this.nonDocsResults.length : 0) - 1) {
+        this.highlightIndex++;
 
         if (
-          this.higlightIndex >= this.results.length &&
+          this.highlightIndex >= this.results.length &&
           !this.nonDocsResultsActive
         ) {
           this.nonDocsResultsActive = true;
         }
       }
     } else if (ev.keyCode === 13) {
-      const link = this.el.querySelector('ul a.active');
+      const link = this.el.querySelector('ul a.active') as HTMLAnchorElement;
       if (link) {
         this.resultClick({ url: link.href, id: link.dataset.id });
       }
     }
   }
 
-  async resultClick(result, event?) {
+  async resultClick(result: any, event?: Event) {
     if (event) {
       event.preventDefault();
     }
@@ -292,7 +305,7 @@ export class IonicSearch {
                     href={result.url}
                     title={result.title}
                     data-id={result.id}
-                    class={i === this.higlightIndex ? 'active' : ''}
+                    class={i === this.highlightIndex ? 'active' : ''}
                   >
                     <Book/>
                     <strong>{result.title}</strong>
@@ -321,7 +334,7 @@ export class IonicSearch {
                         href={result.url}
                         title={result.title}
                         data-id={result.id}
-                        class={i + this.results.length === this.higlightIndex ? 'active' : ''}
+                        class={i + this.results!.length === this.highlightIndex ? 'active' : ''}
                       >
                         <strong>{result.title}</strong>
                         <span innerHTML={result.highlight.sections}></span>
@@ -343,7 +356,7 @@ export class IonicSearch {
           onClick={this.active ? null : () => this.activate()}
         />
 
-        <div class="SearchBtn__lg" onClick={this.active ? null : () => this.activate()}>
+        <div class="SearchBtn__lg" onClick={() => this.activate()}>
           <Search class="SearchBtn__lg__icon"/>
           <span class="SearchBtn__lg__text">Search docs</span>
           <span class="SearchBtn__lg__key">/</span>

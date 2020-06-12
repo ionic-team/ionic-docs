@@ -14,7 +14,7 @@ import studioTemplate from './templates/studio';
   styleUrl: 'menu.css'
 })
 export class DocsMenu {
-  @Prop() toggleClickFn: (e: Event) => void;
+  @Prop() toggleClickFn!: (e: Event) => void;
 
   render() {
     return [

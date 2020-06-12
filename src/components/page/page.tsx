@@ -10,10 +10,10 @@ import templates from './templates';
   styleUrl: 'page.css'
 })
 export class DocsPage {
-  @Prop() history: RouterHistory;
-  @Prop() path: string;
-  @Prop({ context: 'isServer' }) private isServer: boolean;
-  @State() badFetch: Response = null;
+  @Prop() history!: RouterHistory;
+  @Prop() path!: string;
+  @Prop({ context: 'isServer' }) private isServer?: boolean;
+  @State() badFetch?: Response | null;
   @State() page: Page = { title: null, body: null };
 
   componentWillLoad() {
@@ -21,7 +21,7 @@ export class DocsPage {
   }
 
   @Watch('path')
-  fetchPage(path, oldPath?) {
+  fetchPage(path: string, oldPath?: string) {
     if (path == null || path === oldPath) { return; }
     path = /^\/docs\/pages\/[a-z]{2}\.json$/.test(path)
       ? path.replace('.json', '/index.json')
@@ -32,12 +32,12 @@ export class DocsPage {
       .catch(this.handleBadFetch);
   }
 
-  validateFetch = response => {
+  validateFetch = (response: Response) => {
     if (!response.ok) { throw response; }
     return response.json();
   }
 
-  handleNewPage = page => {
+  handleNewPage = (page: Page) => {
     this.badFetch = null;
     this.page = page;
   }
@@ -74,8 +74,8 @@ export class DocsPage {
       image: document.head.querySelectorAll('.meta-image')
     };
 
-    const updateMeta = (els, update) => {
-      els.forEach(el => {
+    const updateMeta = (els: any, update: any) => {
+      els.forEach((el: any) => {
         ['href', 'content'].forEach(attr => {
           if (el.hasAttribute(attr)) {
             el.setAttribute(attr, update(el.getAttribute(attr)));
@@ -95,7 +95,7 @@ export class DocsPage {
     updateMeta(metaEls.title, getTitle);
 
     // Canonical URL
-    updateMeta(metaEls.url, oldVal => {
+    updateMeta(metaEls.url, (oldVal: string) => {
       const uri = '\/docs\/';
       let path = location.pathname.split(uri)[1];
       if (path === undefined) {
@@ -129,7 +129,7 @@ export class DocsPage {
       return templates.error(this.badFetch);
     }
 
-    const Template = templates[page.template] || templates.default;
+    const Template = (templates as any)[page.template] || templates.default;
 
     const content = [
       <main class={hasDemo ? 'has-demo' : 'no-demo'}>
