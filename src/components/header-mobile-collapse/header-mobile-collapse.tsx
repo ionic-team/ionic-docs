@@ -33,6 +33,9 @@ export class HeaderMobileCollapse {
   }
 
   componentDidLoad() {
+    // tslint:disable-next-line
+    if (!this.el.before) { return; }
+
     this.el.before(this.getTriggerEl());
     this.init();
     requestAnimationFrame(() => {
