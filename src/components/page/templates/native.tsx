@@ -82,9 +82,9 @@ const renderRepo = (repo?: string) => {
   );
 };
 
-const renderCordovaPromotion = (isPremier?: string) => {
+const renderCordovaPromotion = (isPremier: string | null) => {
   // Only show one promo message
-  if (typeof isPremier !== 'undefined') {
+  if (isPremier !== null) {
     return;
   }
 
@@ -185,8 +185,8 @@ const renderCapIncompat = (capacitorIncompatible: boolean) => {
   );
 };
 
-const renderPremier = (premierSlug?: string) => {
-  if (typeof premierSlug === 'undefined') {
+const renderPremier = (premierSlug: string | null) => {
+  if (premierSlug === null) {
     return null;
   }
 
