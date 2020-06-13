@@ -24,7 +24,11 @@ export class DocsTableOfContents {
     if (this.pageWidth < 1234) { return; }
     requestAnimationFrame(() => {
       const itemIndex = this.itemOffsets.findIndex(item => item.topOffset > window.scrollY);
-      if (itemIndex === 0) {
+      if (
+        itemIndex === 0 ||
+        // tslint:disable-next-line
+        this.itemOffsets[this.itemOffsets.length - 1] === undefined
+      ) {
         this.selectedId = null;
       } else if (itemIndex === -1) {
         this.selectedId = this.itemOffsets[this.itemOffsets.length - 1].id;
