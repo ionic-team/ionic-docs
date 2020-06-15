@@ -5,63 +5,61 @@ nextText: 'Build Errors'
 nextUrl: '/docs/troubleshooting/build'
 ---
 
-# Remote Debugging
+# Debugging
 
 ## Live Reload
 
-You can run your ionic app using live reload by <a href="https://ionicframework.com/docs/cli/livereload">following the steps here</a>
+Live Reload is useful for debugging native functionality (such as plugins) on device hardware. Rather than deploy a new native binary each time you make a code change, it reloads the browser (or WebView) when changes in the app are detected. [Learn more here](/docs/cli/livereload).
 
 ## iOS and Safari
 
-Safari can be used to debug an Ionic app on a connected iOS device.
+Safari can be used to debug an Ionic app on a connected iOS device or iOS simulator.
 
-First, we need to download & install a special version of Safari browser called **Safari Technology Preview**. You can <a  href="https://developer.apple.com/safari/download">download it here</a>.
+First, on the iOS device, enable **Web Inspector** from Settings > Safari > Advanced.
 
-Once downloaded and installed, open Safari Technology Preview.
+Next, open Safari on a Mac then enable **Show Develop menu in menu bar** under Safari > Preferences > Advanced.
 
-Open run the iOS simulator or connect your iOS device to your mac computer. Once this is done, run the ionic app that you want to debug.
+Run the iOS simulator or connect your iOS device to your Mac, then run the Ionic app that you want to debug.
 
-If you are usuing a device, you need to perform an extra step. Go to `Settings > Safari > Advanced > Remote Inspection`, and then reopen your ionic app.
-
-Open Safari Technology Preview and in the top toolbar select **Develop**, in the resulting dropdown menu, you should see the name of your device and app, hover over the app name and click on **localhost**. This will open a new window with the Safari Developer Tools which you can then use to debug the ionic app running on your device.
+Within Safari, select **Develop** in the toolbar. In the dropdown menu options, you should see the name of your device and app. Hover over the app name and click on **localhost**. This will open a new window with the Safari Developer Tools - use them to inspect and debug the Ionic app running on your device.
 
 ## Android and Chrome
 
-Chrome DevTools can be used to debug an app when it is running in the browser through `ionic serve`, deployed to an emulator, or a physical device.
+Use Google Chrome's DevTools to debug an app when it is running in the browser using the `ionic serve` command, deployed to an emulator, or on a physical device.
 
-To inspect a physical device, first you need to have developer mode enabled in order to debug from Chrome. Connect your Android device to the computer then go to `Settings > About` scroll to `Build Number` and tap that 7 times. This will activate a new option in the **Settings** menu called **Developer Options**.
+To inspect a physical device, first you need to have developer mode enabled. Connect your Android device to the computer then go to `Settings > About` scroll to `Build Number` and tap that 7 times. This will activate a new option in the **Settings** menu called **Developer Options**.
 
-Next, go to `Settings > Developer Options` and ensure that the developer options switch is toggled on. Then scroll down to **USB Debugging** and ensure that it is also enabled. Developer Options & USB Debugging is enabled by default in the Android emulator.
+Next, go to `Settings > Developer Options` and ensure that the developer options switch is toggled on. Scroll down to **USB Debugging** and ensure that it is also enabled. Developer Options & USB Debugging are enabled by default in the Android emulator.
 
-Open Chrome browser and navigate to the URL `chrome://inspect/#devices`. Your connected Android device should show up in the list of Remote Targets.
+Open the Chrome browser and navigate to the URL `chrome://inspect/#devices`. Your connected Android device should show up in the list of Remote Targets.
 
 On your device, open the Ionic app that you would like to debug using Chrome.
 
-With your app running on the device, head back to Chrome and click on **inspect** under your device in the list of remote targets. This will open the Chrome Developer Tools in a new window. You will then be able to use all the Chrome Dev Tools to debug the application as it runs on your device.
+With your app running on the device, head back to Chrome and click on **inspect** under your device in the list of remote targets. This will open the Chrome Developer Tools in a new window. You will then be able to use all of the Chrome DevTools to debug the application as it runs on your device.
 
 > The app preview may not automatically appear when you open Chrome Developer Tools due to a minor bug. To make it appear, click on the **Elements** tab then click on any DOM element then toggle off and on any CSS rule and the app preview window will appear.
 
 ## Debugging with Visual Studio locally in Chrome (both Android & iOS)
 
-Visual Studio Code can also be used to debug an Ionic app running in the Chrome web browser. 
+<a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> can also be used to debug an Ionic app running in the Chrome web browser. 
 
-To do this, run your app in the browser using `ionic server`. Take note of the port that your app is running on. This is important later. Next, open your Ionic project using Visual Studio Code. 
+To do this, run your app in the browser using `ionic serve`. Take note of the port that your app is running on. Next, open your Ionic project using Visual Studio Code. 
 
-In the far-left vertical menu within VS Code, click on the `run` icon, just below `source control`. If you are configuring this for the first time in your project, click on the option to create a `launch.json` file. Select **Chrome** from the environment options dropdown. This will automatically generate a `launch.json` file with configurations for launching Chrome against localhost.
+In the far-left vertical menu within VS Code, click on the `run` icon. If you are configuring this for the first time in your project, click on the option to create a `launch.json` file. Select **Chrome** from the environment options dropdown. This will automatically generate a `launch.json` file with configurations for launching Chrome against localhost.
 
 Make sure that the port used in the url property of your `launch.json` file matches the port that you observed earlier when you ran `ionic serve`. Using an incorrect port number will not work.
 
-In the debug target dropdown menu, select **Launch against Chrome**, then click run. This will open a new instance of the Chrome browser and VS code will attach to it. You will then be able to set breakpoints and use the other debugging tools within VS Code while your app is running in Chrome.
+In the debug target dropdown menu, select **Launch against Chrome**, then click run. This will open a new instance of the Chrome browser and VS code will attach to it. You can set breakpoints and use the other debugging tools within VS Code while your app is running in Chrome.
 
 ## Debugging with Visual Studio Code in Android
 
-<a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> has a dedicated plugin for debugging apps that run in an Android webview.
+<a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> has a dedicated plugin for debugging apps that run in an Android WebView.
 
-<a href="https://marketplace.visualstudio.com/items?itemName=mpotthoff.vscode-android-webview-debug" target="_blank">The plugin</a> creates a bridge between the device and the Visual Studio Code developer tools and allows debugging to be done right in the editor.
+<a href="https://marketplace.visualstudio.com/items?itemName=mpotthoff.vscode-android-webview-debug" target="_blank">The plugin</a> creates a bridge between the device and the Visual Studio Code developer tools and permits debugging right from the editor.
 
-In order to use this plugin to debug your ionic apps, first install it and then start your app in the Android emulator or connect your Android device and run the app. You may need to enable USB debugging on your Android device.
+In order to use this plugin to debug your Ionic apps, first install it then start your app in the Android emulator or connect your Android device and run the app. You may need to enable USB debugging on your Android device.
 
-In the root of your ionic project, create a folder called `.vscode` and inside that folder create a file called `launch.json`. Inside `launch.json` enter the following code to configure the plugin to debug ionic apps:
+In the root of your Ionic project, create a folder called `.vscode` and inside that folder create a file called `launch.json`. Inside `launch.json`, enter the following code to configure the plugin to debug Ionic apps:
 
 ```
 {
@@ -81,7 +79,6 @@ In the root of your ionic project, create a folder called `.vscode` and inside t
 }
 ```
 
-Next, press **F5** to begin debugging, then select your device and ionic app. VScode will then attach to your Android device and ionic app and you can then use it to debug your app including setting breakpoints.
+Next, launch the debugging process, selecting your device and Ionic app. VS Code will attach to both the Android device and Ionic app and you can now debug your app, which includes setting breakpoints.
 
 > If you are unable to set breakpoints and get an error saying, **"Breakpoint ignored because generated code not found (source map problem?)"** it means that the paths to the transpiled javascript files are incorrect. Use the `.scripts` command in the Debug console to see the loaded scripts. Make sure the paths of the scripts are correct  by experimenting with different values in the `sourceMapPathOverrides` key in your `launch.json` configuration file.
-
