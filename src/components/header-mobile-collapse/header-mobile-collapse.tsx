@@ -1,4 +1,5 @@
 import { Component, Element, Listen, Prop, State, h } from '@stencil/core';
+
 import { MoreDots } from '../../icons';
 
 @Component({
@@ -13,14 +14,9 @@ export class HeaderMobileCollapse {
   @State() mobileDropdownActive = false;
   @State() stuck = false;
   @State() queued = false;
-  @Element() el;
+  @Element() el!: HTMLElement;
 
-  observer: IntersectionObserver;
-
-  constructor() {
-    this.handleMobileToggleClick = this.handleMobileToggleClick.bind(this);
-    this.deactivate = this.deactivate.bind(this);
-  }
+  observer!: IntersectionObserver;
 
   @Listen('pageChanged', { target: 'body' })
   deactivate() {
@@ -37,7 +33,8 @@ export class HeaderMobileCollapse {
   }
 
   componentDidLoad() {
-    if (!this.el.before) return;
+    // tslint:disable-next-line
+    if (!this.el.before) { return; }
 
     this.el.before(this.getTriggerEl());
     this.init();
@@ -48,7 +45,7 @@ export class HeaderMobileCollapse {
 
   init() {
     this.observer = new IntersectionObserver(entries => {
-      if (this.queued) return;
+      if (this.queued) { return; }
 
       // no intersection with screen
       if (!this.stuck && entries[0].intersectionRatio === 0) {
@@ -70,12 +67,14 @@ export class HeaderMobileCollapse {
       }
     }, { threshold: [0, 1] });
 
-    if (this.el) {
-      this.observer.observe(document.getElementById('ionic-sub-header__trigger'));
+    const headerEl = document.getElementById('ionic-sub-header__trigger');
+
+    if (this.el && headerEl) {
+      this.observer.observe(headerEl);
       setTimeout(() => {
         this.el.classList.add('ionic-sub-header--initialized');
         const navBar = document.querySelector('.navbar-default');
-        if (navBar) navBar.classList.add('navbar--not-fixed');
+        if (navBar) { navBar.classList.add('navbar--not-fixed'); }
       }, 405);
     }
   }
@@ -86,11 +85,15 @@ export class HeaderMobileCollapse {
 
   render() {
     return ([
-      <div class="header-mobile-collapse__backdrop"
-           onClick={this.deactivate}></div>,
+      <div
+        class="header-mobile-collapse__backdrop"
+        onClick={() => this.deactivate()}
+      />,
       <ionic-search></ionic-search>,
-      <a class="ionic-sub-header__mobile-toggle"
-         onClick={this.handleMobileToggleClick}>
+      <a
+        class="ionic-sub-header__mobile-toggle"
+        onClick={() => this.handleMobileToggleClick()}
+      >
         <MoreDots/>
       </a>,
       <div class="header-mobile-collapse__content">

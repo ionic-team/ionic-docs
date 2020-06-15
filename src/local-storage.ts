@@ -1,13 +1,13 @@
-function getItem(key: string): string {
+const getItem = (key: string): string | null => {
   try {
     return localStorage.getItem(key);
   } catch (error) {
     console.warn(`Unable to get key "${key}" from localStorage:`, error);
     return null;
   }
-}
+};
 
-function setItem(key: string, value: string): string {
+const setItem = (key: string, value: string): string | null => {
   try {
     if (localStorage.getItem(key) === value) {
       return value;
@@ -20,24 +20,25 @@ function setItem(key: string, value: string): string {
     console.warn(`Unable to set key "${key}" of localStorage:`, error);
     return null;
   }
-}
+};
 
-function notify(key: string, value: string) {
+const notify = (key: string, value: string) => {
+  // tslint:disable-next-line
   if (window && typeof window.dispatchEvent === 'function') {
     const detail = { key, value };
     window.dispatchEvent(new CustomEvent('local-storage', { detail }));
   }
-}
+};
 
-type LocalStorageGetter = () => string;
-type LocalStorageSetter = (value: string) => string;
+type LocalStorageGetter = () => string | null;
+type LocalStorageSetter = (value: string) => string | null;
 
-export function useLocalStorage(key: string, defaultValue?: string): [
+export const useLocalStorage = (key: string, defaultValue?: string): [
   LocalStorageGetter,
   LocalStorageSetter
-] {
+] => {
 
-  if (defaultValue != null && getItem(key) === null) {
+  if (defaultValue !== undefined && getItem(key) === null) {
     setItem(key, defaultValue);
   }
 
@@ -45,4 +46,4 @@ export function useLocalStorage(key: string, defaultValue?: string): [
     () => getItem(key),
     (value: string) => setItem(key, value)
   ];
-}
+};

@@ -5,11 +5,11 @@ import { Component, Prop, h } from '@stencil/core';
   styleUrl: 'button.css'
 })
 export class DocsButton {
-  @Prop() href: string;
+  @Prop() href?: string;
   @Prop({ reflectToAttr: true }) round = false;
 
   render() {
-    if (typeof this.href === 'string') {
+    if (this.href !== undefined) {
       const isInternal = /^\/docs/.test(this.href);
 
       if (isInternal) {

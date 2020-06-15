@@ -1,13 +1,15 @@
-import { resolve } from 'path';
-import { slugify } from '../../src/utils';
-import fs from 'fs-extra';
 import { createDocument } from '@stencil/core/mock-doc';
+import fs from 'fs-extra';
 import Listr from 'listr';
-import Static, { ToStaticPageOptions, toPage as toStaticPage } from './page-types/static';
+import { resolve } from 'path';
+
+import { slugify } from '../../src/utils';
+
+import { convertHtmlToHypertextData } from './html-to-hypertext-data';
 import API from './page-types/api';
 import CLI from './page-types/cli';
 import Native from './page-types/native';
-import { convertHtmlToHypertextData } from './html-to-hypertext-data';
+import Static, { ToStaticPageOptions, toPage as toStaticPage } from './page-types/static';
 
 const tasks = new Listr(
   // { renderer: 'verbose' }
@@ -18,7 +20,7 @@ tasks.add(CLI);
 tasks.add(Native);
 export default tasks;
 
-let listrStatus = null;
+let listrStatus: any = null;
 
 if (!module.parent) {
   tasks.run().catch(err => {
@@ -37,9 +39,9 @@ export interface Page {
   [key: string]: any;
 }
 
-export type PageGetter = (status?) => Promise<Page[]>;
+export type PageGetter = (status?: any) => Promise<Page[]>;
 
-export async function buildPages(getter: PageGetter, status?) {
+export const buildPages = async (getter: PageGetter, status?: any) => {
   // if not passed a listr status var, just set the output of an unused object
   // might be helpful for debugging
   listrStatus = status || {};
@@ -52,33 +54,34 @@ export async function buildPages(getter: PageGetter, status?) {
       .map(updatePageHtmlToHypertext)
       .map(writePage)
   );
-}
+};
 
-export async function buildStaticPage(path: string, options: ToStaticPageOptions = {}) {
+export const buildStaticPage = async (path: string, options: ToStaticPageOptions = {}) => {
   const page = await toStaticPage(path, options);
   return writePage(updatePageHtmlToHypertext(patchBody(page)));
-}
+};
 
-function patchBody(page: Page): Page {
+const patchBody = (page: Page): Page => {
   const body = createDocument(page.body).body;
 
   const h1 = body.querySelector('h1');
-  if (h1) {
+  if (h1 !== null && h1.textContent !== null) {
     page.title = page.title || h1.textContent.trim();
     h1.remove();
   }
 
   if (!page.skipIntros) {
-    for (let i = 0, children = [...body.children]; i < children.length; i++) {
-      if (children[i].tagName === 'P') {
-        children[i].classList.add('intro');
+    const children: any[] = Array.from(body.children);
+    for (const child of children) {
+      if (child.tagName === 'P') {
+        child.classList.add('intro');
       } else {
         break;
       }
     }
   }
 
-  const headings = [...body.querySelectorAll('h2')].map(heading => ({
+  const headings = Array.from(body.querySelectorAll('h2'), (heading: any) => ({
     text: heading.textContent.trim(),
     href: `#${heading.getAttribute('id')}`
   }));
@@ -88,7 +91,7 @@ function patchBody(page: Page): Page {
   const pageClass = `page-${slugify(page.path.replace(prefix, ''))}`;
 
   const [, language] = prefix.exec(page.path) || 'en';
-  if (language && language !== 'en') {
+  if (language !== 'en') {
     if (page.previousUrl) {
       page.previousUrl = page.previousUrl.replace(prefix, `/docs/${language}/`);
     }
@@ -103,9 +106,9 @@ function patchBody(page: Page): Page {
     headings,
     pageClass
   };
-}
+};
 
-export function updatePageHtmlToHypertext(page: Page) {
+export const updatePageHtmlToHypertext = (page: Page) => {
   page.body = convertHtmlToHypertextData(page.body);
   if (page.docs) {
     page.docs = convertHtmlToHypertextData(page.docs);
@@ -117,7 +120,7 @@ export function updatePageHtmlToHypertext(page: Page) {
     page.codeUsage = convertHtmlToHypertextData(page.codeUsage);
   }
   if (page.usage) {
-    const hypertextUsage = {};
+    const hypertextUsage: { [key: string]: any } = {};
     Object.keys(page.usage).forEach(key => {
       const usageContent = page.usage[key];
       hypertextUsage[key] = convertHtmlToHypertextData(usageContent);
@@ -125,16 +128,16 @@ export function updatePageHtmlToHypertext(page: Page) {
     page.usage = hypertextUsage;
   }
   return page;
-}
+};
 
-function writePage(page: Page): Promise<any> {
+const writePage = (page: Page): Promise<any> => {
   if (listrStatus && listrStatus._task && listrStatus._task.output !== 'Writing Pages') {
     listrStatus.output = 'Writing Pages';
   }
   return fs.outputJson(toFilePath(page.path), page, {
     spaces: 2
   });
-}
+};
 
 const toFilePath = (urlPath: string) => {
   return `${resolve(PAGES_DIR, urlPath.replace(/.*(\/docs\/|\/pages\/)/, '') || 'index')}.json`;

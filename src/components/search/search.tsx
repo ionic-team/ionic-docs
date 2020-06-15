@@ -1,6 +1,3 @@
-import 'ionicons';
-import { Book, Close, ForwardArrow, Search } from '../../icons';
-
 import {
   Component,
   Element,
@@ -9,6 +6,9 @@ import {
   State,
   h
 } from '@stencil/core';
+import 'ionicons';
+
+import { Book, Close, ForwardArrow, Search } from '../../icons';
 
 @Component({
   tag: 'ionic-search',
@@ -16,23 +16,24 @@ import {
   shadow: false
 })
 export class IonicSearch {
+  @Element() el!: HTMLElement;
 
   @State() active = false;
   @State() query = '';
-  @State() higlightIndex: number = null;
+  @State() highlightIndex: number | null = null;
   @State() pending = 0;
-  @State() results: any[] = null;
-  @State() nonDocsResults: any[] = null;
+  @State() results: any[] | null = null;
+  @State() nonDocsResults: any[] | null = null;
   @State() nonDocsResultsActive = false;
-  @State() dragStyles: {};
-  @State() searchTimeout: NodeJS.Timeout = null;
+  @State() dragStyles!: {};
+  @State() searchTimeout!: NodeJS.Timeout;
   // @State() pane: HTMLDivElement;
-  @Prop() mobile: boolean;
-  @Element() el;
 
-  dragY: number = null;
-  startY: number = null;
-  screenHeight: number = null;
+  @Prop() mobile?: boolean;
+
+  dragY: number | null = null;
+  startY: number | null = null;
+  screenHeight: number | null = null;
 
   urls: any;
   URLS = () => {
@@ -50,21 +51,11 @@ export class IonicSearch {
   }
 
   constructor() {
-    this.activate = this.activate.bind(this);
-    this.close = this.close.bind(this);
-    this.onKeyUp = this.onKeyUp.bind(this);
-    this.touchStart = this.touchStart.bind(this);
-    this.touchMove = this.touchMove.bind(this);
-    this.touchEnd = this.touchEnd.bind(this);
-    this.keyNavigation = this.keyNavigation.bind(this);
-    this.resultClick = this.resultClick.bind(this);
-    this.search = this.search.bind(this);
-
     this.urls = this.URLS();
   }
 
   @Listen('keydown', { target: 'window' })
-  handleKeyDown(ev) {
+  handleKeyDown(ev: KeyboardEvent) {
     if (
       ev.key === '/' ||
       ev.code === 'Slash' ||
@@ -79,10 +70,14 @@ export class IonicSearch {
   // }
 
   activate() {
+    if (this.active) {
+      return;
+    }
+
     this.active = true;
     this.el.classList.add('active');
     setTimeout(() => {
-      this.el.querySelector('input').focus();
+      this.el.querySelector('input')?.focus();
     }, 220, this);
   }
 
@@ -90,63 +85,71 @@ export class IonicSearch {
     clearTimeout(this.searchTimeout);
     this.active = false;
     this.el.classList.remove('active');
-    this.el.querySelector('input').blur();
+
+    const input = this.el.querySelector('input');
+    input?.blur();
     setTimeout(() => {
-      this.el.querySelector('input').value = '';
-      this.results = this.nonDocsResults = this.higlightIndex = null;
+      if (input) {
+        input.value = '';
+      }
+      this.results = this.nonDocsResults = this.highlightIndex = null;
     }, 220, this);
   }
 
-  async onKeyUp(e) {
-    if (e.keyCode === 27) {
+  async onKeyUp(ev: KeyboardEvent) {
+    if (ev.key === 'Escape') {
       this.close();
       return;
     }
 
     // don't search on arrow keypress
-    if ([37, 38, 39, 40].indexOf(e.keyCode) !== -1) {
+    if (['ArrowLeft', 'ArrowUp', 'ArrowRight', 'ArrowDown'].indexOf(ev.key) !== -1) {
       return;
     }
 
-    if (e.target.value.length < 3) {
-      this.results = this.nonDocsResults = this.higlightIndex = null;
+    const el = (ev.target as HTMLInputElement);
+
+    if (el.value.length < 3) {
+      this.results = this.nonDocsResults = this.highlightIndex = null;
       return;
     }
 
-    this.query = e.target.value;
+    this.query = el.value;
     this.pending++;
     const resp = await fetch(this.urls.autocomplete(this.query));
     const res = await resp.json();
     this.pending--;
     this.results = res.records.page.filter(
-      item => item.url.indexOf('\/docs\/') !== -1);
+      (item: any) => item.url.indexOf('\/docs\/') !== -1);
     this.nonDocsResults = res.records.page.filter(
-      item => item.url.indexOf('\/docs\/') === -1);
-    this.higlightIndex = null;
+      (item: any) => item.url.indexOf('\/docs\/') === -1);
+    this.highlightIndex = null;
 
     clearTimeout(this.searchTimeout);
-    this.searchTimeout = setTimeout(this.search, 1500);
+    this.searchTimeout = setTimeout(() => this.search(), 1500);
   }
 
-  // Trigger lightweight search after 1.5sec of innactivity
+  // Trigger lightweight search after 1.5sec of inactivity
   // but we'll stick with auto-complete results
   async search() {
     await fetch(this.urls.search(this.query));
     // console.log(result);
   }
 
-  touchStart(e) {
+  touchStart(ev: TouchEvent) {
     this.screenHeight = window.innerHeight
       || document.documentElement.clientHeight
       || document.body.clientHeight;
-    this.startY = Math.round(e.touches.item(0).screenY);
+    const y = ev.touches?.item(0)?.screenY;
+    this.startY = typeof y !== 'undefined' ? Math.round(y) : 0;
   }
 
-  touchMove(e) {
-    e.preventDefault();
-    this.dragY = Math.max(0, Math.round(
-      (e.touches.item(0).screenY - this.startY) / this.screenHeight * 100
-    ));
+  touchMove(ev: TouchEvent) {
+    ev.preventDefault();
+    const y = ev.touches?.item(0)?.screenY;
+    this.dragY = typeof y !== 'undefined' && this.dragY !== null && this.startY !== null && this.screenHeight !== null ? Math.max(0, Math.round(
+      (this.dragY - this.startY) / this.screenHeight * 100
+    )) : 0;
     this.dragStyles = {
       transitionDuration: '.1s',
       transform: `translate3d(0, ${this.dragY}%, 0)`
@@ -163,7 +166,7 @@ export class IonicSearch {
   }
 
   touchEnd() {
-    if (this.dragY > 30) {
+    if (this.dragY !== null && this.dragY > 30) {
       this.close();
     }
     this.dragY = null;
@@ -171,42 +174,38 @@ export class IonicSearch {
     this.dragStyles = {};
   }
 
-  keyNavigation(ev) {
-    if (!this.results) return;
+  keyNavigation(ev: KeyboardEvent) {
+    if (!this.results) { return; }
 
-    if (ev.keyCode === 38) {
+    if (ev.key === 'ArrowUp') {
       ev.preventDefault();
-      if (this.higlightIndex === 0) {
-        this.el.querySelector('input').focus();
-        this.higlightIndex = null;
-      } else if (this.higlightIndex !== null && this.higlightIndex > 0) {
-        this.higlightIndex--;
+      if (this.highlightIndex === 0) {
+        this.el.querySelector('input')?.focus();
+        this.highlightIndex = null;
+      } else if (this.highlightIndex !== null && this.highlightIndex > 0) {
+        this.highlightIndex--;
       }
-    } else if (ev.keyCode === 40) {
+    } else if (ev.key === 'ArrowDown') {
       ev.preventDefault();
-      if (this.higlightIndex === null) {
-        this.higlightIndex = 0;
-      } else if (
-        this.higlightIndex !== null &&
-        this.higlightIndex < this.results.length + this.nonDocsResults.length - 1) {
-        this.higlightIndex++;
+      if (this.highlightIndex === null) {
+        this.highlightIndex = 0;
+      } else if (this.highlightIndex < this.results.length + (this.nonDocsResults ? this.nonDocsResults.length : 0) - 1) {
+        this.highlightIndex++;
 
         if (
-          this.higlightIndex >= this.results.length &&
+          this.highlightIndex >= this.results.length &&
           !this.nonDocsResultsActive
         ) {
           this.nonDocsResultsActive = true;
         }
       }
-    } else if (ev.keyCode === 13) {
-      const link = this.el.querySelector('ul a.active');
-      if (link) {
-        this.resultClick({ url: link.href, id: link.dataset.id });
-      }
+    } else if (ev.key === 'Enter') {
+      const link = this.el.querySelector('ul a.active') as HTMLAnchorElement;
+      this.resultClick({ url: link.href, id: link.dataset.id });
     }
   }
 
-  async resultClick(result, event?) {
+  async resultClick(result: any, event?: Event) {
     if (event) {
       event.preventDefault();
     }
@@ -259,27 +258,33 @@ export class IonicSearch {
 
   render() {
     return [
-      <div class={`search-box${this.active ? ' active' : ''}`}
-           style={this.dragStyles}
-           onTouchMove={e => this.results && this.results.length > 5 ?
-            null : e.preventDefault()}
-           onKeyDown={this.keyNavigation}>
-        <input type="text" onKeyUp={this.onKeyUp} placeholder="Search Ionic.."/>
+      <div
+        class={`search-box${this.active ? ' active' : ''}`}
+        style={this.dragStyles}
+        onTouchMove={e => this.results && this.results.length > 5 ?
+        null : e.preventDefault()}
+        onKeyDown={ev => this.keyNavigation(ev)}
+      >
+        <input type="text" onKeyUp={ev => this.onKeyUp(ev)} placeholder="Search Ionic.."/>
 
         <Search class={`search-static ${this.active ? ' active' : ''}`}/>
 
         {this.mobile && !this.isFirefox() ?
-          <div class="mobile-close"
-               onClick={this.close}
-               onTouchStart={this.touchStart}
-               onTouchMove={this.touchMove}
-               onTouchEnd={this.touchEnd}>
+          <div
+            class="mobile-close"
+            onClick={() => this.close()}
+            onTouchStart={ev => this.touchStart(ev)}
+            onTouchMove={ev => this.touchMove(ev)}
+            onTouchEnd={() => this.touchEnd()}
+          >
             <Close/>
           </div>
           :
-          <ion-icon class={`close ${this.active ? ' active' : ''}`}
-                    name="close"
-                    onClick={this.close}></ion-icon>
+          <ion-icon
+            class={`close ${this.active ? ' active' : ''}`}
+            name="close"
+            onClick={() => this.close()}
+          />
         }
 
         <div class={`slot ${this.results === null ? '' : 'hidden'}`}>
@@ -291,11 +296,13 @@ export class IonicSearch {
             <ul>
               {this.results.map((result, i) =>
                 <li>
-                  <a onClick={ev => this.resultClick(result, ev)}
-                     href={result.url}
-                     title={result.title}
-                     data-id={result.id}
-                     class={i === this.higlightIndex ? 'active' : ''}>
+                  <a
+                    onClick={ev => this.resultClick(result, ev)}
+                    href={result.url}
+                    title={result.title}
+                    data-id={result.id}
+                    class={i === this.highlightIndex ? 'active' : ''}
+                  >
                     <Book/>
                     <strong>{result.title}</strong>
                     <span innerHTML={result.highlight.sections}></span>
@@ -309,19 +316,22 @@ export class IonicSearch {
 
             <div class={`SearchMore ${this.nonDocsResultsActive ? 'active' : ''}`}>
               {this.nonDocsResults && this.nonDocsResults.length !== 0 ? [
-                <a class="SearchMore__link"
-                   onClick={() =>
-                    this.nonDocsResultsActive = !this.nonDocsResultsActive}>
+                <a
+                  class="SearchMore__link"
+                  onClick={() => this.nonDocsResultsActive = !this.nonDocsResultsActive}
+                >
                   {this.nonDocsResults.length} Results outside docs <ForwardArrow/>
                 </a>,
                 <ul class="SearchMore__list">
                   {this.nonDocsResults.map((result, i) =>
                     <li>
-                      <a onClick={ev => this.resultClick(result, ev)}
-                         href={result.url}
-                         title={result.title}
-                         data-id={result.id}
-                         class={i + this.results.length === this.higlightIndex ? 'active' : ''}>
+                      <a
+                        onClick={ev => this.resultClick(result, ev)}
+                        href={result.url}
+                        title={result.title}
+                        data-id={result.id}
+                        class={i + this.results!.length === this.highlightIndex ? 'active' : ''}
+                      >
                         <strong>{result.title}</strong>
                         <span innerHTML={result.highlight.sections}></span>
                       </a>
@@ -337,18 +347,22 @@ export class IonicSearch {
       </div>,
 
       <div class={`SearchBtn ${this.active ? ' active' : ''}`}>
-        <Search class="SearchBtn__sm"
-                onClick={this.active ? null : this.activate}/>
+        <Search
+          class="SearchBtn__sm"
+          onClick={this.active ? null : () => this.activate()}
+        />
 
-        <div class="SearchBtn__lg" onClick={this.active ? null : this.activate}>
+        <div class="SearchBtn__lg" onClick={() => this.activate()}>
           <Search class="SearchBtn__lg__icon"/>
           <span class="SearchBtn__lg__text">Search docs</span>
           <span class="SearchBtn__lg__key">/</span>
         </div>
       </div>,
 
-      <div class={`backdrop ${this.active ? 'active' : null}`}
-           onClick={this.close}></div>
+      <div
+        class={`backdrop ${this.active ? 'active' : null}`}
+        onClick={() => this.close()}
+      />
     ];
   }
 }

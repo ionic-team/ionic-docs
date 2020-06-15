@@ -1,14 +1,14 @@
 import { h } from '@stencil/core';
-import { toHypertext } from '../to-hypertext';
-import components from '../data/api-reference.json';
 
+import components from '../data/api-reference.json';
+import { toHypertext } from '../to-hypertext';
 
 const listStyle = {
   fontFamily: 'var(--code-font-family',
   fontSize: '13px'
 };
 
-export default (props) => {
+export default (props: { [key: string]: any }) => {
   return (
     <article>
       <h1>{props.page.title}</h1>

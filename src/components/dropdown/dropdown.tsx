@@ -1,4 +1,5 @@
 import { Component, Element, JSX, Listen, Method, Prop, State, h } from '@stencil/core';
+
 import { DownArrow } from '../../icons';
 
 @Component({
@@ -7,15 +8,15 @@ import { DownArrow } from '../../icons';
 })
 export class DocsDropdown {
   @Prop() align: 'left' | 'right' | 'center' = 'left';
-  @Prop() label: string;
-  @Prop() icon: (props: any) => JSX.Element;
+  @Prop() label!: string;
+  @Prop() icon?: (props: any) => JSX.Element;
   @State() isOpen = false;
-  @Element() element: HTMLElement;
+  @Element() el!: HTMLElement;
 
   @Listen('click', { target: 'window' })
   handleClick(event: MouseEvent) {
     const isNode = event.target instanceof Node;
-    const isOurs = isNode && this.element.contains(event.target as Node);
+    const isOurs = isNode && this.el.contains(event.target as Node);
 
     if (!isOurs) {
       this.close();
@@ -67,8 +68,9 @@ export class DocsDropdown {
         class="Dropdown-button"
         aria-haspopup="menu"
         aria-expanded={this.isOpen ? 'true' : 'false'}
-        onClick={this.toggle.bind(this)}>
-        <span class="Dropdown-button-label">{this.label ? this.label : null}</span>
+        onClick={this.toggle.bind(this)}
+      >
+        <span class="Dropdown-button-label">{this.label}</span>
         {Icon ? <Icon class="Dropdown-icon"/> : null}
         <DownArrow class="Dropdown-arrow"/>
       </button>
@@ -77,7 +79,8 @@ export class DocsDropdown {
     const panel = (
       <div
         role="menu"
-        class="Dropdown-panel">
+        class="Dropdown-panel"
+      >
         <slot/>
       </div>
     );

@@ -1,4 +1,5 @@
 import { Component, Element, Prop, State, h } from '@stencil/core';
+
 import { DownArrow } from '../../icons';
 
 @Component({
@@ -6,9 +7,9 @@ import { DownArrow } from '../../icons';
   styleUrl: 'collapsible.css'
 })
 export class DocsMenuCollapsible {
-  @Prop() heading: string;
+  @Prop() heading!: string;
   @State() isOpen = true; // default open
-  @Element() el: HTMLElement;
+  @Element() el!: HTMLElement;
 
   hostData() {
     return {
@@ -29,8 +30,10 @@ export class DocsMenuCollapsible {
 
   render() {
     return [
-      <a onClick={() => this.toggle()}
-         class={`docs-menu-collapsible__title`}>
+      <a
+        onClick={() => this.toggle()}
+        class={`docs-menu-collapsible__title`}
+      >
         {this.heading}
         <DownArrow/>
       </a>,
@@ -41,8 +44,7 @@ export class DocsMenuCollapsible {
   }
 }
 
-
-const removeClassThatStartWith = (el: HTMLElement, classStart) => {
+const removeClassThatStartWith = (el: HTMLElement, classStart: string) => {
   el.classList.forEach(className => {
     if (className.startsWith(classStart)) {
       el.classList.remove(className);

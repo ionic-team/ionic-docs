@@ -1,8 +1,9 @@
 import { h } from '@stencil/core';
+
 import releases from '../data/release-notes.json';
 import { toHypertext } from '../to-hypertext.js';
 
-export default (props) => {
+export default (props: { [key: string]: any }) => {
   const { page } = props;
 
   if (releases.length === 0) {
@@ -43,7 +44,7 @@ export default (props) => {
               <div class="release-header">
                 <h2>
                   <span class="release-version">{release.version}</span>
-                  { release.type !== 'patch' ? ' ' + release.element : null }
+                  {release.type !== 'patch' ? ' ' + release.element : null}
                 </h2>
                 <span class="release-badge">{release.type}</span>
                 { index === 0
@@ -67,9 +68,9 @@ export default (props) => {
   );
 };
 
-function getReleaseClasses(release) {
+const getReleaseClasses = (release: any) => {
   return {
     'release-note': true,
     [`release-note-${release.type}`]: true
   };
-}
+};

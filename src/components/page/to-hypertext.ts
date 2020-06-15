@@ -1,5 +1,4 @@
 
-
 export const toHypertext = (h: any, data: any) => {
   const args = [];
   for (let i = 0; i < data.length; i++) {
@@ -8,7 +7,7 @@ export const toHypertext = (h: any, data: any) => {
       arg = 'template';
 
     } else if (i === 1 && arg) {
-      const attrs = {};
+      const attrs: any = {};
       Object.keys(arg).forEach(key => {
         const k = key.toLowerCase();
         if (!k.startsWith('on') && k !== 'innerhtml') {

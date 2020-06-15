@@ -1,9 +1,10 @@
 import Listr from 'listr';
-import buildPages from '../build-pages';
-import buildMenus from '../build-menus';
-import buildData from '../build-data';
 
-const tasks = new Listr({ collapse: false });
+import buildData from '../build-data';
+import buildMenus from '../build-menus';
+import buildPages from '../build-pages';
+
+const tasks = new Listr({ collapse: false } as any);
 
 tasks.add({
   title: 'Data',

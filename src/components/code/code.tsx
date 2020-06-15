@@ -1,4 +1,5 @@
 import { Component, Element, Host, Prop, State, h } from '@stencil/core';
+
 import { CheckmarkSoft } from '../../icons';
 
 @Component({
@@ -6,7 +7,7 @@ import { CheckmarkSoft } from '../../icons';
   styleUrl: 'code.css'
 })
 export class DocsCode {
-  @Element() el: HTMLElement;
+  @Element() el!: HTMLElement;
   @Prop({ reflectToAttr: true }) language = '';
   @State() showCopyConfirmation = false;
 
@@ -14,7 +15,7 @@ export class DocsCode {
     this.showCopyConfirmation = true;
 
     const codeEl = this.el.querySelector('code');
-    const codeText = codeEl.textContent || '';
+    const codeText = codeEl && codeEl.textContent || '';
 
     const el = document.createElement('textarea');
     el.value = codeText;
@@ -39,7 +40,7 @@ export class DocsCode {
           <div class={{ 'code-text__copy': true, 'show-confirmation': this.showCopyConfirmation }} >
             <a class="code-text__copy-link" onClick={this.copyCodeText.bind(this)}>Copy</a>
             <span class="code-text__copy-confirmation">
-              { CheckmarkSoft({ height: '26px', width: '26px' }) }
+              {CheckmarkSoft({ height: '26px', width: '26px' })}
               Copied
             </span>
           </div>

@@ -1,24 +1,25 @@
 import { Build, Component, Element, Prop, h } from '@stencil/core';
-import { link } from './link';
-import { l10n } from '../../l10n';
-import { MenuItems } from '../../definitions';
 
+import { MenuItem, MenuItems } from '../../definitions';
+import { l10n } from '../../l10n';
+
+import { link } from './link';
 
 @Component({
   tag: 'docs-nav',
   styleUrl: 'nav.css'
 })
 export class DocsNav {
-  @Element() element: HTMLElement;
-  @Prop() items: MenuItems;
+  @Element() el!: HTMLElement;
+  @Prop() items!: MenuItems;
 
-  private normalizeItems(items) {
+  private normalizeItems(items: MenuItems | MenuItem[]): any[] {
     return Array.isArray(items) ? items : Object.entries(items);
   }
 
   toLink = link;
 
-  toItem = (item, level = 0) => {
+  toItem = (item: any, level = 0) => {
     const [id, value] = item;
     switch (typeof value) {
       case 'string':
@@ -34,31 +35,33 @@ export class DocsNav {
     }
   }
 
-  toSection = ([id, value], level) => {
+  toSection = ([id, value]: [string, MenuItems], level: number) => {
     const text = l10n.getString(id);
     const items = this.normalizeItems(value);
     return (
       <section>
-        { id !== '' && text !== undefined ? <header class="Nav-header">{text}</header> : null }
+        {id !== '' && text !== undefined ? <header class="Nav-header">{text}</header> : null}
         <ul
           class="Nav-subnav"
-          style={{ '--level': level }}>
-            {items.map(item => this.toItem(item, level))}
+          style={{ '--level': `${level}` }}
+        >
+          {items.map(item => this.toItem(item, level))}
         </ul>
       </section>
     );
   }
 
   setScroll = () => {
-    try {
-      this.element.querySelector('.Nav-link--active')
-        .scrollIntoView({
-          block: 'center'
-        });
-    } catch (err) {
-      this.element.offsetParent ?
-        this.element.offsetParent.scrollIntoView() :
-        this.element.scrollIntoView();
+    const activeLink = this.el.querySelector('.Nav-link--active');
+
+    if (activeLink) {
+      activeLink.scrollIntoView({
+        block: 'center'
+      });
+    } else {
+      this.el.offsetParent ?
+      this.el.offsetParent.scrollIntoView() :
+      this.el.scrollIntoView();
     }
   }
 

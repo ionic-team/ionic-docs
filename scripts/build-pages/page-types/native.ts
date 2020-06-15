@@ -1,9 +1,8 @@
+import plugins from '../../data/native.json';
 import {
   Page,
   buildPages
 } from '../index';
-
-import plugins from '../../data/native.json';
 import renderMarkdown from '../markdown-renderer';
 
 export default {
@@ -11,7 +10,7 @@ export default {
   task: () => buildPages(getNativePages)
 };
 
-async function getNativePages(): Promise<Page[]> {
+const getNativePages = async (): Promise<Page[]> => {
   return plugins.map(plugin => {
     const title = plugin.displayName.trim();
     const path = `/docs/native/${plugin.packageName.slice(14)}`;
@@ -22,12 +21,12 @@ async function getNativePages(): Promise<Page[]> {
       body: renderMarkdown(description),
       repo,
       platforms,
-      codeUsage: usage ? renderMarkdown(usage) : null,
+      codeUsage: usage !== undefined ? renderMarkdown(usage) : null,
       package: plugin.packageName,
       cordova: plugin.cordovaPlugin.name,
       capacitorIncompatible: capacitorIncompatible ? capacitorIncompatible : false,
-      premierSlug: premierSlug ? premierSlug : null,
+      premierSlug: premierSlug !== undefined ? premierSlug : null,
       template: 'native'
     };
   });
-}
+};

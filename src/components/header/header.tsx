@@ -1,4 +1,5 @@
 import { Component, Listen, Prop, State, h } from '@stencil/core';
+
 import { Checkmark, ForwardArrow, Logo, Translation } from '../../icons';
 import { l10n } from '../../l10n';
 import { link } from '../nav/link';
@@ -12,7 +13,7 @@ export class DocsHeader {
   private frameRequested = false;
   private prevScroll = 0;
 
-  @Prop() onToggleClick: (e: Event) => void;
+  @Prop() toggleClickFn!: (e: Event) => void;
 
   @Listen('scroll', { target: 'window' })
   handleScroll() {
@@ -70,7 +71,7 @@ export class DocsHeader {
     const { getString } = l10n;
     return (
       <header>
-        <docs-menu-toggle onClick={this.onToggleClick}/>
+        <docs-menu-toggle onClick={this.toggleClickFn}/>
 
         <stencil-route-link url="/docs/">
           <Logo class="HeaderLogo"/>

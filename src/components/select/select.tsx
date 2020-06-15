@@ -5,12 +5,12 @@ import { Component, Event, EventEmitter, Prop, State, Watch, h } from '@stencil/
   styleUrl: 'select.css'
 })
 export class DocsSelect {
-  private dropdown;
+  private dropdown!: any;
 
-  @State() selected: string;
-  @Prop({ mutable: true }) options: string[];
-  @Prop() initializer: (options: string[]) => string;
-  @Prop() optionRenderer: (option: string) => any = (option: string) => option;
+  @State() selected!: string | null;
+  @Prop({ mutable: true }) options!: string[];
+  @Prop() initializer!: (options: string[]) => string | null;
+  @Prop() optionRenderer: (option: string | null) => any = (option: string | null) => option;
 
   select = (option: string) => {
     this.selected = option;
@@ -49,16 +49,15 @@ export class DocsSelect {
         aria-checked={isSelected ? 'true' : 'false'}
         tabindex="0"
         onClick={handleClick}
-        onKeyUp={handleKeyUp}>
-          {this.optionRenderer(option)}
+        onKeyUp={handleKeyUp}
+      >
+        {this.optionRenderer(option)}
       </div>
     );
   }
 
   componentWillLoad() {
-    this.selected = typeof this.initializer === 'function'
-      ? this.initializer(this.options)
-      : this.options[0];
+    this.selected = this.initializer(this.options);
   }
 
   hostData() {
@@ -73,8 +72,9 @@ export class DocsSelect {
     return (
       <docs-dropdown
         ref={el => { this.dropdown = el; }}
-        label={this.optionRenderer(this.selected)}>
-          {this.options.map(this.toOption)}
+        label={this.optionRenderer(this.selected)}
+      >
+        {this.options.map(this.toOption)}
       </docs-dropdown>
     );
   }

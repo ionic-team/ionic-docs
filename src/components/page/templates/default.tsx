@@ -1,7 +1,8 @@
 import { h } from '@stencil/core';
+
 import { toHypertext } from '../to-hypertext';
 
-export default props => {
+export default (props: { [key: string]: any }) => {
   const { page } = props;
 
   return (

@@ -1,7 +1,7 @@
 
 export interface ColorVariable {
-  property?: string;
-  name?: string;
+  property: string;
+  name: string;
   value?: string;
   valueRgb?: string;
   contrast?: string;
@@ -9,7 +9,6 @@ export interface ColorVariable {
   tint?: string;
   shade?: string;
 }
-
 
 export const COLOR_VARS: ColorVariable[] = [
   {

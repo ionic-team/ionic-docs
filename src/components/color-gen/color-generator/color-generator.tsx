@@ -1,7 +1,7 @@
 import { Component, Element, Event, EventEmitter, Listen, State, h } from '@stencil/core';
+
 import { ColorVariable } from '../color-variables';
 import { convertCssToColors, generateColor, updateCssText } from '../parse-css';
-
 
 @Component({
   tag: 'color-generator',
@@ -10,8 +10,8 @@ import { convertCssToColors, generateColor, updateCssText } from '../parse-css';
 })
 export class ColorGenerator {
 
-  @Element() el: HTMLElement;
-  @Event() demoMessage: EventEmitter;
+  @Element() el!: HTMLElement;
+  @Event() demoMessage!: EventEmitter;
   @State() colors: ColorVariable[] = [];
   @State() cssText = DEFAULT_CSS_TEXT;
 
@@ -34,9 +34,10 @@ export class ColorGenerator {
       shade: '-shade',
       tint: '-tint',
     };
-    Object.keys(attrMap).forEach(key => {
+    const keys = Object.keys(attrMap) as any as (keyof typeof attrMap)[];
+    for (const key of keys) {
       this.cssText = updateCssText(colorProperty + attrMap[key], this.cssText, genColor[key]);
-    });
+    }
 
     this.demoMessage.emit({ cssText: this.cssText });
   }
@@ -70,7 +71,6 @@ export class ColorGenerator {
   }
 
 }
-
 
 const DEFAULT_CSS_TEXT = `
 :root {

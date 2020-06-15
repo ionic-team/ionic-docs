@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "strict": true,
     "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": false,
     "declaration": false,
@@ -19,7 +20,7 @@
   },
   "include": [
     "src",
-    "types/jsx.d.ts"
+    "scripts"
   ],
   "exclude": [
     "node_modules"

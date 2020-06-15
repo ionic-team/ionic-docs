@@ -1,6 +1,7 @@
 import { Component, h } from '@stencil/core';
-import communityPlugins from '../data/native-plugins.json';
+
 import { l10n } from '../../../l10n';
+import communityPlugins from '../data/native-plugins.json';
 
 @Component({
   tag: 'docs-menu-native',

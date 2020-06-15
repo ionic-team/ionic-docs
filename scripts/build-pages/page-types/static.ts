@@ -1,32 +1,29 @@
+import glob from 'fast-glob';
+import frontMatter, { FrontMatterResult } from 'front-matter';
+import fs from 'fs-extra';
+import moment from 'moment';
+import simplegit from 'simple-git/promise';
+
+import * as GITHUB_COMMITS from '../../data/github-commits.json';
 import {
   PAGES_DIR,
   Page,
-  buildPages,
-  updatePageHtmlToHypertext
+  buildPages
 } from '../index';
-
-import fs from 'fs-extra';
-import url from 'url';
-import glob from 'fast-glob';
-import fetch from 'node-fetch';
-import frontMatter from 'front-matter';
 import markdownRenderer from '../markdown-renderer';
-import simplegit from 'simple-git/promise';
-import moment from 'moment';
 
 // ingored by git
 // generated in build-data/file-contrbutors.ts by build-data npm task
-import * as GITHUB_COMMITS from '../../data/github-commits.json';
 
 export default {
   title: 'Build static pages',
-  task: (_, status) => buildPages(getStaticPages, status)
+  task: (_: any, status: any) => buildPages(getStaticPages, status)
 };
 
-async function getStaticPages(): Promise<Page[]> {
+const getStaticPages = async (): Promise<Page[]> => {
   const paths = await getMarkdownPaths(PAGES_DIR);
   return Promise.all(paths.map(path => toPage(path)));
-}
+};
 
 export const getMarkdownPaths = (cwd: string): Promise<string[]> =>
   glob('**/*.md', {
@@ -47,7 +44,8 @@ export const toPage = async (path: string, { prod = true }: ToStaticPageOptions 
 };
 
 const renderMarkdown = (markdown: string) => {
-  const { body, attributes } = frontMatter(markdown);
+  const { body, attributes } = frontMatter(markdown) as FrontMatterResult<any>;
+
   return {
     ...attributes,
     body: markdownRenderer(body)
@@ -60,7 +58,7 @@ const readMarkdown = (path: string): Promise<string> =>
   });
 
 const getGitHubData = async (filePath: string) => {
-  const [, path] = /^.+\/(src\/pages\/.+\.md)$/.exec(filePath);
+  const [, path] = /^.+\/(src\/pages\/.+\.md)$/.exec(filePath) ?? [];
 
   try {
     const { contributors, lastUpdated } = await getFileContributors(filePath);
@@ -79,14 +77,16 @@ const getGitHubData = async (filePath: string) => {
   }
 };
 
-async function getFileContributors(filename) {
+const getFileContributors = async (filename: string) => {
   return simplegit().log({ file: filename }).then(status => ({
-      contributors: Array.from(new Set(status.all.map(commit =>
+      contributors: Array.from(new Set(status.all.map(commit => {
+        const commits: { [key: string]: any } = GITHUB_COMMITS;
         // only add the user ID if we can find it based on the commit hash
-        GITHUB_COMMITS[commit.hash] ? GITHUB_COMMITS[commit.hash].id : null
+        return commits[commit.hash] ? commits[commit.hash].id : null;
       // filter out null users
-      ).filter(user => !!user))),
-      lastUpdated: status.latest ? moment(status.latest.date, 'YYYY-MM-DD HH-mm-ss ZZ').toISOString() : ''
+      }).filter(user => !!user))),
+      // tslint:disable-next-line
+      lastUpdated: status.latest ? moment(status.latest.date, 'YYYY-MM-DD HH-mm-ss ZZ').toISOString() : null
     })
   );
-}
+};
