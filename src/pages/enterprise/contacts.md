@@ -1,8 +1,10 @@
 ---
 title: Contacts
 template: enterprise-plugin
-version: 1.0.4
-minor: 1.0.X
+version: 1.1.2
+minor: 1.1.X
+otherVersions:
+  - 1.0.X
 ---
 
 The Contacts plugin provides access to read, write, or select device contacts.
@@ -58,7 +60,6 @@ document.addEventListener('deviceready', () => {
   );
 });
 ```
-#  Contacts
 
 ## Index
 
@@ -77,833 +78,752 @@ document.addEventListener('deviceready', () => {
 
 * [ContactFieldType](#contactfieldtype)
 
----
+### Type aliases
 
-## Classes
+###  ContactFieldType
 
-<a id="contact"></a>
+Ƭ **ContactFieldType**: *"*" | "addresses" | "birthday" | "categories" | "country" | "department" | "displayName" | "emails" | "name.familyName" | "name.formatted" | "name.givenName" | "name.honorificPrefix" | "name.honorificSuffix" | "id" | "ims" | "locality" | "name.middleName" | "name" | "nickname" | "note" | "organizations" | "phoneNumbers" | "photos" | "postalCode" | "region" | "streetAddress" | "title" | "urls"*
 
-###  Contact
+Support for searching varies between platforms. iOS only supports the following types for a text search:
+ * 'name'
+ * 'emails'
+ * 'phoneNumbers'
 
-**Contact**: 
+In addition, the wildcard '*' character is required to return all contacts.
+
+Android supports all defined fields.
+
+### Contact
 
 Contains information about a single contact.
 
-<a id="contact.constructor"></a>
+### Constructors
 
 ###  constructor
 
-⊕ **new Contact**(id?: *`undefined` \| `string`*, displayName?: *`undefined` \| `string`*, name?: *[ContactName](#contactname)*, nickname?: *`undefined` \| `string`*, phoneNumbers?: *[ContactField](#contactfield)[]*, emails?: *[ContactField](#contactfield)[]*, addresses?: *[ContactAddress](#contactaddress)[]*, ims?: *[ContactField](#contactfield)[]*, organizations?: *[ContactOrganization](#contactorganization)[]*, birthday?: *`Date` \| `string` \| `null`*, note?: *`undefined` \| `string`*, photos?: *[ContactField](#contactfield)[]*, categories?: *[ContactField](#contactfield)[]*, urls?: *[ContactField](#contactfield)[]*): [Contact](#contact)
+\+ **new Contact**(`id?`: undefined | string, `displayName?`: undefined | string, `name?`: [ContactName](#contactname), `nickname?`: undefined | string, `phoneNumbers?`: [ContactField](#contactfield)[], `emails?`: [ContactField](#contactfield)[], `addresses?`: [ContactAddress](#contactaddress)[], `ims?`: [ContactField](#contactfield)[], `organizations?`: [ContactOrganization](#contactorganization)[], `birthday?`: Date | string | null, `note?`: undefined | string, `photos?`: [ContactField](#contactfield)[], `categories?`: [ContactField](#contactfield)[], `urls?`: [ContactField](#contactfield)[]): *[Contact](#contact)*
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| `Optional` id | `undefined` \| `string` |
-| `Optional` displayName | `undefined` \| `string` |
-| `Optional` name | [ContactName](#contactname) |
-| `Optional` nickname | `undefined` \| `string` |
-| `Optional` phoneNumbers | [ContactField](#contactfield)[] |
-| `Optional` emails | [ContactField](#contactfield)[] |
-| `Optional` addresses | [ContactAddress](#contactaddress)[] |
-| `Optional` ims | [ContactField](#contactfield)[] |
-| `Optional` organizations | [ContactOrganization](#contactorganization)[] |
-| `Optional` birthday | `Date` \| `string` \| `null` |
-| `Optional` note | `undefined` \| `string` |
-| `Optional` photos | [ContactField](#contactfield)[] |
-| `Optional` categories | [ContactField](#contactfield)[] |
-| `Optional` urls | [ContactField](#contactfield)[] |
+Name | Type |
+------ | ------ |
+`id?` | undefined &#124; string |
+`displayName?` | undefined &#124; string |
+`name?` | [ContactName](#contactname) |
+`nickname?` | undefined &#124; string |
+`phoneNumbers?` | [ContactField](#contactfield)[] |
+`emails?` | [ContactField](#contactfield)[] |
+`addresses?` | [ContactAddress](#contactaddress)[] |
+`ims?` | [ContactField](#contactfield)[] |
+`organizations?` | [ContactOrganization](#contactorganization)[] |
+`birthday?` | Date &#124; string &#124; null |
+`note?` | undefined &#124; string |
+`photos?` | [ContactField](#contactfield)[] |
+`categories?` | [ContactField](#contactfield)[] |
+`urls?` | [ContactField](#contactfield)[] |
 
-**Returns:** [Contact](#contact)
+**Returns:** *[Contact](#contact)*
 
-___
-<a id="contact.addresses"></a>
+### Properties
 
-### `<Optional>` addresses
+### `Optional` addresses
 
-**● addresses**: *[ContactAddress](#contactaddress)[] \| `null`*
+• **addresses**? : *[ContactAddress](#contactaddress)[] | null*
 
 An array of all the contact's addresses.
 
 ___
-<a id="contact.birthday"></a>
 
-### `<Optional>` birthday
+### `Optional` birthday
 
-**● birthday**: *`Date` \| `string` \| `null`*
+• **birthday**? : *Date | string | null*
 
 The birthday of the contact.
 
 ___
-<a id="contact.categories"></a>
 
-### `<Optional>` categories
+### `Optional` categories
 
-**● categories**: *[ContactField](#contactfield)[] \| `null`*
+• **categories**? : *[ContactField](#contactfield)[] | null*
 
 An array of all the user-defined categories associated with the contact.
 
 ___
-<a id="contact.displayname"></a>
 
-### `<Optional>` displayName
+### `Optional` displayName
 
-**● displayName**: *`string` \| `null`*
+• **displayName**? : *string | null*
 
 The name of this Contact, suitable for display to end users.
 
 ___
-<a id="contact.emails"></a>
 
-### `<Optional>` emails
+### `Optional` emails
 
-**● emails**: *[ContactField](#contactfield)[] \| `null`*
+• **emails**? : *[ContactField](#contactfield)[] | null*
 
 An array of all the contact's email addresses.
 
 ___
-<a id="contact.id"></a>
 
-### `<Optional>` id
+### `Optional` id
 
-**● id**: *`string` \| `null`*
+• **id**? : *string | null*
 
 A globally unique identifier.
 
 ___
-<a id="contact.ims"></a>
 
-### `<Optional>` ims
+### `Optional` ims
 
-**● ims**: *[ContactField](#contactfield)[] \| `null`*
+• **ims**? : *[ContactField](#contactfield)[] | null*
 
 An array of all the contact's IM addresses.
 
 ___
-<a id="contact.name"></a>
 
-### `<Optional>` name
+### `Optional` name
 
-**● name**: *[ContactName](#contactname) \| `null`*
+• **name**? : *[ContactName](#contactname) | null*
 
 An object containing all components of a persons name.
 
 ___
-<a id="contact.nickname"></a>
 
-### `<Optional>` nickname
+### `Optional` nickname
 
-**● nickname**: *`string` \| `null`*
+• **nickname**? : *string | null*
 
 A casual name by which to address the contact.
 
 ___
-<a id="contact.note"></a>
 
-### `<Optional>` note
+### `Optional` note
 
-**● note**: *`string` \| `null`*
+• **note**? : *string | null*
 
 A note about the contact on Android.
 
 ___
-<a id="contact.organizations"></a>
 
-### `<Optional>` organizations
+### `Optional` organizations
 
-**● organizations**: *[ContactOrganization](#contactorganization)[] \| `null`*
+• **organizations**? : *[ContactOrganization](#contactorganization)[] | null*
 
 An array of all the contact's organizations.
 
 ___
-<a id="contact.phonenumbers"></a>
 
-### `<Optional>` phoneNumbers
+### `Optional` phoneNumbers
 
-**● phoneNumbers**: *[ContactField](#contactfield)[] \| `null`*
+• **phoneNumbers**? : *[ContactField](#contactfield)[] | null*
 
 An array of all the contact's phone numbers.
 
 ___
-<a id="contact.photos"></a>
 
-### `<Optional>` photos
+### `Optional` photos
 
-**● photos**: *[ContactField](#contactfield)[] \| `null`*
+• **photos**? : *[ContactField](#contactfield)[] | null*
 
 An array of the contact's photos.
 
 ___
-<a id="contact.rawid"></a>
 
-### `<Optional>` rawId
+### `Optional` rawId
 
-**● rawId**: *`string` \| `null`*
+• **rawId**? : *string | null*
 
 A globally unique identifier on Android.
 
 ___
-<a id="contact.urls"></a>
 
-### `<Optional>` urls
+### `Optional` urls
 
-**● urls**: *[ContactField](#contactfield)[] \| `null`*
+• **urls**? : *[ContactField](#contactfield)[] | null*
 
 An array of web pages associated with the contact.
 
-___
-<a id="contact.clone"></a>
+### Methods
 
 ###  clone
 
-▸ **clone**(): [Contact](#contact)
+▸ **clone**(): *[Contact](#contact)*
 
-Creates a deep copy of this Contact. With the contact ID set to null.
+Creates a deep copy of this Contact.
+With the contact ID set to null.
 
-**Returns:** [Contact](#contact)
+**Returns:** *[Contact](#contact)*
+
 copy of this Contact
 
 ___
-<a id="contact.display"></a>
 
 ###  display
 
-▸ **display**(allowEdit?: *`undefined` \| `false` \| `true`*): `Promise`<`any`>
+▸ **display**(`allowEdit?`: undefined | false | true): *Promise‹any›*
 
-iOS only Display a contact in the native Contact Picker UI
+iOS only
+Display a contact in the native Contact Picker UI
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| `Optional` allowEdit | `undefined` \| `false` \| `true` |  true display the contact and allow editing it false (default) display contact without editing |
+Name | Type | Description |
+------ | ------ | ------ |
+`allowEdit?` | undefined &#124; false &#124; true |  true display the contact and allow editing it false (default) display contact without editing  |
 
-**Returns:** `Promise`<`any`>
+**Returns:** *Promise‹any›*
 
 ___
-<a id="contact.remove"></a>
 
 ###  remove
 
-▸ **remove**(): `Promise`<`any`>
+▸ **remove**(): *Promise‹any›*
 
 Removes contact from device storage.
 
-**Returns:** `Promise`<`any`>
+**Returns:** *Promise‹any›*
 
 ___
-<a id="contact.save"></a>
 
 ###  save
 
-▸ **save**(): `Promise`<`any`>
+▸ **save**(): *Promise‹any›*
 
 Persists contact to device storage.
 
-**Returns:** `Promise`<`any`>
+**Returns:** *Promise‹any›*
 
-___
-
-___
-<a id="contactaddress"></a>
-
-###  ContactAddress
-
-**ContactAddress**: 
+### Contactaddress
 
 Contact address.
 
-<a id="contactaddress.constructor"></a>
+### Constructors
 
 ###  constructor
 
-⊕ **new ContactAddress**(pref?: *`undefined` \| `false` \| `true`*, type?: *`undefined` \| `string`*, formatted?: *`undefined` \| `string`*, streetAddress?: *`undefined` \| `string`*, locality?: *`undefined` \| `string`*, region?: *`undefined` \| `string`*, postalCode?: *`undefined` \| `string`*, country?: *`undefined` \| `string`*): [ContactAddress](#contactaddress)
+\+ **new ContactAddress**(`pref?`: undefined | false | true, `type?`: undefined | string, `formatted?`: undefined | string, `streetAddress?`: undefined | string, `locality?`: undefined | string, `region?`: undefined | string, `postalCode?`: undefined | string, `country?`: undefined | string): *[ContactAddress](#contactaddress)*
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| `Optional` pref | `undefined` \| `false` \| `true` |
-| `Optional` type | `undefined` \| `string` |
-| `Optional` formatted | `undefined` \| `string` |
-| `Optional` streetAddress | `undefined` \| `string` |
-| `Optional` locality | `undefined` \| `string` |
-| `Optional` region | `undefined` \| `string` |
-| `Optional` postalCode | `undefined` \| `string` |
-| `Optional` country | `undefined` \| `string` |
+Name | Type |
+------ | ------ |
+`pref?` | undefined &#124; false &#124; true |
+`type?` | undefined &#124; string |
+`formatted?` | undefined &#124; string |
+`streetAddress?` | undefined &#124; string |
+`locality?` | undefined &#124; string |
+`region?` | undefined &#124; string |
+`postalCode?` | undefined &#124; string |
+`country?` | undefined &#124; string |
 
-**Returns:** [ContactAddress](#contactaddress)
+**Returns:** *[ContactAddress](#contactaddress)*
 
-___
-<a id="contactaddress.country"></a>
+### Properties
 
-### `<Optional>` country
+### `Optional` country
 
-**● country**: *`string` \| `null`*
+• **country**? : *string | null*
 
 The country name.
 
 ___
-<a id="contactaddress.formatted"></a>
 
-### `<Optional>` formatted
+### `Optional` formatted
 
-**● formatted**: *`string` \| `null`*
+• **formatted**? : *string | null*
 
 The full address formatted for display.
 
 ___
-<a id="contactaddress.id"></a>
 
-### `<Optional>` id
+### `Optional` id
 
-**● id**: *`string` \| `null`*
+• **id**? : *string | null*
 
 unique identifier, should only be set by native code
 
 ___
-<a id="contactaddress.locality"></a>
 
-### `<Optional>` locality
+### `Optional` locality
 
-**● locality**: *`string` \| `null`*
+• **locality**? : *string | null*
 
 The city or locality.
 
 ___
-<a id="contactaddress.postalcode"></a>
 
-### `<Optional>` postalCode
+### `Optional` postalCode
 
-**● postalCode**: *`string` \| `null`*
+• **postalCode**? : *string | null*
 
 The zip code or postal code.
 
 ___
-<a id="contactaddress.pref"></a>
 
-### `<Optional>` pref
+### `Optional` pref
 
-**● pref**: *`undefined` \| `false` \| `true`*
+• **pref**? : *undefined | false | true*
 
 Set to true if this ContactAddress contains the user's preferred value.
 
 ___
-<a id="contactaddress.region"></a>
 
-### `<Optional>` region
+### `Optional` region
 
-**● region**: *`string` \| `null`*
+• **region**? : *string | null*
 
 The state or region.
 
 ___
-<a id="contactaddress.streetaddress"></a>
 
-### `<Optional>` streetAddress
+### `Optional` streetAddress
 
-**● streetAddress**: *`string` \| `null`*
+• **streetAddress**? : *string | null*
 
 The full street address.
 
 ___
-<a id="contactaddress.type"></a>
 
-### `<Optional>` type
+### `Optional` type
 
-**● type**: *`string` \| `null`*
+• **type**? : *string | null*
 
 A string indicating what type of field this is, home for example.
 
-___
+### Contacterror
 
-___
-<a id="contacterror"></a>
+ContactError.
+ An error code assigned by an implementation when an error has occurred
 
-###  ContactError
-
-**ContactError**: 
-
-ContactError. An error code assigned by an implementation when an error has occurred
-
-*__constructor__*: 
-
-<a id="contacterror.constructor"></a>
+### Constructors
 
 ###  constructor
 
-⊕ **new ContactError**(code: *`number`*): [ContactError](#contacterror)
+\+ **new ContactError**(`code`: number): *[ContactError](#contacterror)*
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| code | `number` |
+Name | Type |
+------ | ------ |
+`code` | number |
 
-**Returns:** [ContactError](#contacterror)
+**Returns:** *[ContactError](#contacterror)*
 
-___
-<a id="contacterror.code"></a>
+### Properties
 
 ###  code
 
-**● code**: *`number`*
+• **code**: *number*
 
 Error code
 
 ___
-<a id="contacterror.message"></a>
 
-### `<Optional>` message
+### `Optional` message
 
-**● message**: *`undefined` \| `string`*
+• **message**? : *undefined | string*
 
 Error message
 
 ___
-<a id="contacterror.invalid_argument_error"></a>
 
-### `<Static>` INVALID_ARGUMENT_ERROR
+### `Static` INVALID_ARGUMENT_ERROR
 
-**● INVALID_ARGUMENT_ERROR**: *`number`* = 1
-
-___
-<a id="contacterror.io_error"></a>
-
-### `<Static>` IO_ERROR
-
-**● IO_ERROR**: *`number`* = 4
+▪ **INVALID_ARGUMENT_ERROR**: *number* = 1
 
 ___
-<a id="contacterror.not_supported_error"></a>
 
-### `<Static>` NOT_SUPPORTED_ERROR
+### `Static` IO_ERROR
 
-**● NOT_SUPPORTED_ERROR**: *`number`* = 5
-
-___
-<a id="contacterror.operation_cancelled_error"></a>
-
-### `<Static>` OPERATION_CANCELLED_ERROR
-
-**● OPERATION_CANCELLED_ERROR**: *`number`* = 6
+▪ **IO_ERROR**: *number* = 4
 
 ___
-<a id="contacterror.pending_operation_error"></a>
 
-### `<Static>` PENDING_OPERATION_ERROR
+### `Static` NOT_SUPPORTED_ERROR
 
-**● PENDING_OPERATION_ERROR**: *`number`* = 3
-
-___
-<a id="contacterror.permission_denied_error"></a>
-
-### `<Static>` PERMISSION_DENIED_ERROR
-
-**● PERMISSION_DENIED_ERROR**: *`number`* = 20
+▪ **NOT_SUPPORTED_ERROR**: *number* = 5
 
 ___
-<a id="contacterror.timeout_error"></a>
 
-### `<Static>` TIMEOUT_ERROR
+### `Static` OPERATION_CANCELLED_ERROR
 
-**● TIMEOUT_ERROR**: *`number`* = 2
+▪ **OPERATION_CANCELLED_ERROR**: *number* = 6
 
 ___
-<a id="contacterror.unknown_error"></a>
 
-### `<Static>` UNKNOWN_ERROR
+### `Static` PENDING_OPERATION_ERROR
 
-**● UNKNOWN_ERROR**: *`number`* = 0
+▪ **PENDING_OPERATION_ERROR**: *number* = 3
+
+___
+
+### `Static` PERMISSION_DENIED_ERROR
+
+▪ **PERMISSION_DENIED_ERROR**: *number* = 20
+
+___
+
+### `Static` TIMEOUT_ERROR
+
+▪ **TIMEOUT_ERROR**: *number* = 2
+
+___
+
+### `Static` UNKNOWN_ERROR
+
+▪ **UNKNOWN_ERROR**: *number* = 0
 
 Error codes
 
-___
-
-___
-<a id="contactfield"></a>
-
-###  ContactField
-
-**ContactField**: 
+### Contactfield
 
 Generic contact field.
 
-<a id="contactfield.constructor"></a>
+### Constructors
 
 ###  constructor
 
-⊕ **new ContactField**(type?: *`undefined` \| `string`*, value?: *`undefined` \| `string`*, pref?: *`undefined` \| `false` \| `true`*): [ContactField](#contactfield)
+\+ **new ContactField**(`type?`: undefined | string, `value?`: undefined | string, `pref?`: undefined | false | true): *[ContactField](#contactfield)*
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| `Optional` type | `undefined` \| `string` |
-| `Optional` value | `undefined` \| `string` |
-| `Optional` pref | `undefined` \| `false` \| `true` |
+Name | Type |
+------ | ------ |
+`type?` | undefined &#124; string |
+`value?` | undefined &#124; string |
+`pref?` | undefined &#124; false &#124; true |
 
-**Returns:** [ContactField](#contactfield)
+**Returns:** *[ContactField](#contactfield)*
 
-___
-<a id="contactfield.id"></a>
+### Properties
 
-### `<Optional>` id
+### `Optional` id
 
-**● id**: *`string` \| `null`*
+• **id**? : *string | null*
 
 unique identifier, should only be set by native code
 
 ___
-<a id="contactfield.pref"></a>
 
-### `<Optional>` pref
+### `Optional` pref
 
-**● pref**: *`undefined` \| `false` \| `true`*
+• **pref**? : *undefined | false | true*
 
 Set to true if this ContactField contains the user's preferred value.
 
 ___
-<a id="contactfield.type"></a>
 
-### `<Optional>` type
+### `Optional` type
 
-**● type**: *`string` \| `null`*
+• **type**? : *string | null*
 
 A string that indicates what type of field this is, home for example.
 
 ___
-<a id="contactfield.value"></a>
 
-### `<Optional>` value
+### `Optional` value
 
-**● value**: *`string` \| `null`*
+• **value**? : *string | null*
 
 The value of the field, such as a phone number or email address.
 
-___
+### Contactfindoptions
 
-___
-<a id="contactfindoptions"></a>
+ContactFindOptions.
+Search options to filter
 
-###  ContactFindOptions
-
-**ContactFindOptions**: 
-
-ContactFindOptions. Search options to filter
-
-<a id="contactfindoptions.constructor"></a>
+### Constructors
 
 ###  constructor
 
-⊕ **new ContactFindOptions**(filter?: *`undefined` \| `string`*, multiple?: *`undefined` \| `false` \| `true`*, desiredFields?: *`string`[]*, hasPhoneNumber?: *`undefined` \| `false` \| `true`*): [ContactFindOptions](#contactfindoptions)
+\+ **new ContactFindOptions**(`filter?`: undefined | string, `multiple?`: undefined | false | true, `desiredFields?`: string[], `hasPhoneNumber?`: undefined | false | true): *[ContactFindOptions](#contactfindoptions)*
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| `Optional` filter | `undefined` \| `string` |
-| `Optional` multiple | `undefined` \| `false` \| `true` |
-| `Optional` desiredFields | `string`[] |
-| `Optional` hasPhoneNumber | `undefined` \| `false` \| `true` |
+Name | Type |
+------ | ------ |
+`filter?` | undefined &#124; string |
+`multiple?` | undefined &#124; false &#124; true |
+`desiredFields?` | string[] |
+`hasPhoneNumber?` | undefined &#124; false &#124; true |
 
-**Returns:** [ContactFindOptions](#contactfindoptions)
+**Returns:** *[ContactFindOptions](#contactfindoptions)*
 
-___
-<a id="contactfindoptions.desiredfields"></a>
+### Properties
 
-### `<Optional>` desiredFields
+### `Optional` desiredFields
 
-**● desiredFields**: *`string`[]*
+• **desiredFields**? : *string[]*
 
 Contact fields to be returned back. If specified, the resulting Contact object only features values for these fields.
 
 ___
-<a id="contactfindoptions.filter"></a>
 
-### `<Optional>` filter
+### `Optional` filter
 
-**● filter**: *`undefined` \| `string`*
+• **filter**? : *undefined | string*
 
 The search string used to find navigator.contacts.
 
 ___
-<a id="contactfindoptions.hasphonenumber"></a>
 
-### `<Optional>` hasPhoneNumber
+### `Optional` hasPhoneNumber
 
-**● hasPhoneNumber**: *`undefined` \| `false` \| `true`*
+• **hasPhoneNumber**? : *undefined | false | true*
 
 (Android only): Filters the search to only return contacts with a phone number informed.
 
 ___
-<a id="contactfindoptions.multiple"></a>
 
-### `<Optional>` multiple
+### `Optional` multiple
 
-**● multiple**: *`undefined` \| `false` \| `true`*
+• **multiple**? : *undefined | false | true*
 
 Determines if the find operation returns multiple navigator.contacts. Defaults to false.
 
-___
-
-___
-<a id="contactname"></a>
-
-###  ContactName
-
-**ContactName**: 
+### Contactname
 
 Contact name.
 
-<a id="contactname.constructor"></a>
+### Constructors
 
 ###  constructor
 
-⊕ **new ContactName**(formatted?: *`undefined` \| `string`*, familyName?: *`undefined` \| `string`*, givenName?: *`undefined` \| `string`*, middleName?: *`undefined` \| `string`*, honorificPrefix?: *`undefined` \| `string`*, honorificSuffix?: *`undefined` \| `string`*): [ContactName](#contactname)
+\+ **new ContactName**(`formatted?`: undefined | string, `familyName?`: undefined | string, `givenName?`: undefined | string, `middleName?`: undefined | string, `honorificPrefix?`: undefined | string, `honorificSuffix?`: undefined | string): *[ContactName](#contactname)*
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| `Optional` formatted | `undefined` \| `string` |
-| `Optional` familyName | `undefined` \| `string` |
-| `Optional` givenName | `undefined` \| `string` |
-| `Optional` middleName | `undefined` \| `string` |
-| `Optional` honorificPrefix | `undefined` \| `string` |
-| `Optional` honorificSuffix | `undefined` \| `string` |
+Name | Type |
+------ | ------ |
+`formatted?` | undefined &#124; string |
+`familyName?` | undefined &#124; string |
+`givenName?` | undefined &#124; string |
+`middleName?` | undefined &#124; string |
+`honorificPrefix?` | undefined &#124; string |
+`honorificSuffix?` | undefined &#124; string |
 
-**Returns:** [ContactName](#contactname)
+**Returns:** *[ContactName](#contactname)*
 
-___
-<a id="contactname.familyname"></a>
+### Properties
 
-### `<Optional>` familyName
+### `Optional` familyName
 
-**● familyName**: *`string` \| `null`*
+• **familyName**? : *string | null*
 
 The contact's family name.
 
 ___
-<a id="contactname.formatted"></a>
 
-### `<Optional>` formatted
+### `Optional` formatted
 
-**● formatted**: *`string` \| `null`*
+• **formatted**? : *string | null*
 
 The complete name of the contact.
 
 ___
-<a id="contactname.givenname"></a>
 
-### `<Optional>` givenName
+### `Optional` givenName
 
-**● givenName**: *`string` \| `null`*
+• **givenName**? : *string | null*
 
 The contact's given name.
 
 ___
-<a id="contactname.honorificprefix"></a>
 
-### `<Optional>` honorificPrefix
+### `Optional` honorificPrefix
 
-**● honorificPrefix**: *`string` \| `null`*
+• **honorificPrefix**? : *string | null*
 
 The contact's prefix (example Mr. or Dr.)
 
 ___
-<a id="contactname.honorificsuffix"></a>
 
-### `<Optional>` honorificSuffix
+### `Optional` honorificSuffix
 
-**● honorificSuffix**: *`string` \| `null`*
+• **honorificSuffix**? : *string | null*
 
 The contact's suffix (example Esq.).
 
 ___
-<a id="contactname.middlename"></a>
 
-### `<Optional>` middleName
+### `Optional` middleName
 
-**● middleName**: *`string` \| `null`*
+• **middleName**? : *string | null*
 
 The contact's middle name.
 
-___
-
-___
-<a id="contactorganization"></a>
-
-###  ContactOrganization
-
-**ContactOrganization**: 
+### Contactorganization
 
 Contact organization.
 
-<a id="contactorganization.constructor"></a>
+### Constructors
 
 ###  constructor
 
-⊕ **new ContactOrganization**(type?: *`undefined` \| `string`*, name?: *`undefined` \| `string`*, department?: *`undefined` \| `string`*, title?: *`undefined` \| `string`*, pref?: *`undefined` \| `false` \| `true`*): [ContactOrganization](#contactorganization)
+\+ **new ContactOrganization**(`type?`: undefined | string, `name?`: undefined | string, `department?`: undefined | string, `title?`: undefined | string, `pref?`: undefined | false | true): *[ContactOrganization](#contactorganization)*
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| `Optional` type | `undefined` \| `string` |
-| `Optional` name | `undefined` \| `string` |
-| `Optional` department | `undefined` \| `string` |
-| `Optional` title | `undefined` \| `string` |
-| `Optional` pref | `undefined` \| `false` \| `true` |
+Name | Type |
+------ | ------ |
+`type?` | undefined &#124; string |
+`name?` | undefined &#124; string |
+`department?` | undefined &#124; string |
+`title?` | undefined &#124; string |
+`pref?` | undefined &#124; false &#124; true |
 
-**Returns:** [ContactOrganization](#contactorganization)
+**Returns:** *[ContactOrganization](#contactorganization)*
 
-___
-<a id="contactorganization.department"></a>
+### Properties
 
-### `<Optional>` department
+### `Optional` department
 
-**● department**: *`string` \| `null`*
+• **department**? : *string | null*
 
 The department the contract works for.
 
 ___
-<a id="contactorganization.id"></a>
 
-### `<Optional>` id
+### `Optional` id
 
-**● id**: *`string` \| `null`*
+• **id**? : *string | null*
 
 unique identifier, should only be set by native code
 
 ___
-<a id="contactorganization.name"></a>
 
-### `<Optional>` name
+### `Optional` name
 
-**● name**: *`string` \| `null`*
+• **name**? : *string | null*
 
 The name of the organization.
 
 ___
-<a id="contactorganization.pref"></a>
 
-### `<Optional>` pref
+### `Optional` pref
 
-**● pref**: *`undefined` \| `false` \| `true`*
+• **pref**? : *undefined | false | true*
 
 Set to true if this ContactOrganization contains the user's preferred value.
 
 ___
-<a id="contactorganization.title"></a>
 
-### `<Optional>` title
+### `Optional` title
 
-**● title**: *`string` \| `null`*
+• **title**? : *string | null*
 
 The contact's title at the organization.
 
 ___
-<a id="contactorganization.type"></a>
 
-### `<Optional>` type
+### `Optional` type
 
-**● type**: *`string` \| `null`*
+• **type**? : *string | null*
 
 A string that indicates what type of field this is, home for example.
 
-___
-
-___
-<a id="contacts"></a>
-
-###  Contacts
-
-**Contacts**: 
+### Contacts
 
 Access and manage Contacts on the device.
 
-<a id="contacts.create"></a>
+### Methods
 
 ###  create
 
-▸ **create**(properties?: *`any`*): [Contact](#contact)
+▸ **create**(`properties?`: any): *[Contact](#contact)*
 
-This function creates a new contact, but it does not persist the contact to device storage. To persist the contact to device storage, invoke contact.save().
+This function creates a new contact, but it does not persist the contact
+to device storage. To persist the contact to device storage, invoke
+contact.save().
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| `Optional` properties | `any` |  an object whose properties will be examined to create a new Contact |
+Name | Type | Description |
+------ | ------ | ------ |
+`properties?` | any | an object whose properties will be examined to create a new Contact |
 
-**Returns:** [Contact](#contact)
+**Returns:** *[Contact](#contact)*
+
 new Contact object
 
 ___
-<a id="contacts.find"></a>
 
 ###  find
 
-▸ **find**(fields: *[ContactFieldType](#contactfieldtype)[]*, options?: *[ContactFindOptions](#contactfindoptions)*): `Promise`<[Contact](#contact)[]>
+▸ **find**(`fields`: [ContactFieldType](#contactfieldtype)[], `options?`: [ContactFindOptions](#contactfindoptions)): *Promise‹[Contact](#contact)[]›*
 
 Returns an array of Contacts matching the search criteria.
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| fields | [ContactFieldType](#contactfieldtype)[] |  that should be searched |
-| `Optional` options | [ContactFindOptions](#contactfindoptions) |  that can be applied to contact searching |
+Name | Type | Description |
+------ | ------ | ------ |
+`fields` | [ContactFieldType](#contactfieldtype)[] | that should be searched (see platform specific notes) |
+`options?` | [ContactFindOptions](#contactfindoptions) | that can be applied to contact searching |
 
-**Returns:** `Promise`<[Contact](#contact)[]>
+**Returns:** *Promise‹[Contact](#contact)[]›*
+
 a promise that resolves with the array of Contacts matching search criteria
 
 ___
-<a id="contacts.newcontactui"></a>
 
 ###  newContactUI
 
-▸ **newContactUI**(): `Promise`<`string`>
+▸ **newContactUI**(): *Promise‹string›*
 
-iOS only Create a contact using the iOS Contact Picker UI
+iOS only
+Create a contact using the iOS Contact Picker UI
 
 returns: a promise that resolves with the id of the created contact as param to successCallback
 
-**Returns:** `Promise`<`string`>
+**Returns:** *Promise‹string›*
 
 ___
-<a id="contacts.pickcontact"></a>
 
 ###  pickContact
 
-▸ **pickContact**(): `Promise`<[Contact](#contact)>
+▸ **pickContact**(): *Promise‹[Contact](#contact)›*
 
 This function picks contact from phone using contact picker UI
 
-**Returns:** `Promise`<[Contact](#contact)>
+**Returns:** *Promise‹[Contact](#contact)›*
+
 a promise that resolves with the selected Contact object
 
-___
+## Changelog
 
-___
+### [1.1.2] (2020-06-10)
 
-## Type aliases
+### Bug Fixes
 
-<a id="contactfieldtype"></a>
+* **ios:** Adding additional search predicates on iOS  
 
-###  ContactFieldType
+### [1.1.1] (2020-05-28)
 
-**Ƭ ContactFieldType**: *"*" \| "addresses" \| "birthday" \| "categories" \| "country" \| "department" \| "displayName" \| "emails" \| "name.familyName" \| "name.formatted" \| "name.givenName" \| "name.honorificPrefix" \| "name.honorificSuffix" \| "id" \| "ims" \| "locality" \| "name.middleName" \| "name" \| "nickname" \| "note" \| "organizations" \| "phoneNumbers" \| "photos" \| "postalCode" \| "region" \| "streetAddress" \| "title" \| "urls"*
+### Bug Fixes
 
-___
+* **ios:** make wildcard return all contacts  
 
-# Changelog
+### [1.1.0] (2020-04-24)
 
+### Features
 
+* **ios:** enable wildcard fetch-all contacts  
+
+### [1.0.6] (2020-02-07)
+
+### Bug Fixes
+
+* **ios:** make save work on existing contacts  
+
+### [1.0.5] (2019-11-22)
+
+### Bug Fixes
+
+* prevent devideready block when package is not installed as plugin 
 
 ### [1.0.4] (2019-11-08)
-
 
 ### Bug Fixes
 
@@ -911,20 +831,17 @@ ___
 
 ### [1.0.3] (2019-11-04)
 
-
 ### Bug Fixes
 
 * make plugin don't break web context 
 
 ### [1.0.2] (2019-10-02)
 
-
 ### Bug Fixes
 
 * **ios:** remove contact notes code to work on iOS 13 
 
 ### 1.0.1 (2019-09-20)
-
 
 ### Bug Fixes
 
