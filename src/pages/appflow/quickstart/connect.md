@@ -26,6 +26,7 @@ and click `Create`.
 
 ## Choose your Git Integration
 Next, you'll need to decide how Appflow will access your source code. We suggest using [GitHub](https://github.com/),
+[GitLab](https://gitlab.com/),
 [Bitbucket](https://bitbucket.org/), or [Bitbucket Server](https://bitbucket.org/product/enterprise)
 if you're using them already. The integrations with these services are easy to configure and you'll
 get some additional benefits like being able view the commits your builds came from and the changes on your
@@ -38,6 +39,10 @@ Ionic git is *not* intended to be a Git host and we strongly suggest using GitHu
   <docs-card header="Connect using GitHub" href="/docs/appflow/quickstart/github" icon="/docs/assets/icons/guide-github-icon.png">
     <p>Connect your app to a repo on GitHub.</p>
   </docs-card>
+  
+  <docs-card header="Connect using GitLab" href="/docs/appflow/quickstart/gitlab" icon="/docs/assets/icons/guide-gitlab-icon.png">
+      <p>Connect your app to a repo on GitLab.</p>
+    </docs-card>
 
   <docs-card header="Connect using Bitbucket" href="/docs/appflow/quickstart/bitbucket" icon="/docs/assets/icons/guide-bitbucket-icon.png">
     <p>Connect your app to a repo on Bitbucket.</p>
