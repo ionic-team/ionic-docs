@@ -20,6 +20,8 @@ Migrating from Adobe’s [PhoneGap Build](https://build.phonegap.com) to Ionic A
 - PhoneGap/Cordova apps written in jQuery Mobile, Framework 7, Sencha, KendoUI, or even your own custom solution can be migrated. <strong>An existing Ionic app is not required.</strong>
 - Ionic has [Advisory services](https://ionicframework.com/advisory) available if you need migration assistance.
 
+> Building your app in the cloud with Ionic Appflow requires a subscription to the Launch plan and above. [Sign up here](https://ionicframework.com/pricing/compare).
+
 ## About PhoneGap Build
 
 One of the challenges when developing a PhoneGap/Cordova based application is that in order for you to create native applications for iOS and Android using your web application, you also need to install all the same tooling that traditional mobile developers need. For example, if you want to create an iOS application, you have to download and install Xcode, assuming you have a Macintosh to run it on. If you are also planning to create an Android version of your application, then not only are you installing Android Studio but the Java SDK, as well as other tools. The challenge of learning and using these complex IDEs, making sure they are properly configured (and updated) can be daunting.
