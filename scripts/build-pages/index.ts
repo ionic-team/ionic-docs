@@ -90,7 +90,8 @@ const patchBody = (page: Page): Page => {
   const prefix = /^\/docs\/([a-z]{2}\b)?/;
   const pageClass = `page-${slugify(page.path.replace(prefix, ''))}`;
 
-  const [, language] = prefix.exec(page.path) || 'en';
+  const [, language = 'en'] = prefix.exec(page.path) || [];
+
   if (language !== 'en') {
     if (page.previousUrl) {
       page.previousUrl = page.previousUrl.replace(prefix, `/docs/${language}/`);

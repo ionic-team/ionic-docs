@@ -39,7 +39,7 @@ docs-pagination .next a {
   docs-pagination .previous a {
     padding-right: .5rem;
   }
-  
+
   docs-pagination .next a {
     padding-left: .5rem;
   }
@@ -52,13 +52,13 @@ docs-pagination .next a {
   }
 }
 
-docs-pagination .paggination__title {
+docs-pagination .pagination__title {
   color: var(--text-color--lighter);
   font-size: 12px;
   display: block;
 }
 
-docs-pagination .paggination__text {
+docs-pagination .pagination__text {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
