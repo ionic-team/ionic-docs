@@ -20,6 +20,8 @@ meta:
 - PhoneGap/Cordova 应用程序以 jQuery Mobile, Framework 7, Sencha, KendoUI, 或者甚至您自己的自定义解决方案都可以迁移。 <strong>不需要现有的Ionic应用程序。</strong>
 - 如果您需要迁移援助，Ionic提供[咨询服务](https://ionicframework.com/advisory)
 
+> Building your app in the cloud with Ionic Appflow requires a subscription to the Launch plan and above. [Sign up here](https://ionicframework.com/pricing/compare).
+
 ## 关于 PhoneGap 版本
 
 开发基于 PhoneGap/Cordova 的应用程序时遇到的挑战之一是，为了让您使用您的 web 应用程序为iOS 和 Android 创建本机应用程序。 您还需要安装所有与传统移动开发者相同的工具。 例如，如果您想要创建 iOS 应用程序 您必须下载并安装 Xcode ，假定您有一个Mac电脑来运行它。 如果您也在计划创建您的应用程序的 Android 版本， 然后您不仅安装了 Android Studio ，而且安装 Java SDK 以及其他工具。 学习和使用这些复杂的注重成果的企业，确保它们得到适当的配置(和更新)，可能是一项艰巨的挑战。
@@ -124,7 +126,7 @@ meta:
 
 您可能还会发现您需要生成一些额外的图标和启动屏幕来支持最新的设备。
 
-> Ionic提供了一个有用的工具，可以从单个源图标和启动屏幕生成图标和初始屏幕。 [查看这里](https://github.com/ionic-team/cordova-res) 了解详情。
+> Ionic offers a helpful tool that generates icons and splash screens from a single source Icon and Splash Screen image. [See here](https://github.com/ionic-team/cordova-res) for details.
 
 Config.xml 文件可能需要一些额外的更改才能正常运行。 我会查看您现有的 config.xml 中的每个元素，看看它是否使用 [最新的语法](https://cordova.apache.org/docs/en/latest/config_ref/index.html)。 您需要意识到的其他更改是访问某些功能，如位置、 摄像机或麦克风需要额外的元素才能使用。 如果您现有的应用程序使用了其中的任何功能，您需要添加新元素以使它们能够运行。
 
@@ -132,7 +134,7 @@ Config.xml 文件可能需要一些额外的更改才能正常运行。 我会�
 
 ### Set up a Git Repository
 
-> 如果您已经在 Git 仓库中拥有您的应用，您可以跳过此部分。
+> If you already have your app in a Git repository, you can skip this section.
 
 One of the appeals of PhoneGap Build was its simplicity to trigger a build, zip up your app, and upload it to PhoneGap Build and a build with then automatically kick-off. While it was possible to connect PhoneGap Build with a Git repository, it was an optional step. Ionic Appflow requires the use of Git as part of its workflow.
 
