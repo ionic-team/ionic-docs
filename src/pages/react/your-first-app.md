@@ -105,7 +105,7 @@ There are three tabs. Click on the Tab2 tab. It’s a blank canvas, aka the perf
 
 ![Before and after going through this tutorial](/docs/assets/img/guides/first-app-cap-ng/email-photogallery.gif)
 
-Open `/src/pages/Tab2.tsx	`. We see:
+Open `/src/pages/Tab2.tsx`. We see:
 
 ```typescript
 <IonPage>
