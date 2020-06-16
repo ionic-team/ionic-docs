@@ -1,7 +1,7 @@
 ---
-previousText: 'Your First App'
+previousText: '你的第一个 APP'
 previousUrl: '/docs/react/your-first-app'
-nextText: 'Saving Photos on Filesystem'
+nextText: '保存照片到文件系统中'
 nextUrl: '/docs/react/your-first-app/3-saving-photos'
 ---
 
