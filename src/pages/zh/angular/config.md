@@ -64,7 +64,7 @@ import { IonicModule } from '@ionic/angular';
 
 在示例中，我们使用到了`ion-back-button`的动态更新文本，这个方式在语言或地区改变时十分有用。 `getBackButtonText`方法将负责返回正确的文本内容。
 
-## Per-Platform Config
+## 平台配置
 
 Ionic 设置也可以基于特定的平台 例如, 如果应用运行在一个可能较慢的设备的浏览器中时, 你可以禁用动画 Developers can take advantage of the Platform utilities to accomplish this.
 
