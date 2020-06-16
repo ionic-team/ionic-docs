@@ -127,7 +127,7 @@ Open `/src/pages/Tab2.tsx`. We see:
 <IonTitle>Photo Gallery</IonTitle>
 ```
 
-We put the visual aspects of our app into `<IonContent>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. Start by adding a [floating action button](https://ionicframework.com/docs/api/fab) (FAB). First, update the imports at the top of the page to include the Camera icon as well as the some Ionic components we'll use shortly:
+We put the visual aspects of our app into `<IonContent>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. Start by adding a [floating action button](https://ionicframework.com/docs/api/fab) (FAB). First, update the imports at the top of the page to include the Camera icon as well as some of the Ionic components we'll use shortly:
 
 ```typescript
 import { camera, trash, close } from 'ionicons/icons';
