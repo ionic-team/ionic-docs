@@ -7,11 +7,11 @@ nextUrl: '/docs/angular/your-first-app/4-loading-photos'
 
 # 保存照片到文件系统
 
-在应用程序中，我们已经可以拍摄多张照片。并且在第二个标签页的图库中显示它们。不足的是，现在我们还无法进行永久存储，因此在关闭应用程序时，它们都会被删除。
+我们现在可以拍摄多张照片，并且在我们应用程序第二个选项卡上的照片库中显示它们。 然而， 目前并未永久存储，因此在关闭应用程序时，它们将会被删除。
 
 ## 文件系统 API
 
-幸运的是，将它们保存到文件系统只需要几个步骤。 首先，在 `PhotoService`类 (`src/app/services/photo.service.ts`) 中新建一个函数`savePicture()`。 我们将相机拍摄到的照片传入到`cameraPhoto`对象中：
+幸运的是，将它们保存到文件系统只需要几个步骤。 首先，在 `PhotoService` (`src/app/services/photo.service.ts`) 类中创建一个新函数 `savePicture()` 。 我们将相机拍摄到的照片传入到`cameraPhoto`对象中：
 
 ```typescript
 private async savePicture(cameraPhoto: CameraPhoto) { }
