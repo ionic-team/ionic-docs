@@ -28,7 +28,7 @@
     "compression": "^1.7.4",
     "express": "^4.16.4",
     "helmet": "^3.23.1",
-    "moment": "^2.24.0",
+    "moment": "^2.26.0",
     "prismic-dom": "^2.2.3",
     "prismic-javascript": "^2.1.5",
     "simple-git": "^2.6.0",
