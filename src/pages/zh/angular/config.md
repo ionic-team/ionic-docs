@@ -66,7 +66,7 @@ import { IonicModule } from '@ionic/angular';
 
 ## Per-Platform Config
 
-Ionic Config can also be set on a per-platform basis. For example, this allows you to disable animations if the app is being run in a browser on a potentially slower device. Developers can take advantage of the Platform utilities to accomplish this.
+Ionic 设置也可以基于特定的平台 例如, 如果应用运行在一个可能较慢的设备的浏览器中时, 你可以禁用动画 Developers can take advantage of the Platform utilities to accomplish this.
 
 Since the config is set at runtime, you will not have access to the Platform Dependency Injection. Instead, you can use the underlying functions that the provider uses directly.
 
