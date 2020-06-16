@@ -29,7 +29,7 @@
     "express": "^4.16.4",
     "helmet": "^3.23.1",
     "moment": "^2.24.0",
-    "prismic-dom": "^2.1.0",
+    "prismic-dom": "^2.2.3",
     "prismic-javascript": "^2.1.5",
     "simple-git": "^2.6.0",
     "throng": "^4.0.0"
