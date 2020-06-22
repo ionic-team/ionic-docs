@@ -38,7 +38,7 @@
     "@stencil/core": "1.14.0",
     "@types/fs-extra": "8.1.0",
     "@types/listr": "0.14.2",
-    "@types/marked": "0.7.4",
+    "@types/marked": "1.1.0",
     "@types/node-fetch": "2.5.7",
     "@types/prismic-dom": "2.1.1",
     "@types/prismjs": "^1.16.1",
