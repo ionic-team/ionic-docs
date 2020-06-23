@@ -24,7 +24,7 @@ Appflow直接使用 Git 版本控制并使用您的代码库 作为部署和软�
 
 ## 选择您的Git集成
 
-接下来，您需要决定Appflow如何访问您的源代码。 我们建议使用 [GitHub ](https://github.com/), [Bitbuc ket](https://bitbucket.org/), 或 [Bitbucket 服务器](https://bitbucket.org/product/en terprise) 如果您已经使用它们。 与这些服务的集成很容易配置，您将 获得一些额外的好处，如能够查看您的构建和您的 Git 远程更改等。
+接下来，您需要决定Appflow如何访问您的源代码。 We suggest using [GitHub](https://github.com/), [GitLab](https://gitlab.com/), [Bitbucket](https://bitbucket.org/), or [Bitbucket Server](https://bitbucket.org/product/enterprise) if you're using them already. 与这些服务的集成很容易配置，您将 获得一些额外的好处，如能够查看您的构建和您的 Git 远程更改等。
 
 如果您没有使用这些供应商之一，您也可以直接推送到Ionic。 Ionic git 是 *不是 Git 主机的* ，我们强烈建议使用 GitHub Bitbucket 或其他官方的 git 托管服务备份您的源代码存储库。
 
@@ -32,16 +32,20 @@ Appflow直接使用 Git 版本控制并使用您的代码库 作为部署和软�
 
 将您的应用连接到 GitHub 上的repo 上。</docs-card>
 
+<docs-card header="Connect using GitLab" href="/docs/appflow/quickstart/gitlab" icon="/docs/assets/icons/guide-gitlab-icon.png"> 
+
+Connect your app to a repo on GitLab.</docs-card>
+
 <docs-card header="Connect using Bitbucket" href="/docs/appflow/quickstart/bitbucket" icon="/docs/assets/icons/guide-bitbucket-icon.png"> 
 
-将您的应用连接到 GitHub 上的repo 上。</docs-card>
+Connect your app to a repo on Bitbucket.</docs-card>
 
 <docs-card header="Connect using Bitbucket Server" href="/docs/appflow/quickstart/bitbucket-server" icon="/docs/assets/icons/guide-bitbucket-icon.png"> 
 
-使用 Bitbucket 服务器实例将您的应用程序连接到repo 上。
+Connect your app to a repo using an on-premise Bitbucket Server instance.
 
-**注意： 此功能仅适用于我们的 等级 计划。** </docs-card>
+**Note: This feature is only available on our Scale plan.** </docs-card>
 
 <docs-card header="Connect using Ionic" href="/docs/appflow/quickstart/ionic-remote" icon="/docs/assets/icons/guide-ionic-icon.png"> 
 
-如果您不使用支持的Git托管服务，请将您的应用直接连接到Ion。</docs-card> </docs-cards>
+Connect your app directly to Ionic if you are not using one of the supported Git hosting services.</docs-card> </docs-cards>
