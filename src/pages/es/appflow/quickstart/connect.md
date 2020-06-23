@@ -24,13 +24,17 @@ You'll need to create an app in the [Appflow dashboard](https://dashboard.ionicf
 
 ## Choose your Git Integration
 
-Next, you'll need to decide how Appflow will access your source code. We suggest using [GitHub](https://github.com/), [Bitbucket](https://bitbucket.org/), or [Bitbucket Server](https://bitbucket.org/product/enterprise) if you're using them already. The integrations with these services are easy to configure and you'll get some additional benefits like being able view the commits your builds came from and the changes on your Git remote.
+Next, you'll need to decide how Appflow will access your source code. We suggest using [GitHub](https://github.com/), [GitLab](https://gitlab.com/), [Bitbucket](https://bitbucket.org/), or [Bitbucket Server](https://bitbucket.org/product/enterprise) if you're using them already. The integrations with these services are easy to configure and you'll get some additional benefits like being able view the commits your builds came from and the changes on your Git remote.
 
 If you're not using one of these providers, you can also choose to push directly to Ionic. Ionic git is *not* intended to be a Git host and we strongly suggest using GitHub, Bitbucket or another official git hosting service to backup your source code repository.
 
 <docs-cards> <docs-card header="Connect using GitHub" href="/docs/appflow/quickstart/github" icon="/docs/assets/icons/guide-github-icon.png"> 
 
 Connect your app to a repo on GitHub.</docs-card>
+
+<docs-card header="Connect using GitLab" href="/docs/appflow/quickstart/gitlab" icon="/docs/assets/icons/guide-gitlab-icon.png"> 
+
+Connect your app to a repo on GitLab.</docs-card>
 
 <docs-card header="Connect using Bitbucket" href="/docs/appflow/quickstart/bitbucket" icon="/docs/assets/icons/guide-bitbucket-icon.png"> 
 
