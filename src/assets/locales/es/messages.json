@@ -177,6 +177,7 @@
   "menu-appflow-quickstart-overview": "Resumen",
   "menu-appflow-quickstart-connect": "Conéctate a tu Repositorio",
   "menu-appflow-quickstart-github": "GitHub",
+  "menu-appflow-quickstart-gitlab": "GitLab",
   "menu-appflow-quickstart-bitbucket": "Bitbucket",
   "menu-appflow-quickstart-bitbucket-server": "Servidor de Bitbucket",
   "menu-appflow-quickstart-ionic-remote": "Ionic Remote",
