@@ -177,6 +177,7 @@
   "menu-appflow-quickstart-overview": "概览",
   "menu-appflow-quickstart-connect": "连接您的代码仓库",
   "menu-appflow-quickstart-github": "GitHub",
+  "menu-appflow-quickstart-gitlab": "GitLab",
   "menu-appflow-quickstart-bitbucket": "Bitbucket",
   "menu-appflow-quickstart-bitbucket-server": "Bitbucket服务器",
   "menu-appflow-quickstart-ionic-remote": "Ionic远程",
