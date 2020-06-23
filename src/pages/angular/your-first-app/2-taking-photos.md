@@ -41,20 +41,24 @@ public async addNewToGallery() {
 
 Notice the magic here: there's no platform-specific code (web, iOS, or Android)! The Capacitor Camera plugin abstracts that away for us, leaving just one method call - `Camera.getPhoto()` - that will open up the device's camera and allow us to take photos. 
 
-Next, open up `tab2.page.ts` and import the PhotoService class:
+Next, open up `tab2.page.ts` and import the PhotoService class and add a method that calls the `addNewToGallery` method on the imported servce:
 
 ```typescript
 import { PhotoService } from '../services/photo.service';
 
 constructor(public photoService: PhotoService) { }
+
+addPhotoToGallery() {
+  this.photoService.addNewToGallery();
+}
 ```
 
-Then, open `tab2.page.html` and call the `addNewToGallery()` function when the FAB is tapped/clicked: 
+Then, open `tab2.page.html` and call the `addPhotoToGallery()` function when the FAB is tapped/clicked: 
 
 ```html
 <ion-content>
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-    <ion-fab-button (click)="photoService.addNewToGallery()">
+    <ion-fab-button (click)="addPhotoToGallery()">
       <ion-icon name="camera"></ion-icon>
     </ion-fab-button>
   </ion-fab>
@@ -106,6 +110,19 @@ Over in the `addNewToGallery` function, add the newly captured photo to the begi
   });
 }
 ```
+We will create a local `photos` property on our `Tab2Page` component so that we can reference the Photos collection within our template.
+
+```typescript
+export class Tab2Page {
+  photos = this.photoService.photos;
+
+  constructor(public photoService: PhotoService) { }
+
+  addPhotoToGallery() {
+    this.photoService.addNewToGallery();
+  }
+}
+```
 
 With the photo(s) stored into the main array, move over to `tab2.page.html` so we can display the image on the screen. Add a [Grid component](https://ionicframework.com/docs/api/grid) so that each photo will display nicely as photos are added to the gallery, and loop through each photo in the Photos array, adding an Image component (`<ion-img>`) for each. Point the `src` (source) at the photo’s path:
 
@@ -114,7 +131,7 @@ With the photo(s) stored into the main array, move over to `tab2.page.html` so w
   <ion-grid>
     <ion-row>
     <ion-col size="6" 
-      *ngFor="let photo of photoService.photos; index as position">
+      *ngFor="let photo of photos; index as position">
         <ion-img src="{{ photo.webviewPath }}"></ion-img>
     </ion-col>
     </ion-row>
