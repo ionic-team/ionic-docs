@@ -20,7 +20,42 @@ Submitting an App to the iOS App store requires a few things:
 
 To enroll in the Apple Developer Program, follow the instructions [listed here](https://developer.apple.com/programs/).
 
-## Generating a release build
+## Generating a release build - Capacitor
+
+If the iOS platform is not already added, be sure to add it:
+
+```shell
+$ ionic cap add ios
+```
+
+With the platform added, run the build command with the `--prod` flag:
+
+```shell
+$ ionic build --prod
+```
+
+This will generate the minified code for the web portion of an app and copy it over the iOS code base.
+
+
+Every time you perform a build (e.g. ionic build) that updates your web directory (default: www), you'll need to copy those changes into your native projects:
+
+```shell
+$ ionic cap copy
+```
+
+Note: After making updates to the native portion of the code (such as adding a new plugin), use the sync command:
+
+```shell
+$ ionic cap sync
+```
+
+Run the Capacitor open command, which opens the native iOS project in Xcode:
+
+```shell
+$ ionic cap open ios
+```
+
+## Generating a release build - Cordova
 
 If the iOS platform is not already added, be sure to add it:
 
