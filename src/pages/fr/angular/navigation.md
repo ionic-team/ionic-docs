@@ -189,7 +189,7 @@ const routes: Routes = [
 ];
 ```
 
-Ici nous avons un chemin "tabs" que nous chargeons. Dans cet exemple, nous appelons le chemin «tabs», mais le nom des chemins peut être modifié. Ils peuvent être appelés selon ce qui convient à votre application. Dans cet objet route, nous pouvons également définir une route enfant. Dans cet exemple, la route enfant de niveau supérieur "tab1" agit comme notre "outlet" et peut charger des routes enfant supplémentaires. For this example, we have a single sub-child-route, which just loads a new component. The markup for the tab is as followed:
+Ici nous avons un chemin "tabs" que nous chargeons. Dans cet exemple, nous appelons le chemin «tabs», mais le nom des chemins peut être modifié. Ils peuvent être appelés selon ce qui convient à votre application. Dans cet objet route, nous pouvons également définir une route enfant. Dans cet exemple, la route enfant de niveau supérieur "tab1" agit comme notre "outlet" et peut charger des routes enfant supplémentaires. Pour cet exemple, nous avons un seul chemin sous-enfant, qui ne fait que charger un nouveau composant. Le balisage de l'onglet est le suivant :
 
 ```html
 <br /><ion-tabs>
@@ -206,4 +206,4 @@ Ici nous avons un chemin "tabs" que nous chargeons. Dans cet exemple, nous appel
 </ion-tabs>
 ```
 
-If you've built apps with Ionic before, this should feel familiar. We create a `ion-tabs` component, and provide a `ion-tab-bar`. The `ion-tab-bar` provides a `ion-tab-button` with a `tab` property that is associated with the tab "outlet" in the router config. Note that the latest version of `@ionic/angular` no longer requires `<ion-tab>`, but instead allows developers to fully customize the tab bar, and the single source of truth lives within the router configuration.
+Si vous avez construit des applications avec Ionic avant, cela devrait vous être familier. We create a `ion-tabs` component, and provide a `ion-tab-bar`. The `ion-tab-bar` provides a `ion-tab-button` with a `tab` property that is associated with the tab "outlet" in the router config. Note that the latest version of `@ionic/angular` no longer requires `<ion-tab>`, but instead allows developers to fully customize the tab bar, and the single source of truth lives within the router configuration.
