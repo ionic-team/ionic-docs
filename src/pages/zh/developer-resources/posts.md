@@ -7,31 +7,31 @@ nextUrl: '/docs/developer-resources/tools'
 
 # Community Posts
 
-### [What's new in Ionic 5 - Migration and Free Starter](https://ionicthemes.com/tutorials/about/ionic5-tutorial-migration-and-starter)
+### [Iont 5的新功能 - 迁移和自由开始](https://ionicthemes.com/tutorials/about/ionic5-tutorial-migration-and-starter)
 
-Take advantage of the new benefits from Ionic 5. In this guide we describe the main changes and show you how to migrate your applications from Ionic 4 to Ionic 5. For this post we created an Ionic 5 CRUD Contacts app that you can download for free to learn how to start using Ionic 5.
+利用Ionic 5的新优势 在本指南中，我们描述了主要的变化，并向您展示了如何将您的应用程序从Ionic 4迁移到Ionic 5。 为了这个帖子，我们创建了一个Ionic 5 CRUD 联系人应用程序，您可以免费下载以学习如何开始使用Ionic 5
 
-### [Ionic Navigation and Angular Routing](https://ionicthemes.com/tutorials/about/ionic-navigation-and-routing-ultimate-guide)
+### [Ionic导航和Angular路由](https://ionicthemes.com/tutorials/about/ionic-navigation-and-routing-ultimate-guide)
 
-Learn how to master Routing and Navigation in Ionic Angular Apps as well as some usability tricks you can add to your apps to improve the user experience!
+学习如何掌握Ionic Angular应用的路由和导航，以及您可以添加到应用中以提高用户体验的一些可用性技巧！
 
-### [Firebase Authentication Tutorial For Ionic Apps](https://ionicthemes.com/tutorials/about/firebase-authentication-in-ionic-framework-apps)
+### [Firebase认证Ionic应用教程](https://ionicthemes.com/tutorials/about/firebase-authentication-in-ionic-framework-apps)
 
-Learn how to add Firebase Authentication to your Ionic 5 App. This tutorial explains step by step how to configure both the Firebase and the Ionic Apps to enable authentication with social providers such as Google, Facebook and Twitter and also with Email and Password.
+学习如何添加Firebase身份验证到您的Ionic 5 应用程序。 本教程一步地解释了如何配置Firebase和Ionic应用程序以启用社交供应商的身份验证，如Google、Facebook 和 Twitter 以及电子邮件和密码。
 
-### [Native Cross Platform Web Apps with Ionic Capacitor](https://ionicthemes.com/tutorials/about/native-cross-platform-web-apps-with-ionic-capacitor)
+### [具有Ionic Capacitor的本地交叉平台网页应用](https://ionicthemes.com/tutorials/about/native-cross-platform-web-apps-with-ionic-capacitor)
 
-Ionic Capacitor introduction guide for beginners: history, motivation, usage and how to migrate your existing Cordova apps to Capacitor.
+初学者的Ionic Capacitor 介绍指南：历史、动机、使用以及如何将您现有的 Cordova 应用迁移到Capacitor。
 
-### [Ionic Skeleton Loading Screens](https://ionicthemes.com/tutorials/about/improved-ux-for-ionic-apps-with-skeleton-loading-screens)
+### [Ionic骨架启动页](https://ionicthemes.com/tutorials/about/improved-ux-for-ionic-apps-with-skeleton-loading-screens)
 
-UI Skeletons, Ghost Elements, Shell Elements? They are all the same! Think of them as cool content placeholders that are shown where the content will eventually be once it becomes available. In this guide you will learn the importance of adopting the App Shell pattern in your ionic apps and discuss how to implement it using Ionic and Angular. Also, we explain some advanced CSS techniques to take the UX to the next level.
+UI 骨架, Ghost 元素, Shell 元素？ 他们都是一样的！ 将它们看作是很酷的内容占位符，会显示内容最终将在哪里出现。 在本指南中，您将学习在您的ionic应用程序中采用应用Shell 模式的重要性，并讨论如何使用ionic和Angular来实现它。 此外，我们解释了一些先进的CSS 技术来将用户体验提升到更好。
 
-### [The Complete Guide To Progressive Web Apps with Ionic](https://ionicthemes.com/tutorials/about/the-complete-guide-to-progressive-web-apps-with-ionic4)
+### [渐进网络应用的完整指南](https://ionicthemes.com/tutorials/about/the-complete-guide-to-progressive-web-apps-with-ionic4)
 
-Learn what Progressive Web Apps are, why you should consider them for your next project, and how easy is to build a complete and production ready PWA with Ionic.
+了解什么是渐进的 Web 应用，为什么你应该在下一个项目中考虑它们。 以及如何容易建立一个完整的生产和使用Ionic的PWA。
 
-### [Mastering Web Components in Ionic](https://ionicthemes.com/tutorials/about/ionic-4-tutorial-mastering-web-components-in-ionic-4)
+### [掌握Ionic中的 Web 组件](https://ionicthemes.com/tutorials/about/ionic-4-tutorial-mastering-web-components-in-ionic-4)
 
 Understanding the new component architecture in Ionic, including web components, shadow DOM, CSS 4 variables and Stencil.
 
