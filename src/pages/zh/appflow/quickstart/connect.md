@@ -34,18 +34,18 @@ Appflow直接使用 Git 版本控制并使用您的代码库 作为部署和软�
 
 <docs-card header="Connect using GitLab" href="/docs/appflow/quickstart/gitlab" icon="/docs/assets/icons/guide-gitlab-icon.png"> 
 
-Connect your app to a repo on GitLab.</docs-card>
+将您的应用程序连接到 GitLab的仓库上。</docs-card>
 
 <docs-card header="Connect using Bitbucket" href="/docs/appflow/quickstart/bitbucket" icon="/docs/assets/icons/guide-bitbucket-icon.png"> 
 
-Connect your app to a repo on Bitbucket.</docs-card>
+将您的应用连接到 Bitbucket 的仓库上。</docs-card>
 
 <docs-card header="Connect using Bitbucket Server" href="/docs/appflow/quickstart/bitbucket-server" icon="/docs/assets/icons/guide-bitbucket-icon.png"> 
 
-Connect your app to a repo using an on-premise Bitbucket Server instance.
+使用 Bitbucket 服务器实例将您的应用程序连接到仓库上。
 
-**Note: This feature is only available on our Scale plan.** </docs-card>
+**注意： 此功能仅适用于我们的 等级 计划。** </docs-card>
 
 <docs-card header="Connect using Ionic" href="/docs/appflow/quickstart/ionic-remote" icon="/docs/assets/icons/guide-ionic-icon.png"> 
 
-Connect your app directly to Ionic if you are not using one of the supported Git hosting services.</docs-card> </docs-cards>
+如果您不使用支持的Git托管服务，请将您的应用直接连接到Ionic。</docs-card> </docs-cards>
