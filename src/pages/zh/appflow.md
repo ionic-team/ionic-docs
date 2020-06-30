@@ -3,7 +3,7 @@ title: 欢迎使用Appflow
 tableOfContents: false
 ---
 
-Appflow是一个面向Ionic开发团队的持续集成(CI) 和持续部署(CD) 平台。 Appflow helps development teams continuously build and ship their Cordova and Capacitor apps faster than ever.
+Appflow是一个面向Ionic开发团队的持续集成(CI) 和持续部署(CD) 平台。 Appflow帮助开发团队以前所未有的速度不断地构建和发布他们的Cordova和Capacitor应用程序。
 
 <docs-cards class="static-width"> <docs-card header="Quickstart" href="/docs/appflow/quickstart/connect" img="/docs/assets/icons/guide-quickstart.png"> 
 
