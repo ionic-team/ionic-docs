@@ -1,19 +1,19 @@
 ---
-title: 'Connect Using GitLab'
-previousText: 'Connect Your Repo'
+title: '使用 GitLab 连接'
+previousText: '连接你的仓库'
 previousUrl: '/docs/appflow/quickstart/connect'
-nextText: 'Install the Appflow SDK'
+nextText: '安装 Appflow SDK'
 nextUrl: '/docs/appflow/quickstart/installation'
 ---
 
-If you are already using [GitLab](https://gitlab.com/) you can link your repository with your Appflow app to push code automatically.
+如果你已经在使用 [GitLab](https://gitlab.com/) 你可以将你的资源库与你的应用流程应用程序链接起来自动推送代码。
 
-## Prerequisites
-In order to enable the integration with your Appflow app you will need an existing project on GitLab.
+## 必备条件
+为了启用与您的 Appflow应用程序的集成，您将需要在 GitLab上有一个现有的项目。
 
-## Setting up the Integration
-Navigate to the `Git` section of the app settings tab in your app on the Appflow Dashboard choose the GitLab tab. If this is your first time connecting you'll need to click the `Connect` button. Then you can choose the repository to link from the list of available repos.
+## 设置集成
+浏览至您的应用程序设置选项卡中的 `Git` 部分 应用程序流控制面板选择 GitLab 选项卡。 如果这是您第一次连接 ，您需要点击 `Connect` 按钮。 然后您可以从可用仓库列表中选择要链接的存储库。
 
-![Git Settings](/docs/assets/img/appflow/gitlab-connect-app.png)
+![Git 设置](/docs/assets/img/appflow/gitlab-connect-app.png)
 
-When you link the repository a webhook will be created for the repository and events will be sent to Appflow so that we have access to any commits you push to your repository.
+当您链接仓库时，将为仓库 创建 webhook ，并且事件将被发送到 Appflow ，以便我们能够访问任何提交的你 推送到你的仓库中。
