@@ -102,18 +102,22 @@ There are three tabs. Click on the Tab2 tab. It’s a blank canvas, aka the perf
 Open the photo-gallery app folder in your code editor of choice, then navigate to `/src/app/tab2/tab2.page.html`. We see:
 
 ```html
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Tab 2</ion-title>
+    <ion-title>
+      Tab 2
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Tab 2</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <app-explore-container name="Tab 2 page"></app-explore-container>
 </ion-content>
 ```
 
