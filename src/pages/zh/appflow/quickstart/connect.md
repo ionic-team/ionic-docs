@@ -24,7 +24,7 @@ Appflow直接使用 Git 版本控制并使用您的代码库 作为部署和软�
 
 ## 选择您的Git集成
 
-接下来，您需要决定Appflow如何访问您的源代码。 We suggest using [GitHub](https://github.com/), [GitLab](https://gitlab.com/), [Bitbucket](https://bitbucket.org/), or [Bitbucket Server](https://bitbucket.org/product/enterprise) if you're using them already. 与这些服务的集成很容易配置，您将 获得一些额外的好处，如能够查看您的构建和您的 Git 远程更改等。
+接下来，您需要决定Appflow如何访问您的源代码。 我们建议使用 [GitHub](https://github.com/), [GitLab](https://gitlab.com/), [Bitbucket](https://bitbucket.org/), 或 [Bitbucket 服务器](https://bitbucket.org/product/enterprise) 如果您已在使用它们。 与这些服务的集成很容易配置，您将 获得一些额外的好处，如能够查看您的构建和您的 Git 远程更改等。
 
 如果您没有使用这些供应商之一，您也可以直接推送到Ionic。 Ionic git 是 *不是 Git 主机的* ，我们强烈建议使用 GitHub Bitbucket 或其他官方的 git 托管服务备份您的源代码存储库。
 
