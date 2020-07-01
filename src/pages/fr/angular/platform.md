@@ -10,7 +10,7 @@ contributors:
 
 # Plateforme
 
-Le service Platform peut être utilisé pour obtenir des informations sur votre appareil actuel. You can get all of the platforms associated with the device using the `platforms` method, including whether the app is being viewed from a tablet, if it's on a mobile device or browser, and the exact platform (iOS, Android, etc). You can also get the orientation of the device, if it uses right-to-left language direction, and much much more. With this information you can completely customize your app to fit any device.
+Le service Platform peut être utilisé pour obtenir des informations sur votre appareil actuel. Vous pouvez obtenir toutes les plateformes associées à l'appareil en utilisant la méthode `platforms` , y compris si l'application est vue depuis une tablette, si elle est sur un appareil mobile ou un navigateur, et sur la plateforme exacte (iOS, Android, etc). Vous pouvez également obtenir l'orientation de l'appareil, s'il utilise la direction du langage de droite à gauche, et bien plus encore. Avec ces informations, vous pouvez personnaliser complètement votre application pour s'adapter à n'importe quel appareil.
 
 ## Utilisation
 
@@ -29,9 +29,9 @@ export class MyPage {
 
 ### `is(platformName: Platforms) => boolean`
 
-Depending on the platform the user is on, `is(platformName)` will return true or false. Note that the same app can return true for more than one platform name. For example, an app running from an iPad would return true for the platform names: `mobile`, `ios`, `ipad`, and `tablet`. Additionally, if the app was running from Cordova then `cordova` would be true.
+Selon la plateforme sur laquelle l'utilisateur est, `is(platformName)` retournera vrai ou faux. Notez que la même application peut retourner vrai pour plus d'un nom de plateforme. Par exemple, une application fonctionnant depuis un iPad retournerait vrai pour les noms de plateformes suivants : `mobile`, `ios`, `ipad`, et `tablet`. En outre, si l'application fonctionnait à partir de Cordova, `cordova` serait alors vrai.
 
-#### Parameters
+#### Paramètres
 
 | Nom            | Type        | Description                                                                                                                                                  |
 | -------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
