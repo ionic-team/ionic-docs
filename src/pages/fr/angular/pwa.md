@@ -1,29 +1,29 @@
 ---
-title: "Progressive Web Apps in Angular"
+title: "Applications Web Progressives dans Angular"
 ---
 
 
-## Making your Angular app a PWA
+## Faire de votre application Angular une AWP
 
 
-The two main requirements of a PWA are a <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> and a <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Manifest</a>. While it's possible to add both of these to an app manually, the Angular team has an `@angular/pwa` package that can be used to automate this.
+Les deux principales exigences d'une AWP sont un <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> et un <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Manifeste Web</a>. S'il est possible d'ajouter ces deux éléments manuellement à une application, l'équipe d'Angular a un paquet `@angular/pwa` qui peut être utilisé pour automatiser cela.
 
-The `@angular/pwa` package will automatically add a service worker and an app manifest to the app. To add this package to the app, run:
+Le paquet `@angular/pwa` ajoutera automatiquement un service worker et un manifeste d'application à l'application. Pour ajouter ce paquet à l'application, exécutez :
 
 ```shell
 $ ng add @angular/pwa
 ```
 
-Once this package has been added run `ionic build --prod` and the `www` directory will be ready to deploy as a PWA.
+Une fois ce paquet ajouté, exécutez `ionic build --prod` et le répertoire `www` sera prêt à être déployé en tant que AWP.
 
-> By default, the `@angular/pwa` package comes with the Angular logo for the app icons. Be sure to update the manifest to use the correct app name and also replace the icons.
+> Par défaut, le paquet `@angular/pwa` est fourni avec le logo d'Angular pour les icônes de l'application. Assurez-vous de mettre à jour le manifeste pour utiliser le nom correct de l'application et aussi remplacer les icônes.
 
 
-> Note: Features like Service Workers and many JavaScript APIs (such as geolocation) require the app be hosted in a secure context. When deploying an app through a hosting service, be aware that HTTPS will be required to take full advantage of Service Workers.
+> Remarque : les fonctionnalités comme les Service Workers et de nombreuses API JavaScript (comme la géolocalisation) nécessitent que l'application soit hébergée dans un contexte sécurisé. Lors du déploiement d'une application via un service d'hébergement, sachez que HTTPS sera nécessaire pour tirer pleinement parti des Service Workers.
 
-## Service Worker configuration
+## Configuration du Service Worker
 
-After `@angular/pwa` has been added, a new `ngsw-config.json` file will be created at the root of the project. This file is responsible for configuring how Angular's service worker mechanism will handle caching assets. By default, the following will be provided:
+Après l'ajout de `@angular/pwa` , un nouveau fichier `ngsw-config.json` sera créé à la racine du projet. This file is responsible for configuring how Angular's service worker mechanism will handle caching assets. By default, the following will be provided:
 
 ```json
 {
