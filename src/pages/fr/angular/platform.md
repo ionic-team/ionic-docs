@@ -94,20 +94,20 @@ Récupère l'url actuelle.
 
 ### `testUserAgent(expression: string) => boolean`
 
-Returns `true` if the expression is included in the user agent string.
+Retourne `true` si l'expression est incluse dans la chaîne user agent.
 
-### Parameters
-| Name       | Type   | Description                           |
-| ---------- | ------ | ------------------------------------- |
-| expression | string | The string to check in the user agent |
+### Paramètres
+| Nom        | Type   | Description                               |
+| ---------- | ------ | ----------------------------------------- |
+| expression | string | La chaîne qui vérifie l'agent utilisateur |
 
-## Events
+## Évènements
 
 ### `pause`
 
-The `pause` event emits when the native platform puts the application into the background, typically when the user switches to a different application. This event emits when a Cordova/Capacitor app is put into the background but doesn't fire in a standard web browser.
+L'évènement `pause` se déclenche lorsque la plateforme native met l'application en arrière-plan, généralement lorsque l'utilisateur bascule vers une autre application. Cet événement se déclanche quand une application Cordova/Capacitor est mise en arrière-plan mais ne se déclenche pas dans un navigateur web standard.
 
-#### Usage
+#### Utilisation
 
 ```typescript
 this.platform.pause.subscribe(async () => {
@@ -117,9 +117,9 @@ this.platform.pause.subscribe(async () => {
 
 ### `resize`
 
-The `resize` event emits when the browser window has changed dimensions. This could be from a browser window being physically resized, or from a device changing orientation.
+L'événement `redimensionner` se déclenche lorsque la fenêtre du navigateur a changé de dimensions. Cela peut être dû à un redimensionnement physique d'une fenêtre du navigateur, ou à un changement d'orientation du périphérique.
 
-#### Usage
+#### Utilisation
 
 ```typescript
 this.platform.resize.subscribe(async () => {
@@ -129,9 +129,9 @@ this.platform.resize.subscribe(async () => {
 
 ### `resume`
 
-The `resume` event fires when the native platform pulls the application out from the background. This event emits when a Cordova/Capacitor app comes out from the background but doesn't fire in a standard web browser.
+L'évènement `resume` se déclenche lorsque la plate-forme native sort l'application de l'arrière-plan. Cet événement se déclenche quand une application Cordova/Capacitor est sortie de l'arrière-plan mais ne se déclenche pas dans un navigateur web standard.
 
-#### Usage
+#### Utilisation
 
 ```typescript
 this.platform.resume.subscribe(async () => {
