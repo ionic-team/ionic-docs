@@ -70,27 +70,27 @@ Par exemple, lorsque Cordova est prêt, la source prête qui est résolue est `c
 
 ### `isRTL() => boolean`
 
-Retourne si cette application utilise la direction de la langue de droite à gauche ou non. We recommend the app's `index.html` file already has the correct `dir` attribute value set, such as `<html dir="ltr">` or `<html dir="rtl">`. [W3C: Structural markup and right-to-left text in HTML](http://www.w3.org/International/questions/qa-html-dir)
+Retourne si cette application utilise la direction de la langue de droite à gauche ou non. Nous recommandons le fichier `index.html` de l'application qui a déjà le jeu de valeur d'attributs `dir` correct, tel que `<html dir="ltr">` ou `<html dir="rtl">`. [W3C : Marquage structurel et texte de droite à gauche en HTML](http://www.w3.org/International/questions/qa-html-dir)
 
 ### `isLandscape() => boolean`
 
-Returns `true` if the app is in landscape mode.
+Renvoie `true` si l'application est en mode paysage.
 
 ### `isPortrait() => boolean`
 
-Returns `true` if the app is in portrait mode.
+Renvoie `true` si l'application est en mode portrait.
 
 ### `width() => number`
 
-Gets the width of the platform's viewport using `window.innerWidth`.
+Récupère la largeur de la fenêtre d'affichage de la plateforme en utilisant `window.innerWidth`.
 
 ### `height() => number`
 
-Gets the height of the platform's viewport using `window.innerHeight`.
+Récupère la hauteur de la fenêtre d'affichage de la plateforme en utilisant `window.innerHeight`.
 
 ### `url() => string`
 
-Get the current url.
+Récupère l'url actuelle.
 
 ### `testUserAgent(expression: string) => boolean`
 
