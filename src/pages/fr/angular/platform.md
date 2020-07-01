@@ -33,30 +33,30 @@ Depending on the platform the user is on, `is(platformName)` will return true or
 
 #### Parameters
 
-| Name           | Type        | Description                                                                                                                                         |
-| -------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `platformName` | `Platforms` | Name of the platform. Available options are android, capacitor, cordova, desktop, electron, hybrid, ios, ipad, iphone, mobile, phablet, pwa, tablet |
+| Nom            | Type        | Description                                                                                                                                                  |
+| -------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `platformName` | `Platforms` | Nom de la plateforme. Les options disponibles sont : android, capacitor, cordova, desktop, electron, hybrid, ios, ipad, iphone, mobile, phablet, pwa, tablet |
 
-#### Platforms
+#### Platformes
 
-Below is a table listing all the possible platform values along with corresponding descriptions.
+Vous trouverez ci-dessous une liste de toutes les valeurs possibles pour la plateforme ainsi que les descriptions correspondantes.
 
-| Platform Name | Description                              |
-| ------------- | ---------------------------------------- |
-| android       | a device running Android                 |
-| capacitor     | a device running Capacitor               |
-| cordova       | a device running Cordova                 |
-| desktop       | a desktop device                         |
-| electron      | a desktop device running Electron        |
-| hybrid        | a device running Capacitor or Cordova    |
-| ios           | a device running iOS                     |
-| ipad          | an iPad device                           |
-| iphone        | an iPhone device                         |
-| mobile        | a mobile device                          |
-| mobileweb     | a web browser running in a mobile device |
-| phablet       | a phablet device                         |
-| pwa           | a PWA app                                |
-| tablet        | a tablet device                          |
+| Nom de la plateforme | Description                                  |
+| -------------------- | -------------------------------------------- |
+| android              | un appareil fonctionnant sous Android        |
+| capacitor            | un appareil exécutant Capacitor              |
+| cordova              | un appareil exécutant Cordova                |
+| desktop              | un appareil de bureau                        |
+| electron             | un périphérique de bureau exécutant Electron |
+| hybrid               | a device running Capacitor or Cordova        |
+| ios                  | a device running iOS                         |
+| ipad                 | an iPad device                               |
+| iphone               | an iPhone device                             |
+| mobile               | a mobile device                              |
+| mobileweb            | a web browser running in a mobile device     |
+| phablet              | a phablet device                             |
+| pwa                  | a PWA app                                    |
+| tablet               | a tablet device                              |
 
 ### `platforms() => string[]`
 
