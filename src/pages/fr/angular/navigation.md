@@ -206,4 +206,4 @@ Ici nous avons un chemin "tabs" que nous chargeons. Dans cet exemple, nous appel
 </ion-tabs>
 ```
 
-Si vous avez construit des applications avec Ionic avant, cela devrait vous être familier. We create a `ion-tabs` component, and provide a `ion-tab-bar`. The `ion-tab-bar` provides a `ion-tab-button` with a `tab` property that is associated with the tab "outlet" in the router config. Note that the latest version of `@ionic/angular` no longer requires `<ion-tab>`, but instead allows developers to fully customize the tab bar, and the single source of truth lives within the router configuration.
+Si vous avez construit des applications avec Ionic avant, cela devrait vous être familier. Nous créons un composent `ion-tabs`, puis on lui ajoute une `ion-tab-bar`. La `ion-tab-bar` fournit un `ion-tab-button` avec une propriété `tab` qui est associée à la tab "outlet" dans la configuration du routeur. Notez que la dernière version de `@ionic/angular` ne nécessite plus `<ion-tab>`, et permet maintenant au développeurs de complètement personnaliser la barre d'onglet. La seule source de vérité étant dans la configuration du routeur.
