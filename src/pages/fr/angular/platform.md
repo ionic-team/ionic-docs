@@ -41,36 +41,36 @@ Depending on the platform the user is on, `is(platformName)` will return true or
 
 Vous trouverez ci-dessous une liste de toutes les valeurs possibles pour la plateforme ainsi que les descriptions correspondantes.
 
-| Nom de la plateforme | Description                                  |
-| -------------------- | -------------------------------------------- |
-| android              | un appareil fonctionnant sous Android        |
-| capacitor            | un appareil exécutant Capacitor              |
-| cordova              | un appareil exécutant Cordova                |
-| desktop              | un appareil de bureau                        |
-| electron             | un périphérique de bureau exécutant Electron |
-| hybrid               | a device running Capacitor or Cordova        |
-| ios                  | a device running iOS                         |
-| ipad                 | an iPad device                               |
-| iphone               | an iPhone device                             |
-| mobile               | a mobile device                              |
-| mobileweb            | a web browser running in a mobile device     |
-| phablet              | a phablet device                             |
-| pwa                  | a PWA app                                    |
-| tablet               | a tablet device                              |
+| Nom de la plateforme | Description                                           |
+| -------------------- | ----------------------------------------------------- |
+| android              | un appareil fonctionnant sous Android                 |
+| capacitor            | un appareil exécutant Capacitor                       |
+| cordova              | un appareil exécutant Cordova                         |
+| desktop              | un appareil de bureau                                 |
+| electron             | un appareil de bureau exécutant Electron              |
+| hybrid               | un appareil exécutant Capacitor ou Cordova            |
+| ios                  | un appareil fonctionnant sous iOS                     |
+| ipad                 | un iPad                                               |
+| iphone               | un iPhone                                             |
+| mobile               | un appareil mobile                                    |
+| mobileweb            | un navigateur Web fonctionnant sur un appareil mobile |
+| phablet              | une phablette                                         |
+| pwa                  | une application web progressive                       |
+| tablet               | une tablette                                          |
 
 ### `platforms() => string[]`
 
-Depending on what device you are on, `platforms` can return multiple values. Each possible value is a hierarchy of platforms. For example, on an iPhone, it would return `mobile`, `ios`, and `iphone`.
+Selon le périphérique sur lequel vous êtes, `platforms` peut renvoyer plusieurs valeurs. Chaque valeur possible est une hiérarchie de plateformes. Par exemple, sur un iPhone, il renvoie `mobile`, `ios`, et `iphone`.
 
 ### `ready() => Promise<string>`
 
-Returns a promise when the platform is ready and native functionality can be called. If the app is running from within a web browser, then the promise will resolve when the DOM is ready. When the app is running from an application engine such as Cordova, then the promise will resolve when Cordova triggers the `deviceready` event. The resolved value is the `readySource`, which states the platform that was used.
+Renvoie une promesse lorsque la plateforme est prête et que des fonctionnalités natives peuvent être appelées. Si l'application fonctionne à partir d'un navigateur Web, alors la promesse sera résolue lorsque le DOM sera prêt. Lorsque l'application est en cours d'exécution à partir d'un moteur d'application tel que Cordova, alors la promesse se résoudra quand Cordova déclenchera l'événement `deviceready`. La valeur résolue est `readySource`, qui indique la plateforme qui a été utilisée.
 
-For example, when Cordova is ready, the resolved ready source is `cordova`. The default ready source value will be `dom`. The `readySource` is useful if different logic should run depending on the platform the app is running from. For example, only Capacitor and Cordova can execute the status bar plugin, so the web should not run status bar plugin logic.
+Par exemple, lorsque Cordova est prêt, la source prête qui est résolue est `cordova`. La valeur de source prête par défaut sera `dom`. Le `readySource` est utile si une logique différente doit s'exécuter en fonction de la plateforme depuis laquelle l'application est en cours d'exécution. Par exemple, seul Capacitor et Cordova peuvent exécuter le plugin de la barre d'état, de sorte que le Web ne doit pas exécuter la logique du plugin de la barre d'état.
 
 ### `isRTL() => boolean`
 
-Returns if this app is using right-to-left language direction or not. We recommend the app's `index.html` file already has the correct `dir` attribute value set, such as `<html dir="ltr">` or `<html dir="rtl">`. [W3C: Structural markup and right-to-left text in HTML](http://www.w3.org/International/questions/qa-html-dir)
+Retourne si cette application utilise la direction de la langue de droite à gauche ou non. We recommend the app's `index.html` file already has the correct `dir` attribute value set, such as `<html dir="ltr">` or `<html dir="rtl">`. [W3C: Structural markup and right-to-left text in HTML](http://www.w3.org/International/questions/qa-html-dir)
 
 ### `isLandscape() => boolean`
 
