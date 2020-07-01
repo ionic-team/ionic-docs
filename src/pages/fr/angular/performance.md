@@ -1,27 +1,27 @@
 ---
-previousText: 'Storage'
+previousText: 'Stockage'
 previousUrl: '/docs/angular/storage'
 ---
 
-# Performance Angular
+# Performance d'Angular
 
 ## De l'équipe Ionic
 
-[Comment faire pour charger Ionic à la demande dans Angular](https://ionicframework.com/blog/how-to-lazy-load-in-ionic-angular/)
+[Comment faire du chargement à la demande dans Ionic Angular](https://ionicframework.com/blog/how-to-lazy-load-in-ionic-angular/)
 
 [Amélioration des performances réalisées avec les squelettes ( file de fer ) d'écrans](https://ionicframework.com/blog/improved-perceived-performance-with-skeleton-screens/)
 
-## From the Angular Team
+## De l'équipe d'Angular
 
-[Build performant and progressive Angular apps](https://web.dev/angular) - web.dev
+[Construire des applications Angular performantes et progressives](https://web.dev/angular) - web.dev
 
-## From the Community
+## De la communauté
 
-[High Performance Animations in Ionic](https://www.joshmorony.com/high-performance-animations-in-ionic/) - Josh Morony
+[Animations hautes performances dans Ionic](https://www.joshmorony.com/high-performance-animations-in-ionic/) - Josh Morony
 
-[High Performance List Filtering in Ionic](https://www.joshmorony.com/high-performance-list-filtering-in-ionic-2/) - Josh Morony
+[Filtrage de liste haute performance dans Ionic](https://www.joshmorony.com/high-performance-list-filtering-in-ionic-2/) - Josh Morony
 
-[Augmentation des performances par des accès DOM efficace avec Ionic](https://www.joshmorony.com/increasing-performance-with-efficient-dom-writes-in-ionic-2/) - Josh Morony
+[Augmentation des performances par des écritures DOM efficace dans Ionic](https://www.joshmorony.com/increasing-performance-with-efficient-dom-writes-in-ionic-2/) - Josh Morony
 
 [Le framework Ionic est rapide (Mais votre code ne l'est peut être pas)](https://www.joshmorony.com/ionic-framework-is-fast-but-your-code-might-not-be/) - Josh Morony
 
