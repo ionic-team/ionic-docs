@@ -23,7 +23,7 @@ Une fois ce paquet ajouté, exécutez `ionic build --prod` et le répertoire `ww
 
 ## Configuration du Service Worker
 
-Après l'ajout de `@angular/pwa` , un nouveau fichier `ngsw-config.json` sera créé à la racine du projet. This file is responsible for configuring how Angular's service worker mechanism will handle caching assets. By default, the following will be provided:
+Après l'ajout de `@angular/pwa` , un nouveau fichier `ngsw-config.json` sera créé à la racine du projet. Ce fichier est responsable de la configuration du mécanisme de Service Worker d'Angular pour gérer les ressources de mise en cache. Par défaut, les données suivantes seront fournies :
 
 ```json
 {
@@ -56,18 +56,18 @@ Après l'ajout de `@angular/pwa` , un nouveau fichier `ngsw-config.json` sera cr
 }
 ```
 
-There are two sections in here, one for app specific resources (JS, CSS, HTML) and assets the app will load on demand. Depending on your app, these options can be customized. For a more detailed guide, read [the official guide from the Angular Team.](https://angular.io/guide/service-worker-config)
+Il y a deux sections ici, une pour les ressources spécifiques à l'application (JS, CSS, HTML) et une autre pour les ressources que l'application chargera à la demande. Selon votre application, ces options peuvent être personnalisées. Pour un guide plus détaillé, lisez [le guide officiel de l'équipe Angular.](https://angular.io/guide/service-worker-config)
 
 
-## Deploying
+## Déploiement
 
 ### Firebase
 
-Firebase hosting provides many benefits for Progressive Web Apps, including fast response times thanks to CDNs, HTTPS enabled by default, and support for [HTTP2 push](https://firebase.googleblog.com/2016/09/http2-comes-to-firebase-hosting.html).
+L'hébergement Firebase offre de nombreux avantages pour les applications Web progressives, y compris des temps de réponse rapides grâce aux CDN, HTTPS activé par défaut, et le support de [HTTP2 push](https://firebase.googleblog.com/2016/09/http2-comes-to-firebase-hosting.html).
 
-First, if not already available, [create the project](https://console.firebase.google.com) in Firebase.
+Tout d'abord, s'il n'est pas déjà disponible, [créez le projet](https://console.firebase.google.com) dans Firebase.
 
-Next, in a Terminal, install the Firebase CLI:
+Ensuite, dans un Terminal, installez l'ILC de Firebase :
 
 ```shell
 $ npm install -g firebase-tools
