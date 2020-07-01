@@ -13,4 +13,4 @@ Ionic supporte `Angular 6.0.0 et plus`. Dans le cadre de leur stratégie de mise
 
 ## Outils Angular
 
-Avec Ionic 4+, la pille de construction d'application et le routage officiel d'Angular sont utilisés, pour que votre application puisse correspondre avec le reste de l'écosystème Angular. In cases where more opinionated features are needed, Ionic provides `@ionic/angular-toolkit`, which builds and integrates with the [official Angular CLI](https://angular.io/cli) and provides features that are specific to `@ionic/angular` apps.
+Avec Ionic 4+, la pille de construction d'application et le routage officiel d'Angular sont utilisés, pour que votre application puisse correspondre au reste de l'écosystème Angular. Dans les cas où des fonctionnalités plus spécifiques sont nécessaires, Ionic fournit `@ionic/angular-toolkit`, qui construit et intègre avec la [ ILC officielle d'Angular](https://angular.io/cli) et fournit des fonctionnalités spécifiques aux applications `@ionic/angular`.
