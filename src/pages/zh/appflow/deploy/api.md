@@ -1,5 +1,5 @@
 ---
-title: Live Update API
+title: 实时更新
 previousText: '频道'
 previousUrl: '/docs/appflow/sport/screcisions'
 nextText: '使用 Ionic CLI'
@@ -9,13 +9,13 @@ nextUrl: '/docs/appflow/deploy/cli'
 
 ## 安装和使用
 
-In order to use the Live Update API inside of your app. You need to install the latest version of the Appflow SDK and set the `UPDATE_METHOD` to `none`:
+为了在您的应用内使用实时更新API。 您需要安装 Appflow SDK 的最新版本，并将 `update_METHOD` 设置为 `No`:
 
 ```shell
 ionic deploy add --update-method=none --app-id="YOUR_APP_ID" --channel-name="YOUR_CHANNEL_NAME"
 ```
 
-Then you can import the Live Update API in order to it in your code:
+然后您可以导入实时更新 API 以便在您的代码中进行：
 
 ```typescript
 // ES2015/Typescript
@@ -72,7 +72,7 @@ async changeToBetaChannel() {
 
 **IonicDeploy**:
 
-The Ionic Live Update Plugin API
+Ionic Live 更新插件 API
 
 ***用法***:
 
@@ -649,7 +649,7 @@ Bundle名称。
 
 **● appId**: *`string`*
 
-The [Ionic Appflow](https://ionicframework.com/docs/appflow/) app id.
+[IonApplow](https://ionicframework.com/docs/appflow/) 应用程序 id。
 
 * * *
 
