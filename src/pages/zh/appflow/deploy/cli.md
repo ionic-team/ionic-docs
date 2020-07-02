@@ -1,11 +1,11 @@
 ---
-previousText: 'Live Update API'
+previousText: '实时更新'
 previousUrl: '/docs/appflow/deploy/api'
 nextText: '部署到应用商店'
 nextUrl: '/docs/appflow/destinations/intro'
 ---
 
-# Deploy Builds on Appflow using the Ionic CLI
+# 使用 Ionic CLI 在 Appflow上部署版本
 
 <blockquote>
   <p><b>注:</b>此功能仅适用于我们的<b>Scale</b>计划。 要启用此功能请 <a href="/sales">联系我们</a>。</p>
@@ -23,7 +23,7 @@ nextUrl: '/docs/appflow/destinations/intro'
 
 必须在Appflow上对Ionic CLI进行身份验证，才能触发部署构建。
 
-To log in, type:
+要登录，请输入：
 
 ```bash
 $ ionic login <email> <password>
