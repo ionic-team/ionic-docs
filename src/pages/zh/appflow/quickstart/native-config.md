@@ -2,7 +2,7 @@
 title: '创建本地配置'
 previousText: '创建环境'
 previousUrl: '/docs/appflow/quickstart/environment'
-nextText: 'Live Updates'
+nextText: '实时更新'
 nextUrl: '/docs/appflow/deploy/intro'
 ---
 
