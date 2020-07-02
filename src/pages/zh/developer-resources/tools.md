@@ -5,11 +5,11 @@ nextText: 'Videos'
 nextUrl: '/docs/developer-resources/videos'
 ---
 
-# Tools
+# 工具
 
 ### [Angular CLI](https://github.com/angular/angular-cli)
 
-Learn more about the power of the Angular CLI
+了解更多关于Angular CLI的力量
 
 ### [StackBlitz](https://stackblitz.com/)
 
