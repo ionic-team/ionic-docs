@@ -4,61 +4,61 @@
 
 ## Demo App
 
-1. Simple: A [login/logout experience](https://github.com/ionic-team/demo-authconnect-azureb2c) that works on the web, iOS, and Android. See it in action in [this short video](https://www.youtube.com/watch?v=v-LuS6aiRDo&feature=youtu.be). To view the Azure AD configuration details, see `authentication.service.ts` [here](https://github.com/ionic-team/demo-authconnect-azureb2c/blob/master/completed/src/app/services/authentication.service.ts).
+1. 简单: 一个 [登录/注销体验](https://github.com/ionic-team/demo-authconnect-azureb2c) 在网页、iOS和Android上工作。 在[此短片](https://www.youtube.com/watch?v=v-LuS6aiRDo&feature=youtu.be)中观看实际操作。 要查看 Azure AD配置详细信息，请参阅 [这里](https://github.com/ionic-team/demo-authconnect-azureb2c/blob/master/completed/src/app/services/authentication.service.ts)的`身份验证服务`。
 
-2. Advanced: [Demonstrates the use of Auth Connect](https://github.com/ionic-team/cs-demo-ac-iv) to perform an OAuth login and Identity Vault to store the resulting authentication tokens on the web, iOS, and Android. To view the Azure AD configuration details, see `authentication.service.ts` [here](https://github.com/ionic-team/cs-demo-ac-iv/blob/master/src/app/services/authentication/authentication.service.ts).
+2. 高级: [演示使用认证连接](https://github.com/ionic-team/cs-demo-ac-iv)来执行 OAuth 登录和身份密码库，以便在浏览器、iOS和Android上存储由此产生的身份验证令牌。 要查看 Azure AD配置详细信息，请参阅 [这里](https://github.com/ionic-team/cs-demo-ac-iv/blob/master/src/app/services/authentication/authentication.service.ts)的`身份验证服务`。
 
 ## Configuration Details
 
 ### Azure Configuration
 
-Before integrating Auth Connect into your Ionic app, you’ll need to get Azure Active Directory (AD) up and running.
+在将Auth Connect整合到您的Ionic应用程序之前，您将需要 Azure Active Directory (AD) 上架并运行。
 
 > **Note:** For complete information on configuring Azure AD, consult the [official B2C documentation](https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant) which includes tutorials on creating a B2C tenant, registering applications, and more.
 
 #### Create an Azure AD B2C Tenant
 
-If you don't have one, [create a new B2C tenant](https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant).
+如果您没有，[创建一个新的B2C账户](https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant)。
 
 #### Register an Application
 
-Sign into the [Azure Portal](https://portal.azure.com) then navigate to the `Azure AD B2C` service page (the easiest way to find it is to search for "b2c", then choose "Azure AD B2C".)
+登录[Azure Portal](https://portal.azure.com)然后导航到`Azure AD B2C`服务页面(找到它的最简单方式是搜索“b2c”， 然后选择 "Azure AD B2C".)
 
-Begin by creating a new Application under Manage -> Applications -> Add.
+在管理下创建一个新应用程序 -> 应用程序 ->
 
-![Azure app configuration settings](/docs/assets/img/native/azure-app-settings.png)
+![Azure 应用程序配置设置](/docs/assets/img/native/azure-app-settings.png)
 
-Give your app a new name, then toggle `Yes` for both _Web App_ and _Allow implicit flow_. For _Reply URL_, specify `http://localhost:8100/` along with the name of your app's core login page (typically, `login`).
+给您的应用程序起一个新名称，然后为_Web App_和_允许隐式流_两者都选择`是`。 对于_Reply URL_，指定`http://localhost:8100/`以及您应用的核心登录页面的名称(通常是`登录`)。
 
-Next, toggle `Yes` for _Native client_. Note the _Redirect URIs_ that are displayed.
+接下来，将_原生客户端_切换为`是`。 注意显示的_重定向 URI_。
 
-Next, choose your globally unique App Id, which is used both in the Azure configuration as well as Cordova/Capacitor. Typically, this takes the form of `company-AppName` or reverse DNS style - `com.company.app`.
+接下来选择您全局唯一的App Id，它既用于Azure配置，也用于Cordova/Capacitor。 典型的形式是`company-AppName`或逆向DNS风格 - `com.company.app`。
 
-With that in hand, set the _Custom Redirect URI_. After the app user signs into Azure AD, this tells Auth Connect which page to redirect to in your app. Use the formula “uniqueId://page”, such as `com.company.app://callback`.
+手动设置_自定义重定向 URI_。 在应用程序用户登录到 Azure AD之后，这个提示了验证连接哪个页面重定向到您的应用中。 使用公式“unieId://page”，例如`com.company.app://callback`。
 
-After filling in all details above, click the Create button.
+填写以上所有详细信息后，点击创建按钮。
 
 #### Create User Flows (Policies)
 
-Create at least one [User Flow](https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-user-flows), the series of pages that define the entire authentication experience for your app. At a minimum, create a `Sign up and sign in` flow. Once the User Flow has been created, select it from the User Flow list, then click "Run user flow" from the Overview tab. Note the URL at the top of the page, used to configure Auth Connect's `Discovery URL` property. Also consider creating a `Password reset` flow ([detailed below](#implementing-password-reset)).
+创建至少一个 [User Flow](https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-user-flows)，这是为您的应用定义整个验证体验的一系列页面。 至少创建一个 `注册并登录` 流程。 一旦用户流创建完毕，从用户流列表中选择它，然后单击"运行用户流"。 注意页面顶部的URL，用于配置Auth Connect`发现的 URL` 属性。 还考虑创建一个 `密码重置` 流程([详细信息在下面](#implementing-password-reset))。
 
-Azure AD B2C is now ready to use with Auth Connect.
+Azure AD B2C现已准备好与Auth Connect使用。
 
 ### Install Auth Connect
 
-Run the following command to install the Auth Connect plugin. For the `AUTH_URL_SCHEME` variable, use the globally unique App Id (ex: `com.company.app`) you decided on when configuring the Azure AD app above.
+运行以下命令来安装Auth Connect 插件。 对于`AUTH_URL_SCHEME`变量，使用全局唯一的App Id (例如：`com.company.app`)，您在上述配置Azure AD应用程序时做出了决定。
 
 <native-ent-install plugin-id="auth" variables="--variable AUTH_URL_SCHEME=com.company.app"></native-ent-install>
 
 ### Configure Auth Connect
 
-It's recommended to create an `AuthenticationService` class that encapsulates Azure AD and Ionic Auth Connect’s login functionality.
+建议创建一个 `AuthenticationService` 类，封装Azure AD 和 Ionic Auth Connect的登录功能。
 
-Generate this class using the `ionic generate` command:
+使用 `ionic generate` 命令生成此类：
 
-<command-line> <command-prompt>ionic generate service services/authentication</command-prompt> </command-line>
+<command-line> <command-prompt>ionic生成服务 services/authentication</command-prompt> </command-line>
 
-Extend the `IonicAuth` class, then configure all Azure AD details in the `IonicAuthOptions` object:
+扩展`IonicAuth`类，然后在`IonicAuthOptions`对象中配置所有Azure详细信息：
 
 ```typescript
 import { IonicAuth, IonicAuthOptions } from '@ionic-enterprise/auth';
@@ -100,7 +100,7 @@ constructor() {
 }
 ```
 
-Some of these `IonicAuthOptions` values are unique, and must be set based on your Azure AD app’s details:
+其中一些`IonicAuthauths`值是独特的，必须根据您的 Azure AD应用程序的详细信息设置：
 
 * `platform`: Use “cordova” or “capacitor” accordingly.
 * `clientID`: Your app’s _Application ID_. Example: cebbb0be-d578-4bbd-9712-4b0fe05c06aa
@@ -109,23 +109,23 @@ Some of these `IonicAuthOptions` values are unique, and must be set based on you
 * `audience`: Your custom API URL of choice, such as `https://api.myapp.com`.
 * `scope`: Unlock access to protected resources, such as read/write permissions. `offline_access` is minimally required. Example: openid offline_access email picture profile
 
-The `discoveryUrl` can be found by navigating to User flows (policies) -> [Select User Flow] -> Overview tab -> Run user flow button. The discovery link is at the top page and will look like the following format:
+`discoveryUrl`可以通过导航到用户流量(策略) -> [选择用户流] -> 概览选项卡 -> 运行用户流按钮。 发现链接在首页上，看起来像以下格式：
 
-`https://B2C-TENANT-NAME.b2clogin.com/B2C-TENANT-NAME.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=POLICY-NAME`
+`https://B2C-TENANT-NAME.b2clogin.com/B2C-TENANT-NAME.onmicrosoft.com/v2.0/.well known/openid-configuration?p=POLISe-NAME`
 
-Where `B2C-TENANT-NAME` is your tenant name and the `POLICY-NAME` is the name of the User Flow created earlier.
+`B2C-TENANT-NAME`是你的用户名，而`POLYe-NAME`是先前创建的用户流名称。
 
 ### What's Next?
 
-Check out the full list of [configuration options](/docs/enterprise/auth-connect#ionicauthoptions) available, then implement the [other steps](/docs/enterprise/auth-connect#workflow) in the Auth Connect workflow.
+查看可用的[配置选项](/docs/enterprise/auth-connect#ionicauthoptions)的完整列表，并在认证连接工作流中实现[其他步骤](/docs/enterprise/auth-connect#workflow)。
 
 ## Implementing Password Reset
 
-To implement password reset functionality, a custom User Flow needs to be created. Navigate to the `User flows (policies)` page, then click the "New user flow" button. Next, select the "Password reset" user flow type. As part of the `Application claims` section, choose "Email Addresses" at a minimum. After the user flow has been created, select it from the User Flow list, then click "Run user flow" from the Overview tab. Note the URL at the top of the page - use it as the discovery url for password reset.
+要实现密码重置功能，需要创建自定义用户流程。 导航到 `用户流量(策略)` 页面，然后点击“新用户流”按钮。 接下来，选择“密码重置”用户流类型。 作为`Application claims`部分的一部分，至少选择"电子邮件地址"。 创建用户流后，从用户流列表中选择它，然后单击"运行用户流"。 注意页面顶部的 URL - 用它作为密码重置的发现URL。
 
-Within your app, implement the following logic:
+在您的应用范围内执行以下逻辑：
 
-If an error is thrown after the [Login](/docs/enterprise/auth-connect#iionicauth.login) function is called, inspect the `message` property. If it starts with the string `AADB2C90118` (part of the error message returned by Azure AD), then call [Login](#iionicauth.login) again, this time specifying the location of the password reset endpoint.
+如果在 [Login](/docs/enterprise/auth-connect#iionicauth.login) 函数调用后出现错误，请检查`message` 属性。 如果开始于字符串`AADB2C90118` (Azure AD返回错误信息的一部分)， 然后再次调用 [Login](#iionicauth.login)，这一次指定了密码重置端点的位置。
 
 ```typescript
 // Snippet example: Password reset
