@@ -4,7 +4,9 @@
 
 ## Demo App
 
-For reference, a [complete demo app](https://github.com/ionic-team/cs-demo-ac-iv) is available. To view the Azure AD configuration details, see `authentication.service.ts` [here](https://github.com/ionic-team/cs-demo-ac-iv/blob/master/src/app/services/authentication/authentication.service.ts).
+1. Simple: A [login/logout experience](https://github.com/ionic-team/demo-authconnect-azureb2c) that works on the web, iOS, and Android. See it in action in [this short video](https://www.youtube.com/watch?v=v-LuS6aiRDo&feature=youtu.be). To view the Azure AD configuration details, see `authentication.service.ts` [here](https://github.com/ionic-team/demo-authconnect-azureb2c/blob/master/completed/src/app/services/authentication.service.ts).
+
+2. Advanced: [Demonstrates the use of Auth Connect](https://github.com/ionic-team/cs-demo-ac-iv) to perform an OAuth login and Identity Vault to store the resulting authentication tokens on the web, iOS, and Android. To view the Azure AD configuration details, see `authentication.service.ts` [here](https://github.com/ionic-team/cs-demo-ac-iv/blob/master/src/app/services/authentication/authentication.service.ts).
 
 ## Configuration Details
 
