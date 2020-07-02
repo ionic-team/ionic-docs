@@ -2,7 +2,6 @@ import { h } from '@stencil/core';
 
 import { useLocalStorage } from '../../../local-storage';
 import { toHypertext } from '../to-hypertext';
-
 const [getFramework] = useLocalStorage('ionic-docs:framework');
 
 export default (props: { [key: string]: any }) => {
