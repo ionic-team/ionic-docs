@@ -103,7 +103,7 @@ export const environment = ~
 ...
 ```
 
-Then you can use it directly in an `environments.ts` module to properly set the API url based on the value of `BUILD_ENV` (`development` in Appflow & `local` locally).
+然后，您可以直接在`environment.ts`模块中正确使用它 根据`BUILD_ENV`的值（在Appflow & `local`中进行`development`）设置API网址。
 
 ```typescript
 let apiUrl: string;
