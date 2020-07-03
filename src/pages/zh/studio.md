@@ -2,7 +2,7 @@
 tableOfContents: false
 ---
 
-# Welcome to Studio
+# 欢迎使用Ionic Studio
 
 Ionic Studio is a fast and easy app builder that helps teams build and prototype apps with minimal coding.
 
