@@ -41,20 +41,24 @@ public async addNewToGallery() {
 
 我们注意到这里的神奇之处：代码中没有出现跟平台有关的代码（web、iOS或是安卓）。 Capacitor相机插件为我们抽象出了相关函数，而我们只需要调用`Camera.getPhoto()`便可以开始使用设备的拍照功能。
 
-下一步，打开`tab2.page.ts`文件，并导入PhotoService类：
+Next, open up `tab2.page.ts` and import the PhotoService class and add a method that calls the `addNewToGallery` method on the imported servce:
 
 ```typescript
 import { PhotoService } from '../services/photo.service';
 
 constructor(public photoService: PhotoService) { }
+
+addPhotoToGallery() {
+  this.photoService.addNewToGallery();
+}
 ```
 
-然后打开`tab2.page.html`文件，当标签被点击的时候调用`addNewToGallery()`函数：
+Then, open `tab2.page.html` and call the `addPhotoToGallery()` function when the FAB is tapped/clicked:
 
 ```html
 <ion-content>
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-    <ion-fab-button (click)="photoService.addNewToGallery()">
+    <ion-fab-button (click)="addPhotoToGallery()">
       <ion-icon name="camera"></ion-icon>
     </ion-fab-button>
   </ion-fab>
@@ -106,21 +110,37 @@ export class PhotoService {
   });
 }
 ```
+We will create a local `photos` property on our `Tab2Page` component so that we can reference the Photos collection within our template.
 
-当照片存储到数组之后，我们在`tab2.page.html`文件中对其引用，这样我们就能够在屏幕上看到显示的图像了。 在页面上添加一个[网格组件](https://ionicframework.com/docs/api/grid)，以便每张照片都能很好地展示。通过数组的循环，我们为每张照片加上一个图片组件（`<ion-img>`）。 给`src`（源）指定照片的路径：
+```typescript
+export class Tab2Page {
+  photos = this.photoService.photos;
+
+  constructor(public photoService: PhotoService) { }
+
+  addPhotoToGallery() {
+    this.photoService.addNewToGallery();
+  }
+}
+```
+
+With the photo(s) stored into the main array, move over to `tab2.page.html` so we can display the image on the screen. Add a [Grid component](https://ionicframework.com/docs/api/grid) so that each photo will display nicely as photos are added to the gallery, and loop through each photo in the Photos array, adding an Image component (`<ion-img>`) for each. Point the `src` (source) at the photo’s path:
 
 ```html
 <ion-content>
   <ion-grid>
     <ion-row>
     <ion-col size="6" 
-      *ngFor="let photo of photoService.photos; index as position">
+      *ngFor="let photo of photos; index as position">
         <ion-img src="{{ photo.webviewPath }}"></ion-img>
     </ion-col>
     </ion-row>
-  </ion-grid><!-- ion-fab 标记  --></ion-content>
+  </ion-grid>
+
+  <!-- ion-fab markup  -->
+</ion-content>
 ```
 
-保存好我们编辑的所有文件， 在网页浏览器中，点击相机按钮开始拍照。 这一次，照片被显示在了图库里面。
+Save all files. Within the web browser, click the Camera button and take another photo. This time, the photo is displayed in the Photo Gallery!
 
-下一步，我们要给应用添加一个能将照片保存在文件系统里面的功能，这样照片就能够在应用中检索以及显示了。
+Up next, we’ll add support for saving the photos to the filesystem, so they can be retrieved and displayed in our app at a later time.
