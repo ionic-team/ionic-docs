@@ -41,20 +41,24 @@ public async addNewToGallery() {
 
 Observe la magia aquí: no hay un código específico para cada plataforma (web, iOS o Android)! El plugin de Capacitor Camera lo obtiene para nosotros, dejandolo a solo una llamada al método - `Camera.getPhoto()` - que abrirá la cámara del dispositivo y nos permitirá tomar fotos.
 
-A continuación, abra `tab2.page.ts` e importe la clase PhotoService:
+Next, open up `tab2.page.ts` and import the PhotoService class and add a method that calls the `addNewToGallery` method on the imported servce:
 
 ```typescript
 import { PhotoService } from '../services/photo.service';
 
 constructor(public photoService: PhotoService) { }
+
+addPhotoToGallery() {
+  this.photoService.addNewToGallery();
+}
 ```
 
-Luego, abra `tab2.page.html` y llame a la función `addNewToGallery()` cuando se toque o de clic en FAB:
+Then, open `tab2.page.html` and call the `addPhotoToGallery()` function when the FAB is tapped/clicked:
 
 ```html
 <ion-content>
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-    <ion-fab-button (click)="photoService.addNewToGallery()">
+    <ion-fab-button (click)="addPhotoToGallery()">
       <ion-icon name="camera"></ion-icon>
     </ion-fab-button>
   </ion-fab>
@@ -106,15 +110,28 @@ Terminada la función `addNewToGallery`, añade la nueva foto capturada al princ
   });
 }
 ```
+We will create a local `photos` property on our `Tab2Page` component so that we can reference the Photos collection within our template.
 
-Con las fotos almacenadas en el arreglo principal, muévete a `tab2.page.html` para que podamos mostrar la imagen en la pantalla. Añade [ Grid component](https://ionicframework.com/docs/api/grid) para que cada foto se muestre de forma agradable como se agregan fotos a la galería, y bucle por cada foto en la matriz fotos, añadiendo un componente Image (`<ion-img>`) para cada una. Apunte la `src` (fuente) a la ruta de la foto:
+```typescript
+export class Tab2Page {
+  photos = this.photoService.photos;
+
+  constructor(public photoService: PhotoService) { }
+
+  addPhotoToGallery() {
+    this.photoService.addNewToGallery();
+  }
+}
+```
+
+With the photo(s) stored into the main array, move over to `tab2.page.html` so we can display the image on the screen. Add a [Grid component](https://ionicframework.com/docs/api/grid) so that each photo will display nicely as photos are added to the gallery, and loop through each photo in the Photos array, adding an Image component (`<ion-img>`) for each. Point the `src` (source) at the photo’s path:
 
 ```html
 <ion-content>
   <ion-grid>
     <ion-row>
     <ion-col size="6" 
-      *ngFor="let photo of photoService.photos; index as position">
+      *ngFor="let photo of photos; index as position">
         <ion-img src="{{ photo.webviewPath }}"></ion-img>
     </ion-col>
     </ion-row>
@@ -124,6 +141,6 @@ Con las fotos almacenadas en el arreglo principal, muévete a `tab2.page.html` p
 </ion-content>
 ```
 
-Guardar todos los archivos. Dentro del navegador web, haga clic en el botón Cámara y haga otra foto. Esta vez, la foto se muestra en la Galería de Fotos!
+Save all files. Within the web browser, click the Camera button and take another photo. This time, the photo is displayed in the Photo Gallery!
 
-A continuación, añadiremos soporte para guardar las fotos en el sistema de archivos, para que puedan ser recuperados y mostrados en nuestra aplicación más adelante.
+Up next, we’ll add support for saving the photos to the filesystem, so they can be retrieved and displayed in our app at a later time.
