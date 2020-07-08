@@ -31,4 +31,7 @@ For this destination you will need the following:
 
     ![/docs/assets/img/appflow/apple-apple-id.png](/docs/assets/img/appflow/apple-apple-id.png)
 
-- (Optional) Your team name for your Apple ID (if your account is in more than one team)
+- **(Optional) Team ID for the App from App Store Connect**
+> Usually not required. But if you belong to multiple teams and are getting upload failures with error `1627`, fill out this field.
+    - You can find in the <a href="https://developer.apple.com/account/#/membership" target="_blank">Membership Details</a> page in your Apple Developer account Your team name for your Apple ID (if your account is in more than one team.)
+    - In most cases the correct team will be used automatically without this field being specified, but rarely it cannot be determined and needs to be set.
