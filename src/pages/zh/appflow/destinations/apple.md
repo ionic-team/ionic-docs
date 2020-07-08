@@ -31,4 +31,7 @@ Apple App Store目标允许您上传您已完成的二进制文件到 App Store 
 
     ![/docs/assets/img/appflow/apple-apple-id.png](/docs/assets/img/appflow/apple-apple-id.png)
 
-- (可选) 您的团队名称，您的 Apple ID (如果您的帐户在多个团队中)
+- **(Optional) Team ID for the App from App Store Connect**
+> Usually not required. But if you belong to multiple teams and are getting upload failures with error `1627`, fill out this field.
+    - You can find in the <a href="https://developer.apple.com/account/#/membership" target="_blank">Membership Details</a> page in your Apple Developer account Your team name for your Apple ID (if your account is in more than one team.)
+    - In most cases the correct team will be used automatically without this field being specified, but rarely it cannot be determined and needs to be set.
