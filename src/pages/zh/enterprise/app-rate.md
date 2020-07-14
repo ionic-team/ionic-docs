@@ -96,13 +96,13 @@ ___
 
 ▸ **promptForRating**(immediately: *`boolean`*): `void`
 
-Prompts the user for rating
+提示用户进行评分
 
-**Parameters:**
+**参数:**
 
-| Name        | Type      | Description                         |
-| ----------- | --------- | ----------------------------------- |
-| immediately | `boolean` | Show the rating prompt immediately. |
+| 名称 | 类型   | 描述       |
+| -- | ---- | -------- |
+| 立即 | `布尔` | 立即弹出评分提示 |
 
 **Returns:** `void`
 
@@ -110,7 +110,7 @@ ___
 
 ___
 
-## Interfaces
+## 接口
 
 <a id="appratecallbacks"></a>
 
@@ -124,7 +124,7 @@ ___
 
 **● handleNegativeFeedback**: *`Function`*
 
-call back function. called when user clicked on negative feedback
+回调函数 当用户点击了负面反馈，函数被唤起。
 
 ___
 
@@ -134,7 +134,7 @@ ___
 
 **● onButtonClicked**: *`Function`*
 
-call back function. called when user clicked on rate-dialog buttons
+回调函数 当用户点击评价弹窗的按钮时，函数被唤起
 
 ___
 
