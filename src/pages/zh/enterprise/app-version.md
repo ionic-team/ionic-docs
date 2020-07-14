@@ -1,29 +1,29 @@
 ---
-title: App版本
+title: 应用版本
 template: 企业插件
 version: 0.1.9
 minor: 0.1.X
 ---
 
-The App Version plugin provides access to your app's metadata, including app name, package name, and version number.
+应用版本插件提供权限访问元数据信息，比如App名称，包名，版本号。
 
 <native-ent-install plugin-id="app-version" variables=""></native-ent-install>
 
-## Index
+## 索引
 
-### Classes
+### 类
 
-* [AppVersion](#appversion)
+* [应用版本](#appversion)
 
 * * *
 
-## Classes
+## 类
 
 <a id="appversion"></a>
 
 ### AppVersion
 
-***usage***:
+***使用***:
 
 ```typescript
 import { AppVersion } from '@ionic-enterprise/app-version/ngx';
@@ -45,9 +45,9 @@ this.appVersion.getVersionNumber();
 
 ▸ **getAppName**(): `Promise`<`string`>
 
-Returns the name of the app, e.g.: "My Awesome App"
+返回应用名称，比如"My Awesome App"
 
-**Returns:** `Promise`<`string`>
+**返回:** `Promise`<`string`>
 
 * * *
 
@@ -57,9 +57,9 @@ Returns the name of the app, e.g.: "My Awesome App"
 
 ▸ **getPackageName**(): `Promise`<`string`>
 
-Returns the package name of the app, e.g.: "com.example.myawesomeapp"
+返回应用包名称, 比如"com.example.myawesomeapp"
 
-**Returns:** `Promise`<`string`>
+**返回:** `Promise`<`string`>
 
 * * *
 
@@ -69,9 +69,9 @@ Returns the package name of the app, e.g.: "com.example.myawesomeapp"
 
 ▸ **getVersionCode**(): `Promise`<`string` \| `number`>
 
-Returns the build identifier of the app. In iOS a string with the build version like "1.6095" In Android a number generated from the version string, like 10203 for version "1.2.3"
+返回应用构建版本Code. iOS的构建版本Code是这样，比如"1.6095", Android的构建版本号来自于构建生成的字符串, 比如"10203", 生成版本Code "1.2.3"
 
-**Returns:** `Promise`<`string` \| `number`>
+**返回:** `Promise`<`string` \| `number`>
 
 * * *
 
@@ -81,9 +81,9 @@ Returns the build identifier of the app. In iOS a string with the build version 
 
 ▸ **getVersionNumber**(): `Promise`<`string`>
 
-Returns the version of the app, e.g.: "1.2.3"
+返回应用版本号,比如"1.2.3"
 
-**Returns:** `Promise`<`string`>
+**返回:** `Promise`<`string`>
 
 * * *
 
