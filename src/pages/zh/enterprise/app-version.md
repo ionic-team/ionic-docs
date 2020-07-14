@@ -1,6 +1,6 @@
 ---
-title: App Version
-template: enterprise-plugin
+title: App版本
+template: 企业插件
 version: 0.1.9
 minor: 0.1.X
 ---
