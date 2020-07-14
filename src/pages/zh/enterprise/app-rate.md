@@ -1,22 +1,22 @@
 ---
-title: App Rate
-template: enterprise-plugin
+title: 应用评分
+template: 企业插件
 version: 1.5.0
 minor: 1.5.X
 ---
 
-The App Rate plugin makes it easy to prompt the user to rate your app - either now, later, or never.
+评分插件帮助你提醒用户评价你的应用，立即，之后或者永不。
 
 <native-ent-install plugin-id="app-rate" variables=""></native-ent-install>
 
 
-## Index
+## 索引
 
-### Classes
+### 类
 
 * [AppRate](#apprate)
 
-### Interfaces
+### 接口
 
 * [AppRateCallbacks](#appratecallbacks)
 * [AppRateCustomLocale](#appratecustomlocale)
@@ -25,7 +25,7 @@ The App Rate plugin makes it easy to prompt the user to rate your app - either n
 
 ---
 
-## Classes
+## 类
 
 <a id="apprate"></a>
 
@@ -33,18 +33,18 @@ The App Rate plugin makes it easy to prompt the user to rate your app - either n
 
 **AppRate**:
 
-*__name__*: App Rate
+*__名称__*: App Rate
 
-*__description__*: The AppRate plugin makes it easy to prompt the user to rate your app, either now, later, or never.
+*__描述__*: 评分插件帮助你提醒用户评价你的应用，立即，之后或者永不。
 
-*__usage__*:
+*__用法__*:
  ```typescript
 import { AppRate } from '@ionic-enterprise/app-rate/ngx';
 
 constructor(private appRate: AppRate) { }
 
 ...
-// set certain preferences
+// 设置特定首选项
 this.appRate.preferences.storeAppURL = {
   ios: '<app_id>',
   android: 'market://details?id=<package_name>',
@@ -53,7 +53,7 @@ this.appRate.preferences.storeAppURL = {
 
 this.appRate.promptForRating(true);
 
-// or, override the whole preferences object
+// 或者，重写设定
 this.appRate.preferences = {
   usesUntilPrompt: 3,
   storeAppURL: {
@@ -66,15 +66,15 @@ this.appRate.preferences = {
 this.appRate.promptForRating(false);
 ```
 
-*__interfaces__*: AppRatePreferences AppUrls AppRateCallbacks AppRateCustomLocal
+*__接口__*: AppRatePreferences AppUrls AppRateCallbacks AppRateCustomLocal
 
 <a id="apprate.preferences"></a>
 
-### preferences
+### 设定
 
 **● preferences**: *[AppRatePreferences](#appratepreferences)*
 
-Configure various settings for the Rating View. See table below for options
+配置评分插件 参考以下表格设定项
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 ▸ **navigateToAppStore**(): `void`
 
-Immediately send the user to the app store rating page
+立即将用户导向应用商店评分页面
 
 **Returns:** `void`
 
