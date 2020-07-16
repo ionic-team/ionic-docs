@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@stencil/core": "1.14.0",
-    "@types/fs-extra": "8.1.0",
+    "@types/fs-extra": "9.0.1",
     "@types/listr": "0.14.2",
     "@types/marked": "1.1.0",
     "@types/node-fetch": "2.5.7",
