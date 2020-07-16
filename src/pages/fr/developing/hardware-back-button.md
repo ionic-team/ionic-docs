@@ -204,7 +204,7 @@ It is recommended to check whether or not the user is on the root page prior to 
 
 ## Internal Framework Handlers
 
-Th table below lists all of the internal hardware back button event handlers that Ionic Framework uses. The `Propagates` column notes whether or not that particular handler tells Ionic Framework to call the next back button handler.
+The table below lists all of the internal hardware back button event handlers that Ionic Framework uses. The `Propagates` column notes whether or not that particular handler tells Ionic Framework to call the next back button handler.
 
 | Handler    | Priority | Propagates | Description                                                                                                                              |
 | ---------- | -------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
