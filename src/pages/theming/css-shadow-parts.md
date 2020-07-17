@@ -98,7 +98,7 @@ ion-item::part(native):hover {
 
 ## Ionic Framework Parts
 
-All exposed parts for an Ionic Framework component can be found under the CSS Shadow Parts heading on its API page. To view all components and their  API pages, see the <a href="/docs/components" target="_blank" rel="noopener noreferrer">Component documentation</a>.
+All exposed parts for an Ionic Framework component can be found under the CSS Shadow Parts heading on its API page. To view all components and their API pages, see the <a href="/docs/components" target="_blank" rel="noopener noreferrer">Component documentation</a>.
 
 In order to have parts a component must meet the following criteria:
 
