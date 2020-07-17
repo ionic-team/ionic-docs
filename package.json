@@ -21,7 +21,7 @@
     "heroku-postbuild": "npm run build.ci"
   },
   "dependencies": {
-    "@ionic-internal/sites-shared": "1.0.0-1",
+    "@ionic-internal/sites-shared": "1.0.0",
     "@ionic/core": "^5.2.3",
     "@ionic/docs": "^5.2.3",
     "@sentry/node": "^5.19.2",
