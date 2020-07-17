@@ -28,4 +28,6 @@ and therefore must use a </b>Production</b> type profile.
 You'll need to choose the [certificate files you generated](/docs/appflow/package/credentials) and upload them
 as well as put in any passwords needed to access the credentials.
 
+Specifically for iOS, use [the generated](/docs/appflow/package/credentials) `.p12` file for the certificate, the `.mobileprovision` file for the Provisioning Profile, and the password used to generate the `.p12` file for the password.
+
 Once that Profile has been created, can click the `Edit` button to remove and/or upload your iOS and Android certs.
