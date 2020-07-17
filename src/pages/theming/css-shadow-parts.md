@@ -65,7 +65,7 @@ With these parts exposed, the element can now be styled directly using [::part](
 
 The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::part" target="_blank" rel="noopener noreferrer">`::part()`</a> pseudo-element allows developers to select elements inside of a shadow tree that have been exposed via a part attribute.
 
-Since we know that the `ion-select` exposes a `placeholder` part for styling the text when there is no value selected, we can customize it in the following way:
+Since we know that `ion-select` exposes a `placeholder` part for styling the text when there is no value selected, we can customize it in the following way:
 
 ```css
 ion-select::part(placeholder) {
