@@ -43,7 +43,7 @@
     "@types/node-fetch": "2.5.7",
     "@types/prismic-dom": "2.1.1",
     "@types/prismjs": "^1.16.1",
-    "@types/semver": "7.2.0",
+    "@types/semver": "7.3.1",
     "chokidar": "^3.4.0",
     "dotenv": "^8.2.0",
     "fast-glob": "^3.2.4",
