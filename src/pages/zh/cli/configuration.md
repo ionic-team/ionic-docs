@@ -1,13 +1,13 @@
 ---
 ---
 
-# Configuration
+# 配置
 
-## Files
+## 文件
 
-Configuration values are stored in JSON files. The Ionic CLI maintains a global configuration file, usually located at `~/.ionic/config.json`, and project configuration files, usually at the project's root directory as `ionic.config.json`.
+配置值存储在 JSON 文件中。 Ionic CLI 维护一个全局配置文件，通常位于 `~/.ionic/config.json`和工程配置文件，通常在项目的根目录为 `ionic.config.json`。
 
-The CLI provides commands for setting and printing config values from project config files and the global CLI config file. See `ionic config --help` or see the documentation for usage of [`ionic config get`](/docs/cli/commands/config-get) and [`ionic config set`](/docs/cli/commands/config-set).
+CLI 提供了从项目配置文件和全局CLI配置文件设置和打印配置值的命令。 See `ionic config --help` or see the documentation for usage of [`ionic config get`](/docs/cli/commands/config-get) and [`ionic config set`](/docs/cli/commands/config-set).
 
 ### Project Configuration File
 
