@@ -97,7 +97,7 @@ IONIC_CLI_HOOK_CTX_CAPACITOR_VERBOSE=false
 
 JavaScript 钩子文件应该到处一个唯一的函数, 这个函数在钩子执行时只有一个参数 (`ctx`) 。
 
-The argument is the context given to the hook file, which differs from hook to hook and with different invocations.
+该参数是提供钩子文件上下文，它随钩子的不同和调用方式的不同而不同。
 
 `./scripts/build-before.js`:
 
@@ -107,11 +107,11 @@ module.exports = function(ctx) {
 };
 ```
 
-## Multi-app Projects
+## 多页项目
 
-<small><em>Available in CLI 6.2.0+</em></small>
+<small><em>CLI 6.2.0及以上可用</em></small>
 
-The Ionic CLI supports a multi-app configuration setup, which involves multiple Ionic apps and shared code within a single repository, or [monorepo](/docs/reference/glossary#monorepo).
+Ionic CLI支持多应用配置，它设计多个Ionic apps和单一仓库中的代码共享或者 [monorepo](/docs/reference/glossary#monorepo)。
 
 > These docs give an overview of the multi-app feature of the Ionic CLI, but don't really go into details for each framework.
 > 
