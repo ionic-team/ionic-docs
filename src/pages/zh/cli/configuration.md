@@ -45,31 +45,31 @@ CLI 提供了从项目配置文件和全局CLI配置文件设置和打印配置�
 CLI将会寻找以下环境变量：
 
 * ` IONIC_CONFIG_DIRECTORY`：全局CLI配置目录，缺省是`~/.ionic`。
-* `IONIC_HTTP_PROXY`: Set a URL for proxying all CLI requests through. See [Using a Proxy](./using-a-proxy).
-* `IONIC_TOKEN`: Automatically authenticates with [Ionic Appflow](https://ionicframework.com/appflow).
+* `IONIC_HTTP_PROXY`: 设置一个URL来代理所有CLI请求。 查看 [使用代理](./using-a-proxy)。
+* `IONIC_TOKEN`: 自动认证 [Ionic Appflow](https://ionicframework.com/appflow)。
 
-## Flags
+## 参数
 
-CLI flags are global options that alter the behavior of a CLI command.
+CLI参数是可以修改CLI行为的全局选项，
 
-* `--help`: Instead of running the command, view its help page.
-* `--verbose`: Show all log messages for debugging purposes.
-* `--quiet`: Only show `WARN` and `ERROR` log messages.
-* `--no-interactive`: Turn off interactive prompts and fancy outputs. If CI or a non-TTY terminal is detected, the CLI is automatically non-interactive.
-* `--confirm`: Turn on auto-confirmation of confirmation prompts. Careful: the CLI prompts before doing something potentially harmful. Auto-confirming may have unintended results.
+* `--help`：与运行命令相反，会显示命令帮助页。
+* `--verbos`：显示所有日志信息用于调试。
+* `--quiet`：只展示` WARN`和` ERROR`级日志信息。
+* `--no-interactive`：关闭交互提示和花哨的输出。 如果被检测到是CI或者非 TTY终端，则CLI会自动切换为非交互式。
+* `--确认`: 打开确认提示的自动确认。 注意: CLI在做潜在风险的事情之前会有提示。 自动确认可能会产生意外结果。
 
-## Hooks
+## 钩子
 
-The CLI can run scripts during certain events, such as before and after builds. To hook into the CLI, the following [npm scripts](https://docs.npmjs.com/misc/scripts) can be used in `package.json`:
+CLI在特定事件发生时运行脚本，比如构建之前和之后。 要绑定钩子进入CLI，下面的[npm scripts](https://docs.npmjs.com/misc/scripts)可以在`package.json`中使用：
 
-* `ionic:serve:before`: executed before the dev server starts
-* `ionic:serve:after`: executed after the dev server is terminated
-* `ionic:build:before`: executed before a web asset build begins
-* `ionic:build:after`: executed after a web asset build finishes
-* `ionic:capacitor:run:before` : executed on capacitor run before capacitor open is executed
-* `ionic:capacitor:build:before` : executed on capacitor build before capacitor open is executed
+* `ionic:serve:before`：在dev server启动之前执行
+* `ionic:serve:after`: 在dev server中断后执行
+* `ionic:build:before`: 在web资源构建开始之前执行
+* `ionic:build:after`：web资源构建完成执行
+* `ionic:capacitor:run:before` ：capacitor开启之前在capacitor中执行
+* `ionic:capacitor:run:after` ：capacitor开启之后在capacitor中执行
 
-The Capacitor hooks are executed after the `ionic:serve` and `ionic:build` hooks. They will only be executed when using the `ionic capacitor build` or `ionic capacitor run` commands. When using a shell script for any of the hooks, several environment variables are set containing context information.
+Capacitor钩子是在 `ionic:sery` and `ionic:build` 钩子之后执行的。 They will only be executed when using the `ionic capacitor build` or `ionic capacitor run` commands. When using a shell script for any of the hooks, several environment variables are set containing context information.
 
 The following example shows the environment variables that are set for the `ionic:capacitor:run:before` and `ionic:capacitor:build:before` hooks.
 
