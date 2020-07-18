@@ -69,9 +69,9 @@ CLI在特定事件发生时运行脚本，比如构建之前和之后。 要绑�
 * `ionic:capacitor:run:before` ：capacitor开启之前在capacitor中执行
 * `ionic:capacitor:run:after` ：capacitor开启之后在capacitor中执行
 
-Capacitor钩子是在 `ionic:sery` and `ionic:build` 钩子之后执行的。 They will only be executed when using the `ionic capacitor build` or `ionic capacitor run` commands. When using a shell script for any of the hooks, several environment variables are set containing context information.
+Capacitor钩子是在 `ionic:sery` and `ionic:build` 钩子之后执行的。 它们只能在使用 `ionic capacitor build` or `ionic capacitor run` 时执行。 当任何一个钩子使用 shell 脚本时，几个环境变量会被设置为包含上下文信息。
 
-The following example shows the environment variables that are set for the `ionic:capacitor:run:before` and `ionic:capacitor:build:before` hooks.
+下面的示例展示了在 `ionic:capacititor:run:before` and `ionic:capacity:build:before` 钩子中设定的环境变量.
 
 ```shell
 IONIC_CLI_HOOK_CTX_NAME=capacitor:build:before
@@ -85,9 +85,9 @@ IONIC_CLI_HOOK_CTX_CAPACITOR_APP_NAME=ionic-starter-app
 IONIC_CLI_HOOK_CTX_CAPACITOR_VERBOSE=false
 ```
 
-Hooks can also be defined in `ionic.config.json`. Define a `hooks` object within the project, where each key is the name of the hook (without the `ionic:` prefix), and the value is a path to a JavaScript file or an array of paths.
+钩子也可以在`ionic.config.json`中设定。 在项目中定义一个 `个钩子` 对象 其中每个键都是钩子的名称 (不含 `ionic：` 前缀)， 每个值是一个到 JavaScript 文件的路径或者路径或者路径数组。
 
-In the following example, the file is imported and run during the `ionic:build:before` hook.
+在下面的例子中, 文件在`ionic:build:before` 钩子中被导入和运行.
 
 ```json
 "hooks": {
@@ -95,7 +95,7 @@ In the following example, the file is imported and run during the `ionic:build:b
 },
 ```
 
-JavaScript hook files should export a single function, which is passed a single argument (`ctx`) whenever the hook executes.
+JavaScript 钩子文件应该到处一个唯一的函数, 这个函数在钩子执行时只有一个参数 (`ctx`) 。
 
 The argument is the context given to the hook file, which differs from hook to hook and with different invocations.
 
