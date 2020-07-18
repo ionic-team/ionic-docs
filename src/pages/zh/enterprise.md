@@ -3,7 +3,7 @@ title: Ionic Native企业版
 tableOfContents: false
 ---
 
-<p class='intro'><a href="https://ionicframework.com/native" target="_blank">Ionic Native Enterprise Edition (EE)</a> is a subscription service that provides premium, supported Capacitor and Cordova plugins, third-party integrations, and pre-built solutions for teams building enterprise-grade apps with Ionic.</p>
+<p class='intro'><a href="https://ionicframework.com/native" target="_blank">Ionic Native企业版(EE)</a>是一种订阅制的专业服务，支持Capacitor、Cordova插件，及第三方集成，以及为软对构建企业级应用程序的 Ionic 预构建解决方案。</p>
 
 <docs-cards class="static-width"> <docs-card size="lg" header="Native solutions" href="/docs/enterprise/solutions" iconset="/docs/assets/icons/face-id.png,/docs/assets/icons/touch-id.png,/docs/assets/icons/auth0.png,/docs/assets/icons/active-directory.png"> 
 
