@@ -7,44 +7,44 @@
 
 配置值存储在 JSON 文件中。 Ionic CLI 维护一个全局配置文件，通常位于 `~/.ionic/config.json`和工程配置文件，通常在项目的根目录为 `ionic.config.json`。
 
-CLI 提供了从项目配置文件和全局CLI配置文件设置和打印配置值的命令。 See `ionic config --help` or see the documentation for usage of [`ionic config get`](/docs/cli/commands/config-get) and [`ionic config set`](/docs/cli/commands/config-set).
+CLI 提供了从项目配置文件和全局CLI配置文件设置和打印配置值的命令。 查看 `ionic config --help` 或查看文档中 [`ionic config get`](/docs/cli/commands/config-get) 和 [`ionic config set `](/docs/cli/commands/config-set)来学习使用.
 
-### Project Configuration File
+### 项目配置文件
 
-Each Ionic project has a project configuration file, usually at the project's root directory. The following is an annotated `ionic.config.json` file.
+每个Ionic项目都有一个项目配置文件，通常在项目的根目录上。 以下是一个有注释的`ionic.config.json` 文件。
 
 ```json
 {
-  // The human-readable name of the app.
+  // 易读的app名称.
   "name": "My App",
 
-  // The project type of the app. The CLI uses this value to determine which
-  // commands and command options are available, what to output for help
-  // documentation, and what to use for web asset builds and the dev server.
+  // 项目类型，CLI使用该值来判断命令及命令选项是否可用，
+  // 对于帮助文档应该输出什么，
+  // web资源构建和开发服务器应该用什么。
   "type": "angular",
 
-  // The App ID for Ionic Appflow.
+  // Ionic Appflow的App ID。
   "id": "abc123",
 
-  // Configuration object for integrations such as Cordova and Capacitor.
+  // 面向集成比如Cordova 和Capacitor的配置对象。
   "integrations": {
     "cordova": {
       ...
     }
   },
 
-  // Hook configuration--see the Hooks section below for details.
+  // Hook 配置--查看Hooks部分来了解详情。
   "hooks": {
     ...
   }
 }
 ```
 
-## Environment Variables
+## 环境变量
 
-The CLI will look for the following environment variables:
+CLI将会寻找以下环境变量：
 
-* `IONIC_CONFIG_DIRECTORY`: The directory of the global CLI config. Defaults to `~/.ionic`.
+* ` IONIC_CONFIG_DIRECTORY`：全局CLI配置目录，缺省是`~/.ionic`。
 * `IONIC_HTTP_PROXY`: Set a URL for proxying all CLI requests through. See [Using a Proxy](./using-a-proxy).
 * `IONIC_TOKEN`: Automatically authenticates with [Ionic Appflow](https://ionicframework.com/appflow).
 
