@@ -3,7 +3,7 @@ nextText: 'Versioning'
 nextUrl: '/docs/reference/versioning'
 ---
 
-# Glossary
+# 词汇表
 
 <div id="what-is">
 
