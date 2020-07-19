@@ -9,12 +9,12 @@ nextUrl: '/docs/reference/versioning'
 
   <section id="android-sdk">
     <a href="#android-sdk"><h3>Android SDK</h3></a>
-    <p>The <a href="http://developer.android.com/sdk/index.html" target="_blank">Android SDK</a> is a software development kit built for developers building for Google's Android Platform. It includes tools for building, testing, and debugging Android applications.</p>
+    <p><a href="http://developer.android.com/sdk/index.html" target="_blank">Android SDK</a>是一个面向开发者用于构建Google Android平台开发的开发工具包。 包括构建，测试，调试应用。</p>
   </section>
 
   <section id="android-studio">
     <a href='#android-studio'><h3>Android Studio</h3></a>
-    <p><a href="https://developer.android.com/studio/" target="_blank">Android Studio</a> is the official Integrated Development Environment (IDE) for Native Android app development.</p>
+    <p><a href="https://developer.android.com/studio/" target="_blank">Android Studio</a> 是面向原生Android应用开发的一款官方集成开发者工具 (IDE)。</p>
   </section>
 
   <section id="autoprefixer">
