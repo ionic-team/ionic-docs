@@ -1,15 +1,15 @@
 ---
-title: Clipboard
-template: enterprise-plugin
+title: 剪贴板
+template: 企业版插件
 version: 1.2.0
 minor: 1.2.X
 ---
 
-The Clipboard plugin provides access to the device clipboard, including copy and paste functionality.
+剪贴板插件提供方案设备剪贴板的能力，包括复制，粘贴功能。
 
 <native-ent-install plugin-id="clipboard" variables=""></native-ent-install>
 
-## Index
+## 索引
 
 ### Classes
 
@@ -23,7 +23,7 @@ The Clipboard plugin provides access to the device clipboard, including copy and
 
 ### Clipboard
 
-***usage***:
+***使用***:
 
 ```typescript
 import { Clipboard } from '@ionic-enterprise/clipboard/ngx';
@@ -52,9 +52,9 @@ this.clipboard.clear();
 
 ▸ **clear**(): `Promise`<`any`>
 
-Clear the text stored in clipboard
+清除粘贴板中文本
 
-**Returns:** `Promise`<`any`> Returns a promise after the text has been cleaned
+**Returns:** `Promise`<`any`> 文本清除后返回promise
 
 * * *
 
@@ -64,16 +64,16 @@ Clear the text stored in clipboard
 
 ▸ **copy**(text: *`string`*): `Promise`<`any`>
 
-Copies the given text
+拷贝指定的文本
 
-**Parameters:**
+**参数：**
 
-| Name | Type     | Description                                   |
-| ---- | -------- | --------------------------------------------- |
-| text | `string` | Text that gets copied on the system clipboard |
+| 名称   | 类型       | 描述            |
+| ---- | -------- | ------------- |
+| text | `string` | 获取系统剪贴板中拷贝的文本 |
 
 
-**Returns:** `Promise`<`any`> Returns a promise after the text has been copied
+**Returns:**文本被拷贝后返回 `Promise`<`any`>
 
 * * *
 
@@ -83,9 +83,9 @@ Copies the given text
 
 ▸ **paste**(): `Promise`<`any`>
 
-Pastes the text stored in clipboard
+粘贴粘贴板中的文本
 
-**Returns:** `Promise`<`any`> Returns a promise after the text has been pasted
+**Returns:** 粘贴完成后返回`Promise`<`any`>
 
 * * *
 
