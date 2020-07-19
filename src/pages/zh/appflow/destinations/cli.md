@@ -39,6 +39,6 @@ $ ionic package deploy <build-id> <destination>
 ```
 
 - `<build-id>`
-  - An existing build that has been looked up in the UI
+  - 在界面中查找的现有版本
 - `<destination>`
-  - The name of an appropriate destination for the build
+  - 构建合适的商店地址
