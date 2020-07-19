@@ -24,10 +24,10 @@ Ionic最早的目标是利用Web技术，比如HTML，CSS，JavaScript来快速�
 
 ## 桌面浏览器
 
-因为Ionic是基于Web技术，所以也可以像在移动设备中一样很好的运行在桌面浏览器。 For more information on desktop layouts, see [Cross Platform](/docs/core-concepts/cross-platform#desktop).
+因为Ionic是基于Web技术，所以也可以像在移动设备中一样很好的运行在桌面浏览器。 对于桌面布局信息，见 [跨平台](/docs/core-concepts/cross-platform#desktop)。
 
 
-|   Browser   | Ionic v5 | Ionic V4 |
+|     浏览器     | Ionic v5 | Ionic V4 |
 |:-----------:|:--------:|:--------:|
 | **Chrome**  |    ✔     |    ✔     |
 | **Safari**  |    ✔     |    ✔     |
@@ -37,4 +37,4 @@ Ionic最早的目标是利用Web技术，比如HTML，CSS，JavaScript来快速�
 
 
 
-> Check the docs for [Ionic Animations](/docs/utilities/animations#browser-support) and [Ionic Gestures](/docs/utilities/gestures#browser-support) for specific browser support related to those utilities.
+> 查看[Ionic 动画](/docs/utilities/animations#browser-support)及 [Ionic 手势](/docs/utilities/gestures#browser-support) 以获取这些工具在特定浏览器下的支持。
