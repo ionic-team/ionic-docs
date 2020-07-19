@@ -7,24 +7,24 @@ nextUrl: '/docs/reference/migration'
 
 # 浏览器支持
 
-Ionic最早的目标是利用Web技术，比如HTML，CSS，JavaScript来快速构建移动应用。 Because of this foundation in web technologies, Ionic can run anywhere the web runs — iOS, Android, browsers, PWAs, and more.
+Ionic最早的目标是利用Web技术，比如HTML，CSS，JavaScript来快速构建移动应用。 因为Web技术的原因，Ionic可以运行在所有的web之上 — iOS，Android，浏览器，PWAs，等等。
 
 
-## Mobile Browsers
+## 移动浏览器
 
-In pursuit of [adaptive styling](/docs/core-concepts/fundamentals#adaptive-styling), Ionic fully supports and is well tested on the mobile platforms listed below:
+对于 [自适应样式](/docs/core-concepts/fundamentals#adaptive-styling)的追求,，Ionic完全支持且很好的测试于以下这些移动平台上：
 
-| Framework | Android |  iOS  |
-|:---------:|:-------:|:-----:|
-| Ionic V5  |  5.0+   | 11.0+ |
-| Ionic V4  |  4.4+   | 10.0+ |
+|    框架    | Android |  iOS  |
+|:--------:|:-------:|:-----:|
+| Ionic V5 |  5.0+   | 11.0+ |
+| Ionic V4 |  4.4+   | 10.0+ |
 
-> Check the [latest Android stats](https://developer.android.com/about/dashboards/) and the [latest iOS stats](https://developer.apple.com/support/app-store/) for up-to-date platform information.
+> 查看 [Android最新状态](https://developer.android.com/about/dashboards/) 和 [iOS最新状态](https://developer.apple.com/support/app-store/) 获取及时的信息。
 
 
-## Desktop Browsers
+## 桌面浏览器
 
-Because Ionic is based on web technologies, it works just as well on desktop browsers as it does on mobile devices. For more information on desktop layouts, see [Cross Platform](/docs/core-concepts/cross-platform#desktop).
+因为Ionic是基于Web技术，所以也可以像在移动设备中一样很好的运行在桌面浏览器。 For more information on desktop layouts, see [Cross Platform](/docs/core-concepts/cross-platform#desktop).
 
 
 |   Browser   | Ionic v5 | Ionic V4 |
