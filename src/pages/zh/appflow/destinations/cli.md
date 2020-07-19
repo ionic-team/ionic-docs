@@ -1,6 +1,6 @@
 ---
 title: '命令行部署'
-previousText: '编译/自动化'
+previousText: '构建/自动化'
 previousUrl: '/docs/appflow/destinations/builds'
 nextText: '手动'
 nextUrl: '/docs/appflow/destinations/manual'
@@ -12,7 +12,7 @@ nextUrl: '/docs/appflow/destinations/manual'
 
 > **注意：** 要部署构建，您需要有权限才能部署cli的构建。
 
-## Deploy a new build to an app store
+## 部署一个新构建到应用商店
 
 ```bash
 $ ionic package build <platform> <type> --security-profile=<name> --destination=<name>
@@ -21,18 +21,18 @@ $ ionic package build <platform> <type> --security-profile=<name> --destination=
 - `<platform>`
   - `android` or `ios`
 - `<type>`
-  - `app-store` or `enterprise` for `ios`
-  - `release` for `android`
+  - `app-store` or `enterprise` 面向 `iOS`
+  - `release` 面向 `Android`
 - `--security-profile=<name>`
-  - The selected profile must be a release or app store profile
+  - 所选的配置文件必须是发布或应用商店配置文件
 - `--destination=<name>`
-  - For an iOS build it must be a Apple App store destination
-  - For an Android build it must be a Google Play Store destination
+  - 面向iOS构建，必须是一个Apple App商店地址
+  - 面向Android构建，必须是一个Google Play商店地址
 
 
-For more information about other `ionic package build` options, please refer to the [package build documentation](/docs/cli/commands/package-build).
+想了解更多有关 `ionic package build` 配置信息，请参阅 [构建打包文档](/docs/cli/commands/package-build).
 
-## Deploy an existing build to an app store
+## 部署当前构建到商店
 
 ```bash
 $ ionic package deploy <build-id> <destination>
