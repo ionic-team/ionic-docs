@@ -25,4 +25,6 @@ nextUrl: '/docs/appflow/package/native-configs'
 
 您需要选择上传 [生成的证书文件](/docs/appflow/package/credentials)，并输入访问证书所需的任何密码。
 
-一旦配置文件创建，可以点击 `编辑` 按钮来删除和/或上传您的 iOS 和 Android 证书。
+Specifically for iOS, use [the generated](/docs/appflow/package/credentials) `.p12` file for the certificate, the `.mobileprovision` file for the Provisioning Profile, and the password used to generate the `.p12` file for the password.
+
+Once that Profile has been created, can click the `Edit` button to remove and/or upload your iOS and Android certs.
