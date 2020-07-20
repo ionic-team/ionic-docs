@@ -48,15 +48,15 @@ export function usePhotoGallery() {
 
 我们的 `usePhotoGallery`钩子暴露一个名叫takePhoto的方法，它会call Capactior的getPhoto方法。
 
-Notice the magic here: there's no platform-specific code (web, iOS, or Android)! The Capacitor Camera plugin abstracts that away for us, leaving just one method call - `getPhoto()` - that will open up the device's camera and allow us to take photos.
+注意神奇的地方在这里：不存在平台相关的代码(Web，iOS，Android)！ Capacitor相机插件抽象了相关函数，我们只需调用 `getPhoto()`，它将会打开设备相机，允许我们拍照。
 
-The last step we need to take is to use the new hook from the Tab2 page. Go back to Tab2.tsx and import the hook:
+我们需要采取的最后一步是使用Tab2页面中的新钩子。 返回Tab2.tsx，重新导入钩子：
 
 ```typescript
 import { usePhotoGallery } from '../hooks/usePhotoGallery';
 ```
 
-And right before the return statement in the functional component, get access to the `takePhoto` method by using the hook:
+并且在函数组件返回语句之前, 通过使用钩子访问 ` takePhoto ` 方法:
 
 ```typescript
 const Tab2: React.FC = () => {
