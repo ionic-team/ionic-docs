@@ -69,7 +69,7 @@ const Tab2: React.FC = () => {
 
 ![Camera API on the web](/docs/assets/img/guides/first-app-cap-ng/camera-web.png)
 
-_(Your selfie is probably much better than mine)_
+_(你的自拍可能比我强)_
 
 After taking a photo, it disappears. We still need to display it within our app and save it for future access.
 
