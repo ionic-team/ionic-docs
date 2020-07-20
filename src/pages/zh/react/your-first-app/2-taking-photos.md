@@ -65,7 +65,7 @@ const Tab2: React.FC = () => {
   // snip - rest of code
 ```
 
-Save the file, and if you’re not already, restart the development server in your browser by running `ionic serve`. On the Photo Gallery tab, click the Camera button. If your computer has a webcam of any sort, a modal window appears. Take a selfie!
+保存文件，如果您尚未运行，请通过运行 `ionic service` 来重新启动您的浏览器中的开发服务器。 在照片库选项卡上，点击相机按钮。 如果您的计算机有任何类型的摄像头，就会出现一个模态窗口。 自拍！
 
 ![Camera API on the web](/docs/assets/img/guides/first-app-cap-ng/camera-web.png)
 
