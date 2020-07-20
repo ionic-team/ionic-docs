@@ -191,12 +191,12 @@ nextUrl: '/docs/reference/versioning'
   <section id="typescript">
     <a href="#typescript"><h3>TypeScript</h3></a>
     <p>
-    <a href="http://www.typescriptlang.org" target="_blank">TypeScript</a> is a superset of JavaScript, which means it gives you JavaScript, along with a number of extra features such as <a href="http://www.typescriptlang.org/Handbook#basic-types" target="_blank">type declarations</a> and <a href="http://www.typescriptlang.org/Handbook#interfaces" target="_blank">interfaces</a>. Although Ionic is built with TypeScript, using it to build an Ionic app is completely optional.
+    <a href="http://www.typescriptlang.org" target="_blank">TypeScript</a> 是JavaScript的超集，它赋予了你JavaScript和一些其它功能，比如 <a href="http://www.typescriptlang.org/Handbook#basic-types" target="_blank">类型声明</a>和 <a href="http://www.typescriptlang.org/Handbook#interfaces" target="_blank">接口</a>. 因为Ionic是使用 TypeScript 构建的，因此用它来构建一个Ionic应用是完全可以的。
     </p>
   </section>
 
   <section id="unit-tests">
-    <a href="#unit-tests"><h3>Unit Tests</h3></a>
+    <a href="#unit-tests"><h3>单元测试</h3></a>
     <p>Unit Tests and unit testing are a way to test small pieces of code to see if they behave as expected. Unit testing frameworks include Jasmine, Mocha, QUnit, and many others.</p>
   </section>
 
