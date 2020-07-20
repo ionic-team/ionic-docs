@@ -46,7 +46,7 @@ export function usePhotoGallery() {
 }
 ```
 
-Our `usePhotoGallery` hook exposes a method called takePhoto, which in turn calls into Capactior's getPhoto method.
+我们的 `usePhotoGallery`钩子暴露一个名叫takePhoto的方法，它会call Capactior的getPhoto方法。
 
 Notice the magic here: there's no platform-specific code (web, iOS, or Android)! The Capacitor Camera plugin abstracts that away for us, leaving just one method call - `getPhoto()` - that will open up the device's camera and allow us to take photos.
 
