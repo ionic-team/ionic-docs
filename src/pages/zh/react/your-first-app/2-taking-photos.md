@@ -11,11 +11,11 @@ nextUrl: '/docs/react/your-first-app/3-saving-photos'
 
 为此，我们创建我们自定义的React钩子，用于管理照片库的照片。
 
-> If you are not familiar with React Hooks, [Introducing React Hooks](https://reactjs.org/docs/hooks-intro.html) from the official React docs is a good resource to start with.
+> 如果你不熟悉React Hooks, 这篇来自官方的文档[介绍 React Hooks](https://reactjs.org/docs/hooks-intro.html) ，会是个很好的开端。
 
-Create a new file at `src/hooks/usePhotoGallery.ts` and open it up.
+创建文件 `src/hooks/usePhotoGallery.ts` ，然后打开它。
 
-A custom hook is just a function that uses other React hooks. And that's what we will be doing! We will start by importing the various hooks and utilities we will be using from React core, the Ionic React Hooks project, and Capacitor:
+自定义钩子只是用其它React的一个函数。 这就是我们要做的事情！ 我们将首先从React核心库，Ionic React Hooks, Capacitor 导入各种钩子和工具。
 
 ```typescript
 import { useState, useEffect } from "react";
@@ -25,7 +25,7 @@ import { useStorage } from '@ionic/react-hooks/storage';
 import { isPlatform } from '@ionic/react';
 import { CameraResultType, CameraSource, CameraPhoto, Capacitor, FilesystemDirectory } from "@capacitor/core";
 ```
-Next, create a function named usePhotoGallery:
+接下来，创建一个函数，命名为usePhotoGallery：
 
 ```typescript
 export function usePhotoGallery() {
