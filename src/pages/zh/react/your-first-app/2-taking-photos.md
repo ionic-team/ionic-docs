@@ -7,9 +7,9 @@ nextUrl: '/docs/react/your-first-app/3-saving-photos'
 
 # 使用相机拍照
 
-接下来是有趣的部分 - 使用Capacitor [Camera API](https://capacitor.ionicframework.com/docs/apis/camera)调用设备的相机，为你的应用添加拍照功能。 We’ll begin with building it for the web, then make some small tweaks to make it work on mobile (iOS and Android).
+接下来是有趣的部分 - 使用Capacitor [Camera API](https://capacitor.ionicframework.com/docs/apis/camera)调用设备的相机，为你的应用添加拍照功能。 我们以此构建Web，然后做小的调整，使其能够在移动设备 (iOS和Android) 上面运行。
 
-To do so, we will create our own custom React hook that will manage the photos for the gallery.
+为此，我们创建我们自定义的React钩子，用于管理照片库的照片。
 
 > If you are not familiar with React Hooks, [Introducing React Hooks](https://reactjs.org/docs/hooks-intro.html) from the official React docs is a good resource to start with.
 
