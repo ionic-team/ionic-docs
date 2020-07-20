@@ -113,24 +113,24 @@ module.exports = function(ctx) {
 
 Ionic CLI支持多应用配置，它设计多个Ionic apps和单一仓库中的代码共享或者 [monorepo](/docs/reference/glossary#monorepo)。
 
-> These docs give an overview of the multi-app feature of the Ionic CLI, but don't really go into details for each framework.
+> 这些文档提供了Ionic CLI多应用功能的预览，但不深入每个框架的详细信息。
 > 
-> If you're using Angular, please see [this article](https://github.com/ionic-team/ionic-cli/wiki/Angular-Monorepo) for examples.
+> 如果你正在用Angular，请看 [这篇文章](https://github.com/ionic-team/ionic-cli/wiki/Angular-Monorepo)中的例子。
 
-### Setup Steps
+### 步骤
 
-1. Create a directory and initialize a monorepo (see [Project Structure](#project-structure) for full details).
-2. Initialize the monorepo as an Ionic multi-app project. This will create a multi-app `ionic.config.json` file. See [Config File](#config-file) for full details.
+1. 创建一个目录，初始化一个monorepo (见 [项目结构](#project-structure)查看完整详情)。
+2. 初始化monorepo作为一个Ionic多应用项目。 这将会创建一个多应用 `ionic.config.json` 文件。 详情请查阅 [配置文件](#config-file)。
 
     ```shell
     $ ionic init --multi-app
     ```
 
-1. Use `ionic start` to create Ionic apps or `ionic init` to initialize existing apps (see [Adding an App](#adding-an-app) for full details).
+1. 用 `ionic start` 创建应用或者 `ionic init` 初始化一个已经存在的应用 (详情查看 [Adding an App](#adding-an-app))。
 
-### Project Structure
+### 项目结构
 
-In a multi-app project, project structure is flexible. The only requirement is a multi-app `ionic.config.json` file at the root of the repository.
+对于一个多应用项目，项目结构是灵活的。 唯一的要求是`ionic.config.json` 文件需要位于仓库的根目录下。
 
 Below is an example setup, where apps in the `apps/` directory are separated from the shared code in the `lib/` directory. Notice the root `ionic.config.json` file and the monorepo's `package.json` file.
 
