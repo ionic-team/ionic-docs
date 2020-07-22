@@ -1,5 +1,5 @@
 ---
-previousText: 'Lifecycle'
+previousText: 'Ciclo de vida'
 previousUrl: '/docs/angular/lifecycle'
 nextText: 'Configuración'
 nextUrl: '/docs/angular/config'
