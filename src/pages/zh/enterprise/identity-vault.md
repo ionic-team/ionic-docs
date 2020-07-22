@@ -1,7 +1,7 @@
 ---
 title: Identity Vault
 template: enterprise-plugin
-version: 4.2.2
+version: 4.2.4
 minor: 4.2.X
 otherVersions:
   - 2.0.X
@@ -2141,6 +2141,13 @@ The possible values returned by [getAvailableHardware](#identityvault.getavailab
 * * *
 
 ## Change Log
+
+### \[4.2.4\] (2020-07-22)
+
+### Bug Fixes
+
+* **android:** reset auth attempts when clearing/resetting auth [CT-83] 
+* **iOS:** ensure screen is always obscured when needed [CT-61] 
 
 ### \[4.2.2\] (2020-06-10)
 
