@@ -1,5 +1,5 @@
 ---
-previousText: 'Storage'
+previousText: 'Almacenamiento'
 previousUrl: '/docs/angular/storage'
 ---
 
