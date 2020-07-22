@@ -1570,7 +1570,7 @@
     "packageName": "@ionic-native/firebase-crashlytics",
     "displayName": "Firebase Crashlytics",
     "description": "\nA Google Firebase Crashlytics plugin to enable capture of crash reports.\n",
-    "usage": "\n```typescript\nimport { FirebaseCrashlytics } from '@ionic-native/firebase-crashlytics/ngx';\n\n\nconstructor(private firebaseCrashlytics: FirebaseCrashlytics) { }\n\n...\n\n\nconst crashlytics = this.firebaseCrashlytics.initialize();\ncrashlytics.logException('my caught exception');\n\n```\n",
+    "usage": "\n```typescript\nimport { FirebaseCrashlytics } from '@ionic-native/firebase-crashlytics/ngx';\n\n\nconstructor(private firebaseCrashlytics: FirebaseCrashlytics) { }\n\n...\n\n\nconst crashlytics = this.firebaseCrashlytics.initialise();\ncrashlytics.logException('my caught exception');\n\n```\n",
     "platforms": [
       "Android",
       "iOS"
