@@ -25,7 +25,7 @@ Ionic adopta los mísmos eventos de ciclo de vida proveídos por Angular. Los do
 
 Para más información sobre los eventos de cliclo de vida en angular, visita esto [documentación de ciclos de vida](https://angular.io/guide/lifecycle-hooks).
 
-> Components that use `ion-nav` or `ion-router-outlet` should not use the `OnPush` change detection strategy. Doing so will prevent lifecycle hooks such as `ngOnInit` from firing. Additionally, asynchronous state changes may not render properly.
+> Los componentes que usan `ion-nav` o `ion-router-outlet` no deben usar la estrategia de detección de cambios `OnPush`. Doing so will prevent lifecycle hooks such as `ngOnInit` from firing. Additionally, asynchronous state changes may not render properly.
 
 ## Eventos de Página en Ionic
 
