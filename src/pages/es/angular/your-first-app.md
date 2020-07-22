@@ -1,7 +1,7 @@
 ---
 previousText: 'Vista General'
 previousUrl: '/docs/angular/overview'
-nextText: 'Taking Photos'
+nextText: 'Tomando fotos'
 nextUrl: '/docs/angular/your-first-app/2-taking-photos'
 ---
 
