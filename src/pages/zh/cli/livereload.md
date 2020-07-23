@@ -7,13 +7,13 @@
 
 ## 术语
 
-Live Reload is a conflated term. With `ionic serve`, Live Reload just refers to reloading the browser when changes are made. Live Reload can also be used with Capacitor and Cordova to provide the same experience on virtual and hardware devices, which eliminates the need for re-deploying a native binary.
+热加载是一个复合术语。 使用`onic serve`，热加载只是在更改时会重新加载浏览器。 热加载也可以与Capacitor和Cordova一起在虚拟或者真机设备上提供同样的体验，它消除了重新部署二进制的必要性。
 
-## Usage
+## 用法
 
-Since live-reload requires the Web View to load your app from a URL hosted by your computer instead of just reading files on the device, setting up live-reload for hardware devices can be tricky.
+由于热加载要求Web View从你的电脑托管的URL中加载你的应用程序，而不是只是在设备上读取文件，设置硬件设备的热加载可能是微妙的。
 
-As with regular device deploys, you will need a cable to connect your device to your computer. The difference is the Ionic CLI configures the Web View to load your app from the dev server on your computer.
+与正常设备部署一致，你需要线缆连接你的设备到计算机。 区别是Ionic CLI配置Web View从你的计算机的dev服务器加载你的应用程序。
 
 ### Capacitor
 
