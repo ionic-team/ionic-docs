@@ -1,10 +1,11 @@
 ---
 title: Auth Connect
 template: enterprise-plugin
-version: 3.0.0
-minor: 3.0.X
+version: 3.1.1
+minor: 3.1.X
 otherVersions:
   - 2.2.X
+  - 3.0.X
 ---
 
 Ionic Auth Connect handles logging in and/or registering a user with an authentication provider (such as Auth0, Azure AD, AWS Cognito, or Okta) using industry standard OAuth/OpenId Connect on iOS, Android, or on the web.
@@ -544,7 +545,7 @@ Provided audience (aud) value
 
 ### `<Optional>` authConfig
 
-**● authConfig**: *"auth0" \| "azure" \| "cognito" \| "salesforce" \| "okta" \| "ping" \| "general"*
+**● authConfig**: *"auth0" \| "azure" \| "cognito" \| "salesforce" \| "okta" \| "ping" \| "identity-server" \| "general"*
 
 The type of the Auth Server, currently only the following are supported:
 
@@ -721,7 +722,7 @@ Provided audience (aud) value
 
 ### `<Optional>` authConfig
 
-**● authConfig**: *"auth0" \| "azure" \| "cognito" \| "salesforce" \| "okta" \| "ping" \| "general"*
+**● authConfig**: *"auth0" \| "azure" \| "cognito" \| "salesforce" \| "okta" \| "ping" \| "identity-server" \| "general"*
 
 The type of the Auth Server, currently only the following are supported:
 
@@ -1036,6 +1037,28 @@ save the refresh token
 * * *
 
 # Changelog
+
+### \[3.1.1\] (2020-07-09)
+
+### Bug Fixes
+
+* **web-auth:** add missing await to PKCE refresh 
+
+### \[3.1.0\] (2020-06-29)
+
+### Features
+
+* Add official IdentityServer intergration 
+
+### Bug Fixes
+
+* fix a bug where the handleCallback method did not properly unwrap the auth result promise 
+
+### \[3.0.1\] (2020-06-24)
+
+### Bug Fixes
+
+* **auth:** do not resolve when replacing URL 
 
 ### \[3.0.0\] (2020-06-10)
 
