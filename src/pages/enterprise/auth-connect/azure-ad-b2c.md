@@ -24,19 +24,45 @@ If you don't have one, [create a new B2C tenant](https://docs.microsoft.com/en-u
 
 Sign into the [Azure Portal](https://portal.azure.com) then navigate to the `Azure AD B2C` service page (the easiest way to find it is to search for "b2c", then choose "Azure AD B2C".)
 
-Begin by creating a new Application under Manage -> Applications -> Add.
+Begin by creating a new Application under Manage -> App registrations -> New registration.
 
-![Azure app configuration settings](/docs/assets/img/native/azure-app-settings.png)
+![Azure app: Register new](/docs/assets/img/native/azureb2c-register-app.png)
 
-Give your app a new name, then toggle `Yes` for both _Web App_ and _Allow implicit flow_. For _Reply URL_, specify `http://localhost:8100/` along with the name of your app's core login page (typically, `login`).
+Give your app a new name, then select the Supported Account Types.
 
-Next, toggle `Yes` for _Native client_. Note the _Redirect URIs_ that are displayed.
+With that in hand, set the Redirect URI. Choose “Public client/native (mobile & desktop)” - we’ll add web support in a separate step. Then, fill in the text field value with your globally unique App Id, which is used both in the Azure configuration as well as the native mobile app’s configuration. Typically, this takes the form of `company-AppName` or reverse DNS style - `com.company.app`. Use the formula “uniqueId://page”. 
 
-Next, choose your globally unique App Id, which is used both in the Azure configuration as well as Cordova/Capacitor. Typically, this takes the form of `company-AppName` or reverse DNS style - `com.company.app`.
+After the app user signs into Azure AD, this tells Auth Connect which page to redirect to in your app. While any page can be used, in this example we’ll use the Login page, such as `com.company.app://login`. Click the register button to create the app.
 
-With that in hand, set the _Custom Redirect URI_. After the app user signs into Azure AD, this tells Auth Connect which page to redirect to in your app. Use the formula “uniqueId://page”, such as `com.company.app://callback`.
+#### Add Web Platform
 
-After filling in all details above, click the Create button.
+With the app created, navigate to Manage -> Authentication. Click the “Add a Platform” button. Under Web applications, choose “single-page application.” 
+
+Under Redirect URIs, specify a web URL. In this example, for local testing, we’ll use `http://localhost:8100/` along with the name of your app's core login page (typically, `login`). 
+
+Next, under Logout URL, specify a web URL to redirect to once the user has logged out of your app. Again, for local testing, specify `https://localhost:8100/` along with the name of the logout page (typically `logout`).
+
+Finally, under Implicit Grant, toggle “Access tokens.” Click the Configure button to save.
+
+![Azure app: Configure single-page app](/docs/assets/img/native/azureb2c-spa.png)
+
+Back on the Authentication page, look under the Single-page application settings. Click the “Add URI” button to add additional Redirect URIs, including those for other environments like staging or production. Click Save when ready.
+
+![Azure app: Configure web redirect uris](/docs/assets/img/native/azureb2c-web-redirecturis.png)
+
+#### Expose an API
+
+Navigate to the “Expose an API” page. Click “Add a scope”, then for the Scope name, provide a value such as “user_impersonation.” For the display name and description fields, add details describing that this is for authenticating your users. Set the state to enabled then click the “Add scope” button.
+
+#### Configure API Permissions
+
+Next, we need to authorize our app so it can connect to Azure B2C and retrieve user profile information alongside login credentials. Navigate to the API Permissions page then click the “Add a permission” button. Under “Select an API”, choose “My APIs” then click the name of the B2C app we’re currently configuring. Next, select the “user_impersonation” permission (or whatever name you labeled it in the previous step) then click the “Add permissions” button.
+
+Save the application, then click on the newly added permission row. Click the “Grant admin consent for [your organization name]” button then choose “Yes.” 
+
+Click on the “user_impersonation” permission row again to open the modal window, then click to copy the link that is displayed. Note this URL, because it will be used as part of Auth Connect’s “scopes” property later.
+
+![Azure app: Get scopes link](/docs/assets/img/native/azureb2c-scopes-link.png)
 
 #### Create User Flows (Policies)
 
@@ -50,7 +76,7 @@ Run the following command to install the Auth Connect plugin. For the `AUTH_URL_
 
 <native-ent-install plugin-id="auth" variables="--variable AUTH_URL_SCHEME=com.company.app"></native-ent-install>
 
-### Configure Auth Connect
+## Configure Auth Connect
 
 It's recommended to create an `AuthenticationService` class that encapsulates Azure AD and Ionic Auth Connect’s login functionality.
 
@@ -72,7 +98,7 @@ constructor() {
         // The auth provider.
         authConfig: 'azure',
         // The platform which the app is running on
-        platform: 'cordova',
+        platform: 'capacitor',
         // client or application id for provider
         clientID: 'FILL_IN',
         // the discovery url for the provider
@@ -82,8 +108,6 @@ constructor() {
         redirectUri: 'FILL_IN',
         // requested scopes from provider
         scope: 'FILL_IN',
-        // the audience, if applicable
-        audience: 'FILL_IN',
         // the URL to redirect to after log out
         logoutUrl: 'FILL_IN',
         // The type of iOS webview to use. 'shared' will use a webview that can
@@ -92,9 +116,7 @@ constructor() {
         // to share site data with the app. 'private' uses a webview which will
         // not prompt the user but will not be able to share session/cookie data
         // either for true SSO across multiple apps.
-        iosWebView: 'private',
-        // required if running on the Web
-        clientSecret: ''
+        iosWebView: 'private'
     };
     
     super(azureConfig);
@@ -105,13 +127,20 @@ constructor() {
 Some of these `IonicAuthOptions` values are unique, and must be set based on your Azure AD app’s details:
 
 * `platform`: Use “cordova” or “capacitor” accordingly.
-* `clientID`: Your app’s _Application ID_. Example: cebbb0be-d578-4bbd-9712-4b0fe05c06aa
+* `clientID`: Your app’s _Application (client) ID_. Example: cebbb0be-d578-4bbd-9712-4b0fe05c06aa
 * `redirectUri`: The URI to redirect to after the user has logged in. Use the same AUTH_URL_SCHEME variable value (App Id) from when the Auth Connect plugin was installed. Example: com.company.app://callback
-* `logoutUrl`: The URI to redirect to after the user has logged out. Example: com.company.app://login?logout=true
-* `audience`: Your custom API URL of choice, such as `https://api.myapp.com`.
-* `scope`: Unlock access to protected resources, such as read/write permissions. `offline_access` is minimally required. Example: openid offline_access email picture profile
+* `logoutUrl`: The URI to redirect to after the user has logged out. Example: com.company.app://logout
+* `scope`: Unlock access to protected resources, such as read/write permissions. Example: openid offline_access email picture profile
 
-The `discoveryUrl` can be found by navigating to User flows (policies) -> [Select User Flow] -> Overview tab -> Run user flow button. The discovery link is at the top page and will look like the following format:
+The `scope` property is used to unlock access to protected resources, such as read/write permissions. There’s a variety of attributes available; an example looks like: “openid offline_access email profile”.
+
+In addition to the values above, add the Full Scope Value link created earlier to the `scope` property. To find it in the Azure AD B2C portal, navigate to the “Expose an API” page then click on the Scope you defined earlier. In the modal window, copy the link that appears under “Scope name.” All together, it will look similar to this:
+
+```json
+scope: 'openid offline_access email profile https://orgname.onmicrosoft.com/api/user_impersonation',
+```
+
+The `discoveryUrl` can be found by navigating to the main Azure AD B2C page -> Policies -> User Flows -> [Select User Flow] -> Overview tab -> Run user flow button. The discovery link is at the top page and will look like the following format:
 
 `https://B2C-TENANT-NAME.b2clogin.com/B2C-TENANT-NAME.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=POLICY-NAME`
 
