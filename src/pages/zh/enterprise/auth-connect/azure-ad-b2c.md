@@ -24,41 +24,67 @@
 
 登录[Azure Portal](https://portal.azure.com)然后导航到`Azure AD B2C`服务页面(找到它的最简单方式是搜索“b2c”， 然后选择 "Azure AD B2C".)
 
-在管理下创建一个新应用程序 -> 应用程序 ->
+Begin by creating a new Application under Manage -> App registrations -> New registration.
 
-![Azure 应用程序配置设置](/docs/assets/img/native/azure-app-settings.png)
+![Azure app: Register new](/docs/assets/img/native/azureb2c-register-app.png)
 
-给您的应用程序起一个新名称，然后为_Web App_和_允许隐式流_两者都选择`是`。 对于_Reply URL_，指定`http://localhost:8100/`以及您应用的核心登录页面的名称(通常是`登录`)。
+Give your app a new name, then select the Supported Account Types.
 
-接下来，将_原生客户端_切换为`是`。 注意显示的_重定向 URI_。
+With that in hand, set the Redirect URI. Choose “Public client/native (mobile & desktop)” - we’ll add web support in a separate step. Then, fill in the text field value with your globally unique App Id, which is used both in the Azure configuration as well as the native mobile app’s configuration. Typically, this takes the form of `company-AppName` or reverse DNS style - `com.company.app`. Use the formula “uniqueId://page”.
 
-接下来选择您全局唯一的App Id，它既用于Azure配置，也用于Cordova/Capacitor。 典型的形式是`company-AppName`或逆向DNS风格 - `com.company.app`。
+After the app user signs into Azure AD, this tells Auth Connect which page to redirect to in your app. While any page can be used, in this example we’ll use the Login page, such as `com.company.app://login`. Click the register button to create the app.
 
-手动设置_自定义重定向 URI_。 在应用程序用户登录到 Azure AD之后，这个提示了验证连接哪个页面重定向到您的应用中。 使用公式“unieId://page”，例如`com.company.app://callback`。
+#### Add Web Platform
 
-填写以上所有详细信息后，点击创建按钮。
+With the app created, navigate to Manage -> Authentication. Click the “Add a Platform” button. Under Web applications, choose “single-page application.”
+
+Under Redirect URIs, specify a web URL. In this example, for local testing, we’ll use `http://localhost:8100/` along with the name of your app's core login page (typically, `login`).
+
+Next, under Logout URL, specify a web URL to redirect to once the user has logged out of your app. Again, for local testing, specify `https://localhost:8100/` along with the name of the logout page (typically `logout`).
+
+Finally, under Implicit Grant, toggle “Access tokens.” Click the Configure button to save.
+
+![Azure app: Configure single-page app](/docs/assets/img/native/azureb2c-spa.png)
+
+Back on the Authentication page, look under the Single-page application settings. Click the “Add URI” button to add additional Redirect URIs, including those for other environments like staging or production. Click Save when ready.
+
+![Azure app: Configure web redirect uris](/docs/assets/img/native/azureb2c-web-redirecturis.png)
+
+#### Expose an API
+
+Navigate to the “Expose an API” page. Click “Add a scope”, then for the Scope name, provide a value such as “user_impersonation.” For the display name and description fields, add details describing that this is for authenticating your users. Set the state to enabled then click the “Add scope” button.
+
+#### Configure API Permissions
+
+Next, we need to authorize our app so it can connect to Azure B2C and retrieve user profile information alongside login credentials. Navigate to the API Permissions page then click the “Add a permission” button. Under “Select an API”, choose “My APIs” then click the name of the B2C app we’re currently configuring. Next, select the “user_impersonation” permission (or whatever name you labeled it in the previous step) then click the “Add permissions” button.
+
+Save the application, then click on the newly added permission row. Click the “Grant admin consent for [your organization name]” button then choose “Yes.”
+
+Click on the “user_impersonation” permission row again to open the modal window, then click to copy the link that is displayed. Note this URL, because it will be used as part of Auth Connect’s “scopes” property later.
+
+![Azure app: Get scopes link](/docs/assets/img/native/azureb2c-scopes-link.png)
 
 #### Create User Flows (Policies)
 
-创建至少一个 [User Flow](https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-user-flows)，这是为您的应用定义整个验证体验的一系列页面。 至少创建一个 `注册并登录` 流程。 一旦用户流创建完毕，从用户流列表中选择它，然后单击"运行用户流"。 注意页面顶部的URL，用于配置Auth Connect`发现的 URL` 属性。 还考虑创建一个 `密码重置` 流程([详细信息在下面](#implementing-password-reset))。
+Create at least one [User Flow](https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-user-flows), the series of pages that define the entire authentication experience for your app. At a minimum, create a `Sign up and sign in` flow. Once the User Flow has been created, select it from the User Flow list, then click "Run user flow" from the Overview tab. Note the URL at the top of the page, used to configure Auth Connect's `Discovery URL` property. Also consider creating a `Password reset` flow ([detailed below](#implementing-password-reset)).
 
-Azure AD B2C现已准备好与Auth Connect使用。
+Azure AD B2C is now ready to use with Auth Connect.
 
 ### Install Auth Connect
 
-运行以下命令来安装Auth Connect 插件。 对于`AUTH_URL_SCHEME`变量，使用全局唯一的App Id (例如：`com.company.app`)，您在上述配置Azure AD应用程序时做出了决定。
+Run the following command to install the Auth Connect plugin. For the `AUTH_URL_SCHEME` variable, use the globally unique App Id (ex: `com.company.app`) you decided on when configuring the Azure AD app above.
 
 <native-ent-install plugin-id="auth" variables="--variable AUTH_URL_SCHEME=com.company.app"></native-ent-install>
 
-### Configure Auth Connect
+## Configure Auth Connect
 
-建议创建一个 `AuthenticationService` 类，封装Azure AD 和 Ionic Auth Connect的登录功能。
+It's recommended to create an `AuthenticationService` class that encapsulates Azure AD and Ionic Auth Connect’s login functionality.
 
-使用 `ionic generate` 命令生成此类：
+Generate this class using the `ionic generate` command:
 
-<command-line> <command-prompt>ionic生成服务 services/authentication</command-prompt> </command-line>
+<command-line> <command-prompt>ionic generate service services/authentication</command-prompt> </command-line>
 
-扩展`IonicAuth`类，然后在`IonicAuthOptions`对象中配置所有Azure详细信息：
+Extend the `IonicAuth` class, then configure all Azure AD details in the `IonicAuthOptions` object:
 
 ```typescript
 import { IonicAuth, IonicAuthOptions } from '@ionic-enterprise/auth';
@@ -70,7 +96,7 @@ constructor() {
         // The auth provider.
         authConfig: 'azure',
         // The platform which the app is running on
-        platform: 'cordova',
+        platform: 'capacitor',
         // client or application id for provider
         clientID: 'FILL_IN',
         // the discovery url for the provider
@@ -80,8 +106,6 @@ constructor() {
         redirectUri: 'FILL_IN',
         // requested scopes from provider
         scope: 'FILL_IN',
-        // the audience, if applicable
-        audience: 'FILL_IN',
         // the URL to redirect to after log out
         logoutUrl: 'FILL_IN',
         // The type of iOS webview to use. 'shared' will use a webview that can
@@ -90,9 +114,7 @@ constructor() {
         // to share site data with the app. 'private' uses a webview which will
         // not prompt the user but will not be able to share session/cookie data
         // either for true SSO across multiple apps.
-        iosWebView: 'private',
-        // required if running on the Web
-        clientSecret: ''
+        iosWebView: 'private'
     };
 
     super(azureConfig);
@@ -100,32 +122,39 @@ constructor() {
 }
 ```
 
-其中一些`IonicAuthauths`值是独特的，必须根据您的 Azure AD应用程序的详细信息设置：
+Some of these `IonicAuthOptions` values are unique, and must be set based on your Azure AD app’s details:
 
 * `platform`: Use “cordova” or “capacitor” accordingly.
-* `clientID`: Your app’s _Application ID_. Example: cebbb0be-d578-4bbd-9712-4b0fe05c06aa
+* `clientID`: Your app’s _Application (client) ID_. Example: cebbb0be-d578-4bbd-9712-4b0fe05c06aa
 * `redirectUri`: The URI to redirect to after the user has logged in. Use the same AUTH_URL_SCHEME variable value (App Id) from when the Auth Connect plugin was installed. Example: com.company.app://callback
-* `logoutUrl`: The URI to redirect to after the user has logged out. Example: com.company.app://login?logout=true
-* `audience`: Your custom API URL of choice, such as `https://api.myapp.com`.
-* `scope`: Unlock access to protected resources, such as read/write permissions. `offline_access` is minimally required. Example: openid offline_access email picture profile
+* `logoutUrl`: The URI to redirect to after the user has logged out. Example: com.company.app://logout
+* `scope`: Unlock access to protected resources, such as read/write permissions. Example: openid offline_access email picture profile
 
-`discoveryUrl`可以通过导航到用户流量(策略) -> [选择用户流] -> 概览选项卡 -> 运行用户流按钮。 发现链接在首页上，看起来像以下格式：
+The `scope` property is used to unlock access to protected resources, such as read/write permissions. There’s a variety of attributes available; an example looks like: “openid offline_access email profile”.
 
-`https://B2C-TENANT-NAME.b2clogin.com/B2C-TENANT-NAME.onmicrosoft.com/v2.0/.well known/openid-configuration?p=POLISe-NAME`
+In addition to the values above, add the Full Scope Value link created earlier to the `scope` property. To find it in the Azure AD B2C portal, navigate to the “Expose an API” page then click on the Scope you defined earlier. In the modal window, copy the link that appears under “Scope name.” All together, it will look similar to this:
 
-`B2C-TENANT-NAME`是你的用户名，而`POLYe-NAME`是先前创建的用户流名称。
+```json
+scope: 'openid offline_access email profile https://orgname.onmicrosoft.com/api/user_impersonation',
+```
+
+The `discoveryUrl` can be found by navigating to the main Azure AD B2C page -> Policies -> User Flows -> [Select User Flow] -> Overview tab -> Run user flow button. The discovery link is at the top page and will look like the following format:
+
+`https://B2C-TENANT-NAME.b2clogin.com/B2C-TENANT-NAME.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=POLICY-NAME`
+
+Where `B2C-TENANT-NAME` is your tenant name and the `POLICY-NAME` is the name of the User Flow created earlier.
 
 ### What's Next?
 
-查看可用的[配置选项](/docs/enterprise/auth-connect#ionicauthoptions)的完整列表，并在认证连接工作流中实现[其他步骤](/docs/enterprise/auth-connect#workflow)。
+Check out the full list of [configuration options](/docs/enterprise/auth-connect#ionicauthoptions) available, then implement the [other steps](/docs/enterprise/auth-connect#workflow) in the Auth Connect workflow.
 
 ## Implementing Password Reset
 
-要实现密码重置功能，需要创建自定义用户流程。 导航到 `用户流量(策略)` 页面，然后点击“新用户流”按钮。 接下来，选择“密码重置”用户流类型。 作为`Application claims`部分的一部分，至少选择"电子邮件地址"。 创建用户流后，从用户流列表中选择它，然后单击"运行用户流"。 注意页面顶部的 URL - 用它作为密码重置的发现URL。
+To implement password reset functionality, a custom User Flow needs to be created. Navigate to the `User flows (policies)` page, then click the "New user flow" button. Next, select the "Password reset" user flow type. As part of the `Application claims` section, choose "Email Addresses" at a minimum. After the user flow has been created, select it from the User Flow list, then click "Run user flow" from the Overview tab. Note the URL at the top of the page - use it as the discovery url for password reset.
 
-在您的应用范围内执行以下逻辑：
+Within your app, implement the following logic:
 
-如果在 [Login](/docs/enterprise/auth-connect#iionicauth.login) 函数调用后出现错误，请检查`message` 属性。 如果开始于字符串`AADB2C90118` (Azure AD返回错误信息的一部分)， 然后再次调用 [Login](#iionicauth.login)，这一次指定了密码重置端点的位置。
+If an error is thrown after the [Login](/docs/enterprise/auth-connect#iionicauth.login) function is called, inspect the `message` property. If it starts with the string `AADB2C90118` (part of the error message returned by Azure AD), then call [Login](#iionicauth.login) again, this time specifying the location of the password reset endpoint.
 
 ```typescript
 // Snippet example: Password reset
