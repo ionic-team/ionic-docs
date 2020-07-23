@@ -1,11 +1,11 @@
 ---
 ---
 
-# Live Reload
+# 热加载
 
-One option that can boost productivity when building Ionic apps is **Live Reload** (or **live-reload**). When active, Live Reload will reload the browser or [Web View](/docs/core-concepts/webview) when changes in the app are detected. This is particularly useful for developing using hardware devices.
+开发Ionic应用时，提高生产力的其中一个办法是使用 **热加载**。 当激活热加载配置时，一旦应用被监测到改变，则浏览器或者[Web View](/docs/core-concepts/webview)将会重载。 尤其对于硬件设备，这种技术非常有用。
 
-## Terms
+## 术语
 
 Live Reload is a conflated term. With `ionic serve`, Live Reload just refers to reloading the browser when changes are made. Live Reload can also be used with Capacitor and Cordova to provide the same experience on virtual and hardware devices, which eliminates the need for re-deploying a native binary.
 
