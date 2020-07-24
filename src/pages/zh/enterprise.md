@@ -25,7 +25,7 @@ tableOfContents: false
 
 利用API及原生安全实践中的最新技术来提供单点登陆支持。</docs-item>
 
-<docs-item header="Secure Storage" href="/docs/enterprise/offline-storage" icon="/docs/assets/icons/logo-offline-storage.png" rounded="false"> 
+<docs-item header="Offline Storage" href="/docs/enterprise/offline-storage" icon="/docs/assets/icons/logo-offline-storage.png" rounded="false"> 
 
 在移动设备或桌面设备上本地存储和访问数据，即使用户处于离线状态。</docs-item> </docs-item-list>
 
