@@ -21,18 +21,22 @@ Construye binarios nativos de iOS y Android en la nube sin el dolor de cabeza de
 
 Automatiza tus Despliegues y construcción de Paquetes para ayudar a tu equipo a enviar mejores actualizaciones más rápidamente.</docs-card>
 
+<docs-card header="Deploy to App Stores" href="/docs/appflow/destinations/intro" icon="/docs/assets/icons/guide-quickstart-icon.png"> 
+
+Publish directly to the iOS App Store and Google Play Store, directly from your cloud dashboard.</docs-card>
+
 <docs-card header="News & Updates" href="https://ionic.zendesk.com/hc/en-us/categories/360000410554-Announcements" icon="/docs/assets/icons/guide-news-icon.png"> 
 
-Entérate sobre recientes actualizaciones y anuncios de Appflow.</docs-card>
+Learn about recent Appflow updates & announcements.</docs-card>
 
 <docs-card header="Package FAQ" href="https://ionic.zendesk.com/hc/en-us/categories/360000410494-Package" icon="/docs/assets/icons/guide-faq-icon.png"> 
 
-Encuentra respuestas a preguntas comunes sobre cómo compilar binarios nativos.</docs-card>
+Find answers to common questions about building native binaries.</docs-card>
 
 <docs-card header="Deploy FAQ" href="https://ionic.zendesk.com/hc/en-us/categories/360000409113-Deploy" icon="/docs/assets/icons/guide-faq-icon.png"> 
 
-Encuentra respuestas a preguntas comunes sobre actualizaciones en tiempo real.</docs-card>
+Find answers to common questions about live updates.</docs-card>
 
 <docs-card header="Billing FAQ" href="https://ionic.zendesk.com/hc/en-us/categories/360000410574-Billing-Support" icon="/docs/assets/icons/guide-faq-icon.png"> 
 
-Encuentra respuestas a preguntas comunes sobre facturación.</docs-card> </docs-cards>
+Find answers to common billing questions.</docs-card> </docs-cards>
