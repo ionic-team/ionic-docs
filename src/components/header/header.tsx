@@ -73,9 +73,9 @@ export class DocsHeader {
       <header>
         <docs-menu-toggle onClick={this.toggleClickFn}/>
 
-        <stencil-route-link url="/">
+        <a href="https://ionicframework.com">
           <Logo class="HeaderLogo"/>
-        </stencil-route-link>
+        </a>
 
         <header-mobile-collapse>
           <nav class="SectionNav">
