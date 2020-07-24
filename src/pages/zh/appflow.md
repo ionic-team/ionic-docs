@@ -21,18 +21,22 @@ Appflow是一个面向Ionic开发团队的持续集成(CI) 和持续部署(CD) �
 
 自动化您的部署和包构建，以帮助您的团队更快地交付更好的更新。</docs-card>
 
+<docs-card header="Deploy to App Stores" href="/docs/appflow/destinations/intro" icon="/docs/assets/icons/guide-quickstart-icon.png"> 
+
+Publish directly to the iOS App Store and Google Play Store, directly from your cloud dashboard.</docs-card>
+
 <docs-card header="News & Updates" href="https://ionic.zendesk.com/hc/en-us/categories/360000410554-Announcements" icon="/docs/assets/icons/guide-news-icon.png"> 
 
-了解最近Appflow更新 & 公告。</docs-card>
+Learn about recent Appflow updates & announcements.</docs-card>
 
 <docs-card header="Package FAQ" href="https://ionic.zendesk.com/hc/en-us/categories/360000410494-Package" icon="/docs/assets/icons/guide-faq-icon.png"> 
 
-了解关于构建本地二进制文件的常见问题的答案。</docs-card>
+Find answers to common questions about building native binaries.</docs-card>
 
 <docs-card header="Deploy FAQ" href="https://ionic.zendesk.com/hc/en-us/categories/360000409113-Deploy" icon="/docs/assets/icons/guide-faq-icon.png"> 
 
-找出关于实时更新的常见问题的答案。</docs-card>
+Find answers to common questions about live updates.</docs-card>
 
 <docs-card header="Billing FAQ" href="https://ionic.zendesk.com/hc/en-us/categories/360000410574-Billing-Support" icon="/docs/assets/icons/guide-faq-icon.png"> 
 
-找出常见帐单问题的答案。</docs-card> </docs-cards>
+Find answers to common billing questions.</docs-card> </docs-cards>
