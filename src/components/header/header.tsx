@@ -73,7 +73,7 @@ export class DocsHeader {
       <header>
         <docs-menu-toggle onClick={this.toggleClickFn}/>
 
-        <stencil-route-link url="/docs/">
+        <stencil-route-link url="/">
           <Logo class="HeaderLogo"/>
         </stencil-route-link>
 
