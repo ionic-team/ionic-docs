@@ -29,7 +29,7 @@ tableOfContents: false
     <p>Add single sign-on using a single API and the latest in native security best practices.</p>
   </docs-item>
 
-  <docs-item header="Secure Storage" href="/docs/enterprise/offline-storage" icon="/docs/assets/icons/logo-offline-storage.png" rounded="false">
+  <docs-item header="Offline Storage" href="/docs/enterprise/offline-storage" icon="/docs/assets/icons/logo-offline-storage.png" rounded="false">
     <p>Store and access data locally on a mobile or desktop device, even when users are offline.</p>
   </docs-item>
 </docs-item-list>
