@@ -21,6 +21,10 @@ Build native iOS and Android binaries in the cloud without the headache of maint
 
 Automate your Deploy and Package builds to help you team ship better updates faster.</docs-card>
 
+<docs-card header="Deploy to App Stores" href="/docs/appflow/destinations/intro" icon="/docs/assets/icons/guide-quickstart-icon.png"> 
+
+Publish directly to the iOS App Store and Google Play Store, directly from your cloud dashboard.</docs-card>
+
 <docs-card header="News & Updates" href="https://ionic.zendesk.com/hc/en-us/categories/360000410554-Announcements" icon="/docs/assets/icons/guide-news-icon.png"> 
 
 Learn about recent Appflow updates & announcements.</docs-card>
