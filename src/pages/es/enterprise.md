@@ -25,7 +25,7 @@ Protect your users and data with multi-layer native security and biometric authe
 
 Add single sign-on using a single API and the latest in native security best practices.</docs-item>
 
-<docs-item header="Secure Storage" href="/docs/enterprise/offline-storage" icon="/docs/assets/icons/logo-offline-storage.png" rounded="false"> 
+<docs-item header="Offline Storage" href="/docs/enterprise/offline-storage" icon="/docs/assets/icons/logo-offline-storage.png" rounded="false"> 
 
 Store and access data locally on a mobile or desktop device, even when users are offline.</docs-item> </docs-item-list>
 
