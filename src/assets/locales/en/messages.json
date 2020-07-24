@@ -213,6 +213,7 @@
   "menu-appflow-quickstart-automation": "Create an Automation",
   "menu-appflow-quickstart-environment": "Create an Environment",
   "menu-appflow-quickstart-native-config": "Create a Native Configuration",
+  "menu-appflow-quickstart-troubleshooting": "Troubleshooting",
 
   "menu-appflow-deploy": "Live Update",
   "menu-appflow-deploy-intro": "Overview",
@@ -222,6 +223,7 @@
   "menu-appflow-deploy-api": "API",
   "menu-appflow-deploy-tutorials": "Tutorials and Videos",
   "menu-appflow-deploy-cli": "Using Ionic CLI",
+  "menu-appflow-deploy-troubleshooting": "Troubleshooting",
 
   "menu-appflow-destinations": "Deploy to App Stores",
   "menu-appflow-destinations-intro": "Overview",
@@ -240,6 +242,7 @@
   "menu-appflow-package-adding-credentials": "Adding Credentials",
   "menu-appflow-package-native-configs": "Native Configurations",
   "menu-appflow-package-cli": "Using Ionic CLI",
+  "menu-appflow-package-troubleshooting": "Troubleshooting",
 
   "menu-appflow-automation": "Automations",
   "menu-appflow-automation-intro": "Overview",

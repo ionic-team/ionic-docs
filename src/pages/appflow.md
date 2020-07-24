@@ -26,6 +26,10 @@ their Cordova and Capacitor apps faster than ever.
     <p>Automate your Deploy and Package builds to help you team ship better updates faster.</p>
   </docs-card>
 
+   <docs-card header="Deploy to App Stores" href="/docs/appflow/destinations/intro" icon="/docs/assets/icons/guide-quickstart-icon.png">
+    <p>Publish directly to the iOS App Store and Google Play Store, directly from your cloud dashboard.</p>
+  </docs-card>
+
   <docs-card header="News & Updates" href="https://ionic.zendesk.com/hc/en-us/categories/360000410554-Announcements" icon="/docs/assets/icons/guide-news-icon.png">
     <p>Learn about recent Appflow updates & announcements.</p>
   </docs-card>

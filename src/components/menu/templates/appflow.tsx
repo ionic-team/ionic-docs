@@ -20,7 +20,8 @@ const items = {
     'menu-appflow-quickstart-package': '/docs/appflow/quickstart/package',
     'menu-appflow-quickstart-automation': '/docs/appflow/quickstart/automation',
     'menu-appflow-quickstart-environment': '/docs/appflow/quickstart/environment',
-    'menu-appflow-quickstart-native-config': '/docs/appflow/quickstart/native-config'
+    'menu-appflow-quickstart-native-config': '/docs/appflow/quickstart/native-config',
+    'menu-appflow-quickstart-troubleshooting': 'https://ionic.zendesk.com/hc/en-us'
   },
   'menu-appflow-deploy': {
     'menu-appflow-deploy-intro': '/docs/appflow/deploy/intro',
@@ -28,7 +29,8 @@ const items = {
     'menu-appflow-deploy-builds': '/docs/appflow/deploy/builds',
     'menu-appflow-deploy-channels': '/docs/appflow/deploy/channels',
     'menu-appflow-deploy-api': '/docs/appflow/deploy/api',
-    'menu-appflow-deploy-cli': '/docs/appflow/deploy/cli'
+    'menu-appflow-deploy-cli': '/docs/appflow/deploy/cli',
+    'menu-appflow-deploy-troubleshooting': 'https://ionic.zendesk.com/hc/en-us/categories/360000409113-Appflow-Live-Update'
   },
   'menu-appflow-destinations': {
     'menu-appflow-destinations-intro': '/docs/appflow/destinations/intro',
@@ -48,7 +50,8 @@ const items = {
     'menu-appflow-package-credentials': '/docs/appflow/package/credentials',
     'menu-appflow-package-adding-credentials': '/docs/appflow/package/adding-credentials',
     'menu-appflow-package-native-configs': '/docs/appflow/package/native-configs',
-    'menu-appflow-package-cli': '/docs/appflow/package/cli'
+    'menu-appflow-package-cli': '/docs/appflow/package/cli',
+    'menu-appflow-package-troubleshooting': 'https://ionic.zendesk.com/hc/en-us/categories/360000410494-Appflow-Builds'
   },
   'menu-appflow-automation': {
     'menu-appflow-automation-intro': '/docs/appflow/automation/intro',
