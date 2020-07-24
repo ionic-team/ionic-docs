@@ -1,7 +1,7 @@
 ---
 title: Auth Connect
 template: enterprise-plugin
-version: 3.1.1
+version: 3.1.2
 minor: 3.1.X
 otherVersions:
   - 2.2.X
@@ -1037,6 +1037,12 @@ save the refresh token
 * * *
 
 # Changelog
+
+### \[3.1.2\] (2020-07-24)
+
+### Bug Fixes
+
+* Fix issue where IonicGeneralAuthOptions was not exported. 
 
 ### \[3.1.1\] (2020-07-09)
 
