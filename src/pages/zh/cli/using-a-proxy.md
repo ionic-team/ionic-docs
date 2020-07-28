@@ -1,11 +1,11 @@
 ---
 ---
 
-# Using a Proxy
+# 使用代理
 
-Proxy support is built-in to the Ionic CLI. Proxy settings can be configured via the config file or an environment variable.
+Ionic CLI内置了代理支持。 代理可以通过配置文件或者环境变量进行设置。
 
-To configure proxy settings via the config file, run the following with the URL of the proxy server:
+要通过配置文件配置代理，可以使用代理服务器的URL运行如下命令。
 
 ```shell
 $ ionic config set -g proxy http://proxy.example.com:8888
