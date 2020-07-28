@@ -1,7 +1,7 @@
 ---
 title: Auth Connect
 template: enterprise-plugin
-version: 3.1.2
+version: 3.1.3
 minor: 3.1.X
 otherVersions:
   - 2.2.X
@@ -974,6 +974,13 @@ ___
 # Changelog
 
 
+
+### [3.1.3] (2020-07-28)
+
+
+### Bug Fixes
+
+* fix issue with logout for identity server 
 
 ### [3.1.2] (2020-07-24)
 
