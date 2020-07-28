@@ -107,6 +107,49 @@ Adds a new mail app alias.
 
 * * *
 
+<a id="emailcomposer.getclients"></a>
+
+### getClients
+
+▸ **getClients**(): `Promise`<`string`[]>
+
+Returns an array of email clients installed on the device.
+
+**Returns:** `Promise`<`string`[]> Resolves if available, rejects if not available
+
+* * *
+
+<a id="emailcomposer.hasaccount"></a>
+
+### hasAccount
+
+▸ **hasAccount**(): `Promise`<`any`>
+
+Verifies if an email account is configured on the device.
+
+**Returns:** `Promise`<`any`> Resolves if available, rejects if not available
+
+* * *
+
+<a id="emailcomposer.hasclient"></a>
+
+### hasClient
+
+▸ **hasClient**(app: *`string`*): `Promise`<`any`>
+
+Verifies if a specific email client is installed on the device.
+
+**Parameters:**
+
+| Name           | Type     |
+| -------------- | -------- |
+| `Optional` app | `string` |
+
+
+**Returns:** `Promise`<`any`> Resolves if available, rejects if not available
+
+* * *
+
 <a id="emailcomposer.haspermission"></a>
 
 ### hasPermission
