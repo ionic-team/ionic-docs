@@ -11,7 +11,7 @@ CSS Shadow Parts allow developers to style CSS properties on an element inside o
 
 ## Why Shadow Parts?
 
-Ionic Framework is a distributed set of <a href="https://www.webcomponents.org/introduction" target="_blank" rel="noopener noreferrer">Web Components</a>. Web Components follow the <a href="https://w3c.github.io/webcomponents/spec/shadow/" target="_blank" rel="noopener noreferrer">Shadow DOM specification</a> in order to encapsulate styles and markup.
+Ionic Framework is a distributed set of <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components" target="_blank" rel="noopener noreferrer">Web Components</a>. Web Components follow the <a href="https://w3c.github.io/webcomponents/spec/shadow/" target="_blank" rel="noopener noreferrer">Shadow DOM specification</a> in order to encapsulate styles and markup.
 
 > Ionic Framework components are **not all** Shadow DOM components. If the component is a Shadow DOM component, there will be a badge in the top right of its <a href="/docs/components" target="_blank" rel="noopener noreferrer">component documentation</a>. An example of a Shadow DOM component is the <a href="/docs/api/button" target="_blank" rel="noopener noreferrer">button component</a>.
 
