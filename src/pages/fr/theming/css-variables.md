@@ -1,8 +1,8 @@
 ---
 previousText: 'Platform Styles'
 previousUrl: '/docs/theming/platform-styles'
-nextText: 'Colors'
-nextUrl: '/docs/theming/colors'
+nextText: 'CSS Shadow Parts'
+nextUrl: '/docs/theming/css-shadow-parts'
 contributors:
   - brandyscarney
   - iget-master
