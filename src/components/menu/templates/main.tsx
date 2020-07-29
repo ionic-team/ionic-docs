@@ -30,6 +30,7 @@ const items = {
     'menu-theming-basics': '/docs/theming/basics',
     'menu-theming-platform-styles': '/docs/theming/platform-styles',
     'menu-theming-css-variables': '/docs/theming/css-variables',
+    'menu-theming-css-shadow-parts': '/docs/theming/css-shadow-parts',
     'menu-theming-colors': '/docs/theming/colors',
     'menu-theming-themes': '/docs/theming/themes',
     'menu-theming-dark-mode': '/docs/theming/dark-mode',
