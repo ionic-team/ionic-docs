@@ -66,12 +66,13 @@ CLI在特定事件发生时运行脚本，比如构建之前和之后。 要绑�
 * `ionic:serve:after`: 在dev server中断后执行
 * `ionic:build:before`: 在web资源构建开始之前执行
 * `ionic:build:after`：web资源构建完成执行
-* `ionic:capacitor:run:before` ：capacitor开启之前在capacitor中执行
-* `ionic:capacitor:run:after` ：capacitor开启之后在capacitor中执行
+* `ionic:capacitor:run:before`: executed during `ionic capacitor run` before capacitor open is executed
+* `ionic:capacitor:build:before`: executed during `ionic capacitor build` before capacitor open is executed
+* `ionic:capacitor:sync:after`: executed during `ionic capacitor sync` after a sync
 
-Capacitor钩子是在 `ionic:sery` and `ionic:build` 钩子之后执行的。 它们只能在使用 `ionic capacitor build` or `ionic capacitor run` 时执行。 当任何一个钩子使用 shell 脚本时，几个环境变量会被设置为包含上下文信息。
+When using a shell script for any of the hooks, hook context is defined in environment variables prefixed with `IONIC_CLI_HOOK_CTX_`.
 
-下面的示例展示了在 `ionic:capacititor:run:before` and `ionic:capacity:build:before` 钩子中设定的环境变量.
+The following example shows the environment variables that are set for the `ionic:capacitor:build` hook.
 
 ```shell
 IONIC_CLI_HOOK_CTX_NAME=capacitor:build:before
