@@ -77,3 +77,11 @@ ngOnInit() {
 ```
 
 That’s it! We’ve built a complete Photo Gallery feature in our Ionic app that works on the web. Next up, we’ll transform it into a mobile app for iOS and Android!
+
+<!---
+There needs to be a place to add the change in tab2.page.html from 
+    *ngFor="let photo of photos; index as position">
+to
+    *ngFor="let photo of photoService.photos; index as position">
+Otherwise at the end of this page things do not run
+--->
