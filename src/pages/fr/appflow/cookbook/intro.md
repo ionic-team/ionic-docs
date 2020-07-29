@@ -10,7 +10,7 @@ nextUrl: "/docs/appflow/cookbook/phonegap-build-migration"
 
 ### [Migrating from PhoneGap Build to Ionic Appflow](/docs/appflow/cookbook/phonegap-build-migration)
 
-Learn how to convert your app to use Ionic Appflow.
+Apprenez comment convertir votre application pour utiliser ionic AppFlow.
 
 ### [Using Private Git Repos](/docs/appflow/cookbook/private_git)
 
