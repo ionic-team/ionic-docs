@@ -502,7 +502,7 @@
   {
     "packageName": "@ionic-native/badge",
     "displayName": "Badge",
-    "description": "\nThe essential purpose of badge numbers is to enable an application to inform its users that it has something for them — for example, unread messages — when the application isn’t running in the foreground.\n\nRequires Cordova plugin: cordova-plugin-badge. For more info, please see the [Badge plugin docs](https://github.com/katzer/cordova-plugin-badge).\n",
+    "description": "\nThe essential purpose of badge numbers is to enable an application to inform its users that it has something for them — for example, unread messages — when the application isn’t running in the foreground.\n\nRequires Cordova plugin: cordova-plugin-badge. For more info, please see the [Badge plugin docs](https://github.com/katzer/cordova-plugin-badge).\n\nAndroid Note: Badges in android have historically been a feature implemented by third party launchers to mimic iOS functionality. As of Android 8 (Oreo), [notification badges](https://developer.android.com/training/notify-user/badges) were introduced natively. Therefore, it is recommended as of Android Oreo to use badges to reflect unread notifications and not as a standalone plugin. Please see the [local notifications plugin docs](https://github.com/katzer/cordova-plugin-local-notifications).\n",
     "usage": "\n```typescript\nimport { Badge } from '@ionic-native/badge/ngx';\n\nconstructor(private badge: Badge) { }\n\n...\n\nthis.badge.set(10);\nthis.badge.increase(1);\nthis.badge.clear();\n```\n",
     "platforms": [
       "Android",
