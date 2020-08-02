@@ -110,7 +110,7 @@ Terminada la función `addNewToGallery`, añade la nueva foto capturada al princ
   });
 }
 ```
-We will create a local `photos` property on our `Tab2Page` component so that we can reference the Photos collection within our template.
+Crearemos una propiedad local ` photos ` en nuestro componente ` Tab2Page ` para que podamos hacer referencia a la colección Photos dentro de nuestra plantilla.
 
 ```typescript
 export class Tab2Page {
@@ -121,7 +121,6 @@ export class Tab2Page {
   addPhotoToGallery() {
     this.photoService.addNewToGallery();
   }
-}
 ```
 
 With the photo(s) stored into the main array, move over to `tab2.page.html` so we can display the image on the screen. Add a [Grid component](https://ionicframework.com/docs/api/grid) so that each photo will display nicely as photos are added to the gallery, and loop through each photo in the Photos array, adding an Image component (`<ion-img>`) for each. Point the `src` (source) at the photo’s path:
