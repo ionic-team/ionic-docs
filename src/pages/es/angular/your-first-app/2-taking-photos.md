@@ -2,7 +2,7 @@
 previousText: 'Tu primera Aplicación'
 previousUrl: '/docs/angular/your-first-app'
 nextText: 'Guardando fotos en el sistema de archivos'
-nextUrl: '/docs/angular/your-first-app/3-saving-photos'
+nextUrl: '/docs/angular/your-first-app/3-deploying-mobile'
 ---
 
 # Capturando fotos con la cámara
