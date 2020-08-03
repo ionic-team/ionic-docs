@@ -7,7 +7,7 @@ nextUrl: 'docs/angular/seu-primeiro-app/5-adicionando-pro-mobile'
 
 # Salvando fotos no FileSystem
 
-Nós já temos implementado captura e salvamento de fotos para o filesystem. There’s one last piece of functionality missing: the photos are stored in the filesystem, but we need a way to save pointers to each file so that they can be displayed again in the photo gallery.
+Nós já temos implementado a captura e salvamento de fotos no sistema de arquivos. There’s one last piece of functionality missing: the photos are stored in the filesystem, but we need a way to save pointers to each file so that they can be displayed again in the photo gallery.
 
 Fortunately, this is easy: we’ll leverage the Capacitor [Storage API](https://capacitor.ionicframework.com/docs/apis/storage) to store our array of Photos in a key-value store.
 
