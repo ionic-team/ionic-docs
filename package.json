@@ -28,7 +28,7 @@
     "@stencil/router": "^1.0.1",
     "compression": "^1.7.4",
     "express": "^4.16.4",
-    "helmet": "^3.23.1",
+    "helmet": "^4.0.0",
     "moment": "^2.27.0",
     "prismic-dom": "^2.2.3",
     "prismic-javascript": "^2.7.1",
