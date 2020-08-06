@@ -46,6 +46,8 @@ Change directory into the Ionic app project folder, then register the product ke
 
 This only needs to be run once per app. Within the app's directory, a `.npmrc` file is generated and `ionic.config.json` updated. Both of these changes should be committed to version control so that CI/CD systems as well as other team members can restore the plugins from a fresh clone of the app's repository.
 
+> Is the app open source? Want to keep the product key private? [See here](/docs/appflow/cookbook/private-native-enterprise-keys).
+
 ## Start Using Plugins
 
 Now you are able to install any of the Ionic Enterprise solutions and plugins that you have access to by following the instructions on each plugin's documentation page.
