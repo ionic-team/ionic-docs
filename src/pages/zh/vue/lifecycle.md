@@ -1,10 +1,10 @@
 ---
 previousText: '开始你的第一个应用程序'
 previousUrl: '/docs/vue/your-first-app'
-nextText: 'Navigation'
+nextText: '导航'
 nextUrl: '/docs/vue/navigation'
 ---
 
-# Vue Lifecycle
+# Vue 生命周期
 
-Coming soon.
+即将到来。
