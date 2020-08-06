@@ -228,6 +228,7 @@
   "menu-appflow-cookbook-private_git": "使用 GIT 私人仓库",
   "menu-appflow-cookbook-private_npm_modules": "使用私有 NPM 模块",
   "menu-appflow-cookbook-switch_node_version": "在构建中使用不同的节点",
+  "menu-appflow-cookbook-private-native-enterprise-keys": "Private Ionic Native Enterprise Edition Keys in Open Source Apps",
   "menu-appflow-devapp": "DevApp：本地开发",
   "menu-enterprise-home": "首页",
   "menu-enterprise-getting-started": "入门",
