@@ -1,10 +1,10 @@
 ---
-previousText: 'Lifecycle'
-previousUrl: '/docs/vue/lifecycle'
-nextText: 'Performance'
+previousText: '生命周期'
+previousUrl: '/docs/vue/liecycle'
+nextText: '性能'
 nextUrl: '/docs/vue/performance'
 ---
 
-# Vue Navigation
+# Vue 导航
 
-Coming soon.
+即将到来。
