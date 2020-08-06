@@ -1,26 +1,26 @@
 ---
-nextText: 'Build Your First App'
+nextText: '创建您的第一个应用程序'
 nextUrl: '/docs/vue/your-first-app'
 ---
 
-# Ionic Vue Overview
+# Ionic Vue 概览
 
-`@ionic/vue` combines the core Ionic experience with the tooling and APIs that are tailored to Vue Developers. Currently in beta.
+`@ionic/angular` 将ionic核心体验与针对 Vue 开发者的工具和 API 结合起来。 目前处于测试阶段。
 
-## Vue Version Support
+## Vue 版本支持
 
-Coming soon.
+即将到来。
 
-## Vue Tooling
+## Vue 工具
 
-Coming soon.
+即将到来。
 
-## Native Tooling
+## 原生工具
 
-[Capacitor](https://capacitor.ionicframework.com) is the official cross-platform app runtime used to make your `Ionic Vue` web app run natively on iOS, Android, Electron, and the web.
+[Capacitor](https://capacitor.ionicframework.com) 是一个跨平台应用构建程序，用于让您的`Ionic Vue` Web 应用在 iOS、Android、Electron 和 Web 上运行。
 
-While there are no known technical limitations to using `Ionic Vue` with [Cordova](https://cordova.apache.org/) plugins, Capacitor is officially recommended. There are no plans to support a Cordova integration for `Ionic Vue` in the [Ionic CLI tooling](/docs/cli) at this time. For more details, please [see here](https://capacitor.ionicframework.com/docs/cordova).
+While there are no known technical limitations to using `Ionic Vue` with [Cordova](https://cordova.apache.org/) plugins, Capacitor is officially recommended. There are no plans to support a Cordova integration for `Ionic Vue` in the [Ionic CLI tooling](/docs/cli) at this time. 欲了解更多详情，请 [在这里查看](https://capacitor.ionicframework.com/docs/cordova)。
 
-## From the Community
+## 来自社区
 
-[How to use Ionic 4 with Vue.js](https://alligator.io/vuejs/vue-ionic/) - Paul Halliday
+[如何在 Vue.js 上使用 Ionic 4](https://alligator.io/vuejs/vue-ionic/) - Paul Halliday
