@@ -10,25 +10,25 @@ nextText: '环境配置'
 nextUrl: '/docs/intro/environment'
 ---
 
-Ionic Framework is an open source UI toolkit for building performant, high-quality mobile and desktop apps using web technologies — HTML, CSS, and JavaScript — with integrations for popular frameworks like <a href="/docs/angular/overview" target="_blank"> Angular</a> and <a href="/react" target="_blank">React</a>.
+Ionic Framework 是一个开源的 UI 工具包，使用 Web 技术——HTML、CSS 和 JavaScript——构建高性能高质量的移动和桌面应用，并且集成了 <a href="/docs/angular/overview" target="_blank">Angular</a> 和 <a href="/react" target="_blank">React</a> 等流行的框架。
 
-Get started building by [installing Ionic](/docs/intro/cli) or following our [First App Tutorial](/docs/intro/next#build-your-first-app) to learn the main concepts.
+开始构建 从[安装 Ionic](/docs/intro/cli) 开始或按照我们的 [首个应用程序教程](/docs/intro/next#build-your-first-app) 来学习主要概念。
 
 <docs-cards> <docs-card header="Installation Guide" href="/docs/intro/cli" icon="/docs/assets/icons/guide-installation-icon.svg" hover-icon="/docs/assets/icons/guide-installation-icon-hover.svg"> 
 
-Step-by-step guides to setting up your system and installing the framework.</docs-card>
+设置系统和安装框架的分步指南。</docs-card>
 
 <docs-card header="UI Components" href="/docs/components" icon="/docs/assets/icons/guide-components-icon.svg" hover-icon="/docs/assets/icons/guide-components-icon-hover.svg"> 
 
-Dive into Ionic Framework's beautifully designed UI component library.</docs-card>
+深入探索 Ionic 框架的精美 UI 组件库。</docs-card>
 
 <docs-card header="Native Functionality" href="/docs/native" icon="/docs/assets/icons/guide-native-icon.svg" hover-icon="/docs/assets/icons/guide-native-icon-hover.svg"> 
 
-Integrate native device plugins, like Bluetooth, Maps, HealthKit, and more.</docs-card>
+整合本地设备插件，比如蓝牙、地图、HealthKit 等等。</docs-card>
 
 <docs-card header="Theming" href="/docs/theming/basics" icon="/docs/assets/icons/guide-theming-icon.svg" hover-icon="/docs/assets/icons/guide-theming-icon-hover.svg"> 
 
-Learn to easily customize and modify your Ionic app's visual design to fit your brand.</docs-card> </docs-cards>
+学习轻松定制和修改您的 Ionic 应用程序的视觉设计以适应您的品牌。</docs-card> </docs-cards>
 
 ## Overview
 
