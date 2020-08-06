@@ -28,6 +28,7 @@ const items = {
     'menu-appflow-deploy-setup': '/docs/appflow/deploy/setup',
     'menu-appflow-deploy-builds': '/docs/appflow/deploy/builds',
     'menu-appflow-deploy-channels': '/docs/appflow/deploy/channels',
+    'menu-appflow-deploy-differentials': '/docs/appflow/deploy/differentials',
     'menu-appflow-deploy-api': '/docs/appflow/deploy/api',
     'menu-appflow-deploy-cli': '/docs/appflow/deploy/cli',
     'menu-appflow-deploy-troubleshooting': 'https://ionic.zendesk.com/hc/en-us/categories/360000409113-Appflow-Live-Update'
