@@ -195,6 +195,7 @@
   "menu-appflow-deploy-setup": "设置",
   "menu-appflow-deploy-builds": "编译",
   "menu-appflow-deploy-channels": "渠道",
+  "menu-appflow-deploy-differentials": "Differentials",
   "menu-appflow-deploy-api": "API",
   "menu-appflow-deploy-tutorials": "教程和视频",
   "menu-appflow-deploy-cli": "使用 Ionic CLI",
