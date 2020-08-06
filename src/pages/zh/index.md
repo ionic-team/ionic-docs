@@ -6,7 +6,7 @@ meta:
 tableOfContents: false
 demoUrl: https://ionic-docs-demo.herokuapp.com/
 demoSourceUrl: https://github.com/ionic-team/docs-demo
-nextText: 'Environment Setup'
+nextText: '环境配置'
 nextUrl: '/docs/intro/environment'
 ---
 
