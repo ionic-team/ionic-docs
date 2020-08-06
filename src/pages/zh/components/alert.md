@@ -24,7 +24,7 @@ Alerts can also include several different inputs whose data can be passed back t
 
 <!-- Auto Generated Below -->
 
-## Usage
+## 使用方法
 
 ### Angular
 
@@ -284,7 +284,7 @@ export class AlertExample {
 }
 ```
 
-### Javascript
+### JavaScript
 
 ```javascript
 async function presentAlert() {
