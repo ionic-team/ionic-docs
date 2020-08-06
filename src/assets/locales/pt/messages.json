@@ -195,6 +195,7 @@
   "menu-appflow-deploy-setup": "Instalação",
   "menu-appflow-deploy-builds": "Builds",
   "menu-appflow-deploy-channels": "Canias",
+  "menu-appflow-deploy-differentials": "Differentials",
   "menu-appflow-deploy-api": "API",
   "menu-appflow-deploy-tutorials": "Tutoriais e vídeos",
   "menu-appflow-deploy-cli": "Usando o CLI do Ionic",
