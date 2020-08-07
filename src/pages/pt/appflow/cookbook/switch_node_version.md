@@ -1,6 +1,8 @@
 ---
-previousText: 'Using private NPM moduless'
-previousUrl: '/docs/appflow/cookbook/private_npm_modules'
+previousText: 'Private Native Plugin Keys'
+previousUrl: '/docs/appflow/cookbook/private-native-enterprise-keys'
+nextText: 'Build Stacks'
+nextUrl: '/docs/appflow/build-stacks'
 ---
 
 # Use different Node in builds
