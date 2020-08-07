@@ -14,6 +14,8 @@ meta:
 
 Migrating from Adobe’s [PhoneGap Build](https://build.phonegap.com) to Ionic Appflow involves just a few simple steps. In this guide, we’ll walk through the complete migration process from start to finish. Optionally, you can migrate the app to Ionic Framework as well.
 
+> Apple now requires all iOS apps to be built with iOS 13 SDK or later (error ITMS-90725). Unfortunately, PhoneGap Build still uses version 12.1, meaning you can no longer submit to the App Store. Ionic Appflow is constantly updated with the latest iOS and Android SDKs, security patches, and tooling, ensuring that you'll never face app store delivery disruptions.
+
 ## Migration Summary
 
 - Appflow is Ionic’s mobile DevOps service that helps development teams build, ship, and manage their iOS, Android and web apps. Featuring continuous native builds, live app deploys, 1-click deploy to App Stores, and CI/CD automation.
