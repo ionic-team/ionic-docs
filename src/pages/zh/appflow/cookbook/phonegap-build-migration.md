@@ -1,7 +1,7 @@
 ---
 previousText: "简介"
 previousUrl: "/docs/appflow/cookbook/intro"
-nextText: "使用私有的Git仓库"
+nextText: "Using private Git repositories"
 nextUrl: "/docs/appollow/cookbook/private_git"
 contributors:
   - chrisgriffith
