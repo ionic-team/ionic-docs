@@ -1,7 +1,7 @@
 ---
 previousText: "Introduction"
 previousUrl: "/docs/appflow/cookbook/intro"
-nextText: "Using private Git Repos"
+nextText: "Using private Git repositories"
 nextUrl: "/docs/appflow/cookbook/private_git"
 contributors:
   - chrisgriffith
