@@ -5,13 +5,13 @@ nextText: "使用私有 NPM 模块"
 nextUrl: "/docs/appflow/cookbook/private_npm_modules"
 ---
 
-# 使用 GIT 私有仓库
+# Using private Git repositories
 
 在构建过程中，可能需要访问其他包含libraries的私有存储库。
 
 如果这些存储库不属于可以克隆主应用程序代码库的同一用户，则可以使用git证书代码库。
 
-### 如何使用 GIT 证书
+### How to use Git Credentials
 
 第一步是生成个人访问令牌： [github](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/) 或 [bitbucket](https://confluence.atlassian.com/bitbucket/app-passwords-828781300.html) 文档。
 
