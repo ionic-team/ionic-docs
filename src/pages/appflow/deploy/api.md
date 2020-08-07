@@ -1,7 +1,7 @@
 ---
 title: Live Update API
-previousText: 'Channels'
-previousUrl: '/docs/appflow/deploy/channels'
+previousText: 'Differentials'
+previousUrl: '/docs/appflow/deploy/differentials'
 nextText: 'Using Ionic CLI'
 nextUrl: '/docs/appflow/deploy/cli'
 ---

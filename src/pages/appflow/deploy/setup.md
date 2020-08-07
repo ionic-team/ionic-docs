@@ -1,7 +1,7 @@
 ---
 previousText: 'Introduction'
 previousUrl: '/docs/appflow/deploy/intro'
-nextText: 'Deploy Builds'
+nextText: 'Live Update Builds'
 nextUrl: '/docs/appflow/deploy/builds'
 ---
 

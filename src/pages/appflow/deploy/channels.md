@@ -2,8 +2,8 @@
 title: 'Channels'
 previousText: 'Live Update Builds'
 previousUrl: '/docs/appflow/deploy/builds'
-nextText: 'Live Update API'
-nextUrl: '/docs/appflow/deploy/api'
+nextText: 'Differentials'
+nextUrl: '/docs/appflow/deploy/differentials'
 ---
 
 A channel points to a specific Live Update build of your app that will be shared with any devices configured to

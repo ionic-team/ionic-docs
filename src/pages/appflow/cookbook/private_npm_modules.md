@@ -1,8 +1,8 @@
 ---
-previousText: 'Using private GIT repositories'
+previousText: 'Using private Git repositories'
 previousUrl: '/docs/appflow/cookbook/private_git'
-nextText: 'Use different Node in builds'
-nextUrl: '/docs/appflow/cookbook/switch_node_version'
+nextText: 'Private Native Plugin Keys'
+nextUrl: '/docs/appflow/cookbook/private-native-enterprise-keys'
 ---
 
 # Using private NPM modules
