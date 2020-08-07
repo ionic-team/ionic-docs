@@ -261,6 +261,8 @@
   "menu-appflow-cookbook-switch_node_version": "Use different Node in builds",
   "menu-appflow-cookbook-private-native-enterprise-keys": "Private Ionic Native Enterprise Edition Keys in Open Source Apps",
 
+  "menu-appflow-build-stacks": "Build Stacks",
+
   "menu-appflow-devapp": "DevApp: Local Development",
 
   "menu-enterprise-home": "Home",
