@@ -1,6 +1,8 @@
 ---
-previousText: '使用私有NPM模块'
-previousUrl: '/docs/appflow/cookbook/private_npm_modules'
+previousText: 'Private Native Plugin Keys'
+previousUrl: '/docs/appflow/cookbook/private-native-enterprise-keys'
+nextText: 'Build Stacks'
+nextUrl: '/docs/appflow/build-stacks'
 ---
 
 # 在构建中使用不同的 Node
