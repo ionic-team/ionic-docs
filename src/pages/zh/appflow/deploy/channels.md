@@ -2,8 +2,8 @@
 title: '渠道'
 previousText: '实时更新版本'
 previousUrl: '/docs/appflow/deploy/builds'
-nextText: '实时更新'
-nextUrl: '/docs/appflow/deploy/api'
+nextText: 'Differentials'
+nextUrl: '/docs/appflow/deploy/differentials'
 ---
 
 一个频道指向指定的应用实时更新，将与任何配置为 监听该频道进行更新的设备共享。 您可以随时更改channel指向的构建，也可以回滚更改。
