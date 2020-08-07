@@ -1,8 +1,8 @@
 ---
-previousText: '使用 GIT 私人仓库'
+previousText: 'Using private Git repositories'
 previousUrl: '/docs/appollow/cookbook/private_git'
-nextText: '在构建中使用不同的 Node'
-nextUrl: '/docs/appflow/cookbook/switch_node_version'
+nextText: 'Private Native Plugin Keys'
+nextUrl: '/docs/appflow/cookbook/private-native-enterprise-keys'
 ---
 
 # 使用私有 NPM 模块
