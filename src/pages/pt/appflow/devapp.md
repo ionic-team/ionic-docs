@@ -1,6 +1,6 @@
 ---
-previousText: 'Cookbook'
-previousUrl: '/docs/appflow/cookbook/private_npm_modules'
+previousText: 'Build Stacks'
+previousUrl: '/docs/appflow/build-stacks'
 ---
 
 # Ionic DevApp
