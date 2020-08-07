@@ -10,6 +10,7 @@ const items = {
     '': {
       'menu-appflow-quickstart-github': '/docs/appflow/quickstart/github',
       'menu-appflow-quickstart-gitlab': '/docs/appflow/quickstart/gitlab',
+      'menu-appflow-quickstart-gitlab-self-managed': '/docs/appflow/quickstart/gitlab-self-managed',
       'menu-appflow-quickstart-bitbucket': '/docs/appflow/quickstart/bitbucket',
       'menu-appflow-quickstart-bitbucket-server': '/docs/appflow/quickstart/bitbucket-server',
       'menu-appflow-quickstart-ionic-remote': '/docs/appflow/quickstart/ionic-remote',
