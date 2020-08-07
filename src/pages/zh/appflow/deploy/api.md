@@ -1,7 +1,7 @@
 ---
 title: 实时更新
-previousText: '频道'
-previousUrl: '/docs/appflow/sport/screcisions'
+previousText: 'Differentials'
+previousUrl: '/docs/appflow/deploy/differentials'
 nextText: '使用 Ionic CLI'
 nextUrl: '/docs/appflow/deploy/cli'
 ---
