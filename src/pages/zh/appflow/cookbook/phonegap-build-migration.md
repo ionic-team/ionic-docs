@@ -14,6 +14,8 @@ meta:
 
 从Adobe的 [PhoneGap 构建](https://build.phonegap.com) 迁移到 Ionic Appflow 只涉及几个简单的步骤。 在本指南中，我们将从开始到完成整个迁移过程。 还可以选择的是，您也可以将应用程序迁移到Ionic框架。
 
+> Apple now requires all iOS apps to be built with iOS 13 SDK or later (error ITMS-90725). Unfortunately, PhoneGap Build still uses version 12.1, meaning you can no longer submit to the App Store. Ionic Appflow is constantly updated with the latest iOS and Android SDKs, security patches, and tooling, ensuring that you'll never face app store delivery disruptions.
+
 ## 迁移摘要
 
 - Appflow是Ionic的移动DevOps服务，可帮助开发团队构建，发布和管理其iOS，Android和Web应用程序。 具有连续的本机版本，实时应用程序部署，一键式部署到App Store和CI/CD自动化的功能。
