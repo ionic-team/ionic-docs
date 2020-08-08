@@ -11,13 +11,13 @@ Nous sommes maintenant en mesure de prendre plusieurs photos et de les afficher 
 
 ## API du système de fichiers
 
-Heureusement, les enregistrer dans le système de fichiers ne prend que quelques étapes. Commencez par créer une nouvelle fonction, `savePicture()`, dans la classe `PhotoService` (`src/app/services/photo.service.ts`). Nous passons l'objet `cameraPhoto` , qui représente la photo du nouvel appareil capturé :
+Heureusement, les enregistrer dans le système de fichiers ne prend que quelques étapes. Begin by creating a new class method, `savePicture()`, in the `PhotoService` class (`src/app/services/photo.service.ts`). Nous passons l'objet `cameraPhoto` , qui représente la photo du nouvel appareil capturé :
 
 ```typescript
 private async savePicture(cameraPhoto: CameraPhoto) { }
 ```
 
-Nous pouvons utiliser cette nouvelle fonction immédiatement dans ` addNewToGallery () `:
+We can use this new method immediately in `addNewToGallery()`:
 
 ```typescript
 public async addNewToGallery() {
