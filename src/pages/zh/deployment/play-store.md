@@ -2,7 +2,7 @@
 previousText: 'iOS App Store'
 previousUrl: 'docs/publishing/app-store'
 nextText: 'Progressive Web App (PWA)'
-nextUrl: '/docs/deploying/progressive-web-app'
+nextUrl: '/docs/deployment/progressive-web-app'
 ---
 
 # Android Play Store Deployment
