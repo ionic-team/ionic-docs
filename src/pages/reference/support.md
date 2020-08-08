@@ -51,10 +51,10 @@ The Ionic team has compiled a set of recommendations for using the Ionic Framewo
 
 | Framework     | Cordova                              | Capacitor                |
 |:-------------:|:------------------------------------:|:------------------------:|
-| V5 - Angular  | cordova-android 8.X, cordova-ios 5.X | Latest 1.X               |
-| V5 - React    | Not supported                        | Latest 1.x               |
-| V4 - Angular  | cordova-android 8.X, cordova-ios 5.X | Latest 1.X               |
-| V4 - React    | Not supported                        | Latest 1.x               |
+| V5 - Angular  | cordova-android 8.X, cordova-ios 5.X | Latest 2.X               |
+| V5 - React    | Not supported                        | Latest 2.x               |
+| V4 - Angular  | cordova-android 8.X, cordova-ios 5.X | Latest 2.X               |
+| V4 - React    | Not supported                        | Latest 2.x               |
 | V3            | cordova-android 8.X, cordova-ios 5.X | Not officially supported |
 
 * As iOS and Android (and related tools) are updated, you can expect more updates for Cordova and Capacitor, so it is recommended to stay on the latest version(s) of Cordova and Capacitor.
