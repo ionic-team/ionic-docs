@@ -11,13 +11,13 @@ nextUrl: '/docs/angular/your-first-app/4-loading-photos'
 
 ## 文件系统 API
 
-幸运的是，将它们保存到文件系统只需要几个步骤。 首先，在 `PhotoService` (`src/app/services/photo.service.ts`) 类中创建一个新函数 `savePicture()` 。 我们传入 `cameraPhoto` 对象，该对象代表新捕获的设备照片：
+幸运的是，将它们保存到文件系统只需要几个步骤。 Begin by creating a new class method, `savePicture()`, in the `PhotoService` class (`src/app/services/photo.service.ts`). 我们传入 `cameraPhoto` 对象，该对象代表新捕获的设备照片：
 
 ```typescript
 private async savePicture(cameraPhoto: CameraPhoto) { }
 ```
 
-我们可以在 `addNewToGallery()` 中立即使用这个新函数：
+We can use this new method immediately in `addNewToGallery()`:
 
 ```typescript
 public async addNewToGallery() {
