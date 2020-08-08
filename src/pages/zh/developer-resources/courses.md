@@ -45,6 +45,10 @@ by Michael Callaghan at Pluralsight
 
 Since its inception, the Ionic Framework has included a rudimentary command line interface. Though only a few years old, it has matured into a powerful tool that should be part of every developer’s toolbox. This course, Ionic CLI, will start at the top and explore the Ionic CLI. First, you'll see how to create projects and components. Next, you will learn how to build and serve apps. Finally, you'll discover how to share projects with others, and even integrate with other build tools. Whether you’re just starting to explore Ionic, or have been using it since its pre-beta days, there is something here for you. By the end of the course, you’ll have the confidence to use the Ionic CLI as part of your everyday Ionic development.
 
+### [Wordpress Rest API and Ionic 4 (Angular) App With Auth](https://www.udemy.com/course/wordpress-rest-api-and-ionic-3-crud/)
+
+by Baljeet Singh at Udemy
+
 ### [Building Mobile Apps with Ionic 2, Angular 2, and TypeScript](https://app.pluralsight.com/library/courses/ionic2-angular2-typescript-mobile-apps/table-of-contents)
 
 by Pluralsight
