@@ -28,7 +28,7 @@ import { Plugins, CameraResultType, Capacitor, FilesystemDirectory,
 const { Camera, Filesystem, Storage } = Plugins;
 ```
 
-Depois, defina uma nova função, `addFotoNaGaleria`, que conterá a lógica central para tirar uma foto com o dispositivo e salvá-la no sistema de arquivos. Vamos iniciar abrindo a câmera do dispositivo:
+Next, define a new class method, `addNewToGallery`, that will contain the core logic to take a device photo and save it to the filesystem. Vamos iniciar abrindo a câmera do dispositivo:
 
 ```typescript
 public async addFotoNaGaleria() {
