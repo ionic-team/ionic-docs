@@ -129,7 +129,7 @@ Detecting the presence of an on-screen keyboard is useful for adjusting the posi
 
 ```javascript
 window.addEventListener('ionKeyboardDidShow', ev => {
-  const { keyboardHeight } = ev.detail;
+  const { keyboardHeight } = ev;
   // Do something with the keyboard height such as translating an input above the keyboard.
 });
 
@@ -146,7 +146,7 @@ import { Platform } from '@ionic/angular';
 
 constructor(private platform: Platform) {
   this.platform.keyboardDidShow.subscribe(ev => {
-    const { keyboardHeight } = ev.detail;
+    const { keyboardHeight } = ev;
     // Do something with the keyboard height such as translating an input above the keyboard.
   });
 
