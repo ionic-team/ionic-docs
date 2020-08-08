@@ -11,13 +11,13 @@ We’re now able to take multiple photos and display them in a photo gallery on 
 
 ## Filesystem API
 
-Fortunately, saving them to the filesystem only takes a few steps. Begin by creating a new function, `savePicture()`, in the `PhotoService` class (`src/app/services/photo.service.ts`). We pass in the `cameraPhoto` object, which represents the newly captured device photo:
+Fortunately, saving them to the filesystem only takes a few steps. Begin by creating a new class method, `savePicture()`, in the `PhotoService` class (`src/app/services/photo.service.ts`). We pass in the `cameraPhoto` object, which represents the newly captured device photo:
 
 ```typescript
 private async savePicture(cameraPhoto: CameraPhoto) { }
 ```
 
-We can use this new function immediately in `addNewToGallery()`:
+We can use this new method immediately in `addNewToGallery()`:
 
 ```typescript
 public async addNewToGallery() {
