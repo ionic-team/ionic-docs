@@ -26,7 +26,7 @@ import { Plugins, CameraResultType, Capacitor, FilesystemDirectory,
 const { Camera, Filesystem, Storage } = Plugins;
 ```
 
-接下来，定义一个新函数，`addNewToGallery`，用它来做拍照并保存到文件系统的核心逻辑。 我们得从调用设备的相机开始：
+Next, define a new class method, `addNewToGallery`, that will contain the core logic to take a device photo and save it to the filesystem. 我们得从调用设备的相机开始：
 
 ```typescript
 public async addNewToGallery() {
