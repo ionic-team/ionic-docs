@@ -11,13 +11,13 @@ Agora podemos tirar várias fotos e exibí-las em uma galeria de fotos na segund
 
 ## Sistema de arquivos raiz
 
-Felizmente, salvá-los no sistema de arquivos só dá alguns passos. Comece criando uma nova função, `savePicture()`, na classe `PhotoService` (`src/app/services/photo.service.ts`). Passamos no objeto `cameraPhoto` , que representa a foto recém-capturada do dispositivo:
+Felizmente, salvá-los no sistema de arquivos só dá alguns passos. Begin by creating a new class method, `savePicture()`, in the `PhotoService` class (`src/app/services/photo.service.ts`). Passamos no objeto `cameraPhoto` , que representa a foto recém-capturada do dispositivo:
 
 ```typescript
 salvamento assíncrono privado (imagem de câmera: CameraPhoto) { }
 ```
 
-Podemos usar esta nova função imediatamente em `addNewToGallery()`:
+We can use this new method immediately in `addNewToGallery()`:
 
 ```typescript
 public async addNewToGallery() {
