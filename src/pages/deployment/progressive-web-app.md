@@ -1,8 +1,8 @@
 ---
 previousText: 'Android Play Store'
-previousUrl: '/docs/deploying/play-store'
+previousUrl: '/docs/deployment/play-store'
 nextText: 'Electron Desktop App'
-nextUrl: '/docs/deploying/desktop-app'
+nextUrl: '/docs/deployment/desktop-app'
 contributors:
   - MustaRohman
   - mhartington
