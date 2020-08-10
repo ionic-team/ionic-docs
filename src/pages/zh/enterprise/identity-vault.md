@@ -1,7 +1,7 @@
 ---
 title: Identity Vault
 template: enterprise-plugin
-version: 4.2.4
+version: 4.2.5
 minor: 4.2.X
 otherVersions:
   - 2.0.X
@@ -2141,6 +2141,12 @@ The possible values returned by [getAvailableHardware](#identityvault.getavailab
 * * *
 
 ## Change Log
+
+### \[4.2.5\] (2020-08-10)
+
+### Bug Fixes
+
+* **iOS:** ensure the privacy screen image view appears as expected [CT-138] 
 
 ### \[4.2.4\] (2020-07-22)
 
