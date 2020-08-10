@@ -40,8 +40,9 @@ export class DocsMenuEnterprise {
             'Auth Connect': '/docs/enterprise/auth-connect',
             '': {
                 'Auth0': '/docs/enterprise/auth-connect/auth0',
-                'Azure AD B2C': '/docs/enterprise/auth-connect/azure-ad-b2c',
                 'AWS Cognito': '/docs/enterprise/auth-connect/aws-cognito',
+                'Azure AD B2C': '/docs/enterprise/auth-connect/azure-ad-b2c',
+                'IdentityServer 4': '/docs/enterprise/auth-connect/identityserver4',
                 'Okta': '/docs/enterprise/auth-connect/okta'
             },
             'Offline Storage': '/docs/enterprise/offline-storage'
