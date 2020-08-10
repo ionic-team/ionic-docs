@@ -89,12 +89,13 @@
   },
   {
     "packageName": "@ionic-native/admob",
-    "displayName": "Admob",
+    "displayName": "AdMob",
     "description": "\nMost complete Admob plugin with support for [Tappx](http://www.tappx.com/?h=dec334d63287772de859bdb4e977fce6) ads.\nMonetize your apps and games with AdMob ads, using latest Google AdMob SDK. With this plugin you can show AdMob ads easily!\n\n**Supports:**\n- Banner ads (top and bottom)\n- Interstitial ads\n- Rewarded ads\n- [Tappx](http://www.tappx.com/?h=dec334d63287772de859bdb4e977fce6) ads\n",
-    "usage": "\n```typescript\nimport { Admob, AdmobOptions } from '@ionic-native/admob/ngx';\n\n\nconstructor(private admob: Admob) {\n    // Admob options config\n    const admobOptions: AdmobOptions = {\n      publisherId: 'XXX-XXXX-XXXX',\n      interstitialId: 'XXX-XXXX-XXXX',\n      rewardedAdId: 'XXX-XXXX-XXXX',\n      isTesting: true,\n      autoShowBanner: false,\n      autoShowInterstitial: false,\n      autoShowRewarded: false,\n      adSize: this.admob.AD_SIZE.BANNER\n    };\n\n    // Set admob options\n    this.admob.setOptions(admobOptions)\n      .then(() => console.log('Admob options have been successfully set'))\n      .catch(err => console.error('Error setting admob options:', err));\n}\n\n\n\n// (Optionally) Load banner ad, in order to have it ready to show\nthis.admob.createBannerView()\n  .then(() => console.log('Banner ad loaded'))\n  .catch(err => console.error('Error loading banner ad:', err));\n\n\n// Show banner ad (createBannerView must be called before and onAdLoaded() event raised)\nthis.admob.onAdLoaded().subscribe((ad) => {\n  if (ad.adType === this.admob.AD_TYPE.BANNER) {\n    this.admob.showBannerAd()\n      .then(() => console.log('Banner ad shown'))\n      .catch(err => console.error('Error showing banner ad:', err));\n  }\n});\n\n\n// Hide banner ad, but do not destroy it, so it can be shown later on\n// See destroyBannerView in order to hide and destroy banner ad\nthis.admob.showBannerAd(false)\n  .then(() => console.log('Banner ad hidden'))\n  .catch(err => console.error('Error hiding banner ad:', err));\n\n\n\n// Request an interstitial ad, in order to be shown later on\n// It is possible to autoshow it via options parameter, see docs\nthis.admob.requestInterstitialAd()\n  .then(() => console.log('Interstitial ad loaded'))\n  .catch(err => console.error('Error loading interstitial ad:', err));\n\n\n// Show an interstitial ad (requestInterstitialAd must be called before)\nthis.admob.onAdLoaded().subscribe((ad) => {\n  if (ad.adType === this.admob.AD_TYPE.INTERSTITIAL) {\n    this.admob.showInterstitialAd()\n      .then(() => console.log('Interstitial ad shown'))\n      .catch(err => console.error('Error showing interstitial ad:', err));\n  }\n});\n\n\n// Request a rewarded ad\nthis.admob.requestRewardedAd()\n  .then(() => console.log('Rewarded ad loaded'))\n  .catch(err => console.error('Error loading rewarded ad:', err));\n\n\n// Show rewarded ad (requestRewardedAd must be called before)\nthis.admob.onAdLoaded().subscribe((ad) => {\n  if (ad.adType === this.admob.AD_TYPE.REWARDED) {\n    this.admob.showRewardedAd()\n      .then(() => console.log('Rewarded ad shown'))\n      .catch(err => console.error('Error showing rewarded ad:', err));\n  }\n});\n\n\n// Hide and destroy banner or interstitial ad\nthis.admob.destroyBannerView()\n  .then(() => console.log('Banner or interstitial ad destroyed'))\n  .catch(err => console.error('Error destroying banner or interstitial ad:', err));\n\n\n\n// On Ad loaded event\nthis.admob.onAdLoaded().subscribe((ad) => {\n  if (ad.adType === this.admob.AD_TYPE.BANNER) {\n    console.log('Banner ad is loaded');\n    this.admob.showBannerAd();\n  } else if (ad.adType === this.admob.AD_TYPE.INTERSTITIAL) {\n    console.log('Interstitial ad is loaded');\n    this.admob.showInterstitialAd();\n  } else if (ad.adType === this.admob.AD_TYPE.REWARDED) {\n    console.log('Rewarded ad is loaded');\n    this.admob.showRewardedAd();\n  }\n});\n\n\n\n// On ad failed to load\nthis.admob.onAdFailedToLoad().subscribe(err => console.log('Error loading ad:', err));\n\n\n\n// On interstitial ad opened\nthis.admob.onAdOpened().subscribe(() => console.log('Interstitial ad opened'));\n\n\n\n// On interstitial ad closed\nthis.admob.onAdClosed().subscribe(() => console.log('Interstitial ad closed'));\n\n\n\n// On ad clicked and left application\nthis.admob.onAdLeftApplication().subscribe(() => console.log('Ad lefted application'));\n\n\n\n// On user ad rewarded\nthis.admob.onRewardedAd().subscribe(() => console.log('The user has been rewarded'));\n\n\n\n// On rewarded ad video started\nthis.admob.onRewardedAdVideoStarted().subscribe(() => console.log('Rewarded ad vieo started'));\n\n\n\n// On rewarded ad video completed\nthis.admob.onRewardedAdVideoCompleted().subscribe(() => console.log('Rewarded ad video completed'));\n\n```\n",
+    "usage": "\n**Note:** No ads will be served on apps with package name `io.ionic.starter`. This is the default package name for new `ionic` apps. Make sure to rename the package name so ads can be displayed.\n```typescript\nimport { Admob, AdmobOptions } from '@ionic-native/admob';\n\n\nconstructor(private admob: Admob) {\n    // Admob options config\n    const admobOptions: AdmobOptions = {\n      bannerAdId: 'XXX-XXXX-XXXX',\n      interstitialAdId: 'XXX-XXXX-XXXX',\n      rewardedAdId: 'XXX-XXXX-XXXX',\n      isTesting: true,\n      autoShowBanner: false,\n      autoShowInterstitial: false,\n      autoShowRewarded: false,\n      adSize: this.admob.AD_SIZE.BANNER\n    };\n\n    // Set admob options\n    this.admob.setOptions(admobOptions)\n      .then(() => console.log('Admob options have been successfully set'))\n      .catch(err => console.error('Error setting admob options:', err));\n}\n\n\n\n// (Optionally) Load banner ad, in order to have it ready to show\nthis.admob.createBannerView()\n  .then(() => console.log('Banner ad loaded'))\n  .catch(err => console.error('Error loading banner ad:', err));\n\n\n// Show banner ad (createBannerView must be called before and onAdLoaded() event raised)\nthis.admob.onAdLoaded().subscribe((ad) => {\n  if (ad.adType === this.admob.AD_TYPE.BANNER) {\n    this.admob.showBannerAd()\n      .then(() => console.log('Banner ad shown'))\n      .catch(err => console.error('Error showing banner ad:', err));\n  }\n});\n\n\n// Hide banner ad, but do not destroy it, so it can be shown later on\n// See destroyBannerView in order to hide and destroy banner ad\nthis.admob.showBannerAd(false)\n  .then(() => console.log('Banner ad hidden'))\n  .catch(err => console.error('Error hiding banner ad:', err));\n\n\n\n// Request an interstitial ad, in order to be shown later on\n// It is possible to autoshow it via options parameter, see docs\nthis.admob.requestInterstitialAd()\n  .then(() => console.log('Interstitial ad loaded'))\n  .catch(err => console.error('Error loading interstitial ad:', err));\n\n\n// Show an interstitial ad (requestInterstitialAd must be called before)\nthis.admob.onAdLoaded().subscribe((ad) => {\n  if (ad.adType === this.admob.AD_TYPE.INTERSTITIAL) {\n    this.admob.showInterstitialAd()\n      .then(() => console.log('Interstitial ad shown'))\n      .catch(err => console.error('Error showing interstitial ad:', err));\n  }\n});\n\n\n// Request a rewarded ad\nthis.admob.requestRewardedAd()\n  .then(() => console.log('Rewarded ad loaded'))\n  .catch(err => console.error('Error loading rewarded ad:', err));\n\n\n// Show rewarded ad (requestRewardedAd must be called before)\nthis.admob.onAdLoaded().subscribe((ad) => {\n  if (ad.adType === this.admob.AD_TYPE.REWARDED) {\n    this.admob.showRewardedAd()\n      .then(() => console.log('Rewarded ad shown'))\n      .catch(err => console.error('Error showing rewarded ad:', err));\n  }\n});\n\n\n// Hide and destroy banner or interstitial ad\nthis.admob.destroyBannerView()\n  .then(() => console.log('Banner or interstitial ad destroyed'))\n  .catch(err => console.error('Error destroying banner or interstitial ad:', err));\n\n\n\n// On Ad loaded event\nthis.admob.onAdLoaded().subscribe((ad) => {\n  if (ad.adType === this.admob.AD_TYPE.BANNER) {\n    console.log('Banner ad is loaded');\n    this.admob.showBannerAd();\n  } else if (ad.adType === this.admob.AD_TYPE.INTERSTITIAL) {\n    console.log('Interstitial ad is loaded');\n    this.admob.showInterstitialAd();\n  } else if (ad.adType === this.admob.AD_TYPE.REWARDED) {\n    console.log('Rewarded ad is loaded');\n    this.admob.showRewardedAd();\n  }\n});\n\n\n\n// On ad failed to load\nthis.admob.onAdFailedToLoad().subscribe(err => console.log('Error loading ad:', err));\n\n\n\n// On interstitial ad opened\nthis.admob.onAdOpened().subscribe(() => console.log('Interstitial ad opened'));\n\n\n\n// On interstitial ad closed\nthis.admob.onAdClosed().subscribe(() => console.log('Interstitial ad closed'));\n\n\n\n// On ad clicked and left application\nthis.admob.onAdLeftApplication().subscribe(() => console.log('Ad lefted application'));\n\n\n\n// On user ad rewarded\nthis.admob.onRewardedAd().subscribe(() => console.log('The user has been rewarded'));\n\n\n\n// On rewarded ad video started\nthis.admob.onRewardedAdVideoStarted().subscribe(() => console.log('Rewarded ad vieo started'));\n\n\n\n// On rewarded ad video completed\nthis.admob.onRewardedAdVideoCompleted().subscribe(() => console.log('Rewarded ad video completed'));\n\n```\n",
     "platforms": [
       "Android",
-      "iOS"
+      "iOS",
+      "Browser"
     ],
     "repo": "https://github.com/appfeel/admob-google-cordova",
     "cordovaPlugin": {
@@ -763,6 +764,24 @@
     "repo": "https://github.com/google/cordova-plugin-browsertab",
     "cordovaPlugin": {
       "name": "cordova-plugin-browsertab"
+    }
+  },
+  {
+    "packageName": "@ionic-native/build-info",
+    "displayName": "Build Info",
+    "description": "\nThis plugin provides build information.\n",
+    "usage": "\n```\nimport { BuildInfo } from '@ionic-native/build-info/ngx';\n\nthis.platform.ready().then(() => {\n    console.log('BuildInfo.baseUrl        =' + BuildInfo.baseUrl)\n    console.log('BuildInfo.packageName    =' + BuildInfo.packageName)\n    console.log('BuildInfo.basePackageName=' + BuildInfo.basePackageName)\n    console.log('BuildInfo.displayName    =' + BuildInfo.displayName)\n    console.log('BuildInfo.name           =' + BuildInfo.name)\n    console.log('BuildInfo.version        =' + BuildInfo.version)\n    console.log('BuildInfo.versionCode    =' + BuildInfo.versionCode)\n    console.log('BuildInfo.debug          =' + BuildInfo.debug)\n    console.log('BuildInfo.buildType      =' + BuildInfo.buildType)\n    console.log('BuildInfo.flavor         =' + BuildInfo.flavor)\n    console.log('BuildInfo.buildDate      =' + BuildInfo.buildDate)\n    console.log('BuildInfo.installDate    =' + BuildInfo.installDate)\n})\n```\n",
+    "platforms": [
+      "Android",
+      "iOS",
+      "Windows",
+      "macOS",
+      "browser",
+      "Electron"
+    ],
+    "repo": "https://github.com/lynrin/cordova-plugin-buildinfo",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-buildinfo"
     }
   },
   {
@@ -1570,7 +1589,7 @@
     "packageName": "@ionic-native/firebase-crashlytics",
     "displayName": "Firebase Crashlytics",
     "description": "\nA Google Firebase Crashlytics plugin to enable capture of crash reports.\n",
-    "usage": "\n```typescript\nimport { FirebaseCrashlytics } from '@ionic-native/firebase-crashlytics/ngx';\n\n\nconstructor(private firebaseCrashlytics: FirebaseCrashlytics) { }\n\n...\n\n\nconst crashlytics = this.firebaseCrashlytics.initialize();\ncrashlytics.logException('my caught exception');\n\n```\n",
+    "usage": "\n```typescript\nimport { FirebaseCrashlytics } from '@ionic-native/firebase-crashlytics/ngx';\n\n\nconstructor(private firebaseCrashlytics: FirebaseCrashlytics) { }\n\n...\n\n\nconst crashlytics = this.firebaseCrashlytics.initialise();\ncrashlytics.logException('my caught exception');\n\n```\n",
     "platforms": [
       "Android",
       "iOS"
@@ -1619,7 +1638,7 @@
     "packageName": "@ionic-native/firebase-vision",
     "displayName": "Firebase Vision",
     "description": "\nCordova plugin for Firebase MLKit Vision\n",
-    "usage": "\n```typescript\nimport { FirebaseVision } from '@ionic-native/firebase-vision/ngx';\n\n\nconstructor(private firebaseVision: FirebaseVision) { }\n\n...\n\n\nthis.firebaseVision.onDeviceTextRecognizer(FILE_URI)\n  .then((res: string) => console.log(res))\n  .catch((error: string) => console.error(error));\n\n```\n",
+    "usage": "\n```typescript\nimport { FirebaseVision } from '@ionic-native/firebase-vision/ngx';\n\n\nconstructor(private firebaseVision: FirebaseVision) { }\n\n...\n\n\nthis.firebaseVision.onDeviceTextRecognizer(FILE_URI)\n  .then((res: string) => console.log(res))\n  .catch((error: string) => console.error(error));\n\nthis.firebaseVision.barcodeDetector(FILE_URI)\n  .then((res: Barcode[]) => console.log(res))\n  .catch((error: string) => console.error(error));\n\n```\n",
     "platforms": [
       "Android",
       "iOS"
@@ -2233,6 +2252,19 @@
     "capacitorIncompatible": true
   },
   {
+    "packageName": "@ionic-native/ios-aswebauthenticationsession-api",
+    "displayName": "ios-aswebauthenticationsession-api",
+    "description": "\nPlugin for iOS 12 ASWebAuthenticationSession API\n",
+    "usage": "\n```typescript\nimport { IosASWebauthenticationSession } from '@ionic-native/ios-aswebauthenticationsession-api/ngx';\n\n\nconstructor(private IosASWebauthenticationSession: ios-aswebauthenticationsession-api) { }\n\n...\n\n\nthis.IosASWebauthenticationSession.start(callbackUrl, authorizeURL)\n  .then((redirectUrl: string) => console.log(redirectUrl))\n  .catch((error: any) => console.error(error));\n\n```\n",
+    "platforms": [
+      "iOS"
+    ],
+    "repo": "https://github.com/jwelker110/cordova-plugin-ios-aswebauthenticationsession-api",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-ios-aswebauthenticationsession-api"
+    }
+  },
+  {
     "packageName": "@ionic-native/is-debug",
     "displayName": "Is Debug",
     "description": "\nDetect if the app is running in debug mode or not.\nDebug mode is when the app is built and installed locally via xcode / eclipse / the cordova cli etc, compared to release mode when the app was downloaded from the app / play store via an end user.\n",
@@ -2280,15 +2312,15 @@
   {
     "packageName": "@ionic-native/jumio",
     "displayName": "Jumio",
-    "description": "\n[Jumio mobile-cordova](https://github.com/Jumio/mobile-cordova) Plugin for Ionic\n\nRead this for [Platform Customization](https://github.com/Jumio/mobile-cordova#customization) is possible\n\nTo get Jumio Cordova working on Android check out this [FAQ](https://github.com/Jumio/mobile-cordova#faq)\n",
+    "description": "Check out [example with Angular 9.1 & Capacitor 2.1](https://github.com/zendigital/jumio-ionic-demo)\n\n[Platform Customization](https://github.com/Jumio/mobile-cordova#customization) is possible\n\nOriginal source: [Jumio mobile-cordova](https://github.com/Jumio/mobile-cordova) Plugin for Apache Cordova",
     "usage": "\n```typescript\nimport {\n  Jumio,\n  JumioNetverifyConfig,\n  JumioDocVerificationConfig,\n  NetverifyDocumentData\n  DocVerificationDocumentData\n} from '@ionic-native/jumio/ngx';\n\n\nconstructor(private jumio: Jumio) { }\n\n...\n\nthis.jumio.initNetverify(\"API_TOKEN\", \"API_SECRET\", \"US\", {\n  requireVerification: false,\n  userReference: \"USER_REFERENCE\",\n  preselectedCountry: \"USA\",\n  cameraPosition: \"BACK\",\n  documentTypes: [\"DRIVER_LICENSE\", \"PASSPORT\", \"IDENTITY_CARD\", \"VISA\"],\n  enableWatchlistScreening: \"ENABLED\",\n  watchlistSearchProfile: \"YOUR_PROFILE_NAME\"\n});\n\nlet documentData: NetverifyDocumentData = await this.jumio.startNetverify();\n\n```\n",
     "platforms": [
       "Android",
       "iOS"
     ],
-    "repo": "https://github.com/Jumio/mobile-cordova",
+    "repo": "https://github.com/danielzen/jumio-cordova",
     "cordovaPlugin": {
-      "name": "cordova-plugin-jumio-mobilesdk"
+      "name": "jumio-cordova"
     }
   },
   {
@@ -2790,7 +2822,7 @@
   {
     "packageName": "@ionic-native/ocr",
     "displayName": "OCR",
-    "description": "\nThis plugin attempts to identify and extract text from an image.\n",
+    "description": "\nThis plugin attempts to identify and extract text from an image.\nPlease note: This plugin depends on the GoogleMobileVision pod which is referencing UIWebview, that has been deprecated by Apple.\nDon't use this plugin in an app intended for App Store as you will get a review rejection from Apple: `Deprecated API Usage — Apple will stop accepting submissions of apps that use UIWebView APIs`\nFor more info, please see the following Github issue [Google Mobile Vision relying on deprecated UIWebview](https://github.com/NeutrinosPlatform/cordova-plugin-mobile-ocr/issues/27).",
     "usage": "\n```typescript\nimport { OCR, OCRSourceType } from '@ionic-native/ocr/ngx';\n\n\nconstructor(private ocr: OCR) { }\n\n...\n\nthis.ocr.recText(OCRSourceType.NORMFILEURL, \"file://path/to/image.png\")\n  .then((res: OCRResult) => console.log(JSON.stringify(res)))\n  .catch((error: any) => console.error(error));\n\n```\n",
     "platforms": [
       "Android",
@@ -3480,7 +3512,7 @@
     "packageName": "@ionic-native/spotify-auth",
     "displayName": "Spotify Auth",
     "description": "\nCordova plugin for authenticating with Spotify\n> https://github.com/Festify/cordova-spotify-oauth\n",
-    "usage": "\n```typescript\nimport { SpotifyAuth } from '@ionic-native/spotify-auth';\n\n// [...]\n\nconstructor(private spotifyAuth: SpotifyAuth) { }\n\n// [...]\n\nconst config = {\n  clientId: \"<SPOTIFY CLIENT ID>\",\n  redirectUrl: \"<REDIRECT URL, MUST MATCH WITH AUTH ENDPOINT AND SPOTIFY DEV CONSOLE>\",\n  scopes: [\"streaming\"], // see Spotify Dev console for all scopes\n  tokenExchangeUrl: \"<URL OF TOKEN EXCHANGE HTTP ENDPOINT>\",\n  tokenRefreshUrl: \"<URL OF TOKEN REFRESH HTTP ENDPOINT>\",\n};\n\n...\n\nthis.spotifyAuth.authorize(config)\n  .then(({ accessToken, expiresAt }) => {\n    console.log(`Got an access token, its ${accessToken}!`);\n    console.log(`Its going to expire in ${expiresAt - Date.now()}ms.`);\n  });\n\n// [...]\n\nthis.spotifyAuth.forget().then(() => console.log(\"We're logged out!\"));\n\n// [...]\n```\n",
+    "usage": "\n```typescript\nimport { SpotifyAuth } from '@ionic-native/spotify-auth/ngx';\n\n// [...]\n\nconstructor(private spotifyAuth: SpotifyAuth) { }\n\n// [...]\n\nconst config = {\n  clientId: \"<SPOTIFY CLIENT ID>\",\n  redirectUrl: \"<REDIRECT URL, MUST MATCH WITH AUTH ENDPOINT AND SPOTIFY DEV CONSOLE>\",\n  scopes: [\"streaming\"], // see Spotify Dev console for all scopes\n  tokenExchangeUrl: \"<URL OF TOKEN EXCHANGE HTTP ENDPOINT>\",\n  tokenRefreshUrl: \"<URL OF TOKEN REFRESH HTTP ENDPOINT>\",\n};\n\n...\n\nthis.spotifyAuth.authorize(config)\n  .then(({ accessToken, expiresAt }) => {\n    console.log(`Got an access token, its ${accessToken}!`);\n    console.log(`Its going to expire in ${expiresAt - Date.now()}ms.`);\n  });\n\n// [...]\n\nthis.spotifyAuth.forget();\n\n// [...]\n```\n",
     "platforms": [
       "Android",
       "iOS"
@@ -3918,7 +3950,7 @@
     "packageName": "@ionic-native/vibes",
     "displayName": "Vibes",
     "description": "\nThis plugin enables integration with the Vibes Push SDK to your Cordova project with Android and iOS supported.\n",
-    "usage": "\n```typescript\nimport { Vibes } from '@ionic-native/vibes/ngx';\n\n\nconstructor(private vibes: Vibes) { }\n\n...\n\n\nthis.vibes.registerDevice()\n  .then((res: any) => console.log(`device registration success: ${res}`)) // retrieve and save the device_id from `res` JSON object\n  .catch((error: any) => console.error('Error registering device', error));\n\nthis.vibes.registerPush()\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error('Error registering push', error));\n\nthis.vibes.getVibesDeviceInfo()\n  .then((res: any) => console.log(res)) // retrieve the `device_id` and `push_token` from the JSON object\n  .catch((error: any) => console.error('Error retrieving deviceinfo push', error));\n\n```\n",
+    "usage": "\n```typescript\nimport { Vibes } from '@ionic-native/vibes/ngx';\n\n\nconstructor(private vibes: Vibes) { }\n\n...\n\n\nthis.vibes.registerDevice()\n  .then((res: any) => console.log(`device registration success: ${res}`)) // retrieve and save the device_id from `res` JSON object\n  .catch((error: any) => console.error('Error registering device', error));\n\nthis.vibes.registerPush()\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error('Error registering push', error));\n\nthis.vibes.getVibesDeviceInfo()\n  .then((res: any) => console.log(res)) // retrieve the `device_id` and `push_token` from the JSON object\n  .catch((error: any) => console.error('Error retrieving deviceinfo', error));\n\nthis.vibes.fetchInboxMessages()\n  .then((res: any) => console.log(res)) // fetches inbox messages for this person.\n  .catch((error: any) => console.error('Error fetching inbox messages for this person', error));\n```\n",
     "platforms": [
       "Android",
       "iOS"
