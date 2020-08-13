@@ -164,7 +164,11 @@ const renderUsage = (usage: any) => {
       <h2 id="usage">
         <a href="#usage">Usage</a>
       </h2>
-      <p><h3>Using React?</h3> <stencil-route-link url={`/docs/native/community#react`}>See here.</stencil-route-link></p>
+      <p>
+        <h3>React</h3>
+        <stencil-route-link url={`/docs/native/community#react`}>See here.</stencil-route-link>
+      </p>
+      <h3>Angular</h3>
       {toHypertext(h, usage)}
     </section>
   );
