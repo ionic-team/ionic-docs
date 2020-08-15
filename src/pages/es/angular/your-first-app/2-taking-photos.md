@@ -41,7 +41,7 @@ public async addNewToGallery() {
 
 Observe la magia aquí: no hay un código específico para cada plataforma (web, iOS o Android)! El plugin de Capacitor Camera lo obtiene para nosotros, dejandolo a solo una llamada al método - `Camera.getPhoto()` - que abrirá la cámara del dispositivo y nos permitirá tomar fotos.
 
-Next, open up `tab2.page.ts` and import the PhotoService class and add a method that calls the `addNewToGallery` method on the imported servce:
+A continuación, abre `tab2.page.ts`, importa la clase PhotoService y añade el método que se llama `addNewToGallery` de cal clase importada:
 
 ```typescript
 import { PhotoService } from '../services/photo.service';
@@ -53,7 +53,7 @@ addPhotoToGallery() {
 }
 ```
 
-Then, open `tab2.page.html` and call the `addPhotoToGallery()` function when the FAB is tapped/clicked:
+Luego, abra `tab2.page.html` y llame a la función `addNewToGallery()` cuando se toque o de clic en FAB:
 
 ```html
 <ion-content>
@@ -123,7 +123,7 @@ export class Tab2Page {
   }
 ```
 
-With the photo(s) stored into the main array, move over to `tab2.page.html` so we can display the image on the screen. Add a [Grid component](https://ionicframework.com/docs/api/grid) so that each photo will display nicely as photos are added to the gallery, and loop through each photo in the Photos array, adding an Image component (`<ion-img>`) for each. Point the `src` (source) at the photo’s path:
+Con la foto(s) almacenadas en el array principal, muévete a `tab2.page.html` para que podamos mostrar la imagen en la pantalla. Add a [Grid component](https://ionicframework.com/docs/api/grid) so that each photo will display nicely as photos are added to the gallery, and loop through each photo in the Photos array, adding an Image component (`<ion-img>`) for each. Point the `src` (source) at the photo’s path:
 
 ```html
 <ion-content>
