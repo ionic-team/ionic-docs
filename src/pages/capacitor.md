@@ -1,5 +1,5 @@
 ---
-title: Capacitor
+title: Native APIs
 tableOfContents: false
 ---
 
@@ -11,10 +11,10 @@ tableOfContents: false
   </docs-card>
 
   <docs-card header="Capacitor Community Plugins" href="https://github.com/capacitor-community" img="/docs/assets/img/native/community-edition.png">
-    <p>A collection of free, open-source Capacitor plugins, tools, and other projects built and maintained by the community, with TypeScript wrappers and a consistent API and naming convention for easier development.</p>
+    <p>A collection of free, open-source Capacitor plugins, tools, and other projects built and maintained by the community.</p>
   </docs-card>
 
   <docs-card header="Capacitor Enterprise " href="/docs/enterprise" img="/docs/assets/img/native/enterprise-edition.png">
-    <p><a href="https://ionicframework.com/native">Capacitor Enterprise is a subscription service that provides premium, supported Capacitor and Cordova plugins, third-party integrations, and pre-built solutions for teams building enterprise-grade apps with Ionic. </p>
+    <p><a href="https://ionicframework.com/native">Capacitor Enterprise </a> is a subscription service that provides premium, supported Capacitor and Cordova plugins, third-party integrations, and pre-built solutions for teams building enterprise-grade apps with Ionic. </p>
   </docs-card>
 </docs-cards>

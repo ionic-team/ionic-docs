@@ -1,12 +1,12 @@
 ---
-title: Native APIs
+title: Legacy Cordova APIs
 tableOfContents: false
 ---
 
-<p class='intro'>Build native-powered app experiences with a collection of open source and premium plugins and integrations that make it easy to add native device functionality to any Ionic app with Capacitor or Cordova.</p>
+<p class='intro'>A directory of Cordova plugins maintained by the Ionic and Cordova communities.</p>
 
 <docs-cards class="static-width">
-  <docs-card header="Ionic Native Community Plugins" href="/docs/native/community" img="/docs/assets/img/native/community-edition.png">
+  <docs-card header="Cordova Community Plugins" href="/docs/native/community" img="/docs/assets/img/native/community-edition.png">
     <p>A collection of free Cordova and Capacitor plugins, built and maintained by the community, with TypeScript wrappers and a consistent API and naming convention for easier development.</p>
   </docs-card>
 

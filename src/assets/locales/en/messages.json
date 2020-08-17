@@ -199,7 +199,9 @@
   "menu-native-faq": "FAQ",
 
   "menu-capacitor-getting-started": "Home",
-  
+  "menu-capacitor-core": "Core Plugins",
+  "menu-capacitor-community": "Community Plugins",
+  "menu-capacitor-tooling": "Tooling",
 
   "menu-appflow": "Welcome to Appflow",
 

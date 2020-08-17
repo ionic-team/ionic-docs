@@ -86,6 +86,9 @@ export class DocsHeader {
               <stencil-route url="/docs/studio">
                 {this.renderMenu('Studio')}
               </stencil-route>
+              <stencil-route url="/docs/capacitor">
+                {this.renderMenu('Native')}
+              </stencil-route>
               <stencil-route url="/docs/native">
                 {this.renderMenu('Native')}
               </stencil-route>

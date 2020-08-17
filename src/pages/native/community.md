@@ -1,9 +1,9 @@
 ---
-title: Ionic Native Community
+title: Cordova Community Plugins
 tableOfContents: false
 ---
 
-Ionic Native Community is a collection of TypeScript wrappers for open source Cordova and Capacitor plugins that make it easy to add native functionality to any Ionic app.
+Cordova Community Plugins are a collection of TypeScript wrappers for open source Cordova and Capacitor plugins that make it easy to add native functionality to any Ionic app.
 
 These Community Plugins are submitted and maintained by the Ionic community. While community members are generally quick to find and fix issues, certain plugins may not function properly. 
 
@@ -13,7 +13,7 @@ For teams that require dedicated native plugin support & SLAs, ongoing maintenan
 
 ## Capacitor Support
 
-In addition to Cordova, Ionic Native also works with [Capacitor](https://capacitor.ionicframework.com), Ionic's official native runtime. Basic usage below. For complete details, [see the Capacitor documentation](https://capacitor.ionicframework.com/docs/cordova/using-cordova-plugins).
+These community plugins also work with [Capacitor](https://capacitor.ionicframework.com), Ionic's official native runtime. Basic usage below. For complete details, [see the Capacitor documentation](https://capacitor.ionicframework.com/docs/cordova/using-cordova-plugins).
 
 ## Usage
 All plugins have two components - the native code (Cordova) and the TypeScript code (Ionic Native).
