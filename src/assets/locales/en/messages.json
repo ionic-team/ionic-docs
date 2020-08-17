@@ -13,6 +13,7 @@
 
   "header-native-community": "Community",
   "header-native-enterprise": "Enterprise",
+  "header-native-legacy": "Legacy",
 
   "menu-intro": "Getting Started",
   "menu-intro-overview": "Overview",
@@ -196,6 +197,9 @@
   "menu-native-quickstart": "Quickstart",
   "menu-native-setup": "Setup",
   "menu-native-faq": "FAQ",
+
+  "menu-capacitor-getting-started": "Home",
+  
 
   "menu-appflow": "Welcome to Appflow",
 

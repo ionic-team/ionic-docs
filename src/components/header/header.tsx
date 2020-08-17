@@ -40,7 +40,7 @@ export class DocsHeader {
         <section>
           <stencil-route-link url="/docs/">Framework {section === 'Framework' ? <Checkmark/> : null}</stencil-route-link>
           <stencil-route-link url="/docs/appflow">Appflow {section === 'Appflow' ? <Checkmark/> : null}</stencil-route-link>
-          <stencil-route-link url="/docs/native">Native {section === 'Native' ? <Checkmark/> : null}</stencil-route-link>
+          <stencil-route-link url="/docs/capacitor">Native {section === 'Native' ? <Checkmark/> : null}</stencil-route-link>
           <stencil-route-link url="/docs/cli">CLI {section === 'CLI' ? <Checkmark/> : null}</stencil-route-link>
         </section>
         <section>
@@ -60,8 +60,9 @@ export class DocsHeader {
         <stencil-route-link url="/docs/native" urlMatch={['/docs/native']}>{l10n.getString('header-native')}</stencil-route-link>
       </div> : null,
       ['Native'].indexOf(section) > -1 ? <div class="SectionNav-tabs">
-      <stencil-route-link url="/docs/native" urlMatch={['/docs/native']}>{l10n.getString('header-native-community')}</stencil-route-link>
+      <stencil-route-link url="/docs/capacitor" urlMatch={['/docs/capacitor']}>{l10n.getString('header-native-community')}</stencil-route-link>
       <stencil-route-link url="/docs/enterprise" urlMatch={['/docs/enterprise']}>{l10n.getString('header-native-enterprise')}</stencil-route-link>
+      <stencil-route-link url="/docs/native" urlMatch={['/docs/native']}>{l10n.getString('header-native-legacy')}</stencil-route-link>
     </div> : null,
     ];
   }
