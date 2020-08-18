@@ -31,7 +31,7 @@
     "helmet": "^3.23.1",
     "moment": "^2.27.0",
     "prismic-dom": "^2.2.3",
-    "prismic-javascript": "^2.7.1",
+    "prismic-javascript": "^3.0.1",
     "simple-git": "^2.12.0",
     "throng": "^4.0.0"
   },
