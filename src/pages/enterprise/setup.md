@@ -12,7 +12,7 @@ Click `Assign to App`, then `New App`. Enter a name, then click `Create App`.
 
 Hover over a Native Plugin Key, then click to copy it to your clipboard:
 
-![test](/docs/assets/img/native/native-setup-keys.png)
+![native-setup-keys](/docs/assets/img/native/native-setup-keys.png)
 
 Next, open up a terminal on your computer.
 
@@ -24,9 +24,13 @@ Ensure that you have the latest Ionic CLI installed:
 <command-prompt>npm install -g @ionic/cli</command-prompt>
 </command-line>
 
-Next, install the Ionic Enterprise Cordova CLI (even if you're using Capacitor). Ionic Native plugins use scoped
-packages, which the regular Cordova CLI does not support. All Cordova 
-functionality will still work as expected.
+### Using Cordova?
+
+If using Cordova CLI version 9.0 and below, install the Ionic Enterprise Cordova CLI. Ionic Native plugins use scoped
+packages, which previous versions of the Cordova CLI do not support. All Cordova 
+functionality will still work as expected. 
+
+> Skip this step if using Cordova CLI [version 10.0](https://cordova.apache.org/announcements/2020/08/04/cordova-cli-release-10.0.0.html) and above.
 
 <command-line>
 <command-prompt>npm uninstall -g cordova</command-prompt>
