@@ -5,11 +5,11 @@ tableOfContents: false
 
 <p class='intro'><a href="https://ionicframework.com/native" target="_blank">Ionic Native企业版(EE)</a>是一种订阅制的专业服务，支持Capacitor、Cordova插件，及第三方集成，以及为软对构建企业级应用程序的 Ionic 预构建解决方案。</p>
 
-<docs-cards class="static-width"> <docs-card size="lg" header="Native solutions" href="/docs/enterprise/solutions" iconset="/docs/assets/icons/face-id.png,/docs/assets/icons/touch-id.png,/docs/assets/icons/auth0.png,/docs/assets/icons/active-directory.png"> 
+<docs-cards class="static-width"> <docs-card size="lg" header="Native Solutions" href="/docs/enterprise/solutions" iconset="/docs/assets/icons/face-id.png,/docs/assets/icons/touch-id.png,/docs/assets/icons/auth0.png,/docs/assets/icons/active-directory.png"> 
 
-对于单点登录，生物识别，安全离线存储等具备完善的原生解决方案。</docs-card> <docs-card size="lg" header="Core Device Features" href="/docs/enterprise/android-permissions" iconset="/docs/assets/icons/camera.png,/docs/assets/icons/geolocation.png,/docs/assets/icons/file.png,/docs/assets/icons/keyboard.png"> 
+对于单点登录，生物识别，安全离线存储等具备完善的原生解决方案。</docs-card> <docs-card size="lg" header="Premier Plugins" href="/docs/enterprise/android-permissions" iconset="/docs/assets/icons/camera.png,/docs/assets/icons/geolocation.png,/docs/assets/icons/file.png,/docs/assets/icons/keyboard.png"> 
 
-核心设备功能如相机，定位，键盘，联系人，日历等等。</docs-card> <docs-card size="lg" header="3rd Party Integrations" href="/docs/enterprise/apple-payment-pass" iconset="/docs/assets/icons/aws-amplify.png,/docs/assets/icons/firebase.png,/docs/assets/icons/couchbase.png,/docs/assets/icons/apple-pay.png"> 
+Premier plugin features like camera, geolocation, keyboard access, contacts, calendar, and more.</docs-card> <docs-card size="lg" header="3rd Party Integrations" href="/docs/enterprise/apple-payment-pass" iconset="/docs/assets/icons/aws-amplify.png,/docs/assets/icons/firebase.png,/docs/assets/icons/couchbase.png,/docs/assets/icons/apple-pay.png"> 
 
 第三方服务和云提供集成，比如Firebase，AWA和Apple支付。</docs-card> </docs-cards>
 
@@ -29,7 +29,7 @@ tableOfContents: false
 
 在移动设备或桌面设备上本地存储和访问数据，即使用户处于离线状态。</docs-item> </docs-item-list>
 
-## 热门核心设备功能
+## Popular Premier Plugins
 
 <docs-item-list class="static-width"> <docs-item header="Camera" href="/docs/enterprise/camera" icon="/docs/assets/icons/camera.png"> 
 
@@ -54,31 +54,3 @@ tableOfContents: false
 <docs-item header="File" href="/docs/enterprise/filesystem" icon="/docs/assets/icons/file.png"> 
 
 常见的文件操作，如读/写和目录访问。</docs-item> </docs-item-list>
-
-## 热门第三方集成
-
-<docs-item-list class="static-width">
-
-<docs-item header="Firebase" href="/docs/native/firebase" icon="/docs/assets/icons/firebase.png"> 
-
-推送通知、分析、事件追踪、崩溃报告等。</docs-item>
-
-<docs-item header="AWS Amplify" href="/docs/enterprise/aws-amplify" icon="/docs/assets/icons/aws-amplify.png"> 
-
-认证、分析、推送通知、AI 和 ML 云服务、存储等。</docs-item>
-
-<docs-item header="Couchbase" href="/docs/enterprise/couchbase-lite" icon="/docs/assets/icons/couchbase.png"> 
-
-一个全功能的 内置NoSQL 数据库，在移动设备上本地运行。</docs-item>
-
-<docs-item header="Apple Payment Pass" href="/docs/enterprise/apple-payment-pass" icon="/docs/assets/icons/apple-wallet-icon.png"> 
-
-添加信用卡/借记卡到苹果钱包。</docs-item>
-
-<docs-item header="Facebook" href="/docs/native/facebook" icon="/docs/assets/icons/facebook-icon.png"> 
-
-连接到 Facebook 平台。</docs-item>
-
-<docs-item header="Instagram" href="/docs/native/instagram" icon="/docs/assets/icons/instagram-icon.png"> 
-
-通过 Instagram 应用程序分享照片。</docs-item> </docs-item-list>
