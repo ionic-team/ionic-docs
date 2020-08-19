@@ -5,11 +5,11 @@ tableOfContents: false
 
 <p class='intro'><a href="https://ionicframework.com/native" target="_blank">Ionic Native Enterprise Edition (EE)</a> is a subscription service that provides premium, supported Capacitor and Cordova plugins, third-party integrations, and pre-built solutions for teams building enterprise-grade apps with Ionic.</p>
 
-<docs-cards class="static-width"> <docs-card size="lg" header="Native solutions" href="/docs/enterprise/solutions" iconset="/docs/assets/icons/face-id.png,/docs/assets/icons/touch-id.png,/docs/assets/icons/auth0.png,/docs/assets/icons/active-directory.png"> 
+<docs-cards class="static-width"> <docs-card size="lg" header="Native Solutions" href="/docs/enterprise/solutions" iconset="/docs/assets/icons/face-id.png,/docs/assets/icons/touch-id.png,/docs/assets/icons/auth0.png,/docs/assets/icons/active-directory.png"> 
 
-Complete native solutions for single sign-on, biometrics, and secure offline storage.</docs-card> <docs-card size="lg" header="Core Device Features" href="/docs/enterprise/android-permissions" iconset="/docs/assets/icons/camera.png,/docs/assets/icons/geolocation.png,/docs/assets/icons/file.png,/docs/assets/icons/keyboard.png"> 
+Complete native solutions for single sign-on, biometrics, and secure offline storage.</docs-card> <docs-card size="lg" header="Premier Plugins" href="/docs/enterprise/android-permissions" iconset="/docs/assets/icons/camera.png,/docs/assets/icons/geolocation.png,/docs/assets/icons/file.png,/docs/assets/icons/keyboard.png"> 
 
-Core device features like camera, geolocation, keyboard access, contacts, calendar, and more.</docs-card> <docs-card size="lg" header="3rd Party Integrations" href="/docs/enterprise/apple-payment-pass" iconset="/docs/assets/icons/aws-amplify.png,/docs/assets/icons/firebase.png,/docs/assets/icons/couchbase.png,/docs/assets/icons/apple-pay.png"> 
+Premier plugin features like camera, geolocation, keyboard access, contacts, calendar, and more.</docs-card> <docs-card size="lg" header="3rd Party Integrations" href="/docs/enterprise/apple-payment-pass" iconset="/docs/assets/icons/aws-amplify.png,/docs/assets/icons/firebase.png,/docs/assets/icons/couchbase.png,/docs/assets/icons/apple-pay.png"> 
 
 Connect to third-party services and cloud providers like Firebase, AWS, and Apple Payment Pass.</docs-card> </docs-cards>
 
@@ -29,7 +29,7 @@ Add single sign-on using a single API and the latest in native security best pra
 
 Store and access data locally on a mobile or desktop device, even when users are offline.</docs-item> </docs-item-list>
 
-## Popular Core Device Features
+## Popular Premier Plugins
 
 <docs-item-list class="static-width"> <docs-item header="Camera" href="/docs/enterprise/camera" icon="/docs/assets/icons/camera.png"> 
 
@@ -54,31 +54,3 @@ Device location information, including latitude and longitude.</docs-item>
 <docs-item header="File" href="/docs/enterprise/filesystem" icon="/docs/assets/icons/file.png"> 
 
 Common file operations such as read/write and directory access.</docs-item> </docs-item-list>
-
-## Popular 3rd Party Integrations
-
-<docs-item-list class="static-width">
-
-<docs-item header="Firebase" href="/docs/native/firebase" icon="/docs/assets/icons/firebase.png"> 
-
-Push notifications, analytics, event tracking, crash reporting and more.</docs-item>
-
-<docs-item header="AWS Amplify" href="/docs/enterprise/aws-amplify" icon="/docs/assets/icons/aws-amplify.png"> 
-
-Authentication, analytics, push notifications, AI and ML cloud services, storage, and more.</docs-item>
-
-<docs-item header="Couchbase" href="/docs/enterprise/couchbase-lite" icon="/docs/assets/icons/couchbase.png"> 
-
-A fully-featured embedded NoSQL database that runs locally on mobile devices.</docs-item>
-
-<docs-item header="Apple Payment Pass" href="/docs/enterprise/apple-payment-pass" icon="/docs/assets/icons/apple-wallet-icon.png"> 
-
-Add credit/debit cards to Apple Wallet.</docs-item>
-
-<docs-item header="Facebook" href="/docs/native/facebook" icon="/docs/assets/icons/facebook-icon.png"> 
-
-Connect to the Facebook platform.</docs-item>
-
-<docs-item header="Instagram" href="/docs/native/instagram" icon="/docs/assets/icons/instagram-icon.png"> 
-
-Share photos through the Instagram app.</docs-item> </docs-item-list>
