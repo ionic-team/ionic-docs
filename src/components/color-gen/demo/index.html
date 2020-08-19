@@ -6,122 +6,148 @@
   ion-app {
     --ion-safe-area-top: 20px;
   }
+
+  ion-content {
+    --background: #f6f6f6;
+  }
+
+  ion-list {
+    background: transparent !important;
+  }
+
+  ion-list:last-of-type {
+    margin-bottom: 20px;
+  }
+
+  ion-grid {
+    background: #fff;
+
+    text-align: center;
+  }
+
+  ion-list-header {
+    min-height: 20px;
+  }
+
+  .ios .button-grid {
+    border-bottom: .55px solid #c8c7cc;
+  }
+
+  .md .button-grid {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.13);
+  }
 </style>
 <style id="color-style"></style>
 
 <ion-app>
   <ion-tabs useRouter="false">
-    <ion-tab label="Preview" icon="star"  path="">
-
+    <ion-tab tab="preview">
       <ion-header>
         <ion-toolbar color="primary">
             <ion-buttons slot="secondary">
-              <ion-button>
-                <ion-icon slot="icon-only" name="contact"></ion-icon>
-              </ion-button>
               <ion-button>
                 <ion-icon slot="icon-only" name="search"></ion-icon>
               </ion-button>
             </ion-buttons>
             <ion-buttons slot="primary">
               <ion-button>
-                <ion-icon slot="icon-only" name="more"></ion-icon>
+                <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
               </ion-button>
             </ion-buttons>
             <ion-title>Theme Preview</ion-title>
           </ion-toolbar>
+          <ion-toolbar color="primary">
+            <ion-segment value="all">
+              <ion-segment-button value="all">
+                All
+              </ion-segment-button>
+              <ion-segment-button value="favorites">
+                Favorites
+              </ion-segment-button>
+            </ion-segment>
+          </ion-toolbar>
       </ion-header>
 
       <ion-content>
-
-        <ion-segment padding>
-          <ion-segment-button value="all" checked>
-            All
-          </ion-segment-button>
-          <ion-segment-button value="favorites">
-            Favorites
-          </ion-segment-button>
-        </ion-segment>
-
-        <ion-list>
+        <ion-list class="ion-no-padding">
+          <ion-list-header lines="full"></ion-list-header>
           <ion-item>
-            <ion-label>A medium toggle</ion-label>
+            <ion-label>Medium Toggle</ion-label>
             <ion-toggle slot="end" color="medium" name="medium" checked></ion-toggle>
           </ion-item>
           <ion-item>
-            <ion-label>This is disabled</ion-label>
-            <ion-toggle slot="end" color="medium" name="medium" checked disabled></ion-toggle>
+            <ion-label>Disabled Toggle</ion-label>
+            <ion-toggle slot="end" checked disabled></ion-toggle>
           </ion-item>
 
-          <ion-item>Danger!</ion-label>
+          <ion-item>Danger Toggle</ion-label>
             <ion-toggle slot="end" color="danger" checked></ion-toggle>
           </ion-item>
 
-          <ion-item>Success!</ion-label>
+          <ion-item>Success Toggle</ion-label>
             <ion-toggle slot="end" color="success" checked></ion-toggle>
           </ion-item>
+
+          <ion-grid class="button-grid">
+            <ion-row>
+              <ion-col>
+                <ion-button expand="block" color="primary">Aa</ion-button>
+              </ion-col>
+              <ion-col>
+                <ion-button expand="block" color="secondary">Aa</ion-button>
+              </ion-col>
+              <ion-col>
+                <ion-button expand="block" color="tertiary">Aa</ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
         </ion-list>
 
-        <ion-grid>
-          <ion-row>
-            <ion-col>
-              <ion-button expand="block" color="primary">Aa</ion-button>
-            </ion-col>
-            <ion-col>
-              <ion-button expand="block" color="secondary">Aa</ion-button>
-            </ion-col>
-            <ion-col>
-              <ion-button expand="block" color="tertiary">Aa</ion-button>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
+        <ion-list class="ion-no-padding">
+          <ion-list-header lines="full"></ion-list-header>
 
-        <ion-item-divider></ion-item-divider>
-
-        <ion-grid>
-          <ion-row text-center>
-            <ion-col>
-              <ion-chip expand="block" color="success">
-                <ion-label>Success</ion-label>
-              </ion-chip>
-            </ion-col>
-            <ion-col>
-              <ion-chip expand="block" color="warning">
-                <ion-label>Warning</ion-label>
-              </ion-chip>
-            </ion-col>
-            <ion-col>
-              <ion-chip expand="block" color="danger">
-                <ion-label>Danger</ion-label>
-              </ion-chip>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-
-        <ion-list>
+          <ion-grid>
+            <ion-row text-center>
+              <ion-col>
+                <ion-chip expand="block" color="success">
+                  <ion-label>Success</ion-label>
+                </ion-chip>
+              </ion-col>
+              <ion-col>
+                <ion-chip expand="block" color="warning">
+                  <ion-label>Warning</ion-label>
+                </ion-chip>
+              </ion-col>
+              <ion-col>
+                <ion-chip expand="block" color="danger">
+                  <ion-label>Danger</ion-label>
+                </ion-chip>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
           <ion-item>
+            <ion-icon name="star" color="primary" slot="start"></ion-icon>
             <ion-label>Star</ion-label>
-              <ion-icon name="star" color="secondary" slot="start"></ion-icon>
           </ion-item>
           <ion-item>
-            <ion-label>Planet</ion-label>
             <ion-icon name="planet" color="secondary" slot="start"></ion-icon>
+            <ion-label>Planet</ion-label>
           </ion-item>
           <ion-item>
+            <ion-icon name="sunny" color="tertiary" slot="start"></ion-icon>
             <ion-label>Sun</ion-label>
-            <ion-icon name="sunny" color="secondary" slot="start"></ion-icon>
           </ion-item>
           <ion-item>
+            <ion-icon name="moon" color="success" slot="start"></ion-icon>
             <ion-label>Moon</ion-label>
-            <ion-icon name="moon" color="secondary" slot="start"></ion-icon>
           </ion-item>
           <ion-item>
+            <ion-icon name="rocket" color="warning" slot="start"></ion-icon>
             <ion-label>Rocket</ion-label>
-            <ion-icon name="rocket" color="secondary" slot="start"></ion-icon>
           </ion-item>
-          <ion-item>
+          <ion-item lines="full">
+            <ion-icon name="md-globe" color="danger" slot="start"></ion-icon>
             <ion-label>Earth</ion-label>
-            <ion-icon name="md-globe" color="secondary" slot="start"></ion-icon>
           </ion-item>
         </ion-list>
 
@@ -138,16 +164,19 @@
         </ion-fab>
       </ion-content>
 
-      <ion-tab
-        label="Save"
-        icon="save">
-        </ion-tab>
-      <ion-tab disabled
-        label="Share"
-        icon="share">
-      </ion-tab>
+      <ion-tab-bar>
+        <ion-tab-button tab="preview">
+          <ion-label>Preview</ion-label>
+          <ion-icon name="color-palette"></ion-icon>
+        </ion-tab-button>
+        <ion-tab-button disabled>
+          <ion-label>Share</ion-label>
+          <ion-icon name="share"></ion-icon>
+        </ion-tab-button>
+      </ion-tab-bar>
 
   </ion-tabs>
+
 </ion-app>
 
 <script>
