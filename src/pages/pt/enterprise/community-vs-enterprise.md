@@ -109,7 +109,7 @@ Accelerate your app development with powerful solutions to common enterprise use
 - [Identity Vault](/docs/enterprise/identity-vault)
 - [Offline Storage](/docs/enterprise/offline-storage)
 
-### Common Device Features
+### Premier Plugins
 - [Android Permissions](/docs/enterprise/android-permissions)
 - [App Rate](/docs/enterprise/app-rate)
 - [App Version](/docs/enterprise/app-version)
