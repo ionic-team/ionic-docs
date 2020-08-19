@@ -24,16 +24,21 @@ export default {
 const getAllGHCommits = async (task: any, page = 1) => {
   try {
     task.output = `Getting commits: ${page * 100 - 99} - ${page * 100}`;
-    const request = await fetch(url.format({
-      protocol: 'https',
-      hostname: 'api.github.com',
-      pathname: 'repos/ionic-team/ionic-docs/commits',
-      query: {
-        access_token: process.env.GITHUB_TOKEN,
-        per_page: 100,
-        page
+    const request = await fetch(
+      url.format({
+        protocol: 'https',
+        hostname: 'api.github.com',
+        pathname: 'repos/ionic-team/ionic-docs/commits',
+        query: {
+          per_page: 100,
+          page
+        }
+      }), {
+        headers: {
+          'Authorization': process.env.GITHUB_TOKEN !== undefined ? process.env.GITHUB_TOKEN : ''
+        }
       }
-    }));
+    );
 
     let commits = await request.json().then(list => list.reduce((obj: any, commit: any) => {
       obj[commit.sha] = {
