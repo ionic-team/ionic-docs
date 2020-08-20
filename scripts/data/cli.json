@@ -2081,7 +2081,9 @@
       "summary": "Adds Appflow Deploy to the project",
       "description": "This command adds the Appflow Deploy plugin (`cordova-plugin-ionic`) for both Capacitor and Cordova projects.\n\nFor Capacitor projects it runs all the steps necessary to install the plugin, sync with the native projects and add the configuration to the proper iOS and Android configuration files.\n\nFor Cordova projects it just takes care of running the proper Cordova CLI command with the submitted parameters.",
       "footnotes": [],
-      "groups": [],
+      "groups": [
+        "paid"
+      ],
       "exampleCommands": [
         "ionic deploy add ",
         "ionic deploy add --app-id=abcd1234 --channel-name=\"Master\" --update-method=background",
@@ -2159,7 +2161,9 @@
       "summary": "Create a deploy build on Appflow",
       "description": "This command creates a deploy build on Ionic Appflow. While the build is running, it prints the remote build log to the terminal.\n\nCustomizing the build:\n- The `--environment` and `--channel` options can be used to customize the groups of values exposed to the build.\n\nApart from `--commit`, every option can be specified using the full name setup within the Appflow [Dashboard](https://dashboard.ionicframework.com).",
       "footnotes": [],
-      "groups": [],
+      "groups": [
+        "paid"
+      ],
       "exampleCommands": [
         "ionic deploy build ",
         "ionic deploy build --environment=\"My Custom Environment Name\"",
@@ -2203,6 +2207,110 @@
           }
         }
       ],
+      "type": "project"
+    },
+    {
+      "name": "ionic deploy configure",
+      "namespace": [
+        "ionic",
+        "deploy"
+      ],
+      "summary": "Overrides Appflow Deploy configuration",
+      "description": "This command overrides configuration for the Appflow Deploy plugin (`cordova-plugin-ionic`) in Capacitor projects.\n\nFor Capacitor projects, if the plugin is already installed, it overrides the configuration variables in the native projects.\n\nFor Cordova projects this is not implemented because it is better to reinstall the plugin with the different parameters and let Cordova deal with the changes.",
+      "footnotes": [],
+      "groups": [
+        "paid"
+      ],
+      "exampleCommands": [
+        "ionic deploy configure ",
+        "ionic deploy configure --app-id=abcd1234 --channel-name=\"Master\" --update-method=background",
+        "ionic deploy configure --max-store=2 --min-background-duration=30",
+        "ionic deploy configure --app-id=abcd1234 --channel-name=\"Master\" --update-method=background --max-store=2 --min-background-duration=30",
+        "ionic deploy configure android",
+        "ionic deploy configure ios"
+      ],
+      "aliases": [],
+      "inputs": [
+        {
+          "name": "platform",
+          "summary": "The native platform (e.g. `ios`, `android`)",
+          "required": false
+        }
+      ],
+      "options": [
+        {
+          "name": "app-id",
+          "type": "string",
+          "summary": "Your Appflow app ID",
+          "groups": [],
+          "aliases": [],
+          "spec": {
+            "value": "id"
+          }
+        },
+        {
+          "name": "channel-name",
+          "type": "string",
+          "summary": "The channel to check for updates from",
+          "groups": [],
+          "aliases": [],
+          "spec": {
+            "value": "name"
+          }
+        },
+        {
+          "name": "update-method",
+          "type": "string",
+          "summary": "The update method that dictates the behavior of the plugin",
+          "groups": [],
+          "aliases": [],
+          "spec": {
+            "value": "name"
+          }
+        },
+        {
+          "name": "max-store",
+          "type": "string",
+          "summary": "The maximum number of downloaded versions to store on the device",
+          "groups": [
+            "advanced"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "quantity"
+          }
+        },
+        {
+          "name": "min-background-duration",
+          "type": "string",
+          "summary": "The minimum duration after which the app checks for an update in the background",
+          "groups": [
+            "advanced"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "seconds"
+          }
+        }
+      ],
+      "type": "project"
+    },
+    {
+      "name": "ionic deploy manifest",
+      "namespace": [
+        "ionic",
+        "deploy"
+      ],
+      "summary": "Generates a manifest file for the deploy service from a built app directory",
+      "description": "",
+      "footnotes": [],
+      "groups": [
+        "paid"
+      ],
+      "exampleCommands": [],
+      "aliases": [],
+      "inputs": [],
+      "options": [],
       "type": "project"
     },
     {
@@ -2317,7 +2425,9 @@
       "summary": "Register your Product Key with this app",
       "description": "",
       "footnotes": [],
-      "groups": [],
+      "groups": [
+        "paid"
+      ],
       "exampleCommands": [],
       "aliases": [],
       "inputs": [],
@@ -2390,7 +2500,9 @@
       "summary": "Adds/updates the Ionic Appflow git remote to your local Ionic app",
       "description": "This command is used by `ionic link` when Ionic Appflow is used as the git host.\n\n`ionic git remote` will check the local repository for whether or not the git remote is properly set up. This command operates on the **ionic** remote. For advanced configuration, see **Settings** => **Git** in the app settings of the [Dashboard](https://dashboard.ionicframework.com).",
       "footnotes": [],
-      "groups": [],
+      "groups": [
+        "paid"
+      ],
       "exampleCommands": [],
       "aliases": [],
       "inputs": [],
@@ -2620,7 +2732,9 @@
       "summary": "Connect local apps to Ionic",
       "description": "Link apps on Ionic Appflow to local Ionic projects with this command.\n\nIf the `id` argument is excluded, this command will prompt you to select an app from Ionic Appflow.\n\nIonic Appflow uses a git-based workflow to manage app updates. During the linking process, select **GitHub** (recommended) or **Ionic Appflow** as a git host. See our [documentation](https://ionicframework.com/docs/appflow/basics/git) for more information.\n\nUltimately, this command sets the **id** property in **./ionic.config.json**, which marks this app as linked.\n\nIf you are having issues linking, please get in touch with our [Support](https://ion.link/support-request).",
       "footnotes": [],
-      "groups": [],
+      "groups": [
+        "paid"
+      ],
       "exampleCommands": [
         "ionic link ",
         "ionic link a1b2c3d4"
@@ -2690,7 +2804,9 @@
       "summary": "Create a package build on Appflow",
       "description": "This command creates a package build on Ionic Appflow. While the build is running, it prints the remote build log to the terminal. If the build is successful, it downloads the created app package file in the current directory.\n\nApart from `--commit`, every option can be specified using the full name setup within the [Dashboard](https://dashboard.ionicframework.com).\n\nThe `--security-profile` option is mandatory for any iOS build but not for Android debug builds.\n\nCustomizing the build:\n- The `--environment` and `--native-config` options can be used to customize the groups of values exposed to the build.\n- Override the preferred platform with `--target-platform`. This is useful for building older iOS apps.\n\nDeploying the build to an App Store:\n- The `--destination` option can be used to deliver the app created by the build to the configured App Store. This can be used only together with build type `release` for Android and build types `app-store` or `enterprise` for iOS.",
       "footnotes": [],
-      "groups": [],
+      "groups": [
+        "paid"
+      ],
       "exampleCommands": [
         "ionic package build android debug",
         "ionic package build ios development --security-profile=\"iOS Security Profile Name\"",
@@ -2803,7 +2919,9 @@
       "summary": "Deploys a binary to a destination, such as an app store using Appflow",
       "description": "This command deploys a binary to a destination using Ionic Appflow. While running, the remote log is printed to the terminal.\n\nThe command takes two parameters: the numeric ID of the package build that previously created the binary and the name of the destination where the binary is going to be deployed.\nBoth can be retrieved from the [Dashboard](https://dashboard.ionicframework.com).",
       "footnotes": [],
-      "groups": [],
+      "groups": [
+        "paid"
+      ],
       "exampleCommands": [
         "ionic package deploy 123456789 \"My app store destination\""
       ],
