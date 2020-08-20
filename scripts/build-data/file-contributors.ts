@@ -35,7 +35,7 @@ const getAllGHCommits = async (task: any, page = 1) => {
         }
       }), {
         headers: {
-          'Authorization': process.env.GITHUB_TOKEN !== undefined ? process.env.GITHUB_TOKEN : ''
+          'Authorization': process.env.GITHUB_TOKEN !== undefined ? `token ${process.env.GITHUB_TOKEN}` : ''
         }
       }
     );
