@@ -32,7 +32,7 @@ export const getReleases = async () => {
         pathname: 'repos/ionic-team/ionic/releases'
       }), {
        headers: {
-          'Authorization': process.env.GITHUB_TOKEN !== undefined ? process.env.GITHUB_TOKEN : ''
+          'Authorization': process.env.GITHUB_TOKEN !== undefined ? `token ${process.env.GITHUB_TOKEN}` : ''
         }
       }
     );
