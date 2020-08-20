@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Input</title>
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.esm.js"></script>
-  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/ionic.bundle.css"/>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
   <style>
     :root {
       --ion-safe-area-top: 20px;
@@ -18,73 +18,72 @@
   <ion-app>
     <ion-header translucent>
       <ion-toolbar>
-        <ion-title>Create Account</ion-title>
+        <ion-title>Input</ion-title>
       </ion-toolbar>
     </ion-header>
 
     <ion-content fullscreen>
-      <form onsubmit="processForm(event)">
-        <ion-list lines="full" class="ion-no-margin ion-no-padding">
-          <ion-item>
-            <ion-label position="stacked">First Name <ion-text color="danger">*</ion-text></ion-label>
-            <ion-input required type="text" oninput="handleFirstNameValue(event)"></ion-input>
-          </ion-item>
+      <ion-list lines="full" class="ion-no-margin">
+        <ion-list-header lines="full">
+          <ion-label>
+            Label Positions
+          </ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Default Label</ion-label>
+          <ion-input placeholder="placeholder"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="fixed">Fixed Label</ion-label>
+          <ion-input placeholder="placeholder"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Stacked Label</ion-label>
+          <ion-input placeholder="placeholder"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Floating Label</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+      </ion-list>
 
-          <ion-item>
-            <ion-label position="stacked">Last Name <ion-text color="danger">*</ion-text></ion-label>
-            <ion-input required type="text" oninput="handleLastNameValue(event)"></ion-input>
-          </ion-item>
-          
-          <ion-item>
-            <ion-label position="floating">Title</ion-label>
-            <ion-input></ion-input>
-          </ion-item>
+      <ion-list lines="full" class="ion-no-margin">
+        <ion-list-header lines="full">
+          <ion-label>
+            Input Types
+          </ion-label>
+        </ion-list-header>
 
-          <ion-item>
-            <ion-label position="stacked">Address</ion-label>
-            <ion-input placeholder="Address Line 1"></ion-input>
-            <ion-input placeholder="Address Line 2"></ion-input>
-            <ion-input placeholder="City"></ion-input>
-            <ion-input placeholder="State"></ion-input>
-            <ion-input placeholder="Zip Code"></ion-input>
-          </ion-item>
+        <ion-item>
+          <ion-label>Text Input</ion-label>
+          <ion-input placeholder="placeholder" type="text"></ion-input>
+        </ion-item>
 
-          <ion-item>
-            <ion-label position="stacked">Notes</ion-label>
-            <ion-textarea></ion-textarea>
-          </ion-item>
-        </ion-list>
+        <ion-item>
+          <ion-label>Number Input</ion-label>
+          <ion-input placeholder="placeholder" type="number"></ion-input>
+        </ion-item>
 
-        <div class="ion-padding">
-          <ion-button expand="block" type="submit" class="ion-no-margin">Create account</ion-button>
-        </div>
-      </form>
+        <ion-item>
+          <ion-label>Password Input</ion-label>
+          <ion-input placeholder="placeholder" type="password"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Multiple Inputs</ion-label>
+          <ion-input placeholder="Address Line 1"></ion-input>
+          <ion-input placeholder="Address Line 2"></ion-input>
+          <ion-input placeholder="City"></ion-input>
+          <ion-input placeholder="State"></ion-input>
+          <ion-input placeholder="Zip Code"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Textarea</ion-label>
+          <ion-textarea placeholder="placeholder"></ion-textarea>
+        </ion-item>
+      </ion-list>
     </ion-content>
-    <ion-alert-controller></ion-alert-controller>
   </ion-app>
-
-  <script>
-    const controller = document.querySelector('ion-alert-controller');
-    let firstName, lastName;
-
-    function processForm(event) {
-      event.preventDefault();
-      controller.create({
-        header: 'Account Created',
-        message: `Created account for: <b>${firstName} ${lastName}</b>`,
-        buttons: [{
-          text: 'OK'
-        }]
-      }).then(alert => alert.present());
-    }
-
-    function handleFirstNameValue(event) {
-      firstName = event.target.value;
-    }
-
-    function handleLastNameValue(event) {
-      lastName = event.target.value;
-    }
-  </script>
 </body>
 </html>

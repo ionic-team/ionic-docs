@@ -9,8 +9,6 @@ contributors:
   - brandyscarney
 ---
 
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/utils.bundle.css"/> -->
-
 # CSS Utilities
 
 Ionic Framework provides a set of CSS utility classes that can be used on any element in order to modify the text, element placement or adjust the padding and margin.
@@ -649,7 +647,7 @@ The border display CSS property determines if the border should be visible or no
   </ion-toolbar>
 </ion-header>
 
-        
+
 <ion-footer class="ion-no-border">
   <ion-toolbar>
     <ion-title>Footer - No Border</ion-title>
@@ -659,7 +657,7 @@ The border display CSS property determines if the border should be visible or no
 
 | Class              |  Description                                                                                               |
 |--------------------|-----------------------------------------------------------------------------------------------------------|
-| `.ion-no-border`  |  The element will have no border.  
+| `.ion-no-border`  |  The element will have no border.
 
 ## Ionic Breakpoints
 
