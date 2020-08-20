@@ -9,8 +9,6 @@ contributors:
   - brandyscarney
 ---
 
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/utils.bundle.css"/> -->
-
 # CSS Utilities
 
 Ionic Framework provides a set of CSS utility classes that can be used on any element in order to modify the text, element placement or adjust the padding and margin.
