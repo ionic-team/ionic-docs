@@ -9,8 +9,6 @@ contributors:
   - brandyscarney
 ---
 
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/utils.bundle.css"/> -->
-
 # 响应式网格
 
 网格是一个强大的移动端优先的弹性盒子系统，用于构建自定义布局。 它由三个单位组成：一个 [格子](/docs/api/grid), [行](/docs/api/row) 和 [列(s)](/docs/api/col)。 列将展开以填充它们的行，并将调整大小以适应额外的列。 它基于12列布局，基于屏幕大小不同的断点。 可以使用 CSS 自定义列数。
