@@ -11,34 +11,10 @@
     --ion-safe-area-bottom: 22px;
   }
 
-  ion-content {
-    --background: #f6f6f6;
-  }
-
-  ion-list {
-    background: transparent !important;
-  }
-
-  ion-list:last-of-type {
-    margin-bottom: 20px;
-  }
-
   ion-grid {
     background: #fff;
 
     text-align: center;
-  }
-
-  ion-list-header {
-    min-height: 20px;
-  }
-
-  .ios .button-grid {
-    border-bottom: .55px solid #c8c7cc;
-  }
-
-  .md .button-grid {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.13);
   }
 </style>
 <style id="color-style"></style>
@@ -74,7 +50,6 @@
 
       <ion-content>
         <ion-list class="ion-no-padding">
-          <ion-list-header lines="full"></ion-list-header>
           <ion-item>
             <ion-label>Medium Toggle</ion-label>
             <ion-toggle slot="end" color="medium" name="medium" checked></ion-toggle>
@@ -105,10 +80,6 @@
               </ion-col>
             </ion-row>
           </ion-grid>
-        </ion-list>
-
-        <ion-list class="ion-no-padding">
-          <ion-list-header lines="full"></ion-list-header>
 
           <ion-grid>
             <ion-row text-center>
@@ -149,7 +120,7 @@
             <ion-icon name="rocket" color="warning" slot="start"></ion-icon>
             <ion-label>Rocket</ion-label>
           </ion-item>
-          <ion-item lines="full">
+          <ion-item lines="none">
             <ion-icon name="md-globe" color="danger" slot="start"></ion-icon>
             <ion-label>Earth</ion-label>
           </ion-item>
