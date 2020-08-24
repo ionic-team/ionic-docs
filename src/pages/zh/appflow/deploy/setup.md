@@ -20,6 +20,27 @@ Ionic Appflow的实时更新功能使得在大多数业务逻辑上可以轻松�
 
 为了使用IonAppflow的实时更新功能，您需要 [安装并配置 Appflow SDK](/docs/appflow/quickstart/installation).
 
-## 高级用法。
+## Turning off Updates for Local Development
 
-想要做些什么，比如允许用户订阅一个特殊的 Beta 频道而不是默认的生产频道？ 是否进行了一些分割测试？ 自定义更新方式(如每30分钟检查，或在登录/登出)? 查看我们的详细信息 [实时更新 API 文档](/docs/appflow/deploy/api)！
+Your code will get overwritten if the local app codebase points to the same channel as a deployed Live Update build. To avoid this situation, you can turn off live updates for local development. Be sure to turn it back on before committing to source control.
+
+### Capacitor
+
+In the `capacitor.config.json` file, set the following then run `npx cap sync`:
+
+    "cordova": {
+      "preferences": {
+        "DisableDeploy": "true"
+      }
+    }
+    
+
+Alternatively, you can change the Channel name to one currently not in use using `ionic deploy configure --channel-name="NAME"` ([details here](https://ionicframework.com/docs/cli/commands/deploy-configure)). This make changes to the native project files directly (on Android, `android/app/src/main/res/xml/config.xml` and on iOS, `ios/App/App/config.xml`).
+
+### Cordova
+
+Set the [DisableDeploy](/docs/appflow/deploy/api#disabledeploy) preference to `true` in the `config.xml` file during local development. You can then set it back to `false` before building your binary for release by either manually setting it back or using the [native config feature](/docs/appflow/package/native-configs) if you're building your binaries with the [Package](/docs/appflow/package/intro) feature.
+
+## Advanced Usage
+
+Want to do something sweet, like allow users to subscribe to a special Beta Channel instead of the default Production one? Do some split testing? Customize the way updates are applied (like checking every 30 minutes, or on login/logout)? Check out our detailed [Live Update API Documentation](/docs/appflow/deploy/api)!
