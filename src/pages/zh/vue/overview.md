@@ -19,7 +19,7 @@ nextUrl: '/docs/vue/your-first-app'
 
 [Capacitor](https://capacitor.ionicframework.com) 是一个跨平台应用构建程序，用于让您的`Ionic Vue` Web 应用在 iOS、Android、Electron 和 Web 上运行。
 
-While there are no known technical limitations to using `Ionic Vue` with [Cordova](https://cordova.apache.org/) plugins, Capacitor is officially recommended. There are no plans to support a Cordova integration for `Ionic Vue` in the [Ionic CLI tooling](/docs/cli) at this time. 欲了解更多详情，请 [在这里查看](https://capacitor.ionicframework.com/docs/cordova)。
+虽然在使用 `Ionic Vue` 配合 [Cordova](https://cordova.apache.org/) 插件方面没有已知的技术限制，但是 官方推荐使用Capacitor。 There are no plans to support a Cordova integration for `Ionic Vue` in the [Ionic CLI tooling](/docs/cli) at this time. 欲了解更多详情，请 [在这里查看](https://capacitor.ionicframework.com/docs/cordova)。
 
 ## 来自社区
 
