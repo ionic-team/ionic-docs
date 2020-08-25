@@ -41,7 +41,7 @@ public async addNewToGallery() {
 
 我们注意到这里的神奇之处：代码中没有出现跟平台有关的代码（web、iOS或是安卓）。 Capacitor相机插件为我们抽象出了相关函数，而我们只需要调用`Camera.getPhoto()`便可以开始使用设备的拍照功能。
 
-Next, open up `tab2.page.ts` and import the PhotoService class and add a method that calls the `addNewToGallery` method on the imported servce:
+接着，打开`tab2.page.ts`导入PhotoService类，并在导入的类中添加一个调用 `addNewToGallery`的方法：
 
 ```typescript
 import { PhotoService } from '../services/photo.service';
@@ -53,7 +53,7 @@ addPhotoToGallery() {
 }
 ```
 
-Then, open `tab2.page.html` and call the `addPhotoToGallery()` function when the FAB is tapped/clicked:
+然后，打开`tab2.page.html` ，当FAB按钮被点击时调用`addPhotoToGallery()`。
 
 ```html
 <ion-content>
@@ -110,7 +110,7 @@ export class PhotoService {
   });
 }
 ```
-We will create a local `photos` property on our `Tab2Page` component so that we can reference the Photos collection within our template.
+我们将在`Tab2Page` 组件上创建一个本地的 `photos` 属性，以便我们可以在模板中引用照片集合。
 
 ```typescript
 export class Tab2Page {
