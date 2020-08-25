@@ -72,7 +72,9 @@ After, call this new method in `tab2.page.ts` so that when the user first naviga
 
 ```typescript
 ngOnInit() {
-  this.photoService.loadSaved();
+  this.photoService.loadSaved().then(() => {
+    this.photos = this.photoService.photos;
+  });
 }
 ```
 
