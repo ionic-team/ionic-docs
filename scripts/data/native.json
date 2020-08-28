@@ -334,19 +334,6 @@
     "premierSlug": "app-rate"
   },
   {
-    "packageName": "@ionic-native/app-update",
-    "displayName": "App Update",
-    "description": "\nThis plugin does self-update for android\n",
-    "usage": "\n\nYou should first host an XML file on your server with the following data in it:\n```xml\n<update>\n    <version>302048</version>\n    <name>APK Name</name>\n    <url>https://your-remote-api.com/YourApp.apk</url>\n</update>\n```\n\nThen use the following code:\n\n```typescript\nimport { AppUpdate } from '@ionic-native/app-update/ngx';\n\nconstructor(private appUpdate: AppUpdate) {\n\n   const updateUrl = 'https://your-remote-api.com/update.xml';\n   this.appUpdate.checkAppUpdate(updateUrl).then(() => { console.log('Update available') });\n\n}\n```\n\nThe plugin will compare the app version and update it automatically if the API has a newer version to install.",
-    "platforms": [
-      "Android"
-    ],
-    "repo": "https://github.com/vaenow/cordova-plugin-app-update",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-app-update"
-    }
-  },
-  {
     "packageName": "@ionic-native/app-version",
     "displayName": "App Version",
     "description": "\nReads the version of your app from the target build settings.\n\nRequires Cordova plugin: `cordova-plugin-app-version`. For more info, please see the [Cordova App Version docs](https://github.com/whiteoctober/cordova-plugin-app-version).\n",
