@@ -373,8 +373,7 @@
     "repo": "https://github.com/tomavic/cordova-apple-wallet",
     "cordovaPlugin": {
       "name": "cordova-apple-wallet"
-    },
-    "premierSlug": "apple-payment-pass"
+    }
   },
   {
     "packageName": "@ionic-native/appodeal",
