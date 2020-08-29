@@ -67,7 +67,7 @@ Then, open `tab2.page.html` and call the `addPhotoToGallery()` function when the
 
 Enregistrez le fichier, et si cela ne fonctionne pas déjà, redémarrez le serveur de développement dans votre navigateur en exécutant `ionic serve`. Dans l’onglet Galerie de photos, cliquez sur le bouton Caméra. Si votre ordinateur possède une webcam de quelque nature que ce soit, une fenêtre modale apparaît. Prendre un selfie!
 
-![API de l'appareil photo sur le web](/docs/assets/img/guides/first-app-cap-ng/camera-web.png)
+![L'API des photos sur le web](/docs/assets/img/guides/first-app-cap-ng/camera-web.png)
 
 _(Votre selfie est probablement bien meilleur que le mien)_
 
