@@ -24,7 +24,7 @@
     "@ionic-internal/sites-shared": "1.0.0-1",
     "@ionic/core": "^5.2.3",
     "@ionic/docs": "^5.2.3",
-    "@sentry/node": "^5.19.2",
+    "@sentry/node": "^5.22.3",
     "@stencil/router": "^1.0.1",
     "compression": "^1.7.4",
     "express": "^4.16.4",
