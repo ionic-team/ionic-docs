@@ -5,103 +5,103 @@ nextText: 'Rapid App Dev with Live Reload'
 nextUrl: '/docs/angular/your-first-app/7-live-reload'
 ---
 
-# Deploying to iOS and Android
+# Déploiement sur iOS et Android
 
-Since we added Capacitor to our project when it was first created, there’s only a handful of steps remaining until the Photo Gallery app is on our device! Remember, you can find the complete source code for this app [here](https://github.com/ionic-team/photo-gallery-capacitor-ng).
+Depuis que nous avons ajouté Capacitor à notre projet lorsqu'il a été créé pour la première fois, il ne reste qu'une poignée d'étapes jusqu'à ce que l'application Photo Gallery soit sur notre appareil! N'oubliez pas que vous pouvez trouver le code source complet pour cette application [ici](https://github.com/ionic-team/photo-gallery-capacitor-ng).
 
-## Capacitor Setup
+## Changement de mode
 
-Capacitor is Ionic’s official app runtime that makes it easy to deploy web apps to native platforms like iOS, Android, and more. If you’ve used Cordova in the past, consider reading more about the differences [here](https://capacitor.ionicframework.com/docs/cordova#differences-between-capacitor-and-cordova).
+Capacitor est le runtime officiel de l'application Ionic qui facilite le déploiement d'applications web sur des plates-formes natives comme iOS, Android, et plus encore. Si vous avez utilisé Cordova dans le passé, pensez à en savoir plus sur les différences [ici](https://capacitor.ionicframework.com/docs/cordova#differences-between-capacitor-and-cordova).
 
-If you’re still running `ionic serve` in the terminal, cancel it. Complete a fresh build of your Ionic project, fixing any errors that it reports:
+Si vous utilisez toujours `ionic serve` dans le terminal, annulez-le. Complétez une nouvelle version de votre projet Ionic en corrigeant les erreurs rapportées :
 
 ```shell
 $ ionic build
 ```
 
-Next, create both the iOS and Android projects:
+Ensuite, créez les projets iOS et Android :
 
 ```shell
 $ ionic cap add ios
 $ ionic cap add android
 ```
 
-Both android and ios folders at the root of the project are created. These are entirely standalone native projects that should be considered part of your Ionic app (i.e., check them into source control, edit them using their native tooling, etc.).
+Les dossiers android et ios à la racine du projet sont créés. Ce sont des projets natifs entièrement autonomes qui devraient être considérés comme faisant partie de votre application Ionic (i. ., les vérifier dans le contrôle source, les éditer en utilisant leur outillage natif, etc.).
 
-Every time you perform a build (e.g. `ionic build`) that updates your web directory (default: `www`), you'll need to copy those changes into your native projects:
+Chaque fois que vous effectuez une compilation (par ex. `Version ionic`) qui met à jour votre répertoire web (par défaut: `www`), vous devrez copier ces modifications dans vos projets natifs :
 
 ```shell
 $ ionic cap copy
 ```
 
-Note: After making updates to the native portion of the code (such as adding a new plugin), use the `sync` command:
+Note : Après avoir fait des mises à jour de la partie native du code (comme l'ajout d'un nouveau plugin), utilisez la commande `sync`:
 
 ```shell
 $ ionic cap sync
 ```
 
-## iOS Deployment
+## déploiement iOS
 
-> To build an iOS app, you’ll need a Mac computer.
+> Pour construire une application iOS, vous aurez besoin d'un ordinateur Mac.
 
-Capacitor iOS apps are configured and managed through Xcode (Apple’s iOS/Mac IDE), with dependencies managed by CocoaPods. Before running this app on an iOS device, there's a couple of steps to complete.
+Les applications iOS Capacitor sont configurées et gérées via Xcode (Apple iOS/Mac IDE), avec des dépendances gérées par CocoaPods. Avant d'exécuter cette application sur un appareil iOS, il y a quelques étapes à accomplir.
 
-First, run the Capacitor `open` command, which opens the native iOS project in Xcode:
+Tout d'abord, exécutez la commande Capacitor `open` , qui ouvre le projet natif iOS en Xcode :
 
 ```shell
 $ ionic cap open ios
 ```
 
-In order for some native plugins to work, user permissions must be configured. In our photo gallery app, this includes the Camera plugin: iOS displays a modal dialog automatically after the first time that `Camera.getPhoto()` is called, prompting the user to allow the app to use the Camera. The permission that drives this is labeled “Privacy - Camera Usage.” To set it, the `Info.plist` file must be modified ([more details here](https://capacitor.ionicframework.com/docs/ios/configuration)). To access it, click "Info," then expand "Custom iOS Target Properties."
+Pour que certains plugins natifs puissent fonctionner, les permissions de l'utilisateur doivent être configurées. Dans notre application de galerie de photos, cela inclut le plugin Camera : iOS affiche automatiquement une boîte de dialogue modale après la première fois que `Caméra. etPhoto()` est appelée, invitant l'utilisateur à autoriser l'application à utiliser la caméra. La permission que les lecteurs sont marqués « Confidentialité - Utilisation de la caméra ». Pour le définir, les infos `. liste` le fichier doit être modifié ([plus de détails ici](https://capacitor.ionicframework.com/docs/ios/configuration)). Pour y accéder, cliquez sur « Infos », puis développez « Propriétés de la cible iOS »
 
 ![Xcode Custom iOS Target Properties](/docs/assets/img/guides/first-app-cap-ng/xcode-info-plist.png)
 
 
-Each setting in `Info.plist` has a low-level parameter name and a high-level name. By default, the property list editor shows the high-level names, but it's often useful to switch to showing the raw, low-level names. To do this, right-click anywhere in the property list editor and toggle "Raw Keys/Values."
+Chaque paramètre dans `Info.plist` a un nom de paramètre de bas niveau et un nom de haut niveau. Par défaut, l'éditeur de liste de propriétés affiche les noms de haut niveau, mais il est souvent utile de changer pour montrer les noms bruts de bas niveau. Pour cela, faites un clic droit n'importe où dans l'éditeur de liste de propriétés et activez/désactivez "Clés brutes/Valeurs"
 
-Locate the `NSCameraUsageDescription` Key (it should exist already if you followed along with this tutorial) and set the Value to something that describes why the app needs to use the camera, such as "To Take Photos." The Value field is displayed to the app user when the permission prompt opens.
+Localisez la clé `NSCameraUsageDescription` (elle devrait exister déjà si vous avez suivi ce tutoriel) et définissez la valeur à quelque chose qui décrit pourquoi l'application a besoin d'utiliser la caméra, comme « Prendre des photos ». Le champ Valeur est affiché à l'utilisateur de l'application lorsque l'invite d'autorisation s'ouvre.
 
-Next, click on `App` in the Project Navigator on the left-hand side, then within the `Signing & Capabilities` section, select your Development Team.
+Ensuite, cliquez sur `App` dans le navigateur de projet sur le côté gauche, puis dans la section `Signature & Capacités` , sélectionnez votre équipe de développement.
 
 ![Xcode - Selecting Development Team](/docs/assets/img/guides/first-app-cap-ng/xcode-signing.png)
 
-With permissions in place and Development Team selected, we are ready to try out the app on a real device! Connect an iOS device to your Mac computer, select it (`App -> Matthew’s iPhone` for me) then click the "Build" button to build, install, and launch the app on your device:
+Avec les autorisations en place et l'équipe de développement sélectionnée, nous sommes prêts à essayer l'application sur un appareil réel ! Connectez un appareil iOS à votre ordinateur Mac, sélectionnez-le (`App -> iPhone de Matthew` pour moi) puis cliquez sur le bouton « Bâtir » pour construire, installez et lancez l'application sur votre appareil:
 
 ![Xcode build button](/docs/assets/img/guides/first-app-cap-ng/xcode-build-button.png)
 
-Upon tapping the Camera button on the Photo Gallery tab, the permission prompt will display. Tap OK, then take a picture with the Camera. Afterward, the photo shows in the app!
+En appuyant sur le bouton Appareil photo de l’onglet Galerie de photos, l’invite d’autorisation s’affiche. Appuyez sur OK, puis prenez une photo avec la Caméra. Ensuite, la photo apparaît dans l'application!
 
 ![iOS Camera permissions](/docs/assets/img/guides/first-app-cap-ng/ios-permissions-photo.png)
 
-## Android Deployment
+## Développement sur Android
 
-Capacitor Android apps are configured and managed through Android Studio. Before running this app on an Android device, there's a couple of steps to complete.
+Les applications Android Capacitor sont configurées et gérées via Android Studio. Avant d'exécuter cette application sur un appareil iOS, il y a quelques étapes à accomplir.
 
-First, run the Capacitor `open` command, which opens the native Android project in Android Studio:
+Tout d'abord, exécutez la commande Capacitor `open` , qui ouvre le projet natif iOS en Xcode :
 
 ```shell
 $ ionic cap open android
 ```
 
-Similar to iOS, we must enable the correct permissions to use the Camera. Configure these in the `AndroidManifest.xml` file. Android Studio will likely open this file automatically, but in case it doesn't, locate it under `android/app/src/main/`.
+Similaire à iOS, nous devons activer les autorisations appropriées pour utiliser la Caméra. Configurez-les dans le fichier `AndroidManifest.xml`. Android Studio ouvrira probablement ce fichier automatiquement, mais dans le cas contraire, localisez-le sous `android/app/src/main/`.
 
 ![Android Manifest location](/docs/assets/img/guides/first-app-cap-ng/android-manifest.png)
 
-Scroll to the `Permissions` section and ensure these entries are included:
+Faites défiler la section `Autorisations` et assurez-vous que ces entrées sont inclus:
 
 ```xml
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 ```
 
-Save the file. With permissions in place, we are ready to try out the app on a real device! Connect an Android device to your computer. Within Android Studio, click the "Run" button, select the attached Android device, then click OK to build, install, and launch the app on your device.
+Save the file. Avec les autorisations en place et l'équipe de développement sélectionnée, nous sommes prêts à essayer l'application sur un appareil réel ! Connectez un appareil Android à votre ordinateur. Dans Android Studio, cliquez sur le bouton « Exécuter », sélectionnez l'appareil Android attaché, puis cliquez sur OK pour construire, installer et lancer l'application sur votre appareil.
 
 ![Launching app on Android](/docs/assets/img/guides/first-app-cap-ng/android-device.png)
 
-Once again, upon tapping the Camera button on the Photo Gallery tab, the permission prompt should be displayed. Tap OK, then take a picture with the Camera. Afterward, the photo should appear in the app.
+En appuyant sur le bouton Appareil photo de l’onglet Galerie de photos, l’invite d’autorisation s’affiche. Appuyez sur OK, puis prenez une photo avec la Caméra. Ensuite, la photo apparaît dans l'application.
 
 ![Android Camera permissions](/docs/assets/img/guides/first-app-cap-ng/android-permissions-photo.png)
 
-Our Photo Gallery app has just been deployed to Android and iOS devices. 🎉
+Notre application Photo Gallery vient d'être déployée sur les appareils Android et iOS. 🎉
 
-In the final portion of this tutorial, we’ll use the Ionic CLI’s Live Reload functionality to quickly implement photo deletion - thus completing our Photo Gallery feature.
+Dans la dernière partie de ce tutoriel, Nous utiliserons la fonctionnalité Live Reload de la CLI pour implémenter rapidement la suppression de photos - complétant ainsi notre fonction Galerie de photos.
