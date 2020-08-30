@@ -1,7 +1,7 @@
 ---
-previousText: 'Votre première application'
-previousUrl: '/docs/angular/your-first-app'
-nextText: 'Sauvegarde des photos sur le système de fichiers'
+previousText: 'Créer votre première application mobile'
+previousUrl: '/fr/docs/angular/votre-première application'
+nextText: 'Charger une image dépuis le fichier système'
 nextUrl: '/docs/angular/your-first-app/3-saving-photos'
 ---
 
