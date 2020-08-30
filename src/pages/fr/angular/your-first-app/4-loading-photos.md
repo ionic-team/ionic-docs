@@ -52,7 +52,7 @@ public async loadSaved() {
 }
 ```
 
-On mobile (coming up next!), we can directly set the source of an image tag - `<img src=”x” />` - to each photo file on the Filesystem, displaying them automatically. On the web, however, we must read each image from the Filesystem into base64 format, using a new `base64` property on the `Photo` object. This is because the Filesystem API uses [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. Below the code you just added in the `loadSaved()` function, add:
+Sur mobile (à venir ! , nous pouvons directement définir la source d'une balise image - `< img src=”x” />` - pour chaque fichier photo du système de fichiers, les afficher automatiquement. Sur le web, cependant, nous devons lire chaque image du système de fichiers au format base64, en utilisant une nouvelle propriété `base64` sur l'objet `Photo`. Ceci est dû au fait que l'API du système de fichiers utilise [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) sous le hood. Sous le code que vous venez d'ajouter dans la fonction `loadSaved()` , ajouter:
 
 ```typescript
 // Display the photo by reading into base64 format
@@ -68,7 +68,7 @@ for (let photo of this.photos) {
 }
 ```
 
-After, call this new method in `tab2.page.ts` so that when the user first navigates to Tab 2 (the Photo Gallery), all photos are loaded and displayed on the screen.
+Ensuite, appelez cette nouvelle méthode dans l'onglet `2.page. s` de sorte que lorsque l'utilisateur navigue pour la première fois à l'onglet 2 (la Galerie Photo), toutes les photos sont chargées et affichées à l'écran.
 
 ```typescript
 ngOnInit() {
@@ -76,4 +76,4 @@ ngOnInit() {
 }
 ```
 
-That’s it! We’ve built a complete Photo Gallery feature in our Ionic app that works on the web. Next up, we’ll transform it into a mobile app for iOS and Android!
+That’s it! Nous avons créé une fonctionnalité complète de la Galerie de photos dans notre application Ionic qui fonctionne sur le Web. Ensuite, nous le transformerons en une application mobile pour iOS et Android !
