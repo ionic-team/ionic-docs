@@ -31,9 +31,9 @@ export class PhotoService {
 }
 ```
 
-## Platform-specific Logic
+## Logique spécifique à la plateforme
 
-First, we’ll update the photo saving functionality to support mobile. In the `readAsBase64()` function, check which platform the app is running on. If it’s “hybrid” (Capacitor or Cordova, two native runtimes), then read the photo file into base64 format using the Filesystem `readFile()` method. Otherwise, use the same logic as before when running the app on the web:
+Tout d’abord, nous mettrons à jour la fonctionnalité d’enregistrement de photos pour prendre en charge le mobile. Dans la fonction `readAsBase64()` , vérifiez la plate-forme sur laquelle l'application s'exécute. Si c'est « hybride » (Capacitor ou Cordova, deux exécutions natives), alors lisez le fichier photo au format base64 en utilisant la méthode du système de fichiers `readFile()`. Sinon, utilisez la même logique qu'avant lors de l'exécution de l'application sur le web:
 
 ```typescript
 private async readAsBase64(cameraPhoto: CameraPhoto) {
@@ -56,7 +56,7 @@ private async readAsBase64(cameraPhoto: CameraPhoto) {
 }
 ```
 
-Next, update the `savePicture()` method. When running on mobile, set `filepath` to the result of the `writeFile()` operation - `savedFile.uri`. When setting the `webviewPath`, use the special `Capacitor.convertFileSrc()` method ([details here](https://ionicframework.com/docs/core-concepts/webview#file-protocol)).
+Ensuite, mettez à jour la méthode `savePicture()`. Lors de l'exécution sur mobile, définissez `filepath` au résultat de l'opération `writeFile()` - `savedFile.uri`. Lors de la configuration du `webviewPath`, utilisez la méthode spéciale `Capacitor.convertFileSrc()` ([détails ici](https://ionicframework.com/docs/core-concepts/webview#file-protocol)).
 
 ```typescript
 // Save picture to file on device
@@ -91,7 +91,7 @@ Next, update the `savePicture()` method. When running on mobile, set `filepath` 
   }
 ```
 
-Next, head back over to the `loadSaved()` function we implemented for the web earlier. On mobile, we can directly set the source of an image tag - `<img src=”x” />` - to each photo file on the Filesystem, displaying them automatically. Thus, only the web requires reading each image from the Filesystem into base64 format. Update this function to add an _if statement_ around the Filesystem code:
+Ensuite, retournez à la fonction `loadSaved()` que nous avons implémentée pour le web plus tôt. Sur mobile (à venir ! , nous pouvons directement définir la source d'une balise image - `< img src=”x” />` - pour chaque fichier photo du système de fichiers, les afficher automatiquement. Ainsi, seul le web nécessite de lire chaque image du système de fichiers au format base64. Mettre à jour cette fonction pour ajouter une instruction _if_ autour du code du système de fichiers :
 
 ```typescript
 public async loadSaved() {
@@ -117,7 +117,7 @@ public async loadSaved() {
 }
 ```
 
-At the bottom of the `addNewtoGallery()` function, update the Storage API logic. If running on the web, there’s a slight optimization we can add. Even though we must read the photo data in base64 format in order to display it, there’s no need to save in that form, since it’s already saved on the Filesystem:
+Au bas de la fonction ` addNewtoGallery () `, mettez à jour la logique de l'API de stockage. Si vous utilisez le web, il y a une légère optimisation que nous pouvons ajouter. Même si nous devons lire les données photo au format base64 pour pouvoir les afficher, il n’y a pas besoin d’enregistrer sous ce formulaire, car il est déjà enregistré sur le système de fichiers :
 
 ```typescript
 Storage.set({
@@ -134,7 +134,7 @@ Storage.set({
         }))
 ```
 
-Finally, a small change to `tab2.page.html` is required to support both web and mobile. If running the app on the web, the `base64` property will contain the photo data to display. If on mobile, the `webviewPath` will be used:
+Enfin, un petit changement à `tab2.page.html` est nécessaire pour supporter à la fois web et mobile. Si l'application est exécutée sur le web, la propriété `base64` contiendra les données photo à afficher. Si sur mobile, le `webviewPath` sera utilisé :
 
 ```html
 <ion-col size="6"
@@ -144,4 +144,4 @@ Finally, a small change to `tab2.page.html` is required to support both web and 
 </ion-col>
 ```
 
-Our Photo Gallery now consists of one codebase that runs on the web, Android, and iOS. Next up, the part you’ve been waiting for - deploying the app to a device.
+Notre Galerie de photos consiste maintenant en une base de code qui fonctionne sur le web, Android, et iOS. Ensuite, la partie que vous attendiez - déployer l'application sur un appareil.
