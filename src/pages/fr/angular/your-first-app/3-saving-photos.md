@@ -1,7 +1,7 @@
 ---
-previousText: 'Taking Photos'
-previousUrl: '/docs/angular/your-first-app/2-taking-photos'
-nextText: 'Loading Photos on Filesystem'
+previousText: 'Prendre une photo'
+previousUrl: '/docs/angular/your-first-app/2-saving-photos'
+nextText: 'Charger une image dépuis le fichier système'
 nextUrl: '/docs/angular/your-first-app/4-loading-photos'
 ---
 
