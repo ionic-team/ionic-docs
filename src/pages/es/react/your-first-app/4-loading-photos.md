@@ -68,7 +68,7 @@ The first parameter to `useEffect` is the function that will be called by the ef
 
 On mobile (coming up next!), we can directly set the source of an image tag - `<img src=”x” />` - to each photo file on the Filesystem, displaying them automatically. On the web, however, we must read each image from the Filesystem into base64 format, using a new `base64` property on the `Photo` object. This is because the Filesystem API uses [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood.
 
-Since are photos are either displayed with base64 encoded content, or a file path, we need to update the IonImg's src prop (in the Tab2 component) to pass in base64 if it is available, or fallback to the webviewPath if not:
+Since our photos are either displayed with base64 encoded content, or a file path, we need to update the IonImg's src prop (in the Tab2 component) to pass in base64 if it is available, or fallback to the webviewPath if not:
 
 ```typescript
 <IonImg src={photo.base64 ?? photo.webviewPath} />
