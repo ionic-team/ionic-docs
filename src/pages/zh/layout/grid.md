@@ -48,9 +48,13 @@ contributors:
 - Grid tiers are based on minimum widths, meaning they apply to their tier and all those larger than them (e.g., `size-sm="4"` applies to small, medium, large, and extra large devices).
 - Grids can easily be customized via CSS variables. See [customizing the grid](#customizing-the-grid).
 
+### Live Example
+
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-basic-grid).
+
 ## 网格大小
 
-默认情况下，网格将占用100%宽度。 要根据屏幕大小设置特定宽度，请添加 `fixed` 属性。 每个断点的网格宽度在 `--ion-grid-wid-{breakpoint}` CSS 变量中定义。 欲了解更多信息，请参阅 [自定义网格](#customizing-the-grid)。
+By default, the grid will take up 100% width. To set a specific width based on the screen size, add the `fixed` attribute. The width of the grid for each breakpoint is defined in the `--ion-grid-width-{breakpoint}` CSS variables. For more information, see [customizing the grid](#customizing-the-grid).
 
 | 名称 | 值      | 说明                              |
 | -- | ------ | ------------------------------- |
@@ -60,6 +64,10 @@ contributors:
 | lg | 960px  | 当(最小宽度：992px) 时，网格宽度设置为 960px   |
 | xl | 1140px | 当(最小宽度：1200px) 时，网格宽度设置为 1140px |
 
+
+### Live Example
+
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-fixed-width-grid).
 
 ## 网格属性
 
@@ -72,7 +80,7 @@ The grid takes up the entire width of the screen by default. This can be modifie
 
 ## 默认断点
 
-下面的表格中定义了默认断点。 目前无法自定义断点。 欲了解更多关于为什么不能定制的信息，请在媒体查询中查看 [变量](/docs/theming/advanced#variables-in-media-queries)。
+The default breakpoints are defined in the table below. Breakpoints can not be customized at this time. For more information on why they can't be customized, see [Variables in Media Queries](/docs/theming/advanced#variables-in-media-queries).
 
 | 名称 | 值      | 宽度前缀       | Offset Prefix | Push Prefix | 下拉前缀       | 说明                                   |
 | -- | ------ | ---------- | ------------- | ----------- | ---------- | ------------------------------------ |
@@ -85,9 +93,9 @@ The grid takes up the entire width of the screen by default. This can be modifie
 
 ## 自动布局列
 
-### 等宽
+### Equal-width
 
-默认情况下，列将占用所有设备和屏幕大小行内的等宽。
+By default, columns will take up equal width inside of a row for all devices and screen sizes.
 
 ```html
 <ion-grid>
@@ -123,7 +131,7 @@ The grid takes up the entire width of the screen by default. This can be modifie
 </ion-grid>
 ```
 
-### 设置一个列宽度
+### Setting one column width
 
 Set the width of one column and the others will automatically resize around it. This can be done using our predefined grid attributes. In the example below, the other columns will resize no matter the width of the center column.
 
@@ -166,7 +174,11 @@ Set the width of one column and the others will automatically resize around it. 
 </ion-grid>
 ```
 
-### 可变的容器宽度
+#### Live Example
+
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-set-width-col).
+
+### Variable-width
 
 By setting the `size-{breakpoint}` properties to `"auto"` the column can size itself based on the natural width of its content. This is extremely useful for setting a column width using pixels. The columns next to the variable-width column will resize to fill the row.
 
@@ -213,6 +225,10 @@ By setting the `size-{breakpoint}` properties to `"auto"` the column can size it
   </ion-row>
 </ion-grid>
 ```
+
+#### Live Example
+
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-var-width-col).
 
 ## 响应属性
 
@@ -278,6 +294,10 @@ Use a combination of width and breakpoint attributes to create a grid that start
 </ion-grid>
 ```
 
+#### Live Example
+
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-stacked-horizontal-grid).
+
 ## Reordering
 
 ### Offsetting columns
@@ -325,6 +345,10 @@ Offsets can also be added based on screen breakpoints. Here's an example of a gr
 </ion-grid>
 ```
 
+#### Live Example
+
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-offset-grid-cols).
+
 ### Push and pull
 
 Reorder the columns by adding the `push` and `pull` properties. These properties adjust the `left` and `right` of the columns by the specified number of columns making it easy to reorder columns. For example, in the following grid the column with the `1 of 2` description will actually be the last column and the `2 of 2` will be the first column.
@@ -369,6 +393,10 @@ Push and pull can also be added based on screen breakpoints. In the following ex
   </ion-row>
 </ion-grid>
 ```
+
+#### Live Example
+
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-grid-push-pull).
 
 ## Alignment
 
@@ -490,6 +518,10 @@ Columns can also align themselves differently than other columns by adding the a
 </ion-grid>
 ```
 
+#### Live Example
+
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-grid-vertical-align).
+
 ### Horizontal alignment
 
 All columns can be horizontally aligned inside of a row by adding different classes to the row. For a list of available classes, see [css utilities](/docs/layout/css-utilities#flex-container-properties).
@@ -562,6 +594,10 @@ All columns can be horizontally aligned inside of a row by adding different clas
   </ion-row>
 </ion-grid>
 ```
+
+#### Live Example
+
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-grid-horizontal-align).
 
 ## Customizing the grid
 
