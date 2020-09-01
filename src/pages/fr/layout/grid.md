@@ -48,6 +48,10 @@ The grid is a powerful mobile-first flexbox system for building custom layouts. 
 - Grid tiers are based on minimum widths, meaning they apply to their tier and all those larger than them (e.g., `size-sm="4"` applies to small, medium, large, and extra large devices).
 - Grids can easily be customized via CSS variables. See [customizing the grid](#customizing-the-grid).
 
+### Live Example
+
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-basic-grid).
+
 ## Grid size
 
 By default, the grid will take up 100% width. To set a specific width based on the screen size, add the `fixed` attribute. The width of the grid for each breakpoint is defined in the `--ion-grid-width-{breakpoint}` CSS variables. For more information, see [customizing the grid](#customizing-the-grid).
@@ -60,6 +64,10 @@ By default, the grid will take up 100% width. To set a specific width based on t
 | lg   | 960px  | Set grid width to 960px when (min-width: 992px)   |
 | xl   | 1140px | Set grid width to 1140px when (min-width: 1200px) |
 
+
+### Live Example
+
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-fixed-width-grid).
 
 ## Grid attributes
 
@@ -166,6 +174,10 @@ Set the width of one column and the others will automatically resize around it. 
 </ion-grid>
 ```
 
+#### Live Example
+
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-set-width-col).
+
 ### Variable-width
 
 By setting the `size-{breakpoint}` properties to `"auto"` the column can size itself based on the natural width of its content. This is extremely useful for setting a column width using pixels. The columns next to the variable-width column will resize to fill the row.
@@ -213,6 +225,10 @@ By setting the `size-{breakpoint}` properties to `"auto"` the column can size it
   </ion-row>
 </ion-grid>
 ```
+
+#### Live Example
+
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-var-width-col).
 
 ## Responsive attributes
 
@@ -278,6 +294,10 @@ Use a combination of width and breakpoint attributes to create a grid that start
 </ion-grid>
 ```
 
+#### Live Example
+
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-stacked-horizontal-grid).
+
 ## Reordering
 
 ### Offsetting columns
@@ -325,6 +345,10 @@ Offsets can also be added based on screen breakpoints. Here's an example of a gr
 </ion-grid>
 ```
 
+#### Live Example
+
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-offset-grid-cols).
+
 ### Push and pull
 
 Reorder the columns by adding the `push` and `pull` properties. These properties adjust the `left` and `right` of the columns by the specified number of columns making it easy to reorder columns. For example, in the following grid the column with the `1 of 2` description will actually be the last column and the `2 of 2` will be the first column.
@@ -369,6 +393,10 @@ Push and pull can also be added based on screen breakpoints. In the following ex
   </ion-row>
 </ion-grid>
 ```
+
+#### Live Example
+
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-grid-push-pull).
 
 ## Alignment
 
@@ -490,6 +518,10 @@ Columns can also align themselves differently than other columns by adding the a
 </ion-grid>
 ```
 
+#### Live Example
+
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-grid-vertical-align).
+
 ### Horizontal alignment
 
 All columns can be horizontally aligned inside of a row by adding different classes to the row. For a list of available classes, see [css utilities](/docs/layout/css-utilities#flex-container-properties).
@@ -562,6 +594,10 @@ All columns can be horizontally aligned inside of a row by adding different clas
   </ion-row>
 </ion-grid>
 ```
+
+#### Live Example
+
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-grid-horizontal-align).
 
 ## Customizing the grid
 
