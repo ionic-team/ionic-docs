@@ -155,9 +155,13 @@ import { LoginComponent } from './login.component';
 
 在这里，我们进行了一个典型的Angular模块的设置和一个路由模块的引入，但我们现在使用 `forChild`，并在设置中声明组件。 设置完成，当我们运行编译时，程序就会为login组件和detail组件分别生成单独的块。
 
-## 使用标签页
+## Live Example
 
-使用标签页时，Angular为Ionic提供了机制，以确定哪些组件有应该被加载，但主要工作是有tabs组件完成的。 我们来看一个简单的例子：
+If you would prefer to get hands on with the concepts and code described above, please checkout our [live example](https://stackblitz.com/edit/ionic-angular-routing?file=src/app/app-routing.module.ts) of the topics above on StackBlitz.
+
+## Working with Tabs
+
+With Tabs, the Angular Router provides Ionic the mechanism to know what components should be loaded, but the heavy lifting is actually done by the tabs component. Let's look at a simple example.
 
 ```ts
 const routes: Routes = [
@@ -189,7 +193,7 @@ const routes: Routes = [
 ];
 ```
 
-我们这里设置了一个"tabs"路径，然后加载它。 在这个例子中我们称路径为"tabs"，不过路径的名字可以随意更改。 也可以用你认为合适于自己APP的名字来命名。在这个路由对象中，我们可以定义一个子路由。 在这个例子中，最上层的子路由"tab1"可以作为我们的“出口”，可以用来加载额外的子路由。 距离来说，我们有一个单一子路由，可以加载一个新的组件。 标签标记如下：
+Here we have a "tabs" path that we load. In this example we call the path “tabs”, but the name of the paths are open to be changed. They can be called whatever fits your app. In that route object, we can define a child route as well. In this example, the top level child route "tab1" acts as our "outlet", and can load additional child routes. For this example, we have a single sub-child-route, which just loads a new component. The markup for the tab is as followed:
 
 ```html
 <br /><ion-tabs>
@@ -206,4 +210,4 @@ const routes: Routes = [
 </ion-tabs>
 ```
 
-如果你以前构建过Ionic应用，你应该就很熟悉了。 我们创建了一个 `ion-tabs`组件，然后提供了一个 `ion-tab-bar`。 这个`ion-tab-bar`包括一个`ion-tab-button`，它存在一个与路由器配置中tab的“出口”相关联的`tab`属性。注意，最新版本的`@ionic/angular`中不再需要`<ion-tab>`，开发者完全可以自定义标签栏，它唯一的真实来源在路由器配置中。
+If you've built apps with Ionic before, this should feel familiar. We create a `ion-tabs` component, and provide a `ion-tab-bar`. The `ion-tab-bar` provides a `ion-tab-button` with a `tab` property that is associated with the tab "outlet" in the router config. Note that the latest version of `@ionic/angular` no longer requires `<ion-tab>`, but instead allows developers to fully customize the tab bar, and the single source of truth lives within the router configuration.
