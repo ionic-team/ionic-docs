@@ -186,6 +186,10 @@ The [`match`](https://reacttraining.com/react-router/web/api/match) prop contain
 
 Note how we use a TypeScript interface to strongly type the props object. The interface gives us type safety and code completion inside of the component.
 
+## Live Example
+
+If you would prefer to get hands on with the concepts and code described above, please checkout our [live example](https://stackblitz.com/edit/ionic-react-routing?file=src/index.tsx) of the topics above on StackBlitz.
+
 ### IonRouterOutlet in a Tabs View
 
 When working in a tabs view, Ionic React needs a way to determine what views belong to which tabs. We accomplish this by taking advantage of the fact that the paths provided to a `Route` are regular expressions.
