@@ -6,7 +6,7 @@ import { Component, Prop, h } from '@stencil/core';
 export class NativeEnterpriseInstall {
   @Prop() pluginId?: string;
   @Prop() variables?: string;
-  @Prop() capacitorSlug?: string;
+  @Prop() capacitorSlug?: string | null;
 
   render() {
     if (typeof this.pluginId === 'undefined') {
