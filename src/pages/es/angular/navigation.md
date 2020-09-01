@@ -157,9 +157,13 @@ import { LoginComponent } from './login.component';
 
 Tenemos aquí una configuración típica de un módulo de Angular con "RouterModule", ahora usando `forChild` y declarando el componente en esa configuración. Con esta configuración, cuando ejecutemos nuestra compilación, produciremos fragmentos separados para el componente de aplicación, el componente de inicio de sesión y el componente de detalle.
 
-## Trabajando con pestañas
+## Live Example
 
-Con pestañas, el Router de Angular proporciona a Ionic el mecanismo para saber qué componentes se deben cargar, pero la elevación pesada se hace por el componente de las pestañas. Consideremos un ejemplo sencillo.
+If you would prefer to get hands on with the concepts and code described above, please checkout our [live example](https://stackblitz.com/edit/ionic-angular-routing?file=src/app/app-routing.module.ts) of the topics above on StackBlitz.
+
+## Working with Tabs
+
+With Tabs, the Angular Router provides Ionic the mechanism to know what components should be loaded, but the heavy lifting is actually done by the tabs component. Let's look at a simple example.
 
 ```ts
 const routes: Routes = [
@@ -191,7 +195,7 @@ const routes: Routes = [
 ];
 ```
 
-Aquí tenemos unas "tabs" que cargamos. In this example we call the path “tabs”, but the name of the paths are open to be changed. They can be called whatever fits your app. In that route object, we can define a child route as well. In this example, the top level child route "tab1" acts as our "outlet", and can load additional child routes. For this example, we have a single sub-child-route, which just loads a new component. The markup for the tab is as followed:
+Here we have a "tabs" path that we load. In this example we call the path “tabs”, but the name of the paths are open to be changed. They can be called whatever fits your app. In that route object, we can define a child route as well. In this example, the top level child route "tab1" acts as our "outlet", and can load additional child routes. For this example, we have a single sub-child-route, which just loads a new component. The markup for the tab is as followed:
 
 ```html
 <br /><ion-tabs>
