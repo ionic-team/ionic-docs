@@ -155,9 +155,13 @@ import { LoginComponent } from './login.component';
 
 Ici, nous avons une configuration typique de Module Angular, avec une importation de RouterModule, mais nous utilisons maintenant `forChild` et déclarons le composant dans cette configuration. Avec cette configuration, lorsque nous exécuterons notre build, nous produirons des morceaux distincts pour le composant d'application, le composant de connexion et le composant de détail.
 
-## Travailler avec les onglets
+## Live Example
 
-Avec les onglets, le routeur Angular fournit à Ionic le mécanisme pour savoir quels composants doivent être chargés, mais le levage de charges lourdes est en fait effectué par le composant onglets. Prenons un exemple simple.
+If you would prefer to get hands on with the concepts and code described above, please checkout our [live example](https://stackblitz.com/edit/ionic-angular-routing?file=src/app/app-routing.module.ts) of the topics above on StackBlitz.
+
+## Working with Tabs
+
+With Tabs, the Angular Router provides Ionic the mechanism to know what components should be loaded, but the heavy lifting is actually done by the tabs component. Let's look at a simple example.
 
 ```ts
 const routes: Routes = [
@@ -189,7 +193,7 @@ const routes: Routes = [
 ];
 ```
 
-Ici nous avons un chemin "tabs" que nous chargeons. Dans cet exemple, nous appelons le chemin «tabs», mais le nom des chemins peut être modifié. Ils peuvent être appelés selon ce qui convient à votre application. Dans cet objet route, nous pouvons également définir une route enfant. Dans cet exemple, la route enfant de niveau supérieur "tab1" agit comme notre "outlet" et peut charger des routes enfant supplémentaires. Pour cet exemple, nous avons un seul chemin sous-enfant, qui ne fait que charger un nouveau composant. Le balisage de l'onglet est le suivant :
+Here we have a "tabs" path that we load. In this example we call the path “tabs”, but the name of the paths are open to be changed. They can be called whatever fits your app. In that route object, we can define a child route as well. In this example, the top level child route "tab1" acts as our "outlet", and can load additional child routes. For this example, we have a single sub-child-route, which just loads a new component. The markup for the tab is as followed:
 
 ```html
 <br /><ion-tabs>
@@ -206,4 +210,4 @@ Ici nous avons un chemin "tabs" que nous chargeons. Dans cet exemple, nous appel
 </ion-tabs>
 ```
 
-Si vous avez construit des applications avec Ionic avant, cela devrait vous être familier. Nous créons un composent `ion-tabs`, puis on lui ajoute une `ion-tab-bar`. La `ion-tab-bar` fournit un `ion-tab-button` avec une propriété `tab` qui est associée à la tab "outlet" dans la configuration du routeur. Notez que la dernière version de `@ionic/angular` ne nécessite plus `<ion-tab>`, et permet maintenant au développeurs de complètement personnaliser la barre d'onglet. La seule source de vérité étant dans la configuration du routeur.<0>.
+If you've built apps with Ionic before, this should feel familiar. We create a `ion-tabs` component, and provide a `ion-tab-bar`. The `ion-tab-bar` provides a `ion-tab-button` with a `tab` property that is associated with the tab "outlet" in the router config. Note that the latest version of `@ionic/angular` no longer requires `<ion-tab>`, but instead allows developers to fully customize the tab bar, and the single source of truth lives within the router configuration.
