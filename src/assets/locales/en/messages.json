@@ -85,6 +85,7 @@
 
   "menu-vue": "Vue (beta)",
   "menu-vue-overview": "Overview",
+  "menu-vue-quickstart": "Quickstart",
   "menu-vue-your-first-app": "Build Your First App",
   "menu-vue-lifecycle": "Lifecycle",
   "menu-vue-navigation": "Navigation/Routing",
