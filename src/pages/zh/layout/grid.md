@@ -50,7 +50,7 @@ contributors:
 
 ### Live Example
 
-You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-basic-grid).
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-basic-grid) and for React [here](https://stackblitz.com/edit/ionic-react-basic-grid).
 
 ## 网格大小
 
@@ -67,7 +67,7 @@ By default, the grid will take up 100% width. To set a specific width based on t
 
 ### Live Example
 
-You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-fixed-width-grid).
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-fixed-width-grid) and for React [here](https://stackblitz.com/edit/ionic-react-fixed-width-grid).
 
 ## 网格属性
 
@@ -176,7 +176,7 @@ Set the width of one column and the others will automatically resize around it. 
 
 #### Live Example
 
-You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-set-width-col).
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-set-width-col) and for React [here](https://stackblitz.com/edit/ionic-react-set-width-col).
 
 ### Variable-width
 
@@ -228,7 +228,7 @@ By setting the `size-{breakpoint}` properties to `"auto"` the column can size it
 
 #### Live Example
 
-You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-var-width-col).
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-var-width-col) and for React [here](https://stackblitz.com/edit/ionic-react-var-width-col).
 
 ## 响应属性
 
@@ -296,7 +296,7 @@ Use a combination of width and breakpoint attributes to create a grid that start
 
 #### Live Example
 
-You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-stacked-horizontal-grid).
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-stacked-horizontal-grid) and for React [here](https://stackblitz.com/edit/ionic-react-stacked-horizontal-grid).
 
 ## Reordering
 
@@ -347,7 +347,7 @@ Offsets can also be added based on screen breakpoints. Here's an example of a gr
 
 #### Live Example
 
-You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-offset-grid-cols).
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-offset-grid-cols) and for React [here](https://stackblitz.com/edit/ionic-react-offset-grid-cols).
 
 ### Push and pull
 
@@ -396,7 +396,7 @@ Push and pull can also be added based on screen breakpoints. In the following ex
 
 #### Live Example
 
-You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-grid-push-pull).
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-grid-push-pull) and for React [here](https://stackblitz.com/edit/ionic-react-grid-push-pull).
 
 ## Alignment
 
@@ -520,7 +520,7 @@ Columns can also align themselves differently than other columns by adding the a
 
 #### Live Example
 
-You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-grid-vertical-align).
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-grid-vertical-align) and for React [here](https://stackblitz.com/edit/ionic-react-grid-vertical-align).
 
 ### Horizontal alignment
 
@@ -597,7 +597,7 @@ All columns can be horizontally aligned inside of a row by adding different clas
 
 #### Live Example
 
-You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-grid-horizontal-align).
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-grid-horizontal-align) and for React [here](https://stackblitz.com/edit/ionic-react-grid-horizontal-align).
 
 ## Customizing the grid
 
