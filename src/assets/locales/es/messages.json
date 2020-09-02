@@ -203,7 +203,6 @@
   "menu-appflow-cookbook-private_git": "Como usar repositorios privados de GIT",
   "menu-appflow-cookbook-private_npm_modules": "Como utilizar módulos privados de NPM",
   "menu-appflow-cookbook-switch_node_version": "Usar diferentes nodos en compilaciones",
-  "menu-appflow-devapp": "DevApp: Ambiente Local",
   "menu-enterprise-getting-started": "Comenzando",
   "menu-enterprise-guides": "Guías",
   "menu-enterprise-authentication-security": "Soluciones predefinidas",

@@ -203,7 +203,6 @@
   "menu-appflow-cookbook-private_git": "使用 GIT 私人仓库",
   "menu-appflow-cookbook-private_npm_modules": "使用私有 NPM 模块",
   "menu-appflow-cookbook-switch_node_version": "在构建中使用不同的节点",
-  "menu-appflow-devapp": "DevApp：本地开发",
   "menu-enterprise-getting-started": "入门",
   "menu-enterprise-guides": "教程",
   "menu-enterprise-authentication-security": "预编译解决方案",

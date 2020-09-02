@@ -70,5 +70,5 @@ const items = {
     'menu-appflow-cookbook-switch_node_version': '/docs/appflow/cookbook/switch_node_version'
   },
   'menu-appflow-build-stacks': '/docs/appflow/build-stacks',
-  'menu-appflow-devapp': '/docs/appflow/devapp'
+  'menu-appflow-web-previews': '/docs/appflow/web-previews',
 };
