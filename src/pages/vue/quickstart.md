@@ -9,11 +9,11 @@ nextUrl: '/docs/vue/your-first-app'
 
 ## What is Ionic Framework?
 
-First off, if you're new here, welcome! Ionic Framework is a free and open source component library for building apps that run on iOS, Android, Electron, and the Web. You write your app once using familiar technologies (HTML, CSS, JavaScript) and deploy to any platform.
+First off, if you're new here, welcome! Ionic Framework is a free and open source component library for building apps that run on iOS, Android, Electron, and the Web. Write your app once using familiar technologies (HTML, CSS, JavaScript) and deploy to any platform.
 
 Along with the UI components, Ionic Framework also provides a command line tool for creating new apps, as well as deploying to the various platforms we support.
 
-In this guide, we'll go over the basics of both Vue and Ionic Framework, including any Ionic Framework specific features. If you're familiar with Vue, enjoy the guide and learn something new about Ionic Framework. If you're not familiar with either, no worries! This guide will cover the basics and provide enough information to get an app up and running.
+In this guide, we will go over the basics of both Vue and Ionic Framework, including any Ionic Framework specific features. If you are familiar with Vue, enjoy the guide and learn something new about Ionic Framework. If you are not familiar with either, no worries! This guide will cover the basics and provide enough information to get an app up and running.
 
 ## Creating a project with the Ionic CLI
 
@@ -24,18 +24,18 @@ To begin, let's install the latest version of the Ionic CLI.
 npm install -g @ionic/cli
 ```
 
-From here, the global command ionic will allow for the creation of a Vue project with Ionic and any other dependencies. To create a new project, run the following command:
+From here, the global command `ionic` will allow for the creation of a Vue project with Ionic Framework and any other dependencies. To create a new project, run the following command:
 
 ```shell
 ionic start myApp blank --type=vue
 cd myApp
 ```
 
-From here, we run ionic serve and have our project running in the browser.
+From here, we run `ionic serve` and have our project running in the browser.
 
 ## A look at a Vue Component
 
-The base of our app will be in the `src` directory, and the main entry point will be our `main.ts` file. If we open our project in a code editor and open `src/main.ts`, we should see the following:
+The base of our app will be in the `src` directory, and the main entry point will be our `main.ts` file. If we open our project in a code editor and open `main.ts`, we should see the following:
 
 ```ts
 import { createApp } from 'vue';
@@ -90,7 +90,7 @@ Let's break it down, starting with the first group of imports.
 import { IonApp, IonRouterOutlet } from '@ionic/vue';
 ```
 
-To use a component in Vue, you must first import it. So for Ionic Framework, this means anytime we want to use a Button or a Card, it must be added to our imports. In the case of our App component, we are using `IonApp` and `IonRouterOutlet`.
+To use a component in Vue, you must first import it. So for Ionic Framework, this means anytime we want to use a Button or a Card, it must be added to our imports. In the case of our `App` component, we are using `IonApp` and `IonRouterOutlet`.
 
 From there, let's look at the template.
 
@@ -102,7 +102,7 @@ From there, let's look at the template.
 </template>
 ```
 
-All Vue components must have a `<template>`. Inside of there, we place our `<ion-app>` and `<ion-router-outlet>` components. These can also be written as `<IonApp>` and `<IonRouterOutlet>` respectively, but there are a few caveats with that. See [Component name casing in templates](https://v3.vuejs.org/style-guide/#self-closing-components-strongly-recommended) for more information.
+All Vue components must have a `<template>`. Inside of there, we place our `IonApp` and `IonRouterOutlet` components.
 
 Finally, let's look at the component definition:
 
@@ -121,7 +121,7 @@ export default defineComponent({
 
 Vue 3 offers a new `defineComponent` function when creating components for improved tooling support, and we are going to use that here. We first define the name of the component, and then we supply the components that we will use in our template.
 
-There are several arguments you can supply here such as `methods`, `setup` code and more. We will explore some of these later.
+There are several arguments you can supply here such as `methods`, `setup` and more. This is explained as part of Vue's [Composition API Documentation](https://v3.vuejs.org/guide/composition-api-introduction.html#why-composition-api).
 
 
 ## Initializing the router
@@ -179,7 +179,7 @@ Now, you might be wondering: Why do we use `@` when describing the path to our c
 
 ## A component with style
 
-Now the `App` does not really have a lot to modify here. It's a basic example of a container component. With the Router logic set, all it's responsible for is to render a component that matches the given URL route. Since we already have one component/router setup, let's go ahead and modify our `Home` component.
+Now the `App` component does not really have a lot to modify here. It is a basic example of a container component. With the router logic set, all it is responsible for is to render a component that matches the given URL route. Since we already have one component/router setup, let's go ahead and modify our `Home` component.
 
 Currently, the `Home` component looks like so:
 
@@ -258,15 +258,17 @@ export default defineComponent({
 </style>
 ```
 
-Much like the `App` component we started with, we have some imports for specific Ionic Framework components, an import from Vue, and then our Vue component itself.
+Much like the `App` component we started with, we have some imports for specific Ionic Framework components, an import from Vue, the Vue component, and styles to go along with our component.
 
-The `IonPage` is the base component for all pages (a component with a route/URL), and includes some common building blocks of a full-screen component, like header, title, and content components.
+For our styles, notice that we have specified our styles to be `scoped`. This means that the styles we  write here will only apply to this component. This is useful for preventing styles from leaking out of a component and affecting other parts of your application. We strongly recommend using `scoped` styles for Ionic Vue applications.
 
-> When creating your own pages, don't forget to have `IonPage` be the root component for them. Having `IonPage` be the root component is important because it helps ensure transitions work properly as well as provides the base CSS the Ionic Framework components rely on.
+`IonPage` is the base component for all pages (a component with a route/URL), and includes some common building blocks of a full-screen component, like header, title, and content components.
+
+> When creating your own pages, do not forget to have `IonPage` be the root component for them. Having `IonPage` be the root component is important because it helps ensure transitions work properly as well as provides the base CSS the Ionic Framework components rely on.
 
 `IonHeader` is a component meant to exist at the top of the page. It does not do much by itself, aside from handling some flexbox-based layout. It is meant to hold components, like `IonToolbar` or `IonSearchbar`.
 
-`IonContent` is, as its name suggests, the main content area for our page. It is responsible for providing a scrollable content that users will interact with, plus any scroll events that could be used in app.
+`IonContent` is, as its name suggests, the main content area for our page. It is responsible for providing a scrollable content that users will interact with, plus any scroll events that could be used in an app.
 
 Our current content is relatively simple, but does not contain anything that could be used in a real app, so let's change that.
 
@@ -294,11 +296,11 @@ Our current content is relatively simple, but does not contain anything that cou
 </template>
 ```
 
-Here in our `IonContent`, we are adding an `IonList` and a much more involved `IonItem` component. Let's look at `IonItem` as it is the centerpiece here.=
+Here in our `IonContent`, we are adding an `IonList` and a much more involved `IonItem` component. Let's look at `IonItem` as it is the centerpiece here.
 
 ```html
 <ion-item>
-  <ion-checkbox slot="start" />
+  <ion-checkbox slot="start"></ion-checkbox>
   <ion-label>
     <h1>Create Idea</h1>
     <ion-note>Run Idea By Brandy</ion-note>
@@ -309,9 +311,9 @@ Here in our `IonContent`, we are adding an `IonList` and a much more involved `I
 </ion-item>
 ```
 
-Looking at our code, we have a special attribute called slot. This is key for letting the IonItem know where to place the `IonCheckbox` when it renders. This is not a Vue API, but a web standards API. Additionally, this is different from the slots API you may recall from Vue 2.
+Looking at our code, we have a special attribute called slot. This is key for letting the `IonItem` know where to place the `IonCheckbox` when it renders. This is not a Vue API, but a web standards API. Additionally, this is different from the slots API you may recall from Vue 2.
 
-Let's look at another component from Ionic Framework, FAB. Floating Action Buttons are a nice way to provide a main action that is elevated from the rest of an app. For this FAB, we'll need three components: a FAB, a FAB Button, and an Icon.
+Let's look at another component from Ionic Framework, FAB. Floating Action Buttons are a nice way to provide a main action that is elevated from the rest of an app. For this FAB, we will need three components: a FAB, a FAB Button, and an Icon.
 
 ```typescript
 import { add } from 'ionicons/icons';
@@ -330,9 +332,9 @@ import { add } from 'ionicons/icons';
 </ion-content>
 ```
 
-On our main `IonFab`, we are setting its positioning with the vertical and horizontal attributes. We're also setting the render location to "fixed" with the slot attribute. This will tell `IonFab` to render outside of the scrollable content in `IonContent`.
+On our main `IonFab`, we are setting its positioning with the vertical and horizontal attributes. We are also setting the render location to "fixed" with the slot attribute. This will tell `IonFab` to render outside of the scrollable content in `IonContent`.
 
-Now let's wire up a click handler to this. What we want to do is when we click the button, we'll navigate to a new page (which we will create in a moment). To do this, we'll need to get access to Vue Router's navigation API. This can be done by importing `useRouter` from the `vue-router` package.
+Now let's wire up a click handler to this. WWhen clicking the FAB button, we want to navigate to a new page (which we will create in a moment). To do this, we will need to get access to Vue Router's navigation API. This can be done by importing `useRouter` from the `vue-router` package.
 
 ```typescript
 import { add } from 'ionicons/icons';
@@ -416,7 +418,7 @@ const router = createRouter({
 
 export default router
 ```
-With our router now having an entry for the route `/new`, we will create the component needed, `NewItem`. This will exist in `src/views/NewItem.vue`.
+With our router now having an entry for the route `/new`, we will create the component needed, `NewItem`. This will exist in `views/NewItem.vue`.
 
 Let's fill the `NewItem.vue` file with some placeholder content for the moment.
 
@@ -464,7 +466,7 @@ export default defineComponent({
 
 The content here should look similar to the `Home` component. What is different here is the `IonBackButton` component. This is used to navigate back to the previous route. Seems easy enough, right? Ok, but what if we reload the page?
 
-In this case, the in-memory history is lost, so the back button disappears. To address this, we can set the `default-href` property value to the URL we want to navigate to if there is no history.
+In this case, the in-memory history is lost, so the back button disappears. To address this, we can set the `default-href` attribute value to the URL we want to navigate to if there is no history.
 
 ```html
 <ion-back-button default-href="/home"></ion-back-button>
@@ -499,7 +501,7 @@ ionic cap open android
 
 Additional details can be found [here](https://capacitor.ionicframework.com/docs/getting-started/with-ionic). 
 
-Next, check out [all the APIs](https://capacitor.ionicframework.com/docs/apis) that are available. There’s some great stuff, including the [Camera API](https://capacitor.ionicframework.com/docs/apis/camera). We can implement photo capture functionality in just a few lines of code:
+Next, check out [all the APIs](https://capacitor.ionicframework.com/docs/apis) that are available. There is some great features, including the [Camera API](https://capacitor.ionicframework.com/docs/apis/camera). We can implement photo capture functionality in just a few lines of code:
 
 ```typescript
 <template>
@@ -560,7 +562,7 @@ export default defineComponent({
 
 ## Where to go from here
 
-This guide covered the basics of creating an Ionic Vue app, adding some basic navigation, and introducing Capacitor as a way of building native apps. To dive deeper into building complete Ionic apps with Vue and Capacitor, follow our [First App guide](/docs/vue/your-first-app).
+This guide covered the basics of creating an Ionic Vue app, adding some basic navigation, and introducing Capacitor as a way of building native apps. To dive deeper into building complete Ionic Framework apps with Vue and Capacitor, follow our [First App guide](/docs/vue/your-first-app).
 
 For a more detailed look at Ionic Frameworks’s components, check out the [component API pages](https://ionicframework.com/docs/components). For more details on Vue, review the [Vue Docs](https://v3.vuejs.org/). To keep building native features, see the [Capacitor docs](https://capacitor.ionicframework.com/docs/).
 
