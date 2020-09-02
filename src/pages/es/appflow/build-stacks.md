@@ -2,8 +2,8 @@
 title: "Build Stacks"
 previousText: "Use different Node in builds"
 previousUrl: "/docs/appflow/cookbook/switch_node_version"
-nextText: "Ionic DevApp"
-nextUrl: "/docs/appflow/devapp"
+nextText: "Web Previews"
+nextUrl: "/docs/appflow/web-previews"
 ---
 
 # Build Stacks
