@@ -1,7 +1,7 @@
 ---
 title: Identity Vault
 template: enterprise-plugin
-version: 3.6.3
+version: 3.6.5
 minor: 3.6.X
 otherVersions:
   - 2.0.X
@@ -1885,6 +1885,16 @@ ___
 ## Change Log
 
 
+### \[3.6.5\] (2020-09-02)
+
+
+### Bug Fixes
+
+* **android:** lifecycle events moved to the main thread
+* **android:** reset auth attempts when clearing/resetting auth [CT-83]
+
+
+
 ### \[3.6.4\] (2020-05-13)
 
 
@@ -1892,6 +1902,7 @@ ___
 
 * **android:** avoid KeyPermanentlyInvalidatedException problem on SDK 19 [SE-183]
 * **ios:** swift 4.2 compilation issue
+
 
 
 ### \[3.6.3\] (2020-04-01)
