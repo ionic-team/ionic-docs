@@ -127,6 +127,56 @@ We can also programatically navigate in our app by using the router API:
 
 Both options provide the same navigation mechanism, just fitting different use cases.
 
+## Nested Routes
+
+In a typical Vue application, nested routes would require one or more instances of a `<router-view>` component. This usage does not translate well to building mobile applications, so Ionic Vue requires that you make one small change to your routing setup. Let's look at an example.
+
+Say we have two routes, `/dashboard` and `/dashboard/stats`. The `stats` route is a nested route inside of `dashboard`. In a typical Vue application without Ionic Framework, your routing setup would look something like this:
+
+```typescript
+const routes: Array<RouteRecordRaw> = [
+  {
+    path: '/dashboard', 
+    component: DashboardRouterView,
+    children: [
+      { 
+        path: '', 
+        component: DashboardMainPage
+      },
+      { 
+        path: 'stats', 
+        component: DashboardStatsPage
+      },
+    ]
+  }
+];
+```
+
+> Note: The above example is meant to highlight a small difference in routing between Ionic Vue and a regular Vue application without Ionic Framework. The above example should not be used in Ionic Vue.
+
+In this example, the base component for the `dashboard` route is `DashboardRouterView` which renders a `<router-view>` component. Inside of the route's `children` array is the `DashboardMainPage` component for the default view, and the `DashboardStatsPage` for the `stats` view.
+
+The `IonRouterOutlet` component handles rendering nested routes for you, so you should only ever need to use one `IonRouterOutlet`. In Ionic Vue the routing configuration would look something like this:
+
+```typescript
+const routes: Array<RouteRecordRaw> = [
+  {
+    path: '/dashboard', 
+    component: DashboardMainPage,
+    children: [
+      { 
+        path: 'stats', 
+        component: DashboardStatsPage
+      },
+    ]
+  }
+];
+```
+
+Notice the only difference here is that we are rendering the `DashboardMainPage` page in the base `/dashboard` path instead of as a child of the `/dashboard` path. The `stats` route configuration remains exactly the same.
+
+This approach allows you to have several nested layers of routes while only having to use one `IonRouterOutlet`. That being said, we caution against nesting your routes more than one or two layers deep as it make navigating your app confusing.
+
 ## Lazy Loading Routes
 
 The current way our routes are setup makes it so they are included in the same initial chunk when loading the app, which is not always ideal. Instead, we can set up our routes so that components are loaded as they are needed:
