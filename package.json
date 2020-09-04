@@ -37,7 +37,7 @@
     "throng": "^4.0.0"
   },
   "devDependencies": {
-    "@stencil/core": "1.14.0",
+    "@stencil/core": "2.0.3",
     "@types/fs-extra": "8.1.0",
     "@types/listr": "0.14.2",
     "@types/marked": "1.1.0",
