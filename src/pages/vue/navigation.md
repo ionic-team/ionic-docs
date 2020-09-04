@@ -127,6 +127,31 @@ We can also programatically navigate in our app by using the router API:
 
 Both options provide the same navigation mechanism, just fitting different use cases.
 
+## Lazy Loading Routes
+
+The current way our routes are setup makes it so they are included in the same initial chunk when loading the app, which is not always ideal. Instead, we can set up our routes so that components are loaded as they are needed:
+
+```typescript
+const routes: Array<RouteRecordRaw> = [
+  {
+    path: '/',
+    redirect: '/home'
+  },
+  {
+    path: '/home',
+    name: 'Home',
+    component: HomePage
+  },
+  {
+    path: '/detail',
+    name: 'Detail',
+    component: () => import('@/views/DetailPage.vue')
+  }
+]
+```
+
+Here, we have the same setup as before only this time `DetailPage` has been replaced with an import call. This will result in the `DetailPage` component no longer being part of the chunk that is requested on application load.
+
 ## Nested Routes
 
 In a typical Vue application, nested routes would require one or more instances of a `<router-view>` component. This usage does not translate well to building mobile applications, so Ionic Vue requires that you make one small change to your routing setup. Let's look at an example.
@@ -176,31 +201,6 @@ const routes: Array<RouteRecordRaw> = [
 Notice the only difference here is that we are rendering the `DashboardMainPage` page in the base `/dashboard` path instead of as a child of the `/dashboard` path. The `stats` route configuration remains exactly the same.
 
 This approach allows you to have several nested layers of routes while only having to use one `IonRouterOutlet`. That being said, we caution against nesting your routes more than one or two layers deep as it make navigating your app confusing.
-
-## Lazy Loading Routes
-
-The current way our routes are setup makes it so they are included in the same initial chunk when loading the app, which is not always ideal. Instead, we can set up our routes so that components are loaded as they are needed:
-
-```typescript
-const routes: Array<RouteRecordRaw> = [
-  {
-    path: '/',
-    redirect: '/home'
-  },
-  {
-    path: '/home',
-    name: 'Home',
-    component: HomePage
-  },
-  {
-    path: '/detail',
-    name: 'Detail',
-    component: () => import('@/views/DetailPage.vue')
-  }
-]
-```
-
-Here, we have the same setup as before only this time `DetailPage` has been replaced with an import call. This will result in the `DetailPage` component no longer being part of the chunk that is requested on application load.
 
 ## Working with Tabs
 
@@ -296,5 +296,72 @@ Nothing should be provided inside of `IonRouterOutlet` when setting it up in you
 
 ## URL Parameters
 
+Let's expand upon our original routing example to show how we can use URL parameters:
+
+```typescript
+const routes: Array<RouteRecordRaw> = [
+  {
+    path: '/',
+    redirect: '/home'
+  },
+  {
+    path: '/home',
+    name: 'Home',
+    component: HomePage
+  },
+  {
+    path: '/detail/:id',
+    name: 'Detail',
+    component: DetailPage
+  }
+]
+```
+
+Notice that we have now added `:id` to the end of our `detail` path string. URL parameters are dynamic portions of our route paths. When the user navigates to a URL such as `/details/1` the "1" is saved to a parameter named "id" which can be accessed in the component when the route renders.
+
+Let's look at how to use it in our component:
+
+```typescript
+<template>
+  <ion-page>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Details</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    
+    <ion-content>
+      Detail ID: {{ id }}
+    </ion-content>
+  </ion-page>
+</template>
+
+<script lang="ts">
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import { defineComponent } from 'vue';
+import { useRoute } from 'vue-router';
+
+export default defineComponent({
+  name: 'Detail',
+  components: {
+    IonContent, 
+    IonHeader, 
+    IonPage, 
+    IonTitle, 
+    IonToolbar
+  },
+  setup() {
+    const route = useRoute();
+    const { id } = route.params;
+    return { id };
+  }
+})
+</script>
+```
+
+Our `route` variable contains an instance of the current route. It also contains any parameters we have passed in. We can obtain the `id` parameter from here and display it on the screen.
+
 ## More Information
+
+For more info on routing in Vue using Vue Router, check out their docs at http://router.vuejs.org/.
 
