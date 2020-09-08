@@ -152,20 +152,41 @@ const routes: Array<RouteRecordRaw> = [
 
 Here, we have the same setup as before only this time `DetailPage` has been replaced with an import call. This will result in the `DetailPage` component no longer being part of the chunk that is requested on application load.
 
-## Nested Routes
+## Shared URLs versus Nested Routes
 
-In a typical Vue application, nested routes would require one or more instances of a `<router-view>` component. This usage does not translate well to building mobile applications, so Ionic Vue requires that you make one small change to your routing setup. Let's look at an example.
+A common point of confusion when setting up routing is deciding between shared urls or nested routes. This part of the guide will explain both and help you decide which one to use.
 
-Say we have two routes, `/dashboard` and `/dashboard/stats`. The `stats` route is a nested route inside of `dashboard`. In a typical Vue application without Ionic Framework, your routing setup would look something like this:
+### Shared URLs
+
+Shared URLs is a route configuration where routes have pieces of the URL in common. The following is an example of a shared URL configuration:
 
 ```typescript
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/dashboard', 
-    component: DashboardRouterView,
+    component: DashboardMainPage,
+  },
+  {
+    path: '/dashboard/stats',
+    component: DashboardStatsPage
+  }
+];
+```
+
+The above routes are considered "shared" because they reuse the `dashboard` piece of the URL.
+
+### Nested Routes
+
+Nested Routes is a route configuration where routes are listed as children of other routes. The following is an example of a nested route configuration:
+
+```typescript
+const routes: Array<RouteRecordRaw> = [
+  {
+    path: '/dashboard/:id', 
+    component: DashboardRouterOutlet,
     children: [
-      { 
-        path: '', 
+      {
+        path: '',
         component: DashboardMainPage
       },
       { 
@@ -177,30 +198,15 @@ const routes: Array<RouteRecordRaw> = [
 ];
 ```
 
-> Note: The above example is meant to highlight a small difference in routing between Ionic Vue and a regular Vue application without Ionic Framework. The above example should not be used in Ionic Vue.
+The above routes are nested because they are in the `children` array of the parent route. Notice that the parent route renders the `DashboardRouterOutlet` component. When you nest routes, you need to render another instance of `ion-router-outlet`.
 
-In this example, the base component for the `dashboard` route is `DashboardRouterView` which renders a `<router-view>` component. Inside of the route's `children` array is the `DashboardMainPage` component for the default view, and the `DashboardStatsPage` for the `stats` view.
+### Which one should I choose?
 
-The `IonRouterOutlet` component handles rendering nested routes for you, so you should only ever need to use one `IonRouterOutlet`. In Ionic Vue the routing configuration would look something like this:
+Shared URLs are great when you want to transition from page A to page B while preserving the relationship between the two pages in the URL. In our previous example, a button on the `/dashboard` page could transition to the `/dashboard/stats` page. The relationship between the two pages is preserved because of a) the page transition and b) the url.
 
-```typescript
-const routes: Array<RouteRecordRaw> = [
-  {
-    path: '/dashboard', 
-    component: DashboardMainPage,
-    children: [
-      { 
-        path: 'stats', 
-        component: DashboardStatsPage
-      },
-    ]
-  }
-];
-```
+Nested routes are mostly useful when you need to render content in outlet A while also rendering sub-content inside of a nested outlet B. The most common use case you will run into is tabs. When you load up a tabs Ionic starter application, you will see `ion-tab-bar` and `ion-tabs` components rendered in the first `ion-router-outlet`. The `ion-tabs` component renders another `ion-router-outlet` which is responsible for rendering the contents of each tab.
 
-Notice the only difference here is that we are rendering the `DashboardMainPage` page in the base `/dashboard` path instead of as a child of the `/dashboard` path. The `stats` route configuration remains exactly the same.
-
-This approach allows you to have several nested layers of routes while only having to use one `IonRouterOutlet`. That being said, we caution against nesting your routes more than one or two layers deep as it make navigating your app confusing.
+There are very few use cases in which nested routes make sense in mobile applications. When in doubt, go with the shared URL route configuration. We strongly caution against using nested routing in contexts other than tabs as it can quickly make navigating your app confusing.
 
 ## Working with Tabs
 
@@ -292,7 +298,7 @@ If you have worked with Ionic Framework before, this should feel familiar. We cr
 
 The `IonRouterOutlet` component provides a container to render your views in. It is similar to the `RouterView` component found in other Vue applications except that `IonRouterOutlet` can render multiple pages in the DOM in the same outlet. When a component is rendered in `IonRouterOutlet` we consider this to be an Ionic Framework "page". The router outlet container controls the transition animation between the pages as well as controls when a page is created and destroyed. This helps maintain the state between the views when switching back and forth between them.
 
-Nothing should be provided inside of `IonRouterOutlet` when setting it up in your template. While `IonRouterOutlet` can be nested in child components, we caution against it as it typically makes navigation in apps confusing.
+Nothing should be provided inside of `IonRouterOutlet` when setting it up in your template. While `IonRouterOutlet` can be nested in child components, we caution against it as it typically makes navigation in apps confusing. See [Shared URLs versus Nested Routes](#shared-urls-versus-nested-routes) for more information.
 
 ## URL Parameters
 
