@@ -85,9 +85,14 @@
 
   "menu-vue": "Vue (beta)",
   "menu-vue-overview": "Overview",
+  "menu-vue-quickstart": "Quickstart",
   "menu-vue-your-first-app": "Build Your First App",
   "menu-vue-lifecycle": "Lifecycle",
   "menu-vue-navigation": "Navigation/Routing",
+  "menu-vue-config": "Config",
+  "menu-vue-platform": "Platform",
+  "menu-vue-pwa": "Progressive Web Apps",
+  "menu-vue-testing": "Testing",
 
   "menu-utilities": "Utilities",
   "menu-utilities-animations": "Animations",
