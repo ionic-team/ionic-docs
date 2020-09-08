@@ -154,7 +154,7 @@ Here, we have the same setup as before only this time `DetailPage` has been repl
 
 ## Shared URLs versus Nested Routes
 
-A common point of confusion when setting up routing is deciding between shared urls or nested routes. This part of the guide will explain both and help you decide which one to use.
+A common point of confusion when setting up routing is deciding between shared URLs or nested routes. This part of the guide will explain both and help you decide which one to use.
 
 ### Shared URLs
 
