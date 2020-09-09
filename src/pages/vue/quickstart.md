@@ -183,9 +183,7 @@ Now the `App` component does not really have a lot to modify here. It is a basic
 
 Currently, the `Home` component looks like so:
 
-![React home component](/docs/assets/img/guides/react/first-app/home-route.png)
-
-> TODO: This needs to be updated with the latest starter image
+![Vue home component](/docs/assets/img/guides/vue/first-app/home-route.png)
 
 ```html
 <template>
