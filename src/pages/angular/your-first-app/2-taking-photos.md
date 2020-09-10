@@ -81,7 +81,6 @@ Outside of the `PhotoService` class definition (the very bottom of the file), cr
 interface Photo {
   filepath: string;
   webviewPath: string;
-  base64?: string;
 }
 ```
 
@@ -110,28 +109,15 @@ Over in the `addNewToGallery` function, add the newly captured photo to the begi
   });
 }
 ```
-We will create a local `photos` property on our `Tab2Page` component so that we can reference the Photos collection within our template.
 
-```typescript
-export class Tab2Page {
-  photos = this.photoService.photos;
-
-  constructor(public photoService: PhotoService) { }
-
-  addPhotoToGallery() {
-    this.photoService.addNewToGallery();
-  }
-}
-```
-
-With the photo(s) stored into the main array, move over to `tab2.page.html` so we can display the image on the screen. Add a [Grid component](https://ionicframework.com/docs/api/grid) so that each photo will display nicely as photos are added to the gallery, and loop through each photo in the Photos array, adding an Image component (`<ion-img>`) for each. Point the `src` (source) at the photo’s path:
+Next, move over to `tab2.page.html` so we can display the image on the screen. Add a [Grid component](https://ionicframework.com/docs/api/grid) so that each photo will display nicely as photos are added to the gallery, and loop through each photo in the `PhotoServices`'s Photos array, adding an Image component (`<ion-img>`) for each. Point the `src` (source) at the photo’s path:
 
 ```html
 <ion-content>
   <ion-grid>
     <ion-row>
     <ion-col size="6" 
-      *ngFor="let photo of photos; index as position">
+      *ngFor="let photo of photoService.photos; index as position">
         <ion-img src="{{ photo.webviewPath }}"></ion-img>
     </ion-col>
     </ion-row>
