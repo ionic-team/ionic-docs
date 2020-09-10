@@ -29,14 +29,7 @@ Luego, al final de la funcion `addNewToGallery`, hará una llamada a `Storage.se
 ```typescript
 Storage.set({
   key: this.PHOTO_STORAGE,
-  value: JSON.stringify(this.photos.map(p => {
-          // No guardar la representación base64 de los datos de las fotos, 
-          // dado que ya ha sido guardado en el Filesystem
-          const photoCopy = { ...p };
-          delete photoCopy.base64;
-
-          return photoCopy;
-          }))
+  value: JSON.stringify(this.photos)
 });
 ```
 
@@ -52,27 +45,27 @@ public async loadSaved() {
 }
 ```
 
-En móvil (¡próximamente!), podemos establecer directamente la fuente de una etiqueta de imagen - `<img src=”x” />` - a cada archivo de foto en el sistema de archivos, desplegándolos automáticamente. En la web, sin embargo, debemos leer cada imagen desde el sistema de archivos en formato base64, usando una nueva propiedad `base64` en el objeto `Photo`. Esto se debe a que la API Filesystem utiliza [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) bajo la cubierta. Debajo del código que acabas de añadir en la función `loadSaved()` , añadir:
+En móvil (¡próximamente!), podemos establecer directamente la fuente de una etiqueta de imagen - `<img src=”x” />` - a cada archivo de foto en el sistema de archivos, desplegándolos automáticamente. On the web, however, we must read each image from the Filesystem into base64 format, because the Filesystem API stores them in base64 within [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. Below the code you just added in the `loadSaved()` function, add:
 
 ```typescript
-// Mostrar la foto leyendo en formato base64
+// Display the photo by reading into base64 format
 for (let photo of this.photos) {
-  // Lee los datos de cada foto guardada en el sistema de ficheros
+  // Read each saved photo's data from the Filesystem
   const readFile = await Filesystem.readFile({
       path: photo.filepath,
       directory: FilesystemDirectory.Data
   });
 
-  // Plataforma web solamente: Guardar la foto en el campo base64
-  photo.base64 = `data:image/jpeg;base64,${readFile.data}`;
+  // Web platform only: Load the photo as base64 data
+  photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
 }
 ```
 
 Después, llama a este nuevo método en `tab2.page. s` de modo que cuando el usuario navega por primera vez a Tab 2 (la Galería de fotos), todas las fotos se cargan y se muestran en la pantalla.
 
 ```typescript
-ngOnInit() {
-  this.photoService.loadSaved();
+async ngOnInit() {
+  await this.photoService.loadSaved();
 }
 ```
 
