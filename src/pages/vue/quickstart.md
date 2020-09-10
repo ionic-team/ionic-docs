@@ -7,6 +7,8 @@ nextUrl: '/docs/vue/your-first-app'
 
 # Ionic Vue Quickstart
 
+> Ionic Vue is currently in development. Information in this guide is subject to change.
+
 ## What is Ionic Framework?
 
 First off, if you're new here, welcome! Ionic Framework is a free and open source component library for building apps that run on iOS, Android, Electron, and the Web. Write your app once using familiar technologies (HTML, CSS, JavaScript) and deploy to any platform.
@@ -17,19 +19,21 @@ In this guide, we will go over the basics of both Vue and Ionic Framework, inclu
 
 ## Creating a project with the Ionic CLI
 
-To begin, let's install the latest version of the Ionic CLI.
+To begin, let's install a pre-release version of the Ionic CLI.
 
 
 ```shell
-npm install -g @ionic/cli
+npm install -g @ionic/cli@testing
 ```
 
 From here, the global command `ionic` will allow for the creation of a Vue project with Ionic Framework and any other dependencies. To create a new project, run the following command:
 
 ```shell
-ionic start myApp blank --type=vue
+ionic start myApp blank --type vue --tag vue-beta
 cd myApp
 ```
+
+> Using `--tag` allows you to download the latest beta version of an Ionic Vue starter. This will not be needed once Ionic Vue ships.
 
 From here, we run `ionic serve` and have our project running in the browser.
 
