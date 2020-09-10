@@ -81,7 +81,6 @@ En dehors de la définition de classe `PhotoService` (le tout en bas du fichier)
 interface Photo {
   filepath: string;
   webviewPath: string;
-  base64?: string;
 }
 ```
 
@@ -110,22 +109,15 @@ Fini dans la fonction `addNewToGallery` , ajoutez la nouvelle photo capturée au
   });
 }
 ```
-Nous allons créer une propriété locale de la `photos` sur notre module `Tab2Page` afin de pouvoir référencer la collection de photos dans notre modèle.
 
-```typescript
-la ou les photos étant stockées dans le tableau principal, passez à tab2.page.html pour que nous puissions afficher l'image à l'écran.
-Ajoutez un composant Grid pour que chaque photo s'affiche bien au fur et à mesure que des photos sont ajoutées à la galerie, et faites une boucle à travers chaque photo dans le tableau Photos, en ajoutant un composant Image (<ion-img>) pour chacune.
-Pointez le src (source) sur le chemin de la photo 
-```
-
-La ou les photos étant stockées dans le tableau principal, passez à l'adresse tab2.page.html pour que nous puissions afficher l'image à l'écran. Ajoutez un composant Grille pour que chaque photo s'affiche bien au fur et à mesure que des photos sont ajoutées à la galerie, et passez en boucle à travers chaque photo dans le tableau Photos, en ajoutant un composant Image (<ion-img>) pour chacune. Pointez le src (source) sur le chemin de la photo :
+Next, move over to `tab2.page.html` so we can display the image on the screen. Add a [Grid component](https://ionicframework.com/docs/api/grid) so that each photo will display nicely as photos are added to the gallery, and loop through each photo in the `PhotoServices`'s Photos array, adding an Image component (`<ion-img>`) for each. Point the `src` (source) at the photo’s path:
 
 ```html
 <ion-content>
   <ion-grid>
     <ion-row>
     <ion-col size="6" 
-      *ngFor="let photo of photos; index as position">
+      *ngFor="let photo of photoService.photos; index as position">
         <ion-img src="{{ photo.webviewPath }}"></ion-img>
     </ion-col>
     </ion-row>
@@ -135,6 +127,6 @@ La ou les photos étant stockées dans le tableau principal, passez à l'adresse
 </ion-content>
 ```
 
-Enregistrez tous les fichiers. Dans le navigateur web, cliquez sur le bouton Appareil photo et prenez une autre photo. Cette fois, la photo est affichée dans la galerie de photos !
+Save all files. Within the web browser, click the Camera button and take another photo. This time, the photo is displayed in the Photo Gallery!
 
-Ensuite, nous allons ajouter la possibilité d'enregistrer les photos dans le système de fichiers, afin qu'elles puissent être récupérées et affichées dans notre application ultérieurement.
+Up next, we’ll add support for saving the photos to the filesystem, so they can be retrieved and displayed in our app at a later time.
