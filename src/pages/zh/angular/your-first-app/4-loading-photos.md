@@ -29,14 +29,7 @@ export class PhotoService {
 ```typescript
 Storage.set({
   key: this.PHOTO_STORAGE,
-  value: JSON.stringify(this.photos.map(p => {
-          // 不要保存照片数据的base64表示形式，
-          // 因为它已经保存在文件系统中
-          const photoCopy = { ...p };
-          delete photoCopy.base64;
-
-          return photoCopy;
-          }))
+  value: JSON.stringify(this.photos)
 });
 ```
 
@@ -52,27 +45,27 @@ public async loadSaved() {
 }
 ```
 
-接下来在手机上 , 我们可以直接将图像标签- `<img src=”x” />` - 的源设置为文件系统上的每个照片文件，并自动显示它们。 但在网上，我们必须从文件系统读取每张图像到base64格式。 在` Photo `对象上使用新的` base64 `属性。 这是因为文件系统 API 使用了 [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)。 在你刚刚在 `loadSaved()` 函数中添加的代码下，添加：
+接下来在手机上 , 我们可以直接将图像标签- `<img src=”x” />` - 的源设置为文件系统上的每个照片文件，并自动显示它们。 On the web, however, we must read each image from the Filesystem into base64 format, because the Filesystem API stores them in base64 within [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. Below the code you just added in the `loadSaved()` function, add:
 
 ```typescript
-// 通过读取为base64格式显示照片
+// Display the photo by reading into base64 format
 for (let photo of this.photos) {
-  // 从文件系统读取每张保存的照片数据
+  // Read each saved photo's data from the Filesystem
   const readFile = await Filesystem.readFile({
       path: photo.filepath,
       directory: FilesystemDirectory.Data
   });
 
-  // 仅限Web平台：将照片保存到base64字段中
-  photo.base64 = `data:image/jpeg;base64,${readFile.data}`;
+  // Web platform only: Load the photo as base64 data
+  photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
 }
 ```
 
 然后在` tab2.page.ts `中调用此新方法，以便当用户首次导航至选项卡2 (照片库)时，所有照片均被加载并显示在屏幕上。
 
 ```typescript
-ngOnInit() {
-  this.photoService.loadSaved();
+async ngOnInit() {
+  await this.photoService.loadSaved();
 }
 ```
 
