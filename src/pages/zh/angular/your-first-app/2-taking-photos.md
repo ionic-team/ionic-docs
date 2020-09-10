@@ -81,7 +81,6 @@ _（你的自怕可能会比我好看很多）_
 interface Photo {
   filepath: string;
   webviewPath: string;
-  base64?: string;
 }
 ```
 
@@ -110,28 +109,15 @@ export class PhotoService {
   });
 }
 ```
-我们将在`Tab2Page` 组件上创建一个本地的 `photos` 属性，以便我们可以在模板中引用照片集合。
 
-```typescript
-export class Tab2Page {
-  photos = this.photoService.photos;
-
-  constructor(public photoService: PhotoService) { }
-
-  addPhotoToGallery() {
-    this.photoService.addNewToGallery();
-  }
-}
-```
-
-With the photo(s) stored into the main array, move over to `tab2.page.html` so we can display the image on the screen. Add a [Grid component](https://ionicframework.com/docs/api/grid) so that each photo will display nicely as photos are added to the gallery, and loop through each photo in the Photos array, adding an Image component (`<ion-img>`) for each. Point the `src` (source) at the photo’s path:
+Next, move over to `tab2.page.html` so we can display the image on the screen. Add a [Grid component](https://ionicframework.com/docs/api/grid) so that each photo will display nicely as photos are added to the gallery, and loop through each photo in the `PhotoServices`'s Photos array, adding an Image component (`<ion-img>`) for each. Point the `src` (source) at the photo’s path:
 
 ```html
 <ion-content>
   <ion-grid>
     <ion-row>
     <ion-col size="6" 
-      *ngFor="let photo of photos; index as position">
+      *ngFor="let photo of photoService.photos; index as position">
         <ion-img src="{{ photo.webviewPath }}"></ion-img>
     </ion-col>
     </ion-row>
