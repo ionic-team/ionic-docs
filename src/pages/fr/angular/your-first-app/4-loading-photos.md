@@ -29,14 +29,7 @@ Ensuite, à la fin de la fonction `addNewToGallery` , ajoutez un appel à `Stora
 ```typescript
 Storage.set({
   key: this.PHOTO_STORAGE,
-  value: JSON.stringify(this.photos.map(p => {
-          // Ne sauvegardez pas la représentation en base64 de la photo, 
-          // puisqu'elle est déjà sauvegardée dans le système de fichiers
-          const photoCopy = { ...p };
-          delete photoCopy.base64;
-
-          return photoCopy;
-          }))
+  value: JSON.stringify(this.photos)
 });
 ```
 
@@ -52,7 +45,7 @@ public async loadSaved() {
 }
 ```
 
-Sur mobile (à venir ! , nous pouvons directement définir la source d'une balise image - `< img src=”x” />` - pour chaque fichier photo du système de fichiers, les afficher automatiquement. Sur le web, cependant, nous devons lire chaque image du système de fichiers au format base64, en utilisant une nouvelle propriété `base64` sur l'objet `Photo`. Ceci est dû au fait que l'API du système de fichiers utilise [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) sous le hood. Sous le code que vous venez d'ajouter dans la fonction `loadSaved()` , ajouter:
+Sur mobile (à venir ! , nous pouvons directement définir la source d'une balise image - `< img src=”x” />` - pour chaque fichier photo du système de fichiers, les afficher automatiquement. On the web, however, we must read each image from the Filesystem into base64 format, because the Filesystem API stores them in base64 within [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. Below the code you just added in the `loadSaved()` function, add:
 
 ```typescript
 // Display the photo by reading into base64 format
@@ -63,16 +56,16 @@ for (let photo of this.photos) {
       directory: FilesystemDirectory.Data
   });
 
-  // Web platform only: Save the photo into the base64 field
-  photo.base64 = `data:image/jpeg;base64,${readFile.data}`;
+  // Web platform only: Load the photo as base64 data
+  photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
 }
 ```
 
 Ensuite, appelez cette nouvelle méthode dans l'onglet `2.page. s` de sorte que lorsque l'utilisateur navigue pour la première fois à l'onglet 2 (la Galerie Photo), toutes les photos sont chargées et affichées à l'écran.
 
 ```typescript
-ngOnInit() {
-  this.photoService.loadSaved();
+async ngOnInit() {
+  await this.photoService.loadSaved();
 }
 ```
 
