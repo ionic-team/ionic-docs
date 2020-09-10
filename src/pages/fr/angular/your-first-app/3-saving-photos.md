@@ -81,10 +81,4 @@ convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
 
 Obtenir la photo de l'appareil photo au format base64 sur le web semble un peu plus délicat que sur le mobile. En réalité, nous n'utilisons que des API web intégrées : [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) pour lire le fichier au format blob, puis FileReader's [readAsDataURL()](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL) pour convertir la photo blob en base64.
 
-Enfin, modifiez la façon dont les images sont affichées dans le fichier modèle `tab2.page.html`.
-
-```html
-<ion-img src="{{ photo.base64 ? photo.base64 : photo.webviewPath }}"></ion-img>
-```
-
-Et voilà ! Chaque fois qu'une nouvelle photo est prise, elle est désormais automatiquement enregistrée dans le système de fichiers.
+There we go! Each time a new photo is taken, it’s now automatically saved to the filesystem.
