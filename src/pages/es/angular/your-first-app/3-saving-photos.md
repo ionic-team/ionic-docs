@@ -81,10 +81,4 @@ convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
 
 Obtener la foto de la camara en formato base64, parece ser más complicado en web que en mobile. En realidad, solo estamos usando las APIs Web incorporadas [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) como una forma ordenada de leer el archivo en formato blob, luego [readAsDataURL()](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL) de FileReader, convierte la foto en blob a base64.
 
-Finalmente, cambie la forma en que las imágenes se vuelven visibles en el archivo de plantilla `tab2.page.html`.
-
-```html
-<ion-img src="{{ photo.base64 ? photo.base64 : photo.webviewPath }}"></ion-img>
-```
-
-Aquí vamos!. Cada vez que se toma una nueva foto, se guarda automáticamente en el sistema de archivos.
+There we go! Each time a new photo is taken, it’s now automatically saved to the filesystem.
