@@ -91,13 +91,13 @@ Next, update the `savePicture()` method. When running on mobile, set `filepath` 
   }
 ```
 
-Next, head back over to the `loadSaved()` function we implemented for the web earlier. On mobile, we can directly set the source of an image tag - `<img src=”x” />` - to each photo file on the Filesystem, displaying them automatically. Thus, only the web requires reading each image from the Filesystem into base64 format. Update this function to add an _if statement_ around the Filesystem code:
+Next, head back over to the `loadSaved()` function we implemented for the web earlier. On mobile, we can directly set the source of an image tag - `<img src="x" />` - to each photo file on the Filesystem, displaying them automatically. Thus, only the web requires reading each image from the Filesystem into base64 format. Update this function to add an _if statement_ around the Filesystem code:
 
 ```typescript
 public async loadSaved() {
   // Retrieve cached photo array data
-  const photos = await Storage.get({ key: this.PHOTO_STORAGE });
-  this.photos = JSON.parse(photos.value) || [];
+  const photoList = await Storage.get({ key: this.PHOTO_STORAGE });
+  this.photos = JSON.parse(photoList.value) || [];
 
   // Easiest way to detect when running on the web:
   // “when the platform is NOT hybrid, do this”
@@ -139,7 +139,7 @@ Finally, a small change to `tab2.page.html` is required to support both web and 
 ```html
 <ion-col size="6"
     *ngFor="let photo of photoService.photos; index as position">
-  <ion-img src="{{ photo.base64 ? photo.base64 : photo.webviewPath }}">
+  <ion-img [src]="photo.base64 ? photo.base64 : photo.webviewPath">
   </ion-img>
 </ion-col>
 ```

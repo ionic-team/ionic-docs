@@ -117,8 +117,8 @@ Next, move over to `tab2.page.html` so we can display the image on the screen. A
   <ion-grid>
     <ion-row>
     <ion-col size="6" 
-      *ngFor="let photo of photoService.photos; index as position">
-        <ion-img src="{{ photo.webviewPath }}"></ion-img>
+      *ngFor="let photo of photos; index as position">
+        <ion-img [src]="photo.webviewPath"></ion-img>
     </ion-col>
     </ion-row>
   </ion-grid>
