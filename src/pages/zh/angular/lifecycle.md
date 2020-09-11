@@ -1,6 +1,6 @@
 ---
-previousText: '你的第一个应用：主题'
-previousUrl: '/docs/angular/your-first-app/theming'
+previousText: 'Your First App'
+previousUrl: '/docs/angular/your-first-app'
 nextText: '导航'
 nextUrl: '/docs/angular/navigation'
 contributors:
