@@ -34,7 +34,7 @@ Con Live Reload funcionando y la aplicación abierta en tu dispositivo, implemen
 ```html
 <ion-col size="6" 
     *ngFor="let photo of photoService.photos; index as position">
-  <ion-img [src]="photo.base64 ? photo.base64 : photo.webviewPath" 
+  <ion-img [src]="photo.webviewPath" 
            (click)="showActionSheet(photo, position)"></ion-img>
 </ion-col>
 ```
