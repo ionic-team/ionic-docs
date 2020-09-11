@@ -44,7 +44,7 @@ public async addNewToGallery() {
 接着，打开`tab2.page.ts`导入PhotoService类，并在导入的类中添加一个调用 `addNewToGallery`的方法：
 
 ```typescript
-import { PhotoService } from '../services/photo.service';
+import { Photo, PhotoService } from '../services/photo.service';
 
 constructor(public photoService: PhotoService) { }
 
