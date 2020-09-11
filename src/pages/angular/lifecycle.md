@@ -1,5 +1,5 @@
 ---
-previousText: 'Your First App: Theming'
+previousText: 'Your First App'
 previousUrl: '/docs/angular/your-first-app'
 nextText: 'Navigation'
 nextUrl: '/docs/angular/navigation'
