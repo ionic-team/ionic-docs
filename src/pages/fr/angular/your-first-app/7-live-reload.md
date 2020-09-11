@@ -34,7 +34,7 @@ Avec Live Reload en cours d'exécution et l'application s'ouvre sur votre appare
 ```html
 <ion-col size="6" 
     *ngFor="let photo of photoService.photos; index as position">
-  <ion-img src="{{ photo.base64 ? photo.base64 : photo.webviewPath }}" 
+  <ion-img [src]="photo.base64 ? photo.base64 : photo.webviewPath" 
            (click)="showActionSheet(photo, position)"></ion-img>
 </ion-col>
 ```
@@ -51,7 +51,7 @@ constructor(public photoService: PhotoService,
 Next, implement the `showActionSheet()` function. We add two options: `Delete` that calls PhotoService’s `deletePicture()` function (to be added next) and `Cancel`, which when given the role of “cancel” will automatically close the action sheet:
 
 ```typescript
-public async showActionSheet(photo, position) {
+public async showActionSheet(photo: Photo, position: number) {
   const actionSheet = await this.actionSheetController.create({
     header: 'Photos',
     buttons: [{
