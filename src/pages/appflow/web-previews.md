@@ -4,6 +4,9 @@ previousText: "Build Stacks"
 previousUrl: "/docs/appflow/build-stacks"
 ---
 
+<iframe src="//fast.wistia.net/embed/iframe/d9zuxeonhd" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="620" height="349"></iframe>
+<script src="//fast.wistia.net/assets/external/E-v1.js" async></script>
+
 When you're performing a Web Build, you have the opportunity to turn on the "Preview URL" destination. This URL shows a running web version of your application either in a phone "chrome" or full-screen if you open it on a mobile device.
 
 This allows you to quickly look at and share a specific version of your application. Here you can see our demo application (Ionifits) running:
