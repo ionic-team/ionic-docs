@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@ionic-internal/ionic-ds": "3.0.3",
-    "@ionic/core": "^5.2.3",
+    "@ionic/core": "^5.3.2",
     "@ionic/docs": "^5.2.3",
     "@sentry/node": "^5.19.2",
     "@stencil/router": "^1.0.1",
