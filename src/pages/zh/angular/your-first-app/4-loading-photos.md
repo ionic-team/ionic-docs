@@ -37,15 +37,15 @@ Storage.set({
 
 ```typescript
 public async loadSaved() {
-  // 检索缓存的照片阵列数据
-  const photos = await Storage.get({ key: this.PHOTO_STORAGE });
-  this.photos = JSON.parse(photos.value) || [];
+  // Retrieve cached photo array data
+  const photoList = await Storage.get({ key: this.PHOTO_STORAGE });
+  this.photos = JSON.parse(photoList.value) || [];
 
-  // 还有更多...
+  // more to come...
 }
 ```
 
-接下来在手机上 , 我们可以直接将图像标签- `<img src=”x” />` - 的源设置为文件系统上的每个照片文件，并自动显示它们。 On the web, however, we must read each image from the Filesystem into base64 format, because the Filesystem API stores them in base64 within [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. Below the code you just added in the `loadSaved()` function, add:
+On mobile (coming up next!), we can directly set the source of an image tag - `<img src="x" />` - to each photo file on the Filesystem, displaying them automatically. On the web, however, we must read each image from the Filesystem into base64 format, using a new `base64` property on the `Photo` object. This is because the Filesystem API uses [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. Below is the code you need to add in the `loadSaved()` function you just added:
 
 ```typescript
 // Display the photo by reading into base64 format
