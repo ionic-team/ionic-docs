@@ -78,7 +78,7 @@ Après avoir pris une photo, elle disparaît immédiatement. Nous devons l'affic
 En dehors de la définition de classe `PhotoService` (le tout en bas du fichier), créer une nouvelle interface, `Photo`, pour tenir nos métadonnées photo:
 
 ```typescript
-interface Photo {
+export interface Photo {
   filepath: string;
   webviewPath: string;
 }
@@ -117,8 +117,8 @@ Next, move over to `tab2.page.html` so we can display the image on the screen. A
   <ion-grid>
     <ion-row>
     <ion-col size="6" 
-      *ngFor="let photo of photoService.photos; index as position">
-        <ion-img src="{{ photo.webviewPath }}"></ion-img>
+      *ngFor="let photo of photos; index as position">
+        <ion-img [src]="photo.webviewPath"></ion-img>
     </ion-col>
     </ion-row>
   </ion-grid>
