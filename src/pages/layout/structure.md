@@ -84,6 +84,10 @@ These can also be combined on one page to have a toolbar above *and* below the c
 </ion-app>
 ```
 
+### Live examples
+
+You can view a live example of this setup in Angular [here](https://stackblitz.com/edit/ionic-ng-header-footer) and for React [here](https://stackblitz.com/edit/ionic-react-head-foot).
+
 ## Tabs Layout
 
 A layout consisting of horizontal [tabs](/docs/api/tabs) can be used to let the user quickly change between content views. Each tab can contain static content or a navigation stack by using an `ion-router-outlet` or `ion-nav`.
@@ -111,6 +115,10 @@ A layout consisting of horizontal [tabs](/docs/api/tabs) can be used to let the 
   </ion-tabs>
 </ion-app>
 ```
+
+### Live examples
+
+You can view a live example of this setup in Angular [here](https://stackblitz.com/edit/ionic-ng-tabs) and for React [here](https://stackblitz.com/edit/ionic-react-tab-layout).
 
 ## Menu Layout
 
@@ -164,6 +172,10 @@ A standard layout among mobile apps includes the ability to toggle a side [menu]
 
 <ion-menu-controller></ion-menu-controller>
 ```
+
+### Live examples
+
+You can view a live example of this setup in Angular [here](https://stackblitz.com/edit/ionic-ng-menu-layout) and for React [here](https://stackblitz.com/edit/ionic-react-menu).
 
 
 ## Split Pane Layout
@@ -223,3 +235,7 @@ By default, the split pane view will show when the screen is larger than `768px`
 ```
 
 It's important to note that the element with the `id` matching the `content-id` specified by the split pane will be the main content that is always visible. This can be any element, including an [ion-nav](/docs/api/nav), [ion-router-outlet](/docs/api/router-outlet), or an [ion-tabs](/docs/api/tabs).
+
+### Live examples
+
+You can view a live example of this setup in Angular [here](https://stackblitz.com/edit/ionic-ng-split-pane) and for React [here](https://stackblitz.com/edit/ionic-react-split-pane).

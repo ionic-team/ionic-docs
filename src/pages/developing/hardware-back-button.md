@@ -168,8 +168,8 @@ In some scenarios, it may be desirable to quit the app when pressing the hardwar
 <docs-tab tab="javascript">
 
 ```typescript
-import { Plugins } from '@capacitor/core';
 import { BackButtonEvent } from '@ionic/core';
+import { Plugins } from '@capacitor/core';
 const { App } = Plugins;
 
 ...
@@ -207,11 +207,31 @@ constructor(
 
 ```
 </docs-tab>
+<docs-tab tab="react">
+
+```typescript
+import { useIonRouter } from '@ionic/react';
+import { Plugins } from '@capacitor/core';
+const { App } = Plugins;
+
+...
+
+const ionRouter = useIonRouter();
+document.addEventListener('ionBackButton', (ev) => {
+  ev.detail.register(-1, () => {
+    if (!ionRouter.canGoBack()) {
+      App.exitApp();
+    }
+  });
+});
+
+```
+</docs-tab>
 </docs-tabs>
 
 This example shows the application exiting when the user presses the hardware back button and there is nothing left in the navigation stack. It is also possible to display a confirmation dialog before quitting the app.
 
-It is recommended to check whether or not the user is on the root page prior to exiting the application. Developers can use the `canGoBack` method on `IonRouterOutlet` in Ionic Angular. Support for this will be coming to Ionic React soon.
+It is recommended to check whether or not the user is on the root page prior to exiting the application. Developers can use the `canGoBack` method on `IonRouterOutlet` in Ionic Angular and `IonRouter` in Ionic React.
 
 ## Internal Framework Handlers
 

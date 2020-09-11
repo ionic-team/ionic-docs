@@ -78,9 +78,14 @@ const items = {
   },
   'menu-vue': {
     'menu-vue-overview': '/docs/vue/overview',
+    'menu-vue-quickstart': '/docs/vue/quickstart',
     'menu-vue-your-first-app': '/docs/vue/your-first-app',
     'menu-vue-lifecycle': '/docs/vue/lifecycle',
-    'menu-vue-navigation': '/docs/vue/navigation'
+    'menu-vue-navigation': '/docs/vue/navigation',
+    'menu-vue-config': '/docs/vue/config',
+    'menu-vue-platform': '/docs/vue/platform',
+    'menu-vue-pwa': '/docs/vue/pwa',
+    'menu-vue-testing': '/docs/vue/testing'
   },
   'menu-utilities': {
     'menu-utilities-animations': '/docs/utilities/animations',

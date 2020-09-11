@@ -1,7 +1,7 @@
 ---
 title: Auth Connect
 template: enterprise-plugin
-version: 3.1.3
+version: 3.1.4
 minor: 3.1.X
 otherVersions:
   - 2.2.X
@@ -974,6 +974,16 @@ ___
 # Changelog
 
 
+
+### [3.1.4] (2020-09-02)
+
+
+### Bug Fixes
+
+* fix bug with localstorage provider where auth response wasn't serialized/deserialized correctly
+* remove unneeded redirectUri param from cognito logout
+* **auth:** export TokenStorageProvider
+* **ping:** don't always include client secret
 
 ### [3.1.3] (2020-07-28)
 

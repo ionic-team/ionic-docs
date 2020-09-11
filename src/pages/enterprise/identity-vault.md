@@ -1,7 +1,7 @@
 ---
 title: Identity Vault
 template: enterprise-plugin
-version: 4.2.5
+version: 4.2.6
 minor: 4.2.X
 otherVersions:
   - 2.0.X
@@ -1996,6 +1996,15 @@ The possible values returned by [getAvailableHardware](#identityvault.getavailab
 ___
 
 ## Change Log
+
+
+
+### [4.2.6] (2020-09-02)
+
+
+### Bug Fixes
+
+* **android:** lifecycle events moved to the main thread
 
 
 

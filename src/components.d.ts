@@ -121,6 +121,7 @@ export namespace Components {
     }
     interface DocsPage {
         "history": RouterHistory;
+        "isServer"?: boolean;
         "path": string;
     }
     interface DocsPageFooter {
@@ -176,7 +177,7 @@ export namespace Components {
     interface LayeredColorsSelect {
     }
     interface NativeEntInstall {
-        "capacitorSlug"?: string;
+        "capacitorSlug"?: string | null;
         "pluginId"?: string;
         "variables"?: string;
     }
@@ -648,6 +649,7 @@ declare namespace LocalJSX {
     }
     interface DocsPage {
         "history": RouterHistory;
+        "isServer"?: boolean;
         "path": string;
     }
     interface DocsPageFooter {
@@ -705,7 +707,7 @@ declare namespace LocalJSX {
     interface LayeredColorsSelect {
     }
     interface NativeEntInstall {
-        "capacitorSlug"?: string;
+        "capacitorSlug"?: string | null;
         "pluginId"?: string;
         "variables"?: string;
     }

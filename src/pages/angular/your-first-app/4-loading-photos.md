@@ -29,14 +29,7 @@ Next, at the end of the `addNewToGallery` function, add a call to `Storage.set()
 ```typescript
 Storage.set({
   key: this.PHOTO_STORAGE,
-  value: JSON.stringify(this.photos.map(p => {
-          // Don't save the base64 representation of the photo data, 
-          // since it's already saved on the Filesystem
-          const photoCopy = { ...p };
-          delete photoCopy.base64;
-
-          return photoCopy;
-          }))
+  value: JSON.stringify(this.photos)
 });
 ```
 
@@ -63,16 +56,16 @@ for (let photo of this.photos) {
       directory: FilesystemDirectory.Data
   });
 
-  // Web platform only: Save the photo into the base64 field
-  photo.base64 = `data:image/jpeg;base64,${readFile.data}`;
+  // Web platform only: Load the photo as base64 data
+  photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
 }
 ```
 
 After, call this new method in `tab2.page.ts` so that when the user first navigates to Tab 2 (the Photo Gallery), all photos are loaded and displayed on the screen.
 
 ```typescript
-ngOnInit() {
-  this.photoService.loadSaved();
+async ngOnInit() {
+  await this.photoService.loadSaved();
 }
 ```
 

@@ -29,13 +29,7 @@ const { get, set } = useStorage();
 Next, at the end of the `takePhoto` function, add a call to `set()` to save the Photos array. By adding it here, the Photos array is stored each time a new photo is taken. This way, it doesn’t matter when the app user closes or switches to a different app - all photo data is saved.
 
 ```typescript
-set(PHOTO_STORAGE, JSON.stringify(newPhotos.map(p => {
-  // Don't save the base64 representation of the photo data, 
-  // since it's already saved on the Filesystem
-  const photoCopy = { ...p };
-  delete photoCopy.base64;
-  return photoCopy;
-})));
+set(PHOTO_STORAGE, JSON.stringify(newPhotos));
 ```
 
 With the photo array data saved, we will create a method that will retrieve the data when the hook loads. We will do so by using React's `useEffect` hook. Insert this above the `takePhoto` declaration. Here is the code, and we will break it down:
@@ -50,7 +44,7 @@ useEffect(() => {
         path: photo.filepath,
         directory: FilesystemDirectory.Data
       });
-      photo.base64 = `data:image/jpeg;base64,${file.data}`;
+      photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
     }
     setPhotos(photos);
   };
@@ -66,14 +60,6 @@ The dependency array should pass in any external references the hook will use in
 
 The first parameter to `useEffect` is the function that will be called by the effect. We pass in an anonymous arrow function, and inside of it we define another asynchronous method and then immediately call this. We have to call the async function from within the hook as the hook callback can't be asynchronous itself.
 
-On mobile (coming up next!), we can directly set the source of an image tag - `<img src=”x” />` - to each photo file on the Filesystem, displaying them automatically. On the web, however, we must read each image from the Filesystem into base64 format, using a new `base64` property on the `Photo` object. This is because the Filesystem API uses [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. 
-
-Since are photos are either displayed with base64 encoded content, or a file path, we need to update the IonImg's src prop (in the Tab2 component) to pass in base64 if it is available, or fallback to the webviewPath if not:
-
-```typescript
-<IonImg src={photo.base64 ?? photo.webviewPath} />
-```
-
-> The `??` is the new JavaScript null coalescing operator. It will return the first operand if it is not null or undefined, otherwise it will return the second operand.
+On mobile (coming up next!), we can directly set the source of an image tag - `<img src=”x” />` - to each photo file on the Filesystem, displaying them automatically. On the web, however, we must read each image from the Filesystem into base64 format, because the Filesystem API stores them in base64 within [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. 
 
 That’s it! We’ve built a complete Photo Gallery feature in our Ionic app that works on the web. Next up, we’ll transform it into a mobile app for iOS and Android!

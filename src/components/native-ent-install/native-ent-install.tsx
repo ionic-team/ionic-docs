@@ -6,7 +6,7 @@ import { Component, Prop, h } from '@stencil/core';
 export class NativeEnterpriseInstall {
   @Prop() pluginId?: string;
   @Prop() variables?: string;
-  @Prop() capacitorSlug?: string;
+  @Prop() capacitorSlug?: string | null;
 
   render() {
     if (typeof this.pluginId === 'undefined') {
@@ -27,7 +27,7 @@ export class NativeEnterpriseInstall {
         </command-line>
         <strong>Capacitor:</strong>
         {
-          typeof this.capacitorSlug !== 'undefined' ?
+          typeof this.capacitorSlug !== 'undefined' && this.capacitorSlug !== null ?
             <div>Available as a
               <a href={`https://capacitor.ionicframework.com/docs/apis/${this.capacitorSlug}`}> core Capacitor plugin</a>.
             </div>

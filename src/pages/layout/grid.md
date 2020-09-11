@@ -53,6 +53,10 @@ columns by adding the `ion-no-padding` class to the grid. See the [CSS Utilities
 (e.g., `size-sm="4"` applies to small, medium, large, and extra large devices).
 - Grids can easily be customized via CSS variables. See [customizing the grid](#customizing-the-grid).
 
+### Live Example
+
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-basic-grid) and for React [here](https://stackblitz.com/edit/ionic-react-basic-grid).
+
 
 ## Grid size
 
@@ -65,6 +69,11 @@ By default, the grid will take up 100% width. To set a specific width based on t
 | md       | 720px    | Set grid width to 720px when (min-width: 768px)     |
 | lg       | 960px    | Set grid width to 960px when (min-width: 992px)     |
 | xl       | 1140px   | Set grid width to 1140px when (min-width: 1200px)   |
+
+
+### Live Example
+
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-fixed-width-grid) and for React [here](https://stackblitz.com/edit/ionic-react-fixed-width-grid).
 
 
 ## Grid attributes
@@ -172,6 +181,10 @@ Set the width of one column and the others will automatically resize around it. 
 </ion-grid>
 ```
 
+#### Live Example
+
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-set-width-col) and for React [here](https://stackblitz.com/edit/ionic-react-set-width-col).
+
 ### Variable-width
 
 By setting the `size-{breakpoint}` properties to `"auto"` the column can size itself based on the natural width of its content. This is extremely useful for setting a column width using pixels. The columns next to the variable-width column will resize to fill the row.
@@ -219,6 +232,10 @@ By setting the `size-{breakpoint}` properties to `"auto"` the column can size it
   </ion-row>
 </ion-grid>
 ```
+
+#### Live Example
+
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-var-width-col) and for React [here](https://stackblitz.com/edit/ionic-react-var-width-col).
 
 
 ## Responsive attributes
@@ -285,6 +302,10 @@ Use a combination of width and breakpoint attributes to create a grid that start
 </ion-grid>
 ```
 
+#### Live Example
+
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-stacked-horizontal-grid) and for React [here](https://stackblitz.com/edit/ionic-react-stacked-horizontal-grid).
+
 
 ## Reordering
 
@@ -333,6 +354,10 @@ Offsets can also be added based on screen breakpoints. Here's an example of a gr
 </ion-grid>
 ```
 
+#### Live Example
+
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-offset-grid-cols) and for React [here](https://stackblitz.com/edit/ionic-react-offset-grid-cols).
+
 ### Push and pull
 
 Reorder the columns by adding the `push` and `pull` properties. These properties adjust the `left` and `right` of the columns by the specified number of columns making it easy to reorder columns. For example, in the following grid the column with the `1 of 2` description will actually be the last column and the `2 of 2` will be the first column.
@@ -377,6 +402,10 @@ Push and pull can also be added based on screen breakpoints. In the following ex
   </ion-row>
 </ion-grid>
 ```
+
+#### Live Example
+
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-grid-push-pull) and for React [here](https://stackblitz.com/edit/ionic-react-grid-push-pull).
 
 
 ## Alignment
@@ -499,6 +528,10 @@ Columns can also align themselves differently than other columns by adding the a
 </ion-grid>
 ```
 
+#### Live Example
+
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-grid-vertical-align) and for React [here](https://stackblitz.com/edit/ionic-react-grid-vertical-align).
+
 ### Horizontal alignment
 
 All columns can be horizontally aligned inside of a row by adding different classes to the row. For a list of available classes, see [css utilities](/docs/layout/css-utilities#flex-container-properties).
@@ -571,6 +604,10 @@ All columns can be horizontally aligned inside of a row by adding different clas
   </ion-row>
 </ion-grid>
 ```
+
+#### Live Example
+
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-grid-horizontal-align) and for React [here](https://stackblitz.com/edit/ionic-react-grid-horizontal-align).
 
 
 ## Customizing the grid
