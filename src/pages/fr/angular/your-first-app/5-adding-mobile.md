@@ -91,13 +91,13 @@ Ensuite, mettez à jour la méthode `savePicture()`. Lors de l'exécution sur mo
   }
 ```
 
-Ensuite, retournez à la fonction `loadSaved()` que nous avons implémentée pour le web plus tôt. Sur mobile (à venir ! , nous pouvons directement définir la source d'une balise image - `< img src=”x” />` - pour chaque fichier photo du système de fichiers, les afficher automatiquement. Ainsi, seul le web nécessite de lire chaque image du système de fichiers au format base64. Mettre à jour cette fonction pour ajouter une instruction _if_ autour du code du système de fichiers :
+Ensuite, retournez à la fonction `loadSaved()` que nous avons implémentée pour le web plus tôt. On mobile, we can directly set the source of an image tag - `<img src="x" />` - to each photo file on the Filesystem, displaying them automatically. Ainsi, seul le web nécessite de lire chaque image du système de fichiers au format base64. Mettre à jour cette fonction pour ajouter une instruction _if_ autour du code du système de fichiers :
 
 ```typescript
 public async loadSaved() {
   // Retrieve cached photo array data
-  const photos = await Storage.get({ key: this.PHOTO_STORAGE });
-  this.photos = JSON.parse(photos.value) || [];
+  const photoList = await Storage.get({ key: this.PHOTO_STORAGE });
+  this.photos = JSON.parse(photoList.value) || [];
 
   // Easiest way to detect when running on the web:
   // “when the platform is NOT hybrid, do this”
@@ -110,38 +110,11 @@ public async loadSaved() {
           directory: FilesystemDirectory.Data
       });
 
-      // Web platform only: Save the photo into the base64 field
-      photo.base64 = `data:image/jpeg;base64,${readFile.data}`;
+      // Web platform only: Load the photo as base64 data
+      photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
     }
   }
 }
 ```
 
-Au bas de la fonction ` addNewtoGallery () `, mettez à jour la logique de l'API de stockage. Si vous utilisez le web, il y a une légère optimisation que nous pouvons ajouter. Même si nous devons lire les données photo au format base64 pour pouvoir les afficher, il n’y a pas besoin d’enregistrer sous ce formulaire, car il est déjà enregistré sur le système de fichiers :
-
-```typescript
-Storage.set({
-  key: this.PHOTO_STORAGE,
-  value: this.platform.is('hybrid')
-          ? JSON.stringify(this.photos)
-          : JSON.stringify(this.photos.map(p => {
-            // Don't save the base64 representation of the photo data,
-            // since it's already saved on the Filesystem
-            const photoCopy = { ...p };
-            delete photoCopy.base64;
-
-            return photoCopy;
-        }))
-```
-
-Enfin, un petit changement à `tab2.page.html` est nécessaire pour supporter à la fois web et mobile. Si l'application est exécutée sur le web, la propriété `base64` contiendra les données photo à afficher. Si sur mobile, le `webviewPath` sera utilisé :
-
-```html
-<ion-col size="6"
-    *ngFor="let photo of photoService.photos; index as position">
-  <ion-img src="{{ photo.base64 ? photo.base64 : photo.webviewPath }}">
-  </ion-img>
-</ion-col>
-```
-
-Notre Galerie de photos consiste maintenant en une base de code qui fonctionne sur le web, Android, et iOS. Ensuite, la partie que vous attendiez - déployer l'application sur un appareil.
+Our Photo Gallery now consists of one codebase that runs on the web, Android, and iOS. Next up, the part you’ve been waiting for - deploying the app to a device.
