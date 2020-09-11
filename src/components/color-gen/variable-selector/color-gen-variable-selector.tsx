@@ -127,6 +127,7 @@ export class VariableSelector {
               <input
                 type="text"
                 value={this.name}
+                spellcheck="false"
                 onInput={ev => this.onNameChange(ev)}
                 onFocus={() => this.onNameInputFocus()}
                 onBlur={ev => this.onNameInputBlur(ev)}
@@ -153,6 +154,7 @@ export class VariableSelector {
                 <input
                   type="color"
                   value={this.value}
+                  spellcheck="false"
                   onInput={this.onColorChange.bind(this)}
                   tabindex="-1"
                 />
@@ -160,6 +162,7 @@ export class VariableSelector {
               <input
                 type="text"
                 value={this.value}
+                spellcheck="false"
                 onInput={this.onColorChange.bind(this)}
                 onFocus={this.onValueInputFocus.bind(this)}
                 onBlur={this.onValueInputBlur.bind(this)}

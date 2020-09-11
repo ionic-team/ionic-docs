@@ -18,4 +18,5 @@ code-color {
 .code-color-block,
 .code-color-value {
   vertical-align: middle;
+  font-size: 12px;
 }
