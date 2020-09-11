@@ -11,6 +11,8 @@ nextUrl: '/docs/theming/advanced'
 
 Ionic makes it easy to change the themes of your app, including supporting dark color schemes. With growing support for dark mode in native apps, developers are now looking to add it to their apps to support user preferences.
 
+You can view a theming playground for Angular [here](https://stackblitz.com/edit/ionic-ng-theming) and for React [here](https://stackblitz.com/edit/ionic-react-theming).
+
 ## Using Media Queries
 
 The first way to enable dark mode is by using the [CSS media query for the user's preferred color scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme). This media query will hook into the system setting of the user's device and apply the theme if a dark mode is enabled.
