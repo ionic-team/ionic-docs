@@ -66,6 +66,22 @@ document.addEventListener('ionBackButton', (ev) => {
 });
 ```
 </docs-tab>
+<docs-tab tab="vue">
+
+```typescript
+import { useBackButton } from '@ionic/vue';
+
+...
+
+export default {
+  setup() {
+    useBackButton(10, () => {
+      console.log('Handler was called!');
+    });
+  }
+}
+```
+</docs-tab>
 </docs-tabs>
 
 In this example, we are registering a handler to be called when the hardware back button is pressed. We have set the priority to be 10, and we have not indicated to the framework that we want the next handler to be called. As a result, any handlers with a priority less than 10 will not be called. A handler that has a priority greater than 10 will be called first.
@@ -129,6 +145,28 @@ document.addEventListener('ionBackButton', (ev) => {
     processNextHandler();
   });
 });
+```
+</docs-tab>
+<docs-tab tab="vue">
+
+```typescript
+import { useBackButton } from '@ionic/vue';
+
+...
+
+export default {
+  setup() {
+    useBackButton(5, () => {
+      console.log('Another handler was called!');
+    });
+    
+    useBackButton(10, (processNextHandler) => {
+      console.log('Handler was called!');
+      
+      processNextHandler();
+    });
+  }
+}
 ```
 </docs-tab>
 </docs-tabs>
@@ -205,6 +243,25 @@ constructor(
   });
 }
 
+```
+</docs-tab>
+<docs-tab tab="vue">
+
+```typescript
+import { useBackButton, useIonRouter } from '@ionic/vue';
+
+...
+
+export default {
+  setup() {
+    const ionRouter = useIonRouter();
+    useBackButton(-1, () => {
+      if (!ionRouter.canGoBack()) {
+        App.exitApp();
+      }
+    });
+  }
+}
 ```
 </docs-tab>
 </docs-tabs>

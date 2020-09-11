@@ -300,6 +300,25 @@ The `IonRouterOutlet` component provides a container to render your views in. It
 
 Nothing should be provided inside of `IonRouterOutlet` when setting it up in your template. While `IonRouterOutlet` can be nested in child components, we caution against it as it typically makes navigation in apps confusing. See [Shared URLs versus Nested Routes](#shared-urls-versus-nested-routes) for more information.
 
+## Accessing the IonRouter Instance
+
+There may be a few use cases where you need to get access to the `IonRouter` instance from within your Vue application. For example, you might want to know if you are at the root page of the application when a user presses the hardware back button on Android. For use cases like these, you can inject the `IonRouter` dependency into your component:
+
+```typescript
+import { useIonRouter } from '@ionic/vue';
+
+...
+
+export default {
+  setup() {
+    const ionRouter = useIonRouter();
+    if (ionRouter.canGoBack()) {
+      // Perform some action here
+    }
+  }
+}
+```
+
 ## URL Parameters
 
 Let's expand upon our original routing example to show how we can use URL parameters:
