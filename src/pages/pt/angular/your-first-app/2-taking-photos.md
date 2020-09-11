@@ -46,7 +46,7 @@ Veja a mágica aqui: não há nenhum código específico para plataforma (Web, I
 Next, open up `tab2.page.ts` and import the PhotoService class and add a method that calls the `addNewToGallery` method on the imported servce:
 
 ```typescript
-import { PhotoService } from '../services/photo.service';
+import { Photo, PhotoService } from '../services/photo.service';
 
 constructor(public photoService: PhotoService) { }
 
