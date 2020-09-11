@@ -34,7 +34,7 @@ $ ionic cap run android -l --external
 ```html
 <ion-col size="6" 
     *ngFor="let photo of photoService.photos; index as position">
-  <ion-img [src]="photo.base64 ? photo.base64 : photo.webviewPath" 
+  <ion-img [src]="photo.webviewPath" 
            (click)="showActionSheet(photo, position)"></ion-img>
 </ion-col>
 ```
