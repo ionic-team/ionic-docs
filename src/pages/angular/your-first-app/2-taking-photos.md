@@ -78,7 +78,7 @@ After taking a photo, it disappears right away. We need to display it within our
 Outside of the `PhotoService` class definition (the very bottom of the file), create a new interface, `Photo`, to hold our photo metadata:
 
 ```typescript
-interface Photo {
+export interface Photo {
   filepath: string;
   webviewPath: string;
 }
