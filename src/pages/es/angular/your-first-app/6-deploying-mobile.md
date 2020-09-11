@@ -50,7 +50,7 @@ $ ionic cap sync
 
 > Para construir una aplicación iOS, necesitarás una computadora Mac.
 
-Las aplicaciones iOS de Capacitor están configuradas y gestionadas a través de Xcode (iOS/Mac IDE), con dependencias administradas por CocoaPods. Antes de ejecutar esta aplicación en un dispositivo iOS, hay un par de pasos para completar.
+Capacitor iOS apps are configured and managed through Xcode (Apple’s iOS/Mac IDE), with dependencies managed by [CocoaPods](https://cocoapods.org/). Antes de ejecutar esta aplicación en un dispositivo iOS, hay un par de pasos para completar.
 
 Primero, ejecuta el comando Capacitor `open` , que abre el proyecto nativo de iOS en Xcode:
 
