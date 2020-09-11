@@ -90,57 +90,30 @@ private async readAsBase64(cameraPhoto: CameraPhoto) {
   }
 ```
 
-接下来，回到我们之前为web实现的` loadSaved()`函数。 在移动设备上，我们可以直接将图像标签的来源 - `<img src=”x” />` - 设置为Filesystem上的每个照片文件，并自动显示它们。 因此，只有Web才需要将每个图像从Filesystem中读取为base64格式。 更新此函数以在文件系统代码周围添加<em x-id =“ 4”> if语句</em>：
+接下来，回到我们之前为web实现的` loadSaved()`函数。 On mobile, we can directly set the source of an image tag - `<img src="x" />` - to each photo file on the Filesystem, displaying them automatically. 因此，只有Web才需要将每个图像从Filesystem中读取为base64格式。 更新此函数以在文件系统代码周围添加<em x-id =“ 4”> if语句</em>：
 
 ```typescript
 public async loadSaved() {
-  // 检索缓存的照片阵列数据
-  const photos = await Storage.get({ key: this.PHOTO_STORAGE });
-  this.photos = JSON.parse(photos.value) || [];
+  // Retrieve cached photo array data
+  const photoList = await Storage.get({ key: this.PHOTO_STORAGE });
+  this.photos = JSON.parse(photoList.value) || [];
 
-  // 检测在网络上运行时最简单的方法：
-  // “当平台不是'hybrid'时，执行此操作”
+  // Easiest way to detect when running on the web:
+  // “when the platform is NOT hybrid, do this”
   if (!this.platform.is('hybrid')) {
-    // 通过读取为base64格式显示照片
+    // Display the photo by reading into base64 format
     for (let photo of this.photos) {
-      // 从文件系统读取每张保存的照片数据
+      // Read each saved photo's data from the Filesystem
       const readFile = await Filesystem.readFile({
           path: photo.filepath,
           directory: FilesystemDirectory.Data
       });
 
-      // 仅限Web平台：将照片保存到base64字段中
-      photo.base64 = `data:image/jpeg;base64,${readFile.data}`;
+      // Web platform only: Load the photo as base64 data
+      photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
     }
   }
 }
 ```
 
-在`addNewtoGallery()`函数的底部，更新Storage API逻辑。 如果在web上运行，我们可以添加一个轻微的优化。 即使我们必须读取base64格式的照片数据才能显示它，也无需保存该表单，因为它已经保存在文件系统中：
-
-```typescript
-Storage.set({
-  key: this.PHOTO_STORAGE,
-  value: this.platform.is('hybrid')
-          ? JSON.stringify(this.photos)
-          : JSON.stringify(this.photos.map(p => {
-            // 不要保存照片数据的base64表示形式，
-            // 因为它已经保存在文件系统中
-            const photoCopy = { ...p };
-            delete photoCopy.base64;
-
-            return photoCopy;
-        }))
-```
-
-最后，需要对`tab2.page.html`进行少量更改，以支持Web和移动设备。 如果在web上运行应用， `base64` 属性将包含要显示的照片数据。 如果在手机上，将使用 `webviewPath`
-
-```html
-<ion-col size="6"
-    *ngFor="let photo of photoService.photos; index as position">
-  <ion-img src="{{ photo.base64 ? photo.base64 : photo.webviewPath }}">
-  </ion-img>
-</ion-col>
-```
-
-我们的照片库现在包括一个在web、Android和iOS上运行的代码库。 下一步，您一直在等待的部分 - 将应用程序部署到设备。
+Our Photo Gallery now consists of one codebase that runs on the web, Android, and iOS. Next up, the part you’ve been waiting for - deploying the app to a device.
