@@ -6,7 +6,9 @@ nextText: '安装 Appflow SDK'
 nextUrl: '/docs/appflow/quickstart/installation'
 ---
 
-如果你已经在使用 [GitHub](https://github.com/) 你可以将你的资源库与你的应用流程应用程序链接起来自动推送代码。
+如果你已经在使用 [GitHub](https://github.com/) 你可以将你的资源库与你的应用流程应用程序链接起来自动推送代码。 <iframe src="//fast.wistia.net/embed/iframe/mjequ3rpwu" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen style="width: 100%; max-width: 100%" width="100%" height="349" mark="crwd-mark"></iframe>
+
+<script src="//fast.wistia.net/assets/external/E-v1.js" async></script>
 
 ## 必备条件
 
