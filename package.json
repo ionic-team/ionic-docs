@@ -33,7 +33,7 @@
     "moment": "^2.27.0",
     "prismic-dom": "^2.2.3",
     "prismic-javascript": "^2.7.1",
-    "simple-git": "^2.12.0",
+    "simple-git": "^2.20.1",
     "throng": "^4.0.0",
     "typescript": "^4.0.2"
   },
