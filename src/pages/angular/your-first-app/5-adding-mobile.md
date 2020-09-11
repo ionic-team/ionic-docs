@@ -110,38 +110,11 @@ public async loadSaved() {
           directory: FilesystemDirectory.Data
       });
 
-      // Web platform only: Save the photo into the base64 field
-      photo.base64 = `data:image/jpeg;base64,${readFile.data}`;
+      // Web platform only: Load the photo as base64 data
+      photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
     }
   }
 }
-```
-
-At the bottom of the `addNewtoGallery()` function, update the Storage API logic. If running on the web, there’s a slight optimization we can add. Even though we must read the photo data in base64 format in order to display it, there’s no need to save in that form, since it’s already saved on the Filesystem:
-
-```typescript
-Storage.set({
-  key: this.PHOTO_STORAGE,
-  value: this.platform.is('hybrid')
-          ? JSON.stringify(this.photos)
-          : JSON.stringify(this.photos.map(p => {
-            // Don't save the base64 representation of the photo data,
-            // since it's already saved on the Filesystem
-            const photoCopy = { ...p };
-            delete photoCopy.base64;
-
-            return photoCopy;
-        }))
-```
-
-Finally, a small change to `tab2.page.html` is required to support both web and mobile. If running the app on the web, the `base64` property will contain the photo data to display. If on mobile, the `webviewPath` will be used:
-
-```html
-<ion-col size="6"
-    *ngFor="let photo of photoService.photos; index as position">
-  <ion-img [src]="photo.base64 ? photo.base64 : photo.webviewPath">
-  </ion-img>
-</ion-col>
 ```
 
 Our Photo Gallery now consists of one codebase that runs on the web, Android, and iOS. Next up, the part you’ve been waiting for - deploying the app to a device.
