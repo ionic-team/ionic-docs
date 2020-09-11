@@ -1,6 +1,6 @@
 ---
-previousText: 'Tu primera App: Temas'
-previousUrl: '/docs/angular/your-first-app/theming'
+previousText: 'Your First App'
+previousUrl: '/docs/angular/your-first-app'
 nextText: 'Navegación'
 nextUrl: '/docs/angular/navigation'
 contributors:
