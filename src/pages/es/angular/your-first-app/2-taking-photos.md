@@ -44,7 +44,7 @@ Observe la magia aquí: no hay un código específico para cada plataforma (web,
 A continuación, abre `tab2.page.ts`, importa la clase PhotoService y añade el método que se llama `addNewToGallery` de cal clase importada:
 
 ```typescript
-import { PhotoService } from '../services/photo.service';
+import { Photo, PhotoService } from '../services/photo.service';
 
 constructor(public photoService: PhotoService) { }
 
