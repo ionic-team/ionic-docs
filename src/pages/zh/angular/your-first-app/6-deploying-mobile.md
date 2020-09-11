@@ -44,7 +44,7 @@ $ ionic cap sync
 
 > 要构建一个 iOS 应用程序，您将需要一个 Mac 苹果电脑。
 
-Capacitor iOS 应用程序是通过Xcode (Apple's iOS/Mac IDE) 配置和管理的，依赖关系由CocoaPod 管理。 在 iOS 设备上运行此应用程序之前，有几个步骤要完成。
+Capacitor iOS apps are configured and managed through Xcode (Apple’s iOS/Mac IDE), with dependencies managed by [CocoaPods](https://cocoapods.org/). 在 iOS 设备上运行此应用程序之前，有几个步骤要完成。
 
 首先，运行 Capacitor `open` 命令，打开Xcode中的原生iOS项目：
 
