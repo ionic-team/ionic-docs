@@ -78,7 +78,7 @@ _（你的自怕可能会比我好看很多）_
 在`PhotoService`文件里的最底部并且类的外边，创建一个名为`Photo`的interface，用于存放我们的照片数据：
 
 ```typescript
-interface Photo {
+export interface Photo {
   filepath: string;
   webviewPath: string;
 }
@@ -117,8 +117,8 @@ Next, move over to `tab2.page.html` so we can display the image on the screen. A
   <ion-grid>
     <ion-row>
     <ion-col size="6" 
-      *ngFor="let photo of photoService.photos; index as position">
-        <ion-img src="{{ photo.webviewPath }}"></ion-img>
+      *ngFor="let photo of photos; index as position">
+        <ion-img [src]="photo.webviewPath"></ion-img>
     </ion-col>
     </ion-row>
   </ion-grid>
