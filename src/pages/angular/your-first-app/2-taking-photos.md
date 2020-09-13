@@ -44,7 +44,7 @@ Notice the magic here: there's no platform-specific code (web, iOS, or Android)!
 Next, open up `tab2.page.ts` and import the PhotoService class and add a method that calls the `addNewToGallery` method on the imported servce:
 
 ```typescript
-import { Photo, PhotoService } from '../services/photo.service';
+import { PhotoService } from '../services/photo.service';
 
 constructor(public photoService: PhotoService) { }
 
@@ -82,6 +82,12 @@ export interface Photo {
   filepath: string;
   webviewPath: string;
 }
+```
+
+Add `Photo` to the import statement.
+
+```typescript
+import { Photo, PhotoService } from '../services/photo.service';
 ```
 
 Back at the top of the file, define an array of Photos, which will contain a reference to each photo captured with the Camera. 
