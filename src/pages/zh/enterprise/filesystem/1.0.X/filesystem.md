@@ -1,19 +1,19 @@
 ---
-title: Filesystem
-template: enterprise-plugin
+title: 文件系统
+template: 企业插件
 version: 1.0.2
 minor: 1.0.X
 otherVersions:
   - 1.0.X
 ---
 
-# Ionic Filesystem
+# Ionic 文件系统
 
-This plugin presents a simple and intuitive interface for common filesytem operations such as reading/writing and listing the contents of directories.
+此插件提供了一系列简单直接的接口，用于常见的文件操作，如读/写和列出文件夹内容。
 
 <native-ent-install plugin-id="filesystem" variables=""></native-ent-install>
 
-## Usage
+## 用法
 
 The Filesystem plugin ship with a native Angular & es2015+/Typescript wrappers as well as being available on window.
 
