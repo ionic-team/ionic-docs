@@ -52,9 +52,9 @@ document.addEventListener('deviceready', () => {
 
 ## API 文档
 
-你可以在下方找到API和接口文档。 The main classes to pay attention to are:
+你可以在下方找到API和接口文档。 要注意的主要类是：
 
-* [Filesystem](#filesystem) - This is the main API for interacting with the filesystem.
+* [文件系统](#filesystem) - 这个是文件系统交互的主要API.
 * [Directories](#directories) - The available directory locations for the application.
 * [Encodings](#encodings) - The available encodings when reading/writing a file.
 
