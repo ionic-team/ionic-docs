@@ -50,9 +50,9 @@ document.addEventListener('deviceready', () => {
 });
 ```
 
-## API Documentation
+## API 文档
 
-You can find the API and interface documentation for everything below. The main classes to pay attention to are:
+你可以在下方找到API和接口文档。 The main classes to pay attention to are:
 
 * [Filesystem](#filesystem) - This is the main API for interacting with the filesystem.
 * [Directories](#directories) - The available directory locations for the application.
