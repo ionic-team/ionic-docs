@@ -15,7 +15,7 @@ otherVersions:
 
 ## 用法
 
-The Filesystem plugin ship with a native Angular & es2015+/Typescript wrappers as well as being available on window.
+文件系统插件附带一个原生Angular& es2015+/Typescript 包装器，并且在窗口下可用。
 
 ```typescript
 // Angular
