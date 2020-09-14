@@ -234,7 +234,7 @@
   "menu-appflow-cookbook-private_git": "Usando Repositorios Privados de Git",
   "menu-appflow-cookbook-private_npm_modules": "Como utilizar módulos privados de NPM",
   "menu-appflow-cookbook-switch_node_version": "Usar diferentes nodos en compilaciones",
-  "menu-appflow-cookbook-private-native-enterprise-keys": "Private Ionic Native Enterprise Edition Keys in Open Source Apps",
+  "menu-appflow-cookbook-private-native-enterprise-keys": "Claves privadas de Ionic Native Enterprise Edition en aplicaciones de código abierto",
   "menu-appflow-build-stacks": "Build Stacks",
   "menu-appflow-web-previews": "Web Previews",
   "menu-enterprise-home": "Inicio",
