@@ -48,6 +48,12 @@ constructor(public photoService: PhotoService,
             public actionSheetController: ActionSheetController) {}
 ```
 
+Add `Photo` to the import statement.
+
+```typescript
+import { Photo, PhotoService } from '../services/photo.service';
+```
+
 Next, implement the `showActionSheet()` function. We add two options: `Delete` that calls PhotoService’s `deletePicture()` function (to be added next) and `Cancel`, which when given the role of “cancel” will automatically close the action sheet:
 
 ```typescript
@@ -74,9 +80,9 @@ public async showActionSheet(photo: Photo, position: number) {
 }
 ```
 
-Enregistrez les deux fichiers que nous venons de modifier. L'application Galerie de photos se rechargera automatiquement, et maintenant que nous appuyons sur l'une des photos de la galerie, la feuille d'action s'affiche. Taper sur « Supprimer» ne fait rien pour le moment, alors revenez dans votre éditeur de code.
+Save both of the files we just edited. The Photo Gallery app will reload automatically, and now when we tap on one of the photos in the gallery, the action sheet displays. Tapping “Delete” doesn’t do anything yet, so head back into your code editor.
 
-Dans `src/app/services/photo.service.ts`, ajoutez la fonction `deletePicture()`:
+In `src/app/services/photo.service.ts`, add the `deletePicture()` function:
 
 ```typescript
 public async deletePicture(photo: Photo, position: number) {
@@ -100,12 +106,12 @@ public async deletePicture(photo: Photo, position: number) {
 }
 ```
 
-La photo sélectionnée est retirée du tableau Photos. Ensuite, nous utilisons l'API Capacitor Storage pour mettre à jour la version mise en cache du tableau Photos. Enfin, nous supprimons le fichier photo lui-même en utilisant l'API du système de fichiers.
+The selected photo is removed from the Photos array first. Then, we use the Capacitor Storage API to update the cached version of the Photos array. Finally, we delete the actual photo file itself using the Filesystem API.
 
-Enregistrez ce fichier, puis appuyez à nouveau sur une photo et choisissez l'option "Supprimer". Cette fois-ci, la photo est supprimée! Implémenté beaucoup plus rapidement en utilisant Live Reload. 💪
+Save this file, then tap on a photo again and choose the “Delete” option. This time, the photo is deleted! Implemented much faster using Live Reload. 💪
 
 ## Et ensuite ?
 
-Félicitations ! Vous avez construit une application de Photo Gallery multi-plateforme qui fonctionne sur le web, iOS et Android. Il y a beaucoup de chemins à suivre à partir d'ici. Essayez d'ajouter un autre [composant Ionic UI](https://ionicframework.com/docs/components) à l'application, ou plus de [fonctionnalités natives](https://capacitor.ionicframework.com/docs/apis). Le ciel est la limite.
+Congratulations! You built a complete cross-platform Photo Gallery app that runs on the web, iOS, and Android. There are many paths to follow from here. Try adding another [Ionic UI component](https://ionicframework.com/docs/components) to the app, or more [native functionality](https://capacitor.ionicframework.com/docs/apis). The sky’s the limit.
 
-Bonne construction d'application! 💙
+Happy app building! 💙
