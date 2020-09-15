@@ -84,12 +84,6 @@ export interface Photo {
 }
 ```
 
-Add `Photo` to the import statement.
-
-```typescript
-import { Photo, PhotoService } from '../services/photo.service';
-```
-
 Back at the top of the file, define an array of Photos, which will contain a reference to each photo captured with the Camera. 
 
 ```typescript
