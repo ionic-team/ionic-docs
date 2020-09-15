@@ -44,7 +44,7 @@ public async addNewToGallery() {
 接着，打开`tab2.page.ts`导入PhotoService类，并在导入的类中添加一个调用 `addNewToGallery`的方法：
 
 ```typescript
-import { Photo, PhotoService } from '../services/photo.service';
+import { PhotoService } from '../services/photo.service';
 
 constructor(public photoService: PhotoService) { }
 
@@ -117,7 +117,7 @@ Next, move over to `tab2.page.html` so we can display the image on the screen. A
   <ion-grid>
     <ion-row>
     <ion-col size="6" 
-      *ngFor="let photo of photos; index as position">
+      *ngFor="let photo of photoService.photos; index as position">
         <ion-img [src]="photo.webviewPath"></ion-img>
     </ion-col>
     </ion-row>
