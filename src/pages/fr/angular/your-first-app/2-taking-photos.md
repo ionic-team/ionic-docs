@@ -44,7 +44,7 @@ Remarquez la magie ici: il n'y a pas de code spécifique à la plateforme (web, 
 Next, open up `tab2.page.ts` and import the PhotoService class and add a method that calls the `addNewToGallery` method on the imported servce:
 
 ```typescript
-import { Photo, PhotoService } from '../services/photo.service';
+import { PhotoService } from '../services/photo.service';
 
 constructor(public photoService: PhotoService) { }
 
@@ -117,7 +117,7 @@ Next, move over to `tab2.page.html` so we can display the image on the screen. A
   <ion-grid>
     <ion-row>
     <ion-col size="6" 
-      *ngFor="let photo of photos; index as position">
+      *ngFor="let photo of photoService.photos; index as position">
         <ion-img [src]="photo.webviewPath"></ion-img>
     </ion-col>
     </ion-row>
