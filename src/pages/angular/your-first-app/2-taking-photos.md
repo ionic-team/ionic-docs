@@ -44,7 +44,7 @@ Notice the magic here: there's no platform-specific code (web, iOS, or Android)!
 Next, open up `tab2.page.ts` and import the PhotoService class and add a method that calls the `addNewToGallery` method on the imported servce:
 
 ```typescript
-import { Photo, PhotoService } from '../services/photo.service';
+import { PhotoService } from '../services/photo.service';
 
 constructor(public photoService: PhotoService) { }
 
