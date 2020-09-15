@@ -49,7 +49,13 @@ constructor(public photoService: PhotoService,
 
 ```
 
-接下来，实现`showActionSheet()`函数。 我们往ActionSheet里面添加两个选项：`Delete`和`Cancel`，`Delete`选项可以调用照片服务的`deletePicture()`函数（我们后面要添加的功能），当按钮的`role`属性被赋值为"cancel"时，它将具有能关闭ActionSheet的功能。
+Add `Photo` to the import statement.
+
+```typescript
+import { Photo, PhotoService } from '../services/photo.service';
+```
+
+Next, implement the `showActionSheet()` function. We add two options: `Delete` that calls PhotoService’s `deletePicture()` function (to be added next) and `Cancel`, which when given the role of “cancel” will automatically close the action sheet:
 
 ```typescript
 public async showActionSheet(photo: Photo, position: number) {
@@ -75,22 +81,22 @@ public async showActionSheet(photo: Photo, position: number) {
 }
 ```
 
-保存好我们刚刚编辑的那两个文件后， 应用将自动刷新，现在我们在图库的照片上面单击，Action Sheet按照预期显示了出来。 点击“Delete”选项之后，并没有触发任何效果，所以再回到编辑器中。
+Save both of the files we just edited. The Photo Gallery app will reload automatically, and now when we tap on one of the photos in the gallery, the action sheet displays. Tapping “Delete” doesn’t do anything yet, so head back into your code editor.
 
-在`src/app/services/photo.service.ts`里面，我们将`deletePicture()`函数添加进去：
+In `src/app/services/photo.service.ts`, add the `deletePicture()` function:
 
 ```typescript
 public async deletePicture(photo: Photo, position: number) {
-  // 从保存照片的数组中移除一条照片记录
+  // Remove this photo from the Photos reference data array
   this.photos.splice(position, 1);
 
-  // 通过修改照片数组数据更新缓存
+  // Update photos array cache by overwriting the existing photo array
   Storage.set({
     key: this.PHOTO_STORAGE,
     value: JSON.stringify(this.photos)
   });
 
-  // 从文件系统中删除照片
+  // delete photo file from filesystem
   const filename = photo.filepath
                       .substr(photo.filepath.lastIndexOf('/') + 1);
 
@@ -99,15 +105,14 @@ public async deletePicture(photo: Photo, position: number) {
     directory: FilesystemDirectory.Data
   });
 }
-
 ```
 
-这张选中的照片从数组首位被移除， 然后我们使用永久存储API将被操作后的数组缓存起来。 最后，我们使用文件系统API物理删除了照片。
+The selected photo is removed from the Photos array first. Then, we use the Capacitor Storage API to update the cached version of the Photos array. Finally, we delete the actual photo file itself using the Filesystem API.
 
-保存此文件，然后再次点击照片并选择“删除”选项。 此时，这张照片就被删除了。 通过使用实时重载，让这一切都更快实现了。 💪
+Save this file, then tap on a photo again and choose the “Delete” option. This time, the photo is deleted! Implemented much faster using Live Reload. 💪
 
 ## 接下来呢？
 
-祝贺您！ 你已经构建了一个可以同时在web、iOS以及Android上跨平台运行的图库应用。 这里提供了一些其他路径。 试试在你的应用中添加其他的[Ionic UI 组件](https://ionicframework.com/docs/components), 或者是 [原生功能](https://capacitor.ionicframework.com/docs/apis)， 利用他们，你可以创造出无限可能。
+Congratulations! You built a complete cross-platform Photo Gallery app that runs on the web, iOS, and Android. There are many paths to follow from here. Try adding another [Ionic UI component](https://ionicframework.com/docs/components) to the app, or more [native functionality](https://capacitor.ionicframework.com/docs/apis). The sky’s the limit.
 
-祝您编码愉快！ 💙
+Happy app building! 💙
