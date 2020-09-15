@@ -61,7 +61,7 @@ export class DocsHeader {
       </div> : null,
       ['Native'].indexOf(section) > -1 ? <div class="SectionNav-tabs">
       <stencil-route-link url="/docs/native" urlMatch={['/docs/native']}>{l10n.getString('header-native-community')}</stencil-route-link>
-      <stencil-route-link url="/docs/enterprise" urlMatch={['/docs/enterprise']}>{l10n.getString('header-native-enterprise')}</stencil-route-link>
+      <stencil-route-link url="/docs/enterprise/community-vs-enterprise" urlMatch={['/docs/enterprise/community-vs-enterprise']}>{l10n.getString('header-native-enterprise')}</stencil-route-link>
     </div> : null,
     ];
   }

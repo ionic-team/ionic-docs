@@ -26,9 +26,9 @@ export class DocsMenuEnterprise {
 
     gettingStarted = {
         '': {
-            'menu-enterprise-home': '/docs/enterprise',
-            'menu-native-setup': '/docs/enterprise/setup',
             'menu-native-community-v-premier': '/docs/enterprise/community-vs-enterprise',
+            'menu-native-setup': '/docs/enterprise/setup',
+            'menu-enterprise-home': '/docs/enterprise',
             'menu-enterprise-troubleshooting': 'https://ionic.zendesk.com/hc/en-us/categories/360004359553-Native-Integration'
         }
     };
