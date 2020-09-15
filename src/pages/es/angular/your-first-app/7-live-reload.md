@@ -48,6 +48,12 @@ constructor(public photoService: PhotoService,
             public actionSheetController: ActionSheetController) {}
 ```
 
+Add `Photo` to the import statement.
+
+```typescript
+import { Photo, PhotoService } from '../services/photo.service';
+```
+
 Next, implement the `showActionSheet()` function. We add two options: `Delete` that calls PhotoService’s `deletePicture()` function (to be added next) and `Cancel`, which when given the role of “cancel” will automatically close the action sheet:
 
 ```typescript
@@ -74,7 +80,7 @@ public async showActionSheet(photo: Photo, position: number) {
 }
 ```
 
-Guarda ambos archivos que acabamos de editar. La aplicación Galería de Fotos se recargará automáticamente, y ahora cuando toquemos una de las fotos de la galería, la hoja de acción se muestra. Toque “Eliminar” no hace nada todavía, así que vuelva a su editor de código.
+Save both of the files we just edited. The Photo Gallery app will reload automatically, and now when we tap on one of the photos in the gallery, the action sheet displays. Tapping “Delete” doesn’t do anything yet, so head back into your code editor.
 
 In `src/app/services/photo.service.ts`, add the `deletePicture()` function:
 
@@ -100,12 +106,12 @@ public async deletePicture(photo: Photo, position: number) {
 }
 ```
 
-La foto seleccionada se elimina de la matriz Photos primero. Luego, utilizamos la API de almacenamiento en caché para actualizar la versión de la matriz Photos. Finalmente, eliminamos el archivo fotográfico en sí mismo utilizando la API Filesystem .
+The selected photo is removed from the Photos array first. Then, we use the Capacitor Storage API to update the cached version of the Photos array. Finally, we delete the actual photo file itself using the Filesystem API.
 
-Guarde este archivo, luego pulse sobre una foto de nuevo y elija la opción “Eliminar”. Esta vez, la foto es eliminada! Implementado mucho más rápido usando Live Reload. 💪
+Save this file, then tap on a photo again and choose the “Delete” option. This time, the photo is deleted! Implemented much faster using Live Reload. 💪
 
 ## ¿Qué sigue?
 
-¡Felicidades! Construyó una aplicación multiplataforma completa de Galería de Fotos que se ejecuta en la web, iOS y Android. Desde aquí hay muchos caminos por recorrer. Intenta añadir otro componente Ionic a la aplicación, o más funcionalidades nativas The sky’s the limit.
+Congratulations! You built a complete cross-platform Photo Gallery app that runs on the web, iOS, and Android. There are many paths to follow from here. Try adding another [Ionic UI component](https://ionicframework.com/docs/components) to the app, or more [native functionality](https://capacitor.ionicframework.com/docs/apis). The sky’s the limit.
 
-¡Feliz construcción de aplicaciones! 💙
+Happy app building! 💙
