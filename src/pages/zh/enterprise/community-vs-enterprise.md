@@ -7,6 +7,10 @@ Community Plugins are a collection of open source Cordova plugins that make it e
 
 For teams that require dedicated native plugin support & SLAs, ongoing maintenance, and security patches, there's <strong>Ionic Enterprise</strong>.
 
+## Sign Up for Ionic Enterprise
+
+<hubspot-form form-id="7c2c6529-48c0-4d17-86a0-bfd40c849bb1"></hubspot-form>
+
 ## Why Ionic Enterprise?
 
 Take on mobile projects with peace of mind, knowing the native features, security, and performance you need will just work - now and in the future.
@@ -95,10 +99,6 @@ For teams building mission-critical apps, Ionic Enterprise is a curated collecti
     </table>
   </div>
 </div>
-
-## Sign Up for Ionic Enterprise
-
-<hubspot-form form-id="7c2c6529-48c0-4d17-86a0-bfd40c849bb1"></hubspot-form>
 
 ## Solution List
 
