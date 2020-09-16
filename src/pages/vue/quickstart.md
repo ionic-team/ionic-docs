@@ -318,8 +318,6 @@ Looking at our code, we have a special attribute called slot. This is key for le
 Let's look at another component from Ionic Framework, FAB. Floating Action Buttons are a nice way to provide a main action that is elevated from the rest of an app. For this FAB, we will need three components: a FAB, a FAB Button, and an Icon.
 
 ```typescript
-import { add } from 'ionicons/icons';
-
 <ion-content>
   <ion-list>
   ...
@@ -327,11 +325,27 @@ import { add } from 'ionicons/icons';
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button>
-      <ion-icon icon={add}></ion-icon>
+      <ion-icon :icon="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 
 </ion-content>
+
+<script>
+import { add } from 'ionicons/icons';
+
+...
+
+export default defineComponent({
+  name: 'Home',
+  ...,
+  setup() {
+    return {
+      add
+    }
+  }
+})
+</script>
 ```
 
 On our main `IonFab`, we are setting its positioning with the vertical and horizontal attributes. We are also setting the render location to "fixed" with the slot attribute. This will tell `IonFab` to render outside of the scrollable content in `IonContent`.
@@ -348,7 +362,7 @@ import { add } from 'ionicons/icons';
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button @click="() => router.push('/new')">
-      <ion-icon icon={add}></ion-icon>
+      <ion-icon :icon="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 
@@ -372,7 +386,10 @@ export default defineComponent({
     IonToolbar
   },
   setup() {
-    return { router: useRouter() }
+    return {
+      router: useRouter(),
+      add
+    }
   }
 });
 </script>
