@@ -317,7 +317,7 @@ Looking at our code, we have a special attribute called slot. This is key for le
 
 Let's look at another component from Ionic Framework, FAB. Floating Action Buttons are a nice way to provide a main action that is elevated from the rest of an app. For this FAB, we will need three components: a FAB, a FAB Button, and an Icon.
 
-```typescript
+```html
 <ion-content>
   <ion-list>
   ...
@@ -352,7 +352,7 @@ On our main `IonFab`, we are setting its positioning with the vertical and horiz
 
 Now let's wire up a click handler to this. When clicking the FAB button, we want to navigate to a new page (which we will create in a moment). To do this, we will need to get access to Vue Router's navigation API. This can be done by importing `useRouter` from the `vue-router` package.
 
-```typescript
+```html
 import { add } from 'ionicons/icons';
 
 <ion-content>
@@ -441,7 +441,7 @@ With our router now having an entry for the route `/new`, we will create the com
 
 Let's fill the `NewItem.vue` file with some placeholder content for the moment.
 
-```typescript
+```html
 <template>
   <ion-page>
     <ion-header>
@@ -522,7 +522,7 @@ Additional details can be found [here](https://capacitor.ionicframework.com/docs
 
 Next, check out [all the APIs](https://capacitor.ionicframework.com/docs/apis) that are available. There is some great features, including the [Camera API](https://capacitor.ionicframework.com/docs/apis/camera). We can implement photo capture functionality in just a few lines of code:
 
-```typescript
+```html
 <template>
   <ion-page>
     <ion-header>
