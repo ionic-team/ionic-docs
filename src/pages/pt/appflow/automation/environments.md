@@ -31,6 +31,7 @@ The following environment variables are provided in every build, which can be ac
 * `CI_GIT_COMMIT_MSG` **(string):** The message for the commit on which the build was run.
 * `CI_GIT_REF` **(string):** The git ref from which the build was created (i.e. `master`).
 * `CI_GIT_REF_TYPE` **(string):** The git ref type (i.e. `branch`).
+* `CI_PLATFORM` **(string):** The platform for the build (`ios`, `android`, `web`).
 
 ## Custom Environments
 
