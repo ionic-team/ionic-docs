@@ -31,6 +31,7 @@ nextUrl: '/docs/appflow/automation/webhooks'
 * `CI_GIT_COMIIT_MSG` **(string)：** 用于运行构建的提交的消息。
 * `CI_GIT_REF` **(string):** 创建构建的git ref (即. `master`)。
 * `CI_GIT_REF_TYPE` **(string)：** git ref 类型 (例如. `branch`)。
+* `CI_PLATFORM` **(string):** The platform for the build (`ios`, `android`, `web`).
 
 ## 自定义环境
 
