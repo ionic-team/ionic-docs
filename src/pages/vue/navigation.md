@@ -394,7 +394,7 @@ Vue Router ships with a configurable history mode. Let's look at the different o
 
 * `createWebHashHistory`: This option adds a hash (`#`) to your URL. This is useful for web applications with no host or when you do not have full control over the server routes. Search engines sometimes ignore hash fragments, so you should use `createWebHistory` instead if SEO is important for your application.
 
-* `createMemoryHistory`: This option creates an in-memory based history. This is mainly only used to handle server-side rendering (SSR).
+* `createMemoryHistory`: This option creates an in-memory based history. This is mainly used to handle server-side rendering (SSR).
 
 ## More Information
 
