@@ -62,6 +62,21 @@ document.addEventListener('ionBackButton', (ev) => {
   });
 });
 ```
+</docs-tab> <docs-tab tab="vue">
+
+```typescript
+import { useBackButton } from '@ionic/vue';
+
+...
+
+export default {
+  setup() {
+    useBackButton(10, () => {
+      console.log('Handler was called!');
+    });
+  }
+}
+```
 </docs-tab> </docs-tabs>
 
 In this example, we are registering a handler to be called when the hardware back button is pressed. We have set the priority to be 10, and we have not indicated to the framework that we want the next handler to be called. As a result, any handlers with a priority less than 10 will not be called. A handler that has a priority greater than 10 will be called first.
@@ -122,6 +137,27 @@ document.addEventListener('ionBackButton', (ev) => {
     processNextHandler();
   });
 });
+```
+</docs-tab> <docs-tab tab="vue">
+
+```typescript
+import { useBackButton } from '@ionic/vue';
+
+...
+
+export default {
+  setup() {
+    useBackButton(5, () => {
+      console.log('Another handler was called!');
+    });
+
+    useBackButton(10, (processNextHandler) => {
+      console.log('Handler was called!');
+
+      processNextHandler();
+    });
+  }
+}
 ```
 </docs-tab> </docs-tabs>
 
@@ -213,13 +249,32 @@ document.addEventListener('ionBackButton', (ev) => {
     }
   });
 });
+```
+</docs-tab> <docs-tab tab="vue">
 
+```typescript
+import { useBackButton, useIonRouter } from '@ionic/vue';
+import { Plugins } from '@capacitor/core';
+const { App } = Plugins;
+
+...
+
+export default {
+  setup() {
+    const ionRouter = useIonRouter();
+    useBackButton(-1, () => {
+      if (!ionRouter.canGoBack()) {
+        App.exitApp();
+      }
+    });
+  }
+}
 ```
 </docs-tab> </docs-tabs>
 
 This example shows the application exiting when the user presses the hardware back button and there is nothing left in the navigation stack. It is also possible to display a confirmation dialog before quitting the app.
 
-It is recommended to check whether or not the user is on the root page prior to exiting the application. Developers can use the `canGoBack` method on `IonRouterOutlet` in Ionic Angular and `IonRouter` in Ionic React.
+It is recommended to check whether or not the user is on the root page prior to exiting the application. Developers can use the `canGoBack` method on `IonRouterOutlet` in Ionic Angular and `IonRouter` in Ionic React and Ionic Vue.
 
 ## Internal Framework Handlers
 
