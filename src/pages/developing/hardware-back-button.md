@@ -268,6 +268,8 @@ document.addEventListener('ionBackButton', (ev) => {
 
 ```typescript
 import { useBackButton, useIonRouter } from '@ionic/vue';
+import { Plugins } from '@capacitor/core';
+const { App } = Plugins;
 
 ...
 
