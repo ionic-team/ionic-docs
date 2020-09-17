@@ -31,6 +31,7 @@ Las siguientes variables de entorno se proporcionan en cada compilación, a las 
 * `CI_GIT_COMMIT_MSG` **(string):** El mensaje para la confirmación en la que se ejecutó la compilación.
 * `CI_GIT_REF` **(string):** La referencia git a partir de la cual se creó la compilación (i.e. `master`).
 * `CI_GIT_REF_TYPE` **(string):** El tipo de referencia git (i.e. `branch`).
+* `CI_PLATFORM` **(string):** The platform for the build (`ios`, `android`, `web`).
 
 ## Entornos Personalizados
 
