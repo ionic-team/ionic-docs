@@ -300,6 +300,25 @@ The `IonRouterOutlet` component provides a container to render your views in. It
 
 Nothing should be provided inside of `IonRouterOutlet` when setting it up in your template. While `IonRouterOutlet` can be nested in child components, we caution against it as it typically makes navigation in apps confusing. See [Shared URLs versus Nested Routes](#shared-urls-versus-nested-routes) for more information.
 
+## Accessing the IonRouter Instance
+
+There may be a few use cases where you need to get access to the `IonRouter` instance from within your Vue application. For example, you might want to know if you are at the root page of the application when a user presses the hardware back button on Android. For use cases like these, you can inject the `IonRouter` dependency into your component:
+
+```typescript
+import { useIonRouter } from '@ionic/vue';
+
+...
+
+export default {
+  setup() {
+    const ionRouter = useIonRouter();
+    if (ionRouter.canGoBack()) {
+      // Perform some action here
+    }
+  }
+}
+```
+
 ## URL Parameters
 
 Let's expand upon our original routing example to show how we can use URL parameters:
@@ -366,6 +385,16 @@ export default defineComponent({
 ```
 
 Our `route` variable contains an instance of the current route. It also contains any parameters we have passed in. We can obtain the `id` parameter from here and display it on the screen.
+
+## Router History
+
+Vue Router ships with a configurable history mode. Let's look at the different options and why you might want to use each one.
+
+* `createWebHistory`: This option creates an HTML5 history. It leverages the History API to achieve URL navigation without a page reload. This is the most common history mode for single page applications. When in doubt, use `createWebHistory`.
+
+* `createWebHashHistory`: This option adds a hash (`#`) to your URL. This is useful for web applications with no host or when you do not have full control over the server routes. Search engines sometimes ignore hash fragments, so you should use `createWebHistory` instead if SEO is important for your application.
+
+* `createMemoryHistory`: This option creates an in-memory based history. This is mainly used to handle server-side rendering (SSR).
 
 ## More Information
 
