@@ -386,6 +386,16 @@ export default defineComponent({
 
 Our `route` variable contains an instance of the current route. It also contains any parameters we have passed in. We can obtain the `id` parameter from here and display it on the screen.
 
+## Router History
+
+Vue Router ships with a configurable history mode. Let's look at the different options and why you might want to use each one.
+
+* `createWebHistory`: This option creates an HTML5 history. It leverages the History API to achieve URL navigation without a page reload. This is the most common history mode for single page applications. When in doubt, use `createWebHistory`.
+
+* `createWebHashHistory`: This option adds a hash (`#`) to your URL. This is useful for web applications with no host or when you do not have full control over the server routes. Search engines sometimes ignore hash fragments, so you should use `createWebHistory` instead if SEO is important for your application.
+
+* `createMemoryHistory`: This option creates an in-memory based history. This is mainly only used to handle server-side rendering (SSR).
+
 ## More Information
 
 For more info on routing in Vue using Vue Router, check out their docs at http://router.vuejs.org/.

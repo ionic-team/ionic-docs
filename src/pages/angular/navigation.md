@@ -131,14 +131,14 @@ import { RouterModule } from '@angular/router';
   ...
   RouterModule.forRoot([
     { path: '', redirectTo: 'login', pathMatch: 'full' },
-    { path: 'login', loadChildren: './login/login.module#LoginModule' },
-    { path: 'detail', loadChildren: './detail/detail.module#DetailModule' }
+    { path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule) },
+    { path: 'detail', loadChildren: () => import('./detail/detail.module').then(m => m.DetailModule) }
   ])
   ],
 })
 ```
 
-While similar, the `loadChildren` property is a way to reference a module by string instead of a component directly. In order to do this though, we need to create a module for each of the components.
+While similar, the `loadChildren` property is a way to reference a module by using native import instead of a component directly. In order to do this though, we need to create a module for each of the components.
 
 
 ```typescript
@@ -181,7 +181,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: '../tab1/tab1.module#Tab1PageModule'
+            loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
           }
         ]
       },
@@ -200,7 +200,7 @@ const routes: Routes = [
 ];
 ```
 
-Here we have a "tabs" path that we load. In this example we call the path “tabs”, but the name of the paths are open to be changed. They can be called whatever fits your app. In that route object, we can define a child route as well. In this example, the top level child route "tab1" acts as our "outlet", and can load additional child routes. For this example, we have a single sub-child-route, which just loads a new component. The markup for the tab is as followed:
+Here we have a "tabs" path that we load. In this example we call the path "tabs", but the name of the paths can be changed. They can be called whatever fits your app. In that route object, we can define a child route as well. In this example, the top level child route "tab1" acts as our "outlet", and can load additional child routes. For this example, we have a single sub-child-route, which just loads a new component. The markup for the tab is as followed:
 
 ```html
 

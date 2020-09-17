@@ -38,14 +38,14 @@ With the photo array data saved, create a function called `loadSaved()` that can
 ```typescript
 public async loadSaved() {
   // Retrieve cached photo array data
-  const photos = await Storage.get({ key: this.PHOTO_STORAGE });
-  this.photos = JSON.parse(photos.value) || [];
+  const photoList = await Storage.get({ key: this.PHOTO_STORAGE });
+  this.photos = JSON.parse(photoList.value) || [];
 
   // more to come...
 }
 ```
 
-On mobile (coming up next!), we can directly set the source of an image tag - `<img src=”x” />` - to each photo file on the Filesystem, displaying them automatically. On the web, however, we must read each image from the Filesystem into base64 format, because the Filesystem API stores them in base64 within [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. Below the code you just added in the `loadSaved()` function, add:
+On mobile (coming up next!), we can directly set the source of an image tag - `<img src="x" />` - to each photo file on the Filesystem, displaying them automatically. On the web, however, we must read each image from the Filesystem into base64 format, using a new `base64` property on the `Photo` object. This is because the Filesystem API uses [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. Below is the code you need to add in the `loadSaved()` function you just added:
 
 ```typescript
 // Display the photo by reading into base64 format
