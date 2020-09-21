@@ -1,8 +1,8 @@
 ---
 title: Camera
 template: enterprise-plugin
-version: 4.1.0
-minor: 4.1.X
+version: 5.0.0
+minor: 5.0.X
 ---
 
 The Camera plugin offers the ability to take a photo, capture video and choose images from the system's image library.
@@ -616,6 +616,31 @@ ___
 ___
 
 # Release Notes
+
+### 5.0.0 (Sep 14, 2020)
+
+* [GH-648](https://github.com/apache/cordova-plugin-camera/pull/648) ci(travis): update osx xcode image
+* [GH-637](https://github.com/apache/cordova-plugin-camera/pull/637) breaking: remove `NATIVE_URI` DestinationType
+* [GH-628](https://github.com/apache/cordova-plugin-camera/pull/628) breaking: bump project requirements
+* [GH-634](https://github.com/apache/cordova-plugin-camera/pull/634) chore: remove deprecated `file-transfer` plugin
+* [GH-632](https://github.com/apache/cordova-plugin-camera/pull/632) fix(android): return error if file url is null
+* [GH-510](https://github.com/apache/cordova-plugin-camera/pull/510) fix(android): use provider prefix to avoid conflicts other plugin providers
+* [GH-617](https://github.com/apache/cordova-plugin-camera/pull/617) breaking(android): stop using `CordovaUri` helper class
+* [GH-630](https://github.com/apache/cordova-plugin-camera/pull/630) chore: add `package-lock.json`
+* [GH-631](https://github.com/apache/cordova-plugin-camera/pull/631) chore(package): use short notation
+* [GH-629](https://github.com/apache/cordova-plugin-camera/pull/629) feat: migrate to `@cordova/eslint-config@3.x`
+* [GH-626](https://github.com/apache/cordova-plugin-camera/pull/626) ci: fix additional tests
+* [GH-627](https://github.com/apache/cordova-plugin-camera/pull/627) breaking: bump version 5.0.0-dev
+* [GH-612](https://github.com/apache/cordova-plugin-camera/pull/612) fix(ios): `tempFilePath` called twice if using `CameraUsesGeolocation`
+* [GH-588](https://github.com/apache/cordova-plugin-camera/pull/588) Cache images in device storage, devices have enough space now.
+* [GH-508](https://github.com/apache/cordova-plugin-camera/pull/508) docs(readme): app renamed to Google Photos
+* [GH-580](https://github.com/apache/cordova-plugin-camera/pull/580) fix(ios): return copy of video when picking from gallery on **iOS** 13
+* [GH-551](https://github.com/apache/cordova-plugin-camera/pull/551) Fix UI API called on a background thread
+* [GH-576](https://github.com/apache/cordova-plugin-camera/pull/576) ci: updates Node.js versions
+* [GH-575](https://github.com/apache/cordova-plugin-camera/pull/575) chore(npm): adds ignore list
+* [GH-513](https://github.com/apache/cordova-plugin-camera/pull/513) docs(README): remove confusing comment
+* [GH-512](https://github.com/apache/cordova-plugin-camera/pull/512) docs(README): remove orphan **Windows** phone 7 note
+* [GH-306](https://github.com/apache/cordova-plugin-camera/pull/306) ImagePicker returning same image
 
 ### 4.1.0 (Jun 27, 2019)
 
