@@ -108,7 +108,7 @@ export class DocsHeader {
               </section>
               <section>
                 <a href="https://forum.ionicframework.com/" target="_blank">Forum</a>
-                <a href="http://ionicworldwide.herokuapp.com/" target="_blank">Slack</a>
+                <a href="https://ionicworldwide.herokuapp.com/" target="_blank">Slack</a>
                 <a href="https://spectrum.chat/ionic" target="_blank">Spectrum</a>
                 <a href="https://www.meetup.com/topics/ionic-framework/" target="_blank">Meetups</a>
               </section>
