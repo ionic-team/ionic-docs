@@ -3,54 +3,54 @@ title: Ionic Native Enterprise Edition
 tableOfContents: false
 ---
 
-<p class='intro'><a href="https://ionicframework.com/native" target="_blank">Ionic Native Enterprise Edition (EE)</a> is a subscription service that provides premium, supported Capacitor and Cordova plugins, third-party integrations, and pre-built solutions for teams building enterprise-grade apps with Ionic.</p>
+<p class='intro'><a href="https://ionicframework.com/native" target="_blank">Ionic Native Enterprise Edition (EE)</a> es un servicio de suscripción que proporciona premium, plugins soportados con Capacitor y Cordova, integraciones de terceros y soluciones preconstruidas para equipos que construyen aplicaciones de grado superior con Ionic.</p>
 
 <docs-cards class="static-width"> <docs-card size="lg" header="Native Solutions" href="/docs/enterprise/solutions" iconset="/docs/assets/icons/face-id.png,/docs/assets/icons/touch-id.png,/docs/assets/icons/auth0.png,/docs/assets/icons/active-directory.png"> 
 
-Complete native solutions for single sign-on, biometrics, and secure offline storage.</docs-card> <docs-card size="lg" header="Premier Plugins" href="/docs/enterprise/android-permissions" iconset="/docs/assets/icons/camera.png,/docs/assets/icons/geolocation.png,/docs/assets/icons/file.png,/docs/assets/icons/keyboard.png"> 
+Soluciones nativas completas para inicio de sessión único, biométricos, y almacenamiento seguro sin conexión.</docs-card> <docs-card size="lg" header="Premier Plugins" href="/docs/enterprise/android-permissions" iconset="/docs/assets/icons/camera.png,/docs/assets/icons/geolocation.png,/docs/assets/icons/file.png,/docs/assets/icons/keyboard.png"> 
 
-Premier plugin features like camera, geolocation, keyboard access, contacts, calendar, and more.</docs-card> <docs-card size="lg" header="3rd Party Integrations" href="/docs/enterprise/apple-payment-pass" iconset="/docs/assets/icons/aws-amplify.png,/docs/assets/icons/firebase.png,/docs/assets/icons/couchbase.png,/docs/assets/icons/apple-pay.png"> 
+Características del plugin Premier como cámara, geolocalización, acceso al teclado, contactos, calendario y más.</docs-card> <docs-card size="lg" header="3rd Party Integrations" href="/docs/enterprise/apple-payment-pass" iconset="/docs/assets/icons/aws-amplify.png,/docs/assets/icons/firebase.png,/docs/assets/icons/couchbase.png,/docs/assets/icons/apple-pay.png"> 
 
-Connect to third-party services and cloud providers like Firebase, AWS, and Apple Payment Pass.</docs-card> </docs-cards>
+Conéctate a servicios de terceros y proveedores de nube como Firebase, AWS y Apple Payment Pass.</docs-card> </docs-cards>
 
 <p><br></p>
 
-## Featured Native Solutions
+## Soluciones Nativas destacadas
 
 <docs-item-list class="static-width"> <docs-item header="Identity Vault" href="/docs/enterprise/identity-vault" icon="/docs/assets/icons/logo-identity-vault.png" rounded="false"> 
 
-Protect your users and data with multi-layer native security and biometric authentication.</docs-item>
+Proteja a sus usuarios y datos con seguridad nativa multicapa y autenticación biométrica.</docs-item>
 
 <docs-item header="Auth Connect" href="/docs/enterprise/auth-connect" icon="/docs/assets/icons/logo-auth-connect.png" rounded="false"> 
 
-Add single sign-on using a single API and the latest in native security best practices.</docs-item>
+Añadir un único inicio de sesión usando una sola API y la última en las mejores prácticas de seguridad nativas.</docs-item>
 
 <docs-item header="Offline Storage" href="/docs/enterprise/offline-storage" icon="/docs/assets/icons/logo-offline-storage.png" rounded="false"> 
 
-Store and access data locally on a mobile or desktop device, even when users are offline.</docs-item> </docs-item-list>
+Almacenar y acceder a datos localmente en un dispositivo móvil o de escritorio, incluso cuando los usuarios estén desconectados.</docs-item> </docs-item-list>
 
-## Popular Premier Plugins
+## Plugins populares Premier
 
 <docs-item-list class="static-width"> <docs-item header="Camera" href="/docs/enterprise/camera" icon="/docs/assets/icons/camera.png"> 
 
-Take photos, capture video and choose images from the device's image library.</docs-item>
+Tome fotos, capture vídeo y elija imágenes de la biblioteca de imágenes del dispositivo.</docs-item>
 
 <docs-item header="Keyboard" href="/docs/enterprise/keyboard" icon="/docs/assets/icons/keyboard.png"> 
 
-Configure keyboard behavior (show/hide) and display (sizing/visibility).</docs-item>
+Configurar el comportamiento del teclado (mostrar/ocultar) y mostrar (tamaño/visibilidad).</docs-item>
 
 <docs-item header="Calendar" href="/docs/enterprise/calendar" icon="/docs/assets/icons/calendar-icon.png"> 
 
-Manage mobile device calendar events.</docs-item>
+Administrar eventos del calendario de dispositivos móviles.</docs-item>
 
 <docs-item header="Contacts" href="/docs/enterprise/contacts" icon="/docs/assets/icons/contacts-icon.png"> 
 
-Access to read, write, or select device contacts.</docs-item>
+Acceso a leer, escribir o seleccionar contactos del dispositivo.</docs-item>
 
 <docs-item header="Geolocation" href="/docs/enterprise/geolocation" icon="/docs/assets/icons/geolocation.png"> 
 
-Device location information, including latitude and longitude.</docs-item>
+Información de ubicación del dispositivo, incluyendo latitud y longitud.</docs-item>
 
 <docs-item header="File" href="/docs/enterprise/filesystem" icon="/docs/assets/icons/file.png"> 
 
-Common file operations such as read/write and directory access.</docs-item> </docs-item-list>
+Operaciones comunes de archivos tales como lectura/escritura y acceso a directorios.</docs-item> </docs-item-list>
