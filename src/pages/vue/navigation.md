@@ -208,6 +208,8 @@ Nested routes are mostly useful when you need to render content in outlet A whil
 
 There are very few use cases in which nested routes make sense in mobile applications. When in doubt, use the shared URL route configuration. We strongly caution against using nested routing in contexts other than tabs as it can quickly make navigating your app confusing.
 
+> The exception to this rule is when working with children of tabs. See [Child Routes within Tabs](#child-routes-within-tabs) for more information.
+
 ## Working with Tabs
 
 When working with tabs, Ionic Vue needs a way to know which view belongs to which tab. The `IonTabs` component comes in handy here, but let's look at what the routing setup for this looks like:
@@ -293,6 +295,50 @@ export default {
 
 If you have worked with Ionic Framework before, this should feel familiar. We create an `ion-tabs` component, and provide an `ion-tab-bar`. The `ion-tab-bar` provides and `ion-tab-button` components, each with a `tab` property that is associated with its corresponding tab in the router config.
 
+### Child Routes within Tabs
+
+Previously, we discussed that most routes should be written with a shared URL configuration. The exception to this rule is when adding child routes to tabs. The reason for this is if we wrote the child routes at the same level as the tab routes, Ionic Vue would not be able to differentiate between a child page and a root tab page.
+
+As a result, when adding child routes to tabs you should always write them as nested routes. Ionic Vue handles the internal logic so that you do not need to add an additional `IonRouterOutlet`:
+
+```typescript
+const routes: Array<RouteRecordRaw> = [
+  {
+    path: '/',
+    redirect: '/tabs/tab1'
+  },
+  {
+    path: '/tabs/',
+    component: Tabs,
+    children: [
+      {
+        path: '',
+        redirect: 'tab1'
+      },
+      {
+        path: 'tab1',
+        component: () => import('@/views/Tab1.vue'),
+        children: [
+          {
+            path: 'child',
+            component: () => import('@/views/Tab1Child.vue')
+          }
+        ]
+      },
+      {
+        path: 'tab2',
+        component: () => import('@/views/Tab2.vue')
+      },
+      {
+        path: 'tab3',
+        component: () => import('@/views/Tab3.vue')
+      }
+    ]
+  }
+]
+```
+
+The example above defines the `/tabs/tab1/child` route as a child of the `/tabs/tab1` route.
 
 ## IonRouterOutlet
 
