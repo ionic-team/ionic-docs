@@ -1,11 +1,11 @@
 ---
 previousText: 'Testing'
 previousUrl: '/docs/angular/testing'
-nextText: 'Performance'
+nextText: 'Rendimiento'
 nextUrl: '/docs/angular/performance'
 ---
 
-# Data Storage
+# Almacenamiento de Datos
 
 There are variety of options available for storing data within an Ionic app.
 
@@ -13,9 +13,9 @@ There are variety of options available for storing data within an Ionic app.
 
 [Ionic Offline Storage](/docs/enterprise/offline-storage) is a cross-platform data storage system that works on iOS and Android. It makes it easy to add offline storage to Ionic apps that is secure (encrypted on device), highly performant, and provides advanced NoSQL data querying.
 
-Created for teams building complex, data-driven apps, apps managing sensitive data, or apps used in areas with unreliable cell service/internet connections. Interested? [Start here.](https://ionicframework.com/offline-storage#get-started)
+Created for teams building complex, data-driven apps, apps managing sensitive data, or apps used in areas with unreliable cell service/internet connections. ¿Interesado? [Comienza aquí.](https://ionicframework.com/offline-storage#get-started)
 
-## Ionic Storage
+## Almacenamiento Ionic
 
 Ionic Storage is a free, open source alternative for indie devs, students & hobbyists. It provides an easy way to store key/value pairs and JSON objects.
 
@@ -81,7 +81,7 @@ export class MyApp {
 ```
 
 
-### Configuring Storage
+### Configurando almacenamiento
 
 The Storage engine can be configured both with specific storage engine priorities, or custom configuration options to pass to localForage. See the localForage config docs for possible options: https://github.com/localForage/localForage#configuration
 
@@ -204,7 +204,7 @@ Remove any value associated with this key.
 
 __Returns:__ Returns a promise that resolves when the value is removed
 
-<h4>Parameters</h4>
+<h4>Parámetros</h4>
 <dl><dt><h5>key</h5><strong>Type:</strong> <code>string</code></dt><dd>the key to identify this value</dd></dl><br><br>
 
 
@@ -214,5 +214,5 @@ Set the value for the given key.
 
 __Returns:__ Returns a promise that resolves when the key and value are set
 
-<h4>Parameters</h4>
+<h4>Parámetros</h4>
 <dl><dt><h5>key</h5><strong>Type:</strong> <code>string</code></dt><dd>the key to identify this value</dd><dt><h5>value</h5><strong>Type:</strong> <code>any</code></dt><dd>the value for this key</dd></dl><br><br>
