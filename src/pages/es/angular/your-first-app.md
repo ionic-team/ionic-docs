@@ -25,12 +25,12 @@ Highlights include:
 
 It’s easy to get started. Find the complete app code referenced in this guide [on GitHub](https://github.com/ionic-team/photo-gallery-capacitor-ng).
 
-## Download Required Tools
+## Descargar herramientas necesarias
 
 Download and install these right away to ensure an optimal Ionic development experience:
 
-* **Node.js** for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
-* **A code editor** for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
+* **Node.js** para interactuar con el ecosistema Ionic. [Descarga la versión LTS (soporte a largo plazo) aquí](https://nodejs.org/en/).
+* **Un editor de código** para... escribir código! Somos fans de [Visual Studio Code](https://code.visualstudio.com/).
 * **Command-line interface/terminal (CLI)**: 
  * **Windows** users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode.
  * **Mac/Linux** users, virtually any terminal will work.
