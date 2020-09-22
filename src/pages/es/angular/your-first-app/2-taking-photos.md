@@ -26,7 +26,7 @@ import { Plugins, CameraResultType, Capacitor, FilesystemDirectory,
 const { Camera, Filesystem, Storage } = Plugins;
 ```
 
-Next, define a new class method, `addNewToGallery`, that will contain the core logic to take a device photo and save it to the filesystem. Comencemos abriendo la cámara de dispositivo:
+A continuación, defina una nueva función, `addNewToGallery`, que contendrá la lógica para tomar una foto del dispositivo y guardarla en los archivos del sistema. Comencemos abriendo la cámara de dispositivo:
 
 ```typescript
 public async addNewToGallery() {
@@ -127,6 +127,6 @@ Next, move over to `tab2.page.html` so we can display the image on the screen. A
 </ion-content>
 ```
 
-Save all files. Within the web browser, click the Camera button and take another photo. This time, the photo is displayed in the Photo Gallery!
+Guardar todos los archivos. Within the web browser, click the Camera button and take another photo. This time, the photo is displayed in the Photo Gallery!
 
 Up next, we’ll add support for saving the photos to the filesystem, so they can be retrieved and displayed in our app at a later time.
