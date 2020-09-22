@@ -29,7 +29,7 @@ $ ionic <command> <subcommand> --help
 
 <!-- TODO: image? -->
 
-## Architecture
+## Arquitectura
 
 The Ionic CLI is built with [TypeScript](/docs/reference/glossary#typescript) and [Node.js](/docs/reference/glossary#node). It supports Node 10.3+, but the latest Node LTS is always recommended. Follow development on the open source <a href="https://github.com/ionic-team/ionic-cli" target="_blank">GitHub repository</a>.
 
