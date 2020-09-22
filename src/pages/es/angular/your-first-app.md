@@ -32,7 +32,7 @@ Download and install these right away to ensure an optimal Ionic development exp
 * **Node.js** para interactuar con el ecosistema Ionic. [Descarga la versión LTS (soporte a largo plazo) aquí](https://nodejs.org/en/).
 * **Un editor de código** para... escribir código! Somos fans de [Visual Studio Code](https://code.visualstudio.com/).
 * **Command-line interface/terminal (CLI)**: 
- * **Windows** users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode.
+ * Usuarios de **Windows**, para la mejor experiencia de Ionic, recomendamos la terminal de comandos incorporada (CMD) o PowerShell CLI, ejecutandose en modo Administrador.
  * **Mac/Linux** users, virtually any terminal will work.
 
 ## Install Ionic Tooling
@@ -49,7 +49,7 @@ $ npm install -g @ionic/cli native-run cordova-res
 > 
 > Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](/docs/developing/tips#resolving-permission-errors) for more information.
 
-## Create an App
+## Crear una aplicación
 
 Next, create an Ionic Angular app that uses the “Tabs” starter template and adds Capacitor for native functionality:
 
@@ -65,7 +65,7 @@ Next, change into the app folder:
 $ cd photo-gallery
 ```
 
-### PWA Elements
+### Elementos PWA
 
 Some Capacitor plugins, including the Camera API, provide the web-based functionality and UI via the Ionic [PWA Elements library](https://github.com/ionic-team/ionic-pwa-elements).
 
@@ -86,7 +86,7 @@ defineCustomElements(window);
 
 That’s it! Now for the fun part - let’s see the app in action.
 
-## Run the App
+## Ejecute la aplicación
 
 Run this command next:
 
@@ -96,11 +96,11 @@ $ ionic serve
 
 And voilà! Your Ionic app is now running in a web browser. Most of your app can be built and tested right in the browser, greatly increasing development and testing speed.
 
-## Photo Gallery!!!
+## Galería de fotos!!!
 
 There are three tabs. Click on the Tab2 tab. It’s a blank canvas, aka the perfect spot to transform into a Photo Gallery. The Ionic CLI features Live Reload, so when you make changes and save them, the app is updated immediately!
 
-![Before and after going through this tutorial](/docs/assets/img/guides/first-app-cap-ng/email-photogallery.gif)
+![Antes y después de seguir este tutorial](/docs/assets/img/guides/first-app-cap-ng/email-photogallery.gif)
 
 Open the photo-gallery app folder in your code editor of choice, then navigate to `/src/app/tab2/tab2.page.html`. We see:
 
