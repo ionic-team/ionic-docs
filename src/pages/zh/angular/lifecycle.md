@@ -1,5 +1,5 @@
 ---
-previousText: 'Your First App'
+previousText: '你的第一个 App'
 previousUrl: '/docs/angular/your-first-app'
 nextText: '导航'
 nextUrl: '/docs/angular/navigation'
