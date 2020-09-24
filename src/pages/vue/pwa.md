@@ -33,7 +33,7 @@ createApp(App)
   .mount('#app')
 ```
 
-The `registerServiceWorker.ts` will point to a service worker that the CLI will create at build time. Inside of here we can customize the experience users will have when the service worker detects and update, change in network connectivity, or receives an error.
+The `registerServiceWorker.ts` file will point to a service worker that the CLI will create at build time. Inside of here we can customize the experience users will have when the service worker detects an update, change in network connectivity, or receives an error.
 
 ```typescript
 import { register } from 'register-service-worker'
