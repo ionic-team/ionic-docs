@@ -116,7 +116,7 @@ Be sure to update the icons in `public/img/icons` to match your own brand. If yo
 
 ## Deploying
 
-You can use various host like Firebase, Vercel, Netlify, or even Azure Static Web Apps. All will have similar setup processes that need to be completed. For this guide, Firebase will be used as the hosting example.
+You can use various hosts like Firebase, Vercel, Netlify, or even Azure Static Web Apps. All will have similar setup processes that need to be completed. For this guide, Firebase will be used as the hosting example.
 
 
 ### Firebase
