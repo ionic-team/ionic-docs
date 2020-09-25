@@ -261,7 +261,7 @@ Back over in the Ionic Appflow site, navigate to the Commits page. You’ll see 
 
 Now we can choose which platform we want to build for: iOS (using Xcode 11 or 10), Android, or even a web-based deployment (used with Appflow’s [Live Deploy](/docs/appflow/deploy/intro) feature). For simplicity's sake (see below for more advanced certificate details), select Android as the target platform - it doesn’t require a security certificate to generate a native app file.
 
-> To learn more about generating a security profile, please see [here](/docs/appflow/package/credentials).
+> To learn more about generating a signing certificate, please see [here](/docs/appflow/package/credentials).
 
 Next, we can choose the Build Type, in our case, select Debug. The other options require a signing certificate. With those choices selected, click the blue Build button.
 
@@ -387,7 +387,7 @@ As seen above, Android debug builds are the easiest to get working, since they d
 
 For Android certificates, since these were originally created locally by you, there is unfortunately no way to regenerate them. Since the Google Play Store requires updates to an app be signed with the same key, creating a new key will not work. If you are unable to locate the original key, a suggestion is to build a version of the app that alerts the current users of the new version and ask them to migrate to it.
 
-For more information about signing certificates and security profiles, please check out the details [here](/docs/appflow/package/credentials).
+For more information about signing certificates and signing certificates, please check out the details [here](/docs/appflow/package/credentials).
 
 ### Migrate from Cordova to Capacitor
 
