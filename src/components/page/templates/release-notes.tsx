@@ -3,6 +3,19 @@ import { h } from '@stencil/core';
 import releases from '../data/release-notes.json';
 import { toHypertext } from '../to-hypertext.js';
 
+type HypertextData = (string | { [key: string]: string; } | null | HypertextData)[];
+
+interface Release {
+  body: HypertextData;
+  element: string;
+  name: string;
+  published_at: string;
+  symbol: string;
+  tag_name: string;
+  type: string;
+  version: string;
+}
+
 export default (props: { [key: string]: any }) => {
   const { page } = props;
 
@@ -28,7 +41,7 @@ export default (props: { [key: string]: any }) => {
         {toHypertext(h, page.body)}
       </section>
       <div class="release-notes">
-        { releases.map((release, index) =>
+        { releases.map((release: Release, index) =>
           <section class={getReleaseClasses(release)}>
 
             <div class="release-tag-wrapper">
