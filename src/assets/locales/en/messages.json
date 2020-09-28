@@ -7,6 +7,7 @@
   "header-cli": "CLI",
   "header-native": "Native",
   "header-enterprise": "Enterprise",
+  "header-tutorial": "Tutorial",
 
   "header-community": "Community",
   "header-support": "Support",
@@ -268,6 +269,8 @@
 
   "menu-appflow-build-stacks": "Build Stacks",
   "menu-appflow-web-previews": "Web Previews",
+
+  "menu-af-tutorial": "Tutorial",
 
   "menu-enterprise-home": "Explore",
   "menu-enterprise-getting-started": "Getting Started",
