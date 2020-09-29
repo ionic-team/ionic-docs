@@ -11,7 +11,7 @@ characteristics and requirements.
 
 ## Android Build Types
 ### Debug
-Debug type Android builds do not require any signing certificates or security profiles and can be sideloaded directly onto
+Debug type Android builds do not require any signing certificates or signing certificates and can be sideloaded directly onto
 Android devices.
 
 ### Release
@@ -30,7 +30,7 @@ and should be stored in a `Development` type [signing certificate](/docs/appflow
 ### Ad Hoc
 Code Signing with a Ad Hoc type builds allows you to distribute your app to devices specified in the provisioning profile.
 And are also needed in order to test push notifications.
-Ad Hoc type iOS builds require [generating signing credentials and a provisioning profile](/docs/appflow/package/credentials#android-credentials) using:
+Ad Hoc type iOS builds require [generating signing certificates and a provisioning profile](/docs/appflow/package/credentials#android-credentials) using:
 * iOS distribution provisioning profile
 * iOS production signing certificate
 and should be stored in a `Production` type [signing certificate](/docs/appflow/package/adding-credentials#uploading-credentials)
@@ -40,7 +40,7 @@ Code Signing with a App Store type builds allows you to distribute you app using
 App Store type iOS builds require [generating signing certificates and a provisioning profile](/docs/appflow/package/credentials#android-credentials) using:
 * iOS distribution provisioning profile
 * iOS production signing certificate
-and should be stored in a `Production` type [security profile](/docs/appflow/package/adding-credentials#uploading-credentials)
+and should be stored in a `Production` type [signing certificate](/docs/appflow/package/adding-credentials#uploading-credentials)
 
 ### Enterprise
 <blockquote>

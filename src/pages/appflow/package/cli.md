@@ -79,14 +79,14 @@ $ ionic package build
 
 This will prompt for the desired platform (`ios`/`android`) and build type for the platform.
 
-For iOS or Android `release` builds, a valid security profile is required and can be specified using the `--security-profile=<name>` option.
+For iOS or Android `release` builds, a valid signing certificate is required and can be specified using the `--security-profile=<name>` option.
 
-For information on setting up security profiles, see [here](/docs/appflow/package/credentials).
+For information on setting up signing certificates, see [here](/docs/appflow/package/credentials).
 
 The previous commands can be executed in a single step:
 
 ```bash
-$ ionic package build ios development --security-profile="My Security Profile"
+$ ionic package build ios development --security-profile="My Signing Certificate"
 ```
 
 Once the build is successfully triggered, the CLI will automatically start tailing the logs from Appflow and, if the build is successful, download the `apk`/`ipa` file in the current directory.
@@ -123,9 +123,9 @@ $ ionic package build ios development --security-profile="iOS Dev"
 
 Apart from the `--commit` option, all others require the full name setup within the Appflow Dashboard.
 
-Look for the name on the Security Profiles, Environments and Native Configs pages in Appflow:
+Look for the name on the signing certificate, Environments and Native Configs pages in Appflow:
 
-![Security Profiles](/docs/assets/img/appflow/cli-security-profile-list.png)
+![Signing Certificates](/docs/assets/img/appflow/cli-security-profile-list.png)
 ![Environments](/docs/assets/img/appflow/cli-environments-list.png)
 ![Native Configs](/docs/assets/img/appflow/cli-native-config-list.png)
 
