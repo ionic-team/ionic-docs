@@ -154,7 +154,7 @@ import { IonPage, IonHeader, IonFab, IonFabButton, IonIcon,
          IonCol, IonImg } from '@ionic/vue';
 ```
 
-Next, add the new Ionic components we'll be using to the Default Export as well as returning the Ionicons in the `setup()` method (part of the [Composition API](https://v3.vuejs.org/api/composition-api.html#setup)):
+Next, add the new Ionic components we'll be using to the default export as well as returning the Ionicons in the `setup()` method (part of the [Composition API](https://v3.vuejs.org/api/composition-api.html#setup)):
 
 ```typescript
 export default  {
@@ -199,4 +199,4 @@ Within the tab bar (`<ion-tab-bar>`), change the label to "Photos" and the icon 
 </ion-tab-button>
 ```
 
-That’s just the start of all the cool things we can do with Ionic. Up next, implement camera taking functionality on the web, then build it for iOS and Android.
+That’s just the start of all the cool things we can do with Ionic. Up next, implementing camera taking functionality on the web, then building for iOS and Android.
