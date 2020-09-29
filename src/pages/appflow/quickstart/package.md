@@ -11,7 +11,7 @@ Next we'll build an Android `Debug` binary using the [Ionic Package](/docs/appfl
 <blockquote>
 <b>Note:</b> If you'd like to build an Android <b>Release</b> binary or <b>any</b> iOS binary, you'll need to
 <a href="/docs/appflow/package/credentials">generate signing certificates</a>
-and <a href="/docs/appflow/package/adding-credentials">add upload them the Appflow dashboard.</a> 
+and <a href="/docs/appflow/package/adding-credentials">upload them to the Appflow dashboard.</a> 
 </blockquote>
 
 ## Start a Package Build
