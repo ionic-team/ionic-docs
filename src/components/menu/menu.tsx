@@ -40,8 +40,8 @@ export class DocsMenu {
         <stencil-route url="/docs/:lang([a-z]{2})?/studio" routeRender={studioTemplate}/>
         <stencil-route url="/docs/:lang([a-z]{2})?/native/:plugin" routeRender={() => <docs-menu-native />}/>
         <stencil-route url="/docs/:lang([a-z]{2})?/native" routeRender={() => <docs-menu-native />}/>
-        <stencil-route url="/docs/:lang([a-z]{2})?/appflow" routeRender={appflowTemplate}/>
         <stencil-route url="/docs/:lang([a-z]{2})?/appflow/tutorial" routeRender={appflowTutorialTemplate}/>
+        <stencil-route url="/docs/:lang([a-z]{2})?/appflow" routeRender={appflowTemplate}/>
         <stencil-route url="/docs/:lang([a-z]{2})?/enterprise" routeRender={() => <docs-menu-enterprise />}/>
         <stencil-route routeRender={mainTemplate}/>
       </stencil-route-switch>

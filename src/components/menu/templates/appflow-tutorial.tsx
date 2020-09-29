@@ -5,6 +5,7 @@ export default () => <docs-nav items={items} />;
 const items = {
   'menu-af-tutorial': '/docs/appflow/tutorial',
   'menu-appflow-quickstart': {
+    'menu-appflow-tutorial-test': '/docs/appflow/tutorial',
     'menu-appflow-quickstart-overview': '/docs/appflow/quickstart',
     'menu-appflow-quickstart-connect': '/docs/appflow/quickstart/connect',
     '': {
