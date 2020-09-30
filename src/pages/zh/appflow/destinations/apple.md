@@ -13,7 +13,7 @@ Apple App Store目标允许您上传您已完成的二进制文件到 App Store 
 
 对于这个目标您需要：
 
-> **前提条件：** 为了构建您可以上传到苹果应用商店的二进制文件，您将需要一个在应用流中配置的生产安全配置文件。 详细信息 [这里](https://ionicframework.com/docs/appflow/package/credentials#ios-credentials)
+> **Prerequisite:** In order to build a binary that you can upload to the Apple App Store you will need a production signing certificate configured in App Flow, details [here](https://ionicframework.com/docs/appflow/package/credentials#ios-credentials)
 
 
 - **Apple App Store目标的实例名称**
