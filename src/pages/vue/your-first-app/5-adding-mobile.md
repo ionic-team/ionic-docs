@@ -13,12 +13,12 @@ Let’s start with making some small code changes - then our app will "just work
 
 ## Platform-specific Logic
 
-First, we’ll update the photo saving functionality to support mobile. In the `savePicture` function, check which platform the app is running on. If it’s "hybrid" (Capacitor or Cordova, the two native runtimes), then read the photo file into base64 format using the `readFile` method. Also, return the complete file path to the photo using the Filesystem API. When setting the `webviewPath`, use the special `Capacitor.convertFileSrc` method ([details here](https://capacitorjs.com/docs/basics/utilities#convertfilesrc)). Otherwise, use the same logic as before when running the app on the web.
+First, we’ll update the photo saving functionality to support mobile. In the `savePicture` function, check which platform the app is running on. If it’s "hybrid" (Capacitor, the native runtime), then read the photo file into base64 format using the `readFile` method. Also, return the complete file path to the photo using the Filesystem API. When setting the `webviewPath`, use the special `Capacitor.convertFileSrc` method ([details here](https://capacitorjs.com/docs/basics/utilities#convertfilesrc)). Otherwise, use the same logic as before when running the app on the web.
 
 ```typescript
 const savePicture = async (photo: CameraPhoto, fileName: string): Promise<Photo> => {
   let base64Data: string;
-  // "hybrid" will detect Cordova or Capacitor;
+  // "hybrid" will detect Capacitor;
   if (isPlatform('hybrid')) {
     const file = await Filesystem.readFile({
       path: photo.path!

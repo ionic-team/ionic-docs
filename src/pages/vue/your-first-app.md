@@ -129,7 +129,7 @@ Open `/src/views/Tab2.vue`. We see:
 
 `ion-header` represents the top navigation and toolbar, with "Tab 2" as the title. Let’s rename it:
 
-```typescript
+```html
 <ion-title>Photo Gallery</ion-title>
 ```
 
@@ -176,7 +176,7 @@ Then, add the FAB to the bottom of the page. Use the camera image as the icon, a
 <ion-content :fullscreen="true">
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
     <ion-fab-button @click="takePhoto()">
-        <ion-icon :icon="camera"></ion-icon>
+      <ion-icon :icon="camera"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 </ion-content>
@@ -194,8 +194,8 @@ Within the tab bar (`<ion-tab-bar>`), change the label to "Photos" and the icon 
 
 ```html
 <ion-tab-button tab="tab2" href="/tabs/tab2">
-    <ion-icon :icon="images" />
-    <ion-label>Photos</ion-label>
+  <ion-icon :icon="images" />
+  <ion-label>Photos</ion-label>
 </ion-tab-button>
 ```
 
