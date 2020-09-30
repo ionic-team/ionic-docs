@@ -6,7 +6,7 @@ nextText: '包'
 nextUrl: '/docs/appflow/package/intro'
 ---
 
-要部署一个现有的二进制构建，必须为应用商店的目的地选择正确的安全配置文件。
+To deploy an existing binary a build that has the correct signing certificate selected for the app store destination must be built.
 
 - 从 `部署` 页面 `应该选择新部署`
 
