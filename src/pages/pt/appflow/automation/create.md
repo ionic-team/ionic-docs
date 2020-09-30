@@ -53,7 +53,7 @@ Package automations create native builds which can be downloaded and run on devi
 * **Native Config:** The [native config](/docs/appflow/package/intro#native-configs) (if any) to use when this automations is triggered.
 * **Target Platform:** The platform being targeted, can be Android or iOS (for either Xcode 8 or 9)
 * **Build Type:** The type of build to create. Options depend on the selected platform.
-* **Security Profile:** Which security profile to use. Learn more about them [here](/docs/appflow/package/credentials).
+* **Signing Certificate:** Which signing certificate to use. Learn more about them [here](/docs/appflow/package/credentials).
 * **Webhook:** (optional) If specified, a POST with information about completed builds will be sent to the entered URL. Learn more about their content [here](/docs/appflow/automation/webhooks).
 
 ### Web Automations
