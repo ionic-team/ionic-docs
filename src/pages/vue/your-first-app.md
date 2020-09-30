@@ -42,7 +42,7 @@ Run the following in the command line terminal to install the Ionic CLI (`ionic`
 > To open a terminal in Visual Studio Code, go to Terminal -> New Terminal.
 
 ```shell
-$ npm install -g @ionic/cli native-run cordova-res
+$ npm install -g @ionic/cli@testing native-run cordova-res
 ```
 
 > The `-g` option means _install globally_. When packages are installed globally, `EACCES` permission errors can occur.
@@ -54,7 +54,7 @@ $ npm install -g @ionic/cli native-run cordova-res
 Next, create an Ionic Vue app that uses the "Tabs" starter template and adds Capacitor for native functionality:
 
 ```shell
-$ ionic start photo-gallery tabs --type=vue --capacitor
+$ ionic start photo-gallery tabs --type vue --tag vue-beta --capacitor
 ```
 
 This starter project comes complete with three pre-built pages and best practices for Ionic development. With common building blocks already in place, we can add more features easily!
