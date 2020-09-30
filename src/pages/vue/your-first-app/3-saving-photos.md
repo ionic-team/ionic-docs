@@ -11,41 +11,54 @@ We’re now able to take multiple photos and display them in a photo gallery on 
 
 ## Filesystem API
 
-Fortunately, saving them to the filesystem only takes a few steps. Begin by opening the `usePhotoGallery` hook (`src/hooks/usePhotoGallery.ts`), and get access to the `writeFile` method from the `useFileSystem` hook:
+Fortunately, saving them to the filesystem only takes a few steps. Begin by opening the `usePhotoGallery` function (`src/composables/usePhotoGallery.ts`), and extract the `Filesystem` API:
 
 ```typescript
-const { deleteFile, getUri, readFile, writeFile } = useFilesystem();
+const { Camera, Filesystem } = Plugins;
 ```
 
-> We will use the `writeFile` method initially, but we will use the others coming up shortly, so we'll go ahead and import them now.
+Next, create a couple of new functions. The Filesystem API requires that files written to disk are passed in as base64 data, so this helper function will be used in a moment to assist with that:
 
-Next, create a couple of new functions in `usePhotoGallery`:
+```typescript
+const convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
+  const reader = new FileReader;
+  reader.onerror = reject;
+  reader.onload = () => {
+      resolve(reader.result);
+  };
+  reader.readAsDataURL(blob);
+});
+```
+
+Next, add a function to save the photo to the filesystem. We pass in the `cameraPhoto` object, which represents the newly captured device photo, as well as the fileName, which will provide a path for the file to be stored to.
+
+Next we use the Capacitor [Filesystem API](https://capacitor.ionicframework.com/docs/apis/filesystem) to save the photo to the filesystem. We start by converting the photo to base64 format, then feed the data to the Filesystem’s `writeFile` function:
 
 ```typescript
 const savePicture = async (photo: CameraPhoto, fileName: string): Promise<Photo> => {
-  const base64Data = await base64FromPath(photo.webPath!);
-  const savedFile = await writeFile({
+  let base64Data: string;
+
+  // Fetch the photo, read as a blob, then convert to base64 format
+  const response = await fetch(photo.webPath!);
+  const blob = await response.blob();
+  base64Data = await convertBlobToBase64(blob) as string;
+
+  const savedFile = await Filesystem.writeFile({
     path: fileName,
     data: base64Data,
     directory: FilesystemDirectory.Data
   });
   
-  // Use webPath to display the new image instead of base64 since it's
+  // Use webPath to display the new image instead of base64 since it's 
   // already loaded into memory
   return {
     filepath: fileName,
     webviewPath: photo.webPath
   };
-};
+}
 ```
 
-> The base64FromPath method is a helper util imported from "@ionic/react-hooks/filesystem". It downloads a file from the supplied path and returns a base64 representation of that file.
-
-We pass in the `cameraPhoto` object, which represents the newly captured device photo, as well as the fileName, which will provide a path for the file to be stored to.
-
-Next we use the Capacitor [Filesystem API](https://capacitor.ionicframework.com/docs/apis/filesystem) to save the photo to the filesystem. We start by converting the photo to base64 format, then feed the data to the Filesystem’s `writeFile` function.
-
-Last, call `savePicture` and pass in the cameraPhoto object and filename directly underneath the call to `setPhotos` in the `takePhoto` method. Here is the full method:
+Last, update the `takePhoto` function to call `savePicture`. Once the photo has been saved, insert it into the front of reactive `photos` array:
 
 ```typescript
 const takePhoto = async () => {
@@ -57,8 +70,8 @@ const takePhoto = async () => {
 
   const fileName = new Date().getTime() + '.jpeg';
   const savedFileImage = await savePicture(cameraPhoto, fileName);
-  const newPhotos = [savedFileImage, ...photos];
-  setPhotos(newPhotos);
+  
+  photos.value = [savedFileImage, ...photos.value];
 };
 ```
 

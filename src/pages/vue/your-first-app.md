@@ -1,8 +1,8 @@
 ---
 previousText: 'Overview'
 previousUrl: '/docs/vue/overview'
-nextText: ''
-nextUrl: ''
+nextText: 'Taking Photos'
+nextUrl: '/docs/vue/your-first-app/2-taking-photos'
 ---
 
 # Your First Ionic App: Vue

@@ -19,7 +19,8 @@ We will start by importing the various utilities we will use from Vue core, Ioni
 
 ```typescript
 import { ref, onMounted, watch } from 'vue';
-import { Plugins, CameraResultType, CameraSource, CameraPhoto, Capacitor, FilesystemDirectory } from "@capacitor/core";
+import { Plugins, CameraResultType, CameraSource, CameraPhoto, 
+Capacitor, FilesystemDirectory } from "@capacitor/core";
 import { isPlatform } from '@ionic/vue';
 ```
 
@@ -27,7 +28,7 @@ Next, create a function named usePhotoGallery:
 
 ```typescript
 export function usePhotoGallery() {
-  const { Camera, Filesystem, Storage } = Plugins;
+  const { Camera } = Plugins;
 
   const takePhoto = async () => {
     const cameraPhoto = await Camera.getPhoto({
