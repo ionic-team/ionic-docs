@@ -11,9 +11,9 @@ nextUrl: '/docs/appflow/quickstart/automation'
 
 <blockquote>
   
-<b>注意：</b> 如果您想要构建一个 Android <b>发布</b> 二进制或 <b>任意</b> iOS 二进制文件 您需要
-<a href="/docs/appflow/package/credentials">生成签名凭据</a>
-和 <a href="/docs/appflow/package/adding-credentials">将它们添加到应用流程仪表盘的安全配置文件</a>
+<b>Note:</b> If you'd like to build an Android <b>Release</b> binary or <b>any</b> iOS binary, you'll need to
+<a href="/docs/appflow/package/credentials">generate signing certificates</a>
+and <a href="/docs/appflow/package/adding-credentials">upload them to the Appflow dashboard.</a>
 </blockquote>
 
 ## 开始构建软件包
@@ -30,7 +30,7 @@ nextUrl: '/docs/appflow/quickstart/automation'
 * **目标平台** - 构建的平台 (iOS 或 Android)
 * **Xcode 版本 (iOS only)** - 用于构建您的 iOS 二进制的 Xcode 版本 (尽可能使用推荐版本)
 * [构建类型](/docs/appflow/package/build-types) - 给定平台的构建类型(见 [iOS 构建类型](/docs/appflow/package/build-types#ios-build-types) 或 [Android 构建类型](/docs/appflow/package/build-types#android-build-types))
-* [Security Profile](/docs/appflow/package/credentials) - 构建的签名凭据(如果需要)
+* [Signing Certificate](/docs/appflow/package/credentials) - The signing certificate for the for the build (if required)
 * [环境](/docs/appflow/automation/environments#custom-environments) - 用于自定义构建过程的环境
 * [本机配置](/docs/appflow/package/native-configs) - 用来自定义您的应用程序配置
 
