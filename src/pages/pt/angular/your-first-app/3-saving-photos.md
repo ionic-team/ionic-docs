@@ -1,7 +1,7 @@
 ---
 previousText: 'Tirando fotos'
 previousUrl: '/docs/angular/seu-primeiro-app/salvando-fotos'
-nextText: 'A Carregar fotos do Sistema de Ficheiros'
+nextText: 'Carregando fotos do Sistema de Ficheiros'
 nextUrl: '/docs/angular/seu-primeiro-app/salvando-fotos'
 ---
 
@@ -34,7 +34,7 @@ public async addNewToGallery() {
 }
 ```
 
-Usaremos a Capacitor [API do sistema de arquivos](https://capacitor.ionicframework.com/docs/apis/filesystem) para salvar a foto no sistema de arquivos. Para começar, converta a foto para o formato base64 e, em seguida, utilize a função `writeFile` para alimentar os dados para a função </code>. Como deve se lembrar, nós exibimos cada foto na tela, definindo o caminho de origem de cada imagem (atributo`src` de imagem) em `tab2.page.html` para a propriedade webviewPath. Então, defina-o, devolva o novo objeto Foto.
+Usaremos a Capacitor [API do sistema de arquivos](https://capacitor.ionicframework.com/docs/apis/filesystem) para salvar a foto no sistema de arquivos. Para começar, converta a foto para o formato base64 e, em seguida, utilize a função `writeFile` para alimentar os dados para a função </code>. Como deve se lembrar, nós exibimos cada foto na tela, definindo o caminho de origem de cada imagem (atributo`src` de imagem) em `tab2.page.html` para a propriedade webviewPath. Então, defina-o e retorne o novo objeto Foto.
 
 ```typescript
 private async savePicture(cameraPhoto: CameraPhoto) {
@@ -79,6 +79,6 @@ convertBlobToBase64 = (blob: Blob) => nova Promise((resolve, rejeitar) => {
 });
 ```
 
-Na realidade, estamos apenas usando APIs web embutidas: [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) como uma maneira legal de ler o arquivo no formato blob então o bloco do FileReader [readAsDataURL()](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL) para converter as fotos para base64. Na realidade, estamos apenas usando APIs web embutidas: [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) como uma maneira legal de ler o arquivo no formato blob então o bloco do FileReader [readAsDataURL()](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL) para converter as fotos para base64.
+Obter a foto da câmera no formato base64 na web parece um pouco mais complicado do que no celular. Na realidade, estamos apenas usando APIs web embutidas: [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) como uma maneira legal de ler o arquivo no formato blob então o bloco do FileReader [readAsDataURL()](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL) para converter as fotos para base64.
 
 There we go! Each time a new photo is taken, it’s now automatically saved to the filesystem.
