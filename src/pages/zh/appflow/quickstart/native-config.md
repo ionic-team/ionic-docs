@@ -48,7 +48,7 @@ nextUrl: '/docs/appflow/deploy/intro'
 现在，您的应用应该自动有一个不同的 `bundle id`，应用程序名称，并在您的开发与生产 构建之间部署通道。 这意味着你可以在同一设备上安装你的开发和生产应用程序并轻松地告诉他们！ 🔥
 
 <blockquote>
-  <b>注意：</b> 如果您打算使用本地配置来使用您的 iOS 软件包版本修改 Bundle ID， 您需要使用这些备选Bundle ID设置代码签名凭据。 查看我们关于 <a href="/docs/appflow/package/credentials">生成证书的部分</a> 获取更多信息。
+  <b>Note:</b> If you plan to use Native Configurations to modify Bundle IDs with your iOS Package builds, you will need to setup code signing certificates using those alternate Bundle IDs. See our section on <a href="/docs/appflow/package/credentials">Generating Certificates</a> for more information.
 </blockquote>
 
 ![设备上的多个镜头](/docs/assets/img/appflow/ss-multiple-envs-device.png)
