@@ -48,7 +48,7 @@ In your `Automations` tab, click `Edit` from the `Options` icon on the right of 
 Now your apps should automatically have a different `bundle id`, app name, and deploy channel between your development and production builds. This means you can install both your development and production applications on the same device and easily tell them apart! 🔥
 
 <blockquote>
-  <b>Note:</b> If you plan to use Native Configurations to modify Bundle IDs with your iOS Package builds, you will need to setup code signing credentials using those alternate Bundle IDs. See our section on <a href="/docs/appflow/package/credentials">Generating Credentials</a> for more information.
+  <b>Note:</b> If you plan to use Native Configurations to modify Bundle IDs with your iOS Package builds, you will need to setup code signing certificates using those alternate Bundle IDs. See our section on <a href="/docs/appflow/package/credentials">Generating Certificates</a> for more information.
 </blockquote>
 
 ![Multiple Enviroments on a Device](/docs/assets/img/appflow/ss-multiple-envs-device.png)
