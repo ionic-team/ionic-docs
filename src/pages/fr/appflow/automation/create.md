@@ -53,7 +53,7 @@ Les automatisations de packages créent des versions natives qui peuvent être t
 * ** Configuration native: ** La [ configuration native ](/docs/appflow/package/intro#native-configs) (le cas échéant) à utiliser lorsque cette automatisation est déclenchée.
 * ** Plateforme cible: ** La plateforme ciblée peut être Android ou iOS (pour Xcode 8 ou 9)
 * ** Type de build: ** Type de build à créer. Les options dépendent de la plate-forme sélectionnée.
-* ** Profil de sécurité **: quel profil de sécurité utiliser. En savoir plus à leur sujet [ ici ](/docs/appflow/package/credentials).
+* **Signing Certificate:** Which signing certificate to use. En savoir plus à leur sujet [ ici ](/docs/appflow/package/credentials).
 * ** Webhook: ** (facultatif) Si spécifié, un POST contenant des informations sur les versions terminées sera envoyé à l'URL saisie. En savoir plus sur leur contenu [ ici ](/docs/appflow/automation/webhooks).
 
 ### Web Automations
