@@ -6,7 +6,7 @@ nextText: 'Package'
 nextUrl: '/docs/appflow/package/intro'
 ---
 
-To deploy an existing binary a build that has the correct security profile selected for the app store destination must be built.
+To deploy an existing binary a build that has the correct signing certificate selected for the app store destination must be built.
 
 - From the `Deployment` page `New Deployment` should be selected.
 
