@@ -53,7 +53,7 @@ Package自动化创建可以在设备上下载和运行的本地构建。 他们
 * **原生配置：** [本地配置](/docs/appflow/package/intro#native-configs) (如果有任何) 触发此自动化时使用。
 * **目标平台：** 目标平台，可以是 Android 或 iOS (对于 Xcode 8 或 9)
 * **构建类型：** 要创建的构建类型。 选项取决于所选平台。
-* **安全配置文件：** 哪些安全配置文件需要使用。 在[这里](/docs/appflow/package/credentials)了解更多关于他们。
+* **Signing Certificate:** Which signing certificate to use. 在[这里](/docs/appflow/package/credentials)了解更多关于他们。
 * **Webhook:** (可选) 如果指定，将会发送一个包含已完成构建信息的POST 到输入的 URL。 在[这里](/docs/appflow/automation/webhooks)了解更多关于其内容。
 
 ### Web自动化
