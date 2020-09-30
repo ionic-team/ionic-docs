@@ -7,8 +7,15 @@ nextUrl: "/docs/appflow/web-previews"
 ---
 
 # Build Stacks
+In Appflow build stacks are how we represent the set of software used to build an app on a given platform. This includes the version of npm, Cordova, Ionic, Xcode, and what OS it is all installed on.
 
-Below are the current versions used in Appflow for each build type.
+In general the latest build stack is the best choice for most apps. Though, we do have other build stacks available for scenarios where they are needed. A non-default build stack might be needed when a specific version of a build tool is required, for example an older version of Xcode or the Android build tools are needed to support some configuration. 
+
+All plans have access to the 'latest' Build Stacks, but only scale plans and above have access to the older builds.
+
+After a new build stack becomes available older build stacks for that platform will be labeled as to be retired for a year. After that it will no longer be available.
+
+Below are the versions used in Appflow for each build type..
 
 ### Active Stack Versions
 
