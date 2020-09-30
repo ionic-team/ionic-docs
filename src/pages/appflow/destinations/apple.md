@@ -13,7 +13,7 @@ The Apple App Store destination allows you to upload your finished binaries to t
 
 For this destination you will need the following:
 
-> **Prerequisite:** In order to build a binary that you can upload to the Apple App Store you will need a production Security Profile configured in App Flow, details [here](https://ionicframework.com/docs/appflow/package/credentials#ios-credentials)
+> **Prerequisite:** In order to build a binary that you can upload to the Apple App Store you will need a production signing certificate configured in App Flow, details [here](https://ionicframework.com/docs/appflow/package/credentials#ios-credentials)
 
 
 - **A name for instance of the Apple App Store destination**

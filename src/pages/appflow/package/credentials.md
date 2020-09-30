@@ -1,33 +1,32 @@
 ---
 previousText: 'Package Build Types'
 previousUrl: '/docs/appflow/package/build-types'
-nextText: 'Adding Credentials'
+nextText: 'Adding Certificates'
 nextUrl: '/docs/appflow/package/adding-credentials'
 ---
 
-# Generating Credentials
+# Generating Certificates
 
-Security Profiles securely store your credentials so you can easily reference
+Signing certificates securely store your credentials so you can easily reference
 them when building your app in the cloud.
 
 ## Overview
 
 You'll need two sets of Apple certificates when your app goes to production,
-which means you'll eventually need two Security Profiles: one for development
+which means you'll eventually need two signing certificates: one for development
 and one for production.
 
-We'll guide you through creating a development profile with the credentials
+We'll guide you through creating a development signing certificate with the credentials
 that you need for the desired platform below.
 
-
-## Android Credentials
+## Android Certificates
 The [Android keystore](https://developer.android.com/training/articles/keystore.html), used for signing apps, can be generated using keytool, which is included in the [Java JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html). Change `MY-RELEASE-KEY` and `MY_ALIAS_NAME` to be relevant to your app. The tool will ask you to enter a keystore password and a key password.
 
 ```bash
 $ keytool -genkey -v -keystore MY-RELEASE-KEY.keystore -alias MY_ALIAS_NAME -keyalg RSA -keysize 2048 -validity 10000 -storetype jks
 ```
 
-## iOS Credentials
+## iOS Certificates
 You'll need an Apple Developer account (Individual or Organization). See
 [comparing
 memberships](https://developer.apple.com/support/compare-memberships/).
@@ -87,7 +86,7 @@ App Certificates & Provisioning Profiles are for signing your app and giving it 
 
 #### Certificate
 
-There are two types of Apple certificates: development and production. We'll guide you through generating credentials with a development certificate.
+There are two types of Apple certificates: development and production. We'll guide you through generating signing certificates with a development certificate.
 
 * Navigate to [Certificates, Identifiers & Profiles › Certificates › Development](https://developer.apple.com/account/ios/certificate/development) in the [Apple Developer Center](https://developer.apple.com/account) and create a new certificate. Under Development, select iOS App Development.
 
