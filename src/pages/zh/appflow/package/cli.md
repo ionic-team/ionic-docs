@@ -79,14 +79,14 @@ $ ionic package Building
 
 这将会提示所需的平台 (`ios`/`android`) 并构建平台的类型。
 
-对于iOS 或 Android `版本` 版本，需要一个有效的安全配置文件，可以使用 `--security-profile=<name>` 选项。
+For iOS or Android `release` builds, a valid signing certificate is required and can be specified using the `--security-profile=<name>` option.
 
-关于设置安全配置文件的信息，请参阅 [这里](/docs/appflow/package/credentials)。
+For information on setting up signing certificates, see [here](/docs/appflow/package/credentials).
 
 上一个命令可以单步执行：
 
 ```bash
-$ ionic package buildios development --security profile="My Security Profile"
+$ ionic package build ios development --security-profile="My Signing Certificate"
 ```
 
 一旦构建成功触发，CLI将自动开始从 Appflow 尾随日志， 如果构建成功，请下载当前目录中的 `apk`/`ipa` 文件。
@@ -116,9 +116,9 @@ $ ionic package buildios development --security-profile="iOS Dev"
 
 除了 `--commit` 选项以外，所有其他选项都需要在 Appflow 控制面板中设置全名。
 
-在 Appflow中在 Security Profiles, Environments and Native Configs 页面上查找名字：
+Look for the name on the signing certificate, Environments and Native Configs pages in Appflow:
 
-![安全配置](/docs/assets/img/appflow/cli-security-profile-list.png) ![环境](/docs/assets/img/appflow/cli-environments-list.png) ![原生配置](/docs/assets/img/appflow/cli-native-config-list.png)
+![Signing Certificates](/docs/assets/img/appflow/cli-security-profile-list.png) ![环境](/docs/assets/img/appflow/cli-environments-list.png) ![原生配置](/docs/assets/img/appflow/cli-native-config-list.png)
 
 对于目标平台，请在应用流程包构建表格中使用用于识别平台的字符串之一：
 
