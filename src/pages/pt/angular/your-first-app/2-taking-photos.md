@@ -65,15 +65,15 @@ Then, open `tab2.page.html` and call the `addPhotoToGallery()` function when the
 </ion-content>
 ```
 
-Salve o arquivo e, se ele ainda não estiver executando, reinicie o servidor de desenvolvimento digitando `ionic serve` no seu navegador ou terminal. Na aba Galeria de Fotos, clique no botão câmera. Se o seu pc/notebook possui webcam, uma janela de alerta aparece pedindo permissão. Agora tire seu selfie!
+Salve o arquivo e, se ele ainda não estiver executando, reinicie o servidor de desenvolvimento digitando `ionic serve` no seu navegador ou terminal. Na aba Galeria de Fotos, clique no botão câmera. Se o seu computador possui webcam, uma janela de alerta aparece pedindo permissão. Agora tire seu selfie!
 
-![API da câmera na web.](/docs/assets/img/guides/first-app-cap-ng/camera-web.png)
+![API da câmera na web](/docs/assets/img/guides/first-app-cap-ng/camera-web.png)
 
 _(Sua selfie provavelmente é muito melhor que a minha)_
 
-Depois de tirar uma foto, ela desaparece imediatamente. Por isso, precisamos exibi-lo em nosso app e salvá-lo para um acesso futuro.
+Depois de tirar uma foto, ela desaparece imediatamente. Precisamos exibi-lo em nosso app e salvá-lo para um acesso futuro.
 
-## Mostrando uma foto (Displaying Photos)
+## Mostrando Fotos
 
 Abaixo da classe `PhotoService` (porém fora dela), crie uma nova interface, chamada `Photo`, para guardar nossos metadados da foto:
 
@@ -94,7 +94,7 @@ export class PhotoService {
 }
 ```
 
-No começo da função `AddFotoNaGaleria()`, adicione a foto capturada à matriz que armazena as fotos.
+No começo da função `addNewToGallery`, adicione a foto capturada à matriz que armazena as fotos.
 
 ```typescript
   const capturarFoto = await Camera.getPhoto({
