@@ -1,5 +1,5 @@
 ---
-previousText: '添加证书'
+previousText: 'Adding Certificates'
 previousUrl: '/docs/appflow/package/adding-credentials'
 nextText: '使用 Ionic CLI'
 nextUrl: '/docs/appflow/package/cli'
@@ -25,7 +25,7 @@ nextUrl: '/docs/appflow/package/cli'
 * 正在离开 [禁用部署](/docs/appflow/deploy/api#disabledeploy) `true` 进行开发，并在构建要发布的二进制文件时自动将其设置为 `false`
 
 <blockquote>
-  <b>注意：</b> 如果您打算使用本地配置来使用您的 iOS 软件包版本修改 Bundle ID， 您需要使用这些备选Bundle ID设置代码签名凭据。 查看我们关于 <a href="/docs/appflow/package/credentials">生成证书的部分</a> 获取更多信息。
+  <b>Note:</b> If you plan to use Native Configurations to modify Bundle IDs with your iOS Package builds, you will need to setup code signing certificates using those alternate Bundle IDs. See our section on <a href="/docs/appflow/package/credentials">Generating Certificates</a> for more information.
 </blockquote>
 
 若要创建一个，请前往侧边栏中的 `构建 > 本地配置` 标签，然后点击 `新本地配置`。
