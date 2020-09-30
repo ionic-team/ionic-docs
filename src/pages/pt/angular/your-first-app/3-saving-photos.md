@@ -81,4 +81,4 @@ convertBlobToBase64 = (blob: Blob) => nova Promise((resolve, rejeitar) => {
 
 Obter a foto da câmera no formato base64 na web parece um pouco mais complicado do que no celular. Na realidade, estamos apenas usando APIs web embutidas: [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) como uma maneira legal de ler o arquivo no formato blob então o bloco do FileReader [readAsDataURL()](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL) para converter as fotos para base64.
 
-There we go! Each time a new photo is taken, it’s now automatically saved to the filesystem.
+Aqui vamos nós! Cada vez que uma nova foto for tirada, ela agora é salva automaticamente no sistema de arquivos.
