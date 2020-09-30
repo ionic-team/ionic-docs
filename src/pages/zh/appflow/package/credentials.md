@@ -1,21 +1,21 @@
 ---
 previousText: '软件包构建类型'
 previousUrl: '/docs/appflow/package/build-types'
-nextText: '添加证书'
+nextText: 'Adding Certificates'
 nextUrl: '/docs/appflow/package/adding-credentials'
 ---
 
-# 生成证书
+# Generating Certificates
 
-安全配置文件安全地存储您的证书，以便您能够在云端构建应用程序时轻松引用 。
+Signing certificates securely store your credentials so you can easily reference them when building your app in the cloud.
 
 ## 综述
 
-当您的应用投入生产时，您需要两套苹果证书。 这意味着你最终需要两个安全配置文件：一个用于开发 和一个用于生产。
+You'll need two sets of Apple certificates when your app goes to production, which means you'll eventually need two signing certificates: one for development and one for production.
 
-我们将引导您创建一个包含您需要的下面平台的 证书的开发配置文件。
+We'll guide you through creating a development signing certificate with the credentials that you need for the desired platform below.
 
-## Android 证书
+## Android Certificates
 
 [Android keystore](https://developer.android.com/training/articles/keystore.html)用于签名应用，可以使用包含在 [Java JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) 中的键盘工具来生成。 更改 `MY-RELEASE-KEY` and `MY_ALIAS_NAME` 以便与您的应用相关。 工具将要求您输入密钥存储密码和密钥密码。
 
@@ -23,7 +23,7 @@ nextUrl: '/docs/appflow/package/adding-credentials'
 $ keytool-genkey-v -keystore MY-RELEASE-KEY.keystore -alias MY_ALIAS_NAME -keyalg RSA -keysize 2048 -validity 10000 -storetype jks
 ```
 
-## iOS 证书
+## iOS Certificates
 
 您将需要 Apple Developer 帐户(个人或组织)。 查看 [会员对比](https://developer.apple.com/support/compare-memberships/)。
 
@@ -82,7 +82,7 @@ $ $ openssl req -new -key keyname.key -out CertificateSigningRequest.certSigning
 
 #### 证书
 
-有两种苹果证书：开发和生产。 我们将通过生成开发证书来引导您。
+有两种苹果证书：开发和生产。 We'll guide you through generating signing certificates with a development certificate.
 
 * 导航到 [证书 ID ](https://developer.apple.com/account/ios/certificate/development)&ampd [苹果开发者中心](https://developer.apple.com/account) 中注册一个新的应用ID。 正在开发中，选择 iOS 应用程序开发。
 
