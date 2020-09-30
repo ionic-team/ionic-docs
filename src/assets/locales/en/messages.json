@@ -270,9 +270,16 @@
   "menu-appflow-build-stacks": "Build Stacks",
   "menu-appflow-web-previews": "Web Previews",
 
-  "menu-appflow-tutorial-test": "Hi Netkow!",
-
-  "menu-af-tutorial": "Tutorial",
+  "menu-appflow-tutorial": "Tutorial Welcome",
+  "menu-appflow-tutorial-basics": "Basics",
+  "menu-appflow-tutorial-advanced": "Advanced",
+  "menu-appflow-tutorial-start": "Project Creation",
+  "menu-appflow-tutorial-native-builds-101": "Native Builds 101",
+  "menu-appflow-tutorial-native-builds-advanced": "Advanced Native Builds",
+  "menu-appflow-tutorial-automation": "Automation",
+  "menu-appflow-tutorial-live-updates": "Live Updates",
+  "menu-appflow-tutorial-native-configs": "Native Configs",
+  "menu-appflow-tutorial-environments": "Environments",
 
   "menu-enterprise-home": "Explore",
   "menu-enterprise-getting-started": "Getting Started",

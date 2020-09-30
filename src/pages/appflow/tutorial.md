@@ -1,10 +1,10 @@
 ---
-title: 'Tutorial'
+title: 'Exploring Appflow Tutorial'
 previousText: 'Welcome'
 previousUrl: '/docs/appflow'
-nextText: 'Connect Your Repo'
-nextUrl: '/docs/appflow/quickstart/connect'
+nextText: 'Project Start'
+nextUrl: '/docs/appflow/tutorial/start'
 tableOfContents: false
 ---
 
-HOLA
+Welcome to Exploring Appflow, a tutorial....
