@@ -12,8 +12,8 @@ Next we'll build an Android `Debug` binary using the [Ionic Package](/docs/appfl
 <blockquote>
   
 <b>Note:</b> If you'd like to build an Android <b>Release</b> binary or <b>any</b> iOS binary, you'll need to
-<a href="/docs/appflow/package/credentials">generate signing credentials</a>
-and <a href="/docs/appflow/package/adding-credentials">add them to a security profile</a> in the Appflow Dashboard.
+<a href="/docs/appflow/package/credentials">generate signing certificates</a>
+and <a href="/docs/appflow/package/adding-credentials">upload them to the Appflow dashboard.</a>
 </blockquote>
 
 ## Start a Package Build
@@ -30,7 +30,7 @@ Select the proper commit for your build. There are several required and optional
 * **Target Platform** - The platform for your build (iOS or Android)
 * **Xcode Version (iOS Only)** - The Xcode version used to build your iOS binary (use the recommended version if possible)
 * [Build Type](/docs/appflow/package/build-types) - The type of build for the given platform (See [iOS build types](/docs/appflow/package/build-types#ios-build-types) or [Android build types](/docs/appflow/package/build-types#android-build-types))
-* [Security Profile](/docs/appflow/package/credentials) - The signing credentials for the for the build (if required)
+* [Signing Certificate](/docs/appflow/package/credentials) - The signing certificate for the for the build (if required)
 * [Environment](/docs/appflow/automation/environments#custom-environments) - The environment to use to customize your build process
 * [Native Config](/docs/appflow/package/native-configs) - The Native Config to use to customize your app configuration
 
