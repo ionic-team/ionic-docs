@@ -1,5 +1,5 @@
 ---
-previousText: 'Seu primeiro App'
+previousText: 'Seu Primeiro App'
 previousUrl: '/docs/angular/seu-primeiro-app'
 nextText: 'Salvando fotos no Sistema de arquivos'
 nextUrl: '/docs/angular/seu-primeiro-app/salvando-fotos'
@@ -9,14 +9,12 @@ nextUrl: '/docs/angular/seu-primeiro-app/salvando-fotos'
 
 Agora vamos para a parte divertida - adicione permissão para tirar fotos com a câmera do seu dispositivo usando o Capacitor [Camera API](https://capacitor.ionicframework.com/docs/apis/camera). De início iremos começar com a criação para Web, porém em seguida faremos pequenos ajustes para que funcionem no celular (IOS e Android).
 
-## Serviço de Fotos (Photo Service)
+## Serviço de Fotos
 
-Toda a lógica usando o Capacitor (uso da câmera e outros recursos nativos) será encapsulada em uma classe de serviços. Crie um  `Photo Service` usando o comando `Ionic Generate`:
+Toda a lógica usando o Capacitor (uso da câmera e outros recursos nativos) será encapsulada em uma classe de serviço. Crie um  `Photo Service` usando o comando `Ionic Generate`:
 
 ```bash
-$ ionic g service services/photo 
-ou
-$ ionic generate service services/photo
+$ ionic g service services/photo
 ```
 
 Abra o novo arquivo criado `services/photo.service.ts` e agora adicione a lógica que irá ativar a funcionalidade da câmera. Primeiro, importe as dependências do Capacitor e obtenha as referências para os plugins de Câmera, Sistema de Arquivos e Armazenamento:
@@ -41,7 +39,7 @@ public async addFotoNaGaleria() {
 }
 ```
 
-Veja a mágica aqui: não há nenhum código específico para plataforma (Web, IOS ou Android)!  O `Capacitor Camera plugin` abstrai isso para nós, ofertando o método `Camera.getPhoto()` para abrir a câmera do dispositivo e permitir que seja tirado fotos.
+Veja a mágica aqui: não há nenhum código específico para plataforma (Web, IOS ou Android)!  O Capacitor Camera plugin abstrai isso para nós, deixando uma chamada ao método `Camera.getPhoto()` para abrir a câmera do dispositivo e permitir que seja tirado fotos.
 
 Next, open up `tab2.page.ts` and import the PhotoService class and add a method that calls the `addNewToGallery` method on the imported servce:
 
