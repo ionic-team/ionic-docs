@@ -6,7 +6,7 @@ tableOfContents: false
 
 # Alert
 
-Alerts are a great way to offer the user the ability to choose a specific action or list of actions. Alerts can include contain text, inputs and buttons. They can provide the user with important information, or require them to make a decision (or multiple decisions). Alerts should only be used for quick actions like password verification, small app notifications, or quick options.
+Alertas são uma ótima maneira de oferecer ao usuário a capacidade de escolher uma ação específica ou uma lista de ações. Alertas podem conter texto, entradas e botões. Eles podem fornecer informações importantes ao usuário, ou exigi-las para tomar uma decisão (ou várias decisões). Alerts should only be used for quick actions like password verification, small app notifications, or quick options.
 
 ## Creating
 
@@ -529,6 +529,6 @@ async function presentAlertCheckbox() {
 
 <docs-cards> <docs-card header="ion-alert" href="/docs/api/alert"> 
 
-Display a dialog to present or collect information from a user.</docs-card> <docs-card header="ion-alert-controller" href="/docs/api/alert-controller"> 
+Exibir um diálogo para apresentar ou coletar informações de um usuário.</docs-card> <docs-card header="ion-alert-controller" href="/docs/api/alert-controller"> 
 
-Used to manage the creation, dismissal, and destruction of alerts.</docs-card> </docs-cards>
+Usado para gerenciar a criação, demissão e destruição de alertas.</docs-card> </docs-cards>
