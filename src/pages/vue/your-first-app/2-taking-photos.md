@@ -15,13 +15,12 @@ To do so, we will create a standalone composition function paired with Vue's Com
 
 Create a new file at `src/composables/usePhotoGallery.ts` and open it up.
 
-We will start by importing the various utilities we will use from Vue core, Ionic Vue, and Capacitor:
+We will start by importing the various utilities we will use from Vue core and Capacitor:
 
 ```typescript
 import { ref, onMounted, watch } from 'vue';
 import { Plugins, CameraResultType, CameraSource, CameraPhoto, 
 Capacitor, FilesystemDirectory } from "@capacitor/core";
-import { isPlatform } from '@ionic/vue';
 ```
 
 Next, create a function named usePhotoGallery:
