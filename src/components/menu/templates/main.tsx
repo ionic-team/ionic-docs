@@ -80,6 +80,14 @@ const items = {
     'menu-vue-overview': '/docs/vue/overview',
     'menu-vue-quickstart': '/docs/vue/quickstart',
     'menu-vue-your-first-app': '/docs/vue/your-first-app',
+    '': {
+      'menu-vue-yfa-taking-photos': '/docs/vue/your-first-app/2-taking-photos',
+      'menu-vue-yfa-saving-photos': '/docs/vue/your-first-app/3-saving-photos',
+      'menu-vue-yfa-loading-photos': '/docs/vue/your-first-app/4-loading-photos',
+      'menu-vue-yfa-adding-mobile': '/docs/vue/your-first-app/5-adding-mobile',
+      'menu-vue-yfa-deploying-mobile': '/docs/vue/your-first-app/6-deploying-mobile',
+      'menu-vue-yfa-live-reload': '/docs/vue/your-first-app/7-live-reload'
+    },
     'menu-vue-lifecycle': '/docs/vue/lifecycle',
     'menu-vue-navigation': '/docs/vue/navigation',
     'menu-vue-config': '/docs/vue/config',
