@@ -13,7 +13,7 @@ In general, the latest build stack is the best choice for most apps. Though, we 
 
 Build stacks are available for use with all Appflow plans.
 
-After a new build stack becomes available older build stacks for that platform will be labeled as to be retired for a year. After that, it will no longer be available.
+After a new build stack becomes available older build stacks for that platform may be retired. Stacks that will be retired will be labeled with the date when they will no longer be available for use and customers will be notified.
 
 Below are the versions used in Appflow for each build type...
 
