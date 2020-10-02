@@ -41,7 +41,7 @@ public async addFotoNaGaleria() {
 
 Veja a mágica aqui: não há nenhum código específico para plataforma (Web, IOS ou Android)!  O Capacitor Camera plugin abstrai isso para nós, deixando uma chamada ao método `Camera.getPhoto()` para abrir a câmera do dispositivo e permitir que seja tirado fotos.
 
-Next, open up `tab2.page.ts` and import the PhotoService class and add a method that calls the `addNewToGallery` method on the imported servce:
+Em seguida, abra `tab2.page.ts` e importe a classe PhotoService e adicione um método que chama o método `addNewToGallery` no serviço importado:
 
 ```typescript
 import { PhotoService } from '../services/photo.service';
@@ -53,7 +53,7 @@ addPhotoToGallery() {
 }
 ```
 
-Then, open `tab2.page.html` and call the `addPhotoToGallery()` function when the FAB is tapped/clicked:
+Após, abra o arquivo `tab2.page.html` e chame a função `addPhotoToGallery()` quando o FAB for acionado/clicado:
 
 ```html
 <ion-content>
@@ -78,7 +78,7 @@ Depois de tirar uma foto, ela desaparece imediatamente. Precisamos exibi-lo em n
 Abaixo da classe `PhotoService` (porém fora dela), crie uma nova interface, chamada `Photo`, para guardar nossos metadados da foto:
 
 ```typescript
-export interface Photo {
+exportar foto da interface {
   filepath: string;
   webviewPath: string;
 }
@@ -110,7 +110,7 @@ No começo da função `addNewToGallery`, adicione a foto capturada à matriz qu
 }
 ```
 
-Next, move over to `tab2.page.html` so we can display the image on the screen. Add a [Grid component](https://ionicframework.com/docs/api/grid) so that each photo will display nicely as photos are added to the gallery, and loop through each photo in the `PhotoServices`'s Photos array, adding an Image component (`<ion-img>`) for each. Point the `src` (source) at the photo’s path:
+Em seguida, mova para a `tab2.page.html` para que possamos exibir a imagem na tela. Add a [Grid component](https://ionicframework.com/docs/api/grid) so that each photo will display nicely as photos are added to the gallery, and loop through each photo in the `PhotoServices`'s Photos array, adding an Image component (`<ion-img>`) for each. Point the `src` (source) at the photo’s path:
 
 ```html
 <ion-content>
