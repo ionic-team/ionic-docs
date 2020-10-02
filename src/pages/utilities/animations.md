@@ -141,6 +141,8 @@ this.animationCtrl.create()
 </docs-tab>
 </docs-tabs>
 
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-angular-basic-animations) and in React [here](https://stackblitz.com/edit/ionic-react-basic-animations).
+
 In the example above, an animation that changes the opacity on the `.square` element and moves it from left to right along the X axis has been created. This animation will run an infinite number of times, and each iteration of the animation will last 1500ms.
 
 By default, all Ionic Animations are paused until the `play` method is called.
