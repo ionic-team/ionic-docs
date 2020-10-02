@@ -200,6 +200,8 @@ this.animationCtrl.create()
 </docs-tab>
 </docs-tabs>
 
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-angular-animation-keyframes) and in React [here](https://stackblitz.com/edit/ionic-react-animation-keyframes).
+
 In the example above, the `.square` element will transition from a red background color, to a background color defined by the `--background` variable, and then transition on to a green background color.
 
 Each keyframe object contains an `offset` property. `offset` is a value between 0 and 1 that defines the keyframe step. Offset values must go in ascending order and cannot repeat.
