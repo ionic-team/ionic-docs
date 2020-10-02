@@ -119,13 +119,15 @@ this.animationCtrl.create()
   .duration(1500)
   .iterations(Infinity)
   .fromTo('transform', 'translateX(0px)', 'translateX(100px)')
-  .fromTo('opacity', '1', '0.2');
+  .fromTo('opacity', '1', '0.2')
+  .play();
 ```
 </docs-tab>
 <docs-tab tab="react">
 
 ```typescript
 <CreateAnimation
+  play={true}
   duration={1500}
   iterations={Infinity}
   fromTo={[
