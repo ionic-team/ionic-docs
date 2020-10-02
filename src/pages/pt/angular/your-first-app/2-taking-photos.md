@@ -2,7 +2,7 @@
 previousText: 'Seu Primeiro App'
 previousUrl: '/docs/angular/seu-primeiro-app'
 nextText: 'Salvando fotos no Sistema de arquivos'
-nextUrl: '/docs/angular/seu-primeiro-app/salvando-fotos'
+nextUrl: '/docs/angular/seu-primeiro-app/3-salvando-fotos'
 ---
 
 # Tirando fotos com a câmera
@@ -11,7 +11,7 @@ Agora vamos para a parte divertida - adicione permissão para tirar fotos com a 
 
 ## Serviço de Fotos
 
-Toda a lógica usando o Capacitor (uso da câmera e outros recursos nativos) será encapsulada em uma classe de serviço. Crie um  `Photo Service` usando o comando `Ionic Generate`:
+Toda a lógica usando o Capacitor (uso da câmera e outros recursos nativos) será encapsulada em uma classe de serviço. Crie um `PhotoService` usando o comando `Ionic generate`:
 
 ```bash
 $ ionic g service services/photo
@@ -26,7 +26,7 @@ import { Plugins, CameraResultType, Capacitor, FilesystemDirectory,
 const { Camera, Filesystem, Storage } = Plugins;
 ```
 
-Next, define a new class method, `addNewToGallery`, that will contain the core logic to take a device photo and save it to the filesystem. Vamos iniciar abrindo a câmera do dispositivo:
+Depois, defina uma nova função, `addNewToGallery`, que conterá a lógica central para tirar uma foto com o dispositivo e salvá-la no sistema de arquivos. Vamos iniciar abrindo a câmera do dispositivo:
 
 ```typescript
 public async addFotoNaGaleria() {
