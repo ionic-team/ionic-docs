@@ -1,17 +1,17 @@
 ---
 previousText: 'Salvando fotos no sistema de arquivos'
-previousUrl: '/docs/angular/seu-primeiro-app/salvando-fotos-3'
+previousUrl: '/docs/angular/seu-primeiro-app/3-salvando-fotos'
 nextText: 'Adicionando pro celular'
-nextUrl: 'docs/angular/seu-primeiro-app/5-adicionando-pro-mobile'
+nextUrl: 'docs/angular/seu-primeiro-app/5-adicionando-no-mobile'
 ---
 
-# Salvando fotos no FileSystem
+# Carregando fotos do sistema de arquivos
 
-Nós já temos implementado a captura e salvamento de fotos no sistema de arquivos. There’s one last piece of functionality missing: the photos are stored in the filesystem, but we need a way to save pointers to each file so that they can be displayed again in the photo gallery.
+Nós já temos implementado a captura e salvamento de fotos no sistema de arquivos. Falta um último pedaço de funcionalidade: as fotos são armazenadas no sistema de arquivos, mas precisamos de uma forma de salvar ponteiros para cada arquivo para que eles possam ser exibidos novamente na galeria de fotos.
 
-Fortunately, this is easy: we’ll leverage the Capacitor [Storage API](https://capacitor.ionicframework.com/docs/apis/storage) to store our array of Photos in a key-value store.
+Felizmente, isso é fácil: vamos usar a [API de Armazenamento](https://capacitor.ionicframework.com/docs/apis/storage) do Capacitor para armazenar nossa matriz de Fotos em uma loja chave-valor.
 
-## Storage API
+## API de Armazenamento
 
 Begin by defining a constant variable that will act as the key for the store:
 
