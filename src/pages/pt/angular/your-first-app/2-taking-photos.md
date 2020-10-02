@@ -110,7 +110,7 @@ No começo da função `addNewToGallery`, adicione a foto capturada à matriz qu
 }
 ```
 
-Em seguida, mova para a `tab2.page.html` para que possamos exibir a imagem na tela. Add a [Grid component](https://ionicframework.com/docs/api/grid) so that each photo will display nicely as photos are added to the gallery, and loop through each photo in the `PhotoServices`'s Photos array, adding an Image component (`<ion-img>`) for each. Point the `src` (source) at the photo’s path:
+Em seguida, mova para a `tab2.page.html` para que possamos exibir a imagem na tela. Adicione um [Grid Component](https://ionicframework.com/docs/api/grid) para que cada foto seja exibida de forma agradável enquanto as fotos são adicionadas à galeria, e percorra cada foto na matriz de fotos de `PhotoServices `, adicionando um componente de imagem (`<ion-img>`) para cada um. Aponte a `src` (fonte) para o caminho da foto:
 
 ```html
 <ion-content>
@@ -127,6 +127,6 @@ Em seguida, mova para a `tab2.page.html` para que possamos exibir a imagem na te
 </ion-content>
 ```
 
-Save all files. Within the web browser, click the Camera button and take another photo. This time, the photo is displayed in the Photo Gallery!
+Salve todos os arquivos. No navegador da Web, clique no botão Câmera e tire outra foto. Desta vez, a foto é exibida na Galeria de Fotos!
 
-Up next, we’ll add support for saving the photos to the filesystem, so they can be retrieved and displayed in our app at a later time.
+Em seguida, adicionaremos suporte para salvar as fotos no sistema de arquivos, para que possam ser recuperadas e exibidas em nosso aplicativo mais tarde.
