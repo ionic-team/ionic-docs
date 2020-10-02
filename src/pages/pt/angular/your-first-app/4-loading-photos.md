@@ -13,18 +13,18 @@ Felizmente, isso é fácil: vamos usar a [API de Armazenamento](https://capacito
 
 ## API de Armazenamento
 
-Begin by defining a constant variable that will act as the key for the store:
+Comece definindo uma variável constante que atuará como a chave para a loja:
 
 ```typescript
 export class PhotoService {
-  public photos: Photo[] = [];
-  private PHOTO_STORAGE: string = "photos";
+  public fotos: Photo[] = [];
+  private PHOTO_STORAGE: string = "fotos";
 
-  // other code
+  // outro código
 }
 ```
 
-Next, at the end of the `addNewToGallery` function, add a call to `Storage.set()` to save the Photos array. By adding it here, the Photos array is stored each time a new photo is taken. This way, it doesn’t matter when the app user closes or switches to a different app - all photo data is saved.
+Em seguida, no final da função `addNewToGallery`, adicione uma chamada para `Storage.set()` para salvar a matriz de Fotos. Ao adicioná-lo aqui, a matriz de Fotos é armazenada cada vez que uma nova foto é tirada. Desta forma, não importa quando o usuário do app fecha ou troca para um app diferente - todos os dados de fotos são salvos.
 
 ```typescript
 Storage.set({
@@ -33,40 +33,40 @@ Storage.set({
 });
 ```
 
-With the photo array data saved, create a function called `loadSaved()` that can retrieve that data. We use the same key to retrieve the photos array in JSON format, then parse it into an array:
+Com os dados do array de fotos salvos, crie uma função chamada `loadSaved()` que pode recuperar esses dados. Nós usamos a mesma chave para recuperar a matriz de fotos no formato JSON e em seguida, analisá-la em um array:
 
 ```typescript
 public async loadSaved() {
-  // Retrieve cached photo array data
-  const photoList = await Storage.get({ key: this.PHOTO_STORAGE });
-  this.photos = JSON.parse(photoList.value) || [];
+  // Recuperar dados cache do array de fotos
+  const photoList = await Storage. et({ key: this.PHOTO_STORAGE });
+  this.fotos = JSON.parse(photoList.value) ├[];
 
-  // more to come...
+  // mais para vir...
 }
 ```
 
-On mobile (coming up next!), we can directly set the source of an image tag - `<img src="x" />` - to each photo file on the Filesystem, displaying them automatically. On the web, however, we must read each image from the Filesystem into base64 format, using a new `base64` property on the `Photo` object. This is because the Filesystem API uses [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. Below is the code you need to add in the `loadSaved()` function you just added:
+No celular (chegando a seguir!), podemos definir diretamente a origem de uma tag da imagem - `<img src="x" />` - para cada arquivo de foto no sistema de arquivos, exibindo-os automaticamente. No entanto, na web, temos de ler cada imagem do sistema de arquivos para o formato base64, usando uma nova propriedade `base64` no objeto `Photo`. Isso porque a API do sistema de arquivos usa [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) debaixo do pano. Abaixo está o código que você precisa adicionar na função `loadSaved()` que você acabou de adicionar:
 
 ```typescript
-// Display the photo by reading into base64 format
-for (let photo of this.photos) {
-  // Read each saved photo's data from the Filesystem
-  const readFile = await Filesystem.readFile({
+// Exibe a foto lendo no formato base64
+para (let foto disto. hotos) {
+  // Leia os dados de cada foto salva no sistema de arquivos
+  const readFile = await Filesystem. eadFile({
       path: photo.filepath,
       directory: FilesystemDirectory.Data
   });
 
-  // Web platform only: Load the photo as base64 data
-  photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
+  // Plataforma Web apenas: carregue a foto como dados base64
+  da foto. ebviewPath = `data:image/jpeg;base64,${readFile.data}`;
 }
 ```
 
-After, call this new method in `tab2.page.ts` so that when the user first navigates to Tab 2 (the Photo Gallery), all photos are loaded and displayed on the screen.
+Depois, chame este novo método em `tab2.page.ts` para que quando o usuário navegar pela primeira vez até o Tab 2 (a Galeria de Fotos), todas as fotos são carregadas e exibidas na tela.
 
 ```typescript
 async ngOnInit() {
-  await this.photoService.loadSaved();
+  await isso.photoService.loadSaved();
 }
 ```
 
-That’s it! We’ve built a complete Photo Gallery feature in our Ionic app that works on the web. Next up, we’ll transform it into a mobile app for iOS and Android!
+É isso! Desenvolvemos um recurso completo de Galeria de Fotos em nosso aplicativo Ionic que funciona na web. Em seguida, iremos transformá-lo em um aplicativo móvel para iOS e Android!
