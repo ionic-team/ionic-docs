@@ -64,7 +64,7 @@ import { IonPage, IonHeader, IonFab, IonFabButton, IonIcon,
 import { usePhotoGallery } from '@/composables/usePhotoGallery';
 
 export default  {
-  name: 'Tab1',
+  name: 'Tab2',
   components: { IonPage, IonHeader, IonFab, IonFabButton, IonIcon, 
          IonToolbar, IonTitle, IonContent, IonGrid, IonRow, 
          IonCol, IonImg },
