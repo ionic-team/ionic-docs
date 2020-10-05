@@ -1,21 +1,19 @@
 ---
-title: 'Project Creation'
+title: 'Project Creation and Git'
 previousText: 'Exploring Appflow Tutorial'
 previousUrl: '/docs/appflow/tutorial'
-nextText: 'Connect Your Repo'
-nextUrl: '/docs/appflow/quickstart/connect'
+nextText: 'Web Build and Web Previews'
+nextUrl: '/docs/appflow/tutorial/web-preview'
 tableOfContents: false
 ---
 
 # Exploring Appflow Exercise 1
 
-This part 1 of the exploring Appflow exercise consists of the following topics
+This part of the exploring Appflow exercise consists of the following topics
 
 1. Tooling for Ionic Starter App
 1. Starter App using Ionic
-1. Git integration and project creation
-1. Preparing a web build and preview
-1. Building for native 101(android debug)
+1. Project creation and Git Integration
 
 ## Tooling for Ionic Starter App
 
@@ -29,13 +27,13 @@ This part 1 of the exploring Appflow exercise consists of the following topics
 **Installing Ionic:**<br>
 * Run the following in the command line terminal to install the Ionic CLI (ionic), native-run, which is used to run native binaries on devices and simulators/emulators, and cordova-res, used to generate native app icons and splash screens:
 
-``` 
-npm install -g @ionic/cli native-run cordova-res 
+```
+npm install -g @ionic/cli native-run cordova-res
 ```
 
-***Refer [Getting started](https://ionicframework.com/docs/angular/your-first-app#download-required-tools) with tooling for more information***
+> Refer [Getting started](https://ionicframework.com/docs/angular/your-first-app#download-required-tools) with tooling for more information
 
-## Starter App using Ionic 
+## Starter App using Ionic
 
 Starting a new Ionic app is incredibly simple. From the command line, run the command below and then you can select from various options using the CLI
 
@@ -43,21 +41,21 @@ Starting a new Ionic app is incredibly simple. From the command line, run the co
 ionic start
 ```
 
-Or, to get started with the basic blank starter that is best for this exercise, you can use 
+Or, to get started with the basic blank starter that is best for this exercise, you can use
 ```
 ionic start starter_app blank --type=angular
 ```
 Here, with the above we are initiating an Ionic starter app with
 
- `NAME:			starter_app`
- `FRAMEWORK:		angular`
- `STARTER TEMPLATE:	blank`
+ `NAME:starter_app`
+ `FRAMEWORK:angular`
+ `STARTER TEMPLATE:blank`
 
-***To know more about all the frameworks and various starter template to available to choose from refer [Starting an Ionic App](https://ionicframework.com/docs/developing/starting)***
+> To know more about all the frameworks and various starter templates available to choose from refer [Starting an Ionic App](https://ionicframework.com/docs/developing/starting)
 
 **Integrating with Capacitor**
 
-You will be prompted with an option to integrate with Capacitor. You can choose either Capacitor or Cordova later. Ionic recommends using Capacitor. 
+You will be prompted with an option to integrate with Capacitor. You can choose either Capacitor or Cordova later. Ionic recommends using Capacitor.
 
 ```
 Integrate your new app with Capacitor to target native iOS and Android? (y/N)
@@ -74,7 +72,7 @@ ionic integrations add cordova
 ```
 
 
-***To learn more about these platforms, you can refer the docs on [Capacitor vs Cordova](https://ionicframework.com/resources/articles/capacitor-vs-cordova-modern-hybrid-app-development)***
+> To learn more about these platforms, you can refer the docs on [Capacitor vs Cordova](https://ionicframework.com/resources/articles/capacitor-vs-cordova-modern-hybrid-app-development)
 
 
 
@@ -89,55 +87,26 @@ Appflow works directly with Git version control and uses your code base as the s
 1. Login to the Appflow Dashboard using your credentials and select the Apps tab from the side menu.
 2. Next, select the Add App button, as shown below.
 
-![Appflow](images/img1_1.png)
+![Appflow-create-new-app](/docs/assets/img/appflow/tutorial/create-new-app.png)
 
 
-3. From the popup enter your starter Appname in the field and continue.
+3. From the popup enter your starter Appname in the field and enable [web-previews](https://ionicframework.com/docs/appflow/web-previews)
 
 
-![Appflow](images/img1_2.png)
-
-
-
-
-4. Select the Git sub menu from the setting menu in the side bar and select integrate as shown below.
-
-![Appflow](images/img1_3.png)
-
-5. You should be able to integrate any of the [Git options](https://ionicframework.com/docs/appflow/quickstart/connect#choose-your-git-integration) available as given with Appflow.
-
-## Preparing a web build and preview
-
->**Note:** You need to enable web preview in settings for your app before you build to have previews for that particular build.
-
-* To enable web previews go to settings > Web preview > Allow web builds to deploy to the web preview.
-
-![Appflow](images/img1_4.png)
-
-* Once you have enabled web previews for your application and you can toggle for each and every build. (shown below)
-
-**Trigger a new web build**
-
-1. To prepare a web build, There are two ways:
-	1. Click the Start build icon from the Commits tab
-	![Appflow](images/img1_5.png)
-	OR,
-	2.  Click the New build button in the top right from the Build > Builds tab
-	![Appflow](images/img1_6.png)
-
-2. You will need to make sure you've selected the correct commit to deploy.Then select the Web target platform and destinations as web preview to enable preview for this particular build as shown below.
-![Appflow](images/img1_7.png)
-3. Click build and the logs for your build instance should show up.
-Once, the build is successful you can click the preview button to view the preview of your first Starter Application. <br>
-<p align="center">
-  <img src="images/img1_8.png">
-</p>
+![Appflow-add-app-name](/docs/assets/img/appflow/tutorial/add-app-name.png)
 
 
 
-* You can also download the artifact for this build by clicking on the build artifact on the left side.
+
+4. Select the Git sub menu from the settings menu in the side bar and select integrate as shown below.
+
+![Appflow-git-integration](/docs/assets/img/appflow/tutorial/git-integration.png)
+
+5. You should be able to integrate with any of the [Git options](https://ionicframework.com/docs/appflow/quickstart/connect#choose-your-git-integration) available in Appflow.
 
 
-You can use this repository to compare your starter project and make changes if necessary.
+<hr>
 
-If you are facing any issues or need help understanding any of these concepts [contact support](support@ionic.io)
+You can use this [repository](https://github.com/ionic-team/tutorial-appflow/tree/part-1_web_builds) to compare your starter project and make changes if necessary.
+
+If you are facing any issues or need help understanding any of these concepts [contact support](https://ionic.zendesk.com/hc/en-us)
