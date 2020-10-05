@@ -24,6 +24,13 @@ This part of the exploring Appflow exercise consists of the following topics
   * Windows users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode.
   * Mac/Linux users, virtually any terminal will work.
 
+
+
+**Git Permissions:**
+  * To integrate Appflow with Git you must login to your Git service as a user that meets the following requirements before integrating.
+      * Has full read, write, and admin privileges on any repos you'd like to connect with Appflow
+      * Has the ability to create a webhook in all repos you'd like to connect with Appflow.
+
 **Installing Ionic:**<br>
 * Run the following in the command line terminal to install the Ionic CLI (ionic), native-run, which is used to run native binaries on devices and simulators/emulators, and cordova-res, used to generate native app icons and splash screens:
 
