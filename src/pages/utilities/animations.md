@@ -162,9 +162,9 @@ createAnimation()
   .duration(3000)
   .iterations(Infinity)
   .keyframes([
-    { offset: 0, background: 'red' },
-    { offset: 0.72, background: 'var(--background)' },
-    { offset: 1, background: 'green' }
+    { offset: 0, transform: "rotate(0deg) scale(1)" },
+    { offset: 0.72, transform: "rotate(180deg) scale(2)" },
+    { offset: 1, transform: "rotate(360deg) scale(1)" }
   ]);
 ```
 </docs-tab>
@@ -176,9 +176,9 @@ this.animationCtrl.create()
   .duration(3000)
   .iterations(Infinity)
   .keyframes([
-    { offset: 0, background: 'red' },
-    { offset: 0.72, background: 'var(--background)' },
-    { offset: 1, background: 'green' }
+    { offset: 0, transform: "rotate(0deg) scale(1)" },
+    { offset: 0.72, transform: "rotate(180deg) scale(2)" },
+    { offset: 1, transform: "rotate(360deg) scale(1)" }
   ]);
 ```
 </docs-tab>
@@ -189,9 +189,9 @@ this.animationCtrl.create()
   duration={3000}
   iterations={Infinity}
   keyframes={[
-    { offset: 0, background: 'red' },
-    { offset: 0.72, background: 'var(--background)' },
-    { offset: 1, background: 'green' }
+    { offset: 0, transform: "rotate(0deg) scale(1)" },
+    { offset: 0.72, transform: "rotate(180deg) scale(2)" },
+    { offset: 1, transform: "rotate(360deg) scale(1)" }
   ]}
 >
 ...
