@@ -493,6 +493,129 @@ In this case, the in-memory history is lost, so the back button disappears. To a
 
 Now, If there is no app history present, we will be able to navigate back to our home route.
 
+## Adding Icons
+
+Ionic Vue comes with [Ionicons](https://ionicons.com/) pre-installed. There are a couple options developers have for using them in their application.
+
+### Dynamic Imports
+
+Dynamic Imports is the recommended approach to using Ionicons. This involves importing the icon of your choice from the `ionicons` package and passing it to your template:
+
+```html
+<template>
+  <ion-page>
+    <ion-content>
+      <ion-icon :icon="heart"></ion-icon>
+    </ion-content>
+  </ion-page>
+</template>
+
+<script>
+import { heart } from 'ionicons/icons';
+import {
+  IonContent,
+  IonPage,
+} from '@ionic/vue';
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+  name: 'Icon',
+  components: {
+    IonContent,
+    IonPage,
+  },
+  setup() {
+    return { heart }
+  }
+});
+</script>
+```
+
+Let's break down what we are doing here. First, we are importing the `heart` icon from `ionicons/icons`. This will load the appropriate SVG data for our icon.
+
+Next, we pass the `heart` data to our template in the `setup` method.
+
+Finally, we pass the icon data into the `ion-icon` component via the `icon` property.
+
+Developers also have the option of setting different icons based upon the mode:
+
+```html
+<template>
+  <ion-page>
+    <ion-content>
+      <ion-icon :ios="logoApple" :md="logoAndroid"></ion-icon>
+    </ion-content>
+  </ion-page>
+</template>
+
+<script>
+import { logoAndroid, logoApple } from 'ionicons/icons';
+import {
+  IonContent,
+  IonPage,
+} from '@ionic/vue';
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+  name: 'Icon',
+  components: {
+    IonContent,
+    IonPage,
+  },
+  setup() {
+    return { logoAndroid, logoApple }
+  }
+});
+</script>
+```
+
+Note that any icon names that are hyphenated should be written in camel case when importing.
+
+### Global Imports
+
+The other option is to import specific icons globally. This is not typically recommended as it will force icons to be loaded every time your application starts and can increase your application's initial chunk size.
+
+That being said, there may be use cases when it makes sense to load specific icons globally:
+
+**main.ts**
+```typescript
+import { addIcons } from 'ionicons';
+import { heart } from 'ionicons/icons';
+
+addIcons({
+  'heart': heart 
+});
+```
+
+**Home.vue**
+```html
+<template>
+  <ion-page>
+    <ion-content>
+      <ion-icon icon="heart"></ion-icon>
+    </ion-content>
+  </ion-page>
+</template>
+
+<script>
+import {
+  IonContent,
+  IonPage,
+} from '@ionic/vue';
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+  name: 'Home',
+  components: {
+    IonContent,
+    IonPage,
+  }
+});
+</script>
+```
+
+In `main.ts`, the `addIcons` function lets us register icons globally and give it a string as a key. We then reference the icon by that key in our `Home` component.
+ 
 ## Build a Native App
 
 We now have the basics of an Ionic Vue app down, including some UI components and navigation. The great thing about Ionic Framework’s components is that they work anywhere, including iOS, Android, and PWAs. To deploy to mobile, desktop, and beyond, we use Ionic’s cross-platform app runtime [Capacitor](https://capacitor.ionicframework.com). It provides a consistent, web-focused set of APIs that enable an app to stay as close to web-standards as possible while accessing rich native device features on platforms that support them.
