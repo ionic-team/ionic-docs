@@ -448,9 +448,9 @@ const squareA = createAnimation()
   .fill('none')
   .duration(1000)
   .keyframes([
-    { offset: 0, transform: 'scale(1) rotate(0)' },
-    { offset: 0.5, transform: 'scale(1.2) rotate(45deg)' },
-    { offset: 1, transform: 'scale(1) rotate(0)' }
+    { offset: 0, transform: "scale(1) rotate(0)" },
+    { offset: 0.5, transform: "scale(1.2) rotate(45deg)" },
+    { offset: 1, transform: "scale(1) rotate(0)" }
   ]);
   
 const squareB = createAnimation()
@@ -458,9 +458,9 @@ const squareB = createAnimation()
   .fill('none')
   .duration(1000)
   .keyframes([
-    { offset: 0, transform: 'scale(1)', opacity: '1' },
-    { offset: 0.5, transform: 'scale(1.2)', opacity: '0.3' },
-    { offset: 1, transform: 'scale(1)', opacity: '1' }
+    { offset: 0, transform: "scale(1)" },
+    { offset: 0.5, transform: "scale(1.2) translateY(-40px)" },
+    { offset: 1, transform: "scale(1) translateY(0)" }
   ]);
   
 const squareC = createAnimation()
@@ -468,9 +468,12 @@ const squareC = createAnimation()
   .fill('none')
   .duration(1000)
   .keyframes([
-    { offset: 0, transform: 'scale(1)', opacity: '0.5' },
-    { offset: 0.5, transform: 'scale(0.8)', opacity: '1' },
-    { offset: 1, transform: 'scale(1)', opacity: '0.5' }
+    { offset: 0, transform: "scale(1)" },
+    {
+      offset: 0.5,
+      transform: "scale(0.8) rotate(45deg) translateZ(20px)"
+    },
+    { offset: 1, transform: "scale(1)" }
   ]);
 
 await squareA.play();
@@ -482,34 +485,34 @@ await squareC.play();
 
 ```javascript
 const squareA = this.animationCtrl.create()
-  .addElement(this.squareA.nativeElement)
-  .fill('none')
-  .duration(1000)
-  .keyframes([
-    { offset: 0, transform: 'scale(1) rotate(0)' },
-    { offset: 0.5, transform: 'scale(1.2) rotate(45deg)' },
-    { offset: 1, transform: 'scale(1) rotate(0)' }
-  ]);
-  
+.addElement(document.querySelector(".squareA"))
+.fill("none")
+.duration(1000)
+.keyframes([
+  { offset: 0, transform: "scale(1) rotate(0)" },
+  { offset: 0.5, transform: "scale(1.2) rotate(45deg)" },
+  { offset: 1, transform: "scale(1) rotate(0)" }
+]);
+
 const squareB = this.animationCtrl.create()
-  .addElement(this.squareB.nativeElement)
-  .fill('none')
-  .duration(1000)
-  .keyframes([
-    { offset: 0, transform: 'scale(1)', opacity: '1' },
-    { offset: 0.5, transform: 'scale(1.2)', opacity: '0.3' },
-    { offset: 1, transform: 'scale(1)', opacity: '1' }
-  ]);
-  
+.addElement(document.querySelector(".squareB"))
+.fill("none")
+.duration(1000)
+.keyframes([
+  { offset: 0, transform: "scale(1)"  },
+  { offset: 0.5, transform: "scale(1.2) translateY(-40px)" },
+  { offset: 1, transform: "scale(1) translateY(0)"  }
+]);
+
 const squareC = this.animationCtrl.create()
-  .addElement(this.squareC.nativeElement)
-  .fill('none')
-  .duration(1000)
-  .keyframes([
-    { offset: 0, transform: 'scale(1)', opacity: '0.5' },
-    { offset: 0.5, transform: 'scale(0.8)', opacity: '1' },
-    { offset: 1, transform: 'scale(1)', opacity: '0.5' }
-  ]);
+.addElement(document.querySelector(".squareC"))
+.fill("none")
+.duration(1000)
+.keyframes([
+  { offset: 0, transform: "scale(1)" },
+  { offset: 0.5, transform: "scale(0.8) rotate(45deg) translateZ(20px)"},
+  { offset: 1, transform: "scale(1)" }
+]);
 
 await squareA.play();
 await squareB.play();
@@ -543,38 +546,41 @@ render() {
         fill="none"
         duration={1000}
         keyframes={[
-          { offset: 0, transform: 'scale(1) rotate(0)' },
-          { offset: 0.5, transform: 'scale(1.2) rotate(45deg)' },
-          { offset: 1, transform: 'scale(1) rotate(0deg)' }
+          { offset: 0, transform: "scale(1) rotate(0)" },
+          { offset: 0.5, transform: "scale(1.2) rotate(45deg)" },
+          { offset: 1, transform: "scale(1) rotate(0)" }
         ]}
       >
-        <div className="square"></div>
+        <div className="square" />
       </CreateAnimation>
-      
+
       <CreateAnimation
         ref={this.squareBRef}
         fill="none"
         duration={1000}
         keyframes={[
-          { offset: 0, transform: 'scale(1)', opacity: '1' },
-          { offset: 0.5, transform: 'scale(1.2)', opacity: '0.3' },
-          { offset: 1, transform: 'scale(1)', opacity: '1' }
+          { offset: 0, transform: "scale(1)" },
+          { offset: 0.5, transform: "scale(1.2) translateY(-40px)" },
+          { offset: 1, transform: "scale(1) translateY(0)" }
         ]}
       >
-        <div className="square"></div>
+        <div className="square" />
       </CreateAnimation>
-      
+
       <CreateAnimation
         ref={this.squareCRef}
         fill="none"
         duration={1000}
         keyframes={[
-          { offset: 0, transform: 'scale(1)', opacity: '0.5' },
-          { offset: 0.5, transform: 'scale(0.8)', opacity: '1' },
-          { offset: 1, transform: 'scale(1)', opacity: '0.5' }
+          { offset: 0, transform: "scale(1)" },
+          {
+            offset: 0.5,
+            transform: "scale(0.8) rotate(45deg) translateZ(20px)"
+          },
+          { offset: 1, transform: "scale(1)" }
         ]}
       >
-        <div className="square"></div>
+        <div className="square" />
       </CreateAnimation>
     </>
   )
@@ -582,6 +588,8 @@ render() {
 ```
 </docs-tab>
 </docs-tabs>
+
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-angular-chained-animations) and in React [here](https://stackblitz.com/edit/ionic-react-chained-animations).
 
 <docs-codepen user="ionic" slug="MWgGrwX" height="460"></docs-codepen>
 
