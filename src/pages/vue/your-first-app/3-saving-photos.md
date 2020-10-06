@@ -62,7 +62,7 @@ Last, update the `takePhoto` function to call `savePicture`. Once the photo has 
 
 ```typescript
 const takePhoto = async () => {
-  const cameraPhoto = await getPhoto({
+  const cameraPhoto = await Camera.getPhoto({
     resultType: CameraResultType.Uri,
     source: CameraSource.Camera,
     quality: 100
