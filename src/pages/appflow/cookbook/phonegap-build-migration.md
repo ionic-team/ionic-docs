@@ -1,8 +1,8 @@
 ---
 previousText: "Introduction"
 previousUrl: "/docs/appflow/cookbook/intro"
-nextText: "Using private Git repositories"
-nextUrl: "/docs/appflow/cookbook/private_git"
+nextText: "Apflow + Jenkins/GitLab/GitHub"
+nextUrl: "/docs/appflow/cookbook/integrate-ci"
 contributors:
   - chrisgriffith
 meta:

@@ -64,6 +64,7 @@ const items = {
   'menu-appflow-cookbook': {
     'menu-appflow-cookbook-intro': '/docs/appflow/cookbook/intro',
     'menu-appflow-cookbook-phonegap-build': '/docs/appflow/cookbook/phonegap-build-migration',
+    'menu-appflow-cookbook-integrate-ci': '/docs/appflow/cookbook/integrate-ci',
     'menu-appflow-cookbook-private_git': '/docs/appflow/cookbook/private_git',
     'menu-appflow-cookbook-private_npm_modules': '/docs/appflow/cookbook/private_npm_modules',
     'menu-appflow-cookbook-private-native-enterprise-keys': '/docs/appflow/cookbook/private-native-enterprise-keys',

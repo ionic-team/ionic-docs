@@ -34,6 +34,10 @@ their Cordova and Capacitor apps faster than ever.
     <p>Learn about recent Appflow updates & announcements.</p>
   </docs-card>
 
+  <docs-card header="Jenkins, GitHub Actions, & GitLab CI" href="/docs/appflow/cookbook/integrate-ci" icon="/docs/assets/icons/guide-faq-icon.png">
+    <p>Find out how to use Appflow with you existing CI/CD pipeline.</p>
+  </docs-card>
+
   <docs-card header="Package FAQ" href="https://ionic.zendesk.com/hc/en-us/categories/360000410494-Package" icon="/docs/assets/icons/guide-faq-icon.png">
     <p>Find answers to common questions about building native binaries.</p>
   </docs-card>
