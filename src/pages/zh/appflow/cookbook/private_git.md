@@ -1,6 +1,6 @@
 ---
-previousText: "从 PhoneGap 构建迁移"
-previousUrl: "/docs/appflow/cookbook/phonegap-build-migration"
+previousText: "Apflow + Jenkins/GitLab/GitHub"
+previousUrl: "/docs/appflow/cookbook/integrate-ci"
 nextText: "使用私有 NPM 模块"
 nextUrl: "/docs/appflow/cookbook/private_npm_modules"
 ---
