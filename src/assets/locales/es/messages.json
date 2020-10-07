@@ -237,6 +237,7 @@
   "menu-appflow-cookbook": "Cookbook",
   "menu-appflow-cookbook-intro": "Resumen",
   "menu-appflow-cookbook-phonegap-build": "Construir Migración de PhoneGap",
+  "menu-appflow-cookbook-integrate-ci": "Jenkins, GitHub Actions, GitLab",
   "menu-appflow-cookbook-private_git": "Usando Repositorios Privados de Git",
   "menu-appflow-cookbook-private_npm_modules": "Como utilizar módulos privados de NPM",
   "menu-appflow-cookbook-switch_node_version": "Usar diferentes nodos en compilaciones",
