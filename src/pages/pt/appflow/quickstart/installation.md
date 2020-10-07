@@ -6,7 +6,7 @@ nextText: 'Push a Commit'
 nextUrl: '/docs/appflow/quickstart/push'
 ---
 
-In order to take advantage of some of the best Appflow features, like deploying live updates to your app and bypassing the app stores, you'll need to install the Appflow SDK (also known as the Ionic Deploy plugin). The Appflow SDK comes with Ionic Appflow's Deploy feature for detecting and syncing your app with updates that you've pushed to channels.
+In order to take advantage of some of the best Appflow features, like deploying live updates to your app and bypassing the app stores, you'll need to install the Appflow SDK (also known as the Ionic Deploy plugin). The Appflow SDK comes with Ionic Appflow's Live Update feature for detecting and syncing your app with updates that you've pushed to channels.
 
 ## Installing the Appflow SDK from the Dashboard (Recommended)
 
