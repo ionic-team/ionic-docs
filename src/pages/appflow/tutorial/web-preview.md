@@ -4,7 +4,7 @@ previousText: 'Project Creation and Git'
 previousUrl: '/docs/appflow/tutorial/start'
 nextText: 'Building for Native 101'
 nextUrl: '/docs/appflow/tutorial/android'
-tableOfContents: false
+tableOfContents: true
 ---
 
 This part explores Web Previews which allow you to quickly share the web version of your App to see how all of your web components come together.

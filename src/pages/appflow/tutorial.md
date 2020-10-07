@@ -7,4 +7,4 @@ nextUrl: '/docs/appflow/tutorial/start'
 tableOfContents: false
 ---
 
-Welcome to Exploring Appflow, a tutorial....
+Welcome to Exploring Appflow, a tutorial that teaches you the fundamentals of Appflow.

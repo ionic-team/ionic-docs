@@ -4,116 +4,90 @@ previousText: 'Exploring Appflow Tutorial'
 previousUrl: '/docs/appflow/tutorial'
 nextText: 'Web Build and Web Previews'
 nextUrl: '/docs/appflow/tutorial/web-preview'
-tableOfContents: false
+tableOfContents: true
 ---
 
-# Exploring Appflow Exercise 1
+This section of the Exploring Appflow tutorial covers:
 
-This part of the exploring Appflow exercise consists of the following topics
+1. Ionic tooling to install
+1. How to create an Ionic app
+1. Appflow project creation and Git integration
 
-1. Tooling for Ionic Starter App
-1. Starter App using Ionic
-1. Project creation and Git Integration
+This tutorial uses [Ionic Angular](https://ionicframework.com/docs/angular/overview) as the app framework/UI components and [Capacitor](https://capacitorjs.com) to deploy the app to iOS and Android. However, given the focus on Appflow's mobile CI/CD features, you can follow along with other web frameworks or native runtimes too.
 
-## Tooling for Ionic Starter App
+> Check out [this branch](https://github.com/ionic-team/tutorial-appflow/tree/part-1_web_builds) of this tutorial's app repository to compare your starter project and make changes if necessary. If you run into any issues or need help understanding any of these concepts, please [contact Ionic Support](https://ionic.zendesk.com/hc/en-us).
 
-### Prerequisites
-<b> System requirements: </b> <br>
+## Required Ionic Tooling
+
+In order to use Appflow, you'll need to install a few tools and create an Ionic app first.
+
+### System requirements:
 * Node.js for interacting with the Ionic ecosystem. [Download the LTS version here.](https://nodejs.org/en/)
 * Command-line interface/terminal (CLI):
-  * Windows users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode.
+  * Windows users: For the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode.
   * Mac/Linux users, virtually any terminal will work.
 
-
-
-**Git Permissions:**
-  * To integrate Appflow with Git you must login to your Git service as a user that meets the following requirements before integrating.
-      * Has full read, write, and admin privileges on any repos you'd like to connect with Appflow
+### Git Permissions:
+  * To integrate Appflow with Git, you must log into your Git service of choice as a user that meets the following requirements:
+      * Has full read, write, and admin privileges on any repos you'd like to connect with Appflow.
       * Has the ability to create a webhook in all repos you'd like to connect with Appflow.
 
-**Installing Ionic:**<br>
-* Run the following in the command line terminal to install the Ionic CLI (ionic), native-run, which is used to run native binaries on devices and simulators/emulators, and cordova-res, used to generate native app icons and splash screens:
+### Install Ionic CLI:
+* Run the following in the command line terminal to install the Ionic CLI (`ionic`), `native-run`, which is used to run native binaries on devices and simulators/emulators, and `cordova-res`, used to generate native app icons and splash screens:
 
-```
+```bash
 npm install -g @ionic/cli native-run cordova-res
 ```
 
-> Refer [Getting started](https://ionicframework.com/docs/angular/your-first-app#download-required-tools) with tooling for more information
+> The -g option means install globally. When packages are installed globally, EACCES permission errors can occur. Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](https://ionicframework.com/docs/developing/tips#resolving-permission-errors) for more information.
 
-## Starter App using Ionic
+## Create a new Ionic app
 
-Starting a new Ionic app is incredibly simple. From the command line, run the command below and then you can select from various options using the CLI
+From the command line, run the following to create an Ionic Angular app named "starter_app" that uses the "blank" starter template:
 
-```
-ionic start
-```
-
-Or, to get started with the basic blank starter that is best for this exercise, you can use
-```
+```bash
 ionic start starter_app blank --type=angular
 ```
-Here, with the above we are initiating an Ionic starter app with
 
- `NAME:starter_app`
- `FRAMEWORK:angular`
- `STARTER TEMPLATE:blank`
-
-> To know more about all the frameworks and various starter templates available to choose from refer [Starting an Ionic App](https://ionicframework.com/docs/developing/starting)
-
-**Integrating with Capacitor**
+**Integrating Capacitor**
 
 You will be prompted with an option to integrate with Capacitor. You can choose either Capacitor or Cordova later. Ionic recommends using Capacitor.
 
-```
+```bash
 Integrate your new app with Capacitor to target native iOS and Android? (y/N)
 ```
 
-* To integrate with Capacitor enter y and return.
+* To integrate with Capacitor enter "y" and press return.
 
 `[OK] Integration capacitor added!`
 
-* **NOTE:** **Ionic highly recommends using Capacitor for best experience with Appflow**. If you would like to integrate your starter app with cordova, you can use the below command and docs to get started. More information on getting started with Cordova [here](https://cordova.apache.org/#getstarted)
+* To integrate with Cordova, use the command below. More information on getting started with Cordova is [here](https://cordova.apache.org/#getstarted).
 
-```
+> Ionic strongly recommends using Capacitor for the best Appflow experience. To learn more about these platforms, review the [Capacitor vs Cordova](https://ionicframework.com/resources/articles/capacitor-vs-cordova-modern-hybrid-app-development) article.
+
+```bash
 ionic integrations add cordova
 ```
 
-
-> To learn more about these platforms, you can refer the docs on [Capacitor vs Cordova](https://ionicframework.com/resources/articles/capacitor-vs-cordova-modern-hybrid-app-development)
-
-
-
-
-
 ## Project Creation and Git Integration
 
-Appflow works directly with Git version control and uses your code base as the source of truth for Deploy and Package builds. In order for Appflow to access your code, you can choose to integrate directly using a hosting service like **GitHub**, **GitLab\*** or **Bitbucket.**
+Appflow works directly with Git version control, using your codebase as the source of truth for Deploy and Package builds. In order for Appflow to access your code, you can choose one of these hosting services: **GitHub**, **GitLab\*** or **Bitbucket.**
 
 **To create an app in the Appflow Dashboard and then connect it to your git repo:**
 
-1. Login to the Appflow Dashboard using your credentials and select the Apps tab from the side menu.
-2. Next, select the Add App button, as shown below.
+1. Log into the [Appflow Dashboard](https://dashboard.ionicframework.com) using your credentials and select the Apps tab from the side menu.
+2. Next, click the Add App button:
 
 ![Appflow-create-new-app](/docs/assets/img/appflow/tutorial/create-new-app.png)
 
 
-3. From the popup enter your starter Appname in the field and enable [web-previews](https://ionicframework.com/docs/appflow/web-previews)
+3. From the pop-up dialog, enter "Starter App" for the name then enable "Allow web builds" toggle (we'll [see what that does](https://ionicframework.com/docs/appflow/web-previews) very soon).
 
 
 ![Appflow-add-app-name](/docs/assets/img/appflow/tutorial/add-app-name.png)
 
-
-
-
-4. Select the Git sub menu from the settings menu in the side bar and select integrate as shown below.
+4. Select Git from the Settings sub-menu in the side bar, then connect to your [Git host of choice](https://ionicframework.com/docs/appflow/quickstart/connect#choose-your-git-integration):
 
 ![Appflow-git-integration](/docs/assets/img/appflow/tutorial/git-integration.png)
 
-5. You should be able to integrate with any of the [Git options](https://ionicframework.com/docs/appflow/quickstart/connect#choose-your-git-integration) available in Appflow.
-
-
-<hr>
-
-You can use this [repository](https://github.com/ionic-team/tutorial-appflow/tree/part-1_web_builds) to compare your starter project and make changes if necessary.
-
-If you are facing any issues or need help understanding any of these concepts [contact support](https://ionic.zendesk.com/hc/en-us)
+That's it! You're ready to start enabling some cool Appflow features.
