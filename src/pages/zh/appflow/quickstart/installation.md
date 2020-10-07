@@ -6,7 +6,7 @@ nextText: '推送提交'
 nextUrl: '/docs/appflow/quickstart/push'
 ---
 
-为了利用一些最好的 Appflow 功能，如部署您的 应用程序的实时更新和绕过应用商店， 您需要安装 Appflow SDK (又称 Ionic Deploy 插件)。 Appflow SDK 带有Ionic Appflow 的部署功能，用于检测和同步 您的应用程序与您推送到频道的更新。
+为了利用一些最好的 Appflow 功能，如部署您的 应用程序的实时更新和绕过应用商店， 您需要安装 Appflow SDK (又称 Ionic Deploy 插件)。 The Appflow SDK comes with Ionic Appflow's Live Update feature for detecting and syncing your app with updates that you've pushed to channels.
 
 ## 从仪表盘板安装 Appflow SDK (推荐)
 
