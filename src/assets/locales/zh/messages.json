@@ -237,6 +237,7 @@
   "menu-appflow-cookbook": "参考手册",
   "menu-appflow-cookbook-intro": "概览",
   "menu-appflow-cookbook-phonegap-build": "PhoneGap 构建迁移",
+  "menu-appflow-cookbook-integrate-ci": "Jenkins, GitHub Actions, GitLab",
   "menu-appflow-cookbook-private_git": "使用私有Git仓库",
   "menu-appflow-cookbook-private_npm_modules": "使用私有 NPM 模块",
   "menu-appflow-cookbook-switch_node_version": "在构建中使用不同的节点",
