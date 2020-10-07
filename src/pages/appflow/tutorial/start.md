@@ -69,6 +69,10 @@ Integrate your new app with Capacitor to target native iOS and Android? (y/N)
 ionic integrations add cordova
 ```
 
+### Create a Git repository
+
+Next, head over to your [Git host of choice](/docs/appflow/quickstart/connect) and create a new repository (`starter_app`) for this app (these steps will vary based on the host).
+
 ## Project Creation and Git Integration
 
 Appflow works directly with Git version control, using your codebase as the source of truth for Deploy and Package builds. In order for Appflow to access your code, you can choose one of these hosting services: **GitHub**, **GitLab\*** or **Bitbucket.**
@@ -89,5 +93,17 @@ Appflow works directly with Git version control, using your codebase as the sour
 4. Select Git from the Settings sub-menu in the side bar, then connect to your [Git host of choice](https://ionicframework.com/docs/appflow/quickstart/connect#choose-your-git-integration):
 
 ![Appflow-git-integration](/docs/assets/img/appflow/tutorial/git-integration.png)
+
+5. Select the `starter_app` repository.
+
+6. Back in the command line, link the newly created Appflow app with your local repository using `ionic link`. Choose "Link an existing app on Ionic Appflow", then select `starter_app`.
+
+7. Push a commit.
+
+```bash
+git add .   # stage all changes
+git commit -m "initial commit"   # commit staged changes
+git push origin main   # push changes from main branch to the git host
+```
 
 That's it! You're ready to start enabling some cool Appflow features.
