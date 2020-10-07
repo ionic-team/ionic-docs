@@ -237,6 +237,7 @@
   "menu-appflow-cookbook": "Livro de Receitas",
   "menu-appflow-cookbook-intro": "Visão Geral",
   "menu-appflow-cookbook-phonegap-build": "PhoneGap Build Migration",
+  "menu-appflow-cookbook-integrate-ci": "Jenkins, GitHub Actions, GitLab",
   "menu-appflow-cookbook-private_git": "Using Private Git repositories",
   "menu-appflow-cookbook-private_npm_modules": "Usando Módulos NPM Privados",
   "menu-appflow-cookbook-switch_node_version": "Usar diferentes versões do Node na construção",
