@@ -26,7 +26,6 @@ export function usePhotoGallery() {
   const { Camera, Filesystem, Storage } = Plugins;
   const photos = ref<Photo[]>([]);
   const PHOTO_STORAGE = "photos";
-}
 ```
 
 Next, add a `cachePhotos` function that saves the Photos array as JSON to file storage:
