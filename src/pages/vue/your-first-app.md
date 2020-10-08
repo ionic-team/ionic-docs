@@ -190,6 +190,18 @@ Next, open `src/views/Tabs.vue` then import the `images` icon:
 import { images, square, triangle } from 'ionicons/icons';
 ```
 
+Also replace `ellipse` with `images` in the `setup()` method.
+
+```typescript
+  setup() {
+    return {
+      images,
+      square,
+      triangle,
+    }
+  }
+```
+
 Within the tab bar (`<ion-tab-bar>`), change the label to "Photos" and the icon to `images` for the middle tab button:
 
 ```html
