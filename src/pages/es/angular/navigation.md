@@ -11,7 +11,7 @@ contributors:
 
 Esta guía cubre cómo funciona el enrutamiento en una aplicación construida con Ionic y Angular.
 
-El enrutador de Angular (Angular Router) es una de las librerías más importantes de una aplicación Angular. Without it, apps would be single view/single context apps or would not be able to maintain their navigation state on browser reloads. Con Angular Router, podemos crear aplicaciones ricas que son enlazables y tienen animaciones ricas (cuando se emparejan con Ionic por supuesto). Echemos un vistazo a los conceptos básicos de Angular Router y cómo podemos configurarlo para aplicaciones de Ionic.
+El enrutador de Angular (Angular Router) es una de las librerías más importantes de una aplicación Angular. Sin ella, las aplicaciones serían aplicaciones de vista única / contexto único o no podrían mantener su estado de navegación en las recargas del navegador. Con Angular Router, podemos crear aplicaciones ricas que son enlazables y tienen animaciones ricas (cuando se emparejan con Ionic por supuesto). Echemos un vistazo a los conceptos básicos de Angular Router y cómo podemos configurarlo para aplicaciones de Ionic.
 
 ## Una ruta simple
 
@@ -83,12 +83,12 @@ Ahora desde el `LoginComponent`, podemos utilizar el siguiente HTML para navegar
 ```html
 <ion-header>
   <ion-toolbar>
-    <ion-title>Login</ion-title>
+    <ion-title>Inicio de Sesión</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-button [routerLink]="['/detail']">Go to detail</ion-button>
+  <ion-button [routerLink]="['/detail']">Ir a detalles</ion-button>
 </ion-content>
 ```
 
