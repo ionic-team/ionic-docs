@@ -176,12 +176,6 @@ test:
     - npm ci
     - npm run test
 
-test:
-  stage: test
-  script:
-    - npm ci
-    - npm run test
-
 build-ios:
   stage: build
   script:
