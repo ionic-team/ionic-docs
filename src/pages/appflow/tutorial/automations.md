@@ -4,20 +4,14 @@ previousText: 'Live Updates'
 previousUrl: '/docs/appflow/tutorial/live_updates'
 nextText: 'Native Configs'
 nextUrl: '/docs/appflow/tutorial/native-configs'
-tableOfContents: false
+tableOfContents: true
 ---
 
-You can leverage the automations available in the appflow dashboard to automatically trigger different builds on commit to your Git.
+Now that you are well versed in triggering different build types in Appflow, it's time to automate builds.
 
-<blockquote>
-  <p><b>Note:</b>This feature is only available on our <a href="https://ionicframework.com/pricing">Growth plans</a> and above.</p>
-</blockquote>
+Automations enable you and your team to utilize Appflow's full CI/CD powers. You can create automations that trigger native builds and web builds each time your team checks in new code to a given branch and you can even configure them to use different environments and native configurations so that you can build different versions of your app for development, staging, and production.
 
-Now that you are well versed with triggering different builds in appflow it's time to automate builds.
-
-
-
-Automations enable you and your team to utilize the full CI/CD powers of Appflow. You can create automations that trigger package builds and deploy builds every time your team checks in new code to a given branch and you can even configure the automations to use different environments and native configurations so that you can build different versions of your app for development, staging, and production.
+> This feature is only available on our <a href="https://ionicframework.com/pricing" target="_blank">Growth plans</a> and above.
 
 ### Creating an Automation
 Let's create an automation for Android Debug build that you already manually triggered earlier.
