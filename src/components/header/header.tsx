@@ -62,8 +62,12 @@ export class DocsHeader {
       ['Native'].indexOf(section) > -1 ? <div class="SectionNav-tabs">
       <stencil-route-link url="/docs/native" urlMatch={['/docs/native']}>{l10n.getString('header-native-community')}</stencil-route-link>
       <stencil-route-link url="/docs/enterprise/community-vs-enterprise" urlMatch={['/docs/enterprise/community-vs-enterprise']}>{l10n.getString('header-native-enterprise')}</stencil-route-link>
-    </div> : null,
-    ];
+      </div> : null,
+      ['Appflow'].indexOf(section) > -1 ? <div class="SectionNav-tabs">
+        <stencil-route-link url="/docs/appflow" urlMatch={[/^\/docs\/appflow(?!\/(tutorial)).*$/]}>{l10n.getString('header-guide')}</stencil-route-link>
+        <stencil-route-link url="/docs/appflow/tutorial" urlMatch={['/docs/appflow/tutorial']}>{l10n.getString('header-tutorial')}</stencil-route-link>
+        </div> : null,
+      ];
   }
 
   render() {
@@ -80,6 +84,9 @@ export class DocsHeader {
           <nav class="SectionNav">
             <stencil-route-switch>
               <stencil-route url="/docs/appflow">
+                {this.renderMenu('Appflow')}
+              </stencil-route>
+              <stencil-route url="/docs/appflow/tutorial">
                 {this.renderMenu('Appflow')}
               </stencil-route>
               <stencil-route url="/docs/studio">
