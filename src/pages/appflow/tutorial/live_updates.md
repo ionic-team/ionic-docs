@@ -7,16 +7,11 @@ nextUrl: '/docs/appflow/tutorial/automations'
 tableOfContents: true
 ---
 
-This part of  exploring Appflow exercise consists Live Updates involving the following steps:
-1. Live updates
-   1. Installing Appflow SDK
-   2. Building for native with SDK
-   3. Build a web deploy build
-   4. Assigning it to a channel
-
 Appflow's Live Update feature let you update the UI and business logic of your app remotely, in real-time. Push HTML, JS, and CSS updates directly to your users without going through the app store to instantly fix bugs and ship new features.
 
-> You can use this [repository](https://github.com/ionic-team/tutorial-appflow/tree/part-4_live_updates) to compare your starter project and make changes if necessary.
+In this step, we'll install the Appflow SDK then build and deploy a web build to a mobile device.
+
+> Check out [this branch](https://github.com/ionic-team/tutorial-appflow/tree/part-4_live_updates) from this tutorial's companion app to compare with your starter project. 
 
 ## Installing the Appflow SDK from the Dashboard (Recommended)
 

@@ -11,7 +11,7 @@ Now that you are well versed in triggering different build types in Appflow, it'
 
 Automations enable you and your team to utilize Appflow's full CI/CD powers. You can create automations that trigger native builds and web builds each time your team checks in new code to a given branch and you can even configure them to use different environments and native configurations so that you can build different versions of your app for development, staging, and production.
 
-> This feature is only available on our <a href="https://ionicframework.com/pricing" target="_blank">Growth plans</a> and above.
+> This feature is only available on our <a href="https://ionicframework.com/pricing" target="_blank">Growth plan</a> and above.
 
 ### Creating an Automation
 Let's create an automation for Android Debug builds since you know now how to manually trigger them.

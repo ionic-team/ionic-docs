@@ -7,16 +7,9 @@ nextUrl: '/docs/appflow/tutorial/ios'
 tableOfContents: true
 ---
 
-This part of the exploring Appflow exercise consists of the following topics
-
-1. Building for native 101(android debug)
-      1. Build starter app
-      2. Package for native
-      3. Trigger a Native build using Appflow
-
 In this step, we'll create a native Android debug build. This is the easiest option to get started with native builds, since unlike iOS, a security profile is not required.
 
-> Check out [this branch](https://github.com/ionic-team/tutorial-appflow/tree/part-2_Build_android) of this tutorial's app repository to compare your starter project and make changes if necessary.
+> Check out [this branch](https://github.com/ionic-team/tutorial-appflow/tree/part-2_Build_android) from this tutorial's companion app to compare your starter project.
 
 ### Build starter app
 

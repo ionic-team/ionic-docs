@@ -7,16 +7,9 @@ nextUrl: '/docs/appflow/tutorial/live_updates'
 tableOfContents: true
 ---
 
-This part of Exploring Appflow exercise consists of building a development build for iOS
+Now that's we've learned how to build a native Android app on Appflow, let's do the same for iOS apps. Building for iOS involves a handful of extra steps, including generating App Store certificates and Provisioning Profiles.
 
-1. Building for native (advanced)
-    1. Adding iOS to starter project
-    2. Generating App Store Certificate and Provisioning Profile
-    3. Creating a security profile in Appflow
-    4. iOS native build in Appflow
-
-https://github.com/ionic-team/tutorial-appflow/tree/part-3_Build_ios
-
+> Check out [this branch](https://github.com/ionic-team/tutorial-appflow/tree/part-3_Build_ios) from this tutorial's companion app to compare with your starter project.
 
 ## Adding iOS to starter project
 

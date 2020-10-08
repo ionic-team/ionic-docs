@@ -7,15 +7,11 @@ nextUrl: '/docs/appflow/tutorial/web-preview'
 tableOfContents: true
 ---
 
-This section of the Exploring Appflow tutorial covers:
+This tutorial uses [Ionic Angular](https://ionicframework.com/docs/angular/overview) as the app framework/UI components and [Capacitor](https://capacitorjs.com) to deploy the app to iOS and Android. However, given the focus on Appflow's mobile CI/CD features, you can follow along with any web framework or native runtime.
 
-1. Ionic tooling to install
-1. How to create an Ionic app
-1. Appflow project creation and Git integration
+In this first step, you'll install the tooling required to use Appflow, create an Ionic app, and create a project on Appflow.
 
-This tutorial uses [Ionic Angular](https://ionicframework.com/docs/angular/overview) as the app framework/UI components and [Capacitor](https://capacitorjs.com) to deploy the app to iOS and Android. However, given the focus on Appflow's mobile CI/CD features, you can follow along with other web frameworks or native runtimes too.
-
-> Check out [this branch](https://github.com/ionic-team/tutorial-appflow/tree/part-1_web_builds) of this tutorial's app repository to compare your starter project and make changes if necessary. If you run into any issues or need help understanding any of these concepts, please [contact Ionic Support](https://ionic.zendesk.com/hc/en-us).
+> Check out [this branch](https://github.com/ionic-team/tutorial-appflow/tree/part-1_web_builds) from this tutorial's companion app to compare with your starter project. If you run into any issues or need help understanding any of these concepts, please [contact Ionic Support](https://ionic.zendesk.com/hc/en-us).
 
 ## Required Ionic Tooling
 
@@ -75,7 +71,7 @@ Next, head over to your [Git host of choice](/docs/appflow/quickstart/connect) a
 
 ## Project Creation and Git Integration
 
-Appflow works directly with Git version control, using your codebase as the source of truth for Deploy and Package builds. In order for Appflow to access your code, you can choose one of these hosting services: **GitHub**, **GitLab\*** or **Bitbucket.**
+Appflow works directly with Git version control, using your codebase as the source of truth for Deploy and Package builds. In order for Appflow to access your code, you can choose one of these hosting services: **GitHub**, **GitLab** or **Bitbucket.**
 
 **To create an app in the Appflow Dashboard and then connect it to your git repo:**
 
