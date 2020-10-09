@@ -9,8 +9,8 @@ tableOfContents: false
 
 A collection of free Cordova and Capacitor plugins, built and maintained by the community, with TypeScript wrappers and a consistent API and naming convention for easier development.</docs-card>
 
-<docs-card header="Ionic Native Enterprise Edition" href="/docs/enterprise" img="/docs/assets/img/native/enterprise-edition.png"> 
+<docs-card header="Ionic Native Enterprise Edition" href="/docs/enterprise/community-vs-enterprise" img="/docs/assets/img/native/enterprise-edition.png"> 
 
-[Ionic Native Enterprise Edition (EE)](https://ionicframework.com/native) is a subscription service that provides premium, supported Capacitor and Cordova plugins, third-party integrations, and pre-built solutions for teams building enterprise-grade apps with Ionic. </docs-card> </docs-cards>
+Premium, supported Capacitor and Cordova plugins, third-party integrations, and pre-built solutions for teams building enterprise-grade apps with Ionic.</docs-card> </docs-cards>
 
 > These docs are for apps built with Ionic Framework 4.0.0 and greater. For older Ionic v3 projects, please [see here](/docs/v3/native).
