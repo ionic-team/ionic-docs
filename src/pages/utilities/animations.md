@@ -843,10 +843,10 @@ Developers can also tailor their animations to user preferences such as `prefers
   width: 100px;
   height: 100px;
   opacity: 0.5;
-  background: blue;
   margin: 10px;
   
   --background: red;
+  background: var(--background);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -865,7 +865,7 @@ createAnimation()
    .duration(1500)
    .iterations(Infinity)
    .direction('alternate')
-   .fromTo('background', 'blue', 'var(--background)');
+   .fromTo('background', 'red', 'var(--background)');
 ```
 </docs-tab>
 <docs-tab tab="angular">
@@ -876,7 +876,7 @@ this.animationCtrl.create()
    .duration(1500)
    .iterations(Infinity)
    .direction('alternate')
-   .fromTo('background', 'blue', 'var(--background)');
+   .fromTo('background', 'red', 'var(--background)');
 ```
 </docs-tab>
 <docs-tab tab="react">
@@ -888,7 +888,7 @@ this.animationCtrl.create()
   direction='alternate'
   fromTo={{
     property: 'background',
-    fromValue: 'blue',
+    fromValue: 'red',
     toValue: 'var(--background)'
   }}
 >
@@ -897,6 +897,8 @@ this.animationCtrl.create()
 ```
 </docs-tab>
 </docs-tabs>
+
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-angular-preference-based-animations) and in React [here](https://stackblitz.com/edit/ionic-react-preference-based-animations).
 
 This method works in all supported browsers when creating animations for the first time. Most browsers are also capable of dynamically updating keyframe animations as the CSS Variables change.
 
@@ -1019,7 +1021,7 @@ export class ModalExample {
 
 ```javascript
 import React, { useState } from 'react';
-import { CreateAnimation, IonModal, IonButton, IonContent } from '@ionic/react';
+import { createAnimation, IonModal, IonButton, IonContent } from '@ionic/react';
 
 export const ModalExample: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
@@ -1060,6 +1062,8 @@ export const ModalExample: React.FC = () => {
 ```
 </docs-tab>
 </docs-tabs>
+
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-angular-animation-override) and in React [here](https://stackblitz.com/edit/ionic-react-animation-overwride).
 
 <docs-codepen user="ionic" slug="ExapZBZ"></docs-codepen>
 
