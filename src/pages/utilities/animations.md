@@ -844,14 +844,15 @@ Developers can also tailor their animations to user preferences such as `prefers
   height: 100px;
   opacity: 0.5;
   margin: 10px;
-  
   --background: red;
   background: var(--background);
+  --translate-position: translateX(50px)
 }
 
 @media (prefers-color-scheme: dark) {
   .square {
     --background: green;
+    --translate-position: translateX(250px)
   }
 }
 ```
@@ -865,7 +866,8 @@ createAnimation()
    .duration(1500)
    .iterations(Infinity)
    .direction('alternate')
-   .fromTo('background', 'red', 'var(--background)');
+   .fromTo("background", "red", "var(--background)")
+   .fromTo("transform", "translateX(0)", "var(--translate-position)");
 ```
 </docs-tab>
 <docs-tab tab="angular">
@@ -876,7 +878,8 @@ this.animationCtrl.create()
    .duration(1500)
    .iterations(Infinity)
    .direction('alternate')
-   .fromTo('background', 'red', 'var(--background)');
+   .fromTo("background", "red", "var(--background)")
+   .fromTo("transform", "translateX(0)", "var(--translate-position)");
 ```
 </docs-tab>
 <docs-tab tab="react">
@@ -886,11 +889,18 @@ this.animationCtrl.create()
   duration={1500}
   iterations={Infinity}
   direction='alternate'
-  fromTo={{
-    property: 'background',
-    fromValue: 'red',
-    toValue: 'var(--background)'
-  }}
+  fromTo={[
+    {
+      property: "background",
+      fromValue: "red",
+      toValue: "var(--background)"
+    },
+    {
+      property: "transform",
+      fromValue: "translateX(0)",
+      toValue: "var(--translate-position)"
+    }
+  ]}
 >
   <div className="square"></div>
 </CreateAnimation>
