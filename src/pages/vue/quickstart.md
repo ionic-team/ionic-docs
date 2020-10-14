@@ -17,21 +17,19 @@ In this guide, we will go over the basics of both Vue and Ionic Framework, inclu
 
 ## Creating a project with the Ionic CLI
 
-To begin, let's install a pre-release version of the Ionic CLI.
+To begin, let's install the latest version of the Ionic CLI.
 
 
 ```shell
-npm install -g @ionic/cli@testing
+npm install -g @ionic/cli@latest
 ```
 
 From here, the global command `ionic` will allow for the creation of a Vue project with Ionic Framework and any other dependencies. To create a new project, run the following command:
 
 ```shell
-ionic start myApp blank --type vue --tag vue-beta
+ionic start myApp blank --type vue
 cd myApp
 ```
-
-> Using `--tag` allows you to download the latest beta version of an Ionic Vue starter. This will not be needed once Ionic Vue ships.
 
 From here, we run `ionic serve` and have our project running in the browser.
 
