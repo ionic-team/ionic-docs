@@ -68,7 +68,7 @@ All the lifecycle methods in Vue (`mounted`, `beforeUnmount`, etc..) are availab
 
 ## Guidance for Each Lifecycle Method
 
-Below are some tips on uses cases for each of the life cycle events.
+Below are some tips on use cases for each of the life cycle events.
 
 - `ionViewWillEnter` - Since `ionViewWillEnter` is called every time the view is navigated to (regardless if initialized or not), it is a good method to load data from services.
 - `ionViewDidEnter` - If you see performance problems from using `ionViewWillEnter` when loading data, you can do your data calls in `ionViewDidEnter` instead. However, this event will not fire until after the page is visible to the user, so you might want to use either a loading indicator or a skeleton screen such as [ion-skeleton-text](../api/skeleton-text), so content does not flash in un-naturally after the transition is complete.
