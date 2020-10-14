@@ -125,16 +125,16 @@ export class LoginComponent {
 @NgModule({
   imports: [
   ...
-  RouterModule.forRoot([
+  RouterModule.forRoot(forterModule.forRoot(format@@
     { path: '', redirectTo: 'login', pathMatch: 'full' },
-    { path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule) },
-    { path: 'detail', loadChildren: () => import('./detail/detail.module').then(m => m.DetailModule) }
-  ])
+    Path: 'login', loadChildren: () => import('。 login/login.module').then(m=> m。 ooginModule) },
+    然后请参阅“detail', loadChildren: () => import('./detail/detail). 当(m => m.DetailModule) }
+  ]
   ],
 })
 ```
 
-While similar, the `loadChildren` property is a way to reference a module by using native import instead of a component directly. 不过，为了做到这一点，我们需要为每个组件创建一个模块。
+类似的，`loadChildren`属性是个通过字符串而不是直接写组件来引用模块的方法。 不过，为了做到这一点，我们需要为每个组件创建一个模块。
 
 ```typescript
 ...
@@ -155,13 +155,13 @@ import { LoginComponent } from './login.component';
 
 在这里，我们进行了一个典型的Angular模块的设置和一个路由模块的引入，但我们现在使用 `forChild`，并在设置中声明组件。 设置完成，当我们运行编译时，程序就会为login组件和detail组件分别生成单独的块。
 
-## Live Example
+## 实时示例
 
-If you would prefer to get hands on with the concepts and code described above, please checkout our [live example](https://stackblitz.com/edit/ionic-angular-routing?file=src/app/app-routing.module.ts) of the topics above on StackBlitz.
+如果你愿意继续使用上述概念和代码， 请在StackBlitz上方签出我们的 [现场示例](https://stackblitz.com/edit/ionic-angular-routing?file=src/app/app-routing.module.ts)。
 
-## Working with Tabs
+## 使用标签页
 
-With Tabs, the Angular Router provides Ionic the mechanism to know what components should be loaded, but the heavy lifting is actually done by the tabs component. Let's look at a simple example.
+使用标签页时，Angular为Ionic提供了机制，以确定哪些组件有应该被加载，但主要工作是有tabs组件完成的。 我们来看一个简单的例子：
 
 ```ts
 const routes: Routes = [
@@ -174,7 +174,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+            loadChildren: '../tab1/tab1.module#Tab1PageModule'
           }
         ]
       },
@@ -193,7 +193,7 @@ const routes: Routes = [
 ];
 ```
 
-Here we have a "tabs" path that we load. In this example we call the path "tabs", but the name of the paths can be changed. They can be called whatever fits your app. In that route object, we can define a child route as well. In this example, the top level child route "tab1" acts as our "outlet", and can load additional child routes. For this example, we have a single sub-child-route, which just loads a new component. The markup for the tab is as followed:
+我们这里设置了一个"tabs"路径，然后加载它。 在这个例子中我们称路径为"tabs"，不过路径的名字可以随意更改。 也可以用你认为合适于自己APP的名字来命名。在这个路由对象中，我们可以定义一个子路由。 在这个例子中，最上层的子路由"tab1"可以作为我们的“出口”，可以用来加载额外的子路由。 距离来说，我们有一个单一子路由，可以加载一个新的组件。 标签标记如下：
 
 ```html
 <br /><ion-tabs>
