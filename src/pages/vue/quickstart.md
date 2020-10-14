@@ -7,8 +7,6 @@ nextUrl: '/docs/vue/your-first-app'
 
 # Ionic Vue Quickstart
 
-> Ionic Vue is currently in development. Information in this guide is subject to change.
-
 ## What is Ionic Framework?
 
 First off, if you're new here, welcome! Ionic Framework is a free and open source component library for building apps that run on iOS, Android, Electron, and the Web. Write your app once using familiar technologies (HTML, CSS, JavaScript) and deploy to any platform.
