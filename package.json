@@ -27,6 +27,7 @@
     "@ionic/docs": "^5.3.4",
     "@sentry/node": "^5.19.2",
     "@stencil/router": "^1.0.1",
+    "@stencil/sass": "^1.3.2",
     "compression": "^1.7.4",
     "express": "^4.16.4",
     "helmet": "^3.23.1",
