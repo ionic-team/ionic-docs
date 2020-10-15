@@ -671,18 +671,18 @@ ngOnInit() {
     el: this.square.nativeElement,
     threshold: 0,
     gestureName: 'square-drag',
-    onMove: ev: this.onMove(ev),
-    onEnd: ev: this.onEnd(ev)
+    onMove: ev => this.onMove(ev),
+    onEnd: ev => this.onEnd(ev)
   })
   
   this.gesture.enable(true);
 }
 
 private onMove(ev) {
-  if (!started) {
+  if (!this.started) {
     this.animation.progressStart();
     this.started = true;
-  }
+  } 
   
   this.animation.progressStep(this.getStep(ev));
 }
@@ -697,7 +697,7 @@ private onEnd(ev) {
 
   this.animation
     .progressEnd((shouldComplete) ? 1 : 0, step)
-    .onFinish((): { this.gesture.enable(true); });
+    .onFinish(() => { this.gesture.enable(true); });
   
   this.initialStep = (shouldComplete) ? this.MAX_TRANSLATE : 0;
   this.started = false;
@@ -726,6 +726,8 @@ class MyComponent extends React.Component<{}, any> {
   private gesture?: Gesture;
   private started: boolean = false;
   private initialStep: number = 0;
+
+  MAX_TRANSLATE = 200
   
   constructor(props: any) {
     super(props);
@@ -788,13 +790,13 @@ class MyComponent extends React.Component<{}, any> {
       }, opts: { oneTimeCallback: true }}
     });
   
-    this.initialStep = (shouldComplete) ? MAX_TRANSLATE : 0;
+    this.initialStep = (shouldComplete) ? this.MAX_TRANSLATE : 0;
     this.started = false;
   }
   
   private getStep(ev: GestureDetail) {
     const delta = this.initialStep + ev.deltaX;
-    return this.clamp(0, delta / MAX_TRANSLATE, 1);
+    return this.clamp(0, delta / this.MAX_TRANSLATE, 1);
   }
   
   private clamp(min: number, n: number, max: number) {
@@ -815,7 +817,7 @@ class MyComponent extends React.Component<{}, any> {
             fromTo={{
               property: 'transform',
               fromValue: 'translateX(0)',
-              toValue: `translateX(${MAX_TRANSLATE}px)`
+              toValue: `translateX(${this.MAX_TRANSLATE}px)`
           }}>
             <div className="square"></div>
           </CreateAnimation>
@@ -827,6 +829,8 @@ class MyComponent extends React.Component<{}, any> {
 ```
 </docs-tab>
 </docs-tabs>
+
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-angular-gesture-animations) and in React [here](https://stackblitz.com/edit/ionic-react-gesture-animations).
 
 In this example we are creating a track along which we can drag the `.square` element. Our `animation` object will take care of moving the `.square` element either left or right, and our `gesture` object will instruct the `animation` object which direction to move in.
 
