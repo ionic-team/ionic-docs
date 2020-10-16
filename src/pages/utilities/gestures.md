@@ -313,6 +313,8 @@ In the example above, we want to be able to detect double clicks on an element. 
 
 See our guide on implementing gesture animations: [Gesture Animations with Ionic Animations](/docs/utilities/animations#gesture-animations)
 
+You can live examples of Gesture animations in Angular [here](https://stackblitz.com/edit/ionic-angular-gesture-animations) and in React [here](https://stackblitz.com/edit/ionic-react-gesture-animations).
+
 ## Browser Support
 
 | Browser/Platform     | Supported Versions |
