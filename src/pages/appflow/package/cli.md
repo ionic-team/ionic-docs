@@ -79,14 +79,14 @@ $ ionic package build
 
 This will prompt for the desired platform (`ios`/`android`) and build type for the platform.
 
-For iOS or Android `release` builds, a valid signing certificate is required and can be specified using the `--security-profile=<name>` option.
+For iOS or Android `release` builds, a valid signing certificate is required and can be specified using the `--signing-certificate=<name>` option.
 
 For information on setting up signing certificates, see [here](/docs/appflow/package/credentials).
 
 The previous commands can be executed in a single step:
 
 ```bash
-$ ionic package build ios development --security-profile="My Signing Certificate"
+$ ionic package build ios development --signing-certificate="My Signing Certificate"
 ```
 
 Once the build is successfully triggered, the CLI will automatically start tailing the logs from Appflow and, if the build is successful, download the `apk`/`ipa` file in the current directory.
@@ -118,7 +118,7 @@ build to have a consistent name for the produced artifact.
 Names are case sensitive and need to be specified including spaces, for instance:
 
 ```bash
-$ ionic package build ios development --security-profile="iOS Dev"
+$ ionic package build ios development --signing-certificate="iOS Dev"
 ```
 
 Apart from the `--commit` option, all others require the full name setup within the Appflow Dashboard.

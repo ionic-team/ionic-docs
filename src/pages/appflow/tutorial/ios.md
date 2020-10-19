@@ -23,7 +23,7 @@ A native iOS project is created in the root of your project folder.
 
 ## Generating App Store Certificate and Provisioning Profile
 
-iOS builds require [generating signing credentials and a provisioning profile](https://ionicframework.com/docs/appflow/package/credentials#android-credentials). Code Signing with a development-type build allows your app to run on a device through Xcode. To create a security profile on Appflow, you'll need:
+iOS builds require [generating signing credentials and a provisioning profile](https://ionicframework.com/docs/appflow/package/credentials#android-credentials). Code Signing with a development-type build allows your app to run on a device through Xcode. To create a signing certificate on Appflow, you'll need:
 * iOS development provisioning profile
 * iOS development signing certificate
 
@@ -32,11 +32,11 @@ You'll also need an Apple Developer account (Individual or Organization). See
 
 Once you have an Apple developer account, follow the guide on [Generating iOS credentials](https://ionicframework.com/docs/appflow/package/credentials#ios-credentials).
 
-Then, with a certificate and provisioning profile created, you can set up a new security profile in Appflow.
+Then, with a certificate and provisioning profile created, you can set up a new signing certificate in Appflow.
 
-## Creating a security profile in Appflow
+## Creating a signing certificate in Appflow
 
-Security Profiles securely store your credentials so you can easily reference them when building your app in the cloud. After you have generated your Security Profile, you must upload it to Ionic Appflow.
+Signing certificates securely store your credentials so you can easily reference them when building your app in the cloud. After you have generated your signing certificate, you must upload it to Ionic Appflow.
 
 To upload your security credentials:
 
@@ -44,15 +44,15 @@ To upload your security credentials:
 
 2. Click the Add Profile button to create a new Profile.
 
-![Appflow-create-security-profile](/docs/assets/img/appflow/tutorial/create-security-profile.png)
+![Appflow-create-signing-certificate](/docs/assets/img/appflow/tutorial/create-security-profile.png)
 
-3. Enter a name for the security profile. (ex: development_iOS)
+3. Enter a name for the signing certificate. (ex: development_iOS)
 
-![Appflow-add-security-profile](/docs/assets/img/appflow/tutorial/add-security-profile.png)
+![Appflow-add-signing-certificate](/docs/assets/img/appflow/tutorial/add-security-profile.png)
 
 4. Both iOS and Android certifications can be used with one Profile, but for now let's focus on iOS credentials. You'll need to choose the certificate files you generated and upload them as well as put in any passwords needed to access the credentials.
 
-![Appflow-edit-security-profile](/docs/assets/img/appflow/tutorial/edit-security-profile.png)
+![Appflow-edit-signing-certificate](/docs/assets/img/appflow/tutorial/edit-security-profile.png)
 
 Use the generated `.p12` file for the certificate, the `.mobileprovision` file for the Provisioning Profile, and the password used to generate the .p12 file for the password.
 
@@ -62,13 +62,13 @@ Once that Profile has been created, you can click the Edit button to remove and/
 
 ## iOS native build in Appflow
 
-You're now ready to build iOS apps on Appflow! Trigger a new iOS native build just like you did for Android earlier, including the security profile you just created.
+You're now ready to build iOS apps on Appflow! Trigger a new iOS native build just like you did for Android earlier, including the signing certificate you just created.
 
 1. Select the commit.
 2. Select Target Platform as `iOS - Xcode 11`.
 3. Select the latest build Stack.
 3. Build Type Development.
-4. Select the Security Profile you created earlier (ex: ios_development).
+4. Select the signing certificate you created earlier (ex: ios_development).
 
 ![Appflow-create-ios-build](/docs/assets/img/appflow/tutorial/create-ios-build.png)
 

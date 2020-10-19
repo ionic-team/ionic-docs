@@ -7,7 +7,7 @@ nextUrl: '/docs/appflow/tutorial/ios'
 tableOfContents: true
 ---
 
-In this step, we'll create a native Android debug build. This is the easiest option to get started with native builds, since unlike iOS, a security profile is not required.
+In this step, we'll create a native Android debug build. This is the easiest option to get started with native builds, since unlike iOS, a signing certificate is not required.
 
 > Check out [this branch](https://github.com/ionic-team/tutorial-appflow/tree/part-2_Build_android) from this tutorial's companion app to compare your starter project.
 
