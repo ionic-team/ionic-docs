@@ -108,7 +108,7 @@ The Advanced Options available to customize the build include:
 
 * `--commit=<sha1>` The commit defaults to HEAD; to use a different commit you can use this option
 with the full SHA1 of the commit
-* `--target-platform=<name>` This option is mostly useful for iOS builds if for any reason a package build with a
+* `--build-stack=<name>` This option is mostly useful for iOS builds if for any reason a package build with a
 specific version of Xcode is needed. If this is omitted the preferred version is used.
 * `--build-file-name=<name>` To override the downloaded file name use this option. This might be useful, for instance, in in a CI
 build to have a consistent name for the produced artifact.
@@ -129,6 +129,6 @@ Look for the name on the signing certificate, Environments and Native Configs pa
 ![Environments](/docs/assets/img/appflow/cli-environments-list.png)
 ![Native Configs](/docs/assets/img/appflow/cli-native-config-list.png)
 
-For the Target Platform, use one of the strings identifying the platform in the Applflow Package Build form:
+For the build stack, use one of the strings identifying the platform in the Applflow Package Build form:
 
 ![Target Platform](/docs/assets/img/appflow/cli-target-platform.png)
