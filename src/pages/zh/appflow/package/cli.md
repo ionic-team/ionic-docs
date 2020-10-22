@@ -79,14 +79,14 @@ $ ionic package Building
 
 这将会提示所需的平台 (`ios`/`android`) 并构建平台的类型。
 
-For iOS or Android `release` builds, a valid signing certificate is required and can be specified using the `--security-profile=<name>` option.
+For iOS or Android `release` builds, a valid signing certificate is required and can be specified using the `--signing-certificate=<name>` option.
 
 For information on setting up signing certificates, see [here](/docs/appflow/package/credentials).
 
 上一个命令可以单步执行：
 
 ```bash
-$ ionic package build ios development --security-profile="My Signing Certificate"
+$ ionic package build ios development --signing-certificate="My Signing Certificate"
 ```
 
 一旦构建成功触发，CLI将自动开始从 Appflow 尾随日志， 如果构建成功，请下载当前目录中的 `apk`/`ipa` 文件。
@@ -103,7 +103,7 @@ $ ionic package build ios development --security-profile="My Signing Certificate
 可自定义构建的高级选项包括：
 
 * `--commit=<sha1>` 提交默认值为 HEAD; 使用不同的提交，您可以使用此选项 与提交的完整的 SHA1
-* `--target-platform=<name>` 如果基于任何原因需要使用 特定版本的 Xcode ，这个选项对iOS 构建非常有用。 如果省略，则使用首选版本。
+* `--build-stack=<name>` This option is mostly useful for iOS builds if for any reason a package build with a specific version of Xcode is needed. 如果省略，则使用首选版本。
 * `--build-file-name=<name>` 要覆盖下载的文件名使用此选项。 例如，在一个 CI 构建中，这可能是有用的，可以为制作的艺术品提供一个一致的名称。
 
 ### 按名称说明引用选项值
@@ -111,7 +111,7 @@ $ ionic package build ios development --security-profile="My Signing Certificate
 名称是区分大小写的，需要指定包含空格，例如：
 
 ```bash
-$ ionic package buildios development --security-profile="iOS Dev"
+$ ionic package build ios development --signing-certificate="iOS Dev"
 ```
 
 除了 `--commit` 选项以外，所有其他选项都需要在 Appflow 控制面板中设置全名。
@@ -120,6 +120,6 @@ Look for the name on the signing certificate, Environments and Native Configs pa
 
 ![Signing Certificates](/docs/assets/img/appflow/cli-security-profile-list.png) ![环境](/docs/assets/img/appflow/cli-environments-list.png) ![原生配置](/docs/assets/img/appflow/cli-native-config-list.png)
 
-对于目标平台，请在应用流程包构建表格中使用用于识别平台的字符串之一：
+For the build stack, use one of the strings identifying the platform in the Applflow Package Build form:
 
 ![目标平台](/docs/assets/img/appflow/cli-target-platform.png)
