@@ -15,7 +15,7 @@ nextUrl: '/docs/appflow/destinations/manual'
 ## 部署一个新构建到应用商店
 
 ```bash
-$ ionic package build <platform> <type> --security-profile=<name> --destination=<name>
+$ ionic package build <platform> <type> --signing-certificate=<name> --destination=<name>
 ```
 
 - `<platform>`
@@ -23,7 +23,7 @@ $ ionic package build <platform> <type> --security-profile=<name> --destination=
 - `<type>`
   - `app-store` or `enterprise` 面向 `iOS`
   - `release` 面向 `Android`
-- `--security-profile=<name>`
+- `--signing-certificate=<name>`
   - 所选的配置文件必须是发布或应用商店配置文件
 - `--destination=<name>`
   - 面向iOS构建，必须是一个Apple App商店地址
