@@ -73,13 +73,13 @@ If we open `App.vue` we should see the following:
 import { IonApp, IonRouterOutlet } from '@ionic/vue';
 import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
   name: 'App',
   components: {
     IonApp,
     IonRouterOutlet
   }
-};
+});
 </script>
 ```
 
