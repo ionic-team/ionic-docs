@@ -135,7 +135,7 @@ pipeline {
             }
           }
           steps {
-              sh 'ionic package build ios ad-hoc --environment="Jenkins" --native-config"=Jenkins" --security-profile="Jenkins" --target-platform="macOS - 2020.09" --build-file-name="Jenkins-$BUILD_ID.ipa"'
+              sh 'ionic package build ios ad-hoc --environment="Jenkins" --native-config"=Jenkins" --signing-certificate="Jenkins" --build-stack="macOS - 2020.09" --build-file-name="Jenkins-$BUILD_ID.ipa"'
           }
           post {
             success {
@@ -186,7 +186,7 @@ test:
 build-ios:
   stage: build
   script:
-    - ionic package build ios ad-hoc --environment="GitLab" --native-config"=GitLab" --security-profile="GitLab" --target-platform="macOS - 2020.09" --build-file-name="GitLab-$CI_PIPELINE_ID.ipa"
+    - ionic package build ios ad-hoc --environment="GitLab" --native-config"=GitLab" --signing-certificate="GitLab" --build-stack="macOS - 2020.09" --build-file-name="GitLab-$CI_PIPELINE_ID.ipa"
   artifacts:
     paths:
       - GitLab-$CI_PIPELINE_ID.ipa

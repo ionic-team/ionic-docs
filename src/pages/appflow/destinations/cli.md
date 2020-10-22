@@ -14,7 +14,7 @@ You can also create a build that will be deployed to an app store or deploy an a
 ## Deploy a new build to an app store
 
 ```bash
-$ ionic package build <platform> <type> --security-profile=<name> --destination=<name>
+$ ionic package build <platform> <type> --signing-certificate=<name> --destination=<name>
 ```
 
 - `<platform>`
@@ -22,7 +22,7 @@ $ ionic package build <platform> <type> --security-profile=<name> --destination=
 - `<type>`
   - `app-store` or `enterprise` for `ios`
   - `release` for `android`
-- `--security-profile=<name>`
+- `--signing-certificate=<name>`
   - The selected profile must be a release or app store profile
 - `--destination=<name>`
   - For an iOS build it must be a Apple App store destination

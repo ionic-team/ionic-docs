@@ -79,14 +79,14 @@ $ ionic package build
 
 This will prompt for the desired platform (`ios`/`android`) and build type for the platform.
 
-For iOS or Android `release` builds, a valid signing certificate is required and can be specified using the `--security-profile=<name>` option.
+For iOS or Android `release` builds, a valid signing certificate is required and can be specified using the `--signing-certificate=<name>` option.
 
 For information on setting up signing certificates, see [here](/docs/appflow/package/credentials).
 
 The previous commands can be executed in a single step:
 
 ```bash
-$ ionic package build ios development --security-profile="My Signing Certificate"
+$ ionic package build ios development --signing-certificate="My Signing Certificate"
 ```
 
 Once the build is successfully triggered, the CLI will automatically start tailing the logs from Appflow and, if the build is successful, download the `apk`/`ipa` file in the current directory.
@@ -108,7 +108,7 @@ The Advanced Options available to customize the build include:
 
 * `--commit=<sha1>` The commit defaults to HEAD; to use a different commit you can use this option
 with the full SHA1 of the commit
-* `--target-platform=<name>` This option is mostly useful for iOS builds if for any reason a package build with a
+* `--build-stack=<name>` This option is mostly useful for iOS builds if for any reason a package build with a
 specific version of Xcode is needed. If this is omitted the preferred version is used.
 * `--build-file-name=<name>` To override the downloaded file name use this option. This might be useful, for instance, in in a CI
 build to have a consistent name for the produced artifact.
@@ -118,7 +118,7 @@ build to have a consistent name for the produced artifact.
 Names are case sensitive and need to be specified including spaces, for instance:
 
 ```bash
-$ ionic package build ios development --security-profile="iOS Dev"
+$ ionic package build ios development --signing-certificate="iOS Dev"
 ```
 
 Apart from the `--commit` option, all others require the full name setup within the Appflow Dashboard.
@@ -129,6 +129,6 @@ Look for the name on the signing certificate, Environments and Native Configs pa
 ![Environments](/docs/assets/img/appflow/cli-environments-list.png)
 ![Native Configs](/docs/assets/img/appflow/cli-native-config-list.png)
 
-For the Target Platform, use one of the strings identifying the platform in the Applflow Package Build form:
+For the build stack, use one of the strings identifying the platform in the Applflow Package Build form:
 
 ![Target Platform](/docs/assets/img/appflow/cli-target-platform.png)
