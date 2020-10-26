@@ -1,11 +1,10 @@
 ---
+title: Use different Node in builds
 previousText: 'Private Native Plugin Keys'
 previousUrl: '/docs/appflow/cookbook/private-native-enterprise-keys'
 nextText: 'Build Stacks'
 nextUrl: '/docs/appflow/build-stacks'
 ---
-
-# 在构建中使用不同的 Node
 
 It is possible to override the Node version used during an Appflow build.
 
