@@ -1,8 +1,9 @@
 ---
 title: '快速入门'
-previousText: '欢迎使用'
+sidebar_label: Overview
+previousText: 'Welcome'
 previousUrl: '/docs/appflow'
-nextText: '连接你的仓库'
+nextText: 'Connect Your Repo'
 nextUrl: '/docs/appflow/quickstart/connect'
 tableOfContents: false
 ---
