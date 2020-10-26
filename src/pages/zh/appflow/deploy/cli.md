@@ -1,11 +1,11 @@
 ---
-previousText: '实时更新'
+title: Deploy Builds on Appflow using the Ionic CLI
+sidebar_label: Using Ionic CLI
+previousText: 'Live Update API'
 previousUrl: '/docs/appflow/deploy/api'
-nextText: '部署到应用商店'
+nextText: 'Deploy To Appstore'
 nextUrl: '/docs/appflow/destinations/intro'
 ---
-
-# 使用 Ionic CLI 在 Appflow上部署版本
 
 <blockquote>
   <p><b>注:</b>此功能仅适用于我们的<b>Scale</b>计划。 要启用此功能请 <a href="/sales">联系我们</a>。</p>
