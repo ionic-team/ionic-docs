@@ -1,8 +1,9 @@
 ---
 title: 实时更新
+sidebar_label: API
 previousText: 'Differentials'
 previousUrl: '/docs/appflow/deploy/differentials'
-nextText: '使用 Ionic CLI'
+nextText: 'Using Ionic CLI'
 nextUrl: '/docs/appflow/deploy/cli'
 ---
 
