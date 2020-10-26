@@ -1,4 +1,6 @@
 ---
+title: Migrating from PhoneGap Build to Ionic Appflow
+sidebar_label: PhoneGap Build Migration
 previousText: "Introduction"
 previousUrl: "/docs/appflow/cookbook/intro"
 nextText: "Apflow + Jenkins/GitLab/GitHub"
@@ -9,8 +11,6 @@ meta:
   image: /docs/assets/img/appflow/cookbook/meta-pgb.png
   description: Migrating from PhoneGap Build to Ionic Appflow involves a few simple steps.
 ---
-
-# Migrating from PhoneGap Build to Ionic Appflow
 
 Migrating from Adobe’s [PhoneGap Build](https://build.phonegap.com) to Ionic Appflow involves just a few simple steps. In this guide, we’ll walk through the complete migration process from start to finish. Optionally, you can migrate the app to Ionic Framework as well.
 
