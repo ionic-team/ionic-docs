@@ -1,5 +1,7 @@
 ---
-previousText: "简介"
+title: Migrating from PhoneGap Build to Ionic Appflow
+sidebar_label: PhoneGap Build Migration
+previousText: "Introduction"
 previousUrl: "/docs/appflow/cookbook/intro"
 nextText: "Apflow + Jenkins/GitLab/GitHub"
 nextUrl: "/docs/appflow/cookbook/integrate-ci"
@@ -7,10 +9,8 @@ contributors:
   - chrisgriffith
 meta:
   image: /docs/assets/img/appflow/cookbook/meta-pgb.png
-  description: 从 PhoneGap 构建迁移到 Ionic Appflow 涉及几个简单步骤。
+  description: Migrating from PhoneGap Build to Ionic Appflow involves a few simple steps.
 ---
-
-# 从 PhoneGap 构建迁移到 Ionic Appflow
 
 从Adobe的 [PhoneGap 构建](https://build.phonegap.com) 迁移到 Ionic Appflow 只涉及几个简单的步骤。 在本指南中，我们将从开始到完成整个迁移过程。 还可以选择的是，您也可以将应用程序迁移到Ionic框架。
 
