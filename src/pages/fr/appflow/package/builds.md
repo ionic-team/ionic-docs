@@ -1,11 +1,10 @@
 ---
+title: Package Builds
 previousText: 'Introduction'
 previousUrl: '/docs/appflow/package/intro'
 nextText: 'Package Build Types'
 nextUrl: '/docs/appflow/package/build-types'
 ---
-
-# Package Builds
 
 ## Overview
 
