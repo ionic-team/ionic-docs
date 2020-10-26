@@ -1,11 +1,10 @@
 ---
+title: Generating Certificates
 previousText: 'Package Build Types'
 previousUrl: '/docs/appflow/package/build-types'
 nextText: 'Adding Certificates'
 nextUrl: '/docs/appflow/package/adding-credentials'
 ---
-
-# Generating Certificates
 
 Signing certificates securely store your credentials so you can easily reference
 them when building your app in the cloud.

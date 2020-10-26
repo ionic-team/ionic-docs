@@ -1,5 +1,6 @@
 ---
 title: 'Connect Your Repo'
+sidebar_label: Connect your Repo
 previousText: 'Quickstart Home'
 previousUrl: '/docs/appflow/quickstart'
 nextText: 'Connect Using GitHub'

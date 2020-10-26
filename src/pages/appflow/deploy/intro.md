@@ -1,5 +1,6 @@
 ---
 title: 'Live Update'
+sidebar_label: Overview
 previousText: 'Quickstart'
 previousUrl: '/docs/appflow/quickstart'
 nextText: 'Setup'

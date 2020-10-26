@@ -1,12 +1,11 @@
 ---
 title: "Cookbook"
+sidebar_label: Overview
 previousText: "Webhooks"
 previousUrl: "/docs/appflow/automation/webhooks"
 nextText: "Migrating from PhoneGap Build to Ionic Appflow"
 nextUrl: "/docs/appflow/cookbook/phonegap-build-migration"
 ---
-
-# Cookbook
 
 ### [Migrating from PhoneGap Build to Ionic Appflow](/docs/appflow/cookbook/phonegap-build-migration)
 

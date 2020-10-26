@@ -1,11 +1,11 @@
 ---
+title: Using Appflow in Jenkins, GitLab CI, & GitHub Actions
+sidebar_label: Jenkins, GitHub Actions, GitLab
 previousText: "PhoneGap Build Migration"
 previousUrl: "/docs/appflow/cookbook/phonegap-build-migration"
 nextText: "Using private Git repositories"
 nextUrl: "/docs/appflow/cookbook/private_git"
 ---
-
-# Using Appflow in Jenkins, GitLab CI, & GitHub Actions
 
 For those who already use a CI/CD system like Jenkins, GitLab CI, & GitHub Actions you can easily integrate Appflow with those systems to
 do both live updates from them as well as native binary builds. Triggering native builds in particular can save you the headache of having

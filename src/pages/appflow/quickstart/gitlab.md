@@ -1,5 +1,6 @@
 ---
 title: 'Connect Using GitLab'
+sidebar_label: GitLab
 previousText: 'Connect Your Repo'
 previousUrl: '/docs/appflow/quickstart/connect'
 nextText: 'Install the Appflow SDK'

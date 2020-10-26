@@ -1,11 +1,10 @@
 ---
+title: Private Ionic Native Enterprise Edition Keys in Open Source Apps
 previousText: 'Using private NPM modules'
 previousUrl: '/docs/appflow/cookbook/private_npm_modules'
 nextText: 'Use different Node in builds'
 nextUrl: '/docs/appflow/cookbook/switch_node_version'
 ---
-
-# Private Ionic Native Enterprise Edition Keys in Open Source Apps
 
 If you're building a public, open source app that uses Ionic Native Enterprise Edition, you'll likely want to keep the native key secret.
 

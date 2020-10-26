@@ -1,11 +1,11 @@
 ---
+title: Using Live Update
+sidebar_label: Setup
 previousText: 'Introduction'
 previousUrl: '/docs/appflow/deploy/intro'
 nextText: 'Live Update Builds'
 nextUrl: '/docs/appflow/deploy/builds'
 ---
-
-# Using Live Update
 
 Ionic Appflow's Live Update feature makes it easy to deploy app updates in real time without going through a traditional app store submission process for the vast majority of business logic, UI, and style changes.
 

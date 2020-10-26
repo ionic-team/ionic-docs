@@ -1,11 +1,11 @@
 ---
+title: Package builds on Appflow using the Ionic CLI
+sidebar_label: Using Ionic CLI
 previousText: 'Native Configurations'
 previousUrl: '/docs/appflow/package/native-configs'
 nextText: 'Automations'
 nextUrl: '/docs/appflow/automation/intro'
 ---
-
-# Package builds on Appflow using the Ionic CLI
 
 <blockquote>
   <p><b>Note:</b> This feature is only available on our <b>Scale</b> plan. Please <a href="/sales">contact us</a> to enable this feature.</p>

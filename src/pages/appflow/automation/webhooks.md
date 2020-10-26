@@ -1,11 +1,11 @@
 ---
+title: Understanding Webhooks
+sidebar_label: Webhooks
 previousText: 'Environments'
 previousUrl: '/docs/appflow/automation/environments'
 nextText: 'Cookbook'
 nextUrl: '/docs/appflow/cookbook/intro'
 ---
-
-# Understanding Webhooks
 
 When a webhook URL is specified for an automation, a POST is made every time a build completes.  Information is
 included about the build, as well as the user who triggered it and the commit that it was built from.

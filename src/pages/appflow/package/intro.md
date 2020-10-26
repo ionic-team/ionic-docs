@@ -1,12 +1,12 @@
 ---
+title: Packaging Native Binaries
+sidebar_label: Overview
 previousText: 'Manual Deploy'
 previousUrl: '/docs/appflow/destinations/manual'
 nextText: 'Package Builds'
 nextUrl: '/docs/appflow/package/builds'
 tableOfContents: false
 ---
-
-# Packaging Native Binaries
 
 Ionic Appflow's Package feature makes it easy to build native app binaries for iOS and Android in the cloud.
 Perfect for automating binary builds and for developers using Windows that want to build iOS apps.
