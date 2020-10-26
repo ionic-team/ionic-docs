@@ -1,8 +1,9 @@
 ---
 title: 'Live Update'
-previousText: 'Démarrage rapide'
+sidebar_label: Overview
+previousText: 'Quickstart'
 previousUrl: '/docs/appflow/quickstart'
-nextText: 'Configurer'
+nextText: 'Setup'
 nextUrl: '/docs/appflow/deploy/setup'
 tableOfContents: false
 ---
