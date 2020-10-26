@@ -1,8 +1,9 @@
 ---
 title: '连接您的代码仓库'
-previousText: '快速启动首页'
+sidebar_label: Connect your Repo
+previousText: 'Quickstart Home'
 previousUrl: '/docs/appflow/quickstart'
-nextText: '使用 GitHub 连接'
+nextText: 'Connect Using GitHub'
 nextUrl: '/docs/appflow/quickstart/github'
 tableOfContents: false
 ---
