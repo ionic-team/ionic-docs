@@ -1,11 +1,11 @@
 ---
+title: Using private Git repositories
+sidebar_label: Using Private Git repositories
 previousText: "Apflow + Jenkins/GitLab/GitHub"
 previousUrl: "/docs/appflow/cookbook/integrate-ci"
 nextText: "Using private NPM modules"
 nextUrl: "/docs/appflow/cookbook/private_npm_modules"
 ---
-
-# Using private Git repositories
 
 During the build process, it might be necessary to access other private repositories containing, for instance, libraries.
 
