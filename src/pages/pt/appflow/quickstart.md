@@ -1,5 +1,6 @@
 ---
 title: 'Quickstart'
+sidebar_label: Overview
 previousText: 'Welcome'
 previousUrl: '/docs/appflow'
 nextText: 'Connect Your Repo'
