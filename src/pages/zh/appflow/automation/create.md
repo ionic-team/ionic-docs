@@ -1,11 +1,11 @@
 ---
-previousText: '简介'
+title: Using Automations
+sidebar_label: Create Automations
+previousText: 'Introduction'
 previousUrl: '/docs/appflow/automation/intro'
-nextText: '环境'
+nextText: 'Environments'
 nextUrl: '/docs/appflow/automation/environments'
 ---
-
-# 自动化
 
 ## 自动化管理
 
