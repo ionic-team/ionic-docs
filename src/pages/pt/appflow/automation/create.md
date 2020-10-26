@@ -1,11 +1,11 @@
 ---
+title: Using Automations
+sidebar_label: Create Automations
 previousText: 'Introduction'
 previousUrl: '/docs/appflow/automation/intro'
 nextText: 'Environments'
 nextUrl: '/docs/appflow/automation/environments'
 ---
-
-# Using Automations
 
 ## Managing Automations
 
