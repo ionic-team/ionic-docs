@@ -1,11 +1,11 @@
 ---
+title: Using private NPM modules
+sidebar_label: Using Private NPM modules
 previousText: 'Using private Git repositories'
-previousUrl: '/docs/appollow/cookbook/private_git'
+previousUrl: '/docs/appflow/cookbook/private_git'
 nextText: 'Private Native Plugin Keys'
 nextUrl: '/docs/appflow/cookbook/private-native-enterprise-keys'
 ---
-
-# 使用私有 NPM 模块
 
 使用 npm CLI 获取验证码：
 
