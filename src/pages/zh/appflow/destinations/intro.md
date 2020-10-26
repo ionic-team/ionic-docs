@@ -1,8 +1,9 @@
 ---
 title: '部署到苹果应用商店'
-previousText: '部署'
+sidebar_label: Overview
+previousText: 'Deploy'
 previousUrl: '/docs/appflow/deploy/cli'
-nextText: '目标'
+nextText: 'Destinations'
 nextUrl: '/docs/appflow/destinations/destinations'
 ---
 
