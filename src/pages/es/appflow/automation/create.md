@@ -1,11 +1,11 @@
 ---
-previousText: 'Introducción'
+title: Using Automations
+sidebar_label: Create Automations
+previousText: 'Introduction'
 previousUrl: '/docs/appflow/automation/intro'
-nextText: 'Ambientes'
+nextText: 'Environments'
 nextUrl: '/docs/appflow/automation/environments'
 ---
-
-# Usando automatizaciones
 
 ## Automatización minera
 
