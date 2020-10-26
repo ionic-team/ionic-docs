@@ -1,11 +1,10 @@
 ---
+title: Native Configurations
 previousText: 'Adding Certificates'
 previousUrl: '/docs/appflow/package/adding-credentials'
 nextText: 'Using Ionic CLI'
 nextUrl: '/docs/appflow/package/cli'
 ---
-
-# Native Configurations
 
 <blockquote>
   <p><b>Note:</b>This feature is only available on our <a href="/pricing">Growth plans</a> and above.</p>
