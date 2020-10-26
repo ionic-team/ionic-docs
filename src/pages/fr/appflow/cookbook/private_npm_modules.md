@@ -1,11 +1,11 @@
 ---
+title: Using private NPM modules
+sidebar_label: Using Private NPM modules
 previousText: 'Using private Git repositories'
 previousUrl: '/docs/appflow/cookbook/private_git'
 nextText: 'Private Native Plugin Keys'
 nextUrl: '/docs/appflow/cookbook/private-native-enterprise-keys'
 ---
-
-# Using private NPM modules
 
 Get an authentication token using the npm CLI:
 
