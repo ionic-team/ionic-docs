@@ -1,11 +1,11 @@
 ---
-previousText: '原生配置'
+title: Package builds on Appflow using the Ionic CLI
+sidebar_label: Using Ionic CLI
+previousText: 'Native Configurations'
 previousUrl: '/docs/appflow/package/native-configs'
-nextText: '自动化'
+nextText: 'Automations'
 nextUrl: '/docs/appflow/automation/intro'
 ---
-
-# 软件包在应用程序流上使用 Ionic CLI
 
 <blockquote>
   <p><b>注意：</b> 此功能仅适用于我们的 <b>等级</b> 计划。 请 <a href="/sales">联系我们</a> 来启用此功能。</p>
