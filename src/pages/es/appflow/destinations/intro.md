@@ -1,5 +1,6 @@
 ---
 title: 'Deploy To App Stores'
+sidebar_label: Overview
 previousText: 'Deploy'
 previousUrl: '/docs/appflow/deploy/cli'
 nextText: 'Destinations'
