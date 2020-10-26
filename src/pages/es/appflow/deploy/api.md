@@ -1,9 +1,10 @@
 ---
 title: Live Update API
+sidebar_label: API
 previousText: 'Differentials'
 previousUrl: '/docs/appflow/deploy/differentials'
-nextText: 'Usando Ionic CLI'
-nextUrl: '/docs/appflow/deploy/api'
+nextText: 'Using Ionic CLI'
+nextUrl: '/docs/appflow/deploy/cli'
 ---
 
 
