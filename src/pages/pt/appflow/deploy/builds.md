@@ -1,11 +1,11 @@
 ---
+title: Live Update Builds
+sidebar_label: Builds
 previousText: 'Setup'
 previousUrl: '/docs/appflow/deploy/setup'
 nextText: 'Channels'
 nextUrl: '/docs/appflow/deploy/channels'
 ---
-
-# Live Update Builds
 
 ## Overview
 
