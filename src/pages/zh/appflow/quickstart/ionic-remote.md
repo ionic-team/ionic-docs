@@ -9,7 +9,10 @@ nextUrl: '/docs/appflow/quickstart/installation'
 如果你不使用支持的 git repo 集成，你可以直接将你的源代码推到 Ional Appflow使用Git。
 
 <blockquote>
-  转化
+  <b>Ionic Appflow is <i>not a replacement</i> for a git hosting service.</b><br />
+  It is recommended that you use a git hosting service to manage your primary app source code
+  (GitHub, Bitbucket, etc.)!<br /><br />
+  The <code>ionic</code> remote is used only for interacting with the Ionic Appflow services.
 </blockquote>
 
 ## 链接您的仓库
