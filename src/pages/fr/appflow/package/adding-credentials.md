@@ -18,7 +18,7 @@ Click the `Add certificate` button to create a new signing certificate. Both iOS
   
 <b>Note:</b> Signing certificates are created as either `Production` of `Development` and can only house the the
 <a href="/docs/appflow/package/build-types">build types</a> associated with the signing certificate type. <br />
-<b>For example:</b> <a href="/docs/appflow/package/build-types#app-store">App Store builds</a> require an iOS production certificate & distribution provisioning profile and therefore must use a </b>Production</b> type profile.
+<b>For example:</b> <a href="/docs/appflow/package/build-types#app-store">App Store builds</a> require an iOS production certificate & distribution provisioning profile and therefore must use a <b>Production</b> type profile.
 </blockquote>
 
 ![Add Profile](/docs/assets/img/appflow/ss-add-profile.png)
