@@ -20,7 +20,7 @@ one signing certificate, so we recommend making things like "Real App Store Cert
 <a href="/docs/appflow/package/build-types">build types</a> associated with the signing certificate type.
 <br/>
 <b>For example:</b> <a href="/docs/appflow/package/build-types#app-store">App Store builds</a> require an iOS production certificate & distribution provisioning profile
-and therefore must use a </b>Production</b> type profile.
+and therefore must use a <b>Production</b> type profile.
 </blockquote>
 
 ![Add Profile](/docs/assets/img/appflow/ss-add-profile.png)

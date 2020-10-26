@@ -52,7 +52,7 @@ Now, let's try modifying the build script in your `package.json` file to build f
 
 Commit the changes made to your `package.json` file and trigger a new build with the environment added. This should result in a production build of your app.
 
-![Appflow-automation-environment](/docs/assets/img/appflow/tutorial/automation-environment.png)<br><br>
+![Appflow-automation-environment](/docs/assets/img/appflow/tutorial/automation-environment.png)<br /><br />
 
 ### Additional Tips
 

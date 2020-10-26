@@ -19,10 +19,10 @@ First, you'll need to install the Appflow SDK into your app.
 
 To install the Appflow SDK plugin from the Dashboard:
 
-1. Select destinations from the deployments in the side menu <br><br>
-	![Appflow-destinations](/docs/assets/img/appflow/tutorial/destinations.png)<br><br>
-2. Follow the instructions provided by clicking `Install Instructions` for the **production** channel on the Destinations list in the Appflow Dashboard.<br><br>
-	![Appflow-add-sdk](/docs/assets/img/appflow/tutorial/add-sdk.png)<br><br>
+1. Select destinations from the deployments in the side menu <br /><br />
+	![Appflow-destinations](/docs/assets/img/appflow/tutorial/destinations.png)<br /><br />
+2. Follow the instructions provided by clicking `Install Instructions` for the **production** channel on the Destinations list in the Appflow Dashboard.<br /><br />
+	![Appflow-add-sdk](/docs/assets/img/appflow/tutorial/add-sdk.png)<br /><br />
 
 The background method is selected by default. How it works: the app will check for updates in the background. If an update is available, it will be downloaded and installed while the user is using the older version. The next time they launch the app, the new version will be loaded.
 
@@ -72,15 +72,15 @@ Once the web build is successful, assign it to the channel in Destinations that 
 
 You can do that by selecting the deploy live updates option from the build log once it is successful.
 
-![Appflow-deploy-update](/docs/assets/img/appflow/tutorial/deploy-update.png)<br><br>
+![Appflow-deploy-update](/docs/assets/img/appflow/tutorial/deploy-update.png)<br /><br />
 
 Select the production channel from the dropdown and click deploy.
 
-![Appflow-deploy-prod](/docs/assets/img/appflow/tutorial/deploy-prod.png)<br><br>
+![Appflow-deploy-prod](/docs/assets/img/appflow/tutorial/deploy-prod.png)<br /><br />
 
 You can also see a list of all the deployments done so far from the destinations tab and selecting your channel.
 
-![Appflow-deploy-history](/docs/assets/img/appflow/tutorial/deploy-history.png)<br><br>
+![Appflow-deploy-history](/docs/assets/img/appflow/tutorial/deploy-history.png)<br /><br />
 
 Next, on the device or simulator upon which you installed the APK, you can see the Live Update applied to the app by either placing the app into the background or closing then re-opening it.
 

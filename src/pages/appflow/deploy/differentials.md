@@ -14,7 +14,7 @@ previous updates. This can be done using manifest file.
 If the original native app (ipa/apk) has a deploy manifest file(`pro-manifest.json`) inside the built web directory (`www`), when an update is 
 recieved, the manifest file which includes a hash for every file in the `www/` dir, is compared to the manifest included in the update and determines the files
 it needs to download. So that it can take advantage of reusing files/assets that may not have changed. 
-This makes the update much smaller and faster, resulting in improved performance over slower connections. <br><br> If there isn't a manifest file in 
+This makes the update much smaller and faster, resulting in improved performance over slower connections. <br /><br /> If there isn't a manifest file in 
 the bundled web app it will need to download all the files, resulting in unnecessary slower updates.
 
 ## How do I generate manifest file?
@@ -54,7 +54,7 @@ ionic deploy manifest
 npx cap sync
 ```
 
-The simplest way to manage that locally is by adding it to the build script in package.json.<br>
+The simplest way to manage that locally is by adding it to the build script in package.json.<br />
 ```
  "scripts": {
    "ng": "ng",
@@ -62,14 +62,14 @@ The simplest way to manage that locally is by adding it to the build script in p
    "build": "ng build; ionic deploy manifest",
   },
 ```
-<br>
+<br />
 
 ## How do I know if my app contains a manifest file that is already built?
 
 You can verify the Deploy manifest file by extracting the production `.ipa/.apk` file and checking for the presence of `pro-manifest.json` in the www/ dir. 
 That should be an easy way to see if the manifest is being prepared correctly when you build for native.
 
-<br>
+<br />
 
 ## Known Issues and Common Misconceptions
 * Misconception
@@ -78,7 +78,7 @@ That should be an easy way to see if the manifest is being prepared correctly wh
 
   No, If the native build does not contain the manifest file, it is impossible for the deploy to know which files are already present. 
   Therefore, all the files are downloaded with every update.
-* Known Issue <br><br>
+* Known Issue <br /><br />
 There can be issues when the manifest is prepared on `Windows` owing to the way line endings are handled and commited. 
 If you're building for native on Windows you may want to try a build using Appflow and see if you notice an improvement.
 
