@@ -9,10 +9,10 @@ nextUrl: '/docs/appflow/quickstart/installation'
 Si no está utilizando una de las integraciones de repositorio de git soportadas, puede enviar su código fuente directamente a Ionic Appflow usando Git.
 
 <blockquote>
-  <b>Ionic Appflow <i>no es un reemplazo</i> para un servicio de alojamiento git.</b></br>
-  Se recomienda utilizar un servicio de alojamiento git para administrar el código fuente principal de tu aplicación
-  (GitHub, Bitbucket, etc.) !<br /><br />
-  El <code>iónico</code> remoto se utiliza solo para interactuar con los servicios de Ionic Appflow.
+  <b>Ionic Appflow is <i>not a replacement</i> for a git hosting service.</b><br />
+  It is recommended that you use a git hosting service to manage your primary app source code
+  (GitHub, Bitbucket, etc.)!<br /><br />
+  The <code>ionic</code> remote is used only for interacting with the Ionic Appflow services.
 </blockquote>
 
 ## Vincula tu repositorio
