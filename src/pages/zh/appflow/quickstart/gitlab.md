@@ -1,8 +1,9 @@
 ---
 title: '使用 GitLab 连接'
-previousText: '连接你的仓库'
+sidebar_label: GitLab
+previousText: 'Connect Your Repo'
 previousUrl: '/docs/appflow/quickstart/connect'
-nextText: '安装 Appflow SDK'
+nextText: 'Install the Appflow SDK'
 nextUrl: '/docs/appflow/quickstart/installation'
 ---
 
