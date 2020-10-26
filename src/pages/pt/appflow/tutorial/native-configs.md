@@ -31,7 +31,7 @@ With Native Configs, you can make Staging, QA, and Production versions of your a
 
 3. Now you can use this Native Configuration in conjunction with an Automation to create a QA build each time you push a commit to a specific branch. To create the automation, enter the branch as "QA" and select QA native config from the drop down.
 
-![Appflow-automation-native-config](/docs/assets/img/appflow/tutorial/automation-native-config.png)<br><br>
+![Appflow-automation-native-config](/docs/assets/img/appflow/tutorial/automation-native-config.png)<br /><br />
 
 4. You can also use Native configuration when triggering a build manually.
 
