@@ -1,11 +1,11 @@
 ---
-previousText: '环境'
+title: Understanding Webhooks
+sidebar_label: Webhooks
+previousText: 'Environments'
 previousUrl: '/docs/appflow/automation/environments'
-nextText: '参考手册'
-nextUrl: '/docs/apport/commodbook/intro'
+nextText: 'Cookbook'
+nextUrl: '/docs/appflow/cookbook/intro'
 ---
-
-# 了解 Webhooks
 
 当为自动化指定webhook URL时，每次构建完成都会生成一个POST。 其中包括关于构建的信息，以及触发构建的用户和构建的提交。
 
