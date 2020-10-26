@@ -1,11 +1,11 @@
 ---
+title: Deploy Builds on Appflow using the Ionic CLI
+sidebar_label: Using Ionic CLI
 previousText: 'Live Update API'
 previousUrl: '/docs/appflow/deploy/api'
 nextText: 'Deploy To Appstore'
 nextUrl: '/docs/appflow/destinations/intro'
 ---
-
-# Deploy Builds on Appflow using the Ionic CLI
 
 <blockquote>
   <p><b>Note:</b> This feature is only available on our <b>Scale</b> plan. Please <a href="/sales">contact us</a> to enable this feature.</p>
