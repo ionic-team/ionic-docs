@@ -1,8 +1,9 @@
 ---
 title: '使用 Bitbucket 连接'
-previousText: '连接您的代码仓库'
+sidebar_label: Bitbucket
+previousText: 'Connect your Repo'
 previousUrl: '/docs/appflow/quickstart/connect'
-nextText: '安装 Appflow SDK'
+nextText: 'Install the Appflow SDK'
 nextUrl: '/docs/appflow/quickstart/installation'
 ---
 
