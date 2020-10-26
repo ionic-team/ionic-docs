@@ -1,11 +1,11 @@
 ---
-previousText: '自动化'
+title: Build Environments
+sidebar_label: Environments
+previousText: 'Create Automations'
 previousUrl: '/docs/appflow/automation/create'
 nextText: 'Webhooks'
 nextUrl: '/docs/appflow/automation/webhooks'
 ---
-
-# 构建环境
 
 ## 简介
 
