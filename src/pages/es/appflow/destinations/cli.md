@@ -1,5 +1,6 @@
 ---
 title: 'Command-line Deploy'
+sidebar_label: Using Ionic CLI
 previousText: 'Builds/Automations'
 previousUrl: '/docs/appflow/destinations/builds'
 nextText: 'Manual'
