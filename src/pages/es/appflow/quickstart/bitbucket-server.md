@@ -1,5 +1,6 @@
 ---
 title: 'Connect Using Bitbucket Server'
+sidebar_label: Bitbucket Server
 previousText: 'Connect your Repo'
 previousUrl: '/docs/appflow/quickstart/connect'
 nextText: 'Install the Appflow SDK'
