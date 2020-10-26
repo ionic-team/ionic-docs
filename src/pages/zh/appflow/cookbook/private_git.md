@@ -1,11 +1,11 @@
 ---
+title: Using private Git repositories
+sidebar_label: Using Private Git repositories
 previousText: "Apflow + Jenkins/GitLab/GitHub"
 previousUrl: "/docs/appflow/cookbook/integrate-ci"
-nextText: "使用私有 NPM 模块"
+nextText: "Using private NPM modules"
 nextUrl: "/docs/appflow/cookbook/private_npm_modules"
 ---
-
-# Using private Git repositories
 
 在构建过程中，可能需要访问其他包含libraries的私有存储库。
 
