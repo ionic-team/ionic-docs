@@ -1,8 +1,9 @@
 ---
 title: 'Conectar usando Ionic Remoto'
-previousText: 'Conéctate a tu Repositorio'
+sidebar_label: Ionic Remote
+previousText: 'Connect your Repo'
 previousUrl: '/docs/appflow/quickstart/connect'
-nextText: 'Instalar el SDK de Appflow'
+nextText: 'Install the Appflow SDK'
 nextUrl: '/docs/appflow/quickstart/installation'
 ---
 
