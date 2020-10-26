@@ -1,12 +1,11 @@
 ---
 title: "参考手册"
+sidebar_label: Overview
 previousText: "Webhooks"
 previousUrl: "/docs/appflow/automation/webhooks"
-nextText: "从 PhoneGap 构建迁移到 Ionic Appflow"
+nextText: "Migrating from PhoneGap Build to Ionic Appflow"
 nextUrl: "/docs/appflow/cookbook/phonegap-build-migration"
 ---
-
-# 参考手册
 
 ### [从 PhoneGap 构建迁移到 Ionic Appflow](/docs/appflow/cookbook/phonegap-build-migration)
 
