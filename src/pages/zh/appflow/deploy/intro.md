@@ -1,8 +1,9 @@
 ---
 title: '实时更新'
-previousText: '快速入门'
+sidebar_label: Overview
+previousText: 'Quickstart'
 previousUrl: '/docs/appflow/quickstart'
-nextText: '设置'
+nextText: 'Setup'
 nextUrl: '/docs/appflow/deploy/setup'
 tableOfContents: false
 ---
