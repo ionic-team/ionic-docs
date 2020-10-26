@@ -1,11 +1,11 @@
 ---
-previousText: '简介'
+title: Using Live Update
+sidebar_label: Setup
+previousText: 'Introduction'
 previousUrl: '/docs/appflow/deploy/intro'
 nextText: 'Live Update Builds'
 nextUrl: '/docs/appflow/deploy/builds'
 ---
-
-# 使用实时更新
 
 Ionic Appflow的实时更新功能使得在大多数业务逻辑上可以轻松地实时部署应用更新，而无需经过传统的应用商店提交流程， 界面和风格更改。
 
