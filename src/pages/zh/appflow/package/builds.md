@@ -1,11 +1,10 @@
 ---
-previousText: '简介'
+title: Package Builds
+previousText: 'Introduction'
 previousUrl: '/docs/appflow/package/intro'
-nextText: '构建不同类型原生包'
+nextText: 'Package Build Types'
 nextUrl: '/docs/appflow/package/build-types'
 ---
-
-# 构建原生工具包
 
 ## 概览
 
