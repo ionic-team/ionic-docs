@@ -1,8 +1,9 @@
 ---
 title: '命令行部署'
-previousText: '构建/自动化'
+sidebar_label: Using Ionic CLI
+previousText: 'Builds/Automations'
 previousUrl: '/docs/appflow/destinations/builds'
-nextText: '手动'
+nextText: 'Manual'
 nextUrl: '/docs/appflow/destinations/manual'
 ---
 
