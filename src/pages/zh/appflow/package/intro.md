@@ -1,12 +1,12 @@
 ---
-previousText: '手动部署'
+title: Packaging Native Binaries
+sidebar_label: Overview
+previousText: 'Manual Deploy'
 previousUrl: '/docs/appflow/destinations/manual'
-nextText: '构建原生工具包'
+nextText: 'Package Builds'
 nextUrl: '/docs/appflow/package/builds'
 tableOfContents: false
 ---
-
-# 打包本机二进制文件
 
 Iond Appflow的软件包功能使得在云端为iOS和安卓构建本地应用二进制变得很容易。 完美用于自动二进制构建和开发者使用 Windows 构建iOS 应用程序。
 
