@@ -1,11 +1,11 @@
 ---
-previousText: '设置'
+title: Live Update Builds
+sidebar_label: Builds
+previousText: 'Setup'
 previousUrl: '/docs/appflow/deploy/setup'
 nextText: 'Channels'
 nextUrl: '/docs/appflow/deploy/channels'
 ---
-
-# 实时更新版本
 
 ## 概览
 
