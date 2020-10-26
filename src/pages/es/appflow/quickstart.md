@@ -1,8 +1,9 @@
 ---
 title: 'Inicio rápido'
-previousText: 'Bienvenido'
+sidebar_label: Overview
+previousText: 'Welcome'
 previousUrl: '/docs/appflow'
-nextText: 'Conéctate a tu Repositorio'
+nextText: 'Connect Your Repo'
 nextUrl: '/docs/appflow/quickstart/connect'
 tableOfContents: false
 ---
