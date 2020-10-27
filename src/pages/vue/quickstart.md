@@ -113,7 +113,7 @@ Let's break it down, starting with the first group of imports.
 import { IonApp, IonRouterOutlet } from '@ionic/vue';
 ```
 
-To use a component in Vue, you must first import it. So for Ionic Framework, this means anytime we want to use a Button or a Card, it must be added to our imports. In the case of our `App` component, we are using `IonApp` and `IonRouterOutlet`.
+To use a component in Vue, you must first import it. So for Ionic Framework, this means anytime we want to use a Button or a Card, it must be added to our imports. In the case of our `App` component, we are using `IonApp` and `IonRouterOutlet`. You can also register components globally if you find yourself importing the same components repeatedly. This comes with performance tradeoffs that we cover in [Optimizing Your App](#optimizing-your-app).
 
 From there, let's look at the template.
 
@@ -634,6 +634,107 @@ export default defineComponent({
 ```
 
 In `main.ts`, the `addIcons` function lets us register icons globally and give it a string as a key. We then reference the icon by that key in our `Home` component.
+
+## Optimizing Your Build
+
+Vue gives you several tools to fine tune your application. This section will cover the options that are most relevant to Ionic Framework.
+
+### Local Component Registration (Recommended)
+
+By default, Ionic Framework components are registered locally. With local registration, these components are imported and provided to each Vue component you want to use them in. This is the recommended approach as it allows lazy loading and treeshaking to work properly with Ionic Framework components. 
+
+The one downside to this approach is that it may be tedious to re-import your Ionic Framework components multiple times. However, we feel that the performance benefits you receive in exchange are worth it.
+
+Also note that locally registered components are not available in subcomponents. You will need to re-import the Ionic Framework components you would like to use in your subcomponent.
+
+Let's take a look at how local component registration works:
+
+```html
+<template>
+  <ion-page>
+    <ion-content>
+      <Subcomponent></Subcomponent>
+    </ion-content>
+  </ion-page>
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue';
+import { IonContent, IonPage } from '@ionic/vue';
+import Subcomponent from '@/components/Subcomponent.vue';
+
+export default defineComponent({
+  components: { IonContent, IonPage, Subcomponent }
+});
+</script>
+```
+
+In the example above, we are using the `IonPage` and `IonContent` components. To use them, we first import them from `@ionic/vue`. Then, we provide them to our Vue component in the `components` option. From there, we can use the components in our template.
+
+Note that since we are registering these components locally, neither `IonPage` nor `IonContent` will be available in `Subcomponent` unless we register them there as well.
+
+For more information, see the <a href="https://v3.vuejs.org/guide/component-registration.html#local-registration" target="_blank" rel="noopener noreferrer">Local Registration Vue Documentation</a>.
+
+### Global Component Registration
+
+The other option for registering components is to use global registration. Global registration involves importing the components you want to use in `main.ts` and calling the `component` method on your Vue app instance.
+
+While this makes it easier to add Ionic Framework components to your Vue app, global registration often is not ideal. To quote the Vue documentation: "If you're using a build system like Webpack, globally registering all components means that even if you stop using a component, it could still be included in your final build. This unnecessarily increases the amount of JavaScript your users have to download".
+
+Let's take a look at how global component registration works:
+
+**main.ts**
+```typescript
+import { IonContent, IonicVue, IonPage } from '@ionic/vue';
+
+const app = createApp(App)
+  .use(IonicVue)
+  .use(router);
+
+app.component('ion-content', IonContent);
+app.component('ion-page', IonPage);
+```
+
+**MyComponent.vue**
+```html
+<template>
+  <ion-page>
+    <ion-content>
+      <Subcomponent></Subcomponent>
+    </ion-content>
+  </ion-page>
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue';
+import Subcomponent from '@/components/Subcomponent.vue';
+
+export default defineComponent({
+  components: { Subcomponent }
+});
+</script>
+```
+
+In the example above, we are using the `IonPage` and `IonContent` components. To use them, we first import them from `@ionic/vue` in `main.ts`. From there, we call the `component` method on our app instance and pass it the tag name as well as the component definition. After we do that, we can use the components in the rest of our application without having to import them into each Vue component.
+
+For more information, see the <a href="https://v3.vuejs.org/guide/component-registration.html#global-registration" target="_blank" rel="noopener noreferrer">Global Registration Vue Documentation</a>.
+
+### Prefetching Application JavaScript
+
+By default, the Vue CLI will automatically generate prefetch hints for the JavaScript in your application. Prefetching utiltizes the browser idle time to download documents that the user might visit in the near future. When the user visits a page that requires the prefetched document, it can be served quickly from the browser's cache.
+
+Prefetching consumes bandwidth, so if you have a large app, you may want to disable it. You can do this by modifying or creating your `vue.config.js` file:
+
+**vue.config.js**
+```js
+module.exports = {
+  chainWebpack: config => {
+    config.plugins.delete('prefetch')
+  }
+}
+```
+
+The configuration above will prevent all files from being prefetched and, instead, will be loaded when they are needed. You can also select certain chunks to prefetch. Check out the <a href="https://cli.vuejs.org/guide/html-and-static-assets.html#prefetch" target="_blank" rel="noopener noreferrer">Vue CLI Docs on Prefetching</a> for more examples. 
  
 ## Build a Native App
 
