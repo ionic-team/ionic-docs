@@ -1,7 +1,7 @@
 ---
 title: Identity Vault
 template: enterprise-plugin
-version: 4.2.6
+version: 4.2.7
 minor: 4.2.X
 otherVersions:
   - 2.0.X
@@ -1996,6 +1996,15 @@ The possible values returned by [getAvailableHardware](#identityvault.getavailab
 ___
 
 ## Change Log
+
+
+
+### [4.2.7] (2020-10-28)
+
+
+### Bug Fixes
+
+* **android:** keyboard now displays when default passcode dialog opens
 
 
 

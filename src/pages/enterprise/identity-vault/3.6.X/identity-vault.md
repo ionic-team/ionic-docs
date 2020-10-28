@@ -1,7 +1,7 @@
 ---
 title: Identity Vault
 template: enterprise-plugin
-version: 3.6.5
+version: 3.6.6
 minor: 3.6.X
 otherVersions:
   - 2.0.X
@@ -1792,6 +1792,15 @@ The possible values returned by [getBiometricType](#identityvault.getbiometricty
 ___
 
 ## Change Log
+
+
+### [3.6.6] (2020-10-28)
+
+
+### Bug Fixes
+
+* **android:** keyboard now displays when default passcode dialog opens
+
 
 
 ### [3.6.5] (2020-09-02)
