@@ -124,7 +124,7 @@ $ openssl pkcs12 -export -inkey keyname.key -in ios_development.cer.pem -out Cer
 
 Provisioning profiles give your app access to be installed, or *provisioned*, on specific devices. For iOS App Development provisioning profiles, devices are selected manually.
 
-* Navigate to [Certificates, Identifiers & Profiles › Provisioning Profiles › Development](https://developer.apple.com/account/ios/profile/limited) in the [Apple Developer Center](https://developer.apple.com/account) and create a new provisioning profile.
+* Navigate to [Certificates, Identifiers & Profiles › Provisioning Profiles › Development](https://developer.apple.com/account/resources/profiles/list) in the [Apple Developer Center](https://developer.apple.com/account) and create a new provisioning profile.
 
 ![iOS Provisioning Profile](/docs/assets/img/appflow/ss-profiles-ios-pp-1.png)
 
