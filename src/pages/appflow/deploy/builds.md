@@ -9,10 +9,13 @@ nextUrl: '/docs/appflow/deploy/channels'
 
 ## Overview
 
-A Live Update build of your application includes only the web assets (JavaScript, HTML, fonts, and images) which can be shipped out to customer via a [Live Update](/docs/appflow/deploy/intro) deployment.
+A Live Update build of your application includes only the web assets (JavaScript, HTML, fonts, and images) which can be shipped out to customer 
+via a [Live Update](/docs/appflow/deploy/intro) deployment.
 Live Update builds can be created manually from the Ionic Dashboard, in the **Builds**
 section under **Build** in the sidebar. You will be able to pick from the list of available commits that Appflow
-knows about. If there are no available commits you will need to push a new commit to your Git remote in order for it to show up in Appflow. After picking the commit, select `Web Deploy` from the `Target platform` dropdown menu.
+knows about. If there are no available commits you will need to push a new commit to your Git remote in order 
+for it to show up in Appflow. 
+After picking the commit, select `Web` from the `Target platform` dropdown menu and choose the preferred [build stack](/docs/appflow/build-stacks).
 
 ![Navigating to Live Update Builds](/docs/assets/img/appflow/deploy-builds-create-location.png)
 
@@ -20,7 +23,8 @@ A Live Update build will do the following:
 
 * `npm install` will run to install any dependencies you have.
 * `npm run build` will run if a `build` script is detected in the `scripts` section of your `package.json` in order to build the web assets for your application.
-* The `www` directory with your built application will be stored and made available for live updates.
+* The `www` directory (or the directory specified in the `capacitor.config.json` using the key `webDir` if it is a Capacitor project) 
+containing your built application will be stored and made available for live updates.
 * You can find the history and status of your Live Update builds in the side menu under `Builds` in the `Build` tab.
 
 ## Concurrency limits

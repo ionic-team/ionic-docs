@@ -26,14 +26,14 @@ There are two ways to do this:
 
 Select the proper commit for your build. There are several required and
 optional fields you can specify:
-* <b>Target Platform</b> - The platform for your build (iOS or Android)
-* <b>Xcode Version (iOS Only)</b> - The Xcode version used to build your iOS binary (use the recommended version if possible)
+* <b>Target Platform</b> - The platform for your build (iOS or Android for a package build)
+* [Build Stack](/docs/appflow/build-stacks) - The build stack where the job will run.
 * [Build Type](/docs/appflow/package/build-types) - The type of build for the given platform (See [iOS build types](/docs/appflow/package/build-types#ios-build-types) or [Android build types](/docs/appflow/package/build-types#android-build-types))
 * [Signing Certificate](/docs/appflow/package/credentials) - The signing certificate for the for the build (if required)
 * [Environment](/docs/appflow/automation/environments#custom-environments) - The environment to use to customize your build process
 * [Native Config](/docs/appflow/package/native-configs) - The Native Config to use to customize your app configuration
 
-For the quickstart tutorial, select the `Android` platfrom and the `Debug` type build which requires
+For the quickstart tutorial, select the `Android` platform, the `Latest` build stack and the `Debug` type build which requires
 no other configuration. Once the build begins, you can view the progress and review the
 logs if you encounter errors.
 
