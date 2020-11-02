@@ -1,7 +1,7 @@
 ---
 title: Auth Connect
 template: enterprise-plugin
-version: 3.1.4
+version: 3.1.5
 minor: 3.1.X
 otherVersions:
   - 2.2.X
@@ -14,12 +14,17 @@ When used with [Ionic Identity Vault](/docs/enterprise/identity-vault), it provi
 
 Auth Connect also allows your app to support multiple authentication providers. Should you need to change providers, easily switch between them without having to develop a new solution. [Learn more.](https://ionicframework.com/auth-connect)
 
+## Demo App
+
+We have a demo app available that shows the [complete login/logout experience](https://github.com/ionic-team/demo-authconnect-auth0) using Auth0. Swap the Auth0 configuration in the `IonicAuthOptions` object to switch to a different auth provider.
+
 <native-ent-install plugin-id="auth" variables="--variable AUTH_URL_SCHEME='mycustomscheme'"></native-ent-install>
 
-Update the native project config files:
+Capacitor users will need to manually update the native project config files.
+
+For Android, update the manifest file located at android/app/src/main/AndroidManifest.xml by adding the following intents next to the other intents in the main activity node:
 
 ```xml
-// Android - AndroidManifest.xml
 <intent-filter>
     <data android:scheme="$AUTH_URL_SCHEME"/>
     <action android:name="android.intent.action.VIEW"/>
@@ -31,8 +36,11 @@ Update the native project config files:
     <category android:name="android.intent.category.DEFAULT"/>
     <data android:mimeType="text/*"/>
 </intent-filter>
+```
 
-// iOS - Info.plist (inside existing CFBundleURLTypes)
+For iOS, update the file located at ios/App/App/Info.plist by adding the following inside the existing CFBundleURLTypes node:
+
+```xml
 <dict>
     <key>CFBundleURLSchemes</key>
     <array>
@@ -41,34 +49,28 @@ Update the native project config files:
 </dict>
 ```
 
-## Reference App
-
-A [complete login/logout experience](https://github.com/ionic-team/demo-authconnect-auth0) using Auth0. Simply swap the Auth0 configuration in the `IonicAuthOptions` object to switch to a different auth provider.
+> Note: You will need to update the `$AUTH_URL_SCHEME` placeholder with the bundle id of your app in both files when using Capacitor.
 
 ## Configuring Auth Connect
 
-The hosting app configures Auth Connect with settings specific to each authentication provider. This is done by passing in an instance of [IonicAuthOptions](#ionicauthoptions) to the [IIonicAuth](#iionicauth) class. The [IIonicAuth](#iionicauth) class is the main interface exposed by the Auth Connect plugin, and is expected to be subclassed for specific behaviors and/or events.
+The main entry point into Auth Connect is done via the [IonicAuth](#iionicauth) class. To configure `IonicAuth`, you pass in a configuration object when creating a new instance of the class.
 
-The default behavior for caching tokens in the plugin is not secure and should be replaced with something more robust, such as integrating it with the [Ionic Identity Vault](/docs/enterprise/identity-vault).
-
-To access callbacks, and override behavior as needed, it is recommended to subclass the [IIonicAuth](#iionicauth) interface.
+This is done by passing in an instance of [IonicAuthOptions](#ionicauthoptions) to the [IonicAuth](#iionicauth) class. The [IonicAuth](#iionicauth) class is the main interface exposed by the Auth Connect plugin, and is expected to be subclassed for specific behaviors and/or events.
 
 ## Supported Providers
 
 Leveraging the OAuth/OpenId Connect protocols, Auth Connect supports:
 
 * [Auth0](/docs/enterprise/auth-connect/auth0)
-* Azure Active Directory (Microsoft) 
-    * v1.0
-    * v2.0, including [Azure Active Directory B2C](/docs/enterprise/auth-connect/azure-ad-b2c)
-* [Cognito](/docs/enterprise/auth-connect/aws-cognito) (AWS)
+* [Azure Active Directory (Microsoft) v1.0 & v2.0 (including B2C)](/docs/enterprise/auth-connect/azure-ad-b2c)
+* [Amazon Cognito](/docs/enterprise/auth-connect/aws-cognito)
 * [Okta](/docs/enterprise/auth-connect/okta)
 
 ## Workflow
 
 The typical Auth Connect workflow consists of:
 
-1. The hosting app instantiates the Auth Connect Plugin, passing in the [IonicAuthOptions](#ionicauthoptions) object. Configure it based on the chosen [auth provider](#supported-providers).
+1. Your client app instantiates the Auth Connect Plugin, passing in the [IonicAuthOptions](#ionicauthoptions) object. Configure it based on the chosen [auth provider](#supported-providers).
 2. On app load, the hosting app calls [IsAuthenticated](#iionicauth.isauthenticated) to check if the user is logged in already.
 3. If the user isn't logged in, redirect the app to a Login page and call the [Login](#iionicauth.login) method. Auth Connect loads the chosen auth provider's login page.
 4. The app user enters their username and password and taps the provider's login button.
@@ -76,14 +78,55 @@ The typical Auth Connect workflow consists of:
 6. The [IsAuthenticated](#iionicauth.isauthenticated) method can be called at any point to refresh the access token.
 7. Use [GetAccessToken](#getaccesstoken) to retrieve the access token if making any API requests to the auth provider.
 
-## Edge Support
+> Note: Web apps using the [current mode](#current-mode) need to implement callback handlers on [login](#iionicauth.handlelogincallback) and [logout](#iionicauth.handlelogoutcallback)
 
-It is common to create a class that extends `IonicAuth` like this:
+## Web Configuration Options
+
+When using Auth Connect in a web app, you have two options on how the login window will appear for your users. The window can either pop up in a new window/tab (known as "POPUP" mode), or it can occur in the current window ("CURRENT" mode).
+
+Here's a visual comparison:
+
+<wistia-video video-id="zk3ys1615x"></wistia-video>
+
+### Popup Mode
+
+Popup mode will pop open a new window/tab to the authentication provider, and after the user authenticates, the window will close and the user will be back at your app.
+
+Popup mode is the default, but you can explicitly specify it by setting the [implicitLogin](#ionicauthoptions.implicitLogin) option to "POPUP" in the `IonicAuthOptions` configuraiton.
+
+When using popup mode, you don't want to do any type of logic or page redirection in your `redirectUri` or `logoutUrl` pages. Once the user is done authenticating, the auth provider will redirect back to these pages, and Auth Connect will detect this and close the window.
+
+Since these pages might briefly appear to your users, we recommend either keeping the page blank or have a simple branded page that they will see before the window closes.
+
+### Current Mode
+
+Current mode redirects the user to the authentication provider in their current window, so they will temporarily leave your app and be returned to the `redirectUri` after authentication is done.
+
+To use current mode, set `impliciLogin` to "CURRENT" in the `IonicAuthOptions` configuration.
+
+When using current mode, you need to finish handling the login/logout process in the `redirectUri` and `logoutUrl` pages. This is required because in current mode, the user leaves your app completely, and Auth Connect needs to know when the user is done authenticating. To do so, use the [handleLoginCallback](#iionicauth.handlelogincallback), and [handleLogoutCallback](#iionicauth.handlelogoutcallback) methods respectively:
 
 ```typescript
-@Injectable({
-  providedIn: 'root'
-})
+await this.ionicAuth.handleLoginCallback();
+// User authed, so redirect to home page
+```
+
+```typescript
+await this.ionicAuth.handleLogoutCallback();
+// User logged out, so redirect to login page
+```
+
+### Testing Locally
+
+To test an Ionic app using Auth Connect locally, configure `IonicAuthOptions` to use `http://localhost:8100/` as the base URL for properties such as `redirectUri` and `logoutUrl`. Then, run the `ionic serve` command.
+
+### Microsoft Edge (Pre-Chromium) Support
+
+Due to a bug in the pre-Chromium version of Edge, you cannot overide a method in a subclass.
+
+For instance, it is common to create a class that extends `IonicAuth` like this:
+
+```typescript
 export class AuthenticationService extends IonicAuth {
   private vaultService: VaultService;
   ...
@@ -95,12 +138,9 @@ export class AuthenticationService extends IonicAuth {
 }
 ```
 
-However, due to a bug in the pre-Chromium version of Edge, you cannot overide a method like that in the subclass. If you need to support the pre-Chromium version of Edge, you will need to write that code as follows:
+If you need to support the pre-Chromium version of Edge, you will need to write your own method in the subclass that calls into the base class as follows:
 
 ```typescript
-@Injectable({
-  providedIn: 'root'
-})
 export class AuthenticationService extends IonicAuth {
   private vaultService: VaultService;
   ...
@@ -112,36 +152,11 @@ export class AuthenticationService extends IonicAuth {
 }
 ```
 
-You will then need to change external references from `this.authentication.isAuthenticated()` to `this.authentication.myAppIsAuthenticated()` (the name is not important so much as the fact that you are not overriding the base class method, pick a name that makes sense to you). You will also need to use the `CURRENT` behavior for `implicitLogin` on Edge.
+You will then need to change external references from `this.authentication.isAuthenticated()` to `this.authentication.myAppIsAuthenticated()` (the name is not important so much as the fact that you are not overriding the base class method, pick a name that makes sense to you).
+
+You will also need to use the `CURRENT` behavior for `implicitLogin` on Edge.
 
 **Note:** this is *only* required if you need to support pre-Chromium Edge browsers. If you are creating a pure hybrid-native app or otherwise have no reason to support pre-Chromium Edge, then you can override methods like `isAuthenticated()` in the usual manner.
-
-## Web Configuration Options
-
-### Login UX Options
-
-Login can occur either within the current tab/window or a separate pop-up window (the default). Here's a visual comparison:
-
-<wistia-video video-id="zk3ys1615x"></wistia-video>
-
-Within the `IonicAuthOptions` configuration, set `implicit_login` to "CURRENT". Next, in the login page (or whichever page is navigated to after login - the `redirectUri` in the config options) implement:
-
-```typescript
-async ngOnInit() {
-  // If coming back after logging into the auth provider,
-  // grab the token from the URL and pass it to Auth Connect
-  if (window.location.hash) {
-    // Pass it to Auth Connect
-    await this.authentication.handleCallback(window.location.href);
-    // Navigate to another page
-    this.navController.navigateRoot('/tabs/home');
-  }
-}
-```
-
-### Testing Locally
-
-To test an Ionic app using Auth Connect locally, configure `IonicAuthOptions` to use `http://localhost:8100/` as the base URL for properties such as `redirectUri` and `logoutUrl`. Then, run the `ionic serve` command.
 
 ## Upgrading to v3.0.0
 
@@ -157,24 +172,18 @@ To test an Ionic app using Auth Connect locally, configure `IonicAuthOptions` to
 
 You can find the API and interface documentation for everything below. The main classes to pay attention to are:
 
-* [IIonicAuth](#iionicauth)
+* [IonicAuth](#iionicauth)
 * [IonicAuthOptions](#ionicauthoptions)
-* [TokenStorageProvider](#tokenstorageprovider) (if [Ionic Identity Vault](/docs/enterprise/identity-vault) is not being used.)
-
-# Auth Connect
+* [TokenStorageProvider](#tokenstorageprovider) (if [Ionic Identity Vault](/docs/enterprise/identity-vault) is not being used.)# Auth Connect
 
 ## Index
 
 ### Interfaces
 
-* [IHandlers](#ihandlers)
 * [IIonicAuth](#iionicauth)
-* [IVConfig](#ivconfig)
-* [IVUserInterface](#ivuserinterface)
 * [IonicAuthOptions](#ionicauthoptions)
 * [IonicGeneralAuthOptions](#ionicgeneralauthoptions)
 * [TokenStorageProvider](#tokenstorageprovider)
-* [VaultInterface](#vaultinterface)
 
 ### Variables
 
@@ -183,41 +192,6 @@ You can find the API and interface documentation for everything below. The main 
 * * *
 
 ## Interfaces
-
-<a id="ihandlers"></a>
-
-### IHandlers
-
-**IHandlers**:
-
-<a id="ihandlers.onloginsuccess"></a>
-
-### onLoginSuccess
-
-▸ **onLoginSuccess**(result: *`AuthResult`*): `void`
-
-**Parameters:**
-
-| Name   | Type         |
-| ------ | ------------ |
-| result | `AuthResult` |
-
-
-**Returns:** `void`
-
-* * *
-
-<a id="ihandlers.onlogout"></a>
-
-### onLogout
-
-▸ **onLogout**(): `void`
-
-**Returns:** `void`
-
-* * *
-
-* * *
 
 <a id="iionicauth"></a>
 
@@ -318,6 +292,8 @@ get the refresh token if available
 
 called by the hosting app when callbacks happen, these will be to the URL specified in the options for LogoutUrl and RedirectUri
 
+***deprecated***: Use [handleLoginCallback](#iionicauth.handlelogincallback) instead
+
 **Parameters:**
 
 | Name | Type     | Description            |
@@ -326,6 +302,37 @@ called by the hosting app when callbacks happen, these will be to the URL specif
 
 
 **Returns:** `Promise`<`AuthResult`>
+
+* * *
+
+<a id="iionicauth.handlelogincallback"></a>
+
+### handleLoginCallback
+
+▸ **handleLoginCallback**(url?: *`undefined` \| `string`*): `Promise`<`AuthResult`>
+
+called by the hosting app when login callbacks happen, these will be to the URL specified in the options for RedirectUri
+
+**Parameters:**
+
+| Name           | Type           | Description                                                                       |
+| -------------- | -------------- | --------------------------------------------------------------------------------- |
+| `Optional` url | `undefined` \ | `string` | callback url to handle @default defaults to `window.location.href` |
+
+
+**Returns:** `Promise`<`AuthResult`>
+
+* * *
+
+<a id="iionicauth.handlelogoutcallback"></a>
+
+### handleLogoutCallback
+
+▸ **handleLogoutCallback**(): `Promise`<`void`>
+
+called by the hosting app when logout callbacks happens
+
+**Returns:** `Promise`<`void`>
 
 * * *
 
@@ -469,50 +476,6 @@ refresh the session, throws if refresh token is invalid or missing
 
 * * *
 
-<a id="ivconfig"></a>
-
-### IVConfig
-
-**IVConfig**:
-
-<a id="ivconfig.ispasscodesetupneeded"></a>
-
-### isPasscodeSetupNeeded
-
-**● isPasscodeSetupNeeded**: *`boolean`*
-
-* * *
-
-* * *
-
-<a id="ivuserinterface"></a>
-
-### IVUserInterface
-
-**IVUserInterface**:
-
-<a id="ivuserinterface.getvault"></a>
-
-### getVault
-
-▸ **getVault**(): `Promise`<[VaultInterface](#vaultinterface)>
-
-**Returns:** `Promise`<[VaultInterface](#vaultinterface)>
-
-* * *
-
-<a id="ivuserinterface.setpasscode"></a>
-
-### setPasscode
-
-▸ **setPasscode**(): `Promise`<`void`>
-
-**Returns:** `Promise`<`void`>
-
-* * *
-
-* * *
-
 <a id="ionicauthoptions"></a>
 
 ### IonicAuthOptions
@@ -596,7 +559,7 @@ Location of the Auth Server's discovery endpoint, can be null for Azure
 
 **● implicitLogin**: *"CURRENT" \| "POPUP"*
 
-for implicit login (aka web) should the auth window be opened in a new popup window/tab or the current windwow/tab defaults to: `POPUP` for `CURRENT` to work the app will need to call `IIonicAuth::handleCallback` when the auth service navigates to the url set in `redirect_url`
+determines the UI mode to use with web authentication in implicit. "CURRENT" will replace the current window with the authentication provider, and "POPUP" will open the authentication provider in a new window/tab. When this is set to "CURRENT", you will need to use the [handleLoginCallback](#iionicauth.handlelogincallback) and [handleLogoutCallback](#iionicauth.handlelogoutcallback) to complete the auth
 
 * * *
 
@@ -664,7 +627,7 @@ User details requested from the Authentication provider, each provider may suppo
 
 ### `<Optional>` tokenStorageProvider
 
-**● tokenStorageProvider**: *"localStorage" \| [TokenStorageProvider](#tokenstorageprovider) \| [IVUserInterface](#ivuserinterface)*
+**● tokenStorageProvider**: *"localStorage" \| [TokenStorageProvider](#tokenstorageprovider) \| `IVUserInterface`*
 
 The type of storage to use for the tokens
 
@@ -773,7 +736,7 @@ Location of the Auth Server's discovery endpoint, can be null for Azure
 
 **● implicitLogin**: *"CURRENT" \| "POPUP"*
 
-for implicit login (aka web) should the auth window be opened in a new popup window/tab or the current windwow/tab defaults to: `POPUP` for `CURRENT` to work the app will need to call `IIonicAuth::handleCallback` when the auth service navigates to the url set in `redirect_url`
+determines the UI mode to use with web authentication in implicit. "CURRENT" will replace the current window with the authentication provider, and "POPUP" will open the authentication provider in a new window/tab. When this is set to "CURRENT", you will need to use the [handleLoginCallback](#iionicauth.handlelogincallback) and [handleLogoutCallback](#iionicauth.handlelogoutcallback) to complete the auth
 
 * * *
 
@@ -841,7 +804,7 @@ User details requested from the Authentication provider, each provider may suppo
 
 ### `<Optional>` tokenStorageProvider
 
-**● tokenStorageProvider**: *"localStorage" \| [TokenStorageProvider](#tokenstorageprovider) \| [IVUserInterface](#ivuserinterface)*
+**● tokenStorageProvider**: *"localStorage" \| [TokenStorageProvider](#tokenstorageprovider) \| `IVUserInterface`*
 
 The type of storage to use for the tokens
 
@@ -963,69 +926,6 @@ save the refresh token
 
 * * *
 
-<a id="vaultinterface"></a>
-
-### VaultInterface
-
-**VaultInterface**:
-
-<a id="vaultinterface.clear"></a>
-
-### clear
-
-▸ **clear**(): `Promise`<`void`>
-
-**Returns:** `Promise`<`void`>
-
-* * *
-
-<a id="vaultinterface.getconfig"></a>
-
-### getConfig
-
-▸ **getConfig**(): `Promise`<[IVConfig](#ivconfig)>
-
-**Returns:** `Promise`<[IVConfig](#ivconfig)>
-
-* * *
-
-<a id="vaultinterface.getvalue"></a>
-
-### getValue
-
-▸ **getValue**(name: *`string`*): `Promise`<`any`>
-
-**Parameters:**
-
-| Name | Type     |
-| ---- | -------- |
-| name | `string` |
-
-
-**Returns:** `Promise`<`any`>
-
-* * *
-
-<a id="vaultinterface.storevalue"></a>
-
-### storeValue
-
-▸ **storeValue**(name: *`string`*, value: *`any`*): `Promise`<`any`>
-
-**Parameters:**
-
-| Name  | Type     |
-| ----- | -------- |
-| name  | `string` |
-| value | `any`    |
-
-
-**Returns:** `Promise`<`any`>
-
-* * *
-
-* * *
-
 ## Variables
 
 <a id="ready"></a>
@@ -1038,14 +938,22 @@ save the refresh token
 
 # Changelog
 
+### \[3.1.5\] (2020-10-28)
+
+### Bug Fixes
+
+* allow additional parameters to go through 
+* fixing logout issues in the web implicit login flow with new handleLoginCallback and handleLogoutCallback methods 
+* using native storage on devices to avoid web storage being cleared 
+
 ### \[3.1.4\] (2020-09-02)
 
 ### Bug Fixes
 
-* fix bug with localstorage provider where auth response wasn't serialized/deserialized correctly
-* remove unneeded redirectUri param from cognito logout
-* **auth:** export TokenStorageProvider
-* **ping:** don't always include client secret
+* fix bug with localstorage provider where auth response wasn't serialized/deserialized correctly 
+* remove unneeded redirectUri param from cognito logout 
+* **auth:** export TokenStorageProvider 
+* **ping:** don't always include client secret , closes [/tools.ietf.org/html/draft-ietf-oauth-browser-based-apps-04#section-7]
 
 ### \[3.1.3\] (2020-07-28)
 
