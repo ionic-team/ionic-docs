@@ -27,10 +27,12 @@ nextUrl: '/docs/appflow/automation/webhooks'
 * `CI_AUTOMATED_BUILD` **(int):** 此构建是否由于自动化而发生 (`0` `false`, `1` `true`)。
 * `CI_AUTOMATION_ID` **(可选 int)：** 创建此版本的自动化唯一ID。
 * `CI_AUTOMATION_NAME` **(可选string)：** 创建此构建的自动化名称。
-* `CI_GIT_COMIT_SHA` **(string)：** 用于运行构建的提交的SHA。
-* `CI_GIT_COMIIT_MSG` **(string)：** 用于运行构建的提交的消息。
-* `CI_GIT_REF` **(string):** 创建构建的git ref (即. `master`)。
-* `CI_GIT_REF_TYPE` **(string)：** git ref 类型 (例如. `branch`)。
+* `CI_BUILD_ID` **(int):** The globally unique ID of this build.
+* `CI_BUILD_NUMBER` **(int):** The sequential build number.
+* `CI_GIT_COMMIT_SHA` **(string):** The SHA for the commit on which the build was run.
+* `CI_GIT_COMMIT_MSG` **(string):** The message for the commit on which the build was run.
+* `CI_GIT_REF` **(string):** The git ref from which the build was created (i.e. `master`).
+* `CI_GIT_REF_TYPE` **(string):** The git ref type (i.e. `branch`).
 * `CI_PLATFORM` **(string):** The platform for the build (`ios`, `android`, `web`).
 
 ## 自定义环境
