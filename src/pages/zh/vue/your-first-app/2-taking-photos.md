@@ -7,9 +7,9 @@ nextUrl: '/docs/vue/your-first-app/3-saving-photos'
 
 # 使用相机拍照
 
-Now for the fun part - adding the ability to take photos with the device’s camera using the Capacitor [Camera API](https://capacitor.ionicframework.com/docs/apis/camera). We’ll begin with building it for the web, then make some small tweaks to make it work on mobile (iOS and Android).
+接下来是有趣的部分 - 使用Capacitor Camera API 调用设备的相机，为你的应用添加拍照功能。 我们以此构建Web，然后做小的调整，使其能够在移动设备 (iOS和Android) 上面运行。
 
-To do so, we will create a standalone composition function paired with Vue's Composition API to manage the photos for the gallery.
+为此，我们将创建一个与Vue的Composition API 配对的独立合成函数，以管理照片库的照片。
 
 > If you are not familiar with Vue's Composition API, [Why Composition API?](https://v3.vuejs.org/guide/composition-api-introduction.html#why-composition-api) from the official Vue docs is a good resource to start with.
 
