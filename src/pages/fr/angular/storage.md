@@ -9,7 +9,7 @@ nextUrl: '/docs/angular/performance'
 
 Il existe une variété d'options disponibles pour stocker des données dans une application Ionic.
 
-## Ionic Offline Storage
+## Stockage hors ligne dans ionic
 
 [Ionic Offline Storage](/docs/enterprise/offline-storage) is a cross-platform data storage system that works on iOS and Android. It makes it easy to add offline storage to Ionic apps that is secure (encrypted on device), highly performant, and provides advanced NoSQL data querying.
 
@@ -24,7 +24,7 @@ It uses a variety of storage engines underneath, picking the best one available 
 * When running in a native app context, Storage will prioritize using SQLite, as it's one of the most stable and widely used file-based databases, and avoids some of the pitfalls of things like localstorage and IndexedDB, such as the OS deciding to clear out such data in low disk-space situations.
 * When running in the web or as a Progressive Web App, Storage will attempt to use IndexedDB, WebSQL, and localstorage, in that order.
 
-### Usage
+### Utilisation
 
 First, if you'd like to use SQLite, install the cordova-sqlite-storage plugin:
 ```bash
