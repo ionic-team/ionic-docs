@@ -5,9 +5,9 @@ nextText: 'Performance'
 nextUrl: '/docs/angular/performance'
 ---
 
-# Data Storage
+# Stockage de données
 
-There are variety of options available for storing data within an Ionic app.
+Il existe une variété d'options disponibles pour stocker des données dans une application Ionic.
 
 ## Ionic Offline Storage
 
