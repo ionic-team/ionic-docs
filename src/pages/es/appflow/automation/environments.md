@@ -27,10 +27,12 @@ Las siguientes variables de entorno se proporcionan en cada compilación, a las 
 * `CI_AUTOMATED_BUILD` **(int):** Si esta compilación se produjo como resultado de una automatización (`0` para `falso`, `1` para `verdadero`).
 * `CI_AUTOMATION_ID` **(optional int):** El ID único de la automatización que creó esta compilación.
 * `CI_AUTOMATION_NAME` **(optional string):** El nombre de la automatización que creó esta compilación.
-* `CI_GIT_COMMIT_SHA` **(string):** El SHA para la confirmación en la que se ejecutó la compilación.
-* `CI_GIT_COMMIT_MSG` **(string):** El mensaje para la confirmación en la que se ejecutó la compilación.
-* `CI_GIT_REF` **(string):** La referencia git a partir de la cual se creó la compilación (i.e. `master`).
-* `CI_GIT_REF_TYPE` **(string):** El tipo de referencia git (i.e. `branch`).
+* `CI_BUILD_ID` **(int):** The globally unique ID of this build.
+* `CI_BUILD_NUMBER` **(int):** The sequential build number.
+* `CI_GIT_COMMIT_SHA` **(string):** The SHA for the commit on which the build was run.
+* `CI_GIT_COMMIT_MSG` **(string):** The message for the commit on which the build was run.
+* `CI_GIT_REF` **(string):** The git ref from which the build was created (i.e. `master`).
+* `CI_GIT_REF_TYPE` **(string):** The git ref type (i.e. `branch`).
 * `CI_PLATFORM` **(string):** The platform for the build (`ios`, `android`, `web`).
 
 ## Entornos Personalizados
