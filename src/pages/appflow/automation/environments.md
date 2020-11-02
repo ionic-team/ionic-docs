@@ -33,6 +33,8 @@ The following environment variables are provided in every build, which can be ac
 * `CI_AUTOMATED_BUILD` **(int):** Whether this build occurred as a result of an automation (`0` for `false`, `1` for `true`).
 * `CI_AUTOMATION_ID` **(optional int):** The unique ID of the automation which created this build.
 * `CI_AUTOMATION_NAME` **(optional string):** The name of the automation which created this build.
+* `CI_BUILD_ID` **(int):** The globally unique ID of this build.
+* `CI_BUILD_NUMBER` **(int):** The sequential build number.
 * `CI_GIT_COMMIT_SHA` **(string):** The SHA for the commit on which the build was run.
 * `CI_GIT_COMMIT_MSG` **(string):** The message for the commit on which the build was run.
 * `CI_GIT_REF` **(string):** The git ref from which the build was created (i.e. `master`).
