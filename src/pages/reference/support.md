@@ -37,13 +37,14 @@ The Ionic team has compiled a set of recommendations for using the Ionic Framewo
 
 ### Core Dependencies
 
-| Framework     | Angular | React         | Typescript |
-|:-------------:|:-------:|:-------------:|:----------:|
-| V5 - Angular  | v8.2.X  | N/A           | 3.5.X      |
-| V5 - React    | N/A     | 16.8.X        | 3.7.X      |
-| V4 - Angular  | v8.2.X  | N/A           | 3.5.X      |
-| V4 - React    | N/A     | 16.8.X        | 3.7.X      |
-| V3            | v5.2.11 | Not supported | 2.6.2      |
+| Framework     | Angular | React         | Vue   | Typescript |
+|:-------------:|:-------:|:-------------:|:-----:|:----------:|
+| V5 - Angular  | v8.2.X  | N/A           | N/A   | 3.5.X      |
+| V5 - React    | N/A     | 16.8.X        | N/A   | 3.7.X      |
+| V5 - Vue      | N/A     | N/A           | 3.0.X | 3.9.X      |
+| V4 - Angular  | v8.2.X  | N/A           | N/A   | 3.5.X      |
+| V4 - React    | N/A     | 16.8.X        | N/A   | 3.7.X      |
+| V3            | v5.2.11 | N/A           | N/A   | 2.6.2      |
 
 * The Ionic team generally recommends the latest releases of third party packages and strives to support the latest releases within 2-4 weeks of general availability.
 
@@ -53,6 +54,7 @@ The Ionic team has compiled a set of recommendations for using the Ionic Framewo
 |:-------------:|:------------------------------------:|:------------------------:|
 | V5 - Angular  | cordova-android 8.X, cordova-ios 5.X | Latest 2.X               |
 | V5 - React    | Not supported                        | Latest 2.x               |
+| V5 - Vue      | Not supported                        | Latest 2.X               |
 | V4 - Angular  | cordova-android 8.X, cordova-ios 5.X | Latest 2.X               |
 | V4 - React    | Not supported                        | Latest 2.x               |
 | V3            | cordova-android 8.X, cordova-ios 5.X | Not officially supported |
