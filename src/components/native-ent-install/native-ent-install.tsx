@@ -19,7 +19,10 @@ export class NativeEnterpriseInstall {
           <a href="#installation">Installation</a>
         </h2>
         <p>
-          After following the one-time <stencil-route-link url="/docs/enterprise/setup"> setup steps</stencil-route-link>, simply install the plugin:
+          If you have not already setup Ionic Enterprise in your app, <stencil-route-link url="/docs/enterprise/setup">follow the one-time setup steps</stencil-route-link>.
+        </p>
+        <p>
+         Next, install the plugin:
         </p>
         <strong>Cordova:</strong>
         <command-line>
