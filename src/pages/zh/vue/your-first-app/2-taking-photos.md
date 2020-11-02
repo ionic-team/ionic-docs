@@ -1,11 +1,11 @@
 ---
-previousText: 'Your First App'
+previousText: '你的第一个 App'
 previousUrl: '/docs/vue/your-first-app'
-nextText: 'Saving Photos on Filesystem'
+nextText: '保存照片到文件系统中'
 nextUrl: '/docs/vue/your-first-app/3-saving-photos'
 ---
 
-# Taking Photos with the Camera
+# 使用相机拍照
 
 Now for the fun part - adding the ability to take photos with the device’s camera using the Capacitor [Camera API](https://capacitor.ionicframework.com/docs/apis/camera). We’ll begin with building it for the web, then make some small tweaks to make it work on mobile (iOS and Android).
 
