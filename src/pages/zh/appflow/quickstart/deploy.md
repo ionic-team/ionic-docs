@@ -12,24 +12,24 @@ nextUrl: '/docs/appflow/quickstart/package'
 
 在线更新功能可以通过在您的本地应用程序中使用已安装的 Appflows SDK 来监听特定的部署 [频道](/docs/appflow/deploy/channels) 目的地。
 
-当部署构建被分配到频道目标时， 该更新将部署到运行二进制文件的用户设备，这些文件被配置为监听指定的频道目标。
+When a Web build is assigned to a Channel Destination, that update will be deployed to user devices running binaries that are configured to listen to the specified Channel Destination.
 
 <blockquote>
-<b>术语注释：</b> “部署构建”、“网页构建”、“实时部署”和“实时更新”等术语可以互换使用。 他们都引用了通过Appflow的部署功能向您的设备提供的更新。
+<b>Nomenclature note:</b> The terms "Web build", "deploy build", "live deploy" and "live update" can be used interchangeably. 他们都引用了通过Appflow的部署功能向您的设备提供的更新。
 </blockquote>
 
 ## 触发部署版本
 
-为了部署实时更新，您将首先需要创建 [部署版本](/docs/appflow/deploy/builds)。
+In order to deploy a live update, you will first need to create a [Web build](/docs/appflow/deploy/builds).
 
 这样做有两种方法：
 
 * 点击 `开始从 <code>提交` 选项卡生成</code> 图标 ![从提交开始Web Building](/docs/assets/img/appflow/ss-start-web-build-commits.png)
 * 点击右上角的 `新版本` 按钮 `构建 > 版本` 标签页 ![新建Web 版本](/docs/assets/img/appflow/ss-new-web-build.png)
 
-您将需要确保您选择了正确的部署承诺。 然后选择 `Web 部署` 目标平台。 如果您的计划包含 [个自定义环境](/docs/appflow/automation/environments#custom-environments) 并且您至少配置了一个，您可以从提供的下拉列表中选择一个。 最后，您也可以选择 [频道](/docs/appflow/deploy/channels) 来自动指派构建完成后的构建。 为了本教程的目的，我们将留空两个选项。
+您将需要确保您选择了正确的部署承诺。 Then select the `Web` target platform and the `Latest` build stack. 如果您的计划包含 [个自定义环境](/docs/appflow/automation/environments#custom-environments) 并且您至少配置了一个，您可以从提供的下拉列表中选择一个。 Finally, you can also enable the `Live Update` and pick a [Channel](/docs/appflow/deploy/channels) to automatically assign the build to once it completes successfully. 为了本教程的目的，我们将留空两个选项。
 
-一旦构建开始，您将能够观看它的 进度，在遇到错误时查看日志。
+Once the build begins you will be able to watch its progress and look at the logs if you encounter errors.
 
 ![正在运行 Web 版本](/docs/assets/img/appflow/gif-start-web-build.gif)
 
@@ -58,7 +58,7 @@ Web 构建完成后，它可以被限制在 Web 构建详细信息中指定的�
 
 <command-line> <command-prompt> ionic cordova 运行 \[ios | android\] \[options\] </command-prompt> </command-line>
 
-如果应用正确配置为 倾听您部署的频道， 如果您正在使用 [自动更新方法](/docs/appflow/deploy/api#update_method) 程序启动时应立即更新。
+If the app is configured correctly to listen to the channel you deployed it to, the application should update immediately on startup if you're using the [auto update method](/docs/appflow/deploy/api#update_method).
 
 如果您正在使用 [背景更新方法](/docs/appflow/deploy/api#update_method)， 仅在应用程序中保持30秒左右，更新 在后台下载。 然后关闭应用程序，重新打开它，你应该看到你的更新应用 🎉。
 
