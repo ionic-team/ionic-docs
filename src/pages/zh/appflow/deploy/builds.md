@@ -9,7 +9,7 @@ nextUrl: '/docs/appflow/deploy/channels'
 
 ## 概览
 
-应用程序的实时更新仅包括网页资源 (JavaScript, HTML, 字体) 可以通过 [实时更新](/docs/appflow/deploy/intro) 部署发送给客户。 实时更新构建可以从Iond Dashboard手动创建，在 **Builds** 部分在 **构建** 在侧边栏中。 您将能够从Appflow知道的可用提交列表中进行选择。 如果没有可用的提交，您需要将新的提交推送到您的 Git 远程，以便它在应用流程中显示。 在选择提交后，从 `Target platform` 下拉菜单中选择 `Web Deploy`。
+A Live Update build of your application includes only the web assets (JavaScript, HTML, fonts, and images) which can be shipped out to customer via a [Live Update](/docs/appflow/deploy/intro) deployment. 实时更新构建可以从Iond Dashboard手动创建，在 **Builds** 部分在 **构建** 在侧边栏中。 您将能够从Appflow知道的可用提交列表中进行选择。 If there are no available commits you will need to push a new commit to your Git remote in order for it to show up in Appflow. After picking the commit, select `Web` from the `Target platform` dropdown menu and choose the preferred [build stack](/docs/appflow/build-stacks).
 
 ![导航到实时更新版本](/docs/assets/img/appflow/deploy-builds-create-location.png)
 
@@ -17,7 +17,7 @@ nextUrl: '/docs/appflow/deploy/channels'
 
 * `npm install` 运行以安装任何依赖。
 * `npm run build` 如果 `build` 脚本在您的 `package.json` `scripts`中检测到，以便为您的应用程序构建web资源。
-* `www` 目录与您的内置应用程序将被存储并可用于实时更新。
+* The `www` directory (or the directory specified in the `capacitor.config.json` using the key `webDir` if it is a Capacitor project) containing your built application will be stored and made available for live updates.
 * 您可以在 `Builds` 在 `Building` 标签页中的侧边菜单中找到您在线更新版本的历史和状态。
 
 ## 并行限制
