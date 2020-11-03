@@ -65,7 +65,7 @@ Once that Profile has been created, you can click the Edit button to remove and/
 You're now ready to build iOS apps on Appflow! Trigger a new iOS native build just like you did for Android earlier, including the signing certificate you just created.
 
 1. Select the commit.
-2. Select Target Platform as `iOS - Xcode 11`.
+2. Select Target Platform as `iOS`.
 3. Select the latest build Stack.
 3. Build Type Development.
 4. Select the signing certificate you created earlier (ex: ios_development).

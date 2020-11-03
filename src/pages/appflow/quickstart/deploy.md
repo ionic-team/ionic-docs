@@ -12,15 +12,15 @@ Now that we've [installed the Appflow SDK ](/docs/appflow/quickstart/installatio
 ## Overview
 The Live Update feature works by using the installed Appflow SDK in your native application to listen to a particular Deploy [Channel](/docs/appflow/deploy/channels) Destination.
 
-When a Deploy build is assigned to a Channel Destination, that update will be deployed to user devices running binaries that are configured to listen to the specified Channel Destination.
+When a Web build is assigned to a Channel Destination, that update will be deployed to user devices running binaries that are configured to listen to the specified Channel Destination.
 
 <blockquote>
-<b>Nomenclature note:</b> The terms "Deploy build", "web build", "live deploy" and "live update" can be used interchangeably. They all refer to an update provided to your user's device by Appflow's Deploy feature.
+<b>Nomenclature note:</b> The terms "Web build", "deploy build", "live deploy" and "live update" can be used interchangeably. They all refer to an update provided to your user's device by Appflow's Deploy feature.
 </blockquote>
 
 ## Triggering a Deploy Build
 
-In order to deploy a live update, you will first need to create a [Deploy build](/docs/appflow/deploy/builds).
+In order to deploy a live update, you will first need to create a [Web build](/docs/appflow/deploy/builds).
 
 There are two ways to do this:
 * Click the `Start build` icon from the `Commits` tab
@@ -28,20 +28,21 @@ There are two ways to do this:
 * Click the `New build` button in the top right from the `Build > Builds` tab
 ![New Web Build](/docs/assets/img/appflow/ss-new-web-build.png)
 
-You will need to make sure you've selected the correct commit to deploy. Then select the `Web Deploy` target platform. 
+You will need to make sure you've selected the correct commit to deploy. Then select the `Web` target platform and the `Latest` build stack.
 If your plan includes [custom environments](/docs/appflow/automation/environments#custom-environments) and you have configured at least one, you can select one from the provided dropdown list.
-Finally, you can also pick a [Channel](/docs/appflow/deploy/channels) to automatically assign the build to once it completes successfully.
+Finally, you can also enable the `Live Update` and pick a [Channel](/docs/appflow/deploy/channels) to automatically assign the build to once it completes successfully.
 For the purposes of this tutorial, we will leave both options blank. 
 
-Once the build begins you will be able to watch it's
-progress and look at the logs if you encounter errors.
+Once the build begins you will be able to watch its progress and look at the logs if you encounter errors.
 
 ![Running Web Build](/docs/assets/img/appflow/gif-start-web-build.gif)
 
 
  ## Web Build Versioning
 
-Once the Web Build completed, it can be restricted to a specific native build number assigned in the Web Build details. A minimum and maximum equivalent build version number are specified, which designates whether or not the update is compatible. After doing this, new native builds that are distributed within an app store do not conflict with the current available update from AppFlow.
+Once the Web Build completed, it can be restricted to a specific native build number assigned in the Web Build details. 
+A minimum and maximum equivalent build version number are specified, which designates whether or not the update is compatible. 
+After doing this, new native builds that are distributed within an app store do not conflict with the current available update from AppFlow.
 
 ![Web build versioning](/docs/assets/img/appflow/web-build-versioning.png)
 
@@ -73,7 +74,8 @@ ionic cordova run [ios | android] [options]
 </command-line>
 
 If the app is configured correctly to
-listen to the channel you deployed it to, the application should update immediately on startup if you're using the [auto update method](/docs/appflow/deploy/api#update_method).
+listen to the channel you deployed it to, the application should update immediately on startup 
+if you're using the [auto update method](/docs/appflow/deploy/api#update_method).
 
 If you're using the [background update method](/docs/appflow/deploy/api#update_method), just stay in the app for 30 seconds or so while the update
 is downloaded in the background. Then, close the application, reopen it again and you should see your update applied 🎉.
@@ -83,6 +85,7 @@ is downloaded in the background. Then, close the application, reopen it again an
 Generally speaking, if you are developing using an emulator and live reload you probably do not want Deploy to be active, as it can intefere with your local development. 
 
 We recommend setting the 
-[DisableDeploy](/docs/appflow/deploy/api#disabledeploy) preference to `true` in the `config.xml` file during local development. You can then set it back to `false` before building your binary for release by either manually setting it
+[DisableDeploy](/docs/appflow/deploy/api#disabledeploy) preference to `true` in the `config.xml` file during local development. 
+You can then set it back to `false` before building your binary for release by either manually setting it
 back or using the [native config feature](/docs/appflow/package/native-configs)
 if you're building your binaries with [Ionic Package](/docs/appflow/package/intro).
