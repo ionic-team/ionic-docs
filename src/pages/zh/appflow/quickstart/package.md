@@ -27,14 +27,14 @@ and <a href="/docs/appflow/package/adding-credentials">upload them to the Appflo
 
 为您的构建选择正确的提交。 您可以指定以下几个必填字段和 个可选字段：
 
-* **目标平台** - 构建的平台 (iOS 或 Android)
-* **Xcode 版本 (iOS only)** - 用于构建您的 iOS 二进制的 Xcode 版本 (尽可能使用推荐版本)
+* **Target Platform** - The platform for your build (iOS or Android for a package build)
+* [Build Stack](/docs/appflow/build-stacks) - The build stack where the job will run.
 * [构建类型](/docs/appflow/package/build-types) - 给定平台的构建类型(见 [iOS 构建类型](/docs/appflow/package/build-types#ios-build-types) 或 [Android 构建类型](/docs/appflow/package/build-types#android-build-types))
 * [Signing Certificate](/docs/appflow/package/credentials) - The signing certificate for the for the build (if required)
 * [环境](/docs/appflow/automation/environments#custom-environments) - 用于自定义构建过程的环境
 * [本机配置](/docs/appflow/package/native-configs) - 用来自定义您的应用程序配置
 
-对于快速启动教程，请选择 `Android` 平台和 `调试` 类型构建，这些构建需要 不需要其他配置。 一旦构建开始，您可以在遇到错误时查看进度，查看 日志。
+For the quickstart tutorial, select the `Android` platform, the `Latest` build stack and the `Debug` type build which requires no other configuration. 一旦构建开始，您可以在遇到错误时查看进度，查看 日志。
 
 ![正在运行 Web 版本](/docs/assets/img/appflow/gif-start-package-build.gif)
 
