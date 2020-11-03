@@ -29,7 +29,7 @@ nextUrl: '/docs/appflow/automation/environments'
 
 * **名称：** 识别自动化任务的名称。
 * **Git 分支：** 触发自动化的分支。 这将在`git push`到达指定分支时运行构建。
-* **自动化类型：** 此自动化操作的类型。
+* **Target Platform:** The platform of the jobs this automation will run.
 
 除了名称和git 分支外，自动化还有一些根据选定的工作类型可以进行的定制。
 
@@ -41,20 +41,20 @@ nextUrl: '/docs/appflow/automation/environments'
 * 一个分支设置为 `dev*` 将与任何以 `dev` 开头名称包括 `dev` 本身的分支匹配
 * 一个分支设置为 `dev*` 将与任何名称以 `dev` 开始，以`other`结束包括 `devother`本身的分支匹配
 
-### Package自动化
+### iOS and Android Automations
 
-Package自动化创建可以在设备上下载和运行的本地构建。 他们有下列自定义：
+iOS and Android automations create native builds which can be downloaded and run on devices. 他们有下列自定义：
 
-![创建软件包自动化](/docs/assets/img/appflow/ss-automation-create-package.png)
+![Creating a ios or android automation](/docs/assets/img/appflow/ss-automation-create-package.png)
 
 #### 字段
 
-* **环境:**[自定义构建环境](/docs/appflow/environments/#custom-environments)(如果有的话)，以便在触发此自动化时使用。
-* **原生配置：** [本地配置](/docs/appflow/package/intro#native-configs) (如果有任何) 触发此自动化时使用。
-* **目标平台：** 目标平台，可以是 Android 或 iOS (对于 Xcode 8 或 9)
-* **构建类型：** 要创建的构建类型。 选项取决于所选平台。
-* **Signing Certificate:** Which signing certificate to use. 在[这里](/docs/appflow/package/credentials)了解更多关于他们。
-* **Webhook:** (可选) 如果指定，将会发送一个包含已完成构建信息的POST 到输入的 URL。 在[这里](/docs/appflow/automation/webhooks)了解更多关于其内容。
+* **Build Stack:** The [build stack](/docs/appflow/build-stacks) where the job created by this automation will run.
+* **Build Type:** The type of build to create. Options depend on the selected platform.
+* **Signing Certificate:** Which signing certificate to use. Learn more about them [here](/docs/appflow/package/credentials).
+* **Environment:** The [custom build environment](/docs/appflow/environments/#custom-environments) (if any) to use when this automations is triggered.
+* **Native Config:** The [native config](/docs/appflow/package/intro#native-configs) (if any) to use when this automations is triggered.
+* **Webhook:** (optional) If enabled, a POST with information about completed builds will be sent to the entered URL. 在[这里](/docs/appflow/automation/webhooks)了解更多关于其内容。
 
 ### Web自动化
 
@@ -65,5 +65,17 @@ Web自动化使用Deploy服务构建应用程序的javascript部分，并与[Dep
 #### 字段
 
 * **环境:**[自定义构建环境](/docs/appflow/environments/#custom-environments)(如果有的话)，以便在触发此自动化时使用。
-* **通道：** [部署通道](/docs/appflow/deploy/channels) 将分配来自此自动化的网页版本。
-* **Webhook:** (可选) 如果指定，将会发送一个包含已完成构建信息的POST 到输入的 URL。 在[这里](/docs/appflow/automation/webhooks)了解更多关于其内容。
+* **Web preview** (optional) If enabled, a web preview of the app will be published to a public URL.
+* **Live update:** (optional) The [Deploy Channel](/docs/appflow/deploy/channels) where web builds from this automation will be assigned.
+* **Webhook:** (optional) If specified, a POST with information about completed builds will be sent to the entered URL. Learn more about their content [here](/docs/appflow/automation/webhooks).
+
+##### Note about Build Stacks
+
+It is possible to choose one of two different options for the Build Stack:
+
+1. always be on the latest Build Stack 
+2. always be on a specific Build Stack.
+
+If the 1. is chosen, the automation will always create jobs using the latest build stack. When the "latest" build stack is updated to a newer version nothing needs to be done and the automation will keep working.
+
+If the 2. is chosen, the automation will always create jobs using the specified build stack until the build stack is deprecated. A clear deprecation date will be shown in the dashboard to give users time to update the automation. If a new build stack has not been chosen by the deprecation date, the automation will be automatically updated to the latest build stack on the deprecation date.
