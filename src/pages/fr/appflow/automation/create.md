@@ -29,7 +29,7 @@ Toutes les automatisations nécessitent un nom et une branche git pour déclench
 
 * ** Name: ** un nom pour identifier la tâche d'automatisation.
 * ** Git Branch: ** la branche qui déclenchera l'automatisation. Cela exécutera une génération chaque fois qu'un ` git push ` est effectué sur la branche spécifiée.
-* ** Type d'automatisation **: type de travail exécuté par cette automatisation.
+* **Target Platform:** The platform of the jobs this automation will run.
 
 En plus des branches nom et git, les automatisations ont un certain nombre de personnalisations disponibles selon le type de travail sélectionné.
 
@@ -41,20 +41,20 @@ Il est possible de spécifier un ou plusieurs caractères génériques ` * ` pou
 * une branche définie sur ` dev * ` correspondra à toute branche dont le nom commence par ` dev `, y compris ` dev ` lui-même
 * une branche définie sur ` dev * autre ` correspondra à n'importe quelle branche avec un nom commençant par ` dev ` et se terminant par ` autre ` y compris ` devother `
 
-### Automatisation des packages
+### iOS and Android Automations
 
-Les automatisations de packages créent des versions natives qui peuvent être téléchargées et exécutées sur des appareils. Ils ont les personnalisations suivantes:
+iOS and Android automations create native builds which can be downloaded and run on devices. Ils ont les personnalisations suivantes:
 
-![Création d'une automatisation de package](/docs/assets/img/appflow/ss-automation-create-package.png)
+![Creating a ios or android automation](/docs/assets/img/appflow/ss-automation-create-package.png)
 
 #### Des champs
 
-* ** Environnement: ** [ environnement de construction personnalisé ](/docs/appflow/environments/#custom-environments) (le cas échéant) à utiliser lorsque cette automatisation est déclenchée.
-* ** Configuration native: ** La [ configuration native ](/docs/appflow/package/intro#native-configs) (le cas échéant) à utiliser lorsque cette automatisation est déclenchée.
-* ** Plateforme cible: ** La plateforme ciblée peut être Android ou iOS (pour Xcode 8 ou 9)
-* ** Type de build: ** Type de build à créer. Les options dépendent de la plate-forme sélectionnée.
-* **Signing Certificate:** Which signing certificate to use. En savoir plus à leur sujet [ ici ](/docs/appflow/package/credentials).
-* ** Webhook: ** (facultatif) Si spécifié, un POST contenant des informations sur les versions terminées sera envoyé à l'URL saisie. En savoir plus sur leur contenu [ ici ](/docs/appflow/automation/webhooks).
+* **Build Stack:** The [build stack](/docs/appflow/build-stacks) where the job created by this automation will run.
+* **Build Type:** The type of build to create. Options depend on the selected platform.
+* **Signing Certificate:** Which signing certificate to use. Learn more about them [here](/docs/appflow/package/credentials).
+* **Environment:** The [custom build environment](/docs/appflow/environments/#custom-environments) (if any) to use when this automations is triggered.
+* **Native Config:** The [native config](/docs/appflow/package/intro#native-configs) (if any) to use when this automations is triggered.
+* **Webhook:** (optional) If enabled, a POST with information about completed builds will be sent to the entered URL. En savoir plus sur leur contenu [ ici ](/docs/appflow/automation/webhooks).
 
 ### Web Automations
 
@@ -65,5 +65,17 @@ Les automatisations Web créent la partie javascript d'une application et une in
 #### Des champs
 
 * ** Environnement: ** [ environnement de construction personnalisé ](/docs/appflow/environments/#custom-environments) (le cas échéant) à utiliser lorsque cette automatisation est déclenchée.
-* ** Canal: ** le [ Déployer le canal ](/docs/appflow/deploy/channels) où les versions Web de cette automatisation seront attribuées.
-* ** Webhook: ** (facultatif) Si spécifié, un POST contenant des informations sur les versions terminées sera envoyé à l'URL saisie. En savoir plus sur leur contenu [ ici ](/docs/appflow/automation/webhooks).
+* **Web preview** (optional) If enabled, a web preview of the app will be published to a public URL.
+* **Live update:** (optional) The [Deploy Channel](/docs/appflow/deploy/channels) where web builds from this automation will be assigned.
+* **Webhook:** (optional) If specified, a POST with information about completed builds will be sent to the entered URL. Learn more about their content [here](/docs/appflow/automation/webhooks).
+
+##### Note about Build Stacks
+
+It is possible to choose one of two different options for the Build Stack:
+
+1. always be on the latest Build Stack 
+2. always be on a specific Build Stack.
+
+If the 1. is chosen, the automation will always create jobs using the latest build stack. When the "latest" build stack is updated to a newer version nothing needs to be done and the automation will keep working.
+
+If the 2. is chosen, the automation will always create jobs using the specified build stack until the build stack is deprecated. A clear deprecation date will be shown in the dashboard to give users time to update the automation. If a new build stack has not been chosen by the deprecation date, the automation will be automatically updated to the latest build stack on the deprecation date.
