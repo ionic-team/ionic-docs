@@ -10,7 +10,7 @@ nextText: 'Environment Setup'
 nextUrl: '/docs/intro/environment'
 ---
 
-Ionic Framework is an open source UI toolkit for building performant, high-quality mobile and desktop apps using web technologies — HTML, CSS, and JavaScript — with integrations for popular frameworks like <a href="/docs/angular/overview" target="_blank"> Angular</a> and <a href="/react" target="_blank">React</a>.
+Ionic Framework is an open source UI toolkit for building performant, high-quality mobile and desktop apps using web technologies — HTML, CSS, and JavaScript — with integrations for popular frameworks like <a href="/docs/angular/overview"> Angular</a>, <a href="/react">React</a>, and <a href="/docs/vue/overview">Vue</a>.
 
 Get started building by <a href="/docs/intro/cli">installing Ionic</a> or following our <a href="/docs/intro/next#build-your-first-app">First App Tutorial</a> to learn the main concepts.
 
