@@ -1,6 +1,6 @@
 import { Component, Listen, Prop, State, h } from '@stencil/core';
 
-import { Checkmark, ForwardArrow, Logo, Translation } from '../../icons';
+import { Checkmark, ForwardArrow } from '../../icons';
 import { l10n } from '../../l10n';
 import { link } from '../nav/link';
 
