@@ -77,7 +77,7 @@ export class DocsHeader {
         <docs-menu-toggle onClick={this.toggleClickFn}/>
 
         <a href="https://ionicframework.com">
-          <Logo class="HeaderLogo"/>
+          Docs
         </a>
 
         <header-mobile-collapse>
@@ -133,7 +133,7 @@ export class DocsHeader {
                 <a href="https://ionicframework.com/advisory" target="_blank">Enterprise Advisory</a>
               </section>
             </docs-dropdown>
-            <docs-dropdown icon={Translation} align="right" label="Translations" class="label-sm-only">
+            <docs-dropdown align="right" label="Translations" class="label-sm-only">
               <section>
                 <a href="https://ionicframework.com/en/docs/" class="link-active">
                   English
@@ -155,11 +155,9 @@ export class DocsHeader {
               </div>
             </docs-dropdown>
             <a href="https://github.com/ionic-team/ionic" target="_blank">
-              <ion-icon name="logo-github" class="lg-only"></ion-icon>
               <span class="sm-only">GitHub <ForwardArrow class="Dropdown-arrow"/></span>
             </a>
             <a href="https://twitter.com/ionicframework" target="_blank">
-              <ion-icon name="logo-twitter" class="lg-only"></ion-icon>
               <span class="sm-only">Twitter <ForwardArrow class="Dropdown-arrow"/></span>
             </a>
           </nav>

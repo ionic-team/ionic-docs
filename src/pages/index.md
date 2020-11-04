@@ -4,8 +4,6 @@ meta:
   image: /docs/assets/img/meta/open-graph.png
   description: Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards
 tableOfContents: false
-demoUrl: https://ionic-docs-demo.herokuapp.com/
-demoSourceUrl: https://github.com/ionic-team/docs-demo
 nextText: 'Environment Setup'
 nextUrl: '/docs/intro/environment'
 ---
@@ -15,19 +13,19 @@ Ionic Framework is an open source UI toolkit for building performant, high-quali
 Get started building by <a href="/docs/intro/cli">installing Ionic</a> or following our <a href="/docs/intro/next#build-your-first-app">First App Tutorial</a> to learn the main concepts.
 
 <docs-cards>
-  <docs-card header="Installation Guide" href="/docs/intro/cli" icon="/docs/assets/icons/guide-installation-icon.svg" hover-icon="/docs/assets/icons/guide-installation-icon-hover.svg">
+  <docs-card header="Installation Guide" href="/docs/intro/cli">
     <p>Step-by-step guides to setting up your system and installing the framework.</p>
   </docs-card>
 
-  <docs-card header="UI Components" href="/docs/components" icon="/docs/assets/icons/guide-components-icon.svg" hover-icon="/docs/assets/icons/guide-components-icon-hover.svg">
+  <docs-card header="UI Components" href="/docs/components">
     <p>Dive into Ionic Framework's beautifully designed UI component library.</p>
   </docs-card>
 
-  <docs-card header="Native Functionality" href="/docs/native" icon="/docs/assets/icons/guide-native-icon.svg" hover-icon="/docs/assets/icons/guide-native-icon-hover.svg">
+  <docs-card header="Native Functionality" href="/docs/native">
     <p>Integrate native device plugins, like Bluetooth, Maps, HealthKit, and more.</p>
   </docs-card>
 
-  <docs-card header="Theming" href="/docs/theming/basics" icon="/docs/assets/icons/guide-theming-icon.svg" hover-icon="/docs/assets/icons/guide-theming-icon-hover.svg">
+  <docs-card header="Theming" href="/docs/theming/basics">
     <p>Learn to easily customize and modify your Ionic app's visual design to fit your brand.</p>
   </docs-card>
 </docs-cards>
