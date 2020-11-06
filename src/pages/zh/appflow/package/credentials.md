@@ -30,7 +30,7 @@ $ keytool-genkey-v -keystore MY-RELEASE-KEY.keystore -alias MY_ALIAS_NAME -keyal
 
 每个应用必须注册苹果的 ID。
 
-* 导航到 [证书 ID ](https://developer.apple.com/account/ios/identifier/bundle)& [苹果开发者中心](https://developer.apple.com/account) 中注册一个新的应用ID。
+* Navigate to [Certificates, IDs & Profiles › Identifiers](https://developer.apple.com/account/resources/identifiers/list) in the [Apple Developer Center](https://developer.apple.com/account) and register a new App ID.
 
 ![iOS 应用程序 id](/docs/assets/img/appflow/ss-profiles-ios-app-id.png)
 
@@ -38,9 +38,9 @@ $ keytool-genkey-v -keystore MY-RELEASE-KEY.keystore -alias MY_ALIAS_NAME -keyal
 
 ### 设备绑定
 
-开发过程中发送推送通知的设备必须在 Apple 中明确注册。
+Devices must be explicitly registered with Apple for development.
 
-* 导航到 [证书 ID ](https://developer.apple.com/account/ios/device/)&ampd [苹果开发者中心](https://developer.apple.com/account) 中注册一个新的应用ID。
+* Navigate to [Certificates, IDs & Profiles › Devices](https://developer.apple.com/account/resources/devices/list) in the [Apple Developer Center](https://developer.apple.com/account) and register a new Device.
 
 ![iOS注册设备](/docs/assets/img/appflow/ss-profiles-ios-device-register-1.png)
 
@@ -83,7 +83,7 @@ $ $ openssl req -new -key keyname.key -out CertificateSigningRequest.certSigning
 
 有两种苹果证书：开发和生产。 We'll guide you through generating signing certificates with a development certificate.
 
-* 导航到 [证书 ID ](https://developer.apple.com/account/ios/certificate/development)&ampd [苹果开发者中心](https://developer.apple.com/account) 中注册一个新的应用ID。 正在开发中，选择 iOS 应用程序开发。
+* Navigate to [Certificates, IDs & Profiles › Certificates](https://developer.apple.com/account/resources/certificates/list) in the [Apple Developer Center](https://developer.apple.com/account) and create a new certificate. 正在开发中，选择 iOS 应用程序开发。
 
 ![iOS Cert](/docs/assets/img/appflow/ss-profiles-ios-cert-1.png)
 
@@ -120,7 +120,7 @@ $ openssl pkcs12 -export -inkey keyname.key -in ios_development.cer.pem out 证�
 
 配置配置文件可以让您的应用访问被安装，或者 *在特定设备上预配了*。 对于iOS 应用程序开发预配文件，设备是手动选择的。
 
-* 导航到 [证书 标识符 & 在 [苹果开发中 心](https://developer.apple.com/account) 中的释义赤纬开发](https://developer.apple. com/ac count/ios/profile/limited) 并创建一个新的配套配置文件。
+* Navigate to [Certificates, IDs & Profiles › Profiles](https://developer.apple.com/account/resources/profiles/list) in the [Apple Developer Center](https://developer.apple.com/account) and create a new provisioning profile.
 
 ![iOS 预置配置文件](/docs/assets/img/appflow/ss-profiles-ios-pp-1.png)
 
