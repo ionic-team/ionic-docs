@@ -8,12 +8,12 @@ IOS 设备的 UDID (唯一设备标识符) 将其指向苹果。 您需要知道
 
 获取UID的UI有点困惑，所以与我们一样！
 
-* 将设备插入电脑并打开 iTunes。
+* Plug the device into your computer and open Finder.
 
 <img src="/docs/assets/img/appflow/ss-profiles-ios-udid-1.png" />
 
-* 点击序列号直到您看到UDID。
+* Click the text below your device name.
 
 <img src="/docs/assets/img/appflow/ss-profiles-ios-udid-2.png" />
 
-* 右键点击并复制 UDID 从iTunes 提取。
+* Right click and copy the UDID to extract from Finder.
