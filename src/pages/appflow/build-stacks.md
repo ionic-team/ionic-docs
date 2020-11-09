@@ -31,9 +31,6 @@ Below are the versions used in Appflow for each build type...
 | Carthage     | 0.34.0          | 0.34.0          | 0.35.0          | 0.36.0          | 0.36.0          |
 | CocoaPods    | 1.8.4           | 1.7.5           | 1.9.3           | 1.9.3           | 1.10.0          |
 | Xcode        | 10.2.1          | 11.5            | 11.6            | 12.0            | 12.1            |
-| Debian       | -               | -               | -               | -               | -               |
-| Gradle       | -               | -               | -               | -               | -               |
-| OpenJDK      | -               | -               | -               | -               | -               |
 
 #### Active Linux Versions (Used for Android and Web builds)
 
