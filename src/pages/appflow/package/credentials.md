@@ -142,4 +142,4 @@ For apps that have extensions and require multiple provisioning profiles (apps w
 * That there is one project, one workspace, and one scheme that are all named the same
 * One certificate is used for all provisioning profiles (and that is the certificate for the app in Appflow)
 * Each extension is a separate target
-* WidgetKit for app widgets is only supported on xcode 12 or newer
+* WidgetKit for app widgets is only supported on Xcode 12 or newer
