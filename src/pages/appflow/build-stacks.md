@@ -41,10 +41,6 @@ Below are the versions used in Appflow for each build type...
 | Node.js      | 12.19.0         | 12.19.0         | 14.15.0         |
 | npm          | 6.14.8          | 6.14.6          | 6.14.8          |
 | Yarn         | 1.22.5          | 1.22.5          | 1.22.5          |
-| macOS        | -               | -               | -               |
-| Carthage     | -               | -               | -               |
-| CocoaPods    | -               | -               | -               |
-| Xcode        | -               | -               | -               |
 | Debian       | 9.12            | 9.12            | 9.12            |
 | Gradle       | 4.3.1           | 4.3.1           | 4.3.1           |
 | OpenJDK      | 1.8.0_265       | 1.8.0_265       | 1.8.0_265       |
