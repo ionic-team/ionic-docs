@@ -54,7 +54,7 @@ export class DocsHeader {
       </docs-dropdown>,
       // show Ionic related links in the top bar
       ['Framework'].indexOf(section) > -1 ? <div class="SectionNav-tabs">
-        <stencil-route-link url="/docs/" urlMatch={/^\/docs(?!\/(api|components|cli|native)).*$/}>{l10n.getString('header-guide')}</stencil-route-link>
+        <stencil-route-link url="/docs/" urlMatch={[/^\/docs(?!\/(api|components|cli|native)).*$/, '__/docs/__']}>{l10n.getString('header-guide')}</stencil-route-link>
         <stencil-route-link url="/docs/components" urlMatch={['/docs/api', '/docs/components']}>{l10n.getString('header-components')}</stencil-route-link>
         <stencil-route-link url="/docs/cli">{l10n.getString('header-cli')}</stencil-route-link>
         <stencil-route-link url="/docs/native" urlMatch={['/docs/native']}>{l10n.getString('header-native')}</stencil-route-link>
@@ -64,7 +64,7 @@ export class DocsHeader {
       <stencil-route-link url="/docs/enterprise/community-vs-enterprise" urlMatch={['/docs/enterprise/community-vs-enterprise']}>{l10n.getString('header-native-enterprise')}</stencil-route-link>
       </div> : null,
       ['Appflow'].indexOf(section) > -1 ? <div class="SectionNav-tabs">
-        <stencil-route-link url="/docs/appflow" urlMatch={/^\/docs\/appflow(?!\/(tutorial)).*$/}>{l10n.getString('header-guide')}</stencil-route-link>
+        <stencil-route-link url="/docs/appflow" urlMatch={[/^\/docs\/appflow(?!\/(tutorial)).*$/, '__/docs/appflow__']}>{l10n.getString('header-guide')}</stencil-route-link>
         <stencil-route-link url="/docs/appflow/tutorial" urlMatch={['/docs/appflow/tutorial']}>{l10n.getString('header-tutorial')}</stencil-route-link>
         </div> : null,
       ];
