@@ -73,7 +73,7 @@ $ openssl genrsa out keyname.key 2048
 $ $ openssl req -new -key keyname.key -out CertificateSigningRequest.certSigningRequest
 ```
 
-### iOS 应用程序证书 & 预置配置文件
+### iOS App Certificate & Provisioning Profile(s)
 
 在生成应用证书之前 & Profiling Profiles， 您需要 [注册您的应用程序和任何设备，并获得一个 `ertSigningRequest`](#ios-setup)
 
@@ -129,3 +129,13 @@ $ openssl pkcs12 -export -inkey keyname.key -in ios_development.cer.pem out 证�
 * 选择您生成的证书。
 * 选择任何和所有开发设备。
 * 下载 `.mobilepropose` 文件，这是您的预配配置文件文件。
+
+#### Multiple Provisioning Profiles
+
+For apps that have extensions and require multiple provisioning profiles (apps with watch apps for example), these are the requirements to build them in AppFlow:
+
+* Multiple profiles are only supported for [Capacitor](https://capacitor.ionicframework.com) apps
+* That there is one project, one workspace, and one scheme that are all named the same
+* One certificate is used for all provisioning profiles (and that is the certificate for the app in Appflow)
+* Each extension is a separate target
+* WidgetKit for app widgets is only supported on Xcode 12 or newer
