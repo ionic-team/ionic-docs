@@ -1,11 +1,12 @@
 ---
 title: Auth Connect
 template: enterprise-plugin
-version: 3.1.5
-minor: 3.1.X
+version: 3.2.1
+minor: 3.2.X
 otherVersions:
   - 2.2.X
   - 3.0.X
+  - 3.1.X
 ---
 
 Ionic Auth Connect handles logging in and/or registering a user with an authentication provider (such as Auth0, Azure AD, AWS Cognito, or Okta) using industry standard OAuth/OpenId Connect on iOS, Android, or on the web.
@@ -126,6 +127,43 @@ await this.ionicAuth.handleLogoutCallback();
 
 To test an Ionic app using Auth Connect locally, configure `IonicAuthOptions` to use `http://localhost:8100/` as the base URL for properties such as `redirectUri` and `logoutUrl`. Then, run the `ionic serve` command.
 
+### Checking Authentication Status
+
+Auth Connect provides the `isAuthenticated()` convenience method for checking if there is a current session and refreshing that session if it is already expired. However, there are cases where you may want to implement your own method for checking if the user is authenticated. An example of needing to do this would be to handle checking the authentication status when the device is offline.
+
+The `isAuthenticated()` method relies on the application having a connection to the internet because if the access token is expired, it will automatically attempt to refresh that token with the authentication provider. If the device is not connected to the network during this check, the refresh attempt will fail and the method will report back that the user is not currently authenticated.
+
+Auth Connect provides access to the various building blocks necessary to create your own method for checking authentication status. A simple example for gracefully handling offline might look like the following:
+
+```typescript
+async function isUserAuthenticated(): Promise<boolean> {
+    if (!(await myAuth.isAccessTokenAvailable())) {
+        // No token available, not logged in
+        return false;
+    }
+    if (await myAuth.isAccessTokenExpired()) {
+        if (navigator.onLine) {
+            // Token is expired, but we have a connection so we will attempt to refresh the token
+            try {
+                await myAuth.refreshSession();
+                return true;
+            } catch (e) {
+                // Refresh failed, clear the storage
+                await myAuth.clearStorage();
+                return false;
+            }
+        } else {
+            // Token is expired, but no connection. We will check for the presence
+            // of a refresh token, and if it exists, we will assume the login is still valid
+            return !!await myAuth.getRefreshToken()
+        }
+    } else {
+        // Access token is not expired, authentication is valid
+        return true;
+    }
+}
+```
+
 ### Microsoft Edge (Pre-Chromium) Support
 
 Due to a bug in the pre-Chromium version of Edge, you cannot overide a method in a subclass.
@@ -220,6 +258,17 @@ You can find the API and interface documentation for everything below. The main 
 | parameters | `object` |  any additional parameters that should be added to the login request examples: \`login\_hint\`, \`domain\_hint\` |
 
 **Returns:** `void`
+
+___
+<a id="iionicauth.clearstorage"></a>
+
+###  clearStorage
+
+▸ **clearStorage**(): `Promise`<`void`>
+
+This method will clear all tokens & data stored in the [TokenStorageProvider](#tokenstorageprovider) as well as any metadata relevant to the existing session such as access token expiration time.
+
+**Returns:** `Promise`<`void`>
 
 ___
 <a id="iionicauth.expire"></a>
@@ -488,7 +537,7 @@ ___
 
 ### `<Optional>` authConfig
 
-**● authConfig**: *"auth0" \| "azure" \| "cognito" \| "salesforce" \| "okta" \| "ping" \| "identity-server" \| "general"*
+**● authConfig**: *"auth0" \| "azure" \| "cognito" \| "salesforce" \| "okta" \| "ping" \| "identity-server" \| "keycloak" \| "general"*
 
 The type of the Auth Server, currently only the following are supported:
 
@@ -649,7 +698,7 @@ ___
 
 ### `<Optional>` authConfig
 
-**● authConfig**: *"auth0" \| "azure" \| "cognito" \| "salesforce" \| "okta" \| "ping" \| "identity-server" \| "general"*
+**● authConfig**: *"auth0" \| "azure" \| "cognito" \| "salesforce" \| "okta" \| "ping" \| "identity-server" \| "keycloak" \| "general"*
 
 The type of the Auth Server, currently only the following are supported:
 
@@ -886,6 +935,27 @@ ___
 # Changelog
 
 
+
+### [3.2.1] (2020-11-06)
+
+
+### Bug Fixes
+
+* Fix an issue in syntax that required typescript 3.8 or above. 
+
+### [3.2.0] (2020-11-06)
+
+
+### Features
+
+* add keycloak support 
+* Add public method to clear storage without invalidating tokens 
+
+
+### Bug Fixes
+
+* **ios:** prevent no such module Cordova 
+* Fix an issue where the general provider would only use logout_endpoint and not check for end_session_endpoint which caused it not to work with some providers. 
 
 ### [3.1.5] (2020-10-28)
 
