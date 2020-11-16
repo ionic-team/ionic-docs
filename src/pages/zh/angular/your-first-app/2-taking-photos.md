@@ -30,7 +30,7 @@ const { Camera, Filesystem, Storage } = Plugins;
 
 ```typescript
 public async addNewToGallery() {
-  // 拍照
+  // 拍一张照片
   const capturedPhoto = await Camera.getPhoto({
     resultType: CameraResultType.Uri, 
     source: CameraSource.Camera, 
@@ -78,7 +78,8 @@ _（你的自怕可能会比我好看很多）_
 在`PhotoService`文件里的最底部并且类的外边，创建一个名为`Photo`的interface，用于存放我们的照片数据：
 
 ```typescript
-export interface Photo {
+// 导出接口照片
+export interface Photo{
   filepath: string;
   webviewPath: string;
 }
@@ -110,7 +111,7 @@ export class PhotoService {
 }
 ```
 
-Next, move over to `tab2.page.html` so we can display the image on the screen. Add a [Grid component](https://ionicframework.com/docs/api/grid) so that each photo will display nicely as photos are added to the gallery, and loop through each photo in the `PhotoServices`'s Photos array, adding an Image component (`<ion-img>`) for each. Point the `src` (source) at the photo’s path:
+接下来，移动到 `tab2.page.html` ，以便我们可以在屏幕上显示图像。 在页面上添加一个[网格组件](https://ionicframework.com/docs/api/grid)，以便每张照片都能很好地展示。通过数组的循环，我们为每张照片加上一个图片组件（`<ion-img>`）。 给`src`（源）指定照片的路径：
 
 ```html
 <ion-content>
@@ -121,12 +122,9 @@ Next, move over to `tab2.page.html` so we can display the image on the screen. A
         <ion-img [src]="photo.webviewPath"></ion-img>
     </ion-col>
     </ion-row>
-  </ion-grid>
-
-  <!-- ion-fab markup  -->
-</ion-content>
+  </ion-grid><!-- ion-fab 标记  --></ion-content>
 ```
 
-Save all files. Within the web browser, click the Camera button and take another photo. This time, the photo is displayed in the Photo Gallery!
+保存好我们编辑的所有文件， 在网页浏览器中，点击相机按钮开始拍照。 这一次，照片被显示在了图库里面。
 
-Up next, we’ll add support for saving the photos to the filesystem, so they can be retrieved and displayed in our app at a later time.
+下一步，我们要给应用添加一个能将照片保存在文件系统里面的功能，这样照片就能够在应用中检索以及显示了。
