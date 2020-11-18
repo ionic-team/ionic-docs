@@ -39,7 +39,7 @@ export default defineComponent({
   },
   ionViewWillLeave() {
     console.log('Home page will leave');
-  }
+  },
   components: {
     IonPage
   }
