@@ -20,7 +20,7 @@ Ionic Framework provides a few lifecycle methods that you can use in your apps:
 | `ionViewWillLeave` | Fired when the component routing from is about to animate.         |
 | `ionViewDidLeave`  | Fired when the component routing to has finished animating.        |
 
-The lifecycle methods are accessed by providing them as methods on your Vue component:
+The lifecycle hooks are defined the same way Vue lifecycle hooks are - as functions at the root of your Vue component:
 
 ```typescript
 import { IonPage } from '@ionic/vue';
@@ -28,19 +28,17 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'Home',
-  methods: {
-    ionViewDidEnter() {
-      console.log('Home page did enter');
-    },
-    ionViewDidLeave() {
-      console.log('Home page did leave');
-    },
-    ionViewWillEnter() {
-      console.log('Home page will enter');
-    },
-    ionViewWillLeave() {
-      console.log('Home page will leave');
-    }
+  ionViewDidEnter() {
+    console.log('Home page did enter');
+  },
+  ionViewDidLeave() {
+    console.log('Home page did leave');
+  },
+  ionViewWillEnter() {
+    console.log('Home page will enter');
+  },
+  ionViewWillLeave() {
+    console.log('Home page will leave');
   },
   components: {
     IonPage
