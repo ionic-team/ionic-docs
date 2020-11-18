@@ -7,13 +7,13 @@ nextUrl: '/docs/vue/your-first-app/2-taking-photos'
 
 # 你的第一个 Ionic 应用：Vue
 
-The great thing about Ionic is that with one codebase, you can build for any platform using just HTML, CSS, and JavaScript. Follow along as we learn the fundamentals of Ionic app development by creating a realistic app step by step.
+Ionic的伟大之处在于，只需一个代码库，您就可以仅使用HTML，CSS和JavaScript为任何平台进行构建。 通过逐步创建逼真的应用程序，跟随我们学习Ionic应用程序开发的基础知识。
 
-Here’s the finished app running on all 3 platforms: <iframe width="560" height="315" src="https://www.youtube.com/embed/0ASQ13Y1Rk4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+这是在所有3个平台上运行的成品应用程序： <iframe width="560" height="315" src="https://www.youtube.com/embed/0ASQ13Y1Rk4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
-## What We'll Build
+## 我们将建立什么?
 
-We'll create a Photo Gallery app that offers the ability to take photos with your device's camera, display them in a grid, and store them permanently on the device.
+我们将创建一个圖庫应用程序，该应用程序可以使用设备的相机拍摄照片，将照片显示在网格中并永久存储在设备上。
 
 Highlights include:
 
