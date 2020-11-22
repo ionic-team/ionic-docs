@@ -110,7 +110,7 @@ Terminada la función `addNewToGallery`, añade la nueva foto capturada al princ
 }
 ```
 
-A continuación, vayamos a `tab2.page.html` de modo que podamos desplegar la imagen en pantalla. Add a [Grid component](https://ionicframework.com/docs/api/grid) so that each photo will display nicely as photos are added to the gallery, and loop through each photo in the `PhotoServices`'s Photos array, adding an Image component (`<ion-img>`) for each. Point the `src` (source) at the photo’s path:
+A continuación, vayamos a `tab2.page.html` de modo que podamos desplegar la imagen en pantalla. Agrega un [componente Grid](https://ionicframework.com/docs/api/grid) de modo que cada foto se muestre bien, a medida que se agreguen fotos a la galería, y recorras cada foto en el arreglo Photos de `PhotoServices`, agregando un componente Image (`<ion-img>`) para cada una de ellas. Apunta `src` (la fuente) hacia la ruta de la foto:
 
 ```html
 <ion-content>
@@ -127,6 +127,6 @@ A continuación, vayamos a `tab2.page.html` de modo que podamos desplegar la ima
 </ion-content>
 ```
 
-Guardar todos los archivos. Within the web browser, click the Camera button and take another photo. This time, the photo is displayed in the Photo Gallery!
+Guardar todos los archivos. Dentro del navegador, haz clic en el botón Camera y toma otra foto. Esta vez, la foto es desplegada en la Galería de Fotos!
 
 Up next, we’ll add support for saving the photos to the filesystem, so they can be retrieved and displayed in our app at a later time.
