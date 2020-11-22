@@ -114,14 +114,18 @@ A continuación, vayamos a `tab2.page.html` de modo que podamos desplegar la ima
 
 ```html
 <ion-content>
-  <ion-grid>
-    <ion-row>
-    <ion-col size="6" 
+ <ion-grid>
+  <ion-row>
+   <ion-col size="6" 
       *ngFor="let photo of photoService.photos; index as position">
-        <ion-img [src]="photo.webviewPath"></ion-img>
-    </ion-col>
-    </ion-row>
-  </ion-grid>
+   <ion-col size="6" 
+      *ngFor="let photo of photoService.photos; index as position">
+   <ion-col size="6" 
+      *ngFor="let photo of photoService.photos; index as position">
+    <ion-img [src]="photo.webviewPath">
+   </ion-col>
+  </ion-row>
+ </ion-grid>
 
   <!-- ion-fab markup  -->
 </ion-content>
@@ -129,4 +133,4 @@ A continuación, vayamos a `tab2.page.html` de modo que podamos desplegar la ima
 
 Guardar todos los archivos. Dentro del navegador, haz clic en el botón Camera y toma otra foto. Esta vez, la foto es desplegada en la Galería de Fotos!
 
-Up next, we’ll add support for saving the photos to the filesystem, so they can be retrieved and displayed in our app at a later time.
+Hasta la próxima, agregaremos soporte para guardar las fotos al sistema de archivos, de forma que puedan ser recuperadas y desplegadas en nuestra app en otro momento.
