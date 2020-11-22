@@ -7,11 +7,11 @@ nextUrl: '/docs/angular/your-first-app/3-deploying-mobile'
 
 # Capturando fotos con la cámara
 
-Ahora por la parte divertida: añadiendo la capacidad de tomar fotos con la cámara del dispositivo usando el plugin [API de cámara](https://capacitor.ionicframework.com/docs/apis/camera) de Capacitor. Empezaremos por construirlo para la web, luego haremos algunos pequeños ajustes para que funcione en móviles (iOS y Android).
+Ahora viene la parte divertida: añadiendo la capacidad de tomar fotos con la cámara del dispositivo usando el plugin [API de cámara](https://capacitor.ionicframework.com/docs/apis/camera) de Capacitor. Empezaremos por construirlo para la web, luego haremos algunos pequeños ajustes para que funcione en móviles (iOS y Android).
 
 ## Servicio de fotos
 
-Toda la lógica de Capacitor (uso de la cámara y otras características nativas) se encapsulará en un servicio. Crea `Photo Service` usando el comando `ionic generate`:
+Toda la lógica de Capacitor (uso de la cámara y otras características nativas) serán encapsuladas en una clase servicio. Crea `Photo Service` usando el comando `ionic generate`:
 
 ```bash
 $ ionic g service services/photo
