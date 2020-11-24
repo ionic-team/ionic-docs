@@ -63,11 +63,11 @@ Para que algunos plugins nativos funcionen, los permisos de usuario deben ser co
 ![Xcode Custom iOS Target Properties](/docs/assets/img/guides/first-app-cap-ng/xcode-info-plist.png)
 
 
-Cada ajuste en `Info.plist` contiene un nombre de parámetro de nivel bajo y un nombre de alto nivel. Por defecto, el editor de la lista de propiedades muestra los nombres de alto nivel, pero a menudo es útil cambiar a mostrar los nombres crudos y de bajo nivel. To do this, right-click anywhere in the property list editor and toggle "Raw Keys/Values."
+Cada ajuste en `Info.plist` contiene un nombre de parámetro de nivel bajo y un nombre de alto nivel. Por defecto, el editor de la lista de propiedades muestra los nombres de alto nivel, pero a menudo es útil cambiar a mostrar los nombres crudos y de bajo nivel. Para hacer esto, haz clic con el botón derecho del ratón en cualquier lugar del editor de la lista de propiedades y conmuta "Raw Keys/Values".
 
-Localice el botón `NSCameraUsageDescription` (si ha seguido el tutorial debería aparecer) y establezca el valor a un texto que describa porque la aplicación necesita acceder a la cámara, como por ejemplo "tomar fotografías". El valor de este campo será mostrado al usuario cuándo la solicitud de permisos aparezca.
+Localice la llave `NSCameraUsageDescription` (si ha seguido el tutorial debería existir) y establezca el valor a un texto que describa porque la aplicación necesita usar la cámara, como por ejemplo "Tomar fotografías". El valor de este campo será mostrado al usuario cuándo la solicitud de permisos aparezca.
 
-A continuación, haga clic en `App` en el navegador de proyectos en el lado izquierdo, luego, dentro de la sección `Signing & Capabilities`, seleccione su Equipo de Desarrollo.
+A continuación, haga clic en `App` en el navegador de proyectos al lado izquierdo, luego, dentro de la sección `Signing & Capabilities`, seleccione su Equipo de Desarrollo.
 
 ![Xcode - Selecting Development Team](/docs/assets/img/guides/first-app-cap-ng/xcode-signing.png)
 
