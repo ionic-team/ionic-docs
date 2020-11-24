@@ -11,13 +11,13 @@ Ahora podemos tomar varias fotos y mostrarlas en una galería de fotos en la seg
 
 ## API FileSystem
 
-Afortunadamente, guardarlos en el sistema de archivos sólo toma unos pocos pasos. Begin by creating a new class method, `savePicture()`, in the `PhotoService` class (`src/app/services/photo.service.ts`). Pasamos al objeto `cameraPhoto`, que representa la foto del dispositivo recién capturado:
+Afortunadamente, guardarlos en el sistema de archivos sólo toma unos pocos pasos. Comencemos creando un nuevo método de clase, `savePicture()`, en la clase `PhotoService` (`src/app/services/photo.service.ts`). Pasamos al objeto `cameraPhoto`, que representa la foto del dispositivo recién capturado:
 
 ```typescript
 private async savePicture(cameraPhoto: CameraPhoto) { }
 ```
 
-We can use this new method immediately in `addNewToGallery()`:
+Podemos usar éste nuevo método inmediatamente en `addNewToGallery()`:
 
 ```typescript
 public async addNewToGallery() {
@@ -34,7 +34,7 @@ public async addNewToGallery() {
 }
 ```
 
-Utilizaremos el Capacitor [Filesystem API](https://capacitor.ionicframework.com/docs/apis/filesystem) para guardar la foto en el sistema de archivos. Para empezar, convierte la foto en formato base64, luego envía los datos a la función `writeFile` de Filesystem. Como recordarás, mostramos cada foto en la pantalla configurando cada ruta origen de la imagen (atributo *src*) en *tab2.page.html* a la propiedad webviewPath. Entonces, configúrelo y luego devuelva el nuevo objeto Photo.
+Utilizaremos el [Filesystem API](https://capacitor.ionicframework.com/docs/apis/filesystem) de Capacitor, para guardar la foto en el sistema de archivos. Para empezar, convierte la foto en formato base64, luego envía los datos a la función `writeFile` del Filesystem. Como recordarás, mostramos cada foto en la pantalla configurando cada ruta origen de la imagen (atributo *src*) en *tab2.page.html* a la propiedad webviewPath. Entonces, configúrelo y luego devuelva el nuevo objeto Photo.
 
 ```typescript
 private async savePicture(cameraPhoto: CameraPhoto) {
