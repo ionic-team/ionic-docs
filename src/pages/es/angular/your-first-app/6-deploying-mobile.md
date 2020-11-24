@@ -1,7 +1,7 @@
 ---
-previousText: 'Adding Mobile'
+previousText: 'Agregando Móvil'
 previousUrl: '/docs/angular/your-first-app/5-adding-mobile'
-nextText: 'Rapid App Dev with Live Reload'
+nextText: 'Desarrollo rápido de Apps con Live Reload'
 nextUrl: '/docs/angular/your-first-app/7-live-reload'
 ---
 
@@ -50,9 +50,9 @@ $ ionic cap sync
 
 > Para construir una aplicación iOS, necesitarás una computadora Mac.
 
-Capacitor iOS apps are configured and managed through Xcode (Apple’s iOS/Mac IDE), with dependencies managed by [CocoaPods](https://cocoapods.org/). Antes de ejecutar esta aplicación en un dispositivo iOS, hay un par de pasos para completar.
+Las aplicaciones iOS de Capacitor están configuradas y gestionadas a través de Xcode (iOS/Mac IDE), con dependencias administradas por [CocoaPods ](https://cocoapods.org/). Antes de ejecutar esta aplicación en un dispositivo iOS, hay un par de pasos por completar.
 
-Primero, ejecuta el comando Capacitor `open` , que abre el proyecto nativo de iOS en Xcode:
+Primero, ejecuta el comando `open` de Capacitor, que abre el proyecto nativo de iOS en Xcode:
 
 ```shell
 $ ionic cap open ios
