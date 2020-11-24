@@ -58,7 +58,7 @@ private async savePicture(cameraPhoto: CameraPhoto) {
 }
 ```
 
-`readAsBase64()` es una función ayudante (helper), que definiremos a continuación. Es util organizar un método por separado, ya que requiere un poco de lógica especifica de la plataforma (web vs. mobile) -  en breve profundizaremos en ello.  Por ahora, implementaremos la lógica para la plataforma web.
+`readAsBase64()` es una función ayudante (helper), que definiremos a continuación. Es útil organizar a través de un método separado, ya que requiere una pequeña cantidad de lógica específica de la plataforma. (web vs. móvil) - más sobre esto en un momento. Por ahora, implementaremos la lógica para la plataforma web.
 
 ```typescript
 private async readAsBase64(cameraPhoto: CameraPhoto) {
@@ -81,4 +81,4 @@ convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
 
 Obtener la foto de la camara en formato base64, parece ser más complicado en web que en mobile. En realidad, solo estamos usando las APIs Web incorporadas [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) como una forma ordenada de leer el archivo en formato blob, luego [readAsDataURL()](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL) de FileReader, convierte la foto en blob a base64.
 
-There we go! Each time a new photo is taken, it’s now automatically saved to the filesystem.
+Aquí vamos! Cada vez que se toma una nueva foto, se guarda automáticamente en el sistema de archivos.
