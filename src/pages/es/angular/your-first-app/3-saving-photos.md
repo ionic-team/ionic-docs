@@ -34,14 +34,14 @@ public async addNewToGallery() {
 }
 ```
 
-Utilizaremos el [Filesystem API](https://capacitor.ionicframework.com/docs/apis/filesystem) de Capacitor, para guardar la foto en el sistema de archivos. Para empezar, convierte la foto en formato base64, luego envía los datos a la función `writeFile` del Filesystem. Como recordarás, mostramos cada foto en la pantalla configurando cada ruta origen de la imagen (atributo *src*) en *tab2.page.html* a la propiedad webviewPath. Entonces, configúrelo y luego devuelva el nuevo objeto Photo.
+Utilizaremos el [Filesystem API](https://capacitor.ionicframework.com/docs/apis/filesystem) de Capacitor, para guardar la foto en el sistema de archivos. Para empezar, convierte la foto en formato base64, luego envía los datos a la función `writeFile` del Filesystem. Como recordarás, mostramos cada foto en la pantalla configurando cada ruta origen de la imagen (atributo *src*) en `tab2.page.html` a la propiedad webviewPath. Entonces, configúrelo y luego devuelva el nuevo objeto Photo.
 
 ```typescript
 private async savePicture(cameraPhoto: CameraPhoto) {
-  // Convert photo to base64 format, required by Filesystem API to save
+  // Convierte photo al formato base64, requerido por el API de Filesystem para guardarlo
   const base64Data = await this.readAsBase64(cameraPhoto);
 
-  // Write the file to the data directory
+  // Escribe el archivo a la carpeta Data
   const fileName = new Date().getTime() + '.jpeg';
   const savedFile = await Filesystem.writeFile({
     path: fileName,
@@ -49,8 +49,8 @@ private async savePicture(cameraPhoto: CameraPhoto) {
     directory: FilesystemDirectory.Data
   });
 
-  // Use webPath to display the new image instead of base64 since it's
-  // already loaded into memory
+  // Usa webPath para mostrar la nueva imagen en lugar de base64 desde la que 
+  // ya está cargada en memoria
   return {
     filepath: fileName,
     webviewPath: cameraPhoto.webPath
@@ -58,7 +58,7 @@ private async savePicture(cameraPhoto: CameraPhoto) {
 }
 ```
 
-`readAsBase64()` es una función ayudante que definiremos a continuación. Es util organizar un método por separado, ya que requiere un poco de lógica especifica de la plataforma (web vs. mobile) -  en breve profundizaremos en ello.  Por ahora, implementaremos la lógica para la plataforma web.
+`readAsBase64()` es una función ayudante (helper), que definiremos a continuación. Es util organizar un método por separado, ya que requiere un poco de lógica especifica de la plataforma (web vs. mobile) -  en breve profundizaremos en ello.  Por ahora, implementaremos la lógica para la plataforma web.
 
 ```typescript
 private async readAsBase64(cameraPhoto: CameraPhoto) {
