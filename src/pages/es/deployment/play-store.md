@@ -18,7 +18,7 @@ $ ionic cordova build android --prod --release
 
 Esto generará una versión de compilación basada en la configuración del config.xml en el directorio de la aplicacion:  plataform/android/app/build /outputs /apk. Una aplicación de Ionic tendrá valores predeterminados y preestablecidos en este archivo, pero esto se puede cambiar para personalizar las compilaciones.
 
-## Signing an APK
+## Firmando un APK
 
 First, the unsigned APK must be signed. If a signing key has already been generated, skip these steps and use that one instead. Generate a private key using the keytool command that comes with the Android SDK:
 
@@ -44,7 +44,7 @@ $ zipalign -v 4 HelloWorld-release-unsigned.apk HelloWorld.apk
 
 This generates a final release binary called HelloWorld.apk that can be accepted into the Google Play Store.
 
-## Submitting an app to the Google Play Store
+## Enviando una aplicación a Google Play Store
 
 Now that a release APK has been generated, a Play Store listing can be written and the APK can be uploaded.
 
