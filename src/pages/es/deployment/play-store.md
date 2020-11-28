@@ -1,16 +1,16 @@
 ---
-previousText: 'iOS App Store'
+previousText: 'Despliegue en Android Play Store'
 previousUrl: 'docs/publishing/app-store'
 nextText: 'Progressive Web App (PWA)'
 nextUrl: '/docs/deployment/progressive-web-app'
 ---
 
-# Android Play Store Deployment
+# Despliegue en Android Play Store
 
 
-## Generating a release build of an app
+## Generando la Aplicacion en version de Lanzamiento
 
-To generate a release build for Android, run the following cli command:
+Para generar una compilación de lanzamiento para Android, ejecute el siguiente comando cli:
 
 ```shell
 $ ionic cordova build android --prod --release
