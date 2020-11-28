@@ -16,7 +16,7 @@ Para generar una compilación de lanzamiento para Android, ejecute el siguiente 
 $ ionic cordova build android --prod --release
 ```
 
-This will generate a release build based on the settings in the `config.xml` in the `platforms/android/app/build/outputs/apk` directory of an app. An Ionic app will have preset default values in this file but this can be changed to customize builds.
+Esto generará una versión de compilación basada en la configuración del config.xml en el directorio de la aplicacion:  plataform/android/app/build /outputs /apk. Una aplicación de Ionic tendrá valores predeterminados y preestablecidos en este archivo, pero esto se puede cambiar para personalizar las compilaciones.
 
 ## Signing an APK
 
@@ -63,4 +63,4 @@ Be sure to fill out the description for the app along with providing screenshots
 
 As an app evolves, it will need to be updated with new features and fixes. An app can be updated by either submitting a new version to the Google Play Store, or by using a live update service like Ionic Appflow's Live Update feature. Using Live Updates, changes can be pushed directly to users from the Ionic Appflow dashboard, without submitting changes to the Play Store. Learn more about Live Updates <a href="https://ionicframework.com/docs/appflow/deploy/intro" target="_blank">here</a>.
 
-> In order for the Google Play Store to accept updated APKs, the config.xml file will need to be edited to increment the version value, then rebuild the app for release following the instructions above.
+> Para que Google Play Store acepte el APK actualizado, será necesario editar el archivo config.xml para incrementar el valor de la versión y luego reconstruir la aplicación para su lanzamiento siguiendo las instrucciones anteriores.
