@@ -36,12 +36,11 @@ Next we use the Capacitor [Filesystem API](https://capacitor.ionicframework.com/
 
 ```typescript
 const savePicture = async (photo: CameraPhoto, fileName: string): Promise<Photo> => {
-  let base64Data: string;
 
   // Fetch the photo, read as a blob, then convert to base64 format
   const response = await fetch(photo.webPath!);
   const blob = await response.blob();
-  base64Data = await convertBlobToBase64(blob) as string;
+  const base64Data = await convertBlobToBase64(blob) as string;
 
   const savedFile = await Filesystem.writeFile({
     path: fileName,
