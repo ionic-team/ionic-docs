@@ -71,7 +71,7 @@ The Ionic team has compiled a set of recommendations for using the Ionic Framewo
 | V4 - React    | `@ionic/react` 4.X    | Use latest available                               |
 | V3            | `ionic-angular` 3.9.X | Use latest; special configuration may be required  |
 
-* Native Premier Plugins require `@ionic-enterprise/cordova` for installation [see here](/docs/enterprise/setup#install-tooling)
+* Native Premier Plugins require `@ionic-enterprise/cordova` for installation [see here](https://ionic.io/docs/premier-plugins/setup#install-tooling)
 * For Capacitor projects, follow the [Capacitor installation guide for Cordova plugins](https://capacitor.ionicframework.com/docs/cordova/using-cordova-plugins)
 * If you need to use an Enterprise plugin with an Ionic 3 project, please [contact us](https://ionic.zendesk.com/hc)
 

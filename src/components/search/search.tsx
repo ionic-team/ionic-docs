@@ -246,8 +246,8 @@ export class IonicSearch {
         <div class="Search__Defaults__Section">
           <h4>Native</h4>
           <ul>
-            <li><a href="/docs/enterprise/camera"><Book/><strong>Camera</strong> | Native EE</a></li>
-            <li><a href="/docs/enterprise/identity-vault"><Book/><strong>Identity Vault</strong> | Native EE</a></li>
+            <li><a href="https://ionic.io/docs/premier-plugins/camera"><Book/><strong>Camera</strong> | Native EE</a></li>
+            <li><a href="https://ionic.io/docs/identity-vault"><Book/><strong>Identity Vault</strong> | Native EE</a></li>
             <li><a href="/docs/native/firebase"><Book/><strong>Firebase</strong> | Native CE</a></li>
             <li><a href="/docs/native/barcode-scanner"><Book/><strong>Barcode Scanner</strong> | Native CE</a></li>
           </ul>

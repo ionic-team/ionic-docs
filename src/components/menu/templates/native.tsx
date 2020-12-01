@@ -26,7 +26,7 @@ export class DocsMenuNative {
       'menu-native-home': '/docs/native',
       'menu-native-community': '/docs/native/community',
       'menu-native-faq': '/docs/native/faq',
-      'menu-native-community-v-premier': '/docs/enterprise/community-vs-enterprise'
+      'menu-native-community-v-premier': 'https://ionic.io/docs/premier-plugins'
     }
   };
 

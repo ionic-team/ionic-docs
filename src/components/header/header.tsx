@@ -34,16 +34,16 @@ export class DocsHeader {
     };
   }
 
-  renderMenu(section: 'Framework' | 'Appflow' | 'Native' | 'CLI' | 'Studio') {
+  renderMenu(section: 'Framework' | 'Native' | 'CLI' | 'Studio') {
     return [
       <docs-dropdown label={section}>
         <section>
           <stencil-route-link url="/docs/">Framework {section === 'Framework' ? <Checkmark/> : null}</stencil-route-link>
-          <stencil-route-link url="/docs/appflow">Appflow {section === 'Appflow' ? <Checkmark/> : null}</stencil-route-link>
           <stencil-route-link url="/docs/native">Native {section === 'Native' ? <Checkmark/> : null}</stencil-route-link>
           <stencil-route-link url="/docs/cli">CLI {section === 'CLI' ? <Checkmark/> : null}</stencil-route-link>
         </section>
         <section>
+          {link(['Appflow', 'https://ionic.io/docs/appflow' ])}
           {link(['Capacitor', 'https://capacitor.ionicframework.com/docs/' ])}
           {link(['Stencil', 'https://stenciljs.com' ])}
         </section>
@@ -59,14 +59,6 @@ export class DocsHeader {
         <stencil-route-link url="/docs/cli">{l10n.getString('header-cli')}</stencil-route-link>
         <stencil-route-link url="/docs/native" urlMatch={['/docs/native']}>{l10n.getString('header-native')}</stencil-route-link>
       </div> : null,
-      ['Native'].indexOf(section) > -1 ? <div class="SectionNav-tabs">
-      <stencil-route-link url="/docs/native" urlMatch={['/docs/native']}>{l10n.getString('header-native-community')}</stencil-route-link>
-      <stencil-route-link url="/docs/enterprise/community-vs-enterprise" urlMatch={['/docs/enterprise/community-vs-enterprise']}>{l10n.getString('header-native-enterprise')}</stencil-route-link>
-      </div> : null,
-      ['Appflow'].indexOf(section) > -1 ? <div class="SectionNav-tabs">
-        <stencil-route-link url="/docs/appflow" urlMatch={[/^\/docs\/appflow(?!\/(tutorial)).*$/, '__/docs/appflow__']}>{l10n.getString('header-guide')}</stencil-route-link>
-        <stencil-route-link url="/docs/appflow/tutorial" urlMatch={['/docs/appflow/tutorial']}>{l10n.getString('header-tutorial')}</stencil-route-link>
-        </div> : null,
       ];
   }
 
@@ -83,19 +75,10 @@ export class DocsHeader {
         <header-mobile-collapse>
           <nav class="SectionNav">
             <stencil-route-switch>
-              <stencil-route url="/docs/appflow">
-                {this.renderMenu('Appflow')}
-              </stencil-route>
-              <stencil-route url="/docs/appflow/tutorial">
-                {this.renderMenu('Appflow')}
-              </stencil-route>
               <stencil-route url="/docs/studio">
                 {this.renderMenu('Studio')}
               </stencil-route>
               <stencil-route url="/docs/native">
-                {this.renderMenu('Native')}
-              </stencil-route>
-              <stencil-route url="/docs/enterprise">
                 {this.renderMenu('Native')}
               </stencil-route>
               <stencil-route url="/docs/cli">
