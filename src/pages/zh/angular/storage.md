@@ -11,7 +11,7 @@ nextUrl: '/docs/angular/performance'
 
 ## Ionic Offline Storage
 
-[Ionic Offline Storage](/docs/enterprise/offline-storage) 是一个可在 iOS 和 Android 上运行的跨平台数据 存储系统。 它使得将离线存储添加到安全的离线应用(在设备上加密)，表现良好，并提供高级的 NoSQL 数据查询。
+[Ionic Offline Storage](https://ionic.io/docs/offline-storage) is a cross-platform data storage system that works on iOS and Android. 它使得将离线存储添加到安全的离线应用(在设备上加密)，表现良好，并提供高级的 NoSQL 数据查询。
 
 为团队创建复杂的，数据驱动的应用程序，管理敏感数据的应用程序或在小区服务/互联网连接不可靠的区域中使用的应用程序而创建。 感兴趣吗？ [点击这里开始](https://ionicframework.com/offline-storage#get-started)
 
