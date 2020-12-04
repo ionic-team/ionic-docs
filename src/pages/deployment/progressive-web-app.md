@@ -17,4 +17,5 @@ For the frameworks Ionic supports, we've created dedicated guides that go into m
 <docs-cards>
   <docs-card header="Angular" href="/docs/angular/pwa" img="/docs/assets/img/frameworks/angular.svg"></docs-card>
   <docs-card header="React" href="/docs/react/pwa" img="/docs/assets/img/frameworks/react.svg"></docs-card>
+  <docs-card header="Vue" href="/docs/vue/pwa" img="/docs/assets/img/frameworks/vue.svg"></docs-card>
 </docs-cards>
