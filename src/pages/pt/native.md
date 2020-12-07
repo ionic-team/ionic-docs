@@ -9,7 +9,7 @@ tableOfContents: false
 
 A collection of free Cordova and Capacitor plugins, built and maintained by the community, with TypeScript wrappers and a consistent API and naming convention for easier development.</docs-card>
 
-<docs-card header="Ionic Native Enterprise Edition" href="/docs/enterprise/community-vs-enterprise" img="/docs/assets/img/native/enterprise-edition.png"> 
+<docs-card header="Ionic Native Enterprise Edition" href="https://ionic.io/docs" img="/docs/assets/img/native/enterprise-edition.png"> 
 
 Premium, supported Capacitor and Cordova plugins, third-party integrations, and pre-built solutions for teams building enterprise-grade apps with Ionic.</docs-card> </docs-cards>
 
