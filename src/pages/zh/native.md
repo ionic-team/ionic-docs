@@ -9,7 +9,7 @@ tableOfContents: false
 
 由社区建造和维护的免费的 Cordova 和 Capacitor 插件集合， 使用 TypeScript 包装器和一个前后一致的 API 和命名协议以便更容易开发。</docs-card>
 
-<docs-card header="Ionic Native Enterprise Edition" href="/docs/enterprise/community-vs-enterprise" img="/docs/assets/img/native/enterprise-edition.png"> 
+<docs-card header="Ionic Native Enterprise Edition" href="https://ionic.io/docs" img="/docs/assets/img/native/enterprise-edition.png"> 
 
 高级版支持Capaciter 和 Cordova 插件，第三方整合，以及团队构建企业级应用程序的 Ionic。</docs-card> </docs-cards>
 
