@@ -46,6 +46,10 @@ export class DocsHeader {
           {link(['Appflow', 'https://ionic.io/docs/appflow' ])}
           {link(['Capacitor', 'https://capacitor.ionicframework.com/docs/' ])}
           {link(['Stencil', 'https://stenciljs.com' ])}
+          {link(['Identity Vault', 'https://ionic.io/docs/identity-vault' ])}
+          {link(['Auth Connect', 'https://ionic.io/docs/auth-connect' ])}
+          {link(['Offline Storage', 'https://ionic.io/docs/offline-storage' ])}
+          {link(['Premier Plugins', 'https://ionic.io/docs/premier-plugins' ])}
         </section>
         {section === 'Framework' ? <section>
           {link(['Framework v4', 'https://ionicframework.com/docs/v4/components' ])}
