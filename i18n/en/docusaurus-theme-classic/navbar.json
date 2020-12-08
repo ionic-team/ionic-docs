@@ -1,0 +1,66 @@
+{
+  "item.label.Guide": {
+    "message": "Guide",
+    "description": "Navbar item with label Guide"
+  },
+  "item.label.Components": {
+    "message": "Components",
+    "description": "Navbar item with label Components"
+  },
+  "item.label.Community": {
+    "message": "Community",
+    "description": "Navbar item with label Community"
+  },
+  "item.label.Support": {
+    "message": "Support",
+    "description": "Navbar item with label Support"
+  },
+  "item.label.Community Hub": {
+    "message": "Community Hub",
+    "description": "Navbar item with label Community Hub"
+  },
+  "item.label.Forum": {
+    "message": "Forum",
+    "description": "Navbar item with label Forum"
+  },
+  "item.label.Slack": {
+    "message": "Slack",
+    "description": "Navbar item with label Slack"
+  },
+  "item.label.Spectrum": {
+    "message": "Spectrum",
+    "description": "Navbar item with label Spectrum"
+  },
+  "item.label.Meetups": {
+    "message": "Meetups",
+    "description": "Navbar item with label Meetups"
+  },
+  "item.label.Blog": {
+    "message": "Blog",
+    "description": "Navbar item with label Blog"
+  },
+  "item.label.Twitter": {
+    "message": "Twitter",
+    "description": "Navbar item with label Twitter"
+  },
+  "item.label.Help Center": {
+    "message": "Help Center",
+    "description": "Navbar item with label Help Center"
+  },
+  "item.label.Customer Support": {
+    "message": "Customer Support",
+    "description": "Navbar item with label Customer Support"
+  },
+  "item.label.Enterprise Advisory": {
+    "message": "Enterprise Advisory",
+    "description": "Navbar item with label Enterprise Advisory"
+  },
+  "item.label.CLI": {
+    "message": "CLI",
+    "description": "Navbar item with label CLI"
+  },
+  "item.label.Native": {
+    "message": "Native",
+    "description": "Navbar item with label Native"
+  }
+}
