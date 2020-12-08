@@ -84,9 +84,13 @@ Angular has always been at the center of what makes Ionic great. While the core 
 
 Ionic now has official support for the popular React library. Ionic React lets React developers use their existing web skills to build apps that target iOS, Android, the web, and the desktop. With `@ionic/react`, you can use all the core Ionic components, but in a way that feels like using native React components.
 
+### Vue
+
+Ionic now has official support for the popular Vue 3 library. Ionic Vue lets Vue developers use their existing web skills to build apps that target iOS, Android, the web, and the desktop. With `@ionic/vue`, you can use all the core Ionic components, but in a way that feels like using native Vue components.
+
 ### Future Support
 
-Support for other frameworks are expected in a future release. Currently official bindings for Vue are in development, though some components just work out of the box in those frameworks.
+Support for other frameworks will be considered in future releases.
 
 ## Ionic CLI
 
