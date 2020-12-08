@@ -82,6 +82,7 @@ module.exports = {
       ],
     },
   },
+  themes: ['@ionic-internal/docusaurus-theme'],
   presets: [
     [
       '@docusaurus/preset-classic',
