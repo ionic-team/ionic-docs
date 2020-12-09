@@ -1,6 +1,4 @@
 ---
-previousText: 'Hardware Back Button'
-previousUrl: '/docs/developing/hardware-back-button'
 ---
 
 # Keyboard

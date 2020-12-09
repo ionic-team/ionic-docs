@@ -1,10 +1,6 @@
 ---
 initialTab: 'preview'
 inlineHtmlPreviews: true
-previousText: 'Colors'
-previousUrl: '/docs/theming/colors'
-nextText: 'Dark Mode'
-nextUrl: '/docs/theming/dark-mode'
 ---
 
 # Themes

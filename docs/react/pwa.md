@@ -1,9 +1,5 @@
 ---
-title: "Progressive Web Apps in React"
-previousText: 'Platform Utils'
-previousUrl: '/docs/react/platform'
-nextText: 'Overlays in Ionic React'
-nextUrl: '/docs/react/overlays'
+sidebar_label: Progressive Web Apps
 ---
 
 

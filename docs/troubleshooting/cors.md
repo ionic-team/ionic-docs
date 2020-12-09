@@ -1,8 +1,4 @@
 ---
-previousText: 'Native Errors'
-previousUrl: '/docs/troubleshooting/native'
-nextText: ''
-nextUrl: ''
 contributors:
   - FdezRomero
 ---
@@ -191,7 +187,7 @@ Replace port `8080` with your own if you have changed the default in the plugin 
 
 Port numbers can be higher if you are serving multiple apps at the same time.
 
-<br>
+
 
 Allowing any origin with `Access-Control-Allow-Origin: *` is guaranteed to work in all scenarios but may have security implications — like some CSRF attacks — depending on how the server controls access to resources and use sessions and cookies.
 

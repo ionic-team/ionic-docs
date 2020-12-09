@@ -1,8 +1,5 @@
 ---
-previousText: 'Running on iOS'
-previousUrl: '/docs/developing/ios'
-nextText: 'Development Tips'
-nextUrl: '/docs/developing/tips'
+sidebar_label: Developing for Android
 ---
 
 # Android Development
@@ -25,12 +22,12 @@ Download Android Studio from the <a href="https://developer.android.com/studio/"
 
 Once installed, open Android Studio. The IDE should detect that the Android SDK needs to be installed. In the **SDK Components Setup** screen, finish installing the SDK. Keep note of the **Android SDK Location**.
 
-![Android Studio SDK Setup](/docs/assets/img/installation/android-studio-sdk-setup.png)
+![Android Studio SDK Setup](/img/installation/android-studio-sdk-setup.png)
 
 By default, the latest stable SDK Platform is installed, which includes a collection of packages required to target that version of Android.
 
 To install system images and other minor SDK platform packages, you may need to ensure **Show Package Details** is checked at the bottom of the SDK Manager.
-<img alt="Android Studio SDK Manager" src="/docs/assets/img/installation/android-studio-sdk.png" />
+<img alt="Android Studio SDK Manager" src="/img/installation/android-studio-sdk.png" />
 
 For future reference, the Android SDK can be managed with Android Studio in the **Configure** &raquo; **SDK Manager** menu of the Android Studio welcome screen or **Tools** &raquo; **SDK Manager** inside Android projects.
 
@@ -48,7 +45,7 @@ In `~/.bashrc`, `~/.bash_profile`, or similar shell startup scripts, make the fo
 
 1. Add the Android SDK command-line directories to `PATH`. Each directory corresponds to the category of <a href="https://developer.android.com/studio/command-line/" target="_blank">command-line tool</a>.
 
-   <command-line nobuttons>
+   ```
       <command-output># avdmanager, sdkmanager</command-output>
       <command-prompt>export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin</command-prompt>
       <br />
@@ -57,10 +54,10 @@ In `~/.bashrc`, `~/.bash_profile`, or similar shell startup scripts, make the fo
       <br />
       <command-output># emulator</command-output>
       <command-prompt>export PATH=$PATH:$ANDROID_SDK_ROOT/emulator</command-prompt>
-   </command-line>
+   ```
 
    <blockquote>
-     <p>For <code>apksigner</code> and <code>zipalign</code>, <code>$ANDROID_SDK_ROOT/build-tools<version></code> must also be added to <code>PATH</code>.</p>
+     <p>For <code>apksigner</code> and <code>zipalign</code>, <code>$ANDROID_SDK_ROOT/build-tools&lt;version></code> must also be added to <code>PATH</code>.</p>
    </blockquote>
 
 ### Creating an Android Virtual Device
@@ -69,14 +66,14 @@ Android Virtual Devices (AVDs) are blueprints that the Android emulator uses to 
 
 AVDs are managed with the AVD Manager. In the Android Studio welcome screen, click **Configure** &raquo; **AVD Manager**. The AVD Manager can also be opened inside Android projects in the **Tools** &raquo; **AVD Manager** menu.
 
-![AVD Setup](/docs/assets/img/installation/android-studio-avd-setup.png)
+![AVD Setup](/img/installation/android-studio-avd-setup.png)
 
 Click **Create Virtual Device** and select a suitable device definition. If unsure, choose **Pixel 2**. Then, select a suitable system image. If unsure, choose **Pie** (API 28) with Google Play services. See <a href="https://en.wikipedia.org/wiki/Android_version_history" target="_blank">Android version history</a> for information on Android versions.
 
 Once the AVD is created, launch the AVD into the Android emulator. Keeping the emulator running is the best way to ensure detection while developing Ionic apps for Android.
 
 <figure class="device">
-  <img alt="Android Emulator Booting" src="/docs/assets/img/installation/android-emulator-booting.png" />
+  <img alt="Android Emulator Booting" src="/img/installation/android-emulator-booting.png" />
 </figure>
 
 ### Set up an Android Device
@@ -148,7 +145,7 @@ Capacitor uses Android Studio to build and run apps to simulators and devices.
 
 2. **In Android Studio, click the Run button and then select the target simulator or device.**
 
-![Android Studio Run Button Area](/docs/assets/img/running/android-studio-run-button-area.png)
+![Android Studio Run Button Area](/img/running/android-studio-run-button-area.png)
 
 ### Live reload
 To start a live-reload server run the following command.
@@ -180,7 +177,7 @@ Chrome has web developer tool support for Android simulators and devices. Go to 
 
 > Make sure your application is running on the device or simulator, or it will not show up in the list.
 
-![Android Chrome DevTools](/docs/assets/img/running/android-chrome-devtools.png)
+![Android Chrome DevTools](/img/running/android-chrome-devtools.png)
 
 ### Viewing Native Logs
 
@@ -188,7 +185,7 @@ If running with Android Studio, native logs can be found in **Logcat**.
 
 > If the **Logcat** window is hidden, you can enable it in **View** &raquo; **Tool Windows** &raquo; **Logcat**.
 
-![Android Studio Logcat](/docs/assets/img/running/android-studio-logcat.png)
+![Android Studio Logcat](/img/running/android-studio-logcat.png)
 
 You can also access **Logcat** with [ADB](https://developer.android.com/studio/command-line/adb).
 

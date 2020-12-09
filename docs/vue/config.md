@@ -1,8 +1,4 @@
 ---
-previousText: 'Navigation'
-previousUrl: '/docs/vue/navigation'
-nextText: 'Platform'
-nextUrl: '/docs/vue/platform'
 ---
 
 # Config

@@ -1,8 +1,4 @@
 ---
-previousText: 'Config'
-previousUrl: '/docs/angular/config'
-nextText: 'Testing'
-nextUrl: '/docs/angular/testing'
 contributors:
   - liamdebeasi
 meta:

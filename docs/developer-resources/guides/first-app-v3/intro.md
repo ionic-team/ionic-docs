@@ -1,13 +1,11 @@
 ---
-nextText: 'iOS, Android, and the Camera'
-nextUrl: '/docs/developer-resources/guides/first-app-v3/ios-android-camera'
 ---
 
 # Your First Ionic App - Framework v3
 
 The great thing about Ionic is that with one codebase, you can build for any platform using familiar web tools and languages. Follow along as we create a working Photo Gallery. Here’s the before and after:
 
-![Before and after going through this tutorial](/docs/assets/img/guides/first-app-v3/gallery-combined.png)
+![Before and after going through this tutorial](/img/guides/first-app-v3/gallery-combined.png)
 
 It’s easy to get started. Reference code for this guide can be [found on GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic3/).
 
@@ -76,7 +74,7 @@ And voilà! Your Ionic app is now running in a web browser. Most of your app can
 ## Photo Gallery!!!
 There are three tabs: “Home”, “About”, and “Contact.” Click on the About tab. It’s a blank canvas, aka the perfect spot to add camera functionality. Let’s begin to transform the About page into a Photo Gallery. Ionic features LiveReload, so when you make changes and save them, the app is updated immediately!
 
-![Before and after going through this tutorial](/docs/assets/img/guides/first-app-v3/email-photogallery.gif)
+![Before and after going through this tutorial](/img/guides/first-app-v3/email-photogallery.gif)
 
 Open the photo-gallery app folder in your favorite code editor of choice, then navigate to `/src/pages/about/about.html`. We see:
 

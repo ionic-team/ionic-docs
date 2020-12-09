@@ -1,8 +1,4 @@
 ---
-previousText: ''
-previousUrl: ''
-nextText: ''
-nextUrl: ''
 disableHtmlPreviews: true
 contributors:
   - liamdebeasi

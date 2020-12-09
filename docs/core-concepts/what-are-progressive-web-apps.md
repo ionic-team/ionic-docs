@@ -1,8 +1,5 @@
 ---
-previousText: 'Web View'
-previousUrl: '/docs/core-concepts/webview'
-nextText: ''
-nextUrl: ''
+sidebar_label: What are PWAs?
 contributors:
   - perrygovier
   - mhartington

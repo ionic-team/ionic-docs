@@ -1,8 +1,5 @@
 ---
-previousText: 'Lifecycle'
-previousUrl: '/docs/angular/lifecycle'
-nextText: 'Config'
-nextUrl: '/docs/angular/config'
+sidebar_label: Navigation/Routing
 contributors:
   - mhartington
 ---

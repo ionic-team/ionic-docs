@@ -1,8 +1,4 @@
 ---
-previousText: ''
-previousUrl: ''
-nextText: 'Build Errors'
-nextUrl: '/docs/troubleshooting/build'
 ---
 
 # Debugging

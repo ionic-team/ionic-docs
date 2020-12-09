@@ -1,8 +1,4 @@
 ---
-previousText: 'Config'
-previousUrl: '/docs/vue/config'
-nextText: 'Progressive Web Apps in Vue'
-nextUrl: '/docs/vue/pwa'
 ---
 
 # Platform

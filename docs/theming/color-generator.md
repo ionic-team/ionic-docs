@@ -1,8 +1,6 @@
 ---
 hideTOC: true
 demoUrl: '/docs/pages/theming/color-generator/index.html'
-previousText: 'Advanced Theming'
-previousUrl: '/docs/theming/advanced'
 contributors:
   - brandyscarney
   - kevinports

@@ -1,10 +1,7 @@
 ---
+sidebar_label: Advanced
 initialTab: 'preview'
 inlineHtmlPreviews: true
-previousText: 'Themes'
-previousUrl: '/docs/theming/themes'
-nextText: 'Color Generator'
-nextUrl: '/docs/theming/color-generator'
 contributors:
   - brandyscarney
   - marcjulian

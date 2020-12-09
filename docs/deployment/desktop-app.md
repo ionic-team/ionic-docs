@@ -1,6 +1,5 @@
 ---
-previousText: 'Progressive Web App (PWA)'
-previousUrl: 'docs/publishing/progressive-web-app'
+sidebar_label: Electron Desktop App
 contributors:
   - mhartington
 ---

@@ -1,8 +1,4 @@
 ---
-previousText: 'CSS Variables'
-previousUrl: '/docs/theming/css-variables'
-nextText: 'Colors'
-nextUrl: '/docs/theming/colors'
 ---
 
 # CSS Shadow Parts

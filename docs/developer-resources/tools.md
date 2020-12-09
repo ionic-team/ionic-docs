@@ -1,8 +1,4 @@
 ---
-previousText: 'Posts'
-previousUrl: '/docs/developer-resources/posts'
-nextText: 'Videos'
-nextUrl: '/docs/developer-resources/videos'
 ---
 
 # Tools

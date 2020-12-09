@@ -1,8 +1,5 @@
 ---
-previousText: 'Taking Photos'
-previousUrl: '/docs/vue/your-first-app/2-taking-photos'
-nextText: 'Loading Photos on Filesystem'
-nextUrl: '/docs/vue/your-first-app/4-loading-photos'
+sidebar_label: Saving Photos
 ---
 
 # Saving Photos to the Filesystem

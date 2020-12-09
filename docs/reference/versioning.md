@@ -1,8 +1,4 @@
 ---
-previousText: 'Glossary'
-previousUrl: '/docs/reference/glossary'
-nextText: 'Release Notes'
-nextUrl: '/docs/reference/release-notes'
 ---
 
 # Versioning

@@ -1,8 +1,5 @@
 ---
-previousText: 'Saving Photos on Filesystem'
-previousUrl: '/docs/vue/your-first-app/3-saving-photos'
-nextText: 'Adding Mobile'
-nextUrl: '/docs/vue/your-first-app/5-adding-mobile'
+sidebar_label: Loading Photos
 ---
 
 # Loading Photos from the Filesystem

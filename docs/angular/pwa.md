@@ -1,5 +1,6 @@
 ---
 title: "Progressive Web Apps in Angular"
+sidebar_label: Progressive Web Apps
 ---
 
 

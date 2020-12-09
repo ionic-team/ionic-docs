@@ -1,8 +1,5 @@
 ---
-previousText: 'Guides'
-previousUrl: '/docs/developer-resources/guides'
-nextText: 'Tools'
-nextUrl: '/docs/developer-resources/tools'
+sidebar_label: Posts
 ---
 
 # Community Posts

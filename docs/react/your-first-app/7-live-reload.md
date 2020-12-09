@@ -1,8 +1,5 @@
 ---
-previousText: 'Deploying Mobile'
-previousUrl: '/docs/react/your-first-app/6-deploying-mobile'
-nextText: 'Lifecycle'
-nextUrl: '/docs/react/lifecycle'
+sidebar_label: Live Reload
 ---
 
 # Rapid App Development with Live Reload

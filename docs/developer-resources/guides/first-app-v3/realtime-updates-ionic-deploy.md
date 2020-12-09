@@ -1,8 +1,4 @@
 ---
-previousText: 'Theming'
-previousUrl: '/docs/developer-resources/guides/first-app-v3/theming'
-nextText: 'Track Bugs with Ionic Monitoring'
-nextUrl: '/docs/developer-resources/guides/first-app-v3/track-bugs-ionic-monitoring'
 ---
 
 # Realtime App Updates with Appflow Live Updates
@@ -24,7 +20,7 @@ $ ionic cordova plugin add cordova-plugin-ionic@latest --save
 
 There are two unique values to provide: your app id and channel name. Sign into Appflow, then find the App Id on your app’s dashboard:
 
-![app id location](/docs/assets/img/guides/first-app-v3/app-id-location.png)
+![app id location](/img/guides/first-app-v3/app-id-location.png)
 
 And we’ll just use “Master” as the channel name. Putting this together looks like:
 
@@ -96,14 +92,14 @@ Then, continue to [follow the instructions here](/docs/deploying/app-store) rega
 ## Add the Native App to Your Local Device
 Now comes the fun part: testing out the native app on your device! For iOS, the easiest way (that works for both PC and Mac) involves using iTunes. Connect your iOS device, locate your IPA file, then drag and drop the IPA file from the file system onto your device in iTunes. The app will install immediately and be ready for use:
 
-<div class="wistia_responsive_padding" style="padding:62.5% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><iframe src="https://fast.wistia.net/embed/iframe/s5v4fujv7w?videoFoam=true" title="Wistia video player" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="100%" height="100%"></iframe></div></div>
+<div class="wistia_responsive_padding" style={{padding: '62.5% 0 0 0', position: 'relative'}}><div class="wistia_responsive_wrapper" style={{height: '100%', left: 0, position: 'absolute', top: 0, width: '100%'}}><iframe src="https://fast.wistia.net/embed/iframe/s5v4fujv7w?videoFoam=true" title="Wistia video player" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="100%" height="100%"></iframe></div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
 For Android testing, the easiest way across all OS platforms is to use [Android Studio](https://developer.android.com/studio/), Google’s official Android IDE. After downloading it, connect your Android device to your computer. On the Studio startup screen, select “Profile or debug APK”, then select the recently built APK file.
 
 In the upper right hand corner, click the Play button. Select your connected device, then click OK:
 
-<div class="wistia_responsive_padding" style="padding:62.5% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><iframe src="https://fast.wistia.net/embed/iframe/b2ys5v4sno?videoFoam=true" title="Wistia video player" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="100%" height="100%"></iframe></div></div>
+<div class="wistia_responsive_padding" style={{padding: '62.5% 0 0 0', position: 'relative'}}><div class="wistia_responsive_wrapper" style={{height: '100%', left: 0, position: 'absolute', top: 0, width: '100%'}}><iframe src="https://fast.wistia.net/embed/iframe/b2ys5v4sno?videoFoam=true" title="Wistia video player" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="100%" height="100%"></iframe></div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
 ## Deploying Changes
@@ -127,7 +123,7 @@ $ git push ionic master
 
 Log into the [Appflow dashboard](https://dashboard.ionicframework.com) and navigate to Deploy -> Builds. You’ll see this newest commit begin to build immediately. Since we assigned the Appflow plugin to the Master branch (the one we always Git Push to), the Channel label will also point to this commit, effectively auto-deploying this change to all app users:
 
-![deploy channel](/docs/assets/img/guides/first-app-v3/deploy-channel.png)
+![deploy channel](/img/guides/first-app-v3/deploy-channel.png)
 
 A Channel points to a specific JavaScript Build or Snapshot of your app that will be shared with devices listening to that channel for updates. You can change which Build a Channel points to whenever you’d like.
 
@@ -139,7 +135,7 @@ What if you deploy a change, then realize that there is a bug? Or perhaps you’
 
 On the Deploy Builds page, click the “Assign to Channel” button on the previous commit, then click “Deploy.”  App users will be reverted to the previous version, and our “Photo Gallery” name has been restored.
 
-![deploy channel](/docs/assets/img/guides/first-app-v3/deploy-revertChange.png)
+![deploy channel](/img/guides/first-app-v3/deploy-revertChange.png)
 
 This was just a taste of what you can do with Appflow Live Updates! You can also set up multiple deployment channels to send targeted updates to specific groups of users. Use it to run A/B tests, or target the distribution of updates by audience, geography, or test group.
 

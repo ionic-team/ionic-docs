@@ -1,7 +1,6 @@
 ---
 title: "Testing Ionic React"
-previousText: 'Progressive Web Apps in React'
-previousUrl: '/docs/react/pwa'
+sidebar_label: Testing
 contributors:
   - elylucas
 ---

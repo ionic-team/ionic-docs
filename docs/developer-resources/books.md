@@ -1,8 +1,4 @@
 ---
-previousText: 'Developer Tips'
-previousUrl: '/docs/developing/tips'
-nextText: 'Courses'
-nextUrl: '/docs/developer-resources/courses'
 ---
 
 # Books

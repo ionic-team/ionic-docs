@@ -1,8 +1,5 @@
 ---
-previousText: 'Testing'
-previousUrl: '/docs/angular/testing'
-nextText: 'Performance'
-nextUrl: '/docs/angular/performance'
+sidebar_label: Storage
 ---
 
 # Data Storage

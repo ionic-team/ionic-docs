@@ -1,8 +1,5 @@
 ---
-previousText: 'iOS App Store'
-previousUrl: 'docs/publishing/app-store'
-nextText: 'Progressive Web App (PWA)'
-nextUrl: '/docs/deployment/progressive-web-app'
+sidebar_label: Android Play Store
 ---
 
 # Android Play Store Deployment
@@ -58,7 +55,7 @@ To start, visit the [Google Play Store Developer Console](https://play.google.co
 
 Once a developer account has been created, go ahead and click the `Create an Application`
 
-![Create an App button](/docs/assets/img/publishing/newAppGPlay.png)
+![Create an App button](/img/publishing/newAppGPlay.png)
 
 Be sure to fill out the description for the app along with providing screenshots and additional info.
 When ready, upload the signed release APK that was generated and publish the app.

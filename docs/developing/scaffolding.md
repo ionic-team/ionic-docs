@@ -1,8 +1,4 @@
 ---
-previousText: 'Previewing'
-previousUrl: '/docs/developing/previewing'
-nextText: 'Developing for iOS'
-nextUrl: '/docs/developing/ios'
 contributors:
   - mhartington
   - brandyscarney
@@ -49,7 +45,7 @@ The `src/app/` directory contains the root app component and module as well as a
 
 The Ionic CLI can generate new app features with the [`ionic generate`](/docs/cli/commands/generate) command. By running `ionic generate` in the command line, a selection prompt is displayed which lists the available features that can be generated.
 
-<command-line>
+```
     <command-prompt>ionic generate</command-prompt>
     <command-output>
         <span class="green">?</span> <span class="bold">What would you like to generate?</span>
@@ -68,13 +64,13 @@ The Ionic CLI can generate new app features with the [`ionic generate`](/docs/cl
         <br />
         &nbsp;&nbsp;guard
     </command-output>
-</command-line>
+```
 
 After a selection is made, the Ionic CLI will prompt for a name. The name can be a path, allowing easy generation of features within an organized project structure.
 
 > Any level of nesting is allowed, such as `portfolio/intro`. You can easily scope components to pages by using `ionic g component "portfolio/intro/About Me"`, for example.
 
-<command-line>
+```
     <command-prompt>ionic generate</command-prompt>
     <command-output>
         <span class="green">?</span> <span class="bold">What would you like to generate? <span class="cyan">page</span></span>
@@ -82,11 +78,11 @@ After a selection is made, the Ionic CLI will prompt for a name. The name can be
         <span class="green">?</span> <span class="bold">Name/path of <span class="cyan">page</span>:</span> portfolio
     </command-output>
     <command-cursor blink></command-cursor>
-</command-line>
+```
 
 Alternatively, the `type` and `name` of the generated feature can be entered on the command line:
 
-<command-line>
+```
     <command-prompt>ionic g page "User Detail"</command-prompt>
     <command-output>
         &gt; <span class="cyan">ng generate page "User Detail"</span>
@@ -105,7 +101,7 @@ Alternatively, the `type` and `name` of the generated feature can be entered on 
         <br />
         [<span class="green bold">OK</span>] Generated page!
     </command-output>
-</command-line>
+```
 
 The Ionic CLI uses the underlying framework tooling to stay close to best practices. For `@ionic/angular`, the Angular CLI is used under the hood.
 

@@ -1,6 +1,5 @@
 ---
-nextText: 'Build Your First App'
-nextUrl: '/docs/angular/your-first-app'
+sidebar_label: Overview
 ---
 
 # Ionic Angular Overview

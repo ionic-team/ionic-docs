@@ -1,8 +1,5 @@
 ---
-previousText: ''
-previousUrl: ''
-nextText: 'Android Play Store'
-nextUrl: '/docs/deployment/play-store'
+sidebar_label: iOS App Store
 contributors:
   - zaarheed
 ---

@@ -1,8 +1,5 @@
 ---
-previousText: 'CLI Installation'
-previousUrl: '/docs/intro/cli'
-nextText: 'Next Steps'
-nextUrl: '/docs/intro/next'
+sidebar_label: Packages & CDN
 contributors:
   - brandyscarney
   - rtpHarry

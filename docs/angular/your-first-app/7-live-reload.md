@@ -1,8 +1,5 @@
 ---
-previousText: 'Deploying Mobile'
-previousUrl: '/docs/angular/your-first-app/6-deploying-mobile'
-nextText: 'Lifecycle'
-nextUrl: '/docs/angular/lifecycle'
+sidebar_label: Live Reload
 ---
 
 # Rapid App Development with Live Reload

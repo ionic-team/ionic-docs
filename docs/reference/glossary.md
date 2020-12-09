@@ -1,6 +1,4 @@
 ---
-nextText: 'Versioning'
-nextUrl: '/docs/reference/versioning'
 ---
 
 # Glossary

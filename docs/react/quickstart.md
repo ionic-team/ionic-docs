@@ -1,8 +1,5 @@
 ---
-previousText: 'Overview'
-previousUrl: '/docs/react/overview'
-nextText: 'Build Your First App'
-nextUrl: '/docs/react/your-first-app'
+sidebar_label: Quickstart
 ---
 
 # Intro Ionic React Quickstart
@@ -121,7 +118,7 @@ Now the `App` does not really have a lot to modify here. It's a basic example of
 
 Currently, the `Home` component looks like so:
 
-![React home component](/docs/assets/img/guides/react/first-app/home-route.png)
+![React home component](/img/guides/react/first-app/home-route.png)
 
 ```typescript
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';

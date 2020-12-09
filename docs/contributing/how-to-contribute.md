@@ -1,6 +1,5 @@
 ---
-nextText: 'Code of Conduct'
-nextUrl: '/docs/contributing/coc'
+sidebar_label: How to Contribute
 ---
 
 # Contributing to Ionic

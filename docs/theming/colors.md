@@ -1,10 +1,6 @@
 ---
 initialTab: 'preview'
 inlineHtmlPreviews: true
-previousText: 'CSS Shadow Parts'
-previousUrl: '/docs/theming/css-shadow-parts'
-nextText: 'Themes'
-nextUrl: '/docs/theming/themes'
 ---
 
 # Colors

@@ -1,8 +1,4 @@
 ---
-previousText: 'Fundamentals'
-previousUrl: '/docs/core-concepts/fundamentals'
-nextText: 'Web View'
-nextUrl: '/docs/core-concepts/webview'
 disableHtmlPreviews: true
 contributors:
   - rtpHarry
@@ -72,7 +68,7 @@ Many people rarely notice the layout of an app, but it can have a massive impact
 
 This will render 5 items with a width of 100% each. This may look great on a mobile device, as seen below, but viewing this on a desktop browser is a different story. The items become stretched to fill the entire screen because of the wide screen width, leaving screen space unused.
 
-<img src="/docs/assets/img/building/cross-platform-items.png"/>
+<img src="/img/building/cross-platform-items.png"/>
 
 To improve this experience, we can wrap the items in a [Grid](/docs/layout/grid) component. The view can be easily rewritten into something more usable on larger screens:
 
@@ -110,11 +106,11 @@ To improve this experience, we can wrap the items in a [Grid](/docs/layout/grid)
 
 By wrapping the items in an `ion-grid` element, the Ionic grid system is added to our layout. Wrapping each item in a column makes the items take up equal-width inside of the grid, along the same row.
 
-<img src="/docs/assets/img/building/cross-platform-grid.png"/>
+<img src="/img/building/cross-platform-grid.png"/>
 
 We can take this even further by adding the `fixed` attribute to the `<ion-grid>` element. This tells the grid to have a fixed width based on the screen size. This is perfect for larger screens when items will begin to stretch again without a width on the grid.
 
-<img src="/docs/assets/img/building/cross-platform-grid-fixed.png"/>
+<img src="/img/building/cross-platform-grid-fixed.png"/>
 
 The grid can be further customized to change the sizes of columns with the addition of the `ion-col` properties.
 

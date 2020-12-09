@@ -1,8 +1,4 @@
 ---
-previousText: 'Support Policy'
-previousUrl: '/docs/reference/support'
-nextText: 'Migration'
-nextUrl: '/docs/reference/migration'
 ---
 
 # Browser Support

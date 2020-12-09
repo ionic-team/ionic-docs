@@ -1,8 +1,5 @@
 ---
-previousText: 'Your First App'
-previousUrl: '/docs/vue/your-first-app'
-nextText: 'Saving Photos on Filesystem'
-nextUrl: '/docs/vue/your-first-app/3-saving-photos'
+sidebar_label: Taking Photos
 ---
 
 # Taking Photos with the Camera
@@ -82,7 +79,7 @@ export default  {
 
 Save the file, and if you’re not already, restart the development server in your browser by running `ionic serve`. On the Photo Gallery tab, click the Camera button. If your computer has a webcam of any sort, a modal window appears. Take a selfie!
 
-![Camera API on the web](/docs/assets/img/guides/first-app-cap-ng/camera-web.png)
+![Camera API on the web](/img/guides/first-app-cap-ng/camera-web.png)
 
 _(Your selfie is probably much better than mine)_
 

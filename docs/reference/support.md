@@ -1,8 +1,4 @@
 ---
-previousText: 'Release Notes'
-previousUrl: '/docs/reference/release-notes'
-nextText: 'Browser Support'
-nextUrl: '/docs/reference/browser-support'
 contributors:
   - dotNetkow
   - mhartington

@@ -1,6 +1,5 @@
 ---
-previousText: 'Browser Support'
-previousUrl: '/docs/reference/browser-support'
+sidebar_label: Migration
 contributors:
   - mhartington
   - kensodemann

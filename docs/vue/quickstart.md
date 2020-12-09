@@ -1,8 +1,5 @@
 ---
-previousText: 'Overview'
-previousUrl: '/docs/vue/overview'
-nextText: 'Build Your First App'
-nextUrl: '/docs/vue/your-first-app'
+sidebar_label: Quickstart
 ---
 
 # Ionic Vue Quickstart
@@ -206,7 +203,7 @@ Now the `App` component does not really have a lot to modify here. It is a basic
 
 Currently, the `Home` component looks like so:
 
-![Vue home component](/docs/assets/img/guides/vue/first-app/home-route.png)
+![Vue home component](/img/guides/vue/first-app/home-route.png)
 
 ```html
 <template>

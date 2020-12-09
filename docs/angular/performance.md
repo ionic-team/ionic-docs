@@ -1,6 +1,5 @@
 ---
-previousText: 'Storage'
-previousUrl: '/docs/angular/storage'
+sidebar_label: Performance
 ---
 
 # Angular Performance

@@ -1,8 +1,5 @@
 ---
-previousText: 'Overview'
-previousUrl: '/docs/vue/overview'
-nextText: 'Taking Photos'
-nextUrl: '/docs/vue/your-first-app/2-taking-photos'
+sidebar_label: Build Your First App
 ---
 
 # Your First Ionic App: Vue
@@ -102,7 +99,7 @@ And voilà! Your Ionic app is now running in a web browser. Most of your app can
 
 There are three tabs. Click on the Tab2 tab. It’s a blank canvas, aka the perfect spot to transform into a Photo Gallery. The Ionic CLI features Live Reload, so when you make changes and save them, the app is updated immediately!
 
-![Before and after going through this tutorial](/docs/assets/img/guides/vue/first-app/live-reload.gif)
+![Before and after going through this tutorial](/img/guides/vue/first-app/live-reload.gif)
 
 Open `/src/views/Tab2.vue`. We see:
 

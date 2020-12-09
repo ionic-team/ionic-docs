@@ -1,8 +1,4 @@
 ---
-previousText: 'Courses'
-previousUrl: '/docs/developer-resources/courses'
-nextText: 'Posts'
-nextUrl: '/docs/developer-resources/posts'
 ---
 
 # Guides

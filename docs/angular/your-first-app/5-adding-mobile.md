@@ -1,8 +1,5 @@
 ---
-previousText: 'Loading Photos on Filesystem'
-previousUrl: '/docs/angular/your-first-app/4-loading-photos'
-nextText: 'Deploying Mobile'
-nextUrl: '/docs/angular/your-first-app/6-deploying-mobile'
+strip_number_prefixes: false
 ---
 
 # Adding Mobile

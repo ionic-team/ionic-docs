@@ -1,8 +1,5 @@
 ---
-previousText: 'Deploying Mobile'
-previousUrl: '/docs/vue/your-first-app/6-deploying-mobile'
-nextText: 'Lifecycle'
-nextUrl: '/docs/vue/lifecycle'
+sidebar_label: Live Reload
 ---
 
 # Rapid App Development with Live Reload

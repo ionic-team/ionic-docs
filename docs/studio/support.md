@@ -9,7 +9,7 @@ Support is available within Ionic Studio by clicking **Help & Support** from the
 If you cannot open Ionic Studio, please open a [support request](https://ionicframework.com/support/request).
 
 <figure>
-  <img alt="Support Modal" src="/docs/assets/img/studio/ss-support-modal.png" />
+  <img alt="Support Modal" src="/img/studio/ss-support-modal.png" />
 </figure>
 
 * Please use the **Bugs or Feedback** option for anything related to Ionic Studio as a _product_, such as bugs, feature requests, and general feedback.

@@ -1,8 +1,5 @@
 ---
-previousText: 'Lifecycle'
-previousUrl: '/docs/react/lifecycle'
-nextText: 'Config'
-nextUrl: '/docs/react/config'
+sidebar_label: Navigation/Routing
 ---
 
 # React Navigation

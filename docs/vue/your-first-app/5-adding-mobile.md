@@ -1,8 +1,4 @@
 ---
-previousText: 'Loading Photos on Filesystem'
-previousUrl: '/docs/vue/your-first-app/4-loading-photos'
-nextText: 'Deploying Mobile'
-nextUrl: '/docs/vue/your-first-app/6-deploying-mobile'
 ---
 
 # Adding Mobile

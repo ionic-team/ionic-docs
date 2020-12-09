@@ -1,7 +1,5 @@
 ---
-title: Ionic Vue
-nextText: 'Build Your First App'
-nextUrl: '/docs/vue/your-first-app'
+sidebar_label: Overview
 ---
 
 # Ionic Vue Overview
@@ -28,28 +26,31 @@ While there are no known technical limitations to using `Ionic Vue` with [Cordov
 
 ## Installation
 
-<command-line>
+```
     <command-prompt>npm install -g @ionic/cli</command-prompt>
     <command-prompt>ionic start myApp tabs --type vue</command-prompt>
     <br/>
     <command-prompt>ionic serve <command-cursor blink></command-cursor></command-prompt>
-</command-line>
+```
 
 
 ## Resources
 
-<docs-cards>
-  <docs-card header="Getting Started" href="/docs/vue/your-first-app" icon="/docs/assets/icons/feature-component-actionsheet-icon.png">
+import DocsCard from '@site/src/components/DocsCard';
+import DocsCards from '@site/src/components/DocsCards';
+
+<DocsCards>
+  <DocsCard header="Getting Started" href="/docs/vue/your-first-app" icon="/icons/feature-component-actionsheet-icon.png">
     <p>Learn the fundamentals you need to know to start building amazing apps with Ionic Framework.</p>
-  </docs-card>
+  </DocsCard>
 
-  <docs-card header="Navigation" href="/docs/vue/navigation" icon="/docs/assets/icons/feature-component-navigation-icon.png">
+  <DocsCard header="Navigation" href="/docs/vue/navigation" icon="/icons/feature-component-navigation-icon.png">
     <p>Learn the basics of navigation inside your app with Ionic and Vue Router</p>
-  </docs-card>
+  </DocsCard>
 
-  <docs-card header="Lifecycle" href="/docs/vue/lifecycle" icon="/docs/assets/icons/feature-guide-components-icon.png">
+  <DocsCard header="Lifecycle" href="/docs/vue/lifecycle" icon="/icons/feature-guide-components-icon.png">
     <p>Learn about using Ionic lifecycle events in class components and with hooks</p>
-  </docs-card>
+  </DocsCard>
 
 
-</docs-cards>
+</DocsCards>

@@ -1,6 +1,6 @@
 ---
 title: Cordova Community Plugins
-tableOfContents: false
+hide_table_of_contents: true
 ---
 
 [Apache Cordova](https://cordova.apache.org/) is an open source native runtime that allows developers to build native mobile apps with HTML, CSS, and JavaScript. Similar to [Capacitor](https://capacitorjs.com/), Ionic’s own native runtime, Cordova allows developers to access native device features, such as camera, keyboard, and geolocation, using a system of plugins. A plugin is a small amount of add-on code that provides JavaScript interface to native components. They allow your app to use native device capabilities beyond what is available to pure web apps.
@@ -116,7 +116,7 @@ export class PhotoService {
 
 React apps must use Capacitor to build native mobile apps. However, Ionic Native (and therefore, Cordova plugins) can still be used.
 
-<command-line>
+```
   <div>// Install Core library (once per project)</div>
   <command-prompt>npm install @ionic-native/core</command-prompt>
   <br />
@@ -128,7 +128,7 @@ React apps must use Capacitor to build native mobile apps. However, Ionic Native
   <br/>
   <div>// Update native platform project(s) to include newly added plugin</div>
   <command-prompt>ionic cap sync</command-prompt>
-</command-line>
+```
 
 Import the plugin object then use its static methods: 
 

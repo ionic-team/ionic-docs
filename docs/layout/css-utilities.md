@@ -1,10 +1,6 @@
 ---
 initialTab: 'preview'
 inlineHtmlPreviews: true
-previousText: 'Global Stylesheets'
-previousUrl: '/docs/layout/global-stylesheets'
-nextText: 'Theming'
-nextUrl: '/docs/theming/basics'
 contributors:
   - brandyscarney
 ---
@@ -357,7 +353,7 @@ The default amount of `margin` to be applied is `16px` and is set by the `--ion-
 
 ## Flex Properties
 
-<img src="/docs/assets/img/layout/diagram-flex-attributes.png"/>
+<img src="/img/layout/diagram-flex-attributes.png"/>
 
 ### Flex Container Properties
 
@@ -462,9 +458,9 @@ The default amount of `margin` to be applied is `16px` and is set by the `--ion-
     </ion-col>
     <ion-col>
       <div>
-        4 of 4 <br>
-        # <br>
-        # <br>
+        4 of 4 
+        # 
+        # 
         #
       </div>
     </ion-col>
@@ -488,9 +484,9 @@ The default amount of `margin` to be applied is `16px` and is set by the `--ion-
     </ion-col>
     <ion-col>
       <div>
-        4 of 4 <br>
-        # <br>
-        # <br>
+        4 of 4 
+        # 
+        # 
         #
       </div>
     </ion-col>
@@ -514,9 +510,9 @@ The default amount of `margin` to be applied is `16px` and is set by the `--ion-
     </ion-col>
     <ion-col>
       <div>
-        4 of 4 <br>
-        # <br>
-        # <br>
+        4 of 4 
+        # 
+        # 
         #
       </div>
     </ion-col>
@@ -540,9 +536,9 @@ The default amount of `margin` to be applied is `16px` and is set by the `--ion-
     </ion-col>
     <ion-col>
       <div>
-        4 of 4 <br>
-        # <br>
-        # <br>
+        4 of 4 
+        # 
+        # 
         #
       </div>
     </ion-col>
@@ -566,9 +562,9 @@ The default amount of `margin` to be applied is `16px` and is set by the `--ion-
     </ion-col>
     <ion-col>
       <div>
-        4 of 4 <br>
-        # <br>
-        # <br>
+        4 of 4 
+        # 
+        # 
         #
       </div>
     </ion-col>
@@ -616,9 +612,9 @@ The default amount of `margin` to be applied is `16px` and is set by the `--ion-
     </ion-col>
     <ion-col>
       <div>
-        4 of 4 <br>
-        # <br>
-        # <br>
+        4 of 4 
+        # 
+        # 
         #
       </div>
     </ion-col>

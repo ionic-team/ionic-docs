@@ -1,8 +1,5 @@
 ---
-previousText: 'Lifecycle'
-previousUrl: '/docs/vue/lifecycle'
-nextText: 'Config'
-nextUrl: '/docs/vue/config'
+sidebar_label: Navigation/Routing
 ---
 
 # Vue Navigation

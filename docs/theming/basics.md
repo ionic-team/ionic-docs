@@ -1,8 +1,5 @@
 ---
-previousText: 'Layout'
-previousUrl: '/docs/layout/structure'
-nextText: 'Platform Styles'
-nextUrl: '/docs/theming/platform-styles'
+sidebar_label: Basics
 contributors:
   - brandyscarney
 ---

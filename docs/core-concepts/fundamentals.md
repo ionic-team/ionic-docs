@@ -1,8 +1,5 @@
 ---
-previousText: ''
-previousUrl: ''
-nextText: 'Cross Platform'
-nextUrl: '/docs/core-concepts/cross-platform'
+sidebar_label: Fundamentals
 ---
 
 # Core Concepts

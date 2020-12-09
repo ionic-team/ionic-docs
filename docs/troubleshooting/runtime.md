@@ -1,8 +1,4 @@
 ---
-previousText: 'Build Errors'
-previousUrl: '/docs/troubleshooting/build'
-nextText: 'Native Errors'
-nextUrl: '/docs/troubleshooting/native'
 contributors:
   - brandyscarney
 ---

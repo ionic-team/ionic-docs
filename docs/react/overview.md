@@ -1,6 +1,4 @@
 ---
-nextText: 'Quickstart'
-nextUrl: '/docs/react/quickstart'
 ---
 
 # Ionic React Overview

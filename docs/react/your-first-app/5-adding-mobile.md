@@ -1,8 +1,5 @@
 ---
-previousText: 'Loading Photos on Filesystem'
-previousUrl: '/docs/react/your-first-app/4-loading-photos'
-nextText: 'Deploying Mobile'
-nextUrl: '/docs/react/your-first-app/6-deploying-mobile'
+sidebar_label: Adding Mobile
 ---
 
 # Adding Mobile

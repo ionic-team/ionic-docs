@@ -17,7 +17,7 @@ The following tips assume you already know the basics about Angular routing.
 When you add a new Page in Ionic Studio, it is automatically added to the routing configuration inside of `app-routing.module.ts`.
 
 <figure>
-  <img alt="Page added to App Routing Module" src="/docs/assets/img/studio/ss-page-routing-module.png" />
+  <img alt="Page added to App Routing Module" src="/img/studio/ss-page-routing-module.png" />
 </figure>
 
 If you'd like to change where this page is "located", you might want to move the Route into a different routing or module file.

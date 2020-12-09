@@ -1,8 +1,4 @@
 ---
-previousText: 'Navigation'
-previousUrl: '/docs/react/navigation'
-nextText: 'Platform'
-nextUrl: '/docs/react/platform'
 ---
 
 # Config

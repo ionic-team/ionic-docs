@@ -11,7 +11,7 @@ Manage app configuration and settings.
 The **Config** section is for managing the common settings in `config.xml` such as the name and version of the app, as well as the Bundle ID (aka [Package ID](/docs/reference/glossary#package-id)).
 
 <figure>
-  <img alt="Settings -> Config" src="/docs/assets/img/studio/2/ss-settings.png" />
+  <img alt="Settings -> Config" src="/img/studio/2/ss-settings.png" />
 </figure>
 
 ## Platforms
@@ -19,7 +19,7 @@ The **Config** section is for managing the common settings in `config.xml` such 
 The **Platforms** section is for managing Cordova platforms. Use the appropriate buttons to add, remove, and update platforms.
 
 <figure>
-  <img alt="Settings -> Platforms" src="/docs/assets/img/studio/2/ss-settings-platforms.png" />
+  <img alt="Settings -> Platforms" src="/img/studio/2/ss-settings-platforms.png" />
 </figure>
 
 ## Plugins
@@ -27,7 +27,7 @@ The **Platforms** section is for managing Cordova platforms. Use the appropriate
 The **Plugins** section is for managing Cordova plugins. Use the appropriate buttons to add, remove, and update plugins.
 
 <figure>
-  <img alt="Settings -> Plugins" src="/docs/assets/img/studio/2/ss-settings-plugins.png" />
+  <img alt="Settings -> Plugins" src="/img/studio/2/ss-settings-plugins.png" />
 </figure>
 
 ### Installing Plugins
@@ -52,7 +52,7 @@ The **Icon & Splash Screen** section is for managing app resources. When changin
 Ionic Studio uses the Ionic CLI command <code>ionic cordova resources</code> to generate app resources. More information about icons and splash screens can be found in <a href="/docs/cli/commands/cordova-resources">the CLI docs</a>.
 
 <figure>
-  <img alt="App Resources" src="/docs/assets/img/studio/2/ss-settings-resources.png" />
+  <img alt="App Resources" src="/img/studio/2/ss-settings-resources.png" />
 </figure>
 
 ## Linking to Appflow
@@ -61,5 +61,5 @@ If your account has access to [Appflow](https://ionic.io/appflow) and you'd like
 in this section of the settings area:
 
 <figure>
-  <img alt="App Resources" src="/docs/assets/img/studio/2/ss-settings-appflow.png" />
+  <img alt="App Resources" src="/img/studio/2/ss-settings-appflow.png" />
 </figure>

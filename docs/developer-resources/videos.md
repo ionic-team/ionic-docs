@@ -1,8 +1,4 @@
 ---
-previousText: 'Tools'
-previousUrl: '/docs/developer-resources/tools'
-nextText: 'API Refrence'
-nextUrl: '/docs/api'
 ---
 
 # Videos

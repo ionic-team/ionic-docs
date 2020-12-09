@@ -1,8 +1,4 @@
 ---
-previousText: 'Navigation/Routing'
-previousUrl: '/docs/angular/navigation'
-nextText: 'Platform'
-nextUrl: '/docs/angular/platform'
 contributors:
   - liamdebeasi
   - mhartington

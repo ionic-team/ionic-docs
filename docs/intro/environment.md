@@ -1,8 +1,4 @@
 ---
-previousText: 'Overview'
-previousUrl: '/docs'
-nextText: 'CLI Installation'
-nextUrl: '/docs/intro/cli'
 contributors:
   - rtpHarry
 ---

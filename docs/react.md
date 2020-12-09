@@ -1,9 +1,10 @@
 ---
 title: Ionic React
+sidebar_label: Overview
 renderTitle: false
-tableOfContents: false
+hide_table_of_contents: true
 meta:
-  image: /docs/assets/img/meta/open-graph.png
+  image: /img/meta/open-graph.png
   description: Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards
 ---
 
@@ -15,12 +16,13 @@ meta:
  - ✓ Standard React tooling with react-dom
  - ✓ iOS / Android / Electron / PWA
 
-  [Get Started](#installation)
+
+[Get Started](#installation)
 
   </div>
 
   <div class="pull-right">
-  <img src="/docs/assets/img/frameworks/react-logo.png" />
+  <img src="/img/frameworks/react-logo.png" />
   </div>
 </div>
 
@@ -46,7 +48,7 @@ Choose from over 100 beautiful, mobile-ready UI components, animations, and gest
 </div>
 
 <div class="pull-right">
-  <img src="/docs/assets/icons/feature-guide-components-icon.png" />
+  <img src="/icons/feature-guide-components-icon.png" />
 </div>
 
 </div>
@@ -65,7 +67,7 @@ Compatible with React version 16.8 and above.
 </div>
 
 <div class="pull-right">
-  <img src="/docs/assets/img/frameworks/react-cli.png" class="cli" />
+  <img src="/img/frameworks/react-cli.png" class="cli" />
 </div>
 
 </div>
@@ -81,7 +83,7 @@ Deploy your Ionic React projects to native iOS, Android, Electron, and the web a
 </div>
 
 <div class="pull-right">
-  <img src="/docs/assets/img/native-platforms/group-shot.png" />
+  <img src="/img/native-platforms/group-shot.png" />
 </div>
 
 </div>
@@ -97,39 +99,42 @@ At the end of the day, it's just React. Ionic React uses open web standards and 
   </div>
 
   <div class="pull-right">
-    <img src="/docs/assets/img/frameworks/react.svg" />
+    <img src="/img/frameworks/react.svg" />
   </div>
 
 </div>
 
 ## Installation
 
-<command-line>
+```
     <command-prompt>npm install -g @ionic/cli</command-prompt>
     <command-prompt>ionic start myApp tabs --type react</command-prompt>
     <br/>
     <command-prompt>ionic serve <command-cursor blink></command-cursor></command-prompt>
-</command-line>
+```
 
 
 ## Resources
 
-<docs-cards>
-  <docs-card header="Getting Started" href="/docs/react/your-first-app" icon="/docs/assets/icons/feature-component-actionsheet-icon.png">
+import DocsCard from '@site/src/components/DocsCard';
+import DocsCards from '@site/src/components/DocsCards';
+
+<DocsCards>
+  <DocsCard header="Getting Started" href="/docs/react/your-first-app" icon="/icons/feature-component-actionsheet-icon.png">
     <p>Learn the fundamentals you need to know to start building amazing apps with Ionic Framework.</p>
-  </docs-card>
+  </DocsCard>
 
-  <docs-card header="Add Ionic to Existing React App" href="https://dev.to/ionic/adding-ionic-react-to-an-existing-react-project-4kib" icon="/docs/assets/icons/logo-react-icon.png">
+  <DocsCard header="Add Ionic to Existing React App" href="https://dev.to/ionic/adding-ionic-react-to-an-existing-react-project-4kib" icon="/icons/logo-react-icon.png">
     <p>Use individual components or the complete app experience.</p>
-  </docs-card>
+  </DocsCard>
 
-  <docs-card header="Navigation" href="/docs/react/navigation" icon="/docs/assets/icons/feature-component-navigation-icon.png">
+  <DocsCard header="Navigation" href="/docs/react/navigation" icon="/icons/feature-component-navigation-icon.png">
     <p>Learn the basics of navigation inside your app with Ionic and React Router</p>
-  </docs-card>
+  </DocsCard>
 
-  <docs-card header="Lifecycle" href="/docs/react/lifecycle" icon="/docs/assets/icons/feature-guide-components-icon.png">
+  <DocsCard header="Lifecycle" href="/docs/react/lifecycle" icon="/icons/feature-guide-components-icon.png">
     <p>Learn about using Ionic lifecycle events in class components and with hooks</p>
-  </docs-card>
+  </DocsCard>
 
 
-</docs-cards>
+</DocsCards>
