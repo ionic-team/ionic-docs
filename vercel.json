@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    { "source": "/", "destination": "/docs" }
+  ],
+  "rewrites": [
+    { "source": "/docs", "destination": "/" },
+    { "source": "/docs/:match*", "destination": "/:match*" }
+  ]
+}
