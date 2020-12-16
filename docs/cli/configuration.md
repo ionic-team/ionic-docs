@@ -136,15 +136,14 @@ In a multi-app project, project structure is flexible. The only requirement is a
 
 Below is an example setup, where apps in the `apps/` directory are separated from the shared code in the `lib/` directory. Notice the root `ionic.config.json` file and the monorepo's `package.json` file.
 
- <file-tree>
-     <file-tree-directory name="apps">
-         <file-tree-directory name="myApp" collapsed></file-tree-directory>
-         <file-tree-directory name="myOtherApp" collapsed></file-tree-directory>
-     </file-tree-directory>
-     <file-tree-directory name="lib" collapsed></file-tree-directory>
-     <file-tree-file name="ionic.config.json"></file-tree-file>
-     <file-tree-file name="package.json"></file-tree-file>
- </file-tree>
+```bash
+apps/
+├── myApp/
+└── myOtherApp/
+lib/
+ionic.config.json
+package.json
+```
 
 ### Config File
 

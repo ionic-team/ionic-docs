@@ -77,75 +77,75 @@ One of the major changes between an Ionic 3 app and an Ionic 4 app is the overal
 
 For example, if an app is using Angular, that project structure will be exactly what an Angular CLI app would be. This change, while not too difficult to accommodate, helps to keep common patterns and documentation consistent.
 
-<ion-grid>
-  <ion-row>
-    <ion-col>
-      <figure>
-        <file-tree>
-          <file-tree-directory name="src">
-            <file-tree-directory name="app">
-              <file-tree-directory name="about" collapsed></file-tree-directory>
-              <file-tree-directory name="home" collapsed></file-tree-directory>
-              <file-tree-file name="app-routing.module.ts"></file-tree-file>
-              <file-tree-file name="app.component.html"></file-tree-file>
-              <file-tree-file name="app.component.spec.ts"></file-tree-file>
-              <file-tree-file name="app.component.ts"></file-tree-file>
-              <file-tree-file name="app.module.ts"></file-tree-file>
-            </file-tree-directory>
-            <file-tree-directory name="assets" collapsed></file-tree-directory>
-            <file-tree-directory name="environments" collapsed></file-tree-directory>
-            <file-tree-directory name="theme" collapsed></file-tree-directory>
-            <file-tree-file name="global.scss"></file-tree-file>
-            <file-tree-file name="index.html"></file-tree-file>
-            <file-tree-file name="karma.conf.js"></file-tree-file>
-            <file-tree-file name="main.ts"></file-tree-file>
-            <file-tree-file name="polyfills.ts"></file-tree-file>
-            <file-tree-file name="test.ts"></file-tree-file>
-            <file-tree-file name="tsconfig.app.json"></file-tree-file>
-            <file-tree-file name="tsconfig.spec.json"></file-tree-file>
-          </file-tree-directory>
-          <file-tree-file name=".gitignore"></file-tree-file>
-          <file-tree-file name="angular.json"></file-tree-file>
-          <file-tree-file name="ionic.config.json"></file-tree-file>
-          <file-tree-file name="package.json"></file-tree-file>
-          <file-tree-file name="tsconfig.json"></file-tree-file>
-          <file-tree-file name="tslint.json"></file-tree-file>
-        </file-tree>
-        <figcaption>Ionic 4</figcaption>
-      </figure>
-    </ion-col>
-    <ion-col>
-      <figure>
-        <file-tree>
-          <file-tree-directory name="src">
-              <file-tree-directory name="app">
-                <file-tree-file name="app.component.html"></file-tree-file>
-                <file-tree-file name="app.html"></file-tree-file>
-                <file-tree-file name="app.module.ts"></file-tree-file>
-                <file-tree-file name="app.scss"></file-tree-file>
-                <file-tree-file name="main.ts"></file-tree-file>
-              </file-tree-directory>
-              <file-tree-directory name="assets" collapsed></file-tree-directory>
-              <file-tree-directory name="pages">
-                <file-tree-directory name="about" collapsed></file-tree-directory>
-                <file-tree-directory name="home" collapsed></file-tree-directory>
-              </file-tree-directory>
-              <file-tree-directory name="theme" collapsed></file-tree-directory>
-              <file-tree-file name="index.html"></file-tree-file>
-              <file-tree-file name="manifest.json"></file-tree-file>
-              <file-tree-file name="service-worker.js"></file-tree-file>
-            </file-tree-directory>
-            <file-tree-file name=".gitignore"></file-tree-file>
-            <file-tree-file name="ionic.config.json"></file-tree-file>
-            <file-tree-file name="package.json"></file-tree-file>
-            <file-tree-file name="tsconfig.json"></file-tree-file>
-            <file-tree-file name="tslint.json"></file-tree-file>
-        </file-tree>
-        <figcaption>Ionic 3</figcaption>
-      </figure>
-    </ion-col>
-  </ion-row>
-</ion-grid>
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+  defaultValue="v4"
+  values={[
+    { value: 'v4', label: 'Ionic 4' },
+    { value: 'v3', label: 'Ionic 3' },
+  ]
+}>
+<TabItem value="v4">
+
+```bash
+src/
+├── app/
+│   ├── about/
+│   ├── home/
+│   ├── app-routing.module.ts
+│   ├── app.component.html
+│   ├── app.component.spec.ts
+│   ├── app.component.ts
+│   └── app.module.ts
+├── assets/
+├── environments/
+├── theme/
+├── global.scss
+├── index.html
+├── karma.conf.js
+├── main.ts
+├── polyfills.ts
+├── test.ts
+├── tsconfig.app.json
+└── tsconfig.spec.json
+.gitignore
+angular.json
+ionic.config.json
+package.json
+tsconfig.json
+tslint.json
+```
+
+</TabItem>
+<TabItem value="v3">
+
+```bash
+src/
+├── app/
+│   ├── app.component.html
+│   ├── app.html
+│   ├── app.module.ts
+│   ├── app.scss
+│   └── main.ts
+├── assets/
+├── pages/
+│   ├── about/
+│   ├── home/
+├── theme/
+├── index.html
+├── manifest.json
+└── service-worker.js
+.gitignore
+ionic.config.json
+package.json
+tsconfig.json
+tslint.json
+```
+
+</TabItem>
+</Tabs>
 
 The above comparison is an example of a v4 app's project structure. For developers with experience in a vanilla Angular project, this should feel really familiar.
 

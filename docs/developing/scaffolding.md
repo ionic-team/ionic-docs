@@ -10,34 +10,31 @@ Once an app is created by the Ionic CLI, the next step is to start building out 
 
 ## Project Structure
 
-<file-tree>
-    <file-tree-directory name="src">
-        <file-tree-directory name="app" collapsed></file-tree-directory>
-        <file-tree-directory name="assets" collapsed></file-tree-directory>
-        <file-tree-directory name="environments" collapsed></file-tree-directory>
-        <file-tree-directory name="theme" collapsed></file-tree-directory>
-        <file-tree-file name="global.scss"></file-tree-file>
-        <file-tree-file name="index.html"></file-tree-file>
-        <file-tree-file name="main.ts"></file-tree-file>
-        <file-tree-file name="polyfills.ts"></file-tree-file>
-        <file-tree-file name="test.ts"></file-tree-file>
-        <file-tree-file name="zone-flags.ts"></file-tree-file>
-    </file-tree-directory>
-</file-tree>
+```bash
+src/
+├── app/
+├── assets/
+├── environments/
+├── theme/
+├── global.scss
+├── index.html
+├── main.ts
+├── polyfills.ts
+├── test.ts
+└── zone-flags.ts
+```
 
 The `src/` directory has items such as the `index.html` file, configuration files for tests, an asset folder for images, and the main `app/` directory for the app's code.
 
-<file-tree>
-    <file-tree-directory name="src">
-        <file-tree-directory name="app">
-            <file-tree-file name="app-routing.module.ts"></file-tree-file>
-            <file-tree-file name="app.component.html"></file-tree-file>
-            <file-tree-file name="app.component.spec.ts"></file-tree-file>
-            <file-tree-file name="app.component.ts"></file-tree-file>
-            <file-tree-file name="app.module.ts"></file-tree-file>
-        </file-tree-directory>
-    </file-tree-directory>
-</file-tree>
+```bash
+src/
+└── app/
+    ├── app-routing.module.ts
+    ├── app.component.html
+    ├── app.component.spec.ts
+    ├── app.component.ts
+    └── app.module.ts
+```
 
 The `src/app/` directory contains the root app component and module as well as additional directories that contain app features such as pages, components, services, etc.
 
