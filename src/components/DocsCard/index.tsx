@@ -1,105 +1,85 @@
-import { Component, Prop, State, h } from '@stencil/core';
+import React from 'react';
+import clsx from 'clsx';
+import Link from '@docusaurus/Link';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import { Outbound } from '@site/src/icons';
 
-import { Outbound } from '../../icons';
+import './card.css';
 
-@Component({
-  tag: 'docs-card',
-  styleUrl: 'card.css'
-})
-export class DocsCard {
-  @Prop() href?: string;
-  @Prop() header?: string;
-  @Prop() icon?: string;
-  @Prop() hoverIcon?: string;
-  @Prop() iconset?: string;
-  @Prop() ionicon?: string;
-  @Prop() img?: string;
-  @Prop() size?: 'md' | 'lg';
-  @State() activeIndex = 0;
+interface Props {
+  href?: string;
+  header?: string;
+  icon?: string;
+  hoverIcon?: string;
+  iconset?: string;
+  ionicon?: string;
+  img?: string;
+  size?: 'md' | 'lg';
+}
 
-  interval!: number;
-  rotationTime = 6000; // 4 seconds
-
-  hostData() {
-    return {
-      class: {
-        'Card-with-image': typeof this.img !== 'undefined',
-        'Card-without-image': typeof this.img === 'undefined',
-        'Card-size-lg': this.size === 'lg',
-      }
-    };
-  }
-
-  componentWillLoad() {
-    if (typeof this.iconset !== 'undefined') { return; }
-    this.activeIndex = 0;
-    this.rotationTime = 4000 + (Math.random() * 2000); // 4 - 6 seconds - randomize it a bit
-    // make the first transiton happen a bit faster
-    setInterval(this.tic.bind(this), this.rotationTime);
-    setTimeout(this.tic.bind(this), this.rotationTime / 3);
-  }
-
-  componentWillUnload() {
-    clearInterval(this.interval);
-  }
-
-  tic() {
-    if (typeof this.iconset !== 'undefined' && this.activeIndex >= this.iconset.split(',').length - 1) {
-      return this.activeIndex = 0;
-    }
-    this.activeIndex++;
-  }
-
-  render() {
-    const isStatic = typeof this.href === 'undefined';
-    const isOutbound = typeof this.href !== 'undefined' ? /^http/.test(this.href) : false;
-    const header = this.header === 'undefined' ? null : (
-      <header class="Card-header">
-        {this.header} {isOutbound ? <Outbound/> : null}
+function DocsCard(props: Props): JSX.Element {
+    const isStatic = typeof props.href === 'undefined';
+    const isOutbound = typeof props.href !== 'undefined' ? /^http/.test(props.href) : false;
+    const header = props.header === 'undefined' ? null : (
+      <header className="Card-header">
+        {props.header} {isOutbound ? <Outbound/> : null}
       </header>
     );
-    const hoverIcon = this.hoverIcon || this.icon;
+    const hoverIcon = props.hoverIcon || props.icon;
 
     const content = [
-      this.img && <img src={this.img} class="Card-image"/>,
-      <div class="Card-container">
-        {this.icon && <img src={this.icon} class="Card-icon Card-icon-default"/>}
-        {hoverIcon && <img src={hoverIcon} class="Card-icon Card-icon-hover"/>}
-        {this.ionicon && <ion-icon name={this.ionicon} class="Card-ionicon"></ion-icon>}
-        { this.iconset && <div class="Card-iconset__container">
-          {this.iconset.split(',').map((icon, index) =>
+      props.img && <img src={useBaseUrl(props.img)} className="Card-image"/>,
+      <div className="Card-container">
+        {props.icon && <img src={useBaseUrl(props.icon)} className="Card-icon Card-icon-default"/>}
+        {hoverIcon && <img src={useBaseUrl(hoverIcon)} className="Card-icon Card-icon-hover"/>}
+        {props.ionicon && <ion-icon name={props.ionicon} className="Card-ionicon"></ion-icon>}
+        { props.iconset && <div className="Card-iconset__container">
+          {props.iconset.split(',').map((icon, index) =>
             <img
-              src={icon}
-              class={`Card-icon ${index === this.activeIndex ? 'Card-icon--active' : ''}`}
+              src={useBaseUrl(icon)}
+              className={`Card-icon ${index === props.activeIndex ? 'Card-icon-active' : ''}`}
               data-index={index}
             />
           )}
         </div>}
-        {header}
-        <div class="Card-content"><slot/></div>
+        {props.header && header}
+        <div className="Card-content">{props.children}</div>
       </div>
     ];
 
+    const className = clsx({
+      'Card-with-image': typeof props.img !== 'undefined',
+      'Card-without-image': typeof props.img === 'undefined',
+      'Card-size-lg': props.size === 'lg',
+    });
+
     if (isStatic) {
       return (
-        <div class="Card">
+        <docs-card class={className}>
+        <div className="Card">
           {content}
         </div>
+        </docs-card>
       );
     }
 
     if (isOutbound) {
       return (
-        <a class="Card" href={this.href}>
+        <docs-card class={className}>
+        <a className="Card" href={props.href} target="_blank">
           {content}
         </a>
+        </docs-card>
       );
     }
 
     return (
-      <stencil-route-link url={this.href} anchorClass="Card">
+      <docs-card class={className}>
+      <Link to={props.href} className="Card">
         {content}
-      </stencil-route-link>
+      </Link>
+      </docs-card>
     );
-  }
 }
+
+export default DocsCard;
