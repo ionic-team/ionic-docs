@@ -1,4 +1,8 @@
 const fetch = require("node-fetch");
+const fs = require("fs");
+const path = require("path");
+
+const DEMOS_PATH = path.resolve("static/demos");
 
 (async function() {
   const response = await fetch("https://unpkg.com/@ionic/docs/core.json");
@@ -25,8 +29,20 @@ function writePage(page) {
 }
 
 function renderFrontmatter({ tag }) {
+  const frontmatter = {
+    title: tag
+  };
+
+  const demoPath = `api/${tag.slice(4)}/index.html`;
+  if (fs.existsSync(path.join(DEMOS_PATH, demoPath))) {
+    frontmatter.demoUrl = `/docs/demos/${demoPath}`;
+    frontmatter.demoSourceUrl = `https://github.com/ionic-team/ionic-docs/tree/main/static/demos/${demoPath}`;
+  }
+
   return `---
-title: ${tag}
+${Object.entries(frontmatter)
+  .map(([key, value]) => `${key}: ${value}`)
+  .join("\n")}
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
