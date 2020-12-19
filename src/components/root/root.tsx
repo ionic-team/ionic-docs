@@ -4,7 +4,7 @@ import { LocationSegments, RouterHistory } from '@stencil/router';
 
 @Component({
   tag: 'docs-root',
-  styleUrl: 'root.css'
+  styleUrl: 'root.scss'
 })
 export class DocsRoot {
   history: RouterHistory | null = null;

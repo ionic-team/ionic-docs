@@ -1,10 +1,3 @@
-@font-face {
-  src: url("/docs/assets/fonts/eina-700.woff2") format("woff2"), url("/docs/assets/fonts/eina-700.woff") format("woff");
-  font-family: "Eina";
-  font-style: normal;
-  font-weight: 700;
-}
-
 :root {
   --accent-color: #3880ff;
   --accent-color-rgb: 56, 128, 255;
@@ -23,9 +16,9 @@
   --code-background: #f5f7fa;
   --code-color: var(--text-color--dark);
   --code-font-family: "SFMono-Regular", "Roboto Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  --font-family: system-ui, sans-serif;
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI emoji";
   --header-height: 56px;
-  --heading-font-family: "Eina", var(--font-family);
+  --heading-font-family: var(--font-family);
   --line-rule-color: #edf2f6;
   --menu-width: 240px;
   --offset-background: #fdfdff;
@@ -128,9 +121,23 @@ h5,
 h6 {
   color: var(--text-color--dark);
   font-family: var(--heading-font-family);
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
   line-height: 1.1;
   padding-top: 2em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  font-weight: 700;
 }
 
 h1 {

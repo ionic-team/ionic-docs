@@ -10,7 +10,7 @@ nextText: 'Environment Setup'
 nextUrl: '/docs/intro/environment'
 ---
 
-Ionic Framework is an open source UI toolkit for building performant, high-quality mobile and desktop apps using web technologies — HTML, CSS, and JavaScript — with integrations for popular frameworks like <a href="/docs/angular/overview" target="_blank"> Angular</a> and <a href="/react" target="_blank">React</a>.
+Ionic Framework is an open source UI toolkit for building performant, high-quality mobile and desktop apps using web technologies — HTML, CSS, and JavaScript — with integrations for popular frameworks like <a href="/docs/angular/overview"> Angular</a>, <a href="/react">React</a>, and <a href="/docs/vue/overview">Vue</a>.
 
 Get started building by <a href="/docs/intro/cli">installing Ionic</a> or following our <a href="/docs/intro/next#build-your-first-app">First App Tutorial</a> to learn the main concepts.
 
@@ -41,15 +41,15 @@ Ionic Framework focuses on the frontend UX and UI interaction of an app — UI c
 
 Ionic is the only mobile app stack that enables web developers to build apps for all major app stores and the mobile web from a single codebase. And with <a href="/docs/theming/platform-styles">Adaptive Styling</a>, Ionic apps look and feel at home on every device.
 
-#### A focus on performance
+### A focus on performance
 
 Ionic is built to perform and behave great on the latest mobile devices with best practices like efficient hardware accelerated transitions, and touch-optimized gestures.
 
-#### Clean, simple, and functional design
+### Clean, simple, and functional design
 
 Ionic is designed to work and display beautifully on all current mobile devices and platforms. With ready-made components, typography, and a gorgeous (yet extensible) base theme that adapts to each platform, you'll be building in style.
 
-#### Native and Web optimized
+### Native and Web optimized
 
 Ionic emulates native app UI guidelines and uses native SDKs, bringing the UI standards and device features of native apps together with the full power and flexibility of the open web. Ionic uses Capacitor (or Cordova) to deploy natively, or runs in the browser as a Progressive Web App.
 
@@ -90,9 +90,13 @@ Angular has always been at the center of what makes Ionic great. While the core 
 
 Ionic now has official support for the popular React library. Ionic React lets React developers use their existing web skills to build apps that target iOS, Android, the web, and the desktop. With `@ionic/react`, you can use all the core Ionic components, but in a way that feels like using native React components.
 
+### Vue
+
+Ionic now has official support for the popular Vue 3 library. Ionic Vue lets Vue developers use their existing web skills to build apps that target iOS, Android, the web, and the desktop. With `@ionic/vue`, you can use all the core Ionic components, but in a way that feels like using native Vue components.
+
 ### Future Support
 
-Support for other frameworks are expected in a future release. Currently official bindings for Vue are in development, though some components just work out of the box in those frameworks.
+Support for other frameworks will be considered in future releases.
 
 
 ## Ionic CLI

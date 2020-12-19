@@ -11,7 +11,7 @@ There are variety of options available for storing data within an Ionic app.
 
 ## Ionic Offline Storage
 
-[Ionic Offline Storage](/docs/enterprise/offline-storage) is a cross-platform data
+[Ionic Offline Storage](https://ionic.io/docs/offline-storage) is a cross-platform data
 storage system that works on iOS and Android.
 It makes it easy to add offline storage to Ionic apps that is secure (encrypted on device),
 highly performant, and provides advanced NoSQL data querying.
