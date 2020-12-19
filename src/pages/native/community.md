@@ -1,9 +1,9 @@
 ---
-title: Ionic Native Community
+title: Cordova Community
 tableOfContents: false
 ---
 
-Ionic Native Community is a collection of TypeScript wrappers for open source Cordova and Capacitor plugins that make it easy to add native functionality to any Ionic app.
+Cordova Community is a directory of open source Cordova plugins that make it easy to add native functionality to any Ionic app.
 
 These Community Plugins are submitted and maintained by the Ionic community. While community members are generally quick to find and fix issues, certain plugins may not function properly. 
 
@@ -13,11 +13,12 @@ For teams that require dedicated native plugin support & SLAs, ongoing maintenan
 
 ## Capacitor Support
 
-In addition to Cordova, Ionic Native also works with [Capacitor](https://capacitor.ionicframework.com), Ionic's official native runtime. Basic usage below. For complete details, [see the Capacitor documentation](https://capacitor.ionicframework.com/docs/cordova/using-cordova-plugins).
+These Cordova plugins also work with [Capacitor](https://capacitor.ionicframework.com), Ionic's official native runtime. Basic usage is below. For complete details, [see the Capacitor documentation](https://capacitor.ionicframework.com/docs/cordova/using-cordova-plugins).
+
+> Ionic strongly recommends using Capacitor to add native features to your apps. To learn more, [see here.](https://capacitorjs.com/docs/cordova)
 
 ## Usage
-All plugins have two components - the native code (Cordova) and the TypeScript code (Ionic Native).
-Cordova plugins are also wrapped in a `Promise` or `Observable` in order to provide a common plugin interface and modernized development approach.
+All plugins have two components - the native code (Cordova) and the TypeScript wrapper code (a `Promise` or `Observable`) that provides a common plugin interface and modernized development approach.
 
 Using the [Camera plugin](/docs/native/camera) as an example, first install it:
 
@@ -112,7 +113,7 @@ export class PhotoService {
 
 ## React
 
-React apps must use Capacitor to build native mobile apps. However, Ionic Native (and therefore, Cordova plugins) can still be used.
+React apps must use Capacitor to build native mobile apps. However, Cordova plugins can still be used.
 
 <command-line>
   <div>// Install Core library (once per project)</div>
