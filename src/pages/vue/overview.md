@@ -25,6 +25,7 @@ While there are no known technical limitations to using `Ionic Vue` with [Cordov
 ## From the Community
 
 - [Using Vue.js with Ionic & Capacitor](https://dev.to/aaronksaunders/using-vue-js-v3-beta-with-ionic-components-capacitor-plugins-2b6f) - Aaron Saunders
+- [Building Mobile Apps With Vue3 and Ionic](https://soshace.com/building-mobile-apps-with-vue3-and-ionic/) - Oluwaseun Raphael Afolayan
 
 ## Installation
 
