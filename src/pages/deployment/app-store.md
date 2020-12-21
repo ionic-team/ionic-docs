@@ -63,7 +63,7 @@ From there, TestFlight can be enabled for beta testing, or the App can be sent f
 ## Updating an app
 
 As an app grows, it will need to be updated with new features and fixes.
-An app can be updated by either submitting a new version to Apple, or by using a live update service like Ionic Appflow's <a href="https://ionicframework.com/appflow/deploy/intro" target="_blank">live update feature</a>.
+An app can be updated by either submitting a new version to Apple, or by using a live update service like Ionic Appflow's <a href="https://ionic.io/docs/appflow/deploy/intro" target="_blank">live update feature</a>.
 
 With <strong>Live Updates</strong>, app changes can be pushed in realtime directly to users from the Ionic Appflow dashboard, without waiting for App Store approvals.
 
