@@ -75,6 +75,9 @@ module.exports = {
         // },
       ],
     },
+    footer: {
+      links: [],
+    },
     gtag: {
       trackingID: 'UA-44023830-8',
     },
