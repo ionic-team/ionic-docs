@@ -15,7 +15,7 @@ module.exports = {
         src: 'img/framework-icon.svg',
       },
       items: [
-         {
+        {
           to: '/',
           activeBaseRegex: '^/docs/(?!api|components)',
           label: 'Guide',
@@ -28,42 +28,54 @@ module.exports = {
           position: 'left',
         },
         {
-          label: 'Platform',
+          label: 'Community',
           position: 'right',
           items: [
             {
-              href: 'https://capacitorjs.com/docs',
-              label: 'Capacitor',
-              className: 'link--outbound',
+              href: 'https://ionicframework.com/community',
+              label: 'Community Hub',
             },
             {
-              to: '/',
-              label: 'Framework',
+              href: 'https://forum.ionicframework.com/',
+              label: 'Forum',
             },
             {
-              href: 'https://ionic.io/docs/appflow',
-              label: 'Appflow',
-              className: 'link--outbound',
+              href: 'https://ionicworldwide.herokuapp.com/',
+              label: 'Slack',
             },
             {
-              href: 'https://ionic.io/docs/identity-vault',
-              label: 'Identity Vault',
-              className: 'link--outbound',
+              href: 'https://spectrum.chat/ionic',
+              label: 'Spectrum',
             },
             {
-              href: 'https://ionic.io/docs/auth-connect',
-              label: 'Auth Connect',
-              className: 'link--outbound',
+              href: 'https://www.meetup.com/topics/ionic-framework/',
+              label: 'Meetups',
             },
             {
-              href: 'https://ionic.io/docs/offline-storage',
-              label: 'Offline Storage',
-              className: 'link--outbound',
+              href: 'https://blog.ionicframework.com/',
+              label: 'Blog',
             },
             {
-              href: 'https://ionic.io/docs/premier-plugins',
-              label: 'Premier Plugins',
-              className: 'link--outbound',
+              href: 'https://twitter.com/ionicframework',
+              label: 'Twitter',
+            },
+          ],
+        },
+        {
+          label: 'Support',
+          position: 'right',
+          items: [
+            {
+              href: 'https://ionicframework.com/support',
+              label: 'Help Center',
+            },
+            {
+              href: 'https://ionic.zendesk.com/',
+              label: 'Customer Support',
+            },
+            {
+              href: 'https://ionicframework.com/advisory',
+              label: 'Enterprise Advisory',
             },
           ],
         },
@@ -77,6 +89,10 @@ module.exports = {
     },
     footer: {
       links: [],
+    },
+    algolia: {
+      apiKey: 'b3d47db9759a0a5884cf7807e23c77c5',
+      indexName: 'capacitorjs',
     },
     gtag: {
       trackingID: 'UA-44023830-8',
@@ -98,7 +114,6 @@ module.exports = {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/ionic-team/ionic-docs/edit/main/',
-
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
