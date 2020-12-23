@@ -29,7 +29,7 @@ module.exports = {
       items: [
         {
           to: '/',
-          activeBaseRegex: '^/docs/(?!api|components)',
+          activeBaseRegex: '^/docs/(?!api|components|cli|native)',
           label: 'Guide',
           position: 'left',
         },
@@ -37,6 +37,16 @@ module.exports = {
           to: '/components',
           activeBaseRegex: '^/docs/(api|components)',
           label: 'Components',
+          position: 'left',
+        },
+        {
+          to: '/cli',
+          label: 'CLI',
+          position: 'left',
+        },
+        {
+          to: '/native',
+          label: 'Native',
           position: 'left',
         },
         {

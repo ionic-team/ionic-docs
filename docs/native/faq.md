@@ -1,3 +1,7 @@
+---
+sidebar_label: FAQ
+---
+
 # Ionic Native FAQ
 
 ## Cordova Management Tips

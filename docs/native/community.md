@@ -1,5 +1,6 @@
 ---
 title: Cordova Community Plugins
+sidebar_label: Setup
 hide_table_of_contents: true
 ---
 

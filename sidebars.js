@@ -1,5 +1,5 @@
 module.exports = {
-  guideSidebar: [
+  docs: [
     {
       type: 'category',
       label: 'Getting Started',
@@ -209,7 +209,7 @@ module.exports = {
     },
   ],
 
-  componentsSidebar: [
+  api: [
     'components',
     {
       type: 'category',
@@ -448,6 +448,51 @@ module.exports = {
       type: 'category',
       label: 'Resources',
       items: ['api'],
+    },
+  ],
+
+  cli: [
+    {
+      type: 'category',
+      label: 'CLI Documentation',
+      items: [
+        'cli',
+        'cli/configuration',
+        'cli/livereload',
+        'cli/using-a-proxy',
+        {
+          type: 'link',
+          label: 'Changelog',
+          href: 'https://github.com/ionic-team/ionic-cli/blob/develop/packages/@ionic/cli/CHANGELOG.md',
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Command Reference',
+      items: [],
+    },
+  ],
+
+  native: [
+    {
+      type: 'category',
+      label: 'Getting Started',
+      items: [
+        'native',
+        'native/community',
+        'native/faq',
+        {
+          type: 'link',
+          label: 'Community vs. Enterprise',
+          href: 'https://ionic.io/docs/premier-plugins',
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Plugins',
+      items: [],
     },
   ],
 };
