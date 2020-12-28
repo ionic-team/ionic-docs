@@ -1019,6 +1019,7 @@ class MyComponent extends React.Component<{}, any> {
 
 ```javascript
 import { createAnimation, createGesture } from '@ionic/vue';
+import { ref } from 'vue';
 
 ...
 
