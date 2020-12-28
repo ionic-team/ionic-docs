@@ -227,7 +227,7 @@ const onMove = (detail) => {
   const deltaX = detail.deltaX;
   const velocityX = detail.velocityX;
     
-  pRef.vaue.innerHTML = `
+  pRef.value.innerHTML = `
     <div>Type: ${type}</div>
     <div>Current X: ${currentX}</div>
     <div>Delta X: ${deltaX}</div>
