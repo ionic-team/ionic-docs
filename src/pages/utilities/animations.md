@@ -1035,7 +1035,7 @@ const animation = createAnimation()
   .fromTo('transform', 'translateX(0)', `translateX(${MAX_TRANSLATE}px)`);
 
 const gesture = createGesture({
-  el: square,
+  el: squareRef.value,
   threshold: 0,
   gestureName: 'square-drag',
   onMove: ev: onMove(ev),
