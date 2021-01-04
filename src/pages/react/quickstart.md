@@ -319,7 +319,7 @@ const NewItem: React.FC = () => {
 export default NewItem;
 ```
 
-> Each view in an Ionic React application must contain an `IonPage` component. Page transitions will not work correctly without it. See the [IonPage Documentation](./navigation#ionpage) for more information.
+> Each view must contain an `IonPage` component. Page transitions will not work correctly without it. See the [IonPage Documentation](./navigation#ionpage) for more information.
 
 The content here is pretty straight forward and should look similar to the `Home` component. What is new is the `IonBackButton` component. This is used to navigate back to the previous route. Pretty straight forward? Ok, but what if we reload the page?
 

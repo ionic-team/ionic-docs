@@ -502,7 +502,7 @@ export default defineComponent({
 </script>
 ```
 
-> Each view in an Ionic Vue application must contain an `IonPage` component. Page transitions will not work correctly without it. See the [IonPage Documentation](./navigation#ionpage) for more information.
+> Each view must contain an `IonPage` component. Page transitions will not work correctly without it. See the [IonPage Documentation](./navigation#ionpage) for more information.
 
 The content here should look similar to the `Home` component. What is different here is the `IonBackButton` component. This is used to navigate back to the previous route. Seems easy enough, right? Ok, but what if we reload the page?
 
