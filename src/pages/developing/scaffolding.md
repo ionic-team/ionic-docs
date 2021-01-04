@@ -47,6 +47,8 @@ The `src/app/` directory contains the root app component and module as well as a
 
 ## Generating New Features
 
+> Currently for angular ionic apps only
+
 The Ionic CLI can generate new app features with the [`ionic generate`](/docs/cli/commands/generate) command. By running `ionic generate` in the command line, a selection prompt is displayed which lists the available features that can be generated.
 
 <command-line>
