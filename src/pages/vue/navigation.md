@@ -94,7 +94,7 @@ Say we start on the `home` route, and we want to add a button that takes us to t
 <ion-button router-link="/detail">Go to detail</ion-button>
 ```
 
-We can also programatically navigate in our app by using the router API:
+We can also programmatically navigate in our app by using the router API:
 
 ```typescript
 <template>
@@ -345,6 +345,29 @@ The example above defines the `/tabs/tab1/child` route as a child of the `/tabs/
 The `IonRouterOutlet` component provides a container to render your views in. It is similar to the `RouterView` component found in other Vue applications except that `IonRouterOutlet` can render multiple pages in the DOM in the same outlet. When a component is rendered in `IonRouterOutlet` we consider this to be an Ionic Framework "page". The router outlet container controls the transition animation between the pages as well as controls when a page is created and destroyed. This helps maintain the state between the views when switching back and forth between them.
 
 Nothing should be provided inside of `IonRouterOutlet` when setting it up in your template. While `IonRouterOutlet` can be nested in child components, we caution against it as it typically makes navigation in apps confusing. See [Shared URLs versus Nested Routes](#shared-urls-versus-nested-routes) for more information.
+
+## IonPage
+
+The `IonPage` component wraps each view in an Ionic Vue app and allows page transitions and stack navigation to work properly. Each view that is navigated to using the router must include an `IonPage` component.
+
+```html
+<template>
+  <ion-page>
+    <ion-content class="ion-padding">Hello World</ion-content>
+  </ion-page>
+</template>
+
+<script lang="ts">
+import { IonContent, IonPage } from '@ionic/vue';
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+  components: { IonContent, IonPage }
+});
+</script>
+```
+
+Components presented via `IonModal` or `IonPopover` do not typically need an `IonPage` component unless you need a wrapper element. In that case, we recommend using `IonPage` so that the component dimensions are still computed properly.
 
 ## Accessing the IonRouter Instance
 
