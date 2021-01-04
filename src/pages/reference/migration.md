@@ -167,7 +167,7 @@ See the following `ionic.config.json` as an example:
 
 ## RxJS Changes
 
-Between V3 and V4, RxJS was updated to version 6. This changes many of the import paths of operators and core RxJS functions. Please see the <a href="https://github.com/ReactiveX/rxjs/blob/master/docs_app/content/guide/v6/migration.md" target="_blank">RxJS Migration Guide</a> for details.
+Between V3 and V4, RxJS was updated to version 6. This changes many of the import paths of operators and core RxJS functions. Please see the <a href="https://github.com/ReactiveX/rxjs/blob/6.x/docs_app/content/guide/v6/migration.md" target="_blank">RxJS Migration Guide</a> for details.
 
 ## Lifecycle Events
 
