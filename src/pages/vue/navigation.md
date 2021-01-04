@@ -94,9 +94,9 @@ Say we start on the `home` route, and we want to add a button that takes us to t
 <ion-button router-link="/detail">Go to detail</ion-button>
 ```
 
-We can also programatically navigate in our app by using the router API:
+We can also programmatically navigate in our app by using the router API:
 
-```typescript
+```html
 <template>
   <ion-page>
     <ion-content>
@@ -249,7 +249,7 @@ Here, our `tabs` path loads a `Tabs` component. We provide each tab as a route o
 
 Let's start by taking a look at our `Tabs` component:
 
-```typescript
+```html
 <template>
   <ion-page>
     <ion-content>
@@ -346,6 +346,46 @@ The `IonRouterOutlet` component provides a container to render your views in. It
 
 Nothing should be provided inside of `IonRouterOutlet` when setting it up in your template. While `IonRouterOutlet` can be nested in child components, we caution against it as it typically makes navigation in apps confusing. See [Shared URLs versus Nested Routes](#shared-urls-versus-nested-routes) for more information.
 
+## IonPage
+
+The `IonPage` component wraps each view in an Ionic Vue app and allows page transitions and stack navigation to work properly. Each view that is navigated to using the router must include an `IonPage` component.
+
+```html
+<template>
+  <ion-page>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Home</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">Hello World</ion-content>
+  </ion-page>
+</template>
+
+<script lang="ts">
+import { 
+  IonContent, 
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar
+} from '@ionic/vue';
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+  components: {
+    IonContent, 
+    IonHeader,
+    IonPage,
+    IonTitle,
+    IonToolbar
+  }
+});
+</script>
+```
+
+Components presented via `IonModal` or `IonPopover` do not typically need an `IonPage` component unless you need a wrapper element. In that case, we recommend using `IonPage` so that the component dimensions are still computed properly.
+
 ## Accessing the IonRouter Instance
 
 There may be a few use cases where you need to get access to the `IonRouter` instance from within your Vue application. For example, you might want to know if you are at the root page of the application when a user presses the hardware back button on Android. For use cases like these, you can inject the `IonRouter` dependency into your component:
@@ -392,7 +432,7 @@ Notice that we have now added `:id` to the end of our `detail` path string. URL 
 
 Let's look at how to use it in our component:
 
-```typescript
+```html
 <template>
   <ion-page>
     <ion-header>
