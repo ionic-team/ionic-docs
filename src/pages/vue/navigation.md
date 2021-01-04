@@ -96,7 +96,7 @@ Say we start on the `home` route, and we want to add a button that takes us to t
 
 We can also programmatically navigate in our app by using the router API:
 
-```typescript
+```html
 <template>
   <ion-page>
     <ion-content>
@@ -249,7 +249,7 @@ Here, our `tabs` path loads a `Tabs` component. We provide each tab as a route o
 
 Let's start by taking a look at our `Tabs` component:
 
-```typescript
+```html
 <template>
   <ion-page>
     <ion-content>
@@ -353,16 +353,33 @@ The `IonPage` component wraps each view in an Ionic Vue app and allows page tran
 ```html
 <template>
   <ion-page>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Home</ion-title>
+      </ion-toolbar>
+    </ion-header>
     <ion-content class="ion-padding">Hello World</ion-content>
   </ion-page>
 </template>
 
 <script lang="ts">
-import { IonContent, IonPage } from '@ionic/vue';
+import { 
+  IonContent, 
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar
+} from '@ionic/vue';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  components: { IonContent, IonPage }
+  components: {
+    IonContent, 
+    IonHeader,
+    IonPage,
+    IonTitle,
+    IonToolbar
+  }
 });
 </script>
 ```
@@ -415,7 +432,7 @@ Notice that we have now added `:id` to the end of our `detail` path string. URL 
 
 Let's look at how to use it in our component:
 
-```typescript
+```html
 <template>
   <ion-page>
     <ion-header>
