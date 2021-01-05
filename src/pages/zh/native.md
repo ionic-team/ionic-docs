@@ -5,7 +5,7 @@ tableOfContents: false
 
 <p class='intro'>建立本地驱动的应用体验，收藏开源插件和高级插件以及集成，使其很容易添加本地设备功能到任何具有电容器或 Cordova 的Ion应用中。</p>
 
-<docs-cards class="static-width"> <docs-card header="Capacitor plugins" href="https://capacitorjs.com/docs/plugins" img="/docs/assets/img/native/capacitor@2x.png"> 
+<docs-cards> <docs-card header="Capacitor plugins" href="https://capacitorjs.com/docs/plugins" img="/docs/assets/img/native/capacitor@2x.png"> 
 
 A modern, open source native runtime built and maintained by the Ionic team and the Capacitor community. Our recommended native solution.</docs-card>
 
@@ -13,7 +13,7 @@ A modern, open source native runtime built and maintained by the Ionic team and 
 
 A collection of free Cordova plugins, built and maintained by the community, with TypeScript wrappers and a consistent API and naming convention.</docs-card> </docs-cards>
 
-<a id="native-enterprise" href="https://ionic.io/docs"></p> 
+<a id="native-enterprise" href="https://ionicframework.com/native"></p> 
 
 <div class="image-wrapper">
   <img src="/docs/assets/img/native/native-enterprise@2x.png" width="476" height="228" />
