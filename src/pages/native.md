@@ -15,7 +15,7 @@ tableOfContents: false
   </docs-card>
 </docs-cards>
 
-<a id="native-enterprise" href="https://ionic.io/docs">
+<a id="native-enterprise" href="https://ionicframework.com/native">
   <div class="image-wrapper">
     <img src="/docs/assets/img/native/native-enterprise@2x.png" width="476" height="228" />
   </div>
@@ -100,4 +100,5 @@ tableOfContents: false
 
 
 </style>
+
 > These docs are for apps built with Ionic Framework 4.0.0 and greater. For older Ionic v3 projects, please [see here](/docs/v3/native).
