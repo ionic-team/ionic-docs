@@ -1,11 +1,11 @@
-import { Component, h } from '@stencil/core';
+import { Component, Fragment, h } from '@stencil/core';
 
 @Component({
   tag: 'docs-cards',
-  styleUrl: 'cards.css'
+  styleUrl: 'cards.css',
 })
 export class DocsCards {
   render() {
-    return <slot/>;
+    return <Fragment />;
   }
 }
