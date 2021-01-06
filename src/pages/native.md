@@ -5,15 +5,27 @@ tableOfContents: false
 
 <p class='intro'>Build native-powered app experiences with a collection of open source and premium plugins and integrations that make it easy to add native device functionality to any Ionic app with Capacitor or Cordova.</p>
 
-<docs-cards>
-  <docs-card header="Capacitor plugins" href="https://capacitorjs.com/docs/plugins" img="/docs/assets/img/native/capacitor@2x.png">
-    <p>A modern, open source native runtime built and maintained by the Ionic team and the Capacitor community. Our recommended native solution.</p>
-  </docs-card>
+<div id="native-enterprise-cards">
+  <a href="https://capacitorjs.com/docs/plugins">
+    <div class="image-wrapper">
+      <img src="/docs/assets/img/native/capacitor@2x.png" width="440" height="222" alt="capacitor logo"/>
+    </div>
+    <div class="heading-group">
+      <header>Capacitor plugins</header>
+      <p>A modern, open source native runtime built and maintained by the Ionic team and the Capacitor community. Our recommended native solution.</p>
+    </div>
+  </a>
 
-  <docs-card header="Cordova plugins" href="/docs/native/community" img="/docs/assets/img/native/cordova@2x.png">
-    <p>A collection of free Cordova plugins, built and maintained by the community, with TypeScript wrappers and a consistent API and naming convention.</p>
-  </docs-card>
-</docs-cards>
+  <a href="/docs/native/community">
+    <div class="image-wrapper">
+      <img src="/docs/assets/img/native/cordova@2x.png" width="440" height="222" alt="cordova logo"/>
+    </div>
+    <div class="heading-group">
+      <header>Cordova plugins</header>
+      <p>A collection of free Cordova plugins, built and maintained by the community, with TypeScript wrappers and a consistent API and naming convention.</p>
+    </div>
+  </a>
+</div>
 
 <a id="native-enterprise" href="https://ionicframework.com/native">
   <div class="image-wrapper">
@@ -31,8 +43,63 @@ tableOfContents: false
 </a>
 
 <style scoped>
-  .Card-with-image a {
-    border-radius: 16px;
+  #native-enterprise-cards {
+    display: flex;
+
+    margin-inline-start: -1.5rem;
+    margin-block-start: -1.5rem;
+  }
+
+  @media (max-width: 767px) {
+    #native-enterprise-cards {
+      flex-direction: column;
+    }
+    #native-enterprise-cards .image-wrapper img {
+      max-height: 10rem;
+    }
+  }
+
+  #native-enterprise-cards > a {
+    display: block;
+    margin-inline-start: 1.5rem;
+    margin-block-start: 1.5rem;
+
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08), 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+
+    transition: all 150ms ease;
+  }
+
+  #native-enterprise-cards > a:hover,
+  #native-enterprise-cards > a:active,
+  #native-enterprise-cards > a:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1), 0 0.175em 0.5em rgba(2, 8, 20, 0.08);
+  }
+
+  #native-enterprise-cards .heading-group {
+    padding: 2rem;
+  }
+
+  #native-enterprise-cards .image-wrapper > img {
+    object-fit: cover;
+    width: 100%;
+  }
+
+  #native-enterprise-cards header {
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    color: #010610;
+  }
+
+  #native-enterprise-cards p {
+    font-size: .875rem;
+    line-height: 160%;
+    letter-spacing: -0.01em;
+    color: #5B708B;
   }
 
   #native-enterprise {
@@ -54,6 +121,9 @@ tableOfContents: false
     #native-enterprise {
       flex-direction: column;
     }
+    #native-enterprise .image-wrapper img{
+      max-height: 10rem;
+    }
   }
 
   #native-enterprise:hover,
@@ -74,10 +144,12 @@ tableOfContents: false
 
   #native-enterprise .image-wrapper {
     align-self: stretch;
+    overflow: hidden;
   }
   
   #native-enterprise img {
     height: 100%;
+    max-height: 100%;
     object-fit: cover;    
   }
 
