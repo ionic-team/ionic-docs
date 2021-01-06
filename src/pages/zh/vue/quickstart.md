@@ -514,6 +514,39 @@ In this case, the in-memory history is lost, so the back button disappears. To a
 
 Now, If there is no app history present, we will be able to navigate back to our home route.
 
+## Calling Methods on Components
+
+In order to call a method on any of the Ionic Vue components, you will first need to get a reference to the component instance. Next, you will need to access the underlying Web Component using `$el` and call the method.
+
+In other framework integrations such as Ionic React, this is not needed as any `ref` you provide is automatically forwarded to the underlying Web Component instance. We are unable to do the same thing here due to limitations in how Vue manages refs.
+
+```html
+<template>
+  <ion-content ref="content">
+    <ion-button @click="scrollToBottom">Scroll to Bottom</ion-button>
+
+    ...
+  </ion-content>
+</template>
+
+<script lang="ts">
+  import { IonButton, IonContent } from '@ionic/vue';
+  import { defineComponent, ref } from 'vue';
+
+  export default defineComponent({
+    components: { IonButton, IonContent },
+    setup() {
+      const content = ref();
+      const scrollToBottom = () => {
+        content.value.$el.scrollToBottom(300);
+      }
+
+      return { content, scrollToBottom }
+    }
+  });
+</script>
+```
+
 ## Adding Icons
 
 Ionic Vue comes with [Ionicons](https://ionicons.com/) pre-installed. There are a couple options developers have for using them in their application.
