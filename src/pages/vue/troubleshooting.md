@@ -75,6 +75,8 @@ ionContentRef.value.scrollToBottom();
 
 In other framework integrations such as Ionic React, this is not needed as any `ref` you provide is automatically forwarded to the underlying Web Component instance. We are unable to do the same thing here due to limitations in how Vue manages refs.
 
+See the [Quickstart Guide](./quickstart#calling-methods-on-components) for more information.
+
 ## Page transitions are not working
 
 In order for page transitions to work correctly, each page must have an `ion-page` component at the root:
