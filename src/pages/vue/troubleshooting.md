@@ -15,9 +15,9 @@ Have an issue that you think should be covered here? <a href="https://github.com
 [Vue warn]: Failed to resolve component: ion-button 
 ```
 
-If you see this warning, then it is likely you did not import your component from `@ionic/vue`. By default, all Ionic Vue components are locally registered meaning you need to import them each time you want to use them. 
+If you see this warning, then it is likely you did not import your component from `@ionic/vue`. By default, all Ionic Vue components are locally registered, meaning you need to import them each time you want to use them.
 
-Without importing the component, you will only get the underlying Web Component, meaning Vue-specific features such as `v-model` will not work.
+Without importing the component, you will only get the underlying Web Component, and Vue-specific features such as `v-model` will not work.
 
 To resolve this issue, you need to import the component from `@ionic/vue` and provide it to your Vue component:
 
