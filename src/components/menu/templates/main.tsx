@@ -93,7 +93,8 @@ const items = {
     'menu-vue-config': '/docs/vue/config',
     'menu-vue-platform': '/docs/vue/platform',
     'menu-vue-pwa': '/docs/vue/pwa',
-    'menu-vue-testing': '/docs/vue/testing'
+    'menu-vue-testing': '/docs/vue/testing',
+    'menu-vue-troubleshooting': '/docs/vue/troubleshooting'
   },
   'menu-utilities': {
     'menu-utilities-animations': '/docs/utilities/animations',
