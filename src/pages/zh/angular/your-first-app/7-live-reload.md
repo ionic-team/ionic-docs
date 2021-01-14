@@ -55,7 +55,7 @@ constructor(public photoService: PhotoService,
 import { Photo, PhotoService } from '../services/photo.service';
 ```
 
-Next, implement the `showActionSheet()` function. 我们往ActionSheet里面添加两个选项：`Delete`和`Cancel`，`Delete`选项可以调用照片服务的`deletePicture()`函数（我们后面要添加的功能），当按钮的`role`属性被赋值为"cancel"时，它将具有能关闭ActionSheet的功能。
+接下来，实现`showActionSheet()`函数。 我们往ActionSheet里面添加两个选项：`Delete`和`Cancel`，`Delete`选项可以调用照片服务的`deletePicture()`函数（我们后面要添加的功能），当按钮的`role`属性被赋值为"cancel"时，它将具有能关闭ActionSheet的功能。
 
 ```typescript
 public async showActionSheet(photo, position) {
@@ -87,16 +87,16 @@ public async showActionSheet(photo, position) {
 
 ```typescript
 public async deletePicture(photo: Photo, position: number) {
-  // Remove this photo from the Photos reference data array
+  // 从保存照片的数组中移除一条照片记录
   this.photos.splice(position, 1);
 
-  // Update photos array cache by overwriting the existing photo array
+  // 通过修改照片数组数据更新缓存
   Storage.set({
     key: this.PHOTO_STORAGE,
     value: JSON.stringify(this.photos)
   });
 
-  // delete photo file from filesystem
+  // 从文件系统中删除照片
   const filename = photo.filepath
                       .substr(photo.filepath.lastIndexOf('/') + 1);
 
@@ -105,14 +105,15 @@ public async deletePicture(photo: Photo, position: number) {
     directory: FilesystemDirectory.Data
   });
 }
+
 ```
 
-The selected photo is removed from the Photos array first. Then, we use the Capacitor Storage API to update the cached version of the Photos array. Finally, we delete the actual photo file itself using the Filesystem API.
+这张选中的照片从数组首位被移除， 然后我们使用永久存储API将被操作后的数组缓存起来。 最后，我们使用文件系统API物理删除了照片。
 
-Save this file, then tap on a photo again and choose the “Delete” option. This time, the photo is deleted! Implemented much faster using Live Reload. 💪
+保存此文件，然后再次点击照片并选择“删除”选项。 此时，这张照片就被删除了。 通过使用实时重载，让这一切都更快实现了。 💪
 
 ## 接下来呢？
 
-Congratulations! You built a complete cross-platform Photo Gallery app that runs on the web, iOS, and Android. There are many paths to follow from here. Try adding another [Ionic UI component](https://ionicframework.com/docs/components) to the app, or more [native functionality](https://capacitor.ionicframework.com/docs/apis). The sky’s the limit.
+祝贺您！ 你已经构建了一个可以同时在web、iOS以及Android上跨平台运行的图库应用。 这里提供了一些其他路径。 试试在你的应用中添加其他的[Ionic UI 组件](https://ionicframework.com/docs/components), 或者是 [原生功能](https://capacitor.ionicframework.com/docs/apis)， 利用他们，你可以创造出无限可能。
 
-Happy app building! 💙
+祝您编码愉快！ 💙
