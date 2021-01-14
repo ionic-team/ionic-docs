@@ -11,13 +11,13 @@ nextUrl: '/docs/angular/your-first-app/4-loading-photos'
 
 ## 文件系统 API
 
-幸运的是，将它们保存到文件系统只需要几个步骤。 Begin by creating a new class method, `savePicture()`, in the `PhotoService` class (`src/app/services/photo.service.ts`). 我们传入 `cameraPhoto` 对象，该对象代表新捕获的设备照片：
+幸运的是，将它们保存到文件系统只需要几个步骤。 首先在` PhotoService `类(` src/app/services/photo.service.ts`)中创建一个新的类方法`savePicture()` 。 我们传入 `cameraPhoto` 对象，该对象代表新捕获的设备照片：
 
 ```typescript
 private async savePicture(cameraPhoto: CameraPhoto) { }
 ```
 
-We can use this new method immediately in `addNewToGallery()`:
+我们可以在 `addNewToGallery()` 中立即使用这个新函数：
 
 ```typescript
 public async addNewToGallery() {
@@ -80,4 +80,4 @@ convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
 
 在 web 上以 base64 格式获取相机照片似乎比在移动设备上更为棘手。 实际上，我们只需使用内置 web APIs: [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) 一种将文件读取为Blob格式的简洁方法，然后使用 FileReader 的 [ readAsDataURL()](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL) 将Blob格式照片转换为base64格式。
 
-There we go! Each time a new photo is taken, it’s now automatically saved to the filesystem.
+There we go! 每当拍摄新照片时，都会自动将其保存到文件系统中。
