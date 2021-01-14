@@ -49,16 +49,16 @@ constructor(public photoService: PhotoService,
 
 ```
 
-Add `Photo` to the import statement.
+在导入语句中添加 `Photo`
 
 ```typescript
 import { Photo, PhotoService } from '../services/photo.service';
 ```
 
-Next, implement the `showActionSheet()` function. We add two options: `Delete` that calls PhotoService’s `deletePicture()` function (to be added next) and `Cancel`, which when given the role of “cancel” will automatically close the action sheet:
+Next, implement the `showActionSheet()` function. 我们往ActionSheet里面添加两个选项：`Delete`和`Cancel`，`Delete`选项可以调用照片服务的`deletePicture()`函数（我们后面要添加的功能），当按钮的`role`属性被赋值为"cancel"时，它将具有能关闭ActionSheet的功能。
 
 ```typescript
-public async showActionSheet(photo: Photo, position: number) {
+public async showActionSheet(photo, position) {
   const actionSheet = await this.actionSheetController.create({
     header: 'Photos',
     buttons: [{
@@ -73,7 +73,7 @@ public async showActionSheet(photo: Photo, position: number) {
       icon: 'close',
       role: 'cancel',
       handler: () => {
-        // Nothing to do, action sheet is automatically closed
+        // 不处理任何逻辑，Action Sheet会自动关闭
         }
     }]
   });
