@@ -81,9 +81,9 @@ public async showActionSheet(photo, position) {
 }
 ```
 
-Save both of the files we just edited. The Photo Gallery app will reload automatically, and now when we tap on one of the photos in the gallery, the action sheet displays. Tapping “Delete” doesn’t do anything yet, so head back into your code editor.
+保存好我们刚刚编辑的那两个文件后， 应用将自动刷新，现在我们在图库的照片上面单击，Action Sheet按照预期显示了出来。 点击“Delete”选项之后，并没有触发任何效果，所以再回到编辑器中。
 
-In `src/app/services/photo.service.ts`, add the `deletePicture()` function:
+在`src/app/services/photo.service.ts`里面，我们将`deletePicture()`函数添加进去：
 
 ```typescript
 public async deletePicture(photo: Photo, position: number) {
