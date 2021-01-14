@@ -90,30 +90,30 @@ private async readAsBase64(cameraPhoto: CameraPhoto) {
   }
 ```
 
-接下来，回到我们之前为web实现的` loadSaved()`函数。 On mobile, we can directly set the source of an image tag - `<img src="x" />` - to each photo file on the Filesystem, displaying them automatically. 因此，只有Web才需要将每个图像从Filesystem中读取为base64格式。 更新此函数以在文件系统代码周围添加<em x-id =“ 4”> if语句</em>：
+接下来，回到我们之前为web实现的` loadSaved()`函数。 在移动设备上，我们可以直接将图像标签的来源 - `<img src="x" />` - 设置为Filesystem上的每个照片文件，并自动显示它们。 因此，只有Web才需要将每个图像从Filesystem中读取为base64格式。 更新此函数以在文件系统代码周围添加<em x-id =“ 4”> if语句</em>：
 
 ```typescript
 public async loadSaved() {
-  // Retrieve cached photo array data
-  const photoList = await Storage.get({ key: this.PHOTO_STORAGE });
-  this.photos = JSON.parse(photoList.value) || [];
+  // 检索缓存的照片阵列数据
+  const photos = await Storage.get({ key: this.PHOTO_STORAGE });
+  this.photos = JSON.parse(photos.value) || [];
 
-  // Easiest way to detect when running on the web:
-  // “when the platform is NOT hybrid, do this”
+  // 检测在网络上运行时最简单的方法：
+  // “当平台不是'hybrid'时，执行此操作”
   if (!this.platform.is('hybrid')) {
-    // Display the photo by reading into base64 format
+    // 通过读取为base64格式显示照片
     for (let photo of this.photos) {
-      // Read each saved photo's data from the Filesystem
+      // 从文件系统读取每张保存的照片数据
       const readFile = await Filesystem.readFile({
           path: photo.filepath,
           directory: FilesystemDirectory.Data
       });
 
-      // Web platform only: Load the photo as base64 data
-      photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
+      // 仅限Web平台：将照片保存到base64字段中
+      photo.base64 = `data:image/jpeg;base64,${readFile.data}`;
     }
   }
 }
 ```
 
-Our Photo Gallery now consists of one codebase that runs on the web, Android, and iOS. Next up, the part you’ve been waiting for - deploying the app to a device.
+我们的照片库现在包括一个在web、Android和iOS上运行的代码库。 下一步，您一直在等待的部分 - 将应用程序部署到设备。
