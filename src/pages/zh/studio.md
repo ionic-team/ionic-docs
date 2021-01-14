@@ -4,9 +4,9 @@ tableOfContents: false
 
 # 欢迎使用Ionic Studio
 
-Ionic Studio is a fast and easy app builder that helps teams build and prototype apps with minimal coding.
+Iond Studio 是一个快速而简单的应用程序生成器，帮助团队构建和原型应用，并且最小编码。
 
-Studio is designed to integrate into an existing developer workflow, rather than replace it, enabling developers and architects to build visually *or* drop down to code using their favorite tools.
+工作室旨在整合到现有的开发者工作流程，而不是替换它。 允许开发者和设计师使用他们最喜欢的工具构建视觉 *或* 代码。
 
 Studio fully supports bringing code back into the tool, something virtually unheard of in the app development tools market.
 
