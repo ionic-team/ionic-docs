@@ -80,4 +80,4 @@ convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
 
 在 web 上以 base64 格式获取相机照片似乎比在移动设备上更为棘手。 实际上，我们只需使用内置 web APIs: [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) 一种将文件读取为Blob格式的简洁方法，然后使用 FileReader 的 [ readAsDataURL()](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL) 将Blob格式照片转换为base64格式。
 
-There we go! 每当拍摄新照片时，都会自动将其保存到文件系统中。
+好了！ 每当拍摄新照片时，都会自动将其保存到文件系统中。
