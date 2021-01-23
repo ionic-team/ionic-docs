@@ -37,9 +37,9 @@ Primeiro, vamos atualizar a funcionalidade de salvar fotos para dar suporte a di
 
 ```typescript
 private async readAsBase64(cameraPhoto: CameraPhoto) {
-  // "hybrid" will detect Cordova or Capacitor
+  // "hybrid" vai detetar Cordova ou Capacitor
   if (this.platform.is('hybrid')) {
-    // Read the file into base64 format
+    // Ler o ficheiro em formato base64 
     const file = await Filesystem.readFile({
       path: cameraPhoto.path
     });
@@ -47,7 +47,7 @@ private async readAsBase64(cameraPhoto: CameraPhoto) {
     return file.data;
   }
   else {
-    // Fetch the photo, read as a blob, then convert to base64 format
+    // Buscar a foto, ler como um "blob" e depois converter para formato base64
     const response = await fetch(cameraPhoto.webPath);
     const blob = await response.blob();
 
@@ -56,7 +56,7 @@ private async readAsBase64(cameraPhoto: CameraPhoto) {
 }
 ```
 
-Next, update the `savePicture()` method. When running on mobile, set `filepath` to the result of the `writeFile()` operation - `savedFile.uri`. When setting the `webviewPath`, use the special `Capacitor.convertFileSrc()` method ([details here](https://ionicframework.com/docs/core-concepts/webview#file-protocol)).
+A seguir, atualiza o método `savePicture()`. Quando executres em dispositivos móveis, define `filepath` para o resultado da operação `writeFile()` - `savedFile.uri`. Ao definires o método `webviewPath`, usa o método especial `Capacitor.convertFileSrc()` ([detalhes aqui](https://ionicframework.com/docs/core-concepts/webview#file-protocol)).
 
 ```typescript
 // Save picture to file on device
