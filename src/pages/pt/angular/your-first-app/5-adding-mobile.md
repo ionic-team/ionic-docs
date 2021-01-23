@@ -1,8 +1,8 @@
 ---
 previousText: 'Carregando fotos do Sistema de Ficheiros'
-previousUrl: '/docs/angular/a-tua-primeira-app/4-fotos-a-carregar'
+previousUrl: '/docs/angular/your-first-app/4-loading-photos'
 nextText: 'Lançando para dispositivo móvel'
-nextUrl: '/docs/angular/a-tua-primeira-app/6-lançando-para-dispositivo-móvel'
+nextUrl: '/docs/angular/your-first-app/6-deploying-mobile'
 ---
 
 # Adicionando dispositivos móveis
