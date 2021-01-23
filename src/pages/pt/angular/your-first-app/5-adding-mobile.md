@@ -19,21 +19,21 @@ Importa a [API da Plataforma Iônica](https://ionicframework.com/docs/angular/pl
 import { Platform } from '@ionic/angular';
 
 export class PhotoService {
-  public photos: Photo[] = [];
-  private PHOTO_STORAGE: string = "photos";
-  private platform: Platform;
+  public fotos: Foto[] = [];
+  private ARMAZENAMENTO_FOTOS: string = "fotos";
+  private platforma: Platform;
 
-  constructor(platform: Platform) {
-    this.platform = platform;
+  constructor(platforma: Platform) {
+    this.platforma = platforma;
   }
 
-  // other code
+  // resto do código
 }
 ```
 
-## Platform-specific Logic
+## Lógica específica da plataforma
 
-First, we’ll update the photo saving functionality to support mobile. In the `readAsBase64()` function, check which platform the app is running on. If it’s “hybrid” (Capacitor or Cordova, two native runtimes), then read the photo file into base64 format using the Filesystem `readFile()` method. Otherwise, use the same logic as before when running the app on the web:
+Primeiro, vamos atualizar a funcionalidade de salvar fotos para dar suporte a dispositivos móveis. Na função `readAsBase64()`, verifica em qual plataforma a aplicação está a ser executada. If it’s “hybrid” (Capacitor or Cordova, two native runtimes), then read the photo file into base64 format using the Filesystem `readFile()` method. Otherwise, use the same logic as before when running the app on the web:
 
 ```typescript
 private async readAsBase64(cameraPhoto: CameraPhoto) {
