@@ -1,19 +1,19 @@
 ---
-previousText: 'Loading Photos on Filesystem'
-previousUrl: '/docs/angular/your-first-app/4-loading-photos'
-nextText: 'Deploying Mobile'
-nextUrl: '/docs/angular/your-first-app/6-deploying-mobile'
+previousText: 'Carregando fotos do Sistema de Ficheiros'
+previousUrl: '/docs/angular/a-tua-primeira-app/4-fotos-a-carregar'
+nextText: 'Lançando para dispositivo móvel'
+nextUrl: '/docs/angular/a-tua-primeira-app/6-lançando-para-dispositivo-móvel'
 ---
 
-# Adding Mobile
+# Adicionando dispositivos móveis
 
-Our photo gallery app won’t be complete until it runs on iOS, Android, and the web - all using one codebase. All it takes is some small logic changes to support mobile platforms, installing some native tooling, then running the app on a device. Let’s go!
+A nossa galeria de fotos não estará concluída até que seja executada em iOS, Android e web - todos usando um único código. Basta algumas pequenas mudanças lógicas para suportar plataformas móveis, instalar algumas ferramentas nativas e, em seguida, executar o aplicativo num dispositivo. Vamos lá!
 
-## Import Platform API
+## Importar API da plataforma
 
-Let’s start with making some small code changes - then our app will “just work” when we deploy it to a device.
+Vamos começar a fazer algumas pequenas alterações de código - depois a nossa aplicação vai "apenas funcionar" quando nós o publicarmos num dispositivo.
 
-Import the Ionic [Platform API](https://ionicframework.com/docs/angular/platform) into `photo.service.ts`, which is used to retrieve information about the current device. In this case, it’s useful for selecting which code to execute based on the platform the app is running on (web or mobile):
+Importa a [API da Plataforma Iônica](https://ionicframework.com/docs/angular/platform) para a `photo.service.ts`, que é usada para recuperar informações sobre o dispositivo atual. Neste caso, é útil selecionar em qual código será executado com base na plataforma em que o aplicativo está a ser executado (web ou móvel):
 
 ```typescript
 import { Platform } from '@ionic/angular';
