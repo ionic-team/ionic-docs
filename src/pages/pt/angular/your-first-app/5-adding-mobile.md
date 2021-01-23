@@ -33,7 +33,7 @@ export class PhotoService {
 
 ## Lógica específica da plataforma
 
-Primeiro, vamos atualizar a funcionalidade de salvar fotos para dar suporte a dispositivos móveis. Na função `readAsBase64()`, verifica em qual plataforma a aplicação está a ser executada. If it’s “hybrid” (Capacitor or Cordova, two native runtimes), then read the photo file into base64 format using the Filesystem `readFile()` method. Otherwise, use the same logic as before when running the app on the web:
+Primeiro, vamos atualizar a funcionalidade de salvar fotos para dar suporte a dispositivos móveis. Na função `readAsBase64()`, verifica em qual plataforma a aplicação está a ser executada. Se for "híbrido" (Capacitor ou Cordova, dois runtimes nativos), então lê o arquivo de fotos no formato base64 usando o método de arquivo `readFile()`. Caso contrário, usa a mesma lógica como antes ao executar o aplicativo na web:
 
 ```typescript
 private async readAsBase64(cameraPhoto: CameraPhoto) {
