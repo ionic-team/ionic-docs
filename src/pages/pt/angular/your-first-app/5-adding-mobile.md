@@ -59,12 +59,12 @@ private async readAsBase64(cameraPhoto: CameraPhoto) {
 A seguir, atualiza o método `savePicture()`. Quando executres em dispositivos móveis, define `filepath` para o resultado da operação `writeFile()` - `savedFile.uri`. Ao definires o método `webviewPath`, usa o método especial `Capacitor.convertFileSrc()` ([detalhes aqui](https://ionicframework.com/docs/core-concepts/webview#file-protocol)).
 
 ```typescript
-// Save picture to file on device
+// Guarda o fcheiro da imagem no dispositivo
   private async savePicture(cameraPhoto: CameraPhoto) {
-    // Convert photo to base64 format, required by Filesystem API to save
+    // Converte a foto para formato base64, requerido para guardar pela Filesystem API
     const base64Data = await this.readAsBase64(cameraPhoto);
 
-    // Write the file to the data directory
+    // Guarda o ficheiro no diretório de dados
     const fileName = new Date().getTime() + '.jpeg';
     const savedFile = await Filesystem.writeFile({
       path: fileName,
@@ -73,16 +73,16 @@ A seguir, atualiza o método `savePicture()`. Quando executres em dispositivos m
     });
 
     if (this.platform.is('hybrid')) {
-      // Display the new image by rewriting the 'file://' path to HTTP
-      // Details: https://ionicframework.com/docs/building/webview#file-protocol
+      // Mostra a nova imagem reescrevendo o caminho 'file: //' para HTTP
+      // Detalhes: https://ionicframework.com/docs/building/webview#file-protocol
       return {
         filepath: savedFile.uri,
         webviewPath: Capacitor.convertFileSrc(savedFile.uri),
       };
     }
     else {
-      // Use webPath to display the new image instead of base64 since it's
-      // already loaded into memory
+      // Usa webPath para mostrar a nova imagem em vez de base64 desde
+      // que esta já está gravada na memória
       return {
         filepath: fileName,
         webviewPath: cameraPhoto.webPath
@@ -91,30 +91,30 @@ A seguir, atualiza o método `savePicture()`. Quando executres em dispositivos m
   }
 ```
 
-Next, head back over to the `loadSaved()` function we implemented for the web earlier. On mobile, we can directly set the source of an image tag - `<img src="x" />` - to each photo file on the Filesystem, displaying them automatically. Thus, only the web requires reading each image from the Filesystem into base64 format. Update this function to add an _if statement_ around the Filesystem code:
+A seguir, volta para a função `loadSaved()` que implementamos anteriormente. Em dispositivos móveis podemos definir diretamente a origem de uma tag da imagem - `<img src="x" />` - para cada arquivo de foto no sistema de arquivos, exibindo-os automaticamente. Assim, apenas a web requer a leitura de cada imagem do sistema de arquivos no formato base64. Atualiza esta função para adicionar um _if statement_ acima do código do sistema de arquivos:
 
 ```typescript
 public async loadSaved() {
-  // Retrieve cached photo array data
+  // Recupera os dados da matriz de fotos em cache
   const photoList = await Storage.get({ key: this.PHOTO_STORAGE });
   this.photos = JSON.parse(photoList.value) || [];
 
-  // Easiest way to detect when running on the web:
-  // “when the platform is NOT hybrid, do this”
+  // Maneira mais fácil de detectar quando estiver a executar na web:
+  // “quando a platagorma NÃO é híbrida, executa isto”
   if (!this.platform.is('hybrid')) {
-    // Display the photo by reading into base64 format
+    // Mostra a foto a ler em formato base64
     for (let photo of this.photos) {
-      // Read each saved photo's data from the Filesystem
+      // Ler dados de cada foto guardada no Filesystem (Sistema de ficheiros)
       const readFile = await Filesystem.readFile({
           path: photo.filepath,
           directory: FilesystemDirectory.Data
       });
 
-      // Web platform only: Load the photo as base64 data
+      // Apenas para plataforma web: Carrega a foto em data base64
       photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
     }
   }
 }
 ```
 
-Our Photo Gallery now consists of one codebase that runs on the web, Android, and iOS. Next up, the part you’ve been waiting for - deploying the app to a device.
+A Nossa Galeria de Fotos agora consiste em uma base de código que é executada na web, Android e iOS. A seguir, a parte que tens estado à espera - implantar a aplicação num dispositivo.
