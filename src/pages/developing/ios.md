@@ -167,7 +167,7 @@ Safari has Web Inspector support for iOS simulators and devices. Open the **Deve
 
 ### Viewing Native Logs
 
-If running with Xcode, native logs can be found in in the Xcode **Console**.
+If running with Xcode, native logs can be found in the Xcode **Console**.
 
 > If the **Console** is hidden, enable it in **View** &raquo; **Debug Area** &raquo; **Activate Console**.
 
