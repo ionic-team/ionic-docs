@@ -1,11 +1,11 @@
 ---
 previousText: 'Adding Mobile'
 previousUrl: '/docs/angular/your-first-app/5-adding-mobile'
-nextText: 'Rapid App Dev with Live Reload'
+nextText: 'Desenvolvimento rápido de aplicativos com Live Reload'
 nextUrl: '/docs/angular/your-first-app/7-live-reload'
 ---
 
-# Deploying to iOS and Android
+# Implantando para IOS e Android
 
 Since we added Capacitor to our project when it was first created, there’s only a handful of steps remaining until the Photo Gallery app is on our device! Remember, you can find the complete source code for this app [here](https://github.com/ionic-team/photo-gallery-capacitor-ng).
 
