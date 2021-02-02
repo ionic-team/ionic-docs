@@ -202,7 +202,7 @@ const renderPremier = (premierSlug: string | null) => {
       <docs-card
         class="cordova-ee-card"
         header="Plugins and solutions built and supported by Ionic."
-        href={`/docs/premier-plugins/${premierSlug}`}
+        href={`https://ionic.io/docs/premier-plugins/${premierSlug}`}
       >
         <div>
           <img src="/docs/assets/icons/native-enterprise.png" class="cordova-ee-img" />
