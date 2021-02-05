@@ -267,6 +267,12 @@ body.dark {
   --ion-card-background: #1c1c1d;
 }
 
+.ios body.dark ion-modal {
+  --ion-background-color: var(--ion-color-step-100);
+  --ion-toolbar-background: var(--ion-color-step-150);
+  --ion-toolbar-border-color: var(--ion-color-step-250);
+}
+
 
 /*
  * Material Design Dark Theme
