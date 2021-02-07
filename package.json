@@ -19,7 +19,7 @@
     "build-menus": "ts-node -P scripts/tsconfig.json scripts/build-menus",
     "watch-pages": "ts-node -P scripts/tsconfig.json scripts/watch-pages",
     "watch-stencil": "stencil build --dev --serve --watch",
-    "heroku-postbuild": "npm run build.ci"
+    "heroku-postbuild": "npm run build.ci && yes | cp test.html www/docs/index.html"
   },
   "dependencies": {
     "@ionic-internal/ionic-ds": "3.0.3",

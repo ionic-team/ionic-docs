@@ -46,10 +46,8 @@ export class DocsMenu {
   }
 
   renderOption = (framework: string | null) => {
-    const Icon = framework !== null ? this.frameworkIcons[framework] : null;
     return (
       <div class="FrameworkSelect-framework">
-        <Icon class="FrameworkSelect-icon"/>
         <span>{framework}</span>
       </div>
     );
