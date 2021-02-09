@@ -255,8 +255,6 @@ body.dark {
   --ion-color-step-900: #e6e6e6;
   --ion-color-step-950: #f2f2f2;
 
-  --ion-toolbar-background: #0d0d0d;
-
   --ion-item-background: #000000;
 
   --ion-card-background: #1c1c1d;
