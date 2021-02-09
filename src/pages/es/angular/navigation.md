@@ -161,7 +161,7 @@ Tenemos aquí una configuración típica de un módulo de Angular con "RouterMod
 
 If you would prefer to get hands on with the concepts and code described above, please checkout our [live example](https://stackblitz.com/edit/ionic-angular-routing?file=src/app/app-routing.module.ts) of the topics above on StackBlitz.
 
-## Working with Tabs
+## Trabajando con Tabuladores
 
 With Tabs, the Angular Router provides Ionic the mechanism to know what components should be loaded, but the heavy lifting is actually done by the tabs component. Let's look at a simple example.
 
