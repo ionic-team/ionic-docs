@@ -90,7 +90,7 @@ For more info on how to use route guards, go to Angular's [router documentation]
 
 ## Guidance for Each Life Cycle Method
 
-Below are some tips on uses cases for each of the life cycle events.
+Below are some tips on use cases for each of the life cycle events.
 
 - `ngOnInit` - Initialize your component and load data from services that don't need refreshing on each subsequent visit.
 - `ionViewWillEnter` - Since `ionViewWillEnter` is called every time the view is navigated to (regardless if initialized or not), it's a good method to load data from services. However, if your data comes back during the animation, it can start lots of DOM manipulation, which can cause some janky animations.
