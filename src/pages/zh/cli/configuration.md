@@ -23,7 +23,7 @@ CLI 提供了从项目配置文件和全局CLI配置文件设置和打印配置�
   // web资源构建和开发服务器应该用什么。
   "type": "angular",
 
-  // Ionic Appflow的App ID。
+  // The App ID for Appflow.
   "id": "abc123",
 
   // 面向集成比如Cordova 和Capacitor的配置对象。
@@ -46,7 +46,7 @@ CLI将会寻找以下环境变量：
 
 * ` IONIC_CONFIG_DIRECTORY`：全局CLI配置目录，缺省是`~/.ionic`。
 * `IONIC_HTTP_PROXY`: 设置一个URL来代理所有CLI请求。 查看 [使用代理](./using-a-proxy)。
-* `IONIC_TOKEN`: 自动认证 [Ionic Appflow](https://ionicframework.com/appflow)。
+* `IONIC_TOKEN`: Automatically authenticates with [Appflow](https://ionic.io/appflow).
 
 ## 参数
 
