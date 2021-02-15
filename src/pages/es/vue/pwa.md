@@ -10,7 +10,7 @@ nextUrl: '/docs/vue/testing'
 
 Los dos requisitos principales de un PWA son un <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> y un <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Manifest</a>. Si bien es posible agregar ambos a una aplicación manualmente, la CLI de Vue tiene algunas utilidades para agregar esto por usted.
 
-For existing projects, you can run the `vue add` command to install the PWA plugin for Vue.
+Para proyectos existentes, puede ejecutar el comando `vue add` para instalar el plugin PWA para Vue.
 
 ```shell
 vue add pwa
