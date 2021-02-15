@@ -1,14 +1,14 @@
 ---
-title: "Progressive Web Apps in Vue"
+title: "Aplicaciones web progresivas en Vue"
 previousText: 'Platform Utils'
 previousUrl: '/docs/vue/platform'
-nextText: 'Testing'
+nextText: 'Pruebas'
 nextUrl: '/docs/vue/testing'
 ---
 
-## Making your Vue app a PWA
+## Hacer de tu aplicación Vue un PWA
 
-The two main requirements of a PWA are a <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> and a <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Manifest</a>. While it's possible to add both of these to an app manually, the Vue CLI has some utilities for adding this for you.
+Los dos requisitos principales de un PWA son un <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> y un <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Manifest</a>. Si bien es posible agregar ambos a una aplicación manualmente, la CLI de Vue tiene algunas utilidades para agregar esto por usted.
 
 For existing projects, you can run the `vue add` command to install the PWA plugin for Vue.
 
