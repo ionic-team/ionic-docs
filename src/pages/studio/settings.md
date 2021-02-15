@@ -57,7 +57,7 @@ Ionic Studio uses the Ionic CLI command <code>ionic cordova resources</code> to 
 
 ## Linking to Appflow
 
-If your account has access to [Ionic Appflow](https://ionicframework.com/appflow) and you'd like to use it for this app, you can quickly link it with your Appflow account
+If your account has access to [Appflow](https://ionic.io/appflow) and you'd like to use it for this app, you can quickly link it with your Appflow account
 in this section of the settings area:
 
 <figure>

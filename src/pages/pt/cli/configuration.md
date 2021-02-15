@@ -23,7 +23,7 @@ Each Ionic project has a project configuration file, usually at the project's ro
   // documentation, and what to use for web asset builds and the dev server.
   "type": "angular",
 
-  // The App ID for Ionic Appflow.
+  // The App ID for Appflow.
   "id": "abc123",
 
   // Configuration object for integrations such as Cordova and Capacitor.
@@ -46,7 +46,7 @@ The CLI will look for the following environment variables:
 
 * `IONIC_CONFIG_DIRECTORY`: The directory of the global CLI config. Defaults to `~/.ionic`.
 * `IONIC_HTTP_PROXY`: Set a URL for proxying all CLI requests through. See [Using a Proxy](./using-a-proxy).
-* `IONIC_TOKEN`: Automatically authenticates with [Ionic Appflow](https://ionicframework.com/appflow).
+* `IONIC_TOKEN`: Automatically authenticates with [Appflow](https://ionic.io/appflow).
 
 ## Flags
 

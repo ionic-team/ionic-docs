@@ -2159,7 +2159,7 @@
         "deploy"
       ],
       "summary": "Create a deploy build on Appflow",
-      "description": "This command creates a deploy build on Ionic Appflow. While the build is running, it prints the remote build log to the terminal.\n\nCustomizing the build:\n- The `--environment` and `--channel` options can be used to customize the groups of values exposed to the build.\n\nApart from `--commit`, every option can be specified using the full name setup within the Appflow [Dashboard](https://dashboard.ionicframework.com).",
+      "description": "This command creates a deploy build on Appflow. While the build is running, it prints the remote build log to the terminal.\n\nCustomizing the build:\n- The `--environment` and `--channel` options can be used to customize the groups of values exposed to the build.\n\nApart from `--commit`, every option can be specified using the full name setup within the Appflow [Dashboard](https://dashboard.ionicframework.com).",
       "footnotes": [],
       "groups": [
         "paid"
@@ -2497,8 +2497,8 @@
         "ionic",
         "git"
       ],
-      "summary": "Adds/updates the Ionic Appflow git remote to your local Ionic app",
-      "description": "This command is used by `ionic link` when Ionic Appflow is used as the git host.\n\n`ionic git remote` will check the local repository for whether or not the git remote is properly set up. This command operates on the **ionic** remote. For advanced configuration, see **Settings** => **Git** in the app settings of the [Dashboard](https://dashboard.ionicframework.com).",
+      "summary": "Adds/updates the Appflow git remote to your local Ionic app",
+      "description": "This command is used by `ionic link` when Appflow is used as the git host.\n\n`ionic git remote` will check the local repository for whether or not the git remote is properly set up. This command operates on the **ionic** remote. For advanced configuration, see **Settings** => **Git** in the app settings of the [Dashboard](https://dashboard.ionicframework.com).",
       "footnotes": [],
       "groups": [
         "paid"
@@ -2730,7 +2730,7 @@
         "ionic"
       ],
       "summary": "Connect local apps to Ionic",
-      "description": "Link apps on Ionic Appflow to local Ionic projects with this command.\n\nIf the `id` argument is excluded, this command will prompt you to select an app from Ionic Appflow.\n\nIonic Appflow uses a git-based workflow to manage app updates. During the linking process, select **GitHub** (recommended) or **Ionic Appflow** as a git host. See our [documentation](https://ionicframework.com/docs/appflow/basics/git) for more information.\n\nUltimately, this command sets the **id** property in **./ionic.config.json**, which marks this app as linked.\n\nIf you are having issues linking, please get in touch with our [Support](https://ion.link/support-request).",
+      "description": "Link apps on Appflow to local Ionic projects with this command.\n\nIf the `id` argument is excluded, this command will prompt you to select an app from Appflow.\n\nAppflow uses a git-based workflow to manage app updates. During the linking process, select **GitHub** (recommended) or **Appflow** as a git host. See our [documentation](https://ionicframework.com/docs/appflow/basics/git) for more information.\n\nUltimately, this command sets the **id** property in **./ionic.config.json**, which marks this app as linked.\n\nIf you are having issues linking, please get in touch with our [Support](https://ion.link/support-request).",
       "footnotes": [],
       "groups": [
         "paid"
@@ -2743,7 +2743,7 @@
       "inputs": [
         {
           "name": "id",
-          "summary": "The Ionic Appflow ID of the app to link (e.g. `a1b2c3d4`)",
+          "summary": "The Appflow ID of the app to link (e.g. `a1b2c3d4`)",
           "required": false
         }
       ],
@@ -2802,7 +2802,7 @@
         "package"
       ],
       "summary": "Create a package build on Appflow",
-      "description": "This command creates a package build on Ionic Appflow. While the build is running, it prints the remote build log to the terminal. If the build is successful, it downloads the created app package file in the current directory.\n\nApart from `--commit`, every option can be specified using the full name setup within the [Dashboard](https://dashboard.ionicframework.com).\n\nThe `--signing-certificate` option is mandatory for any iOS build but not for Android debug builds.\n\nCustomizing the build:\n- The `--environment` and `--native-config` options can be used to customize the groups of values exposed to the build.\n- Override the preferred platform with `--build-stack`. This is useful for building older iOS apps.\n\nDeploying the build to an App Store:\n- The `--destination` option can be used to deliver the app created by the build to the configured App Store. This can be used only together with build type `release` for Android and build types `app-store` or `enterprise` for iOS.",
+      "description": "This command creates a package build on Appflow. While the build is running, it prints the remote build log to the terminal. If the build is successful, it downloads the created app package file in the current directory.\n\nApart from `--commit`, every option can be specified using the full name setup within the [Dashboard](https://dashboard.ionicframework.com).\n\nThe `--signing-certificate` option is mandatory for any iOS build but not for Android debug builds.\n\nCustomizing the build:\n- The `--environment` and `--native-config` options can be used to customize the groups of values exposed to the build.\n- Override the preferred platform with `--build-stack`. This is useful for building older iOS apps.\n\nDeploying the build to an App Store:\n- The `--destination` option can be used to deliver the app created by the build to the configured App Store. This can be used only together with build type `release` for Android and build types `app-store` or `enterprise` for iOS.",
       "footnotes": [],
       "groups": [
         "paid"
@@ -2917,7 +2917,7 @@
         "package"
       ],
       "summary": "Deploys a binary to a destination, such as an app store using Appflow",
-      "description": "This command deploys a binary to a destination using Ionic Appflow. While running, the remote log is printed to the terminal.\n\nThe command takes two parameters: the numeric ID of the package build that previously created the binary and the name of the destination where the binary is going to be deployed.\nBoth can be retrieved from the [Dashboard](https://dashboard.ionicframework.com).",
+      "description": "This command deploys a binary to a destination using Appflow. While running, the remote log is printed to the terminal.\n\nThe command takes two parameters: the numeric ID of the package build that previously created the binary and the name of the destination where the binary is going to be deployed.\nBoth can be retrieved from the [Dashboard](https://dashboard.ionicframework.com).",
       "footnotes": [],
       "groups": [
         "paid"
