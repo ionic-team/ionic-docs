@@ -60,8 +60,8 @@ If the upload successfully, the app should be listed on [iTunes Connect](https:/
 
 ## Updating an app
 
-As an app grows, it will need to be updated with new features and fixes. An app can be updated by either submitting a new version to Apple, or by using a live update service like Ionic Appflow's <a href="https://ionic.io/docs/appflow/deploy/intro" target="_blank">live update feature</a>.
+As an app grows, it will need to be updated with new features and fixes. An app can be updated by either submitting a new version to Apple, or by using a live update service like Appflow's <a href="https://ionic.io/docs/appflow/deploy/intro" target="_blank">live update feature</a>.
 
-With <strong>Live Updates</strong>, app changes can be pushed in realtime directly to users from the Ionic Appflow dashboard, without waiting for App Store approvals.
+With <strong>Live Updates</strong>, app changes can be pushed in realtime directly to users from the Appflow dashboard, without waiting for App Store approvals.
 
 > In order for the iOS App Store to accept the updated build, the config.xml file will need to be edited to increment the version value, then rebuild the app for release following the same instructions above.
