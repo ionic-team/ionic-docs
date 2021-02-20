@@ -24,7 +24,7 @@ export class PhotoService {
 }
 ```
 
-Luego, al final de la funcion `addNewToGallery`, hará una llamada a `Storage.set()` para guardar el arreglo de fotografias "photos". Al agregarlo aquí, la matriz de Fotos se almacena cada vez que se toma una nueva foto. De esta forma, no importa cuando el usuario, cierre la app o se cambie a una app distinta todas las fotografias estan guardadas.
+Luego, al final de la función `addNewToGallery`, hará una llamada a `Storage.set()` para guardar el arreglo de fotografías "photos". Al agregarlo aquí, el arreglo de Fotos se almacena cada vez que se toma una nueva foto. De esta forma, no importa cuando el usuario, cierre la app o se cambie a una app distinta todas las fotografías están guardadas.
 
 ```typescript
 Storage.set({
@@ -33,7 +33,7 @@ Storage.set({
 });
 ```
 
-Con los datos del arreglo de fotos guardados, crearemos una función llamada `loadSaved()` que pueda recuperar esos datos. Utilizamos la misma clave para recuperar el array de fotos en formato JSON, luego analizarlo en una matriz:
+Con los datos del arreglo de fotos guardados, crear una función llamada `loadSaved()` que pueda recuperar esos datos. Utilizamos la misma clave para recuperar el array de fotos en formato JSON, luego analizarlo en una matriz:
 
 ```typescript
 public async loadSaved() {
@@ -41,11 +41,11 @@ public async loadSaved() {
   const photoList = await Storage.get({ key: this.PHOTO_STORAGE });
   this.photos = JSON.parse(photoList.value) || [];
 
-  // more to come...
+  // más por venir...
 }
 ```
 
-On mobile (coming up next!), we can directly set the source of an image tag - `<img src="x" />` - to each photo file on the Filesystem, displaying them automatically. On the web, however, we must read each image from the Filesystem into base64 format, using a new `base64` property on the `Photo` object. This is because the Filesystem API uses [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. Below is the code you need to add in the `loadSaved()` function you just added:
+En  móvil (próximamente!), directamente podremos establecer el origen de una etiqueta de imagen - `<img src="x" />` - a cada archivo de foto en el Sistema de Archivos, mostrándolos automáticamente. En la web, sin embargo, debemos leer cada imagen desde el sistema de archivos en formato base64, usando una nueva propiedad `base64` en el objeto `Photo`. Esto se debe a que la API Sistema de Archivos utiliza [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) bajo la cubierta. Below is the code you need to add in the `loadSaved()` function you just added:
 
 ```typescript
 // Display the photo by reading into base64 format
