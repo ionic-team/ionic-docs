@@ -11,7 +11,7 @@ Hemos implementado la toma de fotos y su guardado en el sistema de archivos. Fal
 
 Afortunadamente, esto es fácil: aprovecharemos la [API Storage ](https://capacitor.ionicframework.com/docs/apis/storage) de Capacitor para almacenar nuestro arreglo de fotos en un formato clave-valor.
 
-## API Storage
+## API Almacenamiento
 
 Comience definiendo una variable constante que actuará como la clave para el almacenamiento de las fotografias:
 
