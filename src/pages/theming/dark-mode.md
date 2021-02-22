@@ -264,6 +264,7 @@ body.dark {
   --ion-background-color: var(--ion-color-step-100);
   --ion-toolbar-background: var(--ion-color-step-150);
   --ion-toolbar-border-color: var(--ion-color-step-250);
+  --ion-item-background: var(--ion-color-step-150);
 }
 
 
