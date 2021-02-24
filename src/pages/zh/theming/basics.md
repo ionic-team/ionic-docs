@@ -1,5 +1,5 @@
 ---
-previousText: 'Layout'
+previousText: '布局'
 previousUrl: '/docs/layout/structure'
 nextText: 'Platform Styles'
 nextUrl: '/docs/theming/platform-styles'
@@ -7,7 +7,7 @@ contributors:
   - brandyscarney
 ---
 
-# Theming Basics
+# 主题基础
 
 Ionic Framework is built to be a blank slate that can easily be customized and modified to fit a brand, while still following the standards of the different platforms. Theming Ionic apps is now easier than ever. Because the framework is built with CSS, it comes with pre-baked default styles which are extremely easy to change and modify.
 
