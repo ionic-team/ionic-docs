@@ -31,7 +31,7 @@ Ionic React是Ionc Framework的原生React版本，是免费开放源代码SDK �
 
 这一切都是你需要通过React为任何平台运送获奖应用的。
 
-<div class="flex">
+<div class="flex" >
 
 <div class="pull-left">
 
@@ -49,7 +49,7 @@ Ionic React是Ionc Framework的原生React版本，是免费开放源代码SDK �
 
 </div>
 
-<div class="flex reverse">
+<div class="flex reverse" >
 
 <div class="pull-left">
 
