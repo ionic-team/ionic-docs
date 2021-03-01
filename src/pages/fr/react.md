@@ -31,7 +31,7 @@ Ionic React is native React version of Ionic Framework, the free, open source SD
 
 It's everything you need to ship award-winning apps for any platform, with React.
 
-<div class="flex">
+<div class="flex" >
 
 <div class="pull-left">
 
@@ -49,7 +49,7 @@ Choose from over 100 beautiful, mobile-ready UI components, animations, and gest
 
 </div>
 
-<div class="flex reverse">
+<div class="flex reverse" >
 
 <div class="pull-left">
 
