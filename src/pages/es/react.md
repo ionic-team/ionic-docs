@@ -31,7 +31,7 @@ Ionic React es la versión nativa de React de Ionic Framework, el SDK de código
 
 Es todo lo que necesitas para enviar aplicaciones ganadoras de premios para cualquier plataforma, con React.
 
-<div class="flex">
+<div class="flex" >
 
 <div class="pull-left">
 
@@ -49,7 +49,7 @@ Choose from over 100 beautiful, mobile-ready UI components, animations, and gest
 
 </div>
 
-<div class="flex reverse">
+<div class="flex reverse" >
 
 <div class="pull-left">
 
