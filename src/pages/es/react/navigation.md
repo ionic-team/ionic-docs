@@ -97,11 +97,9 @@ The `DashboardPage` above shows a users list page and a details page. When navig
 
 An `IonRouterOutlet` should only contain `Route`s or `Redirect`s. Any other component should be rendered either as a result of a `Route` or outside of the `IonRouterOutlet`.
 
-An `IonRouterOutlet` should also not be a descendant from another `IonRouterOutlet`.
-
 ## IonPage
 
-El componente ` IonPage ` envuelve cada vista en una aplicación Ionic React y permite que las transiciones de página y la navegación de pila funcionen correctamente. Each view that is navigated to using the router must include an `IonPage` component.
+The `IonPage` component wraps each view in an Ionic React app and allows page transitions and stack navigation to work properly. Each view that is navigated to using the router must include an `IonPage` component.
 
 ```typescript
 import {
