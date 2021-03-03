@@ -14,7 +14,9 @@ export class InternalAd {
   timeout!: ReturnType<typeof setTimeout>;
 
   async componentWillLoad() {
-    return this.update();
+    if (Build.isBrowser) {
+      return this.update();
+    }
   }
 
   @Method()
