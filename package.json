@@ -22,7 +22,7 @@
     "heroku-postbuild": "npm run build.ci"
   },
   "dependencies": {
-    "@ionic-internal/ionic-ds": "3.0.3",
+    "@ionic-internal/ionic-ds": "4.1.4",
     "@ionic/core": "^5.5.2",
     "@ionic/docs": "^5.5.2",
     "@sentry/node": "^5.27.3",
