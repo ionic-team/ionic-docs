@@ -146,6 +146,12 @@
   "menu-resources-guides": "Guides",
   "menu-resources-posts": "Posts",
   "menu-resources-tools": "Tools",
+
+  "menu-resources-featured": "Featured",
+  "menu-resources-webinars": "Webinars",
+  "menu-resources-articles": "Articles",
+  "menu-resources-case-studies": "Case Studies",
+  "menu-resources-learning": "Learning",
   "menu-resources-videos": "Videos",
 
   "menu-api-action-sheet": "Action Sheet",

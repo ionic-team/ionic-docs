@@ -136,11 +136,16 @@ const items = {
     'menu-reference-migration': '/docs/reference/migration'
   },
   'menu-resources': {
-    'menu-resources-books': '/docs/developer-resources/books',
-    'menu-resources-courses': '/docs/developer-resources/courses',
-    'menu-resources-guides': '/docs/developer-resources/guides',
-    'menu-resources-posts': '/docs/developer-resources/posts',
-    'menu-resources-tools': '/docs/developer-resources/tools',
-    'menu-resources-videos': '/docs/developer-resources/videos'
+    // 'menu-resources-books': '/docs/developer-resources/books',
+    // 'menu-resources-courses': '/docs/developer-resources/courses',
+    // 'menu-resources-guides': '/docs/developer-resources/guides',
+    // 'menu-resources-posts': '/docs/developer-resources/posts',
+    // 'menu-resources-tools': '/docs/developer-resources/tools',
+    'menu-resources-featured': 'https://ionicframework.com/resources',
+    'menu-resources-webinars': 'https://ionicframework.com/resources/webinars',
+    'menu-resources-articles': 'https://ionicframework.com/resources/articles',
+    'menu-resources-case-studies': 'https://ionicframework.com/resources/case-studies',
+    'menu-resources-learning': 'https://ionicframework.com/resources/learning',
+    'menu-resources-videos': 'https://ionicframework.com/resources/videos'
   },
 };
