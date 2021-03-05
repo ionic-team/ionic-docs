@@ -372,8 +372,6 @@ On our main `IonFab`, we are setting its positioning with the vertical and horiz
 Now let's wire up a click handler to this. When clicking the FAB button, we want to navigate to a new page (which we will create in a moment). To do this, we will need to get access to Vue Router's navigation API. This can be done by importing `useRouter` from the `vue-router` package.
 
 ```html
-import { add } from 'ionicons/icons';
-
 <ion-content>
   <ion-list>
   ...
@@ -389,7 +387,8 @@ import { add } from 'ionicons/icons';
 
 <script>
 import { add } from 'ionicons/icons';
-
+import { useRouter } from 'vue-router';
+  
 ...
 
 export default defineComponent({
