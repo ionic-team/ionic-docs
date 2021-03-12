@@ -68,9 +68,9 @@ import { IonicModule } from '@ionic/angular';
 
 Ionic 设置也可以基于特定的平台 例如, 如果应用运行在一个可能较慢的设备的浏览器中时, 你可以禁用动画 开发者可以利用平台工具来实现这个目标。
 
-由由于配置是在运行时设置的，因此您将无权访问平台依赖注入。 相反，您可以直接使用程序提供的基础功能。
+由由于配置是在运行时设置的，因此您将无权访问平台依赖注入。 相反，您可以直接使用程序提供的基础功能或函数方法。
 
-In the following example, we are disabling all animations in our Ionic app only if the app is running in a mobile web browser. The `isPlatform()` call returns `true` or `false` based upon the platform that is passed in. See the [Platform Documentation](./platform#platforms) for a list of possible values.
+在以下示例中，仅当Ionic应用程序在移动Web浏览器中运行时，我们才禁用该应用程序中的所有动画。 基于对于的平台，isPlatform() 方法返回true或false。 查看 [平台文档](./platform#platforms) 对应的值。
 
 
 ```typescript
