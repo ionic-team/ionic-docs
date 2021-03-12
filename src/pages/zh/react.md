@@ -70,9 +70,9 @@ Compatible with React version 16.8 and above.
 
 <div class="pull-left">
 
-## More than mobile
+## 更多移动版
 
-Deploy your Ionic React projects to native iOS, Android, Electron, and the web as a Progressive Web App, using [Capacitor](https://capacitor.ionicframework.com), a modern native runtime. All with one shared codebase.
+将你的Ionic React项目部署到原生的 iOS, Android。 Electron和Web作为一个渐进的网络应用（PWA），使用 [Capacitor](https://capacitor.ionicframework.com)。 All with one shared codebase.
 
 </div>
 
