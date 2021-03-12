@@ -12,7 +12,7 @@ contributors:
 
 Ionic Config提供了应用全局配置的方式。你可以设置应用的模式、tab按钮的布局、动画以及其他选项。
 
-## Global Config
+## 全局配置
 
 如果要覆盖Ionic默认的全局配置，可以在`app.module.ts`文件中添加`IonicModule.forRoot`。
 
@@ -66,9 +66,9 @@ import { IonicModule } from '@ionic/angular';
 
 ## 平台配置
 
-Ionic 设置也可以基于特定的平台 例如, 如果应用运行在一个可能较慢的设备的浏览器中时, 你可以禁用动画 Developers can take advantage of the Platform utilities to accomplish this.
+Ionic 设置也可以基于特定的平台 例如, 如果应用运行在一个可能较慢的设备的浏览器中时, 你可以禁用动画 开发者可以利用平台工具来实现这个目标。
 
-Since the config is set at runtime, you will not have access to the Platform Dependency Injection. Instead, you can use the underlying functions that the provider uses directly.
+由由于配置是在运行时设置的，因此您将无权访问平台依赖注入。 相反，您可以直接使用程序提供的基础功能。
 
 In the following example, we are disabling all animations in our Ionic app only if the app is running in a mobile web browser. The `isPlatform()` call returns `true` or `false` based upon the platform that is passed in. See the [Platform Documentation](./platform#platforms) for a list of possible values.
 
@@ -89,7 +89,7 @@ import { isPlatform, IonicModule } from '@ionic/angular';
 })
 ```
 
-The next example allows you to set an entirely different configuration based upon the platform, falling back to a default config if no platforms match:
+下一个示例允许您根据平台设置一个完全不同的配置，如果没有平台匹配，则回退到默认配置：
 
 ```typescript
 import { isPlatform, IonicModule } from '@ionic/angular';
@@ -117,7 +117,7 @@ const getConfig = () => {
 })
 ```
 
-Finally, this example allows you to accumulate a config object based upon different platform requirements:
+下面的示例是根据不同平台需求进行的配置
 
 ```typescript
 import { isPlatform, IonicModule } from '@ionic/angular';
@@ -147,9 +147,9 @@ const getConfig = () => {
 })
 ```
 
-## Config Options
+## 配置选项
 
-Below is a list of config options that Ionic uses.
+下面是 Ionic 使用的配置选项列表。
 
 | 配置                       | 类型                 | 描述                                                |
 | ------------------------ | ------------------ | ------------------------------------------------- |
