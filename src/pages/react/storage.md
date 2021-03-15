@@ -1,6 +1,8 @@
 ---
-previousText: 'Testing'
+previousText: 'Progressive Web Apps'
 previousUrl: '/docs/react/pwa'
+nextText: 'Testing'
+nextUrl: '/docs/react/testing'
 ---
 
 # Data Storage

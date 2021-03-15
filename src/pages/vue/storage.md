@@ -1,6 +1,8 @@
 ---
-previousText: 'Testing'
+previousText: 'Progressive Web Apps'
 previousUrl: '/docs/vue/pwa'
+nextText: 'Testing'
+nextUrl: '/docs/vue/testing'
 ---
 
 # Data Storage
