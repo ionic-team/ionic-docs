@@ -145,7 +145,7 @@ imports: [
 It’s now ready to be used in our PhotoProvider class. Import it:
 
 ```Javascript
-import { Storage } from '@ionic/storage';
+import { Storage } from '@ionic/storage-angular';
 ```
 
 Then inject it via the constructor:

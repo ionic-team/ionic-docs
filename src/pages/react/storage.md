@@ -1,11 +1,15 @@
 ---
-previousText: 'Web View'
-previousUrl: '/docs/building/webview'
+previousText: 'Progressive Web Apps'
+previousUrl: '/docs/react/pwa'
+nextText: 'Testing'
+nextUrl: '/docs/react/testing'
 ---
 
 # Data Storage
 
 There are variety of options available for storing data within an Ionic app.
+
+Here are two official Ionic options:
 
 ## Ionic Secure Storage
 
@@ -15,7 +19,7 @@ It makes it easy to build high performance, offline-ready Ionic apps across iOS,
 
 [Learn more](https://ionic.io/products/secure-storage)
 
-## `@ionic/storage`
+## @ionic/storage
 
 For developers not requiring encryption nor relational data support, [@ionic/storage](https://github.com/ionic-team/ionic-storage) is an open source key/value API for building apps that work across storage engines on multiple platforms.
 

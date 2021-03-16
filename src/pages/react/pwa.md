@@ -2,8 +2,8 @@
 title: "Progressive Web Apps in React"
 previousText: 'Platform Utils'
 previousUrl: '/docs/react/platform'
-nextText: 'Testing'
-nextUrl: '/docs/react/testing'
+nextText: 'Storage'
+nextUrl: '/docs/react/storage'
 ---
 
 

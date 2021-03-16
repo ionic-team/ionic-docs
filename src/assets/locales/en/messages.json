@@ -81,6 +81,7 @@
   "menu-react-config": "Config",
   "menu-react-platform": "Platform",
   "menu-react-pwa": "Progressive Web Apps",
+  "menu-react-storage": "Storage",
   "menu-react-testing": "Testing",
 
   "menu-vue": "Vue",
@@ -98,6 +99,7 @@
   "menu-vue-config": "Config",
   "menu-vue-platform": "Platform",
   "menu-vue-pwa": "Progressive Web Apps",
+  "menu-vue-storage": "Storage",
   "menu-vue-testing": "Testing",
   "menu-vue-troubleshooting": "Troubleshooting",
 

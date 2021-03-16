@@ -74,6 +74,7 @@ const items = {
     'menu-react-config': '/docs/react/config',
     'menu-react-platform': '/docs/react/platform',
     'menu-react-pwa': '/docs/react/pwa',
+    'menu-react-storage': '/docs/react/storage',
     'menu-react-testing': '/docs/react/testing'
   },
   'menu-vue': {
@@ -93,6 +94,7 @@ const items = {
     'menu-vue-config': '/docs/vue/config',
     'menu-vue-platform': '/docs/vue/platform',
     'menu-vue-pwa': '/docs/vue/pwa',
+    'menu-vue-storage': '/docs/vue/storage',
     'menu-vue-testing': '/docs/vue/testing',
     'menu-vue-troubleshooting': '/docs/vue/troubleshooting'
   },

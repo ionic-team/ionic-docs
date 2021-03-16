@@ -64,7 +64,7 @@ export class AppModule {}
 Finally, inject it into any of your components or pages:
 
 ```typescript
-import { Storage } from '@ionic/storage';
+import { Storage } from '@ionic/storage-angular';
 
 export class MyApp {
   constructor(private storage: Storage) { }
