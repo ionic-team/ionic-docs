@@ -1,8 +1,8 @@
 ---
 previousText: 'Seu Primeiro App'
-previousUrl: '/docs/angular/seu-primeiro-app'
+previousUrl: '/docs/angular/your-first-app'
 nextText: 'Salvando fotos no Sistema de arquivos'
-nextUrl: '/docs/angular/seu-primeiro-app/3-salvando-fotos'
+nextUrl: '/docs/angular/your-first-app/3-saving-photos'
 ---
 
 # Tirando fotos com a câmera
