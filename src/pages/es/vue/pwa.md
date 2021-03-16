@@ -2,8 +2,8 @@
 title: "Aplicaciones web progresivas en Vue"
 previousText: 'Platform Utils'
 previousUrl: '/docs/vue/platform'
-nextText: 'Pruebas'
-nextUrl: '/docs/vue/testing'
+nextText: 'Storage'
+nextUrl: '/docs/vue/storage'
 ---
 
 ## Hacer de tu aplicación Vue un PWA
