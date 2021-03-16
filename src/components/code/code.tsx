@@ -8,7 +8,7 @@ import { CheckmarkSoft } from '../../icons';
 })
 export class DocsCode {
   @Element() el!: HTMLElement;
-  @Prop({ reflectToAttr: true }) language = '';
+  @Prop({ reflect: true }) language = '';
   @State() showCopyConfirmation = false;
 
   copyCodeText() {

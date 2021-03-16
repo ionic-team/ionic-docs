@@ -118,7 +118,7 @@ The Markdown in `src/pages` does not contain all of the Ionic documentation's co
 
 #### Updating Ionic Native Community Plugins
 
-To add or update an Ionic Native [community plugin](/docs/native/overview):
+To add or update an Ionic Native [community plugin](/docs/native/community):
 1) Open a pull request on the [Ionic Native](https://github.com/ionic-team/ionic-native) repository (both code or documentation).
 2) Once the change has been approved and merged into master by the Ionic team, do the following steps:
 

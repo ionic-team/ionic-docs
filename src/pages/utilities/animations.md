@@ -93,6 +93,28 @@ import { CreateAnimation, Animation } from '@ionic/react';
 
 ```
 </docs-tab>
+<docs-tab tab="vue">
+
+Developers using Ionic Vue should install the latest version of `@ionic/vue`.
+
+```javascript
+import { createAnimation } from '@ionic/vue';
+import { ref } from 'vue';
+
+...
+
+const myElementRef = ref();
+
+...
+
+const animation = createAnimation()
+  .addElement(myElementRef.value)
+  .duration(1000)
+  .fromTo('opacity', '1', '0.5');
+}
+
+```
+</docs-tab>
 </docs-tabs>
 
 ## Basic Animations
@@ -135,6 +157,26 @@ this.animationCtrl.create()
 >
   ...
 </CreateAnimation>
+```
+</docs-tab>
+<docs-tab tab="vue">
+
+```javascript
+import { createAnimation } from '@ionic/vue';
+import { ref } from 'vue';
+
+...
+
+const elementRef = ref();
+
+...
+
+createAnimation()
+  .addElement(elementRef.value)
+  .duration(1500)
+  .iterations(Infinity)
+  .fromTo('transform', 'translateX(0px)', 'translateX(100px)')
+  .fromTo('opacity', '1', '0.2');
 ```
 </docs-tab>
 </docs-tabs>
@@ -196,6 +238,29 @@ this.animationCtrl.create()
 >
 ...
 </CreateAnimation>
+```
+</docs-tab>
+<docs-tab tab="vue">
+
+```javascript
+import { createAnimation } from '@ionic/vue';
+import { ref } from 'vue';
+
+...
+
+const squareRef = ref();
+
+...
+
+createAnimation()
+  .addElement(squareRef.value)
+  .duration(3000)
+  .iterations(Infinity)
+  .keyframes([
+    { offset: 0, background: 'red' },
+    { offset: 0.72, background: 'var(--background)' },
+    { offset: 1, background: 'green' }
+  ]);
 ```
 </docs-tab>
 </docs-tabs>
@@ -350,6 +415,52 @@ render() {
 ```
 
 </docs-tab>
+<docs-tab tab="vue">
+
+```javascript
+import { createAnimation } from '@ionic/vue';
+import { ref } from 'vue';
+
+...
+
+const squareARef = ref();
+const squareBRef = ref();
+const squareCRef = ref();
+
+...
+
+const squareA = createAnimation()
+  .addElement(squareARef.value)
+  .keyframes([
+    { offset: 0, transform: 'scale(1) rotate(0)' },
+    { offset: 0.5, transform: 'scale(1.2) rotate(45deg)' },
+    { offset: 1, transform: 'scale(1) rotate(45deg)' }
+  ]);
+  
+const squareB = createAnimation()
+  .addElement(squareBRef.value)
+  .keyframes([
+    { offset: 0, transform: 'scale(1))', opacity: '1' },
+    { offset: 0.5, transform: 'scale(1.2)', opacity: '0.3' },
+    { offset: 1, transform: 'scale(1)', opacity: '1' }
+  ]);
+  
+const squareC = createAnimation()
+  .addElement(squareCRef.value)
+  .duration(5000)
+  .keyframes([
+    { offset: 0, transform: 'scale(1))', opacity: '0.5' },
+    { offset: 0.5, transform: 'scale(0.8)', opacity: '1' },
+    { offset: 1, transform: 'scale(1)', opacity: '0.5' }
+  ]);
+
+const parent = createAnimation()
+  .duration(2000)
+  .iterations(Infinity)
+  .addAnimation([squareA, squareB, squareC]);
+```
+
+</docs-tab>
 </docs-tabs>
 
 This example shows 3 child animations controlled by a single parent animation. Animations `squareA` and `squareB` inherit the parent animation's duration of 2000ms, but animation `squareC` has a duration of 5000ms since it was explicitly set.
@@ -423,6 +534,35 @@ this.animationCtrl.create()
 >
   ...
 </CreateAnimation>
+```
+</docs-tab>
+<docs-tab tab="vue">
+
+```javascript
+import { createAnimation } from '@ionic/vue';
+import { ref } from 'vue';
+
+...
+
+const squareRef = ref();
+
+...
+
+createAnimation()
+  .addElement(squareRef.value)
+  .duration(2000)
+  .beforeStyles({
+    opacity: 0.2
+  })
+  .afterStyles({
+    background: 'rgba(0, 255, 0, 0.5)'
+  })
+  .afterClearStyles(['opacity'])
+  .keyframes([
+    { offset: 0, transform: 'scale(1)' },
+    { offset: 0.5, transform: 'scale(1.5)' },
+    { offset: 1, transform: 'scale(1)' }
+  ])
 ```
 </docs-tab>
 </docs-tabs>
@@ -579,6 +719,55 @@ render() {
     </>
   )
 }
+```
+</docs-tab>
+<docs-tab tab="vue">
+
+```javascript
+import { createAnimation } from '@ionic/vue';
+import { ref } from 'vue';
+
+...
+
+const squareARef = ref();
+const squareBRef = ref();
+const squareCRef = ref();
+
+...
+
+const squareA = createAnimation()
+  .addElement(squareARef.value)
+  .fill('none')
+  .duration(1000)
+  .keyframes([
+    { offset: 0, transform: 'scale(1) rotate(0)' },
+    { offset: 0.5, transform: 'scale(1.2) rotate(45deg)' },
+    { offset: 1, transform: 'scale(1) rotate(0)' }
+  ]);
+  
+const squareB = createAnimation()
+  .addElement(squareBRef.value)
+  .fill('none')
+  .duration(1000)
+  .keyframes([
+    { offset: 0, transform: 'scale(1)', opacity: '1' },
+    { offset: 0.5, transform: 'scale(1.2)', opacity: '0.3' },
+    { offset: 1, transform: 'scale(1)', opacity: '1' }
+  ]);
+  
+const squareC = createAnimation()
+  .addElement(squareCRef.value)
+  .fill('none')
+  .duration(1000)
+  .keyframes([
+    { offset: 0, transform: 'scale(1)', opacity: '0.5' },
+    { offset: 0.5, transform: 'scale(0.8)', opacity: '1' },
+    { offset: 1, transform: 'scale(1)', opacity: '0.5' }
+  ]);
+
+await squareA.play();
+await squareB.play();
+await squareC.play();
 ```
 </docs-tab>
 </docs-tabs>
@@ -826,6 +1015,70 @@ class MyComponent extends React.Component<{}, any> {
 }
 ```
 </docs-tab>
+<docs-tab tab="vue">
+
+```javascript
+import { createAnimation, createGesture } from '@ionic/vue';
+import { ref } from 'vue';
+
+...
+
+let initialStep = 0;
+let started = false;
+
+const squareRef = ref();
+const MAX_TRANSLATE = 400;
+
+const animation = createAnimation()
+  .addElement(squareRef.value)
+  .duration(1000)
+  .fromTo('transform', 'translateX(0)', `translateX(${MAX_TRANSLATE}px)`);
+
+const gesture = createGesture({
+  el: squareRef.value,
+  threshold: 0,
+  gestureName: 'square-drag',
+  onMove: ev: onMove(ev),
+  onEnd: ev: onEnd(ev)
+})
+
+gesture.enable(true);
+
+const onMove = (ev): {
+  if (!started) {
+    animation.progressStart();
+    started = true;
+  }
+  
+  animation.progressStep(getStep(ev));
+}
+
+const onEnd = (ev): {
+  if (!started) { return; }
+  
+  gesture.enable(false);
+  
+  const step = getStep(ev);
+  const shouldComplete = step > 0.5;
+
+  animation
+    .progressEnd((shouldComplete) ? 1 : 0, step)
+    .onFinish((): { gesture.enable(true); });
+  
+  initialStep = (shouldComplete) ? MAX_TRANSLATE : 0;
+  started = false;
+}
+
+const clamp = (min, n, max): {
+  return Math.max(min, Math.min(n, max));
+};
+
+const getStep = (ev): {
+  const delta = initialStep + ev.deltaX;
+  return clamp(0, delta / MAX_TRANSLATE, 1);
+}
+```
+</docs-tab>
 </docs-tabs>
 
 In this example we are creating a track along which we can drag the `.square` element. Our `animation` object will take care of moving the `.square` element either left or right, and our `gesture` object will instruct the `animation` object which direction to move in.
@@ -894,6 +1147,26 @@ this.animationCtrl.create()
 >
   <div className="square"></div>
 </CreateAnimation>
+```
+</docs-tab>
+<docs-tab tab="vue">
+
+```javascript
+import { createAnimation } from '@ionic/vue';
+import { ref } from 'vue';
+
+...
+
+const squareRef = ref();
+
+...
+
+createAnimation()
+   .addElement(squareRef.value)
+   .duration(1500)
+   .iterations(Infinity)
+   .direction('alternate')
+   .fromTo('background', 'blue', 'var(--background)');
 ```
 </docs-tab>
 </docs-tabs>
@@ -1057,6 +1330,65 @@ export const ModalExample: React.FC = () => {
     </IonContent>
   );
 };
+```
+</docs-tab>
+<docs-tab tab="vue">
+
+```javascript
+<template>
+  <ion-page>
+    <ion-content>
+      <ion-modal
+        :is-open="isModalOpen"
+        :enter-animation="enterAnimation"
+        :leave-animation="leaveAnimation"
+        @onDidDismiss="setModalOpen(false)"
+      >
+        Modal content goes here.
+      </ion-modal>
+      
+      <ion-button @click="setModalOpen(true)">Show Modal</ion-button>
+    </ion-content>
+  </ion-page>
+</template>
+
+<script lang="ts">
+import { createAnimation, IonButton, IonContent, IonModal, IonPage } from '@ionic/vue';
+import { defineComponent, ref } from 'vue';
+
+export default defineComponent({
+  components: { IonButton, IonContent, IonModal, IonPage },
+  setup() {
+    const isModalOpen = ref(false);
+    const setModalOpen = (state) => isModalOpen.value = state;
+    
+    const enterAnimation = (baseEl: any) => {
+      const backdropAnimation = createAnimation()
+        .addElement(baseEl.querySelector('ion-backdrop')!)
+        .fromTo('opacity', '0.01', 'var(--backdrop-opacity)');
+      
+      const wrapperAnimation = createAnimation()
+        .addElement(baseEl.querySelector('.modal-wrapper')!)
+        .keyframes([
+          { offset: 0, opacity: '0', transform: 'scale(0)' },
+          { offset: 1, opacity: '0.99', transform: 'scale(1)' }
+        ]);
+        
+      return createAnimation()
+        .addElement(baseEl)
+        .easing('ease-out')
+        .duration(500)
+        .addAnimation([backdropAnimation, wrapperAnimation]);
+    }
+    
+    const leaveAnimation = (baseEl: any) => {
+      return enterAnimation(baseEl).direction('reverse');
+    }
+
+    return { isModalOpen, setModalOpen, enterAnimation, leaveAnimation }
+  }
+})
+</script>
 ```
 </docs-tab>
 </docs-tabs>

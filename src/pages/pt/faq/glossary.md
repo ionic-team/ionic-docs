@@ -101,7 +101,7 @@ nextUrl: '/docs/faq/build'
 
   <section id="ionicons">
     <a href="#ionicons"><h3>Ionicons</h3></a>
-    <p><a href="http://ionicons.com/" target="_blank">Ionicons</a> is an open-source icon set used and created by Ionic. It includes 1:1 iOS and Material Design icons, as well as commonly used social/application icons. Ionicons is included by default in Ionic distributions, but they can also be used in any project.</p>
+    <p><a href="https://ionicons.com/" target="_blank">Ionicons</a> is an open-source icon set used and created by Ionic. It includes 1:1 iOS and Material Design icons, as well as commonly used social/application icons. Ionicons is included by default in Ionic distributions, but they can also be used in any project.</p>
   </section>
 
   <section id="karma">

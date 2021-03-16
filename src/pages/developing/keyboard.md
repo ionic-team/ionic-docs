@@ -61,6 +61,20 @@ For a list of accepted values, see the <a href="https://developer.mozilla.org/en
 </IonItem>
 ```
 </docs-tab>
+<docs-tab tab="Vue">
+
+```html
+<ion-item>
+  <ion-label>Username or Email</ion-label>
+  <ion-input inputmode="email"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label>Enter a number</ion-label>
+  <ion-textarea inputmode="numeric"></ion-textarea>
+</ion-item>
+```
+</docs-tab>
 </docs-tabs>
 
 <docs-codepen user="ionic" slug="abvJVVv" height="400"></docs-codepen>
@@ -102,6 +116,15 @@ For a list of accepted values, see the <a href="https://html.spec.whatwg.org/dev
   <IonLabel>Enter search query</IonLabel>
   <IonInput enterkeyhint="search" type="search"></IonInput>
 </IonItem>
+```
+</docs-tab>
+<docs-tab tab="Vue">
+
+```html
+<ion-item>
+  <ion-label>Enter search query</ion-label>
+  <ion-input enterkeyhint="search" type="search"></ion-input>
+</ion-item>
 ```
 </docs-tab>
 </docs-tabs>
@@ -176,6 +199,23 @@ import { useKeyboardState } from '@ionic/react-hooks/keyboard';
 const { isOpen, keyboardHeight } = useKeyboardState();
 
 // Do something with the keyboard height such as translating an input above the keyboard
+```
+</docs-tab>
+<docs-tab tab="Vue">
+
+```typescript
+import { useKeyboard } from '@ionic/vue';
+import { watch } from 'vue';
+
+...
+
+const { isOpen, keyboardHeight } = useKeyboard();
+
+watch(keyboardHeight, () => {
+  console.log(`Is Keyboard Open: ${isOpen.value}, Keyboard Height: ${keyboardHeight.value}`);
+});
+
+
 ```
 </docs-tab>
 </docs-tabs>

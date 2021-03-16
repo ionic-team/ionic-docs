@@ -65,7 +65,7 @@ The Ionic team has compiled a set of recommendations for using the Ionic Framewo
 
 ### Ionic Platform & Products
 
-|  Framework   |     Ionic Appflow     |           Ionic Native Premier Plugins*           |
+|  Framework   |     Appflow     |           Ionic Native Premier Plugins*           |
 |:------------:|:---------------------:|:-------------------------------------------------:|
 | V5 - Angular | `@ionic/angular` 5.X  |               Use latest available                |
 |  V5 - React  |  `@ionic/react` 5.X   |               Use latest available                |

@@ -34,18 +34,22 @@ export class DocsHeader {
     };
   }
 
-  renderMenu(section: 'Framework' | 'Appflow' | 'Native' | 'CLI' | 'Studio') {
+  renderMenu(section: 'Framework' | 'Native' | 'CLI' | 'Studio') {
     return [
       <docs-dropdown label={section}>
         <section>
           <stencil-route-link url="/docs/">Framework {section === 'Framework' ? <Checkmark/> : null}</stencil-route-link>
-          <stencil-route-link url="/docs/appflow">Appflow {section === 'Appflow' ? <Checkmark/> : null}</stencil-route-link>
           <stencil-route-link url="/docs/native">Native {section === 'Native' ? <Checkmark/> : null}</stencil-route-link>
           <stencil-route-link url="/docs/cli">CLI {section === 'CLI' ? <Checkmark/> : null}</stencil-route-link>
         </section>
         <section>
+          {link(['Appflow', 'https://ionic.io/docs/appflow' ])}
           {link(['Capacitor', 'https://capacitor.ionicframework.com/docs/' ])}
           {link(['Stencil', 'https://stenciljs.com' ])}
+          {link(['Identity Vault', 'https://ionic.io/docs/identity-vault' ])}
+          {link(['Auth Connect', 'https://ionic.io/docs/auth-connect' ])}
+          {link(['Offline Storage', 'https://ionic.io/docs/offline-storage' ])}
+          {link(['Premier Plugins', 'https://ionic.io/docs/premier-plugins' ])}
         </section>
         {section === 'Framework' ? <section>
           {link(['Framework v4', 'https://ionicframework.com/docs/v4/components' ])}
@@ -54,16 +58,12 @@ export class DocsHeader {
       </docs-dropdown>,
       // show Ionic related links in the top bar
       ['Framework'].indexOf(section) > -1 ? <div class="SectionNav-tabs">
-        <stencil-route-link url="/docs/" urlMatch={[/^\/docs(?!\/(api|components|cli|native)).*$/]}>{l10n.getString('header-guide')}</stencil-route-link>
+        <stencil-route-link url="/docs/" urlMatch={[/^\/docs(?!\/(api|components|cli|native)).*$/, '__/docs/__']}>{l10n.getString('header-guide')}</stencil-route-link>
         <stencil-route-link url="/docs/components" urlMatch={['/docs/api', '/docs/components']}>{l10n.getString('header-components')}</stencil-route-link>
         <stencil-route-link url="/docs/cli">{l10n.getString('header-cli')}</stencil-route-link>
         <stencil-route-link url="/docs/native" urlMatch={['/docs/native']}>{l10n.getString('header-native')}</stencil-route-link>
       </div> : null,
-      ['Native'].indexOf(section) > -1 ? <div class="SectionNav-tabs">
-      <stencil-route-link url="/docs/native" urlMatch={['/docs/native']}>{l10n.getString('header-native-community')}</stencil-route-link>
-      <stencil-route-link url="/docs/enterprise" urlMatch={['/docs/enterprise']}>{l10n.getString('header-native-enterprise')}</stencil-route-link>
-    </div> : null,
-    ];
+      ];
   }
 
   render() {
@@ -79,16 +79,10 @@ export class DocsHeader {
         <header-mobile-collapse>
           <nav class="SectionNav">
             <stencil-route-switch>
-              <stencil-route url="/docs/appflow">
-                {this.renderMenu('Appflow')}
-              </stencil-route>
               <stencil-route url="/docs/studio">
                 {this.renderMenu('Studio')}
               </stencil-route>
               <stencil-route url="/docs/native">
-                {this.renderMenu('Native')}
-              </stencil-route>
-              <stencil-route url="/docs/enterprise">
                 {this.renderMenu('Native')}
               </stencil-route>
               <stencil-route url="/docs/cli">
@@ -108,7 +102,7 @@ export class DocsHeader {
               </section>
               <section>
                 <a href="https://forum.ionicframework.com/" target="_blank">Forum</a>
-                <a href="http://ionicworldwide.herokuapp.com/" target="_blank">Slack</a>
+                <a href="https://ionicworldwide.herokuapp.com/" target="_blank">Slack</a>
                 <a href="https://spectrum.chat/ionic" target="_blank">Spectrum</a>
                 <a href="https://www.meetup.com/topics/ionic-framework/" target="_blank">Meetups</a>
               </section>

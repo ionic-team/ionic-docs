@@ -1,8 +1,13 @@
 import { Config } from '@stencil/core';
+import { sass } from '@stencil/sass';
 
 export const config: Config = {
-  globalStyle: 'src/styles/global.css',
+  globalStyle: 'src/styles/global.scss',
   // excludeUnusedDependencies: true,
+  plugins: [
+    sass()
+  ],
+  namespace: 'site',
   outputTargets: [
     {
       type: 'www',

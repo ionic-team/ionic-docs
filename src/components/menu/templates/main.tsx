@@ -81,13 +81,22 @@ const items = {
     'menu-vue-overview': '/docs/vue/overview',
     'menu-vue-quickstart': '/docs/vue/quickstart',
     'menu-vue-your-first-app': '/docs/vue/your-first-app',
+    '': {
+      'menu-vue-yfa-taking-photos': '/docs/vue/your-first-app/2-taking-photos',
+      'menu-vue-yfa-saving-photos': '/docs/vue/your-first-app/3-saving-photos',
+      'menu-vue-yfa-loading-photos': '/docs/vue/your-first-app/4-loading-photos',
+      'menu-vue-yfa-adding-mobile': '/docs/vue/your-first-app/5-adding-mobile',
+      'menu-vue-yfa-deploying-mobile': '/docs/vue/your-first-app/6-deploying-mobile',
+      'menu-vue-yfa-live-reload': '/docs/vue/your-first-app/7-live-reload'
+    },
     'menu-vue-lifecycle': '/docs/vue/lifecycle',
     'menu-vue-navigation': '/docs/vue/navigation',
     'menu-vue-config': '/docs/vue/config',
     'menu-vue-platform': '/docs/vue/platform',
     'menu-vue-pwa': '/docs/vue/pwa',
     'menu-vue-storage': '/docs/vue/storage',
-    'menu-vue-testing': '/docs/vue/testing'
+    'menu-vue-testing': '/docs/vue/testing',
+    'menu-vue-troubleshooting': '/docs/vue/troubleshooting'
   },
   'menu-utilities': {
     'menu-utilities-animations': '/docs/utilities/animations',
@@ -129,11 +138,16 @@ const items = {
     'menu-reference-migration': '/docs/reference/migration'
   },
   'menu-resources': {
-    'menu-resources-books': '/docs/developer-resources/books',
-    'menu-resources-courses': '/docs/developer-resources/courses',
-    'menu-resources-guides': '/docs/developer-resources/guides',
-    'menu-resources-posts': '/docs/developer-resources/posts',
-    'menu-resources-tools': '/docs/developer-resources/tools',
-    'menu-resources-videos': '/docs/developer-resources/videos'
+    // 'menu-resources-books': '/docs/developer-resources/books',
+    // 'menu-resources-courses': '/docs/developer-resources/courses',
+    // 'menu-resources-guides': '/docs/developer-resources/guides',
+    // 'menu-resources-posts': '/docs/developer-resources/posts',
+    // 'menu-resources-tools': '/docs/developer-resources/tools',
+    'menu-resources-featured': 'https://ionicframework.com/resources',
+    'menu-resources-webinars': 'https://ionicframework.com/resources/webinars',
+    'menu-resources-articles': 'https://ionicframework.com/resources/articles',
+    'menu-resources-case-studies': 'https://ionicframework.com/resources/case-studies',
+    'menu-resources-learning': 'https://ionicframework.com/resources/learning',
+    'menu-resources-videos': 'https://ionicframework.com/resources/videos'
   },
 };

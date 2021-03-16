@@ -53,7 +53,7 @@ When a user clicks on an image, we will show the action sheet by changing the st
 
 ```typescript
 <IonImg onClick={() => setPhotoToDelete(photo)} 
-        src={photo.base64 ?? photo.webviewPath} />
+        src={photo.webviewPath} />
 ```
 
 Next, add an [IonActionSheet](https://ionicframework.com/docs/api/action-sheet) dialog with the option to either delete the selected photo or cancel (close) the dialog. We will set the isOpen property based on if photoToDelete has a value or not.

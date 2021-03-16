@@ -81,7 +81,6 @@ First we will create a new type to define our Photo, which will hold specific me
 export interface Photo {
   filepath: string;
   webviewPath?: string;
-  base64?: string;
 }
 ```
 

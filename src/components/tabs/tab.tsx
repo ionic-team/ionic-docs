@@ -4,8 +4,8 @@ import { Component, Prop, h } from '@stencil/core';
   tag: 'docs-tab'
 })
 export class DocsTab {
-  @Prop({ reflectToAttr: true }) tab!: string;
-  @Prop({ reflectToAttr: true }) selected = false;
+  @Prop({ reflect: true }) tab!: string;
+  @Prop({ reflect: true }) selected = false;
 
   hostData() {
     return {

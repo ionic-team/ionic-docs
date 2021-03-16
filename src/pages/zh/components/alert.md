@@ -105,7 +105,7 @@ export class AlertExample {
         },
         {
           name: 'name3',
-          value: 'http://ionicframework.com',
+          value: 'https://ionicframework.com',
           type: 'url',
           placeholder: 'Favorite site ever'
         },
@@ -357,7 +357,7 @@ async function presentAlertPrompt() {
       },
       {
         name: 'name3',
-        value: 'http://ionicframework.com',
+        value: 'https://ionicframework.com',
         type: 'url',
         placeholder: 'Favorite site ever'
       },
