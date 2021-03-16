@@ -1,6 +1,6 @@
 ---
 previousText: 'Salvando fotos no sistema de arquivos'
-previousUrl: '/docs/angular/seu-primeiro-app/3-salvando-fotos'
+previousUrl: '/docs/angular/your-first-app/3-saving-photos'
 nextText: 'Adicionando pro celular'
 nextUrl: 'docs/angular/seu-primeiro-app/5-adicionando-no-mobile'
 ---
