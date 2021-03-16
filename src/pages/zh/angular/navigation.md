@@ -129,7 +129,7 @@ export class LoginComponent {
     { path: '', redirectTo: 'login', pathMatch: 'full' },
     Path: 'login', loadChildren: () => import('。 login/login.module').then(m=> m。 ooginModule) },
     然后请参阅“detail', loadChildren: () => import('./detail/detail). 当(m => m.DetailModule) }
-  ]
+  ])
   ],
 })
 ```
