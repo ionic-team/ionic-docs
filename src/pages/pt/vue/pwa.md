@@ -2,8 +2,8 @@
 title: "Progressive Web Apps in Vue"
 previousText: 'Platform Utils'
 previousUrl: '/docs/vue/platform'
-nextText: 'Testing'
-nextUrl: '/docs/vue/testing'
+nextText: 'Storage'
+nextUrl: '/docs/vue/storage'
 ---
 
 ## Making your Vue app a PWA
