@@ -1,8 +1,8 @@
 ---
 previousText: 'Tirando fotos'
-previousUrl: '/docs/angular/seu-primeiro-app/salvando-fotos'
+previousUrl: '/docs/angular/your-first-app/2-taking-photos'
 nextText: 'Carregando fotos do Sistema de Ficheiros'
-nextUrl: '/docs/angular/seu-primeiro-app/4-carregando-fotos'
+nextUrl: '/docs/angular/your-first-app/4-loading-photos'
 ---
 
 # Salvando fotos no Sistema de Ficheiros
