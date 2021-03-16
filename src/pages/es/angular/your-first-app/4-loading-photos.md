@@ -1,19 +1,19 @@
 ---
 previousText: 'Guardando fotos en el sistema de archivos'
-previousUrl: '/docs/angular/your-first-app/3-saving-photos'
-nextText: 'Adding Mobile'
-nextUrl: '/docs/angular/your-first-app/5-adding-mobile'
+previousUrl: '/docs/angular/your-first-app/3-loading-photos'
+nextText: 'Añadiendo soporte móvil'
+nextUrl: '/docs/angular/your-first-app/5-deploying-mobile'
 ---
 
 # Cargando fotos desde el sistema de archivos
 
-Hemos implementado la toma de fotos y guardarlas en el sistema de archivos. Falta una última pieza de funcionalidad: las fotos se almacenan en el sistema de archivos, pero necesitamos una forma de guardar punteros en cada archivo para que puedan mostrarse nuevamente en la galería de fotos.
+Hemos implementado la toma de fotos y su guardado en el sistema de archivos. Falta una última pieza de funcionalidad: las fotos se almacenan en el sistema de archivos, pero necesitamos una forma de guardar punteros en cada archivo para que puedan mostrarse nuevamente en la galería de fotos.
 
-Afortunadamente, esto es fácil: aprovecharemos la API de Capacitor Storage para almacenar nuestra variedad de fotos en una tienda de valor clave.
+Afortunadamente, esto es fácil: aprovecharemos la [API Storage ](https://capacitor.ionicframework.com/docs/apis/storage) de Capacitor para almacenar nuestro arreglo de fotos en un formato clave-valor.
 
-## API de almacenamiento
+## API Almacenamiento
 
-Comience definiendo una variable constante que actuará como la clave para la tienda:
+Comience definiendo una variable constante que actuará como la clave para el almacenamiento de las fotografias:
 
 ```typescript
 export class PhotoService {
@@ -24,51 +24,44 @@ export class PhotoService {
 }
 ```
 
-Next, at the end of the `addNewToGallery` function, add a call to `Storage.set()` to save the Photos array. By adding it here, the Photos array is stored each time a new photo is taken. This way, it doesn’t matter when the app user closes or switches to a different app - all photo data is saved.
+Luego, al final de la función `addNewToGallery`, hará una llamada a `Storage.set()` para guardar el arreglo de fotografías "photos". Al agregarlo aquí, el arreglo de Fotos se almacena cada vez que se toma una nueva foto. De esta forma, no importa cuando el usuario, cierre la app o se cambie a una app distinta todas las fotografías están guardadas.
 
 ```typescript
 Storage.set({
   key: this.PHOTO_STORAGE,
-  value: JSON.stringify(this.photos.map(p => {
-          // No guardar la representación base64 de los datos de las fotos, 
-          // dado que ya ha sido guardado en el Filesystem
-          const photoCopy = { ...p };
-          delete photoCopy.base64;
-
-          return photoCopy;
-          }))
+  value: JSON.stringify(this.photos)
 });
 ```
 
-With the photo array data saved, create a function called `loadSaved()` that can retrieve that data. We use the same key to retrieve the photos array in JSON format, then parse it into an array:
+Con los datos del arreglo de fotos guardados, crear una función llamada `loadSaved()` que pueda recuperar esos datos. Utilizamos la misma clave para recuperar el array de fotos en formato JSON, luego analizarlo en una matriz:
 
 ```typescript
 public async loadSaved() {
-  // Recuperar datos de array de fotos almacenados en caché
-  const photos = await Storage.get({ key: this.PHOTO_STORAGE });
-  this.photos = JSON.parse(photos.value) || [];
+  // Retrieve cached photo array data
+  const photoList = await Storage.get({ key: this.PHOTO_STORAGE });
+  this.photos = JSON.parse(photoList.value) || [];
 
   // más por venir...
 }
 ```
 
-On mobile (coming up next!), we can directly set the source of an image tag - `<img src=”x” />` - to each photo file on the Filesystem, displaying them automatically. On the web, however, we must read each image from the Filesystem into base64 format, using a new `base64` property on the `Photo` object. This is because the Filesystem API uses [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. Below the code you just added in the `loadSaved()` function, add:
+En  móvil (próximamente!), directamente podremos establecer el origen de una etiqueta de imagen - `<img src="x" />` - a cada archivo de foto en el Sistema de Archivos, mostrándolos automáticamente. En la web, sin embargo, debemos leer cada imagen desde el sistema de archivos en formato base64, usando una nueva propiedad `base64` en el objeto `Photo`. Esto se debe a que la API Sistema de Archivos utiliza [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) bajo la cubierta. Debajo está el código que necesitas añadir en la función `loadSaved()`, que acabas de añadir:
 
 ```typescript
-// Mostrar la foto leyendo en formato base64
+// Mostrar la foto en formato base64
 for (let photo of this.photos) {
-  // Lee los datos de cada foto guardada en el sistema de ficheros
+  // Lee los datos de cada foto guardada en el sistema de archivos
   const readFile = await Filesystem.readFile({
       path: photo.filepath,
       directory: FilesystemDirectory.Data
   });
 
-  // Plataforma web solamente: Guardar la foto en el campo base64
-  photo.base64 = `data:image/jpeg;base64,${readFile.data}`;
+  // Plataforma web solamente: Guardar la foto en base64
+  photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
 }
 ```
 
-After, call this new method in `tab2.page.ts` so that when the user first navigates to Tab 2 (the Photo Gallery), all photos are loaded and displayed on the screen.
+Después, llama a este nuevo método en `tab2.page. s` de modo que cuando el usuario navega por primera vez a Tab 2 (la Galería de fotos), todas las fotos se cargan y se muestran en la pantalla.
 
 ```typescript
 ngOnInit() {
@@ -76,4 +69,4 @@ ngOnInit() {
 }
 ```
 
-¡Eso es! We’ve built a complete Photo Gallery feature in our Ionic app that works on the web. Next up, we’ll transform it into a mobile app for iOS and Android!
+¡Eso es! Hemos construido una función completa de Galería de Fotos en nuestra aplicación Ionic que funciona en la web. ¡Próximamente, lo transformaremos en una aplicación móvil para iOS y Android!

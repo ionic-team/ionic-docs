@@ -1,7 +1,7 @@
 ---
-previousText: 'Votre première application'
-previousUrl: '/docs/angular/your-first-app'
-nextText: 'Sauvegarde des photos sur le système de fichiers'
+previousText: 'Créer votre première application mobile'
+previousUrl: '/fr/docs/angular/votre-première application'
+nextText: 'Charger une image dépuis le fichier système'
 nextUrl: '/docs/angular/your-first-app/3-saving-photos'
 ---
 
@@ -26,7 +26,7 @@ import { Plugins, CameraResultType, Capacitor, FilesystemDirectory,
 const { Camera, Filesystem, Storage } = Plugins;
 ```
 
-Ensuite, définissez une nouvelle fonction, `addNewToGallery`, qui contiendra la logique de base pour prendre une photo du périphérique et l'enregistrer dans le système de fichiers. Let’s start by opening the device camera:
+Next, define a new class method, `addNewToGallery`, that will contain the core logic to take a device photo and save it to the filesystem. Let’s start by opening the device camera:
 
 ```typescript
 public async addNewToGallery() {
@@ -41,20 +41,24 @@ public async addNewToGallery() {
 
 Remarquez la magie ici: il n'y a pas de code spécifique à la plateforme (web, iOS, ou Android)! Le plugin Capacitor Camera résume cela pour nous, laissant un seul appel de méthode - `Caméra. getPhoto()` - qui ouvrira la caméra de l'appareil et nous permettra de prendre des photos.
 
-Ensuite, ouvrez `tab2.page.ts` et importez la classe PhotoService :
+Next, open up `tab2.page.ts` and import the PhotoService class and add a method that calls the `addNewToGallery` method on the imported servce:
 
 ```typescript
 import { PhotoService } from '../services/photo.service';
 
 constructor(public photoService: PhotoService) { }
+
+addPhotoToGallery() {
+  this.photoService.addNewToGallery();
+}
 ```
 
-Ensuite, ouvrez `tab2.page.html` et appelez la fonction `addNewToGallery()` lorsque le FAB est cliqué ou cliqué :
+Then, open `tab2.page.html` and call the `addPhotoToGallery()` function when the FAB is tapped/clicked:
 
 ```html
 <ion-content>
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-    <ion-fab-button (click)="photoService.addNewToGallery()">
+    <ion-fab-button (click)="addPhotoToGallery()">
       <ion-icon name="camera"></ion-icon>
     </ion-fab-button>
   </ion-fab>
@@ -63,7 +67,7 @@ Ensuite, ouvrez `tab2.page.html` et appelez la fonction `addNewToGallery()` lors
 
 Enregistrez le fichier, et si cela ne fonctionne pas déjà, redémarrez le serveur de développement dans votre navigateur en exécutant `ionic serve`. Dans l’onglet Galerie de photos, cliquez sur le bouton Caméra. Si votre ordinateur possède une webcam de quelque nature que ce soit, une fenêtre modale apparaît. Prendre un selfie!
 
-![API de l'appareil photo sur le web](/docs/assets/img/guides/first-app-cap-ng/camera-web.png)
+![L'API des photos sur le web](/docs/assets/img/guides/first-app-cap-ng/camera-web.png)
 
 _(Votre selfie est probablement bien meilleur que le mien)_
 
@@ -74,10 +78,9 @@ Après avoir pris une photo, elle disparaît immédiatement. Nous devons l'affic
 En dehors de la définition de classe `PhotoService` (le tout en bas du fichier), créer une nouvelle interface, `Photo`, pour tenir nos métadonnées photo:
 
 ```typescript
-interface Photo {
+export interface Photo {
   filepath: string;
   webviewPath: string;
-  base64?: string;
 }
 ```
 
@@ -107,7 +110,7 @@ Fini dans la fonction `addNewToGallery` , ajoutez la nouvelle photo capturée au
 }
 ```
 
-With the photo(s) stored into the main array, move over to `tab2.page.html` so we can display the image on the screen. Ajouter un composant de la grille [](https://ionicframework.com/docs/api/grid) pour que chaque photo s'affiche bien lorsque des photos sont ajoutées à la galerie, et boucler chaque photo dans le tableau Photos, en ajoutant un composant Image (`<ion-img>`) pour chacune. Pointez le `src` (source) sur le chemin de la photo :
+Next, move over to `tab2.page.html` so we can display the image on the screen. Add a [Grid component](https://ionicframework.com/docs/api/grid) so that each photo will display nicely as photos are added to the gallery, and loop through each photo in the `PhotoServices`'s Photos array, adding an Image component (`<ion-img>`) for each. Point the `src` (source) at the photo’s path:
 
 ```html
 <ion-content>
@@ -115,7 +118,7 @@ With the photo(s) stored into the main array, move over to `tab2.page.html` so w
     <ion-row>
     <ion-col size="6" 
       *ngFor="let photo of photoService.photos; index as position">
-        <ion-img src="{{ photo.webviewPath }}"></ion-img>
+        <ion-img [src]="photo.webviewPath"></ion-img>
     </ion-col>
     </ion-row>
   </ion-grid>
@@ -124,6 +127,6 @@ With the photo(s) stored into the main array, move over to `tab2.page.html` so w
 </ion-content>
 ```
 
-Enregistrer tous les fichiers. Dans le navigateur Web, cliquez sur le bouton Caméra et prenez une autre photo. Cette fois-ci, la photo est affichée dans la Galerie de photos !
+Save all files. Within the web browser, click the Camera button and take another photo. This time, the photo is displayed in the Photo Gallery!
 
-Ensuite, nous ajouterons la prise en charge de l'enregistrement des photos dans le système de fichiers, pour qu'ils puissent être récupérés et affichés ultérieurement dans notre application.
+Up next, we’ll add support for saving the photos to the filesystem, so they can be retrieved and displayed in our app at a later time.

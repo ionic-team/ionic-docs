@@ -47,11 +47,11 @@ Entre agora para acessar facilmente recursos incríveis como Live Deploys mais t
 
 <strong>O que gostaria de fazer?</strong>
 
-Escolha "Criar um novo aplicativo no Iônic Pro."
+Choose “Create a new app on Appflow.”
 
 <strong>Qual conta você gostaria de usar?</strong>
 
-Escolha o Ionic “Pro”
+Choose “Appflow.”
 
 <strong>“How would you like to connect to Appflow?”</strong>
 
@@ -111,7 +111,7 @@ Em seguida, abra `src/pages/tabs/tabs/tabs.html`. Alterar o título da aba "Gale
 </ion-tabs>
 ```
 
-Agora, faça backup de suas alterações para Iônico Pro:
+Now, back up your changes to Appflow:
 
 ```shell
 $ git add .

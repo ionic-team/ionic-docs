@@ -1,17 +1,17 @@
 ---
 ---
 
-# Using a Proxy
+# 使用代理
 
-Proxy support is built-in to the Ionic CLI. Proxy settings can be configured via the config file or an environment variable.
+Ionic CLI内置了代理支持。 代理可以通过配置文件或者环境变量进行设置。
 
-To configure proxy settings via the config file, run the following with the URL of the proxy server:
+要通过配置文件配置代理，可以使用代理服务器的URL运行如下命令。
 
 ```shell
 $ ionic config set -g proxy http://proxy.example.com:8888
 ```
 
-To configure proxy settings via an environment variable, use one of the following:
+要通过环境变量配置代理，使用以下命令中任意一个:
 
 ```shell
 $ export HTTP_PROXY="http://proxy.example.com:8888" # also used by npm
@@ -19,9 +19,9 @@ $ export HTTPS_PROXY="https://proxy.example.com:8888" # also used by npm
 $ export IONIC_HTTP_PROXY="http://proxy.example.com:8888"
 ```
 
-### Other CLIs
+### 其它CLI
 
-Each CLI that you use must be configured separately to proxy network requests.
+您使用的每一个 CLI 必须单独配置代理网络请求。
 
 #### npm
 
@@ -35,9 +35,9 @@ $ npm config set proxy http://proxy.company.com:8888
 $ git config --global http.proxy http://proxy.example.com:8888
 ```
 
-### SSL Configuration
+### SSL配置
 
-The Ionic CLI can be configured to use various SSL settings for HTTP requests.
+Ionic CLI 可以配置为用于HTTP请求的各种SSL设置。
 
 ```shell
 $ ionic config set -g ssl.cafile /path/to/cafile # file path to your CA root certificate
@@ -45,4 +45,4 @@ $ ionic config set -g ssl.certfile /path/to/certfile # file path to a client cer
 $ ionic config set -g ssl.keyfile /path/to/keyfile # file path to a client key file
 ```
 
-The `cafile`, `certfile`, and `keyfile` entries can be manually edited as arrays of strings in `~/.ionic/config.json` to include multiple files.
+`cafile`, `certfile`, 和 `keyfile` 可以手动编辑为字符串数组存在 `~/.ionic/config.json`中。

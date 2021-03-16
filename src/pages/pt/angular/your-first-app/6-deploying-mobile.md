@@ -1,11 +1,11 @@
 ---
 previousText: 'Adding Mobile'
 previousUrl: '/docs/angular/your-first-app/5-adding-mobile'
-nextText: 'Rapid App Dev with Live Reload'
+nextText: 'Desenvolvimento rápido de aplicativos com Live Reload'
 nextUrl: '/docs/angular/your-first-app/7-live-reload'
 ---
 
-# Deploying to iOS and Android
+# Implantando para IOS e Android
 
 Since we added Capacitor to our project when it was first created, there’s only a handful of steps remaining until the Photo Gallery app is on our device! Remember, you can find the complete source code for this app [here](https://github.com/ionic-team/photo-gallery-capacitor-ng).
 
@@ -44,7 +44,7 @@ $ ionic cap sync
 
 > To build an iOS app, you’ll need a Mac computer.
 
-Capacitor iOS apps are configured and managed through Xcode (Apple’s iOS/Mac IDE), with dependencies managed by CocoaPods. Before running this app on an iOS device, there's a couple of steps to complete.
+Capacitor iOS apps are configured and managed through Xcode (Apple’s iOS/Mac IDE), with dependencies managed by [CocoaPods](https://cocoapods.org/). Before running this app on an iOS device, there's a couple of steps to complete.
 
 First, run the Capacitor `open` command, which opens the native iOS project in Xcode:
 

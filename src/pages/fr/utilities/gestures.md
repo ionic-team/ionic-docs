@@ -28,7 +28,7 @@ const gesture = createGesture({
   el: elementRef,
   threshold: 15,
   gestureName: 'my-gesture',
-  onMove: ev: onMoveHandler(ev)
+  onMove: ev => onMoveHandler(ev)
 });
 
 ```
@@ -45,12 +45,14 @@ const gesture: Gesture = createGesture({
   el: elementRef,
   threshold: 15,
   gestureName: 'my-gesture',
-  onMove: ev: onMoveHandler(ev)
+  onMove: ev => onMoveHandler(ev)
 });
 ```
 </docs-tab> <docs-tab tab="angular">
 
 Developers using Angular should install the latest version of `@ionic/angular`. Animations can be created via the `AnimationController` dependency injection.
+
+By default, gesture callbacks do not run inside of NgZone. Developers can either set the `runInsideAngularZone` parameter to `true` when creating a gesture, or they can wrap their callbacks in an `NgZone.run()` call.
 
 ```typescript
 import { Gesture, GestureController } from '@ionic/angular';
@@ -62,8 +64,9 @@ constructor(private gestureCtrl: GestureController) {
     el: this.element.nativeElement,
     threshold: 15,
     gestureName: 'my-gesture',
-    onMove: ev: this.onMoveHandler(ev)
-  });
+    onMove: ev => this.onMoveHandler(ev)
+  }, true);
+  // The `true` above ensures that callbacks run inside NgZone.
 }
 
 ```
@@ -80,8 +83,30 @@ const gesture: Gesture = createGesture({
   el: elementRef,
   threshold: 15,
   gestureName: 'my-gesture',
-  onMove: ev: onMoveHandler(ev)
+  onMove: ev => onMoveHandler(ev)
 });
+```
+</docs-tab> <docs-tab tab="vue">
+
+Developers using Ionic Vue should install the latest version of `@ionic/vue`.
+
+```javascript
+import { createGesture } from '@ionic/vue';
+import { ref } from 'vue';
+
+...
+
+const elementRef = ref();
+
+...
+
+const gesture = createGesture({
+  el: elementRef.value,
+  threshold: 15,
+  gestureName: 'my-gesture',
+  onMove: ev => onMoveHandler(ev)
+});
+
 ```
 </docs-tab> </docs-tabs>
 
@@ -161,6 +186,37 @@ const onMove = (detail) => {
   const velocityX = detail.velocityX;
 
   p.innerHTML = `
+    <div>Type: ${type}</div>
+    <div>Current X: ${currentX}</div>
+    <div>Delta X: ${deltaX}</div>
+    <div>Velocity X: ${velocityX}</div>
+  `
+}
+```
+</docs-tab> <docs-tab tab="vue">
+
+```javascript
+import { createGesture } from '@ionic/vue';
+import { ref } from 'vue';
+
+...
+
+let pRef = ref();
+const rectangleRef = ref();
+const gesture = createGesture({
+  el: rectangleRef.value,
+  onMove: (detail) => { onMove(detail); }
+})
+
+gesture.enable();
+
+const onMove = (detail) => {
+  const type = detail.type;
+  const currentX = detail.currentX;
+  const deltaX = detail.deltaX;
+  const velocityX = detail.velocityX;
+
+  pRef.value.innerHTML = `
     <div>Type: ${type}</div>
     <div>Current X: ${currentX}</div>
     <div>Delta X: ${deltaX}</div>
@@ -286,6 +342,46 @@ const getRandomBackground = () => {
   return currentColor;
 }
 ```
+</docs-tab> <docs-tab tab="vue">
+
+```javascript
+import { createGesture } from '@ionic/vue';
+import { ref } from 'vue';
+
+...
+
+const backgrounds = ['rgba(0, 0, 255, 0.5)', 'rgba(0, 255, 0.5)', 'rgba(255, 0, 0, 0.5)', 'rgba(255, 255, 0, 0.5)', 'rgba(255, 0, 255, 0.5)', 'rgba(0, 255, 255, 0.5)'];
+const DOUBLE_CLICK_THRESHOLD = 500;
+const rectangleRef = ref();
+const gesture = createGesture({
+  el: rectangleRef.value,
+  threshold: 0,
+  onStart: () => { onStart(); }
+});
+
+gesture.enable();
+
+let lastOnStart = 0;
+let currentColor = 'rgba(0, 0, 255, 0.5)';
+
+const onStart = () => {
+  const now = Date.now();
+
+  if (Math.abs(now - lastOnStart) <= DOUBLE_CLICK_THRESHOLD) {
+    rectangleRef.value.style.setProperty('background', getRandomBackground());
+    lastOnStart = 0;
+  } else {
+    lastOnStart = now;
+  }
+}
+
+const getRandomBackground = () => {
+  const options = backgrounds.filter(bg => bg !== currentColor);
+  currentColor = options[Math.floor(Math.random() * options.length)];
+
+  return currentColor;
+}
+```
 </docs-tab> </docs-tabs>
 
 In the example above, we want to be able to detect double clicks on an element. By setting our `threshold` to `0`, we can ensure our gesture object can detect clicks. Additionally, we define a click threshold so that only 2 clicks that occur in quick succession count as a double click.
@@ -327,9 +423,10 @@ See our guide on implementing gesture animations: [Gesture Animations with Ionic
 | gesturePriority | `number \| undefined`                              | `0`         | Gestures with higher priorities will override gestures with lower priorities. Useful for ensuring the multiple gestures do not collide with one another.                                                                                                                                                                |
 | passive         | `boolean \| undefined`                             | `true`      | If true, this will indicate that the gesture will never call `preventDefault()`. This can be used to improve scrolling performance. See [Passive Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Improving_scrolling_performance_with_passive_listeners) for more information. |
 | maxAngle        | `number \| undefined`                              | `40`        | The maximum angle to allow when detecting a gesture.                                                                                                                                                                                                                                                                    |
-| threshold       | `number \| undefined`                              | `10`        | Defines how much a pointer must move before the gesture kicks in.                                                                                                                                                                                                                                                       |
+| threshold       | `number \| undefined`                              | `10`        | Defines how much a pointer must move before the gesture starts.                                                                                                                                                                                                                                                         |
+| blurOnStart     | `boolean \| undefined`                             | `undefined` | If true, the gesture will blur any active selectable element such as an input or a textarea before firing the `onStart` callback.                                                                                                                                                                                       |
 | canStart        | `GestureCallback \| undefined`                     | `undefined` | A callback that returns true if a gesture is allowed to start.                                                                                                                                                                                                                                                          |
-| onWillStart     | `(detail: GestureDetail) => Promise<void>` | `undefined` | A callback that is fires when a gesture is about to start. This is fired after `canStart` but before `onStart`.                                                                                                                                                                                                         |
+| onWillStart     | `(detail: GestureDetail) => Promise<void>` | `undefined` | A callback that fires when a gesture is about to start. This is fired after `canStart` but before `onStart`.                                                                                                                                                                                                            |
 | onStart         | `GestureCallback \| undefined`                     | `undefined` | A callback that fires when a gesture has started.                                                                                                                                                                                                                                                                       |
 | onMove          | `GestureCallback \| undefined`                     | `undefined` | A callback that fires when a gesture movement was detected.                                                                                                                                                                                                                                                             |
 | onEnd           | `GestureCallback \| undefined`                     | `undefined` | A callback that fires when a gesture has ended. This is usually when a pointer has been released.                                                                                                                                                                                                                       |

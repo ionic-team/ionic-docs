@@ -6,136 +6,136 @@ tableOfContents: false
 
 # UI组件
 
-Ionic apps are made of high-level building blocks called Components, which allow you to quickly construct the UI for your app. Ionic comes stock with a number of components, including cards, lists, and tabs. 一旦你熟悉了基础知识，请参阅 [API Index](/docs/api) 以获取每个组件和子组件的完整列表。
+一个Ionic应用是由不同的组件拼合而成，它们可以让你快速搭建起你的应用界面。Ionic组件库包括了例如卡片、列表和标签等一系列的组件。 一旦你掌握了使用的基础操作，你就能通过 [API 索引](/docs/api) 来了解到每个组件以及它的子组件的具体信息。
 
 <docs-cards> <docs-card header="Action Sheet" href="/docs/api/action-sheet" img="/docs/assets/icons/feature-component-actionsheet-icon.png"> 
 
-Action Sheets display a set of options with the ability to confirm or cancel an action.</docs-card>
+Action Sheets可以显示一组操作选项，你可以通过这些操作来确认或者是取消这些行为。</docs-card>
 
 <docs-card header="Alert" href="/docs/api/alert" icon="/docs/assets/icons/component-alert-icon.png"> 
 
-Alerts are a great way to offer the user the ability to choose a specific action or list of actions.</docs-card>
+Alerts是一种可以给用户进行选择或是展示列表的方式。</docs-card>
 
 <docs-card header="Badge" href="/docs/api/badge" icon="/docs/assets/icons/component-badge-icon.png"> 
 
-Badges are a small component that typically communicate a numerical value to the user.</docs-card>
+Badges是一个轻型的组件，它可以通过数值直观地向用户传达一些信息。</docs-card>
 
 <docs-card header="Button" href="/docs/api/button" icon="/docs/assets/icons/component-button-icon.png"> 
 
-Buttons let your users take action. They're an essential way to interact with and navigate through an app.</docs-card>
+Buttons让用户具备操作能力， 这是一个用户与应用交互以及导航的重要途径。</docs-card>
 
 <docs-card header="Card" href="/docs/api/card" icon="/docs/assets/icons/component-card-icon.png"> 
 
-Cards are a great way to display an important piece of content, and can contain images, buttons, text, and more.</docs-card>
+Cards常用于显示一些重要内容，你可以在里面放置图像、按钮、文本信息以及其他内容。</docs-card>
 
 <docs-card header="Checkbox" href="/docs/api/checkbox" icon="/docs/assets/icons/component-checkbox-icon.png"> 
 
-Checkboxes can be used to let the user know they need to make a binary decision.</docs-card>
+Checkboxes可以让用户知道他们可以选择哪些内容。</docs-card>
 
 <docs-card header="Chip" href="/docs/api/chip" icon="/docs/assets/icons/component-chip-icon.png"> 
 
-Chips are a compact way to display data or actions.</docs-card>
+Chips是显示数据或是操作的简洁方式。</docs-card>
 
 <docs-card header="Content" href="/docs/api/content" icon="/docs/assets/icons/component-content-icon.png"> 
 
-Content is the quintessential way to interact with and navigate through an app.</docs-card>
+Content是应用中进行交互与导航的最佳途径。</docs-card>
 
 <docs-card header="Date & Time Pickers" href="/docs/api/datetime" icon="/docs/assets/icons/component-datetimepicker-icon.png"> 
 
-Date & time pickers are used to present an interface that makes it easy for users to select dates and times.</docs-card>
+Date & time 选择器可以让用户轻松地选择日期和时间。</docs-card>
 
 <docs-card header="Floating Action Button" href="/docs/api/fab" icon="/docs/assets/icons/component-fab-icon.png"> 
 
-Floating action buttons are circular buttons that perform a primary action on a screen.</docs-card>
+Floating action buttons是浮动在屏幕上的一个圆形按钮。</docs-card>
 
 <docs-card header="Icons" href="https://ionicons.com" img="/docs/assets/icons/feature-component-icons-icon.png"> 
 
-Beautifully designed icons for use in web, iOS, Android, and desktop apps.</docs-card>
+精美设计的图标可以用于web、iOS、Android以及桌面应用。</docs-card>
 
 <docs-card header="Grid" href="/docs/api/grid" icon="/docs/assets/icons/component-grid-icon.png"> 
 
-The grid is a powerful mobile-first system for building custom layouts.</docs-card>
+网格是用于搭建自定义布局的移动端优先的系统。</docs-card>
 
 <docs-card header="Infinite Scroll" href="/docs/api/infinite-scroll" icon="/docs/assets/icons/component-infinitescroll-icon.png"> 
 
-Infinite scroll allows you to load new data as the user scrolls through your app.</docs-card>
+Infinite scroll可以让用户通过滚动来加载新的数据。</docs-card>
 
 <docs-card header="Input" href="/docs/api/input" icon="/docs/assets/icons/component-input-icon.png"> 
 
-Inputs provides a way for users to enter data in your app.</docs-card>
+Inputs提供了录入数据的途径。</docs-card>
 
 <docs-card header="Item" href="/docs/api/item" icon="/docs/assets/icons/component-item-icon.png"> 
 
-Items are an all-purpose UI container that can be used as part of a list.</docs-card>
+Items是能用做列表界面一部分的专用组件。</docs-card>
 
 <docs-card header="List" href="/docs/api/list" icon="/docs/assets/icons/component-lists-icon.png"> 
 
-Lists can display rows of information, such as a contact list, playlist, or menu.</docs-card>
+List通过行来展示信息，例如联系人列表、播放列表或者菜单。</docs-card>
 
 <docs-card header="Navigation" href="/docs/api/nav" img="/docs/assets/icons/feature-component-navigation-icon.png"> 
 
-Navigation is how users move between different pages in your app.</docs-card>
+Navigation是一个告诉用户如何在不同页面之间切换的组件。</docs-card>
 
 <docs-card header="Menu" href="/docs/api/menu" icon="/docs/assets/icons/component-menu-icon.png"> 
 
-Menus are a common navigation pattern. They can be permanently on-screen, or revealed when needed.</docs-card>
+Menus是一种通用的导航方式， 它们可以在屏幕上常驻，或者当用户需要的时候才显示。</docs-card>
 
 <docs-card header="Modal" href="/docs/api/modal" icon="/docs/assets/icons/component-modal-icon.png"> 
 
-Modals slide in and off screen to display a temporary UI and are often used for login or sign-up pages.</docs-card>
+Modals是从屏幕最上层进入和退出的临时界面，常用于登录和注册页面。</docs-card>
 
 <docs-card header="Popover" href="/docs/api/popover" icon="/docs/assets/icons/component-popover-icon.png"> 
 
-Popover provides an easy way to present information or options without changing contexts.</docs-card>
+Popover提供了一种不改变上下文的可以展示信息或者选项的简单方法。</docs-card>
 
 <docs-card header="Progress Indicators" href="/docs/api/progress-bar" icon="/docs/assets/icons/component-progress-icon.png"> 
 
-Progress indicators visualize the progression of an operation or activity.</docs-card>
+Progress指示器可以展示操作或者行为的进度。</docs-card>
 
 <docs-card header="Radio" href="/docs/api/radio" icon="/docs/assets/icons/component-radio-icon.png"> 
 
-Radio inputs allow you to present a set of exclusive options.</docs-card>
+Radio输入可以展示一系列选项。</docs-card>
 
 <docs-card header="Refresher" href="/docs/api/refresher" icon="/docs/assets/icons/component-refresher-icon.png"> 
 
-Refresher provides pull-to-refresh functionality on a content component.</docs-card>
+Refresher是一个具备在content组件中下拉刷新的功能。</docs-card>
 
 <docs-card header="Searchbar" href="/docs/api/searchbar" img="/docs/assets/icons/feature-component-search-icon.png"> 
 
-Searchbar is used to search or filter items, usually from a toolbar.</docs-card>
+Searchbar用于搜索或者过滤条目，通常放在toolbar里面。</docs-card>
 
 <docs-card header="Reorder" href="/docs/api/reorder" icon="/docs/assets/icons/component-reorder-icon.png"> 
 
-Reorder lets users drag and drop to reorder a list of items.</docs-card>
+Recorder让用户可以通过拖拽list条目来重新排序。</docs-card>
 
 <docs-card header="Routing" href="/docs/api/router" icon="/docs/assets/icons/component-routing-icon.png"> 
 
-Routing allows navigation based on the current path.</docs-card>
+Routing可以在当前页面进行导航。</docs-card>
 
 <docs-card header="Segment" href="/docs/api/segment" icon="/docs/assets/icons/component-segment-icon.png"> 
 
-Segments provide a set of exclusive buttons that can be used as a filter or view switcher.</docs-card>
+Segments提供了一组按钮，可以用来过滤或者作为视图开关。</docs-card>
 
 <docs-card header="Select" href="/docs/api/select" icon="/docs/assets/icons/component-select-icon.png"> 
 
-Select is similar to the native HTML select, with a few improvements to sorting and selecting.</docs-card>
+Select类似于原生HTML的select，不过在排序和选择方面有一些提升。</docs-card>
 
 <docs-card header="Slides" href="/docs/api/slides" icon="/docs/assets/icons/component-slides-icon.png"> 
 
-Slides make it easy to create complex UI such as galleries, tutorials, and page-based layouts.</docs-card>
+Slides可以创建一些复杂的界面，例如图库、教程和基于布局的页面。</docs-card>
 
 <docs-card header="Tabs" href="/docs/api/tabs" img="/docs/assets/icons/feature-component-tabs-icon.png"> 
 
-Tabs enable tabbed navigation, a standard navigation pattern in modern apps.</docs-card>
+Tabs可以开启标签导航，是现代应用中一种标准导航模式。</docs-card>
 
 <docs-card header="Toast" href="/docs/api/toast" icon="/docs/assets/icons/component-toast-icon.png"> 
 
-Toast is used to show a notification over the top of an app's content. It can be temporary or dismissable.</docs-card>
+Toast用于应用顶部显示通知。 它只是短暂显示的，而且是能够被关闭的。</docs-card>
 
 <docs-card header="Toggle" href="/docs/api/toggle" icon="/docs/assets/icons/component-toggle-icon.png"> 
 
-Toggles are an input for binary options, often used for options and switches.</docs-card>
+Toggle是一种只有两种选项的input，常常用于选项切换以及开关。</docs-card>
 
 <docs-card header="Toolbar" href="/docs/api/toolbar" icon="/docs/assets/icons/component-toolbar-icon.png"> 
 
-Toolbars are used to house information and actions relating to your app.</docs-card> </docs-cards>
+Toolbars用于置放信息以及操作。</docs-card> </docs-cards>

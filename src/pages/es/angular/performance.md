@@ -1,6 +1,6 @@
 ---
-previousText: 'Platform'
-previousUrl: '/docs/angular/platform'
+previousText: 'Almacenamiento'
+previousUrl: '/docs/angular/storage'
 ---
 
 # Rendimiento angular

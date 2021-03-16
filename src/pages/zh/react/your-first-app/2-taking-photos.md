@@ -1,21 +1,21 @@
 ---
-previousText: 'Your First App'
+previousText: '你的第一个 App'
 previousUrl: '/docs/react/your-first-app'
-nextText: 'Saving Photos on Filesystem'
+nextText: '保存照片到文件系统中'
 nextUrl: '/docs/react/your-first-app/3-saving-photos'
 ---
 
-# Taking Photos with the Camera
+# 使用相机拍照
 
-Now for the fun part - adding the ability to take photos with the device’s camera using the Capacitor [Camera API](https://capacitor.ionicframework.com/docs/apis/camera). We’ll begin with building it for the web, then make some small tweaks to make it work on mobile (iOS and Android).
+接下来是有趣的部分 - 使用Capacitor [Camera API](https://capacitor.ionicframework.com/docs/apis/camera)调用设备的相机，为你的应用添加拍照功能。 我们以此构建Web，然后做小的调整，使其能够在移动设备 (iOS和Android) 上面运行。
 
-To do so, we will create our own custom React hook that will manage the photos for the gallery.
+为此，我们创建我们自定义的React钩子，用于管理照片库的照片。
 
-> If you are not familiar with React Hooks, [Introducing React Hooks](https://reactjs.org/docs/hooks-intro.html) from the official React docs is a good resource to start with.
+> 如果你不熟悉React Hooks, 这篇来自官方的文档[介绍 React Hooks](https://reactjs.org/docs/hooks-intro.html) ，会是个很好的开端。
 
-Create a new file at `src/hooks/usePhotoGallery.ts` and open it up.
+创建文件 `src/hooks/usePhotoGallery.ts` ，然后打开它。
 
-A custom hook is just a function that uses other React hooks. And that's what we will be doing! We will start by importing the various hooks and utilities we will be using from React core, the Ionic React Hooks project, and Capacitor:
+自定义钩子只是用其它React的一个函数。 这就是我们要做的事情！ 我们将首先从React核心库，Ionic React Hooks, Capacitor 导入各种钩子和工具。
 
 ```typescript
 import { useState, useEffect } from "react";
@@ -25,7 +25,7 @@ import { useStorage } from '@ionic/react-hooks/storage';
 import { isPlatform } from '@ionic/react';
 import { CameraResultType, CameraSource, CameraPhoto, Capacitor, FilesystemDirectory } from "@capacitor/core";
 ```
-Next, create a function named usePhotoGallery:
+接下来，创建一个函数，命名为usePhotoGallery：
 
 ```typescript
 export function usePhotoGallery() {
@@ -46,17 +46,17 @@ export function usePhotoGallery() {
 }
 ```
 
-Our `usePhotoGallery` hook exposes a method called takePhoto, which in turn calls into Capactior's getPhoto method.
+我们的 `usePhotoGallery`钩子暴露一个名叫takePhoto的方法，它会call Capactior的getPhoto方法。
 
-Notice the magic here: there's no platform-specific code (web, iOS, or Android)! The Capacitor Camera plugin abstracts that away for us, leaving just one method call - `getPhoto()` - that will open up the device's camera and allow us to take photos.
+注意神奇的地方在这里：不存在平台相关的代码(Web，iOS，Android)！ Capacitor相机插件抽象了相关函数，我们只需调用 `getPhoto()`，它将会打开设备相机，允许我们拍照。
 
-The last step we need to take is to use the new hook from the Tab2 page. Go back to Tab2.tsx and import the hook:
+我们需要采取的最后一步是使用Tab2页面中的新钩子。 返回Tab2.tsx，重新导入钩子：
 
 ```typescript
 import { usePhotoGallery } from '../hooks/usePhotoGallery';
 ```
 
-And right before the return statement in the functional component, get access to the `takePhoto` method by using the hook:
+并且在函数组件返回语句之前, 通过使用钩子访问 ` takePhoto ` 方法:
 
 ```typescript
 const Tab2: React.FC = () => {
@@ -65,11 +65,11 @@ const Tab2: React.FC = () => {
   // snip - rest of code
 ```
 
-Save the file, and if you’re not already, restart the development server in your browser by running `ionic serve`. On the Photo Gallery tab, click the Camera button. If your computer has a webcam of any sort, a modal window appears. Take a selfie!
+保存文件，如果您尚未运行，请通过运行 `ionic service` 来重新启动您的浏览器中的开发服务器。 在照片库选项卡上，点击相机按钮。 如果您的计算机有任何类型的摄像头，就会出现一个模态窗口。 自拍！
 
 ![Camera API on the web](/docs/assets/img/guides/first-app-cap-ng/camera-web.png)
 
-_(Your selfie is probably much better than mine)_
+_(你的自拍可能比我强)_
 
 After taking a photo, it disappears. We still need to display it within our app and save it for future access.
 
@@ -81,7 +81,6 @@ First we will create a new type to define our Photo, which will hold specific me
 export interface Photo {
   filepath: string;
   webviewPath?: string;
-  base64?: string;
 }
 ```
 

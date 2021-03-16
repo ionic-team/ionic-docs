@@ -1,16 +1,16 @@
 ---
-nextText: 'Build Your First App'
+nextText: 'Créez votre première application'
 nextUrl: '/docs/angular/your-first-app'
 ---
 
-# Ionic Angular Overview
+# Aperçu d'Ionic Angular
 
-`@ionic/angular` combines the core Ionic experience with the tooling and APIs that are tailored to Angular Developers.
+`@ionic/angular` combine l'expérience Ionic de base avec les outils et les APIs adaptées au développeurs Angular.
 
-## Angular Version Support
+## Support de version Angular
 
-Ionic supports `Angular 6.0.0 and up`. As part of their upgrade strategy, Angular has built-in tooling to help automate upgrades and provide feedback to developers whenever changes to an API occurred. This reduces update friction and keeps the ecosystem in a evergreen state.
+Ionic supporte `Angular 6.0.0 et plus`. Dans le cadre de leur stratégie de mise à jour, Angular intègre des outils pour aider à automatiser les mises à jour et fournir des alertes aux développeurs lors de chaque modification d'API. Cela réduit les frictions induites par les mises à jour et maintient l'écosystème dans un état cohérent.
 
-## Angular Tooling
+## Outils Angular
 
-With Ionic 4+, the official Angular stack for building an app and routing are used, so your app can fall in-line with the rest of the great Angular ecosystem. In cases where more opinionated features are needed, Ionic provides `@ionic/angular-toolkit`, which builds and integrates with the [official Angular CLI](https://angular.io/cli) and provides features that are specific to `@ionic/angular` apps.
+Avec Ionic 4+, la pille de construction d'application et le routage officiel d'Angular sont utilisés, pour que votre application puisse correspondre au reste de l'écosystème Angular. Dans les cas où des fonctionnalités plus spécifiques sont nécessaires, Ionic fournit `@ionic/angular-toolkit`, qui construit et intègre avec la [ ILC officielle d'Angular](https://angular.io/cli) et fournit des fonctionnalités spécifiques aux applications `@ionic/angular`.

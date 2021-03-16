@@ -6,7 +6,7 @@ tableOfContents: false
 
 # 提示框
 
-Alerts are a great way to offer the user the ability to choose a specific action or list of actions. 提示框可以包含文本、输入和按钮。 它们可以向用户提供重要信息，或要求用户作出决定(或多项决定)。 Alerts should only be used for quick actions like password verification, small app notifications, or quick options.
+警告框是一种让用户能够选择特定行动或行动列表的好办法。 提示框可以包含文本、输入和按钮。 它们可以向用户提供重要信息，或要求用户作出决定(或多项决定)。 警告框只应用于快速操作，如密码验证、小型应用通知或快速选项。
 
 ## Creating
 
@@ -24,7 +24,7 @@ Alerts can also include several different inputs whose data can be passed back t
 
 <!-- Auto Generated Below -->
 
-## Usage
+## 使用方法
 
 ### Angular
 
@@ -284,7 +284,7 @@ export class AlertExample {
 }
 ```
 
-### Javascript
+### JavaScript
 
 ```javascript
 async function presentAlert() {

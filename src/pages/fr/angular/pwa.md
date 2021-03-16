@@ -1,29 +1,29 @@
 ---
-title: "Progressive Web Apps in Angular"
+title: "Applications Web Progressives dans Angular"
 ---
 
 
-## Making your Angular app a PWA
+## Faire de votre application Angular une AWP
 
 
-The two main requirements of a PWA are a <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> and a <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Manifest</a>. While it's possible to add both of these to an app manually, the Angular team has an `@angular/pwa` package that can be used to automate this.
+Les deux principales exigences d'une AWP sont un <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> et un <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Manifeste Web</a>. S'il est possible d'ajouter ces deux éléments manuellement à une application, l'équipe d'Angular a un paquet `@angular/pwa` qui peut être utilisé pour automatiser cela.
 
-The `@angular/pwa` package will automatically add a service worker and an app manifest to the app. To add this package to the app, run:
+Le paquet `@angular/pwa` ajoutera automatiquement un service worker et un manifeste d'application à l'application. Pour ajouter ce paquet à l'application, exécutez :
 
 ```shell
 $ ng add @angular/pwa
 ```
 
-Once this package has been added run `ionic build --prod` and the `www` directory will be ready to deploy as a PWA.
+Une fois ce paquet ajouté, exécutez `ionic build --prod` et le répertoire `www` sera prêt à être déployé en tant que AWP.
 
-> By default, the `@angular/pwa` package comes with the Angular logo for the app icons. Be sure to update the manifest to use the correct app name and also replace the icons.
+> Par défaut, le paquet `@angular/pwa` est fourni avec le logo d'Angular pour les icônes de l'application. Assurez-vous de mettre à jour le manifeste pour utiliser le nom correct de l'application et aussi remplacer les icônes.
 
 
-> Note: Features like Service Workers and many JavaScript APIs (such as geolocation) require the app be hosted in a secure context. When deploying an app through a hosting service, be aware that HTTPS will be required to take full advantage of Service Workers.
+> Remarque : les fonctionnalités comme les Service Workers et de nombreuses API JavaScript (comme la géolocalisation) nécessitent que l'application soit hébergée dans un contexte sécurisé. Lors du déploiement d'une application via un service d'hébergement, sachez que HTTPS sera nécessaire pour tirer pleinement parti des Service Workers.
 
-## Service Worker configuration
+## Configuration du Service Worker
 
-After `@angular/pwa` has been added, a new `ngsw-config.json` file will be created at the root of the project. This file is responsible for configuring how Angular's service worker mechanism will handle caching assets. By default, the following will be provided:
+Après l'ajout de `@angular/pwa` , un nouveau fichier `ngsw-config.json` sera créé à la racine du projet. Ce fichier est responsable de la configuration du mécanisme de Service Worker d'Angular pour gérer les ressources de mise en cache. Par défaut, les données suivantes seront fournies :
 
 ```json
 {
@@ -56,40 +56,40 @@ After `@angular/pwa` has been added, a new `ngsw-config.json` file will be creat
 }
 ```
 
-There are two sections in here, one for app specific resources (JS, CSS, HTML) and assets the app will load on demand. Depending on you app, these options can be customized. For a more detailed guide, read [the official guide from the Angular Team.](https://angular.io/guide/service-worker-config)
+Il y a deux sections ici, une pour les ressources spécifiques à l'application (JS, CSS, HTML) et une autre pour les ressources que l'application chargera à la demande. Selon votre application, ces options peuvent être personnalisées. Pour un guide plus détaillé, lisez [le guide officiel de l'équipe Angular.](https://angular.io/guide/service-worker-config)
 
 
-## Deploying
+## Déploiement
 
 ### Firebase
 
-Firebase hosting provides many benefits for Progressive Web Apps, including fast response times thanks to CDNs, HTTPS enabled by default, and support for [HTTP2 push](https://firebase.googleblog.com/2016/09/http2-comes-to-firebase-hosting.html).
+L'hébergement Firebase offre de nombreux avantages pour les applications Web progressives, y compris des temps de réponse rapides grâce aux CDN, HTTPS activé par défaut, et le support de [HTTP2 push](https://firebase.googleblog.com/2016/09/http2-comes-to-firebase-hosting.html).
 
-First, if not already available, [create the project](https://console.firebase.google.com) in Firebase.
+Tout d'abord, s'il n'est pas déjà disponible, [créez le projet](https://console.firebase.google.com) dans Firebase.
 
-Next, in a Terminal, install the Firebase CLI:
+Ensuite, dans un Terminal, installez l'ILC de Firebase :
 
 ```shell
 $ npm install -g firebase-tools
 ```
 
-With the Firebase CLI installed, run `firebase init` within your Ionic project. The CLI prompts:
+Avec l'ILC Firebase installé, exécutez `firebase init` dans votre projet Ionic. L'ILC affiche :
 
-**"Which Firebase CLI features do you want to set up for this folder?"**  Choose "Hosting: Configure and deploy Firebase Hosting sites."
+**"Which Firebase CLI features do you want to set up for this folder?"** Choisissez "Hosting: Configure and deploy Firebase Hosting sites."
 
-**"Select a default Firebase project for this directory:"** Choose the project you created on the Firebase website.
+**"Select a default Firebase project for this directory:"** Choisissez le projet que vous avez créé sur le site Web de Firebase.
 
-**"What do you want to use as your public directory?"** Enter "www".
+**"What do you want to use as your public directory?"** Entrez "www".
 
-> Note: Answering these next two questions will ensure that routing, hard reload, and deep linking work in the app:
+> Remarque : Répondre à ces deux questions garantira que le routage, le hard reload et le deep linking fonctionnent dans l'application :
 
-**Configure as a single-page app (rewrite all urls to /index.html)?"** Enter "Yes".
+**Configure as a single-page app (rewrite all urls to /index.html)?"** Entrez "Yes".
 
-**"File www/index.html already exists. Overwrite?"** Enter "No".
+**"File www/index.html already exists. Overwrite?"** Entrez "No".
 
-A `firebase.json` config file is generated, configuring the app for deployment.
+Un fichier de configuration `firebase.json` est généré, configurant l'application pour le déploiement.
 
-The last thing needed is to make sure caching headers are being set correctly. To do this, add a `headers` snippet to the `firebase.json` file. The complete `firebase.json` looks like:
+La dernière chose nécessaire est de s'assurer que les en-têtes de cache sont correctement définis. Pour ce faire, ajoutez un snippet `headers` au fichier `firebase.json`. Le fichier `firebase.json` complet ressemble à :
 
 ```json
 {
@@ -130,18 +130,18 @@ The last thing needed is to make sure caching headers are being set correctly. T
 }
 ```
 
-For more information about the `firebase.json` properties, see the [Firebase documentation](https://firebase.google.com/docs/hosting/full-config#section-firebase-json).
+Pour plus d'informations sur les propriétés dans `firebase.json` , voir la documentation [Firebase](https://firebase.google.com/docs/hosting/full-config#section-firebase-json).
 
-Next, build an optimized version of the app by running:
+Ensuite, construisez une version optimisée de l'application en exécutant :
 
 ```shell
 $ ionic build --prod
 ```
 
-Last, deploy the app by running:
+Enfin, déployez l'application en exécutant :
 
 ```shell
 $ firebase deploy
 ```
 
-After this completes, the app will be live.
+Une fois cette opération terminée, l'application démarrera.

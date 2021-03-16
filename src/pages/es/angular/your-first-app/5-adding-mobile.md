@@ -1,19 +1,19 @@
 ---
-previousText: 'Loading Photos on Filesystem'
+previousText: 'Cargando fotos desde el sistema de archivos'
 previousUrl: '/docs/angular/your-first-app/4-loading-photos'
-nextText: 'Deploying Mobile'
+nextText: 'Despliegue a móviles'
 nextUrl: '/docs/angular/your-first-app/6-deploying-mobile'
 ---
 
-# Adding Mobile
+# Añadiendo soporte móvil
 
-Our photo gallery app won’t be complete until it runs on iOS, Android, and the web - all using one codebase. All it takes is some small logic changes to support mobile platforms, installing some native tooling, then running the app on a device. Let’s go!
+Nuestra aplicación de galería de fotos no estará completa hasta que se ejecute en iOS, Android y la web - todo usando un código base. Todo lo que se necesita son algunos pequeños cambios lógicos para soportar plataformas móviles, instalar algunas herramientas nativas y luego ejecutar la aplicación en un dispositivo. ¡Comencemos!
 
-## Import Platform API
+## Importando el API de plataforma
 
-Let’s start with making some small code changes - then our app will “just work” when we deploy it to a device.
+Empecemos por hacer pequeños cambios de código - entonces nuestra aplicación “funcionará” cuando la despleguemos en un dispositivo.
 
-Import the Ionic [Platform API](https://ionicframework.com/docs/angular/platform) into `photo.service.ts`, which is used to retrieve information about the current device. In this case, it’s useful for selecting which code to execute based on the platform the app is running on (web or mobile):
+Importa el [API de Plataforma](https://ionicframework.com/docs/angular/platform) de Ionic en `photo.service.ts`, el cual se utiliza para obtener información sobre el dispositivo actual. En este caso, es útil para seleccionar qué código se ejecutara basándose en la plataforma en la que se está ejecutando la aplicación (web o móvil):
 
 ```typescript
 import { Platform } from '@ionic/angular';
@@ -27,19 +27,19 @@ export class PhotoService {
     this.platform = platform;
   }
 
-  // other code
+  // otro código
 }
 ```
 
-## Platform-specific Logic
+## Lógica específica para cada Plataforma
 
-First, we’ll update the photo saving functionality to support mobile. In the `readAsBase64()` function, check which platform the app is running on. If it’s “hybrid” (Capacitor or Cordova, two native runtimes), then read the photo file into base64 format using the Filesystem `readFile()` method. Otherwise, use the same logic as before when running the app on the web:
+En primer lugar, actualizaremos la funcionalidad de guardar fotos para que sea compatible con dispositivos móviles. En la función `readAsBase64()`, compruebe en qué plataforma se está ejecutando la aplicación. Si es "híbrida" (Capacitor o Cordova, dos runtime nativos), entonces obtenga la foto en formato base64 utilizando el método de Filesystem `readFile()`. De lo contrario, utilice la misma lógica de antes cuando ejecute la aplicación en la web:
 
 ```typescript
 private async readAsBase64(cameraPhoto: CameraPhoto) {
-  // "hybrid" will detect Cordova or Capacitor
+  // "hybrid" detectara si es Cordova o Capacitor
   if (this.platform.is('hybrid')) {
-    // Read the file into base64 format
+    // Lee el archivo en formato base64
     const file = await Filesystem.readFile({
       path: cameraPhoto.path
     });
@@ -47,53 +47,59 @@ private async readAsBase64(cameraPhoto: CameraPhoto) {
     return file.data;
   }
   else {
-    // Fetch the photo, read as a blob, then convert to base64 format
+    // Obtiene la foto, como blob, entonces la convierte en formato base64
     const response = await fetch(cameraPhoto.webPath);
     const blob = await response.blob();
 
-    return await this.convertBlobToBase64(blob) as string;  
+    return await this.convertBlobToBase64(blob) as string;
   }
 }
 ```
 
-Next, update the `getPhotoFile()` method. When running on mobile, return the complete file path to the photo using the Filesystem API. When setting the `webviewPath`, use the special `Capacitor.convertFileSrc()` method ([details here](https://ionicframework.com/docs/building/webview#file-protocol)).
+Next, update the `savePicture()` method. When running on mobile, set `filepath` to the result of the `writeFile()` operation - `savedFile.uri`. Al configurar la `webviewPath`, utilice el método especial `Capacitor.convertFileSrc()` ([detalles aquí](https://ionicframework.com/docs/core-concepts/webview#file-protocol)).
 
 ```typescript
-private async getPhotoFile(cameraPhoto, fileName) {
-  if (this.platform.is('hybrid')) {
-    // Get the new, complete filepath of the photo saved on filesystem
-    const fileUri = await Filesystem.getUri({
-      directory: FilesystemDirectory.Data,
-      path: fileName
+// Save picture to file on device
+  private async savePicture(cameraPhoto: CameraPhoto) {
+    // Convert photo to base64 format, required by Filesystem API to save
+    const base64Data = await this.readAsBase64(cameraPhoto);
+
+    // Write the file to the data directory
+    const fileName = new Date().getTime() + '.jpeg';
+    const savedFile = await Filesystem.writeFile({
+      path: fileName,
+      data: base64Data,
+      directory: FilesystemDirectory.Data
     });
 
-    // Display the new image by rewriting the 'file://' path to HTTP
-    // Details: https://ionicframework.com/docs/building/webview#file-protocol
-    return {
-      filepath: fileUri.uri,
-      webviewPath: Capacitor.convertFileSrc(fileUri.uri),
-    };
+    if (this.platform.is('hybrid')) {
+      // Display the new image by rewriting the 'file://' path to HTTP
+      // Details: https://ionicframework.com/docs/building/webview#file-protocol
+      return {
+        filepath: savedFile.uri,
+        webviewPath: Capacitor.convertFileSrc(savedFile.uri),
+      };
+    }
+    else {
+      // Use webPath to display the new image instead of base64 since it's
+      // already loaded into memory
+      return {
+        filepath: fileName,
+        webviewPath: cameraPhoto.webPath
+      };
+    }
   }
-  else {
-    // Use webPath to display the new image instead of base64 since it's 
-    // already loaded into memory
-    return {
-      filepath: fileName,
-      webviewPath: cameraPhoto.webPath
-    };
-  }
-}
 ```
 
-Next, head back over to the `loadSaved()` function we implemented for the web earlier. On mobile, we can directly set the source of an image tag - `<img src=”x” />` - to each photo file on the Filesystem, displaying them automatically. Thus, only the web requires reading each image from the Filesystem into base64 format. Update this function to add an _if statement_ around the Filesystem code:
+A continuación, vuelve a la función `loadSaved()` que implementamos para la web anteriormente. On mobile, we can directly set the source of an image tag - `<img src="x" />` - to each photo file on the Filesystem, displaying them automatically. Por lo tanto, sólo la web requiere leer cada imagen del sistema de archivos en formato base64. Update this function to add an _if statement_ around the Filesystem code:
 
 ```typescript
 public async loadSaved() {
   // Retrieve cached photo array data
-  const photos = await Storage.get({ key: this.PHOTO_STORAGE });
-  this.photos = JSON.parse(photos.value) || [];
+  const photoList = await Storage.get({ key: this.PHOTO_STORAGE });
+  this.photos = JSON.parse(photoList.value) || [];
 
-  // Easiest way to detect when running on the web: 
+  // Easiest way to detect when running on the web:
   // “when the platform is NOT hybrid, do this”
   if (!this.platform.is('hybrid')) {
     // Display the photo by reading into base64 format
@@ -104,38 +110,11 @@ public async loadSaved() {
           directory: FilesystemDirectory.Data
       });
 
-      // Web platform only: Save the photo into the base64 field
-      photo.base64 = `data:image/jpeg;base64,${readFile.data}`;
+      // Web platform only: Load the photo as base64 data
+      photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
     }
   }
 }
-```
-
-At the bottom of the `addNewtoGallery()` function, update the Storage API logic. If running on the web, there’s a slight optimization we can add. Even though we must read the photo data in base64 format in order to display it, there’s no need to save in that form, since it’s already saved on the Filesystem:
-
-```typescript
-Storage.set({
-  key: this.PHOTO_STORAGE,
-  value: this.platform.is('hybrid')
-          ? JSON.stringify(this.photos)  
-          : JSON.stringify(this.photos.map(p => {
-            // Don't save the base64 representation of the photo data, 
-            // since it's already saved on the Filesystem
-            const photoCopy = { ...p };
-            delete photoCopy.base64;
-
-            return photoCopy;
-        }))
-```
-
-Finally, a small change to `tab2.page.html` is required to support both web and mobile. If running the app on the web, the `base64` property will contain the photo data to display. If on mobile, the `webviewPath` will be used:
-
-```html
-<ion-col size="6" 
-    *ngFor="let photo of photoService.photos; index as position">
-  <ion-img src="{{ photo.base64 ? photo.base64 : photo.webviewPath }}">
-  </ion-img>
-</ion-col>
 ```
 
 Our Photo Gallery now consists of one codebase that runs on the web, Android, and iOS. Next up, the part you’ve been waiting for - deploying the app to a device.

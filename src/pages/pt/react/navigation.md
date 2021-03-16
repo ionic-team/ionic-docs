@@ -97,7 +97,34 @@ The `DashboardPage` above shows a users list page and a details page. When navig
 
 An `IonRouterOutlet` should only contain `Route`s or `Redirect`s. Any other component should be rendered either as a result of a `Route` or outside of the `IonRouterOutlet`.
 
-An `IonRouterOutlet` should also not be a descendant from another `IonRouterOutlet`.
+## IonPage
+
+The `IonPage` component wraps each view in an Ionic React app and allows page transitions and stack navigation to work properly. Each view that is navigated to using the router must include an `IonPage` component.
+
+```typescript
+import {
+  IonContent, 
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar
+} from '@ionic/react';
+import React from 'react';
+
+const Home: React.FC = () => {
+  return (
+    <IonPage>
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>Home</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent className="ion-padding">Hello World</IonContent>
+    </IonPage>
+  );
+};
+export default Home;
+```
 
 ## Navigation
 
@@ -185,6 +212,10 @@ const UserDetailPage: React.FC<UserDetailPageProps> = ({match}) => {
 The [`match`](https://reacttraining.com/react-router/web/api/match) prop contains information about the matched route, including the URL params. We obtain the `id` param here and display it on the screen.
 
 Note how we use a TypeScript interface to strongly type the props object. The interface gives us type safety and code completion inside of the component.
+
+## Live Example
+
+If you would prefer to get hands on with the concepts and code described above, please checkout our [live example](https://stackblitz.com/edit/ionic-react-routing?file=src/index.tsx) of the topics above on StackBlitz.
 
 ### IonRouterOutlet in a Tabs View
 

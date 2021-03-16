@@ -125,11 +125,11 @@ export class LoginComponent {
 @NgModule({
   imports: [
   ...
-  RouterModule.forRoot([
+  RouterModule.forRoot(forterModule.forRoot(format@@
     { path: '', redirectTo: 'login', pathMatch: 'full' },
-    { path: 'login', loadChildren: './login/login.module#LoginModule' },
-    { path: 'detail', loadChildren: './detail/detail.module#DetailModule' }
-  ])
+    Path: 'login', loadChildren: () => import('。 login/login.module').then(m=> m。 ooginModule) },
+    然后请参阅“detail', loadChildren: () => import('./detail/detail). 当(m => m.DetailModule) }
+  ]
   ],
 })
 ```
@@ -154,6 +154,10 @@ import { LoginComponent } from './login.component';
 > 我们排除了一些无关内容，只包括必要的部分。
 
 在这里，我们进行了一个典型的Angular模块的设置和一个路由模块的引入，但我们现在使用 `forChild`，并在设置中声明组件。 设置完成，当我们运行编译时，程序就会为login组件和detail组件分别生成单独的块。
+
+## 实时示例
+
+如果你愿意继续使用上述概念和代码， 请在StackBlitz上方签出我们的 [现场示例](https://stackblitz.com/edit/ionic-angular-routing?file=src/app/app-routing.module.ts)。
 
 ## 使用标签页
 
@@ -206,4 +210,4 @@ const routes: Routes = [
 </ion-tabs>
 ```
 
-如果你以前构建过Ionic应用，你应该就很熟悉了。 我们创建了一个 `ion-tabs`组件，然后提供了一个 `ion-tab-bar`。 这个`ion-tab-bar`包括一个`ion-tab-button`，它存在一个与路由器配置中tab的“出口”相关联的`tab`属性。注意，最新版本的`@ionic/angular`中不再需要`<ion-tab>`，开发者完全可以自定义标签栏，它唯一的真实来源在路由器配置中。
+如果你以前构建过Ionic应用，你应该就很熟悉了。 我们创建了 `ion-tabs` 组件，并提供 `ion-tab-bar`。 The `ion-tab-bar` provides a `ion-tab-button` with a `tab` property that is associated with the tab "outlet" in the router config. Note that the latest version of `@ionic/angular` no longer requires `<ion-tab>`, but instead allows developers to fully customize the tab bar, and the single source of truth lives within the router configuration.

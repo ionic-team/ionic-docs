@@ -15,7 +15,7 @@ To generate a release build for Android, run the following cli command:
 $ ionic cordova build android --prod --release
 ```
 
-This will generate a release build based on the settings in the `config.xml` in the `platforms/android/build/outputs/apk` directory of an app. An Ionic app will have preset default values in this file but this can be changed to customize builds.
+This will generate a release build based on the settings in the `config.xml` in the `platforms/android/app/build/outputs/apk` directory of an app. An Ionic app will have preset default values in this file but this can be changed to customize builds.
 
 ## Signing an APK
 

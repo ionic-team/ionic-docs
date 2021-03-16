@@ -30,7 +30,7 @@ Download and install these right away to ensure an optimal Ionic development exp
 * **Node.js** for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
 * **A code editor** for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
 * **Command-line interface/terminal (CLI)**: 
- * **Windows** users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode. 
+ * **Windows** users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode.
  * **Mac/Linux** users, virtually any terminal will work.
 
 ## Install Ionic Tooling
@@ -45,7 +45,7 @@ $ npm install -g @ionic/cli native-run cordova-res
 
 > The `-g` option means *install globally*. When packages are installed globally, `EACCES` permission errors can occur.
 > 
-> Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](/docs/faq/tips#resolving-permission-errors) for more information.
+> Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](/docs/developing/tips#resolving-permission-errors) for more information.
 
 ## Create an App
 
@@ -104,7 +104,7 @@ And voilà! Your Ionic app is now running in a web browser. Most of your app can
 
 There are three tabs. Click on the Tab2 tab. It’s a blank canvas, aka the perfect spot to transform into a Photo Gallery. The Ionic CLI features Live Reload, so when you make changes and save them, the app is updated immediately!
 
-![Before and after going through this tutorial](/docs/assets/img/guides/first-app-cap-ng/email-photogallery.gif)
+![Before and after going through this tutorial](/docs/assets/img/guides/react/first-app/live-reload.gif)
 
 Open `/src/pages/Tab2.tsx`. We see:
 
@@ -127,12 +127,12 @@ Open `/src/pages/Tab2.tsx`. We see:
 <IonTitle>Photo Gallery</IonTitle>
 ```
 
-We put the visual aspects of our app into `<IonContent>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. Start by adding a [floating action button](https://ionicframework.com/docs/api/fab) (FAB). First, update the imports at the top of the page to include the Camera icon as well as the some Ionic components we'll use shortly:
+We put the visual aspects of our app into `<IonContent>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. Start by adding a [floating action button](https://ionicframework.com/docs/api/fab) (FAB). First, update the imports at the top of the page to include the Camera icon as well as some of the Ionic components we'll use shortly:
 
 ```typescript
 import { camera, trash, close } from 'ionicons/icons';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, 
-         IonFab, IonFabButton, IonIcon, IonGrid, IonRow, 
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar,
+         IonFab, IonFabButton, IonIcon, IonGrid, IonRow,
          IonCol, IonImg, IonActionSheet } from '@ionic/react';
 ```
 

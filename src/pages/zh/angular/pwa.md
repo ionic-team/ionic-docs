@@ -61,7 +61,7 @@ $ ng add @angular/pwa
 ```
 
 
-这里有两个部分，一个是应用特定资源 (JS, CSS, HTML) 和应用程序需要时加载的资源。 根据您的应用，可以自定义这些选项。 更详细的指南，请阅读 [来自Augular的官方指南](https://angular.io/guide/service-worker-config)
+这里有两个部分，一个是应用特定资源 (JS, CSS, HTML) 和应用程序需要时加载的资源。 Depending on your app, these options can be customized. 更详细的指南，请阅读 [来自Augular的官方指南](https://angular.io/guide/service-worker-config)
 
 ## 应用部署
 

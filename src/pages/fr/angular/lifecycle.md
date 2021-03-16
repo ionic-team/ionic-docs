@@ -1,6 +1,6 @@
 ---
-previousText: 'Votre première application : Stylisation'
-previousUrl: '/docs/angular/your-first-app/theming'
+previousText: 'Your First App'
+previousUrl: '/docs/angular/your-first-app'
 nextText: 'Navigation'
 nextUrl: '/docs/angular/navigation'
 contributors:
@@ -24,6 +24,8 @@ Ionic s'engage dans les événements de cycle de vie fournis par Angular. Les de
 
 
 Pour plus d'informations sur les événements du cycle de vie des composants Angular, visitez la [documentation les concernant](https://angular.io/guide/lifecycle-hooks).
+
+> Les composants qui utilisent `ion-nav` ou `ion-router-outlet` ne doivent pas utiliser la stratégie de détection de changement `OnPush`. Cela empêchera les crochets de cycle de vie tels que `ngOnInit` de tirer. En outre, les changements d'état asynchrones peuvent ne pas se produire correctement.
 
 ## Événements liés à une page Ionic
 

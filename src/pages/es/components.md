@@ -4,29 +4,29 @@ tableOfContents: false
 
 * * *
 
-# UI Components
+# Componentes UI
 
-Ionic apps are made of high-level building blocks called Components, which allow you to quickly construct the UI for your app. Ionic comes stock with a number of components, including cards, lists, and tabs. Once you’re familiar with the basics, refer to the [API Index](/docs/api) for a complete list of each component and sub-component.
+Las aplicaciones de Ionic están hechas de bloques de construcción de alto nivel llamados Componentes, que le permiten construir rápidamente la interfaz de usuario para su aplicación. Ionic viene en stock con varios componentes, que incluyen tarjetas, listas y pestañas. Una vez que esté familiarizado con los conceptos básicos, consulte el Índice del API para obtener una lista completa de cada componente y subcomponente.
 
 <docs-cards> <docs-card header="Action Sheet" href="/docs/api/action-sheet" img="/docs/assets/icons/feature-component-actionsheet-icon.png"> 
 
-Action Sheets display a set of options with the ability to confirm or cancel an action.</docs-card>
+los Action Sheets muestran un conjunto de opciones con la capacidad de confirmar o cancelar una acción.</docs-card>
 
 <docs-card header="Alert" href="/docs/api/alert" icon="/docs/assets/icons/component-alert-icon.png"> 
 
-Alerts are a great way to offer the user the ability to choose a specific action or list of actions.</docs-card>
+Una vez que esté familiarizado con los conceptos básicos, consulte el Índice de API para obtener una lista completa de cada componente y subcomponente.</docs-card>
 
 <docs-card header="Badge" href="/docs/api/badge" icon="/docs/assets/icons/component-badge-icon.png"> 
 
-Badges are a small component that typically communicate a numerical value to the user.</docs-card>
+Las alertas o Alert son una excelente manera de ofrecer al usuario la posibilidad de elegir una acción específica o una lista de acciones.</docs-card>
 
 <docs-card header="Button" href="/docs/api/button" icon="/docs/assets/icons/component-button-icon.png"> 
 
-Buttons let your users take action. They're an essential way to interact with and navigate through an app.</docs-card>
+Los botones permiten que sus usuarios actúen. Son una forma esencial de interactuar y navegar a través de una aplicación.</docs-card>
 
 <docs-card header="Card" href="/docs/api/card" icon="/docs/assets/icons/component-card-icon.png"> 
 
-Cards are a great way to display an important piece of content, and can contain images, buttons, text, and more.</docs-card>
+Las tarjetas o Cards son una excelente manera de mostrar una pieza importante de contenido y pueden contener imágenes, botones, texto y más.</docs-card>
 
 <docs-card header="Checkbox" href="/docs/api/checkbox" icon="/docs/assets/icons/component-checkbox-icon.png"> 
 
