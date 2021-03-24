@@ -2,7 +2,8 @@
 title: Ionic Framework
 meta:
   image: /docs/assets/img/meta/open-graph.png
-  description: Ionic es la plataforma de aplicaciones para desarrolladores web. Cree increíbles aplicaciones móviles, web y de escritorio, todo con una base de código compartido y estándares web abiertos
+  title: Open-Source UI Toolkit to Create Your Own Mobile or Desktop Apps
+  description: Ionic Framework is an open-source UI toolkit to create your own mobile and desktop apps using web technologies with integrations for popular frameworks.
 tableOfContents: false
 demoUrl: https://ionic-docs-demo.herokuapp.com/
 demoSourceUrl: https://github.com/ionic-team/docs-demo
