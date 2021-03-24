@@ -28,6 +28,10 @@ const getAPIPages = async (): Promise<Page[]> => {
       props: renderDocsKey(props, path),
       methods: renderDocsKey(methods, path),
       template: 'api',
+      meta: {
+        title: `${title}: Ionic Framework API Docs`,
+        // description: readme.split('\n')[0]
+      },
       ...contents
     };
   });
