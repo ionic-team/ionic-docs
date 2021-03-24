@@ -23,6 +23,10 @@ const getCLIPages = async (): Promise<Page[]> => {
       options: renderOptions(options),
       skipIntros: true,
       template: 'cli',
+      meta: {
+        title: `${name}: ${summary}`,
+        description: description.split('\n')[0]
+      },
       ...rest
     };
   });
