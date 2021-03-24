@@ -883,8 +883,8 @@
         "ionic",
         "cordova"
       ],
-      "summary": "Build (prepare + compile) an Ionic project for a given platform",
-      "description": "Like running `cordova build` directly, but also builds web assets with configuration from `ionic build` and provides friendly checks.\n\nTo pass additional options to the Cordova CLI, use the `--` separator after the Ionic CLI arguments.\n\nThe Cordova CLI requires a separator for platform-specific arguments for Android [builds](https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html#using-flags), so an additional separator is required for the Ionic CLI, but it is not required for iOS [builds](https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html#using-flags). See the example commands for usage with separators. To avoid using flags, consider using `--buildConfig` with a **build.json** file.",
+      "summary": "Use Cordova to build for Android and iOS platform targets",
+      "description": "Like running `cordova build` directly, `ionic cordova build` also builds web assets from `ionic build` and provides friendly checks for Android and iOS platforms.\n\nTo pass additional options to the Cordova CLI, use the `--` separator after the Ionic CLI arguments.\n\nThe Cordova CLI requires a separator for platform-specific arguments for Android [builds](https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html#using-flags), so an additional separator is required for the Ionic CLI, but it is not required for iOS [builds](https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html#using-flags). See the example commands for usage with separators. To avoid using flags, consider using `--buildConfig` with a **build.json** file.",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [
@@ -2460,8 +2460,8 @@
       "namespace": [
         "ionic"
       ],
-      "summary": "Automatically create framework features",
-      "description": "This command uses the Angular CLI to generate features such as `pages`, `components`, `directives`, `services`, etc.\n\n - For a full list of available types, use `npx ng g --help`\n - For a list of options for a types, use `npx ng g <type> --help`\n\nYou can specify a path to nest your feature within any number of subdirectories. For example, specify a name of `\"pages/New Page\"` to generate page files at **src/app/pages/new-page/**.\n\nTo test a generator before file modifications are made, use the `--dry-run` option.",
+      "summary": "Create Pages, Components, & Angular Features",
+      "description": "Automatically create framework features with Ionic Generate. This command uses the Angular CLI to generate features such as `pages`, `components`, `directives`, `services`, and more.\n\n - For a full list of available types, use `npx ng g --help`\n - For a list of options for a types, use `npx ng g <type> --help`\n\nYou can specify a path to nest your feature within any number of subdirectories. For example, specify a name of `\"pages/New Page\"` to generate page files at **src/app/pages/new-page/**.\n\nTo test a generator before file modifications are made, use the `--dry-run` option.",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [
