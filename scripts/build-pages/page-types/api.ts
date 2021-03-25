@@ -2,6 +2,7 @@ import { components } from '@ionic/docs/core.json';
 import fs from 'fs-extra';
 import { join, resolve } from 'path';
 
+import apiMeta from '../../data/api-meta.json';
 import {
   Page,
   buildPages
@@ -13,12 +14,35 @@ export default {
   task: () => buildPages(getAPIPages)
 };
 
+interface MetaList {
+  [index: string]: any;
+  title?: string;
+  description?: string;
+}
+
+const metaList = apiMeta as MetaList;
+
 const getAPIPages = async (): Promise<Page[]> => {
   const pages = components.map(async component => {
     const title = component.tag;
     const path = `/docs/api/${title.slice(4)}`;
     const demoUrl = await getDemoUrl(component);
     const { readme, usage, props, methods, ...contents } = component;
+
+    const meta = {
+      title: `${component.tag}: Ionic Framework API Docs`,
+      description: `The ${component.tag} component is one of many Ionic Framework components used to build apps for Android, iOS, and Progressive Web Apps`
+    };
+
+    if (metaList[component.tag]) {
+      if (metaList[component.tag].title) {
+        meta.title = metaList[component.tag].title;
+      }
+      if (metaList[component.tag].description) {
+        meta.description = metaList[component.tag].description;
+      }
+    }
+
     return {
       title,
       path,
@@ -28,10 +52,7 @@ const getAPIPages = async (): Promise<Page[]> => {
       props: renderDocsKey(props, path),
       methods: renderDocsKey(methods, path),
       template: 'api',
-      meta: {
-        title: `${title}: Ionic Framework API Docs`,
-        // description: readme.split('\n')[0]
-      },
+      meta,
       ...contents
     };
   });
