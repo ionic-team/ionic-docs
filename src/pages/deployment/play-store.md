@@ -13,7 +13,7 @@ nextUrl: '/docs/deployment/progressive-web-app'
 To generate a release build for Android, run the following cli command:
 
 ```shell
-$ ionic cordova build android --prod --release
+$ ionic capacitor build android --prod --release
 ```
 
 This will generate a release build based on the settings in the `config.xml` in the `platforms/android/app/build/outputs/apk` directory of an app.
