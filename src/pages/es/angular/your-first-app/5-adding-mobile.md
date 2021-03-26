@@ -59,36 +59,35 @@ private async readAsBase64(cameraPhoto: CameraPhoto) {
 A continuación, actualice el método `savePicture()`. Cuando se ejecuta en un dispositivo móvil, establezca la variable `filepath` al resultado de la operación `writeFile()` - `savedFile.uri`. Al configurar la `webviewPath`, utilice el método especial `Capacitor.convertFileSrc()` ([detalles aquí](https://ionicframework.com/docs/core-concepts/webview#file-protocol)).
 
 ```typescript
-// Save picture to file on device
-  private async savePicture(cameraPhoto: CameraPhoto) {
-    // Convert photo to base64 format, required by Filesystem API to save
-    const base64Data = await this.readAsBase64(cameraPhoto);
+// Guardar imagen en el dispositivo
+  private async savePicture(cameraPhoto: CameraPhoto ) {
+    // Convertir foto a formato base64, requerido por el Filesystem API 
+    const base64Data = esperar esto. eadAsBase64(cameraPhoto );
 
-    // Write the file to the data directory
-    const fileName = new Date().getTime() + '.jpeg';
+    // Crear el archivo en el directorio de datos
+    const fileName = new Date(). etTime() + '.jpeg';
     const savedFile = await Filesystem.writeFile({
       path: fileName,
       data: base64Data,
       directory: FilesystemDirectory.Data
     });
 
-    if (this.platform.is('hybrid')) {
-      // Display the new image by rewriting the 'file://' path to HTTP
-      // Details: https://ionicframework.com/docs/building/webview#file-protocol
+    if (this.platform. s('hybrid')) {
+      // Muestra la nueva imagen reescribiendo la ruta 'file://' a HTTP
+      // Más información: https://ionicframework. om/docs/building/webview#file-protocol
       return {
-        filepath: savedFile.uri,
-        webviewPath: Capacitor.convertFileSrc(savedFile.uri),
+        filepath: savedFile. ri,
+        webviewPath: Capacitor. onvertFile► c(savedFile. ri),
       };
     }
     else {
-      // Use webPath to display the new image instead of base64 since it's
-      // already loaded into memory
+      // Usar el webPath para mostrar la nueva imagen en lugar de base64
       return {
         filepath: fileName,
         webviewPath: cameraPhoto.webPath
       };
     }
-  }
+}
 ```
 
 A continuación, vuelve a la función `loadSaved()` que implementamos para la web anteriormente. On mobile, we can directly set the source of an image tag - `<img src="x" />` - to each photo file on the Filesystem, displaying them automatically. Por lo tanto, sólo la web requiere leer cada imagen del sistema de archivos en formato base64. Update this function to add an _if statement_ around the Filesystem code:
