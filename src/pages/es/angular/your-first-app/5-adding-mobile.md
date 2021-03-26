@@ -56,7 +56,7 @@ private async readAsBase64(cameraPhoto: CameraPhoto) {
 }
 ```
 
-Next, update the `savePicture()` method. When running on mobile, set `filepath` to the result of the `writeFile()` operation - `savedFile.uri`. Al configurar la `webviewPath`, utilice el método especial `Capacitor.convertFileSrc()` ([detalles aquí](https://ionicframework.com/docs/core-concepts/webview#file-protocol)).
+A continuación, actualice el método `savePicture()`. Cuando se ejecuta en un dispositivo móvil, establezca la variable `filepath` al resultado de la operación `writeFile()` - `savedFile.uri`. Al configurar la `webviewPath`, utilice el método especial `Capacitor.convertFileSrc()` ([detalles aquí](https://ionicframework.com/docs/core-concepts/webview#file-protocol)).
 
 ```typescript
 // Save picture to file on device
