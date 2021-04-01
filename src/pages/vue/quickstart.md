@@ -390,7 +390,7 @@ Now let's wire up a click handler to this. When clicking the FAB button, we want
       </ion-fab>
 
     </ion-content>
-  <ion-page>
+  </ion-page>
 </template>
 
 <script>
