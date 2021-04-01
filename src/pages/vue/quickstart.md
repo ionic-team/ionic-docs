@@ -351,7 +351,7 @@ Let's look at another component from Ionic Framework, FAB. Floating Action Butto
       </ion-fab>
 
     </ion-content>
-  <ion-page>
+  </ion-page>
 </template>
 
 <script>
