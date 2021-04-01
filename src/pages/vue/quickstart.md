@@ -337,18 +337,22 @@ Looking at our code, we have a special attribute called slot. This is key for le
 Let's look at another component from Ionic Framework, FAB. Floating Action Buttons are a nice way to provide a main action that is elevated from the rest of an app. For this FAB, we will need three components: a FAB, a FAB Button, and an Icon.
 
 ```html
-<ion-content>
-  <ion-list>
-  ...
-  </ion-list>
+<template>
+  <ion-page>
+    <ion-content>
+      <ion-list>
+      ...
+      </ion-list>
 
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button>
-      <ion-icon :icon="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+      <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button>
+          <ion-icon :icon="add"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
 
-</ion-content>
+    </ion-content>
+  <ion-page>
+</template>
 
 <script>
 import { add } from 'ionicons/icons';
@@ -373,18 +377,20 @@ Now let's wire up a click handler to this. When clicking the FAB button, we want
 
 ```html
 <template>
-  <ion-content>
-    <ion-list>
-    ...
-    </ion-list>
+  <ion-page>
+    <ion-content>
+      <ion-list>
+      ...
+      </ion-list>
 
-    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-      <ion-fab-button @click="() => router.push('/new')">
-        <ion-icon :icon="add"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
+      <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button @click="() => router.push('/new')">
+          <ion-icon :icon="add"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
 
-  </ion-content>
+    </ion-content>
+  <ion-page>
 </template>
 
 <script>
