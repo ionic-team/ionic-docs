@@ -351,7 +351,7 @@ Let's look at another component from Ionic Framework, FAB. Floating Action Butto
       </ion-fab>
 
     </ion-content>
-  <ion-page>
+  </ion-page>
 </template>
 
 <script>
@@ -390,7 +390,7 @@ Now let's wire up a click handler to this. When clicking the FAB button, we want
       </ion-fab>
 
     </ion-content>
-  <ion-page>
+  </ion-page>
 </template>
 
 <script>
