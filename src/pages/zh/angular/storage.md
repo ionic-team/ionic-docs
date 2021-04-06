@@ -9,15 +9,15 @@ nextUrl: '/docs/angular/performance'
 
 有多种选项可用于在Ionic应用程序中存储数据。
 
-Here are two official Ionic options:
+这里有两个官方Ionic选项:
 
-## Ionic Secure Storage
+## Ionic安全存储
 
-For teams building mission-critical apps or requiring encryption support, [Ionic Secure Storage](https://ionic.io/docs/secure-storage) is an official premium solution from the Ionic team that provides a cross-platform data storage system that works on iOS and Android.
+对于开发关键任务应用或需要加密支持的团队来说，[Ionic Secure Storage](https://ionic.io/docs/secure-storage)是Ionic team提供的官方高级解决方案，它提供了一个跨平台的数据存储系统，可在iOS和Android上运行
 
-It makes it easy to build high performance, offline-ready Ionic apps across iOS, Android, and the web.
+它可以很容易地在iOS、Android和web上构建高性能、离线的Ionic应用程序。
 
-[Learn more](https://ionic.io/products/secure-storage)
+[了解更多](https://ionic.io/products/secure-storage)
 
 ## @ionic/storage
 
