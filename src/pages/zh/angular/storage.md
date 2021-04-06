@@ -21,8 +21,8 @@ nextUrl: '/docs/angular/performance'
 
 ## @ionic/storage
 
-For developers not requiring encryption nor relational data support, [@ionic/storage](https://github.com/ionic-team/ionic-storage) is an open source key/value API for building apps that work across storage engines on multiple platforms.
+对于不需要加密或关系数据支持的开发者来说， [@ionic/storage](https://github.com/ionic-team/ionic-storage)是一个开源的键值包，用于在多个平台上跨存储引擎构建应用程序
 
-Additionally, Ionic Secure Storage has a driver that works with the key/value API in `@ionic/storage` while providing encryption and SQLite support.
+此外，Ionic Secure Storage有一个与`@ionic/storage`中的key/value API一起工作的驱动程序，同时提供加密和SQLite支持。
 
-Learn more about [@ionic/storage](https://github.com/ionic-team/ionic-storage)
+了解更多关于 [@ionic/stock](https://github.com/ionic-team/ionic-storage)
