@@ -15,7 +15,7 @@ Ionic的伟大之处在于，只需一个代码库，您就可以仅使用HTML�
 
 我们将创建一个圖庫应用程序，该应用程序可以使用设备的相机拍摄照片，将照片显示在网格中并永久存储在设备上。
 
-Highlights include:
+重点包括：
 
 * One Vue-based codebase that runs on the web, iOS, and Android using Ionic Framework [UI components](https://ionicframework.com/docs/components).
 * Deployed as a native iOS and Android mobile app using [Capacitor](https://capacitor.ionicframework.com), Ionic's official native app runtime.
