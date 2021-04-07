@@ -5,6 +5,6 @@ nextText: 'Troubleshooting'
 nextUrl: '/docs/vue/troubleshooting'
 ---
 
-# Testing
+# 测试
 
-Coming Soon!
+即将推出
