@@ -9,12 +9,12 @@ contributors:
 
 # iOS 应用商店开发
 
-## Requirements
+## 要求
 
-Submitting an App to the iOS App store requires a few things:
+提交一个应用给苹果商店需要做以下几点事情
 
-* Xcode
-* A Paid Apple Developers account
+* Xcode编辑器
+* 一个付费的开发者账户
 * A valid provisioning profile
 * App Development and Distribution certificates
 
