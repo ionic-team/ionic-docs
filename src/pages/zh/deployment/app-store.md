@@ -7,7 +7,7 @@ contributors:
   - zaarheed
 ---
 
-# iOS App Store Deployment
+# iOS 应用商店开发
 
 ## Requirements
 
