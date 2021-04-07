@@ -8,9 +8,9 @@ tableOfContents: false
 
 警告框是一种让用户能够选择特定行动或行动列表的好办法。 提示框可以包含文本、输入和按钮。 它们可以向用户提供重要信息，或要求用户作出决定(或多项决定)。 警告框只应用于快速操作，如密码验证、小型应用通知或快速选项。
 
-## Creating
+## 创建
 
-Alerts can be created using a [Alert Controller](../../alert-controller/AlertController). They can be customized by passing alert options in the alert controller's create method.
+可以使用 [Alert Controller](../../alert-controller/AlertController) 来创建提示框 They can be customized by passing alert options in the alert controller's create method.
 
 ## Buttons
 
