@@ -10,15 +10,15 @@ tableOfContents: false
 
 ## 创建
 
-可以使用 [Alert Controller](../../alert-controller/AlertController) 来创建提示框 They can be customized by passing alert options in the alert controller's create method.
+可以使用 [Alert Controller](../../alert-controller/AlertController) 来创建提示框 然后通过在 alert 的options中给定参数,来设置alert的内容
 
-## Buttons
+## 按钮
 
 In the array of `buttons`, each button includes properties for its `text`, and optionally a `handler`. If a handler returns `false` then the alert will not automatically be dismissed when the button is clicked. All buttons will show up in the order they have been added to the `buttons` array from left to right. Note: The right most button (the last one in the array) is the main button.
 
 Optionally, a `role` property can be added to a button, such as `cancel`. If a `cancel` role is on one of the buttons, then if the alert is dismissed by tapping the backdrop, then it will fire the handler from the button with a cancel role.
 
-## Inputs
+## 输入框
 
 Alerts can also include several different inputs whose data can be passed back to the app. Inputs can be used as a simple way to prompt users for information. Radios, checkboxes and text inputs are all accepted, but they cannot be mixed. For example, an alert could have all radio button inputs, or all checkbox inputs, but the same alert cannot mix radio and checkbox inputs. Do note however, different types of "text" inputs can be mixed, such as `url`, `email`, `text`, etc. If you require a complex form UI which doesn't fit within the guidelines of an alert then we recommend building the form within a modal instead.
 
@@ -529,6 +529,6 @@ async function presentAlertCheckbox() {
 
 <docs-cards> <docs-card header="ion-alert" href="/docs/api/alert"> 
 
-Display a dialog to present or collect information from a user.</docs-card> <docs-card header="ion-alert-controller" href="/docs/api/alert-controller"> 
+通过对话框来收集用户信息。</docs-card> <docs-card header="ion-alert-controller" href="/docs/api/alert-controller"> 
 
-Used to manage the creation, dismissal, and destruction of alerts.</docs-card> </docs-cards>
+用于提示框的创建、隐藏和销毁。</docs-card> </docs-cards>
