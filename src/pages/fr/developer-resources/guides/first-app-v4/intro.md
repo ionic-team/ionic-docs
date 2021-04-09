@@ -7,7 +7,7 @@ nextUrl: '/docs/developer-resources/guides/first-app-v4/ios-android-camera'
 
 Ce qu'il y a de bien avec Ionic, c'est qu'avec une seule base de code, vous pouvez construire pour n'importe quelle plateforme en utilisant des outils et des langages web familiers. Suivez-nous dans la création d'une Galerie Photo. Voici l'avant et l'après:
 
-![Before and after going through this tutorial](/docs/assets/img/guides/first-app-v3/gallery-combined.png)
+![Avant et après avoir suivi ce tutoriel](/docs/assets/img/guides/first-app-v3/gallery-combined.png)
 
 C'est facile de commencer. Notez que tout le code référencé dans ce guide peut être [trouvé sur GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4/).
 
@@ -37,31 +37,31 @@ Ensuite, créer une application Ionic Angular en utilisant notre modèle "Tabs":
 $ ionic start photo-gallery tabs
 ```
 
-This starter project comes complete with three pre-built pages and best practices for Ionic development. With common building blocks already in place, we can add more features easily!
+Ce projet de démarrage est fourni avec trois pages pré-construites et les meilleures pratiques pour le développement Ionic. Avec des blocs de construction communs déjà en place, nous pouvons ajouter plus de fonctionnalités facilement!
 
-Next, change into the app folder:
+Ensuite, allez dans le dossier de l'application :
 
 ```shell
 $ cd photo-gallery
 ```
 
-That’s it! Now for the fun part - let’s see the app in action.
+C'est fait! Maintenant pour la partie amusante - voyons l'application en action.
 
-## Run the App
-Run this command next:
+## Lancer l'application
+Exécutez ensuite cette commande :
 
 ```shell
 ionic serve
 ```
 
-And voilà! Your Ionic app is now running in a web browser. Most of your app can be built right in the browser, greatly increasing development speed.
+Et voilà ! Votre application Ionic est maintenant exécutée dans un navigateur Web. La majeure partie de votre application peut être construite directement dans le navigateur, ce qui augmente considérablement la vitesse de développement.
 
-## Photo Gallery!!!
-There are three tabs. Click on the Tab2 tab. It’s a blank canvas, aka the perfect spot to add camera functionality. Let’s begin to transform this page into a Photo Gallery. Ionic features LiveReload, so when you make changes and save them, the app is updated immediately!
+## Galerie Photo!!!
+Il y a trois onglets. Cliquez sur l'onglet "Tab2". C'est une toile vierge, c'est-à-dire l'endroit parfait pour ajouter une fonctionnalité de caméra. Commençons à transformer cette page en galerie de photos. Ionic est doté de la fonction LiveReload. Ainsi, lorsque vous apportez des modifications et les enregistrez, l'application est immédiatement mise à jour !
 
-![Before and after going through this tutorial](/docs/assets/img/guides/first-app-v3/email-photogallery.gif)
+![Avant et après avoir suivi ce tutoriel](/docs/assets/img/guides/first-app-v3/email-photogallery.gif)
 
-Open the photo-gallery app folder in your favorite code editor of choice, then navigate to `/src/app/tab2/tab2.page.html`. We see:
+Ouvrez le dossier de l'application photo-gallery dans l'éditeur de code de votre choix, puis naviguez jusqu'à `/src/app/tab2/tab2.page.html`. Nous voyons :
 
 ```html
 <ion-header>
@@ -73,13 +73,13 @@ Open the photo-gallery app folder in your favorite code editor of choice, then n
 <ion-content class="ion-padding"></ion-content>
 ```
 
-`ion-header` represents the top navigation and toolbar, with "Tab 2" as the title. We put our app code into `ion-content`. In this case, it’s where we’ll add a button that opens the device’s camera and shows the image captured by the camera. But first, let’s start with something obvious: renaming the Tab Two page:
+`ion-header` représente la navigation supérieure et la barre d'outils, avec "Tab 2" comme titre. Nous mettons le code de notre application dans `ion-content`. Dans ce cas, c'est là que nous allons ajouter un bouton qui ouvre l'appareil photo de l'appareil et affiche l'image capturée par l'appareil photo. Mais commençons par quelque chose d'évident : renommer la page de l'onglet deux :
 
 ```html
 <ion-title>Photo Gallery</ion-title>
 ```
 
-Next, open `src/app/tabs/tabs.page.html`. Change the label to “Gallery” and the icon name to “images”:
+Ensuite, ouvrez `src/app/tabs/tabs.page.html`. Changez l'étiquette en "Galerie" et le nom de l'icône en "images" :
 
 ```html
 <ion-tab-button tab="tab2">
@@ -88,4 +88,4 @@ Next, open `src/app/tabs/tabs.page.html`. Change the label to “Gallery” and 
 </ion-tab-button>
 ```
 
-That’s just the start of all the cool things we can do with Ionic. Up next, we’ll deploy the app to your iOS or Android device, then continue building the photo gallery.
+Ce n’est que le début de toutes les choses cool que nous pouvons faire avec Ionic. Ensuite, nous allons déployer l'application sur votre appareil iOS ou Android, puis continuer à construire la galerie de photos.
