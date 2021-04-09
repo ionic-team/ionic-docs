@@ -1,7 +1,7 @@
 ---
-previousText: 'Adding Mobile'
+previousText: 'Ajout de mobile'
 previousUrl: '/docs/angular/your-first-app/5-adding-mobile'
-nextText: 'Rapid App Dev with Live Reload'
+nextText: 'Développement rapide d''applications avec Live Reload'
 nextUrl: '/docs/angular/your-first-app/7-live-reload'
 ---
 
@@ -44,7 +44,7 @@ $ ionic cap sync
 
 > Pour construire une application iOS, vous aurez besoin d'un ordinateur Mac.
 
-Capacitor iOS apps are configured and managed through Xcode (Apple’s iOS/Mac IDE), with dependencies managed by [CocoaPods](https://cocoapods.org/). Avant d'exécuter cette application sur un appareil iOS, il y a quelques étapes à accomplir.
+Les applications iOS de Capacitor sont configurées et gérées par Xcode (l'IDE iOS/Mac d'Apple), les dépendances étant gérées par [CocoaPods](https://cocoapods.org/). Avant d'exécuter cette application sur un appareil iOS, il y a quelques étapes à accomplir.
 
 Tout d'abord, exécutez la commande Capacitor `open` , qui ouvre le projet natif iOS en Xcode :
 
@@ -54,7 +54,7 @@ $ ionic cap open ios
 
 Pour que certains plugins natifs puissent fonctionner, les permissions de l'utilisateur doivent être configurées. Dans notre application de galerie de photos, cela inclut le plugin Camera : iOS affiche automatiquement une boîte de dialogue modale après la première fois que `Caméra. etPhoto()` est appelée, invitant l'utilisateur à autoriser l'application à utiliser la caméra. La permission que les lecteurs sont marqués « Confidentialité - Utilisation de la caméra ». Pour le définir, les infos `. liste` le fichier doit être modifié ([plus de détails ici](https://capacitor.ionicframework.com/docs/ios/configuration)). Pour y accéder, cliquez sur « Infos », puis développez « Propriétés de la cible iOS »
 
-![Xcode Custom iOS Target Properties](/docs/assets/img/guides/first-app-cap-ng/xcode-info-plist.png)
+![Propriétés de la cible iOS personnalisée dans Xcode](/docs/assets/img/guides/first-app-cap-ng/xcode-info-plist.png)
 
 
 Chaque paramètre dans `Info.plist` a un nom de paramètre de bas niveau et un nom de haut niveau. Par défaut, l'éditeur de liste de propriétés affiche les noms de haut niveau, mais il est souvent utile de changer pour montrer les noms bruts de bas niveau. Pour cela, faites un clic droit n'importe où dans l'éditeur de liste de propriétés et activez/désactivez "Clés brutes/Valeurs"
@@ -67,11 +67,11 @@ Ensuite, cliquez sur `App` dans le navigateur de projet sur le côté gauche, pu
 
 Avec les autorisations en place et l'équipe de développement sélectionnée, nous sommes prêts à essayer l'application sur un appareil réel ! Connectez un appareil iOS à votre ordinateur Mac, sélectionnez-le (`App -> iPhone de Matthew` pour moi) puis cliquez sur le bouton « Bâtir » pour construire, installez et lancez l'application sur votre appareil:
 
-![Xcode build button](/docs/assets/img/guides/first-app-cap-ng/xcode-build-button.png)
+![Bouton de construction Xcode](/docs/assets/img/guides/first-app-cap-ng/xcode-build-button.png)
 
 En appuyant sur le bouton Appareil photo de l’onglet Galerie de photos, l’invite d’autorisation s’affiche. Appuyez sur OK, puis prenez une photo avec la Caméra. Ensuite, la photo apparaît dans l'application!
 
-![iOS Camera permissions](/docs/assets/img/guides/first-app-cap-ng/ios-permissions-photo.png)
+![Autorisations de l'appareil photo dans iOS](/docs/assets/img/guides/first-app-cap-ng/ios-permissions-photo.png)
 
 ## Développement sur Android
 
@@ -85,7 +85,7 @@ $ ionic cap open android
 
 Similaire à iOS, nous devons activer les autorisations appropriées pour utiliser la Caméra. Configurez-les dans le fichier `AndroidManifest.xml`. Android Studio ouvrira probablement ce fichier automatiquement, mais dans le cas contraire, localisez-le sous `android/app/src/main/`.
 
-![Android Manifest location](/docs/assets/img/guides/first-app-cap-ng/android-manifest.png)
+![Emplacement du manifeste Android](/docs/assets/img/guides/first-app-cap-ng/android-manifest.png)
 
 Faites défiler la section `Autorisations` et assurez-vous que ces entrées sont inclus:
 
@@ -96,7 +96,7 @@ Faites défiler la section `Autorisations` et assurez-vous que ces entrées sont
 
 Save the file. Avec les autorisations en place et l'équipe de développement sélectionnée, nous sommes prêts à essayer l'application sur un appareil réel ! Connectez un appareil Android à votre ordinateur. Dans Android Studio, cliquez sur le bouton « Exécuter », sélectionnez l'appareil Android attaché, puis cliquez sur OK pour construire, installer et lancer l'application sur votre appareil.
 
-![Launching app on Android](/docs/assets/img/guides/first-app-cap-ng/android-device.png)
+![Lancement de l'application sur Android](/docs/assets/img/guides/first-app-cap-ng/android-device.png)
 
 En appuyant sur le bouton Appareil photo de l’onglet Galerie de photos, l’invite d’autorisation s’affiche. Appuyez sur OK, puis prenez une photo avec la Caméra. Ensuite, la photo apparaît dans l'application.
 
