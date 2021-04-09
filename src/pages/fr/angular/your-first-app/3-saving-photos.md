@@ -21,14 +21,14 @@ Nous pouvons utiliser cette nouvelle méthode immédiatement dans `addNewToGalle
 
 ```typescript
 public async addNewToGallery() {
-  // Take a photo
+  // Prenez une photo
   const capturedPhoto = await Camera.getPhoto({
     resultType: CameraResultType.Uri, // file-based data; provides best performance
     source: CameraSource.Camera, // automatically take a new photo with the camera
     quality: 100 // highest quality (0 to 100)
   });
 
-  // Save the picture and add it to photo collection
+  // Sauvegarder la photo et l'ajouter à la collection de photos
   const savedImageFile = await this.savePicture(capturedPhoto);
   this.photos.unshift(savedImageFile);
 }
@@ -38,10 +38,10 @@ Nous utiliserons l'API du système de fichiers [Capacitor](https://capacitor.ion
 
 ```typescript
 private async savePicture(cameraPhoto: CameraPhoto) {
-  // Convert photo to base64 format, required by Filesystem API to save
+  // Convertir la photo au format base64, requis par l'API du système de fichiers pour sauvegarder
   const base64Data = await this.readAsBase64(cameraPhoto);
 
-  // Write the file to the data directory
+  // Écrire le fichier dans le répertoire de données
   const fileName = new Date().getTime() + '.jpeg';
   const savedFile = await Filesystem.writeFile({
     path: fileName,
@@ -62,7 +62,7 @@ private async savePicture(cameraPhoto: CameraPhoto) {
 
 ```typescript
 private async readAsBase64(cameraPhoto: CameraPhoto) {
-  // Fetch the photo, read as a blob, then convert to base64 format
+  // Récupérer la photo, la lire comme un blob, puis la convertir au format base64.
   const response = await fetch(cameraPhoto.webPath!);
   const blob = await response.blob();
 
@@ -81,4 +81,4 @@ convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
 
 Obtenir la photo de l'appareil photo au format base64 sur le web semble un peu plus délicat que sur le mobile. En réalité, nous n'utilisons que des API web intégrées : [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) pour lire le fichier au format blob, puis FileReader's [readAsDataURL()](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL) pour convertir la photo blob en base64.
 
-There we go! Each time a new photo is taken, it’s now automatically saved to the filesystem.
+Nous y voilà ! Chaque fois qu'une nouvelle photo est prise, elle est désormais automatiquement enregistrée dans le système de fichiers.
