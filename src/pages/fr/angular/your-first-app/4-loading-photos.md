@@ -1,7 +1,7 @@
 ---
 previousText: 'Saving Photos on Filesystem'
 previousUrl: '/docs/angular/your-first-app/3-saving-photos'
-nextText: 'Adding Mobile'
+nextText: 'Ajout d''un Mobile'
 nextUrl: '/docs/angular/your-first-app/5-adding-mobile'
 ---
 
@@ -69,4 +69,4 @@ async ngOnInit() {
 }
 ```
 
-That’s it! Nous avons créé une fonctionnalité complète de la Galerie de photos dans notre application Ionic qui fonctionne sur le Web. Ensuite, nous le transformerons en une application mobile pour iOS et Android !
+C'est fait! Nous avons créé une fonctionnalité complète de la Galerie de photos dans notre application Ionic qui fonctionne sur le Web. Ensuite, nous le transformerons en une application mobile pour iOS et Android !
