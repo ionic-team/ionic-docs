@@ -53,7 +53,7 @@ addPhotoToGallery() {
 }
 ```
 
-Then, open `tab2.page.html` and call the `addPhotoToGallery()` function when the FAB is tapped/clicked:
+Ensuite, ouvrez `tab2.page.html` et appelez la fonction `addPhotoToGallery()` lorsque le FAB est tapé/cliqué :
 
 ```html
 <ion-content>
@@ -90,7 +90,7 @@ De retour en haut du fichier, définissez un tableau de Photos, qui contiendra u
 export class PhotoService {
   public photos: Photo[] = [];
 
-  // other code
+  // autre code
 }
 ```
 
@@ -110,7 +110,7 @@ Fini dans la fonction `addNewToGallery` , ajoutez la nouvelle photo capturée au
 }
 ```
 
-Next, move over to `tab2.page.html` so we can display the image on the screen. Add a [Grid component](https://ionicframework.com/docs/api/grid) so that each photo will display nicely as photos are added to the gallery, and loop through each photo in the `PhotoServices`'s Photos array, adding an Image component (`<ion-img>`) for each. Point the `src` (source) at the photo’s path:
+Ensuite, passez au `tab2.page.html` pour que nous puissions afficher l'image à l'écran. Ajoutez un composant [Grid](https://ionicframework.com/docs/api/grid) pour que chaque photo s'affiche joliment au fur et à mesure que des photos sont ajoutées à la galerie, et parcourez en boucle chaque photo dans le tableau Photos du `PhotoServices`, en ajoutant un composant Image (`<ion-img>`) pour chacune. Pointez le `src` (source) sur le chemin de la photo :
 
 ```html
 <ion-content>
@@ -127,6 +127,6 @@ Next, move over to `tab2.page.html` so we can display the image on the screen. A
 </ion-content>
 ```
 
-Save all files. Within the web browser, click the Camera button and take another photo. This time, the photo is displayed in the Photo Gallery!
+Sauvegarder tous les fichiers. Dans le navigateur Web, cliquez sur le bouton Appareil photo et prenez une autre photo. Cette fois, la photo est affichée dans la galerie de photos !
 
-Up next, we’ll add support for saving the photos to the filesystem, so they can be retrieved and displayed in our app at a later time.
+Ensuite, nous ajouterons la prise en charge de l'enregistrement des photos dans le système de fichiers, afin qu'elles puissent être récupérées et affichées dans notre application à un moment ultérieur.
