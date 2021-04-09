@@ -1,7 +1,7 @@
 ---
 previousText: 'Deploying Mobile'
 previousUrl: '/docs/angular/your-first-app/6-deploying-mobile'
-nextText: 'Lifecycle'
+nextText: 'Cycle de Vie'
 nextUrl: '/docs/angular/lifecycle'
 ---
 
@@ -39,7 +39,7 @@ Avec Live Reload en cours d'exécution et l'application s'ouvre sur votre appare
 </ion-col>
 ```
 
-Over in `tab2.page.ts`, import Action Sheet and add it to the constructor:
+Dans `tab2.page.ts`, importez Action Sheet et ajoutez-la au constructeur :
 
 ```typescript
 import { ActionSheetController } from '@ionic/angular';
@@ -48,13 +48,13 @@ constructor(public photoService: PhotoService,
             public actionSheetController: ActionSheetController) {}
 ```
 
-Add `Photo` to the import statement.
+Ajouter `Photo` à l'instruction d'importation.
 
 ```typescript
 import { Photo, PhotoService } from '../services/photo.service';
 ```
 
-Next, implement the `showActionSheet()` function. We add two options: `Delete` that calls PhotoService’s `deletePicture()` function (to be added next) and `Cancel`, which when given the role of “cancel” will automatically close the action sheet:
+Ensuite, implémentez la fonction `showActionSheet()`. Nous ajoutons deux options : `Delete` qui appelle la fonction `deletePicture()` de PhotoService (à ajouter ensuite) et `Cancel` qui, lorsqu'on lui donne le rôle de "cancel", ferme automatiquement la feuille d'action :
 
 ```typescript
 public async showActionSheet(photo: Photo, position: number) {
@@ -80,22 +80,22 @@ public async showActionSheet(photo: Photo, position: number) {
 }
 ```
 
-Save both of the files we just edited. The Photo Gallery app will reload automatically, and now when we tap on one of the photos in the gallery, the action sheet displays. Tapping “Delete” doesn’t do anything yet, so head back into your code editor.
+Sauvegardez les deux fichiers que nous venons d'éditer. L'application Galerie de photos se recharge automatiquement, et maintenant, lorsque nous tapons sur l'une des photos de la galerie, la feuille d'action s'affiche. Taper sur "Delete" ne fait rien pour l'instant, alors retournez dans votre éditeur de code.
 
-In `src/app/services/photo.service.ts`, add the `deletePicture()` function:
+Dans `src/app/services/photo.service.ts`, ajoutez la fonction `deletePicture()`:
 
 ```typescript
 public async deletePicture(photo: Photo, position: number) {
-  // Remove this photo from the Photos reference data array
+  // Supprimez cette photo du tableau de données de référence Photos.
   this.photos.splice(position, 1);
 
-  // Update photos array cache by overwriting the existing photo array
+  // Mettez à jour le cache du tableau de photos en écrasant le tableau de photos existant.
   Storage.set({
     key: this.PHOTO_STORAGE,
     value: JSON.stringify(this.photos)
   });
 
-  // delete photo file from filesystem
+  // supprime le fichier photo du système de fichiers
   const filename = photo.filepath
                       .substr(photo.filepath.lastIndexOf('/') + 1);
 
@@ -106,12 +106,12 @@ public async deletePicture(photo: Photo, position: number) {
 }
 ```
 
-The selected photo is removed from the Photos array first. Then, we use the Capacitor Storage API to update the cached version of the Photos array. Finally, we delete the actual photo file itself using the Filesystem API.
+La photo sélectionnée est d'abord retirée du tableau des photos. Ensuite, nous utilisons l'API Capacitor Storage pour mettre à jour la version mise en cache du tableau Photos. Enfin, nous supprimons le fichier photo lui-même en utilisant l'API Filesystem.
 
-Save this file, then tap on a photo again and choose the “Delete” option. This time, the photo is deleted! Implemented much faster using Live Reload. 💪
+Enregistrez ce fichier, puis appuyez à nouveau sur une photo et choisissez l'option "Supprimer". Cette fois-ci, la photo est supprimée! Mise en œuvre beaucoup plus rapide en utilisant Live Reload. 💪
 
 ## Et ensuite ?
 
-Congratulations! You built a complete cross-platform Photo Gallery app that runs on the web, iOS, and Android. There are many paths to follow from here. Try adding another [Ionic UI component](https://ionicframework.com/docs/components) to the app, or more [native functionality](https://capacitor.ionicframework.com/docs/apis). The sky’s the limit.
+Félicitations ! Vous avez créé une application complète de galerie de photos multiplateforme qui fonctionne sur le web, iOS et Android. Il y a de nombreux chemins à suivre à partir de là. Essayez d'ajouter un autre [composant Ionic UI](https://ionicframework.com/docs/components) à l'application, ou plus de [fonctionnalités natives](https://capacitor.ionicframework.com/docs/apis). Le ciel est la limite.
 
-Happy app building! 💙
+Bonne construction d'application! 💙
