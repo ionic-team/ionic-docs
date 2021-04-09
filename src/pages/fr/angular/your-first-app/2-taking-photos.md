@@ -26,11 +26,11 @@ import { Plugins, CameraResultType, Capacitor, FilesystemDirectory,
 const { Camera, Filesystem, Storage } = Plugins;
 ```
 
-Next, define a new class method, `addNewToGallery`, that will contain the core logic to take a device photo and save it to the filesystem. Let’s start by opening the device camera:
+Ensuite, définissez une nouvelle méthode de classe, `addNewToGallery`, qui contiendra la logique de base pour prendre une photo du périphérique et l'enregistrer dans le système de fichiers. Commençons par ouvrir la caméra de l'appareil :
 
 ```typescript
 public async addNewToGallery() {
-  // Take a photo
+  // Prenez une photo
   const capturedPhoto = await Camera.getPhoto({
     resultType: CameraResultType.Uri, 
     source: CameraSource.Camera, 
@@ -41,7 +41,7 @@ public async addNewToGallery() {
 
 Remarquez la magie ici: il n'y a pas de code spécifique à la plateforme (web, iOS, ou Android)! Le plugin Capacitor Camera résume cela pour nous, laissant un seul appel de méthode - `Caméra. getPhoto()` - qui ouvrira la caméra de l'appareil et nous permettra de prendre des photos.
 
-Next, open up `tab2.page.ts` and import the PhotoService class and add a method that calls the `addNewToGallery` method on the imported servce:
+Ensuite, ouvrez `tab2.page.ts` et importez la classe PhotoService et ajoutez une méthode qui appelle la méthode `addNewToGallery` sur le service importé :
 
 ```typescript
 import { PhotoService } from '../services/photo.service';
