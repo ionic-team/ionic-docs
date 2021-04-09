@@ -1,7 +1,7 @@
 ---
 previousText: 'Vue d''ensemble'
 previousUrl: '/docs/angular/overview'
-nextText: 'Taking Photos'
+nextText: 'Prendre des photos'
 nextUrl: '/docs/angular/your-first-app/2-saving-photos'
 ---
 
@@ -11,7 +11,7 @@ La grande chose à propos d'Ionic est qu'avec une base de code, vous pouvez cons
 
 Voici l'application terminée fonctionnant sur les 3 plates-formes: <iframe width="560" height="315" src="https://www.youtube.com/embed/0ASQ13Y1Rk4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
-> Looking for the previous version of this guide that covered Ionic 4 and Cordova? [See here.](/docs/developer-resources/guides/first-app-v4/intro)
+> Vous recherchez la version précédente de ce guide qui couvrait Ionic 4 et Cordova ? [Voir ici.](/docs/developer-resources/guides/first-app-v4/intro)
 
 ## Ce que nous allons construire
 
@@ -20,7 +20,7 @@ Nous allons créer une application Galerie de photos qui offre la possibilité d
 Les points saillants comprennent:
 
 * Une base de code angulaire qui s'exécute sur le Web, iOS et Android à l'aide de Ionic Framework.
-* Deployed as a native iOS and Android mobile app using [Capacitor](https://capacitor.ionicframework.com), Ionic's official native app runtime.
+* Déployé en tant qu'application mobile native iOS et Android en utilisant [Capacitor](https://capacitor.ionicframework.com), le runtime d'application native officiel de Ionic.
 * Photo Gallery functionality powered by the Capacitor [Camera](https://capacitor.ionicframework.com/docs/apis/camera), [Filesystem](https://capacitor.ionicframework.com/docs/apis/filesystem), and [Storage](https://capacitor.ionicframework.com/docs/apis/storage) APIs.
 
 It’s easy to get started. Find the complete app code referenced in this guide [on GitHub](https://github.com/ionic-team/photo-gallery-capacitor-ng).
