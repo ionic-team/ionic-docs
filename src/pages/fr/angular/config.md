@@ -1,7 +1,7 @@
 ---
 previousText: 'Navigation/Routing'
 previousUrl: '/docs/angular/navigation'
-nextText: 'Platform'
+nextText: 'Plateforme'
 nextUrl: '/docs/angular/platform'
 contributors:
   - liamdebeasi
@@ -89,7 +89,7 @@ import { isPlatform, IonicModule } from '@ionic/angular';
 })
 ```
 
-The next example allows you to set an entirely different configuration based upon the platform, falling back to a default config if no platforms match:
+L'exemple suivant vous permet de définir une configuration entièrement différente en fonction de la plate-forme, et de revenir à une configuration par défaut si aucune plate-forme ne correspond :
 
 ```typescript
 import { isPlatform, IonicModule } from '@ionic/angular';
