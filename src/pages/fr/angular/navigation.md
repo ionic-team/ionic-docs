@@ -134,7 +134,7 @@ Maintenant, la façon dont nos routes sont configurés fait en sorte qu'ils sont
 })
 ```
 
-While similar, the `loadChildren` property is a way to reference a module by using native import instead of a component directly. Pour ce faire, nous devons cependant créer un module pour chacun des composants.
+Bien que similaire, la propriété `loadChildren` est un moyen de référencer un module en utilisant l'importation native au lieu d'un composant directement. Pour ce faire, nous devons cependant créer un module pour chacun des composants.
 
 ```typescript
 ...
@@ -155,13 +155,13 @@ import { LoginComponent } from './login.component';
 
 Ici, nous avons une configuration typique de Module Angular, avec une importation de RouterModule, mais nous utilisons maintenant `forChild` et déclarons le composant dans cette configuration. Avec cette configuration, lorsque nous exécuterons notre build, nous produirons des morceaux distincts pour le composant d'application, le composant de connexion et le composant de détail.
 
-## Live Example
+## Exemple en direct
 
-If you would prefer to get hands on with the concepts and code described above, please checkout our [live example](https://stackblitz.com/edit/ionic-angular-routing?file=src/app/app-routing.module.ts) of the topics above on StackBlitz.
+Si vous préférez mettre la main sur les concepts et le code décrits ci-dessus, consultez notre [exemple en direct](https://stackblitz.com/edit/ionic-angular-routing?file=src/app/app-routing.module.ts) des sujets ci-dessus sur StackBlitz.
 
-## Working with Tabs
+## Travailler avec les onglets
 
-With Tabs, the Angular Router provides Ionic the mechanism to know what components should be loaded, but the heavy lifting is actually done by the tabs component. Let's look at a simple example.
+Avec les onglets, le routeur Angular fournit à Ionic le mécanisme permettant de savoir quels composants doivent être chargés, mais le gros du travail est en fait effectué par le composant onglets. Prenons un exemple simple.
 
 ```ts
 const routes: Routes = [
@@ -193,7 +193,7 @@ const routes: Routes = [
 ];
 ```
 
-Here we have a "tabs" path that we load. In this example we call the path "tabs", but the name of the paths can be changed. They can be called whatever fits your app. In that route object, we can define a child route as well. In this example, the top level child route "tab1" acts as our "outlet", and can load additional child routes. For this example, we have a single sub-child-route, which just loads a new component. The markup for the tab is as followed:
+Ici, nous avons un chemin "tabs" que nous chargeons. Dans cet exemple, nous appelons le chemin "tabs", mais le nom des chemins peut être modifié. Ils peuvent être appelés de la manière qui convient à votre application. Dans cet objet route, nous pouvons également définir une route enfant. Dans cet exemple, la route enfant de premier niveau "tab1" fait office de "sortie" et peut charger des routes enfant supplémentaires. Pour cet exemple, nous avons une seule route de sous-filière, qui charge simplement un nouveau composant. Le balisage de l'onglet est le suivant :
 
 ```html
 <br /><ion-tabs>
@@ -210,4 +210,4 @@ Here we have a "tabs" path that we load. In this example we call the path "tabs"
 </ion-tabs>
 ```
 
-If you've built apps with Ionic before, this should feel familiar. We create a `ion-tabs` component, and provide a `ion-tab-bar`. The `ion-tab-bar` provides a `ion-tab-button` with a `tab` property that is associated with the tab "outlet" in the router config. Note that the latest version of `@ionic/angular` no longer requires `<ion-tab>`, but instead allows developers to fully customize the tab bar, and the single source of truth lives within the router configuration.
+Si vous avez déjà construit des applications avec Ionic, cela devrait vous sembler familier. Nous créons un composant `ion-tabs`, et fournissons une `ion-tab-bar`. Le `ion-tab-bar` fournit un `ion-tab-button` avec une propriété `tab` qui est associée à l'onglet "outlet" dans la configuration du routeur. Notez que la dernière version de `@ionic/angular` ne nécessite plus `<ion-tab>`, mais permet plutôt aux développeurs de personnaliser entièrement la barre d'onglets, et la source unique de vérité vit dans la configuration du routeur.
