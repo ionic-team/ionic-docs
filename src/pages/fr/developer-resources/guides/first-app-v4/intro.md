@@ -1,37 +1,37 @@
 ---
-nextText: 'iOS, Android, and the Camera'
+nextText: 'iOS, Android, et la camera'
 nextUrl: '/docs/developer-resources/guides/first-app-v4/ios-android-camera'
 ---
 
-# Your First Ionic App: Angular
+# Votre première application Ionic: Angular
 
-The great thing about Ionic is that with one codebase, you can build for any platform using familiar web tools and languages. Follow along as we create a working Photo Gallery. Here’s the before and after:
+Ce qu'il y a de bien avec Ionic, c'est qu'avec une seule base de code, vous pouvez construire pour n'importe quelle plateforme en utilisant des outils et des langages web familiers. Suivez-nous dans la création d'une Galerie Photo. Voici l'avant et l'après:
 
 ![Before and after going through this tutorial](/docs/assets/img/guides/first-app-v3/gallery-combined.png)
 
-It’s easy to get started. Note that all code referenced in this guide can be [found on GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4/).
+C'est facile de commencer. Notez que tout le code référencé dans ce guide peut être [trouvé sur GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4/).
 
-## Required Tools
-Download/install these right away to ensure an optimal Ionic development experience:
-* [Git](https://git-scm.com/downloads) for version control.
-* <strong>SSH client</strong>, such as [PuTTy](https://www.putty.org/), for secure login to Appflow.
-* <strong>Node.js</strong> for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
-* <strong>A code editor</strong> for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
-* <strong>Command-line terminal (CLI)</strong>: FYI <strong>Windows</strong> users, for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode. For <strong>Mac/Linux</strong> users, virtually any terminal will work.
+## Outils requis
+Téléchargez/installez-les dès maintenant pour garantir une expérience de développement Ionic optimale :
+* [Git](https://git-scm.com/downloads) pour le contrôle de version.
+* <strong>Client SSH</strong>, comme [PuTTy](https://www.putty.org/), pour une connexion sécurisée à l'Appflow Ionic.
+* <strong>Node.js</strong> pour interagir avec l'écosystème Ionic. [Téléchargez la version LTS ici](https://nodejs.org/en/).
+* <strong>Un éditeur de code</strong> pour... écrire du code! Nous sommes fans de [Visual Studio Code](https://code.visualstudio.com/).
+* <strong>Un terminal de ligne de commande (CLI)</strong>: Utilisateurs de <strong>Windows</strong>, pour une meilleure expérience Ionic, nous vous recommandons le terminal pré-installé (cmd) ou Powershell, lancés en mode Administrateur. Pour les utilisateurs de <strong>Mac/Linux</strong>, pratiquement tous les terminaux fonctionneront.
 
-## Install Ionic and Cordova
-Run the following in the command line:
+## Installer Ionic et Cordova
+Lancez la commande suivante:
 
 ```shell
 $ npm install -g @ionic/cli cordova
 ```
 
-> The `-g` option means _install globally_. When packages are installed globally, `EACCES` permission errors can occur.
+> Le `-g` signifie _installer globalement_. Lorsque les packages sont installés globalement, des erreurs d'autorisation ` EACCES ` peuvent se produire.
 > 
-> Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](/docs/developing/tips#resolving-permission-errors) for more information.
+> Envisagez de configurer npm pour qu'il fonctionne globalement sans autorisations élevées. Voir [Resolving Permission Errors](/docs/developing/tips#resolving-permission-errors) pour plus d'informations.
 
-## Create an App
-Next, create an Ionic Angular app using our “Tabs” app template:
+## Créer une application
+Ensuite, créer une application Ionic Angular en utilisant notre modèle "Tabs":
 
 ```shell
 $ ionic start photo-gallery tabs
