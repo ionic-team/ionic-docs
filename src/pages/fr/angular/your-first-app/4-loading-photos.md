@@ -33,30 +33,30 @@ Storage.set({
 });
 ```
 
-Avec le tableau de photos enregistré, créez une fonction appelée `loadSaved()` qui peut récupérer ces données. We use the same key to retrieve the photos array in JSON format, then parse it into an array:
+Avec le tableau de photos enregistré, créez une fonction appelée `loadSaved()` qui peut récupérer ces données. Nous utilisons la même clé pour récupérer le tableau de photos au format JSON, puis nous l'analysons dans un tableau :
 
 ```typescript
 public async loadSaved() {
-  // Retrieve cached photo array data
+  // Récupérer les données du tableau des photos mises en cache
   const photoList = await Storage.get({ key: this.PHOTO_STORAGE });
   this.photos = JSON.parse(photoList.value) || [];
 
-  // more to come...
+  // plus à venir...
 }
 ```
 
-On mobile (coming up next!), we can directly set the source of an image tag - `<img src="x" />` - to each photo file on the Filesystem, displaying them automatically. On the web, however, we must read each image from the Filesystem into base64 format, using a new `base64` property on the `Photo` object. This is because the Filesystem API uses [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. Below is the code you need to add in the `loadSaved()` function you just added:
+Sur mobile (à venir !), nous pouvons directement définir la source d'une balise image - `<img src="x" />` - à chaque fichier photo du Filesystem, les affichant automatiquement. Sur le web, cependant, nous devons lire chaque image du Filesystem au format base64, en utilisant une nouvelle propriété `base64` sur l'objet `Photo`. Cela est dû au fait que l'API du système de fichiers utilise [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) sous le capot. Voici le code que vous devez ajouter dans la fonction `loadSaved()` que vous venez d'ajouter :
 
 ```typescript
-// Display the photo by reading into base64 format
+// Afficher la photo en la lisant au format base64
 for (let photo of this.photos) {
-  // Read each saved photo's data from the Filesystem
+  // Lire les données de chaque photo sauvegardée à partir du système de fichiers.
   const readFile = await Filesystem.readFile({
       path: photo.filepath,
       directory: FilesystemDirectory.Data
   });
 
-  // Web platform only: Load the photo as base64 data
+  // Plate-forme Web uniquement : Charger la photo en tant que données base64
   photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
 }
 ```
