@@ -21,19 +21,19 @@ Les points saillants comprennent:
 
 * Une base de code angulaire qui s'exécute sur le Web, iOS et Android à l'aide de Ionic Framework.
 * Déployé en tant qu'application mobile native iOS et Android en utilisant [Capacitor](https://capacitor.ionicframework.com), le runtime d'application native officiel de Ionic.
-* Photo Gallery functionality powered by the Capacitor [Camera](https://capacitor.ionicframework.com/docs/apis/camera), [Filesystem](https://capacitor.ionicframework.com/docs/apis/filesystem), and [Storage](https://capacitor.ionicframework.com/docs/apis/storage) APIs.
+* Fonctionnalité de galerie photo alimentée par les API Capacitor [Camera](https://capacitor.ionicframework.com/docs/apis/camera), [Filesystem](https://capacitor.ionicframework.com/docs/apis/filesystem) et [Storage](https://capacitor.ionicframework.com/docs/apis/storage).
 
-It’s easy to get started. Find the complete app code referenced in this guide [on GitHub](https://github.com/ionic-team/photo-gallery-capacitor-ng).
+C'est facile de commencer. Retrouvez le code complet de l'application référencée dans ce guide [sur GitHub](https://github.com/ionic-team/photo-gallery-capacitor-ng).
 
-## Download Required Tools
+## Télécharger les outils nécessaires
 
-Download and install these right away to ensure an optimal Ionic development experience:
+Téléchargez et installez-les dès maintenant pour garantir une expérience de développement Ionic optimale :
 
-* **Node.js** for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
-* **A code editor** for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
-* **Command-line interface/terminal (CLI)**: 
- * **Windows** users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode.
- * **Mac/Linux** users, virtually any terminal will work.
+* **Node.js** pour interagir avec l’écosystème Ionic. [Téléchargez la version LTS ici](https://nodejs.org/en/).
+* **Un éditeur de code** pour... écrire du code! Nous sommes fans de [Visual Studio Code](https://code.visualstudio.com/).
+* **Interface/terminal en ligne de commande (CLI)**: 
+ * Les utilisateurs de **Windows** : pour une expérience Ionic optimale, nous recommandons la ligne de commande intégrée (cmd) ou la CLI Powershell, exécutée en mode Administrateur.
+ * Pour les utilisateurs de **Mac/Linux**, pratiquement tous les terminaux fonctionneront.
 
 ## Installer l'outillage ionic
 
@@ -47,19 +47,19 @@ $ npm install -g @ionic/cli native-run cordova-res
 
 > L'option ` -g ` signifie * installer globalement *. Lorsque les packages sont installés globalement, des erreurs d'autorisation ` EACCES ` peuvent se produire.
 > 
-> Pensez à configurer npm pour qu'il fonctionne globalement sans autorisations élevées. See [Resolving Permission Errors](/docs/developing/tips#resolving-permission-errors) for more information.
+> Pensez à configurer npm pour qu'il fonctionne globalement sans autorisations élevées. Voir [Résolution des erreurs de permission](/docs/developing/tips#resolving-permission-errors) pour plus d'informations.
 
 ## Créer une application
 
-Next, create an Ionic Angular app that uses the “Tabs” starter template and adds Capacitor for native functionality:
+Ensuite, créez une application Ionic Angular qui utilise le modèle de démarrage "Tabs" et ajoute Capacitor pour la fonctionnalité native :
 
 ```shell
 $ ionic start photo-gallery tabs --type=angular --capacitor
 ```
 
-This starter project comes complete with three pre-built pages and best practices for Ionic development. With common building blocks already in place, we can add more features easily!
+Ce projet de démarrage est fourni avec trois pages pré-construites et les meilleures pratiques pour le développement Ionic. Avec des blocs de construction communs déjà en place, nous pouvons ajouter plus de fonctionnalités facilement!
 
-Next, change into the app folder:
+Ensuite, allez dans le dossier de l'application :
 
 ```shell
 $ cd photo-gallery
