@@ -98,7 +98,7 @@ Dans l'exemple suivant, le fichier est importé et exécuté pendant le crochet 
 
 Les fichiers de crochet JavaScript doivent exporter une seule fonction, qui est passée à un seul argument (`ctx`) chaque fois que le crochet s'exécute.
 
-The argument is the context given to the hook file, which differs from hook to hook and with different invocations.
+L'argument est le contexte donné au fichier crochet, qui diffère d'un crochet à l'autre et selon les invocations.
 
 `./scripts/build-before.js`:
 
@@ -108,9 +108,9 @@ module.exports = function(ctx) {
 };
 ```
 
-## Multi-app Projects
+## Projets multi-applications
 
-<small><em>Available in CLI 6.2.0+</em></small>
+<small><em>Disponible en CLI 6.2.0+</em></small>
 
 The Ionic CLI supports a multi-app configuration setup, which involves multiple Ionic apps and shared code within a single repository, or [monorepo](/docs/reference/glossary#monorepo).
 
