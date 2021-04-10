@@ -45,39 +45,39 @@ Exécutez ce qui suit dans le terminal de ligne de commande pour installer le CL
 $ npm install -g @ionic/cli@latest native-run cordova-res
 ```
 
-> The `-g` option means *install globally*. When packages are installed globally, `EACCES` permission errors can occur.
+> L'option `-g` signifie *installer globalement*. Lorsque des paquets sont installés globalement, des erreurs de permission `EACCES` peuvent se produire.
 > 
-> Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](/docs/developing/tips#resolving-permission-errors) for more information.
+> Pensez à configurer npm pour qu'il fonctionne globalement sans autorisations élevées. Voir [Résolution des erreurs de permission](/docs/developing/tips#resolving-permission-errors) pour plus d'informations.
 
-## Create an App
+## Créer une application
 
-Next, create an Ionic Vue app that uses the "Tabs" starter template and adds Capacitor for native functionality:
+Ensuite, créez une application Ionic Vue qui utilise le modèle de démarrage "Tabs" et ajoute Capacitor pour la fonctionnalité native :
 
 ```shell
 $ ionic start photo-gallery tabs --type vue --capacitor
 ```
 
-This starter project comes complete with three pre-built pages and best practices for Ionic development. With common building blocks already in place, we can add more features easily!
+Ce projet de démarrage est fourni avec trois pages pré-construites et les meilleures pratiques pour le développement Ionic. Avec des blocs de construction communs déjà en place, nous pouvons ajouter plus de fonctionnalités facilement!
 
-Next, change into the app folder:
+Ensuite, allez dans le dossier de l'application :
 
 ```shell
 $ cd photo-gallery
 ```
 
-### PWA Elements
+### Les éléments d'une PWA
 
-Some Capacitor plugins, including the Camera API, provide the web-based functionality and UI via the Ionic [PWA Elements library](https://github.com/ionic-team/pwa-elements).
+Certains plugins Capacitor, dont l'API caméra, fournissent la fonctionnalité et l'interface utilisateur web via la bibliothèque Ionic [PWA Elements](https://github.com/ionic-team/pwa-elements).
 
-It's a separate dependency, so install it next:
+C'est une dépendance séparée, alors installez-la ensuite:
 
 ```shell
 $ npm install @ionic/pwa-elements
 ```
 
-After installation, open up the project in your code editor of choice.
+Après l'installation, ouvrez le projet dans l'éditeur de code de votre choix.
 
-Next, import `@ionic/pwa-elements` by editing `src/main.ts`.
+Ensuite, importez `@ionic/pwa-elements` en éditant `src/main.ts`.
 
 ```typescript
 // Above the createApp() line
