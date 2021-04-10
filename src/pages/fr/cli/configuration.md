@@ -55,24 +55,24 @@ Les options suivantes modifient le comportement d'une commande exécutée par le
 * `--help`: Au lieu d'exécuter la commande, consultez sa page d'aide.
 * `--verbose`: Affiche tous les messages de log à des fins de débogage.
 * `--quiet`: N'afficher que les messages de log `WARN` et `ERROR`.
-* `--no-interactive`: Turn off interactive prompts and fancy outputs. If CI or a non-TTY terminal is detected, the CLI is automatically non-interactive.
-* `--confirm`: Turn on auto-confirmation of confirmation prompts. Careful: the CLI prompts before doing something potentially harmful. Auto-confirming may have unintended results.
+* `--no-interactive` : Désactiver les invites interactives et les sorties fantaisistes. Si le CI ou un terminal non TTY est détecté, le CLI est automatiquement non interactif.
+* `--confirm` : activer l'auto-confirmation des invites de confirmation. Attention : le CLI vous invite à ne pas faire quelque chose de potentiellement dangereux. L'auto-confirmation peut avoir des résultats inattendus.
 
-## Hooks
+## Crochets
 
-The CLI can run scripts during certain events, such as before and after builds. To hook into the CLI, the following [npm scripts](https://docs.npmjs.com/misc/scripts) can be used in `package.json`:
+Le CLI peut exécuter des scripts lors de certains événements, comme avant et après les constructions. Pour s'accrocher à la CLI, les [scripts npm](https://docs.npmjs.com/misc/scripts) suivants peuvent être utilisés dans `package.json` :
 
-* `ionic:serve:before`: executed before the dev server starts
-* `ionic:serve:after`: executed after the dev server is terminated
-* `ionic:build:before`: executed before a web asset build begins
-* `ionic:build:after`: executed after a web asset build finishes
-* `ionic:capacitor:run:before`: executed during `ionic capacitor run` before capacitor open is executed
-* `ionic:capacitor:build:before`: executed during `ionic capacitor build` before capacitor open is executed
-* `ionic:capacitor:sync:after`: executed during `ionic capacitor sync` after a sync
+* `ionic:serve:before` : exécuté avant le démarrage du serveur de dev
+* `ionic:serve:after` : exécuté après la fin du serveur de dev
+* `ionic:build:before` : exécuté avant le début de la construction d'un actif web
+* `ionic:build:after` : exécuté après la fin de la construction d'un actif web
+* `ionic:capacitor:run:before` : exécuté pendant `ionic capacitor run` avant que l'ouverture de capacitor ne soit exécutée
+* `ionic:capacitor:build:before` : exécuté pendant la `ionic capacitor build` avant que L'ouverture de capacitor ne soit exécuté
+* `ionic:capacitor:sync:after` : exécuté pendant `ionic capacitor:sync` après une synchro
 
-When using a shell script for any of the hooks, hook context is defined in environment variables prefixed with `IONIC_CLI_HOOK_CTX_`.
+Lorsque vous utilisez un script shell pour l'un des crochets, le contexte du crochet est défini dans des variables d'environnement préfixées par `IONIC_CLI_HOOK_CTX_`.
 
-The following example shows the environment variables that are set for the `ionic:capacitor:build` hook.
+L'exemple suivant montre les variables d'environnement qui sont définies pour le crochet `ionic:capacitor:build`.
 
 ```shell
 IONIC_CLI_HOOK_CTX_NAME=capacitor:build:before
@@ -86,9 +86,9 @@ IONIC_CLI_HOOK_CTX_CAPACITOR_APP_NAME=ionic-starter-app
 IONIC_CLI_HOOK_CTX_CAPACITOR_VERBOSE=false
 ```
 
-Hooks can also be defined in `ionic.config.json`. Define a `hooks` object within the project, where each key is the name of the hook (without the `ionic:` prefix), and the value is a path to a JavaScript file or an array of paths.
+Les crochets peuvent également être définis dans `ionic.config.json`. Définissez un objet `crochets` dans le projet, où chaque clé est le nom du crochet (sans le préfixe `ionique :` ), et la valeur est un chemin vers un fichier JavaScript ou un tableau de chemins.
 
-In the following example, the file is imported and run during the `ionic:build:before` hook.
+Dans l'exemple suivant, le fichier est importé et exécuté pendant le crochet `ionic:build:before`.
 
 ```json
 "hooks": {
@@ -96,7 +96,7 @@ In the following example, the file is imported and run during the `ionic:build:b
 },
 ```
 
-JavaScript hook files should export a single function, which is passed a single argument (`ctx`) whenever the hook executes.
+Les fichiers de crochet JavaScript doivent exporter une seule fonction, qui est passée à un seul argument (`ctx`) chaque fois que le crochet s'exécute.
 
 The argument is the context given to the hook file, which differs from hook to hook and with different invocations.
 
