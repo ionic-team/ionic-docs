@@ -112,36 +112,36 @@ module.exports = function(ctx) {
 
 <small><em>Disponible en CLI 6.2.0+</em></small>
 
-The Ionic CLI supports a multi-app configuration setup, which involves multiple Ionic apps and shared code within a single repository, or [monorepo](/docs/reference/glossary#monorepo).
+L'Ionic CLI prend en charge une configuration multi-application, qui implique plusieurs applications Ionic et du code partagé dans un seul dépôt, ou [monorepo](/docs/reference/glossary#monorepo).
 
-> These docs give an overview of the multi-app feature of the Ionic CLI, but don't really go into details for each framework.
+> Ces documents donnent un aperçu de la fonctionnalité multi-app de Ionic CLI, mais n'entrent pas vraiment dans les détails pour chaque framework.
 > 
-> If you're using Angular, please see [this article](https://github.com/ionic-team/ionic-cli/wiki/Angular-Monorepo) for examples.
+> Si vous utilisez Angular, veuillez consulter [cet article](https://github.com/ionic-team/ionic-cli/wiki/Angular-Monorepo) pour des exemples.
 
-### Setup Steps
+### Étapes de configuration
 
-1. Create a directory and initialize a monorepo (see [Project Structure](#project-structure) for full details).
-2. Initialize the monorepo as an Ionic multi-app project. This will create a multi-app `ionic.config.json` file. See [Config File](#config-file) for full details.
+1. Créez un répertoire et initialisez un monorepo (voir [Structure du projet](#project-structure) pour plus de détails).
+2. Initialiser le monorepo en tant que projet multi-app Ionic. Ceci va créer un fichier `ionic.config.json` multi-applications. Voir [Fichier de configuration](#config-file) pour plus de détails.
 
     ```shell
     $ ionic init --multi-app
     ```
 
-1. Use `ionic start` to create Ionic apps or `ionic init` to initialize existing apps (see [Adding an App](#adding-an-app) for full details).
+1. Utilisez `ionic start` pour créer des applications Ionic ou `ionic init` pour initialiser des applications existantes (voir [Ajouter une application](#adding-an-app) pour plus de détails).
 
-### Project Structure
+### Structure du projet
 
-In a multi-app project, project structure is flexible. The only requirement is a multi-app `ionic.config.json` file at the root of the repository.
+Dans un projet multi-application, la structure du projet est flexible. La seule exigence est un fichier `ionic.config.json` multi-app à la racine du dépôt.
 
-Below is an example setup, where apps in the `apps/` directory are separated from the shared code in the `lib/` directory. Notice the root `ionic.config.json` file and the monorepo's `package.json` file.
+Voici un exemple de configuration, où les applications dans le répertoire `apps/` sont séparées du code partagé dans le répertoire `lib/`. Remarquez le fichier `ionic.config.json` racine et le fichier `package.json` du monorepo.
 
 <file-tree> <file-tree-directory name="apps"> <file-tree-directory name="myApp" collapsed></file-tree-directory> <file-tree-directory name="myOtherApp" collapsed></file-tree-directory> </file-tree-directory> <file-tree-directory name="lib" collapsed></file-tree-directory> <file-tree-file name="ionic.config.json"></file-tree-file> <file-tree-file name="package.json"></file-tree-file> </file-tree>
 
-### Config File
+### Fichier de configuration
 
-In a multi-app project, apps share a single `ionic.config.json` file at the root of the repository instead of each app having their own. The multi-app config file contains the configuration for each app by nesting configuration objects in a `projects` object. A default app can be specified using `defaultProject`.
+Dans un projet multi-app, les apps partagent un seul fichier `ionic.config.json` à la racine du dépôt au lieu que chaque app ait son propre fichier. Le fichier de configuration multi-app contient la configuration de chaque app en imbriquant les objets de configuration dans un objet `projects`. Une application par défaut peut être spécifiée en utilisant `defaultProject`.
 
-Below is an example file, which corresponds to the file structure above.
+Ci-dessous se trouve un exemple de fichier, qui correspond à la structure de fichier ci-dessus.
 
 ```json
 {
@@ -163,21 +163,21 @@ Below is an example file, which corresponds to the file structure above.
 }
 ```
 
-When a multi-app project is detected, the Ionic CLI will operate under the context of an app configured in the root `ionic.config.json`. Project selection criteria is as follows:
+Lorsqu'un projet multi-app est détecté, le Ionic CLI fonctionnera dans le contexte d'une app configurée dans la racine `ionic.config.json`. Les critères de sélection du projet sont les suivants :
 
-1. If the global CLI option `--project` is specified, the project is looked up by key in the `projects` object. For example, `--project=myApp` will select the `myApp` project.
-2. If the CLI detects it is being run within a project path, configured with the `root` key, it will select the matched project. For example, using the CLI within the `apps/myOtherApp/src` directory will select the `myOtherApp` project.
-3. If a `defaultProject` is specified in `ionic.config.json`, it will select the specified project when the above criteria is not met.
+1. Si l'option CLI globale `--project` est spécifiée, le projet est recherché par clé dans l'objet `projects`. Par exemple, `--project=myApp` sélectionnera le projet `myApp`.
+2. Si le CLI détecte qu'il est exécuté dans un chemin de projet, configuré avec la clé `root`, il sélectionnera le projet correspondant. If the CLI detects that it is running in a project path, configured with the `root` key, it will select the corresponding project.
+3. Si un `defaultProject` est spécifié dans `ionic.config.json`, il sélectionnera le projet spécifié lorsque les critères ci-dessus ne sont pas respectés.
 
-### Adding an App
+### Ajout d'une application
 
-Apps can be registered in a multi-app project either by using `ionic start` to create new apps or `ionic init` to initialize existing apps.
+Les apps peuvent être enregistrées dans un projet multi-app, soit en utilisant `ionic start` pour créer de nouvelles apps, soit `ionic init` pour initialiser les apps existantes.
 
-#### Using `ionic start`
+#### Utiliser `ionic start`
 
-If a multi-app project is detected during `ionic start`, the CLI will add the app configuration to the root `ionic.config.json` file instead of creating a project-specific one.
+Si un projet multi-app est détecté pendant le `ionic start`, le CLI ajoutera la configuration de l'app au fichier racine `ionic.config.json` au lieu de créer un fichier spécifique au projet.
 
-Dependency installation can be skipped using `--no-deps` if dependencies are hoisted to the root of the monorepo.
+L'installation des dépendances peut être sautée en utilisant `--no-deps` si les dépendances sont hissées à la racine du monorepo.
 
 ```shell
 $ cd apps/
