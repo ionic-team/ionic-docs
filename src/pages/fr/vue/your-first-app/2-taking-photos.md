@@ -9,13 +9,13 @@ nextUrl: '/docs/vue/your-first-app/3-saving-photos'
 
 Passons maintenant à la partie amusante : ajouter la possibilité de prendre des photos avec l'appareil photo de l'appareil en utilisant l'API Capacitor [Camera API](https://capacitor.ionicframework.com/docs/apis/camera). Nous commencerons par le construire pour le web, puis nous apporterons quelques petites modifications pour le faire fonctionner sur mobile (iOS et Android).
 
-To do so, we will create a standalone composition function paired with Vue's Composition API to manage the photos for the gallery.
+Pour ce faire, nous allons créer une fonction de composition autonome associée à l'API de composition de Vue pour gérer les photos de la galerie.
 
-> If you are not familiar with Vue's Composition API, [Why Composition API?](https://v3.vuejs.org/guide/composition-api-introduction.html#why-composition-api) from the official Vue docs is a good resource to start with.
+> Si vous n'êtes pas familier avec l'API de composition de Vue, [Why Composition API?](https://v3.vuejs.org/guide/composition-api-introduction.html#why-composition-api) de la doc officielle de Vue est une bonne ressource pour commencer.
 
-Create a new file at `src/composables/usePhotoGallery.ts` and open it up.
+Créez un nouveau fichier à `src/composables/usePhotoGallery.ts` et ouvrez-le.
 
-We will start by importing the various utilities we will use from Vue core and Capacitor:
+Nous allons commencer par importer les différents utilitaires que nous utiliserons depuis Vue core et Capacitor:
 
 ```typescript
 import { ref, onMounted, watch } from 'vue';
@@ -23,7 +23,7 @@ import { Plugins, CameraResultType, CameraSource, CameraPhoto,
 Capacitor, FilesystemDirectory } from "@capacitor/core";
 ```
 
-Next, create a function named usePhotoGallery:
+Ensuite, créez une fonction nommée usePhotoGallery:
 
 ```typescript
 export function usePhotoGallery() {
