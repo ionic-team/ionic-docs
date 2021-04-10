@@ -80,28 +80,28 @@ Après l'installation, ouvrez le projet dans l'éditeur de code de votre choix.
 Ensuite, importez `@ionic/pwa-elements` en éditant `src/main.ts`.
 
 ```typescript
-// Above the createApp() line
+// Au-dessus de la ligne createApp()
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
-// Call the element loader after the platform has been bootstrapped
+// Appeler le chargeur d'éléments après l'amorçage de la plate-forme.
 defineCustomElements(window);
 ```
 
-That’s it! Now for the fun part - let’s see the app in action.
+C'est fait! Maintenant pour la partie amusante - voyons l'application en action.
 
-## Run the App
+## Démarrer l'application
 
-Run this command in your shell:
+Exécutez cette commande dans votre shell:
 
 ```shell
 $ ionic serve
 ```
 
-And voilà! Your Ionic app is now running in a web browser. Most of your app can be built and tested right in the browser, greatly increasing development and testing speed.
+Et voilà ! Votre application Ionic est maintenant exécutée dans un navigateur Web. La majeure partie de votre application peut être construite et testée directement dans le navigateur, ce qui augmente considérablement la vitesse de développement et de test.
 
-## Photo Gallery!!!
+## Galerie de photos !!!
 
-There are three tabs. Click on the Tab2 tab. It’s a blank canvas, aka the perfect spot to transform into a Photo Gallery. The Ionic CLI features Live Reload, so when you make changes and save them, the app is updated immediately!
+Il y a trois onglets. Cliquez sur l'onglet "Tab2". C'est une toile vierge, c'est-à-dire l'endroit parfait à transformer en galerie de photos. The Ionic CLI features Live Reload, so when you make changes and save them, the app is updated immediately!
 
 ![Before and after going through this tutorial](/docs/assets/img/guides/vue/first-app/live-reload.gif)
 
