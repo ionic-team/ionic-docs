@@ -101,11 +101,11 @@ Et voilà ! Votre application Ionic est maintenant exécutée dans un navigateur
 
 ## Galerie de photos !!!
 
-Il y a trois onglets. Cliquez sur l'onglet "Tab2". C'est une toile vierge, c'est-à-dire l'endroit parfait à transformer en galerie de photos. The Ionic CLI features Live Reload, so when you make changes and save them, the app is updated immediately!
+Il y a trois onglets. Cliquez sur l'onglet "Tab2". C'est une toile vierge, c'est-à-dire l'endroit parfait à transformer en galerie de photos. L'interface CLI de Ionic est dotée de la fonction Live Reload. Ainsi, lorsque vous apportez des modifications et les enregistrez, l'application est mise à jour immédiatement !
 
-![Before and after going through this tutorial](/docs/assets/img/guides/vue/first-app/live-reload.gif)
+![Avant et après avoir suivi ce tutoriel](/docs/assets/img/guides/vue/first-app/live-reload.gif)
 
-Open `/src/views/Tab2.vue`. We see:
+Ouvrez `/src/views/Tab2.vue`. Nous voyons :
 
 ```html
 <template>
@@ -128,25 +128,25 @@ Open `/src/views/Tab2.vue`. We see:
 </template>
 ```
 
-`ion-header` represents the top navigation and toolbar, with "Tab 2" as the title. Let’s rename it:
+`ion-header` représente la navigation supérieure et la barre d'outils, avec "Tab 2" comme titre. Renommons le :
 
 ```html
 <ion-title>Photo Gallery</ion-title>
 ```
 
-We put the visual aspects of our app into `<ion-content>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. But first, remove the `ExploreContainer` component, beginning with the import statement:
+Nous mettons les aspects visuels de notre application dans `<ion-content>`. Dans ce cas, c'est là que nous ajouterons un bouton qui ouvre l'appareil photo de l'appareil et affiche l'image capturée par l'appareil. Mais d'abord, supprimez le composant `ExploreContainer`, en commençant par l'instruction import :
 
 ```typescript
 import ExploreContainer from '@/components/ExploreContainer.vue';
 ```
 
-Next, remove the component name (`ExploreContainer`) from the `components` list in the Default Export and the HTML:
+Ensuite, supprimez le nom du composant (`ExploreContainer`) de la liste `composants` dans l'exportation par défaut et le HTML :
 
 ```html
 <ExploreContainer name="Tab 2 page" />
 ```
 
-We'll replace it with a [floating action button](https://ionicframework.com/docs/api/fab) (FAB). First, update the imports within the `<script>` tag to include the Camera icon as well as some of the Ionic components we'll use shortly:
+Nous allons le remplacer par un [bouton d'action flottant](https://ionicframework.com/docs/api/fab) (FAB). Tout d'abord, mettez à jour les importations dans la balise `<script>` pour inclure l'icône de la caméra ainsi que certains des composants Ionic que nous utiliserons prochainement :
 
 ```typescript
 import { camera, trash, close } from 'ionicons/icons';
@@ -155,7 +155,7 @@ import { IonPage, IonHeader, IonFab, IonFabButton, IonIcon,
          IonCol, IonImg } from '@ionic/vue';
 ```
 
-Next, add the new Ionic components we'll be using to the default export as well as returning the Ionicons in the `setup()` method (part of the [Composition API](https://v3.vuejs.org/api/composition-api.html#setup)):
+Ensuite, ajoutez les nouveaux composants Ionic que nous utiliserons à l'exportation par défaut ainsi que le retour des Ionicons dans la méthode `setup()` (faisant partie de [Composition API](https://v3.vuejs.org/api/composition-api.html#setup)) :
 
 ```typescript
 export default  {
@@ -171,7 +171,7 @@ export default  {
 }
 ```
 
-Then, add the FAB to the bottom of the page. Use the camera image as the icon, and call the `takePhoto()` function when this button is clicked (to be implemented soon):
+Ensuite, ajoutez le FAB au bas de la page. Utilisez l'image de la caméra comme icône, et appelez la fonction `takePhoto()` lorsque ce bouton est cliqué (pour être implémenté bientôt):
 
 ```html
 <ion-content :fullscreen="true">
@@ -183,15 +183,15 @@ Then, add the FAB to the bottom of the page. Use the camera image as the icon, a
 </ion-content>
 ```
 
-We’ll be creating the `takePhoto` method and the logic to use the Camera and other native features in a moment.
+Nous allons créer la méthode `takePhoto` et la logique pour utiliser l'appareil photo et d'autres fonctionnalités natives dans un moment.
 
-Next, open `src/views/Tabs.vue` then import the `images` icon:
+Ensuite, ouvrez `src/views/Tabs.vue` puis importez l'icône `images` :
 
 ```typescript
 import { images, square, triangle } from 'ionicons/icons';
 ```
 
-Within the tab bar (`<ion-tab-bar>`), change the label to "Photos" and the icon to `images` for the middle tab button:
+Dans la barre d'onglets (`<ion-tab-bar>`), changez le libellé en "Photos" et l'icône en `images` pour le bouton d'onglet du milieu :
 
 ```html
 <ion-tab-button tab="tab2" href="/tabs/tab2">
@@ -200,4 +200,4 @@ Within the tab bar (`<ion-tab-bar>`), change the label to "Photos" and the icon 
 </ion-tab-button>
 ```
 
-That’s just the start of all the cool things we can do with Ionic. Up next, implementing camera taking functionality on the web, then building for iOS and Android.
+Ce n'est que le début de toutes les choses cool que nous pouvons faire avec Ionic. Ensuite, il s'agira d'implémenter la fonctionnalité de prise de vue sur le web, puis de la développer pour iOS et Android.
