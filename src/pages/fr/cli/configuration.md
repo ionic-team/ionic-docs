@@ -184,11 +184,11 @@ $ cd apps/
 $ ionic start "My New App" --no-deps
 ```
 
-#### Using `ionic init`
+#### Utilisation de `ionic init`
 
-If an app was created in a way other than `ionic start`, for example by using a prebuilt template, use `ionic init` to register the existing app with the multi-app project.
+Si une app a été créée d'une manière autre que `ionic start`, par exemple en utilisant un modèle préconstruit, utilisez `ionic init` pour enregistrer l'app existante avec le projet multi-app.
 
-> Make sure the app doesn't have an existing `ionic.config.json`.
+> Assurez-vous que l'application n'a pas un `ionic.config.json` existant.
 
 ```shell
 $ cd apps/existing-app/
