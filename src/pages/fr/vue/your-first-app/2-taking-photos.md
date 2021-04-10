@@ -1,13 +1,13 @@
 ---
-previousText: 'Your First App'
+previousText: 'Votre première application'
 previousUrl: '/docs/vue/your-first-app'
-nextText: 'Saving Photos on Filesystem'
+nextText: 'Sauvegarde des photos sur le système de fichiers'
 nextUrl: '/docs/vue/your-first-app/3-saving-photos'
 ---
 
-# Taking Photos with the Camera
+# Prendre des photos avec la caméra
 
-Now for the fun part - adding the ability to take photos with the device’s camera using the Capacitor [Camera API](https://capacitor.ionicframework.com/docs/apis/camera). We’ll begin with building it for the web, then make some small tweaks to make it work on mobile (iOS and Android).
+Passons maintenant à la partie amusante : ajouter la possibilité de prendre des photos avec l'appareil photo de l'appareil en utilisant l'API Capacitor [Camera API](https://capacitor.ionicframework.com/docs/apis/camera). Nous commencerons par le construire pour le web, puis nous apporterons quelques petites modifications pour le faire fonctionner sur mobile (iOS et Android).
 
 To do so, we will create a standalone composition function paired with Vue's Composition API to manage the photos for the gallery.
 
