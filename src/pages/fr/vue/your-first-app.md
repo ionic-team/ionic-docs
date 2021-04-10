@@ -7,39 +7,39 @@ nextUrl: '/docs/vue/your-first-app/2-taking-photos'
 
 # Votre première application Ionic : Vue
 
-The great thing about Ionic is that with one codebase, you can build for any platform using just HTML, CSS, and JavaScript. Follow along as we learn the fundamentals of Ionic app development by creating a realistic app step by step.
+Ce qu'il y a de bien avec Ionic, c'est qu'avec une seule base de code, vous pouvez construire pour n'importe quelle plateforme en utilisant seulement HTML, CSS et JavaScript. Suivez-nous dans notre apprentissage des principes fondamentaux du développement d'applications Ionic en créant une application réaliste, étape par étape.
 
-Here’s the finished app running on all 3 platforms: <iframe width="560" height="315" src="https://www.youtube.com/embed/0ASQ13Y1Rk4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+Voici l'application terminée fonctionnant sur les 3 plateformes : <iframe width="560" height="315" src="https://www.youtube.com/embed/0ASQ13Y1Rk4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
-## What We'll Build
+## Ce que nous allons construire
 
-We'll create a Photo Gallery app that offers the ability to take photos with your device's camera, display them in a grid, and store them permanently on the device.
+Nous allons créer une application de galerie de photos qui offre la possibilité de prendre des photos avec l'appareil photo de votre appareil, de les afficher dans une grille et de les stocker de façon permanente sur l'appareil.
 
-Highlights include:
+Les points forts sont les suivants :
 
-* One Vue-based codebase that runs on the web, iOS, and Android using Ionic Framework [UI components](https://ionicframework.com/docs/components).
-* Deployed as a native iOS and Android mobile app using [Capacitor](https://capacitor.ionicframework.com), Ionic's official native app runtime.
-* Photo Gallery functionality powered by the Capacitor [Camera](https://capacitor.ionicframework.com/docs/apis/camera), [Filesystem](https://capacitor.ionicframework.com/docs/apis/filesystem), and [Storage](https://capacitor.ionicframework.com/docs/apis/storage) APIs.
+* Une base de code basée sur Vue qui fonctionne sur le web, iOS et Android en utilisant Ionic Framework [composants UI](https://ionicframework.com/docs/components).
+* Déployé en tant qu'application mobile native iOS et Android à l'aide de [Capacitor](https://capacitor.ionicframework.com), le runtime d'application native officiel de Ionic.
+* Fonctionnalité de galerie photo alimentée par les API Capacitor [Camera](https://capacitor.ionicframework.com/docs/apis/camera), [Filesystem](https://capacitor.ionicframework.com/docs/apis/filesystem) et [Storage](https://capacitor.ionicframework.com/docs/apis/storage).
 
-It’s easy to get started.
+C'est facile de commencer.
 
-> Find the complete app code referenced in this guide [on GitHub](https://github.com/ionic-team/photo-gallery-capacitor-vue).
+> Retrouvez le code complet de l'application référencée dans ce guide [sur GitHub](https://github.com/ionic-team/photo-gallery-capacitor-vue).
 
-## Download Required Tools
+## Télécharger les outils nécessaires
 
-Download and install these right away to ensure an optimal Ionic development experience:
+Téléchargez et installez-les dès maintenant pour garantir une expérience de développement Ionic optimale :
 
-* **Node.js** for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
-* **A code editor** for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
-* **Command-line interface/terminal (CLI)**: 
- * **Windows** users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode.
- * **Mac/Linux** users, virtually any terminal will work.
+* **Node.js** pour interagir avec l'écosystème Ionic. [Téléchargez la version LTS ici](https://nodejs.org/en/).
+* **Un éditeur de code** pour... écrire du code! Nous sommes fans de [Visual Studio Code](https://code.visualstudio.com/).
+* **Interface/terminal en ligne de commande (CLI)**: 
+ * **Utilisateurs de Windows** : pour une expérience Ionic optimale, nous recommandons la ligne de commande intégrée (cmd) ou la CLI Powershell, exécutée en mode Administrateur.
+ * Pour les utilisateurs de **Mac/Linux**, pratiquement tous les terminaux fonctionneront.
 
-## Install Ionic Tooling
+## Installer les outils Ionic
 
-Run the following in the command line terminal to install the Ionic CLI (`ionic`), `native-run`, used to run native binaries on devices and simulators/emulators, and `cordova-res`, used to generate native app icons and splash screens:
+Exécutez ce qui suit dans le terminal de ligne de commande pour installer le CLI Ionic (`ionic`), `native-run`, utilisé pour exécuter des binaires natifs sur des appareils et des simulateurs/émulateurs, et `cordova-res`, utilisé pour générer des icônes d'applications natives et des écrans d'accueil :
 
-> To open a terminal in Visual Studio Code, go to Terminal -> New Terminal.
+> Pour ouvrir un terminal dans Visual Studio Code, accédez à Terminal -> Nouveau Terminal.
 
 ```shell
 $ npm install -g @ionic/cli@latest native-run cordova-res
