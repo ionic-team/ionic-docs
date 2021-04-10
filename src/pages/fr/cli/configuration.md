@@ -195,19 +195,19 @@ $ cd apps/existing-app/
 $ ionic init
 ```
 
-## Advanced Configuration
+## Configuration avancée
 
-### Overriding the Build
+### Remplacement de la méthode de construction
 
-Normally, the CLI runs a hard-coded set of commands based on the project type. For example, the standard web asset build for Angular projects is `ng run app:build`. The web asset build can be overridden and `ionic build` can continue to be used by utilizing the `ionic:build` [npm script](https://docs.npmjs.com/misc/scripts). Similarly, the dev server can be overridden by using the `ionic:serve` npm script.
+Normalement, le CLI exécute un jeu de commandes codé en dur basé sur le type de projet. Par exemple, la construction standard d'actifs web pour les projets Angular est `ng run app:build`. Le build des actifs web peut être remplacé et `ionic build` peut continuer à être utilisé en utilisant le `ionic:build` [npm script](https://docs.npmjs.com/misc/scripts). De même, le serveur de développement peut être remplacé par le script npm `ionic:serve`.
 
-Pay close attention to the flags supplied to the script by the Ionic CLI. Irregularities may occur if options are not respected, especially for livereload on devices.
+Faites attention aux drapeaux fournis au script par la CLI Ionic. Des irrégularités peuvent se produire si les options ne sont pas respectées, notamment pour le chargement en foie sur les appareils.
 
-### Command Options
+### Options de commande
 
-Command options can be expressed with environment variables. They are normally set with `--opt=value` syntax. The naming of these environment variables follows a pattern: start with `IONIC_CMDOPTS_`, add the command name (replacing any spaces with underscores), add the option name (replacing any hyphens with underscores), and then uppercase everything. Boolean flags (command-line options that don't take a value) can be set to `1` or `0`. Strip the `--no-` prefix in boolean flags, if it exists (`--no-open` in ionic serve can be expressed with `IONIC_CMDOPTS_SERVE_OPEN=0`, for example).
+Les options de commande peuvent être exprimées par des variables d'environnement. Ils sont normalement définis avec la syntaxe `--opt=value`. Le nom de ces variables d'environnement suit un modèle : commencez par `IONIC_CMDOPTS_`, ajoutez le nom de la commande (en remplaçant les espaces par des traits de soulignement), ajoutez le nom de l'option (en remplaçant les traits d'union par des traits de soulignement), puis mettez tout en majuscules. Les drapeaux booléens (options de ligne de commande qui ne prennent pas de valeur) peuvent être définis sur `1` ou `0`. Supprime le préfixe `--no-` dans les drapeaux booléens, s'il existe (`--no-open` dans ionic serve peut être exprimé par `IONIC_CMDOPTS_SERVE_OPEN=0`, par exemple).
 
-For example, the command options in `ionic cordova run ios -lc --livereload-port=1234 --host=0.0.0.0` can also be expressed with this series of environment variables:
+Par exemple, les options de commande dans `ionic cordova run ios -lc --livereload-port=1234 --host=0.0.0.0` peuvent également être exprimées avec cette série de variables d'environnement :
 
 ```shell
 $ export IONIC_CMDOPTS_CORDOVA_RUN_LIVERELOAD=1
@@ -216,8 +216,8 @@ $ export IONIC_CMDOPTS_CORDOVA_RUN_LIVERELOAD_PORT=1234
 $ export IONIC_CMDOPTS_CORDOVA_RUN_HOST=0.0.0.0
 ```
 
-If these variables are set in the environment, `ionic cordova build ios` will use new defaults for its options.
+Si ces variables sont définies dans l'environnement, `ionic cordova build ios` utilisera de nouvelles valeurs par défaut pour ses options.
 
-### Telemetry
+### Télémétrie
 
-The CLI sends usage data to Ionic to create a better experience. To disable this functionality, run `ionic config set -g telemetry false`.
+Le CLI envoie des données d'utilisation à Ionic pour créer une meilleure expérience. Pour désactiver cette fonctionnalité, exécutez `ionic config set -g telemetry false`.
