@@ -1,11 +1,11 @@
 ---
-previousText: 'Overview'
+previousText: 'Vue d''ensemble'
 previousUrl: '/docs/vue/overview'
-nextText: 'Taking Photos'
+nextText: 'Prendre des photos'
 nextUrl: '/docs/vue/your-first-app/2-taking-photos'
 ---
 
-# Your First Ionic App: Vue
+# Votre première application Ionic : Vue
 
 The great thing about Ionic is that with one codebase, you can build for any platform using just HTML, CSS, and JavaScript. Follow along as we learn the fundamentals of Ionic app development by creating a realistic app step by step.
 
