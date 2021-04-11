@@ -1,7 +1,7 @@
 ---
-previousText: 'Saving Photos on Filesystem'
+previousText: 'Sauvegarde des photos sur le système de fichiers'
 previousUrl: '/docs/vue/your-first-app/3-saving-photos'
-nextText: 'Adding Mobile'
+nextText: 'Ajout d''un Mobile'
 nextUrl: '/docs/vue/your-first-app/5-adding-mobile'
 ---
 
