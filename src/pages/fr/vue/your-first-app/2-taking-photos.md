@@ -53,7 +53,7 @@ La dernière étape que nous devons faire est d'utiliser la nouvelle fonction de
 import { usePhotoGallery } from '@/composables/usePhotoGallery';
 ```
 
-Ensuite, dans l'exportation par défaut, ajoutez une méthode d'installation, qui fait partie de l'API [Composition API](https://v3.vuejs.org/guide/composition-api-setup.html#setup). Destructure the `takePhoto` function from `usePhotoGallery`, then return it:
+Ensuite, dans l'exportation par défaut, ajoutez une méthode d'installation, qui fait partie de l'API [Composition API](https://v3.vuejs.org/guide/composition-api-setup.html#setup). Déstructure la fonction `takePhoto` de `usePhotoGallery`, puis la retourne :
 
 ```typescript
 <script lang="ts">
@@ -80,17 +80,17 @@ export default  {
 </script>
 ```
 
-Save the file, and if you’re not already, restart the development server in your browser by running `ionic serve`. On the Photo Gallery tab, click the Camera button. If your computer has a webcam of any sort, a modal window appears. Take a selfie!
+Sauvegardez le fichier, et si ce n'est pas déjà fait, redémarrez le serveur de développement dans votre navigateur en exécutant `ionic serve`. Dans l’onglet Galerie de photos, cliquez sur le bouton Caméra. Si votre ordinateur possède une webcam de quelque nature que ce soit, une fenêtre modale apparaît. Prendre un selfie!
 
-![Camera API on the web](/docs/assets/img/guides/first-app-cap-ng/camera-web.png)
+![API de caméra sur le web](/docs/assets/img/guides/first-app-cap-ng/camera-web.png)
 
-_(Your selfie is probably much better than mine)_
+_(Votre selfie est probablement bien meilleur que le mien)_
 
-After taking a photo, it disappears right away. We still need to display it within our app and save it for future access.
+Après avoir pris une photo, elle disparaît immédiatement. Nous devons encore l'afficher dans notre application et l'enregistrer pour un accès ultérieur.
 
-## Displaying Photos
+## Affichage des photos
 
-First we will create a new type to define our Photo, which will hold specific metadata. Add the following Photo interface to the `usePhotoGallery.ts` file, somewhere outside of the main function:
+Nous allons d'abord créer un nouveau type pour définir notre photo, qui contiendra des métadonnées spécifiques. Ajoutez l'interface Photo suivante au fichier `usePhotoGallery.ts`, quelque part en dehors de la fonction principale :
 
 ```typescript
 export interface Photo {
@@ -99,13 +99,13 @@ export interface Photo {
 }
 ```
 
-Back at the top of the function (right after referencing the Capacitor Camera plugin), define an array so we can store each photo captured with the Camera. Make it a reactive variable using Vue's [ref function](https://v3.vuejs.org/guide/composition-api-introduction.html#reactive-variables-with-ref).
+En haut de la fonction (juste après avoir référencé le plugin Capacitor Camera), définissez un tableau afin de pouvoir stocker chaque photo capturée avec l'appareil photo. Faites-en une variable réactive à l'aide de la fonction [ref de Vue](https://v3.vuejs.org/guide/composition-api-introduction.html#reactive-variables-with-ref).
 
 ```typescript
 const photos = ref<Photo[]>([]);
 ```
 
-When the camera is done taking a picture, the resulting `CameraPhoto` returned from Capacitor will be added to the `photos` array. Update the `takePhoto` method, adding this code after the `Camera.getPhoto` line:
+Lorsque l'appareil photo a fini de prendre une photo, le `CameraPhoto` résultant retourné par Capacitor sera ajouté au tableau `photos`. Mettez à jour la méthode `takePhoto` , en ajoutant ce code après la ligne `Camera.getPhoto`:
 
 ```typescript
 const fileName = new Date().getTime() + '.jpeg';
@@ -117,7 +117,7 @@ const savedFileImage = {
 photos.value = [savedFileImage, ...photos.value];
 ```
 
-Next, update the return statement to include the photos array:
+Ensuite, mettez à jour l'instruction de retour pour inclure le tableau photos :
 
 ```typescript
 return {
@@ -126,19 +126,19 @@ return {
 };
 ```
 
-Back in the Tab2 component, update the import statement to include the `Photo` interface:
+De retour dans le composant Tab2, mettez à jour l'instruction d'importation pour inclure l'interface `Photo`:
 
 ```typescript
 import { usePhotoGallery, Photo } from '@/composables/usePhotoGallery';
 ```
 
-Then, get access to the photos array:
+Ensuite, accédez au tableau des photos :
 
 ```typescript
 const { photos, takePhoto } = usePhotoGallery();
 ```
 
-Last, add `photos` to `setup()` return:
+Enfin, ajoutez `photos` au retour de `setup()` :
 
 ```typescript
 return {
@@ -148,7 +148,7 @@ return {
 }
 ```
 
-With the photo(s) stored into the main array we can now display the images on the screen. Add a [Grid component](https://ionicframework.com/docs/api/grid) so that each photo will display nicely as they are added to the gallery, and loop through each photo in the Photos array, adding an Image component (`<ion-img>`) for each. Point the `src` (source) to the photo's path:
+Une fois la ou les photo(s) stockées dans le tableau principal, nous pouvons maintenant afficher les images à l'écran. Ajoutez un [Grid component](https://ionicframework.com/docs/api/grid) afin que chaque photo s'affiche joliment au fur et à mesure qu'elle est ajoutée à la galerie, et parcourez en boucle chaque photo dans le tableau Photos, en ajoutant un composant Image (`<ion-img>`) pour chacune. Pointez le `src` (source) sur le chemin de la photo :
 
 ```typescript
 <ion-content>
@@ -164,6 +164,6 @@ With the photo(s) stored into the main array we can now display the images on th
 </ion-content>
 ```
 
-Save all files. Within the web browser, click the Camera button and take another photo. This time, the photo is displayed in the Photo Gallery!
+Sauvegarder tous les fichiers. Dans le navigateur Web, cliquez sur le bouton Appareil photo et prenez une autre photo. Cette fois, la photo est affichée dans la galerie de photos !
 
-Up next, we’ll add support for saving the photos to the filesystem, so they can be retrieved and displayed in our app at a later time.
+Ensuite, nous ajouterons la prise en charge de l'enregistrement des photos dans le système de fichiers, afin qu'elles puissent être récupérées et affichées dans notre application à un moment ultérieur.
