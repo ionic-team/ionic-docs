@@ -1,17 +1,17 @@
 ---
-previousText: 'Taking Photos'
+previousText: 'Prendre des photos'
 previousUrl: '/docs/vue/your-first-app/2-taking-photos'
-nextText: 'Loading Photos on Filesystem'
+nextText: 'Chargement des photos sur le système de fichiers'
 nextUrl: '/docs/vue/your-first-app/4-loading-photos'
 ---
 
-# Saving Photos to the Filesystem
+# Enregistrement des photos dans le système de fichiers
 
-We’re now able to take multiple photos and display them in a photo gallery on the second tab of our app. These photos, however, are not currently being stored permanently, so when the app is closed, they will be lost.
+Nous sommes maintenant en mesure de prendre plusieurs photos et de les afficher dans une galerie de photos dans le deuxième onglet de notre application. Cependant, ces photos ne sont pas stockées de façon permanente, donc lorsque l'application est fermée, elles seront perdues.
 
-## Filesystem API
+## API pour les systèmes de fichiers
 
-Fortunately, saving them to the filesystem only takes a few steps. Begin by opening the `usePhotoGallery` function (`src/composables/usePhotoGallery.ts`), and extract the `Filesystem` API:
+Heureusement, les enregistrer dans le système de fichiers ne prend que quelques étapes. Begin by opening the `usePhotoGallery` function (`src/composables/usePhotoGallery.ts`), and extract the `Filesystem` API:
 
 ```typescript
 const { Camera, Filesystem } = Plugins;
