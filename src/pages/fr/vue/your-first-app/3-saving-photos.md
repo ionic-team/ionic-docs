@@ -11,13 +11,13 @@ Nous sommes maintenant en mesure de prendre plusieurs photos et de les afficher 
 
 ## API pour les systèmes de fichiers
 
-Heureusement, les enregistrer dans le système de fichiers ne prend que quelques étapes. Begin by opening the `usePhotoGallery` function (`src/composables/usePhotoGallery.ts`), and extract the `Filesystem` API:
+Heureusement, les enregistrer dans le système de fichiers ne prend que quelques étapes. Commencez par ouvrir la fonction `usePhotoGallery` (`src/composables/usePhotoGallery.ts`), et extrayez l'API `Filesystem` :
 
 ```typescript
 const { Camera, Filesystem } = Plugins;
 ```
 
-Next, create a couple of new functions. The Filesystem API requires that files written to disk are passed in as base64 data, so this helper function will be used in a moment to assist with that:
+Ensuite, créez quelques nouvelles fonctions. L'API du système de fichiers exige que les fichiers écrits sur le disque soient transmis sous forme de données en base64. Cette fonction d'aide sera donc utilisée dans un moment pour y remédier :
 
 ```typescript
 const convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
@@ -30,9 +30,9 @@ const convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
 });
 ```
 
-Next, add a function to save the photo to the filesystem. We pass in the `cameraPhoto` object, which represents the newly captured device photo, as well as the fileName, which will provide a path for the file to be stored to.
+Ensuite, ajoutez une fonction pour enregistrer la photo dans le système de fichiers. Nous passons dans l'objet `cameraPhoto`, qui représente la photo de l'appareil nouvellement capturée, ainsi que le fileName, qui fournira un chemin pour le fichier à stocker.
 
-Next we use the Capacitor [Filesystem API](https://capacitor.ionicframework.com/docs/apis/filesystem) to save the photo to the filesystem. We start by converting the photo to base64 format, then feed the data to the Filesystem’s `writeFile` function:
+Ensuite, nous utilisons le Capacitor [Filesystem API](https://capacitor.ionicframework.com/docs/apis/filesystem) pour enregistrer la photo dans le système de fichiers. Nous commençons par convertir la photo au format base64, puis nous transmettons les données à la fonction `writeFile` du Filesystem :
 
 ```typescript
 const savePicture = async (photo: CameraPhoto, fileName: string): Promise<Photo> => {
@@ -49,8 +49,8 @@ const savePicture = async (photo: CameraPhoto, fileName: string): Promise<Photo>
     directory: FilesystemDirectory.Data
   });
 
-  // Use webPath to display the new image instead of base64 since it's 
-  // already loaded into memory
+  // Utiliser webPath pour afficher la nouvelle image au lieu de base64 puisqu'elle est 
+  // déjà chargée en mémoire
   return {
     filepath: fileName,
     webviewPath: photo.webPath
@@ -58,7 +58,7 @@ const savePicture = async (photo: CameraPhoto, fileName: string): Promise<Photo>
 }
 ```
 
-Last, update the `takePhoto` function to call `savePicture`. Once the photo has been saved, insert it into the front of reactive `photos` array:
+Enfin, mettez à jour la fonction `takePhoto` pour appeler `savePicture`. Une fois la photo sauvegardée, insérez-la à l'avant du tableau réactif `photos` :
 
 ```typescript
 const takePhoto = async () => {
@@ -75,4 +75,4 @@ const takePhoto = async () => {
 };
 ```
 
-There we go! Each time a new photo is taken, it’s now automatically saved to the filesystem.
+Nous y voilà ! Chaque fois qu'une nouvelle photo est prise, elle est maintenant automatiquement enregistrée dans le système de fichiers.
