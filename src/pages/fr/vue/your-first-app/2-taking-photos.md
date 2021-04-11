@@ -43,17 +43,17 @@ export function usePhotoGallery() {
 }
 ```
 
-Our `usePhotoGallery` function exposes a method called takePhoto, which in turn calls the Capacitor Camera API's `getPhoto` method.
+Notre fonction `usePhotoGallery` expose une méthode appelée takePhoto, qui appelle à son tour la méthode `getPhoto` de l'API de caméra Capacitor.
 
-Notice the magic here: there's no platform-specific code (web, iOS, or Android)! The Capacitor Camera plugin abstracts that away for us, leaving just one method call - `getPhoto()` - that will open up the device's camera and allow us to take photos.
+Remarquez la magie ici: il n'y a pas de code spécifique à la plateforme (web, iOS, ou Android)! Le plugin Capacitor Camera fait abstraction de cela pour nous, laissant un seul appel de méthode - `getPhoto()` - qui ouvrira l'appareil photo de l'appareil et nous permettra de prendre des photos.
 
-The last step we need to take is to use the new function from the Tab2 page. Go back to Tab2.vue and import it:
+La dernière étape que nous devons faire est d'utiliser la nouvelle fonction de la page Tab2. Retournez à Tab2.vue et importez-le :
 
 ```typescript
 import { usePhotoGallery } from '@/composables/usePhotoGallery';
 ```
 
-Next, within the default export, add a setup method, part of the [Composition API](https://v3.vuejs.org/guide/composition-api-setup.html#setup). Destructure the `takePhoto` function from `usePhotoGallery`, then return it:
+Ensuite, dans l'exportation par défaut, ajoutez une méthode d'installation, qui fait partie de l'API [Composition API](https://v3.vuejs.org/guide/composition-api-setup.html#setup). Destructure the `takePhoto` function from `usePhotoGallery`, then return it:
 
 ```typescript
 <script lang="ts">
