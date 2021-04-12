@@ -1,13 +1,13 @@
 ---
 previousText: 'Navigation'
 previousUrl: '/docs/vue/navigation'
-nextText: 'Platform'
+nextText: 'Plateforme'
 nextUrl: '/docs/vue/platform'
 ---
 
-# Config
+# Configuration
 
-Ionic Config provides a way to change the properties of components globally across an app. It can set the app mode, tab button layout, animations, and more.
+Ionic Config offre un moyen de modifier les propriétés des composants de manière globale dans une application. It can set the app mode, tab button layout, animations, and more.
 
 ## Global Config
 
