@@ -1,5 +1,5 @@
 ---
-previousText: 'Loading Photos on Filesystem'
+previousText: 'Chargement des photos sur le système de fichiers'
 previousUrl: '/docs/vue/your-first-app/4-loading-photos'
 nextText: 'Deploying Mobile'
 nextUrl: '/docs/vue/your-first-app/6-deploying-mobile'
