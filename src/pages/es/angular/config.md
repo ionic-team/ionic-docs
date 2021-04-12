@@ -36,9 +36,9 @@ importar { IonicModule } de '@ionic/angular';
 En el ejemplo anterior, estamos desactivando el efecto de riple de Material Design a través de la aplicación, así como forzando el modo a ser Material Design.
 
 
-## Per-Component Config
+## Configuración por componente
 
-Ionic Config is not reactive, so it is recommended to use a component's properties when you want to override its default behavior rather than set its config globally.
+Ionic Config no es reactivo, por lo que se recomienda usar las propiedades de un componente cuando se desea anular su comportamiento predeterminado en lugar de establecer su configuración globalmente.
 
 ```typescript
 import { IonicModule } from '@ionic/angular';
