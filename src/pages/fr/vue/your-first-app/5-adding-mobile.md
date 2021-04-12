@@ -1,30 +1,30 @@
 ---
 previousText: 'Chargement des photos sur le système de fichiers'
 previousUrl: '/docs/vue/your-first-app/4-loading-photos'
-nextText: 'Deploying Mobile'
+nextText: 'Déploiement du mobile'
 nextUrl: '/docs/vue/your-first-app/6-deploying-mobile'
 ---
 
-# Adding Mobile
+# Ajouter un mobile
 
-Our photo gallery app won’t be complete until it runs on iOS, Android, and the web - all using one codebase. All it takes is some small logic changes to support mobile platforms, installing some native tooling, then running the app on a device. Let’s go!
+Notre application de galerie de photos ne sera pas complète tant qu'elle ne fonctionnera pas sur iOS, Android et le web - le tout en utilisant une base de code. Il suffit de quelques petites modifications logiques pour prendre en charge les plateformes mobiles, d'installer des outils natifs, puis d'exécuter l'application sur un appareil. C'est parti !
 
 Let’s start with making some small code changes - then our app will "just work" when we deploy it to a device.
 
-## Platform-specific Logic
+## Logique spécifique à la plate-forme
 
-First, we’ll update the photo saving functionality to support mobile. We'll run slightly different code depending on the platform - mobile or web. Import the `Platform` API from Ionic Vue:
+Tout d’abord, nous mettrons à jour la fonctionnalité d’enregistrement de photos pour prendre en charge le mobile. Nous exécuterons un code légèrement différent en fonction de la plateforme - mobile ou web. Importer l'API `Platform` depuis Ionic Vue:
 
 ```typescript
 import { isPlatform } from '@ionic/vue';
 ```
 
-In the `savePicture` function, check which platform the app is running on. If it’s "hybrid" (Capacitor, the native runtime), then read the photo file into base64 format using the `readFile` method. Also, return the complete file path to the photo using the Filesystem API. When setting the `webviewPath`, use the special `Capacitor.convertFileSrc` method ([details here](https://capacitorjs.com/docs/basics/utilities#convertfilesrc)). Otherwise, use the same logic as before when running the app on the web.
+Dans la fonction `savePicture`, vérifiez sur quelle plateforme l'application fonctionne. Si c'est "hybride" (Capacitor, le runtime natif), alors lisez le fichier photo au format base64 en utilisant la méthode `readFile`. Vous pouvez également renvoyer le chemin d'accès complet au fichier de la photo à l'aide de l'API Système de fichiers. Lors de la définition du `webviewPath`, utilisez la méthode spéciale `Capacitor.convertFileSrc` ([détails ici](https://capacitorjs.com/docs/basics/utilities#convertfilesrc)). Sinon, utilisez la même logique que précédemment pour exécuter l'application sur le Web.
 
 ```typescript
 const savePicture = async (photo: CameraPhoto, fileName: string): Promise<Photo> => {
   let base64Data: string;
-  // "hybrid" will detect mobile - iOS or Android
+  // "hybride" détectera le mobile - iOS ou Android
   if (isPlatform('hybrid')) {
     const file = await Filesystem.readFile({
       path: photo.path!
