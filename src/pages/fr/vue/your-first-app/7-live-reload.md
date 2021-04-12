@@ -1,23 +1,23 @@
 ---
-previousText: 'Deploying Mobile'
+previousText: 'Déploiement du mobile'
 previousUrl: '/docs/vue/your-first-app/6-deploying-mobile'
-nextText: 'Lifecycle'
+nextText: 'Cycle de Vie'
 nextUrl: '/docs/vue/lifecycle'
 ---
 
-# Rapid App Development with Live Reload
+# Développement rapide d'applications avec Live Reload
 
-So far, we’ve seen how easy it is to develop a cross-platform app that works everywhere. The development experience is pretty quick, but what if I told you there was a way to go faster?
+Jusqu'à présent, nous avons vu à quel point il est facile de développer une application multi-plateforme qui fonctionne partout. L'expérience de développement est assez rapide, mais que se passerait-il si je vous disais qu'il y avait un moyen d'aller plus vite?
 
-We can use the Ionic CLI’s [Live Reload functionality](https://ionicframework.com/docs/cli/livereload) to boost our productivity when building Ionic apps. When active, Live Reload will reload the browser and/or WebView when changes in the app are detected.
+Nous pouvons utiliser la fonctionnalité [Live Reload](https://ionicframework.com/docs/cli/livereload) de Ionic CLI pour augmenter notre productivité lors de la construction d'applications Ionic. Lorsqu'il est actif, Live Reload rechargera le navigateur et/ou le WebView lorsque des changements sont détectés dans l'application.
 
-## Live Reload
+## Recharge en direct
 
-Remember `ionic serve`? That was Live Reload working in the browser, allowing us to iterate quickly.
+Vous vous souvenez de `service ionique`? C’était Live Reload qui travaillait dans le navigateur, nous permettant d’itérer rapidement.
 
-We can also use it when developing on iOS and Android devices. This is particularly useful when writing code that interacts with native plugins. Since we need to run native plugin code on a device in order to verify that it works, having a way to quickly write code, build and deploy it, then test it is crucial to keeping up our development speed.
+Nous pouvons également l'utiliser lors du développement sur les appareils iOS et Android. Ceci est particulièrement utile pour écrire du code qui interagit avec des plugins natifs. Étant donné que nous devons exécuter le code du plugin natif sur un appareil afin de vérifier qu'il fonctionne, il est essentiel de disposer d'un moyen d'écrire rapidement le code, de le construire et de le déployer, puis de le tester pour maintenir la vitesse de notre développement.
 
-Let’s use Live Reload to implement photo deletion, the missing piece of our Photo Gallery feature. Select your platform of choice (iOS or Android) and connect a device to your computer. Next, run either command in a terminal, based on your chosen platform:
+Utilisons Live Reload pour mettre en œuvre la suppression des photos, la pièce manquante de notre fonctionnalité de galerie de photos. Sélectionnez la plate-forme de votre choix (iOS ou Android) et connectez un appareil à votre ordinateur. Ensuite, exécutez l'une ou l'autre commande dans un terminal, en fonction de la plate-forme choisie :
 
 ```shell
 $ ionic cap run ios -l --external
@@ -25,20 +25,20 @@ $ ionic cap run ios -l --external
 $ ionic cap run android -l --external
 ```
 
-The Live Reload server will start up, and the native IDE of choice will open if not opened already. Within the IDE, click the Play button to launch the app onto your device.
+Le serveur Live Reload démarre et l'IDE natif de votre choix s'ouvre s'il n'est pas déjà ouvert. Dans l'IDE, cliquez sur le bouton Play pour lancer l'application sur votre appareil.
 
-## Deleting Photos
+## Suppression de photos
 
-With Live Reload running and the app is open on your device, let’s implement photo deletion functionality. Open `Tab2.vue` then import the `actionSheetController`. We'll display an [IonActionSheet](https://ionicframework.com/docs/api/action-sheet) with the option to delete a photo:
+Lorsque Live Reload est en cours d'exécution et que l'application est ouverte sur votre appareil, mettons en œuvre la fonctionnalité de suppression des photos. Ouvrez `Tab2.vue` puis importez le `actionSheetController`. Nous allons afficher une [Fiche d'action](https://ionicframework.com/docs/api/action-sheet) avec la possibilité de supprimer une photo :
 
 ```typescript
 import { actionSheetController, IonPage, IonHeader, IonFab, IonFabButton, 
          IonIcon, IonToolbar, IonTitle, IonContent, IonImg, IonGrid, 
          IonRow, IonCol } from '@ionic/vue';
-// other imports
+// autres importations
 ```
 
-Next, reference the `deletePhoto` function, which we'll create soon:
+Ensuite, référencez la fonction `deletePhoto`, que nous allons créer prochainement :
 
 ```typescript
 setup() {}
@@ -46,13 +46,13 @@ setup() {}
 }
 ```
 
-When a user clicks/taps on an image, we will show the action sheet. Add a click handler to the `<ion-img>` element:
+Lorsqu'un utilisateur clique/touche sur une image, nous affichons la feuille d'action. Ajouter un gestionnaire de clic à l'élément `<ion-img>`:
 
 ```html
 <ion-img :src="photo.webviewPath" @click="showActionSheet(photo)"></ion-img>
 ```
 
-Next, within `setup()`, call the `create` function to open a dialog with the option to either delete the selected photo or cancel (close) the dialog:
+Ensuite, dans `setup()`, appelez la fonction `create` pour ouvrir un dialogue avec l'option de supprimer la photo sélectionnée ou d'annuler (fermer) le dialogue :
 
 ```typescript
 const showActionSheet = async (photo: Photo) => {
@@ -69,7 +69,7 @@ const showActionSheet = async (photo: Photo) => {
       icon: close,
       role: 'cancel',
       handler: () => {
-        // Nothing to do, action sheet is automatically closed
+        // Rien à faire, la feuille d'action est automatiquement fermée.
       }
     }]
   });
@@ -77,7 +77,7 @@ const showActionSheet = async (photo: Photo) => {
 }
 ```
 
-Next, return the `showActionSheet` function:
+Ensuite, renvoie la fonction `showActionSheet`:
 
 ```typescript
 return {
@@ -88,14 +88,14 @@ return {
 }
 ```
 
-Next, we need to implement the `deletePhoto` method in the `usePhotoGallery` function. Open the file then add:
+Ensuite, nous devons implémenter la méthode `deletePhoto` dans la fonction `usePhotoGallery`. Ouvrez le fichier puis ajoutez:
 
 ```typescript
 const deletePhoto = async (photo: Photo) => {
-  // Remove this photo from the Photos reference data array
+  // Supprimez cette photo du tableau de données de référence Photos.
   photos.value = photos.value.filter(p => p.filepath !== photo.filepath);
 
-  // delete photo file from filesystem
+  // supprime le fichier photo du système de fichiers
   const filename = photo.filepath.substr(photo.filepath.lastIndexOf('/') + 1);
   await Filesystem.deleteFile({
     path: filename,
@@ -104,9 +104,9 @@ const deletePhoto = async (photo: Photo) => {
 };
 ```
 
-The selected photo is removed from the `photos` array first, then we delete the photo file using the Filesystem API.
+La photo sélectionnée est d'abord retirée du tableau `photos`, puis nous supprimons le fichier photo en utilisant l'API Filesystem.
 
-Remember that removing the photo from the `photos` array triggers the `cachePhotos` function for us automatically:
+Rappelez-vous que la suppression de la photo du tableau `photos` déclenche pour nous automatiquement la fonction `cachePhotos` :
 
 ```typescript
 const cachePhotos = () => {
@@ -119,7 +119,7 @@ const cachePhotos = () => {
 watch(photos, cachePhotos);
 ```
 
-Finally, return the `deletePhoto` function:
+Enfin, renvoie la fonction `deletePhoto`:
 
 ```typescript
 return {
@@ -129,11 +129,11 @@ return {
 };
 ```
 
-Save this file, then tap on a photo again and choose the "Delete" option. This time, the photo is deleted! Implemented much faster using Live Reload. 💪
+Enregistrez ce fichier, puis appuyez à nouveau sur une photo et choisissez l'option "Supprimer". Cette fois-ci, la photo est supprimée! Mise en œuvre beaucoup plus rapide en utilisant Live Reload. 💪
 
-## What’s Next?
+## Quelle est la prochaine étape ?
 
-Congratulations! You created a complete cross-platform Photo Gallery app that runs on the web, iOS, and Android.
+Félicitations ! You created a complete cross-platform Photo Gallery app that runs on the web, iOS, and Android.
 
 There are many paths to follow from here. Try adding another [Ionic UI component](https://ionicframework.com/docs/components) to the app, or more [native functionality](https://capacitor.ionicframework.com/docs/apis). The sky’s the limit.
 
