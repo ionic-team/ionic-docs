@@ -1,42 +1,42 @@
 ---
-previousText: 'Adding Mobile'
+previousText: 'Ajouter un mobile'
 previousUrl: '/docs/vue/your-first-app/5-adding-mobile'
-nextText: 'Rapid App Dev with Live Reload'
+nextText: 'Développement rapide d''applications avec Live Reload'
 nextUrl: '/docs/vue/your-first-app/7-live-reload'
 ---
 
-# Deploying to iOS and Android
+# Déploiement sur iOS et Android
 
-Since we added Capacitor to our project when it was first created, there’s only a handful of steps remaining until the Photo Gallery app is on our device!
+Depuis que nous avons ajouté Capacitor à notre projet lorsqu'il a été créé pour la première fois, il ne reste qu'une poignée d'étapes jusqu'à ce que l'application Photo Gallery soit sur notre appareil!
 
-> Remember, you can find the complete source code for this app [here](https://github.com/ionic-team/photo-gallery-capacitor-vue).
+> N'oubliez pas que vous pouvez trouver le code source complet pour cette application [ici](https://github.com/ionic-team/photo-gallery-capacitor-vue).
 
-## Capacitor Setup
+## Configuration de Capacitor
 
-Capacitor is Ionic’s official app runtime that makes it easy to deploy web apps to native platforms like iOS, Android, and more. If you’ve used Cordova in the past, consider reading more about the differences [here](https://capacitor.ionicframework.com/docs/cordova#differences-between-capacitor-and-cordova).
+Capacitor est le runtime d'application officiel de Ionic qui facilite le déploiement d'applications web sur des plateformes natives comme iOS, Android, etc. Si vous avez utilisé Cordova dans le passé, pensez à lire plus en détail les différences [ici](https://capacitor.ionicframework.com/docs/cordova#differences-between-capacitor-and-cordova).
 
-If you’re still running `ionic serve` in the terminal, cancel it. Complete a fresh build of the Ionic project, fixing any errors that it reports:
+Si vous êtes toujours en train de lancer `ionic serve` dans le terminal, annulez-le. Effectuez une nouvelle construction du projet Ionic, en corrigeant toutes les erreurs qu'il signale :
 
 ```shell
 $ ionic build
 ```
 
-Next, create both the iOS and Android projects:
+Ensuite, créez les projets iOS et Android :
 
 ```shell
 $ ionic cap add ios
 $ ionic cap add android
 ```
 
-Both android and ios folders at the root of the project are created. These are entirely standalone native projects that should be considered part of your Ionic app (i.e., check them into source control, edit them using their native tooling, etc.).
+Les dossiers android et ios à la racine du projet sont créés. Il s'agit de projets natifs entièrement autonomes qui doivent être considérés comme faisant partie de votre application Ionic (c'est-à-dire que vous devez les enregistrer dans le contrôle de la source, les éditer en utilisant leurs outils natifs, etc.).
 
-Every time you perform a build (e.g. `ionic build`) that updates your web directory (default: `build`), you'll need to copy those changes into your native projects:
+Chaque fois que vous effectuez une construction (par exemple `ionic build`) qui met à jour votre répertoire web (par défaut : `build`), vous devrez copier ces changements dans vos projets natifs :
 
 ```shell
 $ ionic cap copy
 ```
 
-Note: After making updates to the native portion of the code (such as adding a new plugin), use the `sync` command:
+Remarque : après avoir effectué des mises à jour de la partie native du code (comme l'ajout d'un nouveau plugin), utilisez la commande `sync` :
 
 ```shell
 $ ionic cap sync
@@ -44,17 +44,17 @@ $ ionic cap sync
 
 ## iOS
 
-> To build an iOS app, you’ll need a Mac computer.
+> Pour construire une application iOS, vous aurez besoin d'un ordinateur Mac.
 
-Capacitor iOS apps are configured and managed through Xcode (Apple’s iOS/Mac IDE), with dependencies managed by CocoaPods. Before running this app on an iOS device, there's a couple of steps to complete.
+Les applications iOS de Capacitor sont configurées et gérées par Xcode (l'IDE iOS/Mac d'Apple), les dépendances étant gérées par CocoaPods. Avant d'exécuter cette application sur un appareil iOS, il y a quelques étapes à franchir.
 
-First, run the Capacitor `open` command, which opens the native iOS project in Xcode:
+Tout d'abord, exécutez la commande Capacitor `open`, qui ouvre le projet iOS natif dans Xcode :
 
 ```shell
 $ ionic cap open ios
 ```
 
-In order for some native plugins to work, user permissions must be configured. In our photo gallery app, this includes the Camera plugin: iOS displays a modal dialog automatically after the first time that `Camera.getPhoto()` is called, prompting the user to allow the app to use the Camera. The permission that drives this is labeled "Privacy - Camera Usage." To set it, the `Info.plist` file must be modified ([more details here](https://capacitor.ionicframework.com/docs/ios/configuration)). To access it, click "Info," then expand "Custom iOS Target Properties."
+Pour que certains plugins natifs fonctionnent, les autorisations d'utilisateur doivent être configurées. Dans notre application de galerie photo, cela inclut le plugin Appareil photo : iOS affiche automatiquement une boîte de dialogue modale après le premier appel de `Camera.getPhoto()`, invitant l'utilisateur à autoriser l'application à utiliser l'Appareil photo. L'autorisation qui permet cela est intitulée "Confidentialité - Utilisation de la caméra". To set it, the `Info.plist` file must be modified ([more details here](https://capacitor.ionicframework.com/docs/ios/configuration)). To access it, click "Info," then expand "Custom iOS Target Properties."
 
 ![Xcode Custom iOS Target Properties](/docs/assets/img/guides/first-app-cap-ng/xcode-info-plist.png)
 
