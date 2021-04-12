@@ -133,8 +133,8 @@ Enregistrez ce fichier, puis appuyez à nouveau sur une photo et choisissez l'op
 
 ## Quelle est la prochaine étape ?
 
-Félicitations ! You created a complete cross-platform Photo Gallery app that runs on the web, iOS, and Android.
+Félicitations ! Vous avez créé une application complète de galerie de photos multiplateforme qui fonctionne sur le web, iOS et Android.
 
-There are many paths to follow from here. Try adding another [Ionic UI component](https://ionicframework.com/docs/components) to the app, or more [native functionality](https://capacitor.ionicframework.com/docs/apis). The sky’s the limit.
+Il y a de nombreux chemins à suivre à partir de là. Essayez d'ajouter un autre [composant Ionic UI](https://ionicframework.com/docs/components) à l'application, ou plus de [fonctionnalités natives](https://capacitor.ionicframework.com/docs/apis). Le ciel est la limite.
 
-Happy app building! 💙
+Bonne construction d'applications ! 💙
