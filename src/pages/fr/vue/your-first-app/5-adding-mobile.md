@@ -31,7 +31,7 @@ const savePicture = async (photo: CameraPhoto, fileName: string): Promise<Photo>
     });
     base64Data = file.data;
   } else {
-    // Fetch the photo, read as a blob, then convert to base64 format
+    // Récupère la photo, la lit comme un blob, puis la convertit au format base64.
     const response = await fetch(photo.webPath!);
     const blob = await response.blob();
     base64Data = await convertBlobToBase64(blob) as string;
@@ -43,16 +43,16 @@ const savePicture = async (photo: CameraPhoto, fileName: string): Promise<Photo>
   });
 
   if (isPlatform('hybrid')) {
-    // Display the new image by rewriting the 'file://' path to HTTP
-    // Details: https://ionicframework.com/docs/building/webview#file-protocol
+    // Affichez la nouvelle image en réécrivant le chemin 'file://' en HTTP.
+    // Détails : https://ionicframework.com/docs/building/webview#file-protocol
     return {
       filepath: savedFile.uri,
       webviewPath: Capacitor.convertFileSrc(savedFile.uri),
     };
   }
   else {
-    // Use webPath to display the new image instead of base64 since it's 
-    // already loaded into memory
+      // Utiliser webPath pour afficher la nouvelle image au lieu de base64 puisqu'elle est 
+    // déjà chargée en mémoire
     return {
       filepath: fileName,
       webviewPath: photo.webPath
@@ -61,21 +61,21 @@ const savePicture = async (photo: CameraPhoto, fileName: string): Promise<Photo>
 };
 ```
 
-Next, add a new bit of logic in the `loadSaved` function. On mobile, we can directly point to each photo file on the Filesystem and display them automatically. On the web, however, we must read each image from the Filesystem into base64 format. This is because the Filesystem API uses [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. Update the `loadSaved` function:
+Ensuite, ajoutez un nouveau bout de logique dans la fonction `loadSaved`. Sur le mobile, nous pouvons pointer directement sur chaque fichier photo dans le système de fichiers et les afficher automatiquement. Sur le web, cependant, nous devons lire chaque image du système de fichiers au format base64. Cela est dû au fait que l'API du système de fichiers utilise [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) sous le capot. Mise à jour de la fonction `loadSaved` :
 
 ```typescript
 const loadSaved = async () => {
   const photoList = await Storage.get({ key: PHOTO_STORAGE });
   const photosInStorage = photoList.value ? JSON.parse(photoList.value) : [];
 
-  // If running on the web...
+  // Si l'on fonctionne sur le web...
   if (!isPlatform('hybrid')) {
     for (const photo of photosInStorage) {
       const file = await Filesystem.readFile({
         path: photo.filepath,
         directory: FilesystemDirectory.Data
       });
-      // Web platform only: Load the photo as base64 data
+      // Plate-forme Web uniquement : Chargez la photo en tant que données base64
       photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
     }
   }
@@ -84,4 +84,4 @@ const loadSaved = async () => {
 }
 ```
 
-Our Photo Gallery now consists of one codebase that runs on the web, Android, and iOS. Next up, the part you’ve been waiting for - deploying the app to a device.
+Notre galerie de photos est désormais constituée d'une seule base de code qui fonctionne sur le web, Android et iOS. Ensuite, la partie que vous attendiez - déployer l'application sur un appareil.
