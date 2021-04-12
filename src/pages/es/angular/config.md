@@ -8,20 +8,20 @@ contributors:
   - mhartington
 ---
 
-# Config
+# Configuración
 
-Ionic Config provides a way to change the properties of components globally across an app. It can set the app mode, tab button layout, animations, and more.
+Ionic Config proporciona una manera de cambiar las propiedades de los componentes globalmente a través de una aplicación. Puede configurar el modo de aplicación, diseño de botones de pestaña, animaciones y más.
 
-## Global Config
+## Configuración global
 
-To override the initial Ionic config for the app, provide a config in `IonicModule.forRoot` in the `app.module.ts` file.
+Para sobreescribir la configuración Ionic inicial de la aplicación, proporcione una configuración en `IonicModule.forRoot` en el archivo `app.module.ts`.
 
 ```typescript
-import { IonicModule } from '@ionic/angular';
+importar { IonicModule } de '@ionic/angular';
 
 @NgModule({
-  ...
-  imports: [
+...
+  importación: [
     BrowserModule,
     IonicModule.forRoot({
       rippleEffect: false,
@@ -29,11 +29,11 @@ import { IonicModule } from '@ionic/angular';
     }),
     AppRoutingModule
   ],
-  ...
+...
 })
 ```
 
-In the above example, we are disabling the Material Design ripple effect across the app, as well as forcing the mode to be Material Design.
+En el ejemplo anterior, estamos desactivando el efecto de riple de Material Design a través de la aplicación, así como forzando el modo a ser Material Design.
 
 
 ## Per-Component Config
