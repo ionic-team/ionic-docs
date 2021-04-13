@@ -5,20 +5,20 @@ nextText: 'Navigation'
 nextUrl: '/docs/vue/navigation'
 ---
 
-# Vue Lifecycle
+# Cycle de vie de Vue
 
-This guide discusses how to use the Ionic Framework Lifecycle events in an Ionic Vue application.
+Ce guide explique comment utiliser les événements Lifecycle de Ionic Framework dans une application Ionic Vue.
 
-## Ionic Framework Lifecycle Methods
+## Méthodes du cycle de vie du Ionic Framework
 
-Ionic Framework provides a few lifecycle methods that you can use in your apps:
+Ionic Framework fournit quelques méthodes de cycle de vie que vous pouvez utiliser dans vos applications :
 
-| Event Name         | Description                                                        |
-| ------------------ | ------------------------------------------------------------------ |
-| `ionViewWillEnter` | Fired when the component routing to is about to animate into view. |
-| `ionViewDidEnter`  | Fired when the component routing to has finished animating.        |
-| `ionViewWillLeave` | Fired when the component routing from is about to animate.         |
-| `ionViewDidLeave`  | Fired when the component routing to has finished animating.        |
+| Nom de l'événement | Description                                                                                      |
+| ------------------ | ------------------------------------------------------------------------------------------------ |
+| `ionViewWillEnter` | S'exécute lorsque le composant vers lequel il est acheminé est sur le point d'être animé en vue. |
+| `ionViewDidEnter`  | Fired when the component routing to has finished animating.                                      |
+| `ionViewWillLeave` | Fired when the component routing from is about to animate.                                       |
+| `ionViewDidLeave`  | Fired when the component routing to has finished animating.                                      |
 
 
 The lifecycles are defined the same way Vue lifecycle methods are - as functions at the root of your Vue component:
