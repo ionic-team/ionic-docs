@@ -24,25 +24,25 @@ Bien qu'il n'y ait aucune limitation technique connue à l'utilisation de `Ionic
 
 ## De la part de la communauté
 
-- [Using Vue.js with Ionic & Capacitor](https://dev.to/aaronksaunders/using-vue-js-v3-beta-with-ionic-components-capacitor-plugins-2b6f) - Aaron Saunders
+- [Utiliser Vue.js avec Ionic & Capacitor](https://dev.to/aaronksaunders/using-vue-js-v3-beta-with-ionic-components-capacitor-plugins-2b6f) - Aaron Saunders
 
 ## Installation
 
 <command-line> <command-prompt>npm install -g @ionic/cli</command-prompt> <command-prompt>ionic start myApp tabs --type vue</command-prompt>   
 <command-prompt>ionic serve <command-cursor blink></command-cursor></command-prompt> </command-line>
 
-## Resources
+## Ressources
 
 <docs-cards> <docs-card header="Getting Started" href="/docs/vue/your-first-app" icon="/docs/assets/icons/feature-component-actionsheet-icon.png"> 
 
-Learn the fundamentals you need to know to start building amazing apps with Ionic Framework.</docs-card>
+Apprenez les principes fondamentaux que vous devez connaître pour commencer à créer des applications étonnantes avec Ionic Framework.</docs-card>
 
 <docs-card header="Navigation" href="/docs/vue/navigation" icon="/docs/assets/icons/feature-component-navigation-icon.png"> 
 
-Learn the basics of navigation inside your app with Ionic and Vue Router</docs-card>
+Apprenez les bases de la navigation dans votre application avec Ionic et Vue Router.</docs-card>
 
 <docs-card header="Lifecycle" href="/docs/vue/lifecycle" icon="/docs/assets/icons/feature-guide-components-icon.png"> 
 
-Learn about using Ionic lifecycle events in class components and with hooks</docs-card>
+Apprenez à utiliser les événements du cycle de vie de Ionic dans les composants de classe et avec les hooks.</docs-card>
 
 </docs-cards>
