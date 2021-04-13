@@ -1,28 +1,28 @@
 ---
 title: Ionic Vue
-nextText: 'Build Your First App'
+nextText: 'Créez votre première application'
 nextUrl: '/docs/vue/your-first-app'
 ---
 
-# Ionic Vue Overview
+# Vue d'ensemble Ionic
 
-`@ionic/vue` combines the core Ionic Framework experience with the tooling and APIs that are tailored to Vue Developers.
+`@ionic/vue` combine l'expérience de base de Ionic Framework avec l'outillage et les API qui sont adaptés aux développeurs Vue.
 
-## Vue Version Support
+## Support de la version Vue
 
-Ionic Vue is built on top of Vue 3.0.0. If you've built an app with early versions of Ionic Vue, you'll want to upgrade to the latest release and upgrade your Vue dependencies.
+Ionic Vue est construit au-dessus de Vue 3.0.0. Si vous avez construit une application avec les premières versions de Ionic Vue, vous voudrez passer à la dernière version et mettre à jour vos dépendances Vue.
 
-## Vue Tooling
+## Outil de vue
 
-Ionic Vue projects ship with the same tooling as regular Vue CLI projects. Meaning you'll be building with the Vue CLI and all of it's features. In addition, starter projects also ship with few features enabled by default, like Routing and TypeScript support.
+Les projets Ionic Vue sont livrés avec les mêmes outils que les projets Vue CLI ordinaires. Cela signifie que vous allez construire avec le CLI de Vue et toutes ses fonctionnalités. En outre, les projets de démarrage sont également livrés avec quelques fonctionnalités activées par défaut, comme le routage et la prise en charge de TypeScript.
 
-## Native Tooling
+## Outil natif
 
-[Capacitor](https://capacitor.ionicframework.com) is the official cross-platform app runtime used to make your `Ionic Vue` web app run natively on iOS, Android, and the web.
+[Capacitor](https://capacitor.ionicframework.com) est le moteur d'exécution d'applications multiplateforme officiel utilisé pour faire fonctionner votre `Ionic Vue` web app de manière native sur iOS, Android et le web.
 
-While there are no known technical limitations to using `Ionic Vue` with [Cordova](https://cordova.apache.org/) plugins, Capacitor is officially recommended. There are no plans to support a Cordova integration for `Ionic Vue` in the [Ionic CLI tooling](/docs/cli) at this time. For more details, please [see here](https://capacitor.ionicframework.com/docs/cordova).
+Bien qu'il n'y ait aucune limitation technique connue à l'utilisation de `Ionic Vue` avec [Cordova](https://cordova.apache.org/) plugins, Capacitor est officiellement recommandé. Il n'est pas prévu de prendre en charge une intégration Cordova pour `Ionic Vue` dans l'outil [Ionic CLI tooling](/docs/cli) pour le moment. Pour plus de détails, veuillez [voir ici](https://capacitor.ionicframework.com/docs/cordova).
 
-## From the Community
+## De la part de la communauté
 
 - [Using Vue.js with Ionic & Capacitor](https://dev.to/aaronksaunders/using-vue-js-v3-beta-with-ionic-components-capacitor-plugins-2b6f) - Aaron Saunders
 
