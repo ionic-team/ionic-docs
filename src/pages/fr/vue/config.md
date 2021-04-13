@@ -90,36 +90,36 @@ createApp(App)
 
 Voici une liste des options de configuration qu'Ionic utilise.
 
-| Configuration            | Type               | Description                                                                                                            |
-| ------------------------ | ------------------ | ---------------------------------------------------------------------------------------------------------------------- |
-| `actionSheetEnter`       | `AnimationBuilder` | Fournit une animation d'entrée personnalisée pour toutes les `ion-action-sheet`, remplaçant l'"animation" par défaut.  |
-| `actionSheetLeave`       | `AnimationBuilder` | Fournit une animation de sortie personnalisée pour toutes les `ion-action-sheet`, remplaçant l'"animation" par défaut. |
-| `alertEnter`             | `AnimationBuilder` | Fournit une animation d'entrée personnalisée pour tous les `ion-alert`, remplaçant l'"animation" par défaut.           |
-| `alertLeave`             | `AnimationBuilder` | Fournit une animation de départ personnalisée pour tous les `ion-alert`, remplaçant l'"animation" par défaut.          |
-| `animated`               | `boolean`          | Si `true`, Ionic activera toutes les animations et transitions à travers l'app.                                        |
-| `backButtonIcon`         | `string`           | Remplace l'icône par défaut dans tous les composants `<ion-back-button>`.                                        |
-| `backButtonText`         | `string`           | Remplace le texte par défaut dans tous les composants `<ion-back-button>`.                                       |
-| `hardwareBackButton`     | `boolean`          | Si `true`, Ionic répondra au bouton arrière matériel d'un appareil Android.                                            |
-| `infiniteLoadingSpinner` | `SpinnerTypes`     | Remplace le type de spinner par défaut dans tous les composants `<ion-infinite-scroll-content>`.                 |
-| `loadingEnter`           | `AnimationBuilder` | Fournit une animation d'entrée personnalisée pour tous les `ion-loading`, remplaçant l'"animation" par défaut.         |
-| `loadingLeave`           | `AnimationBuilder` | Provides a custom leave animation for all `ion-loading`, overriding the default "animation".                           |
-| `loadingSpinner`         | `SpinnerTypes`     | Overrides the default spinner for all `ion-loading` overlays.                                                          |
-| `menuIcon`               | `string`           | Overrides the default icon in all `<ion-menu-button>` components.                                                |
-| `menuType`               | `string`           | Overrides the default menu type for all `<ion-menu>` components.                                                 |
-| `modalEnter`             | `AnimationBuilder` | Provides a custom enter animation for all `ion-modal`, overriding the default "animation".                             |
-| `modalLeave`             | `AnimationBuilder` | Provides a custom leave animation for all `ion-modal`, overriding the default "animation".                             |
-| `mode`                   | `Mode`             | The mode determines which platform styles to use for the whole application.                                            |
-| `navAnimation`           | `AnimationBuilder` | Overrides the default "animation" of all `ion-nav` and `ion-router-outlet` across the whole application.               |
-| `pickerEnter`            | `AnimationBuilder` | Provides a custom enter animation for all `ion-picker`, overriding the default "animation".                            |
-| `pickerLeave`            | `AnimationBuilder` | Provides a custom leave animation for all `ion-picker`, overriding the default "animation".                            |
-| `popoverEnter`           | `AnimationBuilder` | Provides a custom enter animation for all `ion-popover`, overriding the default "animation".                           |
-| `popoverLeave`           | `AnimationBuilder` | Provides a custom leave animation for all `ion-popover`, overriding the default "animation".                           |
-| `refreshingIcon`         | `string`           | Overrides the default icon in all `<ion-refresh-content>` components.                                            |
-| `refreshingSpinner`      | `SpinnerTypes`     | Overrides the default spinner type in all `<ion-refresh-content>` components.                                    |
-| `sanitizerEnabled`       | `boolean`          | If `true`, Ionic will enable a basic DOM sanitizer on component properties that accept custom HTML.                    |
-| `spinner`                | `SpinnerTypes`     | Overrides the default spinner in all `<ion-spinner>` components.                                                 |
-| `statusTap`              | `boolean`          | If `true`, clicking or tapping the status bar will cause the content to scroll to the top.                             |
-| `swipeBackEnabled`       | `boolean`          | If `true`, Ionic will enable the "swipe-to-go-back" gesture across the application.                                    |
-| `tabButtonLayout`        | `TabButtonLayout`  | Overrides the default "layout" of all `ion-bar-button` across the whole application.                                   |
-| `toastEnter`             | `AnimationBuilder` | Provides a custom enter animation for all `ion-toast`, overriding the default "animation".                             |
-| `toastLeave`             | `AnimationBuilder` | Provides a custom leave animation for all `ion-toast`, overriding the default "animation".                             |
+| Configuration            | Type               | Description                                                                                                                 |
+| ------------------------ | ------------------ | --------------------------------------------------------------------------------------------------------------------------- |
+| `actionSheetEnter`       | `AnimationBuilder` | Fournit une animation d'entrée personnalisée pour toutes les `ion-action-sheet`, remplaçant l'"animation" par défaut.       |
+| `actionSheetLeave`       | `AnimationBuilder` | Fournit une animation de sortie personnalisée pour toutes les `ion-action-sheet`, remplaçant l'"animation" par défaut.      |
+| `alertEnter`             | `AnimationBuilder` | Fournit une animation d'entrée personnalisée pour tous les `ion-alert`, remplaçant l'"animation" par défaut.                |
+| `alertLeave`             | `AnimationBuilder` | Fournit une animation de départ personnalisée pour tous les `ion-alert`, remplaçant l'"animation" par défaut.               |
+| `animated`               | `boolean`          | Si `true`, Ionic activera toutes les animations et transitions à travers l'app.                                             |
+| `backButtonIcon`         | `string`           | Remplace l'icône par défaut dans tous les composants `<ion-back-button>`.                                             |
+| `backButtonText`         | `string`           | Remplace le texte par défaut dans tous les composants `<ion-back-button>`.                                            |
+| `hardwareBackButton`     | `boolean`          | Si `true`, Ionic répondra au bouton arrière matériel d'un appareil Android.                                                 |
+| `infiniteLoadingSpinner` | `SpinnerTypes`     | Remplace le type de spinner par défaut dans tous les composants `<ion-infinite-scroll-content>`.                      |
+| `loadingEnter`           | `AnimationBuilder` | Fournit une animation d'entrée personnalisée pour tous les `ion-loading`, remplaçant l'"animation" par défaut.              |
+| `loadingLeave`           | `AnimationBuilder` | Fournit une animation de sortie personnalisée pour tous les `ion-loading`, remplaçant l'"animation" par défaut.             |
+| `loadingSpinner`         | `SpinnerTypes`     | Remplace le spinner par défaut pour tous les recouvrements `ion-loading`.                                                   |
+| `menuIcon`               | `string`           | Remplace l'icône par défaut dans tous les composants `<ion-menu-button>`.                                             |
+| `menuType`               | `string`           | Remplace le type de menu par défaut pour tous les composants `<ion-menu>`.                                            |
+| `modalEnter`             | `AnimationBuilder` | Fournit une animation d'entrée personnalisée pour tous les `ion-modal`, remplaçant l'"animation" par défaut.                |
+| `modalLeave`             | `AnimationBuilder` | Fournit une animation de sortie personnalisée pour tous les `ion-modal`, remplaçant l'"animation" par défaut.               |
+| `mode`                   | `Mode`             | Le mode détermine les styles de plate-forme à utiliser pour l'ensemble de l'application.                                    |
+| `navAnimation`           | `AnimationBuilder` | Remplace l'"animation" par défaut de tous les `ion-nav` et `ion-router-outlet` dans toute l'application.                    |
+| `pickerEnter`            | `AnimationBuilder` | Fournit une animation d'entrée personnalisée pour tous les `ion-picker`, remplaçant l'"animation" par défaut.               |
+| `pickerLeave`            | `AnimationBuilder` | Fournit une animation de sortie personnalisée pour tous les `ion-picker`, remplaçant l'"animation" par défaut.              |
+| `popoverEnter`           | `AnimationBuilder` | Fournit une animation d'entrée personnalisée pour tous les `ion-popover`, remplaçant l'"animation" par défaut.              |
+| `popoverLeave`           | `AnimationBuilder` | Fournit une animation de sortie personnalisée pour tous les `ion-popover`, remplaçant l'"animation" par défaut.             |
+| `refreshingIcon`         | `string`           | Remplace l'icône par défaut dans tous les composants `<ion-refresh-content>`.                                         |
+| `refreshingSpinner`      | `SpinnerTypes`     | Remplace le type de spinner par défaut dans tous les composants `<ion-refresh-content>`.                              |
+| `sanitizerEnabled`       | `boolean`          | Si `true`, Ionic activera un assainisseur DOM de base sur les propriétés des composants qui acceptent du HTML personnalisé. |
+| `spinner`                | `SpinnerTypes`     | Remplace le spinner par défaut dans tous les composants `<ion-spinner>`.                                              |
+| `statusTap`              | `boolean`          | Si `true`, un clic ou un tapotement sur la barre d'état fera défiler le contenu vers le haut.                               |
+| `swipeBackEnabled`       | `boolean`          | Si `true`, Ionic activera le geste "swipe-to-go-back" à travers l'application.                                              |
+| `tabButtonLayout`        | `TabButtonLayout`  | Remplace le "layout" par défaut de tous les `ion-bar-button` dans l'ensemble de l'application.                              |
+| `toastEnter`             | `AnimationBuilder` | Fournit une animation d'entrée personnalisée pour tous les `ion-toast`, remplaçant l'"animation" par défaut.                |
+| `toastLeave`             | `AnimationBuilder` | Fournit une animation de départ personnalisée pour tous les `ion-toast`, remplaçant l'"animation" par défaut.               |
