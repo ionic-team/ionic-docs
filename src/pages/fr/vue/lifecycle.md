@@ -16,12 +16,12 @@ Ionic Framework fournit quelques méthodes de cycle de vie que vous pouvez utili
 | Nom de l'événement | Description                                                                                      |
 | ------------------ | ------------------------------------------------------------------------------------------------ |
 | `ionViewWillEnter` | S'exécute lorsque le composant vers lequel il est acheminé est sur le point d'être animé en vue. |
-| `ionViewDidEnter`  | Fired when the component routing to has finished animating.                                      |
-| `ionViewWillLeave` | Fired when the component routing from is about to animate.                                       |
-| `ionViewDidLeave`  | Fired when the component routing to has finished animating.                                      |
+| `ionViewDidEnter`  | S'exécute lorsque le composant vers lequel il est acheminé a fini de s'animer.                   |
+| `ionViewWillLeave` | S'exécute lorsque le composant d'où provient le routage est sur le point de s'animer.            |
+| `ionViewDidLeave`  | S'exécute lorsque le composant vers lequel il est acheminé a fini de s'animer.                   |
 
 
-The lifecycles are defined the same way Vue lifecycle methods are - as functions at the root of your Vue component:
+Les cycles de vie sont définis de la même manière que les méthodes de cycle de vie de Vue - en tant que fonctions à la racine de votre composant Vue :
 
 ```typescript
 import { IonPage } from '@ionic/vue';
@@ -47,9 +47,9 @@ export default defineComponent({
 })
 ```
 
-### Composition API Hooks
+### Crochets de l'API de composition
 
-These lifecycles can also be expressed using Vue 3's Composition API:
+Ces cycles de vie peuvent également être exprimés à l'aide de l'API de composition de Vue 3 :
 
 ```typescript
 import {
@@ -86,27 +86,27 @@ export default defineComponent({
 })
 ```
 
-> Pages in your app need to be using the `IonPage` component in order for lifecycle methods and hooks to fire properly.
+> Les pages de votre application doivent utiliser le composant `IonPage` pour que les méthodes et les crochets du cycle de vie se déclenchent correctement.
 
-## How Ionic Framework Handles the Life of a Page
+## Comment Ionic Framework gère la vie d'une page
 
-Ionic Framework has its router outlet, called `<ion-router-outlet>`. This outlet extends Vue Router's `<router-view>` with some additional functionality to enable better experiences for mobile devices.
+Ionic Framework possède sa sortie de routeur, appelée `<ion-router-outlet>`. Cet outlet étend le `<router-view>` de Vue Router avec quelques fonctionnalités supplémentaires pour permettre de meilleures expériences pour les appareils mobiles.
 
-When an app is wrapped in `<ion-router-outlet>`, Ionic Framework treats navigation a bit differently. When you navigate to a new page, Ionic Framework will keep the old page in the existing DOM, but hide it from your view and transition the new page. The reason we do this is two-fold:
+Lorsqu'une application est enveloppée dans `<ion-router-outlet>`, Ionic Framework traite la navigation un peu différemment. Lorsque vous naviguez vers une nouvelle page, Ionic Framework conserve l'ancienne page dans le DOM existant, mais la cache de votre vue et fait passer la nouvelle page. La raison pour laquelle nous faisons cela est double :
 
-1) We can maintain the state of the old page (data on the screen, scroll position, etc...). 2) We can provide a smoother transition back to the page since it is already there and does not need to be created.
+1) Nous pouvons maintenir l'état de l'ancienne page (données à l'écran, position de défilement, etc...). 2) Nous pouvons assurer une transition plus douce vers la page, puisqu'elle est déjà présente et qu'il n'est pas nécessaire de la créer.
 
-Pages are only removed from the DOM when they are "popped", for instance, by pressing the back button in the UI or the browsers back button.
+Les pages ne sont retirées du DOM que lorsqu'elles sont "sautées", par exemple en appuyant sur le bouton "Back" de l'interface utilisateur ou sur le bouton "Back" du navigateur.
 
-Because of this special handling, certain Vue Router components such as `<keep-alive>`, `<transition>`, and `<router-view>` should not be used in Ionic Vue applications. Additionally, Vue Router's Scroll Behavior API is not needed here as each page's scroll position is preserved automatically.
+En raison de ce traitement spécial, certains composants Vue Router tels que `<keep-alive>`, `<transition>`, et `<router-view>` ne doivent pas être utilisés dans les applications Ionic Vue. En outre, l'API Scroll Behavior de Vue Router n'est pas nécessaire ici, car la position de défilement de chaque page est préservée automatiquement.
 
-All the lifecycle methods in Vue (`mounted`, `beforeUnmount`, etc..) are available for you to use as well. However, since Ionic Vue manages the lifetime of a page, certain events might not fire when you expect them to. For instance, `mounted` fires the first time a page is displayed, but if you navigate away from the page Ionic Framework might keep the page around in the DOM, and a subsequent visit to the page might not call `mounted` again. This scenario is the main reason the Ionic Framework lifecycle methods exist, to still give you a way to call logic when views enter and exit when the native framework's events might not fire.
+Toutes les méthodes de cycle de vie de Vue (`mounted`, `beforeUnmount`, etc...) sont également disponibles pour vous. Cependant, étant donné que Ionic Vue gère la durée de vie d'une page, certains événements peuvent ne pas se déclencher quand vous l'attendez. Par exemple, `mounted` se déclenche la première fois qu'une page est affichée, mais si vous naviguez loin de la page, Ionic Framework pourrait garder la page autour dans le DOM, et une visite ultérieure de la page pourrait ne pas appeler `mounted` à nouveau. Ce scénario est la raison principale pour laquelle les méthodes de cycle de vie du cadre Ionic existent, pour vous donner un moyen d'appeler la logique lorsque les vues entrent et sortent lorsque les événements du cadre natif ne se déclenchent pas.
 
-## Guidance for Each Lifecycle Method
+## Orientations pour chaque méthode du cycle de vie
 
-Below are some tips on use cases for each of the life cycle events.
+Vous trouverez ci-dessous quelques conseils sur les cas d'utilisation pour chacun des événements du cycle de vie.
 
-- `ionViewWillEnter` - Since `ionViewWillEnter` is called every time the view is navigated to (regardless if initialized or not), it is a good method to load data from services.
-- `ionViewDidEnter` - If you see performance problems from using `ionViewWillEnter` when loading data, you can do your data calls in `ionViewDidEnter` instead. However, this event will not fire until after the page is visible to the user, so you might want to use either a loading indicator or a skeleton screen such as [ion-skeleton-text](../api/skeleton-text), so content does not flash in un-naturally after the transition is complete.
-- `ionViewWillLeave` - Can be used for cleanup, like unsubscribing from data sources. Since `beforeUnmount` might not fire when you navigate from the current page, put your cleanup code here if you do not want it active while the screen is not in view.
-- `ionViewDidLeave` - When this event fires, you know the new page has fully transitioned in, so any logic you might not normally do when the view is visible can go here.
+- `ionViewWillEnter` - Puisque `ionViewWillEnter` est appelé chaque fois que l'on navigue vers la vue (qu'elle soit initialisée ou non), c'est une bonne méthode pour charger des données à partir de services.
+- `ionViewDidEnter` - Si vous constatez des problèmes de performance en utilisant `ionViewWillEnter` lors du chargement des données, vous pouvez faire vos appels de données dans `ionViewDidEnter` à la place. Toutefois, cet événement ne se déclenchera pas avant que la page ne soit visible pour l'utilisateur, de sorte que vous pourriez vouloir utiliser soit un indicateur de chargement, soit un écran squelette tel que [ion-skeleton-text](../api/skeleton-text), afin que le contenu ne clignote pas de manière non naturelle après la transition.
+- `ionViewWillLeave` - Peut être utilisé pour le nettoyage, comme le désabonnement des sources de données. Puisque `beforeUnmount` pourrait ne pas se déclencher lorsque vous naviguez à partir de la page actuelle, mettez votre code de nettoyage ici si vous ne voulez pas qu'il soit actif lorsque l'écran n'est pas visible.
+- `ionViewDidLeave` - Lorsque cet événement se déclenche, vous savez que la nouvelle page a effectué une transition complète, donc toute logique que vous ne feriez pas normalement lorsque la vue est visible peut aller ici.
