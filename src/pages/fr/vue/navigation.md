@@ -130,7 +130,7 @@ Les deux options fournissent le même mécanisme de navigation, mais s'adaptent 
 
 ## Les routes chargées à la volée
 
-La configuration actuelle de nos routes fait qu'elles sont incluses dans le même chunk initial lors du chargement de l'application, ce qui n'est pas toujours idéal. Instead, we can set up our routes so that components are loaded as they are needed:
+La configuration actuelle de nos routes fait qu'elles sont incluses dans le même chunk initial lors du chargement de l'application, ce qui n'est pas toujours idéal. Au lieu de cela, nous pouvons configurer nos routes de manière à ce que les composants soient chargés au fur et à mesure de leurs besoins :
 
 ```typescript
 const routes: Array<RouteRecordRaw> = [
@@ -151,15 +151,15 @@ const routes: Array<RouteRecordRaw> = [
 ]
 ```
 
-Here, we have the same setup as before only this time `DetailPage` has been replaced with an import call. This will result in the `DetailPage` component no longer being part of the chunk that is requested on application load.
+Ici, nous avons la même configuration que précédemment, mais cette fois-ci, `DetailPage` a été remplacé par un appel à l'importation. Ainsi, le composant `DetailPage` ne fera plus partie du chunk demandé au chargement de l'application.
 
-## Shared URLs versus Nested Routes
+## URLs Partagées et Routes Imbriquées
 
-A common point of confusion when setting up routing is deciding between shared URLs or nested routes. This part of the guide will explain both and help you decide which one to use.
+Un point de confusion courant lors de la mise en place du routage consiste à choisir entre des URL partagées ou des routes imbriquées. Cette partie du guide explique les deux et vous aide à décider lequel utiliser.
 
-### Shared URLs
+### Les URLs partagées
 
-Shared URLs is a route configuration where routes have pieces of the URL in common. The following is an example of a shared URL configuration:
+Les URL partagées sont une configuration de route où les routes ont des morceaux d'URL en commun. Ce qui suit est un exemple de configuration d'URL partagée :
 
 ```typescript
 const routes: Array<RouteRecordRaw> = [
@@ -174,11 +174,11 @@ const routes: Array<RouteRecordRaw> = [
 ];
 ```
 
-The above routes are considered "shared" because they reuse the `dashboard` piece of the URL.
+Les routes ci-dessus sont considérées comme "partagées" car elles réutilisent la partie `dashboard` de l'URL.
 
-### Nested Routes
+### Les Routes imbriquées
 
-Nested Routes is a route configuration where routes are listed as children of other routes. The following is an example of a nested route configuration:
+Les routes imbriquées sont une configuration de routes où les routes sont listées comme enfants d'autres routes. L'exemple suivant est un exemple de configuration de route imbriquée :
 
 ```typescript
 const routes: Array<RouteRecordRaw> = [
@@ -199,19 +199,19 @@ const routes: Array<RouteRecordRaw> = [
 ];
 ```
 
-The above routes are nested because they are in the `children` array of the parent route. Notice that the parent route renders the `DashboardRouterOutlet` component. When you nest routes, you need to render another instance of `ion-router-outlet`.
+Les routes ci-dessus sont imbriquées car elles se trouvent dans le tableau `children` de la route parent. Remarquez que la route parent rend le composant `DashboardRouterOutlet`. Lorsque vous imbriquez des routes, vous devez rendre une autre instance de `ion-router-outlet`.
 
-### Which one should I choose?
+### Lequel devrais-je choisir ?
 
-Shared URLs are great when you want to transition from page A to page B while preserving the relationship between the two pages in the URL. In our previous example, a button on the `/dashboard` page could transition to the `/dashboard/stats` page. The relationship between the two pages is preserved because of a) the page transition and b) the url.
+Les URL partagées sont idéales lorsque vous souhaitez passer de la page A à la page B tout en préservant la relation entre les deux pages dans l'URL. Dans notre exemple précédent, un bouton sur la page `/dashboard` pourrait faire la transition vers la page `/dashboard/stats`. La relation entre les deux pages est préservée grâce à a) la transition de page et b) l'url.
 
-Nested routes are mostly useful when you need to render content in outlet A while also rendering sub-content inside of a nested outlet B. The most common use case you will run into is tabs. When you load up a tabs Ionic starter application, you will see `ion-tab-bar` and `ion-tabs` components rendered in the first `ion-router-outlet`. The `ion-tabs` component renders another `ion-router-outlet` which is responsible for rendering the contents of each tab.
+Les routes imbriquées sont surtout utiles lorsque vous devez rendre un contenu dans la sortie A tout en rendant un sous-contenu dans une sortie imbriquée B. Le cas d'utilisation le plus courant est celui des onglets. Lorsque vous chargez une application Ionic starter tabs, vous verrez les composants `ion-tab-bar` et `ion-tabs` rendus dans le premier `ion-router-outlet`. Le composant `ion-tabs` rend un autre `ion-router-outlet` qui est chargé de rendre le contenu de chaque onglet.
 
-There are very few use cases in which nested routes make sense in mobile applications. When in doubt, use the shared URL route configuration. We strongly caution against using nested routing in contexts other than tabs as it can quickly make navigating your app confusing.
+Il y a très peu de cas d'utilisation dans lesquels les routes imbriquées ont un sens dans les applications mobiles. En cas de doute, utilisez la configuration de route de l'URL partagée. Nous vous déconseillons fortement d'utiliser le routage imbriqué dans des contextes autres que les onglets, car cela peut rapidement rendre la navigation dans votre application confuse.
 
-## Working with Tabs
+## Travailler avec les onglets
 
-When working with tabs, Ionic Vue needs a way to know which view belongs to which tab. The `IonTabs` component comes in handy here, but let's look at what the routing setup for this looks like:
+Lorsque vous travaillez avec des onglets, Ionic Vue a besoin d'un moyen de savoir quelle vue appartient à quel onglet. Le composant `IonTabs` est utile ici, mais regardons à quoi ressemble la configuration du routage pour cela :
 
 ```typescript
 const routes: Array<RouteRecordRaw> = [
@@ -244,9 +244,9 @@ const routes: Array<RouteRecordRaw> = [
 ]
 ```
 
-Here, our `tabs` path loads a `Tabs` component. We provide each tab as a route object inside of the `children` array. In this example, we call the path `tabs`, but this can be customized.
+Ici, notre chemin `tabs` charge un composant `Tabs`. Nous fournissons chaque onglet comme un objet route à l'intérieur du tableau `children`. Dans cet exemple, nous appelons le chemin `tabs`, mais cela peut être personnalisé.
 
-Let's start by taking a look at our `Tabs` component:
+Commençons par jeter un coup d'œil à notre composant `Tabs` :
 
 ```html
 <template>
@@ -292,11 +292,11 @@ export default {
 </script>
 ```
 
-If you have worked with Ionic Framework before, this should feel familiar. We create an `ion-tabs` component, and provide an `ion-tab-bar`. The `ion-tab-bar` provides and `ion-tab-button` components, each with a `tab` property that is associated with its corresponding tab in the router config.
+Si vous avez déjà travaillé avec le Framework Ionic, cela devrait vous sembler familier. Nous créons un composant `ion-tabs`, et fournissons une `ion-tab-bar`. Le `ion-tab-bar` fournit et `ion-tab-button` composants, chacun avec une propriété `tab` qui est associée à son onglet correspondant dans la configuration du routeur.
 
-### Child Routes within Tabs
+### Routes enfants dans les onglets
 
-When adding additional routes to tabs you should write them as sibling routes with the parent tab as the path prefix. The example below defines the `/tabs/tab1/view` route as a sibling of the `/tabs/tab1` route. Since this new route has the `tab1` prefix, it will be rendered inside of the `Tabs` component, and Tab 1 will still be selected in the `ion-tab-bar`.
+Lorsque vous ajoutez des itinéraires supplémentaires aux onglets, vous devez les écrire comme des itinéraires frères avec l'onglet parent comme préfixe du chemin. The example below defines the `/tabs/tab1/view` route as a sibling of the `/tabs/tab1` route. Since this new route has the `tab1` prefix, it will be rendered inside of the `Tabs` component, and Tab 1 will still be selected in the `ion-tab-bar`.
 
 ```typescript
 const routes: Array<RouteRecordRaw> = [
