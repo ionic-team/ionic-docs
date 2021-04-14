@@ -296,7 +296,7 @@ Si vous avez déjà travaillé avec le Framework Ionic, cela devrait vous semble
 
 ### Routes enfants dans les onglets
 
-Lorsque vous ajoutez des itinéraires supplémentaires aux onglets, vous devez les écrire comme des itinéraires frères avec l'onglet parent comme préfixe du chemin. The example below defines the `/tabs/tab1/view` route as a sibling of the `/tabs/tab1` route. Since this new route has the `tab1` prefix, it will be rendered inside of the `Tabs` component, and Tab 1 will still be selected in the `ion-tab-bar`.
+Lorsque vous ajoutez des itinéraires supplémentaires aux onglets, vous devez les écrire comme des itinéraires frères avec l'onglet parent comme préfixe du chemin. L'exemple ci-dessous définit la route `/tabs/tab1/view` comme un frère de la route `/tabs/tab1`. Puisque cette nouvelle route a le préfixe `tab1`, elle sera rendue à l'intérieur du composant `Tabs`, et l'onglet 1 sera toujours sélectionné dans la `ion-tab-bar`.
 
 ```typescript
 const routes: Array<RouteRecordRaw> = [
@@ -335,13 +335,13 @@ const routes: Array<RouteRecordRaw> = [
 
 ## IonRouterOutlet
 
-The `IonRouterOutlet` component provides a container to render your views in. It is similar to the `RouterView` component found in other Vue applications except that `IonRouterOutlet` can render multiple pages in the DOM in the same outlet. When a component is rendered in `IonRouterOutlet` we consider this to be an Ionic Framework "page". The router outlet container controls the transition animation between the pages as well as controls when a page is created and destroyed. This helps maintain the state between the views when switching back and forth between them.
+Le composant `IonRouterOutlet` fournit un conteneur pour le rendu de vos vues. Il est similaire au composant `RouterView` que l'on trouve dans d'autres applications Vue, sauf que le `IonRouterOutlet` peut rendre plusieurs pages du DOM dans le même outlet. Lorsqu'un composant est rendu dans `IonRouterOutlet`, nous considérons qu'il s'agit d'une "page" Ionic Framework. Le conteneur de sortie du routeur contrôle l'animation de transition entre les pages ainsi que le moment où une page est créée et détruite. Cela permet de maintenir l'état entre les vues lorsque l'on passe de l'une à l'autre.
 
-Nothing should be provided inside of `IonRouterOutlet` when setting it up in your template. While `IonRouterOutlet` can be nested in child components, we caution against it as it typically makes navigation in apps confusing. See [Shared URLs versus Nested Routes](#shared-urls-versus-nested-routes) for more information.
+Rien ne doit être fourni à l'intérieur de `IonRouterOutlet` lors de sa mise en place dans votre modèle. Bien que le `IonRouterOutlet` puisse être imbriqué dans des composants enfants, nous le déconseillons car il rend généralement la navigation dans les applications confuse. Voir [Les URL partagées par rapport aux routes imbriquées](#shared-urls-versus-nested-routes) pour plus d'informations.
 
 ## IonPage
 
-The `IonPage` component wraps each view in an Ionic Vue app and allows page transitions and stack navigation to work properly. Each view that is navigated to using the router must include an `IonPage` component.
+Le composant `IonPage` enveloppe chaque vue dans une application Ionic Vue et permet aux transitions de page et à la navigation en pile de fonctionner correctement. Chaque vue vers laquelle on navigue à l'aide du routeur doit inclure un composant `IonPage`.
 
 ```html
 <template>
@@ -377,11 +377,11 @@ export default defineComponent({
 </script>
 ```
 
-Components presented via `IonModal` or `IonPopover` do not typically need an `IonPage` component unless you need a wrapper element. In that case, we recommend using `IonPage` so that the component dimensions are still computed properly.
+Les composants présentés via `IonModal` ou `IonPopover` n'ont généralement pas besoin d'un composant `IonPage`, sauf si vous avez besoin d'un élément d'habillage. Dans ce cas, nous recommandons d'utiliser le `IonPage` afin que les dimensions du composant soient toujours calculées correctement.
 
-## Accessing the IonRouter Instance
+## Accès à l'instance IonRouter
 
-There may be a few use cases where you need to get access to the `IonRouter` instance from within your Vue application. For example, you might want to know if you are at the root page of the application when a user presses the hardware back button on Android. For use cases like these, you can inject the `IonRouter` dependency into your component:
+Il peut y avoir quelques cas d'utilisation où vous devez avoir accès à l'instance `IonRouter` à partir de votre application Vue. Par exemple, vous pourriez vouloir savoir si vous êtes à la page racine de l'application lorsqu'un utilisateur appuie sur le bouton de retour du matériel sur Android. Pour de tels cas d'utilisation, vous pouvez injecter la dépendance `IonRouter` dans votre composant :
 
 ```typescript
 import { useIonRouter } from '@ionic/vue';
@@ -398,9 +398,9 @@ export default {
 }
 ```
 
-## URL Parameters
+## Les Paramètres d'URL
 
-Let's expand upon our original routing example to show how we can use URL parameters:
+Développons notre exemple de routage initial pour montrer comment utiliser les paramètres URL :
 
 ```typescript
 const routes: Array<RouteRecordRaw> = [
@@ -421,9 +421,9 @@ const routes: Array<RouteRecordRaw> = [
 ]
 ```
 
-Notice that we have now added `:id` to the end of our `detail` path string. URL parameters are dynamic portions of our route paths. When the user navigates to a URL such as `/details/1` the "1" is saved to a parameter named "id" which can be accessed in the component when the route renders.
+Remarquez que nous avons maintenant ajouté `:id` à la fin de notre chaîne de chemin `detail`. Les paramètres URL sont des parties dynamiques de nos chemins d'accès. Lorsque l'utilisateur navigue vers une URL telle que `/details/1`, le "1" est enregistré dans un paramètre nommé "id" auquel on peut accéder dans le composant lors du rendu de la route.
 
-Let's look at how to use it in our component:
+Voyons comment l'utiliser dans notre composant :
 
 ```html
 <template>
@@ -463,18 +463,18 @@ export default defineComponent({
 </script>
 ```
 
-Our `route` variable contains an instance of the current route. It also contains any parameters we have passed in. We can obtain the `id` parameter from here and display it on the screen.
+Notre variable `route` contient une instance de la route actuelle. Il contient également tous les paramètres que nous avons passés. Nous pouvons obtenir le paramètre `id` à partir d'ici et l'afficher à l'écran.
 
-## Router History
+## Historique du routeur
 
-Vue Router ships with a configurable history mode. Let's look at the different options and why you might want to use each one.
+Vue Router est livré avec un mode historique configurable. Examinons les différentes options et pourquoi vous pourriez vouloir utiliser chacune d'entre elles.
 
-* `createWebHistory`: This option creates an HTML5 history. It leverages the History API to achieve URL navigation without a page reload. This is the most common history mode for single page applications. When in doubt, use `createWebHistory`.
+* `createWebHistory` : Cette option crée un historique HTML5. Il exploite l'API d'historique pour réaliser la navigation URL sans rechargement de la page. Il s'agit du mode d'historique le plus courant pour les applications à page unique. Dans le doute, utilisez `createWebHistory`.
 
-* `createWebHashHistory`: This option adds a hash (`#`) to your URL. This is useful for web applications with no host or when you do not have full control over the server routes. Search engines sometimes ignore hash fragments, so you should use `createWebHistory` instead if SEO is important for your application.
+* `createWebHashHistory` : Cette option ajoute un hash (`#`) à votre URL. Ceci est utile pour les applications web sans hôte ou lorsque vous n'avez pas le contrôle total des routes du serveur. Les moteurs de recherche ignorent parfois les fragments de hachage, vous devriez donc utiliser `createWebHistory` à la place si le référencement est important pour votre application.
 
-* `createMemoryHistory`: This option creates an in-memory based history. This is mainly used to handle server-side rendering (SSR).
+* `createMemoryHistory` : Cette option crée un historique basé sur la mémoire. Il est principalement utilisé pour gérer le rendu côté serveur (SSR).
 
-## More Information
+## En savoir plus
 
-For more info on routing in Vue using Vue Router, check out their docs at http://router.vuejs.org/.
+Pour plus d'informations sur le routage de Vue à l'aide de Vue Router, consultez leur documentation sur http://router.vuejs.org/.
