@@ -68,7 +68,7 @@ Dans notre redirection, nous cherchons le chemin d'index de notre application. E
 
 ## Naviguer vers différentes routes
 
-This is all great, but how does one actually navigate to a route? For this, we can use the `router-link` property. Let's create a new routing setup:
+Tout cela est très bien, mais comment se rendre à un itinéraire ? Pour cela, nous pouvons utiliser la propriété `router-link`. Créons une nouvelle configuration de routage :
 
 ```typescript
 const routes: Array<RouteRecordRaw> = [
@@ -89,13 +89,13 @@ const routes: Array<RouteRecordRaw> = [
 ]
 ```
 
-Say we start on the `home` route, and we want to add a button that takes us to the `detail` route. We can do this using the following HTML to navigate to the `detail` route:
+Disons que nous commençons sur la route `home`, et que nous voulons ajouter un bouton qui nous amène à la route `detail`. Nous pouvons le faire en utilisant le HTML suivant pour naviguer vers la route `detail` :
 
 ```html
 <ion-button router-link="/detail">Go to detail</ion-button>
 ```
 
-We can also programmatically navigate in our app by using the router API:
+Nous pouvons également naviguer de manière programmatique dans notre application en utilisant l'API du routeur :
 
 ```html
 <template>
@@ -126,11 +126,11 @@ We can also programmatically navigate in our app by using the router API:
 </script>
 ```
 
-Both options provide the same navigation mechanism, just fitting different use cases.
+Les deux options fournissent le même mécanisme de navigation, mais s'adaptent à des cas d'utilisation différents.
 
-## Lazy Loading Routes
+## Les routes chargées à la volée
 
-The current way our routes are setup makes it so they are included in the same initial chunk when loading the app, which is not always ideal. Instead, we can set up our routes so that components are loaded as they are needed:
+La configuration actuelle de nos routes fait qu'elles sont incluses dans le même chunk initial lors du chargement de l'application, ce qui n'est pas toujours idéal. Instead, we can set up our routes so that components are loaded as they are needed:
 
 ```typescript
 const routes: Array<RouteRecordRaw> = [
