@@ -15,11 +15,11 @@ Tout ce que vous savez sur le routage avec Vue Router est transféré dans Ionic
 
 ## Une brève note
 
-While reading this guide, you may notice that most of these concepts are very similar to the concepts found in Vue Router without Ionic Framework. You observation would be correct! Ionic Vue leverages the best parts of Vue Router to make the transition to building apps with Ionic Framework as seamless as possible. As a result, we recommend relying on Vue Router features as much as possible rather than trying to build your own routing solutions.
+En lisant ce guide, vous remarquerez peut-être que la plupart de ces concepts sont très similaires à ceux que l'on trouve dans Vue Router sans Ionic Framework. Votre observation serait correcte! Ionic Vue exploite les meilleures parties de Vue Router pour rendre la transition vers la construction d'applications avec Ionic Framework aussi transparente que possible. Par conséquent, nous vous recommandons de vous appuyer autant que possible sur les fonctionnalités de Vue Router plutôt que d'essayer de construire vos propres solutions de routage.
 
-## A Simple Route
+## Une simple route
 
-Here is a sample routing configuration that defines a single route to the "/home" URL. When you visit "/home", the route renders the `HomePage` component.
+Voici un exemple de configuration de routage qui définit une seule route vers l'URL "/home". Lorsque vous visitez "/home", l'itinéraire affiche le composant `Page d'accueil`.
 
 **router/index.ts**
 
@@ -44,11 +44,11 @@ const router = createRouter({
 export default router;
 ```
 
-On the app's initial load, the app will render the `HomePage` component as that is what is configured here.
+Au chargement initial de l'application, l'application rendra le composant `HomePage` car c'est ce qui est configuré ici.
 
-## Handling Redirects
+## Gestion des redirections
 
-What if we wanted to land a different path on our initial load? For this, we can use router redirects. Redirects work the same way that a typical route object does, but just includes some different keys:
+Et si nous voulions atterrir un chemin différent sur notre charge initiale? Pour cela, nous pouvons utiliser les redirections du routeur. Les redirections fonctionnent de la même manière qu'un objet de route typique, mais comprennent simplement quelques clés différentes :
 
 ```typescript
 const routes: Array<RouteRecordRaw> = [
@@ -64,9 +64,9 @@ const routes: Array<RouteRecordRaw> = [
 ]
 ```
 
-In our redirect, we look for the index path of our app. Then if we load that, we redirect to the `home` route.
+Dans notre redirection, nous cherchons le chemin d'index de notre application. Ensuite, si nous le chargeons, nous redirigeons vers la route `home`.
 
-## Navigating to Different Routes
+## Naviguer vers différentes routes
 
 This is all great, but how does one actually navigate to a route? For this, we can use the `router-link` property. Let's create a new routing setup:
 
