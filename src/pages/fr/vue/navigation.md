@@ -5,15 +5,15 @@ nextText: 'Configuration'
 nextUrl: '/docs/vue/config'
 ---
 
-# Vue Navigation
+# Navigation de Vue
 
-This guide covers how routing works in an app built with Ionic and Vue.
+Ce guide couvre le fonctionnement du routage dans une application construite avec Ionic et Vue.
 
-The `IonRouterOutlet` component uses the popular [Vue Router](https://router.vuejs.org/) library under the hood. With Ionic and Vue Router, you can create multi-page apps with rich page transitions.
+Le composant `IonRouterOutlet` utilise la populaire bibliothèque [Vue Router](https://router.vuejs.org/) sous le capot. Avec Ionic et Vue Router, vous pouvez créer des applications multi-pages avec des transitions de page riche.
 
-Everything you know about routing using Vue Router carries over into Ionic Vue. Let's take a look at the basics of an Ionic Vue app and how routing works with it.
+Tout ce que vous savez sur le routage avec Vue Router est transféré dans Ionic Vue. Regardons les bases d'une application Ionic Vue et comment le routage fonctionne avec elle.
 
-## A Brief Note
+## Une brève note
 
 While reading this guide, you may notice that most of these concepts are very similar to the concepts found in Vue Router without Ionic Framework. You observation would be correct! Ionic Vue leverages the best parts of Vue Router to make the transition to building apps with Ionic Framework as seamless as possible. As a result, we recommend relying on Vue Router features as much as possible rather than trying to build your own routing solutions.
 
