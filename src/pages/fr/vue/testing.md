@@ -1,10 +1,10 @@
 ---
 previousText: 'Progressive Web Apps'
 previousUrl: '/docs/vue/pwa'
-nextText: 'Troubleshooting'
+nextText: 'Dépannage'
 nextUrl: '/docs/vue/troubleshooting'
 ---
 
-# Testing
+# Réaliser des tests
 
-Coming Soon!
+à venir !
