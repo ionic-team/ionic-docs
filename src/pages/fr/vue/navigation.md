@@ -1,7 +1,7 @@
 ---
-previousText: 'Lifecycle'
+previousText: 'Cycle de Vie'
 previousUrl: '/docs/vue/lifecycle'
-nextText: 'Config'
+nextText: 'Configuration'
 nextUrl: '/docs/vue/config'
 ---
 
