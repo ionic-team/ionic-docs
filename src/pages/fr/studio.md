@@ -2,19 +2,19 @@
 tableOfContents: false
 ---
 
-# Welcome to Studio
+# Bienvenue dans Studio
 
-Ionic Studio is a fast and easy app builder that helps teams build and prototype apps with minimal coding.
+Ionic Studio est un constructeur d'applications rapide et facile qui aide les équipes à construire et à prototyper des applications avec un codage minimal.
 
-Studio is designed to integrate into an existing developer workflow, rather than replace it, enabling developers and architects to build visually *or* drop down to code using their favorite tools.
+Studio est conçu pour s'intégrer dans un flux de travail de développeur existant, plutôt que de le remplacer, permettant aux développeurs et aux architectes de construire visuellement *ou* de descendre vers le code en utilisant leurs outils préférés.
 
-Studio fully supports bringing code back into the tool, something virtually unheard of in the app development tools market.
+Studio prend entièrement en charge le retour du code dans l'outil, ce qui est pratiquement inédit sur le marché des outils de développement d'applications.
 
-Studio is a desktop tool and requires a subscription, and is only for Ionic Angular 4.x+ projects. To get started, sign up below:
+Studio est un outil de bureau et nécessite un abonnement, et est uniquement destiné aux projets Ionic Angular 4.x+. Pour commencer, inscrivez-vous ci-dessous:
 
 <docs-cards class="static-width"> <docs-card header="Get Studio" href="https://ionicframework.com/studio?utm_source=docs&utm_medium=website&utm_campaign=studio%20launch" icon="/docs/assets/icons/guide-installation-icon.png"> 
 
-Sign up for Studio and start building today.</docs-card>
+Inscrivez-vous à Studio et commencez à construire dès aujourd'hui.</docs-card>
 
 <!-- <docs-card header="Quickstart" href="/docs/studio/guides/quickstart" img="/docs/assets/icons/guide-quickstart.png">
     <p>Get started by creating a new app and diving head-first into the suite of features offered by Ionic Studio.</p>
