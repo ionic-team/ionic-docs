@@ -35,19 +35,19 @@ Selon le périphérique sur lequel vous vous trouvez, `getPlatforms` peut renvoy
 
 Vous trouverez ci-dessous un tableau répertoriant toutes les valeurs possibles de la plate-forme ainsi que les descriptions correspondantes.
 
-| Nom de la plateforme | Description                              |
-| -------------------- | ---------------------------------------- |
-| android              | un appareil fonctionnant sous Android    |
-| capacitor            | un appareil exécutant Capacitor          |
-| cordova              | un appareil exécutant Cordova            |
-| desktop              | a desktop device                         |
-| electron             | a desktop device running Electron        |
-| hybrid               | a device running Capacitor or Cordova    |
-| ios                  | a device running iOS                     |
-| ipad                 | an iPad device                           |
-| iphone               | an iPhone device                         |
-| mobile               | a mobile device                          |
-| mobileweb            | a web browser running in a mobile device |
-| phablet              | a phablet device                         |
-| pwa                  | a PWA app                                |
-| tablet               | a tablet device                          |
+| Nom de la plateforme | Description                                           |
+| -------------------- | ----------------------------------------------------- |
+| android              | un appareil fonctionnant sous Android                 |
+| capacitor            | un appareil exécutant Capacitor                       |
+| cordova              | un appareil exécutant Cordova                         |
+| desktop              | un appareil de bureau                                 |
+| electron             | un appareil de bureau exécutant Electron              |
+| hybrid               | un appareil exécutant Capacitor ou Cordova            |
+| ios                  | un appareil fonctionnant sous iOS                     |
+| ipad                 | un appareil iPad                                      |
+| iphone               | un appareil iPhone                                    |
+| mobile               | un appareil mobile                                    |
+| mobileweb            | un navigateur Web fonctionnant sur un appareil mobile |
+| phablet              | un appareil phablet                                   |
+| pwa                  | une application PWA                                   |
+| tablet               | a tablet device                                       |
