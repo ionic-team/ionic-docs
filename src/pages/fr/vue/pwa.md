@@ -70,12 +70,12 @@ if (process.env.NODE_ENV === 'production') {
 
 Le travailleur de service qui est généré est basé sur [le plugin webpack de Workbox](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin), et par défaut est configuré pour utiliser `GenerateSW()`. Cela signifie qu'au moment de la construction, Workbox génère automatiquement un cache de travailleur de service pour tous les fichiers qu'il traite.
 
-If you want to configure this and change the default behavior, checkout the [PWA plugin docs](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa#configuration) on GitHub.
+Si vous souhaitez le configurer et modifier le comportement par défaut, consultez la [Documentation du plugin PWA](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa#configuration) sur GitHub.
 
 
-### Manifest
+### Le Manifeste
 
-In addition to the service worker, the Vue PWA plugin also is responsible for creating a manifest file for your app as well. By default, the CLI will generate a manifest that contains the following entries.
+En plus du travailleur de service, le plugin Vue PWA est également responsable de la création d'un fichier manifeste pour votre application. Par défaut, le CLI générera un manifeste contenant les entrées suivantes.
 
 ```json
 {
@@ -112,42 +112,42 @@ In addition to the service worker, the Vue PWA plugin also is responsible for cr
 }
 ```
 
-Be sure to update the icons in `public/img/icons` to match your own brand. If you wanted to customize the theme color or name, be sure to read the [PWA plugin docs](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa#configuration) on GitHub.
+Veillez à mettre à jour les icônes dans `public/img/icons` pour qu'elles correspondent à votre propre marque. Si vous souhaitez personnaliser la couleur ou le nom du thème, veillez à lire la [Documentation du plugin PWA](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa#configuration) sur GitHub.
 
-## Deploying
+## Le Déploiement
 
-You can use various hosts like Firebase, Vercel, Netlify, or even Azure Static Web Apps. All will have similar setup processes that need to be completed. For this guide, Firebase will be used as the hosting example. In addition to this guide, the [Vue CLI docs](https://cli.vuejs.org/guide/deployment.html) also have a guide on how to deploy to various providers.
+Vous pouvez utiliser différents hôtes comme Firebase, Vercel, Netlify, ou même Azure Static Web Apps. Tous auront des processus de configuration similaires qui devront être complétés. Pour ce guide, Firebase sera utilisé comme exemple d'hébergement. En plus de ce guide, les [documents Vue CLI](https://cli.vuejs.org/guide/deployment.html) contiennent également un guide sur la façon de déployer vers divers fournisseurs.
 
 
 ### Firebase
 
-Firebase hosting provides many benefits for Progressive Web Apps, including fast response times thanks to CDNs, HTTPS enabled by default, and support for [HTTP2 push](https://firebase.googleblog.com/2016/09/http2-comes-to-firebase-hosting.html).
+L'hébergement Firebase offre de nombreux avantages pour les Progressive Web Apps, notamment des temps de réponse rapides grâce aux CDN, le HTTPS activé par défaut et la prise en charge de [HTTP2 push](https://firebase.googleblog.com/2016/09/http2-comes-to-firebase-hosting.html).
 
-First, if not already available, [create the project](https://console.firebase.google.com) in Firebase.
+Tout d'abord, s'il n'est pas déjà disponible, [créer le projet](https://console.firebase.google.com) dans Firebase.
 
-Next, in a Terminal, install the Firebase CLI:
+Ensuite, dans un Terminal, installez le Firebase CLI :
 
 ```shell
 $ npm install -g firebase-tools
 ```
 
-With the Firebase CLI installed, run `firebase init` within your Ionic project. The CLI prompts:
+Une fois la CLI Firebase installée, exécutez `firebase init` dans votre projet Ionic. Le CLI vous invite à le faire :
 
-**"Which Firebase CLI features do you want to set up for this folder?"**  Choose "Hosting: Configure and deploy Firebase Hosting sites."
+**"Quelles fonctionnalités Firebase CLI voulez-vous configurer pour ce dossier ?"** Choisissez "Hébergement : Configurer et déployer les sites d'hébergement Firebase."
 
-**"Select a default Firebase project for this directory:"** Choose the project you created on the Firebase website.
+**"Sélectionnez un projet Firebase par défaut pour ce répertoire :"** Choisissez le projet que vous avez créé sur le site web de Firebase.
 
-**"What do you want to use as your public directory?"** Enter "dist".
+**"Que voulez-vous utiliser comme répertoire public ?"** Saisissez "dist".
 
-> Note: Answering these next two questions will ensure that routing, hard reload, and deep linking work in the app:
+> Remarque : en répondant à ces deux questions, vous vous assurez que le routage, le rechargement dur et les liens profonds fonctionnent dans l'application :
 
-**Configure as a single-page app (rewrite all urls to /index.html)?"** Enter "Yes".
+**Configurer comme une application à page unique (réécrire toutes les urls vers /index.html) ?"** Saisir "Oui".
 
-**"File dist/index.html already exists. Overwrite?"** Enter "No".
+**"Le fichier dist/index.html existe déjà. Overwrite (écraser)?"** Entrez "No".
 
-A `firebase.json` config file is generated, configuring the app for deployment.
+Un fichier de configuration `firebase.json` est généré, configurant l'application pour le déploiement.
 
-The last thing needed is to make sure caching headers are being set correctly. To do this, add a `headers` snippet to the `firebase.json` file. The complete `firebase.json` looks like:
+La dernière chose à faire est de s'assurer que les en-têtes de mise en cache sont correctement définis. Pour ce faire, ajoutez un extrait de `headers` au fichier `firebase.json`. Le `firebase.json` complet ressemble à :
 
 ```json
 {
@@ -198,18 +198,18 @@ The last thing needed is to make sure caching headers are being set correctly. T
 }
 ```
 
-For more information about the `firebase.json` properties, see the [Firebase documentation](https://firebase.google.com/docs/hosting/full-config#section-firebase-json).
+Pour plus d'informations sur les propriétés `firebase.json`, consultez la [Documentation Firebase](https://firebase.google.com/docs/hosting/full-config#section-firebase-json).
 
-Next, build an optimized version of the app by running:
+Ensuite, construisez une version optimisée de l'application en l'exécutant :
 
 ```shell
 $ ionic build
 ```
 
-Last, deploy the app by running:
+Enfin, déployez l'application en exécutant :
 
 ```shell
 $ firebase deploy
 ```
 
-After this completes, the app will be live.
+Une fois cette opération terminée, l'application sera en ligne.
