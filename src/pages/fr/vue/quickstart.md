@@ -49,16 +49,16 @@ npm uninstall --save typescript @types/jest @typescript-eslint/eslint-plugin @ty
 
 3. Supprimez `@vue/typescript/recommended` et `@typescript-eslint/no-explicit-any : 'off',`de `.eslintrc.js`.
 
-4. Remove `Array<RouteRecordRaw>` from `router/index.js`.
+4. Supprimez `Array<RouteRecordRaw>` de `router/index.js`.
 
-5. Delete the `shims-vue.d.ts` file.
+5. Supprimez le fichier `shims-vue.d.ts`.
 
-6. Remove `lang="ts"` from the `script` tags in any of your Vue components that have them. In a blank Ionic Vue app, this should only be `App.vue` and `views/Home.vue`.
+6. Supprimez `lang="ts"` des balises `script` dans tous vos composants Vue qui en possèdent. Dans une application Ionic Vue vierge, cela ne devrait être que `App.vue` et `views/Home.vue`.
 
 
-## A look at a Vue Component
+## Un regard sur un composant Vue
 
-The base of our app will be in the `src` directory, and the main entry point will be our `main.ts` file. If we open our project in a code editor and open `main.ts`, we should see the following:
+La base de notre application sera dans le répertoire `src`, et le point d'entrée principal sera notre fichier `main.ts`. Si nous ouvrons notre projet dans un éditeur de code et ouvrons `main.ts`, nous devrions voir ce qui suit :
 
 ```ts
 import { createApp } from 'vue';
@@ -76,14 +76,14 @@ router.isReady().then(() => {
 });
 ```
 
-So what is going on here? The first four lines are pulling in some dependencies. The `createApp` function lets us initialize our Vue application, while `IonicVue` is a plugin that allows us to use Ionic Framework in a Vue environment.
+Alors, qu'est-ce qui se passe ici ? Les quatre premières lignes font appel à certaines dépendances. La fonction `createApp` nous permet d'initialiser notre application Vue, tandis que `IonicVue` est un plugin qui nous permet d'utiliser Ionic Framework dans un environnement Vue.
 
-The third import is the root component for our app, simply named `App`. This is our first Vue component and will be used in the bootstrapping process for our Vue app.
+Le troisième import est le composant racine de notre application, simplement nommé `App`. C'est notre premier composant Vue et il sera utilisé dans le processus de démarrage de notre application Vue.
 
 
-The fourth import gets our routing configuration. We will look at this more in depth later.
+Le quatrième import permet d'obtenir notre configuration de routage. Nous y reviendrons plus en détail ultérieurement.
 
-If we open `App.vue` we should see the following:
+Si nous ouvrons `App.vue`, nous devrions voir ce qui suit :
 
 ```html
 <template>
@@ -106,16 +106,16 @@ export default defineComponent({
 </script>
 ```
 
-Let's break it down, starting with the first group of imports.
+Décomposons le tout, en commençant par le premier groupe d'importations.
 
 
 ```typescript
 import { IonApp, IonRouterOutlet } from '@ionic/vue';
 ```
 
-To use a component in Vue, you must first import it. So for Ionic Framework, this means anytime we want to use a Button or a Card, it must be added to our imports. In the case of our `App` component, we are using `IonApp` and `IonRouterOutlet`. You can also register components globally if you find yourself importing the same components repeatedly. This comes with performance tradeoffs that we cover in [Optimizing Your App](#optimizing-your-app).
+Pour utiliser un composant dans Vue, vous devez d'abord l'importer. Ainsi, pour Ionic Framework, cela signifie que chaque fois que nous voulons utiliser un bouton ou une carte, il faut l'ajouter à nos importations. Dans le cas de notre composant `App`, nous utilisons `IonApp` et `IonRouterOutlet`. Vous pouvez également enregistrer les composants de manière globale si vous vous retrouvez à importer les mêmes composants à plusieurs reprises. Cela s'accompagne de compromis en matière de performances que nous abordons dans [Optimisation de votre application](#optimizing-your-app).
 
-From there, let's look at the template.
+A partir de là, regardons le modèle.
 
 ```html
 <template>
@@ -125,9 +125,9 @@ From there, let's look at the template.
 </template>
 ```
 
-All Vue components must have a `<template>`. Inside of there, we place our `IonApp` and `IonRouterOutlet` components.
+Tous les composants Vue doivent avoir un `<template>`. A l'intérieur de celle-ci, nous plaçons nos composants `IonApp` et `IonRouterOutlet`.
 
-Finally, let's look at the component definition:
+Enfin, examinons la définition du composant :
 
 ```typescript
 import { IonApp, IonRouterOutlet } from '@ionic/vue';
@@ -142,9 +142,9 @@ export default defineComponent({
 });
 ```
 
-Vue 3 offers a new `defineComponent` function when creating components for improved tooling support, and we are going to use that here. We first define the name of the component, and then we supply the components that we will use in our template.
+Vue 3 offre une nouvelle fonction `defineComponent` lors de la création de composants pour une meilleure prise en charge des outils, et nous allons l'utiliser ici. Nous définissons d'abord le nom du composant, puis nous fournissons les composants que nous utiliserons dans notre modèle.
 
-There are several arguments you can supply here such as `methods`, `setup` and more. This is explained as part of Vue's [Composition API Documentation](https://v3.vuejs.org/guide/composition-api-introduction.html#why-composition-api).
+Il y a plusieurs arguments que vous pouvez fournir ici tels que `methods`, `setup` et plus encore. Ceci est expliqué dans le cadre de la [Documentation de l'API de composition](https://v3.vuejs.org/guide/composition-api-introduction.html#why-composition-api) de Vue.
 
 
 ## Initializing the router
