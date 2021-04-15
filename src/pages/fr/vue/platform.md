@@ -9,45 +9,45 @@ nextUrl: '/docs/vue/pwa'
 
 ## isPlatform
 
-The `isPlatform` method can be used to test if your app is running on a certain platform:
+La méthode `isPlatform` peut être utilisée pour tester si votre application fonctionne sur une certaine plateforme :
 
 ```typescript
 import { isPlatform } from '@ionic/vue';
 
-isPlatform('ios'); // returns true when running on a iOS device
+isPlatform('ios'); // retourne vrai quand il est exécuté sur un appareil iOS
 ```
 
-Depending on the platform the user is on, isPlatform(platformName) will return true or false. Note that the same app can return true for more than one platform name. For example, an app running from an iPad would return true for the platform names: mobile, ios, ipad, and tablet. Additionally, if the app was running from Cordova then cordova would be true.
+En fonction de la plateforme sur laquelle se trouve l'utilisateur, isPlatform(platformName) renvoie true ou false. Notez que la même application peut renvoyer un résultat positif pour plus d'un nom de plate-forme. Par exemple, une application exécutée à partir d'un iPad renverrait la réponse vraie pour les noms de plate-forme : mobile, ios, ipad et tablet. En outre, si l'application est exécutée à partir de Cordova, Cordova sera vrai.
 
 ## getPlatforms
 
-The `getPlatforms` method can be used to determine which platforms your app is currently running on.
+La méthode `getPlatforms` peut être utilisée pour déterminer sur quelles plateformes votre application fonctionne actuellement.
 
 ```typescript
 import { getPlatforms } from '@ionic/vue';
 
-getPlatforms(); // returns ["iphone", "ios", "mobile", "mobileweb"] from an iPhone
+getPlatforms(); // renvoie ["iphone", "ios", "mobile", "mobileweb"] depuis un iPhone
 ```
 
-Depending on what device you are on, `getPlatforms` can return multiple values. Each possible value is a hierarchy of platforms. For example, on an iPhone, it would return mobile, ios, and iphone.
+Selon le périphérique sur lequel vous vous trouvez, `getPlatforms` peut renvoyer plusieurs valeurs. Chaque valeur possible est une hiérarchie de plateformes. Par exemple, sur un iPhone, il reviendrait mobile, ios et iphone.
 
-## Platforms
+## Les Platformes
 
-Below is a table listing all the possible platform values along with corresponding descriptions.
+Vous trouverez ci-dessous un tableau répertoriant toutes les valeurs possibles de la plate-forme ainsi que les descriptions correspondantes.
 
-| Platform Name | Description                              |
-| ------------- | ---------------------------------------- |
-| android       | a device running Android                 |
-| capacitor     | a device running Capacitor               |
-| cordova       | a device running Cordova                 |
-| desktop       | a desktop device                         |
-| electron      | a desktop device running Electron        |
-| hybrid        | a device running Capacitor or Cordova    |
-| ios           | a device running iOS                     |
-| ipad          | an iPad device                           |
-| iphone        | an iPhone device                         |
-| mobile        | a mobile device                          |
-| mobileweb     | a web browser running in a mobile device |
-| phablet       | a phablet device                         |
-| pwa           | a PWA app                                |
-| tablet        | a tablet device                          |
+| Nom de la plateforme | Description                              |
+| -------------------- | ---------------------------------------- |
+| android              | un appareil fonctionnant sous Android    |
+| capacitor            | un appareil exécutant Capacitor          |
+| cordova              | un appareil exécutant Cordova            |
+| desktop              | a desktop device                         |
+| electron             | a desktop device running Electron        |
+| hybrid               | a device running Capacitor or Cordova    |
+| ios                  | a device running iOS                     |
+| ipad                 | an iPad device                           |
+| iphone               | an iPhone device                         |
+| mobile               | a mobile device                          |
+| mobileweb            | a web browser running in a mobile device |
+| phablet              | a phablet device                         |
+| pwa                  | a PWA app                                |
+| tablet               | a tablet device                          |
