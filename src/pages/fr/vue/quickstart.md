@@ -421,7 +421,7 @@ export default defineComponent({
 </script>
 ```
 
-In our component file, we are importing the `useRouter` function. When called, this function injects the router dependency into the component. It gives us access to the history API from Vue Router, allowing us to push a new route onto the navigation stack. On our `IonFabButton`, we can add a click handler, and just call `router.push` and pass in the new route. In this case, we will navigate to `new`.
+Dans notre fichier composant, nous importons la fonction `useRouter`. Lorsqu'elle est appelée, cette fonction injecte la dépendance du routeur dans le composant. Il nous donne accès à l'API historique de Vue Router, ce qui nous permet de pousser un nouvel itinéraire sur la pile de navigation. Sur notre `IonFabButton`, nous pouvons ajouter un gestionnaire de clic, et simplement appeler `router.push` et passer la nouvelle route. Dans ce cas, nous allons naviguer vers `new`.
 
 ```html
 <ion-fab-button @click="() => router.push('/new')">
@@ -429,9 +429,9 @@ In our component file, we are importing the `useRouter` function. When called, t
 </ion-fab-button>
 ```
 
-## Creating a new Route
+## Créer une nouvelle route
 
-Now that we have the pieces in place to navigate in our app, we need to create a new component and add the new route to our router declaration. Let's open our `router/index.ts` file and add the new route.
+Maintenant que nous avons les éléments en place pour naviguer dans notre application, nous devons créer un nouveau composant et ajouter la nouvelle route à notre déclaration de routeur. Ouvrons notre fichier `router/index.ts` et ajoutons la nouvelle route.
 
 ```typescript
 import { createRouter, createWebHistory } from '@ionic/vue-router';
@@ -463,9 +463,9 @@ const router = createRouter({
 
 export default router
 ```
-With our router now having an entry for the route `/new`, we will create the component needed, `NewItem`. This will exist in `views/NewItem.vue`.
+Notre routeur ayant maintenant une entrée pour la route `/new`, nous allons créer le composant nécessaire, `NewItem`. Cela existera dans `views/NewItem.vue`.
 
-Let's fill the `NewItem.vue` file with some placeholder content for the moment.
+Remplissons le fichier `NewItem.vue` avec un contenu de remplacement pour le moment.
 
 ```html
 <template>
@@ -509,17 +509,17 @@ export default defineComponent({
 </script>
 ```
 
-> Each view must contain an `IonPage` component. Page transitions will not work correctly without it. See the [IonPage Documentation](./navigation#ionpage) for more information.
+> Chaque vue doit contenir un composant `IonPage`. Les transitions de page ne fonctionneront pas correctement sans elle. Voir la [Documentation IonPage](./navigation#ionpage) pour plus d'informations.
 
-The content here should look similar to the `Home` component. What is different here is the `IonBackButton` component. This is used to navigate back to the previous route. Seems easy enough, right? Ok, but what if we reload the page?
+Le contenu ici devrait ressembler au composant `Home`. Ce qui est différent ici est le composant `IonBackButton`. Cette fonction est utilisée pour revenir à l'itinéraire précédent. « Ça me semble assez facile, non? » Ok, mais que faire si nous rechargeons la page?
 
-In this case, the in-memory history is lost, so the back button disappears. To address this, we can set the `default-href` attribute value to the URL we want to navigate to if there is no history.
+Dans ce cas, l'historique en mémoire est perdu, et le bouton retour disparaît. Pour remédier à cela, nous pouvons définir la valeur de l'attribut `default-href` à l'URL vers laquelle nous voulons naviguer s'il n'y a pas d'historique.
 
 ```html
 <ion-back-button default-href="/home"></ion-back-button>
 ```
 
-Now, If there is no app history present, we will be able to navigate back to our home route.
+Maintenant, s'il n'y a pas d'historique des applications, nous pourrons retourner à notre parcours d'origine.
 
 ## Calling Methods on Components
 
