@@ -1,11 +1,11 @@
 ---
-previousText: 'Config'
+previousText: 'Configuration'
 previousUrl: '/docs/vue/config'
-nextText: 'Progressive Web Apps in Vue'
+nextText: 'Progressive Web Apps avec Vue'
 nextUrl: '/docs/vue/pwa'
 ---
 
-# Platform
+# Plateforme
 
 ## isPlatform
 
