@@ -285,15 +285,15 @@ Pour nos styles, remarquez que nous avons spécifié nos styles pour être `scop
 
 `IonPage` est le composant de base pour toutes les pages (un composant avec une route/URL), et comprend certains blocs de construction communs d'un composant plein écran, comme les composants d'en-tête, de titre et de contenu.
 
-> Lorsque vous créez vos propres pages, n'oubliez pas de faire en sorte que `IonPage` soit le composant racine de celles-ci. Having `IonPage` be the root component is important because it helps ensure transitions work properly as well as provides the base CSS the Ionic Framework components rely on.
+> Lorsque vous créez vos propres pages, n'oubliez pas de faire en sorte que `IonPage` soit le composant racine de celles-ci. Le fait que `IonPage` soit le composant racine est important car il permet de s'assurer que les transitions fonctionnent correctement ainsi que de fournir le CSS de base sur lequel les composants de Ionic Framework s'appuient.
 
-`IonHeader` is a component meant to exist at the top of the page. It does not do much by itself, aside from handling some flexbox-based layout. It is meant to hold components, like `IonToolbar` or `IonSearchbar`.
+`IonHeader` est un composant destiné à exister en haut de la page. Il ne fait pas grand-chose par lui-même, à part gérer une mise en page basée sur la méthode Flexbox. Il est destiné à contenir des composants, comme `IonToolbar` ou `IonSearchbar`.
 
-`IonContent` is, as its name suggests, the main content area for our page. It is responsible for providing a scrollable content that users will interact with, plus any scroll events that could be used in an app.
+`IonContent` est, comme son nom l'indique, la zone de contenu principale de notre page. Il est chargé de fournir un contenu défilable avec lequel les utilisateurs interagiront, ainsi que tous les événements de défilement qui pourraient être utilisés dans une application.
 
-Our current content is relatively simple, but does not contain anything that could be used in a real app, so let's change that.
+Notre contenu actuel est relativement simple, mais ne contient rien qui puisse être utilisé dans une application réelle, alors changeons cela.
 
-> Note: For brevity, we are excluding repeating parts of our component, like the function declaration or import statements from other components.
+> Remarque : par souci de concision, nous excluons les parties répétitives de notre composant, comme la déclaration de fonction ou les déclarations d'importation d'autres composants.
 
 ```html
 <template>
@@ -317,7 +317,7 @@ Our current content is relatively simple, but does not contain anything that cou
 </template>
 ```
 
-Here in our `IonContent`, we are adding an `IonList` and a much more involved `IonItem` component. Let's look at `IonItem` as it is the centerpiece here.
+Ici, dans notre `IonContent`, nous ajoutons un `IonList` et un composant `IonItem` beaucoup plus impliqué. Regardons le `IonItem` car il est la pièce maîtresse ici.
 
 ```html
 <ion-item>
@@ -332,9 +332,9 @@ Here in our `IonContent`, we are adding an `IonList` and a much more involved `I
 </ion-item>
 ```
 
-Looking at our code, we have a special attribute called slot. This is key for letting the `IonItem` know where to place the `IonCheckbox` when it renders. This is not a Vue API, but a web standards API. Additionally, this is different from the slots API you may recall from Vue 2.
+En regardant notre code, nous avons un attribut spécial appelé slot. C'est essentiel pour permettre au `IonItem` de savoir où placer la `IonCheckbox` lors de son rendu. Il ne s'agit pas d'une API Vue, mais d'une API de normes Web. En outre, elle est différente de l'API des créneaux horaires dont vous vous souvenez peut-être de Vue 2.
 
-Let's look at another component from Ionic Framework, FAB. Floating Action Buttons are a nice way to provide a main action that is elevated from the rest of an app. For this FAB, we will need three components: a FAB, a FAB Button, and an Icon.
+Examinons un autre composant de Ionic Framework, FAB. Les boutons d'action flottants (Floating Action Buttons ) sont un bon moyen de fournir une action principale qui est surélevée par rapport au reste de l'application. Pour ce FAB, nous aurons besoin de trois composants : un FAB, un bouton FAB et une icône.
 
 ```html
 <template>
@@ -371,9 +371,9 @@ export default defineComponent({
 </script>
 ```
 
-On our main `IonFab`, we are setting its positioning with the vertical and horizontal attributes. We are also setting the render location to "fixed" with the slot attribute. This will tell `IonFab` to render outside of the scrollable content in `IonContent`.
+Sur notre `IonFab` principal, nous définissons son positionnement avec les attributs vertical et horizontal. Nous définissons également l'emplacement du rendu sur "fixe" avec l'attribut slot. Cela indiquera à `IonFab` d'effectuer le rendu en dehors du contenu défilant dans `IonContent`.
 
-Now let's wire up a click handler to this. When clicking the FAB button, we want to navigate to a new page (which we will create in a moment). To do this, we will need to get access to Vue Router's navigation API. This can be done by importing `useRouter` from the `vue-router` package.
+Maintenant, nous allons mettre en place un gestionnaire de clics pour cela. En cliquant sur le bouton FAB, nous voulons naviguer vers une nouvelle page (que nous allons créer dans un instant). Pour ce faire, nous devons avoir accès à l'API de navigation de Vue Router. Cela peut être fait en important `useRouter` du paquet `vue-router`.
 
 ```html
 <template>
