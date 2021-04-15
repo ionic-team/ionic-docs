@@ -147,9 +147,9 @@ Vue 3 offre une nouvelle fonction `defineComponent` lors de la création de comp
 Il y a plusieurs arguments que vous pouvez fournir ici tels que `methods`, `setup` et plus encore. Ceci est expliqué dans le cadre de la [Documentation de l'API de composition](https://v3.vuejs.org/guide/composition-api-introduction.html#why-composition-api) de Vue.
 
 
-## Initializing the router
+## Initialisation du routeur
 
-Ionic Vue uses the [vue-router](https://router.vuejs.org/) dependency, so if you are already familiar with Vue Router, you will be able to apply what you know to navigation in Ionic Vue. Let's take a look at the router configuration we mentioned before. In `router/index.ts`, you should see something similar to the following:
+Ionic Vue utilise la dépendance [vue-router](https://router.vuejs.org/), donc si vous êtes déjà familier avec Vue Router, vous pourrez appliquer ce que vous savez à la navigation dans Ionic Vue. Reprenons la configuration du routeur dont nous avons parlé précédemment. Dans `router/index.ts`, vous devriez voir quelque chose de similaire à ce qui suit :
 
 ```typescript
 import { createRouter, createWebHistory } from '@ionic/vue-router';
@@ -176,13 +176,13 @@ const router = createRouter({
 export default router
 ```
 
-> This example is using the Ionic Vue Blank starter application, so your actual routes may look a bit different.
+> Cet exemple utilise l'application de démarrage Ionic Vue Blank, donc vos routes réelles peuvent être un peu différentes.
 
-The setup here is the same as if you were using `vue-router` directly, but instead you need to import dependencies such as `createRouter` and `createWebHistory` from the `@ionic/vue-router` package.
+La configuration ici est la même que si vous utilisiez `vue-router` directement, mais au lieu de cela, vous devez importer des dépendances telles que `createRouter` et `createWebHistory` du paquet `@ionic/vue-router`.
 
-After importing our dependencies, we can declare our routes in the `routes` array. From there, we can create a router instance and provide it with our routes and the type of history we want to use.
+Après avoir importé nos dépendances, nous pouvons déclarer nos routes dans le tableau `routes`. À partir de là, nous pouvons créer une instance de routeur et lui fournir nos routes et le type d'historique que nous voulons utiliser.
 
-With Ionic Vue, lazy loading works right out of the box. Instead of importing our `Home` component, we could also do:
+Avec Ionic Vue, le chargement à la volée fonctionne dès le départ. Au lieu d'importer notre composant `Home`, nous pourrions également le faire :
 
 ```typescript
 const routes: Array<RouteRecordRaw> = [
@@ -198,13 +198,13 @@ const routes: Array<RouteRecordRaw> = [
 ]
 ```
 
-Now, you might be wondering: Why do we use `@` when describing the path to our components? The `@` symbol is a shortcut we can use to describe paths relative to the `src` directory. This is useful if we are trying to reference a component while in a file several folders deep. Instead of doing `'../../../views/Home.vue'`, we could simply do `'@/views/Home.vue'`.
+Maintenant, vous vous demandez peut-être : Pourquoi utilisons-nous le `@` pour décrire le chemin d'accès à nos composants ? Le symbole `@` est un raccourci que nous pouvons utiliser pour décrire les chemins relatifs au répertoire `src`. Ceci est utile si nous essayons de faire référence à un composant dans un fichier situé à plusieurs niveaux. Au lieu de faire `'../../../views/Home.vue'`, nous pourrions simplement faire `'@/views/Home.vue'`.
 
-## A component with style
+## Un composant avec du style
 
-Now the `App` component does not really have a lot to modify here. It is a basic example of a container component. With the router logic set, all it is responsible for is to render a component that matches the given URL route. Since we already have one component/router setup, let's go ahead and modify our `Home` component.
+Maintenant, le composant `App` n'a pas vraiment beaucoup de choses à modifier ici. Il s'agit d'un exemple de base d'un composant de conteneur. Une fois la logique du routeur définie, tout ce dont il est responsable est de rendre un composant qui correspond à la route URL donnée. Puisque nous avons déjà une configuration composant/routeur, allons-y et modifions notre composant `Home`.
 
-Currently, the `Home` component looks like so:
+Actuellement, le composant `Home` ressemble à ceci :
 
 ![Vue home component](/docs/assets/img/guides/vue/first-app/home-route.png)
 
@@ -279,13 +279,13 @@ export default defineComponent({
 </style>
 ```
 
-Much like the `App` component we started with, we have some imports for specific Ionic Framework components, an import from Vue, the Vue component, and styles to go along with our component.
+Tout comme le composant `App` avec lequel nous avons commencé, nous avons quelques importations pour des composants spécifiques de Ionic Framework, une importation de Vue, le composant Vue, et des styles pour accompagner notre composant.
 
-For our styles, notice that we have specified our styles to be `scoped`. This means that the styles we  write here will only apply to this component. This is useful for preventing styles from leaking out of a component and affecting other parts of your application. We strongly recommend using `scoped` styles for Ionic Vue applications.
+Pour nos styles, remarquez que nous avons spécifié nos styles pour être `scoped`. Cela signifie que les styles que nous écrivons ici ne s'appliqueront qu'à ce composant. Ceci est utile pour éviter que les styles ne s'échappent d'un composant et n'affectent d'autres parties de votre application. Nous recommandons fortement l'utilisation des styles `scoped` pour les applications Ionic Vue.
 
-`IonPage` is the base component for all pages (a component with a route/URL), and includes some common building blocks of a full-screen component, like header, title, and content components.
+`IonPage` est le composant de base pour toutes les pages (un composant avec une route/URL), et comprend certains blocs de construction communs d'un composant plein écran, comme les composants d'en-tête, de titre et de contenu.
 
-> When creating your own pages, do not forget to have `IonPage` be the root component for them. Having `IonPage` be the root component is important because it helps ensure transitions work properly as well as provides the base CSS the Ionic Framework components rely on.
+> Lorsque vous créez vos propres pages, n'oubliez pas de faire en sorte que `IonPage` soit le composant racine de celles-ci. Having `IonPage` be the root component is important because it helps ensure transitions work properly as well as provides the base CSS the Ionic Framework components rely on.
 
 `IonHeader` is a component meant to exist at the top of the page. It does not do much by itself, aside from handling some flexbox-based layout. It is meant to hold components, like `IonToolbar` or `IonSearchbar`.
 
