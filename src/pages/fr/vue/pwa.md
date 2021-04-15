@@ -1,31 +1,31 @@
 ---
-title: "Progressive Web Apps in Vue"
-previousText: 'Platform Utils'
+title: "Progressive Web Apps avec Vue"
+previousText: 'Utilitaires de la plate-forme'
 previousUrl: '/docs/vue/platform'
-nextText: 'Storage'
+nextText: 'Le Stockage'
 nextUrl: '/docs/vue/storage'
 ---
 
-## Making your Vue app a PWA
+## Faire de votre application Vue une PWA
 
-The two main requirements of a PWA are a <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> and a <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Manifest</a>. While it's possible to add both of these to an app manually, the Vue CLI has some utilities for adding this for you.
+Les deux principales exigences d'une PWA sont un <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> et un <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Manifest</a>. Bien qu'il soit possible d'ajouter ces deux éléments à une application manuellement, l'interface CLI de Vue dispose de quelques utilitaires pour les ajouter à votre place.
 
-For existing projects, you can run the `vue add` command to install the PWA plugin for Vue.
+Pour les projets existants, vous pouvez exécuter la commande `vue add` pour installer le plugin PWA pour Vue.
 
 ```shell
 vue add pwa
 ```
 
-> If you have changes already in place, be sure to commit them in Git.
+> Si vous avez des changements déjà en place, assurez-vous de les valider dans Git.
 
-Once this is completed, Vue's CLI will have created a new `registerServiceWorker.ts` file and imported it into our `main.ts`.
+Une fois cette opération terminée, le CLI de Vue aura créé un nouveau fichier `registerServiceWorker.ts` et l'aura importé dans notre `main.ts`.
 
 
 ```typescript
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-// Added by the CLI
+// Ajouté par le CLI
 import './registerServiceWorker'
 
 createApp(App)
@@ -33,7 +33,7 @@ createApp(App)
   .mount('#app')
 ```
 
-The `registerServiceWorker.ts` file will point to a service worker that the CLI will create at build time. Inside of here we can customize the experience users will have when the service worker detects an update, change in network connectivity, or receives an error.
+Le fichier `registerServiceWorker.ts` pointera vers un service worker que le CLI créera au moment de la construction. À l'intérieur de cette zone, nous pouvons personnaliser l'expérience des utilisateurs lorsque le travailleur de service détecte une mise à jour, un changement dans la connectivité du réseau ou reçoit une erreur.
 
 ```typescript
 import { register } from 'register-service-worker'
@@ -68,7 +68,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 ```
 
-The service worker that is generated is based on [Workbox's webpack plugin](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin), and by default is setup to use `GenerateSW()`. Meaning that at build time, Workbox will automatically generate a service worker cache for all the files it processes.
+Le travailleur de service qui est généré est basé sur [le plugin webpack de Workbox](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin), et par défaut est configuré pour utiliser `GenerateSW()`. Cela signifie qu'au moment de la construction, Workbox génère automatiquement un cache de travailleur de service pour tous les fichiers qu'il traite.
 
 If you want to configure this and change the default behavior, checkout the [PWA plugin docs](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa#configuration) on GitHub.
 
