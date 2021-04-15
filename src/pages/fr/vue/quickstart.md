@@ -1,53 +1,53 @@
 ---
-previousText: 'Overview'
+previousText: 'Vue d''ensemble'
 previousUrl: '/docs/vue/overview'
-nextText: 'Build Your First App'
+nextText: 'Créez votre première application'
 nextUrl: '/docs/vue/your-first-app'
 ---
 
-# Ionic Vue Quickstart
+# Démarrage rapide Ionic Vue
 
-## What is Ionic Framework?
+## Qu'est-ce que Ionic Framework ?
 
-First off, if you're new here, welcome! Ionic Framework is a free and open source component library for building apps that run on iOS, Android, Electron, and the Web. Write your app once using familiar technologies (HTML, CSS, JavaScript) and deploy to any platform.
+Tout d'abord, si vous êtes nouveau ici, bienvenue ! Ionic Framework est une bibliothèque de composants gratuite et open source permettant de créer des applications fonctionnant sur iOS, Android, Electron et le Web. Rédigez votre application une seule fois en utilisant des technologies familières (HTML, CSS, JavaScript) et déployez-la sur n'importe quelle plateforme.
 
-Along with the UI components, Ionic Framework also provides a command line tool for creating new apps, as well as deploying to the various platforms we support.
+Outre les composants de l'interface utilisateur, Ionic Framework fournit également un outil en ligne de commande pour créer de nouvelles applications, ainsi que pour les déployer sur les différentes plateformes que nous prenons en charge.
 
-In this guide, we will go over the basics of both Vue and Ionic Framework, including any Ionic Framework specific features. If you are familiar with Vue, enjoy the guide and learn something new about Ionic Framework. If you are not familiar with either, no worries! This guide will cover the basics and provide enough information to get an app up and running.
+Dans ce guide, nous allons passer en revue les bases de Vue et de Ionic Framework, y compris toutes les fonctionnalités spécifiques à Ionic Framework. Si vous êtes familier avec Vue, profitez de ce guide et apprenez quelque chose de nouveau sur Ionic Framework. Si vous n'êtes pas familier non plus, ne vous inquiétez pas! Ce guide couvre les éléments de base et fournit suffisamment d'informations pour que votre application soit opérationnelle.
 
-## Creating a project with the Ionic CLI
+## Créer un projet avec la CLI Ionic
 
-To begin, let's install the latest version of the Ionic CLI.
+Pour commencer, installons la dernière version de Ionic CLI.
 
 
 ```shell
 npm install -g @ionic/cli@latest
 ```
 
-From here, the global command `ionic` will allow for the creation of a Vue project with Ionic Framework and any other dependencies. To create a new project, run the following command:
+A partir de là, la commande globale `ionic` permettra la création d'un projet Vue avec Ionic Framework et toutes les autres dépendances. Pour créer un nouveau projet, exécutez la commande suivante :
 
 ```shell
 ionic start myApp blank --type vue
 cd myApp
 ```
 
-From here, we run `ionic serve` and have our project running in the browser.
+A partir de là, nous exécutons `ionic serve` et nous avons notre projet qui tourne dans le navigateur.
 
-## Build your way with TypeScript or JavaScript
+## Construisez votre chemin avec TypeScript ou JavaScript
 
-We love TypeScript at Ionic, and have believed for quite some time now that it’s a great tool for building scalable apps. That said, we know how much the Vue community values simplicity – in their tooling, languages, and more. In fact, it’s likely what drew you to Vue in the first place. Start simple – then scale up as needed.
+Chez Ionic, nous adorons TypeScript et nous sommes convaincus depuis un certain temps déjà qu'il s'agit d'un outil formidable pour créer des applications évolutives. Cela dit, nous savons à quel point la communauté Vue apprécie la simplicité - dans ses outils, ses langages, etc. En fait, c'est probablement ce qui vous a attiré vers Vue en premier lieu. Démarrez simplement, puis augmentez au besoin.
 
-So, if you’d prefer to use JavaScript instead of TypeScript, you can. After generating an Ionic Vue app, follow these steps:
+Donc, si vous préférez utiliser JavaScript au lieu de TypeScript, vous pouvez. Après avoir généré une application Ionic Vue, suivez ces étapes :
 
-1. Remove TypeScript dependencies:
+1. Supprimer les dépendances TypeScript :
 
 ```shell
 npm uninstall --save typescript @types/jest @typescript-eslint/eslint-plugin @typescript-eslint/parser @vue/cli-plugin-typescript @vue/eslint-config-typescript
 ```
 
-2. Change all `.ts` files to `.js`. In a blank Ionic Vue app, this should only be `router/index.ts` and `main.ts`.
+2. Changez tous les fichiers `.ts` en `.js`. Dans une application Ionic Vue vierge, cela ne devrait être que `router/index.ts` et `main.ts`.
 
-3. Remove `@vue/typescript/recommended` and `@typescript-eslint/no-explicit-any: ‘off’,`from `.eslintrc.js`.
+3. Supprimez `@vue/typescript/recommended` et `@typescript-eslint/no-explicit-any : 'off',`de `.eslintrc.js`.
 
 4. Remove `Array<RouteRecordRaw>` from `router/index.js`.
 
