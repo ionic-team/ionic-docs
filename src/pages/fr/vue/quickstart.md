@@ -554,13 +554,13 @@ Dans d'autres intégrations de frameworks comme Ionic React, cela n'est pas néc
 </script>
 ```
 
-## Adding Icons
+## Ajout d'icônes
 
-Ionic Vue comes with [Ionicons](https://ionicons.com/) pre-installed. There are a couple options developers have for using them in their application.
+Ionic Vue est livré avec [Ionicons](https://ionicons.com/) préinstallé. Les développeurs ont plusieurs possibilités pour les utiliser dans leur application.
 
-### Dynamic Imports
+### Importation dynamique
 
-Dynamic Imports is the recommended approach to using Ionicons. This involves importing the icon of your choice from the `ionicons` package and passing it to your template:
+L'importation dynamique est l'approche recommandée pour utiliser Ionicons. Il s'agit d'importer l'icône de votre choix depuis le paquet `ionicons` et de la passer à votre modèle :
 
 ```html
 <template>
@@ -592,13 +592,13 @@ export default defineComponent({
 </script>
 ```
 
-Let's break down what we are doing here. First, we are importing the `heart` icon from `ionicons/icons`. This will load the appropriate SVG data for our icon.
+Décomposons ce que nous faisons ici. Tout d'abord, nous importons l'icône `heart` de `ionicons/icons`. Cela va charger les données SVG appropriées pour notre icône.
 
-Next, we pass the `heart` data to our template in the `setup` method.
+Ensuite, nous passons les données `heart` à notre modèle dans la méthode `setup`.
 
-Finally, we pass the icon data into the `ion-icon` component via the `icon` property.
+Enfin, nous passons les données de l'icône dans le composant `ion-icon` via la propriété `icon`.
 
-Developers also have the option of setting different icons based upon the mode:
+Les développeurs ont également la possibilité de définir des icônes différentes en fonction du mode :
 
 ```html
 <template>
@@ -630,13 +630,13 @@ export default defineComponent({
 </script>
 ```
 
-Note that any icon names that are hyphenated should be written in camel case when importing.
+Notez que tout nom d'icône comportant un trait d'union doit être écrit en minuscules lors de l'importation.
 
-### Global Imports
+### Importations globales
 
-The other option is to import specific icons globally. This is not typically recommended as it will force icons to be loaded every time your application starts and can increase your application's initial chunk size.
+L'autre option consiste à importer des icônes spécifiques de manière globale. Ce n'est généralement pas recommandé, car cela obligera les icônes à être chargées à chaque fois que votre application démarre et peut augmenter la taille initiale des morceaux de votre application.
 
-That being said, there may be use cases when it makes sense to load specific icons globally:
+Cela dit, il peut y avoir des cas d'utilisation où il est judicieux de charger des icônes spécifiques de manière globale :
 
 **main.ts**
 ```typescript
@@ -675,21 +675,21 @@ export default defineComponent({
 </script>
 ```
 
-In `main.ts`, the `addIcons` function lets us register icons globally and give it a string as a key. We then reference the icon by that key in our `Home` component.
+Dans `main.ts`, la fonction `addIcons` nous permet d'enregistrer les icônes de manière globale et de lui donner une chaîne de caractères comme clé. We then reference the icon by that key in our `Home` component.
 
-## Optimizing Your Build
+## Optimisation de votre build
 
-Vue gives you several tools to fine tune your application. This section will cover the options that are most relevant to Ionic Framework.
+Vue vous offre plusieurs outils pour affiner votre application. Cette section couvre les options qui sont les plus pertinentes pour Ionic Framework.
 
-### Local Component Registration (Recommended)
+### Inscription du composant local (Recommandé)
 
-By default, Ionic Framework components are registered locally. With local registration, these components are imported and provided to each Vue component you want to use them in. This is the recommended approach as it allows lazy loading and treeshaking to work properly with Ionic Framework components.
+Par défaut, les composants Ionic Framework sont enregistrés localement. Avec l'enregistrement local, ces composants sont importés et fournis à chaque composant Vue dans lequel vous souhaitez les utiliser. C'est l'approche recommandée, car elle permet au chargement à la volée et à l'arborescence de fonctionner correctement avec les composants de Ionic Framework.
 
-The one downside to this approach is that it may be tedious to re-import your Ionic Framework components multiple times. However, we feel that the performance benefits you receive in exchange are worth it.
+Le seul inconvénient de cette approche est qu'il peut être fastidieux de réimporter plusieurs fois vos composants Ionic Framework. Cependant, nous estimons que les avantages en termes de performances que vous recevez en échange en valent la peine.
 
-Also note that locally registered components are not available in subcomponents. You will need to re-import the Ionic Framework components you would like to use in your subcomponent.
+Notez également que les composants enregistrés localement ne sont pas disponibles dans les sous-composants. Vous devrez réimporter les composants Ionic Framework que vous souhaitez utiliser dans votre sous-composant.
 
-Let's take a look at how local component registration works:
+Regardons comment fonctionne l'enregistrement des composants locaux :
 
 ```html
 <template>
