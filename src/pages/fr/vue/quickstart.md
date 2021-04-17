@@ -521,11 +521,11 @@ Dans ce cas, l'historique en mémoire est perdu, et le bouton retour disparaît.
 
 Maintenant, s'il n'y a pas d'historique des applications, nous pourrons retourner à notre parcours d'origine.
 
-## Calling Methods on Components
+## Appel de méthodes sur les composants
 
-In order to call a method on any of the Ionic Vue components, you will first need to get a reference to the component instance. Next, you will need to access the underlying Web Component using `$el` and call the method.
+Afin d'appeler une méthode sur l'un des composants Ionic Vue, vous devrez d'abord obtenir une référence à l'instance du composant. Ensuite, vous devrez accéder au composant Web sous-jacent à l'aide du `$el` et appeler la méthode.
 
-In other framework integrations such as Ionic React, this is not needed as any `ref` you provide is automatically forwarded to the underlying Web Component instance. We are unable to do the same thing here due to limitations in how Vue manages refs.
+Dans d'autres intégrations de frameworks comme Ionic React, cela n'est pas nécessaire car tout `ref` que vous fournissez est automatiquement transmis à l'instance de composant Web sous-jacente. Nous ne sommes pas en mesure de faire la même chose ici en raison des limitations de la façon dont Vue gère les références.
 
 ```html
 <template>
