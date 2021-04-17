@@ -1,7 +1,7 @@
 ---
-previousText: 'Saving Photos on Filesystem'
+previousText: 'Sauvegarde des photos sur le système de fichiers'
 previousUrl: '/docs/angular/your-first-app/3-saving-photos'
-nextText: 'Ajout d''un Mobile'
+nextText: 'Ajout de mobile'
 nextUrl: '/docs/angular/your-first-app/5-adding-mobile'
 ---
 
