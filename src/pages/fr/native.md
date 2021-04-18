@@ -1,5 +1,5 @@
 ---
-title: Native APIs
+title: APIs natifs
 tableOfContents: false
 ---
 
