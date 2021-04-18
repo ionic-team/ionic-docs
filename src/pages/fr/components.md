@@ -6,7 +6,7 @@ tableOfContents: false
 
 # Composants UI
 
-Ionic apps are made of high-level building blocks called Components, which allow you to quickly construct the UI for your app. Ionic comes stock with a number of components, including cards, lists, and tabs. Once you’re familiar with the basics, refer to the [API Index](/docs/api) for a complete list of each component and sub-component.
+Les applications Ionic sont constituées de blocs de construction de haut niveau appelés composants, qui vous permettent de construire rapidement l'interface utilisateur de votre application. Ionic est livré en standard avec un certain nombre de composants, y compris des cartes, des listes et des onglets. Once you’re familiar with the basics, refer to the [API Index](/docs/api) for a complete list of each component and sub-component.
 
 <docs-cards> <docs-card header="Action Sheet" href="/docs/api/action-sheet" img="/docs/assets/icons/feature-component-actionsheet-icon.png"> 
 
