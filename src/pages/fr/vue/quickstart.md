@@ -711,19 +711,19 @@ export default defineComponent({
 </script>
 ```
 
-In the example above, we are using the `IonPage` and `IonContent` components. To use them, we first import them from `@ionic/vue`. Then, we provide them to our Vue component in the `components` option. From there, we can use the components in our template.
+Dans l'exemple ci-dessus, nous utilisons les composants `IonPage` et `IonContent`. Pour les utiliser, nous les importons d'abord de `@ionic/vue`. Ensuite, nous les fournissons à notre composant Vue dans l'option `components`. À partir de là, nous pouvons utiliser les composants dans notre modèle.
 
-Note that since we are registering these components locally, neither `IonPage` nor `IonContent` will be available in `Subcomponent` unless we register them there as well.
+Notez que puisque nous enregistrons ces composants localement, ni `IonPage` ni `IonContent` ne seront disponibles dans `Subcomponent` à moins que nous ne les enregistrions là aussi.
 
-For more information, see the <a href="https://v3.vuejs.org/guide/component-registration.html#local-registration" target="_blank" rel="noopener noreferrer">Local Registration Vue Documentation</a>.
+Pour plus d'informations, consultez la <a href="https://v3.vuejs.org/guide/component-registration.html#local-registration" target="_blank" rel="noopener noreferrer">Documentation Vue sur l'enregistrement local</a>.
 
-### Global Component Registration
+### Enregistrement global des composants
 
-The other option for registering components is to use global registration. Global registration involves importing the components you want to use in `main.ts` and calling the `component` method on your Vue app instance.
+L'autre option pour enregistrer les composants est d'utiliser l'enregistrement global. L'enregistrement global implique l'importation des composants que vous souhaitez utiliser dans `main.ts` et l'appel de la méthode `component` sur votre instance d'application Vue.
 
-While this makes it easier to add Ionic Framework components to your Vue app, global registration often is not ideal. To quote the Vue documentation: "If you're using a build system like Webpack, globally registering all components means that even if you stop using a component, it could still be included in your final build. This unnecessarily increases the amount of JavaScript your users have to download".
+Bien que cela facilite l'ajout de composants Ionic Framework à votre application Vue, l'enregistrement global n'est souvent pas idéal. Pour citer la documentation de Vue : "Si vous utilisez un système de construction comme Webpack, l'enregistrement global de tous les composants signifie que même si vous cessez d'utiliser un composant, il pourrait toujours être inclus dans votre construction finale. Cela augmente inutilement la quantité de JavaScript que vos utilisateurs doivent télécharger".
 
-Let's take a look at how global component registration works:
+Voyons comment fonctionne l'enregistrement global des composants :
 
 **main.ts**
 ```typescript
@@ -757,15 +757,15 @@ export default defineComponent({
 </script>
 ```
 
-In the example above, we are using the `IonPage` and `IonContent` components. To use them, we first import them from `@ionic/vue` in `main.ts`. From there, we call the `component` method on our app instance and pass it the tag name as well as the component definition. After we do that, we can use the components in the rest of our application without having to import them into each Vue component.
+Dans l'exemple ci-dessus, nous utilisons les composants `IonPage` et `IonContent`. Pour les utiliser, nous les importons d'abord de `@ionic/vue` dans `main.ts`. De là, nous appelons la méthode `component` sur notre instance d'application et lui passons le nom du tag ainsi que la définition du composant. Après avoir fait cela, nous pouvons utiliser les composants dans le reste de notre application sans avoir à les importer dans chaque composant Vue.
 
-For more information, see the <a href="https://v3.vuejs.org/guide/component-registration.html#global-registration" target="_blank" rel="noopener noreferrer">Global Registration Vue Documentation</a>.
+Pour plus d'informations, consultez le site <a href="https://v3.vuejs.org/guide/component-registration.html#global-registration" target="_blank" rel="noopener noreferrer">Documentation globale sur l'enregistrement Vue</a>.
 
-### Prefetching Application JavaScript
+### Préchargement de l'application JavaScript
 
-By default, the Vue CLI will automatically generate prefetch hints for the JavaScript in your application. Prefetching utiltizes the browser idle time to download documents that the user might visit in the near future. When the user visits a page that requires the prefetched document, it can be served quickly from the browser's cache.
+Par défaut, l'interface CLI de Vue génère automatiquement des indices de préextraction pour le JavaScript de votre application. Le préemption utilise le temps d'inactivité du navigateur pour télécharger des documents que l'utilisateur pourrait visiter dans un avenir proche. Lorsque l'utilisateur visite une page qui nécessite le document préenregistré, celui-ci peut être servi rapidement à partir du cache du navigateur.
 
-Prefetching consumes bandwidth, so if you have a large app, you may want to disable it. You can do this by modifying or creating your `vue.config.js` file:
+Le pré-extraction consomme de la bande passante. Par conséquent, si votre application est volumineuse, il est préférable de le désactiver. Vous pouvez le faire en modifiant ou en créant votre fichier `vue.config.js` :
 
 **vue.config.js**
 ```js
@@ -776,7 +776,7 @@ module.exports = {
 }
 ```
 
-The configuration above will prevent all files from being prefetched and, instead, will be loaded when they are needed. You can also select certain chunks to prefetch. Check out the <a href="https://cli.vuejs.org/guide/html-and-static-assets.html#prefetch" target="_blank" rel="noopener noreferrer">Vue CLI Docs on Prefetching</a> for more examples.
+La configuration ci-dessus empêchera tous les fichiers d'être préenregistrés et, à la place, ils seront chargés lorsqu'ils seront nécessaires. You can also select certain chunks to prefetch. Check out the <a href="https://cli.vuejs.org/guide/html-and-static-assets.html#prefetch" target="_blank" rel="noopener noreferrer">Vue CLI Docs on Prefetching</a> for more examples.
 
 ## Build a Native App
 
