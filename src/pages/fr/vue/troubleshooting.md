@@ -1,25 +1,25 @@
 ---
-previousText: 'Testing'
+previousText: 'Les tests'
 previousUrl: '/docs/vue/testing'
 ---
 
-# Troubleshooting
+# Résolution des problèmes
 
-This guide covers some of the more common issues you may run into when developing with Ionic Vue.
+Ce guide couvre certains des problèmes les plus courants que vous pourriez rencontrer lorsque vous développez avec Ionic Vue.
 
-Have an issue that you think should be covered here? <a href="https://github.com/ionic-team/ionic-docs/issues/new?assignees=&labels=content&template=content-issue.md&title=" target="_blank" rel="noopener">Let us know!</a>
+Vous avez une question qui, selon vous, devrait être traitée ici ? <a href="https://github.com/ionic-team/ionic-docs/issues/new?assignees=&labels=content&template=content-issue.md&title=" target="_blank" rel="noopener">Faites-le nous savoir !</a>
 
-## Failed to resolve component
+## Échec de la résolution du composant
 
 ```shell
 [Vue warn]: Failed to resolve component: ion-button 
 ```
 
-If you see this warning, then it is likely you did not import your component from `@ionic/vue`. By default, all Ionic Vue components are locally registered, meaning you need to import them each time you want to use them.
+Si vous voyez cet avertissement, il est probable que vous n'ayez pas importé votre composant depuis `@ionic/vue`. Par défaut, tous les composants Ionic Vue sont enregistrés localement, ce qui signifie que vous devez les importer chaque fois que vous voulez les utiliser.
 
-Without importing the component, you will only get the underlying Web Component, and Vue-specific features such as `v-model` will not work.
+Sans importer le composant, vous n'obtiendrez que le composant Web sous-jacent, et les fonctionnalités spécifiques à Vue telles que `v-model` ne fonctionneront pas.
 
-To resolve this issue, you need to import the component from `@ionic/vue` and provide it to your Vue component:
+Pour résoudre ce problème, vous devez importer le composant de `@ionic/vue` et le fournir à votre composant Vue :
 
 ```html
 <template>
@@ -36,7 +36,7 @@ To resolve this issue, you need to import the component from `@ionic/vue` and pr
 </script>
 ```
 
-Prefer to register your components globally once? We have you covered. Our [Optimizing Your Build Guide](./quickstart#optimizing-your-build) shows you how to register Ionic Vue components globally as well as the potential downsides to be aware of when using this approach.
+Vous préférez enregistrer vos composants globalement une seule fois? Nous vous couvrons. Our [Optimizing Your Build Guide](./quickstart#optimizing-your-build) shows you how to register Ionic Vue components globally as well as the potential downsides to be aware of when using this approach.
 
 ## Slot attributes are deprecated
 
