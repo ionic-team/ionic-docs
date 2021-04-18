@@ -1,21 +1,21 @@
 ---
 ---
 
-# Ionic CLI
+# Le CLI de IONIC
 
-The Ionic command-line interface ([CLI](/docs/reference/glossary#cli)) is the go-to tool for developing Ionic apps.
+L'interface de ligne de commande Ionic ([CLI](/docs/reference/glossary#cli)) est l'outil par excellence pour développer des applications Ionic.
 
-## Installation
+## L'installation
 
-The Ionic CLI can be installed globally with npm:
+Le CLI de IONIC peut être installé globalement avec npm :
 
 ```shell
 $ npm install -g @ionic/cli
 ```
 
-## Help
+## L'aide
 
-The Ionic CLI ships with command documentation that is accessible with the `--help` flag.
+L'interface CLI de Ionic est livrée avec une documentation des commandes qui est accessible avec le drapeau `--help`.
 
 ```shell
 $ ionic --help
@@ -23,22 +23,22 @@ $ ionic <command> --help
 $ ionic <command> <subcommand> --help
 ```
 
-> Be sure to run `ionic <command> --help` in your project directory.
+> Assurez-vous d'exécuter `ionic <command> --help` dans votre répertoire de projet.
 > 
-> For some commands, such as `ionic serve`, the help documentation is contextual to the type of your project, e.g. React vs Angular.
+> Pour certaines commandes, comme `ionic serve`, la documentation d'aide est contextuelle au type de votre projet, par exemple React vs Angular.
 
 <!-- TODO: image? -->
 
-## Architecture
+## L'architecture
 
-The Ionic CLI is built with [TypeScript](/docs/reference/glossary#typescript) and [Node.js](/docs/reference/glossary#node). It supports Node 10.3+, but the latest Node LTS is always recommended. Follow development on the open source <a href="https://github.com/ionic-team/ionic-cli" target="_blank">GitHub repository</a>.
+L'Ionic CLI est construit avec [TypeScript](/docs/reference/glossary#typescript) et [Node.js](/docs/reference/glossary#node). Il supporte Node 10.3+, mais la dernière version de Node LTS est toujours recommandée. Suivez le développement sur le dépôt open source <a href="https://github.com/ionic-team/ionic-cli" target="_blank">GitHub</a>.
 
-## Troubleshooting
+## Résolution des problèmes
 
-To troubleshoot issues with the Ionic CLI, the following may be useful:
+Pour résoudre les problèmes avec la CLI Ionic, ce qui suit peut être utile :
 
-- Make sure the latest version of the Ionic CLI is installed. Get the installed version by running `ionic --version`.
-- Make sure the latest Node LTS is installed. See [Node & npm](/docs/intro/environment#node-npm) environment setup.
-- The `--verbose` flag prints debugging messages, which may narrow down the issue.
-- Connection issues may be due to improperly configured proxy settings. See [Using a Proxy](/docs/cli/using-a-proxy) to configure request proxying.
-- The global Ionic CLI configuration directory is `~/.ionic` on all platforms. It can safely be deleted and the Ionic CLI will repopulate it, but all configuration (including user sessions) will be lost. Configure this directory with [CLI environment variables](/docs/cli/configuration#environment-variables).
+- Assurez-vous que la dernière version de la CLI Ionic est installée. Obtenez la version installée en exécutant `ionic --version`.
+- Assurez-vous que la dernière version de Node LTS est installée. Voir [Node & npm](/docs/intro/environment#node-npm) configuration de l'environnement.
+- Le drapeau `--verbose` imprime des messages de débogage, ce qui peut permettre de circonscrire le problème.
+- Les problèmes de connexion peuvent être dus à des paramètres proxy mal configurés. Voir [Utilisation d'un proxy](/docs/cli/using-a-proxy) pour configurer le proxy de requête.
+- Le répertoire global de configuration Ionic CLI est `~/.ionic` sur toutes les plateformes. Il peut être supprimé en toute sécurité et le Ionic CLI le repeuplera, mais toute la configuration (y compris les sessions utilisateur) sera perdue. Configurez ce répertoire avec les [variables d'environnement CLI](/docs/cli/configuration#environment-variables).
