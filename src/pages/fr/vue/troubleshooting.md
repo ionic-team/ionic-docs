@@ -36,17 +36,17 @@ Pour résoudre ce problème, vous devez importer le composant de `@ionic/vue` et
 </script>
 ```
 
-Vous préférez enregistrer vos composants globalement une seule fois? Nous vous couvrons. Our [Optimizing Your Build Guide](./quickstart#optimizing-your-build) shows you how to register Ionic Vue components globally as well as the potential downsides to be aware of when using this approach.
+Vous préférez enregistrer vos composants globalement une seule fois? Nous vous couvrons. Notre [Optimisation de votre Guide de Construction](./quickstart#optimizing-your-build) vous montre comment enregistrer les composants Ionic Vue globalement ainsi que les inconvénients potentiels pour être au courant de l'utilisation de cette approche.
 
-## Slot attributes are deprecated
+## Les attributs des slots sont obsolètes
 
 ```shell
 `slot` attributes are deprecated  vue/no-deprecated-slot-attribute
 ```
 
-The slots that are used in Ionic Vue are <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots" target="_blank" rel="noopener">Web Component slots</a>, which are different than the slots used in Vue 2. Unfortunately, the APIs for both are very similar, and your linter is likely getting the two confused.
+Les slots qui sont utilisés dans Ionic Vue sont <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots" target="_blank" rel="noopener">les slots de composants Web</a>, qui sont différents des slots utilisés dans Vue 2. Malheureusement, les API des deux sont très similaires, et votre linter est probablement en train de confondre les deux.
 
-All Ionic Vue starters ship with this rule turned off, but you can do it yourself by adding the following to your `.eslintrc.js` file:
+Tous les lanceurs Ionic Vue embarquent avec cette règle désactivée, mais vous pouvez le faire vous-même en ajoutant ce qui suit à votre `. fichier slintrc.js`:
 
 ```js
 module.exports = {
@@ -56,30 +56,30 @@ module.exports = {
 }
 ```
 
-If you are using VSCode and have the Vetur plugin installed, you are likely getting this warning because of Vetur, not ESLint. By default, Vetur loads the default Vue 3 linting rules and ignores any custom ESLint rules.
+Si vous utilisez VSCode et que le plugin Vetur est installé, vous recevez probablement cet avertissement à cause de Vetur, et non d'ESLint. Par défaut, Vetur charge les règles de linting par défaut de Vue 3 et ignore toute règle ESLint personnalisée.
 
-To resolve this issue, you will need to turn off Vetur's template validation with `vetur.validation.template: false`. See the <a href="https://vuejs.github.io/vetur/guide/linting-error.html#linting" target="_blank" rel="noopener">Vetur Linting Guide</a> for more information.
+Pour résoudre ce problème, vous devrez désactiver la validation des modèles de Vetur avec `vetur.validation.template : false`. Voir le <a href="https://vuejs.github.io/vetur/guide/linting-error.html#linting" target="_blank" rel="noopener">Guide de linting de Vetur</a> pour plus d'informations.
 
 
-## Method on component is not a function
+## La méthode sur le composant n'est pas une fonction
 
-In order to access a method on an Ionic Framework component in Vue, you will need to access the underlying Web Component instance first:
+Afin d'accéder à une méthode sur un composant Ionic Framework dans Vue, vous devrez d'abord accéder à l'instance du composant Web sous-jacent :
 
 ```js
-// ✅ This is correct
+// ✅ Ceci est correct
 ionContentRef.value.$el.scrollToBottom(); 
 
-// ❌ This is incorrect and will result in an error.
+// ❌ Ceci est incorrect et entraînera une erreur.
 ionContentRef.value.scrollToBottom(); 
 ```
 
-In other framework integrations such as Ionic React, this is not needed as any `ref` you provide is automatically forwarded to the underlying Web Component instance. We are unable to do the same thing here due to limitations in how Vue manages refs.
+Dans d'autres intégrations de frameworks comme Ionic React, cela n'est pas nécessaire car tout `ref` que vous fournissez est automatiquement transmis à l'instance de composant Web sous-jacente. Nous ne sommes pas en mesure de faire la même chose ici en raison des limitations de la façon dont Vue gère les références.
 
-See the [Quickstart Guide](./quickstart#calling-methods-on-components) for more information.
+Consultez le [Guide de démarrage rapide](./quickstart#calling-methods-on-components) pour plus d'informations.
 
-## Page transitions are not working
+## Les transitions de page ne fonctionnent pas
 
-In order for page transitions to work correctly, each page must have an `ion-page` component at the root:
+Pour que les transitions de page fonctionnent correctement, chaque page doit avoir un composant `ion-page` à la racine :
 
 ```html
 <template>
@@ -115,4 +115,4 @@ In order for page transitions to work correctly, each page must have an `ion-pag
 </script>
 ```
 
-See the [IonPage documentation](./navigation#ionpage) for more information.
+Voir la [documentation de IonPage](./navigation#ionpage) pour plus d'informations.
