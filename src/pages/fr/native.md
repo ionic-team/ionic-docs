@@ -3,7 +3,7 @@ title: APIs natifs
 tableOfContents: false
 ---
 
-<p class='intro'>Build native-powered app experiences with a collection of open source and premium plugins and integrations that make it easy to add native device functionality to any Ionic app with Capacitor or Cordova.</p>
+<p class='intro'>Créez des expériences d'applications natives grâce à une collection de plugins et d'intégrations open source et premium qui facilitent l'ajout de fonctionnalités de dispositifs natifs à toute application Ionic avec Capacitor ou Cordova.</p>
 
 <div id="native-enterprise-cards">
   <a href="https://capacitorjs.com/docs/plugins">
@@ -12,7 +12,7 @@ tableOfContents: false
     </div>
     <div class="heading-group">
       <header>Capacitor plugins</header>
-      <p>A modern, open source native runtime built and maintained by the Ionic team and the Capacitor community. Our recommended native solution.</p>
+      <p>Un runtime natif moderne et open source construit et maintenu par l'équipe Ionic et la communauté Capacitor. Notre solution native recommandée.</p>
     </div>
   </a>
 
@@ -22,7 +22,7 @@ tableOfContents: false
     </div>
     <div class="heading-group">
       <header>Cordova plugins</header>
-      <p>A collection of free Cordova plugins, built and maintained by the community, with TypeScript wrappers and a consistent API and naming convention.</p>
+      <p>Une collection de plugins Cordova gratuits, construits et maintenus par la communauté, avec des wrappers TypeScript et une API et une convention de dénomination cohérentes.</p>
     </div>
   </a>
 </div>
@@ -37,7 +37,7 @@ tableOfContents: false
   <header> Ionic Native Enterprise Edition </header> 
   
   <p>
-    Premium, supported Capacitor and Cordova plugins, third-party integrations, and pre-built native solutions for building enterprise-grade apps.
+    Des plugins Capacitor et Cordova premium et pris en charge, des intégrations tierces et des solutions natives préconstruites pour créer des applications d'entreprise.
   </p>
 </div>
 
@@ -178,6 +178,6 @@ tableOfContents: false
 
 <blockquote>
   <p>
-    These docs are for apps built with Ionic Framework 4.0.0 and greater. For older Ionic v3 projects, please <a href="/docs/v3/native">see here</a>.
+    Ces documents sont destinés aux applications construites avec Ionic Framework 4.0.0 et plus. Pour les anciens projets Ionic v3, veuillez <a href="/docs/v3/native">voir ici</a>.
   </p>
 </blockquote>
