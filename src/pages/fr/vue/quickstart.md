@@ -206,7 +206,7 @@ Maintenant, le composant `App` n'a pas vraiment beaucoup de choses à modifier i
 
 Actuellement, le composant `Home` ressemble à ceci :
 
-![Vue home component](/docs/assets/img/guides/vue/first-app/home-route.png)
+![Vue du composant d'accueil](/docs/assets/img/guides/vue/first-app/home-route.png)
 
 ```html
 <template>
@@ -776,19 +776,19 @@ module.exports = {
 }
 ```
 
-La configuration ci-dessus empêchera tous les fichiers d'être préenregistrés et, à la place, ils seront chargés lorsqu'ils seront nécessaires. You can also select certain chunks to prefetch. Check out the <a href="https://cli.vuejs.org/guide/html-and-static-assets.html#prefetch" target="_blank" rel="noopener noreferrer">Vue CLI Docs on Prefetching</a> for more examples.
+La configuration ci-dessus empêchera tous les fichiers d'être préenregistrés et, à la place, ils seront chargés lorsqu'ils seront nécessaires. Vous pouvez également sélectionner certains morceaux à préextraire. Consultez la <a href="https://cli.vuejs.org/guide/html-and-static-assets.html#prefetch" target="_blank" rel="noopener noreferrer">docs de Vue CLI sur la prélecture</a> pour plus d'exemples.
 
-## Build a Native App
+## Construire une application native
 
-We now have the basics of an Ionic Vue app down, including some UI components and navigation. The great thing about Ionic Framework’s components is that they work anywhere, including iOS, Android, and PWAs. To deploy to mobile, desktop, and beyond, we use Ionic’s cross-platform app runtime [Capacitor](https://capacitor.ionicframework.com). It provides a consistent, web-focused set of APIs that enable an app to stay as close to web-standards as possible while accessing rich native device features on platforms that support them.
+Nous avons maintenant les bases d'une application Ionic Vue, y compris certains composants de l'interface utilisateur et la navigation. Ce qui est formidable avec les composants de Ionic Framework, c'est qu'ils fonctionnent partout, y compris sur iOS, Android et les PWA. Pour déployer sur le mobile, le bureau et au-delà, nous utilisons le moteur d'exécution d'applications multiplateformes de Ionic [Capacitor](https://capacitor.ionicframework.com). Il fournit un ensemble cohérent d'API axées sur le web qui permettent à une application de rester aussi proche que possible des normes web tout en accédant à des fonctionnalités natives riches sur les plateformes qui les prennent en charge.
 
-Adding native functionality is easy. First, add Capacitor to your project:
+Il est facile d'ajouter des fonctionnalités natives. Tout d'abord, ajoutez le Capacitor à votre projet :
 
 ```shell
 ionic integrations enable capacitor
 ```
 
-Next, build the project, then add your platform of choice:
+Ensuite, construisez le projet, puis ajoutez votre plateforme de choix:
 
 ```shell
 ionic build
@@ -796,16 +796,16 @@ ionic cap add ios
 ionic cap add android
 ```
 
-We use the standard native IDEs (Xcode and Android Studio) to open, build, and run the iOS and Android projects:
+Nous utilisons les IDE natifs standard (Xcode et Android Studio) pour ouvrir, construire et exécuter les projets iOS et Android :
 
 ```shell
 ionic cap open ios
 ionic cap open android
 ```
 
-Additional details can be found [here](https://capacitor.ionicframework.com/docs/getting-started/with-ionic).
+Des détails supplémentaires sont disponibles [ici](https://capacitor.ionicframework.com/docs/getting-started/with-ionic).
 
-Next, check out [all the APIs](https://capacitor.ionicframework.com/docs/apis) that are available. There is some great features, including the [Camera API](https://capacitor.ionicframework.com/docs/apis/camera). We can implement photo capture functionality in just a few lines of code:
+Ensuite, consultez [toutes les API](https://capacitor.ionicframework.com/docs/apis) qui sont disponibles. Il existe des fonctionnalités intéressantes, notamment la [Camera API](https://capacitor.ionicframework.com/docs/apis/camera). Nous pouvons mettre en œuvre la fonctionnalité de capture de photos en quelques lignes de code seulement :
 
 ```html
 <template>
@@ -864,10 +864,10 @@ export default defineComponent({
 </script>
 ```
 
-## Where to go from here
+## Où aller à partir de maintenant
 
-This guide covered the basics of creating an Ionic Vue app, adding some basic navigation, and introducing Capacitor as a way of building native apps. To dive deeper into building complete Ionic Framework apps with Vue and Capacitor, follow our [First App guide](/docs/vue/your-first-app).
+Ce guide a abordé les bases de la création d'une application Ionic Vue, l'ajout d'une navigation de base et la présentation de Capacitor comme moyen de créer des applications natives. Pour plonger plus profondément dans la construction d'applications Ionic Framework complètes avec Vue et Capacitor, suivez notre [guide First App](/docs/vue/your-first-app).
 
-For a more detailed look at Ionic Frameworks’s components, check out the [component API pages](https://ionicframework.com/docs/components). For more details on Vue, review the [Vue Docs](https://v3.vuejs.org/). To keep building native features, see the [Capacitor docs](https://capacitor.ionicframework.com/docs/).
+Pour un aperçu plus détaillé des composants de Ionic Frameworks, consultez les [pages API des composants](https://ionicframework.com/docs/components). Pour plus de détails sur Vue, consultez le [Vue Docs](https://v3.vuejs.org/). Pour continuer à développer des fonctionnalités natives, consultez les [la documentation de Capacitor](https://capacitor.ionicframework.com/docs/).
 
-Happy app building! 🎉
+Bonne construction d'application! 🎉
