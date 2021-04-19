@@ -47,47 +47,47 @@ Ionic est conçu pour fonctionner et se comporter de manière optimale sur les d
 
 Ionic est conçu pour fonctionner et s'afficher magnifiquement sur tous les appareils et plateformes mobiles actuels. Grâce aux composants prêts à l'emploi, à la typographie et à un superbe thème de base (extensible) qui s'adapte à chaque plateforme, vous construirez avec style.
 
-### Native and Web optimized
+### Native et optimisée pour le Web
 
-Ionic emulates native app UI guidelines and uses native SDKs, bringing the UI standards and device features of native apps together with the full power and flexibility of the open web. Ionic uses Capacitor (or Cordova) to deploy natively, or runs in the browser as a Progressive Web App.
+Ionic émule les directives d'interface utilisateur des applications natives et utilise des SDK natifs, ce qui permet de combiner les normes d'interface utilisateur et les caractéristiques des appareils des applications natives avec toute la puissance et la flexibilité du web ouvert. Ionic utilise Capacitor (ou Cordova) pour un déploiement natif, ou s'exécute dans le navigateur en tant que Progressive Web App.
 
-## Goals
+## Les Objectifs
 
-### Cross-platform
+### Multi-Plateformes
 
-Build and deploy apps that work across multiple platforms, such as native iOS, Android, desktop, and the web as a Progressive Web App - all with one code base. Write once, run anywhere.
+Créez et déployez des applications qui fonctionnent sur plusieurs plates-formes, telles que les applications natives iOS, Android, les ordinateurs de bureau et le Web en tant qu'application Web progressive, le tout avec une seule base de code. Écrivez une fois, utilisez partout.
 
-### Web Standards-based
+### Basé sur les standards Web
 
-Ionic Framework is built on top of reliable, [standardized web technologies](/docs/reference/glossary#web-standards): HTML, CSS, and JavaScript, using modern Web APIs such as Custom Elements and Shadow DOM. Because of this, Ionic components have a stable API, and aren't at the whim of a single platform vendor.
+Le framework Ionic est construit au-dessus de technologies web fiables, [standardisées](/docs/reference/glossary#web-standards) : HTML, CSS et JavaScript, en utilisant des API web modernes telles que Custom Elements et Shadow DOM. De ce fait, les composants Ionic disposent d'une API stable et ne sont pas soumis aux caprices d'un seul fournisseur de plateforme.
 
-### Beautiful Design
+### Belle conception
 
-Clean, simple, and functional. Ionic Framework is designed to work and display beautifully out-of-the-box across all platforms. Start with pre-designed components, typography, interactive paradigms, and a gorgeous (yet extensible) base theme.
+Propre, simple et fonctionnel. Le framework Ionic est conçu pour fonctionner et s'afficher magnifiquement sur toutes les plateformes. Commencez par des composants préconçus, une typographie, des paradigmes interactifs et un thème de base magnifique (mais extensible).
 
-### Simplicity
+### Simplicité
 
-Ionic Framework is built with simplicity in mind, so that creating Ionic apps is enjoyable, easy to learn, and accessible to just about anyone with web development skills.
+Le framework Ionic est conçu dans un souci de simplicité, afin que la création d'applications Ionic soit agréable, facile à apprendre et accessible à toute personne ayant des compétences en développement web.
 
-## Framework Compatibility
+## Compatibilité du framework
 
-While past releases of Ionic were tightly coupled to Angular, version 4.x of the framework was re-engineered to work as a standalone <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components" target="_blank">Web Component</a> library, with integrations for the latest JavaScript frameworks, like Angular. Ionic can be used in most frontend frameworks with success, including React and Vue, though some frameworks need a shim for full Web Component support.
+Alors que les versions précédentes de Ionic étaient étroitement couplées à Angular, la version 4.x du framework a été remaniée pour fonctionner comme une bibliothèque autonome <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components" target="_blank">composant Web</a>, avec des intégrations pour les derniers frameworks JavaScript, comme Angular. Ionic peut être utilisé avec succès dans la plupart des frameworks frontaux, y compris React et Vue, bien que certains frameworks nécessitent un shim pour un support complet des composants Web.
 
 ### JavaScript
 
-One of the main goals with moving Ionic Framework to <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components" target="_blank">Web Components</a> was to remove any hard requirement on a single framework to host the components. This made it possible for the core components to work standalone in a web page with just a script tag. While working with frameworks can be great for larger teams and larger apps, it is now possible to use Ionic as a standalone library in a single page even in a context like WordPress.
+L'un des principaux objectifs du passage du Framework Ionic à <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components" target="_blank">Web Components</a> était de supprimer toute exigence stricte sur un seul framework pour héberger les composants. Cela a permis aux composants de base de fonctionner de manière autonome dans une page Web avec une simple balise de script. Si travailler avec des frameworks peut être formidable pour les équipes et les applications plus importantes, il est désormais possible d'utiliser Ionic comme une bibliothèque autonome dans une page unique, même dans un contexte comme WordPress.
 
 ### Angular
 
-Angular has always been at the center of what makes Ionic great. While the core components have been written to work as a standalone Web Component library, the `@ionic/angular` package makes integration with the Angular ecosystem a breeze. `@ionic/angular` includes all the functionality that Angular developers would expect coming from Ionic 2/3, and integrates with core Angular libraries, like the Angular router.
+Angular a toujours été au centre de ce qui rend Ionic génial. Bien que les composants de base aient été écrits pour fonctionner comme une bibliothèque autonome de composants Web, le paquet `@ionic/angular` facilite l'intégration à l'écosystème Angular. `@ionic/angular` comprend toutes les fonctionnalités que les développeurs Angular attendent venant de Ionic 2/3, et s'intègre aux bibliothèques Angular de base, comme le routeur Angular.
 
 ### React
 
-Ionic now has official support for the popular React library. Ionic React lets React developers use their existing web skills to build apps that target iOS, Android, the web, and the desktop. With `@ionic/react`, you can use all the core Ionic components, but in a way that feels like using native React components.
+Ionic a maintenant un support officiel pour la populaire bibliothèque React. Ionic React permet aux développeurs React d'utiliser leurs compétences web existantes pour créer des applications qui ciblent iOS, Android, le web et le bureau. Avec `@ionic/react`, vous pouvez utiliser tous les composants de base de Ionic, mais d'une manière qui donne l'impression d'utiliser des composants React natifs.
 
 ### Vue
 
-Ionic now has official support for the popular Vue 3 library. Ionic Vue lets Vue developers use their existing web skills to build apps that target iOS, Android, the web, and the desktop. With `@ionic/vue`, you can use all the core Ionic components, but in a way that feels like using native Vue components.
+Ionic a maintenant un support officiel pour la populaire bibliothèque Vue 3. Ionic Vue permet aux développeurs Vue d'utiliser leurs compétences web existantes pour construire des applications qui ciblent iOS, Android, le web et le bureau. Avec `@ionic/vue`, vous pouvez utiliser tous les composants de base de Ionic, mais d'une manière qui donne l'impression d'utiliser des composants Vue natifs.
 
 ### Future Support
 
