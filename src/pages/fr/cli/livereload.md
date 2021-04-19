@@ -3,17 +3,17 @@
 
 # Recharge en direct
 
-Une option qui peut stimuler la productivité lors de la création d'applications Ionic est **Live Reload** (ou **live-reload**). When active, Live Reload will reload the browser or [Web View](/docs/core-concepts/webview) when changes in the app are detected. This is particularly useful for developing using hardware devices.
+Une option qui peut stimuler la productivité lors de la création d'applications Ionic est **Live Reload** (ou **live-reload**). Lorsqu'il est actif, Live Reload recharge le navigateur ou [Web View](/docs/core-concepts/webview) lorsque des changements sont détectés dans l'application. Ceci est particulièrement utile pour le développement à l'aide de dispositifs matériels.
 
-## Terms
+## Modalités
 
-Live Reload is a conflated term. With `ionic serve`, Live Reload just refers to reloading the browser when changes are made. Live Reload can also be used with Capacitor and Cordova to provide the same experience on virtual and hardware devices, which eliminates the need for re-deploying a native binary.
+Le Live Reload est un terme confondu. Avec `ionic serve`, Live Reload désigne simplement le rechargement du navigateur lorsque des modifications sont apportées. Live Reload peut également être utilisé avec Capacitor et Cordova pour offrir la même expérience sur les appareils virtuels et matériels, ce qui élimine la nécessité de redéployer un binaire natif.
 
-## Usage
+## Utilisation
 
-Since live-reload requires the Web View to load your app from a URL hosted by your computer instead of just reading files on the device, setting up live-reload for hardware devices can be tricky.
+Étant donné que le chargement en direct exige que la vue Web charge votre application à partir d'une URL hébergée par votre ordinateur au lieu de lire simplement les fichiers sur le dispositif, la configuration du chargement en direct pour les dispositifs matériels peut être délicate.
 
-As with regular device deploys, you will need a cable to connect your device to your computer. The difference is the Ionic CLI configures the Web View to load your app from the dev server on your computer.
+Comme pour les déploiements réguliers de dispositifs, vous aurez besoin d'un câble pour connecter votre dispositif à votre ordinateur. La différence est que Ionic CLI configure la vue Web pour charger votre application depuis le serveur de développement sur votre ordinateur.
 
 ### Capacitor
 
