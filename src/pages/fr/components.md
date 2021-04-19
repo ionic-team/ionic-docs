@@ -10,35 +10,35 @@ Les applications Ionic sont constituées de blocs de construction de haut niveau
 
 <docs-cards> <docs-card header="Action Sheet" href="/docs/api/action-sheet" img="/docs/assets/icons/feature-component-actionsheet-icon.png"> 
 
-Action Sheets display a set of options with the ability to confirm or cancel an action.</docs-card>
+Les fiches d'action affichent une série d'options avec la possibilité de confirmer ou d'annuler une action.</docs-card>
 
 <docs-card header="Alert" href="/docs/api/alert" icon="/docs/assets/icons/component-alert-icon.png"> 
 
-Alerts are a great way to offer the user the ability to choose a specific action or list of actions.</docs-card>
+Les alertes sont un excellent moyen d'offrir à l'utilisateur la possibilité de choisir une action spécifique ou une liste d'actions.</docs-card>
 
 <docs-card header="Badge" href="/docs/api/badge" icon="/docs/assets/icons/component-badge-icon.png"> 
 
-Badges are a small component that typically communicate a numerical value to the user.</docs-card>
+Les badges sont de petits éléments qui communiquent généralement une valeur numérique à l'utilisateur.</docs-card>
 
 <docs-card header="Button" href="/docs/api/button" icon="/docs/assets/icons/component-button-icon.png"> 
 
-Buttons let your users take action. They're an essential way to interact with and navigate through an app.</docs-card>
+Les boutons permettent à vos utilisateurs d'agir. Ils constituent un moyen essentiel d'interagir et de naviguer dans une application.</docs-card>
 
 <docs-card header="Card" href="/docs/api/card" icon="/docs/assets/icons/component-card-icon.png"> 
 
-Cards are a great way to display an important piece of content, and can contain images, buttons, text, and more.</docs-card>
+Les cartes sont un excellent moyen d'afficher un élément de contenu important et peuvent contenir des images, des boutons, du texte, etc.</docs-card>
 
 <docs-card header="Checkbox" href="/docs/api/checkbox" icon="/docs/assets/icons/component-checkbox-icon.png"> 
 
-Checkboxes can be used to let the user know they need to make a binary decision.</docs-card>
+Les cases à cocher peuvent être utilisées pour indiquer à l'utilisateur qu'il doit prendre une décision binaire.</docs-card>
 
 <docs-card header="Chip" href="/docs/api/chip" icon="/docs/assets/icons/component-chip-icon.png"> 
 
-Chips are a compact way to display data or actions.</docs-card>
+Les puces sont un moyen compact d'afficher des données ou des actions.</docs-card>
 
 <docs-card header="Content" href="/docs/api/content" icon="/docs/assets/icons/component-content-icon.png"> 
 
-Content is the quintessential way to interact with and navigate through an app.</docs-card>
+Le contenu est le moyen par excellence d'interagir avec une application et d'y naviguer.</docs-card>
 
 <docs-card header="Date & Time Pickers" href="/docs/api/datetime" icon="/docs/assets/icons/component-datetimepicker-icon.png"> 
 
