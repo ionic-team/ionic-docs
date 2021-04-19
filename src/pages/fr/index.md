@@ -1,51 +1,51 @@
 ---
-title: Ionic Framework
+title: Le Framework Ionic
 meta:
   image: /docs/assets/img/meta/open-graph.png
-  title: Open-Source UI Toolkit to Create Your Own Mobile or Desktop Apps
-  description: Ionic Framework is an open-source UI toolkit to create your own mobile and desktop apps using web technologies with integrations for popular frameworks.
+  title: Outils d'interface utilisateur Open-Source pour créer vos propres applications mobiles ou de bureau
+  description: Ionic Framework est un ensemble d'outils de l'interface utilisateur open-source pour créer vos propres applications mobiles et de bureau en utilisant des technologies web avec des intégrations pour les frameworks populaires.
 tableOfContents: false
 demoUrl: https://ionic-docs-demo.herokuapp.com/
 demoSourceUrl: https://github.com/ionic-team/docs-demo
-nextText: 'Environment Setup'
+nextText: 'Configuration de l''environnement'
 nextUrl: '/docs/intro/environment'
 ---
 
-Ionic Framework is an open source UI toolkit for building performant, high-quality mobile and desktop apps using web technologies — HTML, CSS, and JavaScript — with integrations for popular frameworks like [ Angular](/docs/angular/overview), [React](/docs/react/overview), and [Vue](/docs/vue/overview).
+Le Framework Ionic est une boîte à outils UI open source permettant de créer des applications mobiles et de bureau performantes et de haute qualité à l'aide de technologies web - HTML, CSS et JavaScript - avec des intégrations pour des frameworks populaires comme [Angular](/docs/angular/overview), [React](/docs/react/overview) et [Vue](/docs/vue/overview).
 
-Get started building by [installing Ionic](/docs/intro/cli) or following our [First App Tutorial](/docs/intro/next#build-your-first-app) to learn the main concepts.
+Commencez à construire en [installant Ionic](/docs/intro/cli) ou en suivant notre [Tutoriel de la première application](/docs/intro/next#build-your-first-app) pour apprendre les principaux concepts.
 
 <docs-cards> <docs-card header="Installation Guide" href="/docs/intro/cli" icon="/docs/assets/icons/guide-installation-icon.svg" hover-icon="/docs/assets/icons/guide-installation-icon-hover.svg"> 
 
-Step-by-step guides to setting up your system and installing the framework.</docs-card>
+Des guides étape par étape pour configurer votre système et installer le framework.</docs-card>
 
 <docs-card header="UI Components" href="/docs/components" icon="/docs/assets/icons/guide-components-icon.svg" hover-icon="/docs/assets/icons/guide-components-icon-hover.svg"> 
 
-Dive into Ionic Framework's beautifully designed UI component library.</docs-card>
+Plongez dans la bibliothèque de composants d'interface utilisateur magnifiquement conçue de le framework Ionic.</docs-card>
 
 <docs-card header="Native Functionality" href="/docs/native" icon="/docs/assets/icons/guide-native-icon.svg" hover-icon="/docs/assets/icons/guide-native-icon-hover.svg"> 
 
-Integrate native device plugins, like Bluetooth, Maps, HealthKit, and more.</docs-card>
+Intégrez des plugins natifs tels que Bluetooth, Maps, HealthKit, et plus encore.</docs-card>
 
 <docs-card header="Theming" href="/docs/theming/basics" icon="/docs/assets/icons/guide-theming-icon.svg" hover-icon="/docs/assets/icons/guide-theming-icon-hover.svg"> 
 
-Learn to easily customize and modify your Ionic app's visual design to fit your brand.</docs-card> </docs-cards>
+Apprenez à personnaliser et modifier facilement le design visuel de votre application Ionic pour s'adapter à votre marque.</docs-card> </docs-cards>
 
-## Overview
+## Vue d'ensemble
 
-Ionic Framework focuses on the frontend UX and UI interaction of an app — UI controls, interactions, gestures, animations. It's easy to learn, and integrates with other libraries or frameworks, such as [Angular](/docs/angular/overview), [React](/docs/react/overview), or [Vue](/docs/vue/overview). Alternatively, it can be used standalone without any frontend framework using a simple [script include](/docs/intro/cdn). If you’d like to learn more about Ionic Framework before diving in, we <a href="https://youtu.be/p3AN3igqiRc" target="_blank">created a video</a> to walk you through the basics.
+Le framework Ionic se concentre sur le frontend UX et l'interaction UI d'une application - contrôles UI, interactions, gestes, animations. Il est facile à apprendre et s'intègre à d'autres bibliothèques ou frameworks, comme [Angular](/docs/angular/overview), [React](/docs/react/overview), ou [Vue](/docs/vue/overview). Il peut également être utilisé de manière autonome, sans framework frontend, à l'aide d'un simple [script include](/docs/intro/cdn). Si vous souhaitez en savoir plus sur le framework Ionic avant de vous y plonger, nous avons <a href="https://youtu.be/p3AN3igqiRc" target="_blank">créé une vidéo</a> pour vous présenter les bases.
 
-### One codebase, running everywhere
+### Une seule base de code, en cours d'exécution partout
 
-Ionic is the only mobile app stack that enables web developers to build apps for all major app stores and the mobile web from a single codebase. And with [Adaptive Styling](/docs/theming/platform-styles), Ionic apps look and feel at home on every device.
+Ionic est la seule pile d'applications mobiles qui permet aux développeurs web de créer des applications pour tous les principaux magasins d'applications et le web mobile à partir d'une seule base de code. Et avec [Adaptive Styling](/docs/theming/platform-styles), les applications Ionic ont l'air et se sentent à l'aise sur chaque appareil.
 
-### A focus on performance
+### Une focalisation sur les performances
 
-Ionic is built to perform and behave great on the latest mobile devices with best practices like efficient hardware accelerated transitions, and touch-optimized gestures.
+Ionic est conçu pour fonctionner et se comporter de manière optimale sur les derniers appareils mobiles grâce à des pratiques d'excellence telles que des transitions accélérées par le matériel et des gestes optimisés pour le toucher.
 
-### Clean, simple, and functional design
+### Un design propre, simple et fonctionnel
 
-Ionic is designed to work and display beautifully on all current mobile devices and platforms. With ready-made components, typography, and a gorgeous (yet extensible) base theme that adapts to each platform, you'll be building in style.
+Ionic est conçu pour fonctionner et s'afficher magnifiquement sur tous les appareils et plateformes mobiles actuels. Grâce aux composants prêts à l'emploi, à la typographie et à un superbe thème de base (extensible) qui s'adapte à chaque plateforme, vous construirez avec style.
 
 ### Native and Web optimized
 
