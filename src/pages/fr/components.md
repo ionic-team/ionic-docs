@@ -98,23 +98,23 @@ Les entrées radio vous permettent de présenter un ensemble d'options exclusive
 
 <docs-card header="Refresher" href="/docs/api/refresher" icon="/docs/assets/icons/component-refresher-icon.png"> 
 
-Refresher provides pull-to-refresh functionality on a content component.</docs-card>
+Refresher offre une fonctionnalité de rafraîchissement par traction sur un composant de contenu.</docs-card>
 
 <docs-card header="Searchbar" href="/docs/api/searchbar" img="/docs/assets/icons/feature-component-search-icon.png"> 
 
-Searchbar is used to search or filter items, usually from a toolbar.</docs-card>
+La barre de recherche est utilisée pour rechercher ou filtrer des éléments, généralement à partir d'une barre d'outils.</docs-card>
 
 <docs-card header="Reorder" href="/docs/api/reorder" icon="/docs/assets/icons/component-reorder-icon.png"> 
 
-Reorder lets users drag and drop to reorder a list of items.</docs-card>
+Réorganiser permet aux utilisateurs de faire un glisser-déposer pour réorganiser une liste d'éléments.</docs-card>
 
 <docs-card header="Routing" href="/docs/api/router" icon="/docs/assets/icons/component-routing-icon.png"> 
 
-Routing allows navigation based on the current path.</docs-card>
+Le routage permet la navigation sur la base du chemin actuel.</docs-card>
 
 <docs-card header="Segment" href="/docs/api/segment" icon="/docs/assets/icons/component-segment-icon.png"> 
 
-Segments provide a set of exclusive buttons that can be used as a filter or view switcher.</docs-card>
+Les segments fournissent un ensemble de boutons exclusifs qui peuvent être utilisés comme un filtre ou un commutateur de vue.</docs-card>
 
 <docs-card header="Select" href="/docs/api/select" icon="/docs/assets/icons/component-select-icon.png"> 
 
