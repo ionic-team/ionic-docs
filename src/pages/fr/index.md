@@ -89,38 +89,38 @@ Ionic a maintenant un support officiel pour la populaire bibliothèque React. Io
 
 Ionic a maintenant un support officiel pour la populaire bibliothèque Vue 3. Ionic Vue permet aux développeurs Vue d'utiliser leurs compétences web existantes pour construire des applications qui ciblent iOS, Android, le web et le bureau. Avec `@ionic/vue`, vous pouvez utiliser tous les composants de base de Ionic, mais d'une manière qui donne l'impression d'utiliser des composants Vue natifs.
 
-### Future Support
+### Support futur
 
-Support for other frameworks will be considered in future releases.
+La prise en charge d'autres cadres sera envisagée dans les prochaines versions.
 
-## Ionic CLI
+## Le CLI de IONIC
 
-The official [Ionic CLI](/docs/cli), or Command Line Interface, is a tool that quickly scaffolds Ionic apps and provides a number of helpful commands to Ionic developers. In addition to installing and updating Ionic, the CLI comes with a built-in development server, build and debugging tools, and much more. If you are an [Appflow](#ionic-appflow) member, the CLI can be used to perform cloud builds and deployments, and administer your account.
+L'interface officielle [Ionic CLI](/docs/cli), ou interface en ligne de commande, est un outil qui permet d'échafauder rapidement des applications Ionic et fournit un certain nombre de commandes utiles aux développeurs Ionic. Outre l'installation et la mise à jour de Ionic, le CLI est livré avec un serveur de développement intégré, des outils de construction et de débogage, et bien plus encore. Si vous êtes un [Appflow](#ionic-appflow) membre, le CLI peut être utilisé pour effectuer des constructions et des déploiements dans le cloud, et administrer votre compte.
 
 ## Appflow
 
-To help build, deploy, and manage Ionic apps throughout their lifecycle, we offer a commercial service for production apps called <a href="https://ionic.io/appflow" target="_blank">Appflow</a>, which is **separate from the open source Framework.**
+Pour aider à construire, déployer et gérer les apps Ionic tout au long de leur cycle de vie, nous proposons un service commercial pour les apps de production appelé <a href="https://ionic.io/appflow" target="_blank">Appflow</a>, qui est **séparé du Framework open source.**
 
-Appflow helps developers and teams compile native app builds and deploy live code updates to Ionic apps from a centralized dashboard. Optional paid upgrades are available for more advanced capabilities like publishing directly to app stores, workflow automation, single sign-on (SSO) and access to connected services and integrations.
+Appflow aide les développeurs et les équipes à compiler des applications natives et à déployer des mises à jour de code en direct pour les applications Ionic à partir d'un tableau de bord centralisé. Des mises à niveau payantes sont disponibles en option pour des fonctionnalités plus avancées telles que la publication directe sur les app stores, l'automatisation des flux de travail, l'authentification unique (SSO) et l'accès aux services et intégrations connectés.
 
-Appflow requires an <a href="https://dashboard.ionicframework.com/signup" target="_blank">Ionic Account</a> and comes with a free “Hobby” plan for those interested in playing around with some of its features.
+Appflow nécessite un <a href="https://dashboard.ionicframework.com/signup" target="_blank">compte Ionic</a> et est livré avec un plan gratuit "Hobby" pour ceux qui souhaitent jouer avec certaines de ses fonctionnalités.
 
-## Ecosystem
+## L' Écosystème
 
-Ionic Framework is actively developed and maintained full-time by a core team, and its ecosystem is guided by an international community of developers and contributors fueling its growth and adoption. Developers and companies small and large use Ionic to build and ship amazing apps that run everywhere.
+Le framework Ionic est activement développé et maintenu à plein temps par une équipe centrale, et son écosystème est guidé par une communauté internationale de développeurs et de contributeurs qui alimentent sa croissance et son adoption. Les développeurs et les entreprises, petites et grandes, utilisent Ionic pour construire et expédier des applications étonnantes qui fonctionnent partout.
 
-### Join the Community
+### Rejoignez la communauté
 
-There are millions of Ionic developers in over 200 countries worldwide. Here are some ways to join:
+Il y a des millions de développeurs Ionic dans plus de 200 pays dans le monde. Voici quelques façons de participer :
 
-* <a href="https://forum.ionicframework.com/" target="_blank">Forum:</a> A great place for asking questions and sharing ideas.
-* <a href="https://ionicworldwide.herokuapp.com/" target="_blank">Slack:</a> A lively place for devs to meet and chat in real time.
-* <a href="https://twitter.com/ionicframework" target="_blank">Twitter:</a> Where we post updates and share content from the Ionic community.
-* <a href="https://github.com/ionic-team/ionic" target="_blank">GitHub:</a> For reporting bugs or requesting new features, create an issue here. PRs welcome!
-* <a href="https://ionicframework.com/contributors" target="_blank">Content authoring:</a> Write a technical blog or share your story with the Ionic community.
+* <a href="https://forum.ionicframework.com/" target="_blank">Forum:</a> Un endroit idéal pour poser des questions et partager des idées.
+* <a href="https://ionicworldwide.herokuapp.com/" target="_blank">Slack:</a> Un lieu vivant où les développeurs peuvent se rencontrer et discuter en temps réel.
+* <a href="https://twitter.com/ionicframework" target="_blank">Twitter:</a> Où nous publions des mises à jour et partageons du contenu de la communauté Ionic.
+* <a href="https://github.com/ionic-team/ionic" target="_blank">GitHub:</a> Pour signaler des bogues ou demander de nouvelles fonctionnalités, créez un problème ici. Les PRs sont les bienvenus !
+* <a href="https://ionicframework.com/contributors" target="_blank">Création de contenu:</a> Rédigez un blog technique ou partagez votre histoire avec la communauté Ionic.
 
 ## License
 
-Ionic Framework is a free and open source project, released under the permissable <a href="https://opensource.org/licenses/MIT" target="_blank">MIT license</a>. This means it can be used in personal or commercial projects for free. MIT is the same license used by such popular projects as jQuery and Ruby on Rails.
+Ionic Framework est un projet libre et open source, publié sous la licence permissable <a href="https://opensource.org/licenses/MIT" target="_blank">MIT license</a>. Cela signifie qu'il peut être utilisé gratuitement dans des projets personnels ou commerciaux. MIT est la même licence que celle utilisée par des projets aussi populaires que jQuery et Ruby on Rails.
 
-This documentation content (found in the <a href="https://github.com/ionic-team/ionic-docs" target="_blank">ionic-docs</a> repo) is licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache 2 license</a>.
+Ce contenu de documentation (qui se trouve dans le repo <a href="https://github.com/ionic-team/ionic-docs" target="_blank">ionic-docs</a>) est sous licence <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Licence Apache 2</a>.
