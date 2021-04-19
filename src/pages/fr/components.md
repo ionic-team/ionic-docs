@@ -42,59 +42,59 @@ Le contenu est le moyen par excellence d'interagir avec une application et d'y n
 
 <docs-card header="Date & Time Pickers" href="/docs/api/datetime" icon="/docs/assets/icons/component-datetimepicker-icon.png"> 
 
-Date & time pickers are used to present an interface that makes it easy for users to select dates and times.</docs-card>
+Les sélecteurs de date et d'heure sont utilisés pour présenter une interface qui permet aux utilisateurs de sélectionner facilement des dates et des heures.</docs-card>
 
 <docs-card header="Floating Action Button" href="/docs/api/fab" icon="/docs/assets/icons/component-fab-icon.png"> 
 
-Floating action buttons are circular buttons that perform a primary action on a screen.</docs-card>
+Les boutons d'action flottants sont des boutons circulaires qui effectuent une action primaire sur un écran.</docs-card>
 
 <docs-card header="Icons" href="https://ionicons.com" img="/docs/assets/icons/feature-component-icons-icon.png"> 
 
-Beautifully designed icons for use in web, iOS, Android, and desktop apps.</docs-card>
+Des icônes magnifiquement conçues pour le web, iOS, Android et les applications de bureau.</docs-card>
 
 <docs-card header="Grid" href="/docs/api/grid" icon="/docs/assets/icons/component-grid-icon.png"> 
 
-The grid is a powerful mobile-first system for building custom layouts.</docs-card>
+La grille est un système puissant, axé sur le mobile, qui permet de créer des mises en page personnalisées.</docs-card>
 
 <docs-card header="Infinite Scroll" href="/docs/api/infinite-scroll" icon="/docs/assets/icons/component-infinitescroll-icon.png"> 
 
-Infinite scroll allows you to load new data as the user scrolls through your app.</docs-card>
+Le défilement infini vous permet de charger de nouvelles données lorsque l'utilisateur fait défiler votre application.</docs-card>
 
 <docs-card header="Input" href="/docs/api/input" icon="/docs/assets/icons/component-input-icon.png"> 
 
-Inputs provides a way for users to enter data in your app.</docs-card>
+Inputs permet aux utilisateurs d'entrer des données dans votre application.</docs-card>
 
 <docs-card header="Item" href="/docs/api/item" icon="/docs/assets/icons/component-item-icon.png"> 
 
-Items are an all-purpose UI container that can be used as part of a list.</docs-card>
+Les éléments sont un conteneur d'interface utilisateur polyvalent qui peut être utilisé comme partie d'une liste.</docs-card>
 
 <docs-card header="List" href="/docs/api/list" icon="/docs/assets/icons/component-lists-icon.png"> 
 
-Lists can display rows of information, such as a contact list, playlist, or menu.</docs-card>
+Les listes peuvent afficher des rangées d'informations, telles qu'une liste de contacts, une liste de lecture ou un menu.</docs-card>
 
 <docs-card header="Navigation" href="/docs/api/nav" img="/docs/assets/icons/feature-component-navigation-icon.png"> 
 
-Navigation is how users move between different pages in your app.</docs-card>
+La navigation est la façon dont les utilisateurs se déplacent entre les différentes pages de votre application.</docs-card>
 
 <docs-card header="Menu" href="/docs/api/menu" icon="/docs/assets/icons/component-menu-icon.png"> 
 
-Menus are a common navigation pattern. They can be permanently on-screen, or revealed when needed.</docs-card>
+Les menus sont un modèle de navigation courant. Ils peuvent être affichés en permanence à l'écran, ou révélés en cas de besoin.</docs-card>
 
 <docs-card header="Modal" href="/docs/api/modal" icon="/docs/assets/icons/component-modal-icon.png"> 
 
-Modals slide in and off screen to display a temporary UI and are often used for login or sign-up pages.</docs-card>
+Les modales se glissent dans l'écran et en sortent pour afficher une interface utilisateur temporaire et sont souvent utilisées pour les pages de connexion ou d'inscription.</docs-card>
 
 <docs-card header="Popover" href="/docs/api/popover" icon="/docs/assets/icons/component-popover-icon.png"> 
 
-Popover provides an easy way to present information or options without changing contexts.</docs-card>
+Le popover offre un moyen facile de présenter des informations ou des options sans changer de contexte.</docs-card>
 
 <docs-card header="Progress Indicators" href="/docs/api/progress-bar" icon="/docs/assets/icons/component-progress-icon.png"> 
 
-Progress indicators visualize the progression of an operation or activity.</docs-card>
+Les indicateurs de progrès visualisent la progression d'une opération ou d'une activité.</docs-card>
 
 <docs-card header="Radio" href="/docs/api/radio" icon="/docs/assets/icons/component-radio-icon.png"> 
 
-Radio inputs allow you to present a set of exclusive options.</docs-card>
+Les entrées radio vous permettent de présenter un ensemble d'options exclusives.</docs-card>
 
 <docs-card header="Refresher" href="/docs/api/refresher" icon="/docs/assets/icons/component-refresher-icon.png"> 
 
