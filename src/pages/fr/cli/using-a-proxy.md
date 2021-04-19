@@ -1,17 +1,17 @@
 ---
 ---
 
-# Using a Proxy
+# Utilisation d'un proxy
 
-Proxy support is built-in to the Ionic CLI. Proxy settings can be configured via the config file or an environment variable.
+Le support du proxy est intégré à l'Ionic CLI. Les paramètres du proxy peuvent être configurés via le fichier de configuration ou une variable d'environnement.
 
-To configure proxy settings via the config file, run the following with the URL of the proxy server:
+Pour configurer les paramètres du proxy via le fichier de configuration, exécutez la commande suivante avec l'URL du serveur proxy :
 
 ```shell
 $ ionic config set -g proxy http://proxy.example.com:8888
 ```
 
-To configure proxy settings via an environment variable, use one of the following:
+Pour configurer les paramètres du proxy via une variable d'environnement, utilisez l'une des méthodes suivantes :
 
 ```shell
 $ export HTTP_PROXY="http://proxy.example.com:8888" # also used by npm
@@ -19,9 +19,9 @@ $ export HTTPS_PROXY="https://proxy.example.com:8888" # also used by npm
 $ export IONIC_HTTP_PROXY="http://proxy.example.com:8888"
 ```
 
-### Other CLIs
+### Les autres CLI
 
-Each CLI that you use must be configured separately to proxy network requests.
+Chaque CLI que vous utilisez doit être configuré séparément pour acheminer les demandes du réseau.
 
 #### npm
 
@@ -35,9 +35,9 @@ $ npm config set proxy http://proxy.company.com:8888
 $ git config --global http.proxy http://proxy.example.com:8888
 ```
 
-### SSL Configuration
+### Configuration SSL
 
-The Ionic CLI can be configured to use various SSL settings for HTTP requests.
+Le CLI de Ionic peut être configuré pour utiliser différents paramètres SSL pour les requêtes HTTP.
 
 ```shell
 $ ionic config set -g ssl.cafile /path/to/cafile # file path to your CA root certificate
@@ -45,4 +45,4 @@ $ ionic config set -g ssl.certfile /path/to/certfile # file path to a client cer
 $ ionic config set -g ssl.keyfile /path/to/keyfile # file path to a client key file
 ```
 
-The `cafile`, `certfile`, and `keyfile` entries can be manually edited as arrays of strings in `~/.ionic/config.json` to include multiple files.
+Les entrées `cafile`, `certfile`, et `keyfile` peuvent être éditées manuellement comme des tableaux de chaînes dans `~/.ionic/config.json` pour inclure plusieurs fichiers.
