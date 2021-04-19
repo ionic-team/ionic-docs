@@ -118,24 +118,24 @@ Les segments fournissent un ensemble de boutons exclusifs qui peuvent être util
 
 <docs-card header="Select" href="/docs/api/select" icon="/docs/assets/icons/component-select-icon.png"> 
 
-Select is similar to the native HTML select, with a few improvements to sorting and selecting.</docs-card>
+Select est similaire au select HTML natif, avec quelques améliorations au niveau du tri et de la sélection.</docs-card>
 
 <docs-card header="Slides" href="/docs/api/slides" icon="/docs/assets/icons/component-slides-icon.png"> 
 
-Slides make it easy to create complex UI such as galleries, tutorials, and page-based layouts.</docs-card>
+Slides permettent de créer facilement des interfaces utilisateur complexes telles que des galeries, des didacticiels et des mises en page.</docs-card>
 
 <docs-card header="Tabs" href="/docs/api/tabs" img="/docs/assets/icons/feature-component-tabs-icon.png"> 
 
-Tabs enable tabbed navigation, a standard navigation pattern in modern apps.</docs-card>
+Les onglets permettent la navigation par onglets, un modèle de navigation standard dans les applications modernes.</docs-card>
 
 <docs-card header="Toast" href="/docs/api/toast" icon="/docs/assets/icons/component-toast-icon.png"> 
 
-Toast is used to show a notification over the top of an app's content. It can be temporary or dismissable.</docs-card>
+Toast est utilisé pour afficher une notification par-dessus le contenu d'une application. Elle peut être temporaire ou révocable.</docs-card>
 
 <docs-card header="Toggle" href="/docs/api/toggle" icon="/docs/assets/icons/component-toggle-icon.png"> 
 
-Toggles are an input for binary options, often used for options and switches.</docs-card>
+Les Toggles sont une entrée pour les options binaires, souvent utilisée pour les options et les interrupteurs.</docs-card>
 
 <docs-card header="Toolbar" href="/docs/api/toolbar" icon="/docs/assets/icons/component-toolbar-icon.png"> 
 
-Toolbars are used to house information and actions relating to your app.</docs-card> </docs-cards>
+Les Toolbars sont utilisées pour accueillir les informations et les actions relatives à votre application.</docs-card> </docs-cards>
