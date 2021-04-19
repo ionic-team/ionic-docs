@@ -3,7 +3,7 @@
 
 # Recharge en direct
 
-One option that can boost productivity when building Ionic apps is **Live Reload** (or **live-reload**). When active, Live Reload will reload the browser or [Web View](/docs/core-concepts/webview) when changes in the app are detected. This is particularly useful for developing using hardware devices.
+Une option qui peut stimuler la productivité lors de la création d'applications Ionic est **Live Reload** (ou **live-reload**). When active, Live Reload will reload the browser or [Web View](/docs/core-concepts/webview) when changes in the app are detected. This is particularly useful for developing using hardware devices.
 
 ## Terms
 
