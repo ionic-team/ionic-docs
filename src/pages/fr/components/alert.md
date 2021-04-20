@@ -6,25 +6,25 @@ tableOfContents: false
 
 # Alert
 
-Alerts are a great way to offer the user the ability to choose a specific action or list of actions. Alerts can include contain text, inputs and buttons. They can provide the user with important information, or require them to make a decision (or multiple decisions). Alerts should only be used for quick actions like password verification, small app notifications, or quick options.
+Les alertes sont un excellent moyen d'offrir à l'utilisateur la possibilité de choisir une action spécifique ou une liste d'actions. Les alertes peuvent contenir du texte, des entrées et des boutons. Ils peuvent fournir à l'utilisateur des informations importantes ou lui demander de prendre une décision (ou plusieurs décisions). Les alertes ne doivent être utilisées que pour des actions rapides telles que la vérification du mot de passe, les notifications de petites applications ou les options rapides.
 
-## Creating
+## Leur création
 
-Alerts can be created using a [Alert Controller](../../alert-controller/AlertController). They can be customized by passing alert options in the alert controller's create method.
+Les alertes peuvent être créées en utilisant un [Contrôleur d'alertes](../../alert-controller/AlertController). Ils peuvent être personnalisés en passant des options d'alerte dans la méthode de création du contrôleur d'alerte.
 
 ## Buttons
 
-In the array of `buttons`, each button includes properties for its `text`, and optionally a `handler`. If a handler returns `false` then the alert will not automatically be dismissed when the button is clicked. All buttons will show up in the order they have been added to the `buttons` array from left to right. Note: The right most button (the last one in the array) is the main button.
+Dans le tableau des `boutons`, chaque bouton comprend des propriétés pour son `texte`, et éventuellement un `handler`. Si un gestionnaire renvoie `false` alors l'alerte ne sera pas automatiquement rejetée lorsque le bouton est cliqué. Tous les boutons s'afficheront dans l'ordre où ils ont été ajoutés au tableau `buttons`, de gauche à droite. Remarque : le bouton le plus à droite (le dernier du tableau) est le bouton principal.
 
-Optionally, a `role` property can be added to a button, such as `cancel`. If a `cancel` role is on one of the buttons, then if the alert is dismissed by tapping the backdrop, then it will fire the handler from the button with a cancel role.
+En option, une propriété `role` peut être ajoutée à un bouton, comme `annulation`. Si un rôle `cancel` est sur l'un des boutons, alors si l'alerte est rejetée en tapant sur la toile de fond, alors elle déclenchera le gestionnaire du bouton avec un rôle d'annulation.
 
 ## Inputs
 
-Alerts can also include several different inputs whose data can be passed back to the app. Inputs can be used as a simple way to prompt users for information. Radios, checkboxes and text inputs are all accepted, but they cannot be mixed. For example, an alert could have all radio button inputs, or all checkbox inputs, but the same alert cannot mix radio and checkbox inputs. Do note however, different types of "text" inputs can be mixed, such as `url`, `email`, `text`, etc. If you require a complex form UI which doesn't fit within the guidelines of an alert then we recommend building the form within a modal instead.
+Les alertes peuvent également inclure plusieurs entrées différentes dont les données peuvent être transmises à l'application. Les entrées peuvent être utilisées comme un moyen simple de demander des informations aux utilisateurs. Les radios, les cases à cocher et les entrées de texte sont toutes acceptées, mais elles ne peuvent pas être mélangées. Par exemple, une alerte peut avoir toutes les entrées de boutons radio ou toutes les entrées de cases à cocher, mais la même alerte ne peut pas mélanger les entrées de boutons radio et de cases à cocher. Notez cependant que différents types d'entrées "texte" peuvent être mélangés, comme `url`, `email`, `text`, etc. Si vous avez besoin d'une interface utilisateur de formulaire complexe qui ne correspond pas aux directives d'une alerte, nous vous recommandons de créer le formulaire dans une modale.
 
 <!-- Auto Generated Below -->
 
-## Usage
+## Utilisation
 
 ### Angular
 
@@ -109,14 +109,14 @@ export class AlertExample {
           type: 'url',
           placeholder: 'Favorite site ever'
         },
-        // input date with min & max
+        // date d'entrée avec min & max
         {
           name: 'name4',
           type: 'date',
           min: '2017-03-01',
           max: '2018-01-12'
         },
-        // input date without min nor max
+        // date d'entrée sans min ni max
         {
           name: 'name5',
           type: 'date'
@@ -368,7 +368,7 @@ async function presentAlertPrompt() {
         min: '2017-03-01',
         max: '2018-01-12'
       },
-      // input date without min nor max
+        // date d'entrée sans min ni max
       {
         name: 'name5',
         type: 'date'
@@ -529,6 +529,6 @@ async function presentAlertCheckbox() {
 
 <docs-cards> <docs-card header="ion-alert" href="/docs/api/alert"> 
 
-Display a dialog to present or collect information from a user.</docs-card> <docs-card header="ion-alert-controller" href="/docs/api/alert-controller"> 
+Affichez un dialogue pour présenter ou recueillir des informations auprès d'un utilisateur.</docs-card> <docs-card header="ion-alert-controller" href="/docs/api/alert-controller"> 
 
-Used to manage the creation, dismissal, and destruction of alerts.</docs-card> </docs-cards>
+Utilisé pour gérer la création, la suppression et la destruction des alertes.</docs-card> </docs-cards>
