@@ -7,15 +7,15 @@ contributors:
   - zaarheed
 ---
 
-# iOS App Store Deployment
+# Déploiement de l'App Store iOS
 
-## Requirements
+## Pré-requis
 
-Submitting an App to the iOS App store requires a few things:
+La soumission d'une application à l'App Store d'iOS nécessite quelques éléments :
 
 * Xcode
-* A Paid Apple Developers account
-* A valid provisioning profile
+* Un compte payant pour les développeurs Apple
+* Un profil d'approvisionnement valide
 * App Development and Distribution certificates
 
 To enroll in the Apple Developer Program, follow the instructions [listed here](https://developer.apple.com/programs/).
