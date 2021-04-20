@@ -78,6 +78,8 @@ $ npm install -g firebase-tools
 ```
 
 
+> Note: If it's the first time you use firebase-tools, login to your Google account with `firebase login` command.
+
 安装Firebase CLI后, 在你的Ionic目录下执行 `firebase init` 。 指令终端会提示：
 
 **"Which Firebase CLI features do you want to set up for this folder?"**  选择 "Hosting: Configure and deploy Firebase Hosting sites."
@@ -86,7 +88,7 @@ $ npm install -g firebase-tools
 
 **"What do you want to use as your public directory?"** 输入 "www".
 
-> 注意：解答以下两个问题将确保应用的路由、重新加载和深入连接：
+> Note: Answering these next two questions will ensure that routing, hard reload, and deep linking work in the app:
 
 **Configure as a single-page app (rewrite all urls to /index.html)?"** 输入 "Yes".
 
