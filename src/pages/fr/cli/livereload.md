@@ -32,9 +32,9 @@ $ ionic capacitor run android -l --external
 
 #### Android
 
-Pour les appareils Android, le CLI de Ionic transmettra automatiquement le port du serveur dev. This means you can use a `localhost` address and it will refer to your computer when loaded in the Web View, not the device.
+Pour les appareils Android, le CLI de Ionic transmettra automatiquement le port du serveur dev. Cela signifie que vous pouvez utiliser une adresse `localhost` et qu'elle fera référence à votre ordinateur lorsqu'elle sera chargée dans la vue Web, et non au périphérique.
 
-The following all-in-one command will start a live-reload server on `localhost` and deploy the app to an Android device using Cordova:
+La commande tout-en-un suivante va démarrer un serveur de live-reload sur `localhost` et déployer l'application sur un appareil Android en utilisant Cordova :
 
 ```shell
 $ ionic cordova run android -l
@@ -42,22 +42,22 @@ $ ionic cordova run android -l
 
 #### iOS
 
-For iOS devices, port forwarding is not yet an option. This means you'll need to connect your device to the same Wi-Fi network as your computer and use an external address for the dev server.
+Pour les appareils iOS, le transfert de port n'est pas encore une option. Cela signifie que vous devrez connecter votre appareil au même réseau Wi-Fi que votre ordinateur et utiliser une adresse externe pour le serveur de développement.
 
-> You can track [this issue](https://github.com/ionic-team/native-run/issues/20) for progress on iOS port forwarding with Ionic.
+> Vous pouvez suivre [cette question](https://github.com/ionic-team/native-run/issues/20) pour les progrès sur la redirection des ports iOS avec Ionic.
 
-In some cases, the Ionic CLI won't know the address with which to configure the Web View, so you may be prompted to select one. Be sure to select the address of your computer on your Wi-Fi network.
+Dans certains cas, Ionic CLI ne connaîtra pas l'adresse avec laquelle configurer le Web View, et il vous sera donc demandé d'en sélectionner une. Veillez à sélectionner l'adresse de votre ordinateur sur votre réseau Wi-Fi.
 
-The following all-in-one command will start a live-reload server on **all addresses** and deploy the app to an iOS device using Cordova:
+La commande tout-en-un suivante va démarrer un serveur de live-reload sur **toutes les adresses** et déployer l'application sur un appareil iOS en utilisant Cordova :
 
 ```shell
 $ ionic cordova run ios -l --external
 ```
 
-> Remember, with the `--external` option, others on your Wi-Fi network will be able to access your app.
+> N'oubliez pas qu'avec l'option `--externe`, les autres personnes de votre réseau Wi-Fi pourront accéder à votre application.
 
-## Tips
+## Astuces
 
-- With Cordova, use the `--device`, `--emulator`, and `--target` options to narrow down target devices. Use the `--list` option to list all targets. See usage in the [command docs](/docs/cli/commands/cordova-run).
-- You can separate the dev server process and the deploy process by using `ionic serve` and the `--livereload-url` option of `ionic cordova run` or `ionic capacitor run`.
-- For Android, it is possible to configure [adb](https://developer.android.com/studio/command-line/adb) to always forward ports while the adb server is running (see `adb reverse`). With port forwarding set up, an external address would no longer be required. You can also setup the adb bridge over TCP such that subsequent deploys no longer need a USB cable.
+- Avec Cordova, utilisez les options `--device`, `--emulator` et `--target` pour réduire les périphériques cibles. Utilisez l'option `--list` pour lister toutes les cibles. Voir l'utilisation dans la [documentation de la commande](/docs/cli/commands/cordova-run).
+- Vous pouvez séparer le processus du serveur de développement et le processus de déploiement en utilisant `ionic serve` et l'option `--livereload-url` de `ionic cordova run` ou `ionic capacitor run`.
+- Pour Android, il est possible de configurer [adb](https://developer.android.com/studio/command-line/adb) pour toujours transférer les ports lorsque le serveur adb est en cours d'exécution (voir `adb reverse`). Une fois le transfert de port mis en place, une adresse externe n'est plus nécessaire. Vous pouvez également configurer le pont adb sur TCP de sorte que les déploiements ultérieurs ne nécessitent plus de câble USB.
