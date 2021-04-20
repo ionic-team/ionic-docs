@@ -16,11 +16,11 @@ La soumission d'une application à l'App Store d'iOS nécessite quelques éléme
 * Xcode
 * Un compte payant pour les développeurs Apple
 * Un profil d'approvisionnement valide
-* App Development and Distribution certificates
+* Certificats de développement et de distribution d'applications
 
-To enroll in the Apple Developer Program, follow the instructions [listed here](https://developer.apple.com/programs/).
+Pour vous inscrire à l'Apple Developer Program, suivez les instructions [listées ici](https://developer.apple.com/programs/).
 
-## Generating a release build
+## Génération d'un release build
 
 If the iOS platform is not already added, be sure to add it:
 
