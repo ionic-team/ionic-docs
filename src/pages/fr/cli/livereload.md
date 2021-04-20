@@ -17,22 +17,22 @@ Comme pour les déploiements réguliers de dispositifs, vous aurez besoin d'un c
 
 ### Capacitor
 
-Capacitor does not yet have a programmatic build for development (track [this issue](https://github.com/ionic-team/capacitor/issues/324) for progress), so the Ionic CLI does **not** automatically forward ports for iOS and Android.
+Capacitor n'a pas encore de build programmatique pour le développement (suivez [cette question](https://github.com/ionic-team/capacitor/issues/324) pour les progrès), donc le CLI de Ionic ne **pas** transmet automatiquement les ports pour iOS et Android.
 
-To use Live Reload with Capacitor, make sure you're either using a virtual device or a hardware device connected to the same Wi-Fi network as your computer. Then, you'll need to specify that you want to use an external address for the dev server using the `--external` flag.
+Pour utiliser Live Reload avec Capacitor, assurez-vous que vous utilisez soit un périphérique virtuel, soit un périphérique matériel connecté au même réseau Wi-Fi que votre ordinateur. Ensuite, vous devrez spécifier que vous voulez utiliser une adresse externe pour le serveur de développement en utilisant le drapeau `--external`.
 
 ```shell
 $ ionic capacitor run ios -l --external
 $ ionic capacitor run android -l --external
 ```
 
-> Remember, with the `--external` option, others on your Wi-Fi network will be able to access your app.
+> N'oubliez pas qu'avec l'option `--externe`, les autres personnes de votre réseau Wi-Fi pourront accéder à votre application.
 
 ### Cordova
 
 #### Android
 
-For Android devices, the Ionic CLI will automatically forward the dev server port. This means you can use a `localhost` address and it will refer to your computer when loaded in the Web View, not the device.
+Pour les appareils Android, le CLI de Ionic transmettra automatiquement le port du serveur dev. This means you can use a `localhost` address and it will refer to your computer when loaded in the Web View, not the device.
 
 The following all-in-one command will start a live-reload server on `localhost` and deploy the app to an Android device using Cordova:
 
