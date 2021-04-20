@@ -73,6 +73,8 @@ Ensuite, dans un Terminal, installez l'ILC de Firebase :
 $ npm install -g firebase-tools
 ```
 
+> Note: If it's the first time you use firebase-tools, login to your Google account with `firebase login` command.
+
 Avec l'ILC Firebase installé, exécutez `firebase init` dans votre projet Ionic. L'ILC affiche :
 
 **"Which Firebase CLI features do you want to set up for this folder?"** Choisissez "Hosting: Configure and deploy Firebase Hosting sites."
@@ -81,7 +83,7 @@ Avec l'ILC Firebase installé, exécutez `firebase init` dans votre projet Ionic
 
 **"What do you want to use as your public directory?"** Entrez "www".
 
-> Remarque : Répondre à ces deux questions garantira que le routage, le hard reload et le deep linking fonctionnent dans l'application :
+> Note: Answering these next two questions will ensure that routing, hard reload, and deep linking work in the app:
 
 **Configure as a single-page app (rewrite all urls to /index.html)?"** Entrez "Yes".
 
