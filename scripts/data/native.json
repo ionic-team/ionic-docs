@@ -1583,20 +1583,6 @@
     "premierSlug": "filesystem"
   },
   {
-    "packageName": "@ionic-native/fingerprint-aio",
-    "displayName": "Fingerprint AIO",
-    "description": "\nUse simple fingerprint authentication on Android and iOS.\nRequires Cordova plugin: cordova-plugin-fingerprint-aio. For more info about plugin, vist: https://github.com/NiklasMerz/cordova-plugin-fingerprint-aio\n",
-    "usage": "\n```typescript\nimport { FingerprintAIO } from '@ionic-native/fingerprint-aio/ngx';\n\nconstructor(private faio: FingerprintAIO) { }\n\n...\n\nthis.faio.show().then((result: any) => console.log(result)).catch((error: any) => console.log(error));\n\n OR with options...\n\nthis.faio.show({\n    title: 'Biometric Authentication', // (Android Only) | optional | Default: \"<APP_NAME> Biometric Sign On\"\n    subtitle: 'Coolest Plugin ever' // (Android Only) | optional | Default: null\n    description: 'Please authenticate' // optional | Default: null\n    fallbackButtonTitle: 'Use Backup', // optional | When disableBackup is false defaults to \"Use Pin\".\n                                       // When disableBackup is true defaults to \"Cancel\"\n    disableBackup:true,  // optional | default: false\n})\n.then((result: any) => console.log(result))\n.catch((error: any) => console.log(error));\n\n...\n\nthis.faio.registerBiometricSecret({\n     description: \"Some biometric description\", // optional | Default: null\n     secret: \"my-super-secret\", // mandatory\n     invalidateOnEnrollment: true, // optional | Default: false\n     disableBackup: true, // (Android Only) | optional | always `true` on Android\n})\n.then((result: any) => console.log(result))\n.catch((error: any) => console.log(error));\n\n ...\n\nthis.faio.loadBiometricSecret({\n     description: \"Some biometric description\", // optional | Default: null\n     disableBackup: true, // always disabled on Android\n})\n.then((result: string) => console.log(result))\n.catch((error: any) => console.log(error));\n\n```",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/NiklasMerz/cordova-plugin-fingerprint-aio",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-fingerprint-aio"
-    }
-  },
-  {
     "packageName": "@ionic-native/firebase-analytics",
     "displayName": "Firebase Analytics",
     "description": "\nCordova plugin for Firebase Analytics\n\nGo to firebase console and export google-services.json and GoogleService-Info.plist. Put those files into the root of your cordova app folder.\n\nNOTE: on iOS in order to collect demographic, age, gender data etc. you should additionally include AdSupport.framework into your project.\n\n## Using capacitor?\nFor Android you'll have to add in __android/app/src/main/AndroidManfiest.xml__ under `<application>`\n```\n<meta-data\n     tools:replace=\"android:value\"\n     android:name=\"firebase_analytics_collection_enabled\"\n     android:value=\"true\"/>\n\n<meta-data\n     tools:replace=\"android:value\"\n     android:name=\"google_analytics_automatic_screen_reporting_enabled\"\n     android:value=\"false\"/>\n```\n\nAnd in the same file, you'll have to add `xmlns:tools=\"http://schemas.android.com/tools\"` to your _manifest_ tag.\n",
