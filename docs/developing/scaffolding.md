@@ -42,62 +42,40 @@ The `src/app/` directory contains the root app component and module as well as a
 
 The Ionic CLI can generate new app features with the [`ionic generate`](/docs/cli/commands/generate) command. By running `ionic generate` in the command line, a selection prompt is displayed which lists the available features that can be generated.
 
-```
-    <command-prompt>ionic generate</command-prompt>
-    <command-output>
-        <span class="green">?</span> <span class="bold">What would you like to generate?</span>
-        <br />
-        <span class="cyan bold">❯ page</span>
-        <br />
-        &nbsp;&nbsp;component
-        <br />
-        &nbsp;&nbsp;service
-        <br />
-        &nbsp;&nbsp;module
-        <br />
-        &nbsp;&nbsp;class
-        <br />
-        &nbsp;&nbsp;directive
-        <br />
-        &nbsp;&nbsp;guard
-    </command-output>
+```shell-session
+$ ionic generate
+? What would you like to generate?
+❯ page
+  component
+  service
+  module
+  class
+  directive
+  guard
 ```
 
 After a selection is made, the Ionic CLI will prompt for a name. The name can be a path, allowing easy generation of features within an organized project structure.
 
 > Any level of nesting is allowed, such as `portfolio/intro`. You can easily scope components to pages by using `ionic g component "portfolio/intro/About Me"`, for example.
 
-```
-    <command-prompt>ionic generate</command-prompt>
-    <command-output>
-        <span class="green">?</span> <span class="bold">What would you like to generate? <span class="cyan">page</span></span>
-        <br />
-        <span class="green">?</span> <span class="bold">Name/path of <span class="cyan">page</span>:</span> portfolio
-    </command-output>
-    <command-cursor blink></command-cursor>
+```shell-session
+$ ionic generate
+? What would you like to generate? page
+? Name/path of page: portfolio █
 ```
 
 Alternatively, the `type` and `name` of the generated feature can be entered on the command line:
 
-```
-    <command-prompt>ionic g page "User Detail"</command-prompt>
-    <command-output>
-        &gt; <span class="cyan">ng generate page "User Detail"</span>
-        <br />
-        <span class="green">CREATE</span> src/app/user-detail/user-detail.module.ts (564 bytes)
-        <br />
-        <span class="green">CREATE</span> src/app/user-detail/user-detail.page.scss (0 bytes)
-        <br />
-        <span class="green">CREATE</span> src/app/user-detail/user-detail.page.html (138 bytes)
-        <br />
-        <span class="green">CREATE</span> src/app/user-detail/user-detail.page.spec.ts (720 bytes)
-        <br />
-        <span class="green">CREATE</span> src/app/user-detail/user-detail.page.ts (280 bytes)
-        <br />
-        <span class="bold">UPDATE</span> src/app/app-routing.module.ts (475 bytes)
-        <br />
-        [<span class="green bold">OK</span>] Generated page!
-    </command-output>
+```shell-session
+$ ionic g page "User Detail"
+> ng generate page "User Detail"
+CREATE src/app/user-detail/user-detail.module.ts (564 bytes)
+CREATE src/app/user-detail/user-detail.page.scss (0 bytes)
+CREATE src/app/user-detail/user-detail.page.html (138 bytes)
+CREATE src/app/user-detail/user-detail.page.spec.ts (720 bytes)
+CREATE src/app/user-detail/user-detail.page.ts (280 bytes)
+UPDATE src/app/app-routing.module.ts (475 bytes)
+[OK] Generated page!
 ```
 
 The Ionic CLI uses the underlying framework tooling to stay close to best practices. For `@ionic/angular`, the Angular CLI is used under the hood.

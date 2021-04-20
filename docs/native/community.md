@@ -117,18 +117,18 @@ export class PhotoService {
 
 React apps must use Capacitor to build native mobile apps. However, Ionic Native (and therefore, Cordova plugins) can still be used.
 
-```
-  <div>// Install Core library (once per project)</div>
-  <command-prompt>npm install @ionic-native/core</command-prompt>
-  <br />
-  <div>// Install Ionic Native TypeScript wrapper</div>
-  <command-prompt>npm install @ionic-native/barcode-scanner</command-prompt>
-  <br/>
-  <div>// Install Cordova plugin</div>
-  <command-prompt>npm install phonegap-plugin-barcodescanner</command-prompt>
-  <br/>
-  <div>// Update native platform project(s) to include newly added plugin</div>
-  <command-prompt>ionic cap sync</command-prompt>
+```shell-session
+// Install Core library (once per project)
+$ npm install @ionic-native/core
+
+// Install Ionic Native TypeScript wrapper
+$ npm install @ionic-native/barcode-scanner
+
+// Install Cordova plugin
+$ npm install phonegap-plugin-barcodescanner
+
+// Update native platform project(s) to include newly added plugin
+$ ionic cap sync
 ```
 
 Import the plugin object then use its static methods: 

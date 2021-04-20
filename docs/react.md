@@ -106,11 +106,11 @@ At the end of the day, it's just React. Ionic React uses open web standards and 
 
 ## Installation
 
-```
-    <command-prompt>npm install -g @ionic/cli</command-prompt>
-    <command-prompt>ionic start myApp tabs --type react</command-prompt>
-    <br/>
-    <command-prompt>ionic serve <command-cursor blink></command-cursor></command-prompt>
+```shell-session
+$ npm install -g @ionic/cli
+$ ionic start myApp tabs --type react
+
+$ ionic serve █
 ```
 
 

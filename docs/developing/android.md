@@ -45,15 +45,13 @@ In `~/.bashrc`, `~/.bash_profile`, or similar shell startup scripts, make the fo
 
 1. Add the Android SDK command-line directories to `PATH`. Each directory corresponds to the category of <a href="https://developer.android.com/studio/command-line/" target="_blank">command-line tool</a>.
 
-   ```
-      <command-output># avdmanager, sdkmanager</command-output>
-      <command-prompt>export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin</command-prompt>
-      <br />
-      <command-output># adb, logcat</command-output>
-      <command-prompt>export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools</command-prompt>
-      <br />
-      <command-output># emulator</command-output>
-      <command-prompt>export PATH=$PATH:$ANDROID_SDK_ROOT/emulator</command-prompt>
+   ```shell-session
+   $ # avdmanager, sdkmanager
+   $ export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
+   $ # adb, logcat
+   $ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+   $ # emulator
+   $ export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
    ```
 
    <blockquote>
