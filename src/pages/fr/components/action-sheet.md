@@ -4,11 +4,11 @@ tableOfContents: false
 
 * * *
 
-# Action Sheet
+# Feuille d'action
 
-An Action Sheet is a dialog that displays a set of options. It appears on top of the app's content, and must be manually dismissed by the user before they can resume interaction with the app. There are multiple ways to dismiss the action sheet, including tapping the backdrop or hitting the escape key on desktop. <mark>Action Sheets should not be used for navigation.</mark>
+Une feuille d'action est une boîte de dialogue qui affiche un ensemble d'options. Elle s'affiche au-dessus du contenu de l'application et doit être rejetée manuellement par l'utilisateur avant de pouvoir reprendre l'interaction avec l'application. Il existe plusieurs façons de faire disparaître la feuille d'action, notamment en tapant sur la toile de fond ou en appuyant sur la touche Echap sur le bureau. <mark>Les feuilles d'action ne doivent pas être utilisées pour la navigation.</mark>
 
-## Basic Usage
+## Usage de base
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed lacus eu purus viverra egestas. Nunc porta, elit ut finibus gravida, dui orci feugiat leo, tincidunt fermentum urna eros vel elit. Phasellus convallis, tellus eu volutpat facilisis, ipsum mauris luctus diam, sodales tincidunt quam turpis at leo.
 
@@ -57,41 +57,41 @@ async function presentActionSheet() {
 }
 ```
 
-### Cancel Button
+### Bouton d'annulation
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed lacus eu purus viverra egestas. Nunc porta, elit ut finibus gravida, dui orci feugiat leo, tincidunt fermentum urna eros vel elit. Phasellus convallis, tellus eu volutpat facilisis, ipsum mauris luctus diam, sodales tincidunt quam turpis at leo.
 
 * * *
 
-## Destructive
+## Destructeur
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed lacus eu purus viverra egestas. Nunc porta, elit ut finibus gravida, dui orci feugiat leo, tincidunt fermentum urna eros vel elit. Phasellus convallis, tellus eu volutpat facilisis, ipsum mauris luctus diam, sodales tincidunt quam turpis at leo.
 
 * * *
 
-## Headers
+## En-têtes
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed lacus eu purus viverra egestas. Nunc porta, elit ut finibus gravida, dui orci feugiat leo, tincidunt fermentum urna eros vel elit. Phasellus convallis, tellus eu volutpat facilisis, ipsum mauris luctus diam, sodales tincidunt quam turpis at leo.
 
-### Adding Subheaders
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed lacus eu purus viverra egestas. Nunc porta, elit ut finibus gravida, dui orci feugiat leo, tincidunt fermentum urna eros vel elit. Phasellus convallis, tellus eu volutpat facilisis, ipsum mauris luctus diam, sodales tincidunt quam turpis at leo.
-
-* * *
-
-## Scrollable
+### Ajout de sous-titres
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed lacus eu purus viverra egestas. Nunc porta, elit ut finibus gravida, dui orci feugiat leo, tincidunt fermentum urna eros vel elit. Phasellus convallis, tellus eu volutpat facilisis, ipsum mauris luctus diam, sodales tincidunt quam turpis at leo.
 
 * * *
 
-## Translucent
+## Défilement
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed lacus eu purus viverra egestas. Nunc porta, elit ut finibus gravida, dui orci feugiat leo, tincidunt fermentum urna eros vel elit. Phasellus convallis, tellus eu volutpat facilisis, ipsum mauris luctus diam, sodales tincidunt quam turpis at leo.
 
 * * *
 
-## Icons
+## Translucide
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed lacus eu purus viverra egestas. Nunc porta, elit ut finibus gravida, dui orci feugiat leo, tincidunt fermentum urna eros vel elit. Phasellus convallis, tellus eu volutpat facilisis, ipsum mauris luctus diam, sodales tincidunt quam turpis at leo.
+
+* * *
+
+## Icônes
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed lacus eu purus viverra egestas. Nunc porta, elit ut finibus gravida, dui orci feugiat leo, tincidunt fermentum urna eros vel elit. Phasellus convallis, tellus eu volutpat facilisis, ipsum mauris luctus diam, sodales tincidunt quam turpis at leo.
 
@@ -101,6 +101,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed lacus eu pu
 
 <docs-cards> <docs-card header="ion-action-sheet" href="/docs/api/action-sheet"> 
 
-Display a set of options with the ability to confirm or cancel an action.</docs-card> <docs-card header="ion-action-sheet-controller" href="/docs/api/action-sheet-controller"> 
+Affiche un ensemble d'options avec la possibilité de confirmer ou d'annuler une action.</docs-card> <docs-card header="ion-action-sheet-controller" href="/docs/api/action-sheet-controller"> 
 
-Used to manage the creation, dismissal, and destruction of action sheets.</docs-card> </docs-cards>
+Utilisé pour gérer la création, le renvoi et la destruction des fiches d'action.</docs-card> </docs-cards>
