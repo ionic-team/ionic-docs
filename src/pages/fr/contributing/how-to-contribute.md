@@ -33,37 +33,37 @@ Veuillez consulter le [Code de conduite du contributeur](/docs/contributing/coc)
 
 Une reproduction de code est une petite application qui est construite pour démontrer un problème particulier. La reproduction du code doit contenir la quantité minimale de code nécessaire pour recréer le problème et doit se concentrer sur un seul problème.
 
-### Why Should You Create a Reproduction?
+### Pourquoi devriez-vous créer une reproduction?
 
-A code reproduction of the issue you are experiencing helps us better isolate the cause of the problem. This is an important first step to getting any bug fixed!
+Une reproduction du code du problème que vous rencontrez nous aide à mieux isoler la cause du problème. Il s'agit d'une première étape importante pour faire corriger un bug !
 
-Without a reliable code reproduction, it is unlikely we will be able to resolve the issue, leading to it being closed. In other words, creating a code reproduction of the issue helps us help you.
+Sans une reproduction fiable du code, il est peu probable que nous soyons en mesure de résoudre le problème, ce qui entraîne sa fermeture. En d'autres termes, la création d'un code de reproduction du problème nous aide à vous aider.
 
-### How to Create a Reproduction
+### Comment créer une reproduction
 
-* Create a new Ionic application using one of our starter templates. The `blank` starter application is a great choice for this. You can create one using the following Ionic CLI command: `ionic start myApp blank`
-* Add the minimum amount of code needed to recreate the issue you are experiencing. Do not include anything that is not required to reproduce the issue. This includes any 3rd party plugins you have installed.
-* Publish the application on GitHub and include a link to it when [creating an issue](#creating-an-issue).
-* Be sure to include steps to reproduce the issue. These steps should be clear and easy to follow.
+* Créez une nouvelle application Ionic en utilisant l'un de nos modèles de démarrage. L'application de démarrage `blank` est un excellent choix pour cela. Vous pouvez en créer une en utilisant la commande Ionic CLI suivante : `ionic start myApp blank`
+* Ajoutez le minimum de code nécessaire pour recréer le problème que vous rencontrez. N'incluez rien qui ne soit pas nécessaire pour reproduire le problème. Cela inclut tous les plugins tiers que vous avez installés.
+* Publiez l'application sur GitHub et incluez un lien vers celle-ci lorsque vous [créez un problème](#creating-an-issue).
+* Veillez à inclure les étapes permettant de reproduire le problème. Ces étapes doivent être claires et faciles à suivre.
 
-### Benefits of Creating a Reproduction
+### Avantages de la création d'une reproduction
 
-* **Uses the latest version of Ionic:** By creating a new Ionic application, you are ensuring that you are testing against the latest version of the framework. Sometimes the issues you are experiencing have already been resolved in a newer version of the framework!
-* **Minimal surface area:** By removing code that is not needed in order to reproduce the issue, it makes it easier to identify the cause of the issue.
-* **No secret code needed:** Creating a minimal reproduction of the issue prevents you from having to publish any proprietary code used in your project.
-* **Get help fixing the issue:** If we can reliably reproduce an issue, there is a good chance we will be able to address it.
-
-
-## Creating a Pull Request
-
-* We appreciate you taking the time to contribute! Before submitting a pull request, we ask that you please [create an issue](#creating-an-issue) that explains the bug or feature request and let us know that you plan on creating a pull request for it. If an issue already exists, please comment on that issue letting us know you would like to submit a pull request for it. This helps us to keep track of the pull request and make sure there isn't duplicated effort.
-
-* Looking for an issue to fix? Make sure to look through our issues with the [help wanted](https://github.com/ionic-team/ionic/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) label!
+* **Utilise la dernière version de Ionic:** En créant une nouvelle application Ionic, vous vous assurez de tester contre la dernière version du framework. Parfois, les problèmes que vous rencontrez ont déjà été résolus dans une version plus récente du framework !
+* **Surface minimale:** En supprimant le code qui n'est pas nécessaire pour reproduire le problème, il est plus facile d'identifier la cause du problème.
+* **Pas besoin de code secret : **La création d'une reproduction minimale du numéro vous évite de devoir publier tout code propriétaire utilisé dans votre projet.
+* **Obtenir de l'aide pour résoudre le problème:** Si nous pouvons reproduire un problème de manière fiable, il y a de bonnes chances que nous soyons en mesure de le résoudre.
 
 
-### Setup
+## Créer une Pull Request
 
-1. [Download the installer](https://nodejs.org/) for the LTS version of Node.js. This is the best way to also [install npm](https://blog.npmjs.org/post/85484771375/how-to-install-npm#_=_).
+* Nous vous remercions de prendre le temps de contribuer ! Avant de soumettre une demande de pull, nous vous demandons de bien vouloir [créer une issue](#creating-an-issue) qui explique le bogue ou la demande de fonctionnalité et de nous faire savoir que vous prévoyez de créer une demande de pull pour celle-ci. Si un problème existe déjà, veuillez commenter ce problème en nous indiquant que vous souhaitez soumettre une demande de retrait pour ce problème. Cela nous permet de suivre la demande de retrait et de nous assurer qu'il n'y a pas de duplication des efforts.
+
+* Vous cherchez un problème à résoudre ? Assurez-vous de consulter nos numéros avec le label [help wanted](https://github.com/ionic-team/ionic/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) !
+
+
+### Configuration
+
+1. [Téléchargez le programme d'installation](https://nodejs.org/) pour la version LTS de Node.js. This is the best way to also [install npm](https://blog.npmjs.org/post/85484771375/how-to-install-npm#_=_).
 2. Fork the [Ionic](https://github.com/ionic-team/ionic) repository.
 3. Clone your fork.
 4. Create a new branch from master for your change.
