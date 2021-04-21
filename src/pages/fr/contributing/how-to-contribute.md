@@ -72,64 +72,64 @@ Sans une reproduction fiable du code, il est peu probable que nous soyons en mes
 7. Suivez les étapes pour le package spécifique ci-dessous.
 
 
-### Core
+### Le coeur
 
-#### Modifying Components
+#### Modifier les composants
 
-1. Locate the component(s) to modify inside `/core/src/components/`.
-2. Take a look at the [Stencil Documentation](https://stenciljs.com/docs/introduction/) and other components to understand the implementation of these components.
-3. Make your changes to the component. If the change is overly complex or out of the ordinary, add comments so we can understand the changes.
-4. [Preview your changes](#preview-changes) locally.
-5. [Modify the documentation](#modifying-documentation) if needed.
-6. [Run lint](#lint-changes) on the directory and make sure there are no errors.
-7. [Build the project](#building-changes).
-8. After the build is finished, commit the changes. Please follow the [commit message format](#commit-message-format) for every commit.
-9. [Submit a Pull Request](#submit-pull-request) of your changes.
-
-
-#### Preview Changes
-
-1. Run `npm start` from within the `core` directory.
-2. A browser should open at `http://localhost:3333/`.
-3. From here, navigate to one of the component's tests to preview your changes.
-4. If a test showing your change doesn't exist, [add a new test or update an existing one](#modifying-tests).
-5. To test in RTL mode, once you are in the desired component's test, add `?rtl=true` at the end of the url; for example: `http://localhost:3333/src/components/alert/test/basic?rtl=true`.
+1. Localisez le(s) composant(s) à modifier à l'intérieur de `/core/src/components/`.
+2. Jetez un coup d'œil à la [Documentation du pochoir](https://stenciljs.com/docs/introduction/) et aux autres composants pour comprendre la mise en œuvre de ces composants.
+3. Apportez vos modifications au composant. Si le changement est trop complexe ou sort de l'ordinaire, ajoutez des commentaires pour que nous puissions comprendre les changements.
+4. [Aperçu de vos modifications](#preview-changes) localement.
+5. [Modifier la documentation](#modifying-documentation) si nécessaire.
+6. [Lancez lint](#lint-changes) sur le répertoire et assurez-vous qu'il n'y a pas d'erreurs.
+7. [Construire le projet](#building-changes).
+8. Une fois la construction terminée, livrez les changements. Veuillez respecter le [format du message de validation](#commit-message-format) pour chaque validation.
+9. [Soumettez une Pull Request](#submit-pull-request) de vos modifications.
 
 
-#### Lint Changes
+#### Aperçu des changements
 
-1. Run `npm run lint` to lint the TypeScript and Sass.
-2. If there are lint errors, run `npm run lint.fix` to automatically fix any errors. Repeat step 1 to ensure the errors have been fixed, and manually fix them if not.
-3. To lint and fix only TypeScript errors, run `npm run lint.ts` and `npm run lint.ts.fix`, respectively.
-4. To lint and fix only Sass errors, run `npm run lint.sass` and `npm run lint.sass.fix`, respectively.
-
-
-#### Modifying Documentation
-
-1. Locate the `readme.md` file in the component's directory.
-2. Modify the documentation **above** the line that says `<!-- Auto Generated Below -->` in this file.
-3. To update any of the auto generated documentation below that line, make the relevant changes in the following places:
-  - `Usage`: update the component's usage examples in the component's `usage/` directory
-  - `Properties`, `Events`, or `Methods`: update the component's TypeScript file (`*.tsx`)
-  - `CSS Custom Properties`: update the component's main Sass file (`*.scss`)
+1. Exécutez `npm start` à partir du répertoire `core`.
+2. Un navigateur devrait s'ouvrir à `http://localhost:3333/`.
+3. À partir de là, accédez à l'un des tests du composant pour visualiser vos modifications.
+4. Si un test montrant votre changement n'existe pas, [ajoutez un nouveau test ou mettez à jour un test existant](#modifying-tests).
+5. Pour tester en mode RTL, une fois que vous êtes dans le test du composant souhaité, ajoutez `?rtl=true` à la fin de l'url ; par exemple : `http://localhost:3333/src/components/alert/test/basic?rtl=true`.
 
 
-#### Modifying Tests
+#### Changements de Lint
 
-1. Locate the test to modify inside the `test/` folder in the component's directory.
-2. If a test exists, modify the test by adding an example to reproduce the problem fixed or feature added.
-3. If a new test is needed, the easiest way is to copy the `basic/` directory from the component's `test/` directory, rename it, and edit the content in both the `index.html` and `e2e.ts` file (see [Screenshot Tests](#screenshot-tests) for more information on this file).
-4. The `preview/` directory is used in the documentation as a demo. Only update this test if there is a bug in the test or if the API has a change that hasn't been updated in the test.
+1. Exécutez `npm run lint` pour lintériser le TypeScript et le Sass.
+2. S'il y a des erreurs de lint, exécutez `npm run lint.fix` pour corriger automatiquement toutes les erreurs. Répétez l'étape 1 pour vous assurer que les erreurs ont été corrigées, et corrigez-les manuellement si ce n'est pas le cas.
+3. Pour lint et corriger uniquement les erreurs TypeScript, exécutez respectivement `npm run lint.ts` et `npm run lint.ts.fix`.
+4. Pour lint et corriger uniquement les erreurs Sass, exécutez respectivement `npm run lint.sass` et `npm run lint.sass.fix`.
 
-##### Screenshot Tests
 
-1. If the test exists in screenshot, there will be a file named `e2e.ts` in the directory of the test.
-2. A screenshot test can be added by including this file and adding one or more `test()` calls that include a call to `page.compareScreenshot()`. See [Stencil end-to-end testing](https://stenciljs.com/docs/end-to-end-testing) and existing tests in `core/` for examples.
-3. **Important:** each `test()` should have only one screenshot (`page.compareScreenshot()`) call **or** it should check the expect at the end of each test. If there is a mismatch it will fail the test which will prevent the rest of the test from running, i.e. if the first screenshot fails the remaining screenshot calls would not be called _unless_ they are in a separate test or all of the expects are called at the end.
-4. To run screenshot locally, use the following command: `npm run test.screenshot`.
-    - To run screenshot for a specific test, pass the path to the test or a string to search for.
-    - For example, running all `alert` tests: `npm run test.screenshot alert`.
-    - Or, running the basic `alert` tests: `npm run test.screenshot src/components/alert/test/basic/e2e.ts`.
+#### Modification de la documentation
+
+1. Localisez le fichier `readme.md` dans le répertoire du composant.
+2. Modifiez la documentation **au-dessus** de la ligne qui dit `<!-- Auto Generated Below -->` dans ce fichier.
+3. Pour mettre à jour l'une des documentations générées automatiquement sous cette ligne, effectuez les modifications pertinentes aux endroits suivants :
+  - `Usage` : mettre à jour les exemples d'utilisation du composant dans le répertoire `usage/` du composant
+  - `Properties`, `Events`, ou `Methods` : mettre à jour le fichier TypeScript du composant (`*.tsx`)
+  - `CSS Custom Properties` : mettre à jour le fichier Sass principal du composant (`*.scss`)
+
+
+#### Modifier les tests
+
+1. Localisez le test à modifier à l'intérieur du dossier `test/` dans le répertoire du composant.
+2. Si un test existe, modifiez-le en ajoutant un exemple pour reproduire le problème corrigé ou la fonctionnalité ajoutée.
+3. Si un nouveau test est nécessaire, le plus simple est de copier le répertoire `basic/` du répertoire `test/` du composant, de le renommer et de modifier le contenu du fichier `index.html` et `e2e.ts` (voir [Tests de capture d'écran](#screenshot-tests) pour plus d'informations sur ce fichier).
+4. Le répertoire `preview/` est utilisé dans la documentation comme démo. Ne mettez ce test à jour que s'il y a un bogue dans le test ou si l'API a subi un changement qui n'a pas été mis à jour dans le test.
+
+##### Tests Screenshot
+
+1. Si le test existe dans la capture d'écran, il y aura un fichier nommé `e2e.ts` dans le répertoire du test.
+2. Un test de capture d'écran peut être ajouté en incluant ce fichier et en ajoutant un ou plusieurs appels `test()` qui incluent un appel à `page.compareScreenshot()`. Voir [Tests de bout en bout de pochoirs](https://stenciljs.com/docs/end-to-end-testing) et les tests existants dans `core/` pour des exemples.
+3. **Important:** chaque `test()` ne devrait avoir qu'une seule capture d'écran (`page.compareScreenshot()`) appel **ou** il devrait vérifier l'attente à la fin de chaque test. S'il y a une non-concordance, le test échouera, ce qui empêchera le reste du test de s'exécuter, c'est-à-dire que si la première capture d'écran échoue, les autres appels de capture d'écran ne seront pas appelés _sans_ qu'ils soient dans un test séparé ou que tous les expects soient appelés à la fin.
+4. Pour exécuter screenshot localement, utilisez la commande suivante : `npm run test.screenshot`.
+    - Pour lancer une capture d'écran pour un test spécifique, passez le chemin d'accès au test ou une chaîne à rechercher.
+    - Par exemple, exécuter tous les tests `alert` : `npm run test.screenshot alert`.
+    - Ou encore, en exécutant les tests de base `alert` : `npm run test.screenshot src/components/alert/test/basic/e2e.ts`.
 
 
 #### Building Changes
