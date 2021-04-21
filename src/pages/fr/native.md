@@ -1,10 +1,11 @@
 ---
-title: APIs natifs
 meta:
   title: Native APIs - Build Open-Source Native Application Experiences
   description: Build native application experiences with open-source Native APIs. Easily add native device functionality to any Ionic app with Capacitor or Cordova.
 tableOfContents: false
 ---
+
+# Native APIs
 
 <p class='intro'>Créez des expériences d'applications natives grâce à une collection de plugins et d'intégrations open source et premium qui facilitent l'ajout de fonctionnalités de dispositifs natifs à toute application Ionic avec Capacitor ou Cordova.</p>
 
