@@ -1,37 +1,37 @@
 ---
-nextText: 'Code of Conduct'
+nextText: 'Code de Conduite'
 nextUrl: '/docs/contributing/coc'
 ---
 
-# Contributing to Ionic
+# Contribuer à Ionic
 
-Thanks for the interest in contributing to Ionic Framework!
+Merci pour l'intérêt que vous portez à Ionic Framework!
 
-## Contributing Etiquette
+## Etiquette de contribution
 
-Please see the [Contributor Code of Conduct](/docs/contributing/coc) for information on the rules of conduct.
-
-
-## Creating an Issue
-
-* If you have a question about using the framework, please ask on the [Ionic Forum](http://forum.ionicframework.com/) or in the [Ionic Worldwide Slack](https://ionicworldwide.herokuapp.com/) group.
-
-* It is required that you clearly describe the steps necessary to reproduce the issue you are running into. Although we would love to help our users as much as possible, diagnosing issues without clear reproduction steps is extremely time-consuming and simply not sustainable.
-
-* The issue list of the [Ionic](https://github.com/ionic-team/ionic) repository is exclusively for bug reports and feature requests. Non-conforming issues will be closed immediately.
-
-* Issues with no clear steps to reproduce will not be triaged. If an issue is labeled with "needs: reply" and receives no further replies from the author of the issue for more than 14 days, it will be closed.
-
-* If you think you have found a bug, or have a new feature idea, please start by making sure it hasn't already been [reported](https://github.com/ionic-team/ionic/issues?utf8=%E2%9C%93&q=is%3Aissue). You can search through existing issues to see if there is a similar one reported. Include closed issues as it may have been closed with a solution.
-
-* Next, [create a new issue](https://github.com/ionic-team/ionic/issues/new/choose) that thoroughly explains the problem. Please fill out the populated issue form before submitting the issue.
+Veuillez consulter le [Code de conduite du contributeur](/docs/contributing/coc) pour des informations sur les règles de conduite.
 
 
-## Creating a Good Code Reproduction
+## Créer un ticket
 
-### What is a Code Reproduction?
+* Si vous avez une question sur l'utilisation du framework, posez-la sur le [Ionic Forum](http://forum.ionicframework.com/) ou dans le groupe [Ionic Worldwide Slack](https://ionicworldwide.herokuapp.com/).
 
-A code reproduction is a small application that is built to demonstrate a particular issue. The code reproduction should contain the minimum amount of code needed to recreate the issue and should focus on a single issue.
+* Il est nécessaire que vous décriviez clairement les étapes nécessaires pour reproduire le problème dans lequel vous vous trouvez. Bien que nous aimerions aider nos utilisateurs autant que possible, diagnostiquer des problèmes sans étapes de reproduction claires prend énormément de temps et n'est tout simplement pas viable.
+
+* La liste des problèmes du dépôt [Ionic](https://github.com/ionic-team/ionic) est exclusivement destinée aux rapports de bogues et aux demandes de fonctionnalités. Les problèmes de non-conformité seront clos immédiatement.
+
+* Les problèmes ne comportant pas d'étapes claires de reproduction ne seront pas triés. Si une question est étiquetée "needs : reply" et ne reçoit aucune autre réponse de l'auteur de la question pendant plus de 14 jours, elle sera fermée.
+
+* Si vous pensez avoir trouvé un bogue, ou avoir une idée de nouvelle fonctionnalité, commencez par vous assurer qu'il n'a pas déjà été [reporté](https://github.com/ionic-team/ionic/issues?utf8=%E2%9C%93&q=is%3Aissue). Vous pouvez effectuer une recherche parmi les problèmes existants pour voir si un problème similaire a été signalé. Inclure les demandes fermées car elles peuvent avoir été clôturées avec une solution.
+
+* Ensuite, [créez une nouvelle question](https://github.com/ionic-team/ionic/issues/new/choose) qui explique en détail le problème. Veuillez remplir le formulaire d'émission rempli avant de soumettre l'émission.
+
+
+## Créer une bonne reproduction du code
+
+### Qu'est-ce qu'une reproduction de code?
+
+Une reproduction de code est une petite application qui est construite pour démontrer un problème particulier. La reproduction du code doit contenir la quantité minimale de code nécessaire pour recréer le problème et doit se concentrer sur un seul problème.
 
 ### Why Should You Create a Reproduction?
 
