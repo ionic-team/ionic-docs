@@ -63,13 +63,13 @@ Sans une reproduction fiable du code, il est peu probable que nous soyons en mes
 
 ### Configuration
 
-1. [Téléchargez le programme d'installation](https://nodejs.org/) pour la version LTS de Node.js. This is the best way to also [install npm](https://blog.npmjs.org/post/85484771375/how-to-install-npm#_=_).
-2. Fork the [Ionic](https://github.com/ionic-team/ionic) repository.
-3. Clone your fork.
-4. Create a new branch from master for your change.
-5. Navigate into the directory of the package you wish to modify (core, angular, etc.).
-6. Run `npm install` to install dependencies for this package.
-7. Follow the steps for the specific package below.
+1. [Téléchargez le programme d'installation](https://nodejs.org/) pour la version LTS de Node.js. C'est la meilleure façon de faire également [installer npm](https://blog.npmjs.org/post/85484771375/how-to-install-npm#_=_).
+2. Fork le dépôt [Ionic](https://github.com/ionic-team/ionic).
+3. Clonez votre fork.
+4. Créez une nouvelle branche à partir du master pour votre changement.
+5. Naviguez dans le répertoire du paquet que vous souhaitez modifier (core, angulaire, etc.).
+6. Exécutez `npm install` pour installer des dépendances pour ce paquet.
+7. Suivez les étapes pour le package spécifique ci-dessous.
 
 
 ### Core
