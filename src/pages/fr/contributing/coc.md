@@ -1,16 +1,16 @@
 ---
-previousText: 'How to Contribute'
+previousText: 'Comment contribuer'
 previousUrl: '/docs/contributing/how-to-contribute'
 ---
 
-# Code of Conduct
+# Code de Conduite
 
-As contributors and maintainers of the Ionic project, we pledge to respect everyone who contributes by posting issues, updating documentation, submitting pull requests, providing feedback in comments, and any other activities.
+En tant que contributeurs et mainteneurs du projet Ionic, nous nous engageons à respecter tous ceux qui contribuent en postant des problèmes, en mettant à jour la documentation, en soumettant des demandes de retrait, en fournissant des commentaires et toute autre activité.
 
-Communication through any of Ionic's channels (GitHub, Slack, Forum, IRC, mailing lists, Twitter, etc.) must be constructive and never resort to personal attacks, trolling, public or private harassment, insults, or other unprofessional conduct.
+La communication par le biais de n'importe quel canal de Ionic (GitHub, Slack, Forum, IRC, listes de diffusion, Twitter, etc.) doit être constructive et ne jamais recourir aux attaques personnelles, au trolling, au harcèlement public ou privé, aux insultes ou à toute autre conduite non professionnelle.
 
-We promise to extend courtesy and respect to everyone involved in this project regardless of gender, gender identity, sexual orientation, disability, age, race, ethnicity, religion, or level of experience. We expect anyone contributing to the Ionic project to do the same.
+Nous promettons de faire preuve de courtoisie et de respect envers toutes les personnes participant à ce projet, indépendamment de leur sexe, de leur identité sexuelle, de leur orientation sexuelle, de leur handicap, de leur âge, de leur race, de leur origine ethnique, de leur religion ou de leur niveau d'expérience. Nous attendons de toute personne contribuant au projet Ionic qu'elle fasse de même.
 
-If any member of the community violates this code of conduct, the maintainers of the Ionic project may take action, removing issues, comments, and PRs or blocking accounts as deemed appropriate.
+Si un membre de la communauté viole ce code de conduite, les mainteneurs du projet Ionic peuvent prendre des mesures, en supprimant des problèmes, des commentaires et des RP ou en bloquant des comptes si nécessaire.
 
-If you are subject to or witness unacceptable behavior, or have any other concerns, please email us at <a href="mailto:hi@ionicframework.com">hi@ionicframework.com</a>.
+Si vous êtes sujet ou témoin d'un comportement inacceptable, ou si vous avez d'autres préoccupations, veuillez nous envoyer un courriel à <a href="mailto:hi@ionicframework.com">hi@ionicframework.com</a>.
