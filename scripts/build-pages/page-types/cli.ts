@@ -5,6 +5,11 @@ import {
 } from '../index';
 import renderMarkdown from '../markdown-renderer';
 
+import metaOverride from '../../data/meta-override.json';
+import { MetaInfo } from './api';
+
+const cliMetaInfo: MetaInfo = metaOverride.cli;
+
 export default {
   title: 'Build CLI pages',
   task: () => buildPages(getCLIPages)
@@ -14,18 +19,20 @@ const getCLIPages = async (): Promise<Page[]> => {
   return commands.map(command => {
     const { name, description, summary, inputs, options, ...rest } = command;
 
+    const shortName = name.slice(6).replace(/\s/g, '-');
+
     return {
       title: name,
       body: renderMarkdown(description),
-      path: `/docs/cli/commands/${name.slice(6).replace(/\s/g, '-')}`,
+      path: `/docs/cli/commands/${shortName}`,
       summary: renderMarkdown(summary),
       inputs: renderInputs(inputs),
       options: renderOptions(options),
       skipIntros: true,
       template: 'cli',
       meta: {
-        title: `${name}: ${summary}`,
-        description: description.split('\n')[0]
+        title: cliMetaInfo[shortName]?.title || `${name}: ${summary}`,
+        description: cliMetaInfo[shortName]?.description || summary
       },
       ...rest
     };

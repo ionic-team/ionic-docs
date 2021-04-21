@@ -72,6 +72,7 @@ export class DocsPage {
 
   @Watch('page')
   setDocumentMeta(page: Page) {
+    console.log(page);
     const { title, meta = {} } = page;
     const metaEls = {
       title: document.head.querySelectorAll('.meta-title'),

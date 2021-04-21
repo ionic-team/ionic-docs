@@ -2,7 +2,7 @@ import { components } from '@ionic/docs/core.json';
 import fs from 'fs-extra';
 import { join, resolve } from 'path';
 
-import apiMeta from '../../data/api-meta.json';
+import metaOverride from '../../data/meta-override.json';
 import {
   Page,
   buildPages
@@ -14,13 +14,13 @@ export default {
   task: () => buildPages(getAPIPages)
 };
 
-interface MetaList {
+export interface MetaInfo {
   [index: string]: any;
   title?: string;
   description?: string;
 }
 
-const metaList = apiMeta as MetaList;
+const apiMetaInfo: MetaInfo = metaOverride.api;
 
 const getAPIPages = async (): Promise<Page[]> => {
   const pages = components.map(async component => {
@@ -34,12 +34,12 @@ const getAPIPages = async (): Promise<Page[]> => {
       description: `The ${component.tag} component is one of many Ionic Framework components used to build apps for Android, iOS, and Progressive Web Apps`
     };
 
-    if (metaList[component.tag]) {
-      if (metaList[component.tag].title) {
-        meta.title = metaList[component.tag].title;
+    if (apiMetaInfo[component.tag]) {
+      if (apiMetaInfo[component.tag].title) {
+        meta.title = apiMetaInfo[component.tag].title;
       }
-      if (metaList[component.tag].description) {
-        meta.description = metaList[component.tag].description;
+      if (apiMetaInfo[component.tag].description) {
+        meta.description = apiMetaInfo[component.tag].description;
       }
     }
 
