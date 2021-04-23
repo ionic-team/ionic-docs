@@ -39,7 +39,7 @@ Con Live Reload funcionando y la aplicación abierta en tu dispositivo, implemen
 </ion-col>
 ```
 
-Over in `tab2.page.ts`, import Action Sheet and add it to the constructor:
+En `tab2.page.ts`, importe Action Sheet y agréguelo al constructor:
 
 ```typescript
 import { ActionSheetController } from '@ionic/angular';
@@ -48,13 +48,13 @@ constructor(public photoService: PhotoService,
             public actionSheetController: ActionSheetController) {}
 ```
 
-Add `Photo` to the import statement.
+Añade `Photo` a la declaración de importación.
 
 ```typescript
 import { Photo, PhotoService } from '../services/photo.service';
 ```
 
-Next, implement the `showActionSheet()` function. We add two options: `Delete` that calls PhotoService’s `deletePicture()` function (to be added next) and `Cancel`, which when given the role of “cancel” will automatically close the action sheet:
+A continuación, implementa la función `showActionSheet()`. We add two options: `Delete` that calls PhotoService’s `deletePicture()` function (to be added next) and `Cancel`, which when given the role of “cancel” will automatically close the action sheet:
 
 ```typescript
 public async showActionSheet(photo: Photo, position: number) {
