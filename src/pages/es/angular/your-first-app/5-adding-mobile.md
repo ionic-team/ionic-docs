@@ -94,26 +94,26 @@ A continuación, vuelve a la función `loadSaved()` que implementamos para la we
 
 ```typescript
 public async loadSaved() {
-  // Retrieve cached photo array data
+  // Se obtiene el listado de fotos en caché
   const photoList = await Storage.get({ key: this.PHOTO_STORAGE });
   this.photos = JSON.parse(photoList.value) || [];
 
-  // Easiest way to detect when running on the web:
-  // “when the platform is NOT hybrid, do this”
+  // La forma mas fácil de detectar cuando se ejecuta en la web:
+  // “cuando la plataforma NO es hybrida, haga esto”
   if (!this.platform.is('hybrid')) {
-    // Display the photo by reading into base64 format
+    // Muestra la foto leyéndola en fomato base64
     for (let photo of this.photos) {
-      // Read each saved photo's data from the Filesystem
+      // Lee los datos de cada foto guardada por el Archivo de Sistema
       const readFile = await Filesystem.readFile({
           path: photo.filepath,
           directory: FilesystemDirectory.Data
       });
 
-      // Web platform only: Load the photo as base64 data
+      // Solo para Web: Carga la foto como datos en base64
       photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
     }
   }
 }
 ```
 
-Our Photo Gallery now consists of one codebase that runs on the web, Android, and iOS. Next up, the part you’ve been waiting for - deploying the app to a device.
+Nuestra Galería de Fotos ahora consiste de un código base que se ejecuta en la web, Android e iOS. Luego, la parte que has estado esperando, desplegando la aplicación a un dispositivo.
