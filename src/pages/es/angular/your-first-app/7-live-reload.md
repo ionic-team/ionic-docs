@@ -59,20 +59,20 @@ A continuación, implementa la función `showActionSheet()`. Añadimos dos opcio
 ```typescript
 public async showActionSheet(photo: Photo, position: number) {
   const actionSheet = await this.actionSheetController.create({
-    header: 'Photos',
+    header: 'Fotos',
     buttons: [{
-      text: 'Delete',
+      text: 'Eliminar',
       role: 'destructive',
       icon: 'trash',
       handler: () => {
         this.photoService.deletePicture(photo, position);
       }
     }, {
-      text: 'Cancel',
+      text: 'Cancelar',
       icon: 'close',
       role: 'cancel',
       handler: () => {
-        // Nothing to do, action sheet is automatically closed
+        // Ninguna acción a realizar, el formulario se cerrará automáticamente.
         }
     }]
   });
@@ -106,12 +106,12 @@ public async deletePicture(photo: Photo, position: number) {
 }
 ```
 
-La foto seleccionada se elimina de la colección Photos primero. Then, we use the Capacitor Storage API to update the cached version of the Photos array. Finally, we delete the actual photo file itself using the Filesystem API.
+La foto seleccionada se elimina de la colección Photos primero. Luego, utilizamos la API Capacitor Storage para actualizar la versión de la colección Photos. Finalmente, eliminamos el archivo fotográfico en sí mismo utilizando la API Filesystem.
 
-Save this file, then tap on a photo again and choose the “Delete” option. This time, the photo is deleted! Implemented much faster using Live Reload. 💪
+Guarde este archivo, luego pulse sobre una foto de nuevo y elija la opción “Eliminar”. Esta vez, ¡la foto es eliminada! Implementado mucho más rápido usando Live Reload. 💪
 
 ## ¿Qué sigue?
 
-Congratulations! You built a complete cross-platform Photo Gallery app that runs on the web, iOS, and Android. There are many paths to follow from here. Try adding another [Ionic UI component](https://ionicframework.com/docs/components) to the app, or more [native functionality](https://capacitor.ionicframework.com/docs/apis). The sky’s the limit.
+¡Felicidades! Construyó una aplicación multiplataforma completa de Galería de Fotos que se ejecuta en la web, iOS y Android. Desde aquí hay muchos caminos por recorrer. Intenta añadir otro [componente Ionic](https://ionicframework.com/docs/components) a la aplicación, o más [funcionalidad nativa](https://capacitor.ionicframework.com/docs/apis). ¡El cielo es el límite!
 
-Happy app building! 💙
+¡Feliz construcción de aplicaciones! 💙
