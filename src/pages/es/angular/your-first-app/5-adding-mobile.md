@@ -103,7 +103,7 @@ public async loadSaved() {
   if (!this.platform.is('hybrid')) {
     // Muestra la foto leyéndola en fomato base64
     for (let photo of this.photos) {
-      // Lee los datos de cada foto guardada por el Archivo de Sistema
+      // Lee los datos de cada foto guardada por Filesystem
       const readFile = await Filesystem.readFile({
           path: photo.filepath,
           directory: FilesystemDirectory.Data
