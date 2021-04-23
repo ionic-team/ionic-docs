@@ -54,7 +54,7 @@ Añade `Photo` a la declaración de importación.
 import { Photo, PhotoService } from '../services/photo.service';
 ```
 
-A continuación, implementa la función `showActionSheet()`. We add two options: `Delete` that calls PhotoService’s `deletePicture()` function (to be added next) and `Cancel`, which when given the role of “cancel” will automatically close the action sheet:
+A continuación, implementa la función `showActionSheet()`. Añadimos dos opciones: `Eliminar` que llama a la función `eliminarFoto()` de PhotoService (que se añadirá a continuación) y `Cancelar`, que cuando se le da el rol de “cancel” automáticamente cerrará la hoja de acción:
 
 ```typescript
 public async showActionSheet(photo: Photo, position: number) {
@@ -80,7 +80,7 @@ public async showActionSheet(photo: Photo, position: number) {
 }
 ```
 
-Save both of the files we just edited. The Photo Gallery app will reload automatically, and now when we tap on one of the photos in the gallery, the action sheet displays. Tapping “Delete” doesn’t do anything yet, so head back into your code editor.
+Guarda ambos archivos que acabamos de editar. La aplicación Galería de Fotos se recargará automáticamente, y ahora cuando toquemos una de las fotos de la galería, la hoja de acción se muestra. Tocar “Eliminar” no hace nada todavía, así que vuelva a su editor de código.
 
 In `src/app/services/photo.service.ts`, add the `deletePicture()` function:
 
