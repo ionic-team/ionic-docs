@@ -90,7 +90,7 @@ A continuación, actualice el método `savePicture()`. Cuando se ejecuta en un d
 }
 ```
 
-A continuación, vuelve a la función `loadSaved()` que implementamos para la web anteriormente. On mobile, we can directly set the source of an image tag - `<img src="x" />` - to each photo file on the Filesystem, displaying them automatically. Por lo tanto, sólo la web requiere leer cada imagen del sistema de archivos en formato base64. Update this function to add an _if statement_ around the Filesystem code:
+A continuación, vuelve a la función `loadSaved()` que implementamos para la web anteriormente. En móvil, podremos establecer directamente el origen de una etiqueta de imagen - `<img src="x" />` - a cada archivo de foto en el Sistema de Archivos, mostrándolos automáticamente. Por lo tanto, sólo la web requiere leer cada imagen del sistema de archivos en formato base64. Actualiza esta función para añadir una _declaración If_ alrededor del código del sistema de archivos:
 
 ```typescript
 public async loadSaved() {
