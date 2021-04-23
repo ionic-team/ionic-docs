@@ -29,7 +29,7 @@ El servidor Live Reload se iniciará, y el IDE nativo elegido se abrirá si no s
 
 ## Borrando fotos
 
-Con Live Reload funcionando y la aplicación abierta en tu dispositivo, implementemos la funcionalidad de eliminación de fotos. Abre `tab2.page.html` y añade un nuevo manejador de clic a cada elemento `<ion-img>`. When the app user taps on a photo in our gallery, we’ll display an [Action Sheet](https://ionicframework.com/docs/api/action-sheet) dialog with the option to either delete the selected photo or cancel (close) the dialog.
+Con Live Reload funcionando y la aplicación abierta en tu dispositivo, implementemos la funcionalidad de eliminación de fotos. Abre `tab2.page.html` y añade un nuevo manejador de clic a cada elemento `<ion-img>`. Cuando el usuario de la aplicación toca una foto de nuestra galería, mostraremos un diálogo de [Action Sheet](https://ionicframework.com/docs/api/action-sheet) con la opción de eliminar la foto seleccionada o cancelar (cerrar) el cuadro de diálogo.
 
 ```html
 <ion-col size="6" 
