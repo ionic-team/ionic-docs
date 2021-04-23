@@ -54,7 +54,7 @@ Añade `Photo` a la declaración de importación.
 import { Photo, PhotoService } from '../services/photo.service';
 ```
 
-A continuación, implementa la función `showActionSheet()`. Añadimos dos opciones: `Eliminar` que llama a la función `eliminarFoto()` de PhotoService (que se añadirá a continuación) y `Cancelar`, que cuando se le da el rol de “cancel” automáticamente cerrará la hoja de acción:
+A continuación, implementa la función `showActionSheet()`. Añadimos dos opciones: `Eliminar` que llama a la función `deletePicture()` de PhotoService (que se añadirá a continuación) y `Cancelar`, que cuando se le da el rol de “cancel” automáticamente cerrará la hoja de acción:
 
 ```typescript
 public async showActionSheet(photo: Photo, position: number) {
@@ -82,20 +82,20 @@ public async showActionSheet(photo: Photo, position: number) {
 
 Guarda ambos archivos que acabamos de editar. La aplicación Galería de Fotos se recargará automáticamente, y ahora cuando toquemos una de las fotos de la galería, la hoja de acción se muestra. Tocar “Eliminar” no hace nada todavía, así que vuelva a su editor de código.
 
-In `src/app/services/photo.service.ts`, add the `deletePicture()` function:
+En `src/app/services/photo.service.ts`, añade la función `deletePicture()`:
 
 ```typescript
 public async deletePicture(photo: Photo, position: number) {
-  // Remove this photo from the Photos reference data array
+  //  Elimina esta foto de la colección photos
   this.photos.splice(position, 1);
 
-  // Update photos array cache by overwriting the existing photo array
+  // Actualiza la caché de fotos sobreescribiendo la existente colección de fotos
   Storage.set({
     key: this.PHOTO_STORAGE,
     value: JSON.stringify(this.photos)
   });
 
-  // delete photo file from filesystem
+  // Elimina la foto del archivo de sistema
   const filename = photo.filepath
                       .substr(photo.filepath.lastIndexOf('/') + 1);
 
@@ -106,7 +106,7 @@ public async deletePicture(photo: Photo, position: number) {
 }
 ```
 
-The selected photo is removed from the Photos array first. Then, we use the Capacitor Storage API to update the cached version of the Photos array. Finally, we delete the actual photo file itself using the Filesystem API.
+La foto seleccionada se elimina de la colección Photos primero. Then, we use the Capacitor Storage API to update the cached version of the Photos array. Finally, we delete the actual photo file itself using the Filesystem API.
 
 Save this file, then tap on a photo again and choose the “Delete” option. This time, the photo is deleted! Implemented much faster using Live Reload. 💪
 
