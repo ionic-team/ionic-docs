@@ -1,5 +1,5 @@
 ---
-previousText: 'Navigation/Routing'
+previousText: 'Navegación/Ruteo'
 previousUrl: '/docs/angular/navigation'
 nextText: 'Plataforma'
 nextUrl: '/docs/angular/platform'
@@ -180,7 +180,7 @@ A continuación se muestra una lista de opciones de configuración que utiliza I
 | `sanitizerEnabled`       | `boolean`          | Si el valor es `true`, Ionic habilitará un limpiador DOM básico en propiedades de componentes que aceptan HTML personalizado.                  |
 | `spinner`                | `SpinnerTypes`     | Sobrescribe el tipo de spinner predeterminado en todos los componentes `<ion-spinner>`.                                                  |
 | `statusTap`              | `boolean`          | Si el valor es `true`, haciendo clic o tocando la barra de estado hará que el contenido se desplace hasta la parte superior.                   |
-| `swipeBackEnabled`       | `boolean`          | If `true`, Ionic will enable the "swipe-to-go-back" gesture across the application.                                                            |
-| `tabButtonLayout`        | `TabButtonLayout`  | Overrides the default "layout" of all `ion-bar-button` across the whole application.                                                           |
-| `toastEnter`             | `AnimationBuilder` | Provides a custom enter animation for all `ion-toast`, overriding the default "animation".                                                     |
-| `toastLeave`             | `AnimationBuilder` | Provides a custom leave animation for all `ion-toast`, overriding the default "animation".                                                     |
+| `swipeBackEnabled`       | `boolean`          | Si el valor es `true`, Ionic activará el gesto "deslizar hacia atrás" en toda la aplicación.                                                   |
+| `tabButtonLayout`        | `TabButtonLayout`  | Sobreescribe el valor predeterminado de "layout" de todos los `ion-bar-button` en toda la aplicación.                                          |
+| `toastEnter`             | `AnimationBuilder` | Proporciona una animación de entrada personalizada para todos los `ion-toast`, sobreescribiendo el valor predeterminado de "animation".        |
+| `toastLeave`             | `AnimationBuilder` | Proporciona una animación de salida personalizada para todos los `ion-toast`, sobreescribiendo el valor predeterminado de "animation".         |
