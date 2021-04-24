@@ -15,8 +15,8 @@ tableOfContents: false
       <img src="/docs/assets/img/native/capacitor@2x.png" width="440" height="222" alt="capacitor logo"/>
     </div>
     <div class="heading-group">
-      <header>Capacitor plugins</header>
-      <p>A modern, open source native runtime built and maintained by the Ionic team and the Capacitor community. Our recommended native solution.</p>
+      <header>Plugins de Capacitor</header>
+      <p>Un moderno, de código abierto runtime nativo construido y mantenido por el equipo de Ionic y la comunidad de Capacitor. Nuestra solución nativa recomendada.</p>
     </div>
   </a>
 
@@ -25,8 +25,8 @@ tableOfContents: false
       <img src="/docs/assets/img/native/cordova@2x.png" width="440" height="222" alt="cordova logo"/>
     </div>
     <div class="heading-group">
-      <header>Cordova plugins</header>
-      <p>A collection of free Cordova plugins, built and maintained by the community, with TypeScript wrappers and a consistent API and naming convention.</p>
+      <header>Plugins de Cordova</header>
+      <p>Una colección de plugins gratuitos de Cordova, construido y mantenido por la comunidad, con ficheros TypeScript, una consistente API y convención de nombramiento.</p>
     </div>
   </a>
 </div>
