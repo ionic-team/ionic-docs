@@ -1,5 +1,5 @@
 ---
-previousText: 'Testing'
+previousText: 'Pruebas'
 previousUrl: '/docs/angular/testing'
 nextText: 'Rendimiento'
 nextUrl: '/docs/angular/performance'
@@ -7,22 +7,22 @@ nextUrl: '/docs/angular/performance'
 
 # Almacenamiento de Datos
 
-There are variety of options available for storing data within an Ionic app.
+Hay una variedad de opciones disponibles para almacenar datos dentro de una aplicación Ionic.
 
-Here are two official Ionic options:
+Aquí hay dos opciones oficiales de Ionic:
 
 ## Ionic Secure Storage
 
-For teams building mission-critical apps or requiring encryption support, [Ionic Secure Storage](https://ionic.io/docs/secure-storage) is an official premium solution from the Ionic team that provides a cross-platform data storage system that works on iOS and Android.
+Para equipos que construyan aplicaciones de misión crítica o que requieran soporte para cifrado [Ionic Secure Storage](https://ionic.io/docs/secure-storage) es una solución premium oficial del equipo de Ionic que proporciona un sistema de almacenamiento de datos multiplataforma que funciona en iOS y Android.
 
-It makes it easy to build high performance, offline-ready Ionic apps across iOS, Android, and the web.
+Hace fácil construir aplicaciones Ionic de alto rendimiento, listo para usar sin conexión en iOS, Android y la web.
 
-[Learn more](https://ionic.io/products/secure-storage)
+[Más información](https://ionic.io/products/secure-storage)
 
 ## @ionic/storage
 
-For developers not requiring encryption nor relational data support, [@ionic/storage](https://github.com/ionic-team/ionic-storage) is an open source key/value API for building apps that work across storage engines on multiple platforms.
+Para desarrolladores que no requieren cifrado ni soporte de datos relacionales, [@ionic/storage](https://github.com/ionic-team/ionic-storage) es una API clave/valor de código abierto para construir aplicaciones que funcionan a través de motores de almacenamiento en múltiples plataformas.
 
-Additionally, Ionic Secure Storage has a driver that works with the key/value API in `@ionic/storage` while providing encryption and SQLite support.
+Además, Ionic Secure Storage tiene un controlador que funciona con la API clave/valor en `@ionic/storage` mientras proporciona cifrado y soporte para SQLite.
 
-Learn more about [@ionic/storage](https://github.com/ionic-team/ionic-storage)
+Más información sobre [@ionic/storage](https://github.com/ionic-team/ionic-storage)
