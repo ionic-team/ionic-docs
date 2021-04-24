@@ -18,7 +18,7 @@ $ npm install -g @ionic/cli
 
 ## Ayuda
 
-The Ionic CLI ships with command documentation that is accessible with the `--help` flag.
+La Ionic CLI viene con documentación de comando accesible con el modificador `--help`.
 
 ```shell
 $ ionic --help
@@ -42,6 +42,6 @@ Para solucionar problemas con el Ionic CLI, puede ser útil lo siguiente:
 
 - Asegúrese de que la última versión de Ionic CLI está instalada. Obtenga la versión instalada ejecutando `ionic --version`.
 - Asegúrese de que la última versión de Node LTS está instalada. Ver la configuración de entorno de [Node & npm](/docs/intro/environment#node-npm).
-- The `--verbose` flag prints debugging messages, which may narrow down the issue.
+- El modificador `--verbose` imprime mensajes de depuración, lo que puede mostrar el problema.
 - Problemas de conexión pueden deberse a configuraciones de proxy incorrectas. Vea [Utilizando un Proxy](/docs/cli/using-a-proxy) para configurar.
-- The global Ionic CLI configuration directory is `~/.ionic` on all platforms. It can safely be deleted and the Ionic CLI will repopulate it, but all configuration (including user sessions) will be lost. Configure this directory with [CLI environment variables](/docs/cli/configuration#environment-variables).
+- El directorio global de configuración de Ionic CLI es `~/.ionic` en todas las plataformas. Se puede eliminar de forma segura y el Ionic CLI lo repoblará, pero toda la configuración (incluidas las sesiones de usuario) se perderá. Configure este directorio con las [variables de entorno CLI](/docs/cli/configuration#environment-variables).
