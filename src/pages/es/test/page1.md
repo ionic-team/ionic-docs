@@ -1,3 +1,3 @@
-## Testing Page 1
+## Página de Prueba 1
 
-This is Testing page 1, Get to Testing Page 2 [here](/docs/test/page2).
+Esta es la Página de Prueba 1, ve a la Página de Prueba 2 [aquí](/docs/test/page2).
