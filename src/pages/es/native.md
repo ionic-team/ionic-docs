@@ -41,7 +41,7 @@ tableOfContents: false
   <header> Ionic Native Enterprise Edition </header> 
   
   <p>
-    Premium, supported Capacitor and Cordova plugins, third-party integrations, and pre-built native solutions for building enterprise-grade apps.
+    Premium, soporta plugins de Capacitor y Cordova, integraciones de terceros y soluciones nativas prefabricadas para construir aplicaciones de grado superior.
   </p>
 </div>
 
@@ -182,6 +182,6 @@ tableOfContents: false
 
 <blockquote>
   <p>
-    These docs are for apps built with Ionic Framework 4.0.0 and greater. For older Ionic v3 projects, please <a href="/docs/v3/native">see here</a>.
+    Estos documentos son para aplicaciones construidas con Ionic Framework 4.0.0 y mayores. Para proyectos Ionic v3 más antiguos, por favor <a href="/docs/v3/native">vea aquí</a>.
   </p>
 </blockquote>
