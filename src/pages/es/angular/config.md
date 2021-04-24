@@ -48,7 +48,7 @@ import { IonicModule } from '@ionic/angular';
   imports: [
     BrowserModule,
     IonicModule.forRoot({
-      backButtonText: 'Go Back'
+      backButtonText: 'Atrás'
     }),
     AppRoutingModule
   ],
@@ -56,21 +56,21 @@ import { IonicModule } from '@ionic/angular';
 })
 ```
 
-This will set the default text for `ion-back-button` to `Go Back`. However, if you were to change the value of the `backButtonText` config to `Do Not Go Back`, the `ion-back-button` default text would still default to `Go Back` as the component has already been initialized and rendered. Instead, it is recommended to use the `text` property on `ion-back-button`.
+Esto establecerá el texto predeterminado para `ion-back-button` a `Ir atrás`. Sin embargo, si cambias el valor de la configuración de `backButtonText` a `No ir atrás`, el `ion-back-button` texto predeterminado seguiría siendo `Ir Atrás` ya que el componente ya ha sido inicializado y renderizado. En su lugar, se recomienda utilizar la propiedad `text` en `ion-back-button`.
 
 ```html
 <ion-back-button [text]="getBackButtonText()"></ion-back-button>
 ```
 
-In this example we have used our `ion-back-button` in such a way that the text can be dynamically updated if there were to be a change that warranted it, such as a language or locale change. The `getBackButtonText` method would be responsible for returning the correct text.
+En este ejemplo hemos usado nuestro `ion-back-button` de tal forma que el texto se pueda actualizar dinámicamente si hubiera un cambio que lo justificara, tal como un cambio de idioma o región. El método `getBackButtonText` sería responsable de devolver el texto correcto.
 
-## Per-Platform Config
+## Configuración por plataforma
 
-Ionic Config can also be set on a per-platform basis. For example, this allows you to disable animations if the app is being run in a browser on a potentially slower device. Developers can take advantage of the Platform utilities to accomplish this.
+Ionic Config también puede establecerse sobre una base por plataforma. Por ejemplo, esto le permite desactivar animaciones si la aplicación se está ejecutando en un navegador en un dispositivo potencialmente más lento. Los desarrolladores pueden aprovechar las utilidades del plugin Platform para lograr esto.
 
-Since the config is set at runtime, you will not have access to the Platform Dependency Injection. Instead, you can use the underlying functions that the provider uses directly.
+Dado que la configuración está configurada en tiempo de ejecución, no tendrá acceso a la inyección de dependencias del plugin Platform. En su lugar, puede utilizar las funciones subyacentes que el proveedor utiliza directamente.
 
-In the following example, we are disabling all animations in our Ionic app only if the app is running in a mobile web browser. The `isPlatform()` call returns `true` or `false` based upon the platform that is passed in. See the [Platform Documentation](./platform#platforms) for a list of possible values.
+En el ejemplo siguiente, desactivamos todas las animaciones de nuestra aplicación Ionic sólo si la aplicación se está ejecutando en un navegador móvil. La llamada `isPlatform()` devuelve `verdadero` o `falso` basado en la plataforma que se pasa. Consulte la [Documentación del plugin Platform](./platform#platforms) para obtener una lista de los valores posibles.
 
 
 ```typescript
