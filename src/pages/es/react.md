@@ -35,9 +35,9 @@ Es todo lo que necesitas para enviar aplicaciones ganadoras de premios para cual
 
 <div class="pull-left">
 
-## Amazing Design
+## Diseño Asombroso
 
-Choose from over 100 beautiful, mobile-ready UI components, animations, and gestures, lightweight and customized to fit your brand.
+Elige entre más de 100 bellos componentes de IU listos para móviles, animaciones y gestos, ligeros y personalizados para adaptarse a tu marca.
 
 [Explorar componentes de la interfaz](/docs/components)
 
