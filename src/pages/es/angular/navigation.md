@@ -157,9 +157,9 @@ import { LoginComponent } from './login.component';
 
 Tenemos aquí una configuración típica de un módulo de Angular con "RouterModule", ahora usando `forChild` y declarando el componente en esa configuración. Con esta configuración, cuando ejecutemos nuestra compilación, produciremos fragmentos separados para el componente de aplicación, el componente de inicio de sesión y el componente de detalle.
 
-## Live Example
+## Ejemplo en vivo
 
-If you would prefer to get hands on with the concepts and code described above, please checkout our [live example](https://stackblitz.com/edit/ionic-angular-routing?file=src/app/app-routing.module.ts) of the topics above on StackBlitz.
+Si prefiere ponerse manos a la obra con los conceptos y código descritos arriba, por favor revisa nuestro [ejemplo](https://stackblitz.com/edit/ionic-angular-routing?file=src/app/app-routing.module.ts) en vivo de los temas anteriores en StackBlitz.
 
 ## Trabajando con Tabuladores
 
