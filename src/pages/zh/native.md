@@ -1,6 +1,6 @@
 ---
 meta:
-  title: Native APIs - Build Open-Source Native Application Experiences
+  title: 原生API-构建开源原生应用程序体验
   description: Build native application experiences with open-source Native APIs. Easily add native device functionality to any Ionic app with Capacitor or Cordova.
 tableOfContents: false
 ---
