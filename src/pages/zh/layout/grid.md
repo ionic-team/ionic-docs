@@ -8,8 +8,8 @@ nextUrl: '/docs/layout/global-stylesheets'
 contributors:
   - brandyscarney
 meta:
-  title: Responsive Grid System and Column Layout Based on Screen Size
-  description: Ionic's responsive grid is a powerful mobile-first flexbox system for building custom layouts based on a 12 column layout with breakpoints based on screen size.
+  title: 基于屏幕大小的响应式网格系统和列布局
+  description: Ionic的响应网格是一个强大的移动优先弹窗系统，用于根据12列布局和基于屏幕大小的断点构建自定义布局。
 ---
 
 # 响应式网格
