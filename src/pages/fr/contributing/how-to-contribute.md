@@ -249,7 +249,7 @@ BREAKING CHANGE:
 Removes the old animation system to use the new Ionic animations.
 ```
 
-Le commit suivant et le commit `667ecc1` n'apparaissent pas dans le changelog s'ils sont sous la même version. If not, the revert commit appears under the "Reverts" header.
+Le commit suivant et le commit `667ecc1` n'apparaissent pas dans le changelog s'ils sont sous la même version. Sinon, le commit revert apparaît sous l'en-tête "Reverts".
 
 ```
 revert: feat(skeleton-text): add animated property
@@ -258,6 +258,6 @@ This reverts commit 667ecc1654a317a13331b17617d973392f415f02.
 ```
 
 
-## License
+## Licence
 
-By contributing your code to the ionic-team/ionic GitHub Repository, you agree to license your contribution under the MIT license.
+En contribuant votre code au dépôt GitHub de ionic-team/ionic, vous acceptez de placer votre contribution sous la licence MIT.
