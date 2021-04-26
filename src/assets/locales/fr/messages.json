@@ -72,6 +72,7 @@
   "menu-react-config": "Configuration",
   "menu-react-platform": "Plateforme",
   "menu-react-pwa": "Application Web Progressive",
+  "menu-react-overlays": "Overlays",
   "menu-react-storage": "Le Stockage",
   "menu-react-testing": "Tester",
   "menu-vue": "Vue",
