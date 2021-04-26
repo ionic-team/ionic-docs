@@ -186,7 +186,7 @@ Doit être l'un des éléments suivants :
 
 ### Scope
 
-The scope can be anything specifying place of the commit change. Usually it will refer to a component but it can also refer to a utility. For example `action-sheet`, `button`, `css`, `menu`, `nav`, etc. If you make multiple commits for the same component, please keep the naming of this component consistent. For example, if you make a change to navigation and the first commit is `fix(nav)`, you should continue to use `nav` for any more commits related to navigation. As a general rule, if you're modifying a component use the name of the folder.
+Le scope peut être tout ce qui spécifie le lieu de la modification de la livraison. Il s'agit généralement d'un composant, mais il peut également s'agir d'un utilitaire. Par exemple `action-sheet`, `button`, `css`, `menu`, `nav`, etc. Si vous faites plusieurs commits pour le même composant, veuillez garder le nom de ce composant cohérent. Par exemple, si vous apportez une modification à la navigation et que le premier commit est `fix(nav)`, vous devez continuer à utiliser `nav` pour tous les autres commits liés à la navigation. As a general rule, if you're modifying a component use the name of the folder.
 
 ### Subject
 
