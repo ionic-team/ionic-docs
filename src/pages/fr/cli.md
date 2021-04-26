@@ -1,7 +1,7 @@
 ---
 meta:
-  title: "Ionic CLI Framework: Command-Line Interface to Develop Apps"
-  description: The Ionic command-line interface (CLI) is the go-to tool for developing Ionic apps. Install our framework globally with npm.
+  title: "Ionic CLI Framework: Interface en ligne de commande pour développer des applications"
+  description: L'interface en ligne de commande Ionic (CLI) est l'outil de développement d'applications Ionic. Installez notre framework globalement avec npm.
 ---
 
 # Le CLI de IONIC
