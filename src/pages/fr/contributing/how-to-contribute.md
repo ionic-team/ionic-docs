@@ -132,17 +132,17 @@ Sans une reproduction fiable du code, il est peu probable que nous soyons en mes
     - Ou encore, en exécutant les tests de base `alert` : `npm run test.screenshot src/components/alert/test/basic/e2e.ts`.
 
 
-#### Building Changes
+#### Changements de construction
 
-1. Once all changes have been made and the documentation has been updated, run `npm run build` inside of the `core` directory. This will add your changes to any auto-generated files, if necessary.
-2. Review the changes and, if everything looks correct, [commit](#commit-message-format) the changes.
-3. Make sure the build has finished before committing. If you made changes to the documentation, properties, methods, or anything else that requires an update to a generate file, this needs to be committed.
-4. After the changes have been pushed, publish the branch and [create a pull request](#creating-a-pull-request).
+1. Une fois que toutes les modifications ont été effectuées et que la documentation a été mise à jour, exécutez `npm run build` à l'intérieur du répertoire `core`. Cela ajoutera vos modifications à tous les fichiers générés automatiquement, si nécessaire.
+2. Examinez les modifications et, si tout semble correct, [commet](#commit-message-format) les modifications.
+3. Assurez-vous que la construction est terminée avant de vous engager. Si vous avez apporté des modifications à la documentation, aux propriétés, aux méthodes ou à tout autre élément nécessitant une mise à jour d'un fichier de génération, ces modifications doivent être validées.
+4. Une fois les modifications poussées, publiez la branche et [créez une demande de pull](#creating-a-pull-request).
 
 
-### Submit Pull Request
+### Soumettre une demande
 
-1. [Create a new pull request](https://github.com/ionic-team/ionic/compare) with the `master` branch as the `base`. You may need to click on `compare across forks` to find your changes.
+1. [Créer une nouvelle pull request](https://github.com/ionic-team/ionic/compare) avec la branche `master` comme `base`. You may need to click on `compare across forks` to find your changes.
 2. See the [Creating a pull request from a fork](https://help.github.com/articles/creating-a-pull-request-from-a-fork/) GitHub help article for more information.
 3. Please fill out the provided Pull Request template to the best of your ability and include any issues that are related.
 
