@@ -186,44 +186,44 @@ Doit être l'un des éléments suivants :
 
 ### Scope
 
-Le scope peut être tout ce qui spécifie le lieu de la modification de la livraison. Il s'agit généralement d'un composant, mais il peut également s'agir d'un utilitaire. Par exemple `action-sheet`, `button`, `css`, `menu`, `nav`, etc. Si vous faites plusieurs commits pour le même composant, veuillez garder le nom de ce composant cohérent. Par exemple, si vous apportez une modification à la navigation et que le premier commit est `fix(nav)`, vous devez continuer à utiliser `nav` pour tous les autres commits liés à la navigation. As a general rule, if you're modifying a component use the name of the folder.
+Le scope peut être tout ce qui spécifie le lieu de la modification de la livraison. Il s'agit généralement d'un composant, mais il peut également s'agir d'un utilitaire. Par exemple `action-sheet`, `button`, `css`, `menu`, `nav`, etc. Si vous faites plusieurs commits pour le même composant, veuillez garder le nom de ce composant cohérent. Par exemple, si vous apportez une modification à la navigation et que le premier commit est `fix(nav)`, vous devez continuer à utiliser `nav` pour tous les autres commits liés à la navigation. En règle générale, si vous modifiez un composant, utilisez le nom du dossier.
 
-### Subject
+### Sujet 
 
-The subject contains succinct description of the change:
+Le sujet contient une description succincte de la modification :
 
 * use the imperative, present tense: "change" not "changed" nor "changes"
-* do not capitalize first letter
-* do not place a period `.` at the end
-* entire length of the commit message must not go over 50 characters
-* describe what the commit does, not what issue it relates to or fixes
-* **be brief, yet descriptive** - we should have a good understanding of what the commit does by reading the subject
+* ne pas mettre en majuscule la première lettre
+* ne pas placer de point `.` à la fin
+* la longueur entière du message de commit ne doit pas dépasser 50 caractères
+* décrivez ce que fait le commit et non le problème auquel il se rapporte ou les corrections
+* **être bref, mais descriptif** - nous devrions avoir une bonne compréhension de ce que le commit fait en lisant le sujet
 
 ### Body
 
-Just as in the **subject**, use the imperative, present tense: "change" not "changed" nor "changes". The body should include the motivation for the change and contrast this with previous behavior.
+Just as in the **subject**, use the imperative, present tense: "change" not "changed" nor "changes". Le corps devrait inclure la motivation du changement et contraster cela avec le comportement précédent.
 
 ### Footer
 
-The footer should contain any information about **Breaking Changes** and is also the place to reference GitHub issues that this commit **Closes**.
+Le footer doit contenir toute information sur **Breaking Changes** et c'est aussi l'endroit pour référencer les problèmes GitHub que ce commit **Close**.
 
-**Breaking Changes** should start with the word `BREAKING CHANGE:` with a space or two newlines. The rest of the commit message is then used for this.
+**Breaking Changes** doit commencer par le mot `BREAKING CHANGE:` avec un espace ou deux retours à la ligne. Le reste du message de validation est alors utilisé pour cela.
 
-### Examples
+### Exemples
 
-Does not appear in the generated changelog:
+N'apparaît pas dans le changelog généré :
 
 ```
 docs(changelog): update steps to update
 ```
 
-Appears under "Features" header, toast subheader:
+Apparaît sous l'en-tête "Caractéristiques", sous-titre "Toast" :
 
 ```
 feat(toast): add 'buttons' property
 ```
 
-Appears under "Bug Fixes" header, skeleton-text subheader, with a link to issue #28:
+Apparaît sous l'en-tête "Bug Fixes", sous-titre "skeleton-text", avec un lien vers le numéro 28 :
 
 ```
 fix(skeleton-text): use proper color when animated
@@ -231,7 +231,7 @@ fix(skeleton-text): use proper color when animated
 closes #28
 ```
 
-Appears under "Performance Improvements" header, and under "Breaking Changes" with the breaking change explanation:
+Apparaît sous l'en-tête "Améliorations des performances", et sous "Modifications de rupture" avec l'explication de la modification de rupture :
 
 ```
 perf(css): remove all css utility attributes
@@ -239,7 +239,7 @@ perf(css): remove all css utility attributes
 BREAKING CHANGE: The CSS utility attributes have been removed. Use CSS classes instead.
 ```
 
-Appears under "Breaking Changes" with the breaking change explanation:
+Apparaît sous "Breaking Changes" avec l'explication du changement de rupture :
 
 ```
 refactor(animations): update to new animation system
@@ -249,7 +249,7 @@ BREAKING CHANGE:
 Removes the old animation system to use the new Ionic animations.
 ```
 
-The following commit and commit `667ecc1` do not appear in the changelog if they are under the same release. If not, the revert commit appears under the "Reverts" header.
+Le commit suivant et le commit `667ecc1` n'apparaissent pas dans le changelog s'ils sont sous la même version. If not, the revert commit appears under the "Reverts" header.
 
 ```
 revert: feat(skeleton-text): add animated property
