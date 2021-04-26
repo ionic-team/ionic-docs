@@ -1,6 +1,4 @@
 ---
-previousText: 'Testing'
-previousUrl: '/docs/vue/testing'
 ---
 
 # Troubleshooting

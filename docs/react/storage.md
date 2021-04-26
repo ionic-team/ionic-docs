@@ -1,8 +1,5 @@
 ---
-previousText: 'Overlays in Ionic React'
-previousUrl: '/docs/react/overlays'
-nextText: 'Testing'
-nextUrl: '/docs/react/testing'
+sidebar_label: Storage
 ---
 
 # Data Storage

@@ -1,8 +1,5 @@
 ---
-previousText: 'Progressive Web Apps'
-previousUrl: '/docs/react/pwa'
-nextText: 'Storage'
-nextUrl: '/docs/react/storage'
+sidebar_label: Overlays
 ---
 
 # Using Overlay Components in React

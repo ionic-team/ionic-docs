@@ -102,6 +102,8 @@ module.exports = {
         'react/config',
         'react/platform',
         'react/pwa',
+        'react/overlays',
+        'react/storage',
         'react/testing',
       ],
     },
@@ -129,7 +131,9 @@ module.exports = {
         'vue/config',
         'vue/platform',
         'vue/pwa',
+        'vue/storage',
         'vue/testing',
+        'vue/troubleshooting',
       ],
     },
     {
