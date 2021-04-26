@@ -142,18 +142,18 @@ Sans une reproduction fiable du code, il est peu probable que nous soyons en mes
 
 ### Soumettre une demande
 
-1. [Créer une nouvelle pull request](https://github.com/ionic-team/ionic/compare) avec la branche `master` comme `base`. You may need to click on `compare across forks` to find your changes.
-2. See the [Creating a pull request from a fork](https://help.github.com/articles/creating-a-pull-request-from-a-fork/) GitHub help article for more information.
-3. Please fill out the provided Pull Request template to the best of your ability and include any issues that are related.
+1. [Créer une nouvelle pull request](https://github.com/ionic-team/ionic/compare) avec la branche `master` comme `base`. Vous devrez peut-être cliquer sur `compare across forks` pour trouver vos modifications.
+2. Consultez l'article d'aide de GitHub [Créer une demande de pull à partir d'un fork](https://help.github.com/articles/creating-a-pull-request-from-a-fork/) pour plus d'informations.
+3. Veuillez remplir le modèle de demande de retrait fourni au mieux de vos capacités et inclure tous les problèmes qui s'y rapportent.
 
 
-## Commit Message Guidelines
+## Directives relatives aux messages d'engagement
 
-We have very precise rules over how our git commit messages should be formatted. This leads to readable messages that are easy to follow when looking through the project history. We also use the git commit messages to generate our [changelog](https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md). Our format closely resembles Angular's [commit message guidelines](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit).
+Nous avons des règles très précises sur la façon dont nos messages de commit git doivent être formatés. Il en résulte des messages lisibles et faciles à suivre lorsqu'on consulte l'historique du projet. Nous utilisons également les messages de commit git pour générer notre [changelog](https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md). Notre format ressemble beaucoup aux directives de [commit message](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit) d'Angular.
 
-### Commit Message Format
+### Format du message d'engagement
 
-We follow the [Conventional Commits specification](https://www.conventionalcommits.org/). A commit message consists of a **header**, **body** and **footer**.  The header has a **type**, **scope** and **subject**:
+Nous suivons la spécification [Conventional Commits](https://www.conventionalcommits.org/). Un message de commit se compose d'un **header**, **body** et **footer**.  L'en-tête comporte un **type**, **scope** et **subject** :
 
 ```
 <type>(<scope>): <subject>
@@ -163,26 +163,26 @@ We follow the [Conventional Commits specification](https://www.conventionalcommi
 <footer>
 ```
 
-The **header** is mandatory and the **scope** of the header is optional.
+Le **header** est obligatoire et le **scope** de l'en-tête est facultatif.
 
-### Revert
+### Rétablir
 
-If the commit reverts a previous commit, it should begin with `revert:`, followed by the header of the reverted commit. In the body it should say: `This reverts commit <hash>.`, where the hash is the SHA of the commit being reverted.
+Si le commit renverse un commit précédent, il doit commencer par `revert:`, suivi de l'en-tête du commit renversé. Dans le body, il devrait dire : `This reverts commit <hash>.`, où le hash est le SHA du commit en cours de rétablissement.
 
 ### Type
 
-If the prefix is `feat`, `fix` or `perf`, it will appear in the changelog. However if there is any [BREAKING CHANGE](#footer), the commit will always appear in the changelog.
+Si le préfixe est `feat`, `fix` ou `perf`, il apparaîtra dans le changelog. Cependant, s'il y a un [BREAKING CHANGE](#footer), le commit apparaîtra toujours dans le changelog.
 
-Must be one of the following:
+Doit être l'un des éléments suivants :
 
-* **feat**: A new feature
-* **fix**: A bug fix
-* **docs**: Documentation only changes
-* **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
-* **refactor**: A code change that neither fixes a bug nor adds a feature
-* **perf**: A code change that improves performance
-* **test**: Adding missing tests
-* **chore**: Changes to the build process or auxiliary tools and libraries such as documentation generation
+* **feat** : Une nouvelle fonctionnalité
+* **fix**: Correction d'un bug
+* **docs**: Modification de la documentation uniquement
+* **style** : Modifications qui n'affectent pas le sens du code (espaces blancs, formatage, points-virgules manquants, etc)
+* **refactor** : Une modification du code qui ne corrige pas un bug et n'ajoute pas de fonctionnalité
+* **perf**: Un changement de code qui améliore les performances
+* **test**: Ajout de tests manquants
+* **chore**: Modifications du processus de construction ou des outils et bibliothèques auxiliaires, comme la génération de la documentation
 
 ### Scope
 
