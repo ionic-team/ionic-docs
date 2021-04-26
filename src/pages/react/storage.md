@@ -1,6 +1,6 @@
 ---
-previousText: 'Progressive Web Apps'
-previousUrl: '/docs/react/pwa'
+previousText: 'Overlays in Ionic React'
+previousUrl: '/docs/react/overlays'
 nextText: 'Testing'
 nextUrl: '/docs/react/testing'
 ---

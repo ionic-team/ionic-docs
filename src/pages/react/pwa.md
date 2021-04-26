@@ -2,8 +2,8 @@
 title: "Progressive Web Apps in React"
 previousText: 'Platform Utils'
 previousUrl: '/docs/react/platform'
-nextText: 'Storage'
-nextUrl: '/docs/react/storage'
+nextText: 'Overlays in Ionic React'
+nextUrl: '/docs/react/overlays'
 ---
 
 

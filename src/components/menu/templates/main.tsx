@@ -74,6 +74,7 @@ const items = {
     'menu-react-config': '/docs/react/config',
     'menu-react-platform': '/docs/react/platform',
     'menu-react-pwa': '/docs/react/pwa',
+    'menu-react-overlays': '/docs/react/overlays',
     'menu-react-storage': '/docs/react/storage',
     'menu-react-testing': '/docs/react/testing'
   },
