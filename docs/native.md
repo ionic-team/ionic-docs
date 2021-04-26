@@ -49,6 +49,7 @@ import DocsCards from '@site/src/components/DocsCards';
   </div>
 </a>
 
+<!--
 <style scoped>
   #native-enterprise-cards {
     display: flex;
@@ -179,5 +180,6 @@ import DocsCards from '@site/src/components/DocsCards';
 
 
 </style>
+-->
 
 > These docs are for apps built with Ionic Framework 4.0.0 and greater. For older Ionic v3 projects, please [see here](/docs/v3/native).

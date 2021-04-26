@@ -22,7 +22,7 @@ the first argument to ionic start.
 
 The Ionic CLI will display prompts asking for the new project's name and which template to use. These details can be provided as command arguments:
 
-```shell
+```shell-session
 $ ionic start myApp tabs
 ```
 
@@ -36,7 +36,7 @@ Here, `myApp` is the name of the project, `tabs` is the starter template, and th
 
 See all available templates with the following command:
 
-```shell
+```shell-session
 $ ionic start --list
 ```
 

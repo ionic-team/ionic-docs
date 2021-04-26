@@ -63,6 +63,7 @@ $ ionic serve
 
 There are a number of other ways to run an app, it's recommended to start with this workflow. To develop and test apps on devices and emulators, see the [Running an App Guide](/docs/developing/previewing).
 
+<!-- TODO
 <style scoped>
   #ionic-wizard {
     display: flex;
@@ -132,3 +133,4 @@ There are a number of other ways to run an app, it's recommended to start with t
   }
 
 </style>
+-->

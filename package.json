@@ -14,7 +14,7 @@
   "dependencies": {
     "@docusaurus/core": "2.0.0-alpha.73",
     "@docusaurus/preset-classic": "2.0.0-alpha.73",
-    "@ionic-internal/docusaurus-theme": "^1.1.1",
+    "@ionic-internal/docusaurus-theme": "^1.1.7",
     "@ionic/prettier-config": "^1.0.1",
     "@mdx-js/react": "^1.6.21",
     "clsx": "^1.1.1",

@@ -124,7 +124,6 @@ module.exports = {
       trackingID: 'UA-44023830-8',
     },
     prism: {
-      theme: { plain: {}, styles: [] },
       // https://github.com/FormidableLabs/prism-react-renderer/blob/master/src/vendor/prism/includeLangs.js
       additionalLanguages: [
         'shell-session',
