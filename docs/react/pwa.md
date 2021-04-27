@@ -2,6 +2,7 @@
 sidebar_label: Progressive Web Apps
 ---
 
+# Progressive Web Apps in React
 
 ## Making your React app a PWA
 
