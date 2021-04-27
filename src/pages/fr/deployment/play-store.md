@@ -18,49 +18,49 @@ $ ionic cordova build android --prod --release
 
 Cela va générer un build de version basé sur les paramètres du `config.xml` dans le répertoire `plates-formes/android/app/build/outputs/apk` d'une app. Une application Ionic aura des valeurs par défaut prédéfinies dans ce fichier, mais elles peuvent être modifiées pour personnaliser les constructions.
 
-## Signing an APK
+## Signature d'un APK
 
-First, the unsigned APK must be signed. If a signing key has already been generated, skip these steps and use that one instead. Generate a private key using the keytool command that comes with the Android SDK:
+D'abord, l'APK non signé doit être signé. Si une clé de signature a déjà été générée, sautez ces étapes et utilisez celle-ci à la place. Générez une clé privée à l'aide de la commande keytool fournie avec le SDK Android :
 
 ```shell
 $ keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000
 ```
 
-Once that command has been ran and its prompts have been answered a file called `my-release-key.keystore` will be created in the current directory.
+Une fois que cette commande a été exécutée et que l'on a répondu à ses invites, un fichier appelé `my-release-key.keystore` sera créé dans le répertoire courant.
 
-> WARNING: Save this file and keep it somewhere safe. If it is lost the Google Play Store will not accept updates for this app!
+> AVERTISSEMENT : Enregistrez ce fichier et gardez-le dans un endroit sûr. S'il est perdu, le Google Play Store n'acceptera pas les mises à jour pour cette application !
 
-To sign the unsigned APK, run the jarsigner tool which is also included in the Android SDK:
+Pour signer l'APK non signé, exécutez l'outil jarsigner qui est également inclus dans le SDK Android :
 
 ```shell
 $ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore HelloWorld-release-unsigned.apk alias_name
 ```
 
-Finally, the zip align tool must be ran to optimize the APK. The `zipalign` tool can be found in `/path/to/Android/sdk/build-tools/VERSION/zipalign`. For example, on macOS with Android Studio installed, `zipalign` is in `~/Library/Android/sdk/build-tools/VERSION/zipalign`:
+Enfin, l’outil d’alignement zip doit être exécuté pour optimiser l’APK. L'outil `zipalign` se trouve dans `/path/to/Android/sdk/build-tools/VERSION/zipalign`. Par exemple, sur macOS avec Android Studio installé, `zipalign` se trouve dans `~/Library/Android/sdk/build-tools/VERSION/zipalign` :
 
 ```shell
 $ zipalign -v 4 HelloWorld-release-unsigned.apk HelloWorld.apk
 ```
 
-This generates a final release binary called HelloWorld.apk that can be accepted into the Google Play Store.
+Cela génère un binaire de version finale appelé HelloWorld.apk qui peut être accepté dans le Google Play Store.
 
-## Submitting an app to the Google Play Store
+## Soumettre une application sur le Google Play Store
 
-Now that a release APK has been generated, a Play Store listing can be written and the APK can be uploaded.
+Maintenant qu'une version APK a été générée, une liste Play Store peut être écrite et l'APK peut être téléchargée.
 
-To start, visit the [Google Play Store Developer Console](https://play.google.com/apps/publish) and create a new developer account.
+Pour commencer, visitez la [console de développement Google Play](https://play.google.com/apps/publish) et créez un nouveau compte développeur.
 
-> Making a developer account with Google Play costs $25 USD.
+> Créer un compte développeur avec Google Play coûte $25 USD.
 
-Once a developer account has been created, go ahead and click the `Create an Application`
+Une fois qu'un compte de développeur a été créé, allez-y et cliquez sur le `Créer une application`
 
-![Create an App button](/docs/assets/img/publishing/newAppGPlay.png)
+![Créer un bouton d'application](/docs/assets/img/publishing/newAppGPlay.png)
 
-Be sure to fill out the description for the app along with providing screenshots and additional info. When ready, upload the signed release APK that was generated and publish the app.
+Assurez-vous de remplir la description de l'application, en fournissant des captures d'écran et des informations supplémentaires. Une fois prêt, téléchargez l'APK de la version signée qui a été générée et publiez l'application.
 
 
-## Updating an app
+## Mise à jour d'une application
 
-As an app evolves, it will need to be updated with new features and fixes. An app can be updated by either submitting a new version to the Google Play Store, or by using a live update service like Appflow's Live Update feature. Using Live Updates, changes can be pushed directly to users from the Appflow dashboard, without submitting changes to the Play Store. Learn more about Live Updates <a href="https://ionic.io/docs/appflow/deploy/intro" target="_blank">here</a>.
+À mesure qu'une application évolue, elle doit être mise à jour avec de nouvelles fonctionnalités et des corrections. Une application peut être mise à jour soit en soumettant une nouvelle version au Google Play Store, soit en utilisant un service de mise à jour en direct tel que la fonction Live Update d'Appflow. Grâce aux mises à jour en direct, les changements peuvent être directement transmis aux utilisateurs à partir du tableau de bord Appflow, sans avoir à les soumettre au Play Store. En savoir plus sur les mises à jour en direct <a href="https://ionic.io/docs/appflow/deploy/intro" target="_blank">ici</a>.
 
-> In order for the Google Play Store to accept updated APKs, the config.xml file will need to be edited to increment the version value, then rebuild the app for release following the instructions above.
+> Pour que le Google Play Store accepte les APK mis à jour, le fichier config.xml devra être modifié pour incrémenter la valeur de la version, puis reconstruire l'application en suivant les instructions ci-dessus.
