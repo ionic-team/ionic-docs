@@ -5,18 +5,18 @@ nextText: 'Progressive Web App (PWA)'
 nextUrl: '/docs/deployment/progressive-web-app'
 ---
 
-# Android Play Store Deployment
+# Déploiement du Play Store Android
 
 
-## Generating a release build of an app
+## Génération d'une version d'une application
 
-To generate a release build for Android, run the following cli command:
+Pour générer un build de version pour Android, exécutez la commande cli suivante :
 
 ```shell
 $ ionic cordova build android --prod --release
 ```
 
-This will generate a release build based on the settings in the `config.xml` in the `platforms/android/app/build/outputs/apk` directory of an app. An Ionic app will have preset default values in this file but this can be changed to customize builds.
+Cela va générer un build de version basé sur les paramètres du `config.xml` dans le répertoire `plates-formes/android/app/build/outputs/apk` d'une app. An Ionic app will have preset default values in this file but this can be changed to customize builds.
 
 ## Signing an APK
 
