@@ -22,27 +22,27 @@ Pour vous inscrire à l'Apple Developer Program, suivez les instructions [listé
 
 ## Génération d'un release build
 
-If the iOS platform is not already added, be sure to add it:
+Si la plateforme iOS n'est pas déjà ajoutée, assurez-vous de l'ajouter :
 
 ```shell
 $ ionic cordova platform add ios
 ```
 
-With the platform added, run the build command with the `--prod` flag:
+Avec la plateforme ajoutée, exécutez la commande build avec le drapeau `--prod` :
 
 ```shell
 $ ionic cordova build ios --prod
 ```
 
-This will generate the minified code for the web portion of an app and copy it over the iOS code base.
+Cette opération permet de générer le code minifié de la partie web d'une application et de le copier sur la base de code iOS.
 
-From here, open the `.xcworkspace` file in `./platforms/ios/` to start Xcode.
+À partir de là, ouvrez le fichier `.xcworkspace` dans `./platforms/ios/` pour lancer Xcode.
 
-## Generating Signing Certs
+## Générer des certificats de signature
 
-Generating certificates for iOS is a bit of an involved process, so be sure to check [Apple's official documentation](https://help.apple.com/xcode/mac/current/#/dev3a05256b8) on what certificates are and how to generate them.
+La génération de certificats pour iOS est un processus un peu complexe, alors assurez-vous de consulter [la documentation officielle d'Apple](https://help.apple.com/xcode/mac/current/#/dev3a05256b8) sur ce que sont les certificats et comment les générer.
 
-To create the certificates and profiles needed, visit [Apple's member center](https://developer.apple.com/membercenter) and follow the links described in Apple's documentation.
+Pour créer les certificats et les profils nécessaires, visitez [le centre des membres d'Apple](https://developer.apple.com/membercenter) et suivez les liens décrits dans la documentation d'Apple.
 
 There are two types of certificates that matter here, Development, and Distribution. Development Certificates are just that, meant for development time. They are meant to sign an app and deploy it to devices that the certificate has access to.
 
