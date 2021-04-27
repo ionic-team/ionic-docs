@@ -1,22 +1,22 @@
 ---
-previousText: 'CLI Installation'
+previousText: 'Installation du CLI'
 previousUrl: '/docs/intro/cli'
-nextText: 'Next Steps'
+nextText: 'Prochaines étapes'
 nextUrl: '/docs/intro/next'
 contributors:
   - brandyscarney
   - rtpHarry
 ---
 
-# Ionic Packages
+# Paquets Ionic
 
-Ionic provides different packages that can be used to quickly get started using Ionic Framework or Ionicons in a test environment, Angular, any other framework, or none at all.
+Ionic fournit différents paquets qui peuvent être utilisés pour commencer rapidement à utiliser Ionic Framework ou Ionicons dans un environnement de test, Angular, tout autre framework, ou rien du tout.
 
-## Ionic Framework CDN
+## Le CDN du framework Ionic
 
-Ionic Framework can be included from a CDN for quick testing in a [Plunker](https://plnkr.co/), [Codepen](https://codepen.io), or any other online code editor!
+Ionic Framework peut être inclus depuis un CDN pour un test rapide dans un [Plunker](https://plnkr.co/), [Codepen](https://codepen.io), ou tout autre éditeur de code en ligne !
 
-It's recommended to use [jsdelivr](https://www.jsdelivr.com/) to access the Framework from a CDN. To get the latest version, add the following inside the `<head>` element in an HTML file, or where external assets are included in the online code editor:
+Il est recommandé d'utiliser [jsdelivr](https://www.jsdelivr.com/) pour accéder au Framework depuis un CDN. Pour obtenir la dernière version, ajoutez ce qui suit à l'intérieur de l'élément `<head>` d'un fichier HTML, ou lorsque des ressources externes sont incluses dans l'éditeur de code en ligne :
 
 ```html
 <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
@@ -24,33 +24,33 @@ It's recommended to use [jsdelivr](https://www.jsdelivr.com/) to access the Fram
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
 ```
 
-With this it's possible to use all of the Ionic Framework core components without having to install a framework. The CSS bundle will include all of the Ionic [Global Stylesheets](../layout/global-stylesheets).
+Avec cela, il est possible d'utiliser tous les composants de base du Framework Ionic sans avoir à installer un framework. Le paquet CSS comprendra toutes les [Global Stylesheets](../layout/global-stylesheets) de Ionic.
 
-> This does not install Angular or any other frameworks. This allows use of the Ionic Framework core components without a framework.
+> Cela n'installe pas Angular ou d'autres frameworks. Cela permet d'utiliser les composants de base du Ionic Framework sans framework.
 
 
 ## Ionic + Angular
 
-When using Ionic Framework in an Angular project, install the latest `@ionic/angular` package from [npm](/docs/reference/glossary#npm). This comes with all of the Ionic Framework components and Angular specific services and features.
+Lorsque vous utilisez Ionic Framework dans un projet Angular, installez le dernier paquet `@ionic/angular` de [npm](/docs/reference/glossary#npm). Il est livré avec tous les composants du Ionic Framework et les services et fonctionnalités spécifiques à Angular.
 
 ```shell
 $ npm install @ionic/angular@latest --save
 ```
 
-Each time there is a new Ionic Framework release, this [version](/docs/reference/versioning) will need to be updated to get the latest features and fixes. The version can be [updated using npm](/docs/developing/tips#updating-dependencies), as well.
+Chaque fois qu'il y a une nouvelle version de Ionic Framework, cette [version](/docs/reference/versioning) devra être mise à jour pour obtenir les dernières fonctionnalités et corrections. La version peut être [mise à jour en utilisant npm](/docs/developing/tips#updating-dependencies), également.
 
-For adding Ionic to an already existing Angular project, use the Angular CLI's `ng add` feature.
+Pour ajouter Ionic à un projet Angular déjà existant, utilisez la fonction `ng add` du CLI Angular.
 
 ```shell
 $ ng add @ionic/angular
 ```
 
-This will add the necessary imports to the `@ionic/angular` package as well as add the styles needed.
+Cela ajoutera les importations nécessaires au paquet `@ionic/angular` ainsi que les styles nécessaires.
 
 
 ## Ionic + React
 
-To add Ionic Framework to an already existing React project, install the `@ionic/react` and `@ionic/react-router` package.
+Pour ajouter Ionic Framework à un projet React déjà existant, installez le paquet `@ionic/react` et `@ionic/react-router`.
 
 ```shell
 $ npm install @ionic/react
@@ -59,7 +59,7 @@ $ npm install @ionic/react-router
 
 ### CSS
 
-To include the necessary CSS in a React project, add the following to the root App component.
+Pour inclure le CSS nécessaire dans un projet React, ajoutez ce qui suit au composant App racine.
 
 ```javascript
 /* Core CSS required for Ionic components to work properly */
