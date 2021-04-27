@@ -16,7 +16,7 @@ Pour générer un build de version pour Android, exécutez la commande cli suiva
 $ ionic cordova build android --prod --release
 ```
 
-Cela va générer un build de version basé sur les paramètres du `config.xml` dans le répertoire `plates-formes/android/app/build/outputs/apk` d'une app. An Ionic app will have preset default values in this file but this can be changed to customize builds.
+Cela va générer un build de version basé sur les paramètres du `config.xml` dans le répertoire `plates-formes/android/app/build/outputs/apk` d'une app. Une application Ionic aura des valeurs par défaut prédéfinies dans ce fichier, mais elles peuvent être modifiées pour personnaliser les constructions.
 
 ## Signing an APK
 
