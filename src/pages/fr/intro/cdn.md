@@ -62,18 +62,18 @@ $ npm install @ionic/react-router
 Pour inclure le CSS nécessaire dans un projet React, ajoutez ce qui suit au composant App racine.
 
 ```javascript
-/* Core CSS required for Ionic components to work properly */
-import '@ionic/react/css/core.css';
+/* CSS de base requis pour que les composants Ionic fonctionnent correctement */
+importent '@ionic/react/css/core. ss';
 
-/* Basic CSS for apps built with Ionic */
-import '@ionic/react/css/normalize.css';
+/* CSS de base pour les applications construites avec Ionic */
+importez '@ionic/react/css/normalize. ss';
 import '@ionic/react/css/structure.css';
-import '@ionic/react/css/typography.css';
+import '@ionic/react/css/typography. ss';
 
-/* Optional CSS utils that can be commented out */
+/* Utilitaires CSS optionnels qui peuvent être commentés */
 import '@ionic/react/css/padding.css';
 import '@ionic/react/css/float-elements.css';
-import '@ionic/react/css/text-alignment.css';
+import '@ionic/react/css/text-alignment. ss';
 import '@ionic/react/css/text-transformation.css';
 import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
@@ -82,13 +82,13 @@ import '@ionic/react/css/display.css';
 
 ## Ionic + Vue
 
-To add Ionic Framework to an existing Vue project, install the `@ionic/vue` and `@ionic/vue-router` packages.
+Pour ajouter Ionic Framework à un projet Vue existant, installez les paquets `@ionic/vue` et `@ionic/vue-router`.
 
 ```shell
 $ npm install @ionic/vue @ionic/vue-router
 ```
 
-After that, you will need to install the `IonicVue` plugin in your Vue app.
+Après cela, vous devrez installer le plugin `IonicVue` dans votre application Vue.
 
 **main.js**
 ```javascript
@@ -106,11 +106,11 @@ router.isReady().then(() => {
 });
 ```
 
-Be sure to mount your app once `router.isReady()` has resolved.
+Assurez-vous de monter votre application une fois que `router.isReady()` a été résolu.
 
 ### Routing
 
-When setting up routing in your Vue app, you will need to import your dependencies from `@ionic/vue-router` instead of `vue-router`.
+Lors de la mise en place du routage dans votre application Vue, vous devrez importer vos dépendances depuis `@ionic/vue-router` au lieu de `vue-router`.
 
 **router/index.js**
 
@@ -118,7 +118,7 @@ When setting up routing in your Vue app, you will need to import your dependenci
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 
 const routes = [
-  // routes go here
+  // les routes vont ici
 ]
 
 const router = createRouter({
@@ -131,18 +131,18 @@ export default router;
 
 ### CSS
 
-To include the necessary CSS in a Vue project, add the following to your `main.js` file.
+Pour inclure le CSS nécessaire dans un projet Vue, ajoutez ce qui suit à votre fichier `main.js`.
 
 ```javascript
-/* Core CSS required for Ionic components to work properly */
+/* CSS de base requis pour que les composants Ionic fonctionnent correctement */
 import '@ionic/vue/css/core.css';
 
-/* Basic CSS for apps built with Ionic */
+/* CSS de base pour les applications construites avec Ionic */
 import '@ionic/vue/css/normalize.css';
 import '@ionic/vue/css/structure.css';
 import '@ionic/vue/css/typography.css';
 
-/* Optional CSS utils that can be commented out */
+/* Utilitaires CSS optionnels qui peuvent être commentés */
 import '@ionic/vue/css/padding.css';
 import '@ionic/vue/css/float-elements.css';
 import '@ionic/vue/css/text-alignment.css';
@@ -151,15 +151,15 @@ import '@ionic/vue/css/flex-utils.css';
 import '@ionic/vue/css/display.css';
 ```
 
-From here, you can learn about how to develop with Ionic Framework in our [Ionic Vue Quickstart Guide](https://ionicframework.com/docs/vue/quickstart).
+À partir de là, vous pouvez apprendre à développer avec Ionic Framework dans notre [Guide de démarrage rapide de Ionic Vue](https://ionicframework.com/docs/vue/quickstart).
 
-## Ionicons CDN
+## Le CDN Ionicons
 
-Ionicons is packaged by default with the Ionic Framework, so no installation is necessary if you're using Ionic. To use Ionicons without Ionic Framework, place the following `<script>` near the end of your page, right before the closing `</body>` tag.
+Ionicons est emballé par défaut avec le cadre Ionic, donc aucune installation n'est nécessaire si vous utilisez Ionic. Pour utiliser Ionicons sans Ionic Framework, placez le `<script>` suivant vers la fin de votre page, juste avant la balise de fermeture `</body>`.
 
 ```html
 <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.js"></script>
 ```
 
-> See [Ionicons usage](https://ionicons.com/usage) for more information on using Ionicons.
+> Voir [Ionicons usage](https://ionicons.com/usage) pour plus d'informations sur l'utilisation de Ionicons.
