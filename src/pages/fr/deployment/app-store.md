@@ -44,24 +44,24 @@ La génération de certificats pour iOS est un processus un peu complexe, alors 
 
 Pour créer les certificats et les profils nécessaires, visitez [le centre des membres d'Apple](https://developer.apple.com/membercenter) et suivez les liens décrits dans la documentation d'Apple.
 
-There are two types of certificates that matter here, Development, and Distribution. Development Certificates are just that, meant for development time. They are meant to sign an app and deploy it to devices that the certificate has access to.
+Il y a deux types de certificats qui comptent ici, le développement et la distribution. Les certificats de développement ne sont que cela, ils sont destinés à la période de développement. Ils sont destinés à signer une application et à la déployer sur les appareils auxquels le certificat a accès.
 
-Distribution certs are meant for distributing an app to the store. When an app is signed with a Distribution cert, it can be installed on any device.
+Les certificats de distribution sont destinés à la distribution d'une application dans le magasin. Lorsqu'une application est signée avec un certificat de distribution, elle peut être installée sur n'importe quel appareil.
 
-## Signing the App in Xcode.
+## Signature de l'application dans Xcode.
 
-After generating the correct certificates, there are options to either have Xcode automatically manage certificates or manually manage them. It's suggested to let Xcode automatically manage certificates. This will make sure that the correct Development and Distribution certs are used, based on the build type selected.
+Après avoir généré les bons certificats, il y a des options pour que Xcode gère automatiquement les certificats ou les gère manuellement. Il est suggéré de laisser Xcode gérer automatiquement les certificats. Cela permettra de s'assurer que les bons certificats de développement et de distribution sont utilisés, en fonction du type de construction sélectionné.
 
-With this option selected, select `Archive` from the `Product > Archive` menu. This will build a version of the app that is ready for distribution in the app stores. After archive has been created, Xcode Organizer is opened.
+Avec cette option sélectionnée, choisissez `Archive` dans le menu `Produit > Archive`. Cela permettra de créer une version de l'application prête à être distribuée dans les magasins d'applications. Après que l'archive ait été créée, Xcode Organizer est ouvert.
 
-Xcode Organizer displays a list with builds of the current app. Pick the last build and click 'Upload to App Store'. There should be a place to select the team followed by some more information on the app and a "Upload" button to click.
+Xcode Organizer affiche une liste avec les builds de l'application actuelle. Choisissez la dernière version et cliquez sur "Upload to App Store". Il devrait y avoir un endroit pour sélectionner l'équipe, suivi de quelques informations supplémentaires sur l'application et d'un bouton "Télécharger" à cliquer.
 
-If the upload successfully, the app should be listed on [iTunes Connect](https://itunesconnect.apple.com) and listed in 'Activities'. From there, TestFlight can be enabled for beta testing, or the App can be sent for approval from Apple.
+Si le téléchargement a réussi, l'application devrait être répertoriée sur [iTunes Connect](https://itunesconnect.apple.com) et répertoriée dans 'Activités'. À partir de là, TestFlight peut être activé pour les tests bêta, ou l'application peut être envoyée pour approbation par Apple.
 
-## Updating an app
+## Mise à jour d'une application
 
-As an app grows, it will need to be updated with new features and fixes. An app can be updated by either submitting a new version to Apple, or by using a live update service like Appflow's <a href="https://ionic.io/docs/appflow/deploy/intro" target="_blank">live update feature</a>.
+À mesure qu'une application se développe, elle doit être mise à jour avec de nouvelles fonctionnalités et des corrections. Une application peut être mise à jour soit en soumettant une nouvelle version à Apple, soit en utilisant un service de mise à jour en direct comme la fonctionnalité de mise à jour en direct d'Appflow <a href="https://ionic.io/docs/appflow/deploy/intro" target="_blank">mise à jour en direct</a>.
 
-With <strong>Live Updates</strong>, app changes can be pushed in realtime directly to users from the Appflow dashboard, without waiting for App Store approvals.
+Avec <strong>Live Updates</strong>, les modifications des applications peuvent être poussées en temps réel directement vers les utilisateurs depuis le tableau de bord Appflow, sans attendre les approbations de l'App Store.
 
-> In order for the iOS App Store to accept the updated build, the config.xml file will need to be edited to increment the version value, then rebuild the app for release following the same instructions above.
+> Pour que l'App Store d'iOS accepte la version mise à jour, le fichier config.xml devra être modifié pour incrémenter la valeur de la version, puis reconstruire l'application en suivant les mêmes instructions que ci-dessus.
