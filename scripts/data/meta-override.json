@@ -1,12 +1,24 @@
 {
   "api": {
+    "ion-avatar": {
+      "title": "ion-avatar: Circular Application Avatar Icon Component",
+      "description": "Ion-avatars are circular application components that wrap an image or icon. They can represent a person or an object, by themselves or inside of any element."
+    },
     "ion-back-button": {
       "title": "Back Button | ion-back-button: Custom Menu Icon for Applications",
       "description": "The ion-back-button is a custom menu icon for Android, iOS, and Progressive Web Apps. Use Ionic Framework components to easily build applications."
     },
+    "ion-fab": {
+      "title": "ion-fab: Floating Action Button for Android and iOS Ionic Apps",
+      "description": "Fabs, floating action buttons, are container elements that contain one or more fab buttons. Use ion-fab when creating Android and iOS apps with Ionic Framework."
+    },
     "ion-grid": {
       "title": "Ion-Grid: Display Grids to Build Mobile-First Custom App Layout",
       "description": "Ion-Grid is a mobile-first flexbox system to build custom application display layouts with a 12 column layout and different breakpoints based on screen size."
+    },
+    "ion-header": {
+      "title": "ion-header: Header Parent Component for Ionic Framework Apps",
+      "description": "Ion-header is a parent component that holds the toolbar. It's important to note that ion-header needs to be the one of the three root elements of a page."
     },
     "ion-img": {
       "title": "Img Tag to Lazy Load Images in Viewport | ion-img Tag",
@@ -60,9 +72,17 @@
     }
   },
   "native": {
+    "barcode-scanner": {
+      "title": "Barcode Scanner | Install Camera Barcode Scanner Plugin",
+      "description": "Ionic's Barcode Scanner Plugin opens a camera view and automatically scans a barcode, returning the data back to you. Read more for installation and usage."
+    },
     "camera": {
       "title": "Install Camera | Cordova Plugin Cameras for Ionic Applications",
       "description": "Use the Cordova plugin to install a camera and take photos or capture videos in-app with Ionic Framework camera component for supported platforms."
+    },
+    "file": {
+      "title": "File API Plugin for Read and Write File Access on Devices",
+      "description": "The File API plugin allows read/write access to files residing on the device and implements static convenience functions to access files and directories."
     },
     "file-transfer": {
       "title": "File Transfer | Cordova Docs File Transfer Download Plugin",
@@ -71,6 +91,10 @@
     "geolocation": {
       "title": "Geolocation | W3C Geolocator Application API Plugin",
       "description": "This application plugin is based on W3C Geolocation API Specification and only executes on devices that don't already provide an implementation for location."
+    },
+    "push": {
+      "title": "PhoneGap Plugin for Push Notifications With Cordova and Ionic",
+      "description": "Register and receive push notifications on your Ionic apps using the Cordova plugin: phonegap-plugin-push. Read for how to install on supported platforms."
     },
     "splash-screen": {
       "title": "Splash Screen | Cordova Splash Screen Plugin for Android & iOS",
