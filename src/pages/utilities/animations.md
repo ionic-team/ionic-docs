@@ -1342,7 +1342,7 @@ export const ModalExample: React.FC = () => {
         :is-open="isModalOpen"
         :enter-animation="enterAnimation"
         :leave-animation="leaveAnimation"
-        @onDidDismiss="setModalOpen(false)"
+        @didDismiss="setModalOpen(false)"
       >
         Modal content goes here.
       </ion-modal>
