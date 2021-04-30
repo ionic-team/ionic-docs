@@ -67,77 +67,77 @@ Dependiendo del dispositivo en que estés, `platforms` puede devolver varios val
 
 ### `ready() => Promise<string>`
 
-Devuelve una promesa cuando la plataforma está lista y la funcionalidad nativa puede ser llamada. Si la aplicación se está ejecutando desde un navegador web, la promesa se resolverá cuando el DOM esté listo. When the app is running from an application engine such as Cordova, then the promise will resolve when Cordova triggers the `deviceready` event. The resolved value is the `readySource`, which states the platform that was used.
+Devuelve una promesa cuando la plataforma está lista y la funcionalidad nativa puede ser llamada. Si la aplicación se está ejecutando desde un navegador web, la promesa se resolverá cuando el DOM esté listo. Cuando la aplicación se está ejecutando desde un motor de aplicación como Cordova, entonces la promesa se resolverá cuando Cordova active el evento `deviceready`. El valor resuelto es el `readySource`, que indica la plataforma que fue usada.
 
-For example, when Cordova is ready, the resolved ready source is `cordova`. The default ready source value will be `dom`. The `readySource` is useful if different logic should run depending on the platform the app is running from. For example, only Capacitor and Cordova can execute the status bar plugin, so the web should not run status bar plugin logic.
+Por ejemplo, cuando Cordova está listo, la fuente resuelta es `cordova`. El valor predeterminado de origen será `dom`. El `readySource` es útil si se debe ejecutar una lógica diferente dependiendo de la plataforma desde la que se esté ejecutando la aplicación. Por ejemplo, sólo el Capacitor y Cordova pueden ejecutar el plugin de barra de estado, por lo que la web no debe ejecutar la lógica del plugin de la barra de estado.
 
 ### `isRTL() => boolean`
 
-Returns if this app is using right-to-left language direction or not. We recommend the app's `index.html` file already has the correct `dir` attribute value set, such as `<html dir="ltr">` or `<html dir="rtl">`. [W3C: Structural markup and right-to-left text in HTML](http://www.w3.org/International/questions/qa-html-dir)
+Devuelve si esta aplicación está usando la dirección de idioma derecha a izquierda o no. Recomendamos que el archivo de aplicación `index.html` ya tenga el valor correcto `dir` del atributo establecido tales como `<html dir="ltr">` o `<html dir="rtl">`. [W3C: Marco estructural y texto derecha a izquierda en HTML](http://www.w3.org/International/questions/qa-html-dir)
 
 ### `isLandscape() => boolean`
 
-Returns `true` if the app is in landscape mode.
+Devuelve `true` si la aplicación está en modo horizontal.
 
 ### `isPortrait() => boolean`
 
-Returns `true` if the app is in portrait mode.
+Devuelve `true` si la aplicación está en modo retrato.
 
 ### `width() => number`
 
-Gets the width of the platform's viewport using `window.innerWidth`.
+Obtiene el ancho de la vista de la plataforma usando `window.innerWidth`.
 
 ### `height() => number`
 
-Gets the height of the platform's viewport using `window.innerHeight`.
+Obtiene la altura de la vista de la plataforma usando `window.innerHeight`.
 
 ### `url() => string`
 
-Get the current url.
+Obtiene la dirección url actual.
 
 ### `testUserAgent(expression: string) => boolean`
 
-Returns `true` if the expression is included in the user agent string.
+Devuelve `true` si la expresión está incluida en la cadena del agente de usuario.
 
-### Parameters
-| Name       | Type   | Description                           |
-| ---------- | ------ | ------------------------------------- |
-| expression | string | The string to check in the user agent |
+### Parámetros
+| Nombre     | Tipo   | Descripción                                   |
+| ---------- | ------ | --------------------------------------------- |
+| expression | string | La cadena para comprobar el agente de usuario |
 
-## Events
+## Eventos
 
 ### `pause`
 
-The `pause` event emits when the native platform puts the application into the background, typically when the user switches to a different application. This event emits when a Cordova/Capacitor app is put into the background but doesn't fire in a standard web browser.
+El evento `pause` se desencadena cuando la plataforma nativa pone la aplicación en el fondo, normalmente cuando el usuario cambia a otra aplicación. Este evento se emite cuando una aplicación Cordova/Capacitor se pone en segundo plano pero no se dispara en un navegador web estándar.
 
-#### Usage
+#### Uso
 
 ```typescript
 this.platform.pause.subscribe(async () => {
-  alert('Pause event detected');
+  alert('Evento de pausa detectada');
 });
 ```
 
 ### `resize`
 
-The `resize` event emits when the browser window has changed dimensions. This could be from a browser window being physically resized, or from a device changing orientation.
+El evento `resize` se emite cuando la ventana del navegador ha cambiado de dimensión. Esto podría ser desde una ventana del navegador siendo físicamente redimensionada, o desde un dispositivo cambiando de orientación.
 
-#### Usage
+#### Uso
 
 ```typescript
 this.platform.resize.subscribe(async () => {
-  alert('Resize event detected');
+  alert('Evento de redimensión detectado');
 });
 ```
 
 ### `resume`
 
-The `resume` event fires when the native platform pulls the application out from the background. This event emits when a Cordova/Capacitor app comes out from the background but doesn't fire in a standard web browser.
+El evento `resume` se dispara cuando la plataforma nativa trae la aplicación al frente. Este evento se emite cuando una aplicación Cordova/Capacitor sale del fondo pero no se dispara en un navegador web estándar.
 
-#### Usage
+#### Uso
 
 ```typescript
 this.platform.resume.subscribe(async () => {
-  alert('Resume event detected');
+  alert('Evento de reanudación detectado');
 });
 ```
