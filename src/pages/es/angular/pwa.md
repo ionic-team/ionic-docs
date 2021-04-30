@@ -77,21 +77,21 @@ $ npm install -g firebase-tools
 
 Con el CLI de Firebase instalado, ejecuta `firebase init` dentro de tu proyecto de Ionic. El CLI indica:
 
-**"Which Firebase CLI features do you want to set up for this folder?"**  Choose "Hosting: Configure and deploy Firebase Hosting sites."
+**"¿Qué características de CLI Firebase quieres configurar para esta carpeta?"**  Elige "Alojar: Configurar e implementar sitios de Alojamiento Firebase."
 
-**"Select a default Firebase project for this directory:"** Choose the project you created on the Firebase website.
+**"Seleccione un proyecto de Firebase predeterminado para este directorio:"** Seleccione el proyecto que creó en el sitio web de Firebase.
 
-**"What do you want to use as your public directory?"** Enter "www".
+**"¿Qué quieres usar como tu directorio público?"** Ingrese "www".
 
-> Note: Answering these next two questions will ensure that routing, hard reload, and deep linking work in the app:
+> Nota: Responder a estas dos preguntas siguientes asegurará que el enrutamiento, la recarga dura y el enlace profundo funcionen en la aplicación:
 
-**Configure as a single-page app (rewrite all urls to /index.html)?"** Enter "Yes".
+**Configurar como una aplicación de una sola página (¿reescribir todas las urls en /index.html)?"** Introduzca "Sí".
 
-**"File www/index.html already exists. Overwrite?"** Enter "No".
+**"Archivo www/index.html ya existe. ¿Sobrescribir?"** Introduzca "No".
 
-A `firebase.json` config file is generated, configuring the app for deployment.
+Se genera un archivo de configuración de `firebase.json`, configurando la aplicación para su implementación.
 
-The last thing needed is to make sure caching headers are being set correctly. To do this, add a `headers` snippet to the `firebase.json` file. The complete `firebase.json` looks like:
+Lo último que se necesita es asegurarse de que las cabeceras de caché se están configurando correctamente. Para ello, añade un fragmento de `headers` al archivo `firebase.json`. El completo `firebase.json` se ve como:
 
 ```json
 {
@@ -132,18 +132,18 @@ The last thing needed is to make sure caching headers are being set correctly. T
 }
 ```
 
-For more information about the `firebase.json` properties, see the [Firebase documentation](https://firebase.google.com/docs/hosting/full-config#section-firebase-json).
+Para más información acerca de las propiedades de `firebase.json`, vea la [documentación de Firebase](https://firebase.google.com/docs/hosting/full-config#section-firebase-json).
 
-Next, build an optimized version of the app by running:
+A continuación, construir una versión optimizada de la aplicación ejecutando:
 
 ```shell
 $ ionic build --prod
 ```
 
-Last, deploy the app by running:
+Por último, despliegue la aplicación ejecutando:
 
 ```shell
 $ firebase deploy
 ```
 
-After this completes, the app will be live.
+Después de que esto se complete, la aplicación estará en directo.
