@@ -195,7 +195,7 @@ const routes: Routes = [
 ];
 ```
 
-Aquí tenemos la ruta a una pestaña (tabs) que cargamos. En este ejemplo llamamos a la ruta "tabs", pero el nombre de las rutas puede cambiarse. They can be called whatever fits your app. In that route object, we can define a child route as well. In this example, the top level child route "tab1" acts as our "outlet", and can load additional child routes. For this example, we have a single sub-child-route, which just loads a new component. The markup for the tab is as followed:
+Aquí tenemos la ruta a una pestaña (tabs) que cargamos. En este ejemplo llamamos a la ruta "tabs", pero el nombre de las rutas puede cambiarse. Pueden llamarse de la manera que se ajuste a su aplicación. En ese objeto route, también podemos definir una ruta secundaria (children). En este ejemplo, la ruta secundaria de nivel superior "tab1" actúa como nuestro "outlet", y puede cargar rutas secundarias adicionales. Para este ejemplo, tenemos un sola sub ruta secundaria, que sólo carga un nuevo componente. El marcado de la pestaña es el siguiente:
 
 ```html
 <br /><ion-tabs>
@@ -204,7 +204,7 @@ Aquí tenemos la ruta a una pestaña (tabs) que cargamos. En este ejemplo llamam
 
     <ion-tab-button tab="tab1">
       <ion-icon name="flash"></ion-icon>
-      <ion-label>Tab One</ion-label>
+      <ion-label>Tab Uno</ion-label>
     </ion-tab-button>
 
   </ion-tab-bar>
@@ -212,4 +212,4 @@ Aquí tenemos la ruta a una pestaña (tabs) que cargamos. En este ejemplo llamam
 </ion-tabs>
 ```
 
-If you've built apps with Ionic before, this should feel familiar. We create a `ion-tabs` component, and provide a `ion-tab-bar`. The `ion-tab-bar` provides a `ion-tab-button` with a `tab` property that is associated with the tab "outlet" in the router config. Note that the latest version of `@ionic/angular` no longer requires `<ion-tab>`, but instead allows developers to fully customize the tab bar, and the single source of truth lives within the router configuration.
+Si has construido aplicaciones con Ionic antes, debería estar familiarizado. Creamos un componente `ion-tabs`, y proporcionamos una `ion-tab-bar`. El componente `ion-tab-bar` proporciona un `ion-tab-button` con una propiedad `tab` que está asociada con la pestaña "outlet" en la configuración del router. Tenga en cuenta que la última versión de `@ionic/angular` ya no requiere `<ion-tab>`, pero en su lugar permite a los desarrolladores personalizar completamente la barra de pestañas, y la única fuente de verdad vive dentro de la configuración del router.
