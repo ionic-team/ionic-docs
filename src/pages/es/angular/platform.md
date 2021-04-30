@@ -1,12 +1,12 @@
 ---
-previousText: 'Config'
+previousText: 'Configuración'
 previousUrl: '/docs/angular/config'
-nextText: 'Testing'
+nextText: 'Testeo'
 nextUrl: '/docs/angular/testing'
 contributors:
   - liamdebeasi
 meta:
-  title: Platform | Ionic Platform to Customize Apps to Fit Any Device
+  title: Plataform | Ionic Plataform para personalizar aplicaciones para adaptarse a cualquier dispositivo
   description: Ionic Platform service can be used to get information about your current device. With this information you can completely customize your app to fit any device.
 ---
 
