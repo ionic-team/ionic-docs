@@ -56,7 +56,7 @@ Después de que `@angular/pwa` haya sido añadido, se creará un nuevo archivo `
 }
 ```
 
-Hay dos secciones aquí, una para recursos específicos de la aplicación (JS, CSS, HTML) y assets que la aplicación cargará bajo demanda. Depending on your app, these options can be customized. Para una guía más detallada, lee [la guía oficial del equipo Angular.](https://angular.io/guide/service-worker-config)
+Hay dos secciones aquí, una para recursos específicos de la aplicación (JS, CSS, HTML) y assets que la aplicación cargará bajo demanda. Dependiendo de tu aplicación, estas opciones pueden ser personalizadas. Para una guía más detallada, lee [la guía oficial del equipo Angular.](https://angular.io/guide/service-worker-config)
 
 
 ## Desplegando
@@ -65,17 +65,17 @@ Hay dos secciones aquí, una para recursos específicos de la aplicación (JS, C
 
 El alojamiento Firebase proporciona muchos beneficios para las aplicaciones web progresivas, incluyendo tiempos de respuesta rápidos gracias a los CDNs, HTTPS habilitado por defecto, y soporte para [HTTP2 push](https://firebase.googleblog.com/2016/09/http2-comes-to-firebase-hosting.html).
 
-First, if not already available, [create the project](https://console.firebase.google.com) in Firebase.
+Primero, si no está disponible, [cree el projecto](https://console.firebase.google.com) en Firebase.
 
-Next, in a Terminal, install the Firebase CLI:
+A continuación, en una terminal, instale la CLI de Firebase:
 
 ```shell
 $ npm install -g firebase-tools
 ```
 
-> Note: If it's the first time you use firebase-tools, login to your Google account with `firebase login` command.
+> Nota: Si es la primera vez que utilizas herramientas de firebase, inicia sesión en tu cuenta de Google con el comando `firebase login`.
 
-With the Firebase CLI installed, run `firebase init` within your Ionic project. The CLI prompts:
+Con el CLI de Firebase instalado, ejecuta `firebase init` dentro de tu proyecto de Ionic. El CLI indica:
 
 **"Which Firebase CLI features do you want to set up for this folder?"**  Choose "Hosting: Configure and deploy Firebase Hosting sites."
 
