@@ -36,38 +36,38 @@ Dependiendo de la plataforma en la que esté el usuario, `is(platformName)` devo
 
 #### Parámetros
 
-| Nombre         | Tipo        | Descripción                                                                                                                                                  |
-| -------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `platformName` | `Platforms` | Es el nombre de la plataforma. Available options are android, capacitor, cordova, desktop, electron, hybrid, ios, ipad, iphone, mobile, phablet, pwa, tablet |
+| Nombre         | Tipo        | Descripción                                                                                                                                                          |
+| -------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `platformName` | `Platforms` | Es el nombre de la plataforma. Las opciones disponibles son: android, capacitor, cordova, desktop, electron, hybrid, ios, ipad, iphone, mobile, phablet, pwa, tablet |
 
-#### Platforms
+#### Platafomas
 
-Below is a table listing all the possible platform values along with corresponding descriptions.
+Debajo hay una tabla que muestra todos los valores posibles de plataforma junto con las descripciones correspondientes.
 
-| Platform Name | Description                              |
-| ------------- | ---------------------------------------- |
-| android       | a device running Android                 |
-| capacitor     | a device running Capacitor               |
-| cordova       | a device running Cordova                 |
-| desktop       | a desktop device                         |
-| electron      | a desktop device running Electron        |
-| hybrid        | a device running Capacitor or Cordova    |
-| ios           | a device running iOS                     |
-| ipad          | an iPad device                           |
-| iphone        | an iPhone device                         |
-| mobile        | a mobile device                          |
-| mobileweb     | a web browser running in a mobile device |
-| phablet       | a phablet device                         |
-| pwa           | a PWA app                                |
-| tablet        | a tablet device                          |
+| Nombre de la plataforma | Descripción                                           |
+| ----------------------- | ----------------------------------------------------- |
+| android                 | un dispositivo corriendo Android                      |
+| capacitor               | un dispositivo corriendo Capacitor                    |
+| cordova                 | un dispositivo corriendo Cordova                      |
+| desktop                 | un dispositivo de escritorio                          |
+| electron                | un dispositivo de escritorio corriendo Electron       |
+| hybrid                  | un dispositivo corriendo Capacitor o Cordova          |
+| ios                     | un dispositivo corriendo iOS                          |
+| ipad                    | un dispositivo iPad                                   |
+| iphone                  | un dispositivo iPhone                                 |
+| mobile                  | un dispositivo móvil                                  |
+| mobileweb               | un navegador web ejecutándose en un dispositivo móvil |
+| phablet                 | un dispositivo phablet                                |
+| pwa                     | una aplicación PWA                                    |
+| tablet                  | un dispositivo tablet                                 |
 
 ### `platforms() => string[]`
 
-Depending on what device you are on, `platforms` can return multiple values. Each possible value is a hierarchy of platforms. For example, on an iPhone, it would return `mobile`, `ios`, and `iphone`.
+Dependiendo del dispositivo en que estés, `platforms` puede devolver varios valores. Cada valor posible es una jerarquía de plataformas. Por ejemplo, en un iPhone, devolvería `móvil`, `ios` y `iphone`.
 
 ### `ready() => Promise<string>`
 
-Returns a promise when the platform is ready and native functionality can be called. If the app is running from within a web browser, then the promise will resolve when the DOM is ready. When the app is running from an application engine such as Cordova, then the promise will resolve when Cordova triggers the `deviceready` event. The resolved value is the `readySource`, which states the platform that was used.
+Devuelve una promesa cuando la plataforma está lista y la funcionalidad nativa puede ser llamada. Si la aplicación se está ejecutando desde un navegador web, la promesa se resolverá cuando el DOM esté listo. When the app is running from an application engine such as Cordova, then the promise will resolve when Cordova triggers the `deviceready` event. The resolved value is the `readySource`, which states the platform that was used.
 
 For example, when Cordova is ready, the resolved ready source is `cordova`. The default ready source value will be `dom`. The `readySource` is useful if different logic should run depending on the platform the app is running from. For example, only Capacitor and Cordova can execute the status bar plugin, so the web should not run status bar plugin logic.
 
