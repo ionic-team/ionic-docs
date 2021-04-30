@@ -7,38 +7,38 @@ contributors:
   - liamdebeasi
 meta:
   title: Plataform | Ionic Plataform para personalizar aplicaciones para adaptarse a cualquier dispositivo
-  description: Ionic Platform service can be used to get information about your current device. With this information you can completely customize your app to fit any device.
+  description: El servicio Plataform de Ionic puede utilizarse para obtener información acerca de su dispositivo actual. Con esta información puede personalizar completamente su aplicación para que se ajuste a cualquier dispositivo.
 ---
 
 
 # Platform
 
-The Platform service can be used to get information about your current device. You can get all of the platforms associated with the device using the `platforms` method, including whether the app is being viewed from a tablet, if it's on a mobile device or browser, and the exact platform (iOS, Android, etc). You can also get the orientation of the device, if it uses right-to-left language direction, and much much more. With this information you can completely customize your app to fit any device.
+El servicio Platform se puede utilizar para obtener información acerca de tu dispositivo actual. Puedes obtener todas las plataformas asociadas al dispositivo usando el método `platforms`, incluyendo si la aplicación está siendo vista desde una tableta, si está en un dispositivo móvil o navegador, y la plataforma exacta (iOS, Android, etc). También puede obtener la orientación del dispositivo, si utiliza la dirección del idioma de derecha a izquierda y mucho más. Con esta información puede personalizar completamente su aplicación para que se ajuste a cualquier dispositivo.
 
-## Usage
+## Uso
 
 ```typescript
 import { Platform } from '@ionic/angular';
 
 @Component({...})
-export class MyPage {
+export class MiPagina {
   constructor(public platform: Platform) {
 
   }
 }
 ```
 
-## Methods
+## Métodos
 
 ### `is(platformName: Platforms) => boolean`
 
-Depending on the platform the user is on, `is(platformName)` will return true or false. Note that the same app can return true for more than one platform name. For example, an app running from an iPad would return true for the platform names: `mobile`, `ios`, `ipad`, and `tablet`. Additionally, if the app was running from Cordova then `cordova` would be true.
+Dependiendo de la plataforma en la que esté el usuario, `is(platformName)` devolverá verdadero o falso. Tenga en cuenta que la misma aplicación puede devolver verdadero por más de un nombre de plataforma. Por ejemplo, una aplicación que se ejecuta desde un iPad devolvería verdadero para los nombres de la plataforma: `móvil`, `ios`, `ipad` y `tablet`. Además, si la aplicación se estuviera ejecutando desde Cordova entonces `cordova` sería verdadero.
 
-#### Parameters
+#### Parámetros
 
-| Name           | Type        | Description                                                                                                                                         |
-| -------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `platformName` | `Platforms` | Name of the platform. Available options are android, capacitor, cordova, desktop, electron, hybrid, ios, ipad, iphone, mobile, phablet, pwa, tablet |
+| Nombre         | Tipo        | Descripción                                                                                                                                                  |
+| -------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `platformName` | `Platforms` | Es el nombre de la plataforma. Available options are android, capacitor, cordova, desktop, electron, hybrid, ios, ipad, iphone, mobile, phablet, pwa, tablet |
 
 #### Platforms
 
