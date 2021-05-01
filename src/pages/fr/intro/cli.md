@@ -1,38 +1,38 @@
 ---
-previousText: "Environment Setup"
+previousText: "Configuration de l'environnement"
 previousUrl: "/docs/intro/environment"
-nextText: "Packages & CDN"
+nextText: "Paquets & CDN"
 nextUrl: "/docs/intro/cdn"
 contributors:
   - rtpHarry
   - dwieeb
 ---
 
-# Installing Ionic
+# Installer Ionic
 
-Ionic apps are created and developed primarily through the Ionic [command-line](/docs/reference/glossary#cli) utility. The Ionic CLI is the preferred method of installation, as it offers a wide range of dev tools and help options along the way. It is also the main tool through which to run the app and connect it to other services, such as Appflow.
+Les applications Ionic sont créées et développées principalement par l'utilitaire Ionic [ligne de commande](/docs/reference/glossary#cli). Le CLI Ionic est la méthode d'installation préférée, car elle offre un large éventail d'outils de développement et d'options d'aide en cours de route. C'est également le principal outil permettant d'exécuter l'application et de la connecter à d'autres services, tels que Appflow.
 
 <aside id="ionic-wizard">
   <div class="heading-group">
-    <header>Try our App Wizard</header>
-    <p>Use our App Wizard to generate an Ionic project visually. Choose a template, custom colors, app icon, and JavaScript Framework to get building quicker.</p>
+    <header>Essayez notre assistant d'application</header>
+    <p>Utilisez notre assistant d'application pour générer visuellement un projet Ionic. Choisissez un modèle, des couleurs personnalisées, une icône d'application et un cadre JavaScript pour commencer à construire plus rapidement.</p>
   </div>
   <div>
-    <a href="/start" class="wizard-button">Open Wizard <ion-icon name="arrow-forward-outline"/></a>
+    <a href="/start" class="wizard-button">Ouvrir l'assistant <ion-icon name="arrow-forward-outline"/></a>
   </div>
 </aside>
 
-## Install the Ionic CLI
+## Installer le CLI Ionic
 
-Before proceeding, make sure your computer has [Node.js](/docs/reference/glossary#node) installed. See [these instructions](/docs/intro/environment) to set up an environment for Ionic.
+Avant de continuer, assurez-vous que votre ordinateur a [Node.js](/docs/reference/glossary#node) installé. Voir [ces instructions](/docs/intro/environment) pour mettre en place un environnement pour Ionic.
 
-Install the Ionic CLI with npm:
+Installez le CLI Ionic avec npm :
 
 ```shell
 $ npm install -g @ionic/cli
 ```
 
-If there was a previous installation of the Ionic CLI, it will need to be uninstalled due to a change in package name.
+S'il y avait une installation précédente de Ionic CLI, elle devra être désinstallée en raison d'un changement de nom de paquet.
 
 ```shell
 $ npm uninstall -g ionic
@@ -40,30 +40,30 @@ $ npm install -g @ionic/cli
 
 ```
 
-> The `-g` option means _install globally_. When packages are installed globally, `EACCES` permission errors can occur. Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](/docs/developing/tips#resolving-permission-errors) for more information.
+> L'option `-g` signifie _installer globalement_. Lorsque des paquets sont installés globalement, des erreurs de permission `EACCES` peuvent se produire. Envisagez de configurer npm pour qu'il fonctionne globalement sans autorisations élevées. Voir [Resolving Permission Errors](/docs/developing/tips#resolving-permission-errors) pour plus d'informations.
 
-## Start an App
+## Démarrer une application
 
-Create an Ionic app using one of the pre-made app templates, or a blank one to start fresh. The three most common starters are the `blank` starter, `tabs` starter, and `sidemenu` starter. Get started with the `ionic start` command:
+Créez une application Ionic en utilisant l'un des modèles d'application préétablis, ou un modèle vierge pour commencer à zéro. Les trois starters les plus courants sont le starter `blank`, le starter `tabs` et le starter `sidemenu`. Commencez avec la commande `ionic start` :
 
 ```shell
 $ ionic start myApp tabs
 ```
 
-![start app thumbnails](/docs/assets/img/installation/start-app-thumbnails.png)
+![démarrer les vignettes de l'application](/docs/assets/img/installation/start-app-thumbnails.png)
 
-To learn more about starting Ionic apps, see the [Starting Guide](/docs/developing/starting).
+Pour en savoir plus sur le démarrage des applications Ionic, consultez le [Guide de démarrage](/docs/developing/starting).
 
-## Run the App
+## Démarrer l'application
 
-The majority of Ionic app development can be spent right in the browser using the `ionic serve` command:
+La majorité du développement d'une application Ionic peut être passée directement dans le navigateur en utilisant la commande `ionic serve` :
 
 ```shell
 $ cd myApp
 $ ionic serve
 ```
 
-There are a number of other ways to run an app, it's recommended to start with this workflow. To develop and test apps on devices and emulators, see the [Running an App Guide](/docs/developing/previewing).
+Il existe un certain nombre d'autres façons d'exécuter une application, il est recommandé de commencer par ce flux de travail. Pour développer et tester des apps sur des appareils et des émulateurs, consultez le [Guide d'exécution d'une app](/docs/developing/previewing).
 
 <style scoped>
   #ionic-wizard {
