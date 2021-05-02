@@ -1,28 +1,28 @@
 ---
-previousText: 'Posts'
+previousText: 'Articles'
 previousUrl: '/docs/developer-resources/posts'
-nextText: 'Videos'
+nextText: 'Vidéos'
 nextUrl: '/docs/developer-resources/videos'
 ---
 
-# Tools
+# Outils
 
 ### [Angular CLI](https://github.com/angular/angular-cli)
 
-Learn more about the power of the Angular CLI
+En savoir plus sur la puissance de la CLI Angular
 
 ### [StackBlitz](https://stackblitz.com/)
 
-Quickly get started with a new Ionic app entirely in the browser!
+Démarrez rapidement une nouvelle application Ionic entièrement dans le navigateur !
 
 ### [TypeScript](https://www.typescriptlang.org/)
 
-Check out the features that make working with TypeScript amazing.
+Découvrez les fonctionnalités qui rendent le travail avec TypeScript incroyable.
 
-### [Glossary](/docs/reference/glossary)
+### [Glossaire](/docs/reference/glossary)
 
-A list of common terms you'll see while developing in Ionic.
+Une liste de termes courants que vous verrez en développant sur Ionic.
 
-### [Starter Apps](https://ionicthemes.com)
+### [Applications de démarrage](https://ionicthemes.com)
 
-Ionic Starter Apps to speed up and improve your app development.
+Ionic Starter Apps pour accélérer et améliorer le développement de votre application.
