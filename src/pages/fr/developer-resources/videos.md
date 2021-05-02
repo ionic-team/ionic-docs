@@ -1,28 +1,28 @@
 ---
-previousText: 'Tools'
+previousText: 'Outils'
 previousUrl: '/docs/developer-resources/tools'
-nextText: 'API Refrence'
+nextText: 'Référence de l''API'
 nextUrl: '/docs/api'
 ---
 
-# Videos
+# Vidéos
 
-### [Ionic 2 Crash Course](https://www.youtube.com/watch?v=O2WiI9QrS5s&feature=youtu.be)
+### [Cours accéléré sur Ionic 2](https://www.youtube.com/watch?v=O2WiI9QrS5s&feature=youtu.be)
 
-A quick introduction to Ionic 2 and how to build your first app.
+Une introduction rapide à Ionic 2 et comment construire votre première application.
 
 ### [Ionic & Async](https://blog.ionicframework.com/screencast-ionic-async/)
 
-Learn how to coordinate multiple events in a timely manner.
+Apprenez à coordonner plusieurs événements en temps voulu.
 
-### [Building a TODO app in Ionic 2](http://www.joshmorony.com/build-a-todo-app-from-scratch-with-ionic-2-video-tutorial/)
+### [Construire une application TODO en Ionic 2](http://www.joshmorony.com/build-a-todo-app-from-scratch-with-ionic-2-video-tutorial/)
 
-Learn how to build out an entire Ionic 2 app.
+Apprenez à construire une application Ionic 2 complète.
 
 ### [Angular Connect: Ionic 2](https://www.youtube.com/watch?v=bAlydPwFONY)
 
-Dive into some of the ideas and goals behind Ionic 2.
+Plongez dans quelques-unes des idées et des buts derrière Ionic 2.
 
 ### [Ionic & Typings](https://blog.ionicframework.com/ionic-and-typings/)
 
-Learn how to add typings for libraries you are using in your Ionic 2 app.
+Apprenez à ajouter des typages pour les bibliothèques que vous utilisez dans votre application Ionic 2.
