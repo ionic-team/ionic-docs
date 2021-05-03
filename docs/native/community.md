@@ -3,6 +3,8 @@ title: Cordova Community Plugins
 sidebar_label: Setup
 hide_table_of_contents: true
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 [Apache Cordova](https://cordova.apache.org/) is an open source native runtime that allows developers to build native mobile apps with HTML, CSS, and JavaScript. Similar to [Capacitor](https://capacitorjs.com/), Ionic’s own native runtime, Cordova allows developers to access native device features, such as camera, keyboard, and geolocation, using a system of plugins. A plugin is a small amount of add-on code that provides JavaScript interface to native components. They allow your app to use native device capabilities beyond what is available to pure web apps.
 
@@ -24,8 +26,14 @@ Cordova plugins are also wrapped in a `Promise` or `Observable` in order to prov
 
 Using the [Camera plugin](/docs/native/camera) as an example, first install it:
 
-<docs-tabs>
-<docs-tab tab="Cordova">
+<Tabs
+  defaultValue="cordova"
+  values={[
+    { value: 'cordova', label: 'Cordova' },
+    { value: 'capacitor', label: 'Capacitor' },
+  ]
+}>
+<TabItem value="cordova">
 
 ```shell
 // Install Cordova plugin
@@ -38,8 +46,8 @@ $ npm install @ionic-native/camera
 $ npm install @ionic-native/core
 ```
 
-</docs-tab>
-<docs-tab tab="Capacitor">
+</TabItem>
+<TabItem value="capacitor">
 
 For complete details, [see the Capacitor documentation](https://capacitor.ionicframework.com/docs/cordova/using-cordova-plugins).
 
@@ -54,8 +62,8 @@ $ npm install cordova-plugin-camera
 $ ionic cap sync
 ```
 
-</docs-tab>
-</docs-tabs>
+</TabItem>
+</Tabs>
 
 Next, begin using the plugin, following the various framework usage options below. For FAQ, see [here](/docs/native/faq).
 

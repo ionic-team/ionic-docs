@@ -1,5 +1,7 @@
 ---
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Animations
 
@@ -13,8 +15,17 @@ Ionic Animations uses the [Web Animations API](https://developer.mozilla.org/en-
 
 ## Installation
 
-<docs-tabs>
-<docs-tab tab="javascript">
+<Tabs
+  defaultValue="javascript"
+  values={[
+    { value: 'javascript', label: 'JavaScript' },
+    { value: 'typescript', label: 'TypeScript' },
+    { value: 'angular', label: 'Angular' },
+    { value: 'react', label: 'React' },
+    { value: 'vue', label: 'Vue' },
+  ]
+}>
+<TabItem value="javascript">
 
 Developers using Ionic Core and JavaScript should install the latest version of `@ionic/core`.
 
@@ -30,8 +41,8 @@ const animation = createAnimation()
 }
 
 ```
-</docs-tab>
-<docs-tab tab="typescript">
+</TabItem>
+<TabItem value="typescript">
 
 Developers using Ionic Core and TypeScript should install the latest version of `@ionic/core`.
 
@@ -46,8 +57,8 @@ const animation: Animation = createAnimation('')
   .fromTo('opacity', '1', '0.5');
 }
 ```
-</docs-tab>
-<docs-tab tab="angular">
+</TabItem>
+<TabItem value="angular">
 
 Developers using Angular should install the latest version of `@ionic/angular`. Animations can be created via the `AnimationController` dependency injection. 
 
@@ -65,8 +76,8 @@ constructor(private animationCtrl: AnimationController) {
 }
 
 ```
-</docs-tab>
-<docs-tab tab="react">
+</TabItem>
+<TabItem value="react">
 
 Developers using React should install the latest version of `@ionic/react`. React wrappers are in beta. Please report any issues on GitHub!
 
@@ -88,8 +99,8 @@ import { CreateAnimation, Animation } from '@ionic/react';
 </CreateAnimation>
 
 ```
-</docs-tab>
-<docs-tab tab="vue">
+</TabItem>
+<TabItem value="vue">
 
 Developers using Ionic Vue should install the latest version of `@ionic/vue`.
 
@@ -110,15 +121,23 @@ const animation = createAnimation()
 }
 
 ```
-</docs-tab>
-</docs-tabs>
+</TabItem>
+</Tabs>
 
 ## Basic Animations
 
 ### Usage
 
-<docs-tabs>
-<docs-tab tab="javascript">
+<Tabs
+  defaultValue="javascript"
+  values={[
+    { value: 'javascript', label: 'JavaScript' },
+    { value: 'angular', label: 'Angular' },
+    { value: 'react', label: 'React' },
+    { value: 'vue', label: 'Vue' },
+  ]
+}>
+<TabItem value="javascript">
 
 ```javascript
 createAnimation()
@@ -128,8 +147,8 @@ createAnimation()
   .fromTo('transform', 'translateX(0px)', 'translateX(100px)')
   .fromTo('opacity', '1', '0.2');
 ```
-</docs-tab>
-<docs-tab tab="angular">
+</TabItem>
+<TabItem value="angular">
 
 ```javascript
 this.animationCtrl.create()
@@ -139,8 +158,8 @@ this.animationCtrl.create()
   .fromTo('transform', 'translateX(0px)', 'translateX(100px)')
   .fromTo('opacity', '1', '0.2');
 ```
-</docs-tab>
-<docs-tab tab="react">
+</TabItem>
+<TabItem value="react">
 
 ```typescript
 <CreateAnimation
@@ -154,8 +173,8 @@ this.animationCtrl.create()
   ...
 </CreateAnimation>
 ```
-</docs-tab>
-<docs-tab tab="vue">
+</TabItem>
+<TabItem value="vue">
 
 ```javascript
 import { createAnimation } from '@ionic/vue';
@@ -174,8 +193,8 @@ createAnimation()
   .fromTo('transform', 'translateX(0px)', 'translateX(100px)')
   .fromTo('opacity', '1', '0.2');
 ```
-</docs-tab>
-</docs-tabs>
+</TabItem>
+</Tabs>
 
 In the example above, an animation that changes the opacity on the `.square` element and moves it from left to right along the X axis has been created. This animation will run an infinite number of times, and each iteration of the animation will last 1500ms.
 
@@ -191,8 +210,16 @@ Hyphenated CSS properties should be written using camel case when writing keyfra
 
 ### Usage
 
-<docs-tabs>
-<docs-tab tab="javascript">
+<Tabs
+  defaultValue="javascript"
+  values={[
+    { value: 'javascript', label: 'JavaScript' },
+    { value: 'angular', label: 'Angular' },
+    { value: 'react', label: 'React' },
+    { value: 'vue', label: 'Vue' },
+  ]
+}>
+<TabItem value="javascript">
 
 ```javascript
 createAnimation()
@@ -205,8 +232,8 @@ createAnimation()
     { offset: 1, background: 'green' }
   ]);
 ```
-</docs-tab>
-<docs-tab tab="angular">
+</TabItem>
+<TabItem value="angular">
 
 ```javascript
 this.animationCtrl.create()
@@ -219,8 +246,8 @@ this.animationCtrl.create()
     { offset: 1, background: 'green' }
   ]);
 ```
-</docs-tab>
-<docs-tab tab="react">
+</TabItem>
+<TabItem value="react">
 
 ```typescript
 <CreateAnimation
@@ -235,8 +262,8 @@ this.animationCtrl.create()
 ...
 </CreateAnimation>
 ```
-</docs-tab>
-<docs-tab tab="vue">
+</TabItem>
+<TabItem value="vue">
 
 ```javascript
 import { createAnimation } from '@ionic/vue';
@@ -258,8 +285,8 @@ createAnimation()
     { offset: 1, background: 'green' }
   ]);
 ```
-</docs-tab>
-</docs-tabs>
+</TabItem>
+</Tabs>
 
 In the example above, the `.square` element will transition from a red background color, to a background color defined by the `--background` variable, and then transition on to a green background color.
 
@@ -273,8 +300,16 @@ Multiple elements can be animated at the same time and controlled via a single p
 
 ### Usage
 
-<docs-tabs>
-<docs-tab tab="javascript">
+<Tabs
+  defaultValue="javascript"
+  values={[
+    { value: 'javascript', label: 'JavaScript' },
+    { value: 'angular', label: 'Angular' },
+    { value: 'react', label: 'React' },
+    { value: 'vue', label: 'Vue' },
+  ]
+}>
+<TabItem value="javascript">
 
 ```javascript
 const squareA = createAnimation()
@@ -308,8 +343,8 @@ const parent = createAnimation()
   .addAnimation([squareA, squareB, squareC]);
 ```
 
-</docs-tab>
-<docs-tab tab="angular">
+</TabItem>
+<TabItem value="angular">
 
 ```javascript
 const squareA = this.animationCtrl.create()
@@ -343,8 +378,8 @@ const parent = this.animationCtrl.create()
   .addAnimation([squareA, squareB, squareC]);
 ```
 
-</docs-tab>
-<docs-tab tab="react">
+</TabItem>
+<TabItem value="react">
 
 ```typescript
 private parentRef: React.RefObject<CreateAnimation> = React.createRef();
@@ -410,8 +445,8 @@ render() {
 }
 ```
 
-</docs-tab>
-<docs-tab tab="vue">
+</TabItem>
+<TabItem value="vue">
 
 ```javascript
 import { createAnimation } from '@ionic/vue';
@@ -456,8 +491,8 @@ const parent = createAnimation()
   .addAnimation([squareA, squareB, squareC]);
 ```
 
-</docs-tab>
-</docs-tabs>
+</TabItem>
+</Tabs>
 
 This example shows 3 child animations controlled by a single parent animation. Animations `squareA` and `squareB` inherit the parent animation's duration of 2000ms, but animation `squareC` has a duration of 5000ms since it was explicitly set.
 
@@ -469,8 +504,16 @@ Ionic Animations provides hooks that let you alter an element before an animatio
 
 ### Usage
 
-<docs-tabs>
-<docs-tab tab="javascript">
+<Tabs
+  defaultValue="javascript"
+  values={[
+    { value: 'javascript', label: 'JavaScript' },
+    { value: 'angular', label: 'Angular' },
+    { value: 'react', label: 'React' },
+    { value: 'vue', label: 'Vue' },
+  ]
+}>
+<TabItem value="javascript">
 
 ```javascript
 createAnimation()
@@ -489,8 +532,8 @@ createAnimation()
     { offset: 1, transform: 'scale(1)' }
   ])
 ```
-</docs-tab>
-<docs-tab tab="angular">
+</TabItem>
+<TabItem value="angular">
 
 ```javascript
 this.animationCtrl.create()
@@ -509,8 +552,8 @@ this.animationCtrl.create()
     { offset: 1, transform: 'scale(1)' }
   ])
 ```
-</docs-tab>
-<docs-tab tab="react">
+</TabItem>
+<TabItem value="react">
 
 ```typescript
 <CreateAnimation
@@ -531,8 +574,8 @@ this.animationCtrl.create()
   ...
 </CreateAnimation>
 ```
-</docs-tab>
-<docs-tab tab="vue">
+</TabItem>
+<TabItem value="vue">
 
 ```javascript
 import { createAnimation } from '@ionic/vue';
@@ -560,8 +603,8 @@ createAnimation()
     { offset: 1, transform: 'scale(1)' }
   ])
 ```
-</docs-tab>
-</docs-tabs>
+</TabItem>
+</Tabs>
 
 In this example, an inline opacity of 0.2 is set on the `.square` element prior to the animation starting. Once the animation finishes, the background color of the element is set to `rgba(0, 255, 0, 0.5)`, and the inline opacity is cleared.
 
@@ -575,8 +618,16 @@ Animations can be chained to run one after the other. The `play` method returns 
 
 ### Usage
 
-<docs-tabs>
-<docs-tab tab="javascript">
+<Tabs
+  defaultValue="javascript"
+  values={[
+    { value: 'javascript', label: 'JavaScript' },
+    { value: 'angular', label: 'Angular' },
+    { value: 'react', label: 'React' },
+    { value: 'vue', label: 'Vue' },
+  ]
+}>
+<TabItem value="javascript">
 
 ```javascript
 const squareA = createAnimation()
@@ -613,8 +664,8 @@ await squareA.play();
 await squareB.play();
 await squareC.play();
 ```
-</docs-tab>
-<docs-tab tab="angular">
+</TabItem>
+<TabItem value="angular">
 
 ```javascript
 const squareA = this.animationCtrl.create()
@@ -651,8 +702,8 @@ await squareA.play();
 await squareB.play();
 await squareC.play();
 ```
-</docs-tab>
-<docs-tab tab="react">
+</TabItem>
+<TabItem value="react">
 
 ```typescript
 private squareARef: React.RefObject<CreateAnimation> = React.createRef();
@@ -716,8 +767,8 @@ render() {
   )
 }
 ```
-</docs-tab>
-<docs-tab tab="vue">
+</TabItem>
+<TabItem value="vue">
 
 ```javascript
 import { createAnimation } from '@ionic/vue';
@@ -765,8 +816,8 @@ await squareA.play();
 await squareB.play();
 await squareC.play();
 ```
-</docs-tab>
-</docs-tabs>
+</TabItem>
+</Tabs>
 
 <docs-codepen user="ionic" slug="MWgGrwX" height="460"></docs-codepen>
 
@@ -776,8 +827,16 @@ Ionic Animations gives developers the ability to create powerful gesture-based a
 
 ### Usage
 
-<docs-tabs>
-<docs-tab tab="javascript">
+<Tabs
+  defaultValue="javascript"
+  values={[
+    { value: 'javascript', label: 'JavaScript' },
+    { value: 'angular', label: 'Angular' },
+    { value: 'react', label: 'React' },
+    { value: 'vue', label: 'Vue' },
+  ]
+}>
+<TabItem value="javascript">
 
 ```javascript
 let initialStep = 0;
@@ -835,8 +894,8 @@ const getStep = (ev): {
   return clamp(0, delta / MAX_TRANSLATE, 1);
 }
 ```
-</docs-tab>
-<docs-tab tab="angular">
+</TabItem>
+<TabItem value="angular">
 
 ```typescript
 private animation?: Animation;
@@ -897,8 +956,8 @@ private getStep(ev) {
   return this.clamp(0, delta / this.MAX_TRANSLATE, 1);
 }
 ```
-</docs-tab>
-<docs-tab tab="react">
+</TabItem>
+<TabItem value="react">
 
 ```javascript
 import { createGesture, CreateAnimation, Gesture, GestureDetail } from '@ionic/react';
@@ -1010,8 +1069,8 @@ class MyComponent extends React.Component<{}, any> {
   }
 }
 ```
-</docs-tab>
-<docs-tab tab="vue">
+</TabItem>
+<TabItem value="vue">
 
 ```javascript
 import { createAnimation, createGesture } from '@ionic/vue';
@@ -1074,8 +1133,8 @@ const getStep = (ev): {
   return clamp(0, delta / MAX_TRANSLATE, 1);
 }
 ```
-</docs-tab>
-</docs-tabs>
+</TabItem>
+</Tabs>
 
 In this example we are creating a track along which we can drag the `.square` element. Our `animation` object will take care of moving the `.square` element either left or right, and our `gesture` object will instruct the `animation` object which direction to move in.
 
@@ -1105,8 +1164,16 @@ Developers can also tailor their animations to user preferences such as `prefers
 }
 ```
 
-<docs-tabs>
-<docs-tab tab="javascript">
+<Tabs
+  defaultValue="javascript"
+  values={[
+    { value: 'javascript', label: 'JavaScript' },
+    { value: 'angular', label: 'Angular' },
+    { value: 'react', label: 'React' },
+    { value: 'vue', label: 'Vue' },
+  ]
+}>
+<TabItem value="javascript">
 
 ```javascript
 createAnimation()
@@ -1116,8 +1183,8 @@ createAnimation()
    .direction('alternate')
    .fromTo('background', 'blue', 'var(--background)');
 ```
-</docs-tab>
-<docs-tab tab="angular">
+</TabItem>
+<TabItem value="angular">
 
 ```javascript
 this.animationCtrl.create()
@@ -1127,8 +1194,8 @@ this.animationCtrl.create()
    .direction('alternate')
    .fromTo('background', 'blue', 'var(--background)');
 ```
-</docs-tab>
-<docs-tab tab="react">
+</TabItem>
+<TabItem value="react">
 
 ```typescript
 <CreateAnimation
@@ -1144,8 +1211,8 @@ this.animationCtrl.create()
   <div className="square"></div>
 </CreateAnimation>
 ```
-</docs-tab>
-<docs-tab tab="vue">
+</TabItem>
+<TabItem value="vue">
 
 ```javascript
 import { createAnimation } from '@ionic/vue';
@@ -1164,8 +1231,8 @@ createAnimation()
    .direction('alternate')
    .fromTo('background', 'blue', 'var(--background)');
 ```
-</docs-tab>
-</docs-tabs>
+</TabItem>
+</Tabs>
 
 This method works in all supported browsers when creating animations for the first time. Most browsers are also capable of dynamically updating keyframe animations as the CSS Variables change.
 
@@ -1179,8 +1246,16 @@ Certain Ionic components allow developers to provide custom animations. All anim
 
 ### Modals
 
-<docs-tabs>
-<docs-tab tab="javascript">
+<Tabs
+  defaultValue="javascript"
+  values={[
+    { value: 'javascript', label: 'JavaScript' },
+    { value: 'angular', label: 'Angular' },
+    { value: 'react', label: 'React' },
+    { value: 'vue', label: 'Vue' },
+  ]
+}>
+<TabItem value="javascript">
 
 ```javascript
 customElements.define('modal-page', class extends HTMLElement {
@@ -1233,8 +1308,8 @@ function presentModal() {
   return modalElement.present();
 }
 ```
-</docs-tab>
-<docs-tab tab="angular">
+</TabItem>
+<TabItem value="angular">
 
 ```typescript
 import { Component } from '@angular/core';
@@ -1283,8 +1358,8 @@ export class ModalExample {
   }
 }
 ```
-</docs-tab>
-<docs-tab tab="react">
+</TabItem>
+<TabItem value="react">
 
 ```javascript
 import React, { useState } from 'react';
@@ -1327,8 +1402,8 @@ export const ModalExample: React.FC = () => {
   );
 };
 ```
-</docs-tab>
-<docs-tab tab="vue">
+</TabItem>
+<TabItem value="vue">
 
 ```javascript
 <template>
@@ -1386,8 +1461,8 @@ export default defineComponent({
 })
 </script>
 ```
-</docs-tab>
-</docs-tabs>
+</TabItem>
+</Tabs>
 
 <docs-codepen user="ionic" slug="ExapZBZ"></docs-codepen>
 

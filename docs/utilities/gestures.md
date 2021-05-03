@@ -1,5 +1,7 @@
 ---
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Gestures
 
@@ -11,8 +13,16 @@ Building complex gestures can be time consuming. Other libraries that provide cu
 
 ## Installation
 
-<docs-tabs>
-<docs-tab tab="javascript">
+<Tabs
+  defaultValue="javascript"
+  values={[
+    { value: 'javascript', label: 'JavaScript' },
+    { value: 'angular', label: 'Angular' },
+    { value: 'react', label: 'React' },
+    { value: 'vue', label: 'Vue' },
+  ]
+}>
+<TabItem value="javascript">
 
 Developers using Ionic Core and JavaScript should install the latest version of `@ionic/core`.
 
@@ -29,8 +39,8 @@ const gesture = createGesture({
 });
 
 ```
-</docs-tab>
-<docs-tab tab="typescript">
+</TabItem>
+<TabItem value="typescript">
 
 Developers using Ionic Core and TypeScript should install the latest version of `@ionic/core`.
 
@@ -46,8 +56,8 @@ const gesture: Gesture = createGesture({
   onMove: ev => onMoveHandler(ev)
 });
 ```
-</docs-tab>
-<docs-tab tab="angular">
+</TabItem>
+<TabItem value="angular">
 
 Developers using Angular should install the latest version of `@ionic/angular`. Animations can be created via the `AnimationController` dependency injection. 
 
@@ -70,8 +80,8 @@ constructor(private gestureCtrl: GestureController) {
 }
 
 ```
-</docs-tab>
-<docs-tab tab="react">
+</TabItem>
+<TabItem value="react">
 
 Developers using React should install the latest version of `@ionic/react`. Full React wrappers are coming soon!
 
@@ -87,8 +97,8 @@ const gesture: Gesture = createGesture({
   onMove: ev => onMoveHandler(ev)
 });
 ```
-</docs-tab>
-<docs-tab tab="vue">
+</TabItem>
+<TabItem value="vue">
 
 Developers using Ionic Vue should install the latest version of `@ionic/vue`.
 
@@ -110,16 +120,24 @@ const gesture = createGesture({
 });
 
 ```
-</docs-tab>
-</docs-tabs>
+</TabItem>
+</Tabs>
 
 
 ## Basic Gestures
 
 ### Usage
 
-<docs-tabs>
-<docs-tab tab="javascript">
+<Tabs
+  defaultValue="javascript"
+  values={[
+    { value: 'javascript', label: 'JavaScript' },
+    { value: 'angular', label: 'Angular' },
+    { value: 'react', label: 'React' },
+    { value: 'vue', label: 'Vue' },
+  ]
+}>
+<TabItem value="javascript">
 
 ```javascript
 let p = document.querySelector('p');
@@ -144,8 +162,8 @@ const onMove = (detail) => {
   `
 }
 ```
-</docs-tab>
-<docs-tab tab="angular">
+</TabItem>
+<TabItem value="angular">
 
 ```javascript
 @ViewChild('paragraph') p: ElementRef;
@@ -173,8 +191,8 @@ private onMove(detail) {
   `
 }
 ```
-</docs-tab>
-<docs-tab tab="react">
+</TabItem>
+<TabItem value="react">
 
 ```javascript
 let p = document.querySelector('p');
@@ -199,8 +217,8 @@ const onMove = (detail) => {
   `
 }
 ```
-</docs-tab>
-<docs-tab tab="vue">
+</TabItem>
+<TabItem value="vue">
 
 ```javascript
 import { createGesture } from '@ionic/vue';
@@ -231,8 +249,8 @@ const onMove = (detail) => {
   `
 }
 ```
-</docs-tab>
-</docs-tabs>
+</TabItem>
+</Tabs>
 
 In this example, our app listens for gestures on the `.rectangle` element. When a gesture movement is detected, the `onMove` function is called, and our app logs the current gesture information.
 
@@ -242,8 +260,16 @@ In this example, our app listens for gestures on the `.rectangle` element. When 
 
 ### Usage
 
-<docs-tabs>
-<docs-tab tab="javascript">
+<Tabs
+  defaultValue="javascript"
+  values={[
+    { value: 'javascript', label: 'JavaScript' },
+    { value: 'angular', label: 'Angular' },
+    { value: 'react', label: 'React' },
+    { value: 'vue', label: 'Vue' },
+  ]
+}>
+<TabItem value="javascript">
 
 ```javascript
 const backgrounds = ['rgba(0, 0, 255, 0.5)', 'rgba(0, 255, 0.5)', 'rgba(255, 0, 0, 0.5)', 'rgba(255, 255, 0, 0.5)', 'rgba(255, 0, 255, 0.5)', 'rgba(0, 255, 255, 0.5)'];
@@ -278,8 +304,8 @@ const getRandomBackground = () => {
   return currentColor;
 }
 ```
-</docs-tab>
-<docs-tab tab="angular">
+</TabItem>
+<TabItem value="angular">
 
 ```typescript
 @ViewChild('rectangle') rectangle: ElementRef;
@@ -317,8 +343,8 @@ private getRandomBackground() {
   return this.currentColor;
 }
 ```
-</docs-tab>
-<docs-tab tab="react">
+</TabItem>
+<TabItem value="react">
 
 ```javascript
 const backgrounds = ['rgba(0, 0, 255, 0.5)', 'rgba(0, 255, 0.5)', 'rgba(255, 0, 0, 0.5)', 'rgba(255, 255, 0, 0.5)', 'rgba(255, 0, 255, 0.5)', 'rgba(0, 255, 255, 0.5)'];
@@ -353,8 +379,8 @@ const getRandomBackground = () => {
   return currentColor;
 }
 ```
-</docs-tab>
-<docs-tab tab="vue">
+</TabItem>
+<TabItem value="vue">
 
 ```javascript
 import { createGesture } from '@ionic/vue';
@@ -394,8 +420,8 @@ const getRandomBackground = () => {
   return currentColor;
 }
 ```
-</docs-tab>
-</docs-tabs>
+</TabItem>
+</Tabs>
 
 In the example above, we want to be able to detect double clicks on an element. By setting our `threshold` to `0`, we can ensure our gesture object can detect clicks. Additionally, we define a click threshold so that only 2 clicks that occur in quick succession count as a double click.
 

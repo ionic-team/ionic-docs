@@ -1,5 +1,7 @@
 ---
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Hardware Back Button
 
@@ -25,8 +27,16 @@ For complete hardware back button support, we recommend using Capacitor or Cordo
 
 ## Basic Usage
 
-<docs-tabs>
-<docs-tab tab="javascript">
+<Tabs
+  defaultValue="javascript"
+  values={[
+    { value: 'javascript', label: 'JavaScript' },
+    { value: 'angular', label: 'Angular' },
+    { value: 'react', label: 'React' },
+    { value: 'vue', label: 'Vue' },
+  ]
+}>
+<TabItem value="javascript">
 
 ```javascript
 document.addEventListener('ionBackButton', (ev) => {
@@ -36,8 +46,8 @@ document.addEventListener('ionBackButton', (ev) => {
 });
 
 ```
-</docs-tab>
-<docs-tab tab="angular">
+</TabItem>
+<TabItem value="angular">
 
 ```typescript
 import { Platform } from '@ionic/angular';
@@ -51,8 +61,8 @@ constructor(private platform: Platform) {
 }
 
 ```
-</docs-tab>
-<docs-tab tab="react">
+</TabItem>
+<TabItem value="react">
 
 ```typescript
 document.addEventListener('ionBackButton', (ev) => {
@@ -61,8 +71,8 @@ document.addEventListener('ionBackButton', (ev) => {
   });
 });
 ```
-</docs-tab>
-<docs-tab tab="vue">
+</TabItem>
+<TabItem value="vue">
 
 ```typescript
 import { useBackButton } from '@ionic/vue';
@@ -77,8 +87,8 @@ export default {
   }
 }
 ```
-</docs-tab>
-</docs-tabs>
+</TabItem>
+</Tabs>
 
 In this example, we are registering a handler to be called when the hardware back button is pressed. We have set the priority to be 10, and we have not indicated to the framework that we want the next handler to be called. As a result, any handlers with a priority less than 10 will not be called. A handler that has a priority greater than 10 will be called first.
 
@@ -88,8 +98,16 @@ In the event that there are handlers with the same priority value, the handler t
 
 Each hardware back button callback has a `processNextHandler` parameter. Calling this function allows you to continue calling hardware back button handlers.
 
-<docs-tabs>
-<docs-tab tab="javascript">
+<Tabs
+  defaultValue="javascript"
+  values={[
+    { value: 'javascript', label: 'JavaScript' },
+    { value: 'angular', label: 'Angular' },
+    { value: 'react', label: 'React' },
+    { value: 'vue', label: 'Vue' },
+  ]
+}>
+<TabItem value="javascript">
 
 ```javascript
 document.addEventListener('ionBackButton', (ev) => {
@@ -105,8 +123,8 @@ document.addEventListener('ionBackButton', (ev) => {
 });
 
 ```
-</docs-tab>
-<docs-tab tab="angular">
+</TabItem>
+<TabItem value="angular">
 
 ```typescript
 import { Platform } from '@ionic/angular';
@@ -126,8 +144,8 @@ constructor(private platform: Platform) {
 }
 
 ```
-</docs-tab>
-<docs-tab tab="react">
+</TabItem>
+<TabItem value="react">
 
 ```typescript
 document.addEventListener('ionBackButton', (ev) => {
@@ -142,8 +160,8 @@ document.addEventListener('ionBackButton', (ev) => {
   });
 });
 ```
-</docs-tab>
-<docs-tab tab="vue">
+</TabItem>
+<TabItem value="vue">
 
 ```typescript
 import { useBackButton } from '@ionic/vue';
@@ -164,8 +182,8 @@ export default {
   }
 }
 ```
-</docs-tab>
-</docs-tabs>
+</TabItem>
+</Tabs>
 
 This example shows how to indicate to Ionic Framework that you want the next handler to be fired. All callbacks are provided with a `processNextHandler` function as a parameter. Calling this will cause the next handler, if any exists, to be fired.
 
@@ -198,8 +216,16 @@ In the example above, both handlers A and B have a priority of 10. Since handler
 
 In some scenarios, it may be desirable to quit the app when pressing the hardware back button. This can be achieved through the use of the `ionBackButton` event combined with methods that Capacitor/Cordova provide.
 
-<docs-tabs>
-<docs-tab tab="javascript">
+<Tabs
+  defaultValue="javascript"
+  values={[
+    { value: 'javascript', label: 'JavaScript' },
+    { value: 'angular', label: 'Angular' },
+    { value: 'react', label: 'React' },
+    { value: 'vue', label: 'Vue' },
+  ]
+}>
+<TabItem value="javascript">
 
 ```typescript
 import { BackButtonEvent } from '@ionic/core';
@@ -218,8 +244,8 @@ document.addEventListener('ionBackButton', (ev: BackButtonEvent) => {
   });
 });
 ```
-</docs-tab>
-<docs-tab tab="angular">
+</TabItem>
+<TabItem value="angular">
 
 ```typescript
 import { IonRouterOutlet, Platform } from '@ionic/angular';
@@ -240,8 +266,8 @@ constructor(
 }
 
 ```
-</docs-tab>
-<docs-tab tab="react">
+</TabItem>
+<TabItem value="react">
 
 ```typescript
 import { useIonRouter } from '@ionic/react';
@@ -259,8 +285,8 @@ document.addEventListener('ionBackButton', (ev) => {
   });
 });
 ```
-</docs-tab>
-<docs-tab tab="vue">
+</TabItem>
+<TabItem value="vue">
 
 ```typescript
 import { useBackButton, useIonRouter } from '@ionic/vue';
@@ -280,8 +306,8 @@ export default {
   }
 }
 ```
-</docs-tab>
-</docs-tabs>
+</TabItem>
+</Tabs>
 
 This example shows the application exiting when the user presses the hardware back button and there is nothing left in the navigation stack. It is also possible to display a confirmation dialog before quitting the app.
 

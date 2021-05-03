@@ -3,6 +3,8 @@ disableHtmlPreviews: true
 contributors:
   - liamdebeasi
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Security
 
@@ -70,8 +72,15 @@ Developers can also choose to eject from the sanitizer in certain scenarios. Ion
 
 #### Usage
 
-<docs-tabs>
-<docs-tab tab="angular">
+<Tabs
+  defaultValue="angular"
+  values={[
+    { value: 'angular', label: 'Angular' },
+    { value: 'javascript', label: 'JavaScript' },
+    { value: 'react', label: 'React' },
+  ]
+}>
+<TabItem value="angular">
 
 ```typescript
 import { IonicSafeString, ToastController } from '@ionic/angular';
@@ -89,8 +98,8 @@ async presentToast() {
 }
 
 ```
-</docs-tab>
-<docs-tab tab="javascript">
+</TabItem>
+<TabItem value="javascript">
 
 ```javascript
 import { IonicSafeString } from '@ionic/core';
@@ -107,8 +116,8 @@ const async presentToast = () => {
 }
 
 ```
-</docs-tab>
-<docs-tab tab="react">
+</TabItem>
+<TabItem value="react">
 
 ```typescript
 import React, { useState } from 'react';
@@ -130,5 +139,5 @@ export const ToastExample: React.FC = () => {
   )
 };
 ```
-</docs-tab>
-</docs-tabs>
+</TabItem>
+</Tabs>

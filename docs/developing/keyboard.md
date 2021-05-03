@@ -1,5 +1,7 @@
 ---
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Keyboard
 
@@ -16,8 +18,16 @@ Inputs that _require_ a certain data type should use the `type` attribute instea
 For a list of accepted values, see the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode" target="_blank" rel="noreferrer">inputmode Documentation</a>.
 
 ### Usage
-<docs-tabs>
-<docs-tab tab="Javascript">
+<Tabs
+  defaultValue="javascript"
+  values={[
+    { value: 'javascript', label: 'JavaScript' },
+    { value: 'angular', label: 'Angular' },
+    { value: 'react', label: 'React' },
+    { value: 'vue', label: 'Vue' },
+  ]
+}>
+<TabItem value="javascript">
 
 ```html
 <ion-item>
@@ -30,8 +40,8 @@ For a list of accepted values, see the <a href="https://developer.mozilla.org/en
   <ion-textarea inputmode="numeric"></ion-textarea>
 </ion-item>
 ```
-</docs-tab>
-<docs-tab tab="Angular">
+</TabItem>
+<TabItem value="angular">
 
 ```html
 <ion-item>
@@ -44,8 +54,8 @@ For a list of accepted values, see the <a href="https://developer.mozilla.org/en
   <ion-textarea inputmode="numeric"></ion-textarea>
 </ion-item>
 ```
-</docs-tab>
-<docs-tab tab="React">
+</TabItem>
+<TabItem value="react">
 
 ```html
 <IonItem>
@@ -58,8 +68,8 @@ For a list of accepted values, see the <a href="https://developer.mozilla.org/en
   <IonTextarea inputmode="numeric"></IonTextarea>
 </IonItem>
 ```
-</docs-tab>
-<docs-tab tab="Vue">
+</TabItem>
+<TabItem value="vue">
 
 ```html
 <ion-item>
@@ -72,8 +82,8 @@ For a list of accepted values, see the <a href="https://developer.mozilla.org/en
   <ion-textarea inputmode="numeric"></ion-textarea>
 </ion-item>
 ```
-</docs-tab>
-</docs-tabs>
+</TabItem>
+</Tabs>
 
 <docs-codepen user="ionic" slug="abvJVVv" height="400"></docs-codepen>
 
@@ -88,8 +98,16 @@ Since `enterkeyhint` is a global attribute, it can be used on Ionic components s
 For a list of accepted values, see the <a href="https://html.spec.whatwg.org/dev/interaction.html#input-modalities:-the-enterkeyhint-attribute" target="_blank" rel="noreferrer">enterkeyhint Standard</a>.
 
 ### Usage
-<docs-tabs>
-<docs-tab tab="Javascript">
+<Tabs
+  defaultValue="javascript"
+  values={[
+    { value: 'javascript', label: 'JavaScript' },
+    { value: 'angular', label: 'Angular' },
+    { value: 'react', label: 'React' },
+    { value: 'vue', label: 'Vue' },
+  ]
+}>
+<TabItem value="javascript">
 
 ```html
 <ion-item>
@@ -97,8 +115,8 @@ For a list of accepted values, see the <a href="https://html.spec.whatwg.org/dev
   <ion-input enterkeyhint="search" type="search"></ion-input>
 </ion-item>
 ```
-</docs-tab>
-<docs-tab tab="Angular">
+</TabItem>
+<TabItem value="angular">
 
 ```html
 <ion-item>
@@ -106,8 +124,8 @@ For a list of accepted values, see the <a href="https://html.spec.whatwg.org/dev
   <ion-input enterkeyhint="search" type="search"></ion-input>
 </ion-item>
 ```
-</docs-tab>
-<docs-tab tab="React">
+</TabItem>
+<TabItem value="react">
 
 ```html
 <IonItem>
@@ -115,8 +133,8 @@ For a list of accepted values, see the <a href="https://html.spec.whatwg.org/dev
   <IonInput enterkeyhint="search" type="search"></IonInput>
 </IonItem>
 ```
-</docs-tab>
-<docs-tab tab="Vue">
+</TabItem>
+<TabItem value="vue">
 
 ```html
 <ion-item>
@@ -124,8 +142,8 @@ For a list of accepted values, see the <a href="https://html.spec.whatwg.org/dev
   <ion-input enterkeyhint="search" type="search"></ion-input>
 </ion-item>
 ```
-</docs-tab>
-</docs-tabs>
+</TabItem>
+</Tabs>
 
 <docs-codepen user="ionic" slug="GRpWyRB" height="350"></docs-codepen>
 
@@ -154,8 +172,16 @@ When running an app in Capacitor or Cordova, it is possible to hide the accessor
 Detecting the presence of an on-screen keyboard is useful for adjusting the positioning of an input that would otherwise be hidden by the keyboard. For Capacitor and Cordova apps, developers typically rely on native keyboard plugins to listen for the keyboard lifecycle events. For apps running in a mobile browser or as a PWA, developers can use the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Visual_Viewport_API" rel="noreferrer" target="_blank">Visual Viewport API</a> where supported. Ionic Framework wraps both of these approaches and emits `ionKeyboardDidShow` and `ionKeyboardDidHide` events on the `window`. The event payload for `ionKeyboardDidShow` contains an approximation of the keyboard height in pixels.
 
 ### Usage
-<docs-tabs>
-<docs-tab tab="Javascript">
+<Tabs
+  defaultValue="javascript"
+  values={[
+    { value: 'javascript', label: 'JavaScript' },
+    { value: 'angular', label: 'Angular' },
+    { value: 'react', label: 'React' },
+    { value: 'vue', label: 'Vue' },
+  ]
+}>
+<TabItem value="javascript">
 
 ```javascript
 window.addEventListener('ionKeyboardDidShow', ev => {
@@ -167,8 +193,8 @@ window.addEventListener('ionKeyboardDidHide', () => {
   // Move input back to original location
 });
 ```
-</docs-tab>
-<docs-tab tab="Angular">
+</TabItem>
+<TabItem value="angular">
 
 ```typescript
 import { Platform } from '@ionic/angular';
@@ -186,8 +212,8 @@ constructor(private platform: Platform) {
   });
 }
 ```
-</docs-tab>
-<docs-tab tab="React">
+</TabItem>
+<TabItem value="react">
 
 ```tsx
 import { useKeyboardState } from '@ionic/react-hooks/keyboard';
@@ -198,8 +224,8 @@ const { isOpen, keyboardHeight } = useKeyboardState();
 
 // Do something with the keyboard height such as translating an input above the keyboard
 ```
-</docs-tab>
-<docs-tab tab="Vue">
+</TabItem>
+<TabItem value="vue">
 
 ```typescript
 import { useKeyboard } from '@ionic/vue';
@@ -215,7 +241,7 @@ watch(keyboardHeight, () => {
 
 
 ```
-</docs-tab>
-</docs-tabs>
+</TabItem>
+</Tabs>
 
 > For apps running in a mobile web browser or as a PWA, Keyboard Lifecycle Events are only supported on Chrome 62+ and iOS Safari 13.0+.
