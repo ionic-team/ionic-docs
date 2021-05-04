@@ -100,7 +100,7 @@ toggle.addEventListener('ionChange', (ev) => {
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
 // Listen for changes to the prefers-color-scheme media query
-prefersDark.addListener((e) => checkToggle(e.matches));
+prefersDark.addEventListener('change', (e) => checkToggle(e.matches));
 
 // Called when the app loads
 function loadApp() {
