@@ -1,0 +1,25 @@
+internal-ad {
+  max-width: 148px;
+  display: block;
+  margin: 48px 0 0;
+}
+
+internal-ad p {
+  font-size: 13px;
+  line-height: 19px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+
+  color: var(--text-color--light);
+  transition: .2s color;
+}
+
+internal-ad a:hover p  {
+  color: var(--text-color);
+}
+
+@media (max-width: 1233px) {
+  internal-ad {
+    display: none;
+  }
+}

@@ -1,14 +1,13 @@
 import { Component, Prop, h } from '@stencil/core';
 
-
 @Component({
   tag: 'code-color',
   styleUrl: 'code-color.css'
 })
 export class ColorBlock {
-  @Prop() value: string;
-  @Prop() mode: string;
-  @Prop() display: string;
+  @Prop() value!: string;
+  @Prop() mode!: string;
+  @Prop() display?: string;
 
   render() {
     const display = this.display === undefined ? this.value.trim() : this.display.trim();
@@ -18,9 +17,9 @@ export class ColorBlock {
         class="code-color-block"
         style={{
           'background-color': this.value
-        }}>
-      </span>,
-      <code class="code-color-value">{ display }</code>
+        }}
+      />,
+      <code class="code-color-value">{display}</code>
     ];
   }
 }

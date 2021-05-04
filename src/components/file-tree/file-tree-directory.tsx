@@ -6,7 +6,7 @@ import { Component, Prop, h } from '@stencil/core';
 })
 export class FileTreeDirectory {
   @Prop() collapsed = false;
-  @Prop() name: string;
+  @Prop() name!: string;
 
   hostData() {
     return {
@@ -19,7 +19,7 @@ export class FileTreeDirectory {
 
   render() {
     return [
-      <div class="name">{ this.name }/</div>,
+      <div class="name">{this.name}/</div>,
       this.collapsed ? null :
         <div class="children">
           <slot />

@@ -38,11 +38,33 @@ docs-card {
   height: auto;
 }
 
-.Card-icon {
+.Card-icon,
+.Card-iconset__container  {
   width: 48px;
   height: 48px;
 
   margin-bottom: 1.2em;
+
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.Card-icon-hover {
+  display: none;
+}
+
+.Card-iconset__container {
+  position: relative;
+}
+
+.Card-iconset__container .Card-icon {
+  position: absolute;
+  opacity: 0;
+  transition: .8s opacity;
+}
+
+.Card-iconset__container .Card-icon--active {
+  opacity: 1;
 }
 
 .Card-ionicon {
@@ -56,6 +78,14 @@ docs-card {
   .Card[href]:hover {
     box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1), 0 0.175em 0.5em rgba(2, 8, 20, 0.08);
     transform: translateY(-1px);
+  }
+
+  .Card[href]:hover .Card-icon-default {
+    display: none;
+  }
+
+  .Card[href]:hover .Card-icon-hover {
+    display: block;
   }
 }
 
@@ -73,16 +103,14 @@ docs-card {
 
 .Card-header {
   color: var(--text-color--dark);
-  font-size: 1.25em;
-  font-weight: 600;
+  font-size: 1.4em;
+  font-weight: 500;
   line-height: 1.4;
   margin-bottom: 0.45em;
 }
 
 .Card-without-image .Card-header {
-  font-size: 1.2em;
   margin-bottom: 0.3em;
-
 }
 
 .Card-header > svg {
@@ -90,6 +118,38 @@ docs-card {
   height: 1em;
   margin-bottom: -0.125em;
   width: auto;
+}
+
+.Card-size-lg {
+  font-size: 14px;
+}
+
+.Card-size-lg .Card-icon,
+.Card-size-lg .Card-ionicon,
+.Card-size-lg .Card-iconset__container {
+  width: 80px;
+  height: 80px;
+}
+
+.Card-size-lg.Card-without-image .Card-header {
+  font-size: 20px;
+}
+
+docs-card.disabled,
+docs-card[disabled] {
+  position: relative;
+}
+
+docs-card.disabled::after,
+docs-card[disabled]::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(232, 232, 232, 0.5);
+  pointer-events: none;
+  content: '';
 }
 
 aside docs-card {
@@ -100,7 +160,7 @@ aside .Card-container {
   display: grid;
   grid-template-columns: minmax(0, max-content) 1fr;
   grid-template-rows: minmax(0, min-content);
-  grid-template-areas: 
+  grid-template-areas:
     "icon title"
     "icon body";
 }

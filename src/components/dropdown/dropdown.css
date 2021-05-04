@@ -28,7 +28,7 @@
   fill: #CED6E0;
   vertical-align: 2px;
 } 
-
+.Dropdown:focus,
 .Dropdown-button:focus {
   outline: none;
 }
@@ -42,6 +42,7 @@
   height: 0.8em;
   margin-bottom: -0.0875em;
   width: 0.8em;
+  margin-left: .8em;
 }
 
 .Dropdown.is-open .Dropdown-arrow {
@@ -56,7 +57,7 @@
     0px 4px 12px 0px rgba(0,0,0,0.08), 
     0px 2px 4px 0px rgba(0,0,0,0.08);
   display: none;
-  min-width: 160px;
+  min-width: 100%;
   overflow: hidden;
   pointer-events: none;
   position: absolute;

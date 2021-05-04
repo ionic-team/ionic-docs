@@ -317,3 +317,10 @@
 .native-ee-pricing .pinned-at-point thead tr {
   padding: 0;
 }
+
+.native-solutions-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}

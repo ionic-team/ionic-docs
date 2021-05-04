@@ -33,8 +33,9 @@ docs-menu .MenuLogo {
   height: 25px;
 }
 
-docs-menu > stencil-route-switch {
+docs-menu > .Menu {
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 docs-menu nav {

@@ -1,16 +1,18 @@
 import { h } from '@stencil/core';
+
 import { useLocalStorage } from '../../../local-storage';
 import { toHypertext } from '../to-hypertext';
-
 const [getFramework] = useLocalStorage('ionic-docs:framework');
 
-export default (props) => {
+export default (props: { [key: string]: any }) => {
   const { page } = props;
   const headings = [...page.headings];
+  const encapsulation = renderEncapsulation(page.encapsulation);
   const usage = renderUsage(page.usage, page.path);
   const properties = renderProperties(page.props);
   const events = renderEvents(page.events);
   const methods = renderMethods(page.methods);
+  const parts = renderParts(page.parts);
   const customProps = renderCustomProps(page.styles);
   const slots = renderSlots(page.slots);
 
@@ -42,6 +44,13 @@ export default (props) => {
     });
   }
 
+  if (parts) {
+    headings.push({
+      text: 'CSS Shadow Parts',
+      href: '#css-shadow-parts'
+    });
+  }
+
   if (customProps) {
     headings.push({
       text: 'CSS Custom Properties',
@@ -58,27 +67,46 @@ export default (props) => {
 
   return (
     <article>
-      <h1>{ page.title }</h1>
-      <docs-table-of-contents links={headings} basepath={page.path}/>
+      {encapsulation}
+      <h1>
+        {page.title}
+      </h1>
+      <div class="page-meta">
+        <docs-table-of-contents links={headings} basepath={page.path}/>
+        <internal-ad></internal-ad>
+      </div>
       <section class="markdown-content">
         {toHypertext(h, page.body)}
       </section>
-      { usage }
-      { properties }
-      { events }
-      { methods }
-      { customProps }
-      { slots }
+      {usage}
+      {properties}
+      {events}
+      {methods}
+      {parts}
+      {customProps}
+      {slots}
     </article>
   );
 };
 
-const renderUsage = (usage = {}, path: string) => {
+const renderEncapsulation = (encapsulation = {}) => {
+  if (encapsulation === 'none') {
+    return;
+  }
+
+  const path = `/docs/reference/glossary#${encapsulation}`;
+
+  return (
+    <a href={path} class="page-heading-encapsulation">{encapsulation}</a>
+  );
+};
+
+const renderUsage = (usage: { [key: string]: string } = {}, path: string) => {
   const keys = Object.keys(usage);
   const frameworkPref = getFramework();
-  const framework = frameworkPref ? frameworkPref.toLowerCase() : null;
+  const framework = frameworkPref !== null ? frameworkPref.toLowerCase() : null;
 
-  if (!keys.length) {
+  if (keys.length === 0) {
     return null;
   }
 
@@ -87,12 +115,13 @@ const renderUsage = (usage = {}, path: string) => {
       <h2 id="usage">
         <a href="#usage">Usage</a>
       </h2>
-      <docs-tabs key={path}>
+      <docs-tabs key={path} listen-for="ionic-docs:framework">
           {keys.map(key =>
             <docs-tab
               tab={key}
-              selected={framework === key.toLowerCase()}>
-                {toHypertext(h, usage[key])}
+              selected={framework === key.toLowerCase()}
+            >
+              {toHypertext(h, usage[key])}
             </docs-tab>
           )}
       </docs-tabs>
@@ -101,7 +130,7 @@ const renderUsage = (usage = {}, path: string) => {
 };
 
 const renderProperties = (properties = []) => {
-  if (!properties.length) {
+  if (properties.length === 0) {
     return null;
   }
 
@@ -115,16 +144,17 @@ const renderProperties = (properties = []) => {
         keys={{
           Head: prop => prop.name,
           Description: prop => <div innerHTML={prop.docs}/>,
-          Attribute: prop => prop.attr ? <code>{ prop.attr }</code> : null,
-          Type: prop => <code>{ prop.type }</code>,
-          Default: prop => prop.default ? <code>{ prop.default }</code> : null
-        }}/>
+          Attribute: prop => prop.attr ? <code>{prop.attr}</code> : null,
+          Type: prop => <code>{prop.type}</code>,
+          Default: prop => prop.default ? <code>{prop.default}</code> : null
+        }}
+      />
     </section>
   );
 };
 
-const renderEvents = (events = []) => {
-  if (!events.length) {
+const renderEvents = (events: any[] = []) => {
+  if (events.length === 0) {
     return null;
   }
 
@@ -143,8 +173,8 @@ const renderEvents = (events = []) => {
         <tbody>
           {events.map(event => (
             <tr>
-              <td><code>{ event.event }</code></td>
-              <td>{ event.docs }</td>
+              <td><code>{event.event}</code></td>
+              <td>{event.docs}</td>
             </tr>
           ))}
         </tbody>
@@ -153,8 +183,8 @@ const renderEvents = (events = []) => {
   );
 };
 
-const renderMethods = (methods = []) => {
-  if (!methods.length) {
+const renderMethods = (methods: any[] = []) => {
+  if (methods.length === 0) {
     return null;
   }
 
@@ -168,14 +198,45 @@ const renderMethods = (methods = []) => {
         keys={{
           Head: method => method.name,
           Description: method => <div innerHTML={method.docs}/>,
-          Signature: method => <code>{ method.signature }</code>
-        }}/>
+          Signature: method => <code>{method.signature}</code>
+        }}
+      />
     </section>
   );
 };
 
-const renderCustomProps = (customProps = []) => {
-  if (!customProps.length) {
+const renderParts = (parts: any[] = []) => {
+  if (parts.length === 0) {
+    return null;
+  }
+
+  return (
+    <section>
+      <h2 id="css-shadow-parts">
+        <a href="#css-shadow-parts">CSS Shadow Parts</a>
+      </h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {parts.map(prop => (
+            <tr>
+              <td><code>{prop.name}</code></td>
+              <td>{prop.docs}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+  );
+};
+
+const renderCustomProps = (customProps: any[] = []) => {
+  if (customProps.length === 0) {
     return null;
   }
 
@@ -194,8 +255,8 @@ const renderCustomProps = (customProps = []) => {
         <tbody>
           {customProps.map(prop => (
             <tr>
-              <td><code>{ prop.name }</code></td>
-              <td>{ prop.docs }</td>
+              <td><code>{prop.name}</code></td>
+              <td>{prop.docs}</td>
             </tr>
           ))}
         </tbody>
@@ -204,8 +265,8 @@ const renderCustomProps = (customProps = []) => {
   );
 };
 
-const renderSlots = (slots = []) => {
-  if (!slots.length) {
+const renderSlots = (slots: any[] = []) => {
+  if (slots.length === 0) {
     return null;
   }
 
@@ -224,8 +285,8 @@ const renderSlots = (slots = []) => {
         <tbody>
           {slots.map(slot => (
             <tr>
-              <td>{ slot.name && <code>"{ slot.name }"</code>}</td>
-              <td>{ slot.docs }</td>
+              <td>{slot.name && <code>"{slot.name}"</code>}</td>
+              <td>{slot.docs}</td>
             </tr>
           ))}
         </tbody>

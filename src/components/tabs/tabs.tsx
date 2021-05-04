@@ -1,28 +1,41 @@
-import { Component, Element, State, h } from '@stencil/core';
+import { Component, Element, Listen, Prop, State, h } from '@stencil/core';
 
 @Component({
   tag: 'docs-tabs',
   styleUrl: 'tabs.css'
 })
 export class DocsTabs {
-  @State() selected: HTMLDocsTabElement = null;
+  @Prop() listenFor?: string;
+  @State() selected: HTMLDocsTabElement | null = null;
   @State() tabs: HTMLDocsTabElement[] = [];
-  @Element() element: HTMLDocsTabElement;
+  @Element() el!: HTMLDocsTabElement;
+
+  // if an event with a name that matches the 'listenFor' property is heard,
+  // check the tabs to see if the event has a value that matches a tab title
+  // The original purpose for this is the Framework Selection dropdown
+  @Listen('local-storage', { target: 'window' })
+  listenForFrameworkSelection(event: any) {
+    if (typeof this.listenFor !== 'undefined' && event.detail.key === this.listenFor) {
+      this.tabs.forEach(tab => {
+        if (tab.tab.toLowerCase() === event.detail.value.toLowerCase()) {
+          this.select(tab);
+        }
+      });
+    }
+  }
 
   componentDidLoad() {
-    this.tabs = Array.from(this.element.querySelectorAll('docs-tab'));
+    this.tabs = Array.from(this.el.querySelectorAll('docs-tab'));
     this.select(this.tabs.find(t => t.hasAttribute('selected')) || this.tabs[0]);
   }
 
   select(tab: HTMLDocsTabElement) {
-    if (tab != null) {
-      if (this.selected != null) {
-        this.selected.removeAttribute('selected');
-      }
-
-      this.selected = tab;
-      this.selected.setAttribute('selected', '');
+    if (this.selected !== null) {
+      this.selected.removeAttribute('selected');
     }
+
+    this.selected = tab;
+    this.selected.setAttribute('selected', '');
   }
 
   toTabButton = (tab: HTMLDocsTabElement) => {
@@ -38,8 +51,9 @@ export class DocsTabs {
         role="tab"
         aria-selected={isSelected ? 'true' : 'false'}
         onClick={() => this.select(tab)}
-        class={buttonClass}>
-          {label}
+        class={buttonClass}
+      >
+        {label}
       </button>
     );
   }

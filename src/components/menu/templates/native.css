@@ -1,0 +1,5 @@
+docs-menu-collapsible ion-segment {
+  margin-top: 16px;
+  margin-left: calc(14px + 1 * 10px);
+  max-width: calc(100% - 64px);
+}

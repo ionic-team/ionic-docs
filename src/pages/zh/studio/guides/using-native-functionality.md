@@ -1,0 +1,20 @@
+---
+---
+
+# Using Native Functionality
+
+Depending on which Cordova Plugin you're using, you may need to run your app on a physical or virtual device in order to test out that feature.
+
+For instance, a plugin for utilizing the Gyroscope will only work on a physical device, while a plugin for Storage will work in Serve as well.
+
+In order to debug Native Functionality, it is best to utilize the native tooling. For instance, you might want to use the following in order to test:
+
+1. In Studio's main toolbar, click on **Project** &raquo; **Build** &raquo; **Build iOS** (or Android)
+2. Click on **Project** &raquo; **Open in XCode** (or Android Studio)
+3. Use XCode or Android Studio to run your project on your physical device.
+4. You now have access to native debugging logs inside of XCode or Android Studio.
+5. You can also use Safari (iOS) or Chrome (Android) in order to inspect the web content of your application.
+
+For more detailed instructions, please see the [Building for iOS](/docs/developing/ios) or [Building for Android](/docs/developing/android) documentation.
+
+If you'd like to follow along with a beginners tutorial that includes utilizing the Camera Cordova plugin, please see our [Build your First App guide](/docs/angular/your-first-app). While this guide isn't specific to Studio, you can still follow along using Studio.

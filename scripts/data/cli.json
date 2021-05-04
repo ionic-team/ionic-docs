@@ -16,7 +16,8 @@
       "groups": [],
       "exampleCommands": [
         "ionic build ",
-        "ionic build --prod"
+        "ionic build --prod",
+        "ionic build --watch"
       ],
       "aliases": [],
       "inputs": [],
@@ -25,18 +26,8 @@
           "name": "prod",
           "type": "boolean",
           "summary": "Flag to use the `production` configuration",
-          "groups": [],
-          "aliases": [],
-          "spec": {
-            "value": "true/false"
-          }
-        },
-        {
-          "name": "source-map",
-          "type": "boolean",
-          "summary": "Output source maps",
           "groups": [
-            "advanced"
+            "cordova"
           ],
           "aliases": [],
           "spec": {
@@ -48,13 +39,39 @@
           "type": "string",
           "summary": "Specify the configuration to use.",
           "groups": [
-            "advanced"
+            "advanced",
+            "cordova"
           ],
           "aliases": [
             "c"
           ],
           "spec": {
             "value": "conf"
+          }
+        },
+        {
+          "name": "source-map",
+          "type": "boolean",
+          "summary": "Output source maps",
+          "groups": [
+            "advanced",
+            "cordova"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
+          }
+        },
+        {
+          "name": "watch",
+          "type": "boolean",
+          "summary": "Rebuild when files change",
+          "groups": [
+            "advanced"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
           }
         },
         {
@@ -93,9 +110,7 @@
       "summary": "Add a native platform to your Ionic project",
       "description": "`ionic capacitor add` will do the following:\n- Add a new platform specific folder to your project (ios, android, or electron)",
       "footnotes": [],
-      "groups": [
-        "beta"
-      ],
+      "groups": [],
       "exampleCommands": [],
       "aliases": [],
       "inputs": [
@@ -109,17 +124,118 @@
       "type": "project"
     },
     {
+      "name": "ionic capacitor build",
+      "namespace": [
+        "ionic",
+        "capacitor"
+      ],
+      "summary": "Build an Ionic project for a given platform",
+      "description": "`ionic capacitor build` will do the following:\n- Perform `ionic build`\n- Copy web assets into the specified native platform\n- Open the IDE for your native project (Xcode for iOS, Android Studio for Android)\n\nOnce the web assets and configuration are copied into your native project, you can build your app using the native IDE. Unfortunately, programmatically building the native project is not yet supported.\n\nTo configure your native project, see the common configuration [docs](https://capacitor.ionicframework.com/docs/basics/configuring-your-app) as well as low-level configuration for [iOS](https://capacitor.ionicframework.com/docs/ios/configuration) and [Android](https://capacitor.ionicframework.com/docs/android/configuration).",
+      "footnotes": [],
+      "groups": [
+        "beta"
+      ],
+      "exampleCommands": [
+        "ionic capacitor build ",
+        "ionic capacitor build android",
+        "ionic capacitor build ios"
+      ],
+      "aliases": [],
+      "inputs": [
+        {
+          "name": "platform",
+          "summary": "The platform to build for (e.g. `android`, `ios`)",
+          "required": true
+        }
+      ],
+      "options": [
+        {
+          "name": "build",
+          "type": "boolean",
+          "summary": "Do not invoke Ionic build",
+          "default": true,
+          "groups": [],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
+          }
+        },
+        {
+          "name": "open",
+          "type": "boolean",
+          "summary": "Do not invoke Capacitor open",
+          "default": true,
+          "groups": [],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
+          }
+        },
+        {
+          "name": "prod",
+          "type": "boolean",
+          "summary": "Flag to use the `production` configuration",
+          "groups": [
+            "cordova"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
+          }
+        },
+        {
+          "name": "configuration",
+          "type": "string",
+          "summary": "Specify the configuration to use.",
+          "groups": [
+            "advanced",
+            "cordova"
+          ],
+          "aliases": [
+            "c"
+          ],
+          "spec": {
+            "value": "conf"
+          }
+        },
+        {
+          "name": "source-map",
+          "type": "boolean",
+          "summary": "Output source maps",
+          "groups": [
+            "advanced",
+            "cordova"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
+          }
+        },
+        {
+          "name": "watch",
+          "type": "boolean",
+          "summary": "Rebuild when files change",
+          "groups": [
+            "advanced"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
+          }
+        }
+      ],
+      "type": "project"
+    },
+    {
       "name": "ionic capacitor copy",
       "namespace": [
         "ionic",
         "capacitor"
       ],
       "summary": "Copy web assets to native platforms",
-      "description": "`ionic capacitor copy` will do the following:\n- Copy the **www/** directory into your native platforms.",
+      "description": "`ionic capacitor copy` will do the following:\n- Perform an Ionic build, which compiles web assets\n- Copy web assets to Capacitor native platform(s)",
       "footnotes": [],
-      "groups": [
-        "beta"
-      ],
+      "groups": [],
       "exampleCommands": [],
       "aliases": [],
       "inputs": [
@@ -129,7 +245,71 @@
           "required": false
         }
       ],
-      "options": [],
+      "options": [
+        {
+          "name": "build",
+          "type": "boolean",
+          "summary": "Do not invoke an Ionic build",
+          "default": true,
+          "groups": [],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
+          }
+        },
+        {
+          "name": "prod",
+          "type": "boolean",
+          "summary": "Flag to use the `production` configuration",
+          "groups": [
+            "cordova"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
+          }
+        },
+        {
+          "name": "configuration",
+          "type": "string",
+          "summary": "Specify the configuration to use.",
+          "groups": [
+            "advanced",
+            "cordova"
+          ],
+          "aliases": [
+            "c"
+          ],
+          "spec": {
+            "value": "conf"
+          }
+        },
+        {
+          "name": "source-map",
+          "type": "boolean",
+          "summary": "Output source maps",
+          "groups": [
+            "advanced",
+            "cordova"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
+          }
+        },
+        {
+          "name": "watch",
+          "type": "boolean",
+          "summary": "Rebuild when files change",
+          "groups": [
+            "advanced"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
+          }
+        }
+      ],
       "type": "project"
     },
     {
@@ -141,9 +321,7 @@
       "summary": "Open the IDE for a given native platform project",
       "description": "`ionic capacitor open` will do the following:\n- Open the IDE for your native project (Xcode for iOS, Android Studio for Android)",
       "footnotes": [],
-      "groups": [
-        "beta"
-      ],
+      "groups": [],
       "exampleCommands": [],
       "aliases": [],
       "inputs": [
@@ -163,14 +341,16 @@
         "capacitor"
       ],
       "summary": "Run an Ionic project on a connected device",
-      "description": "`ionic capacitor run` will do the following:\n- Perform `ionic build` (or run the dev server from `ionic serve` with the `--livereload` option)\n- Copy web assets into the specified native platform\n- Open the IDE for your native project (Xcode for iOS, Android Studio for Android)\n\nOnce the web assets and configuration are copied into your native project, the app can run on devices and emulators/simulators using the native IDE. Unfortunately, programmatically building and launching the native project is not yet supported.\n\nFor Android and iOS, you can setup Remote Debugging on your device with browser development tools using these [docs](https://ionicframework.com/docs/developer-resources/developer-tips).",
+      "description": "`ionic capacitor run` will do the following:\n- Perform `ionic build` (or run the dev server from `ionic serve` with the `--livereload` option)\n- Copy web assets into the specified native platform\n- Open the IDE for your native project (Xcode for iOS, Android Studio for Android)\n\nWhen using the `--livereload` option and need to serve to your LAN, a device, or an emulator, use the `--external` option also. Otherwise, the web view tries to access `localhost`.\n\nOnce the web assets and configuration are copied into your native project, the app can run on devices and emulators/simulators using the native IDE. Unfortunately, programmatically building and launching the native project is not yet supported.\n\nFor Android and iOS, you can setup Remote Debugging on your device with browser development tools using these [docs](https://ionicframework.com/docs/developer-resources/developer-tips).",
       "footnotes": [],
-      "groups": [],
+      "groups": [
+        "beta"
+      ],
       "exampleCommands": [
         "ionic capacitor run ",
         "ionic capacitor run android",
-        "ionic capacitor run android -l",
-        "ionic capacitor run ios --livereload",
+        "ionic capacitor run android -l --external",
+        "ionic capacitor run ios --livereload --external",
         "ionic capacitor run ios --livereload-url=http://localhost:8100"
       ],
       "aliases": [],
@@ -233,22 +413,43 @@
           }
         },
         {
-          "name": "address",
+          "name": "open",
+          "type": "boolean",
+          "summary": "Do not invoke Capacitor open",
+          "default": true,
+          "groups": [],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
+          }
+        },
+        {
+          "name": "external",
+          "type": "boolean",
+          "summary": "Host dev server on all network interfaces (i.e. `--host=0.0.0.0`)",
+          "groups": [],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
+          }
+        },
+        {
+          "name": "host",
           "type": "string",
-          "summary": "Use specific address for the dev server",
+          "summary": "Use specific host for the dev server",
           "default": "localhost",
           "groups": [
             "advanced"
           ],
           "aliases": [],
           "spec": {
-            "value": "address"
+            "value": "host"
           }
         },
         {
           "name": "port",
           "type": "string",
-          "summary": "Use specific port for HTTP",
+          "summary": "Use specific port for the dev server",
           "default": "8100",
           "groups": [
             "advanced"
@@ -261,16 +462,15 @@
           }
         },
         {
-          "name": "devapp",
-          "type": "boolean",
-          "summary": "Publish DevApp service",
-          "default": false,
+          "name": "public-host",
+          "type": "string",
+          "summary": "The host used for the browser or web view",
           "groups": [
             "advanced"
           ],
           "aliases": [],
           "spec": {
-            "value": "true/false"
+            "value": "host"
           }
         },
         {
@@ -299,18 +499,8 @@
           "name": "prod",
           "type": "boolean",
           "summary": "Flag to use the `production` configuration",
-          "groups": [],
-          "aliases": [],
-          "spec": {
-            "value": "true/false"
-          }
-        },
-        {
-          "name": "source-map",
-          "type": "boolean",
-          "summary": "Output source maps",
           "groups": [
-            "advanced"
+            "cordova"
           ],
           "aliases": [],
           "spec": {
@@ -322,13 +512,39 @@
           "type": "string",
           "summary": "Specify the configuration to use.",
           "groups": [
-            "advanced"
+            "advanced",
+            "cordova"
           ],
           "aliases": [
             "c"
           ],
           "spec": {
             "value": "conf"
+          }
+        },
+        {
+          "name": "source-map",
+          "type": "boolean",
+          "summary": "Output source maps",
+          "groups": [
+            "advanced",
+            "cordova"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
+          }
+        },
+        {
+          "name": "watch",
+          "type": "boolean",
+          "summary": "Rebuild when files change",
+          "groups": [
+            "advanced"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
           }
         }
       ],
@@ -341,11 +557,9 @@
         "capacitor"
       ],
       "summary": "Sync (copy + update) an Ionic project",
-      "description": "`ionic capacitor sync` will do the following:\n- Copy web assets to all Capacitor native platforms\n- Update each Capacitor native platforms, such as any dependencies that need updating.\n- Install any discovered Capacitor or Cordova plugins.",
+      "description": "`ionic capacitor sync` will do the following:\n- Perform an Ionic build, which compiles web assets\n- Copy web assets to Capacitor native platform(s)\n- Update Capacitor native platform(s) and dependencies\n- Install any discovered Capacitor or Cordova plugins",
       "footnotes": [],
-      "groups": [
-        "beta"
-      ],
+      "groups": [],
       "exampleCommands": [],
       "aliases": [],
       "inputs": [
@@ -355,7 +569,71 @@
           "required": false
         }
       ],
-      "options": [],
+      "options": [
+        {
+          "name": "build",
+          "type": "boolean",
+          "summary": "Do not invoke an Ionic build",
+          "default": true,
+          "groups": [],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
+          }
+        },
+        {
+          "name": "prod",
+          "type": "boolean",
+          "summary": "Flag to use the `production` configuration",
+          "groups": [
+            "cordova"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
+          }
+        },
+        {
+          "name": "configuration",
+          "type": "string",
+          "summary": "Specify the configuration to use.",
+          "groups": [
+            "advanced",
+            "cordova"
+          ],
+          "aliases": [
+            "c"
+          ],
+          "spec": {
+            "value": "conf"
+          }
+        },
+        {
+          "name": "source-map",
+          "type": "boolean",
+          "summary": "Output source maps",
+          "groups": [
+            "advanced",
+            "cordova"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
+          }
+        },
+        {
+          "name": "watch",
+          "type": "boolean",
+          "summary": "Rebuild when files change",
+          "groups": [
+            "advanced"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
+          }
+        }
+      ],
       "type": "project"
     },
     {
@@ -365,11 +643,9 @@
         "capacitor"
       ],
       "summary": "Update Capacitor native platforms, install Capacitor/Cordova plugins",
-      "description": "`ionic capacitor update` will do the following:\n- Update each Capacitor native project, such as any dependencies that need updating.\n- Install any discovered Capacitor or Cordova plugins.",
+      "description": "`ionic capacitor update` will do the following:\n- Update Capacitor native platform(s) and dependencies\n- Install any discovered Capacitor or Cordova plugins",
       "footnotes": [],
-      "groups": [
-        "beta"
-      ],
+      "groups": [],
       "exampleCommands": [],
       "aliases": [],
       "inputs": [
@@ -562,7 +838,10 @@
         "ionic config unset --global git.setup",
         "ionic config unset -g interactive"
       ],
-      "aliases": [],
+      "aliases": [
+        "ionic config delete",
+        "ionic config del"
+      ],
       "inputs": [
         {
           "name": "property",
@@ -604,8 +883,8 @@
         "ionic",
         "cordova"
       ],
-      "summary": "Build (prepare + compile) an Ionic project for a given platform",
-      "description": "Like running `cordova build` directly, but also builds web assets with configuration from `ionic build` and provides friendly checks.\n\nTo pass additional options to the Cordova CLI, use the `--` separator after the Ionic CLI arguments.\n\nThe Cordova CLI requires a separator for platform-specific arguments for Android [builds](https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html#using-flags), so an additional separator is required for the Ionic CLI, but it is not required for iOS [builds](https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html#using-flags). See the example commands for usage with separators. To avoid using flags, consider using `--buildConfig` with a **build.json** file.",
+      "summary": "Use Cordova to build for Android and iOS platform targets",
+      "description": "Like running `cordova build` directly, `ionic cordova build` also builds web assets from `ionic build` and provides friendly checks for Android and iOS platforms.\n\nTo pass additional options to the Cordova CLI, use the `--` separator after the Ionic CLI arguments.\n\nThe Cordova CLI requires a separator for platform-specific arguments for Android [builds](https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html#using-flags), so an additional separator is required for the Ionic CLI, but it is not required for iOS [builds](https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html#using-flags). See the example commands for usage with separators. To avoid using flags, consider using `--buildConfig` with a **build.json** file.",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [
@@ -714,18 +993,8 @@
           "name": "prod",
           "type": "boolean",
           "summary": "Flag to use the `production` configuration",
-          "groups": [],
-          "aliases": [],
-          "spec": {
-            "value": "true/false"
-          }
-        },
-        {
-          "name": "source-map",
-          "type": "boolean",
-          "summary": "Output source maps",
           "groups": [
-            "advanced"
+            "cordova"
           ],
           "aliases": [],
           "spec": {
@@ -737,13 +1006,27 @@
           "type": "string",
           "summary": "Specify the configuration to use.",
           "groups": [
-            "advanced"
+            "advanced",
+            "cordova"
           ],
           "aliases": [
             "c"
           ],
           "spec": {
             "value": "conf"
+          }
+        },
+        {
+          "name": "source-map",
+          "type": "boolean",
+          "summary": "Output source maps",
+          "groups": [
+            "advanced",
+            "cordova"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
           }
         }
       ],
@@ -851,7 +1134,7 @@
         "cordova"
       ],
       "summary": "Emulate an Ionic project on a simulator/emulator",
-      "description": "Build your app and deploy it to devices and emulators using this command. Optionally specify the `--livereload` option to use the dev server from `ionic serve` for livereload functionality.\n\nThis command will first use `ionic build` to build web assets (or `ionic serve` with the `--livereload` option). Then, `cordova build` is used to compile and prepare your app. Finally, the `native-run` [utility](https://github.com/ionic-team/native-run) is used to run your app on a device. To use Cordova for this process instead, use the `--no-native-run` option.\n\nIf you have multiple devices and emulators, you can target a specific one with the `--target` option. You can list targets with `--list`.\n\nFor Android and iOS, you can setup Remote Debugging on your device with browser development tools using these [docs](https://ionicframework.com/docs/developer-resources/developer-tips).\n\nJust like with `ionic cordova build`, you can pass additional options to the Cordova CLI using the `--` separator. To pass additional options to the dev server, consider using `ionic serve` separately and using the `--livereload-url` option.",
+      "description": "Build your app and deploy it to devices and emulators using this command. Optionally specify the `--livereload` option to use the dev server from `ionic serve` for livereload functionality.\n\nThis command will first use `ionic build` to build web assets (or `ionic serve` with the `--livereload` option). Then, `cordova build` is used to compile and prepare your app. Finally, the `native-run` [utility](https://github.com/ionic-team/native-run) is used to run your app on a device. To use Cordova for this process instead, use the `--no-native-run` option.\n\nIf you have multiple devices and emulators, you can target a specific one with the `--target` option. You can list targets with `--list`.\n\nFor Android and iOS, you can setup Remote Debugging on your device with browser development tools using these [docs](https://ionicframework.com/docs/developer-resources/developer-tips).\n\nWhen using `--livereload` with hardware devices, remember that livereload needs an active connection between device and computer. In some scenarios, you may need to host the dev server on an external address using the `--external` option. See these [docs](https://ionicframework.com/docs/cli/livereload) for more information.\n\nJust like with `ionic cordova build`, you can pass additional options to the Cordova CLI using the `--` separator. To pass additional options to the dev server, consider using `ionic serve` separately and using the `--livereload-url` option.",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [
@@ -865,7 +1148,7 @@
         "ionic cordova emulate android -l",
         "ionic cordova emulate ios",
         "ionic cordova emulate ios --buildConfig=build.json",
-        "ionic cordova emulate ios --livereload",
+        "ionic cordova emulate ios --livereload --external",
         "ionic cordova emulate ios --livereload-url=http://localhost:8100",
         "ionic cordova emulate ios --prod --release",
         "ionic cordova emulate ios --prod --release -- --developmentTeam=\"ABCD\" --codeSignIdentity=\"iPhone Developer\" --packageType=\"app-store\"",
@@ -876,7 +1159,7 @@
         {
           "name": "platform",
           "summary": "The platform to run (e.g. `android`, `ios`)",
-          "required": false
+          "required": true
         }
       ],
       "options": [
@@ -945,22 +1228,32 @@
           }
         },
         {
-          "name": "address",
+          "name": "external",
+          "type": "boolean",
+          "summary": "Host dev server on all network interfaces (i.e. `--host=0.0.0.0`)",
+          "groups": [],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
+          }
+        },
+        {
+          "name": "host",
           "type": "string",
-          "summary": "Use specific address for the dev server",
+          "summary": "Use specific host for the dev server",
           "default": "localhost",
           "groups": [
             "advanced"
           ],
           "aliases": [],
           "spec": {
-            "value": "address"
+            "value": "host"
           }
         },
         {
           "name": "port",
           "type": "string",
-          "summary": "Use specific port for HTTP",
+          "summary": "Use specific port for the dev server",
           "default": "8100",
           "groups": [
             "advanced"
@@ -973,16 +1266,15 @@
           }
         },
         {
-          "name": "devapp",
-          "type": "boolean",
-          "summary": "Publish DevApp service",
-          "default": false,
+          "name": "public-host",
+          "type": "string",
+          "summary": "The host used for the browser or web view",
           "groups": [
             "advanced"
           ],
           "aliases": [],
           "spec": {
-            "value": "true/false"
+            "value": "host"
           }
         },
         {
@@ -1011,18 +1303,8 @@
           "name": "prod",
           "type": "boolean",
           "summary": "Flag to use the `production` configuration",
-          "groups": [],
-          "aliases": [],
-          "spec": {
-            "value": "true/false"
-          }
-        },
-        {
-          "name": "source-map",
-          "type": "boolean",
-          "summary": "Output source maps",
           "groups": [
-            "advanced"
+            "cordova"
           ],
           "aliases": [],
           "spec": {
@@ -1034,13 +1316,27 @@
           "type": "string",
           "summary": "Specify the configuration to use.",
           "groups": [
-            "advanced"
+            "advanced",
+            "cordova"
           ],
           "aliases": [
             "c"
           ],
           "spec": {
             "value": "conf"
+          }
+        },
+        {
+          "name": "source-map",
+          "type": "boolean",
+          "summary": "Output source maps",
+          "groups": [
+            "advanced",
+            "cordova"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
           }
         },
         {
@@ -1142,8 +1438,7 @@
         {
           "name": "connect",
           "type": "boolean",
-          "summary": "Do not tie the running app to the process",
-          "default": true,
+          "summary": "Tie the running app to the process",
           "groups": [
             "native-run"
           ],
@@ -1315,18 +1610,8 @@
           "name": "prod",
           "type": "boolean",
           "summary": "Flag to use the `production` configuration",
-          "groups": [],
-          "aliases": [],
-          "spec": {
-            "value": "true/false"
-          }
-        },
-        {
-          "name": "source-map",
-          "type": "boolean",
-          "summary": "Output source maps",
           "groups": [
-            "advanced"
+            "cordova"
           ],
           "aliases": [],
           "spec": {
@@ -1338,13 +1623,39 @@
           "type": "string",
           "summary": "Specify the configuration to use.",
           "groups": [
-            "advanced"
+            "advanced",
+            "cordova"
           ],
           "aliases": [
             "c"
           ],
           "spec": {
             "value": "conf"
+          }
+        },
+        {
+          "name": "source-map",
+          "type": "boolean",
+          "summary": "Output source maps",
+          "groups": [
+            "advanced",
+            "cordova"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
+          }
+        },
+        {
+          "name": "watch",
+          "type": "boolean",
+          "summary": "Rebuild when files change",
+          "groups": [
+            "advanced"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
           }
         }
       ],
@@ -1379,7 +1690,7 @@
         "cordova"
       ],
       "summary": "Automatically create icon and splash screen resources",
-      "description": "Generate perfectly sized icons and splash screens from PNG source images for your Cordova platforms with this command.\n\nThe source image for icons should ideally be at least **1024×1024px** and located at **resources/icon.png**. The source image for splash screens should ideally be at least **2732×2732px** and located at **resources/splash.png**. If you used `ionic start`, there should already be default Ionic resources in the **resources/** directory, which you can overwrite.\n\nYou can also generate platform-specific icons and splash screens by placing them in the respective **resources/<platform>/** directory. For example, to generate an icon for Android, place your image at **resources/android/icon.png**.\n\nFor best results, the splash screen's artwork should roughly fit within a square (**1200×1200px**) at the center of the image. You can use **[https://code.ionicframework.com/resources/splash.psd](https://code.ionicframework.com/resources/splash.psd)** as a template for your splash screen.\n\n`ionic cordova resources` will automatically update your **config.xml** to reflect the changes in the generated images, which Cordova then configures.\n\nThis command uses the `cordova-res` [utility](https://github.com/ionic-team/cordova-res) to generate resources locally. You can also login to your Ionic account and use Ionic servers to generate icons and splash screens with `--no-cordova-res`.\n\nCordova reference documentation:\n- Icons: **[https://cordova.apache.org/docs/en/latest/config_ref/images.html](https://cordova.apache.org/docs/en/latest/config_ref/images.html)**\n- Splash Screens: **[https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-splashscreen/](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-splashscreen/)**",
+      "description": "Generate perfectly sized icons and splash screens from PNG source images for your Cordova platforms with this command.\n\nThe source image for icons should ideally be at least **1024×1024px** and located at **resources/icon.png**. The source image for splash screens should ideally be at least **2732×2732px** and located at **resources/splash.png**. If you used `ionic start`, there should already be default Ionic resources in the **resources/** directory, which you can overwrite.\n\nYou can also generate platform-specific icons and splash screens by placing them in the respective **resources/&lt;platform&gt;/** directory. For example, to generate an icon for Android, place your image at **resources/android/icon.png**.\n\nFor best results, the splash screen's artwork should roughly fit within a square (**1200×1200px**) at the center of the image. You can use **[https://code.ionicframework.com/resources/splash.psd](https://code.ionicframework.com/resources/splash.psd)** as a template for your splash screen.\n\n`ionic cordova resources` will automatically update your **config.xml** to reflect the changes in the generated images, which Cordova then configures.\n\nThis command uses the `cordova-res` [utility](https://github.com/ionic-team/cordova-res) to generate resources locally.\n\nCordova reference documentation:\n- Icons: **[https://cordova.apache.org/docs/en/latest/config_ref/images.html](https://cordova.apache.org/docs/en/latest/config_ref/images.html)**\n- Splash Screens: **[https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-splashscreen/](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-splashscreen/)**",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [
@@ -1387,11 +1698,13 @@
         "ionic cordova resources ios",
         "ionic cordova resources android"
       ],
-      "aliases": [],
+      "aliases": [
+        "ionic cordova res"
+      ],
       "inputs": [
         {
           "name": "platform",
-          "summary": "The platform for which you would like to generate resources (`android`, `ios`)",
+          "summary": "The platform for which you would like to generate resources (`ios`, `android`)",
           "required": false
         }
       ],
@@ -1419,29 +1732,6 @@
           "spec": {
             "value": "true/false"
           }
-        },
-        {
-          "name": "cordova-res",
-          "type": "boolean",
-          "summary": "Do not generate resources locally; use Ionic servers",
-          "default": true,
-          "groups": [],
-          "aliases": [],
-          "spec": {
-            "value": "true/false"
-          }
-        },
-        {
-          "name": "force",
-          "type": "boolean",
-          "summary": "Force regeneration of resources",
-          "groups": [],
-          "aliases": [
-            "f"
-          ],
-          "spec": {
-            "value": "true/false"
-          }
         }
       ],
       "type": "project"
@@ -1453,7 +1743,7 @@
         "cordova"
       ],
       "summary": "Run an Ionic project on a connected device",
-      "description": "Build your app and deploy it to devices and emulators using this command. Optionally specify the `--livereload` option to use the dev server from `ionic serve` for livereload functionality.\n\nThis command will first use `ionic build` to build web assets (or `ionic serve` with the `--livereload` option). Then, `cordova build` is used to compile and prepare your app. Finally, the `native-run` [utility](https://github.com/ionic-team/native-run) is used to run your app on a device. To use Cordova for this process instead, use the `--no-native-run` option.\n\nIf you have multiple devices and emulators, you can target a specific one with the `--target` option. You can list targets with `--list`.\n\nFor Android and iOS, you can setup Remote Debugging on your device with browser development tools using these [docs](https://ionicframework.com/docs/developer-resources/developer-tips).\n\nJust like with `ionic cordova build`, you can pass additional options to the Cordova CLI using the `--` separator. To pass additional options to the dev server, consider using `ionic serve` separately and using the `--livereload-url` option.",
+      "description": "Build your app and deploy it to devices and emulators using this command. Optionally specify the `--livereload` option to use the dev server from `ionic serve` for livereload functionality.\n\nThis command will first use `ionic build` to build web assets (or `ionic serve` with the `--livereload` option). Then, `cordova build` is used to compile and prepare your app. Finally, the `native-run` [utility](https://github.com/ionic-team/native-run) is used to run your app on a device. To use Cordova for this process instead, use the `--no-native-run` option.\n\nIf you have multiple devices and emulators, you can target a specific one with the `--target` option. You can list targets with `--list`.\n\nFor Android and iOS, you can setup Remote Debugging on your device with browser development tools using these [docs](https://ionicframework.com/docs/developer-resources/developer-tips).\n\nWhen using `--livereload` with hardware devices, remember that livereload needs an active connection between device and computer. In some scenarios, you may need to host the dev server on an external address using the `--external` option. See these [docs](https://ionicframework.com/docs/cli/livereload) for more information.\n\nJust like with `ionic cordova build`, you can pass additional options to the Cordova CLI using the `--` separator. To pass additional options to the dev server, consider using `ionic serve` separately and using the `--livereload-url` option.",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [
@@ -1467,7 +1757,7 @@
         "ionic cordova run android -l",
         "ionic cordova run ios",
         "ionic cordova run ios --buildConfig=build.json",
-        "ionic cordova run ios --livereload",
+        "ionic cordova run ios --livereload --external",
         "ionic cordova run ios --livereload-url=http://localhost:8100",
         "ionic cordova run ios --prod --release",
         "ionic cordova run ios --prod --release -- --developmentTeam=\"ABCD\" --codeSignIdentity=\"iPhone Developer\" --packageType=\"app-store\"",
@@ -1478,7 +1768,7 @@
         {
           "name": "platform",
           "summary": "The platform to run (e.g. `android`, `ios`)",
-          "required": false
+          "required": true
         }
       ],
       "options": [
@@ -1547,22 +1837,32 @@
           }
         },
         {
-          "name": "address",
+          "name": "external",
+          "type": "boolean",
+          "summary": "Host dev server on all network interfaces (i.e. `--host=0.0.0.0`)",
+          "groups": [],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
+          }
+        },
+        {
+          "name": "host",
           "type": "string",
-          "summary": "Use specific address for the dev server",
+          "summary": "Use specific host for the dev server",
           "default": "localhost",
           "groups": [
             "advanced"
           ],
           "aliases": [],
           "spec": {
-            "value": "address"
+            "value": "host"
           }
         },
         {
           "name": "port",
           "type": "string",
-          "summary": "Use specific port for HTTP",
+          "summary": "Use specific port for the dev server",
           "default": "8100",
           "groups": [
             "advanced"
@@ -1575,16 +1875,15 @@
           }
         },
         {
-          "name": "devapp",
-          "type": "boolean",
-          "summary": "Publish DevApp service",
-          "default": false,
+          "name": "public-host",
+          "type": "string",
+          "summary": "The host used for the browser or web view",
           "groups": [
             "advanced"
           ],
           "aliases": [],
           "spec": {
-            "value": "true/false"
+            "value": "host"
           }
         },
         {
@@ -1613,18 +1912,8 @@
           "name": "prod",
           "type": "boolean",
           "summary": "Flag to use the `production` configuration",
-          "groups": [],
-          "aliases": [],
-          "spec": {
-            "value": "true/false"
-          }
-        },
-        {
-          "name": "source-map",
-          "type": "boolean",
-          "summary": "Output source maps",
           "groups": [
-            "advanced"
+            "cordova"
           ],
           "aliases": [],
           "spec": {
@@ -1636,13 +1925,27 @@
           "type": "string",
           "summary": "Specify the configuration to use.",
           "groups": [
-            "advanced"
+            "advanced",
+            "cordova"
           ],
           "aliases": [
             "c"
           ],
           "spec": {
             "value": "conf"
+          }
+        },
+        {
+          "name": "source-map",
+          "type": "boolean",
+          "summary": "Output source maps",
+          "groups": [
+            "advanced",
+            "cordova"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
           }
         },
         {
@@ -1744,8 +2047,7 @@
         {
           "name": "connect",
           "type": "boolean",
-          "summary": "Do not tie the running app to the process",
-          "default": true,
+          "summary": "Tie the running app to the process",
           "groups": [
             "native-run"
           ],
@@ -1771,15 +2073,97 @@
       "type": "project"
     },
     {
+      "name": "ionic deploy add",
+      "namespace": [
+        "ionic",
+        "deploy"
+      ],
+      "summary": "Adds Appflow Deploy to the project",
+      "description": "This command adds the Appflow Deploy plugin (`cordova-plugin-ionic`) for both Capacitor and Cordova projects.\n\nFor Capacitor projects it runs all the steps necessary to install the plugin, sync with the native projects and add the configuration to the proper iOS and Android configuration files.\n\nFor Cordova projects it just takes care of running the proper Cordova CLI command with the submitted parameters.",
+      "footnotes": [],
+      "groups": [
+        "paid"
+      ],
+      "exampleCommands": [
+        "ionic deploy add ",
+        "ionic deploy add --app-id=abcd1234 --channel-name=\"Master\" --update-method=background",
+        "ionic deploy add --max-store=2 --min-background-duration=30",
+        "ionic deploy add --app-id=abcd1234 --channel-name=\"Master\" --update-method=background --max-store=2 --min-background-duration=30"
+      ],
+      "aliases": [],
+      "inputs": [],
+      "options": [
+        {
+          "name": "app-id",
+          "type": "string",
+          "summary": "Your Appflow app ID",
+          "groups": [],
+          "aliases": [],
+          "spec": {
+            "value": "id"
+          }
+        },
+        {
+          "name": "channel-name",
+          "type": "string",
+          "summary": "The channel to check for updates from",
+          "groups": [],
+          "aliases": [],
+          "spec": {
+            "value": "name"
+          }
+        },
+        {
+          "name": "update-method",
+          "type": "string",
+          "summary": "The update method that dictates the behavior of the plugin",
+          "groups": [],
+          "aliases": [],
+          "spec": {
+            "value": "name"
+          }
+        },
+        {
+          "name": "max-store",
+          "type": "string",
+          "summary": "The maximum number of downloaded versions to store on the device",
+          "default": "2",
+          "groups": [
+            "advanced"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "quantity"
+          }
+        },
+        {
+          "name": "min-background-duration",
+          "type": "string",
+          "summary": "The minimum duration after which the app checks for an update in the background",
+          "default": "30",
+          "groups": [
+            "advanced"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "seconds"
+          }
+        }
+      ],
+      "type": "project"
+    },
+    {
       "name": "ionic deploy build",
       "namespace": [
         "ionic",
         "deploy"
       ],
       "summary": "Create a deploy build on Appflow",
-      "description": "This command creates a deploy build on Ionic Appflow. While the build is running, it prints the remote build log to the terminal.\n\nCustomizing the build:\n- The `--environment` and `--channel` options can be used to customize the groups of values exposed to the build.\n\nApart from `--commit`, every option can be specified using the full name setup within the Appflow [Dashboard](https://dashboard.ionicframework.com).",
+      "description": "This command creates a deploy build on Appflow. While the build is running, it prints the remote build log to the terminal.\n\nCustomizing the build:\n- The `--environment` and `--channel` options can be used to customize the groups of values exposed to the build.\n\nApart from `--commit`, every option can be specified using the full name setup within the Appflow [Dashboard](https://dashboard.ionicframework.com).",
       "footnotes": [],
-      "groups": [],
+      "groups": [
+        "paid"
+      ],
       "exampleCommands": [
         "ionic deploy build ",
         "ionic deploy build --environment=\"My Custom Environment Name\"",
@@ -1823,6 +2207,110 @@
           }
         }
       ],
+      "type": "project"
+    },
+    {
+      "name": "ionic deploy configure",
+      "namespace": [
+        "ionic",
+        "deploy"
+      ],
+      "summary": "Overrides Appflow Deploy configuration",
+      "description": "This command overrides configuration for the Appflow Deploy plugin (`cordova-plugin-ionic`) in Capacitor projects.\n\nFor Capacitor projects, if the plugin is already installed, it overrides the configuration variables in the native projects.\n\nFor Cordova projects this is not implemented because it is better to reinstall the plugin with the different parameters and let Cordova deal with the changes.",
+      "footnotes": [],
+      "groups": [
+        "paid"
+      ],
+      "exampleCommands": [
+        "ionic deploy configure ",
+        "ionic deploy configure --app-id=abcd1234 --channel-name=\"Master\" --update-method=background",
+        "ionic deploy configure --max-store=2 --min-background-duration=30",
+        "ionic deploy configure --app-id=abcd1234 --channel-name=\"Master\" --update-method=background --max-store=2 --min-background-duration=30",
+        "ionic deploy configure android",
+        "ionic deploy configure ios"
+      ],
+      "aliases": [],
+      "inputs": [
+        {
+          "name": "platform",
+          "summary": "The native platform (e.g. `ios`, `android`)",
+          "required": false
+        }
+      ],
+      "options": [
+        {
+          "name": "app-id",
+          "type": "string",
+          "summary": "Your Appflow app ID",
+          "groups": [],
+          "aliases": [],
+          "spec": {
+            "value": "id"
+          }
+        },
+        {
+          "name": "channel-name",
+          "type": "string",
+          "summary": "The channel to check for updates from",
+          "groups": [],
+          "aliases": [],
+          "spec": {
+            "value": "name"
+          }
+        },
+        {
+          "name": "update-method",
+          "type": "string",
+          "summary": "The update method that dictates the behavior of the plugin",
+          "groups": [],
+          "aliases": [],
+          "spec": {
+            "value": "name"
+          }
+        },
+        {
+          "name": "max-store",
+          "type": "string",
+          "summary": "The maximum number of downloaded versions to store on the device",
+          "groups": [
+            "advanced"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "quantity"
+          }
+        },
+        {
+          "name": "min-background-duration",
+          "type": "string",
+          "summary": "The minimum duration after which the app checks for an update in the background",
+          "groups": [
+            "advanced"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "seconds"
+          }
+        }
+      ],
+      "type": "project"
+    },
+    {
+      "name": "ionic deploy manifest",
+      "namespace": [
+        "ionic",
+        "deploy"
+      ],
+      "summary": "Generates a manifest file for the deploy service from a built app directory",
+      "description": "",
+      "footnotes": [],
+      "groups": [
+        "paid"
+      ],
+      "exampleCommands": [],
+      "aliases": [],
+      "inputs": [],
+      "options": [],
       "type": "project"
     },
     {
@@ -1937,7 +2425,9 @@
       "summary": "Register your Product Key with this app",
       "description": "",
       "footnotes": [],
-      "groups": [],
+      "groups": [
+        "paid"
+      ],
       "exampleCommands": [],
       "aliases": [],
       "inputs": [],
@@ -1970,8 +2460,8 @@
       "namespace": [
         "ionic"
       ],
-      "summary": "Automatically create framework features",
-      "description": "This command uses the Angular CLI to generate features such as `pages`, `components`, `directives`, `services`, etc.\n\n - For a full list of available types, use `npx ng g --help`\n - For a list of options for a types, use `npx ng g <type> --help`\n\nYou can specify a path to nest your feature within any number of subdirectories. For example, specify a name of `\"pages/New Page\"` to generate page files at **src/app/pages/new-page/**.\n\nTo test a generator before file modifications are made, use the `--dry-run` option.",
+      "summary": "Create Pages, Components, & Angular Features",
+      "description": "Automatically create framework features with Ionic Generate. This command uses the Angular CLI to generate features such as `pages`, `components`, `directives`, `services`, and more.\n\n - For a full list of available types, use `npx ng g --help`\n - For a list of options for a types, use `npx ng g <type> --help`\n\nYou can specify a path to nest your feature within any number of subdirectories. For example, specify a name of `\"pages/New Page\"` to generate page files at **src/app/pages/new-page/**.\n\nTo test a generator before file modifications are made, use the `--dry-run` option.",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [
@@ -2007,10 +2497,12 @@
         "ionic",
         "git"
       ],
-      "summary": "Adds/updates the Ionic Appflow git remote to your local Ionic app",
-      "description": "This command is used by `ionic link` when Ionic Appflow is used as the git host.\n\n`ionic git remote` will check the local repository for whether or not the git remote is properly set up. This command operates on the **ionic** remote. For advanced configuration, see **Settings** => **Git** in the app settings of the [Dashboard](https://dashboard.ionicframework.com).",
+      "summary": "Adds/updates the Appflow git remote to your local Ionic app",
+      "description": "This command is used by `ionic link` when Appflow is used as the git host.\n\n`ionic git remote` will check the local repository for whether or not the git remote is properly set up. This command operates on the **ionic** remote. For advanced configuration, see **Settings** => **Git** in the app settings of the [Dashboard](https://dashboard.ionicframework.com).",
       "footnotes": [],
-      "groups": [],
+      "groups": [
+        "paid"
+      ],
       "exampleCommands": [],
       "aliases": [],
       "inputs": [],
@@ -2049,7 +2541,7 @@
         "ionic"
       ],
       "summary": "Initialize existing projects with Ionic",
-      "description": "This command will initialize the current directory with an **ionic.config.json** file.\n\n`ionic init` will prompt for a project name and then proceed to determine the type of your project. You can specify the `name` argument and `--type` option to provide these values via command-line.",
+      "description": "This command will initialize an Ionic app within the current directory. Usually, this means an `ionic.config.json` file is created. If used within a multi-app project, the app is initialized in the root `ionic.config.json`.\n\n`ionic init` will prompt for a project name and then proceed to determine the type of your project. You can specify the `name` argument and `--type` option to provide these values via command-line.\n\nIf the `--multi-app` flag is specified, this command will initialize your project as a multi-app project, allowing for apps within monorepos and unconventional repository structures. See the multi-app [docs](https://ionicframework.com/docs/cli/configuration#multi-app-projects) for details. Once a multi-app project is initialized, you can run `ionic init` again within apps in your project to initialize them.",
       "footnotes": [],
       "groups": [
         "beta"
@@ -2057,21 +2549,22 @@
       "exampleCommands": [
         "ionic init ",
         "ionic init \"My App\"",
-        "ionic init \"My App\" --type=angular"
+        "ionic init \"My App\" --type=angular",
+        "ionic init --multi-app"
       ],
       "aliases": [],
       "inputs": [
         {
           "name": "name",
           "summary": "The name of your project (e.g. `myApp`, `\"My App\"`)",
-          "required": true
+          "required": false
         }
       ],
       "options": [
         {
           "name": "type",
           "type": "string",
-          "summary": "Type of project (e.g. `angular`, `ionic-angular`, `ionic1`, `custom`, `react`, `vue`)",
+          "summary": "Type of project (e.g. `angular`, `react`, `vue`, `custom`)",
           "groups": [],
           "aliases": [],
           "spec": {
@@ -2092,6 +2585,17 @@
           }
         },
         {
+          "name": "multi-app",
+          "type": "boolean",
+          "summary": "Initialize a multi-app project",
+          "default": false,
+          "groups": [],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
+          }
+        },
+        {
           "name": "project-id",
           "type": "string",
           "summary": "Specify a slug for your app",
@@ -2101,6 +2605,18 @@
           "aliases": [],
           "spec": {
             "value": "slug"
+          }
+        },
+        {
+          "name": "default",
+          "type": "boolean",
+          "summary": "Mark the initialized app as the default project",
+          "groups": [
+            "advanced"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
           }
         }
       ],
@@ -2117,7 +2633,13 @@
       "footnotes": [],
       "groups": [],
       "exampleCommands": [],
-      "aliases": [],
+      "aliases": [
+        "ionic integrations dis",
+        "ionic integrations delete",
+        "ionic integrations del",
+        "ionic integrations remove",
+        "ionic integrations rm"
+      ],
       "inputs": [
         {
           "name": "name",
@@ -2139,7 +2661,10 @@
       "footnotes": [],
       "groups": [],
       "exampleCommands": [],
-      "aliases": [],
+      "aliases": [
+        "ionic integrations en",
+        "ionic integrations add"
+      ],
       "inputs": [
         {
           "name": "name",
@@ -2171,7 +2696,7 @@
         {
           "name": "quiet",
           "type": "boolean",
-          "summary": "Do not log file operations",
+          "summary": "Less verbose output, ignore integration errors",
           "groups": [],
           "aliases": [],
           "spec": {
@@ -2205,9 +2730,11 @@
         "ionic"
       ],
       "summary": "Connect local apps to Ionic",
-      "description": "Link apps on Ionic Appflow to local Ionic projects with this command.\n\nIf the `id` argument is excluded, this command will prompt you to select an app from Ionic Appflow.\n\nIonic Appflow uses a git-based workflow to manage app updates. During the linking process, select **GitHub** (recommended) or **Ionic Appflow** as a git host. See our [documentation](https://ionicframework.com/docs/appflow/basics/git) for more information.\n\nUltimately, this command sets the **id** property in **./ionic.config.json**, which marks this app as linked.\n\nIf you are having issues linking, please get in touch with our [Support](https://ion.link/support-request).",
+      "description": "Link apps on Appflow to local Ionic projects with this command.\n\nIf the `id` argument is excluded, this command will prompt you to select an app from Appflow.\n\nAppflow uses a git-based workflow to manage app updates. During the linking process, select **GitHub** (recommended) or **Appflow** as a git host. See our [documentation](https://ionicframework.com/docs/appflow/basics/git) for more information.\n\nUltimately, this command sets the **id** property in **./ionic.config.json**, which marks this app as linked.\n\nIf you are having issues linking, please get in touch with our [Support](https://ion.link/support-request).",
       "footnotes": [],
-      "groups": [],
+      "groups": [
+        "paid"
+      ],
       "exampleCommands": [
         "ionic link ",
         "ionic link a1b2c3d4"
@@ -2216,7 +2743,7 @@
       "inputs": [
         {
           "name": "id",
-          "summary": "The Ionic Appflow ID of the app to link (e.g. `a1b2c3d4`)",
+          "summary": "The Appflow ID of the app to link (e.g. `a1b2c3d4`)",
           "required": false
         }
       ],
@@ -2229,7 +2756,7 @@
         "ionic"
       ],
       "summary": "Log in to Ionic",
-      "description": "Authenticate with Ionic and retrieve a user token, which is stored in the CLI config. The most secure way to log in is running `ionic login` without arguments, which will prompt you for your credentials.\n\nIf the `IONIC_TOKEN` environment variable is set, the CLI will automatically authenticate you. To retrieve your user token, first use `ionic login`, then print the token by running the `ionic config get -g tokens.user` command.\n\n`ionic login` will also accept `password` through stdin, e.g.: `echo \"<password>\" | ionic login <email>`.\n\nIf you need to create an Ionic account, use `ionic signup`.\n\nYou can reset your password in the [Dashboard](https://dashboard.ionicframework.com/reset-password).\n\nIf you are having issues logging in, please get in touch with our [Support](https://ion.link/support-request).",
+      "description": "Authenticate with Ionic and retrieve a user token, which is stored in the CLI config. The most secure way to log in is running `ionic login` without arguments, which will open a browser where you can submit your credentials.\n\nIf the `IONIC_TOKEN` environment variable is set, the CLI will automatically authenticate you. To retrieve your user token, first use `ionic login <email> <password>` to log in, then use `ionic config get -g tokens.user` to print the token. (**Note**: Tokens retrieved from the browser login are short-lived and not recommended for use with `IONIC_TOKEN`.)\n\n`ionic login` will also accept `password` through stdin, e.g.: `echo \"<password>\" | ionic login <email>`.\n\nIf you need to create an Ionic account, use `ionic signup` or the Ionic [Website](https://ionicframework.com/signup).\n\nYou can reset your password in the [Dashboard](https://dashboard.ionicframework.com/reset-password).\n\nIf you are having issues logging in, please get in touch with our [Support](https://ion.link/support-request).",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [
@@ -2242,12 +2769,12 @@
         {
           "name": "email",
           "summary": "Your email address",
-          "required": true
+          "required": false
         },
         {
           "name": "password",
           "summary": "Your password",
-          "required": true
+          "required": false
         }
       ],
       "options": [],
@@ -2275,17 +2802,20 @@
         "package"
       ],
       "summary": "Create a package build on Appflow",
-      "description": "This command creates a package build on Ionic Appflow. While the build is running, it prints the remote build log to the terminal. If the build is successful, it downloads the created app package file in the current directory.\n\nApart from `--commit`, every option can be specified using the full name setup within the [Dashboard](https://dashboard.ionicframework.com).\n\nThe `--security-profile` option is mandatory for any iOS build but not for Android debug builds.\n\nCustomizing the build:\n- The `--environment` and `--native-config` options can be used to customize the groups of values exposed to the build.\n- Override the preferred platform with `--target-platform`. This is useful for building older iOS apps.",
+      "description": "This command creates a package build on Appflow. While the build is running, it prints the remote build log to the terminal. If the build is successful, it downloads the created app package file in the current directory.\n\nApart from `--commit`, every option can be specified using the full name setup within the [Dashboard](https://dashboard.ionicframework.com).\n\nThe `--signing-certificate` option is mandatory for any iOS build but not for Android debug builds.\n\nCustomizing the build:\n- The `--environment` and `--native-config` options can be used to customize the groups of values exposed to the build.\n- Override the preferred platform with `--build-stack`. This is useful for building older iOS apps.\n\nDeploying the build to an App Store:\n- The `--destination` option can be used to deliver the app created by the build to the configured App Store. This can be used only together with build type `release` for Android and build types `app-store` or `enterprise` for iOS.",
       "footnotes": [],
-      "groups": [],
+      "groups": [
+        "paid"
+      ],
       "exampleCommands": [
         "ionic package build android debug",
-        "ionic package build ios development --security-profile=\"iOS Security Profile Name\"",
+        "ionic package build ios development --signing-certificate=\"iOS Signing Certificate Name\"",
         "ionic package build android debug --environment=\"My Custom Environment Name\"",
         "ionic package build android debug --native-config=\"My Custom Native Config Name\"",
         "ionic package build android debug --commit=2345cd3305a1cf94de34e93b73a932f25baac77c",
-        "ionic package build ios development --security-profile=\"iOS Security Profile Name\" --target-platform=\"iOS - Xcode 9\"",
-        "ionic package build ios development --security-profile=\"iOS Security Profile Name\" --build-file-name=my_custom_file_name.ipa"
+        "ionic package build ios development --signing-certificate=\"iOS Signing Certificate Name\" --build-stack=\"iOS - Xcode 9\"",
+        "ionic package build ios development --signing-certificate=\"iOS Signing Certificate Name\" --build-file-name=my_custom_file_name.ipa",
+        "ionic package build ios app-store --signing-certificate=\"iOS Signing Certificate Name\" --destination=\"Apple App Store Destination\""
       ],
       "aliases": [],
       "inputs": [
@@ -2302,9 +2832,9 @@
       ],
       "options": [
         {
-          "name": "security-profile",
+          "name": "signing-certificate",
           "type": "string",
-          "summary": "Security profile",
+          "summary": "Signing certificate",
           "groups": [],
           "aliases": [],
           "spec": {
@@ -2332,6 +2862,16 @@
           }
         },
         {
+          "name": "destination",
+          "type": "string",
+          "summary": "The configuration to deploy the build artifact to the app store",
+          "groups": [],
+          "aliases": [],
+          "spec": {
+            "value": "name"
+          }
+        },
+        {
           "name": "commit",
           "type": "string",
           "summary": "Commit (defaults to HEAD)",
@@ -2344,9 +2884,9 @@
           }
         },
         {
-          "name": "target-platform",
+          "name": "build-stack",
           "type": "string",
-          "summary": "Target platform (`\"Android\"`, `\"iOS - Xcode 10 (Preferred)\"`, `\"iOS - Xcode 9\"`, `\"iOS - Xcode 8\"`)",
+          "summary": "Build stack (`\"Android\"`, `\"iOS - Xcode 11 (Preferred)\"`, `\"iOS - Xcode 10\"`)",
           "groups": [
             "advanced"
           ],
@@ -2371,6 +2911,37 @@
       "type": "project"
     },
     {
+      "name": "ionic package deploy",
+      "namespace": [
+        "ionic",
+        "package"
+      ],
+      "summary": "Deploys a binary to a destination, such as an app store using Appflow",
+      "description": "This command deploys a binary to a destination using Appflow. While running, the remote log is printed to the terminal.\n\nThe command takes two parameters: the numeric ID of the package build that previously created the binary and the name of the destination where the binary is going to be deployed.\nBoth can be retrieved from the [Dashboard](https://dashboard.ionicframework.com).",
+      "footnotes": [],
+      "groups": [
+        "paid"
+      ],
+      "exampleCommands": [
+        "ionic package deploy 123456789 \"My app store destination\""
+      ],
+      "aliases": [],
+      "inputs": [
+        {
+          "name": "build-id",
+          "summary": "The build id of the desired successful package build",
+          "required": true
+        },
+        {
+          "name": "destination",
+          "summary": "The destination to deploy the build artifact to the app store",
+          "required": true
+        }
+      ],
+      "options": [],
+      "type": "project"
+    },
+    {
       "name": "ionic repair",
       "namespace": [
         "ionic"
@@ -2382,7 +2953,18 @@
       "exampleCommands": [],
       "aliases": [],
       "inputs": [],
-      "options": [],
+      "options": [
+        {
+          "name": "cordova",
+          "type": "boolean",
+          "summary": "Only perform the repair steps for Cordova platforms and plugins.",
+          "groups": [],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
+          }
+        }
+      ],
       "type": "project"
     },
     {
@@ -2391,12 +2973,12 @@
         "ionic"
       ],
       "summary": "Start a local dev server for app dev/testing",
-      "description": "Easily spin up a development server which launches in your browser. It watches for changes in your source files and automatically reloads with the updated build.\n\nBy default, `ionic serve` boots up a development server on all network interfaces and prints the external address(es) on which your app is being served. It also broadcasts your app to the Ionic DevApp on your network. To disable the DevApp and bind to `localhost`, use `--local`.\n\nTry the `--lab` option to see multiple platforms at once.\n\n`ionic serve` uses the Angular CLI. Use `ng serve --help` to list all Angular CLI options for serving your app. See the `ng serve` [docs](https://angular.io/cli/serve) for explanations. Options not listed below are considered advanced and can be passed to the Angular CLI using the `--` separator after the Ionic CLI arguments. See the examples.\n\nThe dev server can use HTTPS via the `--ssl` option **(experimental)**. There are several known issues with HTTPS. See issue [#3305](https://github.com/ionic-team/ionic-cli/issues/3305).",
+      "description": "Easily spin up a development server which launches in your browser. It watches for changes in your source files and automatically reloads with the updated build.\n\nBy default, `ionic serve` boots up a development server on `localhost`. To serve to your LAN, specify the `--external` option, which will use all network interfaces and print the external address(es) on which your app is being served.\n\nTry the `--lab` option to see multiple platforms at once.\n\n`ionic serve` uses the Angular CLI. Use `ng serve --help` to list all Angular CLI options for serving your app. See the `ng serve` [docs](https://angular.io/cli/serve) for explanations. Options not listed below are considered advanced and can be passed to the Angular CLI using the `--` separator after the Ionic CLI arguments. See the examples.\n\nThe dev server can use HTTPS via the `--ssl` option **(experimental)**. There are several known issues with HTTPS. See issue [#3305](https://github.com/ionic-team/ionic-cli/issues/3305).",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [
         "ionic serve ",
-        "ionic serve --local",
+        "ionic serve --external",
         "ionic serve --lab",
         "ionic serve -- --proxy-config proxy.conf.json"
       ],
@@ -2464,7 +3046,9 @@
             "advanced",
             "cordova"
           ],
-          "aliases": [],
+          "aliases": [
+            "c"
+          ],
           "spec": {
             "value": "conf"
           }
@@ -2483,22 +3067,32 @@
           }
         },
         {
-          "name": "address",
+          "name": "external",
+          "type": "boolean",
+          "summary": "Host dev server on all network interfaces (i.e. `--host=0.0.0.0`)",
+          "groups": [],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
+          }
+        },
+        {
+          "name": "host",
           "type": "string",
-          "summary": "Use specific address for the dev server",
+          "summary": "Use specific host for the dev server",
           "default": "localhost",
           "groups": [
             "advanced"
           ],
           "aliases": [],
           "spec": {
-            "value": "address"
+            "value": "host"
           }
         },
         {
           "name": "port",
           "type": "string",
-          "summary": "Use specific port for HTTP",
+          "summary": "Use specific port for the dev server",
           "default": "8100",
           "groups": [
             "advanced"
@@ -2508,6 +3102,18 @@
           ],
           "spec": {
             "value": "port"
+          }
+        },
+        {
+          "name": "public-host",
+          "type": "string",
+          "summary": "The host used for the browser or web view",
+          "groups": [
+            "advanced"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "host"
           }
         },
         {
@@ -2522,22 +3128,9 @@
           }
         },
         {
-          "name": "devapp",
-          "type": "boolean",
-          "summary": "Publish DevApp service",
-          "default": false,
-          "groups": [
-            "advanced"
-          ],
-          "aliases": [],
-          "spec": {
-            "value": "true/false"
-          }
-        },
-        {
           "name": "lab-host",
           "type": "string",
-          "summary": "Use specific address for Ionic Lab server",
+          "summary": "Use specific host for Ionic Lab server",
           "default": "localhost",
           "groups": [
             "advanced"

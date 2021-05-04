@@ -9,12 +9,6 @@ contributors:
   - brandyscarney
 ---
 
-<link rel="stylesheet" href="https://unpkg.com/@ionic/core/css/text-alignment.css">
-<link rel="stylesheet" href="https://unpkg.com/@ionic/core/css/text-transformation.css">
-<link rel="stylesheet" href="https://unpkg.com/@ionic/core/css/float-elements.css">
-<link rel="stylesheet" href="https://unpkg.com/@ionic/core/css/padding.css">
-<link rel="stylesheet" href="https://unpkg.com/@ionic/core/css/flex-utils.css">
-
 # CSS Utilities
 
 Ionic Framework provides a set of CSS utility classes that can be used on any element in order to modify the text, element placement or adjust the padding and margin.
@@ -642,6 +636,28 @@ The default amount of `margin` to be applied is `16px` and is set by the `--ion-
 | `.ion-align-self-stretch`  | `align-self: stretch`    | Item is stretched to fill the container.                                            |
 | `.ion-align-self-auto`     | `align-self: auto`       | Item is positioned according to the parent's `align-items` value.                   |
 
+## Border Display
+
+The border display CSS property determines if the border should be visible or not. The property can be applied to the ion-header and the ion-footer.
+
+```html
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Header - No Border</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Footer - No Border</ion-title>
+  </ion-toolbar>
+</ion-footer>
+```
+
+| Class              |  Description                                                                                               |
+|--------------------|-----------------------------------------------------------------------------------------------------------|
+| `.ion-no-border`  |  The element will have no border.
 
 ## Ionic Breakpoints
 

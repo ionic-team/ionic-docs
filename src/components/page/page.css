@@ -2,7 +2,7 @@
 
 docs-page {
   display: grid;
-  font-size: 15px;
+  font-size: 16px;
   grid-template-columns: 1fr minmax(0, var(--page-width, 720px)) 1fr;
   line-height: 2;
   margin-left: var(--page-margin-left);
@@ -48,7 +48,38 @@ docs-page .full-screen {
   padding: 0;
 }
 
+docs-page .page-heading-encapsulation {
+  text-transform: uppercase;
+
+  background: transparent;
+  color: #2d4665;
+
+  border: 1px solid #dee3ea;
+  border-radius: 14px;
+  height: 24px;
+  padding: 2px 8px;
+
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 14px;
+  display: inline-flex;
+  align-items: center;
+
+  align-self: center;
+  justify-self: flex-end;
+
+  letter-spacing: 0.08em;
+  float: right;
+}
+
+docs-page .page-heading-encapsulation:hover {
+  border-color: #92a1b3;
+}
+
 docs-page h1 {
+  display: flex;
+  justify-content: space-between;
+
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
@@ -99,7 +130,7 @@ docs-page aside {
 }
 
 @media (min-width: 1234px) {
-  docs-page main.no-demo docs-table-of-contents {
+  docs-page main.no-demo .page-meta {
     position: fixed;
     right: 0;
     top: 100px;
@@ -107,11 +138,15 @@ docs-page aside {
     transition: .2s transform ease;
   }
 
-  docs-header.hidden ~ stencil-route docs-page main.no-demo docs-table-of-contents {
+  docs-header.hidden ~ stencil-route docs-page main.no-demo .page-meta {
     transform: translateY(-60px);
   }
 }
-/* 
+
+docs-page main.has-demo .page-meta internal-ad {
+  display:  none;
+}
+/*
 @media (min-width: 1440px) {
   docs-page aside {
     position: absolute;

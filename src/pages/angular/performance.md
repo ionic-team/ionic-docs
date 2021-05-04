@@ -1,6 +1,6 @@
 ---
-previousText: 'Navigation'
-previousUrl: '/docs/angular/navigation'
+previousText: 'Storage'
+previousUrl: '/docs/angular/storage'
 ---
 
 # Angular Performance

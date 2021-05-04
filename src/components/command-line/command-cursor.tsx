@@ -4,8 +4,8 @@ import { Component, Prop } from '@stencil/core';
   tag: 'command-cursor',
   styleUrl: 'command-cursor.css',
 })
-export class CommandLine {
-  @Prop() blink: boolean;
+export class CommandLineCursor {
+  @Prop() blink!: boolean;
 
   hostData() {
     return {

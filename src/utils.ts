@@ -15,8 +15,8 @@ export const keyBy = (
   }, {});
 
 export const debounce = (fn: (...args: any[]) => any, wait: number) => {
-  let scheduled = null;
-  return (...args) => {
+  let scheduled: any = null;
+  return (...args: any) => {
     clearTimeout(scheduled);
     scheduled = setTimeout(fn, wait, ...args);
   };

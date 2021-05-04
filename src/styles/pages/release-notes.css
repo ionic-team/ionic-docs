@@ -1,4 +1,8 @@
-.page-release-notes .release-note {
+.page-reference-release-notes .intro {
+  margin-bottom: 2.2em;
+}
+
+.page-reference-release-notes .release-note {
   position: relative;
 
   display: flex;
@@ -8,37 +12,37 @@
 }
 
 /* Turn off the # on anchor hover */
-.page-release-notes h2 a[href^="#"]:hover:before,
-.page-release-notes h3 a[href^="#"]:hover:before,
-.page-release-notes h4 a[href^="#"]:hover:before,
-.page-release-notes h5 a[href^="#"]:hover:before,
-.page-release-notes h6 a[href^="#"]:hover:before {
+.page-reference-release-notes h2 a[href^="#"]:hover:before,
+.page-reference-release-notes h3 a[href^="#"]:hover:before,
+.page-reference-release-notes h4 a[href^="#"]:hover:before,
+.page-reference-release-notes h5 a[href^="#"]:hover:before,
+.page-reference-release-notes h6 a[href^="#"]:hover:before {
   opacity: 0;
 }
 
-.page-release-notes h2 {
+.page-reference-release-notes h2 {
   margin: 0;
 
   font-size: 32px;
 }
 
-.page-release-notes h3 {
+.page-reference-release-notes h3 {
   margin-top: 32px;
   margin-bottom: 0;
 
   font-size: 20px;
 }
 
-.page-release-notes h2,
-.page-release-notes h3 {
+.page-reference-release-notes h2,
+.page-reference-release-notes h3 {
   padding-top: 0;
 }
 
-.page-release-notes ul {
+.page-reference-release-notes ul {
   margin-top: .8em;
 }
 
-.page-release-notes ul li {
+.page-reference-release-notes ul li {
   line-height: 1.5;
   margin-bottom: 8px;
 }
@@ -48,23 +52,23 @@
  * --------------------------------------------------------
  */
 
-.page-release-notes .release-header {
+.page-reference-release-notes .release-header {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
 }
 
-.page-release-notes .release-header h2 {
+.page-reference-release-notes .release-header h2 {
   font-family: var(--font-family);
 
   margin-right: 8px;
 }
 
-.page-release-notes .release-header .release-version {
+.page-reference-release-notes .release-header .release-version {
   font-weight: 500;
 }
 
-.page-release-notes .release-published h3 {
+.page-reference-release-notes .release-published h3 {
   font-family: var(--font-family);
 
   font-weight: 300;
@@ -73,7 +77,7 @@
   color: #4E5B6A;
 }
 
-.page-release-notes .release-badge {
+.page-reference-release-notes .release-badge {
   margin-right: 8px;
   margin-top: 5px;
   margin-bottom: 4px;
@@ -95,19 +99,19 @@
   letter-spacing: 0.08em;
 }
 
-.page-release-notes .release-note-major .release-badge {
+.page-reference-release-notes .release-note-major .release-badge {
   background: var(--text-color--dark);
   border-color: var(--text-color--dark);
   color: white;
 }
 
-.page-release-notes .release-note-minor .release-badge {
+.page-reference-release-notes .release-note-minor .release-badge {
   background: #b2becd;
   border-color: #b2becd;
   color: white;
 }
 
-.page-release-notes .release-badge.release-badge-latest {
+.page-reference-release-notes .release-badge.release-badge-latest {
   background: transparent;
   color: #43c465;
   border-color: #43c465;
@@ -119,13 +123,13 @@
  * --------------------------------------------------------
  */
 
-.page-release-notes .release-tag-wrapper h2 {
+.page-reference-release-notes .release-tag-wrapper h2 {
   font-size: 15px;
 
   margin-right: 30px;
 }
 
-.page-release-notes .release-note-patch .release-tag-wrapper:after {
+.page-reference-release-notes .release-note-patch .release-tag-wrapper:after {
   content: "";
   background-image: linear-gradient(to bottom, #ebf0f6, #ebf0f6);
   width: 2px;
@@ -136,7 +140,7 @@
   z-index: -1;
 }
 
-.page-release-notes .release-tag {
+.page-reference-release-notes .release-tag {
   line-height: 200%;
   color: var(--accent-color-200);
 
@@ -156,22 +160,22 @@
   line-height: normal;
 }
 
-.page-release-notes .release-tag:hover {
+.page-reference-release-notes .release-tag:hover {
   background: var(--accent-color-800);
 }
 
-.page-release-notes .release-note-major .release-tag,
-.page-release-notes .release-note-minor .release-tag {
+.page-reference-release-notes .release-note-major .release-tag,
+.page-reference-release-notes .release-note-minor .release-tag {
   background: var(--accent-color-200);
   color: #fff;
 }
 
-.page-release-notes .release-note-major:hover .release-tag,
-.page-release-notes .release-note-minor:hover .release-tag {
+.page-reference-release-notes .release-note-major:hover .release-tag,
+.page-reference-release-notes .release-note-minor:hover .release-tag {
   background: var(--accent-color-100);
 }
 
-.page-release-notes .release-tag .release-symbol {
+.page-reference-release-notes .release-tag .release-symbol {
   font-family: var(--font-family);
   font-weight: 300;
 
@@ -183,7 +187,7 @@
   margin-bottom: -7px;
 }
 
-.page-release-notes .release-tag .release-version {
+.page-reference-release-notes .release-tag .release-version {
   font-family: var(--code-font-family);
   font-size: 10px;
   letter-spacing: -0.08em;
@@ -195,13 +199,13 @@
  * --------------------------------------------------------
  */
 
-.page-release-notes blockquote {
+.page-reference-release-notes blockquote {
   margin-left: 0;
 
   background: rgba(var(--accent-color-rgb), 0.05);
   border-color: var(--accent-color);
 }
 
-.page-release-notes a {
+.page-reference-release-notes a {
   color: var(--accent-color);
 }

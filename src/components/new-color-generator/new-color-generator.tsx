@@ -12,7 +12,7 @@ export class ColorGenerator {
   @State() name = 'New';
   @State() value = '#69bb7b';
 
-  @Element() el: HTMLElement;
+  @Element() el!: HTMLElement;
 
   @Listen('nameChange')
   onNameChange(ev: any) {
@@ -61,13 +61,12 @@ ${selector} {
 
   render() {
     return [
-      <color-gen-variable-selector id="base" is-new="true" name={ this.name } value={ this.value }></color-gen-variable-selector>,
+      <color-gen-variable-selector id="base" is-new="true" name={this.name} value={this.value}></color-gen-variable-selector>,
       <color-gen-css-text header={false} cssText={this.cssText}></color-gen-css-text>
     ];
   }
 
 }
-
 
 const DEFAULT_CSS_TEXT = `
 :root {

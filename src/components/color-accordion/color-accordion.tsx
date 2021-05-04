@@ -1,6 +1,5 @@
 import { Build, Component, Element, State, h } from '@stencil/core';
 
-
 @Component({
   tag: 'color-accordion',
   styleUrl: 'color-accordion.css'
@@ -11,7 +10,7 @@ export class ColorAccordion {
 
   @State() activeColor = '';
 
-  @Element() el: HTMLElement;
+  @Element() el!: HTMLElement;
 
   toggleActiveColor(color: string) {
     if (this.activeColor === color) {
@@ -33,14 +32,16 @@ export class ColorAccordion {
       const tintColor = getComputedStyle(this.el).getPropertyValue(`--ion-color-${color}-tint`);
 
       return (
-        <li class={{
-          'color-menu-item': true,
-          'color-menu-item-active': isActive
-        }} style={{
-          'background-color': `var(--ion-color-${color})`,
-          'color': `var(--ion-color-${color}-contrast)`
-        }}>
-
+        <li
+          class={{
+            'color-menu-item': true,
+            'color-menu-item-active': isActive
+          }}
+          style={{
+            'background-color': `var(--ion-color-${color})`,
+            'color': `var(--ion-color-${color}-contrast)`
+          }}
+        >
           <div class="color-menu-text" onClick={() => this.toggleActiveColor(color)}>
             {color[0].toUpperCase() + color.substr(1)}
             <div class="color-menu-value">{baseColor}</div>
@@ -55,19 +56,25 @@ export class ColorAccordion {
           </svg>
 
           <ul class="color-submenu">
-            <li class="color-submenu-item" style={{
-              'background-color': `var(--ion-color-${color}-shade)`,
-              'color': `var(--ion-color-${color}-contrast)`
-            }}>
+            <li
+              class="color-submenu-item"
+              style={{
+                'background-color': `var(--ion-color-${color}-shade)`,
+                'color': `var(--ion-color-${color}-contrast)`
+              }}
+            >
               <div class="color-menu-text">
                 Shade
               <div class="color-menu-value">{shadeColor}</div>
               </div>
             </li>
-            <li class="color-submenu-item" style={{
-              'background-color': `var(--ion-color-${color}-tint)`,
-              'color': `var(--ion-color-${color}-contrast)`
-            }}>
+            <li
+              class="color-submenu-item"
+              style={{
+                'background-color': `var(--ion-color-${color}-tint)`,
+                'color': `var(--ion-color-${color}-contrast)`
+              }}
+            >
               <div class="color-menu-text">
                 Tint
               <div class="color-menu-value">{tintColor}</div>

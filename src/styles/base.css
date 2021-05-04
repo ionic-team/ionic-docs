@@ -1,10 +1,3 @@
-@font-face {
-  src: url("/docs/assets/fonts/eina-700.woff2") format("woff2"), url("/docs/assets/fonts/eina-700.woff") format("woff");
-  font-family: "Eina";
-  font-style: normal;
-  font-weight: 700;
-}
-
 :root {
   --accent-color: #3880ff;
   --accent-color-rgb: 56, 128, 255;
@@ -23,16 +16,16 @@
   --code-background: #f5f7fa;
   --code-color: var(--text-color--dark);
   --code-font-family: "SFMono-Regular", "Roboto Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  --font-family: system-ui, sans-serif;
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI emoji";
   --header-height: 56px;
-  --heading-font-family: "Eina", var(--font-family);
+  --heading-font-family: var(--font-family);
   --line-rule-color: #edf2f6;
   --menu-width: 240px;
   --offset-background: #fdfdff;
   --offset-background--dark: #f7f7ff;
   --page-margin-left: var(--menu-width);
 
-  --text-color: #4e5b6a;
+  --text-color: #303943;
   --text-color--darker: #24282e;
   --text-color--dark: #020814;
   --text-color--lighter: #abb2bf;
@@ -87,7 +80,7 @@ img {
 
 a {
   color: var(--accent-color);
-  font-weight: 500;
+  font-weight: 400;
   text-decoration: none;
 }
 
@@ -128,13 +121,27 @@ h5,
 h6 {
   color: var(--text-color--dark);
   font-family: var(--heading-font-family);
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
   line-height: 1.1;
   padding-top: 2em;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  font-weight: 700;
+}
 
 h1 {
-  font-size: 4rem;
+  font-size: 3.5rem;
   padding-top: 0;
 }
 
@@ -146,10 +153,14 @@ h1 {
 
 h2 {
   font-size: 1.825rem;
+
+  margin-bottom: 0.2em;
 }
 
 h3 {
   font-size: 1.375rem;
+
+  margin-bottom: 0.2em;
 }
 
 h4 {
@@ -166,6 +177,13 @@ h3 + h4 {
   margin-top: -1em;
 }
 
+h2 + p > small,
+h3 + p > small,
+h4 + p > small {
+  display: block;
+  margin-top: -2em;
+}
+
 blockquote {
   background: rgba(255, 250, 237, 0.8);
   border-left: 4px solid #ffcc5f;
@@ -173,7 +191,7 @@ blockquote {
   color: #736545;
   font-size: 14px;
   line-height: 1.8;
-  margin: 1em;
+  margin: 1em 0;
   padding: 2em;
 }
 
@@ -216,7 +234,7 @@ kbd {
   border-radius: 4px;
   color: var(--code-color);
   font-family: var(--code-font-family);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 500;
   letter-spacing: 0;
   padding: 4px 6px;
@@ -235,6 +253,7 @@ pre {
 pre code {
   background-color: transparent;
   color: inherit;
+  font-size: 13px;
   padding: 0;
   white-space: inherit;
 }

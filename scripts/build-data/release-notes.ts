@@ -1,9 +1,14 @@
-import { resolve } from 'path';
+import dotenv from 'dotenv';
 import { outputJson } from 'fs-extra';
-import renderMarkdown from '../build-pages/markdown-renderer';
 import fetch from 'node-fetch';
+import { resolve } from 'path';
+import semver from 'semver';
 import url from 'url';
+
 import { convertHtmlToHypertextData } from '../build-pages/html-to-hypertext-data';
+import renderMarkdown from '../build-pages/markdown-renderer';
+
+dotenv.config();
 
 const OUTPUT_PATH = resolve(
   __dirname,
@@ -18,23 +23,31 @@ export default {
 // Get the GitHub Releases from Ionic
 // This requires an environment GITHUB_TOKEN
 // otherwise it may fail silently
-async function getReleases() {
+export const getReleases = async () => {
   try {
-    const request = await fetch(url.format({
-      protocol: 'https',
-      hostname: 'api.github.com',
-      pathname: 'repos/ionic-team/ionic/releases',
-      query: {
-        access_token: process.env.GITHUB_TOKEN
+    const request = await fetch(
+      url.format({
+        protocol: 'https',
+        hostname: 'api.github.com',
+        pathname: 'repos/ionic-team/ionic/releases'
+      }), {
+       headers: {
+          'Authorization': process.env.GITHUB_TOKEN !== undefined ? `token ${process.env.GITHUB_TOKEN}` : ''
+        }
       }
-    }));
+    );
 
     const releases = await request.json();
 
     // Check that the response is an array in case it was
     // successful but returned an object
     if (Array.isArray(releases)) {
-      return releases.map(release => {
+      return releases.filter(release => {
+        const releasePattern = /^v(\d+)\.(\d+)\.(\d+)$/;
+
+        // All non-prerelease, non-alpha, non-beta, non-rc release
+        return releasePattern.test(release.tag_name);
+      }).map(release => {
         const body = parseMarkdown(release.body);
         const published_at = parseDate(release.published_at);
         const version = release.tag_name.replace('v', '');
@@ -54,19 +67,7 @@ async function getReleases() {
           version
         };
       }).sort((a, b) => {
-        if (a.tag_name < b.tag_name) {
-          return 1;
-        }
-        if (a.tag_name > b.tag_name) {
-          return -1;
-        }
-        // a must be equal to b
-        return 0;
-      }).filter((release) => {
-        const releasePattern = /^v(\d+)\.(\d+)\.(\d+)$/;
-
-        // All non-prerelease, non-alpha, non-beta, non-rc release
-        return releasePattern.test(release.tag_name);
+        return -semver.compare(a.tag_name, b.tag_name);
       });
     } else {
       return [];
@@ -74,25 +75,25 @@ async function getReleases() {
   } catch (error) {
     return [];
   }
-}
+};
 
 // Takes the date in format 2019-04-26T18:24:09Z
 // and returns it as April 26 2019
-function parseDate(datetime: string) {
+const parseDate = (datetime: string) => {
   const date = new Date(datetime);
   return date.toLocaleString('en-us', { month: 'long' }) + ' ' + date.getDate() + ' ' + date.getFullYear();
-}
+};
 
-function parseMarkdown(content: any) {
+const parseMarkdown = (content: any) => {
   let html = renderMarkdown(content);
   html = html.replace('<a href=\"#bug-fixes\">Bug Fixes</a>', 'Bug Fixes')
              .replace('<a href=\"#features\">Features</a>', 'Features');
   return convertHtmlToHypertextData(html);
-}
+};
 
 // Given a version, return if it is a
 // major, minor, or patch release
-function getVersionType(version: string) {
+const getVersionType = (version: string) => {
   const releasePattern = /^(\d+)\.(\d+)\.(\d+)$/;
 
   let type = 'patch';
@@ -106,25 +107,27 @@ function getVersionType(version: string) {
   }
 
   return type;
-}
+};
 
 // Given a version, return its element symbol
-function getVersionSymbol(version) {
+const getVersionSymbol = (version: string) => {
   const filteredVersions = versions.filter(
     v => version.startsWith(`${v.minor}.`)
   );
+  filteredVersions.unshift(fallbackVersion);
 
   return filteredVersions[filteredVersions.length - 1].symbol;
-}
+};
 
 // Given a version, return its element name
-function getVersionElement(version) {
+const getVersionElement = (version: string) => {
   const filteredVersions = versions.filter(
     v => version.startsWith(`${v.minor}.`)
   );
+  filteredVersions.unshift(fallbackVersion);
 
   return filteredVersions[filteredVersions.length - 1].element;
-}
+};
 
 const versions = [
   {
@@ -188,93 +191,95 @@ const versions = [
     'element': 'Sodium'
   },
   {
-    'minor': '4.12',
+    'minor': '5.0',
     'symbol': 'Mg',
     'element': 'Magnesium'
   },
   {
-    'minor': '4.13',
+    'minor': '5.1',
     'symbol': 'Al',
     'element': 'Aluminium'
   },
   {
-    'minor': '4.14',
+    'minor': '5.2',
     'symbol': 'Si',
     'element': 'Silicon'
   },
   {
-    'minor': '4.15',
+    'minor': '5.3',
     'symbol': 'P',
     'element': 'Phosphorus'
   },
   {
-    'minor': '4.16',
+    'minor': '5.4',
     'symbol': 'S',
     'element': 'Sulfur'
   },
   {
-    'minor': '4.17',
+    'minor': '5.5',
     'symbol': 'Cl',
     'element': 'Chlorine'
   },
   {
-    'minor': '4.18',
+    'minor': '5.6',
     'symbol': 'Ar',
     'element': 'Argon'
   },
   {
-    'minor': '4.19',
+    'minor': '5.7',
     'symbol': 'K',
     'element': 'Potassium'
   },
   {
-    'minor': '4.20',
+    'minor': '5.8',
     'symbol': 'Ca',
     'element': 'Calcium'
   },
   {
-    'minor': '4.21',
+    'minor': '5.9',
     'symbol': 'Sc',
     'element': 'Scandium'
   },
   {
-    'minor': '4.22',
+    'minor': '5.10',
     'symbol': 'Ti',
     'element': 'Titanium'
   },
   {
-    'minor': '4.23',
+    'minor': '5.11',
     'symbol': 'V',
     'element': 'Vanadium'
   },
   {
-    'minor': '4.24',
+    'minor': '5.12',
     'symbol': 'Cr',
     'element': 'Chromium'
   },
   {
-    'minor': '4.25',
+    'minor': '5.13',
     'symbol': 'Mn',
     'element': 'Manganese'
   },
   {
-    'minor': '4.26',
+    'minor': '5.14',
     'symbol': 'Fe',
     'element': 'Iron'
   },
   {
-    'minor': '4.27',
+    'minor': '5.15',
     'symbol': 'Co',
     'element': 'Cobalt'
   },
   {
-    'minor': '4.28',
+    'minor': '5.16',
     'symbol': 'Ni',
     'element': 'Nickel'
   },
   {
-    'minor': '4.29',
+    'minor': '5.17',
     'symbol': 'Cu',
     'element': 'Copper'
   }
 ];
+
+const fallbackVersion = { 'minor': '9201', 'symbol': 'Uo', 'element': 'Unobtainium' };

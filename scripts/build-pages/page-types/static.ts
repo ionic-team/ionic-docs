@@ -1,29 +1,31 @@
+import glob from 'fast-glob';
+import frontMatter, { FrontMatterResult } from 'front-matter';
+import fs from 'fs-extra';
+import moment from 'moment';
+import simplegit from 'simple-git/promise';
+
+import * as GITHUB_COMMITS from '../../data/github-commits.json';
 import {
   PAGES_DIR,
   Page,
-  buildPages,
-  updatePageHtmlToHypertext
+  buildPages
 } from '../index';
-
-import fs from 'fs-extra';
-import url from 'url';
-import glob from 'fast-glob';
-import fetch from 'node-fetch';
-import frontMatter from 'front-matter';
 import markdownRenderer from '../markdown-renderer';
+
+// ingored by git
+// generated in build-data/file-contrbutors.ts by build-data npm task
 
 export default {
   title: 'Build static pages',
-  task: () => buildPages(getStaticPages)
+  task: (_: any, status: any) => buildPages(getStaticPages, status)
 };
 
-async function getStaticPages(): Promise<Page[]> {
+const getStaticPages = async (): Promise<Page[]> => {
   const paths = await getMarkdownPaths(PAGES_DIR);
-
   return Promise.all(paths.map(path => toPage(path)));
-}
+};
 
-const getMarkdownPaths = (cwd: string): Promise<string[]> =>
+export const getMarkdownPaths = (cwd: string): Promise<string[]> =>
   glob('**/*.md', {
     absolute: true,
     cwd
@@ -35,14 +37,15 @@ export interface ToStaticPageOptions {
 
 export const toPage = async (path: string, { prod = true }: ToStaticPageOptions = {}) => {
   return {
-    path: path.replace(PAGES_DIR, '/docs').replace(/(\/index)?\.md$/i, ''),
+    path: path.replace(PAGES_DIR, '/docs').replace(/\.md$/i, ''),
     github: prod ? await getGitHubData(path) : null,
     ...renderMarkdown(await readMarkdown(path))
   };
 };
 
 const renderMarkdown = (markdown: string) => {
-  const { body, attributes } = frontMatter(markdown);
+  const { body, attributes } = frontMatter(markdown) as FrontMatterResult<any>;
+
   return {
     ...attributes,
     body: markdownRenderer(body)
@@ -55,34 +58,35 @@ const readMarkdown = (path: string): Promise<string> =>
   });
 
 const getGitHubData = async (filePath: string) => {
-  const [, path] = /^.+\/(src\/pages\/.+\.md)$/.exec(filePath);
-  const since = new Date('2019-01-23').toISOString();
+  const [, path] = /^.+\/(src\/pages\/.+\.md)$/.exec(filePath) ?? [];
 
   try {
-    const request = await fetch(url.format({
-      protocol: 'https',
-      hostname: 'api.github.com',
-      pathname: 'repos/ionic-team/ionic-docs/commits',
-      query: {
-        access_token: process.env.GITHUB_TOKEN,
-        since,
-        path
-      }
-    }));
-
-    const commits = await request.json();
-    const contributors = Array.from(new Set(commits.map(commit => commit.author.login)));
-    const lastUpdated = commits.length ? commits[0].commit.author.date : since;
+    const { contributors, lastUpdated } = await getFileContributors(filePath);
     return {
       path,
       contributors,
       lastUpdated
     };
   } catch (error) {
+    console.warn(error);
     return {
       path,
       contributors: [],
-      lastUpdated: since
+      lastUpdated: new Date('2019-01-23').toISOString()
     };
   }
+};
+
+const getFileContributors = async (filename: string) => {
+  return simplegit().log({ file: filename }).then(status => ({
+      contributors: Array.from(new Set(status.all.map(commit => {
+        const commits: { [key: string]: any } = GITHUB_COMMITS;
+        // only add the user ID if we can find it based on the commit hash
+        return commits[commit.hash] ? commits[commit.hash].id : null;
+      // filter out null users
+      }).filter(user => !!user))),
+      // tslint:disable-next-line
+      lastUpdated: status.latest ? moment(status.latest.date, 'YYYY-MM-DD HH-mm-ss ZZ').toISOString() : null
+    })
+  );
 };

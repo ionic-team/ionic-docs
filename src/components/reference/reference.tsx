@@ -1,4 +1,5 @@
 import { Component, Prop, h } from '@stencil/core';
+
 import { ReferenceKeys } from '../../definitions';
 
 @Component({
@@ -6,17 +7,17 @@ import { ReferenceKeys } from '../../definitions';
   styleUrl: 'reference.css'
 })
 export class DocsReference {
-  @Prop() data: any[];
-  @Prop() keys: ReferenceKeys;
+  @Prop() data!: any[];
+  @Prop() keys!: ReferenceKeys;
 
-  toItem = (item) => {
+  toItem = (item: any) => {
     const { Head, ...keys } = this.keys;
 
     return [
       <thead>
         <tr>
           <th colSpan={2}>
-            <h3>{ Head(item) }</h3>
+            <h3>{Head(item)}</h3>
           </th>
         </tr>
       </thead>,
@@ -26,8 +27,8 @@ export class DocsReference {
           if (content) {
             return (
               <tr>
-                <th>{ name }</th>
-                <td>{ content }</td>
+                <th>{name}</th>
+                <td>{content}</td>
               </tr>
             );
           }
@@ -39,7 +40,7 @@ export class DocsReference {
   render() {
     return (
       <table>
-        { this.data.map(this.toItem) }
+        {this.data.map(this.toItem)}
       </table>
     );
   }

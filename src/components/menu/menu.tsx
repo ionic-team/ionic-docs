@@ -1,41 +1,43 @@
 import { Component, Prop, h } from '@stencil/core';
+
 import { Logo } from '../../icons';
-import { FrameworkSelect } from './framework-select';
-import componentsTemplate from './templates/components';
+
 import cliTemplate from './templates/cli';
-import studioTemplate from './templates/studio';
-import nativeTemplate from './templates/native';
-import appflowTemplate from './templates/appflow';
+// import { FrameworkSelect } from './framework-select';
+import componentsTemplate from './templates/components';
 import mainTemplate from './templates/main';
-import enterpriseTemplate from './templates/enterprise';
-import nativeLandingTemplate from './templates/native-landing';
+import studioTemplate from './templates/studio';
 
 @Component({
   tag: 'docs-menu',
   styleUrl: 'menu.css'
 })
 export class DocsMenu {
-  @Prop() onToggleClick: (e: Event) => void;
+  @Prop() toggleClickFn!: (e: Event) => void;
 
   render() {
     return [
       <header>
-        <docs-menu-toggle onClick={this.onToggleClick}/>
+        <docs-menu-toggle onClick={this.toggleClickFn}/>
         <stencil-route-link url="/docs/">
           <Logo class="MenuLogo"/>
         </stencil-route-link>
       </header>,
-      <section class="MenuControls">
-        <FrameworkSelect/>
-      </section>,
-      <stencil-route-switch scrollTopOffset={0}>
-        <stencil-route url="/docs/(components|api)" routeRender={componentsTemplate}/>
-        <stencil-route url="/docs/cli" routeRender={cliTemplate}/>
-        <stencil-route url="/docs/studio" routeRender={studioTemplate}/>
-        <stencil-route url="/docs/native/:plugin" routeRender={nativeTemplate}/>
-        <stencil-route url="/docs/native" routeRender={nativeLandingTemplate}/>
-        <stencil-route url="/docs/appflow" routeRender={appflowTemplate}/>
-        <stencil-route url="/docs/enterprise" routeRender={enterpriseTemplate}/>
+      <stencil-route-switch>
+        <stencil-route url="/docs/appflow"></stencil-route>
+        <stencil-route url="/docs/studio"></stencil-route>
+        <stencil-route>
+          <section class="MenuControls">
+            <framework-select/>
+          </section>
+        </stencil-route>
+      </stencil-route-switch>,
+      <stencil-route-switch scrollTopOffset={0} class="Menu">
+        <stencil-route url="/docs/:lang([a-z]{2})?/(components|api)" routeRender={componentsTemplate}/>
+        <stencil-route url="/docs/:lang([a-z]{2})?/cli" routeRender={cliTemplate}/>
+        <stencil-route url="/docs/:lang([a-z]{2})?/studio" routeRender={studioTemplate}/>
+        <stencil-route url="/docs/:lang([a-z]{2})?/native/:plugin" routeRender={() => <docs-menu-native />}/>
+        <stencil-route url="/docs/:lang([a-z]{2})?/native" routeRender={() => <docs-menu-native />}/>
         <stencil-route routeRender={mainTemplate}/>
       </stencil-route-switch>
     ];

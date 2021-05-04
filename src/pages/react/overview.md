@@ -1,33 +1,45 @@
 ---
-nextText: 'Build Your First App'
-nextUrl: '/docs/react/your-first-app'
+nextText: 'Quickstart'
+nextUrl: '/docs/react/quickstart'
 ---
 
 # Ionic React Overview
 
-`@ionic/react` combines the core Ionic experience with the tooling and APIs that are tailored to React Developers.
+`@ionic/react` combines the core Ionic experience with the tooling and APIs that are tailored to React Developers. 
 
-Currently in beta, you can try it now. First, install the Ionic CLI:
+> Note: The first official version of Ionic React is v4.11.
 
-```shell
-$ npm install ionic -g
-```
-
- then run:
+First, install the Ionic CLI:
 
 ```shell
-$ ionic start myApp --type=react
+$ npm install -g @ionic/cli
 ```
 
-Now, start building an app using some of the [Ionic UI components](/docs/components). 
+then run:
+
+```shell
+$ ionic start myAppName
+```
+
+The CLI will guide you through the setup process by asking a couple of questions, including the framework to use (React, of course!) and the starter code template.
+
+After the app has been created, launch the app:
+
+```shell
+ionic serve
+```
+
+Now, start building out the app using some of the [Ionic UI components](/docs/components). 
 
 ## React Version Support
 
-Coming soon.
+Compatible with React version 16.8 and above.
 
 ## React Tooling
 
-Coming soon.
+Ionic React projects are just like React projects, leveraging [react-dom](https://reactjs.org/docs/react-dom.html) and with setup normally found in a [Create React App (CRA)](https://github.com/facebook/create-react-app) app. For [routing and navigation](/docs/react/navigation), React Router is used under the hood.
+
+One difference is the usage of [TypeScript](http://www.typescriptlang.org/), which provides a more productive experience. To use plain JavaScript, rename files to use a `.js` extension then remove any of the type annotations with each file.
 
 ## Native Tooling
 

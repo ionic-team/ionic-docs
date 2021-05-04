@@ -38,6 +38,7 @@ docs-header header {
 
 docs-header a {
   color: inherit;
+  font-weight: 500;
   padding: 10px 0;
 }
 
@@ -79,7 +80,7 @@ docs-header docs-menu-toggle {
 }
 
 .SectionNav .Dropdown-button {
-  border: solid 1px transparent;
+  border: solid 1px #DEE3EA;
   border-radius: 6px;
   color: var(--text-color--dark);
   padding: 10px;
@@ -88,12 +89,6 @@ docs-header docs-menu-toggle {
 
 .SectionNav .Dropdown.is-open .Dropdown-button {
   border-color: var(--line-rule-color);
-}
-
-@media (hover: hover) {
-  .SectionNav .Dropdown-button:hover {
-    border-color: var(--line-rule-color);
-  }
 }
 
 .SectionNav .Dropdown-panel {
@@ -108,6 +103,11 @@ docs-header docs-menu-toggle {
 .SectionNav .Dropdown-panel svg {
   height: 1em;
   width: 1em;
+}
+
+.SectionNav .Dropdown-panel .Nav-link {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .SectionNav-tabs > * {

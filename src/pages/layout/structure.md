@@ -30,7 +30,7 @@ The most simple layout available consists of a [header](/docs/api/header) and [c
     </ion-toolbar>
   </ion-header>
 
-  <ion-content padding>
+  <ion-content class="ion-padding">
     <h1>Main Content</h1>
   </ion-content>
 </ion-app>
@@ -48,7 +48,7 @@ As you can see, a toolbar in a header appears above the content. Sometimes an ap
 
 ```html
 <ion-app>
-  <ion-content padding>
+  <ion-content class="ion-padding">
     <h1>Main Content</h1>
   </ion-content>
 
@@ -72,7 +72,7 @@ These can also be combined on one page to have a toolbar above *and* below the c
     </ion-toolbar>
   </ion-header>
 
-  <ion-content padding>
+  <ion-content class="ion-padding">
     <h1>Main Content</h1>
   </ion-content>
 
@@ -83,6 +83,10 @@ These can also be combined on one page to have a toolbar above *and* below the c
   </ion-footer>
 </ion-app>
 ```
+
+### Live examples
+
+You can view a live example of this setup in Angular [here](https://stackblitz.com/edit/ionic-ng-header-footer) and for React [here](https://stackblitz.com/edit/ionic-react-head-foot).
 
 ## Tabs Layout
 
@@ -112,13 +116,17 @@ A layout consisting of horizontal [tabs](/docs/api/tabs) can be used to let the 
 </ion-app>
 ```
 
+### Live examples
+
+You can view a live example of this setup in Angular [here](https://stackblitz.com/edit/ionic-ng-tabs) and for React [here](https://stackblitz.com/edit/ionic-react-tab-layout).
+
 ## Menu Layout
 
 A standard layout among mobile apps includes the ability to toggle a side [menu](/docs/api/menu) by clicking a button or swiping it open from the side. Side menus are generally used for navigation, but they can contain any content.
 
 ```html
 <ion-app>
-  <ion-menu>
+  <ion-menu content-id="main-content">
     <ion-header>
       <ion-toolbar color="primary">
         <ion-title>Menu</ion-title>
@@ -142,7 +150,7 @@ A standard layout among mobile apps includes the ability to toggle a side [menu]
     </ion-content>
   </ion-menu>
 
-  <ion-page class="ion-page" main>
+  <ion-page class="ion-page" id="main-content">
     <ion-header>
       <ion-toolbar>
         <ion-buttons slot="start">
@@ -155,7 +163,7 @@ A standard layout among mobile apps includes the ability to toggle a side [menu]
         <ion-title>Header</ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content padding>
+    <ion-content class="ion-padding">
       <h1>Main Content</h1>
       <p>Click the icon in the top left to toggle the menu.</p>
     </ion-content>
@@ -164,6 +172,10 @@ A standard layout among mobile apps includes the ability to toggle a side [menu]
 
 <ion-menu-controller></ion-menu-controller>
 ```
+
+### Live examples
+
+You can view a live example of this setup in Angular [here](https://stackblitz.com/edit/ionic-ng-menu-layout) and for React [here](https://stackblitz.com/edit/ionic-react-menu).
 
 
 ## Split Pane Layout
@@ -175,8 +187,8 @@ By default, the split pane view will show when the screen is larger than `768px`
 
 ```html
 <ion-app>
-  <ion-split-pane when="sm">
-    <ion-menu>
+  <ion-split-pane when="sm" content-id="main-content">
+    <ion-menu content-id="main-content">
       <ion-header>
         <ion-toolbar color="primary">
           <ion-title>Menu</ion-title>
@@ -200,7 +212,7 @@ By default, the split pane view will show when the screen is larger than `768px`
       </ion-content>
     </ion-menu>
 
-    <ion-page class="ion-page" main>
+    <div class="ion-page" id="main-content">
       <ion-header>
         <ion-toolbar>
           <ion-buttons slot="start">
@@ -213,13 +225,17 @@ By default, the split pane view will show when the screen is larger than `768px`
           <ion-title>Header</ion-title>
         </ion-toolbar>
       </ion-header>
-      <ion-content padding>
+      <ion-content class="ion-padding">
         <h1>Main Content</h1>
       </ion-content>
-    </ion-page>
+    </div>
 
   </ion-split-pane>
 </ion-app>
 ```
 
-It's important to note that the element with the `main` attribute will be the main content that is always visible. This can be any element, including an [ion-nav](/docs/api/nav), [ion-router-outlet](/docs/api/router-outlet), or an [ion-tabs](/docs/api/tabs).
+It's important to note that the element with the `id` matching the `content-id` specified by the split pane will be the main content that is always visible. This can be any element, including an [ion-nav](/docs/api/nav), [ion-router-outlet](/docs/api/router-outlet), or an [ion-tabs](/docs/api/tabs).
+
+### Live examples
+
+You can view a live example of this setup in Angular [here](https://stackblitz.com/edit/ionic-ng-split-pane) and for React [here](https://stackblitz.com/edit/ionic-react-split-pane).

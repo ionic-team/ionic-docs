@@ -1,27 +1,26 @@
-import { Component, Prop, State, Watch, h } from '@stencil/core';
+import { Component, Event, EventEmitter, Prop, State, Watch, h } from '@stencil/core';
 
 @Component({
   tag: 'docs-select',
   styleUrl: 'select.css'
 })
 export class DocsSelect {
-  private dropdown;
+  private dropdown!: any;
 
-  @State() selected: string;
-  @Prop() options: string[];
-  @Prop() onSelect: (option: string) => any;
-  @Prop() initializer: (options: string[]) => string;
-  @Prop() optionRenderer: (option: string) => any = (option: string) => option;
+  @State() selected!: string | null;
+  @Prop({ mutable: true }) options!: string[];
+  @Prop() initializer!: (options: string[]) => string | null;
+  @Prop() optionRenderer: (option: string | null) => any = (option: string | null) => option;
 
   select = (option: string) => {
     this.selected = option;
   }
 
+  @Event() selection!: EventEmitter<string>;
+
   @Watch('selected')
-  handleSelect(option: string, prev: string) {
-    if (typeof this.onSelect === 'function' && prev != null) {
-      this.onSelect(option);
-    }
+  handleSelect(option: string) {
+    this.selection.emit(option);
   }
 
   private toOption = (option: string) => {
@@ -50,16 +49,15 @@ export class DocsSelect {
         aria-checked={isSelected ? 'true' : 'false'}
         tabindex="0"
         onClick={handleClick}
-        onKeyUp={handleKeyUp}>
-          {this.optionRenderer(option)}
+        onKeyUp={handleKeyUp}
+      >
+        {this.optionRenderer(option)}
       </div>
     );
   }
 
   componentWillLoad() {
-    this.selected = typeof this.initializer === 'function'
-      ? this.initializer(this.options)
-      : this.options[0];
+    this.selected = this.initializer(this.options);
   }
 
   hostData() {
@@ -74,8 +72,9 @@ export class DocsSelect {
     return (
       <docs-dropdown
         ref={el => { this.dropdown = el; }}
-        label={this.optionRenderer(this.selected)}>
-          {this.options.map(this.toOption)}
+        label={this.optionRenderer(this.selected)}
+      >
+        {this.options.map(this.toOption)}
       </docs-dropdown>
     );
   }

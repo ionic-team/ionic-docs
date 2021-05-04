@@ -1,0 +1,85 @@
+.page-react,
+.page-angular {
+  --page-width: 900px;
+}
+.page-react command-line,
+.page-angular command-line {
+  max-width: 720px;
+  margin: 50px auto;
+}
+.page-react strong,
+.page-angular strong {
+  color: #44b4ff;
+}
+.page-react .pull-left h3,
+.page-angular .pull-left h3 {
+  font-size: 4rem;
+  padding-top: 0;
+}
+.page-react .flex,
+.page-angular .flex {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 50px 0px;
+}
+.page-react .main-flex h1,
+.page-angular .main-flex h1 {
+  margin-botton: 0px;
+}
+.page-react .main-flex ul,
+.page-angular .main-flex ul {
+  padding-left: 0;
+  list-style: none;
+  line-height: 1;
+}
+.page-react .main-flex .pull-right img,
+.page-angular .main-flex .pull-right img {
+  width: 150px;
+}
+.page-react .pull-right img,
+.page-angular .pull-right img {
+  display: block;
+  max-width: 250px;
+  width: 100%;
+  margin: auto;
+}
+@media (min-width: 1058px) {
+  .page-react .flex,
+  .page-angular .flex {
+    flex-direction: row;
+    align-items: center;
+    padding: 75px 0;
+  }
+  .page-react .flex.reverse,
+  .page-angular .flex.reverse {
+    flex-direction: row-reverse;
+  }
+  .page-react .pull-left,
+  .page-angular .pull-left {
+    width: 450px;
+  }
+  .page-react .pull-right,
+  .page-angular .pull-right {
+    flex: 1;
+    text-align: center;
+  }
+  .page-react .pull-right img,
+  .page-angular .pull-right img {
+    display: initial;
+    max-width: 250px;
+  }
+  .page-react .main-flex .pull-right img,
+  .page-angular .main-flex .pull-right img {
+    max-width: 375px;
+    width: 100%;
+  }
+  .page-react h2,
+  .page-angular h2 {
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
+.page-react .cli,
+.page-angular .cli {
+  width: 150px !important;
+}

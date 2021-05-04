@@ -3,8 +3,6 @@ hideTOC: true
 demoUrl: '/docs/pages/theming/color-generator/index.html'
 previousText: 'Advanced Theming'
 previousUrl: '/docs/theming/advanced'
-nextText: 'Publishing an app'
-nextUrl: '/docs/publishing/app-store'
 contributors:
   - brandyscarney
   - kevinports
