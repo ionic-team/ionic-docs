@@ -48,7 +48,7 @@ Date & time pickers are used to present an interface that makes it easy for user
 
 Floating action buttons are circular buttons that perform a primary action on a screen.</docs-card>
 
-<docs-card header="Icons" href="https://ionicons.com" img="/docs/assets/icons/feature-component-icons-icon.png"> 
+<docs-card header="Icons" href="https://ionic.io/ionicons" img="/docs/assets/icons/feature-component-icons-icon.png"> 
 
 Beautifully designed icons for use in web, iOS, Android, and desktop apps.</docs-card>
 
