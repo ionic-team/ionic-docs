@@ -549,7 +549,7 @@ In other framework integrations such as Ionic React, this is not needed as any `
 
 ## Adding Icons
 
-Ionic Vue comes with [Ionicons](https://ionicons.com/) pre-installed. There are a couple options developers have for using them in their application.
+Ionic Vue comes with [Ionicons](https://ionic.io/ionicons/) pre-installed. There are a couple options developers have for using them in their application.
 
 ### Dynamic Imports
 
