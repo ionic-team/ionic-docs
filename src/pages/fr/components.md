@@ -48,7 +48,7 @@ Les sélecteurs de date et d'heure sont utilisés pour présenter une interface 
 
 Les boutons d'action flottants sont des boutons circulaires qui effectuent une action primaire sur un écran.</docs-card>
 
-<docs-card header="Icons" href="https://ionicons.com" img="/docs/assets/icons/feature-component-icons-icon.png"> 
+<docs-card header="Icons" href="https://ionic.io/ionicons" img="/docs/assets/icons/feature-component-icons-icon.png"> 
 
 Des icônes magnifiquement conçues pour le web, iOS, Android et les applications de bureau.</docs-card>
 
