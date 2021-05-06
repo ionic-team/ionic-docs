@@ -162,4 +162,4 @@ Ionicons est emballé par défaut avec le cadre Ionic, donc aucune installation 
 <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.js"></script>
 ```
 
-> Voir [Ionicons usage](https://ionicons.com/usage) pour plus d'informations sur l'utilisation de Ionicons.
+> See [Ionicons usage](https://ionic.io/ionicons/usage) for more information on using Ionicons.
