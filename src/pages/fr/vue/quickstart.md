@@ -556,7 +556,7 @@ Dans d'autres intégrations de frameworks comme Ionic React, cela n'est pas néc
 
 ## Ajout d'icônes
 
-Ionic Vue est livré avec [Ionicons](https://ionicons.com/) préinstallé. Les développeurs ont plusieurs possibilités pour les utiliser dans leur application.
+Ionic Vue comes with [Ionicons](https://ionic.io/ionicons/) pre-installed. Les développeurs ont plusieurs possibilités pour les utiliser dans leur application.
 
 ### Importation dynamique
 
