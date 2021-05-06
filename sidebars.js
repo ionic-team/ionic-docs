@@ -213,247 +213,247 @@ module.exports = {
     },
   ],
 
-  api: [
-    'components',
-    {
-      type: 'category',
-      label: 'Action Sheet',
-      items: ['api/action-sheet'],
-    },
-    {
-      type: 'category',
-      label: 'Alert',
-      items: ['api/alert'],
-    },
-    {
-      type: 'category',
-      label: 'Badge',
-      items: ['api/badge'],
-    },
-    {
-      type: 'category',
-      label: 'Button',
-      items: ['api/button', 'api/ripple-effect'],
-    },
-    {
-      type: 'category',
-      label: 'Card',
-      items: [
-        'api/card',
-        'api/card-content',
-        'api/card-header',
-        'api/card-subtitle',
-        'api/card-title',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Checkbox',
-      items: ['api/checkbox'],
-    },
-    {
-      type: 'category',
-      label: 'Chip',
-      items: ['api/chip'],
-    },
-    {
-      type: 'category',
-      label: 'Content',
-      items: ['api/app', 'api/content'],
-    },
-    {
-      type: 'category',
-      label: 'Date & Time Pickers',
-      items: ['api/datetime', 'api/picker'],
-    },
-    {
-      type: 'category',
-      label: 'Floating Action Button',
-      items: ['api/fab', 'api/fab-button', 'api/fab-list'],
-    },
-    {
-      type: 'category',
-      label: 'Grid',
-      items: ['api/grid', 'api/col', 'api/row'],
-    },
-    {
-      type: 'category',
-      label: 'Infinite Scroll',
-      items: ['api/infinite-scroll', 'api/infinite-scroll-content'],
-    },
-    {
-      type: 'category',
-      label: 'Icons',
-      items: [
-        {
-          type: 'link',
-          label: 'ion-icon',
-          href: 'https://ionicons.com',
-        },
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Input',
-      items: ['api/input', 'api/textarea'],
-    },
-    {
-      type: 'category',
-      label: 'Item',
-      items: [
-        'api/item',
-        'api/item-divider',
-        'api/item-group',
-        'api/item-sliding',
-        'api/item-options',
-        'api/item-option',
-        'api/label',
-        'api/note',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'List',
-      items: ['api/list', 'api/list-header', 'api/virtual-scroll'],
-    },
-    {
-      type: 'category',
-      label: 'Media',
-      items: [
-        'api/avatar',
-        {
-          type: 'link',
-          label: 'ion-icon',
-          href: 'https://ionicons.com',
-        },
-        'api/img',
-        'api/thumbnail',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Menu',
-      items: [
-        'api/menu',
-        'api/menu-button',
-        'api/menu-toggle',
-        'api/split-pane',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Modal',
-      items: ['api/modal', 'api/backdrop'],
-    },
-    {
-      type: 'category',
-      label: 'Navigation',
-      items: ['api/nav', 'api/nav-link'],
-    },
-    {
-      type: 'category',
-      label: 'Popover',
-      items: ['api/popover'],
-    },
-    {
-      type: 'category',
-      label: 'Progress Indicators',
-      items: [
-        'api/loading',
-        'api/progress-bar',
-        'api/skeleton-text',
-        'api/spinner',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Radio',
-      items: ['api/radio', 'api/radio-group'],
-    },
-    {
-      type: 'category',
-      label: 'Range',
-      items: ['api/range'],
-    },
-    {
-      type: 'category',
-      label: 'Refresher',
-      items: ['api/refresher', 'api/refresher-content'],
-    },
-    {
-      type: 'category',
-      label: 'Reorder',
-      items: ['api/reorder', 'api/reorder-group'],
-    },
-    {
-      type: 'category',
-      label: 'Routing',
-      items: [
-        'api/router',
-        'api/router-link',
-        'api/router-outlet',
-        'api/route',
-        'api/route-redirect',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Searchbar',
-      items: ['api/searchbar'],
-    },
-    {
-      type: 'category',
-      label: 'Segment',
-      items: ['api/segment', 'api/segment-button'],
-    },
-    {
-      type: 'category',
-      label: 'Select',
-      items: ['api/select', 'api/select-option'],
-    },
-    {
-      type: 'category',
-      label: 'Slides',
-      items: ['api/slides', 'api/slide'],
-    },
-    {
-      type: 'category',
-      label: 'Tabs',
-      items: ['api/tabs', 'api/tab', 'api/tab-bar', 'api/tab-button'],
-    },
-    {
-      type: 'category',
-      label: 'Toast',
-      items: ['api/toast'],
-    },
-    {
-      type: 'category',
-      label: 'Toggle',
-      items: ['api/toggle'],
-    },
-    {
-      type: 'category',
-      label: 'Toolbar',
-      items: [
-        'api/toolbar',
-        'api/header',
-        'api/footer',
-        'api/title',
-        'api/buttons',
-        'api/back-button',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Typography',
-      items: ['api/text'],
-    },
-    {
-      type: 'category',
-      label: 'Resources',
-      items: ['api'],
-    },
-  ],
+  // api: [
+  //   'components',
+  //   {
+  //     type: 'category',
+  //     label: 'Action Sheet',
+  //     items: ['api/action-sheet'],
+  //   },
+  //   {
+  //     type: 'category',
+  //     label: 'Alert',
+  //     items: ['api/alert'],
+  //   },
+  //   {
+  //     type: 'category',
+  //     label: 'Badge',
+  //     items: ['api/badge'],
+  //   },
+  //   {
+  //     type: 'category',
+  //     label: 'Button',
+  //     items: ['api/button', 'api/ripple-effect'],
+  //   },
+  //   {
+  //     type: 'category',
+  //     label: 'Card',
+  //     items: [
+  //       'api/card',
+  //       'api/card-content',
+  //       'api/card-header',
+  //       'api/card-subtitle',
+  //       'api/card-title',
+  //     ],
+  //   },
+  //   {
+  //     type: 'category',
+  //     label: 'Checkbox',
+  //     items: ['api/checkbox'],
+  //   },
+  //   {
+  //     type: 'category',
+  //     label: 'Chip',
+  //     items: ['api/chip'],
+  //   },
+  //   {
+  //     type: 'category',
+  //     label: 'Content',
+  //     items: ['api/app', 'api/content'],
+  //   },
+  //   {
+  //     type: 'category',
+  //     label: 'Date & Time Pickers',
+  //     items: ['api/datetime', 'api/picker'],
+  //   },
+  //   {
+  //     type: 'category',
+  //     label: 'Floating Action Button',
+  //     items: ['api/fab', 'api/fab-button', 'api/fab-list'],
+  //   },
+  //   {
+  //     type: 'category',
+  //     label: 'Grid',
+  //     items: ['api/grid', 'api/col', 'api/row'],
+  //   },
+  //   {
+  //     type: 'category',
+  //     label: 'Infinite Scroll',
+  //     items: ['api/infinite-scroll', 'api/infinite-scroll-content'],
+  //   },
+  //   {
+  //     type: 'category',
+  //     label: 'Icons',
+  //     items: [
+  //       {
+  //         type: 'link',
+  //         label: 'ion-icon',
+  //         href: 'https://ionicons.com',
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     type: 'category',
+  //     label: 'Input',
+  //     items: ['api/input', 'api/textarea'],
+  //   },
+  //   {
+  //     type: 'category',
+  //     label: 'Item',
+  //     items: [
+  //       'api/item',
+  //       'api/item-divider',
+  //       'api/item-group',
+  //       'api/item-sliding',
+  //       'api/item-options',
+  //       'api/item-option',
+  //       'api/label',
+  //       'api/note',
+  //     ],
+  //   },
+  //   {
+  //     type: 'category',
+  //     label: 'List',
+  //     items: ['api/list', 'api/list-header', 'api/virtual-scroll'],
+  //   },
+  //   {
+  //     type: 'category',
+  //     label: 'Media',
+  //     items: [
+  //       'api/avatar',
+  //       {
+  //         type: 'link',
+  //         label: 'ion-icon',
+  //         href: 'https://ionicons.com',
+  //       },
+  //       'api/img',
+  //       'api/thumbnail',
+  //     ],
+  //   },
+  //   {
+  //     type: 'category',
+  //     label: 'Menu',
+  //     items: [
+  //       'api/menu',
+  //       'api/menu-button',
+  //       'api/menu-toggle',
+  //       'api/split-pane',
+  //     ],
+  //   },
+  //   {
+  //     type: 'category',
+  //     label: 'Modal',
+  //     items: ['api/modal', 'api/backdrop'],
+  //   },
+  //   {
+  //     type: 'category',
+  //     label: 'Navigation',
+  //     items: ['api/nav', 'api/nav-link'],
+  //   },
+  //   {
+  //     type: 'category',
+  //     label: 'Popover',
+  //     items: ['api/popover'],
+  //   },
+  //   {
+  //     type: 'category',
+  //     label: 'Progress Indicators',
+  //     items: [
+  //       'api/loading',
+  //       'api/progress-bar',
+  //       'api/skeleton-text',
+  //       'api/spinner',
+  //     ],
+  //   },
+  //   {
+  //     type: 'category',
+  //     label: 'Radio',
+  //     items: ['api/radio', 'api/radio-group'],
+  //   },
+  //   {
+  //     type: 'category',
+  //     label: 'Range',
+  //     items: ['api/range'],
+  //   },
+  //   {
+  //     type: 'category',
+  //     label: 'Refresher',
+  //     items: ['api/refresher', 'api/refresher-content'],
+  //   },
+  //   {
+  //     type: 'category',
+  //     label: 'Reorder',
+  //     items: ['api/reorder', 'api/reorder-group'],
+  //   },
+  //   {
+  //     type: 'category',
+  //     label: 'Routing',
+  //     items: [
+  //       'api/router',
+  //       'api/router-link',
+  //       'api/router-outlet',
+  //       'api/route',
+  //       'api/route-redirect',
+  //     ],
+  //   },
+  //   {
+  //     type: 'category',
+  //     label: 'Searchbar',
+  //     items: ['api/searchbar'],
+  //   },
+  //   {
+  //     type: 'category',
+  //     label: 'Segment',
+  //     items: ['api/segment', 'api/segment-button'],
+  //   },
+  //   {
+  //     type: 'category',
+  //     label: 'Select',
+  //     items: ['api/select', 'api/select-option'],
+  //   },
+  //   {
+  //     type: 'category',
+  //     label: 'Slides',
+  //     items: ['api/slides', 'api/slide'],
+  //   },
+  //   {
+  //     type: 'category',
+  //     label: 'Tabs',
+  //     items: ['api/tabs', 'api/tab', 'api/tab-bar', 'api/tab-button'],
+  //   },
+  //   {
+  //     type: 'category',
+  //     label: 'Toast',
+  //     items: ['api/toast'],
+  //   },
+  //   {
+  //     type: 'category',
+  //     label: 'Toggle',
+  //     items: ['api/toggle'],
+  //   },
+  //   {
+  //     type: 'category',
+  //     label: 'Toolbar',
+  //     items: [
+  //       'api/toolbar',
+  //       'api/header',
+  //       'api/footer',
+  //       'api/title',
+  //       'api/buttons',
+  //       'api/back-button',
+  //     ],
+  //   },
+  //   {
+  //     type: 'category',
+  //     label: 'Typography',
+  //     items: ['api/text'],
+  //   },
+  //   {
+  //     type: 'category',
+  //     label: 'Resources',
+  //     items: ['api'],
+  //   },
+  // ],
 
   cli: [
     {
