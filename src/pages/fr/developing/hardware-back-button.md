@@ -5,29 +5,29 @@ nextText: 'Clavier'
 nextUrl: '/docs/developing/keyboard'
 ---
 
-# Hardware Back Button
+# Bouton arrière matériel
 
-The hardware back button is found on most Android devices. In native applications it can be used to close modals, navigate to the previous view, exit an app, and more. By default in Ionic, when the back button is pressed, the current view will be popped off the navigation stack, and the previous view will be displayed. If no previous view exists in the navigation stack, nothing will happen. This guide will show how to customize the behavior of the hardware back button.
+Le bouton retour matériel se trouve sur la plupart des appareils Android. Dans les applications natives, il peut être utilisé pour fermer des modales, revenir à la vue précédente, quitter une application, etc. Par défaut dans Ionic, lorsque l'on appuie sur le bouton retour, la vue actuelle est retirée de la pile de navigation et la vue précédente est affichée. Si aucune vue précédente n'existe dans la pile de navigation, rien ne se passe. Ce guide montre comment personnaliser le comportement du bouton retour matériel.
 
-> The hardware back button refers to the physical back button on an Android device and should not be confused with either the browser back button or `ion-back-button`. The information in this guide only applies to Android devices.
+> Le bouton arrière matériel fait référence au bouton arrière physique d'un appareil Android et ne doit pas être confondu avec le bouton arrière du navigateur ou `ion-back-button`. Les informations contenues dans ce guide s'appliquent uniquement aux appareils Android.
 
-## Hardware Back Button in Capacitor and Cordova
+## Bouton arrière matériel dans Capacitor et Cordova
 
-When running in a Capacitor or Cordova application, Ionic Framework will emit an `ionBackButton` event when a user presses the hardware back button.
+Lorsqu'il est exécuté dans une application Capacitor ou Cordova, Ionic Framework émet un événement `ionBackButton` lorsqu'un utilisateur appuie sur le bouton arrière du matériel.
 
-When listening for the `ionBackButton` event, you can register a handler to be fired. This handler can perform actions such as quitting the app or opening a confirmation dialog. Each handler must be assigned a priority. By default, only one handler is fired per hardware back button press. The priority value is used to determine which callback should be called. This is useful because if you have a modal open, you likely would not want the modal to close _and_ the app to navigate backwards when pressing the hardware back button. Only running one handler at a time allows the modal to close but still requires another press of the hardware back button to navigate backwards.
+Lorsque vous écoutez l'événement `ionBackButton`, vous pouvez enregistrer un gestionnaire à déclencher. Ce gestionnaire peut effectuer des actions telles que quitter l'application ou ouvrir une boîte de dialogue de confirmation. Une priorité doit être attribuée à chaque gestionnaire. Par défaut, un seul gestionnaire est déclenché par pression sur le bouton de retour du matériel. La valeur de la priorité est utilisée pour déterminer quel callback doit être appelé. C'est utile parce que si vous avez une modale ouverte, vous ne voudriez probablement pas que la modale se ferme _et_ que l'application navigue en arrière lorsque vous appuyez sur le bouton arrière du matériel. Le fait de n'exécuter qu'un seul gestionnaire à la fois permet de fermer la modale mais nécessite toujours une nouvelle pression sur le bouton de retour du matériel pour naviguer en arrière.
 
-There are situations where you might want to have multiple handlers fired. Each handler callback passes in a function as a parameter that can be used to tell the framework to call the next handler.
+Dans certaines situations, vous pouvez souhaiter que plusieurs gestionnaires soient activés. Chaque rappel de gestionnaire passe en paramètre une fonction qui peut être utilisée pour indiquer au framework d'appeler le gestionnaire suivant.
 
-## Hardware Back Button in a Browser
+## Bouton de retour matériel dans un navigateur
 
-When running your app in a mobile browser or as a PWA, hardware back button customization will be limited. This is because Capacitor and Cordova expose additional features that are not exposed in a normal web browser. For example, closing overlays and menus via the hardware back button are functionalities that are currently not supported when running your app in a mobile browser. These are known limitations and do not currently have straightforward solutions.
+Lorsque vous exécutez votre application dans un navigateur mobile ou en tant que PWA, la personnalisation du bouton retour matériel sera limitée. En effet, Capacitor et Cordova exposent des fonctionnalités supplémentaires qui ne sont pas exposées dans un navigateur web normal. Par exemple, la fermeture des superpositions et des menus à l'aide du bouton arrière du matériel est une fonctionnalité qui n'est actuellement pas prise en charge lorsque vous exécutez votre application dans un navigateur mobile. Il s'agit de limitations connues et il n'existe pas actuellement de solutions simples.
 
-For complete hardware back button support, we recommend using Capacitor or Cordova.
+Pour une prise en charge complète du bouton arrière matériel, nous vous recommandons d'utiliser Capacitor ou Cordova.
 
-> The `ionBackButton` event will not be emitted when running an app in a browser or as a PWA.
+> L'événement `ionBackButton` ne sera pas émis lors de l'exécution d'une application dans un navigateur ou en tant que PWA.
 
-## Basic Usage
+## Usage de base
 
 <docs-tabs> <docs-tab tab="javascript">
 
@@ -79,9 +79,9 @@ export default {
 ```
 </docs-tab> </docs-tabs>
 
-In this example, we are registering a handler to be called when the hardware back button is pressed. We have set the priority to be 10, and we have not indicated to the framework that we want the next handler to be called. As a result, any handlers with a priority less than 10 will not be called. A handler that has a priority greater than 10 will be called first.
+Dans cet exemple, nous enregistrons un gestionnaire qui sera appelé lorsque le bouton de retour du matériel sera pressé. Nous avons fixé la priorité à 10, et nous n'avons pas indiqué au framework que nous voulons que le gestionnaire suivant soit appelé. Par conséquent, tous les gestionnaires dont la priorité est inférieure à 10 ne seront pas appelés. Un gestionnaire dont la priorité est supérieure à 10 sera appelé en premier.
 
-In the event that there are handlers with the same priority value, the handler that was registered _last_ will be called. See [Handlers with the Same Priorities](#handlers-with-the-same-priorities) for more information.
+Dans le cas où il existe des gestionnaires ayant la même valeur de priorité, le gestionnaire qui a été enregistré _en dernier_ sera appelé. Voir [Handlers avec les mêmes priorités](#handlers-with-the-same-priorities) pour plus d'informations.
 
 ## Calling Multiple Handlers
 
