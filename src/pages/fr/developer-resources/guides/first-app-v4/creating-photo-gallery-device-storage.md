@@ -62,22 +62,22 @@ Ajoutez-le au constructeur :
 constructor(private camera: Camera, public photoService: PhotoService) {  }
 ```
 
-Next, move all code pertaining to the Camera plugin to the PhotoService class. This includes the takePicture method, the Camera and CameraOptions imports, and the Tab2Page page constructor.
+Ensuite, déplacez tout le code se rapportant au plugin Camera vers la classe PhotoService. Cela inclut la méthode takePicture, les importations de Camera et CameraOptions, et le constructeur de page Tab2Page.
 
-Continuing on, we need to convert currentImage variable references to the new photos array. Start by adding the captured photo data into the photos array:
+En poursuivant, nous devons convertir les références de la variable currentImage en un nouveau tableau de photos. Commencez par ajouter les données des photos capturées dans le tableau des photos :
 
 ```Javascript
 this.camera.getPicture(options).then((imageData) => {
-    // Add new photo to gallery
+    // Ajouter une nouvelle photo à la galerie
     this.photos.unshift({
         data: 'data:image/jpeg;base64,' + imageData
     }); }, (err) => {
-    // Handle error
+    // Gérer l'erreur
     console.log("Camera issue: " + err);
 });
 ```
 
-In `tab2.page.ts`, remove the currentImage variable and the reference to Camera in the constructor, leaving only PhotoService:
+Dans `tab2.page.ts`, supprimez la variable currentImage et la référence à Camera dans le constructeur, ne laissant que PhotoService :
 
 ```Javascript
 export class Tab2Page {
@@ -85,7 +85,7 @@ export class Tab2Page {
 }
 ```
 
-Next, in `tab2.page.html`, remove the currentImage img tag. In its place, use an ion-grid component, which provides a great way to arrange elements on a page. In this case, we’ll use it to display 2 photos per row.
+Ensuite, dans `tab2.page.html`, supprimez la balise img currentImage. À sa place, utilisez un composant ion-grid, qui offre un excellent moyen de disposer les éléments sur une page. Dans ce cas, nous allons l'utiliser pour afficher 2 photos par ligne.
 
 ```html
 <ion-grid>
@@ -97,9 +97,9 @@ Next, in `tab2.page.html`, remove the currentImage img tag. In its place, use an
 </ion-grid>
 ```
 
-Here, we loop through each photo in the PhotoServices photos array, adding a new column for each. Since an ion-row consists of 12 “blocks” of space, and we’re setting the size to 6 (`size="6"`), only 2 photos are displayed per row.
+Ici, nous parcourons en boucle chaque photo du tableau PhotoServices photos, en ajoutant une nouvelle colonne pour chacune. Étant donné qu'une rangée d'ions est constituée de 12 "blocs" d'espace, et que nous fixons la taille à 6 (`size="6"`), seules 2 photos sont affichées par rangée.
 
-Last, update the Fab button to call the PhotoService’s `takePicture` method:
+Enfin, mettez à jour le bouton Fab pour appeler la méthode `takePicture` du PhotoService :
 
 ```Html
 <ion-fab-button (click)="photoService.takePicture()">
@@ -107,7 +107,7 @@ Last, update the Fab button to call the PhotoService’s `takePicture` method:
 </ion-fab-button>
 ```
 
-Excellent! We now have a basic photo gallery working.
+Excellent ! We now have a basic photo gallery working.
 
 ## Saving photos to the device
 
