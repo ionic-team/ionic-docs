@@ -107,25 +107,25 @@ Enfin, mettez à jour le bouton Fab pour appeler la méthode `takePicture` du Ph
 </ion-fab-button>
 ```
 
-Excellent ! We now have a basic photo gallery working.
+Excellent ! Nous avons maintenant une galerie de photos de base qui fonctionne.
 
-## Saving photos to the device
+## Enregistrement des photos sur l'appareil
 
-Having a working photo gallery is pretty cool, but you’ll likely notice that when the app is closed, the photos are lost forever. That’s no good, so let’s add the [Ionic Storage plugin](https://ionicframework.com/docs/storage/), as easy way to store key/value pairs and JSON objects. When running in a native app context, Storage will prioritize using SQLite, one of the most stable and widely used file-based databases. When running on the web or as a Progressive Web App, Storage will attempt to use IndexedDB, WebSQL, and localstorage, in that order.
+Disposer d'une galerie de photos fonctionnelle est plutôt cool, mais vous remarquerez sans doute que lorsque l'application est fermée, les photos sont perdues à jamais. Ce n'est pas bon, alors ajoutons le [ plugin Ionic Storage](https://ionicframework.com/docs/storage/), comme moyen facile de stocker des paires clé/valeur et des objets JSON. Lorsqu'il est exécuté dans le contexte d'une application native, Storage utilisera en priorité SQLite, l'une des bases de données basées sur des fichiers les plus stables et les plus utilisées. Lors de l'exécution sur le web ou en tant que Progressive Web App, Storage tentera d'utiliser IndexedDB, WebSQL et localstorage, dans cet ordre.
 
-The Storage plugin works perfectly for our base64 image data. To begin, add the SQLite plugin for native:
+Le plugin Storage fonctionne parfaitement pour nos données d'image en base64. Pour commencer, ajoutez le plugin SQLite pour natif :
 
 ```shell
 $ ionic cordova plugin add cordova-sqlite-storage
 ```
 
-Next, add the JavaScript library for the web:
+Ensuite, ajoutez la bibliothèque JavaScript pour le web:
 
 ```shell
 $ npm install --save @ionic/storage
 ```
 
-Last, import the Storage module and add it to the imports list in `app.module.ts`:
+Enfin, importez le module Storage et ajoutez-le à la liste des importations dans `app.module.ts` :
 
 ```Javascript
 import { IonicStorageModule } from '@ionic/storage';
@@ -147,36 +147,36 @@ import { IonicStorageModule } from '@ionic/storage';
 export class AppModule {}
 ```
 
-It’s now ready to be used in our PhotoService class. Import it:
+Il est maintenant prêt à être utilisé dans notre classe PhotoService. Importez-le :
 
 ```Javascript
 import { Storage } from '@ionic/storage-angular';
 ```
 
-Then inject it via the constructor:
+Puis l'injecter via le constructeur :
 
 ```Javascript
 constructor(private camera: Camera, private storage: Storage) { }
 ```
 
-To add the capability to save photos, there’s only a couple steps left. Update the `takePicture()` method to save the entire photos array after each photo is taken using the storage.set method:
+Pour ajouter la possibilité d'enregistrer des photos, il ne reste que quelques étapes à franchir. Mettez à jour la méthode `takePicture()` pour sauvegarder l'ensemble du tableau de photos après la prise de chaque photo à l'aide de la méthode storage.set :
 
 ```Javascript
 this.camera.getPicture(options).then((imageData) => {
-  // Add new photo to gallery
+  // Ajouter une nouvelle photo à la galerie
   this.photos.unshift({
     data: 'data:image/jpeg;base64,' + imageData
   });
 
-  // Save all photos for later viewing
+  // Enregistrez toutes les photos pour les consulter plus tard
   this.storage.set('photos', this.photos);
 }, (err) => {
-  // Handle error
+  // Gérer l'erreur
   console.log("Camera issue: " + err);
 });
 ```
 
-We still need to load the saved photos when the app is first opened. This is simple enough - retrieve the “photos” key then assign its value to the photos array:
+Nous devons encore charger les photos enregistrées lors de la première ouverture de l'application. C'est assez simple - récupérer la clé "photos" puis affecter sa valeur au tableau des photos :
 
 ```Javascript
 loadSaved() {
@@ -186,7 +186,7 @@ loadSaved() {
 }
 ```
 
-Over in the Tab2 page, call the loadSaved method once it begins loading:
+Dans la page Tab2, appelez la méthode loadSaved dès que le chargement commence :
 
 ```Javascript
 ngOnInit() {
@@ -194,10 +194,10 @@ ngOnInit() {
 }
 ```
 
-Sweet! Photos are now saved to your device. To demonstrate that they are indeed being saved, force close DevApp, reopen it, and open the Tab2 page.  Or, shake your device to have the Control Menu pop up, then tap “Exit preview.” Afterwards, reload this app to view the photos.
+Super! Les photos sont maintenant enregistrées sur votre appareil. Pour démontrer qu'ils sont effectivement enregistrés, forcez la fermeture de DevApp, rouvrez le et ouvrez la page Tab2.  Ou bien, secouez votre appareil pour faire apparaître le menu de contrôle, puis appuyez sur "Quitter l'aperçu". Ensuite, rechargez cette application pour voir les photos.
 
-Next up, we’ll look at how to apply a custom theme to an Ionic app.
+Ensuite, nous allons voir comment appliquer un thème personnalisé à une application Ionic.
 
 <div style="text-align:right;">
-  <docs-button href="/docs/angular/your-first-app/theming">Continue <svg viewBox="0 0 512 512"><path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path></svg></docs-button>
+  <docs-button href="/docs/angular/your-first-app/theming">Continuer <svg viewBox="0 0 512 512"><path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path></svg></docs-button>
 </div>
