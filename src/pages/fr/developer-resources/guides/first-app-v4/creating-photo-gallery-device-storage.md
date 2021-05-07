@@ -9,16 +9,16 @@ contributors:
 
 # Création d'une galerie de photos avec le stockage de périphériques
 
-La dernière fois, nous avons ajouté le plugin Camera à la page Tab2 de notre application Tabs. Currently, the photo is replaced each time a new one is taken. Et si nous voulions afficher plusieurs photos ensemble ? Créons une galerie de photos. You can follow along with the complete code for this [on GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4).
+La dernière fois, nous avons ajouté le plugin Camera à la page Tab2 de notre application Tabs. Currently, the photo is replaced each time a new one is taken. Et si nous voulions afficher plusieurs photos ensemble ? Créons une galerie de photos. Vous pouvez suivre le code complet de cette [sur GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4).
 
-## Creating a Dedicated Photo Service
-From a terminal window, navigate to your Ionic project and run:
+## Créer un service photo dédié
+Dans une fenêtre de terminal, naviguez vers votre projet Ionic et exécutez :
 
 ```shell
 $ ionic g service services/Photo
 ```
 
-This creates a PhotoService class in a dedicated "services" folder:
+Ceci crée une classe PhotoService dans un dossier dédié "services" :
 
 ```Javascript
 import { Injectable } from '@angular/core';
@@ -31,7 +31,7 @@ export class PhotoService {
 }
 ```
 
-Within this file, add a Photo class. The “data” property represents the base64 image data of a captured photo:
+Dans ce fichier, ajoutez une classe Photo. La propriété "data" représente les données d'image base64 d'une photo capturée :
 
 ```Javascript
 class Photo {
@@ -39,7 +39,7 @@ class Photo {
 }
 ```
 
-Then, create a Photos array to represent our photo gallery:
+Ensuite, créez un tableau Photos pour représenter notre galerie de photos :
 
 ```Javascript
 export class PhotoService {
@@ -50,13 +50,13 @@ export class PhotoService {
 }
 ```
 
-Back in `tab2.page.ts`, import PhotoService:
+De retour dans `tab2.page.ts`, importez PhotoService :
 
 ```Javascript
 import { PhotoService } from '../services/photo.service';
 ```
 
-Add it to the Constructor:
+Ajoutez-le au constructeur :
 
 ```Javascript
 constructor(private camera: Camera, public photoService: PhotoService) {  }
