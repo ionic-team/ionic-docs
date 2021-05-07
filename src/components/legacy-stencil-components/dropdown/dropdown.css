@@ -49,16 +49,6 @@
   transform: rotate(180deg);
 }
 
-/* 
-Added in alpha.74 should be fixed in the theme, but doing it here until we can 
-update the pro docs along w/ it.
-*/
-.dropdown:not(.dropdown--nocaret) > .navbar__link:after {
-  border-width: 0;
-  transform: rotate(180deg);
-  top: 40%;
-}
-
 .Dropdown-panel {
   background-color: var(--background);
   border-radius: 6px;
