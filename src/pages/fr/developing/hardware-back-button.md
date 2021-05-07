@@ -1,7 +1,7 @@
 ---
-previousText: 'Development Tips'
+previousText: 'Conseils pour le Développement'
 previousUrl: '/docs/developing/tips'
-nextText: 'Keyboard'
+nextText: 'Clavier'
 nextUrl: '/docs/developing/keyboard'
 ---
 
