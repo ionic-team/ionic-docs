@@ -1,23 +1,23 @@
 ---
-previousText: 'Books'
+previousText: 'Livres'
 previousUrl: '/docs/developer-resources/books'
-nextText: 'Guides'
+nextText: 'Manuels'
 nextUrl: '/docs/developer-resources/guides'
 contributors:
   - walkingriver
 ---
 
-# Courses
+# Cours
 
-### [Elite Ionic](https://www.joshmorony.com/elite/)
+### [Ionic d'élite](https://www.joshmorony.com/elite/)
 
 by Josh Morony
 
-Elite Ionic is an online course for Ionic developers who want to move past the basics, and build complex, well tested, high performing, beautiful, and useable mobile applications. It is recommended that you already have a reasonably solid understanding of the basics of Ionic before starting this course.
+Elite Ionic est un cours en ligne pour les développeurs Ionic qui veulent aller au-delà des bases, et construire des applications mobiles complexes, bien testées, performantes, belles et utilisables. Il est recommandé que vous ayez déjà une compréhension assez solide des bases de Ionic avant de commencer ce cours.
 
 ### [Ionic Academy](https://ionicacademy.com/)
 
-by Simon Grimm
+par Simon Grimm
 
 Learn Ionic with step-by-step video courses & quick wins from one of the Ionic community leaders. Covers beginner, intermediate and advanced topics. Get access to a community of developers just like you.
 
