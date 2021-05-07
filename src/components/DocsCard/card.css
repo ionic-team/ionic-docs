@@ -45,7 +45,7 @@ docs-card {
 
   margin-bottom: 1.2em;
 
-  border-radius: 50%;
+  /* border-radius: 50%; */
   object-fit: cover;
 }
 
