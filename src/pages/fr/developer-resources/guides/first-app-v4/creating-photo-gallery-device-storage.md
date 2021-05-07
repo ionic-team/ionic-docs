@@ -9,7 +9,7 @@ contributors:
 
 # Création d'une galerie de photos avec le stockage de périphériques
 
-La dernière fois, nous avons ajouté le plugin Camera à la page Tab2 de notre application Tabs. Currently, the photo is replaced each time a new one is taken. What if we wanted to display multiple photos together? Let’s create a photo gallery. You can follow along with the complete code for this [on GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4).
+La dernière fois, nous avons ajouté le plugin Camera à la page Tab2 de notre application Tabs. Currently, the photo is replaced each time a new one is taken. Et si nous voulions afficher plusieurs photos ensemble ? Créons une galerie de photos. You can follow along with the complete code for this [on GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4).
 
 ## Creating a Dedicated Photo Service
 From a terminal window, navigate to your Ionic project and run:
