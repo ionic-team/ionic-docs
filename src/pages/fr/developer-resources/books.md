@@ -1,23 +1,23 @@
 ---
-previousText: 'Developer Tips'
+previousText: 'Conseils pour les développeurs'
 previousUrl: '/docs/developing/tips'
-nextText: 'Courses'
+nextText: 'Cours'
 nextUrl: '/docs/developer-resources/courses'
 ---
 
-# Books
+# Livres
 
-### [Learn Ionic 4 From Scratch](https://leanpub.com/learnionic4fromscratch)
+### [Apprendre Ionic 4 depuis Scratch](https://leanpub.com/learnionic4fromscratch)
 
-Angular. Vue. React. Vanilla JavaScript. All of these tools can be used to create awesome applications with Ionic, thanks to the new Stencil compiler. This book is aimed at beginners that are looking to create amazing web, mobile and desktop applications using Ionic with examples across all of the popular frameworks.
+Angular. Vue. React. Vanilla JavaScript. Tous ces outils peuvent être utilisés pour créer des applications impressionnantes avec Ionic, grâce au nouveau compilateur Stencil. Ce livre s'adresse aux débutants qui cherchent à créer des applications web, mobiles et de bureau étonnantes à l'aide de Ionic, avec des exemples dans tous les frameworks populaires.
 
-by [Paul Halliday](https:://developer.school)
+par [Paul Halliday](https:://developer.school)
 
-### [Creating Ionic Applications with StencilJS](https://www.joshmorony.com/creating-ionic-applications-with-stencil-js/) - [Free Preview](https://cdn2.hubspot.net/hubfs/3776657/PREVIEW-Creating-Ionic-Apps-with-StencilJS.pdf)
+### [Créer des applications Ionic avec StencilJS](https://www.joshmorony.com/creating-ionic-applications-with-stencil-js/) - [Aperçu gratuit](https://cdn2.hubspot.net/hubfs/3776657/PREVIEW-Creating-Ionic-Apps-with-StencilJS.pdf)
 
-As well as being a powerful tool for generating reuseable web components, StencilJS provides the tools needed to build an entire application out of web components. Combined with the Ionic web components, StencilJS gives us everything we need to build high-quality production mobile applications - no framework required.
+En plus d'être un outil puissant pour générer des composants web réutilisables, StencilJS fournit les outils nécessaires pour construire une application entière à partir de composants web. Combiné avec les composants web Ionic, StencilJS nous donne tout ce dont nous avons besoin pour construire des applications mobiles de production de haute qualité - aucun framework n'est nécessaire.
 
-by [Joshua Morony](https://www.joshmorony.com/blog)
+par [Joshua Morony](https://www.joshmorony.com/blog)
 
 ### [Mobile App Development with Ionic: Cross-Platform Apps with Ionic 2, Angular 2, and Cordova](https://www.amazon.com/Mobile-App-Development-Ionic-Cross-Platform/dp/1491937785/ref=sr_1_2?ie=UTF8&qid=1464183332&sr=8-2&keywords=ionic+2)
 
