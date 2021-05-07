@@ -19,15 +19,15 @@ En plus d'être un outil puissant pour générer des composants web réutilisabl
 
 par [Joshua Morony](https://www.joshmorony.com/blog)
 
-### [Mobile App Development with Ionic: Cross-Platform Apps with Ionic 2, Angular 2, and Cordova](https://www.amazon.com/Mobile-App-Development-Ionic-Cross-Platform/dp/1491937785/ref=sr_1_2?ie=UTF8&qid=1464183332&sr=8-2&keywords=ionic+2)
+### [Développement d'applications mobiles avec Ionic : applications multi-plateformes avec Ionic 2, Angular 2 et Cordova](https://www.amazon.com/Mobile-App-Development-Ionic-Cross-Platform/dp/1491937785/ref=sr_1_2?ie=UTF8&qid=1464183332&sr=8-2&keywords=ionic+2)
 
-by Chris Griffith
+par Chris Griffith
 
-### [Building Mobile Apps with Ionic & Angular](https://www.joshmorony.com/building-mobile-apps-with-ionic-2/)
+### [Construire des applications mobiles avec Ionic & Angular](https://www.joshmorony.com/building-mobile-apps-with-ionic-2/)
 
-by [Joshua Morony](https://www.joshmorony.com/blog)
+par [Joshua Morony](https://www.joshmorony.com/blog)
 
-Building Mobile Apps with Ionic & Angular is an all-in-one resource for learning the latest and greatest version of Ionic. It is targeted at beginners and works its way through the basics of Ionic, to example applications of varying complexity, and then to the steps required to build and publish your application (on the app stores or as a PWA). It has been updated for every major release, so you can rest easy knowing that you're not learning outdated tech.
+Building Mobile Apps with Ionic & Angular est une ressource tout-en-un pour apprendre la dernière et meilleure version de Ionic. Il s'adresse aux débutants et présente les bases de Ionic, des exemples d'applications plus ou moins complexes, puis les étapes nécessaires pour construire et publier votre application (sur les app stores ou en tant que PWA). Il a été mis à jour pour chaque version majeure, vous pouvez donc être tranquille en sachant que vous n'apprenez pas une technologie dépassée.
 
 ### [Ionic 2 From Zero to App Store](https://devdactic.com/zero-to-app)
 
