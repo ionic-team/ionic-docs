@@ -7,26 +7,26 @@ nextUrl: '/docs/developer-resources/guides/first-app-v4/creating-photo-gallery-d
 
 # Android, iOS, et la caméra - Oh My!
 
-Auparavant, nous avions une application Ionic qui fonctionnait localement dans un navigateur web. Now, let’s get it onto your iOS or Android device, then start building the photo gallery feature.
+Auparavant, nous avions une application Ionic qui fonctionnait localement dans un navigateur web. Maintenant, mettons-le sur ton appareil iOS ou Android, puis commençons à construire la fonctionnalité de galerie de photos.
 
-## Add Cordova iOS and Android Platforms
+## Ajouter des plateformes iOS et Android Cordova
 
-Ionic leverages the open source [Cordova project](https://cordova.apache.org/docs/en/latest/guide/overview/) to provide native hardware support. We begin by adding the iOS and Android _platforms_ then will add specific _plugins_ like the Camera afterwards:
+Ionic tire parti du projet open source [Cordova](https://cordova.apache.org/docs/en/latest/guide/overview/) pour fournir un support matériel natif. Nous commençons par ajouter les plateformes iOS et Android __ puis nous ajouterons des _plugins spécifiques_ comme la Caméra ensuite:
 
 ```shell
 $ ionic cordova platform add ios
 $ ionic cordova platform add android
 ```
 
-These commands will create a `config.xml` file, which is used to define Cordova iOS and Android settings. Cordova reads this file and applies each setting as it builds each native app binary.
+Ces commandes vont créer un fichier `config.xml` qui est utilisé pour définir les paramètres de Cordova iOS et Android. Cordova lit ce fichier et applique chaque paramètre comme il construit chaque binaire d'application native.
 
-There are more steps to configure [iOS](/docs/developing/ios) and [Android](/docs/developing/android) native tooling.
+Il existe d'autres étapes pour configurer [iOS](/docs/developing/ios) et [Android](/docs/developing/android) l'outillage natif.
 
 
 
-Much better! Now we can add the camera functionality. By the way, you can find reference code for this [on GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4).
+Beaucoup mieux! Maintenant nous pouvons ajouter la fonctionnalité de caméra. À propos, vous pouvez trouver le code de référence de cette [sur GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4).
 
-Back in `tab2.page.html`, add the following:
+De retour dans `tab2.page.html`, ajoutez ce qui suit :
 
 ```html
 <ion-content>
@@ -40,33 +40,33 @@ Back in `tab2.page.html`, add the following:
 </ion-content>
 ```
 
-Save the file and watch - a camera button appears! Tap on it and notice that it doesn’t do anything. Let’s fix that next.
+Enregistrez le fichier et regardez - un bouton de caméra apparaît ! Tapez dessus et remarquez qu'il ne fait rien. Réparons ça ensuite.
 
-## Add the Camera Dependencies via the CLI
+## Ajouter les Dépendances de la Caméra via la CLI
 
-In order to use the Camera, we need to bring in its JavaScript and native library dependencies. Back over in your Terminal window, run the following command, which adds the JavaScript library to the project, thus exposing the Camera API in TypeScript code:
+Afin d'utiliser la Caméra, nous devons introduire ses dépendances JavaScript et natives de la bibliothèque. Retourner dans votre fenêtre de terminal, exécuter la commande suivante, qui ajoute la bibliothèque JavaScript au projet, exposant ainsi l'API de la caméra dans le code TypeScript :
 
 ```shell
 $ npm install @ionic-native/camera
 ```
 
-In `package.json`, you’ll notice a new JavaScript dependency has been added, with a version number similar to the following:
+Dans `package.json`, vous remarquerez qu'une nouvelle dépendance JavaScript a été ajoutée, avec un numéro de version similaire à ce qui suit :
 
 `"@ionic-native/camera": "^5.4.0"`
 
-Next, run this command to add the native iOS and Android code, effectively allowing the Camera to work on a mobile device. For more info on how this works, read up on [Cordova](https://cordova.apache.org/docs/en/latest/guide/overview/) and [Ionic Native](https://ionicframework.com/docs/native).
+Ensuite, exécutez cette commande pour ajouter le code natif iOS et Android, permettant ainsi à la caméra de fonctionner sur un appareil mobile. Pour plus d'informations sur comment cela fonctionne, lisez les pages [Cordova](https://cordova.apache.org/docs/en/latest/guide/overview/) et [Ionic Native](https://ionicframework.com/docs/native).
 
 ```shell
 $ ionic cordova plugin add cordova-plugin-camera
 ```
 
-The `config.xml` file is now updated with an entry similar to the following for the native camera code:
+Le fichier `config.xml` est maintenant mis à jour avec une entrée similaire à ce qui suit pour le code de caméra native:
 
 ```xml
 <plugin name="cordova-plugin-camera" spec="^4.0.3" />
 ```
 
-The next step is only required for iOS users. As of iOS 10, developers must provide a reason for why the app wishes to access the device camera. Add this inside the ios platform section (<platform name="ios"></platform>) of `config.xml`:
+L'étape suivante n'est requise que pour les utilisateurs d'iOS. Depuis iOS 10, les développeurs doivent fournir une raison pour laquelle l'application souhaite accéder à la caméra de l'appareil. Ajoutez ceci à l'intérieur de la section de la plateforme ios (<platform name="ios"></platform>) de `config.xml` :
 
 ```xml
 <!-- Required for iOS 10: Camera permission prompt -->
@@ -75,15 +75,15 @@ The next step is only required for iOS users. As of iOS 10, developers must prov
 </edit-config>
 ```
 
-## Add Camera plugin to Angular App Module
+## Ajouter un plugin de caméra au module d'application Angular
 
-There’s one more step we need to do since this is an Angular project: register the Camera in the App Module (`src/app/app.module.ts`). First, import the Camera module:
+Il nous reste une étape à franchir, puisqu'il s'agit d'un projet Angular : enregistrer la caméra dans le module de l'application (`src/app/app.module.ts`). Tout d'abord, importez le module Caméra :
 
 ```Javascript
 import { Camera } from '@ionic-native/camera/ngx';
 ```
 
-Then, add it as a Provider:
+Ensuite, ajoutez-le en tant que fournisseur :
 
 ```Javascript
 providers: [
@@ -94,11 +94,11 @@ providers: [
   ],
 ```
 
-It can now be used on any of our App pages.
+Il peut maintenant être utilisé sur n'importe laquelle de nos pages d'application.
 
-## Add the Camera to the Gallery page
+## Ajouter la caméra à la page de la galerie
 
-Our camera button doesn’t do anything yet. Over in `tab2.page.html`, add a click handler to the button:
+Notre bouton appareil photo ne fait rien pour le moment. Plus dans `tab2.page.html`, ajoutez un gestionnaire de clics au bouton:
 
 ```html
 <ion-fab vertical="bottom" horizontal="center" slot="fixed">
@@ -108,19 +108,19 @@ Our camera button doesn’t do anything yet. Over in `tab2.page.html`, add a cli
 </ion-fab>
 ```
 
-Then, update the image placeholder. The following binds the “currentImage” variable (which we’ll work on next) to the image to display to the user.
+Ensuite, mettez à jour l'emplacement de l'image. Ce qui suit lie la variable "currentImage" (sur laquelle nous travaillerons ensuite) à l'image à afficher à l'utilisateur.
 
 ```html
 <img [src]="currentImage" *ngIf="currentImage">
 ```
 
-Open `tab2.page.ts` next and import the Camera library:
+Ouvrez ensuite `tab2.page.ts` et importez la bibliothèque Camera :
 
 ```Javascript
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 ```
 
-Next, define the “currentImage” variable and inject the Camera into this class via the constructor:
+Ensuite, définissez la variable “currentImage” et injectez la Caméra dans cette classe via le constructeur:
 
 ```Javascript
 export class Tab2Page {
@@ -130,7 +130,7 @@ export class Tab2Page {
 }
 ```
 
-Finally, add the “takePicture” method in `tab2.page.ts`. It is already wired up to execute once the camera button has been tapped:
+Enfin, ajoutez la méthode "takePicture" dans `tab2.page.ts`. Il est déjà branché pour être exécuté une fois que le bouton de la caméra a été cliqué :
 
 ```Javascript
 export class Tab2Page {
@@ -149,15 +149,15 @@ export class Tab2Page {
     this.camera.getPicture(options).then((imageData) => {
       this.currentImage = 'data:image/jpeg;base64,' + imageData;
     }, (err) => {
-      // Handle error
+      // Gérer l'erreur
       console.log("Camera issue:" + err);
     });
   }
 }
 ```
 
-Take notice: there’s no mention of iOS or Android! This is the awesome power of plugins: you use one API (`camera.getPicture()` in this case) and the plugin takes care of the platform differences for you. Write once, run everywhere. 😀
+Prenez note : il n’y a aucune mention d’iOS ou d’Android ! C'est la puissance géniale des plugins: vous utilisez une API (`caméra. etPicture()` dans ce cas) et le plugin s'occupe des différences de plate-forme pour vous. Écrivez une fois, publiez partout. 😀
 
-Save this file then tap the Camera button in DevApp. Voila! The camera should open on your device. Once a photo has been taken, it displays on the Photo Gallery page.
+Enregistrez ce fichier puis appuyez sur le bouton Appareil photo dans DevApp. Voila! La caméra devrait s'ouvrir sur votre appareil. Une fois la photo prise, elle s'affiche sur la page Galerie de photos.
 
-Next, we’ll look at how to transform the app into a photo gallery, as well as how to save the photos to your device!
+Ensuite, nous allons examiner comment transformer l'application en une galerie de photos, ainsi que comment enregistrer les photos sur votre appareil!
