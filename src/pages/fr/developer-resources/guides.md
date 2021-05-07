@@ -1,16 +1,16 @@
 ---
-previousText: 'Courses'
+previousText: 'Cours'
 previousUrl: '/docs/developer-resources/courses'
-nextText: 'Posts'
+nextText: 'Articles'
 nextUrl: '/docs/developer-resources/posts'
 ---
 
 # Guides
 
-### [Your First Ionic App - v3](/docs/developer-resources/guides/first-app-v3/intro)
+### [Votre première application Ionic - v3](/docs/developer-resources/guides/first-app-v3/intro)
 
-Follow along as we create a working Photo Gallery app using Ionic Framework v3 and Appflow.
+Suivez pendant que nous créons une application fonctionnelle Photo Gallery en utilisant Ionic Framework v3 et Appflow.
 
-### [Your First Ionic 4 App - Angular and Cordova](/docs/developer-resources/guides/first-app-v4/intro)
+### [Votre première application Ionic 4 - Angular et Cordova](/docs/developer-resources/guides/first-app-v4/intro)
 
-Follow along as we create a working Photo Gallery app using Ionic Framework v4 and Cordova.
+Suivez pendant que nous créons une application de Photo Gallery fonctionnelle en utilisant Ionic Framework v4 et Cordova.
