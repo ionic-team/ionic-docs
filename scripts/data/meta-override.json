@@ -8,6 +8,10 @@
       "title": "Back Button | ion-back-button: Custom Menu Icon for Applications",
       "description": "The ion-back-button is a custom menu icon for Android, iOS, and Progressive Web Apps. Use Ionic Framework components to easily build applications."
     },
+    "ion-buttons": {
+      "title": "ion-buttons: Toolbar Element with Named Slots for Buttons",
+      "description": "The Buttons component is a container element. Buttons placed in a toolbar should be inside the ion-buttons element and can be positioned using named slots."
+    },
     "ion-fab": {
       "title": "ion-fab: Floating Action Button for Android and iOS Ionic Apps",
       "description": "Fabs, floating action buttons, are container elements that contain one or more fab buttons. Use ion-fab when creating Android and iOS apps with Ionic Framework."
@@ -24,6 +28,10 @@
       "title": "Img Tag to Lazy Load Images in Viewport | ion-img Tag",
       "description": "Img tag lazy loads images whenever the tag is in the viewport. Utilize this component when generating large lists—as images are only loaded when visible."
     },
+    "ion-infinite-scroll": {
+      "title": "Infinite Scroller | ion-infinite-scroll Action Component",
+      "description": "The ion-infinite-scroll component calls an action to be performed when the user scrolls a specified distance from the bottom or top of the page."
+    },
     "ion-label": {
       "title": "Item Label Color and Properties for Applications | ion-label",
       "description": "Label is a wrapper element that can be used in combination with other Ionic components. Easily design item label colors and other properties with ion-label."
@@ -32,6 +40,10 @@
       "title": "Loading | Application Loading Indicator Overlay | ion-loading",
       "description": "The ion-loading overlay indicates activity while blocking user interaction. The loading indicator appears on top of the app's content, and can be dismissed."
     },
+    "ion-router-link": {
+      "title": "Router Link | Navigating The ion-router-link Component",
+      "description": "Use the ion-router-link component to navigate to a specified link. The router link can accept an href for location and a direction for the transition animation."
+    },
     "ion-searchbar": {
       "title": "Search Bar Icon for Keyboard Text Display | Ion-Search Bar",
       "description": "Search bars represent a text field that can be used to search through a collection. Learn to input Ion-Search Bar as an icon on Android & iOS keyboard displays."
@@ -39,6 +51,10 @@
     "ion-slides": {
       "title": "Ion-Slides: Mobile Touch Slider with Built-In & Custom Animation",
       "description": "Ion-Slides is a multi-section container which offers custom and built-in mobile touch slider animation effects. See how Ion-Slides works with iOS and Android."
+    },
+    "ion-spinner": {
+      "title": "ion-spinner | Animated Spinner Icon Components and Properties",
+      "description": "The ion-spinner component provides a variety of animated SVG spinners. These icons indicate that the app is loading or performing another process to wait on."
     },
     "ion-tabs": {
       "title": "Ion-Tabs: Tab-Based Component for App Top-Level Navigation",
@@ -54,6 +70,10 @@
     }
   },
   "cli": {
+    "cordova-emulate": {
+      "title": "Emulate Android and iOS Apps with Ionic Cordova Emulator",
+      "description": "Emulate an Ionic project on a simulator/emulator for Android and iOS apps. Build your app and deploy it to devices and emulators using Ionic Cordova Emulator."
+    },
     "cordova-resources": {
       "title": "Splash Screen Image Icon Generator | Generate Cordova Resources",
       "description": "Generate perfectly-sized icons and splash screens from PNG source images for your Cordova platforms. Automatically create icons with Ionic Cordova Resources."
@@ -99,6 +119,14 @@
     "splash-screen": {
       "title": "Splash Screen | Cordova Splash Screen Plugin for Android & iOS",
       "description": "This Cordova plugin displays and hides a splash screen during application launch. Show and hide the splash screen after the Android or iOS app has loaded."
+    },
+    "sqlite": {
+      "title": "SQLite | Install Cordova SQLite Plugin for iOS and Android Apps",
+      "description": "Access SQLite databases on supported iOS, Android, macOS, and Windows devices by installing the Cordova SQLite Plugin for Ionic Framework Applications."
+    },
+    "status-bar": {
+      "title": "Status Bar | Cordova StatusBar Plugin for iOS and Android Apps",
+      "description": "Manage the appearance of the native status bar with the Cordova StatusBar Plugin. Learn how to install status bar on supported iOS and Android platforms."
     }
   }
 }
