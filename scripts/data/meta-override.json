@@ -8,6 +8,10 @@
       "title": "Back Button | ion-back-button: Custom Menu Icon for Applications",
       "description": "The ion-back-button is a custom menu icon for Android, iOS, and Progressive Web Apps. Use Ionic Framework components to easily build applications."
     },
+    "ion-badge": {
+      "title": "Badges | ion-badge: iOS & Android App Notification Badge Icons",
+      "description": "Badges are inline block elements that appear near other elements on iOS & Android apps—use ion-badges as notifications that indicate how many items there are."
+    },
     "ion-buttons": {
       "title": "ion-buttons: Toolbar Element with Named Slots for Buttons",
       "description": "The Buttons component is a container element. Buttons placed in a toolbar should be inside the ion-buttons element and can be positioned using named slots."
@@ -15,6 +19,14 @@
     "ion-fab": {
       "title": "ion-fab: Floating Action Button for Android and iOS Ionic Apps",
       "description": "Fabs, floating action buttons, are container elements that contain one or more fab buttons. Use ion-fab when creating Android and iOS apps with Ionic Framework."
+    },
+    "ion-fab-button": {
+      "title": "Floating Action Button | Ionic FAB Button Icon for Primary Action",
+      "description": "Floating Action Buttons (FABs) represent the primary action in an app. The icons are circular and, when pressed, the button may open more related actions."
+    },
+    "ion-footer": {
+      "title": "Page Footer | Ionic App Footer: Wrapper Root Page Component",
+      "description": "A footer is a root component that sits at the bottom of a page. Ionic footers can be a wrapper for ion-toolbar to make sure the content area is sized correctly."
     },
     "ion-grid": {
       "title": "Ion-Grid: Display Grids to Build Mobile-First Custom App Layout",
@@ -70,6 +82,10 @@
     }
   },
   "cli": {
+    "build": {
+      "title": "Angular NG Build Configuration to Build Ionic Apps | ionic build",
+      "description": "Build web assets and prepare your Ionic app for any platform targets. Ionic build uses the Angular CLI—see the ng build docs for how to use the configuration."
+    },
     "cordova-emulate": {
       "title": "Emulate Android and iOS Apps with Ionic Cordova Emulator",
       "description": "Emulate an Ionic project on a simulator/emulator for Android and iOS apps. Build your app and deploy it to devices and emulators using Ionic Cordova Emulator."
@@ -92,6 +108,10 @@
     }
   },
   "native": {
+    "android-permissions": {
+      "title": "Android Permissions | Android Device and Ionic App Permissions",
+      "description": "This plugin is designed to support Android new permissions checking mechanism. Learn how to install and use Android Device permissions on your Ionic App."
+    },
     "barcode-scanner": {
       "title": "Barcode Scanner | Install Camera Barcode Scanner Plugin",
       "description": "Ionic's Barcode Scanner Plugin opens a camera view and automatically scans a barcode, returning the data back to you. Read more for installation and usage."
@@ -99,6 +119,14 @@
     "camera": {
       "title": "Install Camera | Cordova Plugin Cameras for Ionic Applications",
       "description": "Use the Cordova plugin to install a camera and take photos or capture videos in-app with Ionic Framework camera component for supported platforms."
+    },
+    "facebook": {
+      "title": "Facebook Connect Plugin | Facebook Docs in Ionic Documentation",
+      "description": "Ionic Documentation's Facebook Docs explain how to use the Facebook Connect Cordova Plugin to obtain access to the native FB application on iOS and Android."
+    },
+    "fcm": {
+      "title": "FCM | FCM Push Notification Plugin for Firebase Cloud Messaging",
+      "description": "The FCM push notification plugin provides basic functionality for Firebase Cloud Messaging. Read and learn more about the Cordova FCM Plugin for Ionic Apps."
     },
     "file": {
       "title": "File API Plugin for Read and Write File Access on Devices",
