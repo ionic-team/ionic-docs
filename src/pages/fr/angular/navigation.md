@@ -81,12 +81,12 @@ Maintenant depuis le `LoginComponent`, nous pouvons utiliser le code HTML suivan
 ```html
 <ion-header>
   <ion-toolbar>
-    <ion-title>Login</ion-title>
+    <ion-title>Se connecter</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-button [routerLink]="['/detail']">Go to detail</ion-button>
+  <ion-button [routerLink]="['/detail']">Aller au détail</ion-button>
 </ion-content>
 ```
 
@@ -113,11 +113,11 @@ export class LoginComponent {
 
 Les deux options fournissent le même mécanisme de navigation, juste en ajustant différents cas d'utilisation.
 
-> A note on navigation with relative URLs: Currently, to support multiple navigation stacks, relative URLs are something not supported
+> Remarque sur la navigation avec des URL relatives: actuellement, pour prendre en charge plusieurs piles de navigation, les URL relatives ne sont pas prises en charge
 
-## Lazy loading routes
+## Routes de chargement paresseux
 
-Now the current way our routes are setup makes it so they are included in the same chunk as the root app.module, which is not ideal. Instead, the router has a setup that allows the components to be isolated to their own chunks.
+Maintenant, la façon dont nos routes sont configurés fait en sorte qu'ils sont inclus dans le même morceau que le module d'application racine, ce qui n'est pas idéal. Au lieu de cela, le routeur a une configuration qui permet aux composants d'être isolés dans leurs propres morceaux.
 
 ```typescript
 <br />import { RouterModule } from '@angular/router';
@@ -127,14 +127,14 @@ Now the current way our routes are setup makes it so they are included in the sa
   ...
   RouterModule.forRoot([
     { path: '', redirectTo: 'login', pathMatch: 'full' },
-    { path: 'login', loadChildren: './login/login.module#LoginModule' },
-    { path: 'detail', loadChildren: './detail/detail.module#DetailModule' }
+    { path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule) },
+    { path: 'detail', loadChildren: () => import('./detail/detail.module').then(m => m.DetailModule) }
   ])
   ],
 })
 ```
 
-While similar, the `loadChildren` property is a way to reference a module by string instead of a component directly. In order to do this though, we need to create a module for each of the components.
+While similar, the `loadChildren` property is a way to reference a module by using native import instead of a component directly. Pour ce faire, nous devons cependant créer un module pour chacun des composants.
 
 ```typescript
 ...
@@ -151,9 +151,13 @@ import { LoginComponent } from './login.component';
 })
 ```
 
-> We're excluding some additional content and only including the necessary parts.
+> Nous excluons du contenu supplémentaire et n'incluons que les parties nécessaires.
 
-Here, we have a typical Angular Module setup, along with a RouterModule import, but we're now using `forChild` and declaring the component in that setup. With this setup, when we run our build, we will produce separate chunks for both the app component, the login component, and the detail component.
+Ici, nous avons une configuration typique de Module Angular, avec une importation de RouterModule, mais nous utilisons maintenant `forChild` et déclarons le composant dans cette configuration. Avec cette configuration, lorsque nous exécuterons notre build, nous produirons des morceaux distincts pour le composant d'application, le composant de connexion et le composant de détail.
+
+## Live Example
+
+If you would prefer to get hands on with the concepts and code described above, please checkout our [live example](https://stackblitz.com/edit/ionic-angular-routing?file=src/app/app-routing.module.ts) of the topics above on StackBlitz.
 
 ## Working with Tabs
 
@@ -170,7 +174,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: '../tab1/tab1.module#Tab1PageModule'
+            loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
           }
         ]
       },
@@ -189,7 +193,7 @@ const routes: Routes = [
 ];
 ```
 
-Here we have a "tabs" path that we load. In this example we call the path “tabs”, but the name of the paths are open to be changed. They can be called whatever fits your app. In that route object, we can define a child route as well. In this example, the top level child route "tab1" acts as our "outlet", and can load additional child routes. For this example, we have a single sub-child-route, which just loads a new component. The markup for the tab is as followed:
+Here we have a "tabs" path that we load. In this example we call the path "tabs", but the name of the paths can be changed. They can be called whatever fits your app. In that route object, we can define a child route as well. In this example, the top level child route "tab1" acts as our "outlet", and can load additional child routes. For this example, we have a single sub-child-route, which just loads a new component. The markup for the tab is as followed:
 
 ```html
 <br /><ion-tabs>

@@ -11,8 +11,8 @@ Previously, we got an Ionic app up and running locally in a web browser. Now, le
 
 The Ionic DevApp is a free app that makes it easy to run your Ionic app directly on your iOS or Android device. Download it here, then open on your device:
 
-<a href="https://itunes.apple.com/us/app/ionic-devapp/id1233447133?ls=1&mt=8"><img src="/docs/assets/img/guides/first-app-v3/appstore.png"></a>
-<a href="https://play.google.com/store/apps/details?id=io.ionic.devapp&hl=en"><img src="/docs/assets/img/guides/first-app-v3/playstore.png"></a>
+<a href="https://itunes.apple.com/us/app/ionic-devapp/id1233447133?ls=1&mt=8" ><img src="/docs/assets/img/guides/first-app-v3/appstore.png"></a>
+<a href="https://play.google.com/store/apps/details?id=io.ionic.devapp&hl=en" ><img src="/docs/assets/img/guides/first-app-v3/playstore.png"></a>
 
 Afterwards, open a terminal and navigate to your Ionic project. Execute the following:
 
@@ -148,7 +148,7 @@ Take notice: there’s no mention of iOS or Android! This is the awesome power o
 
 Save this file then tap the Camera button in DevApp. Voila! The camera should open on your device. Once a photo has been taken, it displays on the Photo Gallery page.
 
-Finally, back up your changes to Ionic Appflow:
+Finally, back up your changes to Appflow:
 
 ```shell
 git add .

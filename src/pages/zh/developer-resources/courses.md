@@ -21,9 +21,11 @@ by Simon Grimm
 
 Learn Ionic with step-by-step video courses & quick wins from one of the Ionic community leaders. Covers beginner, intermediate and advanced topics. Get access to a community of developers just like you.
 
-### [Introducing Ionic 2](http://shop.oreilly.com/product/0636920050353.do)
+### [Ionic Framework: Tips, Tricks & Techniques](https://www.packtpub.com/mobile/ionic-framework-tips-tricks-and-techniques-video)
 
-by Mathieu Chauvinc
+by Charles Muzonzini
+
+In this course, you will master tips and best practices for Ionic 4 & Ionic 5 that you can immediately implement to build high quality apps. This course covers a wide variety of topics from increasing app performance, to building custom native plugins, to securing your apps. It's a practical, hands-on course that will take your app building skills to the next level.
 
 ### [Building Deskop Apps with Ionic and Electron](https://pluralsight.pxf.io/VeMXO)
 
@@ -43,9 +45,17 @@ by Michael Callaghan at Pluralsight
 
 Since its inception, the Ionic Framework has included a rudimentary command line interface. Though only a few years old, it has matured into a powerful tool that should be part of every developer’s toolbox. This course, Ionic CLI, will start at the top and explore the Ionic CLI. First, you'll see how to create projects and components. Next, you will learn how to build and serve apps. Finally, you'll discover how to share projects with others, and even integrate with other build tools. Whether you’re just starting to explore Ionic, or have been using it since its pre-beta days, there is something here for you. By the end of the course, you’ll have the confidence to use the Ionic CLI as part of your everyday Ionic development.
 
+### [Wordpress Rest API and Ionic 4 (Angular) App With Auth](https://www.udemy.com/course/wordpress-rest-api-and-ionic-3-crud/)
+
+by Baljeet Singh at Udemy
+
 ### [Building Mobile Apps with Ionic 2, Angular 2, and TypeScript](https://app.pluralsight.com/library/courses/ionic2-angular2-typescript-mobile-apps/table-of-contents)
 
 by Pluralsight
+
+### [Introducing Ionic 2](http://shop.oreilly.com/product/0636920050353.do)
+
+by Mathieu Chauvinc
 
 ### [Ionic 2 Master Course](https://www.udemy.com/ionic-2-tutorial/)
 

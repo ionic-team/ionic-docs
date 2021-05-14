@@ -34,7 +34,7 @@
     "packageName": "@ionic-native/adjust",
     "displayName": "Adjust",
     "description": "\nThis is the Ionic Cordova SDK of Adjust™. You can read more about Adjust™ at adjust.com.\n\nRequires Cordova plugin: `com.adjust.sdk`. For more info, please see the [Adjust Cordova SDK](https://github.com/adjust/cordova_sdk)\n",
-    "usage": "\n```typescript\n import { Adjust, AdjustConfig, AdjustEnvironment } from '@ionic-native/adjust/ngx';\n\n constructor(private adjust: Adjust) { }\n\n ...\n\n const config = new AdjustConfig('APP-TOKEN-HERE', AdjustEnvironment.Sandbox);\n config.logLevel = AdjustLogLevel.Verbose;\n // Set other config properties.\n adjust.create(config);\n\n```",
+    "usage": "\n```typescript\n import { Adjust, AdjustConfig, AdjustEnvironment } from '@ionic-native/adjust';\n\n constructor(private adjust: Adjust) { }\n\n ...\n\n const config = new AdjustConfig('APP-TOKEN-HERE', AdjustEnvironment.Sandbox);\n config.logLevel = AdjustLogLevel.Verbose;\n // Set other config properties.\n adjust.create(config);\n\n```",
     "platforms": [
       "Android",
       "iOS"
@@ -134,6 +134,20 @@
     }
   },
   {
+    "packageName": "@ionic-native/all-in-one-sdk",
+    "displayName": "AllInOneSDK",
+    "description": "\nPaytm All-in-One SDK plugin for Cordova/Ionic Applications\nPaytm All-in-One SDK provides a swift, secure and seamless payment experience to your users by invoking the Paytm app (if installed on your user’s smartphone) to complete payment for your order.\nPaytm All-in-One SDK enables payment acceptance via Paytm wallet, Paytm Payments Bank, saved Debit/Credit cards, Net Banking, BHIM UPI and EMI as available in your customer’s Paytm account. If Paytm app is not installed on a customer's device, the transaction will be processed via web view within the All-in-One SDK.\nFor more information about Paytm All-in-One SDK, please visit https://developer.paytm.com/docs/all-in-one-sdk/hybrid-apps/cordova/\n",
+    "usage": "\n```typescript\nimport { AllInOneSDK } from '@ionic-native/all-in-one-sdk/ngx';\n\n\nconstructor(private allInOneSDK: AllInOneSDK) { }\n\n...\n\nFor below parameters see [documentation](https://developer.paytm.com/docs/all-in-one-sdk/hybrid-apps/cordova/)\nlet paymentIntent = { mid : merchantID, orderId: orderId, txnToken: transactionToken, amount: amount, isStaging: isStaging, callbackUrl:callBackURL,  restrictAppInvoke:restrictAppInvoke  }\n\nthis.allInOneSDK.startTransaction(paymentIntent)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n\nFor iOS:\nAfter adding the plugin, open the iOS project, you can find the same at <projectName>/platforms/ios.\nIn case merchant don’t have callback URL, Add an entry into Info.plist LSApplicationQueriesSchemes(Array) Item 0 (String)-> paytm\nAdd a URL Scheme “paytm”+”MID”\n\n",
+    "platforms": [
+      "Android",
+      "iOS"
+    ],
+    "repo": "https://github.com/paytm/paytm-allinonesdk-ionic-cordova.git",
+    "cordovaPlugin": {
+      "name": "cordova-paytm-allinonesdk"
+    }
+  },
+  {
     "packageName": "@ionic-native/analytics-firebase",
     "displayName": "Analytics Firebase",
     "description": "\nGoogle Analytics Firebase plugin for Ionic Native apps.\n",
@@ -184,6 +198,19 @@
     "repo": "https://github.com/mesmotronic/cordova-plugin-fullscreen",
     "cordovaPlugin": {
       "name": "cordova-plugin-fullscreen"
+    }
+  },
+  {
+    "packageName": "@ionic-native/android-notch",
+    "displayName": "Android Notch",
+    "description": "\nThis plugin enables developers to get the cutout and android devices inset sizes\nIt is based on the cordova plugin developed by @tobspr: https://github.com/tobspr/cordova-plugin-android-notch\nThis plugin works on all android versions, but we can only detect notches starting from Android 9.\n",
+    "usage": "\n```typescript\nimport { AndroidNotch } from '@ionic-native/android-notch/ngx';\n\n\nconstructor(private androidNotch: AndroidNotch) { }\n\n...\n\n\nthis.androidNotch.hasCutout()\n   .then((px: number) => console.log('Inset size: '), px)\n   .catch((error: any) => console.log('Error: ', error))\n\nthis.androidNotch.getInsetTop()\n   .then((px: number) => console.log('Inset size: '), px)\n   .catch((error: any) => console.log('Error: ', error))\n\nthis.androidNotch.getInsetRight()\n   .then((px: number) => console.log('Inset size: '), px)\n   .catch((error: any) => console.log('Error: ', error))\n\nthis.androidNotch.getInsetBottom()\n   .then((px: number) => console.log('Inset size: '), px)\n   .catch((error: any) => console.log('Error: ', error))\n\nthis.androidNotch.getInsetLeft()\n   .then((px: number) => console.log('Inset size: '), px)\n   .catch((error: any) => console.log('Error: ', error))\n\n```\n",
+    "platforms": [
+      "Android"
+    ],
+    "repo": "https://github.com/tobspr/cordova-plugin-android-notch.git",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-android-notch"
     }
   },
   {
@@ -471,6 +498,20 @@
     "repo": "https://github.com/katzer/cordova-plugin-background-mode",
     "cordovaPlugin": {
       "name": "cordova-plugin-background-mode"
+    }
+  },
+  {
+    "packageName": "@ionic-native/background-upload",
+    "displayName": "BackgroundUpload",
+    "description": "\nThis plugin does something\n",
+    "usage": "\n```typescript\nimport { BackgroundUpload } from '@ionic-native/background-upload/ngx';\n\n\nconstructor(private backgroundUpload: BackgroundUpload) { }\n\n...\n\n\nthis.backgroundUpload.init({})\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+    "platforms": [
+      "Android",
+      "iOS"
+    ],
+    "repo": "https://github.com/spoonconsulting/cordova-plugin-background-upload",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-background-upload"
     }
   },
   {
@@ -952,10 +993,9 @@
     "packageName": "@ionic-native/clover-go",
     "displayName": "Clover Go",
     "description": "\nThis plugin connect to Clover Go payment device and process payments.\n",
-    "usage": "\n```typescript\nimport { CloverGo } from '@ionic-native/clover-go/ngx';\n\n\nconstructor(private cloverGo: CloverGo) { }\n\n...\n\n\nthis.cloverGo.init(configuration)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\nthis.cloverGo.connect()\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\nthis.cloverGo.disconnect()\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\nthis.cloverGo.sale(saleInfo)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+    "usage": "\n```typescript\nimport { CloverGo } from '@ionic-native/clover-go/ngx';\n\n\nconstructor(private cloverGo: CloverGo) { }\n\n...\n\n\nthis.cloverGo.init(configuration)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\nthis.cloverGo.connect()\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\nthis.cloverGo.disconnect()\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\nthis.cloverGo.sale(saleInfo)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\nthis.cloverGo.sign(signInfo)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\nthis.cloverGo.voidPayment(paymentInfo)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
     "platforms": [
-      "Android",
-      "iOS"
+      "Android"
     ],
     "repo": "https://github.com/hotwax/cordova-plugin-clovergo",
     "cordovaPlugin": {
@@ -1038,6 +1078,20 @@
     "repo": "https://github.com/jeduan/cordova-plugin-crop",
     "cordovaPlugin": {
       "name": "cordova-plugin-crop"
+    }
+  },
+  {
+    "packageName": "@ionic-native/custom-uisdk",
+    "displayName": "CustomUISDK",
+    "description": "\nThis plugin is used to access Paytm's native CustomUISDK framework's apis.\n",
+    "usage": "\n```typescript\nimport { CustomUISDK } from '@ionic-native/custom-uisdk/ngx';\n\nconstructor(private customuisdk: CustomUISDK) { }\n\n...\nthis.customuisdk.functionName('Hello', 123)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n```\n",
+    "platforms": [
+      "Android, iOS"
+    ],
+    "repo": "https://github.com/paytm/paytm-customuisdk-cordova",
+    "installVariables": [],
+    "cordovaPlugin": {
+      "name": "cordova-paytm-customuisdk"
     }
   },
   {
@@ -1178,6 +1232,23 @@
       "name": "cordova-plugin-device"
     },
     "premierSlug": "device"
+  },
+  {
+    "packageName": "@ionic-native/dfu-update",
+    "displayName": "Dfu Update",
+    "description": "\nThis plugin is a Wrapper to use Nordic Semiconductor's Device Firmware Update (DFU) service to update a Bluetooth LE device.\n",
+    "usage": "\n```typescript\nimport { DfuUpdate } from '@ionic-native/dfu-update/ngx';\n\n\nconstructor(private dfuUpdate: DfuUpdate) { }\n\n...\n\n\nthis.dfuUpdate.updateFirmware('fileURL', 'deviceIdentifier')\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+    "platforms": [
+      "Android",
+      "iOS"
+    ],
+    "repo": "https://github.com/EinfachHans/cordova-plugin-dfu-update",
+    "installVariables": [
+      "ANDROID_NORDIC_VERSION"
+    ],
+    "cordovaPlugin": {
+      "name": "cordova-plugin-dfu-update"
+    }
   },
   {
     "packageName": "@ionic-native/diagnostic",
@@ -1361,20 +1432,20 @@
   {
     "packageName": "@ionic-native/facebook",
     "displayName": "Facebook",
-    "description": "\nUse the Facebook Connect plugin to obtain access to the native FB application on iOS and Android.\n\nRequires Cordova plugin: `cordova-plugin-facebook4`. For more info, please see the [Facebook Connect](https://github.com/jeduan/cordova-plugin-facebook4).\n\n#### Installation\n\n To use the FB plugin, you first have to create a new Facebook App inside of the Facebook developer portal at [https://developers.facebook.com/apps](https://developers.facebook.com/apps).\n\n[![fb-getstarted-1](/img/docs/native/Facebook/1.png)](https://developers.facebook.com/apps/)\n\nRetrieve the `App ID` and `App Name`.\n\n[![fb-getstarted-2](/img/docs/native/Facebook/2.png)](https://developers.facebook.com/apps/)\n\nThen type in the following command in your Terminal, where APP_ID and APP_NAME are the values from the Facebook Developer portal.\n\n```bash\n ionic cordova plugin add cordova-plugin-facebook4 --variable APP_ID=\"123456789\" --variable APP_NAME=\"myApplication\"\n```\n\nAfter, you'll need to add the native platforms you'll be using to your app in the Facebook Developer portal under your app's Settings:\n\n[![fb-getstarted-3](/img/docs/native/Facebook/3.png)](https://developers.facebook.com/apps/)\n\nClick `'Add Platform'`.\n\n[![fb-getstarted-4](/img/docs/native/Facebook/4.png)](https://developers.facebook.com/apps/)\n\nAt this point you'll need to open your project's [`config.xml`](https://cordova.apache.org/docs/en/latest/config_ref/index.html) file, found in the root directory of your project.\n\nTake note of the `id` for the next step:\n```\n<widget id=\"com.mycompany.testapp\" version=\"0.0.1\" xmlns=\"http://www.w3.org/ns/widgets\" xmlns:cdv=\"http://cordova.apache.org/ns/1.0\">\n```\n\nYou can also edit the `id` to whatever you'd like it to be.\n\n#### iOS Install\nUnder 'Bundle ID', add the `id` from your `config.xml` file:\n\n[![fb-getstarted-5](/img/docs/native/Facebook/5.png)](https://developers.facebook.com/apps/)\n\n\n#### Android Install\nUnder 'Google Play Package Name', add the `id` from your `config.xml` file:\n\n[![fb-getstarted-6](/img/docs/native/Facebook/6.png)](https://developers.facebook.com/apps/)\n\n\nAnd that's it! You can now make calls to Facebook using the plugin.\n\n## Events\n\nApp events allow you to understand the makeup of users engaging with your app, measure the performance of your Facebook mobile app ads, and reach specific sets of your users with Facebook mobile app ads.\n\n- [iOS] [https://developers.facebook.com/docs/ios/app-events](https://developers.facebook.com/docs/ios/app-events)\n- [Android] [https://developers.facebook.com/docs/android/app-events](https://developers.facebook.com/docs/android/app-events)\n- [JS] Does not have an Events API, so the plugin functions are empty and will return an automatic success\n\nActivation events are automatically tracked for you in the plugin.\n\nEvents are listed on the [insights page](https://www.facebook.com/insights/).\n\nFor tracking events, see `logEvent` and `logPurchase`.\n",
+    "description": "\nUse the Facebook Connect plugin to obtain access to the native FB application on iOS and Android.\n\nRequires Cordova plugin: `cordova-plugin-facebook-connect`. For more info, please see the [Facebook Connect](https://github.com/cordova-plugin-facebook-connect/cordova-plugin-facebook-connect).\n\n#### Installation\n\n To use the FB plugin, you first have to create a new Facebook App inside of the Facebook developer portal at [https://developers.facebook.com/apps](https://developers.facebook.com/apps).\n\n[![fb-getstarted-1](/img/docs/native/Facebook/1.png)](https://developers.facebook.com/apps/)\n\nRetrieve the `App ID` and `App Name`.\n\n[![fb-getstarted-2](/img/docs/native/Facebook/2.png)](https://developers.facebook.com/apps/)\n\nThen type in the following command in your Terminal, where APP_ID and APP_NAME are the values from the Facebook Developer portal.\n\n```bash\n ionic cordova plugin add cordova-plugin-facebook-connect --variable APP_ID=\"123456789\" --variable APP_NAME=\"myApplication\"\n```\n\nAfter, you'll need to add the native platforms you'll be using to your app in the Facebook Developer portal under your app's Settings:\n\n[![fb-getstarted-3](/img/docs/native/Facebook/3.png)](https://developers.facebook.com/apps/)\n\nClick `'Add Platform'`.\n\n[![fb-getstarted-4](/img/docs/native/Facebook/4.png)](https://developers.facebook.com/apps/)\n\nAt this point you'll need to open your project's [`config.xml`](https://cordova.apache.org/docs/en/latest/config_ref/index.html) file, found in the root directory of your project.\n\nTake note of the `id` for the next step:\n```\n<widget id=\"com.mycompany.testapp\" version=\"0.0.1\" xmlns=\"http://www.w3.org/ns/widgets\" xmlns:cdv=\"http://cordova.apache.org/ns/1.0\">\n```\n\nYou can also edit the `id` to whatever you'd like it to be.\n\n#### iOS Install\nUnder 'Bundle ID', add the `id` from your `config.xml` file:\n\n[![fb-getstarted-5](/img/docs/native/Facebook/5.png)](https://developers.facebook.com/apps/)\n\n\n#### Android Install\nUnder 'Google Play Package Name', add the `id` from your `config.xml` file:\n\n[![fb-getstarted-6](/img/docs/native/Facebook/6.png)](https://developers.facebook.com/apps/)\n\n\nAnd that's it! You can now make calls to Facebook using the plugin.\n\n## Events\n\nApp events allow you to understand the makeup of users engaging with your app, measure the performance of your Facebook mobile app ads, and reach specific sets of your users with Facebook mobile app ads.\n\n- [iOS] [https://developers.facebook.com/docs/ios/app-events](https://developers.facebook.com/docs/ios/app-events)\n- [Android] [https://developers.facebook.com/docs/android/app-events](https://developers.facebook.com/docs/android/app-events)\n- [JS] Does not have an Events API, so the plugin functions are empty and will return an automatic success\n\nActivation events are automatically tracked for you in the plugin.\n\nEvents are listed on the [insights page](https://www.facebook.com/insights/).\n\nFor tracking events, see `logEvent` and `logPurchase`.\n",
     "usage": "\n```typescript\nimport { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';\n\nconstructor(private fb: Facebook) { }\n\n...\n\nthis.fb.login(['public_profile', 'user_friends', 'email'])\n  .then((res: FacebookLoginResponse) => console.log('Logged into Facebook!', res))\n  .catch(e => console.log('Error logging into Facebook', e));\n\n\nthis.fb.logEvent(this.fb.EVENTS.EVENT_NAME_ADDED_TO_CART);\n\n```\n\n",
     "platforms": [
       "Android",
       "iOS",
       "Browser"
     ],
-    "repo": "https://github.com/jeduan/cordova-plugin-facebook4",
+    "repo": "https://github.com/cordova-plugin-facebook-connect/cordova-plugin-facebook-connect",
     "installVariables": [
       "APP_ID",
       "APP_NAME"
     ],
     "cordovaPlugin": {
-      "name": "cordova-plugin-facebook4"
+      "name": "cordova-plugin-facebook-connect"
     }
   },
   {
@@ -1515,7 +1586,7 @@
   {
     "packageName": "@ionic-native/firebase-analytics",
     "displayName": "Firebase Analytics",
-    "description": "\nCordova plugin for Firebase Analytics\n\nGo to firebase console and export google-services.json and GoogleService-Info.plist. Put those files into the root of your cordova app folder.\n\nNOTE: on iOS in order to collect demographic, age, gender data etc. you should additionally include AdSupport.framework into your project.\n",
+    "description": "\nCordova plugin for Firebase Analytics\n\nGo to firebase console and export google-services.json and GoogleService-Info.plist. Put those files into the root of your cordova app folder.\n\nNOTE: on iOS in order to collect demographic, age, gender data etc. you should additionally include AdSupport.framework into your project.\n\n## Using capacitor?\nFor Android you'll have to add in __android/app/src/main/AndroidManfiest.xml__ under `<application>`\n```\n<meta-data\n     tools:replace=\"android:value\"\n     android:name=\"firebase_analytics_collection_enabled\"\n     android:value=\"true\"/>\n\n<meta-data\n     tools:replace=\"android:value\"\n     android:name=\"google_analytics_automatic_screen_reporting_enabled\"\n     android:value=\"false\"/>\n```\n\nAnd in the same file, you'll have to add `xmlns:tools=\"http://schemas.android.com/tools\"` to your _manifest_ tag.\n",
     "usage": "\n```typescript\nimport { FirebaseAnalytics } from '@ionic-native/firebase-analytics/ngx';\n\n\nconstructor(private firebaseAnalytics: FirebaseAnalytics) { }\n\n...\n\nthis.firebaseAnalytics.logEvent('page_view', {page: \"dashboard\"})\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
     "platforms": [
       "Android",
@@ -1624,7 +1695,7 @@
     "packageName": "@ionic-native/firebase-vision",
     "displayName": "Firebase Vision",
     "description": "\nCordova plugin for Firebase MLKit Vision\n",
-    "usage": "\n```typescript\nimport { FirebaseVision } from '@ionic-native/firebase-vision/ngx';\n\n\nconstructor(private firebaseVision: FirebaseVision) { }\n\n...\n\n\nthis.firebaseVision.onDeviceTextRecognizer(FILE_URI)\n  .then((res: string) => console.log(res))\n  .catch((error: string) => console.error(error));\n\nthis.firebaseVision.barcodeDetector(FILE_URI)\n  .then((res: Barcode[]) => console.log(res))\n  .catch((error: string) => console.error(error));\n\n```\n",
+    "usage": "\n```typescript\nimport { FirebaseVision } from '@ionic-native/firebase-vision/ngx';\n\n\nconstructor(private firebaseVision: FirebaseVision) { }\n\n...\n\n\nthis.firebaseVision.onDeviceTextRecognizer(FILE_URI)\n  .then((res: string) => console.log(res))\n  .catch((error: string) => console.error(error));\n\nthis.firebaseVision.barcodeDetector(FILE_URI)\n  .then((res: Barcode[]) => console.log(res))\n  .catch((error: string) => console.error(error));\n\nthis.firebaseVision.imageLabeler(FILE_URI)\n  .then((res: ImageLabel[]) => console.log(res))\n  .catch((error: string) => console.error(error));\n\n```\n",
     "platforms": [
       "Android",
       "iOS"
@@ -1958,20 +2029,6 @@
     }
   },
   {
-    "packageName": "@ionic-native/hot-code-push",
-    "displayName": "Hot Code Push",
-    "description": "\nHotCodePush plugin for Cordova that supports iOS and Android. This plugin allows you to keep your html, css and js files synced with your server.\n\nFor more info, please see the detailed wiki https://github.com/nordnet/cordova-hot-code-push/wiki\n",
-    "usage": "\n```typescript\nimport { HotCodePush } from '@ionic-native/hot-code-push/ngx';\n\nconstructor(private hotCodePush: HotCodePush) { }\n\n...\n\nhotCodePush.fetchUpdate(options).then(data => { console.log('Update available'); });\n\n```\n",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/nordnet/cordova-hot-code-push",
-    "cordovaPlugin": {
-      "name": "cordova-hot-code-push"
-    }
-  },
-  {
     "packageName": "@ionic-native/hotspot",
     "displayName": "Hotspot",
     "description": "\nA Cordova plugin for managing Hotspot networks on Android.\n\nRequires Cordova plugin: `cordova-plugin-hotspot`. For more info, please see the [Hotspot plugin docs](https://github.com/hypery2k/cordova-hotspot-plugin).\n",
@@ -1988,7 +2045,7 @@
     "packageName": "@ionic-native/http",
     "displayName": "HTTP",
     "description": "\nCordova / Phonegap plugin for communicating with HTTP servers. Supports iOS and Android.\n\nAdvantages over Javascript requests:\n- SSL / TLS Pinning\n- CORS restrictions do not apply\n- Handling of HTTP code 401 - read more at [Issue CB-2415](https://issues.apache.org/jira/browse/CB-2415)\n",
-    "usage": "\n```typescript\nimport { HTTP } from '@ionic-native/http/ngx';\n\nconstructor(private http: HTTP) {}\n\n...\n\nthis.http.get('https://ionic.io', {}, {})\n  .then(data => {\n\n    console.log(data.status);\n    console.log(data.data); // data received by server\n    console.log(data.headers);\n\n  })\n  .catch(error => {\n\n    console.log(error.status);\n    console.log(error.error); // error message as string\n    console.log(error.headers);\n\n  });\n\n```",
+    "usage": "\n```typescript\nimport { HTTP } from '@ionic-native/http/ngx';\n\nconstructor(private http: HTTP) {}\n\n...\n\nthis.http.get('http://ionic.io', {}, {})\n  .then(data => {\n\n    console.log(data.status);\n    console.log(data.data); // data received by server\n    console.log(data.headers);\n\n  })\n  .catch(error => {\n\n    console.log(error.status);\n    console.log(error.error); // error message as string\n    console.log(error.headers);\n\n  });\n\n```",
     "platforms": [
       "Android",
       "iOS"
@@ -2011,19 +2068,6 @@
     "repo": "https://github.com/floatinghotpot/cordova-httpd",
     "cordovaPlugin": {
       "name": "cordova-plugin-httpd"
-    }
-  },
-  {
-    "packageName": "@ionic-native/hyper-track",
-    "displayName": "HyperTrack",
-    "description": "\nHyperTrack cordova plugin wrapper for Ionic Native. Location-based services provider.\nMake sure to include your publishable key at config.xml (see [HyperTrack Cordova Setup](https://docs.hypertrack.com/sdks/cordova/setup.html#step-2-configure-the-sdk)).\n",
-    "usage": "\n```typescript\nimport { HyperTrack } from '@ionic-native/hyper-track/ngx';\n\nconstructor(private hyperTrack: HyperTrack) { }\n\n// Check if app has location permissions enabled\nthis.hyperTrack.checkLocationPermission().then(response => {\n  // response (String) can be \"true\" or \"false\"\n  if (response != \"true\") {\n    // Ask for permissions\n    this.hyperTrack.requestPermissions().then(response => {}, error => {});\n  }\n}, error => {});\n\n// Check if app has location services enabled\nthis.hyperTrack.checkLocationServices().then(response => {\n  // response (String) can be \"true\" or \"false\"\n  if (response != \"true\") {\n    // Request services to be enabled\n    this.hyperTrack.requestLocationServices().then(response => {}, error => {});\n  }\n}, error => {});\n\n// First set the current user. This can be done via getOrCreateUser() or setUserId()\nthis.hyperTrack.setUserId(\"xxx\").then(user => {\n  // user (String) is a String representation of a User's JSON\n\n  this.hyperTrack.startTracking().then(userId => {}, trackingError => {});\n\n  this.hyperTrack.createAndAssignAction('visit', 'lookupId','address', 20.12, -100.3).then(action => {\n    // Handle action. It's a String representation of the Action's JSON. For example:\n    // '{\"eta\":\"Jul 17, 2017 12:50:03 PM\",\"assigned_at\":\"Jul 17, 2017 12:34:38 PM\",,\"distance\":\"0.0\",...}'\n  }, error => {});\n\n  // You can complete an action with completeAction() or completeActionWithLookupId()\n  this.hyperTrack.completeAction('action-id').then(response => {\n    // Handle response (String). Should be \"OK\".\n  }, error => {});\n\n  this.hyperTrack.getCurrentLocation().then(location => {\n    // Handle location. It's a String representation of a Location's JSON.For example:\n    // '{\"mAccuracy\":22.601,,\"mLatitude\":23.123456, \"mLongitude\":-100.1234567, ...}'\n  }, error => {});\n\n  this.hyperTrack.stopTracking().then(success => {\n    // Handle success (String). Should be \"OK\".\n  }, error => {});\n\n}, error => {});*\n```\n",
-    "platforms": [
-      "Android"
-    ],
-    "repo": "https://github.com/hypertrack/hypertrack-cordova",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-hypertrack"
     }
   },
   {
@@ -2087,6 +2131,19 @@
     }
   },
   {
+    "packageName": "@ionic-native/imap",
+    "displayName": "Imap",
+    "description": "\nThis plugin will enable an Ionic application to use the IMAP (Internet Message Access Protocol) features.\nThis plugin is in Beta version and it offers support only for Android.\nThe plugin uses Java Mail API.\nPlanned improvements and support for iOS.\n",
+    "usage": "\n```typescript\nimport { Imap } from '@ionic-native/imap/ngx';\n\n\nconstructor(private imap: Imap) { }\n\n...\n\n\nthis.imap.connect({\n host: 'imap.gmail.com',\n user: 'my_email@gmail.com',\n password: 'my-pass'\n})\n  .then((res: Connection) => console.log(res))\n  .catch((error) => console.error(error));\n\n\n\n this.imap.disconnect()\n  .then((res: boolean) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n\n\nthis.imap.isConnected()\n  .then((res: boolean) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n Note: Connected to an IMAP service is REQUIRED to be able to get data from the below functions.\n\n\n  this.imap.listMailFolders()\n  .then((res: boolean) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n\n  this.imap.getMessageCountByFolderName('INBOX')\n  .then((res: number) => {\n  // Returns the count of the messages in the folder as a result\n   console.log(res)\n  })\n  .catch((error: any) => {\n    console.error(error)\n  });\n\n\n\n  this.imap.searchMessagesByDatePeriod('INBOX', 1601503200000, Comparison.GE)\n  .then((res: number[]) => {\n  // Returns array with messages' consecutive numbers\n  // ex. [1207, 1208, 1209]\n   console.log(res)\n  })\n  .catch((error: any) => {\n    console.error(error)\n  });\n\n\n  this.imap.listMessagesHeadersByConsecutiveNumber('INBOX', 1200, 1280)\n  .then((res: Message[]) => {\n  //  Returns array with messages' headers data\n   console.log(res)\n  })\n  .catch((error: any) => {\n    console.error(error)\n  });\n\n\n  this.imap.listMessagesHeadersByDate('INBOX', 1601503200000, Comparison.GE)\n  .then((res: Message[]) => {\n  // Returns array with messages' headers data\n   console.log(res)\n  })\n  .catch((error: any) => {\n    console.error(error)\n  });\n\n\n  this.imap.getFullMessageData('INBOX', 1205)\n  .then((res: Message) => {\n  // Returns \"Message\" object with the full message data including attachments.\n   console.log(res)\n  })\n  .catch((error: any) => {\n    console.error(error)\n  });\n\n\n  this.imap.copyToFolder('INBOX', 'Spam', [1204, 1205, 1206, 1207])\n  .then((res: boolean) => {\n  // Returns \"true\" if the process is successful, else returns \"false\".\n   console.log(res)\n  })\n  .catch((error: any) => {\n    console.error(error)\n  });\n\n\n  * Sets a flag on a message\n  * \"setFlag()\" can be used for deleting messages setting the Delete flag to \"FlagEnum.DELETED\"\n  this.imap.setFlag('INBOX', [1206, 1205, 1204], FlagEnum.SEEN, true)\n  .then((res: ModificationResult) => {\n\n   // res.status - return true or false based on the deletion success\n\n  //res.modifiedMessages - for ex.[1206, 1205, 1204];\n\n  })\n  .catch((error: any) => {\n    console.error(error)\n  });\n\n```\n",
+    "platforms": [
+      "Android"
+    ],
+    "repo": "https://github.com/aleksandar888/cordova-plugin-imap.git",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-imap"
+    }
+  },
+  {
     "packageName": "@ionic-native/in-app-browser",
     "displayName": "In App Browser",
     "description": "Launches in app Browser",
@@ -2117,7 +2174,7 @@
     ],
     "repo": "https://github.com/j3k0/cordova-plugin-purchase",
     "cordovaPlugin": {
-      "name": "cc.fovea.cordova.purchase"
+      "name": "cordova-plugin-purchase"
     }
   },
   {
@@ -2473,7 +2530,7 @@
   {
     "packageName": "@ionic-native/luxand",
     "displayName": "Luxand",
-    "description": "\nThis plugin let you integrat Luxand Face SDK into your ionic projects, so you can implements face authentication easily in your applications.\n",
+    "description": "\nThis plugin let you integrate Luxand Face SDK into your ionic projects, so you can implement face authentication easily in your application.\n",
     "usage": "\n```typescript\nimport { Luxand } from '@ionic-native/luxand';\n\n\nconstructor(private luxand: Luxand) { }\n\n...\n\n//init Luxand  Face SDK\n\nthis.luxand.init({\n licence: \"\",\n dbname: \"data.dat\",\n loginTryCount: 3\n})\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n// register a face\nthis.luxand.register({\n timeout: 20000//20 seconds\n})\n.then(r=>{\n console.log(\"Your FACE ID:\", r.id);\n console.log(\"Your AGE:\", r.extra.AGE);\n console.log(\"Your GENDER:\", r.extra.GENDER);\n console.log(\"SIMILING:\", r.extra.SMILE>35? \"YES\": \"NO\");\n console.log(\"EYE OPENED:\", r.extra.EYESOPENED>45? \"YES\": \"NO\");\n})\n.catch(err=>{\n if(err.messgae === \"Already registered\") {\n   //extra data available\n   console.log(\"Your AGE:\", r.extra.AGE);\n   console.log(\"Your GENDER:\", r.extra.GENDER);\n   console.log(\"SIMILING:\", r.extra.SMILE>35? \"YES\": \"NO\");\n   console.log(\"EYE OPENED:\", r.extra.EYESOPENED>45? \"YES\": \"NO\");\n }\n})\n//to login using a face\nthis.luxand.login({\ntimeout: 20000\n}).then(r=>console.log(r))\n.catch(err=>console.log(err));\n\n```",
     "platforms": [
       "Android",
@@ -2634,6 +2691,20 @@
     }
   },
   {
+    "packageName": "@ionic-native/multiple-document-picker",
+    "displayName": "Multiple Documents Picker",
+    "description": "\nThis plugin allows users to pick multiple documents/images at once\n",
+    "usage": "\n```typescript\nimport { MultipleDocumentsPicker } from '@ionic-native/multiple-document-picker/ngx';\n\n\nconstructor(private multipleDocumentsPicker: MultipleDocumentsPicker) { }\n\n...\n\n\nthis.multipleDocumentsPicker.pick(1)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+    "platforms": [
+      "Android",
+      "iOS"
+    ],
+    "repo": "https://github.com/akeotech/cordova-plugin-multiple-documents-picker",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-multiple-documents-picker"
+    }
+  },
+  {
     "packageName": "@ionic-native/music-controls",
     "displayName": "Music Controls",
     "description": "\nMusic controls for Cordova applications.\nDisplay a 'media' notification with play/pause, previous, next buttons, allowing the user to control the play.\nHandle also headset event (plug, unplug, headset button).\n",
@@ -2643,9 +2714,9 @@
       "iOS",
       "Windows"
     ],
-    "repo": "https://github.com/homerours/cordova-music-controls-plugin",
+    "repo": "https://github.com/ghenry22/cordova-plugin-music-controls2",
     "cordovaPlugin": {
-      "name": "cordova-plugin-music-controls"
+      "name": "cordova-plugin-music-controls2"
     },
     "capacitorIncompatible": true
   },
@@ -2795,10 +2866,8 @@
     "usage": "\n```typescript\nimport { NFC, Ndef } from '@ionic-native/nfc/ngx';\n\nconstructor(private nfc: NFC, private ndef: Ndef) { }\n\n...\n\n// Read NFC Tag - Android\n// Once the reader mode is enabled, any tags that are scanned are sent to the subscriber\n let flags = this.nfc.FLAG_READER_NFC_A | this.nfc.FLAG_READER_NFC_V;\n this.readerMode$ = this.nfc.readerMode(flags).subscribe(\n     tag => console.log(JSON.stringify(tag)),\n     err => console.log('Error reading tag', err)\n );\n\n// Read NFC Tag - iOS\n// On iOS, a NFC reader session takes control from your app while scanning tags then returns a tag\ntry {\n    let tag = await this.nfc.scanNdef();\n    console.log(JSON.stringify(tag));\n } catch (err) {\n     console.log('Error reading tag', err);\n }\n\n```\n\nFor more details on NFC tag operations see https://github.com/chariotsolutions/phonegap-nfc\n",
     "platforms": [
       "Android",
-      "BlackBerry 10",
-      "Windows",
-      "Windows Phone 8",
-      "iOS"
+      "iOS",
+      "Windows"
     ],
     "repo": "https://github.com/chariotsolutions/phonegap-nfc",
     "cordovaPlugin": {
@@ -3069,7 +3138,7 @@
     ],
     "repo": "https://github.com/RevenueCat/cordova-plugin-purchases",
     "cordovaPlugin": {
-      "name": "cordova-plugin-purchases@1.1.0"
+      "name": "cordova-plugin-purchases@2.0.0"
     }
   },
   {
@@ -3186,7 +3255,7 @@
     "packageName": "@ionic-native/safari-view-controller",
     "displayName": "Safari View Controller",
     "description": "\nFor displaying read-only web content.\n\nRequires Cordova plugin: `cordova-plugin-safariviewcontroller`. For more info, please see the [Safari View Controller plugin docs](https://github.com/EddyVerbruggen/cordova-plugin-safariviewcontroller).\n",
-    "usage": "\n```typescript\nimport { SafariViewController } from '@ionic-native/safari-view-controller/ngx';\n\nconstructor(private safariViewController: SafariViewController) { }\n\n...\n\nthis.safariViewController.isAvailable()\n  .then((available: boolean) => {\n      if (available) {\n\n        this.safariViewController.show({\n          url: 'https://ionic.io',\n          hidden: false,\n          animated: false,\n          transition: 'curl',\n          enterReaderModeIfAvailable: true,\n          tintColor: '#ff0000'\n        })\n        .subscribe((result: any) => {\n            if(result.event === 'opened') console.log('Opened');\n            else if(result.event === 'loaded') console.log('Loaded');\n            else if(result.event === 'closed') console.log('Closed');\n          },\n          (error: any) => console.error(error)\n        );\n\n      } else {\n        // use fallback browser, example InAppBrowser\n      }\n    }\n  );\n```",
+    "usage": "\n```typescript\nimport { SafariViewController } from '@ionic-native/safari-view-controller/ngx';\n\nconstructor(private safariViewController: SafariViewController) { }\n\n...\n\nthis.safariViewController.isAvailable()\n  .then((available: boolean) => {\n      if (available) {\n\n        this.safariViewController.show({\n          url: 'http://ionic.io',\n          hidden: false,\n          animated: false,\n          transition: 'curl',\n          enterReaderModeIfAvailable: true,\n          tintColor: '#ff0000'\n        })\n        .subscribe((result: any) => {\n            if(result.event === 'opened') console.log('Opened');\n            else if(result.event === 'loaded') console.log('Loaded');\n            else if(result.event === 'closed') console.log('Closed');\n          },\n          (error: any) => console.error(error)\n        );\n\n      } else {\n        // use fallback browser, example InAppBrowser\n      }\n    }\n  );\n```",
     "platforms": [
       "Android",
       "iOS"
@@ -3225,38 +3294,6 @@
     "repo": "https://github.com/gitawego/cordova-screenshot",
     "cordovaPlugin": {
       "name": "com.darktalker.cordova.screenshot"
-    }
-  },
-  {
-    "packageName": "@ionic-native/secure-storage-echo",
-    "displayName": "Secure Storage Echo",
-    "description": "\nThis plugin gets, sets and removes key,value pairs from a device's secure storage.\n\nRequires Cordova plugin: `cordova-plugin-secure-storage-echo`. For more info, please see the [Cordova Secure Storage docs](https://github.com/mibrito707/cordova-plugin-secure-storage-echo).\n\nThe browser platform is supported as a mock only. Key/values are stored unencrypted in localStorage.\n",
-    "usage": "\n\n```typescript\nimport { SecureStorageEcho, SecureStorageEchoObject } from '@ionic-native/secure-storage-echo/ngx';\n\nconstructor(private secureStorageEcho: SecureStorageEcho) { }\n\n...\n\nthis.secureStorageEcho.create('my_store_name')\n  .then((storage: SecureStorageEchoObject) => {\n\n     storage.get('key')\n       .then(\n         data => console.log(data),\n         error => console.log(error)\n     );\n\n     storage.set('key', 'value')\n       .then(\n        data => console.log(data),\n         error => console.log(error)\n     );\n\n     storage.remove('key')\n     .then(\n         data => console.log(data),\n         error => console.log(error)\n     );\n\n  });\n\n\n```",
-    "platforms": [
-      "Android",
-      "Browser",
-      "iOS",
-      "Windows"
-    ],
-    "repo": "https://github.com/mibrito707/cordova-plugin-secure-storage-echo",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-secure-storage-echo"
-    }
-  },
-  {
-    "packageName": "@ionic-native/secure-storage",
-    "displayName": "Secure Storage",
-    "description": "\nThis plugin gets, sets and removes key,value pairs from a device's secure storage.\n\nRequires Cordova plugin: `cordova-plugin-secure-storage`. For more info, please see the [Cordova Secure Storage docs](https://github.com/Crypho/cordova-plugin-secure-storage).\n\nThe browser platform is supported as a mock only. Key/values are stored unencrypted in localStorage.\n",
-    "usage": "\n\n```typescript\nimport { SecureStorage, SecureStorageObject } from '@ionic-native/secure-storage/ngx';\n\nconstructor(private secureStorage: SecureStorage) { }\n\n...\n\nthis.secureStorage.create('my_store_name')\n  .then((storage: SecureStorageObject) => {\n\n     storage.get('key')\n       .then(\n         data => console.log(data),\n         error => console.log(error)\n     );\n\n     storage.set('key', 'value')\n       .then(\n        data => console.log(data),\n         error => console.log(error)\n     );\n\n     storage.remove('key')\n     .then(\n         data => console.log(data),\n         error => console.log(error)\n     );\n\n  });\n\n\n```",
-    "platforms": [
-      "Android",
-      "Browser",
-      "iOS",
-      "Windows"
-    ],
-    "repo": "https://github.com/mibrito707/cordova-plugin-secure-storage-echo",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-secure-storage-echo"
     }
   },
   {

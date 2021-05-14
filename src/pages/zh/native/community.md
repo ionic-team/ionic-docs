@@ -1,13 +1,17 @@
 ---
-title: Community Plugins
+title: Cordova Community Plugins
 tableOfContents: false
 ---
 
-Community Plugins are a collection of open source Cordova plugins that make it easy to add native functionality to any Ionic app.
+[Apache Cordova](https://cordova.apache.org/) is an open source native runtime that allows developers to build native mobile apps with HTML, CSS, and JavaScript. Similar to [Capacitor](https://capacitorjs.com/), Ionic’s own native runtime, Cordova allows developers to access native device features, such as camera, keyboard, and geolocation, using a system of plugins. A plugin is a small amount of add-on code that provides JavaScript interface to native components. They allow your app to use native device capabilities beyond what is available to pure web apps.
 
-Community Plugins are submitted and maintained by the Ionic community. While community members are generally quick to find and fix issues, certain plugins may not function properly. For teams that require dedicated native plugin support, please explore Ionic Native then [request a free trial](https://ionicframework.com/enterprise/contact).
+For developers using Ionic with Cordova, our team has developed a collection of TypeScript wrappers for open source Cordova plugins that make it easy to add native functionality to any Ionic app. See [Ionic Native](https://github.com/ionic-team/ionic-native).
 
-> Note: These docs are for apps built with Ionic Framework 4.0.0 and greater. For older Ionic v3 projects, please [see here](/docs/v3/native).
+These plugins are submitted and maintained by the Ionic community. While community members are generally quick to find and fix issues, certain plugins may not function properly.
+
+For professional developers and teams that require dedicated native plugin support & SLAs, ongoing maintenance, and security patches, please explore our [premium options](https://ionicframework.com/native), including plugin support and pre-built solutions for common native use cases.
+
+> These docs are for apps built with Ionic Framework 4.0.0 and greater. For older Ionic v3 projects, please [see here](/docs/v3/native).
 
 ## Capacitor Support
 

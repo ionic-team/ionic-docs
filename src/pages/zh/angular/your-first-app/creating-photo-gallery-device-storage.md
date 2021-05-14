@@ -149,7 +149,7 @@ export class AppModule {}
 现在可以在PhotoService类中使用了。 导入它：
 
 ```Javascript
-import { Storage } from '@ionic/storage';
+import { Storage } from '@ionic/storage-angular';
 ```
 
 然后通过构造函数注入它：

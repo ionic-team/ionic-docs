@@ -20,7 +20,7 @@ Ionic Framework provides a few lifecycle methods that you can use in your apps:
 | `ionViewWillLeave` | Fired when the component routing from is about to animate.         |
 | `ionViewDidLeave`  | Fired when the component routing to has finished animating.        |
 
-The lifecycle methods are accessed by providing them as methods on your Vue component:
+The lifecycles are defined the same way Vue lifecycle methods are - as functions at the root of your Vue component:
 
 ```typescript
 import { IonPage } from '@ionic/vue';
@@ -28,19 +28,17 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'Home',
-  methods: {
-    ionViewDidEnter() {
-      console.log('Home page did enter');
-    },
-    ionViewDidLeave() {
-      console.log('Home page did leave');
-    },
-    ionViewWillEnter() {
-      console.log('Home page will enter');
-    },
-    ionViewWillLeave() {
-      console.log('Home page will leave');
-    }
+  ionViewDidEnter() {
+    console.log('Home page did enter');
+  },
+  ionViewDidLeave() {
+    console.log('Home page did leave');
+  },
+  ionViewWillEnter() {
+    console.log('Home page will enter');
+  },
+  ionViewWillLeave() {
+    console.log('Home page will leave');
   },
   components: {
     IonPage
@@ -48,7 +46,47 @@ export default defineComponent({
 })
 ```
 
-> Pages in your app need to be using the `IonPage` component in order for lifecycle methods to fire properly.
+### Composition API Hooks
+
+These lifecycles can also be expressed using Vue 3's Composition API:
+
+```typescript
+import {
+  IonPage,
+  onIonViewWillEnter,
+  onIonViewDidEnter,
+  onIonViewWillLeave,
+  onIonViewDidLeave
+} from '@ionic/vue';
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+  name: 'Home',
+  components: {
+    IonPage
+  },
+  setup() {
+    onIonViewDidEnter(() => {
+      console.log('Home page did enter');
+    });
+
+    onIonViewDidLeave(() => {
+      console.log('Home page did leave');
+    });
+
+    onIonViewWillEnter(() => {
+      console.log('Home page will enter');
+    });
+
+    onIonViewWillLeave(() => {
+      console.log('Home page will leave');
+    });
+  }
+})
+```
+
+> Pages in your app need to be using the `IonPage` component in order for lifecycle methods and hooks to fire properly.
+
 
 ## How Ionic Framework Handles the Life of a Page
 
@@ -68,7 +106,7 @@ All the lifecycle methods in Vue (`mounted`, `beforeUnmount`, etc..) are availab
 
 ## Guidance for Each Lifecycle Method
 
-Below are some tips on uses cases for each of the life cycle events.
+Below are some tips on use cases for each of the life cycle events.
 
 - `ionViewWillEnter` - Since `ionViewWillEnter` is called every time the view is navigated to (regardless if initialized or not), it is a good method to load data from services.
 - `ionViewDidEnter` - If you see performance problems from using `ionViewWillEnter` when loading data, you can do your data calls in `ionViewDidEnter` instead. However, this event will not fire until after the page is visible to the user, so you might want to use either a loading indicator or a skeleton screen such as [ion-skeleton-text](../api/skeleton-text), so content does not flash in un-naturally after the transition is complete.

@@ -151,7 +151,7 @@ export class AppModule {}
 Ahora está listo para ser utilizado en nuestra clase de PhotoService. Impórtate:
 
 ```Javascript
-import { Storage } from '@ionic/storage';
+import { Storage } from '@ionic/storage-angular';
 ```
 
 Luego insertar a través del constructor:

@@ -1,5 +1,5 @@
 ---
-previousText: 'Lifecycle'
+previousText: 'Ciclo de vida'
 previousUrl: '/docs/angular/lifecycle'
 nextText: 'Configuración'
 nextUrl: '/docs/angular/config'
@@ -11,7 +11,7 @@ contributors:
 
 Esta guía cubre cómo funciona el enrutamiento en una aplicación construida con Ionic y Angular.
 
-El enrutador de Angular (Angular Router) es una de las librerías más importantes de una aplicación Angular. Without it, apps would be single view/single context apps or would not be able to maintain their navigation state on browser reloads. Con Angular Router, podemos crear aplicaciones ricas que son enlazables y tienen animaciones ricas (cuando se emparejan con Ionic por supuesto). Echemos un vistazo a los conceptos básicos de Angular Router y cómo podemos configurarlo para aplicaciones de Ionic.
+El enrutador de Angular (Angular Router) es una de las librerías más importantes de una aplicación Angular. Sin ella, las aplicaciones serían aplicaciones de vista única / contexto único o no podrían mantener su estado de navegación en las recargas del navegador. Con Angular Router, podemos crear aplicaciones ricas que son enlazables y tienen animaciones ricas (cuando se emparejan con Ionic por supuesto). Echemos un vistazo a los conceptos básicos de Angular Router y cómo podemos configurarlo para aplicaciones de Ionic.
 
 ## Una ruta simple
 
@@ -83,12 +83,12 @@ Ahora desde el `LoginComponent`, podemos utilizar el siguiente HTML para navegar
 ```html
 <ion-header>
   <ion-toolbar>
-    <ion-title>Login</ion-title>
+    <ion-title>Inicio de Sesión</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-button [routerLink]="['/detail']">Go to detail</ion-button>
+  <ion-button [routerLink]="['/detail']">Ir a detalles</ion-button>
 </ion-content>
 ```
 
@@ -129,14 +129,14 @@ Ahora la forma actual de configurar nuestras rutas lo hace así que se incluyen 
   ...
   RouterModule.forRoot([
     { path: '', redirectTo: 'login', pathMatch: 'full' },
-    { path: 'login', loadChildren: './login/login.module#LoginModule' },
-    { path: 'detail', loadChildren: './detail/detail.module#DetailModule' }
+    { path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule) },
+    { path: 'detail', loadChildren: () => import('./detail/detail.module').then(m => m.DetailModule) }
   ])
   ],
 })
 ```
 
-Si bien es similar, la propiedad `loadChildren` es una forma de hacer referencia a un módulo por string en lugar de a un componente directamente. Sin embargo, para ello necesitamos crear un módulo para cada uno de los componentes.
+While similar, the `loadChildren` property is a way to reference a module by using native import instead of a component directly. Sin embargo, para ello necesitamos crear un módulo para cada uno de los componentes.
 
 ```typescript
 ...
@@ -157,9 +157,13 @@ import { LoginComponent } from './login.component';
 
 Tenemos aquí una configuración típica de un módulo de Angular con "RouterModule", ahora usando `forChild` y declarando el componente en esa configuración. Con esta configuración, cuando ejecutemos nuestra compilación, produciremos fragmentos separados para el componente de aplicación, el componente de inicio de sesión y el componente de detalle.
 
-## Trabajando con pestañas
+## Live Example
 
-Con pestañas, el Router de Angular proporciona a Ionic el mecanismo para saber qué componentes se deben cargar, pero la elevación pesada se hace por el componente de las pestañas. Consideremos un ejemplo sencillo.
+If you would prefer to get hands on with the concepts and code described above, please checkout our [live example](https://stackblitz.com/edit/ionic-angular-routing?file=src/app/app-routing.module.ts) of the topics above on StackBlitz.
+
+## Trabajando con Tabuladores
+
+With Tabs, the Angular Router provides Ionic the mechanism to know what components should be loaded, but the heavy lifting is actually done by the tabs component. Let's look at a simple example.
 
 ```ts
 const routes: Routes = [
@@ -172,7 +176,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: '../tab1/tab1.module#Tab1PageModule'
+            loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
           }
         ]
       },
@@ -191,7 +195,7 @@ const routes: Routes = [
 ];
 ```
 
-Aquí tenemos unas "tabs" que cargamos. In this example we call the path “tabs”, but the name of the paths are open to be changed. They can be called whatever fits your app. In that route object, we can define a child route as well. In this example, the top level child route "tab1" acts as our "outlet", and can load additional child routes. For this example, we have a single sub-child-route, which just loads a new component. The markup for the tab is as followed:
+Here we have a "tabs" path that we load. In this example we call the path "tabs", but the name of the paths can be changed. They can be called whatever fits your app. In that route object, we can define a child route as well. In this example, the top level child route "tab1" acts as our "outlet", and can load additional child routes. For this example, we have a single sub-child-route, which just loads a new component. The markup for the tab is as followed:
 
 ```html
 <br /><ion-tabs>

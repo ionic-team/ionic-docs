@@ -94,9 +94,9 @@ Say we start on the `home` route, and we want to add a button that takes us to t
 <ion-button router-link="/detail">Go to detail</ion-button>
 ```
 
-We can also programatically navigate in our app by using the router API:
+We can also programmatically navigate in our app by using the router API:
 
-```typescript
+```html
 <template>
   <ion-page>
     <ion-content>
@@ -208,7 +208,6 @@ Nested routes are mostly useful when you need to render content in outlet A whil
 
 There are very few use cases in which nested routes make sense in mobile applications. When in doubt, use the shared URL route configuration. We strongly caution against using nested routing in contexts other than tabs as it can quickly make navigating your app confusing.
 
-> The exception to this rule is when working with children of tabs. See [Child Routes within Tabs](#child-routes-within-tabs) for more information.
 
 ## Working with Tabs
 
@@ -249,7 +248,7 @@ Here, our `tabs` path loads a `Tabs` component. We provide each tab as a route o
 
 Let's start by taking a look at our `Tabs` component:
 
-```typescript
+```html
 <template>
   <ion-page>
     <ion-content>
@@ -297,9 +296,8 @@ If you have worked with Ionic Framework before, this should feel familiar. We cr
 
 ### Child Routes within Tabs
 
-Previously, we discussed that most routes should be written with a shared URL configuration. The exception to this rule is when adding child routes to tabs. The reason for this is if we wrote the child routes at the same level as the tab routes, Ionic Vue would not be able to differentiate between a child page and a root tab page.
+When adding additional routes to tabs you should write them as sibling routes with the parent tab as the path prefix. The example below defines the `/tabs/tab1/view` route as a sibling of the `/tabs/tab1` route. Since this new route has the `tab1` prefix, it will be rendered inside of the `Tabs` component, and Tab 1 will still be selected in the `ion-tab-bar`.
 
-As a result, when adding child routes to tabs you should always write them as nested routes. Ionic Vue handles the internal logic so that you do not need to add an additional `IonRouterOutlet`:
 
 ```typescript
 const routes: Array<RouteRecordRaw> = [
@@ -317,13 +315,11 @@ const routes: Array<RouteRecordRaw> = [
       },
       {
         path: 'tab1',
-        component: () => import('@/views/Tab1.vue'),
-        children: [
-          {
-            path: 'child',
-            component: () => import('@/views/Tab1Child.vue')
-          }
-        ]
+        component: () => import('@/views/Tab1.vue')
+      },
+      {
+        path: 'tab1/view',
+        component: () => import('@/views/Tab1View.vue')
       },
       {
         path: 'tab2',
@@ -338,13 +334,52 @@ const routes: Array<RouteRecordRaw> = [
 ]
 ```
 
-The example above defines the `/tabs/tab1/child` route as a child of the `/tabs/tab1` route.
 
 ## IonRouterOutlet
 
 The `IonRouterOutlet` component provides a container to render your views in. It is similar to the `RouterView` component found in other Vue applications except that `IonRouterOutlet` can render multiple pages in the DOM in the same outlet. When a component is rendered in `IonRouterOutlet` we consider this to be an Ionic Framework "page". The router outlet container controls the transition animation between the pages as well as controls when a page is created and destroyed. This helps maintain the state between the views when switching back and forth between them.
 
 Nothing should be provided inside of `IonRouterOutlet` when setting it up in your template. While `IonRouterOutlet` can be nested in child components, we caution against it as it typically makes navigation in apps confusing. See [Shared URLs versus Nested Routes](#shared-urls-versus-nested-routes) for more information.
+
+## IonPage
+
+The `IonPage` component wraps each view in an Ionic Vue app and allows page transitions and stack navigation to work properly. Each view that is navigated to using the router must include an `IonPage` component.
+
+```html
+<template>
+  <ion-page>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Home</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">Hello World</ion-content>
+  </ion-page>
+</template>
+
+<script lang="ts">
+import { 
+  IonContent, 
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar
+} from '@ionic/vue';
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+  components: {
+    IonContent, 
+    IonHeader,
+    IonPage,
+    IonTitle,
+    IonToolbar
+  }
+});
+</script>
+```
+
+Components presented via `IonModal` or `IonPopover` do not typically need an `IonPage` component unless you need a wrapper element. In that case, we recommend using `IonPage` so that the component dimensions are still computed properly.
 
 ## Accessing the IonRouter Instance
 
@@ -392,7 +427,7 @@ Notice that we have now added `:id` to the end of our `detail` path string. URL 
 
 Let's look at how to use it in our component:
 
-```typescript
+```html
 <template>
   <ion-page>
     <ion-header>

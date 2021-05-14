@@ -11,3 +11,5 @@ src/components/page/data/
 src/components/search/data/
 .idea
 /.env
+/.docusaurus
+/docs

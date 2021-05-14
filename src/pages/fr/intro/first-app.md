@@ -1,8 +1,8 @@
 ---
 previousText: 'Concepts'
-previousUrl: '/docs/intro/concepts'
+previousUrl: '/docs/core-concepts/fundamentals'
 nextText: 'What Are Progressive Web Apps'
-nextUrl: '/docs/intro/what-are-progressive-web-apps'
+nextUrl: '/docs/core-concepts/what-are-progressive-web-apps'
 tableOfContents: false
 ---
 

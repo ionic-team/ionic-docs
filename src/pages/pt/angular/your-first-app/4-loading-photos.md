@@ -1,79 +1,72 @@
 ---
-previousText: 'Saving Photos on Filesystem'
-previousUrl: '/docs/angular/your-first-app/3-saving-photos'
-nextText: 'Adding Mobile'
-nextUrl: '/docs/angular/your-first-app/5-adding-mobile'
+previousText: 'Salvando fotos no sistema de arquivos'
+previousUrl: '/docs/angular/seu-primeiro-app/3-salvando-fotos'
+nextText: 'Adicionando pro celular'
+nextUrl: 'docs/angular/seu-primeiro-app/5-adicionando-no-mobile'
 ---
 
-# Loading Photos from the Filesystem
+# Carregando fotos do sistema de arquivos
 
-We’ve implemented photo taking and saving to the filesystem. There’s one last piece of functionality missing: the photos are stored in the filesystem, but we need a way to save pointers to each file so that they can be displayed again in the photo gallery.
+Nós já temos implementado a captura e salvamento de fotos no sistema de arquivos. Falta um último pedaço de funcionalidade: as fotos são armazenadas no sistema de arquivos, mas precisamos de uma forma de salvar ponteiros para cada arquivo para que eles possam ser exibidos novamente na galeria de fotos.
 
-Fortunately, this is easy: we’ll leverage the Capacitor [Storage API](https://capacitor.ionicframework.com/docs/apis/storage) to store our array of Photos in a key-value store.
+Felizmente, isso é fácil: vamos usar a [API de Armazenamento](https://capacitor.ionicframework.com/docs/apis/storage) do Capacitor para armazenar nossa matriz de Fotos em uma loja chave-valor.
 
-## Storage API
+## API de Armazenamento
 
-Begin by defining a constant variable that will act as the key for the store:
+Comece definindo uma variável constante que atuará como a chave para a loja:
 
 ```typescript
 export class PhotoService {
-  public photos: Photo[] = [];
-  private PHOTO_STORAGE: string = "photos";
+  public fotos: Photo[] = [];
+  private PHOTO_STORAGE: string = "fotos";
 
-  // other code
+  // outro código
 }
 ```
 
-Next, at the end of the `addNewToGallery` function, add a call to `Storage.set()` to save the Photos array. By adding it here, the Photos array is stored each time a new photo is taken. This way, it doesn’t matter when the app user closes or switches to a different app - all photo data is saved.
+Em seguida, no final da função `addNewToGallery`, adicione uma chamada para `Storage.set()` para salvar a matriz de Fotos. Ao adicioná-lo aqui, a matriz de Fotos é armazenada cada vez que uma nova foto é tirada. Desta forma, não importa quando o usuário do app fecha ou troca para um app diferente - todos os dados de fotos são salvos.
 
 ```typescript
 Storage.set({
   key: this.PHOTO_STORAGE,
-  value: JSON.stringify(this.photos.map(p => {
-          // Don't save the base64 representation of the photo data, 
-          // since it's already saved on the Filesystem
-          const photoCopy = { ...p };
-          delete photoCopy.base64;
-
-          return photoCopy;
-          }))
+  value: JSON.stringify(this.photos)
 });
 ```
 
-With the photo array data saved, create a function called `loadSaved()` that can retrieve that data. We use the same key to retrieve the photos array in JSON format, then parse it into an array:
+Com os dados do array de fotos salvos, crie uma função chamada `loadSaved()` que pode recuperar esses dados. Nós usamos a mesma chave para recuperar a matriz de fotos no formato JSON e em seguida, analisá-la em um array:
 
 ```typescript
 public async loadSaved() {
-  // Retrieve cached photo array data
-  const photos = await Storage.get({ key: this.PHOTO_STORAGE });
-  this.photos = JSON.parse(photos.value) || [];
+  // Recuperar dados cache do array de fotos
+  const photoList = await Storage. et({ key: this.PHOTO_STORAGE });
+  this.fotos = JSON.parse(photoList.value) ├[];
 
-  // more to come...
+  // mais para vir...
 }
 ```
 
-On mobile (coming up next!), we can directly set the source of an image tag - `<img src=”x” />` - to each photo file on the Filesystem, displaying them automatically. On the web, however, we must read each image from the Filesystem into base64 format, using a new `base64` property on the `Photo` object. This is because the Filesystem API uses [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. Below the code you just added in the `loadSaved()` function, add:
+No celular (chegando a seguir!), podemos definir diretamente a origem de uma tag da imagem - `<img src="x" />` - para cada arquivo de foto no sistema de arquivos, exibindo-os automaticamente. No entanto, na web, temos de ler cada imagem do sistema de arquivos para o formato base64, usando uma nova propriedade `base64` no objeto `Photo`. Isso porque a API do sistema de arquivos usa [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) debaixo do pano. Abaixo está o código que você precisa adicionar na função `loadSaved()` que você acabou de adicionar:
 
 ```typescript
-// Display the photo by reading into base64 format
-for (let photo of this.photos) {
-  // Read each saved photo's data from the Filesystem
-  const readFile = await Filesystem.readFile({
+// Exibe a foto lendo no formato base64
+para (let foto disto. hotos) {
+  // Leia os dados de cada foto salva no sistema de arquivos
+  const readFile = await Filesystem. eadFile({
       path: photo.filepath,
       directory: FilesystemDirectory.Data
   });
 
-  // Web platform only: Save the photo into the base64 field
-  photo.base64 = `data:image/jpeg;base64,${readFile.data}`;
+  // Plataforma Web apenas: carregue a foto como dados base64
+  da foto. ebviewPath = `data:image/jpeg;base64,${readFile.data}`;
 }
 ```
 
-After, call this new method in `tab2.page.ts` so that when the user first navigates to Tab 2 (the Photo Gallery), all photos are loaded and displayed on the screen.
+Depois, chame este novo método em `tab2.page.ts` para que quando o usuário navegar pela primeira vez até o Tab 2 (a Galeria de Fotos), todas as fotos são carregadas e exibidas na tela.
 
 ```typescript
-ngOnInit() {
-  this.photoService.loadSaved();
+async ngOnInit() {
+  await isso.photoService.loadSaved();
 }
 ```
 
-That’s it! We’ve built a complete Photo Gallery feature in our Ionic app that works on the web. Next up, we’ll transform it into a mobile app for iOS and Android!
+É isso! Desenvolvemos um recurso completo de Galeria de Fotos em nosso aplicativo Ionic que funciona na web. Em seguida, iremos transformá-lo em um aplicativo móvel para iOS e Android!

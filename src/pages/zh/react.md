@@ -1,5 +1,5 @@
 ---
-title: Ionic React
+title: Ionic + React
 renderTitle: false
 tableOfContents: false
 meta:
@@ -9,7 +9,7 @@ meta:
 
 <div class='flex main-flex'>
   <div class="pull-left">
-  <h3>One Codebase <br/> Any Platform <br/> <strong>Just React</strong></h3>
+  <h3>一个代码库 <br/> 任何平台 <br/> <strong>只需要React</strong></h3>
 
  - ✓ 100+移动优化React用户界面组件
  - number@@1. 标准React配刀与React套
@@ -27,19 +27,19 @@ meta:
 ### 使用你知道和喜爱的React在手机、 桌面和网页上构建超棒的应用。
 
 
-Ionic React is native React version of Ionic Framework, the free, open source SDK powering millions of mission-critical apps all over the world.
+Ionic React是Ionc Framework的原生React版本，是免费开放源代码SDK 为全世界数以百万计的任务关键应用提供动力。
 
-It's everything you need to ship award-winning apps for any platform, with React.
+这一切都是你需要通过React为任何平台运送获奖应用的。
 
-<div class="flex">
+<div class="flex" >
 
 <div class="pull-left">
 
-## Fast, beautiful apps
+## 惊人的设计
 
-Choose from over 100 beautiful, mobile-ready UI components, animations, and gestures, lightweight and customized to fit your brand.
+从100多个美丽、随时准备移动的界面组件、 动画、手势、轻量和自定义来适应您的品牌。
 
-[Explore UI components](/docs/components)
+[探索界面组件](/docs/组件)
 
 </div>
 
@@ -49,13 +49,13 @@ Choose from over 100 beautiful, mobile-ready UI components, animations, and gest
 
 </div>
 
-<div class="flex reverse">
+<div class="flex reverse" >
 
 <div class="pull-left">
 
-## Familiar tooling
+## Familiar 工具
 
-Ionic React projects are just like React projects, leveraging [react-dom](https://reactjs.org/docs/react-dom.html) and with setup normally found in a [Create React App (CRA)](https://github.com/facebook/create-react-app) app. For [routing and navigation](/docs/react/navigation), React Router is used under the hood.
+Ionic React项目就像React项目一样，代表着 [react-dom](https://reactjs.org/docs/react-dom)。 在[Create React App (CRA)](https://github.com/facebook/create-react-app)应用程序中通常找到的设置。对于[路由和导航](/docs/react/navigation)，React路由器正在使用中。
 Compatible with React version 16.8 and above.
 
 </div>
@@ -70,9 +70,9 @@ Compatible with React version 16.8 and above.
 
 <div class="pull-left">
 
-## More than mobile
+## 更多移动版
 
-Deploy your Ionic React projects to native iOS, Android, Electron, and the web as a Progressive Web App, using [Capacitor](https://capacitor.ionicframework.com), a modern native runtime. All with one shared codebase.
+将你的Ionic React项目部署到原生的 iOS, Android。 Electron和Web作为一个渐进的网络应用（PWA），使用 [Capacitor](https://capacitor.ionicframework.com)。 All with one shared codebase.
 
 </div>
 

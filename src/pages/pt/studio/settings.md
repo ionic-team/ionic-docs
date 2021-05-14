@@ -7,7 +7,7 @@ Manage app configuration and settings.
 
 ## Config
 
-The **Config** section is for managing the common settings in `config.xml` such as the name and version of the app, as well as the Bundle ID (aka [Package ID](/docs/faq/glossary#package-id)).
+The **Config** section is for managing the common settings in `config.xml` such as the name and version of the app, as well as the Bundle ID (aka [Package ID](/docs/reference/glossary#package-id)).
 
 <figure>
   <img alt="Settings -> Config" src="/docs/assets/img/studio/2/ss-settings.png" />
@@ -57,7 +57,7 @@ Ionic Studio uses the Ionic CLI command `ionic cordova resources` to generate ap
 
 ## Linking to Appflow
 
-If your account has access to [Ionic Appflow](https://ionicframework.com/appflow) and you'd like to use it for this app, you can quickly link it with your Appflow account in this section of the settings area:
+If your account has access to [Appflow](https://ionic.io/appflow) and you'd like to use it for this app, you can quickly link it with your Appflow account in this section of the settings area:
 
 <figure>
   <img alt="App Resources" src="/docs/assets/img/studio/2/ss-settings-appflow.png" />

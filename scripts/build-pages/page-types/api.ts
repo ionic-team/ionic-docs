@@ -2,6 +2,7 @@ import { components } from '@ionic/docs/core.json';
 import fs from 'fs-extra';
 import { join, resolve } from 'path';
 
+import metaOverride from '../../data/meta-override.json';
 import {
   Page,
   buildPages
@@ -13,12 +14,35 @@ export default {
   task: () => buildPages(getAPIPages)
 };
 
+export interface MetaInfo {
+  [index: string]: any;
+  title?: string;
+  description?: string;
+}
+
+const apiMetaInfo: MetaInfo = metaOverride.api;
+
 const getAPIPages = async (): Promise<Page[]> => {
   const pages = components.map(async component => {
     const title = component.tag;
     const path = `/docs/api/${title.slice(4)}`;
     const demoUrl = await getDemoUrl(component);
     const { readme, usage, props, methods, ...contents } = component;
+
+    const meta = {
+      title: `${component.tag}: Ionic Framework API Docs`,
+      description: `The ${component.tag} component is one of many Ionic Framework components used to build apps for Android, iOS, and Progressive Web Apps`
+    };
+
+    if (apiMetaInfo[component.tag]) {
+      if (apiMetaInfo[component.tag].title) {
+        meta.title = apiMetaInfo[component.tag].title;
+      }
+      if (apiMetaInfo[component.tag].description) {
+        meta.description = apiMetaInfo[component.tag].description;
+      }
+    }
+
     return {
       title,
       path,
@@ -28,6 +52,7 @@ const getAPIPages = async (): Promise<Page[]> => {
       props: renderDocsKey(props, path),
       methods: renderDocsKey(methods, path),
       template: 'api',
+      meta,
       ...contents
     };
   });

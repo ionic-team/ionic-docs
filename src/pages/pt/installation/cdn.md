@@ -50,7 +50,7 @@ This will add the necessary imports to the `@ionic/angular` package as well as a
 
 To add Ionic to an already existing React project, install the `@ionic/react` and `@ionic/react-router` package.
 
-```sell
+```shell
 $ npm install @ionic/react
 $ npm install @ionic/react-router
 ```
@@ -86,4 +86,4 @@ Ionicons is packaged by default with the Ionic Framework, so no installation is 
 <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@4.7.4/dist/ionicons/ionicons.js"></script>
 ```
 
-> See [Ionicons usage](https://ionicons.com/usage) for more information on using Ionicons.
+> See [Ionicons usage](https://ionic.io/ionicons/usage) for more information on using Ionicons.

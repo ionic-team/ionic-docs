@@ -74,6 +74,8 @@ const items = {
     'menu-react-config': '/docs/react/config',
     'menu-react-platform': '/docs/react/platform',
     'menu-react-pwa': '/docs/react/pwa',
+    'menu-react-overlays': '/docs/react/overlays',
+    'menu-react-storage': '/docs/react/storage',
     'menu-react-testing': '/docs/react/testing'
   },
   'menu-vue': {
@@ -93,7 +95,9 @@ const items = {
     'menu-vue-config': '/docs/vue/config',
     'menu-vue-platform': '/docs/vue/platform',
     'menu-vue-pwa': '/docs/vue/pwa',
-    'menu-vue-testing': '/docs/vue/testing'
+    'menu-vue-storage': '/docs/vue/storage',
+    'menu-vue-testing': '/docs/vue/testing',
+    'menu-vue-troubleshooting': '/docs/vue/troubleshooting'
   },
   'menu-utilities': {
     'menu-utilities-animations': '/docs/utilities/animations',
@@ -135,11 +139,16 @@ const items = {
     'menu-reference-migration': '/docs/reference/migration'
   },
   'menu-resources': {
-    'menu-resources-books': '/docs/developer-resources/books',
-    'menu-resources-courses': '/docs/developer-resources/courses',
-    'menu-resources-guides': '/docs/developer-resources/guides',
-    'menu-resources-posts': '/docs/developer-resources/posts',
-    'menu-resources-tools': '/docs/developer-resources/tools',
-    'menu-resources-videos': '/docs/developer-resources/videos'
+    // 'menu-resources-books': '/docs/developer-resources/books',
+    // 'menu-resources-courses': '/docs/developer-resources/courses',
+    // 'menu-resources-guides': '/docs/developer-resources/guides',
+    // 'menu-resources-posts': '/docs/developer-resources/posts',
+    // 'menu-resources-tools': '/docs/developer-resources/tools',
+    'menu-resources-featured': 'https://ionicframework.com/resources',
+    'menu-resources-webinars': 'https://ionicframework.com/resources/webinars',
+    'menu-resources-articles': 'https://ionicframework.com/resources/articles',
+    'menu-resources-case-studies': 'https://ionicframework.com/resources/case-studies',
+    'menu-resources-learning': 'https://ionicframework.com/resources/learning',
+    'menu-resources-videos': 'https://ionicframework.com/resources/videos'
   },
 };

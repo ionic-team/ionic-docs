@@ -1,5 +1,5 @@
 ---
-previousText: 'Layout'
+previousText: '布局'
 previousUrl: '/docs/layout/structure'
 nextText: 'Platform Styles'
 nextUrl: '/docs/theming/platform-styles'
@@ -7,7 +7,7 @@ contributors:
   - brandyscarney
 ---
 
-# Theming Basics
+# 主题基础
 
 Ionic Framework is built to be a blank slate that can easily be customized and modified to fit a brand, while still following the standards of the different platforms. Theming Ionic apps is now easier than ever. Because the framework is built with CSS, it comes with pre-baked default styles which are extremely easy to change and modify.
 
@@ -27,7 +27,11 @@ Ionic has two **modes** that are used to customize the look of components based 
 
 ## CSS Variables
 
-All of the Ionic components are themed using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">CSS properties (variables)</a>. CSS variables add dynamic values to an otherwise static language. This is something that has traditionally required a CSS preprocessor like Sass. The look of an application can easily be changed by changing the value of any of the [Ionic Variables](/docs/theming/css-variables#ionic-variables).
+The Ionic Framework components are themed using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank" rel="noopener noreferrer">CSS properties (variables)</a>. CSS variables add dynamic values to an otherwise static language. This is something that has traditionally required a CSS preprocessor like Sass. The look of an application can easily be changed by changing the value of any of the [CSS Variables](/docs/theming/css-variables) Ionic Framework provides.
+
+## CSS Shadow Parts
+
+CSS Shadow Parts were added to make it easier to fully customize Ionic Framework Shadow components. In the past, components that use <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM" target="_blank" rel="noopener noreferrer">Shadow DOM</a> were unable to have elements inside of their shadow tree styled directly. With the addition of Shadow parts, there is no longer a need for CSS variables for every property on an inner element of a Shadow component. For more information on customizing Ionic Framework components using parts, see the [CSS Shadow Parts](/docs/theming/css-shadow-parts) guide.
 
 ## Branding
 

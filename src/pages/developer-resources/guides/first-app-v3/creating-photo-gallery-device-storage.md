@@ -144,7 +144,7 @@ imports: [
 It’s now ready to be used in our PhotoProvider class. Import it:
 
 ```Javascript
-import { Storage } from '@ionic/storage';
+import { Storage } from '@ionic/storage-angular';
 ```
 
 Then inject it via the constructor:
@@ -190,7 +190,7 @@ ngOnInit() {
 
 Sweet! Photos are now saved to your device. To demonstrate that they are indeed being saved, force close DevApp, reopen it, and open the About page.  Or, shake your device to have the Control Menu pop up, then tap “Exit preview.” Afterwards, reload this app to view the photos.
 
-Finally, back up your changes to Ionic Appflow:
+Finally, back up your changes to Appflow:
 
 ```shell
 git add .

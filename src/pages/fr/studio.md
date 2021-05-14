@@ -16,14 +16,14 @@ Studio is a desktop tool and requires a subscription, and is only for Ionic Angu
 
 Sign up for Studio and start building today.</docs-card>
 
-<docs-card header="Quickstart" href="/docs/studio/guides/quickstart" img="/docs/assets/icons/guide-quickstart.png"> 
-
-Get started by creating a new app and diving head-first into the suite of features offered by Ionic Studio.</docs-card>
+<!-- <docs-card header="Quickstart" href="/docs/studio/guides/quickstart" img="/docs/assets/icons/guide-quickstart.png">
+    <p>Get started by creating a new app and diving head-first into the suite of features offered by Ionic Studio.</p>
+  </docs-card> -->
 
 <docs-card header="News & Updates" icon="/docs/assets/icons/guide-news-icon.png"> 
 
-Delivered within Studio as well as over email.</docs-card>
+Livré dans Studio ainsi que par courriel.</docs-card>
 
 <docs-card header="Studio FAQ" href="/docs/studio/faq" icon="/docs/assets/icons/guide-faq-icon.png"> 
 
-Find answers to common questions about Ionic Studio.</docs-card> </docs-cards>
+Trouvez des réponses aux questions les plus fréquemment posées sur Ionic Studio.</docs-card> </docs-cards>

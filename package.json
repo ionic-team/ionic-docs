@@ -11,8 +11,8 @@
     "build": "stencil build --prerender",
     "build.ci": "npm run build-all && stencil build --prerender --ci",
     "prebuild": "npm run -s build-all",
-    "lint": "tslint --config tslint.json --project tsconfig.json",
-    "lint.fix": "tslint --config tslint.json --project tsconfig.json --fix",
+    "lint": "eslint src",
+    "lint.fix": "eslint src --fix",
     "build-all": "ts-node -P scripts/tsconfig.json scripts/build-all",
     "build-data": "ts-node -P scripts/tsconfig.json scripts/build-data",
     "build-pages": "ts-node -P scripts/tsconfig.json scripts/build-pages",
@@ -22,11 +22,12 @@
     "heroku-postbuild": "npm run build.ci"
   },
   "dependencies": {
-    "@ionic-internal/ionic-ds": "3.0.3",
-    "@ionic/core": "^5.3.4",
-    "@ionic/docs": "^5.3.4",
-    "@sentry/node": "^5.19.2",
+    "@ionic-internal/ionic-ds": "4.1.4",
+    "@ionic/core": "^5.6.6",
+    "@ionic/docs": "^5.6.6",
+    "@sentry/node": "^5.27.3",
     "@stencil/router": "^1.0.1",
+    "@stencil/sass": "^1.3.2",
     "compression": "^1.7.4",
     "express": "^4.16.4",
     "helmet": "^3.23.1",
@@ -46,9 +47,12 @@
     "@types/prismic-dom": "2.1.1",
     "@types/prismjs": "^1.16.1",
     "@types/semver": "7.2.0",
+    "@typescript-eslint/eslint-plugin": "^4.20.0",
+    "@typescript-eslint/parser": "^4.20.0",
     "chokidar": "^3.4.0",
     "concurrently": "^5.3.0",
     "dotenv": "^8.2.0",
+    "eslint": "^7.23.0",
     "fast-glob": "^3.2.4",
     "front-matter": "^4.0.2",
     "fs-extra": "^9.0.1",
@@ -58,10 +62,7 @@
     "node-fetch": "^2.3.0",
     "ora": "^4.0.4",
     "prismjs": "~1.20.0",
-    "ts-node": "^8.10.2",
-    "tslint": "^5.18.0",
-    "tslint-ionic-rules": "0.0.21",
-    "tslint-react": "^3.6.0"
+    "ts-node": "^8.10.2"
   },
   "husky": {
     "hooks": {

@@ -7,8 +7,6 @@ nextUrl: '/docs/vue/your-first-app'
 
 # Ionic Vue Quickstart
 
-> Ionic Vue is currently in development. Information in this guide is subject to change.
-
 ## What is Ionic Framework?
 
 First off, if you're new here, welcome! Ionic Framework is a free and open source component library for building apps that run on iOS, Android, Electron, and the Web. Write your app once using familiar technologies (HTML, CSS, JavaScript) and deploy to any platform.
@@ -19,23 +17,44 @@ In this guide, we will go over the basics of both Vue and Ionic Framework, inclu
 
 ## Creating a project with the Ionic CLI
 
-To begin, let's install a pre-release version of the Ionic CLI.
+To begin, let's install the latest version of the Ionic CLI.
 
 
 ```shell
-npm install -g @ionic/cli@testing
+npm install -g @ionic/cli@latest
 ```
 
 From here, the global command `ionic` will allow for the creation of a Vue project with Ionic Framework and any other dependencies. To create a new project, run the following command:
 
 ```shell
-ionic start myApp blank --type vue --tag vue-beta
+ionic start myApp blank --type vue
 cd myApp
 ```
 
-> Using `--tag` allows you to download the latest beta version of an Ionic Vue starter. This will not be needed once Ionic Vue ships.
-
 From here, we run `ionic serve` and have our project running in the browser.
+
+## Build your way with TypeScript or JavaScript
+
+We love TypeScript at Ionic, and have believed for quite some time now that it’s a great tool for building scalable apps. That said, we know how much the Vue community values simplicity – in their tooling, languages, and more. In fact, it’s likely what drew you to Vue in the first place. Start simple – then scale up as needed.
+
+So, if you’d prefer to use JavaScript instead of TypeScript, you can. After generating an Ionic Vue app, follow these steps:
+
+1. Remove TypeScript dependencies:
+
+```shell
+npm uninstall --save typescript @types/jest @typescript-eslint/eslint-plugin @typescript-eslint/parser @vue/cli-plugin-typescript @vue/eslint-config-typescript
+```
+
+2. Change all `.ts` files to `.js`. In a blank Ionic Vue app, this should only be `router/index.ts` and `main.ts`.
+
+3. Remove `@vue/typescript/recommended` and `@typescript-eslint/no-explicit-any: ‘off’, `from `.eslintrc.js`.
+
+4. Remove `Array<RouteRecordRaw>` from `router/index.js`.
+
+5. Delete the `shims-vue.d.ts` file.
+
+6. Remove `lang="ts"` from the `script` tags in any of your Vue components that have them. In a blank Ionic Vue app, this should only be `App.vue` and `views/Home.vue`.
+
 
 ## A look at a Vue Component
 
@@ -77,13 +96,13 @@ If we open `App.vue` we should see the following:
 import { IonApp, IonRouterOutlet } from '@ionic/vue';
 import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
   name: 'App',
   components: {
     IonApp,
     IonRouterOutlet
   }
-};
+});
 </script>
 ```
 
@@ -94,7 +113,7 @@ Let's break it down, starting with the first group of imports.
 import { IonApp, IonRouterOutlet } from '@ionic/vue';
 ```
 
-To use a component in Vue, you must first import it. So for Ionic Framework, this means anytime we want to use a Button or a Card, it must be added to our imports. In the case of our `App` component, we are using `IonApp` and `IonRouterOutlet`.
+To use a component in Vue, you must first import it. So for Ionic Framework, this means anytime we want to use a Button or a Card, it must be added to our imports. In the case of our `App` component, we are using `IonApp` and `IonRouterOutlet`. You can also register components globally if you find yourself importing the same components repeatedly. This comes with performance tradeoffs that we cover in [Optimizing Your App](#optimizing-your-app).
 
 From there, let's look at the template.
 
@@ -318,18 +337,22 @@ Looking at our code, we have a special attribute called slot. This is key for le
 Let's look at another component from Ionic Framework, FAB. Floating Action Buttons are a nice way to provide a main action that is elevated from the rest of an app. For this FAB, we will need three components: a FAB, a FAB Button, and an Icon.
 
 ```html
-<ion-content>
-  <ion-list>
-  ...
-  </ion-list>
+<template>
+  <ion-page>
+    <ion-content>
+      <ion-list>
+      ...
+      </ion-list>
 
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button>
-      <ion-icon :icon="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+      <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button>
+          <ion-icon :icon="add"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
 
-</ion-content>
+    </ion-content>
+  </ion-page>
+</template>
 
 <script>
 import { add } from 'ionicons/icons';
@@ -353,23 +376,26 @@ On our main `IonFab`, we are setting its positioning with the vertical and horiz
 Now let's wire up a click handler to this. When clicking the FAB button, we want to navigate to a new page (which we will create in a moment). To do this, we will need to get access to Vue Router's navigation API. This can be done by importing `useRouter` from the `vue-router` package.
 
 ```html
-import { add } from 'ionicons/icons';
+<template>
+  <ion-page>
+    <ion-content>
+      <ion-list>
+      ...
+      </ion-list>
 
-<ion-content>
-  <ion-list>
-  ...
-  </ion-list>
+      <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button @click="() => router.push('/new')">
+          <ion-icon :icon="add"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
 
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button @click="() => router.push('/new')">
-      <ion-icon :icon="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
-
-</ion-content>
+    </ion-content>
+  </ion-page>
+</template>
 
 <script>
 import { add } from 'ionicons/icons';
+import { useRouter } from 'vue-router';
 
 ...
 
@@ -483,6 +509,8 @@ export default defineComponent({
 </script>
 ```
 
+> Each view must contain an `IonPage` component. Page transitions will not work correctly without it. See the [IonPage Documentation](./navigation#ionpage) for more information.
+
 The content here should look similar to the `Home` component. What is different here is the `IonBackButton` component. This is used to navigate back to the previous route. Seems easy enough, right? Ok, but what if we reload the page?
 
 In this case, the in-memory history is lost, so the back button disappears. To address this, we can set the `default-href` attribute value to the URL we want to navigate to if there is no history.
@@ -493,9 +521,42 @@ In this case, the in-memory history is lost, so the back button disappears. To a
 
 Now, If there is no app history present, we will be able to navigate back to our home route.
 
+## Calling Methods on Components
+
+In order to call a method on any of the Ionic Vue components, you will first need to get a reference to the component instance. Next, you will need to access the underlying Web Component using `$el` and call the method.
+
+In other framework integrations such as Ionic React, this is not needed as any `ref` you provide is automatically forwarded to the underlying Web Component instance. We are unable to do the same thing here due to limitations in how Vue manages refs.
+
+```html
+<template>
+  <ion-content ref="content">
+    <ion-button @click="scrollToBottom">Scroll to Bottom</ion-button>
+    
+    ...
+  </ion-content>
+</template>
+
+<script lang="ts">
+  import { IonButton, IonContent } from '@ionic/vue';
+  import { defineComponent, ref } from 'vue';
+  
+  export default defineComponent({
+    components: { IonButton, IonContent },
+    setup() {
+      const content = ref();
+      const scrollToBottom = () => {
+        content.value.$el.scrollToBottom(300);
+      }
+      
+      return { content, scrollToBottom }
+    }
+  });
+</script>
+```
+
 ## Adding Icons
 
-Ionic Vue comes with [Ionicons](https://ionicons.com/) pre-installed. There are a couple options developers have for using them in their application.
+Ionic Vue comes with [Ionicons](https://ionic.io/ionicons/) pre-installed. There are a couple options developers have for using them in their application.
 
 ### Dynamic Imports
 
@@ -615,6 +676,107 @@ export default defineComponent({
 ```
 
 In `main.ts`, the `addIcons` function lets us register icons globally and give it a string as a key. We then reference the icon by that key in our `Home` component.
+
+## Optimizing Your Build
+
+Vue gives you several tools to fine tune your application. This section will cover the options that are most relevant to Ionic Framework.
+
+### Local Component Registration (Recommended)
+
+By default, Ionic Framework components are registered locally. With local registration, these components are imported and provided to each Vue component you want to use them in. This is the recommended approach as it allows lazy loading and treeshaking to work properly with Ionic Framework components. 
+
+The one downside to this approach is that it may be tedious to re-import your Ionic Framework components multiple times. However, we feel that the performance benefits you receive in exchange are worth it.
+
+Also note that locally registered components are not available in subcomponents. You will need to re-import the Ionic Framework components you would like to use in your subcomponent.
+
+Let's take a look at how local component registration works:
+
+```html
+<template>
+  <ion-page>
+    <ion-content>
+      <Subcomponent></Subcomponent>
+    </ion-content>
+  </ion-page>
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue';
+import { IonContent, IonPage } from '@ionic/vue';
+import Subcomponent from '@/components/Subcomponent.vue';
+
+export default defineComponent({
+  components: { IonContent, IonPage, Subcomponent }
+});
+</script>
+```
+
+In the example above, we are using the `IonPage` and `IonContent` components. To use them, we first import them from `@ionic/vue`. Then, we provide them to our Vue component in the `components` option. From there, we can use the components in our template.
+
+Note that since we are registering these components locally, neither `IonPage` nor `IonContent` will be available in `Subcomponent` unless we register them there as well.
+
+For more information, see the <a href="https://v3.vuejs.org/guide/component-registration.html#local-registration" target="_blank" rel="noopener noreferrer">Local Registration Vue Documentation</a>.
+
+### Global Component Registration
+
+The other option for registering components is to use global registration. Global registration involves importing the components you want to use in `main.ts` and calling the `component` method on your Vue app instance.
+
+While this makes it easier to add Ionic Framework components to your Vue app, global registration often is not ideal. To quote the Vue documentation: "If you're using a build system like Webpack, globally registering all components means that even if you stop using a component, it could still be included in your final build. This unnecessarily increases the amount of JavaScript your users have to download".
+
+Let's take a look at how global component registration works:
+
+**main.ts**
+```typescript
+import { IonContent, IonicVue, IonPage } from '@ionic/vue';
+
+const app = createApp(App)
+  .use(IonicVue)
+  .use(router);
+
+app.component('ion-content', IonContent);
+app.component('ion-page', IonPage);
+```
+
+**MyComponent.vue**
+```html
+<template>
+  <ion-page>
+    <ion-content>
+      <Subcomponent></Subcomponent>
+    </ion-content>
+  </ion-page>
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue';
+import Subcomponent from '@/components/Subcomponent.vue';
+
+export default defineComponent({
+  components: { Subcomponent }
+});
+</script>
+```
+
+In the example above, we are using the `IonPage` and `IonContent` components. To use them, we first import them from `@ionic/vue` in `main.ts`. From there, we call the `component` method on our app instance and pass it the tag name as well as the component definition. After we do that, we can use the components in the rest of our application without having to import them into each Vue component.
+
+For more information, see the <a href="https://v3.vuejs.org/guide/component-registration.html#global-registration" target="_blank" rel="noopener noreferrer">Global Registration Vue Documentation</a>.
+
+### Prefetching Application JavaScript
+
+By default, the Vue CLI will automatically generate prefetch hints for the JavaScript in your application. Prefetching utiltizes the browser idle time to download documents that the user might visit in the near future. When the user visits a page that requires the prefetched document, it can be served quickly from the browser's cache.
+
+Prefetching consumes bandwidth, so if you have a large app, you may want to disable it. You can do this by modifying or creating your `vue.config.js` file:
+
+**vue.config.js**
+```js
+module.exports = {
+  chainWebpack: config => {
+    config.plugins.delete('prefetch')
+  }
+}
+```
+
+The configuration above will prevent all files from being prefetched and, instead, will be loaded when they are needed. You can also select certain chunks to prefetch. Check out the <a href="https://cli.vuejs.org/guide/html-and-static-assets.html#prefetch" target="_blank" rel="noopener noreferrer">Vue CLI Docs on Prefetching</a> for more examples. 
  
 ## Build a Native App
 

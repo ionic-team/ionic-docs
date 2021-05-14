@@ -1,84 +1,183 @@
 ---
-title: Ionic Native
+title: Native APIs
 tableOfContents: false
 ---
 
-<p class='intro'>Build native-powered app experiences with pre-built solutions and a growing library of over 250 Premier and Community plugins. Ionic Native makes it easy to add native device functionality to any Ionic app leveraging Cordova or Capacitor.</p>
+<p class='intro'>Build native-powered app experiences with a collection of open source and premium plugins and integrations that make it easy to add native device functionality to any Ionic app with Capacitor or Cordova.</p>
 
-<docs-cards class="static-width"> <docs-card size="lg" header="Native solutions" href="/docs/enterprise/solutions" iconset="/docs/assets/icons/face-id.png,/docs/assets/icons/touch-id.png,/docs/assets/icons/auth0.png,/docs/assets/icons/active-directory.png"> 
+<div id="native-enterprise-cards">
+  <a href="https://capacitorjs.com/docs/plugins">
+    <div class="image-wrapper">
+      <img src="/docs/assets/img/native/capacitor@2x.png" width="440" height="222" alt="capacitor logo"/>
+    </div>
+    <div class="heading-group">
+      <header>Capacitor plugins</header>
+      <p>A modern, open source native runtime built and maintained by the Ionic team and the Capacitor community. Our recommended native solution.</p>
+    </div>
+  </a>
 
-Complete native solutions for single sign-on, biometrics, and secure offline storage.</docs-card> <docs-card size="lg" header="Core Device Features" href="/docs/native#popular-device-features" iconset="/docs/assets/icons/camera.png,/docs/assets/icons/geolocation.png,/docs/assets/icons/file.png,/docs/assets/icons/keyboard.png"> 
+  <a href="/docs/native/community">
+    <div class="image-wrapper">
+      <img src="/docs/assets/img/native/cordova@2x.png" width="440" height="222" alt="cordova logo"/>
+    </div>
+    <div class="heading-group">
+      <header>Cordova plugins</header>
+      <p>A collection of free Cordova plugins, built and maintained by the community, with TypeScript wrappers and a consistent API and naming convention.</p>
+    </div>
+  </a>
+</div>
 
-Core device features like camera, geolocation, keyboard access, contacts, calendar, and more.</docs-card> <docs-card size="lg" header="3rd Party Integrations" href="/docs/native#popular-3rd-party-integrations" iconset="/docs/assets/icons/aws-amplify.png,/docs/assets/icons/firebase.png,/docs/assets/icons/couchbase.png,/docs/assets/icons/apple-pay.png"> 
+<a id="native-enterprise" href="https://ionicframework.com/native"></p> 
 
-Connect to third-party services and cloud providers like Firebase, AWS, and Apple Payment Pass.</docs-card> </docs-cards>
+<div class="image-wrapper">
+  <img src="/docs/assets/img/native/native-enterprise@2x.png" width="476" height="228" />
+</div>
 
-<p><br></p>
+<div class="heading-group">
+  <header> Ionic Native Enterprise Edition </header> 
+  
+  <p>
+    Premium, supported Capacitor and Cordova plugins, third-party integrations, and pre-built native solutions for building enterprise-grade apps.
+  </p>
+</div>
 
-## Featured Native Solutions
+<p>
+  </a>
+</p>
 
-<docs-item-list class="static-width"> <docs-item header="Identity Vault" href="/docs/enterprise/identity-vault" icon="/docs/assets/icons/logo-identity-vault.png" rounded="false"> 
+<style scoped>
+  #native-enterprise-cards {
+    display: flex;
 
-Protect your users and data with multi-layer native security and biometric authentication.</docs-item>
+    margin-inline-start: -1.5rem;
+    margin-block-start: -1.5rem;
+  }
 
-<docs-item header="Auth Connect" href="/docs/enterprise/auth-connect" icon="/docs/assets/icons/logo-auth-connect.png" rounded="false"> 
+  @media (max-width: 767px) {
+    #native-enterprise-cards {
+      flex-direction: column;
+    }
+    #native-enterprise-cards .image-wrapper img {
+      max-height: 10rem;
+    }
+  }
 
-Add single sign-on using a single API and the latest in native security best practices.</docs-item>
+  #native-enterprise-cards > a {
+    display: block;
+    margin-inline-start: 1.5rem;
+    margin-block-start: 1.5rem;
 
-<docs-item header="Secure Storage" href="/docs/enterprise/offline-storage" icon="/docs/assets/icons/logo-offline-storage.png" rounded="false"> 
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08), 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
 
-Store and access data locally on a mobile or desktop device, even when users are offline.</docs-item> </docs-item-list>
+    transition: all 150ms ease;
+  }
 
-## Popular Device Features
+  #native-enterprise-cards > a:hover,
+  #native-enterprise-cards > a:active,
+  #native-enterprise-cards > a:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1), 0 0.175em 0.5em rgba(2, 8, 20, 0.08);
+  }
 
-<docs-item-list class="static-width"> <docs-item header="Camera" href="/docs/enterprise/camera" icon="/docs/assets/icons/camera.png"> 
+  #native-enterprise-cards .heading-group {
+    padding: 2rem;
+  }
 
-Take photos, capture video and choose images from the device's image library.</docs-item>
+  #native-enterprise-cards .image-wrapper > img {
+    object-fit: cover;
+    width: 100%;
+  }
 
-<docs-item header="Keyboard" href="/docs/enterprise/keyboard" icon="/docs/assets/icons/keyboard.png"> 
+  #native-enterprise-cards header {
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    color: #010610;
+  }
 
-Configure keyboard behavior (show/hide) and display (sizing/visibility).</docs-item>
+  #native-enterprise-cards p {
+    font-size: .875rem;
+    line-height: 160%;
+    letter-spacing: -0.01em;
+    color: #5B708B;
+  }
 
-<docs-item header="Calendar" href="/docs/enterprise/calendar" icon="/docs/assets/icons/calendar-icon.png"> 
+  #native-enterprise {
+    margin-top: 2rem;
 
-Manage mobile device calendar events.</docs-item>
+    border-radius: 16px;
+    overflow: hidden;
 
-<docs-item header="Contacts" href="/docs/enterprise/contacts" icon="/docs/assets/icons/contacts-icon.png"> 
+    display: flex;
+    align-items: center;
+    background: #1F2A40;    
 
-Access to read, write, or select device contacts.</docs-item>
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08), 0px 4px 8px rgba(0, 0, 0, 0.1);
 
-<docs-item header="Geolocation" href="/docs/enterprise/geolocation" icon="/docs/assets/icons/geolocation.png"> 
+    transition: transform 150ms ease, box-shadow 150ms ease;
+  }
 
-Device location information, including latitude and longitude.</docs-item>
+  @media (max-width: 767px) {
+    #native-enterprise {
+      flex-direction: column;
+    }
+    #native-enterprise .image-wrapper img{
+      max-height: 10rem;
+    }
+  }
 
-<docs-item header="File" href="/docs/enterprise/filesystem" icon="/docs/assets/icons/file.png"> 
+  #native-enterprise:hover,
+  #native-enterprise:active,
+  #native-enterprise:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1), 0 0.175em 0.5em rgba(2, 8, 20, 0.08);
+  }
 
-Common file operations such as read/write and directory access.</docs-item> </docs-item-list>
+  #native-enterprise > * {
+    flex-basis: 50%;
+  }
 
-## Popular 3rd Party Integrations
+  #native-enterprise .heading-group {
+    padding: 2rem;
+    padding-left: 3rem;
+  }
 
-<docs-item-list class="static-width">
+  #native-enterprise .image-wrapper {
+    align-self: stretch;
+    overflow: hidden;
+  }
+  
+  #native-enterprise img {
+    height: 100%;
+    max-height: 100%;
+    object-fit: cover;    
+  }
 
-<docs-item header="Firebase" href="/docs/native/firebase" icon="/docs/assets/icons/firebase.png"> 
+  #native-enterprise header {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
 
-Push notifications, analytics, event tracking, crash reporting and more.</docs-item>
+    color: #fff;
+  }
 
-<docs-item header="AWS Amplify" href="/docs/enterprise/aws-amplify" icon="/docs/assets/icons/aws-amplify.png"> 
+  #native-enterprise p {
+    font-size: 14px;
+    line-height: 160%;
+    letter-spacing: -0.01em;
 
-Authentication, analytics, push notifications, AI and ML cloud services, storage, and more.</docs-item>
+    color: #E9EDF3;
+  }
 
-<docs-item header="Couchbase" href="/docs/enterprise/couchbase-lite" icon="/docs/assets/icons/couchbase.png"> 
 
-A fully-featured embedded NoSQL database that runs locally on mobile devices.</docs-item>
+</style>
 
-<docs-item header="Apple Payment Pass" href="/docs/enterprise/apple-payment-pass" icon="/docs/assets/icons/apple-wallet-icon.png"> 
-
-Add credit/debit cards to Apple Wallet.</docs-item>
-
-<docs-item header="Facebook" href="/docs/native/facebook" icon="/docs/assets/icons/facebook-icon.png"> 
-
-Connect to the Facebook platform.</docs-item>
-
-<docs-item header="Instagram" href="/docs/native/instagram" icon="/docs/assets/icons/instagram-icon.png"> 
-
-Share photos through the Instagram app.</docs-item> </docs-item-list>
+<blockquote>
+  <p>
+    These docs are for apps built with Ionic Framework 4.0.0 and greater. For older Ionic v3 projects, please <a href="/docs/v3/native">see here</a>.
+  </p>
+</blockquote>
