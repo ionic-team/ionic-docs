@@ -116,7 +116,7 @@ const DashboardPage: React.FC<RouteComponentProps> = ({ match }) => {
 };
 ```
 
-Here, we see that in the event a location does not match the first two `Route`s. The `IonRouterOutlet` will redirect the Ionic React app to the `match.url` path.
+Here, we see that in the event a location does not match the first two `Route`s the `IonRouterOutlet` will redirect the Ionic React app to the `match.url` path.
 
 You can alternatively supply a component to render instead of providing a redirect.
 
