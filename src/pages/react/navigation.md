@@ -97,6 +97,42 @@ The `DashboardPage` above shows a users list page and a details page. When navig
 
 An `IonRouterOutlet` should only contain `Route`s or `Redirect`s. Any other component should be rendered either as a result of a `Route` or outside of the `IonRouterOutlet`.
 
+## Fallback Route
+
+A common routing use case is to provide a "fallback" route to be rendered in the event the location navigated to does not match any of the routes defined. 
+
+We can define a route within an `IonRouterOutlet` to act as our "fallback" route -- provided no `path` is provided and it is the last `Route` defined.
+
+**DashboardPage.tsx**
+
+```typescript
+const DashboardPage: React.FC<RouteComponentProps> = ({match}) => {
+  return (
+    <IonRouterOutlet>
+      <Route exact path={match.url} component={UsersListPage} />
+      <Route path={`${match.url}/users/:id`} component={UserDetailPage} />
+      <Route render={() => <Redirect to={match.url} />} />
+    </IonRouterOutlet>
+  );
+};
+```
+
+Here, we see that in the event a location does not match the first two `Route`s it will redirect the Ionic React app to the `match.url` path. 
+
+You can alternatively supply a component to render instead of providing a redirect.
+
+```typescript
+const DashboardPage: React.FC<RouteComponentProps> = ({match}) => {
+  return (
+    <IonRouterOutlet>
+      <Route exact path={match.url} component={UsersListPage} />
+      <Route path={`${match.url}/users/:id`} component={UserDetailPage} />
+      <Route component={NotFoundPage} />
+    </IonRouterOutlet>
+  );
+};
+```
+
 ## IonPage
 
 The `IonPage` component wraps each view in an Ionic React app and allows page transitions and stack navigation to work properly. Each view that is navigated to using the router must include an `IonPage` component.
