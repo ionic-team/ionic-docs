@@ -7,7 +7,7 @@ nextUrl: '/docs/vue/your-first-app/7-live-reload'
 
 # Deploying to iOS and Android
 
-Since we added Capacitor to our project when it was first created, there’s only a handful of steps remaining until the Photo Gallery app is on our device! 
+Since we added Capacitor to our project when it was first created, there’s only a handful of steps remaining until the Photo Gallery app is on our device!
 
 > Remember, you can find the complete source code for this app [here](https://github.com/ionic-team/photo-gallery-capacitor-vue).
 
@@ -62,7 +62,7 @@ Each setting in `Info.plist` has a low-level parameter name and a high-level nam
 
 Locate the `NSCameraUsageDescription` Key (if should exist already if you followed along with this tutorial) and set the Value to something that describes why the app needs to use the camera, such as "To Take Photos." The Value field is displayed to the app user when the permission prompt opens.
 
-Next, click on `App` in the Project Navigator on the left-hand side, then within the `Signing & Capabilities` section, select your Development Team. 
+Next, click on `App` in the Project Navigator on the left-hand side, then within the `Signing & Capabilities` section, select your Development Team.
 
 ![Xcode - Selecting Development Team](/docs/assets/img/guides/first-app-cap-ng/xcode-signing.png)
 

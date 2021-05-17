@@ -69,7 +69,7 @@ Next, update the `savePicture()` method. When running on mobile, set `filepath` 
     const savedFile = await Filesystem.writeFile({
       path: fileName,
       data: base64Data,
-      directory: FilesystemDirectory.Data
+      directory: Directory.Data
     });
 
     if (this.platform.is('hybrid')) {
@@ -107,7 +107,7 @@ public async loadSaved() {
       // Read each saved photo's data from the Filesystem
       const readFile = await Filesystem.readFile({
           path: photo.filepath,
-          directory: FilesystemDirectory.Data
+          directory: Directory.Data
       });
 
       // Web platform only: Load the photo as base64 data

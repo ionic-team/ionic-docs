@@ -39,7 +39,7 @@ const savePicture = async (photo: CameraPhoto, fileName: string): Promise<Photo>
   const savedFile = await Filesystem.writeFile({
     path: fileName,
     data: base64Data,
-    directory: FilesystemDirectory.Data
+    directory: Directory.Data
   });
 
   if (isPlatform('hybrid')) {
@@ -51,7 +51,7 @@ const savePicture = async (photo: CameraPhoto, fileName: string): Promise<Photo>
     };
   }
   else {
-    // Use webPath to display the new image instead of base64 since it's 
+    // Use webPath to display the new image instead of base64 since it's
     // already loaded into memory
     return {
       filepath: fileName,
@@ -73,13 +73,13 @@ const loadSaved = async () => {
     for (const photo of photosInStorage) {
       const file = await Filesystem.readFile({
         path: photo.filepath,
-        directory: FilesystemDirectory.Data
+        directory: Directory.Data
       });
       // Web platform only: Load the photo as base64 data
       photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
     }
   }
-  
+
   photos.value = photosInStorage;
 }
 ```
