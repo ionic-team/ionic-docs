@@ -1,23 +1,23 @@
 ---
-previousText: 'Hardware Back Button'
+previousText: 'Boutons de Retour Matériel'
 previousUrl: '/docs/developing/hardware-back-button'
 ---
 
-# Keyboard
+# Clavier
 
-Customizing and accounting for the presence of an on-screen keyboard are two common roadblocks developers face when building mobile apps and PWAs. This guide will provide an introduction to the various tools available for managing the on-screen keyboard in your application.
+La personnalisation et la prise en compte de la présence d'un clavier à l'écran sont deux obstacles courants auxquels les développeurs sont confrontés lorsqu'ils créent des applications mobiles et des PWA. Ce guide présente les différents outils disponibles pour gérer le clavier à l'écran dans votre application.
 
 ## inputmode
 
-The `inputmode` attribute allows developers to specify what type of data might be entered into an input. This will prompt the browser to show a keyboard that includes buttons relevant to what the user may enter. For example, `inputmode="email"` will display a keyboard with the `@` key as well as other optimizations for entering emails.
+L'attribut `inputmode` permet aux développeurs de préciser quel type de données peut être saisi dans une entrée. Cela incitera le navigateur à afficher un clavier comprenant des boutons correspondant à ce que l'utilisateur peut saisir. Par exemple, `inputmode="email"` affichera un clavier avec la touche `@` ainsi que d'autres optimisations pour la saisie des emails.
 
-Since `inputmode` is a global attribute, it can be used on Ionic components such as `ion-input` and `ion-textarea` in addition to regular input elements.
+Comme `inputmode` est un attribut global, il peut être utilisé sur des composants Ionic tels que `ion-input` et `ion-textarea` en plus des éléments de saisie ordinaires.
 
-Inputs that _require_ a certain data type should use the `type` attribute instead. For example, inputs that require an email should use `type="email"` rather than specifying an `inputmode.` This is because the data that will be entered is always going to be in the form of an email. On the other hand, if the input accepts an email or a username, using `inputmode=”email”` is appropriate because the data being entered is not always going to be an email address.
+Les entrées qui _exigent_ un certain type de données doivent utiliser l'attribut `type` à la place. Par exemple, les entrées qui nécessitent un email doivent utiliser `type="email"` plutôt que de spécifier un `inputmode.` Ceci parce que les données qui seront entrées seront toujours sous la forme d'un email. En revanche, si la saisie accepte un email ou un nom d'utilisateur, l'utilisation de `inputmode="email"` est appropriée car les données saisies ne seront pas toujours une adresse email.
 
-For a list of accepted values, see the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode" target="_blank" rel="noreferrer">inputmode Documentation</a>.
+Pour une liste des valeurs acceptées, voir le <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode" target="_blank" rel="noreferrer">inputmode Documentation</a>.
 
-### Usage
+### Utilisation
 <docs-tabs> <docs-tab tab="Javascript">
 
 ```html
@@ -74,22 +74,22 @@ For a list of accepted values, see the <a href="https://developer.mozilla.org/en
 
 <docs-codepen user="ionic" slug="abvJVVv" height="400"></docs-codepen>
 
-> The `inputmode` attribute is supported on devices running Chrome 66+ and iOS Safari 12.2+: https://caniuse.com/#search=inputmode
+> L'attribut `inputmode` est pris en charge sur les appareils utilisant Chrome 66+ et iOS Safari 12.2+ : https://caniuse.com/#search=inputmode.
 
 ## enterkeyhint
 
-The `enterkeyhint` attribute allows developers to specify what type of action label or icon should be shown for the "Enter" key. Using `enterkeyhint` lets the user know what will happen when they tap the “Enter” key. The value that should be specified here depends on the context of what the user is doing. For example, if the user is typing into a searchbox, developers should ensure that the input has `enterkeyhint="search"`.
+L'attribut `enterkeyhint` permet aux développeurs de spécifier quel type d'étiquette ou d'icône d'action doit être affiché pour la touche "Entrée". L'utilisation du `enterkeyhint` permet à l'utilisateur de savoir ce qui se passera lorsqu'il appuiera sur la touche "Entrée". La valeur qui doit être spécifiée ici dépend du contexte de ce que fait l'utilisateur. Par exemple, si l'utilisateur tape dans une boîte de recherche, les développeurs doivent s'assurer que l'entrée a `enterkeyhint="search"`.
 
-Since `enterkeyhint` is a global attribute, it can be used on Ionic components such as `ion-input` and `ion-textarea` in addition to regular input elements.
+Comme `enterkeyhint` est un attribut global, il peut être utilisé sur des composants Ionic tels que `ion-input` et `ion-textarea` en plus des éléments de saisie ordinaires.
 
-For a list of accepted values, see the <a href="https://html.spec.whatwg.org/dev/interaction.html#input-modalities:-the-enterkeyhint-attribute" target="_blank" rel="noreferrer">enterkeyhint Standard</a>.
+Pour une liste des valeurs acceptées, voir la norme <a href="https://html.spec.whatwg.org/dev/interaction.html#input-modalities:-the-enterkeyhint-attribute" target="_blank" rel="noreferrer">enterkeyhint Standard</a>.
 
-### Usage
+### Utilisation
 <docs-tabs> <docs-tab tab="Javascript">
 
 ```html
 <ion-item>
-  <ion-label>Enter search query</ion-label>
+  <ion-label>Entrez la requête de recherche</ion-label>
   <ion-input enterkeyhint="search" type="search"></ion-input>
 </ion-item>
 ```
@@ -97,7 +97,7 @@ For a list of accepted values, see the <a href="https://html.spec.whatwg.org/dev
 
 ```html
 <ion-item>
-  <ion-label>Enter search query</ion-label>
+  <ion-label>Entrez la requête de recherche</ion-label>
   <ion-input enterkeyhint="search" type="search"></ion-input>
 </ion-item>
 ```
@@ -105,7 +105,7 @@ For a list of accepted values, see the <a href="https://html.spec.whatwg.org/dev
 
 ```html
 <IonItem>
-  <IonLabel>Enter search query</IonLabel>
+  <IonLabel>Entrez la requête de recherche</IonLabel>
   <IonInput enterkeyhint="search" type="search"></IonInput>
 </IonItem>
 ```
@@ -113,7 +113,7 @@ For a list of accepted values, see the <a href="https://html.spec.whatwg.org/dev
 
 ```html
 <ion-item>
-  <ion-label>Enter search query</ion-label>
+  <ion-label>Entrez la requête de recherche</ion-label>
   <ion-input enterkeyhint="search" type="search"></ion-input>
 </ion-item>
 ```
