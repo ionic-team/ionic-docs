@@ -83,9 +83,9 @@ Dans cet exemple, nous enregistrons un gestionnaire qui sera appelé lorsque le 
 
 Dans le cas où il existe des gestionnaires ayant la même valeur de priorité, le gestionnaire qui a été enregistré _en dernier_ sera appelé. Voir [Handlers avec les mêmes priorités](#handlers-with-the-same-priorities) pour plus d'informations.
 
-## Calling Multiple Handlers
+## Appeler plusieurs gestionnaires
 
-Each hardware back button callback has a `processNextHandler` parameter. Calling this function allows you to continue calling hardware back button handlers.
+Chaque rappel de bouton retour matériel a un paramètre `processNextHandler`. L'appel de cette fonction vous permet de continuer à appeler les gestionnaires de boutons de retour matériel.
 
 <docs-tabs> <docs-tab tab="javascript">
 
@@ -161,22 +161,22 @@ export default {
 ```
 </docs-tab> </docs-tabs>
 
-This example shows how to indicate to Ionic Framework that you want the next handler to be fired. All callbacks are provided with a `processNextHandler` function as a parameter. Calling this will cause the next handler, if any exists, to be fired.
+Cet exemple montre comment indiquer à Ionic Framework que vous voulez que le prochain gestionnaire soit déclenché. Tous les callbacks sont fournis avec une fonction `processNextHandler` comme paramètre. L'appel de cette fonction entraînera le déclenchement du gestionnaire suivant, s'il existe.
 
-## Handlers with the Same Priorities
+## Gestionnaires avec les mêmes priorités
 
-Internally, Ionic Framework uses something similar to a priority queue to manage hardware back button handlers. The handler with the largest priority value will be called first. In the event that there are multiple handlers with the same priority value, the _last_ handler of the same priority added to this queue will be the first handler to be called.
+En interne, Ionic Framework utilise quelque chose de similaire à une file d'attente prioritaire pour gérer les gestionnaires de boutons de retour matériels. Le gestionnaire ayant la plus grande valeur de priorité sera appelé en premier. Dans le cas où il y a plusieurs gestionnaires avec la même valeur de priorité, le _dernier_ gestionnaire de la même priorité ajouté à cette file d'attente sera le premier gestionnaire à être appelé.
 
 ```javascript
 document.addEventListener('ionBackButton', (ev) => {
-  // Handler A
+  // Gestionnaire A
   ev.detail.register(10, (processNextHandler) => {
     console.log('Handler A was called!');
 
     processNextHandler();
   });
 
-  // Handler B
+  // Gestionnaire B
   ev.detail.register(10, (processNextHandler) => {
     console.log('Handler B was called!');
 
@@ -185,12 +185,12 @@ document.addEventListener('ionBackButton', (ev) => {
 });
 ```
 
-In the example above, both handlers A and B have a priority of 10. Since handler B was registered last, Ionic Framework will call handler B before it calls handler A.
+Dans l'exemple ci-dessus, les gestionnaires A et B ont une priorité de 10. Depuis que le gestionnaire B a été enregistré en dernier, Ionic Framework appellera le gestionnaire B avant qu'il appelle le gestionnaire A.
 
 
-## Exiting the App
+## Quitter l'application
 
-In some scenarios, it may be desirable to quit the app when pressing the hardware back button. This can be achieved through the use of the `ionBackButton` event combined with methods that Capacitor/Cordova provide.
+Dans certains scénarios, il peut être souhaitable de quitter l'application lorsque vous appuyez sur le bouton de retour matériel. Ceci peut être réalisé par l'utilisation de l'événement `ionBackButton` combiné aux méthodes que Capacitor/Cordova fournissent.
 
 <docs-tabs> <docs-tab tab="javascript">
 
@@ -272,16 +272,16 @@ export default {
 ```
 </docs-tab> </docs-tabs>
 
-This example shows the application exiting when the user presses the hardware back button and there is nothing left in the navigation stack. It is also possible to display a confirmation dialog before quitting the app.
+Cet exemple montre que l'application se termine lorsque l'utilisateur appuie sur le bouton de retour du matériel et qu'il n'y a plus rien dans la pile de navigation. Il est également possible d'afficher un dialogue de confirmation avant de quitter l'application.
 
-It is recommended to check whether or not the user is on the root page prior to exiting the application. Developers can use the `canGoBack` method on `IonRouterOutlet` in Ionic Angular and `IonRouter` in Ionic React and Ionic Vue.
+Il est recommandé de vérifier si l'utilisateur se trouve ou non sur la page racine avant de quitter l'application. Les développeurs peuvent utiliser la méthode `canGoBack` sur `IonRouterOutlet` dans Ionic Angular et `IonRouter` dans Ionic React et Ionic Vue.
 
-## Internal Framework Handlers
+## Gestionnaires internes du framework
 
-The table below lists all of the internal hardware back button event handlers that Ionic Framework uses. The `Propagates` column notes whether or not that particular handler tells Ionic Framework to call the next back button handler.
+Le tableau ci-dessous répertorie tous les gestionnaires d'événements internes du bouton retour du matériel que Ionic Framework utilise. La colonne `Propagates` note si ce gestionnaire particulier indique ou non à Ionic Framework d'appeler le prochain gestionnaire de bouton retour.
 
-| Handler    | Priority | Propagates | Description                                                                                                                              |
-| ---------- | -------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| Overlays   | 100      | No         | Applies to overlay components `ion-action-sheet`, `ion-alert`, `ion-loading`, `ion-modal`, `ion-popover`, `ion-picker`, and `ion-toast`. |
-| Menu       | 99       | No         | Applies to `ion-menu`.                                                                                                                   |
-| Navigation | 0        | Yes        | Applies to routing navigation (i.e. Angular Routing).                                                                                    |
+| Gestionnaire | Priorité | Propagation | Description                                                                                                                              |
+| ------------ | -------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Overlays     | 100      | Non         | Applies to overlay components `ion-action-sheet`, `ion-alert`, `ion-loading`, `ion-modal`, `ion-popover`, `ion-picker`, and `ion-toast`. |
+| Menu         | 99       | No          | Applies to `ion-menu`.                                                                                                                   |
+| Navigation   | 0        | Yes         | Applies to routing navigation (i.e. Angular Routing).                                                                                    |
