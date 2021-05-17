@@ -121,41 +121,41 @@ Pour une liste des valeurs acceptées, voir la norme <a href="https://html.spec.
 
 <docs-codepen user="ionic" slug="GRpWyRB" height="350"></docs-codepen>
 
-> The `enterkeyhint` attribute is supported on devices running Chrome 77+ and iOS Safari 13.4+.
+> L'attribut `enterkeyhint` est pris en charge sur les appareils utilisant Chrome 77+ et iOS Safari 13.4+.
 
-## Dark Mode
+## Mode sombre
 
-By default the keyboard theme is determined by the OS. For example, if dark mode is enabled on iOS, the keyboard in your app will appear with a dark theme even if your application does not have a dark theme in its CSS.
+Par défaut, le thème du clavier est déterminé par le système d'exploitation. Par exemple, si le mode sombre est activé sur iOS, le clavier de votre application apparaîtra avec un thème sombre, même si votre application n'a pas de thème sombre dans son CSS.
 
-When running an app in a mobile web browser or as a PWA there is no way to force the keyboard to appear with a certain theme.
+Lorsqu'une application est exécutée dans un navigateur Web mobile ou en tant que PWA, il n'est pas possible de forcer le clavier à s'afficher avec un certain thème.
 
-When running an app in Capacitor or Cordova, it is possible to force the keyboard to appear with a certain theme. For more information regarding this configuration, see the <a href="https://capacitor.ionicframework.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Capacitor Keyboard Documentation</a>.
-
-
-## Hiding the Accessory Bar
-
-When running any kind of web based application, iOS will show an accessory bar above the keyboard. This allows users to move to the next or previous inputs as well as close the keyboard.
-
-When running an app in a mobile web browser or as a PWA there is no way to hide the accessory bar.
-
-When running an app in Capacitor or Cordova, it is possible to hide the accessory bar. For more information regarding this configuration, see the <a href="https://capacitor.ionicframework.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Capacitor Keyboard Documentation</a>.
+Lorsque vous exécutez une application dans Capacitor ou Cordova, il est possible de forcer le clavier à s'afficher avec un certain thème. Pour plus d'informations concernant cette configuration, voir le <a href="https://capacitor.ionicframework.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Documentation du clavier du condensateur</a>.
 
 
-## Keyboard Lifecycle Events
+## Cacher la barre d'accessoires
 
-Detecting the presence of an on-screen keyboard is useful for adjusting the positioning of an input that would otherwise be hidden by the keyboard. For Capacitor and Cordova apps, developers typically rely on native keyboard plugins to listen for the keyboard lifecycle events. For apps running in a mobile browser or as a PWA, developers can use the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Visual_Viewport_API" rel="noreferrer" target="_blank">Visual Viewport API</a> where supported. Ionic Framework wraps both of these approaches and emits `ionKeyboardDidShow` and `ionKeyboardDidHide` events on the `window`. The event payload for `ionKeyboardDidShow` contains an approximation of the keyboard height in pixels.
+Lors de l'exécution de tout type d'application web, iOS affiche une barre d'accessoires au-dessus du clavier. Cela permet aux utilisateurs de passer aux entrées suivantes ou précédentes ainsi que de fermer le clavier.
 
-### Usage
+Lorsqu'une application est exécutée dans un navigateur Web mobile ou en tant que PWA, il n'est pas possible de masquer la barre d'accessoires.
+
+Lorsque vous exécutez une application dans Capacitor ou Cordova, il est possible de masquer la barre d'accessoires. Pour plus d'informations concernant cette configuration, voir le <a href="https://capacitor.ionicframework.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Documentation du clavier du condensateur</a>.
+
+
+## Événements du cycle de vie du clavier
+
+La détection de la présence d'un clavier à l'écran est utile pour ajuster le positionnement d'une entrée qui serait autrement cachée par le clavier. Pour les applications Capacitor et Cordova, les développeurs s'appuient généralement sur des plugins clavier natifs pour écouter les événements du cycle de vie du clavier. Pour les applications fonctionnant dans un navigateur mobile ou en tant que PWA, les développeurs peuvent utiliser l'API <a href="https://developer.mozilla.org/en-US/docs/Web/API/Visual_Viewport_API" rel="noreferrer" target="_blank">Visual Viewport API</a> lorsque celle-ci est prise en charge. Ionic Framework enveloppe ces deux approches et émet des événements `ionKeyboardDidShow` et `ionKeyboardDidHide` sur la `window`. La charge utile de l'événement `ionKeyboardDidShow` contient une approximation de la hauteur du clavier en pixels.
+
+### Utilisation
 <docs-tabs> <docs-tab tab="Javascript">
 
 ```javascript
 window.addEventListener('ionKeyboardDidShow', ev => {
   const { keyboardHeight } = ev;
-  // Do something with the keyboard height such as translating an input above the keyboard.
+  // Faites quelque chose avec la hauteur du clavier, comme traduire une entrée au-dessus du clavier.
 });
 
 window.addEventListener('ionKeyboardDidHide', () => {
-  // Move input back to original location
+  // Remettre l'entrée à l'emplacement d'origine
 });
 ```
 </docs-tab> <docs-tab tab="Angular">
@@ -168,11 +168,11 @@ import { Platform } from '@ionic/angular';
 constructor(private platform: Platform) {
   this.platform.keyboardDidShow.subscribe(ev => {
     const { keyboardHeight } = ev;
-    // Do something with the keyboard height such as translating an input above the keyboard.
+    // Faites quelque chose avec la hauteur du clavier, comme traduire une entrée au-dessus du clavier.
   });
 
   this.platform.keyboardDidHide.subscribe(() => {
-    // Move input back to original location
+    // Remettre l'entrée à l'emplacement d'origine
   });
 }
 ```
@@ -185,7 +185,7 @@ import { useKeyboardState } from '@ionic/react-hooks/keyboard';
 
 const { isOpen, keyboardHeight } = useKeyboardState();
 
-// Do something with the keyboard height such as translating an input above the keyboard
+// Faire quelque chose avec la hauteur du clavier, par exemple traduire une entrée au-dessus du clavier
 ```
 </docs-tab> <docs-tab tab="Vue">
 
@@ -205,4 +205,4 @@ watch(keyboardHeight, () => {
 ```
 </docs-tab> </docs-tabs>
 
-> For apps running in a mobile web browser or as a PWA, Keyboard Lifecycle Events are only supported on Chrome 62+ and iOS Safari 13.0+.
+> Pour les applications exécutées dans un navigateur Web mobile ou en tant que PWA, les événements du cycle de vie du clavier ne sont pris en charge que sur Chrome 62+ et iOS Safari 13.0+.
