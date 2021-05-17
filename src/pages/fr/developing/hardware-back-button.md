@@ -280,8 +280,8 @@ Il est recommandé de vérifier si l'utilisateur se trouve ou non sur la page ra
 
 Le tableau ci-dessous répertorie tous les gestionnaires d'événements internes du bouton retour du matériel que Ionic Framework utilise. La colonne `Propagates` note si ce gestionnaire particulier indique ou non à Ionic Framework d'appeler le prochain gestionnaire de bouton retour.
 
-| Gestionnaire | Priorité | Propagation | Description                                                                                                                              |
-| ------------ | -------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| Overlays     | 100      | Non         | Applies to overlay components `ion-action-sheet`, `ion-alert`, `ion-loading`, `ion-modal`, `ion-popover`, `ion-picker`, and `ion-toast`. |
-| Menu         | 99       | No          | Applies to `ion-menu`.                                                                                                                   |
-| Navigation   | 0        | Yes         | Applies to routing navigation (i.e. Angular Routing).                                                                                    |
+| Gestionnaire | Priorité | Propagation | Description                                                                                                                                        |
+| ------------ | -------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Overlays     | 100      | Non         | S'applique aux composants de recouvrement `ion-action-sheet`, `ion-alert`, `ion-loading`, `ion-modal`, `ion-popover`, `ion-picker` et `ion-toast`. |
+| Menu         | 99       | Non         | S'applique à `ion-menu`.                                                                                                                           |
+| Navigation   | 0        | Oui         | S'applique à la navigation de routage (i.e. Angular Routing).                                                                                      |
