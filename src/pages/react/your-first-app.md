@@ -63,6 +63,12 @@ Next, change into the app folder:
 $ cd photo-gallery
 ```
 
+Next we'll need to install the necessary Capacitor plugins to make the app's native functionality work:
+
+```shell
+npm install @capacitor/camera @capacitor/storage @capacitor/filesystem
+```
+
 ### PWA Elements
 
 Some Capacitor plugins, including the Camera API, provide the web-based functionality and UI via the Ionic [PWA Elements library](https://github.com/ionic-team/pwa-elements).
