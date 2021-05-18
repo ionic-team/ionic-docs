@@ -18,22 +18,21 @@ Create a new file at `src/hooks/usePhotoGallery.ts` and open it up.
 A custom hook is just a function that uses other React hooks. And that's what we will be doing! We will start by importing the various hooks and utilities we will be using from React core, the Ionic React Hooks project, and Capacitor:
 
 ```typescript
-import { useState, useEffect } from "react";
-import { useCamera } from '@ionic/react-hooks/camera';
-import { useFilesystem, base64FromPath } from '@ionic/react-hooks/filesystem';
-import { useStorage } from '@ionic/react-hooks/storage';
+import { useState, useEffect } from 'react';
 import { isPlatform } from '@ionic/react';
-import { CameraResultType, CameraSource, CameraPhoto, Capacitor, FilesystemDirectory } from "@capacitor/core";
+
+import { Camera, CameraResultType, CameraSource, Photo, } from '@capacitor/camera';
+import { Filesystem, Directory } from '@capacitor/filesystem';
+import { Storage } from '@capacitor/storage';
+import { Capacitor } from '@capacitor/core';
 ```
 Next, create a function named usePhotoGallery:
 
 ```typescript
 export function usePhotoGallery() {
 
-  const { getPhoto } = useCamera();
-
   const takePhoto = async () => {
-    const cameraPhoto = await getPhoto({
+    const cameraPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
       quality: 100
@@ -48,7 +47,7 @@ export function usePhotoGallery() {
 
 Our `usePhotoGallery` hook exposes a method called takePhoto, which in turn calls into Capactior's getPhoto method.
 
-Notice the magic here: there's no platform-specific code (web, iOS, or Android)! The Capacitor Camera plugin abstracts that away for us, leaving just one method call - `getPhoto()` - that will open up the device's camera and allow us to take photos. 
+Notice the magic here: there's no platform-specific code (web, iOS, or Android)! The Capacitor Camera plugin abstracts that away for us, leaving just one method call - `getPhoto()` - that will open up the device's camera and allow us to take photos.
 
 The last step we need to take is to use the new hook from the Tab2 page. Go back to Tab2.tsx and import the hook:
 
@@ -61,7 +60,7 @@ And right before the return statement in the functional component, get access to
 ```typescript
 const Tab2: React.FC = () => {
   const { takePhoto } = usePhotoGallery();
-  
+
   // snip - rest of code
 ```
 
@@ -78,16 +77,16 @@ After taking a photo, it disappears. We still need to display it within our app 
 First we will create a new type to define our Photo, which will hold specific metadata. Add the following Photo interface to the `usePhotoGallery.ts` file, somewhere outside of the main function:
 
 ```typescript
-export interface Photo {
+export interface UserPhoto {
   filepath: string;
   webviewPath?: string;
 }
 ```
 
-Back at the top of the function (right after the call to `useCamera`, we will define a state variable to store the array of each photo captured with the Camera. 
+Back at the top of the function (right after the call to `useCamera`, we will define a state variable to store the array of each photo captured with the Camera.
 
 ```typescript
-const [photos, setPhotos] = useState<Photo[]>([]);
+const [photos, setPhotos] = useState<UserPhoto[]>([]);
 ```
 
 When the camera is done taking a picture, the resulting CameraPhoto returned from Capacitor will be stored in the `photo` variable. We want to create a new photo object and add it to the photos state array. We make sure we don't accidently mutate the current photos array by making a new array, and then call `setPhotos` to store the array into state. Update the `takePhoto` method and add this code after the getPhoto call:
@@ -133,6 +132,6 @@ With the photo(s) stored into the main array we can display the images on the sc
 </IonContent>
 ```
 
-Save all files. Within the web browser, click the Camera button and take another photo. This time, the photo is displayed in the Photo Gallery! 
+Save all files. Within the web browser, click the Camera button and take another photo. This time, the photo is displayed in the Photo Gallery!
 
 Up next, we’ll add support for saving the photos to the filesystem, so they can be retrieved and displayed in our app at a later time.

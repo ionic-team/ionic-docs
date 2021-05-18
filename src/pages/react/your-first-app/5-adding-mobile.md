@@ -16,23 +16,23 @@ Let’s start with making some small code changes - then our app will “just wo
 First, we’ll update the photo saving functionality to support mobile. In the `savePicture` function, check which platform the app is running on. If it’s “hybrid” (Capacitor or Cordova, the two native runtimes), then read the photo file into base64 format using the `readFile` method. Also, return the complete file path to the photo using the Filesystem API. When setting the `webviewPath`, use the special `Capacitor.convertFileSrc` method ([details here](https://ionicframework.com/docs/core-concepts/webview#file-protocol)). Otherwise, use the same logic as before when running the app on the web.
 
 ```typescript
-const savePicture = async (photo: CameraPhoto, fileName: string): Promise<Photo> => {
+const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
   let base64Data: string;
   // "hybrid" will detect Cordova or Capacitor;
   if (isPlatform('hybrid')) {
-    const file = await readFile({
+    const file = await Filesystem.readFile({
       path: photo.path!
     });
     base64Data = file.data;
   } else {
     base64Data = await base64FromPath(photo.webPath!);
   }
-  const savedFile = await writeFile({
+  const savedFile = await Filesystem.writeFile({
     path: fileName,
     data: base64Data,
-    directory: FilesystemDirectory.Data
+    directory: Directory.Data
   });
-  
+
   if (isPlatform('hybrid')) {
     // Display the new image by rewriting the 'file://' path to HTTP
     // Details: https://ionicframework.com/docs/building/webview#file-protocol
@@ -56,16 +56,17 @@ Next, add a new bit of logic in the `loadSaved` function. On mobile, we can dire
 
 ```typescript
 const loadSaved = async () => {
-  const photosString = await get('photos');
-  const photosInStorage = (photosString ? JSON.parse(photosString) : []) as Photo[];
+  const {value} = await Storage.get({key: PHOTO_STORAGE });
+
+  const photosInStorage = (value ? JSON.parse(value) : []) as UserPhoto[];
   // If running on the web...
   if (!isPlatform('hybrid')) {
     for (let photo of photosInStorage) {
-      const file = await readFile({
+      const file = await Filesystem.readFile({
         path: photo.filepath,
-        directory: FilesystemDirectory.Data
+        directory: Directory.Data
       });
-      // Web platform only: Load photo as base64 data
+      // Web platform only: Load the photo as base64 data
       photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
     }
   }

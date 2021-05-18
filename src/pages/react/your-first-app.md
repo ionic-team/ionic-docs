@@ -63,18 +63,14 @@ Next, change into the app folder:
 $ cd photo-gallery
 ```
 
-### React Hooks and PWA Elements
+### PWA Elements
 
-Next, we will install a couple of helper libraries for working with Capacitor.
+Some Capacitor plugins, including the Camera API, provide the web-based functionality and UI via the Ionic [PWA Elements library](https://github.com/ionic-team/pwa-elements).
 
-The React Hooks library makes working with Capacitor in React a breeze by providing some custom hooks for each of the specific plugins.
-
-Some Capacitor plugins, including the Camera API, provide the web-based functionality and UI via the Ionic [PWA Elements library](https://github.com/ionic-team/ionic-pwa-elements).
-
-Both packages are separate dependencies, so install them next:
+It's a separate dependency, so install it next:
 
 ```shell
-$ npm install @ionic/react-hooks @ionic/pwa-elements
+$ npm install @ionic/pwa-elements
 ```
 
 After installation, open up the project in your code editor of choice.
@@ -115,7 +111,7 @@ Open `/src/pages/Tab2.tsx`. We see:
     </IonToolbar>
   </IonHeader>
   <IonContent>
-	<!-- some filler -->
+  <!-- some filler -->
   </IonContent>
 </IonPage>
 ```
