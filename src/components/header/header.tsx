@@ -48,7 +48,7 @@ export class DocsHeader {
           {link(['Stencil', 'https://stenciljs.com' ])}
           {link(['Identity Vault', 'https://ionic.io/docs/identity-vault' ])}
           {link(['Auth Connect', 'https://ionic.io/docs/auth-connect' ])}
-          {link(['Offline Storage', 'https://ionic.io/docs/offline-storage' ])}
+          {link(['Secure Storage', 'https://ionic.io/docs/secure-storage' ])}
           {link(['Premier Plugins', 'https://ionic.io/docs/premier-plugins' ])}
         </section>
         {section === 'Framework' ? <section>
