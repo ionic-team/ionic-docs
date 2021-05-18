@@ -63,7 +63,7 @@ Next, change into the app folder:
 $ cd photo-gallery
 ```
 
-Next we'll need to install the necessary Capacitor plugins to be able to make the app works.
+Next we'll need to install the necessary Capacitor plugins to make the app's native functionality work:
 
 ```shell
 npm install @capacitor/camera @capacitor/storage @capacitor/filesystem
