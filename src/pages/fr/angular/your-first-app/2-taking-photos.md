@@ -20,21 +20,20 @@ $ ionic g service services/photo
 Ouvrez le fichier `services/photo.service.ts` nouvellement créé et ajoutons la logique qui alimentera la fonctionnalité de la caméra. Tout d'abord, importez les dépendances Capacitor et obtenez les références aux plugins Caméra, Système de fichiers et Stockage :
 
 ```typescript
-import { Plugins, CameraResultType, Capacitor, FilesystemDirectory, 
-         CameraPhoto, CameraSource } from '@capacitor/core';
-
-const { Camera, Filesystem, Storage } = Plugins;
+import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { Filesystem, Directory } from '@capacitor/filesystem';
+import { Storage } from @capacitor/storage;
 ```
 
 Ensuite, définissez une nouvelle méthode de classe, `addNewToGallery`, qui contiendra la logique de base pour prendre une photo du périphérique et l'enregistrer dans le système de fichiers. Commençons par ouvrir la caméra de l'appareil :
 
 ```typescript
 public async addNewToGallery() {
-  // Prenez une photo
+  // Take a photo
   const capturedPhoto = await Camera.getPhoto({
-    resultType: CameraResultType.Uri, 
-    source: CameraSource.Camera, 
-    quality: 100 
+    resultType: CameraResultType.Uri,
+    source: CameraSource.Camera,
+    quality: 100
   });
 }
 ```
@@ -98,9 +97,9 @@ Fini dans la fonction `addNewToGallery` , ajoutez la nouvelle photo capturée au
 
 ```typescript
   const capturedPhoto = await Camera.getPhoto({
-    resultType: CameraResultType.Uri, 
-    source: CameraSource.Camera, 
-    quality: 100 
+    resultType: CameraResultType.Uri,
+    source: CameraSource.Camera,
+    quality: 100
   });
 
   this.photos.unshift({
@@ -116,10 +115,12 @@ Ensuite, passez au `tab2.page.html` pour que nous puissions afficher l'image à 
 <ion-content>
   <ion-grid>
     <ion-row>
-    <ion-col size="6" 
-      *ngFor="let photo of photoService.photos; index as position">
+      <ion-col
+        size="6"
+        *ngFor="let photo of photoService.photos; index as position"
+      >
         <ion-img [src]="photo.webviewPath"></ion-img>
-    </ion-col>
+      </ion-col>
     </ion-row>
   </ion-grid>
 
