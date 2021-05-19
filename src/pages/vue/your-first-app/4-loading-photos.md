@@ -9,7 +9,7 @@ nextUrl: '/docs/vue/your-first-app/5-adding-mobile'
 
 We’ve implemented photo taking and saving to the filesystem. There’s one last piece of functionality missing: the photos are stored in the filesystem, but we need a way to save pointers to each file so that they can be displayed again in the photo gallery.
 
-Fortunately, this is easy: we’ll leverage the Capacitor [Storage API](https://capacitor.ionicframework.com/docs/apis/storage) to store our array of Photos in a key-value store. 
+Fortunately, this is easy: we’ll leverage the Capacitor [Storage API](https://capacitor.ionicframework.com/docs/apis/storage) to store our array of Photos in a key-value store.
 
 ## Storage API
 
@@ -55,11 +55,11 @@ const loadSaved = async () => {
   for (const photo of photosInStorage) {
     const file = await Filesystem.readFile({
         path: photo.filepath,
-        directory: FilesystemDirectory.Data
+        directory: Directory.Data
     });
     photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
   }
-  
+
   photos.value = photosInStorage;
 }
 ```

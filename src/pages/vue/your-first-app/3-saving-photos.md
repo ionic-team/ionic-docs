@@ -46,10 +46,10 @@ const savePicture = async (photo: CameraPhoto, fileName: string): Promise<Photo>
   const savedFile = await Filesystem.writeFile({
     path: fileName,
     data: base64Data,
-    directory: FilesystemDirectory.Data
+    directory: Directory.Data
   });
-  
-  // Use webPath to display the new image instead of base64 since it's 
+
+  // Use webPath to display the new image instead of base64 since it's
   // already loaded into memory
   return {
     filepath: fileName,
@@ -70,7 +70,7 @@ const takePhoto = async () => {
 
   const fileName = new Date().getTime() + '.jpeg';
   const savedFileImage = await savePicture(cameraPhoto, fileName);
-  
+
   photos.value = [savedFileImage, ...photos.value];
 };
 ```

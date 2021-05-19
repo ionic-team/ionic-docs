@@ -22,9 +22,7 @@ Highlights include:
 * Deployed as a native iOS and Android mobile app using [Capacitor](https://capacitor.ionicframework.com), Ionic's official native app runtime.
 * Photo Gallery functionality powered by the Capacitor [Camera](https://capacitor.ionicframework.com/docs/apis/camera), [Filesystem](https://capacitor.ionicframework.com/docs/apis/filesystem), and [Storage](https://capacitor.ionicframework.com/docs/apis/storage) APIs.
 
-It’s easy to get started. 
-
-> Find the complete app code referenced in this guide [on GitHub](https://github.com/ionic-team/photo-gallery-capacitor-vue).
+Find the complete app code referenced in this guide [on GitHub](https://github.com/ionic-team/photo-gallery-capacitor-vue).
 
 ## Download Required Tools
 
@@ -63,6 +61,12 @@ Next, change into the app folder:
 
 ```shell
 $ cd photo-gallery
+```
+
+Next we'll need to install the necessary Capacitor plugins to make the app's native functionality work:
+
+```shell
+npm install @capacitor/camera @capacitor/storage @capacitor/filesystem
 ```
 
 ### PWA Elements
@@ -149,8 +153,8 @@ We'll replace it with a [floating action button](https://ionicframework.com/docs
 
 ```typescript
 import { camera, trash, close } from 'ionicons/icons';
-import { IonPage, IonHeader, IonFab, IonFabButton, IonIcon, 
-         IonToolbar, IonTitle, IonContent, IonGrid, IonRow, 
+import { IonPage, IonHeader, IonFab, IonFabButton, IonIcon,
+         IonToolbar, IonTitle, IonContent, IonGrid, IonRow,
          IonCol, IonImg } from '@ionic/vue';
 ```
 
@@ -159,8 +163,8 @@ Next, add the new Ionic components we'll be using to the default export as well 
 ```typescript
 export default  {
   name: 'Tab2',
-  components: { IonPage, IonHeader, IonFab, IonFabButton, IonIcon, 
-         IonToolbar, IonTitle, IonContent, IonGrid, IonRow, 
+  components: { IonPage, IonHeader, IonFab, IonFabButton, IonIcon,
+         IonToolbar, IonTitle, IonContent, IonGrid, IonRow,
          IonCol, IonImg },
   setup() {
     return {
