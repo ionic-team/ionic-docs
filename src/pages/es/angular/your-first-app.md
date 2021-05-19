@@ -23,7 +23,7 @@ Highlights include:
 * Deployed as a native iOS and Android mobile app using [Capacitor](https://capacitor.ionicframework.com), Ionic's official native app runtime.
 * Photo Gallery functionality powered by the Capacitor [Camera](https://capacitor.ionicframework.com/docs/apis/camera), [Filesystem](https://capacitor.ionicframework.com/docs/apis/filesystem), and [Storage](https://capacitor.ionicframework.com/docs/apis/storage) APIs.
 
-It’s easy to get started. Find the complete app code referenced in this guide [on GitHub](https://github.com/ionic-team/photo-gallery-capacitor-ng).
+Find the complete app code referenced in this guide [on GitHub](https://github.com/ionic-team/photo-gallery-capacitor-ng).
 
 ## Descargar herramientas necesarias
 
@@ -65,6 +65,12 @@ Next, change into the app folder:
 $ cd photo-gallery
 ```
 
+Next we'll need to install the necessary Capacitor plugins to make the app's native functionality work:
+
+```shell
+npm install @capacitor/camera @capacitor/storage @capacitor/filesystem
+```
+
 ### Elementos PWA
 
 Some Capacitor plugins, including the Camera API, provide the web-based functionality and UI via the Ionic [PWA Elements library](https://github.com/ionic-team/ionic-pwa-elements).
@@ -100,7 +106,7 @@ And voilà! Your Ionic app is now running in a web browser. Most of your app can
 
 There are three tabs. Click on the Tab2 tab. It’s a blank canvas, aka the perfect spot to transform into a Photo Gallery. The Ionic CLI features Live Reload, so when you make changes and save them, the app is updated immediately!
 
-![Antes y después de seguir este tutorial](/docs/assets/img/guides/first-app-cap-ng/email-photogallery.gif)
+![Before and after going through this tutorial](/docs/assets/img/guides/first-app-cap-ng/email-photogallery.gif)
 
 Open the photo-gallery app folder in your code editor of choice, then navigate to `/src/app/tab2/tab2.page.html`. We see:
 
