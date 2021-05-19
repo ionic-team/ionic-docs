@@ -48,15 +48,15 @@ public async loadSaved() {
 Sur mobile (à venir !), nous pouvons directement définir la source d'une balise image - `<img src="x" />` - à chaque fichier photo du Filesystem, les affichant automatiquement. Sur le web, cependant, nous devons lire chaque image du Filesystem au format base64, en utilisant une nouvelle propriété `base64` sur l'objet `Photo`. Cela est dû au fait que l'API du système de fichiers utilise [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) sous le capot. Voici le code que vous devez ajouter dans la fonction `loadSaved()` que vous venez d'ajouter :
 
 ```typescript
-// Afficher la photo en la lisant au format base64
+// Display the photo by reading into base64 format
 for (let photo of this.photos) {
-  // Lire les données de chaque photo sauvegardée à partir du système de fichiers.
+  // Read each saved photo's data from the Filesystem
   const readFile = await Filesystem.readFile({
       path: photo.filepath,
-      directory: FilesystemDirectory.Data
+      directory: Directory.Data
   });
 
-  // Plate-forme Web uniquement : Charger la photo en tant que données base64
+  // Web platform only: Load the photo as base64 data
   photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
 }
 ```
