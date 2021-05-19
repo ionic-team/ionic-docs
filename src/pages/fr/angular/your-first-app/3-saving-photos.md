@@ -38,15 +38,15 @@ Nous utiliserons l'API du système de fichiers [Capacitor](https://capacitor.ion
 
 ```typescript
 private async savePicture(cameraPhoto: CameraPhoto) {
-  // Convertir la photo au format base64, requis par l'API du système de fichiers pour sauvegarder
+  // Convert photo to base64 format, required by Filesystem API to save
   const base64Data = await this.readAsBase64(cameraPhoto);
 
-  // Écrire le fichier dans le répertoire de données
+  // Write the file to the data directory
   const fileName = new Date().getTime() + '.jpeg';
   const savedFile = await Filesystem.writeFile({
     path: fileName,
     data: base64Data,
-    directory: FilesystemDirectory.Data
+    directory: Directory.Data
   });
 
   // Use webPath to display the new image instead of base64 since it's
@@ -62,11 +62,11 @@ private async savePicture(cameraPhoto: CameraPhoto) {
 
 ```typescript
 private async readAsBase64(cameraPhoto: CameraPhoto) {
-  // Récupérer la photo, la lire comme un blob, puis la convertir au format base64.
+  // Fetch the photo, read as a blob, then convert to base64 format
   const response = await fetch(cameraPhoto.webPath!);
   const blob = await response.blob();
 
-  return await this.convertBlobToBase64(blob) as string;  
+  return await this.convertBlobToBase64(blob) as string;
 }
 
 convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
