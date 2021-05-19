@@ -48,16 +48,16 @@ public async loadSaved() {
 No celular (chegando a seguir!), podemos definir diretamente a origem de uma tag da imagem - `<img src="x" />` - para cada arquivo de foto no sistema de arquivos, exibindo-os automaticamente. No entanto, na web, temos de ler cada imagem do sistema de arquivos para o formato base64, usando uma nova propriedade `base64` no objeto `Photo`. Isso porque a API do sistema de arquivos usa [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) debaixo do pano. Abaixo está o código que você precisa adicionar na função `loadSaved()` que você acabou de adicionar:
 
 ```typescript
-// Exibe a foto lendo no formato base64
-para (let foto disto. hotos) {
-  // Leia os dados de cada foto salva no sistema de arquivos
-  const readFile = await Filesystem. eadFile({
+// Display the photo by reading into base64 format
+for (let photo of this.photos) {
+  // Read each saved photo's data from the Filesystem
+  const readFile = await Filesystem.readFile({
       path: photo.filepath,
-      directory: FilesystemDirectory.Data
+      directory: Directory.Data
   });
 
-  // Plataforma Web apenas: carregue a foto como dados base64
-  da foto. ebviewPath = `data:image/jpeg;base64,${readFile.data}`;
+  // Web platform only: Load the photo as base64 data
+  photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
 }
 ```
 
