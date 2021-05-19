@@ -32,9 +32,9 @@ $ ionic cap run android -l --external
 实时重载运行后，应用会在你的设备上打开，接下来我们该实现照片的删除功能了。 打开`tab2.page.html`文件，在每个`<ion-img>`标签上添加新的点击事件。 当用户在我们的图库中点击了一张照片，我们会弹出一个[Action Sheet](https://ionicframework.com/docs/api/action-sheet)浮窗，他们可以删除选中的照片或是关闭这个浮窗。
 
 ```html
-<ion-col size="6" 
+<ion-col size="6"
     *ngFor="let photo of photoService.photos; index as position">
-  <ion-img [src]="photo.webviewPath" 
+  <ion-img [src]="photo.webviewPath"
            (click)="showActionSheet(photo, position)"></ion-img>
 </ion-col>
 ```
@@ -44,9 +44,8 @@ $ ionic cap run android -l --external
 ```typescript
 import { ActionSheetController } from '@ionic/angular';
 
-constructor(public photoService: PhotoService, 
+constructor(public photoService: PhotoService,
             public actionSheetController: ActionSheetController) {}
-
 ```
 
 在导入语句中添加 `Photo`
@@ -87,25 +86,24 @@ public async showActionSheet(photo, position) {
 
 ```typescript
 public async deletePicture(photo: Photo, position: number) {
-  // 从保存照片的数组中移除一条照片记录
+  // Remove this photo from the Photos reference data array
   this.photos.splice(position, 1);
 
-  // 通过修改照片数组数据更新缓存
+  // Update photos array cache by overwriting the existing photo array
   Storage.set({
     key: this.PHOTO_STORAGE,
     value: JSON.stringify(this.photos)
   });
 
-  // 从文件系统中删除照片
+  // delete photo file from filesystem
   const filename = photo.filepath
                       .substr(photo.filepath.lastIndexOf('/') + 1);
 
   await Filesystem.deleteFile({
     path: filename,
-    directory: FilesystemDirectory.Data
+    directory: Directory.Data
   });
 }
-
 ```
 
 这张选中的照片从数组首位被移除， 然后我们使用永久存储API将被操作后的数组缓存起来。 最后，我们使用文件系统API物理删除了照片。
