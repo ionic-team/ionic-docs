@@ -18,22 +18,21 @@ nextUrl: '/docs/react/your-first-app/3-saving-photos'
 自定义钩子只是用其它React的一个函数。 这就是我们要做的事情！ 我们将首先从React核心库，Ionic React Hooks, Capacitor 导入各种钩子和工具。
 
 ```typescript
-import { useState, useEffect } from "react";
-import { useCamera } from '@ionic/react-hooks/camera';
-import { useFilesystem, base64FromPath } from '@ionic/react-hooks/filesystem';
-import { useStorage } from '@ionic/react-hooks/storage';
+import { useState, useEffect } from 'react';
 import { isPlatform } from '@ionic/react';
-import { CameraResultType, CameraSource, CameraPhoto, Capacitor, FilesystemDirectory } from "@capacitor/core";
+
+import { Camera, CameraResultType, CameraSource, Photo, } from '@capacitor/camera';
+import { Filesystem, Directory } from '@capacitor/filesystem';
+import { Storage } from '@capacitor/storage';
+import { Capacitor } from '@capacitor/core';
 ```
 接下来，创建一个函数，命名为usePhotoGallery：
 
 ```typescript
 export function usePhotoGallery() {
 
-  const { getPhoto } = useCamera();
-
   const takePhoto = async () => {
-    const cameraPhoto = await getPhoto({
+    const cameraPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
       quality: 100
@@ -78,7 +77,7 @@ After taking a photo, it disappears. We still need to display it within our app 
 First we will create a new type to define our Photo, which will hold specific metadata. Add the following Photo interface to the `usePhotoGallery.ts` file, somewhere outside of the main function:
 
 ```typescript
-export interface Photo {
+export interface UserPhoto {
   filepath: string;
   webviewPath?: string;
 }
@@ -87,7 +86,7 @@ export interface Photo {
 Back at the top of the function (right after the call to `useCamera`, we will define a state variable to store the array of each photo captured with the Camera.
 
 ```typescript
-const [photos, setPhotos] = useState<Photo[]>([]);
+const [photos, setPhotos] = useState<UserPhoto[]>([]);
 ```
 
 When the camera is done taking a picture, the resulting CameraPhoto returned from Capacitor will be stored in the `photo` variable. We want to create a new photo object and add it to the photos state array. We make sure we don't accidently mutate the current photos array by making a new array, and then call `setPhotos` to store the array into state. Update the `takePhoto` method and add this code after the getPhoto call:
