@@ -32,9 +32,9 @@ El servidor Live Reload se iniciará, y el IDE nativo elegido se abrirá si no s
 Con Live Reload funcionando y la aplicación abierta en tu dispositivo, implementemos la funcionalidad de eliminación de fotos. Abre `tab2.page.html` y añade un nuevo manejador de clic a cada elemento `<ion-img>`. Cuando el usuario de la aplicación toca una foto de nuestra galería, mostraremos un diálogo de [Action Sheet](https://ionicframework.com/docs/api/action-sheet) con la opción de eliminar la foto seleccionada o cancelar (cerrar) el cuadro de diálogo.
 
 ```html
-<ion-col size="6" 
+<ion-col size="6"
     *ngFor="let photo of photoService.photos; index as position">
-  <ion-img [src]="photo.webviewPath" 
+  <ion-img [src]="photo.webviewPath"
            (click)="showActionSheet(photo, position)"></ion-img>
 </ion-col>
 ```
@@ -44,7 +44,7 @@ En `tab2.page.ts`, importe Action Sheet y agréguelo al constructor:
 ```typescript
 import { ActionSheetController } from '@ionic/angular';
 
-constructor(public photoService: PhotoService, 
+constructor(public photoService: PhotoService,
             public actionSheetController: ActionSheetController) {}
 ```
 
@@ -86,22 +86,22 @@ En `src/app/services/photo.service.ts`, añade la función `deletePicture()`:
 
 ```typescript
 public async deletePicture(photo: Photo, position: number) {
-  //  Elimina esta foto de la colección photos
+  // Remove this photo from the Photos reference data array
   this.photos.splice(position, 1);
 
-  // Actualiza la caché de fotos sobreescribiendo la existente colección de fotos
+  // Update photos array cache by overwriting the existing photo array
   Storage.set({
     key: this.PHOTO_STORAGE,
     value: JSON.stringify(this.photos)
   });
 
-  // Elimina la foto del archivo de sistema
+  // delete photo file from filesystem
   const filename = photo.filepath
                       .substr(photo.filepath.lastIndexOf('/') + 1);
 
   await Filesystem.deleteFile({
     path: filename,
-    directory: FilesystemDirectory.Data
+    directory: Directory.Data
   });
 }
 ```
