@@ -38,18 +38,19 @@ public async addNewToGallery() {
 
 ```typescript
 private async savePicture(cameraPhoto: CameraPhoto) {
-  // 要将照片转成base64格式，必须要通过文件系统保存
+  // Convert photo to base64 format, required by Filesystem API to save
   const base64Data = await this.readAsBase64(cameraPhoto);
 
-  // 在数据文件夹中写入数据
+  // Write the file to the data directory
   const fileName = new Date().getTime() + '.jpeg';
   const savedFile = await Filesystem.writeFile({
     path: fileName,
     data: base64Data,
-    directory: FilesystemDirectory.Data
+    directory: Directory.Data
   });
 
-  // 用webPath去显示图片，而不是用base64，因为base64需要在内存里加载
+  // Use webPath to display the new image instead of base64 since it's
+  // already loaded into memory
   return {
     filepath: fileName,
     webviewPath: cameraPhoto.webPath
@@ -61,11 +62,11 @@ private async savePicture(cameraPhoto: CameraPhoto) {
 
 ```typescript
 private async readAsBase64(cameraPhoto: CameraPhoto) {
-  // 取得照片之后，将其读取成二进制大对象，然后转换成base64格式
+  // Fetch the photo, read as a blob, then convert to base64 format
   const response = await fetch(cameraPhoto.webPath!);
   const blob = await response.blob();
 
-  return await this.convertBlobToBase64(blob) as string;  
+  return await this.convertBlobToBase64(blob) as string;
 }
 
 convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
