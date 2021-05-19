@@ -23,7 +23,7 @@ Les points saillants comprennent:
 * Déployé en tant qu'application mobile native iOS et Android en utilisant [Capacitor](https://capacitor.ionicframework.com), le runtime d'application native officiel de Ionic.
 * Fonctionnalité de galerie photo alimentée par les API Capacitor [Camera](https://capacitor.ionicframework.com/docs/apis/camera), [Filesystem](https://capacitor.ionicframework.com/docs/apis/filesystem) et [Storage](https://capacitor.ionicframework.com/docs/apis/storage).
 
-C'est facile de commencer. Retrouvez le code complet de l'application référencée dans ce guide [sur GitHub](https://github.com/ionic-team/photo-gallery-capacitor-ng).
+Find the complete app code referenced in this guide [on GitHub](https://github.com/ionic-team/photo-gallery-capacitor-ng).
 
 ## Télécharger les outils nécessaires
 
@@ -65,43 +65,50 @@ Ensuite, allez dans le dossier de l'application :
 $ cd photo-gallery
 ```
 
+Next we'll need to install the necessary Capacitor plugins to make the app's native functionality work:
+
+```shell
+npm install @capacitor/camera @capacitor/storage @capacitor/filesystem
+```
+
 ### Les éléments d'une PWA
 
-Certains plugins Capacitor, dont l'API caméra, fournissent la fonctionnalité et l'interface utilisateur web via la bibliothèque Ionic [PWA Elements](https://github.com/ionic-team/ionic-pwa-elements).
+Some Capacitor plugins, including the Camera API, provide the web-based functionality and UI via the Ionic [PWA Elements library](https://github.com/ionic-team/ionic-pwa-elements).
 
-C'est une dépendance séparée, donc installez-la ensuite :
+It's a separate dependency, so install it next:
 
 ```shell
 $ npm install @ionic/pwa-elements
 ```
 
-Ensuite, importez `@ionic/pwa-elements` en éditant `src/main.ts`.
+Next, import `@ionic/pwa-elements` by editing `src/main.ts`.
 
 ```typescript
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
-// Appeler le chargeur d'éléments après l'amorçage de la plateforme defineCustomElements(window) ;
+// Call the element loader after the platform has been bootstrapped
+defineCustomElements(window);
 ```
 
-C'est fait! Maintenant pour la partie amusante - voyons l'application en action.
+That’s it! Now for the fun part - let’s see the app in action.
 
 ## Démarrer l'application
 
-Exécutez cette commande ensuite :
+Run this command next:
 
 ```shell
 $ ionic serve
 ```
 
-Et voilà ! Votre application Ionic est maintenant exécutée dans un navigateur Web. La majeure partie de votre application peut être construite et testée directement dans le navigateur, ce qui augmente considérablement la vitesse de développement et de test.
+And voilà! Your Ionic app is now running in a web browser. Most of your app can be built and tested right in the browser, greatly increasing development and testing speed.
 
 ## Galerie Photo!!!
 
-Il y a trois onglets. Cliquez sur l'onglet "Tab2". C'est une toile vierge, c'est-à-dire l'endroit parfait à transformer en galerie de photos. L'interface CLI de Ionic est dotée de la fonction Live Reload. Ainsi, lorsque vous apportez des modifications et les enregistrez, l'application est mise à jour immédiatement !
+There are three tabs. Click on the Tab2 tab. It’s a blank canvas, aka the perfect spot to transform into a Photo Gallery. The Ionic CLI features Live Reload, so when you make changes and save them, the app is updated immediately!
 
-![Avant et après avoir suivi ce tutoriel](/docs/assets/img/guides/first-app-cap-ng/email-photogallery.gif)
+![Before and after going through this tutorial](/docs/assets/img/guides/first-app-cap-ng/email-photogallery.gif)
 
-Ouvrez le dossier de l'application photo-gallery dans l'éditeur de code de votre choix, puis naviguez jusqu'à `/src/app/tab2/tab2.page.html`. Nous voyons :
+Open the photo-gallery app folder in your code editor of choice, then navigate to `/src/app/tab2/tab2.page.html`. We see:
 
 ```html
 <ion-header>
@@ -119,13 +126,13 @@ Ouvrez le dossier de l'application photo-gallery dans l'éditeur de code de votr
 </ion-content>
 ```
 
-`ion-header` représente la navigation supérieure et la barre d'outils, avec "Tab 2" comme titre (il y en a deux en raison du support iOS [Collapsible Large Title](https://ionicframework.com/docs/api/title#collapsible-large-titles)). Renommer les deux éléments `ion-title` en :
+`ion-header` represents the top navigation and toolbar, with "Tab 2" as the title (there are two of them due to iOS [Collapsible Large Title](https://ionicframework.com/docs/api/title#collapsible-large-titles) support). Rename both `ion-title` elements to:
 
 ```html
 <ion-title>Photo Gallery</ion-title>
 ```
 
-Nous mettons les aspects visuels de notre application dans `<ion-content>`. Dans ce cas, c'est là que nous ajouterons un bouton qui ouvre l'appareil photo de l'appareil et affiche l'image capturée par l'appareil. Commencez par ajouter un [bouton d'action flottant](https://ionicframework.com/docs/api/fab) (FAB) au bas de la page et définissez l'image de la caméra comme icône.
+We put the visual aspects of our app into `<ion-content>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. Start by adding a [floating action button](https://ionicframework.com/docs/api/fab) (FAB) to the bottom of the page and set the camera image as the icon.
 
 ```html
 <ion-content>
@@ -138,7 +145,7 @@ Nous mettons les aspects visuels de notre application dans `<ion-content>`. Dans
 </ion-content>
 ```
 
-Ensuite, ouvrez `src/app/tabs/tabs.page.html`. Changez l'étiquette en "Photos" et le nom de l'icône en "images" :
+Next, open `src/app/tabs/tabs.page.html`. Change the label to “Photos” and the icon name to “images”:
 
 ```html
 <ion-tab-button tab="tab2">
@@ -147,4 +154,4 @@ Ensuite, ouvrez `src/app/tabs/tabs.page.html`. Changez l'étiquette en "Photos" 
 </ion-tab-button>
 ```
 
-Enregistrez toutes les modifications pour qu'elles soient automatiquement appliquées dans le navigateur. Ce n'est que le début de toutes les choses cool que nous pouvons faire avec Ionic. Ensuite, il s'agit d'implémenter la fonctionnalité de prise de vue sur le web, puis de la développer pour iOS et Android.
+Save all changes to see them automatically applied in the browser. That’s just the start of all the cool things we can do with Ionic. Up next, implement camera taking functionality on the web, then build it for iOS and Android.
