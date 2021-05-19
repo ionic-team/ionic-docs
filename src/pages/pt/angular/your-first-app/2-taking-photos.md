@@ -20,21 +20,20 @@ $ ionic g service services/photo
 Abra o novo arquivo criado `services/photo.service.ts` e agora adicione a lógica que irá ativar a funcionalidade da câmera. Primeiro, importe as dependências do Capacitor e obtenha as referências para os plugins de Câmera, Sistema de Arquivos e Armazenamento:
 
 ```typescript
-import { Plugins, CameraResultType, Capacitor, FilesystemDirectory, 
-         CameraPhoto, CameraSource } from '@capacitor/core';
-
-const { Camera, Filesystem, Storage } = Plugins;
+import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { Filesystem, Directory } from '@capacitor/filesystem';
+import { Storage } from @capacitor/storage;
 ```
 
 Depois, defina uma nova função, `addNewToGallery`, que conterá a lógica central para tirar uma foto com o dispositivo e salvá-la no sistema de arquivos. Vamos iniciar abrindo a câmera do dispositivo:
 
 ```typescript
-public async addFotoNaGaleria() {
-  // Tira uma foto
-  const capturaFoto = await Camera.getPhoto({
-    resultType: CameraResultType.Uri, 
-    source: CameraSource.Camera, 
-    quality: 100 
+public async addNewToGallery() {
+  // Take a photo
+  const capturedPhoto = await Camera.getPhoto({
+    resultType: CameraResultType.Uri,
+    source: CameraSource.Camera,
+    quality: 100
   });
 }
 ```
@@ -97,15 +96,15 @@ export class PhotoService {
 No começo da função `addNewToGallery`, adicione a foto capturada à matriz que armazena as fotos.
 
 ```typescript
-  const capturarFoto = await Camera.getPhoto({
-    resultType: CameraResultType.Uri, 
-    source: CameraSource.Camera, 
-    quality: 100 
+  const capturedPhoto = await Camera.getPhoto({
+    resultType: CameraResultType.Uri,
+    source: CameraSource.Camera,
+    quality: 100
   });
 
   this.photos.unshift({
     filepath: "soon...",
-    webviewPath: capturarPhoto.webPath
+    webviewPath: capturedPhoto.webPath
   });
 }
 ```
@@ -116,10 +115,12 @@ Em seguida, mova para a `tab2.page.html` para que possamos exibir a imagem na te
 <ion-content>
   <ion-grid>
     <ion-row>
-    <ion-col size="6" 
-      *ngFor="let photo of photoService.photos; index as position">
+      <ion-col
+        size="6"
+        *ngFor="let photo of photoService.photos; index as position"
+      >
         <ion-img [src]="photo.webviewPath"></ion-img>
-    </ion-col>
+      </ion-col>
     </ion-row>
   </ion-grid>
 
