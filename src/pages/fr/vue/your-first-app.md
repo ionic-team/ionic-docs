@@ -21,9 +21,7 @@ Les points forts sont les suivants :
 * Déployé en tant qu'application mobile native iOS et Android à l'aide de [Capacitor](https://capacitor.ionicframework.com), le runtime d'application native officiel de Ionic.
 * Fonctionnalité de galerie photo alimentée par les API Capacitor [Camera](https://capacitor.ionicframework.com/docs/apis/camera), [Filesystem](https://capacitor.ionicframework.com/docs/apis/filesystem) et [Storage](https://capacitor.ionicframework.com/docs/apis/storage).
 
-C'est facile de commencer.
-
-> Retrouvez le code complet de l'application référencée dans ce guide [sur GitHub](https://github.com/ionic-team/photo-gallery-capacitor-vue).
+Find the complete app code referenced in this guide [on GitHub](https://github.com/ionic-team/photo-gallery-capacitor-vue).
 
 ## Télécharger les outils nécessaires
 
@@ -39,15 +37,15 @@ Téléchargez et installez-les dès maintenant pour garantir une expérience de 
 
 Exécutez ce qui suit dans le terminal de ligne de commande pour installer le CLI Ionic (`ionic`), `native-run`, utilisé pour exécuter des binaires natifs sur des appareils et des simulateurs/émulateurs, et `cordova-res`, utilisé pour générer des icônes d'applications natives et des écrans d'accueil :
 
-> Pour ouvrir un terminal dans Visual Studio Code, accédez à Terminal -> Nouveau Terminal.
+> To open a terminal in Visual Studio Code, go to Terminal -> New Terminal.
 
 ```shell
 $ npm install -g @ionic/cli@latest native-run cordova-res
 ```
 
-> L'option `-g` signifie *installer globalement*. Lorsque des paquets sont installés globalement, des erreurs de permission `EACCES` peuvent se produire.
+> The `-g` option means *install globally*. When packages are installed globally, `EACCES` permission errors can occur.
 > 
-> Pensez à configurer npm pour qu'il fonctionne globalement sans autorisations élevées. Voir [Résolution des erreurs de permission](/docs/developing/tips#resolving-permission-errors) pour plus d'informations.
+> Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](/docs/developing/tips#resolving-permission-errors) for more information.
 
 ## Créer une application
 
@@ -65,47 +63,53 @@ Ensuite, allez dans le dossier de l'application :
 $ cd photo-gallery
 ```
 
+Next we'll need to install the necessary Capacitor plugins to make the app's native functionality work:
+
+```shell
+npm install @capacitor/camera @capacitor/storage @capacitor/filesystem
+```
+
 ### Les éléments d'une PWA
 
-Certains plugins Capacitor, dont l'API caméra, fournissent la fonctionnalité et l'interface utilisateur web via la bibliothèque Ionic [PWA Elements](https://github.com/ionic-team/pwa-elements).
+Some Capacitor plugins, including the Camera API, provide the web-based functionality and UI via the Ionic [PWA Elements library](https://github.com/ionic-team/pwa-elements).
 
-C'est une dépendance séparée, alors installez-la ensuite:
+It's a separate dependency, so install it next:
 
 ```shell
 $ npm install @ionic/pwa-elements
 ```
 
-Après l'installation, ouvrez le projet dans l'éditeur de code de votre choix.
+After installation, open up the project in your code editor of choice.
 
-Ensuite, importez `@ionic/pwa-elements` en éditant `src/main.ts`.
+Next, import `@ionic/pwa-elements` by editing `src/main.ts`.
 
 ```typescript
-// Au-dessus de la ligne createApp()
+// Above the createApp() line
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
-// Appeler le chargeur d'éléments après l'amorçage de la plate-forme.
+// Call the element loader after the platform has been bootstrapped
 defineCustomElements(window);
 ```
 
-C'est fait! Maintenant pour la partie amusante - voyons l'application en action.
+That’s it! Now for the fun part - let’s see the app in action.
 
 ## Démarrer l'application
 
-Exécutez cette commande dans votre shell:
+Run this command in your shell:
 
 ```shell
 $ ionic serve
 ```
 
-Et voilà ! Votre application Ionic est maintenant exécutée dans un navigateur Web. La majeure partie de votre application peut être construite et testée directement dans le navigateur, ce qui augmente considérablement la vitesse de développement et de test.
+And voilà! Your Ionic app is now running in a web browser. Most of your app can be built and tested right in the browser, greatly increasing development and testing speed.
 
 ## Galerie de photos !!!
 
-Il y a trois onglets. Cliquez sur l'onglet "Tab2". C'est une toile vierge, c'est-à-dire l'endroit parfait à transformer en galerie de photos. L'interface CLI de Ionic est dotée de la fonction Live Reload. Ainsi, lorsque vous apportez des modifications et les enregistrez, l'application est mise à jour immédiatement !
+There are three tabs. Click on the Tab2 tab. It’s a blank canvas, aka the perfect spot to transform into a Photo Gallery. The Ionic CLI features Live Reload, so when you make changes and save them, the app is updated immediately!
 
-![Avant et après avoir suivi ce tutoriel](/docs/assets/img/guides/vue/first-app/live-reload.gif)
+![Before and after going through this tutorial](/docs/assets/img/guides/vue/first-app/live-reload.gif)
 
-Ouvrez `/src/views/Tab2.vue`. Nous voyons :
+Open `/src/views/Tab2.vue`. We see:
 
 ```html
 <template>
@@ -128,40 +132,40 @@ Ouvrez `/src/views/Tab2.vue`. Nous voyons :
 </template>
 ```
 
-`ion-header` représente la navigation supérieure et la barre d'outils, avec "Tab 2" comme titre. Renommons le :
+`ion-header` represents the top navigation and toolbar, with "Tab 2" as the title. Let’s rename it:
 
 ```html
 <ion-title>Photo Gallery</ion-title>
 ```
 
-Nous mettons les aspects visuels de notre application dans `<ion-content>`. Dans ce cas, c'est là que nous ajouterons un bouton qui ouvre l'appareil photo de l'appareil et affiche l'image capturée par l'appareil. Mais d'abord, supprimez le composant `ExploreContainer`, en commençant par l'instruction import :
+We put the visual aspects of our app into `<ion-content>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. But first, remove the `ExploreContainer` component, beginning with the import statement:
 
 ```typescript
 import ExploreContainer from '@/components/ExploreContainer.vue';
 ```
 
-Ensuite, supprimez le nom du composant (`ExploreContainer`) de la liste `composants` dans l'exportation par défaut et le HTML :
+Next, remove the component name (`ExploreContainer`) from the `components` list in the Default Export and the HTML:
 
 ```html
 <ExploreContainer name="Tab 2 page" />
 ```
 
-Nous allons le remplacer par un [bouton d'action flottant](https://ionicframework.com/docs/api/fab) (FAB). Tout d'abord, mettez à jour les importations dans la balise `<script>` pour inclure l'icône de la caméra ainsi que certains des composants Ionic que nous utiliserons prochainement :
+We'll replace it with a [floating action button](https://ionicframework.com/docs/api/fab) (FAB). First, update the imports within the `<script>` tag to include the Camera icon as well as some of the Ionic components we'll use shortly:
 
 ```typescript
 import { camera, trash, close } from 'ionicons/icons';
-import { IonPage, IonHeader, IonFab, IonFabButton, IonIcon, 
-         IonToolbar, IonTitle, IonContent, IonGrid, IonRow, 
+import { IonPage, IonHeader, IonFab, IonFabButton, IonIcon,
+         IonToolbar, IonTitle, IonContent, IonGrid, IonRow,
          IonCol, IonImg } from '@ionic/vue';
 ```
 
-Ensuite, ajoutez les nouveaux composants Ionic que nous utiliserons à l'exportation par défaut ainsi que le retour des Ionicons dans la méthode `setup()` (faisant partie de [Composition API](https://v3.vuejs.org/api/composition-api.html#setup)) :
+Next, add the new Ionic components we'll be using to the default export as well as returning the Ionicons in the `setup()` method (part of the [Composition API](https://v3.vuejs.org/api/composition-api.html#setup)):
 
 ```typescript
 export default  {
   name: 'Tab2',
-  components: { IonPage, IonHeader, IonFab, IonFabButton, IonIcon, 
-         IonToolbar, IonTitle, IonContent, IonGrid, IonRow, 
+  components: { IonPage, IonHeader, IonFab, IonFabButton, IonIcon,
+         IonToolbar, IonTitle, IonContent, IonGrid, IonRow,
          IonCol, IonImg },
   setup() {
     return {
@@ -171,7 +175,7 @@ export default  {
 }
 ```
 
-Ensuite, ajoutez le FAB au bas de la page. Utilisez l'image de la caméra comme icône, et appelez la fonction `takePhoto()` lorsque ce bouton est cliqué (pour être implémenté bientôt):
+Then, add the FAB to the bottom of the page. Use the camera image as the icon, and call the `takePhoto()` function when this button is clicked (to be implemented soon):
 
 ```html
 <ion-content :fullscreen="true">
@@ -183,15 +187,15 @@ Ensuite, ajoutez le FAB au bas de la page. Utilisez l'image de la caméra comme 
 </ion-content>
 ```
 
-Nous allons créer la méthode `takePhoto` et la logique pour utiliser l'appareil photo et d'autres fonctionnalités natives dans un moment.
+We’ll be creating the `takePhoto` method and the logic to use the Camera and other native features in a moment.
 
-Ensuite, ouvrez `src/views/Tabs.vue` puis importez l'icône `images` :
+Next, open `src/views/Tabs.vue` then import the `images` icon:
 
 ```typescript
 import { images, square, triangle } from 'ionicons/icons';
 ```
 
-Dans la barre d'onglets (`<ion-tab-bar>`), changez le libellé en "Photos" et l'icône en `images` pour le bouton d'onglet du milieu :
+Within the tab bar (`<ion-tab-bar>`), change the label to "Photos" and the icon to `images` for the middle tab button:
 
 ```html
 <ion-tab-button tab="tab2" href="/tabs/tab2">
@@ -200,4 +204,4 @@ Dans la barre d'onglets (`<ion-tab-bar>`), changez le libellé en "Photos" et l'
 </ion-tab-button>
 ```
 
-Ce n'est que le début de toutes les choses cool que nous pouvons faire avec Ionic. Ensuite, il s'agira d'implémenter la fonctionnalité de prise de vue sur le web, puis de la développer pour iOS et Android.
+That’s just the start of all the cool things we can do with Ionic. Up next, implementing camera taking functionality on the web, then building for iOS and Android.
