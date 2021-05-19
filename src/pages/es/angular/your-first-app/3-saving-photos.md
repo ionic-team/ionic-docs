@@ -38,19 +38,19 @@ Utilizaremos el [Filesystem API](https://capacitor.ionicframework.com/docs/apis/
 
 ```typescript
 private async savePicture(cameraPhoto: CameraPhoto) {
-  // Convierte photo al formato base64, requerido por el API de Filesystem para guardarlo
+  // Convert photo to base64 format, required by Filesystem API to save
   const base64Data = await this.readAsBase64(cameraPhoto);
 
-  // Escribe el archivo a la carpeta Data
+  // Write the file to the data directory
   const fileName = new Date().getTime() + '.jpeg';
   const savedFile = await Filesystem.writeFile({
     path: fileName,
     data: base64Data,
-    directory: FilesystemDirectory.Data
+    directory: Directory.Data
   });
 
-  // Usa webPath para mostrar la nueva imagen en lugar de base64 desde la que 
-  // ya está cargada en memoria
+  // Use webPath to display the new image instead of base64 since it's
+  // already loaded into memory
   return {
     filepath: fileName,
     webviewPath: cameraPhoto.webPath
@@ -62,11 +62,11 @@ private async savePicture(cameraPhoto: CameraPhoto) {
 
 ```typescript
 private async readAsBase64(cameraPhoto: CameraPhoto) {
-  // Obtener la foto, leer como un blob, luego convertir a formato base64
+  // Fetch the photo, read as a blob, then convert to base64 format
   const response = await fetch(cameraPhoto.webPath!);
- const blob = await response.blob();
+  const blob = await response.blob();
 
-  return await this.convertBlobToBase64(blob) as string;  
+  return await this.convertBlobToBase64(blob) as string;
 }
 
 convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
