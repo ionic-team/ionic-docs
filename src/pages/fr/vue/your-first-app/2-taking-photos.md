@@ -19,15 +19,16 @@ Nous allons commencer par importer les différents utilitaires que nous utiliser
 
 ```typescript
 import { ref, onMounted, watch } from 'vue';
-import { Plugins, CameraResultType, CameraSource, CameraPhoto, 
-Capacitor, FilesystemDirectory } from "@capacitor/core";
+import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { Filesystem, Directory } from '@capacitor/filesystem'
+import { Storage } from '@capacitor/storage'
+
 ```
 
 Ensuite, créez une fonction nommée usePhotoGallery:
 
 ```typescript
 export function usePhotoGallery() {
-  const { Camera } = Plugins;
 
   const takePhoto = async () => {
     const cameraPhoto = await Camera.getPhoto({
@@ -58,15 +59,15 @@ Ensuite, dans l'exportation par défaut, ajoutez une méthode d'installation, qu
 ```typescript
 <script lang="ts">
 import { camera, trash, close } from 'ionicons/icons';
-import { IonPage, IonHeader, IonFab, IonFabButton, IonIcon, 
-         IonToolbar, IonTitle, IonContent, IonGrid, IonRow, 
+import { IonPage, IonHeader, IonFab, IonFabButton, IonIcon,
+         IonToolbar, IonTitle, IonContent, IonGrid, IonRow,
          IonCol, IonImg } from '@ionic/vue';
 import { usePhotoGallery } from '@/composables/usePhotoGallery';
 
 export default  {
   name: 'Tab2',
-  components: { IonPage, IonHeader, IonFab, IonFabButton, IonIcon, 
-         IonToolbar, IonTitle, IonContent, IonGrid, IonRow, 
+  components: { IonPage, IonHeader, IonFab, IonFabButton, IonIcon,
+         IonToolbar, IonTitle, IonContent, IonGrid, IonRow,
          IonCol, IonImg },
   setup() {
     const { takePhoto } = usePhotoGallery();
@@ -159,7 +160,7 @@ Une fois la ou les photo(s) stockées dans le tableau principal, nous pouvons ma
       </ion-col>
     </ion-row>
   </ion-grid>
-  
+
   <!-- <ion-fab> markup  -->
 </ion-content>
 ```
