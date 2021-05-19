@@ -55,7 +55,7 @@ const loadSaved = async () => {
   for (const photo of photosInStorage) {
     const file = await Filesystem.readFile({
         path: photo.filepath,
-        directory: FilesystemDirectory.Data
+        directory: Directory.Data
     });
     photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
   }
