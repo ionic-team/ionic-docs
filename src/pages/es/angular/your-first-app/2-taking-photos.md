@@ -20,21 +20,20 @@ $ ionic g service services/photo
 Abre el nuevo archivo `services/photo.service.ts`, y agreguemos la lógica de la funcionalidad de la cámara. Primero, importa las dependencias de Capacitor y obtén las referencias a los plugins de Camera, Filesystem y Storage:
 
 ```typescript
-import { Plugins, CameraResultType, Capacitor, FilesystemDirectory, 
-         CameraPhoto, CameraSource } from '@capacitor/core';
-
-const { Camera, Filesystem, Storage } = Plugins;
+import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { Filesystem, Directory } from '@capacitor/filesystem';
+import { Storage } from @capacitor/storage;
 ```
 
 A continuación, define una nueva función, `addNewToGallery`, que contendrá la lógica para tomar una foto del dispositivo y guardarla en un archivo. Comencemos abriendo la cámara de dispositivo:
 
 ```typescript
 public async addNewToGallery() {
-  // Hacer una foto
-  const capturedPhoto = await Camera.getPhoto ({
-    resultType: CameraResultType.Uri, 
-    source: CameraSource.Camera, 
-    quality: 100 
+  // Take a photo
+  const capturedPhoto = await Camera.getPhoto({
+    resultType: CameraResultType.Uri,
+    source: CameraSource.Camera,
+    quality: 100
   });
 }
 ```
@@ -97,15 +96,15 @@ export class PhotoService {
 Terminada la función `addNewToGallery`, añade la nueva foto capturada al principio del arreglo de fotos.
 
 ```typescript
-  const capturedPhoto = await Camera.getPhoto ({
-    resultType: CameraResultType.Uri, 
-    source: CameraSource.Camera, 
-    quality: 100 
+  const capturedPhoto = await Camera.getPhoto({
+    resultType: CameraResultType.Uri,
+    source: CameraSource.Camera,
+    quality: 100
   });
 
   this.photos.unshift({
-    filepath: "pronto...",
-    webviewPath: capturedPhoto .webPath
+    filepath: "soon...",
+    webviewPath: capturedPhoto.webPath
   });
 }
 ```
@@ -114,18 +113,16 @@ A continuación, vayamos a `tab2.page.html` de modo que podamos desplegar la ima
 
 ```html
 <ion-content>
- <ion-grid>
-  <ion-row>
-   <ion-col size="6" 
-      *ngFor="let photo of photoService.photos; index as position">
-   <ion-col size="6" 
-      *ngFor="let photo of photoService.photos; index as position">
-   <ion-col size="6" 
-      *ngFor="let photo of photoService.photos; index as position">
-    <ion-img [src]="photo.webviewPath">
-   </ion-col>
-  </ion-row>
- </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col
+        size="6"
+        *ngFor="let photo of photoService.photos; index as position"
+      >
+        <ion-img [src]="photo.webviewPath"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
   <!-- ion-fab markup  -->
 </ion-content>
