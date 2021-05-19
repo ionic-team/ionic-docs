@@ -29,11 +29,11 @@ The Live Reload server will start up, and the native IDE of choice will open if 
 
 ## Deleting Photos
 
-With Live Reload running and the app is open on your device, let’s implement photo deletion functionality. Open `Tab2.tsx` then import `useState` from React and `Photo` from the `usePhotoGallery` hook:
+With Live Reload running and the app is open on your device, let’s implement photo deletion functionality. Open `Tab2.tsx` then import `useState` from React and `UserPhoto` from the `usePhotoGallery` hook:
 
 ```typescript
 import React, { useState } from 'react';
-import { usePhotoGallery, Photo } from '../hooks/usePhotoGallery';
+import { usePhotoGallery, UserPhoto } from '../hooks/usePhotoGallery';
 // other imports
 ```
 
@@ -46,13 +46,13 @@ const { photos, takePhoto, deletePhoto } = usePhotoGallery();
 Next, add a state value to store information about the photo to delete:
 
 ```typescript
-const [photoToDelete, setPhotoToDelete] = useState<Photo>();
+const [photoToDelete, setPhotoToDelete] = useState<UserPhoto>();
 ```
 
 When a user clicks on an image, we will show the action sheet by changing the state value to the photo. Update the `<IonImg>` element to:
 
 ```typescript
-<IonImg onClick={() => setPhotoToDelete(photo)} 
+<IonImg onClick={() => setPhotoToDelete(photo)}
         src={photo.webviewPath} />
 ```
 
@@ -87,18 +87,18 @@ Above, we added two options: `Delete` that calls `deletePhoto` function (to be a
 Next, we need to implement the deletePhoto method that will come from the `usePhotoGallery` hook. Open the file and paste in the following function in the hook:
 
 ```typescript
-const deletePhoto = async (photo: Photo) => {
+const deletePhoto = async (photo: UserPhoto) => {
   // Remove this photo from the Photos reference data array
   const newPhotos = photos.filter(p => p.filepath !== photo.filepath);
 
   // Update photos array cache by overwriting the existing photo array
-  set(PHOTO_STORAGE, JSON.stringify(newPhotos));
+  Storage.set({key: PHOTO_STORAGE, value: JSON.stringify(newPhotos) });
 
   // delete photo file from filesystem
   const filename = photo.filepath.substr(photo.filepath.lastIndexOf('/') + 1);
-  await deleteFile({
+  await Filesystem.deleteFile({
     path: filename,
-    directory: FilesystemDirectory.Data
+    directory: Directory.Data
   });
   setPhotos(newPhotos);
 };
