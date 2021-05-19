@@ -59,30 +59,30 @@ private async readAsBase64(cameraPhoto: CameraPhoto) {
 Ensuite, mettez à jour la méthode `savePicture()`. Lors de l'exécution sur mobile, définissez `filepath` au résultat de l'opération `writeFile()` - `savedFile.uri`. Lors de la configuration du `webviewPath`, utilisez la méthode spéciale `Capacitor.convertFileSrc()` ([détails ici](https://ionicframework.com/docs/core-concepts/webview#file-protocol)).
 
 ```typescript
-// Sauvegarde de l'image dans un fichier sur le périphérique
+// Save picture to file on device
   private async savePicture(cameraPhoto: CameraPhoto) {
-    // Conversion de la photo au format base64, requis par l'API du système de fichiers pour la sauvegarde.
+    // Convert photo to base64 format, required by Filesystem API to save
     const base64Data = await this.readAsBase64(cameraPhoto);
 
-    // Écriture du fichier dans le répertoire de données
+    // Write the file to the data directory
     const fileName = new Date().getTime() + '.jpeg';
     const savedFile = await Filesystem.writeFile({
       path: fileName,
       data: base64Data,
-      directory: FilesystemDirectory.Data
+      directory: Directory.Data
     });
 
     if (this.platform.is('hybrid')) {
-      // Affichez la nouvelle image en réécrivant le chemin 'file://' en HTTP.
-      // Détails : https://ionicframework.com/docs/building/webview#file-protoco
+      // Display the new image by rewriting the 'file://' path to HTTP
+      // Details: https://ionicframework.com/docs/building/webview#file-protocol
       return {
         filepath: savedFile.uri,
         webviewPath: Capacitor.convertFileSrc(savedFile.uri),
       };
     }
     else {
-      // Utilise webPath pour afficher la nouvelle image au lieu de base64 puisqu'elle est // déjà chargée en mémoire.
-      // déjà chargée en mémoire
+      // Use webPath to display the new image instead of base64 since it's
+      // already loaded into memory
       return {
         filepath: fileName,
         webviewPath: cameraPhoto.webPath
@@ -95,22 +95,22 @@ Ensuite, retournez à la fonction `loadSaved()` que nous avons implémentée pou
 
 ```typescript
 public async loadSaved() {
-  // Récupérer les données du tableau de photos en cache
+  // Retrieve cached photo array data
   const photoList = await Storage.get({ key: this.PHOTO_STORAGE });
   this.photos = JSON.parse(photoList.value) || [];
 
-  // La manière la plus simple de détecter le fonctionnement sur le web :
-  // "si la plateforme n'est pas hybride, faites ceci".
+  // Easiest way to detect when running on the web:
+  // “when the platform is NOT hybrid, do this”
   if (!this.platform.is('hybrid')) {
-    // Afficher la photo en la lisant au format base64
+    // Display the photo by reading into base64 format
     for (let photo of this.photos) {
-      // Lire les données de chaque photo sauvegardée à partir du système de fichiers.
+      // Read each saved photo's data from the Filesystem
       const readFile = await Filesystem.readFile({
           path: photo.filepath,
-          directory: FilesystemDirectory.Data
+          directory: Directory.Data
       });
 
-      // Plate-forme Web uniquement : Chargez la photo en tant que données base64
+      // Web platform only: Load the photo as base64 data
       photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
     }
   }
