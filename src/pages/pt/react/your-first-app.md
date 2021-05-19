@@ -21,7 +21,7 @@ Highlights include:
 * Deployed as a native iOS and Android mobile app using [Capacitor](https://capacitor.ionicframework.com), Ionic's official native app runtime.
 * Photo Gallery functionality powered by the Capacitor [Camera](https://capacitor.ionicframework.com/docs/apis/camera), [Filesystem](https://capacitor.ionicframework.com/docs/apis/filesystem), and [Storage](https://capacitor.ionicframework.com/docs/apis/storage) APIs.
 
-It’s easy to get started. Find the complete app code referenced in this guide [on GitHub](https://github.com/ionic-team/photo-gallery-capacitor-react).
+Find the complete app code referenced in this guide [on GitHub](https://github.com/ionic-team/photo-gallery-capacitor-react).
 
 ## Download Required Tools
 
@@ -63,18 +63,20 @@ Next, change into the app folder:
 $ cd photo-gallery
 ```
 
-### React Hooks and PWA Elements
-
-Next, we will install a couple of helper libraries for working with Capacitor.
-
-The React Hooks library makes working with Capacitor in React a breeze by providing some custom hooks for each of the specific plugins.
-
-Some Capacitor plugins, including the Camera API, provide the web-based functionality and UI via the Ionic [PWA Elements library](https://github.com/ionic-team/ionic-pwa-elements).
-
-Both packages are separate dependencies, so install them next:
+Next we'll need to install the necessary Capacitor plugins to make the app's native functionality work:
 
 ```shell
-$ npm install @ionic/react-hooks @ionic/pwa-elements
+npm install @capacitor/camera @capacitor/storage @capacitor/filesystem
+```
+
+### PWA Elements
+
+Some Capacitor plugins, including the Camera API, provide the web-based functionality and UI via the Ionic [PWA Elements library](https://github.com/ionic-team/pwa-elements).
+
+It's a separate dependency, so install it next:
+
+```shell
+$ npm install @ionic/pwa-elements
 ```
 
 After installation, open up the project in your code editor of choice.
@@ -116,7 +118,7 @@ Open `/src/pages/Tab2.tsx`. We see:
     </IonToolbar>
   </IonHeader>
   <IonContent>
- <!-- some filler -->
+  <!-- some filler -->
   </IonContent>
 </IonPage>
 ```
