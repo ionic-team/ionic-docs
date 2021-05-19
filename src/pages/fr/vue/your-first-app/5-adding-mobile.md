@@ -31,7 +31,7 @@ const savePicture = async (photo: CameraPhoto, fileName: string): Promise<Photo>
     });
     base64Data = file.data;
   } else {
-    // Récupère la photo, la lit comme un blob, puis la convertit au format base64.
+    // Fetch the photo, read as a blob, then convert to base64 format
     const response = await fetch(photo.webPath!);
     const blob = await response.blob();
     base64Data = await convertBlobToBase64(blob) as string;
@@ -39,20 +39,20 @@ const savePicture = async (photo: CameraPhoto, fileName: string): Promise<Photo>
   const savedFile = await Filesystem.writeFile({
     path: fileName,
     data: base64Data,
-    directory: FilesystemDirectory.Data
+    directory: Directory.Data
   });
 
   if (isPlatform('hybrid')) {
-    // Affichez la nouvelle image en réécrivant le chemin 'file://' en HTTP.
-    // Détails : https://ionicframework.com/docs/building/webview#file-protocol
+    // Display the new image by rewriting the 'file://' path to HTTP
+    // Details: https://ionicframework.com/docs/building/webview#file-protocol
     return {
       filepath: savedFile.uri,
       webviewPath: Capacitor.convertFileSrc(savedFile.uri),
     };
   }
   else {
-      // Utiliser webPath pour afficher la nouvelle image au lieu de base64 puisqu'elle est 
-    // déjà chargée en mémoire
+    // Use webPath to display the new image instead of base64 since it's
+    // already loaded into memory
     return {
       filepath: fileName,
       webviewPath: photo.webPath
@@ -73,9 +73,9 @@ const loadSaved = async () => {
     for (const photo of photosInStorage) {
       const file = await Filesystem.readFile({
         path: photo.filepath,
-        directory: FilesystemDirectory.Data
+        directory: Directory.Data
       });
-      // Plate-forme Web uniquement : Chargez la photo en tant que données base64
+      // Web platform only: Load the photo as base64 data
       photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
     }
   }
