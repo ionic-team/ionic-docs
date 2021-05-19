@@ -59,29 +59,30 @@ private async readAsBase64(cameraPhoto: CameraPhoto) {
 接下来，更新 `savePicture()` 方法。 在移动设备上运行时，将`filepath`设置为`writeFile()`操作的结果 - `savedFile.uri`。 设置`webviewPath`时，请使用特殊的`Capacitor.convertFileSrc()`方法([详细信息](https://ionicframework.com/docs/core-concepts/webview# file-protocol))。
 
 ```typescript
-// 将图片保存到设备上的文件
+// Save picture to file on device
   private async savePicture(cameraPhoto: CameraPhoto) {
-    // 将照片转换为Filesystem API要求保存的base64格式
+    // Convert photo to base64 format, required by Filesystem API to save
     const base64Data = await this.readAsBase64(cameraPhoto);
 
-    // 将文件写入数据目录
+    // Write the file to the data directory
     const fileName = new Date().getTime() + '.jpeg';
     const savedFile = await Filesystem.writeFile({
       path: fileName,
       data: base64Data,
-      directory: FilesystemDirectory.Data
+      directory: Directory.Data
     });
 
     if (this.platform.is('hybrid')) {
-      // 通过重写HTTP的'file://'路径来显示新图像
-      // 详细信息：https://ionicframework.com/docs/building/webview#file-protocol
+      // Display the new image by rewriting the 'file://' path to HTTP
+      // Details: https://ionicframework.com/docs/building/webview#file-protocol
       return {
         filepath: savedFile.uri,
         webviewPath: Capacitor.convertFileSrc(savedFile.uri),
       };
     }
     else {
-      // 使用webPath来显示新图像而不是base64，因为它已经加载到内存中
+      // Use webPath to display the new image instead of base64 since it's
+      // already loaded into memory
       return {
         filepath: fileName,
         webviewPath: cameraPhoto.webPath
@@ -94,23 +95,23 @@ private async readAsBase64(cameraPhoto: CameraPhoto) {
 
 ```typescript
 public async loadSaved() {
-  // 检索缓存的照片阵列数据
-  const photos = await Storage.get({ key: this.PHOTO_STORAGE });
-  this.photos = JSON.parse(photos.value) || [];
+  // Retrieve cached photo array data
+  const photoList = await Storage.get({ key: this.PHOTO_STORAGE });
+  this.photos = JSON.parse(photoList.value) || [];
 
-  // 检测在网络上运行时最简单的方法：
-  // “当平台不是'hybrid'时，执行此操作”
+  // Easiest way to detect when running on the web:
+  // “when the platform is NOT hybrid, do this”
   if (!this.platform.is('hybrid')) {
-    // 通过读取为base64格式显示照片
+    // Display the photo by reading into base64 format
     for (let photo of this.photos) {
-      // 从文件系统读取每张保存的照片数据
+      // Read each saved photo's data from the Filesystem
       const readFile = await Filesystem.readFile({
           path: photo.filepath,
-          directory: FilesystemDirectory.Data
+          directory: Directory.Data
       });
 
-      // 仅限Web平台：将照片保存到base64字段中
-      photo.base64 = `data:image/jpeg;base64,${readFile.data}`;
+      // Web platform only: Load the photo as base64 data
+      photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
     }
   }
 }
