@@ -20,21 +20,20 @@ $ ionic g service services/photo
 打开新创建的`services/photo.service.ts`文件，然后开始为它添加相机相关的功能。 首先，我们导入Capacitor相关依赖，并获取相机、文件系统以及存储插件的引用：
 
 ```typescript
-import { Plugins, CameraResultType, Capacitor, FilesystemDirectory, 
-         CameraPhoto, CameraSource } from '@capacitor/core';
-
-const { Camera, Filesystem, Storage } = Plugins;
+import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { Filesystem, Directory } from '@capacitor/filesystem';
+import { Storage } from @capacitor/storage;
 ```
 
 接下来，定义一个新的类方法，`addNewToGallery`，该方法将包含获取设备照片并将其保存到文件系统的核心逻辑。 我们得从调用设备的相机开始：
 
 ```typescript
 public async addNewToGallery() {
-  // 拍一张照片
+  // Take a photo
   const capturedPhoto = await Camera.getPhoto({
-    resultType: CameraResultType.Uri, 
-    source: CameraSource.Camera, 
-    quality: 100 
+    resultType: CameraResultType.Uri,
+    source: CameraSource.Camera,
+    quality: 100
   });
 }
 ```
@@ -99,9 +98,9 @@ export class PhotoService {
 
 ```typescript
   const capturedPhoto = await Camera.getPhoto({
-    resultType: CameraResultType.Uri, 
-    source: CameraSource.Camera, 
-    quality: 100 
+    resultType: CameraResultType.Uri,
+    source: CameraSource.Camera,
+    quality: 100
   });
 
   this.photos.unshift({
@@ -117,12 +116,17 @@ export class PhotoService {
 <ion-content>
   <ion-grid>
     <ion-row>
-    <ion-col size="6" 
-      *ngFor="let photo of photoService.photos; index as position">
+      <ion-col
+        size="6"
+        *ngFor="let photo of photoService.photos; index as position"
+      >
         <ion-img [src]="photo.webviewPath"></ion-img>
-    </ion-col>
+      </ion-col>
     </ion-row>
-  </ion-grid><!-- ion-fab 标记  --></ion-content>
+  </ion-grid>
+
+  <!-- ion-fab markup  -->
+</ion-content>
 ```
 
 保存好我们编辑的所有文件， 在网页浏览器中，点击相机按钮开始拍照。 这一次，照片被显示在了图库里面。
