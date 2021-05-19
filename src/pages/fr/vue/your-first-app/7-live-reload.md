@@ -32,10 +32,10 @@ Le serveur Live Reload démarre et l'IDE natif de votre choix s'ouvre s'il n'est
 Lorsque Live Reload est en cours d'exécution et que l'application est ouverte sur votre appareil, mettons en œuvre la fonctionnalité de suppression des photos. Ouvrez `Tab2.vue` puis importez le `actionSheetController`. Nous allons afficher une [Fiche d'action](https://ionicframework.com/docs/api/action-sheet) avec la possibilité de supprimer une photo :
 
 ```typescript
-import { actionSheetController, IonPage, IonHeader, IonFab, IonFabButton, 
-         IonIcon, IonToolbar, IonTitle, IonContent, IonImg, IonGrid, 
+import { actionSheetController, IonPage, IonHeader, IonFab, IonFabButton,
+         IonIcon, IonToolbar, IonTitle, IonContent, IonImg, IonGrid,
          IonRow, IonCol } from '@ionic/vue';
-// autres importations
+// other imports
 ```
 
 Ensuite, référencez la fonction `deletePhoto`, que nous allons créer prochainement :
@@ -92,14 +92,14 @@ Ensuite, nous devons implémenter la méthode `deletePhoto` dans la fonction `us
 
 ```typescript
 const deletePhoto = async (photo: Photo) => {
-  // Supprimez cette photo du tableau de données de référence Photos.
+  // Remove this photo from the Photos reference data array
   photos.value = photos.value.filter(p => p.filepath !== photo.filepath);
 
-  // supprime le fichier photo du système de fichiers
+  // delete photo file from filesystem
   const filename = photo.filepath.substr(photo.filepath.lastIndexOf('/') + 1);
   await Filesystem.deleteFile({
     path: filename,
-    directory: FilesystemDirectory.Data
+    directory: Directory.Data
   });
 };
 ```
