@@ -38,19 +38,19 @@ Usaremos a Capacitor [API do sistema de arquivos](https://capacitor.ionicframewo
 
 ```typescript
 private async savePicture(cameraPhoto: CameraPhoto) {
-  // Converter a foto para formato base64, Necessário pela API do sistema de arquivos para salvar
+  // Convert photo to base64 format, required by Filesystem API to save
   const base64Data = await this.readAsBase64(cameraPhoto);
 
-  // Escreva o arquivo para o diretório de dados
+  // Write the file to the data directory
   const fileName = new Date().getTime() + '.jpeg';
   const savedFile = await Filesystem.writeFile({
     path: fileName,
     data: base64Data,
-    directory: FilesystemDirectory.Data
+    directory: Directory.Data
   });
 
-// Use webPath para exibir a nova imagem em vez de base64, pois
-   // já carregada na memória
+  // Use webPath to display the new image instead of base64 since it's
+  // already loaded into memory
   return {
     filepath: fileName,
     webviewPath: cameraPhoto.webPath
@@ -62,18 +62,18 @@ private async savePicture(cameraPhoto: CameraPhoto) {
 
 ```typescript
 private async readAsBase64(cameraPhoto: CameraPhoto) {
-  // Buscar a foto, leia como um blob, então converta em formato base64
-  const response = await fetch(cameraPhoto. ebPath!);
+  // Fetch the photo, read as a blob, then convert to base64 format
+  const response = await fetch(cameraPhoto.webPath!);
   const blob = await response.blob();
 
-  return aguarda isso. onvertBlobToBase64(blob) como string;  
+  return await this.convertBlobToBase64(blob) as string;
 }
 
-convertBlobToBase64 = (blob: Blob) => nova Promise((resolve, rejeitar) => {
-  const reader = new FileReader; leitor de
-  . nerror = rejeitar;
+convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
+  const reader = new FileReader;
+  reader.onerror = reject;
   reader.onload = () => {
-      resolve(leitor. esult);
+      resolve(reader.result);
   };
   reader.readAsDataURL(blob);
 });
