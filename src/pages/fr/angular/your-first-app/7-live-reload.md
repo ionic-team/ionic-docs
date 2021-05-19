@@ -32,9 +32,9 @@ Le serveur Live Reload va démarrer, et l'IDE natif de choix s'ouvrira s'il n'es
 Avec Live Reload en cours d'exécution et l'application s'ouvre sur votre appareil, implémentons la fonctionnalité de suppression de photos. Ouvrez `tab2.page.html` et ajoutez un nouveau gestionnaire de clic à chaque élément `<ion-img>`. Lorsque l'utilisateur de l'application clique sur une photo dans notre galerie, nous afficherons une boîte de dialogue [Feuille d'Action](https://ionicframework.com/docs/api/action-sheet) avec l'option de supprimer la photo sélectionnée ou d'annuler (fermer) la boîte de dialogue.
 
 ```html
-<ion-col size="6" 
+<ion-col size="6"
     *ngFor="let photo of photoService.photos; index as position">
-  <ion-img [src]="photo.webviewPath" 
+  <ion-img [src]="photo.webviewPath"
            (click)="showActionSheet(photo, position)"></ion-img>
 </ion-col>
 ```
@@ -44,7 +44,7 @@ Dans `tab2.page.ts`, importez Action Sheet et ajoutez-la au constructeur :
 ```typescript
 import { ActionSheetController } from '@ionic/angular';
 
-constructor(public photoService: PhotoService, 
+constructor(public photoService: PhotoService,
             public actionSheetController: ActionSheetController) {}
 ```
 
@@ -86,22 +86,22 @@ Dans `src/app/services/photo.service.ts`, ajoutez la fonction `deletePicture()`:
 
 ```typescript
 public async deletePicture(photo: Photo, position: number) {
-  // Supprimez cette photo du tableau de données de référence Photos.
+  // Remove this photo from the Photos reference data array
   this.photos.splice(position, 1);
 
-  // Mettez à jour le cache du tableau de photos en écrasant le tableau de photos existant.
+  // Update photos array cache by overwriting the existing photo array
   Storage.set({
     key: this.PHOTO_STORAGE,
     value: JSON.stringify(this.photos)
   });
 
-  // supprime le fichier photo du système de fichiers
+  // delete photo file from filesystem
   const filename = photo.filepath
                       .substr(photo.filepath.lastIndexOf('/') + 1);
 
   await Filesystem.deleteFile({
     path: filename,
-    directory: FilesystemDirectory.Data
+    directory: Directory.Data
   });
 }
 ```
