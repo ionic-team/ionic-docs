@@ -48,15 +48,15 @@ public async loadSaved() {
 En  móvil (próximamente!), directamente podremos establecer el origen de una etiqueta de imagen - `<img src="x" />` - a cada archivo de foto en el Sistema de Archivos, mostrándolos automáticamente. En la web, sin embargo, debemos leer cada imagen desde el sistema de archivos en formato base64, usando una nueva propiedad `base64` en el objeto `Photo`. Esto se debe a que la API Sistema de Archivos utiliza [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) bajo la cubierta. Debajo está el código que necesitas añadir en la función `loadSaved()`, que acabas de añadir:
 
 ```typescript
-// Mostrar la foto en formato base64
+// Display the photo by reading into base64 format
 for (let photo of this.photos) {
-  // Lee los datos de cada foto guardada en el sistema de archivos
+  // Read each saved photo's data from the Filesystem
   const readFile = await Filesystem.readFile({
       path: photo.filepath,
-      directory: FilesystemDirectory.Data
+      directory: Directory.Data
   });
 
-  // Plataforma web solamente: Guardar la foto en base64
+  // Web platform only: Load the photo as base64 data
   photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
 }
 ```
