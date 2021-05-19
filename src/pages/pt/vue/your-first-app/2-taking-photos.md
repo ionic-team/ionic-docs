@@ -19,15 +19,16 @@ We will start by importing the various utilities we will use from Vue core and C
 
 ```typescript
 import { ref, onMounted, watch } from 'vue';
-import { Plugins, CameraResultType, CameraSource, CameraPhoto, 
-Capacitor, FilesystemDirectory } from "@capacitor/core";
+import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { Filesystem, Directory } from '@capacitor/filesystem'
+import { Storage } from '@capacitor/storage'
+
 ```
 
 Next, create a function named usePhotoGallery:
 
 ```typescript
 export function usePhotoGallery() {
-  const { Camera } = Plugins;
 
   const takePhoto = async () => {
     const cameraPhoto = await Camera.getPhoto({
@@ -58,15 +59,15 @@ Next, within the default export, add a setup method, part of the [Composition AP
 ```typescript
 <script lang="ts">
 import { camera, trash, close } from 'ionicons/icons';
-import { IonPage, IonHeader, IonFab, IonFabButton, IonIcon, 
-         IonToolbar, IonTitle, IonContent, IonGrid, IonRow, 
+import { IonPage, IonHeader, IonFab, IonFabButton, IonIcon,
+         IonToolbar, IonTitle, IonContent, IonGrid, IonRow,
          IonCol, IonImg } from '@ionic/vue';
 import { usePhotoGallery } from '@/composables/usePhotoGallery';
 
 export default  {
   name: 'Tab2',
-  components: { IonPage, IonHeader, IonFab, IonFabButton, IonIcon, 
-         IonToolbar, IonTitle, IonContent, IonGrid, IonRow, 
+  components: { IonPage, IonHeader, IonFab, IonFabButton, IonIcon,
+         IonToolbar, IonTitle, IonContent, IonGrid, IonRow,
          IonCol, IonImg },
   setup() {
     const { takePhoto } = usePhotoGallery();
@@ -159,7 +160,7 @@ With the photo(s) stored into the main array we can now display the images on th
       </ion-col>
     </ion-row>
   </ion-grid>
-  
+
   <!-- <ion-fab> markup  -->
 </ion-content>
 ```
