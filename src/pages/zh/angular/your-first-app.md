@@ -23,7 +23,7 @@ Ionic强大之处在于，你只需要用HTML，CSS和JavaScript一套代码，�
 * 使用官方提供的原生应用运行环境[Capacitor](https://capacitor.ionicframework.com)发布原生iOS和Android移动应用。
 * 图库应用的功能由[相机](https://capacitor.ionicframework.com/docs/apis/camera)，[文件系统](https://capacitor.ionicframework.com/docs/apis/filesystem)和[存储](https://capacitor.ionicframework.com/docs/apis/storage)几个API实现。
 
-起步非常容易， 本章引用的所有代码都可以在[GitHub](https://github.com/ionic-team/photo-gallery-capacitor-ng)上找到。
+Find the complete app code referenced in this guide [on GitHub](https://github.com/ionic-team/photo-gallery-capacitor-ng).
 
 ## 下载必要的工具
 
@@ -65,44 +65,50 @@ $ ionic start photo-gallery tabs --type=angular --capacitor
 $ cd photo-gallery
 ```
 
+Next we'll need to install the necessary Capacitor plugins to make the app's native functionality work:
+
+```shell
+npm install @capacitor/camera @capacitor/storage @capacitor/filesystem
+```
+
 ### PWA模块
 
-某些例如相机的Capacitor插件，通过Ionic的[PWA模块库](https://github.com/ionic-team/ionic-pwa-elements)提供基于web功能和用户界面。
+Some Capacitor plugins, including the Camera API, provide the web-based functionality and UI via the Ionic [PWA Elements library](https://github.com/ionic-team/ionic-pwa-elements).
 
-这是一个单独的依赖，接下来我们安装它：
+It's a separate dependency, so install it next:
 
 ```shell
 $ npm install @ionic/pwa-elements
 ```
 
-然后，我们编辑`src/main.ts`文件，导入`@ionic/pwa-elements`
+Next, import `@ionic/pwa-elements` by editing `src/main.ts`.
 
 ```typescript
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
-// 在平台被引导后，调用模块加载器
+// Call the element loader after the platform has been bootstrapped
 defineCustomElements(window);
 ```
 
-就这么多！ 接下来是比较有意思的时候，我们看看应用究竟是什么样子的。
+That’s it! Now for the fun part - let’s see the app in action.
 
 ## 运行应用
 
-运行这个命令：
+Run this command next:
 
 ```shell
 $ ionic serve
 ```
 
-看吧， 你的Ionic应用现在已经运行在浏览器里面了。 大多数应用开发构建以及测试你都可以放在浏览器里面进行，这可以大大提升开发和测试的速度。
+And voilà! Your Ionic app is now running in a web browser. Most of your app can be built and tested right in the browser, greatly increasing development and testing speed.
 
 ## 图库应用
 
-这里有三个标签， 点击Tab2标签， 这个画布上一片空白，我们可以将它变成一个图库。 Ionic的实时重载功能，可以让你修改代码并保存时，应用能够立即更新！
+There are three tabs. Click on the Tab2 tab. It’s a blank canvas, aka the perfect spot to transform into a Photo Gallery. The Ionic CLI features Live Reload, so when you make changes and save them, the app is updated immediately!
 
-![本教程将头从尾构建好一个完整的应用](/docs/assets/img/guides/first-app-cap-ng/email-photogallery.gif)
+![Before and after going through this tutorial](/docs/assets/img/guides/first-app-cap-ng/email-photogallery.gif)
 
-在你选择的代码编辑器中打开图库应用的文件夹，然后转到`/src/app/tab2/tab2.page.html`文件。 我们看到：
+Open the photo-gallery app folder in your code editor of choice, then navigate to `/src/app/tab2/tab2.page.html`. We see:
 
 ```html
 <ion-header>
@@ -120,13 +126,13 @@ $ ionic serve
 </ion-content>
 ```
 
-`ion-header` 表示顶部导航和工具栏，标题为 "Tab 2"(其余两个因为iOS [可折叠大标题](https://ionicframework.com/docs/api/title#collapsible-large-titles) 支持而被折叠)。 将两个`ion-title`模块重命名为：
+`ion-header` represents the top navigation and toolbar, with "Tab 2" as the title (there are two of them due to iOS [Collapsible Large Title](https://ionicframework.com/docs/api/title#collapsible-large-titles) support). Rename both `ion-title` elements to:
 
 ```html
 <ion-title>Photo Gallery</ion-title>
 ```
 
-我们将看到的主要内容放到`<ion-content>`中， 接下来，我们会添加一个按钮，通过这个按钮打开设备相机并显示摄像头所捕捉到的画面。 我们现在页面底部添加一个[悬浮按钮](https://ionicframework.com/docs/api/fab)(FAB)，并且给按钮设置一个摄像头图标。
+We put the visual aspects of our app into `<ion-content>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. Start by adding a [floating action button](https://ionicframework.com/docs/api/fab) (FAB) to the bottom of the page and set the camera image as the icon.
 
 ```html
 <ion-content>
@@ -139,7 +145,7 @@ $ ionic serve
 </ion-content>
 ```
 
-接下来，打开`src/app/tabs/tabs.page.html`文件。 将标签改为“Photos”并将图标名称改为“images”：
+Next, open `src/app/tabs/tabs.page.html`. Change the label to “Photos” and the icon name to “images”:
 
 ```html
 <ion-tab-button tab="tab2">
@@ -148,4 +154,4 @@ $ ionic serve
 </ion-tab-button>
 ```
 
-保存所有修改过的文件，应用会在浏览器自动应用。 这仅仅是我们用Ionic做的一些开始， 接下来，我们在web上加上拍照功能，然后在iOS和Android构建。
+Save all changes to see them automatically applied in the browser. That’s just the start of all the cool things we can do with Ionic. Up next, implement camera taking functionality on the web, then build it for iOS and Android.
