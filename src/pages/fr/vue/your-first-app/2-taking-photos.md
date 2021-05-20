@@ -94,7 +94,7 @@ Après avoir pris une photo, elle disparaît immédiatement. Nous devons encore 
 Nous allons d'abord créer un nouveau type pour définir notre photo, qui contiendra des métadonnées spécifiques. Ajoutez l'interface Photo suivante au fichier `usePhotoGallery.ts`, quelque part en dehors de la fonction principale :
 
 ```typescript
-export interface Photo {
+export interface UserPhoto {
   filepath: string;
   webviewPath?: string;
 }
@@ -103,7 +103,7 @@ export interface Photo {
 En haut de la fonction (juste après avoir référencé le plugin Capacitor Camera), définissez un tableau afin de pouvoir stocker chaque photo capturée avec l'appareil photo. Faites-en une variable réactive à l'aide de la fonction [ref de Vue](https://v3.vuejs.org/guide/composition-api-introduction.html#reactive-variables-with-ref).
 
 ```typescript
-const photos = ref<Photo[]>([]);
+const photos = ref<UserPhoto[]>([]);
 ```
 
 Lorsque l'appareil photo a fini de prendre une photo, le `CameraPhoto` résultant retourné par Capacitor sera ajouté au tableau `photos`. Mettez à jour la méthode `takePhoto` , en ajoutant ce code après la ligne `Camera.getPhoto`:
@@ -130,7 +130,7 @@ return {
 De retour dans le composant Tab2, mettez à jour l'instruction d'importation pour inclure l'interface `Photo`:
 
 ```typescript
-import { usePhotoGallery, Photo } from '@/composables/usePhotoGallery';
+import { usePhotoGallery, UserPhoto } from '@/composables/usePhotoGallery';
 ```
 
 Ensuite, accédez au tableau des photos :
