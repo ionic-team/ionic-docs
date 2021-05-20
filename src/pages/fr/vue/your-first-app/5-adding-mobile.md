@@ -22,9 +22,9 @@ import { isPlatform } from '@ionic/vue';
 Dans la fonction `savePicture`, vérifiez sur quelle plateforme l'application fonctionne. Si c'est "hybride" (Capacitor, le runtime natif), alors lisez le fichier photo au format base64 en utilisant la méthode `readFile`. Vous pouvez également renvoyer le chemin d'accès complet au fichier de la photo à l'aide de l'API Système de fichiers. Lors de la définition du `webviewPath`, utilisez la méthode spéciale `Capacitor.convertFileSrc` ([détails ici](https://capacitorjs.com/docs/basics/utilities#convertfilesrc)). Sinon, utilisez la même logique que précédemment pour exécuter l'application sur le Web.
 
 ```typescript
-const savePicture = async (photo: CameraPhoto, fileName: string): Promise<Photo> => {
+const savePicture = async (photo: CameraPhoto, fileName: string): Promise<UserPhoto> => {
   let base64Data: string;
-  // "hybride" détectera le mobile - iOS ou Android
+  // "hybrid" will detect mobile - iOS or Android
   if (isPlatform('hybrid')) {
     const file = await Filesystem.readFile({
       path: photo.path!
