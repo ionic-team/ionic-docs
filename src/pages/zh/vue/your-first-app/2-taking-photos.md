@@ -94,7 +94,7 @@ After taking a photo, it disappears right away. We still need to display it with
 First we will create a new type to define our Photo, which will hold specific metadata. Add the following Photo interface to the `usePhotoGallery.ts` file, somewhere outside of the main function:
 
 ```typescript
-export interface Photo {
+export interface UserPhoto {
   filepath: string;
   webviewPath?: string;
 }
@@ -103,7 +103,7 @@ export interface Photo {
 Back at the top of the function (right after referencing the Capacitor Camera plugin), define an array so we can store each photo captured with the Camera. Make it a reactive variable using Vue's [ref function](https://v3.vuejs.org/guide/composition-api-introduction.html#reactive-variables-with-ref).
 
 ```typescript
-const photos = ref<Photo[]>([]);
+const photos = ref<UserPhoto[]>([]);
 ```
 
 When the camera is done taking a picture, the resulting `CameraPhoto` returned from Capacitor will be added to the `photos` array. Update the `takePhoto` method, adding this code after the `Camera.getPhoto` line:
@@ -130,7 +130,7 @@ return {
 Back in the Tab2 component, update the import statement to include the `Photo` interface:
 
 ```typescript
-import { usePhotoGallery, Photo } from '@/composables/usePhotoGallery';
+import { usePhotoGallery, UserPhoto } from '@/composables/usePhotoGallery';
 ```
 
 Then, get access to the photos array:
