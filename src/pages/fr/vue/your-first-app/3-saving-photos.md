@@ -11,17 +11,14 @@ Nous sommes maintenant en mesure de prendre plusieurs photos et de les afficher 
 
 ## API pour les systèmes de fichiers
 
-Heureusement, les enregistrer dans le système de fichiers ne prend que quelques étapes. Commencez par ouvrir la fonction `usePhotoGallery` (`src/composables/usePhotoGallery.ts`), et extrayez l'API `Filesystem` :
+Heureusement, les enregistrer dans le système de fichiers ne prend que quelques étapes. Begin by opening the `usePhotoGallery` function (`src/composables/usePhotoGallery.ts`), and get access to the `writeFile` method from the `FileSystem` class:
 
-```typescript
-const { Camera, Filesystem } = Plugins;
-```
 
 Ensuite, créez quelques nouvelles fonctions. L'API du système de fichiers exige que les fichiers écrits sur le disque soient transmis sous forme de données en base64. Cette fonction d'aide sera donc utilisée dans un moment pour y remédier :
 
 ```typescript
 const convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
-  const reader = new FileReader;
+  const reader = new FileReader();
   reader.onerror = reject;
   reader.onload = () => {
       resolve(reader.result);
