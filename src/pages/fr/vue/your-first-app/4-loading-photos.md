@@ -19,16 +19,7 @@ Commencez par définir une variable constante qui servira de clé pour le magasi
 const PHOTO_STORAGE = "photos";
 ```
 
-Ensuite, importez l'API de stockage pour avoir accès aux méthodes de lecture et d'écriture sur le stockage de l'appareil :
-
-```typescript
-export function usePhotoGallery() {
-  const { Camera, Filesystem, Storage } = Plugins;
-  const photos = ref<Photo[]>([]);
-  const PHOTO_STORAGE = "photos";
-```
-
-Ensuite, ajoutez une fonction `cachePhotos` qui enregistre le tableau Photos en JSON dans le stockage de fichiers:
+Next, add a `cachePhotos` function that saves the Photos array as JSON to file storage:
 
 ```typescript
 const cachePhotos = () => {
@@ -39,13 +30,13 @@ const cachePhotos = () => {
 }
 ```
 
-Ensuite, utilisez la fonction Vue [watch](https://v3.vuejs.org/guide/composition-api-introduction.html#reacting-to-changes-with-watch) pour observer le tableau `photos`. Chaque fois que le tableau est modifié (dans ce cas, prise ou suppression de photos), déclenchez la fonction `cachePhotos`. Non seulement nous pouvons réutiliser le code, mais il importe peu que l'utilisateur de l'application la ferme ou passe à une autre application : les données des photos sont toujours sauvegardées.
+Next, use the Vue [watch function](https://v3.vuejs.org/guide/composition-api-introduction.html#reacting-to-changes-with-watch) to watch the `photos` array. Whenever the array is modified (in this case, taking or deleting photos), trigger the `cachePhotos` function. Not only do we get to reuse code, but it also doesn’t matter when the app user closes or switches to a different app - photo data is always saved.
 
 ```typescript
 watch(photos, cachePhotos);
 ```
 
-Maintenant que les données du tableau photo sont sauvegardées, créez une fonction pour récupérer les données lorsque Tab2 se charge. Tout d'abord, récupérer les données de la photo depuis la mémoire de stockage, puis les données de chaque photo au format base64 :
+Now that the photo array data is saved, create a function to retrieve the data when Tab2 loads. First, retrieve photo data from Storage, then each photo's data into base64 format:
 
 ```typescript
 const loadSaved = async () => {
@@ -64,18 +55,18 @@ const loadSaved = async () => {
 }
 ```
 
-Sur mobile (à venir !), nous pouvons directement définir la source d'une balise image - `<img src="x" />` - à chaque fichier photo du Filesystem, les affichant automatiquement. Sur le web, cependant, nous devons lire chaque image du Filesystem au format base64, car l'API Filesystem les stocke en base64 dans [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) sous le capot.
+On mobile (coming up next!), we can directly set the source of an image tag - `<img src="x" />` - to each photo file on the Filesystem, displaying them automatically. On the web, however, we must read each image from the Filesystem into base64 format, because the Filesystem API stores them in base64 within [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood.
 
-Enfin, nous avons besoin d'un moyen d'appeler la fonction `loadSaved` lorsque la page de la galerie de photos est chargée. Pour ce faire, utilisez le crochet Vue [mounted lifecycle hook](https://v3.vuejs.org/guide/composition-api-introduction.html#lifecycle-hook-registration-inside-setup). Tout d'abord, importez `onMounted` de Vue:
+Finally, we need a way to call the `loadSaved` function when the Photo Gallery page is loaded. To do so, use the Vue [mounted lifecycle hook](https://v3.vuejs.org/guide/composition-api-introduction.html#lifecycle-hook-registration-inside-setup). First, import `onMounted` from Vue:
 
 ```typescript
 import { ref, onMounted, watch } from 'vue';
 ```
 
-Ensuite, dans la fonction `usePhotoGallery`, ajoutez la fonction `onMounted` et appelez `loadSaved` :
+Then, within the `usePhotoGallery` function, add the `onMounted` function and call `loadSaved`:
 
 ```typescript
 onMounted(loadSaved);
 ```
 
-C'est fait! Nous avons créé une fonctionnalité complète de la Galerie de photos dans notre application Ionic qui fonctionne sur le Web. Ensuite, nous le transformerons en une application mobile pour iOS et Android !
+That’s it! We’ve built a complete Photo Gallery feature in our Ionic app that works on the web. Next up, we’ll transform it into a mobile app for iOS and Android!
