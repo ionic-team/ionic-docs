@@ -19,15 +19,6 @@ Begin by defining a constant variable that will act as the key for the store at 
 const PHOTO_STORAGE = "photos";
 ```
 
-Then, import the Storage API to get access to methods for reading and writing to device storage:
-
-```typescript
-export function usePhotoGallery() {
-  const { Camera, Filesystem, Storage } = Plugins;
-  const photos = ref<Photo[]>([]);
-  const PHOTO_STORAGE = "photos";
-```
-
 Next, add a `cachePhotos` function that saves the Photos array as JSON to file storage:
 
 ```typescript
