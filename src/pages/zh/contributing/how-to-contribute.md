@@ -1,13 +1,13 @@
 ---
-nextText: 'Code of Conduct'
+nextText: '行为准则'
 nextUrl: '/docs/contributing/coc'
 ---
 
-# Contributing to Ionic
+# 为Ionic做出贡献
 
-Thanks for the interest in contributing to Ionic Framework!
+感谢您有兴趣为Ionic Framework做出贡献！
 
-## Contributing Etiquette
+## 贡献礼仪
 
 Please see the [Contributor Code of Conduct](/docs/contributing/coc) for information on the rules of conduct.
 
