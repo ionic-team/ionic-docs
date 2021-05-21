@@ -1,5 +1,5 @@
 ---
-previousText: 'Progressive Web Apps'
+previousText: '渐进式Web应用'
 previousUrl: '/docs/vue/pwa'
 nextText: 'Troubleshooting'
 nextUrl: '/docs/vue/troubleshooting'
