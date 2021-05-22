@@ -9,7 +9,7 @@ nextUrl: '/docs/angular/your-first-app/2-taking-photos'
 
 Una de las mejores cosas de Ionic es que con un solo código fuente, puedes desarrollar para cualquier plataforma, utilizando solo HTML, CSS y JavaScript. Follow along as we learn the fundamentals of Ionic app development by creating a realistic app step by step.
 
-Here’s the finished app running on all 3 platforms: <iframe width="560" height="315" src="https://www.youtube.com/embed/0ASQ13Y1Rk4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+Esta es la aplicación terminada que se ejecuta en las 3 plataformas: <iframe width="560" height="315" src="https://www.youtube.com/embed/0ASQ13Y1Rk4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
 > Looking for the previous version of this guide that covered Ionic 4 and Cordova? [See here.](/docs/developer-resources/guides/first-app-v4/intro)
 
