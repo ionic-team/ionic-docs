@@ -1,6 +1,6 @@
 ---
-nextText: 'Build Errors'
-nextUrl: '/docs/faq/build'
+nextText: 'Versioning'
+nextUrl: '/docs/reference/versioning'
 ---
 
 # Glossary
