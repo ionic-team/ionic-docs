@@ -1,8 +1,8 @@
 ---
-previousText: 'Glossary'
-previousUrl: '/docs/faq/glossary'
+previousText: 'Remote Debugging'
+previousUrl: '/docs/troubleshooting/debugging'
 nextText: 'Runtime Errors'
-nextUrl: '/docs/faq/runtime'
+nextUrl: '/docs/troubleshooting/runtime'
 disableHtmlPreviews: true
 contributors:
   - brandyscarney
