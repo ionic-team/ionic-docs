@@ -1,10 +1,13 @@
 ---
 previousText: 'Config'
 previousUrl: '/docs/angular/config'
-nextText: 'Performance'
-nextUrl: '/docs/angular/performance'
+nextText: 'Testing'
+nextUrl: '/docs/angular/testing'
 contributors:
   - liamdebeasi
+meta:
+  title: Platform | Ionic Platform to Customize Apps to Fit Any Device
+  description: Ionic Platform service can be used to get information about your current device. With this information you can completely customize your app to fit any device.
 ---
 
 
@@ -39,23 +42,24 @@ Depending on the platform the user is on, `is(platformName)` will return true or
 
 #### Platforms
 
-Below is a table listing all the possible `Platforms` values along with corresponding descriptions.
+Below is a table listing all the possible platform values along with corresponding descriptions.
 
-| Platform Name | Description                           |
-|---------------|---------------------------------------|
-| android       | a device running Android              |
-| capacitor     | a device running Capacitor            |
-| cordova       | a device running Cordova              |
-| desktop       | a desktop device                      |
-| electron      | a desktop device running Electron     |
-| hybrid        | a device running Capacitor or Cordova |
-| ios           | a device running iOS                  |
-| ipad          | an iPad device                        |
-| iphone        | an iPhone device                      |
-| mobile        | a mobile device                       |
-| phablet       | a phablet device                      |
-| pwa           | a PWA app                             |
-| tablet        | a tablet device                       |
+| Platform Name | Description                              |
+| ------------- | -------------------------------------    |
+| android       | a device running Android                 |
+| capacitor     | a device running Capacitor               |
+| cordova       | a device running Cordova                 |
+| desktop       | a desktop device                         |
+| electron      | a desktop device running Electron        |
+| hybrid        | a device running Capacitor or Cordova    |
+| ios           | a device running iOS                     |
+| ipad          | an iPad device                           |
+| iphone        | an iPhone device                         |
+| mobile        | a mobile device                          |
+| mobileweb     | a web browser running in a mobile device |
+| phablet       | a phablet device                         |
+| pwa           | a PWA app                                |
+| tablet        | a tablet device                          |
 
 ### `platforms() => string[]`
 
