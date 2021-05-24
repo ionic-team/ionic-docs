@@ -1,8 +1,8 @@
 ---
-previousText: 'Packages & CDN'
-previousUrl: '/docs/installation/cdn'
-nextText: 'iOS Setup'
-nextUrl: '/docs/installation/ios'
+previousText: 'Overview'
+previousUrl: '/docs'
+nextText: 'CLI Installation'
+nextUrl: '/docs/intro/cli'
 contributors:
   - rtpHarry
 ---
@@ -11,7 +11,7 @@ contributors:
 
 To get started with Ionic Framework, the only requirement is a [Node & npm](#node-npm) environment.
 
-Of course, a code editor is also required. [VS Code](https://code.visualstudio.com/) is recommended. VS Code is a free, batteries-included text editor made by Microsoft.
+Of course, a code editor is also required. [Visual Studio Code](https://code.visualstudio.com/) is recommended. Visual Studio Code is a free, batteries-included text editor made by Microsoft.
 
 ## Terminal
 
@@ -26,9 +26,9 @@ Git Bash (from <a href="https://git-scm.com" target="_blank">git-scm.com</a>) do
 
 ## Node & npm
 
-Almost all tooling for modern JavaScript projects is based in [Node.js](/docs/faq/glossary#node). The [download page](https://nodejs.org/en/download/) has prebuilt installation packages for all platforms. We recommend selecting the LTS version to ensure best compatibility.
+Almost all tooling for modern JavaScript projects is based in [Node.js](/docs/reference/glossary#node). The [download page](https://nodejs.org/en/download/) has prebuilt installation packages for all platforms. We recommend selecting the LTS version to ensure best compatibility.
 
-Node is bundled with [npm](/docs/faq/glossary#npm), the package manager for JavaScript.
+Node is bundled with [npm](/docs/reference/glossary#npm), the package manager for JavaScript.
 
 To verify the installation, open a new terminal window and run:
 
@@ -37,11 +37,11 @@ $ node --version
 $ npm --version
 ```
 
-> Permission errors are common on macOS when installing global packages with `npm`. If you get an `EACCES` error, see [Resolving Permission Errors](/docs/faq/tips#resolving-permission-errors).
+> Permission errors are common on macOS when installing global packages with `npm`. If you get an `EACCES` error, see [Resolving Permission Errors](/docs/developing/tips#resolving-permission-errors).
 
 ## Git
 
-Although not required, the version control system [Git](/docs/faq/glossary#git) is highly recommended.
+Although not required, the version control system [Git](/docs/reference/glossary#git) is highly recommended.
 
 Git is often accompanied by a Git Host, such as [GitHub](https://github.com/), in which case additional setup is required. Follow the tutorial from the Git Host's documentation to set up Git:
 
