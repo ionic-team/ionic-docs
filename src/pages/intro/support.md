@@ -1,22 +1,22 @@
 ---
-previousText: 'Versioning'
-previousUrl: '/docs/intro/versioning'
-nextText: 'Installing Ionic'
-nextUrl: '/docs/installation/cli'
+previousText: 'Release Notes'
+previousUrl: '/docs/reference/release-notes'
+nextText: 'Browser Support'
+nextUrl: '/docs/reference/browser-support'
 contributors:
   - dotNetkow
   - mhartington
   - bryplano
 ---
 
-# Ionic Framework Support Policy
+# Support Policy
 
 ## Community Maintenance
 
 The Ionic Framework has been 100% open source (MIT) since the very beginning, and always will be. Developers can ensure Ionic is the right choice for their cross-platform apps through Ionic’s community maintenance strategy. The Ionic team regularly ships new releases, bug fixes, and is very welcoming to community pull requests.
 
 ## Framework Maintenance and Support Status
-Given the reality of time and resource restraints as well as the desire to keep innovating in the frontend development space, over time it becomes necessary for the Ionic team to shift focus to newer versions of the Framework. However, Ionic will do everything it can to make the transition to newer versions as smooth as possible. The Ionic team recommends updating to the newest version of the Ionic Framework for the latest features, improvements and stability updates. For more details, consult [the Migration page](docs/building/migration).
+Given the reality of time and resource restraints as well as the desire to keep innovating in the frontend development space, over time it becomes necessary for the Ionic team to shift focus to newer versions of the Framework. However, Ionic will do everything it can to make the transition to newer versions as smooth as possible. The Ionic team recommends updating to the newest version of the Ionic Framework for the latest features, improvements and stability updates. For more details, consult [the Migration page](docs/reference/migration).
 
 The current status of each Ionic Framework version is:
 
@@ -33,7 +33,7 @@ The current status of each Ionic Framework version is:
 
 ## Compatibility Recommendations
 
-The Ionic team has compiled a set of recommendations for using the Ionic Framework in conjunction with other contextually-relevant software. This is not meant to be a comprehensive list, but covers many common compatibility questions.	The Ionic team strongly recommends reviewing your project dependencies once each quarter to keep track of new releases, features and bug fixes. 								
+The Ionic team has compiled a set of recommendations for using the Ionic Framework in conjunction with other contextually-relevant software. This is not meant to be a comprehensive list, but covers many common compatibility questions.	The Ionic team strongly recommends reviewing your project dependencies once each quarter to keep track of new releases, features and bug fixes.
 
 ### Core Dependencies
 
@@ -45,7 +45,7 @@ The Ionic team has compiled a set of recommendations for using the Ionic Framewo
 | V4 - React    | N/A     | 16.8.X        | 3.7.X      |
 | V3            | v5.2.11 | Not supported | 2.6.2      |
 
-* The Ionic team generally recommends the latest releases of third party packages and strives to support the latest releases within 2-4 weeks of general availability.								
+* The Ionic team generally recommends the latest releases of third party packages and strives to support the latest releases within 2-4 weeks of general availability.
 
 ### Native Bridges
 
