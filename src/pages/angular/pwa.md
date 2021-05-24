@@ -57,7 +57,7 @@ After `@angular/pwa` has been added, a new `ngsw-config.json` file will be creat
 }
 ```
 
-There are two sections in here, one for app specific resources (JS, CSS, HTML) and assets the app will load on demand. Depending on you app, these options can be customized. For a more detailed guide, read [the official guide from the Angular Team.](https://angular.io/guide/service-worker-config)
+There are two sections in here, one for app specific resources (JS, CSS, HTML) and assets the app will load on demand. Depending on your app, these options can be customized. For a more detailed guide, read [the official guide from the Angular Team.](https://angular.io/guide/service-worker-config)
 
 
 ## Deploying
@@ -73,6 +73,8 @@ Next, in a Terminal, install the Firebase CLI:
 ```shell
 $ npm install -g firebase-tools
 ```
+
+> Note: If it's the first time you use firebase-tools, login to your Google account with `firebase login` command.
 
 With the Firebase CLI installed, run `firebase init` within your Ionic project. The CLI prompts:
 
