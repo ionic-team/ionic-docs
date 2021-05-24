@@ -1,8 +1,8 @@
 ---
-previousText: 'What Are Progressive Web Apps'
-previousUrl: '/docs/intro/what-are-progressive-web-apps'
-nextText: 'Versioning'
-nextUrl: '/docs/intro/versioning'
+previousText: 'Support Policy'
+previousUrl: '/docs/reference/support'
+nextText: 'Migration'
+nextUrl: '/docs/reference/migration'
 ---
 
 # Browser Support
@@ -12,7 +12,7 @@ Ionic's earliest goal was to make it easy to develop mobile apps using web techn
 
 ## Mobile Browsers
 
-In pursuit of [adaptive styling](/docs/intro/concepts#adaptive-styling), Ionic fully supports and is well tested on the mobile platforms listed below:
+In pursuit of [adaptive styling](/docs/core-concepts/fundamentals#adaptive-styling), Ionic fully supports and is well tested on the mobile platforms listed below:
 
 | Framework | Android | iOS   |
 |:---------:|:-------:|:-----:|
@@ -24,14 +24,14 @@ In pursuit of [adaptive styling](/docs/intro/concepts#adaptive-styling), Ionic f
 
 ## Desktop Browsers
 
-Because Ionic is based on web technologies, it works just as well on desktop browsers as it does on mobile devices. For more information on desktop layouts, see [Cross Platform](/docs/building/cross-platform#desktop).
+Because Ionic is based on web technologies, it works just as well on desktop browsers as it does on mobile devices. For more information on desktop layouts, see [Cross Platform](/docs/core-concepts/cross-platform#desktop).
 
 
-| Browser     | Ionic v5 | Ionic V4 | 
+| Browser     | Ionic v5 | Ionic V4 |
 |:-----------:|:--------:|:--------:|
 | **Chrome**  | ✔        | ✔        |
 | **Safari**  | ✔        | ✔        |
-| **Edge**    | ✔        | ✔        |
+| **Edge**    | 79+      | ✔        |
 | **Firefox** | ✔        | ✔        |
 | **IE 11**   | **X**    | ✔        |
 
