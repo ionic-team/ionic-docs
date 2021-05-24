@@ -116,6 +116,29 @@ function checkToggle(shouldCheck) {
 <!-- Codepen https://codepen.io/ionic/pen/zYOpQLj -->
 <docs-codepen preview="false" user="ionic" slug="zYOpQLj" height="600px" default-tab="js,result"></docs-codepen>
 
+## Adjusting System UI Components
+
+When developing a dark theme, you may notice that certain system UI components are not adjusting to dark mode properly. To fix this you will need to specify the `color-scheme`. See the <a href="https://caniuse.com/#feat=mdn-html_elements_meta_name_color-scheme" target="_blank">browser compatibility for color-scheme</a> for details on cross browser support.
+
+While you may be mainly using Ionic components instead of only native components, `color-scheme` can also affect aspects of your application such as the scrollbar. In order to use `color-scheme` you will need to add the following HTML to the `head` of your application:
+
+```html
+<meta name="color-scheme" content="light dark" />
+```
+
+This allows the page to indicate which color scheme it is comfortable being rendered with. Alternatively, you can add the following CSS to do this on a per-element basis:
+
+```css
+color-scheme: light dark;
+```
+
+| Default scrollbar | Scrollbar with `color-scheme` |
+| ----------------- | ----------------------------- |
+| <figure><img alt="Application without color-scheme" src="/docs/assets/img/theming/color-scheme-light.png" /></figure> | <figure><img alt="Application with color-scheme" src="/docs/assets/img/theming/color-scheme-dark.png" /></figure> |
+
+For more information regarding `color-scheme` please see https://web.dev/color-scheme/.
+
+> `color-scheme` does not apply to the keyboard. For details on how dark mode works with the keyboard, see [Keyboard Documentation](/docs/developing/keyboard#dark-mode).
 
 ## Ionic Dark Theme
 
@@ -128,7 +151,6 @@ Ionic has a recommended theme for variables to use in order to get a dark mode b
 The following code can be copied and pasted into an app to get Ionic's dark theme. We add the `dark` class to the document body using JavaScript as mentioned in the [combining with JavaScript](#combining-with-javascript) section. The dark mode will not be enabled until the `dark` class is added to the document body.
 
 > For more information on the variables that are being changed, including other variables that can be added to further customize, see [Themes](/docs/theming/themes).
-
 
 ```css
 /*
@@ -233,10 +255,16 @@ body.dark {
   --ion-color-step-900: #e6e6e6;
   --ion-color-step-950: #f2f2f2;
 
-  --ion-toolbar-background: #0d0d0d;
+  --ion-item-background: #000000;
 
-  --ion-item-background: #1c1c1c;
-  --ion-item-background-activated: #313131;
+  --ion-card-background: #1c1c1d;
+}
+
+.ios body.dark ion-modal {
+  --ion-background-color: var(--ion-color-step-100);
+  --ion-toolbar-background: var(--ion-color-step-150);
+  --ion-toolbar-border-color: var(--ion-color-step-250);
+  --ion-item-background: var(--ion-color-step-150);
 }
 
 
@@ -274,6 +302,12 @@ body.dark {
   --ion-color-step-900: #e7e7e7;
   --ion-color-step-950: #f3f3f3;
 
-  --ion-item-background: #1A1B1E;
+  --ion-item-background: #1e1e1e;
+
+  --ion-toolbar-background: #1f1f1f;
+
+  --ion-tab-bar-background: #1f1f1f;
+
+  --ion-card-background: #1e1e1e;
 }
 ```
