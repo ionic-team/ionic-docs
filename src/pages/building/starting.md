@@ -1,6 +1,6 @@
 ---
-nextText: 'Scaffolding'
-nextUrl: '/docs/building/scaffolding'
+nextText: 'Previewing'
+nextUrl: '/docs/developing/previewing'
 contributors:
   - dwieeb
 ---
