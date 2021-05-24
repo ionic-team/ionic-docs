@@ -1,8 +1,8 @@
 ---
-previousText: 'Browser Support'
-previousUrl: '/docs/intro/browser-support'
+previousText: 'Glossary'
+previousUrl: '/docs/reference/glossary'
 nextText: 'Release Notes'
-nextUrl: '/docs/release-notes'
+nextUrl: '/docs/reference/release-notes'
 ---
 
 # Versioning
