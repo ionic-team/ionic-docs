@@ -7,17 +7,37 @@ nextUrl: '/docs/developer-resources/tools'
 
 # Community Posts
 
-### [The Complete Guide To Progressive Web Apps with Ionic 4](https://ionicthemes.com/tutorials/about/the-complete-guide-to-progressive-web-apps-with-ionic4)
+### [What's new in Ionic 5 - Migration and Free Starter](https://ionicthemes.com/tutorials/about/ionic5-tutorial-migration-and-starter)
 
-Learn what Progressive Web Apps are, why you should consider them for your next project, and how easy is to build a complete and production ready PWA with Ionic 4.
+Take advantage of the new benefits from Ionic 5. In this guide we describe the main changes and show you how to migrate your applications from Ionic 4 to Ionic 5. For this post we created an Ionic 5 CRUD Contacts app that you can download for free to learn how to start using Ionic 5.
 
-### [Mastering Web Components in Ionic 4](https://ionicthemes.com/tutorials/about/ionic-4-tutorial-mastering-web-components-in-ionic-4)
+### [Ionic Navigation and Angular Routing](https://ionicthemes.com/tutorials/about/ionic-navigation-and-routing-ultimate-guide)
 
-Understanding the new component architecture in Ionic 4, including web components, shadow DOM, CSS 4 variables and Stencil.
+Learn how to master Routing and Navigation in Ionic Angular Apps as well as some usability tricks you can add to your apps to improve the user experience!
 
-### [Forms and Validations in Ionic 4](https://ionicthemes.com/tutorials/about/forms-and-validation-in-ionic)
+### [Firebase Authentication Tutorial For Ionic Apps](https://ionicthemes.com/tutorials/about/firebase-authentication-in-ionic-framework-apps)
 
-Learn everything about Ionic forms and input validations in Ionic 4 apps.
+Learn how to add Firebase Authentication to your Ionic 5 App. This tutorial explains step by step how to configure both the Firebase and the Ionic Apps to enable authentication with social providers such as Google, Facebook and Twitter and also with Email and Password.
+
+### [Native Cross Platform Web Apps with Ionic Capacitor](https://ionicthemes.com/tutorials/about/native-cross-platform-web-apps-with-ionic-capacitor)
+
+Ionic Capacitor introduction guide for beginners: history, motivation, usage and how to migrate your existing Cordova apps to Capacitor.
+
+### [Ionic Skeleton Loading Screens](https://ionicthemes.com/tutorials/about/improved-ux-for-ionic-apps-with-skeleton-loading-screens)
+
+UI Skeletons, Ghost Elements, Shell Elements? They are all the same! Think of them as cool content placeholders that are shown where the content will eventually be once it becomes available. In this guide you will learn the importance of adopting the App Shell pattern in your ionic apps and discuss how to implement it using Ionic and Angular. Also, we explain some advanced CSS techniques to take the UX to the next level.
+
+### [The Complete Guide To Progressive Web Apps with Ionic](https://ionicthemes.com/tutorials/about/the-complete-guide-to-progressive-web-apps-with-ionic4)
+
+Learn what Progressive Web Apps are, why you should consider them for your next project, and how easy is to build a complete and production ready PWA with Ionic.
+
+### [Mastering Web Components in Ionic](https://ionicthemes.com/tutorials/about/ionic-4-tutorial-mastering-web-components-in-ionic-4)
+
+Understanding the new component architecture in Ionic, including web components, shadow DOM, CSS 4 variables and Stencil.
+
+### [Forms and Validations in Ionic 5](https://ionicthemes.com/tutorials/about/forms-and-validation-in-ionic)
+
+Learn everything about Ionic Forms and input validations in Ionic Angular apps.
 
 ### [Building a Ionic Firebase App step by step](https://ionicthemes.com/tutorials/about/building-a-ionic-firebase-app-step-by-step)
 
