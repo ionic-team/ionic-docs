@@ -24,15 +24,15 @@ Highlights include:
 * Deployed as a native iOS and Android mobile app using [Capacitor](https://capacitor.ionicframework.com), Ionic's official native app runtime.
 * Photo Gallery functionality powered by the Capacitor [Camera](https://capacitor.ionicframework.com/docs/apis/camera), [Filesystem](https://capacitor.ionicframework.com/docs/apis/filesystem), and [Storage](https://capacitor.ionicframework.com/docs/apis/storage) APIs.
 
-It’s easy to get started. Find the complete app code referenced in this guide [on GitHub](https://github.com/ionic-team/photo-gallery-capacitor-ng).
+Find the complete app code referenced in this guide [on GitHub](https://github.com/ionic-team/photo-gallery-capacitor-ng).
 
 ## Download Required Tools
 
 Download and install these right away to ensure an optimal Ionic development experience:
 * <strong>Node.js</strong> for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
 * <strong>A code editor</strong> for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
-* <strong>Command-line interface/terminal (CLI)</strong>: 
- * <strong>Windows</strong> users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode. 
+* <strong>Command-line interface/terminal (CLI)</strong>:
+ * <strong>Windows</strong> users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode.
  * <strong>Mac/Linux</strong> users, virtually any terminal will work.
 
 ## Install Ionic Tooling
@@ -46,7 +46,7 @@ $ npm install -g @ionic/cli native-run cordova-res
 
 > The `-g` option means _install globally_. When packages are installed globally, `EACCES` permission errors can occur.
 >
-> Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](/docs/faq/tips#resolving-permission-errors) for more information.
+> Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](/docs/developing/tips#resolving-permission-errors) for more information.
 
 ## Create an App
 Next, create an Ionic Angular app that uses the “Tabs” starter template and adds Capacitor for native functionality:
@@ -63,9 +63,15 @@ Next, change into the app folder:
 $ cd photo-gallery
 ```
 
+Next we'll need to install the necessary Capacitor plugins to make the app's native functionality work:
+
+```shell
+npm install @capacitor/camera @capacitor/storage @capacitor/filesystem
+```
+
 ### PWA Elements
 
-Some Capacitor plugins, including the Camera API, provide the web-based functionality and UI via the Ionic [PWA Elements library](https://github.com/ionic-team/ionic-pwa-elements). 
+Some Capacitor plugins, including the Camera API, provide the web-based functionality and UI via the Ionic [PWA Elements library](https://github.com/ionic-team/ionic-pwa-elements).
 
 It's a separate dependency, so install it next:
 
@@ -73,7 +79,7 @@ It's a separate dependency, so install it next:
 $ npm install @ionic/pwa-elements
 ```
 
-Next, import `@ionic/pwa-elements` by editing `src/main.ts`. 
+Next, import `@ionic/pwa-elements` by editing `src/main.ts`.
 
 ```typescript
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
