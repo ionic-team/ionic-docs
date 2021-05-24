@@ -1,8 +1,6 @@
 ---
-previousText: 'Scaffolding'
-previousUrl: '/docs/building/scaffolding'
-nextText: 'Cross Platform'
-nextUrl: '/docs/building/cross-platform'
+previousText: 'Browser Support'
+previousUrl: '/docs/reference/browser-support'
 contributors:
   - mhartington
   - kensodemann
@@ -34,6 +32,11 @@ For React projects, you can run:
 npm install @ionic/react@latest @ionic/react-router@latest ionicons@latest
 ```
 
+For Stencil / vanilla JS projects, you can run:
+```shell
+npm i @ionic/core@latest --save
+```
+
 If you would like a fresh project starter, a new project base can be created from the CLI and an existing app can be migrated over manually.
 
 
@@ -44,7 +47,7 @@ If you would like a fresh project starter, a new project base can be created fro
 
 We suggest the following general process when migrating an existing application from Ionic 3 to 4:
 
-1. Generate a new project using the `blank` starter (see [Starting an App](/docs/building/starting))
+1. Generate a new project using the `blank` starter (see [Starting an App](/docs/developing/starting))
 1. Copy any Angular services from `src/providers` to `src/app/services`
    - Services should include `{ providedIn: 'root' }` in the `@Injectable()` decorator. For details, please see Angular [provider docs](https://angular.io/guide/providers).
 1. Copy the app's other root-level items (pipes, components, etc) keeping in mind that the directory structure changes from `src/components` to `src/app/components`, etc.
@@ -290,7 +293,7 @@ One upside is that for the most part, the Ionic UI components you know and love 
 
 Here are some considerations to review before beginning the upgrade:
 - **App complexity**: Naturally, the larger and more complex the app is, the longer it will take to migrate.
-- **Framework support**: In 2019, Ionic will release full support for React. You can also use Ionic Framework components [without a framework](/docs/installation/cdn/). Since these are not production-ready yet, we recommend sticking with Angular or waiting until the other framework support is available.
+- **Framework support**: In 2019, Ionic will release full support for React. You can also use Ionic Framework components [without a framework](/docs/intro/cdn/). Since these are not production-ready yet, we recommend sticking with Angular or waiting until the other framework support is available.
 - **Budget and team makeup**: The length of a migration project will vary based on the size of your team, the complexity of the app, and the amount of time allotted to make the transition.
 
 ### Suggested Strategy
@@ -304,7 +307,7 @@ Once the team is comfortable that the Ionic 4.0 app has become stable and has fu
 Please reference official [Angular upgrade guide](https://angular.io/guide/upgrade) information.
 
 ### Ionic Changes
-Our Ionic 3.0 to Ionic 4.0 migration sections above may prove to be a useful reference. Generate a new Ionic 4.0 project using the blank starter (see [Starting an App](/docs/building/starting)). Spend time getting familiar with Ionic 4.0 components. Happy building!
+Our Ionic 3.0 to Ionic 4.0 migration sections above may prove to be a useful reference. Generate a new Ionic 4.0 project using the blank starter (see [Starting an App](/docs/developing/starting)). Spend time getting familiar with Ionic 4.0 components. Happy building!
 
 ### Need Assistance?
 If your team would like assistance with the migration, please [reach out to us](https://ionicframework.com/enterprise-engine)! Ionic offers Advisory Services, which includes Ionic 4.0 training, architecture reviews, and migration assistance.
