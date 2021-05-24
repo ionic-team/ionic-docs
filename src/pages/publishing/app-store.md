@@ -1,13 +1,13 @@
 ---
-previousText: 'Progressive Web App'
-previousUrl: 'docs/publishing/progressive-web-app'
+previousText: ''
+previousUrl: ''
 nextText: 'Android Play Store'
-nextUrl: '/docs/publishing/play-store'
+nextUrl: '/docs/deploying/play-store'
 contributors:
   - zaarheed
 ---
 
-# Publishing to app store
+# iOS App Store Deployment
 
 ## Requirements
 
