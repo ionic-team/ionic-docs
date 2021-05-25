@@ -1,8 +1,8 @@
 ---
-previousText: 'Adding Mobile'
-previousUrl: '/docs/react/your-first-app/5-adding-mobile'
-nextText: 'Rapid App Dev with Live Reload'
-nextUrl: '/docs/react/your-first-app/7-live-reload'
+previousText: "Adding Mobile"
+previousUrl: "/docs/react/your-first-app/5-adding-mobile"
+nextText: "Rapid App Dev with Live Reload"
+nextUrl: "/docs/react/your-first-app/7-live-reload"
 ---
 
 # Deploying to iOS and Android
@@ -56,26 +56,23 @@ In order for some native plugins to work, user permissions must be configured. I
 
 ![Xcode Custom iOS Target Properties](/docs/assets/img/guides/first-app-cap-ng/xcode-info-plist.png)
 
-
-
 Each setting in `Info.plist` has a low-level parameter name and a high-level name. By default, the property list editor shows the high-level names, but it's often useful to switch to showing the raw, low-level names. To do this, right-click anywhere in the property list editor and toggle "Raw Keys/Values."
 
-Locate the `NSCameraUsageDescription` Key (if should exist already if you followed along with this tutorial) and set the Value to something that describes why the app needs to use the camera, such as "To Take Photos." The Value field is displayed to the app user when the permission prompt opens.
+Add the `NSCameraUsageDescription` Key and set the Value to something that describes why the app needs to use the camera, such as "To Take Photos." The Value field is displayed to the app user when the permission prompt opens.
 
-Next, click on `App` in the Project Navigator on the left-hand side, then within the `Signing & Capabilities` section, select your Development Team. 
+Follow the same process to add the other two Keys required of the Camera plugin: `NSPhotoLibraryAddUsageDescription` and `NSPhotoLibraryUsageDescription`.
+
+Next, click on `App` in the Project Navigator on the left-hand side, then within the `Signing & Capabilities` section, select your Development Team.
 
 ![Xcode - Selecting Development Team](/docs/assets/img/guides/first-app-cap-ng/xcode-signing.png)
-
 
 With permissions in place and Development Team selected, we are ready to try out the app on a real device! Connect an iOS device to your Mac computer, select it (`App -> Matthew’s iPhone` for me) then click the "Build" button to build, install, and launch the app on your device:
 
 ![Xcode build button](/docs/assets/img/guides/first-app-cap-ng/xcode-build-button.png)
 
-
 Upon tapping the Camera button on the Photo Gallery tab, the permission prompt will display. Tap OK, then take a picture with the Camera. Afterward, the photo shows in the app!
 
 ![iOS Camera permissions](/docs/assets/img/guides/first-app-cap-ng/ios-permissions-photo.png)
-
 
 ## Android
 
@@ -91,7 +88,6 @@ Similar to iOS, we must enable the correct permissions to use the Camera. Config
 
 ![Android Manifest location](/docs/assets/img/guides/first-app-cap-ng/android-manifest.png)
 
-
 Scroll to the `Permissions` section and ensure these entries are included:
 
 ```xml
@@ -103,11 +99,9 @@ Save the file. With permissions in place, we are ready to try out the app on a r
 
 ![Launching app on Android](/docs/assets/img/guides/first-app-cap-ng/android-device.png)
 
-
 Once again, upon tapping the Camera button on the Photo Gallery tab, the permission prompt should be displayed. Tap OK, then take a picture with the Camera. Afterward, the photo should appear in the app.
 
 ![Android Camera permissions](/docs/assets/img/guides/first-app-cap-ng/android-permissions-photo.png)
-
 
 Our Photo Gallery app has just been deployed to Android and iOS devices. 🎉
 
