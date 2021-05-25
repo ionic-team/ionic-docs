@@ -1,4 +1,7 @@
 ---
+meta:
+  title: "React Apps | Build Your First Ionic Framework React Application"
+  description: Build your first Ionic React App. With one codebase, you can build an Ionic Framework application for any platform using just HTML, CSS, and JavaScript.
 previousText: 'Quickstart'
 previousUrl: '/docs/react/quickstart'
 nextText: 'Taking Photos'

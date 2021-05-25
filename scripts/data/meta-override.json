@@ -52,6 +52,14 @@
       "title": "Loading | Application Loading Indicator Overlay | ion-loading",
       "description": "The ion-loading overlay indicates activity while blocking user interaction. The loading indicator appears on top of the app's content, and can be dismissed."
     },
+    "ion-range": {
+      "title": "Range Slider | ion-range: Slider Knob Controls with Labels",
+      "description": "ion-range lets you select from a range of values by moving the slider. It accepts dual knobs but one controls the value and labels can be placed on either side."
+    },
+    "ion-progress-bar": {
+      "title": "Progress Bar | Horizontal App Progress Bar for Loading Indicator",
+      "description": "ion-progress-bars are horizontal loading indicators that inform users about the status of ongoing app processes—such as submitting a form or saving updates."
+    },
     "ion-router-link": {
       "title": "Router Link | Navigating The ion-router-link Component",
       "description": "Use the ion-router-link component to navigate to a specified link. The router link can accept an href for location and a direction for the transition animation."
@@ -79,6 +87,10 @@
     "ion-toolbar": {
       "title": "Toolbar | Customize App Menu Toolbar Buttons and Icons",
       "description": "Ion-toolbar component lets you customize toolbar buttons on your app menu. Add fixed toolbars above or below content or use full screen to scroll with content."
+    },
+    "ion-virtual-scroll": {
+      "title": "ion-virtual-scroll | Angular Virtual Scroll List for Ionic Apps",
+      "description": "ion-virtual-scroll, supported in Angular, displays a virtual, infinite list. Records are passed to the virtual scroll containing the data to create templates."
     }
   },
   "cli": {
@@ -140,9 +152,21 @@
       "title": "Geolocation | W3C Geolocator Application API Plugin",
       "description": "This application plugin is based on W3C Geolocation API Specification and only executes on devices that don't already provide an implementation for location."
     },
+    "ionic-webview": {
+      "title": "WebView | Ionic Framework Cordova WebView App Plugin",
+      "description": "Cordova WebView plugin allows access to web view utilities on Ionic Framework apps. View the Ionic Web View repository for info on iOS and Android system use."
+    },
+    "local-notifications": {
+      "title": "Local Notifications: iOS & Android | Cordova Local Notifications",
+      "description": "The Cordova Local Notifications Plugin allows you to display local notifications from your Ionic Framework application on iOS, Android, or Windows devices."
+    },
     "push": {
       "title": "PhoneGap Plugin for Push Notifications With Cordova and Ionic",
       "description": "Register and receive push notifications on your Ionic apps using the Cordova plugin: phonegap-plugin-push. Read for how to install on supported platforms."
+    },
+    "social-sharing": {
+      "title": "Social Sharing | Cordova Social Sharing Plugin for Ionic Apps",
+      "description": "Social sharing for Ionic apps allows you to share text, files, images, and links via social networks, SMS, and email—read to learn about this Cordova Plugin."
     },
     "splash-screen": {
       "title": "Splash Screen | Cordova Splash Screen Plugin for Android & iOS",
