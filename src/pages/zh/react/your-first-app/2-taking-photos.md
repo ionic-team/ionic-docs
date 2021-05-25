@@ -1,8 +1,8 @@
 ---
-previousText: '你的第一个 App'
-previousUrl: '/docs/react/your-first-app'
-nextText: '保存照片到文件系统中'
-nextUrl: '/docs/react/your-first-app/3-saving-photos'
+previousText: "你的第一个 App"
+previousUrl: "/docs/react/your-first-app"
+nextText: "保存照片到文件系统中"
+nextUrl: "/docs/react/your-first-app/3-saving-photos"
 ---
 
 # 使用相机拍照
@@ -18,29 +18,34 @@ nextUrl: '/docs/react/your-first-app/3-saving-photos'
 自定义钩子只是用其它React的一个函数。 这就是我们要做的事情！ 我们将首先从React核心库，Ionic React Hooks, Capacitor 导入各种钩子和工具。
 
 ```typescript
-import { useState, useEffect } from 'react';
-import { isPlatform } from '@ionic/react';
+import { useState, useEffect } from "react";
+import { isPlatform } from "@ionic/react";
 
-import { Camera, CameraResultType, CameraSource, Photo, } from '@capacitor/camera';
-import { Filesystem, Directory } from '@capacitor/filesystem';
-import { Storage } from '@capacitor/storage';
-import { Capacitor } from '@capacitor/core';
+import {
+  Camera,
+  CameraResultType,
+  CameraSource,
+  Photo,
+} from "@capacitor/camera";
+import { Filesystem, Directory } from "@capacitor/filesystem";
+import { Storage } from "@capacitor/storage";
+import { Capacitor } from "@capacitor/core";
 ```
+
 接下来，创建一个函数，命名为usePhotoGallery：
 
 ```typescript
 export function usePhotoGallery() {
-
   const takePhoto = async () => {
     const cameraPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
-      quality: 100
+      quality: 100,
     });
   };
 
   return {
-    takePhoto
+    takePhoto,
   };
 }
 ```
@@ -52,7 +57,7 @@ export function usePhotoGallery() {
 我们需要采取的最后一步是使用Tab2页面中的新钩子。 返回Tab2.tsx，重新导入钩子：
 
 ```typescript
-import { usePhotoGallery } from '../hooks/usePhotoGallery';
+import { usePhotoGallery } from "../hooks/usePhotoGallery";
 ```
 
 并且在函数组件返回语句之前, 通过使用钩子访问 ` takePhoto ` 方法:
@@ -83,7 +88,7 @@ export interface UserPhoto {
 }
 ```
 
-Back at the top of the function (right after the call to `useCamera`, we will define a state variable to store the array of each photo captured with the Camera.
+Back at the top of the function (right after the call to `usePhotoGallery`, we will define a state variable to store the array of each photo captured with the Camera.
 
 ```typescript
 const [photos, setPhotos] = useState<UserPhoto[]>([]);
@@ -92,12 +97,15 @@ const [photos, setPhotos] = useState<UserPhoto[]>([]);
 When the camera is done taking a picture, the resulting CameraPhoto returned from Capacitor will be stored in the `photo` variable. We want to create a new photo object and add it to the photos state array. We make sure we don't accidently mutate the current photos array by making a new array, and then call `setPhotos` to store the array into state. Update the `takePhoto` method and add this code after the getPhoto call:
 
 ```typescript
-const fileName = new Date().getTime() + '.jpeg';
-const newPhotos = [{
-  filepath: fileName,
-  webviewPath: cameraPhoto.webPath
-}, ...photos];
-setPhotos(newPhotos)
+const fileName = new Date().getTime() + ".jpeg";
+const newPhotos = [
+  {
+    filepath: fileName,
+    webviewPath: cameraPhoto.webPath,
+  },
+  ...photos,
+];
+setPhotos(newPhotos);
 ```
 
 Next, let's expose the photos array from our hook. Update the return statement to include the photos:
@@ -105,7 +113,7 @@ Next, let's expose the photos array from our hook. Update the return statement t
 ```typescript
 return {
   photos,
-  takePhoto
+  takePhoto,
 };
 ```
 
