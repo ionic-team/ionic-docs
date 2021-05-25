@@ -1,8 +1,8 @@
 ---
-previousText: 'Adding Mobile'
-previousUrl: '/docs/angular/your-first-app/5-adding-mobile'
-nextText: 'Rapid App Dev with Live Reload'
-nextUrl: '/docs/angular/your-first-app/7-live-reload'
+previousText: "Adding Mobile"
+previousUrl: "/docs/angular/your-first-app/5-adding-mobile"
+nextText: "Rapid App Dev with Live Reload"
+nextUrl: "/docs/angular/your-first-app/7-live-reload"
 ---
 
 # Deploying to iOS and Android
@@ -56,12 +56,13 @@ In order for some native plugins to work, user permissions must be configured. I
 
 ![Xcode Custom iOS Target Properties](/docs/assets/img/guides/first-app-cap-ng/xcode-info-plist.png)
 
-
 Each setting in `Info.plist` has a low-level parameter name and a high-level name. By default, the property list editor shows the high-level names, but it's often useful to switch to showing the raw, low-level names. To do this, right-click anywhere in the property list editor and toggle "Raw Keys/Values."
 
-Locate the `NSCameraUsageDescription` Key (it should exist already if you followed along with this tutorial) and set the Value to something that describes why the app needs to use the camera, such as "To Take Photos." The Value field is displayed to the app user when the permission prompt opens.
+Add the `NSCameraUsageDescription` Key and set the Value to something that describes why the app needs to use the camera, such as "To Take Photos." The Value field is displayed to the app user when the permission prompt opens.
 
-Next, click on `App` in the Project Navigator on the left-hand side, then within the `Signing & Capabilities` section, select your Development Team. 
+Follow the same process to add the other two Keys required of the Camera plugin: `NSPhotoLibraryAddUsageDescription` and `NSPhotoLibraryUsageDescription`.
+
+Next, click on `App` in the Project Navigator on the left-hand side, then within the `Signing & Capabilities` section, select your Development Team.
 
 ![Xcode - Selecting Development Team](/docs/assets/img/guides/first-app-cap-ng/xcode-signing.png)
 
