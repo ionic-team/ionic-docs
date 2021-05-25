@@ -7,13 +7,13 @@ nextUrl: '/docs/vue/lifecycle'
 
 # Rapid App Development with Live Reload
 
-So far, we’ve seen how easy it is to develop a cross-platform app that works everywhere. The development experience is pretty quick, but what if I told you there was a way to go faster?  
+So far, we’ve seen how easy it is to develop a cross-platform app that works everywhere. The development experience is pretty quick, but what if I told you there was a way to go faster?
 
-We can use the Ionic CLI’s [Live Reload functionality](https://ionicframework.com/docs/cli/livereload) to boost our productivity when building Ionic apps. When active, Live Reload will reload the browser and/or WebView when changes in the app are detected. 
+We can use the Ionic CLI’s [Live Reload functionality](https://ionicframework.com/docs/cli/livereload) to boost our productivity when building Ionic apps. When active, Live Reload will reload the browser and/or WebView when changes in the app are detected.
 
 ## Live Reload
 
-Remember `ionic serve`? That was Live Reload working in the browser, allowing us to iterate quickly. 
+Remember `ionic serve`? That was Live Reload working in the browser, allowing us to iterate quickly.
 
 We can also use it when developing on iOS and Android devices. This is particularly useful when writing code that interacts with native plugins. Since we need to run native plugin code on a device in order to verify that it works, having a way to quickly write code, build and deploy it, then test it is crucial to keeping up our development speed.
 
@@ -32,8 +32,8 @@ The Live Reload server will start up, and the native IDE of choice will open if 
 With Live Reload running and the app is open on your device, let’s implement photo deletion functionality. Open `Tab2.vue` then import the `actionSheetController`. We'll display an [IonActionSheet](https://ionicframework.com/docs/api/action-sheet) with the option to delete a photo:
 
 ```typescript
-import { actionSheetController, IonPage, IonHeader, IonFab, IonFabButton, 
-         IonIcon, IonToolbar, IonTitle, IonContent, IonImg, IonGrid, 
+import { actionSheetController, IonPage, IonHeader, IonFab, IonFabButton,
+         IonIcon, IonToolbar, IonTitle, IonContent, IonImg, IonGrid,
          IonRow, IonCol } from '@ionic/vue';
 // other imports
 ```
@@ -99,7 +99,7 @@ const deletePhoto = async (photo: Photo) => {
   const filename = photo.filepath.substr(photo.filepath.lastIndexOf('/') + 1);
   await Filesystem.deleteFile({
     path: filename,
-    directory: FilesystemDirectory.Data
+    directory: Directory.Data
   });
 };
 ```

@@ -22,7 +22,7 @@ import { isPlatform } from '@ionic/vue';
 In the `savePicture` function, check which platform the app is running on. If it’s "hybrid" (Capacitor, the native runtime), then read the photo file into base64 format using the `readFile` method. Also, return the complete file path to the photo using the Filesystem API. When setting the `webviewPath`, use the special `Capacitor.convertFileSrc` method ([details here](https://capacitorjs.com/docs/basics/utilities#convertfilesrc)). Otherwise, use the same logic as before when running the app on the web.
 
 ```typescript
-const savePicture = async (photo: CameraPhoto, fileName: string): Promise<Photo> => {
+const savePicture = async (photo: CameraPhoto, fileName: string): Promise<UserPhoto> => {
   let base64Data: string;
   // "hybrid" will detect mobile - iOS or Android
   if (isPlatform('hybrid')) {
@@ -39,7 +39,7 @@ const savePicture = async (photo: CameraPhoto, fileName: string): Promise<Photo>
   const savedFile = await Filesystem.writeFile({
     path: fileName,
     data: base64Data,
-    directory: FilesystemDirectory.Data
+    directory: Directory.Data
   });
 
   if (isPlatform('hybrid')) {
@@ -51,7 +51,7 @@ const savePicture = async (photo: CameraPhoto, fileName: string): Promise<Photo>
     };
   }
   else {
-    // Use webPath to display the new image instead of base64 since it's 
+    // Use webPath to display the new image instead of base64 since it's
     // already loaded into memory
     return {
       filepath: fileName,
@@ -73,13 +73,13 @@ const loadSaved = async () => {
     for (const photo of photosInStorage) {
       const file = await Filesystem.readFile({
         path: photo.filepath,
-        directory: FilesystemDirectory.Data
+        directory: Directory.Data
       });
       // Web platform only: Load the photo as base64 data
       photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
     }
   }
-  
+
   photos.value = photosInStorage;
 }
 ```

@@ -11,17 +11,14 @@ We’re now able to take multiple photos and display them in a photo gallery on 
 
 ## Filesystem API
 
-Fortunately, saving them to the filesystem only takes a few steps. Begin by opening the `usePhotoGallery` function (`src/composables/usePhotoGallery.ts`), and extract the `Filesystem` API:
+Fortunately, saving them to the filesystem only takes a few steps. Begin by opening the `usePhotoGallery` function (`src/composables/usePhotoGallery.ts`), and get access to the `writeFile` method from the `FileSystem` class:
 
-```typescript
-const { Camera, Filesystem } = Plugins;
-```
 
 Next, create a couple of new functions. The Filesystem API requires that files written to disk are passed in as base64 data, so this helper function will be used in a moment to assist with that:
 
 ```typescript
 const convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
-  const reader = new FileReader;
+  const reader = new FileReader();
   reader.onerror = reject;
   reader.onload = () => {
       resolve(reader.result);
@@ -46,10 +43,10 @@ const savePicture = async (photo: CameraPhoto, fileName: string): Promise<Photo>
   const savedFile = await Filesystem.writeFile({
     path: fileName,
     data: base64Data,
-    directory: FilesystemDirectory.Data
+    directory: Directory.Data
   });
-  
-  // Use webPath to display the new image instead of base64 since it's 
+
+  // Use webPath to display the new image instead of base64 since it's
   // already loaded into memory
   return {
     filepath: fileName,
@@ -70,7 +67,7 @@ const takePhoto = async () => {
 
   const fileName = new Date().getTime() + '.jpeg';
   const savedFileImage = await savePicture(cameraPhoto, fileName);
-  
+
   photos.value = [savedFileImage, ...photos.value];
 };
 ```

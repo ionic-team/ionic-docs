@@ -7,13 +7,13 @@ nextUrl: '/docs/angular/lifecycle'
 
 # Rapid App Development with Live Reload
 
-So far, we’ve seen how easy it is to develop a cross-platform app that works everywhere. The development experience is pretty quick, but what if I told you there was a way to go faster?  
+So far, we’ve seen how easy it is to develop a cross-platform app that works everywhere. The development experience is pretty quick, but what if I told you there was a way to go faster?
 
-We can use the Ionic CLI’s [Live Reload functionality](https://ionicframework.com/docs/cli/livereload) to boost our productivity when building Ionic apps. When active, Live Reload will reload the browser and/or WebView when changes in the app are detected. 
+We can use the Ionic CLI’s [Live Reload functionality](https://ionicframework.com/docs/cli/livereload) to boost our productivity when building Ionic apps. When active, Live Reload will reload the browser and/or WebView when changes in the app are detected.
 
 ## Live Reload
 
-Remember `ionic serve`? That was Live Reload working in the browser, allowing us to iterate quickly. 
+Remember `ionic serve`? That was Live Reload working in the browser, allowing us to iterate quickly.
 
 We can also use it when developing on iOS and Android devices. This is particularly useful when writing code that interacts with native plugins - we must run it on a device to verify that it works. Therefore, being able to quickly write, build, test, and deploy code is crucial to keeping up our development speed.
 
@@ -32,9 +32,9 @@ The Live Reload server will start up, and the native IDE of choice will open if 
 With Live Reload running and the app open on your device, let’s implement photo deletion functionality. Open `tab2.page.html` and add a new click handler to each `<ion-img>` element. When the app user taps on a photo in our gallery, we’ll display an [Action Sheet](https://ionicframework.com/docs/api/action-sheet) dialog with the option to either delete the selected photo or cancel (close) the dialog.
 
 ```html
-<ion-col size="6" 
+<ion-col size="6"
     *ngFor="let photo of photoService.photos; index as position">
-  <ion-img [src]="photo.webviewPath" 
+  <ion-img [src]="photo.webviewPath"
            (click)="showActionSheet(photo, position)"></ion-img>
 </ion-col>
 ```
@@ -44,7 +44,7 @@ Over in `tab2.page.ts`, import Action Sheet and add it to the constructor:
 ```typescript
 import { ActionSheetController } from '@ionic/angular';
 
-constructor(public photoService: PhotoService, 
+constructor(public photoService: PhotoService,
             public actionSheetController: ActionSheetController) {}
 ```
 
@@ -101,7 +101,7 @@ public async deletePicture(photo: Photo, position: number) {
 
   await Filesystem.deleteFile({
     path: filename,
-    directory: FilesystemDirectory.Data
+    directory: Directory.Data
   });
 }
 ```

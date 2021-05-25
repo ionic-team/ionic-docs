@@ -27,7 +27,7 @@ public async addNewToGallery() {
     source: CameraSource.Camera, // automatically take a new photo with the camera
     quality: 100 // highest quality (0 to 100)
   });
-  
+
   // Save the picture and add it to photo collection
   const savedImageFile = await this.savePicture(capturedPhoto);
   this.photos.unshift(savedImageFile);
@@ -46,7 +46,7 @@ private async savePicture(cameraPhoto: CameraPhoto) {
   const savedFile = await Filesystem.writeFile({
     path: fileName,
     data: base64Data,
-    directory: FilesystemDirectory.Data
+    directory: Directory.Data
   });
 
   // Use webPath to display the new image instead of base64 since it's
@@ -66,7 +66,7 @@ private async readAsBase64(cameraPhoto: CameraPhoto) {
   const response = await fetch(cameraPhoto.webPath!);
   const blob = await response.blob();
 
-  return await this.convertBlobToBase64(blob) as string;  
+  return await this.convertBlobToBase64(blob) as string;
 }
 
 convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
