@@ -1,8 +1,8 @@
 ---
-previousText: 'Agregando Móvil'
-previousUrl: '/docs/angular/your-first-app/5-adding-mobile'
-nextText: 'Desarrollo rápido de Apps con Live Reload'
-nextUrl: '/docs/angular/your-first-app/7-live-reload'
+previousText: "Agregando Móvil"
+previousUrl: "/docs/angular/your-first-app/5-adding-mobile"
+nextText: "Desarrollo rápido de Apps con Live Reload"
+nextUrl: "/docs/angular/your-first-app/7-live-reload"
 ---
 
 # Desplegando a iOS y Android
@@ -62,52 +62,53 @@ Para que algunos plugins nativos funcionen, los permisos de usuario deben ser co
 
 ![Xcode Custom iOS Target Properties](/docs/assets/img/guides/first-app-cap-ng/xcode-info-plist.png)
 
-
 Cada ajuste en `Info.plist` contiene un nombre de parámetro de nivel bajo y un nombre de alto nivel. Por defecto, el editor de la lista de propiedades muestra los nombres de alto nivel, pero a menudo es útil cambiar a mostrar los nombres crudos y de bajo nivel. Para hacer esto, haz clic con el botón derecho del ratón en cualquier lugar del editor de la lista de propiedades y conmuta "Raw Keys/Values".
 
-Localice la llave `NSCameraUsageDescription` (si ha seguido el tutorial debería existir) y establezca el valor a un texto que describa porque la aplicación necesita usar la cámara, como por ejemplo "Tomar fotografías". El valor de este campo será mostrado al usuario cuándo la solicitud de permisos aparezca.
+Add the `NSCameraUsageDescription` Key and set the Value to something that describes why the app needs to use the camera, such as "To Take Photos." The Value field is displayed to the app user when the permission prompt opens.
 
-A continuación, haga clic en `App` en el navegador de proyectos al lado izquierdo, luego, dentro de la sección `Signing & Capabilities`, seleccione su Equipo de Desarrollo.
+Follow the same process to add the other two Keys required of the Camera plugin: `NSPhotoLibraryAddUsageDescription` and `NSPhotoLibraryUsageDescription`.
+
+Next, click on `App` in the Project Navigator on the left-hand side, then within the `Signing & Capabilities` section, select your Development Team.
 
 ![Xcode - Selecting Development Team](/docs/assets/img/guides/first-app-cap-ng/xcode-signing.png)
 
-¡Ahora que todos los permisos están en orden, es hora de probar la aplicación en un dispositivo real! Conecta un dispositivo iOS a tu Mac, selecciónalo (`App -> iPhone de Carlos`) luego haz clic en el botón "Compilar" para compilar, instalar y ejecutar la aplicación en tu dispositivo:
+With permissions in place and Development Team selected, we are ready to try out the app on a real device! Connect an iOS device to your Mac computer, select it (`App -> Matthew’s iPhone` for me) then click the "Build" button to build, install, and launch the app on your device:
 
 ![Xcode build button](/docs/assets/img/guides/first-app-cap-ng/xcode-build-button.png)
 
-De nuevo, al hacer click en el botón de Cámara en la pestaña de Galería de fotos, el diálogo de solicitud de permisos debería mostrarse. Pulsa Aceptar y haz una foto con la cámara. Después, la foto aparecerá en la aplicación!
+Upon tapping the Camera button on the Photo Gallery tab, the permission prompt will display. Tap OK, then take a picture with the Camera. Afterward, the photo shows in the app!
 
 ![iOS Camera permissions](/docs/assets/img/guides/first-app-cap-ng/ios-permissions-photo.png)
 
 ## Despliegue en Android
 
-Las aplicaciones Android Capacitor están configuradas y gestionadas a través de Android Studio. Antes de ejecutar esta aplicación en un dispositivo iOS, hay un par de pasos para completar.
+Capacitor Android apps are configured and managed through Android Studio. Before running this app on an Android device, there's a couple of steps to complete.
 
-Primero, ejecuta el comando Capacitor `open`, para así abrir el proyecto Android nativo en Android Studio:
+First, run the Capacitor `open` command, which opens the native Android project in Android Studio:
 
 ```shell
 $ ionic cap open ios
 ```
 
-Al igual que en iOS, debemos conceder los permisos correctos para acceder a la cámara. Para ello, debemos modificar el archivo `AndroidManifest.xml`. Es probable que Android Studio abra este archivo automáticamente, pero en contrario, se podrá abrir manualmente en la ruta `android/app/src/main/`.
+Similar to iOS, we must enable the correct permissions to use the Camera. Configure these in the `AndroidManifest.xml` file. Android Studio will likely open this file automatically, but in case it doesn't, locate it under `android/app/src/main/`.
 
 ![Android Manifest location](/docs/assets/img/guides/first-app-cap-ng/android-manifest.png)
 
-Desplácese a la sección de `Permisos` y asegúrese de que las siguentes entradas están incluidas:
+Scroll to the `Permissions` section and ensure these entries are included:
 
 ```xml
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 ```
 
-Guarda el archivo. ¡Ahora que todos los permisos están en orden, es hora de probar la aplicación en un dispositivo real! Conecta un dispositivo Android al equipo. En la interfaz de Android Studio, haz click en el botón de "Ejecutar" (Run), selecciona el dispositivo conectado previamente y haz click en Aceptar para compilar y ejecutar la aplicación en tu dispositivo.
+Save the file. With permissions in place, we are ready to try out the app on a real device! Connect an Android device to your computer. Within Android Studio, click the "Run" button, select the attached Android device, then click OK to build, install, and launch the app on your device.
 
 ![Launching app on Android](/docs/assets/img/guides/first-app-cap-ng/android-device.png)
 
-De nuevo, al hacer click en el botón de Cámara en la pestaña de Galería de fotos, el diálogo de solicitud de permisos debería mostrarse. Pulsa Aceptar y haz una foto con la cámara. Después, la foto aparecerá en la aplicación.
+Once again, upon tapping the Camera button on the Photo Gallery tab, the permission prompt should be displayed. Tap OK, then take a picture with the Camera. Afterward, the photo should appear in the app.
 
 ![Android Camera permissions](/docs/assets/img/guides/first-app-cap-ng/android-permissions-photo.png)
 
-Nuestra aplicación Galería de Fotos ya está desplegada en dispositivos Android e iOS. 🎉
+Our Photo Gallery app has just been deployed to Android and iOS devices. 🎉
 
-En la última sección de este tutorial, usaremos la funcionalidad Live Reload de Ionic CLI para implementar rápidamente la eliminación de fotos - completando así nuestra función de Galería de Fotos.
+In the final portion of this tutorial, we’ll use the Ionic CLI’s Live Reload functionality to quickly implement photo deletion - thus completing our Photo Gallery feature.
