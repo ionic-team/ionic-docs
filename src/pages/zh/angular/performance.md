@@ -5,24 +5,56 @@ previousUrl: '/docs/angular/storage'
 
 # Angular 性能
 
-## 来自Ionic团队
+## *ngFor with Ionic Components
 
-[如何在Ionic Angular中使用懒加载](https://ionicframework.com/blog/how-to-lazy-load-in-ionic-angular/)
+When using `*ngFor` with Ionic components, we recommend using Angular's `trackBy` option. This allows Angular to manage change propagation in a much more efficient way and only update the content inside of the component rather than re-create the component altogether.
 
-[用骨架屏提升视觉效果](https://ionicframework.com/blog/improved-perceived-performance-with-skeleton-screens/)
+By using `trackBy` you can provide a stable identity for each loop element so Angular can track insertions and deletions within the iterator. Below is an example of how to use `trackBy`:
 
-## 来自Angular团队
+**home.page.html**
 
-[构建高性能和渐进式的Angular应用](https://web.dev/angular) - web.dev
+```html
+<ion-item *ngFor="let item of items; trackBy:trackItems">
+  <ion-label>{{ item.value }}</ion-label>
+</ion-item>
+```
 
-## 来自社区
+**home.component.ts**
 
-[Ionic 中的高性能动画](https://www.joshmorony.com/high-performance-animations-in-ionic/) - Josh Morony
+```typescript
+<br />items = [
+  { id: 0, value: 'Item 0' },
+  { id: 1, value: 'Item 1' },
+  ...
+]
 
-[Ionic的高性能列表筛查](https://www.joshmorony.com/high-performance-list-filtering-in-ionic-2/) - Josh Morony
+trackItems(index: number, itemObject: any) {
+  return itemObject.id;
+}
+```
 
-[在Ionic使用高效DOM提升性能](https://www.joshmorony.com/increasing-performance-with-efficient-dom-writes-in-ionic-2/) - Josh Morony
+In this example, we have an array of objects called `items`. Each object contains a `value` and an `id`. Using `trackBy`, we pass a `trackItems` function which returns the `id` of each object. This `id` is used to provide a stable identity for each loop element.
 
-[Ionic框架是很快的(但你的代码可能并非如此)](https://www.joshmorony.com/ionic-framework-is-fast-but-your-code-might-not-be/) - Josh Morony
+For more information on how Angular manages change propagation with `ngFor` see https://angular.io/api/common/NgForOf#change-propagation.
+
+## From the Ionic Team
+
+[How to Lazy Load in Ionic Angular](https://ionicframework.com/blog/how-to-lazy-load-in-ionic-angular/)
+
+[Improved Perceived Performance with Skeleton Screens](https://ionicframework.com/blog/improved-perceived-performance-with-skeleton-screens/)
+
+## From the Angular Team
+
+[Build performant and progressive Angular apps](https://web.dev/angular) - web.dev
+
+## From the Community
+
+[High Performance Animations in Ionic](https://www.joshmorony.com/high-performance-animations-in-ionic/) - Josh Morony
+
+[High Performance List Filtering in Ionic](https://www.joshmorony.com/high-performance-list-filtering-in-ionic-2/) - Josh Morony
+
+[Increasing Performance with Efficient DOM Writes in Ionic](https://www.joshmorony.com/increasing-performance-with-efficient-dom-writes-in-ionic-2/) - Josh Morony
+
+[Ionic Framework is Fast (But Your Code Might Not Be)](https://www.joshmorony.com/ionic-framework-is-fast-but-your-code-might-not-be/) - Josh Morony
 
 > 或许你有什么建议想要分享？ 可以点击*编辑此页面* 按钮。
