@@ -76,7 +76,8 @@ const items = {
     'menu-react-pwa': '/docs/react/pwa',
     'menu-react-overlays': '/docs/react/overlays',
     'menu-react-storage': '/docs/react/storage',
-    'menu-react-testing': '/docs/react/testing'
+    'menu-react-testing': '/docs/react/testing',
+    'menu-react-performance': '/docs/react/performance',
   },
   'menu-vue': {
     'menu-vue-overview': '/docs/vue/overview',
@@ -97,7 +98,8 @@ const items = {
     'menu-vue-pwa': '/docs/vue/pwa',
     'menu-vue-storage': '/docs/vue/storage',
     'menu-vue-testing': '/docs/vue/testing',
-    'menu-vue-troubleshooting': '/docs/vue/troubleshooting'
+    'menu-vue-troubleshooting': '/docs/vue/troubleshooting',
+    'menu-vue-performance': '/docs/vue/performance',
   },
   'menu-utilities': {
     'menu-utilities-animations': '/docs/utilities/animations',

@@ -5,6 +5,37 @@ previousUrl: '/docs/angular/storage'
 
 # Angular Performance
 
+## *ngFor with Ionic Components
+
+When using `*ngFor` with Ionic components, we recommend using Angular's `trackBy` option. This allows Angular to manage change propagation in a much more efficient way and only update the content inside of the component rather than re-create the component altogether.
+
+By using `trackBy` you can provide a stable identity for each loop element so Angular can track insertions and deletions within the iterator. Below is an example of how to use `trackBy`:
+
+**home.page.html**
+```html
+<ion-item *ngFor="let item of items; trackBy:trackItems">
+  <ion-label>{{ item.value }}</ion-label>
+</ion-item>
+```
+
+**home.component.ts**
+```typescript
+
+items = [
+  { id: 0, value: 'Item 0' },
+  { id: 1, value: 'Item 1' },
+  ...
+]
+
+trackItems(index: number, itemObject: any) {
+  return itemObject.id;
+}
+```
+
+In this example, we have an array of objects called `items`. Each object contains a `value` and an `id`. Using `trackBy`, we pass a `trackItems` function which returns the `id` of each object. This `id` is used to provide a stable identity for each loop element.
+
+For more information on how Angular manages change propagation with `ngFor` see https://angular.io/api/common/NgForOf#change-propagation.
+
 ## From the Ionic Team
 
 [How to Lazy Load in Ionic Angular](https://ionicframework.com/blog/how-to-lazy-load-in-ionic-angular/)
