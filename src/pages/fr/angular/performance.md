@@ -5,24 +5,56 @@ previousUrl: '/docs/angular/storage'
 
 # Performance d'Angular
 
-## De l'équipe Ionic
+## *ngFor with Ionic Components
 
-[Comment faire du chargement à la demande dans Ionic Angular](https://ionicframework.com/blog/how-to-lazy-load-in-ionic-angular/)
+When using `*ngFor` with Ionic components, we recommend using Angular's `trackBy` option. This allows Angular to manage change propagation in a much more efficient way and only update the content inside of the component rather than re-create the component altogether.
 
-[Amélioration des performances réalisées avec les squelettes ( file de fer ) d'écrans](https://ionicframework.com/blog/improved-perceived-performance-with-skeleton-screens/)
+By using `trackBy` you can provide a stable identity for each loop element so Angular can track insertions and deletions within the iterator. Below is an example of how to use `trackBy`:
 
-## De l'équipe d'Angular
+**home.page.html**
 
-[Construire des applications Angular performantes et progressives](https://web.dev/angular) - web.dev
+```html
+<ion-item *ngFor="let item of items; trackBy:trackItems">
+  <ion-label>{{ item.value }}</ion-label>
+</ion-item>
+```
 
-## De la communauté
+**home.component.ts**
 
-[Animations hautes performances dans Ionic](https://www.joshmorony.com/high-performance-animations-in-ionic/) - Josh Morony
+```typescript
+<br />items = [
+  { id: 0, value: 'Item 0' },
+  { id: 1, value: 'Item 1' },
+  ...
+]
 
-[Filtrage de liste haute performance dans Ionic](https://www.joshmorony.com/high-performance-list-filtering-in-ionic-2/) - Josh Morony
+trackItems(index: number, itemObject: any) {
+  return itemObject.id;
+}
+```
 
-[Augmentation des performances par des écritures DOM efficace dans Ionic](https://www.joshmorony.com/increasing-performance-with-efficient-dom-writes-in-ionic-2/) - Josh Morony
+In this example, we have an array of objects called `items`. Each object contains a `value` and an `id`. Using `trackBy`, we pass a `trackItems` function which returns the `id` of each object. This `id` is used to provide a stable identity for each loop element.
 
-[Le framework Ionic est rapide (Mais votre code ne l'est peut être pas)](https://www.joshmorony.com/ionic-framework-is-fast-but-your-code-might-not-be/) - Josh Morony
+For more information on how Angular manages change propagation with `ngFor` see https://angular.io/api/common/NgForOf#change-propagation.
+
+## From the Ionic Team
+
+[How to Lazy Load in Ionic Angular](https://ionicframework.com/blog/how-to-lazy-load-in-ionic-angular/)
+
+[Improved Perceived Performance with Skeleton Screens](https://ionicframework.com/blog/improved-perceived-performance-with-skeleton-screens/)
+
+## From the Angular Team
+
+[Build performant and progressive Angular apps](https://web.dev/angular) - web.dev
+
+## From the Community
+
+[High Performance Animations in Ionic](https://www.joshmorony.com/high-performance-animations-in-ionic/) - Josh Morony
+
+[High Performance List Filtering in Ionic](https://www.joshmorony.com/high-performance-list-filtering-in-ionic-2/) - Josh Morony
+
+[Increasing Performance with Efficient DOM Writes in Ionic](https://www.joshmorony.com/increasing-performance-with-efficient-dom-writes-in-ionic-2/) - Josh Morony
+
+[Ionic Framework is Fast (But Your Code Might Not Be)](https://www.joshmorony.com/ionic-framework-is-fast-but-your-code-might-not-be/) - Josh Morony
 
 > Avez-vous un guide que vous souhaiteriez partager ? Cliquez sur le bouton *Modifier cette page* ci-dessous.
