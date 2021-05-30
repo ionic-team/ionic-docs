@@ -5,11 +5,11 @@ previousUrl: '/docs/angular/storage'
 
 # Rendimiento angular
 
-## *ngFor with Ionic Components
+## * ngFor con componentes de ionic
 
-When using `*ngFor` with Ionic components, we recommend using Angular's `trackBy` option. This allows Angular to manage change propagation in a much more efficient way and only update the content inside of the component rather than re-create the component altogether.
+Al usar ` * ngFor ` con componentes Ionic, recomendamos usar la opción ` trackBy ` de Angular. Esto permite que Angular administre la propagación de cambios de una manera mucho más eficiente y solo actualice el contenido dentro del componente en lugar de volver a crear el componente por completo.
 
-By using `trackBy` you can provide a stable identity for each loop element so Angular can track insertions and deletions within the iterator. Below is an example of how to use `trackBy`:
+Al usar ` trackBy `, puede proporcionar una identidad estable para cada elemento de bucle para que Angular pueda rastrear inserciones y eliminaciones dentro del iterador. A continuación se muestra un ejemplo de cómo usar `trackBy`:
 
 **home.page.html**
 
