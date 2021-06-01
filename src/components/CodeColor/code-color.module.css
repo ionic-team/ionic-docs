@@ -1,9 +1,9 @@
-code-color {
+.codeColor {
   display: inline-block;
   vertical-align: bottom;
 }
 
-.code-color-block {
+.codeColorBlock {
   display: inline-block;
 
   width: 20px;
@@ -15,7 +15,7 @@ code-color {
   border-radius: 4px;
 }
 
-.code-color-block,
-.code-color-value {
+.codeColorBlock,
+.codeColorValue {
   vertical-align: middle;
 }
