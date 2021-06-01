@@ -22,7 +22,7 @@ Open the new `services/photo.service.ts` file, and let’s add the logic that wi
 ```typescript
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
-import { Storage } from @capacitor/storage;
+import { Storage } from '@capacitor/storage';
 ```
 
 Next, define a new class method, `addNewToGallery`, that will contain the core logic to take a device photo and save it to the filesystem. Let’s start by opening the device camera:
