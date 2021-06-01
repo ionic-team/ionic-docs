@@ -1,4 +1,5 @@
 import { Component, Element, Listen, State, h } from '@stencil/core';
+import CodeColor from '@site/src/components/CodeColor';
 
 import { Color } from '../color-gen/color';
 
@@ -31,11 +32,11 @@ export class ColorGenerator {
 
     this.cssText =
 `:root {
-  --ion-background-color: <code-color mode="md" value="${background}"></code-color>;
-  --ion-background-color-rgb: <code-color mode="md" value="${background}" display="${backgroundColor.toList()}"></code-color>;
+  --ion-background-color: <CodeColor mode="md" value="${background}"></CodeColor>;
+  --ion-background-color-rgb: <CodeColor mode="md" value="${background}" display="${backgroundColor.toList()}"></CodeColor>;
 
-  --ion-text-color: <code-color mode="md" value="${text}"></code-color>;
-  --ion-text-color-rgb: <code-color mode="md" value="${text}" display="${textColor.toList()}"></code-color>;
+  --ion-text-color: <CodeColor mode="md" value="${text}"></CodeColor>;
+  --ion-text-color-rgb: <CodeColor mode="md" value="${text}" display="${textColor.toList()}"></CodeColor>;
 
 ${steppedColors}
 }`;
@@ -60,30 +61,30 @@ ${steppedColors}
 
 const DEFAULT_CSS_TEXT = `
 :root {
-  --ion-background-color: <code-color mode="md" value="#ffffff"></code-color>;
-  --ion-background-color-rgb: <code-color mode="md" value="#ffffff" display="255,255,255"></code-color>;
+  --ion-background-color: <CodeColor mode="md" value="#ffffff"></CodeColor>;
+  --ion-background-color-rgb: <CodeColor mode="md" value="#ffffff" display="255,255,255"></CodeColor>;
 
-  --ion-text-color: <code-color mode="md" value="#000000"></code-color>;
-  --ion-text-color-rgb: <code-color mode="md" value="#000000" display="0,0,0"></code-color>;
+  --ion-text-color: <CodeColor mode="md" value="#000000"></CodeColor>;
+  --ion-text-color-rgb: <CodeColor mode="md" value="#000000" display="0,0,0"></CodeColor>;
 
-  --ion-color-step-50: <code-color mode="md" value="#f2f2f2"></code-color>;
-  --ion-color-step-100: <code-color mode="md" value="#e6e6e6"></code-color>;
-  --ion-color-step-150: <code-color mode="md" value="#d9d9d9"></code-color>;
-  --ion-color-step-200: <code-color mode="md" value="#cccccc"></code-color>;
-  --ion-color-step-250: <code-color mode="md" value="#bfbfbf"></code-color>;
-  --ion-color-step-300: <code-color mode="md" value="#b3b3b3"></code-color>;
-  --ion-color-step-350: <code-color mode="md" value="#a6a6a6"></code-color>;
-  --ion-color-step-400: <code-color mode="md" value="#999999"></code-color>;
-  --ion-color-step-450: <code-color mode="md" value="#8c8c8c"></code-color>;
-  --ion-color-step-500: <code-color mode="md" value="#808080"></code-color>;
-  --ion-color-step-550: <code-color mode="md" value="#737373"></code-color>;
-  --ion-color-step-600: <code-color mode="md" value="#666666"></code-color>;
-  --ion-color-step-650: <code-color mode="md" value="#595959"></code-color>;
-  --ion-color-step-700: <code-color mode="md" value="#4d4d4d"></code-color>;
-  --ion-color-step-750: <code-color mode="md" value="#404040"></code-color>;
-  --ion-color-step-800: <code-color mode="md" value="#333333"></code-color>;
-  --ion-color-step-850: <code-color mode="md" value="#262626"></code-color>;
-  --ion-color-step-900: <code-color mode="md" value="#191919"></code-color>;
-  --ion-color-step-950: <code-color mode="md" value="#0d0d0d"></code-color>;
+  --ion-color-step-50: <CodeColor mode="md" value="#f2f2f2"></CodeColor>;
+  --ion-color-step-100: <CodeColor mode="md" value="#e6e6e6"></CodeColor>;
+  --ion-color-step-150: <CodeColor mode="md" value="#d9d9d9"></CodeColor>;
+  --ion-color-step-200: <CodeColor mode="md" value="#cccccc"></CodeColor>;
+  --ion-color-step-250: <CodeColor mode="md" value="#bfbfbf"></CodeColor>;
+  --ion-color-step-300: <CodeColor mode="md" value="#b3b3b3"></CodeColor>;
+  --ion-color-step-350: <CodeColor mode="md" value="#a6a6a6"></CodeColor>;
+  --ion-color-step-400: <CodeColor mode="md" value="#999999"></CodeColor>;
+  --ion-color-step-450: <CodeColor mode="md" value="#8c8c8c"></CodeColor>;
+  --ion-color-step-500: <CodeColor mode="md" value="#808080"></CodeColor>;
+  --ion-color-step-550: <CodeColor mode="md" value="#737373"></CodeColor>;
+  --ion-color-step-600: <CodeColor mode="md" value="#666666"></CodeColor>;
+  --ion-color-step-650: <CodeColor mode="md" value="#595959"></CodeColor>;
+  --ion-color-step-700: <CodeColor mode="md" value="#4d4d4d"></CodeColor>;
+  --ion-color-step-750: <CodeColor mode="md" value="#404040"></CodeColor>;
+  --ion-color-step-800: <CodeColor mode="md" value="#333333"></CodeColor>;
+  --ion-color-step-850: <CodeColor mode="md" value="#262626"></CodeColor>;
+  --ion-color-step-900: <CodeColor mode="md" value="#191919"></CodeColor>;
+  --ion-color-step-950: <CodeColor mode="md" value="#0d0d0d"></CodeColor>;
 }
 `.trim();

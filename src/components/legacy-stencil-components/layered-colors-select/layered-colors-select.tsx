@@ -1,4 +1,5 @@
 import { Component, Element, State, h } from '@stencil/core';
+import CodeColor from '@site/src/components/CodeColor';
 
 @Component({
   tag: 'layered-colors-select',
@@ -75,7 +76,7 @@ export class ColorBlock {
             <code>{variation.property}</code>
           </td>
           <td class="color-value">
-            <code-color mode="md" display={variation.value} value={codeColor}></code-color>
+            <CodeColor mode="md" display={variation.value} value={codeColor}></CodeColor>
           </td>
           <td class="color-description">
             {variation.description}

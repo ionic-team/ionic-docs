@@ -1,4 +1,5 @@
 import { Component, Element, Listen, State, h } from '@stencil/core';
+import CodeColor from '@site/src/components/CodeColor';
 
 import { generateColor } from '../color-gen/parse-css';
 
@@ -35,12 +36,12 @@ export class ColorGenerator {
 
     this.cssText =
 `:root {
-  --ion-color-${name}: <code-color mode="md" value="${color.value}"></code-color>;
-  --ion-color-${name}-rgb: <code-color mode="md" value="${color.value}" display="${color.valueRgb}"></code-color>;
-  --ion-color-${name}-contrast: <code-color mode="md" value="${color.contrast}"></code-color>;
-  --ion-color-${name}-contrast-rgb: <code-color mode="md" value="${color.contrast}" display="${color.contrastRgb}"></code-color>;
-  --ion-color-${name}-shade: <code-color mode="md" value="${color.shade}"></code-color>;
-  --ion-color-${name}-tint: <code-color mode="md" value="${color.tint}"></code-color>;
+  --ion-color-${name}: <CodeColor mode="md" value="${color.value}"></CodeColor>;
+  --ion-color-${name}-rgb: <CodeColor mode="md" value="${color.value}" display="${color.valueRgb}"></CodeColor>;
+  --ion-color-${name}-contrast: <CodeColor mode="md" value="${color.contrast}"></CodeColor>;
+  --ion-color-${name}-contrast-rgb: <CodeColor mode="md" value="${color.contrast}" display="${color.contrastRgb}"></CodeColor>;
+  --ion-color-${name}-shade: <CodeColor mode="md" value="${color.shade}"></CodeColor>;
+  --ion-color-${name}-tint: <CodeColor mode="md" value="${color.tint}"></CodeColor>;
 }
 
 ${selector} {
@@ -70,12 +71,12 @@ ${selector} {
 
 const DEFAULT_CSS_TEXT = `
 :root {
-  --ion-color-new: <code-color mode="md" value="#69bb7b"></code-color>;
-  --ion-color-new-rgb: <code-color mode="md" value="#69bb7b" display="105,187,123"></code-color>;
-  --ion-color-new-contrast: <code-color mode="md" value="#ffffff"></code-color>;
-  --ion-color-new-contrast-rgb: <code-color mode="md" value="#ffffff" display="255,255,255"></code-color>;
-  --ion-color-new-shade: <code-color mode="md" value="#5ca56c"></code-color>;
-  --ion-color-new-tint: <code-color mode="md" value="#78c288"></code-color>;
+  --ion-color-new: <CodeColor mode="md" value="#69bb7b"></CodeColor>;
+  --ion-color-new-rgb: <CodeColor mode="md" value="#69bb7b" display="105,187,123"></CodeColor>;
+  --ion-color-new-contrast: <CodeColor mode="md" value="#ffffff"></CodeColor>;
+  --ion-color-new-contrast-rgb: <CodeColor mode="md" value="#ffffff" display="255,255,255"></CodeColor>;
+  --ion-color-new-shade: <CodeColor mode="md" value="#5ca56c"></CodeColor>;
+  --ion-color-new-tint: <CodeColor mode="md" value="#78c288"></CodeColor>;
 }
 
 .ion-color-new {

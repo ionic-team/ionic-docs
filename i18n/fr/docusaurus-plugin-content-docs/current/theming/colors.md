@@ -34,7 +34,7 @@ Each color consists of the following properties: a `base`, `contrast`, `shade`, 
 
 ## Modifying Colors
 
-To change the default values of a color, all of the listed variations for that color should be set. For example, to change the secondary color to <code-color mode="md" value="#006600">&lt;/code-color>, set the following CSS properties:&lt;/p>
+To change the default values of a color, all of the listed variations for that color should be set. For example, to change the secondary color to <CodeColor mode="md" value="#006600">&lt;/CodeColor>, set the following CSS properties:&lt;/p>
 
 &lt;pre>&lt;code class="css">:root {
   --ion-color-secondary: #006600;
@@ -46,7 +46,9 @@ To change the default values of a color, all of the listed variations for that c
 }
 </code></pre> 
 
-When `secondary` is applied to a button, not only is the base color <code-color mode="md" value="#006600">&lt;/code-color> used, but the contrast color &lt;code-color mode="md" value="#ffffff">&lt;/code-color> is used for the text, along with shade &lt;code-color mode="md" value="#005a00">&lt;/code-color> and tint &lt;code-color mode="md" value="#1a751a">&lt;/code-color> colors for the different states of the button.&lt;/p>
+import CodeColor from '@site/src/components/CodeColor';
+
+When `secondary` is applied to a button, not only is the base color <CodeColor mode="md" value="#006600">&lt;/CodeColor> used, but the contrast color &lt;CodeColor mode="md" value="#ffffff">&lt;/CodeColor> is used for the text, along with shade &lt;CodeColor mode="md" value="#005a00">&lt;/CodeColor> and tint &lt;CodeColor mode="md" value="#1a751a">&lt;/CodeColor> colors for the different states of the button.&lt;/p>
 
 &lt;blockquote>
   &lt;p>Not sure how to get the variation colors from the base color? Try out our &lt;a href="/docs/theming/color-generator">Color Generator&lt;/a> that calculates all of the variations and provides code to copy/paste into an app!&lt;/p>

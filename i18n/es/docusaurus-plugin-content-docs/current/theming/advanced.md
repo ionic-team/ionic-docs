@@ -130,7 +130,9 @@ $text-lighter: lighten($text, 15);
 
 After running through the Sass compiler, the colors will have the following values:
 
-<code-color mode="md" value="#6a6a6a"></code-color></td>
+import CodeColor from '@site/src/components/CodeColor';
+
+<CodeColor mode="md" value="#6a6a6a"></CodeColor></td>
 </tr>
 </tbody>
 </table>

@@ -30,7 +30,9 @@ Each color consists of the following properties: a `base`, `contrast`, `shade`, 
 
 ## Modifying Colors
 
-To change the default values of a color, all of the listed variations for that color should be set. For example, to change the secondary color to <code-color mode="md" value="#006600"></code-color>, set the following CSS properties:
+import CodeColor from '@site/src/components/CodeColor';
+
+To change the default values of a color, all of the listed variations for that color should be set. For example, to change the secondary color to <CodeColor mode="md" value="#006600"></CodeColor>, set the following CSS properties:
 
 ```css
 :root {
@@ -43,7 +45,7 @@ To change the default values of a color, all of the listed variations for that c
 }
 ```
 
-When `secondary` is applied to a button, not only is the base color <code-color mode="md" value="#006600"></code-color> used, but the contrast color <code-color mode="md" value="#ffffff"></code-color> is used for the text, along with shade <code-color mode="md" value="#005a00"></code-color> and tint <code-color mode="md" value="#1a751a"></code-color> colors for the different states of the button.
+When `secondary` is applied to a button, not only is the base color <CodeColor mode="md" value="#006600"></CodeColor> used, but the contrast color <CodeColor mode="md" value="#ffffff"></CodeColor> is used for the text, along with shade <CodeColor mode="md" value="#005a00"></CodeColor> and tint <CodeColor mode="md" value="#1a751a"></CodeColor> colors for the different states of the button.
 
 > Not sure how to get the variation colors from the base color? Try out our [Color Generator](/docs/theming/color-generator) that calculates all of the variations and provides code to copy/paste into an app!
 

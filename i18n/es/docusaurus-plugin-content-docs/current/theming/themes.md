@@ -53,9 +53,11 @@ After exploring different ways to customize the Ionic theme, we found that we co
 
 While updating the background (`--ion-background-color`) and text (`--ion-text-color`) variables will change the look of the app for most components, there are certain Ionic components where it may look off, or broken. This will be more apparent when applying a darker theme.
 
-In some components we use a shade darker than the background or lighter than the text. For example, an item heading text may need to be <code-color mode="md" value="#404040"></code-color>, which is a few shades lighter than our default text color. Meanwhile, the loading component background is a shade darker than white, using <code-color mode="md" value="#f2f2f2"></code-color>. We use stepped colors in order to define these slight variations. It is important to update the stepped colors when updating the background or text color of an application.</p>
+import CodeColor from '@site/src/components/CodeColor';
 
-<p>By default, the Ionic stepped colors start at the default background color value <code-color mode="md" value="#ffffff"></code-color> and mix with the text color value <code-color mode="md" value="#000000"></code-color> using an increasing percentage. The full list of stepped colors is shown in the generator below.</p>
+In some components we use a shade darker than the background or lighter than the text. For example, an item heading text may need to be <CodeColor mode="md" value="#404040"></CodeColor>, which is a few shades lighter than our default text color. Meanwhile, the loading component background is a shade darker than white, using <CodeColor mode="md" value="#f2f2f2"></CodeColor>. We use stepped colors in order to define these slight variations. It is important to update the stepped colors when updating the background or text color of an application.</p>
+
+<p>By default, the Ionic stepped colors start at the default background color value <CodeColor mode="md" value="#ffffff"></CodeColor> and mix with the text color value <CodeColor mode="md" value="#000000"></CodeColor> using an increasing percentage. The full list of stepped colors is shown in the generator below.</p>
 
 <h2>Stepped Color Generator</h2>
 
