@@ -26,7 +26,9 @@ A color can be applied to an Ionic component in order to change the default colo
 
 Each color consists of the following properties: a `base`, `contrast`, `shade`, and `tint`. The `base` and `contrast` colors also require a `rgb` property which is the same color, just in <a href="https://developer.mozilla.org/en-US/docs/Glossary/RGB" target="_blank">rgb format</a>. See [The Alpha Problem](./advanced#the-alpha-problem) for an explanation of why the `rgb` property is also needed. Select from the dropdown below to see all of the default colors Ionic provides and their variations.
 
-<layered-colors-select mode="md" no-prerender></layered-colors-select>
+import LayeredColorsSelect from '@site/src/components/LayeredColorsSelect';
+
+<LayeredColorsSelect />
 
 ## Modifying Colors
 
@@ -37,9 +39,9 @@ To change the default values of a color, all of the listed variations for that c
 ```css
 :root {
   --ion-color-secondary: #006600;
-  --ion-color-secondary-rgb: 0,102,0;
+  --ion-color-secondary-rgb: 0, 102, 0;
   --ion-color-secondary-contrast: #ffffff;
-  --ion-color-secondary-contrast-rgb: 255,255,255;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
   --ion-color-secondary-shade: #005a00;
   --ion-color-secondary-tint: #1a751a;
 }
@@ -60,9 +62,9 @@ To add a new color, first define the CSS variables for all of the variations of 
 ```css
 :root {
   --ion-color-favorite: #69bb7b;
-  --ion-color-favorite-rgb: 105,187,123;
+  --ion-color-favorite-rgb: 105, 187, 123;
   --ion-color-favorite-contrast: #ffffff;
-  --ion-color-favorite-contrast-rgb: 255,255,255;
+  --ion-color-favorite-contrast-rgb: 255, 255, 255;
   --ion-color-favorite-shade: #5ca56c;
   --ion-color-favorite-tint: #78c288;
 }
@@ -97,7 +99,6 @@ div {
 ```
 
 See the [CSS Variables documentation](/docs/theming/css-variables) for more information on setting and using CSS variables.
-
 
 ## New Color Creator
 

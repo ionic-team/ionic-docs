@@ -17,6 +17,7 @@
     "@ionic-internal/docusaurus-plugin-tag-manager": "2.0.0",
     "@ionic-internal/docusaurus-theme": "1.1.10",
     "@ionic/prettier-config": "^1.0.1",
+    "@ionic/react": "^5.6.8",
     "@mdx-js/react": "^1.6.21",
     "clsx": "^1.1.1",
     "prettier": "^2.2.1",
@@ -35,5 +36,8 @@
       "last 1 safari version"
     ]
   },
-  "prettier": "@ionic/prettier-config"
+  "prettier": "@ionic/prettier-config",
+  "devDependencies": {
+    "@types/react": "^17.0.9"
+  }
 }

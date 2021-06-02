@@ -30,28 +30,30 @@ Noir<ion-button color="dark">Noir</ion-button>
 
 Each color consists of the following properties: a `base`, `contrast`, `shade`, and `tint`. The `base` and `contrast` colors also require a `rgb` property which is the same color, just in <a href="https://developer.mozilla.org/en-US/docs/Glossary/RGB" target="_blank">rgb format</a>. See [The Alpha Problem](./advanced#the-alpha-problem) for an explanation of why the `rgb` property is also needed. Select from the dropdown below to see all of the default colors Ionic provides and their variations.
 
-<layered-colors-select mode="md" no-prerender></layered-colors-select>
+import LayeredColorsSelect from '@site/src/components/LayeredColorsSelect';
+
+<LayeredColorsSelect />
 
 ## Modifying Colors
 
 To change the default values of a color, all of the listed variations for that color should be set. For example, to change the secondary color to <CodeColor mode="md" value="#006600">&lt;/CodeColor>, set the following CSS properties:&lt;/p>
 
 &lt;pre>&lt;code class="css">:root {
-  --ion-color-secondary: #006600;
-  --ion-color-secondary-rgb: 0,102,0;
-  --ion-color-secondary-contrast: #ffffff;
-  --ion-color-secondary-contrast-rgb: 255,255,255;
-  --ion-color-secondary-shade: #005a00;
-  --ion-color-secondary-tint: #1a751a;
+--ion-color-secondary: #006600;
+--ion-color-secondary-rgb: 0,102,0;
+--ion-color-secondary-contrast: #ffffff;
+--ion-color-secondary-contrast-rgb: 255,255,255;
+--ion-color-secondary-shade: #005a00;
+--ion-color-secondary-tint: #1a751a;
 }
-</code></pre> 
+</code></pre>
 
 import CodeColor from '@site/src/components/CodeColor';
 
 When `secondary` is applied to a button, not only is the base color <CodeColor mode="md" value="#006600">&lt;/CodeColor> used, but the contrast color &lt;CodeColor mode="md" value="#ffffff">&lt;/CodeColor> is used for the text, along with shade &lt;CodeColor mode="md" value="#005a00">&lt;/CodeColor> and tint &lt;CodeColor mode="md" value="#1a751a">&lt;/CodeColor> colors for the different states of the button.&lt;/p>
 
 &lt;blockquote>
-  &lt;p>Not sure how to get the variation colors from the base color? Try out our &lt;a href="/docs/theming/color-generator">Color Generator&lt;/a> that calculates all of the variations and provides code to copy/paste into an app!&lt;/p>
+&lt;p>Not sure how to get the variation colors from the base color? Try out our &lt;a href="/docs/theming/color-generator">Color Generator&lt;/a> that calculates all of the variations and provides code to copy/paste into an app!&lt;/p>
 &lt;/blockquote>
 
 &lt;p>See the &lt;a href="/docs/theming/css-variables">CSS Variables documentation&lt;/a> for more information on CSS variables.&lt;/p>
@@ -65,9 +67,9 @@ To add a new color, first define the CSS variables for all of the variations of 
 ```css
 :root {
   --ion-color-favorite: #69bb7b;
-  --ion-color-favorite-rgb: 105,187,123;
+  --ion-color-favorite-rgb: 105, 187, 123;
   --ion-color-favorite-contrast: #ffffff;
-  --ion-color-favorite-contrast-rgb: 255,255,255;
+  --ion-color-favorite-contrast-rgb: 255, 255, 255;
   --ion-color-favorite-shade: #5ca56c;
   --ion-color-favorite-tint: #78c288;
 }
