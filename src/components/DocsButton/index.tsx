@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import React from 'react';
 
-import styles from './DocsButton.module.css';
+import styles from './styles.module.css';
 
 export default function DocsButton({ href, round = false, ...props }) {
   // const isInternal = /^\/docs/.test(href);
