@@ -77,8 +77,10 @@ function toggleDarkTheme(shouldAdd) {
 
 > Tip: make sure to view the Codepen below in a [supported browser](https://caniuse.com/#feat=prefers-color-scheme) and then try changing the system preferences on your device between light & dark mode. Here's [how to enable dark mode on Windows 10](https://blogs.windows.com/windowsexperience/2016/08/08/windows-10-tip-personalize-your-pc-by-enabling-the-dark-theme/) and [how to enable it on a Mac](https://support.apple.com/en-us/HT208976).
 
+import Codepen from '@site/src/components/Codepen';
+
 <!-- Codepen https://codepen.io/ionic/pen/jONzJpG -->
-<docs-codepen preview="false" user="ionic" slug="jONzJpG" height="550px" default-tab="js,result"></docs-codepen>
+<Codepen preview="false" user="ionic" slug="jONzJpG" height="550px" default-tab="js,result"></Codepen>
 
 ### Manually Toggle Dark Mode
 
@@ -110,7 +112,7 @@ function checkToggle(shouldCheck) {
 ```
 
 <!-- Codepen https://codepen.io/ionic/pen/zYOpQLj -->
-<docs-codepen preview="false" user="ionic" slug="zYOpQLj" height="600px" default-tab="js,result"></docs-codepen>
+<Codepen preview="false" user="ionic" slug="zYOpQLj" height="600px" default-tab="js,result"></Codepen>
 
 ## Adjusting System UI Components
 

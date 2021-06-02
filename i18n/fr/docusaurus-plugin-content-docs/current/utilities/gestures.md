@@ -228,7 +228,9 @@ const onMove = (detail) => {
 
 In this example, our app listens for gestures on the `.rectangle` element. When a gesture movement is detected, the `onMove` function is called, and our app logs the current gesture information.
 
-<docs-codepen user="ionic" slug="xxKBYdL"></docs-codepen>
+import Codepen from '@site/src/components/Codepen';
+
+<Codepen user="ionic" slug="xxKBYdL"></Codepen>
 
 ## Double Click Gesture
 
@@ -386,7 +388,7 @@ const getRandomBackground = () => {
 
 In the example above, we want to be able to detect double clicks on an element. By setting our `threshold` to `0`, we can ensure our gesture object can detect clicks. Additionally, we define a click threshold so that only 2 clicks that occur in quick succession count as a double click.
 
-<docs-codepen user="ionic" slug="oNvVEwE"></docs-codepen>
+<Codepen user="ionic" slug="oNvVEwE"></Codepen>
 
 ## Gesture Animations
 
