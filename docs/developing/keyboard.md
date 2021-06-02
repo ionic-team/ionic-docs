@@ -85,7 +85,9 @@ For a list of accepted values, see the <a href="https://developer.mozilla.org/en
 </TabItem>
 </Tabs>
 
-<docs-codepen user="ionic" slug="abvJVVv" height="400"></docs-codepen>
+import Codepen from '@site/src/components/Codepen';
+
+<Codepen user="ionic" slug="abvJVVv" height="400"></Codepen>
 
 > The `inputmode` attribute is supported on devices running Chrome 66+ and iOS Safari 12.2+: https://caniuse.com/#search=inputmode
 
@@ -145,7 +147,7 @@ For a list of accepted values, see the <a href="https://html.spec.whatwg.org/dev
 </TabItem>
 </Tabs>
 
-<docs-codepen user="ionic" slug="GRpWyRB" height="350"></docs-codepen>
+<Codepen user="ionic" slug="GRpWyRB" height="350"></Codepen>
 
 > The `enterkeyhint` attribute is supported on devices running Chrome 77+ and iOS Safari 13.4+.
 
