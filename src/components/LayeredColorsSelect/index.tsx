@@ -1,5 +1,5 @@
 import CodeColor from '@site/src/components/CodeColor';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { IonSelect, IonSelectOption } from '@ionic/react';
 
 import styles from './styles.module.css';
@@ -73,7 +73,7 @@ export default function LayeredColorsSelect({ ...props }) {
   }, [color]);
 
   return (
-    <div ref={el} className={styles.layeredColorsSelect}>
+    <div {...props} ref={el} className={styles.layeredColorsSelect}>
       <button className={styles.colorSelect}>
         <span
           className={styles.colorDot}
