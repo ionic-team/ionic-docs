@@ -124,7 +124,9 @@ export default function LayeredColorsSelect({ ...props }) {
                   value={codeColor}
                 ></CodeColor>
               </td>
-              <td className="color-description">{variation.description}</td>
+              <td className={styles.colorDescription}>
+                {variation.description}
+              </td>
             </tr>
           );
         })}
