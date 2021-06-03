@@ -22,7 +22,7 @@ $ ionic g service services/photo
 ```typescript
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
-import { Storage } from @capacitor/storage;
+import { Storage } from '@capacitor/storage';
 ```
 
 接下来，定义一个新的类方法，`addNewToGallery`，该方法将包含获取设备照片并将其保存到文件系统的核心逻辑。 我们得从调用设备的相机开始：
