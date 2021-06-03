@@ -1,0 +1,88 @@
+.docsPagination {
+  border-color: var(--line-rule-color);
+  border-style: solid;
+  border-width: 0 0 1px;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  padding: var(--page-padding, 2rem 0rem) 0;
+}
+
+.docsPagination .next,
+.docsPagination .previous {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.docsPagination .next {
+  margin-left: auto;
+}
+
+.docsPagination a {
+  border-radius: 4px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 1em 1.5em;
+  color: rgb(var(--accent-color-rgb));
+}
+
+.docsPagination .previous a {
+  padding-left: 0;
+}
+
+.docsPagination .next a {
+  padding-right: 0;
+  align-items: flex-end;
+}
+
+@media (max-width: 700px) {
+  .docsPagination .previous a {
+    padding-right: 0.5rem;
+  }
+
+  .docsPagination .next a {
+    padding-left: 0.5rem;
+  }
+}
+
+@media (hover: hover) {
+  .docsPagination a:hover,
+  .docsPagination a:active {
+    filter: brightness(0.8);
+  }
+}
+
+.docsPagination .paginationTitle {
+  color: var(--text-color--lighter);
+  font-size: 12px;
+  display: block;
+}
+
+.docsPagination .paginationText {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.docsPagination span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.docsPagination svg {
+  fill: currentColor;
+  flex: none;
+  height: 1em;
+  margin-bottom: -0.125em;
+  width: 1em;
+}
+
+.docsPagination .next svg {
+  margin-left: 0.5em;
+}
+
+.docsPagination .previous svg {
+  margin-right: 0.5em;
+}
