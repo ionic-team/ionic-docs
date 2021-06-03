@@ -1,12 +1,13 @@
 import CodeColor from '@site/src/components/CodeColor';
 import React, { useEffect, useRef, useState } from 'react';
-import { IonSelect, IonSelectOption } from '@ionic/react';
 
 import styles from './styles.module.css';
 
 export default function LayeredColorsSelect({ ...props }) {
   const [color, setColor] = useState('primary');
   const el = useRef<HTMLDivElement>(null);
+  const [IonSelect, setIonSelect] = useState(null);
+  const [IonSelectOption, setIonSelectOption] = useState(null);
 
   const selectOptions = {
     header: 'Select a Color',
@@ -15,6 +16,13 @@ export default function LayeredColorsSelect({ ...props }) {
   };
 
   const [variations, setVariations] = useState([]);
+
+  useEffect(() => {
+    const { IonSelect: is, IonSelectOption: iso } = require('@ionic/react');
+
+    setIonSelect(is);
+    setIonSelectOption(iso);
+  }, []);
 
   useEffect(() => {
     setVariations([
@@ -83,21 +91,23 @@ export default function LayeredColorsSelect({ ...props }) {
             } as any
           }
         />
-        <IonSelect
-          value={color}
-          interfaceOptions={selectOptions}
-          onIonChange={ev => setColor((ev.target as HTMLSelectElement).value)}
-        >
-          <IonSelectOption value="primary">Primary</IonSelectOption>
-          <IonSelectOption value="secondary">Secondary</IonSelectOption>
-          <IonSelectOption value="tertiary">Tertiary</IonSelectOption>
-          <IonSelectOption value="success">Success</IonSelectOption>
-          <IonSelectOption value="warning">Warning</IonSelectOption>
-          <IonSelectOption value="danger">Danger</IonSelectOption>
-          <IonSelectOption value="dark">Dark</IonSelectOption>
-          <IonSelectOption value="medium">Medium</IonSelectOption>
-          <IonSelectOption value="light">Light</IonSelectOption>
-        </IonSelect>
+        {IonSelect && IonSelectOption && (
+          <IonSelect
+            value={color}
+            interfaceOptions={selectOptions}
+            onIonChange={ev => setColor((ev.target as HTMLSelectElement).value)}
+          >
+            <IonSelectOption value="primary">Primary</IonSelectOption>
+            <IonSelectOption value="secondary">Secondary</IonSelectOption>
+            <IonSelectOption value="tertiary">Tertiary</IonSelectOption>
+            <IonSelectOption value="success">Success</IonSelectOption>
+            <IonSelectOption value="warning">Warning</IonSelectOption>
+            <IonSelectOption value="danger">Danger</IonSelectOption>
+            <IonSelectOption value="dark">Dark</IonSelectOption>
+            <IonSelectOption value="medium">Medium</IonSelectOption>
+            <IonSelectOption value="light">Light</IonSelectOption>
+          </IonSelect>
+        )}
       </button>
       <table>
         <tr>

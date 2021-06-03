@@ -1,6 +1,5 @@
 import clsx from 'clsx';
 import React from 'react';
-import Link from '@docusaurus/Link';
 
 import styles from './styles.module.css';
 
@@ -16,9 +15,9 @@ export default function DocsButton({ href, round = false, ...props }) {
   });
 
   return href ? (
-    <Link href={href} {...props}>
+    <a href={href} {...props}>
       {props.children}
-    </Link>
+    </a>
   ) : (
     <button {...props}>{props.children}</button>
   );
