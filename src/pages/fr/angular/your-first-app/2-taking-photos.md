@@ -22,7 +22,7 @@ Ouvrez le fichier `services/photo.service.ts` nouvellement créé et ajoutons la
 ```typescript
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
-import { Storage } from @capacitor/storage;
+import { Storage } from '@capacitor/storage';
 ```
 
 Ensuite, définissez une nouvelle méthode de classe, `addNewToGallery`, qui contiendra la logique de base pour prendre une photo du périphérique et l'enregistrer dans le système de fichiers. Commençons par ouvrir la caméra de l'appareil :
