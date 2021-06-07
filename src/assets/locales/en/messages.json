@@ -78,6 +78,7 @@
   "menu-react-yfa-live-reload": "Live Reload",
   "menu-react-lifecycle": "Lifecycle",
   "menu-react-navigation": "Navigation/Routing",
+  "menu-react-virtual-scroll": "Virtual Scroll",
   "menu-react-config": "Config",
   "menu-react-platform": "Platform",
   "menu-react-pwa": "Progressive Web Apps",
