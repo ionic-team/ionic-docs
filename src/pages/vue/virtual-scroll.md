@@ -99,85 +99,11 @@ Now that our template is setup, we need to add some CSS to size the virtual scro
 }
 ```
 
-## Usage with `ion-refresher`
+## A Note on Ionic Components
 
-`ion-refresher` should be placed outside of your virtual scroll container in order to function properly:
+Certain Ionic Framework functionality is currently not compatible with virtual scrolling. Features such as collapsible large title, `ion-infinite-scroll`, and `ion-refresher` rely on being able to scroll on `ion-content` itself, and as a result will not work when using virtual scrolling.
 
-```html
-<template>
-  <ion-page>
-    <ion-header :translucent="true">
-      <ion-toolbar>
-        <ion-title>Title</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    
-    <ion-content :fullscreen="true">
-      <ion-refresher slot="fixed" @ionRefresh="refresh($event)">
-        <ion-refresher-content></ion-refresher-content>
-      </ion-refresher>
-      
-      <ion-list>
-        <RecycleScroller
-          class="scroller"
-          :items="list"
-          :item-size="56"
-        >
-          <template #default="{ item }">
-            <ion-item>
-              <ion-avatar slot="start">
-                <img src="https://picsum.photos/seed/picsum/40/40" />
-              </ion-avatar>
-              <ion-label>{{ item }}</ion-label>
-          </ion-item>
-          </template>
-        </RecycleScroller>
-      </ion-list>
-    </ion-content>
-  </ion-page>
-</template>
-```
-
-## Usage with Collapsible Large Titles
-
-When using `vue-virtual-scroll` with collapsible large titles, the collapsing header should be placed outside of your virtual scroll container.
-
-```html
-<template>
-  <ion-page>
-    <ion-header :translucent="true">
-      <ion-toolbar>
-        <ion-title>Title</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    
-    <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">Title</ion-title>
-        </ion-toolbar>
-      </ion-header>
-      
-      <ion-list>
-        <RecycleScroller
-          class="scroller"
-          :items="list"
-          :item-size="56"
-        >
-          <template #default="{ item }">
-            <ion-item>
-              <ion-avatar slot="start">
-                <img src="https://picsum.photos/seed/picsum/40/40" />
-              </ion-avatar>
-              <ion-label>{{ item }}</ion-label>
-          </ion-item>
-          </template>
-        </RecycleScroller>
-      </ion-list>
-    </ion-content>
-  </ion-page>
-</template>
-```
+We are working to improve compatibility between these components and virtual scrolling solutions. You can follow progress and give feedback here: https://github.com/ionic-team/ionic-framework/issues/23437.
 
 ## Further Reading
 
