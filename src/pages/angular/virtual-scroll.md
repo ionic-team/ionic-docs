@@ -23,7 +23,7 @@ When we want to use the CDK Scroller, we'll need to import the module in our com
   import { FormsModule } from '@angular/forms';
   import { Tab1Page } from './tab1.page';
   import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
-+ import { ScrollingModule } from '@angular/cdk/scrolling'
++ import { ScrollingModule } from '@angular/cdk/scrolling';
   import { Tab1PageRoutingModule } from './tab1-routing.module';
 
   @NgModule({
@@ -120,7 +120,7 @@ Putting everything together, the final HTML should look like:
 The last piece needed is a some CSS to size the viewport correctly. In the `tab1.page.scss` file, add the following
 
 ```scss
-cdk-virtual-scroll-viewport{
+cdk-virtual-scroll-viewport {
   height: 100%;
   width: 100%;
 }
@@ -128,22 +128,11 @@ cdk-virtual-scroll-viewport{
 
 Since the viewport is built to fit various use cases, the default sizing is not set and is up to developers to set.
 
-## Working with Collapsible Headers
+## A Note on Ionic Components
 
-When utilizing CDK Virtual Scroll and Collapsible headers, your `<ion-content>` header should be contained inside of the `<cdk-virtual-scroll-viewport>` component like so:
+Certain Ionic Framework functionality is currently not compatible with virtual scrolling. Features such as collapsible large title, `ion-infinite-scroll`, and `ion-refresher` rely on being able to scroll on `ion-content` itself, and as a result will not work when using virtual scrolling.
 
-```html
-<ion-content [fullscreen]="true">
-<cdk-virtual-scroll-viewport itemSize="56" minBufferPx="900" maxBufferPx="1350">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Title</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  ...
-</ion-content>
-```
-
+We are working to improve compatibility between these components and virtual scrolling solutions. You can follow progress and give feedback here: https://github.com/ionic-team/ionic-framework/issues/23437.
 
 ## Further Reading
 
