@@ -101,7 +101,7 @@ Now that our template is setup, we need to add some CSS to size the virtual scro
 
 ## A Note on Ionic Components
 
-Certain Ionic Framework functionality is currently not compatible with virtual scrolling. Features such as collapsible large title, `ion-infinite-scroll`, and `ion-refresher` rely on being able to scroll on `ion-content` itself, and as a result will not work when using virtual scrolling.
+Certain Ionic Framework functionality is currently not compatible with virtual scrolling. Features such as collapsible large titles, `ion-infinite-scroll`, and `ion-refresher` rely on being able to scroll on `ion-content` itself, and as a result will not work when using virtual scrolling.
 
 We are working to improve compatibility between these components and virtual scrolling solutions. You can follow progress and give feedback here: https://github.com/ionic-team/ionic-framework/issues/23437.
 
