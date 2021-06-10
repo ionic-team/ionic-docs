@@ -88,6 +88,9 @@ pre[class*="language-"] {
 .token.inserted {
   color: #ff6810;
 }
+.token.inserted.inserted-sign {
+  color: green;
+}
 
 .token.operator,
 .token.string,
