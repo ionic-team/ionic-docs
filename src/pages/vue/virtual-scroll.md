@@ -2,7 +2,7 @@
 title: 'Virtual Scroll'
 ---
 
-The Ionic Team recommends a 3rd-party package such as [vue-virtual-scroller](https://github.com/Akryum/vue-virtual-scroller/blob/next/packages/vue-virtual-scroller/README.md) for a Virtual Scroll solution in your Vue 3 application. This guide will go over how to install `vue-virtual-scroller` into your Ionic Vue application and use it with other Ionic components.
+One virtual scrolling solution to consider for your Ionic Vue app is [vue-virtual-scroller](https://github.com/Akryum/vue-virtual-scroller/blob/next/packages/vue-virtual-scroller/README.md). This guide will go over how to install `vue-virtual-scroller` into your Ionic Vue application and use it with other Ionic components.
 
 ## Installation
 
@@ -95,7 +95,7 @@ Now that our template is setup, we need to add some CSS to size the virtual scro
 
 ```css
 .scroller {
-  height: 100%
+  height: 100%;
 }
 ```
 
