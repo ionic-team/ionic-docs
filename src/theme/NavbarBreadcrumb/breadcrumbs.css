@@ -1,0 +1,85 @@
+.breadcrumb {
+  --token-separator-color: var(--c-indigo-40);
+  --token-item-color: var(--c-indigo-60);
+  --token-item-color-hover: var(--c-carbon-90);
+  display: grid;
+  align-items: center;
+  grid-auto-flow: column;
+  gap: 0.75rem;
+  line-height: 1;
+  font-size: 0.95rem;
+  color: var(--token-separator-color);
+}
+
+.breadcrumb__logo svg {
+  transition: color 0.2s;
+  width: 24px;
+  color: var(--token-item-color);
+}
+
+.breadcrumb__logo:hover svg {
+  color: var(--token-item-color-hover);
+}
+
+.breadcrumb__item {
+  transition: color 0.2s;
+  color: var(--token-item-color);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  font-size: 1.05rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb__item:hover {
+  text-decoration: none;
+  color: var(--token-item-color-hover);
+}
+
+.breadcrumb__item--active,
+.breadcrumb__item--active:hover {
+  color: var(--token-heading-color-dark-hover);
+}
+
+.breadcrumb__item--appflow::before,
+.breadcrumb__item--identity-vault::before,
+.breadcrumb__item--auth-connect::before,
+.breadcrumb__item--offline-storage::before,
+.breadcrumb__item--premier-plugins::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-right: 0.5rem;
+}
+
+.breadcrumb__item--appflow::before {
+  background-image: url('./appflow-logomark.svg');
+}
+
+.breadcrumb__item--identity-vault::before {
+  background-image: url('./identity-vault-icon.svg');
+}
+
+.breadcrumb__item--auth-connect::before {
+  background-image: url('./auth-connect-icon.svg');
+}
+
+.breadcrumb__item--secure-storage::before {
+  background-image: url('./secure-storage-icon.svg');
+}
+
+.breadcrumb__item--premier-plugins::before {
+  background-image: url('./premier-plugins-icon.svg');
+}
+
+html[data-theme='dark'] .breadcrumb {
+  --token-separator-color: var(--c-indigo-80);
+  --token-item-color: var(--c-indigo-60);
+  --token-item-color-hover: var(--c-indigo-20);
+}
+

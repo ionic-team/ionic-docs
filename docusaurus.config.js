@@ -26,7 +26,7 @@ module.exports = {
     navbar: {
       logo: {
         alt: 'Ionic Logo',
-        src: 'img/framework-icon.svg',
+        src: 'img/framework-logo.svg',
       },
       items: [
         {
