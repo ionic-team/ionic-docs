@@ -27,8 +27,8 @@ function DocsCard(props: Props): JSX.Element {
     );
     const hoverIcon = props.hoverIcon || props.icon;
 
-    const content = [
-      props.img && <img src={useBaseUrl(props.img)} className="Card-image"/>,
+    const content = (<>
+      {props.img && <img src={useBaseUrl(props.img)} className="Card-image"/>}
       <div className="Card-container">
         {props.icon && <img src={useBaseUrl(props.icon)} className="Card-icon Card-icon-default"/>}
         {hoverIcon && <img src={useBaseUrl(hoverIcon)} className="Card-icon Card-icon-hover"/>}
@@ -39,13 +39,14 @@ function DocsCard(props: Props): JSX.Element {
               src={useBaseUrl(icon)}
               className={`Card-icon ${index === props.activeIndex ? 'Card-icon-active' : ''}`}
               data-index={index}
+              key={index}
             />
           )}
         </div>}
         {props.header && header}
         <div className="Card-content">{props.children}</div>
       </div>
-    ];
+    </>);
 
     const className = clsx({
       'Card-with-image': typeof props.img !== 'undefined',

@@ -1,8 +1,8 @@
-import en from './assets/locales/en/messages.json';
-import es from './assets/locales/es/messages.json';
-import fr from './assets/locales/fr/messages.json';
-import pt from './assets/locales/pt/messages.json';
-import zh from './assets/locales/zh/messages.json';
+import en from '../../assets/locales/en/messages.json';
+import es from '../../assets/locales/es/messages.json';
+import fr from '../../assets/locales/fr/messages.json';
+import pt from '../../assets/locales/pt/messages.json';
+import zh from '../../assets/locales/zh/messages.json';
 
 const MESSAGES_ALL: any = {
   'en': en,
