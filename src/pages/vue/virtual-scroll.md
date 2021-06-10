@@ -87,6 +87,32 @@ The `RecycleScroller` component should be added inside of your `ion-content` com
     </ion-content>
   </ion-page>
 </template>
+
+<script>
+  import { defineComponent, ref } from 'vue';
+  import {
+    IonAvatar,
+    IonContent,
+    IonItem,
+    IonLabel,
+    IonPage
+  } from '@ionic/vue';
+  
+  export default defineComponent({
+    components: {
+      IonAvatar,
+      IonContent,
+      IonItem,
+      IonLabel,
+      IonPage
+    },
+    setup() {
+      const list = ref([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+      
+      return { list }
+    }
+  });
+</script>
 ```
 
 There are two important pieces we need to account for in order for `RecycleScroller` to work. First, we need to provide it with an array of data to iterate over via the `items` property. In this case, we have an array called `list` which provides our data. Second, we need to provide the size of each node via the `item-size` property. If you do not know the size of the node ahead of time, you should use the `DynamicScroller` component instead.
@@ -101,7 +127,7 @@ Now that our template is setup, we need to add some CSS to size the virtual scro
 
 ## A Note on Ionic Components
 
-Certain Ionic Framework functionality is currently not compatible with virtual scrolling. Features such as collapsible large title, `ion-infinite-scroll`, and `ion-refresher` rely on being able to scroll on `ion-content` itself, and as a result will not work when using virtual scrolling.
+Certain Ionic Framework functionality is currently not compatible with virtual scrolling. Features such as collapsible large titles, `ion-infinite-scroll`, and `ion-refresher` rely on being able to scroll on `ion-content` itself, and as a result will not work when using virtual scrolling.
 
 We are working to improve compatibility between these components and virtual scrolling solutions. You can follow progress and give feedback here: https://github.com/ionic-team/ionic-framework/issues/23437.
 
