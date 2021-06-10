@@ -95,6 +95,7 @@ const items = {
     'menu-vue-lifecycle': '/docs/vue/lifecycle',
     'menu-vue-navigation': '/docs/vue/navigation',
     'menu-vue-config': '/docs/vue/config',
+    'menu-vue-virtual-scroll': '/docs/vue/virtual-scroll',
     'menu-vue-platform': '/docs/vue/platform',
     'menu-vue-pwa': '/docs/vue/pwa',
     'menu-vue-storage': '/docs/vue/storage',
