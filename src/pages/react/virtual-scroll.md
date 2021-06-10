@@ -48,6 +48,8 @@ const Home: React.FC = () => (
     </IonContent>
   </IonPage>
 )
+
+export default Home;
 ```
 
 After adding the `Virtuoso` component to our page, we need to define the size of the virtual scroll container. In this case, we want the container to take up the full height of the screen which we can do by adding `style={{ height: '100%' }}`.
