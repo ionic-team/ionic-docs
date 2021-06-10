@@ -5,7 +5,7 @@ const path = require("path");
 const DEMOS_PATH = path.resolve("static/demos");
 
 (async function() {
-  const response = await fetch("https://unpkg.com/@ionic/docs/core.json");
+  const response = await fetch("https://unpkg.com/@ionic/docs@5.7.0-dev.202106101802.0e38d42/core.json");
   const { components } = await response.json();
 
   components.map(writePage);
