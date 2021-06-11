@@ -1,11 +1,6 @@
-
-main {
+.colorGenerator {
   display: flex;
-  height: calc(100% - 10px);
-}
-
-main > section {
-  flex: 1 auto;
+  flex-direction: column;
 }
 
 .preview-column {

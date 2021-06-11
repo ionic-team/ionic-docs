@@ -1,6 +1,7 @@
 module.exports = {
   title: 'Ionic Documentation',
-  tagline: 'Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards',
+  tagline:
+    'Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards',
   url: 'https://ionicframework.com',
   baseUrl: '/docs/',
   /* TODO
@@ -127,9 +128,7 @@ module.exports = {
     },
     prism: {
       // https://github.com/FormidableLabs/prism-react-renderer/blob/master/src/vendor/prism/includeLangs.js
-      additionalLanguages: [
-        'shell-session',
-      ],
+      additionalLanguages: ['shell-session'],
     },
   },
   themes: ['@ionic-internal/docusaurus-theme'],
