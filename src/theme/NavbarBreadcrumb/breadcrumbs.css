@@ -42,41 +42,6 @@
   color: var(--token-heading-color-dark-hover);
 }
 
-.breadcrumb__item--appflow::before,
-.breadcrumb__item--identity-vault::before,
-.breadcrumb__item--auth-connect::before,
-.breadcrumb__item--offline-storage::before,
-.breadcrumb__item--premier-plugins::before {
-  content: '';
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  margin-right: 0.5rem;
-}
-
-.breadcrumb__item--appflow::before {
-  background-image: url('./appflow-logomark.svg');
-}
-
-.breadcrumb__item--identity-vault::before {
-  background-image: url('./identity-vault-icon.svg');
-}
-
-.breadcrumb__item--auth-connect::before {
-  background-image: url('./auth-connect-icon.svg');
-}
-
-.breadcrumb__item--secure-storage::before {
-  background-image: url('./secure-storage-icon.svg');
-}
-
-.breadcrumb__item--premier-plugins::before {
-  background-image: url('./premier-plugins-icon.svg');
-}
-
 html[data-theme='dark'] .breadcrumb {
   --token-separator-color: var(--c-indigo-80);
   --token-item-color: var(--c-indigo-60);

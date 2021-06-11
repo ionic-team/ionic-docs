@@ -4,12 +4,15 @@
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "node index.js && docusaurus start",
-    "build": "node index.js && docusaurus build",
+    "prestart": "npm run generate-markdown",
+    "start": "docusaurus start",
+    "prebuild": "npm run generate-markdown",
+    "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "serve": "docusaurus serve",
-    "clear": "docusaurus clear"
+    "clear": "docusaurus clear",
+    "generate-markdown": "concurrently \"node scripts/api\""
   },
   "dependencies": {
     "@docusaurus/core": "2.0.0-beta.0",
@@ -20,6 +23,7 @@
     "@ionic/react": "^5.6.8",
     "@mdx-js/react": "^1.6.21",
     "clsx": "^1.1.1",
+    "concurrently": "^6.2.0",
     "prettier": "^2.2.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
