@@ -384,7 +384,7 @@ For more information on effects in Swiper, please see <a href="https://swiperjs.
 
 ## Wrap Up
 
-Now that you have Swiper installed, there is a whole set of new Swiper features for you to enjoy. We recommend starting with the Swiper Vue Introduction: <a href="https://swiperjs.com/vue" target="_blank" rel="noopener noreferrer">https://swiperjs.com/vue</a> and then referencing <a href="https://swiperjs.com/swiper-api" target="_blank" rel="noopener noreferrer">https://swiperjs.com/swiper-api</a> for the entire Swiper API.
+Now that you have Swiper installed, there is a whole set of new Swiper features for you to enjoy. We recommend starting with the <a href="https://swiperjs.com/vue" target="_blank" rel="noopener noreferrer">Swiper Vue Introduction</a> and then referencing <a href="https://swiperjs.com/swiper-api" target="_blank" rel="noopener noreferrer">the Swiper API docs</a>.
 
 ### Where do I file issues?
 

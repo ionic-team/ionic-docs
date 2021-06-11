@@ -33,14 +33,12 @@ Ionic Framework also provides some default styles, as well as the CSS Variables 
 @import '~@ionic/angular/css/ionic-swiper';
 ```
 
-You will need to import styles for each additional module you want to use. Swiper has a complete list of the stylesheets you can import here: <a href="https://swiperjs.com/angular#add-styles" target="_blank" rel="noopener noreferrer">https://swiperjs.com/angular#add-styles</a>.
-
 You should also update any selectors to target the correct Swiper classes. If you were targeting `ion-slides`, you should target `.swiper-container`. If you were targeting `ion-slide`, you should target `.swiper-slide`.
 
 
 ### Vanilla CSS (Optional)
 
-For developers not using a CSS pre-processor, Swiper also provides the styles bundled together. It is important to note that this also will import styles for all modules as well.
+For developers not using a CSS pre-processor, Swiper also provides the styles bundled together. It is important to note that this will import styles for all modules as well.
 
 ```javascript
 // slides.component.css
@@ -355,11 +353,11 @@ For more information on effects in Swiper, please see <a href="https://swiperjs.
 
 ## Wrap Up
 
-Now that you have Swiper installed, there is a whole set of new Swiper features for you to enjoy. We recommend starting with the Swiper Angular Introduction: <a href="https://swiperjs.com/angular" target="_blank" rel="noopener noreferrer">https://swiperjs.com/angular</a> and then referencing <a href="https://swiperjs.com/swiper-api" target="_blank" rel="noopener noreferrer">https://swiperjs.com/swiper-api</a> for the entire Swiper API.
+Now that you have Swiper installed, there is a whole set of new Swiper features for you to enjoy. We recommend starting with the <a href="https://swiperjs.com/angular" target="_blank" rel="noopener noreferrer">Swiper Angular Introduction</a> and then referencing <a href="https://swiperjs.com/swiper-api" target="_blank" rel="noopener noreferrer">the Swiper API docs</a>.
 
 ### Where do I file issues?
 
-Before opening an issue, please consider creating a post on the <a href="https://github.com/nolimits4web/swiper/discussions" target="_blank" rel="noopener noreferrer">Swiper Discussion Board</a> or the <a href="https://forum.ionicframework.com" target="_blank">Ionic Forum</a> to see if your issue can be resolved by the community.
+Before opening an issue, please consider creating a post on the <a href="https://github.com/nolimits4web/swiper/discussions" target="_blank" rel="noopener noreferrer">Swiper Discussion Board</a> or the <a href="https://forum.ionicframework.com" target="_blank">Ionic Forum</a>) to see if your issue can be resolved by the community.
 
 If you are running into problems with the Swiper library, new bugs should be filed on the Swiper repo: <a href="https://github.com/nolimits4web/swiper/issues" target="_blank" rel="noopener noreferrer">https://github.com/nolimits4web/swiper/issues</a>
 
