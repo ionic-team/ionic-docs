@@ -1,16 +1,17 @@
 import React from 'react';
 import clsx from 'clsx';
 import { useLocation } from '@docusaurus/router';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Link from '@docusaurus/Link';
-import { LogoMark } from '@theme/icons';
+import useThemeContext from '@theme/hooks/useThemeContext';
 import {useActiveDocContext} from '@theme/hooks/useDocs';
+// import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+// import Link from '@docusaurus/Link';
+import { FrameworkDocsDarkLogo, FrameworkDocsLightLogo } from './icons';
 
 import './breadcrumbs.css';
 
 function NavbarBreadcrumb() {
   const { activeDoc } = useActiveDocContext();
-  const { siteConfig } = useDocusaurusContext();
+  // const { siteConfig } = useDocusaurusContext();
   const { pathname } = useLocation();  
   const urlSegments = pathname.split('/');
   const leafPageSegment = urlSegments[urlSegments.indexOf('docs') + 1];
@@ -28,21 +29,13 @@ function NavbarBreadcrumb() {
     }
   }
 
+  const {isDarkTheme} = useThemeContext();
+
   return (
     <div className="breadcrumb">
-      <a href={'https://ionicframework.com'} className="breadcrumb__logo">
-        <LogoMark />
-        <h1>Gets here</h1>
+      <a href={'/docs'} className="breadcrumb__logo">
+        {isDarkTheme ? <FrameworkDocsDarkLogo /> : <FrameworkDocsLightLogo />}
       </a>
-      / 
-      {(pathname === siteConfig.baseUrl) 
-        ? <span className={'breadcrumb__item breadcrumb__item--active'}>
-            {siteConfig.themeConfig?.navbar?.title || 'Docs'}
-          </span>
-        : <Link to={siteConfig.baseUrl} className={'breadcrumb__item'}>
-            {siteConfig.themeConfig?.navbar?.title || 'Docs'}
-          </Link>
-      }
 
       {leafPageSegment && 
         <>
