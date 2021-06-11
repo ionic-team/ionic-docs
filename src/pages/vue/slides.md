@@ -14,6 +14,8 @@ To get started, install the Swiper dependency in your project:
 npm install swiper
 ```
 
+### Typescript (optional)
+
 TypeScript users will need to add the following to their `shims-vue.d.ts` file:
 
 ```typescript
