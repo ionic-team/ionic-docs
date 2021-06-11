@@ -2,7 +2,7 @@
 title: 'Slides'
 ---
 
-We recommend [Swiper.js](http://swiperjs.com/) if you need a modern touch slider component. It powers our `ion-slides` component, but we now recommend that developers use Swiper for Vue directly.
+We recommend <a href="http://swiperjs.com/" target="_blank" rel="noopener noreferrer">Swiper.js</a> if you need a modern touch slider component. It powers our `ion-slides` component, but we now recommend that developers use Swiper for Vue directly.
 
 This guide will go over how to get Swiper for Vue set up in your Ionic Framework application. It will also go over any migration information you may need to move from `ion-slides` to the official Swiper Vue integration.
 
@@ -83,7 +83,7 @@ If you wanted to import the base Swiper styles and the pagination styles, you wo
 </script>
 ```
 
-Swiper has a complete list of the stylesheets you can import here: https://swiperjs.com/vue#styles.
+Swiper has a complete list of the stylesheets you can import here: <a href="https://swiperjs.com/vue#styles" target="_blank" rel="noopener noreferrer">https://swiperjs.com/vue#styles</a>.
 
 ## Using Components
 
@@ -199,7 +199,7 @@ The following example shows how to install the Navigation and Pagination plugins
 </script>
 ```
 
-> Importing `swiper-bundle.min.css` imports styles for all modules. When using the SCSS or Less styles, you will need to import the styles for each module. See https://swiperjs.com/vue#styles for a full list of stylesheets.
+> Importing `swiper-bundle.min.css` imports styles for all modules. When using the SCSS or Less styles, you will need to import the styles for each module. See <a href="https://swiperjs.com/vue#styles" target="_blank" rel="noopener noreferrer">https://swiperjs.com/vue#styles</a> for a full list of stylesheets.
 
 
 ## Properties
@@ -244,7 +244,7 @@ Below is a full list of property changes when going from `ion-slides` to Swiper 
 | pager     | Use the `pagination` property instead. Requires installation of the Pagination module. |
 | scrollbar | You can continue to use the `scrollbar` property, just be sure to install the Scrollbar module first. |
 
-All properties available in Swiper Vue can be found at https://swiperjs.com/vue#swiper-props.
+All properties available in Swiper Vue can be found at <a href="https://swiperjs.com/vue#swiper-props" target="_blank" rel="noopener noreferrer">https://swiperjs.com/vue#swiper-props</a>.
 
 ## Events
 
@@ -299,7 +299,7 @@ Below is a full list of event name changes when going from `ion-slides` to Swipe
 | ionSlideTransitionEnd   | transitionEnd |
 | ionSlidesDidLoad        | init |
 
-All events available in Swiper Vue can be found at https://swiperjs.com/vue#swiper-events.
+All events available in Swiper Vue can be found at <a href="https://swiperjs.com/vue#swiper-events" target="_blank" rel="noopener noreferrer">https://swiperjs.com/vue#swiper-events</a>.
 
 ## Methods
 
@@ -380,16 +380,16 @@ If you are using effects such as Cube or Fade, you can install them similar to h
 </script>
 ```
 
-For more information on effects in Swiper, please see https://swiperjs.com/vue#effects.
+For more information on effects in Swiper, please see <a href="https://swiperjs.com/vue#effects" target="_blank" rel="noopener noreferrer">https://swiperjs.com/vue#effects</a>.
 
 ## Wrap Up
 
-Now that you have Swiper installed, there is a whole set of new Swiper features for you to enjoy. We recommend starting with the Swiper Vue Introduction: https://swiperjs.com/vue and then referencing https://swiperjs.com/swiper-api for the entire Swiper API.
+Now that you have Swiper installed, there is a whole set of new Swiper features for you to enjoy. We recommend starting with the Swiper Vue Introduction: <a href="https://swiperjs.com/vue" target="_blank" rel="noopener noreferrer">https://swiperjs.com/vue</a> and then referencing <a href="https://swiperjs.com/swiper-api" target="_blank" rel="noopener noreferrer">https://swiperjs.com/swiper-api</a> for the entire Swiper API.
 
 ### Where do I file issues?
 
-Before opening an issue, please consider creating a post on the [Swiper Discussion Board](https://github.com/nolimits4web/swiper/discussions) or the [Ionic Forum](https://forum.ionicframework.com/) to see if your issue can be resolved by the community.
+Before opening an issue, please consider creating a post on the <a href="https://github.com/nolimits4web/swiper/discussions" target="_blank" rel="noopener noreferrer">Swiper Discussion Board</a> or the <a href="https://forum.ionicframework.com" target="_blank">Ionic Forum</a> to see if your issue can be resolved by the community.
 
-If you are running into problems with the Swiper library, new bugs should be filed on the Swiper repo: https://github.com/nolimits4web/swiper/issues
+If you are running into problems with the Swiper library, new bugs should be filed on the Swiper repo: <a href="https://github.com/nolimits4web/swiper/issues" target="_blank" rel="noopener noreferrer">https://github.com/nolimits4web/swiper/issues</a>
 
-If you are running into problems with the `IonicSwiper` module, new bugs should be filed on the Ionic Framework repo: https://github.com/ionic-team/ionic-framework/issues
+If you are running into problems with the `IonicSwiper` module, new bugs should be filed on the Ionic Framework repo: <a href="https://github.com/ionic-team/ionic-framework/issues" target="_blank" rel="noopener noreferrer">https://github.com/ionic-team/ionic-framework/issues</a>
