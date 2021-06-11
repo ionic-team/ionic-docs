@@ -74,6 +74,7 @@ const items = {
     'menu-react-navigation': '/docs/react/navigation',
     'menu-react-config': '/docs/react/config',
     'menu-react-virtual-scroll': '/docs/react/virtual-scroll',
+    'menu-react-slides': '/docs/react/slides',
     'menu-react-platform': '/docs/react/platform',
     'menu-react-pwa': '/docs/react/pwa',
     'menu-react-overlays': '/docs/react/overlays',

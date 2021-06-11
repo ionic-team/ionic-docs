@@ -333,7 +333,7 @@ export default defineComponent({
 </script>
 ```
 
-From here, if you wanted to access a property on the Swiper instance you would do access `slides.value`. For example, if you wanted to check the `isBeginning` property, you could do: `slides.value.isBeginning`. Make sure `slides.value` is defined first though!
+From here, if you wanted to access a property on the Swiper instance you would access `slides.value`. For example, if you wanted to check the `isBeginning` property, you could do: `slides.value.isBeginning`. Make sure `slides.value` is defined first though!
 
 Below is a full list of method changes when going from `ion-slides` to Swiper Vue:
 
@@ -341,7 +341,7 @@ Below is a full list of method changes when going from `ion-slides` to Swiper Vu
 | ------------------ | ----- |
 | getActiveIndex()   | Use the `activeIndex` property instead. |
 | getPreviousIndex() | Use the `previousIndex` property instead. |
-| getSwiper()        | Get a reference to the Swiper instance using `@swiper`. See example below. |
+| getSwiper()        | Get a reference to the Swiper instance using `@swiper`. See example above. |
 | isBeginning()      | Use the `isBeginning` property instead. |
 | isEnd()            | Use the `isEnd` property instead. |
 | length()           | Use the `slides` property instead. (i.e swiperRef.slides.length) |
