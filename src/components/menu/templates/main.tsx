@@ -52,6 +52,7 @@ const items = {
     'menu-angular-navigation': '/docs/angular/navigation',
     'menu-angular-config': '/docs/angular/config',
     'menu-angular-virtual-scroll': '/docs/angular/virtual-scroll',
+    'menu-angular-slides': '/docs/angular/slides',
     'menu-angular-platform': '/docs/angular/platform',
     'menu-angular-testing': '/docs/angular/testing',
     'menu-angular-storage': '/docs/angular/storage',

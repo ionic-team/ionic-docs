@@ -61,6 +61,7 @@
   "menu-angular-navigation": "Navigation/Routing",
   "menu-angular-config": "Config",
   "menu-angular-virtual-scroll": "Virtual Scroll",
+  "menu-angular-slides": "Slides",
   "menu-angular-platform": "Platform",
   "menu-angular-testing": "Testing",
   "menu-angular-storage": "Storage",
