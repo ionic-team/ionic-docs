@@ -33,7 +33,8 @@ function writePage(page) {
 
 function renderFrontmatter({ name }) {
   const frontmatter = {
-    title: name.replace('ionic ', '')
+    title: name.replace('ionic ', ''),
+    sidebar_label: name.replace('ionic ', '')
   };
 
   return `---
