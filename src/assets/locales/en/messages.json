@@ -102,6 +102,7 @@
   "menu-vue-navigation": "Navigation/Routing",
   "menu-vue-config": "Config",
   "menu-vue-virtual-scroll": "Virtual Scroll",
+  "menu-vue-slides": "Slides",
   "menu-vue-platform": "Platform",
   "menu-vue-pwa": "Progressive Web Apps",
   "menu-vue-storage": "Storage",
