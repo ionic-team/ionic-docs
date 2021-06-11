@@ -1,17 +1,32 @@
-.selectColors {
-  display: block;
-  padding-top: 20px;
-  margin-bottom: 80px;
-}
-
 .selectColors,
 .submenu {
   margin: 0;
   padding: 0;
 }
 
+.selectColors {
+  display: block;
+  padding-top: 20px;
+  margin-bottom: 80px;
+
+  font-size: 0.875rem;
+  font-weight: 500;
+
+  margin-block-start: 2rem;
+  margin-block-end: 4rem;
+}
+
 .selectColors li {
   list-style-type: none;
+}
+
+.swatch {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 24px;
+  margin-right: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .item {
@@ -42,6 +57,19 @@
   margin: 0;
   pointer-events: none;
   transition: 160ms height, 160ms opacity;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headingGroup {
+  display: flex;
+  padding-inline-start: 12px;
+}
+
+.hex {
+  background-color: rgb(237, 242, 246);
 }
 
 .item.isOpen svg {

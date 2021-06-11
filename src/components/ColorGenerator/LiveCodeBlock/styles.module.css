@@ -1,22 +1,6 @@
 .playgroundContainer {
   margin-bottom: var(--ifm-leading);
-}
-
-.playgroundHeader {
-  letter-spacing: 0.08rem;
-  padding: 0.75rem;
-  text-transform: uppercase;
-  font-weight: bold;
-  background: var(--ifm-color-emphasis-200);
-  color: var(--ifm-color-content);
-  font-size: var(--ifm-code-font-size);
-}
-
-.playgroundHeader:first-of-type {
-  background: var(--ifm-color-emphasis-600);
-  color: var(--ifm-color-content-inverse);
-  border-top-left-radius: var(--ifm-global-radius);
-  border-top-right-radius: var(--ifm-global-radius);
+  position: relative;
 }
 
 .playgroundEditor {
@@ -26,13 +10,27 @@
   direction: ltr;
 }
 
-.playgroundPreview {
-  border: 1px solid var(--ifm-color-emphasis-200);
-  padding: 1rem;
+.playgroundEditor:last-of-type {
+  border-radius: var(--ifm-global-radius);
 }
 
-.playgroundPreview:last-of-type,
-.playgroundEditor:last-of-type {
-  border-bottom-left-radius: var(--ifm-global-radius);
-  border-bottom-right-radius: var(--ifm-global-radius);
+.copyButton {
+  background: rgba(0, 0, 0, 0.3);
+  border: none;
+  border-radius: var(--ifm-global-radius);
+  color: var(--ifm-color-white);
+  cursor: pointer;
+  opacity: 0;
+  user-select: none;
+  padding: 0.4rem 0.5rem;
+  position: absolute;
+  right: calc(var(--ifm-pre-padding) / 2);
+  top: calc(var(--ifm-pre-padding) / 2);
+  transition: opacity 200ms ease-in-out;
+}
+
+.playgroundContainer:hover + .copyButton,
+.playgroundContainer:hover > .copyButton,
+.copyButton:focus {
+  opacity: 1;
 }

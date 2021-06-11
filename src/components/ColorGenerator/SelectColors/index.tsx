@@ -19,6 +19,7 @@ const SelectColors = () => {
   return (
     <ul className={styles.selectColors}>
       {Array.from(state.colors).map(([name]) => {
+        const { tint, shade } = state.colors.get(name);
         const isOpen = activeColor === name ? true : false;
 
         return (
@@ -64,10 +65,24 @@ const SelectColors = () => {
 
             <ul className={styles.submenu}>
               <li>
-                <VariableSelector name={name} type="shade" editable={false} />
+                <div className={styles.headingGroup}>
+                  <i
+                    className={styles.swatch}
+                    style={{ backgroundColor: shade }}
+                  ></i>
+                  <span>{name}-shade</span>
+                </div>
+                <span className={styles.hex}>{shade}</span>
               </li>
               <li>
-                <VariableSelector name={name} type="tint" editable={false} />
+                <div className={styles.headingGroup}>
+                  <i
+                    className={styles.swatch}
+                    style={{ backgroundColor: tint }}
+                  ></i>
+                  <span>{name}-tint</span>
+                </div>
+                <span className={styles.hex}>{tint}</span>
               </li>
             </ul>
           </li>

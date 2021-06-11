@@ -18,7 +18,7 @@
     "@docusaurus/core": "2.0.0-beta.0",
     "@docusaurus/preset-classic": "2.0.0-beta.0",
     "@ionic-internal/docusaurus-plugin-tag-manager": "2.0.0",
-    "@ionic-internal/docusaurus-theme": "1.1.12",
+    "@ionic-internal/docusaurus-theme": "1.1.14",
     "@ionic/prettier-config": "^1.0.1",
     "@ionic/react": "^5.6.8",
     "@mdx-js/react": "^1.6.22",
@@ -45,6 +45,11 @@
   },
   "prettier": "@ionic/prettier-config",
   "devDependencies": {
-    "@types/react": "^17.0.9"
+    "@docusaurus/module-type-aliases": "^2.0.0-beta.0",
+    "@tsconfig/docusaurus": "^1.0.2",
+    "@types/react": "^17.0.11",
+    "@types/react-helmet": "^6.1.1",
+    "@types/react-router-dom": "^5.1.7",
+    "typescript": "^4.3.2"
   }
 }

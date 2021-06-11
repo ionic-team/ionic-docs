@@ -1,17 +1,13 @@
 import { Color, RGB } from './color';
 import { COLOR_NAMES, ColorVariable } from './color-variables';
 
-export const generateColor = (
-  property: string,
-  value: string,
-): ColorVariable => {
+export const generateColor = (value: string): ColorVariable => {
   const color = new Color(value);
   const contrast = color.contrast();
   const tint = color.tint();
   const shade = color.shade();
 
   return {
-    property,
     value,
     valueRgb: rgbToString(color.rgb),
     contrast: contrast.hex,
@@ -20,6 +16,9 @@ export const generateColor = (
     shade: shade.hex,
   };
 };
+
+export const generateProperty = (name: string) =>
+  `--ion-color-${name.toLowerCase()}`;
 
 export const convertCssToColors = (cssText: string) => {
   const colors = new Map<string, ColorVariable>();
@@ -35,15 +34,16 @@ export const convertCssToColors = (cssText: string) => {
     };
 
     const color: ColorVariable = {};
+    const property = `--ion-color-${name.toLowerCase()}`;
 
     const keys = (Object.keys(attrMap) as any) as (keyof typeof attrMap)[];
     for (const key of keys) {
-      color[key] = parseColorVar(name.toLowerCase() + attrMap[key], cssText);
+      color[key] = parseColorVar(property + attrMap[key], cssText);
     }
 
     colors.set(name, {
       ...color,
-      property: `--ion-color-${name.toLowerCase()}`,
+      property,
     });
   });
 

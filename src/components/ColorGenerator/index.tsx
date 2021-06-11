@@ -1,5 +1,6 @@
 import React, {
   createContext,
+  useCallback,
   useContext,
   useEffect,
   useRef,
@@ -51,13 +52,15 @@ const ColorGenerator = (props: ColorGeneratorProps) => {
   useEffect(() => {
     setColors(convertCssToColors(cssText));
     textContent.current = cssText;
+
+    const event = new CustomEvent('demoMessage', { detail: { cssText } });
+    window.dispatchEvent(event);
   }, [cssText]);
 
   useEffect(() => {
     Array.from(colors).forEach(([_, color]) => {
       const keys = (Object.keys(ATTR_MAP) as any) as (keyof typeof ATTR_MAP)[];
-      const genColor = generateColor(color.property, color.value);
-
+      const genColor = generateColor(color.value);
       for (const key of keys) {
         setCssText(cssText =>
           updateCssText(color.property + ATTR_MAP[key], cssText, genColor[key]),

@@ -129,16 +129,3 @@
     position: absolute;
   }
 }
-
-.hex {
-  width: 94px;
-}
-
-.hex span {
-  font-family: var(--code-font-family);
-  font-size: 12px;
-  background-color: var(--line-rule-color);
-  color: var(--text-color--dark);
-  padding: 3px 5px;
-  border-radius: 2px;
-}
