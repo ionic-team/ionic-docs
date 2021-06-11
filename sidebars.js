@@ -1,5 +1,3 @@
-const { getCLINav } = require("./scripts/cli");
-
 module.exports = {
   docs: [
     {
