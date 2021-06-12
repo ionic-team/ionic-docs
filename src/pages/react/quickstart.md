@@ -210,7 +210,7 @@ From the Web Components side, we have a special attribute called `slot`. This is
 Let's look at another component from Ionic, FAB. Floating Action Buttons are a nice way to provide a main action that is elevated from the rest of an app. For this FAB, we'll need three components: a FAB, a FAB Button, and an Icon.
 
 ```typescript
-import { add } from ‘ionicons/icons’;
+import { add } from 'ionicons/icons';
 …
 
 <IonContent>
