@@ -57,7 +57,8 @@ Developers using Angular should install the latest version of `@ionic/angular`. 
 
 ```typescript
 
-import { Animation, AnimationController } from '@ionic/angular';
+import { Animation } from '@ionic/core';
+import { AnimationController } from '@ionic/angular';
 
 ...
 
