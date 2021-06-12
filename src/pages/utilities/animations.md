@@ -141,13 +141,15 @@ this.animationCtrl.create()
   .duration(1500)
   .iterations(Infinity)
   .fromTo('transform', 'translateX(0px)', 'translateX(100px)')
-  .fromTo('opacity', '1', '0.2');
+  .fromTo('opacity', '1', '0.2')
+  .play();
 ```
 </docs-tab>
 <docs-tab tab="react">
 
 ```typescript
 <CreateAnimation
+  play={true}
   duration={1500}
   iterations={Infinity}
   fromTo={[
@@ -180,6 +182,8 @@ createAnimation()
 ```
 </docs-tab>
 </docs-tabs>
+
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-angular-basic-animations) and in React [here](https://stackblitz.com/edit/ionic-react-basic-animations).
 
 In the example above, an animation that changes the opacity on the `.square` element and moves it from left to right along the X axis has been created. This animation will run an infinite number of times, and each iteration of the animation will last 1500ms.
 
