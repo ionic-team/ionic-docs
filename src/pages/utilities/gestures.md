@@ -251,6 +251,7 @@ In this example, our app listens for gestures on the `.rectangle` element. When 
 
 ```javascript
 const backgrounds = ['rgba(0, 0, 255, 0.5)', 'rgba(0, 255, 0.5)', 'rgba(255, 0, 0, 0.5)', 'rgba(255, 255, 0, 0.5)', 'rgba(255, 0, 255, 0.5)', 'rgba(0, 255, 255, 0.5)'];
+const transforms: string[] = ["rotate(30deg)", "translateX(40px)", "translateY(40px)", "rotate(60deg)", "rotate(100deg)"]
 const DOUBLE_CLICK_THRESHOLD = 500;
 const rectangle = document.querySelector('.rectangle');
 const gesture = createGesture({
@@ -269,6 +270,7 @@ const onStart = () => {
   
   if (Math.abs(now - lastOnStart) <= DOUBLE_CLICK_THRESHOLD) {
     rectangle.style.setProperty('background', getRandomBackground());
+    rectangle.style.setProperty('transform', getRandomTransform());
     lastOnStart = 0;
   } else {
     lastOnStart = now;
@@ -281,6 +283,12 @@ const getRandomBackground = () => {
   
   return currentColor;
 }
+const getRandomTransform = () => {
+    const options = transforms.filter(t => t !== currentTransform);
+    currentTransform = options[Math.floor(Math.random() * options.length)];
+
+    return currentTransform;
+  };
 ```
 </docs-tab>
 <docs-tab tab="angular">
@@ -289,7 +297,9 @@ const getRandomBackground = () => {
 @ViewChild('rectangle') rectangle: ElementRef;
 
 private backgrounds: string[] = ['rgba(0, 0, 255, 0.5)', 'rgba(0, 255, 0.5)', 'rgba(255, 0, 0, 0.5)', 'rgba(255, 255, 0, 0.5)', 'rgba(255, 0, 255, 0.5)', 'rgba(0, 255, 255, 0.5)'];
+private transforms: string[] = ["rotate(30deg)", "translateX(40px)", "translateY(40px)", "rotate(60deg)", "rotate(100deg)"];
 private currentColor: string = 'rgba(0, 0, 255, 0.5)';
+private currentTransform: string = this.transforms[0];
 private lastOnStart: number = 0;
 private DOUBLE_CLICK_THRESHOLD: number = 500;
 
@@ -308,6 +318,7 @@ private onStart() {
   
   if (Math.abs(now - this.lastOnStart) <= this.DOUBLE_CLICK_THRESHOLD) {
     this.rectangle.nativeElement.style.setProperty('background', this.getRandomBackground());
+    this.rectangle.nativeElement.style.setProperty('transform', this.getRandomTransform());
     this.lastOnStart = 0;
   } else {
     this.lastOnStart = now;
@@ -320,30 +331,47 @@ private getRandomBackground() {
   
   return this.currentColor;
 }
+private getRandomTransform() {
+  const options = this.transforms.filter(t => t !== this.currentTransform);
+  this.currentTransform = options[Math.floor(Math.random() * options.length)];
+
+  return this.currentTransform;
+}
 ```
 </docs-tab>
 <docs-tab tab="react">
 
 ```javascript
 const backgrounds = ['rgba(0, 0, 255, 0.5)', 'rgba(0, 255, 0.5)', 'rgba(255, 0, 0, 0.5)', 'rgba(255, 255, 0, 0.5)', 'rgba(255, 0, 255, 0.5)', 'rgba(0, 255, 255, 0.5)'];
+const transforms: string[] = ["rotate(30deg)", "translateX(40px)", "translateY(40px)", "rotate(60deg)","rotate(100deg)"]
 const DOUBLE_CLICK_THRESHOLD = 500;
-const rectangle = document.querySelector('.rectangle');
-const gesture = createGesture({
-  el: rectangle,
-  threshold: 0,
-  onStart: () => { onStart(); }
-});
+const rectangle = useRef(null)
+let gesture;
 
-gesture.enable();
+useEffect(() => {
+  if (rectangle.current !== null) {
+    gesture = createGesture({
+      el: rectangle.current,
+      threshold: 0,
+      onStart: () => {
+        onStart();
+      }
+    });
+
+    gesture.enable();
+  }
+}, []);
 
 let lastOnStart = 0;
 let currentColor = 'rgba(0, 0, 255, 0.5)';
+let currentTransform = transforms[0];
 
 const onStart = () => {
   const now = Date.now();
   
   if (Math.abs(now - lastOnStart) <= DOUBLE_CLICK_THRESHOLD) {
-    rectangle.style.setProperty('background', getRandomBackground());
+    rectangle.current.style.setProperty('background', getRandomBackground());
+    rectangle.current.style.setProperty('transform', getRandomTransform());
     lastOnStart = 0;
   } else {
     lastOnStart = now;
@@ -356,6 +384,12 @@ const getRandomBackground = () => {
   
   return currentColor;
 }
+const getRandomTransform = () => {
+    const options = transforms.filter(t => t !== currentTransform);
+    currentTransform = options[Math.floor(Math.random() * options.length)];
+
+    return currentTransform;
+  };
 ```
 </docs-tab>
 <docs-tab tab="vue">
@@ -400,6 +434,8 @@ const getRandomBackground = () => {
 ```
 </docs-tab>
 </docs-tabs>
+
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-angular-double-click) and in React [here](https://stackblitz.com/edit/ionic-react-double-click).
 
 In the example above, we want to be able to detect double clicks on an element. By setting our `threshold` to `0`, we can ensure our gesture object can detect clicks. Additionally, we define a click threshold so that only 2 clicks that occur in quick succession count as a double click.
 
