@@ -53,7 +53,7 @@ const animation: Animation = createAnimation('')
 </docs-tab>
 <docs-tab tab="angular">
 
-Developers using Angular should install the latest version of `@ionic/angular`. Animations can be created via the `AnimationController` dependency injection. 
+Developers using Angular should install the latest version of `@ionic/angular`. Animations can be created via the `AnimationController` dependency injection.
 
 ```typescript
 
@@ -83,8 +83,8 @@ import { CreateAnimation, Animation } from '@ionic/react';
 <CreateAnimation
   duration={1000}
   fromTo={{
-    property: 'opacity', 
-    fromValue: '1', 
+    property: 'opacity',
+    fromValue: '1',
     toValue: '0.5'
   }}
 >
@@ -204,9 +204,9 @@ createAnimation()
   .duration(3000)
   .iterations(Infinity)
   .keyframes([
-    { offset: 0, background: 'red' },
-    { offset: 0.72, background: 'var(--background)' },
-    { offset: 1, background: 'green' }
+    { offset: 0, transform: "rotate(0deg) scale(1)" },
+    { offset: 0.72, transform: "rotate(180deg) scale(2)" },
+    { offset: 1, transform: "rotate(360deg) scale(1)" }
   ]);
 ```
 </docs-tab>
@@ -218,9 +218,9 @@ this.animationCtrl.create()
   .duration(3000)
   .iterations(Infinity)
   .keyframes([
-    { offset: 0, background: 'red' },
-    { offset: 0.72, background: 'var(--background)' },
-    { offset: 1, background: 'green' }
+    { offset: 0, transform: "rotate(0deg) scale(1)" },
+    { offset: 0.72, transform: "rotate(180deg) scale(2)" },
+    { offset: 1, transform: "rotate(360deg) scale(1)" }
   ]);
 ```
 </docs-tab>
@@ -231,9 +231,9 @@ this.animationCtrl.create()
   duration={3000}
   iterations={Infinity}
   keyframes={[
-    { offset: 0, background: 'red' },
-    { offset: 0.72, background: 'var(--background)' },
-    { offset: 1, background: 'green' }
+    { offset: 0, transform: "rotate(0deg) scale(1)" },
+    { offset: 0.72, transform: "rotate(180deg) scale(2)" },
+    { offset: 1, transform: "rotate(360deg) scale(1)" }
   ]}
 >
 ...
@@ -265,6 +265,8 @@ createAnimation()
 </docs-tab>
 </docs-tabs>
 
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-angular-animation-keyframes) and in React [here](https://stackblitz.com/edit/ionic-react-animation-keyframes).
+
 In the example above, the `.square` element will transition from a red background color, to a background color defined by the `--background` variable, and then transition on to a green background color.
 
 Each keyframe object contains an `offset` property. `offset` is a value between 0 and 1 that defines the keyframe step. Offset values must go in ascending order and cannot repeat.
@@ -288,7 +290,7 @@ const squareA = createAnimation()
     { offset: 0.5, transform: 'scale(1.2) rotate(45deg)' },
     { offset: 1, transform: 'scale(1) rotate(45deg)' }
   ]);
-  
+
 const squareB = createAnimation()
   .addElement(document.querySelector('.square-b'))
   .keyframes([
@@ -296,7 +298,7 @@ const squareB = createAnimation()
     { offset: 0.5, transform: 'scale(1.2)', opacity: '0.3' },
     { offset: 1, transform: 'scale(1)', opacity: '1' }
   ]);
-  
+
 const squareC = createAnimation()
   .addElement(document.querySelector('.square-c'))
   .duration(5000)
@@ -317,97 +319,95 @@ const parent = createAnimation()
 
 ```javascript
 const squareA = this.animationCtrl.create()
-  .addElement(this.squareA.nativeElement)
+  .addElement(document.querySelector(".squareA"))
   .keyframes([
-    { offset: 0, transform: 'scale(1) rotate(0)' },
-    { offset: 0.5, transform: 'scale(1.2) rotate(45deg)' },
-    { offset: 1, transform: 'scale(1) rotate(45deg)' }
-  ]);
-  
-const squareB = this.animationCtrl.create()
-  .addElement(this.squareB.nativeElement)
-  .keyframes([
-    { offset: 0, transform: 'scale(1))', opacity: '1' },
-    { offset: 0.5, transform: 'scale(1.2)', opacity: '0.3' },
-    { offset: 1, transform: 'scale(1)', opacity: '1' }
-  ]);
-  
-const squareC = this.animationCtrl.create()
-  .addElement(this.squareC.nativeElement)
-  .duration(5000)
-  .keyframes([
-    { offset: 0, transform: 'scale(1))', opacity: '0.5' },
-    { offset: 0.5, transform: 'scale(0.8)', opacity: '1' },
-    { offset: 1, transform: 'scale(1)', opacity: '0.5' }
+    { offset: 0, transform: "scale(1) rotate(0)" },
+    { offset: 0.5, transform: "scale(1.2) rotate(45deg)" },
+    { offset: 1, transform: "scale(1) rotate(0)" }
   ]);
 
-const parent = this.animationCtrl.create()
+const squareB = this.animationCtrl.create()
+  .addElement(document.querySelector(".squareB"))
+  .keyframes([
+    { offset: 0, transform: "scale(1)" },
+    { offset: 0.5, transform: "scale(1.2) translateX(20px)" },
+    { offset: 1, transform: "scale(1) translateX(0)"}
+  ]);
+
+const squareC = this.animationCtrl.create()
+  .addElement(document.querySelector(".squareC"))
+  .duration(5000)
+  .keyframes([
+    { offset: 0, transform: "scale(1)" },
+    { offset: 0.5, transform: "scale(0.8) translateY(40px)" },
+    { offset: 1, transform: "scale(1) translateY(0)" }
+  ]);
+
+this.parent = this.animationCtrl.create()
   .duration(2000)
   .iterations(Infinity)
-  .addAnimation([squareA, squareB, squareC]);
+  .addAnimation([squareA, squareB, squareC]).play();
 ```
 
 </docs-tab>
 <docs-tab tab="react">
 
 ```typescript
-private parentRef: React.RefObject<CreateAnimation> = React.createRef();
-private squareARef: React.RefObject<CreateAnimation> = React.createRef();
-private squareBRef: React.RefObject<CreateAnimation> = React.createRef();
-private squareCRef: React.RefObject<CreateAnimation> = React.createRef();
+const parentRef = useRef<CreateAnimation>(null);
+const squareARef = useRef<CreateAnimation>(null);
+const squareBRef = useRef<CreateAnimation>(null);
+const squareCRef = useRef<CreateAnimation>(null);
 
-...
-
-componentDidMount() {
-  const parent = this.parentRef.current!.animation;
-  const squareA = this.squareARef.current!.animation;
-  const squareB = this.squareBRef.current!.animation;
-  const squareC = this.squareCRef.current!.animation;
-  
+useEffect(() => {
+  const parent = parentRef.current!.animation;
+  const squareA = squareARef.current!.animation;
+  const squareB = squareBRef.current!.animation;
+  const squareC = squareCRef.current!.animation;
   parent.addAnimation([squareA, squareB, squareC]);
-}
+});
 
 render() {
   return (
     <>
       <CreateAnimation
-        ref={this.parentRef}
+        ref={parentRef}
+        play={true}
         duration={2000}
         iterations={Infinity}
-      ></CreateAnimation>
-      
+      />
+
       <CreateAnimation
-        ref={this.squareARef}
+        ref={squareARef}
         keyframes={[
-          { offset: 0, transform: 'scale(1) rotate(0)' },
-          { offset: 0.5, transform: 'scale(1.2) rotate(45deg)' },
-          { offset: 1, transform: 'scale(1) rotate(0deg)' }
+          { offset: 0, transform: "scale(1) rotate(0)" },
+          { offset: 0.5, transform: "scale(1.2) rotate(45deg)" },
+          { offset: 1, transform: "scale(1) rotate(0)" }
         ]}
       >
-        <div className="square"></div>
+        <div className="square" />
       </CreateAnimation>
-      
+
       <CreateAnimation
-        ref={this.squareBRef}
+        ref={squareBRef}
         keyframes={[
-          { offset: 0, transform: 'scale(1)', opacity: '1' },
-          { offset: 0.5, transform: 'scale(1.2)', opacity: '0.3' },
-          { offset: 1, transform: 'scale(1)', opacity: '1' }
+          { offset: 0, transform: "scale(1)" },
+          { offset: 0.5, transform: "scale(1.2) translateX(20px)" },
+          { offset: 1, transform: "scale(1) translateX(0)" }
         ]}
       >
-        <div className="square"></div>
+        <div className="square" />
       </CreateAnimation>
-      
+
       <CreateAnimation
-        ref={this.squareCRef}
+        ref={squareCRef}
         duration={5000}
         keyframes={[
-          { offset: 0, transform: 'scale(1)', opacity: '0.5' },
-          { offset: 0.5, transform: 'scale(0.8)', opacity: '1' },
-          { offset: 1, transform: 'scale(1)', opacity: '0.5' }
+          { offset: 0, transform: "scale(1)" },
+          { offset: 0.5, transform: "scale(0.8) translateY(40px)" },
+          { offset: 1, transform: "scale(1) translateY(0)" }
         ]}
       >
-        <div className="square"></div>
+        <div className="square" />
       </CreateAnimation>
     </>
   )
@@ -462,6 +462,8 @@ const parent = createAnimation()
 
 </docs-tab>
 </docs-tabs>
+
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-angular-grouped-animations?file=src%2Fapp%2Fapp.component.ts) and in React [here](https://stackblitz.com/edit/ionic-react-grouped-animations?file=src/App.css).
 
 This example shows 3 child animations controlled by a single parent animation. Animations `squareA` and `squareB` inherit the parent animation's duration of 2000ms, but animation `squareC` has a duration of 5000ms since it was explicitly set.
 
@@ -592,7 +594,7 @@ const squareA = createAnimation()
     { offset: 0.5, transform: 'scale(1.2) rotate(45deg)' },
     { offset: 1, transform: 'scale(1) rotate(0)' }
   ]);
-  
+
 const squareB = createAnimation()
   .addElement(document.querySelector('.square-b'))
   .fill('none')
@@ -602,7 +604,7 @@ const squareB = createAnimation()
     { offset: 0.5, transform: 'scale(1.2)', opacity: '0.3' },
     { offset: 1, transform: 'scale(1)', opacity: '1' }
   ]);
-  
+
 const squareC = createAnimation()
   .addElement(document.querySelector('.square-c'))
   .fill('none')
@@ -630,7 +632,7 @@ const squareA = this.animationCtrl.create()
     { offset: 0.5, transform: 'scale(1.2) rotate(45deg)' },
     { offset: 1, transform: 'scale(1) rotate(0)' }
   ]);
-  
+
 const squareB = this.animationCtrl.create()
   .addElement(this.squareB.nativeElement)
   .fill('none')
@@ -640,7 +642,7 @@ const squareB = this.animationCtrl.create()
     { offset: 0.5, transform: 'scale(1.2)', opacity: '0.3' },
     { offset: 1, transform: 'scale(1)', opacity: '1' }
   ]);
-  
+
 const squareC = this.animationCtrl.create()
   .addElement(this.squareC.nativeElement)
   .fill('none')
@@ -669,7 +671,7 @@ async componentDidMount() {
   const squareA = this.squareARef.current!.animation;
   const squareB = this.squareBRef.current!.animation;
   const squareC = this.squareCRef.current!.animation;
-  
+
   await squareA.play();
   await squareB.play();
   await squareC.play();
@@ -690,7 +692,7 @@ render() {
       >
         <div className="square"></div>
       </CreateAnimation>
-      
+
       <CreateAnimation
         ref={this.squareBRef}
         fill="none"
@@ -703,7 +705,7 @@ render() {
       >
         <div className="square"></div>
       </CreateAnimation>
-      
+
       <CreateAnimation
         ref={this.squareCRef}
         fill="none"
@@ -810,22 +812,22 @@ const onMove = (ev): {
     animation.progressStart();
     started = true;
   }
-  
+
   animation.progressStep(getStep(ev));
 }
 
 const onEnd = (ev): {
   if (!started) { return; }
-  
+
   gesture.enable(false);
-  
+
   const step = getStep(ev);
   const shouldComplete = step > 0.5;
 
   animation
     .progressEnd((shouldComplete) ? 1 : 0, step)
     .onFinish((): { gesture.enable(true); });
-  
+
   initialStep = (shouldComplete) ? MAX_TRANSLATE : 0;
   started = false;
 }
@@ -850,12 +852,12 @@ private started: boolean = false;
 private initialStep: number = 0;
 private MAX_TRANSLATE: number = 400;
 
-ngOnInit() {    
+ngOnInit() {
   this.animation = this.animationCtrl.create()
     .addElement(this.square.nativeElement)
     .duration(1000)
     .fromTo('transform', 'translateX(0)', `translateX(${this.MAX_TRANSLATE}px)`);
-  
+
   this.gesture = this.gestureCtrl.create({
     el: this.square.nativeElement,
     threshold: 0,
@@ -863,7 +865,7 @@ ngOnInit() {
     onMove: ev: this.onMove(ev),
     onEnd: ev: this.onEnd(ev)
   })
-  
+
   this.gesture.enable(true);
 }
 
@@ -872,22 +874,22 @@ private onMove(ev) {
     this.animation.progressStart();
     this.started = true;
   }
-  
+
   this.animation.progressStep(this.getStep(ev));
 }
 
 private onEnd(ev) {
   if (!this.started) { return; }
-  
+
   this.gesture.enable(false);
-  
+
   const step = this.getStep(ev);
   const shouldComplete = step > 0.5;
 
   this.animation
     .progressEnd((shouldComplete) ? 1 : 0, step)
     .onFinish((): { this.gesture.enable(true); });
-  
+
   this.initialStep = (shouldComplete) ? this.MAX_TRANSLATE : 0;
   this.started = false;
 }
@@ -915,10 +917,10 @@ class MyComponent extends React.Component<{}, any> {
   private gesture?: Gesture;
   private started: boolean = false;
   private initialStep: number = 0;
-  
+
   constructor(props: any) {
     super(props);
-    
+
     this.state = {
       progressStart: undefined,
       progressStep: undefined,
@@ -926,10 +928,10 @@ class MyComponent extends React.Component<{}, any> {
       onFinish: undefined
     };
   }
-  
+
   componentDidMount() {
     const square = Array.from(this.animation.current!.nodes.values())[0];
-    
+
     this.gesture = createGesture({
       el: square,
       gestureName: 'square-drag',
@@ -937,11 +939,11 @@ class MyComponent extends React.Component<{}, any> {
       onMove: ev => this.onMove(ev),
       onEnd: ev => this.onEnd(ev)
     });
-    
+
     this.gesture.enable(true);
   }
-  
-  private onMove(ev: GestureDetail) {    
+
+  private onMove(ev: GestureDetail) {
     if (!this.started) {
       this.setState({
         ...this.state,
@@ -949,21 +951,21 @@ class MyComponent extends React.Component<{}, any> {
       });
       this.started = true;
     }
-      
+
     this.setState({
       ...this.state,
       progressStep: { step: this.getStep(ev) }
     });
   }
-  
+
   private onEnd(ev: GestureDetail) {
     if (!this.started) { return; }
-  
+
     this.gesture!.enable(false);
-  
+
     const step = this.getStep(ev);
     const shouldComplete = step > 0.5;
-  
+
     this.setState({
       ...this.state,
       progressEnd: { playTo: (shouldComplete) ? 1 : 0, step },
@@ -976,20 +978,20 @@ class MyComponent extends React.Component<{}, any> {
         })
       }, opts: { oneTimeCallback: true }}
     });
-  
+
     this.initialStep = (shouldComplete) ? MAX_TRANSLATE : 0;
     this.started = false;
   }
-  
+
   private getStep(ev: GestureDetail) {
     const delta = this.initialStep + ev.deltaX;
     return this.clamp(0, delta / MAX_TRANSLATE, 1);
   }
-  
+
   private clamp(min: number, n: number, max: number) {
     return Math.max(min, Math.min(n, max));
   }
-  
+
   render() {
     return (
       <>
@@ -1098,7 +1100,7 @@ Developers can also tailor their animations to user preferences such as `prefers
   opacity: 0.5;
   background: blue;
   margin: 10px;
-  
+
   --background: red;
 }
 
@@ -1207,25 +1209,25 @@ function presentModal() {
     const backdropAnimation = createAnimation()
       .addElement(baseEl.querySelector('ion-backdrop')!)
       .fromTo('opacity', '0.01', 'var(--backdrop-opacity)');
-    
+
     const wrapperAnimation = createAnimation()
       .addElement(baseEl.querySelector('.modal-wrapper')!)
       .keyframes([
         { offset: 0, opacity: '0', transform: 'scale(0)' },
         { offset: 1, opacity: '0.99', transform: 'scale(1)' }
       ]);
-      
+
     return createAnimation()
       .addElement(baseEl)
       .easing('ease-out')
       .duration(500)
       .addAnimation([backdropAnimation, wrapperAnimation]);
   }
-  
+
   const leaveAnimation = (baseEl: any) => {
     return enterAnimation(baseEl).direction('reverse');
   }
-    
+
   // create the modal with the `modal-page` component
   const modalElement = document.createElement('ion-modal');
   modalElement.component = 'modal-page';
@@ -1259,25 +1261,25 @@ export class ModalExample {
       const backdropAnimation = this.animationCtrl.create()
         .addElement(baseEl.querySelector('ion-backdrop')!)
         .fromTo('opacity', '0.01', 'var(--backdrop-opacity)');
-      
+
       const wrapperAnimation = this.animationCtrl.create()
         .addElement(baseEl.querySelector('.modal-wrapper')!)
         .keyframes([
           { offset: 0, opacity: '0', transform: 'scale(0)' },
           { offset: 1, opacity: '0.99', transform: 'scale(1)' }
         ]);
-        
+
       return this.animationCtrl.create()
         .addElement(baseEl)
         .easing('ease-out')
         .duration(500)
         .addAnimation([backdropAnimation, wrapperAnimation]);
     }
-    
+
     const leaveAnimation = (baseEl: any) => {
       return enterAnimation(baseEl).direction('reverse');
     }
-    
+
     const modal = await this.modalController.create({
       component: ModalPage,
       enterAnimation,
@@ -1296,26 +1298,26 @@ import { CreateAnimation, IonModal, IonButton, IonContent } from '@ionic/react';
 
 export const ModalExample: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
-  
+
   const enterAnimation = (baseEl: any) => {
     const backdropAnimation = createAnimation()
       .addElement(baseEl.querySelector('ion-backdrop')!)
       .fromTo('opacity', '0.01', 'var(--backdrop-opacity)');
-    
+
     const wrapperAnimation = createAnimation()
       .addElement(baseEl.querySelector('.modal-wrapper')!)
       .keyframes([
         { offset: 0, opacity: '0', transform: 'scale(0)' },
         { offset: 1, opacity: '0.99', transform: 'scale(1)' }
       ]);
-      
+
     return createAnimation()
       .addElement(baseEl)
       .easing('ease-out')
       .duration(500)
       .addAnimation([backdropAnimation, wrapperAnimation]);
   }
-  
+
   const leaveAnimation = (baseEl: any) => {
     return enterAnimation(baseEl).direction('reverse');
   }
@@ -1426,12 +1428,12 @@ const animation = createAnimation('my-animation-identifier')
 | Browser/Platform     | Supported Versions |
 | -------------------- | ------------------ |
 | **Chrome**           | 43+                |
-| **Safari**           | 9+                 |   
-| **Firefox**          | 32+                |     
-| **IE/Edge**          | 11+                |    
+| **Safari**           | 9+                 |
+| **Firefox**          | 32+                |
+| **IE/Edge**          | 11+                |
 | **Opera**            | 30+                |
 | **iOS**              | 9+                 |
-| **Android**          | 5+                 |      
+| **Android**          | 5+                 |
 
 > Due to a bug in Safari versions 9-11, stepping through animations via `progressStep` is not supported. This is supported on Safari 12+.
 
@@ -1440,7 +1442,7 @@ const animation = createAnimation('my-animation-identifier')
 | Name                 | Value                                                         |
 | ---------------------| ------------------------------------------------------------- |
 | `AnimationDirection` | `'normal' \| 'reverse' \| 'alternate' \| 'alternate-reverse'` |
-| `AnimationFill`      | `'auto' \| 'none' \| 'forwards' \| 'backwards' \| 'both'`     |  
+| `AnimationFill`      | `'auto' \| 'none' \| 'forwards' \| 'backwards' \| 'both'`     |
 
 ## Interfaces
 
@@ -1454,10 +1456,10 @@ interface AnimationCallbackOptions {
 
 interface AnimationPlayOptions {
   /**
-   * If true, the animation will play synchronously. 
+   * If true, the animation will play synchronously.
    * This is the equivalent of running the animation
    * with a duration of 0ms.
-   */ 
+   */
   sync: boolean;
 }
 ```
@@ -1467,7 +1469,7 @@ interface AnimationPlayOptions {
 | Name                                      | Description                                       |
 | ------------------------------------------| ------------------------------------------------- |
 | `childAnimations: Animation[]`            | All child animations of a given parent animation. |
-| `elements: HTMLElement[]`                 | All elements attached to an animation.            |                                                       
+| `elements: HTMLElement[]`                 | All elements attached to an animation.            |
 | `parentAnimation?: Animation` | The parent animation of a given animation object. |
 
 ## Methods
@@ -1475,7 +1477,7 @@ interface AnimationPlayOptions {
 | Name                                      | Description                                       |
 | ------------------------------------------| ------------------------------------------------- |
 | `addAnimation(animationToAdd: Animation \| Animation[]): Animation`            | Group one or more animations together to be controlled by a parent animation. |
-| `addElement(el: Element \| Element[] \| Node \| Node[] \| NodeList): Animation`                 | Add one or more elements to the animation.            |                                                       
+| `addElement(el: Element \| Element[] \| Node \| Node[] \| NodeList): Animation`                 | Add one or more elements to the animation.            |
 | `afterAddClass(className: string \| string[]): Animation` | Add a class or array of classes to be added to all elements in an animation after the animation ends. |
 | `afterAddRead(readFn: (): void): Animation` | Add a function that performs a DOM read to be run after the animation ends. |
 | `afterAddWrite(writeFn: (): void): Animation` | Add a function that performs a DOM write to be run after the animation ends. |
