@@ -111,7 +111,7 @@ Native Android apps are compiled with the <a href="https://java.com/en/" target=
 
 ## Project Setup
 
-Before apps can be deployed to Android simulators and devices, the native project must be configured.
+Before apps can be deployed to Android simulators and devices, the native project must be configured. You also need to run `ionic build` if you haven't already.
 
 1. **Generate the native project, if it does not already exist.**
 
@@ -132,11 +132,16 @@ Before apps can be deployed to Android simulators and devices, the native projec
     For Capacitor, open the `capacitor.config.json` file and modify the `appId` property.
 
     For Cordova, open the `config.xml` file and modify the `id` attribute of the root element, `<widget>`. See [the Cordova documentation](https://cordova.apache.org/docs/en/latest/config_ref/#widget) for more information.
-
+    
+ You can open the Android Studio Project using: 
+ 
+    ```shell
+    $ npx cap open android
+    ```
 
 ## Running with Capacitor
 
-Capacitor uses Android Studio to build and run apps to simulators and devices.
+Capacitor uses Android Studio to build and run apps to simulators and devices. 
 
 1. **Develop the Ionic app and sync it to the native project.**
 
