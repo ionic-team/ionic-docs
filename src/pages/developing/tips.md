@@ -1,6 +1,8 @@
 ---
 previousText: 'Developing for Android'
 previousUrl: '/docs/developing/android'
+nextText: 'Hardware Back Button'
+nextUrl: '/docs/developing/hardware-back-button'
 contributors:
   - rtpHarry
   - FdezRomero
