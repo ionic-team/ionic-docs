@@ -1292,7 +1292,7 @@ export class ModalExample {
 
 ```javascript
 import React, { useState } from 'react';
-import { CreateAnimation, IonModal, IonButton, IonContent } from '@ionic/react';
+import { createAnimation, IonModal, IonButton, IonContent } from '@ionic/react';
 
 export const ModalExample: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
@@ -1392,6 +1392,8 @@ export default defineComponent({
 ```
 </docs-tab>
 </docs-tabs>
+
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-angular-animation-override) and in React [here](https://stackblitz.com/edit/ionic-react-animation-overwride).
 
 <docs-codepen user="ionic" slug="ExapZBZ"></docs-codepen>
 
