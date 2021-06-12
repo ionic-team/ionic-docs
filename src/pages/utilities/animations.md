@@ -204,9 +204,9 @@ createAnimation()
   .duration(3000)
   .iterations(Infinity)
   .keyframes([
-    { offset: 0, background: 'red' },
-    { offset: 0.72, background: 'var(--background)' },
-    { offset: 1, background: 'green' }
+    { offset: 0, transform: "rotate(0deg) scale(1)" },
+    { offset: 0.72, transform: "rotate(180deg) scale(2)" },
+    { offset: 1, transform: "rotate(360deg) scale(1)" }
   ]);
 ```
 </docs-tab>
@@ -218,9 +218,9 @@ this.animationCtrl.create()
   .duration(3000)
   .iterations(Infinity)
   .keyframes([
-    { offset: 0, background: 'red' },
-    { offset: 0.72, background: 'var(--background)' },
-    { offset: 1, background: 'green' }
+    { offset: 0, transform: "rotate(0deg) scale(1)" },
+    { offset: 0.72, transform: "rotate(180deg) scale(2)" },
+    { offset: 1, transform: "rotate(360deg) scale(1)" }
   ]);
 ```
 </docs-tab>
@@ -231,9 +231,9 @@ this.animationCtrl.create()
   duration={3000}
   iterations={Infinity}
   keyframes={[
-    { offset: 0, background: 'red' },
-    { offset: 0.72, background: 'var(--background)' },
-    { offset: 1, background: 'green' }
+    { offset: 0, transform: "rotate(0deg) scale(1)" },
+    { offset: 0.72, transform: "rotate(180deg) scale(2)" },
+    { offset: 1, transform: "rotate(360deg) scale(1)" }
   ]}
 >
 ...
@@ -264,6 +264,8 @@ createAnimation()
 ```
 </docs-tab>
 </docs-tabs>
+
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-angular-animation-keyframes) and in React [here](https://stackblitz.com/edit/ionic-react-animation-keyframes).
 
 In the example above, the `.square` element will transition from a red background color, to a background color defined by the `--background` variable, and then transition on to a green background color.
 
