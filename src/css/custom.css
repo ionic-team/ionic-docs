@@ -19,7 +19,7 @@
   --ifm-code-font-size: 95%;
 
   /* Old docs variables */
-  --accent-color: #3880ff;
+  /* --accent-color: #3880ff;
   --accent-color-rgb: 56, 128, 255;
 
   --accent-color-100: #4d8dff;
@@ -49,7 +49,7 @@
   --text-color--darker: #24282e;
   --text-color--dark: #020814;
   --text-color--lighter: #abb2bf;
-  --text-color--light: #73849a;
+  --text-color--light: #73849a; */
 }
 
 * {
@@ -57,9 +57,6 @@
 }
 
 body {
-  background-color: var(--background);
-  color: var(--text-color);
-  font-family: var(--font-family);
   text-size-adjust: none;
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -99,7 +96,6 @@ img {
 }
 
 a {
-  color: var(--accent-color);
   font-weight: 400;
   text-decoration: none;
 }
@@ -112,7 +108,6 @@ a.outbound svg {
 }
 
 .intro {
-  color: var(--text-color--light);
   font-size: 1.2em;
   margin-bottom: 1.2em;
   max-width: 40em;
@@ -125,7 +120,6 @@ a.outbound svg {
 
 .intro strong {
   font-weight: 500;
-  color: var(--text-color);
 }
 
 ol,
@@ -139,8 +133,6 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--text-color--dark);
-  font-family: var(--heading-font-family);
   letter-spacing: 0;
   line-height: 1.1;
   padding-top: 2em;
@@ -213,86 +205,6 @@ h4 + p > small {
   margin-top: -2em;
 }
 
-blockquote {
-  background: rgba(255, 250, 237, 0.8);
-  border-left: 4px solid #ffcc5f;
-  border-radius: 2px 4px 4px 2px;
-  color: #736545;
-  font-size: 14px;
-  line-height: 1.8;
-  margin: 1em 0;
-  padding: 2em;
-}
-
-blockquote a {
-  border-bottom: dotted 1px currentColor;
-  color: #e09f16;
-}
-
-blockquote > *:first-child {
-  margin-top: 0;
-  padding-top: 0;
-}
-
-blockquote > *:last-child {
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-blockquote code {
-  background: #f7f1e6;
-  color: #381600;
-  font-weight: 500;
-}
-
-mark {
-  background-color: #ffd780;
-  color: var(--text-color--dark);
-}
-
-hr {
-  border-color: var(--line-rule-color);
-  border-style: solid;
-  border-width: 1px 0 0 0;
-  margin: 3rem 0;
-}
-
-code,
-kbd {
-  background-color: var(--code-background);
-  border-radius: 4px;
-  color: var(--code-color);
-  font-family: var(--code-font-family);
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: 0;
-  padding: 4px 6px;
-  white-space: pre-wrap;
-}
-
-pre {
-  background-color: var(--code-background);
-  border-radius: 4px;
-  line-height: 1.2;
-  margin: 2rem 0;
-  overflow: auto;
-  padding: 2em;
-}
-
-pre code {
-  background-color: transparent;
-  color: inherit;
-  font-size: 13px;
-  padding: 0;
-  white-space: inherit;
-}
-
-kbd {
-  border: 1px solid #ccc;
-  white-space: nowrap;
-  margin: 0 1px;
-}
-
 table {
   border-width: 1px 0 0 1px;
   font-size: 13px;
@@ -317,9 +229,9 @@ th {
   text-align: left;
 }
 
-thead tr,
-tbody tr:nth-child(odd) {
-  background-color: var(--offset-background);
+thead th,
+tbody tr:nth-child(even) {
+  background-color: var(--ifm-table-stripe-background);
 }
 
 .reference-table {
