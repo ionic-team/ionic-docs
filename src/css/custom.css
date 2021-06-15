@@ -6,7 +6,9 @@
  */
 
 /* You can override the default Infima variables here. */
+
 :root {
+  /* Docusaurus variables */
   --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: rgb(33, 175, 144);
   --ifm-color-primary-darker: rgb(31, 165, 136);
@@ -15,11 +17,341 @@
   --ifm-color-primary-lighter: rgb(102, 212, 189);
   --ifm-color-primary-lightest: rgb(146, 224, 208);
   --ifm-code-font-size: 95%;
+
+  /* Old docs variables */
+  --accent-color: #3880ff;
+  --accent-color-rgb: 56, 128, 255;
+
+  --accent-color-100: #4d8dff;
+  --accent-color-200: #639cff;
+  --accent-color-300: #4d8dff;
+  --accent-color-400: #7cabff;
+  --accent-color-500: #97bdff;
+  --accent-color-600: #b2ceff;
+  --accent-color-700: #cddfff;
+  --accent-color-800: #e3edff;
+  --accent-color-900: #f0f6ff;
+
+  --background: #ffffff;
+  --code-background: #f5f7fa;
+  --code-color: var(--text-color--dark);
+  --code-font-family: "SFMono-Regular", "Roboto Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI emoji";
+  --header-height: 56px;
+  --heading-font-family: var(--font-family);
+  --line-rule-color: #edf2f6;
+  --menu-width: 240px;
+  --offset-background: #fdfdff;
+  --offset-background--dark: #f7f7ff;
+  --page-margin-left: var(--menu-width);
+
+  --text-color: #303943;
+  --text-color--darker: #24282e;
+  --text-color--dark: #020814;
+  --text-color--lighter: #abb2bf;
+  --text-color--light: #73849a;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  text-size-adjust: none;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+ion-grid {
+  margin: 1em 0;
+}
+
+figure {
+  margin: 0;
+}
+
+figure > * {
+  display: block;
+  margin: 0 auto;
+}
+
+figure.device {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+figcaption {
+  text-align: center;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: var(--accent-color);
+  font-weight: 400;
+  text-decoration: none;
+}
+
+a.outbound svg {
+  fill: currentColor;
+  height: 1em;
+  width: 1em;
+  margin-bottom: -0.15em;
+}
+
+.intro {
+  color: var(--text-color--light);
+  font-size: 1.2em;
+  margin-bottom: 1.2em;
+  max-width: 40em;
+}
+
+.intro code {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.intro strong {
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+ol,
+ul {
+  padding-left: 2em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-color--dark);
+  font-family: var(--heading-font-family);
+  letter-spacing: 0;
+  line-height: 1.1;
+  padding-top: 2em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  font-weight: 700;
+}
+
+h2 a[href^="#"], 
+h3 a[href^="#"], 
+h4 a[href^="#"], 
+h5 a[href^="#"], 
+h6 a[href^="#"] {
+  color: inherit;
+  position: relative;
+}
+
+h1 {
+  font-size: 3.5rem;
+  padding-top: 0;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+h2 {
+  font-size: 1.825rem;
+
+  margin-bottom: 0.2em;
+}
+
+h3 {
+  font-size: 1.375rem;
+
+  margin-bottom: 0.2em;
+}
+
+h4 {
+  font-size: 1.15rem;
+}
+
+h5,
+h6 {
+  font-size: 1rem;
+}
+
+h2 + h3,
+h3 + h4 {
+  margin-top: -1em;
+}
+
+h2 + p > small,
+h3 + p > small,
+h4 + p > small {
+  display: block;
+  margin-top: -2em;
+}
+
+blockquote {
+  background: rgba(255, 250, 237, 0.8);
+  border-left: 4px solid #ffcc5f;
+  border-radius: 2px 4px 4px 2px;
+  color: #736545;
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 1em 0;
+  padding: 2em;
+}
+
+blockquote a {
+  border-bottom: dotted 1px currentColor;
+  color: #e09f16;
+}
+
+blockquote > *:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+blockquote > *:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+blockquote code {
+  background: #f7f1e6;
+  color: #381600;
+  font-weight: 500;
+}
+
+mark {
+  background-color: #ffd780;
+  color: var(--text-color--dark);
+}
+
+hr {
+  border-color: var(--line-rule-color);
+  border-style: solid;
+  border-width: 1px 0 0 0;
+  margin: 3rem 0;
+}
+
+code,
+kbd {
+  background-color: var(--code-background);
+  border-radius: 4px;
+  color: var(--code-color);
+  font-family: var(--code-font-family);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0;
+  padding: 4px 6px;
+  white-space: pre-wrap;
+}
+
+pre {
+  background-color: var(--code-background);
+  border-radius: 4px;
+  line-height: 1.2;
+  margin: 2rem 0;
+  overflow: auto;
+  padding: 2em;
+}
+
+pre code {
+  background-color: transparent;
+  color: inherit;
+  font-size: 13px;
+  padding: 0;
+  white-space: inherit;
+}
+
+kbd {
+  border: 1px solid #ccc;
+  white-space: nowrap;
+  margin: 0 1px;
+}
+
+table {
+  border-width: 1px 0 0 1px;
+  font-size: 13px;
+  margin: 2em 0;
+  overflow-x: auto;
+  width: 100%;
+}
+
+table,
+td,
+th {
+  border-collapse: collapse;
+  border-color: var(--line-rule-color);
+  border-style: solid;
+}
+
+td,
+th {
+  border-width: 0 1px 1px 0;
+  line-height: 1.5;
+  padding: 1em;
+  text-align: left;
+}
+
+thead tr,
+tbody tr:nth-child(odd) {
+  background-color: var(--offset-background);
+}
+
+.reference-table {
+  display: inline-table;
+}
+
+.reference-table th h3 {
+  padding: 0;
+  margin: 1em 0 .25em;
+}
+
+.reference-table p {
+  margin: 0;
+}
+
+.reference-table p + p {
+  margin-top: 2em;
+}
+
+iframe {
+  background-color: rgba(0, 0, 0, 0.02);
+  box-shadow: 10px 10px 20px rgba(0,0,0,0.1);
+}
+
 
 .docusaurus-highlight-code-line {
   background-color: rgb(72, 77, 91);
   display: block;
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
+}
+
+.main-wrapper main > * {
+  flex: 1;
 }

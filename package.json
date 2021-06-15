@@ -26,7 +26,8 @@
     "concurrently": "^6.2.0",
     "prettier": "^2.2.1",
     "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react-dom": "^16.8.4",
+    "remark-html": "^13.0.1"
   },
   "browserslist": {
     "production": [

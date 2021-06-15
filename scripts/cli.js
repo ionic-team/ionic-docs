@@ -1,6 +1,6 @@
-// const fetch = require("node-fetch");
+
 const fs = require("fs");
-// const path = require("path");
+const utils = require('./utils');
 const cliJSON = require("./data/cli.json");
 
 const commandToKebab = str => str.replace('ionic ', '')
@@ -17,14 +17,11 @@ const commandToKebab = str => str.replace('ionic ', '')
 function writePage(page) {
   const data = [
     renderFrontmatter(page),
-    renderReadme(page),
-    // renderUsage(page),
-    // renderProperties(page),
-    // renderEvents(page),
-    // renderMethods(page),
-    // renderParts(page),
-    // renderCustomProps(page),
-    // renderSlots(page)
+    renderIntro(page),
+    renderExamples(page),
+    renderInputs(page),
+    renderOptions(page),
+    renderAdvancedOptions(page),
   ].join("");
   
   const path = `docs/cli/commands/${commandToKebab(page.name)}.md`;
@@ -46,49 +43,93 @@ ${Object.entries(frontmatter)
 `;
 }
 
-function renderReadme({ description, name }) {
+function renderIntro({ description, summary, name }) {
   return `
 # ${name}
+
+${summary}
+
+\`\`\`shell
+$ ${name} [options]
+\`\`\`
 
 ${description}`;
 }
 
-// function renderUsage({ usage }) {
-//   const keys = Object.keys(usage);
 
-//   if (keys.length === 0) {
-//     return "";
-//   }
+function renderExamples({exampleCommands}) {
+  if (! exampleCommands || exampleCommands.length === 0) {
+    return '';
+  }
+  
+  return `
+## Examples
 
-//   if (keys.length === 1) {
-//     return `
-// ## Usage
+\`\`\`shell
+${exampleCommands.map(command => `$ ${command}`).join('\n')}
+\`\`\`
+`;
+}
 
-// ${usage[keys[0]]}
-// `;
-//   }
 
-//   return `
-// ## Usage
+function renderInputs({ inputs }) {
+  if (inputs.length === 0) {
+    return "";
+  }
 
-// <Tabs defaultValue="${keys[0]}" values={[${keys
-//     .map(key => `{ value: '${key}', label: '${key.toUpperCase()}' }`)
-//     .join(", ")}]}>
+  return `
+## Inputs
 
-// ${Object.entries(usage)
-//   .map(
-//     ([key, value]) => `
-// <TabItem value="${key}">
+${utils.renderReference(inputs, {
+  Head: input => input.name,
+  Description: input => utils.renderMarkdown(input.summary)
+})}
 
-// ${value}
+`;
+}
 
-// </TabItem>
-// `
-//   )
-//   .join("\n")}
-// </Tabs>
-// `;
-// }
+
+function renderOptions({ options }) {
+  options = options.filter(option => !option.groups.includes('advanced'));
+
+  if (options.length === 0) {
+    return "";
+  }
+
+  return `
+## Options
+
+${utils.renderReference(options, {
+  Head: option => utils.renderOptionSpec(option),
+  Description: option => utils.renderMarkdown(option.summary),
+  Aliases: option => option.aliases.length > 0 ? option.aliases.map((alias) => `<code>-${alias}</code>`).join(' ') : null,
+  Default: option => option.default && option.type === 'string' ? option.default : null
+})}
+
+`;
+}
+
+
+function renderAdvancedOptions({ options }) {
+  options = options.filter(option => option.groups.includes('advanced'));
+
+  if (options.length === 0) {
+    return "";
+  }
+
+  return `
+## Advanced Options
+
+${utils.renderReference(options, {
+  Head: option => utils.renderOptionSpec(option),
+  Description: option => `<div>${utils.renderMarkdown(option.summary)}</div>`,
+  Aliases: option => option.aliases.length > 0 ? option.aliases.map((alias) => `<code>-${alias}</code>`).join(' ') : null,
+  Default: option => option.default && option.type === 'string' ? option.default : null
+})}
+
+`;
+}
+
 
 // function renderProperties({ props: properties }) {
 //   if (properties.length === 0) {
