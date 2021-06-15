@@ -29,9 +29,9 @@ par [Joshua Morony](https://www.joshmorony.com/blog)
 
 Building Mobile Apps with Ionic & Angular est une ressource tout-en-un pour apprendre la dernière et meilleure version de Ionic. Il s'adresse aux débutants et présente les bases de Ionic, des exemples d'applications plus ou moins complexes, puis les étapes nécessaires pour construire et publier votre application (sur les app stores ou en tant que PWA). Il a été mis à jour pour chaque version majeure, vous pouvez donc être tranquille en sachant que vous n'apprenez pas une technologie dépassée.
 
-### [Ionic 2 From Zero to App Store](https://devdactic.com/zero-to-app)
+### [Ionic 2 de zéro à l'App Store](https://devdactic.com/zero-to-app)
 
-by Simon Reimler
+par Simon Reimler
 
 ### [Ionic Framework By Example](https://www.packtpub.com/application-development/ionic-framework-example)
 
