@@ -100,6 +100,11 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: none;
+  color: var(--ifm-link-hover-color);
+}
+
 a.outbound svg {
   fill: currentColor;
   height: 1em;
@@ -266,4 +271,13 @@ iframe {
 
 .main-wrapper main > * {
   flex: 1;
+}
+
+.git-link svg {
+  height: 1em;
+  width: 1em;
+  vertical-align: -0.1em;
+}
+.git-link path {
+  fill: currentColor;
 }

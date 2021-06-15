@@ -1,7 +1,6 @@
-// const fetch = require("node-fetch");
 const fs = require("fs");
-// const path = require("path");
 const nativeJSON = require("./data/native.json");
+const utils = require('./utils.js');
 
 (async function() {
   // console.log(cliJSON);
@@ -12,7 +11,7 @@ const nativeJSON = require("./data/native.json");
 function writePage(page) {
   const data = [
     renderFrontmatter(page),
-    renderReadme(page),
+    renderIntro(page),
     // renderUsage(page),
     // renderProperties(page),
     // renderEvents(page),
@@ -40,11 +39,16 @@ ${Object.entries(frontmatter)
 `;
 }
 
-function renderReadme({ description, displayName }) {
+function renderIntro({ description, displayName, repo }) {
   return `
 # ${displayName}
 
-${description}`;
+${description}
+
+<p><a href="${repo}" target="_blank" rel="noopener" className="git-link">
+  ${utils.gitBranchSVG()} ${repo}
+</a></p>
+`;
 }
 
 // function renderUsage({ usage }) {
