@@ -7,6 +7,7 @@ hide_table_of_contents: true
 ---
 import DocsCard from '@site/src/components/DocsCard';
 import DocsCards from '@site/src/components/DocsCards';
+import { Helmet } from "react-helmet";
 
 # Native APIs
 
@@ -15,7 +16,7 @@ import DocsCards from '@site/src/components/DocsCards';
 <div id="native-enterprise-cards">
   <a href="https://capacitorjs.com/docs/plugins">
     <div class="image-wrapper">
-      <img src="/docs/assets/img/native/capacitor@2x.png" width="440" height="222" alt="capacitor logo"/>
+      <img src="/docs/img/native/capacitor@2x.png" width="440" height="222" alt="capacitor logo"/>
     </div>
     <div class="heading-group">
       <header>Capacitor plugins</header>
@@ -25,7 +26,7 @@ import DocsCards from '@site/src/components/DocsCards';
 
   <a href="/docs/native/community">
     <div class="image-wrapper">
-      <img src="/docs/assets/img/native/cordova@2x.png" width="440" height="222" alt="cordova logo"/>
+      <img src="/docs/img/native/cordova@2x.png" width="440" height="222" alt="cordova logo"/>
     </div>
     <div class="heading-group">
       <header>Cordova plugins</header>
@@ -36,7 +37,7 @@ import DocsCards from '@site/src/components/DocsCards';
 
 <a id="native-enterprise" href="https://ionicframework.com/native">
   <div class="image-wrapper">
-    <img src="/docs/assets/img/native/native-enterprise@2x.png" width="476" height="228" />
+    <img src="/docs/img/native/native-enterprise@2x.png" width="476" height="228" />
   </div>
   
   <div class="heading-group">    
@@ -49,8 +50,8 @@ import DocsCards from '@site/src/components/DocsCards';
   </div>
 </a>
 
-<!--
-<style scoped>
+<style type="text/css">
+  {`
   #native-enterprise-cards {
     display: flex;
 
@@ -112,6 +113,7 @@ import DocsCards from '@site/src/components/DocsCards';
 
   #native-enterprise {
     margin-top: 2rem;
+    margin-bottom: 2rem;
 
     border-radius: 16px;
     overflow: hidden;
@@ -177,9 +179,8 @@ import DocsCards from '@site/src/components/DocsCards';
 
     color: #E9EDF3;
   }
-
+`}
 
 </style>
--->
 
 > These docs are for apps built with Ionic Framework 4.0.0 and greater. For older Ionic v3 projects, please [see here](/docs/v3/native).
