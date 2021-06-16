@@ -21,7 +21,7 @@ jobs:
           npm ci
           npm run build
       - name: vercel deploy
-        if: ${{ github.ref == 'refs/heads/docusaurus' }}
+        if: ${{ github.ref == 'refs/heads/main' }}
         run: vercel --token ${{ secrets.VERCEL_TOKEN }} deploy --prod
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
