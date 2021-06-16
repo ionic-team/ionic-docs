@@ -48,13 +48,13 @@ export function usePhotoGallery() {
 
 请注意这里的神奇之处：代码中并没有出现任何跟平台有关的代码（web、iOS或是安卓）。 Capacitor 相机插件为我们抽象出了相关函数，而我们只需要调用 `Camera.getPhoto()` 便可以开始使用设备的拍照功能。
 
-The last step we need to take is to use the new function from the Tab2 page. Go back to Tab2.vue and import it:
+最后一步我们需要使用我们在Tab2页面中新创建的钩子函数。 返回Tab2.vue，重新导入钩子函数：
 
 ```typescript
 import { usePhotoGallery } from '@/composables/usePhotoGallery';
 ```
 
-Next, within the default export, add a setup method, part of the [Composition API](https://v3.vuejs.org/guide/composition-api-setup.html#setup). Destructure the `takePhoto` function from `usePhotoGallery`, then return it:
+接下来，在默认导出的对象中添加 `setup` 方法，这部分在文档中的 [组合式 API](https://v3.cn.vuejs.org/guide/composition-api-setup.html#setup)。 从导入的`usePhotoGallery` 钩子函数中解构 `takePhoto`方法，然后返回出去：
 
 ```typescript
 <script lang="ts">
@@ -81,7 +81,7 @@ export default  {
 </script>
 ```
 
-Save the file, and if you’re not already, restart the development server in your browser by running `ionic serve`. On the Photo Gallery tab, click the Camera button. If your computer has a webcam of any sort, a modal window appears. Take a selfie!
+保存文件，如果服务还没有运行的话，可以通过`ionic serve`命令运行服务。 在图库标签页里边，点击一下相机按钮。 如果你的电脑有任何类型的摄像头，就会弹出一个窗口。 Take a selfie!
 
 ![Camera API on the web](/docs/assets/img/guides/first-app-cap-ng/camera-web.png)
 
