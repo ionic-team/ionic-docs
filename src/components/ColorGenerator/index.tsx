@@ -37,17 +37,10 @@ const ATTR_MAP = {
 };
 
 const ColorGenerator = (props: ColorGeneratorProps) => {
-  // const components = useMDXComponents();
   const [cssText, setCssText] = useState(CSS_TEXT);
   const [colors, setColors] = useState(convertCssToColors(CSS_TEXT));
 
   const textContent = useRef(CSS_TEXT);
-
-  // useEffect(() => {
-  //   const iframe = document.querySelector('.docs-demo-device iframe') as any;
-  //   const iframeDocument = iframe.contentWindow || iframe.contentDocument;
-  //   iframeDocument.alert('This is called from inside the iframe');
-  // }, []);
 
   useEffect(() => {
     setColors(convertCssToColors(cssText));
@@ -61,6 +54,7 @@ const ColorGenerator = (props: ColorGeneratorProps) => {
     Array.from(colors).forEach(([_, color]) => {
       const keys = (Object.keys(ATTR_MAP) as any) as (keyof typeof ATTR_MAP)[];
       const genColor = generateColor(color.value);
+
       for (const key of keys) {
         setCssText(cssText =>
           updateCssText(color.property + ATTR_MAP[key], cssText, genColor[key]),

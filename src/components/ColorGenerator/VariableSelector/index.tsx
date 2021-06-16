@@ -18,7 +18,6 @@ const VariableSelector: React.FC<VariableSelectorProps> = ({
   const { state, controls } = useContext(ColorGeneratorContext);
   const value = state.colors.get(name).value;
 
-  const [showNameError, setShowNameError] = useState(false);
   const [showValueError, setShowValueError] = useState(false);
   const [isValueInputFocused, setIsValueInputFocused] = useState(false);
 
@@ -39,6 +38,10 @@ const VariableSelector: React.FC<VariableSelectorProps> = ({
     });
   };
 
+  useEffect(() => {
+    validateValue();
+  }, [value]);
+
   const isValidHex = (str: string | undefined): boolean => {
     return typeof str !== 'undefined' ? /^#[0-9A-F]{6}$/i.test(str) : false;
   };
@@ -58,18 +61,12 @@ const VariableSelector: React.FC<VariableSelectorProps> = ({
       className={clsx({
         [props.className]: Boolean(props.className),
         [styles.variableSelector]: true,
-        [styles.variableSelectorNameError]: showNameError,
         [styles.variableSelectorValueError]: showValueError,
       })}
     >
       <div className={styles.name}>
         <i className={styles.swatch} style={{ backgroundColor: value }}></i>
         <span>{name}</span>
-        {showNameError && (
-          <span className={styles.error}>
-            Please enter a valid name without special characters.
-          </span>
-        )}
       </div>
       <div className={styles.formGroup}>
         <div
@@ -79,9 +76,9 @@ const VariableSelector: React.FC<VariableSelectorProps> = ({
             [styles.inputFocused]: isValueInputFocused,
           })}
           onClick={ev => {
-            // if (isParentOpen) {
-            //   ev.stopPropagation();
-            // }
+            if (isParentOpen) {
+              ev.stopPropagation();
+            }
           }}
         >
           <div className={styles.colorWrap} style={{ backgroundColor: value }}>
@@ -89,10 +86,18 @@ const VariableSelector: React.FC<VariableSelectorProps> = ({
               type="color"
               value={value}
               onInput={onColorChange}
+              onFocus={() => setIsValueInputFocused(true)}
+              onBlur={() => setIsValueInputFocused(false)}
               tabIndex={-1}
             />
           </div>
-          <input type="text" value={value} onInput={onColorChange} />
+          <input
+            type="text"
+            value={value}
+            onInput={onColorChange}
+            onFocus={() => setIsValueInputFocused(true)}
+            onBlur={() => setIsValueInputFocused(false)}
+          />
         </div>
 
         {showValueError && (
