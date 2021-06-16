@@ -25,7 +25,7 @@ import { Storage } from '@capacitor/storage'
 
 ```
 
-接下来，创建一个名为 usePhotoGallerery 的函数：
+接下来，创建一个名为 usePhotoGallerery 的钩子函数：
 
 ```typescript
 export function usePhotoGallery() {
@@ -81,17 +81,17 @@ export default  {
 </script>
 ```
 
-保存文件，如果服务还没有运行的话，可以通过`ionic serve`命令运行服务。 在图库标签页里边，点击一下相机按钮。 如果你的电脑有任何类型的摄像头，就会弹出一个窗口。 Take a selfie!
+保存文件，如果服务还没有运行的话，可以通过`ionic serve`命令运行服务。 在图库标签页里边，点击一下相机按钮。 如果你的电脑有任何类型的摄像头，就会弹出一个窗口。 来，试着给自己来张自拍！
 
 ![Camera API on the web](/docs/assets/img/guides/first-app-cap-ng/camera-web.png)
 
-_(Your selfie is probably much better than mine)_
+_（你的自怕应该会比我好看很多）_
 
-After taking a photo, it disappears right away. We still need to display it within our app and save it for future access.
+但拍摄完成之后，这张照片会立即消失。 我们需要在应用中保存这张照片，以便我们以后查看。
 
-## Displaying Photos
+## 展示照片
 
-First we will create a new type to define our Photo, which will hold specific metadata. Add the following Photo interface to the `usePhotoGallery.ts` file, somewhere outside of the main function:
+首先我们要创建一个新的接口来定义我们的照片类型，它将保存特定的元数据。 Add the following Photo interface to the `usePhotoGallery.ts` file, somewhere outside of the main function:
 
 ```typescript
 export interface UserPhoto {
