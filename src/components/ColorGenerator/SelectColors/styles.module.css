@@ -1,0 +1,83 @@
+.selectColors,
+.submenu {
+  margin: 0;
+  padding: 0;
+}
+
+.selectColors {
+  display: block;
+  padding-top: 20px;
+  margin-bottom: 80px;
+
+  font-size: 0.875rem;
+  font-weight: 500;
+
+  margin-block-start: 2rem;
+  margin-block-end: 4rem;
+}
+
+.selectColors li {
+  list-style-type: none;
+}
+
+.swatch {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 24px;
+  margin-right: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.item {
+  margin: 0;
+  position: relative;
+  border-bottom: 1px solid rgba(115, 132, 154, 0.2);
+}
+
+.item {
+  cursor: pointer;
+}
+
+.item svg {
+  transition: 100ms transform;
+  position: absolute;
+  top: 24px;
+  right: 12px;
+  pointer-events: none;
+}
+
+.item:first-child {
+  border-top: 1px solid rgba(115, 132, 154, 0.2);
+}
+
+.submenu > li {
+  height: 0;
+  opacity: 0;
+  margin: 0;
+  pointer-events: none;
+  transition: 160ms height, 160ms opacity;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headingGroup {
+  display: flex;
+  padding-inline-start: 12px;
+}
+
+.hex {
+  background-color: rgb(237, 242, 246);
+}
+
+.item.isOpen svg {
+  transform: rotate(180deg);
+}
+
+.item.isOpen .submenu > li {
+  height: 54px;
+  opacity: 1;
+  pointer-events: all;
+}

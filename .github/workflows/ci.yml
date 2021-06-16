@@ -18,6 +18,11 @@ jobs:
           CI: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          npm install
-          npm run lint
-          npm run build.ci
+          npm ci
+          npm run build
+      - name: vercel deploy
+        if: ${{ github.ref == 'refs/heads/docusaurus' }}
+        run: vercel --token ${{ secrets.VERCEL_TOKEN }} deploy --prod
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}

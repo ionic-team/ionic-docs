@@ -1,0 +1,250 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.docs.category.Getting Started": {
+    "message": "Getting Started",
+    "description": "The label for category Getting Started in sidebar docs"
+  },
+  "sidebar.docs.category.Developing": {
+    "message": "Developing",
+    "description": "The label for category Developing in sidebar docs"
+  },
+  "sidebar.docs.category.Layout": {
+    "message": "Layout",
+    "description": "The label for category Layout in sidebar docs"
+  },
+  "sidebar.docs.category.Theming": {
+    "message": "Theming",
+    "description": "The label for category Theming in sidebar docs"
+  },
+  "sidebar.docs.category.Angular": {
+    "message": "Angular",
+    "description": "The label for category Angular in sidebar docs"
+  },
+  "sidebar.docs.category.Build Your First App": {
+    "message": "Build Your First App",
+    "description": "The label for category Build Your First App in sidebar docs"
+  },
+  "sidebar.docs.category.React": {
+    "message": "React",
+    "description": "The label for category React in sidebar docs"
+  },
+  "sidebar.docs.category.Vue": {
+    "message": "Vue",
+    "description": "The label for category Vue in sidebar docs"
+  },
+  "sidebar.docs.category.Utilities": {
+    "message": "Utilities",
+    "description": "The label for category Utilities in sidebar docs"
+  },
+  "sidebar.docs.category.Deployment": {
+    "message": "Deployment",
+    "description": "The label for category Deployment in sidebar docs"
+  },
+  "sidebar.docs.category.Techniques": {
+    "message": "Techniques",
+    "description": "The label for category Techniques in sidebar docs"
+  },
+  "sidebar.docs.category.Troubleshooting": {
+    "message": "Troubleshooting",
+    "description": "The label for category Troubleshooting in sidebar docs"
+  },
+  "sidebar.docs.category.Core Concepts": {
+    "message": "Core Concepts",
+    "description": "The label for category Core Concepts in sidebar docs"
+  },
+  "sidebar.docs.category.Contributing": {
+    "message": "Contributing",
+    "description": "The label for category Contributing in sidebar docs"
+  },
+  "sidebar.docs.category.Reference": {
+    "message": "Reference",
+    "description": "The label for category Reference in sidebar docs"
+  },
+  "sidebar.docs.category.Resources": {
+    "message": "Resources",
+    "description": "The label for category Resources in sidebar docs"
+  },
+  "sidebar.docs.link.GitHub Changelog": {
+    "message": "GitHub Changelog",
+    "description": "The label for link GitHub Changelog in sidebar docs, linking to https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md"
+  },
+  "sidebar.api.category.Action Sheet": {
+    "message": "Action Sheet",
+    "description": "The label for category Action Sheet in sidebar api"
+  },
+  "sidebar.api.category.Alert": {
+    "message": "Alert",
+    "description": "The label for category Alert in sidebar api"
+  },
+  "sidebar.api.category.Badge": {
+    "message": "Badge",
+    "description": "The label for category Badge in sidebar api"
+  },
+  "sidebar.api.category.Button": {
+    "message": "Button",
+    "description": "The label for category Button in sidebar api"
+  },
+  "sidebar.api.category.Card": {
+    "message": "Card",
+    "description": "The label for category Card in sidebar api"
+  },
+  "sidebar.api.category.Checkbox": {
+    "message": "Checkbox",
+    "description": "The label for category Checkbox in sidebar api"
+  },
+  "sidebar.api.category.Chip": {
+    "message": "Chip",
+    "description": "The label for category Chip in sidebar api"
+  },
+  "sidebar.api.category.Content": {
+    "message": "Content",
+    "description": "The label for category Content in sidebar api"
+  },
+  "sidebar.api.category.Date & Time Pickers": {
+    "message": "Date & Time Pickers",
+    "description": "The label for category Date & Time Pickers in sidebar api"
+  },
+  "sidebar.api.category.Floating Action Button": {
+    "message": "Floating Action Button",
+    "description": "The label for category Floating Action Button in sidebar api"
+  },
+  "sidebar.api.category.Grid": {
+    "message": "Grid",
+    "description": "The label for category Grid in sidebar api"
+  },
+  "sidebar.api.category.Infinite Scroll": {
+    "message": "Infinite Scroll",
+    "description": "The label for category Infinite Scroll in sidebar api"
+  },
+  "sidebar.api.category.Icons": {
+    "message": "Icons",
+    "description": "The label for category Icons in sidebar api"
+  },
+  "sidebar.api.category.Input": {
+    "message": "Input",
+    "description": "The label for category Input in sidebar api"
+  },
+  "sidebar.api.category.Item": {
+    "message": "Item",
+    "description": "The label for category Item in sidebar api"
+  },
+  "sidebar.api.category.List": {
+    "message": "List",
+    "description": "The label for category List in sidebar api"
+  },
+  "sidebar.api.category.Media": {
+    "message": "Media",
+    "description": "The label for category Media in sidebar api"
+  },
+  "sidebar.api.category.Menu": {
+    "message": "Menu",
+    "description": "The label for category Menu in sidebar api"
+  },
+  "sidebar.api.category.Modal": {
+    "message": "Modal",
+    "description": "The label for category Modal in sidebar api"
+  },
+  "sidebar.api.category.Navigation": {
+    "message": "Navigation",
+    "description": "The label for category Navigation in sidebar api"
+  },
+  "sidebar.api.category.Popover": {
+    "message": "Popover",
+    "description": "The label for category Popover in sidebar api"
+  },
+  "sidebar.api.category.Progress Indicators": {
+    "message": "Progress Indicators",
+    "description": "The label for category Progress Indicators in sidebar api"
+  },
+  "sidebar.api.category.Radio": {
+    "message": "Radio",
+    "description": "The label for category Radio in sidebar api"
+  },
+  "sidebar.api.category.Range": {
+    "message": "Range",
+    "description": "The label for category Range in sidebar api"
+  },
+  "sidebar.api.category.Refresher": {
+    "message": "Refresher",
+    "description": "The label for category Refresher in sidebar api"
+  },
+  "sidebar.api.category.Reorder": {
+    "message": "Reorder",
+    "description": "The label for category Reorder in sidebar api"
+  },
+  "sidebar.api.category.Routing": {
+    "message": "Routing",
+    "description": "The label for category Routing in sidebar api"
+  },
+  "sidebar.api.category.Searchbar": {
+    "message": "Searchbar",
+    "description": "The label for category Searchbar in sidebar api"
+  },
+  "sidebar.api.category.Segment": {
+    "message": "Segment",
+    "description": "The label for category Segment in sidebar api"
+  },
+  "sidebar.api.category.Select": {
+    "message": "Select",
+    "description": "The label for category Select in sidebar api"
+  },
+  "sidebar.api.category.Slides": {
+    "message": "Slides",
+    "description": "The label for category Slides in sidebar api"
+  },
+  "sidebar.api.category.Tabs": {
+    "message": "Tabs",
+    "description": "The label for category Tabs in sidebar api"
+  },
+  "sidebar.api.category.Toast": {
+    "message": "Toast",
+    "description": "The label for category Toast in sidebar api"
+  },
+  "sidebar.api.category.Toggle": {
+    "message": "Toggle",
+    "description": "The label for category Toggle in sidebar api"
+  },
+  "sidebar.api.category.Toolbar": {
+    "message": "Toolbar",
+    "description": "The label for category Toolbar in sidebar api"
+  },
+  "sidebar.api.category.Typography": {
+    "message": "Typography",
+    "description": "The label for category Typography in sidebar api"
+  },
+  "sidebar.api.category.Resources": {
+    "message": "Resources",
+    "description": "The label for category Resources in sidebar api"
+  },
+  "sidebar.api.link.ion-icon": {
+    "message": "ion-icon",
+    "description": "The label for link ion-icon in sidebar api, linking to https://ionicons.com"
+  },
+  "sidebar.cli.category.CLI Documentation": {
+    "message": "CLI Documentation",
+    "description": "The label for category CLI Documentation in sidebar cli"
+  },
+  "sidebar.cli.category.Command Reference": {
+    "message": "Command Reference",
+    "description": "The label for category Command Reference in sidebar cli"
+  },
+  "sidebar.cli.link.Changelog": {
+    "message": "Changelog",
+    "description": "The label for link Changelog in sidebar cli, linking to https://github.com/ionic-team/ionic-cli/blob/develop/packages/@ionic/cli/CHANGELOG.md"
+  },
+  "sidebar.native.category.Getting Started": {
+    "message": "Getting Started",
+    "description": "The label for category Getting Started in sidebar native"
+  },
+  "sidebar.native.category.Plugins": {
+    "message": "Plugins",
+    "description": "The label for category Plugins in sidebar native"
+  },
+  "sidebar.native.link.Community vs. Enterprise": {
+    "message": "Community vs. Enterprise",
+    "description": "The label for link Community vs. Enterprise in sidebar native, linking to https://ionic.io/docs/premier-plugins"
+  }
+}

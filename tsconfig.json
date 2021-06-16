@@ -1,14 +1,10 @@
 {
   "compilerOptions": {
-    "strict": true,
     "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": false,
     "declaration": false,
     "experimentalDecorators": true,
-    "lib": [
-      "dom",
-      "es2017"
-    ],
+    "lib": ["dom", "es2017"],
     "moduleResolution": "node",
     "module": "esnext",
     "target": "es2017",
@@ -16,13 +12,8 @@
     "noUnusedParameters": true,
     "resolveJsonModule": true,
     "jsx": "react",
-    "jsxFactory": "h"
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },
-  "include": [
-    "src",
-    "scripts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["src", "scripts"],
+  "exclude": ["node_modules"]
 }
