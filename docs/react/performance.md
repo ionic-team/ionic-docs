@@ -1,6 +1,5 @@
 ---
-previousText: 'Testing'
-previousUrl: '/docs/react/testing'
+sidebar_label: Performance
 ---
 
 # React Performance

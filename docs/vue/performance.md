@@ -1,6 +1,5 @@
 ---
-previousText: 'Troubleshooting'
-previousUrl: '/docs/vue/troubleshooting'
+sidebar_label: Performance
 ---
 
 # Vue Performance
