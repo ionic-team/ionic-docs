@@ -108,13 +108,13 @@ export interface UserPhoto{
 }
 ```
 
-回到函数的顶部（在引用 Capacitor 相机插件之后）定义一个数组，以便我们能够将拍摄到的每张照片存储在相机中。 Make it a reactive variable using Vue's [ref function](https://v3.vuejs.org/guide/composition-api-introduction.html#reactive-variables-with-ref).
+回到函数的顶部（在引用 Capacitor 相机插件之后）定义一个数组，以便我们能够将拍摄到的每张照片存储在相机中。 我们使它变成响应式变量应该使用 Vue 中的 [ref 函数](https://v3.cn.vuejs.org/guide/composition-api-introduction.html#带-ref-的响应式变量)。
 
 ```typescript
 const photos = ref<UserPhoto[]>([]);
 ```
 
-When the camera is done taking a picture, the resulting `CameraPhoto` returned from Capacitor will be added to the `photos` array. Update the `takePhoto` method, adding this code after the `Camera.getPhoto` line:
+当相机完成拍照后，从 Capacitor 返回的 `CameraPhoto`  将会被添加到 `photos` 数组中。 更新 `takePhoto` 方法，在 `Camera.getPhoto` 行后添加此代码：
 
 ```typescript
 const fileName = new Date().getTime() + '.jpeg';
@@ -126,7 +126,7 @@ const savedFileImage = {
 photos.value = [savedFileImage, ...photos.value];
 ```
 
-Next, update the return statement to include the photos array:
+接下来，返回 photos 数组：
 
 ```typescript
 return {
@@ -135,7 +135,7 @@ return {
 };
 ```
 
-Back in the Tab2 component, update the import statement to include the `Photo` interface:
+返回Tab2组件，导入 `UserPhoto` 接口：
 
 ```typescript
 import { usePhotoGallery, UserPhoto } from '@/composables/usePhotoGallery';
