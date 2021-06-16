@@ -28,19 +28,23 @@ import { Storage } from '@capacitor/storage'
 接下来，创建一个名为 usePhotoGallerery 的钩子函数：
 
 ```typescript
-export function usePhotoGallery() {  // 1.创建名为 usePhotoGallery 的钩子函数
+// 1.创建名为 usePhotoGallery 的钩子函数
+export function usePhotoGallery() {
 
-  const takePhoto = async () => {  // 2.创建一个 takePhoto 方法
+  // 2.创建一个 takePhoto 方法
+  const takePhoto = async () => {
 
-    const cameraPhoto = await Camera.getPhoto({  // 3.调用 Camera.getPhoto 方法
+    // 3.调用 Camera.getPhoto 方法
+    const cameraPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
       quality: 100
     });
   };
 
+// 4.返回 takePhoto 方法
   return {
-    takePhoto   // 4.返回  takePhoto 方法
+    takePhoto
   };
 }
 ```
@@ -49,7 +53,7 @@ export function usePhotoGallery() {  // 1.创建名为 usePhotoGallery 的钩子
 
 请注意这里的神奇之处：代码中并没有出现任何跟平台有关的代码（web、iOS或是安卓）。 Capacitor 相机插件为我们抽象出了相关函数，而我们只需要调用 `Camera.getPhoto()` 便可以开始使用设备的拍照功能。
 
-最后一步我们需要使用我们在Tab2页面中新创建的钩子函数。 返回Tab2.vue，重新导入钩子函数：
+最后一步我们需要使用我们在Tab2页面中新创建的钩子函数。 返回Tab2.vue，并导入钩子函数：
 
 ```typescript
 import { usePhotoGallery } from '@/composables/usePhotoGallery';
@@ -71,8 +75,10 @@ export default  {
          IonToolbar, IonTitle, IonContent, IonGrid, IonRow,
          IonCol, IonImg },
   setup() {
+    //  1.从 usePhotoGallery 解构 takePhoto
     const { takePhoto } = usePhotoGallery();
 
+    //  2.导出 takePhoto 到模板
     return {
       takePhoto,
       camera, trash, close
