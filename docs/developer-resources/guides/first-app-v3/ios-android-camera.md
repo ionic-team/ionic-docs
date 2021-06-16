@@ -5,10 +5,10 @@
 
 Previously, we got an Ionic app up and running locally in a web browser. Now, let’s get it onto your iOS or Android device, then start building the photo gallery feature. Fortunately, Ionic provides a way to skip the frustration of dealing with native SDK installations: Ionic DevApp!
 
-The Ionic DevApp is a free app that makes it easy to run your Ionic app directly on your iOS or Android device. Download it here, then open on your device: 
+The Ionic DevApp is a free app that makes it easy to run your Ionic app directly on your iOS or Android device. Download it here, then open on your device:
 
-<a href="https://itunes.apple.com/us/app/ionic-devapp/id1233447133?ls=1&mt=8" ><img src="/img/guides/first-app-v3/appstore.png" /></a>
-<a href="https://play.google.com/store/apps/details?id=io.ionic.devapp&hl=en" ><img src="/img/guides/first-app-v3/playstore.png" /></a>
+<a href="https://itunes.apple.com/us/app/ionic-devapp/id1233447133?ls=1&mt=8" ><img src="/docs/img/guides/first-app-v3/appstore.png" /></a>
+<a href="https://play.google.com/store/apps/details?id=io.ionic.devapp&hl=en" ><img src="/docs/img/guides/first-app-v3/playstore.png" /></a>
 
 Afterwards, open a terminal and navigate to your Ionic project. Execute the following:
 
@@ -24,9 +24,9 @@ Back in `about.html`, add the following:
 
 ```html
 <ion-content>
-<img>
+  <img />
 
-<ion-fab center bottom>
+  <ion-fab center bottom>
     <button ion-fab>
       <ion-icon name="camera"></ion-icon>
     </button>
@@ -38,7 +38,7 @@ Save the file and watch - a camera button appears! Tap on it and notice that it 
 
 ## Add the Camera Dependencies via the CLI
 
-In order to use the Camera, we need to bring in its JavaScript and native library dependencies. Back over in your Terminal window, run the following command, which adds the JavaScript library to the project, thus exposing the Camera API in TypeScript code: 
+In order to use the Camera, we need to bring in its JavaScript and native library dependencies. Back over in your Terminal window, run the following command, which adds the JavaScript library to the project, thus exposing the Camera API in TypeScript code:
 
 ```shell
 $ npm install --save @ionic-native/camera
@@ -95,13 +95,13 @@ It can now be used on any of our App pages.
 Our camera button doesn’t do anything yet. Over in `about.html`, add a click handler to the button:
 
 ```html
-<button ion-fab (click)="takePicture()">
+<button ion-fab (click)="takePicture()"></button>
 ```
 
 Then, update the image placeholder. The following binds the “currentImage” variable (which we’ll work on next) to the image to display to the user.
 
 ```html
-<img [src]="currentImage" *ngIf="currentImage">
+<img [src]="currentImage" *ngIf="currentImage" />
 ```
 
 Open `about.ts` next and import the Camera library:
@@ -130,7 +130,7 @@ takePicture() {
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE
     }
-    
+
     this.camera.getPicture(options).then((imageData) => {
       this.currentImage = 'data:image/jpeg;base64,' + imageData;
     }, (err) => {

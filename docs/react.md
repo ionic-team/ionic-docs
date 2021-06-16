@@ -12,28 +12,24 @@ meta:
   <div class="pull-left">
   <h3>One Codebase <br/> Any Platform <br/> <strong>Just React</strong></h3>
 
- - ✓ 100+ mobile optimized React UI components
- - ✓ Standard React tooling with react-dom
- - ✓ iOS / Android / Electron / PWA
-
+- ✓ 100+ mobile optimized React UI components
+- ✓ Standard React tooling with react-dom
+- ✓ iOS / Android / Electron / PWA
 
 [Get Started](#installation)
 
   </div>
 
   <div class="pull-right">
-  <img src="/img/frameworks/react-logo.png" />
+  <img src="/docs/img/frameworks/react-logo.png" />
   </div>
 </div>
 
-
 ### Build awesome apps across mobile, desktop, and web, with the React you know and love.
-
 
 Ionic React is native React version of Ionic Framework, the free, open source SDK powering millions of mission-critical apps all over the world.
 
 It's everything you need to ship award-winning apps for any platform, with React.
-
 
 <div class="flex" >
 
@@ -48,12 +44,10 @@ Choose from over 100 beautiful, mobile-ready UI components, animations, and gest
 </div>
 
 <div class="pull-right">
-  <img src="/icons/feature-guide-components-icon.png" />
+  <img src="/docs/icons/feature-guide-components-icon.png" />
 </div>
 
 </div>
-
-
 
 <div class="flex reverse" >
 
@@ -67,7 +61,7 @@ Compatible with React version 16.8 and above.
 </div>
 
 <div class="pull-right">
-  <img src="/img/frameworks/react-cli.png" class="cli" />
+  <img src="/docs/img/frameworks/react-cli.png" class="cli" />
 </div>
 
 </div>
@@ -83,7 +77,7 @@ Deploy your Ionic React projects to native iOS, Android, Electron, and the web a
 </div>
 
 <div class="pull-right">
-  <img src="/img/native-platforms/group-shot.png" />
+  <img src="/docs/img/native-platforms/group-shot.png" />
 </div>
 
 </div>
@@ -99,7 +93,7 @@ At the end of the day, it's just React. Ionic React uses open web standards and 
   </div>
 
   <div class="pull-right">
-    <img src="/img/frameworks/react.svg" />
+    <img src="/docs/img/frameworks/react.svg" />
   </div>
 
 </div>
@@ -112,7 +106,6 @@ $ ionic start myApp tabs --type react
 
 $ ionic serve █
 ```
-
 
 ## Resources
 
@@ -135,6 +128,5 @@ import DocsCards from '@site/src/components/DocsCards';
   <DocsCard header="Lifecycle" href="/docs/react/lifecycle" icon="/icons/feature-guide-components-icon.png">
     <p>Learn about using Ionic lifecycle events in class components and with hooks</p>
   </DocsCard>
-
 
 </DocsCards>
