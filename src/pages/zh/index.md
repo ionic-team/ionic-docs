@@ -2,7 +2,7 @@
 title: Ionic 框架
 meta:
   image: /docs/assets/img/meta/open-graph.png
-  title: Open-Source UI Toolkit to Create Your Own Mobile or Desktop Apps
+  title: 用于创建你自己专属的移动设备或桌面应用的开源 UI 工具包
   description: Ionic Framework is an open-source UI toolkit to create your own mobile and desktop apps using web technologies with integrations for popular frameworks.
 tableOfContents: false
 demoUrl: https://ionic-docs-demo.herokuapp.com/
@@ -11,7 +11,7 @@ nextText: '环境配置'
 nextUrl: '/docs/intro/environment'
 ---
 
-Ionic Framework is an open source UI toolkit for building performant, high-quality mobile and desktop apps using web technologies — HTML, CSS, and JavaScript — with integrations for popular frameworks like [ Angular](/docs/angular/overview), [React](/docs/react/overview), and [Vue](/docs/vue/overview).
+Ionic 框架是一个开源的 UI 工具包，使用 Web 技术——HTML、CSS 和 JavaScript——构建高性能高质量的移动和桌面应用，并且集成了 [Angular](/docs/angular/overview) 、[React](/docs/react/overview) 和 [Vue](/docs/vue/overview) 等流行的框架。
 
 开始构建 从[安装 Ionic](/docs/intro/cli) 开始或按照我们的 [首个应用程序教程](/docs/intro/next#build-your-first-app) 来学习主要概念。
 
@@ -31,9 +31,9 @@ Ionic Framework is an open source UI toolkit for building performant, high-quali
 
 学习轻松定制和修改您的 Ionic 应用程序的视觉设计以适应您的品牌。</docs-card> </docs-cards>
 
-## Overview
+## 概述
 
-Ionic Framework focuses on the frontend UX and UI interaction of an app — UI controls, interactions, gestures, animations. It's easy to learn, and integrates with other libraries or frameworks, such as [Angular](/docs/angular/overview), [React](/docs/react/overview), or [Vue](/docs/vue/overview). Alternatively, it can be used standalone without any frontend framework using a simple [script include](/docs/intro/cdn). If you’d like to learn more about Ionic Framework before diving in, we <a href="https://youtu.be/p3AN3igqiRc" target="_blank">created a video</a> to walk you through the basics.
+Ionic 框架侧重于前端用户体验或应用程序的 UI 交互（控制、互动、手势、动画）。 It's easy to learn, and integrates with other libraries or frameworks, such as [Angular](/docs/angular/overview), [React](/docs/react/overview), or [Vue](/docs/vue/overview). Alternatively, it can be used standalone without any frontend framework using a simple [script include](/docs/intro/cdn). If you’d like to learn more about Ionic Framework before diving in, we <a href="https://youtu.be/p3AN3igqiRc" target="_blank">created a video</a> to walk you through the basics.
 
 ### One codebase, running everywhere
 
