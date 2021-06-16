@@ -108,7 +108,7 @@ export interface UserPhoto{
 }
 ```
 
-Back at the top of the function (right after referencing the Capacitor Camera plugin), define an array so we can store each photo captured with the Camera. Make it a reactive variable using Vue's [ref function](https://v3.vuejs.org/guide/composition-api-introduction.html#reactive-variables-with-ref).
+回到函数的顶部（在引用 Capacitor 相机插件之后）定义一个数组，以便我们能够将拍摄到的每张照片存储在相机中。 Make it a reactive variable using Vue's [ref function](https://v3.vuejs.org/guide/composition-api-introduction.html#reactive-variables-with-ref).
 
 ```typescript
 const photos = ref<UserPhoto[]>([]);
