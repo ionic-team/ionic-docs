@@ -3,7 +3,7 @@ title: Ionic 框架
 meta:
   image: /docs/assets/img/meta/open-graph.png
   title: 用于创建你自己专属的移动设备或桌面应用的开源 UI 工具包
-  description: Ionic Framework is an open-source UI toolkit to create your own mobile and desktop apps using web technologies with integrations for popular frameworks.
+  description: Ionic框架是一个开源的 UI 工具包，使用 Web 技术和集成了受欢迎的流行框架来构建高性能高质量的移动和桌面应用。
 tableOfContents: false
 demoUrl: https://ionic-docs-demo.herokuapp.com/
 demoSourceUrl: https://github.com/ionic-team/docs-demo
@@ -33,9 +33,9 @@ Ionic 框架是一个开源的 UI 工具包，使用 Web 技术——HTML、CSS 
 
 ## 概述
 
-Ionic 框架侧重于前端用户体验或应用程序的 UI 交互（控制、互动、手势、动画）。 It's easy to learn, and integrates with other libraries or frameworks, such as [Angular](/docs/angular/overview), [React](/docs/react/overview), or [Vue](/docs/vue/overview). Alternatively, it can be used standalone without any frontend framework using a simple [script include](/docs/intro/cdn). If you’d like to learn more about Ionic Framework before diving in, we <a href="https://youtu.be/p3AN3igqiRc" target="_blank">created a video</a> to walk you through the basics.
+Ionic 框架侧重于前端用户体验或应用程序的 UI 交互（控制、互动、手势、动画）。 它很容易学习，并与其他图书馆或框架集成。 例如 [Angular](/docs/angular/overview)、[React](/docs/react/overview) 或 [Vue](/docs/vue/overview)。 或者，它可以在没有任何前端框架的情况下使用简单的[脚本包含](/docs/intro/cdn)独立使用。 如果你想在深入了解 Ionic 框架之前了解更多信息，我们 <a href="https://youtu.be/p3AN3igqiRc" target="_blank">创建了一个视频</a> 来引导你了解基础知识。
 
-### One codebase, running everywhere
+### 一段代码，随处运行
 
 Ionic is the only mobile app stack that enables web developers to build apps for all major app stores and the mobile web from a single codebase. And with [Adaptive Styling](/docs/theming/platform-styles), Ionic apps look and feel at home on every device.
 
