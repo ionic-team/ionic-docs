@@ -33,19 +33,19 @@ Ionic 框架是一个开源的 UI 工具包，使用 Web 技术——HTML、CSS 
 
 ## 概述
 
-Ionic 框架侧重于前端用户体验或应用程序的 UI 交互（控制、互动、手势、动画）。 它很容易学习，并与其他图书馆或框架集成。 例如 [Angular](/docs/angular/overview)、[React](/docs/react/overview) 或 [Vue](/docs/vue/overview)。 或者，它可以在没有任何前端框架的情况下使用简单的[脚本包含](/docs/intro/cdn)独立使用。 如果你想在深入了解 Ionic 框架之前了解更多信息，我们 <a href="https://youtu.be/p3AN3igqiRc" target="_blank">创建了一个视频</a> 来引导你了解基础知识。
+Ionic 框架侧重于前端用户体验或应用程序的 UI 交互（控制、互动、手势、动画）。 它很容易学习，并与其他工具库或框架集成。 例如 [Angular](/docs/angular/overview)、[React](/docs/react/overview) 或 [Vue](/docs/vue/overview)。 或者，它可以在没有任何前端框架的情况下使用简单的[脚本包含](/docs/intro/cdn)独立使用。 如果你想在深入了解 Ionic 框架之前了解更多信息，我们 <a href="https://youtu.be/p3AN3igqiRc" target="_blank">创建了一个视频</a> 来引导你了解基础知识。
 
 ### 一段代码，随处运行
 
-Ionic is the only mobile app stack that enables web developers to build apps for all major app stores and the mobile web from a single codebase. And with [Adaptive Styling](/docs/theming/platform-styles), Ionic apps look and feel at home on every device.
+Ionic 是唯一的移动应用程序技术栈，它使 Web 开发人员能够从单个代码库为所有主要应用程序商店和移动 Web 构建应用程序。 借助[自适应样式](/docs/theming/platform-styles)，Ionic 应用程序在每台设备上都具有家一般的外观和感觉。
 
-### A focus on performance
+### 专注于性能
 
-Ionic is built to perform and behave great on the latest mobile devices with best practices like efficient hardware accelerated transitions, and touch-optimized gestures.
+Ionic 通过最佳实践（例如高效的硬件加速转换和触摸优化手势）在最新的移动设备上旨表现出色。
 
-### Clean, simple, and functional design
+### 干净、简单、实用的设计
 
-Ionic is designed to work and display beautifully on all current mobile devices and platforms. With ready-made components, typography, and a gorgeous (yet extensible) base theme that adapts to each platform, you'll be building in style.
+Ionic 在所有当前的移动设备和平台上旨能完美的工作和显示。 With ready-made components, typography, and a gorgeous (yet extensible) base theme that adapts to each platform, you'll be building in style.
 
 ### Native and Web optimized
 
