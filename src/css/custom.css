@@ -282,12 +282,22 @@ iframe {
   fill: currentColor;
 }
 
+
+.cordova-ee-card {
+  max-width:100%;
+}
+
 .cordova-ee-img {
   width:50px;
   float:left;
   margin-right:20px;
 }
 
-.cordova-ee-card {
-  max-width:100%;
+.native-ee-detail {
+  float: right;
+  cursor: pointer;
+}
+
+.cordova-ee-card p {
+  margin: 1rem 0 0;
 }

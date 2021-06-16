@@ -1,24 +1,18 @@
 .docsButton {
-  background-color: rgba(var(--accent-color-rgb), var(--bg-alpha, 0.06));
+  background-color: var(--ifm-link-color);
+  color: white;
+  font-weight: 600;
   border-radius: 6px;
-  color: var(--accent-color);
   display: inline-block;
   font-weight: 600;
   white-space: nowrap;
-}
-
-.docsButton a,
-.docsButton button {
-  color: inherit;
   display: inline-block;
   font-size: inherit;
-  font-weight: inherit;
   padding: 0.75em 1.5em;
 }
 
-.docsButton button {
+button.docsButton  {
   appearance: none;
-  background: none;
   border: none;
   line-height: inherit;
 }
@@ -36,10 +30,10 @@
 
 @media (hover: hover) {
   .docsButton:hover {
-    --bg-alpha: 0.08;
+    background-color: var(--ifm-link-hover-color);
   }
 
   .docsButton:active {
-    --bg-alpha: 0.1;
+    opacity: 0.9;
   }
 }

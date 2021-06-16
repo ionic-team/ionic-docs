@@ -2,6 +2,7 @@ const fs = require("fs");
 const nativeJSON = require("./data/native.json");
 const utils = require('./utils.js');
 
+
 (async function() {
   // console.log(cliJSON);
 
@@ -14,6 +15,7 @@ function writePage(page) {
     renderImports(page),
     renderIntro(page),
     renderSalesCTA(page),
+    renderInstallation(page),
     // renderProperties(page),
     // renderEvents(page),
     // renderMethods(page),
@@ -43,6 +45,10 @@ ${Object.entries(frontmatter)
 function renderImports({}) {
   return `
 import DocsCard from '@site/src/components/DocsCard';
+import DocsButton from '@site/src/components/DocsButton';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
 `;
 }
 
@@ -61,161 +67,45 @@ ${description}
 function renderSalesCTA({}) {
   return `
 <h2>Stuck on a Cordova issue?</h2>
-<DocsCard class="cordova-ee-card" header="Don't waste precious time on plugin issues." href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native">
+<DocsCard className="cordova-ee-card" header="Don't waste precious time on plugin issues." href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native">
   <div>
     <img src="/docs/icons/native-cordova-bot.png" class="cordova-ee-img" />
     <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
-    <docs-button class="native-ee-detail">Contact Us Today!</docs-button>
+    <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
 
 `;
 }
 
-// function renderUsage({ usage }) {
-//   const keys = Object.keys(usage);
-
-//   if (keys.length === 0) {
-//     return "";
-//   }
-
-//   if (keys.length === 1) {
-//     return `
-// ## Usage
-
-// ${usage[keys[0]]}
-// `;
-//   }
-
-//   return `
-// ## Usage
-
-// <Tabs defaultValue="${keys[0]}" values={[${keys
-//     .map(key => `{ value: '${key}', label: '${key.toUpperCase()}' }`)
-//     .join(", ")}]}>
-
-// ${Object.entries(usage)
-//   .map(
-//     ([key, value]) => `
-// <TabItem value="${key}">
-
-// ${value}
-
-// </TabItem>
-// `
-//   )
-//   .join("\n")}
-// </Tabs>
-// `;
-// }
-
-// function renderProperties({ props: properties }) {
-//   if (properties.length === 0) {
-//     return "";
-//   }
-
-//   return `
-// ## Properties
-
-// ${properties
-//   .map(
-//     prop => `
-// ### ${prop.name}
-
-// | | |
-// | --- | --- |
-// | **Description** | ${prop.docs.split("\n").join("<br />")} |
-// | **Attribute** | \`${prop.attr}\` |
-// | **Type** | \`${prop.type.replace(/\|/g, "\\|")}\` |
-// | **Default** | \`${prop.default}\` |
-
-// `
-//   )
-//   .join("\n")}
-// `;
-// }
-
-// function renderEvents({ events }) {
-//   if (events.length === 0) {
-//     return "";
-//   }
-
-//   return `
-// ## Events
-
-// | Name | Description |
-// | --- | --- |
-// ${events.map(event => `| \`${event.event}\` | ${event.docs} |`).join("\n")}
-
-// `;
-// }
-
-// function renderMethods({ methods }) {
-//   if (methods.length === 0) {
-//     return "";
-//   }
-
-//   return `
-// ## Methods
-
-// ${methods
-//   .map(
-//     method => `
-// ### ${method.name}
-
-// | | |
-// | --- | --- |
-// | **Description** | ${method.docs.split("\n").join("<br />")} |
-// | **Signature** | \`${method.signature.replace(/\|/g, "\\|")}\` |
-// `
-//   )
-//   .join("\n")}
-
-// `;
-// }
-
-// function renderParts({ parts }) {
-//   if (parts.length === 0) {
-//     return "";
-//   }
-
-//   return `
-// ## CSS Shadow Parts
-
-// | Name | Description |
-// | --- | --- |
-// ${parts.map(prop => `| \`${prop.name}\` | ${prop.docs} |`).join("\n")}
-
-// `;
-// }
-
-// function renderCustomProps({ styles: customProps }) {
-//   if (customProps.length === 0) {
-//     return "";
-//   }
-
-//   return `
-// ## CSS Custom Properties
-
-// | Name | Description |
-// | --- | --- |
-// ${customProps.map(prop => `| \`${prop.name}\` | ${prop.docs} |`).join("\n")}
-
-// `;
-// }
-
-// function renderSlots({ slots }) {
-//   if (slots.length === 0) {
-//     return "";
-//   }
-
-//   return `
-// ## Slots
-
-// | Name | Description |
-// | --- | --- |
-// ${slots.map(slot => `| \`${slot.name}\` | ${slot.docs} |`).join("\n")}
-
-// `;
-// }
+function renderInstallation({cordovaPlugin, packageName}) {
+  return `
+<h2 id="installation">
+  <a href="#installation">Installation</a>
+</h2>
+<Tabs defaultValue="Capacitor" values={[
+  {value: 'Capacitor', label: 'CAPACITOR'},
+  {value: 'Cordova', label: 'CORDOVA'},
+  {value: 'Enterprise', label: 'ENTERPRISE'},
+]}>
+  <TabItem value="Capacitor">
+    <CodeBlock>
+      npm install ${cordovaPlugin.name}
+      npm install ${packageName}
+      ionic cap sync
+    </CodeBlock>
+  </TabItem>
+  <TabItem value="Cordova">
+    <CodeBlock>
+      ionic cordova plugin add ${cordovaPlugin.name}
+      npm install ${packageName}
+    </CodeBlock>
+  </TabItem>
+  <TabItem value="Enterprise">
+    <blockquote>Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
+      <a class="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a class="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a></blockquote>
+  </TabItem>
+</Tabs>
+  `
+}
 

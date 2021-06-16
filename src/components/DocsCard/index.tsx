@@ -6,7 +6,7 @@ import { Outbound } from '@site/src/icons';
 
 import './card.css';
 
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLDivElement>{
   href?: string;
   header?: string;
   icon?: string;
@@ -48,10 +48,13 @@ function DocsCard(props: Props): JSX.Element {
       </div>
     </>);
 
+    console.log('test', props.className)
+
     const className = clsx({
       'Card-with-image': typeof props.img !== 'undefined',
       'Card-without-image': typeof props.img === 'undefined',
       'Card-size-lg': props.size === 'lg',
+      [props.className]: props.className
     });
 
     if (isStatic) {
