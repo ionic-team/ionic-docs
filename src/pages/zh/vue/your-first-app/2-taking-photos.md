@@ -28,10 +28,11 @@ import { Storage } from '@capacitor/storage'
 接下来，创建一个名为 usePhotoGallerery 的钩子函数：
 
 ```typescript
-export function usePhotoGallery() {
+export function usePhotoGallery() {  // 1.创建名为 usePhotoGallery 的钩子函数
 
-  const takePhoto = async () => {
-    const cameraPhoto = await Camera.getPhoto({
+  const takePhoto = async () => {  // 2.创建一个 takePhoto 方法
+
+    const cameraPhoto = await Camera.getPhoto({  // 3.调用 Camera.getPhoto 方法
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
       quality: 100
@@ -39,7 +40,7 @@ export function usePhotoGallery() {
   };
 
   return {
-    takePhoto
+    takePhoto   // 4.返回  takePhoto 方法
   };
 }
 ```
@@ -91,12 +92,13 @@ _（你的自怕应该会比我好看很多）_
 
 ## 展示照片
 
-首先我们要创建一个新的接口来定义我们的照片类型，它将保存特定的元数据。 Add the following Photo interface to the `usePhotoGallery.ts` file, somewhere outside of the main function:
+首先我们要创建一个新的接口来定义我们的照片类型，它将保存特定的元数据。 将下面的照片接口添加到 `usePhotoGallery.ts` 文件中，在 `usePhotoGallery` 函数以外的地方：
 
 ```typescript
-export interface UserPhoto {
+// 导出 UserPhoto 接口
+export interface UserPhoto{
   filepath: string;
-  webviewPath?: string;
+  webviewPath: string;
 }
 ```
 
