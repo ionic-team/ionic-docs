@@ -6,7 +6,7 @@ sidebar_label: Loading Photos
 
 We’ve implemented photo taking and saving to the filesystem. There’s one last piece of functionality missing: the photos are stored in the filesystem, but we need a way to save pointers to each file so that they can be displayed again in the photo gallery.
 
-Fortunately, this is easy: we’ll leverage the Capacitor [Storage API](https://capacitor.ionicframework.com/docs/apis/storage) to store our array of Photos in a key-value store. 
+Fortunately, this is easy: we’ll leverage the Capacitor [Storage API](https://capacitor.ionicframework.com/docs/apis/storage) to store our array of Photos in a key-value store.
 
 ## Storage API
 
@@ -14,15 +14,6 @@ Begin by defining a constant variable that will act as the key for the store at 
 
 ```typescript
 const PHOTO_STORAGE = "photos";
-```
-
-Then, import the Storage API to get access to methods for reading and writing to device storage:
-
-```typescript
-export function usePhotoGallery() {
-  const { Camera, Filesystem, Storage } = Plugins;
-  const photos = ref<Photo[]>([]);
-  const PHOTO_STORAGE = "photos";
 ```
 
 Next, add a `cachePhotos` function that saves the Photos array as JSON to file storage:
@@ -52,11 +43,11 @@ const loadSaved = async () => {
   for (const photo of photosInStorage) {
     const file = await Filesystem.readFile({
         path: photo.filepath,
-        directory: FilesystemDirectory.Data
+        directory: Directory.Data
     });
     photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
   }
-  
+
   photos.value = photosInStorage;
 }
 ```

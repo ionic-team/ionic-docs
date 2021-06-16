@@ -48,7 +48,7 @@ Date & time 选择器可以让用户轻松地选择日期和时间。</docs-card
 
 Floating action buttons是浮动在屏幕上的一个圆形按钮。</docs-card>
 
-<docs-card header="Icons" href="https://ionicons.com" img="/docs/assets/icons/feature-component-icons-icon.png"> 
+<docs-card header="Icons" href="https://ionic.io/ionicons" img="/docs/assets/icons/feature-component-icons-icon.png"> 
 
 精美设计的图标可以用于web、iOS、Android以及桌面应用。</docs-card>
 

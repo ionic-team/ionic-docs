@@ -1,4 +1,6 @@
 ---
+title: UI Components | User Interface Application Building Components
+description: Ionic Framework comes stock with a number of high-level UI components, including cards, lists, and tabs to quickly and easily build your app's user interface.
 hide_table_of_contents: true
 ---
 
@@ -50,7 +52,7 @@ import DocsCards from '@site/src/components/DocsCards';
     <p>Floating action buttons are circular buttons that perform a primary action on a screen.</p>
   </DocsCard>
 
-  <DocsCard header="Icons" href="https://ionicons.com" img="/icons/feature-component-icons-icon.png">
+  <DocsCard header="Icons" href="https://ionic.io/ionicons" img="/icons/feature-component-icons-icon.png">
     <p>Beautifully designed icons for use in web, iOS, Android, and desktop apps.</p>
   </DocsCard>
 

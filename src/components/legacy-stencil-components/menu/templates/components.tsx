@@ -52,7 +52,7 @@ const items = {
     'ion-infinite-scroll-content': '/docs/api/infinite-scroll-content'
   },
   'menu-api-icons': {
-    'ion-icon': 'https://ionicons.com'
+    'ion-icon': 'https://ionic.io/ionicons'
   },
   'menu-api-input': {
     'ion-input': '/docs/api/input',
@@ -75,7 +75,7 @@ const items = {
   },
   'menu-api-media': {
     'ion-avatar': '/docs/api/avatar',
-    'ion-icon': 'https://ionicons.com',
+    'ion-icon': 'https://ionic.io/ionicons',
     'ion-img': '/docs/api/img',
     'ion-thumbnail': '/docs/api/thumbnail'
   },

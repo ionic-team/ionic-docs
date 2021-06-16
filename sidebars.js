@@ -105,6 +105,7 @@ module.exports = {
         'react/overlays',
         'react/storage',
         'react/testing',
+        'react/performance',
       ],
     },
     {
@@ -134,6 +135,7 @@ module.exports = {
         'vue/storage',
         'vue/testing',
         'vue/troubleshooting',
+        'vue/performance',
       ],
     },
     {
