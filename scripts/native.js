@@ -11,8 +11,9 @@ const utils = require('./utils.js');
 function writePage(page) {
   const data = [
     renderFrontmatter(page),
+    renderImports(page),
     renderIntro(page),
-    // renderUsage(page),
+    renderSalesCTA(page),
     // renderProperties(page),
     // renderEvents(page),
     // renderMethods(page),
@@ -39,6 +40,12 @@ ${Object.entries(frontmatter)
 `;
 }
 
+function renderImports({}) {
+  return `
+import DocsCard from '@site/src/components/DocsCard';
+`;
+}
+
 function renderIntro({ description, displayName, repo }) {
   return `
 # ${displayName}
@@ -48,6 +55,20 @@ ${description}
 <p><a href="${repo}" target="_blank" rel="noopener" className="git-link">
   ${utils.gitBranchSVG()} ${repo}
 </a></p>
+`;
+}
+
+function renderSalesCTA({}) {
+  return `
+<h2>Stuck on a Cordova issue?</h2>
+<DocsCard class="cordova-ee-card" header="Don't waste precious time on plugin issues." href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native">
+  <div>
+    <img src="/docs/icons/native-cordova-bot.png" class="cordova-ee-img" />
+    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
+    <docs-button class="native-ee-detail">Contact Us Today!</docs-button>
+  </div>
+</DocsCard>
+
 `;
 }
 

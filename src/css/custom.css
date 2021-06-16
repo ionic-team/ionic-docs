@@ -281,3 +281,13 @@ iframe {
 .git-link path {
   fill: currentColor;
 }
+
+.cordova-ee-img {
+  width:50px;
+  float:left;
+  margin-right:20px;
+}
+
+.cordova-ee-card {
+  max-width:100%;
+}
