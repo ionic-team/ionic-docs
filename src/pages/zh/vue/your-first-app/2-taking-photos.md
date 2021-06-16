@@ -13,9 +13,9 @@ nextUrl: '/docs/vue/your-first-app/3-saving-photos'
 
 > 如果您不熟悉Vue的组合式API， [什么是组合式 API？](https://v3.cn.vuejs.org/guide/composition-api-introduction.html#什么是组合式-api) 来自 Vue 的官方文档就是一个很好的入门资源。
 
-在 `src/composables` 目录下创建一个名为`usePhotogallery.ts`的新文件然后打开它。
+在 `src/composables` 目录下创建一个名为 `usePhotogallery.ts` 的新文件然后打开它。
 
-We will start by importing the various utilities we will use from Vue core and Capacitor:
+我们首先从 Vue core 和 Capacitor 中导入我们将要使用的各种实用程序：
 
 ```typescript
 import { ref, onMounted, watch } from 'vue';
@@ -25,7 +25,7 @@ import { Storage } from '@capacitor/storage'
 
 ```
 
-Next, create a function named usePhotoGallery:
+接下来，创建一个名为 usePhotoGallerery 的函数：
 
 ```typescript
 export function usePhotoGallery() {
