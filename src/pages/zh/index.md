@@ -67,27 +67,27 @@ Ionic Framework 建立在可靠、[标准化的 Web 技术](/docs/reference/glos
 
 ### 简单
 
-Ionic Framework is built with simplicity in mind, so that creating Ionic apps is enjoyable, easy to learn, and accessible to just about anyone with web development skills.
+Ionic 框架的构建考虑到了简单性，因此创建 Ionic 应用程序很有趣，易于学习，并且几乎任何具有 Web 开发技能的人都可以访问。
 
 ## 框架兼容性
 
-While past releases of Ionic were tightly coupled to Angular, version 4.x of the framework was re-engineered to work as a standalone <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components" target="_blank">Web Component</a> library, with integrations for the latest JavaScript frameworks, like Angular. Ionic can be used in most frontend frameworks with success, including React and Vue, though some frameworks need a shim for full Web Component support.
+虽然过去的 Ionic 版本与 Angular 紧密耦合，但该框架的 4.x 版被重新设计为作为独立的 <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components" target="_blank">Web 组件</a>库工作，并集成了最新的 JavaScript 框架，如 Angular。 Ionic 可以成功地用于大多数前端框架，包括 React 和 Vue，但有些框架则需要一个 shim 来获得完整的 Web 组件支持。
 
 ### JavaScript
 
-One of the main goals with moving Ionic Framework to <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components" target="_blank">Web Components</a> was to remove any hard requirement on a single framework to host the components. This made it possible for the core components to work standalone in a web page with just a script tag. While working with frameworks can be great for larger teams and larger apps, it is now possible to use Ionic as a standalone library in a single page even in a context like WordPress.
+将 Ionic 框架迁移到 <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components" target="_blank">Web 组件</a>的主要目标之一是消除对单个框架的任何硬性要求来托管组件。 这使得核心组件可以在仅使用脚本标记的网页中独立工作。 虽然使用框架对于更大的团队和更大的应用程序来说非常有用，但现在即使在像 WordPress 这样的上下文中，也可以将 Ionic 用作单个页面中的独立库。
 
 ### Angular
 
-Angular has always been at the center of what makes Ionic great. While the core components have been written to work as a standalone Web Component library, the `@ionic/angular` package makes integration with the Angular ecosystem a breeze. `@ionic/angular` includes all the functionality that Angular developers would expect coming from Ionic 2/3, and integrates with core Angular libraries, like the Angular router.
+Angular 一直是使 Ionic 变得伟大的核心。 虽然核心组件已被编写为独立的 Web 组件库，但 `@ionic/angular` 包使与 A​​ngular 生态系统的集成变得轻而易举。 `@ionic/angular` 包含 Angular 开发人员期望从 Ionic 2/3 中获得的所有功能，并与核心 Angular 库（如 Angular 路由器）集成。
 
 ### React
 
-Ionic now has official support for the popular React library. Ionic React lets React developers use their existing web skills to build apps that target iOS, Android, the web, and the desktop. With `@ionic/react`, you can use all the core Ionic components, but in a way that feels like using native React components.
+Ionic 现在官方支持流行的 React 库。 Ionic React 让 React 开发人员可以使用他们现有的 Web 技能来构建针对 iOS、Android、Web 和桌面的应用程序。 使用 `@ionic/react`，你可以使用所有核心 Ionic 组件，感觉就像使用原生 React 组件一样。
 
 ### Vue
 
-Ionic now has official support for the popular Vue 3 library. Ionic Vue lets Vue developers use their existing web skills to build apps that target iOS, Android, the web, and the desktop. With `@ionic/vue`, you can use all the core Ionic components, but in a way that feels like using native Vue components.
+Ionic 现在正式支持流行的 Vue 3 库。 Ionic Vue lets Vue developers use their existing web skills to build apps that target iOS, Android, the web, and the desktop. With `@ionic/vue`, you can use all the core Ionic components, but in a way that feels like using native Vue components.
 
 ### 未来的支持
 
