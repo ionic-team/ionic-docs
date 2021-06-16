@@ -90,7 +90,7 @@ export default  {
 
 保存文件，如果服务还没有运行的话，可以通过`ionic serve`命令运行服务。 在图库标签页里边，点击一下相机按钮。 如果你的电脑有任何类型的摄像头，就会弹出一个窗口。 来，试着给自己来张自拍！
 
-![Camera API on the web](/docs/assets/img/guides/first-app-cap-ng/camera-web.png)
+![相机API](/docs/assets/img/guides/first-app-cap-ng/camera-web.png)
 
 _（你的自怕应该会比我好看很多）_
 
@@ -126,7 +126,7 @@ const savedFileImage = {
 photos.value = [savedFileImage, ...photos.value];
 ```
 
-接下来，返回 photos 数组：
+接下来，返回 `photos` 数组：
 
 ```typescript
 return {
@@ -141,13 +141,13 @@ return {
 import { usePhotoGallery, UserPhoto } from '@/composables/usePhotoGallery';
 ```
 
-Then, get access to the photos array:
+然后，访问 `photos` 数组：
 
 ```typescript
 const { photos, takePhoto } = usePhotoGallery();
 ```
 
-Last, add `photos` to `setup()` return:
+最后，将 `photos` 添加到 `setup()` 中返回出去：
 
 ```typescript
 return {
@@ -157,7 +157,7 @@ return {
 }
 ```
 
-With the photo(s) stored into the main array we can now display the images on the screen. Add a [Grid component](https://ionicframework.com/docs/api/grid) so that each photo will display nicely as they are added to the gallery, and loop through each photo in the Photos array, adding an Image component (`<ion-img>`) for each. Point the `src` (source) to the photo's path:
+当照片存储到数组之后我们就能够在屏幕上看到显示的图像了。 在页面上添加一个[网格组件](https://ionicframework.com/docs/api/grid)，以便每张照片都能很好地展示。通过数组的循环，我们为每张照片加上一个图片组件（`<ion-img>`）。 给 `src`（源）指定照片的路径：
 
 ```typescript
 <ion-content>
@@ -173,6 +173,6 @@ With the photo(s) stored into the main array we can now display the images on th
 </ion-content>
 ```
 
-Save all files. Within the web browser, click the Camera button and take another photo. This time, the photo is displayed in the Photo Gallery!
+保存好我们编辑的所有文件， 在网页浏览器中，点击相机按钮开始拍照。 这一次，照片就显示在了图库里面！
 
-Up next, we’ll add support for saving the photos to the filesystem, so they can be retrieved and displayed in our app at a later time.
+下一步，我们要给应用添加一个能将照片保存在文件系统里面的功能，这样照片就能够在应用中检索以及显示了。
