@@ -87,40 +87,40 @@ Ionic 现在官方支持流行的 React 库。 Ionic React 让 React 开发人�
 
 ### Vue
 
-Ionic 现在正式支持流行的 Vue 3 库。 Ionic Vue lets Vue developers use their existing web skills to build apps that target iOS, Android, the web, and the desktop. With `@ionic/vue`, you can use all the core Ionic components, but in a way that feels like using native Vue components.
+Ionic 现在正式支持流行的 Vue 3 库。 Ionic Vue 让 Vue 开发人员可以使用他们现有的 Web 技能来构建针对 iOS、Android、Web 和桌面的应用程序。 使用 `@ionic/vue`，你可以使用所有核心 Ionic 组件，感觉就像使用原生 Vue 组件一样。
 
 ### 未来的支持
 
-Support for other frameworks will be considered in future releases.
+在未来的版本中将考虑支持更多其他框架。
 
 ## Ionic CLI
 
-The official [Ionic CLI](/docs/cli), or Command Line Interface, is a tool that quickly scaffolds Ionic apps and provides a number of helpful commands to Ionic developers. In addition to installing and updating Ionic, the CLI comes with a built-in development server, build and debugging tools, and much more. If you are an [Appflow](#ionic-appflow) member, the CLI can be used to perform cloud builds and deployments, and administer your account.
+官方的 [Ionic CLI](/docs/cli) 或命令行界面是一种工具，可以快速搭建 Ionic 应用程序，并为 Ionic 开发人员提供许多有用的命令。 除了安装和更新 Ionic 之外，CLI 还带有一个内置的开发服务器、构建和调试工具等等。 如果你是 [Appflow](#ionic-appflow) 成员，CLI 可用于执行云构建和部署，以及管理你的帐户。
 
 ## 应用流程
 
-To help build, deploy, and manage Ionic apps throughout their lifecycle, we offer a commercial service for production apps called <a href="https://ionic.io/appflow" target="_blank">Appflow</a>, which is **separate from the open source Framework.**
+为了帮助构建、部署和管理 Ionic 应用程序的整个生命周期，我们为生产应用程序提供了一项名为 <a href="https://ionic.io/appflow" target="_blank">Appflow</a> 的商业服务，它**独立于开源框架**。
 
-Appflow helps developers and teams compile native app builds and deploy live code updates to Ionic apps from a centralized dashboard. Optional paid upgrades are available for more advanced capabilities like publishing directly to app stores, workflow automation, single sign-on (SSO) and access to connected services and integrations.
+Appflow 帮助开发人员和团队编译本机应用程序构建并将实时代码更新从集中式仪表板部署到 Ionic 应用程序。 可选的付费升级可用于更高级的功能，例如直接发布到应用程序商店、工作流自动化、单点登录 (SSO) 以及对连接服务和集成的访问。
 
-Appflow requires an <a href="https://dashboard.ionicframework.com/signup" target="_blank">Ionic Account</a> and comes with a free “Hobby” plan for those interested in playing around with some of its features.
+Appflow 需要一个 <a href="https://dashboard.ionicframework.com/signup" target="_blank">Ionic 帐户</a>，并为那些有兴趣使用其某些功能的人提供免费的“爱好”计划。
 
 ## 生态系统
 
-Ionic Framework is actively developed and maintained full-time by a core team, and its ecosystem is guided by an international community of developers and contributors fueling its growth and adoption. Developers and companies small and large use Ionic to build and ship amazing apps that run everywhere.
+Ionic 框架由核心团队全职积极开发和维护，其生态系统由国际开发人员和贡献者社区指导，推动其增长和采用。 大大小小的开发人员和公司都使用 Ionic 来构建和发布可在任何地方运行的出色应用程序。
 
 ### 加入社群
 
-There are millions of Ionic developers in over 200 countries worldwide. Here are some ways to join:
+在全球 200 多个国家/地区有数百万 Ionic 开发人员。 以下是一些加入方式：
 
-* <a href="https://forum.ionicframework.com/" target="_blank">Forum:</a> A great place for asking questions and sharing ideas.
-* <a href="https://ionicworldwide.herokuapp.com/" target="_blank">Slack:</a> A lively place for devs to meet and chat in real time.
-* <a href="https://twitter.com/ionicframework" target="_blank">Twitter:</a> Where we post updates and share content from the Ionic community.
-* <a href="https://github.com/ionic-team/ionic" target="_blank">GitHub:</a> For reporting bugs or requesting new features, create an issue here. PRs welcome!
-* <a href="https://ionicframework.com/contributors" target="_blank">Content authoring:</a> Write a technical blog or share your story with the Ionic community.
+* <a href="https://forum.ionicframework.com/" target="_blank">论坛：</a>提问和分享想法的好地方。
+* <a href="https://ionicworldwide.herokuapp.com/" target="_blank">Slack：</a>开发人员实时见面和聊天的热闹场所
+* <a href="https://twitter.com/ionicframework" target="_blank">Twitter：</a>我们发布更新和分享来自 Ionic 社区的内容的地方。
+* <a href="https://github.com/ionic-team/ionic" target="_blank">GitHub：</a>要报告错误或请求新功能，请在此处创建问题。 欢迎 PRs！
+* <a href="https://ionicframework.com/contributors" target="_blank">内容创作：</a>撰写技术博客或与 Ionic 社区分享您的故事。
 
 ## 授权协议
 
-Ionic Framework is a free and open source project, released under the permissable <a href="https://opensource.org/licenses/MIT" target="_blank">MIT license</a>. This means it can be used in personal or commercial projects for free. MIT is the same license used by such popular projects as jQuery and Ruby on Rails.
+Ionic Framework 是一个免费的开源项目，在许可的 <a href="https://opensource.org/licenses/MIT" target="_blank">MIT 许可</a>下发布。 这意味着它可以免费用于个人或商业项目。 MIT 与 jQuery 和 Ruby on Rails 等流行项目使用的许可证相同。
 
-This documentation content (found in the <a href="https://github.com/ionic-team/ionic-docs" target="_blank">ionic-docs</a> repo) is licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache 2 license</a>.
+此文档内容（可在 <a href="https://github.com/ionic-team/ionic-docs" target="_blank">ionic-docs</a> 存储库中找到）在 <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache 2 许可</a>下获得许可。
