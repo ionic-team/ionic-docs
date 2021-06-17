@@ -27,6 +27,7 @@ For complete hardware back button support, we recommend using Capacitor or Cordo
 
 ## Basic Usage
 
+````mdx-code-block
 <Tabs
   defaultValue="javascript"
   values={[
@@ -89,6 +90,7 @@ export default {
 ```
 </TabItem>
 </Tabs>
+````
 
 In this example, we are registering a handler to be called when the hardware back button is pressed. We have set the priority to be 10, and we have not indicated to the framework that we want the next handler to be called. As a result, any handlers with a priority less than 10 will not be called. A handler that has a priority greater than 10 will be called first.
 
@@ -98,6 +100,7 @@ In the event that there are handlers with the same priority value, the handler t
 
 Each hardware back button callback has a `processNextHandler` parameter. Calling this function allows you to continue calling hardware back button handlers.
 
+````mdx-code-block
 <Tabs
   defaultValue="javascript"
   values={[
@@ -184,6 +187,7 @@ export default {
 ```
 </TabItem>
 </Tabs>
+````
 
 This example shows how to indicate to Ionic Framework that you want the next handler to be fired. All callbacks are provided with a `processNextHandler` function as a parameter. Calling this will cause the next handler, if any exists, to be fired.
 
@@ -216,6 +220,7 @@ In the example above, both handlers A and B have a priority of 10. Since handler
 
 In some scenarios, it may be desirable to quit the app when pressing the hardware back button. This can be achieved through the use of the `ionBackButton` event combined with methods that Capacitor/Cordova provide.
 
+````mdx-code-block
 <Tabs
   defaultValue="javascript"
   values={[
@@ -308,6 +313,7 @@ export default {
 ```
 </TabItem>
 </Tabs>
+````
 
 This example shows the application exiting when the user presses the hardware back button and there is nothing left in the navigation stack. It is also possible to display a confirmation dialog before quitting the app.
 

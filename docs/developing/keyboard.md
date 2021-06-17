@@ -18,6 +18,8 @@ Inputs that _require_ a certain data type should use the `type` attribute instea
 For a list of accepted values, see the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode" target="_blank" rel="noreferrer">inputmode Documentation</a>.
 
 ### Usage
+
+````mdx-code-block
 <Tabs
   defaultValue="javascript"
   values={[
@@ -84,6 +86,7 @@ For a list of accepted values, see the <a href="https://developer.mozilla.org/en
 ```
 </TabItem>
 </Tabs>
+````
 
 import Codepen from '@site/src/components/Codepen';
 

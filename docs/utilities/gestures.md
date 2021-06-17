@@ -13,6 +13,7 @@ Building complex gestures can be time consuming. Other libraries that provide cu
 
 ## Installation
 
+````mdx-code-block
 <Tabs
   defaultValue="javascript"
   values={[
@@ -122,12 +123,14 @@ const gesture = createGesture({
 ```
 </TabItem>
 </Tabs>
+````
 
 
 ## Basic Gestures
 
 ### Usage
 
+````mdx-code-block
 <Tabs
   defaultValue="javascript"
   values={[
@@ -251,6 +254,7 @@ const onMove = (detail) => {
 ```
 </TabItem>
 </Tabs>
+````
 
 In this example, our app listens for gestures on the `.rectangle` element. When a gesture movement is detected, the `onMove` function is called, and our app logs the current gesture information.
 
@@ -262,6 +266,7 @@ import Codepen from '@site/src/components/Codepen';
 
 ### Usage
 
+````mdx-code-block
 <Tabs
   defaultValue="javascript"
   values={[
@@ -424,6 +429,7 @@ const getRandomBackground = () => {
 ```
 </TabItem>
 </Tabs>
+````
 
 In the example above, we want to be able to detect double clicks on an element. By setting our `threshold` to `0`, we can ensure our gesture object can detect clicks. Additionally, we define a click threshold so that only 2 clicks that occur in quick succession count as a double click.
 

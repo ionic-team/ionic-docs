@@ -15,6 +15,7 @@ Ionic Animations uses the [Web Animations API](https://developer.mozilla.org/en-
 
 ## Installation
 
+````mdx-code-block
 <Tabs
   defaultValue="javascript"
   values={[
@@ -123,11 +124,13 @@ const animation = createAnimation()
 ```
 </TabItem>
 </Tabs>
+````
 
 ## Basic Animations
 
 ### Usage
 
+````mdx-code-block
 <Tabs
   defaultValue="javascript"
   values={[
@@ -195,6 +198,7 @@ createAnimation()
 ```
 </TabItem>
 </Tabs>
+````
 
 In the example above, an animation that changes the opacity on the `.square` element and moves it from left to right along the X axis has been created. This animation will run an infinite number of times, and each iteration of the animation will last 1500ms.
 
@@ -212,6 +216,7 @@ Hyphenated CSS properties should be written using camel case when writing keyfra
 
 ### Usage
 
+````mdx-code-block
 <Tabs
   defaultValue="javascript"
   values={[
@@ -289,6 +294,7 @@ createAnimation()
 ```
 </TabItem>
 </Tabs>
+````
 
 In the example above, the `.square` element will transition from a red background color, to a background color defined by the `--background` variable, and then transition on to a green background color.
 
@@ -302,6 +308,7 @@ Multiple elements can be animated at the same time and controlled via a single p
 
 ### Usage
 
+````mdx-code-block
 <Tabs
   defaultValue="javascript"
   values={[
@@ -495,6 +502,7 @@ const parent = createAnimation()
 
 </TabItem>
 </Tabs>
+````
 
 This example shows 3 child animations controlled by a single parent animation. Animations `squareA` and `squareB` inherit the parent animation's duration of 2000ms, but animation `squareC` has a duration of 5000ms since it was explicitly set.
 
@@ -506,6 +514,7 @@ Ionic Animations provides hooks that let you alter an element before an animatio
 
 ### Usage
 
+````mdx-code-block
 <Tabs
   defaultValue="javascript"
   values={[
@@ -607,6 +616,7 @@ createAnimation()
 ```
 </TabItem>
 </Tabs>
+````
 
 In this example, an inline opacity of 0.2 is set on the `.square` element prior to the animation starting. Once the animation finishes, the background color of the element is set to `rgba(0, 255, 0, 0.5)`, and the inline opacity is cleared.
 
@@ -620,6 +630,7 @@ Animations can be chained to run one after the other. The `play` method returns 
 
 ### Usage
 
+````mdx-code-block
 <Tabs
   defaultValue="javascript"
   values={[
@@ -820,6 +831,7 @@ await squareC.play();
 ```
 </TabItem>
 </Tabs>
+````
 
 <Codepen user="ionic" slug="MWgGrwX" height="460"></Codepen>
 
@@ -829,6 +841,7 @@ Ionic Animations gives developers the ability to create powerful gesture-based a
 
 ### Usage
 
+````mdx-code-block
 <Tabs
   defaultValue="javascript"
   values={[
@@ -1137,6 +1150,7 @@ const getStep = (ev): {
 ```
 </TabItem>
 </Tabs>
+````
 
 In this example we are creating a track along which we can drag the `.square` element. Our `animation` object will take care of moving the `.square` element either left or right, and our `gesture` object will instruct the `animation` object which direction to move in.
 
@@ -1166,6 +1180,7 @@ Developers can also tailor their animations to user preferences such as `prefers
 }
 ```
 
+````mdx-code-block
 <Tabs
   defaultValue="javascript"
   values={[
@@ -1235,6 +1250,7 @@ createAnimation()
 ```
 </TabItem>
 </Tabs>
+````
 
 This method works in all supported browsers when creating animations for the first time. Most browsers are also capable of dynamically updating keyframe animations as the CSS Variables change.
 
@@ -1248,6 +1264,7 @@ Certain Ionic components allow developers to provide custom animations. All anim
 
 ### Modals
 
+````mdx-code-block
 <Tabs
   defaultValue="javascript"
   values={[
@@ -1465,6 +1482,7 @@ export default defineComponent({
 ```
 </TabItem>
 </Tabs>
+````
 
 <Codepen user="ionic" slug="ExapZBZ"></Codepen>
 

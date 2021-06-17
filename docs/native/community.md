@@ -26,6 +26,7 @@ Cordova plugins are also wrapped in a `Promise` or `Observable` in order to prov
 
 Using the [Camera plugin](/docs/native/camera) as an example, first install it:
 
+````mdx-code-block
 <Tabs
   defaultValue="cordova"
   values={[
@@ -64,6 +65,7 @@ $ ionic cap sync
 
 </TabItem>
 </Tabs>
+````
 
 Next, begin using the plugin, following the various framework usage options below. For FAQ, see [here](/docs/native/faq).
 

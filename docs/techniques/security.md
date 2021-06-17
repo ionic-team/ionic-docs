@@ -72,6 +72,7 @@ Developers can also choose to eject from the sanitizer in certain scenarios. Ion
 
 #### Usage
 
+````mdx-code-block
 <Tabs
   defaultValue="angular"
   values={[
@@ -141,3 +142,4 @@ export const ToastExample: React.FC = () => {
 ```
 </TabItem>
 </Tabs>
+````

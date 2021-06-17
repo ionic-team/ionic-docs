@@ -80,6 +80,7 @@ For example, if an app is using Angular, that project structure will be exactly 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+````mdx-code-block
 <Tabs
   defaultValue="v4"
   values={[
@@ -146,6 +147,7 @@ tslint.json
 
 </TabItem>
 </Tabs>
+````
 
 The above comparison is an example of a v4 app's project structure. For developers with experience in a vanilla Angular project, this should feel really familiar.
 
