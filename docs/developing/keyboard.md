@@ -103,6 +103,8 @@ Since `enterkeyhint` is a global attribute, it can be used on Ionic components s
 For a list of accepted values, see the <a href="https://html.spec.whatwg.org/dev/interaction.html#input-modalities:-the-enterkeyhint-attribute" target="_blank" rel="noreferrer">enterkeyhint Standard</a>.
 
 ### Usage
+
+````mdx-code-block
 <Tabs
   defaultValue="javascript"
   values={[
@@ -149,6 +151,7 @@ For a list of accepted values, see the <a href="https://html.spec.whatwg.org/dev
 ```
 </TabItem>
 </Tabs>
+```
 
 <Codepen user="ionic" slug="GRpWyRB" height="350"></Codepen>
 
@@ -177,6 +180,8 @@ When running an app in Capacitor or Cordova, it is possible to hide the accessor
 Detecting the presence of an on-screen keyboard is useful for adjusting the positioning of an input that would otherwise be hidden by the keyboard. For Capacitor and Cordova apps, developers typically rely on native keyboard plugins to listen for the keyboard lifecycle events. For apps running in a mobile browser or as a PWA, developers can use the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Visual_Viewport_API" rel="noreferrer" target="_blank">Visual Viewport API</a> where supported. Ionic Framework wraps both of these approaches and emits `ionKeyboardDidShow` and `ionKeyboardDidHide` events on the `window`. The event payload for `ionKeyboardDidShow` contains an approximation of the keyboard height in pixels.
 
 ### Usage
+
+````mdx-code-block
 <Tabs
   defaultValue="javascript"
   values={[
@@ -248,5 +253,6 @@ watch(keyboardHeight, () => {
 ```
 </TabItem>
 </Tabs>
+```
 
 > For apps running in a mobile web browser or as a PWA, Keyboard Lifecycle Events are only supported on Chrome 62+ and iOS Safari 13.0+.
