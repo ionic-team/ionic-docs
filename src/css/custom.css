@@ -216,14 +216,13 @@ table {
   margin: 2em 0;
   overflow-x: auto;
   width: 100%;
+  display: inline-table;
 }
 
 table,
 td,
 th {
   border-collapse: collapse;
-  border-color: var(--line-rule-color);
-  border-style: solid;
 }
 
 td,
@@ -232,6 +231,10 @@ th {
   line-height: 1.5;
   padding: 1em;
   text-align: left;
+}
+
+thead th:empty {
+  display: none;
 }
 
 thead th,
