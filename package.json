@@ -6,7 +6,7 @@
     "docusaurus": "docusaurus",
     "prestart": "npm run generate-markdown",
     "start": "docusaurus start",
-    "prebuild": "npm run generate-markdown",
+    "prebuild": "npm run generate-markdown; if [ -n \"$CROWDIN_PERSONAL_TOKEN\" ]; then npm run crowdin:sync; fi",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
