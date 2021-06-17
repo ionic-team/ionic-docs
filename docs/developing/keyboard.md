@@ -151,7 +151,7 @@ For a list of accepted values, see the <a href="https://html.spec.whatwg.org/dev
 ```
 </TabItem>
 </Tabs>
-```
+````
 
 <Codepen user="ionic" slug="GRpWyRB" height="350"></Codepen>
 
@@ -253,6 +253,6 @@ watch(keyboardHeight, () => {
 ```
 </TabItem>
 </Tabs>
-```
+````
 
 > For apps running in a mobile web browser or as a PWA, Keyboard Lifecycle Events are only supported on Chrome 62+ and iOS Safari 13.0+.
