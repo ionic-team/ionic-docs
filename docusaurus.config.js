@@ -6,12 +6,13 @@ module.exports = {
   baseUrl: '/docs/',
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'es', 'fr', 'pt'],
+    locales: ['en', 'es', 'fr', 'pt', 'zh'],
     localeConfigs: {
       en: { label: 'English' },
       es: { label: 'Español' },
       fr: { label: 'Français' },
       pt: { label: 'Português' },
+      zh: { label: '中文' },
     },
   },
   onBrokenLinks: 'warn',
