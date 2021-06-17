@@ -206,7 +206,7 @@ By default, all Ionic Animations are paused until the `play` method is called.
 
 import Codepen from '@site/src/components/Codepen';
 
-<Codepen user="ionic" slug="bGbMojP"></Codepen>
+<Codepen user="ionic" slug="bGbMojP" />
 
 ## Keyframe Animations
 
@@ -300,7 +300,7 @@ In the example above, the `.square` element will transition from a red backgroun
 
 Each keyframe object contains an `offset` property. `offset` is a value between 0 and 1 that defines the keyframe step. Offset values must go in ascending order and cannot repeat.
 
-<Codepen user="ionic" slug="YzKLEzR"></Codepen>
+<Codepen user="ionic" slug="YzKLEzR" />
 
 ## Grouped Animations
 
@@ -506,7 +506,7 @@ const parent = createAnimation()
 
 This example shows 3 child animations controlled by a single parent animation. Animations `squareA` and `squareB` inherit the parent animation's duration of 2000ms, but animation `squareC` has a duration of 5000ms since it was explicitly set.
 
-<Codepen user="ionic" slug="oNvdogM" height="460"></Codepen>
+<Codepen user="ionic" slug="oNvdogM" height="460" />
 
 ## Before and After Hooks
 
@@ -622,7 +622,7 @@ In this example, an inline opacity of 0.2 is set on the `.square` element prior 
 
 See [Methods](#methods) for a complete list of hooks.
 
-<Codepen user="ionic" slug="BaBxmwo"></Codepen>
+<Codepen user="ionic" slug="BaBxmwo" />
 
 ## Chained Animations
 
@@ -833,7 +833,7 @@ await squareC.play();
 </Tabs>
 ````
 
-<Codepen user="ionic" slug="MWgGrwX" height="460"></Codepen>
+<Codepen user="ionic" slug="MWgGrwX" height="460" />
 
 ## Gesture Animations
 
@@ -1154,7 +1154,7 @@ const getStep = (ev): {
 
 In this example we are creating a track along which we can drag the `.square` element. Our `animation` object will take care of moving the `.square` element either left or right, and our `gesture` object will instruct the `animation` object which direction to move in.
 
-<Codepen user="ionic" slug="jONxzRL"></Codepen>
+<Codepen user="ionic" slug="jONxzRL" />
 
 ## Preference-Based Animations
 
@@ -1256,7 +1256,7 @@ This method works in all supported browsers when creating animations for the fir
 
 Safari does not currently support dynamically updating keyframe animations. For developers who need this kind of support in Safari, they can use [MediaQueryList.addListener()](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/addListener).
 
-<Codepen user="ionic" slug="JjjYVKj"></Codepen>
+<Codepen user="ionic" slug="JjjYVKj" />
 
 ## Overriding Ionic Component Animations
 
@@ -1484,7 +1484,7 @@ export default defineComponent({
 </Tabs>
 ````
 
-<Codepen user="ionic" slug="ExapZBZ"></Codepen>
+<Codepen user="ionic" slug="ExapZBZ" />
 
 
 ## Performance Considerations

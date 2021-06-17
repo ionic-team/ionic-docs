@@ -80,7 +80,7 @@ function toggleDarkTheme(shouldAdd) {
 import Codepen from '@site/src/components/Codepen';
 
 <!-- Codepen https://codepen.io/ionic/pen/jONzJpG -->
-<Codepen preview="false" user="ionic" slug="jONzJpG" height="550px" default-tab="js,result"></Codepen>
+<Codepen preview="false" user="ionic" slug="jONzJpG" height="550px" default-tab="js,result" />
 
 ### Manually Toggle Dark Mode
 
@@ -112,7 +112,7 @@ function checkToggle(shouldCheck) {
 ```
 
 <!-- Codepen https://codepen.io/ionic/pen/zYOpQLj -->
-<Codepen preview="false" user="ionic" slug="zYOpQLj" height="600px" default-tab="js,result"></Codepen>
+<Codepen preview="false" user="ionic" slug="zYOpQLj" height="600px" default-tab="js,result" />
 
 ## Adjusting System UI Components
 

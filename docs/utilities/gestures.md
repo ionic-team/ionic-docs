@@ -260,7 +260,7 @@ In this example, our app listens for gestures on the `.rectangle` element. When 
 
 import Codepen from '@site/src/components/Codepen';
 
-<Codepen user="ionic" slug="xxKBYdL"></Codepen>
+<Codepen user="ionic" slug="xxKBYdL" />
 
 ## Double Click Gesture
 
@@ -433,7 +433,7 @@ const getRandomBackground = () => {
 
 In the example above, we want to be able to detect double clicks on an element. By setting our `threshold` to `0`, we can ensure our gesture object can detect clicks. Additionally, we define a click threshold so that only 2 clicks that occur in quick succession count as a double click.
 
-<Codepen user="ionic" slug="oNvVEwE"></Codepen>
+<Codepen user="ionic" slug="oNvVEwE" />
 
 ## Gesture Animations
 
