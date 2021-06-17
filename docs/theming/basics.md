@@ -4,6 +4,8 @@ contributors:
   - brandyscarney
 ---
 
+import ColorAccordion from '@site/src/components/ColorAccordion';
+
 # Theming Basics
 
 Ionic Framework is built to be a blank slate that can easily be customized and modified to fit a brand, while still following the standards of the different platforms. Theming Ionic apps is now easier than ever. Because the framework is built with CSS, it comes with pre-baked default styles which are extremely easy to change and modify.
@@ -13,8 +15,6 @@ Ionic Framework is built to be a blank slate that can easily be customized and m
 Ionic has nine default colors that can be used to change the color of many components. Each color is actually a collection of multiple properties, including a `shade` and `tint`, used throughout Ionic.
 
 When changing a color, it is important to set all of the related properties. This can be done easily with the [Color Generator](/docs/theming/color-generator) tool, but these can also be manually written if desired. For more information on Ionic colors, see [Colors](/docs/theming/colors).
-
-import ColorAccordion from '@site/src/components/ColorAccordion';
 
 <ColorAccordion />
 

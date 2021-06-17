@@ -4,6 +4,9 @@ contributors:
   - brandyscarney
 ---
 
+import DocsCard from '@site/src/components/DocsCard';
+import DocsCards from '@site/src/components/DocsCards';
+
 # Structure
 
 Ionic Framework provides several different layouts that can be used to structure an app. From single page layouts, to split pane views and modals.
@@ -11,9 +14,6 @@ Ionic Framework provides several different layouts that can be used to structure
 ## Header and Footer Layout
 
 ### Header
-
-import DocsCard from '@site/src/components/DocsCard';
-import DocsCards from '@site/src/components/DocsCards';
 
 <aside>
   <DocsCard href="/docs/api/header" header="Learn More" icon="/icons/component-header-icon.png">

@@ -11,12 +11,12 @@ demoUrl: https://ionic-docs-demo.herokuapp.com/
 demoSourceUrl: https://github.com/ionic-team/docs-demo
 ---
 
+import DocsCard from '@site/src/components/DocsCard';
+import DocsCards from '@site/src/components/DocsCards';
+
 Ionic Framework is an open source UI toolkit for building performant, high-quality mobile and desktop apps using web technologies — HTML, CSS, and JavaScript — with integrations for popular frameworks like <a href="/docs/angular/overview"> Angular</a>, <a href="/docs/react/overview">React</a>, and <a href="/docs/vue/overview">Vue</a>.
 
 Get started building by <a href="/docs/intro/cli">installing Ionic</a> or following our <a href="/docs/intro/next#build-your-first-app">First App Tutorial</a> to learn the main concepts.
-
-import DocsCard from '@site/src/components/DocsCard';
-import DocsCards from '@site/src/components/DocsCards';
 
 <DocsCards>
   <DocsCard header="Installation Guide" href="/docs/intro/cli" icon="/icons/guide-installation-icon.svg" hover-icon="/icons/guide-installation-icon-hover.svg">

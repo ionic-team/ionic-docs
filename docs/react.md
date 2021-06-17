@@ -8,6 +8,9 @@ meta:
   description: Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards
 ---
 
+import DocsCard from '@site/src/components/DocsCard';
+import DocsCards from '@site/src/components/DocsCards';
+
 <div class='flex main-flex'>
   <div class="pull-left">
   <h3>One Codebase <br/> Any Platform <br/> <strong>Just React</strong></h3>
@@ -108,9 +111,6 @@ $ ionic serve █
 ```
 
 ## Resources
-
-import DocsCard from '@site/src/components/DocsCard';
-import DocsCards from '@site/src/components/DocsCards';
 
 <DocsCards>
   <DocsCard header="Getting Started" href="/docs/react/your-first-app" icon="/icons/feature-component-actionsheet-icon.png">

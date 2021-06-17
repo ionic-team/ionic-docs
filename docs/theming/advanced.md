@@ -7,6 +7,8 @@ contributors:
   - marcjulian
 ---
 
+import CodeColor from '@site/src/components/CodeColor';
+
 # Advanced Theming
 
 CSS-based theming enables apps to customize the colors quickly by loading a CSS file or changing a few CSS property values.
@@ -127,8 +129,6 @@ $text: #444;
 $text-darker: darken($text, 15);
 $text-lighter: lighten($text, 15);
 ```
-
-import CodeColor from '@site/src/components/CodeColor';
 
 After running through the Sass compiler, the colors will have the following values:
 

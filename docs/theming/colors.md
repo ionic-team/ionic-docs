@@ -3,6 +3,9 @@ initialTab: 'preview'
 inlineHtmlPreviews: true
 ---
 
+import LayeredColorsSelect from '@site/src/components/LayeredColorsSelect';
+import CodeColor from '@site/src/components/CodeColor';
+
 # Colors
 
 Ionic has nine default colors that can be used to change the color of many components. Each color is actually a collection of multiple properties, including a `shade` and `tint`, used throughout Ionic.
@@ -26,13 +29,9 @@ A color can be applied to an Ionic component in order to change the default colo
 
 Each color consists of the following properties: a `base`, `contrast`, `shade`, and `tint`. The `base` and `contrast` colors also require a `rgb` property which is the same color, just in <a href="https://developer.mozilla.org/en-US/docs/Glossary/RGB" target="_blank">rgb format</a>. See [The Alpha Problem](./advanced#the-alpha-problem) for an explanation of why the `rgb` property is also needed. Select from the dropdown below to see all of the default colors Ionic provides and their variations.
 
-import LayeredColorsSelect from '@site/src/components/LayeredColorsSelect';
-
 <LayeredColorsSelect />
 
 ## Modifying Colors
-
-import CodeColor from '@site/src/components/CodeColor';
 
 To change the default values of a color, all of the listed variations for that color should be set. For example, to change the secondary color to <CodeColor mode="md" value="#006600"></CodeColor>, set the following CSS properties:
 

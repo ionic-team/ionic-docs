@@ -2,12 +2,12 @@
 hide_table_of_contents: true
 ---
 
+import DocsCard from '@site/src/components/DocsCard';
+import DocsCards from '@site/src/components/DocsCards';
+
 # Build Your First App Tutorial
 
 Pick the JavaScript framework you plan to use while building your Ionic app:
-
-import DocsCard from '@site/src/components/DocsCard';
-import DocsCards from '@site/src/components/DocsCards';
 
 <DocsCards>
   <DocsCard header="Start with Angular" href="/docs/angular/your-first-app" icon="/icons/logo-angular-icon.png">

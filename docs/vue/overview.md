@@ -2,6 +2,9 @@
 sidebar_label: Overview
 ---
 
+import DocsCard from '@site/src/components/DocsCard';
+import DocsCards from '@site/src/components/DocsCards';
+
 # Ionic Vue Overview
 
 `@ionic/vue` combines the core Ionic Framework experience with the tooling and APIs that are tailored to Vue Developers.
@@ -35,9 +38,6 @@ $ ionic serve █
 
 
 ## Resources
-
-import DocsCard from '@site/src/components/DocsCard';
-import DocsCards from '@site/src/components/DocsCards';
 
 <DocsCards>
   <DocsCard header="Getting Started" href="/docs/vue/your-first-app" icon="/icons/feature-component-actionsheet-icon.png">

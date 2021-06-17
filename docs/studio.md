@@ -2,6 +2,9 @@
 hide_table_of_contents: true
 ---
 
+import DocsCard from '@site/src/components/DocsCard';
+import DocsCards from '@site/src/components/DocsCards';
+
 # Welcome to Studio
 
 Ionic Studio is a fast and easy app builder that helps teams build and prototype apps with minimal coding.
@@ -12,9 +15,6 @@ Studio
 fully supports bringing code back into the tool, something virtually unheard of in the app development tools market.
 
 Studio is a desktop tool and requires a subscription, and is only for Ionic Angular 4.x+ projects. To get started, sign up below:
-
-import DocsCard from '@site/src/components/DocsCard';
-import DocsCards from '@site/src/components/DocsCards';
 
 <DocsCards class="static-width">
   <DocsCard header="Get Studio" href="https://ionicframework.com/studio?utm_source=docs&utm_medium=website&utm_campaign=studio%20launch" icon="/icons/guide-installation-icon.png">

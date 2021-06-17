@@ -1,5 +1,7 @@
 ---
 ---
+
+import Codepen from '@site/src/components/Codepen';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -257,8 +259,6 @@ const onMove = (detail) => {
 ````
 
 In this example, our app listens for gestures on the `.rectangle` element. When a gesture movement is detected, the `onMove` function is called, and our app logs the current gesture information.
-
-import Codepen from '@site/src/components/Codepen';
 
 <Codepen user="ionic" slug="xxKBYdL" />
 

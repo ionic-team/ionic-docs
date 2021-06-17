@@ -1,5 +1,7 @@
 ---
 ---
+
+import Codepen from '@site/src/components/Codepen';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -203,8 +205,6 @@ createAnimation()
 In the example above, an animation that changes the opacity on the `.square` element and moves it from left to right along the X axis has been created. This animation will run an infinite number of times, and each iteration of the animation will last 1500ms.
 
 By default, all Ionic Animations are paused until the `play` method is called.
-
-import Codepen from '@site/src/components/Codepen';
 
 <Codepen user="ionic" slug="bGbMojP" />
 

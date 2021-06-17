@@ -1,5 +1,7 @@
 ---
 ---
+
+import Codepen from '@site/src/components/Codepen';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -87,8 +89,6 @@ For a list of accepted values, see the <a href="https://developer.mozilla.org/en
 </TabItem>
 </Tabs>
 ````
-
-import Codepen from '@site/src/components/Codepen';
 
 <Codepen user="ionic" slug="abvJVVv" height="400" />
 
