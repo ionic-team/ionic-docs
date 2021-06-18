@@ -1,7 +1,3 @@
----
-
----
-
 # Asset Management
 
 The **Assets** section is a quick and easy way to add images or other media to Ionic apps.

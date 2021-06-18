@@ -1,7 +1,3 @@
----
-
----
-
 # Getting Started
 
 To create a new Ionic Studio app:

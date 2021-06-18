@@ -1,7 +1,3 @@
----
-
----
-
 # Using a Proxy
 
 Proxy support is built-in to the Ionic CLI. Proxy settings can be configured via the config file or an environment variable.

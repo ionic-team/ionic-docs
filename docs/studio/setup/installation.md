@@ -1,7 +1,3 @@
----
-
----
-
 # Installing Studio
 
 The latest downloads for Ionic Studio are available in the [Ionic Dashboard](https://dashboard.ionicframework.com/personal/downloads).

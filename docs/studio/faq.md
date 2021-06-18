@@ -1,7 +1,3 @@
----
-
----
-
 # Frequently Asked Questions
 
 ## Which versions of Ionic Framework are supported?

@@ -1,7 +1,3 @@
----
-
----
-
 # Designer Overview
 
 The Designer is the powerhouse of Studio, offering a drag-and-drop page builder for pages and components, with a code-behind editor for the template, styles, and scripts (TypeScript)

@@ -1,7 +1,3 @@
----
-
----
-
 # Settings
 
 Manage app configuration and settings.

@@ -1,7 +1,3 @@
----
-
----
-
 # Theming
 
 Manage app themes to tweak look and feel.

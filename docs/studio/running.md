@@ -1,7 +1,3 @@
----
-
----
-
 # Running Apps
 
 Ionic Studio offers support for serving, running, and deploying apps.

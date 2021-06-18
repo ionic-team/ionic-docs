@@ -1,7 +1,3 @@
----
-
----
-
 # Routing and Navigation
 
 A key part of developing Ionic apps is setting up routing and ensuring fluid navigation between pages.

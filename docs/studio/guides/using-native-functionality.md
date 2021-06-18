@@ -1,7 +1,3 @@
----
-
----
-
 # Using Native Functionality
 
 Depending on which Cordova Plugin you're using, you may need to run your app on a physical or virtual device in order to test out that feature.

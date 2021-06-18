@@ -1,7 +1,3 @@
----
-
----
-
 # Working with Code
 
 Ionic Studio works alongside your code editor of choice to enable more complex development workflows
