@@ -46,7 +46,7 @@ docs-card {
   margin-bottom: 1.2em;
 
   /* border-radius: 50%; */
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .Card-icon-hover {
