@@ -48,8 +48,6 @@ function DocsCard(props: Props): JSX.Element {
       </div>
     </>);
 
-    console.log('test', props.className)
-
     const className = clsx({
       'Card-with-image': typeof props.img !== 'undefined',
       'Card-without-image': typeof props.img === 'undefined',
