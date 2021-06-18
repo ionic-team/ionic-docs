@@ -1,6 +1,3 @@
----
----
-
 # Platform
 
 ## isPlatform

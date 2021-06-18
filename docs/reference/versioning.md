@@ -1,6 +1,3 @@
----
----
-
 # Versioning
 
 <!-- TOC goes here -->

@@ -1,6 +1,3 @@
----
----
-
 # Previewing
 
 There are many different options to test native functionality depending on your target platforms and needs.

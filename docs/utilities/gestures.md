@@ -1,6 +1,3 @@
----
----
-
 import Codepen from '@site/src/components/Codepen';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

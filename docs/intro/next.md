@@ -1,6 +1,3 @@
----
----
-
 import DocsCard from '@site/src/components/DocsCard';
 import DocsCards from '@site/src/components/DocsCards';
 

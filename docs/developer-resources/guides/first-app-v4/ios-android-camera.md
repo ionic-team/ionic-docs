@@ -1,6 +1,3 @@
----
----
-
 # Android, iOS, and the Camera - Oh My!
 
 Previously, we got an Ionic app up and running locally in a web browser. Now, let’s get it onto your iOS or Android device, then start building the photo gallery feature.

@@ -1,6 +1,3 @@
----
----
-
 # Tools
 
 ### [Angular CLI](https://github.com/angular/angular-cli)

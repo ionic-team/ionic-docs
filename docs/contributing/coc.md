@@ -1,6 +1,3 @@
----
----
-
 # Code of Conduct
 
 As contributors and maintainers of the Ionic project, we pledge to respect everyone who contributes by posting issues, updating documentation, submitting pull requests, providing feedback in comments, and any other activities.

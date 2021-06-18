@@ -1,6 +1,3 @@
----
----
-
 # Make It Your Own! Ionic Theming
 
 Previously, we converted our single use Camera app into an epic photo gallery. Now, let’s explore how to make the photo gallery our own with Ionic theming. The visual design of the app is incredibly important - fortunately, Ionic provides a lot for us out-of-the-box.

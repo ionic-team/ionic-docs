@@ -1,6 +1,3 @@
----
----
-
 # Videos
 
 ### [Ionic 2 Crash Course](https://www.youtube.com/watch?v=O2WiI9QrS5s&feature=youtu.be)

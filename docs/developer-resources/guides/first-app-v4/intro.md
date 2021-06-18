@@ -1,6 +1,3 @@
----
----
-
 # Your First Ionic App: Angular
 
 The great thing about Ionic is that with one codebase, you can build for any platform using familiar web tools and languages. Follow along as we create a working Photo Gallery. Here’s the before and after:

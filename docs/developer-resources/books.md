@@ -1,6 +1,3 @@
----
----
-
 # Books
 
 ### [Learn Ionic 4 From Scratch](https://leanpub.com/learnionic4fromscratch)

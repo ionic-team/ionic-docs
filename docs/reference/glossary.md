@@ -1,6 +1,3 @@
----
----
-
 # Glossary
 
 <div id="what-is">

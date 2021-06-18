@@ -1,6 +1,3 @@
----
----
-
 # Guides
 
 ### [Your First Ionic App - v3](/docs/developer-resources/guides/first-app-v3/intro)

@@ -1,6 +1,3 @@
----
----
-
 # Track Bugs in Realtime with Ionic Monitoring 
 
 Bugs happen, and can be hard to track down - especially with hundreds of possible combinations of mobile devices and operating systems. Appflow Monitoring allows you to track errors in your app on users’ phones and it sends them directly to you instantly, even if your code is minified!

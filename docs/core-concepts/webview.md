@@ -1,6 +1,3 @@
----
----
-
 # Web View
 
 Web Views power web apps on native devices.
