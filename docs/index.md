@@ -1,11 +1,9 @@
 ---
-title: Ionic Framework
 sidebar_label: Overview
 slug: /
-meta:
-  image: /img/meta/open-graph.png
-  title: Open-Source UI Toolkit to Create Your Own Mobile or Desktop Apps
-  description: Ionic Framework is an open-source UI toolkit to create your own mobile and desktop apps using web technologies with integrations for popular frameworks.
+image: /img/meta/open-graph.png
+title: Open-Source UI Toolkit to Create Your Own Mobile or Desktop Apps
+description: Ionic Framework is an open-source UI toolkit to create your own mobile and desktop apps using web technologies with integrations for popular frameworks.
 hide_table_of_contents: true
 demoUrl: https://ionic-docs-demo.herokuapp.com/
 demoSourceUrl: https://github.com/ionic-team/docs-demo
@@ -13,6 +11,8 @@ demoSourceUrl: https://github.com/ionic-team/docs-demo
 
 import DocsCard from '@site/src/components/DocsCard';
 import DocsCards from '@site/src/components/DocsCards';
+
+# Ionic Framework
 
 Ionic Framework is an open source UI toolkit for building performant, high-quality mobile and desktop apps using web technologies — HTML, CSS, and JavaScript — with integrations for popular frameworks like <a href="/docs/angular/overview"> Angular</a>, <a href="/docs/react/overview">React</a>, and <a href="/docs/vue/overview">Vue</a>.
 

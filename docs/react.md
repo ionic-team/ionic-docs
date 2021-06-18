@@ -1,11 +1,10 @@
 ---
 title: Ionic React
 sidebar_label: Overview
-renderTitle: false
+hide_title: true
 hide_table_of_contents: true
-meta:
-  image: /img/meta/open-graph.png
-  description: Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards
+image: /img/meta/open-graph.png
+description: Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards
 ---
 
 import DocsCard from '@site/src/components/DocsCard';
