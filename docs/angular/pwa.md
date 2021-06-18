@@ -1,8 +1,8 @@
 ---
-title: "Progressive Web Apps in Angular"
 sidebar_label: Progressive Web Apps
 ---
 
+# Progressive Web Apps in Angular
 
 ## Making your Angular app a PWA
 

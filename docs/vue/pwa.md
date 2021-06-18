@@ -1,7 +1,8 @@
 ---
-title: "Progressive Web Apps in Vue"
 sidebar_label: Progressive Web Apps
 ---
+
+# Progressive Web Apps in Vue
 
 ## Making your Vue app a PWA
 
