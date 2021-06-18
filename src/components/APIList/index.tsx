@@ -4,7 +4,7 @@ import sidebars from '../../../sidebars';
 
 function APIList(props): JSX.Element {
 
-  console.log('test', sidebars.api)
+  // console.log('test', sidebars.api)
   return (
     <div>
       {sidebars.api.map(section => {
