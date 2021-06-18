@@ -110,6 +110,16 @@ module.exports = {
         {
           type: 'localeDropdown',
           position: 'right',
+          dropdownItemsAfter: [
+            {
+              href: 'https://ionicframework.com/jp/docs/',
+              label: '日本語',
+            },
+            {
+              href: 'https://ionicframework.com/translate',
+              label: 'Translate',
+            },
+          ],
         },
       ],
     },
