@@ -304,3 +304,8 @@ iframe {
 .cordova-ee-card p {
   margin: 1rem 0 0;
 }
+
+.docDemoWrapper {
+  float: right;
+  margin: 0 0 1rem 1rem;
+}
