@@ -1,7 +1,5 @@
 ---
 sidebar_label: Starting
-contributors:
-  - dwieeb
 ---
 
 # Starting an App

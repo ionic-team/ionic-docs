@@ -1,9 +1,3 @@
----
-contributors:
-  - FdezRomero
-  - brandyscarney
----
-
 # Native Errors
 
 ## Code Signing errors

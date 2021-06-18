@@ -1,8 +1,5 @@
 ---
 sidebar_label: CLI Installation
-contributors:
-  - rtpHarry
-  - dwieeb
 ---
 
 # Installing Ionic

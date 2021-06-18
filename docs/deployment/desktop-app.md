@@ -1,7 +1,5 @@
 ---
 sidebar_label: Electron Desktop App
-contributors:
-  - mhartington
 ---
 
 # Deploying a Desktop App

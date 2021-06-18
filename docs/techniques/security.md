@@ -1,7 +1,5 @@
 ---
 disableHtmlPreviews: true
-contributors:
-  - liamdebeasi
 ---
 
 import Tabs from '@theme/Tabs';

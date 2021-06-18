@@ -1,10 +1,3 @@
----
-contributors:
-  - dotNetkow
-  - mhartington
-  - bryplano
----
-
 # Support Policy
 
 ## Community Maintenance

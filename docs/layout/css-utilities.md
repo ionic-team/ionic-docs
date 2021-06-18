@@ -1,8 +1,6 @@
 ---
 initialTab: 'preview'
 inlineHtmlPreviews: true
-contributors:
-  - brandyscarney
 ---
 
 # CSS Utilities

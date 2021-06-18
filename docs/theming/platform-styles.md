@@ -1,7 +1,5 @@
 ---
 disableHtmlPreviews: true
-contributors:
-  - brandyscarney
 ---
 
 # Platform Styles

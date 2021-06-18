@@ -1,8 +1,6 @@
 ---
 initialTab: 'preview'
 inlineHtmlPreviews: true
-contributors:
-  - brandyscarney
 meta:
   title: Responsive Grid System and Column Layout Based on Screen Size
   description: Ionic's responsive grid is a powerful mobile-first flexbox system for building custom layouts based on a 12 column layout with breakpoints based on screen size.

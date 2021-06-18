@@ -1,10 +1,3 @@
----
-contributors:
-  - rtpHarry
-  - FdezRomero
-  - brandyscarney
----
-
 # Development Tips
 
 ## Resolving Permission Errors

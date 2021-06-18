@@ -1,8 +1,3 @@
----
-contributors:
-  - brandyscarney
----
-
 # Runtime Issues
 
 ## Blank App

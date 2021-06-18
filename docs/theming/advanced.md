@@ -2,9 +2,6 @@
 sidebar_label: Advanced
 initialTab: 'preview'
 inlineHtmlPreviews: true
-contributors:
-  - brandyscarney
-  - marcjulian
 ---
 
 import CodeColor from '@site/src/components/CodeColor';

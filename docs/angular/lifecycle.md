@@ -1,7 +1,5 @@
 ---
 sidebar_label: Lifecycle
-contributors:
-  - elylucas
 ---
 
 # Ionic Page Life Cycle

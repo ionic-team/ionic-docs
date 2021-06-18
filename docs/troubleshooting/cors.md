@@ -1,8 +1,3 @@
----
-contributors:
-  - FdezRomero
----
-
 # CORS Errors
 
 

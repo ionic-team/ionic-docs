@@ -1,7 +1,5 @@
 ---
 sidebar_label: Testing
-contributors:
-  - elylucas
 ---
 
 # Testing Ionic React

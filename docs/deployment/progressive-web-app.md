@@ -1,8 +1,5 @@
 ---
 sidebar_label: Progressive Web App (PWA)
-contributors:
-  - MustaRohman
-  - mhartington
 ---
 
 import DocsCard from '@site/src/components/DocsCard';

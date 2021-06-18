@@ -1,8 +1,3 @@
----
-contributors:
-  - jsonMartin
----
-
 import DocsButton from '@site/src/components/DocsButton';
 
 # Creating a Photo Gallery with Device Storage

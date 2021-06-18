@@ -1,7 +1,5 @@
 ---
 sidebar_label: Basics
-contributors:
-  - brandyscarney
 ---
 
 import ColorAccordion from '@site/src/components/ColorAccordion';

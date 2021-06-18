@@ -1,8 +1,3 @@
----
-contributors:
-  - walkingriver
----
-
 # Courses
 
 ### [Elite Ionic](https://www.joshmorony.com/elite/)

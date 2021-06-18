@@ -1,7 +1,5 @@
 ---
 sidebar_label: iOS App Store
-contributors:
-  - zaarheed
 ---
 
 # iOS App Store Deployment

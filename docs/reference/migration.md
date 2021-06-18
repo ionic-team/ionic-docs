@@ -1,9 +1,5 @@
 ---
 sidebar_label: Migration
-contributors:
-  - mhartington
-  - kensodemann
-  - elylucas
 ---
 
 import Tabs from '@theme/Tabs';

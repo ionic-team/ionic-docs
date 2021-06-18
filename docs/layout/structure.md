@@ -1,7 +1,5 @@
 ---
 initialTab: 'preview'
-contributors:
-  - brandyscarney
 ---
 
 import DocsCard from '@site/src/components/DocsCard';

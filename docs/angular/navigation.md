@@ -1,7 +1,5 @@
 ---
 sidebar_label: Navigation/Routing
-contributors:
-  - mhartington
 ---
 
 # Angular Navigation

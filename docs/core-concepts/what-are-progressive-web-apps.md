@@ -1,8 +1,5 @@
 ---
 sidebar_label: What are PWAs?
-contributors:
-  - perrygovier
-  - mhartington
 ---
 
 # Progressive Web Apps
