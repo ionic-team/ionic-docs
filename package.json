@@ -28,7 +28,7 @@
     "clsx": "^1.1.1",
     "concurrently": "^6.2.0",
     "prettier": "^2.2.1",
-    "react": "^16.8.4",
+    "react": "^17.0.2",
     "react-dom": "^16.8.4",
     "react-live": "^2.2.3",
     "remark-html": "^13.0.1"
