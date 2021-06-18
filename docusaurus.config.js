@@ -22,6 +22,7 @@ module.exports = {
   projectName: 'ionic-docs',
   themeConfig: {
     navbar: {
+      hideOnScroll: true,
       logo: {
         alt: 'Ionic Logo',
         src: 'img/framework-logo.svg',
