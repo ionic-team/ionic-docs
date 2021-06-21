@@ -253,6 +253,7 @@ Let's start by taking a look at our `Tabs` component:
   <ion-page>
     <ion-content>
       <ion-tabs>
+        <ion-router-outlet></ion-router-outlet>
         <ion-tab-bar slot="bottom">
           <ion-tab-button tab="tab1" href="/tabs/tab1">
             <ion-icon :icon="triangle" />
@@ -275,12 +276,30 @@ Let's start by taking a look at our `Tabs` component:
 </template>
 
 <script lang="ts">
-import { IonTabBar, IonTabButton, IonTabs, IonContent, IonLabel, IonIcon, IonPage } from '@ionic/vue';
+import {
+  IonTabBar,
+  IonTabButton,
+  IonTabs,
+  IonContent,
+  IonLabel,
+  IonIcon,
+  IonPage,
+  IonRouterOutlet
+} from '@ionic/vue';
 import { ellipse, square, triangle } from 'ionicons/icons';
 
 export default {
   name: 'Tabs',
-  components: { IonContent, IonLabel, IonTabs, IonTabBar, IonTabButton, IonIcon, IonPage },
+  components: {
+    IonContent,
+    IonLabel,
+    IonTabs,
+    IonTabBar,
+    IonTabButton,
+    IonIcon,
+    IonPage,
+    IonRouterOutlet
+  },
   setup() {
     return {
       ellipse, 
@@ -292,7 +311,7 @@ export default {
 </script>
 ```
 
-If you have worked with Ionic Framework before, this should feel familiar. We create an `ion-tabs` component, and provide an `ion-tab-bar`. The `ion-tab-bar` provides and `ion-tab-button` components, each with a `tab` property that is associated with its corresponding tab in the router config.
+If you have worked with Ionic Framework before, this should feel familiar. We create an `ion-tabs` component and provide an `ion-tab-bar`. The `ion-tab-bar` provides `ion-tab-button` components, each with a `tab` property that is associated with its corresponding tab in the router config. We also provide an `ion-router-outlet` to give `ion-tabs` an outlet to render the different tab views in.
 
 ### Child Routes within Tabs
 
