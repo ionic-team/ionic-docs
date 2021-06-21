@@ -273,28 +273,28 @@ Let's start by taking a look at our `Tabs` component:
 </template>
 
 <script lang="ts">
-import { 
-  IonTabBar, 
-  IonTabButton, 
-  IonTabs, 
-  IonContent, 
-  IonLabel, 
-  IonIcon, 
-  IonPage, 
+import {
+  IonTabBar,
+  IonTabButton,
+  IonTabs,
+  IonContent,
+  IonLabel,
+  IonIcon,
+  IonPage,
   IonRouterOutlet
 } from '@ionic/vue';
 import { ellipse, square, triangle } from 'ionicons/icons';
 
 export default {
   name: 'Tabs',
-  components: { 
-    IonContent, 
-    IonLabel, 
-    IonTabs, 
-    IonTabBar, 
-    IonTabButton, 
-    IonIcon, 
-    IonPage, 
+  components: {
+    IonContent,
+    IonLabel,
+    IonTabs,
+    IonTabBar,
+    IonTabButton,
+    IonIcon,
+    IonPage,
     IonRouterOutlet
   },
   setup() {
