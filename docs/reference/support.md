@@ -24,18 +24,34 @@ The current status of each Ionic Framework version is:
 
 The Ionic team has compiled a set of recommendations for using the Ionic Framework in conjunction with other contextually-relevant software. This is not meant to be a comprehensive list, but covers many common compatibility questions.	The Ionic team strongly recommends reviewing your project dependencies once each quarter to keep track of new releases, features and bug fixes.
 
+The Ionic team generally recommends the latest releases of third party packages and strives to support the latest releases within 2-4 weeks of general availability.
+
 ### Core Dependencies
 
-| Framework     | Angular | React         | Vue   | Typescript |
-|:-------------:|:-------:|:-------------:|:-----:|:----------:|
-| V5 - Angular  | v8.2.X  | N/A           | N/A   | 3.5.X      |
-| V5 - React    | N/A     | 16.8.X        | N/A   | 3.7.X      |
-| V5 - Vue      | N/A     | N/A           | 3.0.X | 3.9.X      |
-| V4 - Angular  | v8.2.X  | N/A           | N/A   | 3.5.X      |
-| V4 - React    | N/A     | 16.8.X        | N/A   | 3.7.X      |
-| V3            | v5.2.11 | N/A           | N/A   | 2.6.2      |
+#### Ionic Angular
 
-* The Ionic team generally recommends the latest releases of third party packages and strives to support the latest releases within 2-4 weeks of general availability.
+| Framework | Required Angular Version | TypeScript |
+|:---------:|:------------------------:|:----------:|
+| v6        | v11+                     | 4.0+       |
+| v5        | v8.2+                    | 3.5+       |
+| v4        | v8.2+                    | 3.5+       |
+| v3        | v5.2.11                  | 2.6.2      |
+
+#### Ionic React
+
+| Framework | Required React Version | TypeScript |
+|:---------:|:----------------------:|:----------:|
+| v6        | v17+                   | 3.7+       |
+| v5        | v16.8+                 | 3.7+       |
+| v4        | v16.8+                 | 3.7+       |
+
+#### Ionic Vue
+
+| Framework | Required Vue Version | TypeScript |
+|:---------:|:--------------------:|:----------:|
+| v6        | v3.0.6+              | 3.9+       |
+| v5        | v3.0+                | 3.9+       |
+
 
 ### Native Bridges
 
