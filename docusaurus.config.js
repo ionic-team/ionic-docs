@@ -151,10 +151,10 @@ module.exports = {
     footer: {
       links: [],
     },
-    // algolia: {
-    //   apiKey: 'b3d47db9759a0a5884cf7807e23c77c5',
-    //   indexName: 'capacitorjs',
-    // },
+    algolia: {
+      apiKey: '43228ce75714201a27efcf69666d6b40',
+      indexName: 'ionicframework',
+    },
     gtag: {
       trackingID: 'UA-44023830-8',
     },
