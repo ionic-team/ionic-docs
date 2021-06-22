@@ -151,6 +151,18 @@ module.exports = {
             },
           ],
         },
+        {
+          href: 'https://twitter.com/IonicFramework',
+          position: 'right',
+          className: 'navbar-twitter',
+          'aria-label': 'Twitter',
+        },
+        {
+          href: 'https://github.com/ionic-team/ionic-framework',
+          position: 'right',
+          className: 'navbar-github',
+          'aria-label': 'GitHub',
+        },
       ],
     },
     footer: {
