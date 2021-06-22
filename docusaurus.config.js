@@ -26,6 +26,7 @@ module.exports = {
       logo: {
         alt: 'Ionic Logo',
         src: 'img/framework-logo.svg',
+        srcDark: 'img/framework-logo-dark.svg',
       },
       items: [
         {
@@ -49,6 +50,10 @@ module.exports = {
           to: '/native',
           label: 'Native',
           position: 'left',
+        },
+        {
+          type: 'search',
+          position: 'right',
         },
         {
           label: 'Community',

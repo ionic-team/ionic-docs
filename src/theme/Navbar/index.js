@@ -7,19 +7,16 @@
 import React, {useCallback, useState, useEffect} from 'react';
 import clsx from 'clsx';
 import SearchBar from '@theme/SearchBar';
-// import Toggle from '@theme/Toggle';
+import Toggle from '@theme/ThemeToggle';
 import useThemeContext from '@theme/hooks/useThemeContext';
 import {useThemeConfig} from '@docusaurus/theme-common';
 import useHideableNavbar from '@theme/hooks/useHideableNavbar';
 import useLockBodyScroll from '@theme/hooks/useLockBodyScroll';
 import useWindowSize, {windowSizes} from '@theme/hooks/useWindowSize';
 import NavbarItem from '@theme/NavbarItem';
-// import Logo from '@theme/Logo';
-import styles from './styles.module.css'; // retrocompatible with v1
-import NavbarBreadcrumb from '@theme/NavbarBreadcrumb';
-import ThemeToggle from '@theme/ThemeToggle';
+import Logo from '@theme/Logo';
 import IconMenu from '@theme/IconMenu';
-import { FrameworkDocsDarkLogo, FrameworkDocsLightLogo } from '../custom-icons';
+import styles from './styles.module.css'; // retrocompatible with v1
 
 const DefaultNavItemPosition = 'right'; // If split links by left/right
 // if position is unspecified, fallback to right (as v1)
@@ -43,32 +40,27 @@ function Navbar() {
     colorMode: {disableSwitch: disableColorModeSwitch},
   } = useThemeConfig();
   const [sidebarShown, setSidebarShown] = useState(false);
-  const [isSearchBarExpanded, setIsSearchBarExpanded] = useState(false);
   const {isDarkTheme, setLightTheme, setDarkTheme} = useThemeContext();
   const {navbarRef, isNavbarVisible} = useHideableNavbar(hideOnScroll);
-
   useLockBodyScroll(sidebarShown);
-
   const showSidebar = useCallback(() => {
     setSidebarShown(true);
-    }, [setSidebarShown]);
-    const hideSidebar = useCallback(() => {
+  }, [setSidebarShown]);
+  const hideSidebar = useCallback(() => {
     setSidebarShown(false);
-    }, [setSidebarShown]);
-
-  const onToggleChange = (checked) => {
-      checked ? setLightTheme() : setDarkTheme()
-    }
-
+  }, [setSidebarShown]);
+  const onToggleChange = useCallback(
+    (checked) => (checked ? setLightTheme() : setDarkTheme()),
+    [setLightTheme, setDarkTheme],
+  );
   const windowSize = useWindowSize();
   useEffect(() => {
     if (windowSize === windowSizes.desktop) {
       setSidebarShown(false);
     }
   }, [windowSize]);
-
+  const hasSearchNavbarItem = items.some((item) => item.type === 'search');
   const {leftItems, rightItems} = splitNavItemsByPosition(items);
-
   return (
     <nav
       ref={navbarRef}
@@ -77,14 +69,14 @@ function Navbar() {
         'navbar--primary': style === 'primary',
         'navbar-sidebar--show': sidebarShown,
         [styles.navbarHideable]: hideOnScroll,
-        [styles.navbarHidden]: !isNavbarVisible,
+        [styles.navbarHidden]: hideOnScroll && !isNavbarVisible,
       })}>
       <div className="navbar__inner">
         <div className="navbar__items">
           {items != null && items.length !== 0 && (
             <button
               aria-label="Navigation bar toggle"
-              className="navbar__toggle clean-btn"
+              className="navbar__toggle"
               type="button"
               tabIndex={0}
               onClick={showSidebar}
@@ -92,8 +84,11 @@ function Navbar() {
               <IconMenu />
             </button>
           )}
-          <NavbarBreadcrumb/>
-
+          <Logo
+            className="navbar__brand"
+            imageClassName="navbar__logo"
+            titleClassName={clsx('navbar__title')}
+          />
           {leftItems.map((item, i) => (
             <NavbarItem {...item} key={i} />
           ))}
@@ -103,16 +98,13 @@ function Navbar() {
             <NavbarItem {...item} key={i} />
           ))}
           {!disableColorModeSwitch && (
-            <ThemeToggle 
-              aria-label="Dark mode toggle"
-              onChange={onToggleChange}
+            <Toggle
+              className={styles.displayOnlyInLargeViewport}
               checked={isDarkTheme}
+              onChange={onToggleChange}
             />
           )}
-          <SearchBar
-            handleSearchBarToggle={setIsSearchBarExpanded}
-            isSearchBarExpanded={isSearchBarExpanded}
-          />
+          {!hasSearchNavbarItem && <SearchBar />}
         </div>
       </div>
       <div
@@ -122,16 +114,15 @@ function Navbar() {
       />
       <div className="navbar-sidebar">
         <div className="navbar-sidebar__brand">
-          {isDarkTheme ? <FrameworkDocsDarkLogo 
+          <Logo
             className="navbar__brand"
             imageClassName="navbar__logo"
             titleClassName="navbar__title"
             onClick={hideSidebar}
-          /> : <FrameworkDocsLightLogo 
-            className="navbar__brand"
-            imageClassName="navbar__logo"
-            titleClassName="navbar__title"
-            onClick={hideSidebar}/>}
+          />
+          {!disableColorModeSwitch && sidebarShown && (
+            <Toggle checked={isDarkTheme} onChange={onToggleChange} />
+          )}
         </div>
         <div className="navbar-sidebar__items">
           <div className="menu">
@@ -139,7 +130,7 @@ function Navbar() {
               {items.map((item, i) => (
                 <NavbarItem
                   mobile
-                  {...(item)}
+                  {...item} // TODO fix typing
                   onClick={hideSidebar}
                   key={i}
                 />
