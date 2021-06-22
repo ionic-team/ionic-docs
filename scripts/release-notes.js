@@ -5,13 +5,13 @@ const { resolve } = require('path');
 const semver = require('semver');
 const url = require('url');
 
-const { renderMarkdown, convertHtmlToHypertextData } = require('./utils.js');
+const { renderMarkdown } = require('./utils.js');
 
 dotenv.config();
 
 const OUTPUT_PATH = resolve(
   __dirname,
-  './release-notes.json'
+  '../src/components/ReleaseNotes/release-notes.json'
 );
 
 // export default {
@@ -47,8 +47,7 @@ const getReleases = async () => {
         // All non-prerelease, non-alpha, non-beta, non-rc release
         return releasePattern.test(release.tag_name);
       }).map(release => {
-        const body = parseMarkdown(release.body);
-        console.log('got here')
+        const body = renderMarkdown(release.body).contents;
         const published_at = parseDate(release.published_at);
         const version = release.tag_name.replace('v', '');
         const type = getVersionType(version);
@@ -82,14 +81,6 @@ const getReleases = async () => {
 function parseDate(datetime) {
   const date = new Date(datetime);
   return date.toLocaleString('en-us', { month: 'long' }) + ' ' + date.getDate() + ' ' + date.getFullYear();
-};
-
-function parseMarkdown(content) {
-  let html = renderMarkdown(content).contents;
-  html = html.replace('<a href=\"#bug-fixes\">Bug Fixes</a>', 'Bug Fixes')
-             .replace('<a href=\"#features\">Features</a>', 'Features');  
-
-  return convertHtmlToHypertextData(html);
 };
 
 // Given a version, return if it is a
