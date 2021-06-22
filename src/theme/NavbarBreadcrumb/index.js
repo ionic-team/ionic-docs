@@ -5,7 +5,7 @@ import useThemeContext from '@theme/hooks/useThemeContext';
 // import {useActiveDocContext} from '@theme/hooks/useDocs';
 // import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 // import Link from '@docusaurus/Link';
-import { FrameworkDocsDarkLogo, FrameworkDocsLightLogo } from '../icons';
+import { FrameworkDocsDarkLogo, FrameworkDocsLightLogo } from '../custom-icons';
 
 import './breadcrumbs.css';
 

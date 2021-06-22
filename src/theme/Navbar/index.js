@@ -19,7 +19,7 @@ import styles from './styles.module.css'; // retrocompatible with v1
 import NavbarBreadcrumb from '@theme/NavbarBreadcrumb';
 import ThemeToggle from '@theme/ThemeToggle';
 import IconMenu from '@theme/IconMenu';
-import { FrameworkDocsDarkLogo, FrameworkDocsLightLogo } from '../icons';
+import { FrameworkDocsDarkLogo, FrameworkDocsLightLogo } from '../custom-icons';
 
 const DefaultNavItemPosition = 'right'; // If split links by left/right
 // if position is unspecified, fallback to right (as v1)
