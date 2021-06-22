@@ -15,7 +15,7 @@
     "serve": "docusaurus serve",
     "clear": "docusaurus clear",
     "crowdin:sync": "docusaurus write-translations && crowdin upload && crowdin download",
-    "generate-markdown": "concurrently \"node scripts/api\" \"node scripts/cli\" \"node scripts/native\""
+    "generate-markdown": "concurrently \"node scripts/api\" \"node scripts/cli\" \"node scripts/native\" \"node scripts/release-notes\""
   },
   "dependencies": {
     "@crowdin/cli": "^3.6.1",
@@ -54,6 +54,10 @@
     "@types/react": "^17.0.11",
     "@types/react-helmet": "^6.1.1",
     "@types/react-router-dom": "^5.1.7",
+    "dotenv": "^10.0.0",
+    "fs-extra": "^9.1.0",
+    "remark-parse": "^8.0.3",
+    "semver": "^7.3.5",
     "typescript": "^4.3.2"
   }
 }

@@ -1,6 +1,6 @@
-var unified = require('unified')
-var markdown = require('remark-parse')
-var html = require('remark-html')
+const unified = require('unified')
+const markdown = require('remark-parse')
+const html = require('remark-html')
 
 function renderMarkdown(markdownString) {
   return unified()
