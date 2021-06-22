@@ -7,6 +7,12 @@
 
 /* You can override the default Infima variables here. */
 
+@import './pages/studio';
+@import './pages/guides';
+@import './pages/frameworks';
+@import './pages/components';
+@import './pages/browser-support';
+
 :root {
   /* Docusaurus variables */
   --ifm-color-primary: #25c2a0;
@@ -264,7 +270,6 @@ iframe {
   box-shadow: 10px 10px 20px rgba(0,0,0,0.1);
 }
 
-
 .docusaurus-highlight-code-line {
   background-color: rgb(72, 77, 91);
   display: block;
@@ -276,6 +281,8 @@ iframe {
   flex: 1;
 }
 
+
+
 .git-link svg {
   height: 1em;
   width: 1em;
@@ -284,7 +291,6 @@ iframe {
 .git-link path {
   fill: currentColor;
 }
-
 
 .cordova-ee-card {
   max-width:100%;

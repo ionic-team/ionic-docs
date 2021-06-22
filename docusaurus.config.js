@@ -164,13 +164,14 @@ module.exports = {
       additionalLanguages: ['shell-session'],
     },
   },
+  plugins: ['docusaurus-plugin-sass'],
   themes: ['@ionic-internal/docusaurus-theme'],
   presets: [
     [
       '@docusaurus/preset-classic',
       {
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve('./src/css/custom.scss'),
         },
         docs: {
           routeBasePath: '/',

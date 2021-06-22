@@ -1,0 +1,85 @@
+.page--docs-react,
+.page--docs-angular {
+  --page-width: 900px;
+}
+.page--docs-react command-line,
+.page--docs-angular command-line {
+  max-width: 720px;
+  margin: 50px auto;
+}
+.page--docs-react strong,
+.page--docs-angular strong {
+  color: #44b4ff;
+}
+.page--docs-react .pull-left h3,
+.page--docs-angular .pull-left h3 {
+  font-size: 4rem;
+  padding-top: 0;
+}
+.page--docs-react .flex,
+.page--docs-angular .flex {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 50px 0px;
+}
+.page--docs-react .main-flex h1,
+.page--docs-angular .main-flex h1 {
+  margin-botton: 0px;
+}
+.page--docs-react .main-flex ul,
+.page--docs-angular .main-flex ul {
+  padding-left: 0;
+  list-style: none;
+  line-height: 1;
+}
+.page--docs-react .main-flex .pull-right img,
+.page--docs-angular .main-flex .pull-right img {
+  width: 150px;
+}
+.page--docs-react .pull-right img,
+.page--docs-angular .pull-right img {
+  display: block;
+  max-width: 250px;
+  width: 100%;
+  margin: auto;
+}
+@media (min-width: 1058px) {
+  .page--docs-react .flex,
+  .page--docs-angular .flex {
+    flex-direction: row;
+    align-items: center;
+    padding: 75px 0;
+  }
+  .page--docs-react .flex.reverse,
+  .page--docs-angular .flex.reverse {
+    flex-direction: row-reverse;
+  }
+  .page--docs-react .pull-left,
+  .page--docs-angular .pull-left {
+    width: 450px;
+  }
+  .page--docs-react .pull-right,
+  .page--docs-angular .pull-right {
+    flex: 1;
+    text-align: center;
+  }
+  .page--docs-react .pull-right img,
+  .page--docs-angular .pull-right img {
+    display: initial;
+    max-width: 250px;
+  }
+  .page--docs-react .main-flex .pull-right img,
+  .page--docs-angular .main-flex .pull-right img {
+    max-width: 375px;
+    width: 100%;
+  }
+  .page--docs-react h2,
+  .page--docs-angular h2 {
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
+.page--docs-react .cli,
+.page--docs-angular .cli {
+  width: 150px !important;
+}
