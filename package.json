@@ -49,7 +49,7 @@
   },
   "prettier": "@ionic/prettier-config",
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^2.0.0-beta.0",
+    "@docusaurus/module-type-aliases": "^2.0.0-beta.1",
     "@tsconfig/docusaurus": "^1.0.2",
     "@types/react": "^17.0.11",
     "@types/react-helmet": "^6.1.1",
