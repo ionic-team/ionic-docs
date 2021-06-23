@@ -225,8 +225,13 @@ module.exports = {
     'components',
     {
       type: 'category',
-      label: 'Action Sheet',
+      label: 'Accordion',
       items: ['api/action-sheet'],
+    },
+    {
+      type: 'category',
+      label: 'Accordion',
+      items: ['api/accordion', 'api/accordion-group'],
     },
     {
       type: 'category',
@@ -237,6 +242,11 @@ module.exports = {
       type: 'category',
       label: 'Badge',
       items: ['api/badge'],
+    },
+    {
+      type: 'category',
+      label: 'Breadcrumb',
+      items: ['api/breadcrumb', 'api/breadcrumbs'],
     },
     {
       type: 'category',
