@@ -225,7 +225,7 @@ module.exports = {
     'components',
     {
       type: 'category',
-      label: 'Accordion',
+      label: 'Action Sheet',
       items: ['api/action-sheet'],
     },
     {
