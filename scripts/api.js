@@ -4,6 +4,7 @@ const path = require('path');
 const apiOverrides = require('./data/meta-override.json').api;
 
 const DEMOS_PATH = path.resolve('static/demos');
+let COMPONENT_LINK_REGEXP;
 
 (async function () {
   const response = await fetch(
@@ -11,11 +12,15 @@ const DEMOS_PATH = path.resolve('static/demos');
   );
   const { components } = await response.json();
 
+  const names = components.map(component => component.tag.slice(4));
+  // matches all relative markdown links to a component, e.g. (../button)
+  COMPONENT_LINK_REGEXP = new RegExp(`\\(../(${names.join('|')})/?[)#]`, 'g');
+
   components.map(writePage);
 })();
 
 function writePage(page) {
-  const data = [
+  let data = [
     renderFrontmatter(page),
     renderReadme(page),
     renderUsage(page),
@@ -26,6 +31,9 @@ function writePage(page) {
     renderCustomProps(page),
     renderSlots(page),
   ].join('');
+
+  // fix relative links, e.g. (../button) -> (button.md)
+  data = data.replace(COMPONENT_LINK_REGEXP, '($1.md');
 
   const path = `docs/api/${page.tag.slice(4)}.md`;
   fs.writeFileSync(path, data);
