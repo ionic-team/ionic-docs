@@ -10,4 +10,4 @@ files:
     ignore:
       - /docs/api/**/*
       - /docs/cli/commands/**/*
-      - /docs/native/plugins/**/*
+      - /docs/native/**/*
