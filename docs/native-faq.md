@@ -1,12 +1,13 @@
 ---
 sidebar_label: FAQ
+slug: /native/faq
 ---
 
 # Ionic Native FAQ
 
 ## Cordova Management Tips
 
-**1) Use the [Ionic CLI](../cli.md) to add/update/delete plugins.**
+**1) Use the [Ionic CLI](cli.md) to add/update/delete plugins.**
 
 Instead of directly editing `config.xml` and `package.json`. Use `ionic` in front of Cordova commands for a better experience and additional functionality (`ionic cordova build ios` instead of `cordova build ios`).
 
@@ -30,8 +31,8 @@ $ ionic cordova plugin add cordova-plugin-camera@4.3.2
 Useful when adding new developers to a project. `ionic cordova prepare` restores platforms and plugins from `package.json` and `config.xml`. The version to be installed is taken from `package.json` or `config.xml`, if found in those files. In case of conflicts, `package.json` is given precedence over `config.xml`.
 
 **5) Troubleshoot Cordova issues with Ionic CLI commands**
-* `ionic doctor list`: Detects [common issues](../cli/commands/doctor-list.md) and suggests steps to fix them 
-* `ionic repair`: Remove, then [regenerate](../cli/commands/repair.md) all dependencies
+* `ionic doctor list`: Detects [common issues](cli/commands/doctor-list.md) and suggests steps to fix them 
+* `ionic repair`: Remove, then [regenerate](cli/commands/repair.md) all dependencies
 
 
 ## Understanding Version Numbers

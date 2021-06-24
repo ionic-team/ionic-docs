@@ -21,7 +21,7 @@ function writePage(page) {
     renderUsage(page),
   ].join('');
 
-  const path = `docs/native/plugins/${page.packageName.replace(
+  const path = `docs/native/${page.packageName.replace(
     '@ionic-native/',
     '',
   )}.md`;

@@ -3,6 +3,7 @@ metaTitle: 'Cordova Plugins | Cordova Community Core Plugins for Ionic Apps'
 description: 'For the Cordova user community, our collection of TypeScript wrappers for open source Cordova core plugins easily add native functionality to any Ionic app.'
 sidebar_label: Setup
 hide_table_of_contents: true
+slug: /native/community
 ---
 
 import Tabs from '@theme/Tabs';
@@ -29,7 +30,7 @@ In addition to Cordova, Ionic Native also works with [Capacitor](https://capacit
 All plugins have two components - the native code (Cordova) and the TypeScript code (Ionic Native).
 Cordova plugins are also wrapped in a `Promise` or `Observable` in order to provide a common plugin interface and modernized development approach.
 
-Using the [Camera plugin](plugins/camera.md) as an example, first install it:
+Using the [Camera plugin](native/camera.md) as an example, first install it:
 
 ````mdx-code-block
 <Tabs
@@ -72,7 +73,7 @@ $ ionic cap sync
 </Tabs>
 ````
 
-Next, begin using the plugin, following the various framework usage options below. For FAQ, see [here](faq.md).
+Next, begin using the plugin, following the various framework usage options below. For FAQ, see [here](native-faq.md).
 
 ## Angular
 
