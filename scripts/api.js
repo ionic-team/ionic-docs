@@ -14,7 +14,7 @@ let COMPONENT_LINK_REGEXP;
 
   const names = components.map(component => component.tag.slice(4));
   // matches all relative markdown links to a component, e.g. (../button)
-  COMPONENT_LINK_REGEXP = new RegExp(`\\(../(${names.join('|')})/?[)#]`, 'g');
+  COMPONENT_LINK_REGEXP = new RegExp(`\\(../(${names.join('|')})/?(#[^)]+)?\\)`, 'g');
 
   components.map(writePage);
 })();
@@ -33,7 +33,7 @@ function writePage(page) {
   ].join('');
 
   // fix relative links, e.g. (../button) -> (button.md)
-  data = data.replace(COMPONENT_LINK_REGEXP, '($1.md');
+  data = data.replace(COMPONENT_LINK_REGEXP, '($1.md$2)');
 
   const path = `docs/api/${page.tag.slice(4)}.md`;
   fs.writeFileSync(path, data);
