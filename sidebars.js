@@ -135,6 +135,7 @@ module.exports = {
         'vue/navigation',
         'vue/virtual-scroll',
         'vue/slides',
+        'vue/utility-functions',
         'vue/config',
         'vue/platform',
         'vue/pwa',
