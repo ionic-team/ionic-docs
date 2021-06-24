@@ -12,7 +12,7 @@ Quickly get started with a new Ionic app entirely in the browser!
 
 Check out the features that make working with TypeScript amazing.
 
-### [Glossary](/docs/reference/glossary)
+### [Glossary](../reference/glossary.md)
 
 A list of common terms you'll see while developing in Ionic.
 

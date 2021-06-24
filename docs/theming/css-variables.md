@@ -82,9 +82,9 @@ const color = el.style.getPropertyValue('--charcoal');
 
 ### Component Variables
 
-Ionic provides variables that exist at the component level, such as `--background` and `--color`. For a list of the custom properties a component accepts, view the `CSS Custom Properties` section of its [API reference](/docs/api/). For example, see the [Button CSS Custom Properties](/docs/api/button#css-custom-properties).
+Ionic provides variables that exist at the component level, such as `--background` and `--color`. For a list of the custom properties a component accepts, view the `CSS Custom Properties` section of its [API reference](../api.md). For example, see the [Button CSS Custom Properties](../api/button.md#css-custom-properties).
 
 
 ### Global Variables
 
-There are several global variables that Ionic provides in order to make theming an entire application easier. For more information, see [Colors](/docs/theming/colors), [Themes](/docs/theming/themes) and [Advanced Theming](/docs/theming/advanced).
+There are several global variables that Ionic provides in order to make theming an entire application easier. For more information, see [Colors](colors.md), [Themes](themes.md) and [Advanced Theming](advanced.md).

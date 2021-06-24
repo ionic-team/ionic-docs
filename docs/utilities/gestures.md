@@ -434,7 +434,7 @@ In the example above, we want to be able to detect double clicks on an element. 
 
 ## Gesture Animations
 
-See our guide on implementing gesture animations: [Gesture Animations with Ionic Animations](/docs/utilities/animations#gesture-animations)
+See our guide on implementing gesture animations: [Gesture Animations with Ionic Animations](animations.md#gesture-animations)
 
 ## Browser Support
 

@@ -8,7 +8,7 @@ Code Signing Error: Failed to create provisioning profile. The app ID "com.csfor
 
 Running an app on an iOS device requires a provisioning profile. If a provisioning profile has not been created yet follow these directions:
 
-1. <strong>Set the [Package ID](/docs/reference/glossary#package-id).</strong>
+1. <strong>Set the [Package ID](../reference/glossary.md#package-id).</strong>
 
     For Capacitor, open the `capacitor.config.json` file and modify the `appId` property.
 
@@ -39,7 +39,7 @@ Running an app on an iOS device requires a provisioning profile. If a provisioni
 Error: Error code 65 for command: xcodebuild with args: -xcconfig,/Users/ionitron/projects/my-project/platforms/ios/cordova/build-debug.xcconfig,-workspace,SC project.xcworkspace,-scheme,SC project,-configuration,Debug,-sdk,iphonesimulator,-destination,platform=iOS Simulator,name=iPhone X,build,CONFIGURATION_BUILD_DIR=/Users/ionitron/projects/my-project/platforms/ios/build/emulator,SHARED_PRECOMPS_DIR=/Users/ionitron/projects/my-project/platforms/ios/build/sharedpch
 ```
 
-This error is an error code from Xcode that can be caused by provisioning issues or outdated cordova dependencies. To fix this error first make sure a provisioning profile has been generated using the above instructions and then try to [run the app from Xcode](/docs/developing/ios#running-with-xcode).
+This error is an error code from Xcode that can be caused by provisioning issues or outdated cordova dependencies. To fix this error first make sure a provisioning profile has been generated using the above instructions and then try to [run the app from Xcode](../developing/ios.md#running-with-xcode).
 
 If this does not fix the error then run the following commands:
 

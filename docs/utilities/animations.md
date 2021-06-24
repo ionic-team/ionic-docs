@@ -834,7 +834,7 @@ await squareC.play();
 
 ## Gesture Animations
 
-Ionic Animations gives developers the ability to create powerful gesture-based animations by integrating seamlessly with [Ionic Gestures](/docs/utilities/gestures).
+Ionic Animations gives developers the ability to create powerful gesture-based animations by integrating seamlessly with [Ionic Gestures](gestures.md).
 
 ### Usage
 

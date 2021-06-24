@@ -67,7 +67,7 @@ This will render 5 items with a width of 100% each. This may look great on a mob
 
 <img src="/docs/img/building/cross-platform-items.png"/>
 
-To improve this experience, we can wrap the items in a [Grid](/docs/layout/grid) component. The view can be easily rewritten into something more usable on larger screens:
+To improve this experience, we can wrap the items in a [Grid](../layout/grid.md) component. The view can be easily rewritten into something more usable on larger screens:
 
 ```html
 <ion-grid>
@@ -149,7 +149,7 @@ There’s a lot going on in the example above. These are the key points:
 
 - The `size` attribute can have a breakpoint added to it, `size-{breakpoint}`. This value sets the size for the specified breakpoint and above.
 
-For more information on customizing with grid, see the [Grid](/docs/layout/grid) documentation.
+For more information on customizing with grid, see the [Grid](../layout/grid.md) documentation.
 
 ## Storage
 

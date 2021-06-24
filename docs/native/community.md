@@ -16,7 +16,7 @@ These plugins are submitted and maintained by the Ionic community. While communi
 
 For professional developers and teams that require dedicated native plugin support & SLAs, ongoing maintenance, and security patches, please explore our [premium options](https://ionicframework.com/native), including plugin support and pre-built solutions for common native use cases.
 
-> These docs are for apps built with Ionic Framework 4.0.0 and greater. For older Ionic v3 projects, please [see here](/docs/v3/native).
+> These docs are for apps built with Ionic Framework 4.0.0 and greater. For older Ionic v3 projects, please [see here](https://ionicframework.com/docs/v3/native).
 
 ## Capacitor Support
 
@@ -26,7 +26,7 @@ In addition to Cordova, Ionic Native also works with [Capacitor](https://capacit
 All plugins have two components - the native code (Cordova) and the TypeScript code (Ionic Native).
 Cordova plugins are also wrapped in a `Promise` or `Observable` in order to provide a common plugin interface and modernized development approach.
 
-Using the [Camera plugin](/docs/native/camera) as an example, first install it:
+Using the [Camera plugin](plugins/camera.md) as an example, first install it:
 
 ````mdx-code-block
 <Tabs
@@ -69,7 +69,7 @@ $ ionic cap sync
 </Tabs>
 ````
 
-Next, begin using the plugin, following the various framework usage options below. For FAQ, see [here](/docs/native/faq).
+Next, begin using the plugin, following the various framework usage options below. For FAQ, see [here](faq.md).
 
 ## Angular
 Angular apps can use either Cordova or Capacitor to build native mobile apps. Import the plugin in a `@NgModule` and add it to the list of Providers. For Angular, the import path should end with `/ngx`.  Angular's change detection is automatically handled.
