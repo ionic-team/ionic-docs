@@ -240,16 +240,6 @@
     "version": "5.3.4"
   },
   {
-    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>datetime:</strong> do not reset to am when changing hour and pm is set (<a href=\"https://github.com/ionic-team/ionic/issues/21997\">#21997</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/8b85fe0d9eea39adfdcf790bf00d8ef91d5edbe7\">8b85fe0</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/19175\">#19175</a> <a href=\"https://github.com/ionic-team/ionic/issues/19260\">#19260</a> <a href=\"https://github.com/ionic-team/ionic/issues/20026\">#20026</a> <a href=\"https://github.com/ionic-team/ionic/issues/16630\">#16630</a></li>\n<li><strong>input:</strong> only focus the first input / textarea when clicking on the parent item (<a href=\"https://github.com/ionic-team/ionic/issues/22049\">#22049</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/99f2532ee174da79e2b6a462cfa124673edc1170\">99f2532</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/22037\">#22037</a> <a href=\"https://github.com/ionic-team/ionic/issues/22032\">#22032</a></li>\n<li><strong>react:</strong> Keep a hold of previous routes when doing a redirect, closes <a href=\"https://github.com/ionic-team/ionic/issues/22053\">#22053</a> (<a href=\"https://github.com/ionic-team/ionic/commit/74af3cb50b089a6bd60d515158e03b18b86455b8\">74af3cb</a>)</li>\n<li><strong>react:</strong> redirect routes should unmount leaving component, fixes <a href=\"https://github.com/ionic-team/ionic/issues/22022\">#22022</a> (<a href=\"https://github.com/ionic-team/ionic/issues/22029\">#22029</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/b11e06cec1d3c28bab9f29185fe2c3a2975b092f\">b11e06c</a>)</li>\n<li><strong>textarea:</strong> do not generate duplicate IDs between ion-input and ion-textarea (<a href=\"https://github.com/ionic-team/ionic/issues/22074\">#22074</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/c72c7ffa983af8885dd93f9adfcb3f2af232d2d9\">c72c7ff</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/21542\">#21542</a></li>\n</ul>\n",
-    "element": "Phosphorus",
-    "name": "5.3.3",
-    "published_at": "September 17 2020",
-    "symbol": "P",
-    "tag_name": "v5.3.3",
-    "type": "patch",
-    "version": "5.3.3"
-  },
-  {
     "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>datetime:</strong> do not set ampm when the column doesn't exist (<a href=\"https://github.com/ionic-team/ionic/issues/22224\">#22224</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/210db5b265c04dcdc847f173503c5c096fdb3374\">210db5b</a>)</li>\n</ul>\n",
     "element": "Sodium",
     "name": "4.11.13",

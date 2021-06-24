@@ -1,13 +1,13 @@
-const fs = require("fs");
-const nativeJSON = require("./data/native.json");
+const fs = require('fs');
+const nativeJSON = require('./data/native.json');
 const utils = require('./utils.js');
+const nativeOverrides = require('./data/meta-override.json').native;
 
-
-(async function() {
+(async function () {
   // console.log(cliJSON);
 
   nativeJSON.map(writePage);
-}());
+})();
 
 function writePage(page) {
   const data = [
@@ -19,21 +19,31 @@ function writePage(page) {
     renderSupportedPlatforms(page),
     renderCapIncompat(page),
     renderUsage(page),
-  ].join("");
-  
-  const path = `docs/native/plugins/${page.packageName.replace('@ionic-native/','')}.md`;
+  ].join('');
+
+  const path = `docs/native/plugins/${page.packageName.replace(
+    '@ionic-native/',
+    '',
+  )}.md`;
   fs.writeFileSync(path, data);
 }
 
-function renderFrontmatter({ displayName }) {
+function renderFrontmatter({ displayName, packageName }) {
+  const slug = packageName.replace('@ionic-native/', '');
+
+  const { title, description } = nativeOverrides[slug] || {};
+
   const frontmatter = {
-    title: displayName
+    title: displayName,
   };
+
+  if (title) frontmatter.metaTitle = `"${title}"`;
+  if (description) frontmatter.description = `"${description}"`;
 
   return `---
 ${Object.entries(frontmatter)
   .map(([key, value]) => `${key}: ${value}`)
-  .join("\n")}
+  .join('\n')}
 ---
 
 `;
@@ -75,7 +85,7 @@ function renderSalesCTA({}) {
 `;
 }
 
-function renderInstallation({cordovaPlugin, packageName}) {
+function renderInstallation({ cordovaPlugin, packageName }) {
   return `
 <h2 id="installation">
   <a href="#installation">Installation</a>
@@ -103,10 +113,10 @@ function renderInstallation({cordovaPlugin, packageName}) {
       <a class="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a class="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a></blockquote>
   </TabItem>
 </Tabs>
-`
+`;
 }
 
-function renderSupportedPlatforms({platforms}) {
+function renderSupportedPlatforms({ platforms }) {
   return `
 ## Supported Platforms
   
@@ -114,7 +124,7 @@ ${platforms.map(platform => `- ${platform}`).join('\n')}
 `;
 }
 
-function renderCapIncompat({capacitorIncompatible}) {
+function renderCapIncompat({ capacitorIncompatible }) {
   if (!capacitorIncompatible) {
     return null;
   }
@@ -126,7 +136,7 @@ Not Compatible
 `;
 }
 
-function renderUsage({usage}) {
+function renderUsage({ usage }) {
   if (!usage) {
     return null;
   }
@@ -141,6 +151,6 @@ function renderUsage({usage}) {
 
 ### Angular
 
-${usage.replace(/</g,'&lt;')}
+${usage.replace(/</g, '&lt;')}
 `;
 }

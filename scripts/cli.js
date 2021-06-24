@@ -1,18 +1,20 @@
-
-const fs = require("fs");
+const fs = require('fs');
 const utils = require('./utils');
-const cliJSON = require("./data/cli.json");
+const cliJSON = require('./data/cli.json');
+const cliOverrides = require('./data/meta-override.json').cli;
 
-const commandToKebab = str => str.replace('ionic ', '')
-                                 .replace(/([a-z])([A-Z])/g, '$1-$2')
-                                 .replace(/[\s_]+/g, '-')
-                                 .toLowerCase();
+const commandToKebab = str =>
+  str
+    .replace('ionic ', '')
+    .replace(/([a-z])([A-Z])/g, '$1-$2')
+    .replace(/[\s_]+/g, '-')
+    .toLowerCase();
 
-(async function() {
+(async function () {
   // console.log(cliJSON);
 
   cliJSON.commands.map(writePage);
-}());
+})();
 
 function writePage(page) {
   const data = [
@@ -22,22 +24,29 @@ function writePage(page) {
     renderInputs(page),
     renderOptions(page),
     renderAdvancedOptions(page),
-  ].join("");
-  
+  ].join('');
+
   const path = `docs/cli/commands/${commandToKebab(page.name)}.md`;
   fs.writeFileSync(path, data);
 }
 
 function renderFrontmatter({ name }) {
+  const shortName = name.replace('ionic ', '');
+  const slug = commandToKebab(shortName);
+  const { title, description } = cliOverrides[slug] || {};
+
   const frontmatter = {
-    title: name.replace('ionic ', ''),
-    sidebar_label: name.replace('ionic ', '')
+    title: name,
+    sidebar_label: shortName,
   };
+
+  if (title) frontmatter.metaTitle = `"${title}"`;
+  if (description) frontmatter.description = `"${description}"`;
 
   return `---
 ${Object.entries(frontmatter)
   .map(([key, value]) => `${key}: ${value}`)
-  .join("\n")}
+  .join('\n')}
 ---
 
 `;
@@ -56,12 +65,11 @@ $ ${name} [options]
 ${description}`;
 }
 
-
-function renderExamples({exampleCommands}) {
-  if (! exampleCommands || exampleCommands.length === 0) {
+function renderExamples({ exampleCommands }) {
+  if (!exampleCommands || exampleCommands.length === 0) {
     return '';
   }
-  
+
   return `
 ## Examples
 
@@ -71,10 +79,9 @@ ${exampleCommands.map(command => `$ ${command}`).join('\n')}
 `;
 }
 
-
 function renderInputs({ inputs }) {
   if (inputs.length === 0) {
-    return "";
+    return '';
   }
 
   return `
@@ -82,18 +89,17 @@ function renderInputs({ inputs }) {
 
 ${utils.renderReference(inputs, {
   Head: input => input.name,
-  Description: input => utils.renderMarkdown(input.summary)
+  Description: input => utils.renderMarkdown(input.summary),
 })}
 
 `;
 }
 
-
 function renderOptions({ options }) {
   options = options.filter(option => !option.groups.includes('advanced'));
 
   if (options.length === 0) {
-    return "";
+    return '';
   }
 
   return `
@@ -102,19 +108,22 @@ function renderOptions({ options }) {
 ${utils.renderReference(options, {
   Head: option => utils.renderOptionSpec(option),
   Description: option => utils.renderMarkdown(option.summary),
-  Aliases: option => option.aliases.length > 0 ? option.aliases.map((alias) => `<code>-${alias}</code>`).join(' ') : null,
-  Default: option => option.default && option.type === 'string' ? option.default : null
+  Aliases: option =>
+    option.aliases.length > 0
+      ? option.aliases.map(alias => `<code>-${alias}</code>`).join(' ')
+      : null,
+  Default: option =>
+    option.default && option.type === 'string' ? option.default : null,
 })}
 
 `;
 }
 
-
 function renderAdvancedOptions({ options }) {
   options = options.filter(option => option.groups.includes('advanced'));
 
   if (options.length === 0) {
-    return "";
+    return '';
   }
 
   return `
@@ -123,13 +132,16 @@ function renderAdvancedOptions({ options }) {
 ${utils.renderReference(options, {
   Head: option => utils.renderOptionSpec(option),
   Description: option => `<div>${utils.renderMarkdown(option.summary)}</div>`,
-  Aliases: option => option.aliases.length > 0 ? option.aliases.map((alias) => `<code>-${alias}</code>`).join(' ') : null,
-  Default: option => option.default && option.type === 'string' ? option.default : null
+  Aliases: option =>
+    option.aliases.length > 0
+      ? option.aliases.map(alias => `<code>-${alias}</code>`).join(' ')
+      : null,
+  Default: option =>
+    option.default && option.type === 'string' ? option.default : null,
 })}
 
 `;
 }
-
 
 // function renderProperties({ props: properties }) {
 //   if (properties.length === 0) {
@@ -240,4 +252,3 @@ ${utils.renderReference(options, {
 
 // `;
 // }
-
