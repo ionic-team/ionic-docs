@@ -1,3 +1,8 @@
+---
+metaTitle: 'CSS Variables | CSS Custom Properties for Variables & Components'
+description: 'Ionic components are built with CSS Variables for easy custom app properties. They allow a value to be stored in one place, then referenced in multiple places.'
+---
+
 # CSS Variables
 
 Ionic components are built with <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">CSS Variables</a> for easy customization of an application. CSS variables allow a value to be stored in one place, then referenced in multiple other places. They also make it possible to change CSS dynamically at runtime (which previously required a CSS preprocessor). CSS variables make it easier than ever to override Ionic components to match a brand or theme.
@@ -17,7 +22,8 @@ When using the Ionic CLI to start an Angular project, the `src/theme/variables.s
   --ion-background-color: #ff3700;
 
   /* Set the font family of the entire app */
-  --ion-font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Roboto", sans-serif;
+  --ion-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+    'Roboto', sans-serif;
 }
 
 /* Set text color of the entire app for iOS only */
@@ -30,7 +36,6 @@ When using the Ionic CLI to start an Angular project, the `src/theme/variables.s
   --ion-text-color: #222;
 }
 ```
-
 
 ### Component Variables
 
@@ -83,7 +88,6 @@ const color = el.style.getPropertyValue('--charcoal');
 ### Component Variables
 
 Ionic provides variables that exist at the component level, such as `--background` and `--color`. For a list of the custom properties a component accepts, view the `CSS Custom Properties` section of its [API reference](../api.md). For example, see the [Button CSS Custom Properties](../api/button.md#css-custom-properties).
-
 
 ### Global Variables
 

@@ -1,4 +1,6 @@
 ---
+metaTitle: 'Ionic App Themes | Change Default App Background Themes & Colors'
+description: 'Several global variables change the default theme of an entire application. Create a custom background and text color theme for your app with Ionic themes.'
 initialTab: 'preview'
 inlineHtmlPreviews: true
 ---
@@ -15,36 +17,34 @@ The application colors are used in multiple places in Ionic. These are useful fo
 
 It is important to note that the background and text color variables also require a rgb variable to be set in <a href="https://developer.mozilla.org/en-US/docs/Glossary/RGB" target="_blank">rgb format</a>. See [The Alpha Problem](advanced.md#the-alpha-problem) for an explanation of why the `rgb` property is also needed.
 
-
-| Name                                          | Description                                                |
-| ----------------------------------------------| -----------------------------------------------------------|
-| `--ion-background-color`                      | Background color of the entire app                         |
-| `--ion-background-color-rgb`                  | Background color of the entire app, rgb format             |
-| `--ion-text-color`                            | Text color of the entire app                               |
-| `--ion-text-color-rgb`                        | Text color of the entire app, rgb format                   |
-| `--ion-backdrop-color`                        | Color of the Backdrop component                            |
-| `--ion-backdrop-opacity`                      | Opacity of the Backdrop component                            |
-| `--ion-overlay-background-color`              | Background color of the overlays                           |
-| `--ion-border-color`                          | Border color                                               |
-| `--ion-box-shadow-color`                      | Box shadow color                                           |
-| `--ion-tab-bar-background`                    | Background of the Tab Bar                                  |
-| `--ion-tab-bar-background-focused`            | Background of the focused Tab Bar                          |
-| `--ion-tab-bar-border-color`                  | Border color of the Tab Bar                                |
-| `--ion-tab-bar-color`                         | Color of the Tab Bar                                       |
-| `--ion-tab-bar-color-selected`                | Color of the selected Tab Button                           |
-| `--ion-toolbar-background`                    | Background of the Toolbar                                  |
-| `--ion-toolbar-border-color`                  | Border color of the Toolbar                                |
-| `--ion-toolbar-color`                         | Color of the components in the Toolbar                     |
-| `--ion-toolbar-segment-color`                 | Color of the Segment Buttons in the Toolbar                |
-| `--ion-toolbar-segment-color-checked`         | Color of the checked Segment Buttons in the Toolbar        |
-| `--ion-toolbar-segment-background`            | Background of the Segment Buttons in the Toolbar           |
-| `--ion-toolbar-segment-background-checked`    | Background of the Segment Buttons in the Toolbar           |
-| `--ion-toolbar-segment-indicator-color`       | Color of the Segment Button indicator in the Toolbar       |
-| `--ion-item-background`                       | Background of the Item                                     |
-| `--ion-item-border-color`                     | Border color of the Item                                   |
-| `--ion-item-color`                            | Color of the components in the Item                        |
-| `--ion-placeholder-color`                     | Color of the placeholder in Inputs                         |
-
+| Name                                       | Description                                          |
+| ------------------------------------------ | ---------------------------------------------------- |
+| `--ion-background-color`                   | Background color of the entire app                   |
+| `--ion-background-color-rgb`               | Background color of the entire app, rgb format       |
+| `--ion-text-color`                         | Text color of the entire app                         |
+| `--ion-text-color-rgb`                     | Text color of the entire app, rgb format             |
+| `--ion-backdrop-color`                     | Color of the Backdrop component                      |
+| `--ion-backdrop-opacity`                   | Opacity of the Backdrop component                    |
+| `--ion-overlay-background-color`           | Background color of the overlays                     |
+| `--ion-border-color`                       | Border color                                         |
+| `--ion-box-shadow-color`                   | Box shadow color                                     |
+| `--ion-tab-bar-background`                 | Background of the Tab Bar                            |
+| `--ion-tab-bar-background-focused`         | Background of the focused Tab Bar                    |
+| `--ion-tab-bar-border-color`               | Border color of the Tab Bar                          |
+| `--ion-tab-bar-color`                      | Color of the Tab Bar                                 |
+| `--ion-tab-bar-color-selected`             | Color of the selected Tab Button                     |
+| `--ion-toolbar-background`                 | Background of the Toolbar                            |
+| `--ion-toolbar-border-color`               | Border color of the Toolbar                          |
+| `--ion-toolbar-color`                      | Color of the components in the Toolbar               |
+| `--ion-toolbar-segment-color`              | Color of the Segment Buttons in the Toolbar          |
+| `--ion-toolbar-segment-color-checked`      | Color of the checked Segment Buttons in the Toolbar  |
+| `--ion-toolbar-segment-background`         | Background of the Segment Buttons in the Toolbar     |
+| `--ion-toolbar-segment-background-checked` | Background of the Segment Buttons in the Toolbar     |
+| `--ion-toolbar-segment-indicator-color`    | Color of the Segment Button indicator in the Toolbar |
+| `--ion-item-background`                    | Background of the Item                               |
+| `--ion-item-border-color`                  | Border color of the Item                             |
+| `--ion-item-color`                         | Color of the components in the Item                  |
+| `--ion-placeholder-color`                  | Color of the placeholder in Inputs                   |
 
 ## Stepped Colors
 
@@ -61,5 +61,3 @@ By default, the Ionic stepped colors start at the default background color value
 Create a custom background and text color theme for your app. Update the background or text color’s hex values below, then copy and paste the generated code directly into your Ionic project.
 
 <stepped-color-generator mode="md" no-prerender></stepped-color-generator>
-
-

@@ -1,4 +1,6 @@
 ---
+metaTitle: 'React Navigation: Router Link Redirect to Navigate to Another Page'
+description: 'The React Navigation guide covers routing in an app built with Ionic and React. Learn to define a redirect path for router links to navigate to another page.'
 sidebar_label: Navigation/Routing
 ---
 
@@ -39,7 +41,7 @@ You can also programmatically redirect from a Route's render method based on a c
 <Route
   exact
   path="/dashboard"
-  render={(props) => {
+  render={props => {
     return isAuthed ? <DashboardPage {...props} /> : <LoginPage />;
   }}
 />
@@ -144,8 +146,8 @@ import {
   IonPage,
   IonTitle,
   IonToolbar,
-} from "@ionic/react";
-import React from "react";
+} from '@ionic/react';
+import React from 'react';
 
 const Home: React.FC = () => {
   return (
@@ -208,9 +210,9 @@ A programmatic option for navigation is using the [`history`](https://reacttrain
 
 ```typescript
 <IonButton
-  onClick={(e) => {
+  onClick={e => {
     e.preventDefault();
-    history.push("/dashboard/users/1");
+    history.push('/dashboard/users/1');
   }}
 >
   Go to User 1
