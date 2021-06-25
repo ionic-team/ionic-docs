@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infinite Scroll</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+  <style>
+    :root {
+      --ion-safe-area-top: 20px;
+      --ion-safe-area-bottom: 22px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <ion-app>
+    <ion-header translucent>
+      <ion-toolbar>
+        <ion-title>Accounts</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content fullscreen>
+      <ion-list id="list"></ion-list>
+
+      <ion-infinite-scroll threshold="100px" id="infinite-scroll">
+        <ion-infinite-scroll-content loading-spinner="bubbles" loading-text="Loading more data...">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </ion-content>
+  </ion-app>
+
+  <script type="text/javascript" src="data.js"></script>
+
+  <script>
+    let length = 0;
+    const list = document.getElementById('list');
+    const infiniteScroll = document.getElementById('infinite-scroll');
+
+    infiniteScroll.addEventListener('ionInfinite', async function () {
+      if (length < users.length) {
+        console.log('Loading data...');
+        await wait(500);
+        infiniteScroll.complete();
+        appendItems(10);
+        console.log('Done');
+      } else {
+        console.log('No More Data');
+        infiniteScroll.disabled = true;
+      }
+    });
+
+    function appendItems(number) {
+      console.log('length is', length);
+      const originalLength = length;
+      for (var i = 0; i < number; i++) {
+        const el = document.createElement('ion-item');
+        el.innerHTML = `
+          <ion-avatar slot="start">
+            <img src="https://www.gravatar.com/avatar/${i + originalLength}?d=monsterid&f=y">
+          </ion-avatar>
+          <ion-label>
+            <h2>${users[i + originalLength].name}</h2>
+            <p>Created ${users[i + originalLength].created}</p>
+          </ion-label>
+        `;
+        list.appendChild(el);
+        length++;
+      }
+    }
+
+    function wait(time) {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          resolve();
+        }, time);
+      });
+    }
+
+    appendItems(20);
+  </script>
+</body>
+
+</html>

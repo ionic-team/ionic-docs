@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Range</title>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+  <style>
+    :root {
+      --ion-safe-area-top: 20px;
+      --ion-safe-area-bottom: 22px;
+    }
+  </style>
+</head>
+<body>
+  <ion-app>
+    <ion-header translucent>
+      <ion-toolbar>
+        <ion-title>Range</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content fullscreen>
+      <ion-list>
+        <ion-list-header>
+          Adjust Display
+        </ion-list-header>
+
+        <ion-item>
+          <ion-range value="20">
+            <ion-icon slot="start" size="small" name="sunny"></ion-icon>
+            <ion-icon slot="end" name="sunny"></ion-icon>
+          </ion-range>
+        </ion-item>
+
+        <ion-item>
+          <ion-range min="-200" max="200" pin color="secondary">
+            <ion-icon slot="start" size="small" name="contrast"></ion-icon>
+            <ion-icon slot="end" name="contrast"></ion-icon>
+          </ion-range>
+        </ion-item>
+
+        <ion-item>
+          <ion-range id="dual-range" dual-knobs pin color="dark">
+            <ion-icon slot="start" size="small" name="brush"></ion-icon>
+            <ion-icon slot="end" name="brush"></ion-icon>
+          </ion-range>
+        </ion-item>
+
+        <ion-item>
+          <ion-range min="1000" max="2000" step="100" value="1400" snaps color="danger">
+            <ion-icon slot="start" size="small" color="danger" name="thermometer"></ion-icon>
+            <ion-icon slot="end" color="danger" name="thermometer"></ion-icon>
+          </ion-range>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-app>
+
+  <script>
+    const dualRange = document.querySelector('#dual-range');
+    dualRange.value = { lower: 33, upper: 60 };
+  </script>
+</body>
+</html>

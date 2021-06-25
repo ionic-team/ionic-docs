@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Radio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+  <style>
+    :root {
+      --ion-safe-area-top: 20px;
+      --ion-safe-area-bottom: 22px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <ion-app>
+    <ion-header translucent>
+      <ion-toolbar>
+        <ion-title>Radio</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content fullscreen>
+      <ion-list>
+        <ion-radio-group value="grape">
+          <ion-list-header>
+            <ion-label>Fruit</ion-label>
+          </ion-list-header>
+          <ion-item>
+            <ion-label>Apple</ion-label>
+            <ion-radio slot="start" color="success" value="apple"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Grape</ion-label>
+            <ion-radio slot="start" color="tertiary" value="grape"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Cherry</ion-label>
+            <ion-radio slot="start" color="danger" value="cherry"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+
+        <ion-radio-group allow-empty-selection value="anchovies">
+          <ion-list-header>
+            <ion-label>Pizza Topping</ion-label>
+          </ion-list-header>
+          <ion-item>
+            <ion-label>Beef</ion-label>
+            <ion-radio slot="end" color="primary" value="beef"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Anchovies</ion-label>
+            <ion-radio slot="end" color="secondary" value="anchovies"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Sausage</ion-label>
+            <ion-radio slot="end" color="tertiary" value="sausage"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Bellpepper</ion-label>
+            <ion-radio slot="end" color="success" value="tomato"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Tomato</ion-label>
+            <ion-radio slot="end" color="warning" value="carrot"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Pepperoni</ion-label>
+            <ion-radio slot="end" color="danger" value="pepperoni"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list>
+    </ion-content>
+  </ion-app>
+</body>
+
+</html>

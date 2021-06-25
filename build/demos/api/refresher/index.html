@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Refresher</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+  <style>
+    :root {
+      --ion-safe-area-top: 20px;
+      --ion-safe-area-bottom: 22px;
+    }
+
+    ion-content {
+      user-select: none;
+    }
+
+    ion-item {
+      --padding-start: 8px;
+    }
+
+    .unread {
+      width: 10px;
+      height: 10px;
+      border-radius: 10px;
+      background-color: #3684ff;
+      margin-top: 15px;
+      margin-right: 8px;
+      align-self: start;
+    }
+
+    ion-item h2 {
+      font-weight: 500 !important;
+    }
+
+    ion-item h3 {
+      color: #777;
+    }
+
+  </style>
+</head>
+
+<body>
+  <ion-app>
+    <ion-header translucent>
+      <ion-toolbar>
+        <ion-title>Refresher</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-refresher slot="fixed" id="refresher">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
+
+      <ion-list></ion-list>
+    </ion-content>
+  </ion-app>
+
+  <script>
+    const refresher = document.getElementById('refresher');
+    const names = [
+      'Burt Bear',
+      'Charlie Cheetah',
+      'Donald Duck',
+      'Eva Eagle',
+      'Ellie Elephant',
+      'Gino Giraffe',
+      'Isabella Iguana',
+      'Karl Kitten',
+      'Lionel Lion',
+      'Molly Mouse',
+      'Paul Puppy',
+      'Rachel Rabbit',
+      'Ted Turtle'
+    ];
+
+    refresher.addEventListener('ionRefresh', () => {
+      setTimeout(() => {
+        prependMessages(5, true);
+        refresher.complete();
+      }, 2000);
+    })
+
+    const list = document.querySelector('ion-list');
+    appendMessages(5);
+
+    function chooseRandomName() {
+      return names[Math.floor(Math.random() * names.length)];
+    }
+
+    function appendMessages(numMessages = 1, unread) {
+      for (let i = 0; i < numMessages; i++) {
+        list.appendChild(createMessage(unread));
+      }
+    }
+
+    function prependMessages(numMessages = 1, unread) {
+      for (let i = 0; i < numMessages; i++) {
+        list.insertBefore(createMessage(unread), list.firstChild);
+      }
+    }
+
+    function createMessage(unread = false) {
+      let item = document.createElement('ion-item');
+      item.innerHTML = `
+        <div slot="start" class="${(unread) ? 'unread' : 'read'}"></div>
+        <ion-label class="ion-text-wrap">
+          <h2>${chooseRandomName()}</h2>
+          <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+        </ion-label>
+      `;
+
+      return item;
+    }
+  </script>
+</body>
+
+</html>

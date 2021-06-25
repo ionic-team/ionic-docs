@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Picker</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+  <style>
+    :root {
+      --ion-safe-area-top: 20px;
+      --ion-safe-area-bottom: 22px;
+    }
+  </style>
+  <script type="module">
+    import { pickerController } from 'https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/index.esm.js';
+    window.pickerController = pickerController;
+  </script>
+</head>
+
+<body>
+  <ion-app>
+    <ion-header translucent>
+      <ion-toolbar>
+        <ion-title>Picker</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content fullscreen class="ion-padding">
+      <ion-button expand="block" onclick="openPicker()">Show Single Column Picker</ion-button>
+      <ion-button expand="block" onclick="openPicker(2, 5, multiColumnOptions)">Show Multi Column Picker</ion-button>
+    </ion-content>
+  </ion-app>
+  <script>
+    const defaultColumnOptions = [
+      [
+        'Dog',
+        'Cat',
+        'Bird',
+        'Lizard',
+        'Chinchilla'
+      ]
+    ]
+
+    const multiColumnOptions = [
+      [
+        'Minified',
+        'Responsive',
+        'Full Stack',
+        'Mobile First',
+        'Serverless'
+      ],
+      [
+        'Tomato',
+        'Avocado',
+        'Onion',
+        'Potato',
+        'Artichoke'
+      ]
+    ]
+
+    async function openPicker(numColumns = 1, numOptions = 5, columnOptions = defaultColumnOptions){
+      const picker = await pickerController.create({
+        columns: this.getColumns(numColumns, numOptions, columnOptions),
+        buttons: [
+          {
+            text: 'Cancel',
+            role: 'cancel'
+          },
+          {
+            text: 'Confirm',
+            handler: (value) => {
+              console.log(`Got Value ${value}`);
+            }
+          }
+        ]
+      });
+
+      await picker.present();
+    }
+
+    function getColumns(numColumns, numOptions, columnOptions) {
+      let columns = [];
+      for (let i = 0; i < numColumns; i++) {
+        columns.push({
+          name: `col-${i}`,
+          options: this.getColumnOptions(i, numOptions, columnOptions)
+        });
+      }
+
+      return columns;
+    }
+
+    function getColumnOptions(columnIndex, numOptions, columnOptions) {
+      let options = [];
+      for (let i = 0; i < numOptions; i++) {
+        options.push({
+          text: columnOptions[columnIndex][i % numOptions],
+          value: i
+        })
+      }
+
+      return options;
+    }
+  </script>
+</body>
+</html>

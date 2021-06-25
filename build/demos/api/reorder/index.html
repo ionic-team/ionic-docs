@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reorder</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+  <style>
+    :root {
+      --ion-safe-area-top: 20px;
+      --ion-safe-area-bottom: 22px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <ion-app>
+    <ion-header translucent>
+      <ion-toolbar>
+        <ion-title>Reorder</ion-title>
+        <ion-buttons slot="primary">
+          <ion-button onclick="toggleReorder()">Toggle</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content fullscreen>
+      <ion-list>
+        <ion-list-header>Reorder Icon</ion-list-header>
+        <ion-reorder-group id="reorder">
+          <ion-item>
+            <ion-label>
+              Item 1
+            </ion-label>
+            <ion-reorder slot="end"></ion-reorder>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>
+              Item 2
+            </ion-label>
+            <ion-reorder slot="end"></ion-reorder>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>
+              Item 3
+            </ion-label>
+            <ion-reorder slot="end"></ion-reorder>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>
+              Item 4
+            </ion-label>
+            <ion-reorder slot="end"></ion-reorder>
+          </ion-item>
+
+          <ion-list-header>Custom Reorder Icon</ion-list-header>
+          <ion-item>
+            <ion-label>
+              Item 5
+            </ion-label>
+            <ion-reorder slot="start">
+              <ion-icon name="repeat"></ion-icon>
+            </ion-reorder>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>
+              Item 6
+            </ion-label>
+            <ion-reorder slot="start">
+              <ion-icon name="repeat"></ion-icon>
+            </ion-reorder>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>
+              Item 7
+            </ion-label>
+            <ion-reorder slot="start">
+              <ion-icon name="repeat"></ion-icon>
+            </ion-reorder>
+          </ion-item>
+
+          <ion-list-header>Reorder Item</ion-list-header>
+          <ion-reorder>
+            <ion-item>
+              <ion-label>
+                Item 8
+              </ion-label>
+            </ion-item>
+          </ion-reorder>
+
+          <ion-reorder>
+            <ion-item>
+              <ion-label>
+                Item 9
+              </ion-label>
+            </ion-item>
+          </ion-reorder>
+
+          <ion-reorder>
+            <ion-item>
+              <ion-label>
+                Item 10
+              </ion-label>
+            </ion-item>
+          </ion-reorder>
+
+        </ion-reorder-group>
+      </ion-list>
+    </ion-content>
+  </ion-app>
+
+  <script>
+    function toggleReorder() {
+      const reorderGroup = document.getElementById('reorder');
+      reorderGroup.disabled = !reorderGroup.disabled;
+      reorderGroup.addEventListener('ionItemReorder', ({detail}) => {
+        detail.complete(true);
+      });
+    }
+  </script>
+</body>
+
+</html>

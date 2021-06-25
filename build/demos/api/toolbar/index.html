@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toolbar</title>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+  <style>
+    :root {
+      --ion-safe-area-top: 20px;
+      --ion-safe-area-bottom: 22px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <ion-app>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Toolbar</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content fullscreen="true">
+      <ion-header collapse="condense">
+        <ion-toolbar>
+          <ion-title size="large">Toolbar</ion-title>
+        </ion-toolbar>
+        <ion-toolbar>
+          <ion-searchbar></ion-searchbar>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button auto-hide="false"></ion-menu-button>
+        </ion-buttons>
+        <ion-buttons slot="primary">
+          <ion-button>
+            <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+
+        <ion-title>Standard</ion-title>
+      </ion-toolbar>
+
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button>
+            Clear
+          </ion-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+          <ion-button>
+            Done
+          </ion-button>
+        </ion-buttons>
+
+        <ion-title>Buttons</ion-title>
+      </ion-toolbar>
+
+      <ion-toolbar>
+        <ion-segment value="all">
+          <ion-segment-button value="all">All</ion-segment-button>
+          <ion-segment-button value="favorites">Favorites</ion-segment-button>
+        </ion-segment>
+      </ion-toolbar>
+
+      <ion-toolbar>
+        <ion-title>Progress</ion-title>
+
+        <ion-progress-bar value=".4"></ion-progress-bar>
+      </ion-toolbar>
+
+      <ion-toolbar color="primary">
+        <ion-title>Primary</ion-title>
+      </ion-toolbar>
+
+      <ion-toolbar color="tertiary">
+        <ion-buttons slot="start">
+          <ion-button>
+            <ion-icon name="heart"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+          <ion-menu-button auto-hide="false"></ion-menu-button>
+        </ion-buttons>
+
+        <ion-title>Tertiary</ion-title>
+      </ion-toolbar>
+
+      <ion-toolbar color="danger">
+        <ion-buttons slot="start">
+          <ion-button>
+            <ion-icon name="star"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+          <ion-button>
+            <ion-icon slot="icon-only" ios="ellipsis-vertical" md="ellipsis-vertical"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+
+        <ion-title>Danger</ion-title>
+      </ion-toolbar>
+    </ion-content>
+
+    <ion-footer>
+      <ion-toolbar>
+        <ion-title>
+          Click to Add Text
+        </ion-title>
+        <ion-buttons slot="end">
+          <ion-button id="changeText" onClick="toggleText()">
+            <ion-icon slot="start" name="refresh"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-footer>
+  </ion-app>
+</body>
+
+</html>
+
+<style>
+  ion-content ion-toolbar {
+    margin: 10px 0;
+  }
+</style>

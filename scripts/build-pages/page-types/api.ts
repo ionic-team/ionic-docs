@@ -1,17 +1,14 @@
-import { components } from '@ionic/docs/core.json';
-import fs from 'fs-extra';
-import { join, resolve } from 'path';
+import { components } from "@ionic/docs/core.json";
+import fs from "fs-extra";
+import { join, resolve } from "path";
 
-import metaOverride from '../../data/meta-override.json';
-import {
-  Page,
-  buildPages
-} from '../index';
-import markdownRenderer from '../markdown-renderer';
+import metaOverride from "../../data/meta-override.json";
+import { Page, buildPages } from "../index";
+import markdownRenderer from "../markdown-renderer";
 
 export default {
-  title: 'Build API pages',
-  task: () => buildPages(getAPIPages)
+  title: "Build API pages",
+  task: () => buildPages(getAPIPages),
 };
 
 export interface MetaInfo {
@@ -23,7 +20,7 @@ export interface MetaInfo {
 const apiMetaInfo: MetaInfo = metaOverride.api;
 
 const getAPIPages = async (): Promise<Page[]> => {
-  const pages = components.map(async component => {
+  const pages = components.map(async (component) => {
     const title = component.tag;
     const path = `/docs/api/${title.slice(4)}`;
     const demoUrl = await getDemoUrl(component);
@@ -31,7 +28,7 @@ const getAPIPages = async (): Promise<Page[]> => {
 
     const meta = {
       title: `${component.tag}: Ionic Framework API Docs`,
-      description: `The ${component.tag} component is one of many Ionic Framework components used to build apps for Android, iOS, and Progressive Web Apps`
+      description: `The ${component.tag} component is one of many Ionic Framework components used to build apps for Android, iOS, and Progressive Web Apps`,
     };
 
     if (apiMetaInfo[component.tag]) {
@@ -51,25 +48,27 @@ const getAPIPages = async (): Promise<Page[]> => {
       usage: renderUsage(usage, path),
       props: renderDocsKey(props, path),
       methods: renderDocsKey(methods, path),
-      template: 'api',
+      template: "api",
       meta,
-      ...contents
+      ...contents,
     };
   });
   return Promise.all(pages);
 };
 
-const renderUsage = (usage: any, baseUrl: any) => Object.keys(usage).reduce((out: any, key: any) => {
-  out[key] = markdownRenderer(usage[key], baseUrl);
-  return out;
-}, {});
+const renderUsage = (usage: any, baseUrl: any) =>
+  Object.keys(usage).reduce((out: any, key: any) => {
+    out[key] = markdownRenderer(usage[key], baseUrl);
+    return out;
+  }, {});
 
-const renderDocsKey = (items: any, baseUrl: any) => items.map((item: any) => ({
-  ...item,
-  docs: markdownRenderer(item.docs, baseUrl)
-}));
+const renderDocsKey = (items: any, baseUrl: any) =>
+  items.map((item: any) => ({
+    ...item,
+    docs: markdownRenderer(item.docs, baseUrl),
+  }));
 
-const DEMOS_PATH = resolve(__dirname, '../../../src/demos');
+const DEMOS_PATH = resolve(__dirname, "../../../src/demos");
 
 const getDemoUrl = async (component: any) => {
   const demoPath = `api/${component.tag.slice(4)}/index.html`;
@@ -77,7 +76,7 @@ const getDemoUrl = async (component: any) => {
   if (hasDemo) {
     return {
       demoUrl: `/docs/demos/${demoPath}`,
-      demoSourceUrl: `https://github.com/ionic-team/ionic-docs/tree/master/src/demos/${demoPath}`
+      demoSourceUrl: `https://github.com/ionic-team/ionic-docs/tree/legacy/src/demos/${demoPath}`,
     };
   }
 };

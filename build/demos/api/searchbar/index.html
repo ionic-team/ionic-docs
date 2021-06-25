@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Searchbar</title>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+  <style>
+    :root {
+      --ion-safe-area-top: 20px;
+      --ion-safe-area-bottom: 22px;
+    }
+  </style>
+</head>
+<body>
+  <ion-app>
+    <ion-header translucent>
+      <ion-toolbar>
+        <ion-title>Searchbar</ion-title>
+      </ion-toolbar>
+      <ion-toolbar>
+        <ion-searchbar></ion-searchbar>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content fullscreen>
+      <ion-list>
+        <ion-item>Amsterdam</ion-item>
+        <ion-item>Bogota</ion-item>
+        <ion-item>Buenos Aires</ion-item>
+        <ion-item>Cairo</ion-item>
+        <ion-item>Dhaka</ion-item>
+        <ion-item>Edinburgh</ion-item>
+        <ion-item>Geneva</ion-item>
+        <ion-item>Genoa</ion-item>
+        <ion-item>Glasgow</ion-item>
+        <ion-item>Hanoi</ion-item>
+        <ion-item>Hong Kong</ion-item>
+        <ion-item>Islamabad</ion-item>
+        <ion-item>Istanbul</ion-item>
+        <ion-item>Jakarta</ion-item>
+        <ion-item>Kiel</ion-item>
+        <ion-item>Kyoto</ion-item>
+        <ion-item>Le Havre</ion-item>
+        <ion-item>Lebanon</ion-item>
+        <ion-item>Lhasa</ion-item>
+        <ion-item>Lima</ion-item>
+        <ion-item>London</ion-item>
+        <ion-item>Los Angeles</ion-item>
+        <ion-item>Madrid</ion-item>
+        <ion-item>Manila</ion-item>
+        <ion-item>New York</ion-item>
+        <ion-item>Olympia</ion-item>
+        <ion-item>Oslo</ion-item>
+        <ion-item>Panama City</ion-item>
+        <ion-item>Peking</ion-item>
+        <ion-item>Philadelphia</ion-item>
+        <ion-item>San Francisco</ion-item>
+        <ion-item>Seoul</ion-item>
+        <ion-item>Taipeh</ion-item>
+        <ion-item>Tel Aviv</ion-item>
+        <ion-item>Tokio</ion-item>
+        <ion-item>Uelzen</ion-item>
+        <ion-item>Washington</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-app>
+
+  <script>
+    const searchbar = document.querySelector('ion-searchbar');
+    const items = Array.from(document.querySelector('ion-list').children);
+
+    searchbar.addEventListener('ionInput', handleInput);
+
+    function handleInput(event) {
+      const query = event.target.value.toLowerCase();
+      requestAnimationFrame(() => {
+        items.forEach(item => {
+          const shouldShow = item.textContent.toLowerCase().indexOf(query) > -1;
+          item.style.display = shouldShow ? 'block' : 'none';
+        });
+      });
+    }
+  </script>
+</body>
+</html>
