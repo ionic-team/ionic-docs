@@ -126,7 +126,7 @@ Both options provide the same navigation mechanism, just fitting different use c
 
 ### Navigating using `router-link`
 
-The `router-link` attribute can be set on any Ionic Vue component, and the router will navigate to the route specified when the component is clicked. The `router-link` attribute accepts string values as well as named routes, just like `router.push` from Vue Router. For additional control, the `router-direction` and `router-animation` properties can be set as well.
+The `router-link` attribute can be set on any Ionic Vue component, and the router will navigate to the route specified when the component is clicked. The `router-link` attribute accepts string values as well as named routes, just like `router.push` from Vue Router. For additional control, the `router-direction` and `router-animation` attributes can be set as well.
 
 The `router-direction` attribute accepts values of `forward`, `back`, or `none` and is used to control the direction of the page transition.
 
