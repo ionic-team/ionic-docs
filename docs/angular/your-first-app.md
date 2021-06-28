@@ -10,7 +10,7 @@ Here’s the finished app running on all 3 platforms:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/0ASQ13Y1Rk4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-> Looking for the previous version of this guide that covered Ionic 4 and Cordova? [See here.](/docs/developer-resources/guides/first-app-v4/intro)
+> Looking for the previous version of this guide that covered Ionic 4 and Cordova? [See here.](../developer-resources/guides/first-app-v4/intro.md)
 
 ## What We'll Build
 
@@ -43,7 +43,7 @@ $ npm install -g @ionic/cli native-run cordova-res
 
 > The `-g` option means _install globally_. When packages are installed globally, `EACCES` permission errors can occur.
 >
-> Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](/docs/developing/tips#resolving-permission-errors) for more information.
+> Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](../developing/tips.md#resolving-permission-errors) for more information.
 
 ## Create an App
 Next, create an Ionic Angular app that uses the “Tabs” starter template and adds Capacitor for native functionality:

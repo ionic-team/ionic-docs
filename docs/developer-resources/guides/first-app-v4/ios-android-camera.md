@@ -13,7 +13,7 @@ $ ionic cordova platform add android
 
 These commands will create a `config.xml` file, which is used to define Cordova iOS and Android settings. Cordova reads this file and applies each setting as it builds each native app binary.
 
-There are more steps to configure [iOS](/docs/developing/ios) and [Android](/docs/developing/android) native tooling.
+There are more steps to configure [iOS](../../../developing/ios.md) and [Android](../../../developing/android.md) native tooling.
 
 
 

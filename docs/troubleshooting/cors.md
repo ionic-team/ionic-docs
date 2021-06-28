@@ -235,7 +235,7 @@ If you are trying to connect to a 3rd-party API, first check in its documentatio
 
 #### 1. Native-only apps (iOS/Android)
 
-Use the <a href="/docs/native/http/" target="_blank" rel="noopener">HTTP plugin from Ionic Native</a> to make the requests natively from outside the webview. Please note that this plugin doesn't work in the browser, so the development and testing of the app must always be done in a device or simulator going forward.
+Use the <a href="../native/http" target="_blank" rel="noopener">HTTP plugin from Ionic Native</a> to make the requests natively from outside the webview. Please note that this plugin doesn't work in the browser, so the development and testing of the app must always be done in a device or simulator going forward.
 
 ##### Usage in Ionic Angular 4
 

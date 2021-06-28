@@ -10,7 +10,7 @@ Serving, running, and deploying each have pros and cons.
 
 ## Serving Apps
 
-When an app is served, Ionic Studio starts a Dev Server with [Live Reload](/docs/reference/glossary#livereload) and displays the app in a separate browser window, called a _Serve Window_.
+When an app is served, Ionic Studio starts a Dev Server with [Live Reload](../reference/glossary.md#livereload) and displays the app in a separate browser window, called a _Serve Window_.
 
 To serve an app, click the Play button in the upper right-hand corner of Ionic Studio. Then choose _Serve_ from the dropdown.
 
@@ -43,7 +43,7 @@ For information on how to use the Chrome DevTools, see the [Chrome DevTools docu
 ## Running Apps
 
 <blockquote>
-Since running an app will install it on an actual native device, some additional setup is required. See the <a href="/docs/studio/native">Native iOS & Android</a> documentation for setup guides.
+Since running an app will install it on an actual native device, some additional setup is required. See the <a href="setup/native">Native iOS & Android</a> documentation for setup guides.
 </blockquote>
 
 To run an app, click the Play button in the upper right-hand corner of Ionic Studio. Then choose _Run_ from the dropdown.
@@ -56,7 +56,7 @@ Choose a platform and a target device, which can be an emulator or hardware devi
 
 With the Live Reload option, Ionic Studio will use the same Dev Server as in _Serve_, which enables quick development while working with actual devices.
 
-To debug running apps, see the docs for debugging [iOS Apps](/docs/developing/ios#debugging-ios-apps) and [Android Apps](/docs/developing/android#debugging-android-apps).
+To debug running apps, see the docs for debugging [iOS Apps](../developing/ios.md#debugging-ios-apps) and [Android Apps](../developing/android.md#debugging-android-apps).
 
 ## Installing Apps
 

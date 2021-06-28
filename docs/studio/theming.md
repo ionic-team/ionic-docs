@@ -2,7 +2,7 @@
 
 Manage app themes to tweak look and feel.
 
-The Ionic Framework docs have [great documentation](/docs/theming/basics) on theming Ionic apps.
+The Ionic Framework docs have [great documentation](../theming/basics.md) on theming Ionic apps.
 
 ## Theme Colors
 
@@ -12,4 +12,4 @@ The color generator within Ionic Studio automatically generates the CSS variable
   <img alt="Color Generator" src="/img/studio/2/ss-theme.png" />
 </figure>
 
-The changes are available for previewing in your own app in the [Compose](/docs/studio/compose) canvas.
+The changes are available for previewing in your own app in the [Designer](designer.md) canvas.

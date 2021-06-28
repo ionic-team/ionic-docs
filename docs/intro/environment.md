@@ -17,9 +17,9 @@ Git Bash (from <a href="https://git-scm.com" target="_blank">git-scm.com</a>) do
 
 ## Node & npm
 
-Almost all tooling for modern JavaScript projects is based in [Node.js](/docs/reference/glossary#node). The [download page](https://nodejs.org/en/download/) has prebuilt installation packages for all platforms. We recommend selecting the LTS version to ensure best compatibility.
+Almost all tooling for modern JavaScript projects is based in [Node.js](../reference/glossary.md#node). The [download page](https://nodejs.org/en/download/) has prebuilt installation packages for all platforms. We recommend selecting the LTS version to ensure best compatibility.
 
-Node is bundled with [npm](/docs/reference/glossary#npm), the package manager for JavaScript.
+Node is bundled with [npm](../reference/glossary.md#npm), the package manager for JavaScript.
 
 To verify the installation, open a new terminal window and run:
 
@@ -28,11 +28,11 @@ $ node --version
 $ npm --version
 ```
 
-> Permission errors are common on macOS when installing global packages with `npm`. If you get an `EACCES` error, see [Resolving Permission Errors](/docs/developing/tips#resolving-permission-errors).
+> Permission errors are common on macOS when installing global packages with `npm`. If you get an `EACCES` error, see [Resolving Permission Errors](../developing/tips.md#resolving-permission-errors).
 
 ## Git
 
-Although not required, the version control system [Git](/docs/reference/glossary#git) is highly recommended.
+Although not required, the version control system [Git](../reference/glossary.md#git) is highly recommended.
 
 Git is often accompanied by a Git Host, such as [GitHub](https://github.com/), in which case additional setup is required. Follow the tutorial from the Git Host's documentation to set up Git:
 
