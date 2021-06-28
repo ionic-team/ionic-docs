@@ -2,7 +2,7 @@
 
 A key part of developing Ionic apps is setting up routing and ensuring fluid navigation between pages.
 
-The Ionic Framework docs have a [great primer](/docs/angular/navigation) on Angular routing and navigation.
+The Ionic Framework docs have a [great primer](../../angular/navigation.md) on Angular routing and navigation.
 
 ## Quick Tips
 

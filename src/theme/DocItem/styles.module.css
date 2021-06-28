@@ -1,0 +1,82 @@
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+.docTitle {
+  font-size: 3rem;
+  margin-bottom: calc(var(--ifm-leading-desktop) * var(--ifm-leading));
+}
+
+.docItemWrapper {
+  display: flex;
+  padding: 0 1rem;
+}
+
+.docDemoWrapper {
+  float: right;
+  margin: 0 0 1rem 1rem;
+}
+
+.docDemoWrapper.docDemoWrapper--noToc {
+  margin-block-start: 5rem;
+}
+
+.docItemMain {
+  flex: 1;
+  min-width: 0;
+  padding-top: 5rem;
+}
+
+.docItemContainer {
+  margin: 0 auto;
+  padding: 0 0.5rem;
+  max-width: 736px;
+}
+
+.docItemAside {
+  flex: 0 0 240px;
+  max-width: 240px;
+}
+
+.docItemAside > div::before {
+  content: 'Contents';
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  padding-left: var(--ifm-toc-padding-left);
+  text-transform: uppercase;
+  letter-spacing: var(--f-tracking-super);
+  color: var(--c-indigo-50);
+  font-weight: 600;
+  font-size: 0.625rem;
+}
+
+/* @media only screen and (min-width: 997px) {
+  .docItemCol {
+    max-width: 75% !important;
+  }
+} */
+
+/* @media (min-width: 997px) and (max-width: 1320px) {
+  .docItemWrapper {
+    max-width: calc(
+      var(--ifm-container-width) - 300px - var(--ifm-spacing-horizontal) * 2
+    );
+  }
+}
+*/
+@media only screen and (max-width: 996px) {
+  .docItemAside {
+    flex: 0 0 0;
+  }
+} 
+
+.docLastUpdatedAt {
+  font-weight: bold;
+}
+
+.docEditLink {
+  font-size: 0.875rem;
+}

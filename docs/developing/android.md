@@ -8,9 +8,9 @@ This guide covers how to run and debug Ionic apps on Android emulators and devic
 
 ## Android Studio
 
-<a href="https://developer.android.com/studio/" target="_blank">Android Studio</a> is the IDE for creating native Android apps. It includes the [Android SDK](/docs/reference/glossary#android-sdk), which will need to be configured for use in the command line.
+<a href="https://developer.android.com/studio/" target="_blank">Android Studio</a> is the IDE for creating native Android apps. It includes the [Android SDK](../reference/glossary.md#android-sdk), which will need to be configured for use in the command line.
 
-Android Studio is also used to [create Android virtual devices](/docs/developing/android#creating-an-android-virtual-device), which are required for the Android emulator. Ionic apps can also be [launched to a device](/docs/developing/android#set-up-an-android-device).
+Android Studio is also used to [create Android virtual devices](android.md#creating-an-android-virtual-device), which are required for the Android emulator. Ionic apps can also be [launched to a device](android.md#set-up-an-android-device).
 
 > We don't recommend using Android Studio for _developing_ Ionic apps. Instead, it should only really be used to build and run your apps for the native Android platform and to manage the Android SDK and virtual devices.
 
@@ -122,7 +122,7 @@ Before apps can be deployed to Android simulators and devices, the native projec
     $ ionic cordova prepare android
     ```
 
-2. **Set the [Package ID](/docs/reference/glossary#package-id).**
+2. **Set the [Package ID](../reference/glossary.md#package-id).**
 
     For Capacitor, open the `capacitor.config.json` file and modify the `appId` property.
 
@@ -155,7 +155,7 @@ When running on a device make sure the device and your development machine are c
 
 ## Running with Cordova
 
-The Ionic CLI can build, copy, and deploy Ionic apps to Android simulators and devices with a single command. It can also spin up a development server, like the one used in `ionic serve`, to provide [live-reload](/docs/reference/glossary#livereload) functionality.
+The Ionic CLI can build, copy, and deploy Ionic apps to Android simulators and devices with a single command. It can also spin up a development server, like the one used in `ionic serve`, to provide [live-reload](../reference/glossary.md#livereload) functionality.
 
 Run the following to start a long-running CLI process that boots up a live-reload server:
 

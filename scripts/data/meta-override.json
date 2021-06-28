@@ -16,6 +16,10 @@
       "title": "ion-buttons: Toolbar Element with Named Slots for Buttons",
       "description": "The Buttons component is a container element. Buttons placed in a toolbar should be inside the ion-buttons element and can be positioned using named slots."
     },
+    "ion-chip": {
+      "title": "ion-chip:  Name, Text, Icon and Avatar for Ionic Framework Apps",
+      "description": "ion-chips represent complex entities in small blocks, such as a contact. A chip can contain several different elements such as names, avatars, text, and icons."
+    },
     "ion-fab": {
       "title": "ion-fab: Floating Action Button for Android and iOS Ionic Apps",
       "description": "Fabs, floating action buttons, are container elements that contain one or more fab buttons. Use ion-fab when creating Android and iOS apps with Ionic Framework."
@@ -44,6 +48,14 @@
       "title": "Infinite Scroller | ion-infinite-scroll Action Component",
       "description": "The ion-infinite-scroll component calls an action to be performed when the user scrolls a specified distance from the bottom or top of the page."
     },
+    "ion-item-divider": {
+      "title": "Item Divider | List Item Divider Block Element for Ionic Apps",
+      "description": "Item Dividers are block elements that can be used to separate items in a list. They are similar to list headers, but instead, go in between groups of items."
+    },
+    "ion-item-sliding": {
+      "title": "Slide Buttons | Slide Right to Left with ion-item-sliding",
+      "description": "ion-item-sliding component contains items that are dragged to reveal buttons. Options are revealed when the sliding item is swiped from left to right."
+    },
     "ion-label": {
       "title": "Item Label Color and Properties for Applications | ion-label",
       "description": "Label is a wrapper element that can be used in combination with other Ionic components. Easily design item label colors and other properties with ion-label."
@@ -51,6 +63,10 @@
     "ion-loading": {
       "title": "Loading | Application Loading Indicator Overlay | ion-loading",
       "description": "The ion-loading overlay indicates activity while blocking user interaction. The loading indicator appears on top of the app's content, and can be dismissed."
+    },
+    "ion-nav": {
+      "title": "ion-nav | Nav View Component for Ionic Framework Apps",
+      "description": "ion-nav is a standalone for loading arbitrary, and pushing new, components on to the stack. Loading Nav view, and pushing others, won't affect overall routers."
     },
     "ion-range": {
       "title": "Range Slider | ion-range: Slider Knob Controls with Labels",
@@ -60,6 +76,10 @@
       "title": "Progress Bar | Horizontal App Progress Bar for Loading Indicator",
       "description": "ion-progress-bars are horizontal loading indicators that inform users about the status of ongoing app processes—such as submitting a form or saving updates."
     },
+    "ion-router": {
+      "title": "ion-router: Router Component to Coordinate URL Navigation",
+      "description": "ion-router is a URL coordinator for navigation outlets of ionic: ion-nav and ion-tabs. Router components handle routing inside vanilla and Stencil JavaScript."
+    },
     "ion-router-link": {
       "title": "Router Link | Navigating The ion-router-link Component",
       "description": "Use the ion-router-link component to navigate to a specified link. The router link can accept an href for location and a direction for the transition animation."
@@ -67,6 +87,14 @@
     "ion-searchbar": {
       "title": "Search Bar Icon for Keyboard Text Display | Ion-Search Bar",
       "description": "Search bars represent a text field that can be used to search through a collection. Learn to input Ion-Search Bar as an icon on Android & iOS keyboard displays."
+    },
+    "ion-select-option": {
+      "title": "Select Option | What Is An Option Select on Ionic Framework Apps",
+      "description": "What is an option select? Select Options are child element components of a Select—each option defined is passed and displayed in the Select dialog."
+    },
+    "ion-skeleton-text": {
+      "title": "Skeleton Text | Skeleton Loading Placeholder & Framework for Text",
+      "description": "ion-skeleton-text is a component for rendering placeholder content. The element will render a gray block at the specified width as a loading text framework."
     },
     "ion-slides": {
       "title": "Ion-Slides: Mobile Touch Slider with Built-In & Custom Animation",
@@ -76,9 +104,17 @@
       "title": "ion-spinner | Animated Spinner Icon Components and Properties",
       "description": "The ion-spinner component provides a variety of animated SVG spinners. These icons indicate that the app is loading or performing another process to wait on."
     },
+    "ion-split-pane": {
+      "title": "ion-split-pane: Split Plane View for Menus and Multi-View Layouts",
+      "description": "ion-split-pane is useful when creating multi-view app layouts. It allows UI elements, like menus, to be displayed as the viewport width increases."
+    },
     "ion-tabs": {
       "title": "Ion-Tabs: Tab-Based Component for App Top-Level Navigation",
       "description": "Tabs are top-level components to implement tab-based navigation. Ion-tabs have no styling & work as router outlets for navigation that behaves like native apps."
+    },
+    "ion-title": {
+      "title": "ion-title: Ionic Framework App Title Component for Toolbars",
+      "description": "ion-title is a component that sets the title of the toolbar. Read to learn more about title and collapsible title components and usage for Ionic Framework Apps."
     },
     "ion-toggle": {
       "title": "Toggle | ion-toggle: Custom Toggle Button for Ionic Applications",
@@ -124,13 +160,33 @@
       "title": "Android Permissions | Android Device and Ionic App Permissions",
       "description": "This plugin is designed to support Android new permissions checking mechanism. Learn how to install and use Android Device permissions on your Ionic App."
     },
+    "app-version": {
+      "title": "App Version | Cordova Plugin App Version to Read Ionic Apps",
+      "description": "The App Version feature reads the version of your Ionic app from the target build settings. Usage requires the cordova-plugin-app-version. Read to learn more."
+    },
+    "background-geolocation": {
+      "title": "Background Geolocation: Cordova Background Geolocation Tracking",
+      "description": "This Cordova plugin provides foreground and background geolocation and tracking with battery-saving 'circular region monitoring'  and 'stop detection'."
+    },
+    "background-mode": {
+      "title": "Native Background Mode | Cordova-Plugin-Background-Mode",
+      "description": "Learn about Cordova-plugin-background-mode usage. This Cordova plugin, for Ionic Native Apps, prevents the app from going to sleep while in background."
+    },
     "barcode-scanner": {
       "title": "Barcode Scanner | Install Camera Barcode Scanner Plugin",
       "description": "Ionic's Barcode Scanner Plugin opens a camera view and automatically scans a barcode, returning the data back to you. Read more for installation and usage."
     },
+    "calendar": {
+      "title": "Calendar Plugin | Ionic Applications & Cordova Plugin Calendar",
+      "description": "Use the Cordova Plugin Calendar to add events to the calendar of the mobile device you are on from your Ionic Framework Application. Read to learn about usage."
+    },
     "camera": {
       "title": "Install Camera | Cordova Plugin Cameras for Ionic Applications",
       "description": "Use the Cordova plugin to install a camera and take photos or capture videos in-app with Ionic Framework camera component for supported platforms."
+    },
+    "document-viewer": {
+      "title": "Document Viewer | Cordova Plugin Document Viewer for PDF Files",
+      "description": "Cordova plugin document viewer offers a slim API to view PDF files either stored in the apps assets folder or in any other file system directory available."
     },
     "facebook": {
       "title": "Facebook Connect Plugin | Facebook Docs in Ionic Documentation",
@@ -159,6 +215,18 @@
     "local-notifications": {
       "title": "Local Notifications: iOS & Android | Cordova Local Notifications",
       "description": "The Cordova Local Notifications Plugin allows you to display local notifications from your Ionic Framework application on iOS, Android, or Windows devices."
+    },
+    "native-storage": {
+      "title": "Ionic Native Storage | Install Cordova Plugin Native Storage",
+      "description": "Learn to use and install Native Storage of variables in Android and iOS on Ionic apps. Read to explore more about the cordova-plugin-nativestorage."
+    },
+    "network": {
+      "title": "Ionic Native Network Plugin: Cordova Plugin Network Information",
+      "description": "The Ionic native network plugin requires the Cordova plugin: cordova-plugin-network-information. Read to learn more about this Ionic app feature and usage."
+    },
+    "onesignal": {
+      "title": "OneSignal | OneSignal Cordova SDK Push Notification Plugin",
+      "description": "The OneSignal Cordova SDK plugin is a simple implementation for delivering push notifications on Ionic apps. Read our OneSignal Documentation to learn more."
     },
     "push": {
       "title": "PhoneGap Plugin for Push Notifications With Cordova and Ionic",

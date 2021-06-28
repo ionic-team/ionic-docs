@@ -27,7 +27,7 @@ A color can be applied to an Ionic component in order to change the default colo
 
 ## Layered Colors
 
-Each color consists of the following properties: a `base`, `contrast`, `shade`, and `tint`. The `base` and `contrast` colors also require a `rgb` property which is the same color, just in <a href="https://developer.mozilla.org/en-US/docs/Glossary/RGB" target="_blank">rgb format</a>. See [The Alpha Problem](./advanced#the-alpha-problem) for an explanation of why the `rgb` property is also needed. Select from the dropdown below to see all of the default colors Ionic provides and their variations.
+Each color consists of the following properties: a `base`, `contrast`, `shade`, and `tint`. The `base` and `contrast` colors also require a `rgb` property which is the same color, just in <a href="https://developer.mozilla.org/en-US/docs/Glossary/RGB" target="_blank">rgb format</a>. See [The Alpha Problem](advanced.md#the-alpha-problem) for an explanation of why the `rgb` property is also needed. Select from the dropdown below to see all of the default colors Ionic provides and their variations.
 
 <LayeredColorsSelect />
 
@@ -48,9 +48,9 @@ To change the default values of a color, all of the listed variations for that c
 
 When `secondary` is applied to a button, not only is the base color <CodeColor mode="md" value="#006600"></CodeColor> used, but the contrast color <CodeColor mode="md" value="#ffffff"></CodeColor> is used for the text, along with shade <CodeColor mode="md" value="#005a00"></CodeColor> and tint <CodeColor mode="md" value="#1a751a"></CodeColor> colors for the different states of the button.
 
-> Not sure how to get the variation colors from the base color? Try out our [Color Generator](/docs/theming/color-generator) that calculates all of the variations and provides code to copy/paste into an app!
+> Not sure how to get the variation colors from the base color? Try out our [Color Generator](color-generator.mdx) that calculates all of the variations and provides code to copy/paste into an app!
 
-See the [CSS Variables documentation](/docs/theming/css-variables) for more information on CSS variables.
+See the [CSS Variables documentation](css-variables.md) for more information on CSS variables.
 
 ## Adding Colors
 
@@ -97,7 +97,7 @@ div {
 }
 ```
 
-See the [CSS Variables documentation](/docs/theming/css-variables) for more information on setting and using CSS variables.
+See the [CSS Variables documentation](css-variables.md) for more information on setting and using CSS variables.
 
 ## New Color Creator
 

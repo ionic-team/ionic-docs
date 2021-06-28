@@ -2,9 +2,9 @@
 
 There are many different options to test native functionality depending on your target platforms and needs.
 
-* Run locally in a web browser (using [Platform Detection](/docs/core-concepts/cross-platform) for native functionality)
-* [Deploy to iOS](/docs/developing/ios)
-* [Deploy to Android](/docs/developing/android)
+* Run locally in a web browser (using [Platform Detection](../core-concepts/cross-platform.md) for native functionality)
+* [Deploy to iOS](ios.md)
+* [Deploy to Android](android.md)
 
 ## Run Locally in a Web Browser
 
@@ -28,5 +28,5 @@ $ ionic serve
 
 With `ionic serve` running, continue developing your app. As you save changes, the app reloads with those changes applied.
 
-When implementing native functionality, use [Platform Detection](/docs/core-concepts/cross-platform).
-When you're ready to test on a real device, see here for [iOS](/docs/developing/ios) and [Android](/docs/developing/android).
+When implementing native functionality, use [Platform Detection](../core-concepts/cross-platform.md).
+When you're ready to test on a real device, see here for [iOS](ios.md) and [Android](android.md).

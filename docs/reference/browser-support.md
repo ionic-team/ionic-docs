@@ -5,7 +5,7 @@ Ionic's earliest goal was to make it easy to develop mobile apps using web techn
 
 ## Mobile Browsers
 
-In pursuit of [adaptive styling](/docs/core-concepts/fundamentals#adaptive-styling), Ionic fully supports and is well tested on the mobile platforms listed below:
+In pursuit of [adaptive styling](../core-concepts/fundamentals.md#adaptive-styling), Ionic fully supports and is well tested on the mobile platforms listed below:
 
 | Framework     | Android                | iOS   |
 |:-------------:|:----------------------:|:-----:|
@@ -24,7 +24,7 @@ As a result, Ionic Framework v6 only supports Android devices and emulators runn
 
 ## Desktop Browsers
 
-Because Ionic is based on web technologies, it works just as well on desktop browsers as it does on mobile devices. For more information on desktop layouts, see [Cross Platform](/docs/core-concepts/cross-platform#desktop).
+Because Ionic is based on web technologies, it works just as well on desktop browsers as it does on mobile devices. For more information on desktop layouts, see [Cross Platform](../core-concepts/cross-platform.md#desktop).
 
 
 | Browser     | Ionic v6 | Ionic v5 | Ionic v4 |
@@ -37,4 +37,4 @@ Because Ionic is based on web technologies, it works just as well on desktop bro
 
 
 
-> Check the docs for [Ionic Animations](/docs/utilities/animations#browser-support) and [Ionic Gestures](/docs/utilities/gestures#browser-support) for specific browser support related to those utilities.
+> Check the docs for [Ionic Animations](../utilities/animations.md#browser-support) and [Ionic Gestures](../utilities/gestures.md#browser-support) for specific browser support related to those utilities.

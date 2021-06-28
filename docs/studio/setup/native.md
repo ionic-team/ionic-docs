@@ -9,5 +9,5 @@ Utilizing native functionality in your app may require additional setup, includi
 
 Follow our native platform setup guides to prepare your environment:
 
-* [iOS Setup](/docs/developing/ios) (macOS only)
-* [Android Setup](/docs/developing/android)
+* [iOS Setup](../../developing/ios.md) (macOS only)
+* [Android Setup](../../developing/android.md)

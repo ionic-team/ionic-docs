@@ -25,8 +25,8 @@ While the application and stepped variables in the themes section are useful for
 | `--ion-safe-area-right`                  | Adjust the safe area inset right of the app                                                     |
 | `--ion-safe-area-bottom`                 | Adjust the safe area inset bottom of the app                                                    |
 | `--ion-safe-area-left`                   | Adjust the safe area inset left of the app                                                      |
-| `--ion-margin`                           | Adjust the margin of the [Margin attributes](/docs/layout/css-utilities#element-margin)         |
-| `--ion-padding`                          | Adjust the padding of the [Padding attributes](/docs/layout/css-utilities#element-padding)      |
+| `--ion-margin`                           | Adjust the margin of the [Margin attributes](../layout/css-utilities.md#element-margin)         |
+| `--ion-padding`                          | Adjust the padding of the [Padding attributes](../layout/css-utilities.md#element-padding)      |
 
 ### Grid Variables
 
@@ -69,7 +69,7 @@ There is not yet full <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/
 }
 ```
 
-> See the [CSS Variables](/docs/theming/css-variables) section for more information on how to get and set CSS variables.
+> See the [CSS Variables](css-variables.md) section for more information on how to get and set CSS variables.
 
 Ionic uses colors with an opacity (alpha) in several components. In order for this to work, those properties must be provided in RGB format. When changing any of the properties that have a variation ending in `-rgb`, it is important they are also provided in a comma separated format **without parentheses**. Below are some examples for changing text and background color.
 
@@ -140,6 +140,6 @@ After running through the Sass compiler, the colors will have the following valu
 
 However, because CSS variables can be set at runtime and are more dynamic, it is not currently possible to manipulate them using a simple function.
 
-This is normally not a problem, but when an application needs to have dynamic theming it presents issues. In Ionic, this is the reason that there are [variations to each color](./colors#layered-colors), and it is also why [stepped colors](./themes/#stepped-colors) are necessary for theming.
+This is normally not a problem, but when an application needs to have dynamic theming it presents issues. In Ionic, this is the reason that there are [variations to each color](colors.md#layered-colors), and it is also why [stepped colors](themes.md#stepped-colors) are necessary for theming.
 
 There are drafts and issues discussing [color modification proposals](https://github.com/w3c/csswg-drafts/issues/3187) that would make this possible.

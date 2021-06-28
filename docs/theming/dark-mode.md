@@ -136,19 +136,19 @@ color-scheme: light dark;
 
 For more information regarding `color-scheme` please see https://web.dev/color-scheme/.
 
-> `color-scheme` does not apply to the keyboard. For details on how dark mode works with the keyboard, see [Keyboard Documentation](/docs/developing/keyboard#dark-mode).
+> `color-scheme` does not apply to the keyboard. For details on how dark mode works with the keyboard, see [Keyboard Documentation](../developing/keyboard.md#dark-mode).
 
 ## Ionic Dark Theme
 
 Ionic has a recommended theme for variables to use in order to get a dark mode based on the device running the app. It can be broken down into the following parts:
 
-1. Changing the default [Ionic colors](/docs/theming/colors) for all [modes](/docs/theming/platform-styles#ionic-modes) to complement the dark background in the `body.dark` selector.
+1. Changing the default [Ionic colors](colors.md) for all [modes](platform-styles.md#ionic-modes) to complement the dark background in the `body.dark` selector.
 1. Setting variables for the dark theme on `ios` devices.
 1. Setting variables for the dark theme on `md` devices.
 
 The following code can be copied and pasted into an app to get Ionic's dark theme. We add the `dark` class to the document body using JavaScript as mentioned in the [combining with JavaScript](#combining-with-javascript) section. The dark mode will not be enabled until the `dark` class is added to the document body.
 
-> For more information on the variables that are being changed, including other variables that can be added to further customize, see [Themes](/docs/theming/themes).
+> For more information on the variables that are being changed, including other variables that can be added to further customize, see [Themes](themes.md).
 
 ```css
 /*

@@ -4,7 +4,7 @@
 
 Configuration values are stored in JSON files. The Ionic CLI maintains a global configuration file, usually located at `~/.ionic/config.json`, and project configuration files, usually at the project's root directory as `ionic.config.json`.
 
-The CLI provides commands for setting and printing config values from project config files and the global CLI config file. See `ionic config --help` or see the documentation for usage of [`ionic config get`](/docs/cli/commands/config-get) and [`ionic config set`](/docs/cli/commands/config-set).
+The CLI provides commands for setting and printing config values from project config files and the global CLI config file. See `ionic config --help` or see the documentation for usage of [`ionic config get`](commands/config-get.md) and [`ionic config set`](commands/config-set.md).
 
 ### Project Configuration File
 
@@ -42,7 +42,7 @@ Each Ionic project has a project configuration file, usually at the project's ro
 The CLI will look for the following environment variables:
 
 * `IONIC_CONFIG_DIRECTORY`: The directory of the global CLI config. Defaults to `~/.ionic`.
-* `IONIC_HTTP_PROXY`: Set a URL for proxying all CLI requests through. See [Using a Proxy](./using-a-proxy).
+* `IONIC_HTTP_PROXY`: Set a URL for proxying all CLI requests through. See [Using a Proxy](using-a-proxy.md).
 * `IONIC_TOKEN`: Automatically authenticates with [Appflow](https://ionic.io/appflow).
 
 ## Flags
@@ -109,7 +109,7 @@ module.exports = function(ctx) {
 
 <small><em>Available in CLI 6.2.0+</em></small>
 
-The Ionic CLI supports a multi-app configuration setup, which involves multiple Ionic apps and shared code within a single repository, or [monorepo](/docs/reference/glossary#monorepo).
+The Ionic CLI supports a multi-app configuration setup, which involves multiple Ionic apps and shared code within a single repository, or [monorepo](../reference/glossary.md#monorepo).
 
 > These docs give an overview of the multi-app feature of the Ionic CLI, but don't really go into details for each framework.
 >

@@ -30,7 +30,7 @@
 
   <section id="cli">
     <a href="#cli"><h3>CLI</h3></a>
-    <p>A CLI, or <strong>C</strong>ommand-<strong>L</strong>ine <strong>I</strong>nterface, is a text-based interface for interacting with a program. The common command-line app for a Mac user is the Terminal app, and Windows users often use Command Prompt. The Ionic community often uses this term to refer to <a href="https://ionicframework.com/docs/v1/cli/">Ionic's CLI</a>. Ionic's CLI can be used for a number of things, such as creating production builds of an app, running the development server, and accessing <a href="/pro/" target="_blank">Ionic commercial services</a>.</p>
+    <p>A CLI, or <strong>C</strong>ommand-<strong>L</strong>ine <strong>I</strong>nterface, is a text-based interface for interacting with a program. The common command-line app for a Mac user is the Terminal app, and Windows users often use Command Prompt. The Ionic community often uses this term to refer to <a href="https://ionicframework.com/docs/v1/cli/">Ionic's CLI</a>. Ionic's CLI can be used for a number of things, such as creating production builds of an app, running the development server, and accessing <a href="https://ionic.io/appflow" target="_blank">Ionic commercial services</a>.</p>
   </section>
 
   <section id="commonjs">
@@ -45,7 +45,7 @@
 
   <section id="cors">
     <a href="#cors"><h3>CORS</h3></a>
-    <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" target="_blank">CORS</a> (Cross-Origin Resource Sharing) is a mechanism for servers to control client access to web assets. See the <a href="/docs/faq/cors">CORS FAQs</a> for more information.</p>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" target="_blank">CORS</a> (Cross-Origin Resource Sharing) is a mechanism for servers to control client access to web assets. See the <a href="../troubleshooting/cors">CORS FAQs</a> for more information.</p>
   </section>
 
   <section id="css-variables">
@@ -81,7 +81,7 @@
 
   <section id="genymotion">
     <a href="#genymotion"><h3>Genymotion</h3></a>
-    <p>Genymotion is a third-party Android emulator. It is extremely fast, and is useful for quickly testing your app on Android. Check out our <a href="/docs/resources/developer-tips/#using-genymotion-android">resource section</a> on Genymotion for more info.</p>
+    <p>Genymotion is a third-party Android emulator. It is extremely fast, and is useful for quickly testing your app on Android. Check out our <a href="../developing/tips#using-genymotion-android">resource section</a> on Genymotion for more info.</p>
   </section>
 
   <section id="git">
@@ -121,7 +121,7 @@
 
   <section id="livereload">
     <a href="#livereload"><h3>Live Reload</h3></a>
-    <p><strong>Live Reload</strong> (or <strong>live-reload</strong>) is a tool that automatically reloads the browser or <a href="/docs/building/webview">Web View</a> when it detects changes in your app. In some cases, it can replace parts of your app without having to reload the entire window. See the <a href="/docs/cli/livereload">Live Reload docs</a> for more information.</p>
+    <p><strong>Live Reload</strong> (or <strong>live-reload</strong>) is a tool that automatically reloads the browser or <a href="../core-concepts/webview">Web View</a> when it detects changes in your app. In some cases, it can replace parts of your app without having to reload the entire window. See the <a href="/docs/cli/livereload">Live Reload docs</a> for more information.</p>
   </section>
 
   <section id="node">
