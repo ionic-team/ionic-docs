@@ -3,6 +3,9 @@ previousText: "Lifecycle"
 previousUrl: "/docs/react/lifecycle"
 nextText: "Config"
 nextUrl: "/docs/react/config"
+meta:
+  title: "React Navigation: Router Link Redirect to Navigate to Another Page"
+  description: "The React Navigation guide covers routing in an app built with Ionic and React. Learn to define a redirect path for router links to navigate to another page."
 ---
 
 # React Navigation

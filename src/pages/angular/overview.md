@@ -1,6 +1,9 @@
 ---
-nextText: 'Build Your First App'
-nextUrl: '/docs/angular/your-first-app'
+meta:
+  title: "Ionic Angular Overview | Angular Version Support and Tooling"
+  description: "@ionic/angular combines the Ionic experience with the tooling and APIs tailored to Angular Developers. Learn more about version support in our Angular Overview."
+nextText: "Build Your First App"
+nextUrl: "/docs/angular/your-first-app"
 ---
 
 # Ionic Angular Overview

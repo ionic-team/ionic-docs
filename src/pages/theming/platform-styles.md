@@ -1,9 +1,12 @@
 ---
 disableHtmlPreviews: true
-previousText: 'Theming Basics'
-previousUrl: '/docs/theming/basics'
-nextText: 'CSS Variables'
-nextUrl: '/docs/theming/css-variables'
+previousText: "Theming Basics"
+previousUrl: "/docs/theming/basics"
+nextText: "CSS Variables"
+nextUrl: "/docs/theming/css-variables"
+meta:
+  title: "Ionic Platform Styles | Platform-Specific Styles for Ionic Apps"
+  description: "Ionic provides platform-specific styles based on the app's device. Styling the components to match the device guidelines allows the app to feel native to users."
 contributors:
   - brandyscarney
 ---
@@ -12,21 +15,20 @@ contributors:
 
 Ionic provides platform specific styles based on the device the application is running on. Styling the components to match the device guidelines allows the application to be written once but look and feel native to the user depending on where it is accessed.
 
-
 ## Ionic Modes
 
 Ionic uses **modes** to customize the look of components. Each **platform** has a default **mode**, but this can be overridden through the global [config](../utilities/config). The following chart displays the default **mode** that is added to each **platform**:
 
-| Platform  | Mode  | Description                                                                                                                       |
-|-----------|-------|-----------------------------------------------------------------------------------------------------------------------------------|
-| `ios`     | `ios` | Viewing on an iPhone, iPad, or iPod will use the [iOS styles](https://www.apple.com/ios).                                   |
-| `android` | `md`  | Viewing on any Android device will use the [Material Design styles](https://material.io/guidelines/).                             |
-| `core`    | `md`  | Any platform that doesn't fit any of the above platforms will use the [Material Design styles](https://material.io/guidelines/).  |
+| Platform  | Mode  | Description                                                                                                                      |
+| --------- | ----- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `ios`     | `ios` | Viewing on an iPhone, iPad, or iPod will use the [iOS styles](https://www.apple.com/ios).                                        |
+| `android` | `md`  | Viewing on any Android device will use the [Material Design styles](https://material.io/guidelines/).                            |
+| `core`    | `md`  | Any platform that doesn't fit any of the above platforms will use the [Material Design styles](https://material.io/guidelines/). |
 
 For example, an app being viewed on an Android platform will use the `md` (Material Design) mode by default. The `<html>` element will have `class="md"` added to it and all of the components will use Material Design styles:
 
 ```html
-<html class="md">
+<html class="md"></html>
 ```
 
 _Note: The **platform** and the **mode** are not the same. The platform can be set to use any mode in the [config](../utilities/config) of an app._

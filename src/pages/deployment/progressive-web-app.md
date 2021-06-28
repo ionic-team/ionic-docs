@@ -1,8 +1,11 @@
 ---
-previousText: 'Android Play Store'
-previousUrl: '/docs/deployment/play-store'
-nextText: 'Electron Desktop App'
-nextUrl: '/docs/deployment/desktop-app'
+previousText: "Android Play Store"
+previousUrl: "/docs/deployment/play-store"
+nextText: "Electron Desktop App"
+nextUrl: "/docs/deployment/desktop-app"
+meta:
+  title: "Deploying A Progressive Web Application (PWA) | PWA Deployment"
+  description: "Ionic Applications are built with web technologies that run just as well as a Progressive Web App as they do a native app. Learn how to deploy a PWA with Ionic."
 contributors:
   - MustaRohman
   - mhartington
