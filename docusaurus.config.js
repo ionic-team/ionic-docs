@@ -152,15 +152,15 @@ module.exports = {
           ],
         },
         {
-          href: 'https://twitter.com/IonicFramework',
-          position: 'right',
-          className: 'navbar-twitter',
+          'href': 'https://twitter.com/IonicFramework',
+          'position': 'right',
+          'className': 'navbar-twitter',
           'aria-label': 'Twitter',
         },
         {
-          href: 'https://github.com/ionic-team/ionic-framework',
-          position: 'right',
-          className: 'navbar-github',
+          'href': 'https://github.com/ionic-team/ionic-framework',
+          'position': 'right',
+          'className': 'navbar-github',
           'aria-label': 'GitHub',
         },
       ],
@@ -193,7 +193,21 @@ module.exports = {
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/ionic-team/ionic-docs/edit/main/',
+          editUrl: ({ versionDocsDirPath, docPath, locale }) => {
+            if (locale != 'en') {
+              return 'https://crowdin.com/project/ionic-docs';
+            }
+            if ((match = docPath.match(/api\/(.*)\.md/)) != null) {
+              return `https://github.com/ionic-team/ionic-framework/edit/master/core/src/components/${match[1]}/readme.md`;
+            }
+            if ((match = docPath.match(/cli\/commands\/(.*)\.md/)) != null) {
+              return `https://github.com/ionic-team/ionic-cli/edit/develop/packages/@ionic/cli/src/commands/${match[1].replace('-', '/')}.ts`;
+            }
+            if ((match = docPath.match(/native\/(.*)\.md/)) != null) {
+              return `https://github.com/ionic-team/ionic-native/edit/master/src/@ionic-native/plugins/${match[1]}/index.ts`;
+            }
+            return `https://github.com/ionic-team/ionic-docs/edit/main/${versionDocsDirPath}/${docPath}`;
+          },
         },
         blog: false,
       },
