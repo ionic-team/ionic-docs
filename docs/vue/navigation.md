@@ -124,6 +124,64 @@ We can also programmatically navigate in our app by using the router API:
 
 Both options provide the same navigation mechanism, just fitting different use cases.
 
+### Navigating using `router-link`
+
+The `router-link` attribute can be set on any Ionic Vue component, and the router will navigate to the route specified when the component is clicked. The `router-link` attribute accepts string values as well as named routes, just like `router.push` from Vue Router. For additional control, the `router-direction` and `router-animation` properties can be set as well.
+
+The `router-direction` attribute accepts values of `forward`, `back`, or `none` and is used to control the direction of the page transition.
+
+The `router-animation` attribute accepts an `AnimationBuilder` function and is used to provide a custom page transition that is only used when clicking the component it is provided on. The `AnimationBuilder` type is a function that returns an Ionic Animation instance. See the [Animations documentation](../utilities/animations) for more information on using animations in Ionic Vue.
+
+```html
+<ion-button router-link="/page2" router-direction="back" :router-animation="myAnimation">Click Me</ion-button>
+```
+
+### Navigating using `useIonRouter`
+
+One downside of using `router-link` is that you cannot run custom code prior to navigating. This makes tasks such as firing off a network request prior to navigation difficult. You could use Vue Router directly, but then you lose the ability to control the page transition. This is where the `useIonRouter` utility is helpful.
+
+The `useIonRouter` utility is a function that provides methods for programmatic navigation while having full control over the page transitions. This makes it easy to run custom code before navigating.
+
+This first example lets us push a new page onto the stack with a custom page transition:
+
+```js
+import { defineComponent } from 'vue';
+import { useIonRouter } from '@ionic/vue';
+import { customAnimation } from '@/animations/customAnimation';
+
+export default defineComponent({
+  ...,
+  setup() {
+    const ionRouter = useIonRouter();
+    
+    router.push('/page2', customAnimation);
+  }
+});
+```
+
+`useIonRouter` provides convenience `push`, `replace`, `back`, and `forward` methods to make it easy to use common navigation actions. In addition, it also provides a `navigate` method which can be used in more complex navigation scenarios:
+
+```js
+import { defineComponent } from 'vue';
+import { useIonRouter } from '@ionic/vue';
+import { customAnimation } from '@/animations/customAnimation';
+
+export default defineComponent({
+  ...,
+  setup() {
+    const ionRouter = useIonRouter();
+    
+    router.navigate('/page2', 'forward', 'replace', customAnimation);
+  }
+});
+```
+
+The example above has the app navigate to `/page2` with a custom animation that uses the forward direction. In addition, the `replace` value ensures that the app replaces the current history entry when navigating.
+
+> `useIonRouter` uses the Vue `inject()` function and should only be used inside of your `setup()` function.
+
+See the [useIonRouter documentation](./utility-functions#router) for more details as well as type information.
+
 ## Lazy Loading Routes
 
 The current way our routes are setup makes it so they are included in the same initial chunk when loading the app, which is not always ideal. Instead, we can set up our routes so that components are loaded as they are needed:

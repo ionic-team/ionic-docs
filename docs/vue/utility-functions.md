@@ -30,19 +30,24 @@ export default defineComponent({
 });
 ```
 
+The `push` method is the equivalent of calling `ionRouter.navigate(location, 'forward', 'push', animation)`, and the `replace` method is the equivalent of calling `ionRouter.navigate(location, 'root', 'replace', animation)`.
+
 ### Interfaces
 
 ```ts
+import { AnimationBuilder } from '@ionic/vue';
+import { RouteLocationRaw } from 'vue-router';
+
 interface UseIonRouterResult {
   canGoBack: (deep?: number) => boolean;
-  push: (location: string | Location, routerAnimation?: AnimationBuilder) => void;
-  replace: (location: string | Location, routerAnimation?: AnimationBuilder) => void;
+  push: (location: RouteLocationRaw, routerAnimation?: AnimationBuilder) => void;
+  replace: (location: RouteLocationRaw, routerAnimation?: AnimationBuilder) => void;
   back: (routerAnimation?: AnimationBuilder) => void;
   forward: (routerAnimation?: AnimationBuilder) => void;
   navigate: (
     location: string | Location,
-    routerDirection?: RouteDirection,
-    routerAction?: RouteAction,
+    routerDirection?: 'forward' | 'back' | 'root' | 'none',
+    routerAction?: 'push' | 'pop' | 'replace',
     routerAnimation?: AnimationBuilder
   ) => void;
 }
@@ -50,7 +55,7 @@ interface UseIonRouterResult {
 useIonRouter(): UseIonRouterResult;
 ``` 
 
-See the [Vue Navigation Documentation](./navigation) for more information and usage examples.
+See the [Vue Navigation Documentation](./navigation) for more usage examples.
 
 ## Hardware Back Button
 
