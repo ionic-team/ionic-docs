@@ -30,8 +30,6 @@ export default defineComponent({
 });
 ```
 
-The `push` method is the equivalent of calling `ionRouter.navigate(location, 'forward', 'push', animation)`, and the `replace` method is the equivalent of calling `ionRouter.navigate(location, 'root', 'replace', animation)`.
-
 ### Interfaces
 
 ```ts
@@ -55,7 +53,13 @@ interface UseIonRouterResult {
 useIonRouter(): UseIonRouterResult;
 ``` 
 
-See the [Vue Navigation Documentation](./navigation) for more usage examples.
+
+* The `push` method is the equivalent of calling `ionRouter.navigate(location, 'forward', 'push', animation)`.
+
+* The `replace` method is the equivalent of calling `ionRouter.navigate(location, 'root', 'replace', animation)`.
+
+
+See the [Vue Navigation Documentation](./navigation#navigating-using-useionrouter) for more usage examples.
 
 ## Hardware Back Button
 
@@ -83,6 +87,8 @@ useBackButton(priority: number, handler: Handler): UseBackButtonResult;
 ```
 
 See the [Hardware Back Button Documentation](../developing/hardware-back-button) for more information and usage examples.
+
+> Note: The `useBackButton` callback will only fire when your app is running in Capacitor or Cordova. See [Hardware Back Button in Capacitor and Cordova](../developing/hardware-back-button#hardware-back-button-in-capacitor-and-cordova) for more information.
 
 ## Keyboard
 
