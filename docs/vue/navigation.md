@@ -159,7 +159,7 @@ export default defineComponent({
 });
 ```
 
-`useIonRouter` provides convenience `push`, `replace`, `back`, and `forward` methods to make it easy to use common navigation actions. In addition, it also provides a `navigate` method which can be used in more complex navigation scenarios:
+`useIonRouter` provides convenience `push`, `replace`, `back`, and `forward` methods to make it easy to use common navigation actions. It also provides a `navigate` method which can be used in more complex navigation scenarios:
 
 ```js
 import { defineComponent } from 'vue';
