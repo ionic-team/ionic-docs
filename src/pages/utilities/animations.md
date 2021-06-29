@@ -799,8 +799,8 @@ const gesture = createGesture({
   el: square,
   threshold: 0,
   gestureName: 'square-drag',
-  onMove: ev: onMove(ev),
-  onEnd: ev: onEnd(ev)
+  onMove: ev => onMove(ev),
+  onEnd: ev => onEnd(ev)
 })
 
 gesture.enable(true);
@@ -860,8 +860,8 @@ ngOnInit() {
     el: this.square.nativeElement,
     threshold: 0,
     gestureName: 'square-drag',
-    onMove: ev: this.onMove(ev),
-    onEnd: ev: this.onEnd(ev)
+    onMove: ev => this.onMove(ev),
+    onEnd: ev => this.onEnd(ev)
   })
   
   this.gesture.enable(true);
@@ -1038,8 +1038,8 @@ const gesture = createGesture({
   el: squareRef.value,
   threshold: 0,
   gestureName: 'square-drag',
-  onMove: ev: onMove(ev),
-  onEnd: ev: onEnd(ev)
+  onMove: ev => onMove(ev),
+  onEnd: ev => onEnd(ev)
 })
 
 gesture.enable(true);
@@ -1502,7 +1502,7 @@ interface AnimationPlayOptions {
 | `pause(): Animation` | Pause the animation. |
 | `play(opts?: AnimationPlayOptions): Promise<void>` | Play the animation. |
 | `progressEnd(playTo?: 0 \| 1, step: number, dur?: number): Animation` | Stop seeking through an animation. |
-| `progressStart(forceLinearEasing: boolean, step?: number): Animation` | Begin seeking through an animation. |
+| `progressStart(forceLinearEasing: boolean = false, step?: number): Animation` | Begin seeking through an animation. |
 | `progressStep(step: number): Animation` | Seek through an animation. |
 | `stop(): Animation` | Stop the animation and reset all elements to their initial state. |
 | `to(property: string, value: any): Animation` | Set the end styles of the animation. |
