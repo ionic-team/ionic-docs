@@ -1038,8 +1038,8 @@ const gesture = createGesture({
   el: squareRef.value,
   threshold: 0,
   gestureName: 'square-drag',
-  onMove: ev: onMove(ev),
-  onEnd: ev: onEnd(ev)
+  onMove: ev => onMove(ev),
+  onEnd: ev => onEnd(ev)
 })
 
 gesture.enable(true);
