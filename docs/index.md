@@ -18,6 +18,8 @@ Ionic Framework is an open source UI toolkit for building performant, high-quali
 
 Get started building by <a href="/docs/intro/cli">installing Ionic</a> or following our <a href="/docs/intro/next#build-your-first-app">First App Tutorial</a> to learn the main concepts.
 
+<intro-end />
+
 <DocsCards>
   <DocsCard header="Installation Guide" href="/docs/intro/cli" icon="/icons/guide-installation-icon.svg" hover-icon="/icons/guide-installation-icon-hover.svg">
     <p>Step-by-step guides to setting up your system and installing the framework.</p>
@@ -40,7 +42,6 @@ Get started building by <a href="/docs/intro/cli">installing Ionic</a> or follow
 
 Ionic Framework focuses on the frontend UX and UI interaction of an app — UI controls, interactions, gestures, animations. It's easy to learn, and integrates with other libraries or frameworks, such as <a href="/docs/angular/overview">Angular</a>, <a href="/docs/react/overview">React</a>, or <a href="/docs/vue/overview">Vue</a>. Alternatively, it can be used standalone without any frontend framework using a simple <a href="/docs/intro/cdn">script include</a>. If you’d like to learn more about Ionic Framework before diving in, we <a href="https://youtu.be/p3AN3igqiRc" target="_blank">created a video</a> to walk you through the basics.
 
-
 ### One codebase, running everywhere
 
 Ionic is the only mobile app stack that enables web developers to build apps for all major app stores and the mobile web from a single codebase. And with <a href="/docs/theming/platform-styles">Adaptive Styling</a>, Ionic apps look and feel at home on every device.
@@ -56,7 +57,6 @@ Ionic is designed to work and display beautifully on all current mobile devices 
 ### Native and Web optimized
 
 Ionic emulates native app UI guidelines and uses native SDKs, bringing the UI standards and device features of native apps together with the full power and flexibility of the open web. Ionic uses Capacitor (or Cordova) to deploy natively, or runs in the browser as a Progressive Web App.
-
 
 ## Goals
 
@@ -76,7 +76,6 @@ Start with pre-designed components, typography, interactive paradigms, and a gor
 ### Simplicity
 
 Ionic Framework is built with simplicity in mind, so that creating Ionic apps is enjoyable, easy to learn, and accessible to just about anyone with web development skills.
-
 
 ## Framework Compatibility
 
@@ -102,11 +101,9 @@ Ionic now has official support for the popular Vue 3 library. Ionic Vue lets Vue
 
 Support for other frameworks will be considered in future releases.
 
-
 ## Ionic CLI
 
 The official [Ionic CLI](/docs/cli), or Command Line Interface, is a tool that quickly scaffolds Ionic apps and provides a number of helpful commands to Ionic developers. In addition to installing and updating Ionic, the CLI comes with a built-in development server, build and debugging tools, and much more. If you are an [Appflow](#ionic-appflow) member, the CLI can be used to perform cloud builds and deployments, and administer your account.
-
 
 ## Appflow
 
@@ -116,7 +113,6 @@ Appflow helps developers and teams compile native app builds and deploy live cod
 
 Appflow requires an <a href="https://dashboard.ionicframework.com/signup" target="_blank">Ionic Account</a> and comes with a free “Hobby” plan for those interested in playing around with some of its features.
 
-
 ## Ecosystem
 
 Ionic Framework is actively developed and maintained full-time by a core team, and its ecosystem is guided by an international community of developers and contributors fueling its growth and adoption. Developers and companies small and large use Ionic to build and ship amazing apps that run everywhere.
@@ -125,12 +121,11 @@ Ionic Framework is actively developed and maintained full-time by a core team, a
 
 There are millions of Ionic developers in over 200 countries worldwide. Here are some ways to join:
 
-* <a href="https://forum.ionicframework.com/" target="_blank">Forum:</a> A great place for asking questions and sharing ideas.
-* <a href="https://ionicworldwide.herokuapp.com/" target="_blank">Slack:</a> A lively place for devs to meet and chat in real time.
-* <a href="https://twitter.com/ionicframework" target="_blank">Twitter:</a> Where we post updates and share content from the Ionic community.
-* <a href="https://github.com/ionic-team/ionic" target="_blank">GitHub:</a> For reporting bugs or requesting new features, create an issue here. PRs welcome!
-* <a href="https://ionicframework.com/contributors" target="_blank">Content authoring:</a> Write a technical blog or share your story with the Ionic community.
-
+- <a href="https://forum.ionicframework.com/" target="_blank">Forum:</a> A great place for asking questions and sharing ideas.
+- <a href="https://ionicworldwide.herokuapp.com/" target="_blank">Slack:</a> A lively place for devs to meet and chat in real time.
+- <a href="https://twitter.com/ionicframework" target="_blank">Twitter:</a> Where we post updates and share content from the Ionic community.
+- <a href="https://github.com/ionic-team/ionic" target="_blank">GitHub:</a> For reporting bugs or requesting new features, create an issue here. PRs welcome!
+- <a href="https://ionicframework.com/contributors" target="_blank">Content authoring:</a> Write a technical blog or share your story with the Ionic community.
 
 ## License
 
