@@ -5,7 +5,7 @@ import ServerStyle from '@theme/ServerStyle';
 function Root({ children }) {
   return (
     <>
-      <ServerStyle from={children} />
+      <ServerStyle from={children} key={Math.random()} />
       {children}
     </>
   );
