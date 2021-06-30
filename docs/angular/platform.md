@@ -1,8 +1,7 @@
 ---
-title: Platform | Ionic Platform to Customize Apps to Fit Any Device
+metaTitle: Platform | Ionic Platform to Customize Apps to Fit Any Device
 description: Ionic Platform service can be used to get information about your current device. With this information you can completely customize your app to fit any device.
 ---
-
 
 # Platform
 
@@ -29,16 +28,16 @@ Depending on the platform the user is on, `is(platformName)` will return true or
 
 #### Parameters
 
-| Name                | Type                | Description                                                                                                                                  |
-|---------------------|---------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| `platformName`      | `Platforms`         | Name of the platform. Available options are android, capacitor, cordova, desktop, electron, hybrid, ios, ipad, iphone, mobile, phablet, pwa, tablet |
+| Name           | Type        | Description                                                                                                                                         |
+| -------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `platformName` | `Platforms` | Name of the platform. Available options are android, capacitor, cordova, desktop, electron, hybrid, ios, ipad, iphone, mobile, phablet, pwa, tablet |
 
 #### Platforms
 
 Below is a table listing all the possible platform values along with corresponding descriptions.
 
 | Platform Name | Description                              |
-| ------------- | -------------------------------------    |
+| ------------- | ---------------------------------------- |
 | android       | a device running Android                 |
 | capacitor     | a device running Capacitor               |
 | cordova       | a device running Cordova                 |
@@ -93,8 +92,9 @@ Get the current url.
 Returns `true` if the expression is included in the user agent string.
 
 ### Parameters
+
 | Name       | Type   | Description                           |
-|------------|--------|---------------------------------------|
+| ---------- | ------ | ------------------------------------- |
 | expression | string | The string to check in the user agent |
 
 ## Events
