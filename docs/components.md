@@ -11,6 +11,8 @@ import DocsCards from '@site/src/components/DocsCards';
 
 Ionic apps are made of high-level building blocks called Components, which allow you to quickly construct the UI for your app. Ionic comes stock with a number of components, including cards, lists, and tabs. Once you’re familiar with the basics, refer to the [API Index](/docs/api) for a complete list of each component and sub-component.
 
+<intro-end />
+
 <DocsCards>
   <DocsCard header="Action Sheet" href="/docs/api/action-sheet" img="/icons/feature-component-actionsheet-icon.png">
     <p>Action Sheets display a set of options with the ability to confirm or cancel an action.</p>

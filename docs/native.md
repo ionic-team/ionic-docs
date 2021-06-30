@@ -12,6 +12,8 @@ import { Helmet } from "react-helmet";
 
 <p class='intro'>Build native-powered app experiences with a collection of open source and premium plugins and integrations that make it easy to add native device functionality to any Ionic app with Capacitor or Cordova.</p>
 
+<intro-end />
+
 <div id="native-enterprise-cards">
   <a href="https://capacitorjs.com/docs/plugins">
     <div class="image-wrapper">

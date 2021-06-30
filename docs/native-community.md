@@ -19,6 +19,8 @@ These plugins are submitted and maintained by the Ionic community. While communi
 
 For professional developers and teams that require dedicated native plugin support & SLAs, ongoing maintenance, and security patches, please explore our [premium options](https://ionicframework.com/native), including plugin support and pre-built solutions for common native use cases.
 
+<intro-end />
+
 > These docs are for apps built with Ionic Framework 4.0.0 and greater. For older Ionic v3 projects, please [see here](https://ionicframework.com/docs/v3/native).
 
 ## Capacitor Support
