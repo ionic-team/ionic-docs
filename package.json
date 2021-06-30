@@ -57,6 +57,7 @@
     "@types/react": "^17.0.11",
     "@types/react-helmet": "^6.1.1",
     "@types/react-router-dom": "^5.1.7",
+    "docusaurus-plugin-module-alias": "^0.0.2",
     "dotenv": "^10.0.0",
     "fs-extra": "^9.1.0",
     "remark-parse": "^8.0.3",

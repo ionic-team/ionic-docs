@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   title: 'Ionic Documentation',
   tagline:
@@ -181,7 +183,22 @@ module.exports = {
       additionalLanguages: ['shell-session'],
     },
   },
-  plugins: ['docusaurus-plugin-sass'],
+  plugins: [
+    'docusaurus-plugin-sass',
+    [
+      'docusaurus-plugin-module-alias',
+      {
+        alias: {
+          'styled-components': path.resolve(
+            __dirname,
+            './node_modules/styled-components',
+          ),
+          'react': path.resolve(__dirname, './node_modules/react'),
+          'react-dom': path.resolve(__dirname, './node_modules/react-dom'),
+        },
+      },
+    ],
+  ],
   themes: ['@ionic-internal/docusaurus-theme'],
   presets: [
     [
@@ -201,7 +218,10 @@ module.exports = {
               return `https://github.com/ionic-team/ionic-framework/edit/master/core/src/components/${match[1]}/readme.md`;
             }
             if ((match = docPath.match(/cli\/commands\/(.*)\.md/)) != null) {
-              return `https://github.com/ionic-team/ionic-cli/edit/develop/packages/@ionic/cli/src/commands/${match[1].replace('-', '/')}.ts`;
+              return `https://github.com/ionic-team/ionic-cli/edit/develop/packages/@ionic/cli/src/commands/${match[1].replace(
+                '-',
+                '/',
+              )}.ts`;
             }
             if ((match = docPath.match(/native\/(.*)\.md/)) != null) {
               return `https://github.com/ionic-team/ionic-native/edit/master/src/@ionic-native/plugins/${match[1]}/index.ts`;
