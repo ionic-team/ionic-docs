@@ -61,5 +61,8 @@
     "remark-parse": "^8.0.3",
     "semver": "^7.3.5",
     "typescript": "^4.3.2"
+  },
+  "optionalDependencies": {
+    "fsevents": "*"
   }
 }
