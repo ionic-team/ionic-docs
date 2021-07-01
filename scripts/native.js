@@ -142,7 +142,7 @@ function renderUsage({ usage }) {
 
 ### React
 
-[Learn more about using Ionic Native components in React](/docs/native/community#react)
+[Learn more about using Ionic Native components in React](../native-community.md#react)
   
 
 ### Angular
