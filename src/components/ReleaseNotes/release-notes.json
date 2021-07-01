@@ -1,5 +1,15 @@
 [
   {
+    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>animation:</strong> typescript interface has correct return value for progress methods (<a href=\"https://github.com/ionic-team/ionic/issues/23536\">#23536</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/f3d6abbc1beeafe3b5e7f473d70d0b8ef4c79bc8\">f3d6abb</a>)</li>\n<li><strong>ios, md:</strong> double tapping back button no longer causes app to go back 2 pages (<a href=\"https://github.com/ionic-team/ionic/issues/23526\">#23526</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/69be51dc54e670b2f75cbfac28a4a09517dbf355\">69be51d</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/18455\">#18455</a></li>\n</ul>\n",
+    "element": "Argon",
+    "name": "5.6.11",
+    "published_at": "July 1 2021",
+    "symbol": "Ar",
+    "tag_name": "v5.6.11",
+    "type": "patch",
+    "version": "5.6.11"
+  },
+  {
     "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>button:</strong> buttons using fill and color properties now account for hover and focused opacity variables (<a href=\"https://github.com/ionic-team/ionic/issues/23442\">#23442</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/68c0e7136d3f8aad8a195a0371104f7dd5fa7060\">68c0e71</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/23441\">#23441</a></li>\n<li><strong>item:</strong> using multiple items with inputs no longer results in console warnings (<a href=\"https://github.com/ionic-team/ionic/issues/23429\">#23429</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/e27b5b6ae360c44d8521ac7191817cbbe0367c05\">e27b5b6</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/23427\">#23427</a></li>\n<li><strong>vue:</strong> IonTabs can now accept IonRouterOutlet, deprecated default router outlet in tabs (<a href=\"https://github.com/ionic-team/ionic/issues/23477\">#23477</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/a2a4cff3d0d67868f384e1e9eec7cc738e260a27\">a2a4cff</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/23321\">#23321</a></li>\n</ul>\n",
     "element": "Argon",
     "name": "5.6.10",
@@ -228,16 +238,6 @@
     "tag_name": "v5.3.5",
     "type": "patch",
     "version": "5.3.5"
-  },
-  {
-    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>alert:</strong> follow accessibility guidelines outlined by wai-aria (<a href=\"https://github.com/ionic-team/ionic/issues/22159\">#22159</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/e9b2cc8453f5e1c45d44397df738f60ea5b32efd\">e9b2cc8</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/21744\">#21744</a></li>\n<li><strong>overlays:</strong> return focus to presenting element after dismissal (<a href=\"https://github.com/ionic-team/ionic/issues/22167\">#22167</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/cc45ad815c002c5d890f2e105c546b4c3b3a58c0\">cc45ad8</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/21768\">#21768</a></li>\n<li><strong>picker-column:</strong> add cancelable check to avoid intervention error in chrome (<a href=\"https://github.com/ionic-team/ionic/issues/22140\">#22140</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/a24a041064fd9ce6ca161d3522083d50e585e9dd\">a24a041</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/22137\">#22137</a></li>\n<li><strong>radio:</strong> follow accessibility guidelines outlined by wai-aria (<a href=\"https://github.com/ionic-team/ionic/issues/22113\">#22113</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/ea0e0499e24865faad3d11f50f7037645f6cdcc8\">ea0e049</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/21743\">#21743</a></li>\n<li><strong>reorder:</strong> allow click event propagation when reorder group is disabled (<a href=\"https://github.com/ionic-team/ionic/issues/21947\">#21947</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/baafe08927b7b858170496605781e6fa682e0147\">baafe08</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/21017\">#21017</a></li>\n<li><strong>segment:</strong> do not allow text selection on desktop (<a href=\"https://github.com/ionic-team/ionic/issues/22158\">#22158</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/1526bdfb492c1fa8d71f8a1af8cd97abd9e62642\">1526bdf</a>)</li>\n</ul>\n<h3>Performance Improvements</h3>\n<ul>\n<li><strong>segment:</strong> improve scrolling performance on ios when using segment (<a href=\"https://github.com/ionic-team/ionic/issues/22110\">#22110</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/68afc49e9ed27acffb0b765b7be6b03e8574850d\">68afc49</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/22095\">#22095</a></li>\n</ul>\n",
-    "element": "Phosphorus",
-    "name": "5.3.4",
-    "published_at": "September 25 2020",
-    "symbol": "P",
-    "tag_name": "v5.3.4",
-    "type": "patch",
-    "version": "5.3.4"
   },
   {
     "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>datetime:</strong> do not set ampm when the column doesn't exist (<a href=\"https://github.com/ionic-team/ionic/issues/22224\">#22224</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/210db5b265c04dcdc847f173503c5c096fdb3374\">210db5b</a>)</li>\n</ul>\n",
