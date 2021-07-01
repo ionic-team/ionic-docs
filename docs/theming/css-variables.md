@@ -1,6 +1,7 @@
 ---
 title: 'CSS Variables | CSS Custom Properties for Variables & Components'
 description: 'Ionic components are built with CSS Variables for easy custom app properties. They allow a value to be stored in one place, then referenced in multiple places.'
+sidebar_label: CSS Variables
 ---
 
 # CSS Variables

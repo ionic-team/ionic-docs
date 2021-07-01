@@ -1,6 +1,7 @@
 ---
 title: Platform | Ionic Platform to Customize Apps to Fit Any Device
 description: Ionic Platform service can be used to get information about your current device. With this information you can completely customize your app to fit any device.
+sidebar_label: Platform
 ---
 
 # Platform
