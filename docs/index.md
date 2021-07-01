@@ -14,37 +14,37 @@ import DocsCards from '@site/src/components/DocsCards';
 
 # Ionic Framework
 
-Ionic Framework is an open source UI toolkit for building performant, high-quality mobile and desktop apps using web technologies — HTML, CSS, and JavaScript — with integrations for popular frameworks like <a href="/docs/angular/overview"> Angular</a>, <a href="/docs/react/overview">React</a>, and <a href="/docs/vue/overview">Vue</a>.
+Ionic Framework is an open source UI toolkit for building performant, high-quality mobile and desktop apps using web technologies — HTML, CSS, and JavaScript — with integrations for popular frameworks like [Angular](angular/overview.md), [React](react/overview.md) and [Vue](vue/overview.md).
 
-Get started building by <a href="/docs/intro/cli">installing Ionic</a> or following our <a href="/docs/intro/next#build-your-first-app">First App Tutorial</a> to learn the main concepts.
+Get started building by [installing Ionic](intro/cli.md) or following our [First App Tutorial](intro/next.md#build-your-first-app) to learn the main concepts.
 
 <intro-end />
 
 <DocsCards>
-  <DocsCard header="Installation Guide" href="/docs/intro/cli" icon="/icons/guide-installation-icon.svg" hover-icon="/icons/guide-installation-icon-hover.svg">
+  <DocsCard header="Installation Guide" href="intro/cli" icon="/icons/guide-installation-icon.svg" hover-icon="/icons/guide-installation-icon-hover.svg">
     <p>Step-by-step guides to setting up your system and installing the framework.</p>
   </DocsCard>
 
-  <DocsCard header="UI Components" href="/docs/components" icon="/icons/guide-components-icon.svg" hover-icon="/icons/guide-components-icon-hover.svg">
+  <DocsCard header="UI Components" href="components" icon="/icons/guide-components-icon.svg" hover-icon="/icons/guide-components-icon-hover.svg">
     <p>Dive into Ionic Framework's beautifully designed UI component library.</p>
   </DocsCard>
 
-  <DocsCard header="Native Functionality" href="/docs/native" icon="/icons/guide-native-icon.svg" hover-icon="/icons/guide-native-icon-hover.svg">
+  <DocsCard header="Native Functionality" href="native" icon="/icons/guide-native-icon.svg" hover-icon="/icons/guide-native-icon-hover.svg">
     <p>Integrate native device plugins, like Bluetooth, Maps, HealthKit, and more.</p>
   </DocsCard>
 
-  <DocsCard header="Theming" href="/docs/theming/basics" icon="/icons/guide-theming-icon.svg" hover-icon="/icons/guide-theming-icon-hover.svg">
+  <DocsCard header="Theming" href="theming/basics" icon="/icons/guide-theming-icon.svg" hover-icon="/icons/guide-theming-icon-hover.svg">
     <p>Learn to easily customize and modify your Ionic app's visual design to fit your brand.</p>
   </DocsCard>
 </DocsCards>
 
 ## Overview
 
-Ionic Framework focuses on the frontend UX and UI interaction of an app — UI controls, interactions, gestures, animations. It's easy to learn, and integrates with other libraries or frameworks, such as <a href="/docs/angular/overview">Angular</a>, <a href="/docs/react/overview">React</a>, or <a href="/docs/vue/overview">Vue</a>. Alternatively, it can be used standalone without any frontend framework using a simple <a href="/docs/intro/cdn">script include</a>. If you’d like to learn more about Ionic Framework before diving in, we <a href="https://youtu.be/p3AN3igqiRc" target="_blank">created a video</a> to walk you through the basics.
+Ionic Framework focuses on the frontend UX and UI interaction of an app — UI controls, interactions, gestures, animations. It's easy to learn, and integrates with other libraries or frameworks, such as [Angular](angular/overview.md), [React](react/overview.md), or [Vue](vue/overview.md). Alternatively, it can be used standalone without any frontend framework using a simple [script include](intro/cdn.md). If you’d like to learn more about Ionic Framework before diving in, we <a href="https://youtu.be/p3AN3igqiRc" target="_blank">created a video</a> to walk you through the basics.
 
 ### One codebase, running everywhere
 
-Ionic is the only mobile app stack that enables web developers to build apps for all major app stores and the mobile web from a single codebase. And with <a href="/docs/theming/platform-styles">Adaptive Styling</a>, Ionic apps look and feel at home on every device.
+Ionic is the only mobile app stack that enables web developers to build apps for all major app stores and the mobile web from a single codebase. And with [Adaptive Styling](theming/platform-styles.md), Ionic apps look and feel at home on every device.
 
 ### A focus on performance
 
@@ -66,7 +66,7 @@ Build and deploy apps that work across multiple platforms, such as native iOS, A
 
 ### Web Standards-based
 
-Ionic Framework is built on top of reliable, [standardized web technologies](/docs/reference/glossary#web-standards): HTML, CSS, and JavaScript, using modern Web APIs such as Custom Elements and Shadow DOM. Because of this, Ionic components have a stable API, and aren't at the whim of a single platform vendor.
+Ionic Framework is built on top of reliable, [standardized web technologies](reference/glossary#web-standards): HTML, CSS, and JavaScript, using modern Web APIs such as Custom Elements and Shadow DOM. Because of this, Ionic components have a stable API, and aren't at the whim of a single platform vendor.
 
 ### Beautiful Design
 
@@ -103,7 +103,7 @@ Support for other frameworks will be considered in future releases.
 
 ## Ionic CLI
 
-The official [Ionic CLI](/docs/cli), or Command Line Interface, is a tool that quickly scaffolds Ionic apps and provides a number of helpful commands to Ionic developers. In addition to installing and updating Ionic, the CLI comes with a built-in development server, build and debugging tools, and much more. If you are an [Appflow](#ionic-appflow) member, the CLI can be used to perform cloud builds and deployments, and administer your account.
+The official [Ionic CLI](cli), or Command Line Interface, is a tool that quickly scaffolds Ionic apps and provides a number of helpful commands to Ionic developers. In addition to installing and updating Ionic, the CLI comes with a built-in development server, build and debugging tools, and much more. If you are an [Appflow](#ionic-appflow) member, the CLI can be used to perform cloud builds and deployments, and administer your account.
 
 ## Appflow
 

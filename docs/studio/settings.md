@@ -38,14 +38,14 @@ The plugins available for install comprise all [Ionic Native](../native.md) plug
 </blockquote>
 
 <blockquote>
-Some plugins may require variables that Ionic Studio isn't aware of. In this case, the install will fail. Try installing the plugin again with the necessary variables and let us know by <a href="/docs/studio/support">reporting the bug</a>.
+Some plugins may require variables that Ionic Studio isn't aware of. In this case, the install will fail. Try installing the plugin again with the necessary variables and let us know by [reporting the bug](support.md).
 </blockquote>
 
 ## Icon & Splash Screen
 
 The **Icon & Splash Screen** section is for managing app resources. When changing icons and splash screens within Ionic Studio, the appropriate sizes required for the vast collection of device sizes and types will be generated automatically.
 
-Ionic Studio uses the Ionic CLI command <code>ionic cordova resources</code> to generate app resources. More information about icons and splash screens can be found in <a href="/docs/cli/commands/cordova-resources">the CLI docs</a>.
+Ionic Studio uses the Ionic CLI command <code>ionic cordova resources</code> to generate app resources. More information about icons and splash screens can be found in [the CLI docs](../cli/commands/cordova-resources.md).
 
 <figure>
   <img alt="App Resources" src="/img/studio/2/ss-settings-resources.png" />

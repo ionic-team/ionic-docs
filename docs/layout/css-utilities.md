@@ -7,11 +7,7 @@ inlineHtmlPreviews: true
 
 Ionic Framework provides a set of CSS utility classes that can be used on any element in order to modify the text, element placement or adjust the padding and margin.
 
-<blockquote>
-  <p>
-    If your app was not started using an available Ionic Framework starter, the stylesheets listed in the <a href="./global-stylesheets#optional">optional section of the global stylesheets</a> will need to be included in order for these styles to work.
-  </p>
-</blockquote>
+> If your app was not started using an available Ionic Framework starter, the stylesheets listed in the [optional section of the global stylesheets](global-stylesheets.md#optional) will need to be included in order for these styles to work.
 
 ## Text Modification
 

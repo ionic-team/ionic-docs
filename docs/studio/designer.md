@@ -57,7 +57,7 @@ When adding a component (rather than a page), Studio will prompt for the name an
 This adds the component as a _import_ in the NgModule of the selected page, which allows it to be used in that page.
 
 <blockquote>
-The same code changes are necessary to use the component in other pages. See <a href="/docs/studio/faq#using-a-custom-component-in-additional-pages">this FAQ</a> for details.
+The same code changes are necessary to use the component in other pages. See [this FAQ](faq.md#using-a-custom-component-in-additional-pages) for details.
 </blockquote>
 
 ## Drag & Drop

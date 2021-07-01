@@ -4,7 +4,7 @@ sidebar_label: Developing for Android
 
 # Android Development
 
-This guide covers how to run and debug Ionic apps on Android emulators and devices using <a href="/docs/reference/glossary#capacitor">Capacitor</a> or <a href="/docs/reference/glossary#cordova">Cordova</a>. Android apps can be developed on Windows, macOS, and Linux.
+This guide covers how to run and debug Ionic apps on Android emulators and devices using [Capacitor](../reference/glossary.md#capacitor) or [Cordova](../reference/glossary.md#cordova). Android apps can be developed on Windows, macOS, and Linux.
 
 ## Android Studio
 

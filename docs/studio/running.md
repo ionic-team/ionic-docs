@@ -43,7 +43,7 @@ For information on how to use the Chrome DevTools, see the [Chrome DevTools docu
 ## Running Apps
 
 <blockquote>
-Since running an app will install it on an actual native device, some additional setup is required. See the <a href="setup/native">Native iOS & Android</a> documentation for setup guides.
+Since running an app will install it on an actual native device, some additional setup is required. See the [Native iOS & Android](setup/native.md) documentation for setup guides.
 </blockquote>
 
 To run an app, click the Play button in the upper right-hand corner of Ionic Studio. Then choose _Run_ from the dropdown.

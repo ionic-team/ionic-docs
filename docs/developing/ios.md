@@ -5,7 +5,7 @@ skipIntros: true
 
 # iOS Development
 
-This guide covers how to run and debug Ionic apps on iOS simulators and devices using <a href="/docs/reference/glossary#capacitor">Capacitor</a> or <a href="/docs/reference/glossary#cordova">Cordova</a>. iOS apps can only be developed on macOS with Xcode installed.
+This guide covers how to run and debug Ionic apps on iOS simulators and devices using [Capacitor](../reference/glossary.md#capacitor) or [Cordova](../reference/glossary.md#cordova). iOS apps can only be developed on macOS with Xcode installed.
 
 There are two workflows for running Ionic apps on iOS:
 * [Running with Xcode](#running-with-xcode)

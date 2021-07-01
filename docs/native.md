@@ -26,7 +26,7 @@ import { Helmet } from "react-helmet";
     </div>
   </a>
 
-  <a href="/docs/native/community">
+  <a href="native/community">
     <div class="image-wrapper">
       <img src="/docs/img/native/cordova@2x.png" width="440" height="222" alt="cordova logo"/>
     </div>

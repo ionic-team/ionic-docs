@@ -25,7 +25,7 @@ Studio is a desktop tool and requires a subscription, and is only for Ionic Angu
     <p>Delivered within Studio as well as over email.</p>
   </DocsCard>
 
-  <DocsCard header="Studio FAQ" href="/docs/studio/faq" icon="/icons/guide-faq-icon.png">
+  <DocsCard header="Studio FAQ" href="studio/faq" icon="/icons/guide-faq-icon.png">
     <p>Find answers to common questions about Ionic Studio.</p>
   </DocsCard>
 </DocsCards>

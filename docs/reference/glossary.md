@@ -121,7 +121,7 @@
 
   <section id="livereload">
     <a href="#livereload"><h3>Live Reload</h3></a>
-    <p><strong>Live Reload</strong> (or <strong>live-reload</strong>) is a tool that automatically reloads the browser or <a href="../core-concepts/webview">Web View</a> when it detects changes in your app. In some cases, it can replace parts of your app without having to reload the entire window. See the <a href="/docs/cli/livereload">Live Reload docs</a> for more information.</p>
+    <p><strong>Live Reload</strong> (or <strong>live-reload</strong>) is a tool that automatically reloads the browser or <a href="../core-concepts/webview">Web View</a> when it detects changes in your app. In some cases, it can replace parts of your app without having to reload the entire window. See the <a href="../cli/livereload">Live Reload docs</a> for more information.</p>
   </section>
 
   <section id="node">

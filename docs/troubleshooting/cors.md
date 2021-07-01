@@ -5,7 +5,7 @@
 
 **Cross-Origin Resource Sharing (CORS)** is a mechanism that browsers and webviews — like the ones powering Capacitor and Cordova — use to restrict HTTP and HTTPS requests made from scripts to resources in a different origin for security reasons, mainly to protect your user's data and prevent attacks that would compromise your app.
 
-In order to know if an external origin supports CORS, the server has to send some <a href="#cors-headers">special headers</a> for the browser to allow the requests.
+In order to know if an external origin supports CORS, the server has to send some [special headers](#cors-headers) for the browser to allow the requests.
 
 An **origin** is the combination of the **protocol**, **domain**, and **port** from which your Ionic app or the external resource is served. For example, apps running in Capacitor have `capacitor://localhost` (iOS) or `http://localhost` (Android) as their origin.
 
@@ -111,7 +111,7 @@ In our example API, `GET` requests don't need to be preflighted because no JSON 
 |----------------------------------|-------------------|----------------------------------------------------------------------------------------------------|
 | **Access-Control-Allow-Origin**  | `origin` or `*`   | Specifies the origin to be allowed, like `http://localhost:8100` or `*` to allow all origins. |
 | **Access-Control-Allow-Methods** | `methods`         | Which methods are allowed when accessing the resource: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`. |
-| **Access-Control-Allow-Headers** | `headers`         | Used in response to a preflight request to indicate which headers can be used when making the actual request, aside from the <a href="#simple-requests">simple headers</a>, which are always allowed. |
+| **Access-Control-Allow-Headers** | `headers`         | Used in response to a preflight request to indicate which headers can be used when making the actual request, aside from the [simple headers](#simple-requests), which are always allowed. |
 | Access-Control-Allow-Credentials | `true` or `false` | Whether or not the request can be made with credentials.                                           |
 | Access-Control-Expose-Headers    | `headers`         | Specifies the headers that the browser is allowed to access.                                       |
 | Access-Control-Max-Age           | `seconds`         | Indicates how long the results of a preflight request can be cached.                               |
@@ -138,7 +138,7 @@ The browser automatically sends the appropriate headers for CORS in every reques
 
 ### A. Enabling CORS in a server you control
 
-The correct and easiest solution is to enable CORS by returning the <a href="#server-headers-response-">right response headers</a> from the web server or backend and responding to preflight requests, as it allows to keep using `XMLHttpRequest`, `fetch`, or abstractions like `HttpClient` in Angular.
+The correct and easiest solution is to enable CORS by returning the [right response headers](#server-headers-response-) from the web server or backend and responding to preflight requests, as it allows to keep using `XMLHttpRequest`, `fetch`, or abstractions like `HttpClient` in Angular.
 
 Ionic apps may be run from different origins, but only one origin can be specified in the `Access-Control-Allow-Origin` header. Therefore we recommend checking the value of the `Origin` header from the request and reflecting it in the `Access-Control-Allow-Origin` header in the response.
 
@@ -235,7 +235,7 @@ If you are trying to connect to a 3rd-party API, first check in its documentatio
 
 #### 1. Native-only apps (iOS/Android)
 
-Use the <a href="../native/http" target="_blank" rel="noopener">HTTP plugin from Ionic Native</a> to make the requests natively from outside the webview. Please note that this plugin doesn't work in the browser, so the development and testing of the app must always be done in a device or simulator going forward.
+Use the [HTTP plugin from Ionic Native](../native/http.md) to make the requests natively from outside the webview. Please note that this plugin doesn't work in the browser, so the development and testing of the app must always be done in a device or simulator going forward.
 
 ##### Usage in Ionic Angular 4
 

@@ -6,7 +6,7 @@ CSS Shadow Parts allow developers to style CSS properties on an element inside o
 
 Ionic Framework is a distributed set of <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components" target="_blank" rel="noopener noreferrer">Web Components</a>. Web Components follow the <a href="https://w3c.github.io/webcomponents/spec/shadow/" target="_blank" rel="noopener noreferrer">Shadow DOM specification</a> in order to encapsulate styles and markup.
 
-> Ionic Framework components are **not all** Shadow DOM components. If the component is a Shadow DOM component, there will be a badge in the top right of its <a href="/docs/components" target="_blank" rel="noopener noreferrer">component documentation</a>. An example of a Shadow DOM component is the <a href="/docs/api/button" target="_blank" rel="noopener noreferrer">button component</a>.
+> Ionic Framework components are **not all** Shadow DOM components. If the component is a Shadow DOM component, there will be a badge in the top right of its [component documentation](../components.md). An example of a Shadow DOM component is the [button component](../api/button.md).
 
 Shadow DOM is useful for preventing styles from leaking out of components and unintentionally applying to other elements. For example, we assign a `.button` class to our `ion-button` component. Without Shadow DOM encapsulation, if a user were to set the class `.button` on one of their own elements, it would inherit the Ionic Framework button styles. Since `ion-button` is a Shadow component, this is not a problem.
 
@@ -50,7 +50,7 @@ Continuing to use the `ion-select` component as an example, the markup is update
 </ion-select>
 ```
 
-The above shows two parts: `placeholder` and `icon`. See the <a href="/docs/api/select#css-shadow-parts" target="_blank" rel="noopener noreferrer">select documentation</a> for all of its parts.
+The above shows two parts: `placeholder` and `icon`. See the [select documentation](../api/select.md#css-shadow-parts) for all of its parts.
 
 With these parts exposed, the element can now be styled directly using [::part](#how-part-works).
 
@@ -91,11 +91,11 @@ ion-item::part(native):hover {
 
 ## Ionic Framework Parts
 
-All exposed parts for an Ionic Framework component can be found under the CSS Shadow Parts heading on its API page. To view all components and their API pages, see the <a href="/docs/components" target="_blank" rel="noopener noreferrer">Component documentation</a>.
+All exposed parts for an Ionic Framework component can be found under the CSS Shadow Parts heading on its API page. To view all components and their API pages, see the [Component documentation](../components.md).
 
 In order to have parts a component must meet the following criteria:
 
-- It is a <a href="/docs/reference/glossary#shadow" target="_blank" rel="noopener noreferrer">Shadow DOM</a> component. If it is a <a href="/docs/reference/glossary#scoped" target="_blank" rel="noopener noreferrer">Scoped</a> or Light DOM component, the child elements can be targeted directly. If a component is Scoped or Shadow, it will be listed by its name on its <a href="/docs/components" target="_blank" rel="noopener noreferrer">component documentation page</a>.
+- It is a [Shadow DOM](../reference/glossary.md#shadow) component. If it is a [Scoped](../reference/glossary.md#scoped)> or Light DOM component, the child elements can be targeted directly. If a component is Scoped or Shadow, it will be listed by its name on its [component documentation page](../components.md).
 - It contains children elements. For example, `ion-card-header` is a Shadow component, but all styles are applied to the host element. Since it has no child elements, there’s no need for parts.
 - The children elements are not structural. In certain components, including `ion-title`, the child element is a structural element used to position the inner elements. We do not recommend customizing structural elements as this can have unexpected results.
 
@@ -105,7 +105,7 @@ In order to have parts a component must meet the following criteria:
 
 ### Browser Support
 
-CSS Shadow Parts are supported in the recent versions of all of the major browsers. However, some of the older versions do not support shadow parts. Verify the <a href="https://caniuse.com/#feat=mdn-css_selectors_part" target="_blank" rel="noopener noreferrer">browser support</a> meets the requirements before implementing parts in an app. If browser support for older versions is required, we recommend continuing to use <a href="/docs/theming/css-variables" target="_blank" rel="noopener noreferrer">CSS Variables</a> for styling.
+CSS Shadow Parts are supported in the recent versions of all of the major browsers. However, some of the older versions do not support shadow parts. Verify the <a href="https://caniuse.com/#feat=mdn-css_selectors_part" target="_blank" rel="noopener noreferrer">browser support</a> meets the requirements before implementing parts in an app. If browser support for older versions is required, we recommend continuing to use [CSS Variables](../theming/css-variables.md) for styling.
 
 ### Vendor Prefixed Pseudo-Elements
 

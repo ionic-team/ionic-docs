@@ -112,7 +112,7 @@ $ ionic serve █
 ## Resources
 
 <DocsCards>
-  <DocsCard header="Getting Started" href="/docs/react/your-first-app" icon="/icons/feature-component-actionsheet-icon.png">
+  <DocsCard header="Getting Started" href="react/your-first-app" icon="/icons/feature-component-actionsheet-icon.png">
     <p>Learn the fundamentals you need to know to start building amazing apps with Ionic Framework.</p>
   </DocsCard>
 
@@ -120,11 +120,11 @@ $ ionic serve █
     <p>Use individual components or the complete app experience.</p>
   </DocsCard>
 
-  <DocsCard header="Navigation" href="/docs/react/navigation" icon="/icons/feature-component-navigation-icon.png">
+  <DocsCard header="Navigation" href="react/navigation" icon="/icons/feature-component-navigation-icon.png">
     <p>Learn the basics of navigation inside your app with Ionic and React Router</p>
   </DocsCard>
 
-  <DocsCard header="Lifecycle" href="/docs/react/lifecycle" icon="/icons/feature-guide-components-icon.png">
+  <DocsCard header="Lifecycle" href="react/lifecycle" icon="/icons/feature-guide-components-icon.png">
     <p>Learn about using Ionic lifecycle events in class components and with hooks</p>
   </DocsCard>
 
