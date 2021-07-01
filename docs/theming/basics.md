@@ -1,5 +1,5 @@
 ---
-metaTitle: 'Theming | Ionic Apps: Color and Theming Basics Definition'
+title: 'Theming | Ionic Apps: Color and Theming Basics Definition'
 description: 'The definition of theming apps just got simplified. Ionic Framework is built with pre-baked styles and colors which are extremely easy to change and modify.'
 sidebar_label: Basics
 ---

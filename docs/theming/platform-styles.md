@@ -1,5 +1,5 @@
 ---
-metaTitle: 'Ionic Platform Styles | Platform-Specific Styles for Ionic Apps'
+title: 'Ionic Platform Styles | Platform-Specific Styles for Ionic Apps'
 description: "Ionic provides platform-specific styles based on the app's device. Styling the components to match the device guidelines allows the app to feel native to users."
 disableHtmlPreviews: true
 ---

@@ -1,5 +1,5 @@
 ---
-metaTitle: 'Cordova Plugins | Cordova Community Core Plugins for Ionic Apps'
+title: 'Cordova Plugins | Cordova Community Core Plugins for Ionic Apps'
 description: 'For the Cordova user community, our collection of TypeScript wrappers for open source Cordova core plugins easily add native functionality to any Ionic app.'
 sidebar_label: Setup
 hide_table_of_contents: true

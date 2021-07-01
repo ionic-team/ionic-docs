@@ -1,5 +1,5 @@
 ---
-metaTitle: 'Deploying A Progressive Web Application (PWA) | PWA Deployment'
+title: 'Deploying A Progressive Web Application (PWA) | PWA Deployment'
 description: 'Ionic Applications are built with web technologies that run just as well as a Progressive Web App as they do a native app. Learn how to deploy a PWA with Ionic.'
 sidebar_label: Progressive Web App (PWA)
 ---

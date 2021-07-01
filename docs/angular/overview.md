@@ -1,5 +1,5 @@
 ---
-metaTitle: 'Ionic Angular Overview | Angular Version Support and Tooling'
+title: 'Ionic Angular Overview | Angular Version Support and Tooling'
 description: '@ionic/angular combines the Ionic experience with the tooling and APIs tailored to Angular Developers. Learn more about version support in our Angular Overview.'
 sidebar_label: Overview
 ---

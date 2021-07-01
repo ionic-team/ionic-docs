@@ -1,5 +1,5 @@
 ---
-metaTitle: 'React Navigation: Router Link Redirect to Navigate to Another Page'
+title: 'React Navigation: Router Link Redirect to Navigate to Another Page'
 description: 'The React Navigation guide covers routing in an app built with Ionic and React. Learn to define a redirect path for router links to navigate to another page.'
 sidebar_label: Navigation/Routing
 ---

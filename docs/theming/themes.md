@@ -1,5 +1,5 @@
 ---
-metaTitle: 'Ionic App Themes | Change Default App Background Themes & Colors'
+title: 'Ionic App Themes | Change Default App Background Themes & Colors'
 description: 'Several global variables change the default theme of an entire application. Create a custom background and text color theme for your app with Ionic themes.'
 initialTab: 'preview'
 inlineHtmlPreviews: true
