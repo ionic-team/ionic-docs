@@ -32,6 +32,9 @@ module.exports = {
       },
       items: [
         {
+          type: 'docsVersionDropdown',
+        },
+        {
           to: '/',
           activeBaseRegex: '^/docs/(?!api|components|cli|native)',
           label: 'Guide',
@@ -227,6 +230,15 @@ module.exports = {
               return `https://github.com/ionic-team/ionic-native/edit/master/src/@ionic-native/plugins/${match[1]}/index.ts`;
             }
             return `https://github.com/ionic-team/ionic-docs/edit/main/${versionDocsDirPath}/${docPath}`;
+          },
+          lastVersion: 'current',
+          versions: {
+            'current': {
+              label: 'v6-beta',
+            },
+            'v5': {
+              banner: 'none',
+            },
           },
         },
         blog: false,
