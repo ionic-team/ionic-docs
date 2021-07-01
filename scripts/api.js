@@ -40,14 +40,10 @@ function writePage(page) {
 }
 
 function renderFrontmatter({ tag }) {
-  const { title, description } = apiOverrides[tag] || {};
-
   const frontmatter = {
-    title: tag,
+    ...apiOverrides[tag],
+    sidebar_label: tag,
   };
-
-  if (title) frontmatter.metaTitle = `"${title}"`;
-  if (description) frontmatter.description = `"${description}"`;
 
   const demoPath = `api/${tag.slice(4)}/index.html`;
   if (fs.existsSync(path.join(DEMOS_PATH, demoPath))) {
@@ -57,7 +53,7 @@ function renderFrontmatter({ tag }) {
 
   return `---
 ${Object.entries(frontmatter)
-  .map(([key, value]) => `${key}: ${value}`)
+  .map(([key, value]) => `${key}: "${value}"`)
   .join('\n')}
 ---
 import Tabs from '@theme/Tabs';
@@ -67,7 +63,7 @@ import TabItem from '@theme/TabItem';
 }
 
 function renderReadme({ readme }) {
-  return readme.substring(readme.indexOf('\n') + 1);
+  return readme;
 }
 
 function renderUsage({ usage }) {

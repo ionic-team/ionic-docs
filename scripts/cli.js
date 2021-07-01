@@ -33,19 +33,15 @@ function writePage(page) {
 function renderFrontmatter({ name }) {
   const shortName = name.replace('ionic ', '');
   const slug = commandToKebab(shortName);
-  const { title, description } = cliOverrides[slug] || {};
 
   const frontmatter = {
-    title: name,
+    ...cliOverrides[slug],
     sidebar_label: shortName,
   };
 
-  if (title) frontmatter.metaTitle = `"${title}"`;
-  if (description) frontmatter.description = `"${description}"`;
-
   return `---
 ${Object.entries(frontmatter)
-  .map(([key, value]) => `${key}: ${value}`)
+  .map(([key, value]) => `${key}: "${value}"`)
   .join('\n')}
 ---
 

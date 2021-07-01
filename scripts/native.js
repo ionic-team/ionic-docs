@@ -31,18 +31,14 @@ function writePage(page) {
 function renderFrontmatter({ displayName, packageName }) {
   const slug = packageName.replace('@ionic-native/', '');
 
-  const { title, description } = nativeOverrides[slug] || {};
-
   const frontmatter = {
-    title: displayName,
+    ...nativeOverrides[slug],
+    sidebar_label: displayName,
   };
-
-  if (title) frontmatter.metaTitle = `"${title}"`;
-  if (description) frontmatter.description = `"${description}"`;
 
   return `---
 ${Object.entries(frontmatter)
-  .map(([key, value]) => `${key}: ${value}`)
+  .map(([key, value]) => `${key}: "${value}"`)
   .join('\n')}
 ---
 
