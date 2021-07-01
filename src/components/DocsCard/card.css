@@ -7,7 +7,7 @@ docs-card {
 .Card {
   background-color: var(--token-card-background-color);
   border-radius: 8px;
-  box-shadow: var(--elevation-3);
+  box-shadow: var(--shadow-4);
   color: var(--text-color--light);
   display: flex;
   flex-direction: column;
@@ -39,13 +39,13 @@ docs-card {
 }
 
 .Card-icon,
-.Card-iconset__container  {
+.Card-iconset__container {
   width: 48px;
   height: 48px;
 
   margin-bottom: 1.2em;
 
-  /* border-radius: 50%; */
+  border-radius: 50%;
   object-fit: contain;
 }
 
@@ -60,7 +60,7 @@ docs-card {
 .Card-iconset__container .Card-icon {
   position: absolute;
   opacity: 0;
-  transition: .8s opacity;
+  transition: 0.8s opacity;
 }
 
 .Card-iconset__container .Card-icon--active {
@@ -76,7 +76,8 @@ docs-card {
 
 @media (hover: hover) {
   .Card[href]:hover {
-    box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1), 0 0.175em 0.5em rgba(2, 8, 20, 0.08);
+    box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1),
+      0 0.175em 0.5em rgba(2, 8, 20, 0.08);
     text-decoration: none;
     transform: translateY(-1px);
   }
@@ -162,8 +163,8 @@ aside .Card-container {
   grid-template-columns: minmax(0, max-content) 1fr;
   grid-template-rows: minmax(0, min-content);
   grid-template-areas:
-    "icon title"
-    "icon body";
+    'icon title'
+    'icon body';
 }
 
 aside .Card-icon {
@@ -179,7 +180,7 @@ aside .Card-header {
 }
 
 aside .Card-header::after {
-  background-image: url("/img/new-tab.svg");
+  background-image: url('/img/new-tab.svg');
   display: inline-block;
   height: 13px;
   width: 13px;

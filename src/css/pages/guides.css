@@ -3,7 +3,7 @@
 
   font-size: 14px;
 
-  grid-template-columns: repeat(auto-fit, minmax(240px, 45%));
+  /* grid-template-columns: repeat(auto-fit, minmax(240px, 45%)); */
 }
 
 .page--docs docs-card .Card-icon {
