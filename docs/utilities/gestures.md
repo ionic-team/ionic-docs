@@ -462,7 +462,7 @@ See our guide on implementing gesture animations: [Gesture Animations with Ionic
 | --------------- | ------------------------------------------ | ----------- | ----------- |
 | el              | `Node`                                     | `undefined` | The element to listen on for gestures. |
 | disableScroll   | `boolean \| undefined`                     | `false`     | If true, scrolling will be disabled on `el` while the gesture is enabled. |
-| direction       | `'x' \| 'y' \| undefined`                  | `'x'`       | Limit gesture detection to movements along a certain axis. |
+| direction       | `'x' \| 'y' \|  'all' \| undefined`                  | `'x'`       | Limit gesture detection to movements along a certain axis. |
 | gestureName     | `string`                                   | `undefined` | The name of the gesture to create. |
 | gesturePriority | `number \| undefined`                      | `0`         | Gestures with higher priorities will override gestures with lower priorities. Useful for ensuring the multiple gestures do not collide with one another. |
 | passive         | `boolean \| undefined`                     | `true`      | If true, this will indicate that the gesture will never call `preventDefault()`. This can be used to improve scrolling performance. See [Passive Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Improving_scrolling_performance_with_passive_listeners) for more information. |
