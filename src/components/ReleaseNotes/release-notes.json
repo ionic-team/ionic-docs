@@ -248,15 +248,5 @@
     "tag_name": "v4.11.13",
     "type": "patch",
     "version": "4.11.13"
-  },
-  {
-    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>datetime:</strong> remove the automatic switching from am to pm and vice versa (<a href=\"https://github.com/ionic-team/ionic/issues/22208\">#22208</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/0d56c5166497de38df9be432f8c7577b4b6c0e94\">0d56c51</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/18924\">#18924</a></li>\n</ul>\n",
-    "element": "Sodium",
-    "name": "4.11.12",
-    "published_at": "September 29 2020",
-    "symbol": "Na",
-    "tag_name": "v4.11.12",
-    "type": "patch",
-    "version": "4.11.12"
   }
 ]
