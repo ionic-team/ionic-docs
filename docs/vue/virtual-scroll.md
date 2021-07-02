@@ -4,10 +4,10 @@ One virtual scrolling solution to consider for your Ionic Vue app is [vue-virtua
 
 ## Installation
 
-To setup the virtual scroller, first install `vue-virtual-scroll`:
+To setup the virtual scroller, first install `vue-virtual-scroller`:
 
 ```shell
-npm install vue-virtual-scroll@next
+npm install vue-virtual-scroller@next
 ```
 
 > Be sure to use the `next` tag otherwise you will get a version of `vue-virtual-scroll` that is only compatible with Vue 2.
