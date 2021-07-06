@@ -295,3 +295,20 @@ html[data-theme='dark'] .navbar-twitter:before {
   float: right;
   margin: 0 0 1rem 1rem;
 }
+
+.markdown {
+  p,
+  li {
+    font-size: 1rem;
+    line-height: var(--line-height-prose);
+    letter-spacing: var(--letter-spacing-tight);
+  }
+
+  header + p {
+    font-size: 1.25rem;
+
+    + p {
+      font-size: 1.25rem;
+    }
+  }
+}
