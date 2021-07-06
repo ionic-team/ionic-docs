@@ -22,7 +22,7 @@
     "@docusaurus/core": "2.0.0-beta.3",
     "@docusaurus/preset-classic": "2.0.0-beta.3",
     "@ionic-internal/docusaurus-plugin-tag-manager": "2.0.0",
-    "@ionic-internal/docusaurus-theme": "2.0.20",
+    "@ionic-internal/docusaurus-theme": "3.0.0",
     "@ionic/prettier-config": "^1.0.1",
     "@ionic/react": "^5.6.8",
     "@mdx-js/react": "^1.6.22",
@@ -62,7 +62,6 @@
     "fs-extra": "^9.1.0",
     "remark-parse": "^8.0.3",
     "semver": "^7.3.5",
-    "styled-components": "^5.3.0",
     "typescript": "^4.3.2"
   }
 }
