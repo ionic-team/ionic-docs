@@ -25,11 +25,6 @@ module.exports = {
   themeConfig: {
     navbar: {
       hideOnScroll: true,
-      logo: {
-        alt: 'Ionic Logo',
-        src: 'img/framework-logo.svg',
-        srcDark: 'img/framework-logo-dark.svg',
-      },
       items: [
         {
           type: 'docsVersionDropdown',
@@ -236,10 +231,10 @@ module.exports = {
           },
           lastVersion: 'current',
           versions: {
-            'current': {
+            current: {
               label: 'v6-beta',
             },
-            'v5': {
+            v5: {
               banner: 'none',
             },
           },
