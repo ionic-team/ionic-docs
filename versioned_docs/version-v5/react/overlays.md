@@ -22,7 +22,9 @@ The hooks return an array, where the first item in the array is the method to pr
 const [showAlert, hideAlert] = useIonAlert();
 ```
 
-> Overlays often dismiss themselves when the user is done interacting with them, so you might not need to use dismiss/hide method. 
+:::note
+Overlays often dismiss themselves when the user is done interacting with them, so you might not need to use dismiss/hide method. 
+:::
 
 To display the overlay, you use the present method, which we destructured to the name `showAlert`. The method takes in a set of parameters that vary depending on each overlay, but generally, they can either take in a simple set of common parameters or an object to specify additional options.
 
@@ -80,7 +82,9 @@ For overlays that display custom components, such as [modals](https://ionicframe
 </IonModal>
 ```
 
-> The Overlay Components are still a valid way of displaying overlays and are in no way a deprecated method. Use whichever method best fits your application.
+:::note
+The Overlay Components are still a valid way of displaying overlays and are in no way a deprecated method. Use whichever method best fits your application.
+:::
 
 ## Docs for Overlays in Ionic
 

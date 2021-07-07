@@ -69,7 +69,9 @@ There is not yet full <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/
 }
 ```
 
-> See the [CSS Variables](css-variables.md) section for more information on how to get and set CSS variables.
+:::note
+See the [CSS Variables](css-variables.md) section for more information on how to get and set CSS variables.
+:::
 
 Ionic uses colors with an opacity (alpha) in several components. In order for this to work, those properties must be provided in RGB format. When changing any of the properties that have a variation ending in `-rgb`, it is important they are also provided in a comma separated format **without parentheses**. Below are some examples for changing text and background color.
 

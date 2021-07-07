@@ -126,7 +126,9 @@ The Ionic CLI can build, copy, and deploy Ionic apps to iOS simulators and devic
 
 With live-reload, changes made to the app's source files trigger a rebuild of web assets and the changes are reflected on the simulator or device without having to deploy again.
 
-> **Warning**: For iOS devices, the device and the computer need to be on the same Wi-Fi network. An external URL for the dev server is also required so the device can connect to it. Use `--external` (or `--host=0.0.0.0`) to bind to external addresses.
+:::caution
+For iOS devices, the device and the computer need to be on the same Wi-Fi network. An external URL for the dev server is also required so the device can connect to it. Use `--external` (or `--host=0.0.0.0`) to bind to external addresses.
+:::
 
 ### Live-reload with Capacitor
 
@@ -156,9 +158,11 @@ Once an app is running on an iOS device or simulator, it can be debugged in Safa
 
 Safari has Web Inspector support for iOS simulators and devices. Open the **Develop** menu and select the simulator or device, then select the Ionic App to open Web Inspector.
 
-> If the **Develop** menu is hidden, enable it in **Safari** &raquo; **Preferences** &raquo; **Advanced** &raquo; **Show Develop menu in menu bar**.
->
-> If the app isn't listed, the Web Inspector may need to be enabled on the device in **Settings** &raquo; **Safari** &raquo; **Advanced** &raquo; **Web Inspector**.
+:::note
+If the **Develop** menu is hidden, enable it in **Safari** &raquo; **Preferences** &raquo; **Advanced** &raquo; **Show Develop menu in menu bar**.
+
+If the app isn't listed, the Web Inspector may need to be enabled on the device in **Settings** &raquo; **Safari** &raquo; **Advanced** &raquo; **Web Inspector**.
+:::
 
 ![Safari Web Inspector](/img/running/ios-safari-web-inspector-timelines.png)
 
@@ -166,6 +170,8 @@ Safari has Web Inspector support for iOS simulators and devices. Open the **Deve
 
 If running with Xcode, native logs can be found in in the Xcode **Console**.
 
-> If the **Console** is hidden, enable it in **View** &raquo; **Debug Area** &raquo; **Activate Console**.
+:::note
+If the **Console** is hidden, enable it in **View** &raquo; **Debug Area** &raquo; **Activate Console**.
+:::
 
 ![Xcode Console](/img/running/ios-xcode-console.png)

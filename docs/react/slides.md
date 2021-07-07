@@ -150,7 +150,9 @@ const Home: React.FC = () => {
 export default Home;
 ```
 
-> Importing `swiper-bundle.min.css` imports styles for all modules. When using the SCSS or Less styles, you will need to import the styles for each module. See <a href="https://swiperjs.com/react#styles" target="_blank" rel="noopener noreferrer">https://swiperjs.com/react#styles</a> for a full list of stylesheets.
+:::note
+Importing `swiper-bundle.min.css` imports styles for all modules. When using the SCSS or Less styles, you will need to import the styles for each module. See <a href="https://swiperjs.com/react#styles" target="_blank" rel="noopener noreferrer">https://swiperjs.com/react#styles</a> for a full list of stylesheets.
+:::
 ## Properties
 
 Swiper options are provided as props directly on the `<Swiper>` component rather than via the `options` object in `IonSlides`.

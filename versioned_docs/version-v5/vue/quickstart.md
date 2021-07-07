@@ -173,7 +173,9 @@ const router = createRouter({
 export default router
 ```
 
-> This example is using the Ionic Vue Blank starter application, so your actual routes may look a bit different.
+:::note
+This example is using the Ionic Vue Blank starter application, so your actual routes may look a bit different.
+:::
 
 The setup here is the same as if you were using `vue-router` directly, but instead you need to import dependencies such as `createRouter` and `createWebHistory` from the `@ionic/vue-router` package.
 
@@ -282,7 +284,9 @@ For our styles, notice that we have specified our styles to be `scoped`. This me
 
 `IonPage` is the base component for all pages (a component with a route/URL), and includes some common building blocks of a full-screen component, like header, title, and content components.
 
-> When creating your own pages, do not forget to have `IonPage` be the root component for them. Having `IonPage` be the root component is important because it helps ensure transitions work properly as well as provides the base CSS the Ionic Framework components rely on.
+:::note
+When creating your own pages, do not forget to have `IonPage` be the root component for them. Having `IonPage` be the root component is important because it helps ensure transitions work properly as well as provides the base CSS the Ionic Framework components rely on.
+:::
 
 `IonHeader` is a component meant to exist at the top of the page. It does not do much by itself, aside from handling some flexbox-based layout. It is meant to hold components, like `IonToolbar` or `IonSearchbar`.
 
@@ -290,7 +294,9 @@ For our styles, notice that we have specified our styles to be `scoped`. This me
 
 Our current content is relatively simple, but does not contain anything that could be used in a real app, so let's change that.
 
-> Note: For brevity, we are excluding repeating parts of our component, like the function declaration or import statements from other components.
+:::note
+For brevity, we are excluding repeating parts of our component, like the function declaration or import statements from other components.
+:::
 
 ```html
 <template>
@@ -506,7 +512,9 @@ export default defineComponent({
 </script>
 ```
 
-> Each view must contain an `IonPage` component. Page transitions will not work correctly without it. See the [IonPage Documentation](navigation.md#ionpage) for more information.
+:::note
+Each view must contain an `IonPage` component. Page transitions will not work correctly without it. See the [IonPage Documentation](navigation.md#ionpage) for more information.
+:::
 
 The content here should look similar to the `Home` component. What is different here is the `IonBackButton` component. This is used to navigate back to the previous route. Seems easy enough, right? Ok, but what if we reload the page?
 

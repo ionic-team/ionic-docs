@@ -31,10 +31,14 @@ serviceWorker.register();
 
 Once this package has been added run `ionic build` and the `build` directory will be ready to deploy as a PWA.
 
-> By default, react apps package comes with the Ionic logo for the app icons. Be sure to update the manifest to use the correct app name and also replace the icons.
+:::note
+By default, react apps package comes with the Ionic logo for the app icons. Be sure to update the manifest to use the correct app name and also replace the icons.
+:::
 
 
-> Note: Features like Service Workers and many JavaScript APIs (such as geolocation) require the app be hosted in a secure context. When deploying an app through a hosting service, be aware that HTTPS will be required to take full advantage of Service Workers.
+:::note
+Features like Service Workers and many JavaScript APIs (such as geolocation) require the app be hosted in a secure context. When deploying an app through a hosting service, be aware that HTTPS will be required to take full advantage of Service Workers.
+:::
 
 
 
@@ -67,7 +71,9 @@ With the Firebase CLI installed, run `firebase init` within your Ionic project. 
 
 **"What do you want to use as your public directory?"** Enter "build".
 
-> Note: Answering these next two questions will ensure that routing, hard reload, and deep linking work in the app:
+:::note
+Answering these next two questions will ensure that routing, hard reload, and deep linking work in the app:
+:::
 
 **Configure as a single-page app (rewrite all urls to /index.html)?"** Enter "Yes".
 

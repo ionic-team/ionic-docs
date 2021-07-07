@@ -10,7 +10,9 @@ We’re now able to take multiple photos and display them in a photo gallery on 
 
 ()Fortunately, saving them to the filesystem only takes a few steps. Begin by opening the `usePhotoGallery` hook (`src/hooks/usePhotoGallery.ts`), and get access to the `writeFile` method from the `FileSystem` class:
 
-> We will use the `writeFile` method initially, but we will use the others coming up shortly, so we'll go ahead and import them now.
+:::note
+We will use the `writeFile` method initially, but we will use the others coming up shortly, so we'll go ahead and import them now.
+:::
 
 Next, create a couple of new functions in `usePhotoGallery`:
 
@@ -55,7 +57,9 @@ export async function base64FromPath(path: string): Promise<string> {
 
 ```
 
-> The base64FromPath method is a helper util that downloads a file from the supplied path and returns a base64 representation of that file.
+:::note
+The base64FromPath method is a helper util that downloads a file from the supplied path and returns a base64 representation of that file.
+:::
 
 We pass in the `cameraPhoto` object, which represents the newly captured device photo, as well as the fileName, which will provide a path for the file to be stored to.
 

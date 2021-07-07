@@ -2,7 +2,9 @@
 
 ## Blank App
 
-> I have no errors in my app. Why does it show a blank screen?
+:::note
+I have no errors in my app. Why does it show a blank screen?
+:::
 
 There are several different reasons this can happen. If you are unable to find a solution on the [Ionic forums](https://forum.ionicframework.com), make sure:
 
@@ -32,7 +34,9 @@ This will automatically include the polyfills for older browsers that need them.
 
 ## Directive Not Working
 
-> Why is my custom component/directive not working?
+:::note
+Why is my custom component/directive not working?
+:::
 
 There are a few things you can check. Make sure:
 
@@ -71,7 +75,9 @@ class MyPage { }
 
 ## Click Delays
 
-> Why is there a delay on my click event?
+:::note
+Why is there a delay on my click event?
+:::
 
 In general, we recommend only adding `(click)` events to elements that are
 normally clickable. This includes `<button>` and `<a>` elements. This improves
@@ -89,7 +95,9 @@ add the `tappable` attribute to your element.
 
 ## Angular Change Detection
 
-> Why does Angular change detection run very frequently when my components are initializing?
+:::note
+Why does Angular change detection run very frequently when my components are initializing?
+:::
 
 Angular uses a library called [zone.js](https://github.com/angular/angular/tree/master/packages/zone.js/)
 which helps it determine when to run change detection.
@@ -121,7 +129,9 @@ import 'zone.js/dist/zone'; // Included with Angular CLI
 This change will only affect applications that depend on zone.js `0.8.27` or
 newer. Older versions will not be affected by this change.
 
-> Note: This flag is automatically included when creating an Ionic app via
+:::note
+This flag is automatically included when creating an Ionic app via
+:::
 the Ionic CLI.
 
 ## Cordova plugins not working in the browser

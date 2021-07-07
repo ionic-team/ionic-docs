@@ -26,7 +26,9 @@ to use the Ionic Lifecycle methods in a class-based component, you must wrap you
 ```typescript
 export default withIonLifeCycle(HomePage);
 ```
-> `withIonLifeCycle` is imported from `@ionic/react`
+:::note
+`withIonLifeCycle` is imported from `@ionic/react`
+:::
 
 You can then create the appropriate lifecycle method on your class component, and the HOC calls that method when the event happens. Below is the entire component with each of the lifecycle methods implemented:
 
@@ -119,7 +121,9 @@ const HomePage: React.FC = () => {
 export default HomePage;
 ```
 
-> Note: Functional components don't need to be wrapped with the `withIonLifeCycle` HOC as class components do.
+:::note
+Functional components don't need to be wrapped with the `withIonLifeCycle` HOC as class components do.
+:::
 
 ## React LifeCycle Methods
 

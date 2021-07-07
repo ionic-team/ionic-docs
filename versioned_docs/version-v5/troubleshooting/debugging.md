@@ -32,7 +32,9 @@ On your device, open the Ionic app that you would like to debug using Chrome.
 
 With your app running on the device, head back to Chrome and click on **inspect** under your device in the list of remote targets. This will open the Chrome Developer Tools in a new window. You will then be able to use all of the Chrome DevTools to debug the application as it runs on your device.
 
-> The app preview may not automatically appear when you open Chrome Developer Tools due to a minor bug. To make it appear, click on the **Elements** tab then click on any DOM element then toggle off and on any CSS rule and the app preview window will appear.
+:::note
+The app preview may not automatically appear when you open Chrome Developer Tools due to a minor bug. To make it appear, click on the **Elements** tab then click on any DOM element then toggle off and on any CSS rule and the app preview window will appear.
+:::
 
 ## Debugging with Visual Studio locally in Chrome (both Android & iOS)
 
@@ -76,4 +78,6 @@ In the root of your Ionic project, create a folder called `.vscode` and inside t
 
 Next, launch the debugging process, selecting your device and Ionic app. VS Code will attach to both the Android device and Ionic app and you can now debug your app, which includes setting breakpoints.
 
-> If you are unable to set breakpoints and get an error saying, **"Breakpoint ignored because generated code not found (source map problem?)"** it means that the paths to the transpiled javascript files are incorrect. Use the `.scripts` command in the Debug console to see the loaded scripts. Make sure the paths of the scripts are correct  by experimenting with different values in the `sourceMapPathOverrides` key in your `launch.json` configuration file.
+:::note
+If you are unable to set breakpoints and get an error saying, **"Breakpoint ignored because generated code not found (source map problem?)"** it means that the paths to the transpiled javascript files are incorrect. Use the `.scripts` command in the Debug console to see the loaded scripts. Make sure the paths of the scripts are correct  by experimenting with different values in the `sourceMapPathOverrides` key in your `launch.json` configuration file.
+:::

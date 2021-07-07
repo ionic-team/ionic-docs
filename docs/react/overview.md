@@ -2,7 +2,9 @@
 
 `@ionic/react` combines the core Ionic experience with the tooling and APIs that are tailored to React Developers. 
 
-> Note: The first official version of Ionic React is v4.11.
+:::note
+The first official version of Ionic React is v4.11.
+:::
 
 First, install the Ionic CLI:
 

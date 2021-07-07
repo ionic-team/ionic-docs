@@ -23,7 +23,9 @@ $ ionic capacitor run ios -l --external
 $ ionic capacitor run android -l --external
 ```
 
-> Remember, with the `--external` option, others on your Wi-Fi network will be able to access your app.
+:::note
+Remember, with the `--external` option, others on your Wi-Fi network will be able to access your app.
+:::
 
 ### Cordova
 
@@ -41,7 +43,9 @@ $ ionic cordova run android -l
 
 For iOS devices, port forwarding is not yet an option. This means you'll need to connect your device to the same Wi-Fi network as your computer and use an external address for the dev server.
 
-> You can track [this issue](https://github.com/ionic-team/native-run/issues/20) for progress on iOS port forwarding with Ionic.
+:::note
+You can track [this issue](https://github.com/ionic-team/native-run/issues/20) for progress on iOS port forwarding with Ionic.
+:::
 
 In some cases, the Ionic CLI won't know the address with which to configure the Web View, so you may be prompted to select one. Be sure to select the address of your computer on your Wi-Fi network.
 
@@ -51,7 +55,9 @@ The following all-in-one command will start a live-reload server on **all addres
 $ ionic cordova run ios -l --external
 ```
 
-> Remember, with the `--external` option, others on your Wi-Fi network will be able to access your app.
+:::note
+Remember, with the `--external` option, others on your Wi-Fi network will be able to access your app.
+:::
 
 ## Tips
 

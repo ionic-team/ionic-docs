@@ -13,7 +13,9 @@ In pursuit of [adaptive styling](../core-concepts/fundamentals.md#adaptive-styli
 | Ionic v5      | 5.0+                   | 11.0+ |
 | Ionic v4      | 4.4+                   | 10.0+ |
 
-> Check the [latest Android stats](https://developer.android.com/about/dashboards/) and the [latest iOS stats](https://developer.apple.com/support/app-store/) for up-to-date platform information.
+:::note
+Check the [latest Android stats](https://developer.android.com/about/dashboards/) and the [latest iOS stats](https://developer.apple.com/support/app-store/) for up-to-date platform information.
+:::
 
 ### A Note on Android Support
 
@@ -37,4 +39,6 @@ Because Ionic is based on web technologies, it works just as well on desktop bro
 
 
 
-> Check the docs for [Ionic Animations](../utilities/animations.md#browser-support) and [Ionic Gestures](../utilities/gestures.md#browser-support) for specific browser support related to those utilities.
+:::note
+Check the docs for [Ionic Animations](../utilities/animations.md#browser-support) and [Ionic Gestures](../utilities/gestures.md#browser-support) for specific browser support related to those utilities.
+:::

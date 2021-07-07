@@ -138,7 +138,9 @@ export class SlidesExample {
 </swiper>
 ```
 
-> Importing `swiper-bundle.min.css` imports styles for all modules. When using the SCSS or Less styles, you will need to import the styles for each module. See <a href="https://swiperjs.com/angular#styles" target="_blank" rel="noopener noreferrer">https://swiperjs.com/angular#styles</a> for a full list of stylesheets.
+:::note
+Importing `swiper-bundle.min.css` imports styles for all modules. When using the SCSS or Less styles, you will need to import the styles for each module. See <a href="https://swiperjs.com/angular#styles" target="_blank" rel="noopener noreferrer">https://swiperjs.com/angular#styles</a> for a full list of stylesheets.
+:::
 ## Properties
 
 Swiper options are provided as props directly on the `<swiper>` component rather than via the `options` object in `ion-slides`.

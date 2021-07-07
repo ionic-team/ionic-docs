@@ -6,7 +6,9 @@ sidebar_label: Deploying Mobile
 
 Since we added Capacitor to our project when it was first created, there’s only a handful of steps remaining until the Photo Gallery app is on our device!
 
-> Remember, you can find the complete source code for this app [here](https://github.com/ionic-team/photo-gallery-capacitor-vue).
+:::note
+Remember, you can find the complete source code for this app [here](https://github.com/ionic-team/photo-gallery-capacitor-vue).
+:::
 
 ## Capacitor Setup
 
@@ -41,7 +43,9 @@ $ ionic cap sync
 
 ## iOS
 
-> To build an iOS app, you’ll need a Mac computer.
+:::note
+To build an iOS app, you’ll need a Mac computer.
+:::
 
 Capacitor iOS apps are configured and managed through Xcode (Apple’s iOS/Mac IDE), with dependencies managed by CocoaPods. Before running this app on an iOS device, there's a couple of steps to complete.
 

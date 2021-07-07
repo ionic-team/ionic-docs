@@ -197,7 +197,9 @@ The following example shows how to install the Navigation and Pagination plugins
 </script>
 ```
 
-> Importing `swiper-bundle.min.css` imports styles for all modules. When using the SCSS or Less styles, you will need to import the styles for each module. See <a href="https://swiperjs.com/vue#styles" target="_blank" rel="noopener noreferrer">https://swiperjs.com/vue#styles</a> for a full list of stylesheets.
+:::note
+Importing `swiper-bundle.min.css` imports styles for all modules. When using the SCSS or Less styles, you will need to import the styles for each module. See <a href="https://swiperjs.com/vue#styles" target="_blank" rel="noopener noreferrer">https://swiperjs.com/vue#styles</a> for a full list of stylesheets.
+:::
 
 ## Properties
 

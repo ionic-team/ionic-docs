@@ -10,7 +10,9 @@ Here’s the finished app running on all 3 platforms:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/0ASQ13Y1Rk4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-> Looking for the previous version of this guide that covered Ionic 4 and Cordova? [See here.](../developer-resources/guides/first-app-v4/intro.md)
+:::note
+Looking for the previous version of this guide that covered Ionic 4 and Cordova? [See here.](../developer-resources/guides/first-app-v4/intro.md)
+:::
 
 ## What We'll Build
 
@@ -35,15 +37,19 @@ Download and install these right away to ensure an optimal Ionic development exp
 ## Install Ionic Tooling
 Run the following in the command line terminal to install the Ionic CLI (`ionic`), `native-run`, used to run native binaries on devices and simulators/emulators, and `cordova-res`, used to generate native app icons and splash screens:
 
-> To open a terminal in Visual Studio Code, go to Terminal -> New Terminal.
+:::note
+To open a terminal in Visual Studio Code, go to Terminal -> New Terminal.
+:::
 
 ```shell
 $ npm install -g @ionic/cli native-run cordova-res
 ```
 
-> The `-g` option means _install globally_. When packages are installed globally, `EACCES` permission errors can occur.
->
-> Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](../developing/tips.md#resolving-permission-errors) for more information.
+:::note
+The `-g` option means _install globally_. When packages are installed globally, `EACCES` permission errors can occur.
+
+Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](../developing/tips.md#resolving-permission-errors) for more information.
+:::
 
 ## Create an App
 Next, create an Ionic Angular app that uses the “Tabs” starter template and adds Capacitor for native functionality:

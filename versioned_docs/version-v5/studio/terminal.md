@@ -5,7 +5,9 @@ Ionic Studio has an integrated terminal for running commands within an Ionic app
 
 ## Introduction
 
-> If you're new to the command line, you can check out [our blog post](https://ionicframework.com/blog/new-to-the-command-line/) on the basics.
+:::note
+If you're new to the command line, you can check out [our blog post](https://ionicframework.com/blog/new-to-the-command-line/) on the basics.
+:::
 
 The integrated terminal is a convenient way to perform a quick command line task without navigating folder structures or switching windows. The terminal defaults to the app directory.
 
@@ -26,7 +28,9 @@ To open the terminal, use <kbd>Ctrl</kbd>+<kbd>\`</kbd>, or click the plus sign 
 
 The integrated terminal uses your own configured shell. Configure this on macOS by setting the `SHELL` environment variable.
 
-> For Windows, `powershell.exe` is used, and this is not yet configurable.
+:::note
+For Windows, `powershell.exe` is used, and this is not yet configurable.
+:::
 
 <figure>
   <img alt="Using Git in Terminal" src="/img/studio/2/ss-terminal-git.png" />

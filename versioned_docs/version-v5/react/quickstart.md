@@ -110,7 +110,9 @@ const App: React.FC = () => (
 
 This React component sets up the initial routing for our app, as well as include some core Ionic components for animations and layout (IonRouterOutlet and IonApp). One thing that stands out is that in React, to do data-binding, the value is passed in curly braces (`{}`). So in the `Route` component, we can set the value of `component` to the `Home` component from earlier. This is how React will know that that value is not a string, but a reference to a component.
 
-> What's important to note here is that these are all standard React DOM libraries, meaning there's no custom integration layer or transpilation step.
+:::note
+What's important to note here is that these are all standard React DOM libraries, meaning there's no custom integration layer or transpilation step.
+:::
 
 ## A component with style
 
@@ -155,7 +157,9 @@ Much like the `App` component we started with, we have some imports for specific
 
 `IonPage` is the base component for all pages (a component with a route/URL), and includes some common building blocks of a full-screen component, like header, title, and content components.
 
-> When creating your own pages, don't forget to have `IonPage` be the root component for them. Having `IonPage` be the root component is important because it helps ensure transitions work properly as well as provides the base CSS the Ionic components rely on.
+:::note
+When creating your own pages, don't forget to have `IonPage` be the root component for them. Having `IonPage` be the root component is important because it helps ensure transitions work properly as well as provides the base CSS the Ionic components rely on.
+:::
 
 `IonHeader` is a bit self explanatory. It's a component that is meant to exist at the top of the page. `IonHeader` itself doesn't do much by itself, aside from handling some flexbox-based layout. It's meant to hold other components, like `IonToolbar` or `IonSearchbar`.
 
@@ -163,7 +167,9 @@ Much like the `App` component we started with, we have some imports for specific
 
 Our current content is relatively simple but does not contain anything that could be used in a real app, so let's change that.
 
-> Note: For brevity, we're excluding repeating part of our component, like the function declaration or import statements for other components.
+:::note
+For brevity, we're excluding repeating part of our component, like the function declaration or import statements for other components.
+:::
 
 ```typescript
 <IonPage>
@@ -316,7 +322,9 @@ const NewItem: React.FC = () => {
 export default NewItem;
 ```
 
-> Each view must contain an `IonPage` component. Page transitions will not work correctly without it. See the [IonPage Documentation](navigation.md#ionpage) for more information.
+:::note
+Each view must contain an `IonPage` component. Page transitions will not work correctly without it. See the [IonPage Documentation](navigation.md#ionpage) for more information.
+:::
 
 The content here is pretty straight forward and should look similar to the `Home` component. What is new is the `IonBackButton` component. This is used to navigate back to the previous route. Pretty straight forward? Ok, but what if we reload the page?
 

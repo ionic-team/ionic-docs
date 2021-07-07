@@ -54,4 +54,6 @@ For more information on how Angular manages change propagation with `ngFor` see 
 
 [Ionic Framework is Fast (But Your Code Might Not Be)](https://www.joshmorony.com/ionic-framework-is-fast-but-your-code-might-not-be/) - Josh Morony
 
-> Do you have a guide you'd like to share? Click the *Edit this page* button below.
+:::note
+Do you have a guide you'd like to share? Click the *Edit this page* button below.
+:::

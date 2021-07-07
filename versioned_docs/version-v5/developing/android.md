@@ -12,7 +12,9 @@ This guide covers how to run and debug Ionic apps on Android emulators and devic
 
 Android Studio is also used to [create Android virtual devices](android.md#creating-an-android-virtual-device), which are required for the Android emulator. Ionic apps can also be [launched to a device](android.md#set-up-an-android-device).
 
-> We don't recommend using Android Studio for _developing_ Ionic apps. Instead, it should only really be used to build and run your apps for the native Android platform and to manage the Android SDK and virtual devices.
+:::note
+We don't recommend using Android Studio for _developing_ Ionic apps. Instead, it should only really be used to build and run your apps for the native Android platform and to manage the Android SDK and virtual devices.
+:::
 
 ### Installing Android Studio
 
@@ -97,7 +99,9 @@ Additional setup is required for Cordova to support programmatic builds. This se
 
 Native Android apps are compiled with the <a href="https://java.com/en/" target="_blank">Java</a> programming language. Download JDK8 from the <a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank">download page</a>.
 
-> Unfortunately, Cordova is not compatible with the latest version of Java.
+:::note
+Unfortunately, Cordova is not compatible with the latest version of Java.
+:::
 
 ### Gradle
 
@@ -173,7 +177,9 @@ Once an app is running on an Android device or emulator, it can be debugged with
 
 Chrome has web developer tool support for Android simulators and devices. Go to `chrome://inspect` in Chrome while the simulator is running or a device is connected to the computer and **Inspect** the app that needs to be debugged.
 
-> Make sure your application is running on the device or simulator, or it will not show up in the list.
+:::note
+Make sure your application is running on the device or simulator, or it will not show up in the list.
+:::
 
 ![Android Chrome DevTools](/img/running/android-chrome-devtools.png)
 
@@ -181,7 +187,9 @@ Chrome has web developer tool support for Android simulators and devices. Go to 
 
 If running with Android Studio, native logs can be found in **Logcat**.
 
-> If the **Logcat** window is hidden, you can enable it in **View** &raquo; **Tool Windows** &raquo; **Logcat**.
+:::note
+If the **Logcat** window is hidden, you can enable it in **View** &raquo; **Tool Windows** &raquo; **Logcat**.
+:::
 
 ![Android Studio Logcat](/img/running/android-studio-logcat.png)
 

@@ -110,7 +110,9 @@ export class LoginComponent {
 
 Both options provide the same navigation mechanism, just fitting different use cases.
 
-> A note on navigation with relative URLs: Currently, to support multiple navigation stacks, relative URLs are something not supported
+:::note
+A note on navigation with relative URLs: Currently, to support multiple navigation stacks, relative URLs are something not supported
+:::
 
 ## Lazy loading routes
 
@@ -151,7 +153,9 @@ import { LoginComponent } from './login.component';
 })
 ```
 
-> We're excluding some additional content and only including the necessary parts.
+:::note
+We're excluding some additional content and only including the necessary parts.
+:::
 
 
 Here, we have a typical Angular Module setup, along with a RouterModule import, but we're now using `forChild` and declaring the component in that setup. With this setup, when we run our build, we will produce separate chunks for both the app component, the login component, and the detail component.

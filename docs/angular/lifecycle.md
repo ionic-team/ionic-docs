@@ -21,7 +21,9 @@ Ionic embraces the life cycle events provided by Angular. The two Angular events
 
 For more info on the Angular Component Life Cycle events, visit their [component lifecycle docs](https://angular.io/guide/lifecycle-hooks).
 
-> Components that use `ion-nav` or `ion-router-outlet` should not use the `OnPush` change detection strategy. Doing so will prevent lifecycle hooks such as `ngOnInit` from firing. Additionally, asynchronous state changes may not render properly.
+:::note
+Components that use `ion-nav` or `ion-router-outlet` should not use the `OnPush` change detection strategy. Doing so will prevent lifecycle hooks such as `ngOnInit` from firing. Additionally, asynchronous state changes may not render properly.
+:::
 
 ## Ionic Page Events
 

@@ -59,7 +59,9 @@ To learn more about the security recommendations for binding to directives such 
 
 For developers who wish to add complex HTML to components such as `ion-toast`, they will need to eject from the sanitizer that is built into Ionic Framework. Developers can either disable the sanitizer across their entire app or bypass it on a case-by-case basis.
 
-> Bypassing sanitization functionality can make your application vulnerable to <a href="https://en.wikipedia.org/wiki/Cross-site_scripting" target="_blank" rel="noreferrer">XSS attacks</a>. Please exercise extreme caution when disabling the sanitizer.
+:::note
+Bypassing sanitization functionality can make your application vulnerable to <a href="https://en.wikipedia.org/wiki/Cross-site_scripting" target="_blank" rel="noreferrer">XSS attacks</a>. Please exercise extreme caution when disabling the sanitizer.
+:::
 
 ### Disabling the sanitizer via config
 

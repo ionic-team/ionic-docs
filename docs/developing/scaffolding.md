@@ -50,7 +50,9 @@ $ ionic generate
 
 After a selection is made, the Ionic CLI will prompt for a name. The name can be a path, allowing easy generation of features within an organized project structure.
 
-> Any level of nesting is allowed, such as `portfolio/intro`. You can easily scope components to pages by using `ionic g component "portfolio/intro/About Me"`, for example.
+:::note
+Any level of nesting is allowed, such as `portfolio/intro`. You can easily scope components to pages by using `ionic g component "portfolio/intro/About Me"`, for example.
+:::
 
 ```shell-session
 $ ionic generate

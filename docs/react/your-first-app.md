@@ -36,15 +36,19 @@ Download and install these right away to ensure an optimal Ionic development exp
 ## Install Ionic Tooling
 Run the following in the command line terminal to install the Ionic CLI (`ionic`), `native-run`, used to run native binaries on devices and simulators/emulators, and `cordova-res`, used to generate native app icons and splash screens:
 
-> To open a terminal in Visual Studio Code, go to Terminal -> New Terminal.
+:::note
+To open a terminal in Visual Studio Code, go to Terminal -> New Terminal.
+:::
 
 ```shell
 $ npm install -g @ionic/cli native-run cordova-res
 ```
 
-> The `-g` option means _install globally_. When packages are installed globally, `EACCES` permission errors can occur.
->
-> Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](../developing/tips.md#resolving-permission-errors) for more information.
+:::note
+The `-g` option means _install globally_. When packages are installed globally, `EACCES` permission errors can occur.
+
+Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](../developing/tips.md#resolving-permission-errors) for more information.
+:::
 
 
 ## Create an App
@@ -165,6 +169,8 @@ Within the tab bar (`<IonTabBar>`), change the label to “Photos” and the ico
 </IonTabButton>
 ```
 
-> In Ionic React, icons are imported individually from `ionicons/icons` and set to the icon prop.
+:::note
+In Ionic React, icons are imported individually from `ionicons/icons` and set to the icon prop.
+:::
 
 That’s just the start of all the cool things we can do with Ionic. Up next, implement camera taking functionality on the web, then build it for iOS and Android.

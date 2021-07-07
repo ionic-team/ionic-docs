@@ -34,8 +34,10 @@ $ npm install -g @ionic/cli
 
 ```
 
-> The `-g` option means _install globally_. When packages are installed globally, `EACCES` permission errors can occur.
-> Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](../developing/tips.md#resolving-permission-errors) for more information.
+:::note
+The `-g` option means _install globally_. When packages are installed globally, `EACCES` permission errors can occur.
+Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](../developing/tips.md#resolving-permission-errors) for more information.
+:::
 
 ## Start an App
 

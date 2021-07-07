@@ -26,9 +26,11 @@ $ ionic <command> --help
 $ ionic <command> <subcommand> --help
 ```
 
-> Be sure to run `ionic <command> --help` in your project directory.
->
-> For some commands, such as `ionic serve`, the help documentation is contextual to the type of your project, e.g. React vs Angular.
+:::note
+Be sure to run `ionic <command> --help` in your project directory.
+
+For some commands, such as `ionic serve`, the help documentation is contextual to the type of your project, e.g. React vs Angular.
+:::
 
 <!-- TODO: image? -->
 

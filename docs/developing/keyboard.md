@@ -89,7 +89,9 @@ For a list of accepted values, see the <a href="https://developer.mozilla.org/en
 
 <Codepen user="ionic" slug="abvJVVv" height="400" />
 
-> The `inputmode` attribute is supported on devices running Chrome 66+ and iOS Safari 12.2+: https://caniuse.com/#search=inputmode
+:::note
+The `inputmode` attribute is supported on devices running Chrome 66+ and iOS Safari 12.2+: https://caniuse.com/#search=inputmode
+:::
 
 ## enterkeyhint
 
@@ -152,7 +154,9 @@ For a list of accepted values, see the <a href="https://html.spec.whatwg.org/dev
 
 <Codepen user="ionic" slug="GRpWyRB" height="350" />
 
-> The `enterkeyhint` attribute is supported on devices running Chrome 77+ and iOS Safari 13.4+.
+:::note
+The `enterkeyhint` attribute is supported on devices running Chrome 77+ and iOS Safari 13.4+.
+:::
 
 ## Dark Mode
 
@@ -252,4 +256,6 @@ watch(keyboardHeight, () => {
 </Tabs>
 ````
 
-> For apps running in a mobile web browser or as a PWA, Keyboard Lifecycle Events are only supported on Chrome 62+ and iOS Safari 13.0+.
+:::note
+For apps running in a mobile web browser or as a PWA, Keyboard Lifecycle Events are only supported on Chrome 62+ and iOS Safari 13.0+.
+:::

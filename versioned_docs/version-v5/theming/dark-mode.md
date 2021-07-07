@@ -77,7 +77,9 @@ function toggleDarkTheme(shouldAdd) {
 }
 ```
 
-> Tip: make sure to view the Codepen below in a [supported browser](https://caniuse.com/#feat=prefers-color-scheme) and then try changing the system preferences on your device between light & dark mode. Here's [how to enable dark mode on Windows 10](https://blogs.windows.com/windowsexperience/2016/08/08/windows-10-tip-personalize-your-pc-by-enabling-the-dark-theme/) and [how to enable it on a Mac](https://support.apple.com/en-us/HT208976).
+:::note
+Tip: make sure to view the Codepen below in a [supported browser](https://caniuse.com/#feat=prefers-color-scheme) and then try changing the system preferences on your device between light & dark mode. Here's [how to enable dark mode on Windows 10](https://blogs.windows.com/windowsexperience/2016/08/08/windows-10-tip-personalize-your-pc-by-enabling-the-dark-theme/) and [how to enable it on a Mac](https://support.apple.com/en-us/HT208976).
+:::
 
 <!-- Codepen https://codepen.io/ionic/pen/jONzJpG -->
 <Codepen preview="false" user="ionic" slug="jONzJpG" height="550px" default-tab="js,result" />
@@ -136,7 +138,9 @@ color-scheme: light dark;
 
 For more information regarding `color-scheme` please see https://web.dev/color-scheme/.
 
-> `color-scheme` does not apply to the keyboard. For details on how dark mode works with the keyboard, see [Keyboard Documentation](../developing/keyboard.md#dark-mode).
+:::note
+`color-scheme` does not apply to the keyboard. For details on how dark mode works with the keyboard, see [Keyboard Documentation](../developing/keyboard.md#dark-mode).
+:::
 
 ## Ionic Dark Theme
 
@@ -148,7 +152,9 @@ Ionic has a recommended theme for variables to use in order to get a dark mode b
 
 The following code can be copied and pasted into an app to get Ionic's dark theme. We add the `dark` class to the document body using JavaScript as mentioned in the [combining with JavaScript](#combining-with-javascript) section. The dark mode will not be enabled until the `dark` class is added to the document body.
 
-> For more information on the variables that are being changed, including other variables that can be added to further customize, see [Themes](themes.md).
+:::note
+For more information on the variables that are being changed, including other variables that can be added to further customize, see [Themes](themes.md).
+:::
 
 ```css
 /*

@@ -10,7 +10,9 @@ To setup the virtual scroller, first install `vue-virtual-scroll`:
 npm install vue-virtual-scroll@next
 ```
 
-> Be sure to use the `next` tag otherwise you will get a version of `vue-virtual-scroll` that is only compatible with Vue 2.
+:::note
+Be sure to use the `next` tag otherwise you will get a version of `vue-virtual-scroll` that is only compatible with Vue 2.
+:::
 From here, we need to import the virtual scroller's CSS into our app. In `main.ts`, add the following line:
 
 ```js
@@ -37,7 +39,9 @@ app.use(VueVirtualScroller);
 
 After doing this, all virtual scroll components will be available for use in our app.
 
-> Note: Installing all components may result in unused virtual scroll components being added to your application bundle. See the [Installing Specific Components](#installing-specific-components) section below for an approach that works better with treeshaking.
+:::note
+Installing all components may result in unused virtual scroll components being added to your application bundle. See the [Installing Specific Components](#installing-specific-components) section below for an approach that works better with treeshaking.
+:::
 ### Installing Specific Components
 
 To install specific virtual scroll components for use in your app, import the component you want to use in `main.ts`. In this example, we will be using the `RecycleScroller` component:

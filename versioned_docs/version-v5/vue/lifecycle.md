@@ -82,7 +82,9 @@ export default defineComponent({
 })
 ```
 
-> Pages in your app need to be using the `IonPage` component in order for lifecycle methods and hooks to fire properly.
+:::note
+Pages in your app need to be using the `IonPage` component in order for lifecycle methods and hooks to fire properly.
+:::
 
 
 ## How Ionic Framework Handles the Life of a Page

@@ -219,7 +219,9 @@ A programmatic option for navigation is using the [`history`](https://reacttrain
 </IonButton>
 ```
 
-> Note: `history` is a prop.
+:::note
+`history` is a prop.
+:::
 
 ## URL Parameters
 

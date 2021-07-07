@@ -88,7 +88,9 @@ useBackButton(priority: number, handler: Handler): UseBackButtonResult;
 
 See the [Hardware Back Button Documentation](../developing/hardware-back-button) for more information and usage examples.
 
-> Note: The `useBackButton` callback will only fire when your app is running in Capacitor or Cordova. See [Hardware Back Button in Capacitor and Cordova](../developing/hardware-back-button#hardware-back-button-in-capacitor-and-cordova) for more information.
+:::note
+The `useBackButton` callback will only fire when your app is running in Capacitor or Cordova. See [Hardware Back Button in Capacitor and Cordova](../developing/hardware-back-button#hardware-back-button-in-capacitor-and-cordova) for more information.
+:::
 
 ## Keyboard
 
@@ -156,7 +158,9 @@ export default defineComponent({
 });
 ```
 
-> Pages in your app need to be using the `IonPage` component in order for lifecycle methods and hooks to fire properly.
+:::note
+Pages in your app need to be using the `IonPage` component in order for lifecycle methods and hooks to fire properly.
+:::
 
 See the [Vue Lifecycle Documentation](./lifecycle) for more information and usage examples.
 

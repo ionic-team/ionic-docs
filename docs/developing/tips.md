@@ -4,7 +4,9 @@
 
 `EACCES` permission errors can occur when packages are installed globally. If this is the case, npm may need to be set up to operate without elevated permissions.
 
-> Using `sudo` with npm is **not recommended** because it can lead to further complications.
+:::note
+Using `sudo` with npm is **not recommended** because it can lead to further complications.
+:::
 
 This guide offers two options for resolving permission issues. See the [npm docs](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally) for full documentation and additional options.
 
@@ -103,7 +105,9 @@ When an app runs, it will pause at this function. From there, the developer tool
 
 By default, when an app is viewed in the browser, Ionic will apply the `md` mode. However, since Ionic components adapt according to their platform, it is helpful to be able to view what the app will look like on iOS. To do this, add `?ionic:mode=ios` to the URL where the app is being served. For example, if the app is served on port `8100`, the url would be: `http://localhost:8100/?ionic:mode=ios`.
 
-> This will not change which platform the browser sees being used. The platform is determined by device detection and inspecting the user-agent. To change the platform, the user-agent must be changed. To do this, open up Chrome DevTools with <kbd>Ctrl+Shift+I</kbd>(<kbd>Cmd+Option+I</kbd> on Mac), and then toggle device mode on with <kbd>Ctrl+Shift+M</kbd>(<kbd>Cmd+Option+M</kbd> on Mac).
+:::note
+This will not change which platform the browser sees being used. The platform is determined by device detection and inspecting the user-agent. To change the platform, the user-agent must be changed. To do this, open up Chrome DevTools with <kbd>Ctrl+Shift+I</kbd>(<kbd>Cmd+Option+I</kbd> on Mac), and then toggle device mode on with <kbd>Ctrl+Shift+M</kbd>(<kbd>Cmd+Option+M</kbd> on Mac).
+:::
 
 ![app with a different mode](/img/faq/tips/change-device-platform.png)
 

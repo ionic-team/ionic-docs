@@ -20,7 +20,9 @@ It's recommended to use [jsdelivr](https://www.jsdelivr.com/) to access the Fram
 
 With this it's possible to use all of the Ionic Framework core components without having to install a framework. The CSS bundle will include all of the Ionic [Global Stylesheets](../layout/global-stylesheets).
 
-> This does not install Angular or any other frameworks. This allows use of the Ionic Framework core components without a framework.
+:::note
+This does not install Angular or any other frameworks. This allows use of the Ionic Framework core components without a framework.
+:::
 
 
 ## Ionic + Angular
@@ -156,4 +158,6 @@ Ionicons is packaged by default with the Ionic Framework, so no installation is 
 <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.js"></script>
 ```
 
-> See [Ionicons usage](https://ionic.io/ionicons/usage) for more information on using Ionicons.
+:::note
+See [Ionicons usage](https://ionic.io/ionicons/usage) for more information on using Ionicons.
+:::

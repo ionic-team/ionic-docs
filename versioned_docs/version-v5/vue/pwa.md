@@ -14,7 +14,9 @@ For existing projects, you can run the `vue add` command to install the PWA plug
 vue add pwa
 ```
 
-> If you have changes already in place, be sure to commit them in Git.
+:::note
+If you have changes already in place, be sure to commit them in Git.
+:::
 
 Once this is completed, Vue's CLI will have created a new `registerServiceWorker.ts` file and imported it into our `main.ts`.
 
@@ -137,7 +139,9 @@ With the Firebase CLI installed, run `firebase init` within your Ionic project. 
 
 **"What do you want to use as your public directory?"** Enter "dist".
 
-> Note: Answering these next two questions will ensure that routing, hard reload, and deep linking work in the app:
+:::note
+Answering these next two questions will ensure that routing, hard reload, and deep linking work in the app:
+:::
 
 **Configure as a single-page app (rewrite all urls to /index.html)?"** Enter "Yes".
 

@@ -8,7 +8,9 @@ Now for the fun part - adding the ability to take photos with the device’s cam
 
 To do so, we will create a standalone composition function paired with Vue's Composition API to manage the photos for the gallery.
 
-> If you are not familiar with Vue's Composition API, [Why Composition API?](https://v3.vuejs.org/guide/composition-api-introduction.html#why-composition-api) from the official Vue docs is a good resource to start with.
+:::note
+If you are not familiar with Vue's Composition API, [Why Composition API?](https://v3.vuejs.org/guide/composition-api-introduction.html#why-composition-api) from the official Vue docs is a good resource to start with.
+:::
 
 Create a new file at `src/composables/usePhotoGallery.ts` and open it up.
 

@@ -6,7 +6,9 @@ CSS Shadow Parts allow developers to style CSS properties on an element inside o
 
 Ionic Framework is a distributed set of <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components" target="_blank" rel="noopener noreferrer">Web Components</a>. Web Components follow the <a href="https://w3c.github.io/webcomponents/spec/shadow/" target="_blank" rel="noopener noreferrer">Shadow DOM specification</a> in order to encapsulate styles and markup.
 
-> Ionic Framework components are **not all** Shadow DOM components. If the component is a Shadow DOM component, there will be a badge in the top right of its [component documentation](../components.md). An example of a Shadow DOM component is the [button component](../api/button.md).
+:::note
+Ionic Framework components are **not all** Shadow DOM components. If the component is a Shadow DOM component, there will be a badge in the top right of its [component documentation](../components.md). An example of a Shadow DOM component is the [button component](../api/button.md).
+:::
 
 Shadow DOM is useful for preventing styles from leaking out of components and unintentionally applying to other elements. For example, we assign a `.button` class to our `ion-button` component. Without Shadow DOM encapsulation, if a user were to set the class `.button` on one of their own elements, it would inherit the Ionic Framework button styles. Since `ion-button` is a Shadow component, this is not a problem.
 
@@ -86,7 +88,9 @@ ion-item::part(native):hover {
 }
 ```
 
-> There are some known limitations with [vendor prefixed pseudo-elements](#vendor-prefixed-pseudo-elements) and [structural pseudo-classes](#structural-pseudo-classes).
+:::note
+There are some known limitations with [vendor prefixed pseudo-elements](#vendor-prefixed-pseudo-elements) and [structural pseudo-classes](#structural-pseudo-classes).
+:::
 
 
 ## Ionic Framework Parts
@@ -99,7 +103,9 @@ In order to have parts a component must meet the following criteria:
 - It contains children elements. For example, `ion-card-header` is a Shadow component, but all styles are applied to the host element. Since it has no child elements, there’s no need for parts.
 - The children elements are not structural. In certain components, including `ion-title`, the child element is a structural element used to position the inner elements. We do not recommend customizing structural elements as this can have unexpected results.
 
-> We welcome recommendations for additional parts. Please create a <a href="https://github.com/ionic-team/ionic-framework/issues/new?assignees=&labels=&template=feature_request.md&title=feat%3A+" target="_blank" rel="noopener noreferrer">new GitHub issue</a> with as much information as possible when requesting a part.
+:::note
+We welcome recommendations for additional parts. Please create a <a href="https://github.com/ionic-team/ionic-framework/issues/new?assignees=&labels=&template=feature_request.md&title=feat%3A+" target="_blank" rel="noopener noreferrer">new GitHub issue</a> with as much information as possible when requesting a part.
+:::
 
 ## Known Limitations
 

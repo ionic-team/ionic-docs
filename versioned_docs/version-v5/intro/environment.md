@@ -6,7 +6,9 @@ Of course, a code editor is also required. [Visual Studio Code](https://code.vis
 
 ## Terminal
 
-> Much of Ionic development requires familiarity with the command line. If you're new to the command line, see [this Blog Post](https://ionicframework.com/blog/new-to-the-command-line/) for a quick introduction.
+:::note
+Much of Ionic development requires familiarity with the command line. If you're new to the command line, see [this Blog Post](https://ionicframework.com/blog/new-to-the-command-line/) for a quick introduction.
+:::
 
 In general, we recommend using the built-in terminals. Many third-party terminals work well with Ionic, but may not be supported.
 
@@ -28,7 +30,9 @@ $ node --version
 $ npm --version
 ```
 
-> Permission errors are common on macOS when installing global packages with `npm`. If you get an `EACCES` error, see [Resolving Permission Errors](../developing/tips.md#resolving-permission-errors).
+:::note
+Permission errors are common on macOS when installing global packages with `npm`. If you get an `EACCES` error, see [Resolving Permission Errors](../developing/tips.md#resolving-permission-errors).
+:::
 
 ## Git
 

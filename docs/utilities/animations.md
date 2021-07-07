@@ -1521,7 +1521,9 @@ const animation = createAnimation('my-animation-identifier')
 | **iOS**              | 9+                 |
 | **Android**          | 5+                 |      
 
-> Due to a bug in Safari versions 9-11, stepping through animations via `progressStep` is not supported. This is supported on Safari 12+.
+:::note
+Due to a bug in Safari versions 9-11, stepping through animations via `progressStep` is not supported. This is supported on Safari 12+.
+:::
 
 ## Types
 
