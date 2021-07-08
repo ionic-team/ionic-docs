@@ -27,9 +27,6 @@ module.exports = {
       hideOnScroll: true,
       items: [
         {
-          type: 'docsVersionDropdown',
-        },
-        {
           type: 'doc',
           docId: 'index',
           label: 'Guide',
@@ -242,4 +239,7 @@ module.exports = {
       },
     ],
   ],
+  customFields: {
+    frameworks: ['react', 'angular', 'vue', 'javascript', 'stencil'],
+  },
 };

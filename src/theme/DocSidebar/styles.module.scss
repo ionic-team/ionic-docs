@@ -92,9 +92,31 @@
 .sidebarStart {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
   min-height: var(--ifm-navbar-height);
   max-height: var(--ifm-navbar-height);
+
+  :global(.navbar__item):global(.dropdown) {
+    padding: 0.438rem 0.5rem;
+
+    background: var(--c-indigo-10);
+    border-radius: 12px;
+
+    :global(.navbar__item) {
+      display: flex;
+      align-items: center;
+      padding: 0;
+
+      &::after {
+        opacity: 0.5;
+      }
+    }
+
+    :global(.dropdown__menu) {
+      right: 8px;
+    }
+  }
 }
 
 .collapseSidebarButton {

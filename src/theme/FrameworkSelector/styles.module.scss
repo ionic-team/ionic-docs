@@ -1,0 +1,71 @@
+:global(:root) {
+  --framework-selector-padding-x: 0.75rem;
+}
+
+.frameworkSelector {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.button {
+  position: relative;
+  z-index: 2;
+  flex-grow: 1;
+
+  cursor: pointer;
+
+  padding: 0.625rem 0.938rem 0.625rem var(--framework-selector-padding-x);
+
+  background: #fafbfc;
+  border: 1px solid var(--c-indigo-40);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+
+  text-align: start;
+  font-family: inherit;
+
+  font-weight: 500;
+  font-size: 0.813rem;
+  line-height: 16px;
+  letter-spacing: -0.01em;
+  color: var(--c-indigo-100);
+}
+
+.dropdown {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  top: 100%;
+
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.2s ease-out, visibility 0.2s step-end,
+    transform 0.2s ease-out;
+
+  background: #fff;
+
+  padding: 0.5rem var(--framework-selector-padding-x);
+
+  box-shadow: var(--shadow-2);
+  border-radius: 0 0 8px 8px;
+
+  list-style: none;
+}
+
+.dropdownOpen {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+
+  transition: opacity 0.2s ease-out, visibility 0.2s step-start,
+    transform 0.2s ease-out;
+}
+
+.dropdownItem {
+  cursor: pointer;
+}
