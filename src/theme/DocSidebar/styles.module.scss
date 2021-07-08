@@ -140,6 +140,10 @@
     opacity: 0;
   }
 
+  .menu:not(:global(.menu--show)) {
+    padding: 0;
+  }
+
   :global(.menu--show) {
     .frameworkSelector,
     .sidebarStart {
