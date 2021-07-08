@@ -5,9 +5,13 @@ import clsx from 'clsx';
 
 import styles from './styles.module.scss';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import useLocalStorage from '@theme/hooks/useLocalStorage';
 
 export default function FrameworkSelector(props) {
-  const [activeFramework, setActiveFramework] = useState('react');
+  const [activeFramework, setActiveFramework] = useLocalStorage(
+    'ionic-docs--framework',
+    'react',
+  );
   const [isOpen, setIsOpen] = useState(false);
   const { setTabGroupChoices } = useUserPreferencesContext();
   const {
