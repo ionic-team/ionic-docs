@@ -65,7 +65,6 @@
 }
 
 body {
-  font-family: var(--f-text);
   text-size-adjust: none;
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -75,20 +74,6 @@ body {
 html,
 body {
   height: 100%;
-}
-
-html[data-theme='dark'] .ds-paragraph,
-html[data-theme='dark'] .ds-heading {
-  color: #fff;
-}
-
-.markdown {
-  --ifm-h2-vertical-rhythm-top: 2;
-  --ifm-h3-vertical-rhythm-top: 2;
-
-  .ds-paragraph {
-    color: var(--c-indigo-80);
-  }
 }
 
 ion-grid {
@@ -297,18 +282,41 @@ html[data-theme='dark'] .navbar-twitter:before {
   margin: 0 0 1rem 1rem;
 }
 
+html[data-theme='dark'] {
+  .markdown {
+    p,
+    li {
+      color: #fff;
+    }
+
+    header + p {
+      color: #fff;
+      font-size: 1.25rem;
+
+      + p {
+        color: #fff;
+        font-size: 1.25rem;
+      }
+    }
+  }
+}
+
 .markdown {
   p,
   li {
     font-size: 1rem;
-    line-height: var(--line-height-prose);
+    line-height: 200%;
     letter-spacing: var(--letter-spacing-tight);
+    color: var(--c-carbon-90);
   }
 
+  //intro paragraphs
   header + p {
+    color: var(--c-indigo-80);
     font-size: 1.25rem;
 
     + p {
+      color: var(--c-indigo-80);
       font-size: 1.25rem;
     }
   }

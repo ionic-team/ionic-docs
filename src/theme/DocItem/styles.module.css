@@ -20,8 +20,21 @@
   justify-content: space-between;
 }
 
+.docItemMain {
+  flex-grow: 1;
+  padding-block-start: 5rem;
+}
+
+@media (max-width: 1215px) {
+  .docDemoWrapper {
+    display: none;
+  }
+}
+
 .docItemContainer {
   max-width: 39rem;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
 }
 
 @media only screen and (min-width: 997px) {

@@ -3,18 +3,18 @@
 }
 
 :global(html[data-theme='dark']) {
-  --framework-selector-c-background: var(--c-indigo-90);
+  --framework-selector-c-btn-bg: var(--ifm-menu-color-background-active);
+  --framework-selector-c-dropdown-bg: var(--ifm-menu-color-background-active);
   --framework-selector-c-text: #fff;
-  --framework-selector-c-border: var(--c-indigo-60);
-  --framework-selector-c-border--hover: var(--c-indigo-50);
-  --framework-selector-c-border--open: var(--c-indigo-40);
+  --framework-selector-c-border: var(--ifm-menu-color-background-active);
+  --framework-selector-c-border--hover: var(--c-indigo-60);
 }
 :global(html[data-theme='light']) {
-  --framework-selector-c-background: #fafbfc;
+  --framework-selector-c-btn-bg: #fafbfc;
+  --framework-selector-c-dropdown-bg: #fff;
   --framework-selector-c-text: var(--c-indigo-100);
   --framework-selector-c-border: var(--c-indigo-60);
   --framework-selector-c-border--hover: var(--c-indigo-70);
-  --framework-selector-c-border--open: var(--c-indigo-40);
 }
 
 .frameworkSelector {
@@ -24,6 +24,8 @@
 }
 
 .button {
+  display: flex;
+  align-items: center;
   position: relative;
   z-index: 2;
   flex-grow: 1;
@@ -32,7 +34,7 @@
 
   padding: 0.625rem 0.938rem 0.625rem var(--framework-selector-padding-x);
 
-  background: var(--framework-selector-c-background);
+  background: var(--framework-selector-c-btn-bg);
   border: 1px solid var(--framework-selector-c-border);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.06);
   border-radius: 8px;
@@ -48,6 +50,10 @@
 
   transition: border-color 0.15s ease-out;
 
+  svg {
+    margin-inline-end: 0.5rem;
+  }
+
   &:hover,
   &:focus {
     border: 1px solid var(--framework-selector-c-border--hover);
@@ -59,20 +65,21 @@
   z-index: 1;
   left: 1px;
   right: 1px;
-  top: 100%;
+  top: calc(100% + 3px);
 
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
   transform: translateY(-10px);
-  transition: opacity 0.2s ease-out, visibility 0.2s step-end,
-    transform 0.2s ease-out;
+  transition: opacity 0.15s ease-out, visibility 0.15s step-end,
+    transform 0.15s ease-out;
 
-  background: var(--framework-selector-c-background);
+  background: var(--framework-selector-c-dropdown-bg);
+  border: 1px solid var(--c-indigo-40);
 
-  padding: 0.75rem var(--framework-selector-padding-x);
+  padding: 1rem var(--framework-selector-padding-x);
 
-  box-shadow: var(--shadow-4);
+  box-shadow: var(--shadow-3);
   border-radius: 8px;
 
   list-style: none;
@@ -81,23 +88,44 @@
 .dropdownItem {
   display: flex;
 
-  font-weight: 500;
-  font-size: 0.813rem;
-  line-height: 16px;
-  letter-spacing: -0.01em;
-
   transition: opacity 0.2s ease-out;
 
+  &Active {
+    :global(.start) {
+      opacity: 0.5;
+    }
+  }
+
   button {
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     flex-grow: 1;
     text-align: start;
 
-    display: block;
     background: inherit;
     border: none;
     cursor: pointer;
 
     color: var(--framework-selector-c-text);
+
+    font-weight: 500;
+    font-size: 0.813rem;
+    line-height: 1rem;
+    letter-spacing: -0.01em;
+
+    padding: 0;
+
+    :global(.start) {
+      display: flex;
+      align-items: center;
+
+      svg {
+        margin-inline-end: 0.5rem;
+        margin-block-start: -1px;
+      }
+    }
   }
 
   &:hover,
@@ -106,21 +134,18 @@
   }
 
   + .dropdownItem {
-    margin-block-start: 0.75rem;
+    margin-block-start: 1.25rem;
   }
 }
 
 .frameworkSelectorOpen {
-  .button {
-    border: 1px solid var(--ifm-menu-color-active);
-  }
   .dropdown {
     visibility: visible;
     opacity: 1;
     pointer-events: all;
     transform: translateY(0);
 
-    transition: opacity 0.2s ease-out, visibility 0.2s step-start,
-      transform 0.2s ease-out;
+    transition: opacity 0.15s ease-out, visibility 0.15s step-start,
+      transform 0.15s ease-out;
   }
 }

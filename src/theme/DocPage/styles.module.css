@@ -5,11 +5,6 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-:root {
-  --doc-sidebar-width: 300px;
-  --doc-sidebar-hidden-width: 30px;
-}
-
 :global(.docs-wrapper) {
   display: flex;
 }
@@ -20,8 +15,9 @@
 
 .docPage,
 .docMainContainer {
+  flex-grow: 1;
   display: flex;
-  width: 100%;
+  max-width: 100%;
 }
 
 .docMainContainer {
@@ -32,7 +28,7 @@
 @media (min-width: 997px) {
   .docMainContainer {
     flex-grow: 1;
-    max-width: calc(100% - var(--doc-sidebar-width));
+    /* max-width: calc(100% - var(--doc-sidebar-width)); */
   }
 
   .docMainContainerEnhanced {

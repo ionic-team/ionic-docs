@@ -241,6 +241,6 @@ module.exports = {
     ],
   ],
   customFields: {
-    frameworks: ['react', 'angular', 'vue', 'javascript', 'stencil'],
+    frameworks: ['react', 'angular', 'vue', 'javascript'],
   },
 };

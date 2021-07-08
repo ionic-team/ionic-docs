@@ -336,18 +336,6 @@ function DocSidebar({
         [styles.sidebarHidden]: isHidden,
       })}
     >
-      {hideOnScroll && (
-        <div className={styles.sidebarStart}>
-          <Link to={useBaseUrl('/')}>
-            <Logo tabIndex={-1} className={styles.sidebarLogo} />
-          </Link>
-          <VersionSwitcher
-            dropdownItemsBefore={[]}
-            dropdownItemsAfter={[]}
-            className="ahahaha"
-          />
-        </div>
-      )}
       <nav
         className={clsx(
           'menu',
@@ -366,19 +354,29 @@ function DocSidebar({
           description: 'The ARIA label for documentation menu',
         })}
       >
+        {hideOnScroll && (
+          <div className={clsx(styles.sidebarStart, 'doc-sidebar__start')}>
+            <Link to={useBaseUrl('/')}>
+              <Logo tabIndex={-1} className={styles.sidebarLogo} />
+            </Link>
+            <VersionSwitcher dropdownItemsBefore={[]} dropdownItemsAfter={[]} />
+          </div>
+        )}
         <ResponsiveSidebarButton
           responsiveSidebarOpened={showResponsiveSidebar}
           onClick={toggleResponsiveSidebar}
         />
-        <FrameworkSelector />
-        <ul className="menu__list">
-          <DocSidebarItems
-            items={sidebar}
-            onItemClick={closeResponsiveSidebar}
-            collapsible={sidebarCollapsible}
-            activePath={path}
-          />
-        </ul>
+        <div className={clsx(styles.sidebarEnd, 'doc-sidebar__end')}>
+          <FrameworkSelector className={styles.frameworkSelector} />
+          <ul className="menu__list">
+            <DocSidebarItems
+              items={sidebar}
+              onItemClick={closeResponsiveSidebar}
+              collapsible={sidebarCollapsible}
+              activePath={path}
+            />
+          </ul>
+        </div>
       </nav>
       {hideableSidebar && <HideableSidebarButton onClick={onCollapse} />}
     </div>

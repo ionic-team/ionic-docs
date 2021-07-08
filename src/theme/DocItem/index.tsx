@@ -71,19 +71,13 @@ function DocItem(props) {
           <DocVersionBanner versionMetadata={versionMetadata} />
           <div className={styles.docItemContainer}>
             <article>
-              {showVersionBadge && (
+              {/* {showVersionBadge && (
                 <div>
                   <span className="badge badge--secondary">
                     Version: {versionMetadata.label}
                   </span>
                 </div>
-              )}
-
-              {!hideTableOfContents && DocContent.toc && demoUrl && (
-                <div className={clsx('docDemoWrapper', styles.docDemoWrapper)}>
-                  <DocDemo url={demoUrl} source={demoSourceUrl} />
-                </div>
-              )}
+              )} */}
 
               <div className="markdown">
                 {/*

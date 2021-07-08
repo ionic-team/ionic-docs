@@ -238,7 +238,12 @@ module.exports = {
   ],
 
   api: [
-    'components',
+    {
+      type: 'category',
+      label: 'Getting Started',
+      collapsed: false,
+      items: ['components'],
+    },
     {
       type: 'category',
       label: 'Action Sheet',
@@ -541,7 +546,8 @@ module.exports = {
         {
           type: 'link',
           label: 'Changelog',
-          href: 'https://github.com/ionic-team/ionic-cli/blob/develop/packages/@ionic/cli/CHANGELOG.md',
+          href:
+            'https://github.com/ionic-team/ionic-cli/blob/develop/packages/@ionic/cli/CHANGELOG.md',
         },
       ],
     },
