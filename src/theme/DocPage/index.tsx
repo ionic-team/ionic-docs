@@ -21,6 +21,7 @@ import type { Props } from '@theme/DocPage';
 import IconArrow from '@theme/IconArrow';
 import { matchPath } from '@docusaurus/router';
 import { translate } from '@docusaurus/Translate';
+import TOC from '@theme/TOC';
 
 import clsx from 'clsx';
 import styles from './styles.module.css';
@@ -153,13 +154,9 @@ function DocPageContent({
             })}
           >
             <div
-              className={clsx(
-                'container padding-top--md padding-bottom--lg',
-                styles.docItemWrapper,
-                {
-                  [styles.docItemWrapperEnhanced]: hiddenSidebarContainer,
-                },
-              )}
+              className={clsx('container padding-top--md padding-bottom--lg', {
+                [styles.docItemWrapperEnhanced]: hiddenSidebarContainer,
+              })}
             >
               <MDXProvider components={MDXComponents}>{children}</MDXProvider>
             </div>

@@ -34,7 +34,12 @@ export default function FrameworkSelector(props) {
       {...props}
       className={clsx('framework-selector', styles.frameworkSelector, {
         [props.className]: Boolean(props.className),
+        'framework-selector--open': isOpen,
+        [styles.frameworkSelectorOpen]: isOpen,
       })}
+      onBlur={({ currentTarget, relatedTarget }) => {
+        !currentTarget.contains(relatedTarget) && setIsOpen(false);
+      }}
     >
       <button
         className={clsx('framework-selector__button', styles.button)}
@@ -45,10 +50,7 @@ export default function FrameworkSelector(props) {
         {capitalizeFirstLetter(activeFramework)}
       </button>
       <ul
-        className={clsx('framework-selector__dropdown', styles.dropdown, {
-          'framework-selector__dropdown--open': isOpen,
-          [styles.dropdownOpen]: isOpen,
-        })}
+        className={clsx('framework-selector__dropdown', styles.dropdown)}
         aria-labelledby="frameworkSelector"
       >
         {frameworks
@@ -59,11 +61,14 @@ export default function FrameworkSelector(props) {
                 'framework-selector__dropdown-item',
                 styles.dropdownItem,
               )}
-              onClick={() => {
-                setActiveFramework(framework.toLowerCase());
-              }}
             >
-              {capitalizeFirstLetter(framework)}
+              <button
+                onClick={() => {
+                  setActiveFramework(framework.toLowerCase());
+                }}
+              >
+                {capitalizeFirstLetter(framework)}
+              </button>
             </li>
           ))}
       </ul>
