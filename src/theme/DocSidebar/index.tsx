@@ -25,8 +25,10 @@ import IconArrow from '@theme/IconArrow';
 import IconMenu from '@theme/IconMenu';
 import IconExternalLink from '@theme/IconExternalLink';
 import { translate } from '@docusaurus/Translate';
+import VersionSwitcher from '@theme/NavbarItem/DocsVersionDropdownNavbarItem';
+import FrameworkSelector from '../FrameworkSelector';
 
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 const MOBILE_TOGGLE_SIZE = 24;
 
@@ -339,6 +341,11 @@ function DocSidebar({
           <Link to={useBaseUrl('/')}>
             <Logo tabIndex={-1} className={styles.sidebarLogo} />
           </Link>
+          <VersionSwitcher
+            dropdownItemsBefore={[]}
+            dropdownItemsAfter={[]}
+            className="ahahaha"
+          />
         </div>
       )}
       <nav
@@ -363,7 +370,7 @@ function DocSidebar({
           responsiveSidebarOpened={showResponsiveSidebar}
           onClick={toggleResponsiveSidebar}
         />
-
+        <FrameworkSelector />
         <ul className="menu__list">
           <DocSidebarItems
             items={sidebar}
