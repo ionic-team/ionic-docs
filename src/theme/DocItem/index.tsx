@@ -14,14 +14,14 @@ import TOC from '@theme/TOC';
 import EditThisPage from '@theme/EditThisPage';
 import { MainHeading } from '@theme/Heading';
 import clsx from 'clsx';
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 import { useActivePlugin, useVersions } from '@theme/hooks/useDocs';
 
 function DocItem(props) {
   const { content: DocContent, versionMetadata } = props;
   const { metadata, frontMatter } = DocContent;
   const {
-    toc_position,
+    container_width: containerWidth,
     image,
     keywords,
     hide_title: hideTitle,
@@ -69,7 +69,10 @@ function DocItem(props) {
       <div className={clsx(pageCSSClass, styles.docItemWrapper)}>
         <div className={styles.docItemMain}>
           <DocVersionBanner versionMetadata={versionMetadata} />
-          <div className={styles.docItemContainer}>
+          <div
+            className={styles.docItemContainer}
+            style={{ maxWidth: containerWidth || '39rem' }}
+          >
             <article>
               {/* {showVersionBadge && (
                 <div>
@@ -86,14 +89,6 @@ function DocItem(props) {
                    See https://github.com/facebook/docusaurus/pull/4882#issuecomment-853021120
                    */}
                 {shouldAddTitle && <MainHeading>{title}</MainHeading>}
-                {!hideTableOfContents && DocContent.toc && toc_position === 2 && (
-                  <TOC
-                    toc={DocContent.toc.map(({ value, id }) => {
-                      return { value, id, children: [] };
-                    })}
-                    position={2}
-                  />
-                )}
                 <DocContent />
               </div>
             </article>
@@ -129,10 +124,8 @@ function DocItem(props) {
           </div>
         </div>
 
-        {!hideTableOfContents &&
-        DocContent.toc &&
-        (!toc_position || toc_position === 1) ? (
-          <TOC toc={DocContent.toc} position={1} />
+        {!hideTableOfContents && DocContent.toc ? (
+          <TOC toc={DocContent.toc} />
         ) : (
           demoUrl && (
             <div

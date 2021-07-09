@@ -41,7 +41,7 @@ ${Object.entries(frontmatter)
   .map(
     ([key, value]) =>
       `${key}: ${
-        typeof value === 'number' ? value : `"${value.replace('"', '\\"')}"`
+        typeof value === 'string' ? `"${value.replace('"', '\\"')}"` : value
       }`,
   )
   .join('\n')}

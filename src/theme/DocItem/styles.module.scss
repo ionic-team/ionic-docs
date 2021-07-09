@@ -5,6 +5,10 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+:global(:root) {
+  --doc-item-main-spacing-y: 5rem;
+}
+
 .docItemContainer header + * {
   margin-top: 0;
 }
@@ -17,12 +21,24 @@
 
 .docItemWrapper {
   display: flex;
-  justify-content: space-between;
+}
+@media (max-width: 996px) {
+  .docItemWrapper {
+    grid-template-columns: 1fr;
+  }
 }
 
 .docItemMain {
   flex-grow: 1;
-  padding-block-start: 5rem;
+  padding-block-start: var(--doc-item-main-spacing-y);
+  overflow-x: hidden;
+}
+
+.docDemoWrapper {
+  > div {
+    position: sticky;
+    top: calc(var(--ifm-navbar-height) + 1rem);
+  }
 }
 
 @media (max-width: 1215px) {
@@ -32,7 +48,6 @@
 }
 
 .docItemContainer {
-  max-width: 39rem;
   margin-inline-start: auto;
   margin-inline-end: auto;
 }

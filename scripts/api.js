@@ -46,7 +46,7 @@ function renderFrontmatter({ tag }) {
   const frontmatter = {
     ...apiOverrides[tag],
     sidebar_label: tag,
-    toc_position: 2,
+    hide_table_of_contents: true,
   };
 
   const demoPath = `api/${tag.slice(4)}/index.html`;
@@ -60,19 +60,32 @@ ${Object.entries(frontmatter)
   .map(
     ([key, value]) =>
       `${key}: ${
-        typeof value === 'number' ? value : `"${value.replace('"', '\\"')}"`
+        typeof value === 'string' ? `"${value.replace('"', '\\"')}"` : value
       }`,
   )
   .join('\n')}
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
+import TOCInline from '@theme/TOCInline';
 `;
 }
 
 function renderReadme({ readme }) {
-  return readme;
+  const endIndex = readme.indexOf('\n');
+
+  const title = readme.substring(0, endIndex);
+  const rest = readme.substring(endIndex);
+
+  return `
+${title}
+<TOCInline
+  toc={toc.map(({ value, id }) => {
+    return { value, id, children: [] };
+  })}
+/>
+${rest}
+  `;
 }
 
 function renderUsage({ usage }) {

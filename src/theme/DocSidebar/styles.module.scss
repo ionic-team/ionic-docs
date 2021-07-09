@@ -13,6 +13,13 @@
   --doc-sidebar-spacing-x: 1.25rem;
 }
 
+:global(html[data-theme='light']) {
+  --doc-sidebar-version-c-bg: var(--c-indigo-10);
+}
+:global(html[data-theme='dark']) {
+  --doc-sidebar-version-c-bg: var(--ifm-menu-color-background-active);
+}
+
 .sidebar {
   padding: 0;
 }
@@ -107,7 +114,7 @@
   :global(.navbar__item):global(.dropdown) {
     padding: 0.438rem 0.5rem;
 
-    background: var(--c-indigo-10);
+    background: var(--doc-sidebar-version-c-bg);
     border-radius: 12px;
 
     :global(.navbar__item) {

@@ -277,11 +277,6 @@ html[data-theme='dark'] .navbar-twitter:before {
   margin: 1rem 0 0;
 }
 
-.docDemoWrapper {
-  float: right;
-  margin: 0 0 1rem 1rem;
-}
-
 html[data-theme='dark'] {
   .markdown {
     p,
@@ -319,5 +314,14 @@ html[data-theme='dark'] {
       color: var(--c-indigo-80);
       font-size: 1.25rem;
     }
+  }
+}
+
+.table-of-contents {
+  &.table-of-contents {
+    list-style: none;
+    padding: 0;
+
+    margin-block-end: 2rem;
   }
 }

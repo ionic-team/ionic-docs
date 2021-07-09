@@ -5,20 +5,19 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-.tableOfContents1 {
-  max-height: calc(100vh - (var(--ifm-navbar-height) + 2rem));
+.tableOfContents {
+  max-height: calc(
+    100vh - (var(--ifm-navbar-height) + 2rem) - var(--doc-item-main-spacing-y)
+  );
   overflow-y: auto;
   position: sticky;
-  top: calc(var(--ifm-navbar-height) + 1rem);
-
-  flex-basis: 15rem;
-}
-
-.tableOfContents2 {
+  top: 0;
+  padding-block-start: var(--doc-item-main-spacing-y);
+  min-width: 12rem;
 }
 
 @media only screen and (max-width: 996px) {
-  .tableOfContents1 {
+  .tableOfContents {
     display: none;
   }
 
