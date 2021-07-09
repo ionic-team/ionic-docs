@@ -27,15 +27,7 @@ module.exports = {
   themeConfig: {
     navbar: {
       hideOnScroll: true,
-      logo: {
-        alt: 'Ionic Logo',
-        src: 'img/framework-logo.svg',
-        srcDark: 'img/framework-logo-dark.svg',
-      },
       items: [
-        {
-          type: 'docsVersionDropdown',
-        },
         {
           type: 'doc',
           docId: 'index',
@@ -238,10 +230,10 @@ module.exports = {
           },
           lastVersion: 'current',
           versions: {
-            'current': {
+            current: {
               label: 'v6-beta',
             },
-            'v5': {
+            v5: {
               banner: 'none',
             },
           },
@@ -250,4 +242,7 @@ module.exports = {
       },
     ],
   ],
+  customFields: {
+    frameworks: ['react', 'angular', 'vue', 'javascript'],
+  },
 };

@@ -1,0 +1,190 @@
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+:root {
+  --collapse-button-bg-color-dark: #2e333a;
+
+  --doc-sidebar-width: 17.5rem;
+  --doc-sidebar-hidden-width: 2rem;
+  --doc-sidebar-spacing-x: 1.25rem;
+}
+
+:global(html[data-theme='light']) {
+  --doc-sidebar-version-c-bg: var(--c-indigo-10);
+}
+:global(html[data-theme='dark']) {
+  --doc-sidebar-version-c-bg: var(--ifm-menu-color-background-active);
+}
+
+.sidebar {
+  padding: 0;
+}
+
+.menu {
+  padding: 0 var(--doc-sidebar-spacing-x);
+
+  > .sidebarEnd > :global(.menu__list) {
+    margin-inline-start: calc(var(--doc-sidebar-spacing-x) * -1);
+
+    > :global(.menu__list-item) > :global(.menu__list) > li:last-of-type {
+      margin-block-end: 1.25rem;
+    }
+  }
+}
+
+@media (min-width: 997px) {
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;
+    height: 100%;
+    position: sticky;
+    top: 0;
+    width: var(--doc-sidebar-width);
+
+    transition: opacity 50ms ease;
+  }
+
+  .sidebarWithHideableNavbar {
+    padding-top: 0;
+  }
+
+  .sidebarHidden {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+  }
+
+  .menu {
+    flex-grow: 1;
+  }
+
+  .menuLinkText {
+    cursor: initial;
+  }
+
+  .menuLinkText:hover {
+    background: none;
+  }
+
+  .menuWithAnnouncementBar {
+    margin-bottom: var(--docusaurus-announcement-bar-height);
+  }
+
+  .collapseSidebarButton {
+    display: block !important;
+    background-color: var(--ifm-button-background-color);
+    height: 40px;
+    position: sticky;
+    bottom: 0;
+    border-radius: 0;
+    border: 1px solid var(--ifm-toc-border-color);
+  }
+
+  .collapseSidebarButtonIcon {
+    transform: rotate(180deg);
+    margin-top: 4px;
+  }
+  html[dir='rtl'] .collapseSidebarButtonIcon {
+    transform: rotate(0);
+  }
+
+  html[data-theme='dark'] .collapseSidebarButton {
+    background-color: var(--collapse-button-bg-color-dark);
+  }
+
+  html[data-theme='dark'] .collapseSidebarButton:hover,
+  html[data-theme='dark'] .collapseSidebarButton:focus {
+    background-color: var(--ifm-color-emphasis-200);
+  }
+}
+
+.sidebarStart {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: var(--ifm-navbar-height);
+
+  :global(.navbar__item):global(.dropdown) {
+    padding: 0.438rem 0.5rem;
+
+    background: var(--doc-sidebar-version-c-bg);
+    border-radius: 12px;
+
+    :global(.navbar__item) {
+      display: flex;
+      align-items: center;
+      padding: 0;
+
+      &::after {
+        opacity: 0.5;
+      }
+    }
+
+    :global(.dropdown__menu) {
+      right: 8px;
+    }
+  }
+}
+
+.frameworkSelector {
+  max-width: 14.5rem;
+
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
+}
+
+@media (max-width: 996px) {
+  .sidebarStart,
+  .frameworkSelector {
+    display: none;
+    opacity: 0;
+  }
+
+  .menu:not(:global(.menu--show)) {
+    padding: 0;
+  }
+
+  :global(.menu--show) {
+    .frameworkSelector,
+    .sidebarStart {
+      opacity: 1;
+      display: flex;
+    }
+  }
+}
+
+.collapseSidebarButton {
+  display: none;
+}
+
+.sidebarMenuIcon {
+  vertical-align: middle;
+}
+
+.sidebarMenuCloseIcon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 24px;
+  font-size: 1.5rem;
+  font-weight: var(--ifm-font-weight-bold);
+  line-height: 0.9;
+  width: 24px;
+}
+
+:global(.menu__list) :global(.menu__list) {
+  overflow-y: hidden;
+  will-change: height;
+  transition: height var(--ifm-transition-fast) linear;
+}
+
+:global(.menu__list-item--collapsed) :global(.menu__list) {
+  height: 0 !important;
+}

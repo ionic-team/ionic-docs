@@ -38,7 +38,12 @@ function renderFrontmatter({ displayName, packageName }) {
 
   return `---
 ${Object.entries(frontmatter)
-  .map(([key, value]) => `${key}: "${value}"`)
+  .map(
+    ([key, value]) =>
+      `${key}: ${
+        typeof value === 'string' ? `"${value.replace('"', '\\"')}"` : value
+      }`,
+  )
   .join('\n')}
 ---
 
