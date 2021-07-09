@@ -17,7 +17,7 @@ Please see the [Contributor Code of Conduct](https://github.com/ionic-team/ionic
 
 ## Creating an Issue
 
-* If you have a question about using the framework, please ask on the [Ionic Forum](http://forum.ionicframework.com/) or in the [Ionic Worldwide Slack](https://ionicworldwide.herokuapp.com/) group.
+* If you have a question about using the framework, please ask on the [Ionic Forum](http://forum.ionicframework.com/).
 
 * It is required that you clearly describe the steps necessary to reproduce the issue you are running into. Although we would love to help our users as much as possible, diagnosing issues without clear reproduction steps is extremely time-consuming and simply not sustainable.
 
@@ -78,7 +78,7 @@ Please see the [Contributor Code of Conduct](https://github.com/ionic-team/ionic
 
 1. Locate the `readme.md` file in the component's directory.
 2. Modify the documentation **above** the line that says `<!-- Auto Generated Below -->` in this file.
-3. To update any of the auto generated documentation below that line, make the relevant changes in the following places: 
+3. To update any of the auto generated documentation below that line, make the relevant changes in the following places:
   - `Usage`: update the component's usage examples in the component's `usage/` directory
   - `Properties`, `Events`, or `Methods`: update the component's TypeScript file (`*.tsx`)
   - `CSS Custom Properties`: update the component's main Sass file (`*.scss`)
@@ -95,7 +95,7 @@ Please see the [Contributor Code of Conduct](https://github.com/ionic-team/ionic
 1. If the test exists in screenshot, there will be a file named `e2e.ts` in the directory of the test.
 2. A screenshot test can be added by including this file and adding one or more `test()` calls that include a call to `page.compareScreenshot()`. See [Stencil end-to-end testing](https://stenciljs.com/docs/end-to-end-testing) and existing tests in `core/` for examples.
 3. **Important:** each `test()` should have only one screenshot (`page.compareScreenshot()`) call **or** it should check the expect at the end of each test. If there is a mismatch it will fail the test which will prevent the rest of the test from running, i.e. if the first screenshot fails the remaining screenshot calls would not be called *unless* they are in a separate test or all of the expects are called at the end.
-4. To run screenshot locally, use the following command: `npm run test.screenshot`. 
+4. To run screenshot locally, use the following command: `npm run test.screenshot`.
     - To run screenshot for a specific test, pass the path to the test or a string to search for.
     - For example, running all `alert` tests: `npm run test.screenshot alert`.
     - Or, running the basic `alert` tests: `npm run test.screenshot src/components/alert/test/basic/e2e.ts`.
@@ -126,7 +126,7 @@ We follow the [Conventional Commits specification](https://www.conventionalcommi
     <body>
     <BLANK LINE>
     <footer>
-    
+
 
 The **header** is mandatory and the **scope** of the header is optional.
 
@@ -179,42 +179,42 @@ The footer should contain any information about **Breaking Changes** and is also
 Does not appear in the generated changelog:
 
     docs(changelog): update steps to update
-    
+
 
 Appears under "Features" header, toast subheader:
 
     feat(toast): add 'buttons' property
-    
+
 
 Appears under "Bug Fixes" header, skeleton-text subheader, with a link to issue #28:
 
     fix(skeleton-text): use proper color when animated
-    
+
     closes #28
-    
+
 
 Appears under "Performance Improvements" header, and under "Breaking Changes" with the breaking change explanation:
 
     perf(css): remove all css utility attributes
-    
+
     BREAKING CHANGE: The CSS utility attributes have been removed. Use CSS classes instead.
-    
+
 
 Appears under "Breaking Changes" with the breaking change explanation:
 
     refactor(animations): update to new animation system
-    
+
     BREAKING CHANGE:
-    
+
     Removes the old animation system to use the new Ionic animations.
-    
+
 
 The following commit and commit `667ecc1` do not appear in the changelog if they are under the same release. If not, the revert commit appears under the "Reverts" header.
 
     revert: feat(skeleton-text): add animated property
-    
+
     This reverts commit 667ecc1654a317a13331b17617d973392f415f02.
-    
+
 
 ## License
 

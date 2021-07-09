@@ -13,7 +13,7 @@ $ ionic cordova plugin remove cordova-plugin-camera
 $ ionic cordova plugin add cordova-plugin-camera
 ```
 
-**3) Install explicit versions.** 
+**3) Install explicit versions.**
 
 To ensure that the same version of a plugin is always installed via `npm install`, specify the version number:
 
@@ -26,7 +26,7 @@ $ ionic cordova plugin add cordova-plugin-camera@4.3.2
 Useful when adding new developers to a project. `ionic cordova prepare` restores platforms and plugins from `package.json` and `config.xml`. The version to be installed is taken from `package.json` or `config.xml`, if found in those files. In case of conflicts, `package.json` is given precedence over `config.xml`.
 
 **5) Troubleshoot Cordova issues with Ionic CLI commands**
-* `ionic doctor list`: Detects [common issues](/docs/cli/commands/doctor-list) and suggests steps to fix them 
+* `ionic doctor list`: Detects [common issues](/docs/cli/commands/doctor-list) and suggests steps to fix them
 * `ionic repair`: Remove, then [regenerate](/docs/cli/commands/repair) all dependencies
 
 
@@ -58,7 +58,6 @@ Research the build error(s) by checking out these resources:
 
 * Google & [StackOverflow](https://stackoverflow.com): Many issues are documented online
 * Ask the [Ionic Community Ionic Forum](https://forum.ionicframework.com) (see the Ionic Native category)
-* Ask the Ionic Community in the [Ionic Worldwide Slack](https://ionicworldwide.herokuapp.com)
 * See the Ionic Customer Success [Knowledge Base](https://ionic.zendesk.com)
 
 ### Cordova Plugin Conflicts

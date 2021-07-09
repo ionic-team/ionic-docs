@@ -58,7 +58,6 @@ Research the build error(s) by checking out these resources:
 
 * Google & [StackOverflow](https://stackoverflow.com): Many issues are documented online
 * Ask the [Ionic Community Ionic Forum](https://forum.ionicframework.com) (see the Ionic Native category)
-* Ask the Ionic Community in the [Ionic Worldwide Slack](https://ionicworldwide.herokuapp.com)
 * See the Ionic Customer Success [Knowledge Base](https://ionic.zendesk.com)
 
 ### Cordova Plugin Conflicts
