@@ -13,7 +13,7 @@ Please see the [Contributor Code of Conduct](coc.md) for information on the rule
 
 ## Creating an Issue
 
-* If you have a question about using the framework, please ask on the [Ionic Forum](http://forum.ionicframework.com/) or in the [Ionic Worldwide Slack](https://ionicworldwide.herokuapp.com/) group.
+* If you have a question about using the framework, please ask on the [Ionic Forum](http://forum.ionicframework.com/).
 
 * It is required that you clearly describe the steps necessary to reproduce the issue you are running into. Although we would love to help our users as much as possible, diagnosing issues without clear reproduction steps is extremely time-consuming and simply not sustainable.
 
@@ -34,7 +34,7 @@ A code reproduction is a small application that is built to demonstrate a partic
 
 ### Why Should You Create a Reproduction?
 
-A code reproduction of the issue you are experiencing helps us better isolate the cause of the problem. This is an important first step to getting any bug fixed! 
+A code reproduction of the issue you are experiencing helps us better isolate the cause of the problem. This is an important first step to getting any bug fixed!
 
 Without a reliable code reproduction, it is unlikely we will be able to resolve the issue, leading to it being closed. In other words, creating a code reproduction of the issue helps us help you.
 

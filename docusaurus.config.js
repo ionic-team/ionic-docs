@@ -81,18 +81,6 @@ module.exports = {
               rel: null,
             },
             {
-              href: 'https://ionicworldwide.herokuapp.com/',
-              label: 'Slack',
-              target: '_blank',
-              rel: null,
-            },
-            {
-              href: 'https://spectrum.chat/ionic',
-              label: 'Spectrum',
-              target: '_blank',
-              rel: null,
-            },
-            {
               href: 'https://www.meetup.com/topics/ionic-framework/',
               label: 'Meetups',
               target: '_blank',
