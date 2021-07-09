@@ -18,3 +18,7 @@
 .navbarHidden {
   transform: translate3d(0, calc(-100% - 2px), 0);
 }
+
+:global(.navbar__items--right) {
+  flex: 1 1 auto;
+}
