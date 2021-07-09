@@ -108,7 +108,7 @@
         "capacitor"
       ],
       "summary": "Add a native platform to your Ionic project",
-      "description": "`ionic capacitor add` will do the following:\n- Add a new platform specific folder to your project (ios, android, or electron)",
+      "description": "`ionic capacitor add` will do the following:\n- Install the Capacitor platform package\n- Copy the native platform template into your project",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [],
@@ -116,7 +116,7 @@
       "inputs": [
         {
           "name": "platform",
-          "summary": "The platform to add (e.g. `android`, `ios`, `electron`)",
+          "summary": "The platform to add (e.g. `android`, `ios`)",
           "required": true
         }
       ],
@@ -241,7 +241,7 @@
       "inputs": [
         {
           "name": "platform",
-          "summary": "The platform to copy (e.g. `android`, `ios`, `electron`)",
+          "summary": "The platform to copy (e.g. `android`, `ios`)",
           "required": false
         }
       ],
@@ -341,7 +341,7 @@
         "capacitor"
       ],
       "summary": "Run an Ionic project on a connected device",
-      "description": "`ionic capacitor run` will do the following:\n- Perform `ionic build` (or run the dev server from `ionic serve` with the `--livereload` option)\n- Copy web assets into the specified native platform\n- Open the IDE for your native project (Xcode for iOS, Android Studio for Android)\n\nWhen using the `--livereload` option and need to serve to your LAN, a device, or an emulator, use the `--external` option also. Otherwise, the web view tries to access `localhost`.\n\nOnce the web assets and configuration are copied into your native project, the app can run on devices and emulators/simulators using the native IDE. Unfortunately, programmatically building and launching the native project is not yet supported.\n\nFor Android and iOS, you can setup Remote Debugging on your device with browser development tools using these [docs](https://ionicframework.com/docs/developer-resources/developer-tips).",
+      "description": "`ionic capacitor run` will do the following:\n- Perform `ionic build` (or run the dev server from `ionic serve` with the `--livereload` option)\n- Run `capacitor run` (or open IDE for your native project with the `--open` option)\n\nWhen using `--livereload` with hardware devices, remember that livereload needs an active connection between device and computer. In some scenarios, you may need to host the dev server on an external address using the `--external` option. See these [docs](https://ionicframework.com/docs/cli/livereload) for more information.\n\nIf you have multiple devices and emulators, you can target a specific one by ID with the `--target` option. You can list targets with `--list`.\n\nFor Android and iOS, you can setup Remote Debugging on your device with browser development tools using these [docs](https://ionicframework.com/docs/developer-resources/developer-tips).",
       "footnotes": [],
       "groups": [
         "beta"
@@ -402,10 +402,35 @@
           }
         },
         {
-          "name": "build",
+          "name": "list",
           "type": "boolean",
-          "summary": "Do not invoke Ionic build",
-          "default": true,
+          "summary": "List all available targets",
+          "groups": [
+            "capacitor",
+            "native-run"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
+          }
+        },
+        {
+          "name": "target",
+          "type": "string",
+          "summary": "Deploy to a specific device by its ID (use `--list` to see all)",
+          "groups": [
+            "capacitor",
+            "native-run"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "target"
+          }
+        },
+        {
+          "name": "open",
+          "type": "boolean",
+          "summary": "Open native IDE instead of using `capacitor run`",
           "groups": [],
           "aliases": [],
           "spec": {
@@ -413,9 +438,9 @@
           }
         },
         {
-          "name": "open",
+          "name": "build",
           "type": "boolean",
-          "summary": "Do not invoke Capacitor open",
+          "summary": "Do not invoke Ionic build",
           "default": true,
           "groups": [],
           "aliases": [],
@@ -565,7 +590,7 @@
       "inputs": [
         {
           "name": "platform",
-          "summary": "The platform to sync (e.g. `android`, `ios`, `electron`)",
+          "summary": "The platform to sync (e.g. `android`, `ios`)",
           "required": false
         }
       ],
@@ -651,7 +676,7 @@
       "inputs": [
         {
           "name": "platform",
-          "summary": "The platform to update (e.g. `android`, `ios`, `electron`)",
+          "summary": "The platform to update (e.g. `android`, `ios`)",
           "required": false
         }
       ],
@@ -2159,7 +2184,7 @@
         "deploy"
       ],
       "summary": "Create a deploy build on Appflow",
-      "description": "This command creates a deploy build on Appflow. While the build is running, it prints the remote build log to the terminal.\n\nCustomizing the build:\n- The `--environment` and `--channel` options can be used to customize the groups of values exposed to the build.\n\nApart from `--commit`, every option can be specified using the full name setup within the Appflow [Dashboard](https://dashboard.ionicframework.com).",
+      "description": "This command creates a deploy build on Appflow. While the build is running, it prints the remote build log to the terminal. If the build is successful, it downloads the created web build zip file in the current directory. Downloading build artifacts can be skipped by supplying the flag `skip-download`.\n\nApart from `--commit`, every option can be specified using the full name setup within the Appflow [Dashboard](https://dashboard.ionicframework.com).\n\nCustomizing the build:\n- The `--environment` and `--channel` options can be used to customize the groups of values exposed to the build.",
       "footnotes": [],
       "groups": [
         "paid"
@@ -2169,6 +2194,7 @@
         "ionic deploy build --environment=\"My Custom Environment Name\"",
         "ionic deploy build --commit=2345cd3305a1cf94de34e93b73a932f25baac77c",
         "ionic deploy build --channel=\"Master\"",
+        "ionic deploy build --channel=\"Master\" --skip-download",
         "ionic deploy build --channel=\"Master\" --channel=\"My Custom Channel\""
       ],
       "aliases": [],
@@ -2204,6 +2230,17 @@
           "aliases": [],
           "spec": {
             "value": "sha1"
+          }
+        },
+        {
+          "name": "skip-download",
+          "type": "boolean",
+          "summary": "Skip downloading build artifacts after command succeeds.",
+          "default": false,
+          "groups": [],
+          "aliases": [],
+          "spec": {
+            "value": "name"
           }
         }
       ],
@@ -2311,7 +2348,7 @@
       "aliases": [],
       "inputs": [],
       "options": [],
-      "type": "project"
+      "type": "global"
     },
     {
       "name": "ionic docs",
@@ -2802,7 +2839,7 @@
         "package"
       ],
       "summary": "Create a package build on Appflow",
-      "description": "This command creates a package build on Appflow. While the build is running, it prints the remote build log to the terminal. If the build is successful, it downloads the created app package file in the current directory.\n\nApart from `--commit`, every option can be specified using the full name setup within the [Dashboard](https://dashboard.ionicframework.com).\n\nThe `--signing-certificate` option is mandatory for any iOS build but not for Android debug builds.\n\nCustomizing the build:\n- The `--environment` and `--native-config` options can be used to customize the groups of values exposed to the build.\n- Override the preferred platform with `--build-stack`. This is useful for building older iOS apps.\n\nDeploying the build to an App Store:\n- The `--destination` option can be used to deliver the app created by the build to the configured App Store. This can be used only together with build type `release` for Android and build types `app-store` or `enterprise` for iOS.",
+      "description": "This command creates a package build on Appflow. While the build is running, it prints the remote build log to the terminal. If the build is successful, it downloads the created app package file in the current directory. Downloading build artifacts can be skipped by supplying the flag `skip-download`.\n\nApart from `--commit`, every option can be specified using the full name setup within the [Dashboard](https://dashboard.ionicframework.com).\n\nThe `--signing-certificate` option is mandatory for any iOS build but not for Android debug builds.\n\nCustomizing the build:\n- The `--environment` and `--native-config` options can be used to customize the groups of values exposed to the build.\n- Override the preferred platform with `--build-stack`. This is useful for building older iOS apps.\n\nDeploying the build to an App Store:\n- The `--destination` option can be used to deliver the app created by the build to the configured App Store. This can be used only together with build type `release` for Android and build types `app-store` or `enterprise` for iOS.\n\nDownloading build artifacts:\n- By default once the build is complete, all artifacts are downloaded for the selected platform. `aab` and `apk` for Android `ipa` and `dsym` for iOS.\n- The `--artifact-type` option can be used to limit artifact downloads to only of that type. For instance, with Android, you can specify `aab` if you do not wish to download `apk`.",
       "footnotes": [],
       "groups": [
         "paid"
@@ -2813,8 +2850,11 @@
         "ionic package build android debug --environment=\"My Custom Environment Name\"",
         "ionic package build android debug --native-config=\"My Custom Native Config Name\"",
         "ionic package build android debug --commit=2345cd3305a1cf94de34e93b73a932f25baac77c",
+        "ionic package build android debug --artifact-type=aab",
+        "ionic package build android debug --skip-download",
+        "ionic package build android debug --aab-name=\"my-app-prod.aab\" --apk-name=\"my-app-prod.apk\"",
         "ionic package build ios development --signing-certificate=\"iOS Signing Certificate Name\" --build-stack=\"iOS - Xcode 9\"",
-        "ionic package build ios development --signing-certificate=\"iOS Signing Certificate Name\" --build-file-name=my_custom_file_name.ipa",
+        "ionic package build ios development --signing-certificate=\"iOS Signing Certificate Name\" --ipa-name=my_custom_file_name.ipa",
         "ionic package build ios app-store --signing-certificate=\"iOS Signing Certificate Name\" --destination=\"Apple App Store Destination\""
       ],
       "aliases": [],
@@ -2886,7 +2926,7 @@
         {
           "name": "build-stack",
           "type": "string",
-          "summary": "Build stack (`\"Android\"`, `\"iOS - Xcode 11 (Preferred)\"`, `\"iOS - Xcode 10\"`)",
+          "summary": "Target platform (`\"Android\"`, `\"iOS - Xcode 11 (Preferred)\"`, `\"iOS - Xcode 10\"`)",
           "groups": [
             "advanced"
           ],
@@ -2900,8 +2940,77 @@
           "type": "string",
           "summary": "The name for the downloaded build file",
           "groups": [
+            "deprecated"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "name"
+          }
+        },
+        {
+          "name": "ipa-name",
+          "type": "string",
+          "summary": "The name for the downloaded ipa file",
+          "groups": [
             "advanced"
           ],
+          "aliases": [],
+          "spec": {
+            "value": "name"
+          }
+        },
+        {
+          "name": "dsym-name",
+          "type": "string",
+          "summary": "The name for the downloaded dsym file",
+          "groups": [
+            "advanced"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "name"
+          }
+        },
+        {
+          "name": "apk-name",
+          "type": "string",
+          "summary": "The name for the downloaded apk file",
+          "groups": [
+            "advanced"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "name"
+          }
+        },
+        {
+          "name": "aab-name",
+          "type": "string",
+          "summary": "The name for the downloaded aab file",
+          "groups": [
+            "advanced"
+          ],
+          "aliases": [],
+          "spec": {
+            "value": "name"
+          }
+        },
+        {
+          "name": "artifact-type",
+          "type": "string",
+          "summary": "The artifact type (`aab`, `apk`, `ipa`, `dsym`)",
+          "groups": [],
+          "aliases": [],
+          "spec": {
+            "value": "name"
+          }
+        },
+        {
+          "name": "skip-download",
+          "type": "boolean",
+          "summary": "Skip downloading build artifacts after command succeeds.",
+          "default": false,
+          "groups": [],
           "aliases": [],
           "spec": {
             "value": "name"
@@ -3590,7 +3699,7 @@
         {
           "name": "type",
           "type": "string",
-          "summary": "Type of project to start (e.g. `angular`, `react`, `ionic-angular`, `ionic1`)",
+          "summary": "Type of project to start (e.g. `vue`, `angular`, `react`, `ionic-angular`, `ionic1`)",
           "groups": [],
           "aliases": [],
           "spec": {
