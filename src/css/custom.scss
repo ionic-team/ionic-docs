@@ -297,6 +297,9 @@ html[data-theme='dark'] {
 }
 
 .markdown {
+  > * {
+    max-width: 100%;
+  }
   p,
   li {
     font-size: 1rem;

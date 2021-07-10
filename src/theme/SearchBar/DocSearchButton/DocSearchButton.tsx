@@ -2,8 +2,6 @@ import clsx from 'clsx';
 import React from 'react';
 import { forwardRef } from 'react';
 
-import useThemeContext from '@theme/hooks/useThemeContext';
-
 import styles from './styles.module.scss';
 
 const DocSearchButton = forwardRef(({ translations, ...props }, ref) => {

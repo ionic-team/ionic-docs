@@ -12,6 +12,7 @@ import AngularIcon from './assets/icon-angular.svg';
 import JavascriptIcon from './assets/icon-javascript.svg';
 import ReactIcon from './assets/icon-react.svg';
 import VueIcon from './assets/icon-vue.svg';
+import { FRAMEWORK_ID } from '@theme/Tabs';
 
 const ICON_LIST = {
   angular: <AngularIcon />,
@@ -34,7 +35,7 @@ export default function FrameworkSelector(props) {
   } = useDocusaurusContext();
 
   useEffect(() => {
-    setTabGroupChoices('framework', activeFramework);
+    setTabGroupChoices(FRAMEWORK_ID, activeFramework);
     setIsOpen(false);
   }, [activeFramework]);
 

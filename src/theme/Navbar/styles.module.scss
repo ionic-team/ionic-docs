@@ -1,0 +1,63 @@
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+html[data-theme='light'] {
+  --navbar-underline-c-bg: var(--c-carbon-100);
+  --ifm-navbar-link-hover-color: var(--c-carbon-100);
+  --ifm-navbar-link-color: var(--c-indigo-80);
+}
+
+html[data-theme='dark'] {
+  --navbar-underline-c-bg: #fff;
+  --ifm-navbar-link-hover-color: #fff;
+  --ifm-navbar-link-color: #fff;
+}
+
+@media screen and (max-width: 997px) {
+  .displayOnlyInLargeViewport {
+    display: none !important;
+  }
+}
+
+.navbarHideable {
+  transition: transform var(--ifm-transition-fast) ease;
+}
+
+.navbarHidden {
+  transform: translate3d(0, calc(-100% - 2px), 0);
+}
+
+:global(.navbar__items--right) {
+  flex: 1 1 auto;
+}
+
+:global(.navbar__link):global(.navbar__link--active) {
+  position: relative;
+  font-weight: 500;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: var(--ifm-navbar-item-padding-horizontal);
+    right: var(--ifm-navbar-item-padding-horizontal);
+    top: calc(
+      100% + var(--ifm-navbar-padding-vertical) +
+        var(--ifm-navbar-item-padding-vertical) - 2px
+    );
+    height: 2px;
+
+    background: var(--navbar-underline-c-bg);
+  }
+}
+
+:global {
+  .navbar {
+    .navbar__inner {
+      align-items: center;
+    }
+  }
+}

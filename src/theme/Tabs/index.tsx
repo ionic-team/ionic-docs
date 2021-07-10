@@ -34,6 +34,8 @@ const keys = {
   right: 39,
 } as const;
 
+export const FRAMEWORK_ID = '_framework';
+
 function Tabs(props: Props): JSX.Element {
   let { groupId } = props;
   const { lazy, block, defaultValue, values, className } = props;
@@ -51,18 +53,20 @@ function Tabs(props: Props): JSX.Element {
 
   const isFramework = values.find(({ value }) => frameworks.includes(value));
 
-  if (isFramework && !groupId) groupId = 'framework';
+  if (isFramework && !groupId) groupId = FRAMEWORK_ID;
 
-  if (groupId != null) {
-    const relevantTabGroupChoice = tabGroupChoices[groupId];
-    if (
-      relevantTabGroupChoice != null &&
-      relevantTabGroupChoice !== selectedValue &&
-      values.some(value => value.value === relevantTabGroupChoice)
-    ) {
-      setSelectedValue(relevantTabGroupChoice);
+  useEffect(() => {
+    if (groupId != null) {
+      const relevantTabGroupChoice = tabGroupChoices[groupId];
+      if (
+        relevantTabGroupChoice != null &&
+        relevantTabGroupChoice !== selectedValue &&
+        values.some(value => value.value === relevantTabGroupChoice)
+      ) {
+        setSelectedValue(relevantTabGroupChoice);
+      }
     }
-  }
+  }, [tabGroupChoices]);
 
   const handleTabChange = ({ currentTarget }) => {
     const selectedTab = currentTarget;
@@ -72,7 +76,7 @@ function Tabs(props: Props): JSX.Element {
     setSelectedValue(selectedTabValue);
 
     if (groupId != null) {
-      setTabGroupChoices(groupId, selectedTabValue);
+      groupId !== FRAMEWORK_ID && setTabGroupChoices(groupId, selectedTabValue);
 
       setTimeout(() => {
         if (isInViewport(selectedTab)) {

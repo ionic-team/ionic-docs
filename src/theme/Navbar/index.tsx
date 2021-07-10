@@ -18,7 +18,7 @@ import useWindowSize, { windowSizes } from '@theme/hooks/useWindowSize';
 import NavbarItem from '@theme/NavbarItem';
 import IconMenu from '@theme/IconMenu';
 
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 // retrocompatible with v1
 const DefaultNavItemPosition = 'right';
