@@ -24,7 +24,10 @@
   --ifm-color-primary-light: rgb(70, 203, 174);
   --ifm-color-primary-lighter: rgb(102, 212, 189);
   --ifm-color-primary-lightest: rgb(146, 224, 208);
+
+  --ifm-code-padding-vertical: 0.25rem;
   --ifm-code-font-size: 95%;
+  --ifm-code-border-radius: 4px;
 
   /* Old docs variables */
   /* --accent-color: #3880ff;
@@ -58,6 +61,17 @@
   --text-color--dark: #020814;
   --text-color--lighter: #abb2bf;
   --text-color--light: #73849a; */
+}
+
+html[data-theme='light'] {
+  --ifm-code-background: var(--c-indigo-10);
+
+  code {
+    color: var(--c-carbon-100);
+  }
+}
+
+html[data-theme='dark'] {
 }
 
 * {
@@ -282,6 +296,9 @@ html[data-theme='dark'] {
     p,
     li {
       color: #fff;
+
+      code {
+      }
     }
 
     header + p {
@@ -327,4 +344,10 @@ html[data-theme='dark'] {
 
     margin-block-end: 2rem;
   }
+}
+
+code {
+  border: none;
+
+  padding: 0.375rem 0.25rem 0.25rem;
 }

@@ -25,7 +25,7 @@ import IconArrow from '@theme/IconArrow';
 import IconMenu from '@theme/IconMenu';
 import IconExternalLink from '@theme/IconExternalLink';
 import { translate } from '@docusaurus/Translate';
-import VersionSwitcher from '@theme/NavbarItem/DocsVersionDropdownNavbarItem';
+import VersionSelector from '@theme/VersionSelector';
 import FrameworkSelector from '../FrameworkSelector';
 
 import styles from './styles.module.scss';
@@ -359,7 +359,7 @@ function DocSidebar({
             <Link to={useBaseUrl('/')}>
               <Logo tabIndex={-1} className={styles.sidebarLogo} />
             </Link>
-            <VersionSwitcher dropdownItemsBefore={[]} dropdownItemsAfter={[]} />
+            <VersionSelector />
           </div>
         )}
         <ResponsiveSidebarButton

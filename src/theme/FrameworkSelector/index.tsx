@@ -53,6 +53,8 @@ export default function FrameworkSelector(props) {
       })}
       onBlur={({ currentTarget, relatedTarget }) => {
         !currentTarget.contains(relatedTarget) && setIsOpen(false);
+
+        props.onBlur && props.onBlur();
       }}
     >
       <button
