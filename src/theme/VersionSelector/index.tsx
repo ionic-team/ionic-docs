@@ -133,15 +133,15 @@ const Checkmark = props => {
     <svg
       width="12"
       height="10"
-      fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      fill="none"
       {...props}
     >
       <path
         d="M11 1L4 9 1 6"
-        stroke={'#03060B'}
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -151,15 +151,15 @@ const Caret = props => (
   <svg
     width="7"
     height="5"
-    fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    fill="none"
     {...props}
   >
     <path
       d="M1 1.25l2.5 2.5L6 1.25"
       stroke="#92A0B3"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );

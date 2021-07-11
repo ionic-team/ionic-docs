@@ -4,6 +4,7 @@
   --version-selector-c-border: var(--c-indigo-30);
   --version-selector-c-bg: #fff;
   --version-selector-dropdown-item-c-text: var(--c-carbon-100);
+  --version-selector-selected-icon-c: var(--c-carbon-100);
 }
 
 :global(html[data-theme='dark']) {
@@ -12,9 +13,15 @@
   --version-selector-c-border: black;
   --version-selector-c-bg: var(--ifm-menu-color-background-active);
   --version-selector-dropdown-item-c-text: #fff;
+  --version-selector-selected-icon-c: #fff;
 }
 
 .versionSelectorOpen {
+  .button {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
   .dropdown {
     opacity: 1;
     visibility: visible;
@@ -110,6 +117,10 @@
     color: inherit;
     font-weight: inherit;
     flex-grow: 1;
+  }
+
+  svg {
+    color: var(--version-selector-selected-icon-c);
   }
 }
 

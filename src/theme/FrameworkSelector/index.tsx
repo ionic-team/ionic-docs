@@ -111,8 +111,8 @@ const Checkmark = () => {
       <path
         d="M11 1L4 9 1 6"
         stroke={isDarkTheme ? '#fff' : '#03060B'}
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
