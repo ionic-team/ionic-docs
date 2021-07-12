@@ -3,7 +3,9 @@
   --version-selector-btn-c-text: var(--c-indigo-80);
   --version-selector-c-border: var(--c-indigo-30);
   --version-selector-c-bg: #fff;
-  --version-selector-dropdown-item-c-text: var(--c-carbon-100);
+  --version-selector-dropdown-item-c-text: var(--c-indigo-90);
+  --version-selector-dropdown-item-c-bg: var(--c-indigo-10);
+  --version-selector-dropdown-item--active-c-text: var(--c-carbon-100);
   --version-selector-selected-icon-c: var(--c-carbon-100);
 }
 
@@ -13,6 +15,8 @@
   --version-selector-c-border: black;
   --version-selector-c-bg: var(--ifm-menu-color-background-active);
   --version-selector-dropdown-item-c-text: #fff;
+  --version-selector-dropdown-item-c-bg: var(--c-indigo-100);
+  --version-selector-dropdown-item--active-c-text: #fff;
   --version-selector-selected-icon-c: #fff;
 }
 
@@ -102,6 +106,8 @@
 }
 
 .dropdownItem {
+  position: relative;
+
   padding: 0.5rem 1rem;
   display: flex;
   align-items: center;
@@ -112,6 +118,20 @@
   letter-spacing: -0.01em;
 
   color: var(--version-selector-dropdown-item-c-text);
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0.5rem;
+    right: 0.5rem;
+
+    border-radius: 6px;
+
+    transition: background 0.2s ease-out;
+  }
 
   > a {
     color: inherit;
@@ -125,7 +145,9 @@
 }
 
 .dropdownItemActive {
-  > a {
-    opacity: 0.4;
+  color: var(--version-selector-dropdown-item--active-c-text);
+
+  &::before {
+    background: var(--version-selector-dropdown-item-c-bg);
   }
 }

@@ -16,7 +16,6 @@ import { useDocsPreferredVersion } from '@docusaurus/theme-common';
 import clsx from 'clsx';
 
 import styles from './styles.module.scss';
-import { useEffect } from 'react';
 
 const getVersionMainDoc = version =>
   version.docs.find(doc => doc.id === version.mainDocId);
@@ -72,7 +71,7 @@ export default function VersionSelector({
     <div
       {...props}
       onBlur={({ currentTarget, relatedTarget }) => {
-        !currentTarget.contains(relatedTarget) && setIsOpen(false);
+        !currentTarget.contains(relatedTarget as Node) && setIsOpen(false);
 
         props.onBlur && props.onBlur();
       }}

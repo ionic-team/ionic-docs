@@ -52,7 +52,7 @@ export default function FrameworkSelector(props) {
         [styles.frameworkSelectorOpen]: isOpen,
       })}
       onBlur={({ currentTarget, relatedTarget }) => {
-        !currentTarget.contains(relatedTarget) && setIsOpen(false);
+        !currentTarget.contains(relatedTarget as Node) && setIsOpen(false);
 
         props.onBlur && props.onBlur();
       }}

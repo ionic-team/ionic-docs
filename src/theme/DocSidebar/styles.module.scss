@@ -188,3 +188,7 @@
 :global(.menu__list-item--collapsed) :global(.menu__list) {
   height: 0 !important;
 }
+
+:global(.menu__list-item) {
+  margin-top: 0;
+}
