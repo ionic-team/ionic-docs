@@ -89,22 +89,7 @@ function DocPageContent({
     >
       <div className={styles.docPage}>
         {sidebar && (
-          <aside
-            className={clsx(styles.docSidebarContainer, {
-              [styles.docSidebarContainerHidden]: hiddenSidebarContainer,
-            })}
-            onTransitionEnd={e => {
-              if (
-                !e.currentTarget.classList.contains(styles.docSidebarContainer)
-              ) {
-                return;
-              }
-
-              if (hiddenSidebarContainer) {
-                setHiddenSidebar(true);
-              }
-            }}
-          >
+          <>
             <DocSidebar
               key={
                 // Reset sidebar state on sidebar changes
@@ -143,9 +128,9 @@ function DocPageContent({
                 <IconArrow className={styles.expandSidebarButtonIcon} />
               </div>
             )}
-          </aside>
+          </>
         )}
-        <div className="doc-page__end">
+        <div className={clsx('doc-page__end', styles.docPageEnd)}>
           <Navbar />
           <main
             className={clsx(styles.docMainContainer, {

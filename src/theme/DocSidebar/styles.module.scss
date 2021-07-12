@@ -9,7 +9,7 @@
   --collapse-button-bg-color-dark: #2e333a;
 
   --doc-sidebar-width: 17.5rem;
-  --doc-sidebar-hidden-width: 2rem;
+  --doc-sidebar-hidden-width: 0rem;
   --doc-sidebar-spacing-x: 1.25rem;
 }
 
@@ -22,30 +22,109 @@
 
 .sidebar {
   padding: 0;
+  overflow-y: auto;
+  overflow-x: clip;
+
+  width: var(--doc-sidebar-width);
+  border-right: 1px solid var(--ifm-toc-border-color);
+  transition: width var(--ifm-transition-fast) ease;
+}
+
+.sidebarHidden {
+  width: var(--doc-sidebar-hidden-width);
+  cursor: pointer;
+}
+
+.sidebarCollapsed {
+  height: 100%;
+  max-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--ifm-transition-fast) ease;
+}
+
+.sidebarStart {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: var(--ifm-navbar-height);
+}
+
+.sidebarEnd > .menuList {
+  margin-inline-start: calc(var(--doc-sidebar-spacing-x) * -1);
+
+  > .menuListItem > .menuList > li:last-of-type {
+    margin-block-end: 1.25rem;
+  }
 }
 
 .menu {
   padding: 0 var(--doc-sidebar-spacing-x);
+  overflow-x: unset;
 
-  > .sidebarEnd > :global(.menu__list) {
-    margin-inline-start: calc(var(--doc-sidebar-spacing-x) * -1);
+  &ListItem {
+    --icon-rotation: 90deg;
 
-    > :global(.menu__list-item) > :global(.menu__list) > li:last-of-type {
-      margin-block-end: 1.25rem;
+    &Collapsed {
+      --icon-rotation: 0deg;
+    }
+  }
+  &Link {
+    font-weight: 500;
+    font-size: 0.813rem;
+    line-height: 16px;
+    letter-spacing: -0.01em;
+
+    &Active.menuLinkSublist:hover {
+      color: var(--ifm-menu-color);
+    }
+  }
+  &LinkSublist {
+    display: grid;
+    grid-template-columns: 0.625rem 1fr;
+    column-gap: 0.625rem;
+
+    font-weight: 600;
+    font-size: 0.938rem;
+    line-height: 100%;
+    letter-spacing: -0.01em;
+    color: var(--ifm-menu-title-color);
+
+    &::before {
+      content: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNiIgaGVpZ2h0PSIxMCIgdmlld0JveD0iMCAwIDYgMTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xIDlMNSA1TDEgMSIgc3Ryb2tlPSIjMDMwNjBCIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=');
+
+      transform-origin: 40% 50%;
+      transition: transform 0.2s cubic-bezier(0.36, 0.66, 0.04, 1);
+
+      transform: rotate(var(--icon-rotation));
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+  .menuList {
+    .menuList {
+      transition: height 0.4s cubic-bezier(0.36, 0.66, 0.04, 1);
+      transition-delay: 0.05s;
+
+      @media (prefers-reduced-motion) {
+        transition-delay: 0s;
+        transition-duration: 0s;
+      }
+
+      .menuLinkSublist {
+        font-size: 0.875rem;
+      }
     }
   }
 }
 
+// #region ----------- DESKTOP STYLES ------------
 @media (min-width: 997px) {
   .sidebar {
-    display: flex;
-    flex-direction: column;
-    max-height: 100vh;
-    height: 100%;
-    position: sticky;
-    top: 0;
-    width: var(--doc-sidebar-width);
-
     transition: opacity 50ms ease;
   }
 
@@ -103,35 +182,7 @@
     background-color: var(--ifm-color-emphasis-200);
   }
 }
-
-.sidebarStart {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  min-height: var(--ifm-navbar-height);
-
-  :global(.navbar__item):global(.dropdown) {
-    padding: 0.438rem 0.5rem;
-
-    background: var(--doc-sidebar-version-c-bg);
-    border-radius: 12px;
-
-    :global(.navbar__item) {
-      display: flex;
-      align-items: center;
-      padding: 0;
-
-      &::after {
-        opacity: 0.5;
-      }
-    }
-
-    :global(.dropdown__menu) {
-      right: 8px;
-    }
-  }
-}
+//#endregion
 
 .frameworkSelector {
   max-width: 14.5rem;
@@ -140,7 +191,11 @@
   margin-block-end: 1rem;
 }
 
+//#region ----------- MOBILE STYLES -------------
 @media (max-width: 996px) {
+  .sidebar {
+    width: 0;
+  }
   .sidebarStart,
   .frameworkSelector {
     display: none;
@@ -159,6 +214,7 @@
     }
   }
 }
+//#endregion
 
 .collapseSidebarButton {
   display: none;
@@ -181,7 +237,6 @@
 
 :global(.menu__list) :global(.menu__list) {
   overflow-y: hidden;
-  will-change: height;
   transition: height var(--ifm-transition-fast) linear;
 }
 

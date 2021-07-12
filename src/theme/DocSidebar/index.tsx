@@ -126,16 +126,20 @@ function DocSidebarItemCategory({
 
   return (
     <li
-      className={clsx('menu__list-item', {
+      className={clsx('menu__list-item', styles.menuListItem, {
+        [styles.menuListItemCollapsed]: collapsed,
         'menu__list-item--collapsed': collapsed,
       })}
     >
       {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
       <a
-        className={clsx('menu__link', {
+        className={clsx('menu__link', styles.menuLink, {
+          [styles.menuLinkSublist]: collapsible,
           'menu__link--sublist': collapsible,
+          [styles.menuLinkActive]: collapsible && isActive,
           'menu__link--active': collapsible && isActive,
           [styles.menuLinkText]: !collapsible,
+          'menu__link-text': !collapsible,
         })}
         onClick={collapsible ? handleItemClick : undefined}
         href={collapsible ? '#' : undefined}
@@ -144,7 +148,7 @@ function DocSidebarItemCategory({
         {label}
       </a>
       <ul
-        className="menu__list"
+        className={clsx('menu__list', styles.menuList)}
         ref={menuListRef}
         style={{
           height: menuListHeight,
@@ -177,9 +181,9 @@ function DocSidebarItemLink({
   const { href, label } = item;
   const isActive = isActiveSidebarItem(item, activePath);
   return (
-    <li className="menu__list-item" key={label}>
+    <li className={clsx('menu__list-item', styles.menuListItem)} key={label}>
       <Link
-        className={clsx('menu__link', {
+        className={clsx('menu__link', styles.menuLink, {
           'menu__link--active': isActive,
         })}
         to={href}
@@ -315,6 +319,7 @@ function DocSidebar({
   sidebarCollapsible = true,
   onCollapse,
   isHidden,
+  ...props
 }: Props): JSX.Element | null {
   const showAnnouncementBar = useShowAnnouncementBar();
   const {
@@ -330,8 +335,10 @@ function DocSidebar({
   } = useResponsiveSidebar();
 
   return (
-    <div
+    <aside
+      {...props}
       className={clsx(styles.sidebar, {
+        [props.className]: Boolean(props.className),
         [styles.sidebarWithHideableNavbar]: hideOnScroll,
         [styles.sidebarHidden]: isHidden,
       })}
@@ -368,7 +375,7 @@ function DocSidebar({
         />
         <div className={clsx(styles.sidebarEnd, 'doc-sidebar__end')}>
           <FrameworkSelector className={styles.frameworkSelector} />
-          <ul className="menu__list">
+          <ul className={clsx('menu__list', styles.menuList)}>
             <DocSidebarItems
               items={sidebar}
               onItemClick={closeResponsiveSidebar}
@@ -379,7 +386,7 @@ function DocSidebar({
         </div>
       </nav>
       {hideableSidebar && <HideableSidebarButton onClick={onCollapse} />}
-    </div>
+    </aside>
   );
 }
 

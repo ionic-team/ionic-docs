@@ -6,18 +6,11 @@
  */
 
 html,
-body {
-  height: 100%;
-}
-
-#__docusaurus {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
+body,
+#__docusaurus,
 .main-wrapper {
-  flex: 1 0 auto;
+  height: 100%;
+  width: 100%;
 }
 
 /* Docusaurus-specific utility classes */
