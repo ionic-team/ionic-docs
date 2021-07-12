@@ -130,7 +130,12 @@ function DocPageContent({
             )}
           </>
         )}
-        <div className={clsx('doc-page__end', styles.docPageEnd)}>
+        <div
+          className={clsx('doc-page__end', styles.docPageEnd)}
+          onScroll={({ target }) => {
+            target.dispatchEvent(new CustomEvent('scroll'));
+          }}
+        >
           <Navbar />
           <main
             className={clsx(styles.docMainContainer, {

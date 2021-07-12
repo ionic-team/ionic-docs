@@ -21,6 +21,11 @@
 }
 
 .sidebar {
+  position: sticky;
+  top: 0;
+
+  max-height: 100vh;
+
   padding: 0;
   overflow-y: auto;
   overflow-x: clip;

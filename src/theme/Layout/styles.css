@@ -5,14 +5,6 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-html,
-body,
-#__docusaurus,
-.main-wrapper {
-  height: 100%;
-  width: 100%;
-}
-
 /* Docusaurus-specific utility classes */
 
 .docusaurus-mt-lg {
