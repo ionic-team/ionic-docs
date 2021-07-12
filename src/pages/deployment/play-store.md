@@ -1,6 +1,6 @@
 ---
 previousText: 'iOS App Store'
-previousUrl: 'docs/publishing/app-store'
+previousUrl: '/docs/deployment/app-store'
 nextText: 'Progressive Web App (PWA)'
 nextUrl: '/docs/deployment/progressive-web-app'
 ---
