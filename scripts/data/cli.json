@@ -343,9 +343,7 @@
       "summary": "Run an Ionic project on a connected device",
       "description": "`ionic capacitor run` will do the following:\n- Perform `ionic build` (or run the dev server from `ionic serve` with the `--livereload` option)\n- Run `capacitor run` (or open IDE for your native project with the `--open` option)\n\nWhen using `--livereload` with hardware devices, remember that livereload needs an active connection between device and computer. In some scenarios, you may need to host the dev server on an external address using the `--external` option. See these [docs](https://ionicframework.com/docs/cli/livereload) for more information.\n\nIf you have multiple devices and emulators, you can target a specific one by ID with the `--target` option. You can list targets with `--list`.\n\nFor Android and iOS, you can setup Remote Debugging on your device with browser development tools using these [docs](https://ionicframework.com/docs/developer-resources/developer-tips).",
       "footnotes": [],
-      "groups": [
-        "beta"
-      ],
+      "groups": [],
       "exampleCommands": [
         "ionic capacitor run ",
         "ionic capacitor run android",
@@ -362,45 +360,6 @@
         }
       ],
       "options": [
-        {
-          "name": "consolelogs",
-          "type": "boolean",
-          "summary": "Print app console logs to the terminal",
-          "groups": [
-            "advanced",
-            "cordova"
-          ],
-          "aliases": [],
-          "spec": {
-            "value": "true/false"
-          }
-        },
-        {
-          "name": "consolelogs-port",
-          "type": "string",
-          "summary": "Use specific port for console logs server",
-          "groups": [
-            "advanced",
-            "cordova"
-          ],
-          "aliases": [],
-          "spec": {
-            "value": "port"
-          }
-        },
-        {
-          "name": "ssl",
-          "type": "boolean",
-          "summary": "Use HTTPS for the dev server",
-          "groups": [
-            "experimental",
-            "cordova"
-          ],
-          "aliases": [],
-          "spec": {
-            "value": "true/false"
-          }
-        },
         {
           "name": "list",
           "type": "boolean",
