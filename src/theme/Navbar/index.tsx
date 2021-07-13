@@ -16,6 +16,7 @@ import useHideableNavbar from '@theme/hooks/useHideableNavbar';
 import useLockBodyScroll from '@theme/hooks/useLockBodyScroll';
 import useWindowSize, { windowSizes } from '@theme/hooks/useWindowSize';
 import NavbarItem from '@theme/NavbarItem';
+import Logo from '@theme/Logo';
 import IconMenu from '@theme/IconMenu';
 
 import styles from './styles.module.scss';
@@ -27,30 +28,27 @@ const DefaultNavItemPosition = 'right';
 // If split links by left/right
 // if position is unspecified, fallback to right (as v1)
 function splitNavItemsByPosition(items) {
-  const startItems = items.filter(
-    item => (item.position ?? DefaultNavItemPosition) === 'start',
+  const leftItems = items.filter(
+    item => (item.position ?? DefaultNavItemPosition) === 'left',
   );
-  const middleItems = items.filter(
-    item => (item.position ?? DefaultNavItemPosition) === 'middle',
-  );
-  const endItems = items.filter(
-    item => (item.position ?? DefaultNavItemPosition) === 'end',
+  const rightItems = items.filter(
+    item => (item.position ?? DefaultNavItemPosition) === 'right',
   );
   return {
-    startItems,
-    middleItems,
-    endItems,
+    leftItems,
+    rightItems,
   };
 }
 
 function Navbar(): JSX.Element {
   const {
+    navbar: { items, hideOnScroll, style },
     colorMode: { disableSwitch: disableColorModeSwitch },
   } = useThemeConfig();
   const {
     siteConfig: {
       customFields: {
-        navbar: { items, hideOnScroll, style },
+        navbar: { items: customItems },
       },
     },
   } = useDocusaurusContext();
@@ -81,7 +79,7 @@ function Navbar(): JSX.Element {
   }, [windowSize]);
 
   const hasSearchNavbarItem = items.some(item => item.type === 'search');
-  const { startItems, middleItems, endItems } = splitNavItemsByPosition(items);
+  const { leftItems, rightItems } = splitNavItemsByPosition(items);
 
   return (
     <nav
@@ -95,7 +93,7 @@ function Navbar(): JSX.Element {
       })}
     >
       <div className="navbar__inner">
-        <div className="navbar__items--start">
+        <div className="navbar__items navbar__items--left">
           {items != null && items.length !== 0 && (
             <button
               aria-label="Navigation bar toggle"
@@ -108,18 +106,17 @@ function Navbar(): JSX.Element {
               <IconMenu />
             </button>
           )}
-          {startItems.map((item, i) => (
+          <Logo
+            className="navbar__brand"
+            imageClassName="navbar__logo"
+            titleClassName="navbar__title"
+          />
+          {leftItems.map((item, i) => (
             <NavbarItem {...item} key={i} />
           ))}
         </div>
-        <div className="navbar__items navbar__items--middle">
-          {middleItems.map((item, i) => (
-            <NavbarItem {...item} key={i} />
-          ))}
-        </div>
-        <div className="navbar__divider" />
-        <div className="navbar__items navbar__items--end">
-          {endItems.map((item, i) => (
+        <div className="navbar__items navbar__items--right">
+          {rightItems.map((item, i) => (
             <NavbarItem {...item} key={i} />
           ))}
           {!disableColorModeSwitch && (
@@ -131,6 +128,11 @@ function Navbar(): JSX.Element {
           )}
           {!hasSearchNavbarItem && <SearchBar />}
         </div>
+        <div className="navbar__items navbar__items--custom">
+          {customItems.map((item, i) => (
+            <NavbarItem {...item} key={i} />
+          ))}
+        </div>
       </div>
       <div
         role="presentation"
@@ -138,6 +140,17 @@ function Navbar(): JSX.Element {
         onClick={hideSidebar}
       />
       <div className="navbar-sidebar">
+        <div className="navbar-sidebar__brand">
+          <Logo
+            className="navbar__brand"
+            imageClassName="navbar__logo"
+            titleClassName="navbar__title"
+            onClick={hideSidebar}
+          />
+          {!disableColorModeSwitch && sidebarShown && (
+            <Toggle checked={isDarkTheme} onChange={onToggleChange} />
+          )}
+        </div>
         <div className="navbar-sidebar__items">
           <div className="menu">
             <ul className="menu__list">

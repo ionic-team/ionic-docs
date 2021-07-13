@@ -184,6 +184,7 @@ function DocSidebarItemLink({
     <li className={clsx('menu__list-item', styles.menuListItem)} key={label}>
       <Link
         className={clsx('menu__link', styles.menuLink, {
+          [styles.menuLinkActive]: isActive,
           'menu__link--active': isActive,
         })}
         to={href}

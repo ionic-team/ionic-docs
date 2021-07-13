@@ -80,8 +80,8 @@
   transform: translateX(4px);
 }
 
-@media only screen and (max-width: 996px) {
-  .tableOfContents {
+@media (max-width: 996px) {
+  .toc {
     display: none;
   }
 

@@ -91,8 +91,19 @@
     line-height: 16px;
     letter-spacing: -0.01em;
 
-    &Active.menuLinkSublist:hover {
-      color: var(--ifm-menu-color);
+    transition: color, background, opacity 0.2s ease-out;
+
+    &:hover {
+      transition: color, background, opacity 0.2s ease-out;
+    }
+
+    &Active {
+      &:hover {
+        opacity: 1;
+      }
+      &.menuLinkSublist:hover {
+        color: var(--ifm-menu-color);
+      }
     }
   }
   &LinkSublist {
@@ -208,7 +219,7 @@
 //#region ----------- MOBILE STYLES -------------
 @media (max-width: 996px) {
   .sidebar {
-    width: 0;
+    position: absolute;
   }
   .sidebarStart,
   .frameworkSelector {
@@ -216,11 +227,16 @@
     opacity: 0;
   }
 
-  .menu:not(:global(.menu--show)) {
-    padding: 0;
+  .menu {
+    overflow-y: auto;
   }
 
   :global(.menu--show) {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: var(--ifm-z-index-overlay);
+
     .frameworkSelector,
     .sidebarStart {
       opacity: 1;
