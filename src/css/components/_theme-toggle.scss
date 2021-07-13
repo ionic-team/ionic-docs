@@ -1,0 +1,11 @@
+html[data-theme='light'] {
+  --theme-toggle-c: var(--c-indigo-60);
+}
+
+html[data-theme='dark'] {
+  --theme-toggle-c: var(--c-indigo-10);
+}
+
+.theme-toggle {
+  color: var(--theme-toggle-c) !important;
+}

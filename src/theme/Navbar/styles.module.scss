@@ -14,12 +14,14 @@
 
 html[data-theme='light'] {
   --navbar-underline-c-bg: var(--c-carbon-100);
+  --navbar-divider-c-bg: var(--c-indigo-40);
   --ifm-navbar-link-hover-color: var( --ifm-navbar-link-color);
   --ifm-navbar-link-color: var(--c-indigo-80);
 }
 
 html[data-theme='dark'] {
   --navbar-underline-c-bg: #fff;
+  --navbar-divider-c-bg: var(--c-indigo-0);
   --ifm-navbar-link-hover-color: var( --ifm-navbar-link-color)
   --ifm-navbar-link-color: #fff;
 }
@@ -38,8 +40,23 @@ html[data-theme='dark'] {
   transform: translate3d(0, calc(-100% - 2px), 0);
 }
 
+:global(.navbar__divider) {
+  width: 1px;
+  align-self: stretch;
+  background: var(--navbar-divider-c-bg);
+  margin: .125rem 1rem;
+
+}
+
 :global(.navbar__items--end) {
   flex: 0 1 auto;
+
+  > a {
+    display: flex;
+    align-items: center;
+    padding: .5rem;
+    color: var(--c-indigo-60);
+  }
 }
 
 :global(.navbar__items--middle) {

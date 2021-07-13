@@ -117,6 +117,7 @@ function Navbar(): JSX.Element {
             <NavbarItem {...item} key={i} />
           ))}
         </div>
+        <div className="navbar__divider" />
         <div className="navbar__items navbar__items--end">
           {endItems.map((item, i) => (
             <NavbarItem {...item} key={i} />

@@ -1,4 +1,5 @@
 const path = require('path');
+const React = require('react');
 
 module.exports = {
   title: 'Ionic Documentation',
@@ -205,37 +206,39 @@ module.exports = {
           ],
         },
         // {
-        //   href: 'https://ionicframework.com/docs/cli',
-        //   label: 'CLI',
-        //   className: 'navbar-cli',
-        //   position: 'right',
+        //   type: 'localeDropdown',
+        //   position: 'end',
+        //   dropdownItemsBefore: [],
+        //   dropdownItemsAfter: [
+        //     {
+        //       href: 'https://ionicframework.com/jp/docs/',
+        //       label: '日本語',
+        //       target: '_blank',
+        //       rel: null,
+        //     },
+        //     {
+        //       href: 'https://ionicframework.com/translate',
+        //       label: 'Translate',
+        //       target: '_blank',
+        //       rel: null,
+        //     },
+        //   ],
         // },
         {
-          type: 'localeDropdown',
-          position: 'end',
-          dropdownItemsBefore: [],
-          dropdownItemsAfter: [
-            {
-              href: 'https://ionicframework.com/jp/docs/',
-              label: '日本語',
-              target: '_blank',
-              rel: null,
-            },
-            {
-              href: 'https://ionicframework.com/translate',
-              label: 'Translate',
-              target: '_blank',
-              rel: null,
-            },
-          ],
-        },
-        {
+          'type': 'iconLink',
+          'width': '18',
+          'height': '16',
+          'icon': 'Twitter',
           'href': 'https://twitter.com/IonicFramework',
           'position': 'end',
           'className': 'navbar-twitter',
           'aria-label': 'Twitter',
         },
         {
+          'type': 'iconLink',
+          'width': '16.5',
+          'height': '16',
+          'icon': 'Github',
           'href': 'https://github.com/ionic-team/ionic-framework',
           'position': 'end',
           'className': 'navbar-github',

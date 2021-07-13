@@ -322,10 +322,7 @@ function DocSidebar({
   ...props
 }: Props): JSX.Element | null {
   const showAnnouncementBar = useShowAnnouncementBar();
-  const {
-    navbar: { hideOnScroll },
-    hideableSidebar,
-  } = useThemeConfig();
+  const { hideableSidebar } = useThemeConfig();
   const { isClosed: isAnnouncementBarClosed } = useAnnouncementBar();
 
   const {
@@ -339,7 +336,6 @@ function DocSidebar({
       {...props}
       className={clsx(styles.sidebar, {
         [props.className]: Boolean(props.className),
-        [styles.sidebarWithHideableNavbar]: hideOnScroll,
         [styles.sidebarHidden]: isHidden,
       })}
     >
@@ -361,14 +357,13 @@ function DocSidebar({
           description: 'The ARIA label for documentation menu',
         })}
       >
-        {hideOnScroll && (
-          <div className={clsx(styles.sidebarStart, 'doc-sidebar__start')}>
-            <Link to={useBaseUrl('/')}>
-              <Logo tabIndex={-1} className={styles.sidebarLogo} />
-            </Link>
-            <VersionSelector />
-          </div>
-        )}
+        <div className={clsx(styles.sidebarStart, 'doc-sidebar__start')}>
+          <Link to={useBaseUrl('/')}>
+            <Logo tabIndex={-1} className={styles.sidebarLogo} />
+          </Link>
+          <VersionSelector />
+        </div>
+
         <ResponsiveSidebarButton
           responsiveSidebarOpened={showResponsiveSidebar}
           onClick={toggleResponsiveSidebar}
