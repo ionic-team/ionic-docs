@@ -147,9 +147,6 @@ module.exports = {
         },
       ],
     },
-    footer: {
-      links: [],
-    },
     algolia: {
       apiKey: '43228ce75714201a27efcf69666d6b40',
       indexName: 'ionicframework',

@@ -79,6 +79,7 @@ function renderReadme({ readme }) {
 
   return `
 ${title}
+<h2 className="table-of-contents__title">Contents</h2>
 <TOCInline
   toc={toc.map(({ value, id }) => {
     return { value, id, children: [] };

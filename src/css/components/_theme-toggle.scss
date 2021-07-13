@@ -6,6 +6,7 @@ html[data-theme='dark'] {
   --theme-toggle-c: var(--c-indigo-10);
 }
 
-.theme-toggle {
-  color: var(--theme-toggle-c) !important;
+button.theme-toggle {
+  display: none;
+  color: var(--theme-toggle-c);
 }

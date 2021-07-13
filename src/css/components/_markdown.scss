@@ -1,3 +1,13 @@
+html[data-theme='light'] {
+  --markdown-toc-title-c: var(--c-indigo-60);
+  --markdown-toc-list-item-c: var(--c-indigo-70);
+}
+
+html[data-theme='dark'] {
+  --markdown-toc-title-c: #fff;
+  --markdown-toc-list-item-c: #fff;
+}
+
 .markdown {
   > * {
     max-width: 100%;
@@ -9,6 +19,14 @@
     line-height: 200%;
     letter-spacing: var(--letter-spacing-tight);
     color: var(--c-carbon-90);
+
+    a {
+      transition: opacity 0.2s ease-out;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
   }
 
   //intro paragraphs
@@ -19,6 +37,39 @@
     + p {
       color: var(--c-indigo-80);
       font-size: 1.25rem;
+    }
+  }
+
+  .table-of-contents {
+    margin-block-end: 3rem;
+
+    list-style: none;
+    padding: 0;
+
+    &__title {
+      color: var(--markdown-toc-title-c);
+      margin-block-end: 1.5rem;
+
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 0.625rem;
+      line-height: 0.75rem;
+      letter-spacing: 0.08em;
+    }
+
+    li {
+      color: var(--markdown-toc-list-item-c);
+      font-size: 0.75rem;
+      line-height: 0.875rem;
+      margin: 0;
+
+      a {
+        color: inherit;
+      }
+
+      + li {
+        margin-block-start: 0.75rem;
+      }
     }
   }
 }

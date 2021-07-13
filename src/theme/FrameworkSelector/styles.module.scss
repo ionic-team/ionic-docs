@@ -1,11 +1,10 @@
 :global(html[data-theme='light']) {
   --framework-selector-btn-c-bg: #fafbfc;
   --framework-selector-dropdown-c-bg: #fff;
-  --framework-selector-c-text: var(--c-indigo-90);
+  --framework-selector-c-text: var(--c-carbon-100);
   --framework-selector-c-border: var(--c-indigo-30);
   --framework-selector-c-border--hover: var(--c-indigo-50);
   --framework-selector-dropdown-item-c-bg: var(--c-indigo-10);
-  --framework-selector-dropdown-item--active-c-text: var(--c-carbon-100);
 }
 :global(html[data-theme='dark']) {
   --framework-selector-btn-c-bg: var(--ifm-menu-color-background-active);
@@ -14,7 +13,6 @@
   --framework-selector-c-border: var(--ifm-menu-color-background-active);
   --framework-selector-c-border--hover: var(--ifm-menu-color-background-active);
   --framework-selector-dropdown-item-c-bg: var(--c-indigo-100);
-  --framework-selector-dropdown-item--active-c-text: #fff;
 }
 
 .frameworkSelector {
@@ -93,11 +91,11 @@
   position: relative;
   display: flex;
 
+  color: var(--framework-selector-c-text);
+
   transition: opacity 0.2s ease-out;
 
   &Active {
-    color: var(--framework-selector-dropdown-item--active-c-text);
-
     &::before {
       content: '';
 

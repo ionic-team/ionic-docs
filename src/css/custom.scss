@@ -45,6 +45,14 @@ body {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 ion-grid {
   margin: 1em 0;
 }
@@ -70,15 +78,6 @@ figcaption {
 img {
   display: block;
   max-width: 100%;
-}
-
-a {
-  transition: opacity 0.2s ease-out;
-
-  &:hover {
-    text-decoration: none;
-    opacity: 0.7;
-  }
 }
 
 table {
