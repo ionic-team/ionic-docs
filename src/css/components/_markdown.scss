@@ -1,0 +1,24 @@
+.markdown {
+  > * {
+    max-width: 100%;
+  }
+
+  p,
+  li {
+    font-size: 1rem;
+    line-height: 200%;
+    letter-spacing: var(--letter-spacing-tight);
+    color: var(--c-carbon-90);
+  }
+
+  //intro paragraphs
+  header + p {
+    color: var(--c-indigo-80);
+    font-size: 1.25rem;
+
+    + p {
+      color: var(--c-indigo-80);
+      font-size: 1.25rem;
+    }
+  }
+}

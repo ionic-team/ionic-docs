@@ -19,6 +19,7 @@ import NavbarItem from '@theme/NavbarItem';
 import IconMenu from '@theme/IconMenu';
 
 import styles from './styles.module.scss';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 // retrocompatible with v1
 const DefaultNavItemPosition = 'right';
@@ -26,23 +27,33 @@ const DefaultNavItemPosition = 'right';
 // If split links by left/right
 // if position is unspecified, fallback to right (as v1)
 function splitNavItemsByPosition(items) {
-  const leftItems = items.filter(
-    item => (item.position ?? DefaultNavItemPosition) === 'left',
+  const startItems = items.filter(
+    item => (item.position ?? DefaultNavItemPosition) === 'start',
   );
-  const rightItems = items.filter(
-    item => (item.position ?? DefaultNavItemPosition) === 'right',
+  const middleItems = items.filter(
+    item => (item.position ?? DefaultNavItemPosition) === 'middle',
+  );
+  const endItems = items.filter(
+    item => (item.position ?? DefaultNavItemPosition) === 'end',
   );
   return {
-    leftItems,
-    rightItems,
+    startItems,
+    middleItems,
+    endItems,
   };
 }
 
 function Navbar(): JSX.Element {
   const {
-    navbar: { items, hideOnScroll, style },
     colorMode: { disableSwitch: disableColorModeSwitch },
   } = useThemeConfig();
+  const {
+    siteConfig: {
+      customFields: {
+        navbar: { items, hideOnScroll, style },
+      },
+    },
+  } = useDocusaurusContext();
   const [sidebarShown, setSidebarShown] = useState(false);
   const { isDarkTheme, setLightTheme, setDarkTheme } = useThemeContext();
   const { navbarRef, isNavbarVisible } = useHideableNavbar(hideOnScroll);
@@ -70,7 +81,7 @@ function Navbar(): JSX.Element {
   }, [windowSize]);
 
   const hasSearchNavbarItem = items.some(item => item.type === 'search');
-  const { leftItems, rightItems } = splitNavItemsByPosition(items);
+  const { startItems, middleItems, endItems } = splitNavItemsByPosition(items);
 
   return (
     <nav
@@ -84,7 +95,7 @@ function Navbar(): JSX.Element {
       })}
     >
       <div className="navbar__inner">
-        <div className="navbar__items">
+        <div className="navbar__items--start">
           {items != null && items.length !== 0 && (
             <button
               aria-label="Navigation bar toggle"
@@ -97,12 +108,17 @@ function Navbar(): JSX.Element {
               <IconMenu />
             </button>
           )}
-          {leftItems.map((item, i) => (
+          {startItems.map((item, i) => (
             <NavbarItem {...item} key={i} />
           ))}
         </div>
-        <div className="navbar__items navbar__items--right">
-          {rightItems.map((item, i) => (
+        <div className="navbar__items navbar__items--middle">
+          {middleItems.map((item, i) => (
+            <NavbarItem {...item} key={i} />
+          ))}
+        </div>
+        <div className="navbar__items navbar__items--end">
+          {endItems.map((item, i) => (
             <NavbarItem {...item} key={i} />
           ))}
           {!disableColorModeSwitch && (

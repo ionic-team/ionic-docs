@@ -5,15 +5,22 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+:root {
+  --ifm-navbar-background-color: var(--token-background-color);
+  --ifm-navbar-item-padding-horizontal: 0.875rem;
+  --ifm-navbar-padding-horizontal: 20px;
+  --ifm-navbar-height: 3.5rem;
+}
+
 html[data-theme='light'] {
   --navbar-underline-c-bg: var(--c-carbon-100);
-  --ifm-navbar-link-hover-color: var(--c-carbon-100);
+  --ifm-navbar-link-hover-color: var( --ifm-navbar-link-color);
   --ifm-navbar-link-color: var(--c-indigo-80);
 }
 
 html[data-theme='dark'] {
   --navbar-underline-c-bg: #fff;
-  --ifm-navbar-link-hover-color: #fff;
+  --ifm-navbar-link-hover-color: var( --ifm-navbar-link-color)
   --ifm-navbar-link-color: #fff;
 }
 
@@ -31,8 +38,13 @@ html[data-theme='dark'] {
   transform: translate3d(0, calc(-100% - 2px), 0);
 }
 
-:global(.navbar__items--right) {
+:global(.navbar__items--end) {
+  flex: 0 1 auto;
+}
+
+:global(.navbar__items--middle) {
   flex: 1 1 auto;
+  justify-content:flex-end;
 }
 
 :global(.navbar__link):global(.navbar__link--active) {

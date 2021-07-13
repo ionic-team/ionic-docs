@@ -1,0 +1,91 @@
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+:root {
+  --ifm-toc-padding-vertical: 0.75rem;
+  --ifm-toc-padding-horizontal: 0.375rem;
+}
+
+:global(html[data-theme='light']) {
+  --toc-title-c: var(--c-indigo-60);
+  --toc-list-item-c: var(--c-indigo-70);
+  --toc-list-item--active-c: var(--c-blue-90);
+}
+:global(html[data-theme='dark']) {
+  --toc-title-c: #fff;
+  --toc-list-item-c: var(--c-indigo-10);
+  --toc-list-item--active-c: var(--c-blue-90);
+}
+
+.toc {
+  max-height: calc(
+    100vh - (var(--ifm-navbar-height) + 2rem) - var(--doc-item-main-spacing-y)
+  );
+  position: sticky;
+  top: 0;
+  top: calc(var(--doc-item-main-spacing-y) + var(--ifm-navbar-height));
+  width: 12rem;
+
+  > .list {
+    margin-inline-start: calc(var(--ifm-toc-padding-horizontal) * -2);
+  }
+}
+
+.tocEmpty {
+  display: none;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 0.625rem;
+  line-height: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  margin-block-end: 1.5rem;
+  color: var(--toc-title-c);
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.listItem {
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  color: var(--toc-list-item-c);
+
+  > ul {
+    margin-block-start: 0.5rem;
+  }
+}
+
+.link {
+  color: inherit;
+
+  transform: translateX(0px);
+
+  transition: color 0.2s ease-out, transform 0.2s ease-out;
+}
+
+:global(.toc__link--active) {
+  font-weight: 500;
+  display: block;
+
+  color: var(--toc-list-item--active-c);
+  transform: translateX(4px);
+}
+
+@media only screen and (max-width: 996px) {
+  .tableOfContents {
+    display: none;
+  }
+
+  .docItemContainer {
+    padding: 0 0.3rem;
+  }
+}

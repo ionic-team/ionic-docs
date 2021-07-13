@@ -6,6 +6,15 @@
  */
 
 :root {
+  --ifm-menu-color-active: var(--c-blue-90);
+  --ifm-menu-color-background-active: var(--c-cyan-10);
+  --ifm-menu-color-background-hover: none;
+  --ifm-menu-link-sublist-icon: var(--icon-chevron);
+  --ifm-menu-color: var(--c-indigo-80);
+  --ifm-menu-link-padding-vertical: 0.5rem;
+  --ifm-menu-link-padding-horizontal: 1.25rem;
+  --ifm-menu-title-color: var(--c-indigo-100);
+
   --collapse-button-bg-color-dark: #2e333a;
 
   --doc-sidebar-width: 17.5rem;

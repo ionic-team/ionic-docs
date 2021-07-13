@@ -23,147 +23,6 @@ module.exports = {
   organizationName: 'ionic-team',
   projectName: 'ionic-docs',
   themeConfig: {
-    navbar: {
-      hideOnScroll: true,
-      items: [
-        {
-          type: 'doc',
-          docId: 'index',
-          label: 'Guide',
-          position: 'left',
-        },
-        {
-          type: 'doc',
-          docId: 'components',
-          label: 'Components',
-          position: 'left',
-        },
-        {
-          type: 'doc',
-          docId: 'cli',
-          label: 'CLI',
-          position: 'left',
-        },
-        {
-          type: 'doc',
-          docId: 'native',
-          label: 'Native',
-          position: 'left',
-        },
-        {
-          type: 'search',
-          position: 'right',
-        },
-        {
-          label: 'Community',
-          position: 'right',
-          items: [
-            {
-              href: 'https://ionicframework.com/community',
-              label: 'Community Hub',
-              target: '_blank',
-              rel: null,
-            },
-            {
-              href: 'https://forum.ionicframework.com/',
-              label: 'Forum',
-              target: '_blank',
-              rel: null,
-            },
-            {
-              href: 'https://ionicworldwide.herokuapp.com/',
-              label: 'Slack',
-              target: '_blank',
-              rel: null,
-            },
-            {
-              href: 'https://spectrum.chat/ionic',
-              label: 'Spectrum',
-              target: '_blank',
-              rel: null,
-            },
-            {
-              href: 'https://www.meetup.com/topics/ionic-framework/',
-              label: 'Meetups',
-              target: '_blank',
-              rel: null,
-            },
-            {
-              href: 'https://blog.ionicframework.com/',
-              label: 'Blog',
-              target: '_blank',
-              rel: null,
-            },
-            {
-              href: 'https://twitter.com/ionicframework',
-              label: 'Twitter',
-              target: '_blank',
-              rel: null,
-            },
-          ],
-        },
-        {
-          label: 'Support',
-          position: 'right',
-          items: [
-            {
-              href: 'https://ionicframework.com/support',
-              label: 'Help Center',
-              target: '_blank',
-              rel: null,
-            },
-            {
-              href: 'https://ionic.zendesk.com/',
-              label: 'Customer Support',
-              target: '_blank',
-              rel: null,
-            },
-            {
-              href: 'https://ionicframework.com/advisory',
-              label: 'Enterprise Advisory',
-              target: '_blank',
-              rel: null,
-            },
-          ],
-        },
-        // {
-        //   href: 'https://ionicframework.com/docs/cli',
-        //   label: 'CLI',
-        //   className: 'navbar-cli',
-        //   position: 'right',
-        // },
-        {
-          type: 'localeDropdown',
-          position: 'right',
-          dropdownItemsAfter: [
-            {
-              href: 'https://ionicframework.com/jp/docs/',
-              label: '日本語',
-              target: '_blank',
-              rel: null,
-            },
-            {
-              href: 'https://ionicframework.com/translate',
-              label: 'Translate',
-              target: '_blank',
-              rel: null,
-            },
-          ],
-        },
-        {
-          'href': 'https://twitter.com/IonicFramework',
-          'position': 'right',
-          'className': 'navbar-twitter',
-          'aria-label': 'Twitter',
-        },
-        {
-          'href': 'https://github.com/ionic-team/ionic-framework',
-          'position': 'right',
-          'className': 'navbar-github',
-          'aria-label': 'GitHub',
-        },
-      ],
-    },
     footer: {
       links: [],
     },
@@ -242,5 +101,147 @@ module.exports = {
   ],
   customFields: {
     frameworks: ['react', 'angular', 'vue', 'javascript'],
+    navbar: {
+      hideOnScroll: true,
+      items: [
+        {
+          type: 'doc',
+          docId: 'index',
+          label: 'Guide',
+          position: 'start',
+        },
+        {
+          type: 'doc',
+          docId: 'components',
+          label: 'Components',
+          position: 'start',
+        },
+        {
+          type: 'doc',
+          docId: 'cli',
+          label: 'CLI',
+          position: 'start',
+        },
+        {
+          type: 'doc',
+          docId: 'native',
+          label: 'Native',
+          position: 'start',
+        },
+        {
+          type: 'search',
+          position: 'middle',
+        },
+        {
+          label: 'Community',
+          position: 'middle',
+          items: [
+            {
+              href: 'https://ionicframework.com/community',
+              label: 'Community Hub',
+              target: '_blank',
+              rel: null,
+            },
+            {
+              href: 'https://forum.ionicframework.com/',
+              label: 'Forum',
+              target: '_blank',
+              rel: null,
+            },
+            {
+              href: 'https://ionicworldwide.herokuapp.com/',
+              label: 'Slack',
+              target: '_blank',
+              rel: null,
+            },
+            {
+              href: 'https://spectrum.chat/ionic',
+              label: 'Spectrum',
+              target: '_blank',
+              rel: null,
+            },
+            {
+              href: 'https://www.meetup.com/topics/ionic-framework/',
+              label: 'Meetups',
+              target: '_blank',
+              rel: null,
+            },
+            {
+              href: 'https://blog.ionicframework.com/',
+              label: 'Blog',
+              target: '_blank',
+              rel: null,
+            },
+            {
+              href: 'https://twitter.com/ionicframework',
+              label: 'Twitter',
+              target: '_blank',
+              rel: null,
+            },
+          ],
+        },
+        {
+          label: 'Support',
+          position: 'middle',
+          items: [
+            {
+              href: 'https://ionicframework.com/support',
+              label: 'Help Center',
+              target: '_blank',
+              rel: null,
+            },
+            {
+              href: 'https://ionic.zendesk.com/',
+              label: 'Customer Support',
+              target: '_blank',
+              rel: null,
+            },
+            {
+              href: 'https://ionicframework.com/advisory',
+              label: 'Enterprise Advisory',
+              target: '_blank',
+              rel: null,
+            },
+          ],
+        },
+        // {
+        //   href: 'https://ionicframework.com/docs/cli',
+        //   label: 'CLI',
+        //   className: 'navbar-cli',
+        //   position: 'right',
+        // },
+        {
+          type: 'localeDropdown',
+          position: 'end',
+          dropdownItemsBefore: [],
+          dropdownItemsAfter: [
+            {
+              href: 'https://ionicframework.com/jp/docs/',
+              label: '日本語',
+              target: '_blank',
+              rel: null,
+            },
+            {
+              href: 'https://ionicframework.com/translate',
+              label: 'Translate',
+              target: '_blank',
+              rel: null,
+            },
+          ],
+        },
+        {
+          'href': 'https://twitter.com/IonicFramework',
+          'position': 'end',
+          'className': 'navbar-twitter',
+          'aria-label': 'Twitter',
+        },
+        {
+          'href': 'https://github.com/ionic-team/ionic-framework',
+          'position': 'end',
+          'className': 'navbar-github',
+          'aria-label': 'GitHub',
+        },
+      ],
+    },
   },
 };
