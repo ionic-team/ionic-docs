@@ -26,13 +26,20 @@
 }
 
 html[data-theme='light'] {
-  --token-background-color: #fff;
+  --token-bg-c: #fff;
+  --token-text-c: var(--c-carbon-90);
 
+  --ifm-heading-color: var(--c-carbon-100);
   --ifm-code-background: var(--c-indigo-10);
+  --ifm-font-color-base: var(--c-carbon-90);
 }
 
 html[data-theme='dark'] {
-  --token-background-color: #03060b;
+  --token-bg-c: #03060b;
+  --token-text-c: #fff;
+
+  --ifm-heading-color: #fff;
+  --ifm-font-color-base: #fff;
 }
 
 *,

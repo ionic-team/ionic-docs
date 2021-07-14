@@ -1,11 +1,13 @@
 html[data-theme='light'] {
   --markdown-toc-title-c: var(--c-indigo-60);
   --markdown-toc-list-item-c: var(--c-indigo-70);
+  --markdown-text-intro-c: var(--c-indigo-80);
 }
 
 html[data-theme='dark'] {
   --markdown-toc-title-c: #fff;
   --markdown-toc-list-item-c: #fff;
+  --markdown-text-intro-c: #fff;
 }
 
 .markdown {
@@ -18,7 +20,6 @@ html[data-theme='dark'] {
     font-size: 1rem;
     line-height: 200%;
     letter-spacing: var(--letter-spacing-tight);
-    color: var(--c-carbon-90);
 
     a {
       transition: opacity 0.2s ease-out;
@@ -31,11 +32,11 @@ html[data-theme='dark'] {
 
   //intro paragraphs
   header + p {
-    color: var(--c-indigo-80);
+    color: var(--markdown-text-intro-c);
     font-size: 1.25rem;
 
     + p {
-      color: var(--c-indigo-80);
+      color: var(--markdown-text-intro-c);
       font-size: 1.25rem;
     }
   }
