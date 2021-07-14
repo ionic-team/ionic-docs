@@ -1,0 +1,64 @@
+html[data-theme='light'] {
+  --ifm-table-border-color: var(--c-indigo-30);
+}
+
+html[data-theme='dark'] {
+  --ifm-table-border-color: #fff;
+}
+
+:root {
+  --ifm-table-cell-padding: 0.75rem;
+  --ifm-table-background: transparent;
+  --ifm-table-stripe-background: var(--ifm-table-background);
+  --ifm-table-border-width: 1px;
+
+  --ifm-table-head-background: inherit;
+  --ifm-table-head-color: inherit;
+  --ifm-table-head-font-weight: var(--ifm-font-weight-bold);
+  --ifm-table-cell-color: inherit;
+}
+
+table,
+tr,
+td,
+th {
+  border-collapse: collapse;
+}
+
+table {
+  display: table;
+  border-radius: 8px;
+
+  border-style: hidden; /* hide standard table (collapsed) border */
+  box-shadow: inset 0 0 0 1px var(--ifm-table-border-color);
+
+  thead {
+    tr {
+      border-width: 1px;
+    }
+  }
+}
+
+th {
+  text-align: start;
+}
+
+thead th:empty {
+  display: none;
+}
+
+.reference-table {
+  display: inline-table;
+}
+
+.reference-table th h3 {
+  margin: 0;
+}
+
+.reference-table p {
+  margin: 0;
+}
+
+.reference-table p + p {
+  margin-top: 2em;
+}

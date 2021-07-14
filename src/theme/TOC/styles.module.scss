@@ -80,6 +80,12 @@
   transform: translateX(4px);
 }
 
+.toc :global(.edit-this-page) {
+  border-block-start: 1px solid var(--c-indigo-20);
+  padding-block-start: 1.25rem;
+  margin-block-start: 1.25rem;
+}
+
 @media (max-width: 996px) {
   .toc {
     display: none;

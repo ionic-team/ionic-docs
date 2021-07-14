@@ -11,6 +11,8 @@ import useTOCHighlight from '@theme/hooks/useTOCHighlight';
 import type { TOCProps } from '@theme/TOC';
 import styles from './styles.module.scss';
 import { TOCItem } from '@docusaurus/types';
+import { useAllDocsData } from '@theme/hooks/useDocs';
+import EditThisPage from '@theme/EditThisPage';
 
 const LINK_CLASS_NAME = 'toc__link';
 const ACTIVE_LINK_CLASS_NAME = 'toc__link--active';
@@ -48,7 +50,9 @@ function Headings({
   );
 }
 
-function TOC({ toc }: TOCProps): JSX.Element {
+function TOC({ toc, editUrl }: TOCProps): JSX.Element {
+  const stuff = useAllDocsData();
+
   useTOCHighlight(LINK_CLASS_NAME, ACTIVE_LINK_CLASS_NAME, TOP_OFFSET);
   return (
     <div
@@ -59,6 +63,7 @@ function TOC({ toc }: TOCProps): JSX.Element {
     >
       <div className={clsx('toc__title', styles.title)}>Contents</div>
       <Headings toc={toc} />
+      {editUrl && <EditThisPage editUrl={editUrl} />}
     </div>
   );
 }

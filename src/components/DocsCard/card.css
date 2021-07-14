@@ -21,6 +21,12 @@ docs-card {
   overflow: hidden;
 }
 
+.Card:hover,
+.Card:active,
+.Card:focus {
+  color: inherit;
+}
+
 .Card-with-image {
   grid-row: span 2;
 }

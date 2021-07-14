@@ -18,6 +18,7 @@
 @use './components/admonition';
 @use './components/code';
 @use './components/markdown';
+@use './components/table';
 @use './components/theme-toggle';
 
 :root {
@@ -85,55 +86,6 @@ figcaption {
 img {
   display: block;
   max-width: 100%;
-}
-
-table {
-  border-width: 1px 0 0 1px;
-  font-size: 13px;
-  margin: 2em 0;
-  overflow-x: auto;
-  width: 100%;
-  display: inline-table;
-}
-
-table,
-td,
-th {
-  border-collapse: collapse;
-}
-
-td,
-th {
-  border-width: 0 1px 1px 0;
-  line-height: 1.5;
-  padding: 1em;
-  text-align: left;
-}
-
-thead th:empty {
-  display: none;
-}
-
-thead th,
-tbody tr:nth-child(even) {
-  background-color: var(--ifm-table-stripe-background);
-}
-
-.reference-table {
-  display: inline-table;
-}
-
-.reference-table th h3 {
-  padding: 0;
-  margin: 1em 0 0.25em;
-}
-
-.reference-table p {
-  margin: 0;
-}
-
-.reference-table p + p {
-  margin-top: 2em;
 }
 
 iframe {

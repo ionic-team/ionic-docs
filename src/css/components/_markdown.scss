@@ -16,18 +16,24 @@ html[data-theme='dark'] {
   }
 
   p,
-  li {
+  li,
+  td,
+  tr {
     font-size: 1rem;
-    line-height: 200%;
     letter-spacing: var(--letter-spacing-tight);
 
-    a {
+    > a {
       transition: opacity 0.2s ease-out;
 
       &:hover {
         opacity: 0.7;
       }
     }
+  }
+
+  p,
+  li {
+    line-height: 200%;
   }
 
   //intro paragraphs
