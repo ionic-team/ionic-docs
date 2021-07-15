@@ -98,6 +98,10 @@ ${rest}
 }
 
 function renderUsage({ usage }) {
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
   const keys = Object.keys(usage);
 
   if (keys.length === 0) {
@@ -116,7 +120,7 @@ ${usage[keys[0]]}
 ## Usage
 
 <Tabs defaultValue="${keys[0]}" values={[${keys
-    .map(key => `{ value: '${key}', label: '${key.toUpperCase()}' }`)
+    .map(key => `{ value: '${key}', label: '${capitalizeFirstLetter(key)}' }`)
     .join(', ')}]}>
 
 ${Object.entries(usage)

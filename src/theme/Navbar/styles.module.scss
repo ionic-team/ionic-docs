@@ -10,6 +10,7 @@
 }
 
 html[data-theme='light'] {
+  --ifm-navbar-background-color: #fff;
   --navbar-item-icon-c: var(--c-indigo-60);
   --ifm-navbar-link-color: var(--c-indigo-80);
   --ifm-navbar-link-hover-color: var(--ifm-navbar-link-color);
@@ -17,10 +18,11 @@ html[data-theme='light'] {
 }
 
 html[data-theme='dark'] {
+  --ifm-navbar-background-color: var(--ifm-background-color);
   --navbar-item-icon-c: var(--c-indigo-10);
   --ifm-navbar-link-color: var(--c-indigo-10);
   --ifm-navbar-link-hover-color: var(--ifm-navbar-link-color);
-  --navbar-link-active-c: var(--c-carbon-100);
+  --navbar-link-active-c: var(--c-indigo-10);
 }
 
 :global {

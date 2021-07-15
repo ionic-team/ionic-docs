@@ -1,11 +1,32 @@
 import React from 'react';
 
+export function ChevronDown(props) {
+  return (
+    <svg
+      viewBox="0 0 10 6"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-label="chevron down icon"
+      {...props}
+    >
+      <path
+        d="M1 1l4 4 4-4"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export function Github(props) {
   return (
     <svg
       viewBox="0 0 17 16"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      aria-label="Github icon"
       {...props}
     >
       <path
@@ -22,6 +43,7 @@ export function Moon(props) {
       viewBox="0 0 17 16"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      aria-label="Moon icon"
       {...props}
     >
       <path
@@ -33,12 +55,12 @@ export function Moon(props) {
 }
 
 export const Sun = props => (
-  <svg viewBox="0 0 16 16" fill="none" {...props}>
+  <svg viewBox="0 0 16 16" fill="none" aria-label="Sun icon" {...props}>
     <path
       d="M8 1.5V3M8 13V14.5M3.40375 3.40375L4.46437 4.46438M11.5356 11.5356L12.5963 12.5962M1.5 8H3M13 8H14.5M3.40375 12.5962L4.46437 11.5356M11.5356 4.46438L12.5963 3.40375"
       stroke="currentColor"
       strokeMiterlimit="10"
-      stroke-linecap="round"
+      strokeLinecap="round"
     />
     <path
       d="M8 10.5C6.61929 10.5 5.5 9.38071 5.5 8C5.5 6.61929 6.61929 5.5 8 5.5C9.38071 5.5 10.5 6.61929 10.5 8C10.5 9.38071 9.38071 10.5 8 10.5Z"
@@ -55,6 +77,7 @@ export function Twitter(props) {
       viewBox="0 0 19 16"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      aria-label="Twitter icon"
       {...props}
     >
       <path

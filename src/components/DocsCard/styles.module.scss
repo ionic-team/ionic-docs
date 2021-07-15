@@ -1,10 +1,14 @@
 :global {
   html[data-theme='light'] {
     --docs-card-border-c: var(--c-indigo-30);
+    --docs-card-shadow: 0px 1px 2px rgba(2, 8, 20, 0.06),
+      0px 2px 8px rgba(2, 8, 20, 0.08);
   }
 
   html[data-theme='dark'] {
     --docs-card-border-c: #fff;
+    --docs-card-shadow: 0px 1px 2px rgba(255, 255, 255, 1),
+      0px 2px 8px rgba(255, 255, 255, 0.75);
   }
 
   :root {
@@ -55,8 +59,7 @@ docs-card[disabled]::after {
 
 @media (hover: hover) {
   .card[href]:hover {
-    box-shadow: 0px 1px 2px rgba(2, 8, 20, 0.06),
-      0px 2px 8px rgba(2, 8, 20, 0.08);
+    box-shadow: var(--docs-card-shadow);
     text-decoration: none;
 
     :global(.Card-icon-hover) {

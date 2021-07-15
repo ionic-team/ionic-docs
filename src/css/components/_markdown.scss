@@ -28,14 +28,6 @@ html[data-theme='dark'] {
   tr {
     font-size: 1rem;
     letter-spacing: var(--letter-spacing-tight);
-
-    > a {
-      transition: opacity 0.2s ease-out;
-
-      &:hover {
-        opacity: 0.7;
-      }
-    }
   }
 
   p,

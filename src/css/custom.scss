@@ -19,28 +19,25 @@
 @use './components/code';
 @use './components/markdown';
 @use './components/table';
+@use './components/tabs';
 @use './components/theme-toggle';
 
 :root {
   --ifm-link-color: var(--c-blue-90);
-  --ifm-link-hover-color: var(--c-blue-90);
+  //rgb value is c-blue-90
+  --ifm-link-hover-color: rgba(27, 109, 255, 0.7);
 }
 
 html[data-theme='light'] {
-  --token-bg-c: #fff;
-  --token-text-c: var(--c-carbon-90);
-
   --ifm-heading-color: var(--c-carbon-100);
   --ifm-code-background: var(--c-indigo-10);
   --ifm-font-color-base: var(--c-carbon-90);
 }
 
 html[data-theme='dark'] {
-  --token-bg-c: #03060b;
-  --token-text-c: #fff;
-
   --ifm-heading-color: #fff;
   --ifm-font-color-base: #fff;
+  --ifm-background-color: #03060b;
 }
 
 *,

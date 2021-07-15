@@ -10,10 +10,9 @@
   --ifm-menu-color-background-active: var(--c-cyan-10);
   --ifm-menu-color-background-hover: none;
   --ifm-menu-link-sublist-icon: var(--icon-chevron);
-  --ifm-menu-color: var(--c-indigo-80);
+
   --ifm-menu-link-padding-vertical: 0.5rem;
   --ifm-menu-link-padding-horizontal: 1.25rem;
-  --ifm-menu-title-color: var(--c-indigo-100);
 
   --collapse-button-bg-color-dark: #2e333a;
 
@@ -23,9 +22,15 @@
 }
 
 :global(html[data-theme='light']) {
+  --ifm-menu-title-color: var(--c-indigo-100);
+  --ifm-menu-color: var(--c-indigo-80);
+
   --doc-sidebar-version-c-bg: var(--c-indigo-10);
 }
 :global(html[data-theme='dark']) {
+  --ifm-menu-title-color: #fff;
+  --ifm-menu-color: #fff;
+
   --doc-sidebar-version-c-bg: var(--ifm-menu-color-background-active);
 }
 
@@ -79,10 +84,10 @@
   overflow-x: unset;
 
   &ListItem {
-    --icon-rotation: 90deg;
+    --icon-rotation: 0deg;
 
     &Collapsed {
-      --icon-rotation: 0deg;
+      --icon-rotation: -90deg;
     }
   }
   &Link {
@@ -90,24 +95,10 @@
     font-size: 0.813rem;
     line-height: 16px;
     letter-spacing: -0.01em;
-
-    transition: color, background, opacity 0.2s ease-out;
-
-    &:hover {
-      transition: color, background, opacity 0.2s ease-out;
-    }
-
-    &Active {
-      &:hover {
-        opacity: 1;
-      }
-      &.menuLinkSublist:hover {
-        color: var(--ifm-menu-color);
-      }
-    }
   }
   &LinkSublist {
     display: grid;
+    align-items: center;
     grid-template-columns: 0.625rem 1fr;
     column-gap: 0.625rem;
 
@@ -117,9 +108,7 @@
     letter-spacing: -0.01em;
     color: var(--ifm-menu-title-color);
 
-    &::before {
-      content: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNiIgaGVpZ2h0PSIxMCIgdmlld0JveD0iMCAwIDYgMTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xIDlMNSA1TDEgMSIgc3Ryb2tlPSIjMDMwNjBCIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=');
-
+    > svg {
       transform-origin: 40% 50%;
       transition: transform 0.2s cubic-bezier(0.36, 0.66, 0.04, 1);
 
@@ -128,6 +117,10 @@
 
     &::after {
       display: none;
+    }
+
+    &:hover {
+      color: var(--ifm-menu-title-color);
     }
   }
   .menuList {
