@@ -11,6 +11,13 @@ html[data-theme='dark'] {
 }
 
 .markdown {
+  .encapsulation-pill {
+    position: absolute;
+    top: calc(
+      var(--ifm-navbar-height) + var(--doc-item-main-spacing-y) - 0.5rem
+    );
+  }
+
   > * {
     max-width: 100%;
   }

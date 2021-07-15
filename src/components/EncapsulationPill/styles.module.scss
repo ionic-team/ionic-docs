@@ -1,0 +1,31 @@
+:global(html[data-theme='light']) {
+  --encapsulation-pill-bg-c: var(--c-indigo-20);
+  --encapsulation-pill-c: var(--c-indigo-80);
+}
+
+:global(html[data-theme='dark']) {
+  --encapsulation-pill-bg-c: var(--c-indigo-80);
+  --encapsulation-pill-c: var(--c-indigo-20);
+}
+
+:global(:root) {
+}
+
+.encapsulationPill {
+  display: inline-block;
+
+  padding: 0.375rem;
+
+  text-transform: uppercase;
+
+  color: var(--encapsulation-pill-c);
+  font-weight: 500;
+  font-size: 0.625rem;
+  line-height: 100%;
+  letter-spacing: 0.12em;
+
+  background: var(--encapsulation-pill-bg-c);
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 100px;
+}

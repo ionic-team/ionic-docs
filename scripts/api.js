@@ -67,11 +67,10 @@ ${Object.entries(frontmatter)
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import TOCInline from '@theme/TOCInline';
 `;
 }
 
-function renderReadme({ readme }) {
+function renderReadme({ readme, encapsulation }) {
   const endIndex = readme.indexOf('\n');
 
   const title = readme.substring(0, endIndex);
@@ -79,12 +78,21 @@ function renderReadme({ readme }) {
 
   return `
 ${title}
+
+import EncapsulationPill from '/src/components/EncapsulationPill';
+
+<EncapsulationPill type="${encapsulation}" />
+
 <h2 className="table-of-contents__title">Contents</h2>
+
+import TOCInline from '@theme/TOCInline';
+
 <TOCInline
   toc={toc.map(({ value, id }) => {
     return { value, id, children: [] };
   })}
 />
+
 ${rest}
   `;
 }

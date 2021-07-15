@@ -7,15 +7,7 @@ html[data-theme='dark'] {
 }
 
 :root {
-  --ifm-table-cell-padding: 0.75rem;
-  --ifm-table-background: transparent;
   --ifm-table-stripe-background: var(--ifm-table-background);
-  --ifm-table-border-width: 1px;
-
-  --ifm-table-head-background: inherit;
-  --ifm-table-head-color: inherit;
-  --ifm-table-head-font-weight: var(--ifm-font-weight-bold);
-  --ifm-table-cell-color: inherit;
 }
 
 table,

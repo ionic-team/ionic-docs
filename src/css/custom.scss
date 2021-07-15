@@ -49,6 +49,10 @@ html[data-theme='dark'] {
   box-sizing: border-box;
 }
 
+html {
+  scroll-padding-top: calc(var(--ifm-navbar-height) + 16px);
+}
+
 body {
   margin: 0;
 }
