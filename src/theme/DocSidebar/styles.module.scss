@@ -28,8 +28,9 @@
   --doc-sidebar-version-c-bg: var(--c-indigo-10);
 }
 :global(html[data-theme='dark']) {
-  --ifm-menu-title-color: #fff;
-  --ifm-menu-color: #fff;
+  --ifm-menu-color-background-active: var(--token-secondary-bg-c);
+  --ifm-menu-title-color: var(--ifm-heading-color);
+  --ifm-menu-color: var(--c-carbon-10);
 
   --doc-sidebar-version-c-bg: var(--ifm-menu-color-background-active);
 }

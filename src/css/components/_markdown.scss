@@ -7,7 +7,7 @@ html[data-theme='light'] {
 html[data-theme='dark'] {
   --markdown-toc-title-c: #fff;
   --markdown-toc-list-item-c: #fff;
-  --markdown-text-intro-c: #fff;
+  --markdown-text-intro-c: var(--c-indigo-40);
 }
 
 .markdown {
