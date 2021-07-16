@@ -68,7 +68,9 @@ pre[class*='language-'] {
   color: #91c5ff;
 }
 
-.token.tag .token.tag {
+.token.tag.punctuation,
+.token.tag.class-name,
+.token.tag.punctuation + .token.tag:not(.attr-value):not([class*='language-']) {
   color: #2b90ff;
 }
 

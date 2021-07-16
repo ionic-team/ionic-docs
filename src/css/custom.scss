@@ -28,6 +28,9 @@
   --ifm-link-color: var(--c-blue-90);
   //rgb value is c-blue-90
   --ifm-link-hover-color: rgba(27, 109, 255, 0.7);
+
+  --ifm-font-family-monospace: 'SFMono-Regular', 'Roboto Mono', Consolas,
+    'Liberation Mono', Menlo, Courier, monospace;
 }
 
 html[data-theme='light'] {
