@@ -13,11 +13,13 @@
   --toc-title-c: var(--c-indigo-60);
   --toc-list-item-c: var(--c-indigo-70);
   --toc-list-item--active-c: var(--c-blue-90);
+  --toc-border-c: var(--c-indigo-20);
 }
 :global(html[data-theme='dark']) {
   --toc-title-c: #fff;
   --toc-list-item-c: var(--c-indigo-10);
   --toc-list-item--active-c: var(--c-blue-90);
+  --toc-border-c: var(--c-carbon-90);
 }
 
 .toc {
@@ -81,7 +83,7 @@
 }
 
 .toc :global(.edit-this-page) {
-  border-block-start: 1px solid var(--c-indigo-20);
+  border-block-start: 1px solid var(--toc-border-c);
   padding-block-start: 1.25rem;
   margin-block-start: 1.25rem;
 }
