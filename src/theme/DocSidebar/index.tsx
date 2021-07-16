@@ -27,7 +27,7 @@ import IconExternalLink from '@theme/IconExternalLink';
 import { translate } from '@docusaurus/Translate';
 import VersionSelector from '@theme/VersionSelector';
 import FrameworkSelector from '../FrameworkSelector';
-import { ChevronDown } from '@theme/icons';
+import { ChevronDown } from '../../icons';
 
 import styles from './styles.module.scss';
 
@@ -146,7 +146,7 @@ function DocSidebarItemCategory({
         href={collapsible ? '#' : undefined}
         {...props}
       >
-        {collapsible && <ChevronDown />}
+        {collapsible && <ChevronDown width="10" height="6" />}
         {label}
       </a>
       <ul

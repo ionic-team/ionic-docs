@@ -7,7 +7,7 @@
 
 import React from 'react';
 import Translate from '@docusaurus/Translate';
-import { Github } from '@theme/icons';
+import { Github } from '../../icons';
 
 import type { Props } from '@theme/EditThisPage';
 
@@ -26,7 +26,7 @@ export default function EditThisPage({
       {...props}
       className={clsx(props.className, 'edit-this-page', styles.editThisPage)}
     >
-      <Github />
+      <Github width="14" height="14" />
       <Translate
         id="theme.common.editThisPage"
         description="The link label to edit the current page"
