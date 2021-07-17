@@ -1,0 +1,14 @@
+@import '~modern-normalize/modern-normalize.css';
+@import '~@ionic-internal/ionic-ds/dist/tokens/tokens.css';
+
+:root {
+  --ifm-font-family-base: -apple-system, BlinkMacSystemFont, Inter, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI emoji';
+}
+
+html {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-smoothing: antialiased;
+}

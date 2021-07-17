@@ -177,7 +177,7 @@ module.exports = {
       },
     ],
   ],
-  themes: ['@ionic-internal/docusaurus-theme'],
+  themes: [path.resolve(__dirname, 'docusaurus-theme')],
   presets: [
     [
       '@docusaurus/preset-classic',
