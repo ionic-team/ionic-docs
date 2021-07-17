@@ -29,7 +29,7 @@
     "@mdx-js/tag": "^0.20.3",
     "clsx": "^1.1.1",
     "concurrently": "^6.2.0",
-    "docusaurus-plugin-sass": "^0.2.0",
+    "docusaurus-plugin-sass": "^0.2.1",
     "prettier": "^2.2.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
