@@ -16,6 +16,7 @@ import {
 import useLockBodyScroll from '@theme/hooks/useLockBodyScroll';
 import useWindowSize, { windowSizes } from '@theme/hooks/useWindowSize';
 import useScrollPosition from '@theme/hooks/useScrollPosition';
+import useUserPreferencesContext from '@theme/hooks/useUserPreferencesContext';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import isInternalUrl from '@docusaurus/isInternalUrl';
@@ -30,6 +31,8 @@ import FrameworkSelector from '../FrameworkSelector';
 import { ChevronDown } from '../../icons';
 
 import styles from './styles.module.scss';
+import SidebarToggle from '@theme/SidebarToggle';
+import Backdrop from '../Backdrop';
 
 const MOBILE_TOGGLE_SIZE = 24;
 
@@ -276,46 +279,6 @@ function HideableSidebarButton({ onClick }) {
   );
 }
 
-function ResponsiveSidebarButton({ responsiveSidebarOpened, onClick }) {
-  return (
-    <button
-      aria-label={
-        responsiveSidebarOpened
-          ? translate({
-              id: 'theme.docs.sidebar.responsiveCloseButtonLabel',
-              message: 'Close menu',
-              description:
-                'The ARIA label for close button of mobile doc sidebar',
-            })
-          : translate({
-              id: 'theme.docs.sidebar.responsiveOpenButtonLabel',
-              message: 'Open menu',
-              description:
-                'The ARIA label for open button of mobile doc sidebar',
-            })
-      }
-      aria-haspopup="true"
-      className="button button--secondary button--sm menu__button"
-      type="button"
-      onClick={onClick}
-    >
-      {responsiveSidebarOpened ? (
-        <span
-          className={clsx(styles.sidebarMenuIcon, styles.sidebarMenuCloseIcon)}
-        >
-          &times;
-        </span>
-      ) : (
-        <IconMenu
-          className={styles.sidebarMenuIcon}
-          height={MOBILE_TOGGLE_SIZE}
-          width={MOBILE_TOGGLE_SIZE}
-        />
-      )}
-    </button>
-  );
-}
-
 function DocSidebar({
   path,
   sidebar,
@@ -328,11 +291,9 @@ function DocSidebar({
   const { hideableSidebar } = useThemeConfig();
   const { isClosed: isAnnouncementBarClosed } = useAnnouncementBar();
 
-  const {
-    showResponsiveSidebar,
-    closeResponsiveSidebar,
-    toggleResponsiveSidebar,
-  } = useResponsiveSidebar();
+  const { setSidebarOpen, sidebarOpen } = useUserPreferencesContext();
+
+  useLockBodyScroll(sidebarOpen);
 
   return (
     <aside
@@ -342,6 +303,11 @@ function DocSidebar({
         [styles.sidebarHidden]: isHidden,
       })}
     >
+      <Backdrop
+        visible={sidebarOpen}
+        onClick={() => setSidebarOpen(false)}
+        className={styles.backdrop}
+      />
       <nav
         className={clsx(
           'menu',
@@ -349,7 +315,7 @@ function DocSidebar({
           'thin-scrollbar',
           styles.menu,
           {
-            'menu--show': showResponsiveSidebar,
+            'menu--show': sidebarOpen,
             [styles.menuWithAnnouncementBar]:
               !isAnnouncementBarClosed && showAnnouncementBar,
           },
@@ -366,17 +332,12 @@ function DocSidebar({
           </Link>
           <VersionSelector />
         </div>
-
-        <ResponsiveSidebarButton
-          responsiveSidebarOpened={showResponsiveSidebar}
-          onClick={toggleResponsiveSidebar}
-        />
         <div className={clsx(styles.sidebarEnd, 'doc-sidebar__end')}>
           <FrameworkSelector className={styles.frameworkSelector} />
           <ul className={clsx('menu__list', styles.menuList)}>
             <DocSidebarItems
               items={sidebar}
-              onItemClick={closeResponsiveSidebar}
+              onItemClick={() => setSidebarOpen(false)}
               collapsible={sidebarCollapsible}
               activePath={path}
             />

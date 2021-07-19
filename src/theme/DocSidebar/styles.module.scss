@@ -227,7 +227,7 @@
 
   :global(.menu--show) {
     position: fixed;
-    width: 100%;
+    width: min(var(--doc-sidebar-width), 85vw);
     height: 100%;
     z-index: var(--ifm-z-index-overlay);
 
@@ -236,6 +236,10 @@
       opacity: 1;
       display: flex;
     }
+  }
+
+  .backdrop {
+    z-index: var(--ifm-z-index-overlay);
   }
 }
 //#endregion

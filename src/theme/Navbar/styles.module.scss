@@ -96,10 +96,25 @@ html[data-theme='dark'] {
   }
 }
 
-@media (max-width: 997px) {
+@media (max-width: 996px) {
   :global {
-    .navbar__items--left {
-      > *:not(.navbar__toggle) {
+    .navbar__toggle {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar__items {
+      position: relative;
+
+      &--left {
+        flex: 0 0 auto;
+
+        > *:not(.navbar__toggle) {
+          display: none;
+        }
+      }
+
+      &--custom {
         display: none;
       }
     }

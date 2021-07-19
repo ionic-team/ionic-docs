@@ -1,9 +1,46 @@
-@import '~modern-normalize/modern-normalize.css';
+@use './components/admonition';
+@use './components/code';
+@use './components/markdown';
+@use './components/table';
+@use './components/tabs';
+@use './components/theme-toggle';
+
 @import '~@ionic-internal/ionic-ds/dist/tokens/tokens.css';
 
-:root {
+html {
+  --ifm-background-color: var(--token-primary-bg-c);
+
+  --ifm-link-color: var(--c-blue-90);
+  //rgb value is c-blue-90
+  --ifm-link-hover-color: rgba(27, 109, 255, 0.7);
+
   --ifm-font-family-base: -apple-system, BlinkMacSystemFont, Inter, Helvetica,
     Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI emoji';
+  --ifm-font-family-monospace: 'SFMono-Regular', 'Roboto Mono', Consolas,
+    'Liberation Mono', Menlo, Courier, monospace;
+}
+
+html[data-theme='light'] {
+  --token-primary-bg-c: #fff;
+  --token-secondary-bg-c: #fff;
+
+  --ifm-background-surface-color: var(--token-primary-bg-c);
+
+  --ifm-heading-color: var(--c-carbon-100);
+  --ifm-code-background: var(--c-indigo-10);
+  --ifm-font-color-base: var(--c-carbon-90);
+}
+
+html[data-theme='dark'] {
+  --token-primary-bg-c: #03060b;
+  --token-secondary-bg-c: #13171c;
+
+  --ifm-background-surface-color: var(--token-primary-bg-c);
+
+  --ifm-heading-color: #fff;
+  --ifm-font-color-base: var(--c-carbon-10);
+  --ifm-background-color: var(--token-primary-bg-c);
+  --ifm-dropdown-background-color: var(--token-secondary-bg-c);
 }
 
 html {
@@ -11,4 +48,20 @@ html {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   font-smoothing: antialiased;
+
+  scroll-padding-top: calc(var(--ifm-navbar-height) + 16px);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
 }

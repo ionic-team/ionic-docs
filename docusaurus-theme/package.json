@@ -20,7 +20,6 @@
   },
   "devDependencies": {
     "@ionic-internal/ionic-ds": "^8.0.0-1",
-    "prettier": "^2.2.1",
-    "modern-normalize": "^1.1.0"
+    "prettier": "^2.2.1"
   }
 }

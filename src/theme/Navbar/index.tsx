@@ -21,6 +21,8 @@ import IconMenu from '@theme/IconMenu';
 
 import styles from './styles.module.scss';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import SidebarToggle from '@theme/SidebarToggle';
+import Backdrop from '@theme/Backdrop';
 
 // retrocompatible with v1
 const DefaultNavItemPosition = 'right';
@@ -133,12 +135,9 @@ function Navbar(): JSX.Element {
             <NavbarItem {...item} key={i} />
           ))}
         </div>
+        {windowSize === windowSizes.mobile && <SidebarToggle />}
       </div>
-      <div
-        role="presentation"
-        className="navbar-sidebar__backdrop"
-        onClick={hideSidebar}
-      />
+      <Backdrop onClick={hideSidebar} visible={sidebarShown} />
       <div className="navbar-sidebar">
         <div className="navbar-sidebar__brand">
           <Logo

@@ -48,6 +48,14 @@ html[data-theme='dark'] {
   --ifm-alert-padding-horizontal: 2rem;
   --ifm-alert-padding-vertical: 1.5rem;
 
+  .admonition-heading h5 {
+    text-transform: unset;
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+
   .admonition-content {
     p {
       a {
