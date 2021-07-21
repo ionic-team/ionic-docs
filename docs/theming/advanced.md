@@ -17,7 +17,7 @@ The `theme-color` value for a meta tag can be used to suggest colors that browse
 The `content` value for the `theme-color` meta must contain a valid <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value" target="_blank" rel="noopener noreferrer">CSS Color</a> and cannot contain CSS Variables.
 
 :::note
-The `theme-color` meta controls the interface theme when running in a web browser and has no effect when an app is deployed using Capacitor or Cordova. For more control over the status bar, we recommend using the [Capacitor Status Bar Plugin](https://capacitorjs.com/docs/apis/status-bar).
+The `theme-color` meta controls the interface theme when running in a web browser or as a PWA and has no effect when an app is deployed using Capacitor or Cordova. For more control over the status bar, we recommend using the [Capacitor Status Bar Plugin](https://capacitorjs.com/docs/apis/status-bar).
 :::
 
 The example below demonstrates how to use `theme-color` to style the browser interface on iOS 15.
