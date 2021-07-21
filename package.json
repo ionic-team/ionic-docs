@@ -18,7 +18,7 @@
     "generate-markdown": "concurrently \"node scripts/api\" \"node scripts/cli\" \"node scripts/native\" \"node scripts/release-notes\""
   },
   "dependencies": {
-    "@crowdin/cli": "^3.6.1",
+    "@crowdin/cli": "^3.6.4",
     "@docusaurus/core": "2.0.0-beta.3",
     "@docusaurus/preset-classic": "2.0.0-beta.3",
     "@ionic-internal/docusaurus-plugin-tag-manager": "2.0.0",
