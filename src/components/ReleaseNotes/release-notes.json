@@ -1,5 +1,15 @@
 [
   {
+    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>action-sheet:</strong> header, subheader, and icon alignment better matches native ios (<a href=\"https://github.com/ionic-team/ionic/issues/23322\">#23322</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/39315bc857b850347dca386776665e21c9742cad\">39315bc</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/23317\">#23317</a></li>\n<li><strong>button:</strong> buttons are now disabled during page transitions (<a href=\"https://github.com/ionic-team/ionic/issues/23589\">#23589</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/3b803ebe024be3dbcf814a30a18df51ce23c8880\">3b803eb</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/23588\">#23588</a></li>\n<li><strong>item:</strong> mirror disabled prop to aria attribute (<a href=\"https://github.com/ionic-team/ionic/issues/23544\">#23544</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/9021e7cc4b48a69ccc94faa7d2ddcb10a2afa340\">9021e7c</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/23513\">#23513</a></li>\n<li><strong>menu-button:</strong> custom aria-label can now be set (<a href=\"https://github.com/ionic-team/ionic/issues/23608\">#23608</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/c08345df2ee3175f3f0d11ff877c7b6f1a102321\">c08345d</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/23604\">#23604</a></li>\n<li><strong>overlays:</strong> overlay interfaces are now exported from framework packages and documented (<a href=\"https://github.com/ionic-team/ionic/issues/23619\">#23619</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/773bbcb211d3cf0caf38c25b44e666d98ddfafe5\">773bbcb</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/22790\">#22790</a></li>\n<li><strong>router-outlet:</strong> improve reliability of swipe back gesture when quickly swiping back (<a href=\"https://github.com/ionic-team/ionic/issues/23527\">#23527</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/fa069424b265891852a07869b6d086a1cb041e93\">fa06942</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/22895\">#22895</a></li>\n</ul>\n",
+    "element": "Argon",
+    "name": "5.6.12",
+    "published_at": "July 21 2021",
+    "symbol": "Ar",
+    "tag_name": "v5.6.12",
+    "type": "patch",
+    "version": "5.6.12"
+  },
+  {
     "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>animation:</strong> typescript interface has correct return value for progress methods (<a href=\"https://github.com/ionic-team/ionic/issues/23536\">#23536</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/f3d6abbc1beeafe3b5e7f473d70d0b8ef4c79bc8\">f3d6abb</a>)</li>\n<li><strong>ios, md:</strong> double tapping back button no longer causes app to go back 2 pages (<a href=\"https://github.com/ionic-team/ionic/issues/23526\">#23526</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/69be51dc54e670b2f75cbfac28a4a09517dbf355\">69be51d</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/18455\">#18455</a></li>\n</ul>\n",
     "element": "Argon",
     "name": "5.6.11",
@@ -228,25 +238,5 @@
     "tag_name": "v5.4.0",
     "type": "minor",
     "version": "5.4.0"
-  },
-  {
-    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>button:</strong> allow any element type to use the \"icon-only\" slot (<a href=\"https://github.com/ionic-team/ionic/issues/22168\">#22168</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/c454c84ef46322143467600334a0263d4e7df6cb\">c454c84</a>)</li>\n<li><strong>datetime:</strong> do not set ampm when the column doesn't exist (<a href=\"https://github.com/ionic-team/ionic/issues/22220\">#22220</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/18fb8855e0c45fe65843b33811812c51c74de90f\">18fb885</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/22149\">#22149</a></li>\n<li><strong>datetime:</strong> remove the automatic switching from am to pm (<a href=\"https://github.com/ionic-team/ionic/issues/22207\">#22207</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/f81d18c6f9f1bce056afda1cac4cf6d6ace0a7ca\">f81d18c</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/18924\">#18924</a> <a href=\"https://github.com/ionic-team/ionic/issues/22171\">#22171</a> <a href=\"https://github.com/ionic-team/ionic/issues/22199\">#22199</a></li>\n<li><strong>item:</strong> properly align datetime and select with fixed or no labels (<a href=\"https://github.com/ionic-team/ionic/issues/22221\">#22221</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/f42c688f4630e3dc5d10b947e7f2bee9d5967d8c\">f42c688</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/18773\">#18773</a> <a href=\"https://github.com/ionic-team/ionic/issues/18761\">#18761</a> <a href=\"https://github.com/ionic-team/ionic/issues/18779\">#18779</a></li>\n<li><strong>label:</strong> keep color when focused on a floating or stacked label (<a href=\"https://github.com/ionic-team/ionic/issues/18576\">#18576</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/992580a3830321bdf9591681ebe38e823205389d\">992580a</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/18531\">#18531</a></li>\n<li><strong>select:</strong> do not close popover or set value when switching with arrow keys (<a href=\"https://github.com/ionic-team/ionic/issues/22210\">#22210</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/1878c8e7e01c02f06bdc5f1562af0d45531539cf\">1878c8e</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/22179\">#22179</a></li>\n</ul>\n",
-    "element": "Phosphorus",
-    "name": "5.3.5",
-    "published_at": "October 7 2020",
-    "symbol": "P",
-    "tag_name": "v5.3.5",
-    "type": "patch",
-    "version": "5.3.5"
-  },
-  {
-    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>datetime:</strong> do not set ampm when the column doesn't exist (<a href=\"https://github.com/ionic-team/ionic/issues/22224\">#22224</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/210db5b265c04dcdc847f173503c5c096fdb3374\">210db5b</a>)</li>\n</ul>\n",
-    "element": "Sodium",
-    "name": "4.11.13",
-    "published_at": "October 1 2020",
-    "symbol": "Na",
-    "tag_name": "v4.11.13",
-    "type": "patch",
-    "version": "4.11.13"
   }
 ]
