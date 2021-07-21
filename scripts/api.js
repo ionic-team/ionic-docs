@@ -8,7 +8,7 @@ let COMPONENT_LINK_REGEXP;
 
 (async function () {
   const response = await fetch(
-    'https://unpkg.com/@ionic/docs@6.0.0-beta.1/core.json',
+    'https://unpkg.com/@ionic/docs@6.0.0-beta.2/core.json',
   );
   const { components } = await response.json();
 
