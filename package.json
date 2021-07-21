@@ -61,7 +61,7 @@
     "dotenv": "^10.0.0",
     "fs-extra": "^9.1.0",
     "modern-normalize": "^1.1.0",
-    "remark-parse": "^8.0.3",
+    "remark-parse": "^9.0.0",
     "semver": "^7.3.5",
     "typescript": "^4.3.5"
   }
