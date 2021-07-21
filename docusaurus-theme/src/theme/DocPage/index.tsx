@@ -26,6 +26,7 @@ import TOC from '@theme/TOC';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 import { ThemeClassNames, docVersionSearchTag } from '@docusaurus/theme-common';
+import mdxOverride from '../mdxOverride';
 
 type DocPageContentProps = {
   readonly currentDocRoute: DocumentRoute;
@@ -148,7 +149,9 @@ function DocPageContent({
                 [styles.docItemWrapperEnhanced]: hiddenSidebarContainer,
               })}
             >
-              <MDXProvider components={MDXComponents}>{children}</MDXProvider>
+              <MDXProvider components={{ ...MDXComponents, ...mdxOverride }}>
+                {children}
+              </MDXProvider>
             </div>
           </main>
         </div>
