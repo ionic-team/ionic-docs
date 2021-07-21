@@ -9,7 +9,7 @@
     "prebuild": "npm run generate-markdown; if [ -n \"$CROWDIN_PERSONAL_TOKEN\" ]; then npm run crowdin:sync; fi",
     "build": "npm run build:${VERCEL_ENV:-preview}",
     "build:preview": "docusaurus build --locale en",
-    "build:production": "docusaurus build --locale en",
+    "build:production": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "serve": "docusaurus serve",

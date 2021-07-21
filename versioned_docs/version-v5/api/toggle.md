@@ -425,7 +425,7 @@ export class ToggleExample {
       <ion-toggle
         @ionChange="toppings.value.push($event.target.value)"
         value="sausage"
-        :checked="toppings.value.indexOf('pepperoni') !== -1"
+        :checked="toppings.value.indexOf('sausage') !== -1"
         disabled="true">
       </ion-toggle>
     </ion-item>
@@ -435,7 +435,7 @@ export class ToggleExample {
       <ion-toggle
         @ionChange="toppings.value.push($event.target.value)"
         value="mushrooms"
-        :checked="toppings.value.indexOf('pepperoni') !== -1">
+        :checked="toppings.value.indexOf('mushrooms') !== -1">
       </ion-toggle>
     </ion-item>
   </ion-list>
