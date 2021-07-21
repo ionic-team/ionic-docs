@@ -1,13 +1,14 @@
 @use './components/admonition';
 @use './components/code';
 @use './components/markdown';
+@use './components/pagination';
 @use './components/table';
 @use './components/tabs';
 @use './components/theme-toggle';
 
 @import '~@ionic-internal/ionic-ds/dist/tokens/tokens.css';
 
-html {
+:root {
   --ifm-background-color: var(--token-primary-bg-c);
 
   --ifm-link-color: var(--c-blue-90);

@@ -13,6 +13,7 @@ import JavascriptIcon from './assets/icon-javascript.svg';
 import ReactIcon from './assets/icon-react.svg';
 import VueIcon from './assets/icon-vue.svg';
 import { FRAMEWORK_ID } from '@theme/Tabs';
+import { ChevronDown } from '@site/src/icons';
 
 const ICON_LIST = {
   angular: <AngularIcon />,
@@ -63,8 +64,23 @@ export default function FrameworkSelector(props) {
         id="frameworkSelector"
         onClick={() => setIsOpen(!isOpen)}
       >
-        {ICON_LIST[activeFramework]}
-        {capitalizeFirstLetter(activeFramework)}
+        <span
+          className={clsx(
+            'framework-selector__button-start',
+            styles.buttonStart,
+          )}
+        >
+          {ICON_LIST[activeFramework]}
+          {capitalizeFirstLetter(activeFramework)}
+        </span>
+        <ChevronDown
+          width="8"
+          height="8"
+          className={clsx(
+            'framework-selector__button-arrow',
+            styles.buttonArrow,
+          )}
+        />
       </button>
       <ul
         className={clsx('framework-selector__dropdown', styles.dropdown)}

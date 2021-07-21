@@ -1,14 +1,18 @@
 :global(html[data-theme='light']) {
-  --framework-selector-btn-bg-c: #fafbfc;
+  --framework-selector-btn-bg-c: #fff;
+  --framework-selector-btn-arrow-c: var(--c-indigo-80);
   --framework-selector-text-c: var(--c-carbon-100);
   --framework-selector-border-c: var(--c-indigo-30);
+  --framework-selector-border--hover-c: var(--c-indigo-40);
   --framework-selector-dropdown-item-bg-c: var(--c-indigo-10);
-  --framework-selector-shadow: var(--shadow-0);
+  --framework-selector-shadow: var(--shadow-3);
 }
 :global(html[data-theme='dark']) {
   --framework-selector-btn-bg-c: var(--token-secondary-bg-c);
+  --framework-selector-btn-arrow-c: #fff;
   --framework-selector-text-c: #fff;
   --framework-selector-border-c: rgba(255, 255, 255, 0.05);
+  --framework-selector-border--hover-c: rgba(255, 255, 255, 0.1);
   --framework-selector-dropdown-item-bg-c: var(
     --ifm-dropdown-hover-background-color
   );
@@ -32,6 +36,7 @@
   color: inherit;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   position: relative;
   z-index: 2;
   flex-grow: 1;
@@ -59,12 +64,22 @@
 
   box-shadow: var(--shadow-0);
 
-  svg {
-    margin-inline-end: 0.5rem;
+  &:hover {
+    border-color: var(--framework-selector-border--hover-c);
   }
 
-  &:hover {
-    box-shadow: var(--framework-selector-shadow);
+  &Start {
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin-inline-end: 0.5rem;
+    }
+  }
+
+  &Arrow {
+    color: var(--framework-selector-btn-arrow-c);
+    margin-block-end: -0.125rem;
   }
 }
 
@@ -167,6 +182,11 @@
 }
 
 .frameworkSelectorOpen {
+  .button {
+    &Arrow {
+      transform: rotate(180deg);
+    }
+  }
   .dropdown {
     visibility: visible;
     opacity: 1;

@@ -15,9 +15,7 @@ export default function Logo(props) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
-      className={clsx(styles.logo, {
-        [props.className]: Boolean(props.className),
-      })}
+      className={clsx(styles.logo, props.className)}
     >
       <path
         d="M3.38 14c0-5.88 4.8-10.64 10.72-10.64 2.38 0 4.58.77 6.36 2.08a4.03 4.03 0 012.56-2.28A14.1 14.1 0 0014.1 0C6.3 0 0 6.27 0 14s6.31 14 14.1 14A14.05 14.05 0 0027.4 9.38a4.03 4.03 0 01-3.02 1.61A10.68 10.68 0 0114.1 24.64 10.68 10.68 0 013.38 14z"
