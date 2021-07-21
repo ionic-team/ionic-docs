@@ -13,13 +13,11 @@ import type { MDXComponentsObject } from '@theme/MDXComponents';
 
 const MDXComponents: MDXComponentsObject = {
   table: ({ children, ...props }) => {
-    const tableHeadingRow = children[0].props.children;
+    const tableHeadings = children[0].props.children.props.children;
 
-    const hasTheadValue = tableHeadingRow.props.children.every(
-      ({ props }) => props.children,
-    );
-
-    console.log(hasTheadValue);
+    const hasTheadValue =
+      !Array.isArray(tableHeadings) ||
+      tableHeadings.every(({ props }) => props.children);
 
     return (
       <div className="table-wrapper">
