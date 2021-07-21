@@ -30,7 +30,7 @@
     "clsx": "^1.1.1",
     "concurrently": "^6.2.0",
     "docusaurus-plugin-sass": "^0.2.0",
-    "prettier": "^2.2.1",
+    "prettier": "^2.3.2",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-live": "^2.2.3",
