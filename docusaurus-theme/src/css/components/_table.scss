@@ -10,6 +10,10 @@ html[data-theme='dark'] {
   --ifm-table-stripe-background: var(--ifm-table-background);
 }
 
+.table-wrapper {
+  overflow-x: auto;
+}
+
 table,
 tr,
 td,

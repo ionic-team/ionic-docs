@@ -31,6 +31,8 @@
   top: calc(var(--doc-item-main-spacing-y) + var(--ifm-navbar-height));
   width: 12rem;
 
+  overflow-y: auto;
+
   > .list {
     margin-inline-start: calc(var(--ifm-toc-padding-horizontal) * -2);
   }
