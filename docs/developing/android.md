@@ -29,7 +29,7 @@ Once installed, open Android Studio. The IDE should detect that the Android SDK 
 By default, the latest stable SDK Platform is installed, which includes a collection of packages required to target that version of Android.
 
 To install system images and other minor SDK platform packages, you may need to ensure **Show Package Details** is checked at the bottom of the SDK Manager.
-<img alt="Android Studio SDK Manager" src="/img/installation/android-studio-sdk.png" />
+![Android Studio SDK Manager](/img/installation/android-studio-sdk.png)
 
 For future reference, the Android SDK can be managed with Android Studio in the **Configure** &raquo; **SDK Manager** menu of the Android Studio welcome screen or **Tools** &raquo; **SDK Manager** inside Android projects.
 
@@ -107,31 +107,29 @@ Unfortunately, Cordova is not compatible with the latest version of Java.
 
 <a href="https://gradle.org/" target="_blank">Gradle</a> is the build tool used in Android apps and must be installed separately. See the <a href="https://gradle.org/install/" target="_blank">install page</a> for details.
 
-
 ## Project Setup
 
 Before apps can be deployed to Android simulators and devices, the native project must be configured.
 
 1. **Generate the native project, if it does not already exist.**
 
-    For Capacitor, run the following:
+   For Capacitor, run the following:
 
-    ```shell
-    $ ionic capacitor add android
-    ```
+   ```shell
+   $ ionic capacitor add android
+   ```
 
-    For Cordova, run the following:
+   For Cordova, run the following:
 
-    ```shell
-    $ ionic cordova prepare android
-    ```
+   ```shell
+   $ ionic cordova prepare android
+   ```
 
 2. **Set the [Package ID](../reference/glossary.md#package-id).**
 
-    For Capacitor, open the `capacitor.config.json` file and modify the `appId` property.
+   For Capacitor, open the `capacitor.config.json` file and modify the `appId` property.
 
-    For Cordova, open the `config.xml` file and modify the `id` attribute of the root element, `<widget>`. See [the Cordova documentation](https://cordova.apache.org/docs/en/latest/config_ref/#widget) for more information.
-
+   For Cordova, open the `config.xml` file and modify the `id` attribute of the root element, `<widget>`. See [the Cordova documentation](https://cordova.apache.org/docs/en/latest/config_ref/#widget) for more information.
 
 ## Running with Capacitor
 
@@ -139,22 +137,24 @@ Capacitor uses Android Studio to build and run apps to simulators and devices.
 
 1. **Develop the Ionic app and sync it to the native project.**
 
-    With each meaningful change, Ionic apps must be built into web assets before the change can appear on Android simulators and devices. The web assets then must be copied into the native project. Luckily, this process is made easy with a single Ionic CLI command.
+   With each meaningful change, Ionic apps must be built into web assets before the change can appear on Android simulators and devices. The web assets then must be copied into the native project. Luckily, this process is made easy with a single Ionic CLI command.
 
-    ```shell
-    $ ionic capacitor copy android
-    ```
+   ```shell
+   $ ionic capacitor copy android
+   ```
 
 2. **In Android Studio, click the Run button and then select the target simulator or device.**
 
 ![Android Studio Run Button Area](/img/running/android-studio-run-button-area.png)
 
 ### Live reload
+
 To start a live-reload server run the following command.
 
 ```shell
 $ ionic capacitor run android -l --host=YOUR_IP_ADDRESS
 ```
+
 When running on a device make sure the device and your development machine are connected to the same network.
 
 ## Running with Cordova

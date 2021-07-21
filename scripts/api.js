@@ -14,7 +14,10 @@ let COMPONENT_LINK_REGEXP;
 
   const names = components.map(component => component.tag.slice(4));
   // matches all relative markdown links to a component, e.g. (../button)
-  COMPONENT_LINK_REGEXP = new RegExp(`\\(../(${names.join('|')})/?(#[^)]+)?\\)`, 'g');
+  COMPONENT_LINK_REGEXP = new RegExp(
+    `\\(../(${names.join('|')})/?(#[^)]+)?\\)`,
+    'g',
+  );
 
   components.map(writePage);
 })();
@@ -43,6 +46,7 @@ function renderFrontmatter({ tag }) {
   const frontmatter = {
     ...apiOverrides[tag],
     sidebar_label: tag,
+    hide_table_of_contents: true,
   };
 
   const demoPath = `api/${tag.slice(4)}/index.html`;
@@ -53,20 +57,51 @@ function renderFrontmatter({ tag }) {
 
   return `---
 ${Object.entries(frontmatter)
-  .map(([key, value]) => `${key}: "${value}"`)
+  .map(
+    ([key, value]) =>
+      `${key}: ${
+        typeof value === 'string' ? `"${value.replace('"', '\\"')}"` : value
+      }`,
+  )
   .join('\n')}
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
 `;
 }
 
-function renderReadme({ readme }) {
-  return readme;
+function renderReadme({ readme, encapsulation }) {
+  const endIndex = readme.indexOf('\n');
+
+  const title = readme.substring(0, endIndex);
+  const rest = readme.substring(endIndex);
+
+  return `
+${title}
+
+import EncapsulationPill from '@site/src/components/EncapsulationPill';
+
+<EncapsulationPill type="${encapsulation}" />
+
+<h2 className="table-of-contents__title">Contents</h2>
+
+import TOCInline from '@theme/TOCInline';
+
+<TOCInline
+  toc={toc.map(({ value, id }) => {
+    return { value, id, children: [] };
+  })}
+/>
+
+${rest}
+  `;
 }
 
 function renderUsage({ usage }) {
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
   const keys = Object.keys(usage);
 
   if (keys.length === 0) {
@@ -85,7 +120,7 @@ ${usage[keys[0]]}
 ## Usage
 
 <Tabs defaultValue="${keys[0]}" values={[${keys
-    .map(key => `{ value: '${key}', label: '${key.toUpperCase()}' }`)
+    .map(key => `{ value: '${key}', label: '${capitalizeFirstLetter(key)}' }`)
     .join(', ')}]}>
 
 ${Object.entries(usage)

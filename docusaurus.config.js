@@ -27,15 +27,7 @@ module.exports = {
   themeConfig: {
     navbar: {
       hideOnScroll: true,
-      logo: {
-        alt: 'Ionic Logo',
-        src: 'img/framework-logo.svg',
-        srcDark: 'img/framework-logo-dark.svg',
-      },
       items: [
-        {
-          type: 'docsVersionDropdown',
-        },
         {
           type: 'doc',
           docId: 'index',
@@ -124,15 +116,10 @@ module.exports = {
             },
           ],
         },
-        // {
-        //   href: 'https://ionicframework.com/docs/cli',
-        //   label: 'CLI',
-        //   className: 'navbar-cli',
-        //   position: 'right',
-        // },
         {
           type: 'localeDropdown',
           position: 'right',
+          dropdownItemsBefore: [],
           dropdownItemsAfter: [
             {
               href: 'https://ionicframework.com/jp/docs/',
@@ -148,22 +135,7 @@ module.exports = {
             },
           ],
         },
-        {
-          'href': 'https://twitter.com/IonicFramework',
-          'position': 'right',
-          'className': 'navbar-twitter',
-          'aria-label': 'Twitter',
-        },
-        {
-          'href': 'https://github.com/ionic-team/ionic-framework',
-          'position': 'right',
-          'className': 'navbar-github',
-          'aria-label': 'GitHub',
-        },
       ],
-    },
-    footer: {
-      links: [],
     },
     algolia: {
       apiKey: '43228ce75714201a27efcf69666d6b40',
@@ -195,13 +167,16 @@ module.exports = {
       },
     ],
   ],
-  themes: ['@ionic-internal/docusaurus-theme'],
+  themes: [path.resolve(__dirname, 'docusaurus-theme')],
   presets: [
     [
       '@docusaurus/preset-classic',
       {
         theme: {
-          customCss: require.resolve('./src/css/custom.scss'),
+          customCss: [
+            require.resolve('./node_modules/modern-normalize/modern-normalize.css'),
+            require.resolve('./src/css/custom.scss')
+          ],
         },
         docs: {
           routeBasePath: '/',
@@ -226,16 +201,46 @@ module.exports = {
           },
           lastVersion: 'current',
           versions: {
-            'current': {
+            current: {
               label: 'v6-beta',
             },
-            'v5': {
+            v5: {
               banner: 'none',
             },
           },
+          
         },
         blog: false,
       },
     ],
   ],
+  customFields: {
+    // Used to link code tabs with global framework switcher
+    frameworks: ['react', 'angular', 'vue', 'javascript'],
+    // Used to add custom icons at end of navbar
+    navbar: {
+      items: [
+        {
+          'type': 'iconLink',
+          'width': '18',
+          'height': '16',
+          'icon': 'Twitter',
+          'href': 'https://twitter.com/IonicFramework',
+          'position': 'end',
+          'className': 'navbar-twitter',
+          'aria-label': 'Twitter',
+        },
+        {
+          'type': 'iconLink',
+          'width': '16.5',
+          'height': '16',
+          'icon': 'Github',
+          'href': 'https://github.com/ionic-team/ionic-framework',
+          'position': 'end',
+          'className': 'navbar-github',
+          'aria-label': 'GitHub',
+        },
+      ],
+    },
+  },
 };

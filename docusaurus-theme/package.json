@@ -1,0 +1,25 @@
+{
+  "name": "@ionic-internal/docusaurus-theme",
+  "version": "4.0.0-0",
+  "description": "Ionic theme for Docusaurus",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ionic-team/docusaurus-theme.git"
+  },
+  "scripts": {
+    "test": "echo 'YOLO'",
+    "shipit": "npx np",
+    "prettier": "prettier --config .prettierrc --write \"**/*.{js,jsx,ts,tsx,json}\""
+  },
+  "license": "MIT",
+  "main": "src/index.js",
+  "peerDependencies": {
+    "@docusaurus/core": ">=2.0.0-beta.0",
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@ionic-internal/ionic-ds": "^8.0.0-1",
+    "prettier": "^2.2.1"
+  }
+}

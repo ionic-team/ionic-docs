@@ -1,13 +1,33 @@
+:root {
+  --ifm-code-padding-vertical: 0.25rem;
+  --ifm-code-font-size: 0.813rem;
+
+  //inline code
+  --ifm-code-background: var(--c-indigo-10);
+}
+
+html[data-theme='light'] {
+  --code-block-bg-c: var(--c-indigo-10);
+}
+
+html[data-theme='dark'] {
+  --code-block-bg-c: var(--token-secondary-bg-c);
+}
+code {
+  border: none;
+
+  padding: 0.375rem 0.25rem 0.25rem;
+}
+
 /**
  * prism.js Dark theme for JavaScript, CSS and HTML
  * Based on the slides of the talk “/Reg(exp){2}lained/”
  * @author Lea Verou
  */
 
-code[class*="language-"],
-pre[class*="language-"] {
-  color: #4d4d4c;
-  background: none;
+code[class*='language-'],
+pre[class*='language-'] {
+  background: var(--code-block-bg-c);
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
@@ -24,27 +44,22 @@ pre[class*="language-"] {
   hyphens: none;
 }
 
-pre[class*="language-"],
-:not(pre) > code[class*="language-"] {
-  background: #f5f7fa;
-}
-
- /* Code blocks */
-pre[class*="language-"] {
+/* Code blocks */
+pre[class*='language-'] {
   padding: 1em;
-  margin: .5em 0;
+  margin: 0.5em 0;
   overflow: auto;
-  border: .3em solid hsl(30, 20%, 40%);
-  border-radius: .5em;
-  box-shadow: 1px 1px .5em black inset;
+  /* border: .3em solid hsl(30, 20%, 40%); */
+  border-radius: 0.5em;
+  /* box-shadow: 1px 1px .5em black inset; */
 }
 
- /* Inline code */
-:not(pre) > code[class*="language-"] {
-  padding: .15em .2em .05em;
-  border-radius: .3em;
-  border: .13em solid hsl(30, 20%, 40%);
-  box-shadow: 1px 1px .3em -.1em black inset;
+/* Inline code */
+:not(pre) > code[class*='language-'] {
+  padding: 0.15em 0.2em 0.05em;
+  border-radius: 0.3em;
+  border: 0.13em solid hsl(30, 20%, 40%);
+  box-shadow: 1px 1px 0.3em -0.1em black inset;
   white-space: normal;
 }
 
@@ -57,18 +72,20 @@ pre[class*="language-"] {
 }
 
 .token.punctuation {
-  opacity: .7;
+  opacity: 0.7;
 }
 
 .namespace {
-  opacity: .7;
+  opacity: 0.7;
 }
 
 .token.tag {
   color: #91c5ff;
 }
 
-.token.tag .token.tag {
+.token.tag.punctuation,
+.token.tag.class-name,
+.token.tag.punctuation + .token.tag:not(.attr-value):not([class*='language-']) {
   color: #2b90ff;
 }
 

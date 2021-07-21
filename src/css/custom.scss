@@ -7,88 +7,15 @@
 
 /* You can override the default Infima variables here. */
 
-@import './pages/cli';
-@import './pages/studio';
-@import './pages/guides';
-@import './pages/frameworks';
-@import './pages/components';
-@import './pages/browser-support';
-@import './prismjs-theme';
-
-:root {
-  /* Docusaurus variables */
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: rgb(33, 175, 144);
-  --ifm-color-primary-darker: rgb(31, 165, 136);
-  --ifm-color-primary-darkest: rgb(26, 136, 112);
-  --ifm-color-primary-light: rgb(70, 203, 174);
-  --ifm-color-primary-lighter: rgb(102, 212, 189);
-  --ifm-color-primary-lightest: rgb(146, 224, 208);
-  --ifm-code-font-size: 95%;
-
-  /* Old docs variables */
-  /* --accent-color: #3880ff;
-  --accent-color-rgb: 56, 128, 255;
-
-  --accent-color-100: #4d8dff;
-  --accent-color-200: #639cff;
-  --accent-color-300: #4d8dff;
-  --accent-color-400: #7cabff;
-  --accent-color-500: #97bdff;
-  --accent-color-600: #b2ceff;
-  --accent-color-700: #cddfff;
-  --accent-color-800: #e3edff;
-  --accent-color-900: #f0f6ff;
-
-  --background: #ffffff;
-  --code-background: #f5f7fa;
-  --code-color: var(--text-color--dark);
-  --code-font-family: "SFMono-Regular", "Roboto Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI emoji";
-  --header-height: 56px;
-  --heading-font-family: var(--font-family);
-  --line-rule-color: #edf2f6;
-  --menu-width: 240px;
-  --offset-background: #fdfdff;
-  --offset-background--dark: #f7f7ff;
-  --page-margin-left: var(--menu-width);
-
-  --text-color: #303943;
-  --text-color--darker: #24282e;
-  --text-color--dark: #020814;
-  --text-color--lighter: #abb2bf;
-  --text-color--light: #73849a; */
-}
-
-* {
-  box-sizing: border-box;
-}
+@use './pages/cli';
+@use './pages/studio';
+@use './pages/guides';
+@use './pages/frameworks';
+@use './pages/components';
+@use './pages/browser-support';
 
 body {
-  font-family: var(--f-text);
-  text-size-adjust: none;
   margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-html,
-body {
-  height: 100%;
-}
-
-html[data-theme='dark'] .ds-paragraph,
-html[data-theme='dark'] .ds-heading {
-  color: #fff;
-}
-
-.markdown {
-  --ifm-h2-vertical-rhythm-top: 2;
-  --ifm-h3-vertical-rhythm-top: 2;
-
-  .ds-paragraph {
-    color: var(--c-indigo-80);
-  }
 }
 
 ion-grid {
@@ -118,150 +45,9 @@ img {
   max-width: 100%;
 }
 
-a {
-  font-weight: 400;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
-  color: var(--ifm-link-hover-color);
-}
-
-a.outbound svg {
-  fill: currentColor;
-  height: 1em;
-  width: 1em;
-  margin-bottom: -0.15em;
-}
-
-.intro {
-  font-size: 1.2em;
-  margin-bottom: 1.2em;
-  max-width: 40em;
-}
-
-.intro code {
-  font-size: 15px;
-  font-weight: 500;
-}
-
-.intro strong {
-  font-weight: 500;
-}
-
-ol,
-ul {
-  padding-left: 2em;
-}
-
-h2 a[href^='#'],
-h3 a[href^='#'],
-h4 a[href^='#'],
-h5 a[href^='#'],
-h6 a[href^='#'] {
-  color: inherit;
-  position: relative;
-}
-
-h2 + p > small,
-h3 + p > small,
-h4 + p > small {
-  display: block;
-  margin-top: -2em;
-}
-
-table {
-  border-width: 1px 0 0 1px;
-  font-size: 13px;
-  margin: 2em 0;
-  overflow-x: auto;
-  width: 100%;
-  display: inline-table;
-}
-
-table,
-td,
-th {
-  border-collapse: collapse;
-}
-
-td,
-th {
-  border-width: 0 1px 1px 0;
-  line-height: 1.5;
-  padding: 1em;
-  text-align: left;
-}
-
-thead th:empty {
-  display: none;
-}
-
-thead th,
-tbody tr:nth-child(even) {
-  background-color: var(--ifm-table-stripe-background);
-}
-
-.reference-table {
-  display: inline-table;
-}
-
-.reference-table th h3 {
-  padding: 0;
-  margin: 1em 0 0.25em;
-}
-
-.reference-table p {
-  margin: 0;
-}
-
-.reference-table p + p {
-  margin-top: 2em;
-}
-
 iframe {
   background-color: rgba(0, 0, 0, 0.02);
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.docusaurus-highlight-code-line {
-  background-color: rgb(72, 77, 91);
-  display: block;
-  margin: 0 calc(-1 * var(--ifm-pre-padding));
-  padding: 0 var(--ifm-pre-padding);
-}
-
-.main-wrapper main > * {
-  flex: 1;
-}
-
-.navbar-github:before {
-  content: '';
-  width: 16px;
-  height: 16px;
-  display: flex;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M256 32C132.3 32 32 134.9 32 261.7c0 101.5 64.2 187.5 153.2 217.9a17.56 17.56 0 003.8.4c8.3 0 11.5-6.1 11.5-11.4 0-5.5-.2-19.9-.3-39.1a102.4 102.4 0 01-22.6 2.7c-43.1 0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1 1.4-14.1h.1c22.5 2 34.3 23.8 34.3 23.8 11.2 19.6 26.2 25.1 39.6 25.1a63 63 0 0025.6-6c2-14.8 7.8-24.9 14.2-30.7-49.7-5.8-102-25.5-102-113.5 0-25.1 8.7-45.6 23-61.6-2.3-5.8-10-29.2 2.2-60.8a18.64 18.64 0 015-.5c8.1 0 26.4 3.1 56.6 24.1a208.21 208.21 0 01112.2 0c30.2-21 48.5-24.1 56.6-24.1a18.64 18.64 0 015 .5c12.2 31.6 4.5 55 2.2 60.8 14.3 16.1 23 36.6 23 61.6 0 88.2-52.4 107.6-102.3 113.3 8 7.1 15.2 21.1 15.2 42.5 0 30.7-.3 55.5-.3 63 0 5.4 3.1 11.5 11.4 11.5a19.35 19.35 0 004-.4C415.9 449.2 480 363.1 480 261.7 480 134.9 379.7 32 256 32z' fill='%23434f5e'/%3E%3C/svg%3E")
-    no-repeat;
-}
-
-html[data-theme='dark'] .navbar-github:before {
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M256 32C132.3 32 32 134.9 32 261.7c0 101.5 64.2 187.5 153.2 217.9a17.56 17.56 0 003.8.4c8.3 0 11.5-6.1 11.5-11.4 0-5.5-.2-19.9-.3-39.1a102.4 102.4 0 01-22.6 2.7c-43.1 0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1 1.4-14.1h.1c22.5 2 34.3 23.8 34.3 23.8 11.2 19.6 26.2 25.1 39.6 25.1a63 63 0 0025.6-6c2-14.8 7.8-24.9 14.2-30.7-49.7-5.8-102-25.5-102-113.5 0-25.1 8.7-45.6 23-61.6-2.3-5.8-10-29.2 2.2-60.8a18.64 18.64 0 015-.5c8.1 0 26.4 3.1 56.6 24.1a208.21 208.21 0 01112.2 0c30.2-21 48.5-24.1 56.6-24.1a18.64 18.64 0 015 .5c12.2 31.6 4.5 55 2.2 60.8 14.3 16.1 23 36.6 23 61.6 0 88.2-52.4 107.6-102.3 113.3 8 7.1 15.2 21.1 15.2 42.5 0 30.7-.3 55.5-.3 63 0 5.4 3.1 11.5 11.4 11.5a19.35 19.35 0 004-.4C415.9 449.2 480 363.1 480 261.7 480 134.9 379.7 32 256 32z' fill='%23b4bcc6'/%3E%3C/svg%3E")
-    no-repeat;
-}
-
-.navbar-twitter:before {
-  content: '';
-  width: 16px;
-  height: 16px;
-  display: flex;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M496 109.5a201.8 201.8 0 01-56.55 15.3 97.51 97.51 0 0043.33-53.6 197.74 197.74 0 01-62.56 23.5A99.14 99.14 0 00348.31 64c-54.42 0-98.46 43.4-98.46 96.9a93.21 93.21 0 002.54 22.1 280.7 280.7 0 01-203-101.3A95.69 95.69 0 0036 130.4c0 33.6 17.53 63.3 44 80.7A97.5 97.5 0 0135.22 199v1.2c0 47 34 86.1 79 95a100.76 100.76 0 01-25.94 3.4 94.38 94.38 0 01-18.51-1.8c12.51 38.5 48.92 66.5 92.05 67.3A199.59 199.59 0 0139.5 405.6a203 203 0 01-23.5-1.4A278.68 278.68 0 00166.74 448c181.36 0 280.44-147.7 280.44-275.8 0-4.2-.11-8.4-.31-12.5A198.48 198.48 0 00496 109.5z' fill='%23434f5e'/%3E%3C/svg%3E")
-    no-repeat;
-}
-
-html[data-theme='dark'] .navbar-twitter:before {
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M496 109.5a201.8 201.8 0 01-56.55 15.3 97.51 97.51 0 0043.33-53.6 197.74 197.74 0 01-62.56 23.5A99.14 99.14 0 00348.31 64c-54.42 0-98.46 43.4-98.46 96.9a93.21 93.21 0 002.54 22.1 280.7 280.7 0 01-203-101.3A95.69 95.69 0 0036 130.4c0 33.6 17.53 63.3 44 80.7A97.5 97.5 0 0135.22 199v1.2c0 47 34 86.1 79 95a100.76 100.76 0 01-25.94 3.4 94.38 94.38 0 01-18.51-1.8c12.51 38.5 48.92 66.5 92.05 67.3A199.59 199.59 0 0139.5 405.6a203 203 0 01-23.5-1.4A278.68 278.68 0 00166.74 448c181.36 0 280.44-147.7 280.44-275.8 0-4.2-.11-8.4-.31-12.5A198.48 198.48 0 00496 109.5z' fill='%23b4bcc6'/%3E%3C/svg%3E")
-    no-repeat;
 }
 
 .git-link svg {
@@ -290,26 +76,4 @@ html[data-theme='dark'] .navbar-twitter:before {
 
 .cordova-ee-card p {
   margin: 1rem 0 0;
-}
-
-.docDemoWrapper {
-  float: right;
-  margin: 0 0 1rem 1rem;
-}
-
-.markdown {
-  p,
-  li {
-    font-size: 1rem;
-    line-height: var(--line-height-prose);
-    letter-spacing: var(--letter-spacing-tight);
-  }
-
-  header + p {
-    font-size: 1.25rem;
-
-    + p {
-      font-size: 1.25rem;
-    }
-  }
 }

@@ -1,0 +1,135 @@
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+:root {
+  --ifm-navbar-height: 56px;
+  --ifm-navbar-sidebar-width: var(--doc-sidebar-width);
+}
+
+html[data-theme='light'] {
+  --ifm-navbar-background-color: #fff;
+  --navbar-item-icon-c: var(--c-indigo-60);
+  --ifm-navbar-link-color: var(--c-indigo-80);
+  --ifm-navbar-link-hover-color: var(--ifm-navbar-link-color);
+  --ifm-navbar-shadow: 0px 1px 0px rgba(0, 12, 45, 0.08);
+  --navbar-link-active-c: var(--c-carbon-100);
+}
+
+html[data-theme='dark'] {
+  --ifm-navbar-background-color: var(--ifm-background-color);
+  --navbar-item-icon-c: var(--c-indigo-10);
+  --ifm-navbar-link-color: var(--c-indigo-10);
+  --ifm-navbar-link-hover-color: var(--ifm-navbar-link-color);
+  --ifm-navbar-shadow: 0px 1px 1px rgba(255, 255, 255, 0.05),
+    0px 2px 4px rgba(255, 255, 255, 0.1);
+  --navbar-link-active-c: var(--c-indigo-10);
+}
+
+:global {
+  .navbar__inner {
+    // align-items: center;
+  }
+
+  .navbar__item {
+    font-size: 0.875rem;
+    line-height: 1.063rem;
+  }
+
+  .navbar__items {
+    flex: 1 0 auto;
+
+    &--left {
+      align-items: stretch;
+
+      .navbar__brand {
+        display: none;
+      }
+
+      .navbar__link {
+        display: flex;
+        align-items: center;
+
+        &--active {
+          position: relative;
+          font-weight: 500;
+
+          &::after {
+            background: currentColor;
+            position: absolute;
+            content: '';
+            height: 2px;
+            left: var(--ifm-navbar-item-padding-horizontal);
+            right: var(--ifm-navbar-item-padding-horizontal);
+            top: calc(100% + var(--ifm-navbar-padding-vertical) - 2px);
+          }
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    &--right {
+      flex-grow: 1;
+    }
+
+    &--custom {
+      flex-grow: 0;
+      align-items: center;
+
+      > a {
+        color: var(--navbar-item-icon-c);
+        display: flex;
+        align-items: center;
+
+        padding: 0.5rem;
+      }
+    }
+  }
+
+  .navbar__link--active {
+    color: var(--navbar-link-active-c);
+  }
+}
+
+@media (max-width: 996px) {
+  :global {
+    .navbar__toggle {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar__items {
+      position: relative;
+
+      &--left {
+        flex: 0 0 auto;
+
+        > *:not(.navbar__toggle) {
+          display: none;
+        }
+      }
+
+      &--custom {
+        display: none;
+      }
+    }
+  }
+
+  .displayOnlyInLargeViewport {
+    display: none !important;
+  }
+}
+
+.navbarHideable {
+  transition: transform var(--ifm-transition-fast) ease;
+}
+
+.navbarHidden {
+  transform: translate3d(0, calc(-100% - 2px), 0);
+}
