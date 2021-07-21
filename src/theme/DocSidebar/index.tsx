@@ -31,7 +31,6 @@ import FrameworkSelector from '../FrameworkSelector';
 import { ChevronDown } from '../../icons';
 
 import styles from './styles.module.scss';
-import SidebarToggle from '@theme/SidebarToggle';
 import Backdrop from '../Backdrop';
 
 const MOBILE_TOGGLE_SIZE = 24;

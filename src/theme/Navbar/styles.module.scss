@@ -7,6 +7,7 @@
 
 :root {
   --ifm-navbar-height: 56px;
+  --ifm-navbar-sidebar-width: var(--doc-sidebar-width);
 }
 
 html[data-theme='light'] {
