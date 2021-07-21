@@ -10,8 +10,34 @@ import CodeColor from '@site/src/components/CodeColor';
 
 CSS-based theming enables apps to customize the colors quickly by loading a CSS file or changing a few CSS property values.
 
+## `theme-color` Meta
 
-## Globals
+The `theme-color` value for a meta tag can be used to suggest colors that browsers can use to customize the display of a page or of the surrounding interface. This kind of meta tag can also accept media queries which allow developers to set the theme color for both light and dark modes.
+
+The `content` value for the `theme-color` meta must contain a valid <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value" target="_blank" rel="noopener noreferrer">CSS Color</a> and cannot contain CSS Variables.
+
+The example below demonstrates how to use `theme-color` to style the browser interface on iOS 15.
+
+```html
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#3880ff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#eb445a">
+```
+
+| Light Mode | Dark Mode |
+| ---------- | --------- |
+| <figure><img alt="Application with theme-color meta in light mode" src="/img/theming/theme-color-light.png" /></figure> | <figure><img alt="Application with theme-color meta in dark mode" src="/img/theming/theme-color-dark.png" /></figure> |
+
+The `theme-color` meta can also be used to customize the toolbar in Safari on macOS Monterey or newer.
+
+Safari on iOS 15 and macOS will automatically determine an appropriate theme color to use, but adding this meta tag is useful if you need more control over the theme.
+
+:::note
+Browsers will prefer the `theme-color` meta over `theme` in `manifest.json` if both are present.
+:::
+
+For more information, see the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color" target="_blank" rel="noopener noreferrer">MDN theme-color documentation</a>.
+
+## Global Variables
 
 While the application and stepped variables in the themes section are useful for changing the colors of an application, often times there is a need for variables that are used in multiple components. The following variables are shared across components to change global padding settings and more.
 
@@ -46,7 +72,7 @@ While the application and stepped variables in the themes section are useful for
 
 
 
-## Known Limitations
+## Known Limitations with Variables
 
 ### The Alpha Problem
 
