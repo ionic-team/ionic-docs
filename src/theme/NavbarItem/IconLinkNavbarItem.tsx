@@ -26,7 +26,7 @@ function IconLink({
   const activeBaseUrl = useBaseUrl(activeBasePath);
   const normalizedHref = useBaseUrl(href, { forcePrependBaseUrl: true });
 
-  const Icon = require(`../../icons`)[icon] || {};
+  const Icon = require(`@theme/icons`)[icon] || {};
 
   return (
     <Link

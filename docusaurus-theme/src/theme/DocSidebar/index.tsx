@@ -28,10 +28,10 @@ import IconExternalLink from '@theme/IconExternalLink';
 import { translate } from '@docusaurus/Translate';
 import VersionSelector from '@theme/VersionSelector';
 import FrameworkSelector from '../FrameworkSelector';
-import { ChevronDown } from '../../icons';
+import { ChevronDown } from '@theme/icons';
 
 import styles from './styles.module.scss';
-import Backdrop from '../Backdrop';
+import Backdrop from '@theme/Backdrop';
 
 const MOBILE_TOGGLE_SIZE = 24;
 

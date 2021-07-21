@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import { Outbound } from '@site/src/icons';
+import { Outbound } from '@theme/icons';
 
 import styles from './styles.module.scss';
 

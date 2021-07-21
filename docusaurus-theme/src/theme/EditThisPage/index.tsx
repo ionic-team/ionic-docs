@@ -7,7 +7,7 @@
 
 import React from 'react';
 import Translate from '@docusaurus/Translate';
-import { Github } from '../../icons';
+import { Github } from '@theme/icons';
 
 import type { Props } from '@theme/EditThisPage';
 

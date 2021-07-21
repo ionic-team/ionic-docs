@@ -48,7 +48,7 @@ docs-card[disabled]::after {
   border-radius: 12px;
   display: flex;
   flex-direction: column;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-weight: normal;
   height: 100%;
   justify-content: flex-start;
@@ -153,6 +153,10 @@ docs-card[disabled]::after {
 
   .Card-content > * {
     margin: 0 0 0.65em;
+  }
+
+  .Card-content p {
+    font-size: 0.75rem;
   }
 
   .Card-header {
