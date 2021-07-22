@@ -3,7 +3,7 @@ html[data-theme='light'] {
 }
 
 html[data-theme='dark'] {
-  --ifm-table-border-color: #fff;
+  --ifm-table-border-color: var(--c-carbon-80);
 }
 
 :root {

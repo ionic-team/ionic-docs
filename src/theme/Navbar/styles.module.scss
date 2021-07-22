@@ -154,7 +154,7 @@ html[data-theme='dark'] {
   }
 }
 
-@media (max-width: 1215px) {
+@media (min-width: 997px) and (max-width: 1215px) {
   :global {
     .navbar__link--support,
     .navbar__link--community {
